@@ -1,0 +1,2836 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "quaternioms",
+  "title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+  "variant": "pdf",
+  "pages": 41,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Extended Related Work",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-extended-related-work"
+    },
+    {
+      "level": 2,
+      "title": "Introduction: Bridging Theory and Experiment—Additional Details",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-introduction-bridging-theory-and-experimentaddit"
+    },
+    {
+      "level": 1,
+      "title": "Materials and Methods",
+      "number": null,
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-materials-and-methods"
+    },
+    {
+      "level": 2,
+      "title": "Standard Quantum Computation over C",
+      "number": null,
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-standard-quantum-computation-over-c"
+    },
+    {
+      "level": 2,
+      "title": "Normed Division Algebras",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-normed-division-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Quaternionic and Octonionic Preliminaries",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-quaternionic-and-octonionic-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Structure of Octonions and the Fano Plane",
+      "number": null,
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-structure-of-octonions-and-the-fano-plane"
+    },
+    {
+      "level": 2,
+      "title": "Geometric and Group-Theoretic Side Notes",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-geometric-and-group-theoretic-side-notes"
+    },
+    {
+      "level": 2,
+      "title": "Quaternionic Formalism",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-quaternionic-formalism"
+    },
+    {
+      "level": 2,
+      "title": "Octonionic Formalism",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-octonionic-formalism"
+    },
+    {
+      "level": 2,
+      "title": "Hybrid Architectures and Embeddings—Additional Details",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-hybrid-architectures-and-embeddingsadditional-de"
+    },
+    {
+      "level": 3,
+      "title": "The Quaternionic-to-Complex Embedding Protocol in Practice",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-the-quaternionic-to-complex-embedding-protocol-i"
+    },
+    {
+      "level": 3,
+      "title": "Simulating Octonionic Dynamics via Associative Decomposition",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-simulating-octonionic-dynamics-via-associative-d"
+    },
+    {
+      "level": 2,
+      "title": "Mitigation Palette: Constructions and Workflows",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-mitigation-palette-constructions-and-workflows"
+    },
+    {
+      "level": 2,
+      "title": "Cayley–Dickson Product",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-cayleydickson-product"
+    },
+    {
+      "level": 2,
+      "title": "Associative Subalgebras and Confinement",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-associative-subalgebras-and-confinement"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": null,
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-results"
+    },
+    {
+      "level": 2,
+      "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+      "number": null,
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-quaternionic-model-structural-universality-and-s"
+    },
+    {
+      "level": 2,
+      "title": "Octonionic Model: Formal Obstructions and Limits",
+      "number": null,
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-octonionic-model-formal-obstructions-and-limits"
+    },
+    {
+      "level": 2,
+      "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+      "number": null,
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-mitigation-strategies-correctness-guarantees-and"
+    },
+    {
+      "level": 2,
+      "title": "Complexity Landscape and Feasibility",
+      "number": null,
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-complexity-landscape-and-feasibility"
+    },
+    {
+      "level": 2,
+      "title": "Computational Equivalence and Circuit Simplification—Elaboration",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-computational-equivalence-and-circuit-simplifica"
+    },
+    {
+      "level": 3,
+      "title": "Theoretical Equivalence to Complex Quantum Circuits",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-theoretical-equivalence-to-complex-quantum-circu"
+    },
+    {
+      "level": 3,
+      "title": "Resource Analysis and the Potential for Circuit Simplification",
+      "number": null,
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-resource-analysis-and-the-potential-for-circuit"
+    },
+    {
+      "level": 2,
+      "title": "Emerging Applications and Future Directions—Elaboration",
+      "number": null,
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-emerging-applications-and-future-directionselabo"
+    },
+    {
+      "level": 3,
+      "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
+      "number": null,
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-quantum-simulation-with-algebraic-symmetries-su2"
+    },
+    {
+      "level": 3,
+      "title": "Hypercomplex Quantum Machine Learning",
+      "number": null,
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-hypercomplex-quantum-machine-learning"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": null,
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Quaternion-to-Complex Embedding and Proof Details",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-quaternion-to-complex-embedding-and-proof-detail"
+    },
+    {
+      "level": 2,
+      "title": "Explicit Embedding H-3.45muM2(C)",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-explicit-embedding-h-345mum2c"
+    },
+    {
+      "level": 2,
+      "title": "Complexity Overhead—Proof-LEVEL Details",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-complexity-overheadproof-level-details"
+    },
+    {
+      "level": 2,
+      "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-synthesis-of-contributions-and-answers-to-resear"
+    },
+    {
+      "level": 3,
+      "title": "Gate Overhead from Associativity Management",
+      "number": null,
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-gate-overhead-from-associativity-management"
+    },
+    {
+      "level": 3,
+      "title": "State-Space Overhead: The Cost of Complex Embedding",
+      "number": null,
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-state-space-overhead-the-cost-of-complex-embeddi"
+    },
+    {
+      "level": 1,
+      "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
+      "number": null,
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-path-ordered-propagators-and-magnus-expansion-wi"
+    },
+    {
+      "level": 2,
+      "title": "Path-Ordered Evolution in O",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Magnus-like Expansion",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Strategy 1: Restriction to Associative Subalgebras—Additional Details",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
+      "number": null,
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-the-non-associative-hamiltonian-and-its-conseque"
+    },
+    {
+      "level": 4,
+      "title": "Operator Ordering and Emergent Non-Local Effects",
+      "number": null,
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-operator-ordering-and-emergent-non-local-effects"
+    },
+    {
+      "level": 4,
+      "title": "The Breakdown of Energy Conservation: A Formal Derivation",
+      "number": null,
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-the-breakdown-of-energy-conservation-a-formal-de"
+    },
+    {
+      "level": 4,
+      "title": "The Principle of Associative Confinement",
+      "number": null,
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-the-principle-of-associative-confinement"
+    },
+    {
+      "level": 4,
+      "title": "Implementing Gates in an Associative Subspace",
+      "number": null,
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-implementing-gates-in-an-associative-subspace"
+    },
+    {
+      "level": 3,
+      "title": "Seven-Factor Decomposition and Decoupling Sequences",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-seven-factor-decomposition-and-decoupling-sequen"
+    },
+    {
+      "level": 4,
+      "title": "Seven-Factor Algebraic Synthesis",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 4,
+      "title": "Associator-Suppressing Dynamical Decoupling",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jorge eduardo",
+          "heading": false
+        },
+        {
+          "term": "octonionic frameworks",
+          "heading": false
+        },
+        {
+          "term": "santiago pineda",
+          "heading": false
+        },
+        {
+          "term": "gómez",
+          "heading": false
+        },
+        {
+          "term": "rúa",
+          "heading": false
+        },
+        {
+          "term": "fundamental limitations",
+          "heading": false
+        },
+        {
+          "term": "colombia",
+          "heading": false
+        },
+        {
+          "term": "normed division",
+          "heading": false
+        }
+      ],
+      "extract": "3.0 1.3 Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations Johan Heriberto Rúa Muñoz, Jorge Eduardo Mahecha Gómez and Santiago Pineda Montoya Topic Topological, Quantum, and Molecular Information Approaches to Computation and Intelligence Edited by Dr. Michel Planat and Prof. Dr. Edward A. Rietman Review https://doi.org/10.3390/quantum7040055",
+      "extractCut": true,
+      "blocks": [
+        "library/quaternioms/blocks/prose-sec-front-matter",
+        "library/quaternioms/blocks/figure-img-p001-1",
+        "library/quaternioms/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "quaternionic model",
+          "heading": false
+        },
+        {
+          "term": "quater nionic",
+          "heading": false
+        },
+        {
+          "term": "g2-invariant coding",
+          "heading": false
+        },
+        {
+          "term": "associative tensor",
+          "heading": false
+        },
+        {
+          "term": "associative sectors",
+          "heading": false
+        },
+        {
+          "term": "structural obstructions",
+          "heading": false
+        },
+        {
+          "term": "circuit model",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum computation is typically formulated on complex Hilbert spaces. The existence of exactly four real normed division algebras, R,C,H,O, motivates systematic extensions to H (associative, non-commutative) and O (alternative, non-associative) [1,2]. We present a comprehensive treatment of both directions, revealing a sharp contrast: A fully consis- tent quaternionic model with computational equivalence to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-extended-related-work",
+      "number": null,
+      "title": "Extended Related Work",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "encodings",
+          "heading": false
+        },
+        {
+          "term": "mitigation",
+          "heading": false
+        },
+        {
+          "term": "representation-theoretic",
+          "heading": false
+        }
+      ],
+      "extract": "Background on quantum computation, topological phases, and materials that motivate robust encodings (see e.g., [10–24]). Mathematical foundations: normed division algebras, exceptional symmetries, and representation-theoretic tools (see e.g., [25–39]). Control and error mitigation, with emphasis on average-Hamiltonian theory and dynamical decoupling (see e.g., [40–54]). Complexity, universality, and emergent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-introduction-bridging-theory-and-experimentaddit",
+      "number": null,
+      "title": "Introduction: Bridging Theory and Experiment—Additional Details",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "hardware",
+          "heading": false
+        },
+        {
+          "term": "octo-qubit",
+          "heading": false
+        },
+        {
+          "term": "qudit",
+          "heading": false
+        },
+        {
+          "term": "challenge",
+          "heading": false
+        },
+        {
+          "term": "quantum computer",
+          "heading": false
+        },
+        {
+          "term": "pulses",
+          "heading": false
+        },
+        {
+          "term": "challenging",
+          "heading": false
+        }
+      ],
+      "extract": "The transition from an abstract mathematical formalism to a concrete physical im- plementation is the most challenging and critical step in the development of any new computational paradigm. This section serves as a bridge between the theoretical work and the practical considerations of experimental realization. We will ﬁrst frame the core experimental challenges posed by the quaternionic and octonionic models and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-materials-and-methods",
+      "number": null,
+      "title": "Materials and Methods",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-standard-quantum-computation-over-c",
+      "number": null,
+      "title": "Standard Quantum Computation over C",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cnot",
+          "heading": false
+        },
+        {
+          "term": "gate",
+          "heading": false
+        },
+        {
+          "term": "rotations",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": false
+        },
+        {
+          "term": "standard",
+          "heading": true
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        }
+      ],
+      "extract": "We brieﬂy recall the standard (complex) formalism to ﬁx notation. A ﬁnite-dimensional quantum system is modeled by a complex Hilbert space H ∼= Cd with an inner product ⟨·, ·⟩linear in the second argument and anti-linear in the ﬁrst. States are density operators ρ ∈D(H) (positive semideﬁnite, trace one); pure states are unit vectors |ψ⟩∈H modulo global phase. Closed system dynamics is generated by a (time-dependent)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-normed-division-algebras",
+      "number": null,
+      "title": "Normed Division Algebras",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley dickson",
+          "heading": false
+        },
+        {
+          "term": "dickson product",
+          "heading": false
+        },
+        {
+          "term": "normed",
+          "heading": true
+        },
+        {
+          "term": "non-associativity",
+          "heading": false
+        },
+        {
+          "term": "division",
+          "heading": true
+        },
+        {
+          "term": "associative",
+          "heading": false
+        }
+      ],
+      "extract": "A (real) normed division algebra (A, ∥· ∥) is a ﬁnite-dimensional real algebra with unit 1, equipped with a norm such that ∥xy∥= ∥x∥∥y∥ ∀x, y ∈A, and where every nonzero element is invertible. A classical result due to Hurwitz shows that there are exactly four such algebras: R, C, H, O, with dimR = 1, 2, 4, 8, respectively [1,2]. They arise from the Cayley–Dickson construction: R double −−−→C double −−−→H double",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-quaternionic-and-octonionic-preliminaries",
+      "number": null,
+      "title": "Quaternionic and Octonionic Preliminaries",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic",
+          "heading": true
+        },
+        {
+          "term": "quaternionic hilbert",
+          "heading": false
+        },
+        {
+          "term": "complex qubit",
+          "heading": false
+        },
+        {
+          "term": "canonical multipartite",
+          "heading": false
+        },
+        {
+          "term": "multipartite structure",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "path dependence",
+          "heading": false
+        },
+        {
+          "term": "native",
+          "heading": false
+        }
+      ],
+      "extract": "The hypercomplex extensions considered here replace the complex scalar ﬁeld by either H or O, together with compatible notions of inner product, adjoint, dynamics, and composition. Notation on SU(2) and context. Unless explicitly stated otherwise, SU(2) denotes the standard group of 2 × 2 complex special unitaries acting on a single complex qubit. When we speak of “quaternionic gates realised as SU(2) operations” or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-structure-of-octonions-and-the-fano-plane",
+      "number": null,
+      "title": "Structure of Octonions and the Fano Plane",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fano plane",
+          "heading": true
+        },
+        {
+          "term": "eiej",
+          "heading": false
+        },
+        {
+          "term": "triples",
+          "heading": false
+        }
+      ],
+      "extract": "Let {1, e1, . . . , e7} be the standard octonion basis with e2 k = −1 and eiej = ±ek ac- cording to the oriented triples encoded by the Fano plane (See Figure 1). Any three units on a directed line multiply associatively and obey eiej = ek, ejek = ei, ekei = ej (and the negatives for reversed order). This diagrammatic calculus is indispensable for track- ing when associators vanish and for designing sequences that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-geometric-and-group-theoretic-side-notes",
+      "number": null,
+      "title": "Geometric and Group-Theoretic Side Notes",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associator",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "syndromes",
+          "heading": false
+        },
+        {
+          "term": "associativity",
+          "heading": false
+        }
+      ],
+      "extract": "The unit spheres of the normed division algebras, S0 ⊂R, S1 ⊂C, S3 ⊂H, and S7 ⊂O, are parallelizable and admit Hopf ﬁbrations that often guide intuition about state spaces and control: S3 →S2 for qubits, and S7 →S4 in the quaternionic setting. Automorphism groups also play a role: Aut(H) ∼= SO(3) acts by conjugation on imag- inary quaternions, while Aut(O) ∼= G2 preserves the octonionic product and underlies the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-quaternionic-formalism",
+      "number": null,
+      "title": "Quaternionic Formalism",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "k-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": true
+        },
+        {
+          "term": "right h-modules",
+          "heading": false
+        },
+        {
+          "term": "encoded pairs",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "gate",
+          "heading": false
+        },
+        {
+          "term": "inner products",
+          "heading": false
+        }
+      ],
+      "extract": "Many of the structural ingredients of this subsection are standard in the literature on quaternionic quantum mechanics and quaternionic quantum computing. In par- ticular, our use of right H-modules and adjoints follows the foundational treatments in [3,4], while the existence of simulations of quaternionic circuits and channels by complex ones builds on [6–8]. Our contribution here is to package these ingredients",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-octonionic-formalism",
+      "number": null,
+      "title": "Octonionic Formalism",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic",
+          "heading": true
+        },
+        {
+          "term": "octonionic amplitudes",
+          "heading": false
+        },
+        {
+          "term": "quater nionic",
+          "heading": false
+        },
+        {
+          "term": "octonionic structures",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-dimensional quantum",
+          "heading": false
+        },
+        {
+          "term": "equiangular projections",
+          "heading": false
+        },
+        {
+          "term": "octonionic case",
+          "heading": false
+        }
+      ],
+      "extract": "In the octonionic case, there is comparatively little work at the level of quantum information. Our starting point here is the general discussion of octonions in physics in [2] and the measurement-only scheme of Freedman, Shokrian-Zini, and Wang [9], which realizes universal quantum computation using equiangular projections associated with O. The goal of this section is not to propose a new measurement-only model,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-hybrid-architectures-and-embeddingsadditional-de",
+      "number": null,
+      "title": "Hybrid Architectures and Embeddings—Additional Details",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hybrid architectures",
+          "heading": true
+        },
+        {
+          "term": "hypercomplex quantum",
+          "heading": false
+        },
+        {
+          "term": "embeddings",
+          "heading": true
+        },
+        {
+          "term": "hardware",
+          "heading": false
+        },
+        {
+          "term": "quantum computing",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        }
+      ],
+      "extract": "A fully octonionic computer appears infeasible at present. Instead, hybrid architectures that combine quaternionic and octonionic subsystems are more promising. Most of a circuit could run in the stable quaternionic regime, with specialized subroutines using octonionic embeddings for speciﬁc tasks where their unique symmetries might be advantageous. While the direct physical realization of hypercomplex quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-the-quaternionic-to-complex-embedding-protocol-i",
+      "number": null,
+      "title": "The Quaternionic-to-Complex Embedding Protocol in Practice",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1085,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic-to-complex embedding",
+          "heading": true
+        },
+        {
+          "term": "quaternionic qubits",
+          "heading": false
+        },
+        {
+          "term": "quaternionic gates",
+          "heading": false
+        },
+        {
+          "term": "logical quaternionic",
+          "heading": false
+        },
+        {
+          "term": "quaternionic states",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "complex qubits",
+          "heading": false
+        },
+        {
+          "term": "single quaternionic",
+          "heading": false
+        }
+      ],
+      "extract": "A foundational result is the embedding of quaternionic quantum circuits into complex ones with minimal overhead [6]. This theoretical equivalence, established in Chapter 3 [5], states that any computation on n quaternionic qubits can be simulated by a standard complex circuit with n + 1 qubits [6]. This mapping effectively realizes quaternionic logic on conventio- nal platforms: Hn H −→Hn+1 C . (4) To put this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-simulating-octonionic-dynamics-via-associative-d",
+      "number": null,
+      "title": "Simulating Octonionic Dynamics via Associative Decomposition",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic",
+          "heading": true
+        },
+        {
+          "term": "associative",
+          "heading": true
+        },
+        {
+          "term": "decomposition",
+          "heading": true
+        },
+        {
+          "term": "n-octo-qubit",
+          "heading": false
+        },
+        {
+          "term": "α1e",
+          "heading": false
+        }
+      ],
+      "extract": "Unlike quaternions, the direct embedding of a universal octonionic quantum computer into a complex one is not straightforward due to the fundamental challenges of non- associativity, as extensively detailed in Chapter 4 [5]. However, the mitigation strategy of “algebraic gate synthesis and decomposition” (Strategy 4, Chapter 5 [5]) offers a pathway to simulate octonionic dynamics on standard complex hardware by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-mitigation-palette-constructions-and-workflows",
+      "number": null,
+      "title": "Mitigation Palette: Constructions and Workflows",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deploy",
+          "heading": false
+        },
+        {
+          "term": "dickson",
+          "heading": false
+        },
+        {
+          "term": "costs",
+          "heading": false
+        }
+      ],
+      "extract": "We deploy four complementary strategies that tame non-associativity in O at explicit resource costs. (M1) Associative conﬁnement. Goal: Constrain states/controls to an associative subalgebra H ⊂O (guaranteed by Cayley–Dickson) = H ⊕He6",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-cayleydickson-product",
+      "number": null,
+      "title": "Cayley–Dickson Product",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "Writing (a, b), (c, d) ∈H ⊕He6, (a, b) · (c, d) = (ac −¯d b, dc + b ¯c), exposes quaternionic subalgebras and clarifies how non-associativity emerges beyond H [2,5].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-associative-subalgebras-and-confinement",
+      "number": null,
+      "title": "Associative Subalgebras and Confinement",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "process ﬁdelity",
+          "heading": false
+        },
+        {
+          "term": "associative",
+          "heading": true
+        },
+        {
+          "term": "sector switches",
+          "heading": false
+        },
+        {
+          "term": "switching sectors",
+          "heading": false
+        },
+        {
+          "term": "trade-offs",
+          "heading": false
+        },
+        {
+          "term": "asd",
+          "heading": false
+        },
+        {
+          "term": "baselines",
+          "heading": false
+        },
+        {
+          "term": "pulses",
+          "heading": false
+        }
+      ],
+      "extract": "Each embedded copy of H in O is associative. Conﬁning states and gates to such a sector restores well-deﬁned composition; switching sectors incurs control overheads [5]. Construction: Choose a triple from the Fano plane and ﬁx an embedding as follows: H ∼= spanR{1, ei, ej, ek}. Implement all gates within this sector using the quaternionic toolset of Section 2.6; switching sectors is effected by explicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-results",
+      "number": null,
+      "title": "Results",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "posit",
+          "heading": false
+        },
+        {
+          "term": "deploy",
+          "heading": false
+        },
+        {
+          "term": "pipeline",
+          "heading": false
+        },
+        {
+          "term": "islands",
+          "heading": false
+        }
+      ],
+      "extract": "Summary of methodology. Over H, we adopt a fully associative, hardware-aligned pipeline via the embedding (A1) with standard universal sets and compilation. Over O, we do not posit a native scalable calculus; instead, we formalize where associativity is required and deploy (M1)–(M4) to operate within associative islands or to cancel/structure associator effects, making explicit the cost in depth, width, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-quaternionic-model-structural-universality-and-s",
+      "number": null,
+      "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single-qubit entangler",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": true
+        },
+        {
+          "term": "qubit gates",
+          "heading": false
+        },
+        {
+          "term": "single-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "qubit circuit",
+          "heading": false
+        },
+        {
+          "term": "embedded synthesis",
+          "heading": false
+        },
+        {
+          "term": "universality",
+          "heading": true
+        },
+        {
+          "term": "polynomial overhead",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by securing the structural backbone over H: A well-deﬁned multipartite composition. This provides the substrate on which universality and simulation statements are built. Theorem 1 (Canonical tensor structure over H). Let (Hi, ⟨·, ·⟩i), i = 1, 2, 3, be right H-Hilbert modules. Then (H1 ⊗H2) ⊗H3 ∼= H1 ⊗(H2 ⊗H3) canonically and isometrically, with inner product on simple tensors ⟨u1 ⊗u2, v1 ⊗v2⟩:= ⟨u1, v1⟩1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-octonionic-model-formal-obstructions-and-limits",
+      "number": null,
+      "title": "Octonionic Model: Formal Obstructions and Limits",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associative scaffolding",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": true
+        },
+        {
+          "term": "associative sectors",
+          "heading": false
+        },
+        {
+          "term": "outside associative",
+          "heading": false
+        },
+        {
+          "term": "canonical multipartite",
+          "heading": false
+        },
+        {
+          "term": "obstructions",
+          "heading": true
+        },
+        {
+          "term": "wiring",
+          "heading": false
+        },
+        {
+          "term": "path dependence",
+          "heading": false
+        }
+      ],
+      "extract": "We now switch to O, where the loss of associativity reverses the previous narrative. The next results make precise how ordering and parenthesization cease to be benign choices. In contrast to the measurement-only scheme of Freedman, Shokrian-Zini and Wang [9], which already realizes universal quantum computation using octonionic equiangular pro- jections, the results in this subsection are, to the best of our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-mitigation-strategies-correctness-guarantees-and",
+      "number": null,
+      "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associator syndromes",
+          "heading": false
+        },
+        {
+          "term": "associative conﬁnement",
+          "heading": false
+        },
+        {
+          "term": "associative-agnostic baselines",
+          "heading": false
+        },
+        {
+          "term": "depth calibration",
+          "heading": false
+        },
+        {
+          "term": "depth ampliﬁcation",
+          "heading": false
+        },
+        {
+          "term": "associative sector",
+          "heading": false
+        },
+        {
+          "term": "detect associator",
+          "heading": false
+        },
+        {
+          "term": "leading associator",
+          "heading": false
+        }
+      ],
+      "extract": "We formalize the scope and guarantees of the four mitigation routes introduced in Methods and quantify their effects using process-ﬁdelity summaries. The organizing idea is to recover, as far as possible, the H-like behavior within controlled regions of O. (M1) Associative conﬁnement restores the wiring rule. By narrowing dynamics to a ﬁxed associative sector, we reinstate the benign parenthe- sization properties of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-complexity-landscape-and-feasibility",
+      "number": null,
+      "title": "Complexity Landscape and Feasibility",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "landscape",
+          "heading": true
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "large-scale",
+          "heading": false
+        },
+        {
+          "term": "native",
+          "heading": false
+        },
+        {
+          "term": "dynamics",
+          "heading": false
+        },
+        {
+          "term": "associative",
+          "heading": false
+        }
+      ],
+      "extract": "We summarize asymptotic resource implications and practical constraints for the quaternionic and octonionic settings. For platform-level details and additional complexity remarks, see Appendix A.3.2. Taken together, the next statements locate H within the standard complexity landscape and explain why native, large-scale advantages in O hinge on the mitigation toolkit above. Proposition 7 (Complexity over H). By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-computational-equivalence-and-circuit-simplifica",
+      "number": null,
+      "title": "Computational Equivalence and Circuit Simplification—Elaboration",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "computational",
+          "heading": true
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": true
+        },
+        {
+          "term": "computers",
+          "heading": false
+        },
+        {
+          "term": "bounded-error",
+          "heading": false
+        }
+      ],
+      "extract": "Having established a consistent framework for n-quaternionic qubit states and uni- versal gates, we now address a pivotal question: Does the richer algebraic structure of quaternionic quantum mechanics grant it greater computational power than the standard complex model? The answer, perhaps surprisingly, is no. In terms of computational com- plexity theory, the two models are equivalent; they both deﬁne the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-theoretical-equivalence-to-complex-quantum-circu",
+      "number": null,
+      "title": "Theoretical Equivalence to Complex Quantum Circuits",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "n-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "single-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "qubit gate",
+          "heading": false
+        },
+        {
+          "term": "mapping quaternionic",
+          "heading": false
+        },
+        {
+          "term": "qubit state",
+          "heading": false
+        },
+        {
+          "term": "complex gates",
+          "heading": false
+        },
+        {
+          "term": "qubit system",
+          "heading": false
+        }
+      ],
+      "extract": "The equivalence between the quaternionic and complex models is formally established by showing that any computation in one framework can be efﬁciently simulated by the other. Seminal works in the ﬁeld have demonstrated that any quantum circuit operating on a register of n quaternionic qubits can be simulated by a standard complex quantum computer with at most a polynomial increase in resources [6,7]. The core of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-resource-analysis-and-the-potential-for-circuit",
+      "number": null,
+      "title": "Resource Analysis and the Potential for Circuit Simplification",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circuit",
+          "heading": true
+        },
+        {
+          "term": "single-qubit rotations",
+          "heading": false
+        },
+        {
+          "term": "circuit design",
+          "heading": false
+        },
+        {
+          "term": "circuit depth",
+          "heading": false
+        },
+        {
+          "term": "fewer gates",
+          "heading": false
+        },
+        {
+          "term": "arbitrary single-qubit",
+          "heading": false
+        },
+        {
+          "term": "parametrisations",
+          "heading": false
+        },
+        {
+          "term": "quantum simulation",
+          "heading": false
+        }
+      ],
+      "extract": "In this spirit, we explore how the representational efﬁciency of quaternionic and octo- nionic parametrisations can inform circuit design and algorithmic heuristics, for instance by suggesting compact, symmetry-adapted parametrisations and ansätze for quantum simulation and variational algorithms, in close analogy with how high-dimensional qu- dit encodings are used to trade local dimension against circuit width or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-emerging-applications-and-future-directionselabo",
+      "number": null,
+      "title": "Emerging Applications and Future Directions—Elaboration",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delves",
+          "heading": false
+        },
+        {
+          "term": "roadmap",
+          "heading": false
+        },
+        {
+          "term": "proposing",
+          "heading": false
+        }
+      ],
+      "extract": "The exploration of quantum computing over normed division algebras, particularly quaternions and octonions, extends beyond purely theoretical interest. This ﬁnal sec- tion delves into the potential applications where these extended formalisms might offer a genuine advantage over standard complex quantum computation. We will discuss their role in quantum simulation, quantum machine learning, and fundamental physics,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-quantum-simulation-with-algebraic-symmetries-su2",
+      "number": null,
+      "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum simulation",
+          "heading": true
+        },
+        {
+          "term": "octonionic dynamics",
+          "heading": false
+        },
+        {
+          "term": "quantum simulator",
+          "heading": false
+        },
+        {
+          "term": "symmetries",
+          "heading": true
+        },
+        {
+          "term": "tqc",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most promising application areas for hypercomplex quantum models is quantum simulation. Many physical systems of fundamental interest are naturally described by Hamiltonians that exhibit speciﬁc algebraic symmetries directly related to quaternions and octonions. Leveraging these underlying symmetries in the quantum simulation itself could lead to more efﬁcient and accurate algorithms. SU(2) Symmetries in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-hypercomplex-quantum-machine-learning",
+      "number": null,
+      "title": "Hypercomplex Quantum Machine Learning",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "machine learning",
+          "heading": true
+        },
+        {
+          "term": "neural networks",
+          "heading": false
+        },
+        {
+          "term": "quantum neural",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "qml",
+          "heading": false
+        },
+        {
+          "term": "rotational symmetries",
+          "heading": false
+        },
+        {
+          "term": "hypercomplex",
+          "heading": true
+        },
+        {
+          "term": "variational quantum",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Machine Learning (QML) is a rapidly developing ﬁeld that seeks to leverage quantum principles and hardware to enhance machine learning algorithms. The introduc- tion of hypercomplex numbers offers a new avenue for QML, potentially leading to more expressive models, more compact data representations, and improved performance for certain types of data or tasks. Quaternionic Quantum Neural Networks (QNNs) The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-discussion",
+      "number": null,
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hardware",
+          "heading": false
+        },
+        {
+          "term": "canonical tensor",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "tensor structure",
+          "heading": false
+        },
+        {
+          "term": "associativity",
+          "heading": false
+        },
+        {
+          "term": "full",
+          "heading": false
+        }
+      ],
+      "extract": "Associativity as a computational boundary. The associative nature of H preserves Hilbert-space axioms (inner product, adjoint), enables a canonical tensor structure, and supports universal multi-qubit composition. Via the matrix embedding, the full complex toolkit—entanglement, universality, compilation—is inherited, while hardware realizations beneﬁt from alignment with SU(2) control [4,5]. Non-associativity as a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "funding",
+          "heading": false
+        },
+        {
+          "term": "compilers",
+          "heading": false
+        },
+        {
+          "term": "algebra-aware",
+          "heading": false
+        },
+        {
+          "term": "antioquia",
+          "heading": false
+        }
+      ],
+      "extract": "• Over H, quantum computation is mathematically sound, universal, and polynomially equivalent to the complex model, with viable high-ﬁdelity realizations. • Over O, structural barriers from non-associativity necessitate conﬁnement to associa- tive sectors, symmetry protection or decoupling, with nontrivial overheads. • Future directions include scaling associative-conﬁnement architectures, reﬁning G2- invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-quaternion-to-complex-embedding-and-proof-detail",
+      "number": null,
+      "title": "Quaternion-to-Complex Embedding and Proof Details",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-explicit-embedding-h-345mum2c",
+      "number": null,
+      "title": "Explicit Embedding H-3.45muM2(C)",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single-quaternionic qubit",
+          "heading": false
+        },
+        {
+          "term": "qubit gate",
+          "heading": false
+        },
+        {
+          "term": "z2j",
+          "heading": false
+        },
+        {
+          "term": "complex matrices",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        }
+      ],
+      "extract": "A powerful tool for connecting quaternions to standard quantum mechanics is their representation as 2 × 2 complex matrices. The algebra of quaternions is isomorphic to a subalgebra of the 2 × 2 complex matrices M2(C). A general quaternion q = a + bi + cj + dk can be represented as the matrix: q 7→ a + bi c + di −c + di a −bi ! . (A1) Under this mapping, the quaternion basis units {1, i, j, k} have a direct",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-complexity-overheadproof-level-details",
+      "number": null,
+      "title": "Complexity Overhead—Proof-LEVEL Details",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overhead",
+          "heading": true
+        },
+        {
+          "term": "resources",
+          "heading": false
+        },
+        {
+          "term": "gate",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        }
+      ],
+      "extract": "The most immediate cost comes from managing the ambiguity of gate sequences. As demonstrated in Section 4.3.1 [5], a circuit diagram specifying a temporal sequence of gates is an incomplete description for an octonionic computer. To render a computation deterministic, a speciﬁc association order for all operations must be enforced. The only physically consistent way to do this is to ensure that any group of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-synthesis-of-contributions-and-answers-to-resear",
+      "number": null,
+      "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic gates",
+          "heading": false
+        },
+        {
+          "term": "quaternionic qubits",
+          "heading": false
+        },
+        {
+          "term": "gate overhead",
+          "heading": false
+        },
+        {
+          "term": "mitigation strategies",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "quaternionic phases",
+          "heading": false
+        },
+        {
+          "term": "g2-symmetric codes",
+          "heading": false
+        },
+        {
+          "term": "octonionic model",
+          "heading": false
+        }
+      ],
+      "extract": "The overarching aim of this thesis was to explore the viability and implications of ex- tending quantum formalism to quaternionic (H) and octonionic (O) structures for quantum computing. This exploration was guided by speciﬁc objectives that sought to construct models of quantum computing based on these algebras, analyze their automorphisms, and investigate the limitations of non-associative structures in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-gate-overhead-from-associativity-management",
+      "number": null,
+      "title": "Gate Overhead from Associativity Management",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toffoli gate",
+          "heading": false
+        },
+        {
+          "term": "overhead",
+          "heading": true
+        },
+        {
+          "term": "step calculates",
+          "heading": false
+        },
+        {
+          "term": "non-associating",
+          "heading": false
+        },
+        {
+          "term": "computational step",
+          "heading": false
+        },
+        {
+          "term": "associator terms",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "logic",
+          "heading": false
+        }
+      ],
+      "extract": "The Strategy of Decomposition This leads to a “divide and conquer” strategy as the default method for implementing octonionic logic. Any complex, non-associative operation must be decomposed into a sequence of smaller, elementary steps, where each step occurs entirely within a single, well-behaved associative (quaternionic) subalgebra. Consider a logical operation that involves three non-associating octonionic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-state-space-overhead-the-cost-of-complex-embeddi",
+      "number": null,
+      "title": "State-Space Overhead: The Cost of Complex Embedding",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single octo-qubit",
+          "heading": false
+        },
+        {
+          "term": "overhead",
+          "heading": true
+        },
+        {
+          "term": "qubit system",
+          "heading": false
+        },
+        {
+          "term": "complex qubits",
+          "heading": false
+        },
+        {
+          "term": "state-space",
+          "heading": true
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "state space",
+          "heading": false
+        },
+        {
+          "term": "dimensional real",
+          "heading": false
+        }
+      ],
+      "extract": "Dimensionality Analysis of a Single Octo-Qubit Let us begin by analyzing the resource cost for a single octo-qubit. As established in Chapter 2 [5], an octonion is an element of an 8-dimensional real vector space. A single octo-qubit state, |ψ⟩= o1|0⟩+ o2|1⟩, is described by two such octonions, meaning its state vector lives in a 16-dimensional real vector space before normalization. To represent this information",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-path-ordered-propagators-and-magnus-expansion-wi",
+      "number": null,
+      "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": true
+        },
+        {
+          "term": "path-ordered",
+          "heading": true
+        },
+        {
+          "term": "associators",
+          "heading": true
+        },
+        {
+          "term": "non-associativity",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "conﬁnement",
+          "heading": false
+        },
+        {
+          "term": "strategy",
+          "heading": false
+        },
+        {
+          "term": "evolution",
+          "heading": false
+        }
+      ],
+      "extract": "with Associators The path-ordered propagator deﬁned in the previous section provides a formal, con- structive solution to the time-evolution operator in an octonionic system. However, as an inﬁnite product, it is often impractical for both analytical and numerical work. In standard quantum mechanics, a powerful alternative for analyzing time evolution is the Magnus expansion. This method seeks to express the unitary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-the-non-associative-hamiltonian-and-its-conseque",
+      "number": null,
+      "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "non-associative",
+          "heading": true
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "consequences",
+          "heading": true
+        }
+      ],
+      "extract": "In quantum mechanics, the Hamiltonian is the observable corresponding to the total energy of the system and, via the Schrödinger equation, the generator of time evolution. In the standard and quaternionic models, it is a well-behaved self-adjoint operator acting on a Hilbert space. Its algebraic properties are consistent and unambiguous because the underlying ﬁeld (C) or algebra (H) is associative. When we construct",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-operator-ordering-and-emergent-non-local-effects",
+      "number": null,
+      "title": "Operator Ordering and Emergent Non-Local Effects",
+      "level": 4,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emergent",
+          "heading": true
+        },
+        {
+          "term": "octonionic quantum",
+          "heading": false
+        },
+        {
+          "term": "interaction term",
+          "heading": false
+        },
+        {
+          "term": "operator proportional",
+          "heading": false
+        },
+        {
+          "term": "non-associative",
+          "heading": false
+        },
+        {
+          "term": "non-associating",
+          "heading": false
+        },
+        {
+          "term": "grouping",
+          "heading": false
+        },
+        {
+          "term": "locality",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst major challenge in formulating a consistent octonionic quantum theory arises when considering Hamiltonians that describe interacting subsystems. In standard quantum mechanics, an interaction Hamiltonian is composed of products of operators, and the associativity of the underlying complex algebra guarantees that such products are unambiguous. For three or more operators, the grouping of operations is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-the-breakdown-of-energy-conservation-a-formal-de",
+      "number": null,
+      "title": "The Breakdown of Energy Conservation: A Formal Derivation",
+      "level": 4,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy conservation",
+          "heading": true
+        },
+        {
+          "term": "modiﬁed heisenberg",
+          "heading": false
+        },
+        {
+          "term": "heisenberg equation",
+          "heading": false
+        },
+        {
+          "term": "octonionic system",
+          "heading": false
+        },
+        {
+          "term": "associative algebra",
+          "heading": false
+        },
+        {
+          "term": "time-independent",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most fundamental principles in physics is the connection between sym- metry and conservation laws, as formalized by Noether’s theorem. In standard quantum mechanics, the symmetry of physical laws under time translation implies that for any closed system with a time-independent Hamiltonian, the total energy is conserved. This principle is a cornerstone of our understanding of the physical world. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-the-principle-of-associative-confinement",
+      "number": null,
+      "title": "The Principle of Associative Confinement",
+      "level": 4,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associative conﬁnement",
+          "heading": false
+        },
+        {
+          "term": "associative subalgebra",
+          "heading": false
+        },
+        {
+          "term": "conﬁnement condition",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        },
+        {
+          "term": "time evolution",
+          "heading": false
+        },
+        {
+          "term": "subalgebra generated",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "strategy",
+          "heading": false
+        }
+      ],
+      "extract": "The viability of this strategy is rooted in a fundamental property of the octonion algebra. While not globally associative, the octonions are an alternative algebra. The Algebraic Foundation: Alternativity As deﬁned in Chapter 2 [5], an algebra is alternative if the subalgebra generated by any two of its elements is associative. This has a profound consequence: any quantum operation that involves only two distinct",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-implementing-gates-in-an-associative-subspace",
+      "number": null,
+      "title": "Implementing Gates in an Associative Subspace",
+      "level": 4,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associative subspace",
+          "heading": true
+        },
+        {
+          "term": "conﬁned subspace",
+          "heading": false
+        },
+        {
+          "term": "conﬁned state",
+          "heading": false
+        },
+        {
+          "term": "associative conﬁnement",
+          "heading": false
+        },
+        {
+          "term": "associative subalgebra",
+          "heading": false
+        },
+        {
+          "term": "gate",
+          "heading": false
+        },
+        {
+          "term": "chosen subalgebra",
+          "heading": false
+        },
+        {
+          "term": "general rotation",
+          "heading": false
+        }
+      ],
+      "extract": "The principle of associative conﬁnement provides a clear theoretical path to a consis- tent octonionic model. In this section, we put this principle into practice by demonstrating how quantum gates can be explicitly constructed and applied within a restricted associative subspace. We will show that by adhering to this conﬁnement, the ambiguous and ill- deﬁned operations of the full octonionic algebra are replaced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-seven-factor-decomposition-and-decoupling-sequen",
+      "number": null,
+      "title": "Seven-Factor Decomposition and Decoupling Sequences",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decoupling",
+          "heading": true
+        },
+        {
+          "term": "seven-factor",
+          "heading": true
+        },
+        {
+          "term": "associator-suppressing",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix C.1. Seven-Factor Algebraic Synthesis Target transformations decompose as U ≈U1U2 · · · U7 with each Ui in an associative subalgebra, selected to minimize associator growth; depth and calibration overheads follow from the schedule design [5]. Appendix C.2. Associator-Suppressing Dynamical Decoupling Algorithm A1 Associator-Suppressing Decoupling (ASD) 1: Fix an associative subalgebra H ⊂O 2: for k = 1 to N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 2186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossref",
+          "heading": false
+        },
+        {
+          "term": "topological insulators",
+          "heading": false
+        },
+        {
+          "term": "graphene",
+          "heading": false
+        },
+        {
+          "term": "jetp lett",
+          "heading": false
+        },
+        {
+          "term": "das sarma",
+          "heading": false
+        },
+        {
+          "term": "topological superconductors",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "quaternionic quantum",
+          "heading": false
+        }
+      ],
+      "extract": "1. Hurwitz, A. Über die Composition der quadratischen Formen von beliebig vielen Variablen. In Nachrichten der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse; Gesellschaft der Wissenschaften: Göttingen, Germany, 1898; pp. 309–316. 2. Baez, J.C. The Octonions. Bull. Am. Math. Soc. 2002, 39, 145–205. [CrossRef] 3. Finkelstein, D.; Jauch, J.M.; Schiminovich, S.; Speiser, D. Foundations",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quaternionic gate",
+      "heading": false
+    },
+    {
+      "term": "quaternionic qubit",
+      "heading": false
+    },
+    {
+      "term": "quaternionic quantum",
+      "heading": true
+    },
+    {
+      "term": "quaternionic circuit",
+      "heading": true
+    },
+    {
+      "term": "quaternionic dynamics",
+      "heading": false
+    },
+    {
+      "term": "quaternionic model",
+      "heading": true
+    },
+    {
+      "term": "octonionic gates",
+      "heading": false
+    },
+    {
+      "term": "quaternionic rotations",
+      "heading": false
+    },
+    {
+      "term": "logical quaternionic",
+      "heading": false
+    },
+    {
+      "term": "quaternionic subalgebras",
+      "heading": false
+    },
+    {
+      "term": "quaternionic states",
+      "heading": true
+    },
+    {
+      "term": "single quaternionic",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Fano plane representation of octonion multiplication triples. Each oriented line encodes an associative copy of H inside O",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Schematic quaternionic-to-complex embedding of a circuit on n quaternionic qubits into a complex circuit on n + 1 qubits. The dashed arrows indicate the embedding of quaternionic states into complex states, while the lower circuit is implemented with standard complex quantum gates",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Process ﬁdelity vs. time under CDD2-like ASD sequences: Associative-constrained (S) vs. associative-agnostic (A). Short-time gains are consistent with Theorem 4. Adapted from [72]",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Process-ﬁdelity decay as a function of total control time T (a) and control amplitude α (b) under associator-affected dynamics. ASD attenuates leading decay slopes at small T for moderate α. Adapted from [73]",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Mitigation palette: scope, beneﬁts, and primary overheads",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 49,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 45,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 45 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/quaternioms"
+  }
+}

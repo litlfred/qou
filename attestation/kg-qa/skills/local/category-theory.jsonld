@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/kg-qa/skills/local/category-theory.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/kg-qa/skills/local/category-theory",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "kg-qa attestation: skill category-theory",
+      "description": "The kg-qa judgements recorded for skill category-theory (skills/local/category-theory.md), each pinned to the hash it attested.",
+      "sourceKind": "kg-qa",
+      "sourcePath": "test/attestations/kg-qa/skills/local/category-theory.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

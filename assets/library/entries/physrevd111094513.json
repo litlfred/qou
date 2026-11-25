@@ -1,0 +1,565 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "physrevd111094513",
+  "blocks": [
+    {
+      "id": "library/physrevd111094513/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "85, 22607 Hamburg, Germany 5Regionales Rechenzentrum, Universität Hamburg, 20146 Hamburg, Germany (Received 4 February 2025; accepted 29 April 2025; published 20 May 2025) The Compton amplitude subtraction function is an essential component in work concerning both the proton radius puzzle and the proton-neutron mass difference.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "Here, we use the Feynman-Hellmann method to determine this subtraction function directly from lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "The Compton amplitude subtraction function, S1ðQ2Þ, is a critical component in the theoretical determination of the proton-neutron mass difference, and a necessary quantity for the calculation of the proton charge radius.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "In this context, a first-principles lattice QCD evaluation of the Compton amplitude subtraction function is crucial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Recently a lattice calculation of the subtraction function was performed using four-point correlation functions [24], following on from earlier work [25,26].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "In this paper, we determine the Compton amplitude subtraction function over the range 1 ≲Q2 ≲16 GeV2 at the standard subtraction point using the Feynman- Hellmann technique, which has previously been used to determine the structure function moments for the forward [28–30] and off-forward [31,32] Compton amplitudes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-001-05.md",
+      "narrative": null,
+      "content": "V we remove the leading order discretization artifacts and, in doing so, present the Compton amplitude subtraction function, and compare it with the continuum OPE expectation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-lattice-qcd-calculation-of-the-compton-amplitude.md",
+      "narrative": null,
+      "content": "K. U. Can ,1 A. Hannaford-Gunn ,1 R. Horsley ,2 P. E. L. Rakow ,3 T. Schar ,1 G. Schierholz ,4\nH. Stüben,5 R. D. Young ,1 and J. M. Zanotti\n1\n(QCDSF Collaboration)\n1CSSM, Department of Physics, The University of Adelaide, Adelaide South Australia 5005, Australia\n2School of Physics and Astronomy, University of Edinburgh, Edinburgh EH9 3JZ, United Kingdom\n3Theoretical Physics Division, Department of Mathematical Sciences, University of Liverpool,\nLiverpool L69 3BX, United Kingdom\n4Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, 22607 Hamburg, Germany\n5Regionales Rechenzentrum, Universität H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I. INTRODUCTION",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-i-introduction.md",
+      "narrative": null,
+      "content": "The Compton amplitude subtraction function, S1ðQ2Þ, is\na critical component in the theoretical determination of the\nproton-neutron mass difference, and a necessary quantity\nfor the calculation of the proton charge radius. However,\nthe subtraction function is not directly measurable from\nexperiment, and as such contributes significant theoretical\nand statistical uncertainties to these quantities. In this\ncontext, a first-principles determination of the subtraction\nfunction could play a vital role in clarifying our under-\nstanding of hadron structure.\nThe leading electromagnetic contribution to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II. BACKGROUND",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-ii-background.md",
+      "narrative": null,
+      "content": "Our starting point is the forward virtual Compton\namplitude for a proton, as shown in Eq. (2). This amplitude\ndescribes\nthe\nprocess\nof\nphoton-proton\nscattering,\nγ\u0003ðqÞpðpÞ →γ\u0003ðqÞpðpÞ—see Fig. 1. By performing the\nstandard tensor decomposition, the Compton amplitude can\nbe written in the form [29],\nTμν ¼\n\u0002\n−gμν þ qμqν\nq2\n\u0003\nT1ðω; Q2Þ\nþ\n1\np · q\n\u0002\npμ −p · q\nq2 qμ\n\u0003\u0002\npν −p · q\nq2 qν\n\u0003\nT2ðω; Q2Þ;\nð3Þ\nwhere ω ¼ 2p · q=Q2 and Q2 ¼ −q2. The alternative\ndecomposition put forward in Ref. [22] could provide an\nopportunity for future work.\nThe two Compton amplitude structure functions, T1;2,\nsatisfy the fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "The Feynman-Hellmann (FH) method is a powerful tool that presents an alternative to the direct calculation of three- and four-point functions in lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III. FEYNMAN-HELLMANN METHOD",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-iii-feynman-hellmann-method.md",
+      "narrative": null,
+      "content": "The Feynman-Hellmann (FH) method is a powerful tool\nthat presents an alternative to the direct calculation of three-\nand four-point functions in lattice QCD. In particular,\nFeynman-Hellmann has proven particularly important in\nthe case of matrix elements with two current insertions such\nas the Compton amplitude [28–32].\nHere we summarize the main aspects of our application\nof the Feynman-Hellmann method, noting that the full\ndetails can be found in Ref. [29]. The starting point is to\nperturb the action, S, by introducing external fields that\ncouple to the valence quarks of the nucleon. For a p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "To determine the flavor-diagonal and flavor-mixed Compton amplitude subtraction functions, we calculate the following ratios of nucleon correlators: Ruu λ ¼ Gðλ; 0ÞGð−λ; 0Þ ½Gð0; 0Þ\u00022 ⟶ t ≫aAuue−2ΔEuu λ t Rdd λ ¼ Gð0; λÞGð0; −λÞ ½Gð0; 0Þ\u00022 ⟶ t ≫a Adde−2ΔEdd λ t; Rud λ ¼ Gðλ; λÞGð−λ; −λÞ Gðλ; −λÞGð−λ; λÞ ⟶ t ≫aAude−4ΔEud λ t ð14Þ as a function of Euclidean time t for each value of the external coupling strength λ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "For each gauge ensemble, we determine the subtraction function for a set of Q2 values given in Table II, which are restricted by our Feynman-Hellmann procedure to q4 ¼ 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A. Lattice determination",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-a-lattice-determination.md",
+      "narrative": null,
+      "content": "To determine the flavor-diagonal and flavor-mixed\nCompton amplitude subtraction functions, we calculate\nthe following ratios of nucleon correlators:\nRuu\nλ ¼ Gðλ; 0ÞGð−λ; 0Þ\n½Gð0; 0Þ\u00022\n⟶\nt ≫aAuue−2ΔEuu\nλ t\nRdd\nλ ¼ Gð0; λÞGð0; −λÞ\n½Gð0; 0Þ\u00022\n⟶\nt ≫a Adde−2ΔEdd\nλ t;\nRud\nλ ¼ Gðλ; λÞGð−λ; −λÞ\nGðλ; −λÞGð−λ; λÞ ⟶\nt ≫aAude−4ΔEud\nλ t\nð14Þ\nas a function of Euclidean time t for each value of the\nexternal coupling strength λ. Then the energy shifts are\nΔEuu\nλ ¼ λ2 ∂2Eðλ; 0Þ\n∂λ2\n\u0004\u0004\u0004\u0004\nλ¼0\nþ Oðλ4Þ;\nΔEdd\nλ ¼ λ2 ∂2Eð0; λÞ\n∂λ2\n\u0004\u0004\u0004\u0004\nλ¼0\nþ Oðλ4Þ;\nΔEud\nλ ¼ λ2 ∂2Eðλ1; λ2Þ\n∂λ1∂λ2\n\u0004\u0004\u0004\u0004\nλ1¼λ2¼0\nþ Oðλ4Þ;\nð15Þ\nwhich from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B. Subtraction function results",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-b-subtraction-function-results.md",
+      "narrative": null,
+      "content": "We perform our calculation of the proton subtraction\nfunction on three gauge ensembles generated by the\nQCDSF Collaboration [41] using a nonperturbative,\nOðaÞ-improved clover fermion action with unimproved\ncurrent operators [42]. All ensembles have 2 þ 1 quark\nflavors at the SU(3) flavor symmetric point, and have\nan unphysical pion mass—approximately 3 times the\nphysical pion mass. In expectation of the presence of\nlarge discretization artifacts, we utilize three ensembles\nwith\nrelatively\nfine\nvalues\nof\nthe\nlattice\nspacing:\na ¼ 0.074; 0.068; 0.058 fm. See Table I for more details.\nFIG. 2.\nLatt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "After removing all terms present in the continuum, we are finally left with a “correction term,” ΔS1, which quantifies—to leading order —the discretization artifact present in our lattice calculation of the subtraction function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV. DISCRETIZATION ARTIFACTS",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-iv-discretization-artifacts.md",
+      "narrative": null,
+      "content": "As with all lattice calculations, it is necessary to take into\naccount, and correct for, discretization artifacts present in\nthe results. The subtraction function, more so than other\nquantities, suffers from such artifacts to a large degree. This\nis analogous to short-distance artifacts studied in the case of\nthe hadronic vacuum polarization [47,48].\nTABLE I.\nLattice parameters and other relevant quantities of the gauge ensembles used in this work [41], including mp [43], ZV [44],\ngS [45], and hxi [46].\nN3\nL × NT\na½fm\u0002\nβ\nκl; κs\namp\nam0\nmπ½MeV\u0002\nmπL\nZV\ngu\nS\ngd\nS\nhxiu\nhxid\n323 × 64\n0.074\n5.50\n0.1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "(18) then reduces to SLðffÞ 1 ðQ2Þ ¼ −ΔSðffÞ 1 ; ð19Þ where SLðffÞ 1 ðQ2Þ is the free fermion lattice calculation of the subtraction function, which can be determined from Feynman-Hellmann using a single perturbed propagator as in Eq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A. Free fermion",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-a-free-fermion.md",
+      "narrative": null,
+      "content": "To investigate the effectiveness of the LOPE correction\nΔS1, we briefly consider the simple case of the free\nfermion. Applying simple QED, we can derive an analytic\nform of the forward Compton amplitude Tμν which, under\nthe conditions μ ¼ ν ¼ 3 and p3 ¼ q3 ¼ 0, reduces to\nT33 ¼ 2ω2=ð1 −ω2Þ. At the subtraction point, ω ¼ 0, the\namplitude for a free fermion (ff) therefore vanishes. Setting\nSimp\n1\n¼ 0, Eq. (18) then reduces to\nSLðffÞ\n1\nðQ2Þ ¼ −ΔSðffÞ\n1 ;\nð19Þ\nwhere SLðffÞ\n1\nðQ2Þ is the free fermion lattice calculation of\nthe subtraction function, which can be determined from\nFeynman-Hellmann usin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "For the matrix element Z2 Vhpj ¯ψψjpi we determine the nucleon mass and vector renormalization factor for each gauge ensemble separately.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V. PROTON SUBTRACTION FUNCTION",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-v-proton-subtraction-function.md",
+      "narrative": null,
+      "content": "We present the application of the LOPE expressions to\nthe uu and dd subtraction function results obtained in\nSec. III, and conclude by constructing the proton sub-\ntraction function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A. Evaluation of the discretization artifact",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-a-evaluation-of-the-discretization-artifact.md",
+      "narrative": null,
+      "content": "In Sec. IV, we derived a form for the leading discretiza-\ntion artifact to our subtraction function, Eq. (16), which\nfor\nthe\nproton\ntakes\nthe\nform\nΔS1 ¼ CWðq; m0Þ ×\n2ðampÞZ2\nVgbare\nS\n. The Wilson coefficient is determined by\ninserting the dimensionless aq vectors and the bare quark\nmasses into Eq. (17). For our lattices the bare quark masses\nare extremely small: am0 ¼ 0.00674, 0.00545, 0.00574, for\nthe β ¼ 5.5, 5.65, 5.80 ensembles, respectively. This makes\nthe effects of the quark mass on CWðq; m0Þ quite small. For\nthe matrix element Z2\nVhpj ¯ψψjpi we determine the nucleon\nmass and vector ren",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Finally, we determine the improved subtraction function by removing the OðaÞ discretization artifacts calculated in Sec.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B. Improved subtraction function",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-b-improved-subtraction-function.md",
+      "narrative": null,
+      "content": "Finally, we determine the improved subtraction function\nby removing the OðaÞ discretization artifacts calculated in\nSec. IV using Eq. (18). Combining the direct lattice\nsubtraction function, Fig. 3, with the leading discretization\nartifacts, Fig. 6, we present our final results for the up (uu)\nand down (dd) contributions in Fig. 7, and for the proton in\nFig. 8. Included in both plots (dotted curve) is the\ncontinuum OPE calculated from Eq. (7) using gS and\nhxi from Table I. The results presented in Fig. 8 are listed in\nTable III of Appendix B.\nWe immediately observe an improvement in the Fig. 7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI. SUMMARY AND CONCLUSIONS",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-vi-summary-and-conclusions.md",
+      "narrative": null,
+      "content": "By applying the Feynman-Hellmann method to the\nforward Compton amplitude, we have presented a deter-\nmination of the subtraction function from first-principles.\nFurthermore, by performing a LOPE of the forward\nCompton amplitude,\nwe\nsuccessfully\nquantified\nand\nremoved leading order Wilson discretization artifacts,\nthereby placing the raw lattice results in agreement with\nFIG. 6.\nThe two components of the leading lattice artifact to\nour calculation as in Eq. (16). The upper panel shows CWðq; m0Þ\nfor each kinematic point reported in Table II, while the lower\npanel depicts Z2\nVhpj ¯ψψjpi. The tota",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGMENTS",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-012-acknowledgments.md",
+      "narrative": null,
+      "content": "The numerical configuration generation (using the\nBQCD lattice QCD program [53]) and data analysis (using\nthe Chroma software library [54]) was carried out on the\nDiRAC Extreme Scaling Service [Edinburgh Centre for\nParallel Computing (EPCC), Edinburgh, UK], the DiRAC\nData Intensive Service (Cambridge Service for Data-Driven\nDiscovery, CSD3, Cambridge, UK), the Gauss Centre for\nSupercomputing (GCS) (John von Neumann Institute for\nComputing, NIC, Jülich, Germany) and resources provided\nby the NHR Alliance (Berlin and Göttingen, Germany), the\nNational Computer Infrastructure (NCI National Facilit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DATA AVAILABILITY",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-013-data-availability.md",
+      "narrative": null,
+      "content": "The data that support the findings of this article are not\npublicly available upon publication because it is not\ntechnically feasible and/or the cost of preparing, depositing,\nand hosting the data would be prohibitive within the terms\nof this research project. The data are available from the\nauthors upon reasonable request.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "APPENDIX A: DETAILS OF LATTICE OPERATOR PRODUCT EXPANSION",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-014-appendix-a-details-of-lattice-operator-product-e.md",
+      "narrative": null,
+      "content": "OPERATOR PRODUCT EXPANSION\nApplying the fundamental thesis of the operator product\nexpansion (OPE), the time-ordered product of two local\noperators, O1ðzÞ and O2ð0Þ, can be represented by a single\nlocal operator in the limit z →0. Writing this single\noperator in terms of a standard basis of operators, fOng,\nthe OPE can be expressed as\nlim\nz→0T fO1ðzÞO2ð0Þg ¼\nX\nn\nCnðzÞOnð0Þ;\nðA1Þ\nwhere the Wilson coefficients CnðzÞ are c-number func-\ntions. Provided the external momentum of the system is\nsmall compared to the separation scale 1=z, the perturba-\ntive, short-distance physics is entirely encoded w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd111094513/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "APPENDIX B: TABULATED SUBTRACTION FUNCTION RESULTS",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-015-appendix-b-tabulated-subtraction-function-result.md",
+      "narrative": null,
+      "content": "[1] W. N. Cottingham, Ann. Phys. (N.Y.) 25, 424 (1963).\n[2] J. Gasser and H. Leutwyler, Nucl. Phys. B94, 269 (1975).\n[3] A. Walker-Loud, C. E. Carlson, and G. A. Miller, Phys. Rev.\nLett. 108, 232301 (2012).\n[4] A. W. Thomas, X. G. Wang, and R. D. Young, Phys. Rev. C\n91, 015209 (2015).\n[5] F. B. Erben, P. E. Shanahan, A. W. Thomas, and R. D.\nYoung, Phys. Rev. C 90, 065205 (2014).\n[6] O. Tomalak, Eur. Phys. J. Plus 135, 411 (2020).\n[7] R. Horsley, Y. Nakamura, H. Perlt, D. Pleiter, P. E. L.\nRakow, G. Schierholz, A. Schiller, R. Stokes, H. Stüben,\nR. D. Young, and J. M. Zanotti, J. Phys. G 43, 10",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

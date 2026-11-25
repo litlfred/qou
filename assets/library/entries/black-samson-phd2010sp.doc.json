@@ -1,0 +1,1679 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "black-samson-phd2010sp",
+  "title": "black-samson-phd2010sp",
+  "variant": "pdf",
+  "pages": 58,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": "I",
+      "page": 9,
+      "pageLabel": "1",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "ILL Links and Braids",
+      "number": null,
+      "page": 14,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-ill-links-and-braids"
+    },
+    {
+      "level": 1,
+      "title": "2. Representations of the Braid Group and the Iwahori-Hecke Algebra",
+      "number": "II",
+      "page": 17,
+      "pageLabel": "9",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-ii-2-representations-of-the-braid-group-and-the"
+    },
+    {
+      "level": 1,
+      "title": "3. The Temperley-Lieb Algebra",
+      "number": "II",
+      "page": 22,
+      "pageLabel": "14",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-ii-3-the-temperley-lieb-algebra"
+    },
+    {
+      "level": 1,
+      "title": "IIA. Diagram Algebras",
+      "number": null,
+      "page": 24,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-iia-diagram-algebras"
+    },
+    {
+      "level": 1,
+      "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+      "number": "III",
+      "page": 29,
+      "pageLabel": "21",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck"
+    },
+    {
+      "level": 1,
+      "title": "2. Representations of the Iwahori-Hecke Algebra",
+      "number": "III",
+      "page": 30,
+      "pageLabel": "22",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-iii-2-representations-of-the-iwahori-hecke-algeb"
+    },
+    {
+      "level": 1,
+      "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+      "number": null,
+      "page": 32,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-ili3-the-quantum-group-uv-62"
+    },
+    {
+      "level": 1,
+      "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+      "number": null,
+      "page": 36,
+      "pageLabel": "28",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-ilia-the-quantum-supergroup-uv-g111"
+    },
+    {
+      "level": 1,
+      "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+      "number": "IV",
+      "page": 42,
+      "pageLabel": "34",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-iv-a-state-sum-formula-for-the-alexander-polynom"
+    },
+    {
+      "level": 1,
+      "title": "2. Construction of the State-sum",
+      "number": "IV",
+      "page": 45,
+      "pageLabel": "37",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-iv-2-construction-of-the-state-sum"
+    },
+    {
+      "level": 1,
+      "title": "3. An Example",
+      "number": "IV",
+      "page": 48,
+      "pageLabel": "40",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-iv-3-an-example"
+    },
+    {
+      "level": 1,
+      "title": "COMBINATORIAL PROOF",
+      "number": "V",
+      "page": 49,
+      "pageLabel": "41",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-v-combinatorial-proof"
+    },
+    {
+      "level": 1,
+      "title": "V.l. Braid Group Invariance",
+      "number": null,
+      "page": 49,
+      "pageLabel": "41",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-vl-braid-group-invariance"
+    },
+    {
+      "level": 1,
+      "title": "V.2. Markov JVloves",
+      "number": null,
+      "page": 51,
+      "pageLabel": "43",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-v2-markov-jvloves"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "samson black",
+          "heading": false
+        },
+        {
+          "term": "arkady vaintrob",
+          "heading": false
+        },
+        {
+          "term": "jonathan brundan",
+          "heading": false
+        },
+        {
+          "term": "graduate school",
+          "heading": false
+        },
+        {
+          "term": "oregon",
+          "heading": false
+        },
+        {
+          "term": "pitzer college",
+          "heading": false
+        },
+        {
+          "term": "super temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "partial fulfillment",
+          "heading": false
+        }
+      ],
+      "extract": "REPRESENTATIONS OF HECKE ALGEBRAS AND THE ALEXANDER POLYNOMIAL by SAMSON BLACK A DISSERTATION Presented to the Department of Mathematics and the Graduate School of the University of Oregon in partial fulfillment of the requirements for the degree of Doctor of Philosophy June 2010 ii University of Oregon Graduate School Confirmation of Approval and Acceptance of Dissertation prepared by: Samson Black Title:",
+      "extractCut": true,
+      "blocks": [
+        "library/black-samson-phd2010sp/blocks/prose-sec-front-matter",
+        "library/black-samson-phd2010sp/blocks/figure-img-p001-1",
+        "library/black-samson-phd2010sp/blocks/figure-img-p003-1",
+        "library/black-samson-phd2010sp/blocks/figure-img-p004-1",
+        "library/black-samson-phd2010sp/blocks/figure-img-p007-1",
+        "library/black-samson-phd2010sp/blocks/figure-img-p009-1"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": "I",
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 1542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stld",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "alexander invariant",
+          "heading": false
+        },
+        {
+          "term": "homflypt polynomial",
+          "heading": false
+        },
+        {
+          "term": "wedderburn components",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        }
+      ],
+      "extract": "1.1. Historical Background The Alexander polynomial has a history dating back to the early days of algebraic topology. The original definition ([1]) came from analyzing the group of deck transformations on the infinite cyclic cover of the complement of a knot. In the same paper, Alexander reduced the calculation of the invariant to a combinatorial procedure using knot diagrams. Decades later, Conway introduced a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-ill-links-and-braids",
+      "number": null,
+      "title": "ILL Links and Braids",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 929,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "link diagrams",
+          "heading": false
+        },
+        {
+          "term": "geometric braid",
+          "heading": false
+        },
+        {
+          "term": "link types",
+          "heading": false
+        },
+        {
+          "term": "strand passes",
+          "heading": false
+        },
+        {
+          "term": "isotopic links",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "smooth embedding",
+          "heading": false
+        }
+      ],
+      "extract": "Links and Braids II.l.l. Links We recall some standard notions and establish some conventions (see [25, chapter 2] or [10, chapter 1] for details). A link is a smooth embedding SI u· .. U SI ----> S3. Whenever it is convenient and does not cause confusion, we also refer to the image of the embedding as the link. All links are oriented. A link with one component is called a knot. An isotopy of links is a smooth path",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-ii-2-representations-of-the-braid-group-and-the",
+      "number": "II",
+      "title": "2. Representations of the Braid Group and the Iwahori-Hecke Algebra",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 1255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iwahori-hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "homflypt polynomial",
+          "heading": false
+        },
+        {
+          "term": "skein relation",
+          "heading": false
+        },
+        {
+          "term": "markov move",
+          "heading": false
+        },
+        {
+          "term": "satisfying skein",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "v-i",
+          "heading": false
+        }
+      ],
+      "extract": "Representations of the Braid Group and the Iwahori-Hecke Algebra In this section, we introduce the Iwahori-Hecke algebras of type A, and discuss their central importance in knot theory. Initally, we will take the perspective that a link invariant satisfying a skein relation akin to Ll is given, and use it to produce a particular quotient of the braid group algebra that the invariant factors through. Afterwards, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-ii-3-the-temperley-lieb-algebra",
+      "number": "II",
+      "title": "3. The Temperley-Lieb Algebra",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb algebra",
+          "heading": true
+        },
+        {
+          "term": "lid",
+          "heading": false
+        },
+        {
+          "term": "ljj",
+          "heading": false
+        },
+        {
+          "term": "generated",
+          "heading": false
+        },
+        {
+          "term": "ideal",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        }
+      ],
+      "extract": "The Temperley-Lieb Algebra Definition 11.3.1. The Temperley-Lieb algebra T Ld(a) is the unital, associative algebra over C(v) generated by U1 , ... ,Ud-l subject to the relations UiUj = UjUi when Ii - jl > 1, and ul = aUi (IU5) (IU6) (IU7) The quantity aE C(v)X is called the loop value (the name will be explained in 11.4). Let Cd = d~1 (2;) denote the dth Catalan number, which is the solution to the recurrence Co =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-iia-diagram-algebras",
+      "number": null,
+      "title": "IIA. Diagram Algebras",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 29,
+      "labelStart": "16",
+      "labelEnd": "21",
+      "words": 1198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb diagrams",
+          "heading": false
+        },
+        {
+          "term": "arc diagrams",
+          "heading": false
+        },
+        {
+          "term": "vertical strands",
+          "heading": false
+        },
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "braid diagram",
+          "heading": false
+        },
+        {
+          "term": "isotopy classes",
+          "heading": false
+        },
+        {
+          "term": "remaining vertical",
+          "heading": false
+        },
+        {
+          "term": "eis",
+          "heading": false
+        }
+      ],
+      "extract": "II.4.1. Temperley-Lieb ATe Diagrams Definition II.4.10 A (d, d')-arc diagram D is a topological embedding of the disjoint union of (d+d')/2 intervals in the strip JRx [0,1] such that the boundary of the embedded I-manifold consists of the points {(I, 0), ... , (d', On u{ (1, 1), ... , (d, 1n. A (d, d)-diagram is called a Temperley-Lieb diagram on d strands. Let [D] denote the isotopy class of an arc diagram D,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck",
+      "number": "III",
+      "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur-weyl duality",
+          "heading": true
+        },
+        {
+          "term": "mln",
+          "heading": false
+        },
+        {
+          "term": "csd",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebra",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "trd",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "duality theorem",
+          "heading": false
+        }
+      ],
+      "extract": "IlLI. Schur-Weyl Duality We review the classical notion of Schur-Weyl duality between the general linear groups and the symmetric group. Then, we generalize this in two directions, giving a duality theorem between the quantum group associated to the Lie superalgebra g[(mln) and the Iwahori-Hecke algebra rid. II!. 1. 1. Classical Schur- vVeyl Duality Fix the ground field C Let Par(d) denote the set of all integer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-iii-2-representations-of-the-iwahori-hecke-algeb",
+      "number": "III",
+      "title": "2. Representations of the Iwahori-Hecke Algebra",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iwahori-hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "ill",
+          "heading": false
+        },
+        {
+          "term": "standard generators",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "iii",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": true
+        },
+        {
+          "term": "decomposes",
+          "heading": false
+        }
+      ],
+      "extract": "Representations of the Iwahori-Hecke Algebra We summarize some important facts about the Iwahori-Hecke algebra 7-{d and its represen- tations, most of which are modified versions of well know facts about the symmetric group Sd and its representations (see, e.g. [12]). Recall the standard generators HI, ... , H d-l for 7-{d, analogous 23 to the generators S1,.'\" Sd-1 of Sd, where Si is the elementary transposition (i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-ili3-the-quantum-group-uv-62",
+      "number": null,
+      "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "24",
+      "labelEnd": "28",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "trd",
+          "heading": false
+        },
+        {
+          "term": "i-l",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "u-module",
+          "heading": false
+        },
+        {
+          "term": "ill",
+          "heading": false
+        },
+        {
+          "term": "d-i",
+          "heading": false
+        },
+        {
+          "term": "iii",
+          "heading": false
+        }
+      ],
+      "extract": "III. 3.1. Definitions and Conventions Let U be the quantum group Uv (s((2)) (see [21] or [20]). This is the unital, associative CC(v)-algehra generated by E, F, K, subject to the relations KF = v- 2FK, K -K- 1 EF-FE= 1 . v -v- The representation theory of U is analogous to that of s((2). Specifically, certain finite- dimensional simple modules for U are highest weight modules (the ones so-called type 1), in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-ilia-the-quantum-supergroup-uv-g111",
+      "number": null,
+      "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": "28",
+      "labelEnd": "34",
+      "words": 1459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum supergroup",
+          "heading": true
+        },
+        {
+          "term": "hook shape",
+          "heading": false
+        },
+        {
+          "term": "stld",
+          "heading": false
+        },
+        {
+          "term": "hook partition",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebra",
+          "heading": false
+        },
+        {
+          "term": "theorem iii",
+          "heading": false
+        },
+        {
+          "term": "super temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "wedderburn component",
+          "heading": false
+        }
+      ],
+      "extract": "We introduce the general linear Lie 8uperalgebra 9 ~ g[(111), as well as its universal enveloping algebra U(g) and its quantization Uv(g). (See [40]) and [4]). IIJ.4,l. Lie Superalgebra g[(111) 'We work over the base ring ceo A vector superspace of superdimension (min) is a Z2- graded vector space W = Wo E8 WI whose even part Wo is of dimension m and whose odd part il'l is of dimension n, For homogeneous elements w",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-iv-a-state-sum-formula-for-the-alexander-polynom",
+      "number": "IV",
+      "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "semi-normal representations",
+          "heading": false
+        },
+        {
+          "term": "sign sequences",
+          "heading": false
+        },
+        {
+          "term": "residue sequence",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        },
+        {
+          "term": "entries equal",
+          "heading": false
+        },
+        {
+          "term": "box labeled",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        }
+      ],
+      "extract": "IV.I. Semi-normal Representations of the Heeke Algebra Much of the following is standard (see e.g. [11] or [25, chapters 4 and 5]). We collect some of the definitions here and fix some notation. In what follows, [r] E Z[v, V-I] denotes the quantum integer (IV.1) for any T E Z. IV.i.i. Serninormal RepTesentations This exposition follows [35, section 3], although the results were originally worked out in [19]. For a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-iv-2-construction-of-the-state-sum",
+      "number": "IV",
+      "title": "2. Construction of the State-sum",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "permutation diagram",
+          "heading": false
+        },
+        {
+          "term": "strand goes",
+          "heading": false
+        },
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "goes straight",
+          "heading": false
+        },
+        {
+          "term": "state-sum",
+          "heading": true
+        },
+        {
+          "term": "d-i",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "straight through",
+          "heading": false
+        }
+      ],
+      "extract": "Construction of the State-sum Begin with a word a E I;d in the braid generators 0\"1, ... ,0\"d-I and their inverses, which we picture as a diagram drawn up the page as the word is read from right to left. O\"r = I ... I X I .. · I r r+1 0\",-:-1 = I ... I X I .. · I r r+1 Construct permutation diagrams from the braid diagram by replacing each crossing by one of two resolutions: x x I I I I or or x x Definition IV.2.1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-iv-3-an-example",
+      "number": "IV",
+      "title": "3. An Example",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "ffi",
+          "heading": false
+        },
+        {
+          "term": "ill",
+          "heading": false
+        }
+      ],
+      "extract": "An Example Let's use the braid presentation a = (J2 1(Jl(J2 1(J1 for the figure-eight knot, pictured below with its six possible states. x M(a, x, E) +++ -1 -1 1 v . v· v . v ++- _v 2 _v2 v 6 l2f ,v'l2f'v [2]2 l~ +-+ v- 2 ( -1) v- 2 ( -1) v- 6 ~ l2T' -v . l2T' -v W +-- (-v)· (-v-I). (-v)· (-V-I) 1 ~ ++- ffi .(_V-I) .ill .v ::Bl [2]2 +-+ ill· v· ffi· (-v-I) ::Bl [2]2 Now, we calculate the sum, minding the signs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-v-combinatorial-proof",
+      "number": "V",
+      "title": "COMBINATORIAL PROOF",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this chapter we prove Theorem IV.2.2 directly from formulas (IV.lO) and (IV.ll). Since the function A is defined on the set of words in the braid generators, we must show that A is well- defined on the braid group.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-vl-braid-group-invariance",
+      "number": null,
+      "title": "V.l. Braid Group Invariance",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 672,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "permutation diagram",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "tes",
+          "heading": false
+        },
+        {
+          "term": "signs",
+          "heading": false
+        },
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "strands",
+          "heading": false
+        },
+        {
+          "term": "resolutions",
+          "heading": false
+        },
+        {
+          "term": "form states",
+          "heading": false
+        }
+      ],
+      "extract": "Braid Group Invariance For a permutation diagram x, let 7r(x) E Sd denote the underlying permutation. Let pT,(a) = {x permutation diagram satisfying (PI) /7r(x) = 7r}. Notice that P1(a) = P(a), the admissible diagrams. 'vVe have immediately: P(afJ) IT {xy I x E P,,(a) and y E P,,-l (fJ)} \"ESd IT P,,(a) x P,,-1(fJ) \"ESd (V.l) \\iVith signs attached to the strands in the diagrams, we have the analogous definition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-v2-markov-jvloves",
+      "number": null,
+      "title": "V.2. Markov JVloves",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 58,
+      "labelStart": "43",
+      "labelEnd": "50",
+      "words": 1680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible permutation",
+          "heading": false
+        },
+        {
+          "term": "alexander-conway polynomial",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "conway normalization",
+          "heading": false
+        },
+        {
+          "term": "strands rand",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "princeton university",
+          "heading": false
+        }
+      ],
+      "extract": "Now that we have established that A !3 --'> q v) is well-defined, we check that A is invariant under the Markov moves. Lemma V.2.1. The state-sum fOTm'ula in (IV.ii) descends to a well-defined link invaTiant: A(a) = A(,6) if a and,6 aTe Telated by the MaTkov moves. PTOOf. In order to show invariance under the cyclic move (II.2), note that there is a bijection 44 \\ LD a \\ a=l 5 abe a@e abe abd mt = (1 2) ‘ | aaec a@e",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "2 As a (GL(n), Sd) -bimodule, tensor space decomposes into simples",
+          "3 The map trd factors through the Temperley Lieb algebra T Ld' via 'l/J which was defined in"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 11.2",
+      "figure 11.3",
+      "figure 11.4",
+      "figure 11.6"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid diagram",
+      "heading": true
+    },
+    {
+      "term": "algebra stld",
+      "heading": false
+    },
+    {
+      "term": "temperley-lieb diagrams",
+      "heading": false
+    },
+    {
+      "term": "v-i",
+      "heading": false
+    },
+    {
+      "term": "link diagram",
+      "heading": false
+    },
+    {
+      "term": "young diagram",
+      "heading": false
+    },
+    {
+      "term": "braid group",
+      "heading": true
+    },
+    {
+      "term": "permutation diagram",
+      "heading": false
+    },
+    {
+      "term": "iwahori-hecke algebra",
+      "heading": true
+    },
+    {
+      "term": "braid generators",
+      "heading": false
+    },
+    {
+      "term": "alexander polynomial",
+      "heading": true
+    },
+    {
+      "term": "chapter iii",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "iii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "iv",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "v",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "vii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "viii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "The Conway skein relation:",
+      "page": 9,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "A (1, I)-tangle and its associated endomorphism of W",
+      "page": 11,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11.1",
+      "title": "A diagram of the braid 0 = 0\"2 10\"i and its closure o",
+      "page": 16,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11.5",
+      "title": "The correspondence between (d, d)-diagrams and (0,2d)-diagrams",
+      "page": 25,
+      "pageLabel": "17",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11.7",
+      "title": "An example of the closure operation on arc diagrams",
+      "page": 26,
+      "pageLabel": "18",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-1",
+      "file": "images/img-p020-1.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p040-1",
+      "file": "images/img-p040-1.png",
+      "page": 40,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p041-1",
+      "file": "images/img-p041-1.png",
+      "page": 41,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p044-1",
+      "file": "images/img-p044-1.png",
+      "page": 44,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-1",
+      "file": "images/img-p045-1.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-1",
+      "file": "images/img-p046-1.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-1",
+      "file": "images/img-p047-1.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p048-1",
+      "file": "images/img-p048-1.png",
+      "page": 48,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p049-1",
+      "file": "images/img-p049-1.png",
+      "page": 49,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p051-1",
+      "file": "images/img-p051-1.png",
+      "page": 51,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 26
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/black-samson-phd2010sp"
+  }
+}

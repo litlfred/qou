@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/kitano-twisted-alexander.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/kitano-twisted-alexander",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "bib-verification attestation: reference kitano-twisted-alexander",
+      "description": "The bib-verification judgements recorded for reference kitano-twisted-alexander, each pinned to the hash it attested.",
+      "sourceKind": "bib-verification",
+      "sourcePath": "test/attestations/bib-verification/reference/kitano-twisted-alexander.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-photon-response-determines-q",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:photon-response-determines-q",
+  "kind": "proposition",
+  "title": "The one-photon Markov-trace response determines $q$ under convention D",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-photon"
+  ],
+  "cites": [
+    "references/kassel2008"
+  ],
+  "tags": [
+    "photon",
+    "markov-trace",
+    "convention-d",
+    "spectral-rigidity",
+    "isospectral"
+  ],
+  "leanRef": "qou:QOU.StandardModel.PhotonJet.audible_q",
+  "text": "photon-response-determines-q.md",
+  "provenance": "authored"
+}

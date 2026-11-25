@@ -1,0 +1,488 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1205.4617v1",
+  "title": "Quaternion Octonion Reformulation of Grand Uniﬁed Theories",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "SU(5) Gauge Symmetry",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-su5-gauge-symmetry"
+    },
+    {
+      "level": 1,
+      "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-quaternion-octonion-reformulation-of-su5-gauge"
+    },
+    {
+      "level": 1,
+      "title": "Discussion and Conclusion",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-discussion-and-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theories",
+          "heading": false
+        },
+        {
+          "term": "negi",
+          "heading": false
+        },
+        {
+          "term": "bisht",
+          "heading": false
+        },
+        {
+          "term": "yahoo",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1205.4617v1 [physics.gen-ph] 29 Feb 2012 Quaternion Octonion Reformulation of Grand Uniﬁed Theories Pushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1.2) June 15, 2021 1.Department of Physics, Kumaun University, S. S. J. Campus, Almora - 263601 (U.K.), India 2. Institute of Theoretical Physics,Chinese Academy of Sciences, Zhong Guan Cun East Street 55, P. O. Box 2735, Beijing 100190, P. R. China.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1205.4617v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mill textquoteright",
+          "heading": false
+        },
+        {
+          "term": "chromo dynamics",
+          "heading": false
+        },
+        {
+          "term": "octonion units",
+          "heading": false
+        },
+        {
+          "term": "seven octonion",
+          "heading": false
+        },
+        {
+          "term": "cite key",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "quantum chromo",
+          "heading": false
+        },
+        {
+          "term": "quaternion units",
+          "heading": false
+        }
+      ],
+      "extract": "In spite of all the successes of the Standard Model (SM) of elementary particles, it leaves many unresolved questions to be considered as the complete theory of matter. The next attempt is described as a grand unified theory (GUT) with more symmetry and reduces to the Standard Model at lower energies. It is thus considered as an attempt to describe the physics at higher energies where the three gauge interactions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-su5-gauge-symmetry",
+      "number": "2",
+      "title": "SU(5) Gauge Symmetry",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge symmetry",
+          "heading": true
+        },
+        {
+          "term": "align widehat",
+          "heading": false
+        },
+        {
+          "term": "delta widehat",
+          "heading": false
+        },
+        {
+          "term": "delta hat",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "hermitian matrices",
+          "heading": false
+        },
+        {
+          "term": "begin spacing",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{spacing}{1.5} Grand Unified Theories \\cite{key-19} are based on the mathematical symmetry group $SU(5)$. The gauge group of the Glashow - Salam - Weinberg theory $SU(2)\\times U(1)$ and the $SU(3)$ group of the strong interaction are the constituents of a larger symmetry. The simplest group that incorporates the product $SU(3)$$_{C}$$\\times$$SU(2)_{L}$$\\times$$U(1)$ as a subgroup is $SU(5)$. An arbitrary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quaternion-octonion-reformulation-of-su5-gauge",
+      "number": "3",
+      "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "alpha sqrt",
+          "heading": false
+        },
+        {
+          "term": "alpha overline",
+          "heading": false
+        },
+        {
+          "term": "align sum",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{spacing}{1.5} Let us break up a $5\\times5$ square matrix $SU(5)$ into four blocks, consisting of two smaller squares and two rectangles. The upper left - hand corner block denotes a $3\\times3$ matrix while the lower right-hand corner block describes a $2\\times2$ matrix. Off-diagonal upper right - hand and lower left - hand corners consist respectively the $3\\times2$ and $2\\times3$ rectangular matrices. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-discussion-and-conclusion",
+      "number": "4",
+      "title": "Discussion and Conclusion",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic monopole",
+          "heading": false
+        },
+        {
+          "term": "chromo magnetic",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "dyons",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "end spacing",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{spacing}{1.5} We have already shown earlier \\cite{key-8} that the quaternion and octonion gauge theories contain the magnetic monopole. As such, the reformulation of grand unified theories (GUTs) in terms of the gauge group $SU(5)$ and its splitting to $SU(3)_{C}\\times SU(2)\\times U(1)$ may lead to the simultaneous existence of two different gauge theories associated with electric and magnetic charges ( i.e.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quaternion octonion",
+      "heading": false
+    },
+    {
+      "term": "octonion gauge",
+      "heading": false
+    },
+    {
+      "term": "gauge bosons",
+      "heading": false
+    },
+    {
+      "term": "gauge theories",
+      "heading": false
+    },
+    {
+      "term": "gauge symmetry",
+      "heading": true
+    },
+    {
+      "term": "quaternion units",
+      "heading": false
+    },
+    {
+      "term": "octonion reformulation",
+      "heading": false
+    },
+    {
+      "term": "gauge interactions",
+      "heading": false
+    },
+    {
+      "term": "gauge group",
+      "heading": false
+    },
+    {
+      "term": "quaternion basis",
+      "heading": false
+    },
+    {
+      "term": "seven octonion",
+      "heading": false
+    },
+    {
+      "term": "cite key",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1205.4617v1"
+  }
+}

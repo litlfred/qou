@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:yekutieli-lifting-su2",
+  "kind": "example",
+  "title": "Categorical lifting for $\\mathrm{SU}(2)$: the band $\\mathcal{O}^{\\times}$ gives no obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+    "papers/quantum-observable-universe/blocks/ex-quantum-characteristic-classes-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+  "tags": [
+    "su2",
+    "yekutieli",
+    "lifting",
+    "brane-tower"
+  ],
+  "text": "yekutieli-lifting-su2.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1010.5321v3/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1010.5321v3/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1010.5321v3/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1010.5321v3/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1010.5321v3</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  3,
+  4,
+  7,
+  10,
+  11,
+  12
+]</pre></dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Rn,E&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Rn,En,H&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ofE&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ofEnorH&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ofH&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(ξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ξ1, ξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(ξ1, ξ2, · · · , ξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;InR&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(x&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(x1, x&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(x1, x2, · · · , x&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;kξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;kξn−1, ξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dx&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dx1 · · · dx&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;kdξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;kdξ1 · · · dξ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;thedomainD= [0, a&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thedomainD= [0, a1] × · · · × [0, a&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot; a1] × · · · × [0, an−1]beasectorofparallelsegmentsoflengtha&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k· · · cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;k· · · cosh x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;sinhx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;k sinhx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;u&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xn −k ln cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;xn −k ln coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k−· · · −k ln cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;k−· · · −k ln cosh x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dx1 · · · dx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Fromthehyperbolicorthogonalcoordinatesx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Fromthehyperbolicorthogonalcoordinatesx1, x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Fromthehyperbolicorthogonalcoordinatesx1, x2, · · · , x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;betweentheithcoordinateaxisandthesegmentOP&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;rdinateaxisandthesegmentOPi+1fori=n −1, n −2, · · · 1.(HereP&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;heorthogonalprojectionofPintothecoordinatesubspaceoftheaxesx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thogonalprojectionofPintothecoordinatesubspaceoftheaxesx1, x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;alprojectionofPintothecoordinatesubspaceoftheaxesx1, xn−2, x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinhx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;= sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;= sinhr&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;kcos φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;· · · cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;· · · coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinhx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;= sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;= sinhr&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ksin φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ksin φn−1 · · · sin φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ksin φn−1 · · · sin φn−i+1 cos φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;· · · cosh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;· · · coshx&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;ksinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ksinh x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;k= sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;k= sinh r&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ksin φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ksin φn−1 · · · sin φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ksin φn−1 · · · sin φ2 cos φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinhr&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sin&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinn−2φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinn−2φn−1 · · · sin φ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;sinn−2φn−1 · · · sin φ2dφ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinn−2φn−1 · · · sin φ2dφ1 · · · dφ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinn−2φn−1 · · · sin φ2dφ1 · · · dφn−1dr&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;v(D) = k&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;k th&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;rn= k tanh−1R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u0000R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2 ln 1 +R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinhr&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;1 −R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u0000R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sin&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ2dθ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ2dθ1 · · · dθ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ2dθ1 · · · dθn−1&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012n+1sinn−2 θn−1 · · · sin θ2dθ1 · · · dθn−1dR&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u0000 R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;TransformingitintotheusualCartesiancoordinates(X&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;TransformingitintotheusualCartesiancoordinates(X1, · · · , X&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dX&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dX1 · · · dX&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dX1 · · · dXn−1dX&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh2z −cos&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;cosh2z −cos2α&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;cosh2z −cos2αd&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cos&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cos2φ −tanh&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cos&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(cosh z)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(cosh z)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;rectangulartriangle△OP&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;rectangulartriangle△OP2P&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;rectangulartriangle△OP2P1thetangentoftheangleP&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;rectangulartriangle△OP2P1thetangentoftheangleP2OP&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;tan P2OP1∠=tanh&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;sinh a=tanh&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;sinh a=tanh y&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;tanh ymax=tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tanh2b cosh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tanh2b cosh2λ + sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tanh2b cosh2λ + sinh2a sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b2+ a&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b2+ a2λ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2b&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh asinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;\u00012&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;\u00012d&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;\u0000 tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh asinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(tanh b)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;\u0010\u0000 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;\u0000 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u00012 t&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tthispointwecanusethefollowingresultonantiderivative:ify= ax&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;y&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;yd&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0015tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;\u0015tanh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2 a)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2 a)t −sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2 a)t −sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2 a)t −sinh2 a + tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sinh2 a)t −sinh2 a + tanh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 sin2β sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a + tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh cwegetthat−sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sinh cwegetthat−sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh cwegetthat−sinh2 a+tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;sinh cwegetthat−sinh2 a+tanh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Usingnowtheequalitiessin β=sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sinh c,sin α=sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2 sinh2a) tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh2b=2 sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh2b=2 sin2 β sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh2b=2 sin2 β sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh2b=2 sin2 β sinh2 a=2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;sinh2a+tanh2b=2 sin2 β sinh2 a=2sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2csinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2 aand&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2 aand1=sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2 aand1=sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2 aand1=sinh2 b sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sinh2csinh2 aand1=sinh2 b sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;+sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+sinh2 b+sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;+sinh2 b+sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 −2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;sin−1(2 −2sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin−1(2 −2sinh2 b + sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sin−1(2 −2sinh2 b + sinh2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ sin2β −cos&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;intersectionhavedimensionk −1.AssumethatthepointsP∈H&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kandP ′′∈H&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kandP ′P ′′⊥H&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;wealsohavethatPP′′⊥H&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kandQ′Q′′⊥H&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Theseareφ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Theseareφ0=a&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Theseareφ0=an,φ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Theseareφ0=an,φ1:x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Theseareφ0=an,φ1:xn7→x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(x1, 0, . . . , 0, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(x1, 0, . . . , 0, xn)Tof the edgeconv(OA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(x1, 0, . . . , 0, xn)Tof the edgeconv(OA2), φ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(x1, 0, . . . , 0, xn)Tof the edgeconv(OA2), φ2: (x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(x1, 0, . . . , 0, xn)Tof the edgeconv(OA2), φ2: (xn, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x1, 0, . . . , 0, xn)Tof the edgeconv(OA2), φ2: (xn, x1) 7→x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; xn)Tof the edgeconv(OA2), φ2: (xn, x1) 7→x2on the points (x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Tof the edgeconv(OA2), φ2: (xn, x1) 7→x2on the points (x1, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nv(OA2), φ2: (xn, x1) 7→x2on the points (x1, x2, 0 . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thetriangleconv(OA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;thetriangleconv(OA2A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thetriangleconv(OA2A3).Ingeneralφ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;thetriangleconv(OA2A3).Ingeneralφk:(x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thetriangleconv(OA2A3).Ingeneralφk:(x1, . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;leconv(OA2A3).Ingeneralφk:(x1, . . . , xk−1, 0, . . . , 0, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;v(OA2A3).Ingeneralφk:(x1, . . . , xk−1, 0, . . . , 0, xn)7→x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ingpoint(x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ingpoint(x1, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ingpoint(x1, x2 . . . x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ingpoint(x1, x2 . . . xk−1, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ingpoint(x1, x2 . . . xk−1, xk, 0, . . . , 0, x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x2 . . . xk−1, xk, 0, . . . , 0, xn)Tisonthek −1-faceconv(OA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; . . . xk−1, xk, 0, . . . , 0, xn)Tisonthek −1-faceconv(OA2A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;−1, xk, 0, . . . , 0, xn)Tisonthek −1-faceconv(OA2A3 · · · A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;=tanh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;=tanh a&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u0012tanh a&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;tan−1\u0010 tanh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tan−1\u0010 tanh a&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh an−2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinh an−2sinh x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;sinh ansinh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sinh ansinh x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(cosh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(coshn−1x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(cosh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(coshn−2x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(coshn−2xn−2) · · · (cosh x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(coshn−2xn−2) · · · (cosh x1)dx&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(coshn−2xn−2) · · · (cosh x1)dxn−1 · · · dx&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(coshn−1xn−1)(coshn−2xn−2) · · · (cosh x1)dxn−1 · · · dx1dx&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;orem3(R.Kellerhaus[5])LetRbeaLambertcubewithessentialanglesw&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;R.Kellerhaus[5])LetRbeaLambertcubewithessentialangleswk,0 ≤w&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2, k= 0,&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2, k= 0, 1,&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(Λ(w&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(Λ(wi + θ) −Λ(w&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;cosh2V&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh2V1 −sin&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;cosh2V1 −sin2w&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh2V1 −sin2w0 sin&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh2V1 −sin2w0 sin2w&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;sin&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;z1= tan−1&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z1= tan−1k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;−tan−1&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−tan−1k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;,z2= tan−1&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;,z2= tan−1k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;+ tan−1&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ tan−1k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1+ k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2−k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2ℑ(U(z&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2ℑ(U(z1, T) −U(z&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Li&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

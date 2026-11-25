@@ -1,0 +1,3438 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0203060v11",
+  "title": "arxiv-math-0203060v11",
+  "variant": "pdf",
+  "pages": 50,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-results-on-squared-norms-global-dimensions-wea"
+    },
+    {
+      "level": 2,
+      "title": "Squared norms and global dimensions",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-squared-norms-and-global-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "Results on pivotal, spherical, and modular categories",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-results-on-pivotal-spherical-and-modular-cate"
+    },
+    {
+      "level": 2,
+      "title": "Module categories, the dual category, the Drinfeld center",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-module-categories-the-dual-category-the-drinf"
+    },
+    {
+      "level": 2,
+      "title": "Multi-fusion categories",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-multi-fusion-categories"
+    },
+    {
+      "level": 2,
+      "title": "Results on weak Hopf algebras",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-results-on-weak-hopf-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing of the Yetter cohomology",
+      "number": "2.6",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-26-vanishing-of-the-yetter-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Ocneanu rigidity",
+      "number": "2.7",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-27-ocneanu-rigidity"
+    },
+    {
+      "level": 1,
+      "title": "Fusion categories over C",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-fusion-categories-over-c"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.3",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-proof-of-theorem-23"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 2.9",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-proof-of-proposition-29"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 2.12 and properties of modular categories",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-proof-of-proposition-212-and-properties-of-mo"
+    },
+    {
+      "level": 1,
+      "title": "Weak Hopf algebras and their integrals",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-weak-hopf-algebras-and-their-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Definition of a weak Hopf algebra",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-41-definition-of-a-weak-hopf-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Integrals",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-42-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.6",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-43-proof-of-theorem-26"
+    },
+    {
+      "level": 2,
+      "title": "Canonical integrals",
+      "number": "4.4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-44-canonical-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Sufficient conditions for semisimplicity",
+      "number": "4.5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-45-sufficient-conditions-for-semisimplicity"
+    },
+    {
+      "level": 1,
+      "title": "Tr(S2) and the global dimension",
+      "number": "5",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-trs2-and-the-global-dimension"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.24",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-proof-of-theorem-224"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.15",
+      "number": "5.2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-proof-of-theorem-215"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.16",
+      "number": "5.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-53-proof-of-theorem-216"
+    },
+    {
+      "level": 2,
+      "title": "A refinement of Theorem 2.24",
+      "number": "5.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-54-a-refinement-of-theorem-224"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 2.17",
+      "number": "5.5",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-55-proof-of-proposition-217"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.18",
+      "number": "5.6",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-56-proof-of-theorem-218"
+    },
+    {
+      "level": 2,
+      "title": "Surjective and injective functors",
+      "number": "5.7",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-57-surjective-and-injective-functors"
+    },
+    {
+      "level": 2,
+      "title": "The induction functor and the class equation for fusion categories",
+      "number": "5.8",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-58-the-induction-functor-and-the-class-equation"
+    },
+    {
+      "level": 2,
+      "title": "Graded categories",
+      "number": "5.9",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-59-graded-categories"
+    },
+    {
+      "level": 2,
+      "title": "Deformations of weak Hopf algebras",
+      "number": "5.10",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-510-deformations-of-weak-hopf-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Sphericity of pivotalization",
+      "number": "5.11",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-511-sphericity-of-pivotalization"
+    },
+    {
+      "level": 1,
+      "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+      "number": "6",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-6-the-co-hochschild-complex-of-a-cosemisimple-un"
+    },
+    {
+      "level": 2,
+      "title": "The definition",
+      "number": "6.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-61-the-definition"
+    },
+    {
+      "level": 2,
+      "title": "The vanishing theorem for cohomology",
+      "number": "6.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-62-the-vanishing-theorem-for-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
+      "number": "7",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-7-the-yetter-cohomology-of-a-tensor-category-and"
+    },
+    {
+      "level": 2,
+      "title": "The definition",
+      "number": "7.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-71-the-definition"
+    },
+    {
+      "level": 2,
+      "title": "Comparison of two complexes",
+      "number": "7.2",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-72-comparison-of-two-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.27 and Theorem 2.30",
+      "number": "7.3",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-73-proof-of-theorem-227-and-theorem-230"
+    },
+    {
+      "level": 1,
+      "title": "Frobenius-Perron dimensions",
+      "number": "8",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-8-frobenius-perron-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the Frobenius-Perron dimensions",
+      "number": "8.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-81-definition-of-the-frobenius-perron-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "Frobenius-Perron dimension of a fusion category",
+      "number": "8.2",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-82-frobenius-perron-dimension-of-a-fusion-catego"
+    },
+    {
+      "level": 2,
+      "title": "Comparison of the global and Frobenius-Perron dimensions",
+      "number": "8.3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-83-comparison-of-the-global-and-frobenius-perron"
+    },
+    {
+      "level": 2,
+      "title": "Pseudo-unitary categories",
+      "number": "8.4",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-84-pseudo-unitary-categories"
+    },
+    {
+      "level": 2,
+      "title": "Fusion categories with integer Frobenius-Perron dimension",
+      "number": "8.5",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-85-fusion-categories-with-integer-frobenius-perr"
+    },
+    {
+      "level": 2,
+      "title": "Fusion categories of Frobenius-Perron dimension pn",
+      "number": "8.6",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-86-fusion-categories-of-frobenius-perron-dimensi"
+    },
+    {
+      "level": 2,
+      "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+      "number": "8.7",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-87-categories-with-integer-frobenius-perron-dime"
+    },
+    {
+      "level": 2,
+      "title": "Group-theoretical fusion categories",
+      "number": "8.8",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-88-group-theoretical-fusion-categories"
+    },
+    {
+      "level": 2,
+      "title": "A question",
+      "number": "8.9",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-89-a-question"
+    },
+    {
+      "level": 2,
+      "title": "Cyclotomicity of dimension functions",
+      "number": "8.10",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-810-cyclotomicity-of-dimension-functions"
+    },
+    {
+      "level": 2,
+      "title": "Module categories over products",
+      "number": "8.11",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-811-module-categories-over-products"
+    },
+    {
+      "level": 1,
+      "title": "Fusion categories in positive characteristic",
+      "number": "9",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-9-fusion-categories-in-positive-characteristic"
+    },
+    {
+      "level": 2,
+      "title": "List of modifications",
+      "number": "9.1",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-91-list-of-modifications"
+    },
+    {
+      "level": 2,
+      "title": "Lifting theorems",
+      "number": "9.2",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-92-lifting-theorems"
+    },
+    {
+      "level": 2,
+      "title": "Faithfulness of lifting",
+      "number": "9.3",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-93-faithfulness-of-lifting"
+    },
+    {
+      "level": 2,
+      "title": "Some applications of lifting",
+      "number": "9.4",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-94-some-applications-of-lifting"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: Galois properties of S-matrix",
+      "number": "10",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-10-appendix-galois-properties-of-s-matrix"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 48,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "undeformable",
+          "heading": false
+        },
+        {
+          "term": "functors",
+          "heading": false
+        },
+        {
+          "term": "viktor",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0203060v11 [math.QA] 28 Apr 2017 ON FUSION CATEGORIES PAVEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK Abstract. Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in characteristic zero. We show that the global dimen- sion of a fusion category is always positive, and that the S-matrix of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0203060v11/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimension",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "integer frobenius-perron",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion categories",
+          "heading": false
+        },
+        {
+          "term": "semisimple weak",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this paper (except for Section 9), $k$ denotes an algebraically closed field of characteristic zero. By a *fusion category* ${\\mathcal C}$ over $k$ we mean a $k$-linear semisimple rigid tensor (=monoidal) category with finitely many simple objects and finite dimensional spaces of morphisms, such that the endomorphism algebra of the neutral object is $k$ (see [@BaKi]). Fusion categories arise in several",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-results-on-squared-norms-global-dimensions-wea",
+      "number": "2",
+      "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-fusion categories",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "simple objects",
+          "heading": false
+        },
+        {
+          "term": "dimensional modules",
+          "heading": false
+        },
+        {
+          "term": "bold",
+          "heading": false
+        }
+      ],
+      "extract": "Let $k$ be an algebraically closed field. By a *multi-fusion* category over $k$ we mean a rigid semisimple $k$-linear tensor category ${\\mathcal C}$ with finitely many simple objects and finite dimensional spaces of morphisms. If the unit object $\\bold 1$ of ${\\mathcal C}$ is simple, then the category ${\\mathcal C}$ is said to be a *fusion* category. Otherwise (if $\\bold 1$ is not simple), it is easy to see that we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-squared-norms-and-global-dimensions",
+      "number": "2.1",
+      "title": "Squared norms and global dimensions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourstars",
+          "heading": false
+        },
+        {
+          "term": "posi",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "doubledual",
+          "heading": false
+        },
+        {
+          "term": "neutral object",
+          "heading": false
+        },
+        {
+          "term": "squared",
+          "heading": true
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        }
+      ],
+      "extract": "Let us introduce the notion of the global dimension of a fusion category. First of all, we have the following known result (see e.g., [@O]). ::: proposition []{#doubledual label=\"doubledual\"} In a fusion category, any simple object $V$ is isomorphic to its double dual $V^{**}$. ::: To prove this, it suffices to note that for any simple object $V$, the right dual $V^*$ is the unique simple object $X$ for which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
+      "number": "2.2",
+      "title": "Results on pivotal, spherical, and modular categories",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivo",
+          "heading": false
+        },
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "modu",
+          "heading": false
+        },
+        {
+          "term": "spheri",
+          "heading": false
+        },
+        {
+          "term": "pivotal fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "spherical",
+          "heading": true
+        },
+        {
+          "term": "modular category",
+          "heading": false
+        }
+      ],
+      "extract": "Now let ${\\mathcal C}$ be a pivotal fusion category. In such a category, one can define the dimension of an object $V$ by $\\dim(V)=\\text{Tr}_V(i)$, and we have the following result which justifies the notation $|V|^2$. ::: proposition []{#pivo label=\"pivo\"} In a pivotal fusion category one has $|V|^2=\\dim(V)\\dim(V^*)$ for any simple object $V$. Moreover, if $k={\\mathbb{C}}$ then $\\dim(V^*)=\\overline{\\dim(V)}$, so",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-module-categories-the-dual-category-the-drinf",
+      "number": "2.3",
+      "title": "Module categories, the dual category, the Drinfeld center",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "module category",
+          "heading": true
+        },
+        {
+          "term": "dual category",
+          "heading": true
+        },
+        {
+          "term": "module categories",
+          "heading": true
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "drinfeld center",
+          "heading": true
+        },
+        {
+          "term": "fun mathcal",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "dualcat",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\mathcal M}$ be an indecomposable left module category over a rigid tensor category ${\\mathcal C}$ [@O] (all module categories we consider are assumed semisimple). This means, ${\\mathcal M}$ is a module category which cannot be split in a direct sum of two nonzero module subcategories. In this case one can define the dual category ${\\mathcal C}^*_{{\\mathcal M}}$ to be the category of module functors from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-multi-fusion-categories",
+      "number": "2.4",
+      "title": "Multi-fusion categories",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-fusion",
+          "heading": true
+        },
+        {
+          "term": "multi-fusion category",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion case",
+          "heading": false
+        },
+        {
+          "term": "samedim",
+          "heading": false
+        },
+        {
+          "term": "multi-fus",
+          "heading": false
+        },
+        {
+          "term": "categories",
+          "heading": true
+        },
+        {
+          "term": "mathbf otimes",
+          "heading": false
+        }
+      ],
+      "extract": "We say that a multi-fusion category ${\\mathcal C}$ is indecomposable if it is not a direct sum of two nonzero multi-fusion categories. Let ${\\mathcal C}$ be a multi-fusion category. Then for any simple object $X\\in {\\mathcal C}$ there exist unique $i,j\\in J$ such that $\\mathbf 1_i\\otimes X\\ne 0$ and $X\\otimes \\mathbf 1_j\\ne 0$; moreover, we have $\\mathbf 1_i\\otimes X=X\\otimes \\mathbf 1_j=X$. Thus, as an additive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-results-on-weak-hopf-algebras",
+      "number": "2.5",
+      "title": "Results on weak Hopf algebras",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak hopf",
+          "heading": true
+        },
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "multi-fusion category",
+          "heading": false
+        },
+        {
+          "term": "semisimple weak",
+          "heading": false
+        },
+        {
+          "term": "traceofs",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "dual weak",
+          "heading": false
+        },
+        {
+          "term": "text bimod",
+          "heading": false
+        }
+      ],
+      "extract": "A convenient way to visualize (multi-) fusion categories is using weak Hopf algebras (see Section 4 for the definitions). Namely, let ${\\mathcal C}$ be a multi-fusion category. Let $R$ be a finite dimensional semisimple $k$-algebra, and $F$ a fiber functor (i.e. an exact, faithful tensor functor) from ${\\mathcal C}$ to $R$-bimod. Let $A=\\text{End}_k(F)$ (i.e. the algebra of endomorphisms of the composition of $F$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-26-vanishing-of-the-yetter-cohomology",
+      "number": "2.6",
+      "title": "Vanishing of the Yetter cohomology",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yetter cohomology",
+          "heading": true
+        },
+        {
+          "term": "multi-fusion categories",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "cohomology theory",
+          "heading": false
+        },
+        {
+          "term": "order deformations",
+          "heading": false
+        }
+      ],
+      "extract": "The cohomology theory that controls deformations of tensor categories and tensor functors is the cohomology theory developed in [@CY; @Y1; @Y2; @Da], which we will call the Yetter cohomology theory. This theory associates to any tensor category ${\\mathcal C}$ and a tensor functor $F$ for ${\\mathcal C}$ to another tensor category ${\\mathcal C}'$, a sequence of cohomology spaces $H^i_F({\\mathcal C})$ (See Section 7).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-27-ocneanu-rigidity",
+      "number": "2.7",
+      "title": "Ocneanu rigidity",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ocnrigfun",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion categories",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion category",
+          "heading": false
+        },
+        {
+          "term": "indecomposable multi-fusion",
+          "heading": false
+        },
+        {
+          "term": "multocnrig",
+          "heading": false
+        },
+        {
+          "term": "ocneanu",
+          "heading": true
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "The statement that a fusion category over a field of characteristic zero cannot be nontivially deformed is known as Ocneanu rigidity, because its formulation and proof for unitary categories was suggested (but not published) by Ocneanu. Later Blanchard and Wassermann ([@BWa; @Wa]) proposed an algebraic version of Ocneanu's argument, which proves the following result. ::: theorem []{#ocnrig label=\"ocnrig\"} A fusion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-proof-of-theorem-23",
+      "number": "3.1",
+      "title": "Proof of Theorem 2.3",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-fusion category",
+          "heading": false
+        },
+        {
+          "term": "indecomposable multi-fusion",
+          "heading": false
+        },
+        {
+          "term": "simple objects",
+          "heading": false
+        },
+        {
+          "term": "bimod",
+          "heading": false
+        },
+        {
+          "term": "subobject",
+          "heading": false
+        }
+      ],
+      "extract": "the ﬁrst part of the result follows directly from Theorem 2.27 for i = 2. The second part is a consequence of a combinatorial fact that there are only ﬁnitely many homo- morphisms between the Grothendieck rings of the categories under consideration; this fact is a consequence of Proposition 2.1 of [O] since the second Grothendieck ring can be considered as a based module over the ﬁrst one. Remark 2.34. One says that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-fusion-categories-over-c",
+      "number": "3",
+      "title": "Fusion categories over C",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes oplus",
+          "heading": false
+        },
+        {
+          "term": "posi",
+          "heading": false
+        },
+        {
+          "term": "fourstars",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        },
+        {
+          "term": "pivo",
+          "heading": false
+        },
+        {
+          "term": "doubledual",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        }
+      ],
+      "extract": "The goal of this subsection is to prove Theorem [\\[posi\\]](#posi){reference-type=\"ref\" reference=\"posi\"}, Proposition [\\[pivo\\]](#pivo){reference-type=\"ref\" reference=\"pivo\"}, Proposition [\\[modu\\]](#modu){reference-type=\"ref\" reference=\"modu\"}, and discuss their consequences. Let ${\\mathcal C}$ denote a fusion category over ${\\mathbb{C}}$. We will denote representatives of isomorphism classes of simple objects of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-proof-of-proposition-29",
+      "number": "3.2",
+      "title": "Proof of Proposition 2.9",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline mathbf",
+          "heading": false
+        },
+        {
+          "term": "posi",
+          "heading": false
+        },
+        {
+          "term": "statement",
+          "heading": false
+        }
+      ],
+      "extract": "The first statement is straightforward. To prove the second statement, let $N_i$ be the matrix whose entries are given by $(N_i)_{kj}={\\rm dim}{\\rm Hom}(X_j,X_i\\otimes X_k)$. Then, like in the proof of Theorem [\\[posi\\]](#posi){reference-type=\"ref\" reference=\"posi\"}, $N_i\\mathbf d=d_i\\mathbf d$. Let us multiply this equation on the left by $\\mathbf d^*$. (the hermitian adjoint). We have $\\mathbf d^*N_i=(N_i^t\\mathbf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-proof-of-proposition-212-and-properties-of-mo",
+      "number": "3.3",
+      "title": "Proof of Proposition 2.12 and properties of modular categories",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular categories",
+          "heading": true
+        },
+        {
+          "term": "modular category",
+          "heading": false
+        },
+        {
+          "term": "baki",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        },
+        {
+          "term": "sij",
+          "heading": false
+        },
+        {
+          "term": "drinfeld center",
+          "heading": false
+        },
+        {
+          "term": "s-matrix",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        }
+      ],
+      "extract": "well known (see [BaKi]) that the matrix T is diagonal with eigenvalues being roots of unity. So we only need to show that the S-matrix is unitary. The entries sij of the S-matrix are known to satisfy sij = sji, and P j si∗jsjl = δil ([BaKi]). So it suﬃces to show that si∗j = sij. Recall that sj0 = ± dim(Vj)/ √ D, where D is the global dimension of the cate- gory. So sj0 is a real number. Further, by the Verlinde",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-weak-hopf-algebras-and-their-integrals",
+      "number": "4",
+      "title": "Weak Hopf algebras and their integrals",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Below we collect the deﬁnition and basic properties of weak Hopf algebras.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-41-definition-of-a-weak-hopf-algebra",
+      "number": "4.1",
+      "title": "Definition of a weak Hopf algebra",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak hopf",
+          "heading": true
+        },
+        {
+          "term": "hopf algebra",
+          "heading": true
+        },
+        {
+          "term": "otimes delta",
+          "heading": false
+        },
+        {
+          "term": "epss",
+          "heading": false
+        },
+        {
+          "term": "comultiplication delta",
+          "heading": false
+        },
+        {
+          "term": "phi otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes text",
+          "heading": false
+        },
+        {
+          "term": "mid delta",
+          "heading": false
+        }
+      ],
+      "extract": "::: definition []{#finite weak Hopf algebra label=\"finite weak Hopf algebra\"} A *weak Hopf algebra* is a vector space $A$ with the structures of an associative algebra $(A,\\,m,\\,1)$ with a multiplication $m:A\\otimes_k A\\to A$ and unit $1\\in A$ and a coassociative coalgebra $(A,\\,\\Delta,\\,\\epsilon)$ with a comultiplication $\\Delta:A\\to A\\otimes_k A$ and counit $\\epsilon:A\\to k$ such that: 1. The comultiplication",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-integrals",
+      "number": "4.2",
+      "title": "Integrals",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rightharpoonup ell",
+          "heading": false
+        },
+        {
+          "term": "rightharpoonup lambda",
+          "heading": false
+        },
+        {
+          "term": "rightharpoonup phi",
+          "heading": false
+        },
+        {
+          "term": "alpha rightharpoonup",
+          "heading": false
+        },
+        {
+          "term": "arrows rightharpoonup",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate left",
+          "heading": false
+        },
+        {
+          "term": "integral ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection about integrals label=\"subsection about integrals\"} The following notion of an integral in a weak Hopf algebra is a generalization of that of an integral in a usual Hopf algebra [@M]. ::: definition []{#integral label=\"integral\"} A left *integral* in $A$ is an element $\\ell\\in A$ such that $$h\\ell =\\varepsilon_t(h)\\ell, \\qquad (rh = r\\varepsilon_s(h)) \\qquad \\mbox{ for all } h\\in A.$$ ::: The space of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-43-proof-of-theorem-26",
+      "number": "4.3",
+      "title": "Proof of Theorem 2.6",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ℓsuch",
+          "heading": false
+        },
+        {
+          "term": "grouplike",
+          "heading": false
+        },
+        {
+          "term": "group-like",
+          "heading": false
+        }
+      ],
+      "extract": "C is the representation category of a semisimple connected weak Hopf algebra A. Since A is semisimple, it is unimodular, and hence one can choose a left integral ℓsuch that the corresponding element α = ǫ. Thus, by Theorem 4.8, one has S4(h) = a−1ha, for some group-like element a ∈G(H), and hence for any simple object V ∈C = Rep(A), the operator a−1|V deﬁnes an isomorphism V →V ∗∗∗∗. Since a is grouplike, this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-44-canonical-integrals",
+      "number": "4.4",
+      "title": "Canonical integrals",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftharpoonup phi",
+          "heading": false
+        },
+        {
+          "term": "otimes chi",
+          "heading": false
+        },
+        {
+          "term": "q-trace",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "text end",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "Using the squared antipode, one can construct integrals on a weak Hopf algebra $A$ called the *canonical integrals*. Namely, we have the following proposition, a particular case of which was proved in [@BNSz]. ::: proposition []{#chi label=\"chi\"} Let $A$ be a finite-dimensional weak Hopf algebra and let $\\{q_i\\}$ be primitive central idempotents in $A_t$. Then $\\chi_i(h) := \\text{Tr}(L_h\\circ S^2|_{AS(q_i)})$, where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-45-sufficient-conditions-for-semisimplicity",
+      "number": "4.5",
+      "title": "Sufficient conditions for semisimplicity",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qpas",
+          "heading": false
+        },
+        {
+          "term": "exist idempotents",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "qas",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "dimensional weak",
+          "heading": false
+        },
+        {
+          "term": "ypℓ",
+          "heading": false
+        },
+        {
+          "term": "ρπa",
+          "heading": false
+        }
+      ],
+      "extract": "ment of [N, Proposition 6.4] and is analogous to the Larson-Radford theorem [LR1] for usual Hopf algebras which says that if A is a ﬁnite dimensional Hopf algebra with Tr(S2|A)̸ = 0 then A is semisimple and cosemisimple. Proposition 4.10. Let A be a ﬁnite dimensional weak Hopf algebra. If for every primitive idempotent p in At ∩Z(A) there exist idempotents qp, q′ p in pAt such that (20) Tr(S2|qpAS(q′ p))̸ = 0, then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-trs2-and-the-global-dimension",
+      "number": "5",
+      "title": "Tr(S2) and the global dimension",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-51-proof-of-theorem-224",
+      "number": "5.1",
+      "title": "Proof of Theorem 2.24",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trv",
+          "heading": false
+        },
+        {
+          "term": "idat",
+          "heading": false
+        },
+        {
+          "term": "qjv",
+          "heading": false
+        },
+        {
+          "term": "qiat",
+          "heading": false
+        },
+        {
+          "term": "qjas",
+          "heading": false
+        }
+      ],
+      "extract": "bra. Then C = Rep(A) is a fusion category. In particular, V ∗∗is isomorphic to V for any simple object V , which means that S2 is an inner automorphism of A (this is also proved in [BNSz, 3.22]). So let g ∈A be such that S2(x) = gxg−1 for all x ∈A. Then g|V : V →V ∗∗: v 7→g · v is an isomorphism of representations. The calculation of TrV (g) and TrV ((g−1)∗) yields TrV (g)IdAt = Tr(S(g)1(1)|V ∗)1(2), (24) TrV",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-proof-of-theorem-215",
+      "number": "5.2",
+      "title": "Proof of Theorem 2.15",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cop",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "qjas",
+          "heading": false
+        }
+      ],
+      "extract": "composable module category over C. Let us show that C∗ M is semisimple. Choose a semisimple algebra R with blocks labeled by simple objects of M. Let F be the ﬁber functor F : C →R −bimod associated with M, R as explained in Section 2. Let A = Endk(F) be the corresponding weak Hopf algebra. Consider the weak Hopf algebra A∗cop. The representation category of A∗cop is C∗ M. Thus, A∗cop is connected (as M is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-53-proof-of-theorem-216",
+      "number": "5.3",
+      "title": "Proof of Theorem 2.16",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "endk",
+          "heading": false
+        },
+        {
+          "term": "bimod",
+          "heading": false
+        },
+        {
+          "term": "gory",
+          "heading": false
+        }
+      ],
+      "extract": "gory over C. So M = ⊕Mj is a direct sum of indecomposable subcategories. Now for each i choose semisimple algebras Ri with blocks labeled by simple objects of Mi, and let R = ⊕Ri. Let F be the ﬁber functor C →R −bimod, associated to (M, R), and let B = Endk(F) be the corresponding weak Hopf algebra. Then by Theorem 2.24 and Corollary 4.12 applied to A = B∗, we ﬁnd that B∗is semi- simple. In other words, the the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-54-a-refinement-of-theorem-224",
+      "number": "5.4",
+      "title": "A refinement of Theorem 2.24",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆpia",
+          "heading": false
+        },
+        {
+          "term": "primitive idempotents",
+          "heading": false
+        },
+        {
+          "term": "qir",
+          "heading": false
+        },
+        {
+          "term": "arr",
+          "heading": false
+        },
+        {
+          "term": "aii",
+          "heading": false
+        },
+        {
+          "term": "prgpr",
+          "heading": false
+        },
+        {
+          "term": "q0a",
+          "heading": false
+        }
+      ],
+      "extract": "coconnected, semisimple weak Hopf algebra. Let πi be the primitive idempotents in A∗ s ∩Z(A∗), and let Aij ⊂A be deﬁned by A∗ ij = πiA∗S(πj). It is easy to see that Aij = pjApi, where pi are the primitive idempotents of As ∩At. In particular, Aii are semisimple algebras. In fact, for every i the algebra Aii has a natural structure of a biconnected weak Hopf algebra, and its representation category Rep(Aii) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-55-proof-of-proposition-217",
+      "number": "5.5",
+      "title": "Proof of Proposition 2.17",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qis",
+          "heading": false
+        },
+        {
+          "term": "isn",
+          "heading": false
+        },
+        {
+          "term": "qjrarss",
+          "heading": false
+        },
+        {
+          "term": "crs",
+          "heading": false
+        }
+      ],
+      "extract": "gory. Fix an index r and let M = ⊕iCir. It is clear that M is an indecomposable C-module category, and the category C∗ M := FunC(M, M) equals Cop rr. Choose a semisimple algebra R with blocks labeled by simple objects of M. Let Rj be the two sided ideal in R whose blocks are labeled by simple objects of ⊕iCij ⊂ M. Let n2 j = dim(Rj). Let F be the corresponding ﬁber functor, and B = Endk(F) the corresponding weak",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-56-proof-of-theorem-218",
+      "number": "5.6",
+      "title": "Proof of Theorem 2.18",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 83,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "funci",
+          "heading": false
+        },
+        {
+          "term": "compatibilities",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion",
+          "heading": false
+        }
+      ],
+      "extract": "the multi-fusion category C is indecomposable. Let M1, M2 be module categories over C. Let 1i be the simple constituents of the unit object of C. Then it is shown in the standard way that for each i, the restriction functor FunC(M1, M2) → FunCi(1iM1, 1iM2) is an equivalence of categories (one can construct a quasi- inverse functor by extending a functor from 1iM1 to 1jM1 by tensoring with objects of Cij and checking",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-57-surjective-and-injective-functors",
+      "number": "5.7",
+      "title": "Surjective and injective functors",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surjective",
+          "heading": true
+        },
+        {
+          "term": "injective",
+          "heading": true
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal linear",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion categories",
+          "heading": false
+        },
+        {
+          "term": "vice versa",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "unital tensor",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\mathcal C},{\\mathcal D}$ be multi-fusion categories, and $F:{\\mathcal C}\\to {\\mathcal D}$ be a unital tensor functor. We will say that $F$ is injective if it is fully faithful (in this case $F$ identifies ${\\mathcal C}$ with a full tensor subcategory of ${\\mathcal D}$). We will say that $F$ is surjective if any simple object $X$ of ${\\mathcal D}$ is contained in an object of the form $F(T)$, $T\\in {\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-58-the-induction-functor-and-the-class-equation",
+      "number": "5.8",
+      "title": "The induction functor and the class equation for fusion categories",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "class equation",
+          "heading": true
+        },
+        {
+          "term": "otimes min",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "end proposition",
+          "heading": false
+        },
+        {
+          "term": "begin proposition",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{indfu} In finite group theory, an important role is played by the ``class equation'' $\\sum_{s}\\frac{1}{|G_s|}=1$, where the summation is over conjugacy classes of a finite group $G$, and $G_s$ are the corresponding centralizers. There is a similar formula for semisimple Hopf algebras (due to G.I.Kac and Y.Zhu, see \\cite{Ka}, \\cite{Zhu}), which is also very useful. Here we will prove a class equation for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-59-graded-categories",
+      "number": "5.9",
+      "title": "Graded categories",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "gradi",
+          "heading": false
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        }
+      ],
+      "extract": "Let $G$ be a finite group. ::: definition A $G$-grading on a tensor category ${\\mathcal C}$ is a decomposition ${\\mathcal C}=\\oplus_{g\\in G}{\\mathcal C}_g$, such that $\\otimes: {\\mathcal C}_g\\times {\\mathcal C}_h\\to {\\mathcal C}_{gh}$, $\\mathbf 1\\in {\\mathcal C}_e$, and $*:{\\mathcal C}_g\\to {\\mathcal C}_{g^{-1}}$. We will say that the grading is faithful if ${\\mathcal C}_g\\ne 0$ for any $g\\in G$. ::: It is clear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-510-deformations-of-weak-hopf-algebras",
+      "number": "5.10",
+      "title": "Deformations of weak Hopf algebras",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak hopf",
+          "heading": true
+        },
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "tra",
+          "heading": false
+        },
+        {
+          "term": "posi",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple",
+          "heading": false
+        }
+      ],
+      "extract": "It is well known that a non-semisimple finite dimensional algebra can be perturbed into a semisimple one. However, for (connected) weak Hopf algebras the situation is different. Namely, we have the following result. ::: proposition Let $H_t$ be a continuous family of finite dimensional regular connected weak Hopf algebras over $\\Bbb C$ depending of a real parameter $t\\in (a,b)$ (i.e., $H_t$ is independent of $t$ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-511-sphericity-of-pivotalization",
+      "number": "5.11",
+      "title": "Sphericity of pivotalization",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "actr alpha",
+          "heading": false
+        },
+        {
+          "term": "ell otimes",
+          "heading": false
+        },
+        {
+          "term": "distinguished group-like",
+          "heading": false
+        },
+        {
+          "term": "eqnarray ell",
+          "heading": false
+        },
+        {
+          "term": "group-like element",
+          "heading": false
+        },
+        {
+          "term": "category tilde",
+          "heading": false
+        },
+        {
+          "term": "grouplike element",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular weak",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section we allow the ground field to have a positive characteristic, different from $2$. Let $A$ be a quasitriangular weak Hopf algebra, i.e., such that $\\Rep(A)$ is a braided monoidal category. Let $\\R\\in (A\\otimes A)\\Delta(1)$ be the $R$-matrix of $A$. It was shown in \\cite{NTV} that the Drinfeld element $u = S(\\R\\II)\\R\\I$ is invertible, satisfies $S^2(h)=uhu^{-1}$ for all $h$ in $A$, and \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+      "number": "6",
+      "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "Hopf algebra and its subcomplex of invariants",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-61-the-definition",
+      "number": "6.1",
+      "title": "The definition",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes text",
+          "heading": false
+        },
+        {
+          "term": "otimes varepsilon",
+          "heading": false
+        },
+        {
+          "term": "circ delta",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "Let $A$ be a weak Hopf algebra and let $B \\subset A$ be a weak Hopf subalgebra. We will define a complex $C^\\bullet(A, B)$ that generalizes the subcomplex of the co-Hochschild complex of a Hopf algebra consisting of invariants of the adjoint action, cf. [@S; @Sch]. We set $C^0(A, B) = A_t \\cap Z(A)$, the algebra of endomorphisms of the trivial $A$-module; and for all $n\\geq 1$, we set $$\\label{Cn} C^n(A, B) := \\{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-62-the-vanishing-theorem-for-cohomology",
+      "number": "6.2",
+      "title": "The vanishing theorem for cohomology",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idn",
+          "heading": false
+        },
+        {
+          "term": "εop",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "dimk",
+          "heading": false
+        },
+        {
+          "term": "left integral",
+          "heading": false
+        },
+        {
+          "term": "idempotent",
+          "heading": false
+        }
+      ],
+      "extract": "dimensional semisimple (and hence, cosemisimple) weak Hopf algebra. Lemma 6.2. Suppose that A is indecomposable. Let qi be a primitive idempotent in Z(At) and let χ := χi be the corresponding canonical left integral in A∗from Proposition 4.9. Then u = 1(1)χ(1(2)) is an invertible scalar. Proof. Since χ is a left integral in A∗, we have (32) u = 1(1)χ(1(2)) = S(1(1))χ(1(2)) = S(u) ∈As ∩At. Next, the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-71-the-definition",
+      "number": "7.1",
+      "title": "The definition",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 49,
+      "summary": null,
+      "keywords": [],
+      "extract": "several identities in a weak Hopf algebra, and equation (34) applied to f and ˜f. Therefore, f∆n(u) = (−1)nδn−1( ˜f). Now u is a non-zero scalar by Lemma 6.2, hence f = δn−1((−1)nu−1 ˜f), i.e., Ker δn ⊂Im δn−1 and Hn(A, B) = 0 for n ≥ 1. □",
+      "extractCut": false
+    },
+    {
+      "id": "sec-035-7-the-yetter-cohomology-of-a-tensor-category-and",
+      "number": "7",
+      "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yetter cohomology",
+          "heading": true
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "classiﬁes ﬁrst",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "cohomology groups",
+          "heading": false
+        },
+        {
+          "term": "tensor structure",
+          "heading": false
+        },
+        {
+          "term": "associativity constraint",
+          "heading": false
+        }
+      ],
+      "extract": "rigidity 7.1. The deﬁnition. The following cohomology of a tensor category with respect to a tensor functor was deﬁned in [Y1, Y2], motivated by the previous work [CY], and independently in [Da]. Let C, C′ be tensor categories over a ﬁeld k, and F : C →C′ be a (unital) tensor functor. For a nonnegative integer n, let Cn denote the n-th Cartesian power of C. In particular, C0 has one object (empty tuple ∅) and one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-72-comparison-of-two-complexes",
+      "number": "7.2",
+      "title": "Comparison of two complexes",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "complex deﬁned",
+          "heading": false
+        },
+        {
+          "term": "adjoint action",
+          "heading": false
+        },
+        {
+          "term": "complexes",
+          "heading": true
+        },
+        {
+          "term": "rep",
+          "heading": false
+        },
+        {
+          "term": "map",
+          "heading": false
+        }
+      ],
+      "extract": "categories and functors coming from weak Hopf algebras, the Yetter complex deﬁned here is the same as the complex deﬁned in the previous section. Proposition 7.4. Let A be a weak Hopf algebra, B a weak Hopf subalgebra in A, C = Rep(A), C′ = Rep(B), and F : C →C′ be the restriction functor. Then the complex C• F (C) coincides with the complex C•(A, B) deﬁned in Section 6. Proof. Let us show that End(Tn ◦F ⊗n) = Cn(A,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-73-proof-of-theorem-227-and-theorem-230",
+      "number": "7.3",
+      "title": "Proof of Theorem 2.27 and Theorem 2.30",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "semisimple weak",
+          "heading": false
+        },
+        {
+          "term": "regular weak",
+          "heading": false
+        },
+        {
+          "term": "forgetful functor",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "rep",
+          "heading": false
+        },
+        {
+          "term": "bimod",
+          "heading": false
+        }
+      ],
+      "extract": "gories, and F : C →C′ a tensor functor between them. We can assume without loss of generality that F is faithful and surjective. Let R be a semisimple algebra, and ON FUSION CATEGORIES 29 let G : C′ →R−bimod be a ﬁber functor on C′ (we know by now that it necessarily exists for a suitable R). Let B = End(G) be the corresponding weak Hopf algebra. Let A = End(G ◦F). Then B is a weak Hopf subalgebra of A, C′ = Rep(B),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-8-frobenius-perron-dimensions",
+      "number": "8",
+      "title": "Frobenius-Perron dimensions",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we will give some applications of the Frobenius-Perron theorem to the theory of fusion categories. We work with categories over ${\\mathbb{C}}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-81-definition-of-the-frobenius-perron-dimensions",
+      "number": "8.1",
+      "title": "Definition of the Frobenius-Perron dimensions",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius-perron dimensions",
+          "heading": true
+        },
+        {
+          "term": "eigenvector mathbf",
+          "heading": false
+        },
+        {
+          "term": "frobmod label",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron theorem",
+          "heading": false
+        },
+        {
+          "term": "nonnegative entries",
+          "heading": false
+        },
+        {
+          "term": "largest nonnegative",
+          "heading": false
+        },
+        {
+          "term": "let mathbf",
+          "heading": false
+        },
+        {
+          "term": "common eigenvector",
+          "heading": false
+        }
+      ],
+      "extract": "We start by recalling the Frobenius-Perron theorem (see [@Ga]). ::: theorem Let $A$ be a square matrix with nonnegative entries. 1. $A$ has a nonnegative real eigenvalue. The largest nonnegative real eigenvalue $\\lambda(A)$ of $A$ dominates absolute values of all other eigenvalues of $A$. 2. If $A$ has strictly positive entries then $\\lambda(A)$ is a simple positive eigenvalue, and the corresponding eigenvector can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-82-frobenius-perron-dimension-of-a-fusion-catego",
+      "number": "8.2",
+      "title": "Frobenius-Perron dimension of a fusion category",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fpdim mathcal",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimension",
+          "heading": true
+        },
+        {
+          "term": "fusion category",
+          "heading": true
+        },
+        {
+          "term": "mathcal oplus",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron theorem",
+          "heading": false
+        },
+        {
+          "term": "subdivi",
+          "heading": false
+        },
+        {
+          "term": "freeness label",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\mathcal C}$ be a fusion category. Define the Frobenius-Perron dimension ${\\rm FPdim}({\\mathcal C})$ of ${\\mathcal C}$ to be the sum of squares of Frobenius-Perron dimensions of simple objects of ${\\mathcal C}$. Also, define the regular representation $R_{\\mathcal C}$ to be the (virtual) object $\\oplus_{X\\in Irr({\\mathcal C})} {\\rm FPdim}(X)X$, where $Irr({\\mathcal C})$ is the set of isomorphism classes of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-83-comparison-of-the-global-and-frobenius-perron",
+      "number": "8.3",
+      "title": "Comparison of the global and Frobenius-Perron dimensions",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius-perron",
+          "heading": true
+        },
+        {
+          "term": "frobenius-perron dimension",
+          "heading": false
+        },
+        {
+          "term": "domi",
+          "heading": false
+        },
+        {
+          "term": "dimension delta",
+          "heading": false
+        },
+        {
+          "term": "fpdim",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        },
+        {
+          "term": "squar",
+          "heading": false
+        },
+        {
+          "term": "sphpiv",
+          "heading": false
+        }
+      ],
+      "extract": "::: proposition []{#domi label=\"domi\"} Let ${\\mathcal C}$ be a fusion category. Then for any simple object $V$ of ${\\mathcal C}$ one has $|V|^2\\le {\\rm FPdim}(V)^2$, and hence $\\dim({\\mathcal C})\\le {\\rm FPdim}({\\mathcal C})$. Hence, if $\\dim({\\mathcal C})={\\rm FPdim}({\\mathcal C})$ then $|V|^2={\\rm FPdim}(V)^2$ for all simple objects $V$. ::: ::: proof *Proof.* Let $X_i$ be the $i$-th simple object of ${\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-84-pseudo-unitary-categories",
+      "number": "8.4",
+      "title": "Pseudo-unitary categories",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudo-unitary",
+          "heading": true
+        },
+        {
+          "term": "uniqpivo",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron",
+          "heading": false
+        },
+        {
+          "term": "identity functor",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "Let us say that a fusion category ${\\mathcal C}$ is *pseudo-unitary* if $\\dim({\\mathcal C})={\\rm FPdim}({\\mathcal C})$. This property is automatically satisfied for unitary categories, which occur in the theory of operator algebras, but it fails, for example, for the Yang-Lee category. ::: proposition []{#uniqpivo label=\"uniqpivo\"} Any pseudo-unitary fusion category ${\\mathcal C}$ admits a unique pivotal (in fact,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-85-fusion-categories-with-integer-frobenius-perr",
+      "number": "8.5",
+      "title": "Fusion categories with integer Frobenius-Perron dimension",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius-perron dimension",
+          "heading": true
+        },
+        {
+          "term": "intfp",
+          "heading": false
+        },
+        {
+          "term": "fpdim",
+          "heading": false
+        },
+        {
+          "term": "object otimes",
+          "heading": false
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        },
+        {
+          "term": "integer",
+          "heading": true
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "::: proposition []{#intFP label=\"intFP\"} Let ${\\mathcal C}$ be a fusion category, such that $\\Delta:={\\rm FPdim}({\\mathcal C})$ is an integer. Then ${\\mathcal C}$ is pseudo-unitary. In particular, the category of representations of a semisimple finite dimensional quasi-Hopf algebra is pseudo-unitary. ::: ::: proof *Proof.* Let $D$ be the global dimension of ${\\mathcal C}$. Let $D_1=D,D_2,...,D_N$ be all the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-86-fusion-categories-of-frobenius-perron-dimensi",
+      "number": "8.6",
+      "title": "Fusion categories of Frobenius-Perron dimension pn",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius-perron dimension",
+          "heading": true
+        },
+        {
+          "term": "filtrat",
+          "heading": false
+        },
+        {
+          "term": "dimgradi",
+          "heading": false
+        },
+        {
+          "term": "supset mathcal",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "invertible objects",
+          "heading": false
+        },
+        {
+          "term": "subdivi",
+          "heading": false
+        },
+        {
+          "term": "prime dimension",
+          "heading": false
+        }
+      ],
+      "extract": "::: theorem []{#filtrat label=\"filtrat\"} Let ${\\mathcal C}$ be a fusion category of Frobenius-Perron dimension $p^n$, where $n\\ge 1$ is an integer, and $p$ is a prime. Then: \\(i\\) There exists a nontrivial automorphism $g\\in {\\rm Aut}_\\otimes (Id_{\\mathcal C})$ of order $p$, so that ${\\mathcal C}$ is $\\Bbb Z/p\\Bbb Z$ graded: ${\\mathcal C}=\\oplus_{j=0}^{p-1}{\\mathcal C}_j$, where ${\\mathcal C}_j$ is spanned by simple",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-87-categories-with-integer-frobenius-perron-dime",
+      "number": "8.7",
+      "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius-perron dimensions",
+          "heading": true
+        },
+        {
+          "term": "integer frobenius-perron",
+          "heading": true
+        },
+        {
+          "term": "simple objects",
+          "heading": true
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "dualfrob",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "::: theorem []{#quasihopf label=\"quasihopf\"} Let ${\\mathcal C}$ be a fusion category. The following two conditions are equivalent. 1. for all $X\\in {\\mathcal C}$, the number ${\\rm FPdim}(X)$ is an integer. 2. ${\\mathcal C}$ is a representation category of a finite dimensional quasi-Hopf algebra $A$. ::: ::: remark It is shown in [@EG2] that $A$ is determined uniquely up to twisting. ::: ::: proof *Proof.* (i)$\\to$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-88-group-theoretical-fusion-categories",
+      "number": "8.8",
+      "title": "Group-theoretical fusion categories",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "group-theoretical",
+          "heading": true
+        },
+        {
+          "term": "group-theoretical category",
+          "heading": false
+        },
+        {
+          "term": "let vecg",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "module category",
+          "heading": false
+        },
+        {
+          "term": "subcategory",
+          "heading": false
+        }
+      ],
+      "extract": "with integer Frobenius-Perron dimensions is the category C(G, H, ω, ψ) associated to quadruples (G, H, ω, ψ), where G is a ﬁnite group, H is a subgroup, ω ∈ Z3(G, C∗) is a 3-cocycle, ψ ∈C2(H, C∗) a 2-cochain such that dψ = ω|H (see [O1]). Namely, let VecG,ω be the category of ﬁnite dimensional G-graded vec- tor spaces with associativity deﬁned by ω. Let VecG,ω(H) be the subcategory of VecG,ω of objects graded by H.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-89-a-question",
+      "number": "8.9",
+      "title": "A question",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 797,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quest",
+          "heading": false
+        },
+        {
+          "term": "group-theoretical",
+          "heading": false
+        },
+        {
+          "term": "text rep",
+          "heading": false
+        },
+        {
+          "term": "subquot",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "semisimple hopf",
+          "heading": false
+        },
+        {
+          "term": "quasi-hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "question",
+          "heading": true
+        }
+      ],
+      "extract": "We think that the following question is interesting. ::: question []{#quest label=\"quest\"} Does there exist a finite dimensional semisimple Hopf algebra $H$ whose representation category is not group-theoretical? ::: ::: remark Hopf algebras with group theoretical category of representations can be completely classified in group theoretical terms (see [@O1]). Therefore, a negative answer to Question",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-810-cyclotomicity-of-dimension-functions",
+      "number": "8.10",
+      "title": "Cyclotomicity of dimension functions",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 574,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes bbb",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "centers",
+          "heading": false
+        },
+        {
+          "term": "sphpiv",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "text rep",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#cy label=\"cy\"} The forgetful functor $Z({\\mathcal C})\\to {\\mathcal C}$ induces a homomorphism of rings $F:K(Z({\\mathcal C}))\\to K({\\mathcal C})$. It is clear that the image of this map is contained in the center $Z(K({\\mathcal C}))$ of the ring $K({\\mathcal C})$. ::: lemma []{#centers label=\"centers\"} The map $K(Z({\\mathcal C}))\\otimes {\\Bbb Q} \\to Z(K({\\mathcal C}))\\otimes {\\Bbb Q}$ is surjective. ::: ::: proof",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-811-module-categories-over-products",
+      "number": "8.11",
+      "title": "Module categories over products",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "fun mathcal",
+          "heading": false
+        },
+        {
+          "term": "indecomposable module",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimension",
+          "heading": false
+        },
+        {
+          "term": "component category",
+          "heading": false
+        },
+        {
+          "term": "fpdim",
+          "heading": false
+        }
+      ],
+      "extract": "Let $a,b$ be two algebraic integers. We say that $a,b$ are coprime if there exist algebraic integers $p,q$ such that $pa+qb=1$. ::: proposition Let ${\\mathcal C},{\\mathcal D}$ be nondegenerate fusion categories with coprime Frobenius-Perron dimensions. Then any indecomposable module category over ${\\mathcal C}\\otimes {\\mathcal D}$ is ${\\mathcal M}\\otimes {\\mathcal N}$, where ${\\mathcal M}$ is an indecomposable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-9-fusion-categories-in-positive-characteristic",
+      "number": "9",
+      "title": "Fusion categories in positive characteristic",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "multi-fusion",
+          "heading": false
+        },
+        {
+          "term": "categories",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we will consider fusion and multi-fusion categories over an algebraically closed field $k$ of positive characteristic $p$. We will show that many of the results of the previous sections continue to hold in this case after very minor modifications.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-051-91-list-of-modifications",
+      "number": "9.1",
+      "title": "List of modifications",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nondegenerate weak",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate categories",
+          "heading": false
+        },
+        {
+          "term": "multi-fusion category",
+          "heading": false
+        },
+        {
+          "term": "ocnrigfun",
+          "heading": false
+        },
+        {
+          "term": "ocnrig",
+          "heading": false
+        },
+        {
+          "term": "sscoss",
+          "heading": false
+        },
+        {
+          "term": "schlah",
+          "heading": false
+        },
+        {
+          "term": "dualcat",
+          "heading": false
+        }
+      ],
+      "extract": "Fusion and multi-fusion categories in characteristic $p$ are defined in the same way as in charactersitic zero. Below we will describe the modifications which need to be made to validate the statements from the previous sections in this case. **Section 2.** The statements of subsections 2.1, 2.2 which make sense generalize without changes, except the last statement of Theorem [\\[posi\\]](#posi){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-92-lifting-theorems",
+      "number": "9.2",
+      "title": "Lifting theorems",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifting",
+          "heading": true
+        },
+        {
+          "term": "nondegenerate multi-fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "unique lifting",
+          "heading": false
+        },
+        {
+          "term": "brsym",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we will show that a nondegenerate multi-fusion category over a field of characteristic $p$, and a tensor functor between such categories, can be lifted to characteristic zero. It is an analog of the result of [@EG1], where this was shown for semisimple cosemisimple Hopf algebras and morphisms between them. First of all, we need to define fusion categories over any commutative ring. To do this,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-93-faithfulness-of-lifting",
+      "number": "9.3",
+      "title": "Faithfulness of lifting",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "faithlif label",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate fusion",
+          "heading": false
+        },
+        {
+          "term": "otimes bbb",
+          "heading": false
+        },
+        {
+          "term": "faithfun",
+          "heading": false
+        },
+        {
+          "term": "categories mathcal",
+          "heading": false
+        },
+        {
+          "term": "isomorphic liftings",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "equivalent liftings",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will show that the lifting procedure of nondegenerate fusion (braided, symmetric) categories is faithful, i.e. if two such categories over $k$ have equivalent liftings, then they are equivalent. We will also show that if two tensor functors from a nondegenerate fusion category over $k$ to another fusion category have isomorphic liftings, then they are isomorphic. Let $R$ be a complete local ring,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-94-some-applications-of-lifting",
+      "number": "9.4",
+      "title": "Some applications of lifting",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat mathcal",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimension",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "lifting",
+          "heading": true
+        },
+        {
+          "term": "divi",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate fusion",
+          "heading": false
+        },
+        {
+          "term": "intfp",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        }
+      ],
+      "extract": "::: corollary []{#fpnonzero label=\"fpnonzero\"} Let ${\\mathcal C}$ be a nondegenerate fusion category over $k$. Then its Frobenius-Perron dimension $\\Delta$ is not divisible by $p$. ::: ::: remark We do not know if the converse statement is true. For Hopf algebras the converse statement is the well known conjecture that if $H$ is a semisimple Hopf algebra whose dimension is not divisible by $p$ then $H$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-10-appendix-galois-properties-of-s-matrix",
+      "number": "10",
+      "title": "Appendix: Galois properties of S-matrix",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s-matrix",
+          "heading": true
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        },
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "sum frac",
+          "heading": false
+        },
+        {
+          "term": "app",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "The remarkable result due to J. de Boere, J. Goeree, A. Coste and T. Gannon states that the entries of the S-matrix of a semisimple modular category lie in a cyclotomic field, see [@dBG; @CG]. This result is used in Section 8. For reader's convenience in this Appendix we reproduce a proof of this result. ::: theorem []{#app label=\"app\"} Let $S=(s_{ij})_{i,j\\in I}$ be the S-matrix of a modular fusion category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosemisimple hopf",
+          "heading": false
+        },
+        {
+          "term": "semisimple hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "szlach anyi",
+          "heading": false
+        },
+        {
+          "term": "weak hopf",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-dimensional semisimple",
+          "heading": false
+        }
+      ],
+      "extract": "[BaKi] B. Bakalov, A. Kirillov Jr., Lectures on Tensor categories and modular functors, AMS, Providence, (2001). [BNSz] G. B¨ohm, F. Nill, and K. Szlach´anyi, Weak Hopf algebras I. Integral theory and C∗- structure, J. Algebra, 221 (1999), 385–438. [BWa] E. Blanchard, A. Wassermann, in preparation. [BW] J. Barrett, B. Westbury, Spherical categories, Adv. Math., 143 (1999), 357-375. [Ca] J. W. Cassels, Local ﬁelds,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "category mathcal",
+      "heading": false
+    },
+    {
+      "term": "fusion category",
+      "heading": true
+    },
+    {
+      "term": "mathcal otimes",
+      "heading": false
+    },
+    {
+      "term": "categories mathcal",
+      "heading": false
+    },
+    {
+      "term": "tensor category",
+      "heading": true
+    },
+    {
+      "term": "multi-fusion category",
+      "heading": false
+    },
+    {
+      "term": "semisimple hopf",
+      "heading": false
+    },
+    {
+      "term": "fpdim mathcal",
+      "heading": false
+    },
+    {
+      "term": "weak hopf",
+      "heading": true
+    },
+    {
+      "term": "let mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal text",
+      "heading": false
+    },
+    {
+      "term": "mathcal module",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 57,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 58,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p48); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 58 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0203060v11"
+  }
+}

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<meta charset="utf-8"><title>Contributing | qou</title><link rel="stylesheet" href="../assets/css/navbar.css"><script src="../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../assets/js/navbar.js" defer></script><script src="../assets/navbar/row-2acuhncsmbg.js" defer></script><link rel="stylesheet" href="../assets/css/navbar-row.css"><script src="../assets/js/navbar-row.js" defer></script><meta name="fa-search-exclude" content="true"><script src="../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../assets/page-layout.css" data-fa-page-layout><script src="../assets/page-layout.js" defer data-fa-page-layout></script><script src="../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../assets/draft-banner-noscript.css"></noscript><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../assets/css/docs-ui.css" data-fa-platform-ui><script src="../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content=".."></head>
+<body><script type="application/json" id="fa-navbar-row" data-fa-root=".." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="..">{"data":"rail-2dtsu7qepqi","here":"/contributing/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#contribution-policy-applies-to-everyone-except-the-owner-litlfred","label":"Contribution policy (applies to everyone except the owner, litlfred)","children":[{"href":"#issues-bring-evidence-or-the-issue-is-closed","label":"Issues: bring evidence, or the issue is closed","depth":1},{"href":"#pull-requests-same-bar-plus-validation","label":"Pull requests: same bar, plus validation","depth":1},{"href":"#attribution-a-merged-pull-request-earns-authorship","label":"Attribution: a merged pull request earns authorship","depth":1},{"href":"#license-of-contributions","label":"License of contributions","depth":1}],"fold":"4 sub-sections"},{"href":"#tldr","label":"TL;DR"},{"href":"#repo-layout-high-level","label":"Repo layout (high level)","children":[{"href":"#the-folio-assistant-platform-external-repo","label":"The Folio Assistant platform (external repo)","depth":1},{"href":"#tools-packages","label":"tools/ packages","depth":1}],"fold":"2 sub-sections"},{"href":"#where-to-start","label":"Where to start"},{"href":"#branching--commits","label":"Branching + commits"},{"href":"#ci-gates","label":"CI gates"},{"href":"#skills-the-agent-facing-entry-points","label":"Skills (the agent-facing entry points)"},{"href":"#code-style","label":"Code style"},{"href":"#questions","label":"Questions?"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../">Quantum Observable Universe</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../">Quantum Observable Universe</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div><main>
+<h1 id="contributing-to-qou">Contributing to QOU</h1>
+<p>Thanks for your interest in the <strong>Quantum Observable
+Universe</strong> repository (source: <a
+href="https://github.com/litlfred/qou">github.com/litlfred/qou</a>).
+This repository is a mathematics paper with a Lean 4 formalisation and a
+compute layer. Contributions are welcome, but the bar is deliberately
+strict: every report must be checkable by someone who was not in your
+head when you wrote it.</p>
+<h2
+id="contribution-policy-applies-to-everyone-except-the-owner-litlfred">Contribution
+policy (applies to everyone except the owner,
+<code>litlfred</code>)</h2>
+<h3 id="issues-bring-evidence-or-the-issue-is-closed">Issues: bring
+evidence, or the issue is closed</h3>
+<p>An issue must carry <strong>at least one</strong> of the following.
+An issue without one is closed, without discussion, by the issue-policy
+check and by the maintainers.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Evidence</th>
+<th>What counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Lean counterexample</strong></td>
+<td>A self-contained Lean 4 snippet that compiles against this
+repository's Lake workspace and proves the negation of a stated result,
+or shows a stated declaration is vacuous (e.g. its hypotheses are
+unsatisfiable, or it concludes <code>True</code>). Name the declaration
+(<code>QOU.…</code>).</td>
+</tr>
+<tr class="even">
+<td><strong>Failing Python test</strong></td>
+<td>A minimal script or <code>pytest</code> test, runnable from the
+repository root, that fails on <code>main</code> and shows a wrong
+number, a precision loss, or a broken producer. Paste the command and
+its output. Use <code>mpmath</code>, never float64, for any numerical
+claim.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pinpoint mathematical citation</strong></td>
+<td>A published source with <strong>theorem/lemma/equation number and
+page</strong>, plus the exact block it bears on (the <code>.md</code>
+path or the label, e.g. <code>prop:foo</code>). "See the literature" or
+a paper without a location is not a citation.</td>
+</tr>
+</tbody>
+</table>
+<p>Use the issue forms under <strong>New issue</strong>; each form asks
+for exactly one of these. Blank issues are disabled. Questions, opinions
+and requests for explanation go to Discussions if enabled, not to
+issues.</p>
+<p>The <strong>physics comparison points</strong> (a model quantity set
+against CODATA, AME2020 or PDG) are where the empirical claims of the
+paper live. A report that such a comparison is wrong is welcome and
+still needs one of the three items above, typically a failing Python
+test.</p>
+<h3 id="pull-requests-same-bar-plus-validation">Pull requests: same bar,
+plus validation</h3>
+<p>A pull request must:</p>
+<ol type="1">
+<li>reference an issue that meets the policy above (or open one);</li>
+<li>pass the validation the change touches, stated in the PR body with
+the commands you ran:
+<code>lean -DautoImplicit=false -s 65536 &lt;file&gt;</code> (exit 0,
+<code>#print axioms</code> shows no <code>sorryAx</code>) for Lean;
+<code>scripts/precision-gates.sh --changed</code> for compute; the
+content validator for <code>.ts</code>/<code>.md</code> blocks;</li>
+<li>introduce no new <code>sorry</code> without a <code>-- Ref:</code>
+citation, no <code>: True</code> placeholder, and no fitted constant
+(see <a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a>, §"NO FITTING" and
+§"Strict Lean Discipline").</li>
+</ol>
+<p>The knowledge-graph tooling, schemas and the validation rules that
+content blocks must satisfy live in <a
+href="https://github.com/litlfred/folio-assistant-core"><strong>litlfred/folio-assistant-core</strong></a>.
+Read its README before editing a content block.</p>
+<h3 id="attribution-a-merged-pull-request-earns-authorship">Attribution:
+a merged pull request earns authorship</h3>
+<p>If you are not the owner and a pull request of yours is
+<strong>merged</strong> into <code>main</code>, you will be
+<strong>listed among the authors of the paper</strong>, with the PR
+cited. Concretely:</p>
+<ul>
+<li>your name (as you give it in the PR, or your GitHub login) is added
+to the author list in <a
+href="https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/identity.ts"><code>folio/quantum-observable-universe/identity.ts</code></a>
+and to <a href="https://github.com/litlfred/qou/blob/main/CONTRIBUTORS.md"><code>CONTRIBUTORS.md</code></a> in the
+same release;</li>
+<li>the authors' note of the paper describes this policy;</li>
+<li>a closed-unmerged PR, an issue, or a review comment does not by
+itself earn authorship, but issues that lead to a merged correction are
+acknowledged.</li>
+</ul>
+<p>Tell us in the PR body how you want to be named and whether to
+include an affiliation or ORCID.</p>
+<h3 id="license-of-contributions">License of contributions</h3>
+<p>The repository is licensed under <strong><a href="https://github.com/litlfred/qou/blob/main/LICENSE">Creative
+Commons Attribution 4.0 International (CC BY 4.0)</a></strong>. By
+opening a pull request you agree that your contribution is released
+under the same license.</p>
+<p>For the deeper architecture, see <a
+href="https://github.com/litlfred/qou/blob/main/docs/ARCHITECTURE.md"><code>docs/ARCHITECTURE.md</code></a>.</p>
+<h2 id="tldr">TL;DR</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Clone + set up</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/litlfred/qou.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> qou</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1b. Wire up the Folio Assistant platform (separate repo litlfred/folio-assistant).</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     Clones it as a sibling (../folio-assistant) + symlinks ./folio-assistant -&gt; it,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     so the content pipeline + schema imports resolve. Idempotent; re-runnable.</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/setup-folio-assistant.sh</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Install content-pipeline deps (TypeScript via bun)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> content <span class="kw">&amp;&amp;</span> <span class="ex">bun</span> install <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ..</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Install Python scientific deps (substrate compute)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--user</span> numpy sympy scipy mpmath pypdf</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. (Optional) Set up Lean if you&#39;ll touch .lean files</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the lean_setup MCP tool or:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sSf</span> https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Validate the content pipeline</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> content <span class="kw">&amp;&amp;</span> <span class="ex">bun</span> run validate</span></code></pre></div>
+<h2 id="repo-layout-high-level">Repo layout (high level)</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>content/</code></td>
+<td>Authoritative content objects (<code>.ts</code> + <code>.md</code> +
+<code>.lean</code> triples)</td>
+</tr>
+<tr class="even">
+<td><code>folio-assistant/</code></td>
+<td><strong>Symlink</strong> to the external platform repo <a
+href="https://github.com/litlfred/folio-assistant"><code>litlfred/folio-assistant</code></a>
+(pipeline, schemas, viewer, compute) — created by
+<code>scripts/setup-folio-assistant.sh</code>; not tracked</td>
+</tr>
+<tr class="odd">
+<td><code>tools/</code></td>
+<td>Reusable libraries (see below)</td>
+</tr>
+<tr class="even">
+<td><code>chapters/</code></td>
+<td>LaTeX rendered from content (generated; do not edit)</td>
+</tr>
+<tr class="odd">
+<td><code>docs/</code></td>
+<td>Design docs, audits, workplans</td>
+</tr>
+<tr class="even">
+<td><code>.github/workflows/</code></td>
+<td>CI/CD pipelines</td>
+</tr>
+<tr class="odd">
+<td><code>.claude/</code></td>
+<td>Skill definitions, settings, decision log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-folio-assistant-platform-external-repo">The Folio Assistant
+platform (external repo)</h3>
+<p><code>qou</code> is <strong>content only</strong>. The platform it
+consumes — content pipeline, schemas, LaTeX rendering, viewer,
+computations — lives in the separate repo <a
+href="https://github.com/litlfred/folio-assistant"><code>litlfred/folio-assistant</code></a>.
+Local checkouts wire it through a single in-repo path,
+<code>./folio-assistant</code>, a symlink to a sibling clone created by
+<code>scripts/setup-folio-assistant.sh</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Consumer</th>
+<th>Path it resolves through</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>folio/schema/*.ts</code> shims + content blocks</td>
+<td><code>folio-assistant/schemas/…</code></td>
+</tr>
+<tr class="even">
+<td><code>package.json</code> scripts (<code>validate</code>,
+<code>build:content</code>, <code>export-json</code>, <code>test</code>,
+<code>lint</code>)</td>
+<td><code>folio-assistant/content/pipeline/…</code> (and
+<code>folio-assistant/</code> for tests)</td>
+</tr>
+<tr class="odd">
+<td>CI (<a
+href="https://github.com/litlfred/qou/blob/main/.github/workflows/build.yml"><code>.github/workflows/build.yml</code></a>)</td>
+<td>the platform's reusable workflow on GitHub — <strong>no local clone
+needed</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Re-run the setup script any time to update the platform clone or
+repair the symlink. Override the source via env vars:
+<code>FOLIO_ASSISTANT_REPO</code>, <code>FOLIO_ASSISTANT_REF</code>,
+<code>FOLIO_ASSISTANT_DIR</code>.</p>
+<h3 id="tools-packages"><code>tools/</code> packages</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Language</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tools/qou-substrate/</code></td>
+<td>Python</td>
+<td><code>WitnessBuilder</code> + <code>_precision</code> +
+<code>q_parameter</code> substrate trio (not published to PyPI; install
+from the repo)</td>
+</tr>
+<tr class="even">
+<td><code>tools/pyhecke/</code></td>
+<td>Python</td>
+<td>Pure-Python Hecke + Gram + Wedderburn-Artin canonical surface (not
+published to PyPI; install from the repo)</td>
+</tr>
+<tr class="odd">
+<td><code>tools/pyhecke-native/</code></td>
+<td>Rust → Python (PyO3)</td>
+<td>Native acceleration layer (not published; build with
+<code>maturin build --release</code>)</td>
+</tr>
+<tr class="even">
+<td><code>tools/hecke-engine/</code></td>
+<td>Rust</td>
+<td>The canonical Rust core (Gröbner-Shirshov reducer, Gram,
+Markov-trace, Wenzl LR, SDP backends)</td>
+</tr>
+<tr class="odd">
+<td><code>tools/hecke-engine-wasm/</code></td>
+<td>Rust → WASM</td>
+<td><code>wasm-bindgen</code> exports of the rug-free canonical surface
+— published as <code>@litlfred/hecke-engine-wasm</code> on npm (when
+stable)</td>
+</tr>
+<tr class="even">
+<td><code>tools/hecke-engine-node/</code></td>
+<td>Rust → Node (napi-rs)</td>
+<td>Server-side Node.js native binding — published as
+<code>@litlfred/hecke-engine-node</code> on npm (when stable)</td>
+</tr>
+<tr class="odd">
+<td><code>tools/witness-schema/</code></td>
+<td>JSON Schema + Pydantic + Zod</td>
+<td>Cross-language schema for <code>*.witness.json</code> files —
+published as <code>witness-schema</code> on PyPI +
+<code>@litlfred/witness-schema</code> on npm</td>
+</tr>
+<tr class="even">
+<td><code>tools/snappea-wasm/</code> (under
+<code>folio-assistant/</code>)</td>
+<td>C → WASM</td>
+<td>SnapPea hyperbolic 3-manifold kernel as <code>@snappea/kernel</code>
+on npm</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-to-start">Where to start</h2>
+<p>The easiest way in is to fork the repository and explore it with the
+language model of your choice. Ask it what the paper claims, how a
+result is proved, or where a number comes from, and let it walk you
+through the files.</p>
+<table>
+<thead>
+<tr class="header">
+<th>If you're working on…</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Paper content (definitions, theorems, proofs)</td>
+<td><a
+href="https://github.com/litlfred/qou/blob/main/.github/copilot-instructions.md"><code>.github/copilot-instructions.md</code></a>
+§"Content-object architecture" + <a
+href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> §"Content-object
+architecture"</td>
+</tr>
+<tr class="even">
+<td>A Lean formalization</td>
+<td><a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> §"Writing
+<code>.lean</code> proofs — rules for agents" + <a
+href="https://github.com/litlfred/qou/blob/main/docs/ARCHITECTURE.md"><code>docs/ARCHITECTURE.md</code></a> §"Lean
+workspace"</td>
+</tr>
+<tr class="odd">
+<td>A new compute script</td>
+<td><a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> §"LP / SDP duals —
+first-class infra" +
+<code>.claude/skills/local/compute-author.md</code></td>
+</tr>
+<tr class="even">
+<td>A pyhecke / hecke-engine change</td>
+<td><a href="https://github.com/litlfred/qou/blob/main/docs/ARCHITECTURE.md"><code>docs/ARCHITECTURE.md</code></a>
+§"Tools packages"</td>
+</tr>
+<tr class="odd">
+<td>A CI / publish workflow change</td>
+<td><a
+href="https://github.com/litlfred/qou/blob/main/docs/workplans/2026-05-24-publish-yml-parallelization-plan.md"><code>docs/workplans/2026-05-24-publish-yml-parallelization-plan.md</code></a>
+(the current plan)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="branching--commits">Branching + commits</h2>
+<p>Per <a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> §"Branch + PR
+workflow" (<strong>STRICT</strong>):</p>
+<ul>
+<li><strong>Always create a branch + PR at the start of every work
+tranche.</strong> No commits direct to <code>main</code>.</li>
+<li><strong>Branch naming</strong>:
+<code>claude/&lt;theme&gt;-&lt;utc-ymd&gt;</code> (e.g.
+<code>claude/lean-cache-hybrid-2026-05-24</code>).</li>
+<li><strong>Commit early + commit often</strong>: small structured
+commits (1 logical unit per commit) so cherry-pick, bisect, and focused
+review work cleanly.</li>
+<li><strong>Default merge method: rebase-merge</strong> (preserves the
+per-commit structure). The skill docs say "merge-commit" but
+<code>AGENTS.md</code> §"Branch + PR workflow" rule 7 overrides
+that.</li>
+<li><strong>Don't squash</strong> unless the branch has noisy
+<code>wip</code> / <code>oops</code> commits the owner explicitly asks
+to collapse.</li>
+</ul>
+<h2 id="ci-gates">CI gates</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Gate</th>
+<th>What it checks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>validate</code> (witness-pipeline.yml)</td>
+<td>9 substrate-precision scripts pass (hyperbolic_volumes,
+codata_masses, …)</td>
+</tr>
+<tr class="even">
+<td><code>lean_ci.yml</code></td>
+<td>Root Lake workspace builds (<code>lake build</code>) — covers all 3
+paper packages (QOU, UGB, fred2005)</td>
+</tr>
+<tr class="odd">
+<td><code>publish.yml</code></td>
+<td>Content pipeline → LaTeX → PDF → gh-pages preview</td>
+</tr>
+<tr class="even">
+<td><code>blueprint.yml</code></td>
+<td>LeanBlueprint dependency graph + axiom report</td>
+</tr>
+<tr class="odd">
+<td><code>paper-builder-image.yml</code></td>
+<td>Prebuilt <code>ghcr.io/litlfred/qou-paper-builder</code> Docker
+image used by <code>publish.yml</code></td>
+</tr>
+</tbody>
+</table>
+<p>Run validators locally before pushing:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substrate-precision smoke</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> computations/hyperbolic_volumes.py</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> computations/codata_masses.py</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Content validation</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> content <span class="kw">&amp;&amp;</span> <span class="ex">bun</span> run validate</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Lean build</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">lake</span> build</span></code></pre></div>
+<h2 id="skills-the-agent-facing-entry-points">Skills (the agent-facing
+entry points)</h2>
+<p>The repo ships dozens of <strong>skills</strong> under
+<code>.claude/skills/local/</code> that document how to do common
+operations. When working on this repo via Claude Code / Cursor / GitHub
+Copilot, invoke skills by typing <code>/&lt;skill-name&gt;</code> or by
+asking the model to invoke them.</p>
+<p>The high-leverage ones for contributors:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Skill</th>
+<th>Use for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/prepare-merge</code></td>
+<td>Rebase + validate + request reviews + merge a PR</td>
+</tr>
+<tr class="even">
+<td><code>/coordinate</code></td>
+<td>Coordinate with sibling PRs (cherry-pick, intent comments)</td>
+</tr>
+<tr class="odd">
+<td><code>/integration-watch</code></td>
+<td>Run the 4 integration watchers (proof / canonical / compute /
+detangler)</td>
+</tr>
+<tr class="even">
+<td><code>/integration-backlog</code></td>
+<td>Drain a per-criterion backlog into PRs</td>
+</tr>
+<tr class="odd">
+<td><code>/code-review</code></td>
+<td>Review the current diff</td>
+</tr>
+<tr class="even">
+<td><code>/verify</code></td>
+<td>Run the app and verify a change works</td>
+</tr>
+</tbody>
+</table>
+<p>Full routing table is in <a
+href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> §"Skill routing".</p>
+<h2 id="code-style">Code style</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Tool</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Python</td>
+<td><code>ruff</code> (recommended), <code>black</code> style</td>
+<td>Substrate-precision discipline: prefer
+<code>mpmath.mpf("...")</code> / <code>Decimal("...")</code> over bare
+<code>float</code> — see
+<code>.claude/skills/local/compute-author.md</code></td>
+</tr>
+<tr class="even">
+<td>Rust</td>
+<td><code>cargo fmt</code> + <code>cargo clippy</code></td>
+<td><code>hecke-engine</code>'s <code>mpfr</code> feature gates rug;
+default builds are mpfr-on</td>
+</tr>
+<tr class="odd">
+<td>TypeScript</td>
+<td>Bun's default (tab=2-space)</td>
+<td>Content pipeline + assistant UI</td>
+</tr>
+<tr class="even">
+<td>Lean</td>
+<td><code>lake build</code> + <code>lake test</code></td>
+<td>Always carries <code>-- Ref:</code> citation on every
+<code>sorry</code>; see <a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a>
+§"Writing <code>.lean</code> proofs"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="questions">Questions?</h2>
+<ul>
+<li>Open an issue: <a
+href="https://github.com/litlfred/qou/issues">https://github.com/litlfred/qou/issues</a></li>
+<li>See <a href="https://github.com/litlfred/qou/blob/main/docs/"><code>docs/</code></a> for design docs, audits,
+workplans</li>
+<li>Check <a href="https://github.com/litlfred/qou/blob/main/AGENTS.md"><code>AGENTS.md</code></a> for the
+comprehensive agent / contributor guide (it's exhaustive)</li>
+</ul>
+
+</main></body>
+</html>

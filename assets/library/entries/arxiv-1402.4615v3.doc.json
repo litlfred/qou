@@ -1,0 +1,3358 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1402.4615v3",
+  "title": "arxiv-1402.4615v3",
+  "variant": "pdf",
+  "pages": 71,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Jack deformation of Plancherel measure and random matrices",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-jack-deformation-of-plancherel-measure-and-ra"
+    },
+    {
+      "level": 2,
+      "title": "Main result",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Jack polynomials and Jack measure",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-jack-polynomials-and-jack-measure"
+    },
+    {
+      "level": 2,
+      "title": "Ingredients of the proof",
+      "number": "1.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-ingredients-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Second main result: polynomiality of structure constants of Jack characters",
+      "number": "1.5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-second-main-result-polynomiality-of-structure"
+    },
+    {
+      "level": 2,
+      "title": "An open problem: edge fluctuations of Jack measure",
+      "number": "1.6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the paper",
+      "number": "1.7",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-17-outline-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Jack characters and Kerov polynomials",
+      "number": "2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-2-jack-characters-and-kerov-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Polynomial functions on the set of Young diagrams",
+      "number": "2.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-21-polynomial-functions-on-the-set-of-young-diag"
+    },
+    {
+      "level": 2,
+      "title": "Transition measure and free cumulants",
+      "number": "2.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-22-transition-measure-and-free-cumulants"
+    },
+    {
+      "level": 2,
+      "title": "Generalized Young diagrams",
+      "number": "2.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-23-generalized-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Continuous Young diagrams",
+      "number": "2.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-24-continuous-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "-polynomial functions",
+      "number": "2.5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-25--polynomial-functions"
+    },
+    {
+      "level": 1,
+      "title": "Polynomiality in Kerov's expansion",
+      "number": "3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-3-polynomiality-in-kerovs-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Notations",
+      "number": "3.1",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-31-notations"
+    },
+    {
+      "level": 2,
+      "title": "How to compute Jack character polynomials?",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-32-how-to-compute-jack-character-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "A triangular subsystem",
+      "number": "3.3",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-33-a-triangular-subsystem"
+    },
+    {
+      "level": 2,
+      "title": "A first bound on the degree",
+      "number": "3.4",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-34-a-first-bound-on-the-degree"
+    },
+    {
+      "level": 2,
+      "title": "A second bound on degrees",
+      "number": "3.5",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-35-a-second-bound-on-degrees"
+    },
+    {
+      "level": 2,
+      "title": "Polynomiality of ()",
+      "number": "3.6",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Yet another gradation and bound on degrees",
+      "number": "3.7",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-37-yet-another-gradation-and-bound-on-degrees"
+    },
+    {
+      "level": 2,
+      "title": "Gradations and characters",
+      "number": "3.8",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-38-gradations-and-characters"
+    },
+    {
+      "level": 1,
+      "title": "Polynomiality of structure constants of Jack characters",
+      "number": "4",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-4-polynomiality-of-structure-constants-of-jack-c"
+    },
+    {
+      "level": 2,
+      "title": "Structure constants are polynomials in",
+      "number": "4.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-41-structure-constants-are-polynomials-in"
+    },
+    {
+      "level": 2,
+      "title": "Projection on functions on Young diagrams of size n",
+      "number": "4.2",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-42-projection-on-functions-on-young-diagrams-of"
+    },
+    {
+      "level": 1,
+      "title": "Special values of and polynomial interpolation",
+      "number": "5",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-5-special-values-of-and-polynomial-interpolation"
+    },
+    {
+      "level": 2,
+      "title": "Case =1: symmetric group algebra",
+      "number": "5.1",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Case =2: Hecke algebra of (S2n,Hn)",
+      "number": "5.2",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A technical lemma obtained by polynomial interpolation",
+      "number": "5.3",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-53-a-technical-lemma-obtained-by-polynomial-inte"
+    },
+    {
+      "level": 1,
+      "title": "Jack measure: law of large numbers",
+      "number": "6",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-6-jack-measure-law-of-large-numbers"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of polynomial functions",
+      "number": "6.1",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-61-convergence-of-polynomial-functions"
+    },
+    {
+      "level": 2,
+      "title": "Shape convergence",
+      "number": "6.2",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-62-shape-convergence"
+    },
+    {
+      "level": 1,
+      "title": "Jack measure: central limit theorem for Jack characters",
+      "number": "7",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-7-jack-measure-central-limit-theorem-for-jack-ch"
+    },
+    {
+      "level": 2,
+      "title": "Multivariate Stein's method",
+      "number": "7.1",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "An exchangeable pair",
+      "number": "7.2",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-72-an-exchangeable-pair"
+    },
+    {
+      "level": 2,
+      "title": "Checking hypotheses",
+      "number": "7.3",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-73-checking-hypotheses"
+    },
+    {
+      "level": 2,
+      "title": "Error term",
+      "number": "7.4",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-74-error-term"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the central limit theorem",
+      "number": "7.5",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-75-proof-of-the-central-limit-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Speed in convergence",
+      "number": "7.6",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-76-speed-in-convergence"
+    },
+    {
+      "level": 2,
+      "title": "Fluctuations of other polynomial functions",
+      "number": "7.7",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-77-fluctuations-of-other-polynomial-functions"
+    },
+    {
+      "level": 1,
+      "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
+      "number": "8",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-8-jack-measure-central-limit-theorems-for-young"
+    },
+    {
+      "level": 2,
+      "title": "Extended algebra of polynomial functions and gradations",
+      "number": "8.1",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-81-extended-algebra-of-polynomial-functions-and"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 8.1",
+      "number": "8.2",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-82-proof-of-theorem-81"
+    },
+    {
+      "level": 2,
+      "title": "Informal reformulation of Theorem 8.1",
+      "number": "8.3",
+      "page": 58,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-83-informal-reformulation-of-theorem-81"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Kerov polynomials",
+      "number": null,
+      "page": 59,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-appendix-a-kerov-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Comparison with Lassalle's normalizations",
+      "number": null,
+      "page": 59,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-a1-comparison-with-lassalles-normalizations"
+    },
+    {
+      "level": 2,
+      "title": "A.2. Linear terms in Kerov polynomials",
+      "number": null,
+      "page": 60,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-a2-linear-terms-in-kerov-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "A.3. High degree terms of Kerov polynomials for deg1",
+      "number": null,
+      "page": 62,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Other consequences of the second main result",
+      "number": null,
+      "page": 63,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-appendix-b-other-consequences-of-the-second-main"
+    },
+    {
+      "level": 2,
+      "title": "B.1. Recovering a recent result of Vassilieva",
+      "number": null,
+      "page": 63,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-b1-recovering-a-recent-result-of-vassilieva"
+    },
+    {
+      "level": 2,
+      "title": "B.2. Goulden's and Jackson's b-conjecture",
+      "number": null,
+      "page": 64,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-b2-gouldens-and-jacksons-b-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "B.3. Symmetric functions of contents",
+      "number": null,
+      "page": 65,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-b3-symmetric-functions-of-contents"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 68,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 68,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack characters",
+          "heading": false
+        },
+        {
+          "term": "order asymptotics",
+          "heading": false
+        },
+        {
+          "term": "logan-shepp",
+          "heading": false
+        },
+        {
+          "term": "vershik-kerov",
+          "heading": false
+        },
+        {
+          "term": "maciej",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1402.4615v3 [math.PR] 3 Feb 2015 GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS MACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY ABSTRACT. In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials. Our main result is the description of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1402.4615v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-jack-deformation-of-plancherel-measure-and-ra",
+      "number": "1.1",
+      "title": "Jack deformation of Plancherel measure and random matrices",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack measure",
+          "heading": true
+        },
+        {
+          "term": "plancherel measure",
+          "heading": true
+        },
+        {
+          "term": "gue ensemble",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": true
+        },
+        {
+          "term": "gaussian beta",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "gue case",
+          "heading": false
+        },
+        {
+          "term": "bulk fluctuations",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:JackPlancherel label=\"subsect:JackPlancherel\"} Random partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov-Witten and Seiberg-Witten theories, see [@OkounkovRandomPartitions] for an introduction to the subject. Another aspect which makes them attractive is the link with random matrices. Namely, some classical models of random matrices have random",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-main-result",
+      "number": "1.2",
+      "title": "Main result",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "overline alpha",
+          "heading": false
+        },
+        {
+          "term": "jack measure",
+          "heading": false
+        },
+        {
+          "term": "first-order-gbe",
+          "heading": false
+        },
+        {
+          "term": "subsectgeneralizedyd",
+          "heading": false
+        },
+        {
+          "term": "beta ensemble",
+          "heading": false
+        },
+        {
+          "term": "informal",
+          "heading": false
+        },
+        {
+          "term": "firstorder",
+          "heading": false
+        }
+      ],
+      "extract": "The main result of this paper is the description of the first and second order asymptotics of the bulk of Young diagrams under Jack measure. First, we prove a law of large numbers. If $\\lambda$ is a Young diagram of size $n$, we denote by $\\overline{A_\\alpha(\\lambda)}$ the (generalized) Young diagram obtained from $\\lambda$ by an horizontal stretching of ratio $\\sqrt{\\alpha/n}$ and a vertical stretching of ratio",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-jack-polynomials-and-jack-measure",
+      "number": "1.3",
+      "title": "Jack polynomials and Jack measure",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack polynomials",
+          "heading": true
+        },
+        {
+          "term": "jack measure",
+          "heading": true
+        },
+        {
+          "term": "fluct nonhook",
+          "heading": false
+        },
+        {
+          "term": "jack characters",
+          "heading": false
+        },
+        {
+          "term": "lambda rho",
+          "heading": false
+        },
+        {
+          "term": "theta rho",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "speedconvergence",
+          "heading": false
+        }
+      ],
+      "extract": "To explain our intermediate results and the main steps of the proof, we first need to review the connection between Jack measure and Jack polynomials. ### Jack polynomials In a seminal paper [@Jack1970/1971], Jack introduced a family of symmetric functions $J^{(\\alpha)}_\\lambda$ depending on an additional parameter $\\alpha$. These functions are now called *Jack polynomials*. For some special values of $\\alpha$, they",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-ingredients-of-the-proof",
+      "number": "1.4",
+      "title": "Ingredients of the proof",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 999,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multivariate stein",
+          "heading": false
+        },
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "doł ega",
+          "heading": false
+        },
+        {
+          "term": "jack characters",
+          "heading": false
+        },
+        {
+          "term": "general α-case",
+          "heading": false
+        },
+        {
+          "term": "representation-theoretical",
+          "heading": false
+        },
+        {
+          "term": "moment method",
+          "heading": false
+        }
+      ],
+      "extract": "results. The proof of Theorem 1.1 is easier than the proof of the ﬂuctuation result, so we will focus here on the second and compare it to the work of Ivanov, Kerov and Olshanski. 8 M. DOŁ ˛EGA AND V. FÉRAY Remark. While beautiful and elementary, Hora’s proof of the central limit theorem for characters in the case α = 1 seems very hard to be generalized for a generic value of α as it relies from the beginning on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-second-main-result-polynomiality-of-structure",
+      "number": "1.5",
+      "title": "Second main result: polynomiality of structure constants of Jack characters",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 854,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack characters",
+          "heading": true
+        },
+        {
+          "term": "structure constants",
+          "heading": true
+        },
+        {
+          "term": "struct-const",
+          "heading": false
+        },
+        {
+          "term": "polynomiality",
+          "heading": true
+        },
+        {
+          "term": "lassalle algorithm",
+          "heading": false
+        },
+        {
+          "term": "propbound",
+          "heading": false
+        },
+        {
+          "term": "kerov polynomials",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:Second_Main_Result label=\"subsect:Second_Main_Result\"} It follows from the work of Lassalle -- see Proposition [\\[prop:Jack-characters-basis\\]](#prop:Jack-characters-basis){reference-type=\"ref\" reference=\"prop:Jack-characters-basis\"} -- that the functions $\\mathop{\\mathrm{Ch}}_{\\mu}^{(\\alpha)}$ span linearly the algebra of $\\alpha$-polynomial functions denoted by $\\Lambda_\\star^{(\\alpha)}$ (when $\\mu$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea",
+      "number": "1.6",
+      "title": "An open problem: edge fluctuations of Jack measure",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge fluctuations",
+          "heading": true
+        },
+        {
+          "term": "jack measure",
+          "heading": true
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "finitesupport",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "beta ensemble",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "case alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Another natural question on asymptotics of Jack measure is the behavior of the first few rows of the Young diagrams. This kind of results, orthogonal to the ones in this paper, is called *edge fluctuations*. Our law of large number on the bulk on Young diagrams implies that, for any fixed positive integer $k$ and real number $C<1$, $$\\mathbb{P}\\left[ \\frac{(\\lambda_{(n)})_k}{\\sqrt{n}} \\leq \\frac{2\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-outline-of-the-paper",
+      "number": "1.7",
+      "title": "Outline of the paper",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sectpolynomial",
+          "heading": false
+        },
+        {
+          "term": "clt",
+          "heading": false
+        },
+        {
+          "term": "sectspecialvalues",
+          "heading": false
+        },
+        {
+          "term": "sectdefkerov",
+          "heading": false
+        },
+        {
+          "term": "firstorder",
+          "heading": false
+        },
+        {
+          "term": "jack characters",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        }
+      ],
+      "extract": "The paper is organized as follows. Section [\\[SectDefKerov\\]](#SectDefKerov){reference-type=\"ref\" reference=\"SectDefKerov\"} gives all definitions and background on Jack characters, free cumulants and Kerov polynomials. In Section [\\[SectPolynomial\\]](#SectPolynomial){reference-type=\"ref\" reference=\"SectPolynomial\"} we prove the polynomiality of the coefficients of Kerov's polynomials, with bounds on the degrees.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-jack-characters-and-kerov-polynomials",
+      "number": "2",
+      "title": "Jack characters and Kerov polynomials",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-21-polynomial-functions-on-the-set-of-young-diag",
+      "number": "2.1",
+      "title": "Polynomial functions on the set of Young diagrams",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "lambda star",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "lambda amp",
+          "heading": false
+        },
+        {
+          "term": "ring lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda mapsto",
+          "heading": false
+        },
+        {
+          "term": "size lambda",
+          "heading": false
+        },
+        {
+          "term": "outer corners",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:polfunct label=\"subsec:polfunct\"} The ring $\\Lambda_\\star^{(1)}$ of *polynomial functions on the set of Young diagrams* (briefly: the ring of *polynomial functions*) has been introduced by Kerov and Olshanski in order to study irreducible character values of the symmetric groups [@KerovOlshanskiPolFunc]. The first characterization of $\\Lambda_\\star^{(1)}$, that we shall use as definition, is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-transition-measure-and-free-cumulants",
+      "number": "2.2",
+      "title": "Transition measure and free cumulants",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition measure",
+          "heading": true
+        },
+        {
+          "term": "free cumulants",
+          "heading": true
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "lambda sum",
+          "heading": false
+        },
+        {
+          "term": "int mathbb",
+          "heading": false
+        },
+        {
+          "term": "frac prod",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "transmeasure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:TransMeasure label=\"subsect:TransMeasure\"} Kerov [@KerovTransitionMeasure] introduced the notion of *transition measure* of a Young diagram. This is a probability measure $\\mu_\\lambda$ on the real line $\\mathbb{R}$ associated to $\\lambda$ and defined by its Cauchy transform: $$G_{\\mu_\\lambda}(z) = \\int_\\mathbb{R}\\frac{d\\mu_\\lambda(x)}{z-x} = \\frac{\\prod_{o \\in \\mathbb{O}_\\lambda} z-o}{\\prod_{i \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-23-generalized-young-diagrams",
+      "number": "2.3",
+      "title": "Generalized Young diagrams",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized young",
+          "heading": true
+        },
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "ultra thick",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "anisotropic young",
+          "heading": false
+        },
+        {
+          "term": "lambda mapsto",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectGeneralizedYD label=\"SubsectGeneralizedYD\"} The second description of $\\Lambda_\\star^{(1)}$ is interesting because it shows that the value of a polynomial function is defined on more general objects than just Young diagrams. ::: definition A *generalized Young diagram* is a broken line going from a point $(0,y)$ on the $y$-axis to a point $(x,0)$ on the $x$-axis such that every piece is either a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-24-continuous-young-diagrams",
+      "number": "2.4",
+      "title": "Continuous Young diagrams",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continuous young",
+          "heading": true
+        },
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "generalized young",
+          "heading": false
+        },
+        {
+          "term": "continuous function",
+          "heading": false
+        },
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "bia",
+          "heading": false
+        }
+      ],
+      "extract": "seen as a function on the real line. Indeed, if one rotates the zigzag line coun- terclockwise by 45◦and scale it by a factor √ 2 (so that the new z-coordinate corresponds to contents), then it can be seen as the graph of a piecewise afﬁne continuous function with slope ±1. We denote this function by ω(λ). This def- inition is illustrated in Figure 1. It is very useful to state convergence results for Young",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-25--polynomial-functions",
+      "number": "2.5",
+      "title": "-polynomial functions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "α-polynomial functions",
+          "heading": false
+        },
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "α-shifted symmetric",
+          "heading": false
+        },
+        {
+          "term": "lassalle",
+          "heading": false
+        },
+        {
+          "term": "dilatation",
+          "heading": false
+        },
+        {
+          "term": "polynomial",
+          "heading": true
+        },
+        {
+          "term": "nomials",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 2.8. We say that F is an α-polynomial function on the set of (continuous) Young diagrams if λ 7→F(Tα−1,1(λ)) is a polynomial function. The set of α-polynomial functions is an algebra which will be denoted by Λ(α) ⋆. Using Deﬁnition 2.1, this means that the polynomial F(α−1λ1, · · · , α−1λh) is symmetric in λ1 −1, . . . , λh −h. Equivalently (by a change of variables), F is symmetric in αλ1 −1, . . . , αλh",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-polynomiality-in-kerovs-expansion",
+      "number": "3",
+      "title": "Polynomiality in Kerov's expansion",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-31-notations",
+      "number": "3.1",
+      "title": "Notations",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "notations",
+          "heading": true
+        },
+        {
+          "term": "downarrow",
+          "heading": false
+        },
+        {
+          "term": "partition obtained",
+          "heading": false
+        },
+        {
+          "term": "box",
+          "heading": false
+        }
+      ],
+      "extract": "As in the previous sections, most of our objects are indexed by integer partitions. Therefore it will be useful to use some short notations for small modifications (adding or removing a box or a part) of partitions. We denote by $\\mu \\cup (r)$ ($\\mu \\setminus (r)$, respectively) the partition obtained from $\\mu$ by adding (deleting, respectively) one part equal to $r$. We denote by $\\mu_{\\downarrow r}=\\mu \\setminus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-32-how-to-compute-jack-character-polynomials",
+      "number": "3.2",
+      "title": "How to compute Jack character polynomials?",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lassalle proposition",
+          "heading": false
+        },
+        {
+          "term": "sum rho",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "partition rho",
+          "heading": false
+        },
+        {
+          "term": "tag tau",
+          "heading": false
+        },
+        {
+          "term": "rho left",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectAlgo label=\"SubsectAlgo\"} Unfortunately, the argument given above to prove the existence of $L_\\mu$ and $K_\\mu$ is not effective. M. Lassalle [@Lassalle2009] gave an algorithm for computing $K_\\mu$ by induction over $\\mu$. In this section we present a slightly simpler version of this algorithm which allows to compute $L_\\mu$ instead of $K_\\mu$. One of the base ingredients is the following formula, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-33-a-triangular-subsystem",
+      "number": "3.3",
+      "title": "A triangular subsystem",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau rho",
+          "heading": false
+        },
+        {
+          "term": "rho downarrow",
+          "heading": false
+        },
+        {
+          "term": "partition rho",
+          "heading": false
+        },
+        {
+          "term": "rho setminus",
+          "heading": false
+        },
+        {
+          "term": "lemtriangle",
+          "heading": false
+        },
+        {
+          "term": "corolmlo",
+          "heading": false
+        },
+        {
+          "term": "triangular",
+          "heading": true
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we explained how to determine the coefficients $a^\\mu_\\rho$ (where $\\rho$ runs over partitions without parts equal to $1$) of $L_\\mu$ as the solution of an overdetermined linear system of equations. In this section, we extract from this system a triangular subsystem. We will need an order on all partitions: let us define $<_1$ as follows: $$\\rho <_1 \\rho' \\iff \\begin{cases} & |\\rho| <|\\rho'|;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-34-a-first-bound-on-the-degree",
+      "number": "3.4",
+      "title": "A first bound on the degree",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 844,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau rho",
+          "heading": false
+        },
+        {
+          "term": "downarrow tau",
+          "heading": false
+        },
+        {
+          "term": "deg gamma",
+          "heading": false
+        },
+        {
+          "term": "sum rho",
+          "heading": false
+        },
+        {
+          "term": "dominant deg",
+          "heading": false
+        },
+        {
+          "term": "lemdeg1b",
+          "heading": false
+        },
+        {
+          "term": "backslash tau",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#SubsectBound1 label=\"SubsectBound1\"} Recall that $(M_k)_{k \\geq 2}$ is an algebraic basis of the ring $\\Lambda_\\star^{(\\alpha)}$ of $\\alpha$-polynomial functions on Young diagrams. Hence, we can define a gradation on $\\Lambda_\\star^{(\\alpha)}$ by choosing arbitrarily the degree of each of the generators $M_k$. In this section, we do the following natural choice: $$\\deg_1(M_k)=k \\qquad \\text{for } k\\geq 2.$$ Our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-35-a-second-bound-on-degrees",
+      "number": "3.5",
+      "title": "A second bound on degrees",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "propbound",
+          "heading": false
+        },
+        {
+          "term": "alpha rho",
+          "heading": false
+        },
+        {
+          "term": "rho ell",
+          "heading": false
+        },
+        {
+          "term": "lemdeg1b",
+          "heading": false
+        },
+        {
+          "term": "deg gamma",
+          "heading": false
+        },
+        {
+          "term": "leq deg",
+          "heading": false
+        },
+        {
+          "term": "aligned deg",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectBound2 label=\"SubsectBound2\"} For some purposes the bound on the degree of $a_\\rho^\\mu$ given by Proposition [\\[PropBound1\\]](#PropBound1){reference-type=\"ref\" reference=\"PropBound1\"} is not strong enough. In this section we give another bound which is related to another gradation of $\\Lambda_\\star^{(\\alpha)}$ defined by: $$\\ \\deg_2(M_k)=k-2 \\qquad \\text{for } k\\geq 2 .$$ One has the following analogue of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-37-yet-another-gradation-and-bound-on-degrees",
+      "number": "3.7",
+      "title": "Yet another gradation and bound on degrees",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pre-degree deg",
+          "heading": false
+        },
+        {
+          "term": "rho tau",
+          "heading": false
+        },
+        {
+          "term": "deg gamma",
+          "heading": false
+        },
+        {
+          "term": "rho ell",
+          "heading": false
+        },
+        {
+          "term": "propbound",
+          "heading": false
+        },
+        {
+          "term": "sum rho",
+          "heading": false
+        },
+        {
+          "term": "tag tau",
+          "heading": false
+        },
+        {
+          "term": "rho left",
+          "heading": false
+        }
+      ],
+      "extract": "The gradation introduced in Section [\\[SubsectBound2\\]](#SubsectBound2){reference-type=\"ref\" reference=\"SubsectBound2\"} is suitable for some purposes (as we have seen in the previous section), but it has the unpleasant aspect that all homogeneous spaces have an infinite dimension. In particular, Proposition [\\[PropBound2\\]](#PropBound2){reference-type=\"ref\" reference=\"PropBound2\"} does not give any information on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-38-gradations-and-characters",
+      "number": "3.8",
+      "title": "Gradations and characters",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gradations",
+          "heading": true
+        },
+        {
+          "term": "kerov filtration",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "subsectdegch",
+          "heading": false
+        },
+        {
+          "term": "lambda star",
+          "heading": false
+        },
+        {
+          "term": "general alpha",
+          "heading": false
+        },
+        {
+          "term": "ivanovolshanski",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectDegCh label=\"SubsectDegCh\"} In the previous sections we have defined three different gradations. The elements of our favorite basis $(\\mathop{\\mathrm{Ch}}_\\mu)$ are not homogeneous, but have the following nice property: if we define $$V_i^d := \\{x \\in \\Lambda_\\star^{(\\alpha)}: \\deg_i(x) \\leq d\\}$$ then, for $i=1$ and $i=3$, each $V_i^d$ is spanned linearly by the functions $\\mathop{\\mathrm{Ch}}_\\mu$ that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-4-polynomiality-of-structure-constants-of-jack-c",
+      "number": "4",
+      "title": "Polynomiality of structure constants of Jack characters",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "4. POLYNOMIALITY OF STRUCTURE CONSTANTS OF JACK CHARACTERS",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-41-structure-constants-are-polynomials-in",
+      "number": "4.1",
+      "title": "Structure constants are polynomials in",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "degree deg",
+          "heading": false
+        },
+        {
+          "term": "cdot mathop",
+          "heading": false
+        },
+        {
+          "term": "involving deg",
+          "heading": false
+        },
+        {
+          "term": "rho tau",
+          "heading": false
+        },
+        {
+          "term": "struct-const",
+          "heading": false
+        },
+        {
+          "term": "propbound",
+          "heading": false
+        },
+        {
+          "term": "sectpolynomial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectStructPol label=\"SubsectStructPol\"} In this section we are going to prove our main result for the structure constants of the algebra $\\Lambda_\\star^{(\\alpha)}$ of $\\alpha$-polynomial functions which was stated as Theorem [\\[theo:struct-const\\]](#theo:struct-const){reference-type=\"ref\" reference=\"theo:struct-const\"}. ::: proof *Proof of Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-42-projection-on-functions-on-young-diagrams-of",
+      "number": "4.2",
+      "title": "Projection on functions on Young diagrams of size n",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot tilde",
+          "heading": false
+        },
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "binom tilde",
+          "heading": false
+        },
+        {
+          "term": "cdot theta",
+          "heading": false
+        },
+        {
+          "term": "tau leq",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "matching-jack",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SubsectProjN label=\"SubsectProjN\"} Recall that $\\Lambda_\\star^{(\\alpha)}$ is a subalgebra of the algebra of functions on all Young diagrams. The latter has a natural projection map $\\varphi_n$ onto $\\mathcal{F}(\\mathcal{Y}_n,\\mathbb{Q})$, the algebra of functions on Young diagrams of size $n$. As Jack symmetric functions $J_\\lambda$ form a basis of the symmetric function ring, the functions $(\\theta_\\mu)_{\\mu",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-5-special-values-of-and-polynomial-interpolation",
+      "number": "5",
+      "title": "Special values of and polynomial interpolation",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "vdash theta",
+          "heading": false
+        },
+        {
+          "term": "backslash mathfrak",
+          "heading": false
+        },
+        {
+          "term": "propstructuretheta",
+          "heading": false
+        },
+        {
+          "term": "same cycle-type",
+          "heading": false
+        },
+        {
+          "term": "fixed matchings",
+          "heading": false
+        },
+        {
+          "term": "sigma mathop",
+          "heading": false
+        },
+        {
+          "term": "rho lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SectSpecialValues label=\"SectSpecialValues\"} ## Case $\\alpha=1$: symmetric group algebra {#SubsectStructA1} In the case $\\alpha=1$, the structure constants considered in the previous section are linked with the symmetric group algebra. Let $\\mathfrak{S}_{n}$ denote the symmetric group of size $n$, *i.e.* the group of permutations of the set $[n]:=\\{1,\\dots,n\\}$. Recall that the cycle-type of a permutation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-53-a-technical-lemma-obtained-by-polynomial-inte",
+      "number": "5.3",
+      "title": "A technical lemma obtained by polynomial interpolation",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 717,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho ell",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "tilde rho",
+          "heading": false
+        },
+        {
+          "term": "eqcg",
+          "heading": false
+        },
+        {
+          "term": "struct-const",
+          "heading": false
+        },
+        {
+          "term": "sum leq",
+          "heading": false
+        },
+        {
+          "term": "lem",
+          "heading": false
+        },
+        {
+          "term": "ivanovolshanski proposition",
+          "heading": false
+        }
+      ],
+      "extract": "In order to study asymptotics of large Young diagrams we need to understand some special cases of structure constants. Here, we present some technical, but useful lemma about them: ::: lemma []{#lem:SC label=\"lem:SC\"} We have the following identities: 1. []{#eq:SC-1 label=\"eq:SC-1\"} $g_{\\mu,\\nu;\\rho} = \\delta_{\\rho, \\mu \\cup \\nu}$ for $|\\rho| + \\ell(\\rho) \\geq |\\mu| + \\ell(\\mu) + |\\nu| + \\ell(\\nu)$; 2. []{#eq:SC-2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-6-jack-measure-law-of-large-numbers",
+      "number": "6",
+      "title": "Jack measure: law of large numbers",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 29,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ryd-limit",
+          "heading": false
+        },
+        {
+          "term": "firstorder",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:FirstOrder label=\"sect:FirstOrder\"} The purpose of this Section is to prove Theorem [\\[theo:RYD-limit\\]](#theo:RYD-limit){reference-type=\"ref\" reference=\"theo:RYD-limit\"}. As in [@IvanovOlshanski2002], the key point is to prove the convergence of polynomial functions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-61-convergence-of-polynomial-functions",
+      "number": "6.1",
+      "title": "Convergence of polynomial functions",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "dominant deg",
+          "heading": false
+        },
+        {
+          "term": "xrightarrow mathbb",
+          "heading": false
+        },
+        {
+          "term": "sqrt big",
+          "heading": false
+        },
+        {
+          "term": "lambda star",
+          "heading": false
+        },
+        {
+          "term": "defomega",
+          "heading": false
+        },
+        {
+          "term": "subsectdegch",
+          "heading": false
+        },
+        {
+          "term": "subsectbound",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall equation [\\[eq:exp_Ch\\]](#eq:exp_Ch){reference-type=\"eqref\" reference=\"eq:exp_Ch\"}, which gives us the expectation of Jack characters with respect to Jack measure: $$\\mathbb{E}_{\\mathbb{P}_n^{(\\alpha)}}(\\mathop{\\mathrm{Ch}}^{(\\alpha)}_\\mu)=\\begin{cases} n(n-1)\\cdots(n-k+1) & \\text{if }\\mu=1^k \\text{ for some }k \\leq n,\\\\ 0 & \\text{otherwise.} \\end{cases}$$ As $\\mathop{\\mathrm{Ch}}_\\mu$ is a linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-62-shape-convergence",
+      "number": "6.2",
+      "title": "Shape convergence",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha sqrt",
+          "heading": false
+        },
+        {
+          "term": "ryd-limit",
+          "heading": false
+        },
+        {
+          "term": "finitesupport",
+          "heading": false
+        },
+        {
+          "term": "lambda sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "propaplanchweakconv",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous Section, we proved that evaluations of polynomial functions at $D_{1/\\sqrt{n}} \\big(A_\\alpha(\\lambda_{(n)})\\big)$ converge towards the evaluation at $\\Omega$. Ivanov and Olshanski has established that, if one can prove that the support of these renormalized Young diagrams lies in some compact, this would imply the uniform convergence, that is Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-7-jack-measure-central-limit-theorem-for-jack-ch",
+      "number": "7",
+      "title": "Jack measure: central limit theorem for Jack characters",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fluctuationsjackcharacters",
+          "heading": false
+        },
+        {
+          "term": "multivariatestein",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        },
+        {
+          "term": "leq lambda",
+          "heading": false
+        },
+        {
+          "term": "jack",
+          "heading": true
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "speedconvergence",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:CLT label=\"sect:CLT\"} In this section we prove the central limit theorem for Jack characters (Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"}) and the bound of the speed of convergence in this theorem (Theorem [\\[theo:SpeedConvergence\\]](#theo:SpeedConvergence){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-72-an-exchangeable-pair",
+      "number": "7.2",
+      "title": "An exchangeable pair",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchangeable pair",
+          "heading": true
+        },
+        {
+          "term": "tau vdash",
+          "heading": false
+        },
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "reversible markov",
+          "heading": false
+        },
+        {
+          "term": "alpha tau",
+          "heading": false
+        },
+        {
+          "term": "rho vdash",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "ell tau",
+          "heading": false
+        }
+      ],
+      "extract": "The first step consists in building a $d$-tuple $\\tilde{W}_d^*$, such that $(\\tilde{W}_d,\\tilde{W}_d^*)$ is an exchangeable pair. The construction that we will describe here is due to Fulman [@FulmanFluctuationChA2]. His construction uses Markov chains, so let us begin by fixing some terminology. Let $X$ be a finite set. A Markov chain $M$ on $X$ is the data of transition probability $M(x,y)$ indexed by pairs of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-73-checking-hypotheses",
+      "number": "7.3",
+      "title": "Checking hypotheses",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 745,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert varsigma",
+          "heading": false
+        },
+        {
+          "term": "varsigma mathop",
+          "heading": false
+        },
+        {
+          "term": "steincondition label",
+          "heading": false
+        },
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "multivariatestein",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "alpha ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:CheckingHypotheses label=\"subsec:CheckingHypotheses\"} Recall that we have defined $$W_k = n^{-k/2} \\sqrt{k}^{-1} \\mathop{\\mathrm{Ch}}_{(k)}$$ and the random vector $$\\tilde{W}_d = (W_2,\\dots,W_{d+1})$$ on the probability space of Young diagrams of size $n$ endowed with Jack measure. Let $\\lambda$ be a random partition distributed according to Jack measure, and $\\lambda^*$ ($\\lambda'$, respectively) be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-74-error-term",
+      "number": "7.4",
+      "title": "Error term",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gathered mathop",
+          "heading": false
+        },
+        {
+          "term": "alpha ell",
+          "heading": false
+        },
+        {
+          "term": "leq alpha",
+          "heading": false
+        },
+        {
+          "term": "atop tiny",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "gathered left",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:ErrorTerm label=\"subsec:ErrorTerm\"} In the previous Section, we have checked that the pair $(\\tilde{W}_d, \\tilde{W}_d^*)$ of the random vectors satisfies the assumptions of Theorem [\\[theo:MultivariateStein\\]](#theo:MultivariateStein){reference-type=\"ref\" reference=\"theo:MultivariateStein\"}. In order to prove that the random vector $\\tilde{W}_d$ is asymptotically Gaussian, we need to show that quantities",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-75-proof-of-the-central-limit-theorem",
+      "number": "7.5",
+      "title": "Proof of the central limit theorem",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varsigma tilde",
+          "heading": false
+        },
+        {
+          "term": "varsigma rvert",
+          "heading": false
+        },
+        {
+          "term": "lvert tilde",
+          "heading": false
+        },
+        {
+          "term": "steincondition",
+          "heading": false
+        },
+        {
+          "term": "lvert mathop",
+          "heading": false
+        },
+        {
+          "term": "left mathbb",
+          "heading": false
+        },
+        {
+          "term": "forget sigma",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "We are now ready to prove the main result of this section: ::: proof *Proof of Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"}.* Let $\\tilde{\\Xi}_d = (\\Xi_2,\\dots,\\Xi_{d+1})$. In order to show that $$\\left( \\frac{\\mathop{\\mathrm{Ch}}_{(k)}}{ \\sqrt{k} n^{k/2}} \\right)_{k=2,3,\\dots} \\xrightarrow{d} \\left( \\Xi_k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-76-speed-in-convergence",
+      "number": "7.6",
+      "title": "Speed in convergence",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reinertrollin corollary",
+          "heading": false
+        },
+        {
+          "term": "varsigma",
+          "heading": false
+        },
+        {
+          "term": "hat lambda",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "boundtripleproductgoodcase",
+          "heading": false
+        },
+        {
+          "term": "technicalbound",
+          "heading": false
+        },
+        {
+          "term": "checkinghypotheses",
+          "heading": false
+        },
+        {
+          "term": "errorterm",
+          "heading": false
+        }
+      ],
+      "extract": "We now use [@ReinertRollin2009 Corollary 3.1], which gives an estimate for $$\\left| \\mathbb{E}_n^{(\\alpha)}h(\\tilde{W}_d) - \\mathbb{E}h(\\tilde{\\Xi}_d) \\right|$$ for non-smooth test functions $h$. In particular, we shall consider functions $h$ in the set $\\mathcal{H}$ of indicator functions of convex sets. We have the following result, which is stronger than Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-77-fluctuations-of-other-polynomial-functions",
+      "number": "7.7",
+      "title": "Fluctuations of other polynomial functions",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fluct nonhook",
+          "heading": false
+        },
+        {
+          "term": "fluctuationsjackcharacters",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "polynomial",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsect:Fluct_NonHook label=\"subsect:Fluct_NonHook\"} As $\\mathop{\\mathrm{Ch}}_{(k)}$ is an algebraic basis of polynomial functions, Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"} implies that any polynomial function $F$ converge, after proper normalization, towards a multivariate polynomial evaluated in independent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-8-jack-measure-central-limit-theorems-for-young",
+      "number": "8",
+      "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack measure",
+          "heading": true
+        },
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "transition measure",
+          "heading": true
+        },
+        {
+          "term": "k-j k-2j",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": true
+        },
+        {
+          "term": "jackplancherel",
+          "heading": false
+        },
+        {
+          "term": "omega bigg",
+          "heading": false
+        },
+        {
+          "term": "scaled young",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:CLT2 label=\"sect:CLT2\"} In this section, we state formally and prove our fluctuation results for Young diagrams under Jack measure. We will also present a fluctuation result for the transition measures of these diagrams. Before we state our results, we need some preparations. We follow here notations from [@IvanovOlshanski2002 Sections 7 and 8]. First, we define $$\\begin{aligned} u_k(x) &= U_k(x/2) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-81-extended-algebra-of-polynomial-functions-and",
+      "number": "8.1",
+      "title": "Extended algebra of polynomial functions and gradations",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "gradations",
+          "heading": true
+        },
+        {
+          "term": "multiplicative basis",
+          "heading": false
+        },
+        {
+          "term": "ext",
+          "heading": false
+        },
+        {
+          "term": "chm",
+          "heading": false
+        },
+        {
+          "term": "ivanov",
+          "heading": false
+        },
+        {
+          "term": "olshanski",
+          "heading": false
+        },
+        {
+          "term": "general partition",
+          "heading": false
+        }
+      ],
+      "extract": "bines our ﬂuctuation results for Jack characters and arguments from the proof of Kerov, Ivanov and Olshanski for the case α = 1. In particular we shall com- pare some α-polynomial functions with their counterpart for α = 1. Therefore, throughout this section, we will make the dependence in (α) explicit and we use the notations Ch(α) µ , M(α) k , and so on. The only exception to this is Ch(1) as, for any α, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-82-proof-of-theorem-81",
+      "number": "8.2",
+      "title": "Proof of Theorem 8.1",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chµ",
+          "heading": false
+        },
+        {
+          "term": "degree less",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "jack measure",
+          "heading": false
+        },
+        {
+          "term": "a2m",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "ext",
+          "heading": false
+        }
+      ],
+      "extract": "Olshanski is to prove that u(1) k and t(1) k are in \u0010 Λ(1) ⋆ \u0011ext and fulﬁll u(1) k = Ch(1) (k+1) (k + 1) Ch(k+1)/2 (1) + terms of negative degree for deg4; (45) t(1) k = Ch(1) (k−1) Ch(k−1)/2 (1) + terms of negative degree for deg4. (46) These equations are respectively the last equations of Sections 7 and 8 in paper [IO02]. As the notations are a little bit different here, let us give a few precisions. • The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-83-informal-reformulation-of-theorem-81",
+      "number": "8.3",
+      "title": "Informal reformulation of Theorem 8.1",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "justiﬁes",
+          "heading": false
+        },
+        {
+          "term": "ran",
+          "heading": false
+        }
+      ],
+      "extract": "independent standard Gaussian random variables (Ξk)k=2,3,... and consider the ran- dom series ∆(α) ∞(2 cos(θ)) := 1 π ∞ X k=2 \u0012 Ξk √ k −γ k [k is even] \u0013 sin(kθ) = 1 π ∞ X k=2 Ξk √ k sin(kθ) −γ/4 + γθ/2π. LARGE DIAGRAMS AND STRUCTURE CONSTANTS 59 This series is nowhere convergent (almost surely), but it makes sense as a general- ized Gaussian process with values in the space of generalized functions (C∞(R))′, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-appendix-a-kerov-polynomials",
+      "number": null,
+      "title": "Appendix A. Kerov polynomials",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 55,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kerov",
+          "heading": true
+        },
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "lassalle",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section, we answer some questions of Lassalle concerning Kerov polyno- mials [Las09]. The results are consequences of the methods or results from Section 3 and thus ﬁt in the scope of this paper. However, as Kerov polynomials are used in this paper only as a tool, we decided to present them in Appendix.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-a1-comparison-with-lassalles-normalizations",
+      "number": null,
+      "title": "A.1. Comparison with Lassalle's normalizations",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lassalle",
+          "heading": true
+        },
+        {
+          "term": "lassalle normalization",
+          "heading": false
+        },
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "divisible",
+          "heading": false
+        }
+      ],
+      "extract": "is different than the one used by Lassalle. As in Section 3.2, we use boldface font for quantities deﬁned in Lassalle’s paper [Las09]. Our second bound on the degree of coefﬁcients of Kµ, implies the following result. Proposition A.1. The coefﬁcient cµ ρ of Rρ in Kµ with Lassalle’s normalization is a polynomial in α divisible by α|ρ|−ℓ(ρ). Proof. Let us start by a comparison of Lassalle’s conventions with ours. If µ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-a2-linear-terms-in-kerov-polynomials",
+      "number": null,
+      "title": "A.2. Linear terms in Kerov polynomials",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lower degree",
+          "heading": false
+        },
+        {
+          "term": "degree terms",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": true
+        },
+        {
+          "term": "stirling",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst kind",
+          "heading": false
+        },
+        {
+          "term": "inductive",
+          "heading": false
+        }
+      ],
+      "extract": "top degree part of the coefﬁcients of linear terms in Kerov polynomials. This proves a conjecture of Lassalle [Las09, page 31]. Proposition A.2. For any integers k > 0 and k −1 ≥i ≥0, we have [Rk+1−i]K(k) = \u0014 k k −i \u0015 γi + lower degree terms, where \u0014 k k −i \u0015 denotes the positive Stirling number of the ﬁrst kind. Proof. We recall that Chµ(λ) = X ρ aµ ρMρ(λ). Thanks to the relation between moments and free cumulants",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de",
+      "number": null,
+      "title": "A.3. High degree terms of Kerov polynomials for deg1",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deg",
+          "heading": true
+        },
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "lassalle",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": true
+        },
+        {
+          "term": "µiµj",
+          "heading": false
+        }
+      ],
+      "extract": "have given the highest degree term of Kµ for deg1. We shall now describe the next two terms for a one-part partition µ = (k). Let hπ(µ) denotes the monomial symmetric function indexed by π evaluated in variables µ1,µ2, . . . . For example, h12(µ) = X i<j µiµj. We also introduce the notation ˜Ri = (i −1)Ri and ˜Rµ = Q i ˜Rmi(µ) i mi(µ)! . Proposition A.3. For k ≥1, one has (56) K(k) = Rk+1 + γ k 2 X |µ|=k (ℓ(µ) −1)!",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-appendix-b-other-consequences-of-the-second-main",
+      "number": null,
+      "title": "Appendix B. Other consequences of the second main result",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consequences",
+          "heading": true
+        },
+        {
+          "term": "polynomiality",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        }
+      ],
+      "extract": "We present here three consequences of our polynomiality result for structure constants for Jack characters (see Theorem 1.4). These results were mentioned in the introduction (Section 1.5.1), but, as they are quite independent of the rest of the paper, we present them in Appendix.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-046-b1-recovering-a-recent-result-of-vassilieva",
+      "number": null,
+      "title": "B.1. Recovering a recent result of Vassilieva",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimal factorizations",
+          "heading": false
+        },
+        {
+          "term": "vassilieva",
+          "heading": true
+        },
+        {
+          "term": "vas",
+          "heading": false
+        },
+        {
+          "term": "dénes",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "recent",
+          "heading": true
+        }
+      ],
+      "extract": "on the degree in α of cµ,ν;π, can be used to give a short proof of a recent result of Vassilieva. In the paper [Vas13], she considered the following quantity: for µ a partition of n, let r = |µ| −ℓ(µ) and (57) ar µ(α) := X λ⊢n 1 j(α) λ θµ(λ) \u0000θ(2,1n−2)(λ) \u0001r . Using structure constants, we can write: for any partition λ of n, \u0000θ(2,1r−2)(λ) \u0001r = X µ1,µ2,...,µr⊢n µ1=(2,1r−2) r−1 Y i=1 cµi,(2,1r−2);µi+1 ! θµr(λ).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-b2-gouldens-and-jacksons-b-conjecture",
+      "number": null,
+      "title": "B.2. Goulden's and Jackson's b-conjecture",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goulden",
+          "heading": true
+        },
+        {
+          "term": "gj96a",
+          "heading": false
+        },
+        {
+          "term": "jackson",
+          "heading": true
+        },
+        {
+          "term": "orthogonal basis",
+          "heading": false
+        },
+        {
+          "term": "connection series",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "quantities",
+          "heading": false
+        }
+      ],
+      "extract": "quantities cµ,ν;π (for a general value of the parameter α) are the same as quantities cπ µ,ν(b) considered by Goulden and Jackson in [GJ96a]. As a consequence, we give a partial answer to a question raised by these authors. We use the convention that the boldface quantities refer to the notations of Goulden and Jackson [GJ96a]. To establish this connection we will need to use the α-scalar product on the symmetric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-b3-symmetric-functions-of-contents",
+      "number": null,
+      "title": "B.3. Symmetric functions of contents",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "doł ega",
+          "heading": false
+        },
+        {
+          "term": "matsumoto",
+          "heading": false
+        },
+        {
+          "term": "shifted symmetric",
+          "heading": false
+        },
+        {
+          "term": "mat",
+          "heading": false
+        },
+        {
+          "term": "chµ",
+          "heading": false
+        },
+        {
+          "term": "besides",
+          "heading": false
+        },
+        {
+          "term": "féray",
+          "heading": false
+        }
+      ],
+      "extract": "lated problem considered by Matsumoto in [Mat10, Section 8] in connection with matrix integrals. Our results allow us to prove two conjectures stated in his paper. For a box □= (i, j) of a Young diagram λ (i is the row-index, j is the column index and j ≤λi), we deﬁne its (α-)content as c(□) = √α(j −1)−√α−1(i−1). The alphabet of the contents of λ is the multiset Cλ = {c(□) : □∈λ}. Matsumoto [Mat10, Equation (8.9)]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "We thank I. Goulden and P. ´Sniady for enlightening discussions on the subject and relevant pieces of advice for the presentation of the paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack symmetric",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "continual young",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "random permutations",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "[AC12] K. Aker and M. B. Can. Generators of the Hecke algebra of (S2n, Bn). Advances in Mathematics, 231(5):2465–2483, 2012. [AGZ10] G. W. Anderson, A. Guionnet, and O. Zeitouni. An introduction to random matrices, volume 118. Cambridge University Press, 2010. [BDJ99] J. Baik, P. Deift, and K. Johansson. On the distribution of the length of the longest increasing subsequence of random permutations. J. Amer. Math.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "alpha lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda rho",
+      "heading": false
+    },
+    {
+      "term": "lambda mathbb",
+      "heading": false
+    },
+    {
+      "term": "ell lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda sqrt",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda vdash",
+      "heading": false
+    },
+    {
+      "term": "lambda sum",
+      "heading": false
+    },
+    {
+      "term": "lambda tau",
+      "heading": false
+    },
+    {
+      "term": "lambda leq",
+      "heading": false
+    },
+    {
+      "term": "lambda theta",
+      "heading": false
+    },
+    {
+      "term": "lambda star",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Young diagram λ = (4, 3, 1) and the graph of the",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A Young diagram with its inner and outer corners",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A generalized Young diagram L with the correspond-",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Example of a Young diagram λ on the left and a",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 55,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 52,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p68); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 52 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1402.4615v3"
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "72-4-841",
+  "title": "72-4-841",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "§ 3. Reflection positivity",
+      "number": null,
+      "page": 6,
+      "pageLabel": "846",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-3-reflection-positivity"
+    },
+    {
+      "level": 3,
+      "title": "Appendix",
+      "number": null,
+      "page": 12,
+      "pageLabel": "852",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-appendix"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "841",
+      "labelEnd": "846",
+      "words": 1920,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reflected plaquette",
+          "heading": false
+        },
+        {
+          "term": "ptp article",
+          "heading": false
+        },
+        {
+          "term": "naive continuum",
+          "heading": false
+        },
+        {
+          "term": "einstein gravity",
+          "heading": false
+        },
+        {
+          "term": "com ptp",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "flat lattice",
+          "heading": false
+        },
+        {
+          "term": "gravity theory",
+          "heading": false
+        }
+      ],
+      "extract": "841 Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO Department of Physics, Nagoya University, Nagoya 464 (Received July 19, 1984) We present a Euclidean lattice fonniIlation of the Einstein-Cartan gravity. This fonnulation allows us to take any value of the cosmological tenn. Moreover, this lattice theory is bounded and reflection positive,",
+      "extractCut": true,
+      "blocks": [
+        "library/72-4-841/blocks/prose-sec-front-matter",
+        "library/72-4-841/blocks/rem-sec-front-matter-01",
+        "library/72-4-841/blocks/rem-sec-front-matter-02",
+        "library/72-4-841/blocks/rem-sec-front-matter-03"
+      ]
+    },
+    {
+      "id": "sec-000-3-reflection-positivity",
+      "number": null,
+      "title": "§ 3. Reflection positivity",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 12,
+      "labelStart": "846",
+      "labelEnd": "852",
+      "words": 2501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reflection positivity",
+          "heading": true
+        },
+        {
+          "term": "vierbein fields",
+          "heading": false
+        },
+        {
+          "term": "vierbein components",
+          "heading": false
+        },
+        {
+          "term": "lattice gravity",
+          "heading": false
+        },
+        {
+          "term": "ptp article",
+          "heading": false
+        },
+        {
+          "term": "com ptp",
+          "heading": false
+        },
+        {
+          "term": "flat lattice",
+          "heading": false
+        },
+        {
+          "term": "translational invariance",
+          "heading": false
+        }
+      ],
+      "extract": "Let r denote geometrical reflection about some given (d - 1 )-dimensional hyperplane 7[ with sites. Assume that a subset A C Zd is invariant under the reflection r. Let A+,- denote the part of A to the right or left, respectively, of the plane J[, and let Ao = An J[. Let q +,- be the set of functions of the field variables, whth support included in A+,- U Ao. For a bond b = < n, m> = (n; fJ.) along fJ. direction",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "852",
+      "labelEnd": "852",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "osterwalder",
+          "heading": false
+        },
+        {
+          "term": "seiler",
+          "heading": false
+        },
+        {
+          "term": "tomboulis",
+          "heading": false
+        },
+        {
+          "term": "hawking",
+          "heading": false
+        },
+        {
+          "term": "nuc",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "Euclidean gamma matrices have the following properties: {ra, rb}=23ab, 3ab =diag (1, 1, 1, 1), rat = ra , rS=rOrlr2ra, rst=rs, {rs, ra}=O, (rs)2=1, trra=O, tr(rarb)=43ab, tr( rarbrer d) =4(3 ab3ed - 3ae3bd+ 3ad3 be), tr rs=O, tr(rSrarb)=O, tr(rSrarbrerd)=4sabed , tr(rl·\"rn)=O, tr(rSrl···rn)=O if n=odd. Vierbein fields satisfy the following relations: References 1) A. Das, M. Kaku and P. K. Townsend, Phys. Lett: 8IB",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lattice gravity",
+      "heading": false
+    },
+    {
+      "term": "ptp article",
+      "heading": false
+    },
+    {
+      "term": "com ptp",
+      "heading": false
+    },
+    {
+      "term": "vierbein fields",
+      "heading": false
+    },
+    {
+      "term": "einstein gravity",
+      "heading": false
+    },
+    {
+      "term": "flat lattice",
+      "heading": false
+    },
+    {
+      "term": "lattice formulation",
+      "heading": false
+    },
+    {
+      "term": "quantum gravity",
+      "heading": false
+    },
+    {
+      "term": "vierbein components",
+      "heading": false
+    },
+    {
+      "term": "lattice gauge",
+      "heading": false
+    },
+    {
+      "term": "gravity theory",
+      "heading": false
+    },
+    {
+      "term": "oup",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "841",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "842",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "843",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "844",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "845",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "846",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "847",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "848",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "849",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "850",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "851",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "852",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The plaquette P=(n; /f.v) and the reflected plaquette gPwith respect to the plane 7C",
+      "page": 6,
+      "pageLabel": "846",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 3,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 3 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/72-4-841"
+  }
+}

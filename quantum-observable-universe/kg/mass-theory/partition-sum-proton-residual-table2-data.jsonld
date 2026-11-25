@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-partition-sum-proton-residual-table2-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:partition-sum-proton-residual-table2-data",
+  "kind": "table",
+  "title": "Table 2 from conj:partition-sum-proton-residual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-partition-sum-proton-residual"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "partition-sum-proton-residual-table2-data.md",
+  "provenance": "authored"
+}

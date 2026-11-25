@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-xisejfinuo.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-xisejfinuo","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The fix-up changelog and the CI narration are gone: the two docs/audits links, the per-script bug list and \&quot;The cross-check witness gates this on every continuous integration run\&quot; have all been removed; \&quot;## Production paths\&quot; now introduces the three agreeing evaluation routes for the canonical character values.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote mass-endomorphism_seq5.md for Milnor standards: improved economy, declarative voice, preserved structure.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.156701Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.156701Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;df716d3b4503&quot;,
+        &quot;ts&quot;: &quot;8396b0b9ee84&quot;
+      }
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T01:05:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;150027a6d84e5f98eba54dcf37e09e7dbbba2bc0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-narrative-lean-equiv. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-statement-integrity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-self-assuming-projection. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-trivial-true. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-false-premise. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-decide-masking. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-unused-hypotheses. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-strategy-clarity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-novelty. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies voice-statement-no-interpretation. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies wall-side-statement. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies wall-side-proof. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically partitioning distinct algebraic metrics securely inside rigorous trace formulas.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:31:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;64939896e5d27e7db91b6251025853c71ccdffe0&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;df716d3b4503&quot;,
+        &quot;ts&quot;: &quot;8396b0b9ee84&quot;,
+        &quot;lean&quot;: &quot;ab9055da485d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;df716d3b4503&quot;,
+        &quot;ts&quot;: &quot;8396b0b9ee84&quot;,
+        &quot;lean&quot;: &quot;ab9055da485d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.044Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;&#39;The q=1 limit of the Hecke character is not the character required here; the trace must be taken of the q-Hecke character&#39;; &#39;vanishes ... and so cannot serve as the weight. The correct weight is y_lambda(q)&#39;; &#39;incorrectly returned the classical Murnaghan-Nakayama character ... instead of the q-Hecke character&#39;.&quot;,
+      &quot;notes&quot;: &quot;All substantive: each names a specific wrong object against the right one, which is the block&#39;s content (a bug post-mortem). Documented false-positive class.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;&#39;Two layers have to be got right, and each has a natural wrong answer:&#39; -- setup with a pointed second clause, but it introduces a genuine two-item enumeration that follows immediately.&quot;,
+      &quot;notes&quot;: &quot;Passes. Register note: &#39;have to be got right&#39; is colloquial for a proposition block; &#39;Two layers must be right&#39; would match sec clarity-grad-style.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.220Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;Zero em-dashes in the .md.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.265Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;The one list is TWO items (weight layer, character layer); the table is a 5-row data table.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.307Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;Final line &#39;All three paths agree at the precision floor of their respective layers.&#39; is a factual claim, not a quotable closer.&quot;,
+      &quot;notes&quot;: &quot;Its accuracy is recorded under trap-superlative and trap-thesis-restatement.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.413Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;No narration of the author&#39;s own emphasis.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.459Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The block-final section &#39;## Production paths&#39; consists entirely of: &#39;The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers.&#39; The section title promises to name the production paths and names none; the two sentences restate the headline claim already made in the lead and demonstrated in the table. &#39;The canonical values are rigorously evaluated via formal trace definitions&#39; is also the documented token-substitution sweep artefact -- a script name replaced by &#39;formal trace definitions&#39;. &#39;All three paths&#39; has no antecedent in the .md, which names two.&quot;,
+      &quot;notes&quot;: &quot;PROPOSED (not applied -- restoring the script names is content the .ts docstring has and the .md lost): replace the section body with the three actual paths named in the .ts docstring -- markov_trace_recursive (canonical reducer), wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal (partition sum), and rho_k_h3a_refinement.py (50-dps mpmath) -- or delete the section.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.500Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;None.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.558Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;&#39;The canonical values are **rigorously** evaluated&#39;; &#39;The recursive Markov-axiom ascent and partition-sum Wedderburn formulas **must** agree&#39;; &#39;All three paths agree at the precision floor&#39;. Checking the claim these point at (per the audit brief) found the whole verification table refuted by its own cited witness.&quot;,
+      &quot;notes&quot;: &quot;REPORT ONLY, not fixed (math). computations/tr-m-q-hecke-seminormal.witness.json (fresh 2026-08-15, allPassed true) records, per atom, canonical |tr_M| and rel err vs the .md table: proton 1.14575978172 vs .md 1.06530622859 (ratio 0.9298), rel err 7.79e-08 vs .md 3.96e-15; neutron 0.98774375637 vs .md 0.92323329717 (0.9347), 6.91e-08 vs 4.21e-15; deuteron 0.57517232917 vs .md 0.38828647155 (0.6751), 1.48e-07 vs 7.01e-15; tritium 0.22931014586 vs .md 0.10405211868 (0.4538), 1.91e-07 vs 1.07e-14; helium-3 0.40376713624 vs .md 0.20654085856 (0.5115), 2.46e-07 vs 1.03e-14. ALL TEN NUMBERS in the table are stale, and the error column overstates the agreement by SEVEN ORDERS OF MAGNITUDE. The deuteron pair 0.388 -&gt; 0.575 is exactly the tr_M_atom import-cone drift recorded in AGENTS.md (48%), so this is the known stale-value class, not a transcription slip; the ratios differ per atom (0.93/0.93/0.68/0.45/0.51) so no uniform rescale explains it. The witness&#39;s own assertions gate only at 1e-3 and 1e-6, so nothing anywhere supports a 1e-15 claim. The .ts sets computation.status &#39;verified&#39; on this block. Note in passing the witness&#39;s y_at_q0 = (0.5054042265, 0.2472978867, 0.0) is the convention-D / proton-pin vector, i.e. the producer is current even though the .md is not.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9eaf2fe238b8&quot;,
+        &quot;ts&quot;: &quot;95923503f2b4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T04:00:18.661Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f327aa676ca6fe1e7721a902e2ea643cabbb284b&quot;,
+      &quot;evidence&quot;: &quot;Heaviest: &#39;binding-energy analysis via rho_K refinement and force-carrier saturation identities&#39;; &#39;the recursive Markov-axiom ascent and partition-sum Wedderburn formulas&#39;.&quot;,
+      &quot;notes&quot;: &quot;Parses aloud.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

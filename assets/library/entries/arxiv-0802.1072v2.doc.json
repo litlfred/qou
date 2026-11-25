@@ -1,0 +1,670 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0802.1072v2",
+  "title": "A note on closed 3-braids ∗",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Three basic theorems",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-three-basic-theorems"
+    },
+    {
+      "level": 1,
+      "title": "Solving the conjugacy problem in B3",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-solving-the-conjugacy-problem-in-b3"
+    },
+    {
+      "level": 2,
+      "title": "The band presentation",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-band-presentation"
+    },
+    {
+      "level": 2,
+      "title": "The word problem:",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-word-problem"
+    },
+    {
+      "level": 2,
+      "title": "The conjugacy problem for 3-braids",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-conjugacy-problem-for-3-braids"
+    },
+    {
+      "level": 1,
+      "title": "Using Theorems 1,2, and 3",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-using-theorems-12-and-3"
+    },
+    {
+      "level": 1,
+      "title": "Some open questions and a survey of known results about links of braid index 3",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-some-open-questions-and-a-survey-of-known-result"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal knots",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "non-invertibility",
+          "heading": false
+        },
+        {
+          "term": "gather together",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "exceptional cases",
+          "heading": false
+        },
+        {
+          "term": "links",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0802.1072v2 [math.GT] 14 May 2008 A note on closed 3-braids ∗ Joan S. Birman† and William W. Menasco‡ May 13, 2008 Dedicated to the memory of Xiao-Song Lin Abstract This is a review article about knots and links of braid index 3. Its goal is to gather together, in one place, some of the tools that are special to knots and links of braid index 3, in a form that could be useful for those who have a need to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0802.1072v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-three-basic-theorems",
+      "number": null,
+      "title": "Three basic theorems",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-degenerate flype",
+          "heading": false
+        },
+        {
+          "term": "representative overrightarrow",
+          "heading": false
+        },
+        {
+          "term": "transversal knot",
+          "heading": false
+        },
+        {
+          "term": "sigma epsilon",
+          "heading": false
+        },
+        {
+          "term": "basic theorems",
+          "heading": true
+        },
+        {
+          "term": "admit non-degenerate",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "overleftarrow",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:Three basic theorems label=\"S:Three basic theorems\"} In this section we present the basic lemmas and theorems about links that are closed three-braids. Initially, we will use the classical presentation for the braid group $B_3$: $$\\label{E:classical presentation} <\\sigma_1,\\sigma_2; \\sigma_1\\sigma_2\\sigma_1 = \\sigma_2\\sigma_1\\sigma_2>$$ In the presentation ([\\[E:classical presentation\\]](#E:classical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-solving-the-conjugacy-problem-in-b3",
+      "number": null,
+      "title": "Solving the conjugacy problem in B3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy problem",
+          "heading": true
+        },
+        {
+          "term": "garside groups",
+          "heading": false
+        },
+        {
+          "term": "garside structure",
+          "heading": false
+        },
+        {
+          "term": "conjugacy decision",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "classical presentation",
+          "heading": false
+        },
+        {
+          "term": "search problems",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:conjugacy label=\"S:conjugacy\"} As noted above, to use Theorem [\\[T:topological\\]](#T:topological){reference-type=\"ref\" reference=\"T:topological\"} the reader will need definitive tests for deciding (i) when two 3-braids are conjugate; (ii) when a conjugacy class is one of the exceptional ones which admits a non-degenerate flype; and (iii) when a conjugacy class contains $\\sigma_1^k\\sigma_2^{\\pm 1}$ for some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-band-presentation",
+      "number": null,
+      "title": "The band presentation",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bkl presentation",
+          "heading": false
+        },
+        {
+          "term": "flype-admissible form",
+          "heading": false
+        },
+        {
+          "term": "classical presentation",
+          "heading": false
+        },
+        {
+          "term": "i-k",
+          "heading": false
+        },
+        {
+          "term": "band",
+          "heading": true
+        },
+        {
+          "term": "subscripts",
+          "heading": false
+        }
+      ],
+      "extract": "The *band presentation* of $B_3$ uses a cyclically ordered set of generators which includes the generators of ([\\[E:classical presentation\\]](#E:classical presentation){reference-type=\"ref\" reference=\"E:classical presentation\"}): $$\\label{E:BKL presentation} <a_1, a_2, a_3 \\ | \\ a_2a_1 = a_3a_2 = a_1a_3> , \\ {\\rm where} \\ a_1=\\sigma_1, \\ \\ a_2 = \\sigma_2, \\ \\ a_3 = \\sigma_1^{-1}\\sigma_2\\sigma_1.$$ In terms of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-word-problem",
+      "number": null,
+      "title": "The word problem:",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "word problem",
+          "heading": true
+        },
+        {
+          "term": "bkl presentation",
+          "heading": false
+        },
+        {
+          "term": "form delta",
+          "heading": false
+        },
+        {
+          "term": "adjacent letters",
+          "heading": false
+        },
+        {
+          "term": "tail",
+          "heading": false
+        },
+        {
+          "term": "normal form",
+          "heading": false
+        },
+        {
+          "term": "subscripts",
+          "heading": false
+        }
+      ],
+      "extract": "Xu's solution to the word problem builds directly on the analogous ideas in the work of Garside [@Ga]. Choose any word $W$ in the symbols $a_1,a_2,a_3$ and their inverses, representing an element $\\beta\\in B_3$. Using ([\\[E:BKL presentation\\]](#E:BKL presentation){reference-type=\"ref\" reference=\"E:BKL presentation\"})(i), all inverses of generators can be traded for powers of $\\delta^{-1}$. Using ([\\[E:BKL",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-conjugacy-problem-for-3-braids",
+      "number": null,
+      "title": "The conjugacy problem for 3-braids",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 1259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syllable tau",
+          "heading": false
+        },
+        {
+          "term": "summit power",
+          "heading": false
+        },
+        {
+          "term": "achieved summit",
+          "heading": false
+        },
+        {
+          "term": "tail move",
+          "heading": false
+        },
+        {
+          "term": "tail symbol",
+          "heading": false
+        },
+        {
+          "term": "conjugacy problem",
+          "heading": true
+        },
+        {
+          "term": "syllable length",
+          "heading": false
+        },
+        {
+          "term": "final syllable",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SS:the conjugacy problem label=\"SS:the conjugacy problem\"} The conjugacy problem is close-by. The *summit set* of $W$, denoted SS($W)$, is the subset of those elements in the conjugacy class of $W$ which, when represented by words in normal form, have maximal power. It is, by definition, invariant under conjugation by powers of $\\delta$. Even more, it must be finite, for the following reasons. The defining",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-using-theorems-12-and-3",
+      "number": null,
+      "title": "Using Theorems 1,2, and 3",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tabular hline",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "medskip centerline",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate flypes",
+          "heading": false
+        },
+        {
+          "term": "braid crossing",
+          "heading": false
+        },
+        {
+          "term": "centerline begin",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        }
+      ],
+      "extract": "{\\bf Theorems 1 and 2}. \\ \\ We need two more results before we can make Theorems~\\ref{T:topological} and \\ref{T:invertibility} into results that can be used computationally. First, we need to be able to recognize when the closure of a 3-braid has braid index less than 3. Table I gives the Xu symbols $\\Sigma^\\star(W)$ in the cases when the closed braid associated to $W$ has braid index less than 3. Using it, we can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-some-open-questions-and-a-survey-of-known-result",
+      "number": null,
+      "title": "Some open questions and a survey of known results about links of braid index 3",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 2233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid index",
+          "heading": true
+        },
+        {
+          "term": "non-invertible knots",
+          "heading": false
+        },
+        {
+          "term": "transversal knot",
+          "heading": false
+        },
+        {
+          "term": "links",
+          "heading": true
+        },
+        {
+          "term": "conjugacy problem",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "shortest word",
+          "heading": false
+        },
+        {
+          "term": "torus link",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:known and unknown label=\"S:known and unknown\"} In this section we survey the literature and discuss some unknown properties of knots and links of braid index 3. Our choices are guided by what we know best, and by our wish to illustrate ways in which Theorems 1,2 and 3 have been and might be useful. 1. We made inquiries, but were unable to find a computer program that implements Xu's solution to the conjugacy",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "flype-admissible braid",
+      "heading": false
+    },
+    {
+      "term": "braids sigma",
+      "heading": false
+    },
+    {
+      "term": "bkl presentation",
+      "heading": false
+    },
+    {
+      "term": "braid index",
+      "heading": true
+    },
+    {
+      "term": "non-degenerate flype",
+      "heading": false
+    },
+    {
+      "term": "conjugacy class",
+      "heading": false
+    },
+    {
+      "term": "admit flype",
+      "heading": false
+    },
+    {
+      "term": "closed braid",
+      "heading": false
+    },
+    {
+      "term": "conjugacy problem",
+      "heading": true
+    },
+    {
+      "term": "distinct conjugacy",
+      "heading": false
+    },
+    {
+      "term": "braid crossing",
+      "heading": false
+    },
+    {
+      "term": "classical presentation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Positive and Negative 3-braid ﬂypes Theorem 1. The classiﬁcation theorem [5]: Let L be a link type which is represented by the closure of a 3-braid L. Then one of the following holds:",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0802.1072v2"
+  }
+}

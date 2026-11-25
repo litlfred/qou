@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/104171-rmi-1356",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Handlebody diagram algebras",
+      "dcterms:creator": [
+        "Published by EMS Press",
+        "license, licensed under a CC BY 4.0"
+      ],
+      "dcterms:issued": "D:20230615",
+      "bibo:doi": "10.4171/RMI/1356",
+      "dcterms:identifier": "https://doi.org/10.4171/RMI/1356",
+      "dcterms:abstract": "In this paper, we study handlebody versions of some classical diagram algebras, most prominently, handlebody versions of Temperley–Lieb, blob, Brauer, BMW, Hecke and Ariki–Koike algebras. Moreover, motivated by Green–Kazhdan– Lusztig’s theory of cells, we reformulate the notion of (sandwich, inflated or affine) cellular algebras. We explain this reformulation and how all of the above algebras are part of this theory.",
+      "dcterms:source": "library/104171-rmi-1356/manifest.jsonld",
+      "dcterms:hasVersion": "library/104171-rmi-1356"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:phi-q-aj-machinery-identification",
+  "kind": "proposition",
+  "title": "$\\Phi_q$ / $\\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-quantum-langlands-dual",
+    "papers/quantum-observable-universe/blocks/conj-dim-master-pentagon",
+    "papers/quantum-observable-universe/blocks/rem-dilog-saddle-regime"
+  ],
+  "cites": [
+    "references/garoufalidis2004",
+    "references/faddeev1995",
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/champanerkar2003",
+    "references/arxiv-hep-th-0306165v1",
+    "references/dimofte-gukov2010",
+    "references/hikami2006",
+    "references/takata2004"
+  ],
+  "tags": [
+    "aj-conjecture",
+    "phi-q-faddeev",
+    "li-2-q-rogers",
+    "quantum-a-polynomial",
+    "minimal-archimedean",
+    "conditional-class-3b-cond"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.PhiQAJMachineryIdentification.phi_q_li2_q_unified_via_aj",
+  "text": "phi-q-aj-machinery-identification.md",
+  "leanSource": "phi-q-aj-machinery-identification.lean",
+  "provenance": "authored"
+}

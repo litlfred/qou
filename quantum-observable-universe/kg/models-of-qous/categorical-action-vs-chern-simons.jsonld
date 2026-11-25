@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-action-vs-chern-simons",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-action-vs-chern-simons",
+  "kind": "remark",
+  "title": "Comparison with the classical Chern--Simons action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-physicist-translation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-action",
+  "cites": [
+    "references/witten1988"
+  ],
+  "tags": [
+    "chern-simons",
+    "classical-limit",
+    "rigid-trace",
+    "comparison"
+  ],
+  "text": "categorical-action-vs-chern-simons.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1fgbnyqzjln.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1fgbnyqzjln","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Conjecture on q-NS regularity at q = 1 and a classical DSS blow-up scenario; it sits in the fluid-dynamics chapter next to def:leray-profile, rem:leray-profile-exclusions and rem:leray-profile-construction, which it uses.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Conjecture on q-NS regularity at q = 1 and a classical DSS blow-up scenario; sits in the fluid-dynamics chapter next to def:leray-profile, rem:leray-profile-exclusions and rem:leray-profile-construction, which it uses. Unchanged by the edit.&quot;
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;No false claims identified in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39;: mathematical reasoning is consistent.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The claims in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; are non-vacuous as they make concrete conjectures about &#39;The [global regularity theorem](#thm:q-ns-wellposedness) hol...&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39;.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The prose in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; presents the result as established, but the Lean formalization is incomplete (has sorry).&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The prose in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; presents the result as established, but the Lean formalization is incomplete (has sorry).&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39;.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The argument flow in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; is logically sound, mapping onto the cited dependencies.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The Lean sibling folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean uses a class-conjecture pattern, matching the conjectural nature of &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39;, hence no citation misuse is possible.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The algebraic and logical relations in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; are independent of empirical tuning parameters.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;The derivation steps and formal definitions in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; are reproducible.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4d54022746fd7e27f2a619d8a83ff0c3ce97906e&quot;,
+      &quot;notes&quot;: &quot;Conjecture is open, hence the objection is survivable. Sibling Lean file contains &#39;sorry&#39; placeholders.&quot;,
+      &quot;verdict&quot;: &quot;survivable-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The conjectured algebraic or physical relations in &#39;Regularity breakdown at $q = 1$: the classical limit as a phase transition&#39; remain unproven and are represented as sorry stubs in the formalization.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Conjecture is open, hence the objection is survivable. Sibling Lean file contains &#39;sorry&#39; placeholders.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Smoothed transitions, applied concrete-before-abstract, removed forward references.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.252119Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;a3aacf8fdf39&quot;,
+        &quot;ts&quot;: &quot;148952983f58&quot;,
+        &quot;lean&quot;: &quot;d2ef138e215c&quot;
+      }
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Compared regularity-breakdown.md with regularity-breakdown.lean at 4cccbdca6f. The class RegularityBreakdown E T P carries three fields (P &gt; 0, E P-periodic, E positive somewhere) on a real function E read as the profile enstrophy; the theorem RegularityBreakdown.enstrophy_blowup derives consequence 1 of the .md from them via lerayEnstrophy_blowup (lean-direct exit 0, axioms propext/Classical.choice/Quot.sound only).&quot;,
+      &quot;notes&quot;: &quot;The Lean carrier is strictly weaker than the .md conjecture: Part A (Omega(q) -&gt; infinity as q -&gt; 1+) is not formalised at all; for Part B the class does not encode the Navier--Stokes / Leray equations, the existence quantifier, the |y|^-1 decay class or V not in L^3, and it is satisfied by any positive constant E. The Lean docstring states this openly, so this is a disclosed partial formalisation, not a mismatch hidden from the reader. The old carrier&#39;s non-steadiness field (profile_not_steady) was dropped; T is a parameter no field mentions.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Re-compared regularity-breakdown.md with regularity-breakdown.lean at a85e0f3349. No .lean changed since 4cccbdca6f; the .md edit touched only the second opening paragraph. The class RegularityBreakdown carries P &gt; 0, E periodic, E positive somewhere; RegularityBreakdown.enstrophy_blowup derives consequence 1 via lerayEnstrophy_blowup (lean-direct exit 0 at the previous QA, axioms propext/Classical.choice/Quot.sound only).&quot;,
+      &quot;notes&quot;: &quot;Unchanged from the previous review: the Lean carrier is a disclosed partial formalisation. Part A is not formalised; for Part B the class does not encode the Navier--Stokes/Leray equations, existence, the |y|^-1 decay class or V not in L^3, and any positive constant E satisfies it. The Lean docstring says so openly. Pre-existing on this PR, not introduced by the a85e0f3349 edit.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;The one theorem in the sibling, RegularityBreakdown.enstrophy_blowup, states exactly what consequence 1 of the .md attributes to it (enstrophy (T-t)^{-1/2} E(-log(T-t)) unbounded as t -&gt; T-), and its proof uses all three class fields. The three negative examples each refute one field. No sorry, no native_decide, no empirical value.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conjectural framework securely locating NS blowup within the q=1 critical phase transition.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T13:22:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f2e8f2c3ba4d0d50e705d2fe03dd0902bfeb373c&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \&quot;§7c\&quot; was dropped and \&quot;This block sits on the archimedean side\&quot; was rewritten to \&quot;What follows sits on the archimedean side of the substrate wall.\&quot;&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.539Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;&#39;not, a priori, in contradiction with CKN... the two measure different sets&#39; is load-bearing disambiguation; &#39;not yet carried out&#39; is temporal status&quot;,
+      &quot;notes&quot;: &quot;pass-with-note: false-positive classes (disambiguation, temporal status)&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.583Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: no setup-then-reframe pivots&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.628Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: spaced-dash density low; none load-bearing&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.677Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;&#39;The three obstructions&#39; and the three critical-exponent bullets are substantive enumerations&quot;,
+      &quot;notes&quot;: &quot;pass-with-note&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.719Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;final &#39;Singularity formation is the mechanism by which...&#39; is the conjecture&#39;s substantive degeneration framing&quot;,
+      &quot;notes&quot;: &quot;pass-with-note: content-bearing interpretive claim, not ornament&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.761Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: no narration of own emphasis&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;,
+      &quot;notes&quot;: &quot;The opening prose narrates the block instead of stating content: &#39;This block records what is expected at the endpoint q = 1&#39; and &#39;The two parts must be kept apart&#39;. Both can be deleted or folded into the statement of Parts A and B without loss.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs. The two narrating sentences flagged at 4cccbdca6f (&#39;This block records what is expected at the endpoint q = 1&#39;, &#39;The two parts must be kept apart ...&#39;) are gone; the opening now says &#39;The conjecture concerns the endpoint q = 1&#39;, which states content.&quot;,
+      &quot;notes&quot;: &quot;Resolves the earlier minor warn on this criterion.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.804Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: no block-final restatement&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;,
+      &quot;notes&quot;: &quot;&#39;Part A does not imply Part B&#39; is said three times: in the opening paragraph (&#39;neither implies the other without the bridge&#39;), in the viscosity heuristic (&#39;This is why Part A does not by itself say anything about Part B&#39;) and again at the end of the Clay paragraph (&#39;Part A concerns a family whose q -&gt; 1 endpoint is Euler, so it does not reframe ...&#39;). One statement suffices.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs. The opening restatement &#39;neither implies the other without the bridge&#39; was removed. What remains is the bridge-not-asserted scope sentence in the first line, the viscosity heuristic (&#39;Part A does not by itself say anything about Part B&#39;, which gives the reason) and the Clay paragraph&#39;s last sentence (about the Clay problem, a different claim). No sentence now repeats another.&quot;,
+      &quot;notes&quot;: &quot;Resolves the earlier minor warn (thesis stated three times).&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.842Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: institutional register throughout&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.886Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: no unqualified maximum-strength claims&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;41a94bb6a68d&quot;,
+        &quot;ts&quot;: &quot;f93600386b71&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:fd-b3&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T11:11:42.931Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d0aae5f75137bc77614dc6c65d43cddd2a0304e&quot;,
+      &quot;evidence&quot;: &quot;full read: prose reads aloud cleanly&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b44cac53632b&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:28:45.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4cccbdca6fca7a29c8b4cb88b66e3e366001fa87&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block at head 4cccbdca6f (#8872). Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a mathematical range, not praise); the closing paragraph is the standard archimedean-specialisation note, not an aphorism. The several &#39;X, not Y&#39; sentences (Euler, not Navier--Stokes with fixed viscosity; divergence of Omega is not finite-time blow-up; a heuristic, not derived) each state a scope fact the block needs; they are not rhetorical contrast.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2de4fb4acea6&quot;,
+        &quot;ts&quot;: &quot;61f3cd94080d&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:34:54.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a85e0f33491ad03b69589fc9712597acc4d3d680&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at head a85e0f3349 (#8872), after the author&#39;s QA-minor edit. Scholarly declarative voice; dashes are en-dashes in proper names (Navier--Stokes) only; no reflex triple, rhetorical pivot, performed warmth, unspeakable notation or superlative (&#39;well above 1&#39; is a range, not praise); the closing paragraph is the standard archimedean-specialisation note. The &#39;X, not Y&#39; sentences each state a scope fact the block needs.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

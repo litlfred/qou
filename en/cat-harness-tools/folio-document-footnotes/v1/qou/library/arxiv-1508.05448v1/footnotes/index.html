@@ -1,0 +1,6652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1508.05448v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1508.05448v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1508.05448v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1508.05448v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1508.05448v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  123,
+  124,
+  125,
+  126
+]</pre></dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p044-1&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;Z&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p046-1&quot;,
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;kn&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;Z&quot;
+      },
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;Z&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p090-1&quot;,
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;text&quot;: &quot;+1+4r2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 90,
+        &quot;context&quot;: &quot;2N −1/2T&quot;
+      },
+      {
+        &quot;page&quot;: 90,
+        &quot;context&quot;: &quot;2N −1/2T&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-024&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p032-1&quot;,
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;kλ1 k=0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p040-1&quot;,
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;λ1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p040-2&quot;,
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;k+1λ1 k=0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-2&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;n&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p090-2&quot;,
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;text&quot;: &quot;+1+4r2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1508.05448v1/blocks/prose-sec-024&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dardn-sphereS&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dardn-sphereSninR&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dardn-sphereSninRn+1.IfweletµndenotetheuniformmeasureonS&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;surablesetAonS&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;distancebetweenx ∈S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;At= {x ∈S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;AtcontainsallpointsofAinadditiontoanypointsonS&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;µn(Ar) ≥1 −e−(n−1)&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;µn(Ar) ≥1 −e−(n−1)r&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;which is continuous on S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;µn({|F−mF| ≥ωF(t)}) ≤2e−(n−1)&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;µn({|F−mF| ≥ωF(t)}) ≤2e−(n−1)t&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;withprobability1/2.Foreachn≥1,letS&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;withprobability1/2.Foreachn≥1,letSn=P&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1X&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1Xi.SinceE(X&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;n= E(X&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d−→N(0, σ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whereσ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;as n.If we measure Snusing this scale,thenS&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤2e−nr&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−t&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;problem.WebeginwithaparametersandconsiderafunctionGonR&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;dtf&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;dtf&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tu&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2√1 −t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2√1 −tv&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tu&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2√1 −t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2√1 −tv&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2(E&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2(Eu&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2(Eui&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2(Euiu&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2(Euiuj−E&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2(Euiuj−Ev&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2(Euiuj−Evi&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2(Euiuj−Eviv&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2√1 −t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2√1 −tv&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tu&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(z) = −s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ′(t) ≤s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ′(t) ≤s2A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ′(t)/φ(t) ≤s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ′(t)/φ(t) ≤s2A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;log(φ(t)) ≤s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;log(φ(t)) ≤s2A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤e&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤es&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤es2A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤es2A2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤exp(s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ(t) ≤exp(s2A&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;E exp(s(F(u1, . . . , uM) −F(uM+1, . . . , u2M)) ≤e&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E exp(s(F(u1, . . . , uM) −F(uM+1, . . . , u2M)) ≤es&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E exp(s(F(u1, . . . , uM) −F(uM+1, . . . , u2M)) ≤es2A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;E exp s(F(x) −EF(x)) ≤e&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E exp s(F(x) −EF(x)) ≤es&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E exp s(F(x) −EF(x)) ≤es2A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;P(F(x) −EF(x) ≥t) = P(s(F(z) −E(F(z)) ≥st) ≤e−stEe&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lettings = t/2A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−t&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;GivenA⊆Ω&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Forx ∈Ω&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Forx ∈ΩnandA ⊂Ω&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;t:∀{α&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;GivenA ⊂ω&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;At= {x ∈Ω&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Theorem2.2.1.ForeveryA ⊂Ω&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(dT(x, A) &gt; t) ≤e−t&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(At) ≥1 −e−t&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;set UA(x).Elements of this set will be elements of R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectors&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectorsu&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectorsuy= (1(x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectorsuy= (1(x1̸= y&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectorsuy= (1(x1̸= y1),&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(x),whichisthesetofallvectorsuy= (1(x1̸= y1), 1(x&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;t:∀{α&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dP(x) = e&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dP(x) + e&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= P(A) + e&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;p&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p2+ e&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;this, we will take derivatives to ﬁnd the p that maximizes p&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;s, we will take derivatives to ﬁnd the p that maximizes p2+e&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;p&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p2+ e&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Nowwewillproceedwiththeinductivestep.AssumethatforanyA⊆Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4dT(x, A)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;whereP(A)nowrepresentsourproductmeasureonΩ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A⊆Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A⊆Ωn+1.WewillbeginbywritingΩ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A⊆Ωn+1.WewillbeginbywritingΩn+1asΩ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A⊆Ωn+1.WewillbeginbywritingΩn+1asΩn× Ω.Letx∈Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(x, ω)∈Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A(ω) = {x:(x, ω) ∈A} ⊂Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A(ω) = {x:∃(x, ω) ∈A} ⊂Ω&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T(x, A(ω))) + (1 −t)(dT(x, B))&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T(x, A(ω))) + (1 −t)(dT(x, B))2 + (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T((x, ω), A) ≤t(d&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;v&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)2 + (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1+ (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+ (1 −t)∥v&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+ (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4(td&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;T(x, A) + (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T(x, A) + (1 −t)d&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T(x, B) + (1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0012(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0012(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4d&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0012(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0012(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;0≤t≤1&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4(1 −t)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r−1+2 ln(r)exp(1/4(1 −1 −ln(r))&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ω&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x,x(2 −x)≤1,orequivalently,forwhichx,x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(x −1)&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=0{S&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=0{Si= x&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;thatΠ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;thatΠt(x, y)&gt;0.BythenotationΠ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kv&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;kvkfor an eigenvector&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kvkfor an eigenvector v&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kvkfor an eigenvector vk.If |η&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;then Π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;then Πnvk= η&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2eλF(x)(1−(1+λ/2(F(y)−F(x))+(λ/2F(y)−λ/2F(x))&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eλF(x)(λ/2F(y) −λ/2F(x))&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ1Var(eλF/2) = λ1(Λ(λ) −Λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ1(Λ(λ) −Λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ1(Λ(λ) −Λ2(λ/2)) ≤λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;!2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00132&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Λ(λ/2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Λ(λ/2n)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Λ(λ/2n)2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;!2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;&gt; e&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;&gt; er) ≤3/e&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;&gt; r) ≤3/e&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; such that P(|F| ≤m) ≥1/2 for all n and an rsuch that 3e−r√λ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Bs(x)&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Bs(x)t&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)iB&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;FA(x) :=#{i : λ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;v&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;vectorsinR&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;f(Rij(θ)G)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(f(G) −f(Rij(θ)G))&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;≤3e−r√λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;)≤λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SO(n)&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;SO(n)eλF(G)dµ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(F(G) −F(Rij(θ)G))&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SO(n)&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;SO(n)eλF(G)dµ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Λ(λ) −Λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −λ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;SinceΛ(λ)=1 + o(λ),weseethatΛ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;SinceΛ(λ)=1 + o(λ),weseethatΛ2&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;SinceΛ(λ)=1 + o(λ),weseethatΛ2n(λ/2&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;!2&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u00132&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Byplugginginλ =√λ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherethe&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;wherethe2&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ncomesfromtheprobabilitythatboth&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ncomesfromtheprobabilitythatbothiand&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ncomesfromtheprobabilitythatbothiandjaregreaterthan&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1≤i&lt;ℓ|FA(t&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1≤i&lt;ℓ|FA(ti) −F(t&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1≤i&lt;ℓ|FA(t&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1≤i&lt;ℓ|FA(ti−) −F(t&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lettingℓ= k&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ij= −gijsin(θ)+ω&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;νn(F≥Fdνn + r) ≤3e−r√λ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λn= c&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λn= c2/2n&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xbetheevolutionofM&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2(1)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;n−1appears becausethe only choice of&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot; becausethe only choice of i that will eﬀect the midpoint is&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;c&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;c2/2n&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;c&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i1&lt; i&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i1&lt; i2&lt; · · · &lt; i&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i1&lt; i2&lt; · · · &lt; ikand X&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i1&lt; i2&lt; · · · &lt; ikand Xi1≤X&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;LX= max{k:i1&lt; i2&lt; · · · &lt; ikand Xi1≤Xi2≤· · · ≤X&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E(LX−LX′)&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2(1)&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;c&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aqk+1andP(X&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;aqk+1forsome&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;aqk+1forsomea&gt;0,&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aqk+1forsomea&gt;0,q∈(0, 1)and&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;NX=P&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1X&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;P(Xk= 1)= aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u0010P&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1X&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;aq&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≤4 exp(−u&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1X&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;trationofmeasureinequality,P&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;E(H8n/20) ≤−8&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;E(Hn/2) ≤−8&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;+2&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;productstateconﬁguration,withourinterfaceat&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;productstateconﬁguration,withourinterfaceat9&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;lessdownstepsthenweexpect.Ifsomeofthestepsaftersite&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;lessdownstepsthenweexpect.Ifsomeofthestepsaftersite8&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;E(Hn/2) ≤E(Hn/2) ≤−8&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;+2&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;q&gt; e&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2n&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2n2(log(3/5))&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;(Xn/2=1).Thissimplyincreasesourprobabilityofdownstepsbetween&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Xn/2=1).Thissimplyincreasesourprobabilityofdownstepsbetween9&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;An= (an(j, k))&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;n)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;n)q(1) · · · A&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;ntr[A&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;n)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;as σ=((+1)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;as σ=((+1)p(1), (−1)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;as σ=((+1)p(1), (−1)q(1), . . . , (+1)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;as σ=((+1)p(1), (−1)q(1), . . . , (+1)p(k), (−1)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n→∞m&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;n→∞mn(p,&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;n→∞mn(p, q)=m(p,&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;TheeasiestversionofCOMisjustL&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Lemma4.1.2.Supposef: R&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;∞=sup&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;∞=supx∈R&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;∞=supx∈Rn P&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(f(U) −f(V))&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Thendeﬁne&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ThendeﬁneeU(θ)=sin(θ) U+cos(θ) Zand&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2),andE[ eU(θ)&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2)] = 0.Thismeansthat&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;independentofitsθ-derivative.Similarresultsholdfor&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;E[eV(θ)&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(f(U) −f(V))&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n→∞m&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;n→∞mn(p,&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;, . . . , λn∈Caswellaspairsofvectorsψ1, φ1, . . . , ψn, φn∈C&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;kA&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kAn=λ&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;kψ&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Usingthis,foranyothervectorΨ ∈C&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z)&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;n(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z, w)&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d2z d&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z)&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;n(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z, w)&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d2z d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z, w)&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n(z, w) d2&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;zpz&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z)&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;n(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;zpw&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;n(z, w)&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n(z, w) d2z d&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;n(eiθ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n(eiθz, eiθ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n(z, w), consistent with the fact that&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;jλ&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;jλk|z −λ|2 exp(−N|λ|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(σ−2|z|2)&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;toπ−11[0,1](|z|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−z&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(N−N&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(N−N1/2u)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u)=π−1 exp(−N+ N&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u)=π−1 exp(−N+ N 1/2&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;makethesubstitutionn=N−N&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;makethesubstitutionn=N−N1/2xforx∈{N−1/2, 2N−1/2, . . . , N&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;jλ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;jλk(N −1 + |z −λ|2) exp(−N|λ|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(N−n) (N|z|2)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Using this formula, it is easy to see that N−1ON(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|2)1[0,1](|z|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;e−2&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−2u&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u)∼N&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2uΦ(−2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(Nz)&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2e−N|z2|2 det (KN(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2e−N|z2|2 det (KN(zj&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2e−N|z2|2 det (KN(zjz&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=π−2e−N|z1|2e−N|z2|2 det (KN(zjzk))&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1,&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u2)∼π−2&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u2)∼π−2e−|u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u2)∼π−2e−|u1−u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u2)∼π−2e−|u1−u2|2|Φ(−u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(1 −N −1/2u1, 1 −N −1/2u2)∼π−2e−|u1−u2|2|Φ(−u1 −u&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−x&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Φ(−u)=(2π)−1/2e−u&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2·1 −z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;π2·1 −z1&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2·1 −z1z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∼−π−2(1 −|z|2)&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;∼−π−2(1 −|z|2) 1 −(1 + |ω|2)&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)maybeexpressedastheexpectationof&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)maybecalculatedasthedeterminantof&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2N!|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2e−N|z1|2&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2e−N|z1|2e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2e−N|z1|2e−N|z2|2FN−2(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2N!|z1 −z2|2e−N|z1|2e−N|z2|2FN−2(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;jλ&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;jλk|z1−λ|2|z2−λ|2 exp(−N|λ|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)=−N&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2N!e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;π2N!e−N|z1|2&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2N!e−N|z1|2e−N|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π2N!e−N|z1|2e−N|z2|2HN−2(z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π2N!e−N|z1|2e−N|z2|2HN−2(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;jλ&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;jλk&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z1 −λ|2|z&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;exp(−N|λ|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;zpz&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;zpw&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z, w)&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z, w) d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z, w) d2z d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|2p(1 −|z|2)1[0,1)(|z|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|2p(1 −|z|2)1[0,1)(|z|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2N&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2N&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d2ω d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wheretheN−1associatedtothevolume-elementd&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wheretheN−1associatedtothevolume-elementd2ω-times-d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2N −1/2ω)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;2N −1/2ω)pand&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2N −1/2ω)pand z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;terms.This is because, in the formulas z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2N −1/2ω)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|z|2p(1 −|z|2)1[0,1)(|z|2)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;|z|2p(1 −|z|2)1[0,1)(|z|2) 1 −(1 + |ω|2)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d2ω d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;\u0012Z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|2p(1 −|z|2)1[0,1)(|z|2) d&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;e−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−2u&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|2pd&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2uΦ(−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;u=N&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z)&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z) d&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z) d2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;e−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−2u&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −N−1/2u)&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;(1 −N−1/2u)2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2uΦ(−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;e−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−2u&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;2π−2uΦ(−2&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) for&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) for z&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) for z1and&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) for z1and z&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;2N −1/2ωand&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2N −1/2ωandz&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≈−N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + |ω|2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N−1d2ω d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ2)e−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;\u0010\f\f\fρ ± 2N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;\u0010\f\f\fρ ± 2N 1/2re&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ2)&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;·1 −(1 + ρ2)e−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1[0,N&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −r2sin&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;arisingfromthecondition|ρ ± 2N&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;arisingfromthecondition|ρ ± 2N1/2reiφ| ≤2N&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;arisingfromthecondition|ρ ± 2N1/2reiφ| ≤2N1/2⇔ρ ≤R(r, φ)N&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W(ρ)=1 −(1 + ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;W(ρ)=1 −(1 + ρ2)&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W(ρ)=1 −(1 + ρ2)e−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;p(r, φ)whichisjust&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;p(r) = r&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p(r) = r2&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;p(r) = r2p(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −(1 + ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −(1 + ρ2)e−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;givesln(N&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ZN&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −(1 + ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −(1 + ρ2)e−ρ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;4r2&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;4r2&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r2p−2(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;r2&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r2) sin&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r2) sin2(φ) + pr&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r2) sin2(φ) + pr2&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r2) sin2(φ) + pr2psin&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;4r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;4r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r2p−2(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2p−2(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(p + 1)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(p + 1)2r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;(p + 1)2r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(p + 1)2r2p−p&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(p + 1)2r2p−p2r&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;(p + 1)2r2p−p2r2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z2) d2z1 d2z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2,toleadingorderisjust|z|2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;2,toleadingorderisjust|z|2pwhichisjust1,because&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;z1nearz2,theformofz&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;(z),atleastfortheleading-orderasymptoticformula,isconstantin&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Letusﬁxσ&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Dn+1(N, r)=(Nr&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Dn+1(N, r)=(Nr2+ n + 1)Dn(N, r) −Nnr&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Nr&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−Nnr&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2vN−1,where{e&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2vN−1,where{e1, e&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2vN−1,where{e1, e2}isthestandardbasisforR&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A0&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A0e&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n)∗A&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A0&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2AN−2· · · A1A0e&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0]∗e&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0]∗e&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;N(z1, z2)in&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t −r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t −r2)&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t −r2)2+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t −r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t −r2)&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(max{r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−(N−1) ln(N)+N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(r2) −1 + r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&gt;1thisisexponentiallysmall:toleadingordereN[ln(r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&gt;1thisisexponentiallysmall:toleadingordereN[ln(r2)−1+r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ln(r2) −1 + r&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thetimescaletn= n/Nistooroughwhentnisnearr&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ﬁne.Therefore, we use the intermediate time scale Tn= (tn −r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;.Therefore, we use the intermediate time scale Tn= (tn −r2)N&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n=N exp(ψ+(T&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2N −1/2T&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;2N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R (1−r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;R (1−r2)N&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−r2N&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T2+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∼e · r(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∼e · r(1 −r2)eN ln(N)−N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0]∗e&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;0]∗e2∼N −1&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N e(N−1) ln(N)−N(1−r&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(r) ∼π−1(2πN)−1/2 exp(−(N−1) ln(N) + N(1 −r&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0]∗e&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Usingthenotationtn= n/NandTn= N&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Usingthenotationtn= n/NandTn= N1/2(tn −r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2N −1/2&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n+1+4&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+1+4r&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2k−1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2k−1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2k−1+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2k−1+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ZS&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ZS2&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;s&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;s2+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;s&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;s2+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2k+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2k+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2k+ 4&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2k+ 4r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Zx&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Zx2&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[4 cosh&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;limits of integration for S1and S2Kshould be −r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;limits of integration for S1and S2Kshould be −r2N&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; integration for S1and S2Kshould be −r2N1/2&lt; S1and S2K&lt; (1−r&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tegration for S1and S2Kshould be −r2N1/2&lt; S1and S2K&lt; (1−r2)N&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;1 + e−2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + e−2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 + e−2x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + e&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;1 + e2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + e2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 + e2x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2x&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1(ln[cosh(x2k−1)]+ln[cosh(x2k)]+sinh(2x2k)−sinh(2x2&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N(z&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N(z1, z&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;momentsoftheGinibreensembleoftheformtr[A&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;momentsoftheGinibreensembleoftheformtr[Ap(A∗)&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2πn&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2πnn&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2πn&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2πnn&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;[n]q=1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u00121 −q&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;\u00121 −q&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;\u00121 −q&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Inordertomakethiscomparison,wewillﬁrstcompare&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−(ln(q))&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−(ln(q))2q&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −qx)&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−β&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n)&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−β&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2n )&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2n))&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−β&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k + x)&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;q=e−β/n=nA(β) + B(β) + R&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k + x)&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(β)convergesto0,as&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k + x)&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4n2sinh&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;· eβ/2&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;sinh(x)=x +x&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;3!+x&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;x2&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=1 +x&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=1 +β&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;24n&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinceln(1 + x) = x + O(x&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;n(β)doesindeedconvergesto&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(β)doesindeedconvergesto0as&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −q)q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −q)q2&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −q)q&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(1 −q)q2&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;Pn+1(π) =qInv(π)&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Pn+1(π) =qInv(π)qInv&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;soqInv&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−q&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−q&quot;
+  },
+  {
+    &quot;page&quot;: 111,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;for a uniform permutation are Tracy-Widom, on the order of n&quot;
+  },
+  {
+    &quot;page&quot;: 111,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(x −t)u&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;uxx= 2u&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Considernpoints(xi, yi)intherectangle[0, 1] × [0, 1]inR&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (X&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (Xk, Y&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n11!n12!n21!n22!p&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n11!n12!n21!n22!pn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;11&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;11p&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;11pn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;12&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;12p&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;12pn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;21&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;21p&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;21pn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qn12&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qn12n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;qn12n21[n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n11 + n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n11 + n21]![n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n11 + n21]![n12 + n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n11 + n21]![n12 + n22]![n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;qn12n21[n11 + n12]![n11 + n21]![n12 + n22]![n21 + n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;(n11 + n12)!(n11 + n21)!(n12 + n22)!(n21 + n22)!·(n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;(n11 + n12)!(n11 + n21)!(n12 + n22)!(n21 + n22)!·(n11)!(n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;1 + n12)!(n11 + n21)!(n12 + n22)!(n21 + n22)!·(n11)!(n12)!(n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;2)!(n11 + n21)!(n12 + n22)!(n21 + n22)!·(n11)!(n12)!(n21)!(n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (X&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (Xk, Y&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!q&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn21&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn21n&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n! ∼e&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n! ∼en ln&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;Wq={n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n11 + n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n11 + n21}!{n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n11 + n21}!{n12 + n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n11 + n21}!{n12 + n22}!{n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;Wq={n11 + n12}!{n11 + n21}!{n12 + n22}!{n21 + n&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!q&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn21&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;{n11}!{n12}!{n21}!{n22}!{n11 + n12 + n21 + n22}!qn21n&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;nln(W&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν11 + ν12)A(β[ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν11 + ν12)A(β[ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν11 + ν12)A(β[ν11 + ν12]) + (ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;nln(Wq) = −βν12ν21 + (ν11 + ν12)A(β[ν11 + ν12]) + (ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;) = −βν12ν21 + (ν11 + ν12)A(β[ν11 + ν12]) + (ν11 + ν21)A(β[ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;ν12ν21 + (ν11 + ν12)A(β[ν11 + ν12]) + (ν11 + ν21)A(β[ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;nln(W&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qν12nν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν22&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν22n}!{ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν22n}!{ν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;qν12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν22n}!{ν21n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;12nν21n{ν11n + ν12n}!{ν11n + ν21n}!{ν12n + ν22n}!{ν21n + ν22&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(ln (qν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν21n+ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ln (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν21n+ν22&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot; (qν12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν21n+ν22n)A(β(ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;12nν21n)+(ν11n+ν12n)A(β(ν11+ν12))+· · ·+(ν21n+ν22n)A(β(ν21+ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n→∞ln(qν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n→∞ln(qν12nν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n→∞ln(qν12nν21&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ne−β(ν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;ne−β(ν12nν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(−βν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(−βν12nν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(−βν12nν21) = −βν&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(−βν12nν21) = −βν12ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n(ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ν11&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν22&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν22n)A(β(ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν22n)A(β(ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν22n)A(β(ν11 + ν12 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;n(ν11n + ν12n + ν21n + ν22n)A(β(ν11 + ν12 + ν21 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n→∞(ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν21 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν21 + ν22)A(β(ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν21 + ν22)A(β(ν11 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν21 + ν22)A(β(ν11 + ν12 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;n→∞(ν11 + ν12 + ν21 + ν22)A(β(ν11 + ν12 + ν21 + ν&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinceP&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;nln W&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (X&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i,j=1{#{k: (Xk, Y&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

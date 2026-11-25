@@ -1,0 +1,271 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ojm27-03-04",
+  "blocks": [
+    {
+      "id": "library/ojm27-03-04/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Title\nHyperbolic 3-manifolds with totally geodesic\nboundary\nAuthor(s)\nFujii, Michihiko\nCitation\nOsaka Journal of Mathematics. 1990, 27(3), p.\n539-553\nVersion Type VoR\nURL\nhttps://doi.org/10.18910/11468\nrights\nNote\nThe University of Osaka Institutional Knowledge Archive : OUKA\nhttps://ir.library.osaka-u.ac.jp/\nThe University of Osaka\nFujii, M.\nOsaka J. Math.\n27 (1990), 539-553\nHYPERBOLIC 3-MANIFOLDS WITH TOTALLY\nGEODESIC BOUNDARY\nMICHIHIKO FUJΠ\n(Received August 30, 1989)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we study compact oriented hyperbolic 3-manifolds each of\nwhich has a totally geodesic boundary. By a hyperbolic manifold, we mean a\nRiemannian manifold with constant sectional curvature — 1. A totally geodesic\nboundary of such a 3-manifold becomes a hyperbolic surface.\nLet g be an integer greater than or equal to 2 and let Mg be the Riemann\nmoduli space consisting of all isometry classes of closed hyperbolic surfaces of\ngenus g. \nLet S be the subset of Mg consisting of those hyperbolic surfaces\nwhich are boundaries of compact hyperbolic 3-manifolds with totally geodesic\nboundari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "We define the following three functions ply p2, ρ3for later use: ax, «,, a3, «,, a» a.) := K , a2, a3, a,, a5, a,) : = h^, a2, a3, a,, a5, a,)a-a {aι, a2y a3, a4y a5, a6) 2—Wal~l where a^R, > 1 ( / = 1 , * ,6). The above functions are defined so that in the pictures of polyhedra in H 2 in Fig. 1.2, various values indicated there give the lengths of the corresponding geodesic arcs or the angle. h, a2) P2(aiy a2, a31 <74, a5, a cos φ = Fig. 1.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "For polygons in the hyperbolic plane H 2, as indicated in Fig. 1.1, the following equations hold: cosh C = cos γ = sin a sin β cosh A cosh B — cosh C sinh A sinh B h n — cosh a cosh /3-f\" cosh <γ sinh a sinh β h C — c o s n c g cosh/3+1 sinh a sinh β (a) (b) (c) (b) (c) Fig. 1.1. Various values indicated above give the lengths of the corresponding geodesies or the angles. HYPERBOLIC 3-MANIFOLDS In the rest of this paper, for any geodesic arc in JSΓ 3, let us always take the hyperboliccosine value of the actual value of its length.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Let ai(i=l, •••, 6) Suppose they satisfy the following equation: numbers each greater than 1. p3(a3, a4y alf a2, a5, a6) = ^3(tf6, α5, Λ2, ΛX, α3, a4). (*) ^ can construct a hyperbolic truncated tetrahedron in H 3 with one ideal ver- tex as shown in Fig. 1.3. M. Fujπ Fig. 1.3. The boundary consists of three right-angled pentagons with one ideal vertex, one right-angled hexagon and three triangles. These boundary faces are all totally geodesic. So the six di- hedral angles between pentagon and triangle are πβt and the three dihedral angles between hexagon and triangle are πβ. Parameters alf ...",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-1-preliminaries.md",
+      "narrative": null,
+      "content": "We start with describing a main constituent element of hyperbolic 3-\nmanifolds with boundaries, called a hyperbolic truncated tetrahedron with one ideal\nvertex which is a polyhedron in the hyperbolic 3-space H\n3 bounded by three\nright-angled pentagons with one ideal vertex, one right-angled hexagon and\nthree triangles (see Fig. 1.3).\nBefore giving the precise definition in Proposition 1.3, we prepare some\nformulae in hyperbolic geometry (cf. Beardon [1]).\nProposition 1.1. For polygons in the hyperbolic plane H\n2, as indicated in\nFig. 1.1, the following equations hold:\ncosh C =\ncos γ =\nsin a si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/conj-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "conj-sec-002-05.md",
+      "narrative": null,
+      "content": "With the same hypotheses as in Theorem 3.3, M|(μΛ)\\ {the adjoining closed geodesic} have the same combinatorial decomposition by means of truncated tetrahedra as that of M\\ which was constructed in Proposition 3.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "The above construction gives a complete hyperbolic struc- ture to the resulting Z-manifold M\\, To prove this proposition we need the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Thurston [3]",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "Let M 3 be a non-singular hyperbolic 3- manifold, possibly with boundary dM 2, obtained by gluing together the faces of polyhedra in H 3 with some vertices at infinity. Then M 3 is complete if and only if the similarity structure on each link of an ideal vertex is actually a Euclidean structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds with totally geodesic boundary of genus g",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-3-infinitely-many-mutually-non-isometric-hyperbo.md",
+      "narrative": null,
+      "content": "with totally geodesic boundary of genus g\nIn this section we construct infinitely many mutually non-isometric hyper-\nbolic 3-manifolds with totally geodesic boundary of genus g by using the mani-\nfold Ml described above.\nFirst we give a complete hyperbolic structure to the manifold Ml by realiz-\ning the tetrahedra in §2 as the hyperbolic truncated tetrahedra which we give\njust below.\nLet g be any integer greater than or equal to 2 and we fix it in the following\narguments. By Proposition 1.3, there is a truncated tetrahedron with one\nideal vertex as shown in Fig. 3.1. Each value indicated in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let θ be a real number satisfying the following: O<0<τr/4. Let a and b be the lengths of edges of the triangles in Fig. 3.4. Then a=b by Pro- position 1.1, because __ cos θ cos (πβ)+ cos θ sin θ sin (τr/2) cosfl ~~ sin θ __ cos θ cos (ττ/4)+cos (πβ) sin θ sin (τr/4) Fig. 3.4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/rem-sec-002-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "rem-sec-002-06.md",
+      "narrative": null,
+      "content": "The last part of the above theorem was proved by considering the lengths of the adjoining closed geodesies. However, we conjecture that the following stronger statement must hold. Namely there should exist infinitely many boundary closed surfaces of genus g which have different moduli. To show this, it is enough to prove Conjecture 3.4 and then that the natural map from the parameter space of geometric triangulation of the boundary surface of genus g, which has real dimension 2, to its Teichmilller space is C°° and has a full rank at the point where M z g is com- plete. If we can prove these,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Let g be an integer greater than or equal to 2. Let Ml be the g-fold branched covering of the Whitehead link complement in S 3 which has a complete hyperbolic structure r° with one cusp and one totally geodesic boundary closed surface of genus g as was constructed in Proposition 3.1, and let Ml^tK) be the topological Z-manifold obtained by performing the Dehn surgery of type (μ, λ) on the framed toral end of Ml. If(μ, λ) is a coprimepair of integers and | μ | + | λ | is sufficiently large, then M|CμΛ) has a hyperbolic structure with totally geodesic bound- ary. Thus we have explicitly construc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ojm27-03-04/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] A.F. Beardon: The Geometry of Discrete Groups (GTM 91), Springer-Verlag,\nNew York, 1983.\n[2] W.D. Neumann and D. Zagier: \nVolumes of hyperbolic three-manifolds, Topology\n24 (1985), 307-332.\n[3] W.P. Thurston: The Geometry and Topology of 3-Manifolds, to be published\nby Princeton University Press, 1978/79.\nDepartment of Mathematics\nTokyo Institute of Technology\nOhokayama, Meguro-ku, Tokyo\n152, Japan",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

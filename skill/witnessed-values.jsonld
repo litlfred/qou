@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/witnessed-values.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/witnessed-values",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "witnessed-values",
+      "title": "Witnessed Values Skill",
+      "instructionsPath": "skills/local/witnessed-values.md",
+      "instructionLines": 281,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

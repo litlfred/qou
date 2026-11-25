@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.0461v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1202.0461v1",
+  "contains": [
+    "library/arxiv-1202.0461v1/sections/sec-front-matter",
+    "library/arxiv-1202.0461v1/sections/sec-000",
+    "library/arxiv-1202.0461v1/sections/sec-001",
+    "library/arxiv-1202.0461v1/sections/sec-002",
+    "library/arxiv-1202.0461v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS — High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar\n\n**Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS**\n\n*Enrique Garc´ıa–Berro1,2, Pablo Lorén–Aguilar1,2, Gabriela Aznar–Siguán1,2, Santiago Torres1,2*\n\n6 pp, 5 sections.\n\n**Abstract.** High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic ﬁeld are still unknown. Here we show that the hot, convective, diﬀerentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic ﬁelds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-ﬁeld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors — stars: evolution — stars: white dwarfs — stars: rotation — stars: magnetic ﬁeld — stars: binaries\n\n**Outline.** Front matter; 1 Introduction; 2 The stellar dynamo; 3 Magnetic white dwarfs in the solar neighborh; 4 Summary and conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1202.0461&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1202.0461v1",
+    "title_source": "slug",
+    "source_file": "1202.0461v1.pdf",
+    "source_sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
+    "pages": 6,
+    "arxiv": {
+      "id": "1202.0461",
+      "version": "1",
+      "primary_class": "astro-ph.SR",
+      "stamp_date": "2 Feb 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

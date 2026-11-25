@@ -1,0 +1,864 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1408.3518v3",
+  "title": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Our Contributions",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-our-contributions"
+    },
+    {
+      "level": 1,
+      "title": "Proofs",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-proofs"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma ?? and Theorem ??",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-proof-of-lemma-and-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Lemma ??: Discrete deepest descent.",
+      "number": "2.1.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-211-proof-of-lemma-discrete-deepest-descent"
+    },
+    {
+      "level": 3,
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "number": "2.1.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig"
+    },
+    {
+      "level": 3,
+      "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+      "number": "2.1.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma ?? and Theorem ??",
+      "number": "2.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-proof-of-lemma-and-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Lemma ?? for Discrete deepest descent.",
+      "number": "2.2.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-221-proof-of-lemma-for-discrete-deepest-descent"
+    },
+    {
+      "level": 3,
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "number": "2.2.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig"
+    },
+    {
+      "level": 3,
+      "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+      "number": "2.2.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-223-proof-of-part-b-of-theorem-discrete-steepest"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??.",
+      "number": "2.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-23-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-concluding-remarks"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integer-linear optimization",
+          "heading": false
+        },
+        {
+          "term": "augmentation steps",
+          "heading": false
+        },
+        {
+          "term": "edmonds-karp",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "bland",
+          "heading": false
+        },
+        {
+          "term": "unchen",
+          "heading": false
+        },
+        {
+          "term": "polynomial-time",
+          "heading": false
+        },
+        {
+          "term": "hemmecke",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1408.3518v3 [math.OC] 15 Jan 2015 On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond Jes´us A. De Loera Department of Mathematics University of California One Shields Avenue Davis, CA 95616 USA deloera@math.ucdavis.edu http://www.math.ucdavis.edu/∼deloera Raymond Hemmecke Zentrum Mathematik Technische Universit¨at M¨unchen 85747 Garching bei M¨unchen,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1408.3518v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1642,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vex vez",
+          "heading": false
+        },
+        {
+          "term": "vecc vez",
+          "heading": false
+        },
+        {
+          "term": "vex veb",
+          "heading": false
+        },
+        {
+          "term": "leq vex",
+          "heading": false
+        },
+        {
+          "term": "vez sum",
+          "heading": false
+        },
+        {
+          "term": "cite graver",
+          "heading": false
+        },
+        {
+          "term": "emph augmentation",
+          "heading": false
+        },
+        {
+          "term": "augmentation algorithms",
+          "heading": false
+        }
+      ],
+      "extract": "We consider a general framework for solving linear programs (LPs) and integer-linear programs (ILPs) of the form \\begin{equation} \\label{themilp} \\min\\set{\\,\\vecc^\\T\\vex\\ :\\ A\\vex=\\veb,\\ \\ve 0\\leq\\vex\\leq\\veu,\\ \\vex\\in X\\,}, \\end{equation} where $A\\in\\Z^{d\\times n}$, $\\veb\\in\\Z^d$, $\\vecc\\in\\Z^n$, and where $X=\\R^n$ (LP) or $X=\\Z^n$ (ILP). We focus on solution algorithms that are based on an \\emph{augmentation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-our-contributions",
+      "number": "1.1",
+      "title": "Our Contributions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 2509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecc vex",
+          "heading": false
+        },
+        {
+          "term": "vex veb",
+          "heading": false
+        },
+        {
+          "term": "vecc vez",
+          "heading": false
+        },
+        {
+          "term": "vex min",
+          "heading": false
+        },
+        {
+          "term": "leq vex",
+          "heading": false
+        },
+        {
+          "term": "vex epsilon",
+          "heading": false
+        },
+        {
+          "term": "solution vex",
+          "heading": false
+        },
+        {
+          "term": "vex alpha",
+          "heading": false
+        }
+      ],
+      "extract": "The main contribution of this paper is an extension of Bland's theorem beyond LP to ILP. Our main results and proofs extend what Bland did for circuits to Graver bases. We look at several augmentation rules. Although they are very similar, our results here are naturally divided into the LP and ILP cases, with small but important technical changes. Also, depending on whether variables are restricted to be integers or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-proofs",
+      "number": "2",
+      "title": "Proofs",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecc vex",
+          "heading": false
+        },
+        {
+          "term": "vecc veg",
+          "heading": false
+        },
+        {
+          "term": "min vex",
+          "heading": false
+        },
+        {
+          "term": "vex sum",
+          "heading": false
+        },
+        {
+          "term": "alpha veg",
+          "heading": false
+        },
+        {
+          "term": "minimum objective-function",
+          "heading": false
+        },
+        {
+          "term": "objective-function value",
+          "heading": false
+        },
+        {
+          "term": "sufficient improvement",
+          "heading": false
+        }
+      ],
+      "extract": "We present the proofs to the above results in separate subsections. We will use the following lemma (a slight variation from Theorem 3.1 in \\cite{Ahuja+Magnanti+Orlin}) which establishes the bounds we claim once we can guarantee sufficient improvement at each iteration: \\begin{lemma} \\label{Lemma: Sufficient improvement leads to polynomial algorithm} Let $\\epsilon>0$ be given. Moreover, let $H$ denote the difference",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-211-proof-of-lemma-discrete-deepest-descent",
+      "number": "2.1.1",
+      "title": "Proof of Lemma ??: Discrete deepest descent.",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xmin",
+          "heading": false
+        },
+        {
+          "term": "augmentations",
+          "heading": false
+        },
+        {
+          "term": "αic",
+          "heading": false
+        }
+      ],
+      "extract": "We observe that 0 > c⊺(xmin −xk) = c⊺X αigi = X αic⊺gi ≥−(2n −2)∆ where ∆> 0 is the largest value of −αc⊺z over all z ∈G(A) and integer α > 0 for which xk + αz is feasible. Rewriting this, we get ∆≥c⊺(xk −xmin) 2n −2 . Now let αz be the discrete deepest-descent augmentation applied to xk, leading to xk+1 := xk +αz. Then we get ∆= −αc⊺z and c⊺(xk −xk+1) = −αc⊺z = ∆≥c⊺(xk −xmin) 2n −2 . Thus, we have a factor of β =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig",
+      "number": "2.1.2",
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "αmax",
+          "heading": false
+        },
+        {
+          "term": "xmin",
+          "heading": false
+        },
+        {
+          "term": "augmentations",
+          "heading": false
+        }
+      ],
+      "extract": "We observe that 0 > c⊺(xmin −xk) = c⊺X αigi = X αic⊺gi ≥−∆0 X αi ≥−(2n −2)∆0αmax, where this time ∆0 > 0 denotes the greatest value of −c⊺z over all z ∈G(A) for which xk +z is still feasible and where αmax = max{αi }. Rewriting this, we get ∆0 ≥c⊺(xk −xmin) (2n −2)αmax . Now let αz be the discrete Dantzig-descent augmentation applied to xk, leading to xk+1 := xk +αz. Then we get c⊺(xk −xk+1) = −αc⊺z = α∆0 ≥∆0 ≥c⊺(xk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep",
+      "number": "2.1.3",
+      "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "steepest descent",
+          "heading": true
+        },
+        {
+          "term": "steepest-descent augmentations",
+          "heading": false
+        },
+        {
+          "term": "augmentations applied",
+          "heading": false
+        },
+        {
+          "term": "following steepest-descent",
+          "heading": false
+        },
+        {
+          "term": "feasible solution",
+          "heading": false
+        },
+        {
+          "term": "descent direction",
+          "heading": false
+        },
+        {
+          "term": "αigi",
+          "heading": false
+        },
+        {
+          "term": "steepness",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a series of lemmas. Note that the proof for the LP case follows exactly the same lines, since we do not use integrality of the components in our arguments. Lemma 4. Let xk be a feasible solution, and let z be an associated steepest descent direction. Then there is some augmentation direction g ∈G(A) from xk, with −c⊺g/∥g∥1 ≥−c⊺z/∥z∥1. De Loera, Hemmecke and Lee: Augmentation in Linear and Integer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-proof-of-lemma-and-theorem",
+      "number": "2.2",
+      "title": "Proof of Lemma ?? and Theorem ??",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representation xmin",
+          "heading": false
+        },
+        {
+          "term": "αigi",
+          "heading": false
+        },
+        {
+          "term": "pαigi",
+          "heading": false
+        }
+      ],
+      "extract": "Let us assume that xk is a non-optimal feasible solution, and let xmin be an optimal solution to the LP. Then there exists a (sign-compatible) representation xmin −xk = X αigi, with αi > 0 and with αigi ⊑xmin −xk. Moreover, due to Carath´eodory theorem, at most n sum- mands are needed in such a representation. Again, sign-compatibility of the representation xmin − xk = Pαigi implies that for all i the vectors xk +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-221-proof-of-lemma-for-discrete-deepest-descent",
+      "number": "2.2.1",
+      "title": "Proof of Lemma ?? for Discrete deepest descent.",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deepest-descent augmentation",
+          "heading": false
+        },
+        {
+          "term": "discrete deepest-descent",
+          "heading": false
+        },
+        {
+          "term": "xmin",
+          "heading": false
+        },
+        {
+          "term": "objective value",
+          "heading": false
+        },
+        {
+          "term": "αic",
+          "heading": false
+        }
+      ],
+      "extract": "We observe that 0 > c⊺(xmin −xk) = c⊺X αigi = X αic⊺gi ≥−n∆ where ∆> 0 is the largest value of −αc⊺z over all z ∈C(A) and α > 0 for which xk +αz is feasible. Rewriting this, we get ∆≥c⊺(xk −xmin) n . De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming 12 Now let αz be the discrete deepest-descent augmentation applied to xk, leading to xk+1 := xk +αz. Then we get ∆= −αc⊺z and c⊺(xk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig",
+      "number": "2.2.2",
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dantzig-descent augmentation",
+          "heading": false
+        },
+        {
+          "term": "discrete dantzig-descent",
+          "heading": false
+        },
+        {
+          "term": "xmin",
+          "heading": false
+        },
+        {
+          "term": "αmax",
+          "heading": false
+        },
+        {
+          "term": "objective-function",
+          "heading": false
+        }
+      ],
+      "extract": "In order to avoid zig-zagging (see example in Section 4 of [19] and the details of how to avoid this), we must augment to a vertex with lower objective-function value after each discrete Dantzig-descent augmentation. For this, we need at most n discrete Dantzig-descent augmentations within smaller and smaller faces of P. Let xk be a vertex of the given polyhedron. Again we observe that 0 > c⊺(xmin −xk) = c⊺X αigi =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-223-proof-of-part-b-of-theorem-discrete-steepest",
+      "number": "2.2.3",
+      "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "The proof here follows exactly the same lines of the proof to Theorem 1, part (c). De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming 13",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-23-proof-of-theorem",
+      "number": "2.3",
+      "title": "Proof of Theorem ??.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idb",
+          "heading": false
+        },
+        {
+          "term": "feasible solution",
+          "heading": false
+        },
+        {
+          "term": "ida",
+          "heading": false
+        },
+        {
+          "term": "ilp",
+          "heading": false
+        },
+        {
+          "term": "auxiliary components",
+          "heading": false
+        },
+        {
+          "term": "objective vector",
+          "heading": false
+        },
+        {
+          "term": "n-fold",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        }
+      ],
+      "extract": "If we keep A and B ﬁxed and let N vary, the binary encoding lengths of the Graver bases of [A,B](N) are bounded by a polynomial in N, see [14]. More precisely, there is a constant g(A,B), the so-called Graver complexity of A and B (see [22, 30, 3]), given by max{∥g∥1 : g ∈G(BG(A))}, such that G \u0000[A,B](N)\u0001 ≤ \u0012 N g(A,B) \u0013 G \u0000[A,B](g(A,B))\u0001 ∈O \u0000N g(A,B)\u0001. This means that we can ﬁnd a steepest-descent direction in G",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-concluding-remarks",
+      "number": "3",
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "mathematical programming",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "graver complexity",
+          "heading": false
+        },
+        {
+          "term": "well-scaled frames",
+          "heading": false
+        },
+        {
+          "term": "network ﬂow",
+          "heading": false
+        },
+        {
+          "term": "combinatorial optimization",
+          "heading": false
+        },
+        {
+          "term": "n-fold integer",
+          "heading": false
+        }
+      ],
+      "extract": "Through the notion of Graver basis, we have obtained extensions of classical results of Bland, Edmonds, and Karp. Our new version applies now to the case of integer- linear programs. As a consequence we have also derived the ﬁrst-ever strongly polynomial-time algorithm for N-fold integer-linear optimization. Our new results also show that Kitahara-Mizuno- style bounds [24] hold in larger generality to include",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "steepest-descent augmentation",
+      "heading": false
+    },
+    {
+      "term": "vecc vex",
+      "heading": false
+    },
+    {
+      "term": "vex vez",
+      "heading": false
+    },
+    {
+      "term": "augmentation algorithm",
+      "heading": false
+    },
+    {
+      "term": "dantzig-descent augmentation",
+      "heading": false
+    },
+    {
+      "term": "deepest-descent augmentation",
+      "heading": false
+    },
+    {
+      "term": "augmentation direction",
+      "heading": false
+    },
+    {
+      "term": "maximum augmentation",
+      "heading": false
+    },
+    {
+      "term": "augmentations bounded",
+      "heading": false
+    },
+    {
+      "term": "vex veb",
+      "heading": false
+    },
+    {
+      "term": "solution vex",
+      "heading": false
+    },
+    {
+      "term": "emph augmentation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1408.3518v3"
+  }
+}

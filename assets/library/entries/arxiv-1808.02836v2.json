@@ -1,0 +1,462 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1808.02836v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Thurston observed that ideal triangulations are a useful tool to study the geometry and topology of cusped hyperbolic 3--manifolds. Geometric triangulations are useful to study geometric properties of a manifold. Minimal triangulations, i.e.topological ideal triangulations using the least number of ideal 3--simplices, are used in census enumeration, and as a platform to study the topology of the manifold using normal surface theory. In this paper we establish basic facts about minimal ideal triangulations of cusped hyperbolic 3--manifolds in analogy with our previous work for closed 3--manifol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal ideal triangulations via geometry",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-minimal-ideal-triangulations-via-geometry.md",
+      "narrative": null,
+      "content": "The canonical cell decompositions of cusped hyperbolic 3--manifolds due to Epstein and Penner [@Epstein-euclidean-1988] are generically ideal triangulations. It follows from work of Guéritaud [@GueritaudPhDThesis Theorem 2.1.7 in Section 2.1.4] that the canonical cell decompositions of hyperbolic 2--bridge link complements are ideal triangulations. However, these are not minimal in general. We thank Jessica Purcell and the anonymous referee for pointing us to these examples.\n\nIf four ideal tetrahedra in a geometric ideal triangulation form a non-convex ideal octahedron, then there are 4--4 mov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On minimal ideal triangulations of cusped hyperbolic 3–manifolds\nWilliam Jaco, Hyam Rubinstein, Jonathan Spreer and Stephan Tillmann\nAbstract\nPrevious work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation\nof low degree edges, embedded layered solid torus subcomplexes and 1–dimensional Z2–cohomology. The underlying\nblueprint is now used in the study of minimal ideal triangulations. As an application, it is shown that the monodromy\nideal triangulations of the hyperbolic once-punctured torus bundles are minimal.\nAMS Classiﬁcation 57Q15, 57N10, 57M50, 57",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal ideal triangulations via topology",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-minimal-ideal-triangulations-via-topology.md",
+      "narrative": null,
+      "content": "In this paper, we are first concerned with the anatomy of a minimal ideal triangulation. In particular, in §[\\[sec:anatomy\\]](#sec:anatomy){reference-type=\"ref\" reference=\"sec:anatomy\"} we characterise edges of low degree, and analyse subcomplexes that we call *maximal layered $\\partial$--punctured solid tori.* These are solid tori with a point missing on the boundary, and imbued with a special ideal triangulation. These subcomplexes were exhibited by Guéritaud and Schleimer [@Gueritaud-canonical-2010] in canonical decompositions of cusped hyperbolic 3--manifolds satisfying certain genericity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other classes of hyperbolic 3–manifolds",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-other-classes-of-hyperbolic-3manifolds.md",
+      "narrative": null,
+      "content": "We remark that for closed hyperbolic 3--manifolds, currently no infinite families of minimal triangulations are known. In the case of compact manifolds with non-empty boundary, lower bounds on complexity are known through work of [@Bucher-simplicial-2015] and [@Jaco-bounds-2016], where it is independently shown that they are attained by $S_g\\times[0,1],$ where $S_g$ is a closed orientable surface of genus $g\\ge 1.$\n\nThere are infinite families of minimal triangulations of manifolds with a totally geodesic boundary component of genus $g\\ge 2$ and some cusps due to Frigerio, Martelli and Petroni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The anatomy of a minimal ideal triangulation",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-2-the-anatomy-of-a-minimal-ideal-triangulation.md",
+      "narrative": null,
+      "content": "The anatomy of a minimal ideal triangulation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulations and pseudo-manifolds",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-21-triangulations-and-pseudo-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:Triangulations label=\"sec:Triangulations\"}\n\nLet $\\widetilde{\\Delta}$ be a finite union of pairwise disjoint Euclidean 3--simplices with the standard simplicial structure. Every $k$--simplex $\\tau$ in $\\widetilde{\\Delta}$ is contained in a unique 3--simplex $\\sigma_\\tau.$ A 2--simplex in $\\widetilde{\\Delta}$ is termed a *face*.\n\nLet $\\Phi$ be a family of affine isomorphisms pairing the faces in $\\widetilde{\\Delta},$ with the properties that $\\varphi \\in \\Phi$ if and only if $\\varphi^{-1}\\in \\Phi,$ and every face is the domain of a unique element of $\\Phi.$ The elements of $\\Phi$ are ter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Edge paths and edge loops",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-006-22-edge-paths-and-edge-loops.md",
+      "narrative": null,
+      "content": "[]{#sec:Edge paths and edge loops label=\"sec:Edge paths and edge loops\"}\n\nTo each edge $e$ in $\\widehat{M}^{(1)}$ we associate a continuous path $\\gamma_e \\co [0,1]\\to \\widehat{M}$ with endpoints in $\\widehat{M}^{(0)}$ via the composition of maps $[0,1] \\to \\widetilde{\\Delta} \\to \\widehat{M},$ where the first map is an affine map onto a 1--simplex in the equivalence class and the second is the quotient map. We call $\\gamma_e$ an *edge path*. An edge path is termed an *edge loop* if its ends coincide. For instance, in a 1--vertex triangulation every edge path is an edge loop.\n\nWe often abbrevia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-23-ideal-triangulations.md",
+      "narrative": null,
+      "content": "[]{#sec:Ideal triangulations label=\"sec:Ideal triangulations\"}\n\nLet $M= \\widehat{M}\\setminus \\widehat{M}^{(0)}.$ Then $M$ is a topologically finite, non-compact 3--manifold, and the pseudo-manifold $\\widehat{M}$ is referred to as the *end-compactification* of $M,$ the elements of $\\widehat{M}^{(0)}$ as the *ideal vertices* of $M$ and the elements of $\\widehat{M}^{(1)}$ as the *ideal edges* of $M.$ We also refer to the triangulation $\\mathcal{T}= ( \\widetilde{\\Delta}, \\Phi, p)$ of $\\widehat{M}$ as an *ideal (singular) triangulation* of $M.$\n\nThe adjective *singular* is usually omitted: we do no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Layered solid tori",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-24-layered-solid-tori.md",
+      "narrative": null,
+      "content": "[]{#sec:lst label=\"sec:lst\"}\n\nA *layered solid torus* $\\operatorname{LST}$ is a triangulation of a solid torus iteratively constructed in the following way: Start with a one-triangle Möbius strip as shown in Figure [\\[fig:faces\\]](#fig:faces){reference-type=\"ref\" reference=\"fig:faces\"}(c). Then attach additional tetrahedra without a twist along pairs of (unpaired) faces of the existing complex sharing an edge $e$. This operation is called a *layering* on $e$, where the first layering onto the Möbius strip must always go on the interior edge of the Möbius strip, see Figure [1](#fig:layering){re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of minimal triangulations",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-25-properties-of-minimal-triangulations.md",
+      "narrative": null,
+      "content": "An ideal triangulation of a topologically finite 3--manifold $M$ is *minimal* if it uses the smallest number of simplices in an ideal triangulation of $M.$ The number of ideal simplices in a minimal ideal triangulation of $M$ is denoted $c(M)$ and termed the *complexity* of $M.$\n\nWe assume that the reader is familiar with normal surface theory. We refer to [@Tillmann-normal-2008] for a thorough introduction, but remark that we only need to study *closed* normal surfaces in ideal triangulations.\n\nAn ideal triangulation of $M$ is *0--efficient* if no normal surface is a 2--sphere. An ideal trian",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Faces in minimal ideal triangulations of cusped hyperbolic 3–manifolds",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-26-faces-in-minimal-ideal-triangulations-of-cusp.md",
+      "narrative": null,
+      "content": "<figure id=\"fig:faces\">\n<div class=\"center\">\n\n</div>\n<figcaption>Types of faces. The Möbius, 3–fold and dunce faces only have one vertex due to the edge identifications. A cone face may have one or two vertices and a triangle face may have up to 3 vertices.</figcaption>\n</figure>\n\nAn ideal triangle in an ideal triangulation of a cusped hyperbolic 3--manifold $M$ may have some of its edges identified. There are eight possible types of triangular faces in the triangulation of the end-compactification $\\widehat{M},$ depending on how vertices or edges are identified (see Figure 1 in [@Jaco-0-effic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low degree edges in minimal ideal triangulations",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-27-low-degree-edges-in-minimal-ideal-triangulati.md",
+      "narrative": null,
+      "content": "We now show that there are no edges of degree one or two in a minimal triangulation of a cusped hyperbolic 3--manifold, and that edges of degree three must be contained in layered $\\partial$--punctured solid tori.\n\n::: lemma\n[]{#thm:degone label=\"thm:degone\"} If $\\mathcal{T}$ is a minimal ideal triangulation of a cusped hyperbolic 3--manifold $M,$ then $\\mathcal{T}$ has no edge of degree one.\n:::\n\n::: proof\n*Proof.* Suppose $e_1$ is an edge of $\\mathcal{T}$ of degree 1. Let $\\tilde{\\Delta}_1$ be the single tetrahedron containing $e_1.$ Then $\\tilde{\\Delta}_1 = e_1\\ast e$ is the join of $e_1$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Layered punctured solid tori in ideal triangulations",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-28-layered-punctured-solid-tori-in-ideal-triangu.md",
+      "narrative": null,
+      "content": "The argument for closed 3--manifolds in [@Jaco-Z2-2013] hinged on an understanding of the intersections of *maximal* layered solid tori. We now carry such an analysis out in the case of cusped hyperbolic 3--manifolds. This requires a different approach due to the fact that the combinatorics of minimal ideal triangulations is less restricted than the combinatorics of minimal and 0--efficient (material) triangulations.\n\nAs in [@Jaco-Z2-2013] we focus on subcomplexes in triangulations that are maximal layered $\\partial$--punctured solid tori (see Section [\\[sec:lst\\]](#sec:lst){reference-type=\"re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normal surfaces representing Z2–homology classes",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-3-normal-surfaces-representing-z2homology-classe.md",
+      "narrative": null,
+      "content": "[]{#sec:normsurfs label=\"sec:normsurfs\"}\n\nNormal surfaces in 1--vertex triangulations of closed 3--manifolds that are dual to non-trivial first cohomology classes were used in [@Jaco-minimal-2009; @Jaco-Z2-2013] in order to obtain lower bounds on the complexity of 3--manifolds. This section develops a similar theory for ideal triangulations. In this section, $\\overline{M}$ is a compact, irreducible 3--manifold with non-empty boundary a finite union of tori, and $M$ is its interior.\n\nWe consider surfaces representing elements of $H_2(M; \\mathbb{Z}_2).$ We wish to emphasise that we do not work w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank-1 colouring of edges and the canonical surface",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-31-rank-1-colouring-of-edges-and-the-canonical-s.md",
+      "narrative": null,
+      "content": "[]{#subsec:colouring label=\"subsec:colouring\"}\n\nWe have $M= \\widehat{M}\\setminus \\widehat{M}^{(0)},$ and thus Lefschetz duality gives a natural isomorphism $$D_M\\co H_2(M; \\mathbb{Z}_2) \n\\cong H^1(\\widehat{M}, \\widehat{M}^{(0)}; \\mathbb{Z}_2).$$ An element $\\varphi \\in H^1(\\widehat{M}, \\widehat{M}^{(0)}; \\mathbb{Z}_2)$ can be viewed as an assignment of values $0$ or $1$ to each edge in the triangulation such that in each triangle the sum of all values at its edges equals zero modulo two. We say that the edge $e$ is *$\\varphi$--even* if $\\varphi(e) = 0$ and *$\\varphi$--odd* if $\\varphi(e) = 1.$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank-2 colouring of edges",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-32-rank-2-colouring-of-edges.md",
+      "narrative": null,
+      "content": "[]{#subsec:rank-2 colouring label=\"subsec:rank-2 colouring\"}\n\nGiven the subgroup $H = \\langle \\varphi_1, \\varphi_2 \\rangle \\cong \\mathbb{Z}_2 \\oplus \\mathbb{Z}_2$ of $H^1(\\widehat{M}, \\widehat{M}^{(0)}; \\mathbb{Z}_2),$ we now introduce a refinement of the above colouring. Since $\\varphi_1 + \\varphi_2 = \\varphi_3,$ there are four types of edges:\n\n-   edge $e$ is called *$H$--even* or *0--even* if $\\varphi_i[e] =0$ for each $i \\in \\{ 1,2,3\\};$ and\n\n-   edge $e$ is called $i$--even if $\\varphi_i[e] =0$ for a unique $i \\in \\{ 1,2,3\\}.$\n\nLet $\\{ i,j,k\\} = \\{ 1,2,3\\}.$ The normal corners of the norm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorial bounds for triangulations",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-33-combinatorial-bounds-for-triangulations.md",
+      "narrative": null,
+      "content": "The set-up and notation of the previous subsection is continued. Let $$\\begin{aligned}\nn_{\\mathfrak{qtt}}(\\mathcal{T})&= \\text{ number of tetrahedra of type } \\Delta_{\\mathfrak{qtt}}, \\\\\nn_{\\mathfrak{qq}}(\\mathcal{T})&= \\text{ number of tetrahedra of type }\\Delta_{\\mathfrak{qq}}, \\\\\nn_{\\mathfrak{tt}}(\\mathcal{T})&= \\text{ number of tetrahedra of type }\\Delta_{\\mathfrak{tt}}, \\\\\nn_{\\emptyset}(\\mathcal{T})&= \\text{ number of tetrahedra of type }\\Delta_{\\emptyset}, \\\\\nn_{\\mathfrak{qqq}}(\\mathcal{T})&= \\text{ number of tetrahedra of type }\\Delta_{\\mathfrak{qqq}}, \\\\\n\\mathfrak{e}(\\mathcal{T})&= \\te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quadrilateral surfaces and minimal ideal triangulations",
+      "pageStart": 19,
+      "pageEnd": 28,
+      "target": "../sections/sec-017-4-quadrilateral-surfaces-and-minimal-ideal-trian.md",
+      "narrative": null,
+      "content": "[]{#sec:quadsurfs label=\"sec:quadsurfs\"}\n\nIn this section we prove the following result, first stated in the introduction. The essence of the proof is a counting argument taking into account even edges, compression discs for the canonical normal representatives, and types of tetrahedra. This is modelled on the blueprint for closed 3--manifolds [@Jaco-Z2-2017; @Jaco-minimal-2009; @Jaco-Z2-2013; @Nakamura-complexity-2017].\n\n::: reptheorem\nthm:sumofnorms Let $\\mathcal{T}$ be an ideal triangulation of a cusped hyperbolic 3--manifold $M$ and let $H~\\le~H_2 (M,\\mathbb{Z}_2)$ be a rank $2$ subgroup.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The monodromy ideal triangulations of once-punctured torus bundles",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-018-5-the-monodromy-ideal-triangulations-of-once-pun.md",
+      "narrative": null,
+      "content": "[]{#sec:monodromy ideal triangulations label=\"sec:monodromy ideal triangulations\"}\n\nIn this section we apply Theorem [\\[thm:sumofnorms\\]](#thm:sumofnorms){reference-type=\"ref\" reference=\"thm:sumofnorms\"} to a nice class of examples known as the (canonical) monodromy ideal triangulations of once-punctured torus bundles over the circle. In particular, we show that these are minimal. In the last subsection we describe an infinite family of triangulations of semi-bundles that we conjecture to be minimal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the triangulation",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-51-definition-of-the-triangulation.md",
+      "narrative": null,
+      "content": "[]{#sec:mit label=\"sec:mit\"}\n\nMonodromy ideal triangulations were studied in Lackenby [@Lackenby-canonical-2003] and Gueritaud [@Gueritaud-canonical-2006], and we refer the reader to these references for details.\n\nThe monodromy ideal triangulations all have the property that they are ideal triangulations for which all edges are of even degree and there is a single ideal vertex. As we are only interested in the case of hyperbolic 3-manifolds amongst once punctured torus bundles, we restrict to monodromy as a map $A \\in SL(2,\\mathbb{Z})$ having trace different from $0,\\pm 1, \\pm 2.$\n\nEach tetrah",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction using coverings",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-020-52-reduction-using-coverings.md",
+      "narrative": null,
+      "content": "[]{#subsec:Reduction using coverings label=\"subsec:Reduction using coverings\"}\n\nMonodromy ideal triangulations of once punctured torus bundles $M$ have the nice property that any cyclic covering induced by the bundle structure is again a once punctured torus bundle and the triangulation lifts to the monodromy ideal triangulation. Throughout this section, we assume that the monodromy has trace different from $0, \\pm 1, \\pm 2.$ Hence there is a unique $\\mathbb{Z}$--summand of $H_1(M, \\mathbb{Z}).$ The cyclic coverings we are using in this section come from the kernels of maps $\\pi_1(M) \\to H_1(M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Closed one-sided incompressible surfaces",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "../sections/sec-021-53-closed-one-sided-incompressible-surfaces.md",
+      "narrative": null,
+      "content": "[]{#ssec:closedonesided label=\"ssec:closedonesided\"}\n\nIn what follows, the *weight* of a normal surface $S$ in a triangulation $\\mathcal{T}$ is defined to be the overall number of intersection points of $S$ with the edges of $\\mathcal{T}$.\n\n::: lemma\n[]{#lem:chiofS label=\"lem:chiofS\"} Let $M$ be a once-punctured hyperbolic torus bundle and let $\\mathcal{T}$ be a monodromy ideal triangulation of $M.$ Furthermore, let $S \\subset \\mathcal{T}$ be a normal surface of $\\mathcal{T}$ which is a taut least weight representative of an even torsion class of $H_2 (M, \\mathbb{Z}).$ Then $S$ meets each tetr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.02836v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further examples",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-022-54-further-examples.md",
+      "narrative": null,
+      "content": "Further examples\nThe orientable cusped hyperbolic census up to nine tetrahedra, described and veriﬁed in [5] and partially\nshipped with Regina [6], contains 162182 minimal triangulations of 61911 cusped hyperbolic 3-manifolds.\nThere are exactly 26 triangulations for which the lower bound in Theorem 1 is attained. Of these, 22 are\ntriangulations of once-punctured torus bundles, but the remaining four are not. Their isomorphism signatures\nare\n32\n• gLLMQbeefffehhqxhqq of manifold s781,\n• iLLLQPcbefgffhhhxxhaqxxqh of manifold t05624,\n• iLLLQPcbefgffhhhhhqaxhhxq of manifold t06056,\n• iLLwQPcbeefgeh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

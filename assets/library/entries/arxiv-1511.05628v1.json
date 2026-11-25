@@ -1,0 +1,720 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1511.05628v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY\nTUDOR DIMOFTE AND STAVROS GAROUFALIDIS\nAbstract. The Quantum Modularity Conjecture of Zagier predicts the existence of a for-\nmal power series with arithmetically interesting coeﬃcients that appears in the asymptotics\nof the Kashaev invariant at each root of unity. Our goal is to construct a power series from\na Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo-\nmetric solution to the gluing equations) and a complex root of unity ζ. We prove that the\ncoeﬃcients of our series lie in the trace ﬁeld of the knot, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum modular forms",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-quantum-modular-forms.md",
+      "narrative": null,
+      "content": "[]{#sub.QMF label=\"sub.QMF\"}\n\nQuantum modular forms are fascinating objects introduced by Zagier [@Za:QMF]. In the simplest formulation, a quantum modular form is a complex valued function $f$ on the set of complex roots of unity that comes equipped with a suitable formal power series expansion $\\phi_\\zeta(\\hbar) \\in \\mathbb C[\\![\\hbar]\\!]$ at each complex root of unity $\\zeta$. Usually $f$ is given explicitly. On the other hand, the power series $\\phi_\\zeta$, although uniquely determined by $f$, are not easy to obtain.\n\nOne of the most interesting examples of quantum modular forms is conjectu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "This connection was observed at $\\zeta=1$ during conversations of the second author and Zagier in Bonn in the spring of 2012.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zagier's Quantum Modularity Conjecture",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-zagiers-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sub.QMC label=\"sub.QMC\"}\n\nThe Kashaev invariant of a knot $K$ is a sequence of complex numbers $\\langle K \\rangle_N$ indexed by a positive integer $N$ [@Kashaev95]. Murakami-Murakami [@MM] identified the Kashaev invariant with an evaluation of the colored Jones polynomial $J_{K,N}(q) \\in \\mathbb Z[q^{\\pm 1}]$ colored by the $N$-dimensional irreducible representation of $\\mathfrak{sl}_2$: $$\\langle K \\rangle_N = J_{K,N}(e^{\\frac{2 \\pi i}{N}}) \\,.$$ Identifying the set of complex roots of unity with $\\mathbb Q/\\mathbb Z$, the Kashaev invariant can be extended to a translation-invariant funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The definition of ,",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-2-the-definition-of.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations and Neumann-Zagier data",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-21-ideal-triangulations-and-neumann-zagier-data.md",
+      "narrative": null,
+      "content": "[]{#sub.NZ label=\"sub.NZ\"}\n\nIdeal triangulations were introduced by Thurston as an efficient way to describe (algebraically, or numerically) 3-dimensional hyperbolic manifolds. For a leisure introduction, the reader may consult Thurston's original notes [@Th], the exposition of Neumann--Zagier [@NZ] and Weeks [@Weeks] and the documentation of `SnapPy` [@snappy]. The shape of a 3-dimensional hyperbolic tetrahedra is a complex number $z \\in\\mathbb C\\setminus\\{0,1\\}$. Letting $z' = (1-z)^{-1}$ and $z''=1-z^{-1}$, the edges of an oriented ideal tetrahedron of shape $z$ can be assigned complex numb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 1-loop invariant at level k",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-22-the-1-loop-invariant-at-level-k.md",
+      "narrative": null,
+      "content": "Fix a $\\mathbb Z$-non-degenerate Neumann-Zagier datum $\\gamma$ and a positive integer $k$. We use the notation of the previous section. For $m\\in (\\mathbb Z/k\\mathbb Z)^N$, we define\n\n$$\\label{eq.amth}\na_m(\\theta) = e^{-i\\pi\\, m\\cdot\\mathbf B^{-1}\\mathbf A m} \n\\zeta^{\\frac12 \\big[m\\cdot \\mathbf B^{-1}\\mathbf A m+ m\\cdot \\mathbf B^{-1}\\nu\\big]}\n\\prod_{i=1}^N\n\\frac{\\theta_i^{-(\\mathbf B^{-1} \\mathbf A m)_i}}{\n(\\zeta \\theta_i^{-1};\\zeta )_{m_i}}\\,.$$\n\nWe also recall the *cyclic quantum dilogarithm* defined by $$D_k(x)=\\prod_{s=1}^{k-1}(1-\\zeta^{s}x)^s \\qquad\nD^*_k(x)=\\prod_{s=1}^{k-1}(1-\\zeta^{-s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The n-loop invariants at level k for n 2",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-23-the-n-loop-invariants-at-level-k-for-n-2.md",
+      "narrative": null,
+      "content": "[]{#sub.all label=\"sub.all\"}\n\nThe definition of the higher-loop invariants $S_{\\gamma,n,k}$ is motivated by perturbation theory of the state-integral model for complex Chern-Simons theory, reviewed briefly in Section [\\[sec.CCS\\]](#sec.CCS){reference-type=\"ref\" reference=\"sec.CCS\"}. In this section we define the higher-loop invariants using formal Gaussian integration, and in the next section we give a Feynman diagram formulation of the higher-loop invariants.\n\nFix a $\\mathbb Z$-non-degenerate Neumann-Zagier datum $\\gamma$ and a positive integer $k$. We will use the notation of the previous se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Feynman diagrams for the n-loop invariant",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-24-feynman-diagrams-for-the-n-loop-invariant.md",
+      "narrative": null,
+      "content": "[]{#sub.diagrams label=\"sub.diagrams\"}\n\nIn this section we give a Feynman diagram formulation of the higher-loop invariants. A Feynman diagram $\\mathbf D$ is a finite graph possibly with loops and multiple edges. To every edge in a Feynman diagram we associate the symmetric $N\\times N$ propagator matrix\n\n$$\\Pi =  \\hbar k (-\\mathbf B^{-1}\\mathbf A + \\Delta_{z'})^{-1}\\,,$$\n\nand to a vertex with valence $j$ we associate the vertex factor $\\Gamma^{(j)}$, which is a tensor of rank $j$ whose only nonzero entries $\\Gamma_i^{(j)} := \\Gamma_{ii...i}^{(j)} \\in F_{G,k}(\\!(\\hbar)\\!)$ lie on the diagonal,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-loop invariant in detail",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-25-the-2-loop-invariant-in-detail.md",
+      "narrative": null,
+      "content": "[]{#sub.2loop label=\"sub.2loop\"}\n\nThe six diagrams that contribute to $S_{\\gamma,2}$ are shown in Figure [1](#fig.diags2intro){reference-type=\"ref\" reference=\"fig.diags2intro\"}, together with their symmetry factors. Their evaluation gives the following formula for $S_{\\gamma,2,k}$:\n\n$$\\begin{aligned}\n \\label{2loopexplicit}\nS_{\\gamma,2,k} &= \\mathrm{Av}\\left( \\mathrm{coeff}\\left[\\Gamma^{(0)}+ \n\\frac18  \\Gamma^{(4)}_i (\\Pi_{ii})^2 \n+ \\frac18\\Pi_{ii}\\Gamma^{(3)}_i\\Pi_{ij}\\Gamma^{(3)}_j\\Pi_{jj} \n+ \\frac{1}{12}\\Gamma^{(3)}_i(\\Pi_{ij})^3\\Gamma^{(3)}_j \\right. \\right.\\\\\n&\\hspace{1in}\n\\left.\\left. + \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3-loop invariant",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-26-the-3-loop-invariant.md",
+      "narrative": null,
+      "content": "[]{#sub.3loop label=\"sub.3loop\"}\n\nFor the next invariant $S_{\\gamma,3,k}$, all the diagrams of Figure [\\[fig.diags2intro\\]](#fig.diags2intro){reference-type=\"ref\" reference=\"fig.diags2intro\"} contribute, collecting the coefficient of $\\hbar^2$ of their evaluation. In addition, there are $34$ new diagrams that satisfy the inequality [\\[eq.LD\\]](#eq.LD){reference-type=\"eqref\" reference=\"eq.LD\"}; they are shown in Figures [\\[fig.diags3\\]](#fig.diags3){reference-type=\"ref\" reference=\"fig.diags3\"} and [\\[fig.diags3dot\\]](#fig.diags3dot){reference-type=\"ref\" reference=\"fig.diags3dot\"}. Calculations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matching with the numerical asymptotics of the Kashaev invariant",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-27-matching-with-the-numerical-asymptotics-of-th.md",
+      "narrative": null,
+      "content": "[]{#sub.matching label=\"sub.matching\"}\n\nNumerical asymptotics of the Kashaev invariant were obtained by Zagier and the second author in [@GZ1] for several knots, summarized in Table [1](#tab.num.kashaev){reference-type=\"ref\" reference=\"tab.num.kashaev\"}. Our $n$-loop invariants at level $k$, presented in Section [\\[sec.compute\\]](#sec.compute){reference-type=\"ref\" reference=\"sec.compute\"}, agree with the numerical computations of [@GZ1]. This is a strong consistency test for all computational methods.\n\n::: center\n::: {#tab.num.kashaev}\n      Knot        Level      Loops\n  ------------- -------",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological invariance",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-28-topological-invariance.md",
+      "narrative": null,
+      "content": "[]{#sub.inv label=\"sub.inv\"}\n\nWe conjectured in the introduction that $\\phi_{\\gamma,\\zeta}(\\hbar)$ is actually a topological invariant --- depending only on a knot $K$ and the root of unity $\\zeta$, rather than on a full Neumann-Zagier datum --- and thus $\\phi_{\\gamma,\\zeta}(\\hbar) = \\phi_{K,\\zeta}(\\hbar)$ is the series that appears in the right hand side of the Quantum Modularity Conjecture. We can now make this a bit more precise.\n\nWe begin with the following experimental observations:\n\n-   For all 502 hyperbolic knots with at most 8 ideal tetrahedra in the `CensusKnots`, their default `Snap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "This was observed in [@GZ1] and uses the fact that $\\theta^k$ is a solution to the Neumann-Zagier equations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "Let $\\sigma_j$ denote the $j$-th generator of the Galois group from Equation [\\[eq.sigma\\]](#eq.sigma){reference-type=\"eqref\" reference=\"eq.sigma\"}, and let $$\\epsilon_j(\\theta)=a_{e_j}(\\theta)^{-1} \\,.$$ The next lemma was observed in [@GZ1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-3-proofs.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2.6",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-31-proof-of-theorem-26.md",
+      "narrative": null,
+      "content": "[]{#sub.proof.thm1 label=\"sub.proof.thm1\"}\n\nFirst, we need to prove that the summation in Equation [\\[eq.tau\\]](#eq.tau){reference-type=\"eqref\" reference=\"eq.tau\"} is well-defined over the set $(\\mathbb Z/k\\mathbb Z)^N$. This was observed in [@GZ1] and uses the fact that $\\theta^k$ is a solution to the Neumann-Zagier equations.\n\n::: lemma\n[]{#lem.periodic label=\"lem.periodic\"}[@GZ1] The summation in Equation [\\[eq.tau\\]](#eq.tau){reference-type=\"eqref\" reference=\"eq.tau\"} is $k$-periodic.\n:::\n\n::: proof\n*Proof.* We need to show that $$a_{m+k e_j}(\\theta)=a_m(\\theta) \\,.$$ This follows from the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "We have: Dk(ζx) = Dk(x)(1 −x)k 1 −xk (35a) D∗ k(ζ−1x) = D∗ k(x)(1 −x)k 1 −xk (35b) D∗ k(x) = (1 −xk)k−1 Dk(ζx) (35c) Dk(x) = e 2πi 3 (k2−1)x k(k−1) D∗ k(1/x) (35d)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some identities of the cyclic dilogarithm",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-014-32-some-identities-of-the-cyclic-dilogarithm.md",
+      "narrative": null,
+      "content": "Lemma 3.3. We have:\nDk(ζx) = Dk(x)(1 −x)k\n1 −xk\n(35a)\nD∗\nk(ζ−1x) = D∗\nk(x)(1 −x)k\n1 −xk\n(35b)\nD∗\nk(x) = (1 −xk)k−1\nDk(ζx)\n(35c)\nDk(x) = e\n2πi\n3 (k2−1)x\nk(k−1)\n2\nD∗\nk(1/x)\n(35d)\nProof. Parts (a) and (b) are straightforward. For (35c), use\nD∗\nk(x) =\nk−1\nY\ns=1\n(1 −ζ−sx)s =\nk−1\nY\ns=1\n(1 −ζs−kx)k−s =\n\u0010Qk−1\ns=1(1 −ζsx)\n\u0011k\nQk−1\ns=1(1 −ζsx)s\n=\n\u00121 −xk\n1 −x\n\u0013k\n1\nDk(x)\nand then apply (35a). For (35d), use\nDk(x) =\nk−1\nY\ns=1\n(1 −ζsx)s =\nk−1\nY\ns=1\n(−ζx)s(1 −ζ−sx−1)s = e\n2πi\n3 (k2−1)x\nk(k−1)\n2\nD∗\nk(1/x) .\n□",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2.2",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-33-proof-of-theorem-22.md",
+      "narrative": null,
+      "content": "S(θ) =\nX\nm∈(Z/kZ)N\nam(θ)\nP(θ) =\nN\nY\ni=1\nD∗\nk(θ−1\ni )1/k .\nTo begin with, we have S(θ), P k(θ) ∈FG,k. If σj is the j-th generator of the Galois group of\nFG,k/Fk then Equation (32) implies that\nσjS(θ) = ϵj(θ)S(θ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex Chern-Simons theory",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-016-4-complex-chern-simons-theory.md",
+      "narrative": null,
+      "content": "15\nWe claim that\n(36)\nσjP k(θ) = ϵj(θ)−kP k(θ) .\nCombined, they show that Sk(θ)P k(θ) ∈Fk which implies Theorem 2.2. To prove Equa-\ntion (36), we separate the product when i̸ = j and when i = j as follows:\nσjP k(θ)\nP k(θ)\n=\n \nN\nY\ni=1,i̸=j\nD∗\nk(σjθ−1\ni )\nD∗\nk(θ−1\ni )\n!\n· D∗\nk(σjθ−1\nj )\nD∗\nk(θ−1\nj )\n= D∗\nk(ζθ−1\nj )\nD∗\nk(θ−1\nj )\n=\n1 −z−1\nj\n(1 −ζθ−1\nj )k\nby Equation (35b) .\nOn the other hand, θk = z satisﬁes the Neumann-Zagier equations\nzAz′′B = (−1)ν\nUsing the fact that B is unimodular, we can write the above equations in the form\nz′′ = (−1)B−1νz−B−1A .\nIn other words, for all j = 1, . . . , N we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic structure",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-017-41-basic-structure.md",
+      "narrative": null,
+      "content": "Chern-Simons theory with complex gauge group $G_\\mathbb{C}$ (where $G$ is a compact Lie group) was initially studied by Witten in [@Witten-CSgrav; @Witten-cx]. It is a topological quantum field theory in three-dimensions, whose action is a sum of holomorphic and antiholomorphic copies of the usual Chern-Simons action\n\n$$S(\\mathcal A, \\overline\\mathcal A) = \\frac{t}{8\\pi} \\,\nI_{CS}(\\mathcal A) + \\frac{\\tilde t}{8\\pi}\\, I_{CS}(\\overline\\mathcal A)\\,,$$\n\nwhere $\\mathcal A$ is a connection on a $G_\\mathbb{C}$ bundle over a 3-manifold $M$, and $I_{CS}(\\mathcal A) = \\int_M (\\mathcal Ad\\mathcal A+\\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A singular limit",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-42-a-singular-limit.md",
+      "narrative": null,
+      "content": "[]{#sub.singular.limit label=\"sub.singular.limit\"}\n\nAt present we are interested in a very different limit in complex Chern-Simons theory, namely $(t,\\tilde t) \\to (2k,0)$, or equivalently $\\sigma \\to k$ with $k\\in \\mathbb{Z}$ held fixed. This is a singular limit rather than a weak coupling limit. We propose\n\n::: conjecture\n[]{#conj.CS label=\"conj.CS\"} In the limit $(t,\\tilde t) \\to (2k,0)$, the partition function of complex Chern-Simons theory has an asymptotic expansion\n\n$$\\label{CSexp} \n\\mathcal Z \\sim \\sum_{\\text{flat $\\mathcal A^*$}} \n\\tau_k(\\mathcal A^*) \\exp\\bigg[\\frac1{k\\hbar}I_{CS}(\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integrals",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-019-43-state-integrals.md",
+      "narrative": null,
+      "content": "Complex Chern-Simons theory has not yet been made mathematically rigorous as a full TQFT, in contrast to Chern-Simons theory with a compact gauge group [@Witten-jones] and the Reshetikhin-Turaev construction [@RT]. Nevertheless, there exist state-integral models, based on ideal triangulations, that provide a definition of complex Chern-Simons partition functions for a certain class of 3-manifolds [@D-levelk; @AK]. These state-integral models generalize earlier work [@Hikami; @DGLZ; @Dimofte-QRS; @AK-TQFT; @AK-new] that computed Chern-Simons partition functions at level $k=1$.\n\nIn the present p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the torsion",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-020-44-derivation-of-the-torsion.md",
+      "narrative": null,
+      "content": "[]{#sub.derivation.torsion label=\"sub.derivation.torsion\"}\n\nTo illustrate how the formal Gaussian integration works, let us derive the $k$-twisted torsion or \"1-loop invariant\" $\\tau_{\\gamma,k}$ of [\\[eq.tau\\]](#eq.tau){reference-type=\"eqref\" reference=\"eq.tau\"}, starting from [\\[SSk\\]](#SSk){reference-type=\"eqref\" reference=\"SSk\"}. Let us set $\\zeta=e^{\\frac{2\\pi i}{k}}$ and $\\theta_i = z_i^{1/k} = e^{Z_i^*/k}$ as usual, and work at fixed $m\\in (\\mathbb Z/k \\mathbb Z)^N$ to start.\n\nThere are two contributions to the torsion. First there is the integrand itself, evaluated at $Z=Z^*$, keeping o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ambiguities",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-021-45-ambiguities.md",
+      "narrative": null,
+      "content": "[]{#sub.ambiguities label=\"sub.ambiguities\"}\n\nThe state integral [\\[SSk\\]](#SSk){reference-type=\"eqref\" reference=\"SSk\"} has an intrinsic multiplicative ambiguity [@D-levelk Eqn. 5.8]. Namely, it is only defined modulo multiplication by factors (at worst) of the form\n\n$$\\big(e^{\\tfrac{\\pi^2}{6k\\hbar}}\\big)^{a_1}  \n\\big(\\zeta^{\\frac{1}{24}}\\big)^{a_2} \n\\big(e^{\\tfrac{\\hbar}{24k}}\\big)^{a_3}\\,,\\qquad a_1,a_2,a_3\\in \\mathbb{Z}\\,.$$\n\nThe second and third factors affect $\\tau_{k}$ and $S_{2,k}$, respectively, in the asymptotic expansion. Higher-order terms in the expansion are unaffected. These amb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computations",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-022-5-computations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How the data was computed",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-023-51-how-the-data-was-computed.md",
+      "narrative": null,
+      "content": "[]{#sub.conv label=\"sub.conv\"}\n\nWe use the Rolfsen notation for knots [@Rf]. `SnapPy` computes the Neumann-Zagier matrices of default ideal triangulations of the knots below, as well as their exact shapes and trace fields (computed for instance from the Ptolemy module of `SnapPy`) [@ptolemy; @snappy].\n\nGiven a Neumann-Zagier datum, the 2 and 3-loop invariants at level $k$ are algebraic numbers, elements of the field $F_{K,k}=F_K(\\zeta_k)$, where $F_K$ is the trace field of $K$ and $\\zeta_k=e^{\\frac{2\\pi i}{k}}$. However, these numbers are obtained by sums of algebraic numbers in a much larger",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A sample computation",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-024-52-a-sample-computation.md",
+      "narrative": null,
+      "content": "[]{#sub.sample label=\"sub.sample\"}\n\nLet us illustrate our method of computation in detail with one example, the $5_2$ knot with $k=7$. $5_2$ is a hyperbolic knot with trace field $F_{5_2}=\\mathbb Q(\\alpha)$ where $\\alpha=0.8774 \\dots - 0.7448 \\dots i$ is a root of $$x^3 -x^2 + 1 = 0 \\,.$$ $F_{5_2}$ is of type $[1,1]$ with discriminant $-23$. With the notation of the previous section, and with $\\ell=6$, we can numerically compute (with 500 digits of accuracy) $$x^{\\mathrm{num}}_{7,6}=\n-235162149.63362564574 \\dots - 40898882. 99885002594 \\dots i$$ Fitting with LLL guesses the element of $F_7=F(\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-025-6-data.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 41 knot",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-026-61-the-41-knot.md",
+      "narrative": null,
+      "content": "2 ideal tetrahedra and trace ﬁeld F41 = Q(α) = Q(√−3) where α = e2πi/6 is a root of\nx2 −x + 1 = 0 .\nF41 is of type [0, 1] with discriminant −3.\nThe default SnapPy triangulation of 41 generates several Neumann-Zagier data. Most are\nZ-nondegenerate; for example\n(57)\nγ :\nA =\n\u0012\n−2\n1\n−1\n1\n\u0013\n, B =\n\u0012\n−1\n2\n−1\n1\n\u0013\n, ν = (0, 0) , z = (α, α) , f = (0, 1) , f ′′ = (1, 0)\nis Z-nondegenerate. The 1-loop invariant at k = 1 and its norm is given by\n(58)\nknot\nτ −2\n1\nN(τ −2\n1 )\n41\n2α −1\n3\nQUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY\n23\nThe norm of the 1-loop of 41 at level k is given in (59).\n(59)\nk\nN(τk/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
+      "pageStart": 25,
+      "pageEnd": 32,
+      "target": "../sections/sec-027-62-the-52-knot-and-its-partner-the--237-pretzel.md",
+      "narrative": null,
+      "content": "[]{#sub.52 label=\"sub.52\"}\n\nThe $5_2$ knot is a hyperbolic knot with volume $2.8281\\dots$ with $3$ ideal tetrahedra and trace field $F_{5_2}=\\mathbb Q(\\alpha)$ where $\\alpha=0.8774 \\dots - 0.7448 \\dots i$ is a root of $$x^3 -x^2 + 1 = 0$$ $F_{5_2}$ is of type $[1,1]$ with discriminant $-23$.\n\nThe (mirror image of) the $(-2,3,7)$ pretzel knot is a hyperbolic knot same volume and trace field as the $5_2$ knot. In fact, the complements of the two knots can be obtained from the same triple of ideal tetrahedra with two different face pairing rules. So, we will use $\\alpha$ and $F$ as in Section [\\[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 61 knot",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-028-63-the-61-knot.md",
+      "narrative": null,
+      "content": "tetrahedra and trace ﬁeld F61 = Q(α) where α = 1.5041 · · · −1.2268 . . . i is a root of\nx4 −2x3 + x2 + 3x + 1 = 0\nF61 is of type [0, 2] with discriminant 257, a prime. We chose to give the data for this knot\nbecause the Bloch group of its trace ﬁeld is a ﬁnitely generated abelian group of rank 2. The\n1-loop invariant at k = 1 and its norm is given by\n(63)\nknot\nτ −2\n1\nN(τ −2\n1 )\n61\n7α3 −17α2 + 17α + 12\n257\nQUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY\n33\nThe norm of the 1-loop of 61 at level k is given in (64).\n(64)\nk\nN(τk/τ1)\nfor 61\n1\n1\n2\n29\n3\n79 · 373\n4\n487057\n5\n401 · 8120801581\n6\n4969",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-029-64-the--23-3-and-the--239-partner-pretzel-knots.md",
+      "narrative": null,
+      "content": "mirror of the (−2, 3, −3) pretzel knots (the latter is also known as the 820 knot) are partners.\nThey can both be assembled from the same set of ideal tetrahedra. It follows that they have\nequal volume 4.1249 . . . and equal elements of the Bloch group. They also have equal trace\nﬁelds F(−2,3,−3) = F(−2,3,9) = Q(α) where α = 0.4425 · · · −0.4544 . . . i is a root of\nx5 −x4 + x3 + 2x2 −2x + 1 = 0\nThis ﬁeld is of type [1, 2] with discriminant 23 · 733. The 1-loop invariant at k = 1 and its\nnorm is given by\n(65)\nknot\nτ −2\n1\nN(τ −2\n1 )\n(−2, 3, −3)\n−10α4 + 8α3 −7α2 −22α + 13\n−24 · 733\n(−2, 3, 9)\n−4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 912 knot",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-030-65-the-912-knot.md",
+      "narrative": null,
+      "content": "ﬁeld F912 = Q(α) where α = −0.06265158 · · · + i 1.24990458 . . . is a root of\nx17 −8x16 + 32x15 −89x14 + 195x13 −353x12 + 542x11 −719x10 + 834x9\n−851x8 + 764x7 −605x6 + 421x5 −253x4 + 130x3 −55x2 + 18x −3 = 0\nF912 is of type [1, 8] with discriminant 3 · 298171 · 5210119 · 156953399. We chose this ﬁnal\nexample because of the complexity of the ideal triangulation, and the complexity of its trace\nﬁeld. The 1-loop invariant at k = 1 and its norm is given by\n(68)\nknot\nτ −2\n1\nN(τ −2\n1 )\n912\n59α16 + 40α15 −14α14 + 12α13 −164α12 −82α11+\n3 · 298171 · 5210119·\n107α10 −186α9 −55α8 + 356α7 −387α6 −410α5+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-031-acknowledgements.md",
+      "narrative": null,
+      "content": "The work of SG is supported by NSF grant DMS-14-06419. This paper was primarily completed while TD was a long-term member at the Institute for the Advanced Study, supported by the Friends of the Institute for Advanced Study, in part by DOE grant DE-FG02-90ER40542, and in part by ERC Starting Grant no. 335739 *Quantum fields and knot homologies*, funded by the European Research Council under the European Union's Seventh Framework Programme. TD is currently supported by the Perimeter Institute for Theoretical Physics; research at Perimeter Institute is supported by the Government of Canada throu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1511.05628v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-032-references.md",
+      "narrative": null,
+      "content": "[AK13]\nJørgen Ellegaard Andersen and Rinat Kashaev, A new formulation of the Teichm¨uller TQFT,\n2013, arXiv:1305.4291, Preprint.\n[AK14a]\n, Complex Quantum Chern-Simons, 2014, arXiv:1409.1208, Preprint.\n[AK14b]\n, A TQFT from Quantum Teichm¨uller Theory, Comm. Math. Phys. 330 (2014), no. 3,\n887–934.\n[BIZ80]\nDavid Bessis, Claude Itzykson, and Jean-Bernard Zuber, Quantum ﬁeld theory techniques in\ngraphical enumeration, Adv. in Appl. Math. 1 (1980), no. 2, 109–157.\n[CDW]\nMarc Culler, Nathan M. Dunﬁeld, and Jeﬀery R. Weeks, SnapPy, http://www.math.uic.edu/\nt3m/SnapPy.\n[CGZ]\nFrank Calegari, Stavros G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

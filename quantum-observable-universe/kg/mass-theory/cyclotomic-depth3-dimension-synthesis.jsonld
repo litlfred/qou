@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-cyclotomic-depth3-dimension-synthesis",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:cyclotomic-depth3-dimension-synthesis",
+  "kind": "conjecture",
+  "title": "Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-two-filtration-bridge-general"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "cyclotomic",
+    "depth-3-dimension",
+    "borel-saturation",
+    "beilinson-conditional",
+    "K-5-certified",
+    "K-7-certified",
+    "synthesis",
+    "graded-mikusinski"
+  ],
+  "text": "cyclotomic-depth3-dimension-synthesis.md",
+  "provenance": "authored"
+}

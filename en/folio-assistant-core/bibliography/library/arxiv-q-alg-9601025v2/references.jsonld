@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-q-alg-9601025v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The hyperbolic volume of knots from the quantum dilogarithm",
+      "dcterms:creator": [
+        "Kashaev∗, R.M."
+      ],
+      "dcterms:issued": "D:20181106",
+      "dcterms:identifier": "https://arxiv.org/abs/q-alg/9601025",
+      "dcterms:abstract": "The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N. By the analysis of particular examples it is argued that for a hyperbolic knot (link) the absolute value of this invariant grows exponentially at large N, the hyperbolic volume of the knot (link) complement being the growth rate. ENSLAPP-L-577/96 ∗On leave of absence from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ee `a l’E.N.S. de Lyon, au LAPP d’Annecy et `a l’Universit`e de Savoie 1",
+      "dcterms:source": "library/arxiv-q-alg-9601025v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-q-alg-9601025v2"
+    }
+  ]
+}

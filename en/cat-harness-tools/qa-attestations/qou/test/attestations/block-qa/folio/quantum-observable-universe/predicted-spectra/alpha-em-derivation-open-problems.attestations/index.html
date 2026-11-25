@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-rmlxyu2m37.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-rmlxyu2m37","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The QA-process heading is gone: \&quot;## Audit failure of both prior attempts\&quot; now reads \&quot;## Why both prior attempts fail\&quot;, and no other use of \&quot;audit\&quot; remains in the prose or title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Uses words like &#39;obviously&#39; or &#39;trivial&#39; which might mask false claims. author resolution needed.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      },
+      &quot;evidence&quot;: &quot;Uses words like &#39;obviously&#39; or &#39;trivial&#39; which might mask false claims. author resolution needed.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T23:33:29.067070+00:00&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9c1520de7211&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9c1520de7211&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T02:04:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c419ded0fab06778faf2a007f50ddf391ca7794b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.348Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.726Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Fixed one instance; one structural instance remains. Remaining: the Implications paragraph closes &#39;The finer O(alpha^2) correction is a genuine two-loop vacuum-polarisation effect. It is not a categorical-level closed form.&#39; - the positive claim is already made by the preceding weight argument, so the denial adds only emphasis.&quot;,
+      &quot;notes&quot;: &quot;fix applied: &#39;The $\\\\pi$ in $2/(3\\\\pi)$ is the unique archimedean shadow of substrate pentagon data, not an external import.&#39; -&gt; &#39;The $\\\\pi$ in $2/(3\\\\pi)$ is the unique archimedean shadow of substrate pentagon data.&#39; | proposed for the remaining one: delete &#39;It is not a categorical-level closed form.&#39; - but see the trap-thesis-restatement note, the whole Implications paragraph needs rework and carries an internal contradiction that should be resolved in the same edit.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.385Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.956Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;No setup-then-reframe. NUMERIC AUDIT recorded here (see notes).&quot;,
+      &quot;notes&quot;: &quot;PIN-CURRENCY FINDING, structural, report only. Every number in this block reproduces the IDEAL MUON pin q0=1.10997859555733471, not the proton compute default 1.1099785827513808 (owner directive 2026-08-07). Recomputed at mpmath dps=40 - muon: bare 136.823219657 (block: 136.823220), +2/(3pi) 137.035426248 (block: 137.035426), +alpha/(4pi) 137.036006953 (block: 137.036007), residual +5.742e-8 (block: +5.7e-8); the F-1 near-match hbar_q^2/(pi[2]_q) sits at -7.42e-4 relative (block: 7.4e-4). PROTON pin instead gives bare 136.823208854, +2/(3pi) 137.035415444 (-4.259e-6, block says -4.2e-6), +alpha/(4pi) 137.035996149, residual -2.142e-8 - OPPOSITE SIGN and 2.7x smaller than the quoted headline. So the headline &#39;5.7e-8&#39; is not pin-independent; at the compute default it is -2.1e-8. Everything else checks out: -0.155% bare agreement (recomputed -0.15528%), dim Lambda^2 C^10 = 45 = 9 + 36 = dim S^(9,1) + dim S^(8,1,1), dim su(3) = 8, kappa discrepancy (1.8878-1.722)/1.722 = 9.63% (&#39;~10%&#39;), 2/(3pi) = 2g/(4pi(g-1))|_{g=4} = 8/(12pi) = Vol(S^2)/(3 Vol(S^3)) = 0.212206590789194 all exact. Proposed fix: state the pin in the residual table caption, or re-run at the proton pin and update the three rows.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.422Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.881Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;No spaced em-dashes in running prose. The dashes present are the LaTeX name en-dashes &#39;Chern--Simons&#39; and &#39;Gauss-Bonnet&#39; and one table placeholder cell.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.461Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.918Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;The enumerations are substantive: four ruled-out paths (4 rows), the PSLQ basis constants pi/zeta(3)/log 2, the four factors of Form B. No reflex triples.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.498Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.533Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.571Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.761Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The Implications section opens with the bolded thesis &#39;The correction is a genuine two-loop effect.&#39; and closes the same seven-sentence paragraph with &#39;The finer O(alpha^2) correction is a genuine two-loop vacuum-polarisation effect.&#39; - the identical claim, restated, with nothing added between except the weight argument that supports it.&quot;,
+      &quot;notes&quot;: &quot;proposed: delete the final two sentences of the Implications paragraph, leaving the weight argument to carry the bolded thesis. NOTE - the same edit must resolve an internal contradiction: this paragraph calls the alpha/(4 pi) term &#39;a genuine two-loop vacuum-polarisation effect&#39; while the block&#39;s own last line calls it &#39;a Schwinger-like 1-loop self-coupling&#39;. One of the two is wrong; an editor should not pick silently.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.609Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.650Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.799Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Three unqualified maximal claims: &#39;Decisively ruled out&#39; (bolded, in the ruled-out table); &#39;A direct closed-form correction in any natural q-arithmetic basis at low degree is impossible.&#39;; &#39;An additive form yields a striking numerical match&#39;.&quot;,
+      &quot;notes&quot;: &quot;proposed: &#39;impossible&#39; -&gt; &#39;not found by this search&#39;; &#39;Decisively ruled out&#39; -&gt; &#39;Ruled out at 100 dps over this basis&#39;; drop &#39;striking&#39;. Not fixed inline: &#39;impossible&#39; is also a scope-(b) structural exclusion under AGENTS.md &#39;Before declaring refuted / ruled out&#39; - it rests on a PSLQ null result over a 54-element basis, which is a scope-(a) negative (&#39;this search, at this degree, found nothing&#39;), and no proved invariant is cited. Re-scoping it is an epistemic change, not a prose fix.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.688Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;evidence&quot;: &quot;Full read of the open-problems remark: bare derivation, Form A/Form B critique, ruled-out paths table, Gram-deformation insufficiency, Implications, promising-lead residual table. All ten categories judged over the whole text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;312c84f33539&quot;,
+        &quot;ts&quot;: &quot;e3841b8feb15&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T01:27:26.841Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;18d37358e896faaf57428dffa12c413f70f47531&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group B(C).&#39; - a six-noun subject-plus-object chain that stalls aloud; &#39;the quantum observable universe mass-formula state sum&#39; reads as an expanded QOU acronym spliced mid-chain. Also &#39;Quantum electrodynamics first requires a two-loop diagram at this rung.&#39; in Implications.&quot;,
+      &quot;notes&quot;: &quot;proposed: &#39;Pentagon coherence on the substrate factors the QOU mass-formula state sum through a class in the Bloch group B(C).&#39; and &#39;In QED, the first diagram at this rung is two-loop.&#39;&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

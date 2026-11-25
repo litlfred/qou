@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0306345v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "agt-3-17.dvi",
+  "contains": [
+    "library/0306345v1/sections/sec-front-matter",
+    "library/0306345v1/sections/sec-000",
+    "library/0306345v1/sections/sec-001",
+    "library/0306345v1/sections/sec-002",
+    "library/0306345v1/sections/sec-003",
+    "library/0306345v1/sections/sec-004",
+    "library/0306345v1/sections/sec-005",
+    "library/0306345v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his\n\n**Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum**\n\n20 pp, 7 sections.\n\n**Abstract.** We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the qu antum group Uqsl2 . As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the ﬁgure eight knot.\n\n**Outline.** Introduction; 1 Habiro’s formula for ω; 2 A proof using orthogonal polynomials; 3 Graphical calculus and a formula for ω p; 4 Another formula for the coeﬃcients of ω p; 5 The colored Jones polynomial of twist knots; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.5: is equivalent to Habiro’s one from [H3]. (The res ults of Section 2\n- Theorem 3.2: The coeﬃcients cn,p of ω p in (23) are given by\n- Theorem 4.5: For p ≥ 1, the coeﬃcients c′\n- Theorem 5.1: The colored Jones polynomial of the twist knot Kp is given by\n- Proposition 2.1: The polynomials Sn satisfy a four-term recursion formula",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0306345v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0306345v1.pdf",
+    "source_sha256": "936aa08026b2683b8889419e9f7364d18ed2f194804d6d99710a26b62bbd9503",
+    "pages": 20,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

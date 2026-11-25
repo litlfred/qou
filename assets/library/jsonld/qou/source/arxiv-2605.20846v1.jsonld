@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+  "contains": [
+    "library/arxiv-2605.20846v1/sections/sec-front-matter",
+    "library/arxiv-2605.20846v1/sections/sec-000",
+    "library/arxiv-2605.20846v1/sections/sec-001",
+    "library/arxiv-2605.20846v1/sections/sec-002",
+    "library/arxiv-2605.20846v1/sections/sec-003",
+    "library/arxiv-2605.20846v1/sections/sec-004",
+    "library/arxiv-2605.20846v1/sections/sec-005",
+    "library/arxiv-2605.20846v1/sections/sec-006",
+    "library/arxiv-2605.20846v1/sections/sec-007",
+    "library/arxiv-2605.20846v1/sections/sec-008",
+    "library/arxiv-2605.20846v1/sections/sec-009",
+    "library/arxiv-2605.20846v1/sections/sec-010",
+    "library/arxiv-2605.20846v1/sections/sec-011",
+    "library/arxiv-2605.20846v1/sections/sec-012",
+    "library/arxiv-2605.20846v1/sections/sec-013",
+    "library/arxiv-2605.20846v1/sections/sec-014",
+    "library/arxiv-2605.20846v1/sections/sec-015",
+    "library/arxiv-2605.20846v1/sections/sec-016",
+    "library/arxiv-2605.20846v1/sections/sec-017",
+    "library/arxiv-2605.20846v1/sections/sec-018",
+    "library/arxiv-2605.20846v1/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the\n\n**Topological Field Theories and the Algebraic Structures of the Two-Sphere**\n\n*May 21, 2026*\n\n99 pp, 21 sections.\n\n**Abstract.** We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures on S2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Front matter; Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Sufficiency of Commutative Frobenius Relations; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; The -operad L",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.20846&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2605.20846v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2605.20846v1.pdf",
+    "source_sha256": "db27cb6d01c4f2fbd5478f29532386c399aa0f7b8b2a223cf1a284567b48b3fb",
+    "pages": 99,
+    "arxiv": {
+      "id": "2605.20846",
+      "version": "1",
+      "primary_class": "math.AT",
+      "stamp_date": "20 May 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

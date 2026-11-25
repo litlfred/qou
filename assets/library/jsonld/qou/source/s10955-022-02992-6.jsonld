@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+  "contains": [
+    "library/s10955-022-02992-6/sections/sec-front-matter",
+    "library/s10955-022-02992-6/sections/sec-000",
+    "library/s10955-022-02992-6/sections/sec-001",
+    "library/s10955-022-02992-6/sections/sec-002",
+    "library/s10955-022-02992-6/sections/sec-003",
+    "library/s10955-022-02992-6/sections/sec-004",
+    "library/s10955-022-02992-6/sections/sec-005",
+    "library/s10955-022-02992-6/sections/sec-006",
+    "library/s10955-022-02992-6/sections/sec-007",
+    "library/s10955-022-02992-6/sections/sec-008",
+    "library/s10955-022-02992-6/sections/sec-009",
+    "library/s10955-022-02992-6/sections/sec-010",
+    "library/s10955-022-02992-6/sections/sec-011",
+    "library/s10955-022-02992-6/sections/sec-012",
+    "library/s10955-022-02992-6/sections/sec-013",
+    "library/s10955-022-02992-6/sections/sec-014",
+    "library/s10955-022-02992-6/sections/sec-015",
+    "library/s10955-022-02992-6/sections/sec-016",
+    "library/s10955-022-02992-6/sections/sec-017",
+    "library/s10955-022-02992-6/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cluster Expansions: Necessary and Sufficient Convergence Conditions — We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics\n\n**Cluster Expansions: Necessary and Sufficient Convergence Conditions**\n\n47 pp, 20 sections.\n\n**Abstract.** We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics with possibly negative pair potentials. For non-negative pair potentials, the criterion is an if and only if condition. The condition is formulated with a sign-ﬂipped Kirkwood–Salsburg operator and known conditions such as Kotecký–Preiss and Fernández–Procacci are easily recovered. In addition, we deduce new sufﬁcient convergence conditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The latter improves on the Fernández–Procacci criterion.\n\n**Outline.** Front matter; Cluster Expansions: Necessary and Sufficient C; Abstract; 1 Introduction; 2 Main Results; 2.1 (Locally) Stable Pair Potentials; 2.2 Abstract Polymer Models; 2.3 Hard-Core Systems in the Continuum; 2.4 Subset Polymers; 3 Combinatorial Lemmas: Proof of Theorems 2.1,; 3.1 Forest Partition Schemes: Alternating Sign; 3.2 Kirkwood–Salsburg Equations: Proof of Theo; 3.3 Integral Equations for Hard-Core Models: P; 3.4 Recurrence Relations for Subset Polymers: ; 4 Application to Concrete Hard-Core Models; 4.1 Single-Type Subset Polymers in mathbbZd; 4.2 Single-Type Hard-Core System in mathbbRd; 4.3 Multi-Type Hard Spheres in mathbbRd",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "s10955-022-02992-6",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "s10955-022-02992-6.pdf",
+    "source_sha256": "aa73d797a89eaf06bc67198fc6ad8cdbbd066b2d652140c96137dffe253469cc",
+    "pages": 47,
+    "arxiv": null,
+    "doi": "10.1007/s10955-022-02992-6",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

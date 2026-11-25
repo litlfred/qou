@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0110119v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus",
+  "contains": [
+    "library/arxiv-math-0110119v1/sections/sec-front-matter",
+    "library/arxiv-math-0110119v1/sections/sec-000",
+    "library/arxiv-math-0110119v1/sections/sec-001",
+    "library/arxiv-math-0110119v1/sections/sec-002",
+    "library/arxiv-math-0110119v1/sections/sec-003",
+    "library/arxiv-math-0110119v1/sections/sec-004",
+    "library/arxiv-math-0110119v1/sections/sec-005",
+    "library/arxiv-math-0110119v1/sections/sec-006",
+    "library/arxiv-math-0110119v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus — The Hecke algebra Hn contains well known idempotents Eλ which are indexed by Young diagrams with n cells.\n\n**Idempotents of the Hecke algebra become Schur functions in the skein of the annulus**\n\n*Sascha G. Lukac*\n\n17 pp, 9 sections.\n\n**Abstract.** The Hecke algebra Hn contains well known idempotents Eλ which are indexed by Young diagrams with n cells. They were originally described by Gyoja [5]. A skein theoretical description of Eλ was given by Aiston and Morton [2]. The closure of Eλ becomes an element Qλ of the skein of the annulus. In this skein, they are known to obey the same multiplication rule as the symmetric Schur functions sλ as stated in theorem 8.2. But previous proofs of this fact as in [1] used results about quantum groups which were far beyond the scope of skein theory. Our elementary proof was motivated by [6] and uses only skein theory and basic algebra. 1 The skein of a planar surface We consider a planar surface F with designated n incoming and n outgoing boundary points for some integer n ≥0.\n\n**Outline.** Front matter; 1 The skein of a planar surface; 2 Young diagrams and symmetric functions; n of a disk with 2n boundary points; 4 The skein C of the annulus; 5 The variant skein C′ of the annulus; 6 Basic skein relations in C′; 7 Determinantal calculations in C′; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 7.2: We have Γ(Sλ) = qλSλ in C+ with the scalar qλ = v−1 −v s −s−1 + vs−1 l(λ) X k=1 (s2(k−λk) −s2k).\n- Theorem 8.1: Sλ is equal to Qλ for any Young diagram λ. Proof Qλ is non-zero in C.\n- Theorem 8.1: together with the deﬁnition of Sλ implies that\n- Theorem 8.2: The linear map induced by sλ 7→Qλ from the ring of symmetric functions to the skein of the annulus C is a ring homomorphism. Acknowledgements The results are part of my PhD thesis.\n- Corollary 6.3: We have ˆti = (s1−2i −s)vhi for any integer i. Proof From lemma 6.2 and the skein relation in ﬁgure 11 we deduce that ˆti = (s−i −si)vs1−ihi = (s1−2i −s)vhi for any integer i ≥0.\n- Lemma 3.2: ρ \u0010 αnan \u0011 = αnan for any n ≥1. Proof We have ρ(ab) = ρ(a)ρ(b) for any elements a, b ∈Rn n.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0110119v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus",
+      "basis": "Printed title on page 1 (S. G. Lukac); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0110119v1 [math.GT] 11 Oct 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus"
+    },
+    "source_file": "0110119v1.pdf",
+    "source_sha256": "4904a86e8a340f598e5bd233170d906d8b5830e4481452f98b748b50f1cf76cc",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/0110119",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "11 Oct 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

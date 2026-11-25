@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "contains": [
+    "library/kohno1987-aif/sections/sec-front-matter",
+    "library/kohno1987-aif/sections/sec-000",
+    "library/kohno1987-aif/sections/sec-001",
+    "library/kohno1987-aif/sections/sec-002",
+    "library/kohno1987-aif/sections/sec-003",
+    "library/kohno1987-aif/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Monodromy representations of braid groups and Yang-Baxter equations — 6 sections: Front matter; MONODROMY REPRESENTATIONS OF BRAID; INTRODUCTION\n\n**Monodromy representations of braid groups and Yang-Baxter equations**\n\n*TOSHITAKE KOHNO*\n\n23 pp, 6 sections.\n\n**Outline.** Front matter; MONODROMY REPRESENTATIONS OF BRAID GROUPS AND ; INTRODUCTION; 1 MONODROMY OF INTEGRABLE CONNECTIONS ARISING ; 1.1 Construction of connections.; 2 MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMEN",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kohno1987-aif",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "kohno1987-aif.pdf",
+    "source_sha256": "88c5119985dfe878f41c40936d3df957ea2f48e9afb04c1f3f0712e2baa78d6a",
+    "pages": 23,
+    "arxiv": null,
+    "doi": "10.5802/aif.1114",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

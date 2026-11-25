@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2411.03801v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS",
+      "dcterms:creator": [
+        "GAROUFALIDIS, STAVROS",
+        "YOON, SEOKBEOM"
+      ],
+      "dcterms:issued": "D:20241114",
+      "dcterms:identifier": "https://arxiv.org/abs/2411.03801",
+      "dcterms:abstract": "Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.",
+      "dcterms:source": "library/arxiv-2411.03801v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2411.03801v2"
+    }
+  ]
+}

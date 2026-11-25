@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/agt-v12-n2-p04-s/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/agt-v12-n2-p04-s/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/agt-v12-n2-p04-s/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/agt-v12-n2-p04-s/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>agt-v12-n2-p04-s</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p013-1&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;156&quot;,
+    &quot;text&quot;: &quot;(2009) 2795–2811 MR2556037 [8] V G Turaev, Reidemeister torsion in knot theory, Uspekhi Mat. Nauk 41 (1986) 97–147,&quot;,
+    &quot;block&quot;: &quot;library/agt-v12-n2-p04-s/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-2&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;240&quot;,
+    &quot;text&quot;: &quot;MR832411 English translation: Russian Math. Surveys 41 (1986) 119–182 [9] V Turaev, Introduction to combinatorial torsions, Lectures in Mathematics ETH Zürich, Birkhäuser, Basel (2001) MR1809561 Notes taken by Felix Schlenk [10] V Turaev, Torsions of 3–dimensional manifolds, Progress in Mathematics 208, Birkhäuser, Basel (2002) MR1958479 Algebraic &amp; Geometric Topology, Volume 12 (2012)&quot;,
+    &quot;block&quot;: &quot;library/agt-v12-n2-p04-s/blocks/prose-sec-005&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;M ;&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Mand a null-homologous knot&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Mis given by a ﬁnite cyclic branched cover overS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;where&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;he lift ofK, then we can compute the Alexander polynomial of&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;up to a factor˙t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;K.&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u00182fx2C j x&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V Turaev gave a formula for the Alexander polynomial of&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;cover overS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; polynomial of a knot in a ﬁnite cyclic branched cover overS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ﬁnite abelian branched covers overS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;.t/are the signed twisted Alexander polynomials,&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;momorphism from \u00191.M /to a multiplicative group Z&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;M! Mas a ﬁnite cyclic cover of a knot exterior EKof Kin S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;formulafortheAlexanderpolynomialof&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;K,where&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ﬁnite cyclic branched cover overS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;K.&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u00182fx2C j x&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;uptoafactor˙t&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;c&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ciofCiand a basish&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Foreachi ,letb&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Foreachi ,letbibeasetofvectorsinCisuchthatdi.b&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;im.diWCi! Ci\u00001/and let&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;im.diWCi! Ci\u00001/and letzh&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;im.diWCi! Ci\u00001/and letzhidenote a lift ofh&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.b&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.biC&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.biC1/zh&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.biC1/zhib&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.biC1/zhibiis a basis ofCi .LetŒdiC1.b&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;set of vectorsdiC1.biC1/zhibiis a basis ofCi .LetŒdiC1.biC&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;t of vectorsdiC1.biC1/zhibiis a basis ofCi .LetŒdiC1.biC1/zh&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of vectorsdiC1.biC1/zhibiis a basis ofCi .LetŒdiC1.biC1/zhib&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;vectorsdiC1.biC1/zhibiis a basis ofCi .LetŒdiC1.biC1/zhibi=c&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;are coordinates of vectors indiC1.b&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;are coordinates of vectors indiC1.biC&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;are coordinates of vectors indiC1.biC1/zh&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;are coordinates of vectors indiC1.biC1/zhib&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;are coordinates of vectors indiC1.biC1/zhibiwith respect toc&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.b&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.biC&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.biC1/zh&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.biC1/zhib&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.biC1/zhibi=c&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ŒdiC1.biC1/zhibi=ci.\u00001/iC&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;where˛i.C\u0003/ DP&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;kD&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kD0dim C&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kD0dim Ckandˇ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kD0dim Ckandˇi.C\u0003/ D P&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kD0dim H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;The torsionTor.C\u0003; c\u0003; h\u0003/does not depend on the choices ofb&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;; c\u0003; h\u0003/does not depend on the choices ofbinor on the lifts&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;c\u0003; h\u0003/does not depend on the choices ofbinor on the liftszh&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1; : : : ; e&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;1; : : : ; z&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1; : : : ; ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;c&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;v1 ˝ ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1; : : : ; v&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;1; : : : ; vm ˝ z&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1; : : : ; vm ˝ ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1; \u0001 \u0001 \u0001;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1; \u0001 \u0001 \u0001; v&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;1; \u0001 \u0001 \u0001; v1 ˝ z&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1; \u0001 \u0001 \u0001; v1 ˝ ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;ni; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ni; : : : ; v&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ni; : : : ; vm ˝ z&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ni; : : : ; vm ˝ ze&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;W I Z/.We call the basisc\u0003D ˚ic&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ofC&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;basis ofC\u0003.W I V\u001a/.Now choosing for eachia basish&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)an order of cellsfe&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;j&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;jgand an orientation of each&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;jgand an orientation of eachf&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;jgand an orientation of eachfe&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;j&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(2)a liftze&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;jof&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;jofe&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ze&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;an orientation of eache&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;R;&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ˇˇ 0 6 i6 dim W; 1 6 j6 n&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ze&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ˇˇ 0 6 i6 dim W; 1 6 j6 n&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;basisc&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;RoverRofC&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i&gt;0H&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;o&quot;,
+    &quot;context&quot;: &quot;i&gt;0Hi.W I R/.Let&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;vector spaceHi.W I R/with a reference basish&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;h&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;R; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;R;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;R;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.W I V\u001a/;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;@MD T&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1[ : : : [ T&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;regardZ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and consider a surjective homomorphism&#39;W\u00191.M / ! Z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.t1; : : : ; tn/ n f&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;0\u0001 Tor.C\u0003.M I V\u001a.t//; c\u0003; ∅/ 2 C.t1; : : : ; tn/ n f0&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;M.t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ; tn/ D&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;to a factort&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;to a factortm&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;: : : t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;: : : tm&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;knot exteriorEKD S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;knot exteriorEKD S3n N.K/of a knotKinS&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;EK.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Example 3.3Suppose now thatMis the link exteriorELD S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LinS&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;EL.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;EL.t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;EL.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;EL.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1t1/k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nt&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ntn/k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ntn/kn ,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ntn/kn ,k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ntn/kn ,ki&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;EL.&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;EL.t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;EL.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;EL.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;n&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nt&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;@MD T&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1[ : : : [ T&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;homomorphism from\u00191.M /toZ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;C n f0gfromGto non–zero complex numbers.Let&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;M /m\u00010.M /m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;M /m\u00010.M /mjG&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;where\u000fis a sign equal to&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;(Explanation of Formula (4-2) with variables)If we denote by&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;M.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M.t1&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t1/; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t1/; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t1/; : : : ; tn&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t1/; : : : ; tnx\u0018.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M.t1x\u0018.t1/; : : : ; tnx\u0018.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;M.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ;&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;ofM , then we have that&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofM , then we have thatx\u0018.t/ D e&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;suppose thats D t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Mq.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Mq.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;Mq.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;M.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M.e&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Mq.&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;Mq.t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;branched coverings overS&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V\u001a.t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;V\u001a.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V\u001a.t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;V\u001a.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lemma 4.5Let x 2V\u001a.t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Lemma 4.5Let x 2V\u001a.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;This deﬁnes a natural action ofGonV\u001a.t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;This deﬁnes a natural action ofGonV\u001a.t1; : : : ; t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Takeanotherlift&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Takeanotherlift0in\u00191.M /ofg2G.Since&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M //, we can see thatx&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;M/ 0&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/ 0c D&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;g \u0001 .x ˝ g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;g \u0001 .x ˝ g0˝ c/ D x ˝ gg&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/c/ D ˆ.&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/c//Dˆ.&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/@c/D.&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/@c/D.x ˝ 1/ ˝ @cD@..&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;M/c// D ˆ.&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ˇˇ 1 6 j6 n&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;M/g&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;M/ge&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;M/e&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;M/g&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;M/ge&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ˇˇ 1 6 j6 n&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;.x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;.xk ˝ g/ ˝ e&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ˇˇ 1 6 j6 n&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u0018 2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;f\u0018D&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;\u0018D&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;in Equation (4-8) by replacing fg j g 2 Gg by ff\u0018 j \u0018 2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;M /m\u00010.M /m&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;M /m\u00010.M /mjG&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;\u00182&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

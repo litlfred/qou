@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-4&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;The transformation sometimes depends on additional parameters: for example, the white point. Published April 29, 2022. PNAS&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;transformationformulas&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;text&quot;: &quot;The concept line element, ds2= g, is preferred in the literature over the concept of metric,&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;colors by means of a line element&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;of 10 https://doi.org/10.1073/pnas.2119753119 pnas.org&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;¯H= H1(g11(Δx)&quot;
+      },
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;¯H= H1(g11(Δx)2+ 2g12ΔxΔy+ g22(Δy)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;‡&quot;,
+    &quot;text&quot;: &quot;Huesuperimportancereferstothephenomenonthatanisoluminantcirclecenteredat&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;thattheprincipleofhuesuperimportance&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-2&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;§&quot;,
+    &quot;text&quot;: &quot;If there was a shorter connection, γ′&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;is a geodesic, as is the part between B and C.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;J.C.Roberts,J.Jackson,IEEEConferenceonVisualization,October1–6,2017,Phoenix, ||The existence of a second-order Weber law has previously been suggested in a slightly AZ. diﬀerent context by Whittle (62, 66).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;75).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-003&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;text&quot;: &quot;DepartmentofComputerScience,UniversityofNew&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-2&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-3&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Towhomcorrespondencemaybeaddressed.Email: bujack@lanl.gov.&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-5&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;of 10&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-3&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;, connecting A and B, then replacing γ′&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-4&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;with γ1in γ&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-5&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;of 10&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;of 10 https://doi.org/10.1073/pnas.2119753119 pnas.org&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;of 10&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;of 10 https://doi.org/10.1073/pnas.2119753119 pnas.org&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;of 10&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;of 10 https://doi.org/10.1073/pnas.2119753119 pnas.org&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-1&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;text&quot;: &quot;T. Indow, T. Shiose, An application of the method of multi-dimensional scaling to perception of&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-2&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;D. L. MacAdam, Judd’s contributions to color metrics and evaluation of color differences. Color Res. similarity or difference in colors. Jpn. Psychol. Res. 1956, 45–64 (1956). Appl. 4, 177–193 (1979).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-3&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;text&quot;: &quot;T.Indow,T.Uchizono,Multidimensional mapping of Munsell colors varying in hue and chroma.J.Exp.&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-4&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;M Z´era¨ı, O Triki, “A differential-geometrical framework for color image quality measures” in Advances Psychol. 59, 321–329 (1960). in Visual Computing. ISVC 2010. Lecture Notes in Computer Science, G. Bebis et al., Eds. (Springer,&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-5&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;R. N. Shepard, “Parametric representation of nonlinear data structures” in Multivariate Analysis: Berlin, Germany, 2010), vol. 6455, pp. 544–553. Proceedings of an International Symposium Held in Dayton, Ohio, P. R. Krishnaiah, Ed. (Academic&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-6&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;D. Raj Pant, I. Farup, Riemannian formulation and comparison of color difference formulas. Color Res. Press, New York, NY, 1966), pp. 561–592. Appl. 37, 429–440 (2012).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-7&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;I. Lissner, P. Urban, Toward a uniﬁed color space for perception-based image processing. IEEE Trans.&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-8&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;K. D. Chickering, Optimization of the MacAdam-modiﬁed 1965 Friele color-difference formula. J. Opt. Image Process. 21, 1153–1168 (2012). Soc. Am. 57, 537–541 (1967).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-9&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;P.Urban,M.R.Rosen,R.S.Berns,D.Schleicher,Embedding non-Euclidean color spaces into Euclidean&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-10&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;L. Friele, Analysis of the Brown and Brown-MacAdam colour discrimination data. Farbe 10, 193–224 color spaces with minimal isometric disagreement. J. Opt. Soc. Am. A Opt. Image Sci. Vis. 24, (1961). 1516–1528 (2007).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-11&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;L. Friele, Further analysis of color discrimination data. JOSA 55, 1314–1319 (1965).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-12&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;S. M. Wuerger, L. T. Maloney, J. Krauskopf, Proximity judgments in color space: Tests of a Euclidean&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-13&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;D. L. MacAdam, Nonlinear relations of psychometric scale values to chromaticity differences.JOSA 53, color geometry. Vision Res. 35, 827–835 (1995). 754–757 (1963).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-14&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;text&quot;: &quot;R. J. Ennis, Q. Zaidi, Geometrical structure of perceptual color space: Mental representations and&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-15&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;D. L. MacAdam, Smoothed versions of friele’s 1965 approximations for color metric coefﬁcients. JOSA adaptation invariance. J. Vis. 19, 1 (2019). 56, 1784–1785 (1966).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-16&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;text&quot;: &quot;M. Zeyen et al., “Color interpolation for non-Euclidean color spaces” in IEEE Scientiﬁc Visualization&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-17&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;H. L. Resnikoff, Differential geometry and color perception. J. Math. Biol. 1, 97–131 (1974). Conference (SciVis) (IEEE, New York, NY, 2018), pp. 11–15.&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-18&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;J. Vos, Line elements and physiological models of color vision. Color Res. Appl. 4, 208–216 (1979).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-19&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;text&quot;: &quot;L. D. Grifﬁn, D. Mylonas, Categorical colour geometry. PLoS One 14, e0216296 (2019).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-20&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;J. J. Vos, From lower to higher colour metrics: A historical account. Clin. Exp. Optom. 89, 348–360&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-21&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;text&quot;: &quot;F. A. A. Kingdom, N. Prins, Psychophysics: A Practical Introduction (Academic Press, ed. 2, 2010). (2006).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-22&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;51&quot;,
+    &quot;text&quot;: &quot;J. K. Holden, E. M. Francisco, Z. Zhang, C. Baric, M. Tommerdahl, An undergraduate laboratory exercise&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-23&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;D. B. Judd, Ideal color space: Curvature of color space and its implications for industrial color to study Weber’s law. J. Undergrad. Neurosci. Educ. 9, A71–A74 (2011). tolerances. Palette 29, 4–25 (1968).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-24&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;52&quot;,
+    &quot;text&quot;: &quot;Amazon Mechanical Turk, Amazon Mechanical Turk. https://www.mturk.com/. Accessed 2 February&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-25&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;C. E. Helm, Multidimensional ratio scaling analysis of perceived color relations. J. Opt. Soc. Am. 54, 2021. 256–262 (1964).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-26&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;53&quot;,
+    &quot;text&quot;: &quot;V. Bonnardel et al., Perceptual color spacing derived from maximum likelihood multidimensional&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-27&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;W. S. Torgerson, Multidimensional scaling. I. Theory and method. Psychometrika 17, 401–419 (1952). scaling. J. Opt. Soc. Am. A Opt. Image Sci. Vis. 33, A30–A36 (2016).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-28&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;text&quot;: &quot;M. W. Cannon Jr., Perceived contrast in the fovea and periphery. J. Opt. Soc. Am. A 2, 1760–1768&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-29&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;54&quot;,
+    &quot;text&quot;: &quot;D. H. Krantz, Small-step and large-step color differences for monochromatic stimuli of constant (1985). brightness. J. Opt. Soc. Am. 57, 1304–1316 (1967).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-30&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;text&quot;: &quot;T. Indow, Global color metrics and color-appearance systems. Color Res. Appl. 5, 5–12 (1980).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-31&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;55&quot;,
+    &quot;text&quot;: &quot;W. S. Torgerson, Theory and Methods of Scaling (APA PsycInfo, 1958).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-32&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;J. O. Ramsay, Economical method of analyzing perceived color differences. J. Opt. Soc. Am. 58, 19–22&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-33&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;56&quot;,
+    &quot;text&quot;: &quot;L. L. Thurstone, Psychophysical analysis. Am. J. Psychol. 38, 368–389 (1927). (1968).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-34&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;57&quot;,
+    &quot;text&quot;: &quot;L. T. Maloney, J. N. Yang, Maximum likelihood difference scaling. J. Vis. 3, 573–585 (2003).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-35&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;text&quot;: &quot;R. N. Shepard, The analysis of proximities: Multidimensional scaling with an unknown distance function. II. Psychometrika 27, 219–246 (1962).&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-36&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;text&quot;: &quot;L. L. Thurstone, A law of comparative judgment. Psychol. Rev. 34, 273 (1927). PNAS&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-37&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;of 10&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;of 10 https://doi.org/10.1073/pnas.2119753119 pnas.org&quot;,
+    &quot;block&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;, Emily Tetia,b, Jonah Miller&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ia,b, Jonah Millera, Elektra Caﬀreya,c, and Terece L. Turton&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Authoraﬃliations:&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;tory, Los Alamos, NM 87545;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Percept(xi) ∼N(ψi, σ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ti|,&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Percept(xi−xj) ∼N(ψi−ψj, 2σ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;wherep&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherept&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(t1|ψref , ψt1, ψt2, 4σ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= Φ4σ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ression model produced a good ﬁt to the experimental data: R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(t1|ψref , ψt1, ψt2, 2σ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;\u0002f (|ψref −ψ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;\u0002f (|ψref −ψt1|)−f (|ψref −ψ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−x&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4σ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L(f |t1, ψref , ψt1, ψt2, 2σ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L(f |t1, ψref , ψt1, ψt2, 2σ2) = P(t1|ψref , ψt1, ψt2, 2σ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;fpoly(Δψ) = bΔψ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ΔE(x, xi)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2.34 (Fig. 9) results in ¯x&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

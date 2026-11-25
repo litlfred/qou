@@ -1,0 +1,1124 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "erlijman-wenzl-pjm-231-2",
+  "title": "Subfactors from braided C* tensor categories",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Bimodules",
+      "number": "1",
+      "page": 5,
+      "pageLabel": "363",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-bimodules"
+    },
+    {
+      "level": 1,
+      "title": "Categories",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "367",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-categories"
+    },
+    {
+      "level": 1,
+      "title": "The multisided construction",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "371",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-multisided-construction"
+    },
+    {
+      "level": 2,
+      "title": "In other words, we have a",
+      "number": "m",
+      "page": 20,
+      "pageLabel": "378",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-m-in-other-words-we-have-a"
+    },
+    {
+      "level": 1,
+      "title": "Bimodules and the principal graph",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "383",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-bimodules-and-the-principal-graph"
+    },
+    {
+      "level": 1,
+      "title": "Dual principal graph",
+      "number": "5",
+      "page": 28,
+      "pageLabel": "386",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-dual-principal-graph"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "6",
+      "page": 36,
+      "pageLabel": "394",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-examples"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 40,
+      "pageLabel": "398",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 40,
+      "pageLabel": "398",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "363",
+      "words": 963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "principal graph",
+          "heading": false
+        },
+        {
+          "term": "jones subfactors",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "subfactor constructions",
+          "heading": false
+        },
+        {
+          "term": "hans wenzl",
+          "heading": false
+        },
+        {
+          "term": "dual principal",
+          "heading": false
+        },
+        {
+          "term": "fusion graph",
+          "heading": false
+        }
+      ],
+      "extract": "Paciﬁc Journal of Mathematics SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES JULIANA ERLIJMAN AND HANS WENZL Volume 231 No. 2 June 2007 PACIFIC JOURNAL OF MATHEMATICS Vol. 231, No. 2, 2007 dx.doi.org/10.2140/pjm.2007.231.361 SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES JULIANA ERLIJMAN AND HANS WENZL We extend subfactor constructions originally deﬁned for unitary braid rep- resentations to the setting of braided",
+      "extractCut": true,
+      "blocks": [
+        "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-bimodules",
+      "number": "1",
+      "title": "Bimodules",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "363",
+      "labelEnd": "367",
+      "words": 1814,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimodules",
+          "heading": true
+        },
+        {
+          "term": "contains bimodule",
+          "heading": false
+        },
+        {
+          "term": "trivial n-bimodule",
+          "heading": false
+        },
+        {
+          "term": "m2k",
+          "heading": false
+        },
+        {
+          "term": "depth subfactor",
+          "heading": false
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "principal graph",
+          "heading": false
+        },
+        {
+          "term": "weak reduction",
+          "heading": false
+        }
+      ],
+      "extract": "1. Bimodules 1A. Deﬁnitions. Deﬁnition 1.1. Let A and B be type II1 factors, and let H be a Hilbert space. (i) H is a left A-module if there exists an action of A on H determined by a normal unital morphism λ : A →B(H), where B(H) is the von Neumann algebra of all bounded linear operators on H. (ii) A right B-module H is a left Bopp-module (here, Bopp denotes the opposite algebra of B). (iii) H is an A–B bimodule if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-categories",
+      "number": "2",
+      "title": "Categories",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "367",
+      "labelEnd": "371",
+      "words": 1857,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigidity morphisms",
+          "heading": false
+        },
+        {
+          "term": "normalized rigidity",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "conditional expectation",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "xix dxd",
+          "heading": false
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        }
+      ],
+      "extract": "367 (b) Assume that the A–B-bimodule H decomposes as H = L mi Hi, with Hi irreducible A–B-bimodules, and let l = dim(EndA,B(H)) = P i m2 i . Then we have P i ind(Hi)≥ind(H)/l, with equality only if dimA(Hi)=mi dimA(H)/l for all i. Proof. It is well-known that the inclusion of higher relative commutants M′ ∩ Mk ⊂N′ ∩Mk deﬁnes periodic commuting squares which generate in the limit a subfactor of index [M : N]. Hence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-multisided-construction",
+      "number": "3",
+      "title": "The multisided construction",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": "371",
+      "labelEnd": "378",
+      "words": 2248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "lim ind",
+          "heading": false
+        },
+        {
+          "term": "commuting diagram",
+          "heading": false
+        },
+        {
+          "term": "hans wenzl",
+          "heading": false
+        },
+        {
+          "term": "periodic commuting",
+          "heading": false
+        },
+        {
+          "term": "commuting square",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "asn",
+          "heading": false
+        }
+      ],
+      "extract": "3A. Categorical setting. We shall use the following conventions: Let C be a ﬁ- nite braided C∗tensor category, where ﬁnite means that we only have ﬁnitely many equivalence classes of simple objects in C. Let {Xλ, λ ∈3} be a set of representative nonequivalent simple objects, indexed by some labeling set 3. We deﬁne dλ to be the dimension of Xλ. We shall also assume that the category C is generated by an object X, so",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-m-in-other-words-we-have-a",
+      "number": "m",
+      "title": "In other words, we have a",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "378",
+      "labelEnd": "383",
+      "words": 1892,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind asn",
+          "heading": false
+        },
+        {
+          "term": "shiftm lim",
+          "heading": false
+        },
+        {
+          "term": "endomorphism shiftn",
+          "heading": false
+        },
+        {
+          "term": "ind ˆun",
+          "heading": false
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "commuting squares",
+          "heading": false
+        },
+        {
+          "term": "relative commutant",
+          "heading": false
+        },
+        {
+          "term": "hans wenzl",
+          "heading": false
+        }
+      ],
+      "extract": "JULIANA ERLIJMAN AND HANS WENZL n+m1 n+m2 m1−m2 n+m3 n+m4 m1−m3 n+ms · · · m1−ms−1 m1−ms n+m1 n+m3 n+m4 · · · m1−m2 m1−m3 bn = n+ms m1−ms−1 · · · n+m2 m1−ms Figure 9. Pictorial description of bn ∈As(n+m1). It is easy to check that the maps 8n are compatible with respect to n, and so we can deﬁne 8 : M = lim ind Asn+|⃗m| →M = lim ind As(n+m1) by 8 := lim ind 8n. We observe that u⃗m,n(a1 ⊗· · · ⊗as)u∗⃗ m,n 8",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-bimodules-and-the-principal-graph",
+      "number": "4",
+      "title": "Bimodules and the principal graph",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "383",
+      "labelEnd": "386",
+      "words": 1358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal graph",
+          "heading": true
+        },
+        {
+          "term": "m-bimodules deﬁned",
+          "heading": false
+        },
+        {
+          "term": "bimodules",
+          "heading": true
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "shiftm",
+          "heading": false
+        },
+        {
+          "term": "hans wenzl",
+          "heading": false
+        },
+        {
+          "term": "bimodule structure",
+          "heading": false
+        },
+        {
+          "term": "dimn",
+          "heading": false
+        }
+      ],
+      "extract": "4A. Examples of bimodules. We are going to construct systems of bimodules in order to calculate the principal and the dual principal graph, as described in Propo- sition 1.8. This will be done using the endomorphisms Shift deﬁned in the last section. The N–N-bimodules. Let λi ∈3 and let Ami,λi be the simple component of Ami corresponding to the simple object Xλi ⊂X⊗mi with mi being large multiples of k for i = 1, 2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-dual-principal-graph",
+      "number": "5",
+      "title": "Dual principal graph",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 36,
+      "labelStart": "386",
+      "labelEnd": "394",
+      "words": 2861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal graph",
+          "heading": true
+        },
+        {
+          "term": "dual principal",
+          "heading": true
+        },
+        {
+          "term": "stabgs",
+          "heading": false
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "brugui eres",
+          "heading": false
+        },
+        {
+          "term": "xλi",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "simple bimodule",
+          "heading": false
+        }
+      ],
+      "extract": "5A. Ring lemma. The precise structure of Shift⃗m(M)′∩M is still open after Propo- sition 3.6. To say more about this, we need the following lemma. Similar tech- niques have appeared before in topological quantum ﬁeld theory, and within sub- factors in work of Ocneanu and others; see [Evans and Kawahigashi 1998; M¨uger SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES 387 2003], for example. Dual principal graphs in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-examples",
+      "number": "6",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "394",
+      "labelEnd": "398",
+      "words": 1847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "fusion tensor",
+          "heading": false
+        },
+        {
+          "term": "jones subfactors",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "type subfactors",
+          "heading": false
+        },
+        {
+          "term": "principal graph",
+          "heading": false
+        }
+      ],
+      "extract": "6A. Examples of C∗-tensor categories. (1) The easiest example for our set-up is the representation category Rep(G) of ﬁnite-dimensional unitary representations of a ﬁnite group. In order to avoid degenerate trivial cases, we take for X in our construction an object such that some tensor power of it contains the whole group ring CG as a subobject. For example, for G a ﬁnite cyclic group, we could take the direct sum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "398",
+      "labelEnd": "398",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "We thank the referee for a careful reading of the manuscript and for several useful suggestions, which lead to an improved presentation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 44,
+      "labelStart": "398",
+      "labelEnd": null,
+      "words": 1330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "los angeles",
+          "heading": false
+        },
+        {
+          "term": "juliana erlijman",
+          "heading": false
+        },
+        {
+          "term": "paciﬁc math",
+          "heading": false
+        },
+        {
+          "term": "paciﬁc journal",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "hans wenzl",
+          "heading": false
+        },
+        {
+          "term": "stanford university",
+          "heading": false
+        },
+        {
+          "term": "pacific journal",
+          "heading": false
+        }
+      ],
+      "extract": "[Andersen 1992] H. H. Andersen, “Tensor products of quantized tilting modules”, Comm. Math. Phys. 149:1 (1992), 149–159. MR 94b:17015 Zbl 0760.17004 [Andersen and Paradowski 1995] H. H. Andersen and J. Paradowski, “Fusion categories arising from semisimple Lie algebras”, Comm. Math. Phys. 169:3 (1995), 563–588. MR 96e:17026 Zbl 0827.17010 [Asaeda 2006] M. Asaeda, “Quantum multiple construction of subfactors”,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 6",
+      "figure 7",
+      "figure 10",
+      "figure 13",
+      "figure 16"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "juliana erlijman",
+      "heading": false
+    },
+    {
+      "term": "hans wenzl",
+      "heading": false
+    },
+    {
+      "term": "braided tensor",
+      "heading": false
+    },
+    {
+      "term": "ind asn",
+      "heading": true
+    },
+    {
+      "term": "tensor categories",
+      "heading": false
+    },
+    {
+      "term": "ind ˆun",
+      "heading": false
+    },
+    {
+      "term": "jones subfactors",
+      "heading": false
+    },
+    {
+      "term": "principal graph",
+      "heading": true
+    },
+    {
+      "term": "lim ind",
+      "heading": true
+    },
+    {
+      "term": "tensor category",
+      "heading": true
+    },
+    {
+      "term": "irreducible bimodules",
+      "heading": false
+    },
+    {
+      "term": "fusion tensor",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "361",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "362",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "363",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "364",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "365",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "366",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "367",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "368",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "369",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "370",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "371",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "372",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "373",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "374",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "375",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "376",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "377",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "378",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "379",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "380",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "381",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "382",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "383",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "384",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "385",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "386",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "387",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "388",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "389",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "390",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "391",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "392",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "393",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "394",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "395",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "396",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "397",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "398",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "399",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Rigidity morphisms. In a ∗tensor category we deﬁne the categorical trace of an endomorphism f ∈ End(X) by (2-2)",
+      "page": 11,
+      "pageLabel": "369",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Conditional expectation. It is known and easy to check that this deﬁnition of conditional expectation coincides with the usual deﬁnition of conditional expectation in operator algebras (see [Orellana and Wenzl 2002, Proposition 1.4], for instance). Actually, one can show more: Let X1, X2, X3 be obje",
+      "page": 12,
+      "pageLabel": "370",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Inductive property of intertwining braids. Alternatively, the braid γn can be described as follows: arrange the points labeled by the numbers 1 up to ns in a rectangular pattern with height n and width s. Now we can numerate the points either by ﬁrst going down the columns, or by ﬁrst going to the r",
+      "page": 15,
+      "pageLabel": "373",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Diagram (3-2) is a commuting diagram. Now we check that Diagram (3-2) is a commuting square, i.e., that (E Asn ◦ ˆun+1)(b) = (ˆun ◦E A⊗s",
+      "page": 16,
+      "pageLabel": "374",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Diagram (3-2) is a commuting square. which in turn equals (ˆun ◦E A⊗s",
+      "page": 17,
+      "pageLabel": "375",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Diagram (3-3) is a commuting diagram. lim ind Asn+|⃗m| = lim ind As(n+m1) that will carry the subfactor deﬁned here, ˆu⃗m(N) = lim ind u⃗m,n(An+m1 ⊗· · · ⊗An+ms)u∗⃗",
+      "page": 19,
+      "pageLabel": "377",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Pictorial description of bn ∈As(n+m1)",
+      "page": 20,
+      "pageLabel": "378",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Pictorial representation of ShiftM",
+      "page": 22,
+      "pageLabel": "380",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "ShiftM",
+      "page": 23,
+      "pageLabel": "381",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "xr := (t∗⃗",
+      "page": 30,
+      "pageLabel": "388",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "(˜a⊗1sn) = xr(˜a⊗1sn)x∗",
+      "page": 30,
+      "pageLabel": "388",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "ˆfr : Ns",
+      "page": 32,
+      "pageLabel": "390",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "12 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/erlijman-wenzl-pjm-231-2"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-monoidal-justification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:monoidal-justification",
+  "kind": "remark",
+  "title": "Rationale for monoidal categories",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-snake-identity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category",
+  "cites": [
+    "references/coecke2017",
+    "references/haag1996"
+  ],
+  "tags": [
+    "category-theory",
+    "monoidal",
+    "motivation"
+  ],
+  "text": "monoidal-justification.md",
+  "provenance": "authored"
+}

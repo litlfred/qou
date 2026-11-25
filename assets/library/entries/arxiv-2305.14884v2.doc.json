@@ -1,0 +1,1088 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2305.14884v2",
+  "title": "arxiv-2305.14884v2",
+  "variant": "pdf",
+  "pages": 48,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The Faddeev quantum dilogarithm",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-21-the-faddeev-quantum-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Neumann–Zagier data",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-neumannzagier-data"
+    },
+    {
+      "level": 2,
+      "title": "Geometric aspects",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-geometric-aspects"
+    },
+    {
+      "level": 1,
+      "title": "Formal Gaussian integration",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-formal-gaussian-integration"
+    },
+    {
+      "level": 2,
+      "title": "Basics on formal Gaussian integration",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-basics-on-formal-gaussian-integration"
+    },
+    {
+      "level": 2,
+      "title": "q-holonomic aspects of psi",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Fourier transform of psi",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Pentagon identity for psi",
+      "number": "3.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Inversion formula for psi",
+      "number": "3.5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Elementary invariance properties",
+      "number": "4",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-elementary-invariance-properties"
+    },
+    {
+      "level": 1,
+      "title": "Invariance under the choice of quad",
+      "number": "5",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-invariance-under-the-choice-of-quad"
+    },
+    {
+      "level": 1,
+      "title": "Invariance under Pachner moves",
+      "number": "6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-invariance-under-pachner-moves"
+    },
+    {
+      "level": 2,
+      "title": "The case of B with full rank",
+      "number": "6.1",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-61-the-case-of-b-with-full-rank"
+    },
+    {
+      "level": 2,
+      "title": "The case of B with nullity one",
+      "number": "6.2",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-62-the-case-of-b-with-nullity-one"
+    },
+    {
+      "level": 2,
+      "title": "The case of B with nullity two",
+      "number": "6.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-63-the-case-of-b-with-nullity-two"
+    },
+    {
+      "level": 1,
+      "title": "The series of the simplest hyperbolic 4_1 knot",
+      "number": "7",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Complements on the Fourier transform",
+      "number": null,
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-appendix-a-complements-on-the-fourier-transform"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Complements on the pentagon identity",
+      "number": null,
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-b-complements-on-the-pentagon-identity"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1735,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "llbracket hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar rrbracket",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "psi hbar",
+          "heading": false
+        },
+        {
+          "term": "frac12x lambda",
+          "heading": false
+        },
+        {
+          "term": "chern--simons theory",
+          "heading": false
+        },
+        {
+          "term": "frac ell",
+          "heading": false
+        },
+        {
+          "term": "faddeev quantum",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.intro} This paper concerns the topological invariance of a formal power series associated to an ideally triangulated 3-manifold $M$ with a torus boundary component~\\cite{DG}. The series is defined by formal Gaussian integration of a finite dimensional integral (a so-called ``state-integral'') and it is expected to coincide to all orders with the asymptotic expansion of three important topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-the-faddeev-quantum-dilogarithm",
+      "number": "2.1",
+      "title": "The Faddeev quantum dilogarithm",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "formal gaussian",
+          "heading": false
+        },
+        {
+          "term": "gaussian integration",
+          "heading": false
+        },
+        {
+          "term": "faddeev",
+          "heading": true
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "delta functions",
+          "heading": false
+        },
+        {
+          "term": "ordered",
+          "heading": false
+        }
+      ],
+      "extract": "the choice of quad and under the 2–3 Pachner moves follows from a F ourier tranform identity and a pentagon identity for ψℏ; see Theorems 3.4 and 3.6 below. Although these identities are, in a sense, limits of the corresponding identities for the Faddee v quantum dilogarithm (just as ψℏ is a limit of the Faddeev quantum dilogarithm), it would requires addition al analytic work to do so, and instead we give algebraic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "faddeev quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "eπix",
+          "heading": false
+        },
+        {
+          "term": "e2πib",
+          "heading": false
+        },
+        {
+          "term": "pochhammer",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. The Faddeev quantum dilogarithm. In this subsection, we recall some basic prop- erties of the Faddeev quantum dilogarithm, which are motivations fo r Theorems 3.4 and 3.6 below. At the same time, we will ignore additional properties of the Fa ddeev quantum dilog- arithm that play no role in our paper, such as the fact that it is a mero morphic function with precise zeros, poles and residues. The Faddeev quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-neumannzagier-data",
+      "number": "2.2",
+      "title": "Neumann–Zagier data",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "peripheral equations",
+          "heading": false
+        },
+        {
+          "term": "qquad mathbf",
+          "heading": false
+        },
+        {
+          "term": "neumann--zagier matrices",
+          "heading": false
+        },
+        {
+          "term": "filldraw",
+          "heading": false
+        },
+        {
+          "term": "peripheral curve",
+          "heading": false
+        },
+        {
+          "term": "neumann--zagier data",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        },
+        {
+          "term": "edge gluing",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.NZ} In this section, we discuss in detail Neumann--Zagier data following~\\cite{DG}. We start with a 3-manifold $M$ with torus boundary component (all manifolds and their triangulations will be oriented throughout the paper) equipped with a concrete oriented ideal triangulation, that is with a triangulation such that each tetrahedron $\\Delta$ of $\\calT$ comes with a bijection of its vertices with those of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-geometric-aspects",
+      "number": "2.3",
+      "title": "Geometric aspects",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "pachner moves",
+          "heading": false
+        },
+        {
+          "term": "convex ideal",
+          "heading": false
+        },
+        {
+          "term": "rho geom",
+          "heading": false
+        },
+        {
+          "term": "calt mathrm",
+          "heading": false
+        },
+        {
+          "term": "ideal polygon",
+          "heading": false
+        },
+        {
+          "term": "geometric bistellar",
+          "heading": false
+        },
+        {
+          "term": "ideal cell",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.geometric} In this section, we discuss some geometric aspects of Theorem~\\ref{thm.1} related to the choice of the shapes $z$ in a Neumann--Zagier datum. Let us fix an ideal triangulation $\\calT$. A solution $z \\in (\\BC\\setminus\\{0,1\\})^N$ to the Neumann--Zagier equations gives rise, via a developing map, to a representation $\\rho_z: \\pi_1(M) \\to \\PSL_2(\\BC)$. For a detailed discussion, see the appendix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-formal-gaussian-integration",
+      "number": "3",
+      "title": "Formal Gaussian integration",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-basics-on-formal-gaussian-integration",
+      "number": "3.1",
+      "title": "Basics on formal Gaussian integration",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "llbracket hroot",
+          "heading": false
+        },
+        {
+          "term": "hroot rrbracket",
+          "heading": false
+        },
+        {
+          "term": "llbracket hbar",
+          "heading": false
+        },
+        {
+          "term": "gaussian integration",
+          "heading": true
+        },
+        {
+          "term": "hroot big",
+          "heading": false
+        },
+        {
+          "term": "hbar widehat",
+          "heading": false
+        },
+        {
+          "term": "hbar psi",
+          "heading": false
+        },
+        {
+          "term": "ell hbar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.prelim} In this section, we review the basic properties of formal Gaussian integration, which is a combinatorial analogue of integration of analytic functions. This theory was introduced and studied in detail in~\\cite{AarhusII}, where it was used to define a universal perturbative finite type invariant of rational homology 3-spheres, and to identify it with the trivial connection contribution of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-elementary-invariance-properties",
+      "number": "4",
+      "title": "Elementary invariance properties",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot sigma",
+          "heading": false
+        },
+        {
+          "term": "neumann--zagier data",
+          "heading": false
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        },
+        {
+          "term": "qquad lambda",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "flattening",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.elementary} In this section, we review some basic choices needed to define the the Neumann--Zagier data for a triangulation with $N$ tetrahedra, namely: \\begin{itemize} \\item[(a)] an ordering of the $N$ tetrahedra, \\item[(b)] an ordering of the $N$ edges, \\item[(c)] an edge equation to remove, \\item[(d)] a path to represent the meridian curve, \\item[(e)] a flattening. \\end{itemize} A change of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-invariance-under-the-choice-of-quad",
+      "number": "5",
+      "title": "Invariance under the choice of quad",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac hsqrt",
+          "heading": false
+        },
+        {
+          "term": "pmatrix gamma",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "psi hbar",
+          "heading": false
+        },
+        {
+          "term": "aligned widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.quad} The definition of the series $\\Phi^\\Xi(\\hbar)$ requires some choices, some of which were described and dealt with in the previous Section~\\ref{sec.elementary}. What remains to complete the proof of Theorem~\\ref{thm.1} is the independence of $\\Phi^\\Xi(\\hbar)$ under the choice of a nondegenerate quad, and the independence under the 2--3 Pachner moves that connect two ideal triangulations. In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-invariance-under-pachner-moves",
+      "number": "6",
+      "title": "Invariance under Pachner moves",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 937,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hsqrt big",
+          "heading": false
+        },
+        {
+          "term": "hbar mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "hbar widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac hsqrt",
+          "heading": false
+        },
+        {
+          "term": "bea mathbf",
+          "heading": false
+        },
+        {
+          "term": "hsqrt left",
+          "heading": false
+        },
+        {
+          "term": "hsqrt tilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.pachner} In this section, we will prove that $\\Phi^{\\Xi}$ is invariant under 2--3 Pachner moves. There are several versions of the 2--3 move (and of the corresponding pentagon identity in Teichm\\\"uller TQFT~\\cite{Kashaev:beta}) and the one we choose in the next theorem is slightly different from the one in~\\cite[Sec.3.6]{DG} and can be related by composing with quad moves. The 2--3 move involves two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-61-the-case-of-b-with-full-rank",
+      "number": "6.1",
+      "title": "The case of B with full rank",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x1z x2z",
+          "heading": false
+        },
+        {
+          "term": "z1z",
+          "heading": false
+        },
+        {
+          "term": "ftb",
+          "heading": false
+        },
+        {
+          "term": "full rank",
+          "heading": true
+        },
+        {
+          "term": "b2q",
+          "heading": false
+        },
+        {
+          "term": "b1q",
+          "heading": false
+        },
+        {
+          "term": "diag",
+          "heading": false
+        }
+      ],
+      "extract": "3.6 under the assumption that the matrix B has full rank. In this case, Equation ( 98) simpliﬁes to the following one Φ Ξ (ℏ) Φ ~Ξ (ℏ) Pentagon (100) since we do not need to apply Fourier transform, nor Fubini’s theore m. Proposition 6.2. If B has full rank, then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move given in Equation ( 96). Proof. To begin with, noting that in this case A = A and B = B, we have: Φ Ξ (ℏ) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-62-the-case-of-b-with-nullity-one",
+      "number": "6.2",
+      "title": "The case of B with nullity one",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "w1z1z z1z",
+          "heading": false
+        },
+        {
+          "term": "w1z x2z",
+          "heading": false
+        },
+        {
+          "term": "ftb",
+          "heading": false
+        },
+        {
+          "term": "garouf alidis",
+          "heading": false
+        },
+        {
+          "term": "vros garouf",
+          "heading": false
+        },
+        {
+          "term": "inv ariants",
+          "heading": false
+        },
+        {
+          "term": "sta vros",
+          "heading": false
+        },
+        {
+          "term": "matthias storzer",
+          "heading": false
+        }
+      ],
+      "extract": "assumption that the matrix B has nullity 1. In this case, starting from the series Φ Ξ (ℏ), there are three intermediate formulas (shown as bullets) in Equation ( 98) that eventually iden- tify the result with Φ ~Ξ (ℏ). The intermediate formulas involve a Fourier transform (adding one integration variable), a pentagon (adding a second variable), a n inverse Fourier trans- form (adding a third), and an application of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-63-the-case-of-b-with-nullity-two",
+      "number": "6.3",
+      "title": "The case of B with nullity two",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "w1z1z z1z",
+          "heading": false
+        },
+        {
+          "term": "w1z w2z",
+          "heading": false
+        },
+        {
+          "term": "garouf alidis",
+          "heading": false
+        },
+        {
+          "term": "vros garouf",
+          "heading": false
+        },
+        {
+          "term": "inv ariants",
+          "heading": false
+        },
+        {
+          "term": "sta vros",
+          "heading": false
+        },
+        {
+          "term": "ftb",
+          "heading": false
+        },
+        {
+          "term": "matthias storzer",
+          "heading": false
+        }
+      ],
+      "extract": "assumption that the matrix B has nullity 2. Similarly to the proof of Proposition 6.4, we use three intermediate formulas in Equation ( 98). They involve two Fourier transforms (adding two variables), a pentagon (adding a third variable), two inverse Fo urier transforms (adding two variables) and an applications of Fubini’s Theorem (removing four integration variables). The details are given in the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "The work of M.S. and C.W. has been supported by the Max-Planck-Ge sellschaft. C.W. wishes to thank the Southern University of Science and Technology ’s International Center for Mathematics in Shenzhen for their hospitality where the paper w as completed.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-appendix-a-complements-on-the-fourier-transform",
+      "number": null,
+      "title": "Appendix A. Complements on the Fourier transform",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "llbracketℏ rrbracket",
+          "heading": false
+        },
+        {
+          "term": "llbracketℏ rrbracketis",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "gaussian integration",
+          "heading": false
+        },
+        {
+          "term": "formal gaussian",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we give the omitted details in the last step of the pro of of Theorem 3.4. They are an aﬃne change of coordinates, followed by the correspo nding computation of the formal Gaussian integration. The proof requires a version of formal Gaussian integration where the symmetric matrix Λ ℏ ∈ GLN ( /C9 (z)[x]/llbracketℏ1/2/rrbracket) depends on ℏ, such that Λ 0 is invertible. In this case, for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-appendix-b-complements-on-the-pentagon-identity",
+      "number": null,
+      "title": "Appendix B. Complements on the pentagon identity",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z2z",
+          "heading": false
+        },
+        {
+          "term": "z1z",
+          "heading": false
+        },
+        {
+          "term": "llbracketℏ rrbracketis",
+          "heading": false
+        },
+        {
+          "term": "garouf alidis",
+          "heading": false
+        },
+        {
+          "term": "vros garouf",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "sta vros",
+          "heading": false
+        },
+        {
+          "term": "matthias storzer",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we give the omitted details in the last step of the pro of of Theorem 3.6. They are an aﬃne change of coordinates, followed by the correspo nding computation of the formal Gaussian integration. Equations ( 49) and Equation ( 34) give ψ ℏ(x,z 1)ψ ℏ(y,z 2) = e− ℏ 24Cℏ(x,z 1)Cℏ(y, ˆz1) ⟨⟨ ψ ℏ(−w, ˆz1 ˆz−1 0 )ψ ℏ(w, ˆz0)ψ ℏ(−w, ˆz2 ˆz−1 0 ) ⟩⟩ w,ˆδ , (174) where ˆz1 = z1exℏ1/2 ˆz2 = z2eyℏ1/2 ˆz0 = ˆz1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 910,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "jørgen ellegaard",
+          "heading": false
+        },
+        {
+          "term": "doron zeilberger",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Jørgen Ellegaard Andersen and Rinat Kashaev. The Teichm¨ uller T QFT. In Proceedings of the Interna- tional Congress of Mathematicians—Rio de Janeiro 2018. Vol . III. Invited lectures , pages 2541–2565. World Sci. Publ., Hackensack, NJ, 2018. [2] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from Quan tum Teichm¨ uller theory.Comm. Math. Phys. , 330(3):887–934, 2014. PERTURBATIVE INV ARIANTS OF CUSPED",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hbar exp",
+      "heading": false
+    },
+    {
+      "term": "hbar big",
+      "heading": false
+    },
+    {
+      "term": "hbar psi",
+      "heading": false
+    },
+    {
+      "term": "hbar widetilde",
+      "heading": false
+    },
+    {
+      "term": "hbar rrbracket",
+      "heading": false
+    },
+    {
+      "term": "hbar log",
+      "heading": false
+    },
+    {
+      "term": "frac hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar phi",
+      "heading": false
+    },
+    {
+      "term": "hbar qquad",
+      "heading": false
+    },
+    {
+      "term": "hbar mathbf",
+      "heading": false
+    },
+    {
+      "term": "llbracket hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar series",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p46); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2305.14884v2"
+  }
+}

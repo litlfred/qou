@@ -1,0 +1,1521 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "springer-1976-invent-36-173",
+  "blocks": [
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Inventiones math. 36, 173-207 (1976) Inventiones\n\nmathematicae\n© by Springer-Verlag 1976\n\nTrigonometric Sums, Green Functions of Finite Groups\nand Representations of Weyl Groups\n\nT.A. Springer (Utrecht)\n\nTo Jean-Pierre Serre\n\nIntroduction\n\nLet G be a connected reductive algebraic group over the finite field k~IF,, and\nlet g be its Lie algebra. Assume, for simplicity, that there is a “Killing form” B\non q, i.e. a G-invariant non-degenerate symmetric bilinear form which is defined\nover k. Denote by F the Frobenius morphism. Let y be a nontrivial character of\nthe additive group of k, with values",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "174 T.A. Springer\n\ngonometric sums like S°(A, A’) via I-adic cohomology. We also compute, as\nan example and for later use, the S°(A, A’) for G=GL,. No.2 deals with alge-\nbraic questions. Since a “Killing form” does not always exist, we have preferred\nto avoid an identification of g with its dual vector space g’ via such a form, working\ninstead directly with g’. We then require a number of results about g’, in particular\nabout the existence of strongly regular elements in g’ and (g’)’. These are established\nin no. 2.\n\nIn no.3 we take up the trigonometric sums S°(A, A’) in the setting of the\npre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 175\n\nthe S°(A, A’) for A and A’ strongly regular. The method used in no. 3 and no. 4 is\ndue to Deligne. It is a pleasure to thank him for his help and interest.\n\nPart of the work of this paper was done during visits to the Institut des Hautes\nEtudes Scientifiques in 1973 and 1975. I want to thank the I.H.E.S. for its hospitality.\n\nSome Notations. If S is a finite set, then |S| denotes its cardinal number. If G is\na group then Z,( ) and N,( ) denote centralizers and normalizers.\n\nAlgebraic varieties and algebraic groups are taken in the sense of [3]. An\nalgebraic variety V ov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/ex-page-004-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "ex-page-004-01.md",
+      "narrative": null,
+      "content": "If G=GL, these sums can easily be computed. Then g=gl,, the Lie algebra of all 2 x 2-matrices and g’ can be identified with g via the pairing (X, X’) Tr(X X’). Let A’e(g’)’ be a noncentral semisimple element. Its cen- tralizer is a maximal k-torus T in G. Let t be its Lie algebra and r(=1, 2) its k-rank.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-02.md",
+      "narrative": null,
+      "content": "(i) If A is a noncentral semisimple element of g* then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "176 T.A. Springer\n\nwhere F* is the homomorphism induced by F in the /-adic cohomology with\nproper support and values in the constant sheaf E. It follows from (1) that (t(a)*\ndenoting the induced homomorphism)\n\nTr(F*, Hi(Yp 44, E)=Tr(F* t(a)', He(Y¥p, E)),\n\nwhence\nY W(P(o) =q\"' pe 1) py w(—a) Tr (F* t(a)', Hi(¥p, E)). (2)\n\nLet Hi(Yp, E), be the subspace of Hi(Yp, E) formed by the elements x such that\nt(a)' x=y(a)x,\nfor all aek, It is an F*-stable subspace. Then (2) can be rewritten as\n\nLMP) = (-' Te (F*, Hi(%p, By). 3)\nveV izo\n\nThe cohomological interpretation of trigonometric sums given by (3)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 177\n\n(ii) If A+0 is nilpotent then\nS(A, 4))=(—1)'q.\nThere are a, 6€k such that\n\novy={(% ’) Ixttmo,xt—yensh,\n\nIf 4-(° ') then\nc\n\nd\nS(A, 4’))= ¥ n.Wle),\n\neck\n\nwhere n, is the number of solutions in k* of\n\nxt—yz=6\nx+t=a\nax+cy+bz+dt=e\n\nThese numbers can easily be computed, and the statement of 1.6 emerges.\nIf p+2 a similar result is true for SL,, as follows from the fact that then gl,\nis the direct sum of s1, and its center.\n\n2. Strongly Regular Elements in the Dual of a Lie Algebra\n\n2.1. The notations are as in 1.4. However, in most of this section k may be any\nfield. Let T be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "Let A’et’. Then Z,(A’) is generated by T, the U, with (H,, A’) =0, and the n,, with w- A'=A’.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-02.md",
+      "narrative": null,
+      "content": "A’et’ is strongly regular if and only if no element w+1 of W fixes A’.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-03.md",
+      "narrative": null,
+      "content": "(i) If p+ 2 then g' contains strongly regular elements;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "178 . T.A. Springer\n\n2.2, First some formulas. For ae let x, be an isomorphism of the additive\ngroup onto U,. Its differential dx, is a nonzero linear map of k into g and we\nassume that dx,(1)=X,. We also assume the x, to be such that for 1-0\n\nWw, ()=X,()X_4(— 17\") x,(0)\nnormalizes T. Put H,=[X,,X_,]. Define elements Xie’ by\n(X,, Xp) =9_2,p>\n<t, X>=0,\nand define Hijet’ by (H, Hi>=da(H), if Het. Then (H,, Hi) =2.\nWe have the following formulas for the action of G on g’:\nAd’x,()A’ =A'—t¢H,, AX, (A’et),\nAd’x,(t)X_,=X_,+tH,-t? X;, ()\nAd’x,()X, =Xp+ VicitiXp.i. (B+—),\niz1\nwhere the c; of the last f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "Let I be a finite group of linear transformations of a real vector space V, fixing a lattice L. Let | be a prime number and let } be the transformation of L/IL induced by yeTl.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-02.md",
+      "narrative": null,
+      "content": "Let f: G—> G, be a separable morphism, whose kernel is central. If A’ég; is strongly regular then so is (df) A’eg’.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-03.md",
+      "narrative": null,
+      "content": "There is a strongly regular element A’eG’ such that (dn) A’ is also strongly regular if and only if either p is odd and ® has no components of type Az, in case p=3; or if p=2 and G has only irreducible components of type A, (+1, 3) and Eg.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 179\n\n(ii) (p=2, G quasi-simple). If g' does not contain strongly regular elements\nthen G is either of type B, (122), C,, D2,, E;, Eg, Fy, Gz (i.e. one of the types\nwhose Weyl group contains —1) or G is isomorphic to SO(41+2) for some l21.\n\nIf g’ does not contain strongly regular elements then by 2.4 some w+1 acts\ntrivially on g’. We now use the following lemma. For part (i) of it see e.g. [22,\np. 210] and part (ii) is a direct consequence of (i).\n\n2.6. Lemma. Let I be a finite group of linear transformations of a real vector\nspace V, fixing a lattice L. Let | be a prime numb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-01.md",
+      "narrative": null,
+      "content": "Assume that T is defined over k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-02.md",
+      "narrative": null,
+      "content": "(i) @ induces a k-isomorphism of algebraic varieties G/T—> 0¢(4’);",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "180 T.A. Springer\n\nPassing to the quotient of G by its connected center and using 2.7, we may\nassume that G is semisimple. It suffices to deal with the case that G is moreover\nsimply connected, and then we may also assume G to be quasi-simple.\n\nThe character group of T is isomorphic to the weight lattice P of the root\nsystem . Let QcP be the root lattice. Putting x T=T we have t'~P@zk, t’\n~Q@zk, and (dz)' is defined by the injection Q— P. It follows that an A’ as\nrequired does not exist if and only if there is we W—{1} such that the image I\nof Q@k in P@k is fixed elementwise by w. First let ®",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "Let p=2. Assume that G has semisimple rank 1 and that 9! contains strongly regular elements. Then there is a separable k-homomorphism of G onto GL,, whose kernel is central.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-02.md",
+      "narrative": null,
+      "content": "Let A’et’ be strongly regular. Assume that P is a parabolic subgroup of G such that A’ is orthogonal to the Lie algebra of the unipotent radical of P. Then TP.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 181\n\n@ is an orbit map for the action of T by right translations [3, p. 174]. By\n[loc.cit., 6.7, p. 180] it suffices for the proof of (i) to show that Ker d@ct. This\nfollows by using that\n\n(4¢)X,= —¢H,, A’) X;,\n\nwhich is a consequence of (1). Since T is connected we have (G/T)’ =G*/T’,\nwhich implies (ii).\n\n2.11. Lemma. Let p=2. Assume that G has semisimple rank 1 and that 9!\ncontains strongly regular elements. Then there is a separable k-homomorphism of\nG onto GL,, whose kernel is central.\n\nThe adjoint group G of G is k-isomorphic to PSL,. It follows that there is an\nF-stabl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-01.md",
+      "narrative": null,
+      "content": "(i) If B,¢@§_ then B, OH is a Borel subgroup of H, whose Lie algebra is the intersection b, Nb;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "182 T.A. Springer\n\nwe have U,,,¢Q. Now write u= [] u, with u,¢U,. The order of the « occuring\n\na>0\nwa<0\n\nin this product is taken to be compatible with decreasing height. It then follows\nby induction on the height of «, using the strong regularity of A’, that for all «\nsuch that u,+1 we have U,,<Q. Consequently, P=ad(g)Q=ad(n,')Q and\noP:\n\n3. The Trigonometric Sums S°(A, A’): A Reduction Theorem\n\n3.1. We assume the situation of 1.4. Let T be an F-stable maximal torus of G.\nWe use the notations of 2.1. Let t, be the set of strongly regular elements of t’.\nAssume that ty + (by 2.5 (i) this is so,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-01.md",
+      "narrative": null,
+      "content": "(i) '=0 if i+2d; (ii) G24 is supported by BG x ty;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 183\n\nThis is similar to [10, Prop. 4.4], where analogous questions are treated for\nsemisimple elements of G. The proof of (i) uses an argument like that used in the\nproof of 2.3. The proof of (ii), (iii) and the first part of (iv) is along the lines of that of\n[loc. cit.] and may be omitted. Let Z=ad(H)B, be an irreducible component\nof @%,. Then {OZ consists of the ad(h)B, with AeAd(h)(b, 1b), and the\nsecond point of (iv) follows from (i).\n\nFinally, (v) follows from the fact that @4, is connected [24, p. 379].\n\n3.4 We shall now establish some cohomological results about the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-page-012-01.md",
+      "narrative": null,
+      "content": "®, , is an isomorphism of Y, x Ug,, onto fy 'Z,.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "prop-page-012-02.md",
+      "narrative": null,
+      "content": "®, determines an isomorphism og: (R*2,E)y, > @(R*7,,,E), (—2d+ 2d’).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "184 T.A. Springer\n\n3.6. Fix a set V CG such that the Ad (v)~! A,(veV) are the distinct conjugates\nof A, in t. By 3.3 the irreducible components of @§. are the varieties\n\nZ,=ad (Hv) Bx to.\nIf veV there is a unique closed subgroup Us, of U, normalized by T, such that\nB=(Boad(v)~'H)- Uz,\nThen Ug, is generated by the U, with «>0, U,¢ad(v)~'H, whence dim U,, ,=\nd—d', where d'=d(H).\nWe have Ach, ad(v) TCH. Let\nY,={(x, had (v) T, Ad’ (v) A’)e A! x H/ad(v) T x Ad’ (v) to]\nx4—x=<¢A, Ad’ (hv) AY}.\nIf ad(v) T is F-stable then %, is isomorphic to an open subvariety of Y/ aw) r-\nLet ®, ,, be the morphism",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-013-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "cor-page-013-01.md",
+      "narrative": null,
+      "content": "Assume that all n,(B, B’) are scalar multiplications. Let A’e(t’)* be strongly regular. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 185\n\nisomorphism (R*7,E),~(R*(zi),E),. Since U;,, is an affine space of dimension\nd—d', we have\n\n(R* 1, E),—> ®(R*2,,,E),(—2d+2d’).\n\nveV\n\nPutting all this together we obtain 3.8.\n\n3.9. The isomorphism of 3.8 depends on the choice of the Borel group B>T.\nIf B’ is another one, then ¢$,-¢ 5‘ is an automorphism, and it follows from the\ndefinitions that it comes from automorphisms 4n,(B, B’) of the summands\n(R*2,,,E),(—2d+2d'). We shall prove, in fact, that ,(B, B’) is a multiplication\n(by +1). Before doing so, we establish a result about the trigonometric sums\nS°(A, A’). So we h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "lem-page-014-01.md",
+      "narrative": null,
+      "content": "¢,(B, FB)=(—1)9-\"™, Let X be the character group of T and V= X@,R, so ®c V. There is a linear transformation o of V, inducing a permuation of ® such that FU,=U,,,,. Then o keeps positive roots positive (the order being that defined by B) and hence induces a permutation of the corresponding basis S of ®. Let V, be the fixed point space of the linear transformation u of V. Then we have r(G)=dim V,,r(T)=dim V,,, (all this can be extracted from the results in [4, part E, Ch. II]). 3.13 now follows from the following result, which is purely a result about root systems, and in which o may be any lin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "186 T.A. Springer\n\nfrom which it follows that it suffices to prove the assertion in the case that B and B’\nare adjacent. Then B’=s, - B, where s, is a reflection in a simple root a¢®. Now\nB=(BOB)):U,, B’=(BO B’)- U_,. Moreover, Hnad(v) B and Head (v) B’ are\nBorel subgroups of H which are either equal or adjacent. The second case prevails\nif and only if Us,,=U,.,. Now if this equality holds, the isomorphisms 5!\nand 5\" coincide on the v-component, whence 7,(B, B’)=1. This proves the\nlemma in that case.\n\nNow assume that U, ,+U .,. We then have to prove n,(B, B’)= —1. Let P\nbe the parabolic subgro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-page-015-01.md",
+      "narrative": null,
+      "content": "det (wo)=(—1)#™¥ ~4im Yo,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 187\n\n3.14. Lemma. det (wo)=(—1)#™¥ ~4im Yo,\n\n(a) w=1. Let n,(n,) be the number of orbits of even (odd) length of o in S.\nSince the a€S form a basis of V, we have that det (a) is the sign of the permutation\nof S$ defined by o, which equals (—1)\"*. On the other hand, dim V,=n,+n, and\n(—1)™\"” =(—1)”. The assertion follows from these observations.\n\n(b) wo has an eigenvalue 1. Let (,) be a Euclidian metric on V which is W-\nand a-invariant. o has a eigenvector with eigenvalue 1 which is regular (i.e. not\northogonal to any root), e.g. ) « and it then follows from [26, 6.2 and 6.4]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/thm-page-015-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "thm-page-015-02.md",
+      "narrative": null,
+      "content": "Let A’e(t’)’ be strongly regular. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "lem-page-016-01.md",
+      "narrative": null,
+      "content": "The restriction of %24 to BE x ty is the constant sheaf E. 7 A 0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-page-016-02.md",
+      "narrative": null,
+      "content": "(i) (R*7,E), is a constant sheaf of finite-dimensional vector spaces over E. The action of W on Y§ y (see 3.1) defines a representation p'~?4 of W in (R'n,E), ;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "188 T.A. Springer\n\n4.1. Lemma. The restriction of %24 to BE x ty is the constant sheaf E.\n7 A 0\n\nPut Z=f, '(@Gx to). By the base change theorem for cohomology with\nproper support (see [19, exp. XVII, Th. 2.5.6] for the étale cohomology version),\napplied to the cartesian diagram\n\nZ—¥,\n\nSalZ Ss\n\n¥\nBExty —-B°xty\n\nit suffices to prove that the sheaf (R?4(f,|Z),E), is the constant sheaf E. Now\nfrom the proof of 3.5 we see that Z is the set of (x, gT, A’)eY{ , with Ad(g)~! Aeb\nand\n\nx4—x=(Ad (g)-! A, 4’).\n\nSince Ad(g)~! A is a nilpotent element of b the right-hand side is 0. Consequently\nZ~kxp BE xty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "lem-page-017-01.md",
+      "narrative": null,
+      "content": "With the notations of 4.2 we have gf F* ai, = ai F* p'(w). From the diagram",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 189\n\nThere is a Leray spectral sequence\nRia, (Hj) > (R*mE)y\n[11, p. 05]. By 3.5 the spectral sequence collapses, leading to an isomorphism\n(R* mE), R*o,(474) (—2d) (1)\n\nLet 7 be the sheaf on B% supported by BF whose restriction to BG is the constant\nsheaf E. There is a cartesian diagram\n\nBS x ti, \"+ Be\n\n|\n\n}\nt, ——> Spec (k)\nand 4.1 implies that %?4=n*7. By the base change theorem it follows that\nR*o,%24 is a constant sheaf on ty. This is the first assertion of (i). Since x is W-\nequivariant the last assertion of (i) is also clear.\n\nThe fiber of the sheaf R*o, 434 in A’ is H*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-018-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "cor-page-018-02.md",
+      "narrative": null,
+      "content": "If Aeg’ is nilpotent and A’, A” are two strongly regular elements in (t’)¥ then S9(A, A’)=S%(A, A”).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "190 T.A. Springer\n\nwhere the composite of the horizontal arrows in the first (second) line is af, (a).\nThe middle vertical arrow is induced by the sheaf morphism F, using (2). The\nFE in the second line is responsible for the vertical homomorphism q‘ F*. We\nfind that\n\nof Frei. = 44F\"\nwhence 4.3, by 4.2 (ii).\n\n4.4. Theorem. Let Aeg’ be nilpotent and A’e(t’) strongly regular. Assume that\nB>T is a Borel subgroup such that FB=w- B. There exists a representation rf\nof W in H*(B%, E) such that\n\nS%(A, A= aq\" Y (— 1) Tr(F*rp(w)~', H'(BG, B)). (3)\n\niz0\n\nBy formula (3) of no.1 we have\n\nSS(A, A'))= >» (—1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/thm-page-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "thm-page-018-01.md",
+      "narrative": null,
+      "content": "Let Aeg’ be nilpotent and A’e(t’) strongly regular. Assume that B>T is a Borel subgroup such that FB=w- B. There exists a representation rf of W in H*(B%, E) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 191\n\nindependence of k. In the definition of rf the field k comes in, because k enters\ninto the definition of Yf +. Write %, to indicate this dependence.\n\nLet o be the projection of %, on G/T x to. Then % is, via o, a Galois covering\nof G/T x tg, with group k. The character y of k defines an /-adic sheaf 7%, on\nG/T x to [9, p. 303]. If p is the projection of G/T x ty onto to, then\n\n(R* 1, E)=R* p, J. (4)\nLet k’ be a finite extension of k, of degree n. Denote by o’, ... the previous objects\nfor %,.... If t is the morphism % — %, with\n\n(x, gT, A))=(x +--+ +x41+x,2T, A’)\nthen o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "lem-page-020-01.md",
+      "narrative": null,
+      "content": "We have Q7,¢=Qr,,¢,° df in the following cases: (a) fis separable and (t’)’ contains a strongly regular element,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "prop-page-020-02.md",
+      "narrative": null,
+      "content": "Q7,c(A)=IPFI' YL Qr,1(m Ad (g) A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "192 T.A. Springer\n\n5.2. Remarks. (a) Q; can already be defined if t’ contains strongly regular\nelements, namely by using formula (3) of no. 4. However, for the proofs of the\nresults of this no. we need stronger assumptions.\n\n(b) If there exists a G*-equivariant bijection of the unipotent set of G* onto\nthe nilpotent set of g* (which is the case, for example if G= GL, or if G is semisimple\nand simply connected, and p is good, see [24]), then we can transfer the Green\nfunction to a function on the unipotent set of G’.\n\nIt was shown by Kazhdan in [15], using the results of this paper, that if p\na",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 193\n\n5.6. Theorem (orthogonality relations of Green functions). Assume that p+2\nor that G is k-isomorphic to GL, and that q is sufficiently large. Let T and T, be\ntwo F-stable maximal tori of G. Then\n\nIG? Y Orn, cAOI=IT ITE MING(T, T,)'\\.\n\nere:\n\nWe prove this by induction on the semisimple rank s(G) of G. If s(G)=0 then G\nis a torus and the statement is trivial. Suppose now the theorem to be true for\nall G, with s(G,)<s(G). By 2.8 and 5.3 we may assume that G is either semisimple\nand adjoint or that G~GL, (notice that the set of rational nilpotents of g is not\naffected by pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/thm-page-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "orthogonality relations of Green functions",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "thm-page-021-01.md",
+      "narrative": null,
+      "content": "Assume that p+2 or that G is k-isomorphic to GL, and that q is sufficiently large. Let T and T, be two F-stable maximal tori of G. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-page-022-01.md",
+      "narrative": null,
+      "content": "Under the assumption of 5.6 we have Y Or. c(X)=IT- NG.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-022-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-page-022-02.md",
+      "narrative": null,
+      "content": "Assumptions of 5.6, assume moreover that p is good. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "194 T.A. Springer\n\nComparison with (1) gives the result, for this case. If G~GL,, the center of g\nis nonzero. However, in this case it is easily seen that t’ contains strongly regular\nelements orthogonal to the center of g. A similar argument then gives the assertion.\n\n5.7. Proposition. Under the assumption of 5.6 we have\nY Or. c(X)=IT- NG.\n\nxewE\nThe method of proof is the same as that of 5.6. We now start with\nY S%(X,A4)=0,\n\nxXeve\nif A’e(t’)’ is strongly regular. Using 3.15 and induction we have, if G is semisimple\nand adjoint,\n\n— YA AM+HIT ING =ITIY YY x WKAd(g) X, 4 )\n\nxewve XegF geGF\nX sem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/rem-page-022-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "rem-page-022-03.md",
+      "narrative": null,
+      "content": "5.6, 5.7 and 5.8 are counterparts of results proved in [10] for the Green functions of the group G*, viz. Th. 6.9 and formulas (7.10.4), (7.13.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "prop-page-023-01.md",
+      "narrative": null,
+      "content": "Or, 6(A)=(— IO-\"™ FY (— 1) Tr(F* rp(w, w)!, H'( BG, B)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-023-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "prop-page-023-02.md",
+      "narrative": null,
+      "content": "Assume that (t’)' +. Then Y Or g(X)=(— 1-1 q-4 [UF T |“! |N(T, PFI.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 195\n\nIf B is a Borel subgroup of G containing T, then B, =ad(a)B is one containing\nT, and, f, being as in 3.4, we have fg=/5,6. Moreover FB, =ad(a)(w, w)- B,.\nThe next proposition then follows from 4.4.\n\n5.10. Proposition.\nOr, 6(A)=(— IO-\"™ FY (— 1) Tr(F* rp(w, w)!, H'( BG, B)).\n\nizo\nFinally, another property of the Green functions, Let P be an F-stable parabolic\nsubgroup of G, with unipotent radical U. Put N(T, P)={ge G|ad(g) T <P}.\n\n5.11. Proposition. Assume that (t’)' +. Then\nY Or g(X)=(— 1-1 q-4 [UF T |“! |N(T, PFI.\n\nXeuF\nIn particular, this sum is 0 if T is not G*-conju",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "lem-page-024-01.md",
+      "narrative": null,
+      "content": "(i) S°(A,, A’)=q* ¥ (— 1)' Tr(F* sp(c) p(w), H'(BG, E));",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "lem-page-024-02.md",
+      "narrative": null,
+      "content": "(i) H2¢(X,E)~E\", and F* acts on H2°(X,E) as multiplication by 4°;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-024-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "lem-page-024-03.md",
+      "narrative": null,
+      "content": "Or, oA =(— IKO-\" GO Tes ()r4(w)~!, H?* (BS, B)) + O(\" 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "196 T.A. Springer\n\nLet @: J BY be the isomorphism B’++ad(x)B’. Then F-¢=@-27!-F.\nIf we identify @§ with @§ via ¢, then the endomorphism F* of H*(@4,, E)\ncorresponds to the endomorphism F* s$(c) of H*(@§, E). With the notations of\n4.4, we then have the following.\n\n6.3. Lemma. (i) S°(A,, A’)=q* ¥ (— 1)' Tr(F* sp(c) p(w), H'(BG, E));\n\nizo\n\n(ii) Q7,¢(A)=Qr7,6(A,) if sk(O) acts trivially on H*(B§, E).\n\n(i) follows from 4.4 and the preceding remarks, and (ii) is a direct consequence.\n(ii) explains why the Green functions Q, , do not separate the nilpotent G'-orbits\nof gf.\n\n6.4. We now recall some fa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "prop-page-025-01.md",
+      "narrative": null,
+      "content": "(i) 2e(A)<dim Z,(A)—rank G. (ii) Equality holds in (i) if either p=0 or p is sufficiently large.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 197\n\n6.7. Proposition. (i) 2e(A)<dim Z,(A)—rank G.\n(ii) Equality holds in (i) if either p=0 or p is sufficiently large.\n\nThe analogue of (i) for unipotent elements of G is proved in [30, p. 133]. For\nnilpotents of g the proof is similar. It also follows as in [loc.cit.] that equality\nwill hold in (i) if (T, W, B and U being as in no. 2) there is weW such that the\norbit O,(A) intersects unw-u in a dense subset. It was pointed out to me by\nSteinberg that the results of Bala and Carter in [1] imply (ii). In fact, it is proved\nin [loc.cit.] that if p is either 0 or large enough,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "198 T.A. Springer\n\nby an extension then x, , does not change. So we may define V, , and x, 4 for\nall nilpotent Aeg.\n\nLet ¥ be the set of (A, ), where Aeg is nilpotent, peC(A), with V, ,+0 and\n2e(A)=dim Z,(A)—rank (G). Then G acts on & on the left, and (A, ¢)F>x4,4\ndefines a map & of G\\Z to characters of W.\n\nWe can now state the main result of this section.\n\n6.10 Theorem. € is a bijection of G\\Z onto W~.\n\nIn particular, each irreducible character of W is of the form x4 4, where the\nconjugacy class of A and, for fixed A, the character ¢¢C(A)* are uniquely deter-\nmined. Fix a maximal k-split F-st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/thm-page-026-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "thm-page-026-01.md",
+      "narrative": null,
+      "content": "€ is a bijection of G\\Z onto W~.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-027-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "cor-page-027-01.md",
+      "narrative": null,
+      "content": "£\"|C(A)|-! ¥ n(A,c)? =|WI.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 199\n\nof W, the right-hand side equals\n\nX xovz\") x0v2).\n\nxew\nThe assertion of 6.10 is now a consequence of the linear independence of the group\ncharacters yeW™.\n\nIf ceC(A) let n(A,c) denote the number of irreducible components of BY\nof highest dimension e(A) which are fixed by c. The following corollary is an\nimmediate consequence of 6.10. The meaning of 2” is the same as above.\n\n6.11. Corollary. £\"|C(A)|-! ¥ n(A,c)? =|WI.\n\nceC(A)\n\n6.12. Remarks. (a) 6.10 and 6.11 are, of course, true if G is any reductive group\nand p is good. [24, Th. 3.2] then implies similar results for th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-028-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "cor-page-028-02.md",
+      "narrative": null,
+      "content": "(p=0 or p large). The number of nilpotent G-orbits in G is at most equal to the number of conjugacy classes of W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-028-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "cor-page-028-03.md",
+      "narrative": null,
+      "content": "(p=0 or p large). If C(A) acts trivially on BG then the number of irreducible components of B¢ of maximal dimension equals the degree of an irreducible representation of W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-028-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "prop-page-028-01.md",
+      "narrative": null,
+      "content": "(p=0 or p large). If V4 g+0 then dy ,=@(1)~' dim Vy 4 is the degree of an irreducible representation of W. If A runs through a set of representa- tions of the nilpotent G-orbits in g, then each such degree occurs exactly once as ad, 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 28",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/page-028.md",
+      "narrative": null,
+      "content": "200 T.A. Springer\n\nWe can now formulate a result which is valid for p=0 (and for large p). Since\nwe have not defined in characteristic 0 Weyl group representations on the H*(B§, E),\nthe statement is somewhat less precise than that of 6.10. The notations are as in 6.9.\n\n6.14. Proposition. (p=0 or p large). If V4 g+0 then dy ,=@(1)~' dim Vy 4 is\nthe degree of an irreducible representation of W. If A runs through a set of representa-\ntions of the nilpotent G-orbits in g, then each such degree occurs exactly once as\nad, 4.\n\nThis follows from the discussion of 6.13, using 6.7 (ii) and 6.10.\n\n6.15.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "prop-page-029-01.md",
+      "narrative": null,
+      "content": "There exists a graded isomorphism H*(B°, E)— S/I, such that r* corresponds to the natural action of Won S/I, multiplied by «.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 29",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/page-029.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 201\n\nOn the other hand, we have (G/T)'™~G\"/T'™, and |T*»|=det (q—w) (see [4,\np. 188]). Also, if d,,...,d, are the degrees of the Weyl group W, the order of G*\nequals\n\n|G*|=q\"(q*—1)...(q*—).\n\nWriting r*(w)=a% p(w)(«#)~' (so that in the situation of 4.4 we have rf=r*)\nthe preceding results and (1) imply\n\nT] (q*— 1) det (q—w)-' = 3 gi Tr(r'(w)7!, H'(@, B)). (2)\niw izo0\nThe Weyl group W acts in a vector space V over Q, let S be the algebra of E-valued\npolynomial functions on V. Let J be the ideal of § generated by the nonconstant\nhomogeneous W-invariants of S. Then S/I is a grad",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-030-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "lem-page-030-01.md",
+      "narrative": null,
+      "content": "In this case, rf is the sign representation of W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-030-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "prop-page-030-02.md",
+      "narrative": null,
+      "content": "If A is contained in only one Borel subgroup then Q; « (A)=1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 30",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/page-030.md",
+      "narrative": null,
+      "content": "202 T.A. Springer\n\nNow &% is reduced to a point. So, in the situation of 4.4, the representation\nrf =rQ is a 1-dimensional representation of W.\n\n7.4. Lemma. In this case, rf is the sign representation of W.\n\nThe proof of this is rather similar to that of 3.12, so we shall be brief.\n\nAs in the proof of 3.12, we have to compare ¢, and ¢,, for two adjacent Borel\nsubgroups B, B' containing T. Using the proper parabolic subgroup P containing\nB and B’ one reduces to the rank 1 case. Then the result follows from 1.6 (ii)\n(using also 2.11, if necessary).\n\n7.5. Proposition. If A is contained in only on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/thm-page-030-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "thm-page-030-03.md",
+      "narrative": null,
+      "content": "There is a polynomial a;(w,A)T' such that Qr, g(A)=",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-031-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "cor-page-031-03.md",
+      "narrative": null,
+      "content": "H'(B§,, E)=0 if i is odd. The eigenvalues of F* on H?!(B¥,, E) are q'.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/cor-page-031-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "cor-page-031-04.md",
+      "narrative": null,
+      "content": "BY, is the union of the Schubert cells X,,, where w~'-A>0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/lem-page-031-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "lem-page-031-01.md",
+      "narrative": null,
+      "content": "If «,Be®* and wp+a, w+Pe® then p+a+fpe®, wptnag® for n2=2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prop-page-031-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-page-031-02.md",
+      "narrative": null,
+      "content": "If «€® then BY, is a union of the locally closed k-subvarieties X,, ABE (weW), each of which is k-isomorphic to an affine space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 31",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/page-031.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 203\n\n7.9. Let G be quasi-simple and k-split. Let now T be a split maximal F-stable\ntorus of G and B>T a Borel subgroup. B defines an ordening of the root system\n® of (G, T), let &* be the set of positive roots. We use the notations of 2.1. Assume\nthat all X, lie in g*.\n\nIf we W, let U,, be the subgroup of the unipotent radical U of B generated by\nthe U, with «>0, w~'a<0. By Bruhat’s lemma, the variety of Borel subgroups\nB is the disjoint union of the open Schubert cells X,,=ad(U,,n,,) B.\n\n® contains a unique highest root A. If there are different root lengths, there is\nalso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 32",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/page-032.md",
+      "narrative": null,
+      "content": "204 T.A. Springer\n\nLet D be the distinguished set of coset representatives of W/W’ formed by the\nde W with I(dw’)=I(d)+1(w), if we W’ (see [5, p. 37]). It then follows that\n\nmek —L1p'|—\n2,max I(d)=4|0|—$10|—1. (3)\ndeD\n\nAssume that all roots of ® have the same length. Then by a result of Carter\n[6] we have, h denoting the Coxeter number of @ and ht the height function on 9,\n\nI(d)=h—1—ht(d- ),\nif d-A>0. Hence imax I()=h—2, and (3) implies that\n\ndeD\n\n||—|0|=4h-6,\n\nwhich is a known result, proved in [5, p. 170].\n\n7.15. PSp,. We now discuss the Green functions of a simple group of type B,\n(p +2). W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 33",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/page-033.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 205\n\nwhere t is a character of degree 1, different from 1,¢, and that (using also 7.13)\nQ,(X2)=Et(w)q? +A(w)q+1,\n\nwhere / is a character of W. It remains to determine t and A.\n\nLet v be the subspace of g spanned by X,, X,45, Xa429- It is the Lie algebra\nof the unipotent radical of an F-stable parabolic subgroup P. One verifies that\nXgXatXeapXargtXa42pXa+2pEv\" is G*-conjugate to X, if x,+0 or x,4,+0\nand to X, if x,=x,4,=0, X,42,+0. Making use of the fact that T,, is not\nG*-conjugate to a maximal torus of P, it follows from 5.11 that\n\n(4° —4)9..(X1) + (4—1)9,,(X2) + Q,,(X4)=0,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 34",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/page-034.md",
+      "narrative": null,
+      "content": "206 T.A. Springer\n\nLet T,, and Q,, be as before. In this case, Q,, is defined for g>5. We have\nQ,,(Xo)=1 and\n\nQ,,(X 6) = e(w)(q? — 1)(4° — 1)/(q? — x0) q+ e(w)).\nBy 6.3 and 6.10 there are irreducible characters t and A, of degrees 1 and 2, with\nQ(X) =CAo(w) + 2t(w))q+1\nQ,.(X1)=(o(w)—t(w)) q+ 1\nO,(X7)=Ao(w)q +1.\n\nMoreover we see from 7.13 that BY, can have only one irreducible component\nof highest dimension. Consequently, we have, by 6.3 and 6.10\n\nQ,,(X2)=Aot(w)q? +A, (w)q+1\nQ,,(X3)=et(w)q? +2,(w)q? +A3(w)g +1,\n\nwhere the A, are characters of W. It remains to determine t and the 4;.\n\nLet be the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/springer-1976-invent-36-173/blocks/prose-page-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 35",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/page-035.md",
+      "narrative": null,
+      "content": "Trigonometric Sums 207\n\n7. Chang, B.: The conjugate classes of Chevalley groups of type (G,). J. of Algebra 9, 190-211 (1968)\n8. Chang, B., Ree, R.: The characters of G,(q). In: Symposia Mathematica, vol. XIII. London and\nNew York: Academic Press 1974\n9. Deligne, P.: La conjecture de Weil I. Publ. Math. I.H.E.S. 43, 273-307 (1974)\n10. Deligne, P., Lusztig,G.: Representations of reductive groups over finite fields. Ann. of Math.\n103, 103-161 (1976)\n11. Grothendieck, A.: Formule de Lefschetz et rationalité des fonctions L, Sém. Bourbaki no. 279,\n15 p. New York: W.A. Benjamin 1966\n12. Grothendiec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

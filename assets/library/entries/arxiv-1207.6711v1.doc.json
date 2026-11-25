@@ -1,0 +1,3152 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1207.6711v1",
+  "title": "arxiv-1207.6711v1",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Thurston's gluing equations",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-11-thurstons-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Our main results",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-our-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Computations and applications",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-computations-and-applications"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the Paper",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-overview-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgement",
+      "number": "1.5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "Concrete triangulations",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-concrete-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Face pairing permutations",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-face-pairing-permutations"
+    },
+    {
+      "level": 1,
+      "title": "Thurston's gluing equations",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-thurstons-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic properties of the gluing equations",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-symplectic-properties-of-the-gluing-equations"
+    },
+    {
+      "level": 1,
+      "title": "Generalized gluing equations",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-generalized-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Simplex coordinates",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-simplex-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries of a simplex",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-symmetries-of-a-simplex"
+    },
+    {
+      "level": 2,
+      "title": "Shape assignments",
+      "number": "4.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-43-shape-assignments"
+    },
+    {
+      "level": 2,
+      "title": "Gluing equations for oriented triangulations",
+      "number": "4.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-44-gluing-equations-for-oriented-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "The pullback of a shape assignment under a symmetry",
+      "number": "4.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-45-the-pullback-of-a-shape-assignment-under-a-sy"
+    },
+    {
+      "level": 2,
+      "title": "Gluing equations for general concrete triangulations",
+      "number": "4.6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-46-gluing-equations-for-general-concrete-triangu"
+    },
+    {
+      "level": 1,
+      "title": "Review of Ptolemy coordinates",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-review-of-ptolemy-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy assignments for ordered triangulations",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-ptolemy-assignments-for-ordered-triangulation"
+    },
+    {
+      "level": 2,
+      "title": "The pullback of a Ptolemy assignment under a symmetry",
+      "number": "5.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-the-pullback-of-a-ptolemy-assignment-under-a"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy assignments for general concrete triangulations",
+      "number": "5.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-53-ptolemy-assignments-for-general-concrete-tria"
+    },
+    {
+      "level": 1,
+      "title": "From Ptolemy coordinates to shapes",
+      "number": "6",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-from-ptolemy-coordinates-to-shapes"
+    },
+    {
+      "level": 2,
+      "title": "Proof for edge equations",
+      "number": "6.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-61-proof-for-edge-equations"
+    },
+    {
+      "level": 2,
+      "title": "Proof for face equations",
+      "number": "6.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-62-proof-for-face-equations"
+    },
+    {
+      "level": 2,
+      "title": "Proof for internal equations",
+      "number": "6.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-63-proof-for-internal-equations"
+    },
+    {
+      "level": 1,
+      "title": "Symplectic properties and quantum topology",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-7-symplectic-properties-and-quantum-topology"
+    },
+    {
+      "level": 2,
+      "title": "Applications in quantum topology",
+      "number": "7.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-71-applications-in-quantum-topology"
+    },
+    {
+      "level": 1,
+      "title": "Decorations",
+      "number": "8",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-8-decorations"
+    },
+    {
+      "level": 2,
+      "title": "Generic decorations, Ptolemy coordinates and shapes",
+      "number": "8.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-81-generic-decorations-ptolemy-coordinates-and-s"
+    },
+    {
+      "level": 1,
+      "title": "The natural cocycle of a generic decoration",
+      "number": "9",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-9-the-natural-cocycle-of-a-generic-decoration"
+    },
+    {
+      "level": 2,
+      "title": "Truncated and doubly truncated simplices",
+      "number": "9.1",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-91-truncated-and-doubly-truncated-simplices"
+    },
+    {
+      "level": 2,
+      "title": "Cocycles",
+      "number": "9.2",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-92-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "The natural cocycle of a generic decoration",
+      "number": "9.3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-93-the-natural-cocycle-of-a-generic-decoration"
+    },
+    {
+      "level": 1,
+      "title": "Explicit formulas for the natural cocycles",
+      "number": "10",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-10-explicit-formulas-for-the-natural-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "Diamond and ratio coordinates",
+      "number": "10.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-101-diamond-and-ratio-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "X-coordinates",
+      "number": "10.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-102-x-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "From natural (SL(n,C),N)-cocycles to natural (PGL(n,C),B,H)-cocycles.",
+      "number": "10.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-103-from-natural-slncn-cocycles-to-natural-pglnc"
+    },
+    {
+      "level": 1,
+      "title": "From shape assignments to cocycles",
+      "number": "11",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-11-from-shape-assignments-to-cocycles"
+    },
+    {
+      "level": 1,
+      "title": "Duality",
+      "number": "12",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-12-duality"
+    },
+    {
+      "level": 1,
+      "title": "The cusp equations",
+      "number": "13",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-13-the-cusp-equations"
+    },
+    {
+      "level": 2,
+      "title": "Simplifying the cusp equations",
+      "number": "13.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-131-simplifying-the-cusp-equations"
+    },
+    {
+      "level": 1,
+      "title": "Example: the figure-eight knot",
+      "number": "14",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-14-example-the-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "shape coordinates",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "goncharov",
+          "heading": false
+        }
+      ],
+      "extract": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT Abstract. In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1207.6711v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-11-thurstons-gluing-equations",
+      "number": "1.1",
+      "title": "Thurston's gluing equations",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignments",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "shape assignments",
+          "heading": false
+        },
+        {
+          "term": "concrete triangulations",
+          "heading": false
+        },
+        {
+          "term": "generic decoration",
+          "heading": false
+        },
+        {
+          "term": "cusp equations",
+          "heading": false
+        },
+        {
+          "term": "generalized gluing",
+          "heading": false
+        }
+      ],
+      "extract": "2 1.2. Our main results 3 1.3. Computations and applications 5 1.4. Overview of the Paper 5 1.5. Acknowledgement 6 2. Concrete triangulations 6 2.1. Face pairing permutations 7 3. Thurston’s gluing equations 8 3.1. Symplectic properties of the gluing equations 8 4. Generalized gluing equations 9 4.1. Simplex coordinates 9 4.2. Symmetries of a simplex 9 4.3. Shape assignments 9 4.4. Gluing equations for oriented",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "thurston gluing",
+          "heading": false
+        },
+        {
+          "term": "cusp equations",
+          "heading": false
+        },
+        {
+          "term": "shape coordinates",
+          "heading": false
+        },
+        {
+          "term": "edge equations",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "developing map",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction 1.1. Thurston’s gluing equations. Thurston’s gluing equations are a system of polyno- mial equations deﬁned for a compact 3-manifold M together with a topological ideal triangu- lation T of the interior of M. The gluing equations were introduced to concretely construct a complete hyperbolic structure on M from a (suitable) solution to the gluing equations. Although Thurston only considered manifolds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-our-main-results",
+      "number": "1.2",
+      "title": "Our main results",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "txt textnormal",
+          "heading": false
+        },
+        {
+          "term": "textnormal decorations",
+          "heading": false
+        },
+        {
+          "term": "textnormal cocycles",
+          "heading": false
+        },
+        {
+          "term": "textnormal assignments",
+          "heading": false
+        },
+        {
+          "term": "textnormal generic",
+          "heading": false
+        },
+        {
+          "term": "textnormal natural",
+          "heading": false
+        },
+        {
+          "term": "left txt",
+          "heading": false
+        },
+        {
+          "term": "shortmainthm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.results} Given a topological ideal triangulation $\\CT$, each simplex of $\\T$ is divided into $\\binom{n+1}{3}$ overlapping \\emph{subsimplices} (see Definition~\\ref{def:Subsimplex}) and each edge of each subsimplex is assigned a \\emph{shape parameter} (see Definition~\\ref{shapeassignment}). These are the variables of the gluing equations. There is an equation for each non-vertex integral point point of $\\T$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-computations-and-applications",
+      "number": "1.3",
+      "title": "Computations and applications",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "cite snappy",
+          "heading": false
+        },
+        {
+          "term": "computations",
+          "heading": true
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "ptolemy varieties",
+          "heading": false
+        },
+        {
+          "term": "exact computations",
+          "heading": false
+        },
+        {
+          "term": "applicationsqt",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.computations} The gluing equations of an ideal triangulation is a standard object of SnapPy~\\cite{SnapPy}, which is used to study invariants of hyperbolic $3$-manifolds. From the gluing equations, one can compute the so-called \\emph{Neumann-Zagier datum} of an ideal triangulation, i.e.~a triple $((A|B),z,f)$ that consists of the matrices $(A|B)$ of the gluing equations, a shape solution $z$, and a choice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-overview-of-the-paper",
+      "number": "1.4",
+      "title": "Overview of the Paper",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "ptolemy varieties",
+          "heading": false
+        },
+        {
+          "term": "shape coordinates",
+          "heading": false
+        },
+        {
+          "term": "shape assignment",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "decorated pgl",
+          "heading": false
+        },
+        {
+          "term": "cite garoufalidisthurstonzickert",
+          "heading": false
+        },
+        {
+          "term": "reconstructrep",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub:Overview} In Section~\\ref{sec:TriangulationSection} we define the notion of a \\emph{concrete triangulation}, which is a triangulation together with a vertex ordering of each simplex. Two types of concrete triangulations are particularly important, \\emph{oriented} triangulations and \\emph{ordered} triangulations. In Section~\\ref{sec:ThurstonReview} we review Thurson's gluing equations, and in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-acknowledgement",
+      "number": "1.5",
+      "title": "Acknowledgement",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "and Dylan Thurston for helpful comments.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-2-concrete-triangulations",
+      "number": "2",
+      "title": "Concrete triangulations",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ordered triangulation",
+          "heading": false
+        },
+        {
+          "term": "ordered simplex",
+          "heading": false
+        },
+        {
+          "term": "concrete triangulation",
+          "heading": false
+        },
+        {
+          "term": "oriented triangulation",
+          "heading": false
+        },
+        {
+          "term": "captionsetup width",
+          "heading": false
+        },
+        {
+          "term": "emph ordered",
+          "heading": false
+        },
+        {
+          "term": "abstract triangulation",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:TriangulationSection} In all of the following $M$ denotes a compact, oriented $3$-manifold with (possibly empty) boundary. Let $\\widehat M$ be the space obtained from $M$ by collapsing each boundary component of $M$ to a point. An \\emph{ordered simplex} is a simplex together with an ordering of its vertices. \\begin{definition} An \\emph{abstract triangulation} $\\mathcal{T}$ of $M$ is an identification of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-face-pairing-permutations",
+      "number": "2.1",
+      "title": "Face pairing permutations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face pairing",
+          "heading": true
+        },
+        {
+          "term": "dered",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": false
+        }
+      ],
+      "extract": "dered simplex with S4. Deﬁnition 2.4. Let ∆0 and ∆1 be ordered simplices and let ψ from face f0 of ∆0 to face f1 of ∆1 be a face pairing. The face pairing permutation corresponding to ψ is the unique permutation σ ∈S4 such that ψ takes vertex v of ∆0 to vertex σ(v) of ∆1 whenever v is a vertex in f0. Note that if we identify ∆0 and ∆1 via the unique order preserving isomorphism, σ is the unique extension of ψ to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-thurstons-gluing-equations",
+      "number": "3",
+      "title": "Thurston's gluing equations",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "cusp equations",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "shape coordinate",
+          "heading": false
+        },
+        {
+          "term": "edge equations",
+          "heading": false
+        },
+        {
+          "term": "equations consist",
+          "heading": false
+        },
+        {
+          "term": "thurston",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we brieﬂy review Thurston’s gluing equations. For details we refer to Thurston [17] or Neumann-Zagier [15]. Let T be an oriented triangulation of M. The gluing equations are given in terms of a variable z∆∈C \\ {0, 1}, called a shape coordinate, for each simplex ∆of M. To deﬁne the equations, assign to each edge of each simplex ∆of M one of three shape parameters, see Figure 3. The shape parameters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-symplectic-properties-of-the-gluing-equations",
+      "number": "3.1",
+      "title": "Symplectic properties of the gluing equations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod delta",
+          "heading": false
+        },
+        {
+          "term": "eqref eqn",
+          "heading": false
+        },
+        {
+          "term": "shapeparms",
+          "heading": false
+        }
+      ],
+      "extract": "It is sometimes convenient to express the gluing equations entirely in terms of the $z_\\Delta$'s. Using \\eqref{eqn:shapeParms}, we can rewrite \\eqref{eqn:ThurstonGluing} as \\begin{equation} \\prod_\\Delta z_\\Delta^{A_\\Delta} \\prod_\\Delta (1-z_\\Delta)^{B_\\Delta}=\\pm 1. \\end{equation} These equations are said to be of \\emph{Neumann-Zagier} type. Each such equation gives a row vector consisting of $A_\\Delta$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-generalized-gluing-equations",
+      "number": "4",
+      "title": "Generalized gluing equations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subsimplices",
+          "heading": false
+        },
+        {
+          "term": "generalizedgluingeq",
+          "heading": false
+        },
+        {
+          "term": "cuspequations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:GeneralizedGluingEq} In this section we define the higher dimensional analog of Thurston's edge equations. The generalized cusp equations will be studied in Section~\\ref{sec:CuspEquations}. The idea is to subdivide each simplex of $M$ into overlapping subsimplices, and assign a shape coordinate to each edge of each subsimplex. When the edge midpoints of different subsimplices intersect, we obtain a gluing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-simplex-coordinates",
+      "number": "4.1",
+      "title": "Simplex coordinates",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": true
+        },
+        {
+          "term": "delta cap",
+          "heading": false
+        },
+        {
+          "term": "left delta",
+          "heading": false
+        },
+        {
+          "term": "right binom",
+          "heading": false
+        },
+        {
+          "term": "quad mbox",
+          "heading": false
+        },
+        {
+          "term": "subsimplices",
+          "heading": false
+        }
+      ],
+      "extract": "We identify each simplex of a concrete triangulation $\\T$ with the ordered simplex \\begin{equation} \\Delta^3_n = \\left\\{(x_0,x_1,x_2,x_3) \\in \\R^4\\bigm\\vert 0\\leq x_i \\leq n, x_0 + x_1 + x_2 + x_3 = n\\right\\}. \\end{equation} By removing the four vertices, we obtain the ideal standard simplex $\\dot{\\Delta}^3_n$. Consider the sets $$\\Delta^3_n(\\Z)=\\Delta^3_n\\cap \\Z^4,\\qquad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-symmetries-of-a-simplex",
+      "number": "4.2",
+      "title": "Symmetries of a simplex",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": false
+        }
+      ],
+      "extract": "The natural vertex ordering of $\\Delta_n^3$ induces an identification of the symmetry group of $\\Delta^3_n$ with $S_4$, such that $\\sigma\\in S_4$ is the restriction to $\\Delta^3_n$ of the unique linear map taking the standard basis vector $e_i$ to $e_{\\sigma(i)}$, $i\\in\\{0,1,2,3\\}$. Note that \\begin{equation} \\sigma(x_0,x_1,x_2,x_3)=(x_{\\sigma^{-1}(0)},x_{\\sigma^{-1}(1)},x_{\\sigma^{-1}(2)},x_{\\sigma^{-1}(3)}),\\qquad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-shape-assignments",
+      "number": "4.3",
+      "title": "Shape assignments",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shapepar frac",
+          "heading": false
+        },
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "shape",
+          "heading": true
+        },
+        {
+          "term": "label shapepar",
+          "heading": false
+        },
+        {
+          "term": "subsimplex",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "times dot",
+          "heading": false
+        },
+        {
+          "term": "qquad frac",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce the generalized shape parameters. We will need to replace the traditional labeling of the shape parameters $z^\\prime$ and $z^{\\prime\\prime}$ by a notation, which better exhibits the symmetry and naturally allows for a unified treatment of the gluing equations for all $n\\geq 2$. \\begin{definition}\\label{def:Subsimplex} A \\emph{subsimplex} of $\\Delta^3_n$ is a subset $S$ of $\\Delta^3_n$ obtained by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-44-gluing-equations-for-oriented-triangulations",
+      "number": "4.4",
+      "title": "Gluing equations for oriented triangulations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "emph face",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "emph edge",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:GluingEquations} Let $\\T$ be an \\emph{oriented} triangulation $\\mathcal{T}$. The gluing equations are indexed by (non-vertex) integral points of $\\mathcal{T}$ defined below and come in three flavors: \\emph{edge equations}, \\emph{face equations}, and \\emph{interior equations}. In Section~\\ref{sec:ShapeAssignmentSymmetries} we generalize the gluing equations to all concrete triangulations. Recall that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-45-the-pullback-of-a-shape-assignment-under-a-sy",
+      "number": "4.5",
+      "title": "The pullback of a shape assignment under a symmetry",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "shape assignment",
+          "heading": true
+        },
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "normalsize scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that we identify the symmetry group of $\\Delta_n$ with $S_4$. \\begin{definition}\\label{def:PullbackShapes} Let $\\sigma\\in S_4$ and let $z\\colon\\Delta^3_{n-2}(\\Z)\\times\\dot\\Delta^3_2(\\Z)\\to \\C\\setminus\\{0,1\\}$ be a map. The \\emph{pullback} of $z$ under $\\sigma$ is the map given by \\begin{equation}\\label{actiononshapeassignments} \\sigma^*z\\colon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-46-gluing-equations-for-general-concrete-triangu",
+      "number": "4.6",
+      "title": "Gluing equations for general concrete triangulations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape assignment",
+          "heading": false
+        },
+        {
+          "term": "epsilon delta",
+          "heading": false
+        },
+        {
+          "term": "ref shapesymmetries",
+          "heading": false
+        },
+        {
+          "term": "concrete triangulation",
+          "heading": false
+        },
+        {
+          "term": "reordering",
+          "heading": false
+        },
+        {
+          "term": "qed end",
+          "heading": false
+        },
+        {
+          "term": "prod limits",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ShapeAssignmentSymmetries} Since every concrete triangulation can be obtained from an oriented one by reordering some of the vertices, Lemma~\\ref{shapesymmetries} motivates the following. \\begin{definition}\\label{def:ShapeAssignmentGeneral} A shape assignment on a concrete triangulation $\\T$ is a shape assignment on each simplex such that \\begin{equation}\\label{eqn:GeneralizedGluingOrderAgnostic}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-review-of-ptolemy-coordinates",
+      "number": "5",
+      "title": "Review of Ptolemy coordinates",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": true
+        },
+        {
+          "term": "orderagnosticptolemy",
+          "heading": false
+        },
+        {
+          "term": "ptolemyreview",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:PtolemyReview} Ptolemy coordinates were introduced in \\cite{GaroufalidisThurstonZickert} inspired by $\\mathcal A$-coordinates on higher Teichm\\\"{u}ller spaces due to Fock and Goncharov~\\cite{FockGoncharov}. They are indexed by non-vertex integral points of $\\mathcal{T}$ satisfying \\emph{Ptolemy relations} each involving the six Ptolemy coordinates assigned to the edges of a subsimplex. They are most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-51-ptolemy-assignments-for-ordered-triangulation",
+      "number": "5.1",
+      "title": "Ptolemy assignments for ordered triangulations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "emph ptolemy",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relation",
+          "heading": false
+        },
+        {
+          "term": "assignment begin",
+          "heading": false
+        },
+        {
+          "term": "non-vertex integral",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "equation dot",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition}\\label{def:PtolemyAssignment} A \\emph{Ptolemy assignment} on $\\Delta^3_n$ is an assignment \\begin{equation} \\dot{\\Delta}^3_n(\\Z)\\to\\C\\setminus\\{0\\},\\qquad t\\mapsto c_t \\end{equation} of a non-zero complex number $c_t$ to each non-vertex integral point $t$ of $\\Delta^3_n$ such that the \\emph{Ptolemy relation} \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-the-pullback-of-a-ptolemy-assignment-under-a",
+      "number": "5.2",
+      "title": "The pullback of a Ptolemy assignment under a symmetry",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy assignment",
+          "heading": true
+        },
+        {
+          "term": "vert sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma tau",
+          "heading": false
+        },
+        {
+          "term": "pullback",
+          "heading": true
+        },
+        {
+          "term": "colon dot",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "actiononptolemys",
+          "heading": false
+        }
+      ],
+      "extract": "The Ptolemy coordinates are not as well behaved under symmetries as the shapes. The obvious pullback defined by $(\\sigma^*c_t)=c_{\\sigma(t)}$ does not preserve Ptolemy assignments. To fix this, we must modify by signs depending on both $\\sigma\\in S_4$ and $t$. Let $I$ denote the identity matrix in $\\GL(n,\\C)$. For each $t\\in\\Delta_n^3(\\Z)$, we can write $I$ as a concatenation of $n\\times t_i$ matrices $I_i^t$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-53-ptolemy-assignments-for-general-concrete-tria",
+      "number": "5.3",
+      "title": "Ptolemy assignments for general concrete triangulations",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:OrderAgnosticPtolemy} For general concrete triangulations the Ptolemy coordinates on faces of different simplices must be identified by signs given by the face pairing permutations. \\begin{definition}\\label{def:PtolemyAssignmentGeneral} A Ptolemy assignment on $(M,\\T)$ is a Ptolemy assignment for each simplex of $\\T$ such that Ptolemy coordinates on identified faces are identified via the pullback of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-from-ptolemy-coordinates-to-shapes",
+      "number": "6",
+      "title": "From Ptolemy coordinates to shapes",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignments",
+          "heading": false
+        },
+        {
+          "term": "shape assignments",
+          "heading": false
+        },
+        {
+          "term": "eqref eqn",
+          "heading": false
+        },
+        {
+          "term": "ptolemytoshapes",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:PtolemyToShapes} We now define a monomial map $\\mu$ from Ptolemy assignments to shape assignments. Given a Ptolemy assignment $c$ on a simplex $\\Delta^3_n$, define $z\\colon\\Delta^3_{n-2}(\\Z)\\times\\dot\\Delta_2^3(\\Z)$ by \\begin{equation}\\label{eqn:PtolemyToShapes} \\begin{aligned} z_s^{1100} = z_s^{0011} & = & & \\frac{c_{s+1001}c_{s+0110}}{c_{s+1010}c_{s+0101}}\\\\ z_s^{0110} = z_s^{1001} & = & &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-61-proof-for-edge-equations",
+      "number": "6.1",
+      "title": "Proof for edge equations",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minipage hfill",
+          "heading": false
+        },
+        {
+          "term": "edge equations",
+          "heading": true
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "textwidth begin",
+          "heading": false
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "textwidth caption",
+          "heading": false
+        },
+        {
+          "term": "center scalebox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:ProofForEdgeEqn} Let $K$ be the space defined by cyclically gluing together $k$ simplices $\\Delta_0,\\dots,\\Delta_{k-1}$ along the common edge $01$, pairing all faces via the permutation $(23)$, see Figure~\\ref{fig:EdgeLocal}. \\begin{figure}[htb] \\begin{center} \\begin{minipage}[b]{0.45\\textwidth} \\begin{center} \\scalebox{0.75}{ \\includegraphics{figures_gen/LocalModelEdgeGluing_included}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-proof-for-face-equations",
+      "number": "6.2",
+      "title": "Proof for face equations",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face equations",
+          "heading": true
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "face point",
+          "heading": false
+        },
+        {
+          "term": "eqref eqn",
+          "heading": false
+        },
+        {
+          "term": "ratio eqref",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:ProofForFaceEqn} A local model for a neighborhood of a face point $p$ is the complex $K$ obtained by gluing two simplices $\\Delta_0$ and $\\Delta_1$ by identifying the faces 012 of each simplex in the order-preserving way, see Figure~\\ref{fig:FaceLocal}. As for the edge equations, it is enough to verify the face equations on $K$. \\begin{lemma} A Ptolemy assigment on $K$ gives shape assignments",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-proof-for-internal-equations",
+      "number": "6.3",
+      "title": "Proof for internal equations",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "internal gluing",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "internalequation",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:ProofForInternalEqn} A local model near an interior point is a single simplex. \\begin{lemma}\\label{lemma:InternalEquation} A Ptolemy assignment on $\\Delta^3_n$ gives rise to a shape assignment satisfying the internal gluing equations. \\end{lemma} \\begin{proof} Let $t$ be of the form $t=\\alpha+1111$ with $\\alpha\\in\\Delta^{3}_{n-4}(\\Z)$. The gluing equation for $t$ involves \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-7-symplectic-properties-and-quantum-topology",
+      "number": "7",
+      "title": "Symplectic properties and quantum topology",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "beta circ",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "sum delta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Symplectic} In this section we prove Theorem~\\ref{thm:soft}. This is done by generalizing some of the combinatorial properties of triangulations studied by Neumann~\\cite{NeumannComb}. The first part follows immediately from Proposition~\\ref{prop:BetaStarBeta} below, and the second part is an elementary counting argument. We assume for simplicity that the triangulation $\\T$ is oriented. Letting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-71-applications-in-quantum-topology",
+      "number": "7.1",
+      "title": "Applications in quantum topology",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "align tau",
+          "heading": false
+        },
+        {
+          "term": "cite dgg",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "torus boundary",
+          "heading": false
+        },
+        {
+          "term": "loop invariants",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.applicationsQT} Recently, ideal triangulations $\\CT$ of 3-manifolds $M$ with torus boundary components and their gluing equations have found several applications in quantum topology, and this has been a main motivation for our work. We will list three applications here, and refer to the literature for more details: \\begin{itemize} \\item[(a)] The {\\em Quantum Riemann surfaces} of \\cite{Di1} \\item[(b)] The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-8-decorations",
+      "number": "8",
+      "title": "Decorations",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decorations",
+          "heading": true
+        },
+        {
+          "term": "emph decoration",
+          "heading": false
+        },
+        {
+          "term": "garoufalidisthurstonzickert",
+          "heading": false
+        },
+        {
+          "term": "flat bundle",
+          "heading": false
+        },
+        {
+          "term": "begin remark",
+          "heading": false
+        },
+        {
+          "term": "end remark",
+          "heading": false
+        },
+        {
+          "term": "begin definition",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Decorations} We refer to Garoufalidis-Thurston-Zickert~\\cite{GaroufalidisThurstonZickert} or Zickert~\\cite{ZickertDuke} for more details on decorations. Let $G$ be a group and $H$ a subgroup of $G$. \\begin{definition}\\label{def:Decoration} Let $\\Delta$ be an ordered $k$-simplex. A $G/H$-\\emph{decoration} of $\\Delta$ is an assignment of a left $H$-coset to each vertex of $\\Delta$. We only consider",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-81-generic-decorations-ptolemy-coordinates-and-s",
+      "number": "8.1",
+      "title": "Generic decorations, Ptolemy coordinates and shapes",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 788,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decorations",
+          "heading": true
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "bigcup sigma",
+          "heading": false
+        },
+        {
+          "term": "prod lambda",
+          "heading": false
+        },
+        {
+          "term": "det left",
+          "heading": false
+        },
+        {
+          "term": "induces ptolemy",
+          "heading": false
+        },
+        {
+          "term": "mathcal colon",
+          "heading": false
+        }
+      ],
+      "extract": "For an element $g\\in\\GL(n,\\C)$, let $\\{g\\}_i$ denote the ordered set consisting of the first $i$ column vectors of $g$. \\begin{definition}\\label{def:generic} A $\\GL(n,\\C)/N$-decoration $(g_0N,g_1N,g_2N,g_3N)$ on $\\Delta^3_n$ is \\emph{generic} if for each $(t_0,t_1,t_2,t_3)\\in\\Delta_n^3(\\Z)$ \\begin{equation}\\label{eqn:PtolemyDets} \\det\\big(\\{g_0\\}_{t_0}\\cup\\{g_1\\}_{t_1}\\cup\\{g_2\\}_{t_2}\\cup\\{g_3\\}_{t_3}\\big)\\neq 0.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-9-the-natural-cocycle-of-a-generic-decoration",
+      "number": "9",
+      "title": "The natural cocycle of a generic decoration",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "natural cocycle",
+          "heading": true
+        },
+        {
+          "term": "truncated simplices",
+          "heading": false
+        },
+        {
+          "term": "decoration",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:NaturalCocycles} In this section, we introduce natural cocycles on $M$ arising from decorations. To define these we need two types of polyhedral decompositions of $M$, one by \\emph{truncated simplices} and one by \\emph{doubly truncated simplices}. We show that an $\\SL(n,\\C)/N$-decoration induces a natural cocycle on the truncated decomposition of $M$, and that a $\\PGL(n,\\C)/B$-decoration induces a natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-91-truncated-and-doubly-truncated-simplices",
+      "number": "9.1",
+      "title": "Truncated and doubly truncated simplices",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "truncated simplices",
+          "heading": true
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "minipage hfill",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "truncated simplex",
+          "heading": false
+        },
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition} A \\emph{truncated simplex} is a polyhedron obtained from a simplex by truncating its vertices. A \\emph{doubly truncated simplex} is a polyhedron obtained from a simplex by first truncating the vertices and then truncating the edges. \\end{definition} We refer to the edges of a truncated simplex as \\emph{long} and \\emph{short} edges, and the edges of a doubly truncated simplex as \\emph{long},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-92-cocycles",
+      "number": "9.2",
+      "title": "Cocycles",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "v0v1v",
+          "heading": false
+        },
+        {
+          "term": "truncated simplices",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": true
+        },
+        {
+          "term": "labeling scheme",
+          "heading": false
+        },
+        {
+          "term": "short edges",
+          "heading": false
+        },
+        {
+          "term": "middle edges",
+          "heading": false
+        },
+        {
+          "term": "distinct vertices",
+          "heading": false
+        },
+        {
+          "term": "v0v",
+          "heading": false
+        }
+      ],
+      "extract": "9.2. Cocycles. Let G be a group and let X be any space with a polyhedral decomposition. Deﬁnition 9.3. A G-cocycle on X is an assignment of elements in G to the oriented edges of X such that the product around each face is 1 ∈G and such that reversing the orientation of an edge replaces the labeling by its inverse. Deﬁnition 9.4. Let τ be a G-valued 0-cochain on X, i.e. a function from the vertices to G. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-93-the-natural-cocycle-of-a-generic-decoration",
+      "number": "9.3",
+      "title": "The natural cocycle of a generic decoration",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic decoration",
+          "heading": true
+        },
+        {
+          "term": "natural cocycle",
+          "heading": true
+        },
+        {
+          "term": "q1b",
+          "heading": false
+        },
+        {
+          "term": "counter diagonal",
+          "heading": false
+        },
+        {
+          "term": "g2b",
+          "heading": false
+        },
+        {
+          "term": "g1n",
+          "heading": false
+        },
+        {
+          "term": "long edges",
+          "heading": false
+        },
+        {
+          "term": "unique cochain",
+          "heading": false
+        }
+      ],
+      "extract": "decorations naturally give rise to cocycles on M. Deﬁnition 9.8. A pair (g0N, g1N) of N-cosets in SL(n, C) is suﬃciently generic if there exists a (necessarily unique) g ∈SL(n, C) such that (9.3) (g0N, g1N) = g(N, qN), with q counter-diagonal. A tuple is suﬃciently generic if it is pairwise suﬃciently generic. Let N −denote the lower triangular matrices in SL(n, C) with 1’s on the diagonal. 30 STAVROS GAROUFALIDIS,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-10-explicit-formulas-for-the-natural-cocycles",
+      "number": "10",
+      "title": "Explicit formulas for the natural cocycles",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ExplicitFormulas} We now show that the cocycle associated to a $\\PGL(n,\\C)/B$-decoration $D$ is determined by the shape assignment $\\mathcal Z(D)$. The reader should keep in mind the diagram~\\eqref{eqn:DiagramIntro}. Define \\begin{equation} \\begin{gathered} q(a_1,\\dots,a_n)=\\begin{pmatrix}&&a_n\\\\&\\iddots&\\\\a_1&&\\end{pmatrix},\\qquad d(a_1,\\dots,a_n)=\\begin{pmatrix}a_1&&\\\\&\\ddots&\\\\&&a_1\\end{pmatrix}\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-101-diamond-and-ratio-coordinates",
+      "number": "10.1",
+      "title": "Diamond and ratio coordinates",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "minipage hfill",
+          "heading": false
+        }
+      ],
+      "extract": "It is shown in Garoufalidis-Thurston-Zickert~\\cite{GaroufalidisThurstonZickert} that the short edges of the natural cocycle of a generic $\\SL(n,\\C)/N$-decoration are given by \\emph{diamond coordinates}, and that the long edges are given by ratios of two Ptolemy coordinates. We review these results below. \\begin{definition} Let $c$ be a Ptolemy assignment on $\\Delta_n^3$. For each vertex $v_0v_1v_2$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-102-x-coordinates",
+      "number": "10.2",
+      "title": "X-coordinates",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-coordinates",
+          "heading": true
+        },
+        {
+          "term": "εv0v1v",
+          "heading": false
+        },
+        {
+          "term": "v0v1v",
+          "heading": false
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "face point",
+          "heading": false
+        },
+        {
+          "term": "matthias goerner",
+          "heading": false
+        },
+        {
+          "term": "shape assignment",
+          "heading": false
+        },
+        {
+          "term": "dv0v1v",
+          "heading": false
+        }
+      ],
+      "extract": "ments. These are deﬁned for face points and agree with the X-coordinates of Fock and Goncharov [8, p. 133]. The natural A4 action on vertices of ∆has two orbits. Let εv0v1v2 ⟲ be a sign, which is positive if and only if v0v1v2 is in the orbit of 012. 34 STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT Deﬁnition 10.8. Let c be a Ptolemy assignment and let t ∈∆3 n(Z) be a face point. The X-coordinate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-103-from-natural-slncn-cocycles-to-natural-pglnc",
+      "number": "10.3",
+      "title": "From natural (SL(n,C),N)-cocycles to natural (PGL(n,C),B,H)-cocycles.",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 1130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dv0v1v",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": true
+        },
+        {
+          "term": "v0v1v",
+          "heading": false
+        },
+        {
+          "term": "βv0v1v",
+          "heading": false
+        },
+        {
+          "term": "generic pgl",
+          "heading": false
+        },
+        {
+          "term": "εv0v1v",
+          "heading": false
+        },
+        {
+          "term": "diamond coordinates",
+          "heading": false
+        },
+        {
+          "term": "natural cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "natural map π: SL(n, C) →PGL(n, C) induces a map from decorations by N-cosets to dec- orations by B-cosets. Given a generic SL(n, C)/N-decoration D on ∆3 n, we show how the natural (PGL(n, C), B, H)-cocycle Lαβγ(π(D)) can be obtained from the natural cocycle Lαβ(D) by the coboundary action (9.2) of an explicit coboundary given in terms of the di- amond coordinates. This deﬁnes the map τ in diagram (1.5) and gives",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-11-from-shape-assignments-to-cocycles",
+      "number": "11",
+      "title": "From shape assignments to cocycles",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape assignments",
+          "heading": true
+        },
+        {
+          "term": "one-one correspondences",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "prod n-k",
+          "heading": false
+        },
+        {
+          "term": "prod n-1-i",
+          "heading": false
+        },
+        {
+          "term": "mathcal alpha",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "face equations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ReconstructRep} We now prove that the bottom row of diagram~\\eqref{eqn:DiagramIntro} consists of one-one correspondences. The idea is to first prove that a shape assignment determines a natural cocycle on each doubly truncated simplex. This is a consequence of the internal gluing equations. The face and edge equations imply that the cocycles glue together to a cocycle on $M$; the middle edges glue",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-12-duality",
+      "number": "12",
+      "title": "Duality",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "txt ptolemy",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "mbox ptolemy",
+          "heading": false
+        },
+        {
+          "term": "shape coordinates",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "left txt",
+          "heading": false
+        },
+        {
+          "term": "duality",
+          "heading": true
+        },
+        {
+          "term": "mathcal coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Duality} In this section we make some observations about the relationship between the shape coordinates and the Ptolemy coordinates. Our observations suggest that there is a fundamental duality between the two sets of coordinates, which is interesting in its own right. We believe that this duality is a $3$-dimensional aspect of the duality (see Fock-Goncharov~\\cite[p.~33]{FockGoncharov}) between $\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-13-the-cusp-equations",
+      "number": "13",
+      "title": "The cusp equations",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "normalsize gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:CuspEquations} The decomposition of $M$ into doubly truncated simplices and prisms induces a polyhedral decomposition of $\\partial M$. Note that every simple closed curve in $\\partial M$ is isotopic to an edge path in this decomposition. Let $\\sigma$ be a natural $(\\PGL(n,\\C),B,H)$-cocycle on $M$. By Remark~\\ref{rm:NaturalLift}, the restriction of $\\sigma$ to $\\partial M$ has a canonical lift (also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-131-simplifying-the-cusp-equations",
+      "number": "13.1",
+      "title": "Simplifying the cusp equations",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{lemma} The cusp equations are equivalent to the equations \\begin{equation} \\label{eq:SimplifiedCuspEquation} \\prod_{j=1}^r\\frac{(\\beta_j)_{ll}}{(\\beta_j)_{l+1,l+1}}\\prod_{j=1}^s\\frac{(\\gamma_j)_{ll}}{(\\gamma_i)_{l+1,l+1}}=1. \\end{equation} Moreover, each factor is given by an expression of the form \\begin{equation}\\label{eq:Simplification}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-14-example-the-figure-eight-knot",
+      "number": "14",
+      "title": "Example: the figure-eight knot",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inkcol normalsize",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Example} Consider the triangulation of the figure-eight knot complement given in Figure~\\ref{fig:Fig8Ordered}. Figure~\\ref{fig:Figure8Cusp} shows the induced triangulation of the link of the ideal vertex and indicates two peripheral curves $\\mu$ and $\\lambda$ generating the peripheral fundamental group. These are \\emph{not} the standard meridian and longitude of the knot. The shape, respectively,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "davide gaiotto",
+          "heading": false
+        },
+        {
+          "term": "college park",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Nicolas Bergeron, Elisha Falbel, and Antonin Guilloux. Tetrahedra of ﬂags, volume and homology of SL(3). ArXiv:math.GT/1101.2742, 2011. [2] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language. J. Symbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993). [3] Marc Culler, Nathan M. Dunﬁeld, and Jeﬀery R. Weeks. SnapPy, a computer",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 2,
+        "items": [
+          "Thurston’s gluing equations: listed p2, found p8",
+          "Cocycles: listed p29, found p4"
+        ]
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 23"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "begin minipage",
+      "heading": false
+    },
+    {
+      "term": "minipage definecolor",
+      "heading": false
+    },
+    {
+      "term": "end minipage",
+      "heading": false
+    },
+    {
+      "term": "definecolor inkcol",
+      "heading": false
+    },
+    {
+      "term": "ptolemy assignment",
+      "heading": true
+    },
+    {
+      "term": "textcolor inkcol",
+      "heading": false
+    },
+    {
+      "term": "inkcol rgb",
+      "heading": false
+    },
+    {
+      "term": "inkcol normalsize",
+      "heading": false
+    },
+    {
+      "term": "simplex delta",
+      "heading": false
+    },
+    {
+      "term": "ptolemy coordinates",
+      "heading": true
+    },
+    {
+      "term": "emph ptolemy",
+      "heading": false
+    },
+    {
+      "term": "strut begin",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "An ordered, but not oriented triangulation of the ﬁgure 8 knot. No vertex ordering exists making the triangulation both ordered and oriented",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "An oriented, but not ordered triangulation of the ﬁgure 8 knot sister",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The shape parameters are given in terms of the shape coordinate z∆by (3.1)",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Subsimplices and shape parameters for n = 8",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Edge equations for n = 2 (traditional notation) and n = 5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A face equation for n = 6. The indicated face-pairing is encoded by the permutation σ = (0231) ∈S4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "An internal equation for n = 7",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Reordering by σ = (123)",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Pullback by σ = (123)",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Ptolemy relation for the subsimplex s = 0130",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Identiﬁcation of Ptolemy coordinates",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Local model near an edge point",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Local model near a face point",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The signs of the terms in β∗(∆, s, e)",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The signs of the terms in β∗◦β([(∆0, t0]) coming from ∆0",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Cancellation of terms in β∗◦β(p) for an edge point p",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "A truncated simplex",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "A doubly truncated simplex. Edge orientations induced by the orientation",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "A prism",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Diamond coordinates",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Ratio coordinates",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Factorization of a middle edge βv0v1v2 in terms of diamond coordiates",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "An X-coordinate as a quotient of two diamond coordinates",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Cancellations",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "A curve in the polyhedral decomposition of ∂M",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "The terms in the simpliﬁed cusp equations at level l",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "Generators of the peripheral fundamental group of the ﬁgure-eight knot complement. The indicated coordinates are those involved in the cusp equations at level l = 2 for n = 4",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Gluing equations for the ﬁgure-eight knot and n = 4",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 43,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 44,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "27 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p45); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 44 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1207.6711v1"
+  }
+}

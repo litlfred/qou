@@ -1,0 +1,1517 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2301.00125v3",
+  "title": "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Extended abstract",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-extended-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Set-up",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-set-up"
+    },
+    {
+      "level": 2,
+      "title": "Higher moments for the generalized Ulam's problem",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-higher-moments-for-the-generalized-ulams-prob"
+    },
+    {
+      "level": 2,
+      "title": "Motivation for exact solutions",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-motivation-for-exact-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Outline for the remainder of the paper",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-outline-for-the-remainder-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Pinsky's combinatorial second moment formula",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-pinskys-combinatorial-second-moment-formula"
+    },
+    {
+      "level": 1,
+      "title": "The diagonal (contour integral) method",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-the-diagonal-contour-integral-method"
+    },
+    {
+      "level": 1,
+      "title": "Main result",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-main-result"
+    },
+    {
+      "level": 1,
+      "title": "Summary and outlook",
+      "number": "5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "A Bonferroni inequalities and Bell polynomials",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-a-bonferroni-inequalities-and-bell-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "B Review of the physicists' replica approach to the SK model",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-b-review-of-the-physicists-replica-approach-to-t"
+    },
+    {
+      "level": 2,
+      "title": "B.1 Mathematical physics and probability developments",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-b1-mathematical-physics-and-probability-developm"
+    },
+    {
+      "level": 1,
+      "title": "C Roots of a class of quadratic equations",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-c-roots-of-a-class-of-quadratic-equations"
+    },
+    {
+      "level": 1,
+      "title": "D Contour integral alternative derivation of Lemma 2.2",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-d-contour-integral-alternative-derivation-of-lem"
+    },
+    {
+      "level": 1,
+      "title": "E Pochhamer identities for -1/2 and negative integers",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-e-pochhamer-identities-for--12-and-negative-inte"
+    },
+    {
+      "level": 1,
+      "title": "F Elementary proofs from the quadratic formula",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-f-elementary-proofs-from-the-quadratic-formula"
+    },
+    {
+      "level": 1,
+      "title": "G Elementary proofs from contour deformations",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-g-elementary-proofs-from-contour-deformations"
+    },
+    {
+      "level": 1,
+      "title": "H Proof of lemmas related to the residue theorem",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-h-proof-of-lemmas-related-to-the-residue-theorem"
+    },
+    {
+      "level": 1,
+      "title": "I Elliptic integrals and linear fractional transformations",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-i-elliptic-integrals-and-linear-fractional-trans"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pinsky",
+          "heading": false
+        },
+        {
+          "term": "ulam problem",
+          "heading": false
+        },
+        {
+          "term": "birmingham",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "nonnegative",
+          "heading": false
+        },
+        {
+          "term": "return",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2301.00125v3 [math.CO] 3 May 2023 Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd Bronx, NY 10468 Shannon Starr∗ Department of Mathematics University of Alabama at Birmingham University Hall, Room 4005 1402 Tenth Avenue South Birmingham, AL 35294-1241 slstarr@uab.edu January 19, 2023",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2301.00125v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-extended-abstract",
+      "number": "1.1",
+      "title": "Extended abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fontsize mathcal",
+          "heading": false
+        },
+        {
+          "term": "ulam problem",
+          "heading": false
+        },
+        {
+          "term": "generalized ulam",
+          "heading": false
+        },
+        {
+          "term": "uniform random",
+          "heading": false
+        },
+        {
+          "term": "pinsky",
+          "heading": false
+        },
+        {
+          "term": "srw",
+          "heading": false
+        },
+        {
+          "term": "weak law",
+          "heading": false
+        },
+        {
+          "term": "k-i",
+          "heading": false
+        }
+      ],
+      "extract": "In two papers Ross Pinsky considered a random variable $Z_{n,k}$ equal to the number of increasing subsequences of length $k$ in a uniform random permutation $\\pi \\in S_n$. That investigation may be called the ``generalized Ulam problem,'' because: if $L_n$ is the length of the longest increasing subsequence for a uniform random $\\pi \\in S_n$, then $\\left(L_n< k\\right) \\Leftrightarrow \\left(Z_{n,k}=0\\right)$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-set-up",
+      "number": "1.2",
+      "title": "Set-up",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 743,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ulam problem",
+          "heading": false
+        },
+        {
+          "term": "cite virag",
+          "heading": false
+        },
+        {
+          "term": "directed landscape",
+          "heading": false
+        },
+        {
+          "term": "leading-order fluctuations",
+          "heading": false
+        },
+        {
+          "term": "steele",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "hammersley",
+          "heading": false
+        }
+      ],
+      "extract": "{ Ulam's problem is a problem that involves a combination of tools and techniques from the intersection of various subfields and specialities in mathematics, statistics and physics. It has been studied by many top researchers. The main results are beautiful but diffficult. The depth of the results related to Ulam's problem is well-known. There are good reviews. See, for example, the review article of Aldous and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-higher-moments-for-the-generalized-ulams-prob",
+      "number": "1.3",
+      "title": "Higher moments for the generalized Ulam's problem",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ulam problem",
+          "heading": true
+        },
+        {
+          "term": "generalized ulam",
+          "heading": true
+        },
+        {
+          "term": "higher moments",
+          "heading": true
+        },
+        {
+          "term": "pinsky",
+          "heading": false
+        },
+        {
+          "term": "horse",
+          "heading": false
+        },
+        {
+          "term": "charalambides",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "k-i",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose one seeks information for the distribution of $Z_{n,k}$. The event that $Z_{n,k}>0$ is equal to the event that $L_n\\geq k$. Thus, finding the distribution of $Z_{n,k}$ generalizes Ulam's problem, so it can be called the ``generalized Ulam problem.'' The easy bounds above for the event $Z_{n,k}>0$ follows from Markov's bounds. But more precise bounds could in principle be obtained if we knew higher moments of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-motivation-for-exact-solutions",
+      "number": "1.4",
+      "title": "Motivation for exact solutions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin glass",
+          "heading": false
+        },
+        {
+          "term": "glass techniques",
+          "heading": false
+        },
+        {
+          "term": "higher moments",
+          "heading": false
+        },
+        {
+          "term": "ulam problem",
+          "heading": false
+        },
+        {
+          "term": "guerra",
+          "heading": false
+        },
+        {
+          "term": "generalized ulam",
+          "heading": false
+        },
+        {
+          "term": "occupation time",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        }
+      ],
+      "extract": "In theoretical physics and in the mathematical physics of spin glasses, one is interested in the precise form of the second moment and all higher moments, at least to leading order asymptotically as $n \\to \\infty$. Even though $\\mathbf{E}[Z_{n,k}^2]/(\\mathbf{E}[Z_{n,k}])^2$ may be too large to apply the Paley-Zygmund second moment method, one may be interested in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-outline-for-the-remainder-of-the-paper",
+      "number": "1.5",
+      "title": "Outline for the remainder of the paper",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moment generating",
+          "heading": false
+        },
+        {
+          "term": "pinsky",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "hopes",
+          "heading": false
+        },
+        {
+          "term": "ulam",
+          "heading": false
+        }
+      ],
+      "extract": "The moments of the generalized Ulam problem appear to have been investigated primarily by Ross Pinsky. We begin, in the next section, by stating Pinsky's precise combinatorial formula for the second moment. Then we calculate a generating function for the quantities that appear in Pinsky's decomposition, with hopes of returning later and extracting the precise asymptotics from the generating function. For us, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-pinskys-combinatorial-second-moment-formula",
+      "number": "2",
+      "title": "Pinsky's combinatorial second moment formula",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation varkappa",
+          "heading": false
+        },
+        {
+          "term": "cdot varkappa",
+          "heading": false
+        },
+        {
+          "term": "pinsky",
+          "heading": true
+        },
+        {
+          "term": "binom ell",
+          "heading": false
+        },
+        {
+          "term": "dots ell",
+          "heading": false
+        },
+        {
+          "term": "ell infty",
+          "heading": false
+        },
+        {
+          "term": "substack ell",
+          "heading": false
+        },
+        {
+          "term": "ell left",
+          "heading": false
+        }
+      ],
+      "extract": "{ In his paper \\cite{Pinsky1}, Pinsky calculated \\begin{equation} \\mathbf{E}\\left[Z_{n,k}^2\\right]\\, =\\, \\sum_{i=0}^{k}A(k-i,i)\\, B(n,2k-i), \\end{equation} where for any $N,j \\in \\{0,1,\\dots\\}$, we have \\begin{equation} B(N,j)\\, =\\, \\binom{N}{j} \\cdot \\frac{1}{j!}\\, , \\end{equation} and \\begin{equation} A(N,j)\\, =\\, \\sum_{\\substack{\\ell_0,\\dots,\\ell_j \\in \\{0,1,\\dots\\}\\\\ \\ell_0+\\dots+\\ell_j=N}}\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-the-diagonal-contour-integral-method",
+      "number": "3",
+      "title": "The diagonal (contour integral) method",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 1553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contour integral",
+          "heading": true
+        },
+        {
+          "term": "cdot sqrt",
+          "heading": false
+        },
+        {
+          "term": "sqrt xi-c",
+          "heading": false
+        },
+        {
+          "term": "oint mathcal",
+          "heading": false
+        },
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "setminus big",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:PinskyDiagonal} We now apply the diagonal method, based on a complex contour integral. Firstly, we obtain \\begin{equation} \\label{eq:alphaIntegral} \\oint_{\\mathcal{C}(0;1)} \\beta\\left(w\\, ,\\ x\\xi\\, ,\\ \\frac{y}{\\xi}\\right)\\, \\frac{d\\xi}{2\\pi i \\xi}\\, =\\, \\alpha(w,xy)\\, , \\end{equation} for sufficiently small $x$, $y$ and $w$. To state it again with the detailed formula, we have \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-main-result",
+      "number": "4",
+      "title": "Main result",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 2214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt r-c",
+          "heading": false
+        },
+        {
+          "term": "sqrt mathcal",
+          "heading": false
+        },
+        {
+          "term": "cdot sqrt",
+          "heading": false
+        },
+        {
+          "term": "equation mathcal",
+          "heading": false
+        },
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "r-i epsilon",
+          "heading": false
+        },
+        {
+          "term": "left widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Main} Using equations (\\ref{eq:Q2factorization}) and (\\ref{eq:alphaIntegralSevenEighths}), we know \\begin{equation} \\label{eq:alphaIntegralSevenEights} \\alpha(w,x^2)\\, =\\, \\oint_{\\mathcal{C}(0;1)} \\frac{w\\cdot \\xi+\\widetilde{g}(x;\\xi)} {x^2\\cdot \\big(\\xi - \\mathcal{A}_1(x,w)\\big)\\big(\\xi-\\mathcal{A}_2(x,w)\\big)\\big(\\xi-b_1(x,w)\\big)\\big(\\xi-b_2(x,w)\\big)}\\, \\cdot \\frac{d\\xi}{2\\pi i}\\, . \\end{equation} We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-summary-and-outlook",
+      "number": "5",
+      "title": "Summary and outlook",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pinsky",
+          "heading": false
+        },
+        {
+          "term": "min frac",
+          "heading": false
+        },
+        {
+          "term": "carried out",
+          "heading": false
+        },
+        {
+          "term": "collaboration",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "precise asymptotics",
+          "heading": false
+        },
+        {
+          "term": "researchers",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "We have presented some explicit formula for the generating function of the combinatorial array $A(N,j)$. This arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment of $Z_{n,k}$ from the generalized Ulam problem. Pinsky then obtained rigorous upper and lower bounds, sufficient for his purpose of determining when the sequence $Z_{n,{k_n}}$ satisfies a weak law of large numbers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-a-bonferroni-inequalities-and-bell-polynomials",
+      "number": null,
+      "title": "A Bonferroni inequalities and Bell polynomials",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bonferroni inequalities",
+          "heading": true
+        },
+        {
+          "term": "bell polynomials",
+          "heading": true
+        },
+        {
+          "term": "charalambides",
+          "heading": false
+        },
+        {
+          "term": "cardinality subsequences",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "pie",
+          "heading": false
+        },
+        {
+          "term": "πia",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        }
+      ],
+      "extract": "Bonferroni inequalities and Bell polynomials The principle of inclusion-exclusion (PIE) and the associated inequalities related to the PIE are a well-known topic at the intersection of combinatorics and probability theory. We will follow the exposition from the textbook of Charalambides [11] which we appreciate, greatly. The descriptions there are clear, and also suﬃciently complete to be useful to newcomers. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-b-review-of-the-physicists-replica-approach-to-t",
+      "number": null,
+      "title": "B Review of the physicists' replica approach to the SK model",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 1009,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "replica",
+          "heading": true
+        },
+        {
+          "term": "van hemmen",
+          "heading": false
+        },
+        {
+          "term": "replica symmetry",
+          "heading": false
+        },
+        {
+          "term": "physicists",
+          "heading": true
+        },
+        {
+          "term": "normal random",
+          "heading": false
+        },
+        {
+          "term": "palmer",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "random function",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that for each pair i, j ∈N = {1, 2, . . .} there is a standard normal random variable Ji,j, such that all the Ji,j’s are independent. Then, for each N ∈N, the N-spin Sherrington-Kirkpatrick Hamiltonian is a random function HN : {+1, −1}N →R , by the formula HN(σ) = − N i=1 N j=1 Ji,j √ 2N σiσj , (132) for each σ = (σ1, . . . , σN) ∈{+1, −1}N. Originally, the simplest question that phyicists sought to answer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-b1-mathematical-physics-and-probability-developm",
+      "number": null,
+      "title": "B.1 Mathematical physics and probability developments",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parisi ansatz",
+          "heading": false
+        },
+        {
+          "term": "aizenman",
+          "heading": false
+        },
+        {
+          "term": "ulam problem",
+          "heading": false
+        },
+        {
+          "term": "replica symmetry",
+          "heading": false
+        },
+        {
+          "term": "derrida",
+          "heading": false
+        },
+        {
+          "term": "panchenko",
+          "heading": false
+        },
+        {
+          "term": "guerra",
+          "heading": false
+        },
+        {
+          "term": "random energy",
+          "heading": false
+        }
+      ],
+      "extract": "Mathematical physics and probability developments Years later, a major step was taken in describing this approach by Bernard Derrida, as in [13] and [14], using the Random Energy Model, which is an example of a problem related to extreme value statistics, as arises in the Gumbel distribution, for example. Then Aizenman, Lebowitz and Ruelle [2] as well as Ruelle [31], gave further perspectives, including by bringing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-c-roots-of-a-class-of-quadratic-equations",
+      "number": null,
+      "title": "C Roots of a class of quadratic equations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadratic",
+          "heading": true
+        },
+        {
+          "term": "roots",
+          "heading": true
+        },
+        {
+          "term": "gather",
+          "heading": false
+        }
+      ],
+      "extract": "Roots of a class of quadratic equations The elementary results of this appendix are used several times throughout the calculations in subsequent sections. So we gather the notation, here. For a quadratic equation of the form ξ2 + 1 −κξ = 0 , (144) where κ ∈R, the quadratic formula for the roots gives ξ± = κ ± √ κ2 −4 2 , (145) which in turn can be written as ξ± = 1 4 \u0000√ κ + 2 ± √ κ −2 \u00012 , (146) if we know that κ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-d-contour-integral-alternative-derivation-of-lem",
+      "number": null,
+      "title": "D Contour integral alternative derivation of Lemma 2.2",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x2y",
+          "heading": false
+        },
+        {
+          "term": "πiζ",
+          "heading": false
+        },
+        {
+          "term": "πiξ",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": true
+        }
+      ],
+      "extract": "Contour integral alternative derivation of Lemma 2.2 By the equation (28) we may write γ(2)(x2, y2) = I C(0;1) I C(0;1) γ(xξ, yζ)γ \u0012x ξ , y ζ \u0013 dξ 2πiξ · dζ 2πiζ , (149) which may be rewritten as γ(2)(x2, y2) = I C(0;1) I C(0;1) 1 1 −(xξ + yζ) · 1 1 −(xξ−1 + yζ−1) · dξ 2πiξ · dζ 2πiζ . (150) This may be rewritten as γ(2)(x2, y2) = −1 4π2 I C(0;1) I C(0;1) 1 1 −(xξ + yζ) · 1 ξζ −(xζ + yξ) dξ dζ . (151) Let us ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-e-pochhamer-identities-for--12-and-negative-inte",
+      "number": null,
+      "title": "E Pochhamer identities for -1/2 and negative integers",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k4n",
+          "heading": false
+        },
+        {
+          "term": "multinomial coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "left-hand-side",
+          "heading": false
+        },
+        {
+          "term": "apl",
+          "heading": false
+        },
+        {
+          "term": "simpliﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "Here we state what needs to be used to derive the equivalence of (35) and (36). Note that (−1/2)n = \u0012 −1 2 \u0013 \u0012 −3 2 \u0013 · · · \u0012 −1 + 2(n −1) 2 \u0013 , (163) which equals (−1/2)n = (−1)n 2n (1) (3) · · · (2n −1) , (164) which in turn may be rewritten as (−1/2)n = (−1)n 2n · (2n)! (2)(4) · · · (2n) = (−1)n 22n · (2n)! n! . (165) This well-known fact is easily found, for example on Wikipedia it can be deduced from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-f-elementary-proofs-from-the-quadratic-formula",
+      "number": null,
+      "title": "F Elementary proofs from the quadratic formula",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadratic formula",
+          "heading": true
+        },
+        {
+          "term": "elementary",
+          "heading": true
+        },
+        {
+          "term": "elementary lemmas",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": true
+        },
+        {
+          "term": "assumed",
+          "heading": false
+        },
+        {
+          "term": "roots",
+          "heading": false
+        }
+      ],
+      "extract": "Elementary proofs from the quadratic formula Here we state the proofs of elementary lemmas in Section 3 which rely mainly on the quadratic formula for the roots of a quadratic equation in a single variable. We prove the elementary lemmas, using the notation introduced in Section C. Proof of Lemma 3.2: The two factors in (46) are \u0000x · (ξ2 + 1) −(1 + 2x)ξ \u0001 and \u0000x · (ξ2 + 1) −(1 −2x)ξ \u0001 . (174) So the roots of Q1(x;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-g-elementary-proofs-from-contour-deformations",
+      "number": null,
+      "title": "G Elementary proofs from contour deformations",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contour",
+          "heading": true
+        },
+        {
+          "term": "continuous across",
+          "heading": false
+        },
+        {
+          "term": "elementary",
+          "heading": true
+        },
+        {
+          "term": "deformations",
+          "heading": true
+        }
+      ],
+      "extract": "Elementary proofs from contour deformations Here we will prove Lemmas 3.6 and 3.7. Proof of Lemma 3.6: Note that if ξ ∈(c2(x), d1(x)) then by Lemma 3.4 we have c1(x) < c2(x) < ξ < d1(x) < d2(x) . (214) Therefore, for D1 as in Remark 2.3, ∀ξ ∈(c2(x), d1(x)) , we have ξ −c1(x) , ξ −c2(x) , d1(x) −ξ , d2(x) −ξ ∈D1 . (215) Similarly, if ξ ∈C \\ R then we also have the conditions on the right-hand-side of (215) because",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-h-proof-of-lemmas-related-to-the-residue-theorem",
+      "number": null,
+      "title": "H Proof of lemmas related to the residue theorem",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 1352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiθ converges",
+          "heading": false
+        },
+        {
+          "term": "contour integral",
+          "heading": false
+        },
+        {
+          "term": "upper half-plane",
+          "heading": false
+        },
+        {
+          "term": "lemmas",
+          "heading": true
+        },
+        {
+          "term": "eck",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "limits",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of lemmas related to the residue theorem Proof of Lemma 4.1: For any ǫ ∈(0, b1(x, w) −1), the integrand, I(ξ) = w · ξ + eg(x; ξ) x2 · \u0000ξ −A1(x, w) \u0001\u0000ξ −A2(x, w) \u0001\u0000ξ −b1(x, w) \u0001\u0000ξ −b2(x, w) \u0001 · 1 2πi , (226) is analytic in the open domain U(0; 1 + δ) \\ \u0010 {A1(x, w), A2(x, w)} ∪[c1(x), c2(x)] \u0011 . The value of the contour integral is independent of the choice of rectiﬁable arc/contour, or in our case, independent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-i-elliptic-integrals-and-linear-fractional-trans",
+      "number": null,
+      "title": "I Elliptic integrals and linear fractional transformations",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 35,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 1862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elliptic integrals",
+          "heading": true
+        },
+        {
+          "term": "linear fractional",
+          "heading": true
+        },
+        {
+          "term": "michael aizenman",
+          "heading": false
+        },
+        {
+          "term": "fractional transformations",
+          "heading": true
+        },
+        {
+          "term": "spin glass",
+          "heading": false
+        },
+        {
+          "term": "glass model",
+          "heading": false
+        },
+        {
+          "term": "bernard derrida",
+          "heading": false
+        },
+        {
+          "term": "michael steele",
+          "heading": false
+        }
+      ],
+      "extract": "Elliptic integrals and linear fractional transformations From equation (85) we know that we may write A2(x, w) as A2(x, w) = 1 π Z c2(x) c1(x) 1 p −Q1(x; r) · Q1(x; r) Q2(x, w; r) dr , (243) where we have written the square-root of the quartic in the denominator, which is what is typically done for elliptic integrals. The next step for elliptic integrals is to use linear fractional transformations to bring the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ross pinsky",
+      "heading": false
+    },
+    {
+      "term": "pinsky combinatorial",
+      "heading": true
+    },
+    {
+      "term": "cite pinsky",
+      "heading": false
+    },
+    {
+      "term": "pinsky proved",
+      "heading": false
+    },
+    {
+      "term": "ulam problem",
+      "heading": true
+    },
+    {
+      "term": "equation mathcal",
+      "heading": false
+    },
+    {
+      "term": "begin equation",
+      "heading": false
+    },
+    {
+      "term": "end equation",
+      "heading": false
+    },
+    {
+      "term": "generalized ulam",
+      "heading": true
+    },
+    {
+      "term": "equation varkappa",
+      "heading": false
+    },
+    {
+      "term": "equation because",
+      "heading": false
+    },
+    {
+      "term": "mathbf big",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Schematic for the standard square-root function on the open domain of C with branch cut along",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A schematic picture – it is not to scale but it does accurately depict the order of points – for the branch cuts and poles of the integral in (72). The conﬁguration of points and branch cuts is shown assuming u, t ∈(0, 1) are suﬃciently small. The poles are at a1(x, w), a2(x, w), b1(x, w) and b2(x,",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A schematic of the contours after deformation as used in the proof of Lemma 4.1. The positively oriented circular contours Γ1(δ) and Γ2(δ) are of radius δ, centered at the poles a1(x, w) and a2(x, w). The branch cut along the real axis interval from c1(x) to c2(x) is enclosed by the contour Γ3(δ) wh",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The branch cuts for the function eg(x; ·) are shown on the left, which is an analytic continuation of",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Consideration of the phase of the function, eg(x; ξ) =",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "This is a schematic of the ultrametic block-matrix structure for a Q matrix with 2 levels of replica symmetry breaking (or 2 RSB). This type of matrix is parametrized by the numbers 0 ≤q0 < q1 < q2 ≤1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2301.00125v3"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.1873v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+  "contains": [
+    "library/arxiv-0905.1873v2/sections/page-001",
+    "library/arxiv-0905.1873v2/sections/page-002",
+    "library/arxiv-0905.1873v2/sections/page-003",
+    "library/arxiv-0905.1873v2/sections/page-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group — 4 sections: Page 1; Page 2; Page 3\n\n**Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group**\n\n*E.D. Jurgenson,1 P. Navrátil,2 and R.J. Furnstahl1*\n\n4 pp, 4 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0905.1873&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0905.1873v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0905.1873v2.pdf",
+    "source_sha256": "d4f785469fafdce623d67c1af8806a081307d3b6b20de52642739e9f38aa66d2",
+    "pages": 4,
+    "arxiv": {
+      "id": "0905.1873",
+      "version": "2",
+      "primary_class": "nucl-th",
+      "stamp_date": "17 Aug 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

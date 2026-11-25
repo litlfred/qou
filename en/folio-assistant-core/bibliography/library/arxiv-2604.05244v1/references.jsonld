@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2604.05244v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Edge universality in Floquet sideband spectra",
+      "dcterms:creator": [
+        "Tierz, Miguel"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2604.05244",
+      "dcterms:abstract": "We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi edge are governed by the discrete Bessel kernel—an exact result at any drive amplitude A. In the large-amplitude regime the edge of this kernel converges, on the A1/3 scale, to the Airy kernel of random matrix theory. This universality has a direct transport consequence: the deficit of the photo-assisted shot-noise slope from its high-bias plateau collapses onto the Airy-kernel diagonal. The deriva- tion rests on a bridge between the linear detection chain and the Floquet scattering matrix: commensurate gating isolates a single coherence-order block of the one-body correlator. We identify the crossover temperature below which the Airy scaling is sharp, extend the analysis to biased two-terminal occupations, and argue that multi-tone drives make Pearcey-kernel cusps accessible in Floquet–Sambe space.",
+      "dcterms:source": "library/arxiv-2604.05244v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2604.05244v1"
+    }
+  ]
+}

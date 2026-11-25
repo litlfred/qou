@@ -1,0 +1,6448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1511.05628v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1511.05628v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1511.05628v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1511.05628v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1511.05628v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;k k&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;onthechoiceofk-throotsθiofzi.Thenexttheoremimpliesthatτ&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;Theorem2.2.Wehaveτ&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;Remark2.3.Itiseasytoseethatτ&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;k/τ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;(ζ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;3(k&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-2&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;text&quot;: &quot;( ℏ&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;τ&quot;
+      },
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;φK,ζ(ℏ) = τ&quot;
+      },
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;unctionofanassociated3dN=2theoryT[M]onalensspaceL(k, 1)≃S3/Z&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-4&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;k(1+ 2πi ℏ)ZB−1ν+&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;Conjecture(2)atζ= e&quot;
+      },
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;Conjecture(2)atζ= e2πiα= e&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;n!Bn(1)Li&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;ℏLi&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;UsingLi&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;UsingLi2(e−(Z∗+δZ)) = Li&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;8−π&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;k ℏLi&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;kLi&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;hyperbolicvolumeofamanifoldMwithNeumann-Zagierdatumγ,moduloπ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;π&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;24\u0001a&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;a1, a&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-1&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;+ (158817619 + 22023535α + 44886912α2)ζ3&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;−31168064α + 54414583α2+ (3905252 −48974302α + 103510169α2)ζ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-9&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;· 6029 · 54583 · 7275369969656838010303 · 8746524744220626866965904589334067&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;ε&quot;
+      },
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;β&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-1&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;6· ℘7 · ℘7357 ℘26 = 2 ℘7 = (−α2 + α + 1)ζ −1 ℘7357 = (−2α2 −3α + 3)ζ + 2α2 + 1&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;19&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;26· 11&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;26· 112· 971&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;212· 101 · 181&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;ε&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;ε2= −α&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;℘11= α&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;ε3= (−4α&quot;
+      },
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;ε3= (−4α2+ 2α + 4)ζ −4α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε4= −2αζ −2α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘21377= (4α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘21377= (4α2−2α + 1)ζ −4α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε4= (2α + 2)ζ + 3α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘373= (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘373= (−α2−2α + 1)ζ + α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−α2+ 3α)ζ3+ (−2α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−α2+ 3α)ζ3+ (−2α2+ α)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−α2+ 3α)ζ3+ (−2α2+ α)ζ2+ (2α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−α2+ 3α)ζ3+ (−2α2+ α)ζ2+ (2α2−α)ζ −α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘9491= (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘9491= (−α2+ 2)ζ3+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘9491= (−α2+ 2)ζ3+ (−α2+ α + 1)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘1227271= (2α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘1227271= (2α2+ 1)ζ3−ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘1227271= (2α2+ 1)ζ3−ζ2+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−5α −4)ζ3+ (10α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−5α −4)ζ3+ (10α2−10α −3)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−5α −4)ζ3+ (10α2−10α −3)ζ2+ (20α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε5= (−5α −4)ζ3+ (10α2−10α −3)ζ2+ (20α2−10α −2)ζ + 12α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7121= (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7121= (−α2+ α −1)ζ3+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7121= (−α2+ α −1)ζ3+ (−α2+ α −1)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7951= (α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7951= (α2−α + 1)ζ3+ (α + 1)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7951= (α2−α + 1)ζ3+ (α + 1)ζ2+ (α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘7951= (α2−α + 1)ζ3+ (α + 1)ζ2+ (α2−1)ζ + α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε6= (−24α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε6= (−24α2−12α + 4)ζ −6α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘709= (α + 1)ζ −2α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘2689= (α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;℘2689= (α2+ 2α −3)ζ −3α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε6= (α&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ε6= (α2−1)ζ −α&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;3· ℘47389590553 ℘23 = ζ3 + 1 ℘47389590553 = (−5α2 + 5α)ζ3 + (4α2 −α)ζ2 + (4α2 + 2α −3)ζ + α2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε7= (318981244103α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−52797766935255α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−29477571352182α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(13260713424737α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(13260713424737α2+ 18581482784028α + 6470257562608)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−29079808246903α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;52974788170701α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘43= (α −1)ζ5+ αζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘6007111235971721= (4α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘6007111235971721= (4α2+ 6α −7)ζ5+ (5α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘6007111235971721= (4α2+ 6α −7)ζ5+ (5α2+ 4α −3)ζ4+ (8α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(3α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(3α2+ 5α −6)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(3α2+ 5α −6)ζ2+ (2α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(3α2+ 5α −6)ζ2+ (2α2+ α −5)ζ + 6α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε7= (349α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε7= (349α2+ 119α −176)ζ5+ (439α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε7= (349α2+ 119α −176)ζ5+ (439α2−196α −450)ζ4+ (60α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(185α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(185α2+ 42α + 52)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(185α2+ 42α + 52)ζ2+ (555α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(185α2+ 42α + 52)ζ2+ (555α2−154α −278)ζ + 279α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘38543= (−α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ5+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ5+ (−α2+ 1)ζ4+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ5+ (−α2+ 1)ζ4+ (−α2−α + 1)ζ3+ (−2α + 1)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘215990584223= (−3α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘215990584223= (−3α2−1)ζ5+ (−5α −3)ζ4+ (2α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−α2−1)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−α2−1)ζ2+ (−3α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε8= (−41580α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε8= (−41580α2+ 32068α + 49052)ζ3+ (−4418α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε8= (−41580α2+ 32068α + 49052)ζ3+ (−4418α2+ 43620α + 32476)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(35332α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(35332α2+ 29620α −3124)ζ + 54385α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘17= ζ −α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘113= (α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘113= (α2−α)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘7537= (α −1)ζ3+ (−α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘7537= (α −1)ζ3+ (−α2+ α)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘7537= (α −1)ζ3+ (−α2+ α)ζ2+ α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘30133993= (α −1)ζ3+ (−2α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘30133993= (α −1)ζ3+ (−2α2+ 2α −2)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;℘30133993= (α −1)ζ3+ (−2α2+ 2α −2)ζ2+ (2α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε8= (−245132α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ε8= (−245132α2+ 447868α −364300)ζ3+ (−888194α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;45132α2+ 447868α −364300)ζ3+ (−888194α2+ 1592676α −1214108)ζ&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−1010964α&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;(−1010964α2+ 1804516α −1352708)ζ −541525α&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p036-1&quot;,
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;· ℘389· ℘829 ℘2 = (−1/2α4 −1/2α2 −1/2α + 1/2)ζ −1/2α4 −1/2α2 −3/2α + 1/2 ℘389 = (−α4 + α3 −3α + 2)ζ −α4 + α3 −α2 −3α + 2 ℘829 = (−3/2α4 + α3 −3/2α2 −7/2α + 3/2)ζ −1/2α4 + 1/2α2 −3/2α + 3/2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;x5−x4+ x3+ 2x&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;−10α4+ 8α3−7α&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;−4α4+ 10α3−10α&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;2&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;2 · 3&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;2&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;24· 7&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;· ℘3&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;℘2= −α4+ α3−α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;℘3&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε2= α4−α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;℘2= −α4+ α3−α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε3= (α4+ α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε3= (α4+ α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε3= (α4+ α2+ 3α)ζ + α4−α3+ α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;℘18217= (α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;℘18217= (α2+ α + 2)ζ + α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;ε4= (97/2α4−36α3+ 55/2α&quot;
+      },
+      {
+        &quot;page&quot;: 36,
+        &quot;context&quot;: &quot;37/2α4−13α3−15/2α&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-029&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;−π2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-3&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;ℏ)fB−1ν&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-5&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;kℏZB−1AZ&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-6&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;π2 ℏ)−2πi&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-7&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;text&quot;: &quot;−Zi ℏ ℏ&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-2&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;π2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-2&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;fB−1ν&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-3&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;kZ∗B−1ν&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-4&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;−s&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-2&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;− (−149267670 −54779388α + 17355247α2)ζ4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-3&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;−(−80916790 −45810663α + 37182537α2)ζ5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;709&quot;,
+    &quot;text&quot;: &quot;· 2689&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-2&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;432&quot;,
+    &quot;text&quot;: &quot;· 6007111235971721&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-3&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;· 113 · 7537 · 30133993&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-4&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;· 35023 · 17090197144904885763873428788615162336954707155761&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-5&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;61&quot;,
+    &quot;text&quot;: &quot;· 271 · 5728621 · 5533526674625134504126790661929671&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-6&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;72&quot;,
+    &quot;text&quot;: &quot;· 17 · 6709259559659307953 · 10201336785134943810833&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-7&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;281&quot;,
+    &quot;text&quot;: &quot;· 3821 · 3989122481 · 3748225906180094225903982496437822401&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-8&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;· 72 · 211 · 337 · 913753 · 2082346663352803·&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p027-1&quot;,
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;· ℘43 ℘7 = (−α2 + 1)ζ −α2 + α ℘43 = 2ζ + α + 1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-027&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-1&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;216&quot;,
+    &quot;text&quot;: &quot;· 337 · 54673 · 55181281 · 16869371249354588848817 · 2300418425808890616155725510116534231121&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-2&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;· 32 · 29 · 101&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-3&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;text&quot;: &quot;· 28541 · 1731399041&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-4&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;· 31 · 11059 · 171043&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-5&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;· 1972 · 218454864083787040860053&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-6&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;214&quot;,
+    &quot;text&quot;: &quot;· 241 · 3361 · 1003193 · 15946313&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-7&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;text&quot;: &quot;· 313 · 101 · 74098513175515361398321&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-8&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;text&quot;: &quot;· 1917210263 · 869440556615693617955386097 · 3945088199088552145275994613&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-9&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;210&quot;,
+    &quot;text&quot;: &quot;· 32 · 61 · 73 · 229 · 483950196831635581064375269&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-10&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;212&quot;,
+    &quot;text&quot;: &quot;· 23031231430410673 · 6254905477428365514627650788018899766459&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-11&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;61&quot;,
+    &quot;text&quot;: &quot;· 96331 · 4470070545691 · 144159618930221245901711143825031366430385501494972724861589731&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-12&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;228&quot;,
+    &quot;text&quot;: &quot;· 72 · 764993 · 13057776577 · 3859919412481173535559894253284600362010320636824481&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p037-1&quot;,
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;819&quot;,
+    &quot;text&quot;: &quot;α4 + 379α3 −515α2 + 312α + 74 β5 = ℘31 · ℘28541 · ℘1731399041 ℘31 = (−α4 + α3 −α2 −2α + 2)ζ3 + (−α4 + α3 −α2 −2α + 2)ζ2+ (−α4 + α3 −α2 −2α + 1)ζ −α4 + α3 −α2 −2α + 2 ℘28541 = (α4 −α3 + α2 + α −2)ζ3 + (α4 + 2α)ζ + 2α4 −α3 + α2 + 5α −2 ℘1731399041 = −α2ζ3 + (2α4 −α2 + 3α)ζ2 + (3α4 + α3 −α2 + 4α)ζ + 3α3 −α2 −α + 3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-029&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p038-1&quot;,
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;· 3 · 317089 · 618610957 · 16597704247 · 17781027987117308670607579&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-029&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p038-2&quot;,
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;892&quot;,
+    &quot;text&quot;: &quot;· 193 · 113664060425758850100362844843557553491441831726215669353830969&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1511.05628v1/blocks/prose-sec-029&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;levelk,whereζ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The5&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tantsorlevels(k, σ) ∈(Z, C)[Wit91],andtheseriesφγ,ζ(ℏ)atζ= e&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z[q±1]coloredbytheN-dimensionalirreduciblerepresentationofsl&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;α 7→J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K(α) = JK,den(α)(e&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;/c) = c when c &gt; 0 and a, c are coprime.Obviously, we have J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;K(α) = J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;c).LetX→∞in&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∼J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;φK,k(0) = φK,1(0)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;whereφK,&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whereφK,1(0)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;author[Gar08].Indeed,when(a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;⟨K⟩N= J&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼N&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∼N3/2eNV/(2πi)φK,&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(b)An N-tuple z= (z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot; z= (z1, ..., zN) ∈C\\{0, 1} of shape parameters, with each z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i)Bji= (−1)ν&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;θ−(B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;θ−(B−1Am)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;am(θ) = e−iπ m·B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;i; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζ−sx)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζsx)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;kN/2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;z)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;z)z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;z)zf′′/k&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;onthechoiceofk-throotsθiofzi.Thenexttheoremimpliesthatτ2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Theorem2.2.Wehaveτ2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;γ,k∈F&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Remark2.3.Itiseasytoseethatτ2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k/τ 2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;K.Foranillustration,seeSection&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;m∈(Z/kZ)N&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;m∈(Z/kZ)Na&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;m∈(Z/kZ)Nam(θ)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;m∈(Z/kZ)N&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;m∈(Z/kZ)Na&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;N).AssumingthatHisinvertible,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;N).AssumingthatHisinvertible,aformalpowerseries&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2xT H&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2xT H&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ℏn−1(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζm+sθ−1)x&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;n!j!k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;8k&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Sγ,n+1,kℏ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;γ,ζ(ℏ)areinF&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;γ,ζ(ℏ) depends on γ, the&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;unityinsteadofζ=e&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;8k&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li2−n(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li2−n(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2k(B−1ν)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li1−n(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li1−n(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li−n(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li−n(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(−1)jℏ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;whereB&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;whereBn(x)aretheBernoullipolynomials,deﬁnedbytext/(e&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n≥0B&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;n≥0Bn(x)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n≥0Bn(x)t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;onlydependsonm,θthroughthecombinationζ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;onlydependsonm,θthroughthecombinationζm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i′Π&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i(Πii)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;i(Πij)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;implicitlysummedfrom1toN;andcoeﬀ[f(ℏ),ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;licitlysummedfrom1toN;andcoeﬀ[f(ℏ),ℏk]denotesthecoeﬃcientofℏ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(s&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;8k&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −ζ−m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −ζ−mi−sθ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;therverticescontributeonlyatleadingorder;abbreviating˜θi=ζ−m&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= (1 −ζ−m&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= (1 −ζ−mi−sθ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2k(B−1ν)&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;contribute,collectingthecoeﬃcientofℏ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;largen,weexpectthatn!2C&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•ThedefaultandthecanonicalSnapPytriangulationofthe5&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;•ThedefaultandthecanonicalSnapPytriangulationofthe52and6&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;that(τγ,k)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;that(τγ,k)12&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;12andeℏ/24&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;suﬃcientlygenericand3∤k)thentopologicalinvarianceof(τk)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;suﬃcientlygenericand3∤k)thentopologicalinvarianceof(τk)12&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2.2impliestopologicalinvarianceof(τk)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2.2impliestopologicalinvarianceof(τk)4&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;edovertheset(Z/kZ)N.Thiswasobservedin[GZ]andusesthefactthatθ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;am+ej(θ)= ϵ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2(mT B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;e±πiB−1ν·(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+ej)±B−1ν·(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(σjθi)−(B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(σjθi)−(B−1Am)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;i; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;i; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;e±πiB−1ν·(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;e±πiB−1ν·(m+ej)= (termindependentof&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2(mT B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+ej)±B−1ν·(m+e&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+ej)±B−1ν·(m+ej))= ζ−(B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2((m+ej)T B−1A(m+ej)±B−1ν·(m+ej))= ζ−(B−1Am)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ej)T B−1A(m+ej)±B−1ν·(m+ej))= ζ−(B−1Am)j× (termindependentof&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(σjθi)−(B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(σjθi)−(B−1Am)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;= ζ(B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;= ζ(B−1Am)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;j; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;j; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;i; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;i; ζ)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;= e&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;= ϵ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;satisﬁesEquation(33),thenAv(f(−, θ)) ∈F&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;tionsofvaluesofthepolylogarithmLil(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tionsofvaluesofthepolylogarithmLil(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;i)for&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i)forl&lt;0.Sincethepolylogarithmis&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;rational function, and ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;rational function, and ζm&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Dk(ζx) = Dk(x)(1 −x)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 −x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k(x)(1 −x)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;k(ζ−1&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1 −x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k(x) =(1 −x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k(x) =(1 −xk)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u0010Q&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u00121 −x&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζ−sx)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(1 −ζs−kx)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζsx)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(1 −ζsx)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(−ζx)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;(−ζx)s(1 −ζ−sx−1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;σjP&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;σjPk(θ) = ϵj(θ)−kP&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Combined,theyshowthatS&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Combined,theyshowthatSk(θ)P&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Combined,theyshowthatSk(θ)Pk(θ)∈F&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;k(σ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;k(σ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;σjP&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;j)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Ontheotherhand,θ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;M(A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;8πiICS(A∗) + δ(A∗) log&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ray-Singer torsion twisted by the ﬂat connection A and the S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Moreover,ifM=S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;functionofanassociated3dN=2theoryT[M]onalensspaceL(k, 1)≃S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;s b →0 the partition function of T[M] on a sphere L(1, 1) ≃S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;oftheform(40),whoseleadingexponentialtermis&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Zℏ[∆](Z&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n!B&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2Li&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;12Li&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= log(z&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= log(zi) for all&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;8ℏ)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)mB−1A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ℏ[∆](Z&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ℏ[∆](Zi, m&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kZ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ℏ[∆](Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ℏ[∆](Zi, m&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li2−n(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li2−n(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li2−n(ζmi+se−Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n!B&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;k ℏLi2(e−Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li1(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li1(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li1(ζmi+se−Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kLi2(e−Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;kLi2(e−Zi)isindependentof&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kLi2(e−Zi)isindependentofm&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;exp&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ℏ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ℏn−1(−δZ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ℏn−1(−δZi)&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Li2−n−j(ζm&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i+ δZ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i+ δZi, m&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(46)as&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;isthecoeﬃcientof(δZi)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;wherewehaveusedthatLi&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζm&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;s=1(1 −ζmi+s&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)mB−1A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −ζm&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;z′)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;z′)z&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;z′)zf′′/k&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(1 −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −ζm&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2mB−1νθ−B−1A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;24&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;24k\u0001a&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;6kℏ\u0001a&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;a&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;a1, a2, a&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;= εK,kβ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;FK(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;FK(ζk)(analgebraicunit)andβK,k∈FK(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;OFK(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;OFK(ζk)= p&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;OFK(ζk)= pe&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1. . .&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;1. . . p&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;1. . . pe&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;byk,andiftheprimeidealsareprincipalp&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;/β&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;oneexample,the5&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;oneexample,the52knotwithk=7.5&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;neexample,the52knotwithk=7.52isahyperbolicknotwithtraceﬁeldF&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x3−x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F5&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;7,&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= −42626237 −31168064α + 54414583α&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;37 −31168064α + 54414583α2+ (3905252 −48974302α + 103510169α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘43= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘6007111235971721= (4α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘6007111235971721= (4α2+ 6α −7)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7+ (5α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;7+ (5α2 + 4α −3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7+ (8α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;7+ (8α2 + α −8)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(3α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(3α2+ 5α −6)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7+ (2α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;7+ (2α2 + α −5)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7+ (2α2 + α −5)ζ7+ 6α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;43· ℘6007111235971721∈F&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;43· ℘6007111235971721∈F7andε&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;7,6/β&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;= ε7β&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;whereε&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;7is&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε7= (318981244103α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε7= (318981244103α2+ 40488788528803α + 30382313828818)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−52797766935255α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−52797766935255α2+ 38212176617858α + 58931813581928)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−29477571352182α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−29477571352182α2−1263424293533α + 15843777055057)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(13260713424737α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(13260713424737α2+ 18581482784028α + 6470257562608)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−29079808246903α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;(−29079808246903α2+ 49225269181062α + 53729902713340)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;52974788170701α&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2idealtetrahedraandtraceﬁeldF&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2idealtetrahedraandtraceﬁeldF4&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2idealtetrahedraandtraceﬁeldF41= Q(α) = Q(√−3)whereα = e&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;F4&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;11&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;34· 29&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;39733&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;34· 383&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;19289&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;310· 463&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;310· 4632· 128237&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;13339&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;133392· 13963&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;133392· 139632· 130027&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;36· 419&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;36· 4192· 4451&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;97&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;972· 418140719&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;316· 170239&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;316· 1702392· 377615549357&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;571&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;5712· 2851&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;5712· 28512· 27513329&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;5712· 28512· 275133292· 83702994059&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;38· 59&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;38· 592· 975911939&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;131&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1312· 14783&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1312· 147832· 39667&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1312· 147832· 396672· 92927&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;bepresentedhere.Throughoutthissection,℘nwilldenoteaprimeinOF&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β4= ℘11&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘11&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (4α −5)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (4α −5)ζ3+ (8α −5)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;β5= ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β5= ℘33· ℘29&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘29&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘292= −2ζ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘292= −2ζ3+ (−α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε7= (60α + 115)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε7= (60α + 115)ζ5+ (239α + 90)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε7= (60α + 115)ζ5+ (239α + 90)ζ4+ (390α −61)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε7= (60α + 115)ζ5+ (239α + 90)ζ4+ (390α −61)ζ3+ (415α −240)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;β7= ℘39733,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β7= ℘39733,1 · ℘39733,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;℘39733,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘39733,1= αζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘39733,1= αζ5+ (α −2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘39733,1= αζ5+ (α −2)ζ4+ (2α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘39733,1= αζ5+ (α −2)ζ4+ (2α −1)ζ3+ (α −2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘39733,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘39733,2= αζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘39733,2= αζ5−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘39733,2= αζ5−ζ4+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘39733,2= αζ5−ζ4+ αζ3−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε8= (−12α + 36)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε8= (−12α + 36)ζ3+ (17α + 17)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β8= ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;β8= ℘32,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β8= ℘32,1 · ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β8= ℘32,1 · ℘32,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β8= ℘32,1 · ℘32,2 · ℘383&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;℘32,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘32,1= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘32,1= ζ3−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘32,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘32,2= −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘383&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘3832= (−2α + 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3832= (−2α + 2)ζ3+ (3α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε10= (−3α + 7)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε10= (−3α + 7)ζ3+ (6α −4)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β10= ℘19289&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘19289&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘192892= (2α −5)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘192892= (2α −5)ζ3+ (3α + 3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ε11= (−353875255116707α + 117872583555117)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(−688446384174845α + 401155759804328)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;(−897492189704312α + 759910737126284)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;(−914641448990872α + 1080237360407592)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;(−734446808203694α + 1260432001194770)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−414120184922386α + 1243282741908210)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−55365207600430α + 1034236936378743)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(227917968648781α + 699665807320605)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β11= ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,1 · ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,1 · ℘35,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,1 · ℘35,2 · ℘463,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,1 · ℘35,2 · ℘463,1 · ℘463,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β11= ℘35,1 · ℘35,2 · ℘463,1 · ℘463,2 · ℘128237&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;℘35,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ8+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ8+ (α −1)ζ7+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ8+ (α −1)ζ7+ (α −1)ζ6+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ8+ (α −1)ζ7+ (α −1)ζ6+ (α −1)ζ5−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘35,1= (α −1)ζ8+ (α −1)ζ7+ (α −1)ζ6+ (α −1)ζ5−ζ4+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘35,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;℘35,2= −ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘35,2= −ζ8−αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘35,2= −ζ8−αζ5−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘35,2= −ζ8−αζ5−ζ4+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;℘463,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ8+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ8+ ζ7−ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ8+ ζ7−ζ6+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ8+ ζ7−ζ6+ (α −1)ζ5+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘463,1= (α −1)ζ9+ αζ8+ ζ7−ζ6+ (α −1)ζ5+ αζ4+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘463,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ8+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ8+ ζ7+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ8+ ζ7+ αζ5+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ8+ ζ7+ αζ5+ ζ4+ (−α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘463,2= αζ8+ ζ7+ αζ5+ ζ4+ (−α + 1)ζ3+ (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘128237&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;℘1282372= 2αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;℘1282372= 2αζ9+ 2αζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;℘1282372= 2αζ9+ 2αζ8+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘1282372= 2αζ9+ 2αζ8+ ζ6+ (−2α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−14482 + 37559α)/78300 + (11ζ)/87 −(2(−133 + 11α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;559α)/78300 + (11ζ)/87 −(2(−133 + 11α)ζ2)/2175 + ((31 −22α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−64041 + 64472α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−64041 + 64472α)ζ2/1892250 + (−94781 −1268α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;6.2.The5&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;6.2.The52knotanditspartner,the(−2, 3, 7)pretzelknot.The5&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;cknotwithvolume2.8281 . . .with3idealtetrahedraandtraceﬁeldF&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x3−x&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F5&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−6α&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thenormofthe1-loopofthe5&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;212· 7&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;β4= ℘2&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (−α2+ 3α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9491= (−α2+ 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘1227271= (2α2+ 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (−5α −4)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘7121= (−α2+ α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘7951= (α2−α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε7= (318981244103α2+ 40488788528803α + 30382313828818)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−52797766935255α2+ 38212176617858α + 58931813581928)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−29477571352182α2−1263424293533α + 15843777055057)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘43= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘6007111235971721= (4α2+ 6α −7)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘6007111235971721= (4α2+ 6α −7)ζ5+ (5α2+ 4α −3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;07111235971721= (4α2+ 6α −7)ζ5+ (5α2+ 4α −3)ζ4+ (8α2+ α −8)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε7= (349α2+ 119α −176)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε7= (349α2+ 119α −176)ζ5+ (439α2−196α −450)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(349α2+ 119α −176)ζ5+ (439α2−196α −450)ζ4+ (60α2−189α −143)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ5+ (−α2+ 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘38543= (−α2−α + 1)ζ5+ (−α2+ 1)ζ4+ (−α2−α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘215990584223= (−3α2−1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘215990584223= (−3α2−1)ζ5+ (−5α −3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘215990584223= (−3α2−1)ζ5+ (−5α −3)ζ4+ (2α2−3α −3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε8= (−41580α2+ 32068α + 49052)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘7537= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘30133993= (α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε8= (−245132α2+ 447868α −364300)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε9= (−4941α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε9= (−4941α2−5373α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε9= (−4941α2−5373α)ζ5+ (−12105α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε9= (−4941α2−5373α)ζ5+ (−12105α2+ 5373α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε9= (−4941α2−5373α)ζ5+ (−12105α2+ 5373α)ζ4+ (−13605α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; (−4941α2−5373α)ζ5+ (−12105α2+ 5373α)ζ4+ (−13605α2+ 13605α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−13680α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−13680α2+ 10098α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−13680α2+ 10098α)ζ2+ (−11889α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−13680α2+ 10098α)ζ2+ (−11889α2+ 15471α)ζ −4535α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α2+ 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α2+ 2)ζ4+ αζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α2+ 2)ζ4+ αζ3+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α2+ 2)ζ4+ αζ3+ (α2−1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2083098097= 2α2ζ5+ (α2+ 2)ζ4+ αζ3+ (α2−1)ζ2+ α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α2−5α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α2−5α + 1)ζ5−αζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α2−5α + 1)ζ5−αζ4+ (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α2−5α + 1)ζ5−αζ4+ (−2α2−3α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘85444190599483= (3α2−5α + 1)ζ5−αζ4+ (−2α2−3α + 1)ζ3+ (2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;90599483= (3α2−5α + 1)ζ5−αζ4+ (−2α2−3α + 1)ζ3+ (2α2−4α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;483= (3α2−5α + 1)ζ5−αζ4+ (−2α2−3α + 1)ζ3+ (2α2−4α + 1)ζ2+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε9= (331893396α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε9= (331893396α2+ 165165777α −64446273)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(76625316α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(76625316α2+ 307221984α + 188250822)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−214496600α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−214496600α2+ 305525612α + 352863266)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−73359774α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−73359774α2+ 326036187α + 287920791)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−329761962α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;431864865α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β9= ℘19&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘19&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘192= (−3α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘192= (−3α2+ 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘192= (−3α2+ 2)ζ5+ (−2α −2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘192= (−3α2+ 2)ζ5+ (−2α −2)ζ4+ (3α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘192= (−3α2+ 2)ζ5+ (−2α −2)ζ4+ (3α2−α −3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2α2+ 2α + 3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2α2+ 2α + 3)ζ2+ (−3α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2α2+ 2α + 3)ζ2+ (−3α2+ 1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘109= −α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘109= −α2ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘109= −α2ζ4−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘109= −α2ζ4−α2ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α2+ 2α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α2+ 2α)ζ5+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α2+ 2α)ζ5+ (α2−α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α2+ 2α)ζ5+ (α2−α −1)ζ4+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘357859= (−α2+ 2α)ζ5+ (α2−α −1)ζ4+ (−α2+ α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−α2+ α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−α2+ α)ζ2+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−α2+ α)ζ2+ (α2−α −1)ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;℘3981077803= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘3981077803= ζ5+ (−2α + 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3981077803= ζ5+ (−2α + 2)ζ4+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘3981077803= ζ5+ (−2α + 2)ζ4+ (α2−α + 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3981077803= ζ5+ (−2α + 2)ζ4+ (α2−α + 2)ζ3+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε10= (−3824672997α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε10= (−3824672997α2−3325045215α −330502768)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2263297486α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2263297486α2+ 2676462965α + 3310113266)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−3762572681α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;100480422α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1811= (α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘1811= (α2−α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1811= (α2−α)ζ3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘4391= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘4391= (−α2+ α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘4391= (−α2+ α −1)ζ3+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘4391= (−α2+ α −1)ζ3+ ζ2−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘68626575961= (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘68626575961= (−2α2+ α + 10)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘68626575961= (−2α2+ α + 10)ζ3+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘68626575961= (−2α2+ α + 10)ζ3+ (−α2−3α −7)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘68626575961= (−2α2+ α + 10)ζ3+ (−α2−3α −7)ζ2+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;6575961= (−2α2+ α + 10)ζ3+ (−α2−3α −7)ζ2+ (−α2+ 2α + 5)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε10= (2069226α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε10= (2069226α2−1143696α −2044373)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε10= (2069226α2−1143696α −2044373)ζ3+ (308318α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;69226α2−1143696α −2044373)ζ3+ (308318α2+ 1037807α + 609316)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1469403α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1469403α2−65443α −886914)ζ −970534α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;212· ℘11&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;212· ℘112· ℘971&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘11&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘112= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘112= (−α2+ α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘112= (−α2+ α)ζ3+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘112= (−α2+ α)ζ3+ (−α2+ 1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘971&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9712= αζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘9712= αζ3+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘9712= αζ3+ (α2+ 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘9712= αζ3+ (α2+ 2)ζ2+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘9712= αζ3+ (α2+ 2)ζ2+ (α2−1)ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘1091= −αζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1091= −αζ3+ αζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1151= (α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1151= (α2+ α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1151= (α2+ α −1)ζ2+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Some2and3-loopinvariantsfor5&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(245 −242α −33α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(6295 −10303α −1314α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1763029 −3730884α −616974α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1763029 −3730884α −616974α2)/11464488 + (727 + 40α −52α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(198755261 −468329838α −88322976α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−144841 −3059α + 3724α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1252389600136849 −2036921357788788α −291646682299854α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(109837198792 −4170485943α + 4920447944α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(392592030863 −20752850276α + 41177718597α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(392592030863 −20752850276α + 41177718597α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(−57107525462 −19759788121α + 42866787232α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3(−57107525462 −19759788121α + 42866787232α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(18 −155α + 155α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(−70769 −255956α + 319945α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1863760571 −9092540536α + 10659951670α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(581674213 −725755840α −213728162α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(−1447363406795 −7699225522158α + 9371835787629α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3(−6173681325057 + 7935320251722α + 1607053670497α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;69563350243075727956792969α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;586631030165980383508791α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;171017223371634425264447α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;171017223371634425264447α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2476626379634791382781767α&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2476626379634791382781767α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−73 −1524α −879α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(5213 −6774α + 726α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(6428435 −7198212α −1601715α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;28435 −7198212α −1601715α2)/28413648 + (10598 −6375α + 3506α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1772576 −2698227α −1231152α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;772576 −2698227α −1231152α2)/9471216 + (11085 −4012α + 1543α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(22745305769203 −23958770711676α + 1292918125467α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4515992099 −1436127126α + 641928216α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(30141870223 −17414407586α + 9676608447α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(30141870223 −17414407586α + 9676608447α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(14370066463 −15291381996α + 9801845647α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(14370066463 −15291381996α + 9801845647α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2099 −2099α + 6874α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−10438 + 8532α −177α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(19141449113 −148532821745α + 206516117210α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(7427517757 −10156808752α −14120983571α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(181162947 −969125569α + 2031947518α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2348859343 −5533235364α + 628243915α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;35348426895458618612714α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;327921124596643988013α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;6722732999448794955676α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;6722732999448794955676α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−5019314438337630298992α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−5019314438337630298992α2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;tetrahedraandtraceﬁeldF&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tetrahedraandtraceﬁeldF6&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x4−2x&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x4−2x3+ x&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;7α&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;7α3−17α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;212 · 19&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;212 · 192· 199&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;31&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;26· 19&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε2= −α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε2= −α3+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘29= −4α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘29= −4α3+ 10α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε3= (−4α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε3= (−4α3+ 10α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε3= (−4α3+ 10α2−9α −8)ζ −3α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε3= (−4α3+ 10α2−9α −8)ζ −3α3+ 7α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘79= (α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘79= (α3−2α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘79= (α3−2α2+ α + 2)ζ + 3α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘79= (α3−2α2+ α + 2)ζ + 3α3−7α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘373= (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘373= (−2α3+ 5α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘373= (−2α3+ 5α2−5α −3)ζ −3α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘373= (−2α3+ 5α2−5α −3)ζ −3α3+ 7α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε4= (α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε4= (α3−3α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε4= (α3−3α2+ 3α)ζ + 4α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε4= (α3−3α2+ 3α)ζ + 4α3−10α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘487057= (2α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘487057= (2α3−4α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘487057= (2α3−4α2+ 2α + 4)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘487057= (2α3−4α2+ 2α + 4)ζ + α3−α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (−2α2+ 6α + 24)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (−2α2+ 6α + 24)ζ3+ (−20α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (−2α2+ 6α + 24)ζ3+ (−20α3+ 56α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (−2α2+ 6α + 24)ζ3+ (−20α3+ 56α2−38α −12)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−40α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−40α3+ 114α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−40α3+ 114α2−92α −68)ζ −18α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−40α3+ 114α2−92α −68)ζ −18α3+ 56α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘401= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘401= (−α3+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘401= (−α3+ 2α2−α −2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘401= (−α3+ 2α2−α −2)ζ3+ ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘401= (−α3+ 2α2−α −2)ζ3+ ζ2+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘401= (−α3+ 2α2−α −2)ζ3+ ζ2+ (α3−3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ3+ (−5α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ3+ (−5α3+ 11α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ3+ (−5α3+ 11α2−9α −5)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ3+ (−5α3+ 11α2−9α −5)ζ2+ (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘8120801581= (α + 3)ζ3+ (−5α3+ 11α2−9α −5)ζ2+ (−2α3+ 3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1581= (α + 3)ζ3+ (−5α3+ 11α2−9α −5)ζ2+ (−2α3+ 3α2−3α −1)ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (3α3−8α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (3α3−8α2+ 7α + 5)ζ −3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (3α3−8α2+ 7α + 5)ζ −3α3+ 7α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘4969= (3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘4969= (3α3−7α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘33601= (4α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘33601= (4α3−10α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘33601= (4α3−10α2+ 8α + 5)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘33601= (4α3−10α2+ 8α + 5)ζ + α3−3α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−178515 −946382α + 924836α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−178515 −946382α + 924836α2−371920α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−27011582 −51129989α + 48845639α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−27011582 −51129989α + 48845639α2−19497370α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−82893368809 −117384982993α + 115430695442α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−82893368809 −117384982993α + 115430695442α2−47280180216α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1706191 −1154600α + 2708170α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1706191 −1154600α + 2708170α2−1385605α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;88284268128)(−4950930619209 −7026286049126α + 7165813225694α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2954092842556α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2954092842556α3) + ((84879497 −121998463α + 149562867α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;55782966α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;36910543873 −188649056185634232247α + 173804121553360109686α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;66971292202517629952α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;62305691106986α −557364703389415α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;62305691106986α −557364703389415α2+ 377823446091675α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(13304890388975226 + 6297147216121499α −10590487560881967α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;4980152420171024α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4980152420171024α3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;9628594457667602α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;9628594457667602α2+ 4438295075710969α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;9628594457667602α2+ 4438295075710969α3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−2772972 −2244430α + 2833463α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−2772972 −2244430α + 2833463α2−1140832α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−32774690022 −17111505319α + 26321905652α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−32774690022 −17111505319α + 26321905652α2−10527251164α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8504997001206261 −909085206892628307α + 1322686345008572948α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;540917115639525443α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;593382515118577161α + 540555632185247860α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;224218760661580090α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3703957527182 −43852642902836424033α + 62680976630422417186α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;25715623922859379240α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;74704051006678295591α −69345923760309927344α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;27498092656227102870α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;79407230942955753160123180497661371α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;30884930225756906416238335746759432α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;34528306662808298407142994334953867α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;13138908536274467739177531307979864α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;5410900283083316911728968138281266α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;316911728968138281266α2+ 2484658725916747927696004662854207α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;911728968138281266α2+ 2484658725916747927696004662854207α3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;054276763036584609939α −30236970444383524674457588584916012α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;12454010292496128569264912949291219α&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;12454010292496128569264912949291219α3)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;(−2, 3, −3) pretzel knots (the latter is also known as the 8&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ﬁeldsF(−2,&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ﬁeldsF(−2,3,−3)= F(−2,&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;x5−x&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x5−x4+ x&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Thisﬁeldisoftype[1, 2]withdiscriminant2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−10α&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−10α4+ 8α&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−4α&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−4α4+ 10α&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;−2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε2= α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘2= −α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2= −α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘32= α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε2= α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘23= α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘23= α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘2= −α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2= −α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Fork= 3andζ= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε3= (α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε3= (α4+ α2+ 2α + 1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘86677= (3α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘86677= (3α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘86677= (3α4−α3+ 8α −1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε3= (α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε3= (α4+ α2+ 3α)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε3= (α4+ α2+ 3α)ζ + α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Fork= 4andζ= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε4= (97/2α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε4= (97/2α4−36α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;37/2α&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;37/2α4−13α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε4= (−43/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε4= (−43/2α4+ 40α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε4= (−43/2α4+ 40α3−105/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;5/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5/2α4+ 22α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;5/2α4+ 22α3−73/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;β4= ℘2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2· ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘23= (−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘23= (−1/2α4−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘23= (−1/2α4−1/2α2−3/2α + 1/2)ζ + 1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘23= (−1/2α4−1/2α2−3/2α + 1/2)ζ + 1/2α4+ 1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘2= (−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2= (−1/2α4−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘2= (−1/2α4−1/2α2−1/2α + 1/2)ζ −1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2= (−1/2α4−1/2α2−1/2α + 1/2)ζ −1/2α4−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘32= (−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘32= (−1/2α4−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘32= (−1/2α4−1/2α2−3/2α −1/2)ζ −1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘32= (−1/2α4−1/2α2−3/2α −1/2)ζ −1/2α4−1/2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘29= (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘29= (α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘101= (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘101= (α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘101= (α4−α3+ 2α −2)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘101= (α4−α3+ 2α −2)ζ + α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘101= (α4−α3+ 2α −2)ζ + α4−α3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Fork= 5andζ= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε5= (6α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α2−2α −9)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α2−2α −9)ζ3+ (−13α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α2−2α −9)ζ3+ (−13α4+ 30α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α2−2α −9)ζ3+ (−13α4+ 30α3+ 9α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (6α4+ 5α3+ 2α2−2α −9)ζ3+ (−13α4+ 30α3+ 9α2−49α + 7)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−32α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−32α4+ 30α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−32α4+ 30α3+ 11α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−32α4+ 30α3+ 11α2−66α + 23)ζ −31α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−32α4+ 30α3+ 11α2−66α + 23)ζ −31α4+ 19α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−32α4+ 30α3+ 11α2−66α + 23)ζ −31α4+ 19α3+ 10α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘251= (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘251= (α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘251= (α4−α3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘251= (α4−α3+ α2+ 2α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α4−2α)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α4−2α)ζ3+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α4−2α)ζ3+ (α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α4−2α)ζ3+ (α4−α3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3701= (−α4−2α)ζ3+ (α4−α3+ α2+ 2α −2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘5641= (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘5641= (α3+ α + 1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘5641= (α3+ α + 1)ζ3+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘5641= (α3+ α + 1)ζ3+ (α4+ 3α −1)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘5641= (α3+ α + 1)ζ3+ (α4+ 3α −1)ζ2+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘5641= (α3+ α + 1)ζ3+ (α4+ 3α −1)ζ2+ (α4+ 3α −1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α3+ 2)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α3+ 2)ζ2+ (−α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α3+ 2)ζ2+ (−α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α3+ 2)ζ2+ (−α4+ α3−2α)ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘9573881= ζ3+ (α3+ 2)ζ2+ (−α4+ α3−2α)ζ −α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε5= (222α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (222α4−1294α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε5= (222α4−1294α3−585α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε5= (222α4−1294α3−585α2+ 990α −662)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(1179α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1179α4−1708α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1179α4−1708α3−1460α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1179α4−1708α3−1460α2+ 1910α −994)ζ&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(1551α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1551α4−677α&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1551α4−677α3−1420α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Fork= 6andζ= ζ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε6= (20α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (20α4−2α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (20α4−2α3+ 29α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε6= (20α4−2α3+ 29α2+ 21α + 35)ζ −71α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (20α4−2α3+ 29α2+ 21α + 35)ζ −71α4+ 89α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (20α4−2α3+ 29α2+ 21α + 35)ζ −71α4+ 89α3−144α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;22· ℘3&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘22= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘22= (−α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘22= (−α4+ α3−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘3&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘32= ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘32= ζ + α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘73= (α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘73= (α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘73= (α4−α3+ 2α −1)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α4+ α3+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α4+ α3+ 2α2−10α + 3)ζ + 5α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α4+ α3+ 2α2−10α + 3)ζ + 5α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘1675763533= (−5α4+ α3+ 2α2−10α + 3)ζ + 5α4+ α3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α4+ 4α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α4+ 4α3+ 27α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α4+ 4α3+ 27α2−21α + 5)ζ + 11α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α4+ 4α3+ 27α2−21α + 5)ζ + 11α4+ 34α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε6= (−30α4+ 4α3+ 27α2−21α + 5)ζ + 11α4+ 34α3+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘26= (α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘26= (α4−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘26= (α4−α3+ 3α −2)ζ −α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘26= (α4−α3+ 3α −2)ζ −α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘2&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘22= (−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘22= (−α4+ α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘22= (−α4+ α3−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘11059= (−α + 2)ζ + α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘11059= (−α + 2)ζ + α3−α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α4+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α4+ 2α3−2α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α4+ 2α3−2α2−3α + 2)ζ + 5α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α4+ 2α3−2α2−3α + 2)ζ + 5α4−4α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;℘171043= (−2α4+ 2α3−2α2−3α + 2)ζ + 5α4−4α3+ 3α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ﬁeldF&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ﬁeldF9&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ﬁeldF91&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;x17−8x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x14+ 195x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x14+ 195x13−353x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x14+ 195x13−353x12+ 542x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x14+ 195x13−353x12+ 542x11−719x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;x17−8x16+ 32x15−89x14+ 195x13−353x12+ 542x11−719x10+ 834x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−851x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x7−605x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x7−605x6+ 421x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x7−605x6+ 421x5−253x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x7−605x6+ 421x5−253x4+ 130x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−851x8+ 764x7−605x6+ 421x5−253x4+ 130x3−55x&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;F9&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;59α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;59α16+ 40α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;59α16+ 40α15−14α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;59α16+ 40α15−14α14+ 12α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;59α16+ 40α15−14α14+ 12α13−164α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;59α16+ 40α15−14α14+ 12α13−164α12−82α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;107α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;107α10−186α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;107α10−186α9−55α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;107α10−186α9−55α8+ 356α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;107α10−186α9−55α8+ 356α7−387α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;107α10−186α9−55α8+ 356α7−387α6−410α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;342α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;342α4+ 207α&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;342α4+ 207α3−117α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ε&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;ε2= 4α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α10−13α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α10−13α9+ 4α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α10−13α9+ 4α8+ 16α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α10−13α9+ 4α8+ 16α7−24α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ε2= 4α16−2α13−8α12−2α11+ 8α10−13α9+ 4α8+ 16α7−24α6−20α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;28α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;28α4+ 12α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;28α4+ 12α3−16α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α14+ 5α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α14+ 5α13+ 15α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α14+ 5α13+ 15α12−23α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α14+ 5α13+ 15α12−23α11−17α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;℘175013= −9α16+ 12α15−2α14+ 5α13+ 15α12−23α11−17α10+ 50α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;175013= −9α16+ 12α15−2α14+ 5α13+ 15α12−23α11−17α10+ 50α9−57α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;8α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;8α7+ 98α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;8α7+ 98α6−49α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;8α7+ 98α6−49α5−82α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8α7+ 98α6−49α5−82α4+ 52α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8α7+ 98α6−49α5−82α4+ 52α3+ 34α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α14−11α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α14−11α13−53α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α14−11α13−53α12+ 2α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α14−11α13−53α12+ 2α11+ 61α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;℘139320586381= 26α16−5α15−4α14−11α13−53α12+ 2α11+ 61α10−97α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;20586381= 26α16−5α15−4α14−11α13−53α12+ 2α11+ 61α10−97α9+ 42α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;110α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;110α7−193α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;110α7−193α6−94α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;110α7−193α6−94α5+ 225α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;110α7−193α6−94α5+ 225α4+ 45α&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;110α7−193α6−94α5+ 225α4+ 45α3−124α&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,809 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p03",
+  "title": "ant-v14-n7-s-p03",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1747",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Motifs algébriques et motifs rigides",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "1754",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-motifs-algébriques-et-motifs-rigides"
+    },
+    {
+      "level": 1,
+      "title": "Calcul du complexe des périodes abstraites AK et applications",
+      "number": "3",
+      "page": 29,
+      "pageLabel": "1775",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak"
+    },
+    {
+      "level": 1,
+      "title": "Action du groupe de Galois motivique",
+      "number": "4",
+      "page": 38,
+      "pageLabel": "1784",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-action-du-groupe-de-galois-motivique"
+    },
+    {
+      "level": 1,
+      "title": "→HocoMod",
+      "number": null,
+      "page": 40,
+      "pageLabel": "1786",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-hocomod"
+    },
+    {
+      "level": 1,
+      "title": "Bibliographie",
+      "number": null,
+      "page": 43,
+      "pageLabel": "1789",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-bibliographie"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1747",
+      "labelEnd": "1747",
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nouvelle cohomologie",
+          "heading": false
+        },
+        {
+          "term": "weil cohomology",
+          "heading": false
+        },
+        {
+          "term": "ak-modules",
+          "heading": false
+        },
+        {
+          "term": "une",
+          "heading": false
+        },
+        {
+          "term": "nous",
+          "heading": false
+        },
+        {
+          "term": "berthelot",
+          "heading": false
+        },
+        {
+          "term": "les",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1747 Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub Soit K un corps valué de hauteur 1 et d’inégales caractéristiques (0, p), et soit k son corps résiduel. Dans cet article, nous construisons une nouvelle cohomologie de Weil pour les k-schémas de type ﬁni à valeurs dans les AK-modules, avec AK une K-algèbre de «",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p03/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": "1747",
+      "labelEnd": "1754",
+      "words": 3102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rig est",
+          "heading": false
+        },
+        {
+          "term": "catégorie est",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "rig dans",
+          "heading": false
+        },
+        {
+          "term": "foncteur rig",
+          "heading": false
+        },
+        {
+          "term": "est monoïdal",
+          "heading": false
+        },
+        {
+          "term": "catégorie des",
+          "heading": false
+        },
+        {
+          "term": "rnew est",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2. Motifs algébriques et motifs rigides 1754 3. Calcul du complexe des périodes abstraites AK et applications 1775 4. Action du groupe de Galois motivique 1784 Bibliographie 1789 1. Introduction On ﬁxe un corps k de caractéristique p > 0. À un k-schéma de type ﬁni X, on sait associer : — suivant Berthelot [1986] et moyennant le choix d’un corps valué complet b K de caractéristique nulle et de corps",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-motifs-algébriques-et-motifs-rigides",
+      "number": "2",
+      "title": "Motifs algébriques et motifs rigides",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 29,
+      "labelStart": "1754",
+      "labelEnd": "1775",
+      "words": 8519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motifs rigides",
+          "heading": true
+        },
+        {
+          "term": "motifs algébriques",
+          "heading": true
+        },
+        {
+          "term": "rig est",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "catégorie rigda",
+          "heading": false
+        },
+        {
+          "term": "est monoïdale",
+          "heading": false
+        },
+        {
+          "term": "est dans",
+          "heading": false
+        },
+        {
+          "term": "pour smrig",
+          "heading": false
+        }
+      ],
+      "extract": "On commence cette section avec des rappels sur les motifs (algébriques et rigides) qui serviront dans la suite. On donne ensuite la construction du foncteur g Rig∗(voir (1-7)) et on démontre le théorème 1.7. On termine avec une construction de foncteurs de réalisation à valeurs dans les modules sur certaines dg-algèbres. On ﬁxe une Q-algèbre commutative 3 et on écrit souvent « ⊗» au lieu de « ⊗3 ». 2A. Rappels sur",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak",
+      "number": "3",
+      "title": "Calcul du complexe des périodes abstraites AK et applications",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 38,
+      "labelStart": "1775",
+      "labelEnd": "1784",
+      "words": 3464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexe",
+          "heading": true
+        },
+        {
+          "term": "est dans",
+          "heading": false
+        },
+        {
+          "term": "tot rig",
+          "heading": false
+        },
+        {
+          "term": "qui est",
+          "heading": false
+        },
+        {
+          "term": "les réalisations",
+          "heading": false
+        },
+        {
+          "term": "nouvelles réalisations",
+          "heading": false
+        },
+        {
+          "term": "est nulle",
+          "heading": false
+        },
+        {
+          "term": "des dln",
+          "heading": false
+        }
+      ],
+      "extract": "Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note b K son complété. On désigne par K ◦et b K ◦les anneaux de valuation de K et b K, et on note k le corps résiduel de K ◦qu’on identiﬁe à celui de b K ◦. Sauf mention explicite du contraire, on suppose que la caractéristique de K est nulle; on ne fait pas d’hypothèses sur la caractéristique de k. Notre but ici est d’expliciter",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-action-du-groupe-de-galois-motivique",
+      "number": "4",
+      "title": "Action du groupe de Galois motivique",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "1784",
+      "labelEnd": "1786",
+      "words": 954,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sur hmot",
+          "heading": false
+        },
+        {
+          "term": "homotopique bti",
+          "heading": false
+        },
+        {
+          "term": "complexe hmot",
+          "heading": false
+        },
+        {
+          "term": "catégorie homotopique",
+          "heading": false
+        },
+        {
+          "term": "une algèbre",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "galois motivique",
+          "heading": true
+        },
+        {
+          "term": "algèbre cosimpliciale",
+          "heading": false
+        }
+      ],
+      "extract": "Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note b K son complété. On désigne par K ◦et b K ◦les anneaux de valuation de K et b K, et on note k le corps résiduel de K ◦qu’on identiﬁe à celui de b K ◦. On suppose que la caractéristique de K est nulle et on ne fait pas d’hypothèses sur la caractéristique de k. On ﬁxe une Q-algèbre 3. Ici, nous allons munir la nouvelle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-hocomod",
+      "number": null,
+      "title": "→HocoMod",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "1786",
+      "labelEnd": "1789",
+      "words": 1017,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hocomod",
+          "heading": true
+        },
+        {
+          "term": "foncteur monoïdal",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "qui est",
+          "heading": false
+        },
+        {
+          "term": "monoïdal ernew",
+          "heading": false
+        },
+        {
+          "term": "est alors",
+          "heading": false
+        },
+        {
+          "term": "est satisfaite",
+          "heading": false
+        },
+        {
+          "term": "foncteur triangulé",
+          "heading": false
+        }
+      ],
+      "extract": "\u0000B(Hmot(K)); Bti′∗(R) \u0001 . (4-11) En composant (4-8) et (4-11), on obtient un foncteur monoïdal Bti′∗: DA´et(K; R) →HocoMod \u0000B(Hmot(K)); Bti′∗(R) \u0001 . (4-12) Supposons maintenant que l’hypothèse 4.3 est satisfaite. Le complexe cosimplicial Bti′∗(R) est alors (−1)-connexe en chaque degré cosimplicial (utiliser la proposition 4.4(ii)). Ainsi, on dispose de deux morphismes de comodules homotopiques sur B(Hmot(K)) :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-bibliographie",
+      "number": null,
+      "title": "Bibliographie",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "1789",
+      "labelEnd": "1790",
+      "words": 817,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "des périodes",
+          "heading": false
+        },
+        {
+          "term": "périodes p-adiques",
+          "heading": false
+        },
+        {
+          "term": "édité par",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "cohomologie des",
+          "heading": false
+        },
+        {
+          "term": "géométrie algébrique",
+          "heading": false
+        },
+        {
+          "term": "ayoub",
+          "heading": false
+        },
+        {
+          "term": "des schémas",
+          "heading": false
+        }
+      ],
+      "extract": "[Ayoub 2007] J. Ayoub, Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique, II, Astérisque 315, Soc. Math. France, Paris, 2007. MR Zbl [Ayoub 2014a] J. Ayoub, “La réalisation étale et les opérations de Grothendieck”, Ann. Sci. École Norm. Sup. (4) 47:1 (2014), 1–145. MR Zbl [Ayoub 2014b] J. Ayoub, “L’algèbre de Hopf et le groupe de Galois motiviques d’un corps de",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "est dans",
+      "heading": false
+    },
+    {
+      "term": "est une",
+      "heading": false
+    },
+    {
+      "term": "rig est",
+      "heading": false
+    },
+    {
+      "term": "foncteur est",
+      "heading": false
+    },
+    {
+      "term": "catégorie est",
+      "heading": false
+    },
+    {
+      "term": "dans les",
+      "heading": false
+    },
+    {
+      "term": "dans des",
+      "heading": false
+    },
+    {
+      "term": "que est",
+      "heading": false
+    },
+    {
+      "term": "sur une",
+      "heading": false
+    },
+    {
+      "term": "qui est",
+      "heading": false
+    },
+    {
+      "term": "pour une",
+      "heading": false
+    },
+    {
+      "term": "est monoïdal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1747",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1748",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1749",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1750",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1751",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1752",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1753",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1754",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1755",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1756",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1757",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1758",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1759",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1760",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1761",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1762",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1763",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1764",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1765",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1766",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1767",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1768",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1769",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1770",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1771",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1772",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1773",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1774",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1775",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1776",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1777",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "1778",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1779",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "1780",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1781",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "1782",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "1783",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "1784",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "1785",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "1786",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "1787",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "1788",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "1789",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "1790",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p03"
+  }
+}

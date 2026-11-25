@@ -1,0 +1,2045 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-math-0603732v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-math-0603732v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-math-0603732v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-math-0603732v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-math-0603732v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  24
+]</pre></dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;S34, 16W35, 16R99 . Key words and phrases. Dualising complex, Hochschild homology, Hopf algebra, homological integral, twisted Hochschild dimension, quantum group, Van den Bergh condition, Nakayama automorphism, antipode.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0603732v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-1&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;242&quot;,
+    &quot;text&quot;: &quot;(2001), 516-535.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0603732v2/blocks/prose-sec-042&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;νA&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eralisedwecallνtheNakayamaautomorphismofA.Weprovethatν= S&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ingalsotheoppositecoalgebrastructure,wedetermineaformulaforS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H∗(Oq(SL(2)),νOq(SL(2))&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;R∼=νA&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Here,νA&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Gorenstein of dimension d, Ext&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA) is 0 except when&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA) is 0 except when i = d, and Ext&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;AofA,has&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;AofA,hask-dimension1.ThusExt&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;AisS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(B)bethe&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(B)∼=H&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;etherighthandsidedenotesHochschildhomologywithcoeﬃcientsinσB&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(b)H&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(b)Supposeio(A)isﬁnite.ThenS&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ft modules.Let Aopdenote the opposite algebra of A and let A&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;byA-Mod[resp.Aop-Mod].SoanA&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;byA-Mod[resp.Aop-Mod].SoanAe-module-thatis,anobjectofA&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∆(a)=Pa&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(a)=Pa1 ⊗a&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(AS2)dimk Ext&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA) = 1andExt&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA) = 0forall&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA)iscalled&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(Ak, AA)iscalledalefthomologicalintegralofA.WedenoteExt&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;byR&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A.Any nonzero element in Ext&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A= Ext&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;where∆(a) =Pa&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where∆(a) =Pa1 ⊗a&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A ⊗Aop= A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;FidA ⊗S:A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;L = ResA ◦FidA ⊗S:A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;(c)L(A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;shall simply omit it, writing for exampleσMforσM&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;LrestsinitsrolelinkinghomologicalalgebraoverAwiththatoverA&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;(a)HomA&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(b)IfSisbijective,Ext&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(A, M) = Ext&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(k, L(M))forall&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;HomA&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;IfPa&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;IfPa1mS(a&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;(b) Let Ibe an injective A&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;thattheleftintegralR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;hattheleftintegralR lofAexistsasexplainedin(1.3),wedenotebyπ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;fora ∈A.Similarly,letΞ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Ξ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Π[S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Since,ingeneral,S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(c)πS&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(c)πS2= πandsoΞ[πS&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(d)Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(d)Ξ[π]S2=S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;)Ξ[π]S2=S2Ξ[π].Inparticular,iftheleftintegralofAexiststhenξS&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;R lisbydeﬁnitionisomorphictokπ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(A)∼=H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;:=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;:=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;A(M, A), A)=⇒H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;whereH&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;be a noetherian Hopf algebra of injective dimension d.If Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;andExt&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Aop(k, A)areﬁnitedimensionalover&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Aop(k, A)areﬁnitedimensionaloverkforall&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Aop(k, A)areﬁnitedimensionaloverkforalliandifExt&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;showsthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(M, A)=0andExt&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Aop(N, A)=0forall&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;proof of [WZ2, Lemma 4.8] dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(M, A) = dim M ·dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Aop(k, A), A)=dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Aop(k, A) · dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Bythedouble-Extspectralsequence(3.2.2),Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Aop(k, A)=dim Ext&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Hi(A, M)∼= TorA&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Proof.By[We,Lemma9.1.3],Hi(A, M)∼=TorA&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;morphism we use thefact that A⊗A&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot; use thefact that A⊗Ae M∼= M′⊗A kand that thefunctor (−)′: A&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;Aop(R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hd−i(A, M)∼=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hd−i(A,σA)∼=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a)LetσbeanalgebraautomorphismofA.ThenHd(A,σA)∼=Z(S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Consequently,Hd(A,σA)̸ = 0ifandonlyifS&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(c)Hdim A = difandonlyifS&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;HomAop(R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;HomAop(R l, (Aσ−1)′)∼=Z(AS−2σ−1ξ−1)∼=Z(Aσ−1ξ−1S−2)∼=Z(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;homologicalintegralisclearlyinthiscaseatrivialmodule,andS&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;injectiveresolutionof(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;foundin[Ye1,VdB2,YZ].LetAbeanalgebraandletD&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iH&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;iHi(X)is&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Deﬁnition.LetAbeanoetherianalgebra.AcomplexR ∈D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Deﬁnition.LetAbeanoetherianalgebra.AcomplexR ∈Db(A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;isomorphismsinD(A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;4.2.Rigiddualisingcomplexes.LetRbeacomplexofA&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;for all a, b ∈Aopand r ∈Rop(= R).If R ∈D(A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;for all a, b ∈Aopand r ∈Rop(= R).If R ∈D(Ae-Mod) then Rop∈D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;l a, b ∈Aopand r ∈Rop(= R).If R ∈D(Ae-Mod) then Rop∈Db((Aop)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;τ: (Aop)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;τ: (Aop)e= Aop⊗A −→A ⊗Aop= A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;isanalgebraisomorphism,so(Aop)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;isanalgebraisomorphism,so(Aop)eisisomorphictoA&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;isomorphismD&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;isomorphismDb(A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;isomorphismDb(Ae-Mod)∼= D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;isomorphismDb(Ae-Mod)∼= Db((Aop)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;R∼= RHomA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;inD(A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;inD(Ae-Mod).HeretheleftA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nsuchthatν&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ByProposition4.3,AisrigidGorensteinifandonlyνA&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;5.9],andA∗∼=νA&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;prove thestatementintheheading,andalsothattheautomorphism ξS&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;kπ ⊗A L(A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;kπ ⊗A L(Ae)=kΞ[π]⊗A L(A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kπ ⊗A L(Ae)=kΞ[π]⊗A L(Ae)∼=1AΞ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ulestructureonL(A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Asak-vectorspace,A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;actions on A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;bimodulestructureinducedby∗3and∗2.TheleftA-actiononL(A&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kπ⊗A Res∆(A ⊗N)∼=1BΞ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Φ(a ⊗n) =Pa&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Φ(a ⊗n) =Pa1 ⊗S(a&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;y&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f′Φ(1 ⊗Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b1 ⊗S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π(b1) ⊗S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π(b1) ⊗S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π(S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π(S2(b1)) ⊗S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S2(b1))S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;SinceS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S2(b1))S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S2(b1))S2(b2) = 1 ⊗Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 ⊗π(S2(b1))S2(b2) = 1 ⊗Ξ[π]S2(b) = f′Φ(1 ⊗Ξ[π]S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a)AisrigidGorensteinwithNakayamaautomorphismξS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ξS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ξS2A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;A=1&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A=1kξS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;A=1kξS2=1&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;(c)R&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(A, Ae) ∼= Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, L(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SinceL(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, L(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(k, L(Ae)) ∼= Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, A) ⊗A L(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;BytheAS-Gorensteincondition,foreveryi&lt;d,Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, A) ⊗A L(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, A) ⊗A L(Ae) ∼= kξ ⊗A L(A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(k, A) ⊗A L(Ae) ∼= kξ ⊗A L(Ae) ∼=1AξS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ae(A, Ae) ∼= Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(c)Thisisimmediatefromthedeﬁnition,sinceS&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Nakayamaautomorphismistheidentity-ifandonlyifS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ObservethatthethreemapscomposedtogiveS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(c)Supposeio(A)isﬁnite.ThenS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2.5(d), S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2.5(d), S2commutes with ξ.Similarly, S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;5(d), S2commutes with ξ.Similarly, S2commutes with φ.Since S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Bythedeﬁnitionofo(A),ν&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thus,byProposition4.5andLemma2.5(d),S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Thus,byProposition4.5andLemma2.5(d),S2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Thus,byProposition4.5andLemma2.5(d),S2mξ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;automorphismτ,ǫτ= ǫandsinceǫS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;automorphismτ,ǫτ= ǫandsinceǫS2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫν&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫνm= ǫS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫνm= ǫS2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫνm= ǫS2mξ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫνm= ǫS2mξm= ǫξ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ǫ = ǫνm= ǫS2mξm= ǫξm= π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Ontheotherhand,S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S4n= γ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S4n= γn◦φ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;S4n= γn◦φn◦ξ−n= γ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Theﬁnalequalityfollowsfromthefactthatnistheorderofξandφ.SoS&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Theﬁnalequalityfollowsfromthefactthatnistheorderofξandφ.SoS4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ν&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ν2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ν2n= (S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2n= S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2n= S4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2n= S4nξ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2n= S4nξ2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ν2n= (S2ξ)2n= S4nξ2n= γ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and so (6.6.1) conﬁrms that S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;HH&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;σ(A)∼=H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hi(A,σA)∼=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hcdim A = max{i | HH&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hcdim A = max{i | HHi(A) = H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tHcdim A = max{i | H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;thatH&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;D(A&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;foralli,whereUistheinvertibleA-bimoduleExt&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ae(A, A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;compactinD(A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;compactobjectinD(A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Proof.BydeﬁnitionU=1Aν.LetV= U−1=νA&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Hd(A,&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Hd(A,1Aν)∼= H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Hd(A,νA&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Hd(A,νA1)∼=H0(A, U⊗AνA&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;WhenA/[A, A]̸ = 0,thenH&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;WhenA/[A, A]̸ = 0,thenHd(A,νA&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;aresolutionofprojectiveleftA&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;(c)IfAisnoetherian,thenAisacompactobjectinD(A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Hi(A, M)∼=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(A, M)∼=Ext&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;foreachi,Ext&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A(k, L(−)) commutes with inductive direct limits in A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;foranyA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(A, M) ∼= Ext&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;foralli.ThereforeExt&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(A, −)commuteswithinductivedirectlimitsforall&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;compactinD(A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Itremainstoshowthefollowing:ifMisaleftA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;dimensionsuchthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(M, −)commuteswithinductivedirectlimitsforall&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;generatedprojectiveleftA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;generatedprojectiveleftAe-module.SinceHomA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0 →M−1→P&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;whereP&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;whereP0isaﬁnitelygeneratedprojectiveleftA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;whereP0isaﬁnitelygeneratedprojectiveleftAe-module.ClearlyExt&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Ae(P&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;obtainthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ae(M −1, −)commuteswithinductivedirectlimitsforall&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;inductionontheprojectivedimensionoftheA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;resolutionbyﬁnitelygeneratedprojectiveleftA&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;H0(A, M) = A ⊗A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andhavingbijectiveantipodeS.Deﬁneν= ξS&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Hd(A,σA)∼= A ⊗A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;MacaulayconditionforcesExt&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A(k, A)=0forall&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A(k, A)=0foralli̸=d,andthenExt&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;conditionsappliedtothislattermoduleshowthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(A)withH&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;TheoremA]thereisanirreducibleleftA-moduleWforwhichExt&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;sothat[BG1,Lemma1.11]conﬁrmsthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andletν= ξS&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(a)AhasrigiddualisingcomplexνA&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a)AhasrigiddualisingcomplexνA1[d]whereν= ξS&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;that the latter applies because A (and hence A&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a)S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(c)[Ye2]TherigiddualisingcomplexofAis(A⊗V&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;whereχistherepresentationofgonV&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(f)Hd(A, Aν)∼=Z(A)̸=0,andH&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Proof.(a)RecallthattheantipodeisgivenbyS(x)=−xforx∈g,soS&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A∼=A/⟨Xii −q2(n+1−2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;A∼=A/⟨Xii −q2(n+1−2i), Xtj: 1 ≤i, j, t ≤n,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ξ(Xij) = q2(n+1−2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Extn&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(Ext&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A/⟨Xii −q2(n+1−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Xit(K4ρ)Xtj= q(ω&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Xit(K4ρ)Xtj= q(ωi−ω&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Xit(K4ρ)Xtj= q(ωi−ωi−1,&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Xit(K4ρ)Xtj= q(ωi−ωi−1,4ρ)Xij= q2(n−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thatis,theNakayamaautomorphismofOq(G)isS&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;AS-Gorensteinproperty:Bytheinductionhypothesis,Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kH(kH⊗kTk, kH) ∼= δi,d−1&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;T↑k, kH) −→Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;T↑k, kH) −→Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kH(k, kH) −→Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;with(6.7.1),showsthatExt&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;kH(k, kH) = 0for&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;kH(k, kH) = 0fort ≤d −2.Taking&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;inviewof(6.7.1)thatExt&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;T↑k, kH) →Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;byx −1.Therefore,Ext&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;kH(k, kH)is&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;kH(k, kH)is0.Moreover,sinceExt&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(6.7.1),thecokernelofρisExt&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;kH(k, kH).ThusExt&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kH(k, kH)has&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(c)Hd(kG, kGν)∼= Z(kG)̸ = 0,andH&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

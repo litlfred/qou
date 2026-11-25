@@ -1,0 +1,473 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2301.00125v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extended abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-extended-abstract.md",
+      "narrative": null,
+      "content": "In two papers Ross Pinsky considered a random variable $Z_{n,k}$ equal to the number of increasing subsequences of length $k$\nin a uniform random permutation $\\pi \\in S_n$. \nThat investigation may be called the ``generalized Ulam problem,'' because: \nif $L_n$ is the length of the longest increasing subsequence for a uniform random $\\pi \\in S_n$, then $\\left(L_n< k\\right)\n\\Leftrightarrow \\left(Z_{n,k}=0\\right)$. \nThe generalized Ulam problem is to investigate the distribution $\\mathbf{P}(Z_{n,k}\\leq j)$,\npossibly asymptotically as $n \\to \\infty$, for both variables $j$ and $k$.\n\n\n\n\n\nAmong other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2301.00125v3  [math.CO]  3 May 2023\nGenerating Function for Pinsky’s Combinatorial Second Moment Formula\nfor the Generalized Ulam Problem\nSamen Hossein\nThe Bronx High School of Science\n75 Bronx Science Bvd\nBronx, NY 10468\nShannon Starr∗\nDepartment of Mathematics\nUniversity of Alabama at Birmingham\nUniversity Hall, Room 4005\n1402 Tenth Avenue South\nBirmingham, AL 35294-1241\nslstarr@uab.edu\nJanuary 19, 2023\nAbstract\nGiven a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing subsequences\nof length k: so Zn,k = |{(i1, . . . , ik) ∈Zk : 1 ≤i1 < · · · < ik ≤n , πi1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Set-up",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-set-up.md",
+      "narrative": null,
+      "content": "{\nUlam's problem is a problem that involves a combination of tools and techniques\nfrom the intersection of various subfields and specialities in mathematics, statistics  and physics.\nIt has been studied by many top researchers.\nThe main results are beautiful but diffficult.\n\n\nThe depth of the results related to Ulam's problem is well-known.\nThere are good reviews. \nSee, for example, the review article of Aldous and Diaconis \\cite{AldousDiaconis}. \nMany new and important results have been discovered since the publication of that particular paper.\nOne notable recent development is the directed l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher moments for the generalized Ulam's problem",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-higher-moments-for-the-generalized-ulams-prob.md",
+      "narrative": null,
+      "content": "Suppose one seeks information for the distribution of $Z_{n,k}$. The event that $Z_{n,k}>0$\nis equal to the event that $L_n\\geq k$.\nThus, finding the distribution of $Z_{n,k}$ generalizes Ulam's problem, so it can be called the\n``generalized Ulam problem.''\nThe easy bounds above for the event $Z_{n,k}>0$ follows from Markov's bounds.\nBut more precise bounds could in principle be obtained if we knew higher moments of $Z_{n,k}$.\n\nIn principle, the Bonferroni inequalities would give sharp bounds if one had sufficient information\non the moments. A good reference for this  topic is the combinatoric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation for exact solutions",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-motivation-for-exact-solutions.md",
+      "narrative": null,
+      "content": "In theoretical physics and in the mathematical physics of spin glasses, one is interested in the\nprecise form of the second moment and all higher moments, at least to leading order asymptotically\nas $n \\to \\infty$.\nEven though \n$\\mathbf{E}[Z_{n,k}^2]/(\\mathbf{E}[Z_{n,k}])^2$ may be too large to apply the \nPaley-Zygmund second moment method,\none may be interested in $\\ln\\left(\\mathbf{E}[Z_{n,k}^2]\\right)/\\Big(2\\ln\\left(\\mathbf{E}[Z_{n,k}]\\right)\\Big)$.\nFor example, in spin-glass theory, physicists moved from formulas for the moments\nto predictions about the actual distribution.\nIn Appendix \\ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline for the remainder of the paper",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-15-outline-for-the-remainder-of-the-paper.md",
+      "narrative": null,
+      "content": "The moments of the generalized Ulam problem appear to have been investigated primarily by Ross Pinsky.\nWe begin, in the next section, by stating Pinsky's precise combinatorial formula for the second moment.\nThen we calculate a generating function for the quantities that appear in Pinsky's decomposition,\nwith hopes of returning later and extracting the precise asymptotics from the generating function.\nFor us, the calculation of the generating function was already difficult.\n\nIn Section 2, we present Pinsky's combinatorial second moment formula, and we set-up the moment generating function.\nIn S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pinsky's combinatorial second moment formula",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-2-pinskys-combinatorial-second-moment-formula.md",
+      "narrative": null,
+      "content": "{\nIn his paper \\cite{Pinsky1}, Pinsky calculated\n\\begin{equation}\n\t\\mathbf{E}\\left[Z_{n,k}^2\\right]\\, =\\, \\sum_{i=0}^{k}A(k-i,i)\\, B(n,2k-i),\n\\end{equation}\nwhere for any $N,j \\in \\{0,1,\\dots\\}$, we have\n\\begin{equation}\n\tB(N,j)\\, =\\, \\binom{N}{j} \\cdot \\frac{1}{j!}\\, ,\n\\end{equation}\nand \n\\begin{equation}\n\tA(N,j)\\, =\\, \\sum_{\\substack{\\ell_0,\\dots,\\ell_j \\in \\{0,1,\\dots\\}\\\\ \\ell_0+\\dots+\\ell_j=N}}\\\n\t\\sum_{\\substack{m_0,\\dots,m_j \\in \\{0,1,\\dots\\}\\\\ m_0+\\dots+m_j=N}}\\\n\t\\prod_{r=0}^{j} \\left(\\binom{\\ell_r+m_r}{\\ell_r,m_r}\\right)^2\\, .\n\\end{equation}\nSee Pinsky's Proposition 2. We will not repro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The diagonal (contour integral) method",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-3-the-diagonal-contour-integral-method.md",
+      "narrative": null,
+      "content": "\\label{sec:PinskyDiagonal}\n\nWe now apply the diagonal method, based on a complex  contour integral.\nFirstly, we obtain\n\\begin{equation}\n\\label{eq:alphaIntegral}\n\t\\oint_{\\mathcal{C}(0;1)} \\beta\\left(w\\, ,\\ x\\xi\\, ,\\ \\frac{y}{\\xi}\\right)\\, \\frac{d\\xi}{2\\pi i \\xi}\\, =\\, \\alpha(w,xy)\\, ,\n\\end{equation}\nfor sufficiently small $x$, $y$ and $w$.\nTo state it again with the detailed formula, we have\n\\begin{equation}\n\\label{eq:alphaIntegralOneHalf}\n\t\\alpha(w,xy)\\,  =\\,\n\\oint_{\\mathcal{C}(0;1)}  \\frac{1}{\\left(\\left(1-\\left(x \\xi+y \\xi^{-1}\\right)\\right)^2-4xy\\right)^{1/2}-w}\\, \\cdot \\frac{d\\xi}{2\\pi i \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-4-main-result.md",
+      "narrative": null,
+      "content": "\\label{sec:Main}\nUsing equations (\\ref{eq:Q2factorization}) and (\\ref{eq:alphaIntegralSevenEighths}), we know\n\\begin{equation}\n\\label{eq:alphaIntegralSevenEights}\n\t\\alpha(w,x^2)\\,  =\\,\n\\oint_{\\mathcal{C}(0;1)}  \\frac{w\\cdot \\xi+\\widetilde{g}(x;\\xi)}\n{x^2\\cdot \\big(\\xi  - \\mathcal{A}_1(x,w)\\big)\\big(\\xi-\\mathcal{A}_2(x,w)\\big)\\big(\\xi-b_1(x,w)\\big)\\big(\\xi-b_2(x,w)\\big)}\\, \n\\cdot \\frac{d\\xi}{2\\pi i}\\, .\n\\end{equation}\nWe will deform the contour from $\\mathcal{C}(0;1)$ into the open disk $\\mathcal{U}(0;1)$ shrinking to contours around the poles\n$\\mathcal{A}_1(x,w)$ and $\\mathcal{A}_2(x,w)$ and a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and outlook",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-5-summary-and-outlook.md",
+      "narrative": null,
+      "content": "We have presented some explicit formula for the generating function of the combinatorial array $A(N,j)$.\nThis arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment\nof $Z_{n,k}$ from the generalized Ulam problem.\nPinsky then obtained rigorous upper and lower bounds, sufficient for his purpose of determining when the sequence $Z_{n,{k_n}}$\nsatisfies a weak law of large numbers or does not satisfy such, depending on the behavior of the sequence $k_n$\nas $n \\to \\infty$.\nBut for  reasons discussed in Appendix \\ref{sec:SK} and in the introduction, we believe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Bonferroni inequalities and Bell polynomials",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-a-bonferroni-inequalities-and-bell-polynomials.md",
+      "narrative": null,
+      "content": "Bonferroni inequalities and Bell polynomials\nThe principle of inclusion-exclusion (PIE) and the associated inequalities related to the PIE are a well-known\ntopic at the intersection of combinatorics and probability theory. We will follow the exposition from the\ntextbook of Charalambides [11] which we appreciate, greatly.\nThe descriptions there are clear, and also\nsuﬃciently complete to be useful to newcomers. For us, it is nice that he discusses the Bonferroni inequalities\nand the Bell polynomials in some detail.\nRecall that we are interested in the number of cardinality k subsequences of {1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Review of the physicists' replica approach to the SK model",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-b-review-of-the-physicists-replica-approach-to-t.md",
+      "narrative": null,
+      "content": "Suppose that for each pair i, j ∈N = {1, 2, . . .} there is a standard normal random variable Ji,j, such that\nall the Ji,j’s are independent. Then, for each N ∈N, the N-spin Sherrington-Kirkpatrick Hamiltonian is a\nrandom function\nHN : {+1, −1}N →R ,\nby the formula HN(σ) = −\nN\ni=1\nN\nj=1\nJi,j\n√\n2N\nσiσj ,\n(132)\nfor each σ = (σ1, . . . , σN) ∈{+1, −1}N. Originally, the simplest question that phyicists sought to answer\nwas the formula for the limiting free energy.\nThe ﬁnite-size approximation to the thermodynamic free energy is fN : (0, ∞) →R, given by the formula\nfN(β) = −1\nNβ ln (ZN(β)) ,\nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Mathematical physics and probability developments",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-b1-mathematical-physics-and-probability-developm.md",
+      "narrative": null,
+      "content": "Mathematical physics and probability developments\nYears later, a major step was taken in describing this approach by Bernard Derrida, as in [13] and [14], using\nthe Random Energy Model, which is an example of a problem related to extreme value statistics, as arises in\nthe Gumbel distribution, for example. Then Aizenman, Lebowitz and Ruelle [2] as well as Ruelle [31], gave\nfurther perspectives, including by bringing in the appropriate Poisson point process for Derrida’s Generalized\nRandom Energy Model. We also recommend the article of Aizenman and Ruzmaikina [3].\nEventually the conjecture of Pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Roots of a class of quadratic equations",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-c-roots-of-a-class-of-quadratic-equations.md",
+      "narrative": null,
+      "content": "Roots of a class of quadratic equations\nThe elementary results of this appendix are used several times throughout the calculations in subsequent\nsections. So we gather the notation, here. For a quadratic equation of the form\nξ2 + 1 −κξ = 0 ,\n(144)\nwhere κ ∈R, the quadratic formula for the roots gives\nξ± = κ ±\n√\nκ2 −4\n2\n,\n(145)\nwhich in turn can be written as\nξ± = 1\n4\n\u0000√\nκ + 2 ±\n√\nκ −2\n\u00012 ,\n(146)\nif we know that κ ≥2. See Remark 2.3. Let us denote ρ+ and ρ−as\nρ± =\n√\nκ ± 2 .\n(147)\nTherefore,\nξ± = 1\n4 (ρ+ ± ρ−)2 .\n(148)\nThis is useful because we frequently use the diﬀerence of squares formula in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D Contour integral alternative derivation of Lemma 2.2",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-d-contour-integral-alternative-derivation-of-lem.md",
+      "narrative": null,
+      "content": "Contour integral alternative derivation of Lemma 2.2\nBy the equation (28) we may write\nγ(2)(x2, y2) =\nI\nC(0;1)\nI\nC(0;1)\nγ(xξ, yζ)γ\n\u0012x\nξ , y\nζ\n\u0013\ndξ\n2πiξ ·\ndζ\n2πiζ ,\n(149)\nwhich may be rewritten as\nγ(2)(x2, y2) =\nI\nC(0;1)\nI\nC(0;1)\n1\n1 −(xξ + yζ) ·\n1\n1 −(xξ−1 + yζ−1) ·\ndξ\n2πiξ ·\ndζ\n2πiζ .\n(150)\nThis may be rewritten as\nγ(2)(x2, y2) = −1\n4π2\nI\nC(0;1)\nI\nC(0;1)\n1\n1 −(xξ + yζ) ·\n1\nξζ −(xζ + yξ) dξ dζ .\n(151)\nLet us ﬁrst integrate over ζ. Therefore, we use the partial fraction expansion for ζ:\n1\n1 −(xξ + yζ) ·\n1\nξζ −(xζ + yξ) =\n1\n1 −xξ −yζ ·\n1\n(ξ −x)ζ −yξ\n=\n1\n(ξ −x)(1 −xξ) −y2ξ\n\u0012\ny\n1 −xξ −yζ +\nξ −x\n(ξ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E Pochhamer identities for -1/2 and negative integers",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-e-pochhamer-identities-for--12-and-negative-inte.md",
+      "narrative": null,
+      "content": "Here we state what needs to be used to derive the equivalence of (35) and (36). Note that\n(−1/2)n =\n\u0012\n−1\n2\n\u0013 \u0012\n−3\n2\n\u0013\n· · ·\n\u0012\n−1 + 2(n −1)\n2\n\u0013\n,\n(163)\nwhich equals\n(−1/2)n = (−1)n\n2n\n(1) (3) · · · (2n −1) ,\n(164)\nwhich in turn may be rewritten as\n(−1/2)n = (−1)n\n2n\n·\n(2n)!\n(2)(4) · · · (2n) = (−1)n\n22n\n· (2n)!\nn!\n.\n(165)\nThis well-known fact is easily found, for example on Wikipedia it can be deduced from the formula Γ(1/2) =\n√π and Γ( 1\n2 −n) = (−1)n22nn!√π/(2n)!.\nWe also know that for the Pochhammer symbol at a negative integer we have\n(−n)k = (−n)(−n −1) · · · (−n −k + 1) = (−1)k(n)(n + 1)(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "F Elementary proofs from the quadratic formula",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-f-elementary-proofs-from-the-quadratic-formula.md",
+      "narrative": null,
+      "content": "Elementary proofs from the quadratic formula\nHere we state the proofs of elementary lemmas in Section 3 which rely mainly on the quadratic formula for\nthe roots of a quadratic equation in a single variable. We prove the elementary lemmas, using the notation\nintroduced in Section C.\nProof of Lemma 3.2: The two factors in (46) are\n\u0000x · (ξ2 + 1) −(1 + 2x)ξ\n\u0001\nand\n\u0000x · (ξ2 + 1) −(1 −2x)ξ\n\u0001\n.\n(174)\nSo the roots of Q1(x; ·) are the solutions of\n(ξ2 + 1) −1 + 2x\nx\n· ξ = 0 ,\n(175)\nand the solutions of\n(ξ2 + 1) −1 −2x\nx\n· ξ = 0 .\n(176)\nLet us denote\nκ+(x) = 1 + 2x\nx\nand κ−(x) = 1 −2x\nx\n.\n(177)\nThese are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "So g(x; 1) ∈(0, ∞) by (65) and (214). Since \u0000g(x; ξ) \u00012 and \u0000f(x; ξ) \u00012 satisfy \u0000g(x; ξ) \u00012 = Q1(x; ξ) and \u0000f(x; ξ) \u00012 = Q1(x; ξ) ξ2 , (216) and since g(x; 1) and f(x; 1) have the same phase (they are both real and positive) we see that g(x; ξ)/ξ and f(x; ξ) are equal, for ξ in a neighborhood of 1. But then deﬁne the domain eD3(x) by eD3(x) = D2(x) ∩D3(x) = \u0000U(0; d1(x)) \\ U(0; c1(x)) \u0001 \\ (c1(x), d1(x)) . (217) By analytic continuation this means ∀ξ ∈eD3(x) , we have g(x; ξ) = ξ · f(x; ξ) . (218) This follows because eD3(x) is a connected, simply connected set. Therefore, there is unique analyt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "G Elementary proofs from contour deformations",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-g-elementary-proofs-from-contour-deformations.md",
+      "narrative": null,
+      "content": "Elementary proofs from contour deformations\nHere we will prove Lemmas 3.6 and 3.7.\nProof of Lemma 3.6: Note that if ξ ∈(c2(x), d1(x)) then by Lemma 3.4 we have\nc1(x) < c2(x) < ξ < d1(x) < d2(x) .\n(214)\nTherefore, for D1 as in Remark 2.3,\n∀ξ ∈(c2(x), d1(x)) ,\nwe have ξ −c1(x) , ξ −c2(x) , d1(x) −ξ , d2(x) −ξ ∈D1 .\n(215)\nSimilarly, if ξ ∈C \\ R then we also have the conditions on the right-hand-side of (215) because the diﬀerences\nabove are also in C \\ R (because c1(x), c2(x), d1(x) and d2(x) are all in R). So this proves that for ξ ∈D3(x),\nwe have the conditions on the right-hand-side of (215).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H Proof of lemmas related to the residue theorem",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-018-h-proof-of-lemmas-related-to-the-residue-theorem.md",
+      "narrative": null,
+      "content": "Proof of lemmas related to the residue theorem\nProof of Lemma 4.1: For any ǫ ∈(0, b1(x, w) −1), the integrand,\nI(ξ) =\nw · ξ + eg(x; ξ)\nx2 ·\n\u0000ξ −A1(x, w)\n\u0001\u0000ξ −A2(x, w)\n\u0001\u0000ξ −b1(x, w)\n\u0001\u0000ξ −b2(x, w)\n\u0001 ·\n1\n2πi ,\n(226)\nis analytic in the open domain U(0; 1 + δ) \\\n\u0010\n{A1(x, w), A2(x, w)} ∪[c1(x), c2(x)]\n\u0011\n. The value of the contour\nintegral is independent of the choice of rectiﬁable arc/contour, or in our case, independent of the sum of\ncontours as long as that sum is homotopic to C(0; 1) in the domain of analyticity. (See for example [1] or\n[27].) Therefore, for δ ∈(0, 1) suﬃciently small we deform t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "1 For x, w ∈(0, ∞) satisfying 4x + w2 < 1, we have A2(x, w) = π √1 −4x Z −(1−4x)1/2 −(1+4x)−1/2 q\u00001 −(1 + 4x)r2\u0001\u00001 −(1 −4x)−1r2\u0001 · Q1 \u0000x; L−1(r) \u0001 Q2 \u0000x, w; L−1(r) \u0001 dr . (255) Changing variables, by letting t = r/√1 −4x, this gives A2(x, w) = 2 π Z −1 −(1−16x2)−1/2 q (1 −t2) \u00001 −(1 −16x2)t2\u0001 · Q1 \u0000x; L−1(r √1 −4x) \u0001 Q2 \u0000x, w; L−1(r √1 −4x) \u0001 dr . (256) This still leaves the problem of determining the transformation behavior for Q1(x; ·)/Q2(x, w; ·). Fortunately, one easy solution is to obtain the partial fraction decomposition for this rational function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/lem-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "lem-sec-019-02.md",
+      "narrative": null,
+      "content": "2 Suppose AD −BC̸ = 0 and suppose we have ρ ∈C ∪{∞} \\ {−D/C}, then for Φ and Φ−1 as in (244) and (245), we have Φ−1(ξ) −ρ = − C Cρ + D + AD −BC (Cρ + D)2 · ξ −Φ(ρ) . (257)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/lem-sec-019-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "lem-sec-019-03.md",
+      "narrative": null,
+      "content": "3 Let Z(x, w) = {A1(x, w), A2(x, w), b1(x, w), b2(x, w)}, which is the variety of roots of Q2(x, w; ·). Then, as meromorphic function on C∪{∞}, we have the partial fraction decomposition of Q1(x; ·)/Q2(x, w; ·): ∀z ∈C ∪{∞} \\ Z(x, w) , Q1(x; z) Q2(x, w; z) = 1 + X ρ∈Z(x,w) z −ρ · w2ρ2 x2 Y σ∈Z(x,w)\\{ρ} ρ −σ . (261)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.00125v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Elliptic integrals and linear fractional transformations",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md",
+      "narrative": null,
+      "content": "Elliptic integrals and linear fractional transformations\nFrom equation (85) we know that we may write A2(x, w) as\nA2(x, w) = 1\nπ\nZ c2(x)\nc1(x)\n1\np\n−Q1(x; r)\n·\nQ1(x; r)\nQ2(x, w; r) dr ,\n(243)\nwhere we have written the square-root of the quartic in the denominator, which is what is typically done\nfor elliptic integrals. The next step for elliptic integrals is to use linear fractional transformations to bring\nthe elliptic integral in the Legendre normal form. In our case, this means the following. Suppose we ﬁnd a\nnon-singular linear fractional transformation Φ : C ∪{∞} →C ∪{∞} deﬁned as\nΦ(z) = A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-golden-quartet-galois",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:golden-quartet-galois",
+  "kind": "proposition",
+  "title": "Golden quartet $\\{1/\\varphi, -\\varphi, \\varphi, -1/\\varphi\\}$ as the root set of $x^4 - 3x^2 + 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node"
+  ],
+  "tags": [
+    "golden-ratio",
+    "galois-theory",
+    "bar-involution",
+    "skew-symmetry",
+    "minimal-polynomial",
+    "splitting-field"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.GoldenQuartetGalois.golden_quartet_galois",
+  "text": "golden-quartet-galois.md",
+  "leanSource": "golden-quartet-galois.lean",
+  "provenance": "authored"
+}

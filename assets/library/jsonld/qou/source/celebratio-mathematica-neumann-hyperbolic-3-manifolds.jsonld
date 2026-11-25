@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "contains": [
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-front-matter",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-000",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-001",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-002",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-003",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-004",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-005",
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory\n\n**Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023**\n\n*Hyperbolic 3-manifolds, the Bloch*\n\n27 pp, 8 sections.\n\n**Abstract.** Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory, and num ber the ory. His work on the com bin ‐ at or ics of tri an gu la tions of 3-man i folds and its in ter ac tions with al geb ra ic -the ory cer tainly can be coun ted as among the most far-reach ing and beau ti ful of these. In this short note we will try to re count some of the high points of this work, tak ing as our start ing point the pa pers “Volumes of hy per bol ic three-man i ‐ folds” (To po logy 24:3 (1985), 307–332), by Wal ter and the second au thor, and “Com bin at or ics of tri an gu la tions and the Chern–Si mons in vari ant for hy per bol ic 3-man i folds” by Wal ter alone (in To po logy ’90, Ohio State Univ. Math. Res. Inst. Publ. no. 1, de Gruyter, Ber lin, (1990), 243–271).\n\n**Outline.** 1 Ideal triangulations and the gluing equation; 2 Volumes and Dehn surgeries; 3 The Bloch group and the extended Bloch group; 4 Symplectic properties; 5 Quantization; 6 Connections to number theory; References; C Series. Geo metry and To po logy Mono graphs",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+    "title_source": "slug",
+    "source_file": "Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf",
+    "source_sha256": "9e541693c60cbd3ffbc5ce0e1e8fe5c84bf8c7a22d8a74faec8173bebda8f34b",
+    "pages": 27,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

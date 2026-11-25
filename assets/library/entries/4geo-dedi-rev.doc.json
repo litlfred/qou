@@ -1,0 +1,1596 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "4geo-dedi-rev",
+  "title": "On the quantum Teichmüller invariants of fibred cusped 3-manifolds",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stéphane baseilhac",
+          "heading": false
+        },
+        {
+          "term": "hal",
+          "heading": false
+        },
+        {
+          "term": "riccardo benedetti",
+          "heading": false
+        },
+        {
+          "term": "fibred cusped",
+          "heading": false
+        },
+        {
+          "term": "teichmüller invariants",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: hal-01812027 https://hal.science/hal-01812027v1 Submitted on 15 Oct 2023 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive ouverte pluridisciplinaire HAL, est des-",
+      "extractCut": true,
+      "blocks": [
+        "library/4geo-dedi-rev/blocks/prose-sec-front-matter",
+        "library/4geo-dedi-rev/blocks/figure-img-p001-1",
+        "library/4geo-dedi-rev/blocks/figure-img-p001-2",
+        "library/4geo-dedi-rev/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 2)",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "quantum teichm",
+          "heading": true
+        },
+        {
+          "term": "uller spaces",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic invariants",
+          "heading": false
+        },
+        {
+          "term": "intertwiners",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 1 Institut Montpelli´erain Alexander Grothendieck, CNRS, Universit´e de Montpellier (sbaseilh@univ-montp2.fr) 2 Dipartimento di Matematica, Universit`a di Pisa, Largo Bruno Pontecorvo 5, 56127 Pisa, Italy (benedett@dm.unipi.it) Abstract. We show that the reduced quantum hyperbolic invariants of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 3)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 711,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "quantum teichm",
+          "heading": true
+        },
+        {
+          "term": "kashaev j-symbols",
+          "heading": false
+        },
+        {
+          "term": "qhi",
+          "heading": false
+        },
+        {
+          "term": "augmented character",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "intertwiners",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic holonomy",
+          "heading": false
+        }
+      ],
+      "extract": "2 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 • The local representations are reducible, but more suited to perform the usual cut-and-paste operations of topological quantum ﬁeld theories. In this framework, it is natural to restrict to a distinguished family of intertwiners, satisfying some functorial properties with respect to the inclusion of triangulated subsurfaces. Theorem 20 of [8] proposed such a family, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 4)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operator hred",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "lρρ",
+          "heading": false
+        },
+        {
+          "term": "intertwiners",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        },
+        {
+          "term": "qh-operator",
+          "heading": false
+        },
+        {
+          "term": "n-th roots",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 3 • An issue about the uniqueness of the projective classes of QT intertwiners has been ﬁxed recently. By a careful analysis of the deﬁnition of local representations, and adapting the con- struction of the QT intertwiners from [8], for every couple (ρλ, ρ′ λ′) as above, it is constructed in [11] a unique, minimal set Lρρ′ λλ′ of projective classes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 5)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhi intertwiner",
+          "heading": false
+        },
+        {
+          "term": "operator hred",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "kashaev j-symbols",
+          "heading": false
+        },
+        {
+          "term": "local representations",
+          "heading": false
+        },
+        {
+          "term": "holonomy lies",
+          "heading": false
+        },
+        {
+          "term": "whose holonomy",
+          "heading": false
+        },
+        {
+          "term": "i2m",
+          "heading": false
+        }
+      ],
+      "extract": "4 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 Using the deﬁnitions of U ′ λ in the QHI and of Vλ in the theory of local representation of Tq λ one gets natural identiﬁcations U ′ λ ∼= \u0000(CN)′\u0001⊗2m ∼= Vλ. Under all these identiﬁcations Hred N (TCφ,˜b, w)T ∈End \u0010\u0000(CN)′\u0001⊗2m\u0011 is a QT intertwiner. Clearly, the matrix elements of these tensors in the respective canonical bases of \u0000(CN)′\u0001⊗2m and (CN)⊗2m are related by (3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 6)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhi intertwiners",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "unreduced qhi",
+          "heading": false
+        },
+        {
+          "term": "reduced qhi",
+          "heading": false
+        },
+        {
+          "term": "quantum teichm",
+          "heading": true
+        },
+        {
+          "term": "isotypical component",
+          "heading": false
+        },
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 5 • We can say that the invariance property of the QHI selects preferred elements in the set of all traces of QT intertwiners (which has no a priori basepoints). Note that, the action (1) being transitive, it does not stabilizes the set of QHI intertwiners. As well as the reduced QHI of Mφ give rise to the QT intertwiners Hred N (TCφ,˜b, w)T , with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 7)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face co-orientations",
+          "heading": false
+        },
+        {
+          "term": "taut pre-branching",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        },
+        {
+          "term": "co-orientations point",
+          "heading": false
+        },
+        {
+          "term": "diagonal exchanges",
+          "heading": false
+        },
+        {
+          "term": "abstract tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "abstract edge",
+          "heading": false
+        }
+      ],
+      "extract": "6 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 2. Topological-combinatorial support We ﬁx a compact closed oriented smooth surface S0 of genus g, and a subset P = {p1, . . . , pr} ⊂S0 of r ≥1 marked points. We denote by S the punctured surface S0 \\ P. We assume that m := −χ(S) = (2g −2) + r > 0. A diﬀeomorphism φ0 : S0 →S0 such that φ0(pj) = pj for every j induces a diﬀeomorphism φ : S →S. Consider the cylinder C0 :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 8)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertex orderings",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        },
+        {
+          "term": "branching",
+          "heading": false
+        },
+        {
+          "term": "orientation",
+          "heading": false
+        },
+        {
+          "term": "moebius",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "teichm",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 7 abstract 2-faces of the tetrahedron have an orientation induced by b, given by their vertex orderings up to even permutations. Then, it is required that these orientations match, under the 2-face pairings, with the orientations dual to ω (note that we do not require that the abstract vertex orderings match: this deﬁnes the stronger notion of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 9)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 743,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        },
+        {
+          "term": "every edge",
+          "heading": false
+        },
+        {
+          "term": "hol",
+          "heading": false
+        },
+        {
+          "term": "abstract edges",
+          "heading": false
+        },
+        {
+          "term": "augmented character",
+          "heading": false
+        },
+        {
+          "term": "subvariety",
+          "heading": false
+        },
+        {
+          "term": "single cusp",
+          "heading": false
+        }
+      ],
+      "extract": "8 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 Recall that π1(Mφ) is a HNN-extension of π1(S). That is, given a generating set γ1, . . . , γu of π1(S) satisfying the relations r1, . . . , rv, there is an isomorphism between π1(Mφ) and the group generated by γ1, . . . , γu and an element t satisfying the relations r1, . . . , rv and tαt−1 = φ∗(α) for all α ∈ π1(S), where φ∗: π1(S) →π1(S) is the isomorphism induced by φ.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 10)",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "quantum shape",
+          "heading": false
+        },
+        {
+          "term": "shear-bend coordinate",
+          "heading": false
+        },
+        {
+          "term": "every edge",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "abstract edges",
+          "heading": false
+        },
+        {
+          "term": "dihedral angle",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 9 Lemma 3.2. For any edge e of λj, the (exponential) shear-bend coordinate of e deﬁned by any pleated surface Fw| ˜S (ie. any lift ( ˜S, ˜λj) of (S, λj) to ˜ Mφ, and any pseudo-developing map Fw| ˜S : ˜S →H3), coincides with the parameter xj(e) := −W + j (e). The proof follows from the deﬁnitions (see eg. [7]). Note that x0(e) = xk(φ0(e)) for every",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 11)",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qh-operator hred",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "hol",
+          "heading": false
+        },
+        {
+          "term": "every vertex",
+          "heading": false
+        },
+        {
+          "term": "subarcs",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "boundary component",
+          "heading": false
+        },
+        {
+          "term": "cylinder",
+          "heading": false
+        }
+      ],
+      "extract": "10 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 on C as w 7→γrw + b, where γr ∈C∗and b ∈C. The coeﬃcient γr is that squared eigenvalue selected by [(r, {ξΓ}Γ)]. We have (see [5] and [6]): Theorem 3.5. (1) There exists a determined regular rational map κN : A0,N →(C∗)2r such that the image κN(A0,N) is the open subset of (C∗)2r made of all the classes κ ∈H1(∂¯ Mφ; C∗) such that κ(lj)N and κ(mj)N are equal up to a sign",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 12)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vft",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "every face",
+          "heading": false
+        },
+        {
+          "term": "pre-branching",
+          "heading": false
+        },
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "abstract faces",
+          "heading": false
+        },
+        {
+          "term": "co-orientation",
+          "heading": false
+        },
+        {
+          "term": "target boundary",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 11 where Vj is a copy of CN associated to the 2-face of (∆, b) opposite to the vertex vj. The basic matrix dilogarithms will be deﬁned explicitly below. For the moment, note that V1, V3 correspond to the 2-faces with pre-branching co-orientation pointing inside ∆. Concerning the gluing data, every 2-face F of T is obtained by gluing a pair of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 13)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 503,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q2j",
+          "heading": false
+        },
+        {
+          "term": "q2u",
+          "heading": false
+        },
+        {
+          "term": "q2i",
+          "heading": false
+        },
+        {
+          "term": "w0w",
+          "heading": false
+        },
+        {
+          "term": "a0a",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "scalar multiplication",
+          "heading": false
+        },
+        {
+          "term": "quantum shape",
+          "heading": false
+        }
+      ],
+      "extract": "12 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 Note that A0A1A2 = qIdCN . We stress that these operators arise in the representation of the triangle algebra (see Section 3.3.2 below); their occurrence in the deﬁnition of the basic matrix dilogarithm is a key point to perform the computations at the end of the paper that will establish the bridge between the QHI and the QT intertwiners. Put g(x) = N−1 Y j=1 (1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 14)",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "quantum teichm",
+          "heading": true
+        },
+        {
+          "term": "ˆtq",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        },
+        {
+          "term": "punctured compact",
+          "heading": false
+        },
+        {
+          "term": "oriented surface",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 13 every n ∈Z/NZ, consider the function ω(x, y|n) deﬁned on the curve {(x, y ∈C2| xN + yN = 1} by ω(x, y|0) = 1, ω(x, y|n) = n Y j=1 y 1 −xq−2j , n ≥1. Then, for every i, j, k, l ∈Z/NZ we have LT N(∆, b, w)k,l i,j = h(w0)q−2kj−k2ω(w0, w−1 1 |i −k)δ(i + j −l). 3.3. Representations of the quantum Teichm¨uller spaces. Unless stated diﬀerently, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 15)",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 717,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ρ2m",
+          "heading": false
+        },
+        {
+          "term": "ˆtq",
+          "heading": false
+        },
+        {
+          "term": "eki",
+          "heading": false
+        },
+        {
+          "term": "local representations",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "t2m",
+          "heading": false
+        },
+        {
+          "term": "triangle algebra",
+          "heading": false
+        },
+        {
+          "term": "tuples",
+          "heading": false
+        }
+      ],
+      "extract": "14 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 written as PiQ−1 i ∈ˆTq λ, where Pi, Qi ∈Tq λ and ρλ(Pi), ρλ(Qi) are invertible endomorphisms of Vλ. In such a case, ρλ ◦ϕq λλ′(X′ i) = ρλ(Pi)ρλ(Qi)−1 is well-deﬁned (ie. independent of the choice of the pair (Pi, Qi)). By deﬁnition, the quantum Teichm¨uller space of S is the quotient set Tq S := (` λ ˆTq λ)/ ∼, where ∼ identiﬁes the algebras ˆTq λ and ˆTq λ′ by ϕq λλ′,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 16)",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "local representations",
+          "heading": false
+        },
+        {
+          "term": "classical shadow",
+          "heading": false
+        },
+        {
+          "term": "v2m",
+          "heading": false
+        },
+        {
+          "term": "load",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "edge weights",
+          "heading": false
+        },
+        {
+          "term": "irreducible summands",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 15 Any local representation of Tq λ has dimension N 2m. The isomorphism class of a local representation ρλ of Tq λ is determined by: • a non zero complex weight xi associated to each edge of λ; • a N-th root h of x1 . . . xn, called the load. The weights xi and the load h are such that (19) ρλ(XN i ) = xiIdV1⊗...⊗V2m, ρλ(H) = hIdV1⊗...⊗V2m where H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 17)",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lρρ λiλi",
+          "heading": false
+        },
+        {
+          "term": "ψρρ",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "intertwiners",
+          "heading": false
+        },
+        {
+          "term": "every ideal",
+          "heading": false
+        },
+        {
+          "term": "local representations",
+          "heading": false
+        },
+        {
+          "term": "ρλi",
+          "heading": false
+        },
+        {
+          "term": "isomorphic local",
+          "heading": false
+        }
+      ],
+      "extract": "16 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 3.4. Intertwiners of local representations. Let (S, λ) and q be as before. Any surface R obtained by splitting S along some (maybe all) edges of λ inherits an orientation from S, and an ideal trian- gulation µ from λ. By gluing along edges backwards, one says that (S, λ) is obtained by fusion from (R, µ). In such a case, every local representation ηµ = (η1 ⊗. . . ⊗η2m)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 18)",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "layered qh-triangulation",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        },
+        {
+          "term": "every layered",
+          "heading": false
+        },
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "every transposed",
+          "heading": false
+        },
+        {
+          "term": "intertwins",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 17 4. Proofs We are ready to prove our main Theorems 1.1, 1.2, and Corollary 1.4. Let us reformulate them by using the background material recalled in the previous sections. Let Mφ be a ﬁbred cusped hyperbolic 3-manifold realized as the mapping torus of a pseudo Anosov diﬀeomorphism φ of a punctured surface S. Put m = −χ(S) > 0. Let Cφ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 19)",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a1a",
+          "heading": false
+        },
+        {
+          "term": "i-th face",
+          "heading": false
+        },
+        {
+          "term": "a0a",
+          "heading": false
+        },
+        {
+          "term": "branched tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "lowest vertex",
+          "heading": false
+        },
+        {
+          "term": "local representation",
+          "heading": false
+        },
+        {
+          "term": "standard local",
+          "heading": false
+        },
+        {
+          "term": "teichm",
+          "heading": true
+        }
+      ],
+      "extract": "18 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 ρj : Tq λj →End \u0000(CN)⊗2m\u0001 associated to the surfaces (S, λj), for every j ∈{0, . . . , k}. These repre- sentations belong to a local representation ρ of the quantum Teichm¨uller space Tq S. By Step 1, Step 2, and its actual deﬁnition by means of a QH state sum, Hred N (TCφ,˜b, w)T intertwins the local representations ρ0 and ρk. Step (2) proves the claim (2) in the First",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 20)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a1a",
+          "heading": false
+        },
+        {
+          "term": "a0a",
+          "heading": false
+        },
+        {
+          "term": "q2w",
+          "heading": false
+        },
+        {
+          "term": "iλj",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        },
+        {
+          "term": "triangle algebra",
+          "heading": false
+        },
+        {
+          "term": "labels",
+          "heading": false
+        },
+        {
+          "term": "teichm",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 19 For X = X4 recall that ϕq λλ′(X′ 4) = (1 + qX−1 5 )−1X4; in this case the identity (25) reads (28) LT N(∆, b, w) ◦(y3 2A2 ⊗IN) = (1 + qy2 2y0 1A2 ⊗A1) ◦(IN ⊗y0 0A0) ◦LT N(∆, b, w). Now we have: LT N(∆, b, w)◦(y3 2A2 ⊗IN) = Ψw(−A0A1 ⊗A−1 1 ) ◦(y3 2A2 ⊗IN) ◦  1 N N−1 X i,j=0 q−2i(j+1)−jAi 0 ⊗(A1A0)−j   = Ψw(−A0A1 ⊗A−1 1 ) ◦(qy3 2A2 ⊗A1A0) ◦Υ =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 21)",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shear-bend coordinates",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "quantum shear-bend",
+          "heading": false
+        },
+        {
+          "term": "eki",
+          "heading": false
+        },
+        {
+          "term": "weak-branching",
+          "heading": false
+        },
+        {
+          "term": "local representation",
+          "heading": false
+        },
+        {
+          "term": "aiy",
+          "heading": false
+        },
+        {
+          "term": "standard local",
+          "heading": false
+        }
+      ],
+      "extract": "20 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 (b) ρj(Xs) = q−1yj ki,aiyj ki,biAki aiAki bi , if es is an edge of a single triangle τ j ki, and eki ai, eki bi are the edges of τ j ki identiﬁed to es, with eki ai on the right of eki bi . Consider the diagonal exchange λj →λj+1, and the corresponding triangulated (abstract) squares Q and Q′, as in Figure 3. The standard representations ρj i : T →End(CN) associated to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 22)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iλj",
+          "heading": false
+        },
+        {
+          "term": "diagonal exchange",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "teichm",
+          "heading": true
+        },
+        {
+          "term": "uller",
+          "heading": true
+        },
+        {
+          "term": "local representation",
+          "heading": false
+        },
+        {
+          "term": "edge relations",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 21 according to the cases (a) or (b) described at the beginning of Step 3. A simple dimensional count shows that π0 is surjective, with generic ﬁbre isomorphic to (C∗)3m. Then, take a point y0 ∈π−1 0 (x0). We get (31) ρ0(Xs) = x0(es)Ali ai ⊗Ari bi or ρ0(Xs) = q−1x0(es)Aki aiAki bi again according to the cases (a) or (b) above. We have to check that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 23)",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 687,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "n-th root",
+          "heading": false
+        },
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "augmented character",
+          "heading": false
+        },
+        {
+          "term": "quantum shape",
+          "heading": false
+        },
+        {
+          "term": "meridian curves",
+          "heading": false
+        },
+        {
+          "term": "qhi",
+          "heading": false
+        }
+      ],
+      "extract": "22 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 Let us consider now Theorem 1.2. For the convenience of the reader we re-state it. We keep the usual setting. Recall that Mφ is the interior of a compact manifold ¯ Mφ with boundary made by tori. Second Main Theorem. There is a neighborhood of i∗(rh) in i∗(X0(Mφ)) ⊂X(S) such that: (1) For any isomorphism class of local representations of Tq S whose holonomy lies in this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 24)",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-shape parameters",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "n-th root",
+          "heading": false
+        },
+        {
+          "term": "diagonal exchanges",
+          "heading": false
+        },
+        {
+          "term": "local representations",
+          "heading": false
+        },
+        {
+          "term": "fibred",
+          "heading": true
+        },
+        {
+          "term": "reconsider",
+          "heading": false
+        },
+        {
+          "term": "standard local",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 23 (2) We need to describe the general form of the QT intertwiners associated to sequences of diagonal exchanges λ →. . . →λ′, for arbitrary standard local representations ρλ, ρλ′ of Tq λ, Tq λ′. This is done in Lemma 4.8. For that, we reconsider the arguments of the proof of the claim (1) in the First Main Theorem. First, we look at the case of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 25)",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tcφ",
+          "heading": false
+        },
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "rough q-shape",
+          "heading": false
+        },
+        {
+          "term": "q-shape parameters",
+          "heading": false
+        },
+        {
+          "term": "diagonal exchanges",
+          "heading": false
+        },
+        {
+          "term": "lρρ",
+          "heading": false
+        },
+        {
+          "term": "lune",
+          "heading": false
+        },
+        {
+          "term": "longitudes",
+          "heading": false
+        }
+      ],
+      "extract": "24 ST´EPHANE BASEILHAC1, RICCARDO BENEDETTI2 between ρλ and ρ′ λ′ has a representative of the form (24), where Lρρ′ λiλi+1 = LT N(∆, b, ˜w) for some system ˜w := ( ˜w0, ˜w1, ˜w2) of rough q-shape parameters (as in Lemma 4.6) on the tetrahedron (∆, b) associated to the i-th diagonal exchange. Hence, proceeding as in the proof of Proposition 4.5 we deduce that: Lemma 4.8. Every projective class of QT intertwiner in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-on-the-quantum-teichm-uller-invariants-of-fibred",
+      "number": null,
+      "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 26)",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "quantum teichm",
+          "heading": true
+        },
+        {
+          "term": "isotypical component",
+          "heading": false
+        },
+        {
+          "term": "puncture weights",
+          "heading": false
+        },
+        {
+          "term": "uller space",
+          "heading": false
+        },
+        {
+          "term": "hred",
+          "heading": false
+        },
+        {
+          "term": "puncture elements",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        }
+      ],
+      "extract": "ON THE QUANTUM TEICHM¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS 25 Proof. (1) We take back the notations used for Corollary 1. Once again, Hred N (Mφ, r, κ) is determined by φ and the isomorphism class of the local representation ρλ, because it is the trace of Hred N (TCφ,˜b, w). Each isotypical component of ρλ is the intersection of one eigenspace of each of the so called puncture elements of Tq λ (see [7] and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "intertwiners hred",
+      "heading": false
+    },
+    {
+      "term": "triangulation tcφ",
+      "heading": false
+    },
+    {
+      "term": "invariants hred",
+      "heading": false
+    },
+    {
+      "term": "qh-operator hred",
+      "heading": false
+    },
+    {
+      "term": "trace hred",
+      "heading": false
+    },
+    {
+      "term": "qhi intertwiners",
+      "heading": false
+    },
+    {
+      "term": "operator hred",
+      "heading": false
+    },
+    {
+      "term": "teichm uller",
+      "heading": true
+    },
+    {
+      "term": "every local",
+      "heading": false
+    },
+    {
+      "term": "quantum teichm",
+      "heading": true
+    },
+    {
+      "term": "every edge",
+      "heading": false
+    },
+    {
+      "term": "local representations",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Given any ideal triangulations λ, λ′ of S and ﬁnite dimensional representation ρλ : Tq",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p2); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/4geo-dedi-rev"
+  }
+}

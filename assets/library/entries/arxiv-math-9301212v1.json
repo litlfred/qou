@@ -1,0 +1,203 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9301212v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:math/9301212v1  [math.GT]  1 Jan 1993\nAPPEARED IN BULLETIN OF THE\nAMERICAN MATHEMATICAL SOCIETY\nVolume 28, Number 1, January 1993, Pages 99-103\nM¨OBIUS INVARIANCE OF KNOT ENERGY\nSteve Bryson, Michael H. Freedman,\nZheng-Xu He, and Zhenghan Wang\nAbstract. A physically natural potential energy for simple closed curves in R3\nis shown to be invariant under M¨obius transformations.\nThis leads to the rapid\nresolution of several open problems: round circles are precisely the absolute minima\nfor energy; there is a minimum energy threshold below which knotting cannot occur;\nminimizers within prime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/thm-page-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "thm-page-001-01.md",
+      "narrative": null,
+      "content": "Among all rectiﬁable loops γ: S1 →R3, round circles have the least energy (E (round circle) = 4) and any γ of least energy parameterizes a round circle. 1991 Mathematics Subject Classiﬁcation. Primary 57M25, 49Q10; Secondary 53A04, 57N45, 58E30. Received by the editors April 14, 1992 The ﬁrst author thanks the San Diego Supercomputer Center for use of their facilities. The second and fourth authors were supported in part by NSF grant DMS-8901412. The third author was supported in part by NSF grant DMS-9006954 c ⃝1993 American Mathematical Society 0273-0979/93 $1.00 + $.25 per page",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/cor-page-002-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "cor-page-002-04.md",
+      "narrative": null,
+      "content": "Any rectiﬁable loop with energy less than 6π +4 ≈22.84954 is unknot- ted. Computer experiments of [A] as reported in [O3] and independently by the ﬁrst author yield an essential knot (a trefoil) with energy ≈74. It may be estimated [S,T,W] that the number K(n) of distinct knots of at most n crossings satisﬁes 2n ≤K(n) ≤2 · 24n. Hence the number of knot types with representatives below a given energy threshold can also be bounded by an exponential.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nSTEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN WANG\nTheorem B. If K is a smooth prime (not a connected sum) knot, then there exists\na simple closed rectiﬁable γK of knot type K with E(γK) ≤E(γ) for all rectiﬁable\nloops γ which are topologically ambient isotopic to K.\nTheorem C. Any minimizer γK, as above, will enjoy some regularity. With an\narc length parametrization, γK will be in C1,1.\nSeveral results of [FH] can be improved quantitatively.\nTheorem D. If γ is topologically tame, let c([γ]) denote the (topological) crossing\nnumber of the knot type. We have\n2πc([γ]) + 4 ≤E(γ).\n(It was",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "If K is a smooth prime (not a connected sum) knot, then there exists a simple closed rectiﬁable γK of knot type K with E(γK) ≤E(γ) for all rectiﬁable loops γ which are topologically ambient isotopic to K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/thm-page-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-02.md",
+      "narrative": null,
+      "content": "Any minimizer γK, as above, will enjoy some regularity. With an arc length parametrization, γK will be in C1,1. Several results of [FH] can be improved quantitatively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/thm-page-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-03.md",
+      "narrative": null,
+      "content": "If γ is topologically tame, let c([γ]) denote the (topological) crossing number of the knot type. We have 2πc([γ]) + 4 ≤E(γ). (It was proved in [FH] that ﬁnite energy implies tame.) Since an essential knot must have three or more crossings, we obtain the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/thm-page-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-05.md",
+      "narrative": null,
+      "content": "The number Ke(M) of isomorphism classes of knots which have rep- resentatives of energy less than or equal to M is bounded by 2(24−4/2π)(241/2π)M ≈ (0.264)(1.658)M. In particular, only ﬁnitely many knot types occur below any ﬁnite energy threshold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "M ¨OBIUS INVARIANCE OF KNOT ENERGY\n3\nof radius ε, Bε, only in its boundary Sε, then γK∩Sε consists of (at most) one point.\nThe idea is that if γK ∩Sε is disconnected, inverting an arc of γK\\Sε into Bε will\nlower energy while preserving the knot type. Thus there is a continuous projection\nfrom the ε-neighborhood of γK to γK given by “closest point” π: Nε(γK) →γK.\nWe prove that the ﬁbers π−1(pt) are all geometric planar disks of radius ε. The\ndisjointness of these “normal” ﬁbers to distance ε is equivalent to the existence of\na continuously turning tangent to γk whose generalized derivative is i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nSTEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN WANG\nwhere L = Length(I(γ)) and\nε+ = ε+(u) = D((I ◦γ)(u), (I ◦γ)(u + ε)) = s(u + ε) −s(u)\n=\nZ u+ε\nu\nf(w) dw = f(u)ε + ε2\nZ 1\n0\n(1 −t)f ′(u + εt) dt\nand\nε−= ε−(u) = D((I ◦γ)(u −ε), (I ◦γ)(u)) = f(u)ε −ε2\nZ 1\n0\n(1 −t)f ′(u −εt) dt.\nSince |f ′(w)| is uniformly bounded, we have\n1\nε+\n=\n1\nf(u)ε\n\"\n1\n1 + (ε/f(u))\nR 1\n0 (1 −t)f ′(u + εt) dt\n#\n=\n1\nf(u)ε\n\u0014\n1 −\nε\nf(u)\nZ 1\n0\n(1 −t)f ′(u + εt) dt + O(ε2)\n\u0015\n=\n1\nf(u)ε −\n1\nf(u)2\nZ 1\n0\n(1 −t)f ′(u + εt) dt + O(ε).\nSimilarly,\n1\nε−\n=\n1\nf(u)ε +\n1\nf(u)2\nZ 1\n0\n(1 −t)f ′(u −εt) dt + O(ε).\nThen by (4)\n(5)\nregulari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9301212v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "M ¨OBIUS INVARIANCE OF KNOT ENERGY\n5\nReferences\n[A]\nK. Ahara, Energy of a knot, screened at Topology Conf., Univ. of Hawaii, August 1990,\nK. H. Dovermann, organizer.\n[FH]\nM. H. Freedman and Z.-X. He, On the ‘energy’ of knots and unknots (to appear).\n[O1]\nJun O’Hara, Energy of a knot, Topology 30 (1991), 241–247.\n[O2]\n, Family of energy functionals of knots, Topology Appl. (to appear).\n[O3]\n, Energy functionals of knots (K. H. Dovermann, ed.), World Scientiﬁc, Singapore\n(to appear).\n[S]\nDe Witt Sumners, The growth of the number of prime knots, Math. Proc. Cambridge\nPhilos. Soc. 102 (1987), 303–",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

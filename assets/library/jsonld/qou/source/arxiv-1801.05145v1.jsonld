@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.05145v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1801.05145v1",
+  "contains": [
+    "library/arxiv-1801.05145v1/sections/sec-front-matter",
+    "library/arxiv-1801.05145v1/sections/sec-000",
+    "library/arxiv-1801.05145v1/sections/sec-001",
+    "library/arxiv-1801.05145v1/sections/sec-002",
+    "library/arxiv-1801.05145v1/sections/sec-003",
+    "library/arxiv-1801.05145v1/sections/sec-004",
+    "library/arxiv-1801.05145v1/sections/sec-005",
+    "library/arxiv-1801.05145v1/sections/sec-006",
+    "library/arxiv-1801.05145v1/sections/sec-007",
+    "library/arxiv-1801.05145v1/sections/sec-008",
+    "library/arxiv-1801.05145v1/sections/sec-009",
+    "library/arxiv-1801.05145v1/sections/sec-010",
+    "library/arxiv-1801.05145v1/sections/sec-011",
+    "library/arxiv-1801.05145v1/sections/sec-012",
+    "library/arxiv-1801.05145v1/sections/sec-013",
+    "library/arxiv-1801.05145v1/sections/sec-014",
+    "library/arxiv-1801.05145v1/sections/sec-015",
+    "library/arxiv-1801.05145v1/sections/sec-016",
+    "library/arxiv-1801.05145v1/sections/sec-017",
+    "library/arxiv-1801.05145v1/sections/sec-018",
+    "library/arxiv-1801.05145v1/sections/sec-019",
+    "library/arxiv-1801.05145v1/sections/sec-020",
+    "library/arxiv-1801.05145v1/sections/sec-021",
+    "library/arxiv-1801.05145v1/sections/sec-022",
+    "library/arxiv-1801.05145v1/sections/sec-023",
+    "library/arxiv-1801.05145v1/sections/sec-024",
+    "library/arxiv-1801.05145v1/sections/sec-025",
+    "library/arxiv-1801.05145v1/sections/sec-026",
+    "library/arxiv-1801.05145v1/sections/sec-027",
+    "library/arxiv-1801.05145v1/sections/sec-028",
+    "library/arxiv-1801.05145v1/sections/sec-029",
+    "library/arxiv-1801.05145v1/sections/sec-030",
+    "library/arxiv-1801.05145v1/sections/sec-031",
+    "library/arxiv-1801.05145v1/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and\n\n**MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS**\n\n*SEOK-JIN KANG, MASAKI KASHIWARA1, MYUNGHO KIM2 AND SE-JIN OH3*\n\n91 pp, 34 sections.\n\n**Abstract.** We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categoriﬁcation via the representa- tions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal, we give a formulation of monoidal categoriﬁcations of quantum cluster algebras and provide a criterion for a monoidal category of ﬁnite-dimensional graded R-modules to become a monoidal categoriﬁcation, where R is a symmetric Khovanov-Lauda- Rouquier algebra. Roughly speaking, this criterion asserts that a quantum monoidal seed can be mutated successively in all the directions, once the ﬁrst-step mutations are possible. Then, we show the existence of a quantum monoidal seed of Aq(n(w)) which admits the ﬁrst-step mutations in all the directions.\n\n**Outline.** Front matter; Introduction; 1 Quantum groups and global bases; 1.2 Integrable representations; 1.3 Crystal bases and global bases; 2.2 R-matrices for; 3 Simplicity of heads and socles of convolutio; 3.1 Homogeneous degrees of R-matrices; 3.2 Properties of $\\tL(M,N)$ and $\\de(M,N)$; 4 Leclerc's conjecture; 4.2 Geometric results; 4.3 Proof of Theorem; 5 Quantum cluster algebras; 5.1 Quantum seeds; 5.2 Mutation; 6 Monoidal categorification of cluster algebra; 6.1 Ungraded cases; 6.2 Graded cases",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1801.05145&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1801.05145v1",
+    "title_source": "slug",
+    "source_file": "1801.05145v1.pdf",
+    "source_sha256": "808da260edd433f7b07d0e19b94ad82f7e5d607678f5bb0522159faccd5b2408",
+    "pages": 91,
+    "arxiv": {
+      "id": "1801.05145",
+      "version": "1",
+      "primary_class": "math.RT",
+      "stamp_date": "16 Jan 2018"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

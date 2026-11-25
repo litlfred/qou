@@ -1,0 +1,5379 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1906.12122v2",
+  "title": "Nuclear eﬀective ﬁeld theory: status and perspectives",
+  "variant": "pdf",
+  "pages": 76,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Nuclear effective field theory: status and perspectives",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-nuclear-effective-field-theory-status-and-perspe"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-contents"
+    },
+    {
+      "level": 2,
+      "title": "I Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-i-introduction"
+    },
+    {
+      "level": 3,
+      "title": "A Nuclei from the perspective of QCD",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-nuclei-from-the-perspective-of-qcd"
+    },
+    {
+      "level": 3,
+      "title": "B The way of EFT",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-the-way-of-eft"
+    },
+    {
+      "level": 3,
+      "title": "C Nuclear EFTs",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-c-nuclear-efts"
+    },
+    {
+      "level": 2,
+      "title": "II Pionless EFT",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-ii-pionless-eft"
+    },
+    {
+      "level": 3,
+      "title": "A Motivation",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "B Weakly bound S-wave systems",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-b-weakly-bound-s-wave-systems"
+    },
+    {
+      "level": 4,
+      "title": "Two-body scattering amplitude",
+      "number": "1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-1-two-body-scattering-amplitude"
+    },
+    {
+      "level": 4,
+      "title": "Power counting",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-2-power-counting"
+    },
+    {
+      "level": 4,
+      "title": "Regularization and renormalization",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-regularization-and-renormalization"
+    },
+    {
+      "level": 5,
+      "title": "a Schemes and power counting",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-a-schemes-and-power-counting"
+    },
+    {
+      "level": 5,
+      "title": "b Subleading resummation",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-b-subleading-resummation"
+    },
+    {
+      "level": 4,
+      "title": "Renormalization group",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-renormalization-group"
+    },
+    {
+      "level": 5,
+      "title": "a Running coupling",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a-running-coupling"
+    },
+    {
+      "level": 5,
+      "title": "b Wilsonian renormalization group",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-b-wilsonian-renormalization-group"
+    },
+    {
+      "level": 4,
+      "title": "Dibaryon fields",
+      "number": "5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-5-dibaryon-fields"
+    },
+    {
+      "level": 4,
+      "title": "Spin-isospin projection and parametrizations",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-6-spin-isospin-projection-and-parametrizations"
+    },
+    {
+      "level": 4,
+      "title": "Coulomb effects and other isospin breaking",
+      "number": "7",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-7-coulomb-effects-and-other-isospin-breaking"
+    },
+    {
+      "level": 4,
+      "title": "External currents",
+      "number": "8",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-8-external-currents"
+    },
+    {
+      "level": 3,
+      "title": "C Light nuclei: bound and scattered",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-c-light-nuclei-bound-and-scattered"
+    },
+    {
+      "level": 4,
+      "title": "Extension to three particles",
+      "number": "1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-1-extension-to-three-particles"
+    },
+    {
+      "level": 4,
+      "title": "The triton as a near-Efimov state",
+      "number": "2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-2-the-triton-as-a-near-efimov-state"
+    },
+    {
+      "level": 5,
+      "title": "a The three-body force",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a-the-three-body-force"
+    },
+    {
+      "level": 5,
+      "title": "b The Phillips line",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-b-the-phillips-line"
+    },
+    {
+      "level": 4,
+      "title": "More neutron-deuteron scattering",
+      "number": "3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-3-more-neutron-deuteron-scattering"
+    },
+    {
+      "level": 5,
+      "title": "a Range corrections, partial resummation, and two-body parametrizations",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a-range-corrections-partial-resummation-and-two"
+    },
+    {
+      "level": 5,
+      "title": "b Higher partial waves",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-b-higher-partial-waves"
+    },
+    {
+      "level": 5,
+      "title": "c Ordering of three-body forces",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-c-ordering-of-three-body-forces"
+    },
+    {
+      "level": 4,
+      "title": "Proton-deuteron scattering and helion",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-4-proton-deuteron-scattering-and-helion"
+    },
+    {
+      "level": 5,
+      "title": "a Nonperturbative Coulomb effects",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-a-nonperturbative-coulomb-effects"
+    },
+    {
+      "level": 5,
+      "title": "b Perturbative Coulomb effects",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 5,
+      "title": "c Dineutron constraints",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-c-dineutron-constraints"
+    },
+    {
+      "level": 4,
+      "title": "Infrared regulators",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-5-infrared-regulators"
+    },
+    {
+      "level": 4,
+      "title": "Four nucleons",
+      "number": "6",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-6-four-nucleons"
+    },
+    {
+      "level": 4,
+      "title": "Beyond four nucleons",
+      "number": "7",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-7-beyond-four-nucleons"
+    },
+    {
+      "level": 4,
+      "title": "External currents and reactions",
+      "number": "8",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-8-external-currents-and-reactions"
+    },
+    {
+      "level": 3,
+      "title": "D Outstanding issues and current trends",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-d-outstanding-issues-and-current-trends"
+    },
+    {
+      "level": 2,
+      "title": "III Halo/Cluster EFT",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-iii-halocluster-eft"
+    },
+    {
+      "level": 3,
+      "title": "A Motivation",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "B S-wave neutron halos",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-b-s-wave-neutron-halos"
+    },
+    {
+      "level": 3,
+      "title": "C Excited Efimov states in halo nuclei",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-c-excited-efimov-states-in-halo-nuclei"
+    },
+    {
+      "level": 3,
+      "title": "D Ab initio methods and Efimov states in heavier nuclei",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-d-ab-initio-methods-and-efimov-states-in-heavier"
+    },
+    {
+      "level": 3,
+      "title": "E Higher partial waves and resonances",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-e-higher-partial-waves-and-resonances"
+    },
+    {
+      "level": 3,
+      "title": "F Electromagnetic properties and reactions",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-f-electromagnetic-properties-and-reactions"
+    },
+    {
+      "level": 4,
+      "title": "Form Factors",
+      "number": "1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-1-form-factors"
+    },
+    {
+      "level": 4,
+      "title": "E1 transition and photodisintegration",
+      "number": "2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-2-e1-transition-and-photodisintegration"
+    },
+    {
+      "level": 4,
+      "title": "Correlations",
+      "number": "3",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-3-correlations"
+    },
+    {
+      "level": 4,
+      "title": "Neutron capture",
+      "number": "4",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-4-neutron-capture"
+    },
+    {
+      "level": 3,
+      "title": "G Proton halos",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-g-proton-halos"
+    },
+    {
+      "level": 3,
+      "title": "H Cluster systems",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-h-cluster-systems"
+    },
+    {
+      "level": 3,
+      "title": "I Outlook",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "IV Chiral EFT",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "A Motivation",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "B Basic elements",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-b-basic-elements"
+    },
+    {
+      "level": 4,
+      "title": "Degrees of freedom and symmetries",
+      "number": "1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-1-degrees-of-freedom-and-symmetries"
+    },
+    {
+      "level": 4,
+      "title": "Chiral Lagrangian",
+      "number": "2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-2-chiral-lagrangian"
+    },
+    {
+      "level": 3,
+      "title": "C Chiral Perturbation Theory and the nuclear potential",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-c-chiral-perturbation-theory-and-the-nuclear-pot"
+    },
+    {
+      "level": 4,
+      "title": "Power counting",
+      "number": "1",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-1-power-counting"
+    },
+    {
+      "level": 4,
+      "title": "Nuclear potential",
+      "number": "2",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-2-nuclear-potential"
+    },
+    {
+      "level": 5,
+      "title": "a Leading order",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-a-leading-order"
+    },
+    {
+      "level": 5,
+      "title": "b Subleading orders",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 5,
+      "title": "c 2N potential",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-c-2n-potential"
+    },
+    {
+      "level": 5,
+      "title": "d 3N potential",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-d-3n-potential"
+    },
+    {
+      "level": 5,
+      "title": "e 4N potential",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 5,
+      "title": "f Isospin violation",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-f-isospin-violation"
+    },
+    {
+      "level": 5,
+      "title": "g Summary",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "D Nuclear amplitudes and observables",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-d-nuclear-amplitudes-and-observables"
+    },
+    {
+      "level": 4,
+      "title": "Weinberg's prescription",
+      "number": "1",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-1-weinbergs-prescription"
+    },
+    {
+      "level": 4,
+      "title": "Renormalization of singular potentials",
+      "number": "2",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-2-renormalization-of-singular-potentials"
+    },
+    {
+      "level": 4,
+      "title": "Connection with Pionless EFT",
+      "number": "3",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-3-connection-with-pionless-eft"
+    },
+    {
+      "level": 4,
+      "title": "Perturbative pions",
+      "number": "4",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-4-perturbative-pions"
+    },
+    {
+      "level": 4,
+      "title": "Partly perturbative pions",
+      "number": "5",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-5-partly-perturbative-pions"
+    },
+    {
+      "level": 4,
+      "title": "Other approaches",
+      "number": "6",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-6-other-approaches"
+    },
+    {
+      "level": 3,
+      "title": "E Pion and electroweak reactions",
+      "number": null,
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-e-pion-and-electroweak-reactions"
+    },
+    {
+      "level": 3,
+      "title": "F Outstanding issues and current trends",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-f-outstanding-issues-and-current-trends"
+    },
+    {
+      "level": 2,
+      "title": "V Broader applications",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-v-broader-applications"
+    },
+    {
+      "level": 3,
+      "title": "A Connection with QCD",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-069-a-connection-with-qcd"
+    },
+    {
+      "level": 4,
+      "title": "Nuclear physics at large quark masses",
+      "number": "1",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-070-1-nuclear-physics-at-large-quark-masses"
+    },
+    {
+      "level": 4,
+      "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
+      "number": "2",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-071-2-fine-tuning-in-chiral-eft-and-infrared-limit-c"
+    },
+    {
+      "level": 3,
+      "title": "B Antinucleon systems",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-072-b-antinucleon-systems"
+    },
+    {
+      "level": 3,
+      "title": "C Hypernuclei",
+      "number": null,
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "D Hadronic molecules",
+      "number": null,
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-073-d-hadronic-molecules"
+    },
+    {
+      "level": 3,
+      "title": "E Fundamental symmetries",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-074-e-fundamental-symmetries"
+    },
+    {
+      "level": 4,
+      "title": "Parity violation",
+      "number": "1",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-1-parity-violation"
+    },
+    {
+      "level": 4,
+      "title": "Time-reversal violation",
+      "number": "2",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-076-2-time-reversal-violation"
+    },
+    {
+      "level": 4,
+      "title": "Other symmetries",
+      "number": "3",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-077-3-other-symmetries"
+    },
+    {
+      "level": 3,
+      "title": "F Dark-matter detection",
+      "number": null,
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-078-f-dark-matter-detection"
+    },
+    {
+      "level": 3,
+      "title": "G Bosons with large scattering length",
+      "number": null,
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-079-g-bosons-with-large-scattering-length"
+    },
+    {
+      "level": 2,
+      "title": "VI Conclusion",
+      "number": null,
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-080-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-081-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-nuclear-effective-field-theory-status-and-perspe",
+      "number": null,
+      "title": "Nuclear effective field theory: status and perspectives",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schwerionenforschung gmbh",
+          "heading": false
+        },
+        {
+          "term": "gsi helmholtzzentrum",
+          "heading": false
+        },
+        {
+          "term": "darmstadt",
+          "heading": false
+        },
+        {
+          "term": "technische universit",
+          "heading": false
+        },
+        {
+          "term": "institute emmi",
+          "heading": false
+        },
+        {
+          "term": "extreme matter",
+          "heading": false
+        },
+        {
+          "term": "efts",
+          "heading": false
+        }
+      ],
+      "extract": "H.-W. Hammer∗ Institut f¨ur Kernphysik, Technische Universit¨at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI, GSI Helmholtzzentrum f¨ur Schwerionenforschung GmbH, 64291 Darmstadt, Germany Sebastian K¨onig† Institut f¨ur Kernphysik, Technische Universit¨at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI, GSI Helmholtzzentrum f¨ur Schwerionenforschung GmbH, 64291 Darmstadt,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "outstanding issues",
+          "heading": false
+        },
+        {
+          "term": "nuclear potential",
+          "heading": false
+        },
+        {
+          "term": "eﬁmov states",
+          "heading": false
+        },
+        {
+          "term": "external currents",
+          "heading": false
+        },
+        {
+          "term": "tu-darmstadt",
+          "heading": false
+        },
+        {
+          "term": "perturbative pions",
+          "heading": false
+        }
+      ],
+      "extract": "I. Introduction 2 ∗Hans-Werner.Hammer@physik.tu-darmstadt.de † sekoenig@theorie.ikp.physik.tu-darmstadt.de ‡ vankolck@ipno.in2p3.fr A. Nuclei from the perspective of QCD 3 B. The way of EFT 4 C. Nuclear EFTs 6 II. Pionless EFT 8 A. Motivation 8 B. Weakly bound S-wave systems 9 1. Two-body scattering amplitude 9 2. Power counting 9 3. Regularization and renormalization 11 arXiv:1906.12122v2 [nucl-th] 6 Apr 2020 4.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear efts",
+          "heading": false
+        },
+        {
+          "term": "nuclear eft",
+          "heading": false
+        },
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "textcite machleidt",
+          "heading": false
+        },
+        {
+          "term": "nuclear physics",
+          "heading": false
+        },
+        {
+          "term": "light nuclei",
+          "heading": false
+        },
+        {
+          "term": "heavy nuclei",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:introduction} The problem of obtaining the properties of atomic nuclei from the interactions among the constituent nucleons has been central to nuclear physics since its inception. Attempts to derive nuclear forces and currents from the exchange of mesons---in particular the lightest meson, the pion---were derailed in the 1950s by a lack of renormalizability, that is, by an uncontrolled sensitivity to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-nuclei-from-the-perspective-of-qcd",
+      "number": null,
+      "title": "A Nuclei from the perspective of QCD",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mhi sim",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": true
+        },
+        {
+          "term": "nuclear efts",
+          "heading": false
+        },
+        {
+          "term": "sim mev",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "pion interactions",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{subsec:QCDperspective} As an $SU(3)_{\\rm c}$ gauge theory of colored quarks and gluons, QCD is characterized by a coupling constant $g_s$ that becomes strong at low momenta. The fact that most hadron masses are about $1~\\GeV$ or higher---for example, the nucleon mass $m_N\\simeq 940$ MeV---reveals that nonperturbative QCD phenomena are associated with a mass scale $\\MQCD\\sim 1~\\GeV$. The EFT at the scale of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-the-way-of-eft",
+      "number": null,
+      "title": "B The way of EFT",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda mhi",
+          "heading": false
+        },
+        {
+          "term": "mathcal mhi",
+          "heading": false
+        },
+        {
+          "term": "mhi right",
+          "heading": false
+        },
+        {
+          "term": "eqref trgtrunc",
+          "heading": false
+        },
+        {
+          "term": "eqref texp",
+          "heading": false
+        },
+        {
+          "term": "eqref ttrunc",
+          "heading": false
+        },
+        {
+          "term": "frac mlo",
+          "heading": false
+        },
+        {
+          "term": "eqref lexp",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:WayofEFT} How does one ensure that a nuclear EFT reproduces QCD in the appropriate energy domain? Once degrees of freedom have been selected according to the energies of interest, one constructs the most general Lagrangian $\\mathcal{L}$ involving the corresponding set of fields $\\{\\psi\\}$, which is constrained only by the QCD symmetries, \\begin{equation} \\LL = \\sum_i c_i(\\Mlo,\\Mhi,\\Lambda) \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-c-nuclear-efts",
+      "number": null,
+      "title": "C Nuclear EFTs",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear potential",
+          "heading": false
+        },
+        {
+          "term": "heavy particles",
+          "heading": false
+        },
+        {
+          "term": "heavy quark",
+          "heading": false
+        },
+        {
+          "term": "eqref lexp",
+          "heading": false
+        },
+        {
+          "term": "higher-order interactions",
+          "heading": false
+        },
+        {
+          "term": "nucleon lines",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "full potential",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:NuclearEFTS} The implementation of these ideas in nuclear physics has posed some unexpected challenges. They can be traced to the fact that at LO some interactions need to be fully iterated---or, equivalently, a dynamical equation should be solved exactly---in order to produce the bound states and resonances that we refer to as nuclei. Nuclear EFTs typically include fields for the nucleon or clusters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-ii-pionless-eft",
+      "number": null,
+      "title": "II Pionless EFT",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": true
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "pion exchange",
+          "heading": false
+        },
+        {
+          "term": "veck",
+          "heading": false
+        },
+        {
+          "term": "vecq",
+          "heading": false
+        },
+        {
+          "term": "contact interactions",
+          "heading": false
+        },
+        {
+          "term": "few-nucleon systems",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pionless} \\subsection{Motivation} \\label{sec:pionlessmotivation} At very low energies---\\ie, for momenta $Q\\ll m_\\pi$---few-nucleon systems are not sensitive to the details associated with pion (or other meson) exchange. This fact makes it possible to describe such systems with short-range interactions alone (\\ie interactions of finite range or falling off at least as an exponential {in} the interparticle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-b-weakly-bound-s-wave-systems",
+      "number": null,
+      "title": "B Weakly bound S-wave systems",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi dagger",
+          "heading": false
+        },
+        {
+          "term": "vnablalr",
+          "heading": false
+        },
+        {
+          "term": "l-nn-simple",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        },
+        {
+          "term": "multline",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pionlessweaklyboundS} Two very-low-energy particles, represented by a field $\\psi$, can be described by an effective Lagrangian \\begin{multline} \\LL = \\psi^\\dagger \\left(\\ii\\partial_0 + \\frac{\\Laplace}{2\\MN}\\right)\\psi - \\frac{C_0}2 (\\psi^\\dagger\\psi)^2 \\\\ + \\frac{C_2}{16} \\big[(\\psi\\psi)^\\dagger\\,(\\psi\\,\\vNablaLR*^2 \\psi) + \\hc\\big] + \\cdots \\,, \\label{eq:L-NN-simple} \\end{multline} where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-1-two-body-scattering-amplitude",
+      "number": "1",
+      "title": "Two-body scattering amplitude",
+      "level": 4,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "To ﬁll the theory described by the eﬀective La- grangian (11) with physical meaning, we need to equip",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-2-power-counting",
+      "number": "2",
+      "title": "Power counting",
+      "level": 4,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "mhi sim",
+          "heading": false
+        },
+        {
+          "term": "mlo right",
+          "heading": false
+        },
+        {
+          "term": "vecp",
+          "heading": false
+        },
+        {
+          "term": "aleph",
+          "heading": false
+        },
+        {
+          "term": "cite bedaque",
+          "heading": false
+        },
+        {
+          "term": "vankolck",
+          "heading": false
+        },
+        {
+          "term": "sim gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:PowerCounting} Of course, the power counting of the theory should be such that it actually \\emph{mandates} this procedure. The small inverse $N\\!N$ scattering lengths introduce a genuine new low-momentum scale $\\Mlo$ (or large length $\\Mlo^{-1}$). Typically, this is referred to as ``fine tuning'' because the existence of this scale---at odds with the perfectly natural assumption that pion exchange should",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-regularization-and-renormalization",
+      "number": "3",
+      "title": "Regularization and renormalization",
+      "level": 4,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "θ1λ",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "d3q",
+          "heading": false
+        },
+        {
+          "term": "rendered",
+          "heading": false
+        }
+      ],
+      "extract": "Loops in a quantum ﬁeld theory are often not conver- gent, and the same in true in Pionless EFT. Observables are rendered ﬁnite by renormalization. For example, if we introduce a regulator function f(x), the nucleon bubble integral becomes I0(k) = mN Z d3q (2π)3 f(q2/Λ2) k2 −q2 + iε = −mN 4π h θ1Λ − p −k2 −iε + O(k2/Λ) i , (22) where θ1 is a dimensionless number that depends on the form of f(x) (for example, θ1 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-a-schemes-and-power-counting",
+      "number": null,
+      "title": "a Schemes and power counting",
+      "level": 5,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power counting",
+          "heading": true
+        },
+        {
+          "term": "mhi",
+          "heading": false
+        },
+        {
+          "term": "pds",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": false
+        },
+        {
+          "term": "mlo",
+          "heading": false
+        },
+        {
+          "term": "divergence",
+          "heading": false
+        },
+        {
+          "term": "cutoﬀ",
+          "heading": false
+        },
+        {
+          "term": "kaplan",
+          "heading": false
+        }
+      ],
+      "extract": "In early stages, there was much confusion about whether or not the choice of reg- ularization should be understood to aﬀect the power- counting scheme. The diﬀerence between the artiﬁcial regulator parameter Λ and the breakdown scale Mhi of the theory has not always been appreciated. For exam- ple, Kaplan et al. (1998a) have argued that C0 ∝Λ−1 would again give a theory with a very limited range of applicability.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-b-subleading-resummation",
+      "number": null,
+      "title": "b Subleading resummation",
+      "level": 5,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subleading",
+          "heading": true
+        },
+        {
+          "term": "lar potentials",
+          "heading": false
+        },
+        {
+          "term": "resummation",
+          "heading": true
+        },
+        {
+          "term": "cutoﬀthat",
+          "heading": false
+        },
+        {
+          "term": "veals",
+          "heading": false
+        }
+      ],
+      "extract": "Experience with nonsingu- lar potentials makes it almost automatic to solve the Schr¨odinger equation exactly with a truncation of the potential (16). At LO this is equivalent to the resum- mation (13). Renormalization of the truncation at the level of C2, however, leads to r0 < ∼Λ−1 (Cohen, 1997; Phillips and Cohen, 1997; Scaldeferri et al., 1997), a ver- sion of the so-called “Wigner bound” (Wigner, 1955). This is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-renormalization-group",
+      "number": "4",
+      "title": "Renormalization group",
+      "level": 4,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-a-running-coupling",
+      "number": null,
+      "title": "a Running coupling",
+      "level": 5,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coupling",
+          "heading": true
+        },
+        {
+          "term": "coupling constant",
+          "heading": false
+        },
+        {
+          "term": "unitary limit",
+          "heading": false
+        },
+        {
+          "term": "kaplan",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed point",
+          "heading": false
+        },
+        {
+          "term": "beta function",
+          "heading": false
+        }
+      ],
+      "extract": "Imposing renormalizability of phys- ical amplitudes leads to solutions of RG equations. Their detailed form depends on the regularization scheme. For example, in PDS one ﬁnds for the dimensionless coupling constant ˆ C0 ≡mNµC0/(4π) (Kaplan et al., 1998a), µ d dµ ˆ C0 = ˆ C0(1 + ˆ C0) , (24) where the right-hand side is given by the beta function. It is convenient to consider the ﬂow of ˆ C0 instead of C0 in order to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-b-wilsonian-renormalization-group",
+      "number": null,
+      "title": "b Wilsonian renormalization group",
+      "level": 5,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilsonian",
+          "heading": true
+        },
+        {
+          "term": "birse",
+          "heading": false
+        },
+        {
+          "term": "adhikari",
+          "heading": false
+        },
+        {
+          "term": "v2n",
+          "heading": false
+        },
+        {
+          "term": "harada",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed points",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "potential",
+          "heading": false
+        }
+      ],
+      "extract": "The RG is more gen- erally useful to study the behavior of the EFT. Ex- tending previous work (Weinberg, 1990, 1991; Adhikari and Frederico, 1995; Adhikari and Ghosh, 1997; Beane et al., 1998b; Phillips et al., 1998; Kaplan et al., 1998a,b, 1999b), Birse et al. (1999) studied the RG ﬂow of an eﬀective potential of the form V2N(p′, p, k) = V2N(p′, p) + C02k2 + · · · , (25) where the additional energy-dependent terms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-dibaryon-fields",
+      "number": "5",
+      "title": "Dibaryon fields",
+      "level": 4,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dibaryon",
+          "heading": true
+        },
+        {
+          "term": "vecp right",
+          "heading": false
+        },
+        {
+          "term": "bare propagator",
+          "heading": false
+        },
+        {
+          "term": "dagger big",
+          "heading": false
+        },
+        {
+          "term": "l-nn-simple",
+          "heading": false
+        },
+        {
+          "term": "dibaryonprop",
+          "heading": false
+        },
+        {
+          "term": "frac laplace",
+          "heading": false
+        },
+        {
+          "term": "momentum-dependent",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dibaryons} It is possible to efficiently capture the physics associated with the shallow $S$-wave two-body states by introducing in the effective Lagrangian ``dimeron'' (``molecular'' or, here, ``dibaryon'') fields with their quantum numbers, an idea first introduced in EFT by \\textcite{Kaplan:1996nv}. For {any single channel} we can write, instead of~\\eqref{eq:L-NN-simple}, \\begin{multline} {\\!\\LL =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-6-spin-isospin-projection-and-parametrizations",
+      "number": "6",
+      "title": "Spin-isospin projection and parametrizations",
+      "level": 4,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac textrm",
+          "heading": false
+        },
+        {
+          "term": "gamd",
+          "heading": false
+        },
+        {
+          "term": "ere-d",
+          "heading": false
+        },
+        {
+          "term": "ere",
+          "heading": false
+        },
+        {
+          "term": "sigma tau",
+          "heading": false
+        },
+        {
+          "term": "textcite",
+          "heading": false
+        },
+        {
+          "term": "tau sqrt",
+          "heading": false
+        },
+        {
+          "term": "t-kcot-b",
+          "heading": false
+        }
+      ],
+      "extract": "{For a fixed $N\\!N$ channel it is convenient to use the effective Lagrangian~\\eqref{eq:L-NN-simple}, with $\\psi$ a nucleon field for which the combination $\\psi^\\dagger\\psi$ has definite spin and isospin $(S,I)$. The Pauli principle dictates that only isospin-triplet {$\\mathrm{t}\\equiv(0,1)$} and isospin-singlet {$\\textrm{s}\\equiv(1,0)$} are allowed combinations.} We use subscripts ``$\\mathrm{s}$'' and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-7-coulomb-effects-and-other-isospin-breaking",
+      "number": "7",
+      "title": "Coulomb effects and other isospin breaking",
+      "level": 4,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 1069,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coulomb",
+          "heading": true
+        },
+        {
+          "term": "textcite kong",
+          "heading": false
+        },
+        {
+          "term": "coulomb interaction",
+          "heading": false
+        },
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "coulomb exchange",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic effects",
+          "heading": false
+        },
+        {
+          "term": "varepsilon bar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pionlessCoulomb} Since almost all nuclear systems involve more than one proton, the inclusion of electromagnetic effects is {generally} important. In the low-energy regime, the dominant effect is given by ``Coulomb photons'', \\ie, the familiar, static potential {($\\sim\\alpha/r$)} between charged particles. It originates from the replacement of derivatives in the effective Lagrangian with covariant ones,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-8-external-currents",
+      "number": "8",
+      "title": "External currents",
+      "level": 4,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite chen",
+          "heading": false
+        },
+        {
+          "term": "textcite ando",
+          "heading": false
+        },
+        {
+          "term": "textcite butler",
+          "heading": false
+        },
+        {
+          "term": "textcite christlmeier",
+          "heading": false
+        },
+        {
+          "term": "textcite griesshammer",
+          "heading": false
+        },
+        {
+          "term": "textcite phillips",
+          "heading": false
+        },
+        {
+          "term": "textcite bethe",
+          "heading": false
+        },
+        {
+          "term": "gamd rhod",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Currents-TwoBody} One of the great advantages of the EFT approach is that it is straightforward to include external currents in addition to interactions between nucleons. Power counting leads to a systematic expansion of current operators, which had previously been classified only as one-body and many-body pieces (also known as ``meson-exchange currents''). Photons are introduced in the effective",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-c-light-nuclei-bound-and-scattered",
+      "number": null,
+      "title": "C Light nuclei: bound and scattered",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compton scattering",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "grießhammer",
+          "heading": false
+        },
+        {
+          "term": "polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "chen",
+          "heading": false
+        },
+        {
+          "term": "cross section",
+          "heading": false
+        },
+        {
+          "term": "eﬁmov",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 9 Total cross section σ for deuteron electrodisintegra- tion as function of the photon energy Eγ. Good agreement is seen between measured data points and theoretical calcu- lation (lines), which was achieved after the pionless calcula- tion of Christlmeier and Grießhammer (2008) helped resolve a problem with the experimental analysis. Figure adapted from Ryezayeva et al. (2008) by H. W. Grießhammer. Courtesy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-1-extension-to-three-particles",
+      "number": "1",
+      "title": "Extension to three particles",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite bedaque",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "nd-inteq-q",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        },
+        {
+          "term": "quartet",
+          "heading": false
+        },
+        {
+          "term": "channel",
+          "heading": false
+        },
+        {
+          "term": "deuteron",
+          "heading": false
+        },
+        {
+          "term": "integral equation",
+          "heading": false
+        }
+      ],
+      "extract": "The simplest three-body system that can be studied in Pionless EFT is neutron-deuteron ($nd$) scattering in the quartet $S$-wave channel (total spin $\\nicefrac32$ and zero orbital angular momentum). The Pauli principle dictates that only the same configuration can appear in the intermediate state. \\textcite{Bedaque:1997qi} calculated the $nd$ quartet scattering length in a framework using a deuteron dibaryon field",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-2-the-triton-as-a-near-efimov-state",
+      "number": "2",
+      "title": "The triton as a near-Efimov state",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doublet channel",
+          "heading": false
+        },
+        {
+          "term": "triton",
+          "heading": true
+        },
+        {
+          "term": "eﬁmov",
+          "heading": false
+        },
+        {
+          "term": "thomas",
+          "heading": false
+        },
+        {
+          "term": "binding",
+          "heading": false
+        },
+        {
+          "term": "eft",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": false
+        }
+      ],
+      "extract": "Three nucleons can also couple to an S-wave state with total spin 1/2, which is the channel of the trinu- cleon bound states: triton (3H) and helion (3He). The formalism used to calculate quartet-channel scattering → + Figure 11 Modiﬁcation of the driving mechanism in Fig. 10, with the LO three-body force (solid circled) in the nd doublet channel. can be extended directly to the doublet channel, where now also 1S0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a-the-three-body-force",
+      "number": null,
+      "title": "a The three-body force",
+      "level": 5,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-body",
+          "heading": true
+        },
+        {
+          "term": "scattering lengths",
+          "heading": false
+        },
+        {
+          "term": "force",
+          "heading": true
+        },
+        {
+          "term": "dibaryon",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "limit cycle",
+          "heading": false
+        },
+        {
+          "term": "braaten",
+          "heading": false
+        },
+        {
+          "term": "hammer",
+          "heading": false
+        }
+      ],
+      "extract": "The scattering amplitude in the doublet channel, obtained from the integral equations analogous to Fig. 10, does not approach a stable limit as the cutoﬀis increased. This lack of renormaliza- tion is a genuine nonperturbative eﬀect since every di- agram generated by iterations is ﬁnite by itself. Bedaque et al. (2000) showed that the system can be stabilized by adding a nonderivative three-body contact interaction.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-b-the-phillips-line",
+      "number": null,
+      "title": "b The Phillips line",
+      "level": 5,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phillips",
+          "heading": true
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "scatter ing",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": true
+        }
+      ],
+      "extract": "Pionless EFT at LO oﬀers a strik- ing but simple explanation of the well-known “Phillips line”, i.e., the fact that diﬀerent model potentials for the nuclear interaction tuned to the same NN scatter- ing data give diﬀerent but highly correlated results for the triton binding energy and the doublet nd scatter- ing length (Phillips, 1968). Pionless EFT allows one to understand this and other correlations among three-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-3-more-neutron-deuteron-scattering",
+      "number": "3",
+      "title": "More neutron-deuteron scattering",
+      "level": 4,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-a-range-corrections-partial-resummation-and-two",
+      "number": null,
+      "title": "a Range corrections, partial resummation, and two-body parametrizations",
+      "level": 5,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "range corrections",
+          "heading": true
+        },
+        {
+          "term": "doublet channel",
+          "heading": false
+        },
+        {
+          "term": "resummation",
+          "heading": true
+        },
+        {
+          "term": "relativistic corrections",
+          "heading": false
+        },
+        {
+          "term": "two-body",
+          "heading": true
+        },
+        {
+          "term": "deep pole",
+          "heading": false
+        },
+        {
+          "term": "vanasse",
+          "heading": false
+        },
+        {
+          "term": "bedaque",
+          "heading": false
+        }
+      ],
+      "extract": "parametrizations At NLO one needs to account for the two-body ranges. In the dibaryon framework that means one insertion of each dibaryon kinetic-energy operator between LO amplitudes, as shown in Fig. 14. At N2LO, the procedure of perturbative range insertions becomes tedious, and a direct calculation of the corrections re- quires fully oﬀ-shell LO amplitudes. To avoid this, range corrections can be resummed with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-b-higher-partial-waves",
+      "number": null,
+      "title": "b Higher partial waves",
+      "level": 5,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s1-3d mixing",
+          "heading": false
+        },
+        {
+          "term": "waves",
+          "heading": true
+        },
+        {
+          "term": "experimental data",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "two-body",
+          "heading": false
+        }
+      ],
+      "extract": "Even with only S-wave interac- tions in the two-body sector, the nucleon-exchange dia- gram driving the nd scattering equations (Fig. 10) gen- erates contributions in all partial waves. Gabbiani et al. (2000) calculated the scattering phase shifts up to G waves (ℓ= 4) to N2LO using the full resummation (31) but omitting 3S1-3D1 mixing. They found good agree- ment with both potential-model calculations and avail-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-c-ordering-of-three-body-forces",
+      "number": null,
+      "title": "c Ordering of three-body forces",
+      "level": 5,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-body forces",
+          "heading": true
+        },
+        {
+          "term": "phillips",
+          "heading": false
+        },
+        {
+          "term": "range corrections",
+          "heading": false
+        },
+        {
+          "term": "bedaque",
+          "heading": false
+        },
+        {
+          "term": "dimen sion",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "grießhammer",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        }
+      ],
+      "extract": "Bedaque et al. (2000) ar- gued that at NLO range corrections force a shift in the LEC of the 3N force (43), which was conﬁrmed by Ham- mer and Mehen (2001a) in an explicit NLO calculation. Thus, h(Λ) = h(0) 0 (Λ) + h(1) 0 (Λ) + · · · , (45) where h(0) 0 (Λ) is given in Eq. (44) and h(1) 0 (Λ), deter- mined in a fully perturbative calculation with physical NN eﬀective-range parameters, is shown in Fig. 12. At NLO,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-4-proton-deuteron-scattering-and-helion",
+      "number": "4",
+      "title": "Proton-deuteron scattering and helion",
+      "level": 4,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite konig",
+          "heading": false
+        },
+        {
+          "term": "textcite kirscher",
+          "heading": false
+        },
+        {
+          "term": "textcite ando",
+          "heading": false
+        },
+        {
+          "term": "threehe binding",
+          "heading": false
+        },
+        {
+          "term": "textcite vanasse",
+          "heading": false
+        },
+        {
+          "term": "textcite rupak",
+          "heading": false
+        },
+        {
+          "term": "textcite hammer",
+          "heading": false
+        },
+        {
+          "term": "coulomb effects",
+          "heading": false
+        }
+      ],
+      "extract": "\\paragraph{Nonperturbative Coulomb effects} As discussed in Sec.~\\ref{sec:pionlessCoulomb}, at the low energies potentially reached in scattering Coulomb-photon exchange needs to be treated nonperturbatively, which poses additional technical challenges. The first attempt to study Coulomb effects was made in the simpler quartet $S$-wave $pd$ scattering by \\textcite{Rupak:2001ci}. They developed a power counting that,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-a-nonperturbative-coulomb-effects",
+      "number": null,
+      "title": "a Nonperturbative Coulomb effects",
+      "level": 5,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coulomb",
+          "heading": true
+        },
+        {
+          "term": "coulomb eﬀects",
+          "heading": false
+        },
+        {
+          "term": "onig",
+          "heading": false
+        },
+        {
+          "term": "oﬀ-shell",
+          "heading": false
+        },
+        {
+          "term": "nonperturbative",
+          "heading": true
+        },
+        {
+          "term": "isospin-breaking",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "Renewed interest and de- velopments in the strict application of perturbation the- ory also motivated a new look into the counting of Coulomb eﬀects. The characteristic trinucleon momen- tum scale γT ∼80 MeV ≫αmN suggests that Coulomb eﬀects should be a perturbative correction to the 3He binding energy (compared to the triton as its isospin mirror state). Already K¨onig et al. (2015) showed that the calculation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-c-dineutron-constraints",
+      "number": null,
+      "title": "c Dineutron constraints",
+      "level": 5,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "dineutron",
+          "heading": true
+        },
+        {
+          "term": "kirscher",
+          "heading": false
+        },
+        {
+          "term": "phillips",
+          "heading": false
+        },
+        {
+          "term": "onig",
+          "heading": false
+        },
+        {
+          "term": "hammer",
+          "heading": false
+        }
+      ],
+      "extract": "Kirscher and Phillips (2011) used Pionless EFT to constrain the neutron-neutron (nn) scattering length, for which there exist conﬂicting exper- imental determinations of −16.1 ± 0.4 fm (Huhn et al., 2000, 2001) and −18.7 ± 0.7 fm (Gonzalez Trotter et al., 1999, 2006). Using a model-independent correlation be- tween the diﬀerence of the nn and (Coulomb-modiﬁed) pp scattering lengths on the one hand and the 3H-3He",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-5-infrared-regulators",
+      "number": "5",
+      "title": "Infrared regulators",
+      "level": 4,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite hansen",
+          "heading": false
+        },
+        {
+          "term": "textcite hammer",
+          "heading": false
+        },
+        {
+          "term": "three-body binding",
+          "heading": false
+        },
+        {
+          "term": "cite stetcu",
+          "heading": false
+        },
+        {
+          "term": "kreuzer",
+          "heading": false
+        },
+        {
+          "term": "eft cite",
+          "heading": false
+        },
+        {
+          "term": "cite rupak",
+          "heading": false
+        },
+        {
+          "term": "harmonic oscillator",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{infrareg} Solving the EFT beyond the three-nucleon system poses significant technical challenges. All calculations so far have relied on the transition to the Hamiltonian and a solution of the Schr\\\"odinger equation or one of its many-body variants. One way to mitigate difficulties is to introduce an IR regulator in the form of a confining potential that produces discrete energy levels and, together with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-6-four-nucleons",
+      "number": "6",
+      "title": "Four nucleons",
+      "level": 4,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite kirscher",
+          "heading": false
+        },
+        {
+          "term": "textcite platter",
+          "heading": false
+        },
+        {
+          "term": "alpha-particle binding",
+          "heading": false
+        },
+        {
+          "term": "triton binding",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "cite kirscher",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "fourhe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Helion} One of the virtues of encoding the Efimov effect in the three-body force is that its consequences for systems with more nucleons can be assessed in a model-independent way. A potential obstacle is the {relatively strong binding} of the $A=4$ ground state, the alpha particle (\\FourHe), whose binding energy $B(\\FourHe) = 28.296~\\MeV$ can be associated with a momentum scale $\\gamma_\\alpha = \\sqrt{\\MN",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-7-beyond-four-nucleons",
+      "number": "7",
+      "title": "Beyond four nucleons",
+      "level": 4,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "textcite kirscher",
+          "heading": false
+        },
+        {
+          "term": "textcite kaiser",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "nucleons",
+          "heading": true
+        },
+        {
+          "term": "fourhe",
+          "heading": false
+        },
+        {
+          "term": "bazak",
+          "heading": false
+        },
+        {
+          "term": "four",
+          "heading": true
+        }
+      ],
+      "extract": "Nuclear binding momenta generally increase with the number of nucleons, but it is not clear what momentum scale (\\eg, total binding energy or binding energy per nucleon) is most relevant for the EFT power counting. Consequently, it is an open question up to which number of nucleons Pionless EFT should work. Successful applications to \\FourHe, which is already significantly more deeply bound than \\ThreeHe and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-8-external-currents-and-reactions",
+      "number": "8",
+      "title": "External currents and reactions",
+      "level": 4,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite sadeghi",
+          "heading": false
+        },
+        {
+          "term": "textcite de-leon",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "cite vanasse",
+          "heading": false
+        },
+        {
+          "term": "capture cross",
+          "heading": false
+        },
+        {
+          "term": "triton",
+          "heading": false
+        },
+        {
+          "term": "charge radius",
+          "heading": false
+        },
+        {
+          "term": "electroweak processes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Currents-ThreeBody} The coupling to external currents works exactly as in the two-body sector (see Sec.~\\ref{sec:Currents-TwoBody}). Given the increased technical challenges, there are fewer {calculations}, and they mostly tackle triton and helion properties. Within this limited scope, they confirm the convergence of Pionless EFT at low energies. The simplest observable is the triton charge form factor,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-d-outstanding-issues-and-current-trends",
+      "number": null,
+      "title": "D Outstanding issues and current trends",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite konig",
+          "heading": false
+        },
+        {
+          "term": "cite konig",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "cite bedaque",
+          "heading": false
+        },
+        {
+          "term": "onesnot",
+          "heading": false
+        },
+        {
+          "term": "expansion around",
+          "heading": false
+        },
+        {
+          "term": "iny",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pionlesssummary} Pionless EFT has fulfilled the longstanding goal of a renormalizable quantum field theory for nuclear physics. Although it has a narrow regime of strict validity, it seems to apply to, at least, $A\\le 3$ bound states and possibly to extend to $A=4$ and beyond. RG invariance, combined with the fine tuning that places two-body bound states near zero energy, has led to a power counting that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-iii-halocluster-eft",
+      "number": null,
+      "title": "III Halo/Cluster EFT",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "halo eft",
+          "heading": true
+        },
+        {
+          "term": "halo cluster",
+          "heading": true
+        },
+        {
+          "term": "halo nucleons",
+          "heading": false
+        },
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "halo nuclei",
+          "heading": false
+        },
+        {
+          "term": "scale mhi",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "bound clusters",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:halo} \\subsection{Motivation} In this section we discuss efforts to go one step further in the application of low-energy universality by including tightly bound clusters of nucleons as explicit fields in the effective Lagrangian. This Halo/Cluster EFT framework is appropriate for halo nuclei and nuclei with a cluster structure. In both cases, the energy required to remove clusters or halo nucleons,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-b-s-wave-neutron-halos",
+      "number": null,
+      "title": "B S-wave neutron halos",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 1259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimeron propagator",
+          "heading": false
+        },
+        {
+          "term": "three-body scattering",
+          "heading": false
+        },
+        {
+          "term": "psi dagger",
+          "heading": false
+        },
+        {
+          "term": "three-body coupling",
+          "heading": false
+        },
+        {
+          "term": "three-body bound",
+          "heading": false
+        },
+        {
+          "term": "dagger left",
+          "heading": false
+        },
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "cutoff lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Shalo} We start with the case of $S$-wave halo nuclei or cluster states without Coulomb interactions. For definiteness, we consider one- and two-neutron halo nuclei using the formalism of \\textcite{Hagen:2013xga}. The extension to other cases is straightforward. We also restrict our analysis to LO in $\\Mlo/\\Mhi$. Higher-order effects can be included as discussed in the previous section for Pionless EFT.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-c-excited-efimov-states-in-halo-nuclei",
+      "number": null,
+      "title": "C Excited Efimov states in halo nuclei",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 1149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "excited efimov",
+          "heading": true
+        },
+        {
+          "term": "efimov states",
+          "heading": true
+        },
+        {
+          "term": "halo nuclei",
+          "heading": true
+        },
+        {
+          "term": "two-neutron halo",
+          "heading": false
+        },
+        {
+          "term": "cite efimov",
+          "heading": false
+        },
+        {
+          "term": "efimov spectrum",
+          "heading": false
+        },
+        {
+          "term": "efimov effect",
+          "heading": false
+        },
+        {
+          "term": "efimov physics",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:efimovhalos} The bound-state solutions of Eq.~(\\ref{eq:3ps_70}) are a specific variant of Efimov states~\\cite{Efimov:1970zz,Efimov:1973awb}. Thus the Efimov effect provides a natural binding mechanism for two-neutron halos with dominantly $S$-wave interactions. However, the contributions of higher partial waves and partial-wave mixing complicate the situation. While Halo EFT naturally accommodates",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-d-ab-initio-methods-and-efimov-states-in-heavier",
+      "number": null,
+      "title": "D Ab initio methods and Efimov states in heavier nuclei",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "efimov states",
+          "heading": true
+        },
+        {
+          "term": "excited efimov",
+          "heading": false
+        },
+        {
+          "term": "efimov physics",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "halo nuclei",
+          "heading": false
+        },
+        {
+          "term": "textcite hagen",
+          "heading": false
+        },
+        {
+          "term": "halo nucleus",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:halo+abinitio} Halo EFT can be used in conjunction with \\abinitio calculations to extend the reach of the latter or to test the consistency of different approaches. Here, we discuss an example of the former in the context of Efimov physics. Further examples regarding electromagnetic reactions will be given below. Coupled-cluster calculations by \\textcite{Hagen:2012fb} of neutron-rich calcium",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-e-higher-partial-waves-and-resonances",
+      "number": null,
+      "title": "E Higher partial waves and resonances",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 1605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "textcite bertulani",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": true
+        },
+        {
+          "term": "textcite rotureau",
+          "heading": false
+        },
+        {
+          "term": "textcite bedaque",
+          "heading": false
+        },
+        {
+          "term": "sim mhi",
+          "heading": false
+        },
+        {
+          "term": "scale mhi",
+          "heading": false
+        },
+        {
+          "term": "dimeron propagator",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:highpar} Next we discuss systems with resonant interactions in higher partial waves. Such interactions are ubiquitous in halo and cluster nuclei and lead to a richer power counting structure. Consider two-body scattering with reduced mass $\\mu$ and energy $E=k^2/2\\mu$ in the center-of-mass frame. Resonance behavior arises when the $S$-matrix has a pair of poles in the two lower quadrants of the complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-f-electromagnetic-properties-and-reactions",
+      "number": null,
+      "title": "F Electromagnetic properties and reactions",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mlo mhi",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "cite hammer",
+          "heading": false
+        },
+        {
+          "term": "excited state",
+          "heading": false
+        },
+        {
+          "term": "bound state",
+          "heading": false
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "minimal substitution",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:haloelectric} For one-neutron halos{,} Halo EFT essentially reproduces the ERE, but their electromagnetic structure and reactions can be predicted. The formalism is similar to that of Pionless EFT (Sec.~\\ref{sec:Currents-ThreeBody}) and serves to illustrate it. Moreover, the accuracy limits of cluster models can be estimated from the order at which gauge-invariant couplings to currents appear. In the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-1-form-factors",
+      "number": "1",
+      "title": "Form Factors",
+      "level": 4,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "charge radius",
+          "heading": false
+        },
+        {
+          "term": "gamma mathbf",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "relative radius",
+          "heading": false
+        },
+        {
+          "term": "equation langle",
+          "heading": false
+        },
+        {
+          "term": "frac mathbf",
+          "heading": false
+        },
+        {
+          "term": "photon coupling",
+          "heading": false
+        }
+      ],
+      "extract": "The form factor of the $^{11}$Be ground state is computed by calculating the contribution to the irreducible vertex for {$A_0 dd$} interactions shown in Fig.~\\ref{fig:formfactor-11Be}. There is no diagram coupling the photon to the neutron at this order since $Q_n=0$. In the Breit frame, where the four-momentum of the virtual photon is $q=(0,\\mathbf{q})$, the irreducible vertex for the $A_0$ photon coupling to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-2-e1-transition-and-photodisintegration",
+      "number": "2",
+      "title": "E1 transition and photodisintegration",
+      "level": 4,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 1525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite typel",
+          "heading": false
+        },
+        {
+          "term": "textcite hammer",
+          "heading": false
+        },
+        {
+          "term": "one-neutron halo",
+          "heading": false
+        },
+        {
+          "term": "textcite hagen",
+          "heading": false
+        },
+        {
+          "term": "textcite palit",
+          "heading": false
+        },
+        {
+          "term": "textcite acharya",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "halo nucleus",
+          "heading": false
+        }
+      ],
+      "extract": "Next we discuss the E1 transition from the $1/2^+$ state to the $1/2^-$ state. The irreducible vertex for this transition is depicted in Fig.~\\ref{fig:Gammajmu}. We compute the transition for a photon of arbitrary four momentum $k=(\\omega,{\\bf k})$, and the sum of diagrams yields ${-}\\ii\\Gamma_{j\\mu}$, where $j$ is the angular momentum index of the {$d^*$} field and $\\mu$ is the polarization index of the photon. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-3-correlations",
+      "number": "3",
+      "title": "Correlations",
+      "level": 4,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "correlations",
+          "heading": true
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "abinitio calculations",
+          "heading": false
+        },
+        {
+          "term": "neutron separation",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "quadrupole moment",
+          "heading": false
+        },
+        {
+          "term": "separation energies",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic properties",
+          "heading": false
+        }
+      ],
+      "extract": "EFTs in general, and Halo EFT in particular, provide model-independent correlations between different observables. In Pionless EFT, the most prominent universal correlations were discussed in Secs.~\\ref{sec:Triton} and~\\ref{sec:Helion}. Such correlations have also proven useful in the analysis of universal properties of ultracold atoms~\\cite{Braaten:2004rn}. In the previous sections, we have expressed the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-4-neutron-capture",
+      "number": "4",
+      "title": "Neutron capture",
+      "level": 4,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutron capture",
+          "heading": true
+        },
+        {
+          "term": "textcite rupak",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "radiative neutron",
+          "heading": false
+        },
+        {
+          "term": "excited states",
+          "heading": false
+        },
+        {
+          "term": "final states",
+          "heading": false
+        },
+        {
+          "term": "abinitio",
+          "heading": false
+        },
+        {
+          "term": "reaction",
+          "heading": false
+        }
+      ],
+      "extract": "The inverse reaction of the photodissociation of one-neutron halo nuclei is radiative neutron capture on the core nucleus, which can be relevant for a variety of astrophysical processes. The corresponding efforts in Halo EFT have been reviewed by \\textcite{Higa:2015yvf} and \\textcite{Rupak:2016mmz}. One example is the radiative neutron capture on $^7$Li. This reaction was investigated in Halo EFT by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-g-proton-halos",
+      "number": null,
+      "title": "G Proton halos",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton halos",
+          "heading": true
+        },
+        {
+          "term": "textcite ryberg",
+          "heading": false
+        },
+        {
+          "term": "textcite zhang",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "proton capture",
+          "heading": false
+        },
+        {
+          "term": "coulomb barrier",
+          "heading": false
+        },
+        {
+          "term": "coulomb momentum",
+          "heading": false
+        },
+        {
+          "term": "wave scattering",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:phalos} Proton halos are less common due to the delicate interplay between attraction from the strong interaction and the Coulomb repulsion. The presence of the Coulomb barrier introduces the Coulomb momentum, \\begin{equation} \\label{eq:Cb-mom} {k_C=Z_1 Z_2 \\alpha\\mu_{12}\\,,} \\end{equation} with {$Z_{1,2}$} {the particle charges and $\\mu_{12}$ their reduced mass, as a new scale corresponding to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-h-cluster-systems",
+      "number": null,
+      "title": "H Cluster systems",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 1718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "halo eft",
+          "heading": false
+        },
+        {
+          "term": "halo cluster",
+          "heading": false
+        },
+        {
+          "term": "textcite higa",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "eft approach",
+          "heading": false
+        },
+        {
+          "term": "lattice eft",
+          "heading": false
+        },
+        {
+          "term": "textcite zhang",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:clusters} Many nuclear states are close to a threshold for break-up into smaller clusters, and are therefore amenable to an EFT approach where these smaller clusters are the relevant degrees of freedom. For example, several states of nuclei with $A=4 (n+1)$, $n\\ge 1$ an integer, and equal numbers of proton and neutrons are thought to be made of alpha-particle clusters~\\cite{Ikeda:1968}. The most famous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-b-basic-elements",
+      "number": null,
+      "title": "B Basic elements",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-1-degrees-of-freedom-and-symmetries",
+      "number": "1",
+      "title": "Degrees of freedom and symmetries",
+      "level": 4,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 936,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "cite arndt",
+          "heading": false
+        },
+        {
+          "term": "simeq mev",
+          "heading": false
+        },
+        {
+          "term": "delta simeq",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        },
+        {
+          "term": "mqcd",
+          "heading": false
+        },
+        {
+          "term": "delta isobar",
+          "heading": false
+        },
+        {
+          "term": "gamma delta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsec:Dofssymms} By extending the Pionless EFT of Sec.~\\ref{sec:pionless} to include an isovector field $\\vec\\pi$ that collects the three charged pion states one develops a representation of QCD for $Q\\sim m_\\pi$, with $m_\\pi$ now among the low-energy scales collectively denoted by $\\Mlo$. In this EFT, pion exchange among nucleons generates amplitudes that are no longer given by the ERE or a simple",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-2-chiral-lagrangian",
+      "number": "2",
+      "title": "Chiral Lagrangian",
+      "level": 4,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 1172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral lagrangian",
+          "heading": true
+        },
+        {
+          "term": "dagger vec",
+          "heading": false
+        },
+        {
+          "term": "vec tau",
+          "heading": false
+        },
+        {
+          "term": "pps right",
+          "heading": false
+        },
+        {
+          "term": "frac vec",
+          "heading": false
+        },
+        {
+          "term": "matrices vec",
+          "heading": false
+        },
+        {
+          "term": "dagger cdot",
+          "heading": false
+        },
+        {
+          "term": "dagger left",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsec:chiLag} The construction of the most general chiral Lagrangian is based on the theory of the non-linear realization of a symmetry~\\cite{Weinberg:1968de,Coleman:1969sm,Callan:1969sn}. Different parametrizations of the three-dimensional sphere $SU(2)_{\\rm L}\\times SU(2)_{\\rm R}/SU(2)_{\\rm V} = SO(4)/SO(3)\\sim S^3$ correspond to different choices of pion fields. Observables are of course independent of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-c-chiral-perturbation-theory-and-the-nuclear-pot",
+      "number": null,
+      "title": "C Chiral Perturbation Theory and the nuclear potential",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear",
+          "heading": true
+        },
+        {
+          "term": "scribe",
+          "heading": false
+        },
+        {
+          "term": "cus",
+          "heading": false
+        }
+      ],
+      "extract": "A great advantage of EFT over earlier attempts to de- scribe nuclear physics from ﬁeld theory is its explicit fo- cus on the regime of momenta well below the nucleon mass, where the theory splits into sectors of ﬁxed nucleon number A. As pointed out in Sec. I, there are signiﬁcant diﬀerences between A ≤1 and A ≥2 processes.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-1-power-counting",
+      "number": "1",
+      "title": "Power counting",
+      "level": 4,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 1330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mlo mqcd",
+          "heading": false
+        },
+        {
+          "term": "power counting",
+          "heading": true
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "reduced lec",
+          "heading": false
+        },
+        {
+          "term": "dia gram",
+          "heading": false
+        },
+        {
+          "term": "baryon ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "nda",
+          "heading": false
+        },
+        {
+          "term": "nucleon recoil",
+          "heading": false
+        }
+      ],
+      "extract": "To express amplitudes in an expansion in powers of Q/MQCD, as in Eq. (3), one needs to count powers of both Q ∼Mlo and MQCD. For Q one ﬁrst relates nu- cleon energies and momenta, and this relation in gen- eral depends on the sector of the theory. For A ≤1, typically (but not always) E = O(Q), while A ≥2 pro- cesses with only nucleons in external legs involve energies E = O(Q2/mN). For pions, since we count mπ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-2-nuclear-potential",
+      "number": "2",
+      "title": "Nuclear potential",
+      "level": 4,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "contact interactions",
+          "heading": false
+        },
+        {
+          "term": "piece",
+          "heading": false
+        },
+        {
+          "term": "nda",
+          "heading": false
+        }
+      ],
+      "extract": "In Chiral EFT, Fig. 2 is undone: pion exchange ap- pears explicitly in the potential, with the remaining contact interactions accounting for higher-momentum physics. In contrast to Pionless EFT, the potential itself involves (irreducible) loops, where energies are compara- ble to momenta and nucleons are approximately static. The long-range pion-exchange contributions appear in all partial waves and yield many-body",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-a-leading-order",
+      "number": null,
+      "title": "a Leading order",
+      "level": 5,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 1128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "ord nez",
+          "heading": false
+        },
+        {
+          "term": "few-body forces",
+          "heading": false
+        },
+        {
+          "term": "primordial counterterms",
+          "heading": false
+        },
+        {
+          "term": "chiral-symmetric contact",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "fujita-miyazawa force",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        }
+      ],
+      "extract": "The full LO potential has maximum C (Cmax = A−1, from A−2 disconnected lines): it consists of the sum over pairs of the 2N potential at tree level (L = 0) constructed entirely from ∆= 0 interactions. The long-range 2N potential consists of static one-pion exchange (OPE) and the primordial counterterms are the two LECs of the non-derivative chiral-symmetric contact interactions in Eq. (70c): V (0) = − 4π mNMNN⃗ τ1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-c-2n-potential",
+      "number": null,
+      "title": "c 2N potential",
+      "level": 5,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ord nez",
+          "heading": false
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "pion exchange",
+          "heading": false
+        },
+        {
+          "term": "iterated ope",
+          "heading": false
+        },
+        {
+          "term": "kaiser",
+          "heading": false
+        },
+        {
+          "term": "tpe",
+          "heading": false
+        },
+        {
+          "term": "entem",
+          "heading": false
+        }
+      ],
+      "extract": "2N potential up to O(Q3/M 3 QCD) was derived early on (Ord´o˜nez and van Kolck, 1992; van Kolck, 1993; Ord´o˜nez et al., 1996; Kaiser et al., 1997, 1998) and rederived many times since. Epelbaum et al. (1998) introduced the unitary transformation method which allows for the separation of the iterated OPE with a consistent set of 1/mN corrections. Friar (1999) discusses the various forms, including pre-EFT results,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-d-3n-potential",
+      "number": null,
+      "title": "d 3N potential",
+      "level": 5,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deltas",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "epelbaum",
+          "heading": false
+        },
+        {
+          "term": "double-pair",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "primordial",
+          "heading": false
+        },
+        {
+          "term": "girlanda",
+          "heading": false
+        },
+        {
+          "term": "tpe",
+          "heading": false
+        }
+      ],
+      "extract": "Beyond the Fujita-Miyazawa term, 3N forces have a similar hierarchy. At O(Qn+1/M n+1 QCD), the 3N potential contains TPE diagrams where one interac- tion has ∆= 1 (see Fig. 25). Again, the form of TPE is constrained by chiral symmetry, and provides a chiral- corrected version of the earlier Tucson-Melbourne (TM) potential (Coon et al., 1979), sometimes called the TM′ potential (Friar et al., 1999; Huber et al.,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-f-isospin-violation",
+      "number": null,
+      "title": "f Isospin violation",
+      "level": 5,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isospin",
+          "heading": true
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "epel baum",
+          "heading": false
+        },
+        {
+          "term": "primordial counterterms",
+          "heading": false
+        },
+        {
+          "term": "coulomb potential",
+          "heading": false
+        },
+        {
+          "term": "isospin breaking",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "mass diﬀerence",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed in Sec. II, Coulomb ex- change is nonperturbative only at small energies; in the region Chiral EFT power counting is designed for, the Coulomb potential can be treated in perturbation theory. The way ered is counted above ensures that the Coulomb potential appears at O(Mlo/MQCD), not LO. Other purely electromagnetic components are even smaller and can be incorporated as in ChPT. More interesting is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-d-nuclear-amplitudes-and-observables",
+      "number": null,
+      "title": "D Nuclear amplitudes and observables",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reducible diagrams",
+          "heading": false
+        },
+        {
+          "term": "weinberg",
+          "heading": false
+        },
+        {
+          "term": "pionless",
+          "heading": false
+        },
+        {
+          "term": "regulator",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "potential",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:chiralamps} Observables are determined by the $T$ matrix, which in turn is obtained by using the potential with the appropriate dynamical framework---the Lippmann-Schwinger or Schr\\\"odinger equation, or one of its many-body variants. This process involves reducible diagrams for which the power counting of the previous section does not apply. Weinberg's original",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-1-weinbergs-prescription",
+      "number": "1",
+      "title": "Weinberg's prescription",
+      "level": 4,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 1628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simle mqcd",
+          "heading": false
+        },
+        {
+          "term": "cite ekstrom",
+          "heading": false
+        },
+        {
+          "term": "textcite entem",
+          "heading": false
+        },
+        {
+          "term": "textcite reinert",
+          "heading": false
+        },
+        {
+          "term": "weinberg prescription",
+          "heading": true
+        },
+        {
+          "term": "cite epelbaum",
+          "heading": false
+        },
+        {
+          "term": "cite gezerlis",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sebsubsec:weinbergprescription} The first numerical study of chiral potentials with Weinberg's prescription by \\textcite{Ordonez:1993tn,Ordonez:1995rz} yielded a reasonable description of $2N$ data at $\\OO(Q^3/\\MQCD^3)$ with explicit Deltas for a Gaussian regulator on the transferred momentum with cutoff values $\\Lambda=500, 800, 1000~\\MeV$, {but used an over-complete set of interactions}. A drawback of such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-2-renormalization-of-singular-potentials",
+      "number": "2",
+      "title": "Renormalization of singular potentials",
+      "level": 4,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 1188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cutoff cite",
+          "heading": false
+        },
+        {
+          "term": "cutoff dependence",
+          "heading": false
+        },
+        {
+          "term": "cite eiras",
+          "heading": false
+        },
+        {
+          "term": "pavonvalderrama",
+          "heading": false
+        },
+        {
+          "term": "mathrm mqcd",
+          "heading": false
+        },
+        {
+          "term": "cite nogga",
+          "heading": false
+        },
+        {
+          "term": "cutoff increases",
+          "heading": false
+        },
+        {
+          "term": "cite beane",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:singrenorm} The regulator dependence of Weinberg's prescription has been understood for a long time. Historically the first observation was that the potential~\\eqref{OPE} can be solved semi-analytically in the $^1S_0$ channel: if $\\boldp$ ($\\boldp'$) denotes the relative incoming (outgoing) momentum in the center-of-mass frame and $k^2/m_N$ the energy, the LO amplitude can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-3-connection-with-pionless-eft",
+      "number": "3",
+      "title": "Connection with Pionless EFT",
+      "level": 4,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adds reducible",
+          "heading": false
+        },
+        {
+          "term": "mqcd",
+          "heading": false
+        },
+        {
+          "term": "nucleon propagator",
+          "heading": false
+        },
+        {
+          "term": "reducible loop",
+          "heading": false
+        },
+        {
+          "term": "cite bedaque",
+          "heading": false
+        },
+        {
+          "term": "mlo",
+          "heading": false
+        },
+        {
+          "term": "pionless",
+          "heading": true
+        },
+        {
+          "term": "sim frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:conpiless} Experience with Pionless EFT~\\cite{Bedaque:1997qi,vanKolck:1997ut,Kaplan:1998tg,Kaplan:1998we, Bedaque:1998mb,vanKolck:1998bw} shows that the factors associated with reducible loops are \\begin{subalign}[eq:ConnectionPionlessPC] \\text{potential} &\\sim 4\\pi m_N^{-1} \\Mlo^{-1}\\left(Q \\MQCD^{-1}\\right)^{\\mu} \\,, \\label{potsize} \\\\ \\text{nucleon prop.} &\\sim m_N Q^{-2} \\,, \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-4-perturbative-pions",
+      "number": "4",
+      "title": "Perturbative pions",
+      "level": 4,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "50",
+      "labelEnd": "50",
+      "words": 853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbative pions",
+          "heading": true
+        },
+        {
+          "term": "mnn sim",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "cite kaplan",
+          "heading": false
+        },
+        {
+          "term": "cite cohen",
+          "heading": false
+        },
+        {
+          "term": "perturbative-pion expansion",
+          "heading": false
+        },
+        {
+          "term": "cite beane",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:pertpions} A radical solution to the renormalization problems of Weinberg's prescription was proposed by \\textcite{Kaplan:1998tg,Kaplan:1998we}: assume the contact interactions carry a low-energy scale {characteristic of the binding momenta of light nuclei}, $\\Mlo\\ll \\MNN$, and treat $\\MNN$ as a high-energy scale. Pion exchange in nuclear amplitudes appears in two expansions: \\begin{enumerate}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-5-partly-perturbative-pions",
+      "number": "5",
+      "title": "Partly perturbative pions",
+      "level": 4,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "50",
+      "labelEnd": "52",
+      "words": 1336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbative pions",
+          "heading": true
+        },
+        {
+          "term": "textcite valderrama",
+          "heading": false
+        },
+        {
+          "term": "mhi mnn",
+          "heading": false
+        },
+        {
+          "term": "textcite nogga",
+          "heading": false
+        },
+        {
+          "term": "cite birse",
+          "heading": false
+        },
+        {
+          "term": "ope tensor",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "cite ekstrom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:partpertpions} For a couple of years the choice facing the field was between a power counting that lacks counterterms in the sense discussed in Sec.~\\ref{subsubsection:singrenorm} (\\ie, ensuring that all divergences at a given order can be absorbed) but worked well phenomenologically (Sec.~\\ref{sebsubsec:weinbergprescription}), and another one that has all counterterms but failed to converge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-6-other-approaches",
+      "number": "6",
+      "title": "Other approaches",
+      "level": 4,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 828,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite epelbaum",
+          "heading": false
+        },
+        {
+          "term": "textcite behrendt",
+          "heading": false
+        },
+        {
+          "term": "cite gegelia",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "weinberg prescription",
+          "heading": false
+        },
+        {
+          "term": "cutoff",
+          "heading": false
+        },
+        {
+          "term": "nda",
+          "heading": false
+        },
+        {
+          "term": "mhi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:other} { The renormalization of Chiral EFT described in the previous section was criticized by~\\textcite{Epelbaum:2018zli}, who provided examples where the nonperturbatively renormalized amplitude exhibits positive powers of the cutoff $\\Lambda$ when expanded in Planck's constant $\\hbar$. {Since no observable {considered} in that work is affected, however, the significance of this claim for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-e-pion-and-electroweak-reactions",
+      "number": null,
+      "title": "E Pion and electroweak reactions",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 1154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reactions",
+          "heading": true
+        },
+        {
+          "term": "nuclear reactions",
+          "heading": false
+        },
+        {
+          "term": "pion",
+          "heading": true
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "pion production",
+          "heading": false
+        },
+        {
+          "term": "weinberg prescription",
+          "heading": false
+        },
+        {
+          "term": "compton scattering",
+          "heading": false
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        }
+      ],
+      "extract": "One of the great advantages of a quantum-ﬁeld- theoretical foundation of nuclear physics is that not only many-body forces can be constructed consistently with two-body forces, but also many-body currents can be de- rived consistently with inter-nucleon interactions. This virtue was realized early on (Rho, 1991; Weinberg, 1991), and some of the pioneering papers on reactions have been dedicated to electroweak",
+      "extractCut": true
+    },
+    {
+      "id": "sec-067-f-outstanding-issues-and-current-trends",
+      "number": null,
+      "title": "F Outstanding issues and current trends",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 1017,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "weinberg prescription",
+          "heading": false
+        },
+        {
+          "term": "weinberg pre",
+          "heading": false
+        },
+        {
+          "term": "pre scription",
+          "heading": false
+        },
+        {
+          "term": "issues",
+          "heading": true
+        },
+        {
+          "term": "many-body forces",
+          "heading": false
+        },
+        {
+          "term": "pav",
+          "heading": false
+        }
+      ],
+      "extract": "Within Weinberg’s prescription, work continues in pushing potential and kernels to higher orders, as well as developing better ﬁtting strategies. Meanwhile, an RG- invariant formulation of Chiral EFT has not yet achieved the level of phenomenological impact of Weinberg’s pre- scription. Some of the outstanding questions are: • What is the role of ﬁne-tuning in Chiral EFT? The scattering length is particularly large",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-v-broader-applications",
+      "number": null,
+      "title": "V Broader applications",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "efts",
+          "heading": false
+        },
+        {
+          "term": "halo",
+          "heading": false
+        },
+        {
+          "term": "long-range",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:other} Many of the ideas originating in nuclear EFTs have found applications to other systems. Pionless EFT, while being clearly connected to QCD as a low-energy limit, is driven largely by the universal features that arise from the large $N\\!N$ scattering lengths and the associated large sizes of light nuclei. As a consequence, the EFT for nuclear halo states discussed in Sec.~\\ref{sec:halo} can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-a-connection-with-qcd",
+      "number": null,
+      "title": "A Connection with QCD",
+      "level": 3,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd",
+          "heading": true
+        },
+        {
+          "term": "eft",
+          "heading": false
+        },
+        {
+          "term": "efts",
+          "heading": false
+        },
+        {
+          "term": "phillips",
+          "heading": false
+        },
+        {
+          "term": "lqcd",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": false
+        },
+        {
+          "term": "low-energy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:qcdconn} The inclusion of all possible interactions consistent with QCD symmetries ensures that nuclear EFTs capture the low-energy limit of QCD. This means that in principle one can follow a top-down approach and determine low-energy constants that appear in an EFT from a direct solution of the more general theory. While such solutions of QCD (in the highly nonperturbative low-energy regime) are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-1-nuclear-physics-at-large-quark-masses",
+      "number": "1",
+      "title": "Nuclear physics at large quark masses",
+      "level": 4,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite beane",
+          "heading": false
+        },
+        {
+          "term": "textcite barnea",
+          "heading": false
+        },
+        {
+          "term": "lqcd input",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "pion masses",
+          "heading": false
+        },
+        {
+          "term": "unphysical pion",
+          "heading": false
+        },
+        {
+          "term": "mpi mev",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:lattice nuclei} The pion mass is a tunable parameter in LQCD. With calculations getting more expensive for lower pion masses, typically results are extracted for values of $\\Mpi$ well above the physical point. Observables like hadron spectra can by now be described with amazing accuracy~\\cite{Kronfeld:2012uk}, and results for hadronic properties have become available even at or below the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
+      "number": "2",
+      "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
+      "level": 4,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite epelbaum",
+          "heading": false
+        },
+        {
+          "term": "limit cycle",
+          "heading": true
+        },
+        {
+          "term": "chiral eft",
+          "heading": true
+        },
+        {
+          "term": "pion-mass dependence",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "critical pion",
+          "heading": false
+        },
+        {
+          "term": "triton spectrum",
+          "heading": false
+        },
+        {
+          "term": "cite hammer",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsection:fineorigin} Chiral EFT, constituting the many-nucleon generalization of ChPT, yields the pion-mass dependence of nuclear observables. If LQCD data are within the limit of validity of the theory, the latter can be used to extrapolate towards smaller values of the quark---and thus pion---masses. If $\\MNN$ is considered a low-energy scale, the pion-mass dependence arises at LO from the explicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-072-b-antinucleon-systems",
+      "number": null,
+      "title": "B Antinucleon systems",
+      "level": 3,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite haidenbauer",
+          "heading": false
+        },
+        {
+          "term": "textcite contessi",
+          "heading": false
+        },
+        {
+          "term": "textcite chen",
+          "heading": false
+        },
+        {
+          "term": "lambda scattering",
+          "heading": false
+        },
+        {
+          "term": "lambda binding",
+          "heading": false
+        },
+        {
+          "term": "three-body force",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "halo eft",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:antinuclei} While nucleon-antinucleon pairs can be integrated out at low energies, nuclear EFTs apply as well to systems where antinucleons, a consequence of the Lorentz invariance of QCD, appear in initial states. The simplest such system is antinucleon-nucleon ($\\bar{N}\\!N$) scattering. While the details of annihilation involve short distances, low-energy antinucleon-nucleus scattering can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-d-hadronic-molecules",
+      "number": null,
+      "title": "D Hadronic molecules",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite braaten",
+          "heading": false
+        },
+        {
+          "term": "cite fleming",
+          "heading": false
+        },
+        {
+          "term": "baru",
+          "heading": false
+        },
+        {
+          "term": "cite jansen",
+          "heading": false
+        },
+        {
+          "term": "heavy quark",
+          "heading": false
+        },
+        {
+          "term": "textcite",
+          "heading": false
+        },
+        {
+          "term": "simeq mev",
+          "heading": false
+        },
+        {
+          "term": "mehen",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:hadromol} Universality also bridges the gap between the seemingly unrelated domains of atomic and hadronic physics. In recent years, a large number of new ``quarkonium'' states in the charmonium and bottomonium region have been identified by various experiments~\\cite{Olive:2016xmw}. Many of these states are close to the thresholds for decays into charm and bottom mesons which strongly influences their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-e-fundamental-symmetries",
+      "number": null,
+      "title": "E Fundamental symmetries",
+      "level": 3,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref qcdl",
+          "heading": false
+        },
+        {
+          "term": "gluons",
+          "heading": false
+        },
+        {
+          "term": "jig",
+          "heading": false
+        },
+        {
+          "term": "interactions",
+          "heading": false
+        }
+      ],
+      "extract": "According to QCD, nuclei ultimately emerge from the interaction between quarks and gluons. The quarks and gluons, however, are subject not only to the strong and electromagnetic interactions displayed explicitly in Eq.~\\eqref{QCDL}, but also to weak and possibly other interactions found in the ``$\\cdots$''. Allowing for violation of symmetries such as parity ($P$) and time reversal ($T$) from higher-dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-075-1-parity-violation",
+      "number": "1",
+      "title": "Parity violation",
+      "level": 4,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": "59",
+      "labelEnd": "60",
+      "words": 503,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite vanasse",
+          "heading": false
+        },
+        {
+          "term": "textcite arani",
+          "heading": false
+        },
+        {
+          "term": "textcite devries",
+          "heading": false
+        },
+        {
+          "term": "textcite schindler",
+          "heading": false
+        },
+        {
+          "term": "textcite zhu",
+          "heading": false
+        },
+        {
+          "term": "violating force",
+          "heading": false
+        },
+        {
+          "term": "violating effects",
+          "heading": false
+        },
+        {
+          "term": "violation",
+          "heading": true
+        }
+      ],
+      "extract": "Besides being responsible for beta decay, weak interactions also imply that there should be small $P$-violating operators in the nuclear force and currents. Since they stem mostly from four-quark interactions proportional to the Fermi constant $G_F \\simeq 1.17 \\cdot 10^{-5}~\\GeV^{-2}$, NDA~\\eqref{NDA} suggests that for $T$-conserving $P$ violation the suppression factor is $G_Ff_\\pi^2 \\sim 10^{-7}$. The framework",
+      "extractCut": true
+    },
+    {
+      "id": "sec-076-2-time-reversal-violation",
+      "number": "2",
+      "title": "Time-reversal violation",
+      "level": 4,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcite devries",
+          "heading": false
+        },
+        {
+          "term": "textcite bsaisou",
+          "heading": false
+        },
+        {
+          "term": "textcite mereghetti",
+          "heading": false
+        },
+        {
+          "term": "violation",
+          "heading": true
+        },
+        {
+          "term": "electric dipole",
+          "heading": false
+        },
+        {
+          "term": "dipole moments",
+          "heading": false
+        },
+        {
+          "term": "weinberg prescription",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of $T$, there is potential violation from the QCD vacuum angle $\\bar\\theta$ and from higher-dimensional operators{, all contained in the ``$\\cdots$'' in Eq.~\\eqref{QCDL}.} While the former is anomalously small {($\\bar\\theta \\simle 10^{-10}$~\\cite{Tanabashi:2018oca}),} the latter are suppressed by at least two powers of a large scale. All violation from operators of dimension up to six is accompanied by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-077-3-other-symmetries",
+      "number": "3",
+      "title": "Other symmetries",
+      "level": 4,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "60",
+      "labelEnd": "61",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite cirigliano",
+          "heading": false
+        },
+        {
+          "term": "nuclear efts",
+          "heading": false
+        },
+        {
+          "term": "textcite noordmans",
+          "heading": false
+        },
+        {
+          "term": "majorana neutrino",
+          "heading": false
+        },
+        {
+          "term": "symmetries",
+          "heading": true
+        },
+        {
+          "term": "hja",
+          "heading": false
+        },
+        {
+          "term": "violation",
+          "heading": false
+        },
+        {
+          "term": "dimension-five",
+          "heading": false
+        }
+      ],
+      "extract": "Higher-dimensional operators in the Standard Model break also other symmetries like lepton ($L$) and baryon ($B$) number, but less work exists in {the context of} nuclear EFTs. Of particular contemporary interest is $L$ violation, especially through the only dimension-five operator, which leads to Majorana neutrino masses. The most sensitive laboratory probe of $L$ violation (by two units) is neutrinoless",
+      "extractCut": true
+    },
+    {
+      "id": "sec-078-f-dark-matter-detection",
+      "number": null,
+      "title": "F Dark-matter detection",
+      "level": 3,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": "61",
+      "labelEnd": "61",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dark-matter",
+          "heading": true
+        },
+        {
+          "term": "cite hoferichter",
+          "heading": false
+        },
+        {
+          "term": "scattering off",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "off heavy",
+          "heading": false
+        },
+        {
+          "term": "heavy nuclei",
+          "heading": false
+        },
+        {
+          "term": "fitzpatrick",
+          "heading": false
+        },
+        {
+          "term": "spin-independent",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:dark} Nuclear EFTs have also been used to describe dark-matter scattering off heavy nuclei in direct-detection experiments. The dark-matter particles must be nonrelativistic in order to be bound in the dark-matter halo by gravitation, with typical velocities of order $0.001$ times the speed of light. Since the recoil momentum is comparable to the typical momentum of a nucleon in the nucleus, it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-079-g-bosons-with-large-scattering-length",
+      "number": null,
+      "title": "G Bosons with large scattering length",
+      "level": 3,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "61",
+      "labelEnd": "62",
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": true
+        },
+        {
+          "term": "efts",
+          "heading": false
+        },
+        {
+          "term": "nuclear physics",
+          "heading": false
+        },
+        {
+          "term": "two-body scattering",
+          "heading": false
+        },
+        {
+          "term": "bosons",
+          "heading": true
+        },
+        {
+          "term": "award",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:bosons} Up to technical details that arise from spin and isospin degrees of freedom, Pionless EFT is virtually identical to a theory that describes a system of bosons with a large two-body scattering length. Throughout the history of Pionless EFT this fact has been used repeatedly, the few-boson system serving to guide analogous analyses in the few-nucleon sector. But such bosonic systems are relevant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-080-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "62",
+      "labelEnd": "62",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "award",
+          "heading": false
+        },
+        {
+          "term": "german",
+          "heading": false
+        },
+        {
+          "term": "de-fg02-04er",
+          "heading": false
+        },
+        {
+          "term": "doe-funded",
+          "heading": false
+        }
+      ],
+      "extract": "Many colleagues have sharpened our understanding of nuclear EFTs. For discussions that directly aﬀected this manuscript, we thank S. Fleming, R. J. Furnstahl, H. W. Grießhammer, and S. Meinel. This work was sup- ported in part by the U.S. Department of Energy, Of- ﬁce of Science, Oﬃce of Nuclear Physics, under award No. DE-FG02-04ER41338, by the European Union Re- search and Innovation program Horizon 2020 under",
+      "extractCut": true
+    },
+    {
+      "id": "sec-081-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 76,
+      "labelStart": "62",
+      "labelEnd": "76",
+      "words": 12730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "ruiz arriola",
+          "heading": false
+        },
+        {
+          "term": "men endez",
+          "heading": false
+        },
+        {
+          "term": "acta phys",
+          "heading": false
+        },
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "body syst",
+          "heading": false
+        }
+      ],
+      "extract": "Aaij, R., et al. (LHCb) (2013), Phys. Rev. Lett. 110, 222001, arXiv:1302.6269 [hep-ex]. Abe, T., P. Maris, T. Otsuka, N. Shimizu, Y. Utsuno, and J. P. Vary (2012), Phys. Rev. C 86, 054301, arXiv:1204.1755 [nucl-th]. Abe, T., and R. Seki (2009a), Phys. Rev. C 79, 054003, arXiv:0708.2524 [nucl-th]. Abe, T., and R. Seki (2009b), Phys. Rev. C 79, 054002, arXiv:0708.2523 [nucl-th]. Abe, T., R. Seki, and A. N. Kocharian",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1",
+      "figure 2",
+      "figure 3",
+      "figure 4",
+      "figure 6",
+      "figure 7",
+      "figure 9",
+      "figure 10",
+      "figure 11",
+      "figure 12",
+      "figure 14",
+      "figure 16",
+      "figure 18"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pionless eft",
+      "heading": true
+    },
+    {
+      "term": "halo eft",
+      "heading": true
+    },
+    {
+      "term": "nuclear eft",
+      "heading": false
+    },
+    {
+      "term": "eft cite",
+      "heading": false
+    },
+    {
+      "term": "chiral eft",
+      "heading": true
+    },
+    {
+      "term": "textcite hammer",
+      "heading": false
+    },
+    {
+      "term": "textcite bedaque",
+      "heading": false
+    },
+    {
+      "term": "textcite beane",
+      "heading": false
+    },
+    {
+      "term": "eft calculations",
+      "heading": false
+    },
+    {
+      "term": "textcite phillips",
+      "heading": false
+    },
+    {
+      "term": "eft power",
+      "heading": false
+    },
+    {
+      "term": "eft expansion",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Summarizing, the 2N potential (16) is a particularly simple form of Eq. (7) where there are no non-analytic functions and µ = d/2 (s2 = 2) , µ = d + 1 −s2 (s2 = 0, 1) ,",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The initial and ﬁnal-state Coulomb interactions are accounted for by the construction in Eq. (37). “Dressing” here refers to resumming the Coulomb interaction to all orders between each pair of C0 vertices, which Kong and Ravndal (1999b, 2000) were able to do using a known analytic expression for th",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Since h(1)",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The renormalizability and good description of the alpha-particle binding at LO found by Platter et al",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "The results of Hagen et al. (2013a) imply that 62Ca is possibly the largest and heaviest halo nucleus in the chart of nuclei and demonstrated that a large number of observables would display characteristic features of Eﬁmov physics. Measurement of these observables clearly poses a signiﬁcant challen",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-3",
+      "file": "images/img-p004-3.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-4",
+      "file": "images/img-p004-4.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-5",
+      "file": "images/img-p004-5.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-6",
+      "file": "images/img-p004-6.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 94,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 82,
+      "note": "5 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p62); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 22
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 82 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1906.12122v2"
+  }
+}

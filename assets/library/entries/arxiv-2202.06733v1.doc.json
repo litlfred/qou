@@ -1,0 +1,1204 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2202.06733v1",
+  "title": "Overleaf Example",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-some-recent-results-for-su3-and-octonions-within"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Characteristic multivectors and SU(3)",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-characteristic-multivectors-and-su3"
+    },
+    {
+      "level": 3,
+      "title": "Characteristic Multivectors",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-21-characteristic-multivectors"
+    },
+    {
+      "level": 3,
+      "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-the-characteristic-polynomial-and-the-cayley"
+    },
+    {
+      "level": 3,
+      "title": "Application to generators of SU(3)",
+      "number": "2.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-application-to-generators-of-su3"
+    },
+    {
+      "level": 3,
+      "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
+      "number": "2.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-the-characteristic-polynomial-and-cayley-hami"
+    },
+    {
+      "level": 2,
+      "title": "GA and the forces of nature",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-ga-and-the-forces-of-nature"
+    },
+    {
+      "level": 3,
+      "title": "Strong forces",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-strong-forces"
+    },
+    {
+      "level": 2,
+      "title": "Octonions and the STA",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-octonions-and-the-sta"
+    },
+    {
+      "level": 3,
+      "title": "Explicit assignment of octonion units to STA elements",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-explicit-assignment-of-octonion-units-to-sta"
+    },
+    {
+      "level": 2,
+      "title": "Octonions, the STA and particle physics",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-octonions-the-sta-and-particle-physics"
+    },
+    {
+      "level": 3,
+      "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w"
+    },
+    {
+      "level": 3,
+      "title": "The group G2 and the representation of quarks and gluons via the STA",
+      "number": "5.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-the-group-g2-and-the-representation-of-quarks"
+    },
+    {
+      "level": 2,
+      "title": "Future prospects",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-future-prospects"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> DOI: xxx/xxxx ARTICLE TYPE",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2202.06733v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-some-recent-results-for-su3-and-octonions-within",
+      "number": null,
+      "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "united kingdom",
+          "heading": false
+        },
+        {
+          "term": "cavendish laboratory",
+          "heading": false
+        },
+        {
+          "term": "lasenby",
+          "heading": false
+        }
+      ],
+      "extract": "Geometric Algebra approach to the fundamental forces of nature Anthony Lasenby*1,2 1Astrophysics Group, Cavendish Laboratory, University of Cambridge, United Kingdom 2Kavli Institute for Cosmology, University of Cambridge, United Kingdom Correspondence *Anthony N. Lasenby, Astrophysics Group, Cavendish Laboratory, JJ Thomson Avenue, Cambridge, CB3 0HE, Untited Kingdom. Email: a.n.lasenby@mrao.cam.ac.uk",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "understandable",
+          "heading": false
+        },
+        {
+          "term": "particle physics",
+          "heading": false
+        },
+        {
+          "term": "sta",
+          "heading": false
+        },
+        {
+          "term": "geometric algebra",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        }
+      ],
+      "extract": "Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for 푆푈(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arise from symmetry",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 820,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sta",
+          "heading": false
+        },
+        {
+          "term": "spacetime algebra",
+          "heading": false
+        },
+        {
+          "term": "characteristic multivectors",
+          "heading": false
+        },
+        {
+          "term": "dirac current",
+          "heading": false
+        },
+        {
+          "term": "bivector",
+          "heading": false
+        },
+        {
+          "term": "geometric algebra",
+          "heading": false
+        },
+        {
+          "term": "furey",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec1} Geometric algebra may be a very good way of understanding where the symmetries underlying the standard model of particle physics come from. It is worthwhile seeking to understand this, since it may expose an underlying geometric content which can help shape our ideas about where extensions to the standard model can be sought, and perhaps how it may be unified with gravity. In this contribution we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-characteristic-multivectors-and-su3",
+      "number": "2",
+      "title": "Characteristic multivectors and SU(3)",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic multivectors",
+          "heading": true
+        },
+        {
+          "term": "cite lasenby-char-multi",
+          "heading": false
+        },
+        {
+          "term": "roelfs",
+          "heading": false
+        },
+        {
+          "term": "blades",
+          "heading": false
+        },
+        {
+          "term": "rotor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:first-su3} In a paper also in these proceedings, Lasenby \\etal\\cite{lasenby-char-multi} discuss the role of `characteristic multivectors' in finding the rotor that corresponds to the finite rotation from one frame of vectors to another. Here, where we are concerned overall with a {\\em particle physics} context, we want to start by looking at how characteristic multivectors relate to the {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-21-characteristic-multivectors",
+      "number": "2.1",
+      "title": "Characteristic Multivectors",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots wdg",
+          "heading": false
+        },
+        {
+          "term": "wdg right",
+          "heading": false
+        },
+        {
+          "term": "simplicial derivative",
+          "heading": false
+        },
+        {
+          "term": "frame",
+          "heading": false
+        },
+        {
+          "term": "char-mult",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:char-mult} The essential objects here are the {\\em simplicial derivatives}\\cite{hestenessobczyk}. If $f$ is a vector-valued linear function of a vector $a$ living in an $m$-dimensional space, $V_m$, and the output $f(a)$ lives in the same space (the simplest case) then we can define the $r$th simplicial derivative of $f$ as follows. We let $\\{a_k\\}$, $k=1,\\ldots,m$ be a {\\em frame} for the space and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-the-characteristic-polynomial-and-the-cayley",
+      "number": "2.2",
+      "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley-hamilton theorem",
+          "heading": true
+        },
+        {
+          "term": "characteristic polynomial",
+          "heading": true
+        },
+        {
+          "term": "m-s",
+          "heading": false
+        },
+        {
+          "term": "ast",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:cay-ham} We can now employ these definitions to look at the characteristic polynomial and {\\em Cayley-Hamilton theorem}. These use just the scalar parts of the various simplicial derivatives. As shown in Hestenes \\& Sobczyk\\cite{hestenessobczyk} Section 3-2, the characteristic polynomial is \\be C_f(\\lambda)=\\sum_{s=0}^{m} (-\\lambda)^{m-s} \\, \\partial_{(s)} \\!\\ast\\! f_{(s)} \\ee where $\\partial_{(0)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-application-to-generators-of-su3",
+      "number": "2.3",
+      "title": "Application to generators of SU(3)",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic multivectors",
+          "heading": false
+        },
+        {
+          "term": "hestenes sobczyk",
+          "heading": false
+        },
+        {
+          "term": "lambda half",
+          "heading": false
+        },
+        {
+          "term": "quad lambda",
+          "heading": false
+        },
+        {
+          "term": "alert",
+          "heading": false
+        },
+        {
+          "term": "bivectors",
+          "heading": false
+        },
+        {
+          "term": "textstyle frac",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": true
+        }
+      ],
+      "extract": "As discussed above, we now want to look at the characteristic multivectors for the case of the generators of the group $SU(3)$. There has been recent attention to $SU(3)$ in a Geometric Algebra context from the work by Martin Roelfs in his thesis, and he has translated some of this into a conventional {\\em matrix} approach in the paper {\\em `Geometric invariant decomposition of $SU(3)$'}\\cite{roelfs2021geometric}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-the-characteristic-polynomial-and-cayley-hami",
+      "number": "2.4",
+      "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley-hamilton theorem",
+          "heading": true
+        },
+        {
+          "term": "characteristic polynomial",
+          "heading": true
+        },
+        {
+          "term": "commuting blades",
+          "heading": false
+        },
+        {
+          "term": "textstyle frac",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "half lambda",
+          "heading": false
+        },
+        {
+          "term": "cite roelfs2021geometric",
+          "heading": false
+        },
+        {
+          "term": "frac det",
+          "heading": false
+        }
+      ],
+      "extract": "We can now employ these results to look at the characteristic polynomial and Cayley-Hamilton theorem. For the characteristic polynomial \\be C_f(\\lambda)=\\sum_{s=0}^{m} (-\\lambda)^{m-s} \\, \\partial_{(s)} \\!\\ast\\! f_{(s)} \\ee then taking the scalar parts of the above results for $f(a)=B\\dt a$, we find \\be C_f(\\lambda)=\\textstyle{\\frac{1}{64}}\\det^2(M) + \\textstyle{\\frac{1}{16}}|B|^4 \\lambda^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-ga-and-the-forces-of-nature",
+      "number": "3",
+      "title": "GA and the forces of nature",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sta",
+          "heading": false
+        },
+        {
+          "term": "forces",
+          "heading": true
+        },
+        {
+          "term": "electroweak",
+          "heading": false
+        },
+        {
+          "term": "wavefunctions",
+          "heading": false
+        },
+        {
+          "term": "left-handed",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "geometric algebra",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        }
+      ],
+      "extract": "As expressed in the talk at GAME2020 (\\url{https://www.youtube.com/watch?v=m7v2IUJtC3g&t=7s}), a particularly interesting question for someone working with GA in Physics, is whether the Spacetime Algebra (STA), is sufficient for representing and deriving {\\em all} the forces of nature. It is clear that electromagnetism and gravity fit well into this STA context (see e.g.\\ the paper \\alert{Gravity, gauge theories and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-strong-forces",
+      "number": "3.1",
+      "title": "Strong forces",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha fhat",
+          "heading": false
+        },
+        {
+          "term": "fhat right",
+          "heading": false
+        },
+        {
+          "term": "alpha sigma",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "spatial rotor",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "aligned exp",
+          "heading": false
+        },
+        {
+          "term": "sigma end",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:strong-forces} But how about \\alert{Strong forces}? We know the group we want here is $SU(3)$, but the mathematics of $SU(3)$ we were discussing just now, in either the approach given in the previous section, or Martin Roelf's version, is set in a 6d Euclidean space, in which we employ the `Lie groups as spin groups' approach in order to represent the action of unitary groups of order $N$ in a space of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-octonions-and-the-sta",
+      "number": "4",
+      "title": "Octonions and the STA",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 1142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psirev psi",
+          "heading": false
+        },
+        {
+          "term": "sta",
+          "heading": true
+        },
+        {
+          "term": "psi star",
+          "heading": false
+        },
+        {
+          "term": "boxed psi",
+          "heading": false
+        },
+        {
+          "term": "psi half",
+          "heading": false
+        },
+        {
+          "term": "theta psi",
+          "heading": false
+        },
+        {
+          "term": "phi psi",
+          "heading": false
+        },
+        {
+          "term": "ordinary sta",
+          "heading": false
+        }
+      ],
+      "extract": "There are still several further aspects that are relevant for representing the $SU(3)$ aspect of strong forces, and in particular something we have not discussed here is that the $\\psi=\\psi(B)$ recipe for allowing the spacetime Dirac wavefunction to respond to the internal colour forces needs to be `self-dual', i.e.\\ we need $\\psi(IB)=I\\psi(B)$, where $I$ is the spacetime pseudoscalar. Nevertheless, it seems very",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-explicit-assignment-of-octonion-units-to-sta",
+      "number": "4.1",
+      "title": "Explicit assignment of octonion units to STA elements",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "decoration markings",
+          "heading": false
+        },
+        {
+          "term": "octonion units",
+          "heading": true
+        },
+        {
+          "term": "sta elements",
+          "heading": true
+        },
+        {
+          "term": "tabular hline",
+          "heading": false
+        },
+        {
+          "term": "draw black",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "stealth",
+          "heading": false
+        }
+      ],
+      "extract": "We now discuss the explicit linking of the octonion units $e_0$ through $e_7$ with the 8 elements making up Dirac spinors in the STA. The latter are the even elements of the STA, which as mentioned above, can be derived as the full geometric algebra of 3d space, via the identification $\\sigma_i = \\gamma_i \\gamma_0$, $i=1,2,3$, as illustrated in Fig.~\\ref{fig:sta-split}. \\begin{figure} \\begin{center}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-octonions-the-sta-and-particle-physics",
+      "number": "5",
+      "title": "Octonions, the STA and particle physics",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phirev sig",
+          "heading": false
+        },
+        {
+          "term": "sig star",
+          "heading": false
+        },
+        {
+          "term": "sig phi",
+          "heading": false
+        },
+        {
+          "term": "psi star",
+          "heading": false
+        },
+        {
+          "term": "sta",
+          "heading": true
+        },
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "sta approach",
+          "heading": false
+        },
+        {
+          "term": "psi sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Now, excitingly, we can start to reinterpret what we have already discussed above for the STA approach to the strong force, as a partial piece of a larger scale project for understanding the symmetries that nature may want to use. Here is a proposal: \\begin{center} {\\bf Proposal:} Nature is interested in transformations that preserve the timelike part of the STA Dirac current. \\end{center} This is instantiated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w",
+      "number": "5.1",
+      "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gam phi",
+          "heading": false
+        },
+        {
+          "term": "phi sig",
+          "heading": false
+        },
+        {
+          "term": "quad gam",
+          "heading": false
+        },
+        {
+          "term": "star phi",
+          "heading": false
+        },
+        {
+          "term": "star left",
+          "heading": false
+        },
+        {
+          "term": "sta states",
+          "heading": false
+        },
+        {
+          "term": "sta elements",
+          "heading": false
+        },
+        {
+          "term": "phi right",
+          "heading": false
+        }
+      ],
+      "extract": "What we will do here is consider the full space of 64 STA states we get corresponding to the distinct chains of octonion multiplication we can carry out to the left on some initial (general) STA state $\\phi$. In seeking to interpret this in terms of a Lie algebra, we can take the operation of one state upon another as being the action of taking a {\\em commutator} with that state, and we will ask for the largest set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-the-group-g2-and-the-representation-of-quarks",
+      "number": "5.2",
+      "title": "The group G2 and the representation of quarks and gluons via the STA",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 2192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "quad leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "leftrightarrow lambda",
+          "heading": false
+        },
+        {
+          "term": "phi sig",
+          "heading": false
+        },
+        {
+          "term": "sta",
+          "heading": true
+        },
+        {
+          "term": "pmatrix label",
+          "heading": false
+        },
+        {
+          "term": "csa elements",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:G2-and-quarks} Turning to the other example we want to consider, the most direct way to approach this that we have found, starts from the 7 groups of 8 states each just discussed. Each group of 8 itself breaks into two groups of 4, distinguished by the mutual commutation of each of the 4 elements in a given split. One of these two subgroups (we are using `group' and `subgroup' in a non-technical way at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-future-prospects",
+      "number": "6",
+      "title": "Future prospects",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic left",
+          "heading": false
+        },
+        {
+          "term": "basic enterprise",
+          "heading": false
+        },
+        {
+          "term": "g2-and-quarks",
+          "heading": false
+        },
+        {
+          "term": "mapsto psi",
+          "heading": false
+        },
+        {
+          "term": "bivector",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "ref sect",
+          "heading": false
+        },
+        {
+          "term": "sta",
+          "heading": false
+        }
+      ],
+      "extract": "So far, in particle terms, we have only considered a limited segment of the Standard Model, and there is much still to do in terms of having a complete version expressible in the STA. An interesting feature concerning this is that recently, following Furey's work, Gording and Schmidt-May\\cite{gording2020unified} report that they have fitted the entire SM, with all three generations, into the 64-dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lasenby anthony",
+          "heading": false
+        },
+        {
+          "term": "philosophical magazine",
+          "heading": false
+        },
+        {
+          "term": "dublin philosophical",
+          "heading": false
+        },
+        {
+          "term": "hestenes david",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebras",
+          "heading": false
+        },
+        {
+          "term": "applied cliﬀord",
+          "heading": false
+        },
+        {
+          "term": "doran chris",
+          "heading": false
+        },
+        {
+          "term": "roelfs martin",
+          "heading": false
+        }
+      ],
+      "extract": "1. Lasenby Anthony, Lasenby Joan, Matsantonis Charalampos. Reconstructing a Rotor from Initial and Final Frames using Characteristic Multivectors: with applications in Orthogonal Transformations. Mathematical Methods in the Applied Sciences (submitted). 2022;. 2. Roelfs Martin. Geometric invariant decomposition of SU(3). arXiv preprint arXiv:2102.11940. 2021;. 3. Hestenes David. Space-Time Algebra.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sta approach",
+      "heading": false
+    },
+    {
+      "term": "sta states",
+      "heading": false
+    },
+    {
+      "term": "sta dirac",
+      "heading": false
+    },
+    {
+      "term": "sta spinors",
+      "heading": false
+    },
+    {
+      "term": "sig left",
+      "heading": false
+    },
+    {
+      "term": "sta elements",
+      "heading": true
+    },
+    {
+      "term": "quad sig",
+      "heading": false
+    },
+    {
+      "term": "sig star",
+      "heading": false
+    },
+    {
+      "term": "sta assignments",
+      "heading": false
+    },
+    {
+      "term": "phi sig",
+      "heading": false
+    },
+    {
+      "term": "sig right",
+      "heading": false
+    },
+    {
+      "term": "unit sta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2202.06733v1"
+  }
+}

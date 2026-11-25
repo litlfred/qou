@@ -1,0 +1,4889 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "vonneumann2015",
+  "title": "Von Neumann Algebras",
+  "variant": "pdf",
+  "pages": 161,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Hilbert Space",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-21-hilbert-space"
+    },
+    {
+      "level": 1,
+      "title": "The Spectral Theorem",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-22-the-spectral-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Polar decomposition",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-23-polar-decomposition"
+    },
+    {
+      "level": 1,
+      "title": "Tensor product of Hilbert Spaces.",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-24-tensor-product-of-hilbert-spaces"
+    },
+    {
+      "level": 1,
+      "title": "The bicommutant theorem.",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-the-bicommutant-theorem"
+    },
+    {
+      "level": 1,
+      "title": "M is strongly closed.",
+      "number": "2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-m-is-strongly-closed"
+    },
+    {
+      "level": 1,
+      "title": "M is weakly closed.",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Examples.",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-33-examples"
+    },
+    {
+      "level": 2,
+      "title": "Elementary properties of von Neumann algebras.",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-34-elementary-properties-of-von-neumann-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Deﬁnition of type I factor.",
+      "number": "4.1",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-41-deﬁnition-of-type-i-factor"
+    },
+    {
+      "level": 2,
+      "title": "Classiﬁcation of all type I factors",
+      "number": "4.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-42-classiﬁcation-of-all-type-i-factors"
+    },
+    {
+      "level": 2,
+      "title": "Tensor product of von Neumann algebras.",
+      "number": "4.3",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-43-tensor-product-of-von-neumann-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Multiplicity and ﬁnite dimensional von Neumann algebras.",
+      "number": "4.4",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-44-multiplicity-and-ﬁnite-dimensional-von-neuman"
+    },
+    {
+      "level": 2,
+      "title": "A digression on index.",
+      "number": "4.5",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-45-a-digression-on-index"
+    },
+    {
+      "level": 2,
+      "title": "Some simple but telling results on linear functionals.",
+      "number": "5.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-51-some-simple-but-telling-results-on-linear-fun"
+    },
+    {
+      "level": 2,
+      "title": "The theorem",
+      "number": "5.2",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-52-the-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Order on projections",
+      "number": "6.1",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-61-order-on-projections"
+    },
+    {
+      "level": 2,
+      "title": "The GNS construction",
+      "number": "6.2",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-62-the-gns-construction"
+    },
+    {
+      "level": 2,
+      "title": "Normal states.",
+      "number": "7.1",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-71-normal-states"
+    },
+    {
+      "level": 2,
+      "title": "Isomorphisms are spatial.",
+      "number": "7.2",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-72-isomorphisms-are-spatial"
+    },
+    {
+      "level": 2,
+      "title": "Exercises on two projections.",
+      "number": "7.3",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-73-exercises-on-two-projections"
+    },
+    {
+      "level": 1,
+      "title": "0 ) and q corresponding to",
+      "number": "0",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-0-0-and-q-corresponding-to"
+    },
+    {
+      "level": 2,
+      "title": "Trace class and Hilbert Schmidt operators.",
+      "number": "8.1",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-81-trace-class-and-hilbert-schmidt-operators"
+    },
+    {
+      "level": 2,
+      "title": "A technical lemma.",
+      "number": "8.2",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-82-a-technical-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Standard form.",
+      "number": "9.1",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-91-standard-form"
+    },
+    {
+      "level": 2,
+      "title": "Group actions.",
+      "number": "11.1",
+      "page": 69,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-111-group-actions"
+    },
+    {
+      "level": 2,
+      "title": "The crossed product",
+      "number": "11.2",
+      "page": 71,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-112-the-crossed-product"
+    },
+    {
+      "level": 2,
+      "title": "The type of the crossed product.",
+      "number": "11.3",
+      "page": 76,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-026-113-the-type-of-the-crossed-product"
+    },
+    {
+      "level": 2,
+      "title": "A wrinkle: 2-cohomology.",
+      "number": "11.4",
+      "page": 79,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-114-a-wrinkle-2-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "More on the group-measure space construc-",
+      "number": "11.5",
+      "page": 81,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-028-115-more-on-the-group-measure-space-construc"
+    },
+    {
+      "level": 2,
+      "title": "The normaliser-the full group.",
+      "number": "11.6",
+      "page": 83,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-029-116-the-normaliser-the-full-group"
+    },
+    {
+      "level": 2,
+      "title": "Unbounded Operators",
+      "number": "12.1",
+      "page": 85,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-030-121-unbounded-operators"
+    },
+    {
+      "level": 1,
+      "title": "(R) (inﬁnitely diﬀerentiable functions with compact support), Sf = f ′. Show that S is preclosed.",
+      "number": "0",
+      "page": 86,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-031-0-r-inﬁnitely-diﬀerentiable-functions-with-compa"
+    },
+    {
+      "level": 1,
+      "title": "T ∗is closed.",
+      "number": "1",
+      "page": 87,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-032-1-t-is-closed"
+    },
+    {
+      "level": 1,
+      "title": "D(T ∗) is dense iﬀT is preclosed. In that case T = T ∗∗.",
+      "number": "2",
+      "page": 87,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-033-2-dt-is-dense-iﬀt-is-preclosed-in-that-case-t-t"
+    },
+    {
+      "level": 2,
+      "title": "Spectral Theory for Unbounded Operators",
+      "number": "12.2",
+      "page": 88,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-034-122-spectral-theory-for-unbounded-operators"
+    },
+    {
+      "level": 2,
+      "title": "Polar Decomposition",
+      "number": "12.3",
+      "page": 88,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-035-123-polar-decomposition"
+    },
+    {
+      "level": 2,
+      "title": "Unbounded operators aﬃliated with a von Neumann algebra.",
+      "number": "12.4",
+      "page": 90,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-036-124-unbounded-operators-aﬃliated-with-a-von-neum"
+    },
+    {
+      "level": 1,
+      "title": "The projection onto Γ(T) is a 2 × 2 matrix of operators in M.",
+      "number": "1",
+      "page": 91,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-037-1-the-projection-onto-γt-is-a-2-2-matrix-of-oper"
+    },
+    {
+      "level": 1,
+      "title": "If T = u|T| is the polar decomposition of T then u ∈M and f(|T|) ∈M for any bounded Borel function of |T|.",
+      "number": "2",
+      "page": 91,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-038-2-if-t-ut-is-the-polar-decomposition-of-t-then-u"
+    },
+    {
+      "level": 2,
+      "title": "S,F and their graphs.",
+      "number": "13.1",
+      "page": 94,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-039-131-sf-and-their-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the main theorem.",
+      "number": "13.2",
+      "page": 96,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-040-132-proof-of-the-main-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Examples.",
+      "number": "13.3",
+      "page": 98,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-041-133-examples"
+    },
+    {
+      "level": 2,
+      "title": "The KMS condition.",
+      "number": "13.4",
+      "page": 102,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-042-134-the-kms-condition"
+    },
+    {
+      "level": 2,
+      "title": "The Connes unitary cocycle Radon-Nikodym theorem.",
+      "number": "14.1",
+      "page": 105,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-043-141-the-connes-unitary-cocycle-radon-nikodym-the"
+    },
+    {
+      "level": 2,
+      "title": "The hyperﬁnite type II1 factor R",
+      "number": "15.1",
+      "page": 109,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-044-151-the-hyperﬁnite-type-ii1-factor-r"
+    },
+    {
+      "level": 2,
+      "title": "The type III case.",
+      "number": "15.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-045-152-the-type-iii-case"
+    },
+    {
+      "level": 2,
+      "title": "Generalities.",
+      "number": "16.1",
+      "page": 113,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-046-161-generalities"
+    },
+    {
+      "level": 2,
+      "title": "Central sequences in R",
+      "number": "16.2",
+      "page": 113,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-047-162-central-sequences-in-r"
+    },
+    {
+      "level": 2,
+      "title": "Type II1 factors without property Γ.",
+      "number": "16.3",
+      "page": 114,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-048-163-type-ii1-factors-without-property-γ"
+    },
+    {
+      "level": 2,
+      "title": "The Fock spaces.",
+      "number": "18.1",
+      "page": 120,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-049-181-the-fock-spaces"
+    },
+    {
+      "level": 3,
+      "title": "Full Fock space",
+      "number": "18.1.1",
+      "page": 120,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-050-1811-full-fock-space"
+    },
+    {
+      "level": 3,
+      "title": "Fermionic Fock space.",
+      "number": "18.1.6",
+      "page": 121,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-051-1816-fermionic-fock-space"
+    },
+    {
+      "level": 2,
+      "title": "CAR algebra, CCR algebra and the (extended) Cuntz algebra.",
+      "number": "18.2",
+      "page": 122,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-053-182-car-algebra-ccr-algebra-and-the-extended-cun"
+    },
+    {
+      "level": 3,
+      "title": "CAR algebra",
+      "number": "18.2.1",
+      "page": 122,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-052-1821-car-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Vacuum expectation value",
+      "number": "18.3",
+      "page": 124,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-054-183-vacuum-expectation-value"
+    },
+    {
+      "level": 2,
+      "title": "Quasi-free states",
+      "number": "18.4",
+      "page": 125,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-055-184-quasi-free-states"
+    },
+    {
+      "level": 2,
+      "title": "Complex structure",
+      "number": "18.5",
+      "page": 126,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-056-185-complex-structure"
+    },
+    {
+      "level": 3,
+      "title": "CCR algebra",
+      "number": "18.5.10",
+      "page": 128,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-057-18510-ccr-algebra"
+    },
+    {
+      "level": 3,
+      "title": "Cuntz algebra",
+      "number": "18.5.11",
+      "page": 128,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-058-18511-cuntz-algebra"
+    },
+    {
+      "level": 1,
+      "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C⟨X1, X2, · · · Xn⟩.",
+      "number": "N",
+      "page": 138,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-059-n-etracew-exists-and-is-equal-to-the-voiculescu"
+    },
+    {
+      "level": 2,
+      "title": "Warmup. Finite Groups.",
+      "number": "19.1",
+      "page": 139,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-060-191-warmup-finite-groups"
+    },
+    {
+      "level": 2,
+      "title": "Index.",
+      "number": "19.2",
+      "page": 141,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-061-192-index"
+    },
+    {
+      "level": 2,
+      "title": "The tower of type II1 factors and the ei’s.",
+      "number": "19.3",
+      "page": 146,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-062-193-the-tower-of-type-ii1-factors-and-the-eis"
+    },
+    {
+      "level": 2,
+      "title": "Index restrictions",
+      "number": "19.4",
+      "page": 147,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-063-194-index-restrictions"
+    },
+    {
+      "level": 2,
+      "title": "Finite dimensions",
+      "number": "19.5",
+      "page": 149,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-064-195-finite-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A",
+      "number": null,
+      "page": 155,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-065-appendix-a"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B",
+      "number": null,
+      "page": 157,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-066-appendix-b"
+    },
+    {
+      "level": 1,
+      "title": "Then the modular group σφ",
+      "number": "M",
+      "page": 157,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-067-m-then-the-modular-group-σφ"
+    },
+    {
+      "level": 2,
+      "title": "Bibliography",
+      "number": null,
+      "page": 161,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-068-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "semester",
+          "heading": false
+        },
+        {
+          "term": "neumann algebras",
+          "heading": false
+        },
+        {
+          "term": "exercises",
+          "heading": false
+        },
+        {
+          "term": "uoa",
+          "heading": false
+        }
+      ],
+      "extract": "Von Neumann Algebras. Vaughan F.R. Jones 1 November 13, 2015 1Supported in part by NSF Grant DMS93–22675, the Marsden fund UOA520, and the Swiss National Science Foundation. 2 Chapter 1 Introduction. The purpose of these notes is to provide a rapid introduction to von Neumann algebras which gets to the examples and active topics with a minimum of technical baggage. In this sense it is opposite in spirit from the",
+      "extractCut": true,
+      "blocks": [
+        "library/vonneumann2015/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-21-hilbert-space",
+      "number": "2.1",
+      "title": "Hilbert Space",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert space",
+          "heading": true
+        },
+        {
+          "term": "onb",
+          "heading": false
+        },
+        {
+          "term": "closed subspace",
+          "heading": false
+        },
+        {
+          "term": "partial isometry",
+          "heading": false
+        },
+        {
+          "term": "bounded operator",
+          "heading": false
+        },
+        {
+          "term": "subspace spanned",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        },
+        {
+          "term": "parallelogram identity",
+          "heading": false
+        }
+      ],
+      "extract": "Hilbert Space A Hilbert Space is a complex vector space H with inner product ⟨, ⟩: HxH → C which is linear in the ﬁrst variable, satisﬁes ⟨ξ, η⟩= ⟨η, ξ⟩, is positive deﬁnite, i.e. ⟨ξ, ξ⟩> 0 for ξ̸ = 0, and is complete for the norm deﬁned by test ||ξ|| = p ⟨ξ, ξ⟩. Exercise 2.1.1. Prove the parallelogram identity : ||ξ −η||2 + ||ξ + η||2 = 2(||ξ||2 + ||η||2) and the Cauchy-Schwartz inequality: |⟨ξ, η⟩| ≤||ξ|| ||η||.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-22-the-spectral-theorem",
+      "number": "2.2",
+      "title": "The Spectral Theorem",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral theorem",
+          "heading": true
+        },
+        {
+          "term": "spectral decomposition",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint operator",
+          "heading": false
+        },
+        {
+          "term": "self adjoint",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        },
+        {
+          "term": "measure",
+          "heading": false
+        },
+        {
+          "term": "projections",
+          "heading": false
+        },
+        {
+          "term": "spectrum",
+          "heading": false
+        }
+      ],
+      "extract": "The Spectral Theorem The spectrum σ(a) of a ∈B(H) is {λ ∈C : a −λ1 is not invertible}. Exercise 2.2.1. (Look up proofs if necessary.) Show that σ(a) is a non- empty closed bounded subset of C and that if a = a∗, σ(a) ⊆[−||a||, ||a||] with either ||a|| or −||a|| in σ(a). The spectral theorem takes a bit of getting used to and knowing how to prove it does not necessarily help much. If one cannot “see” the spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-23-polar-decomposition",
+      "number": "2.3",
+      "title": "Polar decomposition",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polar",
+          "heading": true
+        },
+        {
+          "term": "ker",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        }
+      ],
+      "extract": "Polar decomposition Exercise 2.3.1. Show that every positive operator a has a unique positive square root a1/2. Given an arbitrary a ∈B(H) we deﬁne |a| = (a∗a)1/2. Exercise 2.3.2. Show that there is a partial isometry u such that a = u|a|, and that u is unique subject to the condition that its initial domain is ker(a)⊥. The ﬁnal domain of this u is Im(a) = ker(a∗)⊥.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-24-tensor-product-of-hilbert-spaces",
+      "number": "2.4",
+      "title": "Tensor product of Hilbert Spaces.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert spaces",
+          "heading": true
+        },
+        {
+          "term": "weak topology",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": true
+        },
+        {
+          "term": "weak operator",
+          "heading": false
+        },
+        {
+          "term": "strong operator",
+          "heading": false
+        },
+        {
+          "term": "pointwise convergence",
+          "heading": false
+        },
+        {
+          "term": "unit ball",
+          "heading": false
+        },
+        {
+          "term": "topologies",
+          "heading": false
+        }
+      ],
+      "extract": "Tensor product of Hilbert Spaces. If H and K are Hilbert spaces one may form their algebraic tensor product H ⊗alg K (in the category of complex vector spaces). On this vector space one deﬁnes the sesquilinear form ⟨, ⟩by: ⟨ξ ⊗η, ξ′ ⊗η′⟩= ⟨ξ, ξ′⟩⟨η, η′⟩ and observes that this form is positive deﬁnite. The Hilbert space tensor product H ⊗K is then the completion of H ⊗alg K. It is easy to see that if a ∈B(H), b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-the-bicommutant-theorem",
+      "number": "3.2",
+      "title": "The bicommutant theorem.",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bicommutant",
+          "heading": true
+        },
+        {
+          "term": "self-adjoint subalgebra",
+          "heading": false
+        },
+        {
+          "term": "aξi",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "commutants",
+          "heading": false
+        },
+        {
+          "term": "neighbourhood",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        }
+      ],
+      "extract": "The bicommutant theorem. We will now prove the von Neumann “density” or “bicommutant” theorem which is the ﬁrst result in the subject. We prove it ﬁrst in the ﬁnite dimen- sional case where the proof is transparent then make the slight adjustments for the general case. Theorem 3.2.1. Let M be a self-adjoint subalgebra of B(H) containing 1, with dim(H) = n < ∞. Then M = M ′′. Proof. It is tautological that M ⊆M ′′.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-m-is-strongly-closed",
+      "number": "2",
+      "title": "M is strongly closed.",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "3. M is weakly closed. 12 Deﬁnition 3.2.4. A subalgebra of B(H) satisfying the conditions of corollary 3.2.3 is called a von Neumann algebra. (A self-adjoint subalgebra of B(H) which is closed in the norm topology is called a C∗-algebra.)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-33-examples",
+      "number": "3.3",
+      "title": "Examples.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "desirable properties",
+          "heading": false
+        },
+        {
+          "term": "topologies",
+          "heading": false
+        },
+        {
+          "term": "ultrastrong",
+          "heading": false
+        },
+        {
+          "term": "ultraweak",
+          "heading": false
+        },
+        {
+          "term": "algebra generated",
+          "heading": false
+        },
+        {
+          "term": "weak",
+          "heading": false
+        }
+      ],
+      "extract": "Examples. Example 3.3.1. Any ﬁnite dimensional *-subalgebra of B(H) containing 1. Example 3.3.2. B(H) itself. Exercise 3.3.3. Let (X, µ) be a ﬁnite measure space and consider A = L∞(X, µ) as a *-subalgebra of B(L2(X, µ)) (as multiplication operators as in exercise 2.2.2). Show that A = A′, i.e. A is maximal abelian and hence a von Neumann algebra. (Hint: if x ∈A′ let f = x(1). Show that f ∈L∞and that x = Mf.)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-34-elementary-properties-of-von-neumann-algebras",
+      "number": "3.4",
+      "title": "Elementary properties of von Neumann algebras.",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2027,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": true
+        },
+        {
+          "term": "neumann algebras",
+          "heading": true
+        },
+        {
+          "term": "pmp",
+          "heading": false
+        },
+        {
+          "term": "spectral projections",
+          "heading": false
+        },
+        {
+          "term": "abelian von",
+          "heading": false
+        },
+        {
+          "term": "strong closure",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint operators",
+          "heading": false
+        },
+        {
+          "term": "norm topology",
+          "heading": false
+        }
+      ],
+      "extract": "gebras. Throughout this chapter M will be a von Neumann algebra on a Hilbert space H. EP1) If a = a∗is an element of M, all the spectral projections and all bounded Borel functions of a are in M. Consequently M is generated by its projections. According to one’s proof of the spectral theorem, the spectral projections E(λ) of a are constructed as strong limits of polynomials in a. Or the prop- erty that the spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-41-deﬁnition-of-type-i-factor",
+      "number": "4.1",
+      "title": "Deﬁnition of type I factor.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "type factor",
+          "heading": true
+        },
+        {
+          "term": "non-zero projections",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "partial isometry",
+          "heading": false
+        },
+        {
+          "term": "ergodic",
+          "heading": false
+        },
+        {
+          "term": "deﬁnition",
+          "heading": true
+        }
+      ],
+      "extract": "Deﬁnition of type I factor. The ﬁrst crucial result about factors (remember a factor is a von Neumann algebra with trivial centre) will be the following “ergodic” property. Theorem 4.1.1. If M is a factor and p and q are non-zero projections in M there is an x ∈M with pxq̸ = 0. Moreover x can be chosen to be unitary. Proof. Suppose that for any unitary u ∈M, puq = 0. Then u∗puq = 0 and \u0010 W u∈M u∗pu \u0011 q = 0. But",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-classiﬁcation-of-all-type-i-factors",
+      "number": "4.2",
+      "title": "Classiﬁcation of all type I factors",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "type factors",
+          "heading": true
+        },
+        {
+          "term": "p1l",
+          "heading": false
+        },
+        {
+          "term": "zeros elsewhere",
+          "heading": false
+        },
+        {
+          "term": "e1i",
+          "heading": false
+        },
+        {
+          "term": "hilbert spaces",
+          "heading": false
+        },
+        {
+          "term": "minimality",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": false
+        },
+        {
+          "term": "classiﬁcation",
+          "heading": true
+        }
+      ],
+      "extract": "Classiﬁcation of all type I factors We will classify all type I factors quite easily. We begin with the model, which we have already seen. Let B(H)⊗1 be the constant diagonal matrices on H⊗K. Its commutant 1⊗B(K) will be our model. It is the algebra of all matrices deﬁning bounded operators with every matrix entry being a scalar multiple of the identity matrix on H. A matrix with a single 1 on the diagonal and zeros",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-tensor-product-of-von-neumann-algebras",
+      "number": "4.3",
+      "title": "Tensor product of von Neumann algebras.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": true
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": true
+        },
+        {
+          "term": "eij",
+          "heading": false
+        }
+      ],
+      "extract": "Tensor product of von Neumann algebras. If M is a von Neumann algebra on H and N is a von Neumann algebra on K we deﬁne M ⊗N to be the von Neumann algebra on H ⊗K generated by {x ⊗y : x ∈M, y ∈N}. Exercise 4.3.1. Show that M ⊗N contains the algebraic tensor product M ⊗alg N as a strongly dense *-subalgebra. Deﬁnition 4.3.2. Let M be a von Neumann algebra. A system of matrix units (s.m.u.) of size n in M is a family",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-44-multiplicity-and-ﬁnite-dimensional-von-neuman",
+      "number": "4.4",
+      "title": "Multiplicity and ﬁnite dimensional von Neumann algebras.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 749,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": true
+        },
+        {
+          "term": "dimensional von",
+          "heading": true
+        },
+        {
+          "term": "neumann algebras",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": true
+        },
+        {
+          "term": "minimal projections",
+          "heading": false
+        },
+        {
+          "term": "λij",
+          "heading": false
+        },
+        {
+          "term": "mann algebras",
+          "heading": false
+        },
+        {
+          "term": "bratteli diagram",
+          "heading": false
+        }
+      ],
+      "extract": "mann algebras. Theorem 4.2.1 shows that type I factors on Hilbert space are completely classiﬁed by two cardinalities (n1, n2) according to: 27 n1 = rank of a minimal projection in M, and n2 = rank of a minimal projection in M ′. We see that the isomorphism problem splits into “abstract isomorphism” (determined by n2 alone), and “spatial isomorphism”, i.e. unitary equivalence. A type In factor is by deﬁnition one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-45-a-digression-on-index",
+      "number": "4.5",
+      "title": "A digression on index.",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digression",
+          "heading": true
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "free left",
+          "heading": false
+        }
+      ],
+      "extract": "A digression on index. If N ⊆M are type I factors we have seen that there is an integer k (possibly ∞) such that M is the algebra of k × k matrices over N. If k < ∞, M is thus a free left N-module of rank k2. It seems reasonable to call the number k2 the index of N in M and write it [M : N]. This is because, if H < G are groups and CH ⊆CG their group algebras, the coset decomposition of G shows that CG is a free",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-51-some-simple-but-telling-results-on-linear-fun",
+      "number": "5.1",
+      "title": "Some simple but telling results on linear functionals.",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ppn aξi",
+          "heading": false
+        },
+        {
+          "term": "linear functionals",
+          "heading": true
+        },
+        {
+          "term": "ultrastrong",
+          "heading": false
+        },
+        {
+          "term": "xξi",
+          "heading": false
+        },
+        {
+          "term": "continuous",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        },
+        {
+          "term": "strong",
+          "heading": false
+        }
+      ],
+      "extract": "functionals. We begin with a result about linear functionals of independent interest. Theorem 5.1.1. Let V be a subspace of B(H) and let φ : V →C be a linear functional. The following are equivalent: (i) There are vectors in H, ξ1, ξ2, ..., ξn and η1, η2, ..., ηn with φ(x) = n X i=1 ⟨xξi, ηi⟩ (ii) φ is weakly continuous. (iii) φ is strongly continuous. Proof. (i) ⇒(ii) ⇒(iii) are obvious, so suppose φ is strongly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-the-theorem",
+      "number": "5.2",
+      "title": "The theorem",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit ball",
+          "heading": false
+        },
+        {
+          "term": "kaplansky density",
+          "heading": false
+        },
+        {
+          "term": "weak closure",
+          "heading": false
+        },
+        {
+          "term": "asa",
+          "heading": false
+        },
+        {
+          "term": "msa",
+          "heading": false
+        },
+        {
+          "term": "strong convergence",
+          "heading": false
+        },
+        {
+          "term": "density theorem",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        }
+      ],
+      "extract": "The theorem In our discussion of vN(Γ) we already met the desirability of having a norm- bounded sequence of operators converging to an element in the weak closure of a *-algebra of operators. This is not guaranteed by the von Neumann density theorem. The Kaplansky density theorem ﬁlls this gap. Theorem 5.2.1. Let A be a *-subalgebra of B(H). Then the unit ball of A is strongly dense in the unit ball of the weak",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-61-order-on-projections",
+      "number": "6.1",
+      "title": "Order on projections",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1991,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projections",
+          "heading": true
+        },
+        {
+          "term": "normalised traces",
+          "heading": false
+        },
+        {
+          "term": "non-zero projection",
+          "heading": false
+        },
+        {
+          "term": "continuous normalised",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "partial isometries",
+          "heading": false
+        },
+        {
+          "term": "partial isometry",
+          "heading": false
+        },
+        {
+          "term": "previous exercise",
+          "heading": false
+        }
+      ],
+      "extract": "Order on projections Deﬁnition 6.1.1. If p and q are projections in a von Neumann algebra M we say that p ⪯q if there is a partial isometry u ∈M with uu∗= p and u∗u ≤q. We say that p and q are equivalent, p ≈q if there is a partial isometry u ∈M with uu∗= p and u∗u = q. Observe that ≈is an equivalence relation. Theorem 6.1.2. The relation ⪯is a partial order on the equivalence classes of projections in a von Neumann",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-62-the-gns-construction",
+      "number": "6.2",
+      "title": "The GNS construction",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1069,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gns construction",
+          "heading": true
+        },
+        {
+          "term": "mfn",
+          "heading": false
+        },
+        {
+          "term": "favourable circumstances",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "linear functional",
+          "heading": false
+        },
+        {
+          "term": "bounded linear",
+          "heading": false
+        },
+        {
+          "term": "linear operator",
+          "heading": false
+        }
+      ],
+      "extract": "The GNS construction Thus uniqueness of the trace implies factoriality. This suggests another in- teresting way to construct a type II1 factor. If A = M2(C), A is embedded in A ⊗A as diagonal matrices: a ,→a ⊗1. Iterate this procedure to form an increasing sequence An of *-algebras with A1 = A and An+1 = An ⊗A, and consider the *-algebra A∞= ∪nAn which could also be called ⊗∞ alg,n=1An. If we normalise the matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-71-normal-states",
+      "number": "7.1",
+      "title": "Normal states.",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "cauchy schwarz",
+          "heading": false
+        },
+        {
+          "term": "normal",
+          "heading": true
+        },
+        {
+          "term": "normal state",
+          "heading": false
+        },
+        {
+          "term": "vector state",
+          "heading": false
+        },
+        {
+          "term": "faithful normal",
+          "heading": false
+        },
+        {
+          "term": "unit vector",
+          "heading": false
+        }
+      ],
+      "extract": "Normal states. In quantum mechanics if ξ is a unit vector in a Hilbert space it deﬁnes a \"state\" φ. In particular this means that if an observable is given by the self-adjoint operator a then the average value of repeated observations of the system in the state φ is ⟨aξ, ξ⟩. For this reason one calls a positive linear functional φ a ”state\" on a unital C∗-algebra provided φ(1) = 1. Deﬁnition 7.1.1. If A is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-72-isomorphisms-are-spatial",
+      "number": "7.2",
+      "title": "Isomorphisms are spatial.",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spatial",
+          "heading": true
+        },
+        {
+          "term": "intertwining",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "hilbert spaces",
+          "heading": false
+        },
+        {
+          "term": "neumann algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Isomorphisms are spatial. Recall that an isomorphism Φ : M →N between von Neumann algebras on Hilbert spaces H and K respectively is called spatial if there is a unitary u : H →K such that Φ(x) = uxu∗for all x ∈M. Though the title of this section is not literally true, it becomes true on ampliﬁcation as a result of theorem 7.1.3: Theorem 7.2.1. Given an isomorphism Φ : M →N between von Neumann algebras on Hilbert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-73-exercises-on-two-projections",
+      "number": "7.3",
+      "title": "Exercises on two projections.",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projections",
+          "heading": true
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        },
+        {
+          "term": "general position",
+          "heading": false
+        },
+        {
+          "term": "pqp",
+          "heading": false
+        }
+      ],
+      "extract": "Exercises on two projections. Let p and q be projections onto closed subspaces H and K of the Hilbert space U respectively. Let M = {p, q}′′. Exercise 7.3.1. Show that U = (H∩K)⊕(H⊥∩K⊥)⊕(H∩K⊥)⊕(H⊥∩K)⊕W for some W and this decomposition is invariant under p and q. Exercise 7.3.2. Show that, on W, p and q are in “general position”, i.e. p ∧q = 0, p ∨q = 1, (1 −p) ∧q = 0 and (1 −p) ∨q = 1. Exercise 7.3.3. Show that if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-0-0-and-q-corresponding-to",
+      "number": "0",
+      "title": "0 ) and q corresponding to",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inﬁnite projection",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        },
+        {
+          "term": "unitaries",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        },
+        {
+          "term": "ﬁnd",
+          "heading": false
+        }
+      ],
+      "extract": "\u0012 b √ b(1−b) √ b(1−b) 1−b \u0013 47 Now drop the hypothesis that p and q are in general position. Exercise 7.3.9. Show that p ∨q −p ∼= q −p ∧q in M Exercise 7.3.10. Show that if e and f are ﬁnite projections in a factor M then p ∨q is also ﬁnite. (In fact it’s true for a non-factor as well.) (Here’s how to do it: use the previous exercise to reduce it to the case where e and f are orthogonal. Then one can assume f = e⊥.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-81-trace-class-and-hilbert-schmidt-operators",
+      "number": "8.1",
+      "title": "Trace class and Hilbert Schmidt operators.",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace class",
+          "heading": true
+        },
+        {
+          "term": "hilbert schmidt",
+          "heading": true
+        },
+        {
+          "term": "aξi",
+          "heading": false
+        },
+        {
+          "term": "banach space",
+          "heading": false
+        },
+        {
+          "term": "closed subspace",
+          "heading": false
+        },
+        {
+          "term": "linear functionals",
+          "heading": false
+        },
+        {
+          "term": "continuous linear",
+          "heading": false
+        },
+        {
+          "term": "cauchy sequence",
+          "heading": false
+        }
+      ],
+      "extract": "Trace class and Hilbert Schmidt operators. The material in this section is standard so we will only prove results as it suits us, otherwise referring any unproved assertions to Reed and Simon. Lemma 8.1.1. If a ∈B(H) is positive and (ξi) and (ηi) are two orthonormal bases of H, then X i ⟨aξi, ξi⟩= X i ⟨aηi, ηi⟩ (where ∞is a possible value for the sum). Proof. We have X i ⟨aξi, ξi⟩= X i ||√aξi||2 = X i ( X j |⟨√aξi,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-82-a-technical-lemma",
+      "number": "8.2",
+      "title": "A technical lemma.",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contradic",
+          "heading": false
+        },
+        {
+          "term": "supa",
+          "heading": false
+        },
+        {
+          "term": "hahn-banach",
+          "heading": false
+        },
+        {
+          "term": "radon-nikodym",
+          "heading": false
+        }
+      ],
+      "extract": "A technical lemma. Let us prove a lemma which shows what the techniques developed so far can be good for. It will be crucial in our treatment of Tomita-Takesaki theory. It is a “Radon-Nikodym” type theorem inspired by one due to Sakai([]). ﬁnd reference Lemma 8.2.1. Let λ ∈R+ be given and let φ be a faithful ultraweakly continuous state on a von Neumann algebra M. Let ψ ∈M∗be such that |ψ(y∗x)| ≤ p φ(x∗x) p φ(y∗y).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-91-standard-form",
+      "number": "9.1",
+      "title": "Standard form.",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimm",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "lebesgue measure",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "projection onto",
+          "heading": false
+        },
+        {
+          "term": "funda mental",
+          "heading": false
+        },
+        {
+          "term": "coupling constant",
+          "heading": false
+        }
+      ],
+      "extract": "Standard form. In this section M will be a von Neumann algebra with an ultraweakly con- tinuous faithful normalized trace tr and L2(M, tr) will be abbreviated to L2(M). In section 6.2 we learned how to construct a von Neumann algebra from a C∗-algebra and a positive linear functional on it. If we apply this construction to L∞(X, µ) (when µ(X) < ∞) with trace given by R fdµ, the Hilbert space would be L2(X, dµ). For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-111-group-actions",
+      "number": "11.1",
+      "title": "Group actions.",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 798,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ergodic iﬀthe",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "pointwise strong",
+          "heading": false
+        },
+        {
+          "term": "implementable",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "actions",
+          "heading": true
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "strong continuous",
+          "heading": false
+        }
+      ],
+      "extract": "Group actions. Let M be a von Neumann algebra and G a group. An action of G on M is a homomorphism g 7→αg from G to the automorphism group AutM of M (where automorphisms may be assumed ultraweakly continuous if neces- sary). The algebra of ﬁxed points for the action is denoted M G and is a von 69 Neumann algebra. A special case of some importance is when the action is a unitary group representation g 7→ug with ugMu∗",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-112-the-crossed-product",
+      "number": "11.2",
+      "title": "The crossed product",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 76,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed product",
+          "heading": true
+        },
+        {
+          "term": "free ergodic",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "countable dense",
+          "heading": false
+        },
+        {
+          "term": "ergodic actions",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "algebraic crossed",
+          "heading": false
+        },
+        {
+          "term": "dense subalgebra",
+          "heading": false
+        }
+      ],
+      "extract": "The crossed product Suppose α is an action of the locally compact group G with Haar measure dg on the von Neumann algebra M with Hilbert space H. Form the Hilbert space K = L2(G, H) = L2(G) ⊗H and let G act on K by ug = λg ⊗1, λ being the left regular representation. Further, let M act on K by (˜xf)(g) = αg−1(f(g)) . Exercise 11.2.1. Show that x 7→˜x is an ultraweakly continuous *-isomorphism of M onto a von Neumann",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-113-the-type-of-the-crossed-product",
+      "number": "11.3",
+      "title": "The type of the crossed product.",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σ-ﬁnite measure",
+          "heading": false
+        },
+        {
+          "term": "crossed product",
+          "heading": true
+        },
+        {
+          "term": "ultraweak continuity",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": true
+        },
+        {
+          "term": "lower semicontinuity",
+          "heading": false
+        },
+        {
+          "term": "continuous trace",
+          "heading": false
+        },
+        {
+          "term": "iii factor",
+          "heading": false
+        },
+        {
+          "term": "invariant measure",
+          "heading": false
+        }
+      ],
+      "extract": "The type of the crossed product. We adopt the notations and conventions of the previous section. The map Em : M ⋊α Γ →M which assigns aid to the element P γ∈Γ is destined to play 76 a big role in the theory. It is called the conditional expectation onto M and obviously satisﬁes the following contitions: (i) E2 M = EM. (ii) EM(x)∗= EM(x∗), EM(1) = 1, EM(x∗x) = 0iffx = 0. (iii) EM(x∗x) ≥EM(x∗)EM(x), ||E(x)|| ≤||x||.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-114-a-wrinkle-2-cohomology",
+      "number": "11.4",
+      "title": "A wrinkle: 2-cohomology.",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 81,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted crossed",
+          "heading": false
+        },
+        {
+          "term": "crossed product",
+          "heading": false
+        },
+        {
+          "term": "usual crossed",
+          "heading": false
+        },
+        {
+          "term": "cocycle condition",
+          "heading": false
+        },
+        {
+          "term": "wrinkle",
+          "heading": true
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "ugh",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        }
+      ],
+      "extract": "A wrinkle: 2-cohomology. In a purely algebraic setting it is possible to \"twist\" the crossed product construction with a 2-cocycle. So suppose G (with identity 1) acts on the 79 unital algebra A. Call C the abelian group of central invertible elements of A and let µ : G × G →Cbe a function satisifying 11.4.1. µ(g, h)µ(gh, k) = αg(µ(h, k))µ(g, hk) Then one may deﬁne the algebra A⋊α,µ of formal (ﬁnite) sums as for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-115-more-on-the-group-measure-space-construc",
+      "number": "11.5",
+      "title": "More on the group-measure space construc-",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 83,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 830,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "measurable equivalence",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "countable discrete",
+          "heading": false
+        },
+        {
+          "term": "equivalence relations",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        },
+        {
+          "term": "irrational rotation",
+          "heading": false
+        },
+        {
+          "term": "crossed product",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        }
+      ],
+      "extract": "More on the group-measure space construc- tion A ⋊G, A = L∞(X, µ). If G is a countable discrete group acting freely on the probability space (X, µ) preserving µ we may identify the Hilbert space of the crossed product, ℓ2(G, L2(X, µ)) in the obvious way with H = L2(X × G) (with the product of counting measure and µ). The operators a ∈L∞(X, µ) and ug deﬁning the crossed product then act on L2(X × G) as follows:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-116-the-normaliser-the-full-group",
+      "number": "11.6",
+      "title": "The normaliser-the full group.",
+      "level": 2,
+      "pageStart": 83,
+      "pageEnd": 85,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full group",
+          "heading": true
+        },
+        {
+          "term": "agug",
+          "heading": false
+        },
+        {
+          "term": "freeness",
+          "heading": false
+        },
+        {
+          "term": "measure zero",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": false
+        },
+        {
+          "term": "agrees",
+          "heading": false
+        },
+        {
+          "term": "transformation",
+          "heading": false
+        }
+      ],
+      "extract": "The normaliser-the full group. How much of G and its action on M can be recovered from M inside M ⋊G for a free action? One thing that is canonically deﬁned is the normaliser N(M) = {u unitary in M ⋊G|uMu∗= M} This group obviously contains the unitary group U(M) as a normal subgroup. There are two extreme cases. (i) If M is a factor. Suppose u = P g agug is in N(M), then there is an automorphism β of M so that ux =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-121-unbounded-operators",
+      "number": "12.1",
+      "title": "Unbounded Operators",
+      "level": 2,
+      "pageStart": 85,
+      "pageEnd": 86,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unbounded operators",
+          "heading": true
+        },
+        {
+          "term": "closed extension",
+          "heading": false
+        },
+        {
+          "term": "preclosed",
+          "heading": false
+        },
+        {
+          "term": "smallest closed",
+          "heading": false
+        },
+        {
+          "term": "linear subspace",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "Spectral Theory There are many naturally arising examples of unbounded operators, some of the most fundamental being multiplication by x and diﬀerentiation, the position and momentum operators of quantum mechanics. Our immediate motivation for studying unbounded operators here is to facilitate the study of arbitrary von Neumann algebras acting on GNS Hilbert spaces. Here we establish the necessary preliminaries on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-0-r-inﬁnitely-diﬀerentiable-functions-with-compa",
+      "number": "0",
+      "title": "(R) (inﬁnitely diﬀerentiable functions with compact support), Sf = f ′. Show that S is preclosed.",
+      "level": 1,
+      "pageStart": 86,
+      "pageEnd": 87,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preclosed",
+          "heading": true
+        },
+        {
+          "term": "deﬁned operator",
+          "heading": false
+        },
+        {
+          "term": "domain",
+          "heading": false
+        }
+      ],
+      "extract": "with compact support), Sf = f ′. Show that S is preclosed. (ii) Deﬁne T from L2(R) to C by D(T) = L1(R) ∩L2(R), T(f) = R R f. Show that T is not preclosed. Deﬁnition 12.1.12. Suppose T is a closed operator. A core for T is a linear subspace D0 ⊂D(T) such that T|D0 = T. 86 We can perform basic arithmetic operations with (unbounded) operators as follows: S + T is the operator with domain D(S + T) = D(S) ∩D(T) and (S +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-1-t-is-closed",
+      "number": "1",
+      "title": "T ∗is closed.",
+      "level": 1,
+      "pageStart": 87,
+      "pageEnd": 87,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-2-dt-is-dense-iﬀt-is-preclosed-in-that-case-t-t",
+      "number": "2",
+      "title": "D(T ∗) is dense iﬀT is preclosed. In that case T = T ∗∗.",
+      "level": 1,
+      "pageStart": 87,
+      "pageEnd": 88,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preclosed",
+          "heading": true
+        },
+        {
+          "term": "iﬀd",
+          "heading": false
+        },
+        {
+          "term": "dense",
+          "heading": true
+        }
+      ],
+      "extract": "3. If T is preclosed then (T)∗= T ∗. Proof. Note that (η, σ) ∈Γ(T ∗) iﬀ< Tξ, η >=< ξ, σ > for all ξ ∈D(T) iﬀ< (−Tξ, ξ), (η, σ) >= 0. Hence Γ(T ∗) = {(−Tξ, ξ) : ξ ∈D(T)}⊥= (uΓ(T))⊥= uΓ(T)⊥, where u : H ⊕H →H ⊕H is the unitary operator u(ξ, η) = (−η, ξ). Now: 1. Orthogonal complements are closed, hence Γ(T ∗) is closed. 2. Γ(T) = (Γ(T)⊥)⊥= u∗Γ(T ∗)⊥, so (0, ξ) ∈Γ(T) ⇔ (−ξ, 0) ∈Γ(T ∗)⊥ ⇔ 0 =< (−ξ, 0), (η, T ∗η) >= −<",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-122-spectral-theory-for-unbounded-operators",
+      "number": "12.2",
+      "title": "Spectral Theory for Unbounded Operators",
+      "level": 2,
+      "pageStart": 88,
+      "pageEnd": 88,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel functional",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite measure",
+          "heading": false
+        },
+        {
+          "term": "functional calculus",
+          "heading": false
+        },
+        {
+          "term": "spectral",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite function",
+          "heading": false
+        }
+      ],
+      "extract": "tors Deﬁnition 12.2.1. Let T be a closed operator on H. The resolvent of T is ρ(T) = {λ|λ1 −T : D(T) →H is a bijection}. The spectrum of T is σ(T) = C\\ρ(T). Remark 12.2.2. Note that if λ1 −T : D(T) →H is a bijection then (λ1 −T)−1 is bounded by the Closed Graph Theorem. Exercise 12.2.3. The spectrum is highly dependent on the domain. Let AC[0, 1] denote the set of absolutely continuous functions on [0, 1]. Let T1 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-123-polar-decomposition",
+      "number": "12.3",
+      "title": "Polar Decomposition",
+      "level": 2,
+      "pageStart": 88,
+      "pageEnd": 90,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "space range",
+          "heading": false
+        },
+        {
+          "term": "partial isometry",
+          "heading": false
+        },
+        {
+          "term": "initial space",
+          "heading": false
+        },
+        {
+          "term": "ﬁnal space",
+          "heading": false
+        },
+        {
+          "term": "core",
+          "heading": false
+        },
+        {
+          "term": "projection onto",
+          "heading": false
+        },
+        {
+          "term": "polar",
+          "heading": true
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        }
+      ],
+      "extract": "Polar Decomposition Theorem 12.3.1. Let A : H →K be a closed, densely deﬁned operator. Then: 88 (i) A∗A and AA∗are positive self-adjoint operators (hence (A∗A)1/2 and (AA∗)1/2 exist). (ii) There exists a partial isometry with initial space Range(A∗A)1/2 and ﬁnal space Range(A) and A = v(A∗A)1/2. (iii) If A = uB for some positive B and partial isometry v with initial space Range(B) then u = v and B = (A∗A)1/2. (iv)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-124-unbounded-operators-aﬃliated-with-a-von-neum",
+      "number": "12.4",
+      "title": "Unbounded operators aﬃliated with a von Neumann algebra.",
+      "level": 2,
+      "pageStart": 90,
+      "pageEnd": 91,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": true
+        },
+        {
+          "term": "aﬃliated",
+          "heading": true
+        },
+        {
+          "term": "neumann algebra",
+          "heading": true
+        }
+      ],
+      "extract": "Neumann algebra. If M is a von Neumann algebra on H, an element a ∈B(H) is in M iﬀ au = ua for every unitary in M ′. This inspires the following. Deﬁnition 12.4.1. If T : D(T) →H is a linear operator on the Hilbert space H and M is a von Neumann algebra on H we say that T is aﬃliated with M, written TηM if, for any unitary u ∈M ′, uD(T) = D(T) and uTξ = Tuξ ∀ξ ∈D(T). 90 Lemma 12.4.2. If T is preclosed with closure T",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-1-the-projection-onto-γt-is-a-2-2-matrix-of-oper",
+      "number": "1",
+      "title": "The projection onto Γ(T) is a 2 × 2 matrix of operators in M.",
+      "level": 1,
+      "pageStart": 91,
+      "pageEnd": 91,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-2-if-t-ut-is-the-polar-decomposition-of-t-then-u",
+      "number": "2",
+      "title": "If T = u|T| is the polar decomposition of T then u ∈M and f(|T|) ∈M for any bounded Borel function of |T|.",
+      "level": 1,
+      "pageStart": 91,
+      "pageEnd": 94,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polar decomposition",
+          "heading": true
+        },
+        {
+          "term": "htr",
+          "heading": false
+        },
+        {
+          "term": "jmj",
+          "heading": false
+        },
+        {
+          "term": "gns",
+          "heading": false
+        },
+        {
+          "term": "bounded",
+          "heading": true
+        },
+        {
+          "term": "right multiplication",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        },
+        {
+          "term": "operation",
+          "heading": false
+        }
+      ],
+      "extract": "for any bounded Borel function of |T|. Proof. 1. is obvious from the characterisation of aﬃliation given in the proof of the previous lemma. 2. follows from uniqueness of the polar decomposition and the bicommutant theorem. 91 92 Chapter 13 Tomita-Takesaki theory. In chapter 9 we showed that the GNS construction on M using a faithful normal trace produces a perfectly symmetric Hilbert space Htr with respect to M and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-131-sf-and-their-graphs",
+      "number": "13.1",
+      "title": "S,F and their graphs.",
+      "level": 2,
+      "pageStart": 94,
+      "pageEnd": 96,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 939,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anω",
+          "heading": false
+        },
+        {
+          "term": "operator aﬃliated",
+          "heading": false
+        },
+        {
+          "term": "polar decomposition",
+          "heading": false
+        },
+        {
+          "term": "unbounded operators",
+          "heading": false
+        },
+        {
+          "term": "aωis",
+          "heading": false
+        },
+        {
+          "term": "domain",
+          "heading": false
+        },
+        {
+          "term": "deﬁned operator",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        }
+      ],
+      "extract": "S,F and their graphs. Throughout this section M will be a von Neumann algebra on H and Ω∈H a cyclic and separating vector for M and hence M ′. (The same data as a faithful normal state.) Let S0 and F0 be the conjugate linear operators with domains MΩand M ′Ωdeﬁned by S0(xΩ) = x∗Ωand F0(xΩ) = x∗Ωfor x ∈M and M ′ respectively. Lemma 13.1.1. In the sense of unbounded operators F0 ⊆S∗ 0 and S0 ⊆F ∗ 0 so that S0 and F0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-132-proof-of-the-main-theorem",
+      "number": "13.2",
+      "title": "Proof of the main theorem.",
+      "level": 2,
+      "pageStart": 96,
+      "pageEnd": 98,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jmj",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "fourier transforms",
+          "heading": false
+        },
+        {
+          "term": "strip",
+          "heading": false
+        },
+        {
+          "term": "auto",
+          "heading": false
+        },
+        {
+          "term": "previous lemma",
+          "heading": false
+        },
+        {
+          "term": "continuous",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of the main theorem. We begin with an easy exercise in contour integration. Exercise 13.2.1. Let S be the strip {z ∈C : −1/2 ≤ℜ(z) ≤1/2}. Suppose f is continuous and bounded on S and analytic on the interior of S. Then f(0) = Z ∞ −∞ f(1/2 + it) + f(−1/2 + it) 2 cosh πt dt Hint: Integrate f(z) sin πz around rectangular contours in S tending to the boundary of S. 96 Proposition 13.2.2. With notation as in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-133-examples",
+      "number": "13.3",
+      "title": "Examples.",
+      "level": 2,
+      "pageStart": 98,
+      "pageEnd": 102,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double cosets",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "eij",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "ωis cyclic",
+          "heading": false
+        },
+        {
+          "term": "separating vector",
+          "heading": false
+        },
+        {
+          "term": "hvn",
+          "heading": false
+        },
+        {
+          "term": "mnk",
+          "heading": false
+        }
+      ],
+      "extract": "Examples. Example 13.3.1. ITPFI The acronym ITPFI stands for “inﬁnite tensor product of ﬁnite type I”. These von Neumann algebras are formed by taking the *-algebra A∞as the union A∞of tensor products Am = m O k=1 Mnk(C), the inclusion of Am in Am+1 being diagonal. The state φ on A∞is then the tensor product of states on each Mnk. One may then perform the GNS construction with cyclic and separating vector Ωgiven by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-134-the-kms-condition",
+      "number": "13.4",
+      "title": "The KMS condition.",
+      "level": 2,
+      "pageStart": 102,
+      "pageEnd": 105,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kms condition",
+          "heading": true
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "modular group",
+          "heading": false
+        },
+        {
+          "term": "strip",
+          "heading": false
+        },
+        {
+          "term": "faithful normal",
+          "heading": false
+        },
+        {
+          "term": "normal state",
+          "heading": false
+        },
+        {
+          "term": "neumann algebra",
+          "heading": false
+        },
+        {
+          "term": "guess",
+          "heading": false
+        }
+      ],
+      "extract": "The KMS condition. In the examples of the previous section the operators of the modular group were easy to calculate explicitly, including the domain of ∆. One can imagine that this is not always so. If we are particularly interested in the modular group σφ t it would be useful to be able to guess it and show that the guess is right without bothering about the domain of ∆. The KMS (Kubo-Martin- Schwinger) condition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-141-the-connes-unitary-cocycle-radon-nikodym-the",
+      "number": "14.1",
+      "title": "The Connes unitary cocycle Radon-Nikodym theorem.",
+      "level": 2,
+      "pageStart": 105,
+      "pageEnd": 109,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "type iiiλ",
+          "heading": false
+        },
+        {
+          "term": "itpfi factor",
+          "heading": false
+        },
+        {
+          "term": "faithful normal",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "crossed product",
+          "heading": false
+        },
+        {
+          "term": "normal state",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": true
+        },
+        {
+          "term": "type iii",
+          "heading": false
+        }
+      ],
+      "extract": "theorem. This result will allow us to extract information from the modular group of a state which is independent of the state. Theorem 14.1.1. Let φ and ψ be faithful normal states on a von Neumann algebra M. Then there is a strongly continous map t →ut from R to the unitary group of M so that σφ t = Adutσψ t ∀t ∈R. Morevoer ut satisﬁes the cocycle condition utσψ t (us) = ut+s. Proof. We deﬁne the faithful normal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-151-the-hyperﬁnite-type-ii1-factor-r",
+      "number": "15.1",
+      "title": "The hyperﬁnite type II1 factor R",
+      "level": 2,
+      "pageStart": 109,
+      "pageEnd": 112,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperﬁnite",
+          "heading": true
+        },
+        {
+          "term": "units eij",
+          "heading": false
+        },
+        {
+          "term": "matrix units",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "factor",
+          "heading": true
+        },
+        {
+          "term": "hyperﬁniteness",
+          "heading": false
+        },
+        {
+          "term": "tower theorem",
+          "heading": false
+        },
+        {
+          "term": "matrix algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The hyperﬁnite type II1 factor R The ﬁrst main result about hyperﬁniteness was proved by Murray and von Neumann in []. We will use R to denote the hyperﬁnite II1 factor whose uniqueness they proved. Theorem 15.1.1. Up to abstract isomorphism there is a unique hyperﬁnite II1 factor. Sketch of proof. One works with the norm ||x||2 = tr(x∗x)1/2 on M. It is not hard to show that a von Neumann subalgebra N of M is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-152-the-type-iii-case",
+      "number": "15.2",
+      "title": "The type III case.",
+      "level": 2,
+      "pageStart": 112,
+      "pageEnd": 113,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "type iii",
+          "heading": true
+        },
+        {
+          "term": "connes showed",
+          "heading": false
+        },
+        {
+          "term": "iii factors",
+          "heading": false
+        },
+        {
+          "term": "krieger",
+          "heading": false
+        },
+        {
+          "term": "hyperﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "The type III case. The complete classiﬁcation of injective(=hyperﬁnite) factors is a triumph of 20th. century mathematics. Connes showed in that there is only one Connes actions trace-scaling automorphism of R ⊗B(H) for each scaling factor λ̸ = 1 up to conjugacy. Together with this shows that for each λ with 0 < λ < 1 there is Connes Injective factors a unique injective factor of type IIIλ. Using results of Krieger",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-161-generalities",
+      "number": "16.1",
+      "title": "Generalities.",
+      "level": 2,
+      "pageStart": 113,
+      "pageEnd": 113,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 204,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central sequences",
+          "heading": false
+        },
+        {
+          "term": "generalities",
+          "heading": true
+        },
+        {
+          "term": "limn",
+          "heading": false
+        },
+        {
+          "term": "ultraproduct",
+          "heading": false
+        }
+      ],
+      "extract": "Generalities. Deﬁnition 16.1.1. If M is a type II1 factor, a central sequence in M is a norm bounded sequence (xn) with limn→∞||[xn, a]||2 = 0. A central sequence is said to be trivial if limn→∞||xn −tr(xn)id||2 = 0. M is said to have property Γ if there is a central The collection of all central sequences is clearly a C∗-subalgebra of ℓ∞(N, M). If ω is a free ultraﬁlter on N, the subalgebra Iω of ℓ∞(N, M)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-162-central-sequences-in-r",
+      "number": "16.2",
+      "title": "Central sequences in R",
+      "level": 2,
+      "pageStart": 113,
+      "pageEnd": 114,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central sequences",
+          "heading": true
+        },
+        {
+          "term": "sequence algebra",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        }
+      ],
+      "extract": "Central sequences in R All models for R exhibit central sequences in abundance. The most obvious situation is that of ⊗∞M2(C). Fixing x ∈M2(C) we can deﬁne the sequence 113 xn = 1 ⊗1 ⊗1...x ⊗1 ⊗1... with the x in the nth slot in the tensor product. For large enough n, xn will commute with any element in the algebraic tensor product so by the obvious (in the II1 case!) inequality ||[xn, a]|| ≤2||xn|| ||a||2 we see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-163-type-ii1-factors-without-property-γ",
+      "number": "16.3",
+      "title": "Type II1 factors without property Γ.",
+      "level": 2,
+      "pageStart": 114,
+      "pageEnd": 120,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fock spaces",
+          "heading": false
+        },
+        {
+          "term": "snh",
+          "heading": false
+        },
+        {
+          "term": "λnh",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "bosons",
+          "heading": false
+        },
+        {
+          "term": "property",
+          "heading": true
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "max",
+          "heading": false
+        }
+      ],
+      "extract": "Type II1 factors without property Γ. Theorem 16.3.1. Let Γ be an icc group possessing a subset ∆not containing the identity and three elements α, β and γ such that (a)Γ = {1} ∪∆∪α∆α−1 (b)∆, β∆β−1 and γ∆γ−1 are mutually disjoint. then for x ∈vN(Γ), ||x −tr(x)id||2 ≤14 max{||[x, uα]||2, ||[x, uβ]||2, ||[x, uγ]||2}. Proof. Write x as P ν∈Γ xνuν. We will frequently use the formula ||[x, uρ]||2 2 = ||uρ−1xuρ −x||2 = X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-181-the-fock-spaces",
+      "number": "18.1",
+      "title": "The Fock spaces.",
+      "level": 2,
+      "pageStart": 120,
+      "pageEnd": 120,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "The Fock spaces.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-1811-full-fock-space",
+      "number": "18.1.1",
+      "title": "Full Fock space",
+      "level": 3,
+      "pageStart": 120,
+      "pageEnd": 121,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full fock",
+          "heading": true
+        },
+        {
+          "term": "fock space",
+          "heading": true
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "projection onto",
+          "heading": false
+        },
+        {
+          "term": "complex hilbert",
+          "heading": false
+        },
+        {
+          "term": "vacuum",
+          "heading": false
+        }
+      ],
+      "extract": "Full Fock space Deﬁnition 18.1.2. If H is a real or complex Hilbert space the full Fock space T (H) is the Hilbert space direct sum ⊕∞ n=0 ⊗n H. By deﬁnition ⊗0H is one dimensional, spanned by the \"vacuum\" vector Ω. Even when H is real one complexiﬁes T (H) so that it is a complex Hilbert space. For each n and f ∈H the operator ℓ(f) : ⊗nH →⊗n+1H given by ℓ(f)(ξ1 ⊗ξ2 · · · ξn) = f ⊗ξ1 ⊗ξ2 ⊗· · · ⊗ξn is clearly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-1816-fermionic-fock-space",
+      "number": "18.1.6",
+      "title": "Fermionic Fock space.",
+      "level": 3,
+      "pageStart": 121,
+      "pageEnd": 122,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermionic fock",
+          "heading": true
+        },
+        {
+          "term": "fock space",
+          "heading": true
+        },
+        {
+          "term": "λnh",
+          "heading": false
+        },
+        {
+          "term": "car relations",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        }
+      ],
+      "extract": "Fermionic Fock space. Given a Hilbert space H, the nth. exterior or antisymmetric power of H is the Hilbert space ΛnH = p(⊗nH) where p is the antisymmetrisation projection p(ξ1 ⊗ξ2 ⊗· · · ⊗ξn) = 1 n! X σ∈Sn (−1)σξσ(1) ⊗ξσ(1) ⊗ξσ(2) · · · ⊗ξσ(n) Deﬁnition 18.1.7. The fermionic Fock space of H is the Hilbert space direct sum F(H) = ⊕∞ n=0ΛnH . Given ξ1, ..ξn ∈H we set ξ1 ∧ξ2 ∧· · · ∧ξn = √ n! p(ξ1 ⊗ξ2 ⊗· · · ⊗ξn)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-1821-car-algebra",
+      "number": "18.2.1",
+      "title": "CAR algebra",
+      "level": 3,
+      "pageStart": 122,
+      "pageEnd": 122,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-182-car-algebra-ccr-algebra-and-the-extended-cun",
+      "number": "18.2",
+      "title": "CAR algebra, CCR algebra and the (extended) Cuntz algebra.",
+      "level": 2,
+      "pageStart": 122,
+      "pageEnd": 124,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "car algebra",
+          "heading": true
+        },
+        {
+          "term": "cuntz",
+          "heading": true
+        },
+        {
+          "term": "fock space",
+          "heading": false
+        },
+        {
+          "term": "matrix algebra",
+          "heading": false
+        },
+        {
+          "term": "z-graded",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "completion",
+          "heading": false
+        },
+        {
+          "term": "exercise",
+          "heading": false
+        }
+      ],
+      "extract": "tended) Cuntz algebra. 18.2.1 CAR algebra Deﬁnition 18.2.2. If H is a complex Hilbert space the CAR (canonical anticommuation relations) algebra CAR(H) is the unital *-algebra with gen- erators a(f) for each f ∈H subject to the following relations: (i) The map f 7→a(f) is linear. (ii) a(f)a(g) + a(g)a(f) = 0 ∀f, g ∈H. (iii) a(f)a(g)∗+ a(g)∗a(f) = ⟨f, g⟩ ∀f, g ∈H. (the identity is implicit on the right hand side of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-183-vacuum-expectation-value",
+      "number": "18.3",
+      "title": "Vacuum expectation value",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 125,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vacuum expectation",
+          "heading": true
+        },
+        {
+          "term": "expectation value",
+          "heading": true
+        },
+        {
+          "term": "bogoliubov automorphism",
+          "heading": false
+        },
+        {
+          "term": "car",
+          "heading": false
+        },
+        {
+          "term": "commuting matrix",
+          "heading": false
+        },
+        {
+          "term": "orthonormal basis",
+          "heading": false
+        }
+      ],
+      "extract": "Vacuum expectation value The vacuum vector Ωdeﬁnes a state ωΩon CAR(H) as usual via ⟨xΩ, Ω⟩ which as we know would reconstruct Fock space via the GNS construction. The following formula is clear: 18.3.1. ωΩ \u0000a(fm)∗a(fm−1)∗· · · a(fm)∗a(g1)a(g2) · · · a(gn) \u0001 = δm,n det (⟨gi, fj⟩) We know that states on matrix algebras are given by tr(h˙) so we would like to know what ωΩlooks like in this picture. For this we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-184-quasi-free-states",
+      "number": "18.4",
+      "title": "Quasi-free states",
+      "level": 2,
+      "pageStart": 125,
+      "pageEnd": 126,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-free states",
+          "heading": true
+        },
+        {
+          "term": "car",
+          "heading": false
+        },
+        {
+          "term": "pgi",
+          "heading": false
+        },
+        {
+          "term": "covariance",
+          "heading": false
+        },
+        {
+          "term": "vacuum",
+          "heading": false
+        },
+        {
+          "term": "gns",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        }
+      ],
+      "extract": "Quasi-free states We will now generalise formula 18.3.1 to what are called quasi-free states. The operator a in the theorem below is called the “covariance\" of the state. Theorem 18.4.1. For each self-adjoint a on H, 0 ≤a ≤1 there is a state φa on CAR(H) deﬁned by φa \u0000a(fm)∗a(fm−1)∗· · · a(f1)∗a(g1)a(g2) · · · a(gn) \u0001 = δm,n det (⟨agi, fj⟩) Proof. Lemma 18.4.2. Theorem 18.4.1 is true if a is a projection p and dim H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-185-complex-structure",
+      "number": "18.5",
+      "title": "Complex structure",
+      "level": 2,
+      "pageStart": 126,
+      "pageEnd": 128,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex structure",
+          "heading": true
+        },
+        {
+          "term": "car",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "complex hilbert",
+          "heading": false
+        },
+        {
+          "term": "quasi-free states",
+          "heading": false
+        },
+        {
+          "term": "real hilbert",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "jif",
+          "heading": false
+        }
+      ],
+      "extract": "Complex structure One may obtain the existence of the quasi-free states without basis calcula- tions by changing the complex structure on H. Deﬁnition 18.5.1. If K is a real Hilbert space, a complex structure on K is an orthogonal transformation J with J2 = −1. 126 Lemma 18.5.2. A real Hilbert space K with inner product (, ) and a complex structure J can be made into a complex Hilbert space by deﬁning the action of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-18510-ccr-algebra",
+      "number": "18.5.10",
+      "title": "CCR algebra",
+      "level": 3,
+      "pageStart": 128,
+      "pageEnd": 128,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "CCR algebra",
+      "extractCut": false
+    },
+    {
+      "id": "sec-058-18511-cuntz-algebra",
+      "number": "18.5.11",
+      "title": "Cuntz algebra",
+      "level": 3,
+      "pageStart": 128,
+      "pageEnd": 138,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cuntz algebra",
+          "heading": true
+        },
+        {
+          "term": "x1x",
+          "heading": false
+        },
+        {
+          "term": "isotropic subspace",
+          "heading": false
+        },
+        {
+          "term": "voiculescu trace",
+          "heading": false
+        },
+        {
+          "term": "full fock",
+          "heading": false
+        },
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "fock space",
+          "heading": false
+        },
+        {
+          "term": "unital algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Cuntz algebra Deﬁnition 18.5.12. Given the complex Hilbert space H, let the extended Cuntz algebra of H, C(H), be the unital ∗-algebra with generators ℓ(f) for each f ∈H subject to the following relations: (i) The map f 7→ℓ(f) is linear. (ii) ℓ(f)∗ℓ(g) = ⟨g, f⟩ ∀f, g ∈H. The ℓ(f) deﬁned on full Fock space show that this algebra is non-trivial. Exercise 18.5.13. Show that the representation of C(H) on full Fock space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-n-etracew-exists-and-is-equal-to-the-voiculescu",
+      "number": "N",
+      "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C⟨X1, X2, · · · Xn⟩.",
+      "level": 1,
+      "pageStart": 138,
+      "pageEnd": 139,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "voiculescu",
+          "heading": true
+        },
+        {
+          "term": "trace",
+          "heading": true
+        },
+        {
+          "term": "word",
+          "heading": true
+        }
+      ],
+      "extract": "N E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C⟨X1, X2, · · · Xn⟩. This result, together with 18.5.28 gave Voiculescu a remarkable new in- sight into the vN(Fn) and he was able to prove some spectacular isomor- phisms between them -[]. 138 Chapter 19 Subfactors",
+      "extractCut": false
+    },
+    {
+      "id": "sec-060-191-warmup-finite-groups",
+      "number": "19.1",
+      "title": "Warmup. Finite Groups.",
+      "level": 2,
+      "pageStart": 139,
+      "pageEnd": 141,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed product",
+          "heading": false
+        },
+        {
+          "term": "outer action",
+          "heading": false
+        },
+        {
+          "term": "covariant representation",
+          "heading": false
+        },
+        {
+          "term": "agug",
+          "heading": false
+        },
+        {
+          "term": "warmup",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite groups",
+          "heading": false
+        },
+        {
+          "term": "dual action",
+          "heading": false
+        },
+        {
+          "term": "dimm",
+          "heading": false
+        }
+      ],
+      "extract": "Warmup. Finite Groups. Let G be a ﬁnite group with an outer action α on the type II1 factor M. Let N = M G be the ﬁxed point algebra. We continue the notational conventions from chapter 11 on the crossed product. A covariant representation of (M, α) is an action of M on some Hilbert space H together with a unitary representation vg on H with vgxv∗ g = αg(x) for g ∈G and x ∈M. Proposition 19.1.1. For ﬁnite groups the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-192-index",
+      "number": "19.2",
+      "title": "Index.",
+      "level": 2,
+      "pageStart": 141,
+      "pageEnd": 146,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wassermann subfactor",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "outer action",
+          "heading": false
+        },
+        {
+          "term": "trn",
+          "heading": false
+        },
+        {
+          "term": "adρ",
+          "heading": false
+        },
+        {
+          "term": "dimn",
+          "heading": false
+        },
+        {
+          "term": "prp",
+          "heading": false
+        },
+        {
+          "term": "basic construction",
+          "heading": false
+        }
+      ],
+      "extract": "Index. Inspired by the above and 10.2.2 we make the following: Deﬁnition 19.2.1. If N ⊆M are II1 factors, the index [M : N] of N in M is the real number dimN L2(M). Exercise 19.2.2. Show that [M : N] = 1 implies N = M. Proposition 19.2.3. (i) If M acts on H so that dimN H < ∞then [M : N] = dimN H dimM H. (ii) If [M : N] < ∞and p is a projection in N ′ ∩M then set [M : N]p = [pMp : pN], then [M : N]p =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-193-the-tower-of-type-ii1-factors-and-the-eis",
+      "number": "19.3",
+      "title": "The tower of type II1 factors and the ei’s.",
+      "level": 2,
+      "pageStart": 146,
+      "pageEnd": 147,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tower",
+          "heading": true
+        },
+        {
+          "term": "emi",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": true
+        },
+        {
+          "term": "factors",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        }
+      ],
+      "extract": "The tower of type II1 factors and the ei’s. Deﬁnition 19.3.1. Let N ⊆M be a subfactor of ﬁnite index τ −1. Set M0 = N, M1 = M and deﬁne inductively the tower of type II1 factors Mi+1 = ⟨Mi, eMi−1⟩. Set ei = eMi−1 for i = 1, 2, 3, · · · . Proposition 19.3.2. The ei’s enjoy the following properties. (i) e2 i = e∗ i = ei (ii) eiej = ejei if |i −j| ≥2 (iii) eiei±1ei = τei (iv) tr(wei+1) = τtr(w) for any word w on {e1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-194-index-restrictions",
+      "number": "19.4",
+      "title": "Index restrictions",
+      "level": 2,
+      "pageStart": 147,
+      "pageEnd": 149,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emn",
+          "heading": false
+        },
+        {
+          "term": "restrictions",
+          "heading": true
+        },
+        {
+          "term": "conditional",
+          "heading": false
+        },
+        {
+          "term": "algebra generated",
+          "heading": false
+        },
+        {
+          "term": "expecta",
+          "heading": false
+        }
+      ],
+      "extract": "Index restrictions It is clear from the restrictions we have obtained so far that we should be interested in the trace of the sup of the ﬁrst n ei’s. Deﬁnition 19.4.1. Let Pn(τ) be the polynomials deﬁned by P0 = 1, P1 = 1 and Pn+1 = Pn −τPn−1 Thus P2 = 1 −τ = tr(1 −e1), P3 = 1 −2τ = tr(1 −e1 ∨e2) and P4(τ) = 1 −3τ + τ 2. Exercise 19.4.2. Deﬁne q by τ −1/2 = q+q−1. Show that Pn(τ) is essentially the \"quantum integer\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-195-finite-dimensions",
+      "number": "19.5",
+      "title": "Finite dimensions",
+      "level": 2,
+      "pageStart": 149,
+      "pageEnd": 155,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1933,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normalised trace",
+          "heading": false
+        },
+        {
+          "term": "minimal projections",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "normal normalised",
+          "heading": false
+        },
+        {
+          "term": "central projections",
+          "heading": false
+        },
+        {
+          "term": "faithful trace",
+          "heading": false
+        },
+        {
+          "term": "inclusion matrix",
+          "heading": false
+        },
+        {
+          "term": "trace vector",
+          "heading": false
+        }
+      ],
+      "extract": "Finite dimensions It is nice to have these restrictions on the values of the index but at this stage the only values we know between 1 and 4 are 2 and 3. We will show that all the values of theorem 19.4.6 actually occur. We will use a kind of \"bootstrap\" method. If the value of the index exists then there are ei’s satsfying the relations of 19.3.2. But then we may consider the von Neumann algebra in the tower Mn",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-appendix-a",
+      "number": null,
+      "title": "Appendix A",
+      "level": 2,
+      "pageStart": 155,
+      "pageEnd": 157,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Kauﬀman’s diagrammatics for the Temperley-LIeb algebra. 155 156",
+      "extractCut": false
+    },
+    {
+      "id": "sec-066-appendix-b",
+      "number": null,
+      "title": "Appendix B",
+      "level": 2,
+      "pageStart": 157,
+      "pageEnd": 157,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "Proof of the KMS condition. Theorem B.0.2. Let φ be a faithful normal state on a von Neumann algebra",
+      "extractCut": false
+    },
+    {
+      "id": "sec-067-m-then-the-modular-group-σφ",
+      "number": "M",
+      "title": "Then the modular group σφ",
+      "level": 1,
+      "pageStart": 157,
+      "pageEnd": 161,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continous one-parameter",
+          "heading": false
+        },
+        {
+          "term": "kms condition",
+          "heading": false
+        },
+        {
+          "term": "yσφ",
+          "heading": false
+        },
+        {
+          "term": "aωis",
+          "heading": false
+        },
+        {
+          "term": "anω",
+          "heading": false
+        },
+        {
+          "term": "itx",
+          "heading": false
+        },
+        {
+          "term": "functional calculus",
+          "heading": false
+        },
+        {
+          "term": "strip",
+          "heading": false
+        }
+      ],
+      "extract": "t is the unique one parameter automorphism group of M which satisﬁes the KMS condition for φ. Proof. Perform the GNS construction with canonical cyclic and separating vector Ωand modular operators S = J∆1/2. Recall that f(∆)Ω= Ωfor any function of ∆with f(1) = 1. In particular φ(σφ t (x) = ⟨(∆itx∆−itΩ, Ω⟩so σφ t preserves φ. Now let us check the rest of the KMS condition. We have φ(σφ t (x)y) = ⟨∆−ityΩ, x∗Ω⟩ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 2,
+      "pageStart": 161,
+      "pageEnd": 161,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lecta",
+          "heading": false
+        },
+        {
+          "term": "bost",
+          "heading": false
+        },
+        {
+          "term": "takesaki",
+          "heading": false
+        }
+      ],
+      "extract": "[1] F.M. Goodman, P. de la Harpe, and V.F.R. Jones, Coxeter graphs and towers of algebras, Springer-Verlag, 1989. [2] M. Reed and B. Simon, Methods of Modern Mathematical Physics I: Functional Analysis, Academic Press, 1972. [3] M. Takesaki, Theory of Operator Algebras II. EMS series on Operator Algebras, 2002. [4] J.-B. Bost and A.Connes, Hecke algbebras, type III factors and phase transitions with spontaneous",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "von neumann",
+      "heading": true
+    },
+    {
+      "term": "neumann algebra",
+      "heading": true
+    },
+    {
+      "term": "ﬁnite von",
+      "heading": true
+    },
+    {
+      "term": "onto von",
+      "heading": false
+    },
+    {
+      "term": "previous exercise",
+      "heading": false
+    },
+    {
+      "term": "dimensional von",
+      "heading": true
+    },
+    {
+      "term": "abelian von",
+      "heading": false
+    },
+    {
+      "term": "construct von",
+      "heading": false
+    },
+    {
+      "term": "neumann subalgebra",
+      "heading": false
+    },
+    {
+      "term": "interesting von",
+      "heading": false
+    },
+    {
+      "term": "simple exercise",
+      "heading": false
+    },
+    {
+      "term": "von neu",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 102,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 105,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 125,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 126,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 127,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 128,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 136,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 137,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 138,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 139,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 140,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 141,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 142,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 143,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 144,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 145,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 146,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 147,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 148,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 149,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 150,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 151,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 152,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 153,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 154,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 155,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 156,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 157,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 158,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 159,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 160,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 161,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 70,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 70,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p161); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 70 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/vonneumann2015"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/coordinate.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/coordinate",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "coordinate",
+      "title": "/coordinate — multi-agent / multi-PR coordination",
+      "description": "Coordinate work across multiple in-flight Claude PRs working toward a shared goal (e.g. 1ppb mass-prediction). Post intent + asks on related PRs, identify cherry-pickable work, respond to code-review comments on your own PR, periodically triage sibling PR activity (new comments, CI status, new commits), watch main + newly created branches/PRs, escalate inconsistent findings to the author, and keep a coordination ledger up to date.",
+      "instructionsPath": "skills/local/coordinate.md",
+      "instructionLines": 761,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

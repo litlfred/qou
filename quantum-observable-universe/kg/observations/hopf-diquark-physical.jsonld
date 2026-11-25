@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hopf-diquark-physical",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hopf-diquark-physical",
+  "kind": "remark",
+  "title": "Borromean contrast and the CFL flavor-antisymmetric channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hopf-diquark",
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-hopf-diquark",
+  "tags": [
+    "diquark",
+    "hopf",
+    "cooper-pair",
+    "color-superconductivity",
+    "borromean"
+  ],
+  "text": "hopf-diquark-physical.md",
+  "provenance": "authored"
+}

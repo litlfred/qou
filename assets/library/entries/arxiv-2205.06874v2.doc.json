@@ -1,0 +1,2371 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2205.06874v2",
+  "title": "State sum models with defects based on spherical fusion categories",
+  "variant": "pdf",
+  "pages": 68,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Categorical data",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-categorical-data"
+    },
+    {
+      "level": 2,
+      "title": "Spherical fusion categories",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-spherical-fusion-categories"
+    },
+    {
+      "level": 2,
+      "title": "(Bi)module categories, functors and natural transformations",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-bimodule-categories-functors-and-natural-transfo"
+    },
+    {
+      "level": 2,
+      "title": "Finite semisimple (bi)module categories over pivotal fusion categories",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-finite-semisimple-bimodule-categories-over-pivot"
+    },
+    {
+      "level": 2,
+      "title": "Bimodule categories with bimodule traces",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-bimodule-categories-with-bimodule-traces"
+    },
+    {
+      "level": 1,
+      "title": "Diagrammatic calculus",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-diagrammatic-calculus"
+    },
+    {
+      "level": 2,
+      "title": "Diagrams for spherical fusion categories",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-diagrams-for-spherical-fusion-categories"
+    },
+    {
+      "level": 2,
+      "title": "Diagrams for (bi)module categories, functors and natural transformations",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-diagrams-for-bimodule-categories-functors-and-na"
+    },
+    {
+      "level": 3,
+      "title": "Diagrams for 2-categories",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-diagrams-for-2-categories"
+    },
+    {
+      "level": 3,
+      "title": "Diagrams for pivotal 2-categories",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-diagrams-for-pivotal-2-categories"
+    },
+    {
+      "level": 3,
+      "title": "Mixed diagrams",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-mixed-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Polygon diagrams",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-polygon-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Action on category diagrams",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-action-on-category-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Bordered diagrams",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-bordered-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Polygon diagrams",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-polygon-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Gluing polygon diagrams",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-gluing-polygon-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Projections and inclusions for simple objects",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-projections-and-inclusions-for-simple-objects"
+    },
+    {
+      "level": 2,
+      "title": "Gluing identities for polygon diagrams",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-gluing-identities-for-polygon-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "State sum models with defects",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-state-sum-models-with-defects"
+    },
+    {
+      "level": 2,
+      "title": "Triangulated 3-manifolds with defects",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-triangulated-3-manifolds-with-defects"
+    },
+    {
+      "level": 2,
+      "title": "Labeling of the triangulation",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-labeling-of-the-triangulation"
+    },
+    {
+      "level": 2,
+      "title": "Generalised 6j symbols",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-generalised-6j-symbols"
+    },
+    {
+      "level": 2,
+      "title": "State sum model with defects",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-state-sum-model-with-defects"
+    },
+    {
+      "level": 1,
+      "title": "Topological invariance",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-topological-invariance"
+    },
+    {
+      "level": 2,
+      "title": "Moves between triangulated PL manifolds",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-moves-between-triangulated-pl-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Neighbourhoods of defect surfaces",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-neighbourhoods-of-defect-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "State sums with defect discs",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-state-sums-with-defect-discs"
+    },
+    {
+      "level": 2,
+      "title": "Triangulation independence",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-triangulation-independence"
+    },
+    {
+      "level": 1,
+      "title": "Examples of state sums",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-examples-of-state-sums"
+    },
+    {
+      "level": 2,
+      "title": "State sums with defect surfaces",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-state-sums-with-defect-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon invariants from line defects",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-ribbon-invariants-from-line-defects"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defect tqfts",
+          "heading": false
+        },
+        {
+          "term": "labeling defect",
+          "heading": false
+        },
+        {
+          "term": "defect surfaces",
+          "heading": false
+        },
+        {
+          "term": "defect lines",
+          "heading": false
+        },
+        {
+          "term": "defect vertices",
+          "heading": false
+        },
+        {
+          "term": "defect data",
+          "heading": false
+        },
+        {
+          "term": "defect disc",
+          "heading": false
+        },
+        {
+          "term": "oriented defect",
+          "heading": false
+        }
+      ],
+      "extract": "State sum models with defects based on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg Cauerstraße 11, 91058 Erlangen, Germany Email: catherine.meusburger@math.uni-erlangen.de May 13, 2022 Abstract We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. Surface defects are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2205.06874v2/blocks/prose-sec-front-matter",
+        "library/arxiv-2205.06874v2/blocks/thm-sec-front-matter-01",
+        "library/arxiv-2205.06874v2/blocks/thm-sec-front-matter-02"
+      ]
+    },
+    {
+      "id": "sec-000-categorical-data",
+      "number": null,
+      "title": "Categorical data",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Categorical data",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-spherical-fusion-categories",
+      "number": null,
+      "title": "Spherical fusion categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category mac",
+          "heading": false
+        },
+        {
+          "term": "end mac",
+          "heading": false
+        },
+        {
+          "term": "circ coev",
+          "heading": false
+        },
+        {
+          "term": "categories mac",
+          "heading": false
+        },
+        {
+          "term": "multitensor category",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "rigid monoidal",
+          "heading": false
+        }
+      ],
+      "extract": "We work over $\\C$ and follow the conventions of Etingof et al.~in \\cite{EGNO}. A {\\bf multitensor category} is a locally finite, $\\C$-linear abelian rigid monoidal category $\\mac$ with a tensor product $\\oo:\\mac\\times\\mac\\to \\mac$ that is bilinear on the morphisms. A {\\bf tensor category} is an indecomposable multitensor category with $\\End_\\mac(e)\\cong \\C$, where $e$ is the tensor unit. A {\\bf (multi)fusion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-bimodule-categories-functors-and-natural-transfo",
+      "number": null,
+      "title": "(Bi)module categories, functors and natural transformations",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 2167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lhd rightarrow",
+          "heading": false
+        },
+        {
+          "term": "functor lhd",
+          "heading": false
+        },
+        {
+          "term": "rhd rightarrow",
+          "heading": false
+        },
+        {
+          "term": "lhd alpha",
+          "heading": false
+        },
+        {
+          "term": "times rhd",
+          "heading": false
+        },
+        {
+          "term": "fun mad",
+          "heading": false
+        },
+        {
+          "term": "delta rhd",
+          "heading": false
+        },
+        {
+          "term": "item mad",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we summarise background on (bi)module categories, (bi)module functors and (bi)module natural transformations from \\cite[Ch.~7]{EGNO}. \\begin{definition}\\label{def:modulecat} Let $\\mac, \\mad$ be multitensor categories with associators $a:\\oo(\\oo\\times\\id)\\Rightarrow\\oo(\\id\\times\\oo)$ and left and right unit constraints $l: e\\oo \\id\\Rightarrow \\id$, $r:\\id \\oo e\\Rightarrow \\id $. \\begin{compactenum}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-finite-semisimple-bimodule-categories-over-pivot",
+      "number": null,
+      "title": "Finite semisimple (bi)module categories over pivotal fusion categories",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fun mad",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": true
+        },
+        {
+          "term": "pivotal fusion",
+          "heading": true
+        },
+        {
+          "term": "category mam",
+          "heading": false
+        },
+        {
+          "term": "module categories",
+          "heading": true
+        },
+        {
+          "term": "fun mac",
+          "heading": false
+        },
+        {
+          "term": "mad rev",
+          "heading": false
+        },
+        {
+          "term": "semisimple module",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{subsec:semisimple} We focus on {\\em finite semisimple} $(\\mac,\\mad)$-bimodule categories over {\\em fusion categories} $\\mac$, $\\mad$ and on $(\\mac,\\mad)$-bimodule functors and natural transformations between them. In this case all categories $\\Fun_{(\\mac,\\mad)}(\\mam,\\man)$ are finite $\\C$-linear abelian categories \\cite[Prop.~7.11.6]{EGNO} and semisimple, see \\cite[Th.~2.16]{ENO} by Etingof et al. Moreover,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-bimodule-categories-with-bimodule-traces",
+      "number": null,
+      "title": "Bimodule categories with bimodule traces",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimodule categories",
+          "heading": true
+        },
+        {
+          "term": "theta mam",
+          "heading": false
+        },
+        {
+          "term": "category mam",
+          "heading": false
+        },
+        {
+          "term": "mac module",
+          "heading": false
+        },
+        {
+          "term": "hom mam",
+          "heading": false
+        },
+        {
+          "term": "end mam",
+          "heading": false
+        },
+        {
+          "term": "mac boxtimes",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mad",
+          "heading": false
+        }
+      ],
+      "extract": "(Bi)module traces on (bi)module categories over fusion categories were first introduced by Schaumann in \\cite{G12} and investigated further in \\cite{G14}. We summarise (bi)module traces for finite semisimple (bi)module categories over pivotal fusion categories from \\cite{G12,G14}. To keep notation simple, we focus on left module categories and identify $(\\mac,\\mad)$-bimodule categories with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-diagrammatic-calculus",
+      "number": null,
+      "title": "Diagrammatic calculus",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Diagrammatic calculus",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-diagrams-for-spherical-fusion-categories",
+      "number": null,
+      "title": "Diagrams for spherical fusion categories",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "line width",
+          "heading": false
+        },
+        {
+          "term": "begin scope",
+          "heading": false
+        },
+        {
+          "term": "end scope",
+          "heading": false
+        }
+      ],
+      "extract": "We use the usual graphical calculus for monoidal categories, suppressing the tensor unit and coherence data. Morphisms in diagrams are composed from top to bottom and tensor products from the right to the left. We also use the usual diagrammatic notation for the duals. If the categories are pivotal, we draw oriented lines for the objects, where a line that is directed downwards and labeled $x^*$ is replaced by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-diagrams-for-bimodule-categories-functors-and-na",
+      "number": null,
+      "title": "Diagrams for (bi)module categories, functors and natural transformations",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite bms",
+          "heading": false
+        },
+        {
+          "term": "categories",
+          "heading": true
+        },
+        {
+          "term": "diagrammatic calculus",
+          "heading": false
+        }
+      ],
+      "extract": "In the following, we use diagrammatic calculus for 2-categories and apply it to the 2-categories Cat of (small) categories, functors and natural transformations and to the 2-categories $\\Bimod^\\theta(\\mac,\\mad)$ and $\\mathrm{Mod}^\\theta(\\mac)$ from Theorem \\ref{th:pivot}. The diagrammatic calculus goes back to Joyal and Street \\cite{JS} in the smooth setting, and was also studied by Barrett et al.~\\cite{BMS} in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-diagrams-for-2-categories",
+      "number": null,
+      "title": "Diagrams for 2-categories",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "color violet",
+          "heading": false
+        },
+        {
+          "term": "fill black",
+          "heading": false
+        }
+      ],
+      "extract": "A {\\bf 2-category diagram} for a 2-category $\\mac$ is a direct generalisation of a diagram for a monoidal category. It is a PL stratification $\\emptyset\\subset X^0\\subset X^1\\subset X^2=[0,1]^2$ of the unit square. Elements of $X^0$ are called {\\bf vertices}, connected components of $X^1\\setminus X^0$ {\\bf lines} and connected components of $X^2\\setminus X^1$ {\\bf regions} of the diagram. Lines may end at the top",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-diagrams-for-pivotal-2-categories",
+      "number": null,
+      "title": "Diagrams for pivotal 2-categories",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "scope draw",
+          "heading": false
+        },
+        {
+          "term": "style dashed",
+          "heading": false
+        },
+        {
+          "term": "line width",
+          "heading": false
+        }
+      ],
+      "extract": "If the 2-category under consideration is a pivotal 2-category in the sense \\cite[Def.~A.12]{G14} or, more strictly, a planar 2-category in the sense of \\cite[Def.~3.2.1]{BMS}, we use the diagrams for planar 2-categories introduced in \\cite[Def.~3.5]{BMS}. The main examples are $\\mathrm{Mod}^\\theta(\\mac)$ and $\\Bimod^\\theta(\\mac,\\mad)$ from Theorem \\ref{th:pivot}. The diagrams for pivotal 2-categories are essentially",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-mixed-diagrams",
+      "number": null,
+      "title": "Mixed diagrams",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "color white",
+          "heading": false
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "color gray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:bimod} The diagrams for pivotal 2-categories in the previous section can be used to describe morphisms in the pivotal 2-categories $\\Bimod^\\theta(\\mac,\\mad)$ and $\\mathrm{Mod}^\\theta(\\mac)$ from Theorem \\ref{th:pivot}. In this case, regions are labeled with (bi)module categories with (bi)module traces, lines with (bi)module functors and vertices with (bi)module natural transformations. The duals are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-polygon-diagrams",
+      "number": null,
+      "title": "Polygon diagrams",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Polygon diagrams",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-action-on-category-diagrams",
+      "number": null,
+      "title": "Action on category diagrams",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "fill blue",
+          "heading": false
+        }
+      ],
+      "extract": "We also use the diagrammatic calculus to describe evaluation functors $\\mathrm{ev}: \\Fun(\\mam,\\man)\\times \\mam\\to \\man$ that send a pair $(F,m)$ of a functor $F:\\mam\\to\\man$ and an object $m\\in\\Ob\\mam$ to the object $F(m)$ and a pair $(\\nu,\\alpha)$ of a natural transformation $\\nu: F\\Rightarrow G$ and a morphism $\\alpha:m\\to m'$ to the morphism $\\nu_{m'}\\circ F(\\alpha)=G(\\alpha)\\circ \\nu_m: F(m)\\to G(m')$. For this,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-bordered-diagrams",
+      "number": null,
+      "title": "Bordered diagrams",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bordered",
+          "heading": true
+        },
+        {
+          "term": "bordered diagram",
+          "heading": false
+        },
+        {
+          "term": "segment labeled",
+          "heading": false
+        },
+        {
+          "term": "boundary segments",
+          "heading": false
+        },
+        {
+          "term": "category diagram",
+          "heading": false
+        },
+        {
+          "term": "ghl",
+          "heading": false
+        },
+        {
+          "term": "endpoints",
+          "heading": false
+        },
+        {
+          "term": "lines",
+          "heading": false
+        }
+      ],
+      "extract": "Bordered diagrams Using the diagrammatic calculus from the previous sections, we define a generalisation of 2-category diagrams for Cat, in which boundary segments and endpoints of lines at the boundary are also labeled with categorical data. We also allow multiple lines to end in a common point on a boundary. 18 Definition 2.8. Let D be a 2-category diagram for Cat. A bordered diagram D′ for D is a diagram obtained",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-polygon-diagrams",
+      "number": null,
+      "title": "Polygon diagrams",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 24,
+      "labelStart": "19",
+      "labelEnd": "24",
+      "words": 1671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polygon diagrams",
+          "heading": true
+        },
+        {
+          "term": "bordered diagram",
+          "heading": false
+        },
+        {
+          "term": "cyclic evaluation",
+          "heading": false
+        },
+        {
+          "term": "bimodule category",
+          "heading": false
+        },
+        {
+          "term": "cyclic transformations",
+          "heading": false
+        },
+        {
+          "term": "bimodule trace",
+          "heading": false
+        },
+        {
+          "term": "transformation labeling",
+          "heading": false
+        },
+        {
+          "term": "cyclic equivalence",
+          "heading": false
+        }
+      ],
+      "extract": "Polygon diagrams By definition, the evaluation of a bordered diagram is an endomorphism of the object labeling the left-hand side of the diagram. For bordered diagrams that involve data from the pivotal 2-category Bimodθ(C, D) one can take the bimodule trace of this morphism to obtain a complex number. 19 Definition 2.11. Let D be a bordered diagram labeled with data from Bimod?(C, D). The cyclic evaluation of D is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-gluing-polygon-diagrams",
+      "number": null,
+      "title": "Gluing polygon diagrams",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 51,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polygon",
+          "heading": true
+        },
+        {
+          "term": "diagrams",
+          "heading": true
+        },
+        {
+          "term": "projincl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:projincl} In this section we describe how polygon diagrams for the pivotal 2-category $\\Bimod^\\theta(\\mac,\\mad)$ can be glued by summing over simple objects and bases of the morphism spaces at their boundary. Taking the product of the evaluations of two diagrams and performing these summations yields the evaluation of the glued diagram.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-projections-and-inclusions-for-simple-objects",
+      "number": null,
+      "title": "Projections and inclusions for simple objects",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "color violet",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "fill violet",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "arrowin node",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mam$ a finite semisimple $\\C$-linear category, equipped with a trace $\\theta$ in the sense of Definition \\ref{def:moduletrace} and let $I$ be a set of representatives of the isomorphism classes of its simple objects. Then every object $x$ in $\\mam$ can be expressed as a direct sum $x\\cong \\oplus_{m\\in I} m^{\\oplus n_{xm}}$ with multiplicities $n_{xm}=\\dim_\\C \\Hom_\\mam(m,x)\\in\\mathbb N_0$. One can choose bases",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-gluing-identities-for-polygon-diagrams",
+      "number": null,
+      "title": "Gluing identities for polygon diagrams",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "arrowout node",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "scope node",
+          "heading": false
+        },
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the pivotal 2-category $\\Bimod^\\theta(\\mac,\\mad)$ for spherical fusion categories $\\mac,\\mad$. We fix sets $I_\\mac$, $I_\\mad$ and $I_\\mam$ of representatives of the isomorphism classes of simple objects in $\\mac$, $\\mad$ and in each bimodule category $\\mam$. For each object $x$ in $\\mac$, $\\mad$ or $\\mam$ and each simple object $i$ in the set of representatives, we choose projection morphisms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-state-sum-models-with-defects",
+      "number": null,
+      "title": "State sum models with defects",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "State sum models with defects",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-triangulated-3-manifolds-with-defects",
+      "number": null,
+      "title": "Triangulated 3-manifolds with defects",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 1065,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defect areas",
+          "heading": false
+        },
+        {
+          "term": "intersects defect",
+          "heading": false
+        },
+        {
+          "term": "defect line",
+          "heading": false
+        },
+        {
+          "term": "defect surface",
+          "heading": false
+        },
+        {
+          "term": "defect vertex",
+          "heading": false
+        },
+        {
+          "term": "oriented defect",
+          "heading": false
+        },
+        {
+          "term": "incident defect",
+          "heading": false
+        },
+        {
+          "term": "defect manifold",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:triangsec} We consider a compact oriented 3d PL manifold $M$ with (possibly empty) boundary $\\partial M$. Defect structures are assigned to a compact oriented embedded 2d PL submanifold $D\\subset M$ with boundary $\\partial D\\subset \\partial M$ that is a finite sum of circles. The submanifold $D$ is equipped with a (finite, possibly empty) embedded PL graph $D^1$ with vertex set $D^0$ such that $D^1\\cap",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-labeling-of-the-triangulation",
+      "number": null,
+      "title": "Labeling of the triangulation",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "mam node",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "mam man",
+          "heading": false
+        },
+        {
+          "term": "allow upside",
+          "heading": false
+        },
+        {
+          "term": "upside down",
+          "heading": false
+        },
+        {
+          "term": "mac node",
+          "heading": false
+        }
+      ],
+      "extract": "To define the state sum of a generic transversal triangulated 3-manifold with defect data, we assign objects and morphisms of the associated categories to the edges and triangles of the triangulation. For this, we fix sets $I$ of representatives of the isomorphism classes of simple objects and associated projection and inclusion morphisms $p^\\alpha_{xi}: x\\to i$ and $j^\\alpha_{xi}: i\\to x$ satisfying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-generalised-6j-symbols",
+      "number": null,
+      "title": "Generalised 6j symbols",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 37,
+      "labelStart": "31",
+      "labelEnd": "37",
+      "words": 2094,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "color violet",
+          "heading": false
+        },
+        {
+          "term": "arrowout node",
+          "heading": false
+        },
+        {
+          "term": "fill violet",
+          "heading": false
+        },
+        {
+          "term": "color white",
+          "heading": false
+        }
+      ],
+      "extract": "We now associate a generalised 6j symbol to each labeled generic transversal tetrahedron $t$ with a defect surface. Note that such a defect tetrahedron is more than a combinatorial tetrahedron with categorical data assigned to each oriented edge. It consists of a combinatorial tetrahedron $t$, an oriented defect polygon $P$, an assignment of certain edges of $t$ to the vertices of $P$ and an assignment of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-state-sum-model-with-defects",
+      "number": null,
+      "title": "State sum model with defects",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 1289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state sum",
+          "heading": true
+        },
+        {
+          "term": "labelings partial",
+          "heading": false
+        },
+        {
+          "term": "transversal triangulated",
+          "heading": false
+        },
+        {
+          "term": "defect data",
+          "heading": false
+        },
+        {
+          "term": "intersect defect",
+          "heading": false
+        },
+        {
+          "term": "defect area",
+          "heading": false
+        },
+        {
+          "term": "rhd phi",
+          "heading": false
+        },
+        {
+          "term": "mathrm tet",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show how the generalised 6j symbols for generic transversal defect tetrahedra combine to state sums for a generic transversal triangulated 3-manifolds with defect data. Let $M$ be a generic transversal triangulated 3-manifold with defect data, $R$ its set of regions and $A$ its set of oriented defect areas. We denote by $\\mac_r$ the spherical fusion category assigned to the region $r$ and by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-topological-invariance",
+      "number": null,
+      "title": "Topological invariance",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Topological invariance",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-moves-between-triangulated-pl-manifolds",
+      "number": null,
+      "title": "Moves between triangulated PL manifolds",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 1067,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "fill black",
+          "heading": false
+        },
+        {
+          "term": "line width",
+          "heading": false
+        },
+        {
+          "term": "bistellar moves",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:PLsubsec} To establish triangulation independence for state sum models with defects, we require some background from PL topology. We consider different moves on triangulations that relate PL homeomorphic 3-manifolds with and without boundary. The main references are the articles \\cite{P, Pshell} by Pachner, see also the articles \\cite{L} by Lickorish and \\cite{Cas} by Casali.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-neighbourhoods-of-defect-surfaces",
+      "number": null,
+      "title": "Neighbourhoods of defect surfaces",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "41",
+      "labelEnd": "44",
+      "words": 1798,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defect surfaces",
+          "heading": true
+        },
+        {
+          "term": "transversal bistellar",
+          "heading": false
+        },
+        {
+          "term": "transversal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "intersect defect",
+          "heading": false
+        },
+        {
+          "term": "generic transversal",
+          "heading": false
+        },
+        {
+          "term": "bistellar moves",
+          "heading": false
+        },
+        {
+          "term": "transversal triangulation",
+          "heading": false
+        },
+        {
+          "term": "defect vertex",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:gentrans} In the presence of defects, applying a bistellar move to a generic transversal triangulation may yield a triangulation that is no longer transversal or generic. For this reason, it is not straightforward to establish invariance of the state sums via bistellar moves. Instead, we refine the triangulations and decompose the underlying defect 3-manifold into certain neighbourhoods of defect",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-state-sums-with-defect-discs",
+      "number": null,
+      "title": "State sums with defect discs",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 48,
+      "labelStart": "44",
+      "labelEnd": "48",
+      "words": 1854,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defect discs",
+          "heading": true
+        },
+        {
+          "term": "indstate mathcal",
+          "heading": false
+        },
+        {
+          "term": "eqref pic",
+          "heading": false
+        },
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "indstate depending",
+          "heading": false
+        },
+        {
+          "term": "defect vertices",
+          "heading": false
+        },
+        {
+          "term": "dim mac",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        }
+      ],
+      "extract": "To prove the triangulation independence of the state sum, we first show that the state sums of 3-balls $M$ that shell to fine neighbourhoods of defect discs $D$ are given as cyclic evaluations of certain polygon diagrams. These polygon diagrams are obtained by projecting the dual graphs of the boundary triangulations on $\\partial M$ to the defect disc. As $M$ is PL homeomorphic to $[0,1]\\times D$ via an orientation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-triangulation-independence",
+      "number": null,
+      "title": "Triangulation independence",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "51",
+      "words": 2659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "labelings partial",
+          "heading": false
+        },
+        {
+          "term": "defect vertices",
+          "heading": false
+        },
+        {
+          "term": "transversal triangulations",
+          "heading": false
+        },
+        {
+          "term": "intersect partial",
+          "heading": false
+        },
+        {
+          "term": "boundary labelings",
+          "heading": false
+        },
+        {
+          "term": "polygon evaluations",
+          "heading": false
+        },
+        {
+          "term": "defect surface",
+          "heading": false
+        },
+        {
+          "term": "defect manifold",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that any two generic transversal triangulations of a 3-manifold with defect data yield the same state sum if they agree at its boundary. Note that this does not follow directly from Corollary \\ref{cor:pachner}, because it is not guaranteed a priori that such triangulations are related by \\emph{generic transversal} bistellar moves. As a first step, we derive a counterpart of Proposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-examples-of-state-sums",
+      "number": null,
+      "title": "Examples of state sums",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defect surfaces",
+          "heading": false
+        },
+        {
+          "term": "defect lines",
+          "heading": false
+        },
+        {
+          "term": "state sums",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:examples} In this section, we compute the state sums for some examples of defect 3-manifolds. We first consider state sums with defect surfaces, but without defect lines or defect vertices. We then show how to recover ribbon invariants from defect lines and vertices on trivial defect surfaces.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-state-sums-with-defect-surfaces",
+      "number": null,
+      "title": "State sums with defect surfaces",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 59,
+      "labelStart": "51",
+      "labelEnd": "59",
+      "words": 3431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "arrowin node",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "rhd lhd",
+          "heading": false
+        },
+        {
+          "term": "defect surfaces",
+          "heading": true
+        },
+        {
+          "term": "allow upside",
+          "heading": false
+        }
+      ],
+      "extract": "In the following, we assume that all triangulations are generic and transversal at the boundary. Our first example is a defect sphere without defect lines or vertices embedded inside a 3-ball. We suppose that the embedding is \\emph{unknotted} in the sense of Zeeman \\cite{Z}. This means that there is a PL homeomorphism from the 3-ball to itself that sends the defect sphere to the boundary of a tetrahedron, see also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-ribbon-invariants-from-line-defects",
+      "number": null,
+      "title": "Ribbon invariants from line defects",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 68,
+      "labelStart": "59",
+      "labelEnd": "68",
+      "words": 3730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anchor west",
+          "heading": false
+        },
+        {
+          "term": "anchor east",
+          "heading": false
+        },
+        {
+          "term": "anchor south",
+          "heading": false
+        },
+        {
+          "term": "anchor north",
+          "heading": false
+        },
+        {
+          "term": "arrowin node",
+          "heading": false
+        },
+        {
+          "term": "fill black",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants. These surfaces are labeled by a spherical fusion category $\\mac$ as a $(\\mac,\\mac)$-bimodule category. As $\\mac$ is a spherical fusion category, its center $\\mathcal Z(\\mac)$ is a ribbon category, see for instance \\cite[Lemma 10.1]{TVr}. By Example \\ref{ex:modulefuncs}, the monoidal category $\\End_\\mac(\\mac)$ is",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "anchor west",
+      "heading": false
+    },
+    {
+      "term": "anchor east",
+      "heading": false
+    },
+    {
+      "term": "anchor south",
+      "heading": false
+    },
+    {
+      "term": "mac node",
+      "heading": false
+    },
+    {
+      "term": "anchor north",
+      "heading": false
+    },
+    {
+      "term": "mam node",
+      "heading": false
+    },
+    {
+      "term": "mad node",
+      "heading": false
+    },
+    {
+      "term": "arrowin node",
+      "heading": false
+    },
+    {
+      "term": "line width",
+      "heading": false
+    },
+    {
+      "term": "scope node",
+      "heading": false
+    },
+    {
+      "term": "scope draw",
+      "heading": false
+    },
+    {
+      "term": "arrowout node",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Some cyclic transformations of a bordered diagram",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Generic transversal tetrahedra that intersect a defect surface. (a) labeling with F : P →M, G : N →M, H : P →N and ν : F ⇒GH, (b) labeling with F : Q →P, G : N →Q, H : M →P, K : N →M and ν : FG ⇒HK",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Projecting the data from spherical categories on the polygon",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Bistellar moves for a tetrahedron",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Stellar subdivisions for a triangle and an edge of a triangulation",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Elementary shellings: removing a tetrahedron with one, two or three faces in the boundary",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Subdivisions of tetrahedra intersecting the defect manifold D with new vertices tf, ∆f and ef that span the surface Ef. Edges in the subdivision that intersect D are drawn in blue, edges that lie in the region rf in black and edges in the region ri in grey",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "bistellar moves for tetrahedra without and with defect discs: (a),(b): encoding the associator of a spherical fusion category C, (c)-(f): encoding the natural isomorphism c for a C-module category M, (g)-(i): encoding the natural isomorphism b for a (C, D)-bimodule category M",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A labeled triangular prism and the associated polygon diagram",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Polygon diagram P for M = [0, 1] × Σ for triangulated defect surface Σ of genus 2. • The orientation of the blue lines indicates the orientation of the triangulation on Σ",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Gluing a surface of genus g = 2 inside a 3-ball",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "A piece of a knot (red) in the dual complex of a triangulation and the associated defect surface. The state sum vanishes unless g3 = g1g2 and g5 = g1g4",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Defect tetrahedra assigned to the square diagrams from Example 6.7. The last tetrahedron is obtained by gluing three tetrahedra without crossings as in Example 6.6",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Gluing four defect tetrahedra and the associated polygon diagram",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 31,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "14 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2205.06874v2"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "arxiv-1012.4941v2",
+    "type": "article-journal",
+    "title": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+    "author": [
+      {
+        "family": "RICHARD BÖDI",
+        "given": "KATRIN HERR"
+      },
+      {
+        "family": "JOSWIG",
+        "given": "MICHAEL"
+      }
+    ],
+    "issued": {
+      "raw": "D:20181029"
+    },
+    "URL": "https://arxiv.org/abs/1012.4941",
+    "abstract": "This paper deals with exploiting symmetry for solving linear and integer programming problems. Basic properties of linear representations of ﬁnite groups can be used to reduce symmetric linear programming to solving linear programs of lower dimension. Combining this approach with knowledge of the geometry of feasible inte- ger solutions yields an algorithm for solving highly symmetric integer linear programs which only takes time which is linear in the number of constraints and quadratic in the dimension.",
+    "note": "arXiv:1012.4941"
+  }
+]

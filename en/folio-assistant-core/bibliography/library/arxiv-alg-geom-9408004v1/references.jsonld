@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-alg-geom-9408004v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Cubics, Integrable Systems, and Calabi-Yau Threefolds",
+      "dcterms:creator": [
+        "THREEFOLDS, CALABI-YAU"
+      ],
+      "dcterms:issued": "D:20130217",
+      "dcterms:identifier": "https://arxiv.org/abs/alg-geom/9408004",
+      "dcterms:source": "library/arxiv-alg-geom-9408004v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-alg-geom-9408004v1"
+    }
+  ]
+}

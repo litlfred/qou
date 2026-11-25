@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-z-eq-n-rho-correction",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:z-eq-n-rho-correction",
+  "kind": "conjecture",
+  "title": "Z=N substrate-q correction to the Kashaev law",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "tier:E",
+    "binding-energy",
+    "kashaev",
+    "z-equals-n",
+    "q-deformation",
+    "rho-substrate",
+    "1ppb",
+    "open-problem"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.ZeqNRhoCorrection",
+  "text": "z-eq-n-rho-correction.md",
+  "provenance": "authored"
+}

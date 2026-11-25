@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gb-depth-period-correspondence",
+  "kind": "conjecture",
+  "title": "GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-exists",
+    "papers/quantum-observable-universe/blocks/prop-categorical-laplace-unique",
+    "papers/quantum-observable-universe/blocks/def-q-resolvent",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+    "papers/quantum-observable-universe/blocks/rem-figure-8-archimedean-illustration",
+    "papers/quantum-observable-universe/blocks/rem-algebraic-core-survives"
+  ],
+  "cites": [
+    "references/kontsevich1995",
+    "references/deligne-goncharov2005",
+    "references/zagier1986",
+    "references/bloch2000",
+    "references/suslin1991",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "tier:keystone",
+    "graded-mikusinski",
+    "goncharov-periods",
+    "archimedean-wall",
+    "iterated-integral-depth",
+    "surreal-envelope",
+    "wall-crossing-criterion",
+    "open-problem",
+    "keystone"
+  ],
+  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.GBDepthPeriodCorrespondence",
+  "text": "gb-depth-period-correspondence.md",
+  "leanSource": "gb-depth-period-correspondence.lean",
+  "provenance": "authored"
+}

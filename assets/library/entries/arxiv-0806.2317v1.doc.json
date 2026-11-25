@@ -1,0 +1,1021 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0806.2317v1",
+  "title": "Bounds for codes and designs in complex subspaces",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Orbitals",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-orbitals"
+    },
+    {
+      "level": 1,
+      "title": "Representations",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-representations"
+    },
+    {
+      "level": 1,
+      "title": "Symmetric spaces",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-symmetric-spaces"
+    },
+    {
+      "level": 1,
+      "title": "Zonal polynomials",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-zonal-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Bounds",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-bounds"
+    },
+    {
+      "level": 1,
+      "title": "Other bounds",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-other-bounds"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-examples"
+    },
+    {
+      "level": 1,
+      "title": "Designs",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-designs"
+    },
+    {
+      "level": 1,
+      "title": "Association schemes",
+      "number": null,
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-association-schemes"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "designs",
+          "heading": false
+        },
+        {
+          "term": "calgary",
+          "heading": false
+        },
+        {
+          "term": "codes",
+          "heading": false
+        },
+        {
+          "term": "delsarte",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0806.2317v1 [math.CO] 13 Jun 2008 Bounds for codes and designs in complex subspaces Aidan Roy∗ Institute for Quantum Information Science, University of Calgary Calgary, Alberta T2N 1N4, Canada October 27, 2018 Abstract We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0806.2317v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 770,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grassmannian designs",
+          "heading": false
+        },
+        {
+          "term": "grassmannian codes",
+          "heading": false
+        },
+        {
+          "term": "scr code",
+          "heading": false
+        },
+        {
+          "term": "spherical codes",
+          "heading": false
+        },
+        {
+          "term": "complex grassmannian",
+          "heading": false
+        },
+        {
+          "term": "real grassmannian",
+          "heading": false
+        },
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "known bounds",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we introduce the concept of complex Grassmannian codes and designs: codes and designs in the collection of fixed-rank subspaces of a complex vector space. In the 1970's, Delsarte \\cite{del1} developed a series of excellent bounds for certain error-correcting codes by treating codewords as points in an association scheme and then applying linear programming. Shortly thereafter, Delsarte, Goethals and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-orbitals",
+      "number": null,
+      "title": "Orbitals",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 891,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "cap perp",
+          "heading": false
+        },
+        {
+          "term": "principal angles",
+          "heading": false
+        },
+        {
+          "term": "unitary matrix",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrix",
+          "heading": false
+        },
+        {
+          "term": "times unitary",
+          "heading": false
+        },
+        {
+          "term": "orthonormal basis",
+          "heading": false
+        },
+        {
+          "term": "n-m",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:orbitals} In this section we describe the orbits of pairs of elements of $\\gras{m}{n}$ under the action of $U(n)$. First, we claim that $\\gras{m}{n}$ can be identified with a factor group of the unitary group, $\\nobreak{U(n)/(U(m) \\times U(n-m))}$. For, consider the first $m$ columns of a matrix of $U(n)$ as the basis for a subspace $a$ of dimension $m$ in $\\cx^n$, letting the last $n-m$ columns be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-representations",
+      "number": null,
+      "title": "Representations",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "compact lie",
+          "heading": false
+        },
+        {
+          "term": "dominant weight",
+          "heading": false
+        },
+        {
+          "term": "sep",
+          "heading": false
+        },
+        {
+          "term": "bump",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:representations} In this section and the next, we develop the representation theory needed for Grassmannian LP bounds. As is standard for compact Lie groups, we work with functions on $\\gras{m}{n}$ to find irreducible representations. Define an inner product for functions on $\\gras{m}{n}$ as follows: \\[ \\ip{f}{g} := \\int_{\\gras{m}{n}} \\conj{f(a)}g(a) \\; da. \\] Here $da$ is the unique measure invariant on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-symmetric-spaces",
+      "number": null,
+      "title": "Symmetric spaces",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "defn spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical representations",
+          "heading": false
+        },
+        {
+          "term": "wallach cite",
+          "heading": false
+        },
+        {
+          "term": "called defn",
+          "heading": false
+        },
+        {
+          "term": "begin comment",
+          "heading": false
+        },
+        {
+          "term": "end comment",
+          "heading": false
+        },
+        {
+          "term": "diagonal entries",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:symmetric} The group $U(n)/U(m) \\times U(n-m)$ is an example of a \\defn{symmetric space}: a factor group $G/K$ such that $G$ is a connected semisimple Lie group and $K$ is the fixed point set of an involutive automorphism of $G$. In this section, we use results from Goodman and Wallach \\cite{gw1} to explain how the decomposition of representations of $\\gras{m}{n}$ follows from this structure. Let $s_m$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-zonal-polynomials",
+      "number": null,
+      "title": "Zonal polynomials",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "defn zonal",
+          "heading": false
+        },
+        {
+          "term": "zonal orthogonal",
+          "heading": false
+        },
+        {
+          "term": "sbinom",
+          "heading": false
+        },
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "schur polynomials",
+          "heading": false
+        },
+        {
+          "term": "principal angles",
+          "heading": false
+        },
+        {
+          "term": "normalized schur",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:zonal} A \\defn{zonal polynomial} at a point $a \\in \\gras{m}{n}$ is a function on points $b \\in \\gras{m}{n}$ which depends only on the the principle angles between $a$ and $b$. Given any univariate polynomial $f(x)$ of degree $k$, we define the \\defn{zonal polynomial of $f$ at $b$} as follows: if $f(x) = \\sum_{i=0}^k f_i x^i$, then \\[ f_a(b) = \\sum_{i=0}^k f_i \\tr(P_aP_b)^i. \\] Here $P_a$ and $P_b$ are the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-bounds",
+      "number": null,
+      "title": "Bounds",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scr code",
+          "heading": false
+        },
+        {
+          "term": "bound raisebox",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "hline rule",
+          "heading": false
+        },
+        {
+          "term": "seidel bound",
+          "heading": false
+        },
+        {
+          "term": "zonal orthogonal",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "parbox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:bounds} Recall that an $\\scr{A}$-code is a collection $S$ of subspaces in $\\gras{m}{n}$ such that $\\tr(P_aP_b) \\in \\scr{A}$ for every $a \\neq b$ in $S$. In this section, we find upper bounds on the size of an $\\scr{A}$-code in terms of either the cardinality of $\\scr{A}$ or its elements. A summary of the results for $\\abs{\\scr{A}} \\leq 2$ is given in Table \\ref{tab:codebounds}. \\begin{table}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-other-bounds",
+      "number": null,
+      "title": "Other bounds",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equatorial simplex",
+          "heading": false
+        },
+        {
+          "term": "real grassmannians",
+          "heading": false
+        },
+        {
+          "term": "regular equatorial",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "equality occurs",
+          "heading": false
+        },
+        {
+          "term": "minimum distance",
+          "heading": false
+        },
+        {
+          "term": "equality requires",
+          "heading": false
+        },
+        {
+          "term": "cite chs",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:otherbounds} Certain cases of equality in Corollaries \\ref{cor:onebound} and \\ref{cor:twobound} also achieve equality for bounds on the size of the largest angle in a set of subspaces. For real Grassmannians, Conway, Hardin and Sloane \\cite{chs} call these bounds the \\defn{simplex} and \\defn{orthoplex} bounds. Here we give their complex analogues. Recall that if $P_a$ be the $n \\times n$ projection matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sbinom n-k",
+          "heading": false
+        },
+        {
+          "term": "isotropic subspaces",
+          "heading": false
+        },
+        {
+          "term": "dimension n-k",
+          "heading": false
+        },
+        {
+          "term": "overline cap",
+          "heading": false
+        },
+        {
+          "term": "zauner cite",
+          "heading": false
+        },
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "cite grr",
+          "heading": false
+        },
+        {
+          "term": "invariant subspaces",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:examples} In this section we give examples demonstrating the tightness of the bounds in the previous sections. When the rank $m$ of the Grassmannian subspaces is $1$, we recover all the classical results of Delsarte, Goethals and Seidel \\cite{dgs} for lines in complex projective space: their paper gives several examples of bounds with equality. In particular, the upper bound for $\\{\\al\\}$-codes in $\\cx",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-designs",
+      "number": null,
+      "title": "Designs",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "designs",
+          "heading": true
+        },
+        {
+          "term": "gras otimes",
+          "heading": false
+        },
+        {
+          "term": "int gras",
+          "heading": false
+        },
+        {
+          "term": "every abs",
+          "heading": false
+        },
+        {
+          "term": "n-m",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomial",
+          "heading": false
+        },
+        {
+          "term": "zonal orthogonal",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:designs} In this section, we introduce the concept of a \\defn{complex Grassmannian $2$-design}. We give lower bounds for the size of a $t$-design and indicate the relationship between designs and codes. Recall that $H_t(m,n)$ is the direct sum of the irreducible representations $H_\\mu$ of $U(n)$ containing the zonal polynomials $Z_{\\mu,a}$, where $\\mu$ is an integer partition of size at most $t$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-association-schemes",
+      "number": null,
+      "title": "Association schemes",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scr code",
+          "heading": false
+        },
+        {
+          "term": "scr cup",
+          "heading": false
+        },
+        {
+          "term": "association",
+          "heading": true
+        },
+        {
+          "term": "association scheme",
+          "heading": false
+        },
+        {
+          "term": "sum abs",
+          "heading": false
+        },
+        {
+          "term": "principal angles",
+          "heading": false
+        },
+        {
+          "term": "annihilator polynomial",
+          "heading": false
+        },
+        {
+          "term": "schur idempotents",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:assoc} As Theorem \\ref{thm:twothree} indicates, sets of Grassmannian subspaces which reach equality in the Delsarte bounds have a great deal of structure. In this section, we show that---much like spherical codes and spherical designs---these sets are often endowed with the structure of an association scheme. Let $S$ be an $f$-code with a finite number of distinct sets of principal angles $y =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiangular lines",
+          "heading": false
+        },
+        {
+          "term": "philips res",
+          "heading": false
+        },
+        {
+          "term": "grassmannian spaces",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "godsil",
+          "heading": false
+        },
+        {
+          "term": "ieee trans",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "algebraic combin",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements The author would like to thank Martin R¨otteler, Chris Godsil, Bill Martin, and Barry Sanders for their helpful discussions. This work was funded by NSERC and MITACS. References [1] D. Agrawal, T. J. Richardson, and R. L. Urbanke, Multiple- antenna signal constellations for fading channels, IEEE Trans. Inform. Theory, 47 (2001), 2618–2626. [2] C. Bachoc, Linear programming bounds for codes in",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sbs gras",
+      "heading": false
+    },
+    {
+      "term": "int gras",
+      "heading": false
+    },
+    {
+      "term": "gras otimes",
+      "heading": false
+    },
+    {
+      "term": "defn zonal",
+      "heading": false
+    },
+    {
+      "term": "abs scr",
+      "heading": false
+    },
+    {
+      "term": "scr code",
+      "heading": false
+    },
+    {
+      "term": "scr leq",
+      "heading": false
+    },
+    {
+      "term": "delsarte bounds",
+      "heading": false
+    },
+    {
+      "term": "grassmannian subspaces",
+      "heading": false
+    },
+    {
+      "term": "grassmannian designs",
+      "heading": false
+    },
+    {
+      "term": "leq frac",
+      "heading": false
+    },
+    {
+      "term": "zonal orthogonal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Upper bounds on |S|, when S ⊆Gm,n is an A-code",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0806.2317v1"
+  }
+}

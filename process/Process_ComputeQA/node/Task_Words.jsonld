@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Words.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Words",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Braid-word provenance",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:ServiceTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "inLane": "https://litlfred.github.io/qou/process/Process_ComputeQA/lane/Lane_Pipeline",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_W"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_W2"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

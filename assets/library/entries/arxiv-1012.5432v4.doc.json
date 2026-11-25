@@ -1,0 +1,3322 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1012.5432v4",
+  "title": "arxiv-1012.5432v4",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "I Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "II (2+1)-dimensional Topological Gauge Theories Set the Stage for Quantum Computation",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-ii-21-dimensional-topological-gauge-theories-set"
+    },
+    {
+      "level": 2,
+      "title": "A Knots",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "B Fusion",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "III Motivation: Topological Effects in Physics",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-iii-motivation-topological-effects-in-physics"
+    },
+    {
+      "level": 2,
+      "title": "A Aharonov-Bohm Effect",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-aharonov-bohm-effect"
+    },
+    {
+      "level": 2,
+      "title": "B Flux Metamorphosis",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-flux-metamorphosis"
+    },
+    {
+      "level": 1,
+      "title": "IV Physics: Hamiltonian Description",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-iv-physics-hamiltonian-description"
+    },
+    {
+      "level": 2,
+      "title": "A Hamiltonian",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-a-hamiltonian"
+    },
+    {
+      "level": 2,
+      "title": "B Symmetry Breaking",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-b-symmetry-breaking"
+    },
+    {
+      "level": 2,
+      "title": "C Monopoles and Instantons",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-c-monopoles-and-instantons"
+    },
+    {
+      "level": 3,
+      "title": "Dirac Monopoles",
+      "number": "1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-1-dirac-monopoles"
+    },
+    {
+      "level": 3,
+      "title": "Polyakov-'t Hooft Monopoles",
+      "number": "2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-2-polyakov-t-hooft-monopoles"
+    },
+    {
+      "level": 3,
+      "title": "Instantons",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-instantons"
+    },
+    {
+      "level": 2,
+      "title": "D Higgs Screening",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-d-higgs-screening"
+    },
+    {
+      "level": 2,
+      "title": "E Classification Based on the Symmetry Group",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-e-classification-based-on-the-symmetry-group"
+    },
+    {
+      "level": 3,
+      "title": "Three Dimensions",
+      "number": "1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-1-three-dimensions"
+    },
+    {
+      "level": 3,
+      "title": "Two Dimensions",
+      "number": "2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-2-two-dimensions"
+    },
+    {
+      "level": 1,
+      "title": "V Spin-Statistics Connection",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-v-spin-statistics-connection"
+    },
+    {
+      "level": 2,
+      "title": "A The Abelian Case",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-a-the-abelian-case"
+    },
+    {
+      "level": 2,
+      "title": "B The Non-Abelian Case: Generalized Spin-Statistics Connection",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-b-the-non-abelian-case-generalized-spin-statisti"
+    },
+    {
+      "level": 1,
+      "title": "VI Determining the Particles from the Hamiltonian",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-vi-determining-the-particles-from-the-hamiltonia"
+    },
+    {
+      "level": 2,
+      "title": "A Abelian",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "B Non-Abelian Cases",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-b-non-abelian-cases"
+    },
+    {
+      "level": 2,
+      "title": "C Determining the Particles",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-c-determining-the-particles"
+    },
+    {
+      "level": 2,
+      "title": "D Changing Basis: The S-Matrix",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-d-changing-basis-the-s-matrix"
+    },
+    {
+      "level": 2,
+      "title": "E Spin and the T-Matrix",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-e-spin-and-the-t-matrix"
+    },
+    {
+      "level": 2,
+      "title": "F Magnetic-Electric Charge Duality",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-f-magnetic-electric-charge-duality"
+    },
+    {
+      "level": 3,
+      "title": "Fusion",
+      "number": "1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-1-fusion"
+    },
+    {
+      "level": 3,
+      "title": "Antiparticles",
+      "number": "2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-2-antiparticles"
+    },
+    {
+      "level": 2,
+      "title": "G Alice Physics and Cheshire Charges in Non-Abelian Gauge Theories",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-g-alice-physics-and-cheshire-charges-in-non-abel"
+    },
+    {
+      "level": 1,
+      "title": "VII Summary",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "VIII Explicit Derivations of Particles and Fusion Rules for Special Physical Theories",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-viii-explicit-derivations-of-particles-and-fusio"
+    },
+    {
+      "level": 2,
+      "title": "A Abelian vs. Non-Abelian: Physical Origin and Computational Potential",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-a-abelian-vs-non-abelian-physical-origin-and-com"
+    },
+    {
+      "level": 2,
+      "title": "B Applying the Quantum Double Formalism to Abelian Finite Groups Z/NZ",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-b-applying-the-quantum-double-formalism-to-abeli"
+    },
+    {
+      "level": 3,
+      "title": "Particles",
+      "number": "1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-1-particles"
+    },
+    {
+      "level": 3,
+      "title": "Braiding and Fusion",
+      "number": "2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-2-braiding-and-fusion"
+    },
+    {
+      "level": 2,
+      "title": "C Applying the Quantum Double Formalism to Non-Abelian Finite Groups",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-c-applying-the-quantum-double-formalism-to-non-a"
+    },
+    {
+      "level": 3,
+      "title": "Finite Subgroups of SO(3) and SU(2)",
+      "number": "1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-1-finite-subgroups-of-so3-and-su2"
+    },
+    {
+      "level": 3,
+      "title": "S3",
+      "number": "2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-2-s3"
+    },
+    {
+      "level": 3,
+      "title": "A5",
+      "number": "3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-3-a5"
+    },
+    {
+      "level": 3,
+      "title": "Fusion Rules:",
+      "number": "4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-4-fusion-rules"
+    },
+    {
+      "level": 1,
+      "title": "IX MAGMA Program and Discussion of Results",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-ix-magma-program-and-discussion-of-results"
+    },
+    {
+      "level": 2,
+      "title": "A Majorana Particles",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-a-majorana-particles"
+    },
+    {
+      "level": 1,
+      "title": "X Quantum Computation Schemes",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-x-quantum-computation-schemes"
+    },
+    {
+      "level": 2,
+      "title": "A Universal Quantum Computation",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-a-universal-quantum-computation"
+    },
+    {
+      "level": 2,
+      "title": "B Schemes for Topological Quantum Computation",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-b-schemes-for-topological-quantum-computation"
+    },
+    {
+      "level": 3,
+      "title": "Fusion Probabilities",
+      "number": "1",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-1-fusion-probabilities"
+    },
+    {
+      "level": 2,
+      "title": "C Possible Realizations of Topological Quantum Computation",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-c-possible-realizations-of-topological-quantum-c"
+    },
+    {
+      "level": 3,
+      "title": "A5",
+      "number": "1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-1-a5"
+    },
+    {
+      "level": 3,
+      "title": "S3",
+      "number": "2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-2-s3"
+    },
+    {
+      "level": 3,
+      "title": "The Dihedral Groups and p + i p Superconductors",
+      "number": "3",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-3-the-dihedral-groups-and-p-i-p-superconductors"
+    },
+    {
+      "level": 1,
+      "title": "XI Conclusions",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "A Appendix",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "B Other Interesting Quantum Doubles",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-b-other-interesting-quantum-doubles"
+    },
+    {
+      "level": 2,
+      "title": "Finite Subgroups of SO(3) and SU(2)",
+      "number": "1",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-1-finite-subgroups-of-so3-and-su2"
+    },
+    {
+      "level": 2,
+      "title": "A4",
+      "number": "2",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-2-a4"
+    },
+    {
+      "level": 2,
+      "title": "S4",
+      "number": "3",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-3-s4"
+    },
+    {
+      "level": 2,
+      "title": "D4",
+      "number": "4",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-4-d4"
+    },
+    {
+      "level": 3,
+      "title": "a Possible Physical Realization",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-a-possible-physical-realization"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "anyons",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite residual",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "residual gauge",
+          "heading": false
+        },
+        {
+          "term": "ybe",
+          "heading": false
+        }
+      ],
+      "extract": "quant-ph Towards Topological Quantum Computation? - Knotting and Fusing Flux Tubes Meagan B. Thompson arXiv:1012.5432v4 [quant-ph] 26 Dec 2012 Abstract Models for topological quantum computation are based on braiding and fusing anyons (quasi- particles of fractional statistics) in (2+1)-D. The anyons that can exist in a physical theory are determined by the symmetry group of the Hamiltonian. Speciﬁcally, any theory",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1012.5432v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "error correction",
+          "heading": false
+        },
+        {
+          "term": "quantum error",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "steane",
+          "heading": false
+        },
+        {
+          "term": "computational power",
+          "heading": false
+        },
+        {
+          "term": "threshold",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": false
+        },
+        {
+          "term": "protected",
+          "heading": false
+        }
+      ],
+      "extract": "Richard Feynman in 1982 was the first to conceive of the idea of a computer based on quantum mechanics as potentially offering more computational power than computers based on just classical physics. [@Feynman] As computer components are beginning to attain distances on which quantum mechanical effects can no longer be ignored, continued size reduction would necessitate the design of a system that thrives on quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-ii-21-dimensional-topological-gauge-theories-set",
+      "number": null,
+      "title": "II (2+1)-dimensional Topological Gauge Theories Set the Stage for Quantum Computation",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum computation",
+          "heading": true
+        },
+        {
+          "term": "excitations particles",
+          "heading": false
+        },
+        {
+          "term": "kelvin idea",
+          "heading": false
+        },
+        {
+          "term": "theories",
+          "heading": true
+        },
+        {
+          "term": "fundamental excitations",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "non-abelian theories",
+          "heading": false
+        }
+      ],
+      "extract": "The systems in which topology acts to our advantage are those that are effectively (2+1)-dimensional. The striking accuracy that can be achieved in topological systems for even classical electronics applications is very promising for the potential accuracy of a topological quantum computer. For example, the resistivity in the IQHE is accurate to 1 part in $10^9$ [@ady] - It was even selected by NIST as the standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-iii-motivation-topological-effects-in-physics",
+      "number": null,
+      "title": "III Motivation: Topological Effects in Physics",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ddot ther",
+          "heading": false
+        },
+        {
+          "term": "conservation laws",
+          "heading": false
+        },
+        {
+          "term": "conserved current",
+          "heading": false
+        }
+      ],
+      "extract": "Conservation laws are critical to many physics analyses as they often simplify calculations dramatically and aid intuition. No$\\ddot{e}$ther's Theorem states that for every symmetry of the Hamiltonian, there is a conserved current and provides an explicit formula for calculating the conserved current. However, it turns out that this list is not exhaustive - In fact, topological conservation laws can arise that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-aharonov-bohm-effect",
+      "number": null,
+      "title": "A Aharonov-Bohm Effect",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aharonov-bohm effect",
+          "heading": true
+        },
+        {
+          "term": "interference pattern",
+          "heading": false
+        },
+        {
+          "term": "solenoid",
+          "heading": false
+        },
+        {
+          "term": "electron beams",
+          "heading": false
+        },
+        {
+          "term": "gauge fields",
+          "heading": false
+        },
+        {
+          "term": "physical consequences",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "vector potential",
+          "heading": false
+        }
+      ],
+      "extract": "As motivation, recall the Aharonov-Bohm effect in quantum electrodynamics. [@aharonovbohm] Initially, gauge fields were introduced into classical physics as auxiliary fields to aid calculations - While they were present in the canonical formalism, they were not necessary and did not appear in the classical equations of motion (Maxwell's equations in the case of electromagnetism). However, quantum mechanics promotes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-flux-metamorphosis",
+      "number": null,
+      "title": "B Flux Metamorphosis",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flux metamorphosis",
+          "heading": true
+        },
+        {
+          "term": "dirac string",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": false
+        },
+        {
+          "term": "counterclockwise",
+          "heading": false
+        },
+        {
+          "term": "fluxes",
+          "heading": false
+        },
+        {
+          "term": "cumulative",
+          "heading": false
+        },
+        {
+          "term": "exchanged",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, the topological effects arising from Hamiltonians in (2+1)-dimensions with finite symmetry groups will be considered. Let H be a nonabelian group. The basic idea is as follows: Consider two particles with fluxes in the residual gauge group: $h_1, h_2 \\in H$. Fluxes introduce a nontrivial holonomy on the set of ground states that effects any test particle whose path winds around the flux. WLOG take all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-iv-physics-hamiltonian-description",
+      "number": null,
+      "title": "IV Physics: Hamiltonian Description",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ssb",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "symmetry groups",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "force",
+          "heading": false
+        },
+        {
+          "term": "times",
+          "heading": false
+        }
+      ],
+      "extract": "Modern physics has evolved closer to group theory as Hamiltonians can be classified solely on the basis of their symmetry groups and particle content. In fact, the current standard model is based on the Hamiltonian described by the gauge symmetry group $SU(3)\\times SU(2) \\times U(1)$. The symmetry groups seen in nature are given by spontaneous symmetry breaking (SSB) of this gauge group to subgroups. $SU(3)$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-b-symmetry-breaking",
+      "number": null,
+      "title": "B Symmetry Breaking",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-a-hamiltonian",
+      "number": null,
+      "title": "A Hamiltonian",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acquires mass",
+          "heading": false
+        },
+        {
+          "term": "full symmetry",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "supercon",
+          "heading": false
+        },
+        {
+          "term": "superconductor",
+          "heading": false
+        }
+      ],
+      "extract": "symmetry: 1. Add an external potential: If the potential does not respect the full symmetry of the original Lagrangian, then the symmetry of the resulting Lagrangian becomes some subgroup of the original symmetry group. 2. Spontaneous Symmetry Breaking (SSB): (described in most Quantum Field Theory textbooks, see for instance [11]) - In this case, the full symmetry of the original La- grangian is broken by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-c-monopoles-and-instantons",
+      "number": null,
+      "title": "C Monopoles and Instantons",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 33,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monopoles",
+          "heading": true
+        },
+        {
+          "term": "polyakov-'t",
+          "heading": false
+        },
+        {
+          "term": "cole",
+          "heading": false
+        }
+      ],
+      "extract": "Monopoles can arise as either Dirac or Polyakov-'t Hooft monopoles in field theories. Both carry quantized flux, yet there are some crucial differences to keep in mind. ( [@cole] is a good reference.)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-1-dirac-monopoles",
+      "number": "1",
+      "title": "Dirac Monopoles",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirac monopoles",
+          "heading": true
+        },
+        {
+          "term": "torn",
+          "heading": false
+        },
+        {
+          "term": "magnets",
+          "heading": false
+        },
+        {
+          "term": "aesthetic",
+          "heading": false
+        }
+      ],
+      "extract": "P. Dirac predicted the existence of monopoles in the quantum theory of electromagnetism as a method of accounting for charge quantization. These Dirac monopoles are singular solutions of the field equations carrying infinite energy. In addition, Dirac monopoles have the aesthetic appeal of making Maxwell's equations symmetric. To date, however, magnetic monopoles have not been observed in nature (Every bar magnet",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-polyakov-t-hooft-monopoles",
+      "number": "2",
+      "title": "Polyakov-'t Hooft Monopoles",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monopoles",
+          "heading": true
+        },
+        {
+          "term": "dirac monopoles",
+          "heading": false
+        },
+        {
+          "term": "polyakov-'t",
+          "heading": true
+        }
+      ],
+      "extract": "In broken gauge theories, it is not Dirac monopoles but rather Polyakov-'t Hooft monopoles that play a key role. These are of a very different nature than Dirac monopoles - they are non-singular solutions of the field equations that carry finite energy, and necessitate no new degrees of freedom, i.e. all their parameters can be expressed in terms of the ordinary scalar and vector meson parameters. Recall that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-instantons",
+      "number": "3",
+      "title": "Instantons",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "When the gauge group G is not simply connected, the lift $\\bar{H}$ of the subgroup $H$ to the universal cover determines the different magnetic vortices.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-d-higgs-screening",
+      "number": null,
+      "title": "D Higgs Screening",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs",
+          "heading": true
+        },
+        {
+          "term": "aharonov-bohm scattering",
+          "heading": false
+        },
+        {
+          "term": "screening",
+          "heading": true
+        },
+        {
+          "term": "higgs field",
+          "heading": false
+        },
+        {
+          "term": "strength decays",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum numbers",
+          "heading": false
+        },
+        {
+          "term": "coulomb",
+          "heading": false
+        }
+      ],
+      "extract": "In light of the preceding discussion of the Aharonov-Bohm effect, it is important to note that the physical charge de facto plays two distinct roles in the Yang Mills Higgs theory. - It serves as both the coupling constant for the Coulomb interactions and as the coupling constant for the Aharonov-Bohm scattering. In the Higgs phase, Coulomb charges are screened at large distances (compared to the scale",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-e-classification-based-on-the-symmetry-group",
+      "number": null,
+      "title": "E Classification Based on the Symmetry Group",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-1-three-dimensions",
+      "number": "1",
+      "title": "Three Dimensions",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensions",
+          "heading": true
+        },
+        {
+          "term": "physical system",
+          "heading": false
+        },
+        {
+          "term": "haag",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": false
+        },
+        {
+          "term": "statistics",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a physical system consisting of $n$ identical point particles. (Note that for these particles to be truly indistinguishable, the system has to be quantum mechanical.) In three or more dimensions, any loop that circles twice around a point can be continuously deformed to the identity ($\\pi_1(SO(3)) = \\mathbb{Z}/2\\mathbb{Z}$). Thus the only physical property corresponds to the particular permutation of the n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-2-two-dimensions",
+      "number": "2",
+      "title": "Two Dimensions",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distinguishable particles",
+          "heading": false
+        },
+        {
+          "term": "truncated braid",
+          "heading": false
+        },
+        {
+          "term": "indistinguishable particles",
+          "heading": false
+        },
+        {
+          "term": "colored braid",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "fundamental group",
+          "heading": false
+        },
+        {
+          "term": "configuration space",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "***Indistinguishable Particles: Braid Group*** On the other hand, in two dimensions the fundamental group of the configuration space of a system of $n$ identical particles is given by the more general braid group: $$\\pi_1(C_n(\\mathbb{R}^2)) \\simeq B_n(\\mathbb{R}^2) = \\langle \\sigma_i, 1 \\leq i \\leq n-1 | \\sigma_i \\sigma_{i+1} \\sigma_i = \\sigma_{i+1} \\sigma_i \\sigma_{i+1},$$ $$\\sigma_i \\sigma_j = \\sigma_j \\sigma_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-v-spin-statistics-connection",
+      "number": null,
+      "title": "V Spin-Statistics Connection",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-a-the-abelian-case",
+      "number": null,
+      "title": "A The Abelian Case",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "particle antiparticle",
+          "heading": false
+        },
+        {
+          "term": "antiparticle pairs",
+          "heading": false
+        },
+        {
+          "term": "interchanged",
+          "heading": false
+        },
+        {
+          "term": "lorentz",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "ribbon",
+          "heading": false
+        },
+        {
+          "term": "deformed",
+          "heading": false
+        }
+      ],
+      "extract": "The topological approach to proving the spin-statistics connection ( [@prop]) that depends only on the existence of antiparticles and Lorentz invariance is useful when considering the spins of particles in 2 dimensions. (This proof was originally proposed by Finkelstein and Rubinstein in the case of three spatial dimensions, then adapted to the two dimensional case by Propitius de Wild. [@prop]) Consider the process",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-b-the-non-abelian-case-generalized-spin-statisti",
+      "number": null,
+      "title": "B The Non-Abelian Case: Generalized Spin-Statistics Connection",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin-statistics connection",
+          "heading": true
+        },
+        {
+          "term": "generalized spin-statistics",
+          "heading": true
+        },
+        {
+          "term": "gamma aac",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        }
+      ],
+      "extract": "When the group is non-abelian, the canonical spin statistics connection must be generalized as the topological equivalence in Fig.\\[3\\] shows. Specifically, when a composite particle C (the result of fusion of A and B) is rotated, not only is the phase of the composite picked up, but each of the constituents A and B are also rotated. Thus both A and B must both be rotated back in the opposite direction, each picking",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-vi-determining-the-particles-from-the-hamiltonia",
+      "number": null,
+      "title": "VI Determining the Particles from the Hamiltonian",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "total derivative",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theories",
+          "heading": false
+        },
+        {
+          "term": "axions",
+          "heading": false
+        },
+        {
+          "term": "ymh",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "## Abelian Consider the following action for a minimally coupled scalar field with an Abelian symmetry group: $$S = S_{YMH} + S_{matter} = \\int d^3 x (-\\dfrac{1}{4} F_{\\mu \\nu} F^{\\mu \\nu} + (D^{\\mu} \\Phi)^* D_{\\mu}\\Phi - V(|\\Phi|) - j^{\\mu}A_{\\mu} )$$ where the covariant derivative is given by $D_{\\rho} \\Phi = (\\partial_{\\rho} + i N e A_{\\rho}) \\Phi$ (i.e. the Higgs field has charge $Ne$ with respect to the compact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-b-non-abelian-cases",
+      "number": null,
+      "title": "B Non-Abelian Cases",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abc",
+          "heading": false
+        },
+        {
+          "term": "ymh",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of the nonabelian Higgs field, the field tensor must be given an extra index $a$. $$S_{YMH} = \\int d^3x (-\\dfrac{1}{4} F^{a \\mu \\nu} F^a_{\\mu \\nu} + (D^{\\mu} \\Phi)^\\dag \\cdot D_{ \\mu } \\Phi - V(\\Phi))$$ where the covariant derivative is given, for instance, in the adjoint representation of the nonabelian group by $(D_{\\mu} \\Phi )_a = \\partial_{\\mu} \\phi_a+ g f^{abc} A_{\\mu}^b \\Phi_c$. Explicitly, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-c-determining-the-particles",
+      "number": null,
+      "title": "C Determining the Particles",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "flux",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": true
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "internal hilbert",
+          "heading": false
+        },
+        {
+          "term": "global symmetry",
+          "heading": false
+        },
+        {
+          "term": "centralizer",
+          "heading": false
+        }
+      ],
+      "extract": "Note that there is spin-charge separation in the system as the flux and the charge can be measured independently (and there are both charged particles with no magnetic flux and magnetic fluxes with no electric charge). A specific particle type is determined by a conjugacy class A of the symmetry group H and a representation $\\alpha$ of the centralizer of a representative of that conjugacy class. (The centralizers of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-d-changing-basis-the-s-matrix",
+      "number": null,
+      "title": "D Changing Basis: The S-Matrix",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "s-matrix",
+          "heading": true
+        },
+        {
+          "term": "basis",
+          "heading": true
+        }
+      ],
+      "extract": "The S-matrix implements the change of basis between the given basis of the fusion algebra and the diagonal basis. (Such a matrix S must exist since the algebra is commutative and associative.) Explicitly, the S matrix can be written as: $$S_{\\alpha \\beta}^{AB} := \\dfrac{1}{|H|} tr \\textrm{ }R^{-2}{ }^{AB}_{\\alpha \\beta}$$ $$= \\dfrac{1}{|H|} \\sum_{^Ah_i \\in ^AC, ^Bh_j \\in ^BC: [^Ah_i, ^Bh_j]=e} tr(\\alpha(^Ax_i^{-1} {",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-e-spin-and-the-t-matrix",
+      "number": null,
+      "title": "E Spin and the T-Matrix",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "t-matrix",
+          "heading": true
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "dyons",
+          "heading": false
+        },
+        {
+          "term": "anyonic",
+          "heading": false
+        }
+      ],
+      "extract": "The diagonal T-matrix records the information about the spins. Explicitly, the T matrix is given by: $$T_{\\alpha \\beta}^{AB} := \\delta_{\\alpha,\\beta} \\delta^{A,B} e^{2\\pi i s_{(A, \\alpha)}}$$ Within each internal Hilbert space, all particles carry the same spin. Furthermore, the only particles which have nontrivial spin are dyons with both nontrivial flux and nontrivial charge. Note that in the construction for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-f-magnetic-electric-charge-duality",
+      "number": null,
+      "title": "F Magnetic-Electric Charge Duality",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charge",
+          "heading": true
+        },
+        {
+          "term": "ﬂuxes",
+          "heading": false
+        },
+        {
+          "term": "duality",
+          "heading": true
+        }
+      ],
+      "extract": "The symmetry transformations of the second factor (C(H)) in the quantum double con- struction relate D(H) to the electric charge. Similarly, the ﬁrst part F(H) of D(H) yields the magnetic ﬂuxes. Note that these are in fact dual to each other, as F(H) ≃CH∗. The magnetic-electric charge duality is implemented by the SL(2, Z) action generated by the S and T matrices. The action of the S matrix has an interpretation as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-1-fusion",
+      "number": "1",
+      "title": "Fusion",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "fusion coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "bhj",
+          "heading": false
+        },
+        {
+          "term": "outcomes",
+          "heading": false
+        }
+      ],
+      "extract": "Fusion Similar to regular quantum ﬁeld theory of the collision of two particles in three dimensions, the fusion of two particles can lead to multiple possible outcomes. The fusion rules are the analog in this two dimensional setting of the selection rule for addition of angular momenta J1, J2 in quantum mechanics which permits values between −|J2−J1| and J2+J1 as feasible outcomes for the combined system. The fusion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-2-antiparticles",
+      "number": "2",
+      "title": "Antiparticles",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antiparticle",
+          "heading": false
+        },
+        {
+          "term": "fused",
+          "heading": false
+        },
+        {
+          "term": "particle",
+          "heading": false
+        }
+      ],
+      "extract": "An antiparticle is defined to be the representation which when fused with the original particle yields the identity as one possible outcome. It turns out that the antiparticle is unique, and the charge conjugation operator $C=S^2$ takes a particle to its antiparticle. Note that since the S matrix commutes with the T matrix (which encodes the spin), the spin of a particle is the same as that of the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-g-alice-physics-and-cheshire-charges-in-non-abel",
+      "number": null,
+      "title": "G Alice Physics and Cheshire Charges in Non-Abelian Gauge Theories",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "particle antiparticle",
+          "heading": false
+        },
+        {
+          "term": "charge",
+          "heading": false
+        },
+        {
+          "term": "symmetry group",
+          "heading": false
+        },
+        {
+          "term": "configuration",
+          "heading": false
+        },
+        {
+          "term": "environment",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "kept",
+          "heading": false
+        },
+        {
+          "term": "flux",
+          "heading": false
+        }
+      ],
+      "extract": "Cheshire charge is a non-localizable form of charge that is carried by a configuration of particles. Globally, charge must be conserved. Thus, a special type of entanglement is observed if the particles with Cheshire charge are kept far apart from one another so that charge cannot be transferred by local interactions. This entanglement opens up the possibility of topological quantum computation using anyons. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-viii-explicit-derivations-of-particles-and-fusio",
+      "number": null,
+      "title": "VIII Explicit Derivations of Particles and Fusion Rules for Special Physical Theories",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "SPECIAL PHYSICAL THEORIES A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-a-abelian-vs-non-abelian-physical-origin-and-com",
+      "number": null,
+      "title": "A Abelian vs. Non-Abelian: Physical Origin and Computational Potential",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian",
+          "heading": true
+        },
+        {
+          "term": "non-abelian groups",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "abelian groups",
+          "heading": false
+        },
+        {
+          "term": "ssb",
+          "heading": false
+        },
+        {
+          "term": "multidimensional",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": false
+        }
+      ],
+      "extract": "In Abelian groups, the fusion rules obtained by the quantum double formalism are deterministic as only one product can result from fusion of two particles. However, in non-Abelian Groups, the fusion rules obtained for at least two input particles include multiple possible output particles so the product is not determined solely by the symmetry group. (Letting $N^C_{AB}$ be the number of ways of obtaining particle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-b-applying-the-quantum-double-formalism-to-abeli",
+      "number": null,
+      "title": "B Applying the Quantum Double Formalism to Abelian Finite Groups Z/NZ",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finite abelian",
+          "heading": true
+        },
+        {
+          "term": "influencing",
+          "heading": false
+        },
+        {
+          "term": "precludes",
+          "heading": false
+        }
+      ],
+      "extract": "Finite abelian groups are the simplest case that has been worked out - computer algebra is not required. [@prop] Here we include the results for completeness and so we can analyze the tables for Majorana particles. Consider the effect of spontaneous symmetry breaking of an Abelian $U(1)$ gauge group (or the nonabelian $SO(3)$, $SU(2)$, or $SU(3)$ gauge groups) down to the finite abelian subgroup",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-1-particles",
+      "number": "1",
+      "title": "Particles",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 34,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fluxes",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "dyons",
+          "heading": false
+        }
+      ],
+      "extract": "The spectrum in $\\mathbb{Z}/N\\mathbb{Z}$ theories consists of pure charges, pure fluxes, and dyons produced by fusing these charges and fluxes. Let $$| a \\rangle | n \\rangle = |a, n \\rangle$$ denote a flux $a$ ($\\in \\mathbb{Z}/N\\mathbb{Z}$), charge $n$ ($\\in \\mathbb{Z}/N\\mathbb{Z}$) particle.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-2-braiding-and-fusion",
+      "number": "2",
+      "title": "Braiding and Fusion",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle frac",
+          "heading": false
+        },
+        {
+          "term": "majorana particle",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        }
+      ],
+      "extract": "The braiding and fusion rules for $\\mathbb{Z}/N\\mathbb{Z}$ theories are particularly simple. Braiding two identical particles, one encounters the Dirac string of the other, which introduces a phase: $$R | a , n \\rangle | a , n \\rangle = e^{\\frac{2 \\pi i}{N} (n a) } | a , n \\rangle |a, n \\rangle$$ For non-identical particles, only the monodromy operator makes sense: $$R^2 | a , n \\rangle | a' , n' \\rangle =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-c-applying-the-quantum-double-formalism-to-non-a",
+      "number": null,
+      "title": "C Applying the Quantum Double Formalism to Non-Abelian Finite Groups",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-1-finite-subgroups-of-so3-and-su2",
+      "number": "1",
+      "title": "Finite Subgroups of SO(3) and SU(2)",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subgroups",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite subgroups",
+          "heading": false
+        },
+        {
+          "term": "quantum doubles",
+          "heading": false
+        },
+        {
+          "term": "odd order",
+          "heading": false
+        },
+        {
+          "term": "semidirect product",
+          "heading": false
+        },
+        {
+          "term": "cyclic groups",
+          "heading": false
+        },
+        {
+          "term": "ssb",
+          "heading": false
+        }
+      ],
+      "extract": "Finite Subgroups of SO(3) and SU(2) Non-abelian quantum doubles arise from SSB of non-abelian groups. SO(3) has ﬁve ﬁnite subgroup types, all arising from symmetries of regular polygons and polyhedra - 1. the cyclic groups Z/NZ, 2. the dihedral groups Dn, 3. the symmetries of the tetrahedron T = A4, 4. the symmetries of the cube or octahedron S4, and 5. the rotational symmetries of the icosahedron A5. The abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-2-s3",
+      "number": "2",
+      "title": "S3",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 866,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "repn",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "representative element",
+          "heading": false
+        },
+        {
+          "term": "centralizer",
+          "heading": false
+        },
+        {
+          "term": "ﬂux",
+          "heading": false
+        },
+        {
+          "term": "e4πi",
+          "heading": false
+        },
+        {
+          "term": "flux",
+          "heading": false
+        }
+      ],
+      "extract": "S3 The conjugacy classes of the symmetric groups are determined by the cycle decompo- sition. In particular, for S3, there are 3 conjugacy classes with representative elements (), (12), (123) - These correspond to ﬂuxes in the spontaneously broken gauge theory. The centralizers of a representative element of each conjugacy class are given by: S3, Z/2Z, and Z/3Z, respectively. The possible charges are given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-3-a5",
+      "number": "3",
+      "title": "A5",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "32",
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πi e4πi",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "e6πi",
+          "heading": false
+        },
+        {
+          "term": "ﬂux corresponding",
+          "heading": false
+        },
+        {
+          "term": "internal hilbert",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "ﬂuxes",
+          "heading": false
+        }
+      ],
+      "extract": "A5 The conjugacy classes of A5 are given by (), (12)(34), (123), (12345), (12354). The centralizers of a representative element of each of these conjugacy classes are given by A5, Z/2Z × Z/2Z (= group generated by (12)(34) and (13)(24)), Z/3Z (= group generated by (123)), Z/5Z (= group generated by (12345)), and Z/5Z (= group generated by (12354)) respectively. The dimensions of the internal Hilbert spaces of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-4-fusion-rules",
+      "number": "4",
+      "title": "Fusion Rules:",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 55,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": true
+        },
+        {
+          "term": "fuse",
+          "heading": false
+        },
+        {
+          "term": "antiparticle",
+          "heading": false
+        }
+      ],
+      "extract": "The fusion rules for $A_5$ can be found in the following pages. Once again every particle is its own antiparticle. Note that, unlike in the $S_3$ case, there are multiple ways of obtaining some of the products - For instance, E and F can fuse to produce E in two distinct ways. <figure id=\"fig:A5a\"> <img src=\"A5a.jpg\" style=\"width:19cm;height:9cm\" /> <figcaption>Fusion Rules for <span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-ix-magma-program-and-discussion-of-results",
+      "number": null,
+      "title": "IX MAGMA Program and Discussion of Results",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magma program",
+          "heading": true
+        },
+        {
+          "term": "program computes",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": false
+        },
+        {
+          "term": "universal quantum",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": false
+        },
+        {
+          "term": "implementation",
+          "heading": false
+        },
+        {
+          "term": "physics theory",
+          "heading": false
+        },
+        {
+          "term": "perspective",
+          "heading": false
+        }
+      ],
+      "extract": "The tables computed in this paper were produced using the MAGMA program included in Appendix 1. The MAGMA program computes the particles (and their properties - e.g. spin), braiding, and fusion rules for an arbitrary finite residual gauge group. The program can also explicitly compute the entries of the S matrix. As part of the fusionprinter(Group) procedure, the MAGMA program computes the change of basis S matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-a-majorana-particles",
+      "number": null,
+      "title": "A Majorana Particles",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana particles",
+          "heading": true
+        },
+        {
+          "term": "dark matter",
+          "heading": false
+        },
+        {
+          "term": "photino",
+          "heading": false
+        }
+      ],
+      "extract": "From the fusion tables derived for $S_3$ and $A_5$, every particle is its own antiparticle, i.e. the particles are all Majorana. Most commonly, photons are their own antiparticles. However, Majorana particles of noninteger spin are currently an active area of research in physics, even beyond condensed matter applications. In particular, neutrinos are conjectured by some to be Majorana and SUSY would demand a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-x-quantum-computation-schemes",
+      "number": null,
+      "title": "X Quantum Computation Schemes",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-041-a-universal-quantum-computation",
+      "number": null,
+      "title": "A Universal Quantum Computation",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Universal computation: any unitary operation can be approximated to arbitrary accuracy",
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-b-schemes-for-topological-quantum-computation",
+      "number": null,
+      "title": "B Schemes for Topological Quantum Computation",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "34",
+      "labelEnd": "36",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superselection sectors",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": true
+        },
+        {
+          "term": "different superselection",
+          "heading": false
+        },
+        {
+          "term": "anyons",
+          "heading": false
+        },
+        {
+          "term": "kept far",
+          "heading": false
+        },
+        {
+          "term": "computation scheme",
+          "heading": false
+        },
+        {
+          "term": "decoherence",
+          "heading": false
+        },
+        {
+          "term": "fusing",
+          "heading": false
+        }
+      ],
+      "extract": "States used in a topological quantum computation scheme must be selected according to their fusion rules since the environment can distinguish between states fusing to different superselection sectors, causing decoherence. In addition, most implementation proposals use particle-antiparticle pairs as the fundamental building block since these interact trivially with other pairs when kept far apart from each other.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-1-fusion-probabilities",
+      "number": "1",
+      "title": "Fusion Probabilities",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion probabilities",
+          "heading": true
+        },
+        {
+          "term": "worldline",
+          "heading": false
+        },
+        {
+          "term": "preskill",
+          "heading": false
+        },
+        {
+          "term": "anyons",
+          "heading": false
+        },
+        {
+          "term": "diagram convention",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, the probability results obtained for Fibonacci anyons in [@PreskillCh9] can be extended to anyons based on the quantum groups of finite groups as well. Adopting Preskill's diagram convention of weighting by a compensating factor of $\\sqrt{d_A}$ for each anyon-antianyon kink in a particle A's worldline, the dimension becomes equal to that of a topologically equivalent worldline. (Ordinarily every",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-c-possible-realizations-of-topological-quantum-c",
+      "number": null,
+      "title": "C Possible Realizations of Topological Quantum Computation",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-1-a5",
+      "number": "1",
+      "title": "A5",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonsolvable ﬁnite",
+          "heading": false
+        },
+        {
+          "term": "ogburn",
+          "heading": false
+        },
+        {
+          "term": "suﬃciency",
+          "heading": false
+        }
+      ],
+      "extract": "A5 Ogburn and Preskill showed that A5 = PSL(2, F4) is suﬃcient for universal quantum computation under the assumption that a supply of magnetic ancillas is available (but not necessarily electric ancillas). [20] This suﬃciency condition was subsequently generalized to any nonsolvable ﬁnite group. [21] Note that geometrically A5 is the subgroup of rotations of the icosahedral group (the symmetries of a regular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-2-s3",
+      "number": "2",
+      "title": "S3",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibonacci anyons",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "ﬂuxes",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": false
+        },
+        {
+          "term": "subsystem",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "universal quantum",
+          "heading": false
+        }
+      ],
+      "extract": "S3 Since the smallest nonsolvable group is A5 and |A5| = 60, it is desirable to analyze smaller groups. S3 = D3 is the smallest nonabelian group (|S3| = 6 = |A5| 10 ), so in that sense a quantum computation scheme based on S3 would be optimal. S3 symmetry groups arise naturally in two dimensional lattices as the symmetry group of a hexagonal lattice (for example, graphene) so it is perhaps more reasonable to expect",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-3-the-dihedral-groups-and-p-i-p-superconductors",
+      "number": "3",
+      "title": "The Dihedral Groups and p + i p Superconductors",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "ltimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "quantum doubles",
+          "heading": false
+        },
+        {
+          "term": "superconductors",
+          "heading": true
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": false
+        },
+        {
+          "term": "analyzed",
+          "heading": false
+        },
+        {
+          "term": "universal quantum",
+          "heading": false
+        }
+      ],
+      "extract": "From the field theory point of view, time reversal or parity symmetry is broken in chiral p-wave superconductors so the electromagnetic $U(1)$ group becomes minimally non-Abelian - $U(1) \\ltimes \\mathbb{Z}/2\\mathbb{Z}$. Superconductivity results when this gauge group is spontaneously broken, and could give rise to non-Abelian anyons as, for instance, $D_n = \\mathbb{Z}/n\\mathbb{Z}\\ltimes \\mathbb{Z}/2\\mathbb{Z}$. #",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 44,
+      "labelStart": "39",
+      "labelEnd": "44",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacyclasses",
+          "heading": false
+        },
+        {
+          "term": "cent",
+          "heading": false
+        },
+        {
+          "term": "preprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "wild propitius",
+          "heading": false
+        },
+        {
+          "term": "charactertable",
+          "heading": false
+        },
+        {
+          "term": "fault-tolerant quantum",
+          "heading": false
+        },
+        {
+          "term": "quant-ph",
+          "heading": false
+        },
+        {
+          "term": "bais",
+          "heading": false
+        }
+      ],
+      "extract": "The author would like to thank F. Wilczek for advising her thesis (the ﬂagstone for this paper) and for subsequently suggesting she “condense a paper out of it”. In addition, she would like to thank P. Shor for providing access to MAGMA and helping to debug part of the MAGMA code. [1] R. Feynman, “Simulating physics with computers,” International Journal of Theor., vol. Physics 21, p. 467, 1982. [2] P. Shor,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-b-other-interesting-quantum-doubles",
+      "number": null,
+      "title": "B Other Interesting Quantum Doubles",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-1-finite-subgroups-of-so3-and-su2",
+      "number": "1",
+      "title": "Finite Subgroups of SO(3) and SU(2)",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subgroups",
+          "heading": true
+        },
+        {
+          "term": "quantum doubles",
+          "heading": false
+        },
+        {
+          "term": "non-dihedral",
+          "heading": false
+        }
+      ],
+      "extract": "Finite Subgroups of SO(3) and SU(2) In this appendix, the tabulation of the quantum doubles of all non-dihedral ﬁnite sub- groups of SO(3) is completed. In the case of the inﬁnite family Dn, the quantum doubles for the smallest order groups are tabulated. (These are most likely to be physically relevant.) In addition to being potentially physically relevant, the tables for the remaining subgroups of SO(3) provide a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-2-a4",
+      "number": "2",
+      "title": "A4",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "repn",
+          "heading": false
+        },
+        {
+          "term": "internal hilbert",
+          "heading": false
+        },
+        {
+          "term": "ﬂux",
+          "heading": false
+        },
+        {
+          "term": "centralizers",
+          "heading": false
+        }
+      ],
+      "extract": "it is in S3 and A5. 2. A4 A4 = T, the symmetries of the tetrahedron, is the next smallest alternating group. Rep- resentatives for the conjugacy classes are given by: Id, (12)(34) (3 elements in the conjugacy class), (123) (4 elements in the conjugacy class), and (132) (4 elements in the conjugacy class) - Their centralizers are A4 =< (12)(34), (234) >, Z/2Z × Z/2Z =< (13)(24), (12)(34) >, Z/3Z =< (123) >, and Z/3Z",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-3-s4",
+      "number": "3",
+      "title": "S4",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character table",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "irrep",
+          "heading": false
+        }
+      ],
+      "extract": "S4 The next highest order symmetric group is S4, with 4! = 120 elements. There are ﬁve conjugacy classes (speciﬁed by the cycle decomposition) - Id, (12), (12)(34), (123), and (1234). The centralizers for these conjugacy classes are, respectively, S4, D4, Z/2Z × Z/2Z, Z/3Z, and Z/4Z. The character tables for all of these groups (with the exception of S4 and D4) have been given in the main text, so will not be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-4-d4",
+      "number": "4",
+      "title": "D4",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "51",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "internal hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "D4 The conjugacy classes are given by Id, (13)(24) (1 element in the conjugacy class), (14)(23) (2 elements in the conjugacy class), (24) (2 elements in the conjugacy class), (1234) (2 elements in the conjugacy class) - The centralizers are respectively D4, D4, Z/2Z×Z/2Z =< (12)(34), (24) >, Z/2Z × Z/2Z =< (13), (24) >, Z/4Z =< (1234) >. Thus there are 22 particles. FIG. 12: Fusion Rules for S4 FIG. 13: Fusion Rules",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-a-possible-physical-realization",
+      "number": null,
+      "title": "a Possible Physical Realization",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "Note that D4 = Z/4Z ⋉Z/2Z, so one possible physical realization could arise from SSB in chiral p-wave superconductors. FIG. 16: Fusion Rules for D4 FIG. 17: Fusion Rules for D4",
+      "extractCut": false
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "fusion rules",
+      "heading": true
+    },
+    {
+      "term": "majorana particles",
+      "heading": true
+    },
+    {
+      "term": "particle antiparticle",
+      "heading": true
+    },
+    {
+      "term": "indistinguishable particles",
+      "heading": false
+    },
+    {
+      "term": "particles counterclockwise",
+      "heading": true
+    },
+    {
+      "term": "distinguishable particles",
+      "heading": false
+    },
+    {
+      "term": "charged particles",
+      "heading": false
+    },
+    {
+      "term": "excitations particles",
+      "heading": false
+    },
+    {
+      "term": "identical particles",
+      "heading": false
+    },
+    {
+      "term": "topological quantum",
+      "heading": true
+    },
+    {
+      "term": "quantum computation",
+      "heading": true
+    },
+    {
+      "term": "nontrivial fusion",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Two particles undergo ﬂux metamorphosis when exchanged. All nontrivial gauge transformations occur in the “Dirac strings” of the particles, denoted here by the lighter lines going oﬀ to inﬁnity. (a.) h1, h2 ∈H (b.)-(c.) h2 is moved counterclockwise around h1. (d) h′",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Note that the eﬀect of interchanging two particles in two separate particle/antiparticle pairs can be continuously deformed into the process under which one of the particles is rotated by an angle of 2π about its center. Thus the two eﬀects should be topologically the same",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The Generalized Spin-Statistics Connection applies to two particle fusion in non-abelian theories. On the left, fusion is performed after a monodromy operation. This can be continuously deformed via Lorentz transformations to the diagram on the right, in which the particles are each twisted by a −2π",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Fusion Rules for S3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Fusion Rules for A5",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Fusion Rules for A5",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Fusion Rules for A5",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Fusion Rules for A5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Fusion Probabilities",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Fusion Probabilities Cont’d",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Fusion Rules for A4",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Fusion Rules for S4",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Fusion Rules for S4",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Fusion Rules for S4",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Fusion Rules for S4",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Fusion Rules for D4",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Fusion Rules for D4",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p033-1",
+      "file": "images/img-p033-1.png",
+      "page": 33,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-1",
+      "file": "images/img-p034-1.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p035-1",
+      "file": "images/img-p035-1.png",
+      "page": 35,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p036-1",
+      "file": "images/img-p036-1.png",
+      "page": 36,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p037-1",
+      "file": "images/img-p037-1.png",
+      "page": 37,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-1",
+      "file": "images/img-p046-1.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p049-1",
+      "file": "images/img-p049-1.png",
+      "page": 49,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p049-2",
+      "file": "images/img-p049-2.png",
+      "page": 49,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-1",
+      "file": "images/img-p050-1.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-2",
+      "file": "images/img-p050-2.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p052-1",
+      "file": "images/img-p052-1.png",
+      "page": 52,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p052-2",
+      "file": "images/img-p052-2.png",
+      "page": 52,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 62,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 56,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 17
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 56 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1012.5432v4"
+  }
+}

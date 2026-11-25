@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-yekutieli-mapping-table",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:yekutieli-mapping-table",
+  "kind": "prose",
+  "cites": [
+    "references/yekutieli2008",
+    "references/yekutieli2009",
+    "references/yekutieli2010",
+    "references/yekutieli2015",
+    "references/yekutieli2015-twisted-dq"
+  ],
+  "text": "yekutieli-mapping-table.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

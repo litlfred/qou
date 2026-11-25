@@ -1,0 +1,536 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "hecidem",
+  "blocks": [
+    {
+      "id": "library/hecidem/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Idemp\noten\nts\nof\nHec\nk\ne\nalgebras\nof\nt\nyp\ne\nA\u0000A\u0000K\u0000Aiston\nand\nH\u0000R\u0000Morton\n\u0000Departmen\nt\nof\nMathematical\nSciences\u0001\nUniv\nersit\ny\nof\nLiv\nerp\no\nol\u0001\nLiv\nerp\no\nol\u0001\nL\u0006\t\n\u0003BX\u0000Jan\nuary\n\u0001\u0006\u0001\n\u0001\t\t\u0007\nV\nersion\n\u0001\u0000\u0005\nAbstract\nW\ne\nuse\na\nsk\nein\u0000theoretic\nv\nersion\nof\nthe\nHec\nk\ne\nalgebras\nof\nt\nyp\ne\nA\nto\npresen\nt\nthree\u0000dimensional\ndiagrammatic\nviews\nof\nGy\no\nja\u0001s\nidemp\noten\nt\nel\u0000emen\nts\u0002\nbased\nclosely\non\nthe\ncorresp\nonding\nY\noung\ndiagram\n\u0000\u0003\nIn\nthis\ncon\ntext\nw\ne\ngiv\ne\nstraigh\ntforw\nard\ncalculations\nfor\nthe\neigen\nv\nalues\nf\n\u0000and\nm\n\u0000of\nt\nw\no\nnatural\ncen\ntral\nelemen\nts\nin\nthe\nHec\nk\ne\nalgebras\u0002\nnamely\nthe\nfull\ncurl\nand\nthe\nsum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "Irreducible\nrepresen\ntations\nof\nthe\nHec\nk\ne\nalgebras\nare\nkno\nwn\nto\nb\ne\nasso\nciated\nto\nY\noung\ndiagrams\nvia\nquan\ntum\nanalogues\nof\nthe\nsymmetriser\nand\nan\nti\u000bsymmetriser\u0006\nIn\nthis\npap\ner\nw\ne\nconstruct\nthree\u000bdimensional\nsk\nein\u000btheoretic\nv\nersions\nof\nthe\nidem\u000b\np\noten\nt\nelemen\nts\nin\nthese\nalgebras\u0001\nbased\non\nGy\no\nja\ns\nalgebraic\nv\nersions\nin\n\u0002\b\u0005\u0001\nwhic\nh\ncan\nb\ne\ndirectly\nvisualised\nin\nterms\nof\nthe\ncorresp\nonding\nY\noung\ndiagram\u0006\nW\ne\ngiv\ne\ndirect\nsk\nein\u000btheoretic\npro\nofs\nof\nsome\nof\ntheir\nprop\nerties\u0006\nThese\nlead\nto\na\nsimple\ncalculation\nof\nthe\neigen\nv\nalues\nf\n\u0000and\nm\n\u0000for\nthe\nfull\ncurl\nand\nfor\nthe\nsum\nof\nthe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "x\n\u0000\u0001\nX\n\u0000\u0001\n\u0000x\nX\n\u0000\u0001\n\u000f\nz\nX\n\u0000\u0001\nX\n\u0002\n\u0003\n\u000f\n\u0007xv\n\u0000\u0001\n\b\nX\n\u0004\n\u0005\n\u0002\nFigure\n\u0001\u0013\nThe\nsk\nein\nrelations\nfor\nthe\nframed\nHom\u0000y\np\nolynomial\nT\nuraev\nS\nU\n\u0007N\n\b\nmanifold\nin\nv\narian\nts\u0001\nwhic\nh\ncan\nb\ne\nconstructed\nb\ny\nsuitable\nsub\u000b\nstitution\nof\na\nro\not\nof\nunit\ny\nin\na\ncom\nbination\nof\nlink\nin\nv\narian\nts\u0001\n\u0002\u0001\u0005\n\u0005\u0006\nThe\nfacilit\ny\nto\nc\nhange\nreadily\nb\net\nw\neen\nthe\nquan\ntum\nand\nsk\nein\nin\nv\narian\nts\nthen\nallo\nws\nfor\n\u0000ex\u000b\nibilit\ny\nin\nin\nterpretation\nand\na\nconsequen\nt\nan\nticipation\nof\np\noten\ntially\nin\nteresting\nfeatures\u0006\n\u0002\nThe\nHec\nk\ne\nalgebra\nand\nHom\u0002y\nsk\nein\ntheory\nW\ne\ngiv\ne\na\nbrief\ndescription\nof\nsk\nein\ntheory\nbased\non\nplanar\npieces",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "x\n\u0000\u0001\n\u0000x\n\u000f\nz\n\u0001\n\u000f\n\u0007xv\n\u0000\u0001\n\b\n\u0002\nFigure\n\u0002\u0013\nThe\nsk\nein\nrelations\nfor\nthe\nHom\u0000y\nsk\nein\nof\na\nsurface\nD\nt\n\u000f\nv\n\u0000\u0001\n\u0000v\nz\nD\n\u0001\nFigure\n\u0003\u0013\nThe\nsk\nein\nrelation\nfor\na\nn\null\nhomotopic\nlo\nop\nthe\ntop\nand\nlea\nv\ne\nat\nthe\nb\nottom\u0006\nDiagrams\nin\nR\nn\nn\nare\ntermed\noriente\nd\nn\u000btangles\n\u0001\nand\ninclude\nthe\ncase\nof\nn\u000bstring\nbraids\u0006\nA\np\nositive\np\nermutation\nbr\naid\nis\nde\u0016ned\nfor\neac\nh\np\nerm\nutation\n\u0004\n\u0002\nS\nn\n\u0006\nIt\nis\nthe\nn\u000bstring\nbraid\u0001\n\u0003\n\u0003\n\u0001\nuniquely\ndetermined\nb\ny\nthe\nprop\nerties\ni\b\nall\nstrings\nare\norien\nted\nfrom\ntop\nto\nb\nottom\nii\b\nfor\ni\n\u000f\n\u0001\u0001\n\u0002\n\u0002\n\u0002\n\u0001\nn\nthe\nith\nstring\njoins\nthe\np\noin\nt\nn\num\nb\nered\ni\nat\nthe\ntop\nof\nthe\nbraid\nto\nthe\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "...\n...\n...\nFigure\n\u0004\u0013\nThe\nwiring\nof\nS\n\u0007R\nn\nn\n\b\nin\nto\nS\n\u0007S\n\u0001\n\u0001\nI\n\b\nwith\nthe\nexplicit\npresen\ntation\nH\nn\n\u000f\n\u0006\n\u0005\ni\n\u0013\ni\n\u000f\n\u0001\u0001\n\u0002\n\u0002\n\u0002\n\u0001\nn\n\u0000\u0001\n\u0007\n\u0007\n\u0007\n\u0007\n\u0007\n\u0005\ni\n\u0005\nj\n\u000f\n\u0005\nj\n\u0005\ni\n\u0013\nji\n\u0000j\nj\n\u0006\n\u0001\n\u0005\ni\n\u0005\ni\u0004\u0001\n\u0005\ni\n\u000f\n\u0005\ni\u0004\u0001\n\u0005\ni\n\u0005\ni\u0004\u0001\nx\n\u0000\u0001\n\u0005\ni\n\u0000x\u0005\n\u0000\u0001\ni\n\u000f\nz\n\u0001\n\b\n\u0002\nThere\nare\nv\narious\npresen\ntations\nof\nthe\nHec\nk\ne\nalgebra\nin\nthe\nliterature\u0006\nHere\nw\ne\nha\nv\ne\nused\na\nco\ne\u001acien\nt\nring\n\u0019\nwith\n\u0003\nv\nariables\nx\u0001\nv\nand\nz\n\u0006\nThe\nv\nariable\nv\nis\nneeded\nin\nthe\nsk\nein\nwhen\nw\ne\nw\nan\nt\nto\nwrite\na\ngeneral\ntangle\nin\nterms\nof\nthe\nbasis\nof\np\nerm\nutation\nbraids\u0001\nbut\nit\ndo\nes\nnot\napp\near\nin\nthe\nrelations\u0006\nThe\nv\nariable\nx\nk\neeps\ntrac\nk\nof\nthe\nwrithe\no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "The\nsk\nein\nS\n\u0007S\n\u0001\n\u0001\nI\n\b\nof\nthe\nann\nulus\nitself\nforms\nan\nalgebra\u0001\nwhose\npro\nduct\nis\ngiv\nen\nb\ny\nstac\nking\nthe\nann\nuli\none\ninside\nthe\nother\u0006\nThis\npro\nduct\nis\nob\nviously\ncomm\nutativ\ne\n\u0007lift\nthe\ninner\nann\nulus\nup\nand\nstretc\nh\nit\nso\nthat\nthe\nouter\none\nwill\n\u0016t\non\nthe\ninside\nof\nit\b\u0006\nW\nrite\nC\nfor\nS\n\u0007S\n\u0001\n\u0001\nI\n\b\nregarded\nas\na\n\u0019\u000balgebra\nin\nthis\nw\na\ny\n\u0006\nLet\nC\n\u0004\nb\ne\nthe\nsub\u000balgebra\nspanned\nb\ny\nthe\nclosures\nof\norien\nted\ntangles\u0006\nT\nuraev\n\u0002\u0001\t\u0005\nsho\nw\ned\nthat\nC\n\u0004\nis\nfreely\ngenerated\nas\nan\nalgebra\nb\ny\nfA\nm\n\u0001\nm\n\u0002\nNg\u0001\nwhere\nA\nm\nis\nthe\nclosure\nof\nthe\np\nositiv\ne\np\nerm\nutation\nbraid\nfor\nthe\ncycle\n\u0007\u0001\n\u0002\n\u0002\n\u0002\n\u0002\nm\b\u0006\nW\nrite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "\u000f\n\t\n\u0003\n\u000f\nFigure\n\u0005\u0013\nThe\nY\noung\ndiagram\n\t\n\u000f\n\u0007\u0004\u0001\n\u0002\u0001\n\u0001\b\nand\nits\nconjugate\n5\n5\n5\nFigure\n\u0006\u0013\nThe\nextreme\ncells\nand\nrectangles\nof\n\t\nNote\nthat\nthe\ntransp\nosition\nof\nro\nws\nand\ncolumns\ndo\nesn\nt\ntak\ne\nT\n\u0007\u0000\b\nto\nT\n\u0007\u0000\u0003\n\b\u0006\nW\ne\nde\u0016ne\nthe\np\nerm\nutation\n\u0004\n\u0000b\ny\n\u0004\n\u0000\u0007i\b\n\u000f\nj\nwhere\nthe\ntransp\nosition\nof\n\u0000carries\nthe\ncell\ni\nin\nT\n\u0007\u0000\b\nto\nthe\ncell\nj\nin\nT\n\u0007\u0000\u0003\n\b\u0006\nThe\ntableaux\nT\n\u0007\t\n\b\nand\nT\n\u0007\t\n\u0003\n\b\nare\nsho\nwn\nin\nFig\u0006\n\u0007\nand\n\u0004\n\u0004\n\u000f\n\u0007\u0002\n\u0004\n\u0007\n\u0003\n\u0006\n\u0005\b\n\u0006\nW\ne\nno\nw\ngiv\ne\nsome\nstandard\ncom\nbinatorial\nresults\nab\nout\np\nerm\nutations\nand\nY\noung\ndiagrams\u0001\nin\na\ncon\ntext\nwhic\nh\nextends\nreadily\nto\np\nositiv\ne\np\nerm\nutation\nbraids\nand\nthe\nHec\nk\ne\nal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "Pro\nof\u0001\nBy\ninduction\non\nt\u0006\nSupp\nose\n\u0016rst\nthat\nt\n\u000f\n\u0001\u0001\nand\nlet\n\u0004\n\u0002\nS\nn\n\u0006\nSince\n\n\u0003\nhas\n\n\u0001\n\u000b\n\u0000\u0001\nro\nws\u0001\n\u0004\nm\nust\nmap\nat\nleast\nt\nw\no\nn\num\nb\ners\nfrom\nthe\n\u0016rst\nro\nw\nof\n\u0000to\nthe\nsame\nro\nw\nof\n\n\u0003\n\u0006\nHence\n\u0004\ndo\nes\nnot\nseparate\n\u0000from\n\n\u0003\n\u0006\nWhen\nt\n\u0006\n\u0001\u0001\nconsider\nthe\nY\noung\ndiagrams\nr\n\u0007\u0000\b\nand\nr\n\u0007\n\b\u0001\nwhere\nr\n\u0007\f\n\b\nis\nthe\nY\noung\ndiagram\nobtained\nfrom\n\f\nb\ny\nremo\nving\nthe\n\u0016rst\nro\nw\u0006\nW\ne\nha\nv\ne\nr\n\u0007\u0000\b\n\u0006\nr\n\u0007\n\b\u0001\nand\nthe\ndiagrams\n\u0016rst\ndi\u0015er\nin\nthe\n\u0007t\n\u0000\u0001\bst\nro\nw\u0006\nHence\u0001\nb\ny\nthe\ninduction\nh\nyp\noth\u000b\nesis\u0001\nr\n\u0007\u0000\b\nand\nr\n\u0007\n\b\n\u0003\nare\ninseparable\u0006\nIt\nremains\nto\npro\nv\ne\nthat\nif\n\u0000w\nere\nseparable\nfrom\n\n\u0003\nthen\nr\n\u0007\u0000\b\nw\nould\nb\ne\nseparable",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "\u0004\nIdemp\noten\nts\nThe\nHec\nk\ne\nalgebra\nH\nn\nis\nclosely\nrelated\nto\nthe\ngroup\nalgebra\nof\nS\nn\n\u0001\nwhose\nidem\u000b\np\noten\nts\nare\ndescrib\ned\nb\ny\nthe\nclassical\nY\noung\nsymmetrisers\u0006\nF\nor\na\nY\noung\ndiagram\n\u0000its\nY\noung\nsymmetriser\nis\nthe\npro\nduct\nof\nthe\nsum\nof\np\nerm\nutations\nwhic\nh\npre\u000b\nserv\ne\nthe\nro\nws\nof\nT\n\u0007\u0000\b\nand\nthe\nalternating\nsum\nof\np\nerm\nutations\nwhic\nh\npreserv\ne\ncolumns\u0006\nWith\ncare\nit\nis\np\nossible\nto\nmak\ne\na\nsimilar\nconstruction\nof\nidemp\no\u000b\nten\nts\nin\nH\nn\n\u0001\nreplacing\np\nerm\nutations\nb\ny\nsuitably\nw\neigh\nted\np\nositiv\ne\np\nerm\nutation\nbraids\u0006\nJones\n\u0002\u0001\u0001\n\u0005\ngiv\nes\na\ngo\no\nd\ndescription\nof\nthe\nt\nw\no\nidemp\noten\nts\ncor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "a\na 4\na\n1\n2\n1b\nb1\nb3\n2b\nFigure\n\b\u0013\nThe\n\u0003\u000bdimensional\nquasi\u000bidemp\noten\nt\nasso\nciated\nto\n\t\nadv\nan\ntages\u0006\nThere\nma\ny\nnot\nb\ne\na\nnatural\nw\na\ny\nto\ncomp\nose\ntangles\nin\nthe\nsk\nein\nS\n\u0007B\n\u0001\nP\n\b\u0001\nso\nthe\nisomorphism\nwith\nH\nn\ndo\nes\nnot\nimmediately\ncarry\nan\ny\nalgebra\nin\u000b\nformation\u0006\nOn\nthe\nother\nhand\na\nsuitable\nc\nhoice\nof\nwiring\nma\ny\nsho\nw\nwhen\ncertain\nelemen\nts\nare\nzero\nin\nthe\nsk\nein\u0001\nand\nhence\nexhibit\nrelations\nin\nH\nn\n\u0006\nThe\nfollo\nwing\npicture\ngiv\nes\nthe\nheart\nof\nthe\nconstruction\nof\nthe\nidemp\noten\nt\nfor\nthe\nY\noung\ndiagram\n\u0000\u0006\nIt\nlies\nin\nthe\nsk\nein\nof\nB\n\u0003\n\u0002\n\u000f\nD\n\u0002\n\u0001\nI\nwhere\nthe\np\noin\nts\nP\nI\nand\nP\nO\nare\nthe\ncen\nt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "wher\ne\nE\n\u0002i\u0003\nn\n\u000f\nX\n\u0003\n\u0002i\u0003\u0007\u0003\n\u0002i\u0004\u0001\u0003\n\u0003\n\u0003\n\u0000The\nelemen\ntary\nbraids\n\u0005\ni\nsatisfy\nthe\nquadratic\nrelation\n\u0007\u0005\ni\n\u0000a\b\u0007\u0005\ni\n\u0000b\b\n\u000f\n\u001c\nin\nH\nn\n\u0001\nwhere\na\n\u000f\n\u0000xs\n\u0000\u0001\nand\nb\n\u000f\nxs\u0001\nwith\nthe\nv\narian\nts\n\u0000s\n\u0000\u0001\n\u0001\ns\nor\n\u0000\u0001\u0001\nq\nfor\nthe\nro\nots\na\nand\nb\nin\nthe\nother\nv\nersions\nof\nthe\nHec\nk\ne\nalgebra\u0006\nDe\u0016ne\na\nn\nand\nb\nn\nb\ny\nsubstituting\n\u0000a\n\u0000\u0001\n\u0005\ni\nor\n\u0000b\n\u0000\u0001\n\u0005\ni\nresp\nectiv\nely\nfor\n\u0005\ni\nin\nE\nn\n\u0006\nTh\nus\na\nn\n\u000f\nX\n\u0003\n\u0007\u0000a\b\n\u0000l\n\u0002\u0003\n\u0003\n\u0003\n\u0003\n\u0001\nb\nn\n\u000f\nX\n\u0003\n\u0007\u0000b\b\n\u0000l\n\u0002\u0003\n\u0003\n\u0003\n\u0003\nwhere\nl\n\u0007\u0004\n\b\nis\nthe\nwrithe\nof\n\u0003\n\u0003\n\u0001\nkno\nwn\nin\nalgebraic\nterms\nas\nthe\nlength\nof\nthe\np\nerm\nutation\n\u0004\n\u0006\nCorollary\n\u0004\u0001\u0002\nWe\nc\nan\nfactorise\na\nn\nand\nb\nn\nin\nH\nn\nas\na\nn\n\u000f\n\u0007\u0005\ni\n\u0000a\ba\n\u0002i\u0003\nn\n\u000f\na\n\u0002i\u0003",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "E\n\u0004\n\u0007a\b\n\u000f\n4\na\na2\n\u0002\nFigure\n\t\u0013\nThe\nelemen\nt\nE\n\u0004\n\u0007a\b\na4\n3\n2\nb\nb\na2\nFigure\n\u0001\u001c\u0013\nThe\nquasi\u000bidemp\noten\nt\ne\n\u0004\nNo\nw\nde\u0016ne\ne\n\u0000\u000f\nE\n\u0000\u0007a\b\u0003\n\u0003\n\u0000E\n\u0000\u0002\n\u0007b\b\u0003\n\u0000\u0001\n\u0003\n\u0000\u0002\nH\nn\n\u0006\nThe\nelemen\nt\ne\n\u0004\nis\nsho\nwn\nin\nFig\u0006\n\u0001\u001c\u0006\nThis\npicture\ncan\nb\ne\nobtained\nfrom\nthe\n\u0003\u000bdimensional\npicture\nof\nFig\u0006\n\b\nb\ny\nsliding\nthe\nro\nws\napart\nat\nthe\ntop\nof\nthe\ndiagram\nand\nsliding\nthe\ncolumns\napart\nat\nthe\nb\nottom\u0001\nusing\nthe\nstandard\ntableau\nT\n\u0007\t\n\b\nto\ndetermine\nho\nw\nto\norder\nthe\nstrings\u0006\nF\nor\neac\nh\n\u0000write\nH\n\u0007\u0000\b\n\b\nH\nn\nfor\nthe\nsubspace\nspanned\nb\ny\nf\u0003\n\u0005\n\u0001\n\u0007\n\u0002\nR\n\u0007\u0000\bg\u0006\nThen\nE\n\u0000\u0007a\b\u0001\nE\n\u0000\u0007b\b\n\u0002\nH\n\u0007\u0000\b\nand\nE\n\u0000\u0007a\bh\n\u000f\nhE\n\u0000\u0007a\b\n\u000f\n\nb\n\u0007h\bE\n\u0000\u0007a\b\nfor\nh\n\u0002\nH\n\u0007\u0000\b\u001d\na\nsim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "so\n\u0007\u0005\ni\n\u0000a\b\u0003\n\u0003\n\u000f\n\u0003\n\u0003\n\u0007\u0005\nj\n\u0000a\b\u0006\nKno\nwing\nthat\n\u0007i\ni\n\u0018\n\u0001\b\n\u0002\nR\n\u0007\u0000\b\nw\ne\ncan\nuse\nCor\u0006\n\u0004\u0006\u0002\nto\nwrite\nE\n\u0000\u0007a\b\n\u000f\nh\u0007\u0005\ni\n\u0000a\b\u0001\nand\nsimilarly\nE\n\b\n\u0007b\b\n\u000f\n\u0007\u0005\nj\n\u0000b\bh\n\u0001\n\u0006\nThen\nE\n\u0000\u0007a\b\u0003\n\u0003\nE\n\b\n\u0007b\b\n\u000f\nh\u0007\u0005\ni\n\u0000a\b\u0003\n\u0003\n\u0007\u0005\nj\n\u0000b\bh\n\u0001\n\u000f\nh\u0003\n\u0003\n\u0007\u0005\nj\n\u0000a\b\u0007\u0005\nj\n\u0000b\bh\n\u0001\n\u000f\n\u001c\u0002\nIn\nterc\nhange\na\nand\nb\nto\nget\nthe\nother\nequation\u0006\n\u0002\nCorollary\n\u0004\u0001\u0005\nIf\n\u0000and\n\nar\ne\ninsep\nar\nable\nthen\nE\n\u0000\u0007a\bH\nn\nE\n\b\n\u0007b\b\n\u000f\n\u001c\n\u000f\nE\n\u0000\u0007b\bH\nn\nE\n\b\n\u0007a\b\n\u0002\nPro\nof\u0001\nH\nn\nis\nspanned\nb\ny\nf\u0003\n\u0003\n\u001d\n\u0004\n\u0002\nS\nn\ng\u0001\nand\nno\n\u0004\nseparates\n\u0000from\n\n\u0006\n\u0002\nLemma\n\u0004\u0001\u0006\nL\net\n\u0000have\nn\nc\nel\nls\u0000Then\nE\n\u0000\u0007a\b\u0003\n\u0003\nE\n\u0000\u0002\n\u0007b\b\nis\na\nsc\nalar\nmultiple\nof\nE\n\u0000\u0007a\b\u0003\n\u0003\n\u0000E\n\u0000\u0002\n\u0007b\b\nfor\ne\nach\n\u0004\n\u0002\nS\nn\n\u0000Pro\nof\u0001\nBy\nLemma\n\u0004\u0006\u0004\u0001\nw\ne\nneed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "T\nQ\nQ\nQ\nQ\n-1\nβ\nβ\n/\n/\nFigure\n\u0001\u0001\u0013\nThe\nwiring\nof\n\u0007D\n\u0002\n\u0001\nI\n\u0001\nP\n\u0001\n\b\nin\nto\n\u0007D\n\u0002\n\u0001\nI\n\u0001\nP\n\b\n\u0005\nF\nraming\nand\nthe\nMurph\ny\nop\nerators\nIn\nthis\nsection\nw\ne\nreturn\nto\nthe\n\u0003\u000bdimensional\nviews\nof\nthe\nsk\nein\nS\n\u0007B\n\u0001\nP\n\b\nfor\na\nball\nB\n\u0002\n\u000f\nB\n\u0003\nwith\na\nset\nP\nof\n\u0002n\ndistinguished\np\noin\nts\non\nits\nb\noundary\n\u0001\nin\ntro\nduced\nin\nSect\u0006\n\u0004\u0006\nW\ne\nnoted\nearlier\nthat\nthis\nsk\nein\nis\nlinearly\nisomorphic\nto\nH\nn\n\u0006\nIn\norder\nto\ntranslate\nthe\nresults\nab\nout\nH\nn\nfrom\nthe\nprevious\nsection\nin\nto\na\n\u0003\u000bdimensional\nsetting\nw\ne\nshall\nuse\nsome\nexplicit\nc\nhoices\nof\nisomorphism\nin\na\ncouple\nof\nstandard\ncases\u0006\nW\ne\nstart\nwith\nthe\ncase\nwhen\nB\n\u000f\nD\n\u0002\n\u0001\nI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "of\nthe\nlast\nc\nhapter\nw\ne\nha\nv\ne\nS\n\u0007\u000e\n\b\u0007E\nI\n\u0000\b\n\u000f\nE\n\u0000\u0007a\b\nand\nS\n\u0007\u000e\n\b\u0007E\nO\n\u0000\b\n\u000f\n\u0003\n\u0003\n\u0000E\n\u0000\u0002\n\u0007b\b\u0003\n\u0000\u0001\n\u0003\n\u0000\u0006\nT\no\nunderstand\nthe\nb\neha\nviour\nof\ne\n\u0000further\u0001\nb\ny\nconsidering\nE\n\u0000and\nother\nelemen\nts\nof\nthe\nsk\neins\nH\nQ\n\u0001\nw\ne\nshall\nsho\nw\nthe\nfollo\nwing\u0006\nLemma\n\u0005\u0001\u0001\nL\net\nQ\n\b\nD\n\u0002\nwith\njQj\n\u000f\nn\u0000Ther\ne\nis\na\nunique\nelement\na\nQ\nin\nthe\nalgebr\na\nH\nQ\nwhich\nc\norr\nesp\nonds\nto\na\nn\n\u0002\nH\nn\nunder\nev\nery\nchoic\ne\nof\nisomorphism\nS\n\u0007\u000e\n\b\u0000Pro\nof\u0001\nThe\nelemen\nt\na\nn\n\u0002\nH\nn\nis\ncen\ntral\u0001\nb\ny\nLemma\n\u0004\u0006\u0003\u0006\nGiv\nen\nQ\nselect\nan\ny\nbraid\n\u000e\nto\nconnect\nQ\nto\nthe\nstraigh\nt\nline\nof\nn\np\noin\nts\u0001\nand\nde\u0016ne\na\nQ\n\u000f\nS\n\u0007\u000e\n\b\u0007a\nn\n\b\u0006\nLet\n\u000f\nb\ne\nanother\nsuc\nh\nbraid\u0006\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "Pro\nof\u0001\nCho\nose\na\nhomeomorphism\nfrom\nB\nto\nD\n\u0002\n\u0001\nI\nwhic\nh\ncarries\nthe\ndisks\nD\n\ncon\ntaining\nP\nO\nto\nD\n\u0002\n\u0001\nf\u001cg\nand\nthose\ncon\ntaining\nP\nI\nto\nD\n\u0002\n\u0001\nf\u0001g\u0001\narranged\nin\npartition\norder\nalong\na\nstraigh\nt\nline\nwith\nthe\ninput\nor\noutput\np\noin\nts\nlined\nup\ninside\neac\nh\ndisk\u0006\nThis\ninduces\na\nlinear\nisomorphism\u0001\n\nsa\ny\n\u0001\nfrom\nS\n\u0007B\n\u0001\nP\n\b\nto\nH\nn\n\u0006\nThe\nhomeomorphism\nalso\nextends\nto\na\nmap\nof\nS\n\u0002\n\u0001\nI\nwhic\nh\ncarries\nthe\nwiring\ndetermined\nb\ny\n\u0003\nto\nthe\nelemen\nt\nE\n\u0000\u0002\u0002\n\u0003\n\u0007a\b\nat\nthe\ntop\nof\nD\n\u0002\n\u0001\nI\nalong\nwith\nE\n\b\u0002\u0002\n\u0003\n\u0007b\b\nat\nthe\nb\nottom\u0006\nThen\n\n\nS\n\u0007\u0003\n\b\n\n\n\u0000\u0001\n\u0013\nH\nn\n\u0005\nH\nn\nis\nthe\nlinear\nmap\ngiv\nen\nb\ny\nT\n\u0007\u0005\nE\n\u0000\u0002\u0002\n\u0003\n\u0007a\b\nT\nE\n\b\u0002\u0002\n\u0003\n\u0007b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "F\nn\n\u000f\n...\n...\n...\nFigure\n\u0001\u0002\u0013\nThe\nfull\ncurl\nF\nn\non\nn\nstrings\n. . .\n. . .\nFigure\n\u0001\u0003\u0013\nThe\nbraid\nT\ni\nsome\nscalar\n\u0011\nT\n\u0006\nIn\nparticular\u0001\nif\nT\nis\ncen\ntral\nthen\nT\nE\n\u0000\u000f\n\u0011\nT\nE\n\u0000\u0001\nand\nconsequen\ntly\nS\n\u0007\u000e\n\b\u0007T\n\be\n\u0000\u000f\n\u0011\nT\ne\n\u0000in\nH\nn\n\u0001\nfor\nthe\nappropriate\n\u000e\n\u0006\nTh\nus\nan\ny\ncen\ntral\nelemen\nt\nc\n\u0002\nH\nn\nsatis\u0016es\nce\n\u0000\u000f\nc\n\u0000e\n\u0000for\nsome\nscalar\nc\n\u0000\u0006\nThe\neigen\nv\nalue\nc\n\u0000ma\ny\nb\ne\nfound\nas\n\u0011\nT\nwhen\nw\ne\nc\nho\nose\nT\n\u000f\nS\n\u0007\u000e\n\u0000\u0001\n\b\u0007c\b\nin\nthe\nappropriate\nsk\nein\nH\nQ\n\u0006\nW\ne\nwill\nno\nw\ncalculate\nthese\neigen\nv\nalues\nfor\nt\nw\no\nimp\nortan\nt\ncen\ntral\nelemen\nts\nof\nH\nn\n\u0006\nThe\n\u0016rst\nof\nthese\nis\nthe\nfull\ncurl\nF\nn\n\u0002\nH\nn\n\u0001\nwhic\nh\nis\nclosely\nin\nv\nolv\ned",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": ". . .\n...\nFigure\n\u0001\u0004\u0013\nThe\nelemen\nt\nE\nI\n\u0000T\nE\nO\n\u0000\u000f\nS\n\u0007\u0003\n\b\u0007T\n\b\nAssume\nno\nw\nthat\nthe\nresult\nholds\nfor\nall\nY\noung\ndiagrams\nwith\nfew\ner\nthan\nn\ncells\u0006\nLet\n\u0000b\ne\na\nY\noung\ndiagram\nwith\nn\ncells\nand\nlet\n\ndenote\nthe\nY\noung\ndiagram\nobtained\nfrom\n\u0000b\ny\ndeleting\na\n\u0016xed\nc\nhoice\nof\nextreme\ncell\u0001\nwith\nco\nordinates\n\u0007p\u0001\nr\n\b\u0006\nW\ne\nshall\nw\nork\nin\nthe\nsk\nein\nH\nQ\nbased\non\n\u0000\u0001\nand\nsho\nw\nthat\nF\nQ\nE\n\u0000\u000f\nf\n\u0000E\n\u0000b\ny\ncalculating\nS\n\u0007\u0003\n\b\u0007F\nQ\n\b\u0006\nT\nak\ne\nR\n\b\nQ\nto\nb\ne\nde\u0016ned\nb\ny\nthe\nsub\ndiagram\n\n\u0006\nW\ne\ncan\ninclude\nthe\nalgebra\nH\nR\nin\nH\nQ\nb\ny\nadjoining\nan\nextra\ntrivial\nstring\nto\nthe\nsk\nein\u0006\nThen\nF\nQ\n\u000f\nF\nR\nT\n\u0001\nwhere\nT\nis\na\nv\nersion\nof\nFig\u0006",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "T\n\u000f\n.\n.\n...\n. . .\n....... . . . . . . ...\n.\n..\n.... ..\n.... . . . . .\n..\n5\n\u0001\nT\n\u0001\u0001\n\u000f\n..\n.\n.\n. . .\n....... . . . . . . ....\n.. .... ..\n.... . . . . .\n...\n5\nFigure\n\u0001\u0005\u0013\nReduction\nto\nthe\nextreme\nrectangle\n.. . .\n5\n...\n5\nFigure\n\u0001\u0006\u0013\nSmo\nothed\nbraids\narising\nfrom\ncrossings\noutside\nthe\nextreme\nrectangle\narro\nw\nindicates\nthe\npro\njection\nof\na\nstring\ndescending\nfrom\nthe\ntop\nto\nthe\nb\nottom\nin\nD\n\u0002\n\u0001\nI\n\u0006\nWhen\nall\nstrings\npass\nstraigh\nt\ndo\nwn\nw\ne\nha\nv\ne\nthe\niden\ntit\ny\nbraid\nId\u0001\nwith\nS\n\u0007\u0003\n\b\u0007Id\n\b\n\u000f\nE\n\u0000\u0006\nThe\nsc\nhematic\npicture\nfor\nT\nis\nsho\nwn\nin\nFig\u0006\n\u0001\u0005\u0006\nThere\nis\none\nstring\nin\nthis\nbraid\nstarting\nand\n\u0016nishing\nfr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "Figure\n\u0001\u0007\u0013\nC\n\u0001\n\u000f\n.\n..\n. . .\n....... . . . . . . ....\n.\n. .\n.\n.. ..\n....\n..\n. . .\n....\n5\n\u0001\nS\n\u000f\n.\n. . .\n....... . . . . . . ......\n..\n.\n. ..\n.... . . . . .\n..... .\n5\n\u0001\nC\n\u0002\n\u000f\n. . .\n..\n.. ..\n.\n...\n.\n.\n..... . . . . .\n.\n.....\n.\n.\n.. .\n.. .\n.... .\n5\nFigure\n\u0001\b\u0013\nThe\nencircling\nstring\nin\nT\ncan\nthen\nb\ne\npulled\nthrough\nj\u0000j\n\u0000r\np\nstrings\nto\ngiv\ne\nthe\nbraid\nT\n\u0001\u0001\nin\nwhic\nh\nit\nencircles\nthe\nextreme\nrectangle\u0001\nas\nin\nFig\u0006\n\u0001\u0005\u0001\nwith\nS\n\u0007\u0003\n\b\u0007T\n\b\n\u000f\nx\n\u0002\u0002j\u0000j\u0000r\np\u0003\nS\n\u0007\u0003\n\b\u0007T\n\u0001\u0001\n\b\u0006\nNo\nw\nwrite\nT\n\u0001\u0001\n\u000f\nC\n\u0001\nS\nC\n\u0002\n\u0001\nwhere\nC\n\u0001\n\u0001\nS\nand\nC\n\u0002\nare\nsho\nwn\nin\nFig\u0006\n\u0001\b\u0006\nA\nsimilar\nsystematic\nmo\nv\ne\nof\nthe\nencircling\nstring\nin\nS\nthrough\nt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "as\nclaimed\u0006\n\u0002\nNote\nthat\nX\n\u0002i\tj\n\u0003\u0002\u0000\u0002j\n\u000f\nk\nX\ni\u0005\u0001\n\u0000i\nX\nj\n\u0005\u0001\n\u0002j\n\u000f\nk\nX\ni\u0005\u0001\n\u0000i\n\u0007\u0000i\n\u0018\n\u0001\b\n\u000f\nk\nX\ni\u0005\u0001\n\u0000\u0002\ni\n\u0018\nj\u0000j\u0006\nSimilarly\n\u0001\nX\n\u0002i\tj\n\u0003\u0002\u0000\u0002i\n\u000f\nm\nX\nj\n\u0005\u0001\n\u0007\u0000\u0003\nj\n\b\n\u0002\n\u0018\nj\u0000j\u0006\nTh\nus\u0001\nb\ny\nTheorem\n\u0005\u0006\u0005\u0001\nn\n\u0000\u000f\nX\ni\n\u0000\u0002\ni\n\u0000X\nj\n\u0007\u0000\u0003\nj\n\b\n\u0002\n\u0006\nAs\nw\ne\ndiscuss\nin\nSect\u0006\n\u0006\u0001\nTheorem\n\u0005\u0006\u0005\nis\na\nsk\nein\ntheoretic\ncalculation\nof\nthe\nframing\nfactors\nfor\nthe\nirreducible\nrepresen\ntations\nof\nS\nU\n\u0007N\n\b\nq\n\u0006\nThere\nare\nv\narious\nother\nw\nell\u000bkno\nwn\nform\nulae\u0001\nin\nterms\nof\nthe\nw\neigh\nts\nof\nthe\nrepresen\ntation\nor\nthe\nlength\nof\neither\nthe\ncolumns\nor\nro\nws\nof\nthe\nY\noung\ndiagram\u0006\nIn\n\u0002\u0001\u0004\n\u0005\nMorton\ngiv\nes\nthe\n\u0003\u000bv\nariable\nform\nula\nfor\nf\n\u0000\u0001\nwith\nn\n\u0000de\u0016ned\nr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "\u0003\n\u0002i\nj\n\u0003\n\u000f\n. . .\n. . .\n...\n...\nFigure\n\u0002\u001c\u0013\nframing\nfactor\nx\n\u0003\u0006\nv\n\u0000\u0006\ns\n\u0006\n\u0006\nAn\ny\npair\nof\nY\noung\ndiagrams\nwith\nthe\nsame\nn\num\nb\ner\nof\ncells\u0001\nwhic\nh\nare\nself\nconjugate\nwill\nha\nv\ne\nthe\nsame\nframing\nfactor\u0001\nfor\nexample\n\u0007\u0004\u0001\n\u0002\u0001\n\u0001\u0001\n\u0001\b\nand\n\u0007\u0003\u0001\n\u0003\u0001\n\u0002\b\u0006\nIn\ncon\ntrast\u0001\nthe\nscalar\nm\n\u0000uniquely\ndetermines\n\u0000\u0001\ngiv\nen\nthe\nn\num\nb\ner\nof\ncells\u0006\nRecall\nthat\nthe\nY\noung\ntableau\nT\n\u0007\u0000\b\nw\nas\nde\u0016ned\nb\ny\nlab\nelling\nthe\ncells\nof\n\u0000from\n\u0001\nto\nj\u0000j\nalong\nthe\nro\nws\u0006\nF\nor\nthe\nthree\u000bdimensional\npicture\u0001\nw\ne\nuse\nthis\nto\nindicate\nthe\nordering\nof\nthe\nstrings\nwithin\nthe\nY\noung\ndiagram\u0001\nand\nto\ndetermine\nthe\ncon\nv\nersion\nbraid\n\u000e\nused\nin\nthe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "the\nv\nertical\nstring\ni\nw\ne\nget\nthe\nbraid\nj\n\u001f\u0007i\n\u0018\n\u0001\b\u0001\nwhile\nsmo\nothing\nat\nthe\ncrossing\nof\nthese\nstrings\ngiv\nes\nthe\nbraid\nS\n\u0007\u000e\n\b\u0007\u0003\n\u0002i\nj\n\u0003\n\b\u0001\nsho\nwn\nalso\nin\nFig\u0006\n\u0002\u0001\u0006\nThen\nj\n\u001fi\n\u000f\n\u0007s\n\u0000s\n\u0000\u0001\n\bS\n\u0007\u000e\n\b\u0007\u0003\n\u0002i\nj\n\u0003\n\b\n\u0018\nj\n\u001f\u0007i\n\u0018\n\u0001\b\u0001\nb\ny\nthe\nsk\nein\nrelation\n\u0007with\nx\n\u000f\n\u0001\b\u0006\nSumming\no\nv\ner\nall\ni\n\u000b\nj\ngiv\nes\nj\n\u001f\u0001\n\u0000j\n\u001fj\n\u000f\n\u0007s\n\u0000s\n\u0000\u0001\n\bS\n\u0007\u000e\n\b\u0007M\n\u0007j\n\b\b\u0002\nF\nrom\nthe\ncalculation\nin\nTheorem\n\u0005\u0006\u0005\nw\ne\nha\nv\ne\nS\n\u0007\u0003\n\b\u0007j\n\u001f\u0001\b\n\u000f\nE\nI\n\u0000\u0007j\n\u001fi\bE\nO\n\u0000\u000f\ns\n\u0002\u0002l\n\u0000k\n\u0003\nE\n\u0000while\nS\n\u0007\u0003\n\b\u0007j\n\u001fj\n\b\n\u000f\nE\n\u0000\u0001\nwhere\n\u0003\nis\nthe\ngeometric\npartition\ndetermined\u0001\nas\nb\nefore\u0001\nb\ny\nthe\ndiagram\n\u0000\u0006\nTherefore\nE\nI\n\u0000S\n\u0007\u000e\n\b\u0007M\n\u0007j\n\b\bE\nO\n\u0000\u000f\nS\n\u0007\u0003\n\b\u0007j\n\u001f\u0001\n\u0000j\n\u001fj\n\b\n\u000f\n\u0007s\n\u0002\u0002l\n\u0000k\n\u0003\n\u0000\u0001\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "Hence\nA\ni\n\u000f\nX\n\u0018\n\u0005\ni\nX\n\u0005\ni\n\u0001\nwhere\nX\n\u000f\nX\nk\n\u0007i\n\u0003\n\u0002k\ni\u0003\n\u0018\nX\ni\u0004\u0001\u0007l\n\u0003\n\u0002i\u0004\u0001\nl\n\u0003\n\u0006\nThen\n\u0005\ni\nA\ni\n\u000f\n\u0005\ni\nX\n\u0018\n\u0005\n\u0002\ni\nX\n\u0005\ni\n\u000f\n\u0005\ni\nX\n\u0018\nz\n\u0005\ni\nX\n\u0005\ni\n\u0018\nX\n\u0005\ni\n\u000f\nA\ni\n\u0005\ni\n\u0001\nsince\n\u0005\n\u0002\ni\n\u000f\nz\n\u0005\ni\n\u0018\n\u0001\nin\nH\nn\n\u0007\u0001\u0001\nz\n\b\u0006\nThis\ncompletes\nthe\npro\nof\nthat\nM\nis\ncen\ntral\u0006\nThen\nS\n\u0007\u000e\n\b\u0007M\n\b\nis\ncen\ntral\nin\nH\nQ\nand\nso\nS\n\u0007\u000e\n\b\u0007M\n\bE\n\u0000\u000f\nE\nI\n\u0000S\n\u0007\u000e\n\b\u0007M\n\bE\nO\n\u0000\u000f\nm\n\u0000E\n\u0000\u0006\nThe\nv\nalue\nof\nm\n\u0000as\nclaimed\nfollo\nws\ndirectly\nfrom\nLemma\n\u0005\u0006\u0006\nb\ny\nwriting\nM\n\u000f\nP\nj\nM\n\u0007j\n\b\u0006\nT\no\nw\nork\nin\nthe\nv\nersion\nof\nthe\nHec\nk\ne\nalgebra\nused\nb\ny\nDipp\ner\nand\nJames\nw\ne\nneed\nsimply\napply\nthe\nisomorphism\nfrom\nH\nn\n\u0007\u0001\u0001\nz\n\b\nto\nH\nn\n\u0007q\n\b\u0006\nA\nfurther\nsmall\nc\nhange\nis\nneeded\nto\ngiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "Theorem\n\u0006\u0001\u0003\n\u0006\u0002\u0002\n\u0005\b\nL\net\nC\nb\ne\na\nfr\name\nd\nknot\nc\nolour\ne\nd\nby\nthe\nirr\ne\nducible\nr\nepr\nesen\u0003\ntation\nV\n\u0000\u0000L\net\nS\nb\ne\nthe\nsatel\nlite\nknot\nC\n\u0010\nQ\n\u0000with\nc\nomp\nanion\nC\nand\np\nattern\nQ\n\u0000\u0000Then\nJ\n\u0007C\n\u001d\nV\n\u0000\b\n\u000f\nX\nN\n\u0007S\n\b\n\u0002\nThe\nr\nesult\nalso\nholds\nfor\nlinks\nwher\ne\ne\nach\nc\nomp\nonent\nc\nolour\ne\nd\nby\nV\n\u0000is\nr\neplac\ne\nd\nby\nits\nsatel\nlite\u0001\nwith\np\nattern\nQ\n\u0000\u0000It\nis\nnot\ndi\u001acult\nto\nsho\nw\nthat\nthe\nelemen\nts\nQ\n\u0000form\na\nlinear\nbasis\nfor\nthe\nsk\nein\nof\nthe\nann\nulus\u0001\nb\ny\nexpressing\nthem\nin\nterms\nof\nT\nuraev\ns\nbasis\u0001\nas\ndiscussed\nin\nSect\u0006\n\u0002\u0006\nThere\nis\nno\nnice\nsk\nein\ntheory\npro\nof\nthat\nthe\nexpression\nfor\nQ\n\u0000Q\n\b\nin\nterms\nof\nthis\nbasis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "\u0002\u0004\u0005\nT\u0006\nDeguc\nhi\u0001\nM\u0006\nW\nadati\u0001\nand\nY\u0006\nAkutsu\u0006\nExactly\nsolv\nable\nmo\ndels\nand\nnew\nlink\np\nolynomials\u0006\nV\u0006\nYang\u000bBaxter\nop\nerator\nand\nbraid\u000bmonoid\nalgebra\u0006\nJ\u0000Phys\u0000So\nc\u0000Jap\nan\u0001\n\u0005\u0007\u0013\u0001\t\u001c\u0005\u0011\u0001\t\u0002\u0003\u0001\n\u0001\t\b\b\u0006\n\u0002\u0005\u0005\nR\nDipp\ner\nand\nG\u0006\nD\u0006\nJames\u0006\nBlo\nc\nks\nand\nidemp\noten\nts\nof\nHec\nk\ne\nalgebras\nof\ngeneral\nlinear\ngroups\u0006\nPr\no\nc\u0000L\nondon\nMath\u0000So\nc\u0000\u0001\n\u0005\u0004\u0013\u0005\u0007\u0011\b\u0002\u0001\n\u0001\t\b\u0007\u0006\n\u0002\u0006\u0005\nE\u0006\nA\u0006\nElrifai\nand\nH\u0006\nR\u0006\nMorton\u0006\nAlgorithms\nfor\np\nositiv\ne\nbraids\u0006\nQuart\u0000J\u0000Math\u0000Oxfor\nd\n\u0004\u0002\u0005\u0001\n\u0004\u0005\u0013\u0004\u0007\t\u0011\u0004\t\u0007\u0001\n\u0001\t\t\u0004\u0006\n\u0002\u0007\u0005\nW\u0006\nF\nulton\nand\nJ\u0006\nHarris\u0006\nR\nepr\nesentation\nthe\nory\n\u0007\na\n\u0002rst\nc\nourse\u0006\nG\u0006T\u0006M\u0006\nSpringer\nV\nerlag\u0001\n\u0001\t\t\u0001\u0006\n\u0002\b\u0005\nA\u0006\nGy\no\nja\u0006\nA\nq\n\u000banalogue\nof\nYoung\nsymmetri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hecidem/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "\u0002\u0001\b\u0005\nN\u0006\nY\u0006\nReshetikhin\u0006\nQuan\ntized\nuniv\nersal\nen\nv\neloping\nalgebras\u0001\nthe\nYang\u000b\nBaxter\nequation\nand\nin\nv\narian\nts\nof\nlinks\nI\nand\nI\nI\u0006\npreprin\nt\u0001\nE\u0011\u0004\u0011\b\u0007\nE\u0011\u0001\u0007\u0011\b\u0007\u0001\nLOMI\u0001\n\u0001\t\b\u0007\u0006\n\u0002\u0001\t\u0005\nV\u0006\nG\u0006\nT\nuraev\u0006\nThe\nCon\nw\na\ny\nand\nKau\u0015man\nmo\ndules\nof\nthe\nsolid\ntorus\nwith\nan\napp\nendix\non\nthe\nop\nerator\nin\nv\narian\nts\nof\ntangles\u0006\nLOMI\npr\neprints\u0001\nE\u000b\u0006\u000b\b\b\u0001\n\u0001\t\b\b\u0006\n\u0002\u0002\u001c\u0005\nV\u0006\nG\u0006\nT\nuraev\u0006\nThe\nYang\nBaxter\nequation\nand\nin\nv\narian\nts\nof\nlinks\u0006\nInvent\u0000Math\u0000\u0001\n\t\u0002\u0013\u0005\u0002\u0007\u0011\u0005\u0005\u0003\u0001\n\u0001\t\b\b\u0006\n\u0002\u0002\u0001\u0005\nA\u0006\nJ\u0006\nW\nasserman\u0006\nCoactions\nand\nYang\u000bBaxter\nequations\nfor\nergo\ndic\nactions\nand\nsubfactors\u0006\nL\nondon\nMath\u0000So\nc\u0000L\ne\nctur\ne\nNotes\u0001\n\u0001\u0003\u0006\u0013\u0002\u001c\u0003\u0011\u0002\u0003\u0006\u0001\n\u0001\t\t\u0003\u0006\n\u0002\u0002\u0002\u0005\nH",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

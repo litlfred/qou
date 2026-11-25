@@ -1,0 +1,783 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.2182v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1203.2182v1  [hep-th]  9 Mar 2012\nPreprint typeset in JHEP style - HYPER VERSION\nVolume Conjecture: Reﬁned and Categoriﬁed\nHiroyuki Fuji1,2, Sergei Gukov1,3 and Piotr Su lkowski1,4,5\nwith an appendix by Hidetoshi Awata6\n1 California Institute of Technology, Pasadena, CA 91125, USA\n2 Nagoya University, Dept. of Physics, Graduate School of Science,\nFuro-cho, Chikusa-ku, Nagoya 464-8602, Japan\n3 Max-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany\n4 Institute for Theoretical Physics, University of Amsterdam,\nScience Park 904, 1090 GL, Amsterdam, The Netherlands\n5 Facult",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec-intro label=\"sec-intro\"}\n\nThe story of the \"volume conjecture\" started with the crucial observation [@Kashaev] that the so-called Kashaev invariant of a knot $K$ defined at the $n$-th root of unity $q = e^{2 \\pi i / n}$ in the classical limit has a nice asymptotic behavior determined by the hyperbolic volume $\\text{Vol} (M)$ of the knot complement $M = S^3 \\setminus K$. Shortly after, it was realized [@MurMur] that the Kashaev invariant is equal to the $n$-colored Jones polynomial of a knot $K$ evaluated at $q = e^{2 \\pi i / n}$, so that the volume conjecture could be stated simply as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized volume conjecture",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-generalized-volume-conjecture.md",
+      "narrative": null,
+      "content": "Once the volume conjecture is put in the context of analytically continued Chern-Simons theory, it becomes clear that the right-hand side is simply the value of the classical $SL(2,{\\mathbb C})$ Chern-Simons action functional on a knot complement $M$. Since classical solutions in Chern-Simons theory (*i.e.* flat connections on $M$) come in families, parametrized by the holonomy of the gauge connection on a small loop around the knot, this physical interpretation immediately leads to a \"family version\" of the volume conjecture [@Apol]: $$J_n (K; q = e^{\\hbar}) \\;\\overset{{n \\to \\infty \\atop \\hb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum volume conjecture",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-quantum-volume-conjecture.md",
+      "narrative": null,
+      "content": "Classical solutions in Chern-Simons theory (*i.e.* flat connections on $M$) are labeled by the holonomy eigenvalue $x = e^u$ or, to be more precise, by a point on the algebraic curve $${\\cal C }: \\quad \\left\\{(x,y)\\in\\mathbb{C}^*\\times \\mathbb{C}^*\\Big|\nA(x,y) \\; = \\; 0 \\right\\}\\,,\n\\label{Acurve}$$ defined by the zero locus of the $A$-polynomial, a certain classical invariant of a knot. In quantum theory, $A(x,y)$ becomes an operator $\\widehat A (\\widehat x, \\widehat y; q)$ and the classical condition [\\[Acurve\\]](#Acurve){reference-type=\"eqref\" reference=\"Acurve\"} turns into a statement that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization and deformation of algebraic curves",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-quantization-and-deformation-of-algebraic-cur.md",
+      "narrative": null,
+      "content": "The above structure -- and its \"refinement\" that we are going to construct -- is not limited to applications in knot theory. Similar mathematical structure appears in matrix models [@BIPZ; @Dijkgraaf:1990rs; @Fukuma:1990jw], in four-dimensional ${\\mathcal{N}}=2$ supersymmetric gauge theories [@SW-I; @Nekrasov; @NS; @Braverman:2004cr], and in topological string theory [@ADKMV; @DHSV; @DHS; @ACDKV].\n\nIn all of these problems, the semiclassical limit is described by a certain \"spectral curve\" [\\[Acurve\\]](#Acurve){reference-type=\"eqref\" reference=\"Acurve\"} defined by the zero locus of $A(x,y)$. M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The new conjectures: incorporating $t$",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-2-the-new-conjectures-incorporating-t.md",
+      "narrative": null,
+      "content": "In this section we describe general aspects of the mathematical structure shared by a wide variety of examples, ranging from the counting of refined BPS invariants to categorification of quantum group invariants. Then, in later sections we focus on each class of examples separately.\n\nIn particular, one of our goals is to promote the volume conjectures [\\[VCparam\\]](#VCparam){reference-type=\"eqref\" reference=\"VCparam\"} and [\\[VCquant\\]](#VCquant){reference-type=\"eqref\" reference=\"VCquant\"} to the corresponding refined / categorified versions, both for knots and for the refined BPS invariants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum volume conjecture: refined",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-21-quantum-volume-conjecture-refined.md",
+      "narrative": null,
+      "content": "The fact that a $q$-difference operator $\\widehat A (\\widehat x, \\widehat y; q)$ annihilates the partition function of Chern-Simons theory / matrix model / B-model / instanton partition function is easy to refine. Just like each of these partition functions becomes $t$-dependent, so does the operator $\\widehat A (\\widehat x, \\widehat y; q,t)$ that annihilates it. The commutation relations [\\[xycomm\\]](#xycomm){reference-type=\"eqref\" reference=\"xycomm\"} do not change and, therefore, our proposal for the refinement of [\\[VCquant\\]](#VCquant){reference-type=\"eqref\" reference=\"VCquant\"} is easy to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized volume conjecture: refined",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-22-generalized-volume-conjecture-refined.md",
+      "narrative": null,
+      "content": "The refinement / categorification of the generalized volume conjecture [\\[VCparam\\]](#VCparam){reference-type=\"eqref\" reference=\"VCparam\"} involves taking the limit [\\[VClimit\\]](#VClimit){reference-type=\"eqref\" reference=\"VClimit\"} while keeping the extra parameter $t$ fixed: $$q = e^{\\hbar} \\to 1 \\,, \\qquad t = \\text{fixed} \\,, \\qquad x \\equiv e^u = q^n = \\text{fixed}\n\\label{reflimit}$$ We conjecture that, in this limit, the homological (resp. refined) knot (resp. BPS) invariants have the following asymptotic behavior: $$\\label{VCparamref}\n\\begin{equation}\nP_n  \\; \\simeq \\;\n\\exp\\left( \\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples coming from knots",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-3-examples-coming-from-knots.md",
+      "narrative": null,
+      "content": "[]{#sec:knots label=\"sec:knots\"}\n\nIn this section, we illustrate the refined / categorified volume conjectures stated in the general form in [\\[VCquantref\\]](#VCquantref){reference-type=\"eqref\" reference=\"VCquantref\"} and [\\[VCparamref\\]](#VCparamref){reference-type=\"eqref\" reference=\"VCparamref\"} for a large class of examples coming from knots. In these examples, the invariants $P_n (q,t)$ whose recursive behavior is captured by the conjectures encode the graded dimensions of the homological knot invariants.\n\nThere are many different kinds of homological knot invariants: doubly-graded and tri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$S^r$ homological invariants of $(2,2p+1)$ torus knots",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-31-sr-homological-invariants-of-22p1-torus-knots.md",
+      "narrative": null,
+      "content": "Our goal in this section is to compute the colored superpolynomials ${\\cal P}^{R} (a,q,t)$ for $(2,2p+1)$ torus knots and symmetric and anti-symmetric representations, $R=S^r$ and $R=\\Lambda^r$. In performing this calculation, we first review the analogous computation of the polynomial knot invariants (on the left side of Figure [\\[fig:superpolunmial_hier\\]](#fig:superpolunmial_hier){reference-type=\"ref\" reference=\"fig:superpolunmial_hier\"}) in Chern-Simons gauge theory and then \"refine\" it. We should stress right away, however, that the refined calculation is *not* done in a topological 3d ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined braid operators and gamma factors",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-311-refined-braid-operators-and-gamma-factors.md",
+      "narrative": null,
+      "content": "[]{#sec:refinedbraid label=\"sec:refinedbraid\"}\n\nA physical framework for knot homologies was first proposed in [@GSV] and later studied from various viewpoints and in a number of closely related systems in [@Gknothom; @Wknothom; @DGH; @AS]. Regardless of the details and duality frames used, the basic idea is that a graded vector space ${\\cal H }^{R} (K)$ associated to a knot $K$ colored by a representation $R$ is identified with the space of refined BPS invariants that carry information not only about the charge of the BPS state but also about the spin content: $${\\cal H }^R (K) \\; = \\; {\\cal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The gamma factors for symmetric and anti-symmetric representations",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-the-gamma-factors-for-symmetric-and-anti-symmetr.md",
+      "narrative": null,
+      "content": "In order to determine the gamma factors from the consistency condition ([\\[consistency_gamma\\]](#consistency_gamma){reference-type=\"ref\" reference=\"consistency_gamma\"}), one needs the explicit form of the Littlewood-Richardson coefficients $N_{RR}^Q$. For the symmetric representation $R=S^r$ and the anti-symmetric representation $R=\\Lambda^r$, the explicit expression for the Littlewood-Richardson coefficients can be obtained from the Pieri formula: $$\\begin{aligned}\nN_{S^rS^r}^{S^{r+\\ell,r-\\ell}}\n& = & \\prod_{j=1}^{r-\\ell} { 1-q_1^{j-1} q_2 \\over 1-q_1^j }\n\\cdot \\prod_{j=2\\ell+1}^{r+\\ell} { 1-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From partition functions to superpolynomials",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-312-from-partition-functions-to-superpolynomials.md",
+      "narrative": null,
+      "content": "As we already explained around [\\[superPdef\\]](#superPdef){reference-type=\"eqref\" reference=\"superPdef\"}, the reduced colored superpolynomial ${\\cal P}^R (K; a,q,t)$ is defined as the Poincaré polynomial of the triply graded homology ${\\cal H }^R_{i,j,k} (K)$ that categorifies the colored HOMFLY polynomial $P^R (K;a,q)$. Here, the word \"reduced\" means that the normalization is such that $P^R ({\\,\\raisebox{-.08cm}{\\includegraphics[width=.37cm]{unknot}}\\,}) = 1$. Although normalization is one of the delicate points one has to worry about, luckily it will not be a major issue for us here.\n\nBeside",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homological algebra of colored knot invariants",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "../sections/sec-012-313-homological-algebra-of-colored-knot-invarian.md",
+      "narrative": null,
+      "content": "[]{#sec:homological label=\"sec:homological\"}\n\nOur next goal is to describe a very rich structure of the colored superpolynomials that can be used either as an alternative way to compute them or as a tool to verify their correctness. As in the previous discussion and in most of the literature on this subject [@KhPatterns; @KhR1; @DGR], ${\\cal P}^R (K;a,q,t)$ stands for the *reduced* superpolynomial of a knot $K$ colored by $R$, and its unreduced version is denoted with a bar.\n\nSuppose, for example, that we wish to compute the $S^2$-colored HOMFLY homology ${\\cal H }^{S^2}_{i,j,k} (T^{2,5})$ and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recursion relations for homological knot invariants",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-32-recursion-relations-for-homological-knot-inva.md",
+      "narrative": null,
+      "content": "In this section we ﬁnd recursion relations which are satisﬁed by homological knot invariants,\ntherefore, providing concrete examples for one of the new volume conjectures proposed in\nsection 2.\nIn other words, we ﬁnd reﬁned quantum A-polynomials bAref(bx, by; q, t). These are the\nobjects which generalize the unreﬁned quantum curves considered e.g. in [3, 17, 59, 7, 19].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unknot",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-321-unknot.md",
+      "narrative": null,
+      "content": "As we already mentioned in [\\[unknotMqtR\\]](#unknotMqtR){reference-type=\"eqref\" reference=\"unknotMqtR\"} and [\\[unknotsuperSr\\]](#unknotsuperSr){reference-type=\"eqref\" reference=\"unknotsuperSr\"}, in every approach to knot homologies based on the refined BPS invariants [@GIKV; @AS] the colored superpolynomial of the unknot is given essentially by the Macdonald polynomial [@IK11]. In particular, after the change of variables [\\[GSvarchng\\]](#GSvarchng){reference-type=\"eqref\" reference=\"GSvarchng\"}, the $S^r$-colored superpolynomial reads: $$\\overline{{\\cal P}}^{S^r} ({\\,\\raisebox{-.08cm}{\\include",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trefoil",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-015-322-trefoil.md",
+      "narrative": null,
+      "content": "Our next task is to derive refined recursion relations for the trefoil. Similarly as in the unknot case, we will be able to determine these relations from the structure of the $sl(2)$ specialization $P_{n}(T^{2,3};q,t)$ of the colored superpolynomial. For general $(2,2p+1)$ torus knots, we found an explicit expression for this homological invariant in ([\\[refined_SU(2)\\]](#refined_SU(2)){reference-type=\"ref\" reference=\"refined_SU(2)\"}), which for the present purpose of deriving recursion relations we write in the form[^1]\n\n$$P_{n}(T^{2,3}; q,t) \\; = \\; \\sum_{k=0}^{n-1} P(n,k) \\,,    \\label{Pn-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recursion in various limits",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-016-323-recursion-in-various-limits.md",
+      "narrative": null,
+      "content": "In order to understand better the refined recursion relation ([\\[RefineRecursion\\]](#RefineRecursion){reference-type=\"ref\" reference=\"RefineRecursion\"}), let us consider what happens in various special limits, when $t=-1$ or $q=\\pm 1$. We begin with the unrefined limit $t=-1$, which is special for several reasons. First, a direct substitution $\\boxed{t=-1}$ in ([\\[RefineRecursion\\]](#RefineRecursion){reference-type=\"ref\" reference=\"RefineRecursion\"}) gives rise to the following 3-term homogeneous relation $$\\alpha_{(t=-1)} J_{n-1} \\, + \\, \\beta_{(t=-1)} J_n \\, + \\, \\gamma_{(t=-1)} J_{n+1} \\; =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-017-33-refined-a-polynomials-and-the-refined-volume.md",
+      "narrative": null,
+      "content": "[]{#sec:knotS0 label=\"sec:knotS0\"}\n\nOne next goal is to test the second new conjecture of the present paper -- namely, the refinement of the generalized volume conjecture ([\\[VCparamref\\]](#VCparamref){reference-type=\"ref\" reference=\"VCparamref\"}a) -- in a large class of examples associated with $(2,2p+1)$ torus knots.\n\nSpecifically, in this section we derive the refined $A$-polynomials $A^{\\text{ref}}(x,y;t)$ for $(2,2p+1)$ torus knots and analyze the refined \"volume\" $S_0 (u,t)$ that dominates the asymptotic behavior ([\\[VCparamref\\]](#VCparamref){reference-type=\"ref\" reference=\"VCparamref\"}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the unknot",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-018-331-refined-a-polynomial-and-s-0-ut-for-the-unkn.md",
+      "narrative": null,
+      "content": "We start our analysis with the example of the unknot. This example is quite instructive: being relatively simple, it captures all essential ingredients which arise for more complicated knots. Recall, that we already determined the quantum refined curve in ([\\[qAt-unknot\\]](#qAt-unknot){reference-type=\"ref\" reference=\"qAt-unknot\"}), and its classical limit reads ([\\[At-unknot\\]](#At-unknot){reference-type=\"ref\" reference=\"At-unknot\"}): $$A^{\\text{ref}}_{{\\,\\raisebox{-.08cm}{\\includegraphics[width=.37cm]{unknot}}\\,}}(x,y;t) \\; = \\;\n(1 + t^3 x) ( - t^{-3})^{1/2} - (1 - x) y  = 0 \\,.   \\label{Atun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref.md",
+      "narrative": null,
+      "content": "The next example is naturally the trefoil knot $T^{2,3} = {\\bf 3}_1$. First, let us discuss the structure of its refined $A$-polynomial and the associated free energy $S_0(u,t)$ from the viewpoint of the quantum $A$-polynomial given in ([\\[trefoil-Aqt\\]](#trefoil-Aqt){reference-type=\"ref\" reference=\"trefoil-Aqt\"}). The refined $A$-polynomial can be determined by setting $q = 1$ in ([\\[trefoil-Aqt\\]](#trefoil-Aqt){reference-type=\"ref\" reference=\"trefoil-Aqt\"}): $$A_{T^{2,3}}^{\\text{ref}}(x,y;t) = y^2 -\\frac{1 - x t^2 + x^3 t^5 + x^4 t^6 + 2 x^2 t^2 (t+1)}{1\n+ x t^3} y + \\frac{(x-1) x^3 t^4}{1 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Saddle point analysis of the homological torus knot invariants",
+      "pageStart": 42,
+      "pageEnd": 46,
+      "target": "../sections/sec-020-333-saddle-point-analysis-of-the-homological-tor.md",
+      "narrative": null,
+      "content": "[]{#sec:saddle_point label=\"sec:saddle_point\"}\n\nIn this section we analyze general $(2,2p+1)$ torus knots ($p \\ge 1$). For this class of knots, the quantum refined curves $\\widehat{A}^{\\text{ref}}_{T^{2,2p+1}}(\\widehat{x},\\widehat{y};q,t)$ are not known at present (apart from the case of trefoil, *i.e.* $p=1$, with the quantum curve determined in ([\\[RefineRecursion\\]](#RefineRecursion){reference-type=\"ref\" reference=\"RefineRecursion\"})). Therefore, we cannot determine refined $A$-polynomials by taking the classical limit of $\\widehat{A}^{\\text{ref}}$, as we did for the trefoil knot or for the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic behavior in different grading conventions",
+      "pageStart": 46,
+      "pageEnd": 50,
+      "target": "../sections/sec-021-334-asymptotic-behavior-in-different-grading-con.md",
+      "narrative": null,
+      "content": "[]{#sec:saddle_DGR label=\"sec:saddle_DGR\"}\n\nIt is instructive to study the asymptotic behavior of the colored superpolynomial and its specialization [\\[Pq2special\\]](#Pq2special){reference-type=\"eqref\" reference=\"Pq2special\"} in different grading conventions. For example, another popular set of grading conventions is the one\n\nwhere differentials $d_{N<0}$ have degree $(-2,2N,2N-1)$, see [\\[gradingtabl\\]](#gradingtabl){reference-type=\"eqref\" reference=\"gradingtabl\"}. One important lesson of this exercise will be the fact that the limit [\\[reflimit\\]](#reflimit){reference-type=\"eqref\" reference=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to algebraic K-theory",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-022-34-relation-to-algebraic-k-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:quantizability label=\"sec:quantizability\"}\n\nSo far in this section we have discovered a number of refined $A$-polynomials $A^{\\textrm{ref}}(x,y;t)$ for various knots, including the unknot ([\\[At-unknot\\]](#At-unknot){reference-type=\"ref\" reference=\"At-unknot\"}), the trefoil knot ([\\[deformed_A-poly_trefoil\\]](#deformed_A-poly_trefoil){reference-type=\"ref\" reference=\"deformed_A-poly_trefoil\"}), and more general $(2,2p+1)$ torus knots discussed in section [\\[sec:saddle_point\\]](#sec:saddle_point){reference-type=\"ref\" reference=\"sec:saddle_point\"}. For the unknot and for the trefoil knot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantizability of refined $A$-polynomials",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-023-341-quantizability-of-refined-a-polynomials.md",
+      "narrative": null,
+      "content": "We can now analyze under what conditions the refined $A$-polynomials which we found earlier are quantizable. Since we already found the explicit form of such refined polynomials $A^{\\textrm{ref}}(x,y;t)$, in order to test quantizability we can simply apply the condition ([\\[tempered\\]](#tempered){reference-type=\"ref\" reference=\"tempered\"}). To this end, we need to identify face polynomials associated to the Newton polygons of various knots discussed earlier. We will analyze separately of the unknot, the trefoil knot, and more general $(2,2p+1)$ torus knots. We will also discuss an interesting",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples coming from refined BPS invariants",
+      "pageStart": 54,
+      "pageEnd": 58,
+      "target": "../sections/sec-024-4-examples-coming-from-refined-bps-invariants.md",
+      "narrative": null,
+      "content": "[]{#sec:Bmodel label=\"sec:Bmodel\"}\n\nIt is known that $\\mathcal{N}=2$ gauge theories can be geometrically engineered by considering type II string theory on appropriate toric Calabi-Yau manifolds [@engineering]. The corresponding mirror manifolds have the form of a hypersurface $$z_1 z_2 \\; = \\; A(x,y)    \\label{Amirror}$$ in ${\\mathbb C}^2 \\times {\\mathbb C}^{*\\, 2}$. Upon the suitable identification of parameters the mirror curve $A(x,y)=0$ agrees with the Seiberg-Witten curve of the 5-dimensional theory on a circle, and its appropriate scaling limit reproduces the ordinary Seiberg-Witten cur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined quantum mirror curves",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-025-41-refined-quantum-mirror-curves.md",
+      "narrative": null,
+      "content": "In this section we derive the refined quantum curves relevant in the context of the open BPS state counting (or topological string theory). They can be regarded as refined and quantum versions of mirror curves $A(x,y)=0$ which appear in the mirror geometry ([\\[Amirror\\]](#Amirror){reference-type=\"ref\" reference=\"Amirror\"}) for toric three-folds. Specifically, we consider open refined topological string amplitudes for branes along preferred directions, in general framing, for ${\\mathbb C}^3$ and conifold geometries. It brings only some technical, but no conceptual challenges to generalize the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conifold",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "../sections/sec-026-conifold.md",
+      "narrative": null,
+      "content": "We now repeat the above calculation for the conifold, whose ordinary mirror curve in general framing takes the form [@abmodel]: $$A^{\\text{ref}} (x,y;q_1=1) = 1 - y + x(-y)^f + Q x (-y)^{f+1} \\; = \\; 0 \\,.    \\label{mirrorConif}$$ To find the refined and quantum version of this curve, we again consider the brane located along the preferred direction of the conifold. More precisely, we wish to consider the brane amplitude normalized by the closed string partition function. Such an amplitude can be written as $$Z_{\\text{BPS}}^{\\text{open}} \\; = \\; \\sum_{k=0}^{\\infty} a_k = \\sum_{R=(k)}  s_R(x) f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined mirror curves, $S_0(u,t)$ and quantizability",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "../sections/sec-027-42-refined-mirror-curves-s-0ut-and-quantizabilit.md",
+      "narrative": null,
+      "content": "Once we found the refined quantum curves, we can easily determine the classical refined mirror curves. Namely, much as in the knot theory examples, we can find them in two ways. First, they arise as $q_2\\to 1$ limit of the quantum curves. Secondly, they can be determined by the saddle point analysis. As we will see momentarily, both methods consistently give the same result. The limit $q_2\\to 1$ of the ${\\mathbb C}^3$ quantum curve ([\\[AquantumC3inhom\\]](#AquantumC3inhom){reference-type=\"ref\" reference=\"AquantumC3inhom\"}) leads to the following refined mirror curve $$A^{\\text{ref}} (x,y;q_1) \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refinement as a twisted mass parameter",
+      "pageStart": 63,
+      "pageEnd": 68,
+      "target": "../sections/sec-028-43-refinement-as-a-twisted-mass-parameter.md",
+      "narrative": null,
+      "content": "Now, let us discuss the physical interpretation of the general setup considered in this section and the corresponding interpretation of the classical action $S_0 (u,t)$.\n\nAs we already reviewed in the beginning of this section, compactification of type II string theory on a toric Calabi-Yau 3-fold $X$ is a natural arena for a \"geometric engineering\" of ${\\mathcal{N}}=2$ supersymmetric gauge theories in the remaining four space-time dimensions. In this setup, BPS states of the \"effective\" four-dimensional gauge theory are simply the closed BPS states from the vantage point of the Calabi-Yau 3-f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Miscellaneous results on knot invariants",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-029-a-miscellaneous-results-on-knot-invariants.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Macdonald polynomials",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-030-a1-macdonald-polynomials.md",
+      "narrative": null,
+      "content": "Let pn be the power sum symmetric function in x = (x1, x2, . . .):\npn :=\n∞\nX\ni=1\nxn\ni .\n(A1)\nFor any symmetric functions f and g, a scalar product is introduced as:\n⟨f(p), g(p)⟩q1,q2 := f(p∗)g(p)|constant part,\np∗\nn := n1 −qn\n1\n1 −qn\n2\n∂\n∂pn\n.\n(A2)\nwith p = (p1, p2, . . .) and p∗= (p∗\n1, p∗\n2, . . .). The Macdonald function PR(x; q1, q2) is uniquely\nspeciﬁed by the following orthogonality condition and normalization:\n⟨PR(x; q1, q2), PQ(x; q1, q2)⟩q1,q2 = 0,\n(R̸ = Q)\n(A3)\nPR(x; q1, q2) =\nX\nQ≤R\nuRQ(q1, q2)mR(x),\nuRR(q1, q2) = 1\n(A4)\nwhere mR(x) is the monomial symmetric function:\nmR(x) :=\nX\nσ\nx",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consistency check of the gamma factor () and ()",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-031-a2-consistency-check-of-the-gamma-factor-and.md",
+      "narrative": null,
+      "content": "Here we check the consistency of the gamma factors (3.47) and (3.48) by applying the identity\nof the q-hypergeometric function. Plugging γSr+ℓ,r−ℓ\nSrSr\nof (3.47) into the consistency condition\nfor Zref\nSU(N)(S3, T 2,1\nSr ; q1, q2) = Zref\nSU(N)(S3,\nSr; q1, q2) in (3.43), we expect the following rela-\ntion:\nPSr(q̺2; q1, q2) = (A; q1)r\n(q2; q1)r\nA−r\n2 q\nr\n2\n2\n=\nr\nX\nℓ=0\n(q2; q1)ℓ(q1; q1)r(A; q1)r+ℓ(q−1\n2 A; q1)r−ℓ\n(q1; q1)ℓ(q2; q1)r(q1q2; q1)r+ℓ(q1; q1)r−ℓ\n(1 −q2q2ℓ\n1 )\n(1 −q2) (−1)r−ℓA−r\n2 q\n(r−ℓ)(r+ℓ+1)\n2\n1\nq\n3r\n2 −ℓ\n2\n.\n(A10)\nHere we quote an identity eq.(2.8.1) of [93]:\n(a; q)r(b; q)r(c; q)r\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "WKB analysis",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-032-a3-wkb-analysis.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+      "pageStart": 71,
+      "pageEnd": 72,
+      "target": "../sections/sec-033-a31-another-expression-for-p-nt22p1qt.md",
+      "narrative": null,
+      "content": "As an analogy with an expression for the colored Jones polynomial for T 2,2p+1,we ﬁnd a\nconjecture for yet another expression of Pn(T 2,2p+1; q, t) which is consistent with (3.97).\nIn [94, 95, 96, 97], the expression for the colored Jones polynomial for (2, 2p + 1) torus\nknots is given as:\nJn(T 2,2p+1; q) = qp(n2−1)\nX\nkp≥···≥k2≥k1≥0\n(−1)kpq−kp(kp+1)\n2\n(q1−n; q)kp(q1+n; q)kp\n(q; q)kp\n×\np−1\nY\na=1\nq−(ka−kp)(ka−kp−1)+ka(ka−ka+1)\n\"\nka+1\nka\n#\nq\n,\n(A13)\nwhere the q-binomial coeﬃcient is deﬁned by\n\"\nn\nm\n#\nq\n:=\n(q; q)n\n(q; q)n−m(q; q)m\n.\n(A14)\nBy comparison with (3.97) for some lower orders in r and p,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic limit of ${\\cal P}^{S^{n-1}}_{\\rm{DGR}}(T^{2,2p+1};a,q,t)$ with $a=q^2 t^2$",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "../sections/sec-034-a32-asymptotic-limit-of-cal-psn-1-rmdgrt22p1aqt.md",
+      "narrative": null,
+      "content": "DGR (T 2,2p+1; a, q, t) with a = q2t2\nAs we discussed in section 3.3.4, for the (colored) superpolynomials in grading conventions of\n[27], the right limit to consider is\nq2t2 →1 ,\n(A22)\nwith x = qn and t kept ﬁxed. In other words, in this grading conventions, the combination\nlog(qt) plays the role of a small expansion parameter ℏ→0.\nOn the other hand, if we\nthink of the HOMFLY variable a as a = eNℏ(as opposed to a = qN), then it might be\nnatural to consider a specialization of the superpolynomial to a = (eℏ)2 = q2t2 (instead of\na = q2). With this motivation in mind, here we consider the “large",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prop-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 79,
+      "target": "prop-sec-035-01.md",
+      "narrative": null,
+      "content": "PSr \u0014 c 1 −L 1 −q2 \u0015 = r X ℓ=0 gℓN Sr+ℓ,r−ℓ SrSr PSr+ℓ,r−ℓ \u0014 c 1 −L 1 −q2 \u0015 , (B8) PΛr \u0014 c 1 −L 1 −q2 \u0015 = r X ℓ=0 g′ ℓN Λr+ℓ,r−ℓ ΛrΛr PΛr+ℓ,r−ℓ \u0014 c 1 −L 1 −q2 \u0015 . (B9)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the gamma factor () and (), by Hidetoshi Awata",
+      "pageStart": 75,
+      "pageEnd": 79,
+      "target": "../sections/sec-035-b-proof-of-the-gamma-factor-and-by-hidetoshi-awa.md",
+      "narrative": null,
+      "content": "Let PR\nh\nc 1−L\n1−q2\ni\nbe the Macdonald function PR(x; q1, q2) with the specialization pn := P∞\ni=1 xn\ni =\ncn 1−Ln\n1−qn\n2 . The Pieri formula [51](Ch. VI.6) gives\nPSr(x; q1, q2)PSr(x; q1, q2) =\nr\nX\nℓ=0\nN Sr+ℓ,r−ℓ\nSrSr\nPSr+ℓ,r−ℓ(x; q1, q2),\n(B1)\nPΛr(x; q1, q2)PΛr(x; q1, q2) =\nr\nX\nℓ=0\nN Λr+ℓ,r−ℓ\nΛrΛr\nPΛr+ℓ,r−ℓ(x; q1, q2)\n(B2)\nwith\nN Sr+ℓ,r−ℓ\nSrSr\n:=\nr−ℓ\nY\nj=1\n1 −qj−1\n1\nq2\n1 −qj\n1\n·\nr+ℓ\nY\nj=2ℓ+1\n1 −qj−1\n1\nq2\n2\n1 −qj\n1q2\n·\nr\nY\nj=ℓ+1\n \n1 −qj\n1\n1 −qj−1\n1\nq2\n!2\n,\n(B3)\nN Λr+ℓ,r−ℓ\nΛrΛr\n:=\nℓ\nY\ni=1\n1 −q1qi−1\n2\n1 −qi\n2\n·\n2ℓ\nY\ni=ℓ+1\n1 −qi\n2\n1 −q1qi−1\n2\n.\n(B4)\nNote that above N Sr+ℓ,r−ℓ\nSrSr\nand N Λr+ℓ,r−ℓ\nΛ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined A-polynomials",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-036-c-refined-a-polynomials.md",
+      "narrative": null,
+      "content": "In this appendix we present detailed structure of reﬁned A-polynomials Aref(x, y; t) in various\nexamples which we found in this paper: the unknot, (2, 2p + 1) torus knots, and the trefoil\nin DGR grading.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Newton polygons",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "../sections/sec-037-c1-newton-polygons.md",
+      "narrative": null,
+      "content": "well as for their t = −1 limit. A red circle at position (i, j) in such a polygon represents a\nmonomial of the form ci,jxiyj in the reﬁned A-polynomial. Smaller yellow crosses represent\nsuch monomials in the unreﬁned A-polynomial Aref(x, y; −1).\nIn section C2 we present matrix form of reﬁned A-polynomials. The entry (i + 1, j + 1)\nof such a matrix represents the coeﬃcient ci,j in Aref(x, y; t). Note that the role of rows and\ncolumns in Newton polygons and matrices is exchanged. All these conventions are the same\nas in ﬁgure 7.\nC1 Newton polygons\n+\n+\n+\n+\nx\ny\n1\n1\nFigure C1: Newton polygons for t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.2182v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix forms of A-polynomials",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "../sections/sec-038-c2-matrix-forms-of-a-polynomials.md",
+      "narrative": null,
+      "content": "1\nH-tL32\n-1\nH-tL32\n1\nFigure C8: Matrix form of A-polynomial for the unknot.\n0\n1\n-1\n0\n-t2\n-t3\n0\n2 t2 H1 + tL\n0\nt4\nt5\n0\n-t4\nt6\n0\nFigure C9: Matrix form of A-polynomial for trefoil, i.e. T 2,3 torus knot.\n0\n0\n-1\n1\n0\n0\nt2 - t3\n2 t3\n0\n0\n-2 t2 - 2 t3 + t5\nt6\n0\n0\n2 t4 - 2 t6\n0\n0\n0\n-3 t4 - 4 t5 - t6 + 2 t7 + 2 t8\n0\n0\n-2 t6\n-4 t7 - 3 t8 - t9\n0\n0\n2 t6 + t8 - t9\n-2 t8 - t10 + t11\n0\n0\n-4 t8 - 3 t9 - t10\n-2 t11\n0\n0\n3 t8 + 4 t9 + t10 - 2 t11 - 2 t12\n0\n0\n0\n2 t11 - 2 t13\n0\n0\n-t12\n2 t12 + 2 t13 - t15\n0\n0\n2 t12\nt15 - t16\n0\n0\n-t12\nt16\n0\n0\nFigure C10: Matrix form of A-polynomial for T 2,5 torus knot.\n– 81 –\n0\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

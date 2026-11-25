@@ -1,0 +1,367 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0903.2472v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0903.2472v1  [hep-th]  13 Mar 2009\nPreprint typeset in JHEP style - HYPER VERSION\nExact Results for Perturbative Chern-Simons Theory\nwith Complex Gauge Group\nTudor Dimofte,1 Sergei Gukov,1,2 Jonatan Lenells,3 and Don Zagier4,5\n1 California Institute of Technology, Pasadena, CA 91125, USA\n2 Department of Physics and Department of Mathematics,\nUniversity of California, Santa Barbara, CA 93106, USA\n3 Centre for Mathematical Sciences, Wilberforce Road,\nCambridge, CB3 0WA, United Kingdom\n4 Max-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany\n5 Coll`ege de France, 3 rue d’",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perturbation theory around a non-trivial flat connection",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-2-perturbation-theory-around-a-non-trivial-flat.md",
+      "narrative": null,
+      "content": "[]{#sec:pert label=\"sec:pert\"}\n\nIn this section we pursue traditional approaches to Chern-Simons gauge theory based on the evaluation of Feynman diagrams and the quantization of moduli spaces of flat connections. In particular, we explain how one can systematically compute the perturbative $G_{{\\mathbb{C}}}$ invariant $Z^{(\\rho)} (M;\\hbar)$ to arbitrary order in the $\\hbar$-expansion for non-trivial flat connections. Through the analysis of Feynman diagrams, we will find that the coefficients $S_n^{(\\rho)}$ have a very special structure, motivating us to define the notion of \"arithmetic QFT.\"",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Feynman diagrams and arithmetic TQFT",
+      "pageStart": 10,
+      "pageEnd": 18,
+      "target": "../sections/sec-001-21-feynman-diagrams-and-arithmetic-tqft.md",
+      "narrative": null,
+      "content": "[]{#sec:loops label=\"sec:loops\"}\n\nLet us examine more carefully each term in the perturbative expansion [\\[zpert\\]](#zpert){reference-type=\"eqref\" reference=\"zpert\"}: $$Z^{(\\rho)} (M;\\hbar)\n\\;=\\; \\exp\\left( \\frac{1}{\\hbar} S_0^{(\\rho)} - \\frac{1}{2}\\delta^{(\\rho)} \\log \\hbar\n+ \\sum_{n=0}^\\infty S_{n+1}^{(\\rho)} \\hbar^n \\right).\n\\label{zzpert}$$ As already mentioned in the introduction, the leading term $S_0^{(\\rho)}$ is the value of the classical Chern-Simons functional [\\[szero\\]](#szero){reference-type=\"eqref\" reference=\"szero\"} evaluated on a flat gauge connection ${\\cal A}^{(\\rho)}$ that c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic continuation",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-002-221-analytic-continuation.md",
+      "narrative": null,
+      "content": "[]{#sec:analytic label=\"sec:analytic\"}\n\nFor a generic 3-manifold $M$ with boundary $\\Sigma = T^2$, constructing the quantum operators $\\widehat{A}_i (\\hat l, \\hat m )$ may be a difficult task. However, when $M$ is the complement of a knot $K$ in the 3-sphere, $$\\label{mkcomplement}  M = {\\bf S}^3 \\smallsetminus K\\,,$$ there is a simple way to find the $\\widehat{A}_i$'s. Indeed, according to [\\[aionp\\]](#aionp){reference-type=\"eqref\" reference=\"aionp\"} these operators annihilate the polynomial knot invariants $P_{G,R} (K;q)$, which are defined in terms of Chern-Simons theory with compact gauge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A hierarchy of differential equations",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-222-a-hierarchy-of-differential-equations.md",
+      "narrative": null,
+      "content": "[]{#sec:hierarchy label=\"sec:hierarchy\"}\n\nThe system of Schrödinger-like equations [\\[almonz\\]](#almonz){reference-type=\"eqref\" reference=\"almonz\"} determines the perturbative $G_{{\\mathbb{C}}}$ invariant $Z^{(\\alpha)} (M;\\hbar,u)$ up to multiplication by an overall function of $\\hbar$, which can be fixed by suitable boundary conditions.\n\nIn order to see in detail how the perturbative coefficients $S_n^{(\\alpha)}(u)$ may be calculated and to avoid cluttering, let us assume that $r=1$. (A generalization to arbitrary values of $r$ is straightforward.) In this case, $A(l,m)$ is the so-called A-po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical and quantum symmetries",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-23-classical-and-quantum-symmetries.md",
+      "narrative": null,
+      "content": "[]{#sec:symmetries label=\"sec:symmetries\"}\n\nA large supply of 3-manifolds with a single toral boundary can be obtained by considering knot complements [\\[mkcomplement\\]](#mkcomplement){reference-type=\"eqref\" reference=\"mkcomplement\"}; our main examples in Section [\\[sec:example\\]](#sec:example){reference-type=\"ref\" reference=\"sec:example\"} are of this type. As discussed above, the Lagrangian subvariety ${\\cal L}\\in{\\cal M}_{\\rm flat}(G_{\\mathbb{C}},\\Sigma)$ for any knot complement $M$ is defined by polynomial equations [\\[aizero\\]](#aizero){reference-type=\"eqref\" reference=\"aizero\"}. Such an $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Brane quantization",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-005-24-brane-quantization.md",
+      "narrative": null,
+      "content": "Now, let us briefly describe how the problem of quantizing the moduli space of flat connections, ${{\\cal M}}_{{\\rm flat}}(G_{{\\mathbb{C}}},\\Sigma)$, would look in the new approach [@gukov-2008] based on the topological A-model and D-branes. Although it can be useful for a better understanding of Chern-Simons theory with complex gauge group, this discussion is not crucial for the rest of the paper and the reader not interested in this approach may skip directly to Section [\\[sec:statesum\\]](#sec:statesum){reference-type=\"ref\" reference=\"sec:statesum\"}.\n\nIn the approach of [@gukov-2008], the pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A state integral model for perturbative $SL(2,{\\mathbb{C}})$ Chern-Simons theory",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-006-3-a-state-integral-model-for-perturbative-sl2mat.md",
+      "narrative": null,
+      "content": "[]{#sec:statesum label=\"sec:statesum\"}\n\nIn this section, we introduce a \"state integral\" model for $Z^{(\\rho)} (M;\\hbar)$ in the simplest case of $G_{{\\mathbb{C}}} = SL(2,{\\mathbb{C}})$. Our construction will rely heavily on the work of Hikami [@hikami-2001-16; @hikami-2006], where he introduced an invariant of hyperbolic 3-manifolds using ideal triangulations. The resulting invariant is very close to the state integral model we are looking for. However, in order to make it into a useful tool for computing $Z^{(\\rho)} (M;\\hbar)$ we will need to understand Hikami's construction better and make",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations of hyperbolic 3-manifolds",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-007-31-ideal-triangulations-of-hyperbolic-3-manifold.md",
+      "narrative": null,
+      "content": "[]{#sec:ideal label=\"sec:ideal\"}\n\nThe construction of a state integral model described in the rest of this section applies to orientable hyperbolic 3-manifolds of finite volume (possibly with boundary) and uses ideal triangulations in a crucial way. Therefore, we begin this section by reviewing some relevant facts from hyperbolic geometry (more details can be found in [@thurston-1980; @thurston-1982; @thurston-1999]).\n\nRecall that hyperbolic 3-space ${\\mathbb{H}}^3$ can be represented as the upper half-space $\\{(x_1,x_2,x_3) \\vert$ $x_3>0 \\}$ with metric [\\[hthreemetric\\]](#hthreemetric){refer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hikami's invariant",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-008-32-hikamis-invariant.md",
+      "narrative": null,
+      "content": "[]{#sec:Hikami label=\"sec:Hikami\"}\n\nWe can now describe Hikami's geometric construction. Roughly speaking, to compute the invariant for a hyperbolic manifold $M$, one chooses an ideal triangulation of $M$, assigns an infinite-dimensional vector space $V$ or $V^*$ to each tetrahedron face, and assigns a matrix element in $V\\otimes V\\otimes V^* \\otimes V^*$ to each tetrahedron. These matrix elements depend on a small parameter $\\hbar$, and in the classical $\\hbar \\to 0$ limit they capture the hyperbolic structure of the tetrahedra. The invariant of $M$ is obtained by taking inner products of mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum dilogarithm",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "../sections/sec-009-33-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "[]{#sec:qdilog label=\"sec:qdilog\"}\n\nSince quantum dilogarithms play a key role here, we take a little time to discuss some of their most important properties.\n\nSomewhat confusingly, there are at least three distinct---though related---functions which have occurred in the literature under the name \"quantum dilogarithm\":\n\n$i)$ the function $\\text{Li}_2(x;q)$ defined for $x,\\,q\\in{\\mathbb{C}}$ with $|x|,\\,|q|<1$ by $$\\label{Li2} \\text{Li}_2(x;q)\\;=\\;\\sum_{n=1}^\\infty\\frac{x^n}{n\\,(1-q^n)}\\,,$$ whose relation to the classical dilogarithm function $\\text{Li}_2(x)=\\sum\\limits_{n=1}^\\infty\\dfrac{x^n}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and computations",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-010-4-examples-and-computations.md",
+      "narrative": null,
+      "content": "[]{#sec:example label=\"sec:example\"}\n\nIn the previous sections, we described several ways to approach perturbative Chern-Simons theory with complex gauge group. Our discussion was guided by the aim of computing the all-loop perturbative partition function $Z^{(\\rho)} (M;\\hbar)$ in the background of a nontrivial flat connection ${\\cal A}^{(\\rho)}$ labeled by a homomorphism $\\rho: \\pi_1 (M) \\to G_{{\\mathbb{C}}}$.\n\nIn this section, our goal is to illustrate these methods in concrete examples by calculating perturbative invariants $S_n^{(\\rho)}$ (also denoted $S_n^{(\\alpha)}(u)$) to high loop orde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical verification of the arithmeticity conjecture",
+      "pageStart": 44,
+      "pageEnd": 48,
+      "target": "../sections/sec-011-41-numerical-verification-of-the-arithmeticity-c.md",
+      "narrative": null,
+      "content": "[]{#sec:arith_example label=\"sec:arith_example\"}\n\nIn this section, we explicitly calculate the perturbative $SL(2,{\\mathbb{C}})$ invariants $S_n^{(\\alpha)} (u)$ for the simplest hyperbolic knot complements and for the special value of $u=0$ (corresponding to the discrete faithful representation $\\rho = {\\rm geom}$). It was conjectured in [@gukov-2003] that such invariants (in fact, for arbitrary value of $u$) can be extracted from the asymptotic expansion of knot invariants computed by Chern-Simons theory with compact gauge group $G$ in the double-scaling limit [\\[dslimit\\]](#dslimit){referenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perturbative $SL(2,{\\mathbb{C}})$ invariants for the figure-8 knot complement",
+      "pageStart": 48,
+      "pageEnd": 51,
+      "target": "../sections/sec-012-42-perturbative-sl2mathbbc-invariants-for-the-fi.md",
+      "narrative": null,
+      "content": "[]{#sec:figeight label=\"sec:figeight\"}\n\nIn this subsection, we explicitly calculate the perturbative $SL(2,{\\mathbb{C}})$ invariants $S_n^{(\\rho)}$ for the figure-8 knot complement, first via quantization of the moduli space of flat $SL(2,{\\mathbb{C}})$ connections and then, independently, using the state integral model formulated in Section [\\[sec:statesum\\]](#sec:statesum){reference-type=\"ref\" reference=\"sec:statesum\"}. We find perfect agreement between the results, thus, supporting our proposal [\\[statesumdef\\]](#statesumdef){reference-type=\"eqref\" reference=\"statesumdef\"}.\n\nLet $K$ be the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-013-421-quantization.md",
+      "narrative": null,
+      "content": "[]{#sec:figeightquant label=\"sec:figeightquant\"}\n\nIn order to test the proposed state integral model [\\[statesumdef\\]](#statesumdef){reference-type=\"eqref\" reference=\"statesumdef\"}, we first compute the perturbative $SL(2,{\\mathbb{C}})$ invariants of $M$ via quantization of ${{\\cal M}}_{{\\rm flat}}(G_{{\\mathbb{C}}},\\Sigma)$, as outlinted in Section [\\[sec:quantization\\]](#sec:quantization){reference-type=\"ref\" reference=\"sec:quantization\"}. Recall the expression [\\[zpert\\]](#zpert){reference-type=\"eqref\" reference=\"zpert\"} for the perturbative Chern-Simons partition function, $$Z^{(\\alpha)} (M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric branch",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-014-geometric-branch.md",
+      "narrative": null,
+      "content": "For the geometric branch, the solution to the first equation in Table [\\[tab:Seqns\\]](#tab:Seqns){reference-type=\"ref\" reference=\"tab:Seqns\"} is chosen to be $$S_0^{({\\rm geom})} (u) = \\frac{i}{2}{\\mbox{Vol\\,}}({\\bf 4_1};0) + \\int_0^u du\\, v_{{\\rm geom}} (u) + i\\pi u\\,,\n\\label{GS0}$$ with $v_{{\\rm geom}} (u)$ as in [\\[v41\\]](#v41){reference-type=\"eqref\" reference=\"v41\"}. The integration constant $i({\\mbox{Vol\\,}}(0)+i\\rm{CS}(0))$ is not important for determining the remaining coefficients (since only derivatives of $S_0$ appear in the equations), but we have fixed it by requiring that $S_0^{({",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugate branch",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-015-conjugate-branch.md",
+      "narrative": null,
+      "content": "For the \"conjugate\" branch, the solution for $S_0(u)$ is now chosen to be $$S_0^{({\\rm conj})} (u) = -\\frac{i}{2}{\\mbox{Vol\\,}}({\\bf 4_1};0) + \\int_0^u du\\, v_{{\\rm conj}} (u) + i\\pi u\n\\qquad (\\mbox{mod $2\\pi u$}),\n\\label{CS0}$$ so that $S_0^{({\\rm conj})}(u) = -S_0^{({\\rm geom})}(u)$. As for the geometric branch, this is then substituted into remainder of the hierarchy of equations. Calculating the subleading coefficients, the constants of integration can all be fixed so that $$S_n^{({\\rm conj})} (u) = (-1)^{n+1} S_{n+1}^{({\\rm geom})} (u),\n\\label{CGrel}$$ This is precisely what one expects f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abelian branch",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-016-abelian-branch.md",
+      "narrative": null,
+      "content": "For completeness, we can also mention perturbation theory around an abelian flat connection ${\\cal A}^{({\\rm abel})}$ on $M$, although it has no obvious counterpart in the state integral model.\n\nFor an abelian flat connection ${\\cal A}^{({\\rm abel})}$, the classical Chern-Simons action [\\[szero\\]](#szero){reference-type=\"eqref\" reference=\"szero\"} vanishes. This is exactly what one finds from [\\[S0_integral\\]](#S0_integral){reference-type=\"eqref\" reference=\"S0_integral\"}: $$S_0^{({\\rm abel})} (u) =\\int_0^u du\\, v_{{\\rm abel}} (u)\n+ i\\pi u = 0 \\qquad (\\mbox{mod $2\\pi i u$})\\,,$$ fixing the const",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.2472v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integral model",
+      "pageStart": 55,
+      "pageEnd": 61,
+      "target": "../sections/sec-017-422-state-integral-model.md",
+      "narrative": null,
+      "content": "[]{#sec:figeightsum label=\"sec:figeightsum\"}\n\nThe state integral model [\\[statesumdef\\]](#statesumdef){reference-type=\"eqref\" reference=\"statesumdef\"} for the figure-eight knot complement gives: $$Z^{(\\alpha)} (M; \\hbar, u) = \\frac{1}{\\sqrt{2 \\pi \\hbar}} \\int_{C_{\\alpha}} dp\n\\frac{\\Phi_{\\hbar} (p + i\\pi +\\hbar)}{\\Phi_{\\hbar}(-p-2u-i\\pi-\\hbar) }\ne^{-\\frac{2}{\\hbar}u(u+p) -u}\\;.\n\\label{base_Hik_41}$$ There are two tetrahedra ($N=2$) in the standard triangulation of $M$, and so two quantum dilogarithms in the integral. There is a single integration variable $p$, and we can identify $g_1(p,u) = p$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

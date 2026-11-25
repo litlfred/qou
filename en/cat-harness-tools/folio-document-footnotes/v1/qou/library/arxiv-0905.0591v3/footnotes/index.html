@@ -1,0 +1,2049 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-0905.0591v3/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-0905.0591v3/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-0905.0591v3/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-0905.0591v3/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-0905.0591v3</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p040-1&quot;,
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;197&quot;,
+    &quot;text&quot;: &quot;(2006) [Na78] Y. Nakagawa, On the Alexander polynomials of slice links, Osaka J. Math. 15 (1978), no. 1, 161–182 [Ni08] Y. Ni, Addendum to:“Knots, sutures and excision”, Preprint (2008) [Nic03] L. Nicolaescu, The Reidemeister torsion of 3-manifolds, de Gruyter Studies in Mathematics,&quot;,
+    &quot;block&quot;: &quot;library/arxiv-0905.0591v3/blocks/prose-sec-046&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p040-2&quot;,
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;Walter de Gruyter &amp; Co., Berlin, 2003. P. Ozsv´ath and Z. Szab´o, Holomorphic disks and 3-manifold invariants: properties and appli- [OS04] cations, Annals of Mathematics 159 (2004) no. 3, 1159-1245. A. Pajitnov, Novikov homology, twisted Alexander polynomials, and Thurston cones, St. Pe- [Pa07] tersburg Math. J. 18 (2007), no. 5, 809–835 A. Pajitnov, On the tunnel number and the Morse-Novikov number of knots, Preprint (2008) [Pa08] [Po97] J. Porti, Torsion de Reidemeister pour les vari´et´es hyperboliques, vol. 128, Mem. Amer. Math. Soc., no. 612, AMS (1997) [Ri71] R. Riley, Homomorphisms of knot groups on ﬁnite groups, Math. of Computation, 25, 603619 (1971) [Ri72] R. Riley, Parabolic representations of knot groups, I. Proc. London Math. Soc. (3) 24 (1972), 217–242. [Ri84] R. Riley, Nonabelian representations of 2–bridge knots groups, Quart. J. Math. Oxford Ser. (2)&quot;,
+    &quot;block&quot;: &quot;library/arxiv-0905.0591v3/blocks/prose-sec-046&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p040-3&quot;,
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;(1984), 191–208&quot;,
+    &quot;block&quot;: &quot;library/arxiv-0905.0591v3/blocks/prose-sec-046&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The twistedAlexanderpolynomialforaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;andgivenalinkL ⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dgivenalinkL ⊂S3wedenotebyνLa(open)tubularneighborhoodofLinS&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;C∗( ˜N) ⊗Z[π1(N)] Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ofNto˜N.TogetherwiththecanonicalbasisforQ(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;complexC∗( ˜N) ⊗Z[π1(N)] Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)IfNistheexteriorofalinkL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)IfNistheexteriorofalinkL⊂S3,ψ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ: π→GL(k, R)arepresentation,thenwewriteτ(L, γ)forτ(S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;(1 −g1, 1 −g2, . . . , 1 −gn)&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;n a p×q matrix B= (brs) with entries in Z[π] we write brs=Pb&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;rs&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;rsg for&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;rsg for b&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;det((γ ⊗ψ)(Bi))(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Inparticular,H∗(N; Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ofanon–splitlinkL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Wirtingerpresentationofπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;det((γ ⊗ψ)(Bi))(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Inparticular,wehaveH∗(N; Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;P−→S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;N,iwhichequals&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(1)WeidentifyR[Z]withR[t±1]andR[Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)GivenalinkL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)GivenalinkL⊂S3togetherwiththeabelianizationψ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representationγ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot; anordered orientedlink,thenwehaveacanonicalisomorphismF∼= Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;entedm–componentlinkL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;L,i(t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;L,i(t1, . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Withalltheseconventions,givenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;N,i̸= 0for&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N,i̸= 0fori = 0,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N,i̸= 0fori = 0, 1,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;\u0001(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;N,i= 1for&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;\u0001(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)Givena link L ⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)Givena link L ⊂S3and a representationγ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;.= ∆γ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∆γ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;\u0011(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;\u0001(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;R[F]kwiththestandardhermitianinnerproduct⟨v, w⟩= v&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;(α(g)−1)&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;N,i̸= 0 for all&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z[π&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z[π&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;N)]R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z[π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3.6.Twistedinvariantsofknotsandlinks.LetL = L1 ∪· · · ∪Lm⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Recallthatgivenarepresentationγ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;L,i(t&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;L,i(t1, . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lǫ,i(t&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Lǫ,i(t1, . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;L,i(tǫ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1, . . . , tǫ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;L = L1 ∪. . . Lk−1 ∪Lk⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ofLandL′= L1 ∪. . . Lk−1⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem3.10.LetL = L1 ∪. . . Lk−1 ∪Lk⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;etL = L1 ∪. . . Lk−1 ∪Lk⊂S3bealink.WriteL′= L1 ∪. . . Lk−1⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;andletγ′: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representationπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representationπ1(S3\\ νL) →π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ǫiT&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ǫiTi+ (−1)&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;tlk(L&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;tlk(Li,L&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;links.RecallthatgivenanorientedknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;orientation.GivenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;reﬂectingKinS&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;reﬂectingKinS2⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;metabelian, orthogonal, unitary) representations of π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)GivenKconsiderallconjugacyclassesofhomomorphismsofπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem4.1.LetL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;thereexistsanepimorphismγ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetL=L1∪· · ·∪Lm⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;disjointlyembeddedlocallyﬂatdisksinD&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;linksK=K1∪· · · ∪Km⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;linksK=K1∪· · · ∪Km⊂S3andL=L1∪· · · ∪Lm⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;isjointly embedded locally ﬂat cylinders C1, . . . , Cm in S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;such that ∂Ci= Ki ×0 ∪−Li ×1.(Givenan oriented knot K⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;.1.TwistedAlexanderpolynomialsofzero–surgeries.GivenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;zero–framedsurgeryNKofS&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;NK= S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;NK= S3\\ νK ∪TS&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NK= S3\\ νK ∪TS1× D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whereT=∂(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;whereT=∂(S3\\ νK)andTisgluedtoS&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whereT=∂(S3\\ νK)andTisgluedtoS1× D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;whereT=∂(S3\\ νK)andTisgluedtoS1× D2bygluingthemeridiantoS&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;inclusion map induces an isomorphism Z∼= H1(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Lemma5.1.LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;inducedrepresentationα : π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;τ(S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;summary.ConsiderthedecompositionNK= S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;mary.ConsiderthedecompositionNK= S3\\ νK ∪TSasabove,whereS= S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;.ConsiderthedecompositionNK= S3\\ νK ∪TSasabove,whereS= S1× D&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;τ(NK, α) =τ(S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetKbeaknot,asabovewedenotebyNKthezero–framedsurgeryofS&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Nowsuppose thatKhas aslicedisk D.Notethat∂(D&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(1)αfactorsthrougharepresentationπ1(D&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(2)theinducedtwistedmodulesH∗(D&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;slicediskcomplement.ItcanbeshownthatH∗(D&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In the following let Kagain be a knot in S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;NotethatH&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;NotethatH1(NK; Z) = Z,inparticularH&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;knownthatgivenkthereexistsacanonicalisomorphismH/(t&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;π→Z ⋉H→Z ⋉H/(t&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;andonH/(t&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;andonH/(tk−1)viamultiplicationbyt&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Fixk∈N.Letχ:H1(Wk; Z)→Z/q→S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;characterH→H/(t&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;characterH→H/(tk−1) = H1(Wk; Z) →S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;α(k, χ) : π→Z ⋉H/(t&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;χ(t&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;any oddprime power n and any character χ : H1(Wk; Z) →Z/n →S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;twisted Alexander polynomials of a cyclic cover of S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;, . . . , kn∈N.Assumewearegivencharactersχi:H1(Wki; Z)→Z/q→S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;λk1, . . . , λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;λk1, . . . , λknsuch that for any choice of characters χ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;λk1, . . . , λknsuch that for any choice of characters χi: H&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;, . . . , λknsuch that for any choice of characters χi: H1(W&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;such that for any choice of characters χi: H1(Wki; Z) →Z/q→S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∆α(k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∆α(k1,χ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;∆α(k1,χ1)⊗···⊗α(k&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;∆α(k1,χ1)⊗···⊗α(kn,χ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;existsaslicediskDsuchthatπ1(NK)→π1(D&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thatforanykthereexistsacanonicalisomorphismH1(NK; Z[t±1])/(t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thatM/(t&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thatM/(tk−1)⊂H1(NK; Z[t±1])/(t&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem 5.4.Let K⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;S1ofprimepowervanishingonM/(t&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;AknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S⊂S4suchthatS∩S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;andanycharacterχ:H1(Lk; Z)→Z/n→S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;π(S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; νL) →GL(k, R)be aunitary representation.Suppose thatψ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;theseassumptionswecanendowH1(S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;theseassumptionswecanendowH1(S3\\ νL; Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;theseassumptionswecanendowH1(S3\\ νL; Q(R[F])k)andH2(S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;sumptionswecanendowH1(S3\\ νL; Q(R[F])k)andH2(S3\\ νL; Q(R[F])&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;d ∈det(α(π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;For example, if L is the m–component unlink in S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;withd ∈det(α(π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetR⊂Cbeasubringclosedundercomplexconjugationandletα:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ψ: H1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;forsomed ∈det(α(π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;6.1.TwistedAlexanderpolynomialsandﬁberedmanifolds.Letφ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Wesay(N, φ)ﬁbersoverS&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p:N→S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p:N→S1suchthattheinducedmapp∗:π1(N)→π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1max{−χ(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;i=1max{−χ(Si),&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i=1max{−χ(Si), 0}.Thurston[Th86]showedthatthisdeﬁnes&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ax{−χ(Si), 0}.Thurston[Th86]showedthatthisdeﬁnesaseminormonH&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;whichcanbeextendedtoaseminormonH&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whichcanbeextendedtoaseminormonH1(N; R).AsanexampleconsiderS&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whereK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;whereK⊂S3isanon–trivialknot.Letφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whereK⊂S3isanon–trivialknot.Letφ ∈H1(S&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;LetNbea3–manifoldNwithemptyortoroidalboundaryandletφ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;mialsp(t), q(t)∈R[t±1]with&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lemma6.1.LetNbea3–manifoldwithemptyortoroidalboundary.Letφ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;det(idn −(γ ⊗φ)(c1)) = det(idn −tφ(c&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Theorem6.2.LetNbea3–manifold.Letφ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ﬁbersoverS&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ﬁbersoverS1andsuchthatN̸=S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ﬁbersoverS1andsuchthatN̸=S1× D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ﬁbersoverS1andsuchthatN̸=S1× D2, N̸=S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ﬁbersoverS1andsuchthatN̸=S1× D2, N̸=S1× S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;orem6.3.LetNbea3–manifoldwithemptyortoroidalboundary.Letφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;holds,then(N, φ)ﬁbersoverS&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;manifoldandifS&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;manifoldandifS1× Nissymplectic,thenNﬁbersoverS&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;eorem6.4.LetNbea3–manifoldwithemptyortoroidalboundaryandφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)N= S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;then(N, φ)ﬁbersoverS&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem6.5.LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem6.5.LetK⊂S3aknot.Thenthereexistsanepimorphismγ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K= 0ifandonlyiftheuniversalabeliancoverofS&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ofAlexanderthatgivenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;φ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Alexanderpolynomials detectthe Thurston norm foranyφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;=Pa&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;=Paif&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;=Paififora&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;A= 0forallφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;andfi∈F.Givenφ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(f&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −f&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (f&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (fi, f&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (fi, fj)suchthat&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (fi, fj)suchthata&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (fi, fj)suchthatai&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;A:= max{φ(fi −fj) | (fi, fj)suchthataia&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;deﬁnesaseminormonH&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K⊂S3a knot and let γ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;oftheformǫ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;InthefollowingwesaythatSisafreeSeifertsurfaceforKifπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i=k&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=ka&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;i=kai&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=kait&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;polynomialp=P&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem6.8.GivenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem6.8.GivenaknotK⊂S3andarepresentationγ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;GivenaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;7.1.Parabolicrepresentations.LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;arabolicrepresentations.LetK⊂S3beaknot.Arepresentationγ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representation π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3\\νK) →PSL(2, C) lifts to a parabolic representation γ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γζ: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;epresentationisconjugatetoanintegralrepresentationγφ(t):π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;= 2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;= 2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= 2dm&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Kis&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;conjugacyclassesofrepresentationsπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;anaﬃnealgebraiccurveinC&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;7.3.Twistedinvariantsofhyperbolicknotsandlinks.LetL⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;link.Thenthecorrespondingrepresentationπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representationγcan:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γadj: π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;quotientπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;quotientπ1(S3\\νK)/π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.1.APartialorderonknots.GivenaknotKwewriteπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.1.APartialorderonknots.GivenaknotKwewriteπ1(S3\\ νK):=π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Theorem8.1.LetK1andK2betwoknotsinS&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.2.Periodicandfreelyperiodicknots.AknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;q,ifthereexistsasmoothtransformationofS&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;suchthattheﬁxedpointsetisacircleAdisjointfromK.NotethatA ⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;NowassumethatK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f:S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f:S3→S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f:S3→S3.NotethatS&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f:S3→S3.NotethatS3/fisdiﬀeomorphictoS&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S3→S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S3→S3/f= S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F(t, e&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Theorem8.3.LetKbeaperiodicknotofperiodq=p&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;id&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;K(t)&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whereweviewAasanelementinπ1(S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;AknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;fofS&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;theprojectionmapS&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;theprojectionmapS3→Σ := S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;K(t&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K(e&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;K(e2πik/q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;α(g)&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Denotebyφ∈Hom(π1(N), Z)=H&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.5.Homologyofcycliccovers.LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.5.Homologyofcycliccovers.LetK⊂S3beaknot.WedenotebyH:=H1(S&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;RecallthatwehaveacanonicalisomorphismH/(t&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆K(e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;e2πiθ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e2πiθ1, . . . , e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;e2πiθ1, . . . , e2πiθ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;e2πiθ1, . . . , e2πiθ1\u0001\f\fdθ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;e2πiθ1, . . . , e2πiθ1\u0001\f\fdθ1 . . . dθ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;nlog|Tor H&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nlog|Tor H1(L&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.6.AlexanderpolynomialsforlinksinRP&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;8.6.AlexanderpolynomialsforlinksinRP3.GivenalinkL⊂RP&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Givena2–complexXTuraev[Tu02c]introducedanormonH&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;9.3.Planealgebraiccurves.LetC⊂C&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;letL∞bethelinkatinﬁnity(wereferto[CF07]fordetails).NotethatC&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thetwistedAlexanderpolynomialofC&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thetwistedAlexanderpolynomialofC2\\ νC.Nowletγ:π1(C&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;epresentationwhereF⊂Cisasubringclosedunderconjugation.Letφ:C&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Theorem1.1]thenrelatetwistedAlexanderpolynomialofC&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dimensional representations is to use the theory of L&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;deﬁnitionofvariousL&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;EventhoughL&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[Tu02b].ThistheoryisdiﬀerentinspirittotheforementionedL&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i=−r&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=−ra&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;i=−rai&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=−rait&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i=−raitiwith&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=−raitiwitha&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;overK.TheelementsinK[t±1]areformalsumsP&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;inK[t±1]isgivenbytherulet&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;inK[t±1]isgivenbytheruletia = γ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;inK[t±1]isgivenbytheruletia = γi(a)t&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Let Nbe a 3–manifold and let φ ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;N,φ,i:=Q&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;k=1&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1p&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;andequalityholdsifφisaﬁberedclassandN̸= S&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andequalityholdsifφisaﬁberedclassandN̸= S1× D&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;andequalityholdsifφisaﬁberedclassandN̸= S1× D2, N̸= S&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andequalityholdsifφisaﬁberedclassandN̸= S1× D2, N̸= S1× S&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;| g&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Forexampleif Kis a knot,γ= π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;triple for πif there exist epimorphisms ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2: γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2: γ1→γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2: γ1→γ2and φ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2: γ1→γ2and φ2: γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2: γ1→γ2and φ2: γ2→Z such that ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2: γ1→γ2and φ2: γ2→Z such that ϕ2= ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2◦ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;~ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ori.Let(ϕ1, ϕ2, φ)beanadmissibletripleforπ1(N).Supposethat∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;followsthat∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;di:= deg(∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;N,φ) −deg(∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;N,φ,0) −deg(∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N,φ,2), i = 1,&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N∈Z[t±1]isnon–trivial,then&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N∈Z[t±1]isnon–trivial,thend&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N∈Z[t±1]isnon–trivial,thend1 −d&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Proof.Thefactthat∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N,φ̸= 0impliesthat∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N,φ̸= 0andtheinequality&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N,φ̸= 0andtheinequalityd&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N,φ̸= 0andtheinequalityd2≥d&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;deﬁnesaseminormonH&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;generalizingthek–thAlexanderpolynomialofaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)LetK⊂S3aknotandletγ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(7)LetK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D2, S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;etNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D2, S1× S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;letφ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(10)LetKbeahyperbolicknotandρ:π1(S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(11)DoesthereexistaknotK⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Cochran,K.OrrandP.Teichner,Knotconcordance,WhitneytowersandL&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Dodziuk,P.Linnell,V.Mathai,T.SchickandS.Yates,ApproximatingL&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S.Friedl,C.LeidyandL.Maxim,L&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S.FriedlandS.Vidussi,SymplecticS&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S.FriedlandS.Vidussi,SymplecticS1× N&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S.FriedlandS.Vidussi,SymplecticS&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S.FriedlandS.Vidussi,SymplecticS1×N&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;P.Kronheimer,MinimalgenusinS&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;P.Kronheimer,MinimalgenusinS1× M&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;andC.Taubes,Seiberg-WittenFloerhomologyandsymplecticformsonS&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;.Taubes,Seiberg-WittenFloerhomologyandsymplecticformsonS1× M&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;W. Li and L. Xu, CountingSL2(F2&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W.LiandW.Zhang,AnL&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W. Li and W. Zhang, An L&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W.L¨uck,L&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;V.Turaev,TorsioninvariantsofSpin&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

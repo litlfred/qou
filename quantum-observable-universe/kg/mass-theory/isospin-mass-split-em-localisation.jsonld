@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-isospin-mass-split-em-localisation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:isospin-mass-split-em-localisation",
+  "kind": "remark",
+  "title": "Mirror-isobar mass split lives outside the spin-/sign-invariant sector",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy",
+  "tags": [
+    "isospin",
+    "tritium",
+    "helium-3",
+    "mass-split",
+    "coulomb",
+    "electromagnetic",
+    "localisation",
+    "structural-impossibility"
+  ],
+  "text": "isospin-mass-split-em-localisation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2512.18642v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+  "contains": [
+    "library/arxiv-2512.18642v1/sections/sec-front-matter",
+    "library/arxiv-2512.18642v1/sections/sec-000",
+    "library/arxiv-2512.18642v1/sections/sec-001",
+    "library/arxiv-2512.18642v1/sections/sec-002",
+    "library/arxiv-2512.18642v1/sections/sec-003",
+    "library/arxiv-2512.18642v1/sections/sec-004",
+    "library/arxiv-2512.18642v1/sections/sec-005",
+    "library/arxiv-2512.18642v1/sections/sec-006",
+    "library/arxiv-2512.18642v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af\n\n**A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain**\n\n*Abdessatar Souissi*\n\n20 pp, 9 sections.\n\n**Abstract.** This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-protected topological (SPT) phase. The model’s observation system is the physical spin-1 chain, which emerges from a hidden spin-½ layer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information.\n\n**Outline.** Front matter; Introduction; Preliminaries; Hidden Quantum Markov Models; The AKLT State and its SPT Order; HQMM Structure of the AKLT State; Entanglement Dynamics in Hidden Markov Channel; SPT order on the AKLT,s HQMMs; Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2512.18642&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2512.18642v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2512.18642v1.pdf",
+    "source_sha256": "c4c7f8b0a719aa2df0a0ae6c4260bced585090a6c53c51c07b770579ecbda39e",
+    "pages": 20,
+    "arxiv": {
+      "id": "2512.18642",
+      "version": "1",
+      "primary_class": "quant-ph",
+      "stamp_date": "21 Dec 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

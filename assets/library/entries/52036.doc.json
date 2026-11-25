@@ -1,0 +1,547 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "52036",
+  "title": "kusner.dvi",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mobius",
+          "heading": false
+        },
+        {
+          "term": "symmetric criticality",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "freedman",
+          "heading": false
+        },
+        {
+          "term": "mébius",
+          "heading": false
+        },
+        {
+          "term": "experiments",
+          "heading": false
+        },
+        {
+          "term": "energy",
+          "heading": false
+        },
+        {
+          "term": "wang",
+          "heading": false
+        }
+      ],
+      "extract": "Torus Knots Extremizing the Mobius Energy Denise Kim and Rob Kusner CONTENTS . Introduction . Mobius Invariance . Torus Knots and Symmetric Criticality . Torus Links . Discretization and Computer Experiments Dau ktWwn = . Further Experiments Acknowledgements References Software Availability This work was accomplished while the authors were at the Institute for Advanced Study, and was partly supported by an NSF",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "computer experiments",
+          "heading": false
+        },
+        {
+          "term": "bryson",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        },
+        {
+          "term": "stereographic",
+          "heading": false
+        },
+        {
+          "term": "simple closed",
+          "heading": false
+        },
+        {
+          "term": "critical",
+          "heading": false
+        },
+        {
+          "term": "energies",
+          "heading": false
+        }
+      ],
+      "extract": "2 Experimental Mathematics, Vol. 2 (1993), No. 1 In this article we construct the first explicit ex- amples of knotted curves that are critical for E. Our basic observation is that the Mébius-invariant energy E extends naturally to simple closed curves I. c R™ (Section 2). In particular, if T is a simple closed curve in S? C R‘ and o : S? + R?Uco is stereographic projection, then E(o(I)) = E(L) provided o([) C R®.",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 572,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mobius energy",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "criticality",
+          "heading": false
+        },
+        {
+          "term": "orbits",
+          "heading": false
+        },
+        {
+          "term": "mébius",
+          "heading": false
+        },
+        {
+          "term": "g-invariant",
+          "heading": false
+        },
+        {
+          "term": "banach",
+          "heading": false
+        },
+        {
+          "term": "freedman",
+          "heading": false
+        }
+      ],
+      "extract": "Note that the 4a/e term here precisely cancels a corresponding singular term from the first inte- gral. This is the “regularization” of E introduced in [O’Hara 1991]. Stereographic projection extends to a Mébius transformation of R™*! U oo, so we deduce: Corollary. If T c S™ Cc R™** is a Cl\" simple S™ — R™ Uo is stereo- graphic projection, then E(a()) = E(L) provided o(f) CR”. closed curve and o : 3. TORUS KNOTS AND",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-003",
+        "library/52036/blocks/cor-page-003-01",
+        "library/52036/blocks/lem-page-003-02"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "substitution",
+          "heading": false
+        },
+        {
+          "term": "energy",
+          "heading": false
+        },
+        {
+          "term": "residue",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "equality",
+          "heading": false
+        },
+        {
+          "term": "unit",
+          "heading": false
+        }
+      ],
+      "extract": "4 Experimental Mathematics, Vol. 2 (1993), No. 1 Computing the Mébius Energy of Torus Knots by Residue Calculus Rob Kusner and Gil Stengle To compute the Mobius energy E(r) of the orbital torus knot T’p,4(r) of (3.2), we first rescale so the knot has the parametrization (r e’?”,e’7”), and then use the definition of E: Qn pytr rp? + @2 pi+q 1 £0) = [ay [ dz| =; San - p> 5 0 dyn \\ rem — eu? + [elem — claw (@—y) jon [",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal orbit",
+          "heading": false
+        },
+        {
+          "term": "mobius energy",
+          "heading": false
+        },
+        {
+          "term": "orbit space",
+          "heading": false
+        },
+        {
+          "term": "s1-action",
+          "heading": false
+        },
+        {
+          "term": "critical",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "torus",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": false
+        }
+      ],
+      "extract": ", §6], but its linearity is the only property we need here.) Suppose that [ is not critical, so there exists a field V such that dE(V) 4 0. Since T is an orbit of the S1-action a = a»,4, we can average the push- forward (a(e\")). V over $1 to obtain an a-invariant vector field V for which dE(V) # 0 as well. Now V induces a variation through a-orbits, so we can view V as tangent to the orbit space § = 8p,q at TP. But",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-005",
+        "library/52036/blocks/thm-page-005-01"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-component hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf link",
+          "heading": false
+        },
+        {
+          "term": "among hopf",
+          "heading": false
+        },
+        {
+          "term": "minimizing among",
+          "heading": false
+        },
+        {
+          "term": "torus link",
+          "heading": false
+        },
+        {
+          "term": "components correspond",
+          "heading": false
+        },
+        {
+          "term": "whose components",
+          "heading": false
+        },
+        {
+          "term": "energy",
+          "heading": false
+        }
+      ],
+      "extract": "6 Experimental Mathematics, Vol. 2 (1993), No. 1 Theorem 2. For each relatively prime pair of inte- gers p,q > 1 and each k > 1, there is a (kp, kq)- torus link Vpp,4q which minimizes E among k-com- ponent links invariant under S' x Cy, and which is therefore critical for E. In particular, there are in- finitely many E-critical links with any number of components. A (k,k)-torus link is a particular case of a Hopf",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-006",
+        "library/52036/blocks/thm-page-006-01",
+        "library/52036/blocks/cor-page-006-02"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torusknotenergy",
+          "heading": false
+        },
+        {
+          "term": "tke",
+          "heading": false
+        },
+        {
+          "term": "analytic values",
+          "heading": false
+        },
+        {
+          "term": "extrapolation",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        },
+        {
+          "term": "kusner",
+          "heading": false
+        }
+      ],
+      "extract": "phenomenon illustrates the conjectured behavior, discussed in Section 1, of an E-minimizing (p, q)- torus knot for p and q large. Further results on Hopf links are given in [Kusner and Sullivan]. 5. DISCRETIZATION AND COMPUTER EXPERIMENTS Given a C!! knot [.: S$! = R/27Z > R”™, and a sufficiently large integer n, the polygon y with vertices y(h) = T(2ah/n), for 1 < h <n, is a knot isotopic to T, which we call a",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-007",
+        "library/52036/blocks/def-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "john sullivan",
+          "heading": false
+        },
+        {
+          "term": "palais",
+          "heading": false
+        },
+        {
+          "term": "tle",
+          "heading": false
+        },
+        {
+          "term": "torusknotenergy",
+          "heading": false
+        },
+        {
+          "term": "tke",
+          "heading": false
+        },
+        {
+          "term": "mobius",
+          "heading": false
+        },
+        {
+          "term": "schubert",
+          "heading": false
+        },
+        {
+          "term": "bryson",
+          "heading": false
+        }
+      ],
+      "extract": "8 Experimental Mathematics, Vol. 2 (1993), No. 1 These two programs are publicly available, to- gether with their link counterparts, called tle.m and toruslinkenergy.f. For details, see “Soft- ware Availability” at the end of the article. As a further check, we compared the computed values of E and r,,, under an interchange of p and q. As expected, E remains the same, while r,q is replaced by its reciprocal, to",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 55,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lehigh",
+          "heading": false
+        },
+        {
+          "term": "kusner",
+          "heading": false
+        },
+        {
+          "term": "amherst",
+          "heading": false
+        }
+      ],
+      "extract": "Kim and Kusner: Torus Knots Extremizing the Mébius Energy Denise Kim, Department of Physics, University of Massachusetts, Amherst, MA 01003 (kim@gang.umass.edu) Rob Kusner, Department of Mathematics, University of Massachusetts, Amherst, MA 01003 (kusner@math.umass.edu) Gil Stengle, Department of Mathematics, Lehigh University, Bethlehem, PA 18015 (gas0@lehigh.edu) Received February 6, 1993; accepted in revised form",
+      "extractCut": true,
+      "blocks": [
+        "library/52036/blocks/prose-page-009"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mobius energy",
+      "heading": false
+    },
+    {
+      "term": "mébius energy",
+      "heading": false
+    },
+    {
+      "term": "torus knots",
+      "heading": false
+    },
+    {
+      "term": "torus links",
+      "heading": false
+    },
+    {
+      "term": "rob kusner",
+      "heading": false
+    },
+    {
+      "term": "mobius invariance",
+      "heading": false
+    },
+    {
+      "term": "energy cross-term",
+      "heading": false
+    },
+    {
+      "term": "knots extremizing",
+      "heading": false
+    },
+    {
+      "term": "total energy",
+      "heading": false
+    },
+    {
+      "term": "symmetric criticality",
+      "heading": false
+    },
+    {
+      "term": "freedman",
+      "heading": false
+    },
+    {
+      "term": "programs torusknotenergy",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 9,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/52036"
+  }
+}

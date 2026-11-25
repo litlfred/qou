@@ -1,0 +1,470 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0102098v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0102098v1  [math.GT]  13 Feb 2001\nSkein theory and the Murphy operators\nHUGH R. MORTON\nDepartment of Mathematical Sciences, University of Liverpool,\nPeach St, Liverpool, L69 7ZL, England.\nmorton@liv.ac.uk\nAbstract\nThe Murphy operators in the Hecke algebra Hn of type A are ex-\nplicit commuting elements whose sum generates the centre. They can\nbe represented by simple tangles in the Homﬂy skein theory version\nof Hn. In this paper I present a single tangle which represents their\nsum, and which is obviously central. As a consequence it is possible\nto identify a natural basis for the Hom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The skein models.",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-the-skein-models.md",
+      "narrative": null,
+      "content": "The skein models.\nThe skein theory model of Hn is based on the framed Homﬂy skein relations,\nin their simplest form\n−\n=\n(s −s−1)\nand\n=\nv−1\n.\nThe Homﬂy skein S(F) of a planar surface F, with some designated input\nand output boundary points, is deﬁned as linear combinations of oriented\ntangles in F, modulo these two local relations, and Reidemeister moves II\nand III. The coeﬃcient ring can be taken as Λ = Z[v±1, s±1] with powers of\nsk −s−k in the denominators.\nEvery skein admits a mirror map,\n: S(F) →S(F) induced by switching\nall crossings in a tangle, coupled with inverting v and s in Λ.\nWrite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variants of the Hecke algebras.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-variants-of-the-hecke-algebras.md",
+      "narrative": null,
+      "content": "Variants of the Hecke algebras.\nA simple adjustment of the skein relations, as in [13], allows for a skein model\nof Hn whose parameters can be readily adapted to match any of the diﬀerent\nappearances of the algebra.\n4\nExtend the coeﬃcient ring to include an invertible parameter x, and deﬁne\nthe skein Rn\nn(x, v, s) by linear combinations of oriented n-tangles modulo the\nrelations\nx−1\n−x\n=\n(s −s−1)\nand\n=\nxv−1\n.\nThere is a natural algebra homomorphism Rn\nn(v, s) →Rn\nn(x, v, s) induced\nby replacing each tangle T in the skein Rn\nn(v, s) by xwr(T)T in Rn\nn(x, v, s),\nwhere wr(T) is the writhe of T.\nW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric views of the Murphy operators.",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-geometric-views-of-the-murphy-operators.md",
+      "narrative": null,
+      "content": "Geometric views of the Murphy operators.\nThe Murphy operators M(j) and their sum M have simple skein represen-\ntatives as shown here, using Rn\nn(v, s) as the model for the Hecke algebra\nHn.\nTheorem 2.1 (Ram). The Murphy operator M(j) can be represented in Hn\nby a single braid T(j), up to linear combination with the identity.\n5\nTheorem 2.2 (Morton). The sum M of the Murphy operators can be rep-\nresented in Hn by a single tangle T (n), again up to linear combination with\nthe identity.\nProof of theorem 2.1:\nIn [15] Ram notes that M(j) can almost be repre-\nsented by the single braid T(j) pictured,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Ram",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "The Murphy operator M(j) can be represented in Hn by a single braid T(j), up to linear combination with the identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Morton",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "The sum M of the Murphy operators can be rep- resented in Hn by a single tangle T (n), again up to linear combination with the identity. Proof of theorem 2.1: In [15] Ram notes that M(j) can almost be repre- sented by the single braid T(j) pictured, where ‘almost’ means that M(j) is a linear combination of T(j) and the identity. Set T(j) = j in Hn, for each j ≤n including the case T(1) = 1. Skein theory shows quickly that T(j) −1 = zM(j), giving M(j) = T(j) −1 s −s−1 . ✷ The elements T(j) will do equally well in place of M(j), so long as z̸ = 0, in other words away from C[Sn]. It is clear geom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The skein of the annulus.",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-3-the-skein-of-the-annulus.md",
+      "narrative": null,
+      "content": "The skein of the annulus.\nThe Homﬂy skein of the annulus, C, as discussed in [12] and originally in\n[16], is deﬁned as linear combinations of diagrams in the annulus, modulo\nthe Homﬂy skein relations. The element X ∈C will be indicated on a diagram\nas\nX .\nWe shall make use of the results of section 2 to study C, and also to ﬁnd\nsimple skein representatives for the power sums of the Murphy operators in\nHn in a way which is independent of n.\nThe best known relation of C with the Hecke algebra Hn is the closure\nmap Rn\nn →C, induced by taking a tangle T to its closure ˆT in the annulus,\ndeﬁned by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The eigenvalues of ϕ|Cn are all distinct.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/cor-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "cor-sec-004-03.md",
+      "narrative": null,
+      "content": "We can write sn−1[n]hn = hn−1γn, where hn = an/ϕs(an) is the true idempotent. The element hn ∈Hn is the idempotent which corresponds to the single row with n cells. The single column idempotent is given from hn by using −s−1 in place of s. With a slight abuse of notation write hn ∈C in place of ˆhn for the closure of this element in C, and en ∈C for the closure of the single column idempotent.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/cor-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "cor-sec-004-07.md",
+      "narrative": null,
+      "content": "The inverse series to A(t) = 1 + z P Amtm is A(t) = 1 − z P Amtm, where Am is the negative closed braid corresponding to Am.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "We can write an = an−1γn, where γn = 1 + sσn−1 + s2σn−1σn−2 + · · · + sn−1σn−1 · · · σ1. We have γn+1 = 1 + sσnγn, and also an immediate skein relation γ n+1 = γ n + sn , in Rn+1 n+1. The next lemma is proved in [13].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "For any braid β ∈Bn we have anβ = ϕs(β)an = βan, where ϕs(β) = swr(β). Similar results, with s replaced by −s−1, hold for bn. The element an then satisﬁes a2 n = ϕs(an)an = ϕs(an−1)ϕs(γn)an. Since ϕs(γn) = 1 + s2 + · · · + s2n−2 = sn−1[n], we have an immediate corollary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "The elements {hn} are invariant under the mirror map switch- ing crossings and inverting s and v.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric functions and the skein of the annulus.",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-31-symmetric-functions-and-the-skein-of-the-annu.md",
+      "narrative": null,
+      "content": "Symmetric functions and the skein of the annulus.\nIn this section I recall some explicit results about elements in the Hecke\nalgebras and their closure in C, and their interpretation in the context of\nsymmetric functions, following the methods of Macdonald. This leads to a\nsimple description in terms of generating functions of some interrelations in\nC, and also of the elements to be used later to represent the power sums of\nthe Murphy operators.\nThe starting point is the description of the two simplest idempotents in\nHn, corresponding to the single row and column Young diagrams. These\nare give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "Aiston uses the notation Qcn and Qdn in [1], in place of en and hn which are used here to suggest the terminology and techniques of symmetric functions from [11]. Write H(t) = 1 + ∞ X n=1 hntn for the generating function of the elements {hn}, regarded as a formal power series with coeﬃcients in C, and similarly set E(t) = 1 + P∞ n=1 entn. In [1] Aiston showed that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-004-05.md",
+      "narrative": null,
+      "content": "Write A(t) = 1 + z P∞ m=1 Amtm, with z = s −s−1. Then A(t) = H(st) H(s−1t) = H(st)E(−s−1t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric functions of the Murphy operators.",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-32-symmetric-functions-of-the-murphy-operators.md",
+      "narrative": null,
+      "content": "Symmetric functions of the Murphy operators.\nThe main result in this paper, besides theorem 2.2 and its consequences, is\nan expression for the mth power sum of the Murphy operators in Hn in terms\nof the element Pm ∈C.\nFor this I use a previously unremarked relation between the Hecke alge-\nbras and the skein of the annulus. This relation takes the form of a very\nnatural homomorphism ψn from C to the centre of each algebra Hn.\nThe diagram\nD =\n13\ndetermines a map ψn : C →Hn, induced by placing X ∈C around the circle\nin D and the identity of Hn on the arc, to get\nψn(X) =\nX\n∈Hn.\nIt is clear that\nψn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "For any n we have ψn(Pm) −ψ0(Pm) = (sm −s−m)v−m n X j=1 T(j)m. This is particularly satisfactory in that Pm itself arises as a power sum, although not of any identiﬁable objects in the ring C itself. Since any element X ∈C+ can be written as a polynomial in {Pm} we can then express ψ(X) as a symmetric function of the Murphy operators T(j). It is useful to be able to write the elements ψ(hi) in terms of the Murphy operators; theorem 3.9 leads to a compact expression using formal power series with coeﬃcients in the centre of the Hecke algebra. I shall do this in terms of the Murphy series HM(t)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The annulus with two boundary points.",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-4-the-annulus-with-two-boundary-points.md",
+      "narrative": null,
+      "content": "The annulus with two boundary points.\nTo prove theorems 3.6 and 3.9 I introduce a third skein S(F), whose under-\nlying surface is the annulus with a single input on one boundary component\nand corresponding output on the other, as shown,\n.\nWrite A for this skein, whose elements are represented as linear combi-\nnations of oriented tangles in the annulus consisting of a single arc and a\nnumber of closed curves. As for the skein C of the annulus there is a product\non A induced by placing one annulus outside the other. The identity element\ne ∈A is represented by the tangle\n.\nWrite a ∈A for the elem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic properties of A.",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-41-algebraic-properties-of-a.md",
+      "narrative": null,
+      "content": "Algebraic properties of A.\nKawagoe [9] and other authors have used a skein which is linearly isomorphic\nto A, based on the annulus with input and output on the same component.\nThe signiﬁcant advantage of A lies in its algebraic properties.\nBoth l and r are algebra homomorphisms, since it is clear diagrammati-\ncally that l(c1, a1)l(c2, a2) = l(c1c2, a1a2), while r behaves similarly.\nTheorem 4.1 The algebra A is commutative.\nProof :\nUnlike the case of C this is not immediately clear. Using standard\nskein theory techniques we can represent any element of A as a linear combi-\nnation of tangles con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "The algebra A is commutative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "For m ≥1 we have [Pm, e] = (sm −s−m)am.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/cor-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "cor-sec-008-02.md",
+      "narrative": null,
+      "content": "As power series with coeﬃcients in A we have l(H(t), e) = (e −s−1at)Y (t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skein interaction between Hn, A and C.",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-42-skein-interaction-between-hn-a-and-c.md",
+      "narrative": null,
+      "content": "Skein interaction between Hn, A and C.\nWe can make use of wiring diagrams, as described in [13], to induce linear\nmaps between skeins. A wiring diagram W is an inclusion of one surface F\ninto another F ′, along with a ﬁxed diagram of curves in F ′ which avoid F,\nand connect any distinguished input and output points on the boundaries\nof both, respecting orientation. A wiring W induces a linear map, denoted\nS(W) : S(F) →S(F ′), using W to extend any diagram in F to a diagram\nin F ′.\nTo avoid over-elaborate notation I shall write W in place of S(W) where\nthere is no risk of confusion.\nThe diagram",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "The elements Wn(hn+1), Wn(hn) and l(hn, e) in A satisfy the linear relation [n + 1]Wn(hn+1) = s−1[n]Wn(hn) + l(hn, e).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0102098v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] A.K. Aiston, Skein theoretic idempotents of Hecke algebras and quan-\ntum group invariants. PhD dissertation, University of Liverpool, 1996.\n[2] A.K. Aiston, Adams operators and knot decorations. Liverpool Univer-\nsity preprint 1997, q-alg 9711015.\n[3] C. Blanchet, Hecke algebras, modular categories and 3-manifolds quan-\ntum invariants. Topology 39 (2000), 193-223.\n[4] R. Dipper and G.D. James, Blocks and idempotents of Hecke algebras\nof general linear groups. Proc. London Math. Soc. 54 (1987), 57-82.\n[5] A. Gyoja, A q-analogue of Young symmetrisers. Osaka J. Math. 23\n(1986), 841-852.\n21\n[6",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

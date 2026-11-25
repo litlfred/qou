@@ -1,0 +1,253 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s00453-026-01372-w",
+  "blocks": [
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-concentration-of-submodular-functions-and-read-k.md",
+      "narrative": null,
+      "content": "Families Under Negative Dependence\nSharmila Duppala1 · George Z. Li2 · Juan Luque1 · Aravind Srinivasan1 ·\nRenata Valieva1\nReceived: 8 May 2025 / Accepted: 21 January 2026 / Published online: 16 February 2026\n© The Author(s) 2026",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "We study the question of whether submodular functions of random variables satisfying\nvarious notions of negative dependence satisfy Chernoff-like concentration inequal-\nities. We prove such a concentration inequality for the lower tail when the random\nvariables satisfy negative association or negative regression, partially resolving an\nopen problem raised in ([1]). Previous work showed such concentration results for\nrandom variables that come from speciﬁc dependent-rounding algorithms ([2, 3]). We\ndiscuss some applications of our results to combinatorial optimization and beyond. We\nalso show a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Concentration inequalities are ubiquitous in discrete mathematics and theoretical com-\nputer science [5, 6]. The most canonical examples are the Chernoff-Hoeffding bounds,\nwhich show strong concentration for linear combinations of independent random vari-\nables [7, 8]. In some applications, the condition of independence is too restrictive, so\nweaker notions have been considered [9–11]. Of interest to us is the setting where\nthe random variables are negatively correlated, which arises naturally, for example, in\nThis work was originally presented at ITCS 2025.\nB George Z. Li\ngzli929@gmail.com\nB",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Algorithmica (2026) 88:21\nhttps://doi.org/10.1007/s00453-026-01372-w",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notions of Negative Dependence",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-21-notions-of-negative-dependence.md",
+      "narrative": null,
+      "content": "We begin by deﬁning the notion of negative dependence commonly found in the\nliterature.\nNegative Cylinder Dependence.\nA collection of Boolean random variables X1, . . . , Xn is said to be negative cylinder\ndependent if for every S ⊆[n],\nE\n\u0002\u0003\ni∈S Xi\n\u0004\n≤\u0003\ni∈S E [Xi]\nand\nE\n\u0002\u0003\ni∈S (1 −Xi)\n\u0004\n≤\u0003\ni∈S E [1 −Xi] .\nNegative cylinder dependence is the weaker notion considered here. It is known to\nimply Chernoff bounds for linear combinations of X1, . . . , Xn but it is insufﬁcient to\nshow our submodular concentration results.\nNegative Association.\nA collection of random variables X1, . . . , Xn is said t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Submodular Functions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-22-submodular-functions.md",
+      "narrative": null,
+      "content": "We also give a quick review of the basics of submodular functions.\nSubmodular Functions.\nWe say that a function f : {0, 1}n →R is submodular if\nf (X1, . . . , Xi−1, 1, Xi+1, . . . Xn) −f (X1, . . . , Xi−1, 0, Xi+1, . . . Xn)\nis a non-increasing function of X1, . . . , Xi−1, Xi+1, . . . , Xn for each i ∈[n]. When\nviewing the binary input of f as the indicator vector for a set, this is equivalent to the\nmore common deﬁnition that f is submodular if for any X, Y ⊆[n] with X ⊆Y and\nany x /∈Y, we have\nf (X ∪{x}) −f (X) ≥f (Y ∪{x}) −f (Y).\nSupermodular Functions.\nWe say that a function g : {0, 1}n →",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Submodular Chernoff Bounds",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-3-submodular-chernoff-bounds.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1-Negative Association and Weak Negative Regression",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-31-1-negative-association-and-weak-negative-regr.md",
+      "narrative": null,
+      "content": "We ﬁrst deﬁne the weaker notion of negative dependence which we work with, called\n1-negative association, and prove some simple properties about it. We also deﬁne a\nrelated notion of weak negative regression, which is the analogue of 1-negative asso-\nciation for the notion of negative regression, and we show the equivalence between\nthe two for binary random variables and show that weak negative regression is strictly\nstronger in general. After an initial draft, we discovered that [1] had already intro-\nduced the notion of weak negative regression for binary random variables in a context\ncomple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Submodular Concentration",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-32-proof-of-submodular-concentration.md",
+      "narrative": null,
+      "content": "We will now prove our main result. As mentioned in the introduction, our proof is\nbased on the standard technique of bounding the exponential moments, which can be\nenhanced using the p-th moment method. The following lemma contains our main\ntechnical contribution, which implies that the exponential moments of f (X1, . . . , Xn)\nunder 1-negative association are dominated by that under independence. Our results\nwill follow easily afterwards.\nLemma 3.1 Let X1, . . . , Xn be 1-negatively associated random variables and let\nX∗\n1, . . . , X∗\nn be independent random variables with the same marginal d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration of read-k families",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-33-concentration-of-read-k-families.md",
+      "narrative": null,
+      "content": "In this subsection, we illustrate an application of our proof technique to give concen-\ntration for a read-k family of supermodular functions. Read-k families arise naturally\nin problems such as subgraph counting in random graphs, and can be seen as a comple-\nmentary weak dependence notion to that of low-degree polynomials [29]. Our work\ngives the ﬁrst concentration results for these problems under negative dependence.\nLet’s consider this notion of weak dependence deﬁned in [4]. Let Y1, . . . , Yn be\nrandom variables and assume that they can be factored as functions of random variables\nX1, . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-acknowledgements.md",
+      "narrative": null,
+      "content": "Author Contributions All ﬁve authors participated in discussion of the proofs, reviewed and approved the\nﬁnal version of the manuscript.\nFunding All authors were supported in part by NSF award number CCF-1918749.\nData Availability No datasets were generated or analysed during the current study.\nDeclarations\nCompeting interests Funding: All authors were supported in part by NSF award number CCF-1918749.\nEmployment: Afﬁliation with University of Maryland, College Park, and Carnegie Mellon University\nOpenAccess ThisarticleislicensedunderaCreativeCommonsAttribution4.0InternationalLicense,which\nper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00453-026-01372-w/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "1. Qiu, F., Singla, S.: Submodular dominance and applications. In: Chakrabarti, A., Swamy, C.\n(eds.) Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques,\nAPPROX/RANDOM 2022. LIPIcs, vol. 245, pp. 44–14421. Schloss Dagstuhl - Leibniz-Zentrum für\nInformatik, ??? (2022). https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2022.44\n2. Chekuri, C., Vondrák, J., Zenklusen, R.: Dependent randomized rounding via exchange properties of\ncombinatorial structures. In: 51th Annual IEEE Symposium on Foundations of Computer Science,\nFOCS 2010, pp. 575–584. IEEE Computer Society, ?",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

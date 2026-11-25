@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-u1-equivariant-reduction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:u1-equivariant-reduction",
+  "kind": "proposition",
+  "title": "$\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/def-commutative-qou"
+  ],
+  "tags": [
+    "exceptional-divisor",
+    "u1",
+    "equivariant",
+    "commutative-limit"
+  ],
+  "leanRef": "qou:QOU.Core.u1EquivariantReduction",
+  "text": "u1-equivariant-reduction.md",
+  "leanSource": "u1-equivariant-reduction.lean",
+  "provenance": "authored"
+}

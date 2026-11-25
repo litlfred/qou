@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sim-descent-rate-probe",
+  "@type": [
+    "folio-assistant-core:Simulator"
+  ],
+  "label": "sim:descent-rate-probe",
+  "kind": "simulator",
+  "title": "Empirical descent-rate probe (SYT-cell pairs)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-tower-syt-cells"
+  ],
+  "tags": [
+    "syt",
+    "descent-rate",
+    "empirical",
+    "todo-html",
+    "interactive"
+  ],
+  "text": "descent-rate-probe-sim.md",
+  "provenance": "authored"
+}

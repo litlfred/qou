@@ -1,0 +1,498 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1301.4504v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nDEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60TH BIRTHDAY\nQuantum Computation vs. Firewalls\nDaniel Harlowa Patrick Haydenb\naPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA\nbSchool of Computer Science, McGill University\nE-mail: dharlow@princeton.edu, patrick@cs.mcgill.ca\nAbstract: In this paper we discuss quantum computational restrictions on the types\nof thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to\nargue against the smoothness of black hole horizons.\nWe argue that the quantum\ncomputa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The recently proposed firewall phenomenon [@Almheiri:2012rt] has dramatically emphasized the extent to which black holes remain interesting and mysterious in quantum gravity. Using \"reasonable\" assumptions about the structure of the quantum theory of black holes, the authors of [@Almheiri:2012rt], henceforth referred to as AMPS, have argued that unitarity of black hole evaporation, along with some limited form of locality, is inconsistent with a smooth horizon for an observer falling into an \"old\" black hole.[^1] There has been significant discussion of this claim in the literature, but in our",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Firewall Argument",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-the-firewall-argument.md",
+      "narrative": null,
+      "content": "The Firewall Argument\nWe begin with a somewhat reorganized presentation of the original argument of [1].\nTheir argument rests on some basic assumptions about the quantum description of\na black hole from the points of view of an external observer Charlie and an infalling\nobserver Alice, and we will try to be clear about what these assumptions are. The\nargument has many ﬁne technical points, and we will not address all of them. Our goal\nis to motivate equation (2.4), on which the rest of our paper will be based.\n12Adam Brown has pointed out that somebody who believes this “pause the simulation a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Quantum Black Hole from the Outside",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-21-a-quantum-black-hole-from-the-outside.md",
+      "narrative": null,
+      "content": "We'll first discuss Charlie's description, which is based on the following three postulates:\n\n-   According to Charlie, the formation and evaporation of the black hole is a unitary process. Moreover, in addition to an asymptotic S-matrix, we can also think about either continuous or discrete time evolution in which at any given time there is a pure quantum state $|\\Psi\\rangle$ in some Hilbert space $\\mathcal{H}_{outside}$.\n\n-   At any given time in this unitary evolution we can factorize $\\mathcal{H}_{outside}$ into subfactors with simple semiclassical interpretations: $$\\label{outfactor}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Quantum Black Hole from the Inside",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-22-a-quantum-black-hole-from-the-inside.md",
+      "narrative": null,
+      "content": "We now consider Alice the infalling observer's point of view. As mentioned in the introduction, it may be possible to \"embed\" Alice's quantum mechanics into Charlie's via some sort of nontrivial operator mapping. We will discuss this eventually but for the moment will just treat Alice's theory as an independent construction. Here are the basic assumptions about it:\n\n-   Although Alice eventually hits the singularity, we imagine that well before that she has an approximately quantum mechanical description of her experiences in terms of a quantum state on a time slice like the one shown in figur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Way Out?",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-23-a-way-out.md",
+      "narrative": null,
+      "content": "A key step in the AMPS argument is that $B$ and $R_B$ are accessible to both Charlie and Alice and that therefore they must agree on the entanglement between them. But is this really true? In [@harlow] it was argued that it is difficult for Alice to measure $B$ because she passes through it quickly, but the details of that argument have not worked out satisfactorily. The much more difficult measurement however is the one on $R_B$. $R_B$ is defined as the subfactor of the Hawking radiation which is entangled with $B$, but this subfactor is presumably very convoluted from the point of view of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Then $$|P_1(a)-P_2(a)|=|\\mathrm{Tr}\\left\\{(\\rho_1-\\rho_2)\\Pi_a\\right\\}|\\leq||(\\rho_1-\\rho_2)||_1,$$ so if the trace norm of the difference of two density operators is less than $\\epsilon$ then the probabilities they predict for any experimental result will differ by at most $\\epsilon$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The AMPS Experiment as a Quantum Computation",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-3-the-amps-experiment-as-a-quantum-computation.md",
+      "narrative": null,
+      "content": "[]{#sec3 label=\"sec3\"}\n\nWe now begin our discussion of the decoding problem confronting Alice. We will phrase the discussion in terms of Charlie's Hilbert space, since for the moment we are following AMPS and granting that Charlie and Alice must agree on the density matrix of $\\mathcal{H}_B\\otimes \\mathcal{H}_R$. For simplicity we will throughout model all Hilbert spaces using finite numbers of qubits. In the Schmidt basis the state of the old black hole she is interested in is given by equation [\\[Psi\\]](#Psi){reference-type=\"eqref\" reference=\"Psi\"}, but this basis is very inconvenient for di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Computing is Hard",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-31-quantum-computing-is-hard.md",
+      "narrative": null,
+      "content": "[]{#bigcompsect label=\"bigcompsect\"} We begin with a rather formal discussion of Alice's computation to illustrate some basic limitations on what is possible; we will take a more standard approach in the following subsection.\n\nIn order to do her computation Alice needs to adjoin the radiation to some computer, whose initial state lives in a new Hilbert space $\\mathcal{H}_C$, and then wait for the natural unitary evolution $U_{comp}$ on $\\mathcal{H}_R\\otimes\\mathcal{H}_C$ to undo $U_R$ and put the bits which are entangled with $B$ into an easily accessible form, let's say the first $k$ qubits o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Implementing a General Unitary Transformation with Quantum Gates",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-007-32-implementing-a-general-unitary-transformation.md",
+      "narrative": null,
+      "content": "[]{#compsec label=\"compsec\"} In our world, the result of the previous section, that doing a quantum computation at worst takes a time which is double exponential in the entropy of the computer, had better not be optimal if we are ever to do any quantum computation at all. It can be improved upon of course, and the reason is that locality of interactions makes the dependence of $U_{comp}$ on time and computer size very special indeed.[^1] Since no quantum computer has yet been built we do not know exactly how one might be implemented physically, but there is a widely accepted model for quantum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Why is Alice's Computation Slower than the Black Hole Dynamics?",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-33-why-is-alices-computation-slower-than-the-bla.md",
+      "narrative": null,
+      "content": "[]{#slowcomp label=\"slowcomp\"} We now turn to the question of whether or not the black hole dynamics constrain $U_R$ in any way that could help Alice implement it faster. One thing we know about the black hole is that it produces the state [\\[compPsi\\]](#compPsi){reference-type=\"eqref\" reference=\"compPsi\"} relatively quickly, in a time that scales like $n^{3/2}$ for a Schwarzschild black hole. This seems to suggest that Alice might be able implement $U_R^\\dagger$ quickly by some sort of time-reversal. This turns out not to be the case. To explain this we introduce a slightly more detailed mode",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two Counting Arguments",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-009-34-two-counting-arguments.md",
+      "narrative": null,
+      "content": "So far we have mostly restricted ourselves to thinking about a particular black hole microstate, which in the previous section we took to be an element of the basis where $U_{dyn}$ can be constructed out of a polynomial-size quantum circuit. By considering more general initial states we can prove that for a generic initial state the decoding necessarily takes exponential time. Restating the setup of the previous section, we can think of the black hole as a polynomial-size circuit $U_{dyn}$ which acts on a set of microstates $|i\\rangle$ as $$U_{dyn}|i\\rangle=\\frac{1}{\\sqrt{|B||H|}}\\sum_{bh}|b\\r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Coding and Error Correction",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-4-quantum-coding-and-error-correction.md",
+      "narrative": null,
+      "content": "[]{#decsect label=\"decsect\"} The theory of quantum error correcting codes has interesting implications for the AMPS experiment, which we discuss in this section.[^1] We will review the main points of this theory assuming no prior experience with the subject. This will be something of a sidetrip from our main exposition, so casual readers may want to skip over this section in a first reading. For the impatient the conclusions of relevance for AMPS are summarized at the end of the section.\n\n[^1]: A recent paper [@Verlinde:2012cy] also discussed the AMPS argument in the language of error correcti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of Error Correcting Codes",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-41-review-of-error-correcting-codes.md",
+      "narrative": null,
+      "content": "[]{#ecrev label=\"ecrev\"} Typically quantum systems cannot be isolated from their environment. It is interesting to understand to what extent a system which began in an unknown state can be restored to that state after it has interacted nontrivially with its environment. Usually this is done by introducing another ancillary system and transferring the entanglement with the environment from the system whose state we want to restore to the ancillary system. We show this pictorially in figure [1](#correction){reference-type=\"ref\" reference=\"correction\"}.\n\n<figure id=\"correction\">\n<div class=\"cente",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Complexity, Stabilizer Codes, and NP-Hardness",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-012-42-computational-complexity-stabilizer-codes-and.md",
+      "narrative": null,
+      "content": "[]{#corrcomp label=\"corrcomp\"} One obvious source of computational hardness in the error correction procedure described in the previous section is that in measuring the check operators and applying corrections, we need to repeatedly use the encoding transformation $U_{enc}$. If this unitary is difficult to implement as a quantum circuit, the error correction procedure will be very time-consuming. In our discussion of the AMPS experiment below however, $U_{enc}$ will always be implementable with a small circuit. The rest of the correction procedure seems straightforward, but there is one crucia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alice's Task as Error Correction",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-013-43-alices-task-as-error-correction.md",
+      "narrative": null,
+      "content": "Having reviewed all this formalism we now see what it has to tell us about Alice's computing task. There is a straightforward way to recast what Alice is trying to do as a quantum coding problem [@HaydenPreskill]. We can write the state [\\[compPsi\\]](#compPsi){reference-type=\"eqref\" reference=\"compPsi\"} of the black hole as $$|\\Psi\\rangle=\\frac{1}{\\sqrt{|B|}}\\sum |b\\rangle_B |\\bar{b}\\rangle,$$ where $$\\label{bhcode}\n|\\bar{b}\\rangle\\equiv \\frac{1}{\\sqrt{|H|}} |h\\rangle_H U_R |bh0\\rangle_R$$ is a basis for a $k$ dimensional subspace of $\\mathcal{H}_H\\otimes\\mathcal{H}_R$. We can obviously interp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Error Correction and Zero-Knowledge Proofs",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "../sections/sec-014-44-error-correction-and-zero-knowledge-proofs.md",
+      "narrative": null,
+      "content": "[]{#qszksubsect label=\"qszksubsect\"}\n\nWe've seen that the known [NP]{.sans-serif}-hardness results about decoding quantum error correcting codes, although suggestive, break down for technical reasons when $k$ is order one and thus unfortunately can't be invoked directly to draw any firm conclusions about $U_R$ in that case. Moreover one might worry that the appearance of the [NP]{.sans-serif}-complete problem [Coset Weights]{.sans-serif} in the argument of [@hsieh2011np] was a consequence of their particular decoding strategy; perhaps some more exotic correction procedure could somehow do the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More General Black Holes",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-015-5-more-general-black-holes.md",
+      "narrative": null,
+      "content": "[]{#adssect label=\"adssect\"} For a Schwarzschild black hole the evaporation time scales like the entropy to the $3/2$ power, which is clearly much too fast for Alice to complete a computational task that requires time that is exponential in the entropy. In this section we consider the AMPS experiment for some more general classes of black holes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schwarzschild in a Box",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-016-51-schwarzschild-in-a-box.md",
+      "narrative": null,
+      "content": "In order for Alice to have any chance of doing the AMPS experiment given our claim of exponential decoding time, she will clearly need some way of slowing down the evaporation of the black hole. The simplest thing she could imagine is letting the black hole become old and then putting it inside of some sort of reflecting box to prevent it from evaporating.\n\nClosed finite entropy systems however behave very strangely over times of order $e^S$. For example over that kind of timescale a gas of particles in a room sometimes finds itself collected up in the corner of the room, and other times find",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reissner-Nordstrom",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-017-52-reissner-nordstrom.md",
+      "narrative": null,
+      "content": "Another way Alice could try to extend the lifetime of her black hole is by giving it some charge. The Reissner-Nordstrom black hole of mass $M$ and charge $Q$ has metric $$ds^2=-dt^2f(r)+\\frac{dr^2}{f(r)}+r^2 d\\Omega_2^2,$$ where $$f(r)=1-\\frac{2GM}{r}+\\frac{GQ^2}{r^2}\\equiv \\frac{(r-r_+)(r-r_-)}{r^2}$$ and $$r_\\pm=GM\\pm\\sqrt{G(GM^2-Q^2)}.$$ Its entropy is $$S=\\frac{\\pi r_+^2}{G}\\equiv \\frac{\\pi r_+^2}{\\ell_p^2}$$ and its temperature is $$T=\\frac{r_+-r_-}{4\\pi r_+^2}.$$ We see when $M\\ell_P=Q$, the black hole is extremal and the temperature is zero. If we start the black hole with mass above e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Near Extremal AdS Throat",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-018-53-near-extremal-ads-throat.md",
+      "narrative": null,
+      "content": "Recall the $AdS_d$ Schwarzschild geometry $$\\label{AdSsch}\nds^2=-f(r)dt^2+\\frac{dr^2}{f(r)}+r^2d\\Omega_{d-2}^2,$$ with $$f(r)=1+\\left(\\frac{r}{R}\\right)^2-\\frac{\\alpha}{r^{d-3}}.$$ A scalar field on this background feels an effective potential. In particular if we look for solutions of the Klein-Gordon equation of the form $$\\phi\\equiv r^{-\\frac{d-2}{2}}e^{-i\\omega t}Y_{\\ell}(\\Omega_{d-2})\\Psi_{\\omega \\ell}(r),$$ it is not hard to see that $\\Psi_{\\omega \\ell}$ must obey a Schrodinger-type equation $$-\\frac{d}{dr_*^2}\\Psi_{\\omega \\ell}+V_{eff}(r)\\Psi_{\\omega\\ell}=\\omega^2 \\Psi_{\\omega \\ell}.$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Brane Setup",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-019-531-the-brane-setup.md",
+      "narrative": null,
+      "content": "To quantitatively test the feasibility of using a throat to evade the computational hardness of decoding, we need a specific example of this type of geometry. In string theory there is a standard way of producing throat geometries with the desired properties by stacking branes; for example D3 branes in type IIB string theory or M5 branes in M-theory. To realize the geometry [\\[AdSsch\\]](#AdSsch){reference-type=\"eqref\" reference=\"AdSsch\"} explicitly we would need a configuration of branes which is spherically symmetric and stable. Spherical symmetry is a bit inconvenient because branes in spher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hawking-Page Transition for Toroidal Black Holes",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-020-532-hawking-page-transition-for-toroidal-black-h.md",
+      "narrative": null,
+      "content": "For spherical black holes in AdS with metric [\\[AdSsch\\]](#AdSsch){reference-type=\"eqref\" reference=\"AdSsch\"}, it is well known [@Hawking:1982dh; @Witten:1998zw] that for small enough values of $\\alpha$ the black hole is unstable to decay by Hawking radiation. The crossover point is when the temperature is of order $R^{-1}$.[^1] This phenomenon provides a natural endpoint for the type of decay we discussed in the previous section; the black hole will very slowly radiate energy up the throat and into Minkowski space until it reaches the critical temperature, after which it will decay essentiall",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time Scales",
+      "pageStart": 50,
+      "pageEnd": 56,
+      "target": "../sections/sec-021-533-time-scales.md",
+      "narrative": null,
+      "content": "In this section we work out the time scales for sending signals down the throat from the Minkowski region to the vicinity of the black hole horizon at $r_0$ in [\\[nonext\\]](#nonext){reference-type=\"eqref\" reference=\"nonext\"}, as well as the time to evaporate down to the transition temperature just discussed in the previous section. Since we will ultimately compare these time scales to the computation and recurrence times, both of which are exponential in the entropy of the black hole, we will be focused on extracting only the pieces of them which are exponential in entropy. Specifically we wil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Structure of the Hilbert Space",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "../sections/sec-022-6-the-structure-of-the-hilbert-space.md",
+      "narrative": null,
+      "content": "[]{#options label=\"options\"} The main argument of this paper is now complete, and although the paper is already long, we can't resist making a few comments about the possible implications of our results for how to think about the interior of a black hole. In the introduction we briefly discussed two alternatives, \"strong complementarity\" and \"standard complementarity\", for how to think about Alice the infalling observer's quantum mechanics. It is very important to decide which, if either, of these frameworks is the correct way to think about black hole interiors. In this section we assess the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.4504v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The Absorption Probability for a Nambu-Goto String",
+      "pageStart": 59,
+      "pageEnd": 66,
+      "target": "../sections/sec-023-a-the-absorption-probability-for-a-nambu-goto-st.md",
+      "narrative": null,
+      "content": "The Absorption Probability for a Nambu-Goto String\nIn this section we compute the low-energy absorption probability for transverse oscilla-\ntions of a string stretching down the extremal black three brane geometry (5.17). This\nhas been previously been computed by Maldacena and Callan [93]; our method is the\nsame as in [88] for a massless scalar. The Nambu-Goto action is\nSNG = −1\n2πℓ2\ns\nZ\nd2σ\np\n−det (GMN∂iXM∂iXN),\n(A.1)\nand parametrizing the string in static gauge and considering only oscillations in the S5\ndirection we have\nt = τ\nr = σ⃗\nx = 0\nθ = θ(τ, σ).\n– 58 –\nLinearizing the action in θ we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

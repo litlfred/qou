@@ -1,0 +1,432 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "motivicperiodsandp1minus3pointsv3",
+  "blocks": [
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/ex-sec-000-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "ex-sec-000-02.md",
+      "narrative": null,
+      "content": "Let T be any category of mixed Tate motives over a number ﬁeld. It contains the Lefschetz motive L = Q(−1), which is the motive H1(P1\\{0, ∞}). Its de Rham cohomology is the Q-vector space spanned by the class [ dz z ] and its Betti homology is spanned by a small positive loop γ0 around 0. The Lefschetz motivic period is Lm = [L, [ dz z ], [γ0]] ∈ Pm T . Its period is per(Lm) = 2πi. It transforms, under the rational points of the de Rham Galois group of T , by Lm 7→λLm, for any λ ∈Q×. This construction can be applied to any pair of ﬁber functors to obtain diﬀerent notions of motivic periods. In",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prop-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-000-06.md",
+      "narrative": null,
+      "content": "The scheme 0Π1 is an A-torsor. In particular, the action of A on 1 ∈0Π1 deﬁnes an isomorphism of schemes a 7→a(1) : A −→0Π1 . (2.11) The action of A on 0Π1 deﬁnes, via this isomorphism, a new group law ◦: 0Π1 × 0Π1 →0Π1 . It is given explicitly on formal power series by Ihara’s formula A(x0, x1) ◦G(x0, x1) = G(x0, Ax1A−1)A (2.12)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The role of the projective line minus three points X = P1\\{0, 1, ∞} in relation to\nGalois theory can be traced back to Belyi’s theorem [4] (1979):\nTheorem 1.1. Every smooth projective algebraic curve deﬁned over Q can be\nrealised as a ramiﬁed cover of P1, whose ramiﬁcation locus is contained in {0, 1, ∞}.\nBelyi deduced that the absolute Galois group of Q acts faithfully on the proﬁnite\ncompletion of the fundamental group of X, i.e., the map\nGal(Q/Q) →Aut(bπ1(X(C), b))\n(1.1)\nwhere b ∈X(Q), is injective. In his famous proposal ‘Esquisse d’un programme’\nin 1984 [21], Grothendieck suggested studyi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Motivic periods and P1\\{0, 1, ∞}\nFrancis Brown∗\nAbstract.\nThis is a review of the theory of the motivic fundamental group of the\nprojective line minus three points, and its relation to multiple zeta values.\nMathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.\nKeywords. Belyi’s theorem, multiple zeta values, mixed Tate motives, modular forms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/rem-sec-000-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "rem-sec-000-05.md",
+      "narrative": null,
+      "content": "It is astonishing that one obtains much useful information at all from such symmetry considerations. Nonetheless, it is enough to show the faithfulness of the action of GdR (below). There are further structures respected by GdR, such as compatibilities with automorphisms of P1\\{0, 1, ∞}. They are not required. 2.4. Ihara action. Let A denote the group of automorphisms of the groupoid xΠy for x, y ∈{0, 1} which respects the structures 1, 2 described in §2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Every smooth projective algebraic curve deﬁned over Q can be realised as a ramiﬁed cover of P1, whose ramiﬁcation locus is contained in {0, 1, ∞}. Belyi deduced that the absolute Galois group of Q acts faithfully on the proﬁnite completion of the fundamental group of X, i.e., the map Gal(Q/Q) →Aut(bπ1(X(C), b)) (1.1) where b ∈X(Q), is injective. In his famous proposal ‘Esquisse d’un programme’ in 1984 [21], Grothendieck suggested studying the absolute Galois group of Q via its action on completions of fundamental groups of moduli spaces of curves Mg,n of genus g with n ordered marked points (X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "The Q-vector space spanned by multiple zeta values of weight N has dimension at most dN, where the integers dN are deﬁned in (1.6). So far, this does not use the action of the motivic Galois group, only a bound on the size of the motivic periods of MT (Z). The role of P1\\{0, 1, ∞} is that the automorphism group of its fundamental groupoid yields a formula for the coaction (1.4) on the motivic multiple zeta values (§2.5). The main theorem uses this coaction in an essential way, and is inspired by a conjecture of M. Hoﬀman [25].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "There is an ind-object (direct limit of objects) O(πmot (X, → 10, − → 11)) ∈Ind (MT (Z)) (2.3) whose Betti and de Rham realisations are the aﬃne rings O(πB 1 (X, → 10, − → 11)), and O(πdR 1 (X)), respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/thm-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "thm-sec-000-07.md",
+      "narrative": null,
+      "content": "An element ξ ∈O(0Π1) of weight n ≥2 satisﬁes Dξ = [ξu] ⊗1 if and only if ξ ∈Q ζm(n). This theorem, combined with (2.18), provides a powerful method for proving identities between motivic multiple zeta values. Applications are given in [6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/cor-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-001-02.md",
+      "narrative": null,
+      "content": "Every multiple zeta value is a polynomial, with coeﬃcients in Q, in ζ(w) where w ∈Lyn(X× 3,2) . (3.2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/cor-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-001-03.md",
+      "narrative": null,
+      "content": "The category MT (Z) is generated by πmot (P1\\{0, 1, ∞}, → 10, − → 11) in the following sense. Every mixed Tate motive over Z is isomorphic, up to a Tate twist, to a direct sum of copies of sub-quotients of O(πmot (P1\\{0, 1, ∞}, → 10, − → 11)) . Motivic periods and P1\\{0, 1, ∞}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/cor-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-001-04.md",
+      "narrative": null,
+      "content": "The periods of mixed Tate motives over Z are polynomials with rational coeﬃcients of (2πi)−1 and (3.2). More precisely [13], if M ∈MT (Z) has non-negative weights (i.e. W−1M = 0), then the periods of M are polynomials in (3.2) and 2πi. 3.1. Canonical generators. Recall that the unipotent zeta values ζu are elements of O(U dR). As a consequence of theorem 3.1:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/cor-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-001-05.md",
+      "narrative": null,
+      "content": "For every n ≥1 there is a canonical element σ2n+1 ∈Lie U dR(Q) which is uniquely deﬁned by ⟨exp(σ2n+1), ζu(2m + 1)⟩= δm,n, and ⟨exp(σ2n+1), ζu(w)⟩= 0 for all w ∈Lyn(X3,2) such that deg3 w > 1 . The elements σ2n+1 can be taken as generators in §1.1 (1). It is perhaps surprising that one can deﬁne canonical elements of the motivic Galois group at all. These should perhaps be taken with a pinch of salt, since there may be other natural generators for the algebra of motivic multiple zeta values.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/cor-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-001-06.md",
+      "narrative": null,
+      "content": "There is a unique homomorphism τ : H →Q (see (1.5)) such that: ⟨τ, ζm(2)⟩= −1 and ⟨τ, ζm(w)⟩= 0 for all w ∈Lyn(X3,2) such that w̸ = 2. Applying this map to the motivic Drinfeld associator deﬁnes a canonical (but not explicit!) rational associator: τ(Zm) ∈0Π1(Q) = Q⟨⟨x0, x1⟩⟩ By acting on the canonical rational associator with elements σ2n+1, one deduces that there exists a huge space of rational associators (which forms a torsor over GdR(Q)). Such associators have several applications (see, for example [16]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main theorem and consequences",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-3-the-main-theorem-and-consequences.md",
+      "narrative": null,
+      "content": "Theorem 1.5 is a result about linear independence. There is an analogous statement\nfor algebraic independence of motivic multiple zeta values.\nDeﬁnition 3.0.1. Let X be an alphabet (a set) and let X× denote the free asso-\nciative monoid generated by X. Suppose that X has a total ordering <, and extend\nit to X× lexicographically. An element w ∈X× is said to be a Lyndon word if\nw < u\nwhenever\nw = uv\nand\nu, v̸ = ∅.\nFor an ordered set X, let Lyn(X) denote the set of Lyndon words in X.\nTheorem 3.1. Let X3,2 = {2, 3} with the ordering 3 < 2. The set of elements\nζm(w)\nwhere w ∈Lyn(X×\n3,2)\n(3.1)\nare a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let X3,2 = {2, 3} with the ordering 3 < 2. The set of elements ζm(w) where w ∈Lyn(X× 3,2) (3.1) are algebraically independent over Q, and generate the algebra H of motivic mul- tiple zeta values.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/conj-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "conj-sec-002-01.md",
+      "narrative": null,
+      "content": "A variant of Grothendieck’s period conjecture states that per : Pm MT (Z) −→C is injective. In particular, its restriction to H is injective also. The last statement, together with theorem 1.5, is equivalent to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transcendence conjectures.",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-32-transcendence-conjectures.md",
+      "narrative": null,
+      "content": "Conjecture 3.2. A variant of Grothendieck’s period conjecture states that\nper : Pm\nMT (Z) −→C\nis injective. In particular, its restriction to H is injective also.\nThe last statement, together with theorem 1.5, is equivalent to\nConjecture 3.3. (Hoﬀman) The elements ζ(n1, . . . , nr) for ni ∈{2, 3} are a basis\nfor the Q-vector space spanned by multiple zeta values.\nThis in turn implies a conjecture due to Zagier, stating that the dimension\nof the Q-vector space of multiple zeta values of weight N is equal to dN (1.6),\nand furthermore that the ring of multiple zeta values is graded by the weight.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Roots of unity",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-003-4-roots-of-unity.md",
+      "narrative": null,
+      "content": "There are a handful of exceptional cases when one knows how to generate certain\ncategories of mixed Tate motives over cyclotomic ﬁelds and write down their pe-\nriods. These results are due to Deligne [11], inspired by numerical computations\ndue to Broadhurst in 1997 relating to computations of Feynman integrals.\nLet N ≥2 and let µN be the group of N th roots of unity, and consider\nP1\\{0, µN, ∞}\n(4.1)\nFix a primitive N th root ζN. One can consider the corresponding motivic funda-\nmental groupoid (with respect to suitable tangential base points) and ask whether\nMotivic periods and P1\\{0, 1, ∞}\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/conj-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "conj-sec-004-01.md",
+      "narrative": null,
+      "content": "(Motivic version of the Broadhurst-Kreimer conjecture) Let D denote the increasing ﬁltration on H induced by the depth. Then X N,d≥0 dimQ (grD d HN) sdtN = 1 + E(t)s 1 −O(t)s + S(t)s2 −S(t)s4 , (5.3) where E(t) = t2 1−t2 , O(t) = t3 1−t2 , and S(t) = t12 (1−t4)(1−t6).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Depth",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-5-depth.md",
+      "narrative": null,
+      "content": "Thus an Euler sum of weight N and depth r can be expressed as a polynomial in\nthe above elements, of total weight N and total depth ≤r.\n5. Depth\nThe results of the previous section for N = 2, 3, 4, 6, 8 crucially use the fact that\nthe depth ﬁltration is dual to the lower central series of the corresponding motivic\nGalois group. A fundamental diﬀerence with the case N = 1 is that this fact is\nfalse for P1\\{0, 1, ∞}, due to a defect closely related to modular forms.\nRecall that 0Π1 is a group for the Ihara action ◦.\nLet Lie(0Π1) denote its\nLie algebra. Its bracket is denoted by { , }. Denote the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiple modular values",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-6-multiple-modular-values.md",
+      "narrative": null,
+      "content": "In this ﬁnal paragraph, I want suggest applying the philosophy of §1.4 to iterated\nintegrals on (orbifold) quotients of the upper half plane\nH = {τ ∈C : Im (τ) > 0}\nby ﬁnite index subgroups Γ ≤SL2(Z). Iterated integrals of modular forms were\nﬁrst studied by Manin [32, 33]. Here, I shall only consider the case Γ = SL2(Z).\n20\nFrancis Brown\n6.1. Eichler-Shimura integrals. Denote the space of homogenous poly-\nnomials of degree n ≥0 with rational coeﬃcients by\nVn =\nM\ni+j=n\nQXiY j\nIt admits a right action of Γ via the formula (X, Y )|γ = (aX +bY, cX +dY ), where\nγ =\n\u0000 a b\nc d\n\u0001\n. Let f(τ) be a modul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "−→UΓ −→GΓ −→S −→1",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-1-uγ-gγ-s-1.md",
+      "narrative": null,
+      "content": "where UΓ is pro-unipotent.\nThere is a natural map Γ →GΓ(k) which is\nZariski dense, and whose projection onto S(k) is the map ρ.\n2. In ‘geometric’ situations, one expects the relative completion to be the Betti\nrealisation of something which is motivic. Indeed, Hain has shown [23], [24]\nthat O(GΓ) carries a mixed Hodge structure in this case. As a result, one\ncan deﬁne Hodge-motivic periods and try to carry out §1.4.\n3. The action of the unipotent radical of the Tannaka group of mixed Hodge\nstructures acts via the automorphism group of a space of non-abelian cocyles\nof Γ with coeﬃcients in UΓ.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-007-7-references.md",
+      "narrative": null,
+      "content": "References\n[1] Y. Andr´e:\nUne introduction aux motifs, Panoramas et Synth`eses 17, SMF (2004).\n24\nFrancis Brown\n[2] A. Borel: Stable real cohomology of arithmetic groups, Annales Ecole Normale Sup.\n7, No. 4, (1974), 235-272.\n[3] A. Borel: Cohomologie de SLn et valeurs de fonctions zˆeta aux points entiers, Annali\ndella Scuola Norm. di Pisa, (1976), 613-635, + erratum.\n[4] Belyi: On Galois Extensions of a Maximal Cyclotomic Field, Math. USSR-Izvestija\n14:247-256 (1980)\n[5] F. Brown:\nMixed Tate motives over Z, Annals of Math., volume 175, no. 1, 949-976\n(2012).\n[6] F. Brown:\nDecomposition of mot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-0206161v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+      "dcterms:creator": [
+        "Scientifiques, Institut des Hautes Etudes",
+        "Bois-Marie, Le",
+        "Bures-sur-Yvette",
+        "France, F-91440"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/0206161",
+      "dcterms:source": "library/arxiv-hep-th-0206161v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-0206161v1"
+    }
+  ]
+}

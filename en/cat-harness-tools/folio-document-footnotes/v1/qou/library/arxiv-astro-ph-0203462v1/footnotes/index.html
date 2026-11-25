@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-astro-ph-0203462v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-astro-ph-0203462v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-astro-ph-0203462v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-astro-ph-0203462v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-astro-ph-0203462v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Inthetwoframesthatwereobtainedthroughtheimage&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;extracted&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Intheclassicalnotationwherelog ǫ(H)=12and[X/H] =&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;Table3liststhemeanabundances&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-003&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;8 dex. All elements with 56 ≤Z ≤72 follow the Solar r-element pattern, reduced by about 1.25 dex. Accordingly, the [r/Fe] enhancement is about +1.7 dex (a factor of 50), very similar to that of CS 22892-052 . Pb, in contrast, seems to be below the shifted Solar r-process distribution, possibly indicating an error in the latter, while thorium is more enhanced than the lighter nuclides. In CS 31082-001 , log(Th/Eu) is −0.22± 0.07, higher than in the Solar System (−0.46) or in CS 22892-052 (−0.66). If CS 31082-001 and CS 22892-052 have similar ages, as expected for two extreme halo stars, this implies that the production ratios were diﬀerent by about 0.4 dex for the two objects. Conversely, if the Th/Eu production ratio were universal, an age of 15 Gyr for CS 22892-052 would imply a negative age for CS 31082-001 . Thus, while a universal production ratio for the r-process elements seems to hold in the interval 56 ≤Z ≤72, it breaks down in the actinide region. When available, the U/Th is thus preferable to Th/Eu for radioactive dating, for two reasons: (i) because of its faster decay rate and smaller sensitivity to observational errors, and (ii) because the inital production ratio of the neighboring nuclides 238U and 232Th is more robustly predicted than the 151Eu/232Th ratio. Our current best estimate for the age of CS 31082-001 is 14.0 ± 2.4Gyr. However, the computed actinide production ratios should be veriﬁed by observations of daughter elements such as Pb and Bi in the same star, which are independent of the subsequent history of star formation and nucelosynthesis in the Galaxy. Key words. Galaxy: evolution – Galaxy: halo – Stars: abundances – Stars: individual: BPS CS 31082-001 – Nuclear reactions, nucleosynthesis, abundances – early Universe&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;11&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;05&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-3&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;15&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-4&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;06&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-5&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;07&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-6&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;04&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-7&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;13&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-8&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;07&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-9&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;08&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-10&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;09&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-11&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;10&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-12&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;08&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-13&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;17&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-14&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;43&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-15&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;17&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-16&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;16&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-17&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-18&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;11&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-19&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;05&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-20&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;11&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-21&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;11&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;71&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-2&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-3&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;57 −0.460 4208.977&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-4&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;71&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-5&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-6&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;40 −1.380 4317.299&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-7&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;71&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-8&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-9&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;54 −0.590 4496.980&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-10&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;71&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-11&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-12&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;30 Nb II&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-13&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a 3215.591&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-14&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;44 −0.190 syn −0.55 Ru I&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-15&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;a 3436.736&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-16&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;15&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-17&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;015 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-18&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;40&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-19&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;a 3498.942&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-20&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-21&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;310 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-22&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;28&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-23&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;a 3728.025&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-24&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-25&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;270 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-26&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-27&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;a −0.040 3798.898&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-28&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;15 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-29&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;40&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-30&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;a 3799.349&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-31&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-32&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;020 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-33&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;45 Rh I&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-34&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −0.40 3396.819&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-35&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-36&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;050 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-37&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −0.45 3434.885&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-38&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-39&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;450 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-40&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −0.40 3692.358&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-41&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-42&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;174 syn Pd I&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-43&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a 3242.700&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-44&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;81 −0.070 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-45&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-46&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a 3404.579&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-47&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;81&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-48&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;320 syn −0.18&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-49&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a 3634.690&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-50&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;81&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-51&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;090 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-52&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 Ag I&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-53&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −0.050 −0.95 3280.679&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-54&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-55&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −0.377 −0.70 3382.889&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-56&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;32&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-2&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;0 −1.500 −0.27 4468.138&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-3&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;10&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-4&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;5 4061.080&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-5&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;47&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-6&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;300&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-7&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;62&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-8&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;07 −1.660 −0.38 5169.688&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-9&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;10&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-10&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;5 −0.400 −0.32 4069.265&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-11&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;06&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-12&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;4 Er II 4109.448&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-13&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;32&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-14&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;180&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-15&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;15 3692.649&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-16&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;05&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-17&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;138&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-18&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;06&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-19&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;5 3786.836&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-20&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 −0.640&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-21&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;0 −0.26 −0.630 4446.384&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-22&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-23&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-24&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;04 3830.482&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-25&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 −0.360&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-26&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;text&quot;: &quot;5 −0.26 −0.070 −0.03 4462.979&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-27&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;56&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-28&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;text&quot;: &quot;0 3896.234&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-29&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;05 −0.240&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-30&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;64&quot;,
+    &quot;text&quot;: &quot;0 −0.19 −0.00 5130.586&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-31&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;30&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-32&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;100&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-33&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;3 3938.626&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-34&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 −0.520&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-35&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;text&quot;: &quot;0 −0.40 −0.700 −0.48 5212.361&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-36&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-37&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;6 Tm II −0.460 −0.25 5234.194&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-38&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;55&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-39&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;0 −0.290 −1.28 3700.256&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-40&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;03&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-41&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;0 −0.16 5249.576&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-42&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;98&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-43&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;080&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-44&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;0 −0.250 −1.10 3761.333&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-45&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-46&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;82&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-47&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;3 −0.170 −1.34 3795.760&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-48&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;03&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-49&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;text&quot;: &quot;0 −0.560 −0.16 5311.453&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-50&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;99&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-51&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;4 −0.520 −1.25 3848.020&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-52&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-53&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;55&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-54&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;7 Hf II −0.400 −0.29 5361.467&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-55&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;68&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-56&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;6 −0.490 −0.50 3399.793&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-57&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-58&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;68 −0.900&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-59&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;2 −0.31 −0.870 −0.70 3719.276&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-60&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;61&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-61&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;10 −0.500&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-62&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;0 −0.71 4135.775&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-63&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;52 −1.260&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-64&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;0+syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-65&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;52 3896.972&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-66&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;04 −0.580&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-67&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;0 −0.66 4260.848&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-68&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 −1.440&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-69&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;0+syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-70&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;21 4023.222&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-71&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;04 −0.830&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-72&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;0 −0.57 4420.468&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-73&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 −1.530&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-74&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;50 4068.324&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-75&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;43 −0.710&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-76&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;0 −0.65 Ir I −0.270 −0.45 4318.927&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-77&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;28&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-78&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-79&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −1.260 3513.648&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-80&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-81&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;0+syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-82&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20 −1.010 −0.30 4499.475&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-83&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;25&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-84&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-85&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;a −1.450 3800.120&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-86&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;00 syn&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-87&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;20 −0.430 −0.37 4519.630&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-88&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;54&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-89&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;0 Pb I −0.230 −0.71 4537.941&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-90&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;48&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-91&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-92&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;a −0.170 4057.807&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-93&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;32 syn &lt;-0.2 −0.770 −0.38 4577.688&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-94&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;25&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-95&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V.Hill&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V.Hill1,B.Plez&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V.Hill1,B.Plez2,R.Cayrel&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;V.Hill1,B.Plez2,R.Cayrel3,T.C.Beers&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;V.Hill1,B.Plez2,R.Cayrel3,T.C.Beers4,B.Nordstr¨om&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;V.Hill1,B.Plez2,R.Cayrel3,T.C.Beers4,B.Nordstr¨om5,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ill1,B.Plez2,R.Cayrel3,T.C.Beers4,B.Nordstr¨om5,6,J.Andersen&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ez2,R.Cayrel3,T.C.Beers4,B.Nordstr¨om5,6,J.Andersen6,M.Spite&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;rel3,T.C.Beers4,B.Nordstr¨om5,6,J.Andersen6,M.Spite1,F.Spite&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;Barbuy&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Barbuy7,P.Bonifacio&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Barbuy7,P.Bonifacio8,E.Depagne&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Barbuy7,P.Bonifacio8,E.Depagne1,P.Fran¸cois&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;Barbuy7,P.Bonifacio8,E.Depagne1,P.Fran¸cois3,andF.Primas&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;238&quot;,
+    &quot;context&quot;: &quot;ﬁrst&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;context&quot;: &quot;et al. 2001), as well as a very accurate abundance of&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;than 10&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ofCHandCN.Linelistsfor&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;ofCHandCN.Linelistsfor12CH,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ofCHandCN.Linelistsfor12CH,13CH,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;ofCHandCN.Linelistsfor12CH,13CH,12C&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;13C&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;tionsfor&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;providealowerlimitonthe&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;non-detectionof&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;151&quot;,
+    &quot;context&quot;: &quot;Euisotopecompositionadoptedwas47.8%of&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;151&quot;,
+    &quot;context&quot;: &quot;52.2%of&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;abundance of log ǫ(Pb)&lt; 0.0 (log ǫ(Pb)= −0.25+0.&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(log ǫ(Pb)=−0.4+0.&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(log ǫCS 31082−001−log ǫ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;238&quot;,
+    &quot;context&quot;: &quot;clides&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;context&quot;: &quot;clides238Uand&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;context&quot;: &quot;as&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;151&quot;,
+    &quot;context&quot;: &quot;as232Thand&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;238&quot;,
+    &quot;context&quot;: &quot;232Thand&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆t = 46.67[log(Th/S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆t = 14.84[log(U/S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆t = 21.76[log(U/Th&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;238&quot;,
+    &quot;context&quot;: &quot;turesof&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;context&quot;: &quot;turesof238Uand&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;context&quot;: &quot;ratiobetweenthesetwonuclidesthan,e.g.,thatof&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;151&quot;,
+    &quot;context&quot;: &quot;and&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;16&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;7&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;18&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;19&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;26&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;27&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

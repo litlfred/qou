@@ -1,0 +1,449 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0706.3688v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Standard Model is based on the gauge invariance principle with gauge group\nG = U(1) × SU(2) × SU(3)\nand suitable representations for fermions and bosons.\nIt involves additional scalar\nﬁelds, the Higgs ﬁelds and a number of key mechanisms such as V−A, spontaneous\nsymmetry breaking etc... While the values of the hypercharges can be inferred from\nthe condition of cancelation of anomalies, there is no conceptual reason so far for the\nchoice of the gauge group G as well as for the various representations involved in the\nconstruction of SM. Thus under that light the Standard Model appears as one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0706.3688v1  [hep-th]  25 Jun 2007\nWHY THE STANDARD MODEL\nALI H. CHAMSEDDINE AND ALAIN CONNES\nAbstract. The Standard Model is based on the gauge invariance principle with\ngauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and\nbosons, which are begging for a conceptual understanding.\nWe propose a purely\ngravitational explanation: space-time has a ﬁne structure given as a product of a four\ndimensional continuum by a ﬁnite noncommutative geometry F. The raison d’ˆetre\nfor F is to correct the K-theoretic dimension from four to ten (modulo eight). We\nclassify the irred",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Assume conditions (2.2) and (1), (2), then, For any projection e̸ = 1 in the center Z(A) of A, one has (2.3) eJeJ−1 = 0 . For any projections ej in Z(A) such that e1e2 = 0 one has (2.4) e1Je2J−1 + e2Je1J−1 ∈{0, 1} .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "Assume conditions (2.2) and (1), (2), then one of the following cases holds • The center Z(AC) is reduced to C. • One has Z(AC) = C ⊕C and Je1J−1 = e2 where ej ∈Z(AC) are the minimal projections of Z(AC).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The order zero condition and irreducible pairs (A,J)",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-the-order-zero-condition-and-irreducible-pairs.md",
+      "narrative": null,
+      "content": "2. The order zero condition and irreducible pairs (A, J)\nWe start with a ﬁnite dimensional Hilbert space H endowed with an antiunitary oper-\nator J such that J2 = 1. For any operator x in H we let,\n(2.1)\nx0 = Jx∗J−1 .\nWe look for involutive algebras A of operators in H such that (cf. (1.1)),\n(2.2)\n[x, y0] = 0 ,\n∀x, y ∈A .\nand that the following two conditions hold:\n(1) The action of A has a separating vector2\n(2) The representation of A and J in H is irreducible.\nThe role of the ﬁrst condition is to abstract a natural property of the action of an\nalgebra of (smooth) functions on the sections o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "Note that the above statements apply equally well in case J2 = ǫ ∈{±1}. Thus the classiﬁcation of irreducible pairs splits in the two cases of Lemma 2.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "The representation β of AC ⊗A0 C in H of (2.6) is irreducible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Let H be a Hilbert space of dimension n. Then an irreducible solu- tion with Z(AC) = C exists iﬀn = k2 is a square. It is given by AC = Mk(C) acting by left multiplication on itself and antilinear involution (2.8) J(x) = x∗, ∀x ∈Mk(C) . 3This is the only place where we use the hypothesis J2 = 1. WHY THE STANDARD MODEL",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case Z(AC)=C",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-the-case-zacc.md",
+      "narrative": null,
+      "content": "We assume Z(AC) = C. Then (cf. [14]) there exists k ∈N such that AC = Mk(C) as\nan involutive algebra over C. Moreover the algebra homomorphism\n(2.6)\nAC ⊗A0\nC →L(H) , β(x ⊗y) = xy0 ,\n∀x, y ∈AC ,\nis injective since AC ⊗A0\nC ∼Mk2(C) is a simple algebra.\nLemma 2.4. The representation β of AC ⊗A0\nC in H of (2.6) is irreducible.\nProof. Since AC ⊗A0\nC ∼Mk2(C), the representation β is a multiple of the unique\nrepresentation given by the left and right action of AC = Mk(C) on itself. We need\nto show that the multiplicity m is equal to 1. We let e be a minimal projection of\nAC = Mk(C), and let E = eJeJ−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "Note that in the case J2 = −1 the possibility of multiplicity m = 2 arises and the dimension of H is 2k2 in that case. We shall prove below in Lemma 3.1 that the above case Z(AC) = C is incompatible with the commutation relation Jγ = −γJ for the grading and hence with the K-theoretic dimension 6. Thus we now concentrate on the second possibility: Z(AC) = C ⊕C. CHAMSEDDINE AND CONNES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "(1) The representation β of AC ⊗A0 C in H of (2.6) is the direct sum of two irreducible representations in the decomposition (2.10) H = e1H ⊕e2H = H1 ⊕H2 , β = β1 ⊕β2. (2) The representation β1 (resp β2) is the only irreducible representation of the reduced algebra of B by e1 ⊗e0 2 (resp. e2 ⊗e0 1). (3) The dimension of Hj is equal to k1k2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Let H be a Hilbert space of dimension n. Then an irreducible solution with Z(AC) = C ⊕C exists iﬀn = 2k2 is twice a square. It is given by AC = Mk(C) ⊕Mk(C) acting by left multiplication on itself and antilinear involution (2.11) J(x, y) = (y∗, x∗) , ∀x, y ∈Mk(C) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case Z(AC)=CC",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-the-case-zaccc.md",
+      "narrative": null,
+      "content": "We assume Z(AC) = C⊕C. Then there exists kj ∈N such that AC = Mk1(C)⊕Mk2(C)\nas an involutive algebra over C. We let ej be the minimal projections ej ∈Z(AC) with\nej corresponding to the component Mkj(C).\nLemma 2.7.\n(1) The representation β of AC ⊗A0\nC in H of (2.6) is the direct sum\nof two irreducible representations in the decomposition\n(2.10)\nH = e1H ⊕e2H = H1 ⊕H2 , β = β1 ⊕β2.\n(2) The representation β1 (resp β2) is the only irreducible representation of the\nreduced algebra of B by e1 ⊗e0\n2 (resp. e2 ⊗e0\n1).\n(3) The dimension of Hj is equal to k1k2.\nProof. 1) Let Hj = ejH. Since ej ∈Z(A) the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "One can describe the above solutions (i.e. the algebra AC and its rep- resentation in H, J) in a more intrinsic manner as follows. We let V and W be k- dimensional complex Hilbert spaces. Then (2.12) AC = EndC(W) ⊕EndC(V ) . We let H be the bimodule over AC given by (2.13) H = E ⊕E∗, J(ξ, η) = (η∗, ξ∗) where, (2.14) E = HomC(V, W) , E∗= HomC(W, V ) and the algebra acts on the left by composition: (2.15) (w, v)(g, h) = (w ◦g, v ◦h) , ∀(w, v) ∈AC , (g, h) ∈E ⊕E∗. The various real forms can then be described using additional antilinear isometries of V and W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "In the case Z(AC) = C of Proposition 2.5, let γ be a Z/2-grading of H such that γAγ−1 = A and Jγ = ǫ′′γJ for ǫ′′ = ±1. Then ǫ′′ = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "There exists up to equivalence a unique Z/2-grading of H compatible with the graded representation of A and such that: (3.2) J γ = −γ J It is given by (3.3) H = E ⊖E∗, γ(ξ, η) = (γξ, −γη)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Z/2-grading",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-3-z2-grading.md",
+      "narrative": null,
+      "content": "In the set-up of spectral triples one assumes that in the even case the Hilbert space\nis Z/2-graded i.e. endowed with a grading operator γ, γ2 = 1, γ = γ∗. This grading\nshould be compatible with a Z/2-grading of the algebra A which amounts to asking\nthat γAγ−1 = A. One then has [γ, a] = 0 for any a ∈Aev the even part of A.\nLemma 3.1. In the case Z(AC) = C of Proposition 2.5, let γ be a Z/2-grading of H\nsuch that γAγ−1 = A and Jγ = ǫ′′γJ for ǫ′′ = ±1. Then ǫ′′ = 1.\nProof. We can assume that (AC, H, J) are as in Proposition 2.5. Let δ ∈Aut(AC) be\nthe automorphism given by δ(a) = γaγ−1, ∀a ∈AC .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "The space E = HomC(V, W) is related to the classiﬁcation of instantons (cf. Equation (1.1) Chapter III of [1]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "If the representations πj are disjoint, then there is no oﬀdiagonal Dirac operator for AF.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The subalgebra and the order one condition",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-4-the-subalgebra-and-the-order-one-condition.md",
+      "narrative": null,
+      "content": "We take (A, H, J, γ) from the above discussion, i.e. (3.1) and Proposition 3.2.\nThe center of our algebra Z(A) is non-trivial and in that way the corresponding space\nis not connected. We look for “Dirac operators” D which connect non-trivially the two\npieces (we call them “oﬀ-diagonal”) i.e. operators such that:\n(4.1)\n[D, Z(A)]̸ = {0}.\nThe main requirement on such operators is the order one condition (1.2). We now\nlook for subalgebras AF ⊂Aev, the even part of A, for which this order condition\nWHY THE STANDARD MODEL\n9\n(∀a, b ∈AF) allows for operators which fulﬁll (4.1). We can now state our ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/rem-sec-005-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-005-04.md",
+      "narrative": null,
+      "content": "The “unimodularity” condition imposed in Theorem 4.3 (cf. [7]) on our gauge transformations can now be viewed as the restriction to AF of the condition giving the group of inner automorphisms of A. Indeed this group is described as the unimodular unitary group: (4.9) Int(A) ∼SU(A) = {u ∈A |uu∗= u∗u = 1, det(u) = 1} . This applies also to the product geometry by the manifold M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Up to an automorphism of Aev, there exists a unique involutive sub- algebra AF ⊂Aev of maximal dimension admitting oﬀ-diagonal Dirac operators. It is given by (4.2) AF = {(λ ⊕q, λ ⊕m) | λ ∈C , q ∈H , m ∈M3(C)} ⊂H ⊕H ⊕M4(C) , using a ﬁeld morphism C →H. The involutive algebra AF is isomorphic to C ⊕H ⊕ M3(C) and together with its representation in (H, J, γ) it gives the noncommutative geometry F of [7].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "Let M be a Riemannian spin 4-manifold and F the ﬁnite noncommu- tative geometry of K-theoretic dimension 6 described above, but with multiplicity4 3. Let M × F be endowed with the product metric. (1) The unimodular subgroup of the unitary group acting by the adjoint representa- tion Ad(u) in H is the group of gauge transformations of SM. (2) The unimodular inner ﬂuctuations of the metric give the gauge bosons of SM. (3) The full standard model (with neutrino mixing and seesaw mechanism) min- imally coupled to Einstein gravity is given in Euclidean form by the action functional (4.8) S = Tr(f(D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-conclusion.md",
+      "narrative": null,
+      "content": "The fermion doubling problem requires (cf. [2], [11]) crossing the ordinary 4-dimensional\ncontinuum by a space of K-theoretic dimension 6. We have shown in this paper that\nthe classiﬁcation of the ﬁnite noncommutative geometries of K-theoretic dimension 6\nsingles out the algebras which are real forms of Mk(C) ⊕Mk(C) acting in the Hilbert\nspace of dimension 2k2 by left multiplication, together with a speciﬁc antilinear isom-\netry. This predicts the number of fermions per generation to be a square and under\nour hypothesis about the role of quaternions the simplest case is with k = 4 and gives\nth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0706.3688v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] M.F. Atiyah. Geometry of Yang-Mills ﬁelds. Accad. Naz. dei Lincei, Scuola Norm. Sup., Pisa,\n1979\n[2] John Barrett, ”The Lorentzian Version of the Noncommutative Geometry Model of Particle\nPhysics”, J. Math. Phys. 48: 012303 (2007).\n[3] A. Chamseddine, A. Connes, Universal Formula for Noncommutative Geometry Actions: Uniﬁ-\ncation of Gravity and the Standard Model, Phys. Rev. Lett. 77, 486804871 (1996).\n[4] A. Chamseddine, A. Connes, The Spectral Action Principle, Comm. Math. Phys. 186, 731-750\n(1997).\n[5] A. Chamseddine, A. Connes, Scale Invariance in the Spectral Action, J.Math.Phys.47:063",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

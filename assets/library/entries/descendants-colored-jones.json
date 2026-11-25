@@ -1,0 +1,395 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "descendants-colored-jones",
+  "blocks": [
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Pure and Applied Mathematics Quarterly\nVolume 19, Number 5, 2307–2334, 2023\nThe descendant colored Jones polynomials\nStavros Garoufalidis and Rinat Kashaev\nIn memory of our friend, Vaughan Jones\nAbstract: We discuss two realizations of the colored Jones polyno-\nmials of a knot, one appearing in an unnoticed work of the second\nauthor in 1994 on quantum R-matrices at roots of unity obtained\nfrom solutions of the pentagon identity, and another formulated\nin terms of a sequence of elements of the Habiro ring appearing\nin recent work of D. Zagier and the ﬁrst author on the Reﬁned\nQuantum Modularity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The Jones polynomial [Jon87] is a fascinating polynomial invariant of knots\nwith deep connections to the topology and geometry in dimension 3. Its dis-\ncovery in 1984, apart from revolutionizing Knot Theory, lead to a new area\nof research, Quantum Topology, with applications and challenges that we will\nnot attempt to summarize here. The Jones polynomial and its colored ver-\nsions (a sequence of polynomials, one for every irreducible ﬁnite dimensional\nrepresentation of the Lie algebra sl2) are versatile invariants with numerous\ninterpretations, among them as partition functions of a 3-dimension",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The descendant colored Jones polynomials of a knot",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-the-descendant-colored-jones-polynomials-of-a-kn.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-a-conjectured-matrix-valued-invariant-from-gzkas.md",
+      "narrative": null,
+      "content": "We begin by explaining the most recent reappearance of the colored Jones\npolynomials. An extension of the Volume Conjecture is the Quantum Mod-\nularity Conjecture of Zagier [Zag10] which, roughly speaking, discusses the\nasymptotics of the Kashaev invariant at roots of unity. More recently, a Re-\nﬁned Quantum Modularity Conjecture was proposed in [GZ] which suggests\nthe existence of a matrix-valued invariant deﬁned at (and near) roots of unity.\nThese conjectured matrix-valued invariants (denoted by J(x) for x ∈Q/Z)\nwere studied in [GZ, Sec. 5] with explicit examples given for the 41 and the\n52",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the descendants",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-definition-of-the-descendants.md",
+      "narrative": null,
+      "content": "In this section we extend the 2-parameter colored Jones function Jn(q) of a\nknot in 3-space into a 3-parameter descendant colored Jones function DJ(m)\nn\n(q)\nfor n ≥0, m ∈Z, which\n• specializes to the colored Jones polynomials Jn(q) when m = 0 and\nn ≥1;\n• specializes to a sequence of elements of the Habiro ring DJ(m)(q) when\nn = 0;\n• is determined by either of the above specializations;\n• is determined by a 3-parameter function DJ(m)(x, q) by DJ(m)\nn\n(q) =\nDJ(m)(qn, q) for all n ≥1.\nIn other words, we have a commutative diagram\n(1)\nDJ(m)\nn\n(q)\nJn(q)\nDJ(m)(q)\nDJ(m)(x, q)\n\u0011\n\u0011\n\u0011\n\u0011\n+\nm=0\nQQQQ\ns\nn=0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Each family of invariants {Jn(q)|n ∈Z≥0}, {DJ(m) n (q)|n ∈ Z≥0, m ∈Z}, {DJ(m)(x, q)|m ∈Z}, {DJ(m)(q)|m ∈Z}, {Jn(ζ)|n ∈Z≥0, ζ ∈ μ}, {DJ(m) n (ζ)|n ∈Z≥0, ζ ∈μ}, {DJ(m)(x, ζ)m ∈Z, ζ ∈μ}, {DJ(m)(ζ)|m ∈ Z, ζ ∈μ} determines all other families.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "DJ(m) n (q), DJ(m)(x, q) and DJ(m)(q) are q-holonomic func- tions of (m, n), (m, x) and m, respectively. Linear q-diﬀerence equations for these functions can be obtained from one for the Habiro polynomials Hk(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of the descendants",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-properties-of-the-descendants.md",
+      "narrative": null,
+      "content": "From their very deﬁnition, the 0-th descendants DJ(0)\nn (q) and DJ(0)(q) are\nnothing but the colored Jones polynomial Jn(q) and the Kashaev invariant of\n2312\nStavros Garoufalidis and Rinat Kashaev\nthe knot. Thus, one may call DJ(m)\nn\n(q) and DJ(m)(q) the descendant colored\nJones and the descendant Kashaev invariant of a knot, respectively.\nNote further that for all integers m, the 3-variable invariant DJ(m)(x, q)\nis an element of the colored Habiro ring, and, for all n ≥0, it satisﬁes\nDJ(m)(qn, q) = DJ(m)\nn\n(q).\nNote moreover that DJ(m)\nn\n(q) ∈Z[q±] for n ≥1 whereas DJ(m)(q) ∈\u0003\nZ[q].\nIn a sens",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/conj-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "conj-sec-005-01.md",
+      "narrative": null,
+      "content": "The top row of the matrix J of the conjectured knot in- variants [GZ] is a rational linear combination of r + 1 consecutive terms of the descendant invariant DJ(m)(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjecture",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-a-conjecture.md",
+      "narrative": null,
+      "content": "We end this section with a conjecture. Let us denote by r + 1 the size of the\nmatrix J.\nConjecture 2.4. The top row of the matrix J of the conjectured knot in-\nvariants [GZ] is a rational linear combination of r + 1 consecutive terms of\nthe descendant invariant DJ(m)(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-examples.md",
+      "narrative": null,
+      "content": "In this section we give explicit formulas for the descendant colored Jones\npolynomials and their recursions for the trefoil (a non-hyperbolic knot) and\nfor the two simplest hyperbolic knots, the 41 and 52 knots.\nFor the 31 knot, we have H31\nk (q) = (−1)kq\n1\n2 k(k+3) for all k ≥0 [Hab02,\nMas03]. It follows from Equation (5) that the descendant colored Jones poly-\nnomials DJ31,(m)(x, q) satisfy the inhomogeneous linear q-diﬀerence equation\n−qm+3 DJ31,(m+2)(x, q) + (x + x−1)qm+2 DJ31,(m+1)(x, q)\n(7)\n+ (1 −qm+1) DJ31,(m)(x, q) = 1\nfor m ∈Z. We can write the above q-diﬀerence equation in operator f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomials at roots of unity",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-the-colored-jones-polynomials-at-roots-of-unity.md",
+      "narrative": null,
+      "content": "This section ﬁlls a historical gap where we discuss a previously unnoticed con-\njectural relationship between the colored Jones polynomials and some quan-\ntum R-matrices at roots of unity considered by the second author in [Kas96].\nNamely, we show that the R-matrices over the vector space CN depending\non a primitive N-th root of unity ζ and indexed by an integer parameter\n0 < m < N actually give knot invariants which conjecturally coincide with\nthe (m + 1)-colored Jones polynomial evaluated at q = ζ. In particular, we\nshow that a speciﬁc choice of the discrete parameter m = N −1 gives the\nKash",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices with a spectral parameter",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-r-matrices-with-a-spectral-parameter.md",
+      "narrative": null,
+      "content": "We begin our discussion of R-matrices by introducing some useful notation.\nFor a positive integer n ∈Z>0, we deﬁne\n(18)\n(x)n :=\nn\n\t\nk=1\n(1 −xk),\n⟨⟨x⟩⟩n :=\n1 −xn\n(1 −x)n\nwith the convention (x)0 := 1.\nFor a ﬁxed root of unity ζ of order N = ord(ζ) ∈Z>0, we deﬁne rational\nfunctions w(x|n) ∈C(x) for all integers n ∈Z by the recurrence relation\n(19)\nw(x|n)(1 −xζn) = w(x|n −1),\nw(x|0) = 1.\nOne has the addition property\n(20)\nw(x|m + n) = w(x|m)w(xζm|n)\n(m, n ∈Z)\nwhich, by taking into account the equality w(x|N) = 1/(1 −xN), gives the\nquasi-periodicity property\n(21)\n(1 −xN)w(x|n + N) = w(x|n)\n(n ∈Z).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the gauge symmetry equations",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-proof-of-the-gauge-symmetry-equations.md",
+      "narrative": null,
+      "content": "In this section we give the proofs of equations (26) and (27) which were stated\nin [Kas96], but proofs were ommitted.\nWe begin with Equation (26). Writing out its left hand side in matrix\ncoeﬃcients (indexed by i, j ∈{0, . . . , N −1}), we have\n⟨i|h(x, m)h(y, m)|j⟩=\nN−1\n\u0002\nk=0\n⟨i|h(x, m)|k⟩⟨k|h(y, m)|j⟩\n(32)\n= ζ(j−i)m\nN−1\n\u0002\nk=0\n⟨⟨xζk−i⟩⟩N⟨⟨yζj−k⟩⟩N\nso that Equation (26) is equivalent to\nN−1\n\u0002\nk=0\n⟨⟨xζk−i⟩⟩N⟨⟨yζj−k⟩⟩N = ⟨⟨xyζj−i⟩⟩N ⇔\nN−1\n\u0002\nk=0\n⟨⟨xζk⟩⟩N⟨⟨yζj−k⟩⟩N = ⟨⟨xyζj⟩⟩N.\n(33)\n2322\nStavros Garoufalidis and Rinat Kashaev\nThe deﬁnition (18) gives ⟨⟨x⟩⟩N = N−1 \nN−1\na=0 xa. Using this equality, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-knot-invariants.md",
+      "narrative": null,
+      "content": "We can use the r-matrix given in Equation (28) to construct knot invariants\nfrom their planar projections. This is a standard construction explained in\nseveral places that include [Jon89, RT90, Tur88, Tur94]. We will follow the\npresentation of [Kas] which does not require neither the theory of Hopf alge-\nbras nor the existence of ribbon elements, and uses as a combinatorial input a\ngeneric planar projection of a long knot with no local extrema oriented from\nleft to right and equal numbers of positive and negative crossings. Locally,\nsuch a planar projection has eight types of crossings (four p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The state-sum (D) yn» depends on the long knot K and not on the planar projection D used.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An example",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-011-an-example.md",
+      "narrative": null,
+      "content": "In this sub-section we write an explicit expression for the invariant ⟨41⟩N,n of\nthe simplest hyperbolic knot 41 in the case of a primitive N-th root of unity\nζ and a color n ∈Z/NZ. The invariant is an N × N matrix whose entries\nMi,j := ⟨i|⟨41⟩N,n|j⟩are given by\nMi,j =\n\u0002\nk1,...,k7\nj\ni\nk1\nk2\nk3\nk4\nk5\nk6\nk7\nn\n=\n\u0002\nk1,...,k7\nVi,k3−n,k7−n,k2(¯ζ)ζk2−k7+(k2−k3+1+n)n\nVk6,k4,k7−n,k3−n−1(ζ)ζk6−k3+1+(k6−k7+1+n)n\nVk1,k5,k2−n,k4−n−1(¯ζ)ζk4−k1−1+(k4−k5−1−n)n\nVk1,k6−n,j−n,k5(ζ)ζj−k5+(j−k1−1−n)n\n=\n\u0002\nk1,...,k7\nVi,k3−n,k7−n,k2(¯ζ)Vk6,k4,k7−n,k3−n−1(ζ)Vk1,k5,k2−n,k4−n−1(¯ζ)\n× Vk1,k6−n,j−n,k5(ζ)ζ(j−k1+k2−k3+k4−k5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/conj-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "conj-sec-012-01.md",
+      "narrative": null,
+      "content": "For all knots K, strictly positive integers N and n, and a primitive N-th root of unity ζ, we have (62) ⟨K⟩N,n = JK n+1(ζ)1N where 1N denotes the identity N × N matrix. In particular, ⟨K⟩N,0 = 1N is a trivial invariant coming from a nontrivial r-matrix over an N-dimensional vector space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjecture",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-a-conjecture.md",
+      "narrative": null,
+      "content": "When n = −1, Equation (43) implies that the invariant of a long knot K is a\nmultiple of the identity N × N matrix, and the multiple is the specialization\nof the N-colored Jones polynomial that enters the Volume Conjecture [Kas95,\nKas97]. When n ∈Z/NZ is arbitrary, we conjecture the following.\nConjecture 3.2. For all knots K, strictly positive integers N and n, and a\nprimitive N-th root of unity ζ, we have\n(62)\n⟨K⟩N,n = JK\nn+1(ζ)1N\nwhere 1N denotes the identity N × N matrix.\nIn particular, ⟨K⟩N,0 = 1N is a trivial invariant coming from a nontrivial\nr-matrix over an N-dimensional vector space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors wish to thank Jie Gu, Marcos Mariño, Campbell Wheeler and\nDon Zagier for many enlightening conversations, and the International Math\nCenter in SUSTech and the University of Geneva for their hospitality.\nR. K. wishes to thank Jerome Dubois, Michael Heusener, Martin Palmer,\nCristina Palmer-Anghel and Louis-Hadrien Robert for useful conversations.\nThe work of R. K. is partially supported by the Swiss National Science Foun-\ndation research program NCCR The Mathematics of Physics (SwissMAP),\nthe ERC Synergy grant Recursive and Exact New Quantum Theory (Re-\nNew Quantum), by the Swiss Nat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/descendants-colored-jones/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[ADO92] Yasuhiro Akutsu, Tetsuo Deguchi, and Tomotada Oht-\nsuki, Invariants of colored links, J. Knot Theory Ramiﬁcations 1\n(1992), no. 2, 161–184. MR1164114\nThe descendant colored Jones polynomials\n2331\n[CCG+94] Daryl Cooper, Marc Culler, Henry Gillet, Daryl\nLong, and Peter Shalen, Plane curves associated to char-\nacter varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1,\n47–84. MR1288467\n[Gar04] Stavros Garoufalidis, On the characteristic and deformation\nvarieties of a knot, in: Proceedings of the Casson Fest, Geom.\nTopol. Monogr., vol. 7, Geom. Topol. Publ., Coventry, 2004,\npp. 291–30",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

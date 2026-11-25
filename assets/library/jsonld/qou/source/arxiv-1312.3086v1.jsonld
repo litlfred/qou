@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
+  "contains": [
+    "library/arxiv-1312.3086v1/sections/sec-front-matter",
+    "library/arxiv-1312.3086v1/sections/sec-000",
+    "library/arxiv-1312.3086v1/sections/sec-001",
+    "library/arxiv-1312.3086v1/sections/sec-002",
+    "library/arxiv-1312.3086v1/sections/sec-003",
+    "library/arxiv-1312.3086v1/sections/sec-004",
+    "library/arxiv-1312.3086v1/sections/sec-005",
+    "library/arxiv-1312.3086v1/sections/sec-006",
+    "library/arxiv-1312.3086v1/sections/sec-007",
+    "library/arxiv-1312.3086v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 10 sections: Front matter; Introduction; The model\n\n**Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities**\n\n*E. Brion, F. Carlier, V. M. Akulin*\n\n10 pp, 10 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 The scheme; 3.1 The different steps of the scheme; 3.2 Error detection and prevention; 4 A physical implementation; 5 Discussion; 6 Conclusion; A Derivation of the expression of the average",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1312.3086&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1312.3086v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1312.3086v1.pdf",
+    "source_sha256": "ff328e7c7cbdc70c7f95dfdf726276f9afbb82b13af28c795e2cd43db608734e",
+    "pages": 10,
+    "arxiv": {
+      "id": "1312.3086",
+      "version": "1",
+      "primary_class": "quant-ph",
+      "stamp_date": "11 Dec 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

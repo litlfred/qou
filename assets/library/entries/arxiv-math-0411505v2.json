@@ -1,0 +1,662 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0411505v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jones polynomial of a knot",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-the-jones-polynomial-of-a-knot.md",
+      "narrative": null,
+      "content": "\\lbl{sub.history}\nIn 1985, V. Jones discovered a celebrated invariant of knots, the Jones\npolynomial, \\cite{J1}. \nJones's original formulation of the Jones polynomial was given in terms of\n{\\em representations of braid groups} and {\\em Hecke algebras}, \\cite{J1}. \nIt soon\nbecame apparent that the Jones polynomial can be defined as a {\\em state sum} \nof a {\\em statistical mechanics} model that uses as input a planar projection\nof a knot, \\cite{J2,Tu}.\nAs soon as the Jones polynomial was discovered, it was compared \nwith the better-understood Alexander polynomial of a knot. The latter can be\ndef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0411505v2  [math.QA]  7 Mar 2005\nA NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION\nSTAVROS GAROUFALIDIS AND MARTIN LOEBL\nAbstract. The colored Jones function of a knot is a sequence of Laurent polynomials that encodes the\nJones polynomial of a knot and its parallels. It has been understood in terms of representations of quantum\ngroups and Witten gave an intrinsic quantum ﬁeld theory interpretation of the colored Jones function as the\nexpectation value of Wilson loops of a 3-dimensional gauge theory, the Chern-Simons theory. We present\nthe colored Jones function as an evaluati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of the main result",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-statement-of-the-main-result.md",
+      "narrative": null,
+      "content": "\\lbl{sub.sta}\n\n\\begin{definition}\n\\lbl{def.com}\nWe consider $5r$ indeterminates $r^-_i,r^+_i,u^-_i,u^+_i,z_i, 1\\leq i\\leq r$.\n Let $A$ be a $r$ by $r$ matrix where each indeterminate appears at most once\nin an entry, and each entry is an indeterminate times a power of $q$.\n We assume $q$ is an indeterminate which commutes with all other \nindeterminates. \nMoreover we assume that each column contains at most one $u$ indeterminate, \nin its first\nor last entry different from $z$. Let $L(A)$ be the set of those columns of $A$\nwhere $u$ appears in the last non-$z$-entry. \n\nWe define a {\\em noncommut",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-acknowledgement.md",
+      "narrative": null,
+      "content": "The authors wish to thank A. Kricker, \nM. Klazar, TTQ. Le and M. Staudacher for helpful discussions.\nTTQ. Le has informed us that he also has a non-commutative expression\nfor the colored Jones function for braids, obtained by a different method.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m.md",
+      "narrative": null,
+      "content": "\\lbl{sec.zeta}\n\nOne of main ingredients in our result is combinatorics of non-negative\ninteger flows on digraphs. They appear in an expression of the zeta function.\n\nLet us recall what is the zeta function of a digraph. We will consider\ndigraphs (that is, graphs with oriented edges) with weights on their edges.\n\nLet $G=(V,E)$ be a digraph with vertex set $V$ and directed edges $E \\subset\nV \\times V$, and let $B=(\\b_e)_{e\\in E}$ be a weight matrix for the edges of \n$G$.\nFor edge $e$ we denote by $s(e), t(e)$ the starting and terminal vertex of $e$.\nBass-Ihara-Selberg defined\na zeta function of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The arc-graph of a knot projection",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-3-the-arc-graph-of-a-knot-projection.md",
+      "narrative": null,
+      "content": "\\lbl{sec.arcgraph}\n\nGiven a knot projection $K$, we define the arc-graph $G_{\\K}$ as follows:\n\\begin{itemize}\n\\item\nThe vertices of $G_{\\K}$ are in 1-1 correspondence with the arcs of $\\K$.\n\\item\nThe edges of $G_{\\K}$ are in 1-1 correspondence with {\\em transitions}\nof $\\K$, when we walk along $\\K$ and we either go under a crossing \n(blue edges), \nor jump up at a crossing (red edges) according to Figure \\ref{planarG2K}.\n\\end{itemize}\n\n\\begin{figure}[htpb]\n$$ \n\\psdraw{planar2GK}{3in}\n$$\n\\caption{From a planar projection to the arc-graph. Transitions in \nthe planar projection are indicated by da",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The enhanced arc-graph and the Jones polynomial",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia.md",
+      "narrative": null,
+      "content": "\\lbl{sub.enhanced}\n\n\nIn order to express the Jones polynomial as a function of the arc graph, we \nneed to enhance the arc-graph as follows.\n\n\\begin{definition}\n\\lbl{def.rotten}\n{\\rm (a)}\nWe introduce a {\\em linear order} $<_v$ on the set of\nedges of $G_K$ terminating at vertex $v$ as follows. Recall that\n$v$ corresponds to an arc $a_v$ of $K$. \nIf we travel on $a_v$ along the orientation of $K$, we 'see' one by one the \narcs corresponding to starting vertices of red arcs \nentering $v$: this gives the linear order of red arcs entering $v$. \nFinally there is at most one blue edge entering vertex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "G(f) = C(f)qδ(f) r Y v=1 X f(ebv)≥c1≥···≥cf(erv)≥0 qsign(v)(c1+...cf(erv)). Since X f(ebv)≥c1≥···≥cf(erv)≥0 qsign(v)(c1+...cf(erv)) = \u0012 f(v) f(ebv) \u0013 qsign(v) , we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "G(f) = qδ(f)multq(f)C(f).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-5-proof-of-theorem-2.md",
+      "narrative": null,
+      "content": "Theorem 7 is used in this section to prove the main Theorem 2. In the rest of the paper we then prove\nTheorem 7 from Theorem 6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Row and column arcs order",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-51-row-and-column-arcs-order.md",
+      "narrative": null,
+      "content": "with r + 1 crossings. We order the arcs of K so that they appear in increasing order as we walk in the\ndirection of the knot, and we denote by K the long knot obtained by breaking the arc ar+1. We also order\nthe crossings of K so that arc ai ends at the ith crossing, for i = 1, . . . , r.\nDeﬁnition 5.1.\n(1) We deﬁne two permutations S, T on the set of the arcs of K as follows.\nFor\narc ai of K let T (i) = T (i, 1), . . ., T (i, ki) ( S(i) = S(i, 1), . . . , S(i, ki) respectively) be the block\nof arcs of K terminating at (starting from) ai and ordered along the orientation of ai.\nLet T\n(S) be th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flows on GK and monomials of GB'K(m1,…mr)",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-52-flows-on-gk-and-monomials-of-gbkm1mr.md",
+      "narrative": null,
+      "content": "K(m1, . . . mr). We interpret each entry γij with no z indeter-\nminate as arc (ij) of the arc-graph GK. Then each monomial in GB′\nK(m1, . . . , mr) corresponds to a ﬂow\non GK with indeg(i) = outdeg(i) = mi, i = 1, . . . , r. If f is such a ﬂow, we denote by G(f) the sum of all\nmonomials of P GB′\nK(m1, . . . , mr) corresponding to f. Summarizing we can write\nObservation 1.\n∞\nX\nm1,...,mr=0\nGB′\nK(m1, . . . , mr) =\nX\nf\nG(f).\nWe denote by C(f) the canonical monomial of a product (in arbitrary order) of the entries of B′\nK corre-\nsponding to the edges of GK, where the entry corresponding to each edg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cabling of the arc graph",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-6-cabling-of-the-arc-graph.md",
+      "narrative": null,
+      "content": "\\lbl{sec.stateCJ}\n\nRecall the operation of {\\em cabling} $\\K^{(n)}$ the knot projection $\\K$ $n$ \ntimes.\n Recall that $a_1,\\dots, a_{r+1}$ are the arcs of $\\K$.\nEach $a_l$ is in the cabling replaced by $n^2$ arcs $a^l_{i,j}$, \n$i,j=1,\\dots, n$,\nwith the agreement that the 'long arcs' obtained by cabling arc $a_k$ will be\n$a^k_{1j}$, $j=1,\\dots, n$ and the 'small arcs' obtained by cabling of crossing\n$k$ will be denoted by $a^k_{ij}$ for $i=2,\\dots, n$ and $j=1,\\dots, n$.\nNote that all crossings which replace the original crossing $k$ have the\nsame sign, equal to the sign of the crossing $k$.\nW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison of excess numbers",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-61-comparison-of-excess-numbers.md",
+      "narrative": null,
+      "content": "\\lbl{sub.coexcess}\n\nGiven an admissible subgraph $c$ in $G_K^{(n)}$, let $f$ be the \ncorresponding flow in $G_K$, to which $c$ projects, under the projection\n$$\n\\pi: G_K^{(n)} \\to G_K.\n$$ \nIn this section, we \ncompare $\\exc(f)$ (in Definition \\ref{def.rotten}) with\n$\\exc(c)$.\n\nAs we will see, the two excess numbers do not agree. In this section\nwe will determine their difference.\n\nWe begin by introducing a partial ordering $\\prec$ on the set of edges\nof $G_K^{(n)}$. We warn the reader that this ordering is different \nfrom the ordering $<_v$ of the edges of $G_K$ entering vertex $v$,\nintroduced",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sortings and multiplicities of flows",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-7-sortings-and-multiplicities-of-flows.md",
+      "narrative": null,
+      "content": "\\lbl{sec.categorifying}\n\n\n\n\\subsection{Sortings}\n\\lbl{sub.CAlex}\n\nIn this section we introduce one of our key tools, which is a categorification\nof multiplicities of the flows on  $G_K$. Let $f$ be a flow on $G_K$. If $e$ \nis an edge of $G_K$\nthen we let $F(e)\\subset F$ be the set of $f(e)$ copies of $e$; we choose\nan {\\em arbitrary} total order on each $F(e)$.\n\nLet $F= \\cup_{e\\in E_K}F(e)$ and let $F_r\\subset F$ consists of the union of \n$F(e)$, $e$ red.\nFurther let $F^+_r$ denote the subset of $F_r$ consisting of the red edges \nwhich leave a vertex with \n$+$ sign, and we let $f^+_r=|F^+_r|$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sortings and the Jones polynomial",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-72-sortings-and-the-jones-polynomial.md",
+      "narrative": null,
+      "content": "\\lbl{sub.CJones}\n\nHere we define admissible sortings and give a formula for the colored\nJones function in terms of them.\n\n\n\\begin{definition}\n\\lbl{def.AConf}\nFix a flow $f$ of $G_K$ and a natural number $n$. Let \n$P=(C,v)$ be an n-sorting of $f$. We say that $P$ is {\\em admissible} if\n\\begin{itemize}\n\\item\nFor every two edges $e,e' \\in F_r$ such that $v_e=v_{e'}$ and \n$e$ ends in vertex $i$ and $e'$ ends in vertex $j$ and $j \\geq i$,\nthere exists an $l$, $i \\leq l < j$ such that $e \\not\\in C_l$.\n\\end{itemize}\nWe denote by $\\AC_n(f)$ the set of all admissible n-sortings of $f$,\nand by $\\Sev_n(G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "Let P = (C, v) be an n-sorting of f. Then exc(P) = X e∈Fr δ1(e) + δ2(e), where δ1(e) = ( |P(f, e)| −def1(C, v, e) if e starts in a + vertex −def1(C, v, e) if e starts in a −vertex, δ2(e) = ( |Cd(e)| −def2(C, v, e) if sign(d(e)) = + −def2(C, v, e) if sign(d(e)) = −.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 7",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-73-proof-of-theorem-7.md",
+      "narrative": null,
+      "content": "Deﬁnition 7.8. Let e ∈Fr. We deﬁne set P(f, e) as follows: if e ∈F(e′), e1 ∈F(e′\n1) then e1 ∈P(f, e) if\nt(e′) = t(e′\n1) = v and e′\n1 <v e′, or e′ = e′\n1 and e1 < e in our ﬁxed total order of F(e).\nDeﬁnition 7.9. Let e ∈Fr. We deﬁne\n• def1(C, v, e) = |{e′ ∈P(f, e) : ve′ < ve}|,\n• def2(C, v, e) = |{e′ ∈Cd(e) : ve′ < ve}|, where d(e) is the biggest index such that d(e) ≥t(e) and\ne̸ ∈Cd(e).\nRecall that t(e) denotes the terminal vertex of e.\nProposition 7.10. Let P = (C, v) be an n-sorting of f. Then\nexc(P) =\nX\ne∈Fr\nδ1(e) + δ2(e),\nwhere\nδ1(e) =\n(\n|P(f, e)| −def1(C, v, e)\nif e starts in a + vertex\n−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-appendix-a-the-zeta-function-of-a-graph-and-the.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. The Foata-Zeilberger formula",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-a1-the-foata-zeilberger-formula.md",
+      "narrative": null,
+      "content": "Zeilberger [FZ, Theorem 1.1] in the language of our paper, resulting in Theorem 3.\nConsider the complete graph Kr with r vertices equipped with a weight martix B = (bij) of size r with\nindependent commuting variables, and let R = Z[[bij]]. Let X = {x1, . . . , xr} denote an alphabet on r letters\nand X⋆denote the set of words on X.\nRecall the notion of a Lyndon word l ∈X, that is a word which is not a nontrivial power of another word,\nand is strictly smaller than any of its cyclic rearrangements. It follows by deﬁnition that\nLemma A.1. There is a 1-1 correspondence between the set of nonperiodi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/def-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "def-sec-017-01.md",
+      "narrative": null,
+      "content": "1. Fix a planar projection K of a knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/def-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "def-sec-017-03.md",
+      "narrative": null,
+      "content": "3. An even subgraph G of Gx is admissible if each indegree is at most one. In other words, G is a vertex-disjoint collection of directed cycles. Let S(Gx_) denote the collection of admissible subgraphs of the arc-graph Gx.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/def-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "def-sec-017-04.md",
+      "narrative": null,
+      "content": "4. (a) The rotation number rot(s) of a state s is the number of counterclockwise circles colored by 1 minus the number of clockwise circles colored by 1, obtained from smoothening of s, i.e., by the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/lem-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-017-02.md",
+      "narrative": null,
+      "content": "2. (a) There is a 1-1 correspondence {states of K}<—> {even subgraphs of Px}. (b) There is a 1-1 correspondence admissible states of K}<—> {collections of vertex-disjoint cycles of Gx}. ) A",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/lem-sec-017-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-017-05.md",
+      "narrative": null,
+      "content": "5. [LW, Lemma 2.3] For an admissible state s of K, we have: Π(s) = (−q)ω(K)q2exc(s)β(s)|t→q2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prop-sec-017-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "prop-sec-017-06.md",
+      "narrative": null,
+      "content": "It was observed by Lin and Wang that the local weights of the R-matrix are proportional, up to a power of q to the weights of a random walk on K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. A state sum for the Jones polynomial",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-appendix-b-a-state-sum-for-the-jones-polynomial.md",
+      "narrative": null,
+      "content": "In this section we review the proof of Theorem] The Jones polynomial V of a link is determined by the\n\nskein theory:\nwOeerO)ew-or 9)\n\ntogether with the initial condition V(unknot)(g) = q + q~!. We will be using a normalized version of the\nJones polynomial defined by\nJ(K)(t) = V(K)(#!/?)/V (unknot)(#\"/?).\n\nWe review a state sum definition of the Jones polynomial V discussed by Turaev (see also [Ji]) and\nfurther studied by Lin and Wang [LW]. We recall the details of Turaev’s general state sum construction,\nadapted to our special case.\n\nDefinition B.1. Fix a planar projection K of a knot.\n\n(a) Le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/def-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "def-sec-018-01.md",
+      "narrative": null,
+      "content": "6. There is a Gauss map d : K — S$ which together with the orientation of K and the counterclockwise orientation of S! induces a map",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/def-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "def-sec-018-02.md",
+      "narrative": null,
+      "content": "7. Let c be an admissible subgraph of Gx. We let exc’(c) equal to exc(s), where s is the corresponding admissible state (see Definition[B.4]and Lemma|[B.2] for the correspondence).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/lem-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "lem-sec-018-03.md",
+      "narrative": null,
+      "content": "8. For every admissible subgraph c of Gx, we have: exc’(c) = exc(c).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1. Rotation and Excess numbers",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-b1-rotation-and-excess-numbers.md",
+      "narrative": null,
+      "content": "edges of Gx so that for each admissible state s and its corresponding (see Lemma[B.2) admissible subgraph\nc of Gx, rot(s) = >.<, rot(e).\nDefinition B.6. There is a Gauss map d : K — S$ which together with the orientation of K and the\ncounterclockwise orientation of S! induces a map\n\nHy (Px, Z) —+ Hy(S',Z) = Z.\n\nThe above composition is defined to be the rotation number rot. We can think of the rotation number as an\nelement of H!(Px,Z) represented by a 1-cocyle, that is a map\n\nrot : Edges(Px) —> Z.\nConsider now the arc-graph Gx of K. There is a canonical map\nEdges(Gc.) —> 2Fdses(Px)\n\ndefined as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prop-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "prop-sec-019-02.md",
+      "narrative": null,
+      "content": "5. Let S be a k-structure. Then X v∈V (S,n) k Y i=1 tvi−def1(S,v,i) = k Y i=1 (n −m(|S|, i))t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix C. A combinatorial counting of structures",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-appendix-c-a-combinatorial-counting-of-structure.md",
+      "narrative": null,
+      "content": "In this section we consider structures on a set [k] = {1, . . ., k}, and their combinatorial countings.\nDeﬁnition C.1. Let k be a positive integer. A k-structure is a pair S = (A, B) such that\n• A = (A1, . . . , Al), B = (B1, . . . , Bl) for some l, Ai, Bi ⊂[k], Ai̸ = ∅for all i,\n• A is a partition of {1, . . . , k} such that for every i < j, x ∈Ai, y ∈Aj we have x < y.\n• Bi ⊂∪j<iAj. In particular B1 = ∅.\n• B is monotonic. That is, if x ∈Bj ∩Ai then for each j ≥j′ > i, x ∈Bj′,\nLemma C.2. The number of k-structures S such that |Ai| = ai and |Bi| = bi for i = 1, . . . , l is\nlY\ni=2\n\u0012ai−1 + bi−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "X S:|S|=(a,b) X v∈V (S,n) k Y i=1 tvi−def1(S,v,i)−def2(S,v,i) = k Y i=1 (n −m(i))t l−1 Y i=1 \u0012ai + bi bi+1 \u0013 t−1. In the proof we will use the following proposition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0411505v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-020-references.md",
+      "narrative": null,
+      "content": "[A]\nJ.W. Alexander, Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928) 275–306.\n[BG]\nD. Bar-Natan and S. Garoufalidis, On the Melvin-Morton-Rozansky conjecture, Inventiones, 125 (1996) 103–133.\n[Ch]\nS. Chmutov, A proof of the Melvin-Morton conjecture and Feynman diagrams, J. Knot Theory and its Rami. 7 (1998)\n23–40.\n[FRT]\nL. Fadeev, N. Reshetikhin and L. Takhtadjian, Quantization of Lie groups and Lie algebras, Leningrad Math. Journal\n1 (1990) 193–225.\n[B]\nH. Bass, The Ihara-Selberg zeta function of a tree lattice, Intern. J. Math. 3 91992) 717–797.\n[FZ]\nD. Foata and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2501.03424v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
+      "dcterms:creator": [
+        "University of California, Berkeley"
+      ],
+      "dcterms:issued": "D:20250107",
+      "dcterms:identifier": "https://arxiv.org/abs/2501.03424",
+      "dcterms:abstract": "This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig theory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative proofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lovely book Intro- duction to Soergel Bimodules2. It is also important to note that much of Soergel’s theory has been omitted from this paper in light of brevity, as well as the depth of proofs and lead-up information. Many proofs concerning covered material are left out of this paper, again, due to their length, as well as their residence in many of the texts listed in the references section. 5 1",
+      "dcterms:source": "library/arxiv-2501.03424v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2501.03424v1"
+    }
+  ]
+}

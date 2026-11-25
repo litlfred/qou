@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "contains": [
+    "library/arxiv-1909.06797v5/sections/sec-front-matter",
+    "library/arxiv-1909.06797v5/sections/sec-000",
+    "library/arxiv-1909.06797v5/sections/sec-001",
+    "library/arxiv-1909.06797v5/sections/sec-002",
+    "library/arxiv-1909.06797v5/sections/sec-003",
+    "library/arxiv-1909.06797v5/sections/sec-004",
+    "library/arxiv-1909.06797v5/sections/sec-005",
+    "library/arxiv-1909.06797v5/sections/sec-006",
+    "library/arxiv-1909.06797v5/sections/sec-007",
+    "library/arxiv-1909.06797v5/sections/sec-008",
+    "library/arxiv-1909.06797v5/sections/sec-009",
+    "library/arxiv-1909.06797v5/sections/sec-010",
+    "library/arxiv-1909.06797v5/sections/sec-011",
+    "library/arxiv-1909.06797v5/sections/sec-012",
+    "library/arxiv-1909.06797v5/sections/sec-013",
+    "library/arxiv-1909.06797v5/sections/sec-014",
+    "library/arxiv-1909.06797v5/sections/sec-015",
+    "library/arxiv-1909.06797v5/sections/sec-016",
+    "library/arxiv-1909.06797v5/sections/sec-017",
+    "library/arxiv-1909.06797v5/sections/sec-018",
+    "library/arxiv-1909.06797v5/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov.\n\n**Quantum Mechanics of Plancherel Growth**\n\n*Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc*\n\n34 pp, 21 sections.\n\n**Abstract.** Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also oﬀers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space.\n\n**Outline.** Front matter; 1 Introduction; 2 Review 1 : Droplet description of unitary ma; 2.1 The large N droplets; 3 Review 2 : Plancherel Growth of Young diagra; 3.1 The Universal Diagram and Automodel; 3.2 Fluctuations of automodel diagrams; 4 Partition Function for Young lattice; 4.1 A connection between Young lattice and Gro; 5 Large N analysis of partition function : an ; 5.1 Large N solutions and automodel diagrams; 5.2 A connection with automodel; 6 The Hilbert space for Plancherel growth; 6.1 Droplet quantisation; 7 Conclusion; Appendix A Analysing Unitary Matrix Models; Appendix A.1 Eigenvalue analysis; Appendix A.2 Young diagram analysis",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1909.06797&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1909.06797v5",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1909.06797v5.pdf",
+    "source_sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+    "pages": 34,
+    "arxiv": {
+      "id": "1909.06797",
+      "version": "5",
+      "primary_class": "hep-th",
+      "stamp_date": "14 Apr 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/li-braid-closures",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Knot polynomials on braid closures",
+      "dcterms:creator": [
+        "January 29, 2025"
+      ],
+      "dcterms:issued": "D:20260131",
+      "dcterms:abstract": "We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials at t = −1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.",
+      "dcterms:source": "library/li-braid-closures/manifest.jsonld",
+      "dcterms:hasVersion": "library/li-braid-closures"
+    }
+  ]
+}

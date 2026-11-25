@@ -1,0 +1,881 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-9308276v1",
+  "title": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The electroweak chiral Lagrangian",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-electroweak-chiral-lagrangian"
+    },
+    {
+      "level": 1,
+      "title": "Effective Lagrangian parameters for a heavy Higgs",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi"
+    },
+    {
+      "level": 1,
+      "title": "Some physical consequences",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-some-physical-consequences"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "5",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Aknowledgments",
+      "number": null,
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-aknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A",
+      "number": null,
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-appendix-a"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B",
+      "number": null,
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-appendix-b"
+    },
+    {
+      "level": 2,
+      "title": "Two point functions",
+      "number": null,
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-two-point-functions"
+    },
+    {
+      "level": 2,
+      "title": "Three point functions",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-three-point-functions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy higgs",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "higgs mass",
+          "heading": false
+        },
+        {
+          "term": "sdi",
+          "heading": false
+        },
+        {
+          "term": "herrero",
+          "heading": false
+        },
+        {
+          "term": "uam",
+          "heading": false
+        },
+        {
+          "term": "madrid",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/9308276v1 14 Aug 1993 The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs Maria J. Herrero∗and Ester Ruiz Morales† Departamento de F´ısica Te´orica Universidad Aut´onoma de Madrid Cantoblanco 28049 – Madrid Spain Abstract The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy higgs",
+          "heading": false
+        },
+        {
+          "term": "electroweak chiral",
+          "heading": false
+        },
+        {
+          "term": "echl parameters",
+          "heading": false
+        },
+        {
+          "term": "electroweak interactions",
+          "heading": false
+        },
+        {
+          "term": "higgs particle",
+          "heading": false
+        },
+        {
+          "term": "higgs contributions",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "heavy fields",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral Lagrangians have been extensively used to describe the phenomenon of spontaneous symmetry breaking both in strong and electroweak interactions. The basis of this approach was formulated by Weinberg [@W] to characterize the most general S-matrix elements for soft pion interactions; and later on it was greatly developed by Gasser and Leutwyler [@GL] in a well defined framework called chiral perturbation theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-electroweak-chiral-lagrangian",
+      "number": "2",
+      "title": "The electroweak chiral Lagrangian",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 1730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral electroweak",
+          "heading": true
+        },
+        {
+          "term": "echl gamma",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": true
+        },
+        {
+          "term": "tau vec",
+          "heading": false
+        },
+        {
+          "term": "nll",
+          "heading": false
+        },
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "vec alpha",
+          "heading": false
+        },
+        {
+          "term": "frac vec",
+          "heading": false
+        }
+      ],
+      "extract": "We start by writing down the electroweak chiral Lagrangian that is $\\gs$ invariant and contains the whole set of CP-invariant operators up to dimension four. We will use the notation of ref. [@F] that is closely related to Longhitano's notation, and will restrict our study to the bosonic sector of electroweak theory. The basic building blocks that are used in the construction of the Lagrangian are the following:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi",
+      "number": "3",
+      "title": "Effective Lagrangian parameters for a heavy Higgs",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 14,
+      "labelStart": "7",
+      "labelEnd": "13",
+      "words": 2824,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac msb",
+          "heading": false
+        },
+        {
+          "term": "renormalized lpi",
+          "heading": false
+        },
+        {
+          "term": "heavy higgs",
+          "heading": true
+        },
+        {
+          "term": "lpi diagrams",
+          "heading": false
+        },
+        {
+          "term": "one-loop lpi",
+          "heading": false
+        },
+        {
+          "term": "lpi functions",
+          "heading": false
+        },
+        {
+          "term": "point lpi",
+          "heading": false
+        },
+        {
+          "term": "counterterms delta",
+          "heading": false
+        }
+      ],
+      "extract": "As we have already said, the fundamental theory that we want to represent by the electroweak chiral Lagrangian is the standard model with a heavy Higgs particle. We start with the standard model Lagrangian $$\\cl_{\\rm SM} = (D_\\mu \\Phi)^\\dagger (D^\\mu \\Phi) + \\mu^2 \\Phi^\\dagger \\Phi - \\lambda (\\Phi^\\dagger \\Phi)^2 + \\frac{1}{2} Tr \\left( \\wtd \\wtu + \\btd \\btu \\right) + \\cl_{\\rm GF} + \\cl_{\\rm FP} ,$$ where $$\\Phi =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-some-physical-consequences",
+      "number": "4",
+      "title": "Some physical consequences",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 953,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "msb",
+          "heading": false
+        },
+        {
+          "term": "epsilon frac",
+          "heading": false
+        },
+        {
+          "term": "epsilon parameters",
+          "heading": false
+        },
+        {
+          "term": "kappa gamma",
+          "heading": false
+        },
+        {
+          "term": "aligned epsilon",
+          "heading": false
+        },
+        {
+          "term": "amh",
+          "heading": false
+        },
+        {
+          "term": "epsilon right",
+          "heading": false
+        },
+        {
+          "term": "epsilon left",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to add in this section some remarks and comments on the results for the EChL parameters presented in eq.([\\[aMH\\]](#aMH){reference-type=\"ref\" reference=\"aMH\"}). These finite values represent the non-decopling effects of a heavy Higgs particle in the SM to one-loop order. They contain valuable information since they serve as reference values to be compared with the corresponding predictions from other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conclusions",
+      "number": "5",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy higgs",
+          "heading": false
+        },
+        {
+          "term": "electroweak chiral",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": false
+        },
+        {
+          "term": "dynamics",
+          "heading": false
+        },
+        {
+          "term": "effective",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we have considered the electroweak chiral Lagrangian that parametrizes electroweak interactions in the case of a heavy Higgs boson. This Lagrangian has been obtained as the low energy effective theory of the standard model when the Higgs particle is integrated out to one--loop order. In particular, we have analyzed the subset of effective operators that contribute to the two-- and three--point Green's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-aknowledgments",
+      "number": null,
+      "title": "Aknowledgments",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cicyt",
+          "heading": false
+        },
+        {
+          "term": "large-m",
+          "heading": false
+        },
+        {
+          "term": "dpto",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to thank A.Dobado and D.Espriu for reading the manuscript and for useful discussions. A special thank goes to C.P.Martı́n for many stimulating discussions, his interesting comments on the manuscript and for his valuable help and patience in explaining us the large-m techniques developed in [@CAR; @O]. We are also indebted to C.Quimbay who participated in the very early stages of this work. M.J.H.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-a",
+      "number": null,
+      "title": "Appendix A",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger left",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "nabla left",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "nonumber",
+          "heading": false
+        },
+        {
+          "term": "fpnl",
+          "heading": false
+        },
+        {
+          "term": "partial",
+          "heading": false
+        }
+      ],
+      "extract": "The complete expression for $\\fpnl$ containing terms up to $O(c c \\pi \\pi )$ is: $$\\begin{aligned} \\fpnl & = & c_0^{\\dagger} \\left[-\\nabla^2 -g'\\left( \\frac{g' v \\xi_B}{2} \\right) \\left[\\frac{v}{2}-\\frac{1}{6 v}(\\pi_1^2 + \\pi_2^2) + ...\\right] \\right] c_0 \\nonumber\\\\ & & +\\sum_{i\\ne j \\ne k = 1}^3 c_i^{\\dagger} \\left[-\\nabla^2 -g\\left( \\frac{g v \\xi_W}{2} \\right) \\left[\\frac{v}{2}-\\frac{1}{6 v}(\\pi_j^2 + \\pi_k^2) +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-b",
+      "number": null,
+      "title": "Appendix B",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "msb",
+          "heading": false
+        },
+        {
+          "term": "counterterm",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        }
+      ],
+      "extract": "In this appendix, we give the different contributions to the one loop Green's functions appearing in the matching equations ([\\[PM\\]](#PM){reference-type=\"ref\" reference=\"PM\"},[\\[VM\\]](#VM){reference-type=\"ref\" reference=\"VM\"}). In these formulas, we have not written explicitely the counterterm in the bare $a_i$ coefficients for brevity; therefore the replacement $a_i \\rightarrow a_i^{\\msb}(\\mu) + \\delta a_i^{\\msb}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-two-point-functions",
+      "number": null,
+      "title": "Two point functions",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac nonumber",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "delta epsilon",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "log frac",
+          "heading": false
+        },
+        {
+          "term": "nonumber end",
+          "heading": false
+        },
+        {
+          "term": "widehat",
+          "heading": false
+        }
+      ],
+      "extract": "The differences in the tree level plus counterterm contributions to the two point functions from the SM and the EChL are given by: $$\\begin{aligned} -i \\Pi^{WW}_{(0+{\\rm C}) \\mu\\nu}+i \\widehat{\\Pi}^{WW}_{(0+{\\rm C}) \\mu\\nu}&=& i g_{\\mu\\nu} \\frac{g^2 v^2}{4} \\left[ \\Delta Z_\\pi - 2 \\frac{\\Delta g}{g} - 2 \\frac{\\Delta v}{v} \\right] \\nonumber \\\\[2mm] & & -i \\left( g_{\\mu\\nu} q^2 - q_\\mu q_\\nu \\right) \\Delta Z_W + i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-three-point-functions",
+      "number": null,
+      "title": "Three point functions",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acta phys",
+          "heading": false
+        },
+        {
+          "term": "ruiz morales",
+          "heading": false
+        },
+        {
+          "term": "herrero",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "dobado",
+          "heading": false
+        },
+        {
+          "term": "igcw",
+          "heading": false
+        },
+        {
+          "term": "point functions",
+          "heading": true
+        },
+        {
+          "term": "veltman",
+          "heading": false
+        }
+      ],
+      "extract": "Three point functions The diﬀerences in the tree level plus counterterm contributions to the γWW and ZWW 1PI Green’s functions from the SM and the EChL are given by: −iV γW W (0+C)λµν + i bV γW W (0+C)λµν = −igswT γ λµν \" ∆ZW −∆g g # −ig3sw (p1µgλν −p1νgλµ) \u0014 a1 −a2 + a3 −a8 + a9 \u0015 −ig3sw (p2µgλν −p3νgλµ) a11 −iV ZW W (0+C)λµν + i bV ZW W (0+C)λµν = −igcwT Z λµν \" ∆ZW −∆g g + g2 c2 w a3 # −igcw (p1µgλν −p1νgλµ) \u0014",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "effective echl",
+      "heading": false
+    },
+    {
+      "term": "echl gamma",
+      "heading": false
+    },
+    {
+      "term": "echl parameters",
+      "heading": false
+    },
+    {
+      "term": "frac nonumber",
+      "heading": false
+    },
+    {
+      "term": "higgs contributions",
+      "heading": false
+    },
+    {
+      "term": "frac msb",
+      "heading": false
+    },
+    {
+      "term": "echl theory",
+      "heading": false
+    },
+    {
+      "term": "dagger nonumber",
+      "heading": false
+    },
+    {
+      "term": "heavy higgs",
+      "heading": true
+    },
+    {
+      "term": "delta nonumber",
+      "heading": false
+    },
+    {
+      "term": "counterterms contributions",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-9308276v1"
+  }
+}

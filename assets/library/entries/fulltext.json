@@ -1,0 +1,493 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "fulltext",
+  "blocks": [
+    {
+      "id": "library/fulltext/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "The Dilogarithm Function\nDon Zagier\nMax-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany\nand Coll`ege de France, 3 rue d’Ulm, F-75005 Paris, France\nzagier@mpim-bonn.mpg.de\nI.\nThe dilogarithm function in geometry and number theory\n5\n1. Special values . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n6\n2. Functional equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n8\n3. The Bloch-Wigner function D(z) and its generalizations . . . . . . . . . . . . 10\n4. Volumes of hyperbolic 3-manif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dilogarithm function in geometry and number theory",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-i-the-dilogarithm-function-in-geometry-and-numbe.md",
+      "narrative": null,
+      "content": "in geometry and number theory1\nThe dilogarithm function is the function deﬁned by the power series\nLi2(z) =\n∞\n\u0001\nn=1\nzn\nn2\nfor |z| < 1 .\nThe deﬁnition and the name, of course, come from the analogy with the Taylor\nseries of the ordinary logarithm around 1,\n−log(1 −z) =\n∞\n\u0001\nn=1\nzn\nn\nfor |z| < 1 ,\nwhich leads similarly to the deﬁnition of the polylogarithm\nLim(z) =\n∞\n\u0001\nn=1\nzn\nnm\nfor\n|z| < 1,\nm = 1, 2, . . . .\nThe relation\nd\ndz Lim(z) = 1\nz Lim−1(z)\n(m ≥2)\nis obvious and leads by induction to the extension of the domain of deﬁnition\nof Lim to the cut plane C ∖[1, ∞); in particular, the analytic co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special values",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-1-special-values.md",
+      "narrative": null,
+      "content": "1 Special values\nLet us start with the question of special values. Most functions have either\nno exactly computable special values (Bessel functions, for instance) or else a\ncountable, easily describable set of them; thus, for the gamma function\nΓ(n) = (n −1)! ,\nΓ\n\u0003\nn + 1\n2\n\u0004\n= (2n)!\n4nn!\n√π ,\nand for the Riemann zeta function\nζ(2) = π2\n6 ,\nζ(4) = π4\n90,\nζ(6) = π6\n945,\n. . . ,\nζ(0) = −1\n2,\nζ(−2) = 0,\nζ(−4) = 0,\n. . . ,\nζ(−1) = −1\n12,\nζ(−3) =\n1\n120,\nζ(−5) = −1\n252,\n. . . .\nNot so the dilogarithm. As far as anyone knows, there are exactly eight\nvalues of z for which z and Li2(z) can both be give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functional equations",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-functional-equations.md",
+      "narrative": null,
+      "content": "In contrast to the paucity of special values, the dilogarithm function satisﬁes\na plethora of functional equations. To begin with, there are the two reﬂection\nproperties\nLi2\n\u00031\nz\n\u0004\n= −Li2(z) −π2\n6 −1\n2 log2(−z) ,\nLi2(1 −z) = −Li2(z) + π2\n6 −log(z) log(1 −z) .\nThe Dilogarithm Function\n9\nTogether they say that the six functions\nLi2(z), Li2\n\u0003\n1\n1 −z\n\u0004\n, Li2\n\u0003z −1\nz\n\u0004\n, −Li2\n\u00031\nz\n\u0004\n, −Li2(1 −z), −Li2\n\u0003\nz\nz −1\n\u0004\nare equal modulo elementary functions, Then there is the duplication formula\nLi2(z2) = 2\n\u0003\nLi2(z) + Li2(−z)\n\u0004\nand more generally the “distribution property”\nLi2(x) = n\n\u0001\nzn=x\nLi2(z)\n(n = 1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bloch-Wigner function D(z) and its generalizations",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-3-the-bloch-wigner-function-dz-and-its-generaliz.md",
+      "narrative": null,
+      "content": "and its generalizations\nD\nThe function Li2(z), extended as above to C ∖[1, ∞), jumps by 2πi log |z| as\nz crosses the cut. Thus the function Li2(z) + i arg(1 −z) log |z|, where arg\ndenotes the branch of the argument lying between −π and π, is continuous.\nSurprisingly, its imaginary part\nD(z) = ℑ(Li2(z)) + arg(1 −z) log |z|\nis not only continuous, but satisﬁes\n(I) D(z) is real analytic on C except at the two points 0 and 1, where it is\ncontinuous but not diﬀerentiable (it has singularities of type r log r there).\nThe above graph shows the behaviour of D(z). We have plotted the level\ncurves D(z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volumes of hyperbolic 3-manifolds",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-4-volumes-of-hyperbolic-3-manifolds.md",
+      "narrative": null,
+      "content": "The dilogarithm occurs in connection with measurement of volumes in euclid-\nean, spherical, and hyperbolic geometry. We will be concerned with the last of\nthese. Let H3 be the Lobachevsky space (space of non-euclidean solid geome-\ntry). We will use the half-space model, in which H3 is represented by C × R+\nwith the standard hyperbolic metric in which the geodesics are either verti-\ncal lines or semicircles in vertical planes with endpoints in C × {0} and the\ngeodesic planes are either vertical planes or else hemispheres with boundary\nin C × {0}. An ideal tetrahedron is a tetrahedron whose vert",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "References\n[1] S. BLOCH: Applications of the dilogarithm function in algebraic K-\ntheory and algebraic geometry, in: Proc. of the International Symp. on\nAlg. Geometry, Kinokuniya, Tokyo, 1978.\n[2] A. BOREL: Commensurability classes and volumes of hyperbolic 3-\nmanifolds, Ann. Sc. Norm. Sup. Pisa, 8 (1981), 1–33.\n[3] J. L. DUPONT and C. H. SAH: Scissors congruences II, J. Pure and\nApplied Algebra, 25 (1982), 159–195.\n[4] L. LEWIN: Polylogarithms and associated functions (title of original\n1958 edition: Dilogarithms and associated functions). North Holland, New\nYork, 1981.\n[5] W. NEUMANN and D.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notes on Chapter I",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-notes-on-chapter-i.md",
+      "narrative": null,
+      "content": "Notes on Chapter I.\nA\nThe comment about “too little-known” is now no longer applicable, since\nthe dilogarithm has become very popular in both mathematics and mathe-\nmatical physics, due to its appearance in algebraic K-theory on the one hand\nand in conformal ﬁeld theory on the other. Today one needs no apology for\ndevoting a paper to this function.\nB\nFrom the point of view of the modern theory, the arguments of the\ndilogarithm occurring in these eight formulas are easy to recognize: they are\nthe totally real algebraic numbers x (oﬀthe cut) for which x and 1 −x,\nif non-zero, belong to the same",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 31,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "For x, y ∈C with |xy| < 1, |y| < 1 we have Li1,1(x, y) = Li2 \u0003xy −y 1 −y \u0004 −Li2 \u0003 −y 1 −y \u0004 −Li2(xy) . (2) Before proving this identity, we mention some equivalent formulas and con- sequences. First of all, the double logarithm function satisﬁes the identity—the simplest case of the “shuﬄe relations” satisﬁed by all multiple zeta values and multiple polylogarithms— Li1,1(x, y) + Li1,1(y, x) + Li2(xy) = Li1(x) Li1(y) , (3) which is an immediate consequence of the fact that any pair of positive integers (m, n) must satisfy exactly one of the three conditions 0 < m < n, 0 < n < m, or 0 < m = n. C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 31,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "For x, q ∈C with |x| < 1, |q| < 1 we have the power series expansions (x; q)∞= ∞ \u0001 n=0 (−1)n q( n 2) (q)n xn , (7) (x; q)∞ = ∞ \u0001 n=0 xn (q)n , (8) −log(x; q)∞= Li2(x; q) . (9) Don Zagier",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prop-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[38], [15], [22]",
+      "pageStart": 20,
+      "pageEnd": 31,
+      "target": "prop-sec-008-03.md",
+      "narrative": null,
+      "content": "Let u and v be non-commuting variables satisfying the commutation relation u v = q v u . (11) Then (v)∞(u)∞= (u)∞(−vu)∞(v)∞. (12)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further aspects of the dilogarithm",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-ii-further-aspects-of-the-dilogarithm.md",
+      "narrative": null,
+      "content": "As explained in the preface to this paper, in this chapter we give a more\ndetailed discussion of some of the topics treated in Chapter I and describe\nsome of the developments of the intervening seventeen years. In Section 1 we\ndiscuss six further functions which are related to the classical dilogarithm Li2\nand the Bloch-Wigner function D : the Rogers dilogarithm, the “enhanced”\ndilogarithm, the double logarithm, the quantum dilogarithm, the p-adic dilog-\narith, and the ﬁnite dilogarithm. Section 2 treats the functional equations of\nthe dilogarithm function in more detail than was done in Chapt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variants of the dilogarithm function",
+      "pageStart": 20,
+      "pageEnd": 31,
+      "target": "../sections/sec-008-1-variants-of-the-dilogarithm-function.md",
+      "narrative": null,
+      "content": "As explained in Chapter I, one of the disadvantages of the classical dilogarithm\nfunction Li2(z) is that, although it has a holomorphic extension beyond the\nregion of convergence |z| < 1 of the deﬁning power series \n∞\nn=1 zn/n2, this\nextension is many-valued. This complicates all aspects of the analysis of the\ndilogarithm function. One way to circumvent the diﬃculty, discussed in detail\nin §§3–4 of Chapter I, is to introduce the Bloch-Wigner dilogarithm function\nD(z) = ℑ\n\nLi2(z) −log |z| Li1(z)\n\n, which extends from the original region of\ndeﬁnition 0 < |z| < 1 to a continuous function D : P1(C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "40",
+      "pageStart": 31,
+      "pageEnd": 39,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "(i) Any rational function of one variable is equivalent modulo the ﬁve-term relation to a linear combination of linear functions. (ii) Any functional equation of the dilogarithm with rational functions of one variable as arguments is a consequence of the ﬁve-term relation. (Part (ii) is to be interpreted up to constants, i.e. the ﬁve-term relation suﬃces to give all relations i D(xi(t)) = C but not necessarily to determine C.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithm identities",
+      "pageStart": 31,
+      "pageEnd": 39,
+      "target": "../sections/sec-009-2-dilogarithm-identities.md",
+      "narrative": null,
+      "content": "In Chapter I of this paper we discussed both functional equations of the dilog-\narithm function and numerical identities involving the values of dilogarithms\nat algebraic arguments. Here we discuss both topics in more detail. In subsec-\ntion A we give the algebraic characterization of arbitrary functional equations\nof the dilogarithm and prove Wojtkowiak’s theorem that all functional equa-\ntions whose arguments are rational functions of one variable are consequences\nof the ﬁve-term functional equation. In subsections B and C we discuss speciﬁc\nexamples of identities of the form \n D(αi) = 0 or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/conj-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 56,
+      "target": "conj-sec-010-01.md",
+      "narrative": null,
+      "content": "Let A be a positive deﬁnite symmetric r×r matrix with rational coeﬃcients. Then the following are equivalent: (i) The element ξQ is a torsion element of B(F) for every solution Q of (25). (ii) There exist B ∈Qr and C ∈Q such that fA,B,C(z) is a modular function. The main motivation for this conjecture comes from physics, and in fact one expects that all the modular functions fA,B,C which are obtained this way are characters of rational conformal ﬁeld theories. (We will not discuss these aspects at all, referring the reader for this to Nahm’s paper.) A further ex- pectation, again predicted by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 56,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "For ﬁxed Q ∈(0, 1) and q = e−ε →1 with qn = Qq−ν with n →∞, ν = o(n), we have log \u0005 1 (q)n \u0006 ∼ \u0010π2 6 −Li2(Q) \u0011 ε−1 − \u0010 (ν −1 2) log \u0003 1 −Q \u0004 + 1 2 log \u00032π ε \u0004\u0011 − \u0010 1 24 + 1 \u0003 ν2 −ν + 1 6) Q 1 −Q \u0011 ε − ∞ \u0001 r=3 Br(ν) Li2−r(Q) εr−1 r! as ε →0, where Br(ν) denotes the rth Bernoulli polynomial and Li−j(Q) is the negative-index polylogarithm Li−j(Q) = ∞",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 56,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "For any A, B ∈R, A > 0, we have the asymptotic expansion log FA,B \u0003 e−ε\u0004 ∼ ∞ \u0001 j=−1 cj(A, B) εj \u0003 ε ↘0 \u0004 , (35) The Dilogarithm Function with coeﬃcients cj(A, B) ∈R. The ﬁrst two coeﬃcients are given by c−1(A, B) = L(1) −L(Q) , c0(A, B) = B log Q −1 2 log ∆, (36) where Q is the unique positive solution of Q + QA = 1, L(x) is the Rogers dilogarithm, and ∆= A + Q −AQ, while cj(A, B) for j ≥1 is a polynomial of degree j + 1 in B with coeﬃcients in Q[Q, A, ∆−1], e.g. c1(A, B) = 1 −Q 2∆ B2 −Q(1 −Q)(1 −A) 2∆2 B −(1 −Q)((1 −Q2)A3 −3QA2 + 3Q(1 + Q)A −2Q2) 24∆3 . Before proving the proposition, we say",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithms and modular functions: the Nahm equation",
+      "pageStart": 39,
+      "pageEnd": 56,
+      "target": "../sections/sec-010-3-dilogarithms-and-modular-functions-the-nahm-eq.md",
+      "narrative": null,
+      "content": "A fascinating and almost completely unsolved problem is to understand\nthe overlap between the classes of q-hypergeometric functions and modular\nforms or functions, the prototypical case being given by the famous Rogers-\nRamanujan identities. Nahm’s conjecture gives us a ﬁrst glimpse of an an-\nswer, which surprisingly involves dilogarithms and the Bloch group. In sub-\nsections A and B we describe the conjecture and some of the examples which\nmotivate it, while subsection C contains an asymptotic analysis of the q-series\ninvolved and the proof that the conjecture is true in the simplest case.\nA.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/rem-sec-010-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 56,
+      "target": "rem-sec-010-03.md",
+      "narrative": null,
+      "content": "The functional equation (37) remains true formally if one re- places FA,B(q) by F ⋆ A,B(q) = qB2/2AF1/A,B/A(q−1), so the formal power se- ries HA,B(ε) satisﬁes a second functional equation H1/A,B/A(−ε) = eεB2/2A HA,B(ε). (Note that the change (A, B) \u000e→(1/A, B/A) changes Q to 1 −Q = QA and does not change B2/A or QA.) It follows that the coeﬃcients cj(A, B) in (35) satisfy the functional equations cj(A, B) −(−1)j cj(1/A, B/A) = γj(A) + \u0018 B2/2A if j = 1, otherwise for some constants γj = γj(A) independent of B. Using the explicit formulas for cj which will be computed below, we ﬁnd that γ−1 = L(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher polylogarithms",
+      "pageStart": 56,
+      "pageEnd": 61,
+      "target": "../sections/sec-011-4-higher-polylogarithms.md",
+      "narrative": null,
+      "content": "In Chapter I we already introduced the higher polylogarithm functions Lim(z),\ntheir one-valued modiﬁcations Dm(z), and the idea that there might be rela-\ntions among special values of Dedekind zeta functions at integral arguments\nand the values of polylogarithms at algebraic arguments, analogous to those\nexisting for the dilogarithm. But at the time when that text was written, I\nknew only a few sporadic results, and the chapter ends with the sentence “the\ngeneral picture is not yet clear.” After it was written I did a lot of numeri-\ncal calculations with special values of higher polylogarithm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/fulltext/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 61,
+      "pageEnd": 63,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[1] Beauville, A.; Blanc, J.: On Cremona transformations of prime order. C.\nR. Math. Acad. Sci. Paris 339 (2004) 257–259.\n[2] Beilinson, A. and Deligne, P.: Motivic polylogarithm and Zagier conjec-\nture. Preprint (1992).\n[3] Belabas, K. and Gangl, H.: Generators and relations for K2OF . K-Theory\n31 (2004) 195–231.\n[4] Besser, A.: Finite and p-adic polylogarithms. Compositio Math. 130\n(2002) 215–223.\n[5] Borel, A.: Cohomologie de SLn et valeurs de fonctions zˆeta aux points\nentiers. Ann. Scuola Norm. Sup. Pisa Cl. Sci. 4 (1977) 613–636.\n[6] Bailey, D. and Broadhurst, D.: A seventeenth-order pol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

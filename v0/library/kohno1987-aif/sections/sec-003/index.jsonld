@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/kohno1987-aif/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Construction of connections.",
+  "pageStart": 4,
+  "pageEnd": 13,
+  "contains": [
+    "library/kohno1987-aif/blocks/prose-sec-003",
+    "library/kohno1987-aif/blocks/thm-sec-003-01",
+    "library/kohno1987-aif/blocks/prop-sec-003-02",
+    "library/kohno1987-aif/blocks/thm-sec-003-03",
+    "library/kohno1987-aif/blocks/lem-sec-003-04",
+    "library/kohno1987-aif/blocks/lem-sec-003-05",
+    "library/kohno1987-aif/blocks/rem-sec-003-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "provenance": "ingested"
+}

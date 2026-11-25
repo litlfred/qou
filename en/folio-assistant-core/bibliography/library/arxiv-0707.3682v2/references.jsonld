@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0707.3682v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
+      "dcterms:creator": [
+        "BESSER, AMNON",
+        "BUCKINGHAM, PAUL",
+        "JEU, ROB DE"
+      ],
+      "dcterms:issued": "D:20181105",
+      "dcterms:identifier": "https://arxiv.org/abs/0707.3682",
+      "dcterms:abstract": "We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin motives, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁeld (or Artin motive) is Abelian over the rationals, and all conjectures are veriﬁed numeri- cally in some other cases.",
+      "dcterms:source": "library/arxiv-0707.3682v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0707.3682v2"
+    }
+  ]
+}

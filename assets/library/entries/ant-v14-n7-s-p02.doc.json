@@ -1,0 +1,917 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p02",
+  "title": "ant-v14-n7-s-p02",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": "1711",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "1",
+      "page": 6,
+      "pageLabel": "1716",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
+      "number": "2",
+      "page": 14,
+      "pageLabel": "1724",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-iteration-of-the-harmonic-frobenius-of-integra"
+    },
+    {
+      "level": 1,
+      "title": "Iteration of the harmonic Frobenius of series",
+      "number": "3",
+      "page": 21,
+      "pageLabel": "1731",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-iteration-of-the-harmonic-frobenius-of-series"
+    },
+    {
+      "level": 1,
+      "title": "Comparison between equations on integrals and equations on series",
+      "number": "4",
+      "page": 29,
+      "pageLabel": "1739",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-comparison-between-equations-on-integrals-and"
+    },
+    {
+      "level": 1,
+      "title": "Iteration of the Frobenius on P1 \\ S",
+      "number": "5",
+      "page": 31,
+      "pageLabel": "1741",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-iteration-of-the-frobenius-on-p1-s"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: A Poisson bracket corresponding to the pro-unipotent harmonic action of integrals at (1, 0)",
+      "number": null,
+      "page": 34,
+      "pageLabel": "1744",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-appendix-a-poisson-bracket-corresponding-to-the"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 35,
+      "pageLabel": "1745",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 36,
+      "pageLabel": "1746",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1711",
+      "labelEnd": "1711",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": false
+        },
+        {
+          "term": "p-adic cyclotomic",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic multiple",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1711 Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations of the crystalline Frobenius of the pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}. In this paper we study how the iterated",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p02/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "1711",
+      "labelEnd": "1716",
+      "words": 2444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic cyclotomic",
+          "heading": false
+        },
+        {
+          "term": "iter har",
+          "heading": false
+        },
+        {
+          "term": "harmonic frobenius",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic multiple",
+          "heading": false
+        },
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": false
+        },
+        {
+          "term": "crystalline frobenius",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "david jarossay",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1. Preliminaries 1716 2. Iteration of the harmonic Frobenius of integrals at (1, 0) 1724 3. Iteration of the harmonic Frobenius of series 1731 4. Comparison between equations on integrals and equations on series 1739 5. Iteration of the Frobenius on P1 \\ S ξ B(ξ, 1) 1741 Appendix: A Poisson bracket corresponding to pro-unipotent harmonic action 1744 Acknowledgments 1745 References 1746 0. Introduction",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-preliminaries",
+      "number": "1",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 14,
+      "labelStart": "1716",
+      "labelEnd": "1724",
+      "words": 3962,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": false
+        },
+        {
+          "term": "groupoids πun",
+          "heading": false
+        },
+        {
+          "term": "map har",
+          "heading": false
+        },
+        {
+          "term": "p-adic pro-unipotent",
+          "heading": false
+        },
+        {
+          "term": "harmonic frobenius",
+          "heading": false
+        },
+        {
+          "term": "rham pro-unipotent",
+          "heading": false
+        },
+        {
+          "term": "david jarossay",
+          "heading": false
+        },
+        {
+          "term": "pro-unipotent fundamental",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we establish the framework of this paper. We review some deﬁnitions and properties about the pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}, some results from [Jarossay 2015] and we add to them a few new deﬁnitions and notations. Throughout this paper, N and N∗will denote the set of nonnegative and positive integers, respectively. 1A. The pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-iteration-of-the-harmonic-frobenius-of-integra",
+      "number": "2",
+      "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 21,
+      "labelStart": "1724",
+      "labelEnd": "1731",
+      "words": 2993,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harmonic frobenius",
+          "heading": true
+        },
+        {
+          "term": "end eξd",
+          "heading": false
+        },
+        {
+          "term": "har",
+          "heading": false
+        },
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": false
+        },
+        {
+          "term": "harmonic actions",
+          "heading": false
+        },
+        {
+          "term": "iter",
+          "heading": false
+        },
+        {
+          "term": "integrals",
+          "heading": true
+        },
+        {
+          "term": "p-adic cyclotomic",
+          "heading": false
+        }
+      ],
+      "extract": "We prove (0-3) in Section 2A, and we prove (0-4) in Section 2B. 2A. The ﬁxed point equation of the harmonic Frobenius of integrals at (1, 0). 2A1. The ﬁxed point equation for the Frobenius of integrals. We express the iterated Frobenius at base-points of (1, 0) as a function of the number of iterations. Proposition 2A.1. (a) For all ˜α ∈N∗, we have 8q,−∞= ﬁxq ˜α0,8q,−˜α i.e., 8q,−˜α ◦∫1,0 τ(q ˜α)8q,−∞= 8q,−∞, i.e.,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-iteration-of-the-harmonic-frobenius-of-series",
+      "number": "3",
+      "title": "Iteration of the harmonic Frobenius of series",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 29,
+      "labelStart": "1731",
+      "labelEnd": "1739",
+      "words": 3535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jmax jmin",
+          "heading": false
+        },
+        {
+          "term": "harmonic",
+          "heading": true
+        },
+        {
+          "term": "multiple harmonic",
+          "heading": false
+        },
+        {
+          "term": "david jarossay",
+          "heading": false
+        },
+        {
+          "term": "p-adic cyclotomic",
+          "heading": false
+        },
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": false
+        },
+        {
+          "term": "harmonic sums",
+          "heading": false
+        },
+        {
+          "term": "ayd",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove (0-5) and we discuss its meaning. 3A. Prime weighted multiple harmonic sums as functions of the number of iterations of the Frobenius. In this section we study how harga ((n;)a3 (&;))a41) depends on @. The first step is to write a p-adic expression of harga ((n;)a; (&;)a4+1), obtained by considering the g®° adic expansion of the indices m1, ..., mq of the domain of summation of harga",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-comparison-between-equations-on-integrals-and",
+      "number": "4",
+      "title": "Comparison between equations on integrals and equations on series",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "1739",
+      "labelEnd": "1741",
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "comp iter",
+          "heading": false
+        },
+        {
+          "term": "end eξd",
+          "heading": false
+        },
+        {
+          "term": "ad8p",
+          "heading": false
+        },
+        {
+          "term": "e1en",
+          "heading": false
+        },
+        {
+          "term": "harpα",
+          "heading": false
+        },
+        {
+          "term": "harmonic frobenius",
+          "heading": false
+        },
+        {
+          "term": "nam",
+          "heading": false
+        },
+        {
+          "term": "harq",
+          "heading": false
+        }
+      ],
+      "extract": "We prove (0-6) and we discuss more generally the comparison between integrals and series. 4A. Uniqueness of the expansion of harq ˜α as a function of ˜α and q ˜α. Proposition 4A.1. Let δ ∈N∗, and a map S : N∗∩[δ, +∞[ →K such that we have, for all a ∈ N∗∩[δ, +∞[, S(a) = P n∈N PM m=0 cn,m(qa)nam, where M ∈N∗, and (cl,m)0⩽n, 0⩽m⩽M ∈K N×{0,...,M} such that P n∈N PM m=0|cn,mqn|p < ∞. If S(a) = 0 for all a ∈N∗∩[δ, +∞[,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-iteration-of-the-frobenius-on-p1-s",
+      "number": "5",
+      "title": "Iteration of the Frobenius on P1 \\ S",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "1741",
+      "labelEnd": "1744",
+      "words": 1464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "likz",
+          "heading": false
+        },
+        {
+          "term": "regularized iterated",
+          "heading": false
+        },
+        {
+          "term": "iterated frobenius",
+          "heading": false
+        },
+        {
+          "term": "david jarossay",
+          "heading": false
+        },
+        {
+          "term": "iterated integrals",
+          "heading": false
+        },
+        {
+          "term": "p-adic multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple harmonic",
+          "heading": false
+        },
+        {
+          "term": "multiple polylogarithms",
+          "heading": false
+        }
+      ],
+      "extract": "ξ B(ξ, 1) In the previous sections, we considered the Frobenius of πun,crys 1 (P1 \\ {0, µN, ∞}) at base-points (1, 0) and the harmonic Frobenius. We now consider the Frobenius of πun,crys 1 (P1 \\ {0, µN, ∞}) on the afﬁnoid subspace U an = P1,an \\ S ξ N=1 B(ξ, 1) of P1,an over K, where B(ξ, 1) is the open ball of center ξ and of radius 1. As in Section 2, we will have a ﬁxed-point equation (Section 5A) and an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-a-poisson-bracket-corresponding-to-the",
+      "number": null,
+      "title": "Appendix: A Poisson bracket corresponding to the pro-unipotent harmonic action of integrals at (1, 0)",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "1744",
+      "labelEnd": "1745",
+      "words": 915,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson bracket",
+          "heading": true
+        },
+        {
+          "term": "pro-unipotent harmonic",
+          "heading": true
+        },
+        {
+          "term": "ihara bracket",
+          "heading": false
+        },
+        {
+          "term": "harmonic action",
+          "heading": true
+        },
+        {
+          "term": "har deﬁned",
+          "heading": false
+        },
+        {
+          "term": "adjoint ihara",
+          "heading": false
+        },
+        {
+          "term": "lie bracket",
+          "heading": false
+        },
+        {
+          "term": "ihara product",
+          "heading": false
+        }
+      ],
+      "extract": "of integrals at (1, 0) We have seen that, by their deﬁnitions, the pro-unipotent harmonic actions (Section 1D and Deﬁnition 2A.3) are connected to the Ihara product (1-1). However, often in the literature, what is used is not the Ihara product but the corresponding Lie bracket, called the Ihara bracket, which is a Poisson bracket. In this section we explain that the pro-unipotent harmonic action of integrals at (1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "1745",
+      "labelEnd": "1746",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "université",
+          "heading": false
+        },
+        {
+          "term": "blumenstock",
+          "heading": false
+        },
+        {
+          "term": "irmia",
+          "heading": false
+        }
+      ],
+      "extract": "This work was done at Université Paris Diderot and Université de Strasbourg, with, respectively, the support of ERC grant 257638 and Labex IRMIA. It has been revised at Université de Genève and Ben Gurion University of the Negev with, respectively, the support of NCCR SwissMAP and Ishai Dan- Cohen’s ISF grant. I thank the two anonymous referees whose feedback helped me improve the writing of this paper. I also thank",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "1746",
+      "labelEnd": "1746",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic multi-zeta",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic p-adic",
+          "heading": false
+        },
+        {
+          "term": "p-adic multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "multi-zeta values",
+          "heading": false
+        },
+        {
+          "term": "multiple harmonic",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "jarossay",
+          "heading": false
+        }
+      ],
+      "extract": "[Besser 2002] A. Besser, “Coleman integration using the Tannakian formalism”, Math. Ann. 322:1 (2002), 19–48. MR Zbl [Coleman 1982] R. F. Coleman, “Dilogarithms, regulators and p-adic L-functions”, Invent. Math. 69:2 (1982), 171–208. MR Zbl [Deligne 1989] P. Deligne, “Le groupe fondamental de la droite projective moins trois points”, pp. 79–297 in Galois groups over Q (Berkeley, 1987), edited by Y. Ihara et al.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pro-unipotent harmonic",
+      "heading": true
+    },
+    {
+      "term": "p-adic pro-unipotent",
+      "heading": false
+    },
+    {
+      "term": "harmonic frobenius",
+      "heading": true
+    },
+    {
+      "term": "cyclotomic p-adic",
+      "heading": false
+    },
+    {
+      "term": "multiple harmonic",
+      "heading": false
+    },
+    {
+      "term": "david jarossay",
+      "heading": false
+    },
+    {
+      "term": "iter har",
+      "heading": false
+    },
+    {
+      "term": "harmonic ihara",
+      "heading": false
+    },
+    {
+      "term": "p-adic iterated",
+      "heading": false
+    },
+    {
+      "term": "har deﬁned",
+      "heading": false
+    },
+    {
+      "term": "harmonic actions",
+      "heading": false
+    },
+    {
+      "term": "multiple zeta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1711",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1712",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1713",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 4,
+      "label": "1714",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1715",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 6,
+      "label": "1716",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1717",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 8,
+      "label": "1718",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1719",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 10,
+      "label": "1720",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1721",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 12,
+      "label": "1722",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1723",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 14,
+      "label": "1724",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1725",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 16,
+      "label": "1726",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1727",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 18,
+      "label": "1728",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1729",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 20,
+      "label": "1730",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1731",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 22,
+      "label": "1732",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1733",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 24,
+      "label": "1734",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1735",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 26,
+      "label": "1736",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1737",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 28,
+      "label": "1738",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1739",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 30,
+      "label": "1740",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1741",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 32,
+      "label": "1742",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1743",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 34,
+      "label": "1744",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1745",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 36,
+      "label": "1746",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p02"
+  }
+}

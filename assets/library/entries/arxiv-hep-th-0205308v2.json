@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0205308v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The associativity or Witten-Dijkgraaf-Verlinde-Verlinde (WDVV) equations [@WDVV] have been widely discussed in connection with various problems of mathematical physics for over ten years. They have arisen in the context of quantum cohomologies and mirror symmetry, and also with regard to multidimensional supersymmetric gauge field theories. In their most general form these equations may be expressed as [@MMM] $$\\label{WDVV}\n{\\sf F}_i\\cdot {\\sf F}_j^{-1}\\cdot{\\sf F}_k = {\\sf F}_k\\cdot {\\sf F}_j^{-1}\\cdot{\\sf F}_i\n\\qquad \\forall i,j,k.$$ Here the matrices $\\|{\\sf F}_i\\|_{jk} \\equiv {\\cal F}_{ijk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0205308v2  29 May 2006\nFIAN/TD-07/02\nITEP/TH-25/02\nEMPG-02-12\nWDVV Equations as Functional Relations\nH.W. Braden1 and A. Marshakov2\nWe discuss the associativity or WDVV equations and demonstrate that they\ncan be rewritten as certain functional relations between the second deriva-\ntives of a single function, similar to the dispersionless Hirota equations. The\nproperties of these functional relations are further discussed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "WDVV and dispersionless Hirota equations",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-wdvv-and-dispersionless-hirota-equations.md",
+      "narrative": null,
+      "content": "The WDVV equations usually follow from the crossing relations $$\\label{crossing}\n\\sum_k C^k_{\\ ij}C^n_{\\ kl} = \\sum_k C^k_{\\ il}C^n_{\\ kj}$$ for the structure constants of some algebra $$\\label{alg}\n\\phi_i\\circ\\phi_j =\\sum_k  C^k_{\\ ij}\\phi_k.$$ It is useful also to write ([\\[crossing\\]](#crossing){reference-type=\"ref\" reference=\"crossing\"}) in the matrix form $$\\label{crossmatr}\n{\\sf C}_i\\cdot {\\sf C}_j = {\\sf C}_j\\cdot {\\sf C}_i,\\qquad \\forall i,j\n\\qquad  ({\\sf C}_i)\\sp{l}_{\\ m} = C_{\\ im}\\sp{l}.$$ Equations ([\\[crossing\\]](#crossing){reference-type=\"ref\" reference=\"crossing\"}) are algebraic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The associativity equations as cocycle conditions",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-the-associativity-equations-as-cocycle-condition.md",
+      "narrative": null,
+      "content": "We shall now derive some consequences of ([\\[defc\\]](#defc){reference-type=\"ref\" reference=\"defc\"}). For a fixed index $a$ $$d\\varphi_k = dT_{ai}\\,({\\sf C}_a\\sp{-1})\\sp{i}_{\\ k}$$ whence for any $b$ $$d\\varphi_k = dT_{ai}\\,({\\sf C}_a\\sp{-1})\\sp{i}_{\\ k}\n= dT_{bj}\\,({\\sf C}_b\\sp{-1})\\sp{j}_{\\ k}.$$ From these it follows that $$\\label{tcct}\ndT_{ai} = dT_{bj} \\left({\\sf C}_b^{-1}\\cdot {\\sf C}_a\\right)^j_{\\ i}\n= dT_{bj}\\left({\\sf C}_j^{-1}\\cdot {\\sf C}_i\\right)^b_{\\ a},$$ where the last equality follows from the symmetry of the period matrices. For fixed $a$ and $b$ we may view these as giving a c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: perturbative Seiberg-Witten prepotentials",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-example-perturbative-seiberg-witten-prepotential.md",
+      "narrative": null,
+      "content": "Here we shall consider one of the simplest examples of solutions to the WDVV equations coming from Seiberg-Witten theory. These are related to $SU(N+1)$ perturbative prepotentials [@MMM] and the corresponding Riemann surface is degenerate. With $a_{ij}\\equiv a_i-a_j$ the perturbative prepotential is given by $$\\label{pertpre}\n{\\cal F}= {1\\over 2}\\sum_{i<j}^N a_{ij}^2\\log {a_{ij}\\over\\Lambda} +\n{1\\over 2}\\sum_{i=1}^N a_i^2\\log {a_i\\over\\Lambda}.$$ The second derivatives ([\\[pematr\\]](#pematr){reference-type=\"ref\" reference=\"pematr\"}) (for a special choice of $\\Lambda$) are $$\\label{pemape}\n\\beg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-discussion.md",
+      "narrative": null,
+      "content": "Although the WDVV equations arise in several different physical settings no unifying geometry as yet underpins them. With the additional restrictions of topological field theory Frobenius manifolds successfully encode the geometry, but the restrictions are too severe to allow other interesting examples coming from Seiberg-Witten theory and the dispersionless limits of solutions to the Hirota equations. In this note we have pursued this link between the WDVV equations and the algebraic relations arising from the dispersionless Hirota equations [@BMRWZ]. The key idea was to focus on the second d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

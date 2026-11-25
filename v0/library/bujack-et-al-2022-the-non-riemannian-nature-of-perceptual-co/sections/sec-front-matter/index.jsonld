@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p002-1",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p002-2",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-1",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-2",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-3",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-4",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-5",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-6"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
+  "provenance": "ingested"
+}

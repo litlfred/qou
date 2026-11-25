@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.07001v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2304.07001v3",
+  "contains": [
+    "library/arxiv-2304.07001v3/sections/sec-front-matter",
+    "library/arxiv-2304.07001v3/sections/sec-000",
+    "library/arxiv-2304.07001v3/sections/sec-001",
+    "library/arxiv-2304.07001v3/sections/sec-002",
+    "library/arxiv-2304.07001v3/sections/sec-003",
+    "library/arxiv-2304.07001v3/sections/sec-004",
+    "library/arxiv-2304.07001v3/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial\n\n**RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES**\n\n*SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSWAMI, ROBERT OSBURN*\n\n20 pp, 7 sections.\n\n**Abstract.** We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial limits of partial theta series via strange identities. As an application, we prove a conjecture in quantum topology due to Costin and Garoufalidis for two families of torus knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Proof of Theorem 1.2; 3 Proof of Theorem 1.4 and Corollary 1.5; 4 Concluding Remarks; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2304.07001&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2304.07001v3",
+    "title_source": "slug",
+    "source_file": "2304.07001v3.pdf",
+    "source_sha256": "b6c0d7f50b6407f1159cf3b6b97dc2180b39100ef7e2c5a64454cdc6d05af324",
+    "pages": 20,
+    "arxiv": {
+      "id": "2304.07001",
+      "version": "3",
+      "primary_class": "math.NT",
+      "stamp_date": "10 Apr 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

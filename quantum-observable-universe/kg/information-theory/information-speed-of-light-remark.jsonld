@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-information-speed-of-light-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:information-speed-of-light-remark",
+  "kind": "remark",
+  "title": "The speed of light as a Lieb--Robinson velocity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+    "papers/quantum-observable-universe/blocks/rem-light-cone-affine",
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "information-speed-of-light-remark.md",
+  "provenance": "authored"
+}

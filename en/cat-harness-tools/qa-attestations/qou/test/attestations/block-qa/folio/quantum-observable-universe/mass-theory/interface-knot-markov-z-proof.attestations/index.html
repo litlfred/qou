@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-w81ilf3mlf.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-w81ilf3mlf","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;689ae16b3a81&quot;,
+        &quot;ts&quot;: &quot;593f7d61f1f6&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:27.131Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;S↔L: the ref `interface_knot_markov_z` (lean:164-172) is about `interfaceTrace`, a fold *defined* as the product of z and (z−h) factors (l.149-151), with no link to τ_M. It is a tautology over the claimed form. The single-step lemmas project the class field `markov_axiom` (l.96-100), and `isInterface`/`isBelow` are free predicates. The negative step assumes trace linearity as the hypothesis `h_tau_linear` (l.214-216). The docstrings still use the convention-C z = 1/(q^{1/2}+q^{−1/2}) ≈ 0.4993 (l.11, 118), and `markovParam_le_half` (l.506) proves z ≤ 1/2 for C, which is false for z_D = q³/(q²+1) ≈ 0.6127. S↔P: the factors are right. σ⁻¹ = σ − h, and z̄ = 1/(q(q²+1)) = z − h (checked by hand). T: z(z−h) = 0.61269·0.40364 = 0.24730 matches the prf table. But the iteration step \&quot;each one is &#39;topmost&#39; relative to the constituent sub-braid below it\&quot; (prf:17-20) is not literally the Markov setting: in D = p·σ₃·n the n block sits on strands above σ₃. The identity needs block-multiplicativity tr(x σ_k y) = z·tr(x)·tr(y), which the prf does not state; only the 10⁻⁵⁰ numerics (prf:155-160) support it.&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;471aef532cc9&quot;,
+        &quot;ts&quot;: &quot;593f7d61f1f6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-16T07:13:24.112Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5f209b510c5b50294fd755d263c17c75d49be3ed&quot;,
+      &quot;evidence&quot;: &quot;Markov axiom and skein give z and z-h. The block-multiplicativity lemma is proved by induction over the coset basis with cyclicity; the q=2 exact check is corroboration only.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6d8c85f9592&quot;,
+        &quot;ts&quot;: &quot;338fa301b345&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T08:17:56.966Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b0af11457ef9bb444f5b04ca38c5e93b52e59fdd&quot;,
+      &quot;evidence&quot;: &quot;[re-stamp 2026-11-21] Diff read since the 2026-11-16 review: labels replaced by titles; Lean file, declaration and probe-file mentions removed or reworded (formalised -&gt; proved/holds); the Markov-axiom/skein argument and block-multiplicativity lemma are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Markov axiom and skein give z and z-h. The block-multiplicativity lemma is proved by induction over the coset basis with cyclicity; the q=2 exact check is corroboration only.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:38.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:26:38.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;04d025a9519a187a70b0b8da00f607d00c34e04d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e4b83df39b1f&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e4b83df39b1f&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed: the workplan label \&quot;Phase 5g\&quot; is gone from the companion-identity heading, which now reads \&quot;### Constit-side companion identity (conjectural)\&quot;, and the AGENTS.md pointer is now just \&quot;per the base-ring convention\&quot;.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.105Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;\&quot;none is an independent input or a fit\&quot; and \&quot;determined structurally by the canonical-braid construction, not phenomenologically fit\&quot; are substantive epistemic scoping of exactly the kind the corpus wants kept.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.139Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;No setup-then-reframe.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.179Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Seven em-dashes but three are true parenthetical pairs (the \&quot;topmost\&quot; aside, the three-factor list, the constit-factor aside); only \&quot;Max rel. err. ... ~10^{-15} -- exact at f64 precision\&quot; appends a clause, and that clause has a separate, larger problem.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.225Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;\&quot;all three per-interface factors -- z, z-h, z-h/2\&quot; enumerates three factors the proof actually derives.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.269Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;Closes on a display equation.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.307Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;No narration of emphasis.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.341Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The \&quot;Structural reading\&quot; section re-derives the two factors already proved, but it is a labelled interpretive section and adds the p_+/p_- census reading.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.393Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;evidence&quot;: &quot;Institutional register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.490Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;\&quot;Max rel. err. across all 4 atoms: ~10^{-15} -- **exact at f64 precision**.\&quot; Agreement at 1e-15 in float64 is the FLOOR of the arithmetic, not evidence about the mathematics, and AGENTS.md forbids reporting such agreement as \&quot;exact\&quot; in as many words. Reinforced by \&quot;equals the Markov parameter z exactly\&quot; in the title and \&quot;factor z exactly\&quot; / \&quot;factor z - h exactly\&quot; in the structural reading.&quot;,
+      &quot;notes&quot;: &quot;NOT fixed (the phrase is a precision claim, not prose). Proposed fix: \&quot;Max rel. err. across all 4 atoms: ~1e-15, which is the resolution floor of the float64 arithmetic used and cannot distinguish exact agreement from a discrepancy below that scale.\&quot; The identity itself IS exact as an algebraic consequence of the Markov axiom, so the theorem survives; only the numerical wording overclaims.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ad726a9c21db&quot;,
+        &quot;ts&quot;: &quot;6a6a98f2db63&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:39:01.529Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68031f32c0586642741cfebfcaec38d457fedf93&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The section heading \&quot;### categorical verification (4 atoms, exact representation Rust kernel)\&quot; does not parse -- \&quot;exact representation Rust kernel\&quot; is a four-noun chain with no head, and the lower-case \&quot;categorical\&quot; reads as a substituted token. The body then says \&quot;Computed via **the canonical formalism** using pyhecke_native\&quot;, where a script name plainly belonged.&quot;,
+      &quot;notes&quot;: &quot;NOT fixed (the original tokens cannot be recovered from context). Proposed fix: \&quot;### Numerical verification (4 atoms, exact-arithmetic Rust kernel)\&quot; and name the producing script in place of \&quot;the canonical formalism\&quot;. SEPARATE FINDINGS, all recomputed at 25 dps against the proton pin q_0 = 1.1099785827513808 (h = 0.2090602988). (1) CONVENTION C, LOAD-BEARING, THE WHOLE TABLE. The closing display states z = 1/(q^{1/2} + q^{-1/2}), an excised convention-C spelling; z_C = 0.4993203342 while canonical z_D = q^3/(q^2+1) = 0.6126880371. Every row of the verification table reproduces z_C and only z_C: D z = 0.49932033 (C) vs 0.61268804 (D); T z(z-h) = 0.14493274 (C) vs 0.24729789 (D); 3He z^2 = 0.24932080 (C) vs 0.37538663 (D); 4He z^2(z-h) = 0.07236786 (C) vs 0.15151646 (D). The table matches the block to all eight quoted digits under C and is off by 23% to 110% under D, so this is not a cosmetic z-substitution -- the \&quot;verification\&quot; does not survive the canonical convention and must be re-derived. (2) SWEEP DAMAGE, DELETED TOKEN: \&quot;This locks &#39;s interface-knot factorisation as *derivation-grade*\&quot; -- a possessive with nothing in front of it. (3) The Markov axiom is overstated: the display asserts tr_M(alpha sigma_g) = z tr_M(alpha) \&quot;for all alpha in H_n(q)\&quot; for a GENERIC interface generator sigma_g, whereas the axiom holds for the topmost generator with alpha in the subalgebra below it. The prose aside (\&quot;each one is topmost relative to the constituent sub-braid below it\&quot;) is the real hypothesis and belongs in the displayed statement. (4) VERIFIED CORRECT: the skein sigma^{-1} = sigma - h follows from sigma^2 = h sigma + 1; sigma_bar = (sigma + sigma^{-1})/2 = sigma - h/2 is right; and the per-atom interface census is consistent with the producer -- gens sigma_3, sigma_6, sigma_9 are the 1-based rendering of the 0-based \&quot;gen 3k+2\&quot; in mass_at_3A_proper.atom_braid_word_3A, matching prop:he4-two-row-dominance (\&quot;pp at gen 2, pn at gen 5, nn at gen 8\&quot;), and the p/n compositions of D, T, 3He and 4He are all correct.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

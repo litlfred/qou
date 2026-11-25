@@ -1,0 +1,2621 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1303.5278v1",
+  "title": "arxiv-1303.5278v1",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The 3D index of Dimofte-Gaiotto-Gukov",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov"
+    },
+    {
+      "level": 2,
+      "title": "Index structures and 1-efficiency",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-index-structures-and-1-efficiency"
+    },
+    {
+      "level": 2,
+      "title": "Regular ideal triangulations and topological invariance",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-regular-ideal-triangulations-and-topological"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the paper",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-plan-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Definitions",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-definitions"
+    },
+    {
+      "level": 1,
+      "title": "Index structures and 1–efficiency",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-index-structures-and-1efficiency"
+    },
+    {
+      "level": 1,
+      "title": "A review of the index of an ideal triangulation",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-a-review-of-the-index-of-an-ideal-triangulatio"
+    },
+    {
+      "level": 2,
+      "title": "The tetrahedron index and its properties",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-the-tetrahedron-index-and-its-properties"
+    },
+    {
+      "level": 2,
+      "title": "The degree of the tetrahedron index",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-the-degree-of-the-tetrahedron-index"
+    },
+    {
+      "level": 2,
+      "title": "Angle structure equations",
+      "number": "4.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-43-angle-structure-equations"
+    },
+    {
+      "level": 2,
+      "title": "Peripheral equations",
+      "number": "4.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-44-peripheral-equations"
+    },
+    {
+      "level": 2,
+      "title": "The index of an ideal triangulation",
+      "number": "4.5",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-45-the-index-of-an-ideal-triangulation"
+    },
+    {
+      "level": 2,
+      "title": "Choice of edges in the summation for index",
+      "number": "4.6",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-46-choice-of-edges-in-the-summation-for-index"
+    },
+    {
+      "level": 2,
+      "title": "A reformulation of the definition of the index",
+      "number": "4.7",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-47-a-reformulation-of-the-definition-of-the-inde"
+    },
+    {
+      "level": 2,
+      "title": "Invariance of index under isotopy of peripheral curve",
+      "number": "4.8",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-48-invariance-of-index-under-isotopy-of-peripher"
+    },
+    {
+      "level": 1,
+      "title": "Invariance of index under the 0–2 move",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-5-invariance-of-index-under-the-02-move"
+    },
+    {
+      "level": 1,
+      "title": "The XMEP class of triangulations",
+      "number": "6",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-6-the-xmep-class-of-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Subdivisions of the Epstein–Penner decomposition",
+      "number": "6.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-61-subdivisions-of-the-epsteinpenner-decompositi"
+    },
+    {
+      "level": 2,
+      "title": "Regular triangulations",
+      "number": "6.2",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-62-regular-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Interpreting flip moves using 2–3 moves",
+      "number": "6.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-63-interpreting-flip-moves-using-23-moves"
+    },
+    {
+      "level": 2,
+      "title": "Moving paths in the 1–skeleton of the associahedron using 2–3 and 0–2 moves",
+      "number": "6.4",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-64-moving-paths-in-the-1skeleton-of-the-associah"
+    },
+    {
+      "level": 1,
+      "title": "Computations",
+      "number": "7",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-7-computations"
+    },
+    {
+      "level": 2,
+      "title": "How to compute the coefficients of a q-series",
+      "number": "7.1",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-71-how-to-compute-the-coefficients-of-a-q-series"
+    },
+    {
+      "level": 2,
+      "title": "The index of the 41 knot complement",
+      "number": "7.2",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-72-the-index-of-the-41-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "The index of the sister of the 41 knot complement",
+      "number": "7.3",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-73-the-index-of-the-sister-of-the-41-knot-comple"
+    },
+    {
+      "level": 2,
+      "title": "The index of the 52 knot complement",
+      "number": "7.4",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-74-the-index-of-the-52-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "The index of the (-2,3,7) pretzel knot complement",
+      "number": "7.5",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-75-the-index-of-the--237-pretzel-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "The index of the 61 knot complement",
+      "number": "7.6",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-76-the-index-of-the-61-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "The index of the 72 knot complement",
+      "number": "7.7",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-77-the-index-of-the-72-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": "7.8",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-78-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. The 2–3 move",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-appendix-a-the-23-move"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedron index",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "index structures",
+          "heading": false
+        },
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "henry segerman",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "oriented cusped",
+          "heading": false
+        }
+      ],
+      "extract": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN Abstract. In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coeﬃcients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1303.5278v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov",
+      "number": "1.1",
+      "title": "The 3D index of Dimofte-Gaiotto-Gukov",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "dimofte-gaiotto-gukov",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "iff efficient",
+          "heading": false
+        },
+        {
+          "term": "index structure",
+          "heading": false
+        },
+        {
+          "term": "cusped manifold",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.DGG label=\"sub.DGG\"} The goal of this paper is to convert the index of an ideal triangulation $\\mathcal{T}$ (a remarkable collection of Laurent series in $q^{1/2}$ introduced by Dimofte-Gaiotto-Gukov [@DGG1; @DGG2] and further studied in [@Ga:index]) to a topological invariant of oriented cusped hyperbolic 3-manifolds $M$. Our goal will be achieved in two steps. The first step identifies the existence of an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-index-structures-and-1-efficiency",
+      "number": "1.2",
+      "title": "Index structures and 1-efficiency",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atoroidal efficient",
+          "heading": false
+        },
+        {
+          "term": "index structures",
+          "heading": true
+        },
+        {
+          "term": "semi-angle efficient",
+          "heading": false
+        },
+        {
+          "term": "efficiency",
+          "heading": true
+        },
+        {
+          "term": "iff efficient",
+          "heading": false
+        },
+        {
+          "term": "efficient label",
+          "heading": false
+        },
+        {
+          "term": "semi--angle structure",
+          "heading": false
+        },
+        {
+          "term": "angle structures",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.1eff label=\"sub.1eff\"} ::: thm []{#index_structure_iff_1-efficient label=\"index_structure_iff_1-efficient\"} An ideal triangulation $\\mathcal{T}$ of an oriented 3-manifold with cusps admits an index structure if and only if $\\mathcal{T}$ is 1-efficient. ::: The above theorem has some consequences for our sought topological invariants. ::: rmk []{#rem.1 label=\"rem.1\"} 1-efficiency of $\\mathcal{T}$ implies",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-regular-ideal-triangulations-and-topological",
+      "number": "1.3",
+      "title": "Regular ideal triangulations and topological invariance",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 930,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal triangulations",
+          "heading": true
+        },
+        {
+          "term": "regular ideal",
+          "heading": true
+        },
+        {
+          "term": "semi-angle efficient",
+          "heading": false
+        },
+        {
+          "term": "iff efficient",
+          "heading": false
+        },
+        {
+          "term": "mathrm tot",
+          "heading": false
+        },
+        {
+          "term": "semi-angle structure",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathrm",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.regular label=\"sub.regular\"} In view of Remark [\\[rem.1\\]](#rem.1){reference-type=\"ref\" reference=\"rem.1\"}, we restrict our attention to hyperbolic 3-manifolds $M$ with at least one cusp. All we need is a canonical set $\\mathcal X_M$ of $1$--efficient ideal triangulations of $M$ such that any two of these triangulations are related by moves that preserve $I_{\\mathcal{T}}$. From Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-plan-of-the-paper",
+      "number": "1.4",
+      "title": "Plan of the paper",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iff efficient",
+          "heading": false
+        },
+        {
+          "term": "index structures",
+          "heading": false
+        },
+        {
+          "term": "plan",
+          "heading": true
+        },
+        {
+          "term": "xepm",
+          "heading": false
+        },
+        {
+          "term": "efficiency",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "sub",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.plan label=\"sub.plan\"} In Section [\\[sec.definitions\\]](#sec.definitions){reference-type=\"ref\" reference=\"sec.definitions\"} we review the basic definitions of ideal triangulations, efficiency, angle structures and index structures. In Section [\\[sec: index structures and 1-efficiency\\]](#sec: index structures and 1-efficiency){reference-type=\"ref\" reference=\"sec: index structures and 1-efficiency\"} we prove",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-definitions",
+      "number": "2",
+      "title": "Definitions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal quadrilateral",
+          "heading": false
+        },
+        {
+          "term": "quadrilateral types",
+          "heading": false
+        },
+        {
+          "term": "generalised angle",
+          "heading": false
+        },
+        {
+          "term": "klein bottles",
+          "heading": false
+        },
+        {
+          "term": "normal tori",
+          "heading": false
+        },
+        {
+          "term": "immersed normal",
+          "heading": false
+        },
+        {
+          "term": "embedded normal",
+          "heading": false
+        },
+        {
+          "term": "normal isotopy",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 2.1. Let M be an orientable topologically ﬁnite 3-manifold which is the interior of a compact 3-manifold with torus boundary components. An ideal triangulation T of M consists of a pairwise disjoint union of standard Euclidean 3–simplices, e∆= ∪n k=1 e∆k, together with a collection Φ of Euclidean isometries between the 2–simplices in e∆, called face pairings, such that the quotient space (e∆\\ e∆(0))/Φ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-index-structures-and-1efficiency",
+      "number": "3",
+      "title": "Index structures and 1–efficiency",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 16,
+      "labelStart": "9",
+      "labelEnd": "16",
+      "words": 3134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal torus",
+          "heading": false
+        },
+        {
+          "term": "embedded normal",
+          "heading": false
+        },
+        {
+          "term": "peripheral normal",
+          "heading": false
+        },
+        {
+          "term": "semi-angle structure",
+          "heading": false
+        },
+        {
+          "term": "normal triangular",
+          "heading": false
+        },
+        {
+          "term": "normal sphere",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "aty",
+          "heading": false
+        }
+      ],
+      "extract": "We ﬁrst give a sketch proof of Theorem 1.5, showing that a semi–angle structure implies 1–eﬃciency. We follow [KR05] and indicate the required small modiﬁcation. Suppose that M is oriented with cusps and has an ideal triangulation T with a semi-angle structure. Assume that there is an embedded normal torus or Klein bottle or sphere or projective plane, where the normal torus is not a peripheral torus. Firstly,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-a-review-of-the-index-of-an-ideal-triangulatio",
+      "number": "4",
+      "title": "A review of the index of an ideal triangulation",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-41-the-tetrahedron-index-and-its-properties",
+      "number": "4.1",
+      "title": "The tetrahedron index and its properties",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedron index",
+          "heading": true
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "rec frac",
+          "heading": false
+        },
+        {
+          "term": "mathbb delta",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "e-m",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we review the definition and the identities satisfied by the tetrahedron index of [@DGG2]. For a detailed discussion, see [@Ga:index]. The building block of the index $I_{\\mathcal{T}}$ of an ideal triangulation $\\mathcal{T}$ is the *tetrahedron index $I_{\\Delta}(m,e)(q) \\in \\mathbb Z[[q^{1/2}]]$* defined by $$\\label{eq.ID} I_{\\Delta}(m,e)=\\sum_{n=(-e)_+}^\\infty (-1)^n \\frac{q^{\\frac{1}{2}n(n+1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-the-degree-of-the-tetrahedron-index",
+      "number": "4.2",
+      "title": "The degree of the tetrahedron index",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degi",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": true
+        },
+        {
+          "term": "delta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.degI label=\"sub.degI\"} The (minimum) degree $\\delta(m,e)$ with respect to $q$ of $I_{\\Delta}(m,e)$ is given by $$\\label{eq.degID} \\delta(m,e) = \\frac{1}{2}\\left( m_+(m+e)_+ + (-m)_+ e_+ + (-e)_+(-e-m)_+ +\\max\\{0,m,-e\\} \\right)$$ It follows that $\\delta(m,e)$ is a piecewise quadratic polynomial shown in Figure [1](#degI){reference-type=\"ref\" reference=\"degI\"}. <figure id=\"degI\"> <p><span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-angle-structure-equations",
+      "number": "4.3",
+      "title": "Angle structure equations",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf overline",
+          "heading": false
+        },
+        {
+          "term": "angle",
+          "heading": true
+        },
+        {
+          "term": "quads",
+          "heading": false
+        },
+        {
+          "term": "quad-choice",
+          "heading": false
+        },
+        {
+          "term": "equations",
+          "heading": true
+        },
+        {
+          "term": "boldsymbol",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.ge label=\"sub.ge\"} Recall the equations for a generalised angle structure as given in Definition [\\[matrix equations\\]](#matrix equations){reference-type=\"ref\" reference=\"matrix equations\"}. In this section, we will refer to the angle variables within the $i$th tetrahedron, $\\alpha(q_i) ,\\alpha(q_i'),\\alpha(q_i'')$, as $Z_i,Z_i',Z_i''$ respectively. We can view a quad-choice $Q$ for $\\mathcal{T}$ (as in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-44-peripheral-equations",
+      "number": "4.4",
+      "title": "Peripheral equations",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline varpi",
+          "heading": false
+        },
+        {
+          "term": "bar varpi",
+          "heading": false
+        },
+        {
+          "term": "varpi sum",
+          "heading": false
+        },
+        {
+          "term": "let varpi",
+          "heading": false
+        },
+        {
+          "term": "mid bar",
+          "heading": false
+        },
+        {
+          "term": "anticlockwise around",
+          "heading": false
+        },
+        {
+          "term": "oriented multi-curve",
+          "heading": false
+        },
+        {
+          "term": "peripheral",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sub.peripheral label=\"sub.peripheral\"} Assume first, for simplicity, that $\\partial M$ consists of a single torus, and let $\\varpi$ be an oriented simple closed curve in $\\partial M$ that is in *normal position* with respect to the induced triangulation $\\mathcal{T}_\\partial$ of $\\partial M$. Let $$(\\overline{a}_{\\varpi}|\\overline{b}_{\\varpi}|\\overline{c}_{\\varpi})= (\\bar a_{\\varpi,1} \\ldots, \\bar a_{\\varpi,N}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-45-the-index-of-an-ideal-triangulation",
+      "number": "4.5",
+      "title": "The index of an ideal triangulation",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb n-r",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol cdot",
+          "heading": false
+        },
+        {
+          "term": "basis indept",
+          "heading": false
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        },
+        {
+          "term": "pick edges",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "index isotopy",
+          "heading": false
+        },
+        {
+          "term": "mathbf mid",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.defn.index label=\"sub.defn.index\"} Suppose that $M$ is a 3-manifold whose boundary $\\partial M$ consists of $r \\ge 1$ tori $T_1, \\ldots, T_r$, and let $\\mathcal{T}$ be an ideal triangulation of $M$. Let $\\varpi=(\\varpi_1, \\ldots, \\varpi_r)$ be a collection of oriented peripheral curves as above. By Theorem [\\[pick_edges\\]](#pick_edges){reference-type=\"ref\" reference=\"pick_edges\"}, proved below, we can order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-46-choice-of-edges-in-the-summation-for-index",
+      "number": "4.6",
+      "title": "Choice of edges in the summation for index",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 1804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edges",
+          "heading": true
+        },
+        {
+          "term": "maximal tree",
+          "heading": false
+        },
+        {
+          "term": "collapse edge",
+          "heading": false
+        },
+        {
+          "term": "pick edges",
+          "heading": false
+        },
+        {
+          "term": "n-r equations",
+          "heading": false
+        },
+        {
+          "term": "neq epsilon",
+          "heading": false
+        },
+        {
+          "term": "sequence ends",
+          "heading": false
+        },
+        {
+          "term": "cusp relations",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be an orientable 3-manifold with $r \\ge 1$ torus cusps and let $\\mathcal{T}$ be an ideal triangulation of $M$ with $N$ tetrahedra and, hence, $N$ edges which we denote $e_1, \\ldots, e_N$. Let $G$ be the 1-skeleton $\\mathcal{T}^{(1)}$ of $\\mathcal{T}$ together with one (ideal) vertex for each cusp of $M$. Note that $G$ has $r$ vertices and $N$ edges, and may contain loops (i.e. edges with both ends at a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-47-a-reformulation-of-the-definition-of-the-inde",
+      "number": "4.7",
+      "title": "A reformulation of the definition of the index",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 973,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar varpi",
+          "heading": false
+        },
+        {
+          "term": "bar boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "varpi sum",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol cdot",
+          "heading": false
+        },
+        {
+          "term": "mathbb n-r",
+          "heading": false
+        },
+        {
+          "term": "tet sol",
+          "heading": false
+        },
+        {
+          "term": "n-r subset",
+          "heading": false
+        },
+        {
+          "term": "indt",
+          "heading": false
+        }
+      ],
+      "extract": "It is sometimes convenient to work with a slight variation on the tetrahedral index function [\\[eq.ID\\]](#eq.ID){reference-type=\"eqref\" reference=\"eq.ID\"}. Whenever $a-b, b-c \\in \\mathbb{Z}$ we define $$\\label{eq.JDdef} J_{\\Delta}(a,b,c)= (-q^{\\frac{1}{2}})^{-b} I_{\\Delta}(b-c,a-b) = (-q^{\\frac{1}{2}})^{-c} I_{\\Delta}(c-a,b-c) = (-q^{\\frac{1}{2}})^{-a} I_{\\Delta}(a-b,c-a).$$ Note that the above expressions are equal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-48-invariance-of-index-under-isotopy-of-peripher",
+      "number": "4.8",
+      "title": "Invariance of index under isotopy of peripheral curve",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index isotopy",
+          "heading": true
+        },
+        {
+          "term": "isotopy invariance",
+          "heading": true
+        },
+        {
+          "term": "curve varpi",
+          "heading": false
+        },
+        {
+          "term": "bar varpi",
+          "heading": false
+        },
+        {
+          "term": "anticlockwise turn",
+          "heading": false
+        },
+        {
+          "term": "anticlockwise loop",
+          "heading": false
+        },
+        {
+          "term": "backtrack",
+          "heading": false
+        },
+        {
+          "term": "isotopy moves",
+          "heading": false
+        }
+      ],
+      "extract": "::: thm []{#index_isotopy_invariance label=\"index_isotopy_invariance\"} Let $\\varpi$ be an oriented simple closed curve $\\varpi$ in $\\partial M$ which is a normal curve relative to the triangulation $\\mathcal{T}_\\partial$ of $\\partial M$. Then the index $I_\\mathcal{T}(\\varpi)$ is invariant under isotopy of the curve $\\varpi$ in $\\partial M$. ::: ::: proof *Proof.* Suppose we have two isotopic oriented normal curves",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-invariance-of-index-under-the-02-move",
+      "number": "5",
+      "title": "Invariance of index under the 0–2 move",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "32",
+      "words": 1141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde varpi",
+          "heading": false
+        },
+        {
+          "term": "widetilde boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "bar varpi",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathbb widetilde",
+          "heading": false
+        },
+        {
+          "term": "edge widetilde",
+          "heading": false
+        },
+        {
+          "term": "sum widetilde",
+          "heading": false
+        },
+        {
+          "term": "left widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.02move label=\"sec.02move\"} Let $M$ be a cusped 3-manifold and consider the 0--2 move on a pair $\\mathcal{T}$ and $\\widetilde\\mathcal{T}$ of ideal triangulations of $M$ with $N$ and $N+2$ tetrahedra, as shown in Figure [1](#0-2move_labelled){reference-type=\"ref\" reference=\"0-2move_labelled\"}. <figure id=\"0-2move_labelled\"> <p><span class=\"math inline\"><em>e</em></span> at 32 95 <span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-6-the-xmep-class-of-triangulations",
+      "number": "6",
+      "title": "The XMEP class of triangulations",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "M class of triangulations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-61-subdivisions-of-the-epsteinpenner-decompositi",
+      "number": "6.1",
+      "title": "Subdivisions of the Epstein–Penner decomposition",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 965,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polygonal pillow",
+          "heading": false
+        },
+        {
+          "term": "semi-angle efficient",
+          "heading": false
+        },
+        {
+          "term": "natural semi-angle",
+          "heading": false
+        },
+        {
+          "term": "semi-angle structure",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic polyhedra",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        },
+        {
+          "term": "epstein--penner decomposition",
+          "heading": false
+        },
+        {
+          "term": "diagonal flip",
+          "heading": false
+        }
+      ],
+      "extract": "For a once-cusped hyperbolic 3--manifold $M$, the Epstein--Penner decomposition (see [@EP]) divides $M$ into a finite number of ideal hyperbolic polyhedra. This subdivision is canonical, depending only on the topology of the manifold, if $M$ has a single cusp. If $M$ has $r \\geq 1$ cusps, then the Epstein-Penner cell decomposition is canonical up to the choice of a scale vector $(t_1,\\dots,t_r)$ with $t_1, t_2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-62-regular-triangulations",
+      "number": "6.2",
+      "title": "Regular triangulations",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 39,
+      "labelStart": "34",
+      "labelEnd": "39",
+      "words": 2273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-t flip",
+          "heading": false
+        },
+        {
+          "term": "regular triangulations",
+          "heading": true
+        },
+        {
+          "term": "flip external",
+          "heading": false
+        },
+        {
+          "term": "corank label",
+          "heading": false
+        },
+        {
+          "term": "flip internal",
+          "heading": false
+        },
+        {
+          "term": "flip graph",
+          "heading": false
+        },
+        {
+          "term": "retriangulate step",
+          "heading": false
+        },
+        {
+          "term": "retriangulate strategy",
+          "heading": false
+        }
+      ],
+      "extract": "The concept of a regular triangulation comes from the study of triangulations of convex polytopes in $\\mathbb{R}^n$. Here we are not dealing with topological triangulations, where tetrahedra may have self-identifications or two vertices may have multiple edges connecting them. Rather, the vertices are concrete points in $\\mathbb{R}^n$, the edges are straight line segments in $\\mathbb{R}^n$ and so on. In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-63-interpreting-flip-moves-using-23-moves",
+      "number": "6.3",
+      "title": "Interpreting flip moves using 2–3 moves",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "retriangulate step",
+          "heading": false
+        },
+        {
+          "term": "retriangulate strategy",
+          "heading": false
+        },
+        {
+          "term": "flip",
+          "heading": true
+        },
+        {
+          "term": "polygonal pillow",
+          "heading": false
+        },
+        {
+          "term": "move external",
+          "heading": false
+        },
+        {
+          "term": "move internal",
+          "heading": false
+        },
+        {
+          "term": "perform move",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "In order to carry out step ([\\[retriangulate step 1\\]](#retriangulate step 1){reference-type=\"ref\" reference=\"retriangulate step 1\"}) of our plan in Remark [\\[retriangulate strategy\\]](#retriangulate strategy){reference-type=\"ref\" reference=\"retriangulate strategy\"}, we will interpret the flip moves in terms of the 2--3 and 3--2 moves allowed in Theorem [\\[thm.00\\]](#thm.00){reference-type=\"ref\" reference=\"thm.00\"}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-64-moving-paths-in-the-1skeleton-of-the-associah",
+      "number": "6.4",
+      "title": "Moving paths in the 1–skeleton of the associahedron using 2–3 and 0–2 moves",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associahedron",
+          "heading": true
+        },
+        {
+          "term": "associahedron isotope",
+          "heading": false
+        },
+        {
+          "term": "associahedron properties",
+          "heading": false
+        },
+        {
+          "term": "isotope label",
+          "heading": false
+        },
+        {
+          "term": "retriangulate step",
+          "heading": false
+        },
+        {
+          "term": "retriangulate strategy",
+          "heading": false
+        },
+        {
+          "term": "polygonal pillows",
+          "heading": false
+        },
+        {
+          "term": "skeleton",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sub.moving.paths label=\"sub.moving.paths\"} In order to carry out step ([\\[retriangulate step 2\\]](#retriangulate step 2){reference-type=\"ref\" reference=\"retriangulate step 2\"}) of our plan in Remark [\\[retriangulate strategy\\]](#retriangulate strategy){reference-type=\"ref\" reference=\"retriangulate strategy\"}, we need to modify the layered triangulations in the polygonal pillows. We will do this using the 2--3,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-7-computations",
+      "number": "7",
+      "title": "Computations",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-71-how-to-compute-the-coefficients-of-a-q-series",
+      "number": "7.1",
+      "title": "How to compute the coefficients of a q-series",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fixed varpi",
+          "heading": false
+        },
+        {
+          "term": "piecewise quadratic",
+          "heading": false
+        },
+        {
+          "term": "indt",
+          "heading": false
+        },
+        {
+          "term": "index mathcal",
+          "heading": false
+        },
+        {
+          "term": "partition mathcal",
+          "heading": false
+        },
+        {
+          "term": "degi",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.overview.compute label=\"sub.overview.compute\"} In this section we will explain a general method to compute the coefficients of a $q$-series which is given by a multi-dimensional sum of some basic $q$-series. The idea is simple, but the effective aspects of it are tricky and were explained to the first author by D. Zagier. The method is applied in forthcoming work [@GV] which computes the coefficients of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-72-the-index-of-the-41-knot-complement",
+      "number": "7.2",
+      "title": "The index of the 41 knot complement",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline mathbf",
+          "heading": false
+        },
+        {
+          "term": "rfloor lceil",
+          "heading": false
+        },
+        {
+          "term": "pmatrix qquad",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "mathbf begin",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "indt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.index41 label=\"sub.index41\"} The default `SnapPy` triangulation $\\mathcal{T}$ of the $4_1$ knot complement uses 2 regular ideal tetrahedra and coincides with the Epstein-Penner decomposition, thus $\\mathcal X_{4_1}^{\\mathrm{EP}}=\\{\\mathcal{T}\\}$. `SnapPy` gives the angle structure matrices of $\\mathcal{T}$: $$\\overline{\\mathbf A} = \\begin{pmatrix} 2 & 2 \\\\ 0 & 0 \\end{pmatrix} \\qquad \\overline{\\mathbf B} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-73-the-index-of-the-sister-of-the-41-knot-comple",
+      "number": "7.3",
+      "title": "The index of the sister of the 41 knot complement",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sister",
+          "heading": true
+        },
+        {
+          "term": "cdw",
+          "heading": false
+        },
+        {
+          "term": "penner",
+          "heading": false
+        }
+      ],
+      "extract": "and its sister are the census manifolds m004 and m003 respectively, and are punctured torus bundles over a circle with monodromy +RL and −RL respectively [CDW]. The Epstein- Penner decompositions for m004 and m003 consist of two regular ideal tetrahedra. The edge gluing equations of +RL and −RL coincide. Thus, Im003(0) = Im004(0).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-74-the-index-of-the-52-knot-complement",
+      "number": "7.4",
+      "title": "The index of the 52 knot complement",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k1k",
+          "heading": false
+        },
+        {
+          "term": "tep",
+          "heading": false
+        },
+        {
+          "term": "rays",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "fan",
+          "heading": false
+        }
+      ],
+      "extract": "52 knot complement uses 3 ideal tetrahedra. The Epstein-Penner decomposition TEP uses 4 ideal tetrahedra. Both triangulations carry geometric shape structures and thus canonical strict angle structures. One can show that T and TEP are related by geometric 2–3 moves hence they have equal indices. For reasons of eﬃciency, we will work with the triangulation T. Its angle structure matrices are given by: A =   1 1 1 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-75-the-index-of-the--237-pretzel-knot-complement",
+      "number": "7.5",
+      "title": "The index of the (-2,3,7) pretzel knot complement",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array cccc",
+          "heading": false
+        },
+        {
+          "term": "mathbf overline",
+          "heading": false
+        },
+        {
+          "term": "pretzel knot",
+          "heading": true
+        },
+        {
+          "term": "knot complement",
+          "heading": true
+        },
+        {
+          "term": "qquad mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "bar boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "cccc end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.index237 label=\"sub.index237\"} The $(-2,3,7)$ pretzel knot is the 12 crossing knot `12n242` in the census. The default `SnapPy` triangulation $\\mathcal{T}$ of the `12n242` complement uses 3 ideal tetrahedra. The Epstein-Penner decomposition $\\mathcal{T}^{\\mathrm{EP}}$ uses 3 ideal tetrahedra. However, the two triangulations $\\mathcal{T}$ and $\\mathcal{T}^{\\mathrm{EP}}$ are combinatorially different; for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-76-the-index-of-the-61-knot-complement",
+      "number": "7.6",
+      "title": "The index of the 61 knot complement",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "structure equations",
+          "heading": false
+        }
+      ],
+      "extract": "as an example of the phenomenon of linear growth. The default SnapPy triangulation T of the 61 knot complement has 4 ideal tetrahedra, and the Epstein-Penner decomposition uses 6 ideal tetrahedra. The two triangulations are related by geometric 2–3 moves and so have equal indices. The angle structure equations of T are given by: A =     1 1 0 0 0 0 0 1 0 1 1 0 1 0 1 1     B =     0 2 0 1 1 0 1 0 1 0 0 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-77-the-index-of-the-72-knot-complement",
+      "number": "7.7",
+      "title": "The index of the 72 knot complement",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "k3q",
+          "heading": false
+        }
+      ],
+      "extract": "growth. The default SnapPy triangulation T of the 72 knot complement has 4 ideal tetrahedra, and the Epstein-Penner decomposition has 8 ideal tetrahedra. The two triangulations are related by geometric 2–3 moves and have equal indices. The angle structure equations of T are given by: 50 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN A =     1 2 1 0 0 0 1 0 1 0 0 1 0 0 0 1    ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-78-acknowledgments",
+      "number": "7.8",
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "gunnells",
+          "heading": false
+        },
+        {
+          "term": "josephine",
+          "heading": false
+        }
+      ],
+      "extract": "S.G. wishes to thank Tudor Dimofte, Josephine Yu and especially Don Zagier for enlightening conversations. A preliminary report was delivered by S.G. during the Oberwolfach 8/2012 workshop on *Low-Dimensional Topology and Number Theory*; we thank the organizers, Paul E. Gunnells, Walter Neumann, Adam S. Sikora and Don Zagier, for their hospitality.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-appendix-a-the-23-move",
+      "number": null,
+      "title": "Appendix A. The 2–3 move",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 57,
+      "labelStart": "51",
+      "labelEnd": "57",
+      "words": 2463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "turning numbers",
+          "heading": false
+        },
+        {
+          "term": "move",
+          "heading": true
+        },
+        {
+          "term": "vertex linking",
+          "heading": false
+        },
+        {
+          "term": "oriented multi-curve",
+          "heading": false
+        },
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "normal arcs",
+          "heading": false
+        },
+        {
+          "term": "equatorial vertices",
+          "heading": false
+        },
+        {
+          "term": "henry segerman",
+          "heading": false
+        }
+      ],
+      "extract": "For completeness, in this appendix we give a detailed proof of the invariance of the index under 2–3 moves, following [Garb, Sec.6] and also [DGGa]. Let M be a cusped 3-manifold and let ϖ be an oriented multi-curve on ∂M. Consider two ideal triangulations T and eT of M with N and N + 1 tetrahedra, respectively, related by a 2–3 move as shown in Figure 23, matching the conventions of [DG, Sec.3.6]. 2–3 3–2 4 0 1 3 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 60,
+      "labelStart": "57",
+      "labelEnd": null,
+      "words": 1067,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "henry segerman",
+          "heading": false
+        },
+        {
+          "term": "standard spines",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "francisco santos",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        }
+      ],
+      "extract": "[AK] Jørgen E. Andersen and Rinat M. Kashaev, A TQFT from quantum Teichmüller theory, arXiv: 1109.6295, Preprint 2011. [Aki01] Hirotaka Akiyoshi, Finiteness of polyhedral decompositions of cusped hyperbolic manifolds ob- tained by the Epstein-Penner’s method, Proc. Amer. Math. Soc. 129 (2001), no. 8, 2431–2439 (electronic). [BB05] Stéphane Baseilhac and Riccardo Benedetti, Classical and quantum dilogarithmic",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "A reformulation of the deﬁnition of the index",
+          "The XEP M class of triangulations"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "6.4 Moving paths in the 1–skeleton of the associahedron using 2–3 and 0–2"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "index mathcal",
+      "heading": false
+    },
+    {
+      "term": "triangulations mathcal",
+      "heading": false
+    },
+    {
+      "term": "efficient triangulations",
+      "heading": false
+    },
+    {
+      "term": "tetrahedron index",
+      "heading": true
+    },
+    {
+      "term": "ideal triangulations",
+      "heading": true
+    },
+    {
+      "term": "index delta",
+      "heading": false
+    },
+    {
+      "term": "index structure",
+      "heading": true
+    },
+    {
+      "term": "index sum",
+      "heading": false
+    },
+    {
+      "term": "bar varpi",
+      "heading": false
+    },
+    {
+      "term": "index label",
+      "heading": false
+    },
+    {
+      "term": "ideal tetrahedra",
+      "heading": false
+    },
+    {
+      "term": "overline varpi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Moves on (topological) triangulations",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The three quad types within an oriented tetrahedron, arranged in our chosen cyclic order",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A normal octagon in a tetrahedron with a semi-angle structure with angles α, β, γ ∈[0, π]. The curvature of this octagon is 4α + 2β + 2γ − (8 −2)π = 2α + 2π −6π = 2α −4π < 0",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A layered triangulation of the complement of the trefoil knot, seen as a punctured torus bundle",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Part of a triangulation that does not admit an index structure, and part of the corresponding surface. The edge e1 is degree 1, so the two faces incident to it are identiﬁed (indicated by the arrows)",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The degree of the tetrahedron index I∆(m, e). Here the positive m axis is to the right and the positive e axis is upwards",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Each term of the “turning number” vector (aϖ|bϖ|cϖ) is calculated as a sum of the signed number of times the curve ϖ turns anticlockwise around the corners of the triangular ends of the truncated tetrahedra. Edges and arcs on the back side of the tetrahedron are drawn with dashed lines",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Note that at each step of the sequence, both ends of each element of Sk have a + sign, since they do in G0 and we never collapse an edge from a vertex with more than one incident edge end in S. Consider the equations associated to the vertices of Gk and Gk+1. We have",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The last graph in the sequence has one of these two forms. where X, Y, Z are terms coming from the edges not in S. We can solve these equations for E(sz) as 2E(sz) = −X −Y + Z, and the other two expressions similarly. We just have to show that −X −Y + Z has even coeﬃcients, and then we will be done",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The graph of edges and cusps for the Whitehead link",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The two kinds of isotopy move on a curve relative to the triangulation of ∂M",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The four ways in which a curve can travel through a triangle. We call the last two possibilities a positive backtrack and negative backtrack respectively",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Four cases of isotopy across a vertex and six cases of isotopy across an edge. All other cases are symmetries of these",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The 0–2 move shown with truncated tetrahedra. The four triangulated ends of the new pair of tetrahedra are shown. All of the “zoomed in” pictures are as seen from viewpoints outside of the pair of tetrahedra. The labels at the corners of the triangles in the “zoomed in” pictures are explained in Sec",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Circuits with 4 and 5 elements",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "The almost–triangulation in case (1) of Lemma 6.23, and its two reﬁnements to triangulations. Note that although the top and lower left pictures are identical, the top is to be interpreted as a single 3–cell, while the lower left shows two tetrahedra meeting in a triangle. The associated ﬂip between",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Almost–triangulations in cases (2) and (3) of Lemma 6.23, and the associated 2–2 ﬂips. In all diagrams, vertices v1 through v4 are coplanar",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "The possible 2–2 moves on a triangulation of a point conﬁguration, realised using 2–3 and 3–2 moves. Again in each case, vertices v1 through v4 are coplanar",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "The 2–cells of the associahedron",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "The fan of the summand of I52(0). Let Cij denote the two-dimensional cone with rays ρi and ρj. Then we have:",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "The plot of the degree of the summand of 52",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "The 2–3 move shown with truncated tetrahedra and labelled vertices",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Change in turning numbers under a 1–3 move",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Change in turning numbers under a 2–2 move",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Intersection numbers and turning numbers in a triangle",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Turning numbers and intersection numbers at all corners of the bipyramid",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p047-1",
+      "file": "images/img-p047-1.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 34,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "27 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p57); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p6); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 34 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1303.5278v1"
+  }
+}

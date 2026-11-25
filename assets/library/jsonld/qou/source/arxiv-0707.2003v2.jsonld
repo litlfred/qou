@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2003v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A geometric model for Hochschild homology of Soergel bimodules",
+  "contains": [
+    "library/arxiv-0707.2003v2/sections/sec-front-matter",
+    "library/arxiv-0707.2003v2/sections/sec-000",
+    "library/arxiv-0707.2003v2/sections/sec-001",
+    "library/arxiv-0707.2003v2/sections/sec-002",
+    "library/arxiv-0707.2003v2/sections/sec-003",
+    "library/arxiv-0707.2003v2/sections/sec-004",
+    "library/arxiv-0707.2003v2/sections/sec-005",
+    "library/arxiv-0707.2003v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A geometric model for Hochschild homology of Soergel bimodules — An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the\n\n**A geometric model for Hochschild homology of Soergel bimodules**\n\n*BEN WEBSTER*\n\n20 pp, 8 sections.\n\n**Abstract.** An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the Hochschild homology of Soergel bimodules for SL(n). We present a ge- ometric model for this Hochschild homology for any simple group G, as equivariant intersection homology of B × B-orbit closures in G. We show that, in type A these orbit closures are equivariantly formal for the conju- gation T -action. We use this fact to show that in the case where the corre- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describe its Hilbert series, proving a conjecture of Jacob Rasmussen.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgments; 2 Knot homology and Soergel bimodules; 3 The equivariant derived category and dg-modu; 4 Hochschild homology and dg-algebras; 5 The geometry of Bott-Samelson bimodules; 6 Equivariant formality",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2003&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2003v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0707.2003v2.pdf",
+    "source_sha256": "0b8fe37aabeee412467f3f45b6af8a534c98a0da25ea47c6d914dd2c4b1b0203",
+    "pages": 20,
+    "arxiv": {
+      "id": "0707.2003",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "7 Aug 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

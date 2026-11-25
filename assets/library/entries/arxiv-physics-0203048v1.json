@@ -1,0 +1,355 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-physics-0203048v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The topological structure of magnetic fields is an important subject in plasma physics. There, among other issues, it is related to the problem of stability of a plasma and to its energy content. Fields with an enormous wealth of entangled, braided or knotted field lines exist for example in the solar atmosphere. Note that the topological complexity of these solar magnetic fields is only revealed, if first, one takes into account that the observed loops anchored in the photosphere are closed by subphotospheric fields, and second, that already simple toroidal equilibria contain many different k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:physics/0203048v1  [physics.plasm-ph]  15 Mar 2002\nTowards a third-order topological invariant for\nmagnetic ﬁelds\nGunnar Hornig and Christoph Mayer\nTheoretische Physik IV, Fakult¨at f¨ur Physik und Astronomie,\nRuhr-Universit¨at Bochum, 44780 Bochum, Germany\nE-mail: gh@tp4.ruhr-uni-bochum.de, cm@tp4.ruhr-uni-bochum.de\nAbstract.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p002-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic helicity",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-magnetic-helicity.md",
+      "narrative": null,
+      "content": "Magnetic helicity of a field $\\bB$ with arbitrary vector potential $\\bA$ is defined as $$H(\\bB) = \\int_V \\bA \\cdot \\bB \\dxxx\\,,  \\quad\\quad\\quad \n  \\bB \\cdot \\bn|_{\\partial V} =0,                  \\label{heldef}$$ which can readily be shown to be gauge invariant if no magnetic flux crosses the boundary of the volume. Since it is quadratic in magnetic flux it is often referred to as a second-order topological invariant. Magnetic helicity measures the total mutual linkage of magnetic flux. This interpretation can be motivated if we envisage a simple system of two isolated and closed flux tubes $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A third-order invariant from the Chern-Simons three-form",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-a-third-order-invariant-from-the-chern-simons.md",
+      "narrative": null,
+      "content": "[]{#section-third-order-invariant label=\"section-third-order-invariant\"} In this section we construct a third-order invariant which, under conditions specified below, yields an invariant for three magnetic fields. The derivation is based on some basic knowledge in differential geometry found e.g. in Frankel (1997).\n\nWe have noted before that ([\\[helicity-density\\]](#helicity-density){reference-type=\"ref\" reference=\"helicity-density\"}) can be derived purely from the homogeneous Maxwell equations. Written in differential forms it reads $$\\d(A \\wedge \\d A)=  F\\wedge F  \\label{FwedgeF},$$ where $A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpretation of the invariant",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-interpretation-of-the-invariant.md",
+      "narrative": null,
+      "content": "It is interesting to note that the new third-order invariant comes on an equal footing as the conservation of helicity, since both invariants where derived from the same identity ([\\[Chern-Simons\\]](#Chern-Simons){reference-type=\"ref\" reference=\"Chern-Simons\"}). However, contrary to the conservation of helicity, the third-order integral cannot be applied to a single magnetic field, but requires a triplet of fields. Thus we have to interpret this integral in the sense of the cross-helicity rather than the total helicity. A forthcoming paper will deal with the question of how a single magnetic f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example of three magnetic fields with a third-order linkage",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-5-example-of-three-magnetic-fields-with-a-third.md",
+      "narrative": null,
+      "content": "In this section we want to give an example of three magnetic fields not confined to flux tubes, which firstly allow for one-form potentials that obey $\\d(A^i \\wedge A^j)=0$ and where secondly the integral invariant ([\\[H-3-continuous-integral\\]](#H-3-continuous-integral){reference-type=\"ref\" reference=\"H-3-continuous-integral\"}) yields a non-trivial result. The existence of such an example proves that the new invariant is indeed a generalization of the third-order invariant derived from a Massey triple product which was applicable merely to unlinked flux tubes. The fields we construct show an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang-Mills potentials of a vacuum field with non-vanishing winding number",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-51-yang-mills-potentials-of-a-vacuum-field-with.md",
+      "narrative": null,
+      "content": "An $SU(2)$ Yang-Mills vacuum field is now constructed on a time slice $\\reals^3$ of $\\reals^4$ using the mapping $g: \\reals^3 \\rightarrow SU(2)$ (see e.g. Frankel 1997, Itzykson and Zuber 1980) $$g(\\bx) \\,=\\, \\text{exp}\\left[\\frac{i\\pi \\; x^j \\sigma_j}\n                          {\\sqrt{||\\bx||^2 + \\lambda^2}}\\right].\n                        \\label{g-original}$$ Interpreted as a gauge transformation of an $SU(2)$ classical vacuum, i.e. with vanishing connection $\\omega = 0$, $g(\\bx)$ gives rise to the pure gauge connection $$\\omega = g^{-1}(\\bx)\\d g(\\bx),\\label{pure-gauge-omega}$$ and the Yang-M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic fields constructed from Yang-Mills potentials",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-52-magnetic-fields-constructed-from-yang-mills-p.md",
+      "narrative": null,
+      "content": "As mentioned above we now interpret the three components of the non-Abelian pure gauge Yang-Mills potential $A$ as potentials of three independent, non-vanishing magnetic fields. It is sufficient to consider only one of the three potentials $A^i$, since due to $\\hat{n}^i = x^i/||\\bx||$ and the cyclic symmetry of ([\\[Yang-Mills-potential-components\\]](#Yang-Mills-potential-components){reference-type=\"ref\" reference=\"Yang-Mills-potential-components\"}) in the indices $i,j,k$ all three fields can be obtained from just one field by rotations that map the $x^i$-axes on one another. From ([\\[Yang-Mil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p010-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p010-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/figure-img-p010-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-6-conclusions.md",
+      "narrative": null,
+      "content": "An integral expression has been presented which generalizes the third-order invariant known from the Massey triple product, to an invariant not limited to mutually unlinked flux tubes, if the involved fields allow for potentials that obey $\\nabla\\cdot\\left(\\bA^i\\times\\bA^j\\right)=0$ for $i\\ne j$. An example shows that the new invariant $H^{(3)}$ is a true generalization. In our derivation helicity and $H^{(3)}$ emerge from the same general identity, which involves the Chern-Simons three-form in the context of an $SU(2)$ gauge symmetry. Whether this identity leads to further results for other g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence of boundary conditions",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-a-equivalence-of-boundary-conditions.md",
+      "narrative": null,
+      "content": "We prove for a simply connected volume V the equivalence of the boundary conditions\nB · n|∂V = 0 and A × n|∂V = 0.\nFirst note that A × n|∂V = 0 implies B · n|∂V = 0: Locally on the boundary we\ncan write n = ∇β, where β(x) is a scalar function deﬁned such that β(x) = β0 deﬁnes\nthe boundary ∂V . Thus A × n|∂V = 0 implies A|∂V = α∇β for some α(x). Then\nB|∂V = ∇α × ∇β and therefore B · n|∂V = 0.\nTo prove the reverse we start with an arbitrary vector potential A which\nwill in general have a non-vanishing component A|| tangential to the surface ∂V .\nWe can express A|| as a one-form α deﬁned only on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge invariance of the third-order invariant $H^{(3)}$",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-b-gauge-invariance-of-the-third-order-invariant.md",
+      "narrative": null,
+      "content": "We now prove that the integral invariant (19) is unchanged under all gauge\ntransformations Ai →Ai′ = Ai + ∇φi for i = 1, 2, 3, which obey the following\ntwo conditions: First we require\n∇· Gi = ∇· Gi′ = 0,\n(B.1)\nwhere as before we deﬁne Gi = Aj × Ak and Gi′ = Aj′ × Ak′ for cyclic indices i, j, k.\nSecond, the gauge transformations must respect the boundary condition\nAi × n|∂V = Ai′ × n|∂V = 0,\n(B.2)\nwhere n is a normal vector to the boundary ∂V of the integration volume V .\nIt is easily checked that a general gauge transformation that leaves the condition\n∇· Gi = 0 unchanged for i = 1, 2, 3 has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence of the link integrals for disjunct flux tubes",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-c-equivalence-of-the-link-integrals-for-disjunct.md",
+      "narrative": null,
+      "content": "The equivalence of the third-order link integrals as given by Monastyrsky and Sasorov\n(1987), Berger (1990) and Ruzmaikin and Akhmetiev (1994) for three disjunct\nand mutually unlinked ﬂux tubes Ui with the integral (19) is shown as follows.\nMonastyrsky and Sasorov gave an integral which corresponds to the Massey triple\nproduct and reads in vector notation:\nZ\n∂U1\n(A1×F1−A3×F3) d2x,\nwith ∇× F1 = G1 := A2 × A3, for 1,2,3 cyclic. (C.1)\nThe integration is taken over the surface of tube U1. Cyclic permutations of indices\nin (C.1) yield equivalent expressions.\nNote that the Gi in this representation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-physics-0203048v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "Arnol’d V I 1974 Proc. Summer School in Diﬀerential Equations (Erevan) Armenian SSR Acad. Sci.\n[English translation: 1986 Sel. Math. Sov. 5 327–45]\nArnol’d V I and Khesin B A 1998 Topological Methods in Hydrodynamics Applied Mathematical\nSciences vol 125 (New York: Springer-Verlag)\nBerger M A 1990 Third-order link integrals J. Phys. A: Math. Gen. 23 2787–93\nBrown M R, Canﬁeld R C and Pevtsov A A (eds) 1999 Magnetic Helicity in Space and Laboratory\nPlasmas Geophysical Monographs vol 111 (Washington: American Geophysical Union)\nElsasser W M 1956 Reviews of Modern Physics 28 135\nEvans N W and Ber",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

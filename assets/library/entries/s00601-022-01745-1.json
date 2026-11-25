@@ -1,0 +1,63 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s00601-022-01745-1",
+  "blocks": [
+    {
+      "id": "library/s00601-022-01745-1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-celebrating-30-years-of-steven-weinbergs-paper-n.md",
+      "narrative": null,
+      "content": "Forces from Chiral Lagrangians - an Introduction to the\nSpecial Issue\nPublished online: 3 May 2022\n© The Author(s), under exclusive licence to Springer-Verlag GmbH Austria, part of Springer Nature 2022, corrected publication\n2022\nThis special issue of the journal Few-Body Systems celebrates Steven Weinberg’s article, “Nuclear Forces from\nChiral Lagrangians,” published in 1990 [1]. The effective ﬁeld theory (EFT) paradigm is among the most\nprominent of Steven Weinberg’s legacies. Contemporary with the developments of quantum mechanics, at the\nbeginning of the last century, the “indivisible” ato",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00601-022-01745-1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Few-Body Syst (2022) 63:46\nhttps://doi.org/10.1007/s00601-022-01745-1\nEDITORIAL\nAlejandro Kievsky · Luca Girlanda",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s00601-022-01745-1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-references.md",
+      "narrative": null,
+      "content": "1. S. Weinberg, Nuclear forces from chiral Lagrangians. Phys. Lett. B 251, 288 (1990)\n2. S. Weinberg, Effective chiral Lagrangians for nucleon - pion interactions and nuclear forces. Nucl. Phys. B 363, 3 (1991)\n3. S. Weinberg, Three body interactions among nucleon and pions. Phys. Lett. B 295, 114 (1992)\n4. U. van Kolck, Nuclear effective ﬁeld theories: reverberations of the early days. Few-Body Syst. 62, 85 (2021)\n5. R. Machleidt, Weinberg’s Proposal of 1990: a very personal view. Few-Body Syst. 62, 21 (2021)\n6. P.F. Bedaque, Limit cycles in effective theories. Few-Body Syst. 63, 28 (2022)\n7.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

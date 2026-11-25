@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-environment-setup.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-environment-setup",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-environment-setup",
+      "title": "Lean Environment Setup",
+      "description": "Sets up and troubleshoots the Lean 4 environment for Claude Code sessions. Ensures elan, lake, lean are installed so the paper-assistant MCP's Lean tools are operational. Handles sandboxed/cloud environments where downloads may be restricted.",
+      "instructionsPath": "skills/local/lean-environment-setup.md",
+      "instructionLines": 1327,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

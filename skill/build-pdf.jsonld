@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/build-pdf.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/build-pdf",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "build-pdf",
+      "title": "/build-pdf",
+      "description": "Builds the PDF locally in the workspace (main monolithic PDF and split per-chapter PDFs), and verifies the build is actually clean — errors, undefined references, and the preflight gate — rather than just producing a file.",
+      "instructionsPath": "skills/local/build-pdf.md",
+      "instructionLines": 171,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

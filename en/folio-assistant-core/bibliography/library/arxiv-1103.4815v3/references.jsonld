@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1103.4815v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Four Equivalent Versions of Non-Abelian Gerbes",
+      "dcterms:creator": [
+        "a, Thomas Nikolaus",
+        "b, Konrad Waldorf"
+      ],
+      "dcterms:issued": "D:20130717",
+      "dcterms:identifier": "https://arxiv.org/abs/1103.4815",
+      "dcterms:abstract": "We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations between interesting recent developments. Prominent partial results that we prove are a bijection between the continuous and smooth non- abelian cohomology, and an explicit equivalence between bundle gerbes and principal 2-bundles as 2-stacks.",
+      "dcterms:source": "library/arxiv-1103.4815v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1103.4815v3"
+    }
+  ]
+}

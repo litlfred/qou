@@ -1,0 +1,563 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1-s20-s002212362200012x-main",
+  "blocks": [
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-log-concavity-and-concentration-of-lipschitz-fun.md",
+      "narrative": null,
+      "content": "functions on the Boolean hypercube pst\n\nRonen Eldan *!, Omer Shamir ?\n\nWeizmann Institute of Science, Israel\n\nARTICLE INFO ABSTRACT\n\n-V\n\nArticle history:\nReceived 17 December 2020\nAccepted 13 January 2022\nAvailable online 19 January 2022\nCommunicated by Pietro Caputo\n\nKeywords:\nBoolean hypercube\n\nLog concave measures\nConcentration inequalities\nRayleigh distributions\n\nIt is well-known that measures whose density is the form e\nwhere V is a uniformly convex potential on R” attain strong\nconcentration properties. In search of a notion of log-concavity\non the discrete hypercube, we consider measure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Functional Analysis 282 (2022) 109392\n\nContents lists available at ScienceDirect\n\nFUNCTIONAL\n\nJournal of Functional Analysis Ana\n\nwww.elsevier.com /locate/jfa",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Suppose that ∇2 log dν dμ(x) ⪯βIn, ∀x ∈[−1, 1]n. (4) Then ν is (β + 3)-semi-log-concave. Thus, a corollary to Theorem 2 is that the condition (4) implies that every 1-Lipschitz function ϕ satisﬁes Varν[ϕ] ≤C(β + 3)n2−c/(β+3). R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "In the Euclidean space Rn, log-concave measures, namely measures whose density is of \nthe form e−U with U being a convex potential are known to satisfy several concentration \ninequalities. For instance, if a probability measure ν is absolutely continuous with respect \nto the standard Gaussian measure γ on Rn, with a corresponding density dν = eV dγ\nwhere the potential V : Rn →R satisﬁes the condition\n∇2V ⪯(1 −δ)In,\n(1)\nthen any 1-Lipschitz test function ϕ, will satisfy Varν[ϕ] ≤1\nδ, see e.g., [15]. In fact, much \nstronger concentration, for instance in the form of a logarithmic Sobolev inequal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "Our proof shows that one can take for example C = 10 and c = 1/20, however these constants are probably very sub-optimal. The theorem shows in particular that for any β ∈R there exists n large enough such that β-semi-log-concave measures on Cn admit nontrivial concentration. Before we proceed, let us give an alternative and slightly stronger notion of semi-log- concavity which could hopefully shed some light and give better intuition regarding the relation to the usual notion of log concavity in Rn. We ﬁrst need to recall the multi-linear extension of the measure into the continuous hypercube,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "Let f be the multi-linear extension of dν dμ. Since f is harmonic and since ∇2 log f = ∇2f f −∇f ⊗2 f 2 , we see that in order for f to be log-concave, the Hessian of f can have at most one positive eigenvalue, due to which the family of log-concave functions, or in other words functions satisfying condition (4) with β = 0, is rather restricted. Semi-log-concave measures are a much richer family, as demonstrated below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let β ≥1. If ν is a β-semi-log-concave probability measure on Cn and ϕ is 1-Lipschitz, then Varν[ϕ] ≤Cβ2n2−c/β where C, c > 0 are universal constants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A lower bound on the entropy",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-11-a-lower-bound-on-the-entropy.md",
+      "narrative": null,
+      "content": "Our second result addresses the question of ﬁnding conditions under which the entropy \nof the measure ν is close to that of the corresponding product measure, having the same \nmarginals as ν. This result is inspired by a corresponding bound due to Anari, Oveis-\nGharan and Vinzant [3, Theorem 5.2], see the discussion below.\nGiven a measure ν on Cn, we deﬁne the entropy of ν by\nH(ν) :=\n\u0003\nCn\nlog\n1\nν({y})dν(y),\nthe entropy of ν. Moreover, for all i let πi(ν) be the marginal of ν onto the i-th coordinate, \nand deﬁne\n˜H(ν) :=\n\u0004\ni∈[n]\nH(πi(ν)).\nA well-known fact is that H(ν) ≤˜H(ν). We show that unde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An application: concentration of negatively dependent random variables",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-12-an-application-concentration-of-negatively-de.md",
+      "narrative": null,
+      "content": "For a sequence of Bernoulli variables X1, ..., Xn, there are several notions of negative-\ndependence between those variables (see e.g., [4,17,16,5]), some of which are known or \nR. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392\n5\nconjectured to imply concentration of Lipschitz functions. Some notable ﬁrst steps to-\nwards a theory unifying those notions appear in the work of Pemantle [13], to which we \nalso refer for a review of these notions.\nThe simplest notion of negative dependence is pairwise negative-correlations, hence \nthe condition that E[XiXj] ≤EXiEXj for all i ̸=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "Condition (5) is stronger than condition (2). Indeed, it is not hard to check that diag \u0007 ∇2L[ν](x) \b ⪯In (see formula (8) below).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let ν be a probability measure on Cn. Suppose that, for some β ≥1, ν satisﬁes the condition ∇2L[ν](x) ⪯βdiag \u0007 ∇2L[ν](x) \b , ∀x ∈Rn. (5) Then one has ˜H(ν) ≤βH(ν).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible extensions to spectral gap",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-13-relation-to-the-works-of-anari-liu-oveis-ghar.md",
+      "narrative": null,
+      "content": "extensions to spectral gap\nA somewhat related notion of log-concavity of measures on the discrete hypercube \nwas given in a series of works by Anari, Liu, Oveis-Gharan and Vinzant in [2,3,1]. Given \n{−1, 1}-Bernoulli random variables X1, . . . , Xn distributed according to a law ν, which \ncan be identiﬁed with a random subset A ⊂[n] by Xi = 21i∈A −1, the work [2] considers \nthe generating polynomial\npν(z1, ..., zn) = E\n\u0005\ni∈A\nzi.\nR. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392\n7\nThey show that if p is both log-concave on the positive orthant and homogeneous (which \nis equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and a stochastic construction",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-2-preliminaries-and-a-stochastic-construction.md",
+      "narrative": null,
+      "content": "Throughout this section, we ﬁx a probability measure ν on Cn and a Lipschitz test \nfunction ϕ : Cn →R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some preliminary definitions",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-21-some-preliminary-definitions.md",
+      "narrative": null,
+      "content": "For a vector w ∈Rn, deﬁne the tilt of the measure ν as\ndτwν(x)\ndν(x)\n:= Zν(w)−1e⟨w,x⟩\nwhere\nZν(w) :=\n\u0003\nCn\ne⟨w,x⟩dν.\nIn other words, τwν is the measure obtained by adding an external ﬁeld, w, to the measure \nν. Also deﬁne the functions\naν(w) :=\n\u0003\nCn\nxdτwν(x),\nAν(w) :=\n\u0003\nCn\n(x −aν(w))⊗2 dτwν(x) = Cov(τwν),\nthe center of mass and the covariance matrix of the tilt τwν.\nA well-known calculation gives,\naν(w) = ∇L[ν](w),\nAν(w) = ∇2L[ν](w)\n(8)\nR. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392\n9\n(this is the fact that the Log-Laplace transform is the cumulant-generating function).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The process deﬁned above satisﬁes the following properties. 1. Almost surely, for all t, νt is a probability measure. 2. For all A ⊂Cn, the process νt(A) is a martingale. 3. The process at almost surely converges to a point in Cn, and a∞:= limt→∞at is distributed according to the law ν. Moreover, the measure νt almost-surely weakly converges to a Dirac measure at a∞. R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "Given a measure ν and a vector v ∈Rn, consider the process deﬁned by the equation u0 = v, dut = dBt + aν(ut)dt. Then X = limt→∞aν(ut) exists and is a point in Cn almost surely, and has the law τvν.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stochastic localization",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-22-stochastic-localization.md",
+      "narrative": null,
+      "content": "We construct a stochastic process driven by a Brownian motion, which we refer to as \nstochastic localization. A somewhat similar process was originally used in [6] to establish \nconcentration properties for log-concave measures on Rn. Here we use a discrete version, \nsimilar to the construction which appears in [7,8]. In this section we occasionally allow \nourselves to omit some of the details of the proofs, and the reader is referred to [7] for \nmore rigorous derivations.\nThe high-level plan is to construct a stochastic evolution of measures (νt)t≥0 on Cn\nsuch that ν0 = ν and such that νt con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "For all t, r ≥0, we have almost surely, E[Tr(At+r)|Fr] ≤ne−t/8. (18)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "One has, V arνt[ϕ] ≤nTr(At).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prop-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "prop-sec-009-04.md",
+      "narrative": null,
+      "content": "Let ν be a β-semi-log-concave measure on Cn. Let v ∈Rn and let θ ∈ Sn−1. Then, for all 0 < ε < 0.1, we have W1(τvν, τv+εθν) ≤4εβn1−1/(32β). R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-3-proof-of-theorem-2.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimating the variance in terms of the transportation distance between tilts",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-31-estimating-the-variance-in-terms-of-the-trans.md",
+      "narrative": null,
+      "content": "Fix a test function ϕ : Cn →R. Deﬁne Mt =\n\nϕdνt. Observe that by part 2 of \nProposition 10, Mt is a martingale. We ﬁrst claim that\nVarν[ϕ] = E[M]t + EVarνt[ϕ],\n(16)\nwhere [M]t denotes the quadratic variation of Mt.\nIndeed, by part 3 of Proposition 10, we have that M∞:= limt→∞Mt exists almost \nsurely and has the law ϕ⋆ν. Consequently, Varν[ϕ|Ft] = Var[M∞|Ft] almost surely, for \nall t. By Itô’s isometry, we have\nVarν[ϕ] = E[M]t + EVar[M∞|Ft] = E[M]t + EVarνt[ϕ].\nWe will carry on by bounding each of the terms on the right hand side separately, for a \nsuitable chosen value of t. We begin with the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/rem-sec-009-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "rem-sec-009-03.md",
+      "narrative": null,
+      "content": "Up to this point, the semi-log-concavity of the measure ν has not been used, meaning that the bound (20) holds true for general measures. Semi-log-concavity will play a role when bounding the integrand on the right hand side of the above equation. In light of the above bound, the proof boils down to the following estimate on the transportation distance between two close tilts.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "Let ε > 0. Let Wt be a standard Brownian motion and let Xt, Qt be adapted to Wt, which satisfy Xt = ε + Wt + t \u0003 Qsds and such that Qt ≤0, almost surely for all t. Let τ = inf{t; Xt = 0}. One has P(τ ≥s) ≤ ε √s, ∀s > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Proposition 15: the stochastic coupling",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-32-proof-of-proposition-15-the-stochastic-coupli.md",
+      "narrative": null,
+      "content": "Proposition 15 will be proven via a coupling argument laid out below, which is a \nvariant of the standard reﬂection coupling of Brownian motions. Let v ∈Rn and consider \nthe process\nw0 = v,\ndwt = dBt + aν(wt)dt.\n(21)\nAccording to Proposition 11, we have that limt→∞aν(wt) ∼τvν. This gives rise to \nthe following coupling. Let Ut be a process adapted to Ft such that for all t, Ut is an \northogonal matrix. Let ε > 0 and θ ∈Sn−1, and consider the additional process deﬁned \nby the equation\nu0 = v + εθ,\ndut = UtdBt + aν(ut)dt.\n(22)\nThe existence and uniqueness of the solution will be justiﬁed at the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Fact 4",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-4-proof-of-fact-4.md",
+      "narrative": null,
+      "content": "Let ρ : [−1, 1]n →R be the harmonic extension of dν\ndμ and write g(x) := log ρ(tanh(x))\nwhere, throughout this section, for x ∈[−1, 1]n, tanh(x) := (tanh(x1), ..., tanh(xn)). A \ncalculation gives\ng(x) = log\n\u0003\nCn\n\u0005\ni∈[n]\n(1 + tanh(xi)yi) dν(y)\n= −\n\u0004\ni∈[n]\nlog cosh(xi) + L[ν](x).\nTherefore,\n20\nR. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392\nCov(τxν) = ∇2L[ν](x) = ∇2g(x) + diag\n\u001f\n1\ncosh2(x)\n \n.\nOn the other hand, a direct calculation gives\n∇2\ni,jg(x) = [∇2\ni,j log ρ](tanh(x))\ncosh2(xi) cosh2(xj) −δi,j\n2 tanh(xi)\ncosh2(xi) [∇i log ρ](tanh(x)),\nthus we have\nCovi,j(τxν) = [∇2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "One has, H(ν) = 1 2E ⎡ ⎣ ∞ \u0003 Tr (Cov(νt)) dt ⎤ ⎦, (30) and ˜H(ν) = 1 2E ⎡ ⎣ ∞ \u0003 Tr \u0012 Cov(νt) (diag (Cov(νt)))−1 Cov(νt) \u0013 dt ⎤ ⎦. (31)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 6",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-5-proof-of-theorem-6.md",
+      "narrative": null,
+      "content": "Fix a measure ν on Cn. Consider the process νt constructed in Section 2.2. The \nfollowing lemma provides expressions for H(ν) and ˜H(ν) in terms of the process νt.\nLemma 17. One has,\nH(ν) = 1\n2E\n⎡\n⎣\n∞\n\u0003\n0\nTr (Cov(νt)) dt\n⎤\n⎦,\n(30)\nand\n˜H(ν) = 1\n2E\n⎡\n⎣\n∞\n\u0003\n0\nTr\n\u0012\nCov(νt) (diag (Cov(νt)))−1 Cov(νt)\n\u0013\ndt\n⎤\n⎦.\n(31)\nProof. Formula (30) is exactly the statement of [7, Lemma 8] (and follows by a direct \ncalculation of dH(νt) via Itô’s formula). In order to obtain (31), we deﬁne h : Cn →R\nby\nR. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392\n21\nh(x) = −\n\u0004\ni∈[n]\n1 + xi\n2\nlog 1 + xi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s002212362200012x-main/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[1] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, Spectral independence in high-dimensional ex-\npanders and applications to the hardcore model, arXiv preprint, arXiv :2001 .00303, 2020.\n[2] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, Cynthia Vinzant, Log-concave polynomials II: high-\ndimensional walks and an FPRAS for counting bases of a matroid, in: STOC’19—Proceedings of the \n51st Annual ACM SIGACT Symposium on Theory of Computing, ACM, New York, 2019, pp. 1–12.\n[3] Nima Anari, Shayan Oveis Gharan, Cynthia Vinzant, Log-concave polynomials, entropy, and a \ndeterministic approximation algorith",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

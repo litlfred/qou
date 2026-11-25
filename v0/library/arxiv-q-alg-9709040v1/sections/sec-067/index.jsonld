@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quanization of the Kirillov-Poisson bracket",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-q-alg-9709040v1/blocks/prose-sec-067",
+    "library/arxiv-q-alg-9709040v1/blocks/thm-sec-067-01",
+    "library/arxiv-q-alg-9709040v1/blocks/cor-sec-067-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested"
+}

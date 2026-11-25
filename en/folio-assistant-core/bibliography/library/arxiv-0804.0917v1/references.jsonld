@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0804.0917v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Composition-Diamond Lemma for Modules ∗",
+      "dcterms:creator": [
+        "Yuqun Chen, Yongshan Chen",
+        "Zhong, Chanyan"
+      ],
+      "dcterms:issued": "D:20210715",
+      "dcterms:identifier": "https://arxiv.org/abs/0804.0917",
+      "dcterms:abstract": "In this paper we give some relationships among the Gr¨obner-Shirshov bases in free associative algebras, free left modules and “double-free” left modules (free modules over a free algebra). We give the Chibrikov’s Composition-Diamond lemma for modules and show that Kang-Lee’s Composition-Diamond lemma follows from this lemma. As applications, we also deal with highest weight module over the Lie algebra sl2, Verma module over a Kac-Moody algebra, Verma module over Lie algebra of coeﬃcients of a free conformal algebra and the universal enveloping module for a Sabinin algebra.",
+      "dcterms:source": "library/arxiv-0804.0917v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0804.0917v1"
+    }
+  ]
+}

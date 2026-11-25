@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ram1991-frobenius-formula",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "A Frobenius formula for the characters of the Hecke algebras",
+      "dcterms:source": "library/ram1991-frobenius-formula/manifest.jsonld",
+      "dcterms:hasVersion": "library/ram1991-frobenius-formula"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-bar-involution-parity-decomposition",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:bar-involution-parity-decomposition",
+  "kind": "proof",
+  "title": "Proof of the even/odd decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-bar-involution-parity-decomposition",
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "text": "bar-involution-parity-decomposition-proof.md",
+  "provenance": "authored"
+}

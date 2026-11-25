@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1412.4711v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT",
+      "dcterms:creator": [
+        "FALBEL, E.",
+        "GUILLOUX, A.",
+        "KOSELEFF, P.-V."
+      ],
+      "dcterms:issued": "D:20141216",
+      "dcterms:identifier": "https://arxiv.org/abs/1412.4711",
+      "dcterms:abstract": "We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3, C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).",
+      "dcterms:source": "library/arxiv-1412.4711v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1412.4711v1"
+    }
+  ]
+}

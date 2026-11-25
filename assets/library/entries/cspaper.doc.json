@@ -1,0 +1,732 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "cspaper",
+  "title": "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Consistency and cusp conditions, and the conditions on c",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "246",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-consistency-and-cusp-conditions-and-the-condit"
+    },
+    {
+      "level": 1,
+      "title": "The formula for the Chern-Simons invariant",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "250",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-formula-for-the-chern-simons-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Combinatorics of 3-cycles",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "257",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-combinatorics-of-3-cycles"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 2.4",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "269",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-6-proof-of-theorem-24"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": "271",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann",
+      "extractCut": false,
+      "blocks": [
+        "library/cspaper/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "246",
+      "words": 1499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sol",
+          "heading": false
+        },
+        {
+          "term": "well-deﬁned modulo",
+          "heading": false
+        },
+        {
+          "term": "j-th cusp",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "z2n",
+          "heading": false
+        },
+        {
+          "term": "parity condition",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we prove some results on combinatorics of triangulations of 3-dimensional pseudo-manifolds, improving on results of [NZ], and apply them to obtain a simplicial formula for the Chern-Simons invariant of an ideally triangulated hyperbolic 3-manifold. Combining this with [MN] gives a simplicial formula for the η invariant also. In effect, the main ingredient in the formula is the sum of the “Rogers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-consistency-and-cusp-conditions-and-the-condit",
+      "number": "2",
+      "title": "Consistency and cusp conditions, and the conditions on c",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "246",
+      "labelEnd": "250",
+      "words": 1485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consistency conditions",
+          "heading": true
+        },
+        {
+          "term": "cusp conditions",
+          "heading": true
+        },
+        {
+          "term": "departs simplex",
+          "heading": false
+        },
+        {
+          "term": "parity condition",
+          "heading": false
+        },
+        {
+          "term": "simplex across",
+          "heading": false
+        },
+        {
+          "term": "z2n satisfying",
+          "heading": false
+        },
+        {
+          "term": "associated log-parameter",
+          "heading": false
+        },
+        {
+          "term": "through simplex",
+          "heading": false
+        }
+      ],
+      "extract": "An ideal hyperbolic structure on a tetrahedron ∆is speciﬁed by assigning a complex number with positive imaginary part to each edge, these numbers being related as in Fig. 1. The geometric meaning of these parameters is that the Euclidean triangle cut off by a horosphere section at a vertex is similar to the Euclidean triangle pictured in Fig. 1 with vertices 0, 1, and z in the complex plane; the parameter z is only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-formula-for-the-chern-simons-invariant",
+      "number": "3",
+      "title": "The formula for the Chern-Simons invariant",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 15,
+      "labelStart": "250",
+      "labelEnd": "257",
+      "words": 1963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log arg",
+          "heading": false
+        },
+        {
+          "term": "j-th end",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "consistency condition",
+          "heading": false
+        },
+        {
+          "term": "dupont",
+          "heading": false
+        },
+        {
+          "term": "orientation convention",
+          "heading": false
+        },
+        {
+          "term": "j2m",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove Theorems 1 and 2 of the Introduction, assuming Theorem 2.4, which will be proved in Sect. 6. Proof of Theorem 1. Let M be triangulated, as in the previous section, into ideal tetrahedra with parameters zν. We do not assume M has the complete hyperbolic structure. Under certain conditions that we recall below, the metric completion M ′ of this structure on M is a hyperbolic manifold, in which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-combinatorics-of-3-cycles",
+      "number": "4",
+      "title": "Combinatorics of 3-cycles",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 27,
+      "labelStart": "257",
+      "labelEnd": "269",
+      "words": 4619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enters simplex",
+          "heading": false
+        },
+        {
+          "term": "through simplex",
+          "heading": false
+        },
+        {
+          "term": "cellular path",
+          "heading": false
+        },
+        {
+          "term": "alternating path",
+          "heading": false
+        },
+        {
+          "term": "simplicial cycle",
+          "heading": false
+        },
+        {
+          "term": "modulo simplicial",
+          "heading": false
+        },
+        {
+          "term": "maps ker",
+          "heading": false
+        },
+        {
+          "term": "simplicial chains",
+          "heading": false
+        }
+      ],
+      "extract": "By an n-cycle with boundary will be meant any n-complex K obtained from a ﬁnite disjoint union of closed n-simplices by iteratively gluing together pairs of free (n − 1)-faces by simplicial identiﬁcation maps (a “free” face is one that has not yet been glued) in such a way that any open q-simplex still embeds after the identiﬁcation. If no free faces remain K will be called a closed n-cycle or just an n-cycle (these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-6-proof-of-theorem-24",
+      "number": "6",
+      "title": "Proof of Theorem 2.4",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "269",
+      "labelEnd": "271",
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "back-tracking",
+          "heading": false
+        },
+        {
+          "term": "through simplex",
+          "heading": false
+        },
+        {
+          "term": "closed curves",
+          "heading": false
+        },
+        {
+          "term": "passes through",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient sum",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes conditions",
+          "heading": false
+        },
+        {
+          "term": "closed path",
+          "heading": false
+        },
+        {
+          "term": "general closed",
+          "heading": false
+        }
+      ],
+      "extract": "Let J∆be deﬁned like J∆but without the relation e1 + e2 + e3 = 0; that is, J∆is generated by the six edges e1, . . . , e6 of ∆with the relations ei = ei+3 for i = 1, 2, 3. We give J ∆the standard bilinear form (ei, ej) = δij for i, j ∈{1, 2, 3}. Let J be the orthogonal sum of the J ∆. The map β∗: J →C2 can be factored as β∗: J β1 −→J β2 −→C2, with β1 and β2 deﬁned on the ∆-component by β1(ei) = ei+1 −ei+2 β2(ei) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "271",
+      "labelEnd": "271",
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tomoyoshi yoshida",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "meyerhoff",
+          "heading": false
+        },
+        {
+          "term": "neumann",
+          "heading": false
+        },
+        {
+          "term": "walter",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "[CS] M. Culler and P. B. Shalen, Varieties of group representations and splittings of 3-manifolds, Ann. of Math. 117 (1983), 109–146 [D] Johan L. Dupont, The dilogarithm as a characteristic class for ﬂat bundles, Proc. of the Northwestern conference on cohomology of groups (Evanston, Ill., 1985), J. Pure Appl. Algebra 44 (1987), 137–164. [HMW] Craig D. Hodgson, G. Robert Meyerhoff, and Jeffrey R. Weeks, Surgeries on",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "departs simplex",
+      "heading": false
+    },
+    {
+      "term": "through simplex",
+      "heading": false
+    },
+    {
+      "term": "simplex across",
+      "heading": false
+    },
+    {
+      "term": "modulo sum",
+      "heading": false
+    },
+    {
+      "term": "modulo simplicial",
+      "heading": false
+    },
+    {
+      "term": "well-deﬁned modulo",
+      "heading": false
+    },
+    {
+      "term": "some simplex",
+      "heading": false
+    },
+    {
+      "term": "j-th cusp",
+      "heading": false
+    },
+    {
+      "term": "enters simplex",
+      "heading": false
+    },
+    {
+      "term": "every simplex",
+      "heading": false
+    },
+    {
+      "term": "coefﬁcient sum",
+      "heading": false
+    },
+    {
+      "term": "log arg",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "244",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "245",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "246",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "247",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "248",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "249",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "250",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "251",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "252",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "253",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "254",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "255",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "256",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "257",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "258",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "259",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "260",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "261",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "262",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "263",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "264",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "265",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "266",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "267",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "268",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "269",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "270",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "271",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The geometric meaning of these parameters is that the Euclidean triangle cut off",
+      "page": 4,
+      "pageLabel": "246",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Thus ej and ej+3 are opposite edges for j = 1, 2, 3",
+      "page": 4,
+      "pageLabel": "246",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13a",
+      "title": "The “near” contributions",
+      "page": 21,
+      "pageLabel": "263",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13b",
+      "title": "The “far” contributions. Contributions of the various types may overlap, but this does not affect the argument",
+      "page": 21,
+      "pageLabel": "263",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/cspaper"
+  }
+}

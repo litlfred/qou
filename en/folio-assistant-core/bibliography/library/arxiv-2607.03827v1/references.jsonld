@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2607.03827v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Affine cellular algebras and asymptotic algebras",
+      "dcterms:creator": [
+        "CARVALHO, PAULA A.A.B.",
+        "KOENIG, STEFFEN",
+        "LOMP, CHRISTIAN"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2607.03827",
+      "dcterms:abstract": "The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property between A and ˆA, about constructing ˆA from cell modules of A, about existence of an embedding A →ˆA and about a faithful functor from torsionless ˆA-modules to A-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.",
+      "dcterms:source": "library/arxiv-2607.03827v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2607.03827v1"
+    }
+  ]
+}

@@ -1,0 +1,1047 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2007.10190v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic expansions in perturbative quantum field theory",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-asymptotic-expansions-in-perturbative-quantum.md",
+      "narrative": null,
+      "content": "Perturbative expansions in quantum field theories are often\nmathematically defined but typically lead to factorially divergent\nformal power series. Important examples are the perturbative\nexpansions of the partition function of 3-dimensional manifolds (with,\nor without boundary) in complex Chern-Simons theory with arbitrary\ngauge group. For instance, in~\\cite{GLM} it was shown that the LMO\ninvariant of a 3-manifold (which is the perturbative expansion of the\nWitten-Reshetikhin-Turaev invariant at the trivial flat collection and\narbitrary gauge group), is a Gevrey-1 formal power series, that is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS\nSTAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI˜NO\nAbstract. The asymptotic expansion of quantum knot invariants in complex Chern-Simons\ntheory gives rise to factorially divergent formal power series. We conjecture that these series\nare resurgent functions whose Stokes automorphism is given by a pair of matrices of q-series\nwith integer coeﬃcients, which are determined explicitly by the fundamental solutions of a\npair of linear q-diﬀerence equations. We further conjecture that for a hyperbolic knot, a dis-\ntinguished entry of those matrices equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence in complex Chern-Simons theory",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-resurgence-in-complex-chern-simons-theory.md",
+      "narrative": null,
+      "content": "In what follows, we will identify the partition function of complex\nChern-Simons theory with the state integral of Andersen-Kashaev\nin~\\cite{AK}, following the ideas of Hikami, Dimofte et\nal~\\cite{Hikami,DGLZ}.  Although this identification has not been\nderived from first principles, it turns out to have a number of\nstartling consequences. We will focus on manifolds of the form\n$M= \\mathbb{S}^3 \\backslash \\mathcal{K}$, where $\\CK$ is a hyperbolic\nknot.\n\nOur goal is to give an explicit description of the resurgent structure\nof the formal power series of perturbative Chern-Simons theory in\nterms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The equation (1-x)(1-x-1)=1 and the 41 knot",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-2-the-equation-1-x1-x-11-and-the-41-knot.md",
+      "narrative": null,
+      "content": "The state integral of the 41 knot is given by Equation (39) below with (A, B) = (1, 2) and\nµ = λ = 0. The critical points of the integrand are solutions of the algebraic equation\n(1 −x)(1 −x−1) = 1.\n(7)\nThe latter has two solutions ξ1 = e2πi/6 and ξ2 = e−2πi/6 which lie in the number ﬁeld\nQ(√−3), the trace ﬁeld of the 41 knot. The corresponding series Φσj(τ) satisfy the relation\nΦσ2(τ) = iΦσ1(−τ) and the ﬁrst few terms of ϕσ1(τ/(2πi)) ∈3−1/4Q(√−3)[[τ]] are given by\nϕσ1\n\u0010 τ\n2πi\n\u0011\n=\n1\n4√\n3\n\u0010\n1 +\n11τ\n72√−3 +\n697τ 2\n2 (72√−3)2 +\n724351τ 3\n30 (72√−3)3 + · · ·\n\u0011\n.\n(8)\nThe exponent in (3) involves th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The equation x-2(1-x)3=1 and the 52 knot",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-3-the-equation-x-21-x31-and-the-52-knot.md",
+      "narrative": null,
+      "content": "The state integral of the 52 knot is given by Equation (39) below with (A, B) = (2, 3) and\nµ = λ = 0. The critical points of the integrand are solutions of the algebraic equation\nx−2(1 −x)3 = 1 .\n(19)\n6\nSTAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI˜NO\nThe above equation (which deﬁnes a cubic ﬁeld of discriminant −23, the trace ﬁeld of the\n52 knot) has three solutions ξ1 = 0.78492 + 1.30714 . . . i, ξ2 = 0.78492 −1.30714 . . . i and\nξ3 = 0.43016 . . . , corresponding to the geometric representation, its conjugate and the real\nrepresentation. The corresponding series Φσj(τ) satisfy Φσ2(τ) = −iΦσ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Descendants",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-4-descendants.md",
+      "narrative": null,
+      "content": "\\label{sec.d}\n\nA key aspect of our study of asymptotic series are linear\n$q$-difference equations which are satisfied for their\ndescendants. This elementary idea leads to descendants of the Kashaev\ninvariant (studied extensively in~\\cite{GZ:kashaev}), of asymptotic\nseries (ibid), of $q$-series as well as of state integrals. In this\nsection we review in detail the story of descendants (or ancestors, as\nthe case may be).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kashaev invariant and its descendants",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-41-the-kashaev-invariant-and-its-descendants.md",
+      "narrative": null,
+      "content": "\\label{sub.k41}\n\nThe series $\\Phi_{\\s_1} (\\tau)$ appearing in the saddle-point\nexpansion of the state integral appeared originally in the asymptotic\nexpansion of the Kashaev invariant \\cite{K95}. In the case of the\n$4_1$ knot, the Kashaev invariant is given by\n\n\\begin{equation}\n\\label{J41}\n\\J^{(4_1)}(q) = \\sum_{n=0}^\\infty (q;q)_n (q^{-1};q^{-1})_n \\,.\n\\end{equation}\nThe above expression can be evaluated when $q$ is a root of unity. The\nVolume Conjecture of Kashaev~\\cite{kas-volume} (and its extension to all orders \\cite{gukov}) \nasserts that $\\J^{(4_1)}(\\re^{2 \\pi \\ri/N})$ has\nan asymptotic e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "In~\\cite{GZ:qseries} it was observed that we have an asymptotic expansion",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-series (G00,G10) and their descendants",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-42-the-q-series-g00g10-and-their-descendants.md",
+      "narrative": null,
+      "content": "\\label{sub.gG41}\n\nWe now discuss an appearance of the formal power series $\\Phi(\\tau)$\nin the radial asymptotics of some $q$-series, following~\\cite{GZ:qseries}.\n\nBy $q$-series we mean formal Laurent series in a variable $q$ with\ninteger coefficients, i.e., elements of $\\BZ((q))$.  All the\n$q$-series below will define holomorphic functions in the punctured\nunit disk with (perhaps) a pole at the origin.  We now recall how the\nradial asymptotics of the $q$-series $(G^0_0,G^1_0)$ is given by\n$\\Phi(\\tau)$. The first series $G^0_0(q)$ was found quite by accident\nto have radial asymptotics expressed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The state integral and its descendants",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-43-the-state-integral-and-its-descendants.md",
+      "narrative": null,
+      "content": "\\label{sub.state}\n\nIn this section we recall the definition of state integrals and some\nof their basic properties. State integrals are multidimensional\nintegrals whose integrand is a product of Faddeev's quantum\ndilogarithm function $\\Phi_{\\bb}$ (whose definition we will not need\nand may be found in~\\cite{Faddeev,FK-QDL}) times an exponential of a\nquadratic and linear form. Here\n$\\tau=\\bb^2 \\in \\BC':=\\BC\\setminus(-\\infty,0]$, thus even if the\nintegrand contains no free variables, a state integral is always a\nholomorphic function of $\\tau$.\n\nState integrals have two key properties:\n\\begin{itemi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computations",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-5-computations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgent analysis",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-51-resurgent-analysis.md",
+      "narrative": null,
+      "content": "gent analysis. A detailed exposition may be found for example in [ABS19, MS16]. Given a\nGevrey-1 series\nϕ(τ) =\nX\nn≥0\nanτ n,\nan = O(Cnn!),\n(55)\nits Borel transform is deﬁned by\nbϕ(ζ) =\nX\nk≥0\nak\nk! ζk.\n(56)\nIt is a holomorphic function in a neighborhood of the origin. In favorable cases, this function\ncan be extended to the complex ζ-plane (also called Borel plane), but it will have singularities.\nAssuming that the analytically continued function does not grow too fast at inﬁnity, the Borel\nresummation of ϕ(τ) is deﬁned as the Laplace transform\ns(ϕ)(τ) =\nZ ∞\n0\ne−ζ bϕ(ζτ)dζ.\n(57)\nThis has discont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-111",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-111.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-133",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-133.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-155",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-155.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-177",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-177.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-199",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-199.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-221",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-221.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-23",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-23.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-243",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-243.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-265",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-265.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-287",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-287.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-309",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-309.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-331",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-331.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-353",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-353.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-375",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-375.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-397",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-397.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-419",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-419.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-441",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-441.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-45",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-45.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-463",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-463.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-67",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-67.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p013-89",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-89.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 41 knot",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-52-the-41-knot.md",
+      "narrative": null,
+      "content": "series ϕ1,2(τ) of the 41 knot is shown in Fig. 1. Points in each vertical line are 2πi apart, and\nthe two points in the real axis correspond to\nι± = ±\n\u0012V (σ1)\n2π\n−V (σ2)\n2π\n\u0013\n= ±V\nπ ,\n(69)\nwhere V is deﬁned in (9). Since each singularity in the Borel plane leads to a discontinuity\nin the Borel resummation, one has the structure of Stokes rays shown in Fig. 2 (where we\ntook into account both series). Note that there is an inﬁnite dense set of rays accumulating\ntowards the imaginary axis.\nWe already hinted at the end of Section 4.2 that the asymptotic expansion (38) can be\nupgraded to an exact e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-103",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-103.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-120",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-120.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-137",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-137.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-154",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-154.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-171",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-171.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-188",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-188.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-205",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-205.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-222",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-222.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-239",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-239.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-256",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-256.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-273",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-273.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-35",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-35.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-52",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-52.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-69",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-69.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/figure-img-p014-86",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-86.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 52 knot",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-53-the-52-knot.md",
+      "narrative": null,
+      "content": "series ϕσj(τ) (j = 1, 2, 3) of the 52 knot is shown in Fig. 3. Points in each vertical line are\n2πi are apart, while the six points ιij surrounding the origin are given by\nιij = V (σi)\n2π\n−V (σj)\n2π\n,\n1 ≤i̸ = j ≤3 ,\n(81)\nwhere V (σi) are given in (21). The structure of Stokes rays is shown in Fig. 4. There is also\nan inﬁnite dense set of rays accumulating towards the imaginary axis.\ns21\ns31\nϕσ1(τ)\ns12\ns32\nϕσ2(τ)\ns23\ns13\nϕσ3(τ)\nFigure 3. The singularities in the Borel plane for the series ϕσj(τ) of the 52\nknot for j = 1, 2, 3.\nThe q-series H±\nk,0 for (k = 0, 1, 2), which are analogues of G0\n0,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open questions",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-6-open-questions.md",
+      "narrative": null,
+      "content": "\\label{sec.open}\n\nIn this paper we have formulated conjectures on the full resurgent\nstructure of quantum knot invariants of hyperbolic knots, and we have\npresented detailed evidence for the first non-trivial cases, namely\nthe knots $4_1$ and $5_2$.  Although we used complex Chern-Simons\ntheory as a way to motivate our results, and state integrals and\nasymptotic series as a way to present them, it is clear that a key\ningredient that controls the description of the asymptotic series in\nBorel plane is a pair of linear $q$-difference equations with explicit\nfundamental solutions. It is natural to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-acknowledgements.md",
+      "narrative": null,
+      "content": "S.G. wishes to thank the Max Planck Institute for their hospitality\nand especially Don Zagier. The authors would like to thank Jorgen Andersen,\nBertrand Eynard, Rinat Kashaev and Maxim Kontsevich for enlightening\nconversations. The work of J.G. and M.M. is partially supported by the\nFonds National Suisse, subsidy 200020-175539, by the NCCR\n51NF40-182902 ``The Mathematics of Physics'' (SwissMAP), and by the\nERC Synergy Grant ``ReNewQuantum\".",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. q-series associated with the 52 knot",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-appendix-a-q-series-associated-with-the-52-knot.md",
+      "narrative": null,
+      "content": "Appendix A. q-series associated with the 52 knot",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. The state integral of the 52 knot",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-a1-the-state-integral-of-the-52-knot.md",
+      "narrative": null,
+      "content": "the state integral I2,3,λ,µ(b). The data we need to present our result are\nF2,3,λ(q, x) =\n∞\nX\nn=0\nqn(n+1)+nλ\n(q; q)3\nn\nxn,\n(103)\neF2,3,µ(˜q, ˜x) =\n∞\nX\nn=0\n(−1)n ˜q\n1\n2 n(n+1)+nµ\n(˜q; ˜q)3\nn\n˜xn,\n(104)\nas well as the operator\nP2,3,λ,µ = −1\n2πi + (1 + 2δ −3δ1 + λ)(1\n2 + ˜δ −3˜δ1 + µ)\n(105)\n−b2\n2 ((1 + 2δ −3δ1 + λ)2 −3δ2)\n(106)\n−b−2\n2 ((1\n2 + ˜δ −3˜δ1 + µ)2 −1\n4 −3˜δ2 + 6 E(0)\n2 (˜q)).\n(107)\nUsing the observation that\n−1\n2πi = 1\n12\n\u0000τE2(τ) −τ −1E2(−1/τ)\n\u0001\n(108)\nas well as\nE2(τ) = 1 −24\n∞\nX\ns=1\nqs\n(1 −qs)2 = 1 −24E(0)\n2 (q),\n(109)\nthe ﬁnal result can be written as (τ = b2 in the upper half-plane)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.10190v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[ABS19]\nInˆes Aniceto, G¨ok¸ce Ba¸sar, and Ricardo Schiappa, A primer on resurgent transseries and their\nasymptotics, Phys. Rep. 809 (2019), 1–135.\n[AK14]\nJorgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichm¨uller theory,\nComm. Math. Phys. 330 (2014), no. 3, 887–934.\n[BC13]\nSandro Bettin and Brian Conrey, Period functions and cotangent sums, Algebra Number The-\nory 7 (2013), no. 1, 215–242.\n24\nSTAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI˜NO\n[BDP14]\nChristopher Beem, Tudor Dimofte, and Sara Pasquetti, Holomorphic blocks in three dimensions,\nJ. High Energy Phys. (2014), no. 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

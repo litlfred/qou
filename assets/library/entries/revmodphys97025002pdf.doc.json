@@ -1,0 +1,4824 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "revmodphys97025002pdf",
+  "title": "CODATA recommended values of the fundamental physical constants: 2022*",
+  "variant": "pdf",
+  "pages": 62,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "CODATA recommended values of the fundamental physical constants: 2022*",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-codata-recommended-values-of-the-fundamental-phy"
+    },
+    {
+      "level": 2,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-contents"
+    },
+    {
+      "level": 2,
+      "title": "I. Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-i-introduction"
+    },
+    {
+      "level": 3,
+      "title": "A. Background",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-background"
+    },
+    {
+      "level": 3,
+      "title": "B. Overview of the 2022 adjustment",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-overview-of-the-2022-adjustment"
+    },
+    {
+      "level": 4,
+      "title": "Relative atomic masses",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-1-relative-atomic-masses"
+    },
+    {
+      "level": 4,
+      "title": "Ionization and binding energies",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-ionization-and-binding-energies"
+    },
+    {
+      "level": 4,
+      "title": "Hydrogen and deuterium transition energies",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-hydrogen-and-deuterium-transition-energies"
+    },
+    {
+      "level": 4,
+      "title": "Muonic atoms and ions, radius of proton, deuteron, and &alpha; particle",
+      "number": "4",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-muonic-atoms-and-ions-radius-of-proton-deutero"
+    },
+    {
+      "level": 4,
+      "title": "Electron magnetic-moment anomaly",
+      "number": "5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-electron-magnetic-moment-anomaly"
+    },
+    {
+      "level": 4,
+      "title": "Atom recoil",
+      "number": "6",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-atom-recoil"
+    },
+    {
+      "level": 4,
+      "title": "Muon magnetic-moment anomaly",
+      "number": "7",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-7-muon-magnetic-moment-anomaly"
+    },
+    {
+      "level": 4,
+      "title": "Electron g-factors in hydrogenic C12 and Si28",
+      "number": "8",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-8-electron-g-factors-in-hydrogenic-c12-and-si28"
+    },
+    {
+      "level": 4,
+      "title": "Helion g-factor and magnetic-shielding corrections",
+      "number": "9",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-9-helion-g-factor-and-magnetic-shielding-correct"
+    },
+    {
+      "level": 4,
+      "title": "Electroweak quantities",
+      "number": "10",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-10-electroweak-quantities"
+    },
+    {
+      "level": 4,
+      "title": "Newtonian constant of gravitation",
+      "number": "11",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-11-newtonian-constant-of-gravitation"
+    },
+    {
+      "level": 4,
+      "title": "Least-squares adjustment",
+      "number": "12",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-12-least-squares-adjustment"
+    },
+    {
+      "level": 2,
+      "title": "II. Relative Atomic Masses of Light Nuclei, Neutral Silicon, Rubidium, and Cesium",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-ii-relative-atomic-masses-of-light-nuclei-neutra"
+    },
+    {
+      "level": 3,
+      "title": "A. Atomic Mass Data Center input",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-a-atomic-mass-data-center-input"
+    },
+    {
+      "level": 3,
+      "title": "B. Neutron mass from the neutron capture gamma-ray measurement",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-b-neutron-mass-from-the-neutron-capture-gamma-ra"
+    },
+    {
+      "level": 3,
+      "title": "C. Frequency-ratio mass determinations",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-c-frequency-ratio-mass-determinations"
+    },
+    {
+      "level": 3,
+      "title": "D. Mass ratios from frequency measurements in HD+",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-d-mass-ratios-from-frequency-measurements-in-hd"
+    },
+    {
+      "level": 2,
+      "title": "III. Atomic Hydrogen and Deuterium Transition Energies",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-iii-atomic-hydrogen-and-deuterium-transition-ene"
+    },
+    {
+      "level": 3,
+      "title": "A. Theory of hydrogen and deuterium energy levels",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a-theory-of-hydrogen-and-deuterium-energy-levels"
+    },
+    {
+      "level": 4,
+      "title": "Dirac eigenvalue and mass corrections",
+      "number": "1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-1-dirac-eigenvalue-and-mass-corrections"
+    },
+    {
+      "level": 4,
+      "title": "Relativistic recoil",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-2-relativistic-recoil"
+    },
+    {
+      "level": 4,
+      "title": "Self-energy",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-3-self-energy"
+    },
+    {
+      "level": 4,
+      "title": "Vacuum polarization",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-4-vacuum-polarization"
+    },
+    {
+      "level": 4,
+      "title": "Two-photon corrections",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-5-two-photon-corrections"
+    },
+    {
+      "level": 4,
+      "title": "Three-photon corrections",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-6-three-photon-corrections"
+    },
+    {
+      "level": 4,
+      "title": "Finite nuclear size and polarizability",
+      "number": "7",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-7-finite-nuclear-size-and-polarizability"
+    },
+    {
+      "level": 4,
+      "title": "Radiative-recoil corrections",
+      "number": "8",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-8-radiative-recoil-corrections"
+    },
+    {
+      "level": 4,
+      "title": "Nucleus self-energy",
+      "number": "9",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-9-nucleus-self-energy"
+    },
+    {
+      "level": 3,
+      "title": "B. Total theoretical energies and uncertainties",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-b-total-theoretical-energies-and-uncertainties"
+    },
+    {
+      "level": 3,
+      "title": "C. Experimentally determined transition energies in hydrogen and deuterium",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-c-experimentally-determined-transition-energies"
+    },
+    {
+      "level": 4,
+      "title": "Measurement of the hydrogen 2S-8D5/2 transition",
+      "number": "1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-1-measurement-of-the-hydrogen-2s-8d52-transition"
+    },
+    {
+      "level": 4,
+      "title": "Measurement of the hydrogen two-photon 1S-3S transition",
+      "number": "2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-2-measurement-of-the-hydrogen-two-photon-1s-3s-t"
+    },
+    {
+      "level": 2,
+      "title": "IV. Muonic Atoms and Muonic Ions",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-iv-muonic-atoms-and-muonic-ions"
+    },
+    {
+      "level": 3,
+      "title": "A. Theory and experiment",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-a-theory-and-experiment"
+    },
+    {
+      "level": 3,
+      "title": "B. Values of rp, rd, and r&alpha; from hydrogen, deuterium, and He+ transition energies",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-b-values-of-rp-rd-and-ralpha-from-hydrogen-deute"
+    },
+    {
+      "level": 2,
+      "title": "V. Electron Magnetic-Moment Anomaly",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-v-electron-magnetic-moment-anomaly"
+    },
+    {
+      "level": 2,
+      "title": "VI. Atom-Recoil Measurements",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-vi-atom-recoil-measurements"
+    },
+    {
+      "level": 2,
+      "title": "VII. Muon Magnetic-Moment Anomaly",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-vii-muon-magnetic-moment-anomaly"
+    },
+    {
+      "level": 3,
+      "title": "A. Theory of the muon anomaly",
+      "number": null,
+      "page": 25,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-a-theory-of-the-muon-anomaly"
+    },
+    {
+      "level": 3,
+      "title": "B. 2006 Measurement of the muon anomaly at Brookhaven National Laboratory",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-b-2006-measurement-of-the-muon-anomaly-at-brookh"
+    },
+    {
+      "level": 3,
+      "title": "C. 2021 Measurement of the muon anomaly at the Fermi National Accelerator Laboratory",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-c-2021-measurement-of-the-muon-anomaly-at-the-fe"
+    },
+    {
+      "level": 3,
+      "title": "D. Comparison of experiment and theory",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-d-comparison-of-experiment-and-theory"
+    },
+    {
+      "level": 2,
+      "title": "VIII. Atomic g-Factors in Hydrogenic C12 and Si28 Ions",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-viii-atomic-g-factors-in-hydrogenic-c12-and-si28"
+    },
+    {
+      "level": 3,
+      "title": "A. Theory of the bound-electron g-factor",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-a-theory-of-the-bound-electron-g-factor"
+    },
+    {
+      "level": 3,
+      "title": "B. Measurements of precession and cyclotron frequencies of C125+ and Si2813+",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-b-measurements-of-precession-and-cyclotron-frequ"
+    },
+    {
+      "level": 3,
+      "title": "C. Observational equations for C125+ and Si2813+ experiments",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-c-observational-equations-for-c125-and-si2813-ex"
+    },
+    {
+      "level": 2,
+      "title": "IX. Electron-to-Muon Mass Ratio and Muon-to-Proton Magnetic-Moment Ratio",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-ix-electron-to-muon-mass-ratio-and-muon-to-proto"
+    },
+    {
+      "level": 3,
+      "title": "A. Theory of the muonium ground-state hyperfine splitting",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-a-theory-of-the-muonium-ground-state-hyperfine-s"
+    },
+    {
+      "level": 3,
+      "title": "B. Measurements of muonium transition energies",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-b-measurements-of-muonium-transition-energies"
+    },
+    {
+      "level": 3,
+      "title": "C. Analysis of the muonium hyperfine splitting and mass ratio m&mu;/me",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-c-analysis-of-the-muonium-hyperfine-splitting-an"
+    },
+    {
+      "level": 2,
+      "title": "X. Magnetic-Moment Ratios of Light Atoms and Molecules",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-x-magnetic-moment-ratios-of-light-atoms-and-mole"
+    },
+    {
+      "level": 3,
+      "title": "A. Definitions of bound-state and free g-factors",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-a-definitions-of-bound-state-and-free-g-factors"
+    },
+    {
+      "level": 3,
+      "title": "B. Theoretical ratios of g-factors in H, D, He3, and muonium",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-b-theoretical-ratios-of-g-factors-in-h-d-he3-and"
+    },
+    {
+      "level": 3,
+      "title": "C. Theoretical ratios of nuclear g-factors in HD and HT",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-c-theoretical-ratios-of-nuclear-g-factors-in-hd"
+    },
+    {
+      "level": 3,
+      "title": "D. Ratio measurements in atoms and molecules",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-d-ratio-measurements-in-atoms-and-molecules"
+    },
+    {
+      "level": 2,
+      "title": "XI. Magnetic Moments",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-xi-magnetic-moments"
+    },
+    {
+      "level": 3,
+      "title": "A. Proton magnetic moment in nuclear magnetons",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-a-proton-magnetic-moment-in-nuclear-magnetons"
+    },
+    {
+      "level": 3,
+      "title": "B. Direct measurement of the He+3 magnetic moment",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-b-direct-measurement-of-the-he3-magnetic-moment"
+    },
+    {
+      "level": 2,
+      "title": "XII. Electroweak Quantities",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-xii-electroweak-quantities"
+    },
+    {
+      "level": 2,
+      "title": "XIII. Lattice Spacings of Silicon Crystals",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-xiii-lattice-spacings-of-silicon-crystals"
+    },
+    {
+      "level": 2,
+      "title": "XIV. Newtonian Constant of Gravitation",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-xiv-newtonian-constant-of-gravitation"
+    },
+    {
+      "level": 2,
+      "title": "XV. The 2022 CODATA Recommended Values",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-xv-the-2022-codata-recommended-values"
+    },
+    {
+      "level": 3,
+      "title": "A. Calculational details",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-a-calculational-details"
+    },
+    {
+      "level": 3,
+      "title": "B. Tables of recommended values",
+      "number": null,
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-b-tables-of-recommended-values"
+    },
+    {
+      "level": 2,
+      "title": "XVI. Summary and Conclusion",
+      "number": null,
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-069-xvi-summary-and-conclusion"
+    },
+    {
+      "level": 3,
+      "title": "A. Comparison of 2022 and 2018 CODATA recommended values",
+      "number": null,
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-070-a-comparison-of-2022-and-2018-codata-recommended"
+    },
+    {
+      "level": 3,
+      "title": "B. Notable features of the CODATA 2022 adjustment",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-071-b-notable-features-of-the-codata-2022-adjustment"
+    },
+    {
+      "level": 4,
+      "title": "Impact on metrology and chemistry",
+      "number": "1",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-072-1-impact-on-metrology-and-chemistry"
+    },
+    {
+      "level": 4,
+      "title": "Importance of theory",
+      "number": "2",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-073-2-importance-of-theory"
+    },
+    {
+      "level": 4,
+      "title": "Lack of data",
+      "number": "3",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-074-3-lack-of-data"
+    },
+    {
+      "level": 4,
+      "title": "Decreased and increased uncertainties",
+      "number": "4",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-4-decreased-and-increased-uncertainties"
+    },
+    {
+      "level": 4,
+      "title": "Changes in recommended values of constants",
+      "number": "5",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-076-5-changes-in-recommended-values-of-constants"
+    },
+    {
+      "level": 4,
+      "title": "Post-closing-date results",
+      "number": "6",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-077-6-post-closing-date-results"
+    },
+    {
+      "level": 3,
+      "title": "C. Suggestions for future work",
+      "number": null,
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-078-c-suggestions-for-future-work"
+    },
+    {
+      "level": 4,
+      "title": "Fine-structure constant &alpha;",
+      "number": "1",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-079-1-fine-structure-constant-alpha"
+    },
+    {
+      "level": 4,
+      "title": "Newtonian constant of gravitation G",
+      "number": "2",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-080-2-newtonian-constant-of-gravitation-g"
+    },
+    {
+      "level": 4,
+      "title": "Transition frequencies of H and D",
+      "number": "3",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-081-3-transition-frequencies-of-h-and-d"
+    },
+    {
+      "level": 2,
+      "title": "List of Symbols and Abbreviations",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-082-list-of-symbols-and-abbreviations"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-083-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-084-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-codata-recommended-values-of-the-fundamental-phy",
+      "number": null,
+      "title": "CODATA recommended values of the fundamental physical constants: 2022*",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recommended",
+          "heading": true
+        },
+        {
+          "term": "national institute",
+          "heading": false
+        },
+        {
+          "term": "maryland",
+          "heading": false
+        },
+        {
+          "term": "codata",
+          "heading": true
+        }
+      ],
+      "extract": "constants: 2022* Peter J. Mohr ,† David B. Newell ,‡ and Barry N. Taylor § National Institute of Standards and Technology, Gaithersburg, Maryland 20899, USA Eite Tiesinga ∥ National Institute of Standards and Technology, Gaithersburg, Maryland 20899, USA and Joint Quantum Institute and Joint Center for Quantum Information and Computer Science, College Park, Maryland 20742, USA (published 30 April 2025) We report the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muon magnetic-moment",
+          "heading": false
+        },
+        {
+          "term": "deuterium transition",
+          "heading": false
+        },
+        {
+          "term": "electron magnetic-moment",
+          "heading": false
+        },
+        {
+          "term": "codata recommended",
+          "heading": false
+        },
+        {
+          "term": "gov contact",
+          "heading": false
+        },
+        {
+          "term": "national institute",
+          "heading": false
+        },
+        {
+          "term": "muonic atoms",
+          "heading": false
+        },
+        {
+          "term": "transition energies",
+          "heading": false
+        }
+      ],
+      "extract": "I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transition energies 3 4. Muonic atoms and ions, radius of proton, deuteron, and α particle 3 5. Electron magnetic-moment anomaly 4 6. Atom recoil 4 7. Muon magnetic-moment anomaly 4 8. Electron g-factors in hydrogenic 12C and 28Si 4 9. Helion g-factor and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-i-introduction",
+      "number": null,
+      "title": "I. Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "I. INTRODUCTION",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-a-background",
+      "number": null,
+      "title": "A. Background",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "codata adjustment",
+          "heading": false
+        },
+        {
+          "term": "tgfc",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        },
+        {
+          "term": "fundamental constants",
+          "heading": false
+        },
+        {
+          "term": "physical constants",
+          "heading": false
+        },
+        {
+          "term": "committee",
+          "heading": false
+        },
+        {
+          "term": "mohr",
+          "heading": false
+        },
+        {
+          "term": "carried out",
+          "heading": false
+        }
+      ],
+      "extract": "The 2022 CODATA least-squares adjustment (LSA) of the fundamental physical constants by the Task Group on Fundamental Constants (TGFC) is the most recent in a series of compilations of recommended values that arguably began over 90 years ago by Birge (1929). The TGFC was established in 1969 by the Committee on Data for Science and Technology, now called the Committee on Data of the International Science Council; it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-overview-of-the-2022-adjustment",
+      "number": null,
+      "title": "B. Overview of the 2022 adjustment",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjustment",
+          "heading": true
+        },
+        {
+          "term": "closing date",
+          "heading": false
+        },
+        {
+          "term": "scattering values",
+          "heading": false
+        },
+        {
+          "term": "muonic",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": false
+        },
+        {
+          "term": "december",
+          "heading": false
+        },
+        {
+          "term": "available",
+          "heading": false
+        },
+        {
+          "term": "summary",
+          "heading": false
+        }
+      ],
+      "extract": "Here we identify the new experimental and theoretical data for possible inclusion in the 2022 adjustment by considering all data available up until the closing date of midnight, December 31, 2022. It was not necessary for papers reporting new results to have been published by this date; however, they needed to at least be available as a preprint. It can therefore be assumed that any cited paper with a 2023 or later",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-1-relative-atomic-masses",
+      "number": "1",
+      "title": "Relative atomic masses",
+      "level": 4,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atomic masses",
+          "heading": true
+        },
+        {
+          "term": "relative atomic",
+          "heading": true
+        },
+        {
+          "term": "tables xxv",
+          "heading": false
+        },
+        {
+          "term": "atomic mass",
+          "heading": false
+        },
+        {
+          "term": "xxxi",
+          "heading": false
+        },
+        {
+          "term": "ωcðdþ",
+          "heading": false
+        }
+      ],
+      "extract": "1. Relative atomic masses The required relative atomic masses Arð28SiÞ, Arð87RbÞ, and Arð133CsÞ and their correlation coefficients are taken from the 2020 Atomic Mass Evaluation (AME) of the Atomic Mass Data Center (AMDC). The AME value of ArðnÞ is not used as an input datum as in the past but is based on the original capture gamma-ray measurement reported in 1999 (Sec. II.A; Table I; Sec. II.B; and Tables XXV and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-ionization-and-binding-energies",
+      "number": "2",
+      "title": "Ionization and binding energies",
+      "level": 4,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binding energies",
+          "heading": true
+        },
+        {
+          "term": "table xxv",
+          "heading": false
+        },
+        {
+          "term": "ionization",
+          "heading": true
+        }
+      ],
+      "extract": "The ionization energies of 1H, 3H, 3He, 4He, 12C, and 28Si are from the 2022 National Institute of Standards and Technology (NIST) Atomic Spectra Database (ASD). The required ioniza- tion energy for 3Heþ and the binding energies for 12C4þ, 12C5þ, 12C6þ, and 28Si13þ are derived from these as appropriate and are input data for the 2022 adjustment (Sec. II.A; Table IV; and Table XXV, D8, D12, D22–D24). [The binding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-hydrogen-and-deuterium-transition-energies",
+      "number": "3",
+      "title": "Hydrogen and deuterium transition energies",
+      "level": 4,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition frequencies",
+          "heading": false
+        },
+        {
+          "term": "transition frequency",
+          "heading": false
+        },
+        {
+          "term": "mpq",
+          "heading": false
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        },
+        {
+          "term": "colorado",
+          "heading": false
+        },
+        {
+          "term": "hydrogen",
+          "heading": true
+        }
+      ],
+      "extract": "A new value of the 1S1=2 −3S1=2 transition frequency with relative (standard) uncertainty ur ¼2.5×10−13 and of the 2S1=2 −8D5=2 transition frequency with ur ¼ 2.6 × 10−12, both for hydrogen, have become available for the 2022 adjustment. Reported in 2020 and 2022, respectively, the first is from the Max-Planck-Institut f¨ur Quantenoptik (MPQ), Garching, Germany, and the second from the Colorado State University",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-muonic-atoms-and-ions-radius-of-proton-deutero",
+      "number": "4",
+      "title": "Muonic atoms and ions, radius of proton, deuteron, and &alpha; particle",
+      "level": 4,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muonic",
+          "heading": true
+        },
+        {
+          "term": "lamb shifts",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        },
+        {
+          "term": "μ4heþ",
+          "heading": false
+        },
+        {
+          "term": "relative uncertainties",
+          "heading": false
+        },
+        {
+          "term": "lamb-shift",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": true
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        }
+      ],
+      "extract": "and α particle Included as input data in the 2022 adjustment are the experimentally determined values of the Lamb-shift transi- tions in muonic hydrogen, μH, reported in 2013, in muonic deuterium, μD, reported in 2016, and in the muonic helium ion, μ4Heþ, reported in 2021 (in a muonic atom or hydrogenic ion the electron is replaced by a negative muon). Although the Lamb shifts in μH and μD were available for use in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-electron-magnetic-moment-anomaly",
+      "number": "5",
+      "title": "Electron magnetic-moment anomaly",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fine-structure constant",
+          "heading": false
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        },
+        {
+          "term": "input datum",
+          "heading": false
+        },
+        {
+          "term": "theoretical expression",
+          "heading": false
+        }
+      ],
+      "extract": "Included as an input datum in the 2022 adjustment is a new experimental value of ae with ur of 1.1 × 10−10, which is 2.2 times smaller than that of the value reported in 2008 and used as an input datum in the 2018 adjustment. Both determinations were carried out under the supervision of Professor G. Gabrielse, but the earlier one at Harvard University and the later one at Northwestern University. The experimenters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-atom-recoil",
+      "number": "6",
+      "title": "Atom recoil",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mð133csþ",
+          "heading": false
+        },
+        {
+          "term": "mð87rbþ",
+          "heading": false
+        },
+        {
+          "term": "atom",
+          "heading": true
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        }
+      ],
+      "extract": "The two input data h=mð87RbÞ and h=mð133CsÞ in the 2022 adjustment obtained using atom interferometry are also of great importance because they provide the two other accurate values of α through the comparatively simple observational equation h=mðXÞ¼½ArðeÞ=ArðXÞ\u0002½cα2=2R∞\u0002. The h=mð133CsÞ result with ur ¼ 4.0 × 10−10 was reported in 2018 and also used in that adjustment and the h=mð87RbÞ result with ur ¼ 1.4 × 10−10",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-7-muon-magnetic-moment-anomaly",
+      "number": "7",
+      "title": "Muon magnetic-moment anomaly",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muon",
+          "heading": true
+        },
+        {
+          "term": "fnal",
+          "heading": false
+        },
+        {
+          "term": "ω0p",
+          "heading": false
+        },
+        {
+          "term": "precession",
+          "heading": false
+        },
+        {
+          "term": "bnl",
+          "heading": false
+        },
+        {
+          "term": "brookhaven",
+          "heading": false
+        },
+        {
+          "term": "frequency",
+          "heading": false
+        }
+      ],
+      "extract": "There are two experimental input data that determine the recommended value of aμ. These are values of the quantity R0μ ¼ ωa=ω0p, where ωa is the difference frequency between the spin-flip (or precession) frequency and cyclotron frequency of a muon in an applied magnetic flux density B and ω0p is the precession frequency of a proton in a spherical H2O sample at 25 °C inserted in B. The two are in good agreement: the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-8-electron-g-factors-in-hydrogenic-c12-and-si28",
+      "number": "8",
+      "title": "Electron g-factors in hydrogenic C12 and Si28",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-factors",
+          "heading": true
+        },
+        {
+          "term": "arðeþ",
+          "heading": false
+        },
+        {
+          "term": "adjusted constant",
+          "heading": false
+        }
+      ],
+      "extract": "The experimental values of the spin precession to cyclo- tron frequency ratios ωsð12C5þÞ=ωcð12C5þÞ and ωsð28Si13þÞ= ωcð28Si13þÞ, which determine ArðeÞ, are input data in the 2018 adjustment and the same values are input data in the 2022 adjustment. However, their observational equations, both of which contain ArðeÞ as an adjusted constant, also contain as an adjusted constant the g-factors geð12C5þÞ and geð28Si13þÞ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-9-helion-g-factor-and-magnetic-shielding-correct",
+      "number": "9",
+      "title": "Helion g-factor and magnetic-shielding corrections",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helion",
+          "heading": true
+        },
+        {
+          "term": "magnetic-shielding",
+          "heading": true
+        },
+        {
+          "term": "μhð3heþþ",
+          "heading": false
+        },
+        {
+          "term": "g-factor",
+          "heading": true
+        }
+      ],
+      "extract": "The new direct measurement of the g-factor of the helion bound in the 3Heþ ion, ghð3HeþÞ, provides the important new input datum μhð3HeþÞ=μN since μhð3HeþÞ=μN ¼ ghð3HeþÞ=2. Together with new values of the bound helion magnetic- shielding corrections σhð3HeÞ and σhð3HeþÞ with uncertainties sufficiently small that the ratio ½1 −σhð3HeþÞ\u0002=½1 −σhð3HeÞ\u0002 can be taken as exact in the observational equation for this input",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-10-electroweak-quantities",
+      "number": "10",
+      "title": "Electroweak quantities",
+      "level": 4,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "The recommended values for the mass of the tau lepton mτ, Fermi coupling constant GF, and sine squared of the weak mixing angle sin2 θW are from the 2022 report of the PDG (Sec. XII).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-11-newtonian-constant-of-gravitation",
+      "number": "11",
+      "title": "Newtonian constant of gravitation",
+      "level": 4,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newtonian",
+          "heading": true
+        },
+        {
+          "term": "gravitation",
+          "heading": true
+        },
+        {
+          "term": "xxx",
+          "heading": false
+        }
+      ],
+      "extract": "We note that the 16 values of the Newtonian constant of gravitation G in Table XXX are unrelated to any other data and are treated in a separate calculation. Since there is no new value, the same 3.9 expansion factor applied to their uncertainties in 2018 to reduce their inconsistencies to an acceptable level is also used in 2022; the 2022 and 2018 recommended values of G are therefore identical (see Sec. XIV).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-12-least-squares-adjustment",
+      "number": "12",
+      "title": "Least-squares adjustment",
+      "level": 4,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjustment",
+          "heading": true
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        },
+        {
+          "term": "least-squares",
+          "heading": true
+        },
+        {
+          "term": "input data",
+          "heading": false
+        }
+      ],
+      "extract": "The 2022 CODATA set of recommended values of the constants are based on a least-squares adjustment of 133 input data and 79 adjusted constants, thus its degrees of freedom is ν ¼ N–M ¼ 54. The χ2 of the initial adjustment with no expansion factors applied to the uncertainties of any data is 109.6; for 54 degrees of freedom, this value of χ2 has only a 0.001% probability of occurring by chance. Moreover, eight input",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-ii-relative-atomic-masses-of-light-nuclei-neutra",
+      "number": null,
+      "title": "II. Relative Atomic Masses of Light Nuclei, Neutral Silicon, Rubidium, and Cesium",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative atomic",
+          "heading": true
+        },
+        {
+          "term": "atomic masses",
+          "heading": true
+        },
+        {
+          "term": "neutral",
+          "heading": true
+        }
+      ],
+      "extract": "NEUTRAL SILICON, RUBIDIUM, AND CESIUM For the 2022 CODATA adjustment, we determine the relative atomic masses ArðXÞ of the neutron n, proton p, deuteron d, triton t, helion h, and the α particle, as well as the heavier neutral atoms 28Si, 87Rb, and 133Cs. The relative atomic masses of eight of these nine particles are adjusted constants. The ninth adjusted constant is the relative atomic mass of the hydrogenic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-a-atomic-mass-data-center-input",
+      "number": null,
+      "title": "A. Atomic Mass Data Center input",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atomic mass",
+          "heading": true
+        },
+        {
+          "term": "δebðxnþþ muc",
+          "heading": false
+        },
+        {
+          "term": "relative atomic",
+          "heading": false
+        },
+        {
+          "term": "ionization energies",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "atomic masses",
+          "heading": false
+        },
+        {
+          "term": "neutral atom",
+          "heading": false
+        },
+        {
+          "term": "input data",
+          "heading": true
+        }
+      ],
+      "extract": "The input data for the relative atomic masses of 28Si, 87Rb, and 133Cs are taken from the AMDC (Huang et al., 2021; Wang et al., 2021). Their values with uncertainties and correlation coefficients are listed in Table I. The values can also be found in Table XXVas items D5, D6, and D11. Of course, the 12C relative atomic mass is by definition simply the number 12. The observational equations for 87Rb and 133C are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-b-neutron-mass-from-the-neutron-capture-gamma-ra",
+      "number": null,
+      "title": "B. Neutron mass from the neutron capture gamma-ray measurement",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutron",
+          "heading": true
+        },
+        {
+          "term": "gamma-ray",
+          "heading": true
+        },
+        {
+          "term": "d220ðillþ",
+          "heading": false
+        },
+        {
+          "term": "measurement",
+          "heading": true
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "capture",
+          "heading": true
+        },
+        {
+          "term": "relative uncertainty",
+          "heading": false
+        },
+        {
+          "term": "wavelength",
+          "heading": false
+        }
+      ],
+      "extract": "gamma-ray measurement The mass of the neutron is derived from measurements of the binding energy of the proton and neutron in a deuteron, EBðdÞ, and the definition that md ¼ mn þ mp −EBðdÞ=c2. The binding energy is most accurately determined from the measurement of the wavelength of the gamma-ray photon, λd, emitted from the capture of a neutron by a proton, both nearly at rest, accounting for the recoil of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-c-frequency-ratio-mass-determinations",
+      "number": null,
+      "title": "C. Frequency-ratio mass determinations",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotron frequency",
+          "heading": false
+        },
+        {
+          "term": "cyclotron frequencies",
+          "heading": false
+        },
+        {
+          "term": "frequency ratios",
+          "heading": false
+        },
+        {
+          "term": "frequency measurements",
+          "heading": false
+        },
+        {
+          "term": "ions xnþ",
+          "heading": false
+        },
+        {
+          "term": "codata adjustment",
+          "heading": false
+        },
+        {
+          "term": "atomic masses",
+          "heading": false
+        },
+        {
+          "term": "relative atomic",
+          "heading": false
+        }
+      ],
+      "extract": "Relative atomic masses of p, d, t, h, and the α particle may be derived from measurements of seven cyclotron frequency ratios of pairs of the p, d, t, Hþ 2 , HDþ, 3Heþ, and 4He2þ ions as well as the 12C4þ and 12C6þ charge states of 12C. Although several of these frequency measurements were used in the 2020 AMDC mass evaluation as well as in the previous CODATA adjustment, here, we briefly describe these input data.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-d-mass-ratios-from-frequency-measurements-in-hd",
+      "number": null,
+      "title": "D. Mass ratios from frequency measurements in HD+",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saðvl v0l0þ",
+          "heading": false
+        },
+        {
+          "term": "ðvl v0l0þ",
+          "heading": false
+        },
+        {
+          "term": "hdþðvl v0l0þ",
+          "heading": false
+        },
+        {
+          "term": "v0l0þ δth",
+          "heading": false
+        },
+        {
+          "term": "δhdþðvl v0l0þ",
+          "heading": false
+        },
+        {
+          "term": "transition frequencies",
+          "heading": false
+        },
+        {
+          "term": "values λpd",
+          "heading": false
+        },
+        {
+          "term": "hyperfine interactions",
+          "heading": false
+        }
+      ],
+      "extract": "Measurements as well as theoretical determinations of transition frequencies between rovibrational states in the molecular ion HDþ in its electronic X2Σþ ground state have become sufficiently accurate that their comparison can be used to constrain the electron-to-proton and electron-to-deuteron mass ratios. This 2022 CODATA adjustment is the first time that these types of data are used. We follow the analysis of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-iii-atomic-hydrogen-and-deuterium-transition-ene",
+      "number": null,
+      "title": "III. Atomic Hydrogen and Deuterium Transition Energies",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition energies",
+          "heading": true
+        },
+        {
+          "term": "deuterium",
+          "heading": true
+        },
+        {
+          "term": "hartree energy",
+          "heading": false
+        },
+        {
+          "term": "hydrogen",
+          "heading": true
+        },
+        {
+          "term": "khz",
+          "heading": false
+        },
+        {
+          "term": "rydberg constant",
+          "heading": false
+        },
+        {
+          "term": "energy levels",
+          "heading": false
+        },
+        {
+          "term": "charge radii",
+          "heading": false
+        }
+      ],
+      "extract": "TRANSITION ENERGIES Comparison of theory and experiment for electronic tran- sition energies in atomic hydrogen and deuterium is currently the most precise way to determine the Rydberg constant, or equivalently the Hartree energy, and to a lesser extent the charge radii of the proton and deuteron. Here, we summarize the theory of and the experimental input data on H and D energy levels in Secs. III.A and III.C,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a-theory-of-hydrogen-and-deuterium-energy-levels",
+      "number": null,
+      "title": "A. Theory of hydrogen and deuterium energy levels",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy levels",
+          "heading": true
+        },
+        {
+          "term": "yerokhin",
+          "heading": false
+        },
+        {
+          "term": "hyperfine structure",
+          "heading": false
+        },
+        {
+          "term": "nuclear moments",
+          "heading": false
+        },
+        {
+          "term": "grotch",
+          "heading": false
+        },
+        {
+          "term": "shelyuto",
+          "heading": false
+        },
+        {
+          "term": "eides",
+          "heading": false
+        }
+      ],
+      "extract": "This section describes the theory of hydrogen and deu- terium energy levels. References to literature cited in earlier CODATA reviews are generally omitted; they were cited by Sapirstein and Yennie (1990), Eides, Grotch, and Shelyuto (2001), Karshenboim (2005), Eides, Grotch, and Shelyuto (2007), Yerokhin and Shabaev (2015a), and Yerokhin, Pachucki, and Patkóš (2019) and are found in earlier CODATA reports listed in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-1-dirac-eigenvalue-and-mass-corrections",
+      "number": "1",
+      "title": "Dirac eigenvalue and mass corrections",
+      "level": 4,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yerokhin",
+          "heading": false
+        },
+        {
+          "term": "m2r",
+          "heading": false
+        },
+        {
+          "term": "κð2l",
+          "heading": false
+        },
+        {
+          "term": "dirac",
+          "heading": true
+        },
+        {
+          "term": "patkóš",
+          "heading": false
+        },
+        {
+          "term": "shabaev",
+          "heading": false
+        },
+        {
+          "term": "ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "mass",
+          "heading": true
+        }
+      ],
+      "extract": "The largest contribution to the electron energy, including its rest mass, is the Dirac eigenvalue for an electron bound to an infinitely heavy point nucleus, which is given by ED ¼ fðn; κÞmec2; ð28Þ with fðn; κÞ ¼ \u0005 1 þ ðZαÞ2 ðn −δÞ2 \u0006−1=2 ; ð29Þ where n is the principal quantum number, κ ¼ ð−1Þj−lþ1=2ðj þ 1=2Þ is the Dirac angular-momentum-parity quantum number, j ¼ jκj −1=2, l ¼ jκ þ 1=2j −1=2, and lj ¼ S1=2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-2-relativistic-recoil",
+      "number": "2",
+      "title": "Relativistic recoil",
+      "level": 4,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relativistic-recoil correction",
+          "heading": false
+        },
+        {
+          "term": "þð2l",
+          "heading": false
+        },
+        {
+          "term": "m2e",
+          "heading": false
+        },
+        {
+          "term": "k0ðn",
+          "heading": false
+        },
+        {
+          "term": "lðl",
+          "heading": false
+        },
+        {
+          "term": "ðzαþ",
+          "heading": false
+        }
+      ],
+      "extract": "The leading relativistic-recoil correction, to lowest order in Zα and all orders in me=mN, is (Erickson, 1977; Sapirstein and Yennie, 1990) ES ¼ m3r m2emN ðZαÞ5 πn3 mec2 × \u00031 3 δl0 lnðZαÞ−2 −8 3 ln k0ðn; lÞ −1 9 δl0 −7 3 an − 2 m2 N −m2e δl0 \u0005 m2 N ln \u0007me mr \b −m2e ln \u0007mN mr \b\u0006\u0004 ; ð32Þ where an ¼ \u0007 −2 ln 2 n −2 þ 1 n −2 X n i¼1 1 i \b δl0 þ 1 −δl0 lðl þ 1Þð2l þ 1Þ : ð33Þ Values for the Bethe logarithms ln k0ðn; lÞ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-3-self-energy",
+      "number": "3",
+      "title": "Self-energy",
+      "level": 4,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "self-energy",
+          "heading": true
+        },
+        {
+          "term": "δl0þ",
+          "heading": false
+        },
+        {
+          "term": "þð2l",
+          "heading": false
+        },
+        {
+          "term": "gseðαþ",
+          "heading": false
+        },
+        {
+          "term": "k0ðn",
+          "heading": false
+        }
+      ],
+      "extract": "The one-photon self-energy of an electron bound to a stationary point nucleus is Eð2Þ SE ¼ α π ðZαÞ4 n3 \u0007mr me \b3 FðZαÞmec2; ð35Þ where the function FðxÞ is FðZαÞ ¼ A41L þ A40 þ ðZαÞA50 þ ðZαÞ2½A62L2 þ A61L þ GSEðZαÞ\u0002; ð36Þ with L ¼ ln ½ðme=mrÞðZαÞ−2\u0002 and A41 ¼ 4 3 δl0; A40 ¼ −4 3 ln k0ðn; lÞ þ 10 9 δl0 − me=mr 2κð2l þ 1Þ ð1 −δl0Þ; A50 ¼ \u0007139 32 −2 ln 2 \b πδl0; A62 ¼ −δl0; A61 ¼ \u0005 4 \u0007 1 þ 1 2 þ \u0004 \u0004 \u0004 þ 1 n \b þ 28 3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-4-vacuum-polarization",
+      "number": "4",
+      "title": "Vacuum polarization",
+      "level": 4,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vacuum polarization",
+          "heading": true
+        },
+        {
+          "term": "ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "eð2þ",
+          "heading": false
+        },
+        {
+          "term": "gð1þ",
+          "heading": false
+        }
+      ],
+      "extract": "The stationary point nucleus second-order vacuum-polari- zation level shift is Eð2Þ VP ¼ α π ðZαÞ4 n3 \u0007mr me \b3 HðZαÞmec2; ð37Þ where HðZαÞ ¼ Hð1ÞðZαÞ þ HðRÞðZαÞ ð38Þ and Hð1ÞðZαÞ ¼ V40 þ ZαV50 þ ðZαÞ2½V61L þ Gð1Þ VPðZαÞ\u0002; ð39Þ HðRÞðZαÞ ¼ ðZαÞ2GðRÞ VP ðZαÞ. ð40Þ Here, V40 ¼ −4 15 δl0; V50 ¼ 5π 48 δl0; V61 ¼ −2 15 δl0: Values of Gð1Þ VPðαÞ are given in Table VIII and GðRÞ VP ðZαÞ ¼ 19 45 −π2 27 þ \u0007 1 16 −31π2 2880 \b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-5-two-photon-corrections",
+      "number": "5",
+      "title": "Two-photon corrections",
+      "level": 4,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 886,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ð12þ",
+          "heading": false
+        },
+        {
+          "term": "ð20þ",
+          "heading": false
+        },
+        {
+          "term": "jentschura",
+          "heading": false
+        },
+        {
+          "term": "yerokhin",
+          "heading": false
+        },
+        {
+          "term": "pachucki",
+          "heading": false
+        },
+        {
+          "term": "ψðnþ",
+          "heading": false
+        },
+        {
+          "term": "ð3þ",
+          "heading": false
+        },
+        {
+          "term": "ζð3þ",
+          "heading": false
+        }
+      ],
+      "extract": "The two-photon correction is Eð4Þ ¼ \u0007α π \b2 ðZαÞ4 n3 \u0007mr me \b3 Fð4ÞðZαÞmec2; ð44Þ where Fð4ÞðZαÞ ¼ B40 þ ZαB50 þ ðZαÞ2½B63L3 þ B62L2 þ B61L þ Gð4ÞðZαÞ\u0002; ð45Þ with B40 ¼ \u00053π2 2 ln 2 −10π2 27 −2179 648 −9 4 ζð3Þ \u0006 δl0 þ \u0005π2 ln 2 2 −π2 12 −197 144 −3ζð3Þ 4 \u0006 me mr 1 −δl0 κð2l þ 1Þ ; B50 ¼ −21.554 47ð13Þδl0; B63 ¼ −8 27 δl0; B62 ¼ 16 9 \u000571 60 −ln 2 þ ψðnÞ þ γ −ln n −1 n þ 1 4n2 \u0006 δl0 þ 4 27 n2 −1 n2 δl1; B61 ¼ \u0003413 581",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-6-three-photon-corrections",
+      "number": "6",
+      "title": "Three-photon corrections",
+      "level": 4,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-photon",
+          "heading": true
+        },
+        {
+          "term": "ζð3þ",
+          "heading": false
+        },
+        {
+          "term": "karshenboim",
+          "heading": false
+        },
+        {
+          "term": "π2ln",
+          "heading": false
+        },
+        {
+          "term": "uncertainty",
+          "heading": false
+        }
+      ],
+      "extract": "The three-photon contribution in powers of Zα is Eð6Þ ¼ \u0007α π \b3 ðZαÞ4 n3 \u0007mr me \b3 Fð6ÞðZαÞmec2; ð47Þ where Fð6ÞðZαÞ ¼ C40 þ ZαC50 þ ðZαÞ2½C63L3 þ C62L2 þ C61L þ C60\u0002 þ \u0004 \u0004 \u0004 : ð48Þ The leading term C40 is C40 ¼ \u0005 −568a4 9 þ 85ζð5Þ 24 −121π2ζð3Þ 72 −84 071ζð3Þ 2304 −71ln42 27 −239π2ln22 135 þ 4787π2 ln 2 108 þ 1591π4 3240 −252 251π2 9720 þ 679 441 93 312 \u0006 δl0 þ \u0005 −100a4 3 þ 215ζð5Þ 24 −83π2ζð3Þ 72 −139ζð3Þ 18",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-7-finite-nuclear-size-and-polarizability",
+      "number": "7",
+      "title": "Finite nuclear size and polarizability",
+      "level": 4,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eð6þ fns",
+          "heading": false
+        },
+        {
+          "term": "mec ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "mec αðzαþ",
+          "heading": false
+        },
+        {
+          "term": "eð6þ rad",
+          "heading": false
+        },
+        {
+          "term": "radiative finite-nuclear-size",
+          "heading": false
+        },
+        {
+          "term": "nucl mec",
+          "heading": false
+        },
+        {
+          "term": "friar radius",
+          "heading": false
+        },
+        {
+          "term": "polarizability",
+          "heading": true
+        }
+      ],
+      "extract": "Finite-nuclear-size and nuclear-polarizability corrections are ordered by powers of α, following Yerokhin, Pachucki, and Patkóš (2019), rather than by finite size and polarizability. Thus, we write for the total correction Enucl ¼ X ∞ i¼4 EðiÞ nucl; ð49Þ where index i indicates the order in α. The first and lowest- order contribution is Eð4Þ nucl ¼ 2 3 mec2 ðZαÞ4 n3 \u0007mr me \b3\u0007rN \u0005λC \b2 δl0 ð50Þ and is solely due to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-8-radiative-recoil-corrections",
+      "number": "8",
+      "title": "Radiative-recoil corrections",
+      "level": 4,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "radiative-recoil",
+          "heading": true
+        },
+        {
+          "term": "αðzαþ",
+          "heading": false
+        },
+        {
+          "term": "corrections",
+          "heading": true
+        }
+      ],
+      "extract": "Corrections for radiative-recoil effects are ERR ¼ m3r m2emN αðZαÞ5 π2n3 mec2δl0 × \u0005 6ζð3Þ −2π2 ln 2 þ 35π2 36 −448 27 þ 2 3 πðZαÞln2ðZαÞ−2 þ \u0004 \u0004 \u0004 \u0006 : ð63Þ We assume a zero value for the uncomputed coefficient of ðZαÞ lnðZαÞ−2 inside the square brackets with an uncertainty of 10 of type u0 and 1 for type un. Corrections for higher-l states vanish at the order of αðZαÞ5.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-9-nucleus-self-energy",
+      "number": "9",
+      "title": "Nucleus self-energy",
+      "level": 4,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "square brackets",
+          "heading": false
+        },
+        {
+          "term": "self-energy",
+          "heading": true
+        },
+        {
+          "term": "nucleus",
+          "heading": true
+        }
+      ],
+      "extract": "The nucleus self-energy correction is ESEN ¼ 4Z2αðZαÞ4 3πn3 m3r m2 N c2 × \u0005 ln \u0007 mN mrðZαÞ2 \b δl0 −ln k0ðn; lÞ \u0006 ; ð64Þ with an uncertainty of 0.5 for S states in the constant (α-independent) term in square brackets. This uncertainty is of type u0 and given by Eq. (64) with the factor in the square brackets replaced by 0.5. For higher-l states, the correction is negligibly small compared to current experi- mental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-b-total-theoretical-energies-and-uncertainties",
+      "number": null,
+      "title": "B. Total theoretical energies and uncertainties",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 826,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncertainties",
+          "heading": true
+        },
+        {
+          "term": "mpq",
+          "heading": false
+        },
+        {
+          "term": "lkb",
+          "heading": false
+        },
+        {
+          "term": "table xiii",
+          "heading": false
+        },
+        {
+          "term": "covariances",
+          "heading": false
+        },
+        {
+          "term": "pipkin",
+          "heading": false
+        },
+        {
+          "term": "theoretical",
+          "heading": true
+        },
+        {
+          "term": "theoretical energy",
+          "heading": false
+        }
+      ],
+      "extract": "The theoretical energy of centroid EnðLÞ of a relativistic level L ¼ nlj is the sum of the contributions given in Secs. III.A.1–III.A.9, with atom X ¼ H or D. Uncertainties in the adjusted constants that enter the theoretical expressions are found by the least-squares adjustment. The most important adjusted constants are R∞¼ α2mec2=2hc, α, rp, and rd. The uncertainty in the theoretical energy is taken into account",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-c-experimentally-determined-transition-energies",
+      "number": null,
+      "title": "C. Experimentally determined transition energies in hydrogen and deuterium",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuterium",
+          "heading": true
+        },
+        {
+          "term": "hydrogen",
+          "heading": true
+        },
+        {
+          "term": "frequencies",
+          "heading": false
+        }
+      ],
+      "extract": "and deuterium Table XI gives the measured transition frequencies in hydrogen and deuterium used as input data in the 2022 adjustment. All but two data are the same as in the 2018 report. The new results in hydrogen are reviewed in the next two subsections. The new frequencies for the 1S −3S and 2S −8D5=2 transitions were measured at the MPQ, Garching, Germany, and at Colorado State University, Fort Collins, CO,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-1-measurement-of-the-hydrogen-2s-8d52-transition",
+      "number": "1",
+      "title": "Measurement of the hydrogen 2S-8D5/2 transition",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "measurement",
+          "heading": true
+        },
+        {
+          "term": "hydrogen",
+          "heading": true
+        },
+        {
+          "term": "transition",
+          "heading": true
+        }
+      ],
+      "extract": "Brandt et al. (2022) have measured the frequency of the 2S −8D5=2 transition in hydrogen with a relative uncertainty of 2.6 × 10−12. The same transition had been measured earlier by de Beauvoir et al. (1997) at LKB/SYRTE and that measurement and the recent measurement differ by 13.3ð6.7Þ kHz. The more recent result has an uncertainty that is more than 3 times smaller than the earlier result.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-2-measurement-of-the-hydrogen-two-photon-1s-3s-t",
+      "number": "2",
+      "title": "Measurement of the hydrogen two-photon 1S-3S transition",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hydrogen",
+          "heading": true
+        },
+        {
+          "term": "lkb measurement",
+          "heading": false
+        },
+        {
+          "term": "hydrogen beam",
+          "heading": false
+        },
+        {
+          "term": "laser intensity",
+          "heading": false
+        },
+        {
+          "term": "second-order doppler",
+          "heading": false
+        },
+        {
+          "term": "doppler shift",
+          "heading": false
+        },
+        {
+          "term": "laser source",
+          "heading": false
+        },
+        {
+          "term": "transition",
+          "heading": true
+        }
+      ],
+      "extract": "The hydrogen 1S −3S transition energy was measured by Yost et al. (2016) at the MPQ and Fleurbaey et al. (2018) at the Laboratoire Kastler-Brossel (LKB), as discussed in the CODATA 2018 publication. The earlier LKB measurement by Arnoult et al. (2010), listed among the 2018 data, is not included in Table XI. More recently, Grinin et al. (2020) at the MPQ measured this transition with an uncertainty more than 20",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-iv-muonic-atoms-and-muonic-ions",
+      "number": null,
+      "title": "IV. Muonic Atoms and Muonic Ions",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-a-theory-and-experiment",
+      "number": null,
+      "title": "A. Theory and experiment",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muonic lamb",
+          "heading": false
+        },
+        {
+          "term": "muonic atoms",
+          "heading": false
+        },
+        {
+          "term": "lamb shift",
+          "heading": false
+        },
+        {
+          "term": "μ4heþ",
+          "heading": false
+        },
+        {
+          "term": "two-photon exchange",
+          "heading": false
+        },
+        {
+          "term": "rms charge",
+          "heading": false
+        },
+        {
+          "term": "pachucki",
+          "heading": false
+        },
+        {
+          "term": "friar contribution",
+          "heading": false
+        }
+      ],
+      "extract": "The muonic atoms μH and μD and muonic atomic ions μ3Heþ and μ4Heþ are “simple” systems consisting of a negatively charged muon bound to a positively charged nucleus. Because the mass of a muon is just over 200 times greater than that of the electron, the muonic Bohr radius is 200 times smaller than the electronic Bohr radius, making the muon charge density for S states at the location of the nucleus more than 106",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-b-values-of-rp-rd-and-ralpha-from-hydrogen-deute",
+      "number": null,
+      "title": "B. Values of rp, rd, and r&alpha; from hydrogen, deuterium, and He+ transition energies",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 1130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muonic deuterium",
+          "heading": false
+        },
+        {
+          "term": "muonic hydrogen",
+          "heading": false
+        },
+        {
+          "term": "muonic atom",
+          "heading": false
+        },
+        {
+          "term": "muonic data",
+          "heading": false
+        },
+        {
+          "term": "transition energies",
+          "heading": true
+        },
+        {
+          "term": "h-d spectroscopic",
+          "heading": false
+        },
+        {
+          "term": "least-squares adjustment",
+          "heading": false
+        },
+        {
+          "term": "electronic atom",
+          "heading": false
+        }
+      ],
+      "extract": "transition energies Finite-nuclear-size and polarizability contributions to the theoretical expressions for hydrogen and deuterium energy levels are discussed in Sec. III.A.7. A number of these contributions depend on rN, the rms charge radius of the nucleus N of the atom, which for hydrogen is denoted by rp, for deuterium by rd, and for 4He by rα. Although the complete theoretical expression for an energy level in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-v-electron-magnetic-moment-anomaly",
+      "number": null,
+      "title": "V. Electron Magnetic-Moment Anomaly",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1938,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "að2nþ ðxþ",
+          "heading": false
+        },
+        {
+          "term": "að10þ lepton",
+          "heading": false
+        },
+        {
+          "term": "coefficient að10þ",
+          "heading": false
+        },
+        {
+          "term": "codata adjustment",
+          "heading": false
+        },
+        {
+          "term": "electron",
+          "heading": true
+        },
+        {
+          "term": "virtual lepton",
+          "heading": false
+        },
+        {
+          "term": "lepton loops",
+          "heading": false
+        },
+        {
+          "term": "vacuum-polarization corrections",
+          "heading": false
+        }
+      ],
+      "extract": "The interaction of the magnetic moment of a charged lepton l in a magnetic flux density (or magnetic field) B is described by the Hamiltonian H ¼ −μl · B, with μl ¼ gl e 2ml s; ð70Þ where l ¼ e\u0003, μ\u0003, or τ\u0003, gl is the g-factor, with the convention that it has the same sign as the charge of the particle, e is the positive elementary charge, ml is the lepton mass, and s is its spin. Since the spin has projection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-vi-atom-recoil-measurements",
+      "number": null,
+      "title": "VI. Atom-Recoil Measurements",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atom-recoil measurements",
+          "heading": true
+        },
+        {
+          "term": "arðxþ mðxþ",
+          "heading": false
+        },
+        {
+          "term": "atomic mass",
+          "heading": false
+        },
+        {
+          "term": "relative atomic",
+          "heading": false
+        },
+        {
+          "term": "recoil measurements",
+          "heading": false
+        },
+        {
+          "term": "electron magnetic-moment",
+          "heading": false
+        },
+        {
+          "term": "atomic masses",
+          "heading": false
+        },
+        {
+          "term": "systematic effects",
+          "heading": false
+        }
+      ],
+      "extract": "Atom-recoil measurements with rubidium and cesium atoms from the stimulated absorption and emission of photons are relevant for the CODATA adjustment, as they determine the electron mass, the atomic mass constant, and the fine- structure constant (Peters et al., 1997; Young, Kasevich, and Chu (1997); Mohr and Taylor, 2000). This can be understood as follows. First and foremost, recoil measurements determine the mass",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-vii-muon-magnetic-moment-anomaly",
+      "number": null,
+      "title": "VII. Muon Magnetic-Moment Anomaly",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "4",
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic-moment",
+          "heading": true
+        },
+        {
+          "term": "muon",
+          "heading": true
+        },
+        {
+          "term": "unexpanded",
+          "heading": false
+        }
+      ],
+      "extract": "The muon magnetic-moment anomaly aμ and thus the muon g-factor gμ ¼ −2ð1 þ aμÞ were first measured in 2006, FIG. 3. Determinations of the value of the fine-structure constant from atom-recoil measurements and the measurement of the electron magnetic-moment anomaly. An expansion factor of 2.5 is applied to the uncertainties of these data in the adjustment, so that all values lie within 2 (expanded) standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-a-theory-of-the-muon-anomaly",
+      "number": null,
+      "title": "A. Theory of the muon anomaly",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "4",
+      "labelEnd": "26",
+      "words": 687,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "að2nþ ðxþ",
+          "heading": false
+        },
+        {
+          "term": "functions að2nþ",
+          "heading": false
+        },
+        {
+          "term": "muon",
+          "heading": true
+        },
+        {
+          "term": "að2þ ðxþ",
+          "heading": false
+        },
+        {
+          "term": "muon magnetic-moment",
+          "heading": false
+        },
+        {
+          "term": "mass-dependent functions",
+          "heading": false
+        },
+        {
+          "term": "mass-dependent terms",
+          "heading": false
+        },
+        {
+          "term": "mass ratios",
+          "heading": false
+        }
+      ],
+      "extract": "The muon magnetic-moment anomaly theory is reviewed and summarized by A. Höcker (CERN) and W. J. Marciano (BNL) on p. 796 of the PDG report (Workman et al., 2022). These authors conclude that there is a 4.2σ discrepancy between theory and experiment. Active searches for explan- ations for the discrepancy, which may indicate deviations from the standard model, are underway and possible such effects are discussed by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-b-2006-measurement-of-the-muon-anomaly-at-brookh",
+      "number": null,
+      "title": "B. 2006 Measurement of the muon anomaly at Brookhaven National Laboratory",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "precession frequency",
+          "heading": false
+        },
+        {
+          "term": "shielded proton",
+          "heading": false
+        },
+        {
+          "term": "pure h2o",
+          "heading": false
+        },
+        {
+          "term": "muon",
+          "heading": true
+        },
+        {
+          "term": "codata adjustments",
+          "heading": false
+        },
+        {
+          "term": "spherical sample",
+          "heading": false
+        },
+        {
+          "term": "free-proton value",
+          "heading": false
+        },
+        {
+          "term": "μ0p",
+          "heading": false
+        }
+      ],
+      "extract": "National Laboratory The 2006 determination of the muon anomaly (Bennett et al., 2006) at BNL in a 1.45 T superconducting storage ring magnet with an approximate diameter of 7 m has been discussed in past CODATA adjustment reports. The relativ- istic velocity of the muons in the ring is chosen such that the dependence on the static electric field used for transverse confinement is tuned out. The spread in their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-c-2021-measurement-of-the-muon-anomaly-at-the-fe",
+      "number": null,
+      "title": "C. 2021 Measurement of the muon anomaly at the Fermi National Accelerator Laboratory",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muon",
+          "heading": true
+        },
+        {
+          "term": "conversion factor",
+          "heading": false
+        },
+        {
+          "term": "μ0p",
+          "heading": false
+        },
+        {
+          "term": "relative uncertainty",
+          "heading": false
+        },
+        {
+          "term": "closing date",
+          "heading": false
+        },
+        {
+          "term": "fnal",
+          "heading": false
+        },
+        {
+          "term": "run value",
+          "heading": false
+        },
+        {
+          "term": "relative uncertainties",
+          "heading": false
+        }
+      ],
+      "extract": "National Accelerator Laboratory New for the 2022 CODATA adjustment is a measurement of the anomaly of the positively charged muon aμ from FNAL (Abi et al., 2021). It uses the same 1.45 T superconducting storage ring magnet but has a 2.5 times improved uniformity of the magnetic flux density. Moreover, metrology for beam properties and the characterization of positrons, a decay product of the muon, have been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-d-comparison-of-experiment-and-theory",
+      "number": null,
+      "title": "D. Comparison of experiment and theory",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aμðthþ",
+          "heading": false
+        },
+        {
+          "term": "ð60þ",
+          "heading": false
+        },
+        {
+          "term": "ð41þ",
+          "heading": false
+        }
+      ],
+      "extract": "The combined experimental value for aμðexpÞ is aμðexpÞ ¼ 0.001 165 920 62ð41Þ × 10−3; ð106Þ which is the recommended value. Comparison to Eq. (99) yields aμðexpÞ −aμðthÞ ¼ 253ð60Þ × 10−11; ð107Þ corresponding to the 4.2σ disagreement mentioned at the beginning of Sec. VII.A above.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-047-viii-atomic-g-factors-in-hydrogenic-c12-and-si28",
+      "number": null,
+      "title": "VIII. Atomic g-Factors in Hydrogenic C12 and Si28 Ions",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hydrogenic",
+          "heading": true
+        },
+        {
+          "term": "viii",
+          "heading": true
+        },
+        {
+          "term": "atomic",
+          "heading": true
+        },
+        {
+          "term": "electron angular",
+          "heading": false
+        },
+        {
+          "term": "atomic mass",
+          "heading": false
+        },
+        {
+          "term": "g-factors",
+          "heading": true
+        }
+      ],
+      "extract": "12C AND 28Si IONS An accurate value for the relative atomic mass of the electron is obtained from measurements of the ratio of spin- precession and cyclotron frequencies in hydrogenic carbon and silicon and theoretical expressions for the g-factors of their bound electron. See, for example, the recent analysis by Zatorski et al. (2017). These measurements also play an important role in determining the fine-structure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-a-theory-of-the-bound-electron-g-factor",
+      "number": null,
+      "title": "A. Theory of the bound-electron g-factor",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "30",
+      "words": 1726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cð2nþ ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "rec ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "ðzαþ lnðzαþ",
+          "heading": false
+        },
+        {
+          "term": "lowest-order vacuum-polarization",
+          "heading": false
+        },
+        {
+          "term": "δgð2þ rec",
+          "heading": false
+        },
+        {
+          "term": "bound-electron",
+          "heading": true
+        },
+        {
+          "term": "vacuum-polarization loops",
+          "heading": false
+        },
+        {
+          "term": "order ðzαþ",
+          "heading": false
+        }
+      ],
+      "extract": "The bound-electron g-factor is given by geðXÞ ¼ gD þ Δgrad þ Δgrec þ Δgns þ \u0004 \u0004 \u0004 ; ð113Þ where the individual terms on the right-hand side are the Dirac value, radiative corrections, recoil corrections, and nuclear- size corrections, and the dots represent possible additional corrections not already included. The Dirac value is (Breit, 1928) gD ¼ −2 3 \u0005 1 þ 2 ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ 1 −ðZαÞ2 q \u0006 ¼ −2½1 −1 3ðZαÞ2 −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-b-measurements-of-precession-and-cyclotron-frequ",
+      "number": null,
+      "title": "B. Measurements of precession and cyclotron frequencies of C125+ and Si2813+",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ωsð12c5þþ ωcð12c5þþ",
+          "heading": false
+        },
+        {
+          "term": "ωsð28si13þþ ωcð28si13þþ",
+          "heading": false
+        },
+        {
+          "term": "δgð2þ",
+          "heading": false
+        },
+        {
+          "term": "δgns",
+          "heading": false
+        },
+        {
+          "term": "hydrogenic",
+          "heading": false
+        },
+        {
+          "term": "δgð4þ",
+          "heading": false
+        },
+        {
+          "term": "δgrec",
+          "heading": false
+        },
+        {
+          "term": "cyclotron",
+          "heading": true
+        }
+      ],
+      "extract": "of 12C5 + and 28Si13 + The experimentally determined quantities are ratios of the electron spin-precession (or spin-flip) frequency in hydro- genic carbon and silicon ions to the cyclotron frequency of the ions, both in the same magnetic flux density. The input data used in the 2022 adjustment for hydrogenic carbon and silicon are TABLE XXI. Theoretical contributions and total value for the g-factor of hydrogenic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-c-observational-equations-for-c125-and-si2813-ex",
+      "number": null,
+      "title": "C. Observational equations for C125+ and Si2813+ experiments",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "observational equations",
+          "heading": true
+        },
+        {
+          "term": "arðeþ α2arðeþ",
+          "heading": false
+        },
+        {
+          "term": "corrections δthðcþ",
+          "heading": false
+        },
+        {
+          "term": "g-factors",
+          "heading": false
+        },
+        {
+          "term": "arð28si13þþ",
+          "heading": false
+        },
+        {
+          "term": "δthðsiþ",
+          "heading": false
+        }
+      ],
+      "extract": "The observational equations that apply to the frequency- ratio experiments on hydrogenic carbon and silicon and theoretical computations of their g-factors follow from Eq. (112) when it is expressed in terms of the adjusted constants. That is, ωsð12C5þÞ ωcð12C5þÞ ≐−geð12C5þÞ þ δthðCÞ 10ArðeÞ × \u0005 12 −5ArðeÞ þ α2ArðeÞ 2R∞ ΔEBð12C5þÞ hc \u0006 ð155Þ for 12C5þ using Arð12CÞ ≡12 and Eqs. (1) and (5). Similarly, ωsð28Si13þÞ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-ix-electron-to-muon-mass-ratio-and-muon-to-proto",
+      "number": null,
+      "title": "IX. Electron-to-Muon Mass Ratio and Muon-to-Proton Magnetic-Moment Ratio",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic-moment ratio",
+          "heading": true
+        },
+        {
+          "term": "muonium",
+          "heading": false
+        },
+        {
+          "term": "electron-to-muon",
+          "heading": true
+        },
+        {
+          "term": "flux density",
+          "heading": false
+        },
+        {
+          "term": "hyperfine",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": false
+        }
+      ],
+      "extract": "PROTON MAGNETIC-MOMENT RATIO Muonium (Mu) is an atom consisting of a (positively charged) antimuon and a (negatively charged) electron. Measurements of two muonium ground-state hyperfine tran- sition energies in a strong magnetic flux density combined with theoretical expressions for these energies provide infor- mation on the electron-to-muon mass ratio, me=mμ, as well as the antimuon-to-proton magnetic-moment",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-a-theory-of-the-muonium-ground-state-hyperfine-s",
+      "number": null,
+      "title": "A. Theory of the muonium ground-state hyperfine splitting",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 1125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperfine splitting",
+          "heading": true
+        },
+        {
+          "term": "δemuðthþ",
+          "heading": false
+        },
+        {
+          "term": "muonium",
+          "heading": true
+        },
+        {
+          "term": "ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "lnðzαþ",
+          "heading": false
+        },
+        {
+          "term": "shelyuto",
+          "heading": false
+        },
+        {
+          "term": "mμþ",
+          "heading": false
+        },
+        {
+          "term": "δemu",
+          "heading": false
+        }
+      ],
+      "extract": "The theoretical expression for the muonium hyperfine energy splitting absent a magnetic field may be factored into ΔEMuðthÞ ¼ ΔEF · F ð159Þ with the Fermi energy formula ΔEF ¼ 16 3 hcR∞Z3α2 me mμ \u0007 1 þ me mμ \b−3 ; ð160Þ which contains the main dependence on fundamental con- stants, and a function F ¼ 1 þ α=π þ \u0004 \u0004 \u0004 that only depends weakly on them. (Recall Eh ¼ 2R∞hc ¼ α2mec2.) The charge of the antimuon is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-b-measurements-of-muonium-transition-energies",
+      "number": null,
+      "title": "B. Measurements of muonium transition energies",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition energies",
+          "heading": true
+        },
+        {
+          "term": "muonium",
+          "heading": true
+        },
+        {
+          "term": "muonium hyperfine",
+          "heading": false
+        },
+        {
+          "term": "eðωpþ",
+          "heading": false
+        },
+        {
+          "term": "δemuðthþ",
+          "heading": false
+        },
+        {
+          "term": "magnetic flux",
+          "heading": false
+        },
+        {
+          "term": "flux density",
+          "heading": false
+        },
+        {
+          "term": "transition energy",
+          "heading": false
+        }
+      ],
+      "extract": "The two most precise determinations of muonium hyperfine transition energies were carried out by researchers at the Meson Physics Facility at Los Alamos (LAMPF), NM, and published in 1982 and 1999, respectively. These transition energies are compared to differences between eigenvalues of the Breit-Rabi Hamiltonian (Breit and Rabi, 1931; Millman, Rabi, and Zacharias, 1938) modified for muonium using a magnetic flux",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-c-analysis-of-the-muonium-hyperfine-splitting-an",
+      "number": null,
+      "title": "C. Analysis of the muonium hyperfine splitting and mass ratio m&mu;/me",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muonium hyperfine",
+          "heading": true
+        },
+        {
+          "term": "hyperfine splitting",
+          "heading": true
+        },
+        {
+          "term": "u2r",
+          "heading": false
+        },
+        {
+          "term": "recommended value",
+          "heading": false
+        },
+        {
+          "term": "standard uncertainty",
+          "heading": false
+        },
+        {
+          "term": "δthðmuþ",
+          "heading": false
+        }
+      ],
+      "extract": "ratio mμ=me The 2022 recommended value for the muonium hyperfine splitting is ΔEMuðthÞ þ δthðMuÞ ¼ h × 4 463 302 776ð51Þ Hz ½1.1 × 10−8\u0002; ð186Þ which is consistent both in value and uncertainty with the most accurately measured value of Eq. (180). More importantly, the prediction δthðMuÞ=h ¼ −4ð83Þ Hz for the additive constant falls well inside the 85 Hz theoretical uncertainty. As δthðMuÞ is a measure of uncomputed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-x-magnetic-moment-ratios-of-light-atoms-and-mole",
+      "number": null,
+      "title": "X. Magnetic-Moment Ratios of Light Atoms and Molecules",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "molecules",
+          "heading": true
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        },
+        {
+          "term": "ratios",
+          "heading": true
+        },
+        {
+          "term": "nuclear magnetic",
+          "heading": false
+        },
+        {
+          "term": "binding corrections",
+          "heading": false
+        },
+        {
+          "term": "theoretical binding",
+          "heading": false
+        },
+        {
+          "term": "magnetic-moment",
+          "heading": true
+        },
+        {
+          "term": "nmr",
+          "heading": false
+        }
+      ],
+      "extract": "AND MOLECULES The CODATATask Group recommends values for the free- particle magnetic moments of leptons, the neutron, and light nuclei. The most precise means to determine the free magnetic moments of the electron, muon, and proton are discussed in Secs. V, VII, and XI.A, respectively. In this section, we describe the determination of the neutron, deuteron, triton, and helion magnetic moments. The magnetic moment of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-a-definitions-of-bound-state-and-free-g-factors",
+      "number": null,
+      "title": "A. Definitions of bound-state and free g-factors",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-factors",
+          "heading": true
+        },
+        {
+          "term": "magnetic moment",
+          "heading": false
+        },
+        {
+          "term": "bound-state",
+          "heading": true
+        },
+        {
+          "term": "geðxþ",
+          "heading": false
+        },
+        {
+          "term": "ð192þ",
+          "heading": false
+        }
+      ],
+      "extract": "The Hamiltonian for a magnetic moment μ in a magnetic flux density B is H ¼ −μ · B. For a charged lepton l, the magnetic moment is μl ¼ gl e 2ml s; ð189Þ where gl, ml, and s are its g-factor, mass, and spin, respectively. The magnitude of the moment is μl ¼ gl e 2ml ℏ 2 : ð190Þ By convention, the magnetic moment of a neutron or nucleus with spin I is denoted by μ ¼ g e 2mp I; ð191Þ where g is the g-factor of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-b-theoretical-ratios-of-g-factors-in-h-d-he3-and",
+      "number": null,
+      "title": "B. Theoretical ratios of g-factors in H, D, He3, and muonium",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "að4þ ðzαþ",
+          "heading": false
+        },
+        {
+          "term": "crystal waso",
+          "heading": false
+        },
+        {
+          "term": "magnetic-moment ratio",
+          "heading": false
+        },
+        {
+          "term": "relative atomic",
+          "heading": false
+        },
+        {
+          "term": "atomic mass",
+          "heading": false
+        },
+        {
+          "term": "αðzαþ",
+          "heading": false
+        },
+        {
+          "term": "additive correction",
+          "heading": false
+        },
+        {
+          "term": "electron removal",
+          "heading": false
+        }
+      ],
+      "extract": "Theoretical binding corrections to g-factors in the relevant atoms and muonium have already been discussed in previous CODATA reports. Relevant references can be found there as well. Here, we only give the final results. For atomic hydro- gen, we have TABLE XXIII. Fifty-five of the 80 adjusted constants in the 2022 CODATA least-squares adjustment. The other 25 adjusted constants are given in Table XII. Adjusted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-c-theoretical-ratios-of-nuclear-g-factors-in-hd",
+      "number": null,
+      "title": "C. Theoretical ratios of nuclear g-factors in HD and HT",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shielding differences",
+          "heading": false
+        },
+        {
+          "term": "σdp",
+          "heading": false
+        },
+        {
+          "term": "σtp",
+          "heading": false
+        },
+        {
+          "term": "molecule",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": true
+        },
+        {
+          "term": "theoretical",
+          "heading": true
+        }
+      ],
+      "extract": "Bound-state corrections to the magnitudes of nuclear magnetic moments in the diatomic molecules HD and HT are expressed as μNðXÞ ¼ ½1 −σNðXÞ\u0002μN ð205Þ for nucleus N in molecule X. Here, μN is the magnitude of the magnetic moment of the free nucleus and σNðXÞ is the nuclear magnetic-shielding correction. In fact, jσNðXÞj ≪1. NMR experiments for these molecules measure the ratio μNðXÞ μN0ðXÞ ¼ ½1 þ σN0N þ Oðσ2Þ\u0002 μN μN0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-d-ratio-measurements-in-atoms-and-molecules",
+      "number": null,
+      "title": "D. Ratio measurements in atoms and molecules",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "μpðhdþ μdðhdþ",
+          "heading": false
+        },
+        {
+          "term": "neronov",
+          "heading": false
+        },
+        {
+          "term": "seregin",
+          "heading": false
+        },
+        {
+          "term": "table xxv",
+          "heading": false
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        },
+        {
+          "term": "measurements",
+          "heading": true
+        },
+        {
+          "term": "shielding factor",
+          "heading": false
+        },
+        {
+          "term": "μ0p",
+          "heading": false
+        }
+      ],
+      "extract": "Ten atomic and molecular magnetic-moment ratios obtained with H and D masers and NMR experiments are used as input data in the 2022 adjustment, and determine the magnetic moments of the neutron, deuteron, triton, and helion. For ease of reference, these experimental frequency ratios are summarized in Table XXV and given labels D41–D50. There are no correlation coefficients among these data greater than 0.0001.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-xi-magnetic-moments",
+      "number": null,
+      "title": "XI. Magnetic Moments",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-061-a-proton-magnetic-moment-in-nuclear-magnetons",
+      "number": null,
+      "title": "A. Proton magnetic moment in nuclear magnetons",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotron frequency",
+          "heading": false
+        },
+        {
+          "term": "magnetons",
+          "heading": true
+        },
+        {
+          "term": "systematic effects",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": true
+        },
+        {
+          "term": "relative uncertainty",
+          "heading": false
+        },
+        {
+          "term": "observational equation",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": true
+        }
+      ],
+      "extract": "The 2017 measurement of the proton magnetic moment in nuclear magnetons, μp=μN, was obtained using a single proton in a double Penning trap at the University of Mainz, Germany (Schneider et al., 2017). The ratio was determined by measuring its spin-flip transition frequency ωs ¼ 2μpB=ℏ and its cyclotron frequency ωc ¼ eB=mp in a magnetic flux density B. As B is the same in both measurements, ωs ωc ¼ μp μN ð208Þ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-b-direct-measurement-of-the-he3-magnetic-moment",
+      "number": null,
+      "title": "B. Direct measurement of the He+3 magnetic moment",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σhð3heþþ σhð3heþ",
+          "heading": false
+        },
+        {
+          "term": "magnetic moment",
+          "heading": true
+        },
+        {
+          "term": "μhð3heþ μ0p",
+          "heading": false
+        },
+        {
+          "term": "shielding correction",
+          "heading": false
+        },
+        {
+          "term": "cyclotron frequency",
+          "heading": false
+        },
+        {
+          "term": "magnetic-field strength",
+          "heading": false
+        },
+        {
+          "term": "measurement",
+          "heading": true
+        },
+        {
+          "term": "mass ratio",
+          "heading": false
+        }
+      ],
+      "extract": "Schneider et al. (2022) have measured the magnetic moment of the 3Heþ ion in a Penning trap. The combined hyperfine and Zeeman effect leads to a splitting of the 1S electronic ground state into four magnetic sublevels, as described by the Breit-Rabi formula up to first-order pertur- bation theory in the magnetic-field strength B. At the level of experimental precision, second-order corrections in B have to be taken",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-xii-electroweak-quantities",
+      "number": null,
+      "title": "XII. Electroweak Quantities",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 1185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lampf mariam",
+          "heading": false
+        },
+        {
+          "term": "μpðhdþ μdðhdþ",
+          "heading": false
+        },
+        {
+          "term": "lampf liu",
+          "heading": false
+        },
+        {
+          "term": "karr",
+          "heading": false
+        },
+        {
+          "term": "khz",
+          "heading": false
+        },
+        {
+          "term": "mpik",
+          "heading": false
+        },
+        {
+          "term": "koelemeij",
+          "heading": false
+        },
+        {
+          "term": "input data",
+          "heading": false
+        }
+      ],
+      "extract": "There are a few cases in the 2022 adjustment, as in previous adjustments, where an inexact constant is used in the analysis of input data but not treated as an adjusted quantity, because the adjustment has a negligible effect on its value. Three such constants, used in the calculation of the theoretical expression for the electron and muon magnetic-moment anomaly ae and TABLE XXV. Input data for the 2022 CODATA",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-xiii-lattice-spacings-of-silicon-crystals",
+      "number": null,
+      "title": "XIII. Lattice Spacings of Silicon Crystals",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 882,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d220ðw04þ ð21þ",
+          "heading": false
+        },
+        {
+          "term": "d220ðw04þ ð22þ",
+          "heading": false
+        },
+        {
+          "term": "d220ðw17þ d220ðw04þ",
+          "heading": false
+        },
+        {
+          "term": "kα1þ d220ðnþ",
+          "heading": false
+        },
+        {
+          "term": "λðcu kα1þ",
+          "heading": false
+        },
+        {
+          "term": "xuðcu kα1þ",
+          "heading": false
+        },
+        {
+          "term": "xuðmo kα1þ",
+          "heading": false
+        },
+        {
+          "term": "d220ðnr3þ d220ðw04þ",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we summarize efforts to determine the lattice spacing of an ideal (or nearly perfect) natural-silicon single crystal. We also give values for several historical x-ray units in terms of the SI unit meter. Three stable isotopes of silicon exist in nature. They are 28Si, 29Si, and 30Si with amount-of- substance fractions xðASiÞ of approximately 0.92, 0.05, and 0.03, respectively. Highly enriched",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-xiv-newtonian-constant-of-gravitation",
+      "number": null,
+      "title": "XIV. Newtonian Constant of Gravitation",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newtonian",
+          "heading": true
+        },
+        {
+          "term": "gravitation",
+          "heading": true
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        }
+      ],
+      "extract": "While various efforts continue toward the determination of the Newtonian constant of gravitation, G, there is no new relevant input datum for the 2022 adjustment. Of note is a novel dynamic method using the gravitational coupling between resonating beams by Brack et al. (2022); however, their combined relative standard uncertainty of 1.7 × 10−2 is not competitive. As with the 2018 adjustment, Table XXX summarizes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-xv-the-2022-codata-recommended-values",
+      "number": null,
+      "title": "XV. The 2022 CODATA Recommended Values",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-067-a-calculational-details",
+      "number": null,
+      "title": "A. Calculational details",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 52,
+      "labelStart": "41",
+      "labelEnd": "52",
+      "words": 7169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bohr magneton",
+          "heading": false
+        },
+        {
+          "term": "magneton ratio",
+          "heading": false
+        },
+        {
+          "term": "kα1þ d220ðxþ",
+          "heading": false
+        },
+        {
+          "term": "μhð3heþ μ0p",
+          "heading": false
+        },
+        {
+          "term": "molar mass",
+          "heading": false
+        },
+        {
+          "term": "magnetic-moment ratio",
+          "heading": false
+        },
+        {
+          "term": "arðpþ arðeþ",
+          "heading": false
+        },
+        {
+          "term": "nuclear magneton",
+          "heading": false
+        }
+      ],
+      "extract": "The focus of this section is the treatment of the data discussed in the previous sections to obtain the 2022 CODATA recommended values. In this regard, we recall that when the same expansion factor is applied to the a priori assigned uncertainties of both members of a correlated pair of input data to reduce data inconsistencies to an acceptable level, its square is also applied to their covariance so that their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-b-tables-of-recommended-values",
+      "number": null,
+      "title": "B. Tables of recommended values",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recommended values",
+          "heading": true
+        },
+        {
+          "term": "tables",
+          "heading": true
+        },
+        {
+          "term": "tables xxxvi",
+          "heading": false
+        },
+        {
+          "term": "constant μhð3heþ",
+          "heading": false
+        },
+        {
+          "term": "xxxvii",
+          "heading": false
+        },
+        {
+          "term": "xxxii",
+          "heading": false
+        },
+        {
+          "term": "absolute value",
+          "heading": false
+        },
+        {
+          "term": "codata",
+          "heading": false
+        }
+      ],
+      "extract": "The six Tables XXXII–XXXVII, which have the same form as those in previous CODATA reports, give the 2022 recom- mended values of the basic constants and conversion factors of physics and chemistry and related quantities. They range from Table XXXII, which gives an abbreviated list of constants, to Tables XXXVI and XXXVII, which give energy equivalents. Although some of the 79 adjusted con- stants are recommended",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-xvi-summary-and-conclusion",
+      "number": null,
+      "title": "XVI. Summary and Conclusion",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjustment",
+          "heading": false
+        },
+        {
+          "term": "notable",
+          "heading": false
+        },
+        {
+          "term": "recommended",
+          "heading": false
+        }
+      ],
+      "extract": "Here we (i) compare the 2022 to the 2018 recommended values of a representative group of constants with a focus on the changes in their values since the 2018 adjustment, (ii) discuss some notable features of the 2022 adjustment, and (iii) identify work that might possibly eliminate the need for applying expansion factors to the uncertainties of those constants for which it was necessary in the 2022 adjustment.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-070-a-comparison-of-2022-and-2018-codata-recommended",
+      "number": null,
+      "title": "A. Comparison of 2022 and 2018 CODATA recommended values",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 1562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recommended values",
+          "heading": true
+        },
+        {
+          "term": "codata",
+          "heading": true
+        },
+        {
+          "term": "mðxþ arðxþmu",
+          "heading": false
+        },
+        {
+          "term": "table xxxviii",
+          "heading": false
+        },
+        {
+          "term": "codata adjustment",
+          "heading": false
+        },
+        {
+          "term": "molar mass",
+          "heading": false
+        },
+        {
+          "term": "ωcð12c4þþ ωcðhdþþ",
+          "heading": false
+        },
+        {
+          "term": "relative uncertainty",
+          "heading": false
+        }
+      ],
+      "extract": "Table XXXVIII compares the 2022 and 2018 recommended values of a representative group of constants. However, the constants c, h, e, k, and NA and those that are combinations of them, for example, the Josephson constant KJ ¼ 2e=h, molar gas constant R ¼ NAk, and Stefan-Boltzmann constant σ ¼ ð2π5=15Þk4=h3c2, are not included in the table. This is because for the CODATA 2018 adjustment, these four con- stants were",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-b-notable-features-of-the-codata-2022-adjustment",
+      "number": null,
+      "title": "B. Notable features of the CODATA 2022 adjustment",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-072-1-impact-on-metrology-and-chemistry",
+      "number": "1",
+      "title": "Impact on metrology and chemistry",
+      "level": 4,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "metrology",
+          "heading": true
+        },
+        {
+          "term": "mð12cþ",
+          "heading": false
+        },
+        {
+          "term": "chemistry",
+          "heading": true
+        },
+        {
+          "term": "revision",
+          "heading": false
+        }
+      ],
+      "extract": "The CODATA 2018 adjustment was the first to reflect the revision of the SI based on exact values of h, e, k, and NA. This revision significantly impacted electrical metrology and physical chemistry because it eliminated the conventional electrical units V90, Ω90, A90, etc., introduced in 1990 and because it made important physicochemical constants such as the molar gas constant R, Faraday constant F, and Stefan-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-2-importance-of-theory",
+      "number": "2",
+      "title": "Importance of theory",
+      "level": 4,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tables xxv",
+          "heading": false
+        },
+        {
+          "term": "lamb shift",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        },
+        {
+          "term": "rms charge",
+          "heading": false
+        },
+        {
+          "term": "transition frequencies",
+          "heading": false
+        },
+        {
+          "term": "xxxi",
+          "heading": false
+        },
+        {
+          "term": "arðeþ",
+          "heading": false
+        },
+        {
+          "term": "adjustment",
+          "heading": false
+        }
+      ],
+      "extract": "Theory plays a significant role in the 2022 adjustment, perhaps even to a greater extent than in previous adjustments; here is a summary of its current role. • The improved theoretical values for the ionization energies EIðHþ 2 Þ=hc and EIðHDþÞ=hc discussed in Sec. II.C, items D25 and D26 in Tables XXV and XXXI, contribute to the determination of ArðeÞ, ArðpÞ, ArðdÞ, and ArðhÞ. • The theory of rovibrational",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-3-lack-of-data",
+      "number": "3",
+      "title": "Lack of data",
+      "level": 4,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "For the first time in recent CODATA adjustments, there is not a new x-ray-related datum to include in the 2022 adjust- ment nor is there a new value of the Newtonian constant of gravitation, G.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-075-4-decreased-and-increased-uncertainties",
+      "number": "4",
+      "title": "Decreased and increased uncertainties",
+      "level": 4,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 55,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncertainties",
+          "heading": true
+        },
+        {
+          "term": "increased",
+          "heading": true
+        },
+        {
+          "term": "xxxviii",
+          "heading": false
+        }
+      ],
+      "extract": "Table XXXVIII indicates that the new data that became available for the 2022 adjustment have led to significant reductions in the uncertainties of the 2022 recommended values of many constants. Nevertheless, it also shows that the uncertainties of a number of constants have increased slightly, mainly because of the increase in the uncertainty of α.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-076-5-changes-in-recommended-values-of-constants",
+      "number": "5",
+      "title": "Changes in recommended values of constants",
+      "level": 4,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "table xxxviii",
+          "heading": false
+        },
+        {
+          "term": "changes",
+          "heading": true
+        },
+        {
+          "term": "recommended",
+          "heading": true
+        }
+      ],
+      "extract": "The 2022 recommended values of many constants, of which Table XXXVIII gives only a small sample, have changed from the 2018 values. We recognize that using the 1-standard- deviation uncertainty of the 2018 value as the reference for calculating Dr in Table XXXVIII, our chosen measure of these changes, indicates larger changes than would be the case if the reference uncertainty was the square root of the sum of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-077-6-post-closing-date-results",
+      "number": "6",
+      "title": "Post-closing-date results",
+      "level": 4,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arðαþ",
+          "heading": false
+        },
+        {
+          "term": "r0μ",
+          "heading": false
+        },
+        {
+          "term": "december",
+          "heading": false
+        }
+      ],
+      "extract": "Inevitably, useful new data became available after the December 31 adjustment deadline, and the 2022 adjustment with its closing date of December 31, 2022, is no exception. Three such data are ArðαÞ (Sasidharan et al., 2023), R0μ (Aguillard et al., 2023), and both σhð3HeþÞ and σhð3HeÞ (Pachucki, 2023). The new value of ArðαÞ is briefly discussed at the end of Sec. II.C and that of R0μ at the end of Sec. VII.C.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-078-c-suggestions-for-future-work",
+      "number": null,
+      "title": "C. Suggestions for future work",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "advance",
+          "heading": false
+        },
+        {
+          "term": "innovative",
+          "heading": false
+        },
+        {
+          "term": "decimal",
+          "heading": false
+        }
+      ],
+      "extract": "We focus here on those constants for which the uncertain- ties of the data that determined their recommended values in the 2022 adjustment required an expansion factor to reduce their inconsistencies to an acceptable level. Of course, innovative new experiments and theoretical calculations that will lead to reduced fundamental constant uncertainties should always be encouraged because it can never be known in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-079-1-fine-structure-constant-alpha",
+      "number": "1",
+      "title": "Fine-structure constant &alpha;",
+      "level": 4,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recommended value",
+          "heading": false
+        },
+        {
+          "term": "table xxv",
+          "heading": false
+        },
+        {
+          "term": "mð133csþ",
+          "heading": false
+        },
+        {
+          "term": "accurate value",
+          "heading": false
+        },
+        {
+          "term": "mð87rbþ",
+          "heading": false
+        },
+        {
+          "term": "lkb",
+          "heading": false
+        },
+        {
+          "term": "experiment",
+          "heading": false
+        }
+      ],
+      "extract": "Table XXXVIII and its accompanying discussion of the importance of α for the determination of the recommended values of other constants, and the fact that the uncertainties of the six input data that determine its 2022 recommended value have to be increased by a factor 2.5, make clear why work to improve our knowledge of the value of α should be given high priority. Moreover, obtaining a more accurate value of α",
+      "extractCut": true
+    },
+    {
+      "id": "sec-080-2-newtonian-constant-of-gravitation-g",
+      "number": "2",
+      "title": "Newtonian constant of gravitation G",
+      "level": 4,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bipm",
+          "heading": false
+        },
+        {
+          "term": "table xxx",
+          "heading": false
+        },
+        {
+          "term": "schlamminger",
+          "heading": false
+        },
+        {
+          "term": "uncertainties",
+          "heading": false
+        },
+        {
+          "term": "values",
+          "heading": false
+        },
+        {
+          "term": "constant",
+          "heading": true
+        }
+      ],
+      "extract": "The value of G has been the least well known of the major fundamental constants for decades. The uncertainties of the 16 values in Table XXX on which the CODATA 2022 recom- mended value is based required an expansion factor of 3.9 to reduce their inconsistencies to an acceptable level and no new values have become available for the 2022 adjustment. Recently, Speake et al. (2023) experimentally investigated if the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-081-3-transition-frequencies-of-h-and-d",
+      "number": "3",
+      "title": "Transition frequencies of H and D",
+      "level": 4,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition frequencies",
+          "heading": true
+        },
+        {
+          "term": "codata adjustment",
+          "heading": false
+        },
+        {
+          "term": "six data",
+          "heading": false
+        },
+        {
+          "term": "initial residual",
+          "heading": false
+        },
+        {
+          "term": "lamb shift",
+          "heading": false
+        },
+        {
+          "term": "input data",
+          "heading": false
+        },
+        {
+          "term": "lkb",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        }
+      ],
+      "extract": "In the initial 2022 adjustment, six of the 29 experimentally determined H and D transition frequencies in Table XI had a normalized residual ri greater than 2. These are items A12– A15, A22, and A23 in that table with initial ri values 3.1, 2.5, 2.5, 3.1, 2.7, and 3.4, respectively. An expansion factor of 1.7 applied to the uncertainties of all 29 transition frequencies in the final adjustment reduced all six of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-082-list-of-symbols-and-abbreviations",
+      "number": null,
+      "title": "List of Symbols and Abbreviations",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 59,
+      "labelStart": "56",
+      "labelEnd": "59",
+      "words": 1186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muonic hydrogen",
+          "heading": false
+        },
+        {
+          "term": "muonic deuterium",
+          "heading": false
+        },
+        {
+          "term": "atom compris",
+          "heading": false
+        },
+        {
+          "term": "compris ing",
+          "heading": false
+        },
+        {
+          "term": "atomic mass",
+          "heading": false
+        },
+        {
+          "term": "energy levels",
+          "heading": false
+        },
+        {
+          "term": "standard uncertainty",
+          "heading": false
+        },
+        {
+          "term": "muon",
+          "heading": false
+        }
+      ],
+      "extract": "ASD NISTAtomicSpectraDatabase(online) AMDC Atomic Mass Data Center, Institute of Modern Physics, Chinese Academy of Sciences, Lanzhou, People’s Republic of China ArðXÞ relative atomic mass of X: ArðXÞ ¼ mðXÞ=mu a0 Bohr radius: a0 ¼ ℏ=αmec ae electron magnetic-moment anomaly: ae ¼ ðjgej −2Þ=2 aμ muon magnetic-moment anomaly: aμ ¼ ðjgμj −2Þ=2 Berkeley University of California at Berkeley, Berkeley, CA BIPM",
+      "extractCut": true
+    },
+    {
+      "id": "sec-083-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invaluable",
+          "heading": false
+        },
+        {
+          "term": "fellow",
+          "heading": false
+        },
+        {
+          "term": "colleagues",
+          "heading": false
+        }
+      ],
+      "extract": "We thank our fellow CODATA Task Group members for their invaluable guidance, suggestions, and contributions to the 2022 adjustment. We gratefully acknowledge our many colleagues throughout the world who provided results prior to formal publication and promptly answered many questions about their work.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-084-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 3391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "biraben",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "karshenboim",
+          "heading": false
+        },
+        {
+          "term": "yerokhin",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "metrologia",
+          "heading": false
+        },
+        {
+          "term": "shelyuto",
+          "heading": false
+        },
+        {
+          "term": "jentschura",
+          "heading": false
+        }
+      ],
+      "extract": "Abi, B., et al., 2021, Phys. Rev. Lett. 126, 141801. Aguillard, D. P., et al., 2023, Phys. Rev. Lett. 131, 161802. Alighanbari, S., G. S. Giri, F. L. Constantin, V. I. Korobov, and S. Schiller, 2020, Nature (London) 581, 152. Angeli, I., and K. Marinova, 2013, At. Data Nucl. Data Tables 99, 69. Antognini, A., et al., 2013, Science 339, 417. Aoyama, T., M. Hayakawa, T. Kinoshita, and M. Nio, 2015, Phys. Rev. D 91,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 18,
+        "items": [
+          "CONTENTS 6. Atom recoil",
+          "CODATA Task Group on Fundamental Constants. The members of III. Atomic Hydrogen and Deuterium Transition Energies",
+          "Bielsa, Bureau International des Poids et Mesures. 1. Dirac eigenvalue and mass corrections",
+          "Fujii, National Metrology Institute of Japan, Japan. 2. Relativistic recoil",
+          "G. Karshenboim, Max-Planck-Institut f¨ur Quantenoptik, Germany. 3. Self-energy",
+          "Margolis, National Physical Laboratory, United Kingdom. 4. Vacuum polarization",
+          "J. Mohr, National Institute of Standards and Technology, USA. 5. Two-photon corrections",
+          "B. Newell, National Institute of Standards and Technology, USA. 6. Three-photon corrections",
+          "Nez, Laboratoire Kastler-Brossel, France. 7. Finite nuclear size and polarizability",
+          "Pohl, Johannes Gutenberg-Universit¨at Mainz, Germany. 8. Radiative-recoil corrections",
+          "Pachucki, University of Warsaw, Poland. 9. Nucleus self-energy",
+          "Qu, National Institute of Metrology of China, China. B. Total theoretical energies and uncertainties",
+          "Surzhykov, Physikalisch-Technische Bundesanstalt, Germany. hydrogen and deuterium",
+          "Wang, Institute of Modern Physics, Chinese Academy of 1S −3S transition",
+          "Sciences, China. IV. Muonic Atoms and Muonic Ions",
+          "M. Wood, National Research Council, Canada. A. Theory and experiment",
+          "‡Contact author: dnewell@nist.gov and Heþ transition energies §Contact author: barry.taylor@nist.gov V. Electron Magnetic-Moment Anomaly",
+          "∥Contact author: eite.tiesinga@nist.gov VI. Atom-Recoil Measurements"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 6,
+        "items": [
+          "Overview of the 2022 adjustment 2 10. Electroweak quantities: listed p5, found p2",
+          "Ionization and binding energies 3 12. Least-squares adjustment: listed p5, found p3",
+          "Muonic atoms and ions, radius of proton, deuteron, Rubidium, and Cesium: listed p5, found p3",
+          "and α particle 3 A. Atomic Mass Data Center input: listed p5, found p3",
+          "Electron magnetic-moment anomaly 4 B. Neutron mass from the neutron capture gamma-ray measurement: listed p6, found p4",
+          "the task group are: A. Theory of hydrogen and deuterium energy levels: listed p10, found p54"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 3,
+      "items": [
+        "p22: pdf-labels 22, printed 1",
+        "p23: pdf-labels 23, printed 2",
+        "p25: pdf-labels 25, printed 4"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "codata adjustment",
+      "heading": true
+    },
+    {
+      "term": "codata recommended",
+      "heading": true
+    },
+    {
+      "term": "least-squares adjustment",
+      "heading": true
+    },
+    {
+      "term": "current adjustment",
+      "heading": false
+    },
+    {
+      "term": "theoretical uncertainty",
+      "heading": false
+    },
+    {
+      "term": "previous adjustment",
+      "heading": false
+    },
+    {
+      "term": "relative uncertainty",
+      "heading": false
+    },
+    {
+      "term": "final adjustment",
+      "heading": false
+    },
+    {
+      "term": "squares adjustment",
+      "heading": false
+    },
+    {
+      "term": "uncertainty ratio",
+      "heading": false
+    },
+    {
+      "term": "codata value",
+      "heading": false
+    },
+    {
+      "term": "initial adjustment",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Comparison of the recommended value of the rms charge radii of the proton rp and of the deuteron rd from the 2022",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Coefficient Að10Þ",
+      "page": 22,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Determinations of the value of the fine-structure constant from atom-recoil measurements and the measurement of the electron magnetic-moment anomaly. An expansion factor of 2.5 is applied to the uncertainties of these data in the adjustment, so that all values lie within 2 (expanded) standard deviat",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The 16 input data determining the Newtonian constant of gravitation G ordered by publication year. The 2022 recommended value for G has been subtracted. Error bars correspond to 1-standard-deviation uncertainties as reported in Table XXX. The uncertainties after applying the 3.9 multiplicative expan",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 85,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 85,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p59); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 68
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 85 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/revmodphys97025002pdf"
+  }
+}

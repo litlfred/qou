@@ -1,0 +1,538 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1907.00949v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Launched around 20 years ago in a classic article of Edelman, Arias, and Smith [@EAS], Riemannian *manifold optimization* is now entrenched as a mainstay of optimization theory [@ABG2007; @AMS2009; @CDH2011; @WY2013]. While studies of optimization algorithms on Riemannian manifolds predate [@EAS], the distinguishing feature of Edelman et al.'s approach is that their algorithms are built entirely and directly from standard algorithms in numerical linear algebra; in particular, they do not require numerical solutions of differential equations. For instance, the parallel transport of a vector in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "OPTIMIZATION ON FLAG MANIFOLDS\nKE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM\nAbstract. A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis,\narising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they\narise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in\nwavelets constructions. They are common in statistics too — principal component, canonical cor-\nrelation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a\ndata set. The main goal of this article is to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flags in numerical analysis",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-flags-in-numerical-analysis.md",
+      "narrative": null,
+      "content": "In numerical analysis, flags naturally arise in finite elements, multigrid, spectral and pseudospectral methods, wavelets, iterative matrix computations, etc, in several ways.\n\n::: example\nIn multigrid, algebraic multigrid, finite element methods, we often consider a sequence of increasingly finer *grids* or *meshes* $G_1 \\subseteq G_2\n\\subseteq G_3 \\subseteq \\cdots$ on the domain of interest $\\Omega$. The vector space of real-valued functions $$\\mathbb{V}_k \\coloneqq \\{ f : G_k \\to \\mathbb{R} \\}$$ gives us a flag $\\mathbb{V}_1 \\subseteq \\mathbb{V}_2 \\subseteq  \\mathbb{V}_3 \\subseteq \\cdots$ o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flags in statistics",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-flags-in-statistics.md",
+      "narrative": null,
+      "content": "Although not usually viewed in this manner, classical multivariate data analysis techniques [@MKB] may be cast as nested subspace-searching problems, i.e., constrained or unconstrained optimization problems on the flag manifold.\n\nWe let $\\text{\\usefont{U}{bbm}{m}{n}1}$ denote a vector of all ones (of appropriate dimension). We assume that our data set is given in the form of a sample-by-variables design matrix $X \\in \\mathbb{R}^{n \\times p}$, $n \\ge p$, which we call a data matrix for short. Let $\\overline{x}=\\frac{1}{n}X^{\\scriptscriptstyle\\mathsf{T}}\\text{\\usefont{U}{bbm}{m}{n}1}\\in\\mathbb{R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prior work and our contributions",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-prior-work-and-our-contributions.md",
+      "narrative": null,
+      "content": "Some elements of optimization theory on flag manifolds have been considered in [@NSP2006], although optimization is not its main focus and only analytic expressions for tangent spaces and gradients have been obtained. In particular, no actual algorithm appears in [@NSP2006] --- note that a Riemannian steepest descent algorithm in the spirit of [@EAS] would at least require analytic expressions for geodesics and, to the best of our knowledge, they have never been derived; in fact prior to this article it is not even known if such expressions exist.\n\nThe main contribution of our article is in pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-outline.md",
+      "narrative": null,
+      "content": "We begin by reviewing basic materials about Lie groups, Lie algebras, homogeneous spaces, and Riemannian manifolds (Section [\\[sec:basic\\]](#sec:basic){reference-type=\"ref\" reference=\"sec:basic\"}). We then proceed to describe the basic differential geometry of flag manifolds (Section [\\[sec:flag\\]](#sec:flag){reference-type=\"ref\" reference=\"sec:flag\"}), develop four concrete matrix representations of flag manifolds, and derive closed-form analytic expressions for various differential geometric objects in terms of standard matrix operations (Sections [\\[sec:homo\\]](#sec:homo){reference-type=\"re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic differential geometry of homogeneous spaces",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-2-basic-differential-geometry-of-homogeneous-spa.md",
+      "narrative": null,
+      "content": "[]{#sec:basic label=\"sec:basic\"}\n\nWe will need some rudimentary properties of homogeneous spaces not typically found in the manifold optimization literature, e.g., [@AMS2009; @EAS]. This section provides a self-contained review, kept to a bear minimum of just what we need later. We refer readers to standard references [@Helgason1978; @KN1969; @Boothby1975] for more information.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lie groups and Lie algebras",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-21-lie-groups-and-lie-algebras.md",
+      "narrative": null,
+      "content": "[]{#sec:Lie label=\"sec:Lie\"} Let $M$ be a smooth manifold and $T^\\ast M$ be its cotangent bundle. A *Riemannian metric* on $M$ is a smooth section $g: M \\to T^\\ast M \\otimes T^\\ast M$ such that $g_x \\coloneqq g(x) \\in T^\\ast_xM \\otimes T^\\ast_x M$ is a positive definite symmetric bilinear form on the tangent space $T_xM$ for every $x\\in M$. Intuitively, a Riemannian metric gives an inner product on $T_xM$ for every $x\\in M$ and it varies smoothly with respect to $x\\in M$. Let $G$ be a group and let $m:G\\times G \\to G$ be the multiplication map $m(a_1,a_2) = a_1a_2$ and $i: G \\to G$ be the inve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homogeneous spaces",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-22-homogeneous-spaces.md",
+      "narrative": null,
+      "content": "We now recall some basic definitions and facts about homogeneous spaces. Throughout this article, we will use double brackets $\\llbracket x\\rrbracket$ to denote the equivalence class of $x$.\n\n::: definition\nLet $G$ be a Lie group acting on a smooth manifold $M$ via $\\varphi: G\\times M \\to M$. If the action $\\varphi$ is smooth and transitive, i.e., for any $x,y\\in M$, there is some $a\\in G$ such that $\\varphi(a,x) = y$, then $M$ is called a *homogeneous space* of the Lie group $G$.\n:::\n\nFor a point $x\\in M$, the subgroup $G_x =\\{a\\in G: \\varphi(a,x) = x\\}$ is called the *isotropy group* of $x$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic orbit spaces",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-23-geodesic-orbit-spaces.md",
+      "narrative": null,
+      "content": "Let $M = G/H$ be a homogeneous space of $G$. If $M$ has a Riemannian metric $g$ such that every geodesic in $M$ is an orbit of a one-parameter subgroup of $G$, then we say that $(M,g)$ is a *geodesic orbit space*. The following result [@KS2000] will allow us to construct several interesting examples.\n\n::: theorem\n[]{#thm:GO label=\"thm:GO\"} Let $G$ be a compact Lie group with a bi-invariant metric $g$ and $H$ be a subgroup such that $M = G/H$ is a smooth manifold (e.g., $H$ is closed subgroup). Then $M = G/H$ together with the metric $\\widetilde{g}$ induced by $g$ is a geodesic orbit space.\n:::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riemannian notions",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-24-riemannian-notions.md",
+      "narrative": null,
+      "content": "[]{#sec:Riem label=\"sec:Riem\"}\n\nAlthough not specific to homogeneous or geodesic orbit spaces, we state the famous Hopf--Rinow theorem [@CE2008 Theorem $1.8$] and recall the definitions of Riemannian gradient and Hessian [@Helgason1978; @KN1969; @Boothby1975] below for easy reference.\n\n::: theorem\n[]{#thm:Hopf--Rinow label=\"thm:Hopf--Rinow\"} Let $(M,g)$ be a connected Riemannian manifold. Then the following statements are equivalent:\n\n1.  closed and bounded subsets of $M$ are compact;\n\n2.  $M$ is a complete metric space;\n\n3.  $M$ is geodesically complete, i.e., the exponential map $\\exp_x: T_x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic differential geometry of flag manifolds",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-3-basic-differential-geometry-of-flag-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:flag label=\"sec:flag\"}\n\nWe will now define flags and flag manifolds formally and discuss some basic properties. Let $n$ be a positive integer and $\\mathbb{V}$ be an $n$-dimensional vector space over $\\mathbb{R}$. We write $\\mathop{\\mathrm{V}}(k, \\mathbb{V})$ for the Stiefel manifold [@Stiefel1935] of $k$-frames in $\\mathbb{V}$ and $\\mathop{\\mathrm{Gr}}(k, \\mathbb{V})$ for the Grassmannian [@Grass] of $k$-dimensional subspaces in $\\mathbb{V}$. If the choice of $\\mathbb{V}$ is unimportant or if $\\mathbb{V} = \\mathbb{R}^n$, then we will just write $\\mathop{\\mathrm{V}}(k,n)$ and $\\mathop{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flag manifolds as matrix homogeneous spaces",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-4-flag-manifolds-as-matrix-homogeneous-spaces.md",
+      "narrative": null,
+      "content": "[]{#sec:homo label=\"sec:homo\"}\n\nWe will discuss three representations of the flag manifold as *matrix homogeneous spaces*, i.e., where a flag is represented as an equivalence class of matrices: $$\\begin{aligned}\n\\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n) &\\cong \\mathop{\\mathrm{O}}(n) / \\bigl(\\mathop{\\mathrm{O}}(n_1) \\times \\mathop{\\mathrm{O}}(n_2 - n_1) \\times \\dots \\times \\mathop{\\mathrm{O}}(n_d - n_{d-1}) \\times \\mathop{\\mathrm{O}}(n-n_d) \\bigr), \\label{eq:homo1}\\\\\n\\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n) &\\cong \\mathop{\\mathrm{SO}}(n) / \\mathop{\\mathrm{S}}\\bigl(\\mathop{\\mathrm{O}}(n_1) \\times \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orthogonal coordinates for the flag manifold",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-41-orthogonal-coordinates-for-the-flag-manifold.md",
+      "narrative": null,
+      "content": "[]{#sec:ortho label=\"sec:ortho\"}\n\nAn immediate consequence of Proposition [\\[prop:equivalent definition of flag manifold\\]](#prop:equivalent definition of flag manifold){reference-type=\"ref\" reference=\"prop:equivalent definition of flag manifold\"} is that the flag manifold is connected. The characterization [\\[eq:homo2\\]](#eq:homo2){reference-type=\"eqref\" reference=\"eq:homo2\"} says that a point on $\\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n)$ may be represented by the equivalence class of matrices $$\\begin{aligned}\n\\label{eq:equivalence class}\n\\llbracket Q \\rrbracket= \\left\\lbrace Q\\begin{bsmallma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stiefel coordinates for the flag manifold",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-42-stiefel-coordinates-for-the-flag-manifold.md",
+      "narrative": null,
+      "content": "[]{#sec:stief label=\"sec:stief\"}\n\nWe next discuss the characterization of a flag manifold as a quotient of the Stiefel manifold [\\[eq:homo3\\]](#eq:homo3){reference-type=\"eqref\" reference=\"eq:homo3\"} and discuss its consequences. This characterization will give our coordinates of choice for use in our optimization algorithms (see Section [\\[sec:gH\\]](#sec:gH){reference-type=\"ref\" reference=\"sec:gH\"}).\n\n::: proposition\n[]{#prop:Stiefel label=\"prop:Stiefel\"} Let $0 < n_1< \\dots < n_d < n$ be $d$ positive integers. The flag manifold $\\mathop{\\mathrm{Flag}}(n_1,\\dots, n_d;n)$ is diffeomorphic to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flag manifolds as matrix manifolds",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-5-flag-manifolds-as-matrix-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:mfld label=\"sec:mfld\"}\n\nBy Proposition [\\[prop:geometric structure\\]](#prop:geometric structure){reference-type=\"ref\" reference=\"prop:geometric structure\"}[\\[it:cls1\\]](#it:cls1){reference-type=\"eqref\" reference=\"it:cls1\"} and [\\[it:cls2\\]](#it:cls2){reference-type=\"eqref\" reference=\"it:cls2\"}, we see that a flag manifold may be regarded as a submanifold of a product of Grassmannians. Since a Grassmannian can be represented as a subset of matrices in $\\mathbb{R}^{n\\times n}$ [@Nicolaescu Example 1.2.20], $$\\label{eq:P}\n\\mathop{\\mathrm{Gr}}(k,n) \\cong \\{P\\in \\mathbb{R}^{n\\times n}: P^2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projection coordinates for the flag manifold",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-51-projection-coordinates-for-the-flag-manifold.md",
+      "narrative": null,
+      "content": "[]{#sec:proj label=\"sec:proj\"}\n\nWe will construct our first analogue of [\\[eq:epsGr\\]](#eq:epsGr){reference-type=\"eqref\" reference=\"eq:epsGr\"} for the flag manifold. Let $$\\label{eq:eps}\n\\varepsilon : \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n) \\to \\mathbb{R}^{nd\\times nd}, \\quad\n\\{\\mathbb{V}_i\\}_{i=1}^d \\mapsto \\mathop{\\mathrm{diag}}(V_1V_1^{\\scriptscriptstyle\\mathsf{T}}, \\dots, V_d V_d^{\\scriptscriptstyle\\mathsf{T}}),$$ where $V_i \\in \\mathbb{R}^{n\\times n_i}$ is an orthonormal basis of $\\mathbb{V}_i$, $i=1,\\dots, d$, and the image is a block-diagonal matrix in $\\mathbb{R}^{nd \\times nd}$ with $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined projection coordinates for the flag manifold",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-52-refined-projection-coordinates-for-the-flag-m.md",
+      "narrative": null,
+      "content": "[]{#sec:rproj label=\"sec:rproj\"}\n\nWe discuss a variation of projection coordinates on flag manifolds based on Proposition [\\[prop:geometric structure\\]](#prop:geometric structure){reference-type=\"ref\" reference=\"prop:geometric structure\"}[\\[it:cls2\\]](#it:cls2){reference-type=\"eqref\" reference=\"it:cls2\"}. As in Section [\\[sec:proj\\]](#sec:proj){reference-type=\"ref\" reference=\"sec:proj\"}, if we identify the Grassmannians as sets of projection matrices as in [\\[eq:P\\]](#eq:P){reference-type=\"eqref\" reference=\"eq:P\"}, then the map in [\\[eq:j2\\]](#eq:j2){reference-type=\"eqref\" reference=\"eq:j2\"} b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riemannian Gradient and Hessian over the flag manifold",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-6-riemannian-gradient-and-hessian-over-the-flag.md",
+      "narrative": null,
+      "content": "[]{#sec:gH label=\"sec:gH\"}\n\nWe will derive expressions for the Riemannian gradient and Riemannian Hessian of a real-valued function on a flag manifold, the main ingredients of optimization algorithms. Although in principle we may use any of the four extrinsic coordinate systems introduced in the last two sections --- orthogonal (as $n \\times n$ orthogonal matrices), Stiefel (as $n \\times n_d$ orthonormal matrices), projection or reduced projection (as $d$-tuples of $n \\times n$ projection matrices) coordinates --- Stiefel coordinates give the most economical representation and we will use this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Optimization algorithms over flag manifolds",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-018-7-optimization-algorithms-over-flag-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:optim label=\"sec:optim\"}\n\nWith analytic expressions for points, tangent vectors, metric, geodesic, parallel transport, Riemannian gradient and Hessian in place, Riemannian manifold optimization algorithms are straightforward to derive from the usual ones. For example, for steepest descent, instead of adding a negative multiple of the gradient to the current iterate, we move the current iterate along the geodesic with initial velocity vector given by the negative of the gradient. Again, we may do this in any of the four coordinates system we have introduced although for the same reason",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Steepest descent over a flag manifold",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-71-steepest-descent-over-a-flag-manifold.md",
+      "narrative": null,
+      "content": "We describe this in Algorithm [\\[alg:sd\\]](#alg:sd){reference-type=\"ref\" reference=\"alg:sd\"}. A point $\\llbracket Y \\rrbracket\\in \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n)$ is represented in Stiefel coordinates, i.e., as an orthonormal matrix $Y \\in \\mathbb{R}^{n \\times n_d}$, $Y^{\\scriptscriptstyle\\mathsf{T}}Y=I$. As usual, $Y^{\\perp} \\in \\mathbb{R}^{n \\times (n-n_d)}$ is such that $X \\coloneqq [ Y, Y^{\\perp}] \\in \\mathop{\\mathrm{O}}(n)$. The Riemannian gradient $\\nabla f \\in \\mathbb{R}^{n \\times n_d}$ is given by Proposition [\\[prop:gradient\\]](#prop:gradient){reference-type=\"ref\" reference=\"p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugate gradient over a flag manifold",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-020-72-conjugate-gradient-over-a-flag-manifold.md",
+      "narrative": null,
+      "content": "[]{#sec:cg label=\"sec:cg\"}\n\nWe present the conjugate gradient method in Algorithm [\\[alg:cg\\]](#alg:cg){reference-type=\"ref\" reference=\"alg:cg\"}. Unlike steepest descent, conjugate gradient requires that we construct our new descent direction from the $(k-1)$th and $k$th iterates, i.e., one needs to compare tangent vectors at two different points on the manifold and the only way to do this is to parallel transport the two tangent vectors to the same point. There is no avoiding parallel transport in conjugate gradient.\n\nAs the expression for parallel transport in [\\[eq:pt2\\]](#eq:pt2){reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Newton and other algorithms over a flag manifold",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-021-73-newton-and-other-algorithms-over-a-flag-manif.md",
+      "narrative": null,
+      "content": "The closed-form analytic expressions derived in this article permit one to readily extend other optimization algorithms on Euclidean spaces to flag manifolds. For example, the *Newton search direction* is given by the tangent vector $X \\in T_{\\llbracket Y \\rrbracket} \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n)$ such that $$\\nabla^2f(\\llbracket Y \\rrbracket) (X,X') = g_{\\llbracket Y \\rrbracket}\\bigl(-\\nabla f(\\llbracket Y \\rrbracket),X' \\bigr) = -\\mathop{\\mathrm{tr}}(f_Y^{\\scriptscriptstyle\\mathsf{T}}X'),$$ for every $X'\\in T_{\\llbracket Y \\rrbracket} \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n)$, which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical experiments",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-022-8-numerical-experiments.md",
+      "narrative": null,
+      "content": "[]{#sec:num label=\"sec:num\"}\n\nWe will test our algorithm for steepest descent on the flag manifold numerically. As we explained in Section [\\[sec:cg\\]](#sec:cg){reference-type=\"ref\" reference=\"sec:cg\"}, the experiments for conjugate gradient algorithm is more involved and is deferred to [@next]. We run our numerical experiments on two problems: (i) the principal flag problem in Section [\\[sec:dis\\]](#sec:dis){reference-type=\"ref\" reference=\"sec:dis\"} is one for which the solution may be determined in closed-form analytically, and thus it serves to demonstrate the correctness of our algorithm,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principal flags",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-023-81-principal-flags.md",
+      "narrative": null,
+      "content": "[]{#sec:dis label=\"sec:dis\"}\n\nLet $M \\in \\mathbb{R}^{n \\times n}$ be symmetric. We seek the solution to $$\\label{eq:dis}\n\\begin{tabular}{rl}\nmaximize & $ \\mathop{\\mathrm{tr}}(Y^{\\scriptscriptstyle\\mathsf{T}}MY)$ \\\\[1ex]\nsubject to & $\\llbracket Y \\rrbracket\\in \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d; n)$.\n\\end{tabular}$$ Here $Y \\in \\mathbb{R}^{n \\times n_d}$, $Y^{\\scriptscriptstyle\\mathsf{T}}Y = 1$, and the objective function is well-defined as a function on the flag manifold: If we have $Y$ and $Y'$ with $\\llbracket Y \\rrbracket= \\llbracket Y'\\rrbracket$, then they must be related as in [\\[eq:r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonlinear eigenflags",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-024-82-nonlinear-eigenflags.md",
+      "narrative": null,
+      "content": "[]{#sec:disv label=\"sec:disv\"}\n\nThis is a variation of the principal flag problem [\\[eq:dis\\]](#eq:dis){reference-type=\"eqref\" reference=\"eq:dis\"}: $$\\label{eq:eig}\n\\begin{tabular}{rl}\nmaximize & $\\sum_{i=1}^{d}\\mathop{\\mathrm{tr}}(Y_i^{\\scriptscriptstyle\\mathsf{T}}MY_i)^2$\\\\[1ex]\nsubject to & $\\llbracket Y_1,\\dots,Y_d \\rrbracket\\in \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d; n)$.\n\\end{tabular}$$ Again $M \\in \\mathbb{R}^{n \\times n}$ is a symmetric matrix and the flag is given in Stiefel coordinates $Y = [Y_1,\\dots,Y_d] \\in \\mathbb{R}^{n \\times n_d}$, $Y^{\\scriptscriptstyle\\mathsf{T}}Y = I$, but par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-025-9-conclusion.md",
+      "narrative": null,
+      "content": "For most of its history, continuous optimization has been concerned with optimizing functions over the Euclidean space $\\mathbb{R}^n$; but this has begun to change with the advent of semidefinite programming [@sdp] and orthogonality-constrained optimization [@EAS], where objective functions are naturally defined over the positive definite cone $\\mathbb{S}^n_{{\\plus\\plus}}$, the Stiefel manifold $\\mathop{\\mathrm{V}}(k,n)$, and the Grassmannian $\\mathop{\\mathrm{Gr}}(k,n)$. These developments have provided us with the capacity to optimize over not just vectors but also covariances matrices, ortho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.00949v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[1] P.-A. Absil, C. G. Baker, and K. A. Gallivan. Trust-region methods on Riemannian manifolds. Found. Comput.\nMath., 7(3):303–330, 2007.\n[2] P.-A. Absil, R. Mahony, and R. Sepulchre. Optimization algorithms on matrix manifolds. Princeton University\nPress, Princeton, NJ, 2008. With a foreword by Paul Van Dooren.\n[3] D. Alekseevsky and A. Arvanitoyeorgos. Riemannian ﬂag manifolds with homogeneous geodesics. Trans. Amer.\nMath. Soc., 359(8):3769–3789, 2007.\n[4] G. Ammar and C. Martin. The geometry of matrix eigenvalue methods. Acta Appl. Math., 5(3):239–278, 1986.\n[5] S. Axler. Linear algebra don",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

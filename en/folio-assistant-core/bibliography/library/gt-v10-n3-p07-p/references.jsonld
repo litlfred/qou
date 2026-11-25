@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/gt-v10-n3-p07-p",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Stabilization in the braid groups II:Transversal simplicity of knots",
+      "dcterms:creator": [
+        "BIRMAN, JOAN S"
+      ],
+      "dcterms:issued": "D:20080429",
+      "bibo:doi": "10.2140/gt.2006.10.1425",
+      "dcterms:identifier": "https://doi.org/10.2140/gt.2006.10.1425",
+      "dcterms:source": "library/gt-v10-n3-p07-p/manifest.jsonld",
+      "dcterms:hasVersion": "library/gt-v10-n3-p07-p"
+    }
+  ]
+}

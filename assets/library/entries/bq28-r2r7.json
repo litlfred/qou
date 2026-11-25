@@ -1,0 +1,676 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "bq28-r2r7",
+  "blocks": [
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I.. INTRODUCTION",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "Representation theory provides a powerful set of tools\nfor analyzing systems invariant under the action of some\ngroup such as a molecular symmetry group in chemistry or\na gauge group in quantum ﬁeld theory. For example, the\neigenvalue spectrum of a quantum system is usually com-\nputed by decomposing the Hilbert space into a direct sum\nof irreducible representations of the symmetry group and\ndiagonalizing each irreducible block of the Hamiltonian\nseparately.\nThe character of an irreducible representation (irrep) can\nbe viewed as a ﬁngerprint that uniquely identiﬁes the irrep\nand facilitates man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "PRX QUANTUM 6, 030323 (2025)\nClassical and Quantum Algorithms for Characters of the Symmetric Group\nSergey Bravyi,1 David Gosset,2,3,* Vojtech Havlicek ,1 and Louis Schatzki\n4\n1IBM Quantum, IBM T.J. Watson Research Center, Yorktown Heights, New York 10598, USA\n2Department of Combinatorics and Optimization and Institute for Quantum Computing, University of Waterloo\n3Perimeter Institute for Theoretical Physics\n4University of Illinois Urbana Champaign, Urbana, Illinois 61801, USA\n (Received 20 March 2025; accepted 25 June 2025; published 7 August 2025)\nCharacters of irreducible representations ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Suppose that x, y ∈{0, 1}Z are bit strings and that i∗is an integer such that xi = yi for i ≤i∗. Let x′, y′ be bit strings obtained from x, y, respectively, by setting to zero all bits i ≤i∗. Then ⟨y| c(g) \u0003 j =1 Jνj |x⟩= ⟨y′| c(g) \u0003 j =1 Jνj |x′⟩. (10)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II.. GROUP THEORY REFRESHER",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-ii-group-theory-refresher.md",
+      "narrative": null,
+      "content": "Suppose that G is a ﬁnite group. A d-dimensional rep-\nresentation of G is a group homomorphism from G to\nthe unitary group U(d). A representation is irreducible if\nthe ambient Hilbert space Cd contains no proper subspace\ninvariant under the action of all group elements. It is stan-\ndard to identify irreps that diﬀer only by a basis change\nin the ambient Hilbert space. Then any ﬁnite group has a\nﬁnite set of irreps. Given a group element g ∈G and an\nirrep λ, let ρλ(g) be the unitary matrix corresponding to g.\nThe character of g associated with an irrep λ is deﬁned as\na complex number χλ(g) = Tr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III.. BUILDING THE CHARACTER",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-iii-building-the-character.md",
+      "narrative": null,
+      "content": "We begin by reproducing the result of Crichigno and\nPrakash [13] that shows how to build a quantum spin\nchain encoding all characters χλ(g) of a given permutation\ng ∈Sn.\nLet λ = (λ1, . . . , λm) and ν = (ν1, . . . , νc(g)) be the par-\ntitions of n describing the irrep λ and the conjugacy class\nof g. Consider a complex vector z ∈Cm and a polynomial\nPν(z) =\nc(g)\n\u0003\nj =1\n\u0005\nm\n\u0002\nk=1\nz\nνj\nk\n\u0006\n.\n(1)\nThe Frobenius character formula [15] (see, e.g., Theorem\n4.47 of Ref. [28]) states that χλ(g) coincides with the\ncoeﬃcient of a monomial\nz(λ) =\nm\n\u0003\nj =1\nz\nλj +m−j\nj\n(2)\nin the polynomial\nQ(z) = Pν(z)\n\u0003\n1≤i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "The current operator Jℓis an MPO with bond dimension ℓ+ 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV.. CLASSICAL MPS ALGORITHMS",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-iv-classical-mps-algorithms.md",
+      "narrative": null,
+      "content": "Consider a permutation g ∈Sn. Let c(g) be the number\nof cycles in g and νj be the length of the j th cycle. Our\nstrategy is to represent the 2n-qubit state\n|ψg⟩=\nc(g)\n\u0003\nj =1\nJνj |1n0n⟩\n(15)\nby an MPS. To this end, we need the following lemma.\nLemma 2. The current operator Jℓis an MPO with bond\ndimension ℓ+ 2.\nProof. Figure 1 deﬁnes a tensor T ∈C2 ⊗Cℓ+2 ⊗\nCℓ+2 ⊗C2, where C2 represents physical indices and Cℓ+2\nrepresents virtual indices of the MPO. Taking 2n copies of\nT and contracting all virtual indices (horizontal lines) as\nshown in Fig. 1 gives an operator\n2n−1−ℓ\n\u0002\nj =0\n\u000f\n0\n1\n0\n0\n\u0010\nj\nZj +1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-14",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-14.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-15",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-15.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-16",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-16.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-19",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-19.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-20",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-20.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-21",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-21.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p006-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p007-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let g ∈Sn be a permutation and Cg ⊆Sn be the conjugacy class of g. There exists a quantum circuit of size poly(n) that prepares a subset state |Cg⟩= \u0011|Cg| \u0002 h∈Cg |h⟩. (22) We defer the proof till the end of this section. Recall that a QFT over the symmetric group Sn is deﬁned as a unitary operator QFTn with input Hilbert space C[Sn] = span(|g⟩: g ∈Sn) and output Hilbert space \u0012 λ⊢n Cdλ ⊗ Cdλ such that QFTn|g⟩= \u0002 λ⊢n \u0013 dλ n! dλ \u0002 i,j =1 ⟨i|ρλ(g)|j ⟩|λ, i, j ⟩ (23) for all permutations g ∈Sn. Here dλ is the dimension of λ. The inverse QFT acts as QFT† n|λ, i, j ⟩= \u0013 dλ n! \u0002 g∈Sn ⟨i|ρλ(g)|j ⟩∗|g⟩",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V.. QUANTUM ALGORITHM",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-v-quantum-algorithm.md",
+      "narrative": null,
+      "content": "Here we describe a quantum circuit of size poly(n)\nthat prepares a state |ψg⟩/∥ψg∥; see Eq. (15). Our circuit\napplies the quantum Fourier transform over group Sn to a\ncertain subset state constructed in the following lemma.\nLemma 3. Let g ∈Sn be a permutation and Cg ⊆Sn be\nthe conjugacy class of g. There exists a quantum circuit of\nsize poly(n) that prepares a subset state\n|Cg⟩=\n1\n\u0011|Cg|\n\u0002\nh∈Cg\n|h⟩.\n(22)\nWe defer the proof till the end of this section. Recall\nthat a QFT over the symmetric group Sn is deﬁned as a\nunitary operator QFTn with input Hilbert space C[Sn] =\nspan(|g⟩: g ∈Sn) and output",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/conj-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "conj-sec-006-02.md",
+      "narrative": null,
+      "content": "Assume that the polynomial hierarchy does not collapse. Then there exists a sampling problem that can be solved eﬃciently on a quantum computer and that is provably hard for classical randomized algorithms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "Suppose that P0 and P1 are probability distri- butions over a ﬁnite set \u0007 such that P0 is granular, P1 can be sampled by a BPP algorithm and ∥P0 −P1∥1 ≤ϵ for a given ϵ that is at least inverse polynomial in n. Let γ ≥1 be the granularity of P0. There exists a BPPNP algorithm that takes as input a point x ∈\u0007 and outputs an integer k(x) such that P0(x) = γ k(x) |\u0007| (36) for at least a max {0, 1 −20ϵ} fraction of points x ∈\u0007.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-vi-classical-complexity-of-sampling.md",
+      "narrative": null,
+      "content": "In Sec. V we showed that a quantum computer can\neﬃciently sample from probability distributions (28) and\n(29) associated with a given column or row of the char-\nacter table of the symmetric group Sn. Are these sampling\nproblems hard for classical computers?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.. Granularity and quantum advantage",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-a-granularity-and-quantum-advantage.md",
+      "narrative": null,
+      "content": "Let us ﬁrst consider a general setting in which a sam-\npling problem is deﬁned by a probability distribution P\nover some ﬁnite set \u0007 called the sample space and an\nerror tolerance ϵ. We consider inﬁnite families of prob-\nlem instances labeled by an integer n called the problem\nsize. It is required that each point x ∈\u0007 can be speci-\nﬁed by poly(n) bits. Likewise, the probability distribution\nP should admit a succinct classical description of size\npoly(n). We also assume that the error tolerance obeys\nϵ ≥poly(1/n). A classical or quantum algorithm solves\nthe sampling problem if it outputs a samp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "There exists a constant B > 0 such that the fraction of permutations g ∈Sn with c(g) > B log (n) cycles is at most 1/n100 for all large enough n. If c(g) ≤B log n, use the MPS algorithm to compute χλ(g), which takes time nO(log n). Otherwise, if c(g) > B log n, output some ﬁxed integer (say zero). This gives the desired algorithm. ■ Next let us consider the row sampling problem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "There exists a classical algorithm that takes as input an irrep λ of the symmetric group Sn, a permuta- tion g ∈Sn, and outputs an integer k(g) such that k(g) = χλ(g) for at least a 1 −1/n100 fraction of permutations g ∈Sn. The algorithm has runtime nO(log n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "suggests that classically hard instances of the problem can be constructed by choosing the input permu- tation g ∈Sn with a large number of cycles, for example, c(g) ∼√n. In this case best-known classical algorithms for computing the characters χλ(g) appear to require an exponential time. However, we need to check whether per- mutations g with a large number of cycles give rise to instances of the row sampling problem with a granular distribution. This is addressed in the following lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Granularity for row sampling",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "There exist a universal constant A > 0 such that the probability distribu- tion Pg(λ) over partitions λ ⊢n from Eq. (28) is granular whenever g ∈Sn is a permutation with at most A√n/ log n cycles.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.. Row and column sampling",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-b-row-and-column-sampling.md",
+      "narrative": null,
+      "content": "We have already seen that the column sampling prob-\nlem obeys properties (1) and (2). Furthermore, computing\nthe probability Pλ(g) = |χλ(g)|2/n! is #P-hard in the worst\ncase [4]. Moreover, this problem is not contained in #P\nunless the polynomial hierarchy collapses to the second\nlevel [4]. However, it seems unlikely that average-case\nhardness property (3) holds for this problem. In particu-\nlar, the following lemma gives a classical quasipolynomial\ntime algorithm for computing Pλ(g) that succeeds with\nhigh probability if g ∈Sn is a random permutation.\nLemma 5. There exists a classical algorit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "The noncommuting complete symmetric polynomial ˆhk is an MPO with bond dimension 2k + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-vii-classical-mps-algorithm-for-kostka-numbers.md",
+      "narrative": null,
+      "content": "KOSTKA NUMBERS\nIn Sec. IV we showed that Crichigno and Prakash’s con-\nnection between quantum spin chains and characters of the\nsymmetric group can be leveraged in an MPS algorithm\nfor characters. In Ref. [13] they also proved mappings\nbetween spin chains and Kostka numbers and Littlewood-\nRichardson coeﬃcients. Using similar ideas to characters,\nwe show that this correspondence can be used to give an\nMPS algorithm for Kostka numbers.\nKostka numbers appear frequently in combinatorics and\nrepresentation theory. Let λ ⊢n. A semistandard Young\ntableau of shape λ is a ﬁlling of the boxes in the Yo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": ". ACKNOWLEDGMENTS",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-acknowledgments.md",
+      "narrative": null,
+      "content": "ACKNOWLEDGMENTS\nThis research was supported in part by the Perime-\nter Institute for Theoretical Physics. Research at the\nPerimeter Institute is supported by the Government of\nCanada through the Department of Innovation, Science,\nand Economic Development, and by the Province of\nOntario through the Ministry of Colleges and Universi-\nties. D.G. acknowledges support as a Canadian Institute\nfor Advanced Research fellow, in the quantum informa-\ntion science program. L.S. was supported by IBM through",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bq28-r2r7/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": ". DATA AVAILABILITY",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-data-availability.md",
+      "narrative": null,
+      "content": "DATA AVAILABILITY\nThe data supporting the ﬁndings of this article and a\nPython package to implement the MPS algorithms for\ncharacters and Kostka numbers are openly available [33].\n[1] Daniel Grier and Luke Schaeﬀer, in Proceedings of the\n52nd Annual ACM SIGACT Symposium on Theory of Com-\nputing (Association for Computing Machinery, Chicago,\nUSA, 2020), p. 875.\n[2] David Lawrence Johnson, Minimal permutation represen-\ntations of ﬁnite groups, Am. J. Math. 93, 857 (1971).\n[3] Charles Thomas Hepler, On the complexity of com-\nputing\ncharacters\nof\nﬁnite\ngroups.\nMaster’s\nthesis.\nhttps://prism.ucalga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

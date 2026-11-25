@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.02281v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations",
+  "contains": [
+    "library/arxiv-2412.02281v1/sections/sec-front-matter",
+    "library/arxiv-2412.02281v1/sections/sec-000",
+    "library/arxiv-2412.02281v1/sections/sec-001",
+    "library/arxiv-2412.02281v1/sections/sec-002",
+    "library/arxiv-2412.02281v1/sections/sec-003",
+    "library/arxiv-2412.02281v1/sections/sec-004",
+    "library/arxiv-2412.02281v1/sections/sec-005",
+    "library/arxiv-2412.02281v1/sections/sec-006",
+    "library/arxiv-2412.02281v1/sections/sec-007",
+    "library/arxiv-2412.02281v1/sections/sec-008",
+    "library/arxiv-2412.02281v1/sections/sec-009",
+    "library/arxiv-2412.02281v1/sections/sec-010",
+    "library/arxiv-2412.02281v1/sections/sec-011",
+    "library/arxiv-2412.02281v1/sections/sec-012",
+    "library/arxiv-2412.02281v1/sections/sec-013",
+    "library/arxiv-2412.02281v1/sections/sec-014",
+    "library/arxiv-2412.02281v1/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0\n\n**Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations**\n\n*Jinghong Lin, Yiming Ma and Xiaomeng Xu*\n\n28 pp, 17 sections.\n\n**Abstract.** We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometric q-diﬀerence system with an irregular singularity. We show that by letting q →1, the q-Stokes matrices recover the known expressions of the Stokes matrices of the corresponding conﬂuent hypergeometric diﬀerential system.\n\n**Outline.** Front matter; Introduction; Connection Formula of the Equation (5); Basic Notations; Basic Hypergeometric Series; q-Borel Resummation; Explicit Expression of Connection Formula of t; Connection Matrix, q-Stokes Matrix of the Syst; Fundamental Solution, Connection Matrix and q-; Diagonalization of the Upper Left Submatrix of; Fundamental Solutions of the System (33); Relationship between the System (33) and the E; Explicit Evaluation of Connection Matrix and q; Explicit Evaluation of Connection Matrix and q; Behavior of the Equation (5) and the System (2; Behavior of the Connection Formula as q1; Behavior of Connection Matrix and q-Stokes Mat",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2412.02281&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2412.02281v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2412.02281v1.pdf",
+    "source_sha256": "ac4127cf4994b2ba5ef279a9c54ef591c91f1ff089a0c90bc560f1f6912234c2",
+    "pages": 28,
+    "arxiv": {
+      "id": "2412.02281",
+      "version": "1",
+      "primary_class": "math.CA",
+      "stamp_date": "3 Dec 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

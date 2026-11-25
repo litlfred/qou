@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
+  "contains": [
+    "library/candetgl/sections/sec-front-matter",
+    "library/candetgl/sections/sec-000",
+    "library/candetgl/sections/sec-001",
+    "library/candetgl/sections/sec-002",
+    "library/candetgl/sections/sec-003",
+    "library/candetgl/sections/sec-004",
+    "library/candetgl/sections/sec-005",
+    "library/candetgl/sections/sec-006",
+    "library/candetgl/sections/sec-007",
+    "library/candetgl/sections/sec-008",
+    "library/candetgl/sections/sec-009",
+    "library/candetgl/sections/sec-010",
+    "library/candetgl/sections/sec-011",
+    "library/candetgl/sections/sec-012",
+    "library/candetgl/sections/sec-013",
+    "library/candetgl/sections/sec-014",
+    "library/candetgl/sections/sec-015",
+    "library/candetgl/sections/sec-016",
+    "library/candetgl/sections/sec-017",
+    "library/candetgl/sections/sec-018",
+    "library/candetgl/sections/sec-019",
+    "library/candetgl/sections/sec-020",
+    "library/candetgl/sections/sec-021",
+    "library/candetgl/sections/sec-022",
+    "library/candetgl/sections/sec-023",
+    "library/candetgl/sections/sec-024",
+    "library/candetgl/sections/sec-025"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES\n\n**The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics**\n\n*Jason Cantarella, Dennis DeTurck, and Herman Gluck*\n\n31 pp, 27 sections.\n\n**Outline.** Front matter; I INTRODUCTION; II PRELIMINARIES; A Writhing, helicity, and the Biot–Savart oper; B Applications: A quick guide to the literatur; C The Hodge decomposition theorem; 1 FKÄﬂuxless knots; 2 HKÄharmonic knots; 3 CGÄcurly gradients; 4 HGÄharmonic gradients; 5 GGÄgrounded gradients; III STANDARD INFORMATION ABOUT THE BIOT–SAVART; A The basic facts; C Examples; IV PROOF OF THEOREM A; B Proof of Addendum to Theorem A; C Proof of Corollary to Theorem A; V PROOF OF THEOREM B",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "candetgl",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "candetgl.pdf",
+    "source_sha256": "d788af715428b8b2cafabe8caf6e8c0df32f5c04a12006778221c189a7701efc",
+    "pages": 31,
+    "arxiv": null,
+    "doi": "10.1063/1.1329659",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

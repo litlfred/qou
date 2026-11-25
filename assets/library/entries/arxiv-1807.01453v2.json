@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1807.01453v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The search for new phenomena at high energy scales has\ninspired many diﬀerent - sometimes complementary - pro-\nposals for new physics. From adding extra scalars and/or\nfermion generations to the Standard Model (SM), extend-\ning its gauge sector, adding ﬂavor symmetries, all the way\nto considering complete grand uniﬁed models where most\nof the salient features of contemporary particle physics are\naddressed. So far no evidence of any such extensions has\nshowed up in any experiment. At the same time, solutions\nto several interesting and important questions remain elu-\nsive. Some of them are: Wher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Standard Model Extension with Flipped Generations\nCarlos Alvaradoa,b, Alfredo Arandac\naDepartment of Physics, University of Notre Dame, 225 Nieuwland Hall, Notre Dame, Indiana 46556, USA.\nbDepartment of Physics, Tsinghua University, Beijing 100084, China\ncFacultad de Ciencias, CUICBAS, Universidad de Colima, 28040 Colima, M´exico\nAbstract\nAn extension of the Standard Model is presented that leads to the possible existence of new gauge bosons with masses\nin the range of a few TeV. Due to the fact that their couplings to Standard Model fermions are strongly suppressed,\nit is possible for them to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The model",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-the-model.md",
+      "narrative": null,
+      "content": "consist of three ﬂipped fermion generations and one X-\nneutral scalar bidoublet.\nIn the rest of the paper we\npresent a section with a detailed description of the model,\nanother one with its salient phenomenological features,\nand we end with our conclusions. We have also included\ntwo short appendices with details pertaining to anomaly\ncancellation and the scalar potential of the model.\n2. The model\nAs discussed in the introduction, the gauge symmetry\nof the model is SU(3)C × SU(2)w × SU(2)hid × U(1)X.\nIt consists of the usual three generations of SM fermions\n—taken to be singlets of SU(2)hid —a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phenomenology highlights",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-phenomenology-highlights.md",
+      "narrative": null,
+      "content": "Our main intention in this paper is to present a model\nwith the characteristics mentioned above, namely (i) no\nadditional, stable charged fermions, and (ii) neutrino\nmasses occuring only as dim-5 operators. A complete phe-\nnomenological analysis of the model is beyond the scope\nof this paper and we intend to present it in a later publi-\ncation, however there are a few notable phenomenological\naspects that we want to comment on this section with the\npurpose of further motivating our set up.\nFirst, the model is free of tree-level ﬂavor changing neu-\ntral currents (FCNCs) by construction.\nIt was",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-conclusions.md",
+      "narrative": null,
+      "content": "We have presented a set up where new generations of\nfermions and gauge interactions are incorporated into a\nmodel that is consistent with current experimental re-\nsults. The model has gauge symmetry SU(2)C ×SU(2)w×\nSU(2)hid×U(1)X, three additional generations of fermions\nwith ﬂipped charges and chiralities, and three scalar multi-\nplets (two doublets and a bidoublet). The set up uses the\nfollowing convention for additional fermions and scalars:\nfor any ﬁeld that we add that has a counterpart within\nthe SM, its X-charge (and chirality in the case of fermions)\nwill be ﬂipped. If additional ﬁelds",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A Anomaly coefficients",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-appendix-a-anomaly-coefficients.md",
+      "narrative": null,
+      "content": "Start with the charge-conjugates of the RH-chiral hid-\nden quarks and leptons\nQ\n′c\nR ∼(¯3, 1, 2, +1/6),\nR\n′c ∼(1, 1, 2, −1/2)\n(A.1)\nwhere generation indices are temporarily suppressed.\nThere are new contributions Anew(3, 3, 1), Anew(J, J, 1)\nand Anew(1, 1, 1) to the SM coeﬃcients, plus an entirely\nnew coeﬃcient A(2hid, 2hid, 1) with no SM counterpart.\nFor the former, with Ngen the number of generations,\nAnew(3, 3, 1) = Ngen\n\u0002\n2(+1/6) + (−2/3) + (+1/3)\n\u0003\n= 0,\n(A.2)\nAnew(J, J, 1) = Ngen\n\u0002\n3{2(+1/6) + (−2/3) + (+1/3)}\n+ {2(−1/2) + (+1)}\n\u0003\n= 0,\n(A.3)\nAnew(1, 1, 1) = Ngen\n\u0002\n3{2(+1/6)3 + (−2/3)3 + (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1807.01453v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B Bidoublet potential",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-appendix-b-bidoublet-potential.md",
+      "narrative": null,
+      "content": "The potential VB(H, Hhid) written in Eq.(8) is explicitly\nexpanded below\nVB(H, Hhid)\n=\n−µ2\nBTr\n\u0002\nB†B\n\u0003\n−eµ2\nB\n\u0000Tr\n\u0002 ˜BB†] + Tr\n\u0002 ˜B†B\n\u0003\u0001\n+\nλ(1)\nB Tr\n\u0002\nB†B\n\u00032 + λ(2)\nB\n\u0012\nTr\n\u0002 eBB†\u00032 + Tr\n\u0002 eB†B\n\u00032\n\u0013\n+\nλ(3)\nB Tr\n\u0002 eBB†\u0003\nTr\n\u0002 eB†B\n\u0003\n+\nλ(4)\nB Tr\n\u0002\nB†B\n\u0003\u0012\nTr\n\u0002 eB†B\n\u0003\n+ Tr\n\u0002 eBB†\u0003\u0013\n+\nλBHTr\n\u0002\nB†B\n\u0003\nH†H + λ′\nBH\n\u0002\nB†B\n\u0003\nH†\nhidHhid\n+\neλBH\n\u0012\nTr\n\u0002 ˜BB†] + Tr\n\u0002 ˜B†B\n\u0003\u0013\nH†H\n+\neλ′\nBH\n\u0012\nTr\n\u0002 ˜BB†] + Tr\n\u0002 ˜B†B\n\u0003\u0013\nH†\nhidHhid\n+\n\u0012\nµHBHH†B eHhid + eµ′\nHBHH† eB eHhid + H.c.\n\u0013\n.\nThis is the most general gauge-invariant potential in two\ndoublets and one X = 0 bidoublet [43]. Its non-triviality\nis due to the various p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

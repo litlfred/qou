@@ -1,0 +1,1073 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1101.0956v3",
+  "title": "arxiv-1101.0956v3",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 17,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 18,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The category of generalized Lie algebroids",
+      "number": "3",
+      "page": 21,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-the-category-of-generalized-lie-algebroids"
+    },
+    {
+      "level": 2,
+      "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized"
+    },
+    {
+      "level": 2,
+      "title": "Interior Differential Systems",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-32-interior-differential-systems"
+    },
+    {
+      "level": 1,
+      "title": "Exterior differential calculus",
+      "number": "4",
+      "page": 23,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-exterior-differential-calculus"
+    },
+    {
+      "level": 2,
+      "title": "Exterior Differential Systems",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-41-exterior-differential-systems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 17,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The category of generalized Lie algebroids",
+      "number": "2",
+      "page": 18,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-the-category-of-generalized-lie-algebroids"
+    },
+    {
+      "level": 1,
+      "title": "Interior Differential Systems",
+      "number": "3",
+      "page": 21,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-interior-differential-systems"
+    },
+    {
+      "level": 1,
+      "title": "Exterior differential calculus",
+      "number": "4",
+      "page": 23,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-exterior-differential-calculus"
+    },
+    {
+      "level": 1,
+      "title": "Exterior Differential Systems",
+      "number": "5",
+      "page": 36,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-exterior-differential-systems"
+    },
+    {
+      "level": 1,
+      "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+      "number": "6",
+      "page": 38,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-torsion-and-curvature-forms-identities-of-cart"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "7",
+      "words": 2290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "algebroid associated",
+          "heading": false
+        },
+        {
+          "term": "algebroid structures",
+          "heading": false
+        },
+        {
+          "term": "category gla",
+          "heading": false
+        },
+        {
+          "term": "bv-morphism",
+          "heading": false
+        },
+        {
+          "term": "generalized lie",
+          "heading": false
+        },
+        {
+          "term": "idn",
+          "heading": false
+        },
+        {
+          "term": "exterior diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1101.0956v3 [math.DG] 25 Jul 2011 ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES by CONSTANTIN M. ARCUS¸ Abstract In this paper we present the category of generalized Lie algebroids. Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category. 2000 Mathematics Subject Classiﬁcation: 00A69, 58A15, 58B34.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1101.0956v3/blocks/prose-sec-front-matter",
+        "library/arxiv-1101.0956v3/blocks/prop-sec-front-matter-01",
+        "library/arxiv-1101.0956v3/blocks/rem-sec-front-matter-02",
+        "library/arxiv-1101.0956v3/blocks/ex-sec-front-matter-03",
+        "library/arxiv-1101.0956v3/blocks/rem-sec-front-matter-04",
+        "library/arxiv-1101.0956v3/blocks/thm-sec-front-matter-05",
+        "library/arxiv-1101.0956v3/blocks/prop-sec-front-matter-06",
+        "library/arxiv-1101.0956v3/blocks/thm-sec-front-matter-07"
+      ]
+    },
+    {
+      "id": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized",
+      "number": "3.1",
+      "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebroid",
+          "heading": true
+        },
+        {
+          "term": "pull-back lie",
+          "heading": true
+        },
+        {
+          "term": "generalized lie",
+          "heading": true
+        },
+        {
+          "term": "vector ﬁbred",
+          "heading": false
+        }
+      ],
+      "extract": "The pull-back Lie algebroid of a generalized Lie algebroid Let \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 be a generalized Lie algebroid. Let AFF be a vector ﬁbred (n + p)-atlas for the vector bundle (F, ν, N) and let AFTM be a vector ﬁbred (m + m)-atlas for the vector bundle (TM, τ M, M). Let (h∗F, h∗ν, M) be the pull-back vector bundle through h. If (U, ξU) ∈AFTM and (V, sV ) ∈AFF such that U ∩h−1 (V )̸ = φ, then we deﬁne",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-32-interior-differential-systems",
+      "number": "3.2",
+      "title": "Interior Differential Systems",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 2110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "exterior diﬀerentiation",
+          "heading": false
+        },
+        {
+          "term": "exterior diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "vector subbundle",
+          "heading": false
+        },
+        {
+          "term": "generalized lie",
+          "heading": false
+        },
+        {
+          "term": "ids",
+          "heading": false
+        },
+        {
+          "term": "pull-back lie",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan type",
+          "heading": false
+        }
+      ],
+      "extract": "Interior Diﬀerential Systems Let \u0010 (h∗F, h∗ν, M) , [, ]h∗F , \u0010h∗F ρ , IdM \u0011\u0011 be the pull-back Lie algebroid of the generali- zed Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 . Deﬁnition 3.2.1 Any vector subbundle (E, π, M) of the vector bundle (h∗F, h∗ν, M) will be called interior diﬀerential system (IDS) of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 . In particular, if h = IdN = η, then any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-41-exterior-differential-systems",
+      "number": "4.1",
+      "title": "Exterior Differential Systems",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebroid left",
+          "heading": false
+        },
+        {
+          "term": "ast left",
+          "heading": false
+        },
+        {
+          "term": "ast omega",
+          "heading": false
+        },
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "ast theta",
+          "heading": false
+        },
+        {
+          "term": "ast rho",
+          "heading": false
+        },
+        {
+          "term": "ast mathcal",
+          "heading": false
+        },
+        {
+          "term": "ids left",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\left( \\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right] _{h^{\\ast }F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ be the pull-back Lie algebroid of the generalized Lie algebroid $\\left( \\left( F,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)$. **Definition 5.1** Any ideal $\\left( \\mathcal{I},+,\\cdot \\right)$ of the exterior differential algebra of the pull-back",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "2",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcus yahoo",
+          "heading": false
+        },
+        {
+          "term": "lie algebroids",
+          "heading": false
+        },
+        {
+          "term": "exterior diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential calculus",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential systems",
+          "heading": false
+        },
+        {
+          "term": "interior diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "generalized lie",
+          "heading": false
+        },
+        {
+          "term": "cartan type",
+          "heading": false
+        }
+      ],
+      "extract": "[1] C. M. Arcus, The generalized Lie algebroids and their applications, arXiv: 1007.1451v2, math-ph, 10 Aug (2010). [2] R.L. Bryant, S.S. Chern, R.B. Gardner, H.L. Goldschmidt, and P.A. Griﬃths, Ex- terior Diﬀerential Systems, Springer-Verlag, 1991. [3] J. Grabowski, P. Urbanski, Lie algebroids and Poisson-Nijenhuis structures, Rep. Math. Phys. 40 (1997), 196-208. [4] P Griﬃths, Exterior Diﬀerential Systems and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ids left",
+          "heading": false
+        },
+        {
+          "term": "algebroid left",
+          "heading": false
+        },
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "subbundle left",
+          "heading": false
+        },
+        {
+          "term": "overset ast",
+          "heading": false
+        },
+        {
+          "term": "gamma left",
+          "heading": false
+        },
+        {
+          "term": "mathcal left",
+          "heading": false
+        },
+        {
+          "term": "exterior differential",
+          "heading": false
+        }
+      ],
+      "extract": "Using the notion of generalized Lie algebroid introduced in the paper $[1]$ we present the category of generalized Lie algebroids. In the framework of Lie algebroids (see $\\left[ 2\\right]$) we know the following **Theorem** (of Maurer-Cartan type) *If* $((F,\\nu ,N),[,]_{F},(\\rho ,Id_{N}))$ *is a Lie algebroid and* $d^{F}$ *is the exterior differentiation operator of the exterior differential*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-category-of-generalized-lie-algebroids",
+      "number": "2",
+      "title": "The category of generalized Lie algebroids",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1009,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imath acute",
+          "heading": false
+        },
+        {
+          "term": "imath prime",
+          "heading": false
+        },
+        {
+          "term": "tilde imath",
+          "heading": false
+        },
+        {
+          "term": "imath right",
+          "heading": false
+        },
+        {
+          "term": "acute alpha",
+          "heading": false
+        },
+        {
+          "term": "acute left",
+          "heading": false
+        },
+        {
+          "term": "acute partial",
+          "heading": false
+        },
+        {
+          "term": "underrightarrow left",
+          "heading": false
+        }
+      ],
+      "extract": "In general, if $\\mathcal{C}$ is a category, then we denote $\\left\\vert \\mathcal{C}\\right\\vert$ the class of objects and for any $A,B{\\in } \\left\\vert \\mathcal{C}\\right\\vert$, we denote $\\mathcal{C}\\left( A,B\\right)$ the set of morphisms of $A$ source and $B$ target. Let$\\mathbf{~Vect},$ $\\mathbf{Liealg},~\\mathbf{Mod}$**,** $\\mathbf{Man}$ and $\\mathbf{B}^{ \\mathbf{v}}$ be the category of real vector spaces, Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-interior-differential-systems",
+      "number": "3",
+      "title": "Interior Differential Systems",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overset ast",
+          "heading": false
+        },
+        {
+          "term": "ast left",
+          "heading": false
+        },
+        {
+          "term": "algebroid left",
+          "heading": false
+        },
+        {
+          "term": "ast rho",
+          "heading": false
+        },
+        {
+          "term": "ids left",
+          "heading": false
+        },
+        {
+          "term": "varkappa right",
+          "heading": false
+        },
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "subbundle left",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\left( \\left( F,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)$ be an object of the category $\\mathbf{GLA}$. Let $\\mathcal{AF}_{F}$ be a vector fibred $\\left( n+p\\right)$-atlas for the vector bundle $\\left( F,\\nu ,N\\right)$ and let $\\mathcal{AF}_{TM}$ be a vector fibred $\\left( m+m\\right)$-atlas for the vector bundle $\\left( TM,\\tau _{M},M\\right)$. Let $\\left( h^{\\ast }F,h^{\\ast }\\nu",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-exterior-differential-calculus",
+      "number": "4",
+      "title": "Exterior differential calculus",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 36,
+      "labelStart": "8",
+      "labelEnd": "21",
+      "words": 5041,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array leqno",
+          "heading": false
+        },
+        {
+          "term": "leqno left",
+          "heading": false
+        },
+        {
+          "term": "differential exterior",
+          "heading": true
+        },
+        {
+          "term": "array underset",
+          "heading": false
+        },
+        {
+          "term": "overset underset",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "prime wedge",
+          "heading": false
+        },
+        {
+          "term": "theta wedge",
+          "heading": false
+        }
+      ],
+      "extract": "We propose an exterior differential calculus in the general framework of generalized Lie algebroids. As any Lie algebroid can be regarded as a generalized Lie algebroid, in particular, we obtain a new point of view over the exterior differential calculus for Lie algebroids. Let $\\left( \\left( F,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right) \\in \\left\\vert \\mathbf{GLA}\\right\\vert$ be.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-exterior-differential-systems",
+      "number": "5",
+      "title": "Exterior Differential Systems",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebroid left",
+          "heading": false
+        },
+        {
+          "term": "ast left",
+          "heading": false
+        },
+        {
+          "term": "ast omega",
+          "heading": false
+        },
+        {
+          "term": "lie algebroid",
+          "heading": false
+        },
+        {
+          "term": "ast theta",
+          "heading": false
+        },
+        {
+          "term": "ast rho",
+          "heading": false
+        },
+        {
+          "term": "ast mathcal",
+          "heading": false
+        },
+        {
+          "term": "ids left",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\left( \\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right] _{h^{\\ast }F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ be the pull-back Lie algebroid of the generalized Lie algebroid $\\left( \\left( F,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)$. **Definition 5.1** Any ideal $\\left( \\mathcal{I},+,\\cdot \\right)$ of the exterior differential algebra of the pull-back",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-torsion-and-curvature-forms-identities-of-cart",
+      "number": "6",
+      "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 44,
+      "labelStart": "23",
+      "labelEnd": "29",
+      "words": 1906,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bianchi type",
+          "heading": true
+        },
+        {
+          "term": "cartan type",
+          "heading": true
+        },
+        {
+          "term": "idm",
+          "heading": false
+        },
+        {
+          "term": "lie algebroids",
+          "heading": false
+        },
+        {
+          "term": "curvature",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "exterior diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": true
+        }
+      ],
+      "extract": "Torsion and curvature forms. Identities of Cartan and Bianchi type Using the theory of linear connections of Eresmann type presented in [1] for the diagram: (6.1) E π \u000f \u0010 F, [, ]F,h , (ρ, IdN) \u0011 ν \u000f M h / N where (E, π, M) ∈|Bv| and \u0010 (F, ν, N) , [, ]F,h , (ρ, IdN) \u0011 ∈|GLA| , we obtain a linear ρ-connection ρΓ for the vector bundle (E, π, M) by components ρΓa bα. Using the components of this linear ρ-connection, we",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lie algebroid",
+      "heading": true
+    },
+    {
+      "term": "algebroid left",
+      "heading": false
+    },
+    {
+      "term": "algebroid associated",
+      "heading": false
+    },
+    {
+      "term": "algebroid structure",
+      "heading": false
+    },
+    {
+      "term": "ids left",
+      "heading": false
+    },
+    {
+      "term": "ast right",
+      "heading": false
+    },
+    {
+      "term": "generalized lie",
+      "heading": true
+    },
+    {
+      "term": "involutive ids",
+      "heading": false
+    },
+    {
+      "term": "leqno left",
+      "heading": false
+    },
+    {
+      "term": "ast rho",
+      "heading": false
+    },
+    {
+      "term": "overset ast",
+      "heading": false
+    },
+    {
+      "term": "array ast",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1101.0956v3"
+  }
+}

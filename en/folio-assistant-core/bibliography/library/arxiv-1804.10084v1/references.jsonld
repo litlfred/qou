@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1804.10084v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+      "dcterms:creator": [
+        "Garbe, Kevin"
+      ],
+      "dcterms:issued": "D:20180426",
+      "dcterms:identifier": "https://arxiv.org/abs/1804.10084",
+      "dcterms:abstract": "We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy concentration bounds similar to McDiarmid’s inequality for indepen- dent random variables. We prove such a concentration bound for random variables satisfying the condition of negative regression, correcting an earlier proof [5].",
+      "dcterms:source": "library/arxiv-1804.10084v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1804.10084v1"
+    }
+  ]
+}

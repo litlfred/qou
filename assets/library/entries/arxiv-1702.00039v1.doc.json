@@ -1,0 +1,3203 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1702.00039v1",
+  "title": "arxiv-1702.00039v1",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Declaration of intent",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-declaration-of-intent"
+    },
+    {
+      "level": 2,
+      "title": "...Bum! Explosion of the field",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-bum-explosion-of-the-field"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Classical level: Coxeter systems",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-classical-level-coxeter-systems"
+    },
+    {
+      "level": 2,
+      "title": "Some definitions",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-some-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Baby examples",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-baby-examples"
+    },
+    {
+      "level": 2,
+      "title": "Generalizing the baby examples: (infinite) regular polygons",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-generalizing-the-baby-examples-infinite-regul"
+    },
+    {
+      "level": 2,
+      "title": "Generalizing the baby examples: tesselations",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-24-generalizing-the-baby-examples-tesselations"
+    },
+    {
+      "level": 3,
+      "title": "Tesselations of the Euclidean plane",
+      "number": "2.4.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-241-tesselations-of-the-euclidean-plane"
+    },
+    {
+      "level": 3,
+      "title": "Tesselations of the hyperbolic plane",
+      "number": "2.4.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-242-tesselations-of-the-hyperbolic-plane"
+    },
+    {
+      "level": 2,
+      "title": "Generalizing the baby examples: more dimensions",
+      "number": "2.5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-25-generalizing-the-baby-examples-more-dimension"
+    },
+    {
+      "level": 2,
+      "title": "More examples",
+      "number": "2.6",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-26-more-examples"
+    },
+    {
+      "level": 2,
+      "title": "Bruhat order and an important property",
+      "number": "2.7",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-27-bruhat-order-and-an-important-property"
+    },
+    {
+      "level": 1,
+      "title": "Quantum level: Hecke algebras",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-3-quantum-level-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Kazhdan-Lusztig's theory",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-31-kazhdan-lusztigs-theory"
+    },
+    {
+      "level": 2,
+      "title": "Calculations of KL bases in examples",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-32-calculations-of-kl-bases-in-examples"
+    },
+    {
+      "level": 3,
+      "title": "Baby example A",
+      "number": "3.2.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-321-baby-example-a"
+    },
+    {
+      "level": 3,
+      "title": "Baby example B",
+      "number": "3.2.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-322-baby-example-b"
+    },
+    {
+      "level": 3,
+      "title": "Example C",
+      "number": "3.2.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-323-example-c"
+    },
+    {
+      "level": 3,
+      "title": "Example D",
+      "number": "3.2.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-324-example-d"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-33-proof-of-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Existence",
+      "number": "3.3.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-331-existence"
+    },
+    {
+      "level": 3,
+      "title": "Uniqueness",
+      "number": "3.3.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-332-uniqueness"
+    },
+    {
+      "level": 3,
+      "title": "{bx}xW is a basis",
+      "number": "3.3.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-333-bxxw-is-a-basis"
+    },
+    {
+      "level": 2,
+      "title": "Our favorite open questions about Hecke algebras",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-34-our-favorite-open-questions-about-hecke-algeb"
+    },
+    {
+      "level": 1,
+      "title": "Categorical level in the baby example A",
+      "number": "4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-4-categorical-level-in-the-baby-example-a"
+    },
+    {
+      "level": 2,
+      "title": "The objects: Soergel bimodules",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-41-the-objects-soergel-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Stability of Soergel bimodules",
+      "number": "4.2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-42-stability-of-soergel-bimodules"
+    },
+    {
+      "level": 3,
+      "title": "The crucial phenomena",
+      "number": "4.2.1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-421-the-crucial-phenomena"
+    },
+    {
+      "level": 2,
+      "title": "BsBrBs.5-.5.5-.5.5-.5.5-.5BsrsBs",
+      "number": "4.3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "im(1-e).5-.5.5-.5.5-.5.5-.5Bsrs.",
+      "number": "4.4",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Step 1",
+      "number": "4.4.1",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-441-step-1"
+    },
+    {
+      "level": 3,
+      "title": "Step 2",
+      "number": "4.4.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-442-step-2"
+    },
+    {
+      "level": 2,
+      "title": "Soergel's categorification Theorem",
+      "number": "4.5",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-45-soergels-categorification-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Indecomposables",
+      "number": "4.5.1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-451-indecomposables"
+    },
+    {
+      "level": 3,
+      "title": "How to produce an algebra from Soergel bimodules",
+      "number": "4.5.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-452-how-to-produce-an-algebra-from-soergel-bimod"
+    },
+    {
+      "level": 3,
+      "title": "Recovering the Hecke algebra",
+      "number": "4.5.3",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-453-recovering-the-hecke-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+      "number": "5",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1"
+    },
+    {
+      "level": 2,
+      "title": "Soergel category B for any Coxeter system over R",
+      "number": "5.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-51-soergel-category-b-for-any-coxeter-system-ove"
+    },
+    {
+      "level": 2,
+      "title": "Drawing morphisms: one color",
+      "number": "5.2",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-52-drawing-morphisms-one-color"
+    },
+    {
+      "level": 2,
+      "title": "One color light leaves",
+      "number": "5.3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-53-one-color-light-leaves"
+    },
+    {
+      "level": 2,
+      "title": "Two colors light leaves",
+      "number": "5.4",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-54-two-colors-light-leaves"
+    },
+    {
+      "level": 1,
+      "title": "Light leaves in general",
+      "number": "6",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-6-light-leaves-in-general"
+    },
+    {
+      "level": 2,
+      "title": "Adjunction",
+      "number": "6.1",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-61-adjunction"
+    },
+    {
+      "level": 2,
+      "title": "A new morphism",
+      "number": "6.2",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-62-a-new-morphism"
+    },
+    {
+      "level": 3,
+      "title": "The morphism fsr",
+      "number": "6.2.1",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-621-the-morphism-fsr"
+    },
+    {
+      "level": 3,
+      "title": "Examples",
+      "number": "6.2.2",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-622-examples"
+    },
+    {
+      "level": 2,
+      "title": "Path morphisms",
+      "number": "6.3",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-63-path-morphisms"
+    },
+    {
+      "level": 2,
+      "title": "The tree Ts",
+      "number": "6.4",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-64-the-tree-ts"
+    },
+    {
+      "level": 2,
+      "title": "Construction of the double leaves basis",
+      "number": "6.5",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-65-construction-of-the-double-leaves-basis"
+    },
+    {
+      "level": 1,
+      "title": "Final calculations: examples B, C and D",
+      "number": "7",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-7-final-calculations-examples-b-c-and-d"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "audience",
+          "heading": false
+        },
+        {
+          "term": "comfortable",
+          "heading": false
+        }
+      ],
+      "extract": "The basics NICOLAS LIBEDINSKY Abstract This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-declaration-of-intent",
+      "number": "1.1",
+      "title": "Declaration of intent",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "follow-ups",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "year",
+          "heading": false
+        },
+        {
+          "term": "sheaves",
+          "heading": false
+        }
+      ],
+      "extract": "As said in the abstract, this paper is an introduction to Soergel bimodules. We give many examples and show explicit calculations with the Hecke algebra and the Hecke category (one of its incarnations being Soergel bimodules). Most of the other Hecke categories (categorifications of the Hecke algebra) such as category $\\mathcal{O}$, Elias-Williamson diagrammatic category, Sheaves on moment graphs, 2-braid groups and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-bum-explosion-of-the-field",
+      "number": "1.2",
+      "title": "...Bum! Explosion of the field",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjecture predicting",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig polynomials",
+          "heading": false
+        },
+        {
+          "term": "disproof",
+          "heading": false
+        },
+        {
+          "term": "james conjecture",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "explosion",
+          "heading": true
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "algebraic groups",
+          "heading": false
+        }
+      ],
+      "extract": "Soergel bimodules were (and are) in the heart of an explosion of new discoveries in representation theory, algebraic combinatorics, algebraic geometry and knot theory. We give a list of some results obtained using Soergel bimodules in the last five years. 1. **Algebraic groups:** A disproof of Lusztig's conjecture predicting the simple characters of reductive algebraic groups (1980). This was probably the most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-acknowledgements",
+      "number": "1.3",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "behn",
+          "heading": false
+        },
+        {
+          "term": "reyes",
+          "heading": false
+        },
+        {
+          "term": "cea",
+          "heading": false
+        }
+      ],
+      "extract": "This work is supported by the Fondecyt project 1160152 and the Anillo project ACT 1415 PIA Conicyt. The author would like to thank very warmly Macarena Reyes for her hard work in doing most of the pictures. I would also like to thank David Plaza, Paolo Sentinelli, Sebastián Cea and Antonio Behn for detailed comments and suggestions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-2-classical-level-coxeter-systems",
+      "number": "2",
+      "title": "Classical level: Coxeter systems",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Classical level: Coxeter systems",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-21-some-definitions",
+      "number": "2.1",
+      "title": "Some definitions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coxeter system",
+          "heading": false
+        },
+        {
+          "term": "coxeter matrix",
+          "heading": false
+        },
+        {
+          "term": "some definitions",
+          "heading": true
+        },
+        {
+          "term": "underbrace",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Some definitions label=\"Some definitions\"} A *Coxeter matrix* is a symmetric matrix with entries in $\\{1,2,\\ldots\\}\\cup \\{\\infty\\}$, diagonal entries $1$ and off-diagonal entries at least $2$. ::: defi A pair $(W,S)$, where $W$ is a group and $S$ is a finite subset of $W,$ is called a *Coxeter system* if $W$ admits a presentation by generators and relations given by $$\\langle s\\in S\\ \\vert \\ (sr)^{m_{sr}}=e\\ \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-baby-examples",
+      "number": "2.2",
+      "title": "Baby examples",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm symm",
+          "heading": false
+        },
+        {
+          "term": "baby",
+          "heading": true
+        },
+        {
+          "term": "group mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "We start with two baby examples of Coxeter systems. In these two cases (as well as in examples (C) and (D)) we will calculate explicitly the two key objects in the theory, namely the Kazhdan-Lusztig basis and the indecomposable Soergel bimodules. \\(A\\) : The group $\\mathrm{Symm}(\\Delta)$ of symmetries of an equilateral triangle is isomorphic to the group with $6$ elements $$\\langle s, r\\ \\vert \\ s^2=r^2=e, \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-generalizing-the-baby-examples-infinite-regul",
+      "number": "2.3",
+      "title": "Generalizing the baby examples: (infinite) regular polygons",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular polygons",
+          "heading": true
+        },
+        {
+          "term": "mathrm symm",
+          "heading": false
+        },
+        {
+          "term": "sided regular",
+          "heading": false
+        },
+        {
+          "term": "reflection through",
+          "heading": false
+        },
+        {
+          "term": "geometric limit",
+          "heading": false
+        },
+        {
+          "term": "group mathrm",
+          "heading": false
+        },
+        {
+          "term": "bigcirc",
+          "heading": false
+        },
+        {
+          "term": "baby",
+          "heading": true
+        }
+      ],
+      "extract": "One natural way to generalize the baby examples is to consider the symmetries of a regular $n$-sided polygon. This is also a finite Coxeter group denoted $I_2(n)$ (the subindex $2$ in this notation denotes the rank of the Coxeter system, as defined in Section [\\[Some definitions\\]](#Some definitions){reference-type=\"ref\" reference=\"Some definitions\"}). A presentation of this group is given by \\(C\\) : $I_2(n)=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-generalizing-the-baby-examples-tesselations",
+      "number": "2.4",
+      "title": "Generalizing the baby examples: tesselations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 39,
+      "summary": null,
+      "keywords": [],
+      "extract": "We will denote by $[n,p,q]$ the Coxeter system with simple reflections $S=\\{s,r,t\\}$ and with Coxeter matrix given by $m_{sr}=n, m_{st}=p$ and $m_{rt}=q.$",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-241-tesselations-of-the-euclidean-plane",
+      "number": "2.4.1",
+      "title": "Tesselations of the Euclidean plane",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "tesselation",
+          "heading": false
+        },
+        {
+          "term": "equilateral",
+          "heading": false
+        },
+        {
+          "term": "tiling",
+          "heading": false
+        }
+      ],
+      "extract": "A natural way to generalize the equilateral triangle is to consider the following tesselation of the Euclidean plane by equilateral triangles <figure> <div class=\"center\"> <img src=\"tiling1.png\" /> </div> <figcaption>[6,3,2]</figcaption> </figure> This tesselation can be generalized by coloring this tiling as in Figure [\\[triang\\]](#triang){reference-type=\"ref\" reference=\"triang\"} or by tiling the plane with other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-242-tesselations-of-the-hyperbolic-plane",
+      "number": "2.4.2",
+      "title": "Tesselations of the hyperbolic plane",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic plane",
+          "heading": true
+        },
+        {
+          "term": "honey",
+          "heading": false
+        },
+        {
+          "term": "tesselation",
+          "heading": false
+        },
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "thp",
+          "heading": false
+        },
+        {
+          "term": "triangles",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#thp label=\"thp\"} It is quite fantastic the amount of tesselations by triangles of the hyperbolic plane. Here we give some examples using the Poincaré disk model. <figure id=\"in\"> <img src=\"732.png\" /> <img src=\"666.png\" /> <img src=\"infinfinf.png\" /> <figcaption><span class=\"math inline\">[∞,∞,∞,]</span></figcaption> </figure> Figure [\\[seis\\]](#seis){reference-type=\"ref\" reference=\"seis\"} is called by some (at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-25-generalizing-the-baby-examples-more-dimension",
+      "number": "2.5",
+      "title": "Generalizing the baby examples: more dimensions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-j vert",
+          "heading": false
+        },
+        {
+          "term": "baby",
+          "heading": true
+        },
+        {
+          "term": "weyl group",
+          "heading": false
+        },
+        {
+          "term": "polytopes",
+          "heading": false
+        }
+      ],
+      "extract": "If we raise the rank, we can generalize our baby examples in a different way. We give the $n$-analogue of the baby examples. 1. The *Weyl group of type $A_{n-1}$*. It can be defined as the symmetries of an $n$-simplex, or equivalently, as $S_n$, the symmetric group in $n$ elements. The isomorphism between these two groups is obvious. It admits a Coxeter presentation given by generators $s_i, 1\\leq i <n$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-26-more-examples",
+      "number": "2.6",
+      "title": "More examples",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weyl groups",
+          "heading": false
+        },
+        {
+          "term": "extra-large coxeter",
+          "heading": false
+        },
+        {
+          "term": "affine weyl",
+          "heading": false
+        },
+        {
+          "term": "groups appear",
+          "heading": false
+        },
+        {
+          "term": "symmetry groups",
+          "heading": false
+        },
+        {
+          "term": "thp",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "problems regarding",
+          "heading": false
+        }
+      ],
+      "extract": "- Type A and type B groups are examples of *Weyl groups*. These groups appear in the theory of Lie algebras as the groups of symmetries of root systems associated to semisimple Lie algebras over the complex numbers (so they are examples of finite reflection groups). There are three infinite families of Weyl groups, types $A_n, BC_n$ and $D_n$ ($n\\in \\mathbb{N}$) and the exeptional groups of type $E_6$, $E_7,$ $E_8,$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-27-bruhat-order-and-an-important-property",
+      "number": "2.7",
+      "title": "Bruhat order and an important property",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bruhat order",
+          "heading": true
+        },
+        {
+          "term": "reduced word",
+          "heading": false
+        },
+        {
+          "term": "coxeter systems",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#imp label=\"imp\"} One important concept about Coxeter systems is the *Bruhat order*. It is defined by $x\\leq y$ if some substring of some (or every) reduced word for $y$ is a reduced word for $x$. For example, in the case of $S_3$, the Bruhat order is represented in the following diagram <figure> <div class=\"center\"> <img src=\"Bruhat.png\" /> </div> </figure> We see that in this example, the only couples of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-quantum-level-hecke-algebras",
+      "number": "3",
+      "title": "Quantum level: Hecke algebras",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Quantum level: Hecke algebras 3.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-31-kazhdan-lusztigs-theory",
+      "number": "3.1",
+      "title": "Kazhdan-Lusztig's theory",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig",
+          "heading": true
+        },
+        {
+          "term": "kazhdan-lusztig polynomials",
+          "heading": false
+        },
+        {
+          "term": "expression underline",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "v-v",
+          "heading": false
+        },
+        {
+          "term": "self-dual element",
+          "heading": false
+        },
+        {
+          "term": "thkl",
+          "heading": false
+        },
+        {
+          "term": "iwa",
+          "heading": false
+        }
+      ],
+      "extract": "For the basic definitions of Hecke algebras and Kazhdan-Lusztig polynomials we follow [@SoKL]. Let $(W,S)$ be a Coxeter system. ::: defi The *Hecke algebra* $\\mathcal{H}$ of a Coxeter system $(W,S)$ is the $\\mathbb{Z}[v,v^{-1}]-$algebra with generators $h_s$ for $s\\in S$ and relations - $h_s^2= (v^{-1}-v)h_s +1$ (quadratic relation) - $\\underbrace{h_sh_rh_s\\ldots}_{m_{sr}}=\\underbrace{h_rh_sh_r\\ldots}_{m_{sr}}$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-32-calculations-of-kl-bases-in-examples",
+      "number": "3.2",
+      "title": "Calculations of KL bases in examples",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 37,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we give an explicit calculation of the Kazhdan-Lusztig basis for the examples A, B and C and we will give the formula (without a proof) for example D.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-321-baby-example-a",
+      "number": "3.2.1",
+      "title": "Baby example A",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "srs",
+          "heading": false
+        },
+        {
+          "term": "self-dual",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "It is clear that $b_{\\mathrm{id}}=1$. We have seen that $h_s+v$ is self-dual and it is of the form ([\\[KL\\]](#KL){reference-type=\"ref\" reference=\"KL\"}), so $b_s=(h_s+v).$ By symmetry between $s$ and $r$ we have that $b_r=(h_r+v).$ It is easy to see that $b_{sr}=b_{s}b_{r}$. It is self-dual because $d$ is a ring morphism and $b_{s}$ and $b_{r}$ both are. On the other hand it is of the form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-322-baby-example-b",
+      "number": "3.2.2",
+      "title": "Baby example B",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "srsr",
+          "heading": false
+        },
+        {
+          "term": "baby",
+          "heading": true
+        },
+        {
+          "term": "rsr",
+          "heading": false
+        }
+      ],
+      "extract": "In Example A we never used that $m_{sr}=3$ in our calculations. The point is that if $m_{sr}\\neq 3$ then $b_{s}b_{r}b_{s}-b_{s}\\neq b_{r}b_{s}b_{r}-b_{r}$. In our baby example **(B)** we have $m_{sr}=4.$ For the same reasons as before we have - $b_{sr}=b_{s}b_{r}$ - $b_{srs}=b_{s}b_{r}b_{s}-b_{s}$ - $b_{rsr}=b_{r}b_{s}b_{r}-b_{r}.$ So we just need to calculate $b_{srsr}.$ We start again with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-323-example-c",
+      "number": "3.2.3",
+      "title": "Example C",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq n-i",
+          "heading": false
+        },
+        {
+          "term": "sum n-i",
+          "heading": false
+        },
+        {
+          "term": "thkl",
+          "heading": false
+        },
+        {
+          "term": "cdots mathrm",
+          "heading": false
+        },
+        {
+          "term": "induction hypothesis",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "mathrm terms",
+          "heading": false
+        }
+      ],
+      "extract": "As one might have conjectured looking at the first two examples, for $x\\in I_2(n)$ we have $$\\label{excc}b_x= \\sum_{y\\leq x}v^{l(x)-l(y)}h_y$$ If we would want to play the game we played in the first two examples, this is, if we wanted to express $b_x$ as additions and substractions of *Bott-Samelsons* (i.e. objects of the type $b_sb_r\\cdots b_t,$ with $s,r,\\ldots, t\\in S$) then we obtain the combinatorics appearing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-324-example-d",
+      "number": "3.2.4",
+      "title": "Example D",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color olive",
+          "heading": false
+        },
+        {
+          "term": "blue color",
+          "heading": false
+        },
+        {
+          "term": "color teal",
+          "heading": false
+        },
+        {
+          "term": "color orange",
+          "heading": false
+        },
+        {
+          "term": "color darkgray",
+          "heading": false
+        },
+        {
+          "term": "ast color",
+          "heading": false
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "dyer formula",
+          "heading": false
+        }
+      ],
+      "extract": "Kazhdan-Lusztig polynomials were discovered (or invented) in 1979, but it was only in 1990 that Matthew Dyer gave a formula [@Dy] to calculate inductively the Kazhdan-Lusztig basis for a Universal Coxeter system (we will not reproduce here the proof, although it is not a difficult one). In this case, every element has only one expression as a product of elements of $S$. ::: thm []{#Dy label=\"Dy\"} Let $x\\in U_n$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-33-proof-of-theorem",
+      "number": "3.3",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{proofth} \\begin{proof} We reproduce the beautiful (and simple) proof of Soergel \\cite[Theorem 2.1]{SoKL} of the stronger version explained in Remark \\ref{rem1}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-331-existence",
+      "number": "3.3.1",
+      "title": "Existence",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imp",
+          "heading": false
+        },
+        {
+          "term": "bruhat order",
+          "heading": false
+        },
+        {
+          "term": "existence",
+          "heading": true
+        },
+        {
+          "term": "cases",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#1 label=\"1\"} We prove it by induction on the Bruhat order. It is clear that $b_e=h_e=1$ and we have already seen in equation ([\\[bs\\]](#bs){reference-type=\"ref\" reference=\"bs\"}) that $b_s=h_s+v.$ The following equation is easy (see the important property in Section [\\[imp\\]](#imp){reference-type=\"ref\" reference=\"imp\"}) $$\\label{cases} b_sh_x= \\begin{cases} h_{sx}+vh_x & \\text{if } sx > x\\\\ h_{sx}+v^{-1}h_x &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-332-uniqueness",
+      "number": "3.3.2",
+      "title": "Uniqueness",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "self-dual",
+          "heading": false
+        },
+        {
+          "term": "h-h",
+          "heading": false
+        },
+        {
+          "term": "c-c",
+          "heading": false
+        },
+        {
+          "term": "triangularity",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that we have two self-dual elements $c=h_x+h$ and $c'=h_x+h'$, with $h,h' \\in \\cH. $ Then one has that $h-h'$ is self-dual as $h-h'=c-c'.$ We just need to prove \\begin{claim} If $h\\in \\sum_yv\\ZZ[v] h_y$ and $h$ is self-dual, then $h=0$. \\end{claim} Let us call $b_x$ the element that we constructed in Section \\ref{1}. It is easy to see, by equation (\\ref{KL}) that $$h_x\\in b_x+\\sum_{y<x}\\ZZ[v,v^{-1}]b_y,$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-333-bxxw-is-a-basis",
+      "number": "3.3.3",
+      "title": "{bx}xW is a basis",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "The set {bx}x∈W is a Z[v, v−1]−basis given that the set {hx}x∈W is a basis and by using the triangularity property in Remark 1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-34-our-favorite-open-questions-about-hecke-algeb",
+      "number": "3.4",
+      "title": "Our favorite open questions about Hecke algebras",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig polynomials",
+          "heading": false
+        },
+        {
+          "term": "ques",
+          "heading": false
+        },
+        {
+          "term": "subsequent paper",
+          "heading": false
+        },
+        {
+          "term": "rouquier",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "It is one of the most important achievements in the theory of Soergel bimodules the proof [@EW] by B. Elias and G. Williamson of the conjecture (stated by Kazhdan and Lusztig) that Kazhdan-Lusztig polynomials have positive coefficients. We will come back to this beautiful and fundamental result in a subsequent paper of this saga. For the moment, this theorem gives rise to the following question. ::: ques Give a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-4-categorical-level-in-the-baby-example-a",
+      "number": "4",
+      "title": "Categorical level in the baby example A",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "Categorical level in the baby example A",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-41-the-objects-soergel-bimodules",
+      "number": "4.1",
+      "title": "The objects: Soergel bimodules",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "graded bimodules",
+          "heading": false
+        },
+        {
+          "term": "mathbb graded",
+          "heading": false
+        },
+        {
+          "term": "srs",
+          "heading": false
+        },
+        {
+          "term": "ring mathbb",
+          "heading": false
+        },
+        {
+          "term": "reflection interchanges",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "simple reflection",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will introduce Soergel bimodules in the baby example A, i.e. the symmetric group $S_3.$ This case is hard enough to start with and most of the features of general Soergel bimodules are already visible in this example. Consider the polynomial ring $R=\\mathbb{R}[x,y,z]$ (we could replace $\\mathbb R$ by any field of characteristic different from $2$ in this section and the results would stay true).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-42-stability-of-soergel-bimodules",
+      "number": "4.2",
+      "title": "Stability of Soergel bimodules",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Stability of Soergel bimodules",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-421-the-crucial-phenomena",
+      "number": "4.2.1",
+      "title": "The crucial phenomena",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 841,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oplus srs",
+          "heading": false
+        },
+        {
+          "term": "cong srs",
+          "heading": false
+        },
+        {
+          "term": "cong otimes",
+          "heading": false
+        },
+        {
+          "term": "alpha otimes",
+          "heading": false
+        },
+        {
+          "term": "alpha del",
+          "heading": false
+        },
+        {
+          "term": "p-s cdot",
+          "heading": false
+        },
+        {
+          "term": "otimes end",
+          "heading": false
+        },
+        {
+          "term": "rightarrow otimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{st}\\label{st} The category $\\mathcal{B}(S_3)$ is stable under product. \\end{st} \\begin{proof} It is obvious that we just need to prove that we can write any product of two elements of $\\II$ as a direct sum of shifts of elements in $\\II.$ One important fact about $R$ is that if $p\\in R$, then $p-s\\cdot p \\in (y-x)R^s.$ For example, if $p=3xy^2z^7+ yz$, \\begin{align*} p-s\\cdot p &=3xy^2z^7+ yz -3yx^2z^7- xz \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-441-step-1",
+      "number": "4.4.1",
+      "title": "Step 1",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes rangle",
+          "heading": false
+        },
+        {
+          "term": "langle otimes",
+          "heading": false
+        },
+        {
+          "term": "frac otimes",
+          "heading": false
+        },
+        {
+          "term": "z-y",
+          "heading": false
+        },
+        {
+          "term": "y-z",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": true
+        }
+      ],
+      "extract": "*We will prove that* $\\mathrm{im}(1-e)= \\langle 1^{\\otimes} \\rangle$. As $(1-e)(1^{\\otimes})=1^{\\otimes}$ we have that $$\\langle 1^{\\otimes} \\rangle \\subseteq \\mathrm{im}(1-e).$$ It is a fun and easy exercice (using twice equation ([\\[p\\]](#p){reference-type=\"ref\" reference=\"p\"}) and some smart juggling with the variables) to see that $B_sB_rB_s$ is generated as an $R$-bimodule by the two elements $1^{\\otimes}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-442-step-2",
+      "number": "4.4.2",
+      "title": "Step 2",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes rangle",
+          "heading": false
+        },
+        {
+          "term": "langle otimes",
+          "heading": false
+        },
+        {
+          "term": "oplus",
+          "heading": false
+        },
+        {
+          "term": "srs",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "\\ \\textit{ We will prove that }$ \\langle 1^{\\otimes} \\rangle \\cong B_{srs}$. It is clear that \\begin{align*} R\\otimes_{R^{s,r}}R(3) & \\rightarrow B_sB_rB_s\\\\ p\\otimes q & \\mapsto p\\otimes 1\\otimes 1\\otimes q \\end{align*} is a graded $R$-bimodule morphism. It is also clear that the image is $ \\langle 1^{\\otimes} \\rangle$. Because of the isomorphism (\\ref{sr}) we have that $$B_{srs} \\cong R(-3)\\oplus R(-1)^{\\oplus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-45-soergels-categorification-theorem",
+      "number": "4.5",
+      "title": "Soergel's categorification Theorem",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-451-indecomposables",
+      "number": "4.5.1",
+      "title": "Indecomposables",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm min",
+          "heading": false
+        },
+        {
+          "term": "indecomposable",
+          "heading": false
+        },
+        {
+          "term": "particularity",
+          "heading": false
+        },
+        {
+          "term": "subindex",
+          "heading": false
+        }
+      ],
+      "extract": "Why did we us the letter $\\mathbb I$ to denote the set $\\{R, B_s, B_r, B_{sr}, B_{rs}, B_{srs}\\}$? Because they are indecomposable objects. Let us see why. We will use the following notation. A $\\mathrm{min}$ in the subindex of a graded object means the minimal $i$ for which its degree $i$ part is non-zero. For example $(B_s)_{\\mathrm{min}}=(B_s)_{-1}$ As we have seen, every element $M\\in \\mathbb I$ is generated as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-452-how-to-produce-an-algebra-from-soergel-bimod",
+      "number": "4.5.2",
+      "title": "How to produce an algebra from Soergel bimodules",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "cdot langle",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathcal",
+          "heading": false
+        },
+        {
+          "term": "graded bimodule",
+          "heading": false
+        },
+        {
+          "term": "bsbsrs",
+          "heading": false
+        },
+        {
+          "term": "bsbs",
+          "heading": false
+        },
+        {
+          "term": "dec",
+          "heading": false
+        }
+      ],
+      "extract": "Let us introduce the ::: nota []{#poly label=\"poly\"} If $p=\\sum_i a_i v^i \\in \\mathbb N[v,v^{-1}]$ and $M$ is a graded bimodule, we will denote by $p\\cdot M$ the graded bimodule $$\\bigoplus_{i\\in \\mathbb Z}M(i)^{\\oplus a_i}$$ ::: One can see that Soergel bimodules encode all the information of the Hecke algebra. Let us try to make this idea more precise. Consider the following \"algebra\" $\\mathbb N\\mathcal B(S_3)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-453-recovering-the-hecke-algebra",
+      "number": "4.5.3",
+      "title": "Recovering the Hecke algebra",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "mathcal rangle",
+          "heading": false
+        },
+        {
+          "term": "indecomposable soergel",
+          "heading": false
+        },
+        {
+          "term": "rangle mapsto",
+          "heading": false
+        },
+        {
+          "term": "light leaves",
+          "heading": false
+        },
+        {
+          "term": "hom spaces",
+          "heading": false
+        },
+        {
+          "term": "grothendieck group",
+          "heading": false
+        }
+      ],
+      "extract": "If we want to produce an algebra isomorphic to $\\mathcal H$ starting with the category of Soergel bimodules and not just \"the positive part\", we just need to add formally to $\\mathbb N\\mathcal B(S_3)$ the element $-\\langle M\\rangle$ for every Soergel bimodule $M$. This element will satisfy the equation $-\\langle M\\rangle+\\langle M\\rangle=0.$ In this manner we obtain a honest algebra over $\\mathbb Z[v,v^{-1}]$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1",
+      "number": "5",
+      "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "mor",
+          "heading": false
+        },
+        {
+          "term": "bott-samelsons",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#mor label=\"mor\"} We will present the general definition of the category of Soergel bimodules, but we will still work over the field of real numbers. Over a field of positive characteristic the categorification theorem still works, but Soergel bimodules behave quite differently (projectors from the Bott-Samelsons are not the same as over $\\mathbb R$). We will recall most of the definitions given in the last",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-51-soergel-category-b-for-any-coxeter-system-ove",
+      "number": "5.1",
+      "title": "Soergel category B for any Coxeter system over R",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel",
+          "heading": true
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson bimodules",
+          "heading": false
+        },
+        {
+          "term": "indecomposable soergel",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "mathcal rangle",
+          "heading": false
+        },
+        {
+          "term": "graded bimodule",
+          "heading": false
+        },
+        {
+          "term": "mathbb graded",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#any label=\"any\"} Let $(W,S)$ be an arbitrary Coxeter system. Consider $V=\\oplus_{s\\in S} \\mathbb{R}e_s$ the Geometric Representation. It is a linear representation defined by the formula $$s\\cdot e_r= e_r+2\\, \\mathrm{cos}\\, \\biggl(\\frac{\\pi}{m_{sr}}\\biggr) e_s \\hspace{1cm}\\mathrm{for\\ all\\ }s, r \\in S,$$ where $m_{sr}$ is the order of the element $sr$ in $W.$ By convention $\\pi/\\infty =0.$ Let $R=R(V)$[]{#d1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-52-drawing-morphisms-one-color",
+      "number": "5.2",
+      "title": "Drawing morphisms: one color",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hanging birdcage",
+          "heading": false
+        },
+        {
+          "term": "length birdcage",
+          "heading": false
+        },
+        {
+          "term": "line mathbb",
+          "heading": false
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "black line",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "morphisms",
+          "heading": true
+        },
+        {
+          "term": "same morphism",
+          "heading": false
+        }
+      ],
+      "extract": "We fix a simple reflection $s\\in S.$ We will start by explaining how to represent in a drawing a morphism between \"one color Bott-Samelson bimodules\", i.e. bimodules having only $s$ in its expression, for example $B_sB_sB_sB_s.$ Morphisms will be drawn inside the strip $\\mathbb R\\times [0,1]\\subset \\mathbb R^2.$ This will be done in a bottom-up way, i.e. in the line $\\mathbb R\\times \\{0\\}$ we will draw the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-53-one-color-light-leaves",
+      "number": "5.3",
+      "title": "One color light leaves",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "light leaves",
+          "heading": true
+        },
+        {
+          "term": "hanging birdcage",
+          "heading": false
+        },
+        {
+          "term": "light leaf",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": true
+        },
+        {
+          "term": "double leaves",
+          "heading": false
+        },
+        {
+          "term": "target",
+          "heading": false
+        }
+      ],
+      "extract": "A *One Color Light Leaf* is a morphism built-up only with birdcages and dots. In the right-most position one can admit a hanging birdcage as in the picture. <figure id=\"LL1\"> <div class=\"center\"> <img src=\"onecolorLL.png\" /> </div> <figcaption>Example of a one-color light leaf</figcaption> </figure> <figure id=\"LL2\"> <div class=\"center\"> <img src=\"onecolorLL2.png\" /> </div> <figcaption>Another example</figcaption>",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-54-two-colors-light-leaves",
+      "number": "5.4",
+      "title": "Two colors light leaves",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full birdcage",
+          "heading": false
+        },
+        {
+          "term": "red dot",
+          "heading": false
+        },
+        {
+          "term": "color light",
+          "heading": false
+        },
+        {
+          "term": "say zone",
+          "heading": false
+        },
+        {
+          "term": "two-color light",
+          "heading": false
+        },
+        {
+          "term": "light leaf",
+          "heading": false
+        },
+        {
+          "term": "leaves",
+          "heading": true
+        },
+        {
+          "term": "hanging",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will consider only two simple reflections, say $s$ and $r$, represented by two colors, say red and blue. We will explain a version of the Double Leaves Theorem in two colors but only for reduced expressions (we will see that the general version of this theorem (Theorem [\\[DL\\]](#DL){reference-type=\"ref\" reference=\"DL\"}) does not restrict to reduced expressions neither in the source nor in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-6-light-leaves-in-general",
+      "number": "6",
+      "title": "Light leaves in general",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#Light leaves basis label=\"Light leaves basis\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-61-adjunction",
+      "number": "6.1",
+      "title": "Adjunction",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjunction",
+          "heading": true
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "exercice",
+          "heading": false
+        },
+        {
+          "term": "spoken",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#adjunction label=\"adjunction\"} Until now we have spoken about \"adjoint\" morphisms without really saying what the adjunction is. ::: lem If $M$ and $N$ are two Bott-Samelson bimodules, the following map is an isomorphism of graded right $R$-modules $$\\begin{aligned} \\mathrm{Hom}(B_sM,N)&\\rightarrow \\mathrm{Hom}(M,B_sN)\\\\ f&\\mapsto (\\mathrm{id}_{B_s}\\otimes f)\\circ ((j_s^a\\circ m_s^a)\\otimes \\mathrm{id}_M)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-62-a-new-morphism",
+      "number": "6.2",
+      "title": "A new morphism",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 69,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "morphism",
+          "heading": true
+        },
+        {
+          "term": "bott-samelson",
+          "heading": false
+        },
+        {
+          "term": "adjoints",
+          "heading": false
+        }
+      ],
+      "extract": "Until now we have just used the morphisms $m_s$, $j_s$ and its adjoints. We need a new morphism that does not appear in the examples that we have seen so far (it would appear in Theorem [\\[DL\\]](#DL){reference-type=\"ref\" reference=\"DL\"} if we would have considered $x$ or $y$ equal to the longest element, or if we would have considered as source a Bott-Samelson not represented by a reduced expression).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-044-621-the-morphism-fsr",
+      "number": "6.2.1",
+      "title": "The morphism fsr",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "morphism",
+          "heading": true
+        },
+        {
+          "term": "otimes",
+          "heading": false
+        },
+        {
+          "term": "product having",
+          "heading": false
+        },
+        {
+          "term": "isomorphism",
+          "heading": false
+        },
+        {
+          "term": "cong",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the bimodule $X_{sr}=B_sB_rB_s\\cdots$ the product having $m(s,r)$ terms (recall that $m(s,r)$ is the order of $sr$). We define $f_{sr}$ as the only degree $0$ morphism from $X_{sr}$ to $X_{rs}$ sending $1^{\\otimes}$ to $1^{\\otimes}$. We have essentially encountered this morphism in Section [\\[babyA\\]](#babyA){reference-type=\"ref\" reference=\"babyA\"}. Let $x=srs\\cdots$ with the product having $m(s,r)$ terms.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-622-examples",
+      "number": "6.2.2",
+      "title": "Examples",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes",
+          "heading": false
+        },
+        {
+          "term": "vert",
+          "heading": false
+        },
+        {
+          "term": "bimodule",
+          "heading": false
+        },
+        {
+          "term": "morphism",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose we are in the case $W=S_n$. In this case $R=\\mathbb R[x_1,x_2, \\ldots, x_n]$ and the group $W$ acts permuting the variables. We have that the simple reflections in $W$ are the $s_i$, the permutation switching the variables $i$ and $i+1$. For simplicity of notation we will denote by $f_{ij}$ the morphism $f_{s_is_j}$ and by $B_i$ the bimodule $B_{s_i}$. In this example we have three cases to consider. 1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-63-path-morphisms",
+      "number": "6.3",
+      "title": "Path morphisms",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "child nodes",
+          "heading": false
+        },
+        {
+          "term": "mathbb underline",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson bimodule",
+          "heading": false
+        },
+        {
+          "term": "path",
+          "heading": true
+        },
+        {
+          "term": "child edges",
+          "heading": false
+        },
+        {
+          "term": "path morphism",
+          "heading": false
+        },
+        {
+          "term": "path conjecture",
+          "heading": false
+        },
+        {
+          "term": "leaves colored",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#f label=\"f\"} ::: defi For $(W,S)$ a Coxeter system and $x\\in W$ we define the *Reduced expressions graph of $x$* or simply *Rex($x$)* as the graph with nodes the set of reduced expressions of $x$ and two reduced expressions are joined by an edge if they differ by a single braid relation. ::: For every reduced expression $\\underline{s}$ we have associated a Bott-Samelson bimodule $B_{\\underline{s}}.$ If two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-64-the-tree-ts",
+      "number": "6.4",
+      "title": "The tree Ts",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsk bsn",
+          "heading": false
+        },
+        {
+          "term": "bsn idi",
+          "heading": false
+        },
+        {
+          "term": "bri bsk",
+          "heading": false
+        },
+        {
+          "term": "child nodes",
+          "heading": false
+        },
+        {
+          "term": "idi msk",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": true
+        },
+        {
+          "term": "child edges",
+          "heading": false
+        },
+        {
+          "term": "light leaves",
+          "heading": false
+        }
+      ],
+      "extract": "The tree Ts Let (W, S) be an arbitrary Coxeter system. In this section we ﬁx a sequence of simple reﬂections s = (s1, . . . , sn) ∈Sn and construct a tree Ts. We construct a perfect binary tree (i.e a tree in which all interior nodes have exactly two children and all leaves have the same depth) with nodes colored by Bott-Samelson bimodules and arrows colored by morphisms from parent to child nodes. We construct it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-65-construction-of-the-double-leaves-basis",
+      "number": "6.5",
+      "title": "Construction of the double leaves basis",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double leaves",
+          "heading": true
+        },
+        {
+          "term": "mathbb underline",
+          "heading": false
+        },
+        {
+          "term": "leaves basis",
+          "heading": true
+        },
+        {
+          "term": "underline cdots",
+          "heading": false
+        },
+        {
+          "term": "rightarrow underline",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "tree mathbb",
+          "heading": false
+        },
+        {
+          "term": "light leaf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#LL label=\"LL\"} In this section we consider two arbitrary sequences (not necessarily reduced) of simple reflections $\\underline{s}=s_1\\cdots s_n$ and $\\underline{r}=r_1\\cdots r_p.$ We are interested in calculating the space $\\mathrm{Hom}(B_{\\underline{s}}, B_{\\underline{r}})$. **Philosophy:** *The natural basis between Bott-Samelson bimodules is the tree $\\mathbb{T}_{\\underline{s}}$ \\\"pasted\\\" with the tree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-7-final-calculations-examples-b-c-and-d",
+      "number": "7",
+      "title": "Final calculations: examples B, C and D",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "indecomposable soergel",
+          "heading": false
+        },
+        {
+          "term": "des bimodules",
+          "heading": false
+        },
+        {
+          "term": "libedinsky",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "universal coxeter",
+          "heading": false
+        },
+        {
+          "term": "egorie des",
+          "heading": false
+        },
+        {
+          "term": "dyer formula",
+          "heading": false
+        }
+      ],
+      "extract": "Final calculations: examples B, C and D In section 4 we were able to calculate the indecomposable Soergel bimodules for the baby example A. Now that we have introduced the graphical notation we are able to do the same thing (although we will not prove it) in the other examples, B, C and D. This method gives also a different way to calculate the indecomposable Soergel bimodules in baby example A. We will obtain them",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 5",
+      "figure 6",
+      "figure 7",
+      "figure 8",
+      "figure 9",
+      "figure 10",
+      "figure 11",
+      "figure 12",
+      "figure 13",
+      "figure 14"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "soergel bimodules",
+      "heading": true
+    },
+    {
+      "term": "otimes mathrm",
+      "heading": false
+    },
+    {
+      "term": "srs cdots",
+      "heading": false
+    },
+    {
+      "term": "bott-samelson bimodules",
+      "heading": false
+    },
+    {
+      "term": "oplus srs",
+      "heading": false
+    },
+    {
+      "term": "cong srs",
+      "heading": false
+    },
+    {
+      "term": "srs rsr",
+      "heading": false
+    },
+    {
+      "term": "otimes rangle",
+      "heading": false
+    },
+    {
+      "term": "langle otimes",
+      "heading": false
+    },
+    {
+      "term": "bimodules mathcal",
+      "heading": false
+    },
+    {
+      "term": "graded bimodules",
+      "heading": false
+    },
+    {
+      "term": "group mathrm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Example with n = 8",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The incorrect mental image",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A new sequence",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The ﬁgure opens like ﬂower The (pointwise) limit is R with the vertices converging to the set Z. The sym-",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Important morphisms",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Tensor product",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Composition",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Cup and cap",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Associativity",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Hanging birdcage",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Birdcage",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Example of a one-color light leaf",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Another example",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Full birdcage",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Third step in our game",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Fourth step in our game",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Example of a two-color light leaf",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "Adjunction map",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "The projector",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-3",
+      "file": "images/img-p007-3.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-2",
+      "file": "images/img-p008-2.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-3",
+      "file": "images/img-p008-3.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-3",
+      "file": "images/img-p009-3.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-2",
+      "file": "images/img-p031-2.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-2",
+      "file": "images/img-p032-2.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-3",
+      "file": "images/img-p032-3.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p033-1",
+      "file": "images/img-p033-1.png",
+      "page": 33,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p033-2",
+      "file": "images/img-p033-2.png",
+      "page": 33,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-1",
+      "file": "images/img-p034-1.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-2",
+      "file": "images/img-p034-2.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-3",
+      "file": "images/img-p034-3.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p035-1",
+      "file": "images/img-p035-1.png",
+      "page": 35,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p035-2",
+      "file": "images/img-p035-2.png",
+      "page": 35,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p036-1",
+      "file": "images/img-p036-1.png",
+      "page": 36,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p036-2",
+      "file": "images/img-p036-2.png",
+      "page": 36,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p037-1",
+      "file": "images/img-p037-1.png",
+      "page": 37,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p038-1",
+      "file": "images/img-p038-1.png",
+      "page": 38,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p044-1",
+      "file": "images/img-p044-1.png",
+      "page": 44,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-1",
+      "file": "images/img-p045-1.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-2",
+      "file": "images/img-p045-2.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-1",
+      "file": "images/img-p046-1.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 52,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 50,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 38
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 50 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1702.00039v1"
+  }
+}

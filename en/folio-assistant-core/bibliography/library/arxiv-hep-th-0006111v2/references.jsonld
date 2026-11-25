@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-0006111v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:hep-th/0006111v2 14 Jul 2003",
+      "dcterms:creator": [
+        "Damgaard, Poul H."
+      ],
+      "dcterms:issued": "D:20190503",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/0006111",
+      "dcterms:source": "library/arxiv-hep-th-0006111v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-0006111v2"
+    }
+  ]
+}

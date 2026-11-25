@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
+  "contains": [
+    "library/arxiv-1910.09966v1/sections/sec-front-matter",
+    "library/arxiv-1910.09966v1/sections/sec-000",
+    "library/arxiv-1910.09966v1/sections/sec-001",
+    "library/arxiv-1910.09966v1/sections/sec-002",
+    "library/arxiv-1910.09966v1/sections/sec-003",
+    "library/arxiv-1910.09966v1/sections/sec-004",
+    "library/arxiv-1910.09966v1/sections/sec-005",
+    "library/arxiv-1910.09966v1/sections/sec-006",
+    "library/arxiv-1910.09966v1/sections/sec-007",
+    "library/arxiv-1910.09966v1/sections/sec-008",
+    "library/arxiv-1910.09966v1/sections/sec-009",
+    "library/arxiv-1910.09966v1/sections/sec-010",
+    "library/arxiv-1910.09966v1/sections/sec-011",
+    "library/arxiv-1910.09966v1/sections/sec-012",
+    "library/arxiv-1910.09966v1/sections/sec-013",
+    "library/arxiv-1910.09966v1/sections/sec-014",
+    "library/arxiv-1910.09966v1/sections/sec-015",
+    "library/arxiv-1910.09966v1/sections/sec-016",
+    "library/arxiv-1910.09966v1/sections/sec-017",
+    "library/arxiv-1910.09966v1/sections/sec-018",
+    "library/arxiv-1910.09966v1/sections/sec-019",
+    "library/arxiv-1910.09966v1/sections/sec-020",
+    "library/arxiv-1910.09966v1/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds.\n\n**Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics**\n\n*T. Asslmeyer-Maluga (German Aerospace Center, Berlin)*\n\n37 pp, 23 sections.\n\n**Abstract.** In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3 \\ (K × D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries: Branched Coverings of 3- and ; 2.1 As Warmup: Branched Coverings of 2-Manifol; 2.2 Branched Coverings of 3-Manifolds; 2.3 Branched Covering of 4-Manifolds; 2.4 Branched Coverings of Knot Complements; 3 Reconstructing a Spacetime: The K3 Surface a; 4 From K3 Surfaces to Octonions, 3-Braids and ; 4.1 K3 Surfaces and Octonions; 4.2 From Immersed Surfaces in K3 Surfaces to F; 4.3 Fermions as Knot Complements; 4.4 Torus Bundle as Gauge Fields; 4.5 Fermions, Bosons and 3-Braids; 5 Electric Charge and Quasimodularity; 5.1 Electric Charge as Dehn Twist of the Bound; 5.2 Electric Charge as a Frame of the Knot Com; 5.3 The Charge Spectrum",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1910.09966&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1910.09966v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1910.09966v1.pdf",
+    "source_sha256": "21798500c98ed25ac187cd3bf4f48e1023bb88df048edf57d5a967e2236b9e0e",
+    "pages": 37,
+    "arxiv": {
+      "id": "1910.09966",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "16 Oct 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

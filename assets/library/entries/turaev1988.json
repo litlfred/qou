@@ -1,0 +1,743 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "turaev1988",
+  "blocks": [
+    {
+      "id": "library/turaev1988/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Invent. math. 92, 527-553 (1988) Inventiones\n\nmathematicae\n© Springer-Verlag 1988\n\nThe Yang-Baxter equation and invariants of links\n\nV.G. Turaev\n\nLeningrad Department of Steklov Mathematical Institute (LOMI),\nFontanka 27, Leningrad 191011, USSR\n\n§1. Introduction\n\nThe Yang-Baxter equation first appeared in the independent papers of C.N.\nYang and R.J. Baxter in the late 1960’s — early 1970’s. This equation and its\nsolutions play fundamental role in the theory of completely integrable quantum\nsystems and in the theory of exactly solved models of statistical mechanics\n(see [1, 9]). A relationship",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "528 V.G. Turaey\n\nproblem of understanding the polynomials from the viewpoint of algebraic topol-\nogy. In particular, it is by no means clear how to extend the definition of\nthe polynomials P, F given below to links in homology 3-spheres. (It is curious\nto note that a related invariant — the multivariable Conway polynomial can\nbe defined for links in homology spheres, see [10].)\n\nThough I do not consider von Neumann and Hecke algebras in this paper, it would be of\ngreat importance to comprehend the algebraic nature of the invariants.\n\nI am indebted to O.Ja. Viro and W.B.R. Lickorish for helpful",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-002-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "recommendation-page-002-01.md",
+      "narrative": null,
+      "content": "By a link we shall mean a tame link in R°.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 529\n\nRyo R2°Ry=Rz°Ry Rp. (1)\nThis is the Yang-Baxter equality (with zero spectral parameter). For examples\n\nof YB-operators and further information the reader is referred to [2, 4, 8];\nsee also § 4.\n\n2.2. Recall that for each homomorphism f: V®\" > V®\" one can define its “oper-\nator trace” Sp,(f) which is a homomorphism V®\"~) 4 V®@-)_ Tf v,, ..., Um\nisa basis in Vthen for any iy, ...,i,-,€{1, 2, ..., m}\n\nSpr(f)(vi, @--- @ v;,_)= > Siero bot] oj, @ Oy,\n\nVSji,-sjn-1,jSm\n\n(Sp,(f) does not depend on the choice of basis of V). It is clear that Sp(Sp,(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-003-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "recommendation-page-003-01.md",
+      "narrative": null,
+      "content": "We shall mainly consider the case when p is an isomorphism presented by a diagonal matrix with respect to some basis of V.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "530 V.G. Turaey\n\nThe condition (ii)’ of Theorem 2.3.1 implies that the product of the square\nm x m-matrix [R}'4] with the column\n\nMy\nLm.\nis equal to the constant column\nap\na B\nThe same is true for the matrix [(R~');4] if we replace a by «~'. Therefore,\nif at least one of these two square matrices is invertible over K then there\nexists at most one sequence /1;, ..., /1, Which satisfy (ii)’ for given «, B.\nIn the general case 1, ..., u,, (if exist) are not uniquely determined by R,\n\na, B. For example, for any homomorphism yp: V->V the collection (Idy22, p, a=1,\nB=Sp p) is a EYB-operator.\n\n§ 3. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-004-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "recommendation-page-004-01.md",
+      "narrative": null,
+      "content": "We shall also use the homomorphism w from B, to the additive group of integers which sends O41, --6 G,—1 into 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 531\n\n3.1.2. Theorem. For any €, neB,,\nTy(n~* En) = Ts(E 6,) = Ts(€ oy ')= Ts(2)-\n\nTo prove this theorem we need the following lemma which is a direct conse-\nquence of definitions.\n\n3.1.3. Lemma. If f, g, h are endomorphisms respectively of V®\"*, Vv\", VS?\nthen\n\nSpr+i(fe(g @Idy)) =Spy+i (fog;\nSpr+1((g @ Idy)of)) =geSprsi(f);\nSpr+ 1d”? @ h)=IdP\"- » @ Sp, (h).\n\n3.1.4. Proof of Theorem 3.1.2. It follows from the definition of EYB-operator\nthat un®\" commutes with b() for any 7¢€B, where b=bz: B, > Aut(V®\"). Thus\n\nSp(b(q~* En)op®\")=Sp(b(q~ *)ob(E)en9\"°",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "532 V.G. Turaey\n\nso\n\nFig. 1\n\nFor the trivial knot O we have\nTs(O)= B~* Sp(u). (4)\n\nIt is easy to show (using the evident equality Sp(f ® g)=Sp(f) Sp(g)) that\nTs is multiplicative: If a link L is the disjoint union of two links L, and L,\nthen T;(L)=Ts5(L,)- Ts(L,). In particular, if L is the trivial n-component link\nthen T5(L)=[B~* Sp(u)]’.\n\nTo formulate the next property of Ts we will need the following terminology.\nLet t be a mapping of the set of oriented isotopy link types into K. Let f()=\n\nq\n\n>. k,t' be a Laurent polynomial over K (i.e. f()}¢K[t,t~\"]). Let us say that\ni=p\nf(t) annihilates",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 533\n\nXX 6\n\nFig. 3\n\nProof. Let L,, ...,L, be oriented links which have diagrams as above. Then\nfor some braid these links are isotopic to the closures of the braids n,\no,4,..., 01? y. Let n be the number of strings of y. Then\n\nTs(Li) = Ts(o4, n)= a7\" B-\" Sp[(Ry)oba(n)ou?\"I.\nHence,\n\nq q\nY ka! T(L)=a-\" Bo\" Sp [z k, Ri -ba(none\"|=0.\ni=p\n\ni=p\n\n3.2.2. Corollary. For any EYB-operator S in V the isotopy invariant Tg is annihilat-\ned by a polynomial of degree <m? (where m=rk, V).\n\nProof. Every endomorphism of V®? is annihilated by its characteristic poly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "534 V.G. Turaey\n\nbeen explicitly described for the fundamental representations of the Lie algebras\nof series A}, B1, C1, Di, A? and D? (see [4]; here the upper index denotes\nthe order of the automorphism of the Dynkin diagram: 1 corresponds to the\nidentity and 2 corresponds to the non-trivial involution). The YB-operators\nwhich correspond to series A‘, B1, C', D' and A? can be enhanced to EYB-\noperators, see Sect. 4.2 and 4.3. The case of D? has remained unclear. (In this\ncase one definitely can not enhance the YB-operator in the diagonal way with\nrespect to the natural basis).\n\nUp to the end",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 535\n\nD Rew 0Bs YR Veja\" B. (0)\n\nj=l j=l\n\nLY Re w=—-aait Y @'-gaj=—-7i \"+ 1-4)\n\nj=l jeith\n+ [q2imm tg g2im-mt 3.4 4 gmt] =a 8.\n\nThe second from the formulas (7) is verified analogously. Hence, (R, p, «, ) is\na EYB-operator. Other statements of the theorem follow directly fom the results\nof Sect. 3.1 and the formula (5).\n\n4.2.2. For an oriented link L by P,(L) I will denote the invariant T;(L) produced\nby Theorem 4.2.1 and the constructions of §3. Using P,, Py, ... I will give a\nnew proof of the following theorem.\n\n4.2.3. Theorem (see [3]). There",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "536 V.G. Turaey\n\nND=Qq-a')\"\" Y raat.\n\na,beZ\n\nIt follows from Lemma 4.2.4 that N(L) is a Laurent polynomial of the variables\nq, t which does not depend on the choice of m. Since P, is an isotopy invariant,\nN(L) is preserved under the Reidemeister moves. (Note that m=4u+2n+9\nis suitable both for D and for any diagram obtained from D by a single Reide-\nmeister move). Thus N(L) is an isotopy invariant of L. If follows from (6) that\n\ntN(L4)—t7! N(L-)=(q—47\") N(Lo)-\nIf G is the trivial n-component link then\nN(@=(t-0-'Y\"q-q7'y\".\nHence for any link L the function N(L) is a Laurent polynomial of t and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-010-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "recommendation-page-010-01.md",
+      "narrative": null,
+      "content": "We shall assume that if m is odd then v= —1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 537\n\nFrom [4] one can extract a formula for R; ':\n\nRy'=q\"' 2 Eis ® Bust Ye Bis @ Bat DY Ej; @Eji\n\ni,j\n\nis? is itj,j’\n+q x E;, @ Ey: +(q7'—4) x E,,@E,,;\nish a\n+(q—-q\"*) i e(i) e(/) GFE, @ Ey).\ni>j\n\n4.3.1. Remarks. (i) The case of even m is somewhat easier since i+i’ for all\niin this case.\n\n(ii) The formula for 7 given in [4] contains erroneous signs+, the correct\nsigns used above were pointed out to me by N. Reshetikhin.\n\n43.2. Theorem. Put p;=q?'~\"~! for i=1, 2, ...,m. Put a=q\"*” and B=1. Then\nS,=(Ry, w=diag (uy, ..., Hm), % B) is a EYB-operator",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "538 V.G. Turaey\n\nit is easy to compute a(i, j):\n\n0 if i>j\nq if i=j+i\na(i,j)= 1 if i=j=i\nq-q' if i<j+i\n\nQ—-q'\\tvgim\"') if i<jai\n\nTo verify (9) we shall consider 3 cases: i<i’, i=i’, i>i’. If i>i, then i>(m+1)/2\nand\n\nm\n\n+ . m ry\n¥. ali, j) q2-™t =q?!-™ + 4.(q—q7}) Y gqzinm— tty gmty,\n\nj=l j=itt\n\nIf i=i’, then i=(m+1)/2, m is odd, v= —1 and the computation is similar. Let\ni<i’. Then i<(m+1)/2 and\n\nm\n\nY aq? t=q?ims(q—q7') Yo gm +0(q—q7'). il)\n\nj= jrit\n\nThe sequence\nginm-}, j=it1,it+2,...,m\nis the geometric progression\n\n2i+1—m 2i+3-m m+yv—1\n\nq » ree |\n\nwith one superfluous member g°=1 in case v= —1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-012-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "recommendation-page-012-01.md",
+      "narrative": null,
+      "content": "To verify (9) we shall consider 3 cases: i<i’, i=i’, i>i’.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 539\n\nOn,»(D +4) +¥Om,y(D-)=V/—V(G—47 \"Gn, (Do)+¥Om,v(Da)]- (12)\n\nThis theorem is proved in § 6 using the results of § 5.\n\nXX OCS\n\nFig. 4\n\n43.5. Corollary. Let ve{1,—1}. There exists a unique mapping Q, of the set\nof isotopy classes of oriented links into the ring Z[x,x~',y,y~'] such that\nQ,(O)=1 and\n\n1) for any diagram D of an oriented link L the polynomial 0,(D)=x” Q,(L)\ndoes not depend on the choice of orientation of L;\n\n2) if Di, D_, Do, D. are link diagrams as in the statement of Theorem\n4.3.4 then\n\n9,(D+)+v G,(D_)=y[G,(Do) + v9,(D.)1.\n\nThis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "540 V.G. Turaey\n\nThis fact is equivalent to the identity\n(Ryt+vq-™\"* N(R, +47 D(R,—q)=0\nwhere I=Idy gy. It is curious to note that the image of (R,+q~'J)(R,—q1)\n\nis the one-dimensional subspace of V® V generated by p= )\\ «(i) qi 0;® v;.\nA direct calculation shows that R,(p)=—vq™™~” p. i=\n\n(iii) According to [3, 7] the Jones polynomial V, can be computed from\nboth P(L) and Q,(L). This computation shows that up to a standard multiple\nand reparametrization Vis the same link invariant as P, and Q, ,. If one intro-\nduced Q,,,- with m<0 by the formula (13) then one would similarly have that\nVis equi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-014-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "recommendation-page-014-01.md",
+      "narrative": null,
+      "content": "We shall assume that the K-module V is provided with a basis so that pw is diagonal regarding this basis, # =diag(\"1, ..., Up), M=rk, V.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 541\n\nCO Fig. 5\n\n\\ /\nNF\n\nrs -\nFig. 6\n\n0 Liu NS\nJ,\n\na b a b\nFig. 7\n\n(Here the matrix elements of R,R~! are taken with respect to the basis in\nV®? constructed as usual from the fixed basis in V.)\nPut\nM(f)= [] a(feX. (14)\n\nueVertD\n\n5.2. State models for special diagrams. Let D be the diagram of a link L obtained\nby closing a diagram of a certain n-string braid €. Let a,, ..., a, be the (oriented)\nedges of D which tie the top and bottom ends of & (see Fig. 1). For a state\nfof D put\n\ny=\n\nyay K.\n\n\"\n\n[ye\n\ni=1\n\n5.2.1. Theorem.\nT(L)=T(Q=a \" B\" YAS SF (15)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "542 V.G. Turaey\n\nDY TS) Ma, Hin Hig\nSeSt(D)\n\nSa)=is, ...f(G)=in.\nThis implies (15).\n\n5.3. Further definitions. In order to generalize (15) to the case of an arbitrary\n\noriented diagram D we need to generalize f f and the number of strings n.\nD\n\nThe generalization of n is the number rot DeZ defined as (2x)~' y where y\nis the total rotation angle of the tangent vector of D. (The direction of the\nclockwise rotation is taken to be positive.) Alternatively, one can define rot\nD using the “Gauss mapping” associated with D. Namely, let us flatten [,\nin a small neighbourhood U of its vertices so that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-016-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "recommendation-page-016-01.md",
+      "narrative": null,
+      "content": "In what follows we shall identify the sets of vertices and (oriented) edges of I” respectively with VertD and EdgD via this homeomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 543\n\n=(A,(Lf])). It is clear that the integral { f is preserved by ambient isotopies\nof D in R?. >\n\n5.3.3. Remarks. 1. It is convenient to calculate f f as follows. Let peS' be\nD\n\na generic value of the mapping 4: [’>S'. Then 4~'(p) is a finite set of non-\nvertex points of I in which the tangent vector is parallel (and equally directed)\nto the unit vector p. For xe4~*(p) denote by a(x) the (oriented) edge of [°°\ncontaining x. Put e(x)=1 if when one goes along a(x) through x the tangent\nvector rotates in the clockwise direction and put (x)= —1 in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "544 V.G. Turaey\n\n4.2.1 satisfies 5.4.1. Both operators S, and S_ constructed in Theorem 4.3.2\nalso satisfy 5.4.1; this is verified in §6. Thus, Theorem 5.4 gives state models\nfor link invariants P,, Qm, +; Qm,— With m= 2, 3, ...\n\nProof of Theorem 5.4. If D is the closure of a braid diagram then (18) follows\nstraightforwardly from (15). Therefore, it suffices to check up the invariance\nof the right-hand side of (18) under the Reidemeister moves. It suffices to consider\nthe moves Q1a, Q1b, Q2a, Q2b, Q3 pictured in Fig.9. Other Reidemeister\nmoves (obtained from these by a change of orientations o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 545\n\nThis implies that\na WEE) Brot Y II(g) J g=a wr) BrrorD Y II(h) fa.\n\ngeCSt(E) E heCSt(D) D\n\nThe move 221b is considered similarly.\nThe moves 22 and 23 do not change writhe and rot of link diagrams.\nTherefore it is sufficient to verify that these moves do not change the sum\n\nXY Mss\n\nfeCSt(D) D\nLet E be a link diagram obtained from D by an application of Q2a. Denote\nthe additional vertices and (oriented) edges of E respectively by u, v and a,\nb, c, d, r, s (see Fig. 12). For a contributing state f of E denote by M(f) the\nset of contributing st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "546 V.G. Turaey\n\ndiag(A?, 23, ..., 42) where 2,, ..., 4m€K*. Assume also that the following holds\ntrue:\n\n(6.1.1). Ay=Ajz* for any i=1, ..., m (where i’ =m+1—i);\n\n(6.1.2). For any i, j, k, le {1, 2, ..., m}\n\nRe = Ris. (20)\n(6.1.3). If RE}+0, then A; A;= A, A).\n\nIn this setting we shall modify definitions of §5 to make them applicable\nto non-oriented link diagrams.\n\nLet E be a non-oriented link diagram. The graph I, R? and the set VertE\nare defined as in Sect.5.1. By an oriented edge of E we shall mean a pair\n(an edge of E, an orientation of this edge). The set of oriented edges of E\nis denoted",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-020-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "recommendation-page-020-01.md",
+      "narrative": null,
+      "content": "In this setting we shall modify definitions of §5 to make them applicable to non-oriented link diagrams.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-020-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "recommendation-page-020-02.md",
+      "narrative": null,
+      "content": "By an oriented edge of E we shall mean a pair (an edge of E, an orientation of this edge).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 547\nThe next formula is quite analogous to (16): If peRP! is a generic value\n\nof A: '* > RP! then\nSf= [1 Ayes». (21)\n\nE xeA~1(p)\n\nHere for a non-vertex point x of [* the symbol a(x) denotes an arbitrarily\noriented edge of I’ containing x. Note that 14:25) does not depend on the\nchoice of orientation in this edge, since 194? =Ap Gr =[Ap ay] Or = AGG?\nwhere a=a(x).\n\n6.2. Lemma. Let S=(R, p=diag(A?, ..., 12),0,8) be a EYB-operator with\nAy, +++) AmEK*. Suppose that Conditions 6.1.1, 6.1.2 and 6.1.3 hold true and that\nfor all i, j,k, le {1, 2, ..., m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-021-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "recommendation-page-021-01.md",
+      "narrative": null,
+      "content": "We shall prove that the right-hand sides of formulas (23) and (24) are equal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "548 V.G. Turaey\n\nFig. 14\n\nIt follows from (25) and the identity g(e’)=g(e)’ for ee Edg E that these 4 elements\nof K are non-zero iff at least one of them is non-zero. Thus, ,(g)+ 0 iff z,(g*)+0.\nTherefore, the mapping gt g*: St(E) > St(D) transforms the set C St(E) bijective-\nly onto CSt(D). To complete the proof of the lemma we shall show that for\nany geCSt(E)\nIT(g) | g=1(g*) J g*. (26)\nE D\n\nLet z,, z2 be the coordinates in R*. Applying if necessary an ambient isotopy\nwe may assume that in a small disc neighbourhood W, of any vertex u of\nD the diagram D looks as in Fig. 14, ie. the overcrossi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-022-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "recommendation-page-022-01.md",
+      "narrative": null,
+      "content": "To complete the proof of the lemma we shall show that for any geCSt(E) IT(g) | g=1(g*) J g*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-022-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "recommendation-page-022-02.md",
+      "narrative": null,
+      "content": "We shall also assume that D lies in a generic position with respect to the projection (z,, z2)-»z,: R? >R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-022-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "recommendation-page-022-03.md",
+      "narrative": null,
+      "content": "To prove (26) we shall need the following formula: If feCSt(D)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 549\n\nFlatten Jj, in U W, according to the instructions of Sect. 6.1. In each disc\nu\n\nW, lie exactly 4 points of the flattened graph in which its tangent line is parallel\nto the line z,=0, see Fig. 13. It is evident that the product of the expressions\nAtay corresponding to these 4 points is equal to 1. Thus (21) implies that\n\nfor geCSt(E)\nJ a= TT] Ages.\n\nxeX\n\nA comparison of this formula with (27), where f=g*, shows that to prove\n(26) we have to prove the local equality\n\nT4(g)=Ty(g*) [] Aecss” (28)\nxeYy\nfor every ue Vert E.\n\nLet a, b, c, d be the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "550 V.G. Turaey\n\nk=/'=j=i and 2,(g)=q~'; (IV) k=i<l=j+i' and x,(g)=q—q~'; (V) k=i<l\n=j=i and 1,(g)=(q—q\" *)(1—4?); (VD i=j'<l=k, i+k and 1,(g)=(q\" '-q)\n4,4; '. The set CSt(E,) splits in the disjoint union of 6 subsets, say, A,, ..., A,\nsingled out respectively by these possibilites for 7,(g). This splitting induces\na splitting of Q(E,) in a sum of 6 summands. Schematically:\n\nort.)=0 ><) }rol ><) rol\" ><)\n\nj+ii\ni,j i i’ kK\nFOLK +O) HK |+Ol OK\nij i i i i\ni<j#i ici kti<k\n\n(It is understood that we sum up over all permitted i, j, k.) Each state ge A,\ndetermines in the evident fashion a (contributi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 551\n\nSumming it up, we obtain\n\nJ. yi i\nO(X)= 4000\" n+o()3<)}eer0(4\nj#i,i\nj\n+(q-47) owta+a-'-9o(2), (1)\ni<j :\n\ni<j\n\nAn analogous formula holds for Q(><). Namely, rotate E_ around u to the\nangle 90°, apply (31) and then rotate all the diagrams involved in the right-hand\nside of (31) to —90°. After some evident renotation we get\n\ni i, ,i\naxI=40(2}+2 [eo QU\n\nj¥i,7\ni\n+4\") 0(3} Ha\"! —a) Ut. (32)\non i>j\nj<i\n\nHere I used the obvious equalities\n\nAli N=QEN/) =)\n\ni<j i<j i>j.\nIt is easy to understand that\nini) linal\nQf KR J=Ol OX J.\nij ij\nj¥ii j#i,i\n(Here",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "552 V.G. Turaey\n\nConsider now the case v=1. We shall slightly modify R, to satisfy (22),\nPut R=R, and put\n\nR=q LE. ® E,;+ Ye eQE,j;@Eji\n\nitj,j’\n\n-q'' YE, ® E;,:+(q—q7') y [E;,;® E;,;+q'7 E,,  ® E;,\n\ni<j\n(Here i, j=1, 2, ..., m). The matrices of R and R are related by the formula\nRe} =e(i) (k) RF}.\nThis implies that R is invertible and\n(Ro YE =e) e(M(R- Yk}.\n\nIf Ri-}+0 then either the ordered pairs ¢(k), e(J) and e(i), e(j) are equal or e(i)=\n=—e(j) and (e(k), e())=(e(j), e(i). In the first case R= Ri}, in the second\ncase Rt}=—RE!. An analogous statement is valid for R~'. Therefore, if z:\nv®\"+V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/turaev1988/blocks/recommendation-page-026-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "recommendation-page-026-01.md",
+      "narrative": null,
+      "content": "We shall slightly modify R, to satisfy (22), Put R=R, and put",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/turaev1988/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and invariants of links 553\n\nReferences\n\n1. Baxter, E.J.: Exactly solved models in statistical mechanics. New York, London: Academic Press\n1982\n\n2. Drinfel’d, V.G.: Quantum groups. Zap. Nauchn. Semin. Leningr. Otd. Mat. Inst. Steklova 155,\n18-49 (1986) (in Russian)\n\n3. Freyd, P., Yetter, D., Hoste, J., Lickorish, W.B.R., Millett, K., Ocneanu, A.: A new polynomial\ninvariant of knots and links. Bull. Am. Math. Soc. 12, 239-246 (1985)\n\n4. Jimbo, M.: Quantum R matrix for the generalized Toda system. Commun. Math. Phys. 102,\n537-547 (1986)\n\n5. Jones, V.F.R.: A polynomial in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

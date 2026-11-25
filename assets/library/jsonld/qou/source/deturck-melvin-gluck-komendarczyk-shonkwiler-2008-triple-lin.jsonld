@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "contains": [
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-front-matter",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-000",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-001",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-002",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-003",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-004",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-005",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-006",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-007",
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John\n\n**Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links**\n\n*AND INTEGRAL FORMULAS FOR*\n\n33 pp, 10 sections.\n\n**Abstract.** Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such link L we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941.\n\n**Outline.** Front matter; Statement of results; Background and motivation; Explicit formula for the characteristic map gL; An asymmetric version of the characteristic ma; Sketch of the topological proof of Theorem A; Sketch of the algebraic proof of Theorem A; Sketch of the proof of Theorem B; The fundamental solution of the Laplacian on t; Completing the proof of Theorem B",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+    "title_source": "slug",
+    "source_file": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf",
+    "source_sha256": "db149864ce367da232063a37eb32a3471983a25da83a5c56f7dd4d1672062acf",
+    "pages": 33,
+    "arxiv": null,
+    "doi": "10.21711/231766362008/rmc3411",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

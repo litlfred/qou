@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1205.4619v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1205.4619v1  [physics.gen-ph]  3 Apr 2012\nQuaternion-Octonion Unitary Symmetries and Analogous\nCasimir Operators\nPushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)∗\nMay 1, 2018\n(1) Department of Physics\nKumaun University\nS. S. J. Campus\nAlmora - 263601 (U.K.), India.\n(2) Institute of Theoretical Physics\nChinese Academy of Sciences\nZhong Guan Cun East Street 55\nP. O. Box 2735\nBeijing 100190, P. R. China.\nEmail-pushpakalauni60@yahoo.co.in\nps_bisht 123@rediﬀmail.com\ntli@itp.ac.cn\nops_negi@yahoo.co.in\nAbstract\nAn attempt has been made to investigate the global SU(2) and SU(3) un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Division algebras, specifically quaternions and octonions, Jordan\nand related algebras, are described \\cite{key-1} in a conceited manner\nin unified theories of basic interactions. Quaternions were discovered\nby Hamilton \\cite{key-2} in 1843 as an illustration of group structure\nand also applied to mechanics in three-dimensional space. Quaternions\nhave the same properties as complex numbers with the difference that\nthe commutative law is not valid in their case. It gave the importance\nto quaternions in terms of their possibility to understand the fundamental\nlaws of physics. Rather, the octonio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternion Gauge Theory and Isospin",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-quaternion-gauge-theory-and-isospin.md",
+      "narrative": null,
+      "content": "Let $\\phi(x)$ be a quaternionic field ($Q$ field) and expressed\nas \n\n\\begin{align}\n\\phi= & e_{0}\\phi_{0}+e_{j}\\phi_{j}\\,\\,(\\forall\\, j=1,2,3)\\label{eq:1}\n\\end{align}\nwhere $\\phi_{0}$ and $\\phi_{j}$ are local Hermitian fields while\nthe $e_{0}$ and $e_{j}$ are respectively the real and the imaginary\nbasis of quaternion \\textbf{$Q$ }satisfying the following multiplication\nproperty\n\n\\begin{eqnarray}\ne_{0}^{2} & =e_{0};\\,\\, & e_{0}e_{j}=-\\delta_{jk}e_{0}+\\epsilon_{jkl}e_{l}\\,\\,\\,(\\forall j,k,l=1,2,3).\\label{eq:2}\n\\end{eqnarray}\n The quaternion basis elements $(e_{0},e_{1},e_{2},e_{3})$ may also\nbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternions and Dirac spinors",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-quaternions-and-dirac-spinors.md",
+      "narrative": null,
+      "content": "Let us define the free particle quaternion Dirac equation \\cite{key-26}\nfor a particle of mass $m$ as \n\n\\begin{align}\n\\left(i\\gamma^{\\mu}\\partial_{\\mu}-m\\right)\\psi= & 0.\\label{eq:26}\n\\end{align}\nHere, we used the following quaternion valued Weyl representation\nof $\\gamma$ matrices as it is convenient for ultra relativistic problems\ni.e\n\n\\begin{align}\n\\gamma^{0}=\\left[\\begin{array}{cc}\n0 & e_{0}\\\\\ne_{0} & 0\n\\end{array}\\right],\\equiv\\left[\\begin{array}{cc}\n0 & \\hat{1}_{2}\\\\\n\\hat{1}_{2} & 0\n\\end{array}\\right],\\,\\,\\,\\,\\,\\, & \\gamma^{j}=\\left[\\begin{array}{cc}\n0 & -ie_{j}\\\\\nie_{j} & 0\n\\end{array}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flavor SU(3)f and Octonions",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-flavor-su3f-and-octonions.md",
+      "narrative": null,
+      "content": "Gell-Mann and Ne'eman \\cite{key-28} were the first to propose $SU(3)_{f}$\nas the correct generalization of isospin $SU(2)_{f}$ to include third\nquantum number the strangeness along with the isospin. The Gell-Mann\n$\\lambda$ matrices are used for the representations of the infinitesimal\ngenerators of the special unitary group called $SU(3)$. This group\nconsists eight linearly independent generators $F_{A}=\\frac{\\lambda_{A}}{2}(\\forall\\, A=1,2,3,........8)$\nwhich satisfy the following commutation relation as\n\n\\begin{align}\n\\left[F_{A}\\,,F_{B}\\right]= & if_{ABC}F_{C}\\label{eq:37}\n\\end{align}\nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generators and Casimir Invariants",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-5-generators-and-casimir-invariants.md",
+      "narrative": null,
+      "content": "A very useful concept in group representation theory is that of Casimir\noperators \\cite{key-16,key- 29} although there is no general agreement\n\\cite{key-15} on a unique definition of Casimir operator\\cite{key-8,key-9}.\nNonetheless, there exists a set of invariant matrices \\cite{key-15}\nwhich can be constructed from the contractions of the generators of\na Lie group. Such invariant matrices are called the Casimir operators\n\\cite{key-15,key- 29} and hence commute with all the generators of\na Lie group. A familiar example, from ordinary quantum mechanics,\nis the Casimir operator $\\hat{L}^{2}$ for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Casimir Operator for Quaternion SU(2) group",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-6-casimir-operator-for-quaternion-su2-group.md",
+      "narrative": null,
+      "content": "In Section-2, we have already stated the correspondence between the\nquaternion units $e_{j}$ and generators of $SU(2)$ isotopic spin\ngroup. One of the important property of $SU(2)$group is the existence\nof invariant operator (namely the total angular momentum, $\\hat{\\mathbb{J}}^{2}$\nin internal isotopic spin space) which commutes with all of the generators\nof $SU(2)$ group. For compact groups, the Killing form is just the\nKronecker delta. So, for $SU(2)$ group, the Casimir invariant is\nthen simply the sum of the square of the generators $\\widehat{\\mathbb{J}}_{x},$$\\widehat{\\mathbb{J}}_{y};$$\\w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Split Octonions",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-7-split-octonions.md",
+      "narrative": null,
+      "content": "Let us start with an octonion $\\mathcal{O}$, which is expanded \\cite{key-30}\nin a basis $(e_{0},e_{A})$ as \n\n\\begin{align}\n\\mathcal{O=O}^{0}+\\sum_{A=1}^{A=7} & O^{A}e_{A}(\\forall A,B.C,=1,2,3,....,7);\\label{eq:57}\n\\end{align}\nwhere $e_{A}(A=1,2,.....,7)$ : the imaginary octonion units and $(e_{0}=1)$\n: the real octonion unit satisfy the properties given by Eqs. (\\ref{eq:43})\nand (\\ref{eq:44}) for non-commutative and non-associative octonion\nalgebra. So, we write the octonion conjugation $(\\mathcal{\\bar{O}})$,\noctonion norm $\\left|\\mathcal{O}\\right|$ and octonion inverse $(\\mathcal{O}^{-1})$\n\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Split Octonions and SU(3)f Symmetry",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-8-split-octonions-and-su3f-symmetry.md",
+      "narrative": null,
+      "content": "The split octonion algebra may now be regarded as the Lie algebra\nof $SU(3)$. So, we may write the complex Octonion $\\lyxmathsym{\\textgreek{y}}$\nin terms of split octonion basis as,\n\n\\begin{align}\n\\psi= & u^{\\dagger}\\phi+u_{0}^{\\star}\\phi_{0};\\label{eq:66}\n\\end{align}\nwhere \n\\begin{align}\nu^{\\dagger}= & \\left(u_{1}^{\\star}u_{2}^{\\star}u_{3}^{\\star}\\right),\\,\\,\\,\\phi=\\left(\\begin{array}{c}\n\\phi_{1}\\\\\n\\phi_{2}\\\\\n\\phi_{3}\n\\end{array}\\right).\\label{eq:67}\n\\end{align}\nHere, we may illustrate the transformations of the associated split\noctonion $u$ with Gell Mann $\\lambda$ matrices as,\n\n\\begin{align",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Casimir Operators for split Octonion SU(3) group",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-9-casimir-operators-for-split-octonion-su3-group.md",
+      "narrative": null,
+      "content": "The group $SU(3)$ deals the global $SU(3)$ of quark flavors and\nthe local $SU(3)_{C}$gauge symmetry of quantum Chromodynamics (QCD).\nHere we are interested in the former case where the fundamental representation\nis the triplet of (lowest mass) quarks flavors $u$, $d$,$s$. In\nthe latter case the fundamental representation is the triplet, $A=1,2,3$\n(or red, green, blue), with one such triplet for each of the$6$ quark\nflavors. Let us start with suitably handled split octonion $SU(3)$\nsymmetry associated with triplet of (lowest mass) quarks flavors $u$,\n$d$,$s$. So, formulas (\\ref{eq:53}) and (\\re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4619v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-10-conclusion.md",
+      "narrative": null,
+      "content": "Conclusion\nThe foregoing analysis provides a fundamental representation of quaternions and the split octonion algebra\nin order to investigate the ﬂavor SU(2) and SU(3) symmetries. Instead of Pauli Spin matrices for SU(2)\ngroup we have used the compact notations of quaternions while for the case of SU(3) symmetry we have\nestablished the connection between the Gellmann λ matrices and octonion basis elements. The isospin\nsymmetry and the quark-anti quark symmetries are suitably handled with quaternions and octonions. It\nis shown that the structure constants of SU(3) symmetry resembles with those",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

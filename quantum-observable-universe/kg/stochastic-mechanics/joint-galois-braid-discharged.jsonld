@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-discharged",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:joint-galois-braid-discharged",
+  "kind": "proposition",
+  "title": "Joint motivic-Galois $\\times$ braid action commutes on every bi-filtration cell — discharged",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-figure-8-verified"
+  ],
+  "tags": [
+    "joint-action",
+    "discharged",
+    "general-case",
+    "centrality",
+    "bar-transposition",
+    "graded-mikusinski",
+    "theorem-level"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.JointGaloisBraidDischarged.joint_action_discharged",
+  "text": "joint-galois-braid-discharged.md",
+  "provenance": "authored"
+}

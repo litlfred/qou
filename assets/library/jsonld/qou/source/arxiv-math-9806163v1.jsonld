@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Weights of Markov traces on Hecke algebras",
+  "contains": [
+    "library/arxiv-math-9806163v1/sections/sec-front-matter",
+    "library/arxiv-math-9806163v1/sections/sec-000",
+    "library/arxiv-math-9806163v1/sections/sec-001",
+    "library/arxiv-math-9806163v1/sections/sec-002",
+    "library/arxiv-math-9806163v1/sections/sec-003",
+    "library/arxiv-math-9806163v1/sections/sec-004",
+    "library/arxiv-math-9806163v1/sections/sec-005",
+    "library/arxiv-math-9806163v1/sections/sec-006",
+    "library/arxiv-math-9806163v1/sections/sec-007",
+    "library/arxiv-math-9806163v1/sections/sec-008",
+    "library/arxiv-math-9806163v1/sections/sec-009",
+    "library/arxiv-math-9806163v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn.\n\n**Weights of Markov traces on Hecke algebras**\n\n*R.C. Orellana*\n\n23 pp, 12 sections.\n\n**Abstract.** We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of type B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.\n\n**Outline.** Front matter; 1 Preliminaries and Notation; 1.1 Partitions and Standard Tableaux; 1.2 Schur Functions; 1.3 The Braid Group; 2 Hecke Algebra of type $B_n$; 3 Representations of the Hecke algebra of type; 3.1 The Hecke Algebra of type $A$; 3.2 A Homomorphism of $H_n(q,-q^{r_1+m})$ onto; 4 Markov Traces on the Hecke Algebra of type $; 5 The Weight Formula; 6 Markov Trace for the Hecke algebra of type D",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9806163&metadataPrefix=arXiv), submitted 1998-06-30, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9806163v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9806163v1.pdf",
+    "source_sha256": "dba44975f29cb017beca484167ac9721da1751533cd1f20335c253b3c84727db",
+    "pages": 23,
+    "arxiv": {
+      "id": "math/9806163",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "30 Jun 1998"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

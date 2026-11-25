@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0203003v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002",
+      "dcterms:creator": [
+        "Etingof, Pavel I."
+      ],
+      "dcterms:issued": "D:20181114",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0203003",
+      "dcterms:source": "library/arxiv-math-0203003v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0203003v2"
+    }
+  ]
+}

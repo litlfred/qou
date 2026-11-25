@@ -1,0 +1,1787 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0111205v1",
+  "title": "arxiv-math-0111205v1",
+  "variant": "pdf",
+  "pages": 62,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Some definitions and notations",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-some-definitions-and-notations"
+    },
+    {
+      "level": 2,
+      "title": "Frobenius algebras and 2-categories",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-frobenius-algebras-and-2-categories"
+    },
+    {
+      "level": 1,
+      "title": "The Quantum Double of a Tensor Category",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-the-quantum-double-of-a-tensor-category"
+    },
+    {
+      "level": 2,
+      "title": "On half braidings",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-31-on-half-braidings"
+    },
+    {
+      "level": 2,
+      "title": "Elementary properties of the quantum double",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-32-elementary-properties-of-the-quantum-double"
+    },
+    {
+      "level": 2,
+      "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-33-semisimplicity-of-2z-12c"
+    },
+    {
+      "level": 1,
+      "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim"
+    },
+    {
+      "level": 2,
+      "title": "A Frobenius Algebra in $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright"
+    },
+    {
+      "level": 2,
+      "title": "$F$ is essentially surjective",
+      "number": "4.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-43-f-is-essentially-surjective"
+    },
+    {
+      "level": 1,
+      "title": "Modularity of the Quantum Double",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-5-modularity-of-the-quantum-double"
+    },
+    {
+      "level": 2,
+      "title": "The `Tube algebra'",
+      "number": "5.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-51-the-tube-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Invertibility of the $S$-matrix",
+      "number": "5.2",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-52-invertibility-of-the-s-matrix"
+    },
+    {
+      "level": 2,
+      "title": "Computation of the Gauss sums",
+      "number": "5.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-53-computation-of-the-gauss-sums"
+    },
+    {
+      "level": 1,
+      "title": "The quantum double of a $*$-category",
+      "number": "6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-6-the-quantum-double-of-a--category"
+    },
+    {
+      "level": 1,
+      "title": "The quantum double of a braided category",
+      "number": "7",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-7-the-quantum-double-of-a-braided-category"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": "8",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-8-applications"
+    },
+    {
+      "level": 2,
+      "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
+      "number": "8.1",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri"
+    },
+    {
+      "level": 2,
+      "title": "Invariants of 3-manifolds",
+      "number": "8.2",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-82-invariants-of-3-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Subfactor theory: The Longo-Rehren subfactor",
+      "number": "8.3",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-83-subfactor-theory-the-longo-rehren-subfactor"
+    },
+    {
+      "level": 1,
+      "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+      "number": "A",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "simple objects",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "cop",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "semisimple",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 From Subfactors to Categories and Topology II. The Quantum Double of Tensor Categories and Subfactors Michael M¨uger∗ Korteweg-de Vries Institute, Amsterdam, Netherlands email: mmueger@science.uva.nl October 30, 2018 Abstract For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C. It is well known to be related to Drinfel’d’s notion of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0111205v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1999,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ocn",
+          "heading": false
+        },
+        {
+          "term": "asymptotic subfactor",
+          "heading": false
+        },
+        {
+          "term": "mbox mod",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "categorical version",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        }
+      ],
+      "extract": "Define the `center' $Z_0(X)$ of a set $X$ to be the monoid of all functions $f\\colon X\\rightarrow X$ (with composition as product and the identity map as unit.) Then the usual center $Z_1\\equiv Z$ of the monoid $Z_0(X)$ is trivial: $Z_1(Z_0(X))=\\{\\id_X\\}$. The cardinality of $Z_0(X)$ is given by $\\#Z_0(X)=\\#X^{\\#X}$. The aim of the present work is to prove 1-categorical analogues of these trivial set theoretic (=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-some-definitions-and-notations",
+      "number": "2.1",
+      "title": "Some definitions and notations",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "obj",
+          "heading": false
+        },
+        {
+          "term": "direct sums",
+          "heading": false
+        },
+        {
+          "term": "otimes",
+          "heading": false
+        },
+        {
+          "term": "subobjects",
+          "heading": false
+        },
+        {
+          "term": "finite direct",
+          "heading": false
+        }
+      ],
+      "extract": "We refer to \\cite[Section 2]{mue09} for our general conventions and recall only a few less standard notations. A retract $Y\\prec X$ is also called a subobject. A category has subobjects if all idempotents split, and every category $\\2A$ has a canonical completion $\\ol{\\2A}^p$ for which this is the case. A $\\7F$-linear category is semisimple if it has direct sums and subobjects and every object is a finite direct sum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-frobenius-algebras-and-2-categories",
+      "number": "2.2",
+      "title": "Frobenius algebras and 2-categories",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcirc otimes",
+          "heading": false
+        },
+        {
+          "term": "label mcirc",
+          "heading": false
+        },
+        {
+          "term": "rarr",
+          "heading": false
+        },
+        {
+          "term": "frobenius",
+          "heading": true
+        },
+        {
+          "term": "stackrel otimes",
+          "heading": false
+        },
+        {
+          "term": "cite mue",
+          "heading": false
+        },
+        {
+          "term": "otimes simeq",
+          "heading": false
+        },
+        {
+          "term": "equivalence displaystyle",
+          "heading": false
+        }
+      ],
+      "extract": "\\bdefin \\label{d-Frob} Let $\\2A$ be a (strict) monoidal category. A Frobenius algebra in $\\2A$ is a quintuple $\\5Q=(Q,v,v',w,w')$, where $Q$ is an object in $\\2A$ and $v:\\11\\rightarrow Q, v': Q\\rightarrow\\11, w: Q\\rightarrow Q^2, w':Q^2\\rightarrow Q$ are morphisms satisfying the following conditions: \\begin{equation} \\label{W1} w\\otimes\\id_Q\\mcirc w=\\id_Q\\otimes w\\mcirc w, \\end{equation} \\begin{equation} \\label{W1'}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-the-quantum-double-of-a-tensor-category",
+      "number": "3",
+      "title": "The Quantum Double of a Tensor Category",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "The Quantum Double of a Tensor Category",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-on-half-braidings",
+      "number": "3.1",
+      "title": "On half braidings",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcirc",
+          "heading": false
+        },
+        {
+          "term": "otimes alpha",
+          "heading": false
+        },
+        {
+          "term": "ref hb-ii",
+          "heading": false
+        },
+        {
+          "term": "object step",
+          "heading": false
+        },
+        {
+          "term": "tangle coev",
+          "heading": false
+        },
+        {
+          "term": "elemma prf",
+          "heading": false
+        },
+        {
+          "term": "tangle quad",
+          "heading": false
+        },
+        {
+          "term": "alpha sum",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with the definition of the quantum double $\\2Z_1(\\2C)$ of a (strict) monoidal category $\\2C$. \\bdefin Let $\\2C$ be a strict monoidal category and let $X\\in\\2C$. A half braiding $e_X$ for $X$ is a family $\\{e_X(Y)\\in\\Hom_\\2C(XY,YX),\\ Y\\in\\2C\\}$ of morphisms satisfying \\begin{itemize} \\item[(i)] Naturality w.r.t.\\ the argument in brackets, i.e. \\begin{equation}t\\otimes\\id_X\\mcirc e_X (Y)= e_X(Z)\\mcirc\\id_X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-elementary-properties-of-the-quantum-double",
+      "number": "3.2",
+      "title": "Elementary properties of the quantum double",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcirc otimes",
+          "heading": false
+        },
+        {
+          "term": "quad mcirc",
+          "heading": false
+        },
+        {
+          "term": "object step",
+          "heading": false
+        },
+        {
+          "term": "elemma prf",
+          "heading": false
+        },
+        {
+          "term": "hev step",
+          "heading": false
+        },
+        {
+          "term": "tangle object",
+          "heading": false
+        },
+        {
+          "term": "qed blemma",
+          "heading": false
+        },
+        {
+          "term": "bean lefteqn",
+          "heading": false
+        }
+      ],
+      "extract": "\\bdefin The center $\\2Z_1(\\2C)$ of a strict monoidal category $\\2C$ has as objects pairs $(X, e_X)$, where $X\\in\\2C$ and $ e_X$ is a half braiding. The morphisms are given by \\bea \\lefteqn{ \\Hom_{\\2Z_1(\\2C)}((X, e_X),(Y, e_Y)= \\{ t\\in\\Hom_\\2C(X,Y) \\ | } \\nn \\\\ && \\quad\\quad \\id_X\\otimes t \\mcirc e_X(Z)= e_Y(Z)\\mcirc t\\otimes\\id_X \\quad \\forall Z\\in\\2C \\}. \\label{dmor}\\eea The tensor product of objects is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-semisimplicity-of-2z-12c",
+      "number": "3.3",
+      "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 989,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hxx step",
+          "heading": false
+        },
+        {
+          "term": "obj step",
+          "heading": false
+        },
+        {
+          "term": "hstep obj",
+          "heading": false
+        },
+        {
+          "term": "hev obj",
+          "heading": false
+        },
+        {
+          "term": "step mobj",
+          "heading": false
+        },
+        {
+          "term": "hcoev step",
+          "heading": false
+        },
+        {
+          "term": "hcd step",
+          "heading": false
+        },
+        {
+          "term": "hcu step",
+          "heading": false
+        }
+      ],
+      "extract": "\\blemma Let $\\2C$ be semisimple spherical with simple unit. We assume that there are only finitely many simple objects and that $\\dim\\2C\\ne 0$. Let $(X,e_X),(Y,e_Y)\\in\\2Z_1(\\2C)$. Then the map $E_{X,Y}: \\Hom_\\2C(X,Y)\\rightarrow\\Hom_\\2C(X,Y)$ defined by \\[ E_{X,Y}(t)=(\\dim\\2C)^{-1}\\sum_{i\\in \\Gamma} d_i \\ \\ \\begin{tangle} \\step\\object{\\ol{\\ve}(X_i)}\\Step\\object{Y} \\\\ \\step\\hh\\hcoev\\step\\id\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim",
+      "number": "4",
+      "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes",
+          "heading": true
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        },
+        {
+          "term": "strict spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical tensor",
+          "heading": false
+        },
+        {
+          "term": "imath",
+          "heading": false
+        },
+        {
+          "term": "hat",
+          "heading": false
+        },
+        {
+          "term": "lre",
+          "heading": false
+        },
+        {
+          "term": "mue",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-morita} \\subsection{A Frobenius Algebra in $\\2C\\boxtimes\\2C^\\op$}\\label{ss-mcata} Throughout this section $\\2C$ will be a strict spherical tensor category with simple unit over an algebraically closed field $\\7F$. We require that $\\2C$ is semisimple with finite set $\\Gamma$ of isomorphism classes of simple objects and $\\dim\\2C\\ne 0$. The set $\\Gamma$ has a distinguished element $0$ representing the tensor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright",
+      "number": "4.2",
+      "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 25,
+      "labelStart": "18",
+      "labelEnd": "25",
+      "words": 1720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes mcirc",
+          "heading": false
+        },
+        {
+          "term": "frabox step",
+          "heading": false
+        },
+        {
+          "term": "mobj step",
+          "heading": false
+        },
+        {
+          "term": "hcu hstep",
+          "heading": false
+        },
+        {
+          "term": "mobj hxx",
+          "heading": false
+        },
+        {
+          "term": "hcd step",
+          "heading": false
+        },
+        {
+          "term": "hcu obj",
+          "heading": false
+        },
+        {
+          "term": "object boxtimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{fff} In this subsection we will construct a functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$ and prove that it is fully faithful and monoidal. This already implies that $\\2Z_1(\\2C)$ has finitely many isomorphism classes of simple objects, which is not at all obvious from Definition \\ref{defdouble}. \\blemma \\label{11mor} Let $X,Y\\in\\2C$. There is a one-to-one correspondence between morphisms $u\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-f-is-essentially-surjective",
+      "number": "4.3",
+      "title": "$F$ is essentially surjective",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "29",
+      "words": 1591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frabox hstep",
+          "heading": false
+        },
+        {
+          "term": "frabox step",
+          "heading": false
+        },
+        {
+          "term": "hcu hstep",
+          "heading": false
+        },
+        {
+          "term": "hstep object",
+          "heading": false
+        },
+        {
+          "term": "frabox tilde",
+          "heading": false
+        },
+        {
+          "term": "tangle step",
+          "heading": false
+        },
+        {
+          "term": "mmobj step",
+          "heading": false
+        },
+        {
+          "term": "hcd step",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{esssurj} In order to conclude that $F$ establishes an equivalence $\\2B\\stackrel{\\otimes}{\\cong}\\2Z_1(\\2C)$ of tensor categories it remains to prove that $F$ is essentially surjective, viz. that for every object $Y$ of $\\2B$ there is $(X,e_X)\\in\\2Z_1(\\2C)$ such that $F(X,e_X)\\cong Y$. We begin with a result due to Izumi \\cite{iz2}. \\blemma Let $Y\\in\\2C$ be simple. Then the 1-morphisms $(Y\\boxtimes\\11)J,\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-modularity-of-the-quantum-double",
+      "number": "5",
+      "title": "Modularity of the Quantum Double",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "Modularity of the Quantum Double 29 5.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-51-the-tube-algebra",
+      "number": "5.1",
+      "title": "The `Tube algebra'",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "30",
+      "labelEnd": "34",
+      "words": 1454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mobj step",
+          "heading": false
+        },
+        {
+          "term": "obj step",
+          "heading": false
+        },
+        {
+          "term": "hat bigoplus",
+          "heading": false
+        },
+        {
+          "term": "gamma boxtimes",
+          "heading": false
+        },
+        {
+          "term": "object step",
+          "heading": false
+        },
+        {
+          "term": "tube",
+          "heading": true
+        },
+        {
+          "term": "alpha step",
+          "heading": false
+        },
+        {
+          "term": "cong bigoplus",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-tube} By definition \\cite{mue09} of $\\2E$, every simple $\\6B-\\6B$ morphism is contained in $\\oj(X\\boxtimes Y^\\op)J$ for some simple $X, Y$. In view of Lemma \\ref{iz1} every simple $\\6B-\\6B$-morphism is in fact contained in $\\oj (X\\boxtimes\\11)J$ for some simple $X\\in\\2C$ (as well as in $\\oj (\\11\\boxtimes \\ol{X}^\\op) J$). Defining \\[ \\hat{Y}_L = \\bigoplus_{i\\in \\Gamma} X_i\\boxtimes \\11, \\quad\\quad \\hat{Y}_R",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-52-invertibility-of-the-s-matrix",
+      "number": "5.2",
+      "title": "Invertibility of the $S$-matrix",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 39,
+      "labelStart": "34",
+      "labelEnd": "39",
+      "words": 1297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mobj step",
+          "heading": false
+        },
+        {
+          "term": "hxx mobj",
+          "heading": false
+        },
+        {
+          "term": "object mobj",
+          "heading": false
+        },
+        {
+          "term": "mobj hstep",
+          "heading": false
+        },
+        {
+          "term": "tangle step",
+          "heading": false
+        },
+        {
+          "term": "scriptsize mobj",
+          "heading": false
+        },
+        {
+          "term": "hcoev step",
+          "heading": false
+        },
+        {
+          "term": "step hev",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{modular} In this subsection we will prove that the $S$-matrix \\[ S((X,e_X),(Y,e_Y))=\\quad \\begin{tangle} \\coev\\step\\coev\\\\ \\id\\Step\\hxx\\Step\\id\\\\ \\id\\step[.2]{\\scriptsize \\mobj{(X,e_X)}}\\step[1.8]\\hxx\\step[-.2]{\\scriptsize \\mobj{(Y,e_Y)}}\\step[2.2]\\id\\\\ \\step[-3]\\mobj{\\ve(\\ol{(X,e_X)})}\\step[3]\\ev\\step\\ev\\mobj{\\ve((Y,e_Y))} \\end{tangle} \\] of $\\2Z_1(\\2C)$ is invertible, thus $\\2Z_1(\\2C)$ is modular in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-53-computation-of-the-gauss-sums",
+      "number": "5.3",
+      "title": "Computation of the Gauss sums",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hstep hxx",
+          "heading": false
+        },
+        {
+          "term": "hxx step",
+          "heading": false
+        },
+        {
+          "term": "hcoev step",
+          "heading": false
+        },
+        {
+          "term": "obj hstep",
+          "heading": false
+        },
+        {
+          "term": "tangle hstep",
+          "heading": false
+        },
+        {
+          "term": "hev step",
+          "heading": false
+        },
+        {
+          "term": "hstep object",
+          "heading": false
+        },
+        {
+          "term": "beta step",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gss} If $\\2C$ is a braided spherical tensor category a theorem of Deligne, cf.\\ \\cite[Proposition 2.11]{y}, implies that $\\2Z_1(\\2C)$ is a ribbon category (or balanced). Namely, \\[ \\theta_X=\\quad\\quad \\begin{tangle} \\object{\\ol{\\ve}(\\ol{X})}\\Step\\object{X}\\\\ \\hh\\hcoev\\step\\id\\\\ \\step[-.8]\\mobj{\\ol{X}}\\step[.8]\\id\\step\\hxx\\\\ \\hh\\hev\\step\\id\\\\ \\object{\\ve(\\ol{X})}\\Step\\object{X} \\end{tangle} \\quad\\quad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-the-quantum-double-of-a--category",
+      "number": "6",
+      "title": "The quantum double of a $*$-category",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "41",
+      "labelEnd": "44",
+      "words": 825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imath mcirc",
+          "heading": false
+        },
+        {
+          "term": "hat mcirc",
+          "heading": false
+        },
+        {
+          "term": "boxtimes step",
+          "heading": false
+        },
+        {
+          "term": "mcirc otimes",
+          "heading": false
+        },
+        {
+          "term": "mobj hat",
+          "heading": false
+        },
+        {
+          "term": "object boxtimes",
+          "heading": false
+        },
+        {
+          "term": "frabox step",
+          "heading": false
+        },
+        {
+          "term": "step hcoev",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the quantum double $\\2Z_1(\\2C)$ of a $*$-category $\\2C$. If $s\\in\\Hom_{\\2Z_1(\\2C)}((X,e_X),(Y,e_Y))\\subset\\Hom_\\2C(X,Y)$ then clearly $s^*\\in\\Hom_\\2C(Y,X)$. It does, not, however, follow that $s^*\\in\\Hom_{\\2Z_1(\\2C)}((Y,e_Y),(X,e_X))$. But there is a suitable full subcategory of $\\2Z_1(\\2C)$ which is a $*$-category. \\bdefin Let $\\2C$ be a tensor $*$-category. Then the unitary quantum double $\\2Z_1^*(\\2C)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-the-quantum-double-of-a-braided-category",
+      "number": "7",
+      "title": "The quantum double of a braided category",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 49,
+      "labelStart": "44",
+      "labelEnd": "49",
+      "words": 2091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes tilde",
+          "heading": false
+        },
+        {
+          "term": "boxtimes otimes",
+          "heading": false
+        },
+        {
+          "term": "mobj step",
+          "heading": false
+        },
+        {
+          "term": "braided",
+          "heading": true
+        },
+        {
+          "term": "hxx step",
+          "heading": false
+        },
+        {
+          "term": "braided monoidal",
+          "heading": false
+        },
+        {
+          "term": "cap tilde",
+          "heading": false
+        },
+        {
+          "term": "elemma prf",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{moddoub} For the moment, let $\\2C$ be any (strict) braided monoidal category. Given such a category $\\2C$ we denote by $\\tilde{\\2C}$ the braided monoidal category which coincides with $\\2C$ as a monoidal category, but has the braiding \\[ \\tilde{c}(X,Y)= c(Y,X)^{-1}. \\] It is well known (e.g., \\cite[Proposition XIII.4.3]{ka}) that for a braided monoidal category $\\2C$ there is a strict braided monoidal functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-8-applications",
+      "number": "8",
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Applications 8.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri",
+      "number": "8.1",
+      "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "forgetful functor",
+          "heading": true
+        },
+        {
+          "term": "cong hom",
+          "heading": false
+        },
+        {
+          "term": "dim hom",
+          "heading": false
+        },
+        {
+          "term": "cong bigoplus",
+          "heading": false
+        },
+        {
+          "term": "rarr",
+          "heading": false
+        },
+        {
+          "term": "adjoint",
+          "heading": true
+        },
+        {
+          "term": "boxtimes",
+          "heading": false
+        },
+        {
+          "term": "two-sided adjoint",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-adj} In Section \\ref{sec-morita} we proved that the functor $F: \\2Z_1(\\2C)\\rarr\\2B$ is fully faithful and essentially surjective. By \\cite[Theorem IV.4.1]{cwm} this implies that $F$ has a two-sided adjoint $G: \\2B\\rarr\\2Z_1(\\2C)$. Together with Lemma\\ \\ref{adj} this implies \\[ \\Hom_\\2C(X,Y)\\cong\\Hom_\\2B(F(X,e_X),\\oj (Y\\boxtimes\\11)J)\\cong \\Hom_{\\2Z_1(\\2C)}((X,e_X),G(\\oj (Y\\boxtimes\\11)J)), \\] where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-82-invariants-of-3-manifolds",
+      "number": "8.2",
+      "title": "Invariants of 3-manifolds",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "50",
+      "labelEnd": "52",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ocn",
+          "heading": false
+        },
+        {
+          "term": "boxtimes tilde",
+          "heading": false
+        },
+        {
+          "term": "triangulation tqft",
+          "heading": false
+        },
+        {
+          "term": "conject",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "mue",
+          "heading": false
+        },
+        {
+          "term": "bprop",
+          "heading": false
+        },
+        {
+          "term": "eprop",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{TQFT} There are two classes of invariants of 3-manifolds associated with a modular tensor category $\\2C$, cf.\\ \\cite{t}. On the one hand we have the surgery invariants $RT(M,\\2C)$ of Reshetikhin and Turaev \\cite{rt2} which are based on the fact that every connected oriented closed 3-manifold can be obtained from $S^3$ by surgery along a framed link. It turned out \\cite{brug1} that modularity of the category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-83-subfactor-theory-the-longo-rehren-subfactor",
+      "number": "8.3",
+      "title": "Subfactor theory: The Longo-Rehren subfactor",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subfactor",
+          "heading": true
+        },
+        {
+          "term": "asymptotic subfactor",
+          "heading": false
+        },
+        {
+          "term": "cite ocn",
+          "heading": false
+        },
+        {
+          "term": "hom subset",
+          "heading": false
+        },
+        {
+          "term": "longo-rehren",
+          "heading": true
+        },
+        {
+          "term": "izumi",
+          "heading": false
+        },
+        {
+          "term": "monoidal subcategory",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-subf} As stated in the introduction, the present project originated in the author's observation that the quantum double of monoidal categories appears implicitly in Izumi's preprint \\cite{iz1}. Therefore it seems reasonable to briefly comment on the subfactor setting. Let $M$ be a type III factor with separable predual. Then the tensor category $\\End_f(M)$ of (normal unital $*$-) endomorphisms $\\rho$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf",
+      "number": "A",
+      "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 62,
+      "labelStart": "54",
+      "labelEnd": "62",
+      "words": 2619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "dimensional hopf",
+          "heading": true
+        },
+        {
+          "term": "quantum doubles",
+          "heading": true
+        },
+        {
+          "term": "cosemisimple hopf",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular hopf",
+          "heading": false
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular semisimple",
+          "heading": false
+        },
+        {
+          "term": "r21r",
+          "heading": false
+        }
+      ],
+      "extract": "Hopf Algebras The core of this paper was the proof that the quantum doubles of certain tensor categories are modular. That Rep D(H) is modular has been proven for H = CG [2], where G is a ﬁnite group, and for semisimple H over an algebraically closed ﬁeld k of characteristic zero [13]. A proof which covers also weak Hopf algebras (or ﬁnite quantum groupoids) is given in [41]. Our aim in this appendix is to give a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "boxtimes step",
+      "heading": false
+    },
+    {
+      "term": "mobj step",
+      "heading": false
+    },
+    {
+      "term": "boxtimes mcirc",
+      "heading": false
+    },
+    {
+      "term": "tangle step",
+      "heading": false
+    },
+    {
+      "term": "obj step",
+      "heading": false
+    },
+    {
+      "term": "boxtimes otimes",
+      "heading": false
+    },
+    {
+      "term": "object step",
+      "heading": false
+    },
+    {
+      "term": "mobj hstep",
+      "heading": false
+    },
+    {
+      "term": "hxx step",
+      "heading": false
+    },
+    {
+      "term": "hcoev step",
+      "heading": false
+    },
+    {
+      "term": "hev step",
+      "heading": false
+    },
+    {
+      "term": "frabox step",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p54); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0111205v1"
+  }
+}

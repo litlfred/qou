@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lean-lib-twisted-frobenius-hopf",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lean-lib-twisted-frobenius-hopf",
+  "kind": "remark",
+  "title": "Community Library 2 (TwistedFrobeniusHopf): Nakayama-twisted Frobenius--Hopf algebras and Woronowicz differential calculi",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+    "papers/quantum-observable-universe/blocks/rem-lean-lib-hecke-temperley-lieb"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "cites": [
+    "references/kock2004",
+    "references/woronowicz1989"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "frobenius-algebra",
+    "hopf-algebra",
+    "appendix"
+  ],
+  "text": "lean-lib-twisted-frobenius-hopf.md",
+  "provenance": "authored"
+}

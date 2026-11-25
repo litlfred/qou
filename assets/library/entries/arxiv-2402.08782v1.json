@@ -1,0 +1,353 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2402.08782v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Farey map $\\mathbb{F}$, defined in section 2, is the universal triangular map, in that every triangular map on an orientable surface is a quotient of $\\mathbb{F}$ by a subgroup of the modular  group, $\\Gamma$ and every regular triangular map is a quotient of $\\mathbb{F}$ by a normal subgroup of $\\Gamma.$  This gives rise to many important Riemann surfaces such as the Klein surface.  In \\cite{ISS} we used the Farey map to study the Klein surface.  In particular we showed how the Farey structure could be used to construct the famous 14-sided fundamental polygon that represents the Klein surf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bring's surface",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-brings-surface.md",
+      "narrative": null,
+      "content": "We start with the following result which comes from Conder and Dobcsanyi's classifications of regular maps of small genus~\\cite{CD01}.\n \n  \\begin{theorem} \\label{th1}There is a unique regular map of type $\\{5,4\\}$ of genus 4 with 120 automorphisms.  The automorphism group of this map here is the symmetric group $S_5$.\n    \\end{theorem}\n\n  Underlying this map is a unique Riemann surface of genus 4 with automorphism group $S_5$.  This surface is called {\\it Bring's Surface}.  (Type $\\{5, 4\\}$ means that all faces are quadrilaterrals and all vertices have valency 5.)\n\n \nWe let $\\Gamma(2, 5, 4)$ d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Hecke–Farey coordinates for Bring’s surface\nDoha Kattan1 and David Singerman2\nAbstract. The modular group Γ (which is the Hecke group H3) can be used\nto study triangular maps, Here we use the Hecke group H4 to study the reg-\nular map that underlies Bring’s surface of genus 4.\nOur main result is the\ndetermination of the 20-sided hyperbnolic polygon that gives Bring’s surface.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The congruence subgroups of the Hecke groups",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-the-congruence-subgroups-of-the-hecke-groups.md",
+      "narrative": null,
+      "content": "Let $I$ be an ideal of  $\\mathbb Z[\\lambda_{q}]$.\\\\We define\n \\begin{equation*}\n  PSL(2,\\mathbb Z[\\lambda_{q}],I) = \\left\\{ \\left(\n  \\begin{matrix}\n    a & b \\\\ c & d \n  \\end{matrix}\n  \\right) \\in PSL(2,\\mathbb Z[\\lambda_{q}]) \\; |\\;  a-1,b,c,d-1\\;\\in I\n  \\right\\}.\n\\end{equation*}\n\nNow for any ideal $I$ of  $\\mathbb Z[\\lambda_{q}]$ we define the $\\mathit{ principal\\; congruence \\;subgroup}$ of the Hecke group $H_{q}$ as, $$H_{q}(I)=PSL(2,\\mathbb Z[\\lambda_{q}],I) \\cap H_{q},$$ that is, the subgroup of $H_{q}$ consisting of elements in $PSL(2,\\mathbb Z[\\lambda_{q}])$.  For our interest we take",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal q-gonal maps",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-universal-q-gonal-maps.md",
+      "narrative": null,
+      "content": "In \\cite{Sin88, KS22} it was shown that the Farey map $\\hat{\\mathscr{M}}_{3}$ is the universal triangular map.  The Farey map is a map on the upper-half plane whose vertices are the extended rationals $\\mathbb{Q}\\cup \\{\\infty\\}$\n   and where two rationals $\\frac{a}{c}$ and $\\frac{b}{d}$ are joined by an edge if and only if $ad-bc=\\pm 1.$ We sometimes refer to the  rational $\\frac{a}{c}$ as a {\\it Farey coordinate.} The automorphism group of $\\hat{\\mathscr{M}}_{3}$ is the classical modular group $\\Gamma.$ Another way of constructing $\\mathbb{F}$ is as the map whose vertex set is the extended ra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Farey fractions modulo n",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-5-farey-fractions-modulo-n.md",
+      "narrative": null,
+      "content": "Farey fractions were first introduced in \\cite{SS19} for the case $q=3$.  A Farey fraction modulo $n$ is a pair $(a,c)$ where $(a,c,n)=1$ and where we identify $\\frac{a}{c}$ with $\\frac{-a}{-c}.$  We think of these fractions as being points on $\\mathbb{H}/\\Gamma(n)$. Two Farey fractions mod $n$,  $(a,c)$  and $ (b,d)$  are adjacent when $ad-bc\\equiv \\pm 1  \\; \\text{mod}\\;n$. \n \n \\begin{example} {$n=5.$} The Farey fractions mod 5 are \n   \n   $$\\frac{1}{0}, \\frac{2}{0}, \\frac{0}{1}, \\frac{1}{1}, \\frac{2}{1}, \\frac{3}{1}, \\frac{4}{1}, \\frac{0}{2},\\frac{1}{2} , \\frac{2}{2}, \\frac{3}{2} , \\frac{4}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hecke-Farey fractions for the cube",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-6-hecke-farey-fractions-for-the-cube.md",
+      "narrative": null,
+      "content": "The main aim of this paper is to find Hecke-Farey fractions for Bring's curve, $\\mathscr{M}_4(5).$   In general, for a positive integer $n$  the map $\\mathcal{M}_4(n)$ has vertices of the form $\\frac{a}{\\sqrt 2 c}$ or $\\frac{b\\sqrt 2}{d}$. where $a,b,c,d\\in \\mathbb{Z}_n.$   These numbers are called {\\it Hecke-Farey coordinates.}These two vertices are joined by an edge If and only if $ad-2bc\\equiv \\pm 1$ mod$\\ n.$\n \n Before we consider $\\mathscr{M}_4(5)$  we look at the simpler case $\\mathscr{M}_4(3)$ which gives the cube.\n \n \n We are now considering the triangle group $\\Gamma(2,3,4)$. This has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bring curve M4(5)",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-7-the-bring-curve-m45.md",
+      "narrative": null,
+      "content": "We want want to give each   vertex of  $\\mathscr{M}_4(5)$ a Hecke-Farey coordinate.  These will have the form $\\frac{a}{c\\sqrt 2}$ or $\\frac{b\\sqrt 2}{d}$ where $a,b,c,d$ lie in the set $\\{0,1,2,3,4\\}$. Now $\\frac{a}{c\\sqrt 2} = \\frac{x}{y\\sqrt 2}$ if  and only if $a=\\pm x$ and $c=\\pm y$, etc. so we can easily work out all the 24 Hecke- Farey fractions representing the points of $\\mathscr{M}_{4}(5)$. These are presented in Table \\ref {tab:tab6}.\n\n\n\n\\begin{table}[H]\n\\caption {Table of Correspondence for $\\mathscr{M}_{4}(5)$ } \\label{tab:tab6} \n\n\\centering\n \\begin{tabular}{lc lc lc l} \n \\midrule",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/def-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "def-sec-008-02.md",
+      "narrative": null,
+      "content": "A Farey circuit is a collection of points v0, v1, · · · vn each with a Hecke-Farey coordinate such that vi is adjacent to vi+1 and v0 = vn. A Farey circuit on M4(5) is given by H2, E1, F2, B1, J2, K1, C2, L1, E2, B1, F2, D1, H2 (12 vertices). For example H2 = 2 √ is adjacent to E1 = √ 2 and E1 is adjacent to F2 = √ 3 , etc. We continue this Farey sequence just by adding multiples of √",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "The map z 7→z + √ 2 of the Hecke-Farey coordinates induces a rotation of M4(5) through 2π/5 about the centre 1 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hecke–Farey coordinates for Bring's surface",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-9-heckefarey-coordinates-for-brings-surface.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poles",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-8-poles.md",
+      "narrative": null,
+      "content": "8. Poles\nIn a Farey map (the case q = 3) a pole is a vertex with a Farey coordinate of\nthe form a\n0, where a̸ = 0. For example, in the icosahedron M3(5) the poles are 1\n0\nand 2\n0. which from Figure 4 are the north and south poles of the icosahedron. Also,\nin [4] Farey fractions were used to construct the fundamental region for the Klein\nquartic. We found that 1\n0 was at the centre whilst 2\n0 and 3\n0 lie on the boundary.\nThis is a typical situation. The pole 1\n0 always lies at the centre and the other poles\nlie on the boundary. In a rough sense these other poles lie at \"infinity\". The poles\nof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence classes of vertices",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-10-equivalence-classes-of-vertices.md",
+      "narrative": null,
+      "content": ".\n  \n  With these side identifications we can easily find the equivalence classes of vertices. \\\\Label the vertices $a_1, a_2,\\cdots a_{20}$ with edge 1 having vertices  $a_1, a_2$ (going anti-clockwise), side 2 having vertices $a_2, a_3$ etc.\n  \n\nAs 2 is paired to 5, we get $a_2=a_6$,\\;$a_3=a_5$.\n  \n   \nAs 6 ia paired to 9, we get $a_6=a_{10}$,  $a_7=a_9.$\n\n\nAs 7 is paired with 16, we get $a_7=a_{17},\\; a_8=a_{16}$.\n\nAs 10 is paired to 13, we have $a_{11}=a_{13}$, $a_{10}=a_{14}.$\n\nAs 11 is paired to 20 is paired with 13, we get $a_{11}= a_{13}$, $a_{10}=a_{14}.$\n\nAs 14 is pared with 17 we ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.08782v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] H. Braden and T. Northover, Bring’s curve: its period matrix and the vector of Riemann\nconstants, SIGMA 8 065 (2012).\n[2] M. Conder and P. Dobcsányi, Determination of all regular maps of small genus, Journal of\nCombinatorial Theory 81 (2001), no. 1, 224–242.\n12\nDOHA KATTAN1 AND DAVID SINGERMAN2\n[3] H. S. M. Coxeter and W. O. J. Moser, Generators and Relations for Discrete Groups,\nSpringer-Verlag, Berlin-Göttingen-Heidelberg, 1957. MR 0088489.\n[4] I. Ivrissimtzis, D. Singerman and J. Strudwick, From Farey fractions to the Klein quartic\nand beyond, Ars Mathematica Contemporanea 20 (2021), no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

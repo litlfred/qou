@@ -1,0 +1,467 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1206.3156v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1206.3156v2  [hep-lat]  21 Dec 2012\nADP-12-26/T793\nDESY 12-094\nEdinburgh 2012/07\nLiverpool LTH 946\nDecember 20, 2012\nIsospin breaking in octet baryon mass splittings\nR. Horsleya, J. Najjarb,\nY. Nakamurac, D. Pleiterd, P. E. L. Rakowe,\nG. Schierholzf and J. M. Zanottig\n– QCDSF-UKQCD Collaboration –\na School of Physics and Astronomy, University of Edinburgh,\nEdinburgh EH9 3JZ, UK\nb Institut f¨ur Theoretische Physik, Universit¨at Regensburg,\n93040 Regensburg, Germany\nc RIKEN Advanced Institute for Computational Science,\nKobe, Hyogo 650-0047, Japan\nd J¨ulich Supercomputer Centre, Forschungsz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThe masses of the baryon octet are now very accurately known, with results given\nin the Particle Data Group [1] as\nMexp\nn\n=\n0.939565346(23) GeV,\nMexp\np\n=\n0.938272013(23) GeV,\nMexp\nΣ−\n=\n1.197449(30) GeV,\nMexp\nΣ+\n=\n1.18937(7) GeV,\nMexp\nΞ−\n=\n1.32171(7) GeV,\nMexp\nΞ0\n=\n1.31486(20) GeV,\n(1)\naround the outer ring of the octet and\nMexp\nΣ0\n=\n1.192642(24) GeV,\nMexp\nΛ\n=\n1.115683(6) GeV,\n(2)\nat the centre.\nIsospin breaking eﬀects (i.e. u – d quark mass diﬀerences and\nelectromagnetic eﬀects) are responsible for the nucleon, n – p, Sigma, Σ−– Σ+,\nand Xi, Ξ−– Ξ0, mass splittings\n(Mn −Mp)exp\n=\n1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octet Baryons",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-octet-baryons.md",
+      "narrative": null,
+      "content": "Octet Baryons\nBefore discussing partial quenching, we ﬁrst consider the case where the valence\nquark masses are the same as the sea quark masses, the so-called ‘unitary line’.\nThe SU(3) ﬂavour symmetry breaking expansion, [13], for all of the outer ring\noctet baryons consisting of a pair of identical ﬂavour quarks and a third, diﬀerent\nquark can be compactly written up to NLO as\nM2(aab)\n=\nM2\n0 + A1(2δma + δmb) + A2(δmb −δma)\n+ B0 1\n6(δm2\nu + δm2\nd + δm2\ns)\n(4)\n+ B1(2δm2\na + δm2\nb) + B2(δm2\nb −δm2\na) + B3(δmb −δma)2 ,\nwith quarks q = a, b, . . . from (u, d, s), where\nδmq = mq −m ,\nm = 1\n3(mu +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determining the expansion coefficients",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-determining-the-expansion-coefficients.md",
+      "narrative": null,
+      "content": "Determining the expansion coeﬃcients\nWe now ﬁrst ﬁnd the ˜A1, ˜A2 and ˜B1, . . ., ˜B3 coeﬃcients.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partially quenched octet baryons",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-31-partially-quenched-octet-baryons.md",
+      "narrative": null,
+      "content": "Partially quenched octet baryons\nLet us now generalise the previous results to the case when the valence quarks\ndo not have to have the same mass as the sea quarks (i.e. we leave the unitary\nline). We have also generalised eq. (65) of [13] from NLO to NNLO [14]. We ﬁnd\nM2(aab)\n=\nM2\n0 + A1(2δµa + δµb) + A2(δµb −δµa)\n+ 1\n6B0(δm2\nu + δm2\nd + δm2\ns)\n+ B1(2δµ2\na + δµ2\nb) + B2(δµ2\nb −δµ2\na) + B3(δµb −δµa)2\n+ C0δmuδmdδms\n+ [C1(2δµa + δµb) + C2(δµb −δµa)] (δm2\nu + δm2\nd + δm2\ns)\n+ C3(δµa + δµb)3 + C4(δµa + δµb)2(δµa −δµb)\n+ C5(δµa + δµb)(δµa −δµb)2 + C6(δµa −δµb)3 ,\n(18)\nwhere a, b, . . . now denote t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical results",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-32-numerical-results.md",
+      "narrative": null,
+      "content": "Numerical results\nSimulations have been performed using Nf = 2+1 O(a) improved clover fermions\n[19] at β = 5.50 and on 323 × 64 lattice sizes, as described in more detail in\n[13]. Errors given here are statistical (using ∼O(1500) conﬁgurations); possible\nsystematic errors are discussed in Appendix A and incorporated into the ﬁnal\nresults in section 7.\nA particular starting value for the degenerate sea quark mass, m0, is chosen\non the SU(3) ﬂavour symmetric line, and the subsequent sea quark mass points\nml, ms have then been arranged in the various simulations to have constant m\n(= m0). This en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octet pseudoscalar mesons",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-4-octet-pseudoscalar-mesons.md",
+      "narrative": null,
+      "content": "Octet pseudoscalar mesons\nDetermining the octet pseudoscalar mass splittings (or more accurately the split-\ntings of the quadratic masses) will give δm∗\nu, δm∗\nd and δm∗\ns (the quark masses\nat the physical point). This closely follows the baryon octet procedure, we must\nagain consider the analogous ﬂavour symmetry expansion for the pseudoscalar\nmeson octet together with the known experimental masses of the pions and kaons.\nIn Fig. 4 we sketch the lowest pseudoscalar octet in the I3–Y plane.\nWe\nhave K0(ds), K+(us), π+(ud) together with K\n0(sd), K−(su) and π−(du) in the\n(outer) ring of the octet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PQ pseudoscalar meson flavour expansions",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-41-pq-pseudoscalar-meson-flavour-expansions.md",
+      "narrative": null,
+      "content": "PQ pseudoscalar meson ﬂavour expansions\nThe corresponding formulas for the octet pseudoscalar mesons are simpler than\nfor the octet baryon, due to the constraints imposed by C invariance. The follow-\ning SU(3) ﬂavour breaking expansion formula is always valid for quarks q = a,\nb, . . . , in (u, d, s, . . ., )\nM2(ab)\n=\nM2\n0π + α(δma + δmb)\n(29)\n+ β0 1\n6(δm2\nu + δm2\nd + δm2\ns) + β1(δm2\na + δm2\nb) + β2(δma −δmb)2 ,\nin quark masses up to the NLO as discussed in [13]. (Note that M(ab) = M(ba).)\nAgain combinations of masses can be chosen, so that due to eq. (6) the linear\nterm in eq. (29) vanishes,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determination of the coefficients",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-42-determination-of-the-coefficients.md",
+      "narrative": null,
+      "content": "Determination of the coeﬃcients\nAs in section 3 we need to consider PQ masses at the SU(3) ﬂavour symmetric\npoint for the sea quark masses (see Table 6) jointly with the 323 × 64 lattice size\nunitary results from Table 20 of [13] all with the same m constant value. From\neq. (34) we need to determine the constants ˜α, ˜β1, ˜β2 and ˜γ2, ˜γ3.\nA 5-parameter ﬁt to the PQ and unitary data then yields the results of Table 2\ntogether with the NNLO coeﬃcient values of ˜γ2 = −16.4(12) and ˜γ3 = −20.3(39).\n˜α\n˜β1\n˜β2\n41.17(8)\n76.50(148)\n-45.81(189)\nTable 2: Results for the pseudoscalar octet expansion co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudoscalar meson isospin splittings",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-43-pseudoscalar-meson-isospin-splittings.md",
+      "narrative": null,
+      "content": "Pseudoscalar meson isospin splittings\nHaving determined ˜α, ˜β1, ˜β2 we can now ﬁnd δmu, δmd, δms given the masses\naround the outer ring of the pseudoscalar octet. We postpone a discussion of\nthe numerical values until the next section and here just derive the relevant\n0.0\n0.1\n0.2\n0.3\n0.4\n0.5\nδµa\n30\n40\n50\n60\n70\n(M(aa\n−)\n2/Xπ\n2−1)/2δµa\nFigure 5: ( ˜\nM2(aa) −1)/(2δµa) against δµa. The full line is eq. (36), using the ˜α, ˜β1\nﬁt values from Table 2 and ˜γ2 (given in the text).\nformulas. As they are trivially valid over a range of quark masses (and not just\nat the physical point) we give these mor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "(30)3, X∗ π = 0.4116 GeV, (47) (of course this is very close to the experimental value of Xexp π = 0.4126 GeV).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Physical values of the quark masses",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-5-physical-values-of-the-quark-masses.md",
+      "narrative": null,
+      "content": "Physical values of the quark masses\nTo proceed further we now need to substitute eqs. (40) into eqs. (13)–(15) to\ngive the pure QCD contribution to baryon octet mass splittings in terms of the\npseudoscalar octet masses.\nBefore considering this however (see section 7.1), we shall ﬁrst discuss electro-\nmagnetic eﬀects and determine the physical values of the quark masses δm∗\nu and\nδm∗\nd given the experimental values of the pseudoscalar masses. This will enable\nus to investigate the convergence of the SU(3) ﬂavour breaking expansion. The\nexperimental masses are, [1],\nMexp\nπ+\n=\n0.13957018(35) GeV,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with `fan' plots",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-6-comparison-with-fan-plots.md",
+      "narrative": null,
+      "content": "We now compare the ﬁt results with the mass values from previous ‘fan’ plots,\n[13], which describe the evolution of the pseudoscalar and baryon octet masses\nalong a path from the SU(3) symmetric point down to the physical point. In\n[13] the isospin degenerate limit, i.e. mu = md ≡ml, was considered. So for this\ncomparison we take the physical quark mass, in lattice units, as\nδm∗\nl ≡1\n2(δm∗\nu + δm∗\nd) = −0.01102(3) .\n(48)\nIn Fig. 6 we show numerical results between the SU(3) ﬂavour symmetric\npoint and the ‘physical point’ for the numerical pseudoscalar octet on the unitary\nline (keeping m = con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results and discussion",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-7-results-and-discussion.md",
+      "narrative": null,
+      "content": "Results and discussion\nWe are now in a position to numerically determine the baryon octet mass split-\ntings due to pure QCD u – d quark mass diﬀerences (see section 7.1, our main\nresult), and then in section 7.2 estimate physical values for the splittings.\n−0.010\n−0.005\n0.000\nδml\n0.6\n0.8\n1.0\n1.2\n1.4\n1.6\n1.8\nMNO\n2/XN\n2 [Octet]\n pure QCD\nN(lll)\nΣ(lls)\nΞ(ssl)\nNs(sss)\nsym. pt.\nFigure 7: The baryon octet ‘fan’ plot, M2\nNO/X2\nN (NO = N, Σ, Ξ, Ns) versus δml.\nThe numerical mass values are taken from [13] where ﬁlled up-triangles, left-triangles,\nright-triangles, down-triangles are N(lll), Σ(lls), Ξ(s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baryon octet mass splittings",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-71-baryon-octet-mass-splittings.md",
+      "narrative": null,
+      "content": "Baryon octet mass splittings\nAfter re-writing quark masses in terms of the pseudoscalar octet masses, sec-\ntion 4.3, and ﬁnding that the expansion is highly convergent in the relevant\nquark mass range, e.g. Table 3, we now insert the expansion of eq. (40) into\neqs. (13)–(15) which gives the reasonably compact results\n˜\nMN −˜\nMN′ = ˜AN−N′\nh\n1 + ˜BN−N′\n\u0010\n1\n2( ˜\nM2\nK0 + ˜\nM2\nK+) −˜\nM2\nπ+\n\u0011i \u0010\n˜\nM2\nK0 −˜\nM2\nK+\n\u0011\n,(49)\nfor the pairs (N, N′) = (n, p), (Σ−, Σ+) and (Ξ−, Ξ0), where\n˜An−p =\n˜A′\n1 −2 ˜A′\n2\n˜α\n,\n˜Bn−p = 2\n3˜α\n ˜β1 + 3˜β2\n˜α\n−\n˜B′\n1 −2 ˜B′\n2\n˜A′\n1 −2 ˜A′\n2\n!\n,\n(50)\ntogether with\n˜AΣ−−Σ+ =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "(58) This is to be compared with the experimental result given in eq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "Despite the fact that QED eﬀects are treated slightly diﬀerently in each work, good agreement amongst the various determinations and with the experimental result is found. −1 0 1 2 3 4 MeV QCDSF−UKQCD RM123 Blum et al NPLQCD Figure 8: Comparison of the n – p mass diﬀerence of the present result (QCDSF- UKQCD or lowest plotted number) with NPLQCD, Blum et al., and RM123 [2, 3, 4], respectively (top to bottom plotted numbers).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "prop-sec-013-03.md",
+      "narrative": null,
+      "content": "The vertical dashed line is the experimental result given in eq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Physical values of the mass splittings",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-72-physical-values-of-the-mass-splittings.md",
+      "narrative": null,
+      "content": "Physical values of the mass splittings\nWe ﬁrst note that the NLO term is always small of the order of a few percent,\nand only slowly decreases for increasing number of strange quarks in the baryon.\nUsing for the NLO term the mass values given in eq. (46) for the pure QCD case\nwe have 1\n2( ˜\nM∗2\nK0 + ˜\nM∗2\nK+)−˜\nM∗2\nπ+ = 1.339 (using the experimental rather than pure\nQCD masses would introduce negligible additional errors into the NLO term). In\naddition, using X∗2\nN and X∗2\nπ\nfrom eqs. (8) and (47), this gives\nM∗\nn −M∗\np\n=\n0.599(32)(34) (M∗2\nK0 −M∗2\nK+) ,\nM∗\nΣ−−M∗\nΣ+\n=\n1.553(25)(63) (M∗2\nK0 −M∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "Acknowledgements The numerical conﬁguration generation was performed using the BQCD lattice QCD program [25] on the IBM BlueGeneL at EPCC (Edinburgh, UK), the Blue- GeneL and P at NIC (J¨ulich, Germany), the SGI ICE 8200 at HLRN (Berlin- Hannover, Germany), and the JSCC (Moscow, Russia).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-014-02.md",
+      "narrative": null,
+      "content": "SFB/TR 55 (Hadron Physics from Lattice QCD) and by the EU Grants No.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-73-conclusions.md",
+      "narrative": null,
+      "content": "Conclusions\nIn this article we have introduced a method to determine the isospin breaking\neﬀects due to QCD for octet baryons. Using an SU(3) ﬂavour symmetry breaking\nexpansion in the quark masses, the pseudoscalar meson octet expansion coeﬃ-\ncients can be determined, which leads to an estimate at the physical quark mass\npoint. This can then be used together with the equivalent SU(3) ﬂavour sym-\nmetry breaking expansion for the baryon octet to determine the baryon mass\nsplittings. The expansion coeﬃcients depend only on the average quark mass m.\nThus we can use degenerate sea quark masses (eit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "For the lightest 243 × 48 point, namely, (κl, κs) = (0.121040, 0.120620), MπL ∼3.4 (where L is the spatial lattice size, here 24a), and the mass ratio ˜ M has ﬁnite size error ∼1%, from comparing the 243 ×48 lattice result with the 323 ×64 lattice result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Systematic errors",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-015-a-systematic-errors.md",
+      "narrative": null,
+      "content": "Systematic errors\nWe now consider in this Appendix possible sources of systematic errors: ﬁnite\nlattice volume, convergence of the SU(3) ﬂavour breaking expansion, the path to\nthe physical point and ﬁnite lattice spacing.\nFinite lattice volume\nComparing the available 243×48 with the 323×64 lattice data in Fig. 7 indicates\nthat for these mass ratios ﬁnite size eﬀects are small.\n(Finite volume eﬀects\nwere also discussed in [13] in section 8.3.1.) We now use these unitary results\nto estimate possible ﬁnite size eﬀects. For the lightest 243 × 48 point, namely,\n(κl, κs) = (0.121040, 0.120620), MπL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.3156v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Tables",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-016-b-tables.md",
+      "narrative": null,
+      "content": "Tables\nWe now give in Tables 4 – 6 the baryon and pseudoscalar PQ mass results used\nin the analysis. Additional 323 × 64 results along the line m = const. also used\nhere are given in Tables 22 and 20 of [13] for the baryon and pseudoscalar meson\nparticles, respectively.\nκa\nκb\nM(aab)\n0.110000\n0.110000\n1.969(3)\n0.110000\n0.115000\n1.780(3)\n0.110000\n0.120000\n1.555(3)\n0.110000\n0.120512\n1.530(3)\n0.110000\n0.120900\n1.511(3)\n0.114000\n0.114000\n1.520(3)\n0.114000\n0.116000\n1.436(3)\n0.114000\n0.118000\n1.345(3)\n0.114000\n0.120000\n1.245(3)\n0.114000\n0.120900\n1.199(3)\n0.115000\n0.110000\n1.592(3)\n0.115000\n0.115000\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

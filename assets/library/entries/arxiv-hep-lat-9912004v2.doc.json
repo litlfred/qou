@@ -1,0 +1,852 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-lat-9912004v2",
+  "title": "arxiv-hep-lat-9912004v2",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Chiral Random Matrix Theory",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-11-chiral-random-matrix-theory"
+    },
+    {
+      "level": 2,
+      "title": "Temperature transition",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-temperature-transition"
+    },
+    {
+      "level": 1,
+      "title": "Expectations from chRMT",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-expectations-from-chrmt"
+    },
+    {
+      "level": 1,
+      "title": "Gauge field configurations and analysis",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-gauge-field-configurations-and-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Reporting the results",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-reporting-the-results"
+    },
+    {
+      "level": 2,
+      "title": "Eigenvalue density",
+      "number": "4.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-41-eigenvalue-density"
+    },
+    {
+      "level": 2,
+      "title": "Level spacing distribution",
+      "number": "4.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-42-level-spacing-distribution"
+    },
+    {
+      "level": 2,
+      "title": "Soft inner edge",
+      "number": "4.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-43-soft-inner-edge"
+    },
+    {
+      "level": 1,
+      "title": "Summary and conclusions",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-summary-and-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theoretische physik",
+          "heading": false
+        },
+        {
+          "term": "ulich",
+          "heading": false
+        },
+        {
+          "term": "notkestr",
+          "heading": false
+        },
+        {
+          "term": "splittorﬀ",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-lat/9912004v2 9 Mar 2000 Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, D-22603 Hamburg, Germany Ph. de Forcrand Institut f¨ur Theoretische Physik, ETH-H¨onggerberg, CH-8093 Z¨urich, Switzerland I. Hip NIC - John von Neumann Institute for Computing, FZ-J¨ulich, D-52425 J¨ulich, Germany C. B. Lang Institut f¨ur",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-11-chiral-random-matrix-theory",
+      "number": "1.1",
+      "title": "Chiral Random Matrix Theory",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral",
+          "heading": true
+        },
+        {
+          "term": "chrmt",
+          "heading": false
+        },
+        {
+          "term": "staggered",
+          "heading": false
+        }
+      ],
+      "extract": "eigenvalues of the staggered Dirac operator for SU(3) lattice gauge theory with dynamical fermions are examined. We consider temperatures below, near, and above the critical temperature Tc for the chiral phase transition. Below and above Tc the statistics are in agreement with the exact analytical predictions in the microscopic scaling regime. Above Tc we observe a gap in the spectral density and a distribution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi ral",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "vanishing fermion",
+          "heading": false
+        },
+        {
+          "term": "chrmt",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite lattices",
+          "heading": false
+        },
+        {
+          "term": "microscopic",
+          "heading": false
+        },
+        {
+          "term": "correlators",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        }
+      ],
+      "extract": "It is inherent to the lattice approach to quantum ﬁeld theory, that one has to extrapolate from ﬁnite lattices, ﬁ- nite statistics and non-critical coupling parameters to in- ﬁnite lattices, inﬁnite statistics and critical points. Since the result supposedly is a non-trivial, non-perturbatively deﬁned quantum ﬁeld theory, this process is plagued by uncertainties. A typical example of such a situation, where all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-temperature-transition",
+      "number": "1.2",
+      "title": "Temperature transition",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperature",
+          "heading": true
+        },
+        {
+          "term": "transition",
+          "heading": true
+        },
+        {
+          "term": "phase transition",
+          "heading": false
+        }
+      ],
+      "extract": "Strictly speaking, in the continuum limit $a\\to 0$, non-zero temperature is realized for lattices $n_x^3\\times n_t$ with $T=1/(n_t\\,a(\\beta_g))$ and $n_t/n_x\\to 0$. In that limit, for vanishing quark mass $m$, one expects a phase transition at $T_c$. In [@MILC96] the critical temperature was estimated to lie between 143 and 154 MeV. For $T<T_c$ chiral symmetry is broken spontaneously, with massless pseudoscalars and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-expectations-from-chrmt",
+      "number": "2",
+      "title": "Expectations from chRMT",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chrmt",
+          "heading": true
+        },
+        {
+          "term": "unfolded spectrum",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "invariant chrmt",
+          "heading": false
+        },
+        {
+          "term": "zero modes",
+          "heading": false
+        },
+        {
+          "term": "spectral correlators",
+          "heading": false
+        },
+        {
+          "term": "pmin",
+          "heading": false
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SecRMT label=\"SecRMT\"} According to the nature of the elements in the random matrix, chRMT appears in three universality classes. In this paper we consider the SU(3) gauge theory with quarks in the fundamental representation, which belongs to the universality class of the chiral unitary ensemble (chUE). The partition function under study is [@ShVe93; @JaVe96; @WeScWe96] $$\\begin{aligned} {\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-gauge-field-configurations-and-analysis",
+      "number": "3",
+      "title": "Gauge field configurations and analysis",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge configurations",
+          "heading": true
+        },
+        {
+          "term": "tabconf",
+          "heading": false
+        },
+        {
+          "term": "milc",
+          "heading": false
+        },
+        {
+          "term": "wue",
+          "heading": false
+        },
+        {
+          "term": "quenched qcd",
+          "heading": false
+        },
+        {
+          "term": "times ensembles",
+          "heading": false
+        },
+        {
+          "term": "smallest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "staggered",
+          "heading": false
+        }
+      ],
+      "extract": "By courtesy of the MILC collaboration [@MILC96] there are sets of gauge configurations [@MILCNERSC] available to the lattice community. These were generated with two species of dynamical staggered fermions, at various lattice sizes, temperatures, values of the gauge coupling and small values of the bare fermion mass. In Table [1](#tabconf){reference-type=\"ref\" reference=\"tabconf\"} the samples used in the present",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-reporting-the-results",
+      "number": "4",
+      "title": "Reporting the results",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrepancy",
+          "heading": false
+        },
+        {
+          "term": "lowest",
+          "heading": false
+        },
+        {
+          "term": "chrmt",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn our attention to the measurement of the statistical properties of the Dirac operator. Starting with the distribution of all eigenvalues and then separating out the lowest and the second lowest eigenvalue we observe the first indication of a discrepancy with chRMT. In order to investigate this discrepancy further we study the level spacing distribution. Finally we focus on the inner edge of the spectrum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-eigenvalue-density",
+      "number": "4.1",
+      "title": "Eigenvalue density",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "smallest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "histograms",
+          "heading": false
+        },
+        {
+          "term": "tabconf",
+          "heading": false
+        },
+        {
+          "term": "mutual overlap",
+          "heading": false
+        },
+        {
+          "term": "pmin",
+          "heading": false
+        },
+        {
+          "term": "topological charge",
+          "heading": false
+        },
+        {
+          "term": "chrmt",
+          "heading": false
+        }
+      ],
+      "extract": "Fig. [1](#all-dist){reference-type=\"ref\" reference=\"all-dist\"} gives the eigenvalue distribution as obtained from the lowest 10 (or 8 for the large lattices) eigenvalues for each configuration. It coincides with the distribution from all eigenvalues only up to the lowest of all 10th (8th) eigenvalues. In order to emphasize this feature we also plot the distribution histogram of this 10th (8th) eigenvalue in full",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-level-spacing-distribution",
+      "number": "4.2",
+      "title": "Level spacing distribution",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "level spacing",
+          "heading": true
+        },
+        {
+          "term": "wue",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue spacings",
+          "heading": false
+        },
+        {
+          "term": "defunf",
+          "heading": false
+        },
+        {
+          "term": "tmodel",
+          "heading": false
+        },
+        {
+          "term": "secrmt",
+          "heading": false
+        },
+        {
+          "term": "discrepancies near",
+          "heading": false
+        }
+      ],
+      "extract": "Another observable with definite predictions from RMT (cf. Sect. [\\[SecRMT\\]](#SecRMT){reference-type=\"ref\" reference=\"SecRMT\"}) is the distribution of level spacings. The advantage here is, that the level spacing should not be influenced by possible distortions of the smallest eigenvalues due to the unknown topological charge of the configurations (if the smallest eigenvalues are removed from the data). The studies",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-soft-inner-edge",
+      "number": "4.3",
+      "title": "Soft inner edge",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inner edge",
+          "heading": true
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "airy density",
+          "heading": false
+        },
+        {
+          "term": "all-dist",
+          "heading": false
+        },
+        {
+          "term": "frac rangle",
+          "heading": false
+        },
+        {
+          "term": "langle frac",
+          "heading": false
+        },
+        {
+          "term": "one-point distribution",
+          "heading": false
+        },
+        {
+          "term": "kafr",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn to the results for $T>T_c$. In our results for $24^3\\times 12$ at $\\beta=5.85$ (Fig. [\\[all-dist\\]](#all-dist){reference-type=\"ref\" reference=\"all-dist\"}(c)) a gap in the spectral distributions is obvious. However even at $\\beta=5.8$ we may speculate, that a clear signal of a gap is only prevented by the (topological) quasi-zero modes responsible for the small bump at small eigenvalues. Recall, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-summary-and-conclusions",
+      "number": "5",
+      "title": "Summary and conclusions",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bibitem akdama",
+          "heading": false
+        },
+        {
+          "term": "jim hetrick",
+          "heading": false
+        },
+        {
+          "term": "milc collaboration",
+          "heading": false
+        },
+        {
+          "term": "chrmt space",
+          "heading": false
+        },
+        {
+          "term": "poissonian statistics",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "damgaard",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "We have examined the manifestations of the chiral phase transition in the microscopic spectral correlators for the Dirac operator. For the level spacing distribution, we find agreement with RMT\\space below and above $T_c$. Below $T_c$ the chRMT\\space distributions allow us to determine condensate values with implicit consideration of lattice volume and quark mass dependence. This could in principle serve to improve",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "eigenvalue distribution",
+      "heading": false
+    },
+    {
+      "term": "spacing distribution",
+      "heading": true
+    },
+    {
+      "term": "eigenvalue statistics",
+      "heading": false
+    },
+    {
+      "term": "smallest eigenvalue",
+      "heading": true
+    },
+    {
+      "term": "microscopic spectral",
+      "heading": false
+    },
+    {
+      "term": "phase transition",
+      "heading": false
+    },
+    {
+      "term": "spectral density",
+      "heading": false
+    },
+    {
+      "term": "milc configurations",
+      "heading": false
+    },
+    {
+      "term": "chiral phase",
+      "heading": false
+    },
+    {
+      "term": "chrmt space",
+      "heading": false
+    },
+    {
+      "term": "invariant chrmt",
+      "heading": false
+    },
+    {
+      "term": "rmt prediction",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Histograms for the 10 (or 8) smallest eigenvalues. The contribution from the 10th (8th) eigenvalue is indicated",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Histograms",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Histograms for the 2nd smallest eigenvalue for",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Histograms for the distribution of (a) the ﬁrst 9",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The behavior of the average distance from the",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-lat-9912004v2"
+  }
+}

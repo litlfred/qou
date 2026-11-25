@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0707.2052v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Mukai pairing, I: a categorical approach",
+      "dcterms:creator": [
+        "Willerton†, Andrei C˘ald˘araru∗and Simon"
+      ],
+      "dcterms:issued": "D:20130215",
+      "dcterms:identifier": "https://arxiv.org/abs/0707.2052",
+      "dcterms:abstract": "We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respect to the Mukai pairing. We deﬁne a Chern character with values in Hochschild homology, and we discuss analogues of the Hirzebruch-Riemann-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and integral kernels as its 1-morphisms.",
+      "dcterms:source": "library/arxiv-0707.2052v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0707.2052v1"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/cuspshapes",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "CUSP SHAPE AND TUNNEL NUMBER",
+      "dcterms:creator": [
+        "DANG, VINH",
+        "PURCELL, JESSICA S."
+      ],
+      "dcterms:issued": "D:20180724",
+      "dcterms:abstract": "We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus. A similar result holds for tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. This is in contrast to large volume Berge knots, which are tunnel number one manifolds, but with cusp shapes converging to a single point in Teichm¨uller space.",
+      "dcterms:source": "library/cuspshapes/manifest.jsonld",
+      "dcterms:hasVersion": "library/cuspshapes"
+    }
+  ]
+}

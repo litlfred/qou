@@ -1,0 +1,570 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1804.03926v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nSince its introduction by Charles Stein ([Ste72, Ste86]), the so-called Stein’s method is a corpus of\ntechniques that revealed itself very successful in studying probability approximation and convergence\nin law (see for instance [CGS11, Cha14, LRS17] and references therein). Much less is known regard-\ning the interplay between Stein’s method and functional inequalities. Recently, a series of papers\n([LNP15, LNP17, FN17, CFP17]) started to ﬁll this gap.\nMore precisely, Ledoux et al. [LNP15] provide some improvement of the log-Sobolev inequality\nand Talagrand’s quadratic transportat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1804.03926v3  [math.PR]  23 Nov 2018\nWeighted Poincar´e inequalities, concentration inequalities and tail\nbounds related to Stein kernels in dimension one\nAdrien Saumard\nCREST-ENSAI, Universit´e Bretagne Loire\nNovember 26, 2018\nAbstract\nWe investigate links between the so-called Stein’s density approach in dimension one and some\nfunctional and concentration inequalities. We show that measures having a ﬁnite ﬁrst moment\nand a density with connected support satisfy a weighted Poincar´e inequality with the weight being\nthe Stein kernel, that indeed exists and is unique in this case. Further",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/cor-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Corollary 2.1, [SW18a]",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "cor-sec-001-03.md",
+      "narrative": null,
+      "content": "For an absolutely continuous function h ∈L1(F), F(z) Z R hdν − Z z −∞ hdν = Z R kν (z, y) h′(y)dy (9) and −(1 −F(z)) Z R hdν + Z (z,∞) hdν = Z R kν (z, y) h′(y)dy. (10) By combining Theorem 1 and Corollary 3, we get the following covariance identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Corollary 2.2, [SW18a]",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "If g and h are absolutely continuous and g ∈Lp(ν), h ∈Lq(ν) for some p ∈[1, ∞] and p−1 + q−1 = 1, then Cov(g, h) = ZZ R2 g′(x)kν(x, y)h′(y)dxdy. (8) It is worth mentioning that the covariance identity (8) heavily relies on dimension one, since it uses the properties of the cumulative distribution function F through the kernel kν. In dimension greater than or equal to 2, a covariance identity of the form of (8) - with derivatives replaced by gradients -, would actually imply that the measure ν is Gaussian (for more details, see [BGH01] and also Remark 2 below).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "Let ν be a probability measure on R and p, q ≥1 such that p−1 + q−1 = 1. Denote Lh (x) = R ∞ x hdν −(1 −F (x)) R R hdν = F (x) R R hdν − R x −∞hdν for every x∈R. If g ∈Lp (ν) and h ∈Lq (ν) are absolutely continuous and if g′Lh is integrable with respect to the Lebesgue measure, then Cov (g, h) = Z R g′ (x) Lh (x) dx , (11) Furthermore, if ν has a density p with respect to the Lebesgue measure that has a connected support, then Cov (g, h) = Z R g′ (x) ¯Lh (x) p (x) dx = E \u0002 g′ (X) ¯Lh (X) \u0003 , (12) where, for every x ∈I (ν), ¯Lh (x) = p (x)−1 Lh (x) = p (x) Z ∞ x hdν −1 −F (x) p (x) E [h] . (13)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "prop-sec-001-05.md",
+      "narrative": null,
+      "content": "Assume that X is a random variable with distribution ν having a density p with connected support with respect to the Lebesgue measure on R. Take h ∈L1 (ν) with E [h (X)] = 0 and assume that the function ¯Lh deﬁned in (13) is ν-almost surely strictly positive. We have, for any x0, x ∈I (ν), p (x) = E \u0002 h (X) 1{X≥x0} \u0003 ¯Lh (x) exp \u0012 − Z x x0 h (y) ¯Lh (y)dy \u0013 . (18) Consequently, if X has a ﬁnite ﬁrst moment, for any x ∈I (ν), p (x) = E [|X −µ|] 2τ ν (x) exp \u0012 − Z x µ y −µ τ ν (y)dy \u0013 . (19) By setting Th (x) = exp \u0010 − R x x0 h(y) ¯Lh(y)dy \u0011 and I (ν) = (a, b), if the function h is ν-almost posi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On covariance identities and the Stein kernel",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-on-covariance-identities-and-the-stein-kernel.md",
+      "narrative": null,
+      "content": "On covariance identities and the Stein kernel\nTake a real random variable X of distribution ν with density p with respect to the Lebesgue measure\non R and cumulative distribution function F. Assume that the mean of the distribution ν exists and\ndenote it by µ = E [X]. Denote also Supp (ν) = {x ∈R : p (x) > 0} ⊂¯R( := R∪{−∞, +∞}) the\nsupport of the measure ν, deﬁned as the closure of the set where the density is positive and assume\nthat this support is connected. We denote by a ∈R∪{−∞}, b ∈R ∪{+∞}, a < b, the edges of\nSupp(ν). For convenience, we also denote by I (ν) = Int (Supp(ν)) the interio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "In the context of goodness-of-ﬁt tests, Liu et al. [LLJ16] introduce the notion of kernelized Stein discrepancy as follows. If K (x, y) is a kernel on R2, p and q are two densities and (X, Y ) is a pair of independent random variables distributed according to p, then the kernelized Stein discrepancy SK (p, q) between p and q related to K is SK (p, q) = E [δq,p (X) K (X, Y ) δq,p (Y )] , where δq,p (x) = (log q (x))′ −(log p (x))′ is the diﬀerence between scores of p and q. This notion is in fact presented in [LLJ16] in higher dimension and is used as an eﬃcient tool to assess the proximity of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some weighted functional inequalities",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-some-weighted-functional-inequalities.md",
+      "narrative": null,
+      "content": "Some weighted functional inequalities\nWeighted functional inequalities appear naturally when generalizing Gaussian functional inequalities\nsuch as Poincar´e and log-Sobolev inequalities. They were put to emphasis for the generalized Cauchy\ndistribution and more general κ-concave distributions by Bobkov and Ledoux [BL09b, BL09a], also in\nconnection with isoperimetric-type problems, weighted Cheeger-type inequalities and concentration\nof measure. Then several authors proved related weighted functional inequalities ([BCG08, BJ14,\nBJM16a, BJM16b, CGGR10, CGW11, CEG17, Goz10]). In the following, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/cor-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "cor-sec-003-02.md",
+      "narrative": null,
+      "content": "Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure on R. Assume that E [|X|] < +∞, p has a connected support and denote τ ν the Stein kernel of ν. Assume that √τ ν has a ﬁnite rth moment, r ≥2. Then any Lipschitz function f on R has a ﬁnite rth moment. More precisely, if f is 1-Lipschitz and E [f] = 0, then ∥f∥r ≤ r √ ∥√τ ν∥r . (26) Furthermore, by setting t1 =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted Poincaré-type inequality",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-31-weighted-poincaré-type-inequality.md",
+      "narrative": null,
+      "content": "Weighted Poincar´e-type inequality\nAccording to [BL09b], a measure ν on R is said to satisfy a weighted Poincar´e inequality if there\nexists a nonnegative measurable weight function ω such that for any smooth function f ∈L2 (ν),\nVar (f (X)) ≤E\nh\nω (X)\n\u0000f ′ (X)\n\u00012i\n.\n(21)\nThe following theorem shows that a probability measure having a ﬁnite ﬁrst moment and density\nwith connected support on the real line satisﬁes a weighted Poincar´e inequality, with the weight\nbeing its Stein kernel.\nTheorem 6 Take a real random variable X of distribution ν with density p with respect to the\nLebesgue measure on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure on R. Assume that E [|X|] < +∞, p has a connected support and denote τ ν the Stein kernel of ν. Take f ∈L2 (ν), absolutely continuous. Then Var (f (X)) ≤E h τ ν (X) \u0000f ′ (X) \u00012i . (22) The preceding inequality is optimal whenever ν admits a ﬁnite second moment, that is E \u0002 X2\u0003 < +∞, since equality is reached for f = Id, by deﬁnition of the Stein kernel.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "Assume that a probability measure ν on R with mean zero and ﬁnite second moment satisﬁes a weighted Poincar´e inequality (21) with weight ω. Denote W 1,2 ν,ω the Sobolev space deﬁned as the closure of all smooth functions in L2 (ν) with respect to the Sobolev norm R \u0000f 2 + f ′2ω \u0001 dν. Then there exists a function ˜τ ν, satisfying equation (5) on W 1,2 ν,ω such that Z ˜τ 2 νω−1dν ≤ Z x2dν . (28) If ˜τ ν ∈L2 (ν), the weight ω is locally bounded and the measure has a density p that is also locally bounded, then ˜τ ν is a Stein kernel in the sense that equation (5) is satisﬁed on W 1,2 ν . One can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links with Muckenhoupt-type criteria",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-32-links-with-muckenhoupt-type-criteria.md",
+      "narrative": null,
+      "content": "Links with Muckenhoupt-type criteria\nIt is well-known that the Muckenhoupt criterion [Muc72], which provides a necessary and suﬃcient\ncondition for a (weighted) Hardy inequalty to hold on the real line, can be used to sharply estimate\nthe best constant in Poincar´e inequalities (see for instance [ABC+00] and [Mic08] and references\ntherein). The following theorem, providing sharp estimates, is given in [Mic08].\nTheorem 9 ([Mic08]) Let η be a probability measure on R with median m and let χ be a measure\non R with Radon-Nikodym derivative with respect to the Lebesgue measure denoted by n. The bes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[Mic08]",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Let η be a probability measure on R with median m and let χ be a measure on R with Radon-Nikodym derivative with respect to the Lebesgue measure denoted by n. The best constant CP such that, for every locally Lipschitz f : R →R it holds Varη (f) ≤CP Z \u0000f ′\u00012 dχ , veriﬁes max {B+, B−} ≤CP ≤4 max {B+, B−} where B+ = sup x>m η ([x, +∞)) Z x m dt n (t) and B−= sup x<m η ((−∞, x]) Z m x dt n (t) . Considering Theorem 6, a natural question is: can we recover (up to a constant) Inequality (22) from Theorem 9 above? The answer is positive. Indeed, we want to show that max {B+, B−} is ﬁnite. We will on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure on R. Assume that E [|X|] < +∞, p has a connected support [a, b] ⊂¯R and denote τ ν the Stein kernel of ν. Take g absolutely continuous. Then the following inequality holds Entν \u0000g2\u0001 ≤Cν Z τ 2 ν \u0000g′\u00012 dν , (29) for some constant Cν > 0 if one of the following aymptotic condition holds at the supremum of its support, together with one of the symmetric conditions - that we don’t write explicitely since they are obviously deduced - at the inﬁnimum of its support: • b < +∞and τ −1 ν is integrable at",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Assume that τ ν > 0 on the support of ν. Then for any p, q ∈[1, +∞], p−1+q−1 = 1, |Cov (g, h)| ≤",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymmetric Brascamp-Lieb-type inequalities",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-33-asymmetric-brascamp-lieb-type-inequalities.md",
+      "narrative": null,
+      "content": "The celebrated Brascamp-Lieb inequality [BL76] states that if a measure 7 on R¢, d > 1, is strictly\nlog-concave - that is y = —Inp is convex and Hess (y) (a) is a positive definite symmetric matrix for\nany x € Supp (7) - then for any smooth function h,\n\nVar, (h) < / Vh\" (Hess (y))~!Vhdr .\nConsidering the one dimensional case d = 1, Menz and Otto proved that for any smooth\ngE y(t), h€ Lo (rm),\n\nh!\ncove (ast) < |) lal (36)\n\n<7\n\noo\n\n18\nThe authors call the later inequality an asymmetric Brascamp-Lieb inequality. This inequality has\nbeen then generalized to higher dimension ([CCEL13]) and beyond t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Assume that the probability measure ν has a connected support, ﬁnite ﬁrst moment and continuous density p with respect to the Lebesgue measure. Assume also that its Stein kernel τ ν is uniformly bounded on I (ν), ∥τ ν∥∞< +∞. Then ν admits a positive isoperimetric constant Is (ν) > 0. More precisely, from the proof of Proposition 12 (see below), we can extract a quantitative estimate of the isoperimetric constant. Indeed, under the assumptions of Proposition 12, denote by qβ the quantile of order β ∈(0, 1) of the measure ν and by µ its mean. Then, for any α ∈(0, 1) such that qα < µ < q1−α, we h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isoperimetric constant",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-34-isoperimetric-constant.md",
+      "narrative": null,
+      "content": "Isoperimetric constant\nLet us complete this section about some functional inequalities linked to the Stein kernel by studying\nthe isoperimetric constant. Recall that for a measure ν on Rd, an isoperimetric inequality is an\ninequality of the form\nν+ (A) ≥c min {ν (A) , 1 −ν (A)} ,\n(41)\nwhere c > 0, A is an arbitrary measurable set in Rd and ν+ (A) stands for the ν-perimeter of A,\ndeﬁned to be\nν+ (A) = lim inf\nr→0+\nν (Ar) −ν (A)\nr\n,\nwith Ar =\n\b\nx ∈Rd : ∃a ∈A, |x −a| < r\n\t\nthe r-neighborhood of A. The optimal value of c = Is (ν)\nin (41) is referred to as the isoperimetric constant of ν.\nThe next",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/cor-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "cor-sec-007-03.md",
+      "narrative": null,
+      "content": "Let α, β > 0. Take X a random variable with distribution B (α, β) and g a 1-Lipschitz function on [0, 1]. Then for all r > 0, P (g (X) −E [g (X)] ≥r) ≤exp \u0000−2 (α + β) r2\u0001 . Furthermore, for all r > 0, P (g (X) −E [g (X)] ≥r) ≤ E (g −Eg)+ e−2(α+β)r2 r , P (|g (X) −E [g (X)]| ≥r) ≤ E |g −Eg| e−2(α+β)r2 r (49) and, if α, β ≥1, P (|g (X) −E [g (X)]| ≥r) ≤ C √α + β + 1 e−2(α+β)r2 r (50) with the value C = 2.5 - for which we always have C (α + β + 1)−1/2 < 2 - that holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/lem-sec-007-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "lem-sec-007-07.md",
+      "narrative": null,
+      "content": "Take X a random variable on a measurable space (X, T ). Take g and h two measurable functions from X to R such that E h g (X) eg(X)i ≤E h h (X) eg(X)i < +∞. (63) Then it holds, E h eg(X)i ≤E h eh(X)i . (64)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/lem-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "lem-sec-007-08.md",
+      "narrative": null,
+      "content": "summarizes the essence of the argument used in the proof of Theorem 2.3 of [BGH01]. We could not ﬁnd a reference in the literature for Lemma 19. We point out that Lemma 19 may have an interest by itself as it should be very handy when dealing with concentration inequalities using the Cram`er-Chernoﬀmethod. Its scope may thus go beyond our framework related to the behavior of the Stein kernel.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Assume that ν has a a ﬁnite ﬁrst moment and a density p with respect to the Lebesgue measure that has a connected support. If g ∈L∞(ν) and h ∈L1 (ν) are absolutely contin- uous and h is 1-Lipschitz, then |Cov (g, h)| ≤E \u0002",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration inequalities",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "../sections/sec-007-4-concentration-inequalities.md",
+      "narrative": null,
+      "content": "Concentration inequalities\nWe state in this section some concentration inequalities related to Stein kernels in dimension one. Due\nto the use of covariance identities stated in Section 2, the proofs indeed heavily rely on dimension one.\nWe can however notice that it is known from [LNP15] that a uniformly bounded (multi-dimensional)\nStein kernel ensures a sub-Gaussian concentration rate. We derive sharp sub-Gaussian inequalities\nin Theorem 14. It is also reasonable to think that results such as in Theorem 18 could be generalized\nto higher dimension, but this seems rather nontrivial and is left",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "Assume that ν has a ﬁnite ﬁrst moment and a density p with respect to the Lebesgue measure that has a connected support. Assume also that the Stein kernel τ v is uniformly bounded, τ v ∈L∞(ν), and denote c = ∥τ v∥−1 ∞. Then the following concentration inequalities hold. For any 1-Lipschitz function g, P \u0012 g ≥ Z gdν + r \u0013 ≤e−cr2/2 . (46) Furthermore, the function Tg (r) = ecr2/2E (g −Eg) 1{g−Eg≥r} is non-increasing in r ≥0. In particular, for all r > 0, P (g −Eg ≥r) ≤ E (g −Eg)+ e−cr2/2 r , (47) P (|g −Eg| ≥r) ≤ E |g −Eg| e−cr2/2 r . (48) Inequality (46) is closely related to Chatterjee’s Gauss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "thm-sec-007-04.md",
+      "narrative": null,
+      "content": "Assume that v has a finite first moment and a density p with respect to the Lebesgue measure that has a connected support. Assume also that the Stein kernel 7, is sub-linear, that is T(x) < ala — pl +6, where p is the mean value of v. Then for any 1-Lipschitz function g and any r>0,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "thm-sec-007-05.md",
+      "narrative": null,
+      "content": "Assume that ν has a ﬁnite ﬁrst moment and a density p with respect to the Lebesgue measure that has a connected support. Assume also that the Stein kernel τ v is ”sub-linear”, that is τ v(x) ≤a |x −µ| + b for some a > 0 and b ≥0, where µ is the mean value of ν. Then the function T (r) = (ar + b)−b/a2 er/aE \u0002 (X −µ) 1{X−µ≥r} \u0003 is non-increasing in r ≥0. In particular, for all r > 0, P (X ≥µ + r) ≤ E (X −µ)+ (ar + b)b/a2 e−r/a r , (56) P (|X −µ| ≥r) ≤ E |X −µ| (ar + b)b/a2 e−r/a r . (57) The concentration bounds (56) and (57), that seem to be new, have an interest for large values of r, where th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "thm-sec-007-06.md",
+      "narrative": null,
+      "content": "Assume that ν has a ﬁnite ﬁrst moment, a density p with respect to the Lebesgue measure that has a connected support and denote τ ν its Stein kernel. Set X a random variable of distribution ν. Take f a 1-Lipschitz function with mean zero with respect to ν and assume that f has an exponential moment with respect to ν, that is there exists a > 0 such that E \u0002 eaf(X)\u0003 < +∞. Then for any λ ∈(0, a), E h eλf(X)i ≤E h eλ2τ ν(X)i . (59) Consequently, if we denote ψτ (λ) = ln E h eλ2τ ν(X)i ∈[0, +∞] and ψ∗ τ (t) = supλ∈(0,a) {tλ −ψτ (λ)} the Fenchel-Legendre dual function of ψλ, then for any r > 0, P (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 34,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure on R. Assume that E [|X|] < +∞, p has a connected support and denote τ ν the Stein kernel of ν. If there exist c ∈(0, 1) and x0 > 1 such that for all x > x0, τ ν (x) ≤cx2, then there exists a positive constant L such that, for all x > x0 P (X ≥x) ≥L exp \u0010 − R x y τ ν(y)dy \u0011 x . If in addition τ ν ≥σ2 min > 0 ν-almost surely, then P (X ≥x) ≥L x exp \u0012 − x2 2σ2 min \u0013 . If there exists rather a positive constant c−∈(0, c] such that τ ν (x) ≥c−x2 for all x > x0, then there exists a positive constant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tail bounds",
+      "pageStart": 28,
+      "pageEnd": 34,
+      "target": "../sections/sec-008-5-tail-bounds.md",
+      "narrative": null,
+      "content": "Tail bounds\nIn the following theorem, we establish lower tail bounds when the Stein kernel is uniformly bounded\naway from zero. In particular, the support of the measure is R in this case, as can be seen from the\nexplicit formula (6).\nTheorem 20 Take a real random variable X of distribution ν with density p with respect to the\nLebesgue measure on R. Assume that E [X] = 0, p has a connected support and denote τ ν the Stein\nkernel of ν. If τ ν ≥σ2\nmin > 0 ν-almost surely, then the density p of ν is positive on R and the\nfunction\nR (x) = ex2/2σ2\nmin\nZ +∞\nx\nyp (y) dy\nis nondecreasing on R+. In par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.03926v3/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 34,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure on R. Assume that E [X] = 0, p has a connected support and denote τ ν the Stein kernel of ν. If τ ν ≥σ2 min > 0 ν-almost surely, then the density p of ν is positive on R and the function R (x) = ex2/2σ2 min Z +∞ x yp (y) dy is nondecreasing on R+. In particular, for any x ≥0, Z +∞ x yp (y) dy ≥E [(X)+] e−x2/2σ2 min . (65) By symmetry, for any x ≤0, − Z x −∞ yp (y) dy ≥E [(X)−] e−x2/2σ2 min . (66) Assume in addition that the function L (x) = x1+βp (x) is nonincreasing on [s, +∞) , s > 0. Then for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

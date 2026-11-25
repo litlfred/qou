@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-build-fix.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-build-fix",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-build-fix",
+      "title": "Lean Build Fix Skill",
+      "description": "Iteratively fix Lean 4 compilation errors and Mathlib4/Reservoir linter warnings using single-threaded `LEAN_NUM_THREADS=1 nice -n 15` overlay verification (`scripts/lean-overlay-env.sh` / `scripts/lean-direct-cone.sh -j 1`) and `scripts/lean-best-practices-lint.py --diff`. Never runs bare `lake build`.",
+      "instructionsPath": "skills/local/lean-build-fix.md",
+      "instructionLines": 357,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1712.08953v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY",
+      "dcterms:creator": [
+        "BRUNDAN, JONATHAN"
+      ],
+      "dcterms:issued": "D:20171226",
+      "dcterms:identifier": "https://arxiv.org/abs/1712.08953",
+      "dcterms:abstract": "The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then we construct a graded lift of OS(z, t) by realizing it as a 2-representation of a Kac-Moody 2-category. We also discuss the degenerate analog of OS(z, t), which is the oriented Brauer category OB(δ).",
+      "dcterms:source": "library/arxiv-1712.08953v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1712.08953v1"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0808.1533v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the third order helicity of magnetic ﬁelds on invariant domains in S 3",
+      "dcterms:creator": [
+        "Komendarczyk∗, R."
+      ],
+      "dcterms:issued": "D:20220420",
+      "dcterms:identifier": "https://arxiv.org/abs/0808.1533",
+      "dcterms:abstract": "We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld X. The proposed approach exploits correspondence between the Milnor ¯µ123-invariant for 3-component links and the homotopy invariants of maps to conﬁg- uration spaces, and we provide a simple geometric proof of this fact in the case of borromean links. Based on these connections we develop a formulation for the third order helicity of X on invariant unlinked domains of X, and provide Arnold’s style er- godic interpretation of this invariant as an average asymptotic ¯µ123-invariant of orbits of X. We also obtain a lower bound for the L2-energy of X.",
+      "dcterms:source": "library/arxiv-0808.1533v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0808.1533v1"
+    }
+  ]
+}

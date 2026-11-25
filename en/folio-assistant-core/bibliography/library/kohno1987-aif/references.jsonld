@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/kohno1987-aif",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Monodromy representations of braid groups and Yang-Baxter equations",
+      "dcterms:creator": [
+        "KOHNO, TOSHITAKE"
+      ],
+      "dcterms:issued": "D:20260116",
+      "bibo:doi": "10.5802/aif.1114",
+      "dcterms:identifier": "https://doi.org/10.5802/aif.1114",
+      "dcterms:source": "library/kohno1987-aif/manifest.jsonld",
+      "dcterms:hasVersion": "library/kohno1987-aif"
+    }
+  ]
+}

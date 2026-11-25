@@ -1,0 +1,63 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-nucl-th-0309051v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-reinterpretation-of-faddeev-niemi-knot-in-skyrme.md",
+      "narrative": null,
+      "content": "Y. M. Cho∗\nSchool of Physics, College of Natural Sciences,\nSeoul National University, Seoul 151-742, Korea\nand\nC.N. Yang Institute for Theoretical Physics,\nState University of New York,\nStony Brook, NY 11790, USA\nWe identify the Faddeev-Niemi knot in Skyrme theory as a vortex ring made of a helical baby\nskyrmion (a twisted chromomagnetic vortex which is periodic in z-coodinate) with the periodic\nends connected together. This allows us to interpret the knot as two quantized magnetic ﬂux rings\nlinked together, the ﬁrst one winding the second m times and the second one winding the ﬁrst\nn times, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:nucl-th/0309051v5  24 Sep 2004",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGEMENT",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgement.md",
+      "narrative": null,
+      "content": "The author thanks G. Sterman for the kind hospi-\ntality during his visit to Institute for Theoretical Physics.\nThe work is supported in part by the BR Program and\nABRL Program of Korea Science and Enginnering Foun-\ndation (Grant R02-2003-000-10043-0 and Grant R14-\n2003-012-01002-0), and by the BK21 Project of the Min-\nistry of Education.\n[1] T. H. R. Skyrme, Proc. Roy. Soc. (London) 260, 127\n(1961); 262, 237 (1961); Nucl. Phys. 31, 556 (1962).\n[2] See, for example, I. Zahed and G. Brown, Phys. Rep.\n142, 1 (1986), and references therein.\n[3] B. Piette, B. Schroers, and W. Zakrzewski, Nucl. Phys",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

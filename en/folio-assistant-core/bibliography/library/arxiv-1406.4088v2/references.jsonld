@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1406.4088v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Ab initio calculation of the neutron-proton mass difference",
+      "dcterms:creator": [
+        "Borsanyi1, Sz.",
+        "Durr1, S.",
+        "2",
+        "Fodor1, Z.",
+        "2",
+        "3",
+        "Hoelbling1, C.",
+        "Katz3, S. D.",
+        "4",
+        "Krieg1, S.",
+        "2",
+        "Lellouch5, L.",
+        "Lippert1, T.",
+        "2",
+        "A"
+      ],
+      "dcterms:issued": "D:20150408",
+      "dcterms:identifier": "https://arxiv.org/abs/1406.4088",
+      "dcterms:source": "library/arxiv-1406.4088v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1406.4088v2"
+    }
+  ]
+}

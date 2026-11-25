@@ -1,0 +1,135 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1111.6782v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The motion of a knotted charged fiber within a viscous liquid\nserved as model for the definition of so-called \\emph{knot energies}\nintroduced by Fukuhara~\\cite{fete}.\nOne hopes that it will reach a stationary point minimizing its electrostatic energy\nand that the resulting shape will help to determine its knot type.\nThe general idea is that this procedure leads to\na ``nicer shape'' for a given knot in the same knot class, i.~e.\\@ a\nrepresentative that is as little entangled as possible with preferably large distances between\ndifferent strands.\n\nFor a general definition and\nan outline of differ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1111.6782v2  [math.AP]  18 Jan 2012\nStationary Points of O’Hara’s Knot Energies\nSimon Blatt∗\nPhilipp Reiter∗∗\nNovember 11, 2017\nAbstract\nIn this article we study the regularity of stationary points of the knot ener-\ngies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3). In a ﬁrst\nstep we prove that E(α) is C1 on the set of all regular embedded curves belonging\nto H(α+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of\nthe Euler-Lagrange equation to study the regularity of stationary points of E(α) plus\na positive multiple of the length. We sho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuous differentiability",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-2-continuous-differentiability.md",
+      "narrative": null,
+      "content": "\\label{sect:differentiability}\n\nIn this section, we want to prove the following proposition from which Theorem~\\ref{thm:FrechetDifferential}\nwill follow quite easily. Recall that\n$U_\\varepsilon = (\\mathbb R / \\mathbb Z )\\times ([-1/2, - \\varepsilon] \\cup [\\varepsilon, 1/2])$.\n\\newcommand{\\gt} {\\gamma + \\tau h}\n\n\\begin{proposition}\\label{prop:formula}\n  For $\\alpha \\in (2,3)$ the energies $\\E$ are continuously differentiable\n  on $\\Wir$. The derivative of $\\E$ at $\\gamma \\in \\Wir$ in direction $h \\in \\W$\n  is given by\n  \\begin{equation}\\label{eq:formulaD}\n  \\begin{split}\n    &\\delta\\E(\\g;h)  =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularity of stationary points",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-3-regularity-of-stationary-points.md",
+      "narrative": null,
+      "content": "\\label{sect:bootstrap}\n\nIn this section we prove Theorem~\\ref{thm:rsp} so we are\nlooking at embedded curves $\\gamma \\in \\W[(1+\\alpha)/2]$ parametrized by arc-length that satisfy\n\\begin{equation}\\label{eq:ele}\n \\delta\\E(\\gamma;h) + \\lambda \\int_{\\mathbb R / \\mathbb Z} \\sp{\\gamma',h'} =0 \\quad \\forall h \\in \\W[(1+\\alpha)/2]\n  (\\mathbb R / \\mathbb Z, \\mathbb R^n)\n\\end{equation}\nwhere $\\lambda>0$ and\n\\begin{align*}\n \\delta\\E(\\gamma;h) = \\lim_{\\varepsilon \\searrow 0}  \\iint_{U_\\eps} \\Bigg( &\n    (\\a-2) \\frac{\\sp{\\dg(u),\\dh(u)}}{\\abs w^\\a}\n    + 2 \\frac{\\sp{\\dg(u),\\dh(u)}}{\\abs{\\D\\g}^\\a} \\\\\n    &{}-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "1 (Leibniz Rule, cf. [9]). Let pi, qi, r ∈(1, ∞), be such that 1 pi + 1 qi = 1 r , for i = 1, 2 and s > 0. Then ∥f · g∥Hs,r ≤C (∥f∥Lp1 ∥g∥Hs,q1 + ∥f∥Hs,p2 ∥g∥Lq2 ) . We also refer to Runst and Sickel [20, Lem. 5.3.7/1 (i)]. — For the following statement, one mainly has to treat",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "2 (Chain rule, cf. [9]). Let f ∈Hs,p(R/Z, Rn), s > 0, p ∈(1, ∞). If ψ ∈ C∞(R) such that ψ and all its derivatives vanish at 0 then ψ ◦f ∈Hs,p and ∥ψ ◦f∥Hs,p ≤C∥ψ∥Ck∥f∥Hs,p where k is the smallest integer greater or equal to s. References [1] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R. Howard. Circles mini- mize most knot energies. Topology, 42(2):381–394, 2003. [2] W. Alt, D. Felix, Ph. Reiter, and H. von der Mosel. Energetics and dynamics of global integrals modeling interaction between stiﬀﬁlaments. J. Math. Biol., 59(3):377–414, 2009. [3] S. Blatt. Boundedness and regularizing e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1111.6782v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Results on fractional Sobolev spaces",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-a-results-on-fractional-sobolev-spaces.md",
+      "narrative": null,
+      "content": "Results on fractional Sobolev spaces\nLet us gather two results we used in the article: The product and chain rule which go\nback to Coifman and Meyer [9] and Christ and Weinstein [8].\nLemma A.1 (Leibniz Rule, cf. [9]). Let pi, qi, r ∈(1, ∞), be such that 1\npi + 1\nqi = 1\nr , for\ni = 1, 2 and s > 0. Then\n∥f · g∥Hs,r ≤C (∥f∥Lp1 ∥g∥Hs,q1 + ∥f∥Hs,p2 ∥g∥Lq2 ) .\n17\nWe also refer to Runst and Sickel [20, Lem. 5.3.7/1 (i)]. — For the following statement,\none mainly has to treat\n\n(Dkψ) ◦f\n\nHσ,p for k ∈N ∪{0} and σ ∈(0, 1) which is e. g.\ncovered by [20, Thm. 5.3.6/1 (i)].\nLemma A.2 (Chain rule, cf. [9]).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

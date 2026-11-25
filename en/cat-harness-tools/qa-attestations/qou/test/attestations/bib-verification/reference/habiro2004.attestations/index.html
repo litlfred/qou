@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/habiro2004.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-14gz80g0xkf.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-14gz80g0xkf","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/habiro2004.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/habiro2004.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/habiro2004.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;habiro2004&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 97,
+    &quot;entry&quot;: {
+      &quot;id&quot;: &quot;habiro2004&quot;,
+      &quot;status&quot;: &quot;verified-clean&quot;,
+      &quot;verified_at&quot;: &quot;2026-05-19T16:14:00Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-4-7&quot;
+      },
+      &quot;fixes_applied&quot;: 1,
+      &quot;fix_commit&quot;: &quot;(this commit)&quot;,
+      &quot;note&quot;: &quot;1 bare-URL Ref upgraded with title+author+year form. | PDF verified: Habiro, \&quot;A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres,\&quot; arXiv:math/0605314. Verified.&quot;,
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;uploads/habiro2004.pdf&quot;
+      },
+      &quot;local_pdf&quot;: &quot;uploads/habiro2004.pdf&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;undetermined&quot;,
+        &quot;rationale&quot;: &quot;BROKEN SOURCE JOIN: the named file does not exist. DUPLICATE-KEY DEFECT: the ids &#39;habiro2004&#39; (references.ts:2113) and &#39;habiro2004&#39; (references.ts:2142) name the SAME work — identical descriptive fields, identical DOI, identical preprint id — and the 2004-named id is itself registered with an issue date four years later than its own name implies. The one real source, library/arxiv-math-0605314v1/0605314v1.pdf, is joined in this same slice to &#39;habiro2004&#39;. DOI CONTRADICTIONS AT SITES: no citation site uses the registered DOI. mass-theory/full-pole-structure-mass-trace.lean:31/104/145/165 and mass-theory/habiro-residue-sum-equivalence.lean:39 attach one DOI; mass-theory/q-beta-q-eq-one-shadow-gate.lean:33, q-beta-radius-of-convergence-gate.lean:36, q-beta-c-k-recursion-from-habiro-q-difference.lean:30 and q-beta-bar-even-kernel-invariant.lean:42 attach a second, different one. Three DOIs, one id. CLAIM CHECK, partially resolvable: mass-theory/full-pole-structure-mass-trace-proof.md:1-6 cites this id for the statement that the Habiro ring is by definition the inverse limit lim_n Z[q]/((q;q)_n). I verified in library/arxiv-math-0605314v1/0605314v1.pdf that its section 1.2 does state Zhat[q] = lim_n Z[q]/((q)_n), so the claim IS present in the cited work — but that work&#39;s own bibliography attributes the construction to the cyclotomic-completions paper, which this corpus registers separately as &#39;habiro2004cyclotomic&#39; and whose source is present at library/arxiv-math-0209324v1/0209324v1.pdf The citation is supportable but points at the recollection rather than the source.&quot;,
+        &quot;keyResults&quot;: [],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Merge habiro2004 into habiro2004 (one work, two ids), reconcile the two site-level DOIs against the registered one, and re-point the Habiro-ring-definition citation at habiro2004cyclotomic where the ring is introduced.&quot;,
+            &quot;target&quot;: &quot;prop:full-pole-structure-mass-trace&quot;,
+            &quot;bean&quot;: &quot;qou-f13w&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 181,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-math-0605314v1/0605314v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;habiro2004&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;JOIN CONFIRMED from front matter: the document self-identifies as the preprint id recorded on the registered entry, and its abstract matches the entry&#39;s subject. DUPLICATE-KEY DEFECT: this is the identical work registered a second time as &#39;habiro2004&#39; (references.ts:2113) with identical descriptive fields, DOI and preprint id; see the habiro2004 row. NOT LOAD-BEARING at its four sites — and the files say so honestly. lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean:11 invokes it as motivation (a unified WRT invariant is an element of the Habiro ring determined by its values at all roots of unity), but every theorem in that file and in KeystoneHabiroRootFamily.lean is pure real-polynomial interpolation discharged by Mathlib&#39;s Polynomial.eq_of_infinite_eval_eq; nothing from the document is used as a hypothesis, and KeystoneHabiroRootFamily.lean:35-37 states explicitly that Habiro rigidity is cited, not proved. Also cited at KeystoneGaugeRowRigidity.lean:36 and lean/QOU/MassTheory/HabiroMagnitudeA3.lean:62. PARAPHRASE GAP worth recording: the Lean docstring&#39;s &#39;determined by its values at all roots of unity&#39; is weaker than what the document proves — its abstract says tau_zeta(M) for all roots of unity is determined by a Taylor expansion at ANY single root, and by the values at infinitely many roots of PRIME POWER order. Separately, the document&#39;s roots of unity are complex, whereas the Lean interpolates real fold values 2cos(k*pi/N), so the analogy is looser than the docstring suggests.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;§1.2&quot;,
+            &quot;statement&quot;: &quot;The Habiro ring is Zhat[q] = lim_n Z[q]/((q)_n), and each element is determined by its Taylor expansion at any root of unity.&quot;,
+            &quot;useForFolio&quot;: &quot;The actual definitional statement behind the Habiro-ring blocks; note the document itself attributes the construction to the cyclotomic-completions paper registered here as habiro2004cyclotomic.&quot;,
+            &quot;targets&quot;: [
+              &quot;cor:habiro-expansion-atomic&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Abstract / Thm 1.1&quot;,
+            &quot;statement&quot;: &quot;J_M in Zhat[q] unifies the SU(2) WRT invariants: evaluation at each root of unity zeta recovers tau_zeta(M), and tau_zeta(M) for all roots of unity is determined by the values at infinitely many roots of unity of prime power order.&quot;,
+            &quot;useForFolio&quot;: &quot;The precise rigidity statement the Keystone files gesture at; using the prime-power-order form would make the cited antecedent match the source.&quot;,
+            &quot;targets&quot;: [
+              &quot;folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record the paraphrase gap: the file cites determination by values at all roots of unity where the source proves determination by a Taylor expansion at any one root and by infinitely many prime-power-order roots, over complex roots rather than the real fold values the Lean interpolates. Scope-(a): the Lean theorems are unaffected — they are self-contained interpolation facts — only the cited antecedent is looser than the source.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean&quot;,
+            &quot;bean&quot;: &quot;qou-bivd&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;5fb8b89b4324&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

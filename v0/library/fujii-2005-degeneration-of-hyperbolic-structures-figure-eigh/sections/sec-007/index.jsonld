@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Theorem",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-007",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/thm-sec-007-01",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/rem-sec-007-02",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/figure-img-p010-21"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
+  "provenance": "ingested"
+}

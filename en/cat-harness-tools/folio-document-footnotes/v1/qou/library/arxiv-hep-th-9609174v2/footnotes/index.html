@@ -1,0 +1,1698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-hep-th-9609174v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-hep-th-9609174v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-hep-th-9609174v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-hep-th-9609174v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-hep-th-9609174v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;text&quot;: &quot;WeavoidaproliferationofnewsymbolsbyemployingthesameP(α) (λ) and h(α) in both conventions. n n&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;W&quot;
+      },
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;W7→V&quot;
+      },
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;e−NtrV (W&quot;
+      },
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;W&quot;
+      },
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;H= W&quot;
+      },
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;(0)̸=0,andnormalizethepolynomialsaccordingly.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-th-9609174v2/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-1&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;n+1&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;= |z1| · · · |zs| σN(z&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;1, · · · , z&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;ively.Thereforealltheformulaefortheirmicroscopiclimits(xa= N&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;N&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;N&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;N) = |ζ1| · · · |ζs| σS(ζ&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;1, · · · , ζ&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;= |z|KN(z&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;= |z|KN(z2, z&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;ρS(ζ) = (πρ(0))&quot;
+      },
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;J&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dM det&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dM det2αM e−NtrV (M&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;V (M&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;2kM&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;e−NV (λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dλiλ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dλ λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dλ λ2αe−NV (λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dλ λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;dλ λ2αe−NV (λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;V (λ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;2kλ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-th-9609174v2/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-2&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;‡&quot;,
+    &quot;text&quot;: &quot;Theorem2canberegardedasanextensionofTheorem1forhalf-integerα.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;Weshallprovethefollowingtheorem&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-th-9609174v2/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;n&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;d&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;du&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;du2+ x&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;N→∞P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;˜P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;˜P2n+1(λ) ≡P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;˜P2n+1(λ) ≡P2n+2(λ) −P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;areoddpolynomialsoforder2n + 1,andareorthogonaltoλ&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;dλ e−NV (λ) ˜P2n+1(λ) λ&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;dλ e−NV (λ)(P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;dλ e−NV (λ)(P2n+2(λ) −P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;dλ e−NV (λ)(P2n+2(λ) −P2n(λ)) λ&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;∂tP&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;Undertheassumptionthat˜P&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;Undertheassumptionthat˜P2n+1′(0)̸=0,changeofnormalizationtoP&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;N→∞N P&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;orthogonalwithrespecttothemeasuredλ λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;orthogonalwithrespecttothemeasuredλ λ2αe−NV (λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;dλ λ2(α+1)e−NV (λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;2(V (λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;2(V (λ2)+V (µ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;2(V (λ&quot;
+      },
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;2(V (λ2)+V (µ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-th-9609174v2/blocks/prose-sec-005&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p014-2&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;n&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-th-9609174v2/blocks/prose-sec-005&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;G.Akemann∗,P.H.Damgaard&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;‡&quot;,
+    &quot;context&quot;: &quot;G.Akemann∗,P.H.Damgaard†,U.Magnea&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;§&quot;,
+    &quot;context&quot;: &quot;G.Akemann∗,P.H.Damgaard†,U.Magnea‡andS.Nishigaki&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;e-mailaddresses:∗akemann@itp.uni-hannover.de,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;‡&quot;,
+    &quot;context&quot;: &quot;e-mailaddresses:∗akemann@itp.uni-hannover.de,†phdamg,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;§&quot;,
+    &quot;context&quot;: &quot;mailaddresses:∗akemann@itp.uni-hannover.de,†phdamg,‡umagnea,&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;{iD/, γ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;aroundzero:±λ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;aroundzero:±λn.Thecorrespondingeigenfunctionsare,forλ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;aroundzero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ndzero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φnandγ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;zero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φnandγ5φ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;conventionalSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;conventionalSU(Nf)L×SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;conventionalSU(Nf)L×SU(Nf)R→SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;⟨δ(λ −λ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;BytheBanks-Casherrelation∗[1](takingherethelimitV&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ2+ m&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;m→0&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;m→02&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;W&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;e−Ntr V (W&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dW detN&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;dimensionalSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;caseisconsideredtoberelevantforthree-dimensionalSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dM detN&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2tr V (M&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V (M&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kM&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kM2&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;elhasthesameglobalsymmetriesasaEuclideanfour-dimensionalSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;{M, γ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dW detN&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;ij&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−NV (z&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dz&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;iz&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ie−NV (λ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ijλ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;where wehavesetα = N&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H= W†Wwhoseeigenvaluesareλ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(λ) = λ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;sothattheVandermonde determinantdetij λ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i−1(λ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nλ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(whichistakentoinﬁnity),andN&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(λ)}n=0,&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kλ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(0) = 1,then,forﬁxedx = N&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Westartwiththecaseα=0.TherecursionrelationforP&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;h&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;andp&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Pn+1(λ) −P&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Pn+1(λ) −Pn(λ) −h&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;rn≡−p&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(P&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(Pn(λ) −P&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tructure of the coeﬃcients is dictatedby a comparison of O(λ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;f the coeﬃcients is dictatedby a comparison of O(λ0) and O(λ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sides.Thesetsofunknowns{h&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sides.Thesetsofunknowns{hn},{r&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;dλ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;dλ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(ˆλ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;N)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;h&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;hd&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;= −h(t)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;wheretheargumentNinP(n, N, λ)≡P&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t=n/Nandx=N&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;du&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;duu&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;arepolynomialsofordern.Theyareorthogonaltoλ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(λ) λ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;u2α+1&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;du&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;duu&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;duu2α+1&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;valueproblemforthepositive-deﬁnitehermitianmatrixH= W&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(V (λ)+V (µ))&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(V (λ)+V (µ))&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(0)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;h(t) +higherordersin&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N2α+1 (α!)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;N2 ,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a2−z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;z2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;z2k−2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;H= W&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;σN(λ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;σN(λ1, · · · , λ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Ntr δ(λ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1≤a,b≤sKN(λ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1≤a,b≤sKN(λa, λ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= |z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;= |z1| · · · |z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ρN(z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;ρN(z1, · · · , z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2Ntr δ(z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ns σN( x&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;N2 , · · · ,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N2 , · · · ,x&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;σS(x&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;σS(x1, · · · , x&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N→∞ρN(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N , · · · ,ζ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;N) = |ζ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N) = |ζ1| · · · |ζ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ρS(ζ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;ρS(ζ1, · · · , ζ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2kM2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;sameglobalsymmetrieswithaEuclideanthree-dimensionalSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i,jλ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(λ)}n=0,&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2kλ2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(λ) = λ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P2n(0)→P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P2n(0)→P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P2n+1′(0)→P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P2n+1′(0)→P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2n(λ) −P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2n(λ) −P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ˆλ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ˆλ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)2n+1,&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)2n+1,2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)2n+1,2m+1intermsofther&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(ˆλ2)2n+1,2m+1intermsofthern’s.Thecoeﬃcients{r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;dλ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e−N V (λ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= 2N(ˆλ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= 2N(ˆλ2V′(ˆλ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+ higherordersin&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(P(2n, N, λ) ≡P&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(P(2n, N, λ) ≡P2&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;4r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4r(t)d&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;dt2+ 2d&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;r(t)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N2λ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;N→∞P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;˜P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;˜P2n+1(λ) ≡P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;˜P2n+1(λ) ≡P2n+2(λ) −P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;areoddpolynomialsoforder2n + 1,andareorthogonaltoλ2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;dλ e−NV (λ) ˜P2n+1(λ) λ2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dλ e−NV (λ)(P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dλ e−NV (λ)(P2n+2(λ) −P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;dλ e−NV (λ)(P2n+2(λ) −P2n(λ)) λ2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;∂tP2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Undertheassumptionthat˜P2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ndertheassumptionthat˜P2n+1′(0)̸=0,changeofnormalizationtoP2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;N→∞N P2&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2(u(t)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2(u(t)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(V (λ2)+V (µ2))&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(V (λ2)+V (µ2))&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;r(t) + higherordersin&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dtu(t)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u(1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)2 2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)2 2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;2(u(1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2(u(1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2(u(1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;2(u(1)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;N ,&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ρN(λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;ρN(λ1, · · · , λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Ntr δ(λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1≤a,b≤sKN(λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1≤a,b≤sKN(λa, λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ns ρN(x&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;N , · · · , x&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ρS(x&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;ρS(x1, · · · , x&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+ J&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;D¯ψ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;D¯ψfDψ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;D¯ψfDψf e−S[A]−R¯ψ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;D¯ψfDψf e−S[A]−R¯ψf (iD/+m&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;D¯ψfDψf e−S[A]−R¯ψf (iD/+mf )ψ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;(Gauge)&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fdet(iD/ + m&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fdet(M+ m&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;RdM e−NΣ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;RdM e−NΣ2 tr M&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;SU(Nf )&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SU(Nf )dU&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SU(Nf )dU eNΣ tr mU&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fdet(M+ m&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;, however,based on the global symmetry breaking pattern SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;,based on the global symmetry breaking pattern SU(Nf)L ×SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;≡Mitself(b).SinceV&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;unitaryensemble(GUE)withV (M)=Σ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;unitaryensemble(GUE)withV (M)=Σ2tr M&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

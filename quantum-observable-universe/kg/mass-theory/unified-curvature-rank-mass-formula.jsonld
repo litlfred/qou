@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-unified-curvature-rank-mass-formula",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:unified-curvature-rank-mass-formula",
+  "kind": "proposition",
+  "title": "Unified curvature-rank mass formula (clarifies six terms + Term 7)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-plancherel-term-7-formulation"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.unified_curvature_rank_mass",
+  "text": "unified-curvature-rank-mass-formula.md",
+  "leanSource": "unified-curvature-rank-mass-formula.lean",
+  "provenance": "authored"
+}

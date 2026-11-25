@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-covalent-bond-types-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:covalent-bond-types-remark",
+  "kind": "remark",
+  "title": "Single, double and triple bonds",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-covalent-bond-types"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-covalent-bond-types",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "covalent-bond-types-remark.md",
+  "provenance": "authored"
+}

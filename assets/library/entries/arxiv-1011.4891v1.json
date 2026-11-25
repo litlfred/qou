@@ -1,0 +1,430 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1011.4891v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "1\nMechanical Normal Forms of Knots and Flat Knots\nA.B.Sossinsky\nIndependent University of Moscow\nInstitute for Problems in Mechanics RAS\nDedicated to the memory of V.I.Arnold\nAbstract. A new type of knot energy is presented via real life experiments\ninvolving a thin resilient metallic tube. Knotted in diﬀerent ways, the device me-\nchanically acquires a uniquely determined (up to isometry) normal form at least\nwhen the original knot diagram has a small number of crossings, thus outper-\nforming the famous M¨obius energy due to Jun O’Hara and studied by Michael\nFreedman et al.\nVarious properties",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The mechanical model",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-the-mechanical-model.md",
+      "narrative": null,
+      "content": "Our mechanical model of fat knots is constructed from a ﬂexible but re-\nsilient hollow rectilinear metallic cylinder of length 50 cm and diameter 2mm.\nIf one bends the cylinder and places it on a table, it straightens out almost in-\nstantly (after some oscilliations) and reacquires its original rectilinear shape;\nif one bends it so that several loops are formed and the cylinder is released,\nit will jump up slightly oﬀthe table and straighten out as it falls back on the\ntable again, having reacquired its rectilinear form. We can say that, when re-\nleased, it minimizes its total curvature as wel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The idealized models",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-the-idealized-models.md",
+      "narrative": null,
+      "content": "We mentioned ideal versions of our mechanical model above in connection\nwith the question of uniqueness. Here we note that in ideal versions of the\nmodel, it should be required that there be no friction preventing the sliding\nof one branch of the fat knot along another branch, and that the weight of\nthe mechanism be negligible as compared with its resilience (internal energy).\nIn practice, this is not always so: in some cases the surface of the fat knot\nis not smooth enough for frictionless sliding, and it sometimes requires a\nlittle “prompting” by the experimenter to achieve the normal form;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Whitney index and jumps",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-the-whitney-index-and-jumps.md",
+      "narrative": null,
+      "content": "Recall that the winding number (or Whitney index) w(C) of a smooth\nregular curve C in the plane is the number of revolutions that its tangent\nvector performs when we go around the curve. To every initial position M\nof our mechanical knot on the table, we can associate a smooth planar curve\n7\nCM, the projection of the smooth curve in space constituting the core (cen-\ntral curve) of M onto the plane of the table. Without loss of generality, this\nprojection can be assumed to be a smooth immersion (it diﬀers from the cor-\nresponding knot diagram in that the crossing points with under/overpasses\nar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local moves of mechanical knots",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-4-local-moves-of-mechanical-knots.md",
+      "narrative": null,
+      "content": "In observing the evolution of the shape of mechanical knots, we were able\nto notice that the device actually performs certain local moves well known in\nclassical knot theory. In particular, mechanical knots can (under appropriate\n“boundary conditions”):\n• perform the ﬁrst Reidemeister move Ω1 in both directions; we have\nalready seen that our device immediately gets rid of little loops, but it can\nalso create a loop: if we take the round unknot and move together two points\nof the knot, at some moment the knot “ﬂips”, forming a loop (Figure 3);\nFigure 3. “Reidemeister move” forming a little loop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "The simplest nontrivial knot, the trefoil, can be presented by a smooth curve of total curvature 4π. A beautiful theorem due to John Milnor [11] says that a smooth curve in R3 with total curvature less than 4π is un- knotted. There is no hope, however, that total curvature could be a measure of the “complexity” of knots (like their crossing number), because for any positive ε, however small, one can easily construct a knot as complicated as we like (e.g. having a crossing number greater than any apriori given number) of total curvature less than 4π + ε. Nevertheless, one might conjecture that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p008-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p010-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/conj-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "conj-sec-004-01.md",
+      "narrative": null,
+      "content": "For any n0 > 0, there exists a suﬃciently small s > 0 such that the unknot has an s-mechanical normal form with n > n0 crossing points. Recall that for M¨obius energy, the unknot has only one normal form (energy minimum), namely the round circle [3].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/conj-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "conj-sec-004-02.md",
+      "narrative": null,
+      "content": "For any suﬃciently large n0 > 0, there exists a positive s and a nontrivial knot with crossing number n greater than n0 which has more than one s-normal form. Examples justifying both of these two conjectures can be constructed by the same method: it can be shown that certain diﬀerent braids have the same closure, but the isotopy equivalence of these closures involves Markov moves that increase as well as decrease the length of the braid, whereas our device can only do the simplifying Markov moves. In order to construct such examples, and verify their validity, we need to be able to work with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonuniqueness of normal forms",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-5-nonuniqueness-of-normal-forms.md",
+      "narrative": null,
+      "content": "Experimenting with our mechanical device (of diameter to length ratio\ns = d/L = 0.004), we were unable to ﬁnd any knots that have more than one\nmechanical normal form, and we claim that no such knots (with 7 crossings\nor less) exist. However, we believe that uniqueness of mechanical normal\nforms holds only for a small number of crossing points (less than 30, less\nthan 20?). More speciﬁcally, having in mind idealized mechanical models\nwith tiny values of s = d/L, we conjecture the following.\nConjecture 1. For any n0 > 0, there exists a suﬃciently small s > 0\nsuch that the unknot has an s-mechan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§6. Flat knots",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-6-flat-knots.md",
+      "narrative": null,
+      "content": "§6. Flat knots\nFlat mechanical knots were described in the previous section. Numerous\nexperiments of the following type were performed with them: the device\nwas knotted (i.e., given the shape of some planar knot diagram and pressed\nagainst the table top by a pane of glass) and then the glass pane was raised\nto the height of approximately 7mm above the table. The device would then\nmove very rapidly on the surface of the table, with some of its branches sliding\nalong other ones, almost instantly acquiring what we call its ﬂat mechanical\nnormal form.\nObservation 3. For a small number of crossings",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "If two ambient isotopic knot diagrams K1 and K2 have the same Whitney index, then they are ﬂat isotopic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "Flat knots possess the following three invariants: the Kauﬀ- man bracket ⟨K⟩, the Whitney index w(K), and the twisting number τ(K). Together, w(K) and τ(K) constitute a complete system of invariants for ﬂat unknots.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.4891v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§7. Perspectives: new knot energies for computer simulations",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-7-perspectives-new-knot-energies-for-computer-si.md",
+      "narrative": null,
+      "content": "The analytical speciﬁcation of a knot energy mimicking the resilience of\nour little device is ongoing joint research with Oleg Karpenkov and will be\npublished elsewhere.\nHere we only mention that our functional is deﬁned for ﬂat knots only,\nit depends on a small parameter d in the space of smooth ﬂat knots in R2;\nroughly speaking, the functional is based on an “unbending force” (the larger\nthe curvature in the vicinity of some point, the stronger the force that tends\nto straighten out the curve near that point).\nFor ﬂat knots, unlike “fat\nknots” of cross section diameter d in space, no δ-funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

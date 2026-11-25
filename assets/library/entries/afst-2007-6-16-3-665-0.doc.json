@@ -1,0 +1,1633 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "afst-2007-6-16-3-665-0",
+  "title": "Galois theory of q-difference equations",
+  "variant": "pdf",
+  "pages": 55,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "666",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Classiﬁcation of q-diﬀerence equations",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "667",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-classiﬁcation-of-q-diﬀerence-equations"
+    },
+    {
+      "level": 2,
+      "title": "Some notation and formulas",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "667",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-some-notation-and-formulas"
+    },
+    {
+      "level": 2,
+      "title": "Regular singular diﬀerence modules",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "668",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-regular-singular-diﬀerence-modules"
+    },
+    {
+      "level": 2,
+      "title": "The slope ﬁltration",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": "669",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-the-slope-ﬁltration"
+    },
+    {
+      "level": 2,
+      "title": "Classiﬁcation of pure modules over \u0003K and K",
+      "number": "1.4",
+      "page": 7,
+      "pageLabel": "670",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-14-classiﬁcation-of-pure-modules-over-k-and-k"
+    },
+    {
+      "level": 3,
+      "title": "Pure diﬀerence modules over K∞with descent data",
+      "number": "1.4.1",
+      "page": 11,
+      "pageLabel": "674",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-141-pure-diﬀerence-modules-over-kwith-descent-da"
+    },
+    {
+      "level": 1,
+      "title": "Vector bundles and q-diﬀerence modules",
+      "number": "2",
+      "page": 13,
+      "pageLabel": "676",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-2-vector-bundles-and-q-diﬀerence-modules"
+    },
+    {
+      "level": 1,
+      "title": "Moduli spaces for q-diﬀerence equations",
+      "number": "3",
+      "page": 21,
+      "pageLabel": "684",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-3-moduli-spaces-for-q-diﬀerence-equations"
+    },
+    {
+      "level": 1,
+      "title": "Global diﬀerence modules",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "688",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-4-global-diﬀerence-modules"
+    },
+    {
+      "level": 1,
+      "title": "The Galois group of a q-diﬀerence module",
+      "number": "5",
+      "page": 30,
+      "pageLabel": "693",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-5-the-galois-group-of-a-q-diﬀerence-module"
+    },
+    {
+      "level": 2,
+      "title": "Universal Picard-Vessiot extensions",
+      "number": "5.1",
+      "page": 30,
+      "pageLabel": "693",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-51-universal-picard-vessiot-extensions"
+    },
+    {
+      "level": 2,
+      "title": "Galois groups for split modules over K",
+      "number": "5.2",
+      "page": 33,
+      "pageLabel": "696",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-52-galois-groups-for-split-modules-over-k"
+    },
+    {
+      "level": 2,
+      "title": "Galois groups for modules over K with two slopes",
+      "number": "5.3",
+      "page": 35,
+      "pageLabel": "698",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-53-galois-groups-for-modules-over-k-with-two-slo"
+    },
+    {
+      "level": 2,
+      "title": "Modules over K with more slopes",
+      "number": "5.4",
+      "page": 38,
+      "pageLabel": "701",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-54-modules-over-k-with-more-slopes"
+    },
+    {
+      "level": 1,
+      "title": "Realizing q-diﬀerence modules over K as connections on the elliptic curve E = C∗/qZ",
+      "number": "6",
+      "page": 39,
+      "pageLabel": "702",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-6-realizing-q-diﬀerence-modules-over-k-as-connec"
+    },
+    {
+      "level": 1,
+      "title": "Positive characteristic",
+      "number": "7",
+      "page": 47,
+      "pageLabel": "710",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-7-positive-characteristic"
+    },
+    {
+      "level": 2,
+      "title": "Picard-Vessiot theory and examples",
+      "number": "7.1",
+      "page": 49,
+      "pageLabel": "712",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-71-picard-vessiot-theory-and-examples"
+    },
+    {
+      "level": 2,
+      "title": "The universal diﬀerence ring over \u0003K",
+      "number": "7.2",
+      "page": 53,
+      "pageLabel": "716",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-72-the-universal-diﬀerence-ring-over-k"
+    },
+    {
+      "level": 2,
+      "title": "Bibliography",
+      "number": null,
+      "page": 54,
+      "pageLabel": "717",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-019-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "664",
+      "labelEnd": "666",
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marc reversat",
+          "heading": false
+        },
+        {
+          "term": "toulouse cedex",
+          "heading": false
+        },
+        {
+          "term": "pour les",
+          "heading": false
+        },
+        {
+          "term": "marius van",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀ erences",
+          "heading": false
+        },
+        {
+          "term": "aux q-diﬀ",
+          "heading": false
+        },
+        {
+          "term": "paul sabatier",
+          "heading": false
+        },
+        {
+          "term": "des sciences",
+          "heading": false
+        }
+      ],
+      "extract": "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques MARIUS VAN DER PUT, MARC REVERSAT Galois theory of q-difference equations Tome XVI, no 3 (2007), p. 665-718. <http://afst.cedram.org/item?id=AFST_2007_6_16_3_665_0> © Université Paul Sabatier, Toulouse, 2007, tous droits réservés. L’accès aux articles de la revue « Annales de la faculté des sci- ences de Toulouse Mathématiques » (http://afst.cedram.org/), implique",
+      "extractCut": true,
+      "blocks": [
+        "library/afst-2007-6-16-3-665-0/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "666",
+      "labelEnd": "667",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence modules",
+          "heading": false
+        },
+        {
+          "term": "sau",
+          "heading": false
+        },
+        {
+          "term": "integer slopes",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "tate curve",
+          "heading": false
+        },
+        {
+          "term": "r-s-z",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        }
+      ],
+      "extract": "Choose q ∈C with 0 < |q| < 1. The main theme of this paper is the study of linear q-diﬀerence equations over the ﬁeld K of germs of meromorphic functions at 0. A more detailed and systematic treatment of classiﬁcation and moduli is developed as a continuation of [vdP-S1] (Chapter 12), [vdP- R] and [vdP]. It turns out that a diﬀerence module M over K induces in a functorial way a vector bundle v(M) on the Tate curve",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-classiﬁcation-of-q-diﬀerence-equations",
+      "number": "1",
+      "title": "Classiﬁcation of q-diﬀerence equations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "667",
+      "labelEnd": "667",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-some-notation-and-formulas",
+      "number": "1.1",
+      "title": "Some notation and formulas",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "667",
+      "labelEnd": "668",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "qnz",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential form",
+          "heading": false
+        },
+        {
+          "term": "anφn",
+          "heading": false
+        }
+      ],
+      "extract": "A diﬀerence ring is a commutative R with a given automorphism φ. The skew ring of diﬀerence operators R[Φ, Φ−1], consists of the ﬁnite for- mal sums \u0002 n∈Z anΦn with all an ∈R. The multiplication is deﬁned by Φr = φ(r)Φ. A diﬀerence module M is a left R[Φ, Φ−1]-module which is free and ﬁnitely generated as R-module. The action ΦM of Φ on M is an additive bijection satisfying ΦM(rm) = φ(r)ΦM(m). Thus we may describe a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-regular-singular-diﬀerence-modules",
+      "number": "1.2",
+      "title": "Regular singular diﬀerence modules",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "668",
+      "labelEnd": "669",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular singular",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence",
+          "heading": true
+        },
+        {
+          "term": "mglobal",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "eigen",
+          "heading": false
+        }
+      ],
+      "extract": "We recall some classical results (a modern proof is given in [vdP-S1]). The classiﬁcation of regular singular modules over K and \u0003K are similar and we restrict our attention to q-diﬀerence modules M over K. A diﬀerence module over K is called regular singular if there exists a lattice M 0 ⊂M over C{z} (i.e., M 0 = C{z}e1 ⊕· · ·⊕C{z}em for some K-basis {e1, . . . , em} of M) which is invariant under Φ and Φ−1 (or in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-the-slope-ﬁltration",
+      "number": "1.3",
+      "title": "The slope ﬁltration",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "669",
+      "labelEnd": "670",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slope ﬁltration",
+          "heading": true
+        },
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "pure modules",
+          "heading": false
+        },
+        {
+          "term": "anφn",
+          "heading": false
+        },
+        {
+          "term": "ord",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        }
+      ],
+      "extract": "We describe here the slope ﬁltration and give references for more details and proofs. It is well known that any diﬀerence module M over K contains a cyclic vector. This means that there exists an element e ∈M such that the homomorphism K[Φ, Φ−1] →M, given by \u0002 anΦn \u0004→\u0002 anΦn(e), is surjec- tive (compare Lemma 4.1). Thus M is isomorphic to K[Φ, Φ−1]/K[Φ, Φ−1]L for some L of the form Φd+ad−1Φd−1+· · ·+a0, with all ai",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-classiﬁcation-of-pure-modules-over-k-and-k",
+      "number": "1.4",
+      "title": "Classiﬁcation of pure modules over \u0003K and K",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": "670",
+      "labelEnd": "674",
+      "words": 2050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deﬁnes mglobal",
+          "heading": false
+        },
+        {
+          "term": "pure modules",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "c-linear subspace",
+          "heading": false
+        },
+        {
+          "term": "tφn",
+          "heading": false
+        },
+        {
+          "term": "global diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "dimensional c-linear",
+          "heading": false
+        },
+        {
+          "term": "eigen",
+          "heading": false
+        }
+      ],
+      "extract": "Let F ⊂G be a ﬁnite extension of diﬀerence ﬁelds. Let M be a diﬀerence module over G. Then Res(M) (the restriction of M to F) denotes M, considered as a diﬀerence module over F. One observes that dimF Res(M) = [G : F] · dimG M. Put \u0003Kn = \u0003K(z1/n) for any integer n ⩾1. We apply the above restriction to the extension \u0003K ⊂\u0003Kn in order to construct all irreducible modules over \u0003K. Consider integers t, n with n ⩾1 and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-141-pure-diﬀerence-modules-over-kwith-descent-da",
+      "number": "1.4.1",
+      "title": "Pure diﬀerence modules over K∞with descent data",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "674",
+      "labelEnd": "676",
+      "words": 943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pure diﬀerence",
+          "heading": true
+        },
+        {
+          "term": "descent data",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence modules",
+          "heading": true
+        },
+        {
+          "term": "group gal",
+          "heading": false
+        },
+        {
+          "term": "zλφ",
+          "heading": false
+        },
+        {
+          "term": "σ-linear",
+          "heading": false
+        },
+        {
+          "term": "c-vector",
+          "heading": false
+        },
+        {
+          "term": "open subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "K∞denotes the algebraic closure of K and Gal denotes the Galois group of K∞/K. Let M be a diﬀerence module over K∞. Descent data D for M means a map σ ∈Gal \u0004→D(σ) satisfying: D(σ) is a σ-linear bijection on M, D(σ) commutes with Φ, D(σ1)D(σ2) = D(σ1σ2) and the stabilizer of any m ∈M, i.e., the group {σ ∈Gal | D(σ)m = m}, is an open subgroup of Gal. One associates to a diﬀerence module N over K the module M := K∞⊗ N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-2-vector-bundles-and-q-diﬀerence-modules",
+      "number": "2",
+      "title": "Vector bundles and q-diﬀerence modules",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 21,
+      "labelStart": "676",
+      "labelEnd": "684",
+      "words": 3590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mglobal commuting",
+          "heading": false
+        },
+        {
+          "term": "vector bundles",
+          "heading": true
+        },
+        {
+          "term": "repr",
+          "heading": false
+        },
+        {
+          "term": "indecomposable vector",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "pure diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "marc reversat",
+          "heading": false
+        },
+        {
+          "term": "coker",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that O denotes the algebra of the holomorphic functions on C∗and that a diﬀerence module M over O is a left module over the ring O[Φ, Φ−1], free of some rank m < ∞over O. Further pr : C∗→Eq := C∗/qZ denotes the canonical map. One associates to M the vector bundle v(M) of rank m on Eq given by v(M)(U) = {f ∈O(pr−1U)⊗OM| Φ(f) = f}, where, for any open V ⊂C∗, O(V ) is the algebra of the holomorphic functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-moduli-spaces-for-q-diﬀerence-equations",
+      "number": "3",
+      "title": "Moduli spaces for q-diﬀerence equations",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "684",
+      "labelEnd": "688",
+      "words": 1822,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-s-z",
+          "heading": false
+        },
+        {
+          "term": "repr",
+          "heading": false
+        },
+        {
+          "term": "birkhoﬀand",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "sau",
+          "heading": false
+        },
+        {
+          "term": "guenther",
+          "heading": false
+        },
+        {
+          "term": "bir",
+          "heading": false
+        }
+      ],
+      "extract": "For a diﬀerence module M over K we consider again the slope ﬁltra- tion 0 = M0 ⊂M1 ⊂· · · ⊂Mr. One associates to M the graded module gr(M) := ⊕r i=1Mi/Mi−1. The aim is to produce a moduli space for the col- lection of all q-diﬀerence modules over K with a ﬁxed gr(M). This problem is the theme of [R-S-Z]. As Ch. Zhang has remarked, the problem is already present in a paper of G. Birkhoﬀand P.E. Guenther, see [Bir].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-global-diﬀerence-modules",
+      "number": "4",
+      "title": "Global diﬀerence modules",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "688",
+      "labelEnd": "693",
+      "words": 2021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "global diﬀerence",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "coker",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "galois theory",
+          "heading": false
+        },
+        {
+          "term": "rank",
+          "heading": false
+        }
+      ],
+      "extract": "The skew ring D := C[z, z−1][Φ, Φ−1] is deﬁned by the relation Φz = qzΦ. We recall that a global diﬀerence module is a left D-module N, which is as C[z, z−1]-module, ﬁnitely generated and free. It suﬃces in fact to assume that N is ﬁnitely generated as C[z, z−1]- module. Indeed, let N0 denote the torsion submodule of N and let I ⊂ C[z, z−1] denote the anihilator ideal of N0. Then N0 and I are invariant under the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-the-galois-group-of-a-q-diﬀerence-module",
+      "number": "5",
+      "title": "The Galois group of a q-diﬀerence module",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "693",
+      "labelEnd": "693",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-51-universal-picard-vessiot-extensions",
+      "number": "5.1",
+      "title": "Universal Picard-Vessiot extensions",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": "693",
+      "labelEnd": "696",
+      "words": 1577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "universal picard-vessiot",
+          "heading": true
+        },
+        {
+          "term": "czλ",
+          "heading": false
+        },
+        {
+          "term": "ring univrs",
+          "heading": false
+        },
+        {
+          "term": "group guniv",
+          "heading": false
+        },
+        {
+          "term": "h-invariant elements",
+          "heading": false
+        },
+        {
+          "term": "singular diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "picard-vessiot extension",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence modules",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that a diﬀerence module M over K is split if M is a direct sum of pure modules. A split diﬀerence module M over K has a Picard- Vessiot extension PV (M) and the (diﬀerence) Galois group is the group of the automorphisms of PV (M)/K which commute with the action of φ on PV (M). The universal Picard-Vessiot extension Univ for the family of all split modules over K is the direct limit of all PV (M). The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-52-galois-groups-for-split-modules-over-k",
+      "number": "5.2",
+      "title": "Galois groups for split modules over K",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "696",
+      "labelEnd": "698",
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "czt",
+          "heading": false
+        },
+        {
+          "term": "category tuples",
+          "heading": false
+        },
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "split diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence modules",
+          "heading": false
+        },
+        {
+          "term": "kne",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes functor",
+          "heading": false
+        }
+      ],
+      "extract": "Now we extend the above to larger categories. We introduce a category Tuples2 as follows. The objects are tuples (V, {Vλ}λ∈Q, ΓV , ∆V ), satisfying : – 696 – Galois theory of q-diﬀerence equations (a) V is a ﬁnite dimensional vector space over C. (b) V is the direct sum of the subspaces Vλ (and thus there are only ﬁnitely many λ with Vλ̸ = 0). (c) ΓV , ∆V are invertible operators on V respecting the direct sum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-53-galois-groups-for-modules-over-k-with-two-slo",
+      "number": "5.3",
+      "title": "Galois groups for modules over K with two slopes",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "698",
+      "labelEnd": "701",
+      "words": 1343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "slopes",
+          "heading": true
+        },
+        {
+          "term": "coker",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "Let the q-diﬀerence module M over K be given by an exact sequence 0 →P1 →M →P2 →0, where P1, P2 are pure with slopes λ1 < λ2. The Picard-Vessiot ring PV (M) of M contains PV (P1 ⊕P2), the Picard-Vessiot ring of P1 ⊕P2. Thus there is an exact sequence 1 →H →G →G′ →1, where G and G′ are the diﬀerence Galois groups of M and P1 ⊕P2. The group G′ has been calculated in subsections 5.1 and 5.2. Further, H is the diﬀerence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-54-modules-over-k-with-more-slopes",
+      "number": "5.4",
+      "title": "Modules over K with more slopes",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "701",
+      "labelEnd": "702",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slopes",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "gory",
+          "heading": false
+        }
+      ],
+      "extract": "We describe here the diﬀerence Galois group for the general case. The proof follows straightforward from the case of two slopes. Consider a q- diﬀerence module M over K with slope ﬁltration 0 = M0 ⊂M1 ⊂· · · ⊂ Mr = M. Write gr(M) = P1 ⊕· · · ⊕Pr where Pi is pure of slope λi and λ1 < · · · < λr. According to Remarks 2.5, part (1), M is given by an element ξ = {ξi,j} in i<j Fo i,j(C) ∼= i<j coker(Φ−1, Hom(Pj, Pi)).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-realizing-q-diﬀerence-modules-over-k-as-connec",
+      "number": "6",
+      "title": "Realizing q-diﬀerence modules over K as connections on the elliptic curve E = C∗/qZ",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 47,
+      "labelStart": "702",
+      "labelEnd": "710",
+      "words": 3646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerence modules",
+          "heading": false
+        },
+        {
+          "term": "pure diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "split diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "singular diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "circle connection",
+          "heading": false
+        },
+        {
+          "term": "oeq",
+          "heading": false
+        },
+        {
+          "term": "ass",
+          "heading": false
+        },
+        {
+          "term": "elliptic curve",
+          "heading": true
+        }
+      ],
+      "extract": "on the elliptic curve E = C∗/qZ As in section 2 we associate to any diﬀerence module M over K a vector bundle v(M) on the elliptic curve Eq. The aim is to provide v(M) with a suitable connection. The following theorem gives an explicit version of Corollary 5.4. Theorem 6.1 (Regular singular q-difference modules). — Let a, b denote the generators of π1(Eq), corresponding to the shifts u \u0004→u + 1, u \u0004→u + τ on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-positive-characteristic",
+      "number": "7",
+      "title": "Positive characteristic",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": "710",
+      "labelEnd": "712",
+      "words": 881,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "amtm",
+          "heading": false
+        },
+        {
+          "term": "algebraic closures",
+          "heading": false
+        },
+        {
+          "term": "closed ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "aλzλ",
+          "heading": false
+        },
+        {
+          "term": "q1s",
+          "heading": false
+        },
+        {
+          "term": "characteristic",
+          "heading": true
+        },
+        {
+          "term": "rigid analysis",
+          "heading": false
+        }
+      ],
+      "extract": "Atiyah’s paper makes some excursions to positive characteristic. Here, we do the same for q-diﬀerence equations. We replace the ﬁeld C by a ﬁeld C which is algebraically closed and complete for a non trivial non archimedean valuation. The case where C has characteristic 0 (i.e., C ⊃Qp for some prime p) is not very interesting since most of the preceeding results can be copied from the complex case with the help of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-71-picard-vessiot-theory-and-examples",
+      "number": "7.1",
+      "title": "Picard-Vessiot theory and examples",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 53,
+      "labelStart": "712",
+      "labelEnd": "716",
+      "words": 1838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "picard-vessiot",
+          "heading": true
+        },
+        {
+          "term": "picard-vessiot ring",
+          "heading": false
+        },
+        {
+          "term": "picard-vessiot extension",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "φ-invariant ideals",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence module",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a ﬁeld F provided with an automorphism φ of inﬁnite order. The ﬁeld of constants C := {f ∈F| φ(f) = f} is supposed to be alge- braically closed. A diﬀerence module M is a ﬁnite dimensional vector space over F, provided with a bijective additive map Φ : M →M satisfying Φ(fm) = φ(f)Φ(m). After choosing a basis of M over F, the equation Φ(m) = m translates into a matrix diﬀerence equation y = Aφ(y) with A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-72-the-universal-diﬀerence-ring-over-k",
+      "number": "7.2",
+      "title": "The universal diﬀerence ring over \u0003K",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "716",
+      "labelEnd": "717",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerence",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "czλ",
+          "heading": false
+        },
+        {
+          "term": "guniv",
+          "heading": false
+        },
+        {
+          "term": "reduced aﬃne",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence modules",
+          "heading": false
+        },
+        {
+          "term": "picard-vessiot ring",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        }
+      ],
+      "extract": "The above examples and the classiﬁcation of the indecomposable dif- ference modules over \u0003K lead to the following description of the univer- sal Picard-Vessiot ring Univ of \u0003K. Let \u0003K+ denote the union of the ﬁelds \u0003K(z1/n) (for all n ⩾1). One introduces symbols e(czλ) for c ∈C∗, λ ∈Q and ℓk for k ∈Z, k ⩾1. Then Univ = \u0003K+[{ℓk}k⩾1{e(czλ)}]. The only relations are e(c1zλ1) · e(c2zλ2) = e(c1c2zλ1+λ2); e(qλ) = z−λ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "717",
+      "labelEnd": "718",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "van der",
+          "heading": false
+        },
+        {
+          "term": "der put",
+          "heading": false
+        },
+        {
+          "term": "ast erisque",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "springer verlag",
+          "heading": false
+        },
+        {
+          "term": "sau",
+          "heading": false
+        },
+        {
+          "term": "sauloy",
+          "heading": false
+        },
+        {
+          "term": "vdp-s",
+          "heading": false
+        }
+      ],
+      "extract": "[At] Atiyah (M.F.). — Vector bundles on elliptic curves, Proc.London.Math. Soc., 7, 414-452 (1957). [Bir] Collected mathematical papers of George David Birkhoﬀ, Volume 1. Dover pub- lications, 1968. [For] Forster (O.), Riemannsche Fl¨ache, Heidelberger Taschenb¨ucher, Springer Ver- lag (1977). [Fr-vdP] Fresnel (J.), van der Put (M.), Rigid Analytic Geometry and its Applica- tions, Progress in Math., 218, 2004. [vdP]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "diﬀerence galois",
+      "heading": false
+    },
+    {
+      "term": "diﬀerence module",
+      "heading": false
+    },
+    {
+      "term": "pure diﬀerence",
+      "heading": true
+    },
+    {
+      "term": "diﬀerence equations",
+      "heading": false
+    },
+    {
+      "term": "diﬀerence ring",
+      "heading": true
+    },
+    {
+      "term": "split diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "singular diﬀerence",
+      "heading": true
+    },
+    {
+      "term": "linear diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "universal diﬀerence",
+      "heading": true
+    },
+    {
+      "term": "some diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "global diﬀerence",
+      "heading": true
+    },
+    {
+      "term": "diﬀerence mod",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "664",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "665",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "666",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "667",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "668",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "669",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "670",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "671",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "672",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "673",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "674",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "675",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "676",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "677",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "678",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "679",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "680",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "681",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "682",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "683",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "684",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "685",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "686",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "687",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "688",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "689",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "690",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "691",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "692",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "693",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "694",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "695",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "696",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "697",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "698",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "699",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "700",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "701",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "702",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "703",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "704",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "705",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "706",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "707",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "708",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "709",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "710",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "711",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "712",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "713",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "714",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "715",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "716",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "717",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "718",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p54); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/afst-2007-6-16-3-665-0"
+  }
+}

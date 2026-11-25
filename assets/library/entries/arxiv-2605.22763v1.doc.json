@@ -1,0 +1,2120 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.22763v1",
+  "title": "Advancing Mathematics Research with AI-Driven Formal Proof Search",
+  "variant": "pdf",
+  "pages": 59,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "AlphaProof Nexus",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-alphaproof-nexus"
+    },
+    {
+      "level": 1,
+      "title": "Systematic Evaluation on Open Problems",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-systematic-evaluation-on-open-problems"
+    },
+    {
+      "level": 1,
+      "title": "Deployment in Mathematics Research",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-deployment-in-mathematics-research"
+    },
+    {
+      "level": 1,
+      "title": "Impact of Agent Architecture and Model",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-impact-of-agent-architecture-and-model"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Materials and Methods",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-materials-and-methods"
+    },
+    {
+      "level": 2,
+      "title": "Further Details on AlphaProof Nexus Agents",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-further-details-on-alphaproof-nexus-agents"
+    },
+    {
+      "level": 2,
+      "title": "Prompts",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-prompts"
+    },
+    {
+      "level": 1,
+      "title": "Supplementary Text",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-supplementary-text"
+    },
+    {
+      "level": 2,
+      "title": "Related Work",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-related-work"
+    },
+    {
+      "level": 2,
+      "title": "Selection of Erdős and OEIS Problems",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-selection-of-erdős-and-oeis-problems"
+    },
+    {
+      "level": 2,
+      "title": "Details on Comparisons across Agent Architectures and Models",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-details-on-comparisons-across-agent-architecture"
+    },
+    {
+      "level": 2,
+      "title": "Deformalized Lean Proofs",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-deformalized-lean-proofs"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "agent",
+          "heading": false
+        },
+        {
+          "term": "google",
+          "heading": false
+        },
+        {
+          "term": "llms",
+          "heading": false
+        },
+        {
+          "term": "mathematics research",
+          "heading": false
+        },
+        {
+          "term": "erdős",
+          "heading": false
+        },
+        {
+          "term": "proof search",
+          "heading": false
+        },
+        {
+          "term": "formal proof",
+          "heading": false
+        }
+      ],
+      "extract": "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov1†, Anja Surina1, Moritz Firsching1, Gergely Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós Z. Horváth1, Andrew Ferrauiolo1, Henryk Michalewski1, Codrut Grosu3, Thomas Hubert1, Matej Balog1, Pushmeet Kohli1 and Swarat",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2605.22763v1/blocks/prose-sec-front-matter",
+        "library/arxiv-2605.22763v1/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full-featured agent",
+          "heading": false
+        },
+        {
+          "term": "basic agent",
+          "heading": false
+        },
+        {
+          "term": "erdős problems",
+          "heading": false
+        },
+        {
+          "term": "google",
+          "heading": false
+        },
+        {
+          "term": "mathematics research",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "compiler",
+          "heading": false
+        },
+        {
+          "term": "alphaproof",
+          "heading": false
+        }
+      ],
+      "extract": "Large language models (LLMs) have recently shown remarkable promise in solving complex mathematics problems [21, 65], but unreliability remains a primary barrier to their integra- tion into mathematics research. Because LLM-generated natural language proofs can contain subtle logical errors, or “hallucinations,” they require expensive expert review. Mistakes in unreviewed intermediate steps can cascade through a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-alphaproof-nexus",
+      "number": null,
+      "title": "AlphaProof Nexus",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1093,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alphaproof nexus",
+          "heading": true
+        },
+        {
+          "term": "prover subagents",
+          "heading": false
+        },
+        {
+          "term": "lean compiler",
+          "heading": false
+        },
+        {
+          "term": "lean file",
+          "heading": false
+        },
+        {
+          "term": "pending goals",
+          "heading": false
+        },
+        {
+          "term": "basic agent",
+          "heading": false
+        },
+        {
+          "term": "sorry lemma",
+          "heading": false
+        },
+        {
+          "term": "elo ratings",
+          "heading": false
+        }
+      ],
+      "extract": "Lean. Lean [43] is a proof assistant in which definitions, theorems, and proofs are all mechanically verified code. Proofs are constructed via a sequence of applications of tactics, or elementary proof steps. Lean’s compiler “executes” a proof tactic-by-tactic, tracking the proof goals pending after every tactic. A proof is correct if it leads the compiler to a state with no pending goals. Lean includes a special",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-systematic-evaluation-on-open-problems",
+      "number": null,
+      "title": "Systematic Evaluation on Open Problems",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full-featured agent",
+          "heading": false
+        },
+        {
+          "term": "open problems",
+          "heading": true
+        },
+        {
+          "term": "erdos problems",
+          "heading": false
+        },
+        {
+          "term": "agent found",
+          "heading": false
+        },
+        {
+          "term": "texttt sorry",
+          "heading": false
+        },
+        {
+          "term": "upper density",
+          "heading": false
+        },
+        {
+          "term": "lower density",
+          "heading": false
+        },
+        {
+          "term": "crt",
+          "heading": false
+        }
+      ],
+      "extract": "\\paragraph{{\\erdos} Problems.} Bloom maintains an online catalog \\cite{erdosproblems} of over 1200 open problems posed by Paul {\\erdos} and his collaborators. The open-source Formal Conjectures repository \\cite{deepmind2026formalconjectures} contains Lean formalizations of a subset of these problems. We ran Agent (D) on all these formal statements (353 at the time of the run), terminating the search if no proof was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-deployment-in-mathematics-research",
+      "number": null,
+      "title": "Deployment in Mathematics Research",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "agent",
+          "heading": false
+        },
+        {
+          "term": "plot erdos",
+          "heading": false
+        },
+        {
+          "term": "inference cost",
+          "heading": false
+        },
+        {
+          "term": "erdos main",
+          "heading": false
+        },
+        {
+          "term": "graph reconstruction",
+          "heading": false
+        },
+        {
+          "term": "reconstruction conjecture",
+          "heading": false
+        },
+        {
+          "term": "open problems",
+          "heading": false
+        },
+        {
+          "term": "quantum optics",
+          "heading": false
+        }
+      ],
+      "extract": "\\paragraph{Optimization Theory.} Agent (D) resolved an open question in optimization: proving an exact $\\mathcal{O}(1/t)$ convergence rate for the Anchored Gradient Descent-Ascent (GDA) algorithm for min-max convex-concave optimization, thereby tightening the slower bound established by \\cite{ryu2019ode}. The proof departs from continuous-time ordinary differential equations (ODE) analysis used in previous work,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-impact-of-agent-architecture-and-model",
+      "number": null,
+      "title": "Impact of Agent Architecture and Model",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 880,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "agent",
+          "heading": true
+        },
+        {
+          "term": "full-featured agent",
+          "heading": false
+        },
+        {
+          "term": "successful chunks",
+          "heading": false
+        },
+        {
+          "term": "erdos problems",
+          "heading": false
+        },
+        {
+          "term": "subagents",
+          "heading": false
+        },
+        {
+          "term": "gemini",
+          "heading": false
+        },
+        {
+          "term": "independent attempts",
+          "heading": false
+        },
+        {
+          "term": "usd",
+          "heading": false
+        }
+      ],
+      "extract": "Exploration of a large space of open problems is expensive, and we chose the full-featured agent (agent (D)) for this based on its strong performance on competition benchmarks. To understand which architectural components are necessary for its successes, we compared its performance against agents (A), (B), and (C) on the {\\erdos} problem set in Table~\\ref{tab:major_results}. We compared the agents by analyzing the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-discussion",
+      "number": null,
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 18,
+      "labelStart": "10",
+      "labelEnd": "18",
+      "words": 2570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pushmeet kohli",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "alphaproof nexus",
+          "heading": false
+        },
+        {
+          "term": "search agents",
+          "heading": false
+        },
+        {
+          "term": "swarat chaudhuri",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "bogdan georgiev",
+          "heading": false
+        },
+        {
+          "term": "erdős problems",
+          "heading": false
+        }
+      ],
+      "extract": "We have provided a large-scale demonstration of the value of formal proof search agents on research-level mathematical problems. Recently, some natural-language reasoning systems have been shown to succeed in research-level mathematical tasks, including Erdős problems [20, 4]. However, the use of AI-generated informal proofs, either as standalone products or as inputs to a subsequent formalization stage, requires",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-materials-and-methods",
+      "number": null,
+      "title": "Materials and Methods",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-further-details-on-alphaproof-nexus-agents",
+      "number": null,
+      "title": "Further Details on AlphaProof Nexus Agents",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "18",
+      "labelEnd": "22",
+      "words": 1991,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prover subagent",
+          "heading": false
+        },
+        {
+          "term": "alphaproof",
+          "heading": true
+        },
+        {
+          "term": "rater agent",
+          "heading": false
+        },
+        {
+          "term": "llm session",
+          "heading": false
+        },
+        {
+          "term": "sketch lean",
+          "heading": false
+        },
+        {
+          "term": "lean compiler",
+          "heading": false
+        },
+        {
+          "term": "population database",
+          "heading": false
+        },
+        {
+          "term": "full-featured agent",
+          "heading": false
+        }
+      ],
+      "extract": "1 # Main Loop 2 initial_sketch = lean_compiler.check(initial_file) 3 final_sketch = prover_subagent(initial_sketch) 4 5 # Basic prover subagent 6 def prover_step(sketch): 7 session = LlmSketcher(sketch) # Start an LLM session 8 while tool_call := session.recv(): 9 if tool_call.is_search_replace(): 10 sketch, feedback = search_replace_then_compile(sketch, tool_call) 11 session.send(feedback) 12 13 if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-prompts",
+      "number": null,
+      "title": "Prompts",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full-featured agent",
+          "heading": false
+        },
+        {
+          "term": "prompt",
+          "heading": false
+        },
+        {
+          "term": "subagents",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 6 shows the main pieces of the prompt used for prover subagents in the full-featured agent (D). Figure 7 shows the prompt for the rating subagents in the full-featured agent (D). Figure 8 shows the full prompt for the basic agent (A).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-supplementary-text",
+      "number": null,
+      "title": "Supplementary Text",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-related-work",
+      "number": null,
+      "title": "Related Work",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 2065,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lean code",
+          "heading": false
+        },
+        {
+          "term": "lean file",
+          "heading": false
+        },
+        {
+          "term": "lean expert",
+          "heading": false
+        },
+        {
+          "term": "alphaproof tool",
+          "heading": false
+        },
+        {
+          "term": "current lean",
+          "heading": false
+        },
+        {
+          "term": "execution feedback",
+          "heading": false
+        },
+        {
+          "term": "lean proof",
+          "heading": false
+        },
+        {
+          "term": "proof sketches",
+          "heading": false
+        }
+      ],
+      "extract": "Formal Theorem Proving with LLMs. There is a large literature on neural-network-guided search over machine-checkable formal proofs [66, 15, 16, 64, 40]. Early work such as GPT- 𝑓[48] established the viability of language models in this setting; subsequent systems improved tactic generation, premise selection, and interaction with external provers [35, 67]. The Draft-Sketch-Prove system [34] introduced the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-selection-of-erdős-and-oeis-problems",
+      "number": null,
+      "title": "Selection of Erdős and OEIS Problems",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oeis",
+          "heading": true
+        },
+        {
+          "term": "erdős",
+          "heading": true
+        },
+        {
+          "term": "problems",
+          "heading": true
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "agent",
+          "heading": false
+        }
+      ],
+      "extract": "For the Erdős evaluation, we ran our agent on all Lean statements of Erdős problems available in the Formal Conjectures repository [23] as of early February 2026 – 353 problems in total. We did not select which problems to attempt; the set was determined entirely by what the open-source community had formalized from the 1200+ problems catalogued on the ErdosProblems site. We recognize that this process has a bias",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-details-on-comparisons-across-agent-architecture",
+      "number": null,
+      "title": "Details on Comparisons across Agent Architectures and Models",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "30",
+      "words": 1045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rate erdos",
+          "heading": false
+        },
+        {
+          "term": "agent",
+          "heading": true
+        },
+        {
+          "term": "inference cost",
+          "heading": false
+        },
+        {
+          "term": "mean cost",
+          "heading": false
+        },
+        {
+          "term": "erdős problems",
+          "heading": false
+        },
+        {
+          "term": "nine erdős",
+          "heading": false
+        },
+        {
+          "term": "usd",
+          "heading": false
+        },
+        {
+          "term": "alphaproof",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 9 reports, for each Erdős problem, the distribution of computational costs for successful runs, along with the solve rate for each agent. We note a large variance in the cost for most problems and methods, which highlights the stochastic nature of the agent. This is especially noticeable on problems such as Erdős 12(ii) and 152. erdos_12(i) erdos_12(ii) erdos_125 erdos_138 erdos_152 erdos_26 erdos_741(i)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-deformalized-lean-proofs",
+      "number": null,
+      "title": "Deformalized Lean Proofs",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 884,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "𝑃𝑖",
+          "heading": false
+        },
+        {
+          "term": "lean proofs",
+          "heading": true
+        },
+        {
+          "term": "deformalized",
+          "heading": true
+        },
+        {
+          "term": "tokens",
+          "heading": false
+        },
+        {
+          "term": "divisibility condition",
+          "heading": false
+        },
+        {
+          "term": "agent",
+          "heading": false
+        },
+        {
+          "term": "𝑜𝑢𝑡𝑝𝑢𝑡",
+          "heading": false
+        },
+        {
+          "term": "thoughts",
+          "heading": false
+        }
+      ],
+      "extract": "Advancing Mathematics Research with AI-Driven Formal Proof Search The LLM cost for each agent was computed as follows: 𝑡𝑜𝑡𝑎𝑙𝑐𝑜𝑚𝑝𝑜𝑛𝑒𝑛𝑡= 𝑖𝑛𝑝𝑢𝑡∗𝑝𝑖𝑛𝑝𝑢𝑡+ 𝑐𝑎𝑐ℎ𝑒𝑟𝑒𝑎𝑑∗𝑝𝑐𝑎𝑐ℎ𝑒+ 𝑜𝑢𝑡𝑝𝑢𝑡∗𝑝𝑜𝑢𝑡𝑝𝑢𝑡, 𝑡𝑜𝑡𝑎𝑙= 𝑡𝑜𝑡𝑎𝑙𝑠𝑘𝑒𝑡𝑐ℎ𝑒𝑟+ 𝑡𝑜𝑡𝑎𝑙𝑟𝑎𝑡𝑒𝑟 where 𝑖𝑛𝑝𝑢𝑡includes user prompt, agent session prefix, thoughts and tool calls outputs and excludes cached tokens,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-erdős-12-ii",
+      "number": null,
+      "title": "Erdős #12-(ii)",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 967,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "apnoutputs erdosproblems",
+          "heading": false
+        },
+        {
+          "term": "erdosproblems site",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "advancing mathematics",
+          "heading": false
+        },
+        {
+          "term": "main apnoutputs",
+          "heading": false
+        },
+        {
+          "term": "blob main",
+          "heading": false
+        },
+        {
+          "term": "erdős",
+          "heading": true
+        },
+        {
+          "term": "lean",
+          "heading": false
+        }
+      ],
+      "extract": "Next, we give a proof for the second question of the three listed in Erdős #12. Theorem (ii). There exists an infinite set 𝐴⊂ℤ+ with no distinct 𝑎, 𝑏, 𝑐∈𝐴with 𝑏, 𝑐> 𝑎, 31 Advancing Mathematics Research with AI-Driven Formal Proof Search and 𝑎|𝑏+ 𝑐, yet for any 𝜀> 0 and all sufficiently large 𝑁: |𝐴∩{1, . . . , 𝑁}| ≥𝑁1−𝜀. Consequently, there is no absolute constant 𝑐> 0 such that every such set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-erdős-125",
+      "number": null,
+      "title": "Erdős #125",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integers 𝑘and",
+          "heading": false
+        },
+        {
+          "term": "lower density",
+          "heading": false
+        },
+        {
+          "term": "𝐴and",
+          "heading": false
+        },
+        {
+          "term": "larger scale",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "digits",
+          "heading": false
+        },
+        {
+          "term": "written base",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        }
+      ],
+      "extract": "Question. Let 𝐴= {Í 𝜖𝑘3𝑘: 𝜖𝑘∈{0, 1}} be the set of integers which have only the digits 0,1 when written base 3, and 𝐵= {Í 𝜖𝑘4𝑘: 𝜖𝑘∈{0, 1}} be the set of integers which have only the digits 0, 1 when written base 4. Does 𝐴+ 𝐵have positive lower density? Proof. We show that the answer is no: the lower density is zero. Let 𝐴and 𝐵be defined as the sets of integers whose base 3 and base 4 representations,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-erdős-138-differences-variant",
+      "number": null,
+      "title": "Erdős #138, Differences Variant",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monochromatic",
+          "heading": false
+        },
+        {
+          "term": "step size",
+          "heading": false
+        },
+        {
+          "term": "progression",
+          "heading": false
+        },
+        {
+          "term": "red",
+          "heading": false
+        },
+        {
+          "term": "blue",
+          "heading": false
+        },
+        {
+          "term": "some step",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "coloring",
+          "heading": false
+        }
+      ],
+      "extract": "Question. Let the van der Waerden number 𝑊(𝑘) be such that whenever 𝑁≥𝑊(𝑘) and {1, . . . , 𝑁} is 2-coloured there must exist a monochromatic 𝑘-term arithmetic progression. Is it true that 𝑊(𝑘+ 1) −𝑊(𝑘) →∞? Proof. We will show that 𝑊(𝑘+ 1) ≥𝑊(𝑘) + 𝑘, which establishes that 𝑊(𝑘+ 1) −𝑊(𝑘) →∞. Given a 2-coloring of the first 𝑊(𝑘) −1 integers without a monochromatic 𝑘-AP, we can extend it by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-erdős-741-i",
+      "number": null,
+      "title": "Erdős #741-(i)",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upper density",
+          "heading": false
+        },
+        {
+          "term": "erdős",
+          "heading": true
+        },
+        {
+          "term": "growing sequence",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "advancing mathematics",
+          "heading": false
+        },
+        {
+          "term": "zero upper",
+          "heading": false
+        },
+        {
+          "term": "sumsets",
+          "heading": false
+        },
+        {
+          "term": "scales along",
+          "heading": false
+        }
+      ],
+      "extract": "Question. Let 𝐴⊆ℕbe such that 𝐴+ 𝐴has positive upper density. Can one always decompose 𝐴= 𝐴1 ⊔𝐴2 such that 𝐴1 + 𝐴1 and 𝐴2 + 𝐴2 both have positive upper density? Proof. We show that the answer is yes. We use an alternating block partition. Given a rapidly 35 Advancing Mathematics Research with AI-Driven Formal Proof Search growing sequence 𝑀0 < 𝑀1 < 𝑀2 < · · · , we define 𝐴1 = 𝐴∩ Ø 𝑘 (𝑀2𝑘, 𝑀2𝑘+1],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-erdős-741-ii",
+      "number": null,
+      "title": "Erdős #741-(ii)",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "forbidden zone",
+          "heading": false
+        },
+        {
+          "term": "𝑥𝑘",
+          "heading": false
+        },
+        {
+          "term": "bounded gaps",
+          "heading": false
+        },
+        {
+          "term": "component sumset",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "half",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "Question. Is there a basis 𝐴of order 2 such that if 𝐴= 𝐴1 ⊔𝐴2 then 𝐴1 + 𝐴1 and 𝐴2 + 𝐴2 cannot both have bounded gaps? Proof. We show that the answer is yes by constructing a pathological basis 𝐴with “forbidden zones” that force any partition to create arbitrarily large gaps in at least one component sumset. Step 1: The construction. Choose a sequence of rapidly growing scales 𝑃𝑘= 100𝑘. For each 𝑘≥1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-alphaproof-nexus-resultsblobmainapnoutputserdosp",
+      "number": null,
+      "title": "alphaproof-nexus-results/blob/main/APNOutputs/ErdosProblems/erdos_12",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": ".parts.ii.lean. Our original communication of both results can be found in the problem thread on the ErdosProblems site (https://www.erdosproblems.com/forum/thread /741). 37 Advancing Mathematics Research with AI-Driven Formal Proof Search",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-erdős-26-more-general-variant",
+      "number": null,
+      "title": "Erdős #26, More General Variant",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "general variant",
+          "heading": true
+        },
+        {
+          "term": "upper density",
+          "heading": false
+        },
+        {
+          "term": "multiples",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": false
+        },
+        {
+          "term": "remainder",
+          "heading": false
+        },
+        {
+          "term": "chinese",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. Let M(𝑆) denote the set of multiples of a subset 𝑆⊆ℕ, and let 𝑑(𝑋) denote the upper asymptotic density of a set 𝑋. There exists a sequence 𝐴: ℕ→ℕsatisfying Í 𝑖∈ℕ1/𝐴(𝑖) = ∞, such that for 𝜖= 1/4 and for all 𝑘≥1, we have 𝑑(M(𝐴+ 𝑘)) < 1 −𝜖. Proof. We construct the sequence iteratively in finite blocks and show that for any arbitrary shift 𝑘, we can bound the upper density of the shifted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-erdős-846",
+      "number": null,
+      "title": "Erdős #846",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "collinear points",
+          "heading": false
+        },
+        {
+          "term": "erdosproblems site",
+          "heading": false
+        },
+        {
+          "term": "line connecting",
+          "heading": false
+        },
+        {
+          "term": "𝑎𝑏",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "edges form",
+          "heading": false
+        },
+        {
+          "term": "advancing mathematics",
+          "heading": false
+        },
+        {
+          "term": "least points",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. Let 𝐴⊂ℝ2 be an infinite set for which there exists some 𝜖> 0 such that in any subset of 𝐴of size 𝑛there are always at least 𝜖𝑛with no three on a line. Is it true that 𝐴is the union of a finite number of sets where no three are on a line? Proof. We will show that there exists an infinite set 𝐴⊂ℝ2 for which any 𝑛-element subset contains at least 𝑛/2 points with no three on a line, but 𝐴is not the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-erdős-152",
+      "number": null,
+      "title": "Erdős #152",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sidon",
+          "heading": false
+        },
+        {
+          "term": "pair counted",
+          "heading": false
+        },
+        {
+          "term": "quadruple transfer",
+          "heading": false
+        },
+        {
+          "term": "isolated points",
+          "heading": false
+        },
+        {
+          "term": "transfer bounds",
+          "heading": false
+        },
+        {
+          "term": "sumset",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "partitioning",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. For a Sidon set 𝐴⊂ℕof size 𝑛, let 𝐼(𝐴+ 𝐴) count the isolated elements of the sumset — those 𝑠∈𝐴+ 𝐴with 𝑠± 1 ∉𝐴+ 𝐴. Define 𝑓(𝑛) as the minimum of 𝐼(𝐴+ 𝐴) over all Sidon sets of size 𝑛. Then 𝑓(𝑛) ≥(𝑛2 −100𝑛−16)/16, so in particular 𝑓(𝑛) →∞. Proof. The proof establishes, for every Sidon set 𝐴of size 𝑛: 16 · 𝐼(𝐴+ 𝐴) + 100𝑛+ 16 ≥𝑛2. (★) Let 𝐷= {𝑎−𝑏: 𝑎, 𝑏∈𝐴} denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-oeis-conjectures",
+      "number": null,
+      "title": "OEIS Conjectures",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "47",
+      "words": 2210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oeis",
+          "heading": true
+        },
+        {
+          "term": "í𝑛",
+          "heading": false
+        },
+        {
+          "term": "𝑥𝑛",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "advancing mathematics",
+          "heading": false
+        },
+        {
+          "term": "𝑘in base",
+          "heading": false
+        },
+        {
+          "term": "lower-triangular matrix",
+          "heading": false
+        },
+        {
+          "term": "divisibility properties",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. (A conjecture of OEIS A051293, 2002) Let 𝑎𝑛denote the number of nonempty subsets of {1, 2, 3, . . . , 𝑛} whose elements have an integer average. Then 𝑎𝑛= 2𝑛+1 𝑛 \u0012 1 + 1 𝑛+ 3 𝑛2 + 13 𝑛3 + 75 𝑛4 + 541 𝑛5 + 𝑜 \u0012 1 𝑛5 \u0013\u0013 42 Advancing Mathematics Research with AI-Driven Formal Proof Search Proof. A subset 𝑆⊆{1, 2, . . . , 𝑛} has an integer average if and only if the sum of its elements is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a-variant-of-the-graph-reconstruction-conjecture",
+      "number": null,
+      "title": "A variant of the Graph Reconstruction Conjecture",
+      "level": 3,
+      "pageStart": 47,
+      "pageEnd": 51,
+      "labelStart": "47",
+      "labelEnd": "51",
+      "words": 1387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graph reconstruction",
+          "heading": true
+        },
+        {
+          "term": "bipartite graph",
+          "heading": false
+        },
+        {
+          "term": "bipartite isomorphism",
+          "heading": false
+        },
+        {
+          "term": "degree multisets",
+          "heading": false
+        },
+        {
+          "term": "degree profile",
+          "heading": false
+        },
+        {
+          "term": "isolated vertex",
+          "heading": false
+        },
+        {
+          "term": "vertex types",
+          "heading": false
+        },
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        }
+      ],
+      "extract": "The Kelly-Ulam graph reconstruction program aims to recover a graph from its deck of one-vertex-deleted subgraphs [62, 36]. A standard bipartite version was formulated by Bondy and Hemminger as the problem of showing that bipartite graphs are reconstructible [10]. The following theorem proves a structured incidence-deletion analogue under strong type-distinguishability assumptions. Terminology Let Ω = 𝐿⊔𝑅be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-log-concavity-of-hilbert-sequences",
+      "number": null,
+      "title": "Log-Concavity of Hilbert Sequences",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 57,
+      "labelStart": "51",
+      "labelEnd": "57",
+      "words": 2344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ai-driven formal",
+          "heading": false
+        },
+        {
+          "term": "advancing mathematics",
+          "heading": false
+        },
+        {
+          "term": "upper alternative",
+          "heading": false
+        },
+        {
+          "term": "lower alternative",
+          "heading": false
+        },
+        {
+          "term": "maximal monomials",
+          "heading": false
+        },
+        {
+          "term": "𝑓is",
+          "heading": false
+        },
+        {
+          "term": "𝑔is",
+          "heading": false
+        },
+        {
+          "term": "log-concavity",
+          "heading": true
+        }
+      ],
+      "extract": "Pure 𝑂-sequences, introduced in the context of Stanley’s work on Hilbert functions of mono- mial level algebras in the late 1970s, have been studied intensively over the last fifteen years [57]. They exhibit surprisingly strong positivity phenomena, especially in small codimension and type. Although pure 𝑂-sequences are not log-concave in general, the case of codimension 3 and type 2 remained open for over a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-a-convergence-proof-of-modified-anchored-gradien",
+      "number": null,
+      "title": "A Convergence Proof of Modified Anchored Gradient Descent-Ascent",
+      "level": 3,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 34,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "surina",
+          "heading": false
+        },
+        {
+          "term": "natural-language",
+          "heading": false
+        }
+      ],
+      "extract": "A natural-language version of the convergence proof we discovered can be found in Surina et al. [58]. The Lean proof is at https://github.com/google-deepmind/alphaproof-n exus-results/blob/main/APNOutputs/Optimization/LastIterateConvergence. lean. 57 Advancing Mathematics Research with AI-Driven Formal Proof Search",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-written-on-the-wall-conjecture-2",
+      "number": null,
+      "title": "Written on the Wall, Conjecture 2",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 907,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge 𝑢𝑣",
+          "heading": false
+        },
+        {
+          "term": "heavy vertex",
+          "heading": false
+        },
+        {
+          "term": "light vertices",
+          "heading": false
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "𝐺is",
+          "heading": false
+        },
+        {
+          "term": "𝑣is",
+          "heading": false
+        },
+        {
+          "term": "every vertex",
+          "heading": false
+        },
+        {
+          "term": "𝑆is",
+          "heading": false
+        }
+      ],
+      "extract": "For a graph 𝐺, let 𝑉(𝐺) be the set of vertices and 𝐸(𝐺) the set of edges. For 𝑣∈𝑉(𝐺), write 𝑑(𝑣) for the degree of 𝑣, and let 𝑁(𝑣) be the set of vertices adjacent to 𝑣in 𝐺. Let 𝛼(𝑣) be the local independence number of 𝑣: the size of the largest independent set in 𝐺[𝑁(𝑣)]. Let ℓ(𝐺) := 1 𝑛 Í 𝑣𝛼(𝑣) be the average of the local independence numbers, and let 𝐿𝑆(𝐺) be the maximum number of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "full-featured agent",
+      "heading": true
+    },
+    {
+      "term": "lean proof",
+      "heading": false
+    },
+    {
+      "term": "agent session",
+      "heading": false
+    },
+    {
+      "term": "lean compiler",
+      "heading": false
+    },
+    {
+      "term": "search erdos",
+      "heading": false
+    },
+    {
+      "term": "basic agent",
+      "heading": true
+    },
+    {
+      "term": "sketch lean",
+      "heading": false
+    },
+    {
+      "term": "agent resolved",
+      "heading": false
+    },
+    {
+      "term": "ai-driven formal",
+      "heading": false
+    },
+    {
+      "term": "lean file",
+      "heading": false
+    },
+    {
+      "term": "rater agent",
+      "heading": false
+    },
+    {
+      "term": "lean code",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Example inputs/outputs for an AlphaProof-equipped agent (applied to Erdős",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Design of the full-featured AlphaProof Nexus agent. The mathematician provides",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Open problems from the ErdosProblems repository autonomously resolved",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Solve rate versus mean inference cost (USD) across six Erdős problem",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Pseudocode for the basic agent (A). A prover subagent executes a sequence of",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Pseudocode for the main components of the full-featured agent (Agent (D))",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Prompt for prover subagents in the full-featured agent (D) (condensed)",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Prompt for raters in the full-featured agent (D) (condensed). Elided text is",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Full prompt for the basic agent (A). Text in braces denotes template variables",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Box plots illustrating the distribution of a cost for successful proof for the",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Solve rate versus mean inference cost (USD) across nine Erdős problem",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Box plots illustrating the distribution of a wall-clock time for a successful",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-3",
+      "file": "images/img-p005-3.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-4",
+      "file": "images/img-p005-4.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-5",
+      "file": "images/img-p005-5.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-6",
+      "file": "images/img-p005-6.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-7",
+      "file": "images/img-p005-7.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-8",
+      "file": "images/img-p005-8.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-9",
+      "file": "images/img-p005-9.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 29,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 29 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.22763v1"
+  }
+}

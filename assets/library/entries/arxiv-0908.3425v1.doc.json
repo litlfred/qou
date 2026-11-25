@@ -1,0 +1,3954 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0908.3425v1",
+  "title": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+  "variant": "pdf",
+  "pages": 85,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Chiral symmetry and spontaneous symmetry breaking",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-chiral-symmetry-and-spontaneous-symmetry-breakin"
+    },
+    {
+      "level": 2,
+      "title": "Quantum chromodynamics and chiral symmetry",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-quantum-chromodynamics-and-chiral-symmetry"
+    },
+    {
+      "level": 3,
+      "title": "The QCD Lagrangian",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-qcd-lagrangian"
+    },
+    {
+      "level": 3,
+      "title": "Chiral limit",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-chiral-limit"
+    },
+    {
+      "level": 3,
+      "title": "Global symmetry currents of the light quark sector",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-global-symmetry-currents-of-the-light-quark-sect"
+    },
+    {
+      "level": 3,
+      "title": "Chiral algebra",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-chiral-algebra"
+    },
+    {
+      "level": 3,
+      "title": "Quark masses and chiral symmetry breaking",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-quark-masses-and-chiral-symmetry-breaking"
+    },
+    {
+      "level": 3,
+      "title": "Green functions, chiral Ward identities, and generating functional",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-green-functions-chiral-ward-identities-and-gener"
+    },
+    {
+      "level": 3,
+      "title": "PCAC in the presence of an external electromagnetic field",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-pcac-in-the-presence-of-an-external-electromagne"
+    },
+    {
+      "level": 2,
+      "title": "Spontaneous symmetry breaking and Goldstone theorem",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo"
+    },
+    {
+      "level": 3,
+      "title": "Linear sigma model",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-linear-sigma-model"
+    },
+    {
+      "level": 3,
+      "title": "The hadron spectrum",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-the-hadron-spectrum"
+    },
+    {
+      "level": 3,
+      "title": "The scalar singlet quark condensate",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-the-scalar-singlet-quark-condensate"
+    },
+    {
+      "level": 1,
+      "title": "Mesonic chiral perturbation theory",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-mesonic-chiral-perturbation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Transformation properties of the Goldstone bosons",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-transformation-properties-of-the-goldstone-boson"
+    },
+    {
+      "level": 3,
+      "title": "General considerations",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-general-considerations"
+    },
+    {
+      "level": 3,
+      "title": "Application to QCD",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-application-to-qcd"
+    },
+    {
+      "level": 2,
+      "title": "Effective Lagrangian and power-counting scheme",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-effective-lagrangian-and-power-counting-scheme"
+    },
+    {
+      "level": 3,
+      "title": "The lowest-order effective Lagrangian",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-the-lowest-order-effective-lagrangian"
+    },
+    {
+      "level": 3,
+      "title": "Symmetry breaking through the quark masses",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-symmetry-breaking-through-the-quark-masses"
+    },
+    {
+      "level": 3,
+      "title": "Construction of invariants",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-construction-of-invariants"
+    },
+    {
+      "level": 3,
+      "title": "Two simple applications: Pion decay and scattering",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-two-simple-applications-pion-decay-and-scatterin"
+    },
+    {
+      "level": 3,
+      "title": "Primer to dimensional regularization",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-primer-to-dimensional-regularization"
+    },
+    {
+      "level": 3,
+      "title": "Power-counting scheme",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-power-counting-scheme"
+    },
+    {
+      "level": 2,
+      "title": "Next-to-leading order",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-next-to-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler"
+    },
+    {
+      "level": 3,
+      "title": "The effective Wess-Zumino-Witten action",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-the-effective-wess-zumino-witten-action"
+    },
+    {
+      "level": 3,
+      "title": "Masses of the Goldstone bosons",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-masses-of-the-goldstone-bosons"
+    },
+    {
+      "level": 3,
+      "title": "Electromagnetic polarizabilities of the pion",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-electromagnetic-polarizabilities-of-the-pion"
+    },
+    {
+      "level": 1,
+      "title": "Baryonic chiral perturbation theory",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-baryonic-chiral-perturbation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Lagrangian",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-lagrangian"
+    },
+    {
+      "level": 3,
+      "title": "Transformation properties of the fields",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-transformation-properties-of-the-fields"
+    },
+    {
+      "level": 3,
+      "title": "Baryonic effective Lagrangian at lowest order",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-baryonic-effective-lagrangian-at-lowest-order"
+    },
+    {
+      "level": 2,
+      "title": "Renormalization and power counting",
+      "number": null,
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-renormalization-and-power-counting"
+    },
+    {
+      "level": 3,
+      "title": "The generation of counter terms",
+      "number": null,
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-the-generation-of-counter-terms"
+    },
+    {
+      "level": 3,
+      "title": "Power counting for renormalized diagrams",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-power-counting-for-renormalized-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "The power-counting problem",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-the-power-counting-problem"
+    },
+    {
+      "level": 2,
+      "title": "Solutions to the power-counting problem",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-solutions-to-the-power-counting-problem"
+    },
+    {
+      "level": 3,
+      "title": "Heavy-baryon approach",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-heavy-baryon-approach"
+    },
+    {
+      "level": 3,
+      "title": "Master integral",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-master-integral"
+    },
+    {
+      "level": 3,
+      "title": "Infrared regularization",
+      "number": null,
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-infrared-regularization"
+    },
+    {
+      "level": 3,
+      "title": "Extended on-mass-shell scheme",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-extended-on-mass-shell-scheme"
+    },
+    {
+      "level": 3,
+      "title": "Dimensional counting analysis",
+      "number": null,
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-dimensional-counting-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": null,
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-applications"
+    },
+    {
+      "level": 2,
+      "title": "Nucleon mass and sigma term at O(q4)",
+      "number": null,
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-nucleon-mass-and-sigma-term-at-oq4"
+    },
+    {
+      "level": 2,
+      "title": "Chiral expansion of the nucleon mass to O(q6)",
+      "number": null,
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6"
+    },
+    {
+      "level": 2,
+      "title": "Form factors of the nucleon",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-form-factors-of-the-nucleon"
+    },
+    {
+      "level": 3,
+      "title": "Scalar form factor",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-scalar-form-factor"
+    },
+    {
+      "level": 3,
+      "title": "Electromagnetic form factors",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-electromagnetic-form-factors"
+    },
+    {
+      "level": 3,
+      "title": "Axial and induced pseudoscalar form factors",
+      "number": null,
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-axial-and-induced-pseudoscalar-form-factors"
+    },
+    {
+      "level": 3,
+      "title": "Pion-nucleon form factor",
+      "number": null,
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-pion-nucleon-form-factor"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": null,
+      "page": 76,
+      "pageLabel": "76",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power-counting scheme",
+          "heading": false
+        },
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "power-counting problem",
+          "heading": false
+        },
+        {
+          "term": "one-nucleon sector",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0908.3425v1 [hep-ph] 24 Aug 2009 Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector S. Scherer Institut f¨ur Kernphysik, Johannes Gutenberg-Universit¨at Mainz, J. J. Becher-Weg 45, D-55099 Mainz, Germany April 10, 2009 Abstract We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent developments in the manifestly",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0908.3425v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1056,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mesonic chpt",
+          "heading": false
+        },
+        {
+          "term": "qcd eft",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "section mchpt",
+          "heading": false
+        },
+        {
+          "term": "pseudoscalar octet",
+          "heading": false
+        },
+        {
+          "term": "chiral expansion",
+          "heading": false
+        }
+      ],
+      "extract": "Effective field theory (EFT) is a powerful tool in the description of the strong interactions at low energies. The central idea is due to Weinberg [@Weinberg:1978kz]: > \\\"\\... if one writes down the most general possible Lagrangian, including all terms consistent with assumed symmetry principles, and then calculates matrix elements with this Lagrangian to any given order of perturbation theory, the result will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-chiral-symmetry-and-spontaneous-symmetry-breakin",
+      "number": null,
+      "title": "Chiral symmetry and spontaneous symmetry breaking",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral symmetry",
+          "heading": true
+        },
+        {
+          "term": "spontaneous",
+          "heading": true
+        },
+        {
+          "term": "section chiral",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section_chiral symmetry label=\"section_chiral symmetry\"} The essential ingredients to setting up chiral perturbation theory as the effective field theory of the strong interactions are the chiral $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R$ symmetry of QCD for massless $u$, $d$, and $s$ quarks and the emergence of a spontaneous breakdown to the vectorial subgroup SU(3)$_V$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-quantum-chromodynamics-and-chiral-symmetry",
+      "number": null,
+      "title": "Quantum chromodynamics and chiral symmetry",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "manohar pdg",
+          "heading": false
+        },
+        {
+          "term": "quarks",
+          "heading": false
+        },
+        {
+          "term": "flavors",
+          "heading": false
+        },
+        {
+          "term": "three-quark",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        }
+      ],
+      "extract": "QCD is the gauge theory of the strong interactions [@Gross:1973id:2], [@Weinberg:un:2],[@Fritzsch:pi:2] with color SU(3) as the underlying gauge group. Historically, the color degree of freedom was introduced into the quark model to account for the Pauli principle in the description of baryons as three-quark states. The matter fields of QCD are the so-called quarks which are spin-1/2 fermions, with six different",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-qcd-lagrangian",
+      "number": null,
+      "title": "The QCD Lagrangian",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd lagrangian",
+          "heading": true
+        },
+        {
+          "term": "equiv cal",
+          "heading": false
+        },
+        {
+          "term": "mapsto cal",
+          "heading": false
+        },
+        {
+          "term": "abc frac",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "theta frac",
+          "heading": false
+        },
+        {
+          "term": "quark field",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_qcdl label=\"sec_qcdl\"} The QCD Lagrangian can be obtained from the Lagrangian for free quarks by applying the gauge principle with respect to the group SU(3) of all unitary, unimodular, $3\\times 3$ matrices. Denoting the quark field components by $q_{f,A,\\alpha}$, where $f=1,\\cdots, 6$ refers to the flavor index, $A=1,2,3$ to the color index, and $\\alpha=1,\\cdots,4$ to the Dirac spinor index, respectively,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-chiral-limit",
+      "number": null,
+      "title": "Chiral limit",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qgq",
+          "heading": false
+        },
+        {
+          "term": "mathbbm gamma",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "right-handed quark",
+          "heading": false
+        },
+        {
+          "term": "gamma mbox",
+          "heading": false
+        },
+        {
+          "term": "chiral limit",
+          "heading": true
+        },
+        {
+          "term": "quark fields",
+          "heading": false
+        },
+        {
+          "term": "quad mbox",
+          "heading": false
+        }
+      ],
+      "extract": "The terminology chiral limit refers to massless quarks, resulting in an important additional global symmetry of the QCD Lagrangian which will be discussed in the following. We introduce the chirality matrix $\\gamma_5=\\gamma^5=i\\gamma^0\\gamma^1\\gamma^2\\gamma^3=\\gamma_5^\\dagger$, $\\{\\gamma^\\mu,\\gamma_5\\}=0$, $\\gamma_5^2=\\mathbbm 1$, and define the projection operators $$\\label{2:1:2:prpl} P_L=\\frac{1}{2}({\\mathbbm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-global-symmetry-currents-of-the-light-quark-sect",
+      "number": null,
+      "title": "Global symmetry currents of the light quark sector",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singlet axial-vector",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "subsubsec agsl",
+          "heading": false
+        },
+        {
+          "term": "axial-vector current",
+          "heading": false
+        },
+        {
+          "term": "lambda epsilon",
+          "heading": false
+        },
+        {
+          "term": "right-handed quark",
+          "heading": false
+        },
+        {
+          "term": "epsilon frac",
+          "heading": false
+        },
+        {
+          "term": "epsilon right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsec_agsl label=\"subsubsec_agsl\"} Due to the flavor independence of the covariant derivative, ${\\cal L}^0_{\\rm QCD}$ is invariant under the infinitesimal global transformations of the left- and right-handed quark fields, $$\\begin{aligned} \\label{2:1:3:u3lu3r} q_L\\equiv \\left(\\begin{array}{c}u_L\\\\d_L\\\\s_L\\end{array}\\right)&\\mapsto& \\left({\\mathbbm 1}-i\\sum_{a=1}^8",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-chiral-algebra",
+      "number": null,
+      "title": "Chiral algebra",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times mbox",
+          "heading": false
+        },
+        {
+          "term": "int mbox",
+          "heading": false
+        },
+        {
+          "term": "global mbox",
+          "heading": false
+        },
+        {
+          "term": "charge operators",
+          "heading": false
+        },
+        {
+          "term": "vec",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "aligned label",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_ca label=\"subsec_ca\"} The invariance of ${\\cal L}^0_{\\rm QCD}$ under global $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R\\times\\mbox{U(1)}_V$ transformations implies that also the QCD Hamilton operator in the chiral limit, $H^0_{\\rm QCD}$, exhibits a global $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R\\times\\mbox{U(1)}_V$ symmetry. As usual, the charge operators are defined as the space integrals of the charge densities,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-quark-masses-and-chiral-symmetry-breaking",
+      "number": null,
+      "title": "Quark masses and chiral symmetry breaking",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "axial-vector currents",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": true
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "singlet axial-vector",
+          "heading": false
+        },
+        {
+          "term": "cal partial",
+          "heading": false
+        },
+        {
+          "term": "flavor currents",
+          "heading": false
+        },
+        {
+          "term": "delta cal",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_csbdqm label=\"subsec_csbdqm\"} So far, we have discussed an idealized world with massless light quarks. The finite $u$-, $d$-, and $s$-quark masses explicitly break the chiral symmetry and generate divergences of the symmetry currents. As a consequence, the charge operators are, in general, no longer time independent. However, as first pointed out by Gell-Mann [@Gell-Mann:xb:3:5], the equal-time",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-green-functions-chiral-ward-identities-and-gener",
+      "number": null,
+      "title": "Green functions, chiral Ward identities, and generating functional",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "15",
+      "words": 2417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral ward",
+          "heading": true
+        },
+        {
+          "term": "green functions",
+          "heading": true
+        },
+        {
+          "term": "ward identities",
+          "heading": true
+        },
+        {
+          "term": "ext cal",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "langle bar",
+          "heading": false
+        },
+        {
+          "term": "stackrel mbox",
+          "heading": false
+        },
+        {
+          "term": "generating functional",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsubsection_gfcwigf label=\"subsubsection_gfcwigf\"} For conserved currents, the spatial integrals of the charge densities are time independent, i.e., in a quantized theory the corresponding charge operators commute with the Hamilton operator. These operators are generators of infinitesimal transformations on the Hilbert space of the theory. The mass eigenstates should organize themselves in degenerate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-pcac-in-the-presence-of-an-external-electromagne",
+      "number": null,
+      "title": "PCAC in the presence of an external electromagnetic field",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electromagnetic field",
+          "heading": true
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "external",
+          "heading": true
+        },
+        {
+          "term": "axial-vector current",
+          "heading": false
+        },
+        {
+          "term": "rlasu",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "adler",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_pcacpeef label=\"subsec_pcacpeef\"} Finally, the technique of coupling the QCD Lagrangian to external fields also allows us to determine the current divergences for rigid external fields, i.e., fields which are *not* simultaneously transformed. For the sake of simplicity we restrict ourselves to the two-flavor sector. (The generalization to the three-flavor case is straightforward.) Consider a *global*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo",
+      "number": null,
+      "title": "Spontaneous symmetry breaking and Goldstone theorem",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Spontaneous symmetry breaking and Goldstone theorem",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-linear-sigma-model",
+      "number": null,
+      "title": "Linear sigma model",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array rrrr",
+          "heading": false
+        },
+        {
+          "term": "sigma vec",
+          "heading": false
+        },
+        {
+          "term": "spontaneous symmetry",
+          "heading": false
+        },
+        {
+          "term": "rrrr end",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "sigma partial",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "massless goldstone",
+          "heading": false
+        }
+      ],
+      "extract": "Spontaneous symmetry breaking occurs if the ground state has a lower symmetry than the Hamiltonian. For example, in the linear sigma model [@Schwinger:1957em], [@Gell-Mann:1960np], the Lagrangian is constructed in terms of the O(4) multiplet $(\\sigma,\\pi_1,\\pi_2,\\pi_3)$, $$\\label{2:2:1:lsm} {\\cal L}=\\frac{1}{2}\\left(\\partial_\\mu\\sigma\\partial^\\mu\\sigma+ \\partial_\\mu\\vec\\pi\\cdot\\partial^\\mu\\vec\\pi\\right)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-the-hadron-spectrum",
+      "number": null,
+      "title": "The hadron spectrum",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha rangle",
+          "heading": false
+        },
+        {
+          "term": "baryon octet",
+          "heading": false
+        },
+        {
+          "term": "dagger alpha",
+          "heading": false
+        },
+        {
+          "term": "subsubsec agsl",
+          "heading": false
+        },
+        {
+          "term": "qcd alpha",
+          "heading": false
+        },
+        {
+          "term": "rangle beta",
+          "heading": false
+        },
+        {
+          "term": "phi alpha",
+          "heading": false
+        },
+        {
+          "term": "parity doubling",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_hs label=\"subsec_hs\"} We saw in Section [\\[subsubsec_agsl\\]](#subsubsec_agsl){reference-type=\"ref\" reference=\"subsubsec_agsl\"} that the QCD Lagrangian possesses an $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R\\times \\mbox{U(1)}_V$ symmetry in the chiral limit in which the light quark masses vanish. From symmetry considerations involving the Hamiltonian $H^0_{\\rm QCD}$ only, one would naively expect that hadrons",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-the-scalar-singlet-quark-condensate",
+      "number": null,
+      "title": "The scalar singlet quark condensate",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quark condensate",
+          "heading": true
+        },
+        {
+          "term": "scalar quark",
+          "heading": true
+        },
+        {
+          "term": "singlet scalar",
+          "heading": true
+        },
+        {
+          "term": "bar rangle",
+          "heading": false
+        },
+        {
+          "term": "langle bar",
+          "heading": false
+        },
+        {
+          "term": "array rrr",
+          "heading": false
+        },
+        {
+          "term": "quark densities",
+          "heading": false
+        },
+        {
+          "term": "non-vanishing singlet",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_sqc label=\"subsec_sqc\"} In the following, we will show that a non-vanishing scalar singlet quark condensate in the chiral limit is a sufficient (but not a necessary) condition for a spontaneous symmetry breaking in QCD. In this section all physical quantities such as the ground state, the quark operators etc. are considered in the chiral limit. Let us first recall the definition of the nine scalar and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-mesonic-chiral-perturbation-theory",
+      "number": null,
+      "title": "Mesonic chiral perturbation theory",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times mbox",
+          "heading": false
+        },
+        {
+          "term": "section mchpt",
+          "heading": false
+        },
+        {
+          "term": "spontaneous symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section_mchpt label=\"section_mchpt\"} Our goal is the construction of the most general theory describing the dynamics of the Goldstone bosons associated with the spontaneous symmetry breakdown in QCD. In the chiral limit, we want the effective Lagrangian to be invariant under $G=\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R\\times\\mbox{U(1)}_V$. It should contain exactly eight pseudoscalar degrees of freedom transforming as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-transformation-properties-of-the-goldstone-boson",
+      "number": null,
+      "title": "Transformation properties of the Goldstone bosons",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goldstone",
+          "heading": true
+        },
+        {
+          "term": "bosons",
+          "heading": true
+        },
+        {
+          "term": "group-theoretical",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_tpgb label=\"sec_tpgb\"} The purpose of this section is to discuss the transformation properties of the field variables describing the Goldstone bosons [@Weinberg:de:2:2], [@Coleman:sm:2:2], [@Callan:sn:2:2]. We will need the concept of a *nonlinear realization* of a group in addition to a *representation* of a group which one usually encounters in Physics. We will first discuss a few general group-theoretical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-general-considerations",
+      "number": null,
+      "title": "General considerations",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mapping varphi",
+          "heading": false
+        },
+        {
+          "term": "coset tilde",
+          "heading": false
+        },
+        {
+          "term": "goldstone boson",
+          "heading": false
+        },
+        {
+          "term": "representing phi",
+          "heading": false
+        },
+        {
+          "term": "left coset",
+          "heading": false
+        },
+        {
+          "term": "boson fields",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "minkowski space",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_gc label=\"subsec_gc\"} Let us consider a physical system described by a Lagrangian which is invariant under a compact Lie group $G$. We assume the ground state of the system to be invariant under only a subgroup $H$ of $G$, giving rise to $n=n_G-n_H$ Goldstone bosons. Each of these Goldstone bosons will be described by an independent field $\\phi_i$ which is a smooth real function on Minkowski space $M^4$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-application-to-qcd",
+      "number": null,
+      "title": "Application to QCD",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger mathbbm",
+          "heading": false
+        },
+        {
+          "term": "tilde dagger",
+          "heading": false
+        },
+        {
+          "term": "phisu phi",
+          "heading": false
+        },
+        {
+          "term": "mathbbm frac",
+          "heading": false
+        },
+        {
+          "term": "phi cdots",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "eta sqrt",
+          "heading": false
+        },
+        {
+          "term": "utrfafo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec_aqcd label=\"subsec_aqcd\"} The symmetry groups relevant to the application in QCD are $$G=\\mbox{SU($N$)}\\times\\mbox{SU($N$)}=\\{(L,R)| L\\in \\mbox{SU($N$)}, R\\in \\mbox{SU($N$)}\\}\\,\\,\\mbox{and}\\,\\, H=\\{(V,V)|V\\in \\mbox{SU($N$)}\\} \\cong\\mbox{SU($N$)}.$$ Let $\\tilde{g}=(\\tilde{L},\\tilde{R})\\in G$. We characterize the left coset $\\tilde{g}H$ through the SU($N$) matrix $U=\\tilde{R}\\tilde{L}^\\dagger$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-effective-lagrangian-and-power-counting-scheme",
+      "number": null,
+      "title": "Effective Lagrangian and power-counting scheme",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 96,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian",
+          "heading": true
+        },
+        {
+          "term": "power-counting",
+          "heading": true
+        },
+        {
+          "term": "effective",
+          "heading": true
+        }
+      ],
+      "extract": "The application of effective field theory (EFT) to strong interaction processes has become one of the most important theoretical tools in the low-energy regime. The basic idea consists of writing down the most general possible Lagrangian, including *all* terms consistent with assumed symmetry principles, and then calculating matrix elements with this Lagrangian within some perturbative scheme [@Weinberg:1978kz]. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-the-lowest-order-effective-lagrangian",
+      "number": null,
+      "title": "The lowest-order effective Lagrangian",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "effective lagrangian",
+          "heading": true
+        },
+        {
+          "term": "eff partial",
+          "heading": false
+        },
+        {
+          "term": "phi partial",
+          "heading": false
+        },
+        {
+          "term": "mapsto dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "mathbbm epsilon",
+          "heading": false
+        },
+        {
+          "term": "axial-vector currents",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_loel label=\"sec_loel\"} In terms of the SU(3) matrix $U(x)$ of Eqs. ([\\[3:1:2:upar\\]](#3:1:2:upar){reference-type=\"ref\" reference=\"3:1:2:upar\"}) and ([\\[3:1:2:phisu3\\]](#3:1:2:phisu3){reference-type=\"ref\" reference=\"3:1:2:phisu3\"}) the most general, chirally invariant, effective Lagrangian with the minimal number of derivatives reads $$\\label{3:2:1:l2} {\\cal L}_{\\rm eff}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-symmetry-breaking-through-the-quark-masses",
+      "number": null,
+      "title": "Symmetry breaking through the quark masses",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 989,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quark masses",
+          "heading": true
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "cal dagger",
+          "heading": false
+        },
+        {
+          "term": "langle cal",
+          "heading": false
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "vec rangle",
+          "heading": false
+        },
+        {
+          "term": "heisenberg ferromagnet",
+          "heading": false
+        },
+        {
+          "term": "eff rangle",
+          "heading": false
+        }
+      ],
+      "extract": "Up to now, we have assumed a perfect $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R$ symmetry. As has been discussed in Section [\\[subsec_csbdqm\\]](#subsec_csbdqm){reference-type=\"ref\" reference=\"subsec_csbdqm\"}, the quark-mass term of QCD results in an explicit symmetry breaking, $$\\label{3:2:2:qmt} {\\cal L}_{\\cal M}=-\\bar{q}_R{\\cal M} q_L-\\bar{q}_L {\\cal M}^\\dagger q_R,\\quad {\\cal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-construction-of-invariants",
+      "number": null,
+      "title": "Construction of invariants",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi dagger",
+          "heading": false
+        },
+        {
+          "term": "mapsto dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "quad mbox",
+          "heading": false
+        },
+        {
+          "term": "subsubsection gfcwigf",
+          "heading": false
+        },
+        {
+          "term": "aligned mbox",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "times mbox",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsection_ci label=\"subsubsection_ci\"} So far, we have discussed the lowest-order effective Lagrangian for a *global* $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R$ symmetry. In Sec. [\\[subsubsection_gfcwigf\\]](#subsubsection_gfcwigf){reference-type=\"ref\" reference=\"subsubsection_gfcwigf\"} we stated that the Ward identities of QCD are obtained from a *locally* invariant generating functional involving a coupling to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-two-simple-applications-pion-decay-and-scatterin",
+      "number": null,
+      "title": "Two simple applications: Pion decay and scattering",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 1959,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion decay",
+          "heading": true
+        },
+        {
+          "term": "cal phi",
+          "heading": false
+        },
+        {
+          "term": "scattering",
+          "heading": true
+        },
+        {
+          "term": "pipi scattering",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "ato",
+          "heading": false
+        },
+        {
+          "term": "cal left",
+          "heading": false
+        },
+        {
+          "term": "mbox mev",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsection_pion_decay_pipi_scattering label=\"subsubsection_pion_decay_pipi_scattering\"} The Lagrangian ${\\cal L}_2$ of Eq. ([\\[3:2:3:lol\\]](#3:2:3:lol){reference-type=\"ref\" reference=\"3:2:3:lol\"}) has predictive power, once the low-energy coupling constant $F_0$ is identified. This LEC may be obtained from the weak decay of the pion, $\\pi^+\\to\\mu^+\\nu_\\mu$. For that purpose we insert the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-primer-to-dimensional-regularization",
+      "number": null,
+      "title": "Primer to dimensional regularization",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensional regularization",
+          "heading": true
+        },
+        {
+          "term": "theta sin",
+          "heading": false
+        },
+        {
+          "term": "int frac",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "cdots int",
+          "heading": false
+        },
+        {
+          "term": "nonumber frac",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        }
+      ],
+      "extract": "If we want to use the Lagrangian of Eq. ([\\[3:2:3:lol\\]](#3:2:3:lol){reference-type=\"ref\" reference=\"3:2:3:lol\"}) beyond the tree level, we will encounter ultraviolet divergences from loop integrals. For the regularization of the loop diagrams we will make use of dimensional regularization [@{'tHooft:fi:10}], [@Leibbrandt:1975dj:10], [@{'tHooft:1978xw:10}], because it preserves algebraic relations between the Green",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-power-counting-scheme",
+      "number": null,
+      "title": "Power-counting scheme",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power-counting",
+          "heading": true
+        },
+        {
+          "term": "mr2b",
+          "heading": false
+        },
+        {
+          "term": "quark-mass term",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "external momenta",
+          "heading": false
+        },
+        {
+          "term": "power-counting formula",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "internal lines",
+          "heading": false
+        }
+      ],
+      "extract": "The Lagrangian ${\\cal L}_{\\rm eff}$ of mesonic chiral perturbation theory is organized as a string of terms with an increasing number of derivatives and quark-mass terms, $$\\label{3:2:3:ll2l4} {\\cal L}_{\\rm eff}={\\cal L}_2 + {\\cal L}_4 + {\\cal L}_6 +\\cdots,$$ where the subscripts refer to the order in the momentum and quark-mass expansion. The index 2, for example, denotes either two derivatives or one quark-mass",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-next-to-leading-order",
+      "number": null,
+      "title": "Next-to-leading order",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mr2b",
+          "heading": false
+        },
+        {
+          "term": "ultraviolet divergences",
+          "heading": false
+        },
+        {
+          "term": "one-loop graphs",
+          "heading": false
+        },
+        {
+          "term": "lol",
+          "heading": false
+        },
+        {
+          "term": "weinberg",
+          "heading": false
+        },
+        {
+          "term": "general lagrangian",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "renormalizable",
+          "heading": false
+        }
+      ],
+      "extract": "Already in 1967 it was shown by Weinberg [@Weinberg:1966fm] that an effective Lagrangian is a convenient tool for reproducing the results of current algebra in terms of tree-level calculations. In the purely mesonic sector, ${\\cal L}_2$ of Eq. ([\\[3:2:3:lol\\]](#3:2:3:lol){reference-type=\"ref\" reference=\"3:2:3:lol\"}) represents the corresponding Lagrangian. It was noted by Li and Pagels [@Li:1971vr] that a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler",
+      "number": null,
+      "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "nonumber mbox",
+          "heading": false
+        },
+        {
+          "term": "lagrangian",
+          "heading": true
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "immun",
+          "heading": false
+        },
+        {
+          "term": "gasser",
+          "heading": true
+        },
+        {
+          "term": "low-energy coupling",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsec_clop4 label=\"subsubsec_clop4\"} The most general $\\mbox{SU(3)}_L\\times\\mbox{SU(3)}_R$-invariant Lagrangian at ${\\cal O}(q^4)$ is given by [@Gasser:1984gg] $$\\begin{aligned} \\label{3:3:1:l4gl} \\lefteqn{{\\cal L}_4= L_1 \\left\\{\\mbox{Tr}[D_{\\mu}U (D^{\\mu}U)^{\\dagger}] \\right\\}^2 + L_2 \\mbox{Tr} \\left [D_{\\mu}U (D_{\\nu}U)^{\\dagger}\\right] \\mbox{Tr} \\left [D^{\\mu}U (D^{\\nu}U)^{\\dagger}\\right]}\\nonumber\\\\ & &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-the-effective-wess-zumino-witten-action",
+      "number": null,
+      "title": "The effective Wess-Zumino-Witten action",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "39",
+      "labelEnd": "42",
+      "words": 1201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger rho",
+          "heading": false
+        },
+        {
+          "term": "cal rho",
+          "heading": false
+        },
+        {
+          "term": "dagger partial",
+          "heading": false
+        },
+        {
+          "term": "dagger sigma",
+          "heading": false
+        },
+        {
+          "term": "frac cal",
+          "heading": false
+        },
+        {
+          "term": "nonumber cal",
+          "heading": false
+        },
+        {
+          "term": "sigma mbox",
+          "heading": false
+        },
+        {
+          "term": "mbox epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "The Lagrangians discussed so far have a larger symmetry than QCD [@Witten:1983tw]. For example, if we consider the case of \"pure\" QCD, i.e., no external fields except for the quark-mass term $\\chi=2B_0 {\\cal M}$, ${\\cal L}_2$ and ${\\cal L}_4$ contain interaction terms with an even number of Goldstone bosons only (even intrinsic parity). In other words, they cannot describe, e.g, $K^+K^-\\to\\pi^+\\pi^-\\pi^0$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-masses-of-the-goldstone-bosons",
+      "number": null,
+      "title": "Masses of the Goldstone bosons",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 46,
+      "labelStart": "42",
+      "labelEnd": "46",
+      "words": 1824,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goldstone bosons",
+          "heading": true
+        },
+        {
+          "term": "nonumber eta",
+          "heading": false
+        },
+        {
+          "term": "cal phi",
+          "heading": false
+        },
+        {
+          "term": "eta frac",
+          "heading": false
+        },
+        {
+          "term": "hat m-m",
+          "heading": false
+        },
+        {
+          "term": "eta partial",
+          "heading": false
+        },
+        {
+          "term": "bigg frac",
+          "heading": false
+        },
+        {
+          "term": "hat right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_aop4 label=\"sec_aop4\"} A discussion of the masses at ${\\cal O}(q^4)$ is one of the simplest applications of chiral perturbation theory beyond the tree level. For that purpose let us consider ${\\cal L}_2 + {\\cal L}_4$ for QCD with finite quark masses but in the absence of external fields. We restrict ourselves to the limit of isospin symmetry, i.e., $m_u=m_d=\\hat m$. In order to determine the masses we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-electromagnetic-polarizabilities-of-the-pion",
+      "number": null,
+      "title": "Electromagnetic polarizabilities of the pion",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 49,
+      "labelStart": "46",
+      "labelEnd": "49",
+      "words": 1530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion polarizabilities",
+          "heading": true
+        },
+        {
+          "term": "electromagnetic polarizabilities",
+          "heading": true
+        },
+        {
+          "term": "radiative pion",
+          "heading": false
+        },
+        {
+          "term": "pion beta",
+          "heading": false
+        },
+        {
+          "term": "pion photoproduction",
+          "heading": false
+        },
+        {
+          "term": "charged pion",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "compton scattering",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:2 label=\"sec:2\"} Another strong constraint provided by chiral symmetry is the connection between the electromagnetic polarizabilities of the charged pion and the radiative pion beta decay. In the framework of classical electrodynamics, the electric and magnetic polarizabilities $\\alpha$ and $\\beta$ describe the response of a system to a static, uniform, external electric and magnetic field in terms of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-baryonic-chiral-perturbation-theory",
+      "number": null,
+      "title": "Baryonic chiral perturbation theory",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Baryonic chiral perturbation theory",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-lagrangian",
+      "number": null,
+      "title": "Lagrangian",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mesonic",
+          "heading": false
+        },
+        {
+          "term": "goldstone",
+          "heading": false
+        },
+        {
+          "term": "baryon",
+          "heading": false
+        }
+      ],
+      "extract": "So far we have considered the purely mesonic sector involving the interaction of Goldstone bosons with each other and with the external fields. Now we want to describe matrix elements with a single baryon in the initial and final states.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-transformation-properties-of-the-fields",
+      "number": null,
+      "title": "Transformation properties of the fields",
+      "level": 3,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 611,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rul dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger vuv",
+          "heading": false
+        },
+        {
+          "term": "array rul",
+          "heading": false
+        },
+        {
+          "term": "array psi",
+          "heading": false
+        },
+        {
+          "term": "sqrt rul",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_tpf label=\"sec_tpf\"} Our aim is the most general description of the interaction of baryons with Goldstone bosons and external fields at low energies. For that purpose we not only need to specify the transformation behavior of the Goldstone bosons and external fields but also of the remaining dynamical fields entering the Lagrangian. Our discussion follows Refs. [@Georgi], [@Gasser:1987rb]. Consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-baryonic-effective-lagrangian-at-lowest-order",
+      "number": null,
+      "title": "Baryonic effective Lagrangian at lowest order",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "50",
+      "labelEnd": "52",
+      "words": 1037,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi cal",
+          "heading": false
+        },
+        {
+          "term": "lagrangian cal",
+          "heading": false
+        },
+        {
+          "term": "baryonic",
+          "heading": true
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "times mbox",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec_loebl label=\"sec_loebl\"} Given the dynamical fields of Eqs. ([\\[4:1:1:su2real\\]](#4:1:1:su2real){reference-type=\"ref\" reference=\"4:1:1:su2real\"}) and ([\\[4:1:1:su3real\\]](#4:1:1:su3real){reference-type=\"ref\" reference=\"4:1:1:su3real\"}) and their transformation properties, we will now discuss the most general effective baryonic Lagrangian at lowest order. We will start with the effective $\\pi N$ Lagrangian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-renormalization-and-power-counting",
+      "number": null,
+      "title": "Renormalization and power counting",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ultraviolet divergences",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "renormalization condition",
+          "heading": false
+        },
+        {
+          "term": "lagrangians",
+          "heading": false
+        },
+        {
+          "term": "regularization",
+          "heading": false
+        }
+      ],
+      "extract": "In the following discussion we will restrict ourselves to the two-flavor case. The effective Lagrangian relevant to the one-nucleon sector consists of the sum of the purely mesonic and $\\pi N$ Lagrangians, respectively, $$\\label{4:2:full_lagrangian} {\\cal L}_{\\rm eff} ={\\cal L}_{\\pi}+{\\cal L}_{\\pi N} ={\\cal L}_\\pi^{(2)}+{\\cal L}_\\pi^{(4)}+\\cdots +{\\cal L}_{\\pi N}^{(1)}+{\\cal L}_{\\pi N}^{(2)} +\\cdots,$$ which are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-the-generation-of-counter-terms",
+      "number": null,
+      "title": "The generation of counter terms",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "texttt gamma",
+          "heading": false
+        },
+        {
+          "term": "frac texttt",
+          "heading": false
+        },
+        {
+          "term": "texttt right",
+          "heading": false
+        },
+        {
+          "term": "delta psi",
+          "heading": false
+        },
+        {
+          "term": "sqrt psi",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "bare quantities",
+          "heading": false
+        },
+        {
+          "term": "bare parameters",
+          "heading": false
+        }
+      ],
+      "extract": "Before discussing the power-counting problem and its solution, let us briefly recall the principles of the renormalization procedure which will then allow us to set up a consistent power counting. At the beginning, the Lagrangian is written down in terms of bare, i.e., unrenormalized parameters and fields. In order to illustrate the procedure let us discuss ${\\cal L}_{\\pi N}^{(1)}$ of Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-power-counting-for-renormalized-diagrams",
+      "number": null,
+      "title": "Power counting for renormalized diagrams",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "renormalized diagrams",
+          "heading": true
+        },
+        {
+          "term": "power counting",
+          "heading": true
+        },
+        {
+          "term": "counter-term lagrangian",
+          "heading": false
+        },
+        {
+          "term": "subsection pcrd",
+          "heading": false
+        },
+        {
+          "term": "pion",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection_pcrd label=\"subsection_pcrd\"} In the following, whenever we speak of renormalized diagrams, we refer to diagrams which have been calculated with a basic Lagrangian and to which the contribution of the counter-term Lagrangian has been added. Counter-term contributions are typically denoted by a cross. One also says that the diagram has been subtracted, i.e., the unwanted contribution has been removed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-the-power-counting-problem",
+      "number": null,
+      "title": "The power-counting problem",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 57,
+      "labelStart": "54",
+      "labelEnd": "57",
+      "words": 1420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac slashed",
+          "heading": false
+        },
+        {
+          "term": "slashed left",
+          "heading": false
+        },
+        {
+          "term": "frac texttt",
+          "heading": false
+        },
+        {
+          "term": "counter-term lagrangian",
+          "heading": false
+        },
+        {
+          "term": "nucleon self",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "widetilde mbox",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        }
+      ],
+      "extract": "In the mesonic sector, the combination of dimensional regularization and the modified minimal subtraction scheme $\\widetilde{\\mbox{MS}}$ \\[see Eq. ([\\[3:3:1:lihi\\]](#3:3:1:lihi){reference-type=\"ref\" reference=\"3:3:1:lihi\"})\\] leads to a straightforward correspondence between the chiral and loop expansions. By studying the one-loop contributions of Fig. [1](#4:2:3:SEDia){reference-type=\"ref\" reference=\"4:2:3:SEDia\"}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-solutions-to-the-power-counting-problem",
+      "number": null,
+      "title": "Solutions to the power-counting problem",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Solutions to the power-counting problem",
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-heavy-baryon-approach",
+      "number": null,
+      "title": "Heavy-baryon approach",
+      "level": 3,
+      "pageStart": 57,
+      "pageEnd": 59,
+      "labelStart": "57",
+      "labelEnd": "59",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy-baryon",
+          "heading": true
+        },
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "pion-nucleon scattering",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "invariant amplitudes",
+          "heading": false
+        },
+        {
+          "term": "pole",
+          "heading": false
+        },
+        {
+          "term": "bernard",
+          "heading": false
+        },
+        {
+          "term": "channel",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#hb label=\"hb\"} The first solution to the power-counting problem was provided by the heavy-baryon formulation of ChPT [@Jenkins:1990jv], [@Bernard:1992qa]. The basic idea consists in dividing an external nucleon four-momentum into a large piece close to on-shell kinematics and a soft residual contribution: $p = m v +k_p$, $v^2=1$, $v^0\\ge 1$ \\[often $v^\\mu = (1,0,0,0)$\\]. The relativistic nucleon field is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-master-integral",
+      "number": null,
+      "title": "Master integral",
+      "level": 3,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": "59",
+      "labelEnd": "60",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "master integral",
+          "heading": true
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "int mbox",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "infrared singular",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "subsubsection master",
+          "heading": false
+        },
+        {
+          "term": "gamma left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsection_master_integral label=\"subsubsection_master_integral\"} We have seen that the modified minimal subtraction scheme $\\widetilde{\\rm MS}$ does not produce the desired power counting. We will discuss the power-counting problem in terms of the dimensionally regularized one-loop integral $$\\begin{aligned} \\label{4:3:2:Hdef} H(p^2,m^2,M^2;n) &\\equiv& -i\\int \\frac{\\mbox{d}^n k}{(2\\pi)^n}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-infrared-regularization",
+      "number": null,
+      "title": "Infrared regularization",
+      "level": 3,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 1088,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infrared",
+          "heading": true
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "int mbox",
+          "heading": false
+        },
+        {
+          "term": "infty mbox",
+          "heading": false
+        },
+        {
+          "term": "rdef",
+          "heading": false
+        },
+        {
+          "term": "mbox cdots",
+          "heading": false
+        },
+        {
+          "term": "alpha int",
+          "heading": false
+        },
+        {
+          "term": "defhthr",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now turn to a *formal* definition of the infrared singular and regular parts for arbitrary $p^2$ [@Becher:1999he] which makes use of the Feynman parametrization of Eq. ([\\[4:3:2:HPmMn\\]](#4:3:2:HPmMn){reference-type=\"ref\" reference=\"4:3:2:HPmMn\"}). Introducing the dimensionless variables $$\\label{4:3:3:alphaomegadef} \\alpha=\\frac{M}{m}={\\cal O}(q),\\quad \\Omega=\\frac{p^2-m^2-M^2}{2m M}={\\cal O}(q^0),$$ we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-extended-on-mass-shell-scheme",
+      "number": null,
+      "title": "Extended on-mass-shell scheme",
+      "level": 3,
+      "pageStart": 62,
+      "pageEnd": 64,
+      "labelStart": "62",
+      "labelEnd": "64",
+      "words": 1364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extended on-mass-shell",
+          "heading": true
+        },
+        {
+          "term": "eoms renormalization",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "frac mbox",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "cdot right",
+          "heading": false
+        }
+      ],
+      "extract": "In the following, we will concentrate on yet another solution which has been motivated in Ref. [@Gegelia:1999gf] and has been worked out in detail in Ref. [@Fuchs:2003qc]. The central idea of the extended on-mass-shell (EOMS) scheme consists of performing additional subtractions beyond the $\\widetilde{\\rm MS}$ scheme such that renormalized diagrams satisfy the power counting. Terms violating the power counting are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-dimensional-counting-analysis",
+      "number": null,
+      "title": "Dimensional counting analysis",
+      "level": 3,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha tilde",
+          "heading": false
+        },
+        {
+          "term": "dimensional counting",
+          "heading": true
+        },
+        {
+          "term": "counting analysis",
+          "heading": true
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "mbox tilde",
+          "heading": false
+        },
+        {
+          "term": "cdot tilde",
+          "heading": false
+        },
+        {
+          "term": "int frac",
+          "heading": false
+        },
+        {
+          "term": "hdef",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section_dimensional_counting_analysis label=\"section_dimensional_counting_analysis\"} In this section we provide an illustration of the dimensional counting analysis [@Gegelia:1994zz] in terms of a specific example. To that end let us consider the one-loop integral of Eq. ([\\[4:3:2:Hdef\\]](#4:3:2:Hdef){reference-type=\"ref\" reference=\"4:3:2:Hdef\"}), $$H(p^2,m^2,M^2;n)= -i\\int \\frac{\\mbox{d}^n k}{(2\\pi)^n}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-applications",
+      "number": null,
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "65",
+      "labelEnd": "66",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "applications",
+          "heading": true
+        },
+        {
+          "term": "πnn",
+          "heading": false
+        },
+        {
+          "term": "blobs",
+          "heading": false
+        }
+      ],
+      "extract": "Applications In the following we will illustrate a few selected applications of the manifestly Lorentz-invariant frame- work to the one-nucleon sector. p p k 2 + p p \u0000k k p \u0000k p 1 2 1 + p p 4 Figure 17: Contributions to the nucleon self energy at O(q4). The number n in the interaction blobs refers to L(n) πN. The Lagrangian L(2) πN does not produce a contribution to the πNN vertex.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-nucleon-mass-and-sigma-term-at-oq4",
+      "number": null,
+      "title": "Nucleon mass and sigma term at O(q4)",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": "66",
+      "labelEnd": "67",
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma term",
+          "heading": true
+        },
+        {
+          "term": "nucleon mass",
+          "heading": true
+        },
+        {
+          "term": "frac texttt",
+          "heading": false
+        },
+        {
+          "term": "mbox mev",
+          "heading": false
+        },
+        {
+          "term": "texttt right",
+          "heading": false
+        },
+        {
+          "term": "subsection pcrd",
+          "heading": false
+        },
+        {
+          "term": "quad sigma",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        }
+      ],
+      "extract": "A full one-loop calculation of the nucleon mass also includes ${\\cal O}(q^4)$ terms (see Fig. [1](#5:1:1:SEDiagrams){reference-type=\"ref\" reference=\"5:1:1:SEDiagrams\"}). <figure id=\"5:1:1:SEDiagrams\"> <div class=\"center\"> </div> <figcaption><span id=\"5:1:1:SEDiagrams\" label=\"5:1:1:SEDiagrams\"></span> Contributions to the nucleon self energy at <span class=\"math inline\">${\\cal O}(q^4)$</span>. The number <span",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6",
+      "number": null,
+      "title": "Chiral expansion of the nucleon mass to O(q6)",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mass",
+          "heading": true
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "mbox mev",
+          "heading": false
+        },
+        {
+          "term": "pion masses",
+          "heading": false
+        },
+        {
+          "term": "mass dependence",
+          "heading": false
+        },
+        {
+          "term": "leading non-analytic",
+          "heading": false
+        },
+        {
+          "term": "chiral",
+          "heading": true
+        },
+        {
+          "term": "dashed line",
+          "heading": false
+        }
+      ],
+      "extract": "So far, essentially all of the manifestly Lorentz-invariant calculations have been restricted to the one-loop level. One of the exceptions is the chiral expansion of the nucleon mass which, in the framework of the reformulated infrared regularization, has been calculated up to and including ${\\cal O}(q^6)$ [@Schindler:2006ha; @Schindler:2007dr]: $$\\label{Mass:Exp} m_N = m +k_1 M^2 +k_2 \\,M^3 +k_3 M^4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-form-factors-of-the-nucleon",
+      "number": null,
+      "title": "Form factors of the nucleon",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Form factors of the nucleon",
+      "extractCut": false
+    },
+    {
+      "id": "sec-048-scalar-form-factor",
+      "number": null,
+      "title": "Scalar form factor",
+      "level": 3,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scalar form",
+          "heading": true
+        },
+        {
+          "term": "infrared regularization",
+          "heading": false
+        },
+        {
+          "term": "dashed lines",
+          "heading": false
+        },
+        {
+          "term": "form factor",
+          "heading": true
+        },
+        {
+          "term": "solid lines",
+          "heading": false
+        },
+        {
+          "term": "delta sigma",
+          "heading": false
+        },
+        {
+          "term": "heavy-baryon",
+          "heading": false
+        }
+      ],
+      "extract": "The pion-nucleon $\\sigma$ term corresponds to the kinematical point $t=0$ of the scalar form factor which is defined as $$\\langle p(p',s')|{\\cal H_{\\rm sb}}(0)|p(p,s)\\rangle =\\bar{u}(p',s')u(p,s)\\sigma(t),\\quad t=(p'-p)^2.$$ The numerical results for the real and imaginary parts of the scalar form factor at ${\\cal O}(q^4)$ are shown in Fig. [\\[fig:scffq4new\\]](#fig:scffq4new){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-electromagnetic-form-factors",
+      "number": null,
+      "title": "Electromagnetic form factors",
+      "level": 3,
+      "pageStart": 68,
+      "pageEnd": 72,
+      "labelStart": "68",
+      "labelEnd": "72",
+      "words": 1613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electromagnetic form",
+          "heading": true
+        },
+        {
+          "term": "form factors",
+          "heading": true
+        },
+        {
+          "term": "phi mesons",
+          "heading": false
+        },
+        {
+          "term": "vector mesons",
+          "heading": false
+        },
+        {
+          "term": "eoms scheme",
+          "heading": false
+        },
+        {
+          "term": "infrared regularization",
+          "heading": false
+        },
+        {
+          "term": "vector-meson",
+          "heading": false
+        },
+        {
+          "term": "sachs form",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsectionemff label=\"subsectionemff\"} Imposing the relevant symmetries such as translational invariance, Lorentz covariance, the discrete symmetries, and current conservation, the nucleon matrix element of the electromagnetic current operator ${\\cal J}^\\mu(x)$, $${\\cal J}^{\\mu}(x) =\\frac{2}{3}\\,\\bar{u}(x)\\gamma^{\\mu}u(x) -\\frac{1}{3}\\,\\bar{d}(x)\\gamma^{\\mu}d(x),$$ can be parameterized in terms of two form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-axial-and-induced-pseudoscalar-form-factors",
+      "number": null,
+      "title": "Axial and induced pseudoscalar form factors",
+      "level": 3,
+      "pageStart": 72,
+      "pageEnd": 75,
+      "labelStart": "72",
+      "labelEnd": "75",
+      "words": 1235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "axial form",
+          "heading": true
+        },
+        {
+          "term": "axial-vector meson",
+          "heading": false
+        },
+        {
+          "term": "axial mean-square",
+          "heading": false
+        },
+        {
+          "term": "pion electroproduction",
+          "heading": false
+        },
+        {
+          "term": "isovector axial-vector",
+          "heading": false
+        },
+        {
+          "term": "electroproduction experiments",
+          "heading": false
+        },
+        {
+          "term": "axial-vector current",
+          "heading": false
+        },
+        {
+          "term": "mbox gev",
+          "heading": false
+        }
+      ],
+      "extract": "Assuming isospin symmetry, the most general parametrization of the isovector axial-vector current evaluated between one-nucleon states is given by $$\\label{H1_axff_FFDef} \\langle N(p',s')| A^\\mu_i(0) |N(p,s) \\rangle = \\bar{u}(p',s') \\left[\\gamma^\\mu\\gamma_5 G_A(Q^2) +\\frac{q^\\mu}{2m_N}\\gamma_5 G_P(Q^2) \\right] \\frac{\\tau_i}{2}u(p,s),$$ where $q=p'-p$, $Q^2=-q^2$, and $m_N$ denotes the nucleon mass. $G_A(Q^2)$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-pion-nucleon-form-factor",
+      "number": null,
+      "title": "Pion-nucleon form factor",
+      "level": 3,
+      "pageStart": 75,
+      "pageEnd": 76,
+      "labelStart": "75",
+      "labelEnd": "76",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion-nucleon form",
+          "heading": true
+        },
+        {
+          "term": "pion-nucleon coupling",
+          "heading": false
+        },
+        {
+          "term": "form factor",
+          "heading": true
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "schindler",
+          "heading": false
+        }
+      ],
+      "extract": "The pion-nucleon form factor $G_{\\pi N}(Q^2)$ may be defined in terms of the pseudoscalar quark density $P_i=i\\bar{q}\\gamma_5 \\tau_i q$ and the average light-quark mass $\\hat m$ as [@Gasser:1987rb] $$\\label{GpiN} \\hat m \\langle N(p',s')| P_i (0) | N(p,s) \\rangle = \\frac{M_\\pi^2 F_\\pi}{M_\\pi^2 + Q^2} G_{\\pi N}(Q^2)i\\bar{u}(p',s') \\gamma_5 \\tau_i u(p,s),$$ where $q=p'-p$, $Q^2=-q^2$, and $\\Phi_i(x)\\equiv \\frac{\\hat m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 76,
+      "pageEnd": 85,
+      "labelStart": "76",
+      "labelEnd": "85",
+      "words": 3762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "baryon chiral",
+          "heading": false
+        },
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "fil kov",
+          "heading": false
+        },
+        {
+          "term": "notes phys",
+          "heading": false
+        },
+        {
+          "term": "pion electroproduction",
+          "heading": false
+        },
+        {
+          "term": "anomalous chiral",
+          "heading": false
+        },
+        {
+          "term": "pion polarizabilities",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion Eﬀective ﬁeld theory has become a very important tool for investigating the dynamics of the strong inter- actions. In particular, mesonic chiral perturbation theory is a full-grown and mature area of low-energy particle physics which has successfully been applied at the two-loop level. Whether the predictions for the electromagnetic polarizabilities of the charged pion are really in conﬂict with empirical",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "April 10,",
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 3,
+        "items": [
+          "3.2.4 Two simple applications: Pion decay and ππ scattering",
+          "3.3.1 The O(q4) Lagrangian of Gasser and Leutwyler",
+          "5.2 Chiral expansion of the nucleon mass to O(q6)"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "frac mbox",
+      "heading": false
+    },
+    {
+      "term": "lagrangian cal",
+      "heading": false
+    },
+    {
+      "term": "cal dagger",
+      "heading": false
+    },
+    {
+      "term": "bar cal",
+      "heading": false
+    },
+    {
+      "term": "cal left",
+      "heading": false
+    },
+    {
+      "term": "cal right",
+      "heading": false
+    },
+    {
+      "term": "chiral mbox",
+      "heading": false
+    },
+    {
+      "term": "aligned cal",
+      "heading": false
+    },
+    {
+      "term": "gamma mbox",
+      "heading": false
+    },
+    {
+      "term": "cal partial",
+      "heading": false
+    },
+    {
+      "term": "cal cdots",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Comparison of QCD and ChPT",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Quark ﬂavors and their charges and masses. See [Manohar and Sachrajda, 2008] for details",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Totally antisymmetric non-vanishing structure constants of SU(3): [λa",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Transformation properties of the Dirac matrices Γ under parity. Γ",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Transformation properties of the Dirac matrices Γ under charge conjugation",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Pseudoscalar meson octet in an (I3, S) diagram. Baryon number B = 0. Masses in MeV",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Baryon octet (J = 1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Comparison between the symmetry-breaking patterns of a Heisenberg ferromagnet and QCD",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Lowest-order Feynman diagram for ππ scattering. The vertex is derived from L2, denoted by",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Generic one-loop diagram. The black box denotes some unspeciﬁed vertex structure which is irrelevant for the discussion",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Path of integration in the complex k0 plane",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Application of the power-counting formula of Eq. (138) in n = 4 dimensions",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The loop diagram is only suppressed if kmin > 0",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Renormalized low-energy coupling constants Lr",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Self-energy diagrams at O(q4). Vertices derived from L2n are denoted by 2n in the interaction",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Unrenormalized propagator as the sum of irreducible self-energy diagrams. Hatched and crosshatched “vertices” denote one-particle-reducible and one-particle-irreducible contributions, respectively",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Contribution of the pion loops to the π0 self energy",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The reaction γp →γπ+n contains Compton scattering on a pion as a sub diagram in the t",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Diﬀerential cross section averaged over 537 MeV < Eγ < 817 MeV and 1.5 M2",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "The cross section of the process γp →γπ+n integrated over s1 and t in the region where",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "One-loop contributions to the nucleon self energy. The number 1 in the interaction blobs",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Renormalized one-loop self-energy diagram",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "s-channel pole diagram of πN scattering",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Contributions to the nucleon self energy at O(q4). The number n in the interaction blobs",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Pion mass dependence of the term k5M5 ln(M/mN) (solid line) for M < 400 MeV. For",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Scalar form factor σ(t) as a function of t at O(q4)",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Real and imaginary parts of the scalar form factor as a function of t at O(q3)",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at O(q4) without vector mesons",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Feynman diagrams including vector mesons that contribute to the electromagnetic form factors of the nucleon up to and including O(q4). External leg corrections are not shown. Solid, wiggly,",
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at O(q4) including vector mesons as explicit degrees of freedom. Full lines: results in the extended",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "The axial form factor GA in manifestly Lorentz-invariant ChPT at O(q4). Full line: result in",
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Diagram containing the axial-vector meson (double line) contributing to the form factors at O(q4)",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Left panel: Axial form factor GA in manifestly Lorentz-invariant ChPT at O(q4) including",
+      "page": 76,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 53,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 54,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "26 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p76); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 54 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0908.3425v1"
+  }
+}

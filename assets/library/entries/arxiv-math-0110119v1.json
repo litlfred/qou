@@ -1,0 +1,364 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0110119v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The skein of a planar surface",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-the-skein-of-a-planar-surface.md",
+      "narrative": null,
+      "content": "The skein of a planar surface\nWe consider a planar surface F with designated n incoming and n outgoing\nboundary points for some integer n ≥0. The Homﬂy skein S(F) is deﬁned as\nthe module of linear combinations of oriented tangles in F quotiented by regular\nisotopy (i.e. Reidemeister moves II and III), the two local skein relations in ﬁgure\n1 where v and s are variables, and the relation that a disjoint simple closed curve\ncan be removed from a diagram at the expense of multiplication with the scalar\nδ = v−1−v\ns−s−1 . The last relation is a consequence of the other relations unless the\nremainin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0110119v1  [math.GT]  11 Oct 2001\nIdempotents of the Hecke algebra become\nSchur functions in the skein of the annulus\nSascha G. Lukac\nlukac@liv.ac.uk\nDepartment of Mathematical Sciences, University of Liverpool,\nPeach St, Liverpool L69 7ZL, England\nAbstract\nThe Hecke algebra Hn contains well known idempotents Eλ which are\nindexed by Young diagrams with n cells. They were originally described\nby Gyoja [5].\nA skein theoretical description of Eλ was given by Aiston and Morton\n[2]. The closure of Eλ becomes an element Qλ of the skein of the annulus.\nIn this skein, they are known to obey",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Young diagrams and symmetric functions",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-young-diagrams-and-symmetric-functions.md",
+      "narrative": null,
+      "content": "Young diagrams and symmetric functions\n2.1\nYoung diagrams\nWe consider partitions of non-negative integers where the summands are in non-\nstrictly decreasing order. We consider partitions to be equal if they diﬀer only\nby a number of zero-summands at the end.\nA Young diagram is a graphical depiction of a partition. A partition λ =\n(λ1, λ2, . . . , λk) becomes a ﬂush-left arrangement of square cells with λ1 cells in\nthe ﬁrst row, λ2 cells in the second row, ... and λk cells in the k-th row.\nWe deﬁne λ ⊂µ for partitions λ = (λ1, . . . , λk) and µ = (µ1, . . . , µm) if λi ≤µi\nfor all 1 ≤i ≤k (wher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "ρ \u0010 αnan \u0011 = αnan for any n ≥1. Proof We have ρ(ab) = ρ(a)ρ(b) for any elements a, b ∈Rn n. This multiplicativity together with lemma 3.1 implies that σiρ(an) = ρ(σ−1 i )ρ(an) = ρ(σ−1 i an) = ρ(s−1an) = sρ(an) in Rn n. Hence, anρ(an) = αnρ(an). When we apply the map ρ to this equation we get ρ(an)an = ρ(αn)an. The left hand sides of the previous two equations are equal because an is central. Hence, αnρ(an) = ρ(αn)an and thus ρ \u0010 αnan \u0011 = αnan. ⋄ · = Figure 2: The multiplication in the skein of the annulus C. Figure 3: The additional arcs for the closure map ∆n : Rn n →C. Aiston and Morton [2]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "n of a disk with 2n boundary points",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-n-of-a-disk-with-2n-boundary-points.md",
+      "narrative": null,
+      "content": "We consider a rectangle F with n outgoing points at the top and n incoming\npoints at the bottom, n ≥0. We denote the Homﬂy skein of this surface by Rn\nn.\nIt is known to be isomorphic to the Hecke algebra Hn.\nRn\nn gets an algebra structure by deﬁning D · E as putting D above E so that\nthe incoming points of D match with the outgoing points of E. Clearly, Rn\nn is\ngenerated as an algebra by the elementary braids σ1, . . . , σn−1 where σi agrees\nwith the identity braid up to a single positive crossing between the arcs which\nconnect the boundary points i and i + 1 (numbered from the left).\nAs a mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "For any Young diagram λ we have Γ(Qλ) = cλQλ in C+ with the scalar cλ = v−1 −v s −s−1 + vs−1 l(λ) X k=1 (s2(k−λk) −s2k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "The set {Qλ | λ has n cells } is a basis for Cn for any n ≥0. Proof We deﬁne X+ i ∈Ci as the closure of the braid σi−1σi−2 · · · σ1 ∈Ri i. The weighted degree of a monomial (X+ i1)j1 · · · (X+ ik)jk is deﬁned as i1j1 + · · · + ikjk. Any diagram in the annulus can be written inductively via the skein relations as a linear combination of totally descending curves. This means that Cn is spanned linearly by the monomials in the X+ i of weighted degree n. Hence, the dimension of Cn is at most π(n), by which we denote the number of partitions of n. On the other hand, Qλ lies in Cn provided that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The skein C of the annulus",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-4-the-skein-c-of-the-annulus.md",
+      "narrative": null,
+      "content": "The skein C of the annulus\nThe skein of the annulus shall be denoted by C. Let D1 and D2 be two diagrams in\nthe annulus S1×[0, 1]. We can bring D1 into S1×[0, 1/2), and D2 into S1×(1/2, 1]\nby regular isotopies. Then the product of D1 and D2 is deﬁned as the diagram\nD1 ∪D2. An example is shown in ﬁgure 2. The product is commutative since\nD1D2 and D2D1 diﬀer by regular isotopy. The empty diagram is the identity.\n4\nΓ\n−→\nFigure 4:\nEncircling a diagram in the annulus.\nFigure 3 depicts an annulus with a set of n oriented arcs.\nA rectangle is\nremoved from the annulus so that we can insert a diagram f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The variant skein C′ of the annulus",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-5-the-variant-skein-c-of-the-annulus.md",
+      "narrative": null,
+      "content": "The variant skein C′ of the annulus\nThe skein of the annulus C′ with two boundary points has been considered e.g.\nin [6] and [4]. We are using the version introduced by Morton in [10] where the\ntwo boundary points lie on diﬀerent boundary components of the annulus. This\nversion has the beneﬁt of a commutative multiplication.\nWe equip the annulus with two distinguished boundary points. An output\npoint on the inner circle, and an input point on the outer circle. The resulting\nskein C′ becomes an algebra by deﬁning the product A · B of diagrams A and B\nas putting the outward circle of B next to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "We have ˆti = (s1−2i −s)vhi for any integer i. Proof From lemma 6.2 and the skein relation in ﬁgure 11 we deduce that ˆti = (s−i −si)vs1−ihi = (s1−2i −s)vhi for any integer i ≥0. This equation holds for negative integers i as well because hi and ti are equal to zero for negative i. ⋄",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "We have [i + 1]h′ i+1 = ehi + s−1[i]h′ ia in C′+ for any integer i ≥0. We deﬁne ti = hie −ehi ∈C′ + for any integer i. We remark that ti = 0 for i ≤0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "We have ti = (s−i −si)h′ ia for any integer i ≥0. Proof We have [i + 1]h′ i+1 = ehi + s−1[i]h′ ia by lemma 6.1 for any integer i. By applying the map ρ from section 1 we get [i + 1]h′ i+1 = hie + s[i]h′ ia because hi, h′ i and h′ i+1 are invariant under ρ by lemma 3.2. These two equations imply that ti = hie −ehi = (s−i −si)h′ ia. ⋄ ai = v · ai = vs1−i· ai Figure 11: The closure of ∆′(ai)a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/lem-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-005-04.md",
+      "narrative": null,
+      "content": "We have ti ti+1 tj tj+1 = (s2 −1)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic skein relations in C′",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-6-basic-skein-relations-in-c.md",
+      "narrative": null,
+      "content": "Basic skein relations in C′\nWe recall that the quasi-idempotent ai ∈Ri\ni satisﬁes aiai = αiai for a non-zero\nscalar αi. We deﬁne hi =\n1\nαi∆(ai) ∈Ci and h′\ni =\n1\nαi∆′(ai) ∈C′i for any integer\ni ≥0. We deﬁne hi = 0 and h′\ni = 0 for any integer i < 0.\n8\n[i+1]\nαi+1\nai+1\n=\n1\nαi\nai\n+ s−1[i]\nαi\nai\nFigure 10: Depiction of lemma 6.1.\nThe following lemma is a direct consequence of the decomposition\nai+1 = (ai ⊗11)(1i+1 + sσi + s2σiσi−1 + · · · + siσiσi−1 · · · σ1)\nof the quasi-idempotent ai+1 ∈Ri+1\ni+1 (see [10], [7] for a proof). The lemma is\ndepicted in ﬁgure 10.\nLemma 6.1 We have\n[i + 1]h′\ni+1 = ehi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal calculations in C′",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-7-determinantal-calculations-in-c.md",
+      "narrative": null,
+      "content": "Determinantal calculations in C′\nLemma 7.1 For any integer r ≥2 and integers i1, i2, . . . , ir we have an equality\nof (r × r)-determinants in C′+\n\nhi1e\n· · ·\nhi1+r−2e\nti1+r−1\n...\n...\n...\nhire\n· · ·\nhir+r−2e\ntir+r−1\n\n= s2(r−1)\n\nehi1\n· · ·\nehi1+r−2\nti1+r−1\n...\n...\n...\nehir\n· · ·\nehir+r−2\ntir+r−1\n\n.\nProof Since ti = hie −ehi, we deduce from lemma 6.4 by the multilinearity of\nthe determinant that\n\nhie\nti+1\nhje\ntj+1\n\n = s2\n\nehi\nti+1\nehj\ntj+1\n\n(7.1)\nand\n\nti\nti+1\ntj\ntj+1\n\n = (1 −s−2)\n\nhie\nti+1\nhje\ntj+1\n\n .\n(7.2)\nWe remark that equation (7.1) is our claim in the case r = 2.\nFrom now on let r ≥3. We s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "We have Γ(Sλ) = qλSλ in C+ with the scalar qλ = v−1 −v s −s−1 + vs−1 l(λ) X k=1 (s2(k−λk) −s2k). Proof For any elements α and β of the skein of the annulus C we have (αe)·(βe) = (αβ)e in C′ where e is the identity of C′. Hence Sλe = det(hλi+j−ie)1≤i,j≤l(λ). Similarly eSλ = det(ehλi+j−i)1≤i,j≤l(λ). We denote l(λ) by n from now on. We remark that the closure (eSλ)∧is equal to Sλ with a disjoint circle which can be removed at the expense of the scalar (v−1 −v)/(s −s−1). The closure (Sλe)∧is equal to Γ(Sλ). By the multilinearity of the determinant we can write the diﬀerence of any two (n × n)-dete",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "Sλ is equal to Qλ for any Young diagram λ. Proof Qλ is non-zero in C. Since the scalars qλ and cλ from theorem 7.2 and from lemma 4.1 are equal, we have that Sλ and Qλ are eigenvectors with the same eigenvalue under the map Γ. Possibly, Sλ = 0. The set of Qλ for all Young diagrams λ with n cells is a linear basis for Cn by lemma 4.2. Furthermore, the eigenvalues cλ are pairwise diﬀerent. Hence, we deduce that Sλ is a scalar multiple of Qλ for any Young diagram λ with n cells. This scalar is a rational function in x, v and s, and it is possibly equal to zero. We denote the Young diagram consist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "together with the deﬁnition of Sλ implies that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "The linear map induced by sλ 7→Qλ from the ring of symmetric functions to the skein of the annulus C is a ring homomorphism. Acknowledgements The results are part of my PhD thesis. I thank my super- visor Prof. Hugh Morton for his guidance and help. The thesis was funded by the DAAD by a HSP-III-grant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110119v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] A. K. Aiston. Skein theoretic idempotents of Hecke algebras and quantum\ngroup invariants. PhD thesis, University of Liverpool, 1996.\n[2] A. K. Aiston and H. R. Morton. Idempotents of Hecke algebras of type A.\nJ. Knot Theory Ramif., 7(4):463–487, 1998.\n[3] C. Blanchet. Hecke algebras, modular categories and 3-manifolds quantum\ninvariants. Topology, 39(1):193–223, 2000.\n[4] P. M. Gilmer and J. Zhong. On the Homﬂypt skein module of S1 × S2.\nmath.GT/0007125, 2000.\n[5] A. Gyoja. A q-analogue of Young symmetrizer. Osaka J. Math., 23(4):841–\n852, 1986.\n[6] K. Kawagoe. On the skeins in the annulus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

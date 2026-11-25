@@ -1,0 +1,1773 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0606435v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0606435v2  [math.GT]  10 Oct 2007\nPROPERTIES OF CLOSED 3-BRAIDS\nAND OTHER LINK BRAID REPRESENTATIONS\nA. Stoimenow∗\nResearch Institute for Mathematical Sciences,\nKyoto University, Kyoto 606-8502, Japan\ne-mail: stoimeno@kurims.kyoto-u.ac.jp\nWWW: http://www.kurims.kyoto-u.ac.jp/˜stoimeno/\nCurrent version: August 8, 2007 First version: September 22, 2004\nAbstract. We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and\ncan be effectively determined. We classify among closed 3-braids strongly quasi-positive and ﬁbered ones, and\nshow that 3-bra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "If L is a strongly quasi-positive link, and has braid index 3, then L is has a strongly quasi-positive 3-braid representation. This result is an application of the work in [St2] on Xu’s normal form [Xu]. It legitimizes the term “strongly quasi- positive 3-braid link”, which otherwise would be linguistically sloppy, for it may mean a 3-braid link that is strongly quasi-positive, or the link (which is the closure) of a strongly quasi-positive 3-braid. As an (a-priori-so-seeming) improvement of Bennequin’s theorem, Birman-Menasco proved [BM2] that for 3-braid links not only some but in fact any m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Originating from the pioneering work of Alexander\n\\cite{Alexander2} and Artin \\cite{Artin,Artin2}, braid\ntheory has become intrinsically interwoven with knot theory,\nand over the years, braid representations of different types\nhave been studied, many of them with motivation coming\nfrom fields outside of knot theory, for example dynamical\nsystems \\cite{Williams} or 4-dimensional QFTs \\cite{Kreimer}.\n\nThe systematic study of closed 3-braids was begun by Murasugi\n\\cite{Murasugi2}. Later 3-braid links have been classified\nin \\cite{BirMen}, in the sense that 3-braid representations\nof the same link",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries, basic definitions and conventions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-preliminaries-basic-definitions-and-convention.md",
+      "narrative": null,
+      "content": "Basic concepts that appear throughout the paper are summarized.\n`W.l.o.g.' will abbreviate `without loss of generality';\n`r.h.s.' will stand for `right hand-side'.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links and link diagrams",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-links-and-link-diagrams.md",
+      "narrative": null,
+      "content": "Links are represented by diagrams; we assume diagrams are\noriented (though sometimes orientation is not relevant).\n\nA crossing $p$ in a link diagram $D$ is called \\em{reducible} (or\nnugatory) if it looks like on the left of figure \\reference{figred}.\n$D$ is called reducible if it has a reducible crossing, else it is\ncalled \\em{reduced}. The reducing of the reducible crossing $p$\nis the move depicted on figure \\reference{figred}. Each diagram $D$\ncan be (made) reduced by a finite number of these moves.\n\n\\begin{figure}[htb]\n\\begin{eqn}\\label{eqred}\n\\diag{6mm}{4}{2}{\n  \\picrotate{-90}{\\rbraid{-1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomial link invariants",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-polynomial-link-invariants.md",
+      "narrative": null,
+      "content": "Polynomial link invariants\nLet X ∈Z[t,t−1]. The minimal or maximal degree mindegX or maxdegX is the minimal resp. maximal exponent of t\nwith non-zero coefﬁcient in X. Let spant X = maxdegt X −mindegt X. The coefﬁcient in degree d of t in X is denoted\n[X]td or [X]d. The leading coefﬁcient maxcf X of X is its coefﬁcient in degree maxdegX. If X ∈Z[x±1\n1 ,x±1\n2 ], then\nmaxdegx1 X denotes the maximal degree in x1. Minimal degree and coefﬁcients are deﬁned similarly, and of course\n[X]xk\n1 is regarded as a polynomial in x±1\n2 .\nLet P(v,z) be the skein polynomial [F&, LM]. It is a Laurent polynomial i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semiadequacy",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-23-semiadequacy.md",
+      "narrative": null,
+      "content": "Semiadequacy\n7\nThe Kauffman polynomial [Ka] F is usually deﬁned via a regular isotopy invariant Λ(a,z) of unoriented links. We\nuse here a slightly different convention for the variables in F, differing from [Ka, Th2] by the interchange of a and\na−1. Thus in particular we have for a link diagram D the relation F(D)(a,z) = aw(D)Λ(D)(a,z), where Λ(D) is the\nwrithe-unnormalized version of the polynomial, given in our convention by the properties\nΛ\n\u0000\u0001\n+ Λ\n\u0000\u0001\n= z\n\u0000Λ\n\u0000\u0001\n+ Λ\n\u0000\u0001 \u0001\n,\n(6)\nΛ\n\u0000\u0001\n= a−1 Λ\n\u0000\u0001\n;\nΛ\n\u0000\u0001\n= a Λ\n\u0000\u0001\n,\n(7)\nΛ\n\u0000⃝\n\u0001\n= 1.\n(8)\nThe Brandt-Lickorish-Millett-Ho polynomial [BLM] Q is given by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[St4, DL]",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Assume that D is a connected A-adequate diagram. Then V0V1 = χ(G(A))−1 and V0V2 = \u00102 −χ(G(A)) \u0011 +χ(IG(A))−△(A(D)). Here χ is the Euler characteristic (number of vertices minus number of edges); V0 = ±1 by [LT]. Analogous formulas hold for B-adequate diagrams.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braids and braid words",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-24-braids-and-braid-words.md",
+      "narrative": null,
+      "content": "The $n$-string \\em{braid group} $B_n$ is considered generated by\nthe Artin \\em{standard generators} $\\sg_i$ for $i=1,\\dots,n-1$. These\nare subject to relations of the type $[\\sg_i,\\sg_j]=1$ for $|i-j|>1$,\nwhich we call \\em{commutativity relations} (the bracket denotes the\ncommutator) and $\\sg_{i+1}\\sg_i\\sg_{i+1}= \\sg_i\\sg_{i+1}\\sg_i$,\nwhich we call \\em{Yang-Baxter} (or shortly YB) \\rm{relations}.\n\nWe will make one noteworthy modification of this notation.\nIn the following $\\sg_3$ will stand for the usual Artin generator\nfor braids of $4$ or more strands (such braids are considered\nexplicitly o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Later it was observed from the algorithm of Yamada \\cite{Yamada} and Vogel \\cite{Vogel} that the braid version is actually equivalent to (and not just a special case of) the diagram version.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid representations of links",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-25-braid-representations-of-links.md",
+      "narrative": null,
+      "content": "By a theorem of Alexander \\cite{Alexander}, any link is the \\em{closure}\n$\\hat\\bt$ of a braid $\\bt$. The \\em{braid index} $b(L)$ of a link $L$\nis the smallest number of strands of a braid $\\be$ whose closure\n$\\hat\\be$ is $L$. See \\cite{Morton,WilFr,Murasugi}. Such $\\bt$ are\nalso called \\em{braid representations} of $L$. The closure operation\ngives for a particular braid word $\\bt$ a link diagram $D=\\hat\\bt$.\nThen we have for example $w(\\hat\\bt)=[\\bt]$, $c(\\bt)=c(\\hat\\bt)$,\n$c_\\pm(\\bt)=c_\\pm(\\hat\\bt)$, and $s(\\hat\\bt)$\nis the number of strings of $\\bt$ (i.e. $n$ for $\\bt\\in B_n$).\n\nMany propert",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gau sum invariants",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-26-gau-sum-invariants.md",
+      "narrative": null,
+      "content": "We recall briefly the definition of Gau\\ss{} sum invariants.\nThey were introduced first in \\cite{Fied} for braids, and later\n\\cite{Fied2,VirPol} for knots. It is known that all\nthey give formulas for Vassiliev invariants.\n\n\\begin{defi}(\\protect\\cite{Fied2})\\ \nA Gau\\ss{} diagram of a knot diagram is an oriented circle with\narrows connecting points on it mapped to a crossing and\noriented from the preimage of the undercrossing (underpass)\nto the preimage of the overcrossing (overpass).\n\\end{defi}\n\nWe will call a pair of crossings whose arrows intersect in\nthe Gau\\ss{} diagram a \\em{linked} pair.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Xu's form and Seifert surfaces",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-3-xus-form-and-seifert-surfaces.md",
+      "narrative": null,
+      "content": "We studied the relation of Xu's algorithm and the skein\npolynomial in \\cite{3br}, and here we will go further to\nconnect fiberedness, the and Alexander and Jones polynomial\nto Xu's form.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strongly quasi-positive links among links of braid index 3",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-31-strongly-quasi-positive-links-among-links-of.md",
+      "narrative": null,
+      "content": "Theorem \\reference{thqp} follows relatively easily from\nthe work in \\cite{3br}, but it is a good starting point for\nthe later more substantial arguments basing on Xu's form.\n\n\\proof[of theorem \\reference{thqp}]\nThe inequalities of \\eqref{mq} for the $v$-degree\nof $P$ applied on a positive band representation show that,\nwith $P=P(L)$ and $\\chi=\\chi(L)$,\n\\begin{eqn}\\label{x}\n\\md_vP\\ge 1-\\chi\\,.\n\\end{eqn}\nBecause of \\cite[proposition 21]{LickMil}, which now says\n\\begin{eqn}\\label{p21}\nP(v,v^{-1}-v)=1\\,,\n\\end{eqn}\nwe have $\\md_lP\\le\n\\Md_zP$, and by \\cite{3br} $\\Md_zP=1-\\chi$. So from \\eqref{x}\nwe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness of minimal genus Seifert surfaces",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces.md",
+      "narrative": null,
+      "content": "Uniqueness of minimal genus Seifert surfaces\nThe discussion here came about from the desire to complete Xu’s uniqueness theorem for Seifert surfaces of 3-braid\nlinks. While our result will be further improved later using work to follow, we need to introduce some notation and\nbasic tools. We will use the work of Kobayashi [Ko], implying that the property a surface to be a unique minimal\ngenus surface is invariant under Hopf (de)plumbing.\nSubsequently Mikami Hirasawa advised me about a subtlety concerning the notion of ‘uniqueness’ which must be\nexplained. Xu’s work considers Seifert surfaces un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "Every 3-braid link has a weakly unique minimal genus Seifert surface.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/cor-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "cor-sec-011-04.md",
+      "narrative": null,
+      "content": "Let W be a 3-braid link. Then the following are equivalent: 1) W is ﬁbered, 2) maxdeg∆(W) = 1 −χ(W) and maxcf∆(W) = ±1, 3) W’s Xu form is not of the type L−1 or R, with syllable length of L or R divisible by 3. ✷",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/cor-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "cor-sec-011-06.md",
+      "narrative": null,
+      "content": "Any non-split closed 3-braid ˆβ with |[β]| ≤2 is ﬁbered, in particular so is any slice 3-braid knot. ✷ Again 61 and 946 show the second part is not true for 4-braids. The ﬁrst statement in the corollary extends simultane- ously the property of amphicheiral knots, which follows also from [BM], since amphicheiral 3-braid knots are closed alternating 3-braids. Originally the insight about a unique minimal genus surface motivated the ﬁbered 3-braid link classiﬁcation. Still this insight lacks asset as to the somewhat improper way it emerges. Note for example, that the stronger version of [BM2] of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/ex-sec-011-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "ex-sec-011-05.md",
+      "narrative": null,
+      "content": "The routine veriﬁcation, with Mikami Hirasawa, of the tables in [HT] for ﬁbered knots, has shown non-ﬁbered knots with monic Alexander polynomial of degree matching the genus start at 12 crossings. One of these knots, 121752, has braid index 4, so that (as expected) the corollary does not hold for 4-braids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-011-03.md",
+      "narrative": null,
+      "content": "The links Lk, given by the closed 3-braids [(123)k −2] for k > 0, are ﬁbered. Proof of theorem 3.3. We use induction on the length of L−1R and for ﬁxed length on the exponent sum. Under Hopf deplumbings assume all syllables in L and R are trivial. Assume up to mirroring that L is not shorter than R. Permute by conjugacy R to the left, and permute the indices so that L starts with −3. The following transformations also offer a Hopf deplumbing 1 −3 −2 −1 →−21 −2 −1 →−2 −2 −12 →−2 −12 and 12 −3 →−211 These reductions fail both if either L and R have length at most 2, or R has length 1. (Remember",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fiberedness",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-33-fiberedness.md",
+      "narrative": null,
+      "content": "Fiberedness\n13\nCase 3. p,q,r < 0. We have a negative braid, which is ﬁbered.\nCase 4. −p,−r < 0, q > 0. We have a word of the form σq\n2σ−r\n1 σ−1\n2 σ−p\n1 . If one of p and r is 1, then we have a\n(2, .)-torus link. If q = 1, then we can go over to the mirror image, and land in case 1. Now, when p,q,r ≥2, the\nminimal word in Xu’s form is 2q−2(−3)(−2)r−1(−1)p−1. Since p −1 and r −1 are non-zero, its surface is plumbing\nequivalent to the one of [2 −3 −2 −1] (if q > 2) or [−3 −2 −1] (if q = 2). These are the annulus for the reverse\n(2,−4)-torus link, and the ﬁber of the (−2,−2,2)-pretzel link, and we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Let L be a strongly quasi-positive 3-braid link. Then the following are equivalent: 1) L’s minimal genus surface is a Hopf plumbing, 2) L’s minimal genus surface is a ﬁber surface, 3) maxdeg∆(L) = 1 −χ(L) and maxcf∆(L) = ±1, 4) L’s Xu normal form is not R, with syllable length of R divisible by 3. In other words, the Xu normal form is not an extension (in the sense of deﬁnition 2.1) of [(123)k] for k > 0. 5) Some minimal band form of L contains σk 1σl 2σm 1 or σk 2σl 1σm 2 as subword for k,l,m > 0, or is σk 1σl 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "Any closed braid of Xu’s form L−1R is ﬁbered. The proof uses some work of Hirasawa-Murasugi. A consequence of their result is the following lemma, which we require. It is proved in appendix A.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomial invariants",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-4-polynomial-invariants.md",
+      "narrative": null,
+      "content": "Polynomial invariants",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alexander polynomial",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-41-alexander-polynomial.md",
+      "narrative": null,
+      "content": "In \\cite{Birman}, Birman proposed (but considered as very difficult)\nthe problem to classify 3-braid\nlinks with given polynomials. In \\cite{3br} we dealt with the skein\npolynomial. Now we can extend our results to the Alexander polynomial\n(with the convention in the beginning of \\S\\reference{ppp}).\nThe following discussion gives a fairly exact description how to\nfind the 3-braid links, if such exist, for any possible admissible\n(as specified in \\S\\reference{brD}) polynomial.\n\nA solution for the Jones polynomial is presented afterwards.\n\n\n\\begin{lemma}\nIf $\\bt$ is strongly quasi-positive and fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jones polynomial",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-42-jones-polynomial.md",
+      "narrative": null,
+      "content": "The control of the Jones polynomial on 3-braid links was the\nobject of main attention in \\cite{Birman}. We can accomplish\nthis with a similar argument to $\\Dl$. The result we obtain\ncan be conveniently described in our setting and is as follows:\n\n\\begin{theorem}\\label{Hh}\nLet $L$ be a non-split 3-braid link, and $L=\\hat\\bt$ with $\\bt\\in\nB_3$. Then\n\\begin{eqn}\\label{g}\n\\spn V(L)\\,\\le\\,4-\\chi(L)\\,.\n\\end{eqn}\nEquality holds if and only if $L$ is strongly quasi-signed (i.e.\n-positive or -negative, or equivalently $|[\\bt]|=3-\\chi(L)$), and\nnot fibered. More specifically, the following holds:\n\\def\\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q polynomial",
+      "pageStart": 20,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-43-q-polynomial.md",
+      "narrative": null,
+      "content": "We extend the scope of the previous results to the\nBrandt-Lickorish-Millett-Ho polynomial. The main aim here is to prove\n\n\\begin{theo}\\label{thQ}\nOnly finitely many non-trivial 3-braid links have given $Q$\npolynomial, and none has trivial (i.e., unlink) polynomial.\n\\end{theo}\n\nNote that by Kanenobu's work \\cite{Kanenobu3}, again\nthere are finite families of arbitrary large size,\nso we claim again a sort of contrary result.\n\nWhile this result may be considered less relevant\nthat its analoga for $\\Dl$ and $V$, its proof displays\nthe largest variety of tools necessary to apply, and \nshows how the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positivity of 3-braid links",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-016-5-positivity-of-3-braid-links.md",
+      "narrative": null,
+      "content": "Positivity of 3-braid links\n5.\nPositivity of 3-braid links",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positive braid links",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-017-51-positive-braid-links.md",
+      "narrative": null,
+      "content": "Positive braid links",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Morton-Williams-Franks bound",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-018-511-the-morton-williams-franks-bound.md",
+      "narrative": null,
+      "content": "For the proof of theorem \\reference{thg} we will need to study\nthe behaviour of the bound \\eqref{mwfb} in the Morton-Williams-Franks\ninequality (we abbreviate as MWF) on positive\nbraids. This was begun by Nakamura \\cite{Nakamura},\nwho settled the case $MWF=2$ in the suggestive way: such braids\nrepresent only the $(2,n)$-torus links. (The case $MWF=1$ is\ntrivial.) We will introduce a method that considerably simplifies\nhis proof (but still makes use of some of his ideas), and\nthen go on to deal with $MWF=3$. The example of non-sharp\nMWF inequality, $13_{9365}$ in \\cite{KnotScape} (the connected",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "In \\cite{Nakamura} the following fact was observed, and used decisively, and we shall do the same here.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maximal subwords",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-019-512-maximal-subwords.md",
+      "narrative": null,
+      "content": "Here we start the technical considerations needed to prove \ntheorem \\reference{thmwf}. We consider the form \\eqref{wd},\nnow with all $l_i>0$.\n\n\\begin{defi}\nWe define \\em{summit syllables} in \\eqref{wd}:\n\\def\\theenumi{\\alph{enumi}}\n\\def\\labelenumi{\\theenumi)}\n\\begin{enumerate}\n\\item All $\\sg_{n-1}^{l_i}$ are summit syllables, and\n\\item if $\\ap=\\sg_k^{l_i}$ and $\\ap'=\\sg_k^{l_j}$ are summit\nsyllables, with no $\\sg_{k'}^{l'}$ for $k'\\ge k$ occurring between\n$\\ap$ and $\\ap'$, then all $\\sg_{k-1}^{l'}$ occurring between $\\ap$\nand $\\ap'$ are summit syllables.\n\\end{enumerate}\n\\end{defi}\n\nNote that, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The proof of Theorem thmwf: Initial simplifications",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-020-513-the-proof-of-theorem-thmwf-initial-simplific.md",
+      "narrative": null,
+      "content": "The following fact is well-known:\nTheorem 5.3 MWF(β) = 1 if an only if [β]i = 1 for i = 1,...,n −1.\nNow for MWF = 3 it sufﬁces to ensure that (either we can reduce the braids) or can ﬁnd words, whose non-maximal\nsubwords do not give an unknot. For the rest of the section we assume that β′ gives the unknot.\nWe will work by induction on the number of strands, and for ﬁxed number of strands on the index sum. So we consider\na positive braid word β, and assume w.l.o.g. it has the smallest index sum among positive braid representatives of its\nclosure link for the same number of strands. For such β,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "MWF(β) = 1 if an only if [β]i = 1 for i = 1,...,n −1. Now for MWF = 3 it sufﬁces to ensure that (either we can reduce the braids) or can ﬁnd words, whose non-maximal subwords do not give an unknot. For the rest of the section we assume that β′ gives the unknot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "“ﬁlling the valley”",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "Any valley can be removed from the maximal subword in the positive resolution tree.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "If a mountain M is not of maximal height (i.e. n −1), then MWF(β) ≥4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "If β has > 2 valleys of depth at most n −3, then MWF(β) ≥4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two mountains",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-514-two-mountains.md",
+      "narrative": null,
+      "content": "(2,n)-torus connected component, or a reducible braid and can work by induction on the number of strands. Similarly\nat least one valley has depth 1, otherwise σ1 in β′ remains reducible in β.\nThe following operation will be somewhat important, and we will call it “ﬁlling the valley”.\nLemma 5.3 (“ﬁlling the valley”) Any valley can be removed from the maximal subword in the positive resolution\ntree.\nProof. Same as for lemma 5.2.\n✷\nLemma 5.4 If a mountain M is not of maximal height (i.e. n −1), then MWF(β) ≥4.\nProof. Let k < n −1 be the height of M. We assumed there are at least two mountains of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More than two mountains",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-022-515-more-than-two-mountains.md",
+      "narrative": null,
+      "content": "More than two mountains\nTo deal with the general case, now we make the following modiﬁcations. We call a summit syllable sequence with\nindices n −2 and n −1 terminated on both sides by n −1’s a modiﬁed mountain or plateau. We have again by lemma\n5.5 only two valleys of depth < n−2, or alternatively only two plateaus (now instead of mountains). The case of more\nthan two mountains is thus mainly a adaptation of the case of two mountains, replacing mountains by plateaus.\nAgain we may assume non-maximal subwords have exactly one (and trivial) syllable per index. The elimination of\nthe maximal subw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4-braids",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-023-516-4-braids.md",
+      "narrative": null,
+      "content": "4-braids\nIf some mountain is not of height 3, or > 2 valleys of depth 1 exist, then we are done as before (see §5.1.3).\nSo the maximal subword is of the form 1,2,3,(2!,3)p,2,1,1,2,3,(2!,3)n,2,1, and the non-maximal subword is a\nsingle σ1\n1. We separate the summit syllables and their letters by the summit syllables of index 1 into a left and right\nplateau. Assume w.l.o.g. the (non-summit) σ1\n1 is in the left plateau. The word ‘in’ is to mean that in cyclic order of\nthe syllables of β the syllable σ1\n1 can be written to occur just before or after a syllable with index n−1 that belongs to\nthe lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "Let D = b \u0010 σ k1,1 σ k1,2 ...σ k1,n1 σ−1 σ k2,1 ...σ k2,n2 σ−1 ... σ kl,1 l ...σ kl,nl δ2 \u0011 (38) where ni ≥1 odd and ki,j ≥2 when 1 < j < ni and ki,j ≥1 when j = 1 or ni. Then mindega Λ(D) = −l.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-024-03.md",
+      "narrative": null,
+      "content": "Let D = b \u0010 σ k1,1 σ k1,2 ...σ k1,n1 σ−1 σ k2,1 ...σ k2,n2 σ−1 ... σ kl,1 l ...σ kl,nl σ−1 \u0011 (39) where ni ≥1 odd and ki,j ≥2 when 1 < j < ni and ki,j ≥1 when j = 1 or ni. Then mindega Λ(D) ≥−2 when l ≤2 and mindega Λ(D) = −l when l ≥3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-024-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-024-04.md",
+      "narrative": null,
+      "content": "The closed braids in (39) are not positive for l ≥2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/lem-sec-024-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-024-06.md",
+      "narrative": null,
+      "content": "If D = D[n] = b(σk1 1 σk2 2 ...σkn 1 δ2) with n ≥1 odd, k1,kn ≥1 and ki ≥2 when i = 2,...,n −1, then mindega Λ(D) = −1. Writing k = (k1,...,kn) and ˜w(k) = (k1 −1)+ n ∑ l=2 (kl −2), we have maxdegz[Λ(D)]a−1 = ˜w(k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positive links",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-024-52-positive-links.md",
+      "narrative": null,
+      "content": "Positive links\n35\nThe only common extension of the two MWF = 3 extensions is\n[122331221123321], which has MWF = 4.\nSo it remains to verify that (the closures of) [22∗3∗122∗11∗23211∗]and [22∗3122∗11∗23∗211∗] have braid index\n4.\nFor this we use the two-cabled MWF inequality. Let for a braid β ∈Bn, the “two-cabled” braid (β)2 ∈B2n be obtained\nfrom β by replacing in (9) each σi by σ2iσ2i−1σ2i+1σ2i. Then (β)2 is a braid representation of the (blackboard framed)\ntwo-cable link L2 of the closure L = ˆβ of β. We consider now for β the above braid β0.\nWe know, from the computations described in [MS, FW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/rem-sec-024-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "rem-sec-024-05.md",
+      "narrative": null,
+      "content": "Ishikawa asks in [I] whether strongly quasi-positive knots satisfy the equality TB = 2gs −1, where TB is the maximal Thurston-Bennequin invariant. The proof of the lemma shows that there are inﬁnitely many strongly quasi-positive 3-braid knots with TB < 2gs −1: take any of the knots with l > 2. (There are also many other such knots, like the counterexamples to Morton’s conjecture in [St3].) 5.2 Positive links",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Yokota [Yo]",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "thm-sec-024-01.md",
+      "narrative": null,
+      "content": "If L is a positive link, then mindega F(L) = mindegv P(L) = 1 −χ(L), and [F(L)]a1−χ(L) = [P(L)(ia,iz)]a1−χ(L) . We also require an extension of braids to the context of F. This was described in [BW] and [Mr], but we use only the generators of the algebra deﬁned there. Strings will be assumed numbered from left to right and words will be composed from bottom to top. We write σi for a braid generator, where strand i from the lower left corner, passing over strand i+1, goes to the upper right corner. We add elements δi of the following form: i i+1 . By hat we denote the usual closure operation. A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-024-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "thm-sec-024-07.md",
+      "narrative": null,
+      "content": "If a 3-braid link is positive, then it is the closure of a positive or almost positive 3-braid. Along these links the non-ﬁbered ones are exactly the (1, p,q,r)-pretzel links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Studying alternating links by braid index",
+      "pageStart": 38,
+      "pageEnd": 42,
+      "target": "../sections/sec-025-6-studying-alternating-links-by-braid-index.md",
+      "narrative": null,
+      "content": "The combination of the identity \\eqref{p21} and the skein-Jones\nsubstitution \\eqref{VPsub} was already used in \\S\\reference{Js}\nto translate the determination of the 3-braid link genus from\n$P$ to $V$. A similar line of thought will now enable us to\nextend the other main result in \\cite{3br}, the description\nof alternating links of braid index 3. This result was\nmotivated by the work of Murasugi \\cite{Murasugi},\nand Birman's problem in \\cite{MortonPb} how to\nrelate braid representations and diagrammatic properties\nof links. We will see how via \\eqref{VPsub} and \nthe famous Kauffman-Murasugi-Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 48,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "It was observed in \\cite{posex_bcr} that counterexamples to the conjecture would make MWF and \\em{all} of its cabled versions unsharp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications of the representation theory",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-026-7-applications-of-the-representation-theory.md",
+      "narrative": null,
+      "content": "So far the representation theory behind the skein, Jones, and\nAlexander polynomial was not used. We will give some applications\nof it now. The theory is well explained in \\cite{Jones}. We will\nuse Jones's conventions, unless otherwise specified.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jones conjecture",
+      "pageStart": 42,
+      "pageEnd": 48,
+      "target": "../sections/sec-027-71-the-jones-conjecture.md",
+      "narrative": null,
+      "content": "There is a conjecture, often attributed to Jones (who speculated\non it at least for knots and in it its weaker form, as given below;\nsee 357 l.-6 of his paper), stating that a minimal\nstring braid representation has a unique exponent sum.\n\n\\begin{conj}(Jones's conjecture)\\label{jcc}\n\\def\\labelenumi{\\theenumi)}\n\\begin{enumerate}\n\\item (weaker version)\\label{weV}\nIf $\\bt,\\bt'\\in B_n$ satisfy $\\hat\\bt=\\hat\\bt'=L$ and $n=b(L)$,\nthen $[\\bt]=[\\bt']=:w_{\\min}(L)$.\n\\item (stronger version) Part \\reference{weV} holds, and if\n$\\bt''\\in B_n'$ for $n'>n$ has $\\hat\\bt''=L$, then \n\\begin{eqn}\\label{stz}\n\\bi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-028-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "prop-sec-028-03.md",
+      "narrative": null,
+      "content": "The Squier form J[n] on Bn degenerates exactly in the n-th roots of unity. In particular, it is positive deﬁnite exactly when |argt| < 2π/n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unitarity of the Burau representation",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-028-72-unitarity-of-the-burau-representation.md",
+      "narrative": null,
+      "content": "Unitarity of the Burau representation\nIn the following q and t are unit norm complex numbers. We deﬁne arg(eis) := s mod 2π for s ∈R. We continue using\nthe formalism of Young tableaux, the representations πY and the notations X(q,λ) and WY of the proof of theorem 7.1.\nFor the Alexander polynomial ∆(we resume the notational convention from before §7.1), as well as for 3- and 4-\nbraids, the representations πY are given by Burau representations. We note (again, and more explicitly) the following\ndescriptions of πY in terms of the Burau representation ψn given in [J]. Again the indexing is chosen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/rem-sec-028-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "rem-sec-028-01.md",
+      "narrative": null,
+      "content": "Squier uses a different convention for ψi from Jones. He transposes and changes sign in matrix entries with odd row-column sum (i.e., conjugates by diag(1,−1,1,−1,...)). This, however, does not affect our arguments. The key point in arguments below is Squier’s result. We write M∗for the conjugate transposed of a matrix M. (That is, M∗ i,j = M j,i.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-028-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Squier [Sq]",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "thm-sec-028-02.md",
+      "narrative": null,
+      "content": "For any n ≥1 there exists a Hermitian matrix J = J[n+1] and a regular matrix M, such that with J0 = M∗JM we have ψ∗ nJ0ψn = J0. In particular, J is degenerate or deﬁnite iff J0 is so. Moreover, Ji,j =    −1 if |i−j| = 1 √t +1/√t if i = j otherwise . It is easy to see that if t = 1, then J is positive deﬁnite. Now deﬁniteness is an open condition, so for t close to 1, it is still valid. One can determine when J loses this property.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/conj-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "conj-sec-029-02.md",
+      "narrative": null,
+      "content": "If β ∈Bn and |t| = 1 with |argt| < 2π/n then |V(t)| ≤(2ℜ√t)n−1. In the case of the Alexander polynomial ∆(t) = X(t,1/t), we can say something on general braids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/cor-sec-029-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-029-04.md",
+      "narrative": null,
+      "content": "For all n,k the set \b ∆(ˆβ) : β ∈Bn , deg∆≤k",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/cor-sec-029-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-029-05.md",
+      "narrative": null,
+      "content": "If β ∈B4, then ∆ˆβ(t) ≤8|1 −t| |1 −t4| , (59) when |t| = 1 and ℜt > 0. If β ∈B3 and ℜt > −1/2, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/ex-sec-029-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "ex-sec-029-06.md",
+      "narrative": null,
+      "content": "The simplest knots with MWF = 4 which can be excluded from being a 4-braid using corollary 7.3 are 138385 (where one can use t = e2πi/9) and 1437492 (with t = e2πi/8). For 3-braids we can deal with the known examples 942 and 949. (This gives now an alternative proof that there are no 3-braid knots with such Alexander polynomial, as we explained in example 4.2.) If we know the exponent sum of β we can do better.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/ex-sec-029-08",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "ex-sec-029-08.md",
+      "narrative": null,
+      "content": "Since one can determine the possible e via MWF from P, one can apply proposition 7.2 for given P. In the 3-braid case we can exclude 10150 this way. The remaining two 10 crossing knots with unsharp MWF, 10132 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-029-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "prop-sec-029-07.md",
+      "narrative": null,
+      "content": "If β ∈B4, e = [β] and t as before, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Norm estimates",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-029-73-norm-estimates.md",
+      "narrative": null,
+      "content": "Norm estimates\nThe Jones polynomial V can be speciﬁed, for our purposes, by V(t) = X(t,t). In the following, which root of complex\nnumbers is taken is irrelevant, important is though that it be kept ﬁxed in subsequent calculations. By ℜwe denote the\nreal part of a complex number.\nTheorem 7.3 If |t| = 1, ℜt > 0 and β is a 4-braid, then\n\nVˆβ(t)\n\n ≤(2ℜ√t)3. If β is a 3-braid and ℜt > −1/2, then\n\nVˆβ(t)\n\n ≤(2ℜ√t)2.\nProof. We have from [J] that if β ∈B4 with [β] = e, then\nVˆβ(t) =\n\u0000−\n√\nt\n\u0001e−3\n\u0014 t(1 −t3)\n1 −t2\ntr ψ3 + t2\n1 +t tr ¯ψ2 + 1 −t5\n1 −t2\n\u0015\n,\n(56)\nwhere ¯ψ2 is the composition of ψ2 with¯ : B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "thm-sec-029-01.md",
+      "narrative": null,
+      "content": "If |t| = 1, ℜt > 0 and β is a 4-braid, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "thm-sec-029-03.md",
+      "narrative": null,
+      "content": "For each n ≥2, if |t| = 1 and |argt| ≤2π/n and β ∈Bn then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prop-sec-030-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "prop-sec-030-03.md",
+      "narrative": null,
+      "content": "If a braid β has MWF(β) ≤4, then V(ˆβ) and ∆(ˆβ) together with the exponent sum [β] = e, determine P(ˆβ). 1The second duplication was noted in the remarks after Jones’s table, but not referred to correctly in its last column.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skein polynomial",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-030-74-skein-polynomial.md",
+      "narrative": null,
+      "content": "table1 in [J].) For 4-braids several new 14 crossing knots can be ruled out, for example 1421199.\nRemark 7.3 The use of P to restrict the possible values of e is usually most effective, but not indispensable. There\nare other conditions on e, originating from Bennequin’s work [Be], that can be more applicable in certain cases where\nthe calculation of P is tedious. Also, when t is a root of unity of order n, the tests depend only on e mod 2n.\nRemark 7.4 Note that the quantity χ in (24) is equal to utr ψ2, where u = √−t +\n1\n√−t and ψ2 is the Burau matrix of\nB3 (see the explanation in [K]). Thus o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/rem-sec-030-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "rem-sec-030-01.md",
+      "narrative": null,
+      "content": "The use of P to restrict the possible values of e is usually most effective, but not indispensable. There are other conditions on e, originating from Bennequin’s work [Be], that can be more applicable in certain cases where the calculation of P is tedious. Also, when t is a root of unity of order n, the tests depend only on e mod 2n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/rem-sec-030-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "rem-sec-030-02.md",
+      "narrative": null,
+      "content": "Note that the quantity χ in (24) is equal to utr ψ2, where u = √−t + √−t and ψ2 is the Burau matrix of B3 (see the explanation in [K]). Thus one can obtain similar estimates for values of Q on 3-braids. 7.4. Skein polynomial Now it is natural to look at the full 2-variable skein polynomial X. We have, as in (47), for β ∈B4 of exponent sum e, Xˆβ(q,λ) = − √ λ e−3 ∑ Y⊢4 tr πY(q) eWY(q,λ), where the weights eWY are given in λ-coefﬁcients by table 3. (They are all polynomials in λ of degree 3, with coefﬁcients being rational expressions in q.) Now, with given e and P, we have 4 equations (the coef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/ex-sec-031-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "ex-sec-031-01.md",
+      "narrative": null,
+      "content": "The knot 11386, known from [LM], has the Jones polynomial of the ﬁgure-8-knot. So 11386 and its mirror image show that the dependence of P on e in proposition 7.3 is essential. Question 7.2 Are there 5-braids β1,2 (at least one of which has MWF = 5), with the same exponent sum, V(ˆβ) and ∆(ˆβ), but different P(ˆβ)? The lack of such examples, after some check in the knot tables, is at least not fully explainable. Only 6-braids could be found.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/ex-sec-031-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "ex-sec-031-02.md",
+      "narrative": null,
+      "content": "The knots 16443392 and !15223693 have the same V and ∆but different P polynomial. They have MWF = 5 resp. 4, with 5- resp. 4-braid representations of exponent sum 2 resp. −1, so one obtains 6-braids of exponent sum 1 by stabilization. One can now, as before, go over to the norms in each row in table 3, or of arbitrary linear combinations of such rows. Then for q where J0 is deﬁnite we obtain again estimates on |Xi(q)|, or of |X(q,λ)| for any non-zero complex number λ. (In particular, for λ = q we obtain theorem 7.3 and for λ = 1/q corollary 7.3.) Although they still contain the Jones and Alexa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recovering the Burau trace",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-031-75-recovering-the-burau-trace.md",
+      "narrative": null,
+      "content": "Recovering the Burau trace\n53\nProof. From e, V and ∆we know\n˜Xa =\n3\n∑\ni=0\nXi(q)qa(i+(e−3)/2),\nfor a ∈{−2,−1,0,1}. (For a = −2 and a = 0 we have the trivializing substitutions, a = −1 corresponds to ∆and\na = 1 to V.) So one can recover Xi from ˜Xa and e. (One can write down an explicit formula easily.)\n✷\nThis condition is thus equally unhelpful as a 4-braid test. For a similar reason, I expect (though I have not rigorously\nderived) an explanation of the (experimentally observed) failure of Jones’s conditions [J, §8] (see formula (8.10)) to\nobstruct to a 4-braid.\nExample 7.3 The knot 11386, know",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conditions on the eigenvalues",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-032-751-conditions-on-the-eigenvalues.md",
+      "narrative": null,
+      "content": "Using just norms clearly weakens the conditions considerably,\nand so one would like to identify the Burau eigenvalues directly.\nHowever, the relations between the $X_i$ do not allow to recover \nby simple algebraic means the individual traces from $P$. \n\nUsing Squier's unitarity, there is an analytic way to recover\nthe Burau trace of 4-braids (at least for generic $t$ and\nup to finite indeterminacy). Since by the previous remarks\nthe use of $P$ is not essential, we will describe the\nprocedure given $\\Dl$, $V$ and $e$. This gives the most\nsignificant practical enhancement to the above 4-braid te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications and examples",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-033-752-applications-and-examples.md",
+      "narrative": null,
+      "content": "The image of the r.h.s. of \\eqref{qw0} under \\eqref{qw}\nwill be some curve in $\\bC$ that generically intersects\n$S^1$ in a finite number of points. This parametric\nequality can be examined numerically and allows to recover\n$A=\\tr \\psi_3$ up to finite indeterminacy. In particular,\nwe have\n\n\\begin{prop}\\label{4brt}\nAssume for some $t\\in S^1$ with $|\\arg t|\\le \\pi/2$ we\ncannot find $y$ as in \\eqref{qw0}, such that $\\lm_1$\ngiven by \\eqref{qw} has norm 1 and \\eqref{qw2} holds. Then\nthere is no $\\bt\\in B_4$ with the given $e$ whose closure has\nthe given Alexander and Jones polynomial. \\qed\n\\end{prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mahler measures",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-034-76-mahler-measures.md",
+      "narrative": null,
+      "content": "Mahler measures",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3-braids",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-035-761-3-braids.md",
+      "narrative": null,
+      "content": "The material in section \\reference{SBurau} originated from\na question of S.~Kamada whether the Alexander polynomial\nMahler measure $M(\\Dl)$ is bounded on closed 3-braids. \n\n\\begin{defi}\nFor a Laurent polynomial $p\\in\\bZ[t^{\\pm 1}]$, and $n\\in\\bN_+$,\nwe define the $n$-norm of $p$ by\n\\[\n||p||_n\\,:=\\,\\sqrt[n]{\\sum_{k=-\\infty}^{\\infty}\\bigl([p]_k\\bigr)^n}\\,,\n\\]\nand its Mahler measure by\n\\[\nM(p)\\,:=\\,\\prod_{|t|\\ge 1,\\,p(t)=0}\\,|t|\\,.\n\\]\nThis is extended to $p\\in\\bZ[t^{\\pm 1/2}]$ in the obvious way.\nSee \\cite{SSW,CK}.\n\\end{defi}\n\nKamada's question is related to controlling $|V(t)|$ and $|\\Dl(t)|$\nfo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skein polynomial and generalized twisting",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-036-762-skein-polynomial-and-generalized-twisting.md",
+      "narrative": null,
+      "content": "By using the representation theory, one can extend the scope of\nthe results in \\cite{SSW,CK} on bounded Mahler measure\nto (parallel) multi-strand twisting.\nWe give a version for the skein polynomial, since its special case,\nthe Jones polynomial, was discussed in \\cite{CK}. One can obtain\nthis special case by setting $\\lm=q$ in the below theorem. (The\nreversal of component orientation is not a serious problem for\n$V$, unlike for $P$.) We write as before $P_L(v,z)$ for the skein\npolynomial and use the skein rule $v^{-1}P_+-vP_-=zP_0$.\n\nA \\em{template} $T$ consists, as in \\cite{SunThis}, of a num",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots with unsharp MWF inequality",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "../sections/sec-037-77-knots-with-unsharp-mwf-inequality.md",
+      "narrative": null,
+      "content": "This brief part was motivated by the paper of Kawamuro\n\\cite{Kawamuro}, which I came across during the continuous work\non my paper. Kawamuro was interested in finding infinitely many\nknots for which the MWF inequality is strict, in particular such\nsatisfying Jones' conjecture in \\S\\ref{SJS}. The point to make\nis that we have at least two ways allowing us to obtain her, and\nfurther such knots much more easily. (In particular it is not\nnecessary to appeal to the heavy geometric machinery of\nNeumann-Rudolph-Giroux.)\n\nWe already saw an infinite family of examples with unsharp MWF\n(and satisfying J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Postliminaries",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../sections/sec-038-8-postliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+      "pageStart": 61,
+      "pageEnd": 63,
+      "target": "../sections/sec-039-81-fibered-dean-knots-hirasawa-murasugi.md",
+      "narrative": null,
+      "content": "Here we present some material due to Hirasawa and Murasugi,\nwho studied fibering of generalized Dean knots. An overview is given\nin \\cite{Hirasawa}. As this is work in progress, a longer exposition\nmay appear subsequently elsewhere.\n\n\\begin{defi}\nThe Dean knot $K(p,q|r,rs)$ is given by the closed $p$-braid\n\\[\n(\\sg_{p-1}\\sg_{p-2}\\cdots \\sg_1)^{q}(\\sg_1\\sg_2\\cdots \\sg_{r-1})^{rs}\\,,\n\\]\nwith $p>r>1$ and $q,s$ non-zero integers such that $(q,p)=1$.\n\\end{defi}\n\nHirasawa and Murasugi proposed a conjecture on these knots\nand obtained so far the following partial results.\n \n\\begin{conjecture}(Hirasawa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p062-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+      "pageStart": 63,
+      "pageEnd": 68,
+      "target": "../sections/sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata.md",
+      "narrative": null,
+      "content": "63\nIn ﬁgure 8, we perform the move (a) →(b), sliding B along N. The last surface F′, in ﬁgure 8 (b), is Murasugi sum of\na ﬁbre surface spanning the (2,2,−2)-pretzel link and ˜F, where ˜F consists of k −1 copies of F′\n0 and the band N. By\ninduction on k, we see that F′ is a ﬁbre surface, and hence ˆβ is a ﬁbred link.\n✷\nA.2.\nA-decomposition (joint with Hirasawa-Ishiwata)\nFor the proof of theorem 1.2 we introduce the A-decomposition due to T. Kobayashi [Ko].\nA sutured manifold in the sense of Gabai [Ga3] can be understood as a pair (L,H) consisting of a closed 3-dimensional\nsubmanifold H of R3 wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/thm-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 63,
+      "pageEnd": 68,
+      "target": "thm-sec-040-01.md",
+      "narrative": null,
+      "content": "1 (T. Kobayashi [Ko], O. Kakimizu [Kk]) 1) A ﬁber surface is a unique incompressible surface. 2) The property a surface to be a unique incompressible surface is invariant under Hopf (de)plumbing. 3) If C(F) is A-decomposable, then F is a unique incompressible surface for L = ∂F. Now we complete the proof of theorem 1.2. Proof of theorem 1.2. Let L be a 3-braid link. If L is split, the splitting sphere also splits any incompressible surface for L. Since L is a split union of a 2-braid link and an unknot (incl. 2 and 3-component unlinks), the claim is easy. Excluding split links, corollary 4.2 s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606435v2/blocks/figure-img-p065-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

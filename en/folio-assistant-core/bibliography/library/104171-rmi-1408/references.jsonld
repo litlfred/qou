@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/104171-rmi-1408",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "From octonions to composition superalgebras via tensor categories",
+      "dcterms:creator": [
+        "Published by EMS Press",
+        "license, licensed under a CC BY 4.0"
+      ],
+      "dcterms:issued": "D:20240206",
+      "bibo:doi": "10.4171/RMI/1408",
+      "dcterms:identifier": "https://doi.org/10.4171/RMI/1408",
+      "dcterms:abstract": "The nontrivial unital composition superalgebras, of dimension 3 and 6, which exist only in characteristic 3, are obtained from the split Cayley algebra and its order 3 automorphisms, by means of the process of semisimplification of the sym- metric tensor category of representations of the cyclic group of order 3. Connections with the extended Freudenthal magic square in characteristic 3, that contains some exceptional Lie superalgebras specific of this characteristic are discussed too. In the process, precise recipes to go from (nonassociative) algebras in this tensor category to the corresponding superalgebras are given.",
+      "dcterms:source": "library/104171-rmi-1408/manifest.jsonld",
+      "dcterms:hasVersion": "library/104171-rmi-1408"
+    }
+  ]
+}

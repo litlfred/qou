@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/canonical-watcher.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/canonical-watcher",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "canonical-watcher",
+      "title": "/canonical-watcher",
+      "description": "Canonical-derivation-discipline integration watcher — watches origin/main + open active PRs + newly-opened PRs for non-canonical empirical/fitting/calibration inputs beyond the three categorically allowed (CAL-1 m_e, CAL-2 m_μ→q_0, CAL-3 m_π; Q_β is derived), numerology, or justification/rationalization in place of derivation. Inherits shared mechanics (Monitor, subscriptions, queue, ledger, idle sweep, author-ask, watch-prepared-PRs, witness-drift recovery, billing-quick-fail flake, post-completion one-voice, sibling-PR comment protocol, backlog-found PR spin-up, handover docs) from `local/integration-watcher`.",
+      "instructionsPath": "skills/local/canonical-watcher.md",
+      "instructionLines": 338,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

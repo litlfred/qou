@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2512.17832v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-from-lead-to-helium-discovery-potential-for-jet.md",
+      "narrative": null,
+      "content": "Jet Quenching in the Smallest Collision Systems\nColeridge Faraday,1, ∗Ben Bert,1, † Jack Brand,1, ‡ Werner Vogelsang,2, § and W. A. Horowitz1, 3, ¶\n1Department of Physics, University of Cape Town, Private Bag X3, Rondebosch 7701, South Africa\n2Institute for Theoretical Physics, University of T¨ubingen, Auf der Morgenstelle 14, D-72076 T¨ubingen, Germany\n3Department of Physics, New Mexico State University, Las Cruces, New Mexico, 88003, USA\n(Dated: December 22, 2025)\nWe present perturbative quantum chromodynamics (pQCD) predictions for the modification to\nthe yield of high-momentum particles in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "Remarkable measurements from the\ncollisions of large nuclei, Au + Au at the Relativistic\nHeavy Ion Collider (RHIC) and Pb + Pb at the Large\nHadron Collider (LHC), show that O(104) particles yield\nsigns of collective behavior in the form of, e.g., near-\nperfect fluidity [1–3], strangeness enhancement [4, 5],\nquarkonium suppression [6–8], and, in particular, the en-\nergy loss of high-momentum particles [9–11], indicating\nthe production of a novel state of matter, the quark-gluon\nplasma (QGP). Shocking results from high-multiplicity\np+Pb collisions at LHC [12–21] and p/d/3He+Au colli-\nsions at RH",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nuclear modification factor",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-nuclear-modification-factor.md",
+      "narrative": null,
+      "content": "The standard candle\nof final-state partonic energy loss in high-energy hadronic\ncollisions is the nuclear modification factor,\nRh\nAB(pT ) =\n1\nNcoll\ndN h\nAB/dpT\ndN h\npp/dpT\n,\n(1)\nwhere dN h\nAB/dpT and dN h\npp/dpT are the pT -differential\nnumbers of hadrons h produced in A + B and p + p col-\nlisions, respectively, and Ncoll is the number of binary\ncollisions, typically computed by experiments using the\nGlauber model [50, 51]. In heavy-ion collisions, the path-\nlength dependence of energy loss is commonly studied by\nselecting events in different centrality classes, which cor-\nrelate with the impa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baseline perturbative QCD expectation",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-baseline-perturbative-qcd-expectation.md",
+      "narrative": null,
+      "content": "An\nimportant aspect of interpreting any potential measure-\nment of the RAB as partonic energy loss is a comparison\nto the baseline perturbative QCD expectation. That is,\nthe prediction for the RAB assuming that the initial-state\nspectrum of partons is modified in the nuclear collision\nonly by changes to the parton distribution functions and\nnot, e.g., by final-state energy loss. Collinear factoriza-\ntion is a framework in QCD that is typically assumed for\nall high momentum transfer processes and is proven for\na subset of these processes [52]. Within collinear factor-\nization, the cross section",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partonic energy loss predictions",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-partonic-energy-loss-predictions.md",
+      "narrative": null,
+      "content": "There is a large\nliterature of partonic energy loss calculations in various\nframeworks that make different assumptions [59–65] as\nwell as many phenomenological implementations of these\nenergy loss calculations that have been applied to small\nsystems [31, 33, 34, 66–70]. We use our pQCD-based en-\nergy loss model that is described in detail in our previous\nwork [44], briefly recapping the main features here.\nPartons propagate through a fluctuating collision ge-\nometry [71] that is generated with IP-Glasma initial con-\nditions [72, 73] and evolved according to longitudinal\nBjorken expansion [74].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-results.md",
+      "narrative": null,
+      "content": "Figure 2 plots Rπ0\nAA from nPDFs only\nand from our energy loss model as a function of pT for\n3He+3He, 4He+4He, and 6Li+6Li collisions, respectively.\nComparing these figures, we see that the nPDF-only pre-\ndiction for 4He + 4He has both the central value lower\nand the uncertainty band larger than that of 3He + 3He\nand 6Li + 6Li. This reflects the specialized parameteri-\nzation for 3He and 6Li in EPPS21 [45], which was nec-\nessary to describe DIS data and is physically motivated\nby the tighter nuclear binding of 4He compared to that\nof 3He and 6Li [88]. In minimum-bias collisions, where\nselectio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-conclusions.md",
+      "narrative": null,
+      "content": "We have shown that our pQCD-based\nenergy loss model leads to an approximate linear depen-\ndence of the nuclear modification factor on the cube root\nof the geometric average of the atomic mass numbers in-\nvolved in the collision, i.e. RAB ∝(\n√\nAB)1/3. We see\ngood experimental agreement with this trend from the\nmeasured RAA for symmetric Pb+Pb, Xe+Xe, Ne+Ne,\nand O + O; however, we see a striking disagreement with\nthe measured RAB ≃1 in minimum bias asymmetric\np/d/3He + A collisions compared to our theoretical pre-\ndictions of RAB ≃0.7–0.8. We argued that this disagree-\nment shows that there is s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-acknowledgments.md",
+      "narrative": null,
+      "content": "The authors thank the orga-\nnizers and participants of the Light Ion Collisions at the\nLHC 2025 workshop, which was formative in generating\nthe ideas in this manuscript. Conversations with Petja\nPaakkinen, Hannu Paukkunen, John Jowett, Maciej Slu-\npecki, and Florian Jonas were particularly insightful. We\nthank Cristian Baldenegro for providing us with prelim-\ninary CMS data.\nCF and WAH thank CERN-TH for\nhospitality during the course of this work. Computations\nwere performed using facilities provided by the Univer-\nsity of Cape Town’s ICTS High Performance Computing\nteam: hpc.uct.ac.za. CF, BB,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.17832v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Author Contributions",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-author-contributions.md",
+      "narrative": null,
+      "content": "WAH and CF jointly\nconceptualized the study.\nCF performed the energy-\nloss and hydrodynamic calculations and wrote all drafts.\nBB and JB performed exploratory PYTHIA simulations\nand cross-checked the nPDF uncertainty implementa-\ntion. WV performed the NLO pQCD calculations with\nnPDFs and wrote most of the section on nPDF results.\nWAH supervised the project.\nAll authors edited the\nmanuscript and contributed to the interpretation and sci-\nentific conclusions.\n∗frdcol002@myuct.ac.za\n† brtben004@myuct.ac.za\n‡ brnjac041@myuct.ac.za\n§ werner.vogelsang@uni-tuebingen.de\n¶ wa.horowitz@uct.ac.za\n[1] K.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

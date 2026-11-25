@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-confinement-tower-chamber-gs",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:confinement-tower-chamber-gs",
+  "kind": "algorithm",
+  "title": "Five-Layer Confinement-Tower Promotion and Physical Cluster-Chamber Reduction ($\\mathcal{L}_0\\to\\mathcal{L}_4$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-chamber-groebner-basis",
+    "papers/quantum-observable-universe/blocks/def-iterated-confinement-layer",
+    "papers/quantum-observable-universe/blocks/rem-confinement-layer-operator-selection"
+  ],
+  "cites": [
+    "references/buchberger2006",
+    "references/graver1975",
+    "references/conti-traverso1991",
+    "references/sturmfels-thomas1997",
+    "references/dantzig-wolfe1960",
+    "references/mulliken1934",
+    "references/parr-pearson1983"
+  ],
+  "tags": [
+    "mba",
+    "confinement-tower",
+    "nuclear-chamber",
+    "toric-groebner",
+    "stoichiometry"
+  ],
+  "leanRef": "qou:ToricConicOpt.ConfinementLayerTower.reduced_cost_decomposition",
+  "text": "confinement-tower-chamber-gs.md",
+  "provenance": "authored"
+}

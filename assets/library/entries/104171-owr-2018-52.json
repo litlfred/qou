@@ -1,0 +1,1066 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "104171-owr-2018-52",
+  "blocks": [
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Mathematisches Forschungsinstitut Oberwolfach\nReport No. 52/2018\nDOI: 10.4171/OWR/2018/52\nEnveloping Algebras and Geometric Representation Theory\nOrganised by\nIain Gordon, Edinburgh\nBernard Leclerc, Caen\nWolfgang Soergel, Freiburg\n25 November – 1 December 2018\nAbstract. The workshop brought together experts investigating algebraic\nLie theory from the geometric and categorical viewpoints.\nMathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.\nIntroduction by the Organisers\nThis workshop continues a series of conferences on enveloping algebras, as the ﬁrst\npart of the title suggests, but",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Enveloping Algebras and Geometric Representation Theory",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-enveloping-algebras-and-geometric-representation.md",
+      "narrative": null,
+      "content": "3083\nWorkshop: Enveloping Algebras and Geometric Representation\nTheory\nTable of Contents\nPramod N. Achar\nThe nearby cycles formalism for parity sheaves . . . . . . . . . . . . . . . . . . . . . . 3085\nPeng Shan (joint with Eric Vasserot)\nCenter of G1T -modules and cohomology of aﬃne Springer ﬁbres . . . . . . . 3087\nIvan Losev\nHarish-Chandra bimodules over quantized symplectic singularities . . . . . . 3088\nVictor Ginzburg (joint with David Kazhdan)\nDiﬀerential operators on G/U and the Gelfand-Graev action . . . . . . . . . . 3090\nGeordie Williamson (joint with Simon Riche)\nA tale of two modul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The nearby cycles formalism for parity sheaves",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-the-nearby-cycles-formalism-for-parity-sheaves.md",
+      "narrative": null,
+      "content": "Pramod N. Achar\nThis talk is based on the results of [1, 6]. Let X be a complex algebraic variety,\nand let f : X →C be an algebraic map. Consider the diagram\nX0\nX\nXη\n{0}\nC\nC×\ni\nf0\nf\nj\nfη\nLet Db\nc (X, C) be the derived category of constructible complexes of sheaves of\nC-vector spaces on X. The classical (unipotent) nearby cycles functor is a functor\nΨf : Db\nc (Xη, C) →Db\nc (X0, C)\nFollowing [7, 12], this functor can be deﬁned as\nΨf(F) = i∗j∗(f ∗\nη L∞⊗L F),\nwhere L∞is the (inﬁnite-rank) pro-unipotent local system on C×. This functor\nenjoys the following properties:\n(1) The object Ψf(F) is equipp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[1]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "For any F ∈Dmix Gm (Xη, k), the object i∗j∗J (F) is constructible. The main content of [1] is a deﬁnition, rather than a theorem. Thanks to the result above, it makes sense to deﬁne a functor Ψf : Dmix Gm (Xη, k) →Dmix(X0, k) by Ψf(F) = Mon−1(i∗j∗J (F)(1)). (The (1) is a Tate twist that is included as a normalization.) It comes with a canonical nilpotent endomorphism N : Ψf(F) →Ψf(F)(−1). This map plays the same conceptual role as the “logarithm of the monodromy” in the classical setting, but here, it is not the logarithm of anything. (When k has positive characteristic, it does not make sense",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Center of G1T -modules and cohomology of aﬃne Springer ﬁbres",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-center-of-g1t--modules-and-cohomology-of-aﬃne-sp.md",
+      "narrative": null,
+      "content": "Peng Shan\n(joint work with Eric Vasserot)\nIn geometric representation theory, it occurs often that the center of a category\nof representations can be realised as cohomology of certain algebraic varieties. An\nimportant example, due to Soergel, is an isomorphism between the center of the\nprincipal block of the BGG category O for a complex semi-simple Lie algebra and\nthe cohomology of its ﬂag variety.\nMoreover, in the case of sln, the center of\nparabolic category O is isomorphic to the cohomology of certain Springer ﬁbres,\n3088\nOberwolfach Report 52/2018\nby results of Brundan, Stroppel. In this t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harish-Chandra bimodules over quantized symplectic singularities",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-harish-chandra-bimodules-over-quantized-symplect.md",
+      "narrative": null,
+      "content": "Ivan Losev\nThis talk is based on [L2].\nLet A be a ﬁnitely generated positively graded Poisson algebra over C with\nbracket of degree −d for some d ∈Z>0. We will assume throughout that X :=\nSpec(A) has symplectic singularities. Examples include the algebras A = C[N] of\nregular functions on the nilpotent cone N in a semisimple Lie algebra g and the\nEnveloping Algebras and Geometric Representation Theory\n3089\nalgebras C[V ]Γ, where V is a ﬁnite dimensional symplectic vector space and Γ is\na ﬁnite subgroup of Sp(V ).\nLet A be a ﬁltered quantization of A. In the case when A = C[N] we can take\nA to b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Suppose that none of the subgroups Γi ⊂SL2(C) is of type E8. Then the image of HC(A) in Rep(Γ) coincides with Rep(Γ/ΓA). References [EG] P. Etingof and V. Ginzburg. Symplectic reﬂection algebras, Calogero-Moser space, and deformed Harish-Chandra homomorphism, Invent. Math. 147 (2002), 243-348. [L1] I. Losev. Deformations of symplectic singularities and Orbit method for semisimple Lie algebras. arXiv:1605.00592. [L2] I. Losev, Harish-Chandra bimodules over quantized symplectic singularities. arXiv:1810.07625. [N] Y. Namikawa, Fundamental groups of symplectic singularities. Higher dimensional al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-004-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "ex-sec-004-01.md",
+      "narrative": null,
+      "content": "(i) Let k be a Lie algebra and ı : k →A a Lie algebra map into an associative algebra A, i.e., a linear map such that ı([x, y]) = ı(x)ı(y) − ı(y)ı(x), ∀x, y ∈k. We let I = Ak be a left ideal of A generated by the image of ı. In this case, we have N(I)/I = (A/Ak)k, the centralizer of ı(k) in A/Ak. Similarly, one can consider a right ideal, kA, generated by the image of ı and the corresponding algebra (A/kA)k. (ii) Let A1, A2, Z, be a triple of associative rings and ιi : Z →Ai, i = 1, 2, a pair of ring homomorphisms. Let I be a right ideal of Aop 1 ⊗A2 generated by the elements ι1(z) ⊗1 −1 ⊗ι2(z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diﬀerential operators on G/U and the Gelfand-Graev action",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-diﬀerential-operators-on-gu-and-the-gelfand-grae.md",
+      "narrative": null,
+      "content": "Victor Ginzburg\n(joint work with David Kazhdan)\nLet G be a complex connected semisimple group and U a maximal unipotent\nsubgroup of G. The ring D(G/U) of algebraic diﬀerential operators on G/U has a\nrich structure. In an unpublished paper written in the 1960’s, I. Gelfand and M.\nGraev have constructed an action of the Weyl group W on D(G/U) by algebra\nautomorphisms. This action is somewhat mysterious due to the fact that it does\nnot come from a W-action on the variety G/U itself. In rank 1, the action of the\nnontrivial element of W = Z/2Z is, essentially, the Fourier transform of polynomial\ndi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "There is a natural algebra isomorphism D(G/U) ∼= \u0000D(T ) N Zg Dψ(G/ ¯U) \u0001Zg, such that the map iT, resp. i, corresponds via the isomorphism to the map u 7→ iT (u) ⊗1, resp. u 7→1 ⊗iψ(u). The Weyl group acts on the RHS of the isomorphism via its natural action on D(T ), the ﬁrst tensor factor. Thanks to the theorem, one can transport the W-action on the RHS to the LHS. We obtain a W-action on D(G/U) by algebra automorphisms. One can check, although we will not do that in the present paper, that the W-action thus obtained is the same as the Gelfand-Graev action (it is suﬃcient to check this for s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/conj-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "conj-sec-005-01.md",
+      "narrative": null,
+      "content": "Assume ℓ| q + 1. Then Dn(1, 1) is the square part of decomposition matrix of the unipotent blocks of GUn(q), up to multiplication by the diagonal matrix (−1)A(λ) on both sides. In other words [∆(λ) : L(µ)] = (−1)A(λ)+A(µ)Dn(1, 1)λ,µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-005-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "ex-sec-005-02.md",
+      "narrative": null,
+      "content": "For n = 3 we have M3(u, v) =   u3 · · (1 −uv)(u + u2) uv · (1 −uv)(1 −uv(u + v)) (1 −uv)(v + v2) v3   and D3(u, v) =   · · u−1 −v · v2 −u−1v2 −u−1v −v −v2     √ u3 · · · √uv · · · √ v3   which gives D3(1, 1) =   · · · · −1 −2  =   −1 · · · −1 · · ·     · · · ·     −1 · · · −1 · · ·  · We recover the decomposition matrix of GU3(q) for ℓ| q + 1 computed in [4]. References [1] F. Bergeron, Algebraic combinatorics and coinvariant spaces, CMS Treatises in Mathemat- ics. Canadian Mathematical Society, Ottawa, ON; A K Peters, Ltd., Wellesley, MA, 2009. [2] M. Haiman, Combi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Macdonald polynomials and decomposition numbers for ﬁnite unitary groups",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-macdonald-polynomials-and-decomposition-numbers.md",
+      "narrative": null,
+      "content": "groups\nOlivier Dudas\n(joint work with Rapha¨el Rouquier)\nWe are interested in computing the decomposition numbers of ﬁnite groups, and\nmore speciﬁcally of ﬁnite reductive groups (such as GLn(q), SOn(q),. . . , E8(q)).\nThese numbers are numerical invariants of the category of representations, encod-\ning the behaviour of irreducible representations when going from characteristic\nzero coeﬃcients to positive characteristic ℓ> 0.\nThere is a somewhat similar situation for highest weight categories: computing\nthe multiplicities of the simple objects (here, the irreducible representations in\ncharacter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/conj-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "conj-sec-006-08.md",
+      "narrative": null,
+      "content": "sock Km|n = Kk m|n. References [1] J. Brundan, Kazhdan-Lusztig polynomials and character formulae for the Lie superalgebra gl(m|n), J. Amer. Math. Soc. 16 (2003), no. 1, 185–231. [2] K. Coulembier, V. Serganova, Homological invariants in category O for the general linear superalgebra, Trans. Amer. Math. Soc. 369 (2017), no. 11, 7961–7997. [3] E. Dan-Cohen, I. Penkov, V. Serganova, A Koszul category of representations of ﬁnitary Lie algebras, Advances in Mathematics 289 (2016), 250–278. [4] M. Duﬂo, V. Serganova, On associated variety for Lie superalgebras, arXiv:Math/0507198. [5] C. Hoyt, I. P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations of sl(∞) arising from categorical action",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-representations-of-sl-arising-from-categorical-a.md",
+      "narrative": null,
+      "content": "Vera Serganova\n(joint work with Crystal Hoyt, Ivan Penkov)\nLet g = sl(∞) denote the Lie algebra of traceless matrices {(aij) | i, j ∈Z} with\nﬁnitely many non-zero entries. One can consider g as a Kac–Moody Lie algebra\nwith inﬁnite Dynkin diagram\n· · · −◦−◦−◦−. . .\nWe denote ea, fa, a ∈Z the Chevalley–Serre generators of g. By V and V∗we\ndenote the standard and costandard representation of g and by Tg the abelian\nmonoidal category of g-modules generated by V and V∗. This category was studied\nin [3] and [7]. For a partition λ of n and a g-module M denote by Sλ(M) the Schur\nfunctor of M which is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/rem-sec-006-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "rem-sec-006-07.md",
+      "narrative": null,
+      "content": "Although DSx is not exact, for an exact sequence 0 →N →M → L →0 we have a canonical exact sequence 0 →R →DSxN →DSxM →DSxL →R ⊗C0|1 →0. Oberwolfach Report 52/2018 This ensures the existence of the corresponding map dsx for the reduced Grothendieck groups. Let k ≤min(m, n), and Ok m|n be the subcategory of Om|n consisting of all modules M such that DSxM = 0 for all x ∈Xk. This category is not abelian but Karoubian and monoidal. Let Kk m|n be the subgroup in Km|n generated by the classes of all objects in Ok m|n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "[3] The category Tg has enough injective objects. Every indecom- posable injective object is isomorphic to Sλ(V )⊗Sµ(V∗) for some partitions λ and µ. The irreducible socle Vλ,µ of Sλ(V ) ⊗Sµ(V∗) coincides with the kernel of all contraction maps Sλ(V ) ⊗Sµ(V∗)֒ →V ⊗|λ| ⊗V ⊗|µ| ∗ →V ⊗|λ|−1 ⊗V ⊗|µ|−1 ∗ . Deﬁne a new category C as the full subcategory of g-modules consisting of objects M satisfying the following conditions: (1) M has ﬁnite length and all simple subquotients of M are simple objects of Tg. (2) For every m ∈M, eam̸ = 0 and fam̸ = 0 for ﬁnitely many a ∈Z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "[5] The category C has enough injective objects. The socle ﬁltration of the indecomposable injective hull Iλ,µ of Vλ,µ has the following layers: [sock+1 Iλ,µ/ sock Iλ,µ : Vλ′,µ′] = X |γ|+|δ|=k N λ λ′,γ,δN µ µ′,γ,δ, where N ν ν,γ,δ denote the Littlewood–Richardson coeﬃcients. The socle ﬁltrations for Sλ(V ) ⊗Sµ(V∗) was described in [6]. It is proven in [3] that Tg is Koszul and we believe that the same is true for C. Now let Om|n denote the category O for the Lie superalgebra gl(m|n) with integral weights. In [1] J. Brundan deﬁned a categorical action of g on Om|n using translation functors. Mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "[1] Let Km|n be the complexiﬁed reduced Grothendieck group of Om|n. Then Ei, Fi induce linear operators ei, fi : Km|n →Km|n. Furthermore ei, fi, i ∈ Z satisfy Serre’s relation for the inﬁnite-dimensional Lie algebra sl(∞) with the Dynkin diagram A∞. Thus, Km|n is an integrable sl(∞)-module, sl(∞)-weight spaces correspond to the blocks in Om|n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "[5],[2] (1) Km|n is an injective object of C. (2) The submodule V ⊗m ⊗V ⊗n ∗֒ →Km|n is isomorphic to the subgroup gen- erated by the classes of all Verma modules. (3) The socle of Km|n is isomorphic to the subgroup generated by the classes of all projective objects in Om|n. Let Fm|n be the category of ﬁnite-dimensional gl(m|n)-modules semisimple over the Cartan subalgebra h and Jm|n denote its complexiﬁed reduced Grothendieck group. For M ∈Om|n denote by ΓM the subset of all gl(m|n)0-ﬁnite vectors. Then Γ deﬁnes a left exact functor Om|n →Fm|n. Its derived functor Γi is called the Zuckerman fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": "[5] (1) Jm,n is the injective hull of V1m,1n. (2) The map [M] →P(−1)i[ΓiM] deﬁnes an sl(∞)-equivariant map γ : Km|n →Jm|n. (3) The restriction of γ to V ⊗m ⊗V ⊗n ∗֒ →Km|n coinsides with the natural projector to ΛmV ⊗ΛnV∗. In order to understand the categorical meaning of the socle ﬁltration of Km|n recall the deﬁnition of DS functor, [4]. Let X := {x ∈gl(m|n)1 | [x, x] = 0}, Xk := {x ∈X | rk(x) = k}, k ≤min(m, n). For a gl(m|n)-module M deﬁne DSxM := ker xM/ im xM.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-006-06.md",
+      "narrative": null,
+      "content": "[5] Let x ∈Xk. (1) DSx : Om|n →Om−k|n−k is a symmetric monoidal functor which com- mutes with translation functors Ei, Fi. (2) Passage to the Grothendieck groups induces a homomorphism of sl(∞)- modules dsx : Km|n →Km−k|n−k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semiinﬁnite highest weight and ǫ-stratiﬁed categories",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-semiinﬁnite-highest-weight-and-ǫ-stratiﬁed-categ.md",
+      "narrative": null,
+      "content": "Catharina Stroppel\n(joint work with Jon Brundan)\nHighest weight categories naturally appear in representation theory and were stud-\nied in quite some detail in an impressive bulk of works by many people including\nin particular Cline, Parshall and Scott, Donkin and Ringel. Slightly more general\nnotions of (properly) stratiﬁed categories were pioneered via diﬀerent approaches\nin particular by Cline Parshall and Scott [CPS1], by Dlab or in the work of Dlab,\nAgoston and Lucasz [ADL]. A unifying approach seems however so far missing.\nRecent developments around categoriﬁcations suggest to generalize",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "In either case ǫ-tilting objects exist (that is objects possessing both an ascending ∆ǫ-ﬂag and a descending ∇ǫ-ﬂag). Isomorphism classes of indecom- posables ǫ-tilting objects are in canonical bijection with B. In the lower ﬁnite setting this follows easily from a truncation to the ﬁnite case, whereas in the upper ﬁnite setting this result is rather surprising. We introduce Ringel dual categories and Ringel duality and show the following: Oberwolfach Report 52/2018",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "Ringel duality connects lower and upper ﬁnite stratiﬁed categories: \u001a lower ﬁnite ǫ-stratiﬁed categories \u001b Ringel duality ←→ \u001a upper ﬁnite (−ǫ)-stratiﬁed categories \u001b . In particular the Ringel dual of a lower respectively an upper highest weight category is an upper respectively a lower highest weight category. In concrete terms the duality pairs certain categories of comodules with certain categories of locally ﬁnite dimensional modules over locally ﬁnite dimensional algebras. Since modules over a ﬁnite dimensional F-algebra are nothing else than comodules over its vector space dual coalgebr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-008-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "ex-sec-008-02.md",
+      "narrative": null,
+      "content": "The block Dmod(g)G Spr corresponding to the unique cuspidal datum (T, E) for a maximal torus T is known as the Springer block. The theorem in particular gives an equivalence Dmod(g)G Spr ≃Dmod(t)W = Dt#W −mod where W is the Weyl group of G (with respect to T ). In the case G = GLn (or PGLn) the Springer block is the entire category. Thus there is an equivalence Dmod(gln)GLn ≃Dmod(An)Sn ≃DAn#Sn −mod",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-008-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "ex-sec-008-03.md",
+      "narrative": null,
+      "content": "In the case G = SL2, there is a unique simple cuspidal D-module E supported on the nilpotent cone of G. It may be characterized as the intersection cohomology (IC) extension of the unique non-trivial local system on the regular nilpotent orbit.2 In this case the generalized Springer decomposition has two blocks - the Springer block and the cuspidal block: Dmod(sl2)SL2 ≃Dmod(A1)Z/2Z ⊕⟨E⟩ The cuspidal block ⟨E⟩is a semisimple category with a single simple object E, thus it is equivalent to the category of vector spaces. 1A cuspidal datum consists of a pair (L, E) of a Levi subgroup of G and a si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-008-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "ex-sec-008-05.md",
+      "narrative": null,
+      "content": "If G = SL2 and Vn = Symn(C2) the irreducible representation of dimension n + 1, P(Vn) is cuspidal exactly when n is odd. In that case P(Vn) ≃ E⊕mn for some non-negative integers mn. By the universal property of the objects P(Vn), the multiplicities mn may also be interpreted as the multiplicity of the representation Vn in the global sections of E.3 On the other hand, for even values of n P(Vn) lies in the Springer block which is equivalent to Dmod(t)W . Under this equivalence, P(Vn) corresponds to Dt (respectively Dt ⊗sgn) if n ≡0 mod 4 (respectively n ≡2 mod 4). One can see that the situation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cuspidal D-modules and generalized quantum Hamiltonian reduction",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-cuspidal-d-modules-and-generalized-quantum-hamil.md",
+      "narrative": null,
+      "content": "Sam Gunningham\nLet G be a connected complex reductive group acting on g = Lie(G) by the adjoint\naction. We consider the abelian category Dmod(g)G of strongly G-equivariant D-\nmodules on g. In [Gun18] we proved the following generalized Springer theorem\nfor Dmod(g)G.\nTheorem 1. There is an equivalence of abelian categories\nDmod(g)G ≃\n⊥\nM\n(L,E)\nDmod (z(l))WG,L ,\nwhere the (ﬁnite) sum is indexed by cuspidal data (L, E) in the sense of Lusztig\n[Lus84].1 Here, L is a Levi subgroup of G, z(l) denotes the center of l = Lie(L)\nand WG,L = NG(L)/L is the relative Weyl group.\nExample 2. The block Dmod(g)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "There is an equivalence of abelian categories Dmod(g)G ≃ ⊥ M (L,E) Dmod (z(l))WG,L , where the (ﬁnite) sum is indexed by cuspidal data (L, E) in the sense of Lusztig [Lus84].1 Here, L is a Levi subgroup of G, z(l) denotes the center of l = Lie(L) and WG,L = NG(L)/L is the relative Weyl group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "thm-sec-008-04.md",
+      "narrative": null,
+      "content": "The Hamiltonian reduction D-module P is a projective generator of the Springer block; under the generalized Springer correspondence Dmod(g)G Spr ≃Dmod(t)W it corresponds to the object Dt (with its canonical W-equivariant structure). In particular the Springer block is characterized by the property that any non-zero object has a G-invariant vector. It is natural to ask: is the a similar characterization of the other generalized Springer blocks? Let us ﬁrst describe a natural generalization of the quantum Hamiltonian re- duction D-module P. For each (ﬁnite dimensional) representation V of G, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized Lakshmibai-Seshadri galleries",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-009-generalized-lakshmibai-seshadri-galleries.md",
+      "narrative": null,
+      "content": "Jacinta Torres\nLet g be a complex, simple Lie algebra, and L(λ) a simple module over the complex\nnumbers of highest weight λ ∈X+. Consider the set\nΓ = {γ : [0, 1] −→XR : γ(1) ∈X, γ(0) = 0}\nof piecewise linear paths starting at the origin and ending at an integral weight. In\n[2], Littelmann deﬁned a ﬁnite set of paths P(γλ) ⊂Γ depending on a single path\nγλ ∈Γ with endpoint γλ(1) = λ and contained in the dominant Weyl chamber,\nfor which the character of L(λ) is a generating function in the following sense:\nch(L(λ)) =\nX\nγ∈P (γλ)\nxγ(1).\n(1)\nThe set P(γλ) is constructed by applying certain root ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "If γλ is minimal as deﬁned in [1], then the set Γ+ max(γλ) is the set of Lakshmibai-Seshadri galleries (LS galleries for short) introduced by Gaussent- Littelmann in a geometric context. If this is the case, an LS gallery γ ∈Γ+ max(γλ) has dimension ⟨λ + e(γ), ρ∨⟩. We are now ready to state our result which generalizes work of Gaussent- Littelmann and partially answers Question 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "The set Γ+ max(γλ) is stable under the action of the root operators fα. Moreover, it only contains one dominant gallery, that is γλ. References [1] S. Gaussent and P. Littelmann. LS galleries, the path model, and MV cycles. Duke Math. J., 127(1):35–88, 2005. [2] P. Littelmann. Paths and root operators in representation theory. Ann. of Math. (2), 142(3):499–525, 1995.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/figure-img-p028-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/conj-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "conj-sec-010-04.md",
+      "narrative": null,
+      "content": "(work in progress) Suppose that sdim(L(λ)) > 0. Then Hλ ∼= GL(m −n) × Hλ0 and L(λ) corresponds to the representation LΓ ⊗Vλ0 of Hλ. Here LΓ is an irreducible representation of GL(m −n) which only depends on the block Γ (the core of Γ). References [AP95] Henning Haahr Andersen and Jan Paradowski, Fusion categories arising from semisim- ple Lie algebras., Commun. Math. Phys., 169, 1995. [AK02] Yves Andr´e and Bruno Kahn, Nilpotence, radicaux et structures mono¨ıdales. Rend. Semin. Mat. Univ. Padova, 108, 2002. [Del02] Deligne, P., Cat´egories tensorielles. (Tensor categories)., Mosc. Math. J. ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimpliﬁcation of representation categories",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-semisimpliﬁcation-of-representation-categories.md",
+      "narrative": null,
+      "content": "Thorsten Heidersdorf\n(joint work with Rainer Weissauer)\n0.1. Semisimpliﬁcation. Let C denote a k-linear (k a ﬁeld) braided rigid\nmonoidal category with unit object 1 and End(1) ∼= k.\nFor such a category\none can deﬁne the trace T r(f) ∈End(1) ∼= k of an endomorphism f ∈End(X)\nfor any X ∈C and the dimension of X via dim(X) = T r(idX). The negligible\nmorphisms\nN(X, Y ) = {f : X →Y | T r(g ◦f) = 0 ∀g : Y →X}\ncan be seen as an obstruction to the semisimplicity of C. The negligible morphisms\nform a tensor ideal of C and the quotient category C/N is again a k-linear braided\nrigid monoidal category. U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "[HW18, Theorem 5.15] a) Hm|n is a pro-reductive group. b) DS restricts to a tensor functor DS : T I m|n →T I m−1|n−1 and gives rise to a functor DS : T I m|n/N →T I m−1|n−1/N. c) There is an embedding Hm−1|n−1 →Hm|n and DS can be identiﬁed with the restriction functor. Enveloping Algebras and Geometric Representation Theory We specialize now to GL(n|n) and use the notation Gn = (Hn|n)0 der and Gλ = (Hλ)0 der. We also suppose that sdim(L(λ)) > 0 since we can replace L(λ) by its parity shift. We say a representation is weakly selfdual (SD) if it is selfdual after restriction to SL(n|n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "[HW18, Theorem 6.2] Gλ = SL(Vλ) if L(λ) is not (SD). If L(λ) is (SD) and Vλ|Gλ′ is irreducible, Gλ = SO(Vλ) respectively Gλ = Sp(Vλ) according to whether L(λ) is orthogonal or symplectic selfdual. If L(λ) is (SD) and Vλ|Gλ′ decomposes into at least two irreducibe representations, then Gλ ∼= SL(W) for Vλ|Gλ′ ∼= W ⊕W ∨. We conjecture that the last case in the theorem doesn’t happen. The ambiguity in the determination of Gλ is only due to the fact that we cannot exclude special elements with 2-torsion in π0(Hn|n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "[HW18, Theorem 6.8] Let λ ∼µ if L(λ) ∼= L(µ) or L(λ) ∼= L(µ)∨after restriction to SL(n|n). Then Gn ∼= Y λ∈X+/∼ Gλ. In down to earth terms, these theorems give • the decomposition law of tensor products of indecomposable modules in T I m|n up to indecomposable summands of superdimension 0; and • a classiﬁcation (in terms of the highest weights of Hλ and Hµ) of the in- decomposable modules of non-vanishing superdimension in iterated tensor products of L(λ) and L(µ). We remark that the statement about Gn|n implies a strange disjointness prop- erty of iterated tensor products of irreducible repres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/conj-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Hernandez, 2004",
+      "pageStart": 33,
+      "pageEnd": 39,
+      "target": "conj-sec-011-01.md",
+      "narrative": null,
+      "content": "(1) [M(m)] = [L(m)] + X m′<m Pm,m′(1)[L(m′)], and the polynomials Pm,m′(t) are positive. The ﬁrst point of the conjecture above means that [L(m)]t is [L(m)] at t = 1. In the ADE-cases, a submonoidal category C′ of C is introduced in [HL2] so that Kt(C′) ≃Ut(n), the canonical bases being identiﬁed with the Lusztig dual canonical bases. The corresponding polynomials Pm,m′(t) are the actual Kazhdan- Lusztig polynomials expressing dual PBW-bases in terms of the dual canonical bases.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the pure cohomology of multiplicative quiver varieties",
+      "pageStart": 33,
+      "pageEnd": 39,
+      "target": "../sections/sec-011-on-the-pure-cohomology-of-multiplicative-quiver.md",
+      "narrative": null,
+      "content": "Kevin McGerty\n(joint work with Tom Nevins)\nThe study of moduli spaces of classes of representations of quivers has a long\nand important history: A celebrated example of the structures such study has\nrevealed is Lusztig’s geometric construction of the canonical basis. The perverse\nsheaves which occur in Lusztig’s canonical basis can be characterised microlocally\nin terms of the moduli spaces of representations of the preprojective algebra of\nDlab and Ringel, and framed versions of these moduli spaces also arose in the\nwork of Kronheimer and Nakajima on moduli spaces of instantons. Nakajima’s\nla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Hernandez-Oya, 2018",
+      "pageStart": 33,
+      "pageEnd": 39,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "There is a ring isomorphism Kt(CBn) ≃Kt(CA2n−1) preserving the canonical bases. Moreover the polynomials Pm,m′ are positive in type Bn. A crucial point in the proof is the input from cluster algebra theory. In- deed the quantum Grothendieck rings are subrings of quantum tori, respectively Yt,A2n−1, Yt,Bn, which a priori are diﬀerent. However, using cluster algebra struc- tures introduced in [HL3], these quantum tori can be mutated in the sense of the theory of quantum cluster algebras. After a distinguished sequence of mutations that we introduce, the ambient quantum tori can be identiﬁed and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Hernandez-Oya, 2018",
+      "pageStart": 33,
+      "pageEnd": 39,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "The conjecture of [H] is true in type B : a Kazhdan-Lusztig algorithm gives the dimensions and characters of simple ﬁnite- dimensional modules. References [CP] V. Chari and A. Pressley, Quantum aﬃne algebras and aﬃne Hecke algebras, Paciﬁc J. Math. 174 (1996), no. 2, 295–326. [FR] E. Frenkel and N. Reshetikhin, The q-characters of representations of quantum aﬃne algebras and deformations of W -Algebras, Contemp. Math. 248 (1999), 163–205. [H] D. Hernandez, Algebraic approach to q, t-characters, Adv. Math. 187, 1–52 (2004). [HL1] D. Hernandez and B. Leclerc Cluster algebras and quantum aﬃne alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finkelberg-Nakajima construction",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-012-finkelberg-nakajima-construction.md",
+      "narrative": null,
+      "content": "Ben Webster\n(joint work with Oded Yacobi, Alex Weekes)\nOne very challenging problem in the representation theory of the Lie algebra gln\nis the classiﬁcation of Gelfand-Tsetlin modules, that is, the ﬁnitely generated\nmodules where the Gelfand-Tsetlin subalgebra Γ generated by the centers of the\nuniversal enveloping algebras U(gl1) ⊂U(gl2) ⊂· · · ⊂U(gln) acts locally ﬁnitely.\nSee [FGR, H] for a more general discussion of this problem.\nThe heart of our approach is the use of the generalized weight functors\nWm(M) = {m ∈M | mNm = 0 ∀N ≫0}\nfor the diﬀerent maximal ideals m ∈MaxSpec(Γ). These functor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/ex-sec-013-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "ex-sec-013-03.md",
+      "narrative": null,
+      "content": "Here are a few examples in the exceptional types (we do not list all the examples obtained), where we write for f the label in the Bala-Carter classiﬁcation of its nilpotent orbit: W−12+12/5(E6, A4) ∼= L−2+2/5(A1), W−18+18/3(E7, E6) ∼= L−2+2/13(A1), W−18+18/7(E7, (A5)′′) ∼= L−4+4/7(G2), W−9+9/7(F4, B3) ∼= L−2+2/7(A1), etc. All these examples are obtained by exploiting [2] and [10] to detect the levels, and then applying Theorem 2 to prove that the isomorphisms indeed hold. It was observed by physicists that nilpotent Slodowy slices appear as the Higgs branches of Argyres-Douglas theories in fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nilpotent Slodowy slices and collapsing levels for W-algebras",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-013-nilpotent-slodowy-slices-and-collapsing-levels-f.md",
+      "narrative": null,
+      "content": "Anne Moreau\n(joint work with Tomoyuki Arakawa)\nLet G be a complex connected simple algebraic group of adjoint type, with Lie\nalgebra g. The nilpotent Slodowy slice associated with a nilpotent orbit O in g and\nan sl2-triple (e, h, f) of g is the intersection\nSO,f := O ∩Sf,\nwhere Sf ∼= f +ge is the Slodowy slice of the sl2-triple (e, h, f). Nilpotent Slodowy\nslices associated with the principal nilpotent orbit Oprin and a subregular nilpotent\nelement fsubreg for the types A, D, E have a simple singularity of the same type\nas G. More generally, the singularities of an arbitrary nilpotent Slodowy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Arakawa-Moreau",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "Assume that k and k♮are admissible levels for g and g♮, respectively, that f ∈XLk(g) and that χH0 DS,f (Lk(g))(τ) ∼χLk♮(g♮)(τ), as τ ↓0. Then H0 DS,f(Lk(g)) ∼= Wk(g, f) is simple and k is a collapsing level. In this way we discovered a large number of collapsing levels for f̸ = fmin.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Arakawa-Moreau",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "thm-sec-013-02.md",
+      "narrative": null,
+      "content": "Assume that g = sln (we have similar results for son and spn). Write n = mq + s, with m, q > 0 and s ≥0. Assume that (q, s) = 1 and that the partition associated with the nilpotent orbit Gf is (qm, 1s). Then W−n+n/q(sln, f) ∼= L−s+s/q(sls) so that k = −n + n/q is a collapsing level.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quiver varieties and crystals in symmetrizable type via modulated graphs",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-014-quiver-varieties-and-crystals-in-symmetrizable-t.md",
+      "narrative": null,
+      "content": "graphs\nPeter Tingley\n(joint work with Vinoth Nandakumar)\nKashiwara and Saito [2] gave a geometric construction of the inﬁnity crystal for\nany symmetric Kac-Moody algebra. The underlying set consists of the irreducible\ncomponents of the nilpotent representation varieties of Lusztig’s preprojective al-\ngebra from [3]. We generalize this to symmetrizable types by replacing Lusztig’s\npreprojective algebra with a more general one due to Dlab and Ringel [1]. We also\ndiscuss extensions and relationships to other recent constructions. Much of this\ncan be found in more detail in [5].\n1.1. Crystals. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Satake equivalence",
+      "pageStart": 46,
+      "pageEnd": 50,
+      "target": "../sections/sec-015-satake-equivalence.md",
+      "narrative": null,
+      "content": "Michael Finkelberg\n(joint work with Vasily Krylov)\n0.1. Let Λ = L\nn Λn be the ring of symmetric functions equipped with the base\nof Schur functions sλ. It also carries a natural coproduct. The classical Schubert\ncalculus is the based isomorphism of the bialgebra Λ with H•(Gr, Z) (doubling the\ndegrees) taking sλ to the fundamental class of the corresponding Schubert variety\nσλ. Here Gr is the inﬁnite Grassmannian Gr = lim\n→Gr(k, m) ≃BU(∞), and the\ncoproduct on H•(Gr, Z) comes from the H-space structure on the classifying space\nBU(∞).\nEnveloping Algebras and Geometric Representation Theory\n3127",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 50,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "(a) By the geometric Satake equivalence, for P ∈PervGO(GrG), the cohomology H•(GrG, P) is equipped with an action of U(g∨). For exam- ple, the action of the Cartan subalgebra U(t∨) ⊂U(g∨) comes from the grading H•(GrG, P) = L ν∈Λ Φν(P). The action of U(n∨) comes from the geometric ac- tion of the Schieder bialgebra A on the geometric Satake ﬁber functor, and the isomorphism A ∼ −→U(n∨). Finally, the action of U(n∨ −) is conjugate to the action of U(n∨) with respect to the Lefschetz bilinear form on H•(GrG, P). (b) By construction, the Schieder algebra A comes equipped with a basis (fun- dament",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supports for linear degenerations of ﬂag varieties",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "../sections/sec-016-supports-for-linear-degenerations-of-ﬂag-varieti.md",
+      "narrative": null,
+      "content": "Markus Reineke\n(joint work with Xin Fang)\n1. Supports\nSuppose given a proper algebraic map f : X →Y between irreducible complex\nalgebraic varieties, with X being smooth. Then the variation of cohomology of the\nﬁbres Xy = f −1(y) is encoded in the complex of constructible sheaves Rf∗QX, in\nparticular the cohomology of the ﬁbres of f is given by the stalks of its cohomology\nsheaves,\nH∗(Xy) = H∗\ny(Rf∗QX).\nBy the Decomposition Theorem, Rf∗QX is isomorphic to a ﬁnite direct sum of\nshifts of intersection cohomology complexes,\nRf∗QX ≃\nn\nM\ni=1\nIC(Si, Li)[di],\nwhere the Si are certain locally closed su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid indecomposable modules and real Schur roots",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "../sections/sec-017-rigid-indecomposable-modules-and-real-schur-root.md",
+      "narrative": null,
+      "content": "Christof Geiß\n(joint work with Bernard Leclerc, Jan Schr¨oer)\nLet A be a ﬁnite dimensional hereditary K-algebra.\nIts Grothendieck group\nK0(A) = ZI for I = {1, 2, . . ., n} comes with the canonical basis (αi)i∈I given\nby the classes of the simple A-modules. The homological bilinear form\n(M, N) 7→dimK HomA(M, N) −dimK Ext1\nA(M, N),\non the category of ﬁnite dimensional A-modules descends to an integral bilinear\nform on K0(A) determined by\n⟨αi, αj⟩(C,D,Ω) =\n\n\n\n\n\ncicij\nif (i, j) ∈Ω,\nci\nif i = j,\n0\nelse.\nHere, C ∈ZI×I is a symmetrizable generalized Cartan matrix, D = diag((ci)i∈I)\nis a (left) s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "Let H = HF(C, D, Ω) be as above. Then the following holds: (a) Taking classes in the Grothendieck group of modules of ﬁnite projective dimension, induces a bijection between the isoclasses of indecomposable rigid H-modules of ﬁnite projective dimension, and the real Schur roots ΦrS(C, Ω). (b) If M is a rigid indecomposable H-module of ﬁnite projective dimension, we have EndH(M) ∼= F[ǫ]/(ǫci) for some i ∈I, and M is free as an EndH(M)-module. (c) Taking classes in the Grothendieck group of all ﬁnite dimensional H- modules induces a bijection between the isoclasses of left ﬁnite H-bricks and dua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conformal blocks for Galois covers of algebraic groups",
+      "pageStart": 58,
+      "pageEnd": 66,
+      "target": "../sections/sec-018-conformal-blocks-for-galois-covers-of-algebraic.md",
+      "narrative": null,
+      "content": "Shrawan Kumar\n(joint work with Jiuzu Hong)\n1. Introduction\nWess-Zumino-Witten model is a type of two dimensional conformal ﬁeld theory,\nwhich associates to an algebraic curve with marked points and integrable highest\nweight modules of an aﬃne Kac-Moody Lie algebra associated to the points, a\nﬁnite dimensional vector space consisting of conformal blocks. The space of con-\nformal blocks has many important properties including Propogation of Vacua and\nFactorization. Deforming the pointed algebraic curves in a family, we get a sheaf of\nconformal blocks. This sheaf admits a projectively ﬂat connect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 66,
+      "target": "thm-sec-018-01.md",
+      "narrative": null,
+      "content": "Assume that Γ stabilizes a Borel subalgebra of g. Let q be a smooth point of Σ such that q is not Γ-conjugate to any point⃗q. Then, we have the Enveloping Algebras and Geometric Representation Theory following isomorphism of spaces of twisted covacua: VΣ,Γ,φ(⃗q,⃗λ) ≃VΣ,Γ,φ \u0010 (⃗q, q), (⃗λ, 0) \u0011 . In fact, a stronger version of Propogation Theorem is proved. In our equivariant setting we need to generalize some important ingredients. Further, the fact that “ The endormorphism X−θ ⊗f of H is locally nilpotent for all f ∈O(U) ” can not easily be generalized to the twisted case. To prove an analogo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 66,
+      "target": "thm-sec-018-02.md",
+      "narrative": null,
+      "content": "Assume that Γ stabilizes a Borel subalgebra of g. Then, there exists a natural isomorphism: VΣ,Γ,φ(⃗q,⃗λ) ≃ M µ∈Dc,q′′ VΣ′,Γ,φ \u0010 (⃗q, q′, q′′), (⃗λ, µ∗, µ) \u0011 , where µ∗is the dominant weight of gΓq′ such that V (µ∗) is the dual representation V (µ)∗of gΓq = gΓq′ = gΓq′′ . The formulation of the Factorization Theorem in the twisted case is a bit more delicate, since the parameter sets Dc,q′ and Dc,q′′ attached to the points q′, q′′ are diﬀerent in general; nevertheless they are related by the dual of representations under the assumption that the action of Γ at the node q is stable and the stabi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 66,
+      "target": "thm-sec-018-03.md",
+      "narrative": null,
+      "content": "Assume that the family ΣT →T is a smooth family over a smooth base T . Then, the sheaf VΣT ,Γ,φ(⃗q,⃗λ) of twisted covacua is locally free of ﬁnite rank over T . In fact, there exists a projectively ﬂat connection on VΣT ,Γ,φ(⃗q,⃗λ). This theorem relies mainly on the Sugawara construction for the twisted aﬃne Kac-Moody algebras. In the untwisted case, this construction is quite well-known. In the twisted case, the formulae are written in terms of the abstract Kac-Moody presentation of ˆL(g, σ), where σ is a ﬁnite order automorphism of g. For our application, we require the formulae in terms of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-owr-2018-52/blocks/thm-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 66,
+      "target": "thm-sec-018-04.md",
+      "narrative": null,
+      "content": "Assume that Γ stabilizes a Borel subalgebra of g. Then, the sheaf Vg,Γ,φ(η,⃗λ) is locally free over the stack H Mg,Γ,η . Our proof of this theorem follows closely the work of Looijenga in the non- equivariant setting; in particular, we use the canonical smoothing deformation of nodal curves and gluing tensor elements. The Factorization Theorem also plays a crucial role in the proof. In the case Γ is cyclic, this theorem together with the Factorization Theorem allows us to reduce the computation of the dimension of the space of twisted covacua to the case of Galois covers of projective line wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1ubn15p43ri.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1ubn15p43ri","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e23cc145c907&quot;,
+        &quot;ts&quot;: &quot;8ac62ea64409&quot;,
+        &quot;lean&quot;: &quot;bd8094e64b4f&quot;,
+        &quot;lean_statement&quot;: &quot;9f9a86ce5e41&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:35.990Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;rho-k-h3a-refinement.lean:151-200&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4850cb185675&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;,
+        &quot;lean&quot;: &quot;bd8094e64b4f&quot;,
+        &quot;lean_statement&quot;: &quot;9f9a86ce5e41&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T08:16:36.016Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b0af11457ef9bb444f5b04ca38c5e93b52e59fdd&quot;,
+      &quot;evidence&quot;: &quot;Full review 2026-11-21. Diff dropped the banner &#39;conditional on conj:hoefsmit-scattering-pipeline&#39;; the .ts uses[] agrees (pipeline not used). The md (md:3-25) now supposes the division-free balance and concludes the quotient form at |tr_M|&gt;0, collapse when all Delta_lambda=0, and vanishing correction sum at |tr_M|=0. Lean ref QOU.BraidKnot.rho_k_h3a_refinement (rho-k-h3a-refinement.lean, class RhoKH3ARefinement field consistent = the balance as hypothesis H1; theorem derives the quotient via eq_div_iff), rho_k_eq_LO_of_isLeadingOrder (collapse) and rho_k_refinement_degenerate (trace-zero case) encode all three; not_rhoKH3ARefinementNaive proves the for-every-list refutation (md:31). Not self-assuming: the field is the premise, not the conclusion. Remaining wording residue: md:29 still ends &#39;conditional on the scattering pipeline&#39;, which the banner and uses[] no longer say. No owner-ruling conflict.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 68ebfb21a05. #8889 changes the .md and the BlockBindingFraction docstring identically (Hecke word in H_{3A}(q)); lean-direct -DautoImplicit=false -s 65536 exit 0, empty output; #print axioms on the file&#39;s theorems shows no sorryAx. The md&#39;s balance, quotient form at |tr_M|&gt;0, collapse at Delta=0 and trace-zero case are encoded by RhoKH3ARefinement.consistent, rho_k_h3a_refinement, rho_k_eq_LO_of_isLeadingOrder and rho_k_refinement_degenerate; not_rhoKH3ARefinementNaive proves the for-every-list refutation.&quot;
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote prose sections of mass-theory_seq48.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.789217Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.789217Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b4646326c39f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;,
+        &quot;lean&quot;: &quot;7f9e87a2aac1&quot;
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Read at 68ebfb21a05.&quot;,
+      &quot;notes&quot;: &quot;&#39;The result is a decomposition parallel to the phenomenological six-term narrative, conditional on the scattering pipeline.&#39; The .ts records that conj:hoefsmit-scattering-pipeline was removed from uses[] because it is not used, and the six-term narrative is not linked. The sentence contradicts the manifest. Pre-existing.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:52:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8fd578fbbe218aa799bfb3d39b057e92da4d29dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;,
+        &quot;lean&quot;: &quot;7f9e87a2aac1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;,
+        &quot;lean&quot;: &quot;7f9e87a2aac1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.412Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No assert-by-denying constructions.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;,
+      &quot;notes&quot;: &quot;&#39;That is not a presentational choice:&#39; and &#39;says where the binding contribution sits rather than how accurate M(K) is&#39; are contrast framings; both can be stated positively. Pre-existing.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;&#39;If we force $\\Delta_\\lambda \\equiv 0$, the sum collapses exactly to the constituent nucleon mass. The true binding energy lives entirely within the partition-indexed $\\Delta_\\lambda$ profile.&#39; Setup counterfactual, then a reframe sentence that carries the entire physical claim.&quot;,
+      &quot;notes&quot;: &quot;PROPOSED (structural): the reframe is a DEFINED RESIDUAL restated as a discovery, the class AGENTS.md 2026-08-08 targets. Sentence 1 is true BY DEFINITION — the block itself says &#39;The leading-order piece rho_K^LO isolates the constituent mass&#39; — so &#39;the true binding energy lives entirely within Delta_lambda&#39; says only that Delta_lambda was defined as the remainder. The CITED WITNESS states this outright: computations/rho-k-h3a-refinement.witness.json describes &#39;extracts Delta_lambda(D) under the singleton-support hypothesis ... Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown)&#39; — a one-parameter fit at one isotope. The witness carries NO assertions at all, and records data/balanced_321_heuristic/Delta_lambda = inf: the block&#39;s own prior heuristic partition (3,2,1) makes the inversion diverge, consistent with (3,2,1) being the self-conjugate bar-odd block of H_6 (see rem-ohtsuki-tower-bar-parity). Replace with: &#39;Delta_lambda is DEFINED as the residual rho_K - rho_K^LO; the decomposition is therefore an identity, and the content of the proposition is whatever independent determination of Delta_lambda can be supplied.&#39;&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.503Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Zero em-dashes.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.553Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No three-item lists.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.597Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;This provides a mathematically exact decomposition parallel to the phenomenological six-term narrative&#39; asserts significance but points at a named sibling construction, so it functions as a cross-reference closer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;,
+      &quot;notes&quot;: &quot;The block ends &#39;That refutation is proved.&#39; with the Lean name relocated to authorNotes, so the reader gets a bare assertion with no pointer (not_rhoKH3ARefinementNaive). Pre-existing.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.647Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No narrated emphasis.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;,
+      &quot;notes&quot;: &quot;&#39;The collapse at Delta_lambda = 0 is stated as part of the claim rather than as commentary because it follows from the balance and is not a separate assertion.&#39; narrates the block&#39;s own presentation. Delete. Pre-existing.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.690Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;The closing sentence adds the six-term parallel; not a pure echo.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.734Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.826Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;exact&#39; / &#39;exactly&#39; / &#39;mathematically exact&#39; three times plus &#39;entirely&#39; and &#39;The TRUE binding energy&#39; in a four-sentence block, all unqualified, against a compute the witness itself calls &#39;exactly by construction (single equation, single unknown)&#39;.&quot;,
+      &quot;notes&quot;: &quot;PROPOSED: keep &#39;exact&#39; for the algebraic identity only, and qualify the physical readings. FURTHER NON-TRAP FINDINGS: (1) SS3b PROPAGATION VIOLATION — kind is proposition, uses[] contains conj:hoefsmit-scattering-pipeline, and there is NO conditional banner in the .md; demote to conjecture or add the 3b-cond banner plus the Lean class hypothesis. (2) ABSOLUTE MASS — &#39;The mass formula $M(K) = \\rho_K m_e |tr_M(B_K)|$ is exact&#39; and the witness&#39;s M(D) = 1875.61294257 MeV are absolute masses, excised as predictions 2026-08-11. (3) THIRD MASS FORM — rho_K m_e |tr_M| is neither the volume-density form m_e Vol(K) rho(K)/hbar_q^2 nor the canonical muon-anchored Hecke facade (computations/canonical_mass.py); its relation to either is unstated. (4) SYMBOL COLLISION — Delta_lambda(K) here is K-DEPENDENT, while the Delta_lambda proved sorry-free on 2026-08-02 (Delta_lambda = (-1)^{n(lambda)} dim V_lambda) is K-INDEPENDENT; two objects, one glyph. (5) &#39;Wedderburn-Schur&#39; carries a hyphen where the corpus uses an en-dash. The witness does correctly use the proton pin q_0 = 1.10997858275138080759166909561076887987449912187.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5fc8934ee63f&quot;,
+        &quot;ts&quot;: &quot;fc3185813acf&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:30:04.914Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;The residual block-binding correction Delta_lambda(K) encodes the specific interaction mass added by each Wedderburn block&#39; is noun-heavy but parses aloud.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;788502a22616&quot;,
+        &quot;ts&quot;: &quot;08aab473fce1&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:49:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b&quot;,
+      &quot;evidence&quot;: &quot;Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes &#39;braid word B_K in B_{3A}&#39; to &#39;nuclear-core Hecke word B_K in H_{3A}(q)&#39;, matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot (&#39;The true binding energy lives entirely within Delta_lambda&#39;) and the &#39;exact&#39; superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

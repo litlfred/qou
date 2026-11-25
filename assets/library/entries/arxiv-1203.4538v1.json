@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.4538v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In his monograph [@gonshor_surreal], H. Gonshor showed that Conway's real closed field of surreal numbers carries an exponential and logarithmic map. Subsequently, L. van den Dries and P. Ehrlich showed in [@ehrlich-vdd:surreal-exp] that it is a model of the elementary theory of the field of real numbers with the exponential function. In this paper, we give a complete description of the exponential equivalence classes (see Theorem [\\[theo:kappa-equivEL\\]](#theo:kappa-equivEL){reference-type=\"ref\" reference=\"theo:kappa-equivEL\"}) in the spirit of the classical Archimedean and multiplicative equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1203.4538v1  [math.AC]  20 Mar 2012\nThe exponential-logarithmic equivalence classes\nof surreal numbers.\nSalma Kuhlmann and Mickaël Matusinski\nSeptember 19, 2018",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on surreal numbers.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-preliminaries-on-surreal-numbers.md",
+      "narrative": null,
+      "content": "Preliminaries on surreal numbers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inductive definitions.",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-inductive-definitions.md",
+      "narrative": null,
+      "content": "This section is dedicated to fix the notations and recall some of the definitions and results obtained in [@conway_numb-games] and [@gonshor_surreal]. We will also use results from [@ehrlich:simpl-hierarc] and [@ehrlich-vdd:surreal-exp].\n\nWe denote by $\\textbf{On}$ the proper class of **ordinal numbers**. A **surreal number** is any map $a:\\alpha\\rightarrow \\{\\ominus,\\oplus\\}$ where $\\alpha\\in\\textbf{On}$. Any surreal may be canonically represented as a sequence of pluses and minuses called its **sign sequence**. The ordinal $\\alpha$ on which the surreal number $a$ is defined is called its **l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sign sequences.",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-sign-sequences.md",
+      "narrative": null,
+      "content": "Gonshor obtains in [@gonshor_surreal] detailed results on the sign sequences of the surreals under the various operations and maps. We will use repeatedly his results. Moreover, we introduce in this section some new operations on the sign sequences.\n\n::: defn\n-   Given two surreal numbers $a,b\\in\\textbf{No}$, we define their **concatenation** $a\\binampersand b$ as the juxtaposition of their sign sequences. We note that $l(a\\binampersand b)=l(a)+l(b)$, the *ordinal sum* of $l(a)$ and $l(b)$.\n\n-   As in [@gonshor_surreal Theorem 9.5], for any surreal number $a\\in\\textbf{No}$, we can write its si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized epsilon numbers",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-23-generalized-epsilon-numbers.md",
+      "narrative": null,
+      "content": "We recall [@gonshor_surreal Theorems 9.5 and 9.6]:\n\n::: thm\n[]{#theo:sign-seq-epsilon label=\"theo:sign-seq-epsilon\"}\n\n-   A surreal number $a=\\alpha_0\\oplus\\binampersand \\beta_0\\ominus\\binampersand \\alpha_1\\oplus\\binampersand \\beta_1\\ominus\\binampersand\\cdots$ is an epsilon number if and only if $\\alpha_0\\neq 0$, all $\\alpha_\\mu$ different from 0 are ordinary epsilon numbers satisfying $\\alpha_\\mu  > l.u.b.\\{ \\alpha_\\lambda\\ |\\ \\lambda<\\mu\\}$ and furthermore $\\beta_\\mu$ is a multiple of $\\omega^{\\alpha_\\mu \\omega}$ for $\\alpha_\\mu \\neq 0$ and a multiple of $\\omega^{\\gamma_\\mu \\omega}$ where $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The kappa map.",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-the-kappa-map.md",
+      "narrative": null,
+      "content": "[]{#sect:kappa label=\"sect:kappa\"}\n\nIn this section we define and describe a new map $\\kappa$, which takes naturally place between the Conway-Gonshor maps $\\Omega$ and $\\epsilon$ (see Remark [\\[rem:gonshor\\]](#rem:gonshor){reference-type=\"ref\" reference=\"rem:gonshor\"}). As in [@kuhl:ord-exp Remark 3.20], we introduce the notion of **exponential equivalence relation** for surreal numbers. Set $\\exp^n$ and $\\log^n$ for the $n$th iterate of the corresponding maps.\n\n::: defn\n[]{#defi:equiv-exp label=\"defi:equiv-exp\"} We set :\n\n-   the **exponential equivalence relation** to be:\n\n    ::: center",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sign sequences formulae for the kappa map.",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-4-sign-sequences-formulae-for-the-kappa-map.md",
+      "narrative": null,
+      "content": "[]{#sect:kappa-sign label=\"sect:kappa-sign\"} For any $a\\in\\textbf{No}$ and $n\\in\\mathbb{N}$, we denote by $\\kappa_{a,n}:=\\log^n(\\kappa_a)$ and $\\kappa_{a,-n}=\\exp^n(\\kappa_a)$, where $\\log^0$ and $\\exp^0$ are equal to the identity map on $\\textbf{No}$. The aim of this section is to show that $\\kappa_{a,n}$ and $\\kappa_{a,-n}$ for any $n$ are elements of $\\omega^{\\omega^{No}}$, and to give their sign sequence. In order to do so, we introduce the following auxiliary map $\\iota$ and give its sign sequence.\n\n::: nota\n[]{#nota:gamma label=\"nota:gamma\"}\n\n-   Consider a surreal number $a=\\alpha_0\\opl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/conj-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "conj-sec-007-01.md",
+      "narrative": null,
+      "content": "The ﬁeld of surreal numbers is an exp-log-transseries ﬁeld. The sur- reals κa,n for a ∈N⋊, n ∈Z}, are the log-atomic elements as well as the initial funda- mental monomials. In particular, this would allow us to use the results of [Sch01, KM11] to endow the surreal numbers with Hardy type derivations. References [Con01] J. H. Conway, On numbers and games, second ed., A. K. Peters Ltd., Natick, MA, 2001. [É92] J. Écalle, Introduction aux fonctions analysables et preuve constructive de la conjecture de Dulac, Actualités Mathématiques. [Current Mathe- matical Topics], Hermann, Paris, 1992. [Ehr01",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.4538v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transseries and exp-log series.",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-5-transseries-and-exp-log-series.md",
+      "narrative": null,
+      "content": "Transseries and exp-log series.\nFields of Transseries [É92, vdH97, vdH06] or log-exp series [vdDMM97], and ﬁelds of\nexp-log series [Kuh00, KS05] are important non standard models of the theory of Rexp,\nwhich is known to be o-minimal and model complete [Wil96]. Moreover, these ﬁelds\ncan be endowed with derivations that mimic the derivation of germs of real functions in\na Hardy ﬁeld [Sch01, vdDMM01, KM11]. We propose the following unifying notion\nfor transseries and Exp-Log series, which we believe applies to the ﬁeld of surreal\nnumbers:\nDeﬁnition 5.1 Let K = R((Γ)) be a ﬁeld of generalized seri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

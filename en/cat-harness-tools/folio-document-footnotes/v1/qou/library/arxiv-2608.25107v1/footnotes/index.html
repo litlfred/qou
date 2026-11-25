@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2608.25107v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2608.25107v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2608.25107v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2608.25107v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2608.25107v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;https://github.com/cesarjesusvalls/ADoNIS/&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;sourceneutrinoeventgenerator&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;https://github.com/AchillesGen/Achilles&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;ACHILLESisamodern,open-source&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-5&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;tionforNC1π&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;AdirectcomparisonwithiterativeBayesianunfolding[198],the&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;sectionmeasurements&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;https://github.com/cesarjesusvalls/ADoNIS&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;ofthisapproach&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-015&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;e−8&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;e−8 /&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-3&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-4&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-6&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-7&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;e−8&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-8&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;e−9&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-9&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-10&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;8&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-11&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;6&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-12&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-13&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-14&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;(NeurIPS 2022) (2022) arXiv:2210.08572 [cs.LG]. (1981). [119] T. Dorigo et al. (MODE), Rev. Phys. 10, 100085 (2023), [146] B. Kotli´nski et al. (LADS), Eur. Phys. J. A 9, 537 arXiv:2203.13818 [physics.ins-det]. (2000). [120] L. Heinrich and M. Kagan, J. Phys. Conf. Ser. 2438, [147] E. S. Pinzon Guerra, S. Bhadra, S. Berkman, C. Cao, 012137 (2023), arXiv:2203.00057 [hep-ph]. P. de Perio, Y. Hayato, K. Ieki, M. Ikeda, Y. Kanazawa, [121] K. Cranmer, M. Drnevich, S. Macaluso, and J. Kim, P. Kitching, K. Mahn, T. Nakaya, M. Nicholson, D. Pappadopulo, EPJ Web Conf. 251, 03059 (2021), K. Olchanski, S. Rettie, H. A. Tanaka, S. Tobayama, arXiv:2105.10512 [hep-ph]. M. J. Wilking, T. Yamauchi, S. Yen, and M. Yokoyama [122] B. Nachman and S. Prestel, (2022), arXiv:2208.02274 (DUET Collaboration), Phys. Rev. C 95, 045203 (2017). [hep-ph]. [148] R. Acciarri et al. (MicroBooNE, LAr1-ND, ICARUS- [123] P. Barham Alz´as and R. Radev, in Prospects in Neutri- WA104), (2015), arXiv:1503.01520 [physics.ins-det]. nos Physics (2024) arXiv:2404.00180 [hep-ex]. [149] R. Acciarri et al. (MicroBooNE), JINST 12, P02017 [124] N. Simpson and L. Heinrich, J. Phys. Conf. Ser. 2438, (2017), arXiv:1612.05824 [physics.ins-det]. 012105 (2023), arXiv:2203.05570 [physics.data-an]. [150] P. Abratenko et al. (ICARUS), Eur. Phys. J. C 83, 467 [125] S. Gasiorowski, Y. Chen, Y. Nashed, P. Granger, (2023), arXiv:2301.08634 [hep-ex]. C. Mironov, K. V. Tsang, D. Ratner, and [151] R. Acciarri et al. (SBND), (2025), arXiv:2504.00245 K. Terao, Mach. Learn. Sci. Tech. 5, 025012 (2024), [hep-ex]. arXiv:2309.04639 [physics.ins-det]. [152] P. Abratenko et al. (MicroBooNE), Phys. Rev. D 110, [126] O. Alterkait, C. Jes´us-Valls, R. Matsumoto, P. de Perio, 092014 (2024), arXiv:2404.09949 [hep-ex]. and K. Terao, (2026), arXiv:2602.24129 [hep-ex].&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-1&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;nd ed. (Springer, 2006).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-1&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-2&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-3&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-4&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-5&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-6&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-7&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-8&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;e−6&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-9&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-10&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-11&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-12&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;6&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-13&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;7&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-14&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;8&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-15&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;9&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-16&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;0 cos θπ FIG. 14. ADoNIS (solid) vs. ACHILLES (dashed). T2K CC1π+Np on hydrocarbon [140]: pN, δpT T , δαT , and the pion kinematics pπ and cos θπ.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2608.25107v1/blocks/prose-sec-017&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;neutrons—obtainedfor&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;tiontheory[129,130]andfor&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;wi(θ)=w&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;wherew&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1.8×10&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;NNis&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;throughM&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;×S(|p|/kF ,E −∆E&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withtc=9m&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;var&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;withv=MvfF&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;fixand&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;fixandc=F&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;fixMffF&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 + Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 + Q2/M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;A(Q2; 1.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;evaluatedatthemomentumtransferQ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F1γµ+iF&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;axialblockinEq.5.ItthereforedeformstheaxialQ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;struction.OnlyM&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NFA/(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NFA/(Q2 +m&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;pole dominance relation FP= 2m&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withτ=Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withτ=Q2/4m&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + b1τ+ b2τ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1 + b1τ+ b2τ2+ b3τ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tofallwiththecorrectpowerofQ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;tumtransfer.Thefourparametersµp,µn,G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;EandG&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;scale G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;M, G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;M, G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Eand G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Eindividually,and enter Eq.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whilethelattermodifiesitsQ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;mapstheanalyticdomainofFA(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tc + Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z(Q&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ak z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tc + Q&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;πN,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;πN,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;absand&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;abs−1)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;πN−1)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;πN−1)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;πN−1) fcex+ (sconv−1)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;NN,ijand&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;NN/0.&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;NN/0.5on&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;NN)/0.&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a =πb&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Figure1showstheMINERvACC0πsampleon&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;thatspreadseacheventacrossbins,m&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;iαib&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iαib w&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Figure3showsinclusive(e, e′)crosssectionson&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Jbk=∂m&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;(e, e′)crosssectiondσ/dωon&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;(e, e′)crosssectiondσ/dωon12Cand&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;CC0πon&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;CC1π + Q&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;CC0π p&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tributionsinTπandQ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;G&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;MINERvA CC1π+ Q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q2 [GeV&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;redparameters.Eachpanelisnormalisedtoitsownpeakandquotesitsχ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;binisomittedbothfromthedrawingandfromtheχ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Gaussianχ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δχ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δχ2= χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δχ2= χ2(θtrue) −χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;theχ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;θnuisχ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;θnuisχ2(θ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;prof(θ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tendedindependentlyoneithersideuntil∆χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lprof(θk) ∝e−∆χ&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;prof(θ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ΔE&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;itharrowsgivingthelocalGauss–Newtonstepdirectionoverlog10 ∆χ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆χ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆χ2= χ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆χ2= χ2(θtrue) −χ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Theensemblefollowstheχ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and95%,respectively,andthemedianχ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;allyachievedinχ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;calfluctuations,using1.25 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Jacobianratherthanonly∇χ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;GNwalltimegrowsapproximatelyasn&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;GNwalltimegrowsapproximatelyasn0.&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;supplied MIGRAD as n&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;supplied MIGRAD as n0.&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;derivativesasn&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;derivativesasn1.&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Hessian–vectorproducts,comparedwithO(n&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;momentumandangle,d&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[10−39cm&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;NN,&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;NN,pn,∆E&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;NN,pn,∆Eb,&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;abs,NSRCand&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;BooNECC1p0πon&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;CC0π-Npon&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;servablesfor(e, e′)on&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

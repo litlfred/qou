@@ -1,0 +1,332 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1312.3086v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "A possible route towards scalable quantum computers and quantum communication networks combines small quantum processor nodes which communicate via the exchange of moving information carriers, the so-called *flying qubits*, which will typically be photons. The direct exchange of a photon, either through free space or a fiber, between a pair of nodes does not have unit success probability, and to safely communicate quantum states, one can instead apply entangled state in teleportation protocols [@B93; @B96], where the entanglement of two remote nodes can be achieved, e.g. after multiple attempt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1312.3086v1  [quant-ph]  11 Dec 2013\nQuantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities\nE. Brion, F. Carlier, V. M. Akulin\nLaboratoire Aimé Cotton, CNRS / Univ.\nParis-Sud / ENS-Cachan,\nBât.\n505, Campus d’Orsay, 91405 Orsay, France.\nK. Moelmer\nLundbeck Foundation Theoretical Center for Quantum System Research,\nDepartment of Physics and Astronomy, University of Aarhus,\nNy Munkegade, Bld.\n1520, DK-8000, Aarhus C, Denmark.\n(Dated: July 3, 2018)\nWe propose and analyze a quantum repeater architecture in which Rydberg blocked atomic en-\nsembles inside optical caviti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The model",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-the-model.md",
+      "narrative": null,
+      "content": "THE MODEL\nOur quantum repeater setup consists of N atomic en-\nsembles placed in cavities which are linked by optical\nﬁbers (see Fig. 1a). Neighboring cavities are separated\nby the distance L0.\nThe atomic level structure is represented in Fig. 1b.\nAll the atoms are initially prepared in the “reservoir”\nstate |s⟩, and the atoms have, in addition, six metastable\nstates denoted by |0L⟩, |1L⟩, |0R⟩, |1R⟩, |0A⟩, |1A⟩, three\nexcited states |ϕ+⟩, |ϕ−⟩, |ϕA⟩and three high-lying Ry-\ndberg states |r+⟩, |r−⟩, |rA⟩. We assume that the tran-\nsitions given in Table I can be independently and se-\nlectively ad",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The scheme",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-the-scheme.md",
+      "narrative": null,
+      "content": "THE SCHEME\nIn this section, we describe how to entangle two remote\nnodes using the model we presented in the previous sec-\ntion. First, we brieﬂy sketch the diﬀerent steps of our\nscheme in the ideal case without losses. Then, we show\nhow to make our method immune to photon loss and\nspontaneous emission from the Rydberg level. Finally,\nwe analyze the eﬀects of other possible errors on the per-\nformance of our protocol.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The different steps of the scheme",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-31-the-different-steps-of-the-scheme.md",
+      "narrative": null,
+      "content": "Initially, all the cavities are empty and all ensemble atoms are in the reservoir state $\\left|s\\ldots s\\right\\rangle$. The first step consists in entangling pairs of neighboring subnodes $\\left(R_{k},L_{k+1}\\right)$ (see Fig. [\\[Fig1\\]](#Fig1){reference-type=\"ref\" reference=\"Fig1\"}c). To this end, one applies the sequence of operations given in Table [1](#EntanglementGeneration){reference-type=\"ref\" reference=\"EntanglementGeneration\"}. In this table, dashed-line arrows are used for non-resonant couplings to the intermediate states. Moreover, the \"ensemble\" nature of pulses is emphasized by a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Error detection and prevention",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-32-error-detection-and-prevention.md",
+      "narrative": null,
+      "content": "So far, we did not take into account errors and losses. Fiber loss and spontaneous emission from the Rydberg level may corrupt the state in quite the same way since they both represent the loss of an excitation. We now investigate the influence of such errors on the different steps of our scheme.\n\nIf a photon loss occurs during the transfer through the fiber or if a Rydberg excited atom spontaneously decays to the reservoir state during one of the steps in Table [\\[EntanglementGeneration\\]](#EntanglementGeneration){reference-type=\"ref\" reference=\"EntanglementGeneration\"}, an excitation is miss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A physical implementation",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-4-a-physical-implementation.md",
+      "narrative": null,
+      "content": "::: figure*\n::: centering\n![image](Fig2){width=\"14cm\"}\n:::\n:::\n\nIn this section, we suggest a physical implementation of our scheme with ensembles of Cs atoms, placed in linear cavities. Fig. [\\[Fig2\\]](#Fig2){reference-type=\"ref\" reference=\"Fig2\"} presents a possible choice for the internal states used in our protocol. The reservoir state $\\left|s\\right\\rangle$ and the subnode states $\\left|0_{L,A,R}\\right\\rangle ,\\left|1_{L,A,R}\\right\\rangle$ correspond to different hyperfine components of the ground level $6s_{1/2},\\: I=7/2$ $$\\begin{aligned}\n\\left|s\\right\\rangle  & \\equiv & \\left|F=3;m_{F}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p007-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p007-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p007-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p007-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-5-discussion.md",
+      "narrative": null,
+      "content": "We now summarize the main differences between our scheme and the most recent works on the subject [@ZMHZ10; @HHHLS10]. As noted in [@ZMHZ10; @HHHLS10], the use of Rydberg blocked ensembles allows one to perform entanglement swapping via deterministic manipulations and not through probabilistic photonic detections. The main originality of our proposal is that we also completely got rid of photonic detections during the linking procedure. Indeed, here, photons are simply transmitted from one site and reabsorbed by its neighbor in an efficient and faithful way. The heralded linking is performed o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-6-conclusion.md",
+      "narrative": null,
+      "content": "In this paper we proposed a quantum repeater scenario based on Rydberg blocked ensembles placed in cavities which are linked by optical fibers. Entanglement generation between two neighboring nodes is performed in a heralded way by the transmission of a photon whose polarization is entangled with the state of the first atomic ensemble, followed by its absorption by the neighboring atomic ensemble. Photon losses and spontaneous emission from the Rydberg level can be detected thanks to an error-syndrome measurement involving ensemble laser manipulations, ionizing pulses and (very efficient) ion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p009-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/figure-img-p009-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1312.3086v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the expression of the average number of steps in entanglement generation",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-a-derivation-of-the-expression-of-the-average-nu.md",
+      "narrative": null,
+      "content": "average number of steps in entanglement generation\nAs described in Sec. III, the entanglement generation\nprocedure is performed in two steps. During each of these\nsteps, K = N/2 subnodes are entangled by pairs. A pair\nof subnodes is correctly entangled with the probability\nP0.\nLet us ﬁrst compute the probability pK (n) that K\npairs are correctly entangled within exactly n repetitions.\nThis means that, within the (n −1) ﬁrst steps, at least\none pair is not entangled. Considering all the possible\ncases, one establishes the following recurrence formula\npK (n) = pK−1 (n) p1 (n) + pK−1 (n)\n n−1\nX\nm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

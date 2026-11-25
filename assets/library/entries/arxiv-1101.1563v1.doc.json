@@ -1,0 +1,572 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1101.1563v1",
+  "title": "arxiv-1101.1563v1",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A short survey on Gröbner-Shirshov bases",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-short-survey-on-gröbner-shirshov-bases"
+    },
+    {
+      "level": 1,
+      "title": "Free categories and free category partial algebras",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-free-categories-and-free-category-partial-alge"
+    },
+    {
+      "level": 1,
+      "title": "Composition-Diamond lemma for categories",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-composition-diamond-lemma-for-categories"
+    },
+    {
+      "level": 1,
+      "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 96,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "south china",
+          "heading": false
+        },
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "china normal",
+          "heading": false
+        },
+        {
+          "term": "simplicial category",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1101.1563v1 [math.RA] 8 Jan 2011 Gr¨obner-Shirshov bases for categories∗ L. A. Bokut† School of Mathematical Sciences, South China Normal University Guangzhou 510631, P. R. China Sobolev Institute of Mathematics, Russian Academy of Sciences Siberian Branch, Novosibirsk 630090, Russia bokut@math.nsc.ru Yuqun Chen‡ and Yu Li School of Mathematical Sciences, South China Normal University Guangzhou 510631, P. R.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1101.1563v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gröbner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "gröbner bases",
+          "heading": false
+        },
+        {
+          "term": "non-commutative gröbner",
+          "heading": false
+        },
+        {
+          "term": "rewriting system",
+          "heading": false
+        },
+        {
+          "term": "cd-lemma",
+          "heading": false
+        },
+        {
+          "term": "path algebras",
+          "heading": false
+        },
+        {
+          "term": "malbos",
+          "heading": false
+        },
+        {
+          "term": "cyclic categories",
+          "heading": false
+        }
+      ],
+      "extract": "This paper devotes to Gröbner-Shirshov bases for small categories (all categories below are supposed to be small) presented by a graph (=quiver) and defining relations (see, Maclane [@Sa; @M]). As important examples, we use the simpicial and the cyclic categories (see, for example, Maclane [@Sa], Gelfand, Manin [@G]). In an above presentation, a category is viewed as a \"monoid with several objects\\\". A free category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-short-survey-on-gröbner-shirshov-bases",
+      "number": "2",
+      "title": "A short survey on Gröbner-Shirshov bases",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 2982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gröbner-shirshov bases",
+          "heading": true
+        },
+        {
+          "term": "proved cd-lemma",
+          "heading": false
+        },
+        {
+          "term": "associative lyndon-shirshov",
+          "heading": false
+        },
+        {
+          "term": "non-associative lyndon-shirshov",
+          "heading": false
+        },
+        {
+          "term": "associative word",
+          "heading": false
+        },
+        {
+          "term": "shirshov approach",
+          "heading": false
+        },
+        {
+          "term": "associative algebras",
+          "heading": false
+        },
+        {
+          "term": "lyndon-shirshov basis",
+          "heading": false
+        }
+      ],
+      "extract": "What is now called Gröbner and Gröbner-Shirshov bases theory was initiated by A. I. Shirshov (1921-1981) [@Sh62a; @Sh62b], 1962 for non-associative and Lie algebras, by H. Hironaka [@Hi64; @{Hi64-}], 1964 for quotients of commutative infinite series algebras (both formal and convergent), and by B. Buchberger [@bu65; @bu70], 1965, 1970 for commutative algebras. English translation of selected works of A. I. Shirshov,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-free-categories-and-free-category-partial-alge",
+      "number": "3",
+      "title": "Free categories and free category partial algebras",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category mathscr",
+          "heading": false
+        },
+        {
+          "term": "gamma mathscr",
+          "heading": false
+        },
+        {
+          "term": "free category",
+          "heading": true
+        },
+        {
+          "term": "category partial",
+          "heading": true
+        },
+        {
+          "term": "let mathscr",
+          "heading": false
+        },
+        {
+          "term": "graph morphism",
+          "heading": false
+        },
+        {
+          "term": "arr",
+          "heading": false
+        },
+        {
+          "term": "mono",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X=(V(X),E(X))$ be an oriented (multi) graph. Then the free category on $X$ is $C(X)=(Ob(X), Arr(X))$, where $Ob(X)=V(X),$ and $Arr(X)$ is the set of all paths (\"words\\\") of $X$ including the empty paths $1_{v}$, $v\\in V(X)$. It is easy to check $C(X)$ has the following universal property. Let $\\mathscr{C}$ be a category and $\\Gamma_{\\mathscr{C}}$ the graph relative to $\\mathscr{C}$ i.e.,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-composition-diamond-lemma-for-categories",
+      "number": "4",
+      "title": "Composition-Diamond lemma for categories",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha overline",
+          "heading": false
+        },
+        {
+          "term": "limits alpha",
+          "heading": false
+        },
+        {
+          "term": "overline sum",
+          "heading": false
+        },
+        {
+          "term": "monomial orders",
+          "heading": false
+        },
+        {
+          "term": "let alpha",
+          "heading": false
+        },
+        {
+          "term": "monic polynomials",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a oriented (multi) graph, $C(X)$ the free category generated by $X$ and $kC(X)$ the free category partial algebra. Since we only consider the morphisms of the free category $C(X)$, we write $C(X)$ just for $Arr(X)$. Note that for $f,g\\in kC(X)$ if we write $gf$, it means $gf$ is defined. A well ordering $>$ on $C(X)$ is called monomial if it satisfies the following conditions: $u>v\\Rightarrow uw>vw$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate",
+      "number": "5",
+      "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 20,
+      "labelStart": "11",
+      "labelEnd": "20",
+      "words": 3449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "yuqun chen",
+          "heading": false
+        },
+        {
+          "term": "obner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "simplicial category",
+          "heading": true
+        },
+        {
+          "term": "cyclic category",
+          "heading": true
+        },
+        {
+          "term": "yongshan chen",
+          "heading": false
+        },
+        {
+          "term": "obner bases",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        }
+      ],
+      "extract": "Gr¨obner-Shirshov bases for the simplicial category and the cyclic category In this section, we give Gr¨obner-Shirshov bases for the simplicial category and the cyclic category respectively. 11 For each non-negative integer p, let [p] denote the set {0, 1, 2, . . . , p} of integers in their usual order. A (weakly) monotonic map µ : [q] →[p] is a function on [q] to [p] such that i ≤j implies µ(i) ≤µ(j). The objects",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "obner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov bases",
+      "heading": true
+    },
+    {
+      "term": "yuqun chen",
+      "heading": false
+    },
+    {
+      "term": "free associative",
+      "heading": false
+    },
+    {
+      "term": "free category",
+      "heading": true
+    },
+    {
+      "term": "associative algebras",
+      "heading": false
+    },
+    {
+      "term": "associative word",
+      "heading": false
+    },
+    {
+      "term": "associative lyndon-shirshov",
+      "heading": false
+    },
+    {
+      "term": "bokut",
+      "heading": false
+    },
+    {
+      "term": "obner-shirshov basis",
+      "heading": false
+    },
+    {
+      "term": "gröbner bases",
+      "heading": false
+    },
+    {
+      "term": "word bar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1101.1563v1"
+  }
+}

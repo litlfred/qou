@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1312.6411v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS\nAMNON YEKUTIELI\nAbstract. We consider commutative DG rings (better known as nonpositive\nstrongly commutative associative unital DG algebras). For such a DG ring A we de-\nﬁne the notions of perfect, tilting, dualizing, Cohen-Macaulay and rigid DG A-modules.\nGeometrically perfect DG modules are deﬁned by a local condition on Spec ¯A, where\n¯A is the commutative ring H0(A). Algebraically perfect DG modules are those that\ncan be obtained from A by ﬁnitely many shifts, direct summands and cones. Tilt-\ning DG modules are those that have inverses w.r.t. th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "In this paper we are interested in {\\em commutative DG rings}. \nThis is an abbreviation for strongly commutative nonpositive associative \nunital differential graded algebras over $\\Z$. Thus a commutative DG ring is a \ngraded ring $A = \\bigoplus_{i \\leq 0} A^i$, together with a \ndifferential $\\d$ of degree $1$, that satisfies the graded Leibniz rule. \nThe multiplication satisfies \n$b \\cd a = (-1)^{i j} \\cd a \\cd b$\nfor all $a \\in A^i$ and $b \\in A^j$, and $a \\cd a = 0$ if $i$ is odd.\nBy default, the DG rings in the Introduction are commutative. \nRings are viewed as DG rings concentrated in degr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG Modules and their Resolutions",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-1-dg-modules-and-their-resolutions.md",
+      "narrative": null,
+      "content": "\\label{sec:resol}\n \nA {\\em DG ring} (usually called an associative unital DG algebra over $\\Z$) is \na graded ring $A = \\bigoplus_{i \\in \\Z} A^i$, with differential $\\d$ of degree \n$1$, satisfying the graded Leibniz rule \n\\[ \\d(a \\cd b) = \\d(a) \\cd b + (-1)^i \\cd a \\cd \\d(b) \\]\nfor $a \\in A^i$ and $b \\in A^j$. \nA homomorphism of DG rings is a degree $0$ ring homomorphism \nthat commutes with the differentials. \nIn this way we get a category, denoted by $\\cat{DGR}$. \nRings are viewed as DG rings concentrated in degree $0$. \nFor a DG ring $A$, the cohomology \n$\\opn{H}(A) = \\bigoplus_{i \\in \\Z} \\op",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomological Dimension",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-2-cohomological-dimension.md",
+      "narrative": null,
+      "content": "\\label{sec:coh-dim}\n\nWe continue with the conventions of Section \\ref{sec:resol}, namely our DG \nrings are nonpositive, and the DG modules are acted upon from the left. \nThe concentration $\\opn{con}(M)$ of a graded module $M$ was \nintroduced in Definition \\ref{dfn:550}.\n\n\\begin{dfn} \\label{dfn:10}\nLet $A$ and $B$ be DG rings, and let\n$\\cat{E} \\subseteq \\cat{D}(A)$ be a full subcategory.\n\\begin{enumerate}\n\\item Let  $F : \\cat{E} \\to \\cat{D}(B)$ be an additive functor,\nand let $[d_0, d_1]$ be an integer interval. We say that {\\em $F$ has \ncohomological displacement at most $[d_0, d_1]$} if \n\\[ \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction and Lifting",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-3-reduction-and-lifting.md",
+      "narrative": null,
+      "content": "\\label{sec:lifting}\n\nRecall that by default all DG modules are left DG modules, and all DG rings are \nnonpositive (Convention \\ref{conv:305}).   \nIn this section we study the canonical DG ring homomorphism \n$A \\to \\bar{A}$, and the corresponding reduction functor \n$\\cat{D}(A) \\to \\cat{D}(\\bar{A})$, \n$M \\mapsto \\bar{A} \\ot^{\\mrm{L}}_{A} M$.\nWe do not make any finiteness assumptions on the cohomology modules \n$\\opn{H}^i(M)$.\n\nA triangulated functor $F$ is called {\\em conservative} if for any object \n$M$, $F(M) = 0$ implies $M = 0$; or equivalently, if for any morphism \n$\\phi$, $F(\\phi)$ is an is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localization of Commutative DG Rings",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-004-4-localization-of-commutative-dg-rings.md",
+      "narrative": null,
+      "content": "\\label{sec:localiz}\n\nIn this section we specialize to DG rings satisfying a commutativity \ncondition. Such a DG ring $A$ can be localized on $\\opn{Spec} \\bar{A}$. \n\n\\begin{dfn} \\label{dfn:305}\nLet $A = \\bigoplus_{i \\in \\Z} A^i$ be a DG ring. \n\\begin{enumerate}\n\\item $A$ is called {\\em weakly commutative} if \n$b \\cd a =  (-1)^{i j} \\cd a \\cd b$ \nfor all $a \\in A^{i}$ and $b \\in A^{j}$.\n\n\\item $A$ is called {\\em strongly commutative} if it is weakly commutative, and \nif $a \\cd a = 0$ for all $a \\in A^{i}$ with $i$ odd.\n\n\\item $A$ is called a {\\em commutative DG ring} if it is  strongly commutati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perfect DG Modules",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "../sections/sec-005-5-perfect-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:perfect}\n\nRecall that all DG rings are now commutative by default (Convention \n\\ref{conv:100}). In particular all rings are commutative. For a DG ring $A$, \nits reduction is $\\bar{A} = \\opn{H}^0(A)$. \n\nLet $A$ be a  DG ring and $s \\in \\bar{A}$ an element. The \nlocalization $A_s$ was defined in Definition \\ref{dfn:40}. The notion of\ncovering sequence of $\\bar{A}$ was introduced in Definition \\ref{dfn:70},\nand finite semi-free DG modules were introduced in Definition \\ref{dfn:311}.\n\nIf $A$ is a ring, there are two definitions in the literature (see \n\\cite[Expos\\'e I]{SGA-6}) of a {\\em",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tilting DG Modules",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "../sections/sec-006-6-tilting-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:tilting}\n\nRecall that all DG rings here are commutative (Convention \\ref{conv:100}). In \nparticular all rings are commutative. \n\n\\begin{dfn}\nLet $A$ be a DG ring.\nA DG $A$-module $P$ is called a {\\em tilting DG module} if there \nexists some DG $A$-module $Q$ such that $P \\ot^{\\mrm{L}}_A Q \\cong A$\nin $\\cat{D}(A)$.  \n\\end{dfn}\n\nThe DG module $Q$ in the definition is called a {\\em quasi-inverse} of $P$.\nDue to the symmetry of the operation $- \\ot^{\\mrm{L}}_A- $, $Q$ is also \ntilting. It is easy to see that the quasi-inverse $Q$ is unique, up to a \nnonunique isomorphism. If $P_1$ and $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dualizing DG Modules",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "../sections/sec-007-7-dualizing-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:dualizing}\n\nRecall that all our DG rings are now commutative (Convention \\ref{conv:100}),\nand $\\bar{A} = \\opn{H}^0(A)$.\nIn this section we concentrate on cohomologically pseudo-noetherian  \nDG rings (Definition \\ref{dfn:391}). \n\nHere is a generalization of Grothendieck's definition of dualizing \ncomplex. \\lb When $A$ is a ring, this is identical to the definition in\n\\cite[Section V.2]{RD}.\n\n\\begin{dfn} \\label{dfn:253}\nLet $A$ be a cohomologically pseudo-noetherian DG ring.\nA DG $A$-module $R$ is called a {\\em dualizing} if it satisfies these three \nconditions:\n\\begin{enumerate}\n\\rmi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohen-Macaulay DG Modules",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-008-8-cohen-macaulay-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:cm}\n\nIn this section we work with cohomologically pseudo-noetherian\ncommutative DG rings (see Convention \\ref{conv:100} and Definition \n\\ref{dfn:391}).  \n\nLet $A$ be such a DG ring. Recall that $\\bar{A} = \\opn{H}^0(A)$,  \nand $\\cat{D}^0(A)$ is the full subcategory of $\\cat{D}(A)$ \nconsisting of the DG modules $M$ such that $\\opn{H}^i(M) = 0$ for all \n$i \\neq 0$. \nInside $\\cat{D}^{0}(A)$ we have \n$\\cat{D}^{0}_{\\mrm{f}}(A) =\n\\cat{D}_{\\mrm{f}}(A) \\cap \\cat{D}^{0}(A)$.\n\n\\begin{lem} \\label{lem:530} \nConsider the canonical DG ring homomorphism $\\pi :A \\to \\bar{A}$. \nThe functor \n\\[ \\opn{Q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid DG Modules",
+      "pageStart": 47,
+      "pageEnd": 51,
+      "target": "../sections/sec-009-9-rigid-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:rigid}\n\nRecall that all our DG rings are commutative (Convention \\ref{conv:100}); \nnamely we work inside the category $\\cat{DGR}^{\\leq 0}_{\\mrm{sc}}$.\nAt the beginning of this section we do not make any finiteness assumptions on \nDG rings. \n\nIn our new paper \\cite{Ye5} we introduced the {\\em squaring operation} for\ncommutative DG rings. It is summarized in Theorem \\ref{thm:500}  below,\nwhich is a combination of \\cite[Theorems 0.3.4, 0.3.5 and 7.16]{Ye5}.\n\nGiven a homomorphism $u : A \\to B$ of DG rings, a {\\em K-flat resolution} of \n$u$ is a commutative diagram \n\\[ \\UseTips \\xymatrix",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1312.6411v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[ABIM] L.L. Avramov, R.-O. Buchweitz, S.B. Iyengar and C. Miller, Homology of perfect complexes,\nAdvances in Mathematics 223 (2010) 1731-1781.\n[AFH]\nL.L. Avramov, H.-B. Foxby and S. Halperin, Diﬀerential Graded Homological Algebra, preprint\ndated 21 June 2006, available from the authors.\n[AG]\nB. Antieau and D. Gepner, Brauer groups and étale cohomology in derived algebraic geometry,\nGeometry and Topology 18 (2014), 1149-1244.\n[AIL]\nL.L. Avramov, S.B. Iyengar and J. Lipman, Reﬂexivity and rigidity for complexes, I. Commu-\ntative rings, Algebra and Number Theory 4:1 (2010).\n[AJL1]\nL. Alonso, A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

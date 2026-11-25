@@ -1,0 +1,117 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Spectral networks",
+  "contains": [
+    "library/arxiv-1204.4824v2/sections/sec-front-matter",
+    "library/arxiv-1204.4824v2/sections/sec-000",
+    "library/arxiv-1204.4824v2/sections/sec-001",
+    "library/arxiv-1204.4824v2/sections/sec-002",
+    "library/arxiv-1204.4824v2/sections/sec-003",
+    "library/arxiv-1204.4824v2/sections/sec-004",
+    "library/arxiv-1204.4824v2/sections/sec-005",
+    "library/arxiv-1204.4824v2/sections/sec-006",
+    "library/arxiv-1204.4824v2/sections/sec-007",
+    "library/arxiv-1204.4824v2/sections/sec-008",
+    "library/arxiv-1204.4824v2/sections/sec-009",
+    "library/arxiv-1204.4824v2/sections/sec-010",
+    "library/arxiv-1204.4824v2/sections/sec-011",
+    "library/arxiv-1204.4824v2/sections/sec-012",
+    "library/arxiv-1204.4824v2/sections/sec-013",
+    "library/arxiv-1204.4824v2/sections/sec-014",
+    "library/arxiv-1204.4824v2/sections/sec-015",
+    "library/arxiv-1204.4824v2/sections/sec-016",
+    "library/arxiv-1204.4824v2/sections/sec-017",
+    "library/arxiv-1204.4824v2/sections/sec-018",
+    "library/arxiv-1204.4824v2/sections/sec-019",
+    "library/arxiv-1204.4824v2/sections/sec-020",
+    "library/arxiv-1204.4824v2/sections/sec-021",
+    "library/arxiv-1204.4824v2/sections/sec-022",
+    "library/arxiv-1204.4824v2/sections/sec-023",
+    "library/arxiv-1204.4824v2/sections/sec-024",
+    "library/arxiv-1204.4824v2/sections/sec-025",
+    "library/arxiv-1204.4824v2/sections/sec-026",
+    "library/arxiv-1204.4824v2/sections/sec-027",
+    "library/arxiv-1204.4824v2/sections/sec-028",
+    "library/arxiv-1204.4824v2/sections/sec-029",
+    "library/arxiv-1204.4824v2/sections/sec-030",
+    "library/arxiv-1204.4824v2/sections/sec-031",
+    "library/arxiv-1204.4824v2/sections/sec-032",
+    "library/arxiv-1204.4824v2/sections/sec-033",
+    "library/arxiv-1204.4824v2/sections/sec-034",
+    "library/arxiv-1204.4824v2/sections/sec-035",
+    "library/arxiv-1204.4824v2/sections/sec-036",
+    "library/arxiv-1204.4824v2/sections/sec-037",
+    "library/arxiv-1204.4824v2/sections/sec-038",
+    "library/arxiv-1204.4824v2/sections/sec-039",
+    "library/arxiv-1204.4824v2/sections/sec-040",
+    "library/arxiv-1204.4824v2/sections/sec-041",
+    "library/arxiv-1204.4824v2/sections/sec-042",
+    "library/arxiv-1204.4824v2/sections/sec-043",
+    "library/arxiv-1204.4824v2/sections/sec-044",
+    "library/arxiv-1204.4824v2/sections/sec-045",
+    "library/arxiv-1204.4824v2/sections/sec-046",
+    "library/arxiv-1204.4824v2/sections/sec-047",
+    "library/arxiv-1204.4824v2/sections/sec-048",
+    "library/arxiv-1204.4824v2/sections/sec-049",
+    "library/arxiv-1204.4824v2/sections/sec-050",
+    "library/arxiv-1204.4824v2/sections/sec-051",
+    "library/arxiv-1204.4824v2/sections/sec-052",
+    "library/arxiv-1204.4824v2/sections/sec-053",
+    "library/arxiv-1204.4824v2/sections/sec-054",
+    "library/arxiv-1204.4824v2/sections/sec-055",
+    "library/arxiv-1204.4824v2/sections/sec-056",
+    "library/arxiv-1204.4824v2/sections/sec-057",
+    "library/arxiv-1204.4824v2/sections/sec-058",
+    "library/arxiv-1204.4824v2/sections/sec-059",
+    "library/arxiv-1204.4824v2/sections/sec-060"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules.\n\n**Spectral networks**\n\n*Davide Gaiotto,1 Gregory W. Moore2 and Andrew Neitzke3*\n\n87 pp, 62 sections.\n\n**Abstract.** We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensional N = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems.\n\n**Outline.** Front matter; 1 Introduction and summary; 2 A brief review of theories of class S; 3 Geometric description of BPS states; 3.1 4d BPS states; 3.2 Solitons; 3.3 Framed 2d-4d BPS states; 3.4 Enhanced degeneracies; 3.5 A problem of signs; 4 Basics of framed 2d-4d indices; 4.1 Generating functions of framed 2d-4d indic; 4.2 Formal products and composition; 4.3 The spectral network W; 5 The spectral network W at fixed; 5.1 Walls as trajectories; 5.2 Joints and wall-crossing for; 5.3 The mass filtration; W[] and [] for small; 5.4 W[] and [] for general",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1204.4824&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1204.4824v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1204.4824v2.pdf",
+    "source_sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
+    "pages": 87,
+    "arxiv": {
+      "id": "1204.4824",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "6 Oct 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

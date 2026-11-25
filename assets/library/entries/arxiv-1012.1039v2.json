@@ -1,0 +1,419 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1012.1039v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Simplicial volume was defined for manifolds by Gromov in [@gromov:vbc]. For an $n$-dimensional closed manifold $M$ of constant sectional curvature $K=-1$, the simplicial volume $\\|M\\|$ is proportional to the (Riemannian) volume $\\mathrm{Vol}(M)$, and the ratio is the volume of a regular ideal hyperbolic $n$--simplex; in particular, it depends only on the dimension [@gromov:vbc 0.4]. More generally, [@gromov:vbc 0.3,0.5], for constants $a\\le b< 0$, there is a constant $C=C(a,b,n)>1$ so that if the sectional curvatures $K$ satisfy $a \\le K \\le b$, then $$\\label{propclosed}\n \\mathrm{Vol}(M)/C \\le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1012.1039v2  [math.GT]  19 Jul 2011\nSIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC\nMANIFOLDS\nKOJI FUJIWARA AND JASON FOX MANNING\nAbstract. Let M be a hyperbolic n–manifold whose cusps have torus cross-\nsections. In [FM10], the authors constructed a variety of nonpositively and\nnegatively curved spaces as “2π–ﬁllings” of M by replacing the cusps of M\nwith compact “partial cones” of their boundaries. These 2π–ﬁllings are closed\npseudomanifolds, and so have a fundamental class. We show that the simplicial\nvolume of any such 2π–ﬁlling is positive, and bounded above by Vol(M)\nvn\n, where\nvn is t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-outline.md",
+      "narrative": null,
+      "content": "In Subsection [\\[ss:norms\\]](#ss:norms){reference-type=\"ref\" reference=\"ss:norms\"} we recall the definition of simplicial volume for manifolds and pseudomanifolds, and apply work of Mineyev--Yaman to obtain the lower bound in the main theorem. Subsection [\\[ss:symm\\]](#ss:symm){reference-type=\"ref\" reference=\"ss:symm\"} and Appendix [\\[a:symm\\]](#a:symm){reference-type=\"ref\" reference=\"a:symm\"} are technical sections concerned with replacing singular chains by \"symmetric\" singular chains. The upper bound of the main theorem is proved in Section [\\[s:main\\]](#s:main){reference-type=\"ref\" referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicial volume and duality",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-simplicial-volume-and-duality.md",
+      "narrative": null,
+      "content": "[]{#s:defs label=\"s:defs\"} In this section we recall the definition of *simplicial volume* for pseudomanifolds and set up some computational tools.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gromov norms",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-21-gromov-norms.md",
+      "narrative": null,
+      "content": "[]{#ss:norms label=\"ss:norms\"} Let $X$ be any space, and let $\\omega \\in H_*(X;\\mathbb{R})$ or $\\omega \\in\nH_*(X,Y;\\mathbb{R})$ for some $Y\\subset X$. The *Gromov norm of $\\omega$* is the smallest $l^1$--norm of a real singular chain representing $\\omega$, $$\\|\\omega\\| = \\inf\\left\\{\\sum_{i=1}^k\n|\\alpha_i|\\ \\right|\\ \\left. \\left[\\sum_{i=1}^k\\alpha_i\\sigma_i \\right]\n = \\omega \\right\\}.$$ (Since this infimum may be zero, the \"Gromov norm\" is only a seminorm in general.) This quantity only depends on $\\omega$ and the homotopy type of the pair $(X,Y)$. In the absolute case, we can use it to define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetrization",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-22-symmetrization.md",
+      "narrative": null,
+      "content": "[]{#ss:symm label=\"ss:symm\"} It will be convenient in the arguments of Section [\\[s:main\\]](#s:main){reference-type=\"ref\" reference=\"s:main\"} to assume that all chains considered are *symmetric*. Here we say what this means and justify the assumption.\n\nConsider the abstract $n$--simplex $\\Delta^n$. The symmetric group $S_{n+1}$ acts in an obvious way on the vertices, and any permutation $p\\in S_{n+1}$ extends to $\\Delta^n$ as an affine transformation.\n\nLet $X$ be some space. Any singular simplex $\\sigma\\colon\\thinspace\\Delta^n\\to X$ can be altered by precomposition with some $p\\in S_{n+1}$ and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 8,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-3-main-result.md",
+      "narrative": null,
+      "content": "[]{#s:main label=\"s:main\"} In this section we prove the main result, Theorem [\\[t:volumedecreases\\]](#t:volumedecreases){reference-type=\"ref\" reference=\"t:volumedecreases\"}. The strategy is to modify an efficient relative fundamental cycle for $(M,\\partial M)$ to a fundamental cycle on the filling, without increasing norm by too much.\n\n::: lemma\n[]{#l:rational label=\"l:rational\"} Let $X$ be a topological space. Let $c\\in {C_n}(X;\\mathbb{R})$ be homologous to a rational chain, and let $\\epsilon>0$. Then there is some $c'\\in\n  C_n(X;\\mathbb{Q})$ homologous to $c$ so that $\\|c'-c\\|_1<\\epsilon$. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/lem-sec-006-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "lem-sec-006-10.md",
+      "narrative": null,
+      "content": "3 and Proposition A.4 together immediately imply Theorem A.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "5. The chain zR,∞is a locally ﬁnite cycle.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "6. Let R > 0, and let C be such that ǫ(k′) < µ for all k′ > C. If k > R + C + 2d + 1, then zR,k is a relative cycle in (V, V(0,µ]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-04.md",
+      "narrative": null,
+      "content": "5, σ must also be in the support of ∂(zR,∞−zR,k), so any lift ˜σ of σ to Hn must have a vertex mapped to ˆΓ ∖ˆΓk. The diameter of the image of ˜σ is at most R + 2d. Thus the vertices lie in ˆΓ ∖ˆΓk′ for k′ = k −⌈R + 2d⌉> C, and no part of the image of ˜σ lies in a translate of the “fat piece” D0. Since ǫ(k′) < µ, σ has image in the part of V with injectivity radius less than µ. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-05.md",
+      "narrative": null,
+      "content": "7. If R > 2d then a+ R(ω) · a− R(ω) = 0 for all ω ∈Ω.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-06.md",
+      "narrative": null,
+      "content": "8. There is a quantity δ(R) > 0 so that limR→∞δ(R) = 0 and so that the simplices in the support of zR,∞all have volume at least vn −δ(R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-07.md",
+      "narrative": null,
+      "content": "9. If R > 2d and aR(ω)̸ = 0, then aR(ω)algvol(σω) > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-08.md",
+      "narrative": null,
+      "content": "10. Suppose R > 2d + C and k > 2R + 1, where C is the constant from Claim A.6. The classes [zR,∞] ∈Hlf n (V ; R) and [zR,k] ∈Hn(V, V(0,µ]; R) are nontrivial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prop-sec-006-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-006-09.md",
+      "narrative": null,
+      "content": "8 says that δ(R) tends to zero, so we have Vol(V ) ≥vn∥M, ∂M∥, and the proposition is proved. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. A proportionality theorem",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-appendix-a-a-proportionality-theorem.md",
+      "narrative": null,
+      "content": "The purpose of this appendix is to establish the following proportionality theo-\nrem.\nTheorem A.1. Let M be a manifold with boundary, so that the interior V of M\nadmits a complete hyperbolic metric of volume Vol(V ) < ∞. Then\n∥M, ∂M∥= Vol(V )\nvn\n.\nThurston gives a proof in dimension 3 of a version of theorem A.1 in his lecture\nnotes [Thu80, 6.5.4], where the norm ∥M, ∂M∥is replaced by one coming from\nmeasure homology. There is a natural map from singular homology to measure\nhomology, which at least does not increase norm. Zastrow and Hansen indepen-\ndently showed this map to be an isomorphism",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "1. Let M be a manifold with boundary, so that the interior V of M admits a complete hyperbolic metric of volume Vol(V ) < ∞. Then ∥M, ∂M∥= Vol(V ) vn . Thurston gives a proof in dimension 3 of a version of theorem A.1 in his lecture notes [Thu80, 6.5.4], where the norm ∥M, ∂M∥is replaced by one coming from measure homology. There is a natural map from singular homology to measure homology, which at least does not increase norm. Zastrow and Hansen indepen- dently showed this map to be an isomorphism of vector spaces for any CW pair [Han98, Zas98], leaving open the question of whether it was an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "1. If f : X →Y is any continuous map, and n is an integer, then f♯◦P (X) n = P (Y ) n ◦f♯.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "2. P (X) ∗ as deﬁned in equation (12) is a chain homotopy between S and 1C∗(X;R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. (Anti)Symmetrization of chains",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-appendix-b-antisymmetrization-of-chains.md",
+      "narrative": null,
+      "content": "In this section we prove that the chain map S deﬁned in Section 2.2 is chain\nhomotopic to the identity.\nWe let ∆n denote the standard n–simplex, and begin by deﬁning a “coning”\noperator for all n and k\ncn : Ck(∆n; R) →Ck+1(∆n; R).\nWe deﬁne cn on a singular k–simplex ψ: ∆k →∆n and then extend by linearity.\nLet ι: ∆k →∆k+1 be the aﬃne map taking each vertex ei of ∆k to the vertex\nei+1 of ∆k+1; the vertex e0 is the only one missed by ι. Each point in ∆k+1 is\nSIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS\n19\nuniquely expressible convex combination of some point in ι(∆k) with e0. Let mn\nbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank Danny Calegari, Mike Davis, Bill Thurston, Clara L¨oh, and Shmuel\nWeinberger for useful conversations.\nWe also thank Alexander Nabutovsky for\npointing out to us that our work applies to the homology spheres of Ratcliﬀe and\nTschantz.\nJason Manning did part of this work during visits to the Caltech mathematics\ndepartment and the Cornell mathematics department, and thanks Caltech and\nCornell for their hospitality.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.1039v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[And06]\nM. T. Anderson. Dehn ﬁlling and Einstein metrics in higher dimensions. J. Diﬀerential\nGeom., 73(2):219–261, 2006.\n[Bab86]\nL. Babai. On Lov´asz’ lattice reduction and the nearest lattice point problem. Combina-\ntorica, 6(1):1–13, 1986.\n[Bel06]\nI. Belegradek. Aspherical manifolds, relative hyperbolicity, simplicial volume and assem-\nbly maps. Algebr. Geom. Topol., 6:1341–1354, 2006.\n[BH96]\nS. A. Bleiler and C. D. Hodgson. Spherical space forms and Dehn ﬁlling. Topology,\n35:809–833, 1996.\nSIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS\n21\n[BP92]\nR. Benedetti and C. Petronio. Lectur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

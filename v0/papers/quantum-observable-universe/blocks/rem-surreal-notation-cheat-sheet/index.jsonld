@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-notation-cheat-sheet",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-notation-cheat-sheet",
+  "kind": "remark",
+  "title": "Surreal notation — quick cheat sheet (formal development in appendix)",
+  "interprets": "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+  "tags": [
+    "surreal",
+    "notation",
+    "cheat-sheet",
+    "appendix-pointer"
+  ],
+  "text": "surreal-notation-cheat-sheet.md",
+  "provenance": "authored"
+}

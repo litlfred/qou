@@ -1,0 +1,1175 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2007.15570v1",
+  "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "I Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-i-introduction"
+    },
+    {
+      "level": 2,
+      "title": "II The physics of the impact parameter based intranuclear cascade model",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-ii-the-physics-of-the-impact-parameter-based-int"
+    },
+    {
+      "level": 3,
+      "title": "A Nuclear configuration",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-nuclear-configuration"
+    },
+    {
+      "level": 3,
+      "title": "B Nucleon momentum distribution",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-nucleon-momentum-distribution"
+    },
+    {
+      "level": 3,
+      "title": "C Nucleon-nucleon interaction algorithm",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-c-nucleon-nucleon-interaction-algorithm"
+    },
+    {
+      "level": 3,
+      "title": "D Phase space, Pauli blocking and after-interaction",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-d-phase-space-pauli-blocking-and-after-interacti"
+    },
+    {
+      "level": 3,
+      "title": "E Exiting the nucleus",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-e-exiting-the-nucleus"
+    },
+    {
+      "level": 2,
+      "title": "III Results and Model Validation",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-iii-results-and-model-validation"
+    },
+    {
+      "level": 3,
+      "title": "A Mean free path",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-a-mean-free-path"
+    },
+    {
+      "level": 3,
+      "title": "B Proton-carbon Scattering Data",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-b-proton-carbon-scattering-data"
+    },
+    {
+      "level": 3,
+      "title": "C Nuclear transparency",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-c-nuclear-transparency"
+    },
+    {
+      "level": 3,
+      "title": "D Correlation effects",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-d-correlation-effects"
+    },
+    {
+      "level": 2,
+      "title": "IV Conclusions",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "V Acknowledgments",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-v-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A Nucleon-nucleon interaction Models",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a-nucleon-nucleon-interaction-models"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "FERMILAB-PUB-20-368-T",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2007.15570v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
+      "number": null,
+      "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intranuclear",
+          "heading": true
+        },
+        {
+          "term": "cascades",
+          "heading": true
+        },
+        {
+          "term": "trento",
+          "heading": false
+        },
+        {
+          "term": "monte",
+          "heading": true
+        },
+        {
+          "term": "carlo",
+          "heading": true
+        }
+      ],
+      "extract": "Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b, aTheoretical Physics Department, Fermi National Accelerator Laboratory, P.O. Box 500, Batavia, IL 60510, USA bPhysics Division, Argonne National Laboratory, Argonne, Illinois 60439, USA cINFN-TIFPA Trento Institute of Fundamental Physics and Applications, Via Sommarive, 14, 38123 Trento, Italy (Dated: July 31, 2020)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 840,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear spallation",
+          "heading": false
+        },
+        {
+          "term": "nuclear transparencies",
+          "heading": false
+        },
+        {
+          "term": "heavy-ion collisions",
+          "heading": false
+        },
+        {
+          "term": "nuclear medium",
+          "heading": false
+        },
+        {
+          "term": "inc models",
+          "heading": false
+        },
+        {
+          "term": "spallation processes",
+          "heading": false
+        },
+        {
+          "term": "source code",
+          "heading": false
+        },
+        {
+          "term": "cross sections",
+          "heading": false
+        }
+      ],
+      "extract": "The propagation of nucleons through the nuclear medium is an important aspect of nuclear reactions, heavy-ion collisions, and astrophysical environments. It is also crucial in the analysis of electron-nucleus scattering experiments (see e.g. Refs. [@Barreau:1983ht; @Makins:1994mm; @Anghinolfi:1995bz; @Abbott:1997bc; @Dutta:2000sn; @Dutta:2003yt; @Rohe:2005vc; @Dai:2018xhi; @Dai:2018gch; @Murphy:2019wed]), neutrino",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-ii-the-physics-of-the-impact-parameter-based-int",
+      "number": null,
+      "title": "II The physics of the impact parameter based intranuclear cascade model",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intranuclear",
+          "heading": true
+        },
+        {
+          "term": "cascade",
+          "heading": true
+        },
+        {
+          "term": "model",
+          "heading": true
+        }
+      ],
+      "extract": "PARAMETER BASED INTRANUCLEAR CASCADE MODEL We now discuss in detail the physical content of our INC and how several ingredients were incorporated in the model. The INC starts by generating a nuclear con- ﬁguration, which describes the spatial distribution of pro- tons and neutrons inside the nucleus. A large number of these conﬁgurations are computed from quantum Monte Carlo (QMC) methods [50] that use as input the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-nuclear-configuration",
+      "number": null,
+      "title": "A Nuclear configuration",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "panel",
+          "heading": false
+        },
+        {
+          "term": "carbon",
+          "heading": false
+        },
+        {
+          "term": "proton-proton",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:nuclear-configuration label=\"sec:nuclear-configuration\"} Nuclei are complicated many-body systems of fermions, whose structure and dynamics emerge from individual interactions among the constituent protons and neutrons. To a remarkably large extent, the latter can be modeled by the non-relativistic Hamiltonian $$H=\\sum_{i}\\frac{{\\bf p}_i^2}{2m_N}+\\sum_{i<j} v_{ij}+ \\sum_{i<j<k}V_{ijk}\\,, \\label{NMBT:ham}$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-nucleon-momentum-distribution",
+      "number": null,
+      "title": "B Nucleon momentum distribution",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucleon momentum",
+          "heading": true
+        },
+        {
+          "term": "momentum distribution",
+          "heading": true
+        },
+        {
+          "term": "fermi gas",
+          "heading": false
+        },
+        {
+          "term": "global fermi",
+          "heading": false
+        },
+        {
+          "term": "local fermi",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned above, when a nucleon is struck, its momentum is obtained assuming either a local or global Fermi gas distribution. In the case of the local Fermi gas, the magnitude of the three-momentum is randomly sampled in the interval $[0,k^N_F(r)]$ where $k^N_F(r)$ is the Fermi Momentum defined in terms of the single nucleon density $k^N_F(r)=(\\rho_N(r)3\\pi^3)^{1/3}$ and $N=p,n$. In the case of the global Fermi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-c-nucleon-nucleon-interaction-algorithm",
+      "number": null,
+      "title": "C Nucleon-nucleon interaction algorithm",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prob conds",
+          "heading": false
+        },
+        {
+          "term": "int prob",
+          "heading": false
+        },
+        {
+          "term": "billiard ball",
+          "heading": false
+        },
+        {
+          "term": "label prob",
+          "heading": false
+        },
+        {
+          "term": "interaction probability",
+          "heading": false
+        },
+        {
+          "term": "cyl",
+          "heading": false
+        },
+        {
+          "term": "sjostrand",
+          "heading": false
+        },
+        {
+          "term": "bar rho",
+          "heading": false
+        }
+      ],
+      "extract": "To check if an interaction between nucleons occurs, an accept-reject test is performed on the closest nucleon according to a probability distribution $P(b)$ (see e.g. Ref. [@Sjostrand:1987su] for similar considerations) where $b$ is the impact parameter. We impose two conditions on this probability, $$\\label{eq:int_prob_conds} P(0)=1\\quad\\textrm{and}\\quad \\int_0^{2\\pi}\\int_0^\\infty d\\varphi \\,b db P(b) = \\sigma,$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-d-phase-space-pauli-blocking-and-after-interacti",
+      "number": null,
+      "title": "D Phase space, Pauli blocking and after-interaction",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pauli blocking",
+          "heading": true
+        },
+        {
+          "term": "fermi gas",
+          "heading": false
+        },
+        {
+          "term": "fermi momentum",
+          "heading": false
+        },
+        {
+          "term": "formation zone",
+          "heading": false
+        },
+        {
+          "term": "global fermi",
+          "heading": false
+        },
+        {
+          "term": "outgoing nucleon",
+          "heading": false
+        },
+        {
+          "term": "outgoing particles",
+          "heading": false
+        }
+      ],
+      "extract": "If an interaction occurred, the phase space of the outgoing particles is generated using fully differential nucleon-nucleon cross sections. Note that, at the moment, we only include protons and neutrons in our INC model. Pauli blocking enforces Fermi-Dirac statistics for the nucleons and amounts to testing whether their final-state momenta are above the Fermi momentum. Two different models of the Pauli exclusion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-e-exiting-the-nucleus",
+      "number": null,
+      "title": "E Exiting the nucleus",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear potential",
+          "heading": false
+        },
+        {
+          "term": "nucleus",
+          "heading": true
+        },
+        {
+          "term": "final state",
+          "heading": false
+        }
+      ],
+      "extract": "When the radial position of a propagating particle is larger than a certain distance, much larger than the nuclear radius, a test is performed to check if the particle has enough energy to escape the nuclear potential. If its kinetic energy is larger than the the nuclear potential barrier, then the particle escapes the nucleus and is labeled as a final state particle. The momentum of the particle is modified to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-iii-results-and-model-validation",
+      "number": null,
+      "title": "III Results and Model Validation",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free path",
+          "heading": false
+        },
+        {
+          "term": "mfp",
+          "heading": false
+        },
+        {
+          "term": "mean free",
+          "heading": false
+        },
+        {
+          "term": "validation",
+          "heading": true
+        },
+        {
+          "term": "interaction cross",
+          "heading": false
+        },
+        {
+          "term": "interaction probability",
+          "heading": false
+        },
+        {
+          "term": "lambda tilde",
+          "heading": false
+        },
+        {
+          "term": "traveled",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section, we present the validation tests we performed and the results we obtained within our INC model. For comparison purposes, we also implement a version of the nucleon-nucleon interaction algorithm that we dub *mean free path* (MFP). This approach is routinely used in event generators. Within this algorithm, the system is not evolved in time steps but rather in constant position steps that we indicate as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-a-mean-free-path",
+      "number": null,
+      "title": "A Mean free path",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free path",
+          "heading": true
+        },
+        {
+          "term": "mean free",
+          "heading": true
+        },
+        {
+          "term": "interaction cross",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed interaction",
+          "heading": false
+        },
+        {
+          "term": "test particle",
+          "heading": false
+        },
+        {
+          "term": "cross section",
+          "heading": false
+        },
+        {
+          "term": "medium",
+          "heading": false
+        }
+      ],
+      "extract": "The simplest validation consists of calculating the mean free path of a nucleon travelling through a medium of uniformly distributed nucleons, with ﬁxed interaction cross sections. Our goal is to obtain λmfp = 1 σρ, (11) where σ is the nucleon-nucleon cross section, and ρ is the number density of nucleons. We simulate a background of static, randomly and uniformly distributed protons and neutrons at rest. For an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-b-proton-carbon-scattering-data",
+      "number": null,
+      "title": "B Proton-carbon Scattering Data",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 1315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton-carbon scattering",
+          "heading": true
+        },
+        {
+          "term": "carbon cross",
+          "heading": false
+        },
+        {
+          "term": "nucleon-nucleon cross",
+          "heading": false
+        },
+        {
+          "term": "elastic cross",
+          "heading": false
+        },
+        {
+          "term": "reaction cross",
+          "heading": false
+        },
+        {
+          "term": "proton kinetic",
+          "heading": false
+        },
+        {
+          "term": "carbon nucleus",
+          "heading": false
+        },
+        {
+          "term": "total cross",
+          "heading": false
+        }
+      ],
+      "extract": "Reproducing the proton-nucleus cross section measurements is an important test of the accuracy of the INC model. Proton-nucleus scattering probes the nucleon-nucleon cross section which is typically divided into two pieces, the reaction and the elastic cross sections, $$\\sigma_{\\rm tot} = \\sigma_R + \\sigma_{\\rm el}.$$ In the elastic part, no energy is transferred into nuclear excitation and the nucleus remains",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-c-nuclear-transparency",
+      "number": null,
+      "title": "C Nuclear transparency",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 1018,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear transparency",
+          "heading": true
+        },
+        {
+          "term": "carbon transparency",
+          "heading": false
+        },
+        {
+          "term": "xsec",
+          "heading": false
+        },
+        {
+          "term": "proton kinetic",
+          "heading": false
+        },
+        {
+          "term": "carbon cross",
+          "heading": false
+        },
+        {
+          "term": "cylinder schematic",
+          "heading": false
+        },
+        {
+          "term": "mfp approach",
+          "heading": false
+        },
+        {
+          "term": "struck nucleon",
+          "heading": false
+        }
+      ],
+      "extract": "The nuclear transparency yields the average probability that a struck nucleon (either a proton or a neutron) leaves the nucleus without interacting with the spectator particles. Measurements of the nuclear transparency to high energy protons in quasielastic $e+A\\to e+p+A'$ scattering have been carried out by a number of experiments [@ONeill:1994znv; @Abbott:1997bc; @Rohe:2005vc; @Garrow:2001di; @Dutta:2003yt;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-d-correlation-effects",
+      "number": null,
+      "title": "D Correlation effects",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "carbon transparency",
+          "heading": false
+        },
+        {
+          "term": "carbon cross",
+          "heading": false
+        },
+        {
+          "term": "carbon scattering",
+          "heading": false
+        },
+        {
+          "term": "nuclear correlations",
+          "heading": false
+        },
+        {
+          "term": "nucleon-nucleon cross",
+          "heading": false
+        },
+        {
+          "term": "propagating nucleon",
+          "heading": false
+        },
+        {
+          "term": "nuclear configurations",
+          "heading": false
+        },
+        {
+          "term": "larger cross",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:corr:eff label=\"sec:corr:eff\"} ::: figure* ![image](figures/xsec_0p5.pdf){width=\".45\\\\textwidth\"} ![image](figures/xsec_10.pdf){width=\".45\\\\textwidth\"}\\ ![image](figures/xsec_50.pdf){width=\".45\\\\textwidth\"} ![image](figures/xsec_100.pdf){width=\".45\\\\textwidth\"} ::: The role played by nuclear correlations in final state interactions of the recoiling nucleon has been investigated in Refs.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-v-acknowledgments",
+      "number": null,
+      "title": "V Acknowledgments",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 1455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "data nucl",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "benhar",
+          "heading": false
+        },
+        {
+          "term": "pieper",
+          "heading": false
+        },
+        {
+          "term": "nucl-ex",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "We thank John Arrington, Omar Benhar, Donald F. Geesaman, Stefan H¨oche, T.S. Harry Lee, Kajetan Niewczas, Stefan Prestel, Jan Sobczyk, and Mike Wag- man for useful discussions . PM and AL thank the Ar- gonne Physics Division and the Fermilab theory group, respectively, for providing consistent oﬃce space neces- sary for the completion of this work. Fermilab is operated by the Fermi Research Alliance, LLC under",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-a-nucleon-nucleon-interaction-models",
+      "number": null,
+      "title": "A Nucleon-nucleon interaction Models",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geant",
+          "heading": false
+        },
+        {
+          "term": "nasa",
+          "heading": false
+        },
+        {
+          "term": "said database",
+          "heading": false
+        },
+        {
+          "term": "inelastic contributions",
+          "heading": false
+        }
+      ],
+      "extract": "The nucleon-nucleon cross sections used in our INC are obtained externally. The elastic cross section is taken from the SAID database [63], obtained using GEANT4 [64]. The total cross section, including inelastic contributions (e.g. pion production) is taken from Ref. [65]. For refer- ence, we reproduce those in Figs. 10. As it can be seen, the cross sections from these databases are similar in the region where the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nucleon-nucleon cross",
+      "heading": false
+    },
+    {
+      "term": "nuclear transparency",
+      "heading": true
+    },
+    {
+      "term": "nuclear medium",
+      "heading": false
+    },
+    {
+      "term": "interaction cross",
+      "heading": true
+    },
+    {
+      "term": "carbon cross",
+      "heading": false
+    },
+    {
+      "term": "scattering cross",
+      "heading": true
+    },
+    {
+      "term": "nuclear density",
+      "heading": false
+    },
+    {
+      "term": "nuclear model",
+      "heading": false
+    },
+    {
+      "term": "cross sections",
+      "heading": false
+    },
+    {
+      "term": "nuclear configurations",
+      "heading": false
+    },
+    {
+      "term": "nuclear correlations",
+      "heading": false
+    },
+    {
+      "term": "cylinder interaction",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Schematics of a propagating nucleon (black circle). The distance travelled by the propagating nucleon is depicted by a black arrow. The crosses represent background nucleons. An interaction test would be performed for the nucleon in red",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The proposed algorithm for the INC model",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Nucleon density in carbon from Green’s function Monte Carlo (red) and mean ﬁeld (blue) conﬁgurations",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The short-range repulsive core of the NN interaction prevents two nucleons from being close to each other. As a consequence, the pp and np GFMC density distributions are small at short separation distances. Furthermore, the diﬀerence between the GFMC pp and np",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Distribution of distance traveled (blue histogram) by 500 MeV test nucleons traveling through",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Proton-carbon scattering total cross section as a function of the incoming proton kinetic energy. In the upper panel the entire energy range for which experimental data are available is shown. In the lower panel the low energy region is magniﬁed. The red and blue curves correspond to the cylinder al",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Carbon transparency as a function of the proton kinetic energy. The diﬀerent curves indicate diﬀerent approaches used as described in Fig. 6. The experimental data are taken from Refs. [4, 6, 7, 74–76]",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Left panel: a schematic picture of an external proton scattering oﬀthe nucleus. The distance from the proton to the center of the nucleus is r1, and the propagation step is dℓ. The radius of the cylinder is given by",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The four panels corresponds to histograms of the distance traveled by a struck particle before the ﬁrst interaction takes place for diﬀerent values of the interaction cross section. The results in blue and red correspond to MF and QMC initial nucleon conﬁgurations, respectively. For each of the pane",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Comparison between the two interaction models used within the intranuclear cascade model",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "10 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2007.15570v1"
+  }
+}

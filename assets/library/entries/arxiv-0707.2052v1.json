@@ -1,0 +1,801 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0707.2052v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nThe purpose of the present paper is to introduce the Mukai pairing on the Hochschild homology of smooth, proper spaces. This pairing is the natural analogue, in the context of Hochschild theory, of the Poincaré pairing on the singular cohomology of smooth manifolds.\n\nOur approach is categorical. We start with a geometric category, whose objects will be called *spaces*. For a space $X$ we define its Hochschild homology which is a graded vector space $\\mathop{\\mathrm{HH}}_\\bullet(X)$ equipped with the non-degenerate *Mukai pairing*. We show that this structure s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0707.2052v1  [math.AG]  13 Jul 2007\nThe Mukai pairing, I: a categorical approach\nAndrei C˘ald˘araru∗and Simon Willerton†\nJuly 12, 2007\nAbstract\nWe study the Hochschild homology of smooth spaces, emphasizing\nthe importance of a pairing which generalizes Mukai’s pairing on the\ncohomology of K3 surfaces. We show that integral transforms between\nderived categories of spaces induce, functorially, linear maps on homol-\nogy. Adjoint functors induce adjoint linear maps with respect to the\nMukai pairing. We deﬁne a Chern character with values in Hochschild\nhomology, and we discuss analogues of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-category of kernels",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-the-2-category-of-kernels.md",
+      "narrative": null,
+      "content": "In this section we introduce the 2-category ${\\mathscr{V}\\textsf{ar}}$, which provides the natural context for the study of the structure of integral transforms between derived categories of spaces. The objects of ${\\mathscr{V}\\textsf{ar}}$ are spaces, 1-morphisms are kernels of integral transforms, and 2-morphisms are maps between these kernels. Before introducing ${\\mathscr{V}\\textsf{ar}}$ we remind the reader of the notion of a 2-category and we explain the string diagram notation of which we will have much use.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A reminder on 2-categories.",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-a-reminder-on-2-categories.md",
+      "narrative": null,
+      "content": "We will review the notion of a 2-category at the same time as introducing the notation we will be using. Recall that a 2-category consists of three levels of structure: objects; 1-morphisms between objects; and 2-morphisms between 1-morphisms. It is worth mentioning a few examples to bear in mind during the following exposition.\n\n-   The first example is the 2-category ${\\mathscr{C}\\textsf{at}}$ of categories, functors and natural transformations.\n\n-   The second example is rather a family of examples. There is a correspondence between 2-categories with one object $\\star$ and monoidal categori",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-category Var.",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-the-2-category-var.md",
+      "narrative": null,
+      "content": "The 2-category ${\\mathscr{V}\\textsf{ar}}$, of spaces and integral kernels, is defined as follows. The objects are spaces, as defined in the introduction, and the hom-category $\\mathop{\\mathrm{\\textbf{\\textsf{Hom}}}}_{\\mathscr{V}\\textsf{ar}}(X,Y)$ from a space $X$ to a space $Y$ is the derived category $\\mathbf{D}(X\\times Y)$, which is to be thought of as the category of integral kernels from $X$ to $Y$. Explicitly, this means that the 1-morphisms in ${\\mathscr{V}\\textsf{ar}}$ from $X$ to $Y$ are objects of $\\mathbf{D}(X\\times Y)$ and the 2-morphisms from $\\Phi$ to $\\Phi'$ are morphisms in $\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Serre functors",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-serre-functors.md",
+      "narrative": null,
+      "content": "[]{#sec:serre label=\"sec:serre\"}\n\nIn this section we review the notion of the Serre functor on $\\mathbf{D}(X)$ and then show how to realise the Serre functor on the derived category $\\mathbf{D}(X\\times Y)$ using 2-categorical language.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Serre functor on D(X).",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-the-serre-functor-on-dx.md",
+      "narrative": null,
+      "content": "[]{#subsec:Serretrace label=\"subsec:Serretrace\"} If $X$ is a space then we consider the functor $$\\mathsf{S}\\colon\\mathbf{D}(X)\\to \\mathbf{D}(X);\\qquad {\\mathscr E}\\mapsto \\omega_X[\\dim\nX]\\otimes {\\mathscr E},$$ where $\\omega_X$ is the canonical line bundle of $X$. Serre duality then gives natural, bifunctorial isomorphisms $$\\eta_{{\\mathscr E},{\\mathscr F}}\\colon\\mathop{\\mathrm{Hom}}_{\\mathbf{D}(X)}({\\mathscr E}, {\\mathscr F}) \\stackrel{\\sim}{\\longrightarrow}\n\\mathop{\\mathrm{Hom}}_{\\mathbf{D}(X)}({\\mathscr F}, \\mathsf{S}{\\mathscr E})^{\\scriptscriptstyle\\vee}$$ for any objects ${\\mathscr E},{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Serre kernels and the Serre functor for D(XY).",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-serre-kernels-and-the-serre-functor-for-dxy.md",
+      "narrative": null,
+      "content": "[]{#subsec:serXY label=\"subsec:serXY\"} We are interested in kernels and the 2-category ${\\mathscr{V}\\textsf{ar}}$, so are interested in Serre functors for product spaces $X\\times Y$, and these have a lovely description in the 2-categorical language. We can now define one of the key objects in this paper.\n\n::: Definition\nFor a space $X$, the *Serre kernel* $\\Sigma_X\\in \\mathop{\\mathrm{1\\mbox{-}Hom}}_{\\mathscr{V}\\textsf{ar}}(X,X)$ is defined to be $\\Delta_*\\omega_X[\\dim X]\\in\\mathbf{D}(X\\times X)$, the kernel inducing the Serre functor on $X$. Similarly the *anti-Serre kernel* $\\Sigma^{-1}_X\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjoint kernels",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-adjoint-kernels.md",
+      "narrative": null,
+      "content": "[]{#sec:adjoints label=\"sec:adjoints\"}\n\nThe reader is undoubtably familiar with the notion of adjoint functors. It is easy and natural to generalize this from the context of the 2-category ${\\mathscr{C}\\textsf{at}}$ of categories, functors and natural transformations to the context of an arbitrary 2-category. In this section it is shown that every kernel, considered as a 1-morphism in the 2-category ${\\mathscr{V}\\textsf{ar}}$, has both a left and right adjoint: this is a consequence of Serre duality, and is closely related to the familiar fact that every integral transform functor has both a l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjunctions in 2-categories.",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-adjunctions-in-2-categories.md",
+      "narrative": null,
+      "content": "The notion of an adjunction in a 2-category simultaneously generalizes the notion of an adjunction between functors and the notion of a duality between objects of a monoidal category. As it is the former that arises in the context of integral transforms, we will use that as the motivation, but will come back to the latter below.\n\nThe most familiar definition of adjoint functors is as follows. For categories $\\mathbf{C}$ and $\\mathbf{D}$, an adjunction $\\Psi\\dashv \\Phi$ between functors $\\Psi\\colon \\mathbf{D}\\to \\mathbf{C}$ and $\\Phi\\colon \\mathbf{C}\\to \\mathbf{D}$ is the specification of a nat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Left and right adjoints of kernels.",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-left-and-right-adjoints-of-kernels.md",
+      "narrative": null,
+      "content": "[]{#subsec:leftrightadjoints label=\"subsec:leftrightadjoints\"} []{#subsec:yphimphi label=\"subsec:yphimphi\"} In an arbitrary 2-category a given 1-morphism might or might not have a left or a right adjoint, but in the 2-category ${\\mathscr{V}\\textsf{ar}}$ every 1-morphism, that is every kernel, has both a left and a right adjoint. We will see below that for a kernel $\\Phi\\colon X\\to Y$ there are adjunctions $$\\Phi^{\\scriptscriptstyle\\vee}\\circ\\Sigma_Y\\dashv\\Phi\\dashv\\Sigma_X\\circ\n\\Phi^{\\scriptscriptstyle\\vee},$$ where $\\Phi^{\\scriptscriptstyle\\vee}\\colon Y\\to X$ means the object $\\mathop{\\mathrm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial traces.",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-partial-traces.md",
+      "narrative": null,
+      "content": "We can now define the important notion of partial traces.\n\n::: Definition\nFor a kernel $\\Phi\\colon X\\to Y$, and kernels $\\Psi,\\Theta\\colon Z\\to X$ define the *left partial trace* $$\\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Phi\\circ\\Theta,\\Sigma_Y\\circ\\Phi\\circ\\Psi) \\to\n  \\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Theta,\\Sigma_X\\circ\\Psi)$$ as $$\\raisebox{-.45\\height}{}\\mapsto\\raisebox{-.45\\height}{}.$$ Similarly we define a *right partial trace* $$\\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Theta'\\circ\\Phi,\\Psi'\\circ\\Phi\\circ\\Sigma_X) \\to\n  \\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Theta',\\Psi'\\circ\\Sigma_Y)$$ as $$\\raisebox{-.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjunction as a 2-functor.",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-adjunction-as-a-2-functor.md",
+      "narrative": null,
+      "content": "[]{#subsec:adj2functors label=\"subsec:adj2functors\"} As shown in Section [\\[subsec:leftrightadjoints\\]](#subsec:leftrightadjoints){reference-type=\"ref\" reference=\"subsec:leftrightadjoints\"}, in the 2-category ${\\mathscr{V}\\textsf{ar}}$ every 1-morphism, that is every kernel, $\\Phi\\colon X\\to Y$ has a right adjoint $\\Sigma_X\\circ \\Phi^{\\scriptscriptstyle\\vee}$. This can be extended to a 'right adjunction 2-functor' $\\tau_R\\colon\n{\\mathscr{V}\\textsf{ar}}^\\text{coop}\\to {\\mathscr{V}\\textsf{ar}}$, where ${\\mathscr{V}\\textsf{ar}}^\\text{coop}$ means the contra-opposite 2-category of ${\\mathscr{V}\\te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Induced maps on homology",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-induced-maps-on-homology.md",
+      "narrative": null,
+      "content": "[]{#sec:defmaps label=\"sec:defmaps\"} In this section we define $\\mathop{\\mathrm{HH}}_\\bullet(X)$, the Hochschild homology of a space $X$, and show that given a kernel $\\Phi\\colon X\\to Y$ we get pull-back and push-forward maps, $\\Phi^*\\colon \\mathop{\\mathrm{HH}}_\\bullet(Y)\\to\n\\mathop{\\mathrm{HH}}_\\bullet(X)$ and $\\Phi_*\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to \\mathop{\\mathrm{HH}}_\\bullet(Y)$, such that if $\\Phi$ is right adjoint to $\\Psi$ then $\\Psi^*=\\Phi_*$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hochschild cohomology.",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-hochschild-cohomology.md",
+      "narrative": null,
+      "content": "First recall that for a space $X$, one way to define its Hochschild *cohomology* is as $$\\mathop{\\mathrm{HH}}^\\bullet(X):=\\mathop{\\mathrm{Ext}}_{X\\times X}^\\bullet({\\mathscr O}_\\Delta,{\\mathscr O}_\\Delta).$$ However, the ext-group is just the hom-set $\\mathop{\\mathrm{Hom}}^\\bullet_{\\mathbf{D}(X\\times\n  X)}({\\mathscr O}_\\Delta,{\\mathscr O}_\\Delta)$ which by the definition of ${\\mathscr{V}\\textsf{ar}}$ is just $\\mathop{\\mathrm{{2\\mbox{-}Hom}}}^\\bullet_{\\mathscr{V}\\textsf{ar}}(\\mathsf {Id}_X, \\mathsf {Id}_X)$. In terms of diagrams, we can thus denote an element $\\varphi\\in \\mathop{\\mathrm{HH}}^\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hochschild homology.",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-hochschild-homology.md",
+      "narrative": null,
+      "content": "Now we define $\\mathop{\\mathrm{HH}}_\\bullet(X)$ the Hochschild *homology* of a space $X$ as follows: $$\\mathop{\\mathrm{HH}}_\\bullet(X):=\\mathop{\\mathrm{{2\\mbox{-}Hom}}}_{\\mathscr{V}\\textsf{ar}}^\\bullet(\\Sigma_X^{-1},\\mathsf {Id}_X)$$ or, in more concrete terms, $$\\mathop{\\mathrm{HH}}_\\bullet(X) = \\mathop{\\mathrm{Ext}}_{X\\times X}^{-\\bullet}(\\Sigma^{-1}_X,{\\mathscr O}_\\Delta).$$ Thus an element $w\\in \\mathop{\\mathrm{HH}}_\\bullet(X)$ will be denoted $$\\raisebox{-.45\\height}{},$$ where again the shifts are understood.\n\nIt is worth taking a moment to compare this with other definitions of Hochschi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Push-forward and pull-back.",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-push-forward-and-pull-back.md",
+      "narrative": null,
+      "content": "[]{#def:defmaps label=\"def:defmaps\"} For spaces $X$ and $Y$ and a kernel $\\Phi\\colon X\\to Y$ define the push-forward on Hochschild homology $\\Phi_*\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to \\mathop{\\mathrm{HH}}_\\bullet(Y)$ as follows $$\\Phi_*\\left(\\raisebox{-.45\\height}{}\\right):=\\raisebox{-.45\\height}{}.$$ For the reader still unhappy with diagrams, for $v\\in\n\\mathop{\\mathrm{Hom}}^\\bullet(\\Sigma_X^{-1},\\mathsf {Id}_X)$, define $\\Phi_*(v)\\in \\mathop{\\mathrm{Hom}}^\\bullet(\\Sigma_Y^{-1},\\mathsf {Id}_Y)$ as the following composite, which is read from the above diagram by reading upwards from the b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Mukai pairing and adjoint kernels",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-the-mukai-pairing-and-adjoint-kernels.md",
+      "narrative": null,
+      "content": "[]{#sec:adjoint label=\"sec:adjoint\"}\n\nIn this section we define the Mukai pairing on the Hochschild homology of a space and show that the push-forwards of adjoint kernels are themselves adjoint linear maps with respect to this pairing.\n\nFirst observe from Section [\\[subsec:adj2functors\\]](#subsec:adj2functors){reference-type=\"ref\" reference=\"subsec:adj2functors\"} that we have two isomorphisms: $$\\tau_R,\\tau_L\\colon\\mathop{\\mathrm{HH}}_\\bullet(X) = \\mathop{\\mathrm{Hom}}^{-\\bullet}(\\Sigma_X^{-1}, \\mathsf {Id}_X) \\xrightarrow{\\sim}\\mathop{\\mathrm{Hom}}^\\bullet(\\mathsf {Id}_X, \\Sigma_X),$$ given b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern character",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-017-the-chern-character.md",
+      "narrative": null,
+      "content": "[]{#sec:chernchar label=\"sec:chernchar\"}\n\nIn this section we define the Chern character map $\\mathop{\\mathrm{ch}}\\colon \\mathop{\\mathrm{K}}_0(X)\n\\rightarrow\\mathop{\\mathrm{HH}}_0(X)$. We discuss the relationship between our construction and the one of Markarian [@Mar Definition 2]. Then we show that the Chern character maps the Euler pairing to the Mukai pairing: we call this the Semi-Hirzebruch-Riemann-Roch Theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the Chern character.",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-018-definition-of-the-chern-character.md",
+      "narrative": null,
+      "content": "Suppose $X$ is a space, and ${\\mathscr E}$ is an object in $\\mathbf{D}(X)$. Consider ${\\mathscr E}$ as an object of $\\mathbf{D}({\\mathsf{pt}}\\times X)$, i.e., as a kernel ${\\mathsf{pt}}\\rightarrow\nX$, so there is an induced linear map $${\\mathscr E}_*\\colon\\mathop{\\mathrm{HH}}_\\bullet({\\mathsf{pt}}) \\rightarrow\\mathop{\\mathrm{HH}}_\\bullet(X).$$ Now, because the Serre functor on a point is trivial, $\\mathop{\\mathrm{HH}}_0({\\mathsf{pt}})$ is canonically identifiable with $\\mathop{\\mathrm{Hom}}_{{\\mathsf{pt}}\\times {\\mathsf{pt}}}({\\mathscr O}_{\\mathsf{pt}}, {\\mathscr O}_{\\mathsf{pt}})$ so there i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern character as a map on K-theory.",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-019-the-chern-character-as-a-map-on-k-theory.md",
+      "narrative": null,
+      "content": "[]{#subsec:iotae label=\"subsec:iotae\"} To show that the Chern character descends to a map on K-theory we give a characterization of the Chern character similar to that of Markarian [@Mar].\n\nFor any object ${\\mathscr E}\\in \\mathbf{D}(X)$, which is to be considered an object of $\\mathbf{D}( {\\mathsf{pt}}\\times X)$, there are the following two maps: $$\\iota_{\\mathscr E}\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to \\mathop{\\mathrm{Hom}}_{\\mathbf{D}(X\\times X)}^\\bullet({\\mathscr E},\\Sigma_X\\circ {\\mathscr E});\n\\qquad\\raisebox{-.45\\height}{}\\,\\mapsto \\,\\raisebox{-.45\\height}{}$$ and $$\\iota^{\\mathscr E}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern character and inner products.",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-020-the-chern-character-and-inner-products.md",
+      "narrative": null,
+      "content": "One reading of the Hirzebruch-Riemann-Roch Theorem is that it says that the usual Chern character map $\\mathop{\\mathrm{ch}}\\colon \\mathop{\\mathrm{K}}_0\\to \\mathsf H^\\bullet(X)$ is a map of inner product spaces when $\\mathop{\\mathrm{K}}_0(X)$ is equipped with the Euler pairing (see below) and $\\mathsf H^\\bullet(X)$ is equipped with the pairing $\\langle x_1,x_2\\rangle:=(x_1\\cup x_2 \\cup \\mathop{\\mathrm{td}}_X)\\cap [X]$. It is shown in [@CalHH2] that the Hochschild homology Chern character composed with the Hochschild-Kostant-Rosenberg map $I_{\\text{HKR}}$ gives the usual Chern character: $$\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example.",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-021-example.md",
+      "narrative": null,
+      "content": "To have a non-commutative example at hand, consider the case when $G$ is a finite group acting trivially on a point. The orbifold $BG$ is defined to be the global quotient $[{\\,\\cdot\\,}/G]$ and then the category of coherent sheaves on the orbifold $BG$ is precisely the category of finite dimensional representations of $G$. One can naturally identify $\\mathop{\\mathrm{HH}}_0(BG)$ with the space of conjugation invariant functions on $G$, and the Chern character of a representation $\\rho$ is precisely the representation-theoretic character of $\\rho$. See [@WilGr] for details.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open-closed TQFTs and the Cardy Condition",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-open-closed-tqfts-and-the-cardy-condition.md",
+      "narrative": null,
+      "content": "[]{#sec:cardy label=\"sec:cardy\"}\n\nWe conclude with a discussion of open-closed topological field theories in the B-model and we prove that a condition holds for Hochschild homology which is equivalent to the Cardy Condition in the Calabi-Yau case. Appropriate references for open-closed 2d topological field theories include Moore-Segal [@MooSeg], Costello [@Cos] and Lauda-Pfeiffer [@LaudaPfeifer].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open-closed 2d TQFTs.",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-023-open-closed-2d-tqfts.md",
+      "narrative": null,
+      "content": "Consider the open and closed 2-cobordism category $2\\textsf{Cob}_{\\text{oc}}$ whose objects are oriented, compact one-manifolds --- in other words, disjoint unions of circles and intervals --- and whose morphisms are (diffeomorphism classes of) cobordisms-with-corners between the source and target one-manifolds. A morphism can be drawn as a vertical cobordism, from the source at the bottom to the target at the top. As well as parts of the boundary being at the top and the bottom, there will be parts of the boundary in between, corresponding to the fact that this is a cobordism with corners. An",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open-closed 2d TQFTs with D-branes.",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-024-open-closed-2d-tqfts-with-d-branes.md",
+      "narrative": null,
+      "content": "A more interesting model of string theory is obtained when we specify a set of 'boundary conditions' or 'D-branes' for the open strings. For a mathematician this just means a set of labels for the boundary points of objects. So fix a set $\\Lambda$ of labels, and consider the category $2\\textsf{Cob}_{\\text{oc}}^\\Lambda$ of open-closed cobordisms such that the objects are compact, oriented one-manifolds with the boundary points labelled with elements of the set $\\Lambda$, and morphisms having their internal boundaries labelled compatibly with their boundaries. Here is an example of a morphism fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo.md",
+      "narrative": null,
+      "content": "Associated to a Calabi-Yau manifold $X$ there are two standard 2d TQFTs coming from string theory, imaginatively named the A-model and the B-model: it is the B-model we will be interested in here. In the B-model the boundary conditions are supposed to be \"generated\" by complex submanifolds of $X$ so the boundary conditions are taken to be complexes of coherent sheaves on $X$; the open string category is then supposed to be the derived category of coherent sheaves on $X$. This is indeed a Calabi-Yau category, which is why such categories are so named: for each ${\\mathscr E}$ and ${\\mathscr F}$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Baggy Cardy Condition.",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-026-the-baggy-cardy-condition.md",
+      "narrative": null,
+      "content": "In the case of a manifold $X$ that is not necessarily Calabi-Yau we don't have the same coincidence of structure as above: we no longer have a Frobenius algebra $\\mathop{\\mathrm{HH}}^\\bullet(X)$; rather we have an algebra $\\mathop{\\mathrm{HH}}^\\bullet(X)$ and an inner product space $\\mathop{\\mathrm{HH}}_\\bullet(X)$. This means that we can not formulate the Cardy Condition as it stands. We now state a condition which makes sense for an arbitrary, non-Calabi-Yau manifold and which is equivalent to the Cardy Condition in the Calabi-Yau case.\n\n::: Theorem\nSuppose that $\\textsf{O}$ is a Calabi-Yau",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-028-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "prop-sec-028-02.md",
+      "narrative": null,
+      "content": "Polite dualities Φ ∨ ←→Φ† and Ψ ∨ ←→Ψ† for two kernels Φ: X →Y and Ψ: Y →Z canonically induce a polite duality Ψ ◦Φ ∨ ←→Φ† ◦ΣY ◦Ψ†.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-028-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "prop-sec-028-03.md",
+      "narrative": null,
+      "content": "Given an adjunction Ψ ⊣Φ, deﬁne Φ† := Ψ ◦Σ−1 Y . Then there exists a polite duality Φ ∨ ←→Φ† where the adjunction ⊣1 is the given one Ψ ⊣Φ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-028-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "prop-sec-028-04.md",
+      "narrative": null,
+      "content": "Let Φ ∈D(X × Y) be a kernel, and let Φ∨∈D(Y × X) be the dual R HomX×Y(Φ, OX×Y), regarded as a kernel from Y to X. Then there exists a canonical polite duality Φ ∨ ←→Φ∨.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality and partial trace",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-027-duality-and-partial-trace.md",
+      "narrative": null,
+      "content": "Duality and partial trace\nIn this appendix we show that given a kernel Φ: X →Y and its dual kernel\nΦ∨: Y →X there are canonical 2-morphisms\nΣ−1\nX →Φ∨◦Φ\nand\nΦ ◦ΣX ◦Φ∨→IdY\ngiving rise to a variety of natural adjunctions satisfying a number of com-\npatibility relations.\nThe notion of duality in V ar is seen to be a middle-ground between the\noperations τL and τR: it is an involution, unlike τL and τR, but it does not\nrespect composition, which τL and τR do.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polite duality.",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-028-polite-duality.md",
+      "narrative": null,
+      "content": "Polite duality.\nRecall from Section 2.2 that for every space X there is the Serre kernel\nΣX: X →X such that for spaces X and Y the functor\nΣY ◦−◦ΣX: HomV ar(X, Y) →HomV ar(X, Y)\nis a Serre functor for the category HomV ar(X, Y).\n31\nDeﬁnition. If Φ: X →Y and Φ† : Y →X are kernels then a polite du-\nality between them, denoted Φ\n∨\n←→Φ†, consists of adjunctions as follows\n(numbered as shown)\nΦ† ◦ΣY ⊣1 Φ ⊣2 ΣX ◦Φ†,\nΦ ◦ΣX ⊣3 Φ† ⊣4 ΣY ◦Φ,\nsuch that the following compatibility relations hold.\n(1+2). For kernels Θ: Z →X and Ψ: Z →Y, the diagram of iso-\nmorphisms below commutes:\nHom(Ψ, Φ ◦Θ)\n1\n→Hom(Φ† ◦",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/thm-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "thm-sec-028-01.md",
+      "narrative": null,
+      "content": "If Φ and Φ† form a politely dual pair of kernels, then the Serre trace is invariant under partial trace with respect to Φ: Tr     Ψ α Ψ    = Tr     Ψ α Ψ    ; Tr     Ψ′ α′ Ψ′    = Tr     α′ Ψ′ Ψ′    .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "If a kernel Φ is reﬂexively polite then so is Φ∨.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-02.md",
+      "narrative": null,
+      "content": "If Φ: X →Y and Ψ: Y →Z are reﬂexively polite kernels then so is Ψ ◦Φ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-03.md",
+      "narrative": null,
+      "content": "Suppose that Φ: X →Y and Ψ: X′ →Y ′ are reﬂexively polite kernels then so is Φ ⊠Ψ: X × X′ →Y × Y ′, the kernel deﬁned by Φ ⊠Ψ := π∗ XYΦ ⊗π∗ X′Y′Ψ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-04.md",
+      "narrative": null,
+      "content": "Let ∆: X →X × X denote the diagonal map, let E be an object in D(X), then the kernel ∆∗E : X →X is reﬂexively polite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-05.md",
+      "narrative": null,
+      "content": "Let X be a space, then the kernel OX considered as a kernel X →pt is reﬂexively polite, and so also is O∨ X : pt →X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prop-sec-029-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-029-06.md",
+      "narrative": null,
+      "content": "Let πX: X × Y →X be the projection, and (abusing nota- tion) denote by πX,∗: X × Y →X and π∗ X: X →X × Y the kernels represented in D(X × X × Y) by the structure sheaf of the graph of πX. Then πX,∗and π∗ X are reﬂexively polite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reflexively polite kernels.",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-029-reflexively-polite-kernels.md",
+      "narrative": null,
+      "content": "Reﬂexively polite kernels.\nWe still need to address one more compatibility between the dualities con-\nstructed above. Given a kernel Φ, the previous proposition yields a polite\nduality\nΦ\n∨\n←→Φ∨.\nGiven any polite duality Φ\n∨\n←→Φ†, we get, symmetrically, a polite duality\nΦ†\n∨\n←→Φ by switching the adjunctions 1 and 3 and the adjunctions 2 and\n4. Thus there is a natural polite duality\nΦ∨\n∨\n←→Φ.\nOn the other hand, applying Proposition 20 to the kernel Φ∨we get a polite\nduality Φ∨\n∨\n←→Φ∨∨and then, using the canonical identiﬁcation Φ∨∨∼= Φ,\nwe get another polite duality\nΦ∨\n∨\n←→Φ.\nThe fundamental ques",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/thm-sec-029-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "thm-sec-029-07.md",
+      "narrative": null,
+      "content": "Every kernel is reﬂexively polite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.2052v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-030-references.md",
+      "narrative": null,
+      "content": "[1] Bondal, A., I., Kapranov, M., M., Enhanced triangulated categories,\nMat. Sb. 181 (1990), no. 5, 669–683; translation in Math. USSR-Sb.\n70 (1991), no. 1, 93–107.\n[2] Bondal, A., I., Kapranov, M., M., Representable functors, Serre func-\ntors, and reconstructions, Izv. Akad. Nauk SSSR Ser. Mat. 53 (1989),\nno. 6, 1183–1205, 1337; translation in Math. USSR-Izv. 35 (1990), no.\n3, 519–541.\n[3] C˘ald˘araru, A., Derived Categories of Twisted Sheaves on Calabi-\nYau Manifolds, Ph.D. thesis, Cornell University (2000), (available at\nhttp://www.math.wisc.edu/~andreic/publications/ThesisSingleSpaced.pdf)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

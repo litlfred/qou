@@ -1,0 +1,3320 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1611.03697v5",
+  "title": "arxiv-1611.03697v5",
+  "variant": "pdf",
+  "pages": 51,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the paper",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-plan-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "BPS structures: initial definitions",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-bps-structures-initial-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Definition and terminology",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-21-definition-and-terminology"
+    },
+    {
+      "level": 2,
+      "title": "Donaldson-Thomas invariants",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-donaldson-thomas-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Poisson algebraic torus",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-poisson-algebraic-torus"
+    },
+    {
+      "level": 2,
+      "title": "Twisted torus",
+      "number": "2.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-twisted-torus"
+    },
+    {
+      "level": 2,
+      "title": "Ray diagram",
+      "number": "2.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-25-ray-diagram"
+    },
+    {
+      "level": 2,
+      "title": "Further terminology",
+      "number": "2.6",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-26-further-terminology"
+    },
+    {
+      "level": 2,
+      "title": "BPS automorphisms",
+      "number": "2.7",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-27-bps-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Doubling construction",
+      "number": "2.8",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-28-doubling-construction"
+    },
+    {
+      "level": 2,
+      "title": "A basic example: the Kronecker quiver",
+      "number": "2.9",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-29-a-basic-example-the-kronecker-quiver"
+    },
+    {
+      "level": 1,
+      "title": "Summary of the contents of the paper",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-3-summary-of-the-contents-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "The Riemann-Hilbert problem",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-31-the-riemann-hilbert-problem"
+    },
+    {
+      "level": 2,
+      "title": "Solution in the uncoupled case",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-32-solution-in-the-uncoupled-case"
+    },
+    {
+      "level": 2,
+      "title": "Variations of BPS structure",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-33-variations-of-bps-structure"
+    },
+    {
+      "level": 2,
+      "title": "Tau functions",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-34-tau-functions"
+    },
+    {
+      "level": 2,
+      "title": "Tau function in the uncoupled case",
+      "number": "3.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-35-tau-function-in-the-uncoupled-case"
+    },
+    {
+      "level": 2,
+      "title": "Two classes of examples",
+      "number": "3.6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-36-two-classes-of-examples"
+    },
+    {
+      "level": 2,
+      "title": "(i) Topological strings.",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-i-topological-strings"
+    },
+    {
+      "level": 2,
+      "title": "(ii) Theories of class S",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-ii-theories-of-class-s"
+    },
+    {
+      "level": 1,
+      "title": "The Riemann-Hilbert problem",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-4-the-riemann-hilbert-problem"
+    },
+    {
+      "level": 2,
+      "title": "Analytic BPS automorphisms",
+      "number": "4.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-41-analytic-bps-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Statement of the problem",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-42-statement-of-the-problem"
+    },
+    {
+      "level": 2,
+      "title": "Remarks on the formulation",
+      "number": "4.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-43-remarks-on-the-formulation"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries of the problem",
+      "number": "4.4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-44-symmetries-of-the-problem"
+    },
+    {
+      "level": 2,
+      "title": "Null vectors and uniqueness",
+      "number": "4.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-45-null-vectors-and-uniqueness"
+    },
+    {
+      "level": 2,
+      "title": "Tau functions",
+      "number": "4.6",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-46-tau-functions"
+    },
+    {
+      "level": 1,
+      "title": "Explicit solutions in the finite, uncoupled case",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-5-explicit-solutions-in-the-finite-uncoupled-cas"
+    },
+    {
+      "level": 2,
+      "title": "Doubled A1 example",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-51-doubled-a1-example"
+    },
+    {
+      "level": 2,
+      "title": "Solution in the doubled A1 case",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-52-solution-in-the-doubled-a1-case"
+    },
+    {
+      "level": 2,
+      "title": "The finite uncoupled case",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-53-the-finite-uncoupled-case"
+    },
+    {
+      "level": 2,
+      "title": "Tau function in the uncoupled case",
+      "number": "5.4",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-54-tau-function-in-the-uncoupled-case"
+    },
+    {
+      "level": 1,
+      "title": "Geometric case: Gromov-Witten invariants",
+      "number": "6",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-6-geometric-case-gromov-witten-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Gopakumar-Vafa invariants",
+      "number": "6.1",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-61-gopakumar-vafa-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Torsion sheaf BPS invariants",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-62-torsion-sheaf-bps-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Formal computation of the -function",
+      "number": "6.3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-63-formal-computation-of-the--function"
+    },
+    {
+      "level": 1,
+      "title": "Quadratic differentials and exact WKB analysis",
+      "number": "7",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-7-quadratic-differentials-and-exact-wkb-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Quadratic differentials",
+      "number": "7.1",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Voros symbols",
+      "number": "7.2",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-72-voros-symbols"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Variations of BPS structure",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-appendix-a-variations-of-bps-structure"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Introductory remarks",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-a1-introductory-remarks"
+    },
+    {
+      "level": 2,
+      "title": "A.2. Formal completions",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-a2-formal-completions"
+    },
+    {
+      "level": 2,
+      "title": "A.3. Lie algebra and associated group",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-a3-lie-algebra-and-associated-group"
+    },
+    {
+      "level": 2,
+      "title": "A.4. Products over rays",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-a4-products-over-rays"
+    },
+    {
+      "level": 2,
+      "title": "A.5. Deforming the central charge",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-a5-deforming-the-central-charge"
+    },
+    {
+      "level": 2,
+      "title": "A.6. Variations of BPS structure",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-a6-variations-of-bps-structure"
+    },
+    {
+      "level": 2,
+      "title": "A.7. Behaviour of BPS invariants",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-a7-behaviour-of-bps-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Convergent BPS structures",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-appendix-b-convergent-bps-structures"
+    },
+    {
+      "level": 2,
+      "title": "B.1. Convergent BPS structures",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-b1-convergent-bps-structures"
+    },
+    {
+      "level": 2,
+      "title": "B.2. Partially defined automorphisms",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-b2-partially-defined-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "B.3. BPS automorphisms",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-b3-bps-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "B.4. Compositions of BPS automorphisms",
+      "number": null,
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-b4-compositions-of-bps-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "B.5. Birational transformations",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-b5-birational-transformations"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann-hilbert problems",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas theory",
+          "heading": false
+        },
+        {
+          "term": "bridgeland",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1611.03697v5 [math.AG] 24 Jun 2020 RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND Abstract. We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. In certain special cases we show that these problems have unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain connections with Gromov- Witten theory and exact",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1611.03697v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann-hilbert problems",
+          "heading": false
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "corresponding riemann-hilbert",
+          "heading": false
+        },
+        {
+          "term": "neitzke cite",
+          "heading": false
+        },
+        {
+          "term": "uncoupled case",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas theory",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. They involve maps from the complex plane to an algebraic torus, with prescribed discontinuities along a collection of rays, and are closely related to the Riemann-Hilbert problems considered by Gaiotto, Moore and Neitzke \\cite{GMN1}; in physical terms we are considering the conformal limit of their story. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-plan-of-the-paper",
+      "number": null,
+      "title": "Plan of the paper",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "partially-defined",
+          "heading": false
+        },
+        {
+          "term": "self-maps",
+          "heading": false
+        },
+        {
+          "term": "deferred",
+          "heading": false
+        }
+      ],
+      "extract": "In Section 2 we introduce basic definitions concerning BPS structures. Section 3 contains a summary of the contents of the paper with technical details deferred to later sections. In Section 4 we discuss the Riemann-Hilbert problem associated to a BPS structure. In Section 5 we solve this problem in the uncoupled case using elementary properties of the gamma function. Sections 6 and 7 discuss the connections with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kohei iwaki",
+          "heading": false
+        },
+        {
+          "term": "szendr",
+          "heading": false
+        },
+        {
+          "term": "meinhardt",
+          "heading": false
+        }
+      ],
+      "extract": "The author is very grateful to Kohei Iwaki, Andy Neitzke, Ivan Smith and Bal{\\'a}zs Szendr{\\H o}i for extremely helpful discussions during the long gestation period of this paper. This work was partially supported by an ERC Advanced grant. The calculations in Section \\ref{gw} were carried out jointly with Kohei Iwaki during a visit to the (appropriately named) Bernoulli Centre in Lausanne. I would also like to thank",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-bps-structures-initial-definitions",
+      "number": "2",
+      "title": "BPS structures: initial definitions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "structures",
+          "heading": true
+        },
+        {
+          "term": "gentle",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce the abstract notion of a BPS structure and explain the corresponding picture of active rays and BPS automorphisms. In mathematics, these structures arise naturally as the output of generalized Donaldson-Thomas theory applied to a three-dimensional Calabi-Yau triangulated category with a stability condition. These ideas go back to Kontsevich and Soibelman \\cite[Section 2]{KS1}, building",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-21-definition-and-terminology",
+      "number": "2.1",
+      "title": "Definition and terminology",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colon gamma",
+          "heading": false
+        },
+        {
+          "term": "smallskip item",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "begin itemize",
+          "heading": false
+        },
+        {
+          "term": "end itemize",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": false
+        }
+      ],
+      "extract": "The following definition is a special case of the notion of stability data on a graded Lie algebra \\cite[Section 2.1]{KS1}. It was also studied by Stoppa and his collaborators \\cite[Section 3]{BSt}, \\cite[Section 2]{FGS}. \\begin{defn} A BPS structure consists of \\begin{itemize} \\item[(a)] A finite-rank free abelian group $\\Gamma\\isom \\bZ^{\\oplus n}$, equipped with a skew-symmetric form \\[\\<-,-\\>\\colon \\Gamma \\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-donaldson-thomas-invariants",
+      "number": "2.2",
+      "title": "Donaldson-Thomas invariants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "sum gamma",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas",
+          "heading": true
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        }
+      ],
+      "extract": "The Donaldson-Thomas (DT) invariants of a BPS structure $(\\Gamma,Z,\\Omega)$ are defined by the expression \\begin{equation} \\label{bps}\\DT(\\gamma)=\\sum_{ \\gamma=m\\alpha} \\frac{1}{m^2} \\, \\Omega(\\alpha)\\in \\bQ,\\end{equation} where the sum is over integers $m>0$ such that $\\gamma$ is divisble by $m$ in the lattice $\\Gamma$. The BPS and DT invariants are equivalent data: we can write",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-poisson-algebraic-torus",
+      "number": "2.3",
+      "title": "Poisson algebraic torus",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus",
+          "heading": true
+        },
+        {
+          "term": "poisson",
+          "heading": true
+        },
+        {
+          "term": "homz",
+          "heading": false
+        }
+      ],
+      "extract": "⟨−, −⟩as above, we consider the algebraic torus T+ = HomZ(Γ, C∗) ∼= (C∗)n, and its co-ordinate ring (which is also the group ring of the lattice Γ) C[T+] = C[Γ] ∼= C[y±1 1 , · · · , y±n n ]. We write yγ ∈C[T+] for the character of T+ corresponding to an element γ ∈Γ. The skew- symmetric form ⟨−, −⟩induces an invariant Poisson structure on T+, given on characters by {yα, yβ} = ⟨α, β⟩· yα · yβ. (4) As well as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-twisted-torus",
+      "number": "2.4",
+      "title": "Twisted torus",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted torus",
+          "heading": true
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "qquad gamma",
+          "heading": false
+        },
+        {
+          "term": "twisted characters",
+          "heading": false
+        },
+        {
+          "term": "base-point",
+          "heading": false
+        },
+        {
+          "term": "poisson",
+          "heading": false
+        }
+      ],
+      "extract": "Let us again fix a lattice $\\Gamma\\isom \\bZ^{\\oplus n}$ equipped with a skew-symmetric form $\\<-,-\\>$. The torus $\\bT_+$ acts freely and transitively on the twisted torus $\\bT_-$ via \\[(f\\cdot g)(\\gamma)=f(\\gamma)\\cdot g(\\gamma)\\in \\bC^*, \\quad f\\in \\bT_+, \\quad g\\in \\bT_-.\\] Choosing a base-point $g_0\\in \\bT_-$ therefore gives a bijection \\begin{equation} \\label{bloxy}\\theta_{g_0}\\colon \\bT_+\\to \\bT_-, \\qquad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-25-ray-diagram",
+      "number": "2.5",
+      "title": "Ray diagram",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ray diagram",
+          "heading": true
+        },
+        {
+          "term": "node scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "active rays",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        },
+        {
+          "term": "active class",
+          "heading": false
+        },
+        {
+          "term": "ell subset",
+          "heading": false
+        },
+        {
+          "term": "fill",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{raydiagram} Let $(\\Gamma,Z,\\Omega)$ be a BPS structure. The support property implies that in any bounded region of $\\bC$ there are only finitely many points of the form $Z(\\gamma)$ with $\\gamma\\in \\Gamma$ an active class. It also implies that all such points are nonzero. \\begin{figure} \\begin{tikzpicture}[scale=0.4] \\draw (5,0) circle [radius=0.1]; \\draw[->] (5.1,0.1) -- (8,2); \\draw[->] (4.9,0.1) -- (3,2);",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-26-further-terminology",
+      "number": "2.6",
+      "title": "Further terminology",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classes gamma",
+          "heading": false
+        },
+        {
+          "term": "active classes",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "ell subset",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": false
+        },
+        {
+          "term": "flows",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{defns} In this section we gather some terminology for describing BPS structures of various special kinds. \\begin{defn} \\label{la} We say that a BPS structure $(Z,\\Gamma,\\Omega)$ is \\begin{itemize} \\item[(a)] finite, if there are only finitely many active classes $\\gamma\\in \\Gamma$; \\item[(b)] ray-finite, if for any ray $\\ell\\subset \\bC^*$ there are only finitely many active classes $\\gamma\\in \\Gamma$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-27-bps-automorphisms",
+      "number": "2.7",
+      "title": "BPS automorphisms",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ell subset",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "subset delta",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": true
+        },
+        {
+          "term": "partially-defined",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "birational",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{really} As mentioned above, the main technical problem we have to deal with is making suitable definitions of the BPS automorphisms $\\bS(\\ell)$ associated to a BPS structure. Since we will use three different approaches at various points in the paper, it is perhaps worth briefly summarising these here. \\begin{itemize} \\item[(i)] {\\it Formal approach.} If we are only interested in the elements $\\bS(\\ell)$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-28-doubling-construction",
+      "number": "2.8",
+      "title": "Doubling construction",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma oplus",
+          "heading": false
+        },
+        {
+          "term": "gamma dual",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "doubling",
+          "heading": true
+        },
+        {
+          "term": "doubled",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{double} It is often useful to be able to assume that the form $\\<-,-\\>$ is non-degenerate. To reduce to this case we can use the following doubling construction \\cite[Section 2.6]{KS1}. Suppose given a BPS structure $(\\Gamma, Z, \\Omega)$. The doubled BPS structure takes the form \\[(\\Gamma\\oplus \\Gamma^\\dual, Z, \\Omega),\\] where $\\Gamma^\\dual=\\Hom_\\bZ(\\Gamma,\\bZ)$ is the dual lattice. We equip the doubled",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-29-a-basic-example-the-kronecker-quiver",
+      "number": "2.9",
+      "title": "A basic example: the Kronecker quiver",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "kronecker",
+          "heading": true
+        },
+        {
+          "term": "quiver",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{newnew} Interesting examples of BPS structures can be obtained from Donaldson-Thomas theory. In the case of the generalised Kronecker quiver with $k>0$ arrows (see also \\cite{GP}) these BPS structures $(\\Gamma,Z,\\Omega)$ have \\[\\Gamma=\\bZ e_1\\oplus \\bZ e_2, \\qquad \\<e_1,e_2\\>=-k,\\] and are specified by a central charge $Z\\colon \\Gamma\\to \\bC$ satisfying $\\Im Z(e_i)>0$ for $i=1,2$. The BPS invariants depend",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-3-summary-of-the-contents-of-the-paper",
+      "number": "3",
+      "title": "Summary of the contents of the paper",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we give a rough summary of the contents of the rest of the paper. Precise statements and proofs can be found in later sections.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-31-the-riemann-hilbert-problem",
+      "number": "3.1",
+      "title": "The Riemann-Hilbert problem",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi colon",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "psi colon",
+          "heading": false
+        },
+        {
+          "term": "active ray",
+          "heading": false
+        },
+        {
+          "term": "cdot phi",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert",
+          "heading": true
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "gamma circ",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{rh_intro} Given a convergent BPS structure $(\\Gamma,Z,\\Omega)$ we will consider an associated Riemann-Hilbert problem. It depends on a choice of a point $\\xi\\in \\bT$ which we call the constant term. We discuss the statement of this problem more carefully in Section \\ref{rh}; for now we just give the rough idea. \\begin{problem} \\label{an}Fix a point $\\xi\\in \\bT$. Construct a piecewise holomorphic map",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-32-solution-in-the-uncoupled-case",
+      "number": "3.2",
+      "title": "Solution in the uncoupled case",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncoupled",
+          "heading": true
+        },
+        {
+          "term": "classes gamma",
+          "heading": false
+        },
+        {
+          "term": "active classes",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        },
+        {
+          "term": "cdot",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of a finite, uncoupled, integral BPS structure, and for certain choices of $\\xi\\in \\bT$, the Riemann-Hilbert problem introduced above has a unique solution, which can be written explicitly in terms of products of modified gamma functions. The inspiration for this comes from work of Gaiotto \\cite[Section 3.1]{G}. Consider the multi-valued meromophic function on $\\bC^*$ defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-33-variations-of-bps-structure",
+      "number": "3.3",
+      "title": "Variations of BPS structure",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps structure",
+          "heading": true
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "smallskip item",
+          "heading": false
+        },
+        {
+          "term": "wall-crossing formula",
+          "heading": false
+        },
+        {
+          "term": "wcw",
+          "heading": false
+        },
+        {
+          "term": "variations",
+          "heading": true
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "active",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{vbpss} The variation of BPS invariants in Donaldson-Thomas theory under changes in stability parameters is controlled by the Kontsevich-Soibelman wall-crossing formula. This forms the main ingredient in the following definition of a variation of BPS structures, which is a special case of the notion of a continuous family of stability structures from \\cite[Section 2.3]{KS1}. Full details can be found in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-34-tau-functions",
+      "number": "3.4",
+      "title": "Tau functions",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "piecewise holomorphic",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": true
+        },
+        {
+          "term": "subset gamma",
+          "heading": false
+        },
+        {
+          "term": "co-ordinates",
+          "heading": false
+        },
+        {
+          "term": "tau function",
+          "heading": false
+        },
+        {
+          "term": "holomorphic map",
+          "heading": false
+        },
+        {
+          "term": "partial log",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider a variation of BPS structures $(\\Gamma_p,Z_p,\\Omega_p)$ over a complex manifold $M$. We call such a variation framed if the local system $(\\Gamma_p)_{p\\in M}$ is trivial, so that we can identify all the lattices $\\Gamma_p$ with a fixed lattice $\\Gamma$. We can always reduce to this case by passing to a cover of $M$, or by restricting to a neighbourhood of a given point $p\\in M$. Associated to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-35-tau-function-in-the-uncoupled-case",
+      "number": "3.5",
+      "title": "Tau function in the uncoupled case",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau function",
+          "heading": true
+        },
+        {
+          "term": "uncoupled",
+          "heading": true
+        },
+        {
+          "term": "miniversal variation",
+          "heading": false
+        },
+        {
+          "term": "sum gamma",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "integral bps",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose given a miniversal variation of finite, uncoupled, integral BPS structures over a complex manifold $M$. We will show that the family of solutions given by Theorem \\ref{one} has a corresponding $\\tau$-function. To describe this function we first introduce the expression \\begin{equation}\\Upsilon(w)=\\frac{e^{-\\zeta'(-1)}\\, e^{\\frac{3}{4}w^2} \\,G(w+1)}{(2\\pi)^{\\frac{w}{2}}\\,w^{\\frac{w^2}{2}}},\\end{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-36-two-classes-of-examples",
+      "number": "3.6",
+      "title": "Two classes of examples",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unanswered",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert",
+          "heading": false
+        },
+        {
+          "term": "classes",
+          "heading": true
+        }
+      ],
+      "extract": "There are two important classes of examples of BPS structures where we can say something about solutions to the Riemann-Hilbert problem. Both are also of interest in theoretical physics. They are treated a little more thoroughly in Sections \\ref{gw} and \\ref{in}, but there are many unanswered questions which we leave for future research.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-i-topological-strings",
+      "number": null,
+      "title": "(i) Topological strings.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": false
+        },
+        {
+          "term": "geq",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a compact Calabi-Yau threefold. There is a variation of BPS structures over the complexified K{\\\" a}hler cone \\[\\{\\omega_\\bC=B+i\\omega\\in H^2(X,\\bC): \\omega\\text{ ample}\\},\\] arising mathematically from generalised Donaldson-Thomas theory applied to coherent sheaves on $X$ supported in dimension $\\leq 1$. The BPS invariants are expected to coincide with the genus 0 Gopakumar-Vafa invariants $\\GV(0,\\beta)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-ii-theories-of-class-s",
+      "number": null,
+      "title": "(ii) Theories of class S",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        },
+        {
+          "term": "theories",
+          "heading": true
+        },
+        {
+          "term": "neitzke",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": false
+        },
+        {
+          "term": "gaiotto",
+          "heading": false
+        },
+        {
+          "term": "moore",
+          "heading": false
+        }
+      ],
+      "extract": "Our second example relates to the class of $N=2$, $d=4$ gauge theories known as theories of class $S$. We consider only the case of gauge group $\\SU(2)$. To specify the theory we need to fix a genus $g\\geq 0$ and a collection of $d\\geq 1$ integers \\[m=(m_1,\\cdots,m_d), \\quad m_i\\geq 2.\\] Mathematically, we can then proceed by introducing a complex orbifold $\\Quad(g,m)$ parameterizing pairs $(S,q)$ consisting of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-4-the-riemann-hilbert-problem",
+      "number": "4",
+      "title": "The Riemann-Hilbert problem",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 41,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we discuss the Riemann-Hilbert problem deﬁned by a convergent BPS structure. It is closely related to the Riemann-Hilbert problem considered by Gaiotto, Moore and Neitzke [16], and has also been studied by Stoppa and his collaborators [1, 14].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-41-analytic-bps-automorphisms",
+      "number": "4.1",
+      "title": "Analytic BPS automorphisms",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acute sector",
+          "heading": false
+        },
+        {
+          "term": "delta subset",
+          "heading": false
+        },
+        {
+          "term": "colon delta",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "ref converge",
+          "heading": false
+        },
+        {
+          "term": "defines holomorphic",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ref} We begin by summarising some basic analytic facts which are proved in Appendix \\ref{converge}. Let $(\\Gamma, Z, \\Omega)$ be a BPS structure, let $\\bT$ be the associated twisted torus, and fix an acute sector $\\Delta\\subset \\bC^*$. For each real number $R>0$ define the open subset $U_\\Delta(R)\\subset \\bT$ to be the interior of the subset \\[\\big\\{g\\in \\bT: Z(\\gamma)\\in \\Delta \\text{ and }",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-42-statement-of-the-problem",
+      "number": "4.2",
+      "title": "Statement of the problem",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-active rays",
+          "heading": false
+        },
+        {
+          "term": "non-active ray",
+          "heading": false
+        },
+        {
+          "term": "active rays",
+          "heading": false
+        },
+        {
+          "term": "cdot phi",
+          "heading": false
+        },
+        {
+          "term": "functions phi",
+          "heading": false
+        },
+        {
+          "term": "dtsect",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "convex sector",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{real} Let $(\\Gamma, Z, \\Omega)$ be a convergent BPS structure, and denote by $\\bT$ the associated twisted torus. Given a ray $\\rr\\subset \\bC^*$ we consider the corresponding half-plane \\[\\bH_\\rr=\\{t\\in \\bC^*:t=z\\cdot v \\text{ with } z\\in \\rr\\text{ and }\\Re(v)>0\\}\\subset \\bC^*\\] centered on it. We shall be dealing with functions of the form \\[\\Phi_\\rr\\colon \\bH_\\rr\\to \\bT.\\] Composing with the twisted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-43-remarks-on-the-formulation",
+      "number": "4.3",
+      "title": "Remarks on the formulation",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref dtsect",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "active rays",
+          "heading": false
+        },
+        {
+          "term": "formulation",
+          "heading": true
+        },
+        {
+          "term": "smallskip item",
+          "heading": false
+        },
+        {
+          "term": "remarks",
+          "heading": true
+        },
+        {
+          "term": "function phi",
+          "heading": false
+        },
+        {
+          "term": "sure",
+          "heading": false
+        }
+      ],
+      "extract": "The Riemann-Hilbert problem of the last subsection is the main subject of this paper. Unfortunately we have no general results giving existence or uniqueness of its solutions. Moreover one could easily imagine various small perturbations of the statement of Problem \\ref{dtsect}, and it will require further work to decide for sure exactly what the correct conditions should be. We make a few remarks on this here.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-44-symmetries-of-the-problem",
+      "number": "4.4",
+      "title": "Symmetries of the problem",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "sigma circ",
+          "heading": false
+        },
+        {
+          "term": "sigma colon",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "functions phi",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "constant term",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sym} There are a couple of obvious symmetries of the Riemann-Hilbert problem which deserve further comment. For the first, note that the twisted torus $\\bT$ has a canonical involution $\\sigma\\colon \\bT\\to \\bT$ which acts on twisted characters by $\\sigma^*(x_\\gamma)=x_{-\\gamma}$. The fixed point set is the finite subset \\begin{equation}\\label{quadref}\\bT^\\sigma=\\{g\\colon \\Gamma \\to \\{\\pm 1\\}:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-45-null-vectors-and-uniqueness",
+      "number": "4.5",
+      "title": "Null vectors and uniqueness",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "null",
+          "heading": true
+        },
+        {
+          "term": "uncoupled bps",
+          "heading": false
+        },
+        {
+          "term": "psi gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma colon",
+          "heading": false
+        },
+        {
+          "term": "doubled bps",
+          "heading": false
+        },
+        {
+          "term": "gamma oplus",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "non-active rays",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(Z,\\Gamma,\\Omega)$ be a BPS structure, and denote by $\\bT$ the corresponding twisted torus. \\begin{defn} An element $\\gamma\\in \\Gamma$ will be called null if it satisfies $\\<\\alpha,\\gamma\\>=0$ for all active classes $\\alpha\\in \\Gamma$. A twisted character $x_\\gamma\\colon \\bT\\to \\bC^*$ corresonding to a null element $\\gamma\\in \\Gamma$ will be called a coefficient. \\end{defn} Note that the definition of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-46-tau-functions",
+      "number": "4.6",
+      "title": "Tau functions",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homz",
+          "heading": false
+        },
+        {
+          "term": "ǫij",
+          "heading": false
+        },
+        {
+          "term": "piecewise holomorphic",
+          "heading": false
+        },
+        {
+          "term": "tpm",
+          "heading": false
+        },
+        {
+          "term": "τ-function",
+          "heading": false
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "holomorphic function",
+          "heading": false
+        }
+      ],
+      "extract": "a complex manifold M. For the relevant deﬁnitions the reader can either consult the summary in Section 3.3, or the full treatment in Appendix A. There is a holomorphic map π: M →HomZ(Γ, C), p 7→Zp, which we call the period map. The miniversal assumption ensures that the derivative (Dπ)p: TpM →HomZ(Γ, C) (23) at each point p ∈M is an isomorphism. We can therefore identify the tangent space TpM with the vector space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-5-explicit-solutions-in-the-finite-uncoupled-cas",
+      "number": "5",
+      "title": "Explicit solutions in the finite, uncoupled case",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncoupled",
+          "heading": true
+        },
+        {
+          "term": "sol",
+          "heading": false
+        },
+        {
+          "term": "gmn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sol} In this section we show how to solve the Riemann-Hilbert problem associated to a finite, uncoupled, integral BPS structure, and compute the $\\tau$-function associated to a variation of such structures. The situation considered here corresponds to the case of `mutually local corrections' in \\cite{GMN1}. The inspiration for our solution comes from a calculation of Gaiotto \\cite[Section 3]{G}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-51-doubled-a1-example",
+      "number": "5.1",
+      "title": "Doubled A1 example",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doubled bps",
+          "heading": false
+        },
+        {
+          "term": "non-active rays",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "setminus ell",
+          "heading": false
+        },
+        {
+          "term": "gamma dual",
+          "heading": false
+        },
+        {
+          "term": "eqref garage",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{a1} The following BPS structure arises from the A$_1$ quiver, which consists of a single vertex and no arrows. It depends on a parameter $z\\in \\bC^*$. \\begin{itemize} \\item[(i)] The lattice $\\Gamma=\\bZ\\cdot \\gamma$ has rank one, and thus $\\<-,-\\>=0$; \\smallskip \\item[(ii)] The central charge $Z\\colon \\Gamma\\to \\bC$ is determined by $Z(\\gamma)=z\\in \\bC^*$; \\smallskip \\item[(iii)] The only non-vanishing BPS",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-52-solution-in-the-doubled-a1-case",
+      "number": "5.2",
+      "title": "Solution in the doubled A1 case",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot lambda",
+          "heading": false
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "frac cdot",
+          "heading": false
+        },
+        {
+          "term": "half",
+          "heading": false
+        },
+        {
+          "term": "stirling",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "The formula \\begin{equation} \\label{cheedale}\\Lambda(w)=\\frac{e^w \\cdot\\Gamma(w)}{\\sqrt{2\\pi}\\cdot w^{w-\\half}}\\end{equation} defines a meromorphic function of $w\\in \\bC^*$, which is multi-valued due to the factor \\[w^{w-\\half}=\\exp\\big({(w-\\half)\\log w}\\big).\\] Since $\\Gamma(w)$ is meromorphic on $\\bC$ with poles only at the non-positive integers, it follows that $\\Lambda(w)$ is holomorphic on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-53-the-finite-uncoupled-case",
+      "number": "5.3",
+      "title": "The finite uncoupled case",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ihr",
+          "heading": false
+        },
+        {
+          "term": "πit",
+          "heading": false
+        },
+        {
+          "term": "active classes",
+          "heading": false
+        },
+        {
+          "term": "πiθ",
+          "heading": false
+        },
+        {
+          "term": "uncoupled",
+          "heading": true
+        },
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        }
+      ],
+      "extract": "can construct a unique solution to the Riemann-Hilbert problem by superposing the solutions from the previous section. Theorem 5.3. Let (Z, Γ, Ω) be a ﬁnite, uncoupled, integral BPS structure. Suppose that ξ ∈T satisﬁes ξ(γ) = 1 for all active classes γ ∈Γ. Then the corresponding Riemann-Hilbert problem has a unique solution, which associates to a non-active ray r the function Yr,β(t) = Y Z(γ)∈iHr Λ \u0012Z(γ) 2πit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-54-tau-function-in-the-uncoupled-case",
+      "number": "5.4",
+      "title": "Tau function in the uncoupled case",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πit log",
+          "heading": false
+        },
+        {
+          "term": "barnes g-function",
+          "heading": false
+        },
+        {
+          "term": "ihr",
+          "heading": false
+        },
+        {
+          "term": "τ-function",
+          "heading": false
+        },
+        {
+          "term": "ǫij",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "b2g",
+          "heading": false
+        },
+        {
+          "term": "uncoupled",
+          "heading": true
+        }
+      ],
+      "extract": "Υ(w) = e−ζ′(−1) e 3 4 w2 G(w + 1) (2π) w 2 w w2 2 , where G is the Barnes G-function [2], [30, Appendix], and ζ(s) is the Riemann zeta function. It deﬁnes a holomorphic and nowhere vanishing function on C∗\\ R<0 which we specify uniquely by deﬁning the factor ww2/2 using the principal value of log. The asymptotic expansion of Υ(w) is log Υ(w) ∼−1 12 log(w) + X g≥2 B2g 2g(2g −2)w−(2g−2), (31) valid as w →∞in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-6-geometric-case-gromov-witten-invariants",
+      "number": "6",
+      "title": "Geometric case: Gromov-Witten invariants",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gromov-witten",
+          "heading": true
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "tocome",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gw} In this section we consider a class of BPS structures related to closed topological string theory on a compact Calabi-Yau threefold. In mathematical terms they arise from stability conditions on the category of coherent sheaves supported in dimension $\\leq 1$. These BPS structures are uncoupled but not finite. We will show that formally applying the expression \\eqref{em} in this case reproduces the genus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-61-gopakumar-vafa-invariants",
+      "number": "6.1",
+      "title": "Gopakumar-Vafa invariants",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gopakumar-vafa",
+          "heading": true
+        },
+        {
+          "term": "lambda big",
+          "heading": false
+        },
+        {
+          "term": "sum beta",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "sin big",
+          "heading": false
+        },
+        {
+          "term": "geq frac",
+          "heading": false
+        },
+        {
+          "term": "non-constant maps",
+          "heading": false
+        },
+        {
+          "term": "cdot",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a smooth projective Calabi-Yau threefold. For the sake of notational simplicity we will assume that the group $H_2(X,\\bZ)$ is torsion-free. The Gromov-Witten potential of $X$ is a formal series \\begin{equation} \\label{help}F(x,\\lambda)=\\sum_{g\\geq 0}\\sum_{\\beta\\in H_2(X,\\bZ)} \\GW(g,\\beta) \\cdot x^\\beta \\cdot \\lambda^{2g-2},\\end{equation} where $\\GW(g,\\beta)\\in \\bQ$ is the genus $g$ Gromov-Witten invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-62-torsion-sheaf-bps-invariants",
+      "number": "6.2",
+      "title": "Torsion sheaf BPS invariants",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sheaf",
+          "heading": true
+        },
+        {
+          "term": "hler",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\cA=\\Coh_{\\leq 1}(X)$ denote the abelian category of coherent sheaves on $X$ supported in dimension $\\leq 1$. Any sheaf $E\\in \\cA$ has a Chern character $\\ch(E)\\in H^*(X,\\bZ)$, which via Poincar{\\'e} duality we can view as an element \\[\\ch(E)=(\\beta,n)\\in \\Gamma=H_2(X,\\bZ)\\oplus \\bZ.\\] We note that for any objects $E_1,E_2$ of $\\cA$, the Riemann-Roch theorem tells us that \\[\\chi(E_1,E_2)=\\sum_{i\\in \\bZ} (-1)^i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-63-formal-computation-of-the--function",
+      "number": "6.3",
+      "title": "Formal computation of the -function",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "gamma vee",
+          "heading": false
+        },
+        {
+          "term": "sum beta",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "central charge",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "The discussion of the last subsection gives rise to a framed variation of BPS structures over the complexified K{\\\"a}hler cone of $X$, in which the BPS invariants $\\Omega(\\gamma)$ are constant. Let us consider the family of double structures as defined in Section \\ref{double}. We can identify \\[\\Gamma\\oplus\\Gamma^\\vee=H_*(X,\\bZ)\\] equipped with the standard intersection form, and the resulting BPS structures are all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-7-quadratic-differentials-and-exact-wkb-analysis",
+      "number": "7",
+      "title": "Quadratic differentials and exact WKB analysis",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadratic differentials",
+          "heading": true
+        },
+        {
+          "term": "finite-length trajectory",
+          "heading": false
+        },
+        {
+          "term": "finite-length trajectories",
+          "heading": false
+        },
+        {
+          "term": "colon gamma",
+          "heading": false
+        },
+        {
+          "term": "saddle connections",
+          "heading": false
+        },
+        {
+          "term": "gamma big",
+          "heading": false
+        },
+        {
+          "term": "class gamma",
+          "heading": false
+        },
+        {
+          "term": "ring domains",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{in} The only examples of CY$_3$ categories where the full stability space is understood come from quivers with potential associated to triangulated surfaces. The associated stability spaces can be identified with moduli spaces of meromorphic quadratic differentials on Riemann surfaces \\cite{BS}, and the associated BPS invariants then count finite-length trajectories of these differentials. It turns out that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-72-voros-symbols",
+      "number": "7.2",
+      "title": "Voros symbols",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "voros symbols",
+          "heading": true
+        },
+        {
+          "term": "cycle voros",
+          "heading": false
+        },
+        {
+          "term": "hbar int",
+          "heading": false
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "weak riemann-hilbert",
+          "heading": false
+        },
+        {
+          "term": "nakanishi cite",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert problem",
+          "heading": false
+        },
+        {
+          "term": "omega big",
+          "heading": false
+        }
+      ],
+      "extract": "The weak Riemann-Hilbert problem (see Remark \\ref{oh}(iii)) defined by the above BPS structures can be solved using exact WKB analysis of an associated Schr{\\\"o}dinger equation. This was essentially proved by Iwaki and Nakanishi \\cite{IN} following Gaiotto, Moore and Neitzke \\cite{GMN2}. Suppose given a quadratic differential $(S,q)$ as above. Let us also choose a projective structure on the Riemann surface",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-appendix-a-variations-of-bps-structure",
+      "number": null,
+      "title": "Appendix A. Variations of BPS structure",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "For BPS structures satisfying the conditions of Proposition 4.2, the BPS automorphisms S(ℓ) can be realised as birational automorphisms of the twisted torus T. In general however, even for BPS structures coming from quivers with potential, this is not the case. Thus we need some other approach to deﬁning a variation of BPS structures. If we want to avoid making unnecessary assumptions, the only way to proceed is via",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-a1-introductory-remarks",
+      "number": null,
+      "title": "A.1. Introductory remarks",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subset gamma",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "wall-crossing formula",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "upper half-plane",
+          "heading": false
+        },
+        {
+          "term": "active",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        },
+        {
+          "term": "automorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Before starting formal definitions in the next subsection we consider here a slightly simplified situation which should help to make the general picture clearer. Let $(\\Gamma,Z,\\Omega)$ be a BPS structure. Given a basis $(\\gamma_1,\\cdots,\\gamma_n)\\subset \\Gamma$ there is a corresponding cone \\[\\Gamma^\\oplus=\\big\\{\\gamma =\\sum d_i \\gamma_i \\text{ with } d_i\\in \\bZ_{\\geq 0}\\big\\}\\subset \\Gamma,\\] whose elements we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-a2-formal-completions",
+      "number": null,
+      "title": "A.2. Formal completions",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "height",
+          "heading": false
+        },
+        {
+          "term": "geq max",
+          "heading": false
+        },
+        {
+          "term": "acute",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "poisson",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(\\Gamma,Z,\\Omega)$ be a BPS structure. To an acute sector $\\Delta\\subset \\bC^*$ we associate a Poisson subalgebra \\begin{equation} \\label{frioff}\\bC_\\Delta[\\bT]=\\bigoplus_{Z(\\gamma) \\in \\Delta\\sqcup\\{0\\}} \\bC\\cdot x_\\gamma\\subset \\bC[\\bT].\\end{equation} We will now introduce a natural completion of this algebra. Define the height of an element $a=\\sum_\\gamma a_\\gamma\\cdot x_\\gamma$ to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-a3-lie-algebra-and-associated-group",
+      "number": null,
+      "title": "A.3. Lie algebra and associated group",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat delta",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "delta subset",
+          "heading": false
+        },
+        {
+          "term": "cdot exp",
+          "heading": false
+        },
+        {
+          "term": "exp colon",
+          "heading": false
+        },
+        {
+          "term": "bijective exponential",
+          "heading": false
+        },
+        {
+          "term": "baker-campbell-hausdorff formula",
+          "heading": false
+        }
+      ],
+      "extract": "Continue with the notation from the last subsection. For each $N>0$, the Poisson bracket induces the structure of a nilpotent Lie algebra on the Poisson ideal \\[\\fg_{\\Delta,\\leq N} \\subset \\bC_{\\Delta}[\\bT]_{\\leq N}\\] consisting of elements of positive height. The Baker-Campbell-Hausdorff formula then gives rise to a unipotent algebraic group $G_{\\Delta,\\leq N}$ with a bijective exponential map \\[\\exp\\colon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-a4-products-over-rays",
+      "number": null,
+      "title": "A.4. Products over rays",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat delta",
+          "heading": false
+        },
+        {
+          "term": "ell subset",
+          "heading": false
+        },
+        {
+          "term": "prod ell",
+          "heading": false
+        },
+        {
+          "term": "height",
+          "heading": false
+        },
+        {
+          "term": "rays",
+          "heading": true
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(\\Gamma, Z, \\Omega)$ be a BPS structure. Recall the notion of the height of a ray from Section \\ref{raydiagram}. Let us now also fix an acute sector $\\Delta\\subset \\bC$. The support property ensures that for any ray $\\ell\\subset \\Delta$ the expression \\[\\DT(\\ell)=-\\hspace{-.8em}\\sum_{\\gamma\\in \\Gamma: Z(\\gamma)\\in \\ell} \\DT(\\gamma) \\cdot x_\\gamma\\in \\bC_\\Delta[[\\bT]]\\] defines an element of the Lie algebra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-a5-deforming-the-central-charge",
+      "number": null,
+      "title": "A.5. Deforming the central charge",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps structure",
+          "heading": false
+        },
+        {
+          "term": "submonoid",
+          "heading": false
+        },
+        {
+          "term": "hypersurfaces",
+          "heading": false
+        },
+        {
+          "term": "groups",
+          "heading": false
+        }
+      ],
+      "extract": "can give the deﬁnition of a variation of BPS structure. The problem is that the groups ˆG∆and ˆG∆,<N which we deﬁned above depend on the central charge of the BPS structure in a highly discontinuous way. This problem arises already in the deﬁnition (43): the subalgebra C∆(T) will change whenever the central charge Z(γ) of any class γ ∈Γ crosses a boundary ray of ∆, and since this will happen on a dense subset of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-a6-variations-of-bps-structure",
+      "number": null,
+      "title": "A.6. Variations of BPS structure",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed variation",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "called miniversal",
+          "heading": false
+        },
+        {
+          "term": "bps structures",
+          "heading": false
+        },
+        {
+          "term": "charge lattices",
+          "heading": false
+        },
+        {
+          "term": "contractible open",
+          "heading": false
+        },
+        {
+          "term": "local system",
+          "heading": false
+        },
+        {
+          "term": "open subset",
+          "heading": false
+        }
+      ],
+      "extract": "structures. The conditions are explained more fully below. Deﬁnition A.2. A variation of BPS structure consists of a complex manifold M, together with BPS structures (Γp, Zp, Ωp) indexed by the points p ∈M, such that (V1) Local system of charge lattices. The charge lattices Γp form a local system of abelian groups, and the intersection form is covariantly constant. (V2) Holomorphic variation of central charge. Given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-a7-behaviour-of-bps-invariants",
+      "number": null,
+      "title": "A.7. Behaviour of BPS invariants",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat delta",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "invariants omega",
+          "heading": false
+        },
+        {
+          "term": "class gamma",
+          "heading": false
+        },
+        {
+          "term": "subsectors",
+          "heading": false
+        },
+        {
+          "term": "comp",
+          "heading": false
+        },
+        {
+          "term": "submanifolds",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "Condition (V4) in Definition \\ref{nick} completely describes the variation of the BPS (or equivalently DT) invariants: if one knows the $\\Omega_p(\\gamma)$ at some point $p\\in M$ then they are uniquely determined at all other points $p\\in M$. This statement follows immediately from the following result. \\begin{lemma} \\label{cod} Given a BPS structure $(\\Gamma,Z,\\Omega)$, the element \\[\\bS(\\Delta)^*=\\prod_{\\ell\\subset",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-appendix-b-convergent-bps-structures",
+      "number": null,
+      "title": "Appendix B. Convergent BPS structures",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "The aim of this section is to prove the claims made in Section 4.1 that enable one to view the BPS automorphisms of a convergent BPS structure as being partially-deﬁned automorphisms of the twisted torus.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-049-b1-convergent-bps-structures",
+      "number": null,
+      "title": "B.1. Convergent BPS structures",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convergent bps",
+          "heading": true
+        },
+        {
+          "term": "gamma cdot",
+          "heading": false
+        },
+        {
+          "term": "sum gamma",
+          "heading": false
+        },
+        {
+          "term": "bps structure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{converge} The aim of this section is to prove the claims made in Section \\ref{ref} that enable one to view the BPS automorphisms of a convergent BPS structure as being partially-defined automorphisms of the twisted torus. \\subsection{Convergent BPS structures} Recall from Section \\ref{defns} that a BPS structure $(\\Gamma,Z,\\Omega)$ is called convergent if there exists $R>0$ such that \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-b2-partially-defined-automorphisms",
+      "number": null,
+      "title": "B.2. Partially defined automorphisms",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partially-defined holomorphic",
+          "heading": false
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "colon delta",
+          "heading": false
+        },
+        {
+          "term": "partially-defined automorphism",
+          "heading": false
+        },
+        {
+          "term": "beta cdot",
+          "heading": false
+        },
+        {
+          "term": "map germ",
+          "heading": false
+        },
+        {
+          "term": "delta subset",
+          "heading": false
+        },
+        {
+          "term": "ell subset",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{tird} Let $(\\Gamma,Z,\\Omega)$ be a BPS structure, and fix a convex sector $\\Delta\\subset \\bC^*$. As above, we also fix a norm $\\|\\cdot \\|$ on the vector space $\\Gamma\\tensor_\\bZ \\bR$. In the next subsection we will be interested in controlling Hamiltonian flows of functions on the twisted torus $\\bT$ of the form $\\DT(\\gamma)\\cdot x_\\gamma$, for those classes $\\gamma\\in \\Gamma$ satisfying $Z(\\gamma)\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-b3-bps-automorphisms",
+      "number": null,
+      "title": "B.3. BPS automorphisms",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hamiltonian ﬂow",
+          "heading": false
+        },
+        {
+          "term": "map germ",
+          "heading": false
+        },
+        {
+          "term": "holomorphic function",
+          "heading": false
+        },
+        {
+          "term": "ray",
+          "heading": false
+        },
+        {
+          "term": "integral curve",
+          "heading": false
+        },
+        {
+          "term": "convergent",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes",
+          "heading": false
+        }
+      ],
+      "extract": "∆⊂C∗. Recall the deﬁnition of the formal series DT(ℓ) associated to a ray ℓ⊂C∗from Section 2.5. In this section we show that this series is absolutely convergent on suitable open subsets of T and that the Hamiltonian ﬂow of the resulting holomorphic function gives a partially-deﬁned automorphism of T in the precise sense described in the last subsection. Proposition B.3. For all suﬃciently large R > 0 the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-b4-compositions-of-bps-automorphisms",
+      "number": null,
+      "title": "B.4. Compositions of BPS automorphisms",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 600,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref thatwas",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "map germ",
+          "heading": false
+        },
+        {
+          "term": "ell subset",
+          "heading": false
+        },
+        {
+          "term": "delta map",
+          "heading": false
+        },
+        {
+          "term": "cdot beta",
+          "heading": false
+        },
+        {
+          "term": "ref prop",
+          "heading": false
+        },
+        {
+          "term": "height",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(\\Gamma,Z,\\Omega)$ be a convergent BPS structure and fix a convex sector $\\Delta\\subset \\bC^*$. Fix $\\epsilon>0$ and take $R>0$ as in Lemma \\ref{sven}. Recall the notion of the height of a ray from Section \\ref{raydiagram}. For each ray $\\ell\\subset \\Delta$ define $M(\\ell)>0$ as in the proof of Proposition \\ref{prop} so that \\eqref{thatwas} and \\eqref{flfl} hold. Note that if a ray has height $> H$ then by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-b5-birational-transformations",
+      "number": null,
+      "title": "B.5. Birational transformations",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "50",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma cdot",
+          "heading": false
+        },
+        {
+          "term": "ell omega",
+          "heading": false
+        },
+        {
+          "term": "beta cdot",
+          "heading": false
+        },
+        {
+          "term": "cdot big",
+          "heading": false
+        },
+        {
+          "term": "ray ell",
+          "heading": false
+        },
+        {
+          "term": "birational",
+          "heading": true
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "cdot exp",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{birat} The following example was first observed by Kontsevich and Soibelman \\cite[Section 2.5]{KS1}. Suppose that a ray $\\ell$ contains a single active class $\\gamma$, and that moreover $\\Omega(\\gamma)=1$. The series $\\DT(\\ell)$ is then the dilogarithm \\[\\DT(\\ell)=-\\sum_{n\\geq 1} \\frac{x_{n\\gamma}}{n^2}=-\\sum_{n\\geq 1} \\frac{x_{\\gamma}^n}{n^2}.\\] This converges absolutely for $|x_\\gamma|<1$ and hence defines",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas theory",
+          "heading": false
+        },
+        {
+          "term": "bridgeland",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        },
+        {
+          "term": "stability conditions",
+          "heading": false
+        },
+        {
+          "term": "pandharipande",
+          "heading": false
+        },
+        {
+          "term": "tropical",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Barbieri and J. Stoppa, Frobenius type and CV-structures for Donaldson-Thomas theory and a convergence property, arXiv 1512.01176. [2] E.W. Barnes, The theory of the G-function, Quarterly Journ. Pure and Appl. Math. 31 (1900), 264–314. [3] A. Bayer, E. Macr`ı and P. Stellari, The space of stability conditions on Abelian threefolds, and on some Calabi-Yau Threefolds, arxiv:1410.1585. [4] T. Bridgeland,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cdot gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma omega",
+      "heading": false
+    },
+    {
+      "term": "bps structures",
+      "heading": true
+    },
+    {
+      "term": "colon gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma subset",
+      "heading": false
+    },
+    {
+      "term": "uncoupled bps",
+      "heading": false
+    },
+    {
+      "term": "bps invariants",
+      "heading": true
+    },
+    {
+      "term": "gamma big",
+      "heading": false
+    },
+    {
+      "term": "convergent bps",
+      "heading": true
+    },
+    {
+      "term": "bps automorphisms",
+      "heading": true
+    },
+    {
+      "term": "gamma function",
+      "heading": false
+    },
+    {
+      "term": "frac gamma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The ray diagram associated to a BPS structure. rays form a picture as in Figure 1, which we call the ray diagram of the BPS structure. In general there will be countably many active rays. We deﬁne the height of an active ray ℓ⊂C∗to be H(ℓ) = inf",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 56,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 56,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p50); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 56 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1611.03697v5"
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1501.01574v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/conj-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Slope Conjecture",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "conj-sec-001-01.md",
+      "narrative": null,
+      "content": "For every knot K ⊂S3 we have (jsK ∪js∗ K) ⊂bsK. Futer, Kalfagianni and Purcell [4] veriﬁed the conjecture for adequate knots (see Deﬁ- nition 3.5 for terminology). The works of Garoufalidis and Dunﬁeld [3] and Garoufalidis and van der Veen [11] veriﬁed the conjecture for a certain 2-parameter family of closed 3-braids, called 2-fusion knots. More recently, Lee and van der Veen [23] have proved the conjecture for several more 3-string pretzel knots. In this paper we study the behavior of the boundary slopes and the Jones slopes of knots under the operation of cabling and prove the Slope Conject",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Slope Conjecture",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-11-the-slope-conjecture.md",
+      "narrative": null,
+      "content": "K satisﬁes the conjecture, provided that p/q is not a Jones slope of K. As an application\nwe prove the Slope Conjecture for iterated cables of adequate knots and for iterated\ntorus knots. Furthermore we show that, for these knots, the degree of the colored Jones\npolynomial also determines the topology of a surface that satisﬁes the Slope Conjecture.\nWe also state a conjecture suggesting a topological interpretation of the linear terms of\nthe degree of the colored Jones polynomial (Conjecture 5.1), and we prove it for the\nfollowing classes of knots: iterated torus knots and iterated cables of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "1.1. The Slope Conjecture. For a knot K ⊂S3, let n(K) denote a tubular neighbor-\nhood of K and let MK := S3 \\ n(K) denote the exterior of K. Let ⟨µ, λ⟩be the canonical\nmeridian–longitude basis of H1(∂n(K)). An element a/b ∈Q ∪{1/0} is called a boundary\nslope of K if there is a properly embedded essential surface (S, ∂S) ⊂(MK, ∂n(K)), such\nthat ∂S represents aµ + bλ ∈H1(∂n(K)). Hatcher showed that every knot K ⊂S3 has\nﬁnitely many boundary slopes [15]. We will use bsK to denote the set of boundary slopes\nof K.\nFor a positive integer n, let JK(n) ∈Z[v±1/2] be the n-th colored Jones polynomial of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1501.01574v3  [math.GT]  5 Sep 2015\nKNOT CABLING AND THE DEGREE OF THE COLORED JONES\nPOLYNOMIAL\nEFSTRATIA KALFAGIANNI AND ANH T. TRAN\nAbstract. We study the behavior of the degree of the colored Jones polynomial and the\nboundary slopes of knots under the operation of cabling. We show that, under certain",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cable knots",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-cable-knots.md",
+      "narrative": null,
+      "content": "Suppose $K$ is a knot with framing 0, and $p,q$ are coprime integers.\nThe $(p,q)$-cable $K_{p,q}$ of $K$ is the $0$-framed satellite of $K$ with\npattern $(p,q)$-torus knot (see Section \\ref{boundary-slopes} for more details).\nIn the statements of results below, and throughout the paper,  we will assume that our cables are non-trivial in the  sense  that $\\abs{q}>1$.\n\n\n\\begin{theorem} \\label{bdry slope}\n For every knot $K \\subset S^3$ and  $(p, q)$ coprime  integers\nwe have \n $$\\left( q^2 bs_K \\cup \\{pq\\} \\right) \\subset bs_{K_{p,q}}.$$\n\\end{theorem}\n\nTo continue, we recall\nthat  for any knot $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-organization.md",
+      "narrative": null,
+      "content": "The paper is organized as follows. In Section 2 we study boundary slopes of cable knots and we prove Theorem \\ref{bdry slope}.  In Sections 3 and 4 we study the behavior  of the degree of the colored Jones polynomial  under knot cabling. In particular,  we discuss cables\nof knots of period at most two and we prove Theorem \\ref{period2}. In fact, the proof of this theorem allows us to describe explicitly how the Jones slopes of the cable knot $\\K$ are related to those of the original knot $K$. We apply our results on knots of period at most two to adequate knots to prove Theorem \\ref{main:js}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary Slopes of Cable Knots",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-2-boundary-slopes-of-cable-knots.md",
+      "narrative": null,
+      "content": "\\label{boundary-slopes}\n In this section we study how the boundary slopes of knots in $S^3$ affect the boundary slopes \nof their cables. The main result is Theorem \\ref{main:bs} that implies in particular  Theorem \\ref{bdry slope} stated in the Introduction.\nTheorem \\ref{main:bs} and Corollary \\ref{integers} are key ingredients in the proofs of the results of the paper concerning\nrelations of the colored Jones polynomial to essential surfaces.  \n\\smallskip",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and statement of main result",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-21-preliminaries-and-statement-of-main-result.md",
+      "narrative": null,
+      "content": "Let $V$  be a standardly embedded solid torus in $S^3$ and let $V'\\subset V$ a second standard solid torus \nthat is concentric to $V$. On $\\partial V'$  we choose a pair of meridian and canonical longitude  (which also determines such a pair on $\\partial V$).  For coprime integers $p,q$, let  $T_{p,q}\\subset \\partial V'$ be a simple closed curve\nof slope $p/q$; that is a $(p, q)$-torus knot.\n\nRecall that for a knot  $K$, $n(K)$  denotes  a neighborhood of $K$.  Embed $V$ in $S^3$ by a  homeomorphism   $f: V\\longrightarrow n(K)$\nthat preserves the canonical longitudes. The $(p,q)$-cable of $K$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary slopes and homology of cable spaces",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+      "narrative": null,
+      "content": "A \\emph{slope}  $s$ on  a torus $T$ is the isotopy class of a simple closed curve on $T$.\nLet $\\mathcal {S}(T)$ denote the set of {slopes}  of $T$.\nThe elements in  $\\mathcal {S}(T)$  are represented by elements of\n${\\QQ}\\cup \\{ 1/0\\}$.  With this in mind we will often refer to a slope by its corresponding numerical value.\nA homology class in\n$H_1(T,  \\ZZ)$ is called \\emph{primitive} if it is not a non-trivial integer multiple of another element in $H_1(T,  \\ZZ)$.\nThere is a 2-1 correspondence between primitive  classes in $H_1(T,  \\ZZ)$\nand elements  in $\\mathcal {S}(T)$, where $\\alpha, \\beta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cables of Knots with period at most two",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-3-cables-of-knots-with-period-at-most-two.md",
+      "narrative": null,
+      "content": "\\label{cjp} In this section we study the behavior of  the Jones slopes of  knots under the operation of cabling. The main result is Theorem\n\\ref{thm-quasi} that relates the Jones slopes of knots of period at most two to the Jones slopes of their cables. We apply this theorem to prove the Strong Slope Conjecture for iterated cables of adequate knots and  iterated torus knots and the Slope Conjecture for cables of all the non-alternating knots up to nine crossings that have period two.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-31-the-colored-jones-polynomial.md",
+      "narrative": null,
+      "content": "To define the colored Jones polynomial, we first recall the definition of the Chebyshev polynomials of the second kind. For $n \\ge 0$, the polynomial $S_n(x)$ is defined recursively as follows:\n\\begin{equation}\n\\label{chev}\nS_{n+2}(x)=xS_{n+1}(x)-S_{n}(x), \\quad S_1(x)=x, \\quad S_0(x)=1.\n\\end{equation}\n\nLet $D$ be a diagram of a knot $K$. For an integer $m>0$, let $D^m$ denote the diagram obtained from $D$ by taking $m$ parallels copies of $K$. This is the $m$-cable of $D$ using the blackboard framing; if $m=1$ then $D^1=D$. Let $\\la D^m \\ra$ denote the Kauffman bracket of $D^m$: this is a Lau",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cables of knots of period at most 2",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-32-cables-of-knots-of-period-at-most-2.md",
+      "narrative": null,
+      "content": "\\label{period_2}\n\nIn this subsection we will study knots with period at most two. Examples of such knots include all the adequate knots and the torus knots. We show that, under a mild hypothesis satisfied by all the known examples, the property of having period at most two is preserved under cabling (Proposition \\ref{quasi}). As a  result, if a knot $K \\subset S^3$ satisfies the Slope Conjecture and $\\pi(K)\\leq 2$, then all but at most two cables of $K$ also satisfy the conjecture.\n\n\n\n\\begin{proposition}\n\\label{quasi}\nLet $K$ be a knot such that for $n \\gg 0$ we have\n$$\nd_+[J_K(n)]=a(n)n^2+b(n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong Slope Conjecture for iterated cables of adequate knots",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-33-strong-slope-conjecture-for-iterated-cables-o.md",
+      "narrative": null,
+      "content": "Let $D$ be a link diagram, and $x$ a crossing of $D$.  Associated to\n$D$ and $x$ are two link diagrams, each with one fewer crossing than\n$D$, called the \\emph{$A$--resolution} and \\emph{$B$--resolution} of\nthe crossing. See Figure \\ref{resolutions}.\n\nA Kauffman state $\\sigma$ is a choice of $A$--resolution or\n$B$--resolution at each crossing of $D$. Corresponding to every state\n$\\sigma$ is a crossing--free diagram $s_\\sigma$: this is a collection\nof circles in the projection plane. We can encode the choices that lead\nto the state $\\sigma$ in a graph $G_\\sigma$, as follows. The vertices\nof $G_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low crossing knots with period two",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-35-low-crossing-knots-with-period-two.md",
+      "narrative": null,
+      "content": "Theorem \\ref{thm-quasi} applies to several non-alternating knots with 8 and 9 crossings.  The Jones slopes of all non-alternating prime knots with up to nine crossings were calculated by Garoufalidis in Section 4 of \\cite{Ga-slope}.\nAccording to \\cite{Ga-slope} the knots of \n period two are the ones shown in Table 1. \nThe remaining knots, which are $8_{20}, 9_{43}, 9_{44}$, have periods 3 and they will be treated in Section \\ref{constant a(n)}.\n\n\n\n\n\n\\begin{table}[]\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$K$& $js_K \\cup js^*_K $ & $b(n)$ & $b^*(n)$ \\\\\n\\hline\n$8_{19}$ &$ \\{12",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cabling knots with constant a(n)",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-4-cabling-knots-with-constant-an.md",
+      "narrative": null,
+      "content": "\\label{constant a(n)}\n\nIn Section 3 we studied the behavior of $d_+[J_K(n)]$ under knot cabling for knots of period at most two. In this section we study knots with period greater than two under the additional hypothesis\nthat, for $n \\gg 0$ we have $a(n)=a$, where $a$ is a constant.\nIn this case, by abusing the terminology, we will say that $a(n)$ is constant. The main result in this section is the following.\n\n \\begin{theorem}\n \\label{thm-quasi-constant}\n Let $K$ be a knot such that for $n \\gg 0$ we have\n$$\nd_+[J_K(n)]=an^2+b(n)n+d(n)\n$$\nwhere $a$ is a constant, $b(n)$ and $d(n)$ are periodic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjectures",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-5-conjectures.md",
+      "narrative": null,
+      "content": "Recall that for every knot $K \\subset S^3$, there is an integer $N_K>0$ and periodic functions $a_{K}(n), b_{K}(n), c_{K}(n)$ such that \n$$d_+[J_K(n)] = a_{K}(n) \\, n^2 + b_{K}(n) n + c_{K}(n)$$\nfor $n \\ge N_K$.   In Propositions \\ref{quasi}  and \\ref{quasi-constant} we made the assumption that  $b(n) \\le 0$. Then we concluded that, under the appropriate hypotheses, this property\nis preserved under cabling. As we will discuss below, the property that $b(n)\\leq 0$ is known to hold  \nfor all non-trivial knots, of any period,  for which $b_K(n)$ has been calculated.\n\nWe propose the following conj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-alternating Montesinos knots up to nine crossings",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-51-non-alternating-montesinos-knots-up-to-nine-c.md",
+      "narrative": null,
+      "content": "Table 2 summarizes the relevant information \nabout these knots.\nThe Jones slopes and  the sets of cluster points \n$\\{2b_K(n)\\}', \\{2b_K^{*}(n)\\}'$ were obtained from Garoufalidis' paper \\cite{Ga-slope}.\nThe corresponding\nboundary slopes together with the values $\\chi(S)$ and $\\abs{\\partial S}$ were obtained using Dunfield's program for calculating boundary slopes of Montesinos knots \\cite{ndunfield}.\nIn all cases,  Conjectures \\ref{conj} and \\ref{slopeaug} are easily verified for the knots and their mirror images.\nNote that, for example, for $9_{44}$\nwe have $a/b=14/3 \\in js_K$, $\\{2b_K(n)\\}'=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A family of pretzel knots",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-52-a-family-of-pretzel-knots.md",
+      "narrative": null,
+      "content": "Consider the pretzel knot $K_p=(-2,3,p)$, where $p$ is an odd integer. It is known that $K_p$ is $A$-adequate if $p>0$, and $B$-adequate if $p<0$. Moreover, $K_p$ is a torus knot if $p \\in \\{1,3,5\\}$. \n\n \nSuppose now that  $p \\ge 5$. Then $K_p$ is $A$-adequate and  by above discussion Conjecture  \\ref{slopeaug} \nholds  for\nthe mirror image $K_p^{*}$.\n\n\nBy \\cite[Section 4.7]{Ga-slope} and Example 6.3 below we have $$4a_{K_p}(n) = 2(p^2-p-5)/(p-3) \\quad \\text{and} \\quad 2b_{K_p}(n) = \n-(p-5)/(p-3).$$\n\nSince $4a_{K_p}(n)$ is not an integer, in fact it is easily checked that $ \\gcd ( 2(p^2-p-5), p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-fusion knots",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-016-6-two-fusion-knots.md",
+      "narrative": null,
+      "content": "The family of 2-fusion knots is a two-parameter family  of closed 3-braids denoted\nby\n$$\\{ K(m_1, m_2)  \\mid  m_1, m_2\\in \\ZZ\\}.$$\nFor the precise definition and description see \\cite {GV, DG}. The purpose of this section is to prove the following.\n\n\n\\begin{theorem}\n\\label{thm:slope-cable} Conjecture  \\ref{conj}  holds  for 2-fusion knots. \n\\end{theorem}\n\nNote that $K(m_1, m_2)$ is a torus knot if $m_2 \\in \\{-1,0\\}$. In fact, $K(m_1, 0) = T(2, 2m_1 + 1)$ and $K(m_1, -1) = T(2, 2m_1 -3)$. It is known that $K(m_1, m_2)$ is hyperbolic if $m_1 \\notin \\{0, 1\\}$, $m_2 \\notin \\{-1,0\\}$ and $(m_1, m_2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The highest degree.",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-017-61-the-highest-degree.md",
+      "narrative": null,
+      "content": "The quantity  $Q(n,k_1,k_2)$ is closely related\nto the degree $\\delta_K(n)$. According to \\cite{GV}  for the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1, 0\\}$, we have the following possibilities:\n\\vskip 0.04in\n\n\n\\textbf{Case A.} Suppose that $m_1, m_2 \\ge 1$. Then\n$$\\delta_K(n) = Q(n,k_1,-k_1),$$\n\n\\noindent where $$c_1=\\frac{1 - m_1 + m_2 + m_2 n}{2 (-1 + m_1 + m_2)},$$ \nand  $k_1$ is of the integers closest to $c_1$ satisfying $k_1 \\le n/2$. \n\n\\vskip 0.04in\n\n\\textbf{Case B.} Suppose that $m_1 \\le 0, m_2 \\ge 1$. There are 2 subcases.\n\n\\textbf{(B-1)} We have ($1 + m_1 + m_2 \\le 0$) or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculating the linear term",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-018-62-calculating-the-linear-term.md",
+      "narrative": null,
+      "content": "In this subsection we will prove the following.\n\n\\begin{theorem}\n\n\\label{prop:b}\n\nFor the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1,0\\}$, we have\n$$\nb_K(n) = \\begin{cases} \\frac{m_2(1-m_1)}{2(-1+m_1+m_2)} &\\mbox{if } (m_1, m_2) \\in I_1 \\cup I_2, \n\\smallskip\n\\\\ 1 + m_1  & \\mbox{if } (m_1, m_2) \\in I_3, \n\\smallskip\n\\\\ \\frac{m_1(m_2-1)}{2(1+m_1+m_2)}   & \\mbox{if } (m_1, m_2) \\in I_4, \n\\medskip\n\\\\ 5/2 + m_1 + 3 m_2  & \\mbox{if } (m_1, m_2) \\in I_5, \n\\smallskip\n\\\\ \\frac {(-5 + 2m_1)(1 + m_2)} {2 (-1 + 2 m_1 + 2 m_2)} & \\mbox{if } (m_1, m_2) \\in I_6 \\mbox{ and } \\frac {-1+(1 + m_2)(n-1)}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.01574v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[1] Jason Callahan. Denominators and diﬀerences of boundary slopes for (1,1)-knots. arXiv:1301.6298.\n[2] Nathan M. Dunﬁeld. Boundary slopes of montesinos knots. http://www.uiuc.edu/~nmd/montesinos.\n[3] Nathan M. Dunﬁeld and Stavros Garoufalidis. Incompressibility criteria for spun-normal surfaces.\nTrans. Amer. Math. Soc., 364(11):6109–6137, 2012.\n[4] David Futer, Efstratia Kalfagianni, and Jessica S. Purcell. Slopes and colored Jones polynomials of\nadequate knots. Proc. Amer. Math. Soc., 139:1889–1896, 2011.\n[5] David Futer, Efstratia Kalfagianni, and Jessica S. Purcell. Guts of surfaces and t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

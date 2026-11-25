@@ -1,0 +1,933 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1011.0679v2",
+  "title": "arxiv-1011.0679v2",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Affine Hecke algebras",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-affine-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Parabolic induction",
+      "number": "1.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-parabolic-induction"
+    },
+    {
+      "level": 2,
+      "title": "The Schwartz algebra",
+      "number": "1.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-the-schwartz-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Analytic R-groups for tempered representations",
+      "number": "1.4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-14-analytic-r-groups-for-tempered-representation"
+    },
+    {
+      "level": 1,
+      "title": "The Euler-Poincaré pairing",
+      "number": "2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-the-euler-poincaré-pairing"
+    },
+    {
+      "level": 1,
+      "title": "The Arthur formula",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-the-arthur-formula"
+    },
+    {
+      "level": 1,
+      "title": "Algebras of invariants",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-algebras-of-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Analytic R-groups for non-tempered representations",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-analytic-r-groups-for-non-tempered-representat"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "arthur",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1011.0679v2 [math.RT] 17 Nov 2010 A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS ERIC OPDAM AND MAARTEN SOLLEVELD Abstract. Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters. We study their Euler–Poincar´e pairing EP(π, π′), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(π, π′) can be expressed in a simple formula involving an analytic R-group,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1011.0679v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine hecke",
+          "heading": false
+        },
+        {
+          "term": "arthur formula",
+          "heading": false
+        },
+        {
+          "term": "euler-poincar pairing",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "tempered representations",
+          "heading": false
+        },
+        {
+          "term": "cite deop",
+          "heading": false
+        },
+        {
+          "term": "textup gamma",
+          "heading": false
+        },
+        {
+          "term": "cite kaz",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathbb F$ be a non-archimedean local field, and let $L$ be the group of rational points of a connected reductive algebraic group $\\mathbf{L}$ defined over $\\mathbb F$. Affine Hecke algebras are powerful tools to describe Bernstein blocks \\cite{BeDe} of the category of smooth representations of $L$ explicitly, in a way compatible with harmonic analysis. For example, if a Bernstein block $\\mc{B}$ admits a type",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-affine-hecke-algebras",
+      "number": "1.1",
+      "title": "Affine Hecke algebras",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eph",
+          "heading": false
+        },
+        {
+          "term": "arthur formula",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "non-tempered",
+          "heading": false
+        },
+        {
+          "term": "opso",
+          "heading": false
+        },
+        {
+          "term": "langlands",
+          "heading": false
+        },
+        {
+          "term": "ree",
+          "heading": false
+        }
+      ],
+      "extract": "pairing of representations of either a ﬁnite Weyl group [Ree] or of an (extended) aﬃne Weyl group W e [OpSo1, Theorem 3.3]. To relate these to EPH one must compare EPH and EPWe, which is done in [Ree, Section 5.6] (for aﬃne Hecke algebras with equal parameters) and in [OpSo1, Chapter 3]. Recent results from [Sol3] allow us to conclude that GC(H) modulo the radical of EPH equals the vector space Ell(H) of ”elliptic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-preliminaries",
+      "number": "1",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 761,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "modf",
+          "heading": false
+        },
+        {
+          "term": "tαsα",
+          "heading": false
+        },
+        {
+          "term": "w0t",
+          "heading": false
+        },
+        {
+          "term": "homz",
+          "heading": false
+        },
+        {
+          "term": "rnr",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        },
+        {
+          "term": "root system",
+          "heading": false
+        }
+      ],
+      "extract": "Here we recall the deﬁnitions and notations of our most important objects of study. Several things described in this section can be found in more detail elsewhere in the literature, see in particular [Lus1, Opd1, OpSo1, Sol3]. 1.1. Aﬃne Hecke algebras. Let a be a ﬁnite dimensional real vector space and let a∗be its dual. Let Y ⊂a be a lattice and X = HomZ(Y, Z) ⊂a∗the dual lattice. Let R = (X, R0, Y, R∨ 0 , F0). be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-parabolic-induction",
+      "number": "1.2",
+      "title": "Parabolic induction",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inp alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "cap vee",
+          "heading": false
+        },
+        {
+          "term": "cite opd-sp",
+          "heading": false
+        },
+        {
+          "term": "forall alpha",
+          "heading": false
+        },
+        {
+          "term": "intertwining operators",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "nolimits alpha",
+          "heading": false
+        }
+      ],
+      "extract": "For a set of simple roots $P \\subset F_0$ we introduce the notations \\begin{equation}\\label{eq:parabolic} \\begin{array}{l@{\\qquad}l} R_P = \\mh Q P \\cap R_0 & R_P^\\vee = \\mh Q R_P^\\vee \\cap R_0^\\vee , \\\\ X_P = X \\big/ \\big( X \\cap (P^\\vee )^\\perp \\big) & X^P = X / (X \\cap \\mh Q P ) , \\\\ Y_P = Y \\cap \\mh Q P^\\vee & Y^P = Y \\cap P^\\perp , \\\\ \\mf a_P = \\R P^\\vee & \\mf a^P = P^\\perp , \\\\ T_P = \\mr{Hom}_{\\mh Z} (X_P, \\mh",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-the-schwartz-algebra",
+      "number": "1.3",
+      "title": "The Schwartz algebra",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schwartz",
+          "heading": true
+        },
+        {
+          "term": "end itemize",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        },
+        {
+          "term": "echet",
+          "heading": false
+        },
+        {
+          "term": "inconvenience",
+          "heading": false
+        }
+      ],
+      "extract": "We recall how to complete an affine Hecke algebra to a topological algebra called the Schwartz algebra. As a vector space $\\mc S$ will consist of rapidly decreasing functions on $W^e$, with respect to some length function. For this purpose it is unsatisfactory that $\\ell$ is 0 on the subgroup $Z(W^e)$, as this can be a large part of $W$. To overcome this inconvenience, let $L : X \\otimes \\mh R \\to [0,\\infty )$ be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-analytic-r-groups-for-tempered-representation",
+      "number": "1.4",
+      "title": "Analytic R-groups for tempered representations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deop",
+          "heading": false
+        },
+        {
+          "term": "subtorus subset",
+          "heading": false
+        },
+        {
+          "term": "alpha big",
+          "heading": false
+        },
+        {
+          "term": "rho mapsto",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "intertwining operators",
+          "heading": false
+        },
+        {
+          "term": "kappa",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:RgroupTemp} We recall the definition of the analytic R-group from \\cite{DeOp2}. Let $\\delta$ be a discrete series representation of $\\mc H_P$ with central character $W(R_P) r_\\delta \\in T_P / W(R_P)$. Recall that a \\emph{parabolic subsystem} of $R_0$ is a subset $R_Q \\subset R_0$ satisfying $R_Q=R_0 \\cap \\mathbb{R}R_Q$. We let $Q\\subset R_{Q,+}:=R_Q\\cap R_{0,+}$ denote the basis of $R_Q$ inside the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-the-euler-poincaré-pairing",
+      "number": "2",
+      "title": "The Euler-Poincaré pairing",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "langlands datum",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": true
+        },
+        {
+          "term": "sol-irr",
+          "heading": false
+        },
+        {
+          "term": "thm noindent",
+          "heading": false
+        },
+        {
+          "term": "hermitian inner",
+          "heading": false
+        },
+        {
+          "term": "opso",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\pi, \\pi' \\in \\mr{Mod}_f (\\mc H)$. Their Euler-Poincar\\'e pairing is defined as \\begin{equation}\\label{eq:4} EP_{\\mc H} (\\pi,\\pi') = \\sum_{n \\geq 0} (-1)^n \\dim_\\C \\mr{Ext}_{\\mc H}^n (\\pi,\\pi') . \\end{equation} Since $\\mc H$ is Noetherian and has finite cohomological dimension \\cite[Proposition 2.4]{OpSo1}, this pairing is well-defined. \\begin{thm}\\label{thm:EP} \\enuma{ \\item For all $\\pi,\\pi' \\in \\mr{Mod}_f",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-the-arthur-formula",
+      "number": "3",
+      "title": "The Arthur formula",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cong big",
+          "heading": false
+        },
+        {
+          "term": "infty big",
+          "heading": false
+        },
+        {
+          "term": "otimes rho",
+          "heading": false
+        },
+        {
+          "term": "otimes delta",
+          "heading": false
+        },
+        {
+          "term": "euler--poincar pairing",
+          "heading": false
+        },
+        {
+          "term": "hom big",
+          "heading": false
+        },
+        {
+          "term": "knappstein",
+          "heading": false
+        },
+        {
+          "term": "arthur",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:Arthur} In this section we prove the Arthur formula for the Euler--Poincar\\'e pairing \\eqref{eq:4} of representations of affine Hecke algebras. In view of Lemma \\ref{lem:Elltemp} little is lost if we restrict $EP_{\\mc H}$ to tempered representations, so we do that until further notice. One of the main results of \\cite{OpSo1} says that \\begin{equation}\\label{eq:ExtHS} \\mr{Ext}^n_{\\mc S} (\\pi,\\pi') \\cong",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-algebras-of-invariants",
+      "number": "4",
+      "title": "Algebras of invariants",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes rho",
+          "heading": false
+        },
+        {
+          "term": "hom big",
+          "heading": false
+        },
+        {
+          "term": "bigoplus rho",
+          "heading": false
+        },
+        {
+          "term": "cong infty",
+          "heading": false
+        },
+        {
+          "term": "alpha big",
+          "heading": false
+        },
+        {
+          "term": "cong sigma",
+          "heading": false
+        },
+        {
+          "term": "rtimes",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "Let $U$ be a smooth manifold, possibly with corners, and let $G$ be a finite group acting on $U$ by diffeomorphisms $\\alpha_g$. Let $V$ be a finite dimensional complex $G$-representation and endow the algebra $C^\\infty (U) \\otimes \\mr{End}_\\C (V)$ with the diagonal $G$-action. Algebras of the form \\[ \\big( C^\\infty (U) \\otimes \\mr{End}_\\C (V) \\big)^G \\] were studied among others in \\cite{Sol-Chern} and \\cite[Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-analytic-r-groups-for-non-tempered-representat",
+      "number": "5",
+      "title": "Analytic R-groups for non-tempered representations",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho widetilde",
+          "heading": false
+        },
+        {
+          "term": "rho cong",
+          "heading": false
+        },
+        {
+          "term": "otimes rho",
+          "heading": false
+        },
+        {
+          "term": "bigoplus rho",
+          "heading": false
+        },
+        {
+          "term": "rho mapsto",
+          "heading": false
+        },
+        {
+          "term": "knappstein",
+          "heading": false
+        },
+        {
+          "term": "non-tempered",
+          "heading": true
+        },
+        {
+          "term": "irr",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we extend the definitions and results from Section \\ref{sec:RgroupTemp} (which stem from \\cite{DeOp2}) to non-tempered induction data $\\xi \\in \\Xi \\setminus \\Xi_{un}$. One approach would be to define the R-group of $\\xi = (P,\\delta,t)$ to be that of $\\xi_{un} = (P,\\delta ,t \\,|t|^{-1})$. This works out well in most cases, but it is unsatisfactory if the isotropy group $\\mc W_{\\xi_{un}}$ is strictly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 696,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic groups",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "reine angew",
+          "heading": false
+        },
+        {
+          "term": "opdam",
+          "heading": false
+        },
+        {
+          "term": "kutzko",
+          "heading": false
+        },
+        {
+          "term": "delorme",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "deop",
+          "heading": false
+        }
+      ],
+      "extract": "[Art] J. Arthur, “On elliptic tempered characters”, Acta. Math. 171 (1993), 73–130 [BeDe] J.N. Bernstein, P. Deligne, “Le “centre” de Bernstein”, pp. 1–32 in: Repr´esentations des groupes r´eductifs sur un corps local, Travaux en cours, Hermann, 1984 [Bez] R. Bezrukavnikov, “Homological properties of representations of p-adic groups re- lated to geometry of the group at inﬁnity”, PhD. Thesis, Tel-Aviv University,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "otimes rho",
+      "heading": false
+    },
+    {
+      "term": "tempered representations",
+      "heading": true
+    },
+    {
+      "term": "irreducible tempered",
+      "heading": false
+    },
+    {
+      "term": "rho cong",
+      "heading": false
+    },
+    {
+      "term": "cite deop",
+      "heading": false
+    },
+    {
+      "term": "cite opso",
+      "heading": false
+    },
+    {
+      "term": "item rho",
+      "heading": false
+    },
+    {
+      "term": "end thm",
+      "heading": false
+    },
+    {
+      "term": "cong big",
+      "heading": false
+    },
+    {
+      "term": "tempered characters",
+      "heading": false
+    },
+    {
+      "term": "begin thm",
+      "heading": false
+    },
+    {
+      "term": "otimes sigma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1011.0679v2"
+  }
+}

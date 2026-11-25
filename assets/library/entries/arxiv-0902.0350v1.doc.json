@@ -1,0 +1,1649 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0902.0350v1",
+  "title": "arxiv-0902.0350v1",
+  "variant": "pdf",
+  "pages": 41,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Part 1. Formal Proof Initiative",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-part-1-formal-proof-initiative"
+    },
+    {
+      "level": 2,
+      "title": "The Flyspeck project",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-the-flyspeck-project"
+    },
+    {
+      "level": 2,
+      "title": "Blueprint edition of the Kepler conjecture",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-blueprint-edition-of-the-kepler-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Formalizing the ordinary mathematics",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-formalizing-the-ordinary-mathematics"
+    },
+    {
+      "level": 2,
+      "title": "Standard ML reimplementation of code",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-standard-ml-reimplementation-of-code"
+    },
+    {
+      "level": 2,
+      "title": "Proving nonlinear inequalities with Bernstein bases",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-proving-nonlinear-inequalities-with-bernstein"
+    },
+    {
+      "level": 2,
+      "title": "Tame graph enumeration",
+      "number": "6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-6-tame-graph-enumeration"
+    },
+    {
+      "level": 2,
+      "title": "Verifying linear programs",
+      "number": "7",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-7-verifying-linear-programs"
+    },
+    {
+      "level": 1,
+      "title": "Part 2. Addendum to and Errata in the Original Proof",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-part-2-addendum-to-and-errata-in-the-original-pr"
+    },
+    {
+      "level": 2,
+      "title": "Biconnected graphs",
+      "number": "8",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-8-biconnected-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Errata listing",
+      "number": "9",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-9-errata-listing"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kepler conjecture",
+          "heading": false
+        },
+        {
+          "term": "nipkow",
+          "heading": false
+        },
+        {
+          "term": "errata",
+          "heading": false
+        },
+        {
+          "term": "zumkeller",
+          "heading": false
+        },
+        {
+          "term": "obua",
+          "heading": false
+        },
+        {
+          "term": "harrison",
+          "heading": false
+        }
+      ],
+      "extract": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW, STEVEN OBUA, AND ROLAND ZUMKELLER Abstract. The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0902.0350v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite hales",
+          "heading": false
+        },
+        {
+          "term": "dcg",
+          "heading": false
+        },
+        {
+          "term": "kepler conjecture",
+          "heading": false
+        },
+        {
+          "term": "initiative",
+          "heading": false
+        },
+        {
+          "term": "original proof",
+          "heading": false
+        },
+        {
+          "term": "incomplete argument",
+          "heading": false
+        },
+        {
+          "term": "ferguson",
+          "heading": false
+        },
+        {
+          "term": "reviewing",
+          "heading": false
+        }
+      ],
+      "extract": "In 2006, {\\it Discrete and Computational Geometry} devoted an issue to the proof of the Kepler conjecture on sphere packings, which asserts that no packing of congruent balls in three-dimensional Euclidean space can have density greater than that of the face-centered cubic packing \\cite{Hales:2006:DCG}, \\cite{Hales:2006:DCG:3}, \\cite{Hales:2006:DCG:4}, \\cite{Hales:2006:DCG:6}, \\cite{Ferguson:2006:DCG:5}. The proof",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-part-1-formal-proof-initiative",
+      "number": null,
+      "title": "Part 1. Formal Proof Initiative",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Part 1. Formal Proof Initiative",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-1-the-flyspeck-project",
+      "number": "1",
+      "title": "The Flyspeck project",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 921,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flyspeck project",
+          "heading": true
+        },
+        {
+          "term": "formalization project",
+          "heading": false
+        },
+        {
+          "term": "computer code",
+          "heading": false
+        },
+        {
+          "term": "kepler conjecture",
+          "heading": false
+        },
+        {
+          "term": "proof assistant",
+          "heading": false
+        },
+        {
+          "term": "computer verification",
+          "heading": false
+        },
+        {
+          "term": "cite obua",
+          "heading": false
+        },
+        {
+          "term": "hol light",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of a long-term project, called the Flyspeck project, is to give a formal proof of the Kepler conjecture. This section makes some preliminary remarks about formal proofs and gives a general overview of the current status of this project. \\subsection{Formal proof} A formal proof is a proof in which every logical inference has been checked, all the way back to the foundational axioms of mathematics. No step",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-blueprint-edition-of-the-kepler-conjecture",
+      "number": "2",
+      "title": "Blueprint edition of the Kepler conjecture",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blueprint edition",
+          "heading": true
+        },
+        {
+          "term": "kepler conjecture",
+          "heading": true
+        },
+        {
+          "term": "fejes oth",
+          "heading": false
+        },
+        {
+          "term": "cite hales",
+          "heading": false
+        },
+        {
+          "term": "jct",
+          "heading": false
+        },
+        {
+          "term": "hypermaps",
+          "heading": false
+        },
+        {
+          "term": "edition contains",
+          "heading": false
+        },
+        {
+          "term": "first-order language",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:blueprint} The {\\it blueprint edition} of the proof of the Kepler conjecture is a second-generation proof that contains far more explicit detail than the original proof. The blueprint edition is available at \\cite{hales:2008:blueprint}, \\cite{hales:2008:collection}. Many proofs have been significantly simplified and systematized. It has been written in a manner to permit easy formalization. As its name",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-formalizing-the-ordinary-mathematics",
+      "number": "3",
+      "title": "Formalizing the ordinary mathematics",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formalizing",
+          "heading": true
+        },
+        {
+          "term": "quantifier elimination",
+          "heading": false
+        },
+        {
+          "term": "flyspeck",
+          "heading": false
+        },
+        {
+          "term": "imp",
+          "heading": false
+        },
+        {
+          "term": "automation",
+          "heading": false
+        },
+        {
+          "term": "frontier",
+          "heading": false
+        },
+        {
+          "term": "real",
+          "heading": false
+        },
+        {
+          "term": "lebesgue",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ordinary} This section describes some of the work on formalizing Euclidean space and measure theory, and the development of further proof automation, which should be useful in this endeavor. The computer code in Flyspeck has so far received the lion's share of the formal effort. This is entirely reasonable since there are, or at least were, real questions about the feasibility of reproducing these results",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-standard-ml-reimplementation-of-code",
+      "number": "4",
+      "title": "Standard ML reimplementation of code",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "reimplementation",
+          "heading": true
+        },
+        {
+          "term": "original code",
+          "heading": false
+        },
+        {
+          "term": "code base",
+          "heading": false
+        },
+        {
+          "term": "computer code",
+          "heading": false
+        },
+        {
+          "term": "floating point",
+          "heading": false
+        },
+        {
+          "term": "cite website",
+          "heading": false
+        },
+        {
+          "term": "original implementation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:code} This section describes a reimplementation of the computer code used in the proof of the Kepler conjecture. The code has been substantially redesigned to avoid various difficulties with the original implementation. \\subsection{Code} The original proof of the Kepler conjecture relies significantly on computation. Computer code is used extensively and is central both to the correctness of the result",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-proving-nonlinear-inequalities-with-bernstein",
+      "number": "5",
+      "title": "Proving nonlinear inequalities with Bernstein bases",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 1245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coloneq sqrt",
+          "heading": false
+        },
+        {
+          "term": "coloneq frac",
+          "heading": false
+        },
+        {
+          "term": "overline arctan",
+          "heading": false
+        },
+        {
+          "term": "bernstein",
+          "heading": true
+        },
+        {
+          "term": "overline rcp",
+          "heading": false
+        },
+        {
+          "term": "sqrt cdot",
+          "heading": false
+        },
+        {
+          "term": "sqrt delta",
+          "heading": false
+        },
+        {
+          "term": "cite roland-thesis",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:zumkeller} The hardest computational part of the original proof of the Kepler conjecture is the verification of a list of about a thousand nonlinear inequalities. This section presents a technique aimed at proving them, based on polynomial approximation and Bernstein bases. We feel that this approach better fits the requirements of formal proof, as outlined in Section~\\ref{sec:sean}. We hope to refine the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-tame-graph-enumeration",
+      "number": "6",
+      "title": "Tame graph enumeration",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tame",
+          "heading": true
+        },
+        {
+          "term": "enumeration",
+          "heading": true
+        },
+        {
+          "term": "textit seed",
+          "heading": false
+        },
+        {
+          "term": "tame graphs",
+          "heading": false
+        },
+        {
+          "term": "graphs reachable",
+          "heading": false
+        },
+        {
+          "term": "hol formalization",
+          "heading": false
+        },
+        {
+          "term": "non-final face",
+          "heading": false
+        },
+        {
+          "term": "tame plane",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:graph} Tame graphs are particular plane graphs that represent potential counterexamples to the Kepler conjecture. The \\emph{Archive} is a list of over 5000 plane graphs. The original proof generates the Archive with the help of a Java program that enumerates all plane graphs. Tameness is defined in Section~18 and the enumeration is sketched in Section~19 of \\cite{Hales:2006:DCG}. This section sketches the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-verifying-linear-programs",
+      "number": "7",
+      "title": "Verifying linear programs",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear programs",
+          "heading": true
+        },
+        {
+          "term": "tame graph",
+          "heading": false
+        },
+        {
+          "term": "current formalization",
+          "heading": false
+        },
+        {
+          "term": "graph system",
+          "heading": false
+        },
+        {
+          "term": "potential counterexample",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "cite hales",
+          "heading": false
+        },
+        {
+          "term": "darts",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:lp} This section reports on the current state of the formal verification of the linear programming part of the proof of the Kepler conjecture. The results of the linear programming in the original proof are recorded in several gigabytes of log files. This section presents the formalization of the generation and bounding of these linear programs in the mechanical proof assistant Isabelle~\\cite{LNCS2283}. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-part-2-addendum-to-and-errata-in-the-original-pr",
+      "number": null,
+      "title": "Part 2. Addendum to and Errata in the Original Proof",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-8-biconnected-graphs",
+      "number": "8",
+      "title": "Biconnected graphs",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 35,
+      "labelStart": "22",
+      "labelEnd": "35",
+      "words": 5573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "biconnected graphs",
+          "heading": true
+        },
+        {
+          "term": "loop subregion",
+          "heading": false
+        },
+        {
+          "term": "subregion along",
+          "heading": false
+        },
+        {
+          "term": "upright quarter",
+          "heading": false
+        },
+        {
+          "term": "upright diagonal",
+          "heading": false
+        },
+        {
+          "term": "w-u",
+          "heading": false
+        },
+        {
+          "term": "cite hales",
+          "heading": false
+        },
+        {
+          "term": "articulation vertex",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:biconnected} This section gives further detail to the argument of \\cite[\\S12.7~p.131]{Hales:2006:DCG:4}. There it is claimed that the proof of the main estimate~\\cite[Theorem~12.1]{Hales:2006:DCG:4} can be reduced to the case of polygonal standard regions. This claim is correct. However, the justification of this claim is not complete in the original proof. This section gives complete justification of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-9-errata-listing",
+      "number": "9",
+      "title": "Errata listing",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 1500,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lto",
+          "heading": false
+        },
+        {
+          "term": "abridged version",
+          "heading": false
+        },
+        {
+          "term": "cite hales",
+          "heading": false
+        },
+        {
+          "term": "errata",
+          "heading": true
+        },
+        {
+          "term": "replacement text",
+          "heading": false
+        },
+        {
+          "term": "baselineskip",
+          "heading": false
+        },
+        {
+          "term": "original text",
+          "heading": false
+        },
+        {
+          "term": "listing",
+          "heading": true
+        }
+      ],
+      "extract": "The abridged version of the Kepler conjecture in the Annals \\cite{Hales:2005:Annals} was generated by the same tex files as the unabridged version in \\cite{Hales:2006:DCG}. For this reason, it seems that every correction to the abridged version should also be a correction to the unabridged version. We list errata in the unabridged version. The same list applies to corresponding passages in the abridged version. Each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": null,
+      "words": 1177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isabelle hol",
+          "heading": false
+        },
+        {
+          "term": "com flyspeck",
+          "heading": false
+        },
+        {
+          "term": "flyspeck project",
+          "heading": false
+        },
+        {
+          "term": "kepler conjecture",
+          "heading": false
+        },
+        {
+          "term": "hales",
+          "heading": false
+        },
+        {
+          "term": "hol light",
+          "heading": false
+        },
+        {
+          "term": "nipkow",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        }
+      ],
+      "extract": "[1] K. Appel and W. Haken. The four color proof suffices. The Mathematical Intelle- gencer, 8(1):10–20 & 58, 1986. [2] G. Bauer and T. Nipkow. Flyspeck I: Tame graphs. In G. Klein, T. Nipkow, and L. Paulson, editors, The Archive of Formal Proofs. http://afp.sf.net/entries/ Flyspeck-Tame.shtml, May 2006. [3] G. E. Collins. Quantifier elimination for real closed fields by cylindrical algebraic decomposition. In",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cite hales",
+      "heading": false
+    },
+    {
+      "term": "kepler conjecture",
+      "heading": true
+    },
+    {
+      "term": "original code",
+      "heading": false
+    },
+    {
+      "term": "flyspeck project",
+      "heading": true
+    },
+    {
+      "term": "hol formalization",
+      "heading": false
+    },
+    {
+      "term": "original proof",
+      "heading": true
+    },
+    {
+      "term": "cite obua",
+      "heading": false
+    },
+    {
+      "term": "tame graphs",
+      "heading": false
+    },
+    {
+      "term": "isabelle cite",
+      "heading": false
+    },
+    {
+      "term": "computer code",
+      "heading": false
+    },
+    {
+      "term": "cite mclaughlin",
+      "heading": false
+    },
+    {
+      "term": "formal proof",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A hypermap is a combinatorial structure attached to a planar graph",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Refuting a potential counterexample to the Kepler conjecture",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The shaded region is a subregion whose boundary is not a simple polygon. We wish to rigidly slide the triangle containing the vertex w until a new visible distinguished edge forms (say from w to u). We will show that",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Theorem 3 breaks into various cases: (a) two edges with distinct endpoints, (b) three or more edges, (c) two edges, or (d) a single edge passing through the triangle {0, v, w}",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The two shaded regions represent subregions",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The upright diagonal u cannot be placed over any of the regions A, B, C, D. The lines (not to scale) represent geodesic arcs on the sphere passing through the pairs of points in {p(u1), p(u2), p(v)}, where p denotes projection to the unit sphere",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p020-1",
+      "file": "images/img-p020-1.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-5",
+      "file": "images/img-p020-5.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-11",
+      "file": "images/img-p020-11.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-18",
+      "file": "images/img-p020-18.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-22",
+      "file": "images/img-p020-22.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-26",
+      "file": "images/img-p020-26.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-33",
+      "file": "images/img-p020-33.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-39",
+      "file": "images/img-p020-39.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-53",
+      "file": "images/img-p020-53.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-58",
+      "file": "images/img-p020-58.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-72",
+      "file": "images/img-p020-72.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-86",
+      "file": "images/img-p020-86.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-90",
+      "file": "images/img-p020-90.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-104",
+      "file": "images/img-p020-104.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-118",
+      "file": "images/img-p020-118.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-124",
+      "file": "images/img-p020-124.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-131",
+      "file": "images/img-p020-131.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-138",
+      "file": "images/img-p020-138.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-145",
+      "file": "images/img-p020-145.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-149",
+      "file": "images/img-p020-149.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-153",
+      "file": "images/img-p020-153.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-157",
+      "file": "images/img-p020-157.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-161",
+      "file": "images/img-p020-161.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-167",
+      "file": "images/img-p020-167.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-174",
+      "file": "images/img-p020-174.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-180",
+      "file": "images/img-p020-180.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-194",
+      "file": "images/img-p020-194.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-208",
+      "file": "images/img-p020-208.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-222",
+      "file": "images/img-p020-222.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-236",
+      "file": "images/img-p020-236.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-250",
+      "file": "images/img-p020-250.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-264",
+      "file": "images/img-p020-264.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-270",
+      "file": "images/img-p020-270.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-275",
+      "file": "images/img-p020-275.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-280",
+      "file": "images/img-p020-280.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-287",
+      "file": "images/img-p020-287.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-292",
+      "file": "images/img-p020-292.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-306",
+      "file": "images/img-p020-306.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-311",
+      "file": "images/img-p020-311.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-325",
+      "file": "images/img-p020-325.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-2",
+      "file": "images/img-p021-2.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-3",
+      "file": "images/img-p021-3.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-4",
+      "file": "images/img-p021-4.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-5",
+      "file": "images/img-p021-5.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-6",
+      "file": "images/img-p021-6.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-7",
+      "file": "images/img-p021-7.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-8",
+      "file": "images/img-p021-8.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-9",
+      "file": "images/img-p021-9.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-10",
+      "file": "images/img-p021-10.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-11",
+      "file": "images/img-p021-11.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-12",
+      "file": "images/img-p021-12.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-13",
+      "file": "images/img-p021-13.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-14",
+      "file": "images/img-p021-14.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-15",
+      "file": "images/img-p021-15.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-16",
+      "file": "images/img-p021-16.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-2",
+      "file": "images/img-p023-2.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-3",
+      "file": "images/img-p023-3.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-2",
+      "file": "images/img-p028-2.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-3",
+      "file": "images/img-p028-3.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-4",
+      "file": "images/img-p028-4.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 63
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0902.0350v1"
+  }
+}

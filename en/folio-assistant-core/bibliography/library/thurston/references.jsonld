@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/thurston",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "The Geometry and Topology of Three-Manifolds",
+      "dcterms:creator": [
+        "Geometry, The",
+        "Three-Manifolds, Topology of"
+      ],
+      "dcterms:issued": "D:20170329",
+      "dcterms:source": "library/thurston/manifest.jsonld",
+      "dcterms:hasVersion": "library/thurston"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.02111v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Categorical Quantum Volume Operator",
+  "contains": [
+    "library/arxiv-2406.02111v3/sections/sec-000",
+    "library/arxiv-2406.02111v3/sections/sec-001",
+    "library/arxiv-2406.02111v3/sections/sec-002",
+    "library/arxiv-2406.02111v3/sections/sec-003",
+    "library/arxiv-2406.02111v3/sections/sec-004",
+    "library/arxiv-2406.02111v3/sections/sec-005",
+    "library/arxiv-2406.02111v3/sections/sec-006",
+    "library/arxiv-2406.02111v3/sections/sec-007",
+    "library/arxiv-2406.02111v3/sections/sec-008",
+    "library/arxiv-2406.02111v3/sections/sec-009",
+    "library/arxiv-2406.02111v3/sections/sec-010",
+    "library/arxiv-2406.02111v3/sections/sec-011",
+    "library/arxiv-2406.02111v3/sections/sec-012",
+    "library/arxiv-2406.02111v3/sections/sec-013",
+    "library/arxiv-2406.02111v3/sections/sec-014",
+    "library/arxiv-2406.02111v3/sections/sec-015",
+    "library/arxiv-2406.02111v3/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Categorical Quantum Volume Operator — 17 sections: Categorical Quantum Volume Operato; Introduction; The Volume Operator in Loop Quantu\n\n**Categorical Quantum Volume Operator**\n\n*Alexander Hahn ,1, ∗Sebastian Murk ,2, † Sukhbinder Singh,3, ‡ and Gavin K. Brennen*\n\n19 pp, 17 sections.\n\n**Outline.** Categorical Quantum Volume Operator; Introduction; The Volume Operator in Loop Quantum Gravity; Spin networks and graph states; Quantum tetrahedron; Volume operator; Chakrabarti's derivation of the volume operato; Categorification of the Volume Operator; String diagrams; Derivation of the categorical volume operator; Beyond ribbon fusion categories; Hermiticity of the categorical volume operator; Recovering the Standard SU(2) Volume Operator; Spectrum of the SU(2)k Volume Operator; Discussion and Conclusions; References; Appendix: Basic Concepts in Category Theory",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2406.02111&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2406.02111v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2406.02111v3.pdf",
+    "source_sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
+    "pages": 19,
+    "arxiv": {
+      "id": "2406.02111",
+      "version": "3",
+      "primary_class": "gr-qc",
+      "stamp_date": "29 Aug 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

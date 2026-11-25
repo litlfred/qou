@@ -1,0 +1,1459 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "akemann-2022-j-phys-a-math-theor-55-194002",
+  "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-consecutive-level-spacings-in-the-chiral-gaussia"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Transition from Bessel- and Airy- to the sine-kernel",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-transition-from-bessel--and-airy--to-the-sine"
+    },
+    {
+      "level": 2,
+      "title": "Gap probabilities and level spacing distributions",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-gap-probabilities-and-level-spacing-distributi"
+    },
+    {
+      "level": 2,
+      "title": "Analysis at finite matrix dimension",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-analysis-at-finite-matrix-dimension"
+    },
+    {
+      "level": 3,
+      "title": "Orthogonal polynomials and partition function",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-41-orthogonal-polynomials-and-partition-function"
+    },
+    {
+      "level": 3,
+      "title": "Partition function of shifted masses",
+      "number": "4.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-42-partition-function-of-shifted-masses"
+    },
+    {
+      "level": 3,
+      "title": "Hard edge kth spacing distribution at finite-",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-43-hard-edge-kth-spacing-distribution-at-finite"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic analysis at the hard edge",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-asymptotic-analysis-at-the-hard-edge"
+    },
+    {
+      "level": 3,
+      "title": "The large- limit at fixed and",
+      "number": "5.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-the-large--limit-at-fixed-and"
+    },
+    {
+      "level": 3,
+      "title": "Comparison to the bulk spacing distribution",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-52-comparison-to-the-bulk-spacing-distribution"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics to the Airy statistics",
+      "number": "5.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-53-asymptotics-to-the-airy-statistics"
+    },
+    {
+      "level": 2,
+      "title": "Comparison to data from lattice QCD",
+      "number": "6",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-comparison-to-data-from-lattice-qcd"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion",
+      "number": "7",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-7-conclusion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "Data availability statement",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-data-availability-statement"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A. The spacing distribution in the bulk",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-a-the-spacing-distribution-in-the-bulk"
+    },
+    {
+      "level": 2,
+      "title": "ORCID iDs",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-orcid-ids"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "akemann",
+          "heading": false
+        },
+        {
+          "term": "takuya",
+          "heading": false
+        },
+        {
+          "term": "kanazawa",
+          "heading": false
+        },
+        {
+          "term": "cue",
+          "heading": false
+        }
+      ],
+      "extract": "Journal of Physics A: Mathematical and Theoretical PAPER • OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002 View the article online for updates and enhancements. You may also like The smallest eigenvalue distribution in the real Wishart–Laguerre ensemble with even",
+      "extractCut": true,
+      "blocks": [
+        "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-front-matter",
+        "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p001-1",
+        "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p002-1",
+        "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p002-3"
+      ]
+    },
+    {
+      "id": "sec-000-consecutive-level-spacings-in-the-chiral-gaussia",
+      "number": null,
+      "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soft edge",
+          "heading": true
+        },
+        {
+          "term": "unitary ensemble",
+          "heading": true
+        },
+        {
+          "term": "gaussian unitary",
+          "heading": true
+        },
+        {
+          "term": "chiral gaussian",
+          "heading": true
+        },
+        {
+          "term": "bulk",
+          "heading": true
+        },
+        {
+          "term": "spacings",
+          "heading": true
+        },
+        {
+          "term": "hard",
+          "heading": true
+        },
+        {
+          "term": "consecutive",
+          "heading": true
+        }
+      ],
+      "extract": "Gaussian unitary ensemble: from the hard and soft edge to the bulk G Akemann1,∗ , V Gorski1 and M Kieburg2 1 Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld, Germany 2 School of Mathematics and Statistics, University of Melbourne, 813 Swanston Street, Parkville, Melbourne VIC 3010, Australia E-mail: akemann@physik.uni-bielefeld.de Received 24 December 2021, revised 15 March 2022 Accepted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk spacing",
+          "heading": false
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "kth spacing",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "gue bulk",
+          "heading": false
+        },
+        {
+          "term": "hard edge",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "smallest eigenvalue",
+          "heading": false
+        }
+      ],
+      "extract": "One of the cornerstonesin applying randommatrix theory is the local level spacing distribution. It provides a statistical description of the spacing between consecutive eigenvalues. For that purpose,the mean level density around the point where we zoom in has to be unfolded,meaning it is mapped to be approximately constant, see [1]. Then, the energies are measured in units of this constant. This procedure applies to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-transition-from-bessel--and-airy--to-the-sine",
+      "number": "2",
+      "title": "Transition from Bessel- and Airy- to the sine-kernel",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 11,
+      "labelStart": "5",
+      "labelEnd": "11",
+      "words": 2977,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sine-kernel",
+          "heading": true
+        },
+        {
+          "term": "unfolded microscopic",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "bessel-kernel",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "bulk statistics",
+          "heading": false
+        },
+        {
+          "term": "airy",
+          "heading": true
+        }
+      ],
+      "extract": "The spacing between consecutive eigenvalues of random matrices with unitary symmetry in the bulk of the spectrum is well-approximated by Wigner’s surmise [1, 11] for 2 × 2 GUE matrices, pWigner(s) = 32s2 π2 e−4s2/π. (1) We will also give a much more precise expression in appendix A, cf [14], which is universal. In the present case of the χGUE also called complex Wishart–Laguerre ensemble, deviations should show up",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-gap-probabilities-and-level-spacing-distributi",
+      "number": "3",
+      "title": "Gap probabilities and level spacing distributions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "level spacing",
+          "heading": true
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "gap",
+          "heading": true
+        },
+        {
+          "term": "joint density",
+          "heading": false
+        },
+        {
+          "term": "joint probability",
+          "heading": false
+        },
+        {
+          "term": "dxk",
+          "heading": false
+        },
+        {
+          "term": "x2ν",
+          "heading": false
+        },
+        {
+          "term": "vandermonde determinant",
+          "heading": false
+        }
+      ],
+      "extract": "Let us underscore that most of the ensuing discussion in the present section holds for arbitrary positive real spectra with a finite number of eigenvalues. Thus our particular choice of an ensemble can be readily generalised. We start from a generic joint probability density Pn({x}) of the set of n unordered eigenval- ues {x} = {xi}n i=1, with xi ∈R+ for all i = 1, . . ., n. The emphasis on ‘unordered’ is impor-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-analysis-at-finite-matrix-dimension",
+      "number": "4",
+      "title": "Analysis at finite matrix dimension",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-41-orthogonal-polynomials-and-partition-function",
+      "number": "4.1",
+      "title": "Orthogonal polynomials and partition function",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 834,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "χgue",
+          "heading": false
+        },
+        {
+          "term": "generalised laguerre",
+          "heading": false
+        },
+        {
+          "term": "k-point correlation",
+          "heading": false
+        },
+        {
+          "term": "laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "squared variables",
+          "heading": false
+        },
+        {
+          "term": "ˆhj",
+          "heading": false
+        },
+        {
+          "term": "δnf",
+          "heading": false
+        },
+        {
+          "term": "x2ν",
+          "heading": false
+        }
+      ],
+      "extract": "To compute the partition functions Z(Nf) ν,n ({m}) and Z( \u0002 Nf) 2,n−k−1({#m}) of the χGUE with a given number of flavours, we begin with the χGUE at Nf = 0, where the partition function and all k- point correlation functions can be expressed in terms of the generalised Laguerre polynomials and their kernel. Their orthogonality relation with squared norms h j reads [40, table 18.3.1] \u0002 ∞ 0 dz L(ν) l (z2)L(ν) j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-42-partition-function-of-shifted-masses",
+      "number": "4.2",
+      "title": "Partition function of shifted masses",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shifted masses",
+          "heading": true
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "χgue",
+          "heading": false
+        },
+        {
+          "term": "laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "δnf",
+          "heading": false
+        },
+        {
+          "term": "equiv alent",
+          "heading": false
+        },
+        {
+          "term": "characteristic polynomials",
+          "heading": false
+        },
+        {
+          "term": "akemann",
+          "heading": false
+        }
+      ],
+      "extract": "In order to determine the second partition function Z( \u0002 Nf) 2,n−k−1({#m}) with an extended number of shifted masses (41), which are partly degenerate, we will use the following theorem from [44]. It expresses the expectation value of the product of characteristic polynomials in several equiv- alent forms, in terms of the determinant of a matrix of kernels and orthogonal polynomials. Adapted to our setting of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-43-hard-edge-kth-spacing-distribution-at-finite",
+      "number": "4.3",
+      "title": "Hard edge kth spacing distribution at finite-",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "hard edge",
+          "heading": true
+        },
+        {
+          "term": "kth",
+          "heading": true
+        },
+        {
+          "term": "limit mnf",
+          "heading": false
+        },
+        {
+          "term": "optimal rate",
+          "heading": false
+        },
+        {
+          "term": "flavours",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "dxk",
+          "heading": false
+        }
+      ],
+      "extract": "Inserting the expression (72) as well as (57) into (42), we obtain the following relatively com- pact expression for the spacing distribution at the hard edge between the kth and (k + 1)st smallest eigenvalue for arbitrary k, with Nf flavours and topology ν at fixed n. Recalling the definition of the shifted variables from (61), we have (73) The expression (73) is our first main result and will serve as the starting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-asymptotic-analysis-at-the-hard-edge",
+      "number": "5",
+      "title": "Asymptotic analysis at the hard edge",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-51-the-large--limit-at-fixed-and",
+      "number": "5.1",
+      "title": "The large- limit at fixed and",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "large-n limit",
+          "heading": false
+        },
+        {
+          "term": "laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "shifted variables",
+          "heading": false
+        },
+        {
+          "term": "χgue",
+          "heading": false
+        },
+        {
+          "term": "x2d",
+          "heading": false
+        },
+        {
+          "term": "akemann",
+          "heading": false
+        }
+      ],
+      "extract": "In the asymptotic large-n limit of the χGUE at the hard edge, with our convention of an n- independent weight function, it is well known that the eigenvalues, and therefore also the spacings and masses scale with √n, see [18]. We therefore define the following variables σ ≡√n s, μ f ≡√n m f, f = 1, . . . , Nf, (76) 20 J. Phys. A: Math. Theor. 55 (2022) 194002 G Akemann et al where σ and the μ f remain finite in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-52-comparison-to-the-bulk-spacing-distribution",
+      "number": "5.2",
+      "title": "Comparison to the bulk spacing distribution",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 1108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk spacing",
+          "heading": true
+        },
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "wigner surmise",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "spacing decreases",
+          "heading": false
+        },
+        {
+          "term": "exact bulk",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "hard edge",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn to the comparison between the hard edge spacing distribution for different param- eter values k, Nf and ν, and the bulk spacing distribution (A.1). We will also compare with the Wigner surmise (1), which is often used in comparison to real data, in order to illustrate the closeness between the hard edge and bulk spacing. We begin with the quenched spacing between the first two smallest eigenvalues (k =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-53-asymptotics-to-the-airy-statistics",
+      "number": "5.3",
+      "title": "Asymptotics to the Airy statistics",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "30",
+      "words": 1336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk spacing",
+          "heading": false
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "distribution pbulk",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "carlo simulations",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "dashed blue",
+          "heading": false
+        }
+      ],
+      "extract": "Another limit is the large-ν limit which should approach the level spacing distributions at the soft edge. Actually this also holds when the number of flavours Nf is sent to infinity, while the corresponding masses are of the order of 1/√n, as we have exploited this scaling in our computations. In general, we can understand the effect of non-vanishing flavours and topology as follows. Both push the eigenvalues",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-comparison-to-data-from-lattice-qcd",
+      "number": "6",
+      "title": "Comparison to data from lattice QCD",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "mobility edge",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "nconf",
+          "heading": false
+        },
+        {
+          "term": "poisson statistics",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": true
+        },
+        {
+          "term": "overlap dirac",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, we would like to compare with edge statistics from data, notably at the hard edge where we have derived analytical predictions. For that reason we consider empirical data from lattice QCD Dirac operators. It is known [17] that strongly interacting quantum field theories in the deepest infrared limit, the ε-regime, agree with the statistics obtained from random matrix theory. In QCD, 29 J. Phys. A: Math.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-7-conclusion",
+      "number": "7",
+      "title": "Conclusion",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacing distribution",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "zero-modes",
+          "heading": false
+        },
+        {
+          "term": "flavours",
+          "heading": false
+        },
+        {
+          "term": "bulk",
+          "heading": false
+        },
+        {
+          "term": "ensembles",
+          "heading": false
+        },
+        {
+          "term": "soft",
+          "heading": false
+        },
+        {
+          "term": "substantial",
+          "heading": false
+        }
+      ],
+      "extract": "In the application of random matrices we have learned to appreciate the predictive power for spectral correlations, depending on the location within the spectrum. One example is the micro- scopic Bessel-density close to the origin, that is relevant when chiral symmetry is important, e.g. in comparison to data from lattice QCD. It depends heavily on the number of zero-modes ν, that characterise different topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jlqcd",
+          "heading": false
+        },
+        {
+          "term": "behalf",
+          "heading": false
+        },
+        {
+          "term": "taming",
+          "heading": false
+        }
+      ],
+      "extract": "This work was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)—SFB 1283/2 2021–317210226 ‘Taming uncertainty and profiting from ran- domness and low regularity in analysis, stochastics and their applications’ (GA) and by the Australian Research Council (ARC) via the Grant DP210102887 (MK). Moreover, we would like to thank Hidenori Fukaya for providing us with the lattice data on behalf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-data-availability-statement",
+      "number": null,
+      "title": "Data availability statement",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "The data generated and/or analysed during the current study are not publicly available for legal/ethical reasons but are available from the corresponding author on reasonable request.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-appendix-a-the-spacing-distribution-in-the-bulk",
+      "number": null,
+      "title": "Appendix A. The spacing distribution in the bulk",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk spacing",
+          "heading": true
+        },
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "exact spacing",
+          "heading": false
+        },
+        {
+          "term": "gue",
+          "heading": false
+        },
+        {
+          "term": "deviation",
+          "heading": false
+        },
+        {
+          "term": "expansion",
+          "heading": false
+        }
+      ],
+      "extract": "There are several alternative formulations of the exact spacing distribution for the GUE in the bulk available. For instance in Mehta’s book [14], in chapter 6 an infinite product expansion in terms of Fredholm determinant eigenvalues is offered. The latter are given by integrals of spheroidal functions. The bulk spacing for the GUE used in the present work is taken from [12]. It is approximated by a highly accurate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-orcid-ids",
+      "number": null,
+      "title": "ORCID iDs",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "G Akemann https://orcid.org/0000-0002-1710-4258 M Kieburg https://orcid.org/0000-0001-8864-6022",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verbaarschot phys",
+          "heading": false
+        },
+        {
+          "term": "wettig phys",
+          "heading": false
+        },
+        {
+          "term": "luo y-a",
+          "heading": false
+        },
+        {
+          "term": "akemann",
+          "heading": false
+        },
+        {
+          "term": "damgaard",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "widom commun",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Guhr T, Müller-Groeling A and Weidenmüller H A 1998 Phys. Rep. 299 190 [2] Szász-Schagrin D, Pozsgay B and Takacs G 2021 SciPost Phys. 11 037 [3] Kim J, Oz Y and Rosa D 2022 arXiv:2201.01452 [4] Majarshin A J, Luo Y-A, Pan F and Draayer J P 2021 J. Phys. G: Nucl. Part. Phys. 48 105107 [5] Saleki Z, Majarshin A J, Luo Y-A and Zhang D-L 2021 Phys. Rev. E 104 014116 [6] Elkamshishy A A and Greene C H 2021 Phys.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 4",
+      "table 1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bulk spacing",
+      "heading": true
+    },
+    {
+      "term": "spacing distribution",
+      "heading": true
+    },
+    {
+      "term": "edge spacing",
+      "heading": true
+    },
+    {
+      "term": "level spacing",
+      "heading": true
+    },
+    {
+      "term": "kth spacing",
+      "heading": true
+    },
+    {
+      "term": "quenched spacing",
+      "heading": false
+    },
+    {
+      "term": "lattice spacing",
+      "heading": false
+    },
+    {
+      "term": "exact spacing",
+      "heading": false
+    },
+    {
+      "term": "mean spacing",
+      "heading": false
+    },
+    {
+      "term": "spacing decreases",
+      "heading": false
+    },
+    {
+      "term": "bulk statistics",
+      "heading": false
+    },
+    {
+      "term": "akemann",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The properly unfolded microscopic level densities of the Bessel-kernel result (32) for ν = 0 (blue solid curve), ν = 1 (red finely dashed curve), ν = 20 (green coarsely dashed curve), and ν = ∞(black solid curve). The latter agrees with the unfolded Airy-kernel result (25) reflected at the origin. A",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Top left: the spacing distribution ¯p(0,0)",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Left: comparison between the bulk spacing distributions pbulk(s) (see (A.1))",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The level spacing distribution (left) and the cumulative density function (right), respectively, of the largest two eigenvalues of large random matrices generated",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Top: level spacing distribution (86) (left plot) and its difference to the bulk spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and ν = 0 (green solid curves),",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The level spacing distributions (left column) and cumulative densities (right column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations for N = 200, ν = 4 (top), N = 600, ν = 12 (middle) and N = 1000, ν = 20 (bottom)",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "The χ2-test for the level spacing of the smallest two eigenvalues for a few decreasing values of q = n/(n + ν) and increasing matrix dimension. The number of",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Left: the level spacing distribution of the smallest two eigenvalues of the overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and ν = 0 averaged over",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-3",
+      "file": "images/img-p002-3.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/akemann-2022-j-phys-a-math-theor-55-194002"
+  }
+}

@@ -1,0 +1,904 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0405258v2",
+  "title": "arxiv-math-0405258v2",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The lattice of partitions",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-lattice-of-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Permutations",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-permutations"
+    },
+    {
+      "level": 2,
+      "title": "A triangle inequality",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-a-triangle-inequality"
+    },
+    {
+      "level": 2,
+      "title": "Haar distributed unitary random matrices and the Weingarten function",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-haar-distributed-unitary-random-matrices-and"
+    },
+    {
+      "level": 2,
+      "title": "Second order freeness",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-second-order-freeness"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic second order freeness for unitary random matrices",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r"
+    },
+    {
+      "level": 1,
+      "title": "Failure of Universality for multi-matrix models",
+      "number": "4",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-failure-of-universality-for-multi-matrix-model"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "global ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "order freeness",
+          "heading": false
+        },
+        {
+          "term": "unitary random",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "multi-matrix",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0405258v2 [math.OA] 27 Jun 2005 SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES JAMES A. MINGO (∗), PIOTR ´SNIADY (‡), AND ROLAND SPEICHER (∗)(†) Abstract. We extend the relation between random matrices and free probability theory from the level of expectations to the level of ﬂuctuations. We show how the concept of “second order freeness”, which was introduced in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0405258v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order freeness",
+          "heading": false
+        },
+        {
+          "term": "unitary random",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "global fluctuations",
+          "heading": false
+        },
+        {
+          "term": "multi-matrix models",
+          "heading": false
+        },
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "same fluctuations",
+          "heading": false
+        },
+        {
+          "term": "independent unitary",
+          "heading": false
+        }
+      ],
+      "extract": "In Part I of this series \\cite{MSp1} we introduced the concept of second order freeness as the mathematical concept for dealing with the large $N$ limit of fluctuations of $N\\times N$-random matrices. Whereas Voiculescu's freeness (of first order) provides the crucial notion behind the leading order of expectations of traces, our second order freeness is intended to describe in a similar way the structure of leading",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-lattice-of-partitions",
+      "number": "2.1",
+      "title": "The lattice of partitions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partitions",
+          "heading": true
+        },
+        {
+          "term": "moeb",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "cumulant",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        },
+        {
+          "term": "natural numbers",
+          "heading": false
+        }
+      ],
+      "extract": "For natural numbers $m,n\\in\\NN$ with $m<n$, we denote by $[m,n]$ the interval of natural numbers between $m$ and $n$, i.e., $$[m,n]:=\\{m,m+1,m+2,\\dots,n-1,n\\}$$ and $[m] = [1, m]$. For a matrix $A=(a_{ij})_{i,j=1}^N$, we denote by $\\Tr$ the unnormalized and by $\\tr$ the normalized trace, $$\\Tr(A):=\\sum_{i=1}^N a_{ii},\\qquad \\tr(A):=\\frac 1N \\Tr(A).$$ We say that $A=\\{A_1,\\dots,A_k\\}$ is a partition of the set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-permutations",
+      "number": "2.2",
+      "title": "Permutations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annular non-crossing",
+          "heading": false
+        },
+        {
+          "term": "non-crossing permutations",
+          "heading": false
+        },
+        {
+          "term": "non-crossing partitions",
+          "heading": false
+        },
+        {
+          "term": "vert gamma",
+          "heading": false
+        },
+        {
+          "term": "leq vert",
+          "heading": false
+        },
+        {
+          "term": "subsubsection",
+          "heading": false
+        },
+        {
+          "term": "cycles",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        }
+      ],
+      "extract": "We will denote the set of permutations on $n$ elements by $S_n$. We will quite often use the cycle notation for such permutations, i.e., $\\pi=(i_1,i_2,\\dots,i_r)$ is a cycle which sends $i_k$ to $i_{k+1}$ ($k=1,\\dots,r$), where $i_{r+1}=i_1$. \\subsubsection{Length function} For a partition $\\pi\\in S_n$ we denote by $\\#(\\pi)$ the number of cycles of $\\pi$ and by $\\vert\\pi\\vert$ the minimal number of transpositions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-a-triangle-inequality",
+      "number": "2.3",
+      "title": "A triangle inequality",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vee vert",
+          "heading": false
+        },
+        {
+          "term": "sigma vert",
+          "heading": false
+        },
+        {
+          "term": "leq vert",
+          "heading": false
+        },
+        {
+          "term": "cdots times",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": false
+        },
+        {
+          "term": "assertion",
+          "heading": false
+        },
+        {
+          "term": "cycle",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\{A_1, \\dots , A_k\\}$ be a partition of $[n]$. If, for $1\\leq i\\leq k$, $\\pi_i$ is a permutation of the set $A_i$ we denote by $\\pi_1\\times \\cdots\\times \\pi_k\\in S_n$ the concatenation of these permutations. We say that $\\pi=\\pi_1\\times\\cdots\\times \\pi_k$ is a cycle decomposition if additionally every factor $\\pi_i$ is a cycle. \\begin{notation} 1) For $A\\in\\cP(n)$ we put $| A|:=n-\\#(A)$ \\\\ 2) For any $\\pi \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
+      "number": "2.4",
+      "title": "Haar distributed unitary random matrices and the Weingarten function",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weingarten function",
+          "heading": true
+        },
+        {
+          "term": "haar distributed",
+          "heading": true
+        },
+        {
+          "term": "distributed unitary",
+          "heading": true
+        },
+        {
+          "term": "unitary random",
+          "heading": true
+        },
+        {
+          "term": "random matrices",
+          "heading": true
+        },
+        {
+          "term": "cite col",
+          "heading": false
+        },
+        {
+          "term": "cdots overline",
+          "heading": false
+        },
+        {
+          "term": "cdots delta",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we will be interested in the asymptotics of special matrix integrals over the group $\\UU(N)$ of unitary $N\\times N$-matrices. We always equip the compact group $\\UU(N)$ with its Haar probability measure and accordingly distributed random matrices we shall call \\emph{Haar distributed unitary random matrices}. Thus the expectation $\\EE$ over this ensemble is given by integrating with respect to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-second-order-freeness",
+      "number": "2.5",
+      "title": "Second order freeness",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order freeness",
+          "heading": true
+        },
+        {
+          "term": "unital subalgebras",
+          "heading": false
+        },
+        {
+          "term": "cite vdn",
+          "heading": false
+        },
+        {
+          "term": "begin multline",
+          "heading": false
+        },
+        {
+          "term": "end multline",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "emph free",
+          "heading": false
+        },
+        {
+          "term": "non-commutative probability",
+          "heading": false
+        }
+      ],
+      "extract": "In \\cite{MSp1}, we introduced the concept of second order freeness which is intended to capture the structure of the fluctuation functionals for random matrices arising in the limit $N\\to\\infty$, in the same way as the usual freeness captures the structure of the expectation of the trace in the limit. We recall the relevant notations and definitions. \\begin{definition} A \\emph{second order non-commutative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
+      "number": "3",
+      "title": "Asymptotic second order freeness for unitary random matrices",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 6280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random matrices",
+          "heading": true
+        },
+        {
+          "term": "unitary random",
+          "heading": true
+        },
+        {
+          "term": "order freeness",
+          "heading": true
+        },
+        {
+          "term": "cdots epsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon gamma",
+          "heading": false
+        },
+        {
+          "term": "textrm inv",
+          "heading": false
+        },
+        {
+          "term": "leq moeb",
+          "heading": false
+        },
+        {
+          "term": "sum epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{notation}\\label{notation1} Suppose $\\epsilon : [2l] \\rightarrow \\{-1, 1\\}$ is such that $\\sum_{i=1}^{2l} \\epsilon_i = 0$. We write $\\epsilon^{-1}(1) = \\{ p_1, p_2, \\dots , p_l\\}$ and $\\epsilon^{-1}(-1) = \\{q_1, q_2, \\dots , q_l\\}$, with $p_1 < p_2 < \\cdots < p_l$ and $q_1 < q_2 < \\cdots < q_l$. Let $S^{(\\epsilon)}_{2l}$ be the permutations $\\pi$ in $S_{2l}$ such that $\\pi$ takes $\\{p_1,\\dots,p_l\\}$ onto",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-failure-of-universality-for-multi-matrix-model",
+      "number": "4",
+      "title": "Failure of Universality for multi-matrix models",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-matrix models",
+          "heading": true
+        },
+        {
+          "term": "one-matrix ensemble",
+          "heading": false
+        },
+        {
+          "term": "universality",
+          "heading": true
+        },
+        {
+          "term": "global fluctuations",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue distribution",
+          "heading": false
+        },
+        {
+          "term": "limiting eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "order freeness",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we want to make the meaning of second order freeness for fluctuations of random matrices more explicit and relate this with the question of universality of such fluctuations. There has been much interest in global fluctuations of random matrices, in particular, since it was observed that for large classes of one-matrix models these fluctuations are universal. In the physical literature this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free random",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "queen university",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "free probability",
+          "heading": false
+        },
+        {
+          "term": "mingo",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "voiculescu",
+          "heading": false
+        }
+      ],
+      "extract": "[AJM] J. Ambjørn, J. Jurkiewicz, and Y. Makeenko: Multiloop correlators for two-dimensional quantum gravity, Phys. Lett. 251B (1990), 517-524. [B] P. Biane: Some properties of crossings and partitions. Discrete Math. 175 (1997), no. 1-3, 41–53. [C] B. Collins: Moments and cumulants of polynomial random variables of uni- tary groups, the Itzykson-Zuber integral, and free probability. IMRN, 2003, no. 17, 953-982.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "random matrices",
+      "heading": true
+    },
+    {
+      "term": "order freeness",
+      "heading": true
+    },
+    {
+      "term": "unitary random",
+      "heading": true
+    },
+    {
+      "term": "asymptotic freeness",
+      "heading": true
+    },
+    {
+      "term": "times random",
+      "heading": false
+    },
+    {
+      "term": "free random",
+      "heading": false
+    },
+    {
+      "term": "leq vert",
+      "heading": false
+    },
+    {
+      "term": "vee vert",
+      "heading": false
+    },
+    {
+      "term": "vert gamma",
+      "heading": false
+    },
+    {
+      "term": "gaussian random",
+      "heading": false
+    },
+    {
+      "term": "annular non-crossing",
+      "heading": false
+    },
+    {
+      "term": "non-crossing partitions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0405258v2"
+  }
+}

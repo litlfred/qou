@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the quantum Teichmüller invariants of fibred cusped 3-manifolds",
+  "contains": [
+    "library/4geo-dedi-rev/sections/sec-front-matter",
+    "library/4geo-dedi-rev/sections/sec-000",
+    "library/4geo-dedi-rev/sections/sec-001",
+    "library/4geo-dedi-rev/sections/sec-002",
+    "library/4geo-dedi-rev/sections/sec-003",
+    "library/4geo-dedi-rev/sections/sec-004",
+    "library/4geo-dedi-rev/sections/sec-005",
+    "library/4geo-dedi-rev/sections/sec-006",
+    "library/4geo-dedi-rev/sections/sec-007",
+    "library/4geo-dedi-rev/sections/sec-008",
+    "library/4geo-dedi-rev/sections/sec-009",
+    "library/4geo-dedi-rev/sections/sec-010",
+    "library/4geo-dedi-rev/sections/sec-011",
+    "library/4geo-dedi-rev/sections/sec-012",
+    "library/4geo-dedi-rev/sections/sec-013",
+    "library/4geo-dedi-rev/sections/sec-014",
+    "library/4geo-dedi-rev/sections/sec-015",
+    "library/4geo-dedi-rev/sections/sec-016",
+    "library/4geo-dedi-rev/sections/sec-017",
+    "library/4geo-dedi-rev/sections/sec-018",
+    "library/4geo-dedi-rev/sections/sec-019",
+    "library/4geo-dedi-rev/sections/sec-020",
+    "library/4geo-dedi-rev/sections/sec-021",
+    "library/4geo-dedi-rev/sections/sec-022",
+    "library/4geo-dedi-rev/sections/sec-023",
+    "library/4geo-dedi-rev/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 26 sections: Front matter; ON THE QUANTUM TEICHM ¨ULLER INVAR; ON THE QUANTUM TEICHM ¨ULLER INVAR\n\n**On the quantum Teichmüller invariants of fibred cusped 3-manifolds**\n\n*The documents may come from teaching and research*\n\n26 pp, 26 sections.\n\n**Outline.** Front matter; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "4geo-dedi-rev",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "4GEO-DEDI-REV.pdf",
+    "source_sha256": "e4d52947b71a3f379908f8da1cd3184d581f74ec66d42ba50f8e498136ec11d5",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

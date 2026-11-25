@@ -1,0 +1,733 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p06",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/cor-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "cor-sec-000-07.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E1) = −1 and M1 = 1, or ϵ2g+1ϵ(E2) = 1 and M2 = 1, or ϵ(E1) = ϵ(E2) and M1 = M2, we have #{D ∈H∗ 2g+1 : rE1⊗χD = 0,rE2⊗χD = 1} ≫ε q2g g6+ε as g →∞. Also, unless ϵ2g+1ϵ(E1) = 1 and M1 = 1, or ϵ2g+1ϵ(E2) = 1 and M2 = 1, or ϵ(E1) = −ϵ(E2) and M1 = M2, we have #{D ∈H∗ 2g+1 : rE1⊗χD = rE2⊗χD = 1} ≫ε q2g g6+ε as g →∞. As far as we are aware, Corollary 1.7 is the ﬁrst result in literature where explicit lower bounds concerning the correlations between the ranks of two twisted elliptic curves are obtained. Following Harper’s argument [2013], for the upper bounds for moments of L-function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and statement of results",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction-and-statement-of-results.md",
+      "narrative": null,
+      "content": "The values of L-functions at the central point of the critical strip have been the subject of considerable\ninterest in recent years. One way to study these central values is by considering moments in families\nof L-functions. There are now precise conjectured asymptotic formulas for such moments motivated\nby analogies with random matrix theory [Keating and Snaith 2000a; 2000b]. More precise asymptotic\nformulas containing lower order terms were conjectured in [Conrey et al. 2003; 2005; Diaconu et al.\n2003]. In the case of the Riemann zeta-function, the analogue of these conjectures is now relati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1853\nMoments of quadratic twists of\nelliptic curve L-functions over function ﬁelds\nHung M. Bui, Alexandra Florea, Jonathan P. Keating and Edva Roditty-Gershon\nWe calculate the ﬁrst and second moments of L-functions in the family of quadratic twists of a ﬁxed\nelliptic curve E over Fq[x], asymptotically in the limit as the degree of the twists tends to inﬁnity. We\nalso compute moments involving derivatives of L-functions over quadratic twists, enabling us to deduce\nlower bounds on the correlations between the analytic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E) = −1 and M = 1, we have |H∗ 2g+1| X D∈H∗ 2g+1 L \u0000E ⊗χD, 1 \u0001 = c1(M) + Oε(q−g+ϵg), where the value c1(M) is deﬁned in (5-6) and (5-2). In particular, the constant c1(M)̸ = 0 in this case and we obtain an asymptotic formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E) = 1 and M = 1, we have |H∗ 2g+1| X D∈H∗ 2g+1 ϵ−L′\u0000E ⊗χD, 1 \u0001 = c2(M)L(Sym2 E, 1)g + c3(M) + Oε(q−g+ϵg), where the values c2(M) and c3(M) are deﬁned in (6-2), (6-3) and (5-2). In particular, the constant c2(M)̸ = 0 in this case and we obtain an asymptotic formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E) = −1 and M = 1, we have |H∗ 2g+1| X D∈H∗ 2g+1 L \u0000E ⊗χD, 1 \u00012 = c4(M)L(Sym2 E, 1)3g + Oε(g1/2+ε), where the value c4(M) is deﬁned in (7-2), (3-8) and (3-9). In particular, the constant c4(M)̸ = 0 in this case and we obtain an asymptotic formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E) = 1 and M = 1, we have |H∗ 2g+1| X D∈H∗ 2g+1 ϵ−L′\u0000E ⊗χD, 1 \u00012 = c5(M)L(Sym2 E, 1)3g3 + Oε(g2+ϵ), where the value c5(M) is deﬁned in (8-2), (3-8) and (3-9). In particular, the constant c5(M)̸ = 0 in this case and we obtain an asymptotic formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E1) = −1 and M1 = 1, or ϵ2g+1ϵ(E2) = 1 and M2 = 1, or ϵ(E1) = ϵ(E2) and M1 = M2, we have |H∗ 2g+1| X D∈H∗ 2g+1 ϵ− 2 L \u0000E1 ⊗χD, 1 \u0001 L′\u0000E2 ⊗χD, 1 \u0001 = c6(M1, M2)L(Sym2 E1, 1)L(Sym2 E2, 1)L(E1 ⊗E2, 1)g + Oε(g1/2+ε), where the value c6(M1, M2) is deﬁned in (9-2), (3-8) and (3-10). In particular, the constant c6(M1, M2)̸=0 in this case and we obtain an asymptotic formula. We are not aware of the analogous number ﬁeld result in the literature. We also prove the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-06.md",
+      "narrative": null,
+      "content": "Unless ϵ2g+1ϵ(E1) = 1 and M1 = 1, or ϵ2g+1ϵ(E2) = 1 and M2 = 1, or ϵ(E1) = −ϵ(E2) and M1 = M2, we have |H∗ 2g+1| X D∈H∗ 2g+1 ϵ− 1 ϵ− 2 L′\u0000E1 ⊗χD, 1 \u0001 L′\u0000E2 ⊗χD, 1 \u0001 = c7(M1, M2)L(Sym2 E1, 1)L(Sym2 E2, 1)L(E1 ⊗E2, 1)g2 + Oε(g1+ε), where the value c7(M1,M2) is deﬁned in (10-2), (3-8) and (3-10). In particular, the constant c7(M1,M2)̸=0 in this case and we obtain an asymptotic formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "The coefﬁcients cn of L(E ⊗χD, u) satisfy the following relation cn = ϵqn−n/2−deg(D)cn+2 deg(D)−n, with ϵ as in (1-3). In particular, if ϵ = −1 and n is even, then cn/2+deg(D) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "Let D ∈H∗ 2g+1. Then L \u0000E ⊗χD, 1 \u0001 = X f ∈M≤[n/2]+deg(D) λ( f )χD( f ) √| f | + ϵ X f ∈M≤[(n−1)/2]+deg(D) λ( f )χD( f ) √| f | , with ϵ as in (1-3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "Let D ∈H∗ 2g+1. If ϵ = −1, then L′\u0000E ⊗χD, 1 \u0001 = 2(log q) X f ∈M≤[n/2]+deg(D) \u0000[n/2] + deg(D) −deg( f ) \u0001 λ( f )χD( f ) √| f | .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "We have X D∈H∗ 2g+1 χD( f ) = X C1 | 1 µ(C1)χC1( f ) X C2 | (1f )∞ X R∈M2g+1−deg(C1)−2 deg(C2) χR( f ) −q X C1 | 1 µ(C1)χC1( f ) X C2 | (1f )∞ X R∈M2g−1−deg(C1)−2 deg(C2) χR( f ), where by C2 | (1f )∞we mean that the prime factors of C2 divide 1f .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-05.md",
+      "narrative": null,
+      "content": "(1) If ( f, h) = 1, then G(V, f h) = G(V, f )G(V, h). (2) Write V = V1Pα where P ∤V1. Then G(V, P j) =    if j ≤α and j odd, φ(P j) if j ≤α and j even, −|P| j−1 if j = α + 1 and j even, χP(V1)|P| j−1/2 if j = α + 1 and j odd, if j ≥2 + α. The following Poisson summation formula in function ﬁelds holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "lem-sec-001-06.md",
+      "narrative": null,
+      "content": "Let f ∈Mn. If n is even, then X R∈Mm χR( f ) = qm | f | \u0012 G(0, f ) + (q −1) X V ∈M≤n−m−2 G(V, f ) − X V ∈Mn−m−1 G(V, f ) \u0013 , otherwise X R∈Mm χR( f ) = qmτ(q) | f | X V ∈Mn−m−1 G(V, f ), where τ(q) = q−1 X c=1 χ f (c) exp \u00122πi TrFq/Fp(c) p \u0013 is the usual Gauss sum over Fq. 2A. Outline of the proof. We will use the approximate functional equations for the L-functions involved in the moment computations and then truncate the Dirichlet series close to the endpoint. For the longer Dirichlet series, we will use Poisson summation and standard techniques to compute the main terms. For the tails, we w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some useful lemmas",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-2-some-useful-lemmas.md",
+      "narrative": null,
+      "content": "In this section we will gather a few useful lemmas we will need throughout the paper.\nRecall that q is a prime power with q ≡1 (mod 4) and (q, 6) = 1. Let M denote the set of monic\npolynomials over Fq[t] and H be the set of monic, square-free polynomials. Let Mn denote the set of\nmonic polynomials of degree n over Fq[t] and M≤n be the set of monic polynomials of degree less than\nor equal to n. Let Hn denote the monic, square-free polynomials of degree n and recall that H∗\nn denotes\nthe set of monic, square-free polynomials of degree n coprime to 1. The norm of a polynomial f is\ndeﬁned by | f |",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "We have TE1,E2(N, X, Y, Z; α, β) ≪ε q2g−3Z/2g6+ε uniformly for |α|, |β| ≤1/g. Hung M. Bui, Alexandra Florea, Jonathan P. Keating and Edva Roditty-Gershon",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "We have SE(N, X, Y, Z; V = 0) : = SE,E(N, X, Y, Z; 0, 0; V = 0) = |H2g+1|CE(N; 1, 1, 1)L(Sym2 E, 1)3Y + O(q2g) + O(q2g−Y/5g2), and if E1̸ = E2, then SE1,E2(N, X, Y, Z; α, β; V = 0) = |H2g+1|CE1,E2(N; 1, 1, 1, α, β)L(Sym2 E1, 1 + 2α)L(Sym2 E2, 1 + 2β)L(E1 ⊗E2, 1 + α + β) + O(q2g−Y/5g2) + O(q2g−3Z/2) uniformly for |α|, |β| ≤1/g, where the values CE(N; 1, 1, 1) and CE1,E2(N; 1, 1, 1, α, β) are deﬁned in (3-8), (3-9) and (3-10).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "We have SE1,E2(N, X, Y, Z; α, β; V̸ = 0) ≪q(X+Y+Z)/2g30 uniformly for |α|, |β| ≤1/g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Assume X ≥Y. We have SE(N, X, Y) : = SE,E(N, X, Y; 0, 0) = |H2g+1|CE(N; 1, 1, 1)L(Sym2 E, 1)3Y + O(q2g) + O(q2g−Y/5g2) + O(qg/2+3(X+Y)/8g30), and if E1̸ = E2, then SE1,E2(N, X, Y; α, β) = |H2g+1|CE1,E2(N; 1, 1, 1, α, β)L(Sym2 E1, 1 + 2α)L(Sym2 E2, 1 + 2β)L(E1 ⊗E2, 1 + α + β) + O(q2g−Y/5g2) + O(qg/2+3(X+Y)/8g30) uniformly for |α|, |β| ≤1/g, where the values CE(N; 1, 1, 1) and CE1,E2(N; 1, 1, 1, α, β) are deﬁned in (3-8), (3-9) and (3-10). We begin the proof of the proposition by applying Lemma 2.4 and rewriting SE1,E2(N, X, Y; α, β) as X f ∈M≤X h∈M≤Y λ1( f )λ2(h) | f |1/2+α|h|1/2+β X C1 | 1 µ(C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main proposition",
+      "pageStart": 11,
+      "pageEnd": 18,
+      "target": "../sections/sec-002-3-main-proposition.md",
+      "narrative": null,
+      "content": "For N | 1∞, let\nSE1,E2(N, X, Y; α, β) :=\nX\nD∈H∗\n2g+1\nX\nf ∈M≤X\nh∈M≤Y\nλ1( f )λ2(h)χD(N f h)\n| f |1/2+α|h|1/2+β\n,\n(3-1)\nwhere λi are the Dirichlet coefﬁcients of L(Ei, s) as in (1-1).\nProposition 3.1. Assume X ≥Y. We have\nSE(N, X, Y)\n: = SE,E(N, X, Y; 0, 0)\n= |H2g+1|CE(N; 1, 1, 1)L(Sym2 E, 1)3Y + O(q2g) + O(q2g−Y/5g2) + O(qg/2+3(X+Y)/8g30),\nand if E1̸ = E2, then\nSE1,E2(N, X, Y; α, β)\n= |H2g+1|CE1,E2(N; 1, 1, 1, α, β)L(Sym2 E1, 1 + 2α)L(Sym2 E2, 1 + 2β)L(E1 ⊗E2, 1 + α + β)\n+ O(q2g−Y/5g2) + O(qg/2+3(X+Y)/8g30)\nuniformly for |α|, |β| ≤1/g, where the values CE(N; 1, 1, 1) and CE1,E2(N; 1, 1, 1, α, β)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "The function B(N, A, B, C1, V1; u, v, w, α, β) deﬁned above may be written as D2(N, A, B, C1, V1; u, v, w, α, β)L \u0012 E1 ⊗χC1V1, u q1+α \u0013 L \u0012 E2 ⊗χC1V1, v q1+β \u0013 , where D2(N, A, B, C1, V1; u, v, w, α, β) is some Euler product which is uniformly convergent provided that |u|, |v| ≤q1/2−2/g, |w| ≤q−1/2−ε, and satisﬁes D2(N, A, B, C1, V1; u, v, w, α, β) ≪g10τ10(AB) √ AB uniformly in this region.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": ", N AB f h)",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-003-2-n-ab-f-h.md",
+      "narrative": null,
+      "content": "| f |3/2+α|h|3/2+β\n.\nTo proceed we need to study the function B(N, A, B, C1, V1; u, v, w, α, β).\nLemma 3.5. The function B(N, A, B, C1, V1; u, v, w, α, β) deﬁned above may be written as\nD2(N, A, B, C1, V1; u, v, w, α, β)L\n\u0012\nE1 ⊗χC1V1,\nu\nq1+α\n\u0013\nL\n\u0012\nE2 ⊗χC1V1,\nv\nq1+β\n\u0013\n,\nwhere D2(N, A, B, C1, V1; u, v, w, α, β) is some Euler product which is uniformly convergent provided\nthat |u|, |v| ≤q1/2−2/g, |w| ≤q−1/2−ε, and satisﬁes\nD2(N, A, B, C1, V1; u, v, w, α, β) ≪g10τ10(AB)\n√\nAB\nuniformly in this region.\nProof. It is easy to see that B(N, A, B, C1, V1; u, v, w, α, β) converges absolutely if |u|, |v| ≤",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/cor-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "cor-sec-004-06.md",
+      "narrative": null,
+      "content": "Let u = eiθ and v = eiγ with θ, γ ∈[0, 2π]. Then X D∈H∗ 2g+1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Let h,l be integers such that 2hl ≤2g + 1. For any complex numbers a(P) we have X D∈H∗ 2g+1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "If p log m ≤V ≤V(u, v, m), then N(V, u, v) ≪q2g+1 exp \u0012 − V 2 2V(u, v, m) \u0012 1 − log log m \u0013\u0013 ; if V(u, v, m) < V ≤1 13 log log mV(u, v, m), then N(V, u, v) ≪q2g+1 exp \u0012 − V 2 2V(u, v, m) \u0012 1 − 8V V(u, v, m) log log m \u00132\u0013 ; if V > 1 13 log log mV(u, v, m), then N(V, u, v) ≪q2g+1 exp \u0012 −V log V \u0013 . Using Lemma 4.5 above we can prove Theorem 4.1 as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "Let D ∈H∗ 2g+1 and let m = deg(L(E ⊗χD, w)). Then for h ≤m and z with ℜ(z) ≥0 we have log",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prop-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "prop-sec-004-07.md",
+      "narrative": null,
+      "content": "For i = 1, 2 and any ﬁxed n ∈N we have X D∈H∗ 2g+1 |Ei,E(N, X, n)|2 ≪ε q2gg1/2+ε(2g −X)2i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds for moments",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-4-upper-bounds-for-moments.md",
+      "narrative": null,
+      "content": "The aim of this section is to bound the tails of the Dirichlet series in the approximate functional equations\nin Lemmas 2.2 and 2.3. We start with the following upper bounds for moments.\nTheorem 4.1. Let k > 0, u = eiθ, v = eiγ with θ, γ ∈[0, 2π] and let m = deg(L(E ⊗χD, w)). Then\nX\nD∈H∗\n2g+1\n\nL\n\u0012\nE ⊗χD,\nu\nq1/2+α\n\u0013\nL\n\u0012\nE ⊗χD,\nv\nq1/2+β\n\u0013\n\nk\n≪ε q2ggε exp\n\u0012\nkM(u, v, m) + k2\n2 V(u, v, m)\n\u0013\nuniformly for |α|, |β| ≤1/g, where M(u, v, m) and V(u, v, m) are given by (4-9) and (4-11) respectively.\nRemark 4.2. Note that the same upper bound as above holds if we replace L(E ⊗χD, w) with\nL(E ⊗χDℓ, w) for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "Note that the same upper bound as above holds if we replace L(E ⊗χD, w) with L(E ⊗χDℓ, w) for a ﬁxed polynomial ℓwith (ℓ, 1) = 1. Since the proof of the upper bound for this twisted moment is the same as the proof of Theorem 4.1, we only focus on ℓ= 1. We ﬁrst need the following proposition, whose proof is similar to the proof of Theorem 3.3 in [Altu˘g and Tsimerman 2014].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Let k > 0, u = eiθ, v = eiγ with θ, γ ∈[0, 2π] and let m = deg(L(E ⊗χD, w)). Then X D∈H∗ 2g+1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "We have RE(N, X) = |H2g+1|CE(N; 1)L(Sym2 E, 1) + Oε(q2g−X/2+εg) + Oε(q X/2+ϵg), where the value CE(N; 1) is deﬁned in (5-2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-005-5-proof-of-theorem-11.md",
+      "narrative": null,
+      "content": "For N | 1∞, let\nRE(N, X) :=\nX\nD∈H∗\n2g+1\nX\nf ∈M≤X\nλ( f )χD(N f )\n√| f |\n.\nWe will prove the following lemma.\nLemma 5.1. We have\nRE(N, X) = |H2g+1|CE(N; 1)L(Sym2 E, 1) + Oε(q2g−X/2+εg) + Oε(q X/2+ϵg),\nwhere the value CE(N; 1) is deﬁned in (5-2).\nProof. Note that\nRE(N, X) = SE,E(N, X, 0; 0, 0),\nwhere SE1,E2(N, X, Y; α, β) is deﬁned as in (3-1). We proceed as in Section 3, see (3-2), (3-3) and (3-7),\nand write\nRE(N, X) = SE,E(N, X, 0, g; 0, 0) = RE(N, X; V = 0) + RE(N, X; V̸ = 0),\nwhere RE(N, X; V̸ = 0) = SE,E(N, X, 0, g; 0, 0; V̸ = 0) and\nRE(N, X; V = 0) = SE,E(N, X, 0, g; 0, 0; V = 0)\n= |H2g+1|",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.2",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-006-6-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "For N | 1∞, let\nRE(N, X; α) :=\nX\nD∈H∗\n2g+1\nX\nf ∈M≤X\nλ( f )χD(N f )\n| f |1/2+α\n.\nNote that RE(N, X; 0) = RE(N, X) with RE(N, X) as in Section 5. Similarly as in Section 5 and for\n|α| ≤1/g we get that\nRE(N, X; α) = |H2g+1|CE(N; q−α)L(Sym2 E, 1 + 2α) + Oε(q2g−X/2+ϵg) + Oε(q X/2+ϵg).\n(6-1)\nUsing Lemma 2.3 we obtain\nX\nD∈H∗\n2g+1\nϵ−L′\u0000E ⊗χD, 1\n2\n\u0001\n= (log q)([n/2] + 2g + 1)(RE(1, [n/2] + 2g + 1) −ϵ2g+1ϵ(E)RE(M, [n/2] + 2g + 1))\n+ ∂\n∂α(RE(1, [n/2] + 2g + 1; α) −ϵ2g+1ϵ(E)RE(M, [n/2] + 2g + 1; α))\n\nα=0.\nFrom Lemma 5.1 and (6-1) it follows that\n1\n|H∗\n2g+1|\nX\nD∈H∗\n2g+1\nϵ−L′\u0000E ⊗χD, 1\n2\n\u0001\n= c2(M)L(Sym2 E, 1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.3",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-007-7-proof-of-theorem-13.md",
+      "narrative": null,
+      "content": "Following Lemma 2.2, for X < 2g, we deﬁne\nM1,E(X) := (1 + ϵ)\nX\nf ∈M≤X\nλ( f )χD( f )\n√| f |\n,\nso that\nL\n\u0000E ⊗χD, 1\n2\n\u0001\n= M1,E(X) + E1,E(1, X, [n/2]) + ϵ2g+1ϵ(E)E1,E(M, X, [(n −1)/2]),\n(7-1)\nwhere recall expression (4-13) for E1,E(N, X, n). Hence\nL\n\u0000E ⊗χD, 1\n2\n\u00012\n= 2L(E ⊗χD, 1\n2)M1,E(X) −M1,E(X)2 + (E1,E(1, X, [n/2]) + ϵ2g+1ϵ(E)E1,E(M, X, [(n −1)/2]))2.\n1886\nHung M. Bui, Alexandra Florea, Jonathan P. Keating and Edva Roditty-Gershon\nBy Cauchy’s inequality and Proposition 4.7 we get\nX\nD∈H∗\n2g+1\nL\n\u0000E ⊗χD, 1\n2\n\u00012 = 2\nX\nD∈H∗\n2g+1\nL\n\u0000E ⊗χD, 1\n2\n\u0001\nM1,E(X) −\nX\nD∈H∗\n2g+1\nM1,E(X)2\n+ Oε(q2gg1/2+ε(2g −X)2).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.4",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-008-8-proof-of-theorem-14.md",
+      "narrative": null,
+      "content": "Following Lemma 2.3, for X < 2g and ﬁxed n ∈N, we deﬁne\nM2,E(X, n) := (1 −ϵ)\nX\nf ∈M≤X\n(n + deg(D) −deg( f ))λ( f )χD( f )\n√| f |\n,\nso that\nϵ−L′\u0000E ⊗χD, 1\n2\n\u0001\n= (log q)M2,E(X, [n/2]) + (log q)(E2,E(1, X, [n/2]) −ϵ2g+1ϵ(E)E2,E(M, X, [n/2])),\n(8-1)\nwhere recall that E2,E(M, X, n) is given in (4-14). Then we get that\nϵ−L′\u0000E ⊗χD, 1\n2\n\u00012 = 2(log q)ϵ−L′\u0000E ⊗χD, 1\n2\n\u0001\nM2,E(X, [n/2]) −(log q)2M2\n2,E(X, [n/2])\n+ (log q)2(E2,E(1, X, [n/2]) −ϵ2g+1ϵ(E)E2,E(M, X, [n/2]))2.\nMoments of quadratic twists of elliptic curve L-functions over function ﬁelds\n1887\nBy Cauchy’s inequality and Proposition 4.7 we get that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.5",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-009-9-proof-of-theorem-15.md",
+      "narrative": null,
+      "content": "By combining (7-1) and (8-1),\nϵ−\n2 L\n\u0000E1 ⊗χD, 1\n2\n\u0001\nL′\u0000E2 ⊗χD, 1\n2\n\u0001\n= ϵ−\n2 M1,E1(X)L′\u0000E2 ⊗χD, 1\n2\n\u0001\n+ (log q)L\n\u0000E1 ⊗χD, 1\n2\n\u0001\nM2,E2(X, [n2/2])\n−(log q)M1,E1(X)M2,E2(X, [n2/2])\n+ (log q)(E1,E1(1, X, [n1/2]) + ϵ2g+1ϵ(E1)E1,E1(M1, X, [(n1 −1)/2]))\n× (E2,E2(1, X, [n2/2]) −ϵ2g+1ϵ(E2)E2,E2(M2, X, [n2/2])).\nWe bound the last term above using Cauchy’s inequality and Proposition 4.7. In doing so we get\nX\nD∈H∗\n2g+1\nϵ−\n2 L\n\u0000E1 ⊗χD, 1\n2\n\u0001\nL′\u0000E2 ⊗χD, 1\n2\n\u0001\n=\nX\nD∈H∗\n2g+1\nϵ−\n2 M1,E1(X)L′\u0000E2 ⊗χD, 1\n2\n\u0001\n+ (log q)\nX\nD∈H∗\n2g+1\nL\n\u0000E1 ⊗χD, 1\n2\n\u0001\nM2,E2(X, [n2/2])\n−(log q)\nX\nD∈H∗\n2g+1\nM1,E1(X)M2,E2(X, [n2/2]) + Oε(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.6",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-010-10-proof-of-theorem-16.md",
+      "narrative": null,
+      "content": "We argue as in the previous section. From (8-1) we have\nϵ−\n1 ϵ−\n2 L′\u0000E1 ⊗χD, 1\n2\n\u0001\nL′\u0000E2 ⊗χD, 1\n2\n\u0001\n= (log q)\n\u0000ϵ−\n2 M2,E1(X, [n1/2])L′\u0000E2 ⊗χD, 1\n2\n\u0001\n+ ϵ−\n1 L′\u0000E1 ⊗χD, 1\n2\n\u0001\nM2,E2(X, [n2/2])\n\u0001\n−(log q)2M2,E1(X, [n1/2])M2,E2(X, [n2/2])\n+ (log q)2(E2,E1(1, X, [n1/2]) −ϵ2g+1ϵ(E1)E2,E1(M1, X, [n1/2]))\n× (E2,E2(1, X, [n2/2]) −ϵ2g+1ϵ(E2)E2,E2(M2, X, [n2/2])).\nBounding the last term above using Cauchy’s inequality and Proposition 4.7 leads to\nX\nD∈H∗\n2g+1\nϵ−\n1 ϵ−\n2 L′\u0000E1 ⊗χD, 1\n2\n\u0001\nL′\u0000E2 ⊗χD, 1\n2\n\u0001\n= (log q)\nX\nD∈H∗\n2g+1\nϵ−\n2 M2,E1(X, [n1/2])L′\u0000E2 ⊗χD, 1\n2\n\u0001\n+ (log q)\nX\nD∈H∗\n2g+1\nϵ−\n1 L′\u0000E1 ⊗χD, 1\n2\n\u0001\nM",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Corollary 1.7",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-011-11-proof-of-corollary-17.md",
+      "narrative": null,
+      "content": "The results in Section 4 imply that\nX\nD∈H∗\n2g+1\nL(E ⊗χD, 1\n2)4 ≪ε q2gg6+ε.\n(11-1)\nWe next obtain some upper bounds for moments of the derivatives. We have\nL(l)\u0000E ⊗χD, 1\n2\n\u0001k =\n\u0012 l!\n2πi\n\u0013k I\n· · ·\nI L(E ⊗χD, 1/2 + α1) · · · L(E ⊗χD, 1/2 + αk)\nαl+1\n1\n· · · αl+1\nk\ndα1 · · · dαk,\nwhere we are integrating along small circles of radii r around the origin. Then using Hölder’s inequality\nleads to\nX\nD∈H∗\n2g+1\n\nL(l)\u0000E ⊗χD, 1\n2\n\u0001\n\nk ≪(l!)k\nrlk+1\nI\n|α|=r\nX\nD∈H∗\n2g+1\n\nL\n\u0000E ⊗χD, 1\n2 + α\n\u0001\n\nkdα.\nChoosing r = 1/g and using upper bounds for moments of L-functions we get that\nX\nD∈H∗\n2g+1\n\nL(l)\u0000E ⊗χD, 1\n2\n\u0001\n\nk ≪",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-012-acknowledgements.md",
+      "narrative": null,
+      "content": "A. Florea gratefully acknowledges the support of an NSF Postdoctoral Fellowship during part of the\nresearch which led to this paper. J.P. Keating is supported by a Royal Society Wolfson Research Merit\nAward, EPSRC Programme Grant EP/K034383/1 LMF: L-Functions and Modular Forms, and by ERC\n1892\nHung M. Bui, Alexandra Florea, Jonathan P. Keating and Edva Roditty-Gershon\nAdvanced Grant 740900 (LogCorRM). The authors would also like to thank Chantal David, Matilde Lalin\nand Zeev Rudnick and the anonymous referee for useful comments on the paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p06/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[Altu˘g and Tsimerman 2014] S. A. Altu˘g and J. Tsimerman, “Metaplectic Ramanujan conjecture over function ﬁelds with\napplications to quadratic forms”, Int. Math. Res. Not. 2014:13 (2014), 3465–3558. MR Zbl\n[Andrade and Keating 2012] J. C. Andrade and J. P. Keating, “The mean value of L\n\u0000 1\n2, χ\n\u0001 in the hyperelliptic ensemble”, J.\nNumber Theory 132:12 (2012), 2793–2816. MR Zbl\n[Andrade and Keating 2014] J. C. Andrade and J. P. Keating, “Conjectures for the integral moments and ratios of L-functions\nover function ﬁelds”, J. Number Theory 142 (2014), 102–148. MR Zbl\n[Baig and Hall 2012] S. Baig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

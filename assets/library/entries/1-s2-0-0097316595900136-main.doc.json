@@ -1,0 +1,387 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s2-0-0097316595900136-main",
+  "title": "PII: 0097-3165(95)90013-6",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-3-the-q-rational-murnaghan-nakayama-rule"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": "1",
+      "labelEnd": "8",
+      "words": 2966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan-nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "centralizer algebra",
+          "heading": false
+        },
+        {
+          "term": "tom halverson",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "full centralizer",
+          "heading": false
+        },
+        {
+          "term": "bchlls",
+          "heading": false
+        },
+        {
+          "term": "brauer algebra",
+          "heading": false
+        },
+        {
+          "term": "combinatorial rule",
+          "heading": false
+        }
+      ],
+      "extract": "JOURNAL OF COMBINATORIAL THEORY, Series A 71, 1-18 (1995) A q-Rational Murnaghan-Nakayama Rule TOM HALVERSON * Macalester College, Saint Paul, Minnesota 55105 Communicated by G. Andrews Received February 8, 1994 The Murnaghan-Nakayama rule is a combinatorial rule for computing sym- metric group characters. It has recently been extended to compute Iwahori-Hecke algebra characters and Brauer algebra characters. It is",
+      "extractCut": true,
+      "blocks": [
+        "library/1-s2-0-0097316595900136-main/blocks/prose-sec-front-matter",
+        "library/1-s2-0-0097316595900136-main/blocks/thm-sec-front-matter-01",
+        "library/1-s2-0-0097316595900136-main/blocks/rem-sec-front-matter-02"
+      ]
+    },
+    {
+      "id": "sec-000-3-the-q-rational-murnaghan-nakayama-rule",
+      "number": "3",
+      "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 18,
+      "labelStart": "8",
+      "labelEnd": "18",
+      "words": 2625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rim hook",
+          "heading": false
+        },
+        {
+          "term": "q-rational",
+          "heading": true
+        },
+        {
+          "term": "tom halverson",
+          "heading": false
+        },
+        {
+          "term": "q-l",
+          "heading": false
+        },
+        {
+          "term": "centralizer algebras",
+          "heading": false
+        },
+        {
+          "term": "character table",
+          "heading": false
+        },
+        {
+          "term": "r-staircases",
+          "heading": false
+        },
+        {
+          "term": "mixed tensor",
+          "heading": false
+        }
+      ],
+      "extract": "(1) (2) (3) The dots hook. In hook. Here we produce the algorithm for computing Z~r (() and Z~r ((). Given an r-staircase 7, the boundary of y + is the ~ei of edges i~i\" the diagram of ~ + at the right end of its rows and the bottom of its columns. The boundary of y- is the set of edges at the left end of its rows and the top of its columns. The boundary of ~ is the union of the boundaries of ? + and 7 together with",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rim hook",
+      "heading": true
+    },
+    {
+      "term": "q-rational murnaghan-nakayama",
+      "heading": true
+    },
+    {
+      "term": "tom halverson",
+      "heading": false
+    },
+    {
+      "term": "q-rational murnaghan--nakayama",
+      "heading": false
+    },
+    {
+      "term": "murnaghan-nakayama rule",
+      "heading": true
+    },
+    {
+      "term": "centralizer algebra",
+      "heading": false
+    },
+    {
+      "term": "brauer algebra",
+      "heading": false
+    },
+    {
+      "term": "hook tableau",
+      "heading": true
+    },
+    {
+      "term": "mixed tensor",
+      "heading": false
+    },
+    {
+      "term": "algebra characters",
+      "heading": false
+    },
+    {
+      "term": "full centralizer",
+      "heading": false
+    },
+    {
+      "term": "character tables",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Removal of rim hooks",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A (5, 3, -3, -4)-broken rim hook tableau of shape (4, -1, -1, -1). THEOREM 3.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Computing X~32-1)((2, 0, -2))",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s2-0-0097316595900136-main"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1012.4941v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "It is a known fact that many standard (integer) linear programming formulations of relevant problems in optimization show a lot of symmetry. In this situation a standard branch-and-cut framework repeatedly enumerates symmetric solutions, and sometimes this renders such methods useless. To address these issues the last decade saw a number of approaches to devise algorithms specialized to symmetric optimization problems. We mention a few: Margot suggests to solve symmetric integer linear programs (ILPs) via a pruned branch-and-cut approach involving techniques from computational group theory [@M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1012.4941v2  [math.OC]  13 Jan 2011\nALGORITHMS FOR HIGHLY SYMMETRIC\nLINEAR AND INTEGER PROGRAMS\nRICHARD B ¨ODI, KATRIN HERR, AND MICHAEL JOSWIG\nAbstract. This paper deals with exploiting symmetry for solving linear and integer\nprogramming problems. Basic properties of linear representations of ﬁnite groups can\nbe used to reduce symmetric linear programming to solving linear programs of lower\ndimension. Combining this approach with knowledge of the geometry of feasible inte-\nger solutions yields an algorithm for solving highly symmetric integer linear programs\nwhich only takes time which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automorphisms of Linear Programs",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-automorphisms-of-linear-programs.md",
+      "narrative": null,
+      "content": "[]{#sec:LP label=\"sec:LP\"} The purpose of this section is to introduce the notation and to collect basic facts for future reference. The results of this section up to and including Corollary [\\[cor:opt_sol_in_fix\\]](#cor:opt_sol_in_fix){reference-type=\"ref\" reference=\"cor:opt_sol_in_fix\"} can be found in the literature which is why we skip some of the proofs.\n\nWe consider linear programs $\\operatorname{LP}(A,b,c)$ of the form $$\\label{eq:LP}\n  \\begin{array}{ll}\n    \\max & c^tx\\\\\n    \\textrm{s.t.} & Ax \\le b \\, , \\ x \\in {\\mathbb{R}}^n\n  \\end{array}$$ where $A\\in{\\mathbb{R}}^{m\\times n}$, $b\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries of Integer Linear Programs",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-symmetries-of-integer-linear-programs.md",
+      "narrative": null,
+      "content": "[]{#sec:ILP label=\"sec:ILP\"} We now turn to our main focus. Associated with $\\operatorname{LP}(A,b,c)$ is the integer linear program $$\\label{eq:ILP}\n  \\begin{array}{ll}\n    \\max & c^tx\\\\\n    \\textrm{s.t.} & Ax \\le b \\, , \\ x \\in {\\mathbb{Z}}^n  \\, ,\n  \\end{array}$$ which we denote as $\\operatorname{ILP}(A,b,c)$. Throughout we make the same assumptions as above: the linear program $\\operatorname{LP}(A,b,c)$ is feasible, the matrix $A$ does not have any zero rows, and the inequalities bijectively correspond to the hyperplane arrangement ${\\mathscr{H}}(A,b)$; see Remark [\\[rem:scale\\]](#rem:scal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Layers of Integer Points",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-layers-of-integer-points.md",
+      "narrative": null,
+      "content": "[]{#sec:layers label=\"sec:layers\"} Our goal is to describe an algorithm for the efficient solution of a highly symmetric integer linear program. Again we consider $\\operatorname{ILP}(A,b,c)$ with a group $\\Gamma$ of automorphisms as above.\n\nLet us assume that the objective function $c\\ne 0$ is *projectively rational*. This means that we require $c$ to be a constant real multiple of a rational vector. For such a vector $c$ let $\\operatorname{coprime}(c)$ be the unique integral vector with coprime coefficients such that $c=\\rho\\operatorname{coprime}(c)$ for some positive real $\\rho$. If $c$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Searching Integer Layers Efficiently",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-5-searching-integer-layers-efficiently.md",
+      "narrative": null,
+      "content": "[]{#sec:searching label=\"sec:searching\"} The question remaining is how to test ILP-feasibility of a $c$-layer in an efficient way. Our key observation is that some optimal integral solution is close to the fixed space if the group of symmetries acts sufficiently transitive.\n\n::: definition\nGiven a $c$-layer with center $z$, an integral point in the $c$-layer is a *core point* if it minimizes the distance to $z$.\n:::\n\n::: example\n[]{#exmp:core label=\"exmp:core\"} For the objective function $c=\\mathbbm{1}$ and an integer $k=q n+r$ with $q\\in{\\mathbb{Z}}$ and $r\\in\\{0,1,\\dots,n-1\\}$, the set of co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding All Symmetries",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-6-finding-all-symmetries.md",
+      "narrative": null,
+      "content": "[]{#sec:finding label=\"sec:finding\"} For the algorithms presented it is never necessary to know the entire group of automorphisms of $\\operatorname{LP}(A,b,c)$ or $\\operatorname{ILP}(A,b,c)$. Generally, any subgroup will do, the larger the better. Yet here we would like to discuss the question of how to find automorphisms of integer linear programs. From the input data we will construct a labeled graph $\\operatorname{G}(A,b,c)$ whose group of labeled automorphisms coincides with $\\mathop{\\mathrm{Sym}}(\\operatorname{ILP}(A,b,c))$.\n\nExpressing symmetry in optimization via graph automorphisms is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypertruncated Cubes",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-7-hypertruncated-cubes.md",
+      "narrative": null,
+      "content": "[]{#sec:hypertruncated label=\"sec:hypertruncated\"} In this section we will construct a specific class of highly symmetric convex polytopes among which one can find examples of rather high Gomory-Chvátal rank. The motivation for this construction is rooted in the systematic study of Gomory-Chvátal cuts and cutting-plane proof systems. Pokutta and Stauffer [@PokuttaStauffer10] propose a new method for computing lower bounds on the Gomory-Chvátal rank for polytopes contained in the $0/1$-cube, and the polytopes constructed here provide examples which asymptotically almost attain the bounds obtain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypertruncated Cubes",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-81-hypertruncated-cubes.md",
+      "narrative": null,
+      "content": "(m−1)/m approach n/e−o(1) as m ∈N goes to inﬁnity. In our experiments below we look\nat the case r = ⌊n/e⌋and λ = 1/2, that is, m = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Results",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-8-computational-results.md",
+      "narrative": null,
+      "content": "[]{#sec:experiments label=\"sec:experiments\"} The following experiments were carried out on an Intel(R) Core(TM) i7 920 2.67GHz machine, with 12GB of main memory, running Ubuntu 10.04 (Lucid Lynx). The performance of each core is estimated at 5346.16 bogomips each. All our tests were run single-threaded.\n\nThe goal of the experiments is to compare the performances of a conventional branch-and-cut approach (with automated symmetry detection) and the Core-Point-Algorithm [\\[algo:core_point\\]](#algo:core_point){reference-type=\"ref\" reference=\"algo:core_point\"} on highly symmetric integer linear pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wild Input",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-82-wild-input.md",
+      "narrative": null,
+      "content": "One way to produce symmetric input for (integer) linear optimization algorithms is by brute force: One can take any system $Ax\\le b$ of linear inequalities and let the full group $\\mathop{\\mathrm{Sym}}(n)$ act. This way each original inequality may give up to $n!$ inequalities in the resulting *symmetrized* system. The symmetrized system of inequalities is $\\mathop{\\mathrm{Sym}}(n)$-invariant by construction. In order to produce input to our algorithms which is less well behaved than the hypertruncated cubes studied above we will apply this procedure to a special class of polytopes, which can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4941v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "1. Timo Berthold and Marc E. Pfetsch, Detecting orbitopal symmetries, Operations Research Proceedings\n2008 (Bernhard Fleischmann, Karl Heinz Borgwardt, Robert Klein, and Axel Tuma, eds.), Springer-\nVerlag, 2009, pp. 433–438.\n2. Robert Bixby and D. K. Wagner, A note on detecting simple redundancies in linear systems, OR Letters\n6 (1987), no. 1, 15–17.\n3. Richard B¨odi, Theo Grundh¨ofer, and Katrin Herr, Symmetries of linear programs, Note di Matematica\n30 (2010), no. 1.\n4. David Bremner, Mathieu Dutour Sikiri´c, and Achill Sch¨urmann, Polyhedral representation conversion\nup to symmetries, Polyh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

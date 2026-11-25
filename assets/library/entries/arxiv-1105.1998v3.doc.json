@@ -1,0 +1,655 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1105.1998v3",
+  "title": "arxiv-1105.1998v3",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The connection formula",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-connection-formula"
+    },
+    {
+      "level": 2,
+      "title": "The theta function of Jacobi",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-theta-function-of-jacobi"
+    },
+    {
+      "level": 2,
+      "title": "The Hahn-Exton q-Bessel function",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-hahn-exton-q-bessel-function"
+    },
+    {
+      "level": 2,
+      "title": "The p-Borel transformation and the p-Laplace transformation",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-p-borel-transformation-and-the-p-laplace"
+    },
+    {
+      "level": 1,
+      "title": "The limit of the connection formula",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-the-limit-of-the-connection-formula"
+    },
+    {
+      "level": 2,
+      "title": "Limit of the connection formula",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-limit-of-the-connection-formula"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exton q-bessel",
+          "heading": false
+        },
+        {
+          "term": "hahn exton",
+          "heading": false
+        },
+        {
+          "term": "q-bessel function",
+          "heading": false
+        },
+        {
+          "term": "q-borel transformation",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1105.1998v3 [math.CA] 16 Dec 2011 Symmetry, Integrability and Geometry: Methods and Applications SIGMA 7 (2011), 115, 11 pages A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA Graduate School of Information Science and Technology, Osaka University, 1-1 Machikaneyama-machi, Toyonaka, 560-0043, Japan E-mail: t-morita@cr.math.sci.osaka-u.ac.jp Received May 11, 2011, in final form December",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1105.1998v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hahn--exton bessel",
+          "heading": false
+        },
+        {
+          "term": "gathered frac",
+          "heading": false
+        },
+        {
+          "term": "infty varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        },
+        {
+          "term": "abx right",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we show a connection formula of the Hahn--Exton $q$-Bessel function $J_\\nu^{(3)}(x;q)$. At first, we review the Bessel function and $q$-analogues of the Bessel function. The Bessel equation $$\\begin{gathered} \\frac{d^2u}{dz^2}+\\frac{1}{z}\\frac{du}{dz}+\\left(1-\\frac{\\nu^2}{z^2}\\right)u=0 \\end{gathered}$$ has a solution $u(z)=J_\\nu (z)$, $J_{-\\nu}(z)$. Here, the Bessel function $J_\\nu (z)$ is $$J_\\nu",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-connection-formula",
+      "number": "2",
+      "title": "The connection formula",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exton q-bessel",
+          "heading": false
+        },
+        {
+          "term": "hahn exton",
+          "heading": false
+        },
+        {
+          "term": "anx",
+          "heading": false
+        }
+      ],
+      "extract": "ν (x; q) is obtained by (3) and (2). But it is not known the con- nection formula of the Hahn–Exton q-Bessel function. The Hahn–Exton q-Bessel equations (1) has two analytic solutions u(x) = J(3) ν (x), J(3) −ν(xp−ν) around x = 0 and has one analytic solution z (1/x) = 1 θp(−pν+2/x) P n≥0 anx−n, a0 = 1. We show a connection formula of J(3) ν (x; q) in Section 2 as follows: Theorem 1. For any x ∈C∗\\ [pν+2; p], z \u00121 x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-theta-function-of-jacobi",
+      "number": "2.1",
+      "title": "The theta function of Jacobi",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta function",
+          "heading": true
+        },
+        {
+          "term": "jacobi",
+          "heading": true
+        },
+        {
+          "term": "connection formula",
+          "heading": false
+        },
+        {
+          "term": "connection problems",
+          "heading": false
+        },
+        {
+          "term": "function satisfies",
+          "heading": false
+        },
+        {
+          "term": "q-difference",
+          "heading": false
+        }
+      ],
+      "extract": "q-Borel transformation and the q-Laplace transformation which is defined by C. Zhang in [8]. In Section 3, we consider the limit p →1−of the connection formula. If we take a suitable limit p →1−of (4), we obtain H(2) ν \u0000√z \u0001 = −ieνπi sin νπ \b Jν \u0000√z \u0001 −e−νπiJ−ν \u0000√z \u0001 . Here, H(2) ν (z) is the Hankel function of the second kind. Thus we obtain a connection formula of the Bessel function as a limit p →1−of (4). 2 The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-hahn-exton-q-bessel-function",
+      "number": "2.2",
+      "title": "The Hahn-Exton q-Bessel function",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 204,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gathered left",
+          "heading": false
+        },
+        {
+          "term": "sigma mathcal",
+          "heading": false
+        },
+        {
+          "term": "right sigma",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        },
+        {
+          "term": "difference equation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section2.2 label=\"section2.2\"} The Hahn--Exton $q$-Bessel function is defined by $$J_\\nu^{(3)}(x;q):=\\frac{(q^{\\nu +1};q)_\\infty}{(q;q)_\\infty}x^\\nu\\sum_{n\\ge 0}\\frac{(-1)^nq^{\\frac{n(n-1)}{2}}}{(q^{\\nu +1},q;q)_n}\\left(qx^2\\right)^n.$$ The function $J_\\nu^{(3)}(x;q)$ satisfies the $q$-difference equation $$\\begin{gathered} \\label{heqb} \\left[\\sigma_p^2- \\left\\{(p^\\nu +p^{-\\nu })-x^2p^{2-\\nu}\\right\\}\\sigma_p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-p-borel-transformation-and-the-p-laplace",
+      "number": "2.3",
+      "title": "The p-Borel transformation and the p-Laplace transformation",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        },
+        {
+          "term": "tau lambda",
+          "heading": false
+        },
+        {
+          "term": "int tau",
+          "heading": false
+        },
+        {
+          "term": "infty dfrac",
+          "heading": false
+        },
+        {
+          "term": "laplace transformation",
+          "heading": false
+        },
+        {
+          "term": "borel transformation",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section2.3 label=\"section2.3\"} We define the $p$-Borel transformation and the $p$-Laplace transformation to solve the equation ([\\[b4\\]](#b4){reference-type=\"ref\" reference=\"b4\"}), following Zhang [@Z1]. ::: definition For $f(t)=\\sum\\limits_{n\\ge 0}a_nt^n$, the $p$-Borel transformation is defined by $$g(\\tau )=\\left(\\mathcal{B}_pf\\right)(\\tau ):=\\sum_{n\\ge 0}a_np^{-\\frac{n(n-1)}{2}}\\tau^n,$$ and the $p$-Laplace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-the-limit-of-the-connection-formula",
+      "number": "3",
+      "title": "The limit of the connection formula",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "hankel function",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "arg leq",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "delta leq",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section3 label=\"section3\"} In this section, we show that the limit $p\\to 1^-$ of the connection formula gives a connection formula of the Bessel function. At first, we assume that $0<p<1$ and $0<\\sqrt{p}<1$. For the Bessel function, we set the Hankel function of the first and the second kind $H_\\nu^{(1)}(z)$ and $H_\\nu^{(2)}(z)$. ::: definition The Hankel function of the first kind is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-limit-of-the-connection-formula",
+      "number": "3.1",
+      "title": "Limit of the connection formula",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "11",
+      "words": 1418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta sqrt",
+          "heading": false
+        },
+        {
+          "term": "hphantom frac",
+          "heading": false
+        },
+        {
+          "term": "right hphantom",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "gathered frac",
+          "heading": false
+        },
+        {
+          "term": "notag hphantom",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section3.1 label=\"section3.1\"} We rewrite the connection formula in Theorem [\\[theorem1\\]](#theorem1){reference-type=\"ref\" reference=\"theorem1\"} in order to take a limit $p\\to 1^-$. We set new functions $h_\\nu (t;p)$ and $J_\\nu^{\\pm}(x;p)$. We set $h_\\nu (t;p):=(p^{1/2},p^{1/2};p)_\\infty z(t)$. For any $x\\in\\mathbb{C}^*\\setminus [-\\lambda ;p]$ and $\\lambda\\in\\mathbb{C}^*$, $J_{\\nu ,\\lambda}^{+}(x;p)$ is $$J_{\\nu",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "q-bessel",
+          "heading": false
+        },
+        {
+          "term": "hahn",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "zhang",
+          "heading": false
+        },
+        {
+          "term": "der",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Birkhoff G.D., The generalized Riemann problem for linear differential equations and the allied problems for linear difference and q-difference equations, Proc. Amer. Acad. 49 (1913), 521–568. [2] Gasper G., Rahman M., Basic hypergeometric series, 2nd ed., Encyclopedia of Mathematics and its Appli- cations, Vol. 96, Cambridge University Press, Cambridge, 2004. [3] Hahn W., Beitr¨age zur Theorie der Heineschen",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gathered frac",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "gathered left",
+      "heading": false
+    },
+    {
+      "term": "infty theta",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "theta sqrt",
+      "heading": false
+    },
+    {
+      "term": "theta function",
+      "heading": true
+    },
+    {
+      "term": "qquad frac",
+      "heading": false
+    },
+    {
+      "term": "hphantom frac",
+      "heading": false
+    },
+    {
+      "term": "hahn exton",
+      "heading": false
+    },
+    {
+      "term": "left varphi",
+      "heading": false
+    },
+    {
+      "term": "begin gathered",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1105.1998v3"
+  }
+}

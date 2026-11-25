@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1408.3518v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond",
+      "dcterms:creator": [
+        "Bland, From Edmonds-Karp to",
+        "Beyond"
+      ],
+      "dcterms:issued": "D:20150116",
+      "dcterms:identifier": "https://arxiv.org/abs/1408.3518",
+      "dcterms:source": "library/arxiv-1408.3518v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1408.3518v3"
+    }
+  ]
+}

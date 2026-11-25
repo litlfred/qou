@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Quaternion Division Ring",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-003",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/rem-sec-003-01",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/rem-sec-003-02",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/rem-sec-003-03",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/rem-sec-003-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
+  "provenance": "ingested"
+}

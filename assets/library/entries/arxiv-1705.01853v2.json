@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1705.01853v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1705.01853v2  [hep-th]  12 Jun 2017\nPreprint typeset in JHEP style - HYPER VERSION\nLine Operators in the Standard Model\nDavid Tong\nDepartment of Applied Mathematics and Theoretical Physics,\nUniversity of Cambridge, UK\nd.tong@damtp.cam.ac.uk\nAbstract: There is an ambiguity in the gauge group of the Standard Model. The\ngroup is G = SU(3) × SU(2) × U(1)/Γ, where Γ is a subgroup of Z6 which cannot\nbe determined by current experiments. We describe how the electric, magnetic and\ndyonic line operators of the theory depend on the choice of Γ. We also explain how the\nperiodicity of the theta angl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Review of Line Operators",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-2-a-review-of-line-operators.md",
+      "narrative": null,
+      "content": "\\label{reviewsec}\n\nWe start by reviewing the properties of line operators, described in \\cite{ast},  that we will later need. \n\n\n\\para\nWilson lines are operators which describe the insertion of an infinitely massive, electrically charged particle sitting at the origin of space \\cite{wilson}. They are labelled by representations $R$ of  the gauge group $G$, and given by\n\n\\be W_R = {\\rm Tr}_R \\,{\\cal P}\\exp\\left(i\\int dt\\  A_0\\right)\\nn\\ee\n\nWilson lines exist for all representations $R$, regardless of the dynamical matter content of the theory. This means, in particular, that different gauge gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-an-example-sun-vs-sunbf-z-n.md",
+      "narrative": null,
+      "content": "For $g=su(N)$, the centre of the group is $Z(SU(N)) = {\\bf Z}_N$.  When the gauge group is $G=S(N)$, all electric line operators are allowed; that is $z^e=0,1,2,\\ldots, N-1$. In contrast, the magnetic line operators are restricted to lie on the magnetic root lattice, meaning that $z^m=0$. The resulting set of line operators for $SU(3)$  are shown in Figure \\ref{su3lines}a, plotted in the $(z^e,z^m)$ lattice. The figure shows the charges extended to $z^{e,m}\\in {\\bf Z}$;  the key physics can be seen in the grey box, which restricts  to $z^{e,m} =0,1,2$. The lattice is then formed by tiling this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How Does the Dynamics Differ?",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-how-does-the-dynamics-differ.md",
+      "narrative": null,
+      "content": "In four-dimensional Minkowski spacetime, ${\\bf R}^{3,1}$, the difference between Yang-Mills with gauge group $SU(N)$ and  $SU(N)/{\\bf Z}_N$ is rather formal. In particular, any local observer is blind to the distinction. Nonetheless, the different line operators mean that there are subtle differences between the two theories. This appears, for example, after confinement. In either theory, the confining phase  can be viewed as arising through the condensation of magnetic monopoles with charge $\\lambda^m\\in \\Lambda_{mr}$. For $SU(N)$ Yang-Mills, these are the minimally charged monopoles. However",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Line Operators in the Standard Model",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-3-line-operators-in-the-standard-model.md",
+      "narrative": null,
+      "content": "In this section, we extend the analysis of \\cite{ast} to the non-connected gauge group\n\n\\be G  = \\frac{U(1)_{\\tilde{Y}} \\times SU(2) \\times SU(3)}{\\Gamma}\\nn\\ee\n\nwhere $\\Gamma \\subseteq {\\bf Z}_6$. The quotient group $\\Gamma$ lies in the centres of $SU(2)$ and $SU(3)$, combined with a suitable $U(1)_{\\tilde{Y}}$ rotation. The quotient $\\Gamma={\\bf Z}_6$ is generated by\n\n\\be \\xi = e^{2\\pi i q/6} \\otimes \\eta \\otimes \\omega\\nn\\ee\n\nwhere $\\eta\\in Z(SU(2))$ obeys $\\eta^2=1$ and $\\omega\\in Z(SU(3))$ obeys $\\omega^3=1$ and  $q$ is the $U(1)_{\\tilde{Y}}$ charge. The quotient $\\Gamma ={\\bf Z}_3$ is ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theta Angles",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-31-theta-angles.md",
+      "narrative": null,
+      "content": "We can now ask how the spectrum of line operators changes as we vary the $\\theta$-angles. A priori, there are three such angles, one for each factor of the gauge group. We call these $\\theta_{\\tilde{Y}}$, $\\theta_2$ and $\\theta_3$. Within the framework discussed in this paper it makes sense to ask how the line operators vary under each of these. \n\n\\para\nBefore we proceed, it is worth reviewing the role of theta angles in the Standard Model.  The most discussed is the QCD theta angle, $\\theta_3$. Bounds on strong CP violation restrict $\\theta_3\\lesssim 10^{-10}$. (The value $\\theta_3=\\pi$ also",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time Reversal Invariant States",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-time-reversal-invariant-states.md",
+      "narrative": null,
+      "content": "It is interesting to ask: for which values of the $\\theta$ angles does the theory respect time reversal invariance or, equivalently, CP? There are eight possibilities, two for each factor of the gauge group. \n\n\\para\n\\underline{$\\Gamma= {\\bf 1}$:}\\ \\ All theta angles have periodicity $2\\pi$. It is well known that $\\theta_2,\\theta_3$ and $\\tilde{\\theta}$ can each take values 0 or $\\pi$. \n\n\\para\n\\underline{$\\Gamma= {\\bf Z}_2$:}\\ \\ Here $\\tilde{\\theta}\\in [0,8\\pi)$. The values $\\theta_3=0$ and $\\pi$ are both time reversal invariant. We can read off the $U(2)$ $\\theta$ angles from \\eqn{untheta}. Wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Effect of Global Anomalies",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-the-effect-of-global-anomalies.md",
+      "narrative": null,
+      "content": "The chiral nature of the Standard Model means that the theta angle $\\theta_2$ can be rotated away. Here we review this argument. In fact, as we will see,  a more careful statement is that a linear combination of $\\theta_2$ and $\\tilde{\\theta}$ can be removed.\n\n\\para\nIn general, theta angles can be rotated away if the theory admits a  continuous global symmetry which suffers a mixed anomaly with the gauge symmetry. This arises most naturally in the presence of a massless chiral fermion. (For example, a massless up quark provides an elegant solution to the strong CP problem, albeit one that appe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electroweak Symmetry Breaking",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-32-electroweak-symmetry-breaking.md",
+      "narrative": null,
+      "content": "Let's now see what becomes of our line operators after electroweak symmetry breaking. The Higgs field $H$ lies in the $({\\bf 2},{\\bf 1})_3$  representation and condenses, breaking $U(1)_{\\tilde{Y}}\\times SU(2)\\rightarrow U(1)_{em}$ of electromagnetism. We will denote the electric charges of $U(1)_{em}$ as $Q$ and the magnetic charges as $G$. We choose to normalise electric charges such that the electron has $Q=-1$. \n\n\\para\nThe allowed electric and magnetic charges under $U(1)_{em}$ depend on our choice of discrete quotient $\\Gamma$.  The electric charge under $U(1)_{em}$ is given by\n\n\\be Q =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-4-summary.md",
+      "narrative": null,
+      "content": "The global structure of the Standard Model gauge group depends on the choice of quotient $\\Gamma$. The differences in these theories described above are rather formal in nature. Just because a line operator exists in a theory does not mean that it is available to experimenters.  It is clearly interesting to better understand the physical implications of the different choices of $\\Gamma$ to see if they may reveal themselves in some way in our world. \n\n\\para\nSome minor, and fairly cheap, respite can be found  in the conjecture that, in any theory with  gravity,  the full set of  charges carried",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.01853v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Tony Padilla and\nJohn Terning for useful discussions. This work was supported by STFC grant\nST/L000385/1 and by the European Research Council under the European Union’s\nSeventh Framework Programme (FP7/2007-2013), ERC grant agreement STG\n279943, Strongly Coupled Systems. I am a Wolfson Royal Society Research Merit\nAward holder.\n15\nReferences\n[1] O. Aharony, N. Seiberg and Y. Tachikawa, “Reading between the lines of\nfour-dimensional gauge theories,” JHEP 1308, 115 (2013) [arXiv:1305.0318 [hep-th]].\n[2] E. Witten, “Dyons of Charge eθ/2π,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

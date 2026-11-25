@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/one-voice-style-guide.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/one-voice-style-guide",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "one-voice-style-guide",
+      "title": "One-Voice Style Guide — Author Voice Profile",
+      "description": "Author voice profile and narrative style guide. Reference when authoring or editing prose. Pairs with `one-voice-audit` (mechanical sweep for status leaks, emoji, and Unicode crashes).",
+      "instructionsPath": "skills/local/one-voice-style-guide.md",
+      "instructionLines": 577,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

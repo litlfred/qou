@@ -1,0 +1,969 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "download-1",
+  "blocks": [
+    {
+      "id": "library/download-1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction.\nThis paper is devoted to investigating the Le´vy-Milman concentration\nphenomenon of 1-Lipschitz maps from mm-spaces (metric measure spaces) to\nR-trees. Here, an mm-space is a triple ðX; dX; \u0001XÞ of a set X, a complete separable\ndistance function dX on X, and a ﬁnite Borel measure \u0001X on ðX; dXÞ. Let\nfðXn; dXn; \u0001XnÞg1\nn¼1 be a sequence of mm-spaces and fðYn; dYnÞg1\nn¼1 a sequence of\nmetric spaces. Given a sequence ffn : Xn ! Yng1\nn¼1 of 1-Lipschitz maps, we\nconsider the following three properties:\n(i) (Concentration property) There exist points mfn 2 Yn, n 2 N, such that\n\u0001Xnðfxn 2 X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "doi: 10.2969/jmsj/06120483\nCentral and Lp-concentration of 1-Lipschitz maps\ninto R-trees\nBy Kei FUNANO\n(Received Feb. 13, 2008)\n(Revised May 27, 2008)\nAbstract.\nIn this paper, we study the Le´vy-Milman concentration\nphenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems\nassert that the concentration to R-trees is equivalent to the concentration to the\nreal line.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let fXng1 n¼1 be a sequence of mm-spaces. Then, the following (1.1) and (1.2) are equivalent to each other. ObsDiamRðXn; \u0004\u0002Þ ! 0 as n ! 1 for any \u0002 > 0: ð1:1Þ supfObsDiamTðXn; \u0004\u0002Þ j T is an R-treeg ! 0 as n ! 1 for any \u0002 > 0:ð1:2Þ K. FUNANO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let fXng1 n¼1 be a sequence of mm-spaces. Then, the following (1.3) and (1.4) are equivalent to each other. ObsCRadRðXn; \u0004\u0002Þ ! 0 as n ! 1 for any \u0002 > 0: ð1:3Þ supfObsCRadTðXn; \u0004\u0002Þ j T is an R-treeg ! 0 as n ! 1 for any \u0002 > 0: ð1:4Þ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Let fXng1 n¼1 be a sequence of mm-spaces and p \u0001 1. Then, the following (1.5) and (1.6) are equivalent to each other. Obs Lp-VarRðXnÞ ! 0 as n ! 1: ð1:5Þ supfObs Lp-VarTðXnÞ j T is an R-treeg ! 0 as n ! 1: ð1:6Þ The condition (1.3) is stronger than (1.1) (see Lemma 2.16 and Remark 2.17), and (1.5) implies (1.3) (see Corollary 2.19). It seems that the conditions (1.3) and (1.5) are not equivalent, but we have no counterexample. In our previous work, the author investigated the above properties (i), (ii), and (iii) for 1-Lipschitz maps into Hadamard manifolds (see [3, Theorems 1.3, 1.4, and Lemm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/cor-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "cf. [7, Section 3(1/2",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "cor-sec-003-06.md",
+      "narrative": null,
+      "content": "33]). A sequence fXng1 n¼1 of mm- spaces satisﬁes that ObsDiamRðXn; \u0004\u0002Þ ! 0 as n ! 1 for any \u0002 > 0 if and only if SepðXn; \u0002; \u0002Þ ! 0 as n ! 1 for any \u0002 > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Observable diameter",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "Let ðX; dX; \u0001XÞ be an mm-space with m :¼ \u0001XðXÞ < þ1 and Y a metric space. For any \u0002 > 0 we deﬁne the observable diameter of X by ObsDiamY ðX; \u0004\u0002Þ :¼ supfdiamðf\u0002ð\u0001XÞ; m \u0004 \u0002Þ j f : X ! Y is a 1-Lipschitz mapg: The target metric space Y is called the screen. The idea of the observable diameter comes from quantum and statistical mechanics, that is, we think of \u0001X as a state on a conﬁguration space X and f is interpreted as an observable. Let ðX; dX; \u0001XÞ be an mm-space. For any \u00021; \u00022 \u0001 0, we deﬁne the separation distance SepðX; \u00021; \u00022Þ ¼ Sepð\u0001X; \u00021; \u00022Þ of X as the supremum of the distance dXðA; B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [7, Section 3(1/2",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "33]). Let ðX; dX; \u0001XÞ and ðY ; dY ; \u0001Y Þ be two mm-spaces. Assume that a 1-Lipschitz map f : X ! R satisﬁes f\u0002ð\u0001XÞ ¼ \u0001Y . Then we have SepðY ; \u00021; \u00022Þ \u0006 SepðX; \u00021; \u00022Þ:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "For any \u0002 > m=2, we have SepðX; \u0002; \u0002Þ ¼ 0. The relationships between the observable diameter and the separation distance are the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [7, Section 3(1/2",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "prop-sec-003-04.md",
+      "narrative": null,
+      "content": "33]). Let ðX; dX; \u0001XÞ be an mm- space and 0 < \u00020 < \u0002. Then we have SepðX; \u0002; \u0002Þ \u0006 ObsDiamRðX; \u0004\u00020Þ: K. FUNANO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [7, Section 3(1/2",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "33]). For any \u0002 > 0, we have ObsDiamRðX; \u00042\u0002Þ \u0006 SepðX; \u0002; \u0002Þ: See [4, Subsection 2.2] for details of the proofs of the above propositions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics of the concentration and the Lp-concentration.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-basics-of-the-concentration-and-the-lp-concen.md",
+      "narrative": null,
+      "content": "Basics of the concentration and the Lp-concentration.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observable diameter and separation distance.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-211-observable-diameter-and-separation-distance.md",
+      "narrative": null,
+      "content": "Observable diameter and separation distance.\nLet Y be a metric space and \u0003 a Borel measure on Y such that m :¼\n\u0003ðY Þ < þ1. We deﬁne for any \u0002 > 0\ndiamð\u0003; m \u0004 \u0002Þ :¼ inffdiam Y0 j Y0 \u0005 Y is a Borel subset such that \u0003ðY0Þ \u0001 m \u0004 \u0002g\nand call it the partial diameter of \u0003.\nDEFINITION 2.1 (Observable diameter).\nLet ðX; dX; \u0001XÞ be an mm-space\nwith m :¼ \u0001XðXÞ < þ1 and Y a metric space. For any \u0002 > 0 we deﬁne the\nobservable diameter of X by\nObsDiamY ðX; \u0004\u0002Þ :¼ supfdiamðf\u0002ð\u0001XÞ; m \u0004 \u0002Þ j f : X ! Y is a 1-Lipschitz mapg:\nThe target metric space Y is called the screen.\nThe idea of the observable diameter com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "For any closed subset A \u0007 X, we have Obs Lp-VarRðAÞ \u0006 Obs Lp-VarRðXÞ:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observable Lp-variation.",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-212-observable-lp-variation.md",
+      "narrative": null,
+      "content": "Observable Lp-variation.\nLet ðX; dX; \u0001XÞ be an mm-space and ðY ; dY Þ a metric space. Given a Borel\nmeasure \u0003 on Y and p 2 ð0; þ1Þ, we put\nVpð\u0003Þ :¼\nZ Z\nY \u0003Y\ndY ðx; yÞpd\u0003ðxÞd\u0003ðyÞ\n\u0001\n\u00021=p\n:\nFor a Borel measurable map f : X ! Y , we also put VpðfÞ :¼ Vpðf\u0002ð\u0001XÞÞ.\nLet fXng1\nn¼1 be a sequence of mm-spaces and fYng1\nn¼1 a sequence of metric\nspaces. For any p 2 ð0; þ1Þ, we say that a sequence ffn : Xn ! Yng1\nn¼1 of Borel\nmeasurable maps Lp-concentrates if VpðfnÞ ! 0 as n ! 1.\nGiven an mm-space X and a metric space Y we deﬁne\nObs Lp-VarY ðXÞ :¼ supfVpðfÞ j f : X ! Y is a 1-Lipschitz mapg;\nand call it th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Each T 0 2 C TðzÞ is convex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "Every connected subset in an R-tree is convex. K. FUNANO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics of R-trees.",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-22-basics-of-r-trees.md",
+      "narrative": null,
+      "content": "Basics of R-trees.\nBefore reviewing the deﬁnition of R-trees, we recall some standard\nterminologies in metric geometry. Let ðX; dXÞ be a metric space. A rectiﬁable\ncurve \u0004 : ½0; 1\b ! X is called a geodesic if its arclength coincides with the distance\ndXð\u0004ð0Þ; \u0004ð1ÞÞ and it has a constant speed, i.e., parametrized proportionally to the\narc length. We say that ðX; dXÞ is a geodesic space if any two points in X are\njoined by a geodesic between them. Let X be a geodesic space. A geodesic triangle\nin X is the union of the image of three geodesics joining a triple of points in X\npairwise. A subset A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [15, Proposition 5.4]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Let H be a Hilbert space. Then for each \u0003 2 B1ðHÞ with m ¼ \u0003ðXÞ, we have cð\u0003Þ ¼ 1 m Z H yd\u0003ðyÞ: Let ðT; dTÞ be an R-tree and \u0003 2 B1ðTÞ. For z 2 T and T 0 2 C 0 TðzÞ, we put cz;T 0ð\u0003Þ :¼ Z T 0 dTðz; wÞd\u0003ðwÞ \u0004 Z TnT 0 dTðz; wÞd\u0003ðwÞ: Let us consider a (possibly inﬁnite) simplicial tree Ts. Here, the length of each edge of Ts is not necessarily equal to 1. We assume that every vertex of Ts is an isolated point in the vertex set of Ts.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [18, Theorem 7.12]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "A sequence f\u0001ng1 n¼1 \u0005 P1ðXÞ con- verges to \u0001 2 P1ðXÞ with respect to the distance function dW if and only if the sequence f\u0001ng1 n¼1 converges weakly to the measure \u0001 and lim n!1 Z X dXðx; yÞd\u0001nðyÞ ¼ Z X dXðx; yÞd\u0001ðyÞ for some (and then any) x 2 X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [15, Proposition 4.3]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Any complete CAT(0)-space Central and Lp-concentration of 1-Lipschitz maps into R-trees is centric. A simple variational argument yields the following lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [15, Proposition 5.9]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "Let \u0003 2 B1ðTsÞ and z 2 Ts. Then, z ¼ cð\u0003Þ if and only if cz;T 0ð\u0003Þ \u0006 0 for any T 0 2 C 0 TsðzÞ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-23-center-of-mass-of-a-measure-on-a-cat0-space-a.md",
+      "narrative": null,
+      "content": "Center of mass of a measure on a CAT(0)-space and observ-\nable central radius.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-231-basics-of-the-center-of-mass-of-a-measure-on.md",
+      "narrative": null,
+      "content": "Basics of the center of mass of a measure on a CAT(0)-space.\nIn this subsection, we review Sturm’s works about measures on a CAT(0)-\nspace. We refer to [8] and [15] for details. A geodesic metric space X is called a\nCAT(0)-space if we have\ndXðx; \u0006ð1=2ÞÞ2 \u0006 1\n2 dXðx; yÞ2 þ 1\n2 dXðx; zÞ2 \u0004 1\n4 dXðy; zÞ2\nfor any x; y; z 2 X and any minimizing geodesic \u0006 : ½0; 1\b ! X from y to z. For\nexample, Hadamard manifolds, Hilbert spaces, and R-trees are all CAT(0)-\nspaces.\nLet ðX; dXÞ be a metric space. We denote by BðXÞ the set of all ﬁnite Borel\nmeasures \u0003 on X with separable supports. We indicate by B1ðX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/thm-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "cf. [15, Theorem 6.3]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "thm-sec-007-05.md",
+      "narrative": null,
+      "content": "Let X be a CAT(0)-space. Given K. FUNANO \u0001; \u0003 2 P1ðXÞ, we have dXðcð\u0001Þ; cð\u0003ÞÞ \u0006 dW 1 ð\u0001; \u0003Þ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/cor-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "cor-sec-008-04.md",
+      "narrative": null,
+      "content": "Let X be an mm-space with \u0001X 2 B1ðXÞ. Then, for any p \u0001 1, we have ObsCRadRnðX; \u0004\u0002Þ \u0006 ðm\u0002Þ1=p Obs Lp-VarRnðXÞ: ð2:3Þ In the case of p ¼ 2, we also have the better estimate ObsCRadRnðX; \u0004\u0002Þ \u0006 ﬃﬃﬃﬃﬃﬃﬃﬃﬃ 2m\u0002 p Obs L2-VarRnðXÞ: ð2:4Þ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/cor-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "cor-sec-008-05.md",
+      "narrative": null,
+      "content": "Let X be an mm-space. Then, for any p \u0001 1 and \u0002 > 0, we have SepðX; \u0002; \u0002Þ \u0006 ðm\u0002Þ1=p Obs Lp-VarRðXÞ: ð2:5Þ In the case of p ¼ 2, we also have SepðX; \u0002; \u0002Þ \u0006 ﬃﬃﬃﬃﬃﬃﬃﬃ m\u0002 r Obs L2-VarRðXÞ: ð2:6Þ K. FUNANO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [7, Section 3(1/2",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "31]). For any \u0002 > 0, we have diamð\u0003; m \u0004 \u0002Þ \u0006 2 CRadð\u0003; m \u0004 \u0002Þ: In particular, we get ObsDiamY ðX; \u0004\u0002Þ \u0006 2 ObsCRadY ðX; \u0004\u0002Þ:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "Let \u0003 2 B1ðRnÞ with m :¼ \u0003ðRnÞ. Then, for any p \u0001 1 and \u0002 > 0, we have CRadð\u0003; m \u0004 \u0002Þ \u0006 Vpð\u0003Þ ðm\u0002Þ1=p : ð2:1Þ In the case of p ¼ 2, we also have the better estimate CRadð\u0003; m \u0004 \u0002Þ \u0006 V2ð\u0003Þ ﬃﬃﬃﬃﬃﬃﬃﬃﬃ 2m\u0002 p : ð2:2Þ Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observable central radius.",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-232-observable-central-radius.md",
+      "narrative": null,
+      "content": "Observable central radius.\nLet Y be a metric space and assume that \u0003 2 B1ðY Þ has the center of mass.\nWe denote by BY ðy; rÞ the closed ball in Y centered at y 2 Y and with radius\nr > 0.\nFor\nany\n\u0002 > 0,\nputting\nm :¼ \u0003ðY Þ,\nwe\ndeﬁne\nthe\ncentral\nradius\nCRadð\u0003; m \u0004 \u0002Þ of \u0003 as the inﬁmum of \b > 0 such that \u0003ðBY ðcð\u0003Þ; \bÞÞ \u0001 m \u0004 \u0002.\nLet ðX; dX; \u0001XÞ be an mm-space with \u0001X 2 B1ðXÞ and Y a centric metric\nspace. For any \u0002 > 0, we deﬁne\nObsCRadY ðX; \u0004\u0002Þ :¼ supfCRadðf\u0002ð\u0001XÞ; m \u0004 \u0002Þ j f : X ! Y is a 1-Lipschitz mapg;\nand call it the observable central radius of X.\nLEMMA 2.16 (cf. [7, Section 3(1/2).31]).\nFor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "From the above lemma, we see that the central concen- tration implies the concentration. The converse is not true in general. For example, let us consider the mm-spaces Xn :¼ fxn; yng with the distance function dXn given by dXnðxn; ynÞ :¼ n and with the Borel probability measure \u0001Xn given by \u0001XnðfxngÞ :¼ 1 \u0004 1=n and \u0001XnðfyngÞ :¼ 1=n. Then, 1-Lipschitz maps fn : Xn ! R deﬁned by fnðxÞ :¼ dXnðx; xnÞ satisfy that cððfnÞ\u0002ð\u0001XnÞÞ ¼ 1 for all n 2 N, whereas the maps fn concentrate to 0 and ObsDiamRðXn; \u0004\u0002Þ ! 0 as n ! 1 for any \u0002 > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/ex-sec-009-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "ex-sec-009-01.md",
+      "narrative": null,
+      "content": "For i ¼ 1; 2; 3, let Ti :¼ fði; rÞ j r 2 ½0; þ1Þg be three copies of ½0; þ1Þ equipped with the usual Euclidean distance function. The tripod T is the metric space obtained by gluing together all these spaces Ti, i ¼ 1; 2; 3, at their origins with the intrinsic distance function. We consider the Borel probability measure \u0003 deﬁned by \u0003ðfði; 1ÞgÞ :¼ 1=3 for all i ¼ 1; 2; 3. We easily see that the origin of T is a median of the measure \u0003. We note that there is no point in T separating T into two subtrees with measures greater than 1/3. The existence of a median of a ﬁnite Borel measure on a simpli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "Every ﬁnite Borel measure on an R-tree has a median.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "\u0005z0;zðt0Þ is a median of \u0003.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-009-04.md",
+      "narrative": null,
+      "content": "For any z 2 Tðz0Þ, we have \u0005z0;z 2 \u0001.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-009-05.md",
+      "narrative": null,
+      "content": "For any \u0006; \u00060 2 \u0001 with Lð\u0006Þ \u0006 Lð\u00060Þ, we have ½\u0006ð0Þ; \u0006ðLð\u0006ÞÞ\bT \u0005 ½\u00060ð0Þ; \u00060ðLð\u00060ÞÞ\bT: K. FUNANO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-009-06.md",
+      "narrative": null,
+      "content": "Thus, there exists a monotone increasing sequence ftng1 n¼1 of positive numbers such that tn ! as n ! 1. We easily see that Tð\u0006ðtnþ1ÞÞ \u0005 Tð\u0006ðtnÞÞ for any n 2 N and T1 n¼1 Tð\u0006ðtnÞÞ ¼ f\u0006ðLð\u0006ÞÞg. Since \u0003ðTð\u0006ðtnÞÞÞ \u0001 m=3, the point \u0006ðLð\u0006ÞÞ is a median of \u0003. Suppose that ¼ þ1. Then, taking a sequence f\u0006ng1 n¼1 \u0005 \u0001 such that Lð\u0006nÞ < Lð\u0006nþ1Þ for any n 2 N and Lð\u0006nÞ ! þ1 as n ! 1, we obtain T1 n¼1 Tð\u0006nðLð\u0006nÞÞÞ ¼ ;. Since Tð\u0006nþ1ðLð\u0006nþ1ÞÞÞ \u0005 Tð\u0006nðLð\u0006nÞÞÞ for any n 2 N, we have 0 ¼ \u0003 \\ n¼1 Tð\u0006nðLð\u0006nÞÞÞ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of a median in an R-tree.",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-3-existence-of-a-median-in-an-r-tree.md",
+      "narrative": null,
+      "content": "Existence of a median in an R-tree.\nLet T be an R-tree and \u0003 a ﬁnite Borel measure on T with m :¼ \u0003ðTÞ < þ1.\nA median of \u0003 is a point z 2 T such that there exist two subtrees T 0, T 00 \u0005 T such\nthat T ¼ T 0 [ T 00, T 0 \\ T 00 ¼ fzg, \u0003ðT 0Þ \u0001 m=3, and \u0003ðT 00Þ \u0001 m=3.\nEXAMPLE 3.1.\nFor i ¼ 1; 2; 3, let Ti :¼ fði; rÞ j r 2 ½0; þ1Þg be three copies\nof ½0; þ1Þ equipped with the usual Euclidean distance function. The tripod T is\nthe metric space obtained by gluing together all these spaces Ti, i ¼ 1; 2; 3, at their\norigins with the intrinsic distance function. We consider the Borel probability\nmeasure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and \u0003 2 B1ðTÞ. Then, we have Central and Lp-concentration of 1-Lipschitz maps into R-trees ccð\u0003Þ;T 0ð\u0003Þ \u0006 0 for any T 0 2 C 0 Tðcð\u0003ÞÞ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "dW 1 ð\u0003n; \u0003Þ ! 0 as n ! 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "T 0 n fcð\u0003Þg ¼ S1 n¼2 Tn. The same proof as Claim 4.2 implies that sup Z A dTðzn; wÞd\u0003nðwÞ\u0004 Z A dTðzn; wÞd\u0003ðwÞ \u0004\u0004\u0004\u0004 \u0004\u0004\u0004\u0004jA\u0005T is a Borel subset \u0005 \u0006 !0 as n!1: Combining this with (4.4) and Claim 4.3, we obtain cT 0;cð\u0003Þð\u0003Þ ¼ lim n!1 cTn;znð\u0003Þ ¼ lim n!1 cTn;znð\u0003nÞ \u0006 lim n!1 dTðcð\u0003nÞ; znÞ ¼ 0: This completes the proof of the proposition. \u0001 Central and Lp-concentration of 1-Lipschitz maps into R-trees The author does not know whether the converse of Proposition 4.1 holds or not.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The necessity in Proposition 2.12 for R-trees.",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-4-the-necessity-in-proposition-212-for-r-trees.md",
+      "narrative": null,
+      "content": "The necessity in Proposition 2.12 for R-trees.\nIn order to prove the main theorems, we extend the necessity in Proposition\n2.12 to R-trees:\nPROPOSITION 4.1.\nLet T be an R-tree and \u0003 2 B1ðTÞ. Then, we have\nCentral and Lp-concentration of 1-Lipschitz maps into R-trees\n495\nccð\u0003Þ;T 0ð\u0003Þ \u0006 0 for any T 0 2 C 0\nTðcð\u0003ÞÞ.\nPROOF.\nFor simplicity, we assume that \u0003ðTÞ ¼ 1. We shall approximate\nthe measure \u0003 by a measure whose support lies on a simplicial tree in T. Given\nn 2 N, there exists a compact subset Kn \u0005 T such that \u0003ðT n KnÞ < 1=n and\nR\nTnKn dTðcð\u0003Þ; wÞd\u0003ðwÞ < 1=n. Take a ð1=nÞ-net fzn\ni gln\ni¼1 o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "lem-sec-011-06.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and \u0003 2 B1ðTÞ. Then, the function ’\u0003 : T ! R satisﬁes that cðð’\u0003Þ\u0002ð\u0003ÞÞ \u0006 0, jcðð’\u0003Þ\u0002ð\u0003ÞÞj \u0006 CRadðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002Þ þ Sep ð’\u0003Þ\u0002ð\u0003Þ; m 3 ; \u0002 \u0001 \u0002 ð5:4Þ þ Sepðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002; m \u0004 \u0002Þ; and CRadð\u0003; m \u0004 \u0002Þ \u0006 CRadðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002Þ þ Sep \u0003; m 3 ; \u0002 \u0001 \u0002 ð5:5Þ þ Sep ð’\u0003Þ\u0002ð\u0003Þ; m 3 ; \u0002 \u0001 \u0002 þ Sepðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002; m \u0004 \u0002Þ for any \u0002 > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/lem-sec-011-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "lem-sec-011-09.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and \u0003 2 B1ðTÞ. Then, for any p \u0001 1 and \u0002 > 0, we have Vpð\u0003Þ \u0006 2m2=p \u0005 CRadðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002Þ þ Sep ð’\u0003Þ\u0002ð\u0003Þ; m 3 ; \u0002 \u0001 \u0002 ð5:7Þ þ Sepðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002; m \u0004 \u0002Þ \u0006 þ 2Vpð’\u0003Þ: In the case of p ¼ 2, we also have the better estimate V2ð\u0003Þ2 \u0006 4m2 \u0005 CRadðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002Þ þ Sep ð’\u0003Þ\u0002ð\u0003Þ; m 3 ; \u0002 \u0001 \u0002 ð5:8Þ þ Sepðð’\u0003Þ\u0002ð\u0003Þ; m \u0004 \u0002; m \u0004 \u0002Þ \u00062 þ 2V2ð’\u0003Þ2:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and \u0003 a ﬁnite Borel measure. Then, for any \u0002 > 0, we have \u0003 BT m\u0003; Sep \u0003; m 3 ; \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 m \u0004 \u0002; ð5:1Þ where m\u0003 is a median of the measure \u0003. In particular, letting X be an mm-space, we have ObsDiamTðX; \u0004\u0002Þ \u0006 2 Sep X; m 3 ; \u0002 \u0001 \u0002 : ð5:2Þ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "together with Corollary 2.6 yields Theorem 1.1. The following way to prove Theorem 1.1 is much easier and more straightforward than the above way, that is, to prove the existence of a median of a measure on an R-tree. PROOF OF THEOREM 1.1. Our goal is to prove the following inequality: ObsDiamTðX; \u0004\u0002Þ \u0006 3 Sep X; \u0002 3 ; \u0002 \u0001 \u0002 þ 4 ObsDiamRðX; \u0004\u0002Þ ð5:3Þ for any \u0002 > 0 with \u0002 \u0006 m=2. Let f : X ! T be an arbitrary 1-Lipschitz map. Fixing a point z0 2 T, we shall consider the function g : T ! R deﬁned by gðzÞ :¼ dTðz; z0Þ. Since g f : X ! R is a 1-Lipschitz function, by the deﬁnition of the observable",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "For any T 0 2 C , we have diam T 0 \u0006 2 diam A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-04.md",
+      "narrative": null,
+      "content": "The relation is an equivalence relation on C .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-05.md",
+      "narrative": null,
+      "content": "f\u0002ð\u0001XÞððS T 02S T 0ÞSepðX;\u0002=3;\u0002=3ÞÞ \u0001 m \u0004 2\u0002=3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-07.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and X an mm-space with \u0001X 2 B1ðXÞ. Then, for any \u0002 > 0 we have ObsCRadTðX; \u0004\u0002Þ \u0006 ObsCRadRðX; \u0004\u0002Þ þ 2 Sep X; m 3 ; \u0002 \u0001 \u0002 þ SepðX; m \u0004 \u0002; m \u0004 \u0002Þ:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-08.md",
+      "narrative": null,
+      "content": "together with Corollary 2.6 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prop-sec-011-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "prop-sec-011-10.md",
+      "narrative": null,
+      "content": "Let T be an R-tree and X an mm-space. Then, for any p \u0001 1, we have Obs Lp-VarTðXÞ \u0006 2f21=pð1 þ 2 21=pÞ þ 1gObs Lp-VarRðXÞ: ð5:12Þ In the case of p ¼ 2, we also have the better estimate Obs L2-VarTðXÞ2 \u0006 ð38 þ 16 ﬃﬃ p ÞObs L2-VarRðXÞ2: ð5:13Þ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorems.",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-5-proof-of-the-main-theorems.md",
+      "narrative": null,
+      "content": "Proof of the main theorems.\nCombining Proposition 3.2 with the same proof as [3, Lemma 5.3] implies the\nfollowing proposition:\nPROPOSITION 5.1.\nLet T be an R-tree and \u0003 a ﬁnite Borel measure. Then,\nfor any \u0002 > 0, we have\n\u0003 BT\nm\u0003; Sep \u0003; m\n3 ; \u0002\n2\n\u0001\n\u0002\n\u0001\n\u0002\n\u0001\n\u0002\n\u0001 m \u0004 \u0002;\nð5:1Þ\nwhere m\u0003 is a median of the measure \u0003. In particular, letting X be an mm-space,\nwe have\nObsDiamTðX; \u0004\u0002Þ \u0006 2 Sep X; m\n3 ; \u0002\n2\n\u0001\n\u0002\n:\nð5:2Þ\nProposition 5.1 together with Corollary 2.6 yields Theorem 1.1. The\nfollowing way to prove Theorem 1.1 is much easier and more straightforward\nthan the above way, that is, to prove the exis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[ 1 ]\nL. Ambrosio and P. Tilli, Topics on analysis in metric spaces, Oxford Lecture Series in\nMathematics and its Applications, 25, Oxford University Press, Oxford, 2004.\n[ 2 ]\nI. Chiswell, Introduction to \u0002-trees, World Scientiﬁc Publishing Co. Inc., River Edge, NJ, 2001.\n[ 3 ]\nK. Funano, Observable concentration of mm-spaces into nonpositively curved manifolds,\npreprint, available online at ‘‘http://front.math.ucdavis.edu/0701.5535’’, 2007.\n[ 4 ]\nK. Funano, Observable concentration of mm-spaces into spaces with doubling measures, Geom.\nDedicata, 127 (2007), 49–56.\n[ 5 ]\nM. Gromov, CAT(\u0002)-spa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

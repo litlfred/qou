@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2604.16077v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement",
+      "dcterms:creator": [
+        "STÉPHANE BASEILHAC1, FATHI BEN ARIBI2"
+      ],
+      "dcterms:issued": "D:20260420",
+      "dcterms:identifier": "https://arxiv.org/abs/2604.16077",
+      "dcterms:abstract": "We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of the ﬁgure-eight knot complement M. We show that it is rigid, in the sense that it does not depend on the choice of holonomy representation of M, and it is either 0 or equal to the hyperbolic volume of M divided by 2π, depending on a parity condition satisﬁed by logarithms of the holonomy eigenvalues on the canonical longitude, where the logarithms are parameters of the QHI of M. Along the way we also survey some relevant general features of the QHI.",
+      "dcterms:source": "library/arxiv-2604.16077v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2604.16077v1"
+    }
+  ]
+}

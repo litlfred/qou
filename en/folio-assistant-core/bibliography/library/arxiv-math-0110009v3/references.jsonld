@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0110009v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003",
+      "dcterms:creator": [
+        "Cohn, By Henry",
+        "Elkies*, Noam"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0110009",
+      "dcterms:abstract": "We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known at least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.",
+      "dcterms:source": "library/arxiv-math-0110009v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0110009v3"
+    }
+  ]
+}

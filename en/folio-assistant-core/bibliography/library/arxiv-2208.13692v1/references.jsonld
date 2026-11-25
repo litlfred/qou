@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2208.13692v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "BRING’S CURVE: OLD AND NEW",
+      "dcterms:creator": [
+        "BRADEN, H. W.",
+        "DISNEY-HOGG, LINDEN"
+      ],
+      "dcterms:issued": "D:20220830",
+      "dcterms:identifier": "https://arxiv.org/abs/2208.13692",
+      "dcterms:abstract": "Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz¨ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
+      "dcterms:source": "library/arxiv-2208.13692v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2208.13692v1"
+    }
+  ]
+}

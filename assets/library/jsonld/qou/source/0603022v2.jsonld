@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0603022v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "(braidrevisionfinal-cqg)",
+  "contains": [
+    "library/0603022v2/sections/page-001",
+    "library/0603022v2/sections/page-002",
+    "library/0603022v2/sections/page-003",
+    "library/0603022v2/sections/page-004",
+    "library/0603022v2/sections/page-005",
+    "library/0603022v2/sections/page-006",
+    "library/0603022v2/sections/page-007",
+    "library/0603022v2/sections/page-008",
+    "library/0603022v2/sections/page-009",
+    "library/0603022v2/sections/page-010",
+    "library/0603022v2/sections/page-011",
+    "library/0603022v2/sections/page-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Gravity and the Standard Model — 12 sections: Page 1; Page 2; Page 3\n\n**Quantum Gravity and the Standard Model**\n\n*Sundance O. Bilson-Thompson∗*\n\n12 pp, 12 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0603022v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0603022v2.pdf",
+    "source_sha256": "46e24c0289f61d4400005c3a8775d9d7d01e75b52a3880b2399517c7c914a6ba",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

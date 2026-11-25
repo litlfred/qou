@@ -1,0 +1,1193 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2412.02281v1",
+  "title": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Connection Formula of the Equation (5)",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-connection-formula-of-the-equation-5"
+    },
+    {
+      "level": 2,
+      "title": "Basic Notations",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-basic-notations"
+    },
+    {
+      "level": 2,
+      "title": "Basic Hypergeometric Series",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-basic-hypergeometric-series"
+    },
+    {
+      "level": 2,
+      "title": "q-Borel Resummation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-q-borel-resummation"
+    },
+    {
+      "level": 2,
+      "title": "Explicit Expression of Connection Formula of the Equation (5)",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-explicit-expression-of-connection-formula-of-the"
+    },
+    {
+      "level": 1,
+      "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-connection-matrix-q-stokes-matrix-of-the-system"
+    },
+    {
+      "level": 2,
+      "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-fundamental-solution-connection-matrix-and-q-sto"
+    },
+    {
+      "level": 2,
+      "title": "Diagonalization of the Upper Left Submatrix of A",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-diagonalization-of-the-upper-left-submatrix-of-a"
+    },
+    {
+      "level": 2,
+      "title": "Fundamental Solutions of the System (33)",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-fundamental-solutions-of-the-system-33"
+    },
+    {
+      "level": 2,
+      "title": "Relationship between the System (33) and the Equation (5)",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-relationship-between-the-system-33-and-the-equat"
+    },
+    {
+      "level": 2,
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-explicit-evaluation-of-connection-matrix-and-q-s"
+    },
+    {
+      "level": 2,
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-explicit-evaluation-of-connection-matrix-and-q-s"
+    },
+    {
+      "level": 1,
+      "title": "Behavior of the Equation (5) and the System (2) as q1",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q"
+    },
+    {
+      "level": 2,
+      "title": "Behavior of the Connection Formula as q1",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-behavior-of-the-connection-formula-as-q1"
+    },
+    {
+      "level": 2,
+      "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-behavior-of-connection-matrix-and-q-stokes-matri"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conﬂuent hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "q-stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric q-diﬀerence",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2412.02281v1 [math.CA] 3 Dec 2024 Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations Jinghong Lin, Yiming Ma and Xiaomeng Xu Abstract We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2412.02281v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conflu hyper",
+          "heading": false
+        },
+        {
+          "term": "eqref intro",
+          "heading": false
+        },
+        {
+          "term": "ref intro",
+          "heading": false
+        },
+        {
+          "term": "conne formu",
+          "heading": false
+        },
+        {
+          "term": "series varphi",
+          "heading": false
+        },
+        {
+          "term": "lambda prod",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "prod big",
+          "heading": false
+        }
+      ],
+      "extract": "Set $q\\in\\mathbb{R}$ with $0<q<1$. Take the Lie algebra ${\\mathfrak {gl}_n}$ over the field of complex numbers with a positive integer $n$. Consider the confluent hypergeometric $q$-difference system \\begin{equation}\\label{u+A/z} D_qF_q(z):=\\frac{\\sigma_qF_q(z)-F_q(z)}{qz-z}=\\left(u+\\frac{A}{z}\\right)F_q(z), \\end{equation} where $\\sigma_q F(z)=F(q z)$, $u=\\mathrm{diag}\\left(u_1,...,u_{n-1},u_n\\right)$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-connection-formula-of-the-equation-5",
+      "number": null,
+      "title": "Connection Formula of the Equation (5)",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "q-stokes matrix",
+          "heading": false
+        },
+        {
+          "term": "national key",
+          "heading": false
+        }
+      ],
+      "extract": "computes explicitly the q-Stokes matrix of the system (2). Section 4 studies the behavior of the connection formula and the q-Stokes matrix as q →1. Acknowledgments We would like to thank Qian Tang for the discussion and valuable feedback on the paper. The authors are supported by the National Key Research and Development Program of China (No. 2020YFE0204200), by the National Key Research and Development Program of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-basic-notations",
+      "number": null,
+      "title": "Basic Notations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infty left",
+          "heading": false
+        },
+        {
+          "term": "equation item",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "jacobi triple",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "triple product",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{notation} We recall some basic notations of $q$-calculus with $0<q<1$ (referring to \\cite{gasper2004basic} for more details): \\begin{itemize} \\item The $q$-Pochhammer symbol is \\begin{equation*} (a ; q)_n:= \\left\\{ \\begin{array}{lr} 1, & \\text{if} \\ \\ n=0, \\\\ \\prod_{l=0}^{n-1} (1-aq^{l}), & \\text{if} \\ \\ n \\geq 1. \\end{array} \\right. \\end{equation*} Moreover, $(a ; q)_{\\infty}:=\\prod_{l=0}^{\\infty}\\left(1-a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-basic-hypergeometric-series",
+      "number": null,
+      "title": "Basic Hypergeometric Series",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypergeometric series",
+          "heading": true
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": true
+        },
+        {
+          "term": "conflu hyper",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol alpha",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol beta",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{hyper series} \\begin{defn}\\label{def:basic f} A basic hypergeometric series associated to $\\boldsymbol{a}=(a_1,a_2,...,a_n)$ and $\\boldsymbol{b}=(b_1,b_2,...,b_m)$ is \\begin{equation*} {}_n\\varphi_m\\left(\\begin{array}{c} a_1, a_2, ..., a_n \\\\ b_1, ..., b_m \\end{array} ; q, z\\right) := \\sum_{k=0}^{\\infty} \\frac{ \\prod_{l=1}^n \\left(a_l ; q\\right)_k}{(q ; q)_k\\prod_{l=1}^m \\left(b_l ; q\\right)_k }\\left[(-1)^k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-q-borel-resummation",
+      "number": null,
+      "title": "q-Borel Resummation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1044,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-borel resummation",
+          "heading": true
+        },
+        {
+          "term": "ˆbq",
+          "heading": false
+        },
+        {
+          "term": "nϕn",
+          "heading": false
+        },
+        {
+          "term": "nfn",
+          "heading": false
+        },
+        {
+          "term": "λqm",
+          "heading": false
+        },
+        {
+          "term": "λqn",
+          "heading": false
+        }
+      ],
+      "extract": "q-Borel Resummation In this subsection, we give a brief review to the theory of q-Borel resummation (see e.g., [1, 7, 18, 30, 42]). The deﬁnitions and properties can be found in [1, 7, 42]. Denote that • C[[z−1]] (or C[[z]]) is the ring of formal power series of the variable z−1 (or z); • M(C∗, 0) is the ﬁeld of functions which are meromorphic on some punctured neighbourhood of 0 in C∗; • S(a, b) = {z ∈f C∗| a <",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-explicit-expression-of-connection-formula-of-the",
+      "number": null,
+      "title": "Explicit Expression of Connection Formula of the Equation (5)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1929,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lim nϕn",
+          "heading": false
+        },
+        {
+          "term": "aiq",
+          "heading": false
+        },
+        {
+          "term": "λqm",
+          "heading": false
+        },
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "aiz",
+          "heading": false
+        },
+        {
+          "term": "pseudo-constant coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "akq",
+          "heading": false
+        },
+        {
+          "term": "logq",
+          "heading": false
+        }
+      ],
+      "extract": "Explicit Expression of Connection Formula of the Equation (5) In this subsection, we derive the explicit connection formula of the equation (5) by studying the conﬂuence of the known connection formulas of certain basic hypergeometric series. From Proposition 2.12 and Proposition 2.13, we obtain a fundamental system of meromorphic solutions of the equation (5) via the q-Borel resummation, which can be written down",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-connection-matrix-q-stokes-matrix-of-the-system",
+      "number": null,
+      "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection matrix",
+          "heading": true
+        },
+        {
+          "term": "eqref qdes",
+          "heading": false
+        },
+        {
+          "term": "stokes matrix",
+          "heading": false
+        },
+        {
+          "term": "system eqref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{main section} This section computes explicitly the connection matrix and $q$-Stokes matrix of the system \\eqref{qdes}. In particular, Section \\ref{sec:sol zero inf} introduces the connection matrix and $q$-Stokes matrix of the systems \\eqref{qdes}. Section \\ref{sec:diag} gives a gauge transformation that diagonalizes the upper left block of the system \\eqref{qdes}. Sections",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-fundamental-solution-connection-matrix-and-q-sto",
+      "number": null,
+      "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fundamental solution",
+          "heading": true
+        },
+        {
+          "term": "eqref qdes",
+          "heading": false
+        },
+        {
+          "term": "cite adachi2019q",
+          "heading": false
+        },
+        {
+          "term": "cite birkhoff1913generalized",
+          "heading": false
+        },
+        {
+          "term": "dreyfus2015confluence",
+          "heading": false
+        },
+        {
+          "term": "backslash cup",
+          "heading": false
+        },
+        {
+          "term": "cup leq",
+          "heading": false
+        },
+        {
+          "term": "mathbb backslash",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:sol zero inf} The fundamental solution of \\eqref{u+A/z} is studied in \\cite{birkhoff1913generalized} (especially when $u$ is invertible). If $u$ is not invertible, there is a slightly different formal fundamental solution (see e.g., \\cite{dreyfus2015confluence}). Particularly, the system \\eqref{qdes} has a formal fundamental solution around infinity as follows \\begin{equation*} \\hat{F}_q(z;E_{n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-diagonalization-of-the-upper-left-submatrix-of-a",
+      "number": null,
+      "title": "Diagonalization of the Upper Left Submatrix of A",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upper left",
+          "heading": true
+        },
+        {
+          "term": "ineq lambda",
+          "heading": false
+        },
+        {
+          "term": "eqref ineq",
+          "heading": false
+        },
+        {
+          "term": "prod left",
+          "heading": false
+        },
+        {
+          "term": "diag left",
+          "heading": false
+        },
+        {
+          "term": "label ineq",
+          "heading": false
+        },
+        {
+          "term": "cdot mathrm",
+          "heading": false
+        },
+        {
+          "term": "operatorname diag",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:diag} We first introduce a diagonalized system under the conditions: \\begin{align}\\label{ineq1} \\lambda^{\\left(n-1\\right)}_i & \\ne \\lambda^{\\left(n-1\\right)}_j, \\text{ for } \\ 1\\leq i\\neq j \\leq n-1,\\\\ \\label{ineq2} \\lambda^{\\left(n-1\\right)}_i & \\ne \\lambda^{\\left(n-2\\right)}_j, \\text{ for } \\ 1\\leq i \\leq n-1, \\ 1\\leq j \\leq n-2 . \\end{align} Under the conditions \\eqref{ineq1} and \\eqref{ineq2}, let us",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-fundamental-solutions-of-the-system-33",
+      "number": null,
+      "title": "Fundamental Solutions of the System (33)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qνj δij",
+          "heading": false
+        },
+        {
+          "term": "δij δni",
+          "heading": false
+        },
+        {
+          "term": "enn",
+          "heading": false
+        },
+        {
+          "term": "ˆhq",
+          "heading": false
+        },
+        {
+          "term": "iˆj",
+          "heading": false
+        },
+        {
+          "term": "qνn",
+          "heading": false
+        },
+        {
+          "term": "nϕn",
+          "heading": false
+        },
+        {
+          "term": "fundamental solution",
+          "heading": false
+        }
+      ],
+      "extract": "Fundamental Solutions of the System (33) In this subsection, we compute the fundamental solution around the origin and inﬁnity of (33) explicitly. Proposition 3.5. Under the conditions (3) (with the condition (30) included) and (31), the formal funda- mental solution ˆFq(z; Enn, An−1) of (33) is given by ˆFq(z; Enn, An−1) = ˆHq(z; Enn, An−1) · zδ(n−1) q (An−1)eq Å Ennq−δ(n−1) q (An−1)z ã , where δ(n−1) q (An−1) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-relationship-between-the-system-33-and-the-equat",
+      "number": null,
+      "title": "Relationship between the System (33) and the Equation (5)",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enn",
+          "heading": false
+        },
+        {
+          "term": "zνn",
+          "heading": false
+        },
+        {
+          "term": "qµj",
+          "heading": false
+        },
+        {
+          "term": "qνn",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": true
+        },
+        {
+          "term": "relationship",
+          "heading": true
+        }
+      ],
+      "extract": "Relationship between the System (33) and the Equation (5) The computation of the connection matrix and q-Stokes matrix of (33) can be transformed into the connection problem of the equation (5). In this subsection, we clarify the relationship between the system (33) and the equation (5). From explicit expressions of fundamental solutions in Proposition 3.6 and Proposition 3.7, one gets that: • For 1 ≤i, k ≤n −1, 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-explicit-evaluation-of-connection-matrix-and-q-s",
+      "number": null,
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δij δni",
+          "heading": false
+        },
+        {
+          "term": "qµj νnλz",
+          "heading": false
+        },
+        {
+          "term": "q-stokes matrix",
+          "heading": true
+        },
+        {
+          "term": "enn",
+          "heading": false
+        },
+        {
+          "term": "λqνj δij",
+          "heading": false
+        },
+        {
+          "term": "qνl",
+          "heading": false
+        },
+        {
+          "term": "δli",
+          "heading": false
+        },
+        {
+          "term": "connection matrix",
+          "heading": true
+        }
+      ],
+      "extract": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33) In this subsection, we compute the connection matrix Uq(z, λ; Enn, An−1) (see Theorem 3.8) and the q-Stokes matrix Sq (z, λ, µ; Enn, An−1) (see Theorem 3.10) of the system (33). The computation depends on the con- nection formula of the equation (5) (see Theorem 1.2 or Theorem 2.26 equivalently). We introduce the following conditions: µi −µj /∈Z,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-explicit-evaluation-of-connection-matrix-and-q-s",
+      "number": null,
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref qdes",
+          "heading": false
+        },
+        {
+          "term": "prod theta",
+          "heading": false
+        },
+        {
+          "term": "connection matrix",
+          "heading": true
+        },
+        {
+          "term": "operatorname diag",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "lambda right",
+          "heading": false
+        },
+        {
+          "term": "neq theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:qdes} Since the matrices $E_{n n}$ and $\\operatorname{diag}\\left({P}_{n-1},1\\right)$ commute with each other, we get \\begin{prop}\\label{conjugation} Under the condition \\eqref{eq:vivj} (with the condition \\eqref{ineq1} included), the nonresonant condition \\eqref{qnreso}, and condition \\eqref{ineq2}, for $\\lambda\\in \\mathbb{C}^{*}\\backslash \\cup_{1\\leq l \\leq n-1} [-{(1-q)}/{q^{\\nu_l}};q]$, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q",
+      "number": null,
+      "title": "Behavior of the Equation (5) and the System (2) as q1",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "behavior",
+          "heading": true
+        },
+        {
+          "term": "system",
+          "heading": true
+        },
+        {
+          "term": "q-stokes",
+          "heading": false
+        }
+      ],
+      "extract": "Behavior of the Equation (5) and the System (2) as q →1 In this section, we study the behavior of the connection formula for the equation (5) (see Section 4.1), as well as the connection matrix and the q-Stokes matrix of the system (2) (see Section 4.2) as q →1. See [33] for more discussions in the Fuchsian case and [6] in the irregular case. 4.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-behavior-of-the-connection-formula-as-q1",
+      "number": null,
+      "title": "Behavior of the Connection Formula as q1",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "18",
+      "labelEnd": "22",
+      "words": 1917,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm arg",
+          "heading": false
+        },
+        {
+          "term": "mathrm alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "lambda prod",
+          "heading": false
+        },
+        {
+          "term": "infty prod",
+          "heading": false
+        },
+        {
+          "term": "widehat beta",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol beta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:eqlim} We focus on the behavior of the connection formula as $q\\rightarrow 1$ of the equation \\begin{equation}\\label{sec:qconf eq} \\prod_{l=1}^{n-1}\\left(zD_q+\\alpha_{l} \\right)y(z)=D_q\\prod_{l=1}^{n-1}\\left(zD_q+\\beta_{l}-1 \\right)y(z), \\end{equation} which takes the general form of the equation \\eqref{Fnj eq}. See \\cite{morita2013connection} for more discussion of $n=2$ case. If the complex numbers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-behavior-of-connection-matrix-and-q-stokes-matri",
+      "number": null,
+      "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 28,
+      "labelStart": "22",
+      "labelEnd": "28",
+      "words": 3232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enn",
+          "heading": false
+        },
+        {
+          "term": "q-stokes matrix",
+          "heading": true
+        },
+        {
+          "term": "connection matrix",
+          "heading": true
+        },
+        {
+          "term": "les eries",
+          "heading": false
+        },
+        {
+          "term": "die reihe",
+          "heading": false
+        },
+        {
+          "term": "δij",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "peking university",
+          "heading": false
+        }
+      ],
+      "extract": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q →1 The q-diﬀerence system (2) converges in the form to the diﬀerential system d dz F(z) = Å Enn + A z ã F(z). (68) Similar to the equation (57) case, there is a formal fundamental solution of (68) around inﬁnity (see e.g., [4, 38]): ˆF(z; Enn, A) = ˆH(z; Enn, A)zδ(n−1)(A)eEnnz, with ˆH(z; Enn, A) = Idn + ∞ X m=1 Hmz−m, where δ(n−1) (A)ij := ß",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "equation left",
+      "heading": false
+    },
+    {
+      "term": "enn",
+      "heading": false
+    },
+    {
+      "term": "equation lambda",
+      "heading": false
+    },
+    {
+      "term": "equation eqref",
+      "heading": false
+    },
+    {
+      "term": "prod left",
+      "heading": false
+    },
+    {
+      "term": "prod right",
+      "heading": false
+    },
+    {
+      "term": "eqref qdes",
+      "heading": false
+    },
+    {
+      "term": "infty left",
+      "heading": false
+    },
+    {
+      "term": "begin equation",
+      "heading": false
+    },
+    {
+      "term": "end equation",
+      "heading": false
+    },
+    {
+      "term": "equation hat",
+      "heading": false
+    },
+    {
+      "term": "equation neq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2412.02281v1"
+  }
+}

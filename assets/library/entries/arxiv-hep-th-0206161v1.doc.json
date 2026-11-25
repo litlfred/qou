@@ -1,0 +1,1571 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0206161v1",
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Jourdain:",
+      "number": "M",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-m-jourdain"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Field theory expectations",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-field-theory-expectations"
+    },
+    {
+      "level": 2,
+      "title": "Supersymmetries and twisted supersymmetries",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-21-supersymmetries-and-twisted-supersymmetries"
+    },
+    {
+      "level": 1,
+      "title": "Field",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-field"
+    },
+    {
+      "level": 2,
+      "title": "Good observables: UV",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-22-good-observables-uv"
+    },
+    {
+      "level": 2,
+      "title": "Good observables: IR",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-23-good-observables-ir"
+    },
+    {
+      "level": 1,
+      "title": "Instanton measure and its localization",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-instanton-measure-and-its-localization"
+    },
+    {
+      "level": 2,
+      "title": "ADHM data",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-31-adhm-data"
+    },
+    {
+      "level": 2,
+      "title": "Instanton measure",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-32-instanton-measure"
+    },
+    {
+      "level": 2,
+      "title": "Curing non-compactness",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-33-curing-non-compactness"
+    },
+    {
+      "level": 2,
+      "title": "Reduction to contour integrals",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-34-reduction-to-contour-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Classiﬁcation of the residues",
+      "number": "3.5",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-35-classiﬁcation-of-the-residues"
+    },
+    {
+      "level": 2,
+      "title": "Residues and ﬁxed points",
+      "number": "3.6",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-36-residues-and-ﬁxed-points"
+    },
+    {
+      "level": 2,
+      "title": "The ﬁrst three nonabelian instantons",
+      "number": "3.7",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-37-the-ﬁrst-three-nonabelian-instantons"
+    },
+    {
+      "level": 2,
+      "title": "Four and ﬁve instantons",
+      "number": "3.8",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-38-four-and-ﬁve-instantons"
+    },
+    {
+      "level": 2,
+      "title": "Adjoint matter and other matters",
+      "number": "3.9",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-39-adjoint-matter-and-other-matters"
+    },
+    {
+      "level": 2,
+      "title": "Perturbative part",
+      "number": "3.10",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-310-perturbative-part"
+    },
+    {
+      "level": 1,
+      "title": "M- and K-theory inspired conjectures",
+      "number": "4",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-4-m--and-k-theory-inspired-conjectures"
+    },
+    {
+      "level": 2,
+      "title": "Five dimensional viewpoint",
+      "number": "4.1",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-41-five-dimensional-viewpoint"
+    },
+    {
+      "level": 2,
+      "title": "K-theory viewpoint",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-42-k-theory-viewpoint"
+    },
+    {
+      "level": 2,
+      "title": "Chiral fermions and M5 brane",
+      "number": "4.3",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-43-chiral-fermions-and-m5-brane"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seiberg-witten prepotential",
+          "heading": false
+        },
+        {
+          "term": "nikita",
+          "heading": false
+        },
+        {
+          "term": "ihes",
+          "heading": false
+        },
+        {
+          "term": "tau-functions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0206161v1 18 Jun 2002 ITEP-TH-22/02 IHES/P/04/22 hep-th/0206161 SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov1 Institut des Hautes Etudes Scientiﬁques, Le Bois-Marie, Bures-sur-Yvette, F-91440 France e-mail: nikita@ihes.fr Direct evaluation of the Seiberg-Witten prepotential is accomplished following the localiza- tion programme suggested in [1]. Our results agree with all",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0206161v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-m-jourdain",
+      "number": "M",
+      "title": "Jourdain:",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quarante",
+          "heading": false
+        },
+        {
+          "term": "oblig",
+          "heading": false
+        },
+        {
+          "term": "que",
+          "heading": false
+        }
+      ],
+      "extract": "Par ma foi! il y a plus de quarante ans que je dis de la prose sans que j’en suisse rien ; et je vous suis le plus oblig´e du monde de m’avoir appris cela.... Le Bourgeois gentilhomme. J. -B. Moli`ere",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 1829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finst",
+          "heading": false
+        },
+        {
+          "term": "instanton charge",
+          "heading": false
+        },
+        {
+          "term": "instanton measure",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "aln",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "fpert",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        }
+      ],
+      "extract": "The dynamics of gauge theories is a long and fascinating subject. The dynamics of supersymmetric gauge theories is a subject with shorter history. However, more facts are known about susy theories, and with better precision [2] yet with rich enough applications both in physics and mathematics. In particular, the solution of Seiberg and Witten [3] of N = 2 gauge theory using the constraints of special geometry of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-field-theory-expectations",
+      "number": "2",
+      "title": "Field theory expectations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "instantons",
+          "heading": false
+        },
+        {
+          "term": "runaway",
+          "heading": false
+        },
+        {
+          "term": "point-like",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we explain our approach in the ﬁeld theory language. We exploit the fact that the supersymmetric gauge theory on ﬂat space has a large collection of observables whose correlation functions are saturated by instanton contribution in the limit of weak coupling. In addition, in the presence of the adjoint scalar vev these instantons tend to shrink to zero size. Moreover, the observables we choose have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-supersymmetries-and-twisted-supersymmetries",
+      "number": "2.1",
+      "title": "Supersymmetries and twisted supersymmetries",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplet",
+          "heading": false
+        },
+        {
+          "term": "supercharges",
+          "heading": false
+        },
+        {
+          "term": "r-symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "The N = 2 theory has eight conserved supercharges, Qi α, Qi ˙a, which transform under the global symmetry group SU(2)L×SU(2)R×SU(2)I of which the ﬁrst two factors belong to the group of spatial rotations and the last one is the R-symmetry group. The indices α, ˙α, i are the doublets of these respective SU(2) factors. The basic multiplet of the gauge theory is the vector multiplet. Here is the spin content of its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-field",
+      "number": null,
+      "title": "Field",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supercharges",
+          "heading": false
+        },
+        {
+          "term": "four-manifold",
+          "heading": false
+        },
+        {
+          "term": "superspace",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "idea",
+          "heading": false
+        }
+      ],
+      "extract": "SU(2)L SU(2)R SU(2)I Aµ 1 2 1 2 0 ψi α 1 2 0 1 2 ψi ˙α 0 1 2 1 2 φ, ¯φ 0 0 0 It is useful to work in the notations which make only SU(2)L × SU(2)d part of the global symmetry group manifest. Here SU(2)d is the diagonal subgroup of SU(2)R × SU(2)I. If we call this subgroup a “Lorentz group”, then the supercharges, superspace, and the fermionic ﬁelds of the theory split as follows: Fermions: ψµ, χ+ µν, η; Superspace:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-good-observables-uv",
+      "number": "2.2",
+      "title": "Good observables: UV",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "closed k-form",
+          "heading": false
+        },
+        {
+          "term": "cartan subalgebra",
+          "heading": false
+        },
+        {
+          "term": "equivariant diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "equivariant forms",
+          "heading": false
+        },
+        {
+          "term": "supercharge",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "contour integral",
+          "heading": false
+        }
+      ],
+      "extract": "In the applications of the susy gauge theory to Donaldson theory, where one works with the standard topological supercharge Q, the observables one is usually interested in are the gauge invariant polynomials O(0) P,x = P(φ(x)) in the adjoint scalar φ, evaluated at space- time point x, and its descendants: O(k) P,Σ = R Σ P(Φ), where Σ is a k-cycle. Unfortunately for k > 0 all such cycles are homologically trivial on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-good-observables-ir",
+      "number": "2.3",
+      "title": "Good observables: IR",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eﬀective action",
+          "heading": false
+        },
+        {
+          "term": "superspace",
+          "heading": false
+        },
+        {
+          "term": "finst",
+          "heading": false
+        },
+        {
+          "term": "prepotential",
+          "heading": false
+        },
+        {
+          "term": "low-energy",
+          "heading": false
+        },
+        {
+          "term": "derivatives",
+          "heading": false
+        },
+        {
+          "term": "scale",
+          "heading": false
+        }
+      ],
+      "extract": "The nice feature of the correlator (2.10) is it simple relation to the prepotential of the low-energy eﬀective theory. In order to derive it let us think of the observable (2.10) as of a slow varying changing of the microscopic coupling constant. If we could completely neglect the fact that H is not constant, then its addition would simply renormalize the eﬀective low-energy scale Λ →Λe−H. However, we should",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-instanton-measure-and-its-localization",
+      "number": "3",
+      "title": "Instanton measure and its localization",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-adhm-data",
+      "number": "3.1",
+      "title": "ADHM data",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperk ahler",
+          "heading": false
+        },
+        {
+          "term": "adhm",
+          "heading": true
+        },
+        {
+          "term": "instantons",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed framing",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "anti-fundamental",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        }
+      ],
+      "extract": "The moduli space Mk,N of instantons with ﬁxed framing at inﬁnity has dimension 4kN. It has the following convenient description. Take two complex vector spaces V and W of the complex dimensions k and N respectively. These spaces should be viewed as Chan-Paton spaces for D(p−4) and Dp branes in the brane realization of the gauge theory with instantons. Let us also denote by L the two dimensional complex vector space,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-instanton-measure",
+      "number": "3.2",
+      "title": "Instanton measure",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supersymmetric delta-function",
+          "heading": false
+        },
+        {
+          "term": "non-compactness",
+          "heading": false
+        },
+        {
+          "term": "instanton",
+          "heading": true
+        },
+        {
+          "term": "gauge ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite-dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "The supersymmetric gauge theory measure can be regarded as an inﬁnite-dimensional version of the equivariant Matthai-Quillen representative of the Thom class of the bundle Γ \u0000Ω2,+ ⊗gP \u0001 over the inﬁnite-dimensional space of all gauge ﬁelds AP in the principal G- bundle P (summed over the topological types of P). In physical terms, in the weak coupling limit we are calculating the supersymmetric delta-function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-curing-non-compactness",
+      "number": "3.3",
+      "title": "Curing non-compactness",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperk ahler",
+          "heading": false
+        },
+        {
+          "term": "adhm construction",
+          "heading": false
+        },
+        {
+          "term": "non-compactness",
+          "heading": true
+        },
+        {
+          "term": "universal instanton",
+          "heading": false
+        },
+        {
+          "term": "localization techniques",
+          "heading": false
+        },
+        {
+          "term": "gauge orientation",
+          "heading": false
+        },
+        {
+          "term": "don pick",
+          "heading": false
+        },
+        {
+          "term": "original gauge",
+          "heading": false
+        }
+      ],
+      "extract": "The UV problem can be solved by relaxing the condition on the stabilizer, thus adding the so-called point-like instantons. A point of the hyperk¨ahler space ˜ Mk,N with orbifold singularities which one obtains in this way (Uhlenbeck compactiﬁcation) is an instanton of charge p ≤k and a set of k −p points on IR4: ˜ Mk,N = Mk,N ∪Mk−1,N × IR4 ∪Mk−2,N × Sym2(IR4) ∪. . . ∪Symk(IR4) (3.8) The resulting space ˜ Mk,N is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-34-reduction-to-contour-integrals",
+      "number": "3.4",
+      "title": "Reduction to contour integrals",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 771,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linearized adhm",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": true
+        },
+        {
+          "term": "φij",
+          "heading": false
+        },
+        {
+          "term": "eφi",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed points",
+          "heading": false
+        },
+        {
+          "term": "tangent space",
+          "heading": false
+        },
+        {
+          "term": "integrals",
+          "heading": true
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        }
+      ],
+      "extract": "After the manipulations as in [7][6] we end up with the following integral[28]: Zk(a, ǫ1, ǫ2) = 1 k! ǫk (2πiǫ1ǫ2)k I k Y I=1 dφI Q(φI) P(φI)P(φI + ǫ) Y 1≤I<J≤k φ2 IJ(φ2 IJ −ǫ2) (φ2 IJ −ǫ2 1)(φ2 IJ −ǫ2 2) (3.10) 15 where: Q(x) = Nf Y f=1 (x + mf) P(x) = N Y l=1 (x −al), (3.11) φIJ denotes φI −φJ, and ǫ = ǫ1 + ǫ2. We went slightly ahead of time and presented the formula which covers the case of the gauge theory with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-35-classiﬁcation-of-the-residues",
+      "number": "3.5",
+      "title": "Classiﬁcation of the residues",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxes",
+          "heading": false
+        },
+        {
+          "term": "φij",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": false
+        },
+        {
+          "term": "classiﬁcation",
+          "heading": true
+        },
+        {
+          "term": "lengths",
+          "heading": false
+        }
+      ],
+      "extract": "The poles which with non-vanishing contributions to the integral must have φIJ̸ = 0, for I̸ = J, otherwise the numerator vanishes. This observation simpliﬁes the classiﬁcation of the poles. They are labelled as follows. Let k = k1 + k2 + . . . + kN be a partition of the instanton charge in N summands which have to be non-negative (but may vanish), kl ≥0. In turn, for all l such that kl > 0 let Yl denote a partition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-36-residues-and-ﬁxed-points",
+      "number": "3.6",
+      "title": "Residues and ﬁxed points",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alm",
+          "heading": false
+        },
+        {
+          "term": "instanton",
+          "heading": false
+        },
+        {
+          "term": "point-like",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed",
+          "heading": true
+        },
+        {
+          "term": "type expression",
+          "heading": false
+        },
+        {
+          "term": "mirror",
+          "heading": false
+        },
+        {
+          "term": "sit",
+          "heading": false
+        },
+        {
+          "term": "seiberg-witten",
+          "heading": false
+        }
+      ],
+      "extract": "The poles in the integral (3.10) correspond to the ﬁxed points of the action of the groups G × T2 on the resolved moduli space ˜ Mk,N. Physically they correspond to the U(N) (noncommutative) instantons which split as a sum of U(1) noncommutative instan- tons corresponding to N commuting U(1) subgroups of U(N). The instanton charge kl is the charge of the U(1) instanton in the l’th subgroup. Moreover, these abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-37-the-ﬁrst-three-nonabelian-instantons",
+      "number": "3.7",
+      "title": "The ﬁrst three nonabelian instantons",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alm",
+          "heading": false
+        },
+        {
+          "term": "ǫ1ǫ",
+          "heading": false
+        },
+        {
+          "term": "sls",
+          "heading": false
+        }
+      ],
+      "extract": "We shall now give the formulae for the ﬁrst three instanton contributions to the prepotential for the general SU(N) case, with Nf < 2N. We shall work with ǫ1 = ¯h = −ǫ2. It will be suﬃcient to derive the gauge theory prepotential. Directly applying the rules (3.10)(3.20) we arrive at the following expressions for the moduli integrals: Z1 = 1 ǫ1ǫ2 X l Sl Z2 = 1 (ǫ1ǫ2)2   1 4 X l Sl (Sl(+¯h) + Sl(−¯h)) + 1 2 X l̸=m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-38-four-and-ﬁve-instantons",
+      "number": "3.8",
+      "title": "Four and ﬁve instantons",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "instantons",
+          "heading": true
+        },
+        {
+          "term": "m1m",
+          "heading": false
+        },
+        {
+          "term": "ﬁve",
+          "heading": true
+        }
+      ],
+      "extract": "To collect more “experimental data-points” we have considered in more details the cases of the gauge groups SU(2) and SU(3) with fundamental matter. We have computed explicitly the prepotential for four and ﬁve instantons and found a perfect agreement (yet a few typos) with the results of [13]. We should stress that this is a non-trivial check. Just as an example, we quote here the expression for F5 for SU(2) gauge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-39-adjoint-matter-and-other-matters",
+      "number": "3.9",
+      "title": "Adjoint matter and other matters",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjoint",
+          "heading": true
+        },
+        {
+          "term": "tangent bundle",
+          "heading": false
+        },
+        {
+          "term": "aln",
+          "heading": false
+        },
+        {
+          "term": "matter",
+          "heading": true
+        },
+        {
+          "term": "adjoint representation",
+          "heading": false
+        },
+        {
+          "term": "supercharges",
+          "heading": false
+        }
+      ],
+      "extract": "So far we were discussing N = 2 gauge theories with matter in the fundamental representations. Now we shall pass to other representations. It is simpler to start with the adjoint representation. The ǫ-integrals (3.10) reﬂect both the topology of the moduli space of instantons and also of the matter bundle. The latter is the bundle of the Dirac zero modes in the representation of interest. For the adjoint",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-310-perturbative-part",
+      "number": "3.10",
+      "title": "Perturbative part",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fpert",
+          "heading": false
+        },
+        {
+          "term": "aln",
+          "heading": false
+        },
+        {
+          "term": "finst",
+          "heading": false
+        },
+        {
+          "term": "ǫ1ǫ",
+          "heading": false
+        },
+        {
+          "term": "prepotential",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        }
+      ],
+      "extract": "So far we were calculating the nonperturbative part of the prepotential. It would be nice to see the perturbative part somewhere in our setup, so as to combine the whole expression into something nice. One way is to calculate carefully the equivariant Chern character of the tangent bundle to f Mk along the lines sketched in the end of the previous section[10]. The faster way in the ǫ1 + ǫ2 = 0 case is to note that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-4-m--and-k-theory-inspired-conjectures",
+      "number": "4",
+      "title": "M- and K-theory inspired conjectures",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-theory",
+          "heading": true
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "old story",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we suggest a physical interpretation to the ǫ-deformed prepotential F(a, ǫ1, ǫ2; q). We also conjecture a relation of Z(a, ¯h, −¯h; q) to a tau-function of Toda hierarchy. Philosophy. So far we studied the equivariant cohomology of the instanton moduli space, pushforwards, and localization. The equivariant cohomology is a quasiclassical limit of the equivariant K-theory (in the same sense in which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-41-five-dimensional-viewpoint",
+      "number": "4.1",
+      "title": "Five dimensional viewpoint",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁve dimensional",
+          "heading": false
+        },
+        {
+          "term": "dimensional gauge",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "ale singularity",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld strength",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "four dimensional",
+          "heading": false
+        },
+        {
+          "term": "string coupling",
+          "heading": false
+        }
+      ],
+      "extract": "It was understood long time ago that the instanton corrections to the prepotential of N = 2 gauge theory can be interpreted as one-loop corrections in the ﬁve dimensional theory compactiﬁed on a circle, in the limit of vanishing circle radius [32]. Consider ﬁve dimensional N = 2 gauge theory with the gauge group G, and possibly some matter. Consider a path integral in this theory on the space-time manifold which is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-42-k-theory-viewpoint",
+      "number": "4.2",
+      "title": "K-theory viewpoint",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "βxi",
+          "heading": false
+        },
+        {
+          "term": "aln",
+          "heading": false
+        },
+        {
+          "term": "k-theory",
+          "heading": true
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        }
+      ],
+      "extract": "If we don’t take the limit β →0 we can still give a ﬁnite dimensional expression for (1.6). The collective coordinate quantization leads [32] to the minimal supersymmetric quantum mechanics on g Mk, whose ground states correspond to the harmonic spinors on g Mk. The index (4.1) calculates the equivariant index of Dirac operator on g Mk. The latter has the following Atiyah-Singer expression: Z (a, ǫ1, ǫ2, β; q) = ∞ X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-43-chiral-fermions-and-m5-brane",
+      "number": "4.3",
+      "title": "Chiral fermions and M5 brane",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hcl",
+          "heading": false
+        },
+        {
+          "term": "path integral",
+          "heading": false
+        },
+        {
+          "term": "λ2n",
+          "heading": false
+        },
+        {
+          "term": "chiral",
+          "heading": true
+        },
+        {
+          "term": "ade",
+          "heading": false
+        },
+        {
+          "term": "cuts",
+          "heading": false
+        },
+        {
+          "term": "seiberg-witten",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "Another conjecture relates the expansion (1.6) to the dynamics of the Seiberg-Witten curve9. Denote, as before q = Λ2N. Consider the theory of a free complex chiral fermion ψ, ψ∗, S = Z Σ ψ∗¯∂ψ (4.7) living on the curve Σ: w + Λ2N w = P(λ), P(λ) = N Y l=1 (λ −αl) (4.8) 9 For simplicity we consider the case Nf = 0. The conjecture for Nf > 0 case is easy to guess. 26 embedded into the space C × C∗with the coordinates",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "nekrasov",
+          "heading": false
+        },
+        {
+          "term": "shatashvili",
+          "heading": false
+        },
+        {
+          "term": "khoze",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "dorey",
+          "heading": false
+        },
+        {
+          "term": "mattis",
+          "heading": false
+        },
+        {
+          "term": "losev",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Losev, N. Nekrasov, S. Shatashvili, hep-th/9711108, hep-th/9801061 [2] V. Novikov, M. Shifman, A. Vainshtein, V. Zakharov, Phys. Lett. 217B (1989) 103 [3] N. Seiberg, E. Witten, hep-th/9407087, hep-th/9408099 [4] N. Seiberg, Phys. Lett. 206B (1988) 75 [5] N. Dorey, V.V. Khoze, M.P. Mattis, hep-th/9607066 [6] G. Moore, N. Nekrasov, S. Shatashvili, hep-th/9803265 [7] G. Moore, N. Nekrasov, S. Shatashvili,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "instanton moduli",
+      "heading": false
+    },
+    {
+      "term": "ﬁve instantons",
+      "heading": true
+    },
+    {
+      "term": "instanton charge",
+      "heading": false
+    },
+    {
+      "term": "point-like instantons",
+      "heading": false
+    },
+    {
+      "term": "seiberg-witten prepotential",
+      "heading": false
+    },
+    {
+      "term": "gauge theory",
+      "heading": false
+    },
+    {
+      "term": "instanton integrals",
+      "heading": false
+    },
+    {
+      "term": "supersymmetric gauge",
+      "heading": false
+    },
+    {
+      "term": "instanton measure",
+      "heading": true
+    },
+    {
+      "term": "instanton corrections",
+      "heading": false
+    },
+    {
+      "term": "universal instanton",
+      "heading": false
+    },
+    {
+      "term": "instanton contributions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0206161v1"
+  }
+}

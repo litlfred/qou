@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Gateway_Approved.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Gateway_Approved",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Any approved?",
+      "nodeKind": "exclusive",
+      "bpmnType": "bpmn:ExclusiveGateway",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "inLane": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/lane/Lane_Owner",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_4"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_5",
+        "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_6"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

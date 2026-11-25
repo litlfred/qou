@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2208.13448v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS",
+      "dcterms:creator": [
+        "DREYFUS, THOMAS",
+        "POULET, MARINA"
+      ],
+      "dcterms:issued": "D:20230705",
+      "dcterms:identifier": "https://arxiv.org/abs/2208.13448",
+      "dcterms:abstract": "In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large class of diﬀerenc e operators including the shift operator (Case S), the q-diﬀerence operator (Case Q), the Mahler operator (Case M) a nd the elliptic case (Case E). We show that the general problem c an be reduced to several ancillary problems. We prove criteria to detect the irreduc ible and imprimitive Galois groups. Finally, we give a suﬃcient condition of diﬀerentia l transcendence of solutions of order three diﬀerence equations. We also compute the diﬀe rence Galois group of an equation suggested by Wadim Zudilin.",
+      "dcterms:source": "library/arxiv-2208.13448v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2208.13448v2"
+    }
+  ]
+}

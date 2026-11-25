@@ -1,0 +1,587 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p04",
+  "title": "ant-v14-n7-s-p04",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1791",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Images mod 3, 5, 7 and modularity",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "1792",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-images-mod-3-5-7-and-modularity"
+    },
+    {
+      "level": 1,
+      "title": "Modular curves",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "1793",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-modular-curves"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 6",
+      "number": "5",
+      "page": 4,
+      "pageLabel": "1794",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-proof-of-theorem-6"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 7",
+      "number": "7",
+      "page": 8,
+      "pageLabel": "1798",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-7-proof-of-theorem-7"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "1799",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1791",
+      "labelEnd": "1791",
+      "words": 70,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cubic ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        },
+        {
+          "term": "real cubic",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1791 Elliptic curves over totally real cubic ﬁelds are modular Maarten Derickx, Filip Najman and Samir Siksek We prove that all elliptic curves deﬁned over totally real cubic ﬁelds are modular. This builds on previous work of Freitas, Le Hung and Siksek, who proved modularity of elliptic curves over real quadratic ﬁelds, as well as recent",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p04/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1791",
+      "labelEnd": "1792",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modularity lifting",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        },
+        {
+          "term": "modular curves",
+          "heading": false
+        },
+        {
+          "term": "modularity conjecture",
+          "heading": false
+        },
+        {
+          "term": "lifting theorems",
+          "heading": false
+        },
+        {
+          "term": "breuil",
+          "heading": false
+        },
+        {
+          "term": "real ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "siksek",
+          "heading": false
+        }
+      ],
+      "extract": "Let K be a totally real number ﬁeld and let E be an elliptic curve over K with conductor N. It is conjectured that such a curve E is modular in the following sense: there is a level N Hilbert newform f over K of parallel weight 2 and rational Hecke eigenvalues such that L(E, s) = L(f, s), where the L-function on the left is the Hasse–Weil L-function of E, and the L-function on the right is the Hecke L-function of f.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-images-mod-3-5-7-and-modularity",
+      "number": "2",
+      "title": "Images mod 3, 5, 7 and modularity",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1792",
+      "labelEnd": "1793",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kalyanswamy theorem",
+          "heading": false
+        },
+        {
+          "term": "elliptic curve",
+          "heading": false
+        },
+        {
+          "term": "real ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "real cubic",
+          "heading": false
+        },
+        {
+          "term": "thorne",
+          "heading": false
+        },
+        {
+          "term": "modular",
+          "heading": false
+        },
+        {
+          "term": "modularity",
+          "heading": true
+        }
+      ],
+      "extract": "Let p ≥3 be a prime. Write B(p) for a Borel subgroup of GL2(Fp), and Cs(p) and Cns(p) respectively for a split and nonsplit Cartan subgroup. Let C+ s (p) and C+ ns(p) respectively be their normalizers. The proof of Theorem 2 is based on the fact that a putative nonmodular curve must have small mod p images for p = 3, 5 and 7 simultaneously. We now make the conditions for each prime precise. Theorem 3. Let K be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-modular-curves",
+      "number": "3",
+      "title": "Modular curves",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "1793",
+      "labelEnd": "1794",
+      "words": 911,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncuspidal k-point",
+          "heading": false
+        },
+        {
+          "term": "modular curves",
+          "heading": true
+        },
+        {
+          "term": "noncuspidal point",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        },
+        {
+          "term": "curves deﬁned",
+          "heading": false
+        },
+        {
+          "term": "cubic ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "freitas",
+          "heading": false
+        },
+        {
+          "term": "algebraic curve",
+          "heading": false
+        }
+      ],
+      "extract": "We quickly sketch some background on modular curves; for fuller details the reader may want to consult [Deligne and Rapoport 1973; Freitas et al. 2015, Section 2.2.2; Rohrlich 1997]. Let H∗= H ∪Q ∪{∞} denote the extended upper half-plane. The modular group SL2(Z) acts on H by fractional linear transformations. The quotient SL2(Z)\\H∗is a compact Riemann surface of genus 0, and hence is the analytiﬁcation of a genus 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-proof-of-theorem-6",
+      "number": "5",
+      "title": "Proof of Theorem 6",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "1794",
+      "labelEnd": "1798",
+      "words": 1872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-rational divisor",
+          "heading": false
+        },
+        {
+          "term": "q-rational automorphism",
+          "heading": false
+        },
+        {
+          "term": "irreducible q-rational",
+          "heading": false
+        },
+        {
+          "term": "mordell weil",
+          "heading": false
+        },
+        {
+          "term": "samir siksek",
+          "heading": false
+        },
+        {
+          "term": "filip najman",
+          "heading": false
+        },
+        {
+          "term": "maarten derickx",
+          "heading": false
+        },
+        {
+          "term": "degree model",
+          "heading": false
+        }
+      ],
+      "extract": "Let X = X(b5, b7) (in standard notation denoted by X0(35)). It is known that X has four Q-points and that these are cusps. Let K be a totally real cubic ﬁeld. For the proof of Theorem 6 it will be sufﬁcient to show that X(K) = X(Q). Suppose P ∈X(K)\\X(Q). Let P1, P2, P3 be the conjugates of P given by the three embeddings of K in Q, and write D = P1 + P2 + P3. Then D is an irreducible Q-rational divisor on X of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-7-proof-of-theorem-7",
+      "number": "7",
+      "title": "Proof of Theorem 7",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "1798",
+      "labelEnd": "1799",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "immersion criterion",
+          "heading": false
+        },
+        {
+          "term": "formal immersion",
+          "heading": false
+        },
+        {
+          "term": "derickx",
+          "heading": false
+        },
+        {
+          "term": "write down",
+          "heading": false
+        },
+        {
+          "term": "reductions",
+          "heading": false
+        },
+        {
+          "term": "check",
+          "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we prove Theorem 7 thereby completing the proof of Theorem 2. Recall X = X(b5, ns7). Write X(3) for the third symmetric power of X. We shall prove the following result which immediately implies Theorem 7. Proposition 7.1. X(3)(Q) = {c0, c∞}. Proof. Let x ∈X(3)(Q). By Lemma 6.3 we have (1 −w5)[x −c∞] = ℓ· [c0 −c∞] for some ℓ∈Z/7Z. As w5(c∞) = c0 we may rewrite this as (x −w5(x)) ∼k · (c0 −c∞) for some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "1799",
+      "labelEnd": "1800",
+      "words": 664,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "modular curves",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        },
+        {
+          "term": "hilbert modular",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        },
+        {
+          "term": "barnet-lamb",
+          "heading": false
+        },
+        {
+          "term": "manoharmayum",
+          "heading": false
+        },
+        {
+          "term": "gee",
+          "heading": false
+        }
+      ],
+      "extract": "[Arbarello et al. 1985] E. Arbarello, M. Cornalba, P. A. Grifﬁths, and J. Harris, Geometry of algebraic curves, I, Grundlehren der Math. Wissenschaften 267, Springer, 1985. MR Zbl [Barnet-Lamb et al. 2012] T. Barnet-Lamb, T. Gee, and D. Geraghty, “Congruences between Hilbert modular forms: constructing ordinary lifts”, Duke Math. J. 161:8 (2012), 1521–1580. MR Zbl [Barnet-Lamb et al. 2013] T. Barnet-Lamb, T. Gee,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "elliptic curves",
+      "heading": false
+    },
+    {
+      "term": "modular curves",
+      "heading": true
+    },
+    {
+      "term": "maarten derickx",
+      "heading": false
+    },
+    {
+      "term": "samir siksek",
+      "heading": false
+    },
+    {
+      "term": "filip najman",
+      "heading": false
+    },
+    {
+      "term": "cubic ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "real cubic",
+      "heading": false
+    },
+    {
+      "term": "modular forms",
+      "heading": false
+    },
+    {
+      "term": "curves deﬁned",
+      "heading": false
+    },
+    {
+      "term": "modular abelian",
+      "heading": false
+    },
+    {
+      "term": "hilbert modular",
+      "heading": false
+    },
+    {
+      "term": "kalyanswamy theorem",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1791",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1792",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1793",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1794",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1795",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1796",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1797",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1798",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1799",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1800",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p04"
+  }
+}

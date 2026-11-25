@@ -1,0 +1,340 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-lat-9806003v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "It is possible to calculate spectral correlators analytically in the microscopic limit \\cite{verbaar93,forr93,nagao95}, and to compare the predictions of chRMT with complete spectra of the lattice QCD Dirac operator on reasonably large lattices.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "arXiv:hep-lat/9806003v2 2 Dec 1998 Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec1}\nIt is now well established that Random Matrix Theory (RMT) accurately\nmodels spectral fluctuations in an abundant variety of different\nsystems, such as chaotic, disordered and many--body systems, see the\nreview in Ref.~\\cite{guhr97}. In recent years, RMT has in addition\nbeen successfully introduced into the study of certain aspects of\nQuantum Chromodynamics (QCD). The interest focuses on the spectral\nproperties of the Euclidean Dirac operator.  The eigenvalue equation\nunder consideration reads\n\\begin{equation}\ni\\slash D[A]\\psi_k=\\lambda_k[A]\\psi_k \\ ,\n\\label{eq1}\n\\end{equation}\nwh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-lat/9806003v2  2 Dec 1998\nStatistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac\nspectra\nT. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1\n1Max Planck Institut f¨ur Kernphysik, Postfach 103980, D-69029 Heidelberg, Germany\n2Fachbereich Physik, Universit¨at Kaiserslautern, Theoretische Physik, D-67663 Kaiserslautern, Germany\n(October 15, 2018)\nRandom Matrix Theory (RMT) is a powerful statistical tool to model spectral ﬂuctuations. This\napproach has also found fruitful application in Quantum Chromodynamics (QCD). Importantly,\nRMT provides very eﬃcient means to sepa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complete Dirac spectra in SU(2) gauge theory",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-complete-dirac-spectra-in-su2-gauge-theory.md",
+      "narrative": null,
+      "content": "\\label{sec2}\n\nThe computation of large ensembles of complete spectra of the\nEuclidean Dirac operator for staggered fermions in SU(2) gauge theory\nhas recently been performed Ref.\\cite{MBB98} expanding the numerical\nwork of \\cite{Kalk95}. In lattice gauge theory simulations one\ngenerates a sequence of gauge field configurations distributed\naccording to the Boltzmann weight. On each of the gauge field\nconfigurations the eigenvalue equation (\\ref{eq1}) is solved\nnumerically on the lattice and a distinct partition of eigenvalues is\nobtained.  The lattices have the size $V=L^4$ where $L$ denotes th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data analysis",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-data-analysis.md",
+      "narrative": null,
+      "content": "\\label{sec3}\n\nIn this section we give a detailed analysis of the data introduced in\nthe previous section in the bulk of the spectrum. We start with a\ndescription of the numerical unfolding approaches and their properties\nin Sec.~\\ref{sec31}. After a short discussion of the nearest neighbor\ndistribution in Sec.~\\ref{sec32}, we present data for spectral\ntwo--point correlations at large scales in Sec.~\\ref{sec33}.  From this\nwe identify the equivalent of a Thouless energy.  Furthermore we\ndiscuss higher order correlators, in particular three--point\ncorrelations in Sec.~\\ref{sec34}. A qualitative",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "The ensemble averaged staircase $\\overline{N}(\\lambda)$ for the lattice QCD Dirac operator is shown in Fig.~\\ref{stair}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unfolding",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-31-unfolding.md",
+      "narrative": null,
+      "content": "\\label{sec31}\n\nAs RMT is capable of making predictions for the fluctuations on the\nscale of the mean level spacing, one has to remove the influence of\nthe level density by unfolding the spectra.  The cumulative spectral\nfunction\n\\begin{equation}\nN(\\lambda)=\n        \\int_{-\\infty}^\\lambda d\\lambda^\\prime\n        \\sum_{i=1}^{V/2}\\delta(\\lambda^\\prime-\\lambda_i)\\;,\n\\label{staircase}\n\\end{equation}\nis the number of levels below or at the energy $\\lambda$. It is\nfrequently referred to as staircase function.  It can be separated\ninto an average part $N_{\\rm ave}(\\lambda)$, whose derivative is the\nle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ensemble unfolding",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-311-ensemble-unfolding.md",
+      "narrative": null,
+      "content": "\\label{sec311}\nIn RMT one deals with an ensemble of matrices, where the matrix\nelements of each member are chosen randomly. Spectral observables\npredicted by RMT are calculated as an average over the ensemble.  This\nensemble average is denoted by a bar $\\overline{(\\ldots)}$.  But\nobservables can also be calculated as spectral average, i.e.  one\nperforms a running average over overlapping intervals\n$[\\alpha,\\alpha+L]$ of length $L$ in the spectrum of one member.  In\norder to distinguish it from ensemble average, we denote spectral\naveraging by angular brackets $\\langle\\ldots\\rangle$. In the lim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Configuration unfolding",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-312-configuration-unfolding.md",
+      "narrative": null,
+      "content": "\\label{sec312}\nWe now unfold each configuration separately.  Observables are then\ncalculated for each configuration by running spectral average.\nThereafter we average over the ensemble. The basic characteristics are\nalready obtained for one single configuration, though the statistics\nis considerably improved by ensemble averaging.  This is in the same\nspirit as it was done in spectra of nuclei \\cite{bohigas83} and\ncomplex atoms \\cite{rosen60}.  These spectra were unfolded for each\nnuclei or atom separately.  Then observables were calculated as\ndescribed above, i.e. first taking the spectral an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Windowing",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-313-windowing.md",
+      "narrative": null,
+      "content": "\\label{sec313}\nIdeally, an unfolding procedure should only remove the global\nvariations of the spectral density, i.e. in our case the overall\nbehavior seen in Fig.~\\ref{stair}. For reasons which will become\nclearer later, it is difficult to numerically distinguish the global\nvariations from the local fluctuations. This is in particular the case\nfor data of large lattice size.  In other words, we might have removed\ntoo much by some of the unfolding procedures, while we might have\nremoved too little by others. This will be discussed in great detail\nbelow, especially in Sec.~\\ref{sec35}.\n\nOne has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nearest Neighbor Spacing Distribution",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-32-nearest-neighbor-spacing-distribution.md",
+      "narrative": null,
+      "content": "\\label{sec32}\n\nThe nearest neighbor spacing distribution $P(s)$ probes the\nfluctuations on short scales in the spectra. It is the probability of\nfinding the distance $s$ between adjacent level on the unfolded scale.\nIt contains all correlations of order $k\\ge 2$.  In the case of\ncompletely uncorrelated levels which is referred to as Poisson\nregularity~\\cite{guhr97}, it is given by $P(s)=\\exp(-s)$. In the case\nof GSE type correlations, Wigner surmized the shape\n\\begin{equation}\nP(s)=\\frac{262144}{729\\pi^3}s^4\\exp\\left(-\\frac{64}{9\\pi}s^2\\right)\\;,\n\\end{equation}\nwhich is very close to the exact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two--Point Spectral Correlations",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-33-two--point-spectral-correlations.md",
+      "narrative": null,
+      "content": "\\label{sec33}\n\nIn an interval of length $L$ in units of the mean level spacing, the\nmean number of eigenvalues should be equal to $L$, see\nEq.~(\\ref{meannumber}). The variance of this number is defined by\n\\cite{Mehta}\n\\begin{equation}\n\\Sigma^2(L)=\\overline{\\langle(L-n_{\\alpha}(L))^2\\rangle} \\ .\n\\label{sigma}\n\\end{equation}\nThus, an interval of length $L$ contains on average\n$L\\pm\\sqrt{\\Sigma^2(L)}$ levels.  For uncorrelated Poisson spectra\n$\\Sigma^2(L)=L$. RMT predicts for the number variance stronger\ncorrelations, namely $\\Sigma^2(L)\\sim \\log L$. \n\nAnother important quantity is the spectral r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher Order Spectral Correlations",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-34-higher-order-spectral-correlations.md",
+      "narrative": null,
+      "content": "\\label{sec34}\n\nThe wealth of data allows us to go beyond a previous\nanalysis~\\cite{halasz97} of higher moments of the eigenvalue\npartition,\n\\begin{equation}\n\\mu_k(L)=\\overline{\\langle(L-n_{\\alpha}(L))^k\\rangle}\\;.\n\\label{moments}\n\\end{equation}\nWe notice that $\\mu_2(L)=\\Sigma^2(L)$. The skewness and the excess\n\\cite{Mehta} are defined by\n\\begin{equation}\n\\gamma_1(L)=\\mu_3(L)\\mu_2(L)^{-3/2}\n\\label{skew}\n\\end{equation}\nand\n\\begin{equation}\n\\gamma_2(L)=\\mu_4(L)\\mu_2(L)^{-2}-3 \\ ,\n\\label{excess}\n\\end{equation}\nrespectively.  The comparison of RMT predictions with lattice data for\nthese both quanti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Qualitative discussion of the deviations for configuration unfolding",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-35-qualitative-discussion-of-the-deviations-for.md",
+      "narrative": null,
+      "content": "\\label{sec35}\n\nUsing ensemble unfolding, we find deviations from RMT behavior, which\nscale with the square root of the volume according to the theoretical\npredictions. But as we unfold each configuration separately this\neffect vanishes. There are still deviations left but none of them show\na $\\sqrt{V}$ scaling law.  Moreover, we have a dependence of the\nresults on the unfolding approach.\n\nConcerning local and Gaussian unfolding, an explanation seems to be\neasy at hand. As mentioned above, both procedures have an intrinsic,\nartificial, scale. In units of the mean level spacing it has the value",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "Therefore one should not be tempted to conclude that the saturation seen in Figs.~\\ref{deviate1},\\ref{poly_cut} is the analogue of ``saturation of fluctuation measures'' which was observed in the energy level statistics for classically chaotic systems and was interpreted by Berry in terms of shortest periodic orbits \\cite{berry85}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and discussion",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-4-summary-and-discussion.md",
+      "narrative": null,
+      "content": "\\label{sec4}\n\nAfter summarizing our results in Sec.~\\ref{sec41}, we discuss our\nfindings in Sec.~\\ref{sec42}.\n\n\n\\subsection{Summary}\n\\label{sec41}\n\nWe presented a detailed analysis of statistical properties of complete\neigenvalue spectra for staggered fermions for SU(2) lattice gauge\ntheory for various couplings and lattice volumes. Unfolding the data\nposed certain difficulties which are not encountered in other systems.\nThe staircase function found by an average over the ensemble differs\nin most cases from the smooth staircase of one specific configuration.\nThe deviations are as large as $\\la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 12,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-acknowledgments.md",
+      "narrative": null,
+      "content": "It is a pleasure to thank M.E. Berbenni-Bitsch for her help in\ngenerating the data sets.  We are grateful to C. Mejia, H.J.Pirner, A.\nSch\\\"afer, H.A.  Weidenm\\\"uller and T. Wettig for enlightening\ndiscussions.  We thank H.L. Harney and H. Alt for supplying the data\nset of Ref.~\\cite{graef92} for test purposes. T.G. acknowledges support\nfrom the Heisenberg foundation.  S.M. thanks the MPI f\\\"ur Kernphysik\nfor the hospitality and acknowledges the support by a DFG grant Me\n567/5-3 .\n\n\n\\begin{references}\n\\bibitem{guhr97}        T. Guhr, A. M\\\"uller-Groeling and  H.A. Weidenm\\\"uller,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

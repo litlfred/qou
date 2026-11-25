@@ -1,0 +1,230 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1307.6697v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1\n2.\nThree geometric structures on three manifolds\n4\n3.\nFlag tetrahedra\n5\n4.\nIdeal triangulations by ﬂag tetrahedra\n8\n5.\nHolonomy of a decoration\n9\n6.\nComputational steps\n12\n7.\nAn example: the ﬁgure-eight knot\n16\n8.\nDescription of the unipotent solutions for the ﬁrst hyperbolic manifolds\n20\nReferences\n27\n1. Introduction\nIn this paper we are interested in obtaining representations of the fundamental group of a\n3-manifold into PGL(3, C). They will be deﬁned via certain topological triangulations with\nadditional geometric data carried by the 0-skeleton of the triangulation.\nThe most",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1307.6697v2  [math.RT]  3 Dec 2013\nREPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS\nINTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY.\nE. FALBEL, P.-V. KOSELEFF AND F. ROUILLIER\nAbstract. In this paper we are interested in computing representations of the funda-\nmental group of a 3-manifold into PGL(3, C) (in particular in PGL(2, C), PGL(3, R) and\nPU(2, 1)). The representations are obtained by gluing decorated tetrahedra of ﬂags as in\n[10, 2]. We list complete computations (giving 0-dimensional or 1-dimensional solution\nsets (for unipotent boundary holonomy) for the ﬁrst complete",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three geometric structures on three manifolds",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-three-geometric-structures-on-three-manifolds.md",
+      "narrative": null,
+      "content": "Geometric structures on three manifolds have been extensively studied. The usual setting\nis an action of a Lie group G on a homogeneous 3-manifold X. An (X, G) structure on a\n3-manifold M being a family of charts φi : Ui →X from open subsets forming a cover of M\nwith transition functions gij (given by φj = gji ◦φi) in the Lie group G.\nHyperbolic structures, that is, (H3\nR, PSL(2, C)) structures (where H3\nR is hyperbolic 3-\nspace) were shown by Thurston to be very important and his theory made possible, as a\nfar reaching consequence of his ideas, to solve Poincaré’s conjecture. The boundary of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "[2] The space of generic tetrahedra is biholomorphic to (C \\ {0, 1})4. One can use one cross-ratio coordinate at each vertex, for instance (z12, z21, z34, z43) or (z13, z21, z32, z43). zkl zkj zki k zlk zlj zli l zil zij zik i zjl zji zjk j Figure 1. The cross-ratio coordinates (or z-coordinates). 3.3. Hyperbolic ideal tetrahedra. An ideal hyperbolic tetrahedron is given by 4 points on the boundary of H3 R, i.e. P1(C). Up to the action of PSL(2, C), these points are in homogeneous coordinates [0, 1], [1, 0], [1, 1] and [1, z] – the complex number z being the cross-ratio of these four points. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[10, 2]",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Generic conﬁgurations (up to translations by PU(2, 1)) of four points in S3 not contained in an R-circle are parametrized by generic conﬁgurations of four ﬂags with coordinates zij, 1 ≤i̸ = j ≤4 satisfying the three complex equations zijzji = zkl zlk (3.5.1) E. FALBEL, P.-V. KOSELEFF AND F. ROUILLIER not all of them being real and such that zjizkizli̸ = 1 for each face with vertices {j, k, l}. The conditions (3.5.1) together with relation (3.1.2) imply that the triple ratio of each face satisﬁes |zijk| = 1. For the tetrahedron to be CR we need to verify the condition zijk = −zjizkizli̸ = −1 fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flag tetrahedra",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-flag-tetrahedra.md",
+      "narrative": null,
+      "content": "In this section we recall the parametrization of conﬁgurations of four ﬂags in the projective\nspace CP2 (more details can be seen in [2]). Let V = C3. A ﬂag in V is usually seen as a\nline and a plane, the line belonging to the plane. Using the dual vector space V ∗and the\nprojective spaces P(V ) and P(V ∗), deﬁne the spaces of ﬂags Fl by the following:\nFl\n=\n{([x], [f]) ∈P(V ) × P(V ∗) | f(x) = 0}.\nThe natural action of SL(3, C) on Fl makes us identify the space of ﬂags with the ho-\nmogeneous space SL(3, C)/B, where B is the Borel subgroup of upper-triangular matrices\nin SL(3, C). A generic con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations by flag tetrahedra",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-ideal-triangulations-by-flag-tetrahedra.md",
+      "narrative": null,
+      "content": "We use the deﬁnition of an ideal triangulation of a 3-manifold as it is used usually in\ncomputations with SnapPea. It is a union of 3-simplices K = S\nν Tν with face identiﬁcations\n(which are simplicial maps). We let K(0) be the union of vertices in K. The manifold\nK −K(0) is, topologically, the interior of a compact manifold when the vertices K(0) are\ndeleted. In fact, K −K(0) is an (open) 3-manifold that retracts onto a compact 3-manifold\nwith boundary M (the boundary being the link of K(0)).\nGiven such a compact oriented 3-manifold M with boundary, we call a triangulation K\nas above an ideal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holonomy of a decoration",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-5-holonomy-of-a-decoration.md",
+      "narrative": null,
+      "content": "In this section we recall how to compute the holonomy of a decoration described above\n(see [2] for more details). A decoration of a triangulation of a manifold M gives rise to a\nrepresentation (called holonomy representation)\nρ : π1(M, p0) →PGL(3, C).\nThe base point is not important if we study representations up to conjugation. In fact, each\nsolution of the consistency equations gives a conjugacy class of representations but a special\nchoice of base point and side pairings is needed in explicit computations. The idea is to\n10\nE. FALBEL, P.-V. KOSELEFF AND F. ROUILLIER\nfollow a path in the fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational steps",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-6-computational-steps.md",
+      "narrative": null,
+      "content": "Our goal is to obtain the solutions of the system in the cross-ratio coordinates zij and\nthen compute the holonomy representations. We compute:\n(1) Solving the constraints on gluing decorated tetrahedra, which reduces to study a\nconstructible set deﬁned implicitly by\n(a) The consistency relations which deﬁne Edge and Face equations (4.1),\n(b) The holonomy equations (see section 5),\n(c) The cross-ratio equations (see 3.1),\n(d) The restrictions on the coordinate values, precisely zi,j must be diﬀerent from\n0 and 1.\n(2) Distinguishing hyperbolic, real ﬂags and CR solutions (see 3.5.1)\n(3) Computi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An example: the figure-eight knot",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-7-an-example-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "The ﬁgure eight knot is given as a gluing of two tetrahedra as in Figure 2. We refer to it\nto set the equations of compatibility.\nLet zij and wij be the coordinates associated to the edge ij of each of the tetrahedra.\nWe obtain the edge and face equations:\n(Le)\n\n\n\n\n\n\n\nz23w24z13w31z14w21\n=\n1\nz32w42z31w13z41w12\n=\n1\nz24w23z21w43z34w41\n=\n1\nz42w32z12w34z43w14\n=\n1.\n(Lf)\n\n\n\n\n\n\n\nz21z31z41w21w31w41\n=\n1\nz12z32z42w13w23w43\n=\n1\nz13z23z43w12w32w42\n=\n1\nz14z24z34w14w24w34\n=\n1.\n7.1. Boundary holonomy representation. The meridian and the longitude are com-\nputed from the Snappea triangulation. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-8-description-of-the-unipotent-solutions-for-the.md",
+      "narrative": null,
+      "content": "As explained in the last section we solve the system consisting of compatibility equations\nand the unipotent holonomy conditions plus the inequalities which prevent the z-coordinates\nto be 0 or 1. The solutions will, in turn, give rise to representations in PSL(3, C).\nWe have computed an exhaustive list of solutions for the eleven ﬁrst 3-manifolds and for\nthe Whitehead link complement. Their main properties are summarized in the Table 1. For\nthese examples the dimension of solutions is at most 1 and there are always isolated solutions\nbesides the hyperbolic one. Five of them are 0-dimensional:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1307.6697v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[1] P. Aubry, D. Lazard, and M. Moreno Maza. On the theories of triangular sets. J. of Symbolic Compu-\ntation, 28(1):105–124, 1999.\n[2] N. Bergeron,\nE. Falbel, and A. Guilloux. Tetrahedra of ﬂags, volume and homology of sl(3).\narXiv:1101.2742, 2011.\n[3] N. Bergeron, E. Falbel, A. Guilloux, P. V. Koseleﬀ, and F. Rouillier. Local rigidity for sl(3,c) represen-\ntations of 3-manifold groups. Exp. Math., To appear 2013.\n[4] Y. Bouzidi, S. Lazard, M. Pouget, and F. Rouillier. Rational univariate representations of bivariate\nsystems and applications. In ISSAC, pages 109–116, 2013.\n[5] M. Bucher-Karls",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

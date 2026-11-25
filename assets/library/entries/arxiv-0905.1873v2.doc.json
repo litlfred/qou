@@ -1,0 +1,415 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0905.1873v2",
+  "title": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 842,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "many-body forces",
+          "heading": false
+        },
+        {
+          "term": "srg",
+          "heading": false
+        },
+        {
+          "term": "higher-body potentials",
+          "heading": false
+        },
+        {
+          "term": "induced many-body",
+          "heading": false
+        },
+        {
+          "term": "similarity renormalization",
+          "heading": false
+        },
+        {
+          "term": "a-body",
+          "heading": false
+        },
+        {
+          "term": "improved convergence",
+          "heading": false
+        },
+        {
+          "term": "livermore",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0905.1873v2 [nucl-th] 17 Aug 2009 Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group E.D. Jurgenson,1 P. Navr´atil,2 and R.J. Furnstahl1 1Department of Physics, The Ohio State University, Columbus, OH 43210, USA 2Lawrence Livermore National Laboratory, P.O. Box 808, L-414, Livermore, CA 94551, USA The ﬁrst practical method to evolve many-body nuclear forces to softened form using",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0905.1873v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 770,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial nnn",
+          "heading": false
+        },
+        {
+          "term": "srg evolution",
+          "heading": false
+        },
+        {
+          "term": "ground-state energy",
+          "heading": false
+        },
+        {
+          "term": "induced four-body",
+          "heading": false
+        },
+        {
+          "term": "nmax",
+          "heading": false
+        },
+        {
+          "term": "evolution parameter",
+          "heading": false
+        },
+        {
+          "term": "color online",
+          "heading": false
+        },
+        {
+          "term": "harmonic oscillator",
+          "heading": false
+        }
+      ],
+      "extract": "Our calculations are performed in the Jacobi coordi- nate harmonic oscillator (HO) basis of the No-Core Shell Model (NCSM) [14]. This is a translationally invariant, anti-symmetric basis for each A, with a complete set of states up to a maximum excitation of NmaxℏΩabove the minimum energy conﬁguration, where Ωis the harmonic oscillator parameter. The procedures used here build di- rectly on Ref. [13], which presents",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0905.1873v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "srg evolved",
+          "heading": false
+        },
+        {
+          "term": "nnn interaction",
+          "heading": false
+        },
+        {
+          "term": "initial nnn",
+          "heading": false
+        },
+        {
+          "term": "srg calculations",
+          "heading": false
+        },
+        {
+          "term": "size nmax",
+          "heading": false
+        },
+        {
+          "term": "conver gence",
+          "heading": false
+        },
+        {
+          "term": "initial three-body",
+          "heading": false
+        },
+        {
+          "term": "l-s",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE I: Deﬁnitions of the various calculations. NN-only No initial NNN interaction and do not keep NNN-induced interaction. NN + NNN-induced No initial NNN interaction but keep the SRG-induced NNN interaction. NN + NNN Include an initial NNN interaction and keep the SRG-induced NNN interaction. served in all SRG calculations of light nuclei [3]. When the induced NNN is included, the evolution is close to unitary",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0905.1873v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "navr atil",
+          "heading": false
+        },
+        {
+          "term": "srg",
+          "heading": false
+        },
+        {
+          "term": "tjon line",
+          "heading": false
+        },
+        {
+          "term": "bogner",
+          "heading": false
+        },
+        {
+          "term": "nnn",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "perry",
+          "heading": false
+        }
+      ],
+      "extract": "7.6 7.8 8 8.2 8.4 8.6 8.8 Eb( 3H) [MeV] 24 25 26 27 28 29 30 Eb( 4He) [MeV] Tjon line for NN-only potentials SRG NN-only SRG NN+NNN (λ >1.7 fm −1) 8.45 8.5 28.2 28.3 28.4 28.5 N 3LO λ=3.0 λ=1.2 λ=2.5 λ=1.5 λ=2.0 λ=1.8 Expt. (500 MeV) FIG. 5: (Color online) Binding energy of the alpha particle vs. the binding energy of the triton. The Tjon line from phe- nomenological NN potentials (dotted) is compared with the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0905.1873v2/blocks/prose-page-004"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "srg evolved",
+      "heading": false
+    },
+    {
+      "term": "srg calculations",
+      "heading": false
+    },
+    {
+      "term": "srg evolution",
+      "heading": false
+    },
+    {
+      "term": "initial nnn",
+      "heading": false
+    },
+    {
+      "term": "nnn interaction",
+      "heading": false
+    },
+    {
+      "term": "induced nnn",
+      "heading": false
+    },
+    {
+      "term": "induced four-body",
+      "heading": false
+    },
+    {
+      "term": "initial three-body",
+      "heading": false
+    },
+    {
+      "term": "many-body forces",
+      "heading": false
+    },
+    {
+      "term": "ground-state energy",
+      "heading": true
+    },
+    {
+      "term": "four-body contribution",
+      "heading": false
+    },
+    {
+      "term": "size nmax",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "(Color online) Ground-state energy of 3H as a func-",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(Color online) Ground-state energy of 4He as a func-",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "(Color online) Ground-state energy of 3H as a func-",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(Color online) Ground-state energy of 4He as a func-",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "(Color online) Binding energy of the alpha particle vs. the binding energy of the triton. The Tjon line from phenomenological NN potentials (dotted) is compared with the trajectory of SRG energies when only the NN interaction is kept (circles)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 4,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0905.1873v2"
+  }
+}

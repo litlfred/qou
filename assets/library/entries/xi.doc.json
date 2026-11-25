@@ -1,0 +1,212 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "xi",
+  "title": "Cellular algebras",
+  "variant": "pdf",
+  "pages": 1,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 34,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beijing",
+          "heading": false
+        },
+        {
+          "term": "bnu",
+          "heading": false
+        },
+        {
+          "term": "changchang",
+          "heading": false
+        }
+      ],
+      "extract": "Advanced school and conference on representation theory and related topics. ICTP, Trieste. Jan. 9-28, 2005 Cellular algebras Changchang Xi School of Mathematical Sciences, Beijing Normal University, 100875 Beijing, People’s Republic of China; E-mail: xicc@bnu.edu.cn",
+      "extractCut": false,
+      "blocks": [
+        "library/xi/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "lehrer",
+          "heading": false
+        },
+        {
+          "term": "graham",
+          "heading": false
+        },
+        {
+          "term": "lectures",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": false
+        },
+        {
+          "term": "mathematics",
+          "heading": false
+        },
+        {
+          "term": "physics",
+          "heading": false
+        }
+      ],
+      "extract": "This is a series of 4 lectures on cellular algebras. In the lectures we introduce the theory of cellular algebras which were deﬁned ﬁrst by Graham and Lehrer in 1996 to deal systematically with parameterizing irreducible representations of algebras and related problems. If a ﬁnite-dimensional algebra is given by quiver with relations, the irreducible representations over such an algebra are very easy to describe.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cellular algebras",
+      "heading": false
+    },
+    {
+      "term": "irreducible representations",
+      "heading": false
+    },
+    {
+      "term": "representation theory",
+      "heading": false
+    },
+    {
+      "term": "beijing",
+      "heading": false
+    },
+    {
+      "term": "lehrer",
+      "heading": false
+    },
+    {
+      "term": "graham",
+      "heading": false
+    },
+    {
+      "term": "lectures",
+      "heading": false
+    },
+    {
+      "term": "school",
+      "heading": false
+    },
+    {
+      "term": "mathematics",
+      "heading": false
+    },
+    {
+      "term": "physics",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/xi"
+  }
+}

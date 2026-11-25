@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/du-fu-quantum-gln-qschur-survey",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts",
+      "dcterms:creator": [
+        "COUNTERPARTS, INFINITE/INFINITESIMAL"
+      ],
+      "dcterms:issued": "D:20071012",
+      "dcterms:abstract": "We present a survey of recent developments of the Beilinson–Lusztig–MacPherson approach in the study of quantum gln, inﬁnitesimal quantum gln, quantum gl∞and their associated q-Schur algebras, little q-Schur algebras and inﬁnite q-Schur algebras. We also use the relationship between quantum gl∞and inﬁnite q-Schur algebras to discuss their representations.",
+      "dcterms:source": "library/du-fu-quantum-gln-qschur-survey/manifest.jsonld",
+      "dcterms:hasVersion": "library/du-fu-quantum-gln-qschur-survey"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2302.05903v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
+      "dcterms:creator": [
+        "Mironovb, A.",
+        "c",
+        "1, d",
+        "Morozova, A.",
+        "c",
+        "2, d"
+      ],
+      "dcterms:issued": "D:20230703",
+      "dcterms:identifier": "https://arxiv.org/abs/2302.05903",
+      "dcterms:abstract": "We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.",
+      "dcterms:source": "library/arxiv-2302.05903v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2302.05903v2"
+    }
+  ]
+}

@@ -1,0 +1,845 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2111.12409v4",
+  "title": "On the generalisation of Roth’s theorem",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 2,
+      "title": "History",
+      "number": "0.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-01-history"
+    },
+    {
+      "level": 2,
+      "title": "Results in this paper",
+      "number": "0.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-02-results-in-this-paper"
+    },
+    {
+      "level": 1,
+      "title": "Adelic curves",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-1-adelic-curves"
+    },
+    {
+      "level": 1,
+      "title": "The interpolating polynomial",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-the-interpolating-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "Integral estimates",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-integral-estimates"
+    },
+    {
+      "level": 1,
+      "title": "Roth's theorem for adelic curves (A)",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-roths-theorem-for-adelic-curves-a"
+    },
+    {
+      "level": 1,
+      "title": "Roth's theorem for adelic curves (B)",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-roths-theorem-for-adelic-curves-b"
+    },
+    {
+      "level": 1,
+      "title": "Appendices",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-appendices"
+    },
+    {
+      "level": 1,
+      "title": "A Construction of the interpolating polynomial",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-a-construction-of-the-interpolating-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 15,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:2111.12409v4 [math.NT] 13 May 2023 On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2111.12409v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-01-history",
+      "number": "0.1",
+      "title": "History",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "overline mathscr",
+          "heading": false
+        },
+        {
+          "term": "big polarisation",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "ldots overline",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "cite bom",
+          "heading": false
+        },
+        {
+          "term": "spec mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{hi} The celebrated Roth's theorem proved in \\cite{roth} asserts that the irrationality measure of a real algebraic number is $2$. An equivalent, but more detailed statement is the following: \\begin{thm}[Roth] Let $\\alpha$ be a real algebraic number and let $\\varepsilon>0$ be a real number. Then there exists a real constant $C(\\alpha,\\varepsilon)>0$ such that for every pair of coprime integers $(p,q)$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-02-results-in-this-paper",
+      "number": "0.2",
+      "title": "Results in this paper",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1077,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proper adelic",
+          "heading": false
+        },
+        {
+          "term": "adelic curves",
+          "heading": false
+        },
+        {
+          "term": "equicontinuity condition",
+          "heading": false
+        },
+        {
+          "term": "vert omega",
+          "heading": false
+        },
+        {
+          "term": "beta omega",
+          "heading": false
+        },
+        {
+          "term": "ref vojta",
+          "heading": false
+        },
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "alpha vert",
+          "heading": false
+        }
+      ],
+      "extract": "The goal of this paper is to generalise Roth's theorem in a wider framework which includes Corvaja's and Vojta's settings. The theory of adelic curves introduced by Chen and Moriwaki in \\cite{Ch-Mo} provides such natural framework: an adelic curve $\\mathbb X$ consists of a field $\\mathbb K$ of characteristic $0$ and a measure space $(\\Omega,\\mathcal A, \\mu)$ endowed with a function $\\phi:\\omega\\mapsto \\vert\\cdot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-1-adelic-curves",
+      "number": "1",
+      "title": "Adelic curves",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 2132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adelic curves",
+          "heading": true
+        },
+        {
+          "term": "vert omega",
+          "heading": false
+        },
+        {
+          "term": "proper adelic",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "mathbb omega",
+          "heading": false
+        },
+        {
+          "term": "cdot vert",
+          "heading": false
+        },
+        {
+          "term": "overline omega",
+          "heading": false
+        },
+        {
+          "term": "int omega",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{introad} We will use the following notations throughout the whole paper: $$\\log^+ x := \\max\\{0, \\log x\\}\\,,\\quad \\log^- x := \\min\\{0, \\log x\\}\\,;\\quad\\forall x\\in \\mathbb R_{>0}$$ In this section we closely follow \\cite[Chapter 3]{Ch-Mo}. For simplicity we restrict to the characteristic $0$ case, but all the definitions work also in positive characteristic. \\begin{defn}\\label{AdCu} Let $\\mathbb K$ be a field",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-the-interpolating-polynomial",
+      "number": "2",
+      "title": "The interpolating polynomial",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb colon",
+          "heading": false
+        },
+        {
+          "term": "adelic curve",
+          "heading": false
+        },
+        {
+          "term": "leq right",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "gamma frac",
+          "heading": false
+        },
+        {
+          "term": "componentwise different",
+          "heading": false
+        },
+        {
+          "term": "polynomial delta",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{aux} We fix a proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\phi)$ and an algebraic closure of $\\mathbb K$. In this section we recall the existence of an interpolating polynomial $\\delta\\in\\mathbb K[X_1,\\ldots,X_N]$ associated to some elements $\\bm{\\alpha}_1,\\ldots,\\bm{\\alpha}_n\\in\\mathbb K^N$ having some explicit bounds on: the degree, the $\\bm{d}$-index at all the $\\bm{\\alpha}_j$'s and the height. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-integral-estimates",
+      "number": "3",
+      "title": "Integral estimates",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 2642,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vdots alpha",
+          "heading": false
+        },
+        {
+          "term": "pmatrix alpha",
+          "heading": false
+        },
+        {
+          "term": "ldots alpha",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "frac eta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{estimates} This technical section is ``the heart'' of the proof of our results since here we will prove some integral bounds for very particular integrable functions $\\theta:S\\subset\\Omega\\to \\mathbb R_{\\ge 0}$. We continue with all the notations fixed in section \\ref{aux} since we want to make full use of Proposition \\ref{interpolationpoly}. Consider an adelic curve $(\\mathbb K,\\Omega, \\phi)$ and a set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-roths-theorem-for-adelic-curves-a",
+      "number": "4",
+      "title": "Roth's theorem for adelic curves (A)",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1976,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta vert",
+          "heading": false
+        },
+        {
+          "term": "vert omega",
+          "heading": false
+        },
+        {
+          "term": "alpha vert",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "vert iota",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        },
+        {
+          "term": "left vert",
+          "heading": false
+        },
+        {
+          "term": "ldots beta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{mainsect} \\begin{defn}\\label{st_muequi} A proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\mu)$ satisfies the \\emph{ strong $\\mu$-equicontinity condition} if for any measurable set $S\\subset\\Omega$ of finite measure and any real number $\\varepsilon>0$ there exists a finite measurable cover $C_1,\\ldots, C_m$ of $S$ satisfying the following conditions: for all $\\beta\\in\\mathbb K^\\times$ there exists a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-roths-theorem-for-adelic-curves-b",
+      "number": "5",
+      "title": "Roth's theorem for adelic curves (B)",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert omega",
+          "heading": false
+        },
+        {
+          "term": "vert beta",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "adelic",
+          "heading": true
+        },
+        {
+          "term": "alpha vert",
+          "heading": false
+        },
+        {
+          "term": "vert zeta",
+          "heading": false
+        },
+        {
+          "term": "vert frac",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{mainsect2} We weaken Definition \\ref{st_muequi} by requiring the ``equicontinuity property'' outside from sets of arbitrary small measure: \\begin{defn}\\label{muequi} A proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\mu)$ satisfies the \\emph{$\\mu$-equicontinuity condition} if for any measurable set $S\\subset\\Omega$ of finite measure and any real numbers $\\varepsilon,\\delta>0$ there exists a finite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendices",
+      "number": null,
+      "title": "Appendices",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-a-construction-of-the-interpolating-polynomial",
+      "number": null,
+      "title": "A Construction of the interpolating polynomial",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interpolating polynomial",
+          "heading": true
+        },
+        {
+          "term": "maximal rank",
+          "heading": false
+        },
+        {
+          "term": "cor",
+          "heading": false
+        },
+        {
+          "term": "construction",
+          "heading": true
+        },
+        {
+          "term": "columns",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": false
+        },
+        {
+          "term": "thanks",
+          "heading": false
+        }
+      ],
+      "extract": "Construction of the interpolating polynomial In this appendix we will sketch the construction of the interpolating polynomial δ of section 2. For all the details the reader can check [Cor97]. We employ the same notations of section 2. We are going to construct a complicated matrix A(X) depending on the following parameters: s, t1, . . . , tn ∈R, with 0 < s < 1 and 0 < th < N 2 for h = 1, . . . , n. The columns of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "diophantine geometry",
+          "heading": false
+        },
+        {
+          "term": "cambridge univ",
+          "heading": false
+        },
+        {
+          "term": "bombieri",
+          "heading": false
+        },
+        {
+          "term": "moriwaki",
+          "heading": false
+        },
+        {
+          "term": "van der",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "corvaja",
+          "heading": false
+        }
+      ],
+      "extract": "[BG06] E. Bombieri and W. Gubler. Heights in diophantine geometry. Cambridge University Press, Cambridge New York, 2006. [BvdP88] E. Bombieri and A. J. van der Poorten. Some quantitative results related to Roth’s theorem. J. Austral. Math. Soc. Ser. A, 45(2):233–248, 1988. [BvdP90] E. Bombieri and A. J. van der Poorten. Corrigenda: “Some quantitative results related to Roth’s theorem”. J. Austral. Math. Soc. Ser. A,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "alpha vert",
+      "heading": false
+    },
+    {
+      "term": "vert omega",
+      "heading": false
+    },
+    {
+      "term": "beta vert",
+      "heading": false
+    },
+    {
+      "term": "log vert",
+      "heading": false
+    },
+    {
+      "term": "mathbb omega",
+      "heading": false
+    },
+    {
+      "term": "alpha ldots",
+      "heading": false
+    },
+    {
+      "term": "adelic curve",
+      "heading": false
+    },
+    {
+      "term": "vert frac",
+      "heading": false
+    },
+    {
+      "term": "proper adelic",
+      "heading": false
+    },
+    {
+      "term": "right vert",
+      "heading": false
+    },
+    {
+      "term": "left vert",
+      "heading": false
+    },
+    {
+      "term": "overline omega",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2111.12409v4"
+  }
+}

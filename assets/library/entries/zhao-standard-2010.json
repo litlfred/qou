@@ -1,0 +1,892 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "zhao-standard-2010",
+  "blocks": [
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Documenta Math.\n1\nStandard Relations of Multiple Polylogarithm\nValues at Roots of Unity\nDedicated to Prof. Keqin Feng on his 70th birthday\nJianqiang Zhao\nReceived: July 24, 2009\nRevised: January 5, 2010\nCommunicated by Takeshi Saito\nAbstract.\nLet N be a positive integer.\nIn this paper we shall\nstudy the special values of multiple polylogarithms at Nth roots of\nunity, called multiple polylogarithm values (MPVs) of level N. Our\nprimary goal in this paper is to investigate the relations among the\nMPVs of the same weight and level by using the regularized double\nshuﬄe relations, regularized distri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n2\n1.1\nMultiple polylog values at roots of unity . . . . . . . . . . . . .\n3\n1.2\nStandard relations of MPVs . . . . . . . . . . . . . . . . . . . .\n4\n1.3\nMain results . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n5\n1.4\nAcknowledgment . . . . . . . . . . . . . . . . . . . . . . . . . .\n6\n2\nThe double shuffle relations and the algebra A\n6\n3\nWeight one relations\n10\n4\nRegularized distribution relations\n10\n5\nLifted relations from lower weights\n14\n6\nSome conjectures of FDS and RDS\n16\n7\nThe structure of MPVs and some examples\n17\n7.1\nWeight one\n. . . . . . . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiple polylog values at roots of unity",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-multiple-polylog-values-at-roots-of-unity.md",
+      "narrative": null,
+      "content": "Multiple polylog values at roots of unity\nIn this paper, the primary objects of study are the multiple polylog values at\nroots of unity (MPVs). These special values, MZVs and the alternating Euler\nsums in particular, have attracted a lot attention in recent years after they were\nfound to be connected to many branches of mathematics and physics (see, for\ne.g., [7, 8, 10, 11, 15, 19, 28]). Results up to around year 2000 can be found in\nthe comprehensive survey paper [6].\nStarting from early 1990s Hoﬀman [21, 22] has constructed some quasi-shuﬄe\n(called stuﬄe in [6]) algebras reﬂecting the essent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/def-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "def-sec-002-01.md",
+      "narrative": null,
+      "content": "We call a Q-linear relation between MPVs standard1 if it can be produced by some Q-linear combinations of the following four families of relations: regularized double shuﬄe relations (RDS), regularized distribution relations (RDT), weight one relations, and lifted relations from the above. Otherwise, it is called a non-standard relation. It is commonly believed that all linear relations among MPVs (i.e. levels one MPVs) are consequences of RDS. When level N = 2 we believe that all lin- ear relations among the alternating Euler sums are consequences of RDS and RDT. Further, in this case, the RD",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard relations of MPVs",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-standard-relations-of-mpvs.md",
+      "narrative": null,
+      "content": "Standard relations of MPVs\nIf the level N\n> 3 then there are many non-trivial linear relations in\nMPV(1, N) of weight one whose structure is clear to us. Multiplied by MPVs\nof weight w −1 these relations can produce non-trivial linear relations among\nMPVs of weight w which are called the weight one relations. Similar to these\nrelations one may produce new relations by multiplying MPVs on all of the\nother types of relations among MPVs of lower weights. We call such relations\nlifted relations.\nIt is well-known that among MPVs there are the so-called ﬁnite distribution\nrelations (FDT), see (14).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-main-results.md",
+      "narrative": null,
+      "content": "Main results\nThe main goal of this paper is to provide some extensive numerical evidence\nconcerning the (in)completeness of the standard relations. Namely, these re-\nlations in general are not enough to produce all the Q-linear relation between\nMPVs (see Remark 8.2 and Conjecture 8.5); however, we have the following\nresult (see Thm. 8.6 and Thm. 8.3).\nTheorem 1.2. Let p ≥5 be a prime. Then d(2, p) ≤(5p + 7)(p + 1)/24 and\nd(2, p2) < (p2 −p + 2)2/4. If a variant of Grothendieck’s period conjecture [17,\n5.27(c)] is true then the equality holds for d(2, p) and the standard relations in\nMPV(2, p) i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Let p ≥5 be a prime. Then d(2, p) ≤(5p + 7)(p + 1)/24 and d(2, p2) < (p2 −p + 2)2/4. If a variant of Grothendieck’s period conjecture [17, 5.27(c)] is true then the equality holds for d(2, p) and the standard relations in MPV(2, p) imply all the others. If weight w = 2 and N = 52, 72, 112, 132 or 53, then our computation (see Table 1) shows that the standard relations are very likely to be complete. However, if N > 3 is a 2-power or 3-power or has at least two distinct prime factors then the standard relations are often incomplete. Moreover, we don’t know how to obtain the non-standard relatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "If the conjecture in [17, 5.27(c)] is true then all the linear relations among MPVs of level four and weight three (resp. weight four) are the consequences of the standard relations and the octahedral relation (53) (resp. the ﬁve octahedral relations (54)-(58)). Most of the MPV identities in this paper are discovered with the help of MAPLE using symbolic computations. We have veriﬁed all relations numeri- cally by GiNaC [27] with an error bound < 10−90. Some results contained in this paper were announced in [30]. 1This term was suggested by P. Deligne in a letter to Goncharov and Racinet dated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/def-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "def-sec-005-05.md",
+      "narrative": null,
+      "content": "Let w be a positive integer such that w ≥2. For nontrivial ω1, ω2 ∈A0 with lg(ω1) + lg(ω2) = w one says that Z(ω1xω2 −ω1 ∗ω2) = 0 (9) is a ﬁnite double shuﬄe relation (FDS) of weight w. It is known that even in level one these relations are not enough to provide all the relations among MZVs. However, it is believed that one can remedy this by considering regularized double shuﬄe relation (RDS) produced by the following mechanism. This is explained in detail in [24] when Ihara, Kaneko and Zagier consider MZVs where they call these extended double shuﬄe relations or EDS. It is also contained in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/def-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "def-sec-005-07.md",
+      "narrative": null,
+      "content": "Let w be a positive integer such that w ≥2. Let (s|i) be any index set with the weight of s equal to w. Then every weight w MPV relation produced by (10) is called a regularized double shuﬄe relation (RDS) of weight w. This is obtained by formally setting T = 0 in (10).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "([12, (1.5.1)]) Let ωi (i ≥1) be C-valued 1-forms on a manifold M. For every path p, Z p ω1 · · · ωr Z p ωr+1 · · · ωr+s = Z p (ω1 · · · ωr)x(ωr+1 · · · ωr+s) where x is the shuﬄe product deﬁned by (ω1 · · · ωr)x(ωr+1 · · · ωr+s) := X σ∈Sr+s,σ−1(1)<···<σ−1(r) σ−1(r+1)<···<σ−1(r+s) ωσ(1) · · · ωσ(r+s). For example, one has LN(1|1)LN(2, 3|1, 2) = Z(y1,1)Z(y2,1y3,3) = Z(b1x(ab1a2b3)) =Z(b1ab1a2b3 + 2ab2 1a2b3 + (ab1)2ab3 + ab1a2b1b3 + ab1a2b3b1) =Z(y1,1y2,1y3,3 + 2y2,1y1,1y3,3 + y2 2,1y2,3 + y2,1y3,1y1,3 + y2,1y3,3y1,1) =LN(1, 2, 3|1, 0, 2) + 2LN(2, 1, 3|1, 0, 2) + LN(2, 2, 2|1, 0, 2) + LN(2, 3,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "The map Z : A0x −→C is an algebra homomorphism. On the other hand, MPVs are known to satisfy the series stuﬄe relations. For example LN(2|5)LN(3|4) = LN(2, 3|5, 4) + LN(3, 2|4, 5) + LN(5|9). To study such relations in general one has the following deﬁnition. Documenta Mathematica 15 (2010) 1–34 Jianqiang Zhao",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "(cf. [22, Thm. 2.1]) The polynomial algebra A1 ∗is a commu- tative graded Q-algebra. Now one can deﬁne the subalgebra A0 ∗similar to A0x by replacing the shuﬄe product by the stuﬄe product. Then by induction on the lengths and using the series deﬁnition one can quickly check that for any ω1, ω2 ∈A0 ∗ Z(ω1)Z(ω2) = Z(ω1 ∗ω2). This implies that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "The map Z : A0 ∗−→C is an algebra homomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-acknowledgment.md",
+      "narrative": null,
+      "content": "Acknowledgment\nThis work was started while I was visiting Chern Institute of Mathematics\nat Nankai University and the Morningside Center of Mathematics at Beijing,\nChina in the summer of 2007. The paper was revised later while I was visiting\nthe Institute for Advanced Study and the Max Planck Institut f¨ur Mathematik.\nI’d like to thank the above institutions for their generous support, and in partic-\nular to Chengming Bai and Fei Xu for their hospitality. Thanks are also due to\nP. Deligne for his patient explanation of [17] and many insightful remarks, to J.\nVollinga and J.A.M. Vermaseren for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The double shuffle relations and the algebra A",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-2-the-double-shuffle-relations-and-the-algebra-a.md",
+      "narrative": null,
+      "content": "The double shuffle relations and the algebra A\nIn this section we recall the procedure to transform the shuﬄe relations among\nMPVs into some pure algebra structures.\nThis is a rather straight-forward\nvariation of a theme ﬁrst studied by Hoﬀman for MZVs (see, for e.g., [22, 23])\nand then further developed by Ihara et al. in [24] and by Racinet in [26].\nMost of the results in this section are well-known but we include them for the\nconvenience of the reader.\nIt is Kontsevich [25] who ﬁrst noticed that MZVs can be represented by iterated\nintegrals. One can easily extend this to MPVs [26]. Set\na =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "thm-sec-005-06.md",
+      "narrative": null,
+      "content": "(cf. [26, Cor. 2.24]) Deﬁne a C-linear map ρ : C[T ] →C[T ] by ρ(eT u) = exp ∞ X n=2 (−1)n n ζ(n)un ! eT u, |u| < 1. Then for any index set (s|i) one has Zx (s|i)(T ) = ρ(Z∗ (s|i)(T )). (10)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "conj-sec-007-05.md",
+      "narrative": null,
+      "content": "In weight two, all RDT are consequences of the weight one relations, RDS and depth two FDT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "([26, Prop.2.11]) The series Icv := lima→0+,b→1−πcv(I[a,b]) is group-like in (C⟨⟨X⟩⟩cv, ∆).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "([26, Prop.2.26]) For every divisor d of N pd ∗(I) = exp   X σd=1,σ̸=1 Li1(σ)x1  i∗ d(I). (18) Combined with Proposition 4.3 the above result provides the so-called regular- ized distribution relations (RDT) which of course include all the FDT of MPVs given by (14). However, sometimes FDT are not independent of the other relations. In the next theorem one sees that when the weight w = 2 and level N is a prime, all the distribution relations in (14), where xj = 1 for all j, are consequences of RDS of MPVs of level N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weight one relations",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-3-weight-one-relations.md",
+      "narrative": null,
+      "content": "Weight one relations\nWhen N ≥4 there exist linear relations among MPVs of weight one by a\ntheorem of Bass [1]. These relations are important because by multiplying any\nMPV of weight w −1 by such a relation one can get a relation between MPVs\nof weight w which is called a weight one relation. This is one of the key ideas\nin ﬁnding the formula in [17, 5.25] concerning d(w, N).\nClearly, there are N −1 MPVs of weight 1 and level N:\nLN(1|j) = −log(1 −µj),\n0 < j < N,\nwhere µ = µN = exp(2π√−1/N) as before. Here one can take C −(−∞, 0]\nas the principle branch of the logarithm. Further, it follows from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularized distribution relations",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-4-regularized-distribution-relations.md",
+      "narrative": null,
+      "content": "Regularized distribution relations\nIt is well-known that multiple polylogs satisfy the following distribution formula\n(cf. [26, Prop. 2.25]):\nLis1,...,sn(x1, . . . , xn) = ds1+···+sn−n\nX\nyd\nj =xj,1≤j≤n\nLis1,...,sn(y1, . . . , yn),\n(14)\nDocumenta Mathematica 15 (2010) 1–34\nRelations of Multiple Polylogarithm Values\n11\nfor all positive integer d. When s1 = 1 one has to exclude the divergent case\nx1 = 1.\nWe call these ﬁnite distribution relations (FDT). Racinet further\nconsiders the regularized version of these relations, which we now recall brieﬂy.\nFix an embedding µN֒ →C and denote by Γ its ima",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "This proposition provides the recursive relations one may use to compute all the coeﬃcients of I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "thm-sec-007-04.md",
+      "narrative": null,
+      "content": "For any prime p write L(i, j) = Lp(1, 1|i, j) and D(i) = Lp(2|i). Deﬁne for 1 ≤i, j < p: FDT := −D(0) + p p−1 X j=0 D(j), RDS(i) := D(i) + L(i, 0) −L(i, −i), FDS(i, j) := D(i + j) + L(i, j) + L(j, i) −L(i, j −i) −L(j, i −j). Then one has FDT = X 1≤i<p FDS(i, i) + 2 X 1≤j<i<p FDS(i, j) + 2 p−1 X i=1 RDS(i). (19)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/def-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "def-sec-008-01.md",
+      "narrative": null,
+      "content": "We call a Q-linear relation among MPVs standard if it can be produced by some Q-linear combinations of the following four families of relations: regularized double shuﬄe relations, regularized distribution relations, weight one relations, and lifted relations from the above. Otherwise, it is called a non-standard relation. In general, there are no inclusion relations among the four families of the stan- dard relations. Computation in small weight cases supports the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifted relations from lower weights",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-5-lifted-relations-from-lower-weights.md",
+      "narrative": null,
+      "content": "Lifted relations from lower weights\nNote that when N = 3 there are no weight one relations nor (regularized)\ndistribution relations. When we deal with MZVs (resp. alternating Euler sums)\nwe expect that all the linear relations come from RDS (resp. RDS and RDT).\nSince there is no weight one relation when level N ≤3 it is natural to ask if\nRDS and RDT are enough when N = 3. Surprisingly, the answer is no.\nThe ﬁrst counterexample is in weight four, i.e., (w, N) = (4, 3). Easy compu-\ntation shows that there are 144 MPVs in this case among which there are 239\nnontrivial RDS of weight four which inc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "The data in Table 2 in §7 shows that one cannot produce enough relations by using only the standard relations when (w, N) = (3, 4). In fact, even though one has d(3, 4) ≤8 and d(4, 4) ≤16 by [17, 5.25], one can only show that d(3, 4) ≤9 and d(4, 4) ≤21 by using only the standard relations. However, thanks to the octahedral symmetry of P1 −({0, ∞}∪µ4) one can ﬁnd (presumably all) the non-standard relations in these two cases (see Thm. 9.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "Let N = 2, 3, 4 or 8. Assuming a variant of Grothendieck’s period conjecture, Deligne [16] constructed explicitly a set of basis for MPV(w, N). His results would also imply that d(w, 2) is given by the Fibonacci numbers, d(w, 3) = d(w, 4) = 2w, and d(w, 8) = 3w under Grothendieck’s period conjec- ture. Documenta Mathematica 15 (2010) 1–34 Jianqiang Zhao",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "conj-sec-009-01.md",
+      "narrative": null,
+      "content": "Let (R, ZR) = (R, Z) if N = 1, and (R, ZR) = (C, Z) if N = 2, 3 or N = pn with prime p ≥5. If N = 1 (resp. N = 2) then the map ϕR is injective, namely, the algebra of MPVs of level one or two is isomorphic to RRDS (resp. RSR). If N = 3 or N = pn (p ≥5) then the map ϕC is injective so the algebra of MPVs of level N is isomorphic to RSR. The above conjecture generalizes [24, Conjecture 1]. It means that all the linear relations among MPVs can be produced by RDS when N = 1 or 2, and by the standard ones when N = 3 or pn with prime p ≥5. When N = p ≥5, p a prime, this is proved in Thm. 8.6 under t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some conjectures of FDS and RDS",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-6-some-conjectures-of-fds-and-rds.md",
+      "narrative": null,
+      "content": "Some conjectures of FDS and RDS\nFix a level N. Let R be a commutative Q-algebra with 1 and a homomorphism\nZR : A0 −→R such that the ﬁnite double shuﬄe (FDS) property holds:\nZR(ω1xω2) = ZR(ω1 ∗ω2) = ZR(ω1)ZR(ω2).\nWe then extend ZR to Zx\nR and Z∗\nR as before. Deﬁne an R-module automor-\nphism ρR of R[T ] by\nρR(eT u) = AR(u)eT u\nwhere\nAR(u) = exp\n ∞\nX\nn=2\n(−1)n\nn\nZR(an−1b0)un\n!\n∈R[[u]].\nIf a map ZR : A0 −→R satisﬁes the FDS and (Zx\nR −ρR ◦Z∗\nR)(ω) = 0 for all\nω ∈A1 then we say that ZR has the regularized double shuﬄe (RDS) property.\nLet RRDS be the universal algebra (together with a map ZRDS : A0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The structure of MPVs and some examples",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-7-the-structure-of-mpvs-and-some-examples.md",
+      "narrative": null,
+      "content": "The structure of MPVs and some examples\nIn this section we concentrate on RDS between MPVs of small weights. Most of\nthe computations in this section are carried out by MAPLE. We have checked\nthe consistency of these relations with many known ones and veriﬁed our results\nnumerically using GiNac [27] and EZ-face [9].\nBy considering all the admissible words we see easily that the number of distinct\nMPVs of weight w ≥2 and level N is N 2(N + 1)w−2 and there are at most\nN(N + 1)w−2 RDS (but not FDS). If w ≥4 then the number of FDS is given\nby\n(N −1)N 2(N +1)w−3+\n\u0010hw\n2\ni\n−1\n\u0011\nN 4(N +1)w−4 =\n\u0010\nN 2hw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weight one",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-71-weight-one.md",
+      "narrative": null,
+      "content": "Weight one\nFrom §3 we know that all relations in weight one follow from (11) and (12), and\nno RDS exists. The relations in weight one are crucial for higher level cases\nbecause they provide the weight one relations considered in §3. Moreover, easy\ncomputation by (11) and (12) shows that there is a hidden integral structure,\nDocumenta Mathematica 15 (2010) 1–34\n18\nJianqiang Zhao\nnamely, in each level there exists a Q-basis consisting of MPVs such that every\nother MPV is a Z-linear combination of the basis elements. This fact is proved\nby Conrad [13, Theorem 4.6]. Similar results should hold for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "conj-sec-012-01.md",
+      "narrative": null,
+      "content": "The RDT (25) follows from the combination of the following relations: the weight one relations, the RDS (21) and (22), and the FDT (23) and (24).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weight two",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-72-weight-two.md",
+      "narrative": null,
+      "content": "Weight two\nThere are N 2 MPVs of weight two and level N:\nLN(1, 1|i, j),\nLN(2|j),\n1 ≤i ≤N −1, 0 ≤j ≤N −1.\nFor 1 ≤i, j < N the FDS Z∗(y1,i ∗y1,j) = Zx(y1,ixy1,j) yields\nLN(2|i + j) + LN(1, 1|i, j) + LN(1, 1|j, i) = LN(1, 1|i, j −i) + LN(1, 1|j, i −j).\n(21)\nNow from RDS ρ(Z∗(y1,0 ∗y1,i)) = Zx(y1,0xy1,i) we get for 1 ≤i < N\nLN(1, 1|i, 0) + LN(2|i) = LN(1, 1|i, −i).\n(22)\nThe FDT in (14) yields: for every divisor d of N, and 1 ≤a, b < d′ := N/d\nLN(2|ad) =d\nd−1\nX\nj=0\nLN(2|a + jd′),\n(23)\nLN(1, 1|ad, bd) =\nd−1\nX\nj,k=0\nLN(1, 1|a + jd′, b + kd′).\n(24)\nTo derive the RDT we can compare the coeﬃcients of x1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weight three",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-73-weight-three.md",
+      "narrative": null,
+      "content": "Weight three\nApparently there are N 2(N + 1) MPVs of weight three and level N: for each\nchoice (i, j, k) with 1 ≤i ≤N −1, 0 ≤j, k ≤N −1 we have four MPVs of level\nN:\nLN(13|i, j, k) := LN(1, 1, 1|i, j, k),\nLN(1, 2|i, j),\nLN(2, 1|j, k),\nLN(3|k).\nFor 1 ≤i, j, k < N the FDS Z∗\u0000y1,i ∗(y1,jy1,k)\n\u0001\n= Zx\u0000y1,ix(y1,jy1,k)\n\u0001\nyields\nLN(13|i, j −i, k) + LN(13|j, i −j, k + j −i) + LN(13|j, k, i −k −j)\n= LN(2, 1|i + j, k) + LN(1, 2|j, i + k)\n+ LN(13|i, j, k) + LN(13|j, i, k) + LN(13|j, k, i).\n(28)\nFor 1 ≤i, j < N the FDS Z∗(y1,i ∗y2,j) = Zx(y1,ixy2,j) yields\nLN(3|i + j) + LN(1, 2|i, j) + LN(2, 1|j, i)\n= LN(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "conj-sec-015-06.md",
+      "narrative": null,
+      "content": "We have d(2, 8) = 9, d(2, 10) = d(2, 12) = 15, Documenta Mathematica 15 (2010) 1–34 Jianqiang Zhao and the following relations are the linearly independent non-standard relations: let LN(−) = LN(1, 1|−) and L(2) N (−) = LN(2|−), then 37L8(1, 1) =34L(2) 8 (5) + 112L8(3, 1) + 11L8(3, 0) + 37L(2) 8 (1) −2L8(2, 6) + 3L8(7, 3) −111L8(5, 7) + 38L8(7, 7) −8L8(5, 5), (48) 7L10(5, 2) =72L(2) 10 (1) + 265L(2) 10 (7) −7L10(2, 5) + 64L10(9, 8) + 14L10(5, 6) −467L10(4, 2) + 467L10(8, 6) −164L10(9, 4) + 166L10(7, 9) −260L10(8, 1) −66L10(3, 9) −7L10(6, 9) + 7L10(6, 5). (49) L12(8, 7) =5L(2) 12 (5) + 8L12(8,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-015-08",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "conj-sec-015-08.md",
+      "narrative": null,
+      "content": "(a) For all prime p ≥5 kernel βp2 has dimension k(p2) = p(p −1)(p −2)(p −3) . As a consequence, the upper bound of d(2, p2) produced by the standard relations is d(2, p2) ≤5p4 −6p3 + 19p2 −18p + 24 . (b) The standard relations produce all the linear relations and the upper bound in (a) is sharp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-015-09",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "conj-sec-015-09.md",
+      "narrative": null,
+      "content": "(a) For all prime p ≥5 kernel βp3 has dimension k(p3) = p2(p −1)(p −2)(p −3)(p −4) . As a consequence, the upper bound of d(2, p3) produced by the standard relations is d(2, p3) ≤5p6 −2p5 −29p4 + 74p3 −48p2 + 24 . (b) The standard relations produce all the linear relations and the upper bound in (a) is sharp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/def-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "def-sec-015-01.md",
+      "narrative": null,
+      "content": "We call the level N standard if either (i) N = 1, 2 or 3, or (ii) N is a prime power pn (p ≥5). Otherwise N is called non-standard.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prop-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "prop-sec-015-04.md",
+      "narrative": null,
+      "content": "Let h = (p −3)/2. Then one has h X k=0 h X l=k p−2 X j=2 {gk,1, gl,j} + h+1 X k=0 h+1 X j=2 {gk,1, gh+1,j} + h X k=0 h X l=k+1 p−2 X j=2 {gk,p−1, gl,j} + h X k=0 h+1 X j=2 {gk,p−1, gh+1,j} − h X k=0 h X l=k p−2 X j=2 {gk,j, gl,p−1} − h X k=0 h X l=k p−2 X j=2 {gk,j, gl+1,1} = 0. There are h(2h + 3)2 = hp2 distinct terms on the left, each with coeﬃcient ±1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bound of d(w, N) by Deligne and Goncharov",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-74-upper-bound-of-dw-n-by-deligne-and-goncharov.md",
+      "narrative": null,
+      "content": "Upper bound of d(w, N) by Deligne and Goncharov\nBy using the theory of motivic fundamental groups of P1 −({0, ∞} ∪µN)\nDeligne and Goncharov [17, 5.25] show that d(w, N) ≤D(w, N) where D(w, N)\nare deﬁned by the formal power series\n1 +\n∞\nX\nw=1\nD(w, N)tw =\n\n\n\n(1 −t2 −t3)−1,\nif N = 1;\n(1 −t −t2)−1,\nif N = 2;\n(1 −at + bt2)−1,\nif N ≥3,\n(36)\nwhere a = a(N) := ϕ(N)/2 + ν(N), b = b(N) := ν(N) −1, ϕ is the Euler’s\ntotient function and ν(N) is the number of distinct prime factors of N. If\nN > 2 then we have\n∞\nX\nw=1\nD(w, N)tw = at + (a2 −b)t2 + (a3 −2ab)t3 + (a4 −3a2b + b2)t4 + · · ·\nIn particular, if",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational results in weight two",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-8-computational-results-in-weight-two.md",
+      "narrative": null,
+      "content": "Computational results in weight two\nIn this section we combine the analysis in the previous sections and the theory\ndeveloped by Deligne and Goncharov [17] to present a detailed computation in\nweight two and level N ≤169.\nLet G := ι(Lie Uω) be the motivic fundamental Lie algebra (see [17, (5.12.2)])\nassociated to the motivic fundamental group of P1 −({0, ∞}∪µN). As pointed\nout in §6.13 of op. cit. one may safely replace G(µN)(ℓ) by G throughout [20].\nThen it follows from the proof of [17, 5.25] that if conjecture [17, 5.27(c)] is\ntrue, which we assume in the following, then\nd(2, N) = D(2, N) −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "We now make the following comments in the weight two case from Table 1. (a) When p ≥11 the vector space ker βp contains a subspace isomorphic to the space of cusp forms of weight two on X1(p) which has dimension (p−5)(p−7)/24 (see [20, Lemma 2.3 & Theorem 7.8]). So it must contain another piece which has dimension (p −3)/2 since dim(ker βp) = (p2 −1)/24 by [30, (6)]. One may wonder if this missing piece has any signiﬁcance in geometry and/or number theory. (b) If N is a 2-power or a 3-power then D(2, N) should be sharp. See Re- mark 5.4. (c) If N has at least two distinct prime factors then D(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/rem-sec-015-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-015-05.md",
+      "narrative": null,
+      "content": "The theorem corrects a misprint in the statement of [30, Thm. 2]. In the three cases (w, N) = (2, 8), (2, 10) and (2, 12) we see that SR(N) > d(w; N) = D(w; N). By numerical computation we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "thm-sec-015-03.md",
+      "narrative": null,
+      "content": "If p ≥5 is a prime then ker βp2̸ = 0 and d(2, p2) < D(2, p2) = (p2 −p + 2)2/4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-015-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "thm-sec-015-07.md",
+      "narrative": null,
+      "content": "([30]) Let p ≥5 be a prime. Then d(2, p) ≤(5p + 7)(p + 1) . If the conjecture in [17, 5.27(c)] is true then the equality holds and the standard relations in MPV(2, p) imply all the others.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "conj-sec-016-02.md",
+      "narrative": null,
+      "content": "Suppose the level N = p is a prime ≥5. Then d(3, p) ≤p3 + 4p2 + 5p + 14 . Moreover, equality holds if standard relations produce all the linear relations. We formulated this conjecture under the belief that the upper bound of d(3, p) produced by the standard relations should be a polynomial of p of degree 3. Then we ﬁnd the coeﬃcients by the bounds of d(3, p) for p = 5, 7, 11, 13 in Table 2. When w > 2 it’s not too hard to improve the bound of d(w, p) given in [17, 5.25] by the same idea as used in the proof of [17, 5.24] (for example, decrease the bound by (p2 −1)/24). But they are often not",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/conj-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "conj-sec-016-03.md",
+      "narrative": null,
+      "content": "If N is a standard level then the standard relations always provide the sharp bounds of d(w, N), namely, all linear relations can be derived from the standard ones, if further N > 3 then the bound D(w, N) in (36) by Deligne and Goncharov can be lowered. If N is a non-standard level then the bound D(w, N) is sharp and there exists a positive integer w0(N) so that at least one non-standard relation exists in MPV(w, N) for each w ≥w0(N). It is likely that one can take w0(4) = w0(6) = w0(9) = 3 and w0(N) = 2 for all the other non-standard levels N. References [1] H. Bass, Generators and relations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational results in weight three, four and five",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-9-computational-results-in-weight-three-four-and.md",
+      "narrative": null,
+      "content": "Computational results in weight three, four and five\nIn this last section we brieﬂy discuss our results in weight three, four and ﬁve.\nSince the computational complexity increases exponentially with the weight we\ncannot do as many cases as we have done in weight two.\nCombining the FDS (28), (29), RDS (30)-(35), and the weight one relations (13)\nand using MAPLE we have veriﬁed that d(3, 1) = 1, d(3, 2) ≤3, d(3, 3) ≤8....\nN\n1\n2\n3\n4\n5\n6\n7\nSR(3)\n1\n3\n8\n9\n22\n23\n50\nD(3)\n1\n3\n8\n8\n27\n21\n64\nSR(4)\n1\n5\n16\n21\n61\n69\nD(4)\n1\n5\n16\n16\n81\n55\n256\nSR(5)\n2\n8\n32\nD(5)\n2\n8\n32\n32\n243\n144\n1024\nN\n8\n9\n10\n11\n12\n13\nSR(3)\n38",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/zhao-standard-2010/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "([30]) If the conjecture in [17, 5.27(c)] is true then all the linear relations among MPVs of level four and weight three (resp. weight four) are the consequences of the standard relations and the octahedral relation (53) (resp. the ﬁve octahedral relations (54)-(58)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

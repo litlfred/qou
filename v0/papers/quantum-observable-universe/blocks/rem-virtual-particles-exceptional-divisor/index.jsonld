@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-virtual-particles-exceptional-divisor",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:virtual-particles-exceptional-divisor",
+  "kind": "remark",
+  "title": "Virtual particles as excitations of the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+    "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/rem-heisenberg-commutator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+  "tags": [
+    "virtual-particles",
+    "exceptional-divisor",
+    "brane-tower",
+    "propagator",
+    "off-shell",
+    "interpretation"
+  ],
+  "text": "virtual-particles-exceptional-divisor.md",
+  "provenance": "authored"
+}

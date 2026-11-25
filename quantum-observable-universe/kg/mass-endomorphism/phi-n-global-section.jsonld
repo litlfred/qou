@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-phi-n-global-section",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:phi-n-global-section",
+  "kind": "remark",
+  "title": "$\\Phi_n$ as the global section of the categorical mass functor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-mass-endomorphism",
+  "tags": [
+    "categorical-mass",
+    "global-section",
+    "ribbon-flux",
+    "framing",
+    "interpretation"
+  ],
+  "text": "phi-n-global-section.md",
+  "provenance": "authored"
+}

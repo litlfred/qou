@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.08363v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the structure of trans-series in quantum field theory",
+  "contains": [
+    "library/arxiv-2302.08363v2/sections/sec-front-matter",
+    "library/arxiv-2302.08363v2/sections/sec-000",
+    "library/arxiv-2302.08363v2/sections/sec-001",
+    "library/arxiv-2302.08363v2/sections/sec-002",
+    "library/arxiv-2302.08363v2/sections/sec-003",
+    "library/arxiv-2302.08363v2/sections/sec-004",
+    "library/arxiv-2302.08363v2/sections/sec-005",
+    "library/arxiv-2302.08363v2/sections/sec-006",
+    "library/arxiv-2302.08363v2/sections/sec-007",
+    "library/arxiv-2302.08363v2/sections/sec-008",
+    "library/arxiv-2302.08363v2/sections/sec-009",
+    "library/arxiv-2302.08363v2/sections/sec-010",
+    "library/arxiv-2302.08363v2/sections/sec-011",
+    "library/arxiv-2302.08363v2/sections/sec-012",
+    "library/arxiv-2302.08363v2/sections/sec-013",
+    "library/arxiv-2302.08363v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically\n\n**On the structure of trans-series in quantum field theory**\n\n*Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb*\n\n35 pp, 16 sections.\n\n**Abstract.** Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence.\n\n**Outline.** Front matter; Introduction; Trans-series and their structure; The large N sigma model, revisited; Complex Chern–Simons theory; Integrable models; The free energy of integrable models; Bosonic models; Trans-series computation; Numerical analysis; The Gross–Neveu model; Summary of the recursive problem; Leading orders in alpha; Numerical analysis; Large N solution; Conclusions and open problems",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2302.08363&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2302.08363v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2302.08363v2.pdf",
+    "source_sha256": "c2244e03b17048fb95c7aebc7d093ef2c83b41e07ca0db4ec8ec11f0162d7655",
+    "pages": 35,
+    "arxiv": {
+      "id": "2302.08363",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "5 Mar 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

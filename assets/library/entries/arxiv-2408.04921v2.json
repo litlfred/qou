@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2408.04921v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The character theory of the symmetric group $S_n$ plays an important role in representation theory [@JK]. It is well known that the irreducible characters $\\chi^\\lambda$ of $S_n$ are indexed by partitions $\\lambda$ of $n$, and explicit character values are given by the celebrated Frobenius formula, which expresses the character values as the transition coefficients between the Schur symmetric functions and the power-sum symmetric functions [@JK; @Mac]. The character formula can also be formulated using a vertex algebraic method [@J1], where the irreducible character values of $S_n$ are express",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2408.04921v2  [math.RT]  25 Sep 2024\nIRREDUCIBLE CHARACTERS OF THE GENERALIZED\nSYMMETRIC GROUP\nHUIMIN GAO AND NAIHUAN JING\nAbstract. The paper studies how to compute irreducible characters\nof the generalized symmetric group Ck ≀Sn by iterative algorithms. Af-\nter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule\nby vertex algebraic methods, we formulate a new iterative formula for\ncharacters of the generalized symmetric group. As applications, we ﬁnd\na numerical relation between the character values of Ck≀Sn and modular\ncharacters of Skn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible characters of CkSn",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-irreducible-characters-of-cksn.md",
+      "narrative": null,
+      "content": "The generalized symmetric group $C_k\\wr S_n$ is the wreath product of the cyclic group $C_k$ of order $k$ with the symmetric group $S_n$ of $n$ elements, i.e. the semidirect product $C_k^{n}\\rtimes S_n$, where the symmetric group $S_n$ acts on the direct product $C_k^{n}=C_k\\times \\cdots \\times C_k$ by permutating the factors. The multiplication is given by $$\\begin{aligned}\n    (g;\\sigma)\\cdot (h;\\tau)=(g\\sigma(h);\\sigma\\tau),\n\\end{aligned}$$ where $g,h\\in C_k^{n}$ and $\\sigma,\\tau\\in S_n$.\n\nSince $C_k$ is an abelian group of order $k$, there are exactly $k$ conjugacy classes, given by $\\{1\\}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two Iterative Formulas",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-two-iterative-formulas.md",
+      "narrative": null,
+      "content": "Using techniques of vertex operators, we have the following commutation relations for the vertex operators (cf. [@J3]): $$\\begin{aligned}\n\\label{e:com1a}\n    zX_i(z)X_i(w)&+wX_i(w)X_i(z)=0, \\\\ \\label{e:com2a}\n    A_i^*(z)X_i(w)&=X_i(w)A_i^*(z)+\\frac{w}{z-w}X_i(w),\\\\\n \\label{e:com3a}\n    X_i^*(z)A_i(w)&=A_i(w)X_i^*(z)+\\frac{w}{z-w}X_i^*(z).\n\\end{aligned}$$ Taking the coefficients of $z^mw^n$, we derive the following commutation relations among the components.\n\n::: prop\n[]{#P:3.1 label=\"P:3.1\"} For $m,n\\in \\mathbb{N}$,$i\\in I$, we have $$\\begin{aligned}\n\\label{e:com1}\n        X_{im}X_{in}&=-X_{i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further examples",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-4-further-examples.md",
+      "narrative": null,
+      "content": "For completeness, we first calculate the degree of any irreducible character of $C_k\\wr S_n$ [@IJS]. Recall that the inner product in $V$ is given by: $$\\begin{aligned}\n    \\langle a_{-\\boldsymbol{\\lambda}},a_{-\\boldsymbol{\\mu}} \\rangle=\\prod_{i=0}^{k-1}\\langle a_{-\\lambda^{(i)}},a_{-\\mu^{(i)}}\\rangle=\\delta_{\\boldsymbol{\\lambda}\\boldsymbol{\\mu}}\\prod_{i=0}^{k-1}z_{\\lambda^{(i)}}.\n\\end{aligned}$$ Under this inner product the wreath Schur functions are orthonormal: $$\\begin{aligned}\n    \\langle s_{\\boldsymbol{\\lambda}},s_{\\boldsymbol{\\mu}} \\rangle=\\prod_{i=0}^{k-1}\\langle s_{\\lambda^{(i)}},s_{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "[1] A. M. Adin, Y. Roichman, On characters of wreath products, Comb. Theory 2 (2022),\nno. 2, Paper No. 17, 12 pp.\n[2] S. Ariki, K. Koike, A Hecke algebra of Z/rZ ≀Gn and construction of its irreducible\nrepresentations, Adv. Math. 106 (1994), 216-243.\n[3] J. Bandlow, A. Schilling, M. Zabrocki, The Murnaghan-Nakayama rule for k-Schur\nfunctions, J. Combin. Theory Ser. A. 118 (2011), 1588-1607.\n[4] A. Evseev, R. Paget, M. Wildon, Character deﬂations and a generalization of the\nMurnaghan-Nakayama rule, J. Group Theory 17(2014), 1035-1070.\n[5] I. B. Frenkel, N. Jing, W. Wang, Vertex representations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. The source code for Theorem 3.5",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-appendix-a-the-source-code-for-theorem-35.md",
+      "narrative": null,
+      "content": "# Take k=3, n=5\nP=PartitionTuples(3,5)\nimport random\nlam=random.choice(P)\nrho=random.choice(P)\nprint(lam,rho)\n# Set environment\nm=max(max(rho))\nj=rho.index(max(rho))\nr=Zmod(3)\nw=SR.var(’w’)\nimport numpy\ndef ht(nums):\nreturn numpy.count_nonzero(nums)-1\n# Filter out lam satisfying conditions\nfor k in range(3):\nif lam[k].size()>=m:\ntem=Partitions(lam[k].size()-m,outer=lam[k]).list()\nfor i in tem:\nif SkewPartition([lam[k],i]).is_ribbon():\ncoff =\n(-1)^ht(SkewPartition([lam[k],i]).row_lengths())*w^r(-j*k)\nl=list(lam)\nl[k]=i\nprint(coff,\"new lam:\",PartitionTuple(l))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2408.04921v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Theorem 3.9",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-appendix-b-theorem-39.md",
+      "narrative": null,
+      "content": "# Take k=3, n=5\nP=PartitionTuples(3,5)\nimport random\nlam=random.choice(P)\nrho=random.choice(P)\nprint(lam,rho)\n# Set environment\nIRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP\n23\ns=max(max(lam))\nj=lam.index(max(lam))\nr=Zmod(3)\nw=SR.var(’w’)\ndef sub(nums):\nres = [[]]\nfor num in nums:\nres += [ i + [num] for i in res]\nreturn res\nimport itertools\narray1 = sub(rho[0])\narray2 = sub(rho[1])\narray3 = sub(rho[2])\ncombs = itertools.product(array1,array2,array3)\n# Simulate the path\nimport copy\nclass Solution:\ndef subsets(self, nums):\nresult = []\npath = []\nself.backtracking(nums, 0, path, result",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

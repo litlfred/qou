@@ -1,0 +1,379 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0707.3682v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Beilinson conjectures about special values of  [@bei85] are a far reaching generalization of the class number formula for the Dedekind zeta function. For every algebraic variety $X$ over the rationals it predicts the leading term of the Taylor expansions of $L(H^i(X),s)$ at certain points, up to a rational multiple, in terms of arithmetic information associated with $X$, namely, its algebraic K-groups $K_j(X)$ [@qui73b]. More generally, these conjectures can also be formulated for motives.\n\nThere have been several important steps taken towards verification of these conjectures in various c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0707.3682v2  [math.KT]  19 Nov 2007\nON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER\nFIELDS.\nAMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU,\nAND XAVIER-FRANC¸OIS ROBLOT\nDedicated to Jean-Pierre Serre on the occasion of his eightieth birthday.\nAbstract. We formulate a conjectural p-adic analogue of Borel’s theorem re-\nlating regulators for higher K-groups of number ﬁelds to special values of the\ncorresponding ζ-functions, using syntomic regulators and p-adic L-functions.\nWe also formulate a corresponding conjecture for Artin motives, and state a\nconjecture about the precise relation between the p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/conj-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "conj-sec-001-05.md",
+      "narrative": null,
+      "content": "exist when p̸ = 2 but have to be assumed to exist when p = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/conj-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "conj-sec-001-09.md",
+      "narrative": null,
+      "content": "For k a totally real number ﬁeld, p prime, and n ≥2 odd, we have, with notation as above: ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS (1) in F the equality Lp(n, ω1−n p , k)D1/2,p k = qp(n, k) Eulp(n, k)Rn,p(k) holds for some qp(n, k) in Q∗; (2) in fact, qp(n, k) = q(n, k); (3) Lp(n, ω1−n p , k) and Rn,p(k) are non-zero. As mentioned in the introduction, this, and the corresponding parts of Con- jecture 3.18 below, can be deduced (with some eﬀort) from a much more general conjecture of Perrin-Riou [42, 4.2.2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/lem-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "lem-sec-001-07.md",
+      "narrative": null,
+      "content": "We have H1 syn(Spec(OF )/OF , n) ∼= F, for all n > 0 and conse- quently we have a syntomic regulator regp : K2n−1(OF ) →F. Furthermore, the 8 AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU, AND XAVIER-FRANC¸OIS ROBLOT map regp commutes in the obvious way with ﬁnite extensions of ﬁelds and with automorphisms of such ﬁelds, provided that their residue ﬁelds are algebraic over the prime ﬁeld.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for.md",
+      "narrative": null,
+      "content": "Let k be a number ﬁeld with r1 real embeddings, 2r2 complex embeddings,\nring of algebraic integers Ok, and discriminant Dk.\nAs is well-known, O∗\nk is a\nﬁnitely generated Abelian group of rank r = r1 + r2 −1, and its regulator R\nsatisﬁes w\np\n|Dk| Ress=1ζk(s) = 2r1(2π)r2 |Cl(Ok)| R, with Cl(Ok) the class group\nof Ok, and w the number of roots of unity in k. Because K0(Ok) ∼= Cl(Ok) ⊕Z\nand K1(Ok) ∼= O∗\nk, so |Cl(Ok)| = |K0(Ok)tor| and w = |K1(Ok)tor|, this can be\ninterpreted as a statement about the K-theory of Ok, and it is from this point\nON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER. FIELDS 5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "In Theorem [2.2] m,, = 0 precisely when k is totally real and n > 2 is odd. In this case the given relation holds (with V,,(k) = 1) by the Siegel-Klingen theorem [40] Chapter VII, Corollary 9.9].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "In [28], Greenberg proves that the Main Conjecture of Iwasawa theory implies the p-adic Artin conjecture, that is, that the p-adic L-function of an Artin character χ is analytic on the open ball B if it does not contain the trivial character, and has at most a simple pole at s = 1 otherwise. It therefore follows from the proof of the Main Conjecture by Mazur and Wiles [38] for p odd that Lp(n, χ, k) for p̸ = 2 is deﬁned for all integers n̸ = 1. In particular, the values of the p-adic L-functions in Conjecture 2.17 below exist by Theorem 2.9, and those in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-06.md",
+      "narrative": null,
+      "content": "Let Wp ⊂Z∗ p be the subgroup of (p −1)-th roots of unity if p is odd and let W2 = {±1}. The Teichm¨uller character on Gal(k/k) is deﬁned as the composition (2.14) ωp : Gal(k/k) →Gal(Q/Q) →Gal(Q(µq)/Q) ∼ →(Z/qZ)∗∼ →Wp , where the last map sends an element of (Z/qZ)∗to the unique element of Wp to which it is congruent modulo q. For an Artin character χ : Gal(k/k) →Qp and an integer l, χωl p is also an Artin character. If m ≤0 satisﬁes l + m ≡1 modulo ϕ(q) and either χ is 1-dimensional or kχ is totally real then Lp(m, χωl p, k) = Eul∗ p(m, χ, k)L∗(m, χ, k). The p-adic Beilinson conjecture is goin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-08.md",
+      "narrative": null,
+      "content": "suggests that the role of ζk(n) in a p-adic analogue of Theorem 2.2 should be played by Lp(n, ω1−n p , k)/Eulp(n, k) where ζk(s) = Q l Eull(s, k)−1 for Re(s) > 1, so we can hope that Lp(n, ω1−n p , k)D1/2,p k = qp(n, k) Eulp(n, k)Rn,p(k) for some qp(n, k) in Q∗. More precisely, because Rn,∞(k)/D1/2,∞ k and Rn,p(k)/D1/2,p k are invariant under reordering the σ∞ i or σp i , and transform in the same way if we change the bases of Ok and K2n−1(k)/torsion, we can make the following conjecture.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-10.md",
+      "narrative": null,
+      "content": "The conjecture is similar to the result that the residue of ζp(s, k) at s = 1 is related to the Leopoldt regulator of O∗ k through exactly the same formula as for the residue of ζ(s, k) and the Dirichlet regulator [18], with part(4) corresponding to the Leopoldt conjecture. However, we have not tried to determine if Colmez’s normalization of the sign for the regulator is the same as here, especially given the sign error in the proof of Lemma 4.3 in loc. cit. (see Section 6).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-11.md",
+      "narrative": null,
+      "content": "We can use a basis of a subgroup of ﬁnite index of K2n−1(k)/torsion in the deﬁnition of Rn,∞(k) and Rn,p(k), or even a Q-basis of K2n−1(k)Q, without aﬀecting the rationality of q(n, k), qp(n, k) or their equality. Similarly we can replace the Z-basis of Ok with a Q-basis of k in the deﬁnitions of D1/2,∞ k and D1/2,p k .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-12.md",
+      "narrative": null,
+      "content": "As is well-known, for k and n as in Conjecture 2.17, by (2.6) ζk(s) at s = 1 −n has a zero of order d and the ﬁrst non-zero coeﬃcient in its Taylor expansion, ζ♯ k(1−n), equals (2πi)d(1−n)((n−1)!/2)dDn−1/2 k ζk(n). If we take D1/2,∞ k = D1/2 k in (2.16) then we obtain ζ♯ k(1 −n) = ((n −1)!/2)dq(n, k)Dn−1 k eRn,∞(k) for Beilinson’s renormalized regulator eRn,∞(k) = (2πi)d(1−n)Rn,∞(k). In computer calculations ((n −1)!/2)dq(n, k)Dn−1 k often has only relatively small prime factors, so the larger prime factors in q(n, k) correspond to D1−n k . This phenomenon also occurs in the calculations for C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/rem-sec-001-13",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-001-13.md",
+      "narrative": null,
+      "content": "(1) The thought that Lp(n, ω1−n p , k) is non-zero for n ≥2 and odd when k is a totally real Abelian extension of Q is mentioned by C. Soul´e in [50, 3.4]. (2) F. Calegari [13] (see also [8]) proved that, for p = 2 and 3, ζp(3), which in those cases equals Lp(3, ω−2 p , Q), is irrational. (More results along these lines are described in Remark 3.20(3).) (3) Parts (1) and (2) of Conjecture 2.17 hold when k is a totally real Abelian number ﬁeld, and in fact the corresponding parts of a much stronger conjecture that we shall describe in Section 3 hold for cyclotomic ﬁelds (see Proposition 4.17).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "(Borel) Let k be a number field of degree d, with r real embeddings and 2r2 complex embeddings, and let n > 2. Then the rank mp, of Kon—1(k) equals ro if n is even andr, +r2 if n is odd. Moreover, the map",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "For p prime, let B in Cp be the open ball with centre 0 and radius qp−1/(p−1) where q = p if p > 2 and q = 4 if p = 2. If k is a totally real number ﬁeld and χ : Gal(k/k) →Qp a 1-dimensional Artin character, then there exists a unique Cp-valued function Lp(s, χ, k) on B satisfying the following properties: (1) Lp(s, χ, k) is analytic if χ is non-trivial and meromorphic with at most a simple pole at s = 1 if χ is trival; (2) if m is a negative integer such that m ≡1 modulo ϕ(q) then Lp(m, χ, k) = Eul∗ p(m, χ, k)L∗(m, χ, k) . ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS If χ : Gal(k/k) →",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A motivic version of the conjecture",
+      "pageStart": 9,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-3-a-motivic-version-of-the-conjecture.md",
+      "narrative": null,
+      "content": "[]{#motivicsection label=\"motivicsection\"}\n\nIf $E$ is any extension of $\\Q$, and $k/\\Q$ is finite and Galois with Galois group $G$, then we let $M^E = E \\tensor_\\Q k$ and $\\KnE k = E \\tensor_\\Q \\Kn k$, which are $E[G]$-modules. The goal of this section is to refine Conjecture [\\[pborel\\]](#pborel){reference-type=\"ref\" reference=\"pborel\"} to a conjecture for Artin motives with coefficients in $E$, or equivalently, idempotents in the group ring $E[G]$, when $E$ is a number field.\n\n::: definition\nFor an idempotent $\\pi$ in $E[G]$ we let $M_\\pi^E = \\pi M^E$ and $K_{2n-1} (M_\\pi^E) = \\pi \\KnE k$.\n:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More explicit K -groups and regulators",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-4-more-explicit-k--groups-and-regulators.md",
+      "narrative": null,
+      "content": "[]{#ksection label=\"ksection\"}\n\nIn this section we first describe an inductive procedure that conjecturally gives $\\Kn k$ ($n \\ge 2$) for any number field $k$. It is originally due to Zagier [@Zag91], but we essentially give a reformulation by Deligne [@del:imd]. We also describe results concerning Conjecture [\\[motiveconjecture\\]](#motiveconjecture){reference-type=\"ref\" reference=\"motiveconjecture\"} when the action of $G$ on $E[G]\\pi$ is Abelian.\n\nIn order to describe Zagier's conjecture we need the functions $$\\label{Lindef}\n\\Li_n(z) = \\sum_{k \\geq 1} \\frac{z^k}{k^n}\n\\qquad (n \\geq 0)$$ for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computing K -groups in practice",
+      "pageStart": 23,
+      "pageEnd": 30,
+      "target": "../sections/sec-004-5-computing-k--groups-in-practice.md",
+      "narrative": null,
+      "content": "[]{#practical label=\"practical\"}\n\nLet $n \\ge 2$. It follows from Theorem [\\[zagierthm\\]](#zagierthm){reference-type=\"ref\" reference=\"zagierthm\"} that Zagier's approach as described in Section [\\[ksection\\]](#ksection){reference-type=\"ref\" reference=\"ksection\"} can be used to obtain at least some part of $\\Kn k$. Using the notation introduced in Section [\\[ksection\\]](#ksection){reference-type=\"ref\" reference=\"ksection\"}, in order to carry this approach out in practice one starts with two sets $S \\subseteq S'$ of primes of $\\O$ and considers only $[x]_n^\\sim$ where $x$ is an $S$-unit and $1-x$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-005-7-examples.md",
+      "narrative": null,
+      "content": "[]{#examplesection label=\"examplesection\"}\n\nIn this section we describe the evidence for Conjecture [\\[motiveconjecture\\]](#motiveconjecture){reference-type=\"ref\" reference=\"motiveconjecture\"} in the case of primitive idempotents $\\pi$ in $E[\\Gal(k/\\Q)]$ as in Examples [\\[S3example\\]](#S3example){reference-type=\"ref\" reference=\"S3example\"}, [\\[D8example\\]](#D8example){reference-type=\"ref\" reference=\"D8example\"} and [\\[sexticexample\\]](#sexticexample){reference-type=\"ref\" reference=\"sexticexample\"}, with $E=\\Q$ in the first two and $E=\\Q(\\z_3)$ in the last. In the first two cases part (1) of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3682v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 44,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] D. Barsky. Fonctions zˆeta p-adiques d’une classe de rayon des corps de nombres totalement\nr´eels. In Groupe d’Etude d’Analyse Ultram´etrique (5e ann´ee: 1977/78), pages Exp. No. 16,\n23. Secr´etariat Math., Paris, 1978.\n[2] A. A. Beilinson. Higher regulators and values of L-functions. J. Sov. Math., 30:2036–2070,\n1985.\n[3] A. Besser. Syntomic regulators and p-adic integration I: rigid syntomic regulators. Israel\nJournal of Math., 120:291–334, 2000.\n[4] A. Besser. Syntomic regulators and p-adic integration II: K2 of curves. Israel Journal of\nMath., 120:335–360, 2000.\n[5] A. Besser and R. de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

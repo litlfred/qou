@@ -1,0 +1,575 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-cond-mat-0112325v6",
+  "title": "Knots in Condensed Matters",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Knot in Skyrme theory",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-knot-in-skyrme-theory"
+    },
+    {
+      "level": 1,
+      "title": "Knot in Two-component Bose-Einstein Condensates",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-knot-in-two-component-bose-einstein-condensate"
+    },
+    {
+      "level": 1,
+      "title": "Knot in Two-gap Superconductors",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-knot-in-two-gap-superconductors"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-discussion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-gap superconductor",
+          "heading": false
+        },
+        {
+          "term": "bose-einstein condensates",
+          "heading": false
+        },
+        {
+          "term": "condensed matters",
+          "heading": false
+        },
+        {
+          "term": "ﬂux ring",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:cond-mat/0112325v6 19 Jul 2006 Knots in Condensed Matters Y. M. Cho∗ Center for Theoretical Physics and School of Physics College of Natural Sciences, Seoul National University, Seoul 151-742, Korea We propose two types of topologically stable knot solitons in condensed matters, one in two- component Bose-Einstein condensates and one in two-gap superconductors. We identify the knot in Bose-Einstein condensates",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-component bec",
+          "heading": false
+        },
+        {
+          "term": "two-gap superconductor",
+          "heading": false
+        },
+        {
+          "term": "bose-einstein condensates",
+          "heading": false
+        },
+        {
+          "term": "skyrme theory",
+          "heading": false
+        },
+        {
+          "term": "vorticity knot",
+          "heading": false
+        },
+        {
+          "term": "magnetic vortex",
+          "heading": false
+        },
+        {
+          "term": "baby skyrmion",
+          "heading": false
+        },
+        {
+          "term": "faddeev-niemi knot",
+          "heading": false
+        }
+      ],
+      "extract": "Topological objects (monopoles, vortices, skyrmions, etc.) have played an increasingly important role in physics \\cite{dirac,abri}. In particular finite energy topological objects have been widely studied in theoretical physics \\cite{skyrme,thooft}. A recent addition to this family of finite energy solitons has been the knots \\cite{fadd1,prl01}. The interest on these topological objects, however, has been confined",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-knot-in-skyrme-theory",
+      "number": "2",
+      "title": "Knot in Skyrme theory",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baby skyrmion",
+          "heading": false
+        },
+        {
+          "term": "dfrac varrho",
+          "heading": false
+        },
+        {
+          "term": "bea dfrac",
+          "heading": false
+        },
+        {
+          "term": "helical baby",
+          "heading": false
+        },
+        {
+          "term": "skyrme theory",
+          "heading": true
+        },
+        {
+          "term": "dfrac omega",
+          "heading": false
+        },
+        {
+          "term": "dfrac sin",
+          "heading": false
+        },
+        {
+          "term": "dfrac alpha",
+          "heading": false
+        }
+      ],
+      "extract": "The Skyrme theory has a rich topological structure. It has skyrmion and baby skyrmion \\cite{skyrme,piet}. But recently it has been shown that the theory allows a knotted soliton identical to the Faddeev-Niemi knot in Skyrme-Faddeev non-linear sigma model, which can be identified as a twisted vortex ring made of helical baby skyrmion \\cite{prl01,plb04}. To see this, we review the knot in Skyrme theory first. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-knot-in-two-component-bose-einstein-condensate",
+      "number": "3",
+      "title": "Knot in Two-component Bose-Einstein Condensates",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dfrac pro",
+          "heading": false
+        },
+        {
+          "term": "dfrac varrho",
+          "heading": false
+        },
+        {
+          "term": "two-component bec",
+          "heading": false
+        },
+        {
+          "term": "dag pro",
+          "heading": false
+        },
+        {
+          "term": "beckeq eea",
+          "heading": false
+        },
+        {
+          "term": "bea pro",
+          "heading": false
+        },
+        {
+          "term": "multi-component bec",
+          "heading": false
+        },
+        {
+          "term": "dfrac rho",
+          "heading": false
+        }
+      ],
+      "extract": "The recent advent of multi-component BEC (in particular the spin-1/2 condensate of $^{87}{\\rm Rb}$ atoms) has widely opened a new opportunity for us to study novel topological objects which can not be realized in ordinary (one-component) BEC \\cite{bec,ruo}. This is because the multi-component BEC naturally allows a non-Abelian structure which accommodates a non-trivial topological objects, in particular a topolgical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-knot-in-two-gap-superconductors",
+      "number": "4",
+      "title": "Knot in Two-gap Superconductors",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dfrac varrho",
+          "heading": false
+        },
+        {
+          "term": "helical supercurrent",
+          "heading": false
+        },
+        {
+          "term": "bea dfrac",
+          "heading": false
+        },
+        {
+          "term": "abrikosov vortex",
+          "heading": false
+        },
+        {
+          "term": "ddot dfrac",
+          "heading": false
+        },
+        {
+          "term": "big varrho",
+          "heading": false
+        },
+        {
+          "term": "varrho dot",
+          "heading": false
+        },
+        {
+          "term": "rho dfrac",
+          "heading": false
+        }
+      ],
+      "extract": "In the above gauge theory of spin-1/2 condensates the gauge interaction was a self-induced interaction. But when the doublet is charged, the gauge interaction can be treated as independent. In this case the theory can describe a two-gap superconductor. But even in this case the knot topology and thus the knot itself should survive. This implies that two-gap superconductor should also have a topological knot. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-discussion",
+      "number": "5",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superconducting helical",
+          "heading": false
+        },
+        {
+          "term": "helical vortex",
+          "heading": false
+        },
+        {
+          "term": "regular helical",
+          "heading": false
+        },
+        {
+          "term": "two-gap superconductor",
+          "heading": false
+        },
+        {
+          "term": "condensed matters",
+          "heading": false
+        },
+        {
+          "term": "baby skyrmion",
+          "heading": false
+        },
+        {
+          "term": "faddeev-niemi knot",
+          "heading": false
+        },
+        {
+          "term": "magnetic flux",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\includegraphics[scale=0.7]{2schv.eps} \\caption{The regular helical magnetic vortex with $m=n=1$ in two-gap superconductor. Here we have put $g=1,~\\lambda=2$, $k=0.12 \\rho_0$, $A_2(0)=0.5$, and $\\varrho$ is in the unit of $1/\\rho_0$. Notice that the solution is completely regular.} \\label{2schv} \\end{figure} In this paper we have presented a compelling argument for the existence of topological",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "helical vortex",
+      "heading": true
+    },
+    {
+      "term": "dfrac varrho",
+      "heading": false
+    },
+    {
+      "term": "bea dfrac",
+      "heading": false
+    },
+    {
+      "term": "helical magnetic",
+      "heading": true
+    },
+    {
+      "term": "two-component bec",
+      "heading": true
+    },
+    {
+      "term": "helical baby",
+      "heading": true
+    },
+    {
+      "term": "helical supercurrent",
+      "heading": false
+    },
+    {
+      "term": "two-gap superconductor",
+      "heading": true
+    },
+    {
+      "term": "non-abelian vortex",
+      "heading": true
+    },
+    {
+      "term": "dfrac rho",
+      "heading": false
+    },
+    {
+      "term": "superconducting helical",
+      "heading": false
+    },
+    {
+      "term": "dfrac big",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The baby skyrmion (dashed line) with m = 0, n = 1 and the helical baby skyrmion (solid line) with m = n = 1 in Skyrme theory. Here",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in the gauge theory of two-component BEC. Here we have put",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in two-gap superconductor. Here we have put g = 1, λ = 2, k = ρ0/10, and",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The regular helical magnetic vortex with m = n = 1 in two-gap superconductor. Here we have put g = 1, λ = 2, k = 0.12ρ0, A2(0) = 0.5, and",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-cond-mat-0112325v6"
+  }
+}

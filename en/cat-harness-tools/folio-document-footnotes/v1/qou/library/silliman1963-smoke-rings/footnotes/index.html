@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/silliman1963-smoke-rings/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/silliman1963-smoke-rings/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/silliman1963-smoke-rings/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/silliman1963-smoke-rings/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>silliman1963-smoke-rings</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>11</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p005-4&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;\&quot;Address,\&quot; appeared under the title A Treatise on Natural British Association Report, (Oxford: Clarendon Press, 1867). 1871, 41: xciii. See also Thomson&#39;s Popular Philosophy&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;to the whole.\&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-2&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;Quoted in Silvanus P. Thompson, op. cit., alent to our mechanics, a term they reserve II, p. 830. for \&quot;the Science of Machines, and the art of&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;it? \&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-2&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;text&quot;: &quot;Mathematical and Physical Papers, IV,&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;different kinds of matter.\&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-2&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;Ibid., p. 3. Tait tried unsuccessfully to Press, 1898- bridge: Cambridge University establish a relation between the numbers of 1900), I, pp. 273-347. knots of different orders of \&quot;knottiness\&quot; and&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;tropies of known simple bodies and their mutual affinities.\&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;Ibid., p. 5. 37\&quot; The Translatory Velocity of a Circular 36\&quot; On Vortex Motion,\&quot; Mathematical and Vortex Ring,\&quot; The Philosophical Magazine, Physical Papers, IV, pp. 13-66. 1867, 33: 511-512.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;test&#39; for sodium.\&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-4&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;The Corpuscular Theory of Matter (New I am afraid we know enough about the prop- York: Charles Scribner&#39;s Sons, 1907), p. 2. In erties of molecules to feel sure that the distri- \&quot;With reference bution of vortex motion concerned is very 1898, he wrote to Holman: to the Vortex-atom Theory, I do not know complex.\&quot; Quoted in IHolman, op. cit., p. 226.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;so fundamental as the vortex-atom theory of matter.\&quot;&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-3&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;text&quot;: &quot;See \&quot;Aepinus Atomized,\&quot; Philo- University of Chicago Press, 1903), pp. 161-162. sophical Magazine, 1902, 3: 257; 1904, 8: 528;&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;electrons&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-014&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;Princeton Awarded the 1962 Bohr (London: A. &amp; C. Black, 1931), pp. 159- University. Henry Schuman Prize. 162, are very brief, mainly expository, and ex-&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;A stenographic report of the paper appears cept for Gregory&#39;s somewhat derisive treatment in Thomson&#39;s Mathematical and Physical Pa- fail to set the theory in any detailed historical pers (6 vols.; Cambridge: at The University Two works which one might perspective. Press, 1882-1911), IV, pp. 1-12. expect to have treated the theory, van Melsen&#39;s&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-3&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Accounts of the vortex atom theory by From Atomos to Atom. The History of the Pierre Duhem, L&#39;Evolution de la mecanique Concept Atom (New York: Harper &amp; Brothers, Libraire Scientifique, A. Hermann, 1960) and L. L. Whyte&#39;s Essay on Atomism: (Paris: 1905), pp. 169-176; Florian Cajori, A History From Democritus to 1960 (Middletown, Conn.: (New York: Dover Publications, Wesleyan University Press, 1961), make no of Physics 1962), pp. 146-147; Sir Edmund Whittaker, mention of it. A History of the Theories of Aether and Elec-&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-4&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;See, for example, Horace Lamb, Hydro- tricity (2 vols.; New York: Harper &amp; Brothers, (New York: Dover Publications, dynamics 1960), I, pp. 293-295; and J. C. Gregory, A 1945). This is a reprint of the sixth edition Short History of Atomism from Democritus to of 1932.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;The motion of a fluid is said to be irro- rotation about some axis passing through it. tational when it is such that if a spherical&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;At a point (x, y, z) in a fluid let p be the dp d +? u-- + pressure, u, v, w the rectangular components - z W-+ W-- of the velocity, X, Y, Z the components of h dz dt dx dy dz external forces acting on unit mass, and h du dv dw&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-2&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;= - the density, all at time t. Then the equations + + d-&#39; of motion for the particles within the fluid&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-3&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;See Tait&#39;s a are: commentary accompanying demonstration performed in 1874, Lectures on Some Recent Advances in Physical Science (2nd X - -h dtx v du + w du, +u- ed.; London: Macmillan, 1876), pp. 290-300. Other observations on smoke rings made at&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-4&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;dp dv dv dv dv J+ u dx + this time by Robert Ball are reported in his dy- dy + dzw Y-,h dz Y-h d-y--d-t- dx--v~3 dy Jv&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;The fertility and diversity of Thomson&#39;s Shepard, 1897), pp. 28-33.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-2&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;Thomson and Tait were collaborating on mind is strikingly apparent from the bibliog- a physics textbook at this time, and while raphy of his printed books, scientific communi- much of the work was carried on through cations, and addresses, and the list of his the mail, it was Thomson&#39;s practice to journey patents given in ibid., II, pp. 1223-1277. to Edinburgh on weekends. See W. E. Aryton,&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-3&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;Elements of Natural Philosophy. Part 1 \&quot; Kelvin in the Sixties,\&quot; The Popular Science (2nd ed.; Cambridge: at the University Press, Monthly, March, 1908, 72: 259 f. The textbook 1879), p. 136.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-5&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;See Silvanus P. Thompson, The Life of Wil- Lectures and Addresses (3 vols.; London: Mac- liam Thomson, Baron Kelvin millan, 1889), I, pp. 231-233. of Largs (2&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;In of Natural Philosophy, p. 1, Thomson and cal reasoning in his article \&quot;Atom,\&quot; Encyclo- Tait include statics as well as kinetics under pedia Britannica (9th ed., 1878), III, p. 40. the term dynamics, which then becomes equiv-&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-3&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;Ibid., pp. 835-836. making them.\&quot; See Maxwell&#39;s comments on&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;See Ruggiero G. Boscovich, J. M. Child Thought in the Nineteenth Century (4 vols.; (ed.), A Theory of Natural Philosophy. Latin- Edinburgh and London: Blackwood &amp; Sons, English Edition from the First Venetian Edi- 1896-1914), I, p. 357, n. 2. tion, Published under the Personal Superin-&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-2&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;Noting his change in attitude toward this tendence of the Author is 1763. With a Short theory and selecting appropriate phrases from Life of Boscovich his writings, Thomson&#39;s biographer comments: (Chicago: Open Court, \&quot; And so Father Boscovich, judged obsolete 1922).&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-3&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;s J. T. Merz discusses the influence of in 1884, and his theory pronounced &#39;infinitely Boscovich in France, Germany, and Great in 1893, was in 1900 &#39;reinstated improbable&#39; Britain in the eighteenth and nineteenth cen- as guide.&#39;\&quot; Silvanus P. Thompson, op. cit., turies, and for the earlier century speculates II, p. 107, n. 2. that the theory found favor \&quot; because it seemed&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;III, p. 45. history of any other body.\&quot; Thomson in the 21\&quot; It seems to me that we must know a Baltimore Lectures (1884), quoted in Silvanus great deal more of the luminiferous ether P. Thompson, op. cit., II, pp. 818-819. See than we do. But instead of beginning with Maxwell&#39;s article \&quot;Ether,\&quot; Encyclopedia Brit- saying that we know nothing about it, I say annica (9th ed.; 1878), VIII, pp. 568-572.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;\&quot; A Speculation Touching that we know more about it than we do about Electric Con- air or water, glass or iron- it is far simpler; duction and the Nature of Matter,\&quot; The there is far less to know. That is to say, the Philosophical Magazine, February, 1844, 24, natural history of the luminiferous ether is no. 157: 143. an infinitely simpler subject than the natural&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-1&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;For a comment on the \&quot;perennial\&quot; and \&quot;Exhibition of a Gyrostatic Model of a fascination for vortices, see Medium capable of Transmitting Waves of unprofitable\&quot; H. T. Pledge, Science Since 1500. A Short Transverse Vibration,\&quot; the Proceedings of History of Mathematics, Physics, Chemistry, Royal Society of Edinburgh, 1889, 16: 811. &amp; Brothers, 25,\&quot; On the Mechanical Action of Heat,\&quot; York: Biology (New Harper Transactions of the Royal Society of Edinburgh, 1959), pp. 134-135.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-2&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;\&quot; An Essay Towards a Dynamical Theory 1853, 20: 147-210.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-3&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;\&quot; Dynamical Illustrations of the Magnetic of Crystalline Reflection and Refraction,\&quot; The Collected Works of James MacCullagh, edited and Heliocoidal Rotary Effects of Transparent by John H. Jellett and Samuel Haughton Bodies on Polarized Light,\&quot; The Philosophical Hodges Figgis and Co., 1880), pp. Magazine, March, 1857, 13, no. 85: 198-204. (Dublin:&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-4&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;T \&quot; On Physical Lines of Force,\&quot; The Philo- 145-193. The discrepancy involved the fact that while prevailing conceptions of the aether sophical Magazine, 1861, 21: 161, 281, 338; allowed for the transverse waves necessary for 1862, 23: 12, 85. See \&quot;The Origins of Clerk the representation of light, they did not pro- Maxwell&#39;s Electric Ideas, as Described in Fam- iliar Letters to W. Thomson,\&quot; Proceedings of vide for the exclusion of longitudinal waves, which were undetectable in reflection and the Cambridge Philosophical Society, 1936, 32, refraction. Later Thomson was to design a part 5: 695-750. mechanical model of MacCullagh&#39;s aether. See&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;See Maxwell, \&quot;Atom,\&quot; Encyclopedia Brit- 45. annica, III, pp. 40-41.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-3&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Mathematical and Physical Papers, IV, p. 1. p. 1.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-1&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;text&quot;: &quot;Ibid., pp. 2-3.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-3&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;Mathematical and Physical Papers, IV, p. 3. the chemical elements. See \&quot;Knots,\&quot; Scientific&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-1&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;text&quot;: &quot;Quoted Matter, Energy, Force and Work. A Plain Presentation with an illustration which, though it has no of Fundamental Physical Concepts and of the claim to the fundamental character of one Vortex Atom and Other Theories (New York: based on vortex motion, is easily conceived and handled by the mind, and so is more Macmillan, 1898), p. 226. on Some Recent Advances in adapted as a guide to research.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-2&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;text&quot;: &quot;Lectures \&quot;I regard, however, the vortex-atom expla- Physical Science, pp. 290-291.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-3&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;text&quot;: &quot;III, p. 45. nation as the goal at which to aim, though&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;Ibid., p. 219. Cajori, op. cit., pp. 147-148.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-2&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;Light Waves and Their Uses (Chicago: The&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-4&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;See van Melsen, op. cit., pp. 149-153; and 1905, 10: 695.&quot;,
+    &quot;block&quot;: &quot;library/silliman1963-smoke-rings/blocks/prose-page-014&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;span of time during which it enjoyed&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;eighteenth century&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;light, he came to the conclusion that magnetism possesses&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;force, each unit tube of force being depicted as&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;atoms of different kinds.\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;the size of a ring. In a subsequent paper&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;and adding a few theorems of his own, and in a note&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

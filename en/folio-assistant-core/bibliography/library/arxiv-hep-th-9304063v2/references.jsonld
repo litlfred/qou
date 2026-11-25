@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-9304063v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:hep-th/9304063v2 29 Jan 1999",
+      "dcterms:creator": [
+        "Department of Mathematics",
+        "Institute of Theoretical Dynamics"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/9304063",
+      "dcterms:source": "library/arxiv-hep-th-9304063v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-9304063v2"
+    }
+  ]
+}

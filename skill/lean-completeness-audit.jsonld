@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-completeness-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-completeness-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-completeness-audit",
+      "title": "Lean Completeness & Subgraph Hygiene Audit (`lean-completeness-audit`)",
+      "description": "Audit Lean 4 formalization completeness, root reachability, `lean.ref` integrity, Two-Tier Reservoir subgraph purity, vacuity freedom, and witness freshness across `folio/` using `lean-static-census.py`, `lean-kg-detangler.py`, `lean-best-practices-lint.py`, `lean-root-coverage-audit.py`, `dead-lean-pointer-audit.py`, and `folio/pipeline/lean-vacuity-axiom-audit.ts`.",
+      "instructionsPath": "skills/local/lean-completeness-audit.md",
+      "instructionLines": 71,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

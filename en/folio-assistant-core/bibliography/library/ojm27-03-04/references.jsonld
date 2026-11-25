@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ojm27-03-04",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Hyperbolic 3-manifolds with totally geodesic boundary",
+      "dcterms:creator": [
+        "Fujii, Michihiko"
+      ],
+      "dcterms:issued": "D:20070112",
+      "bibo:doi": "10.18910/11468",
+      "dcterms:identifier": "https://doi.org/10.18910/11468",
+      "dcterms:source": "library/ojm27-03-04/manifest.jsonld",
+      "dcterms:hasVersion": "library/ojm27-03-04"
+    }
+  ]
+}

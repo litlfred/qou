@@ -1,0 +1,266 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9711057v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Whether the results obtained in RMT correctly describe the microscopic spectrum of full QCD is a question that can only be answered by empirical evidence, most importantly by large-scale lattice QCD simulations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "Recently, a high-statistics lattice calculation directly demonstrated agreement between the random-matrix results and lattice data, not only for $\\rho_s$ but also for the distribution of the smallest eigenvalue and for the microscopic spectral two-point correlator \\cite{Berb97a}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec1}\n\nThe low-lying eigenvalues of the QCD Dirac operator are of great\nimportance for the understanding of the spontaneous breaking of chiral\nsymmetry in QCD.  In Euclidean space, the Dirac operator reads\n$i\\slash D=i\\slash\\partial+g(\\lambda^a/2)\\slash A^a$, where $g$ is the\ncoupling constant, $\\lambda^a$ are the generators of SU($N$)-color,\nand $A_\\mu^a$ are the gauge fields.  The corresponding eigenvalue\nequation is $i\\slash D \\psi_i=\\lambda_i \\psi_i$ with real eigenvalues\n$\\lambda_i$.  Because the Dirac operator anticommutes with $\\gamma_5$,\nthe eigenvalues either occur in pairs $\\p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9711057v2  30 Apr 1998\nThe microscopic spectrum of the QCD Dirac operator with ﬁnite quark masses\nT. Wilke1, T. Guhr1, and T. Wettig2\n1Max Planck Institut f¨ur Kernphysik, Postfach 103980, D-69029 Heidelberg, Germany\n2Institut f¨ur Theoretische Physik, Technische Universit¨at M¨unchen, D-85747 Garching, Germany\n(November 10, 1997)\nWe compute the microscopic spectrum of the QCD Dirac operator in the presence of dynamical\nfermions in the framework of random-matrix theory for the chiral Gaussian unitary ensemble. We\nobtain results for the microscopic spectral correlators, the microsc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random-matrix theory for finite quark masses",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-random-matrix-theory-for-finite-quark-masses.md",
+      "narrative": null,
+      "content": "\\label{sec2}\n\nIn Sec.~\\ref{sec21}, we formulate the chiral random-matrix model by\nintroducing the probability density function and the partition\nfunction in the presence of finite quark masses. In Sec.~\\ref{sec22},\nwe construct the orthogonal polynomials of the model. An alternative\nconstruction is presented in Sec.~\\ref{sec23} which is based on a certain\nduality between models in different matrix spaces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulation of the model",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-formulation-of-the-model.md",
+      "narrative": null,
+      "content": "\\label{sec21}\n\nThe statistical properties of the random-matrix model for the massive\nDirac operator with $N_f$ flavors and dynamical quark masses $M_f$\n($f=1,\\ldots,N_f$) which was introduced above are given by the\nprobability density function\n\\begin{equation}\nP_N^{(N_f)}(W,M) \\ = \\ \\frac{1}{\\widetilde{Z}_N^{(N_f)}(M)} \\, \n                \\prod_{f=1}^{N_f}\\det(WW^\\dagger+M_f^2)\n                \\exp(-N\\Sigma^2{{\\rm tr}\\,} WW^\\dagger)\n\\label{pdf}\n\\end{equation}\nwith $M=(M_1,\\ldots,M_{N_f}$). Here, $W$ is a complex matrix of\ndimension $N$.  Apart from a Gaussian, this distribution contains\n$N_f$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of orthogonal polynomials",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-construction-of-orthogonal-polynomials.md",
+      "narrative": null,
+      "content": "\\label{sec22}\n\nThe polynomials $p_n^{(N_f)}(x,M)$ can be constructed by applying a\nstandard formula~\\cite{Bate51} in the theory of orthogonal\npolynomials. In our case, it reads\n\\begin{equation}\np_n^{(N_f)}(x,M) \\ = \\ \\frac{1}{Z_n^{(N_f)}(M)} \n                     \\int d[X] \\Delta_n^2(X) \n                    \\prod_{i=1}^n w^{(N_f)} (x_i,M) (x-x_i) \\ .\n\\label{poly}\n\\end{equation}\nThis is an integral over $n$ variables $x_i$ ($i=1,\\ldots,n$). We\nnotice that $n$ replaces the dimension $N$ of the matrices $W$ in the\npartition function $Z_n^{(N_f)}(M)$ and in the Vandermonde determinant\n$\\Delta_n(X)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A duality of matrix ensembles",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-a-duality-of-matrix-ensembles.md",
+      "narrative": null,
+      "content": "\\label{sec23}\n\nIn this section, we present an alternative derivation of the\northogonal polynomials $p_n^{(N_f)}(x,M)$ and of the partition\nfunction $Z_N^{(N_f)}(M)$. It employs a certain kind of duality\nbetween matrix ensembles and is therefore of conceptual interest. On\nthe practical side, this method advantageously yields all\nnormalizations, particularly the function $C_n^{(N_f)}(M)$ and the\npartition function $Z_n^{(N_f)}(M)$, in a very direct and convenient\nway. We consider the integral\n\\begin{equation}\nX_N^{(K)}(a) \\ = \\int d[W] \\, \\exp(-\\alpha{{\\rm tr}\\,} WW^\\dagger) \\,\n\\prod_{f=1}^K \\de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of observables",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-3-calculation-of-observables.md",
+      "narrative": null,
+      "content": "\\label{sec3}\n\nThe microscopic spectral correlators, in particular the microscopic\nspectral density, are computed in Sec.~\\ref{sec31}. In\nSec.~\\ref{sec32}, we derive the distribution of the smallest\neigenvalue.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Microscopic spectral correlators and density",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-31-microscopic-spectral-correlators-and-density.md",
+      "narrative": null,
+      "content": "\\label{sec31}\n\nTo calculate the spectral correlations, we insert the polynomials\n$p_n^{(N_f)}(x,M)$ in Eq.~(\\ref{kernel}) for the kernel\n$K_N^{(N_f)}(x,y,M)$.  The microscopic limit is obtained according to\nEq.~(\\ref{eq1.1}) by rescaling energies and quark masses by\n$2N\\Sigma$.  We define $\\lambda=2N\\Sigma \\sqrt{x}$ and $m_f=2N\\Sigma\nM_f$.  In the limit $N\\to\\infty$, we want both $\\lambda$ and $m_f$ to\nbe of order unity.  The quenched approximation then corresponds to\ntaking $m_f\\to\\infty$ (or, of course, setting $N_f=0$).  In the limit\n$m_f\\to 0$, our results must reduce to those obtained ear",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distribution of the smallest eigenvalue",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-32-distribution-of-the-smallest-eigenvalue.md",
+      "narrative": null,
+      "content": "\\label{sec32}\n\nIn lattice simulations, the performance of an algorithm is frequently\ndetermined by the magnitude of the smallest eigenvalue.  It is\ntherefore of interest to compute an analytical result for the\ndistribution of the smallest eigenvalue, $P^{(N_f)}(\\lambda_{\\rm\n  min},m)$, in the framework of RMT.  This is the subject of this\nsection.  The RMT result should be universal and identical with that\nof full QCD under the same conditions as the microscopic spectral\ndensity.  The only result that has been computed so far in the\nliterature applies to the quenched approximation where\n$P^{(0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "In the context of lattice QCD, it applies to SU(3) with dynamical staggered fermions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-4-discussion.md",
+      "narrative": null,
+      "content": "\\label{sec4}\n\nWe have computed the microscopic spectrum of the massive QCD Dirac\noperator, including the microscopic spectral density and the\ndistribution of the smallest eigenvalue, for an arbitrary number of\nflavors, arbitrary quark masses, and arbitrary topological charge.\nOur results generalize the previously known results for the\nmicroscopic correlations in the chiral limit \\cite{Verb93}.  The\ndistribution of the smallest eigenvalue was previously known only in\nthe quenched approximation.  Wherever there is an overlap, our results\nagree with those obtained in the recent preprint by Damgaa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9711057v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-acknowledgments.md",
+      "narrative": null,
+      "content": "It is a pleasure to thank P.H. Damgaard, J.J.M. Verbaarschot, and H.A.\nWeidenm\\\"uller for stimulating discussions.  T. Wettig acknowledges\nthe hospitality of the MPI Heidelberg.  This work was supported in\npart by DFG grant We 655/11-2.\n\n\n\\begin{references}\n\\bibitem{Bank80} T. Banks and A. Casher, Nucl. Phys. B 169 (1980)\n  103. \n\\bibitem{Shur93} E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys. A\n  560 (1993) 306.\n\\bibitem{Leut92} H. Leutwyler and A.V. Smilga, Phys. Rev. D 46 (1992)\n  5607. \n\\bibitem{Verb94a} J.J.M. Verbaarschot, Phys. Rev. Lett. 72\n  (1994) 2531.\n\\bibitem{Verb93} J.J.M. Verb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

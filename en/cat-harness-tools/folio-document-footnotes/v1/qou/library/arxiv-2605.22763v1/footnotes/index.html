@@ -1,0 +1,2578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2605.22763v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2605.22763v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2605.22763v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2605.22763v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2605.22763v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;†Equal contributions.The first three authors are in random order.Correspondence to pushmeet@google. com and swarat@google.com. © 2026 Google DeepMind. All rights reserved&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;George Tsoukalas&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;George Tsoukalas1†, Anton Kovsharov&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;George Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;kalas1†, Anton Kovsharov1†, Sergey Shirobokov1†, Anja Surina&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;harov1†, Sergey Shirobokov1†, Anja Surina1, Moritz Firsching&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Bérczi2, Francisco J. R. Ruiz&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Bérczi2, Francisco J. R. Ruiz1, Arun Suggala&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;zi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot; J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;iz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;ggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z. Horváth&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z. Horváth1, Andrew Ferrauiolo&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z. Horváth1, Andrew Ferrauiolo1, Henryk Michalewski&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;rrauiolo1, Henryk Michalewski1, Codrut Grosu3, Thomas Hubert&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;ryk Michalewski1, Codrut Grosu3, Thomas Hubert1, Matej Balog&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Pushmeet Kohli&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Pushmeet Kohli1and Swarat Chaudhuri&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;1Google DeepMind&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-1&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;𝑘&quot;
+      },
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;𝑛&quot;
+      },
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;where𝑃(𝑛)= 𝑛5+ 𝑛4+ 3𝑛3+ 13𝑛&quot;
+      },
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;𝐴(𝑥)= −4683𝑥5+ 13586𝑥4−19540𝑥3+ 15356𝑥&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p045-1&quot;,
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑘&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;𝑛&quot;
+      },
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;𝑛=0𝑎𝑛𝑥𝑛=1 + 48𝑥+ 161856𝑥&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p024-1&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;Briefly summarize the approach taken in each sketch. **2. Comparative Analysis**&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-2&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Scalability:** [...]?&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-3&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Decomposition Quality:** [...]&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-4&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Logical Soundness:** [...]&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-5&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Strategic Approach:** [...]&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-6&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Progress &amp; Feasibility:** [...] **3. Final Judgment**&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-7&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Ranking:** Provide a ranking of the sketches from best to worst, using ’&gt;’ for ’better than’ and ’=’ for ’equal in quality’.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-8&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;**Rationale:** Provide a concluding paragraph that crisply summarizes the primary reasons for your ranking, focusing on the most significant differences in quality based on the judging criteria. Provide a complete rank the sketches from best to worst using ’&gt;’ for ’better than’ and ’=’ for ’equal in quality’. Your output must contain the final ranking in the format ’&lt;decision&gt;2 &gt; 1 = 3&lt;/decision&gt;’, containing a ranking of all players presented.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-1&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;No Imports:** The execution environment imports ‘Mathlib‘ by default. Do **not** add any ‘import‘ statements in your proof. # Current proof This is the proof to be modified in your session. {code} Make sure that you only propose changes inside sections enclosed by ‘-- EVOLVE-BLOCK-START‘ and ‘-- EVOLVE-BLOCK-END‘, or ‘-- EVOLVE-VALUE-START‘ and ‘-- EVOLVE-VALUE-END‘ comments.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-1&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-2&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-3&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-4&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-5&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-6&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-7&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-8&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-9&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-10&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-11&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-12&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-13&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;0&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-14&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-2&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛+1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-3&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛+1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-4&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-5&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛+1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p044-6&quot;,
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑛+1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p045-2&quot;,
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑘&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p045-3&quot;,
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑘&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p045-4&quot;,
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;𝑘&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2605.22763v1/blocks/prose-sec-023&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;George Tsoukalas1&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;George Tsoukalas1†, Anton Kovsharov1&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;George Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov1&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Bérczi&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;váth1, Andrew Ferrauiolo1, Henryk Michalewski1, Codrut Grosu&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Pushmeet Kohli1and Swarat Chaudhuri1&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1Google DeepMind1,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1Google DeepMind1,2Aarhus University,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;with|𝐴∩[1, 𝑁]|≫𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;exists a decomposition𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;exists a decomposition𝐴=𝐴1 ⊔𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;exists a decomposition𝐴=𝐴1 ⊔𝐴2s.t.𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴1, 𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴1, 𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴1 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴1 +𝐴1,𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴1 +𝐴1,𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;all𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;all𝐴1, 𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;all𝐴1, 𝐴2such that𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;all𝐴1, 𝐴2such that𝐴=𝐴1 ⊔𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;{𝑖,𝑗}↦→(𝑥𝑖+𝑥𝑗, 𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑖+𝑥𝑖𝑥𝑗+𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;26∗,&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;Elo𝑠= 1200 + 400 log&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•𝑌𝑖= 3(𝑖+20)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑘= (𝑖+ 20)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Observethat𝑃𝑖+1≤11𝑉𝑖+1𝑌𝑖+1≤11·2(𝑖+4)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Observethat𝑃𝑖+1≤11𝑉𝑖+1𝑌𝑖+1≤11·2(𝑖+4)2·3(𝑖+21)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Thisisasymptoticallystrictlysmallerthan4𝑘=4(𝑖+20)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;inequality 11 · 2(𝑖+4)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;inequality 11 · 2(𝑖+4)2· 3(𝑖+21)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;inequality 11 · 2(𝑖+4)2· 3(𝑖+21)3≤4(𝑖+20)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|𝐴∩{1, . . . , 𝑁}|≥𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|𝐴∩{1, . . . , 𝑁}|&lt;𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑖=0𝑃𝑖.As before, we have 𝐿𝑘≤4(𝑘+2)&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Choose an integer 𝑚≥2 satisfying 𝑚&gt;(2𝑚+1)&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; satisfying 𝑚&gt;(2𝑚+1)1−𝑐/2and define the dimension 𝑉𝑘= (𝑘+10)&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;ns.Consider the grid of vectors {1, . . . , 𝑚}𝑉𝑘−1.Let 𝑣= (𝑣&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2takes integer values in the range[𝑉𝑘−1, (𝑉𝑘−1)𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2=𝐾}|≥𝑚𝑉𝑘−1/(𝑉𝑘𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑣&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Because the dimension 𝑉𝑘+1= (𝑘+ 11)&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;nsion 𝑉𝑘+1= (𝑘+ 11)4is significantly larger than 𝑉𝑘= (𝑘+ 10)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Wenowshowthat|𝐴∩{1, . . . , 𝑁}|≥𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|𝐴𝑘|≥(max(𝐴𝑘+1))&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;satisfy𝑚&gt;(2𝑚+ 1)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(2𝑚+ 1)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑉𝑘𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;the left hand side, the exponent is(1 −𝑐/2)(𝑉𝑘−1)= (1 −𝑐/2)𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ft hand side, the exponent is(1 −𝑐/2)(𝑉𝑘−1)= (1 −𝑐/2)𝑘4+ 𝑂(𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ght hand side, the exponent is(1 −𝑐)(𝑉𝑘+1 −1)= (1 −𝑐)(𝑘+ 11)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ide, the exponent is(1 −𝑐)(𝑉𝑘+1 −1)= (1 −𝑐)(𝑘+ 11)4= (1 −𝑐)𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑂(𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The contribution of the running product𝐿𝑘+1≤4(𝑘+3)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;hand side is only 𝑂(𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;nd side is only 𝑂(𝑘2), which is safely absorbed into the 𝑂(𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;the𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t on the left hand side(1 −𝑐/2)is strictly greater than the𝑘&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑎∈𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;density of𝐴+ 𝐵up to a large scale, we define a threshold𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑥&lt;𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Furthermore, because𝑥&lt;3𝑘𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Furthermore, because𝑥&lt;3𝑘𝑁0, we must have𝑦&lt;𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;e𝑥&lt;3𝑘𝑁0, we must have𝑦&lt;𝑁0, which in turn dictates that𝑏𝑡𝑜𝑝≤𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;value 𝐶, defined as 𝐶= |4𝑚−3𝑘|𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;This shows that any valid sum𝑥&lt;𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑦∈(𝐴+ 𝐵) ∩[0, 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝐴+ 𝐵strictly less than𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;e number of choices for𝑐.Dividing by the interval length𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;the density at this new scale:the density up to𝑀· 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;to𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;we can find a larger scale𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;we can find a larger scale𝑁1= 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;we can find a larger scale𝑁1= 𝑀1𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴1 ⊔𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴1 ⊔𝐴2such that𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴1and𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴1and𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;growing sequence𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;growing sequence𝑀0&lt;𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;growing sequence𝑀0&lt;𝑀1&lt;𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(𝑀2𝑘, 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴2=𝐴\\𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In odd-indexed intervals(𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In odd-indexed intervals(𝑀2𝑘, 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dd-indexed intervals(𝑀2𝑘, 𝑀2𝑘+1], all elements of𝐴belong to𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;vals(𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;vals(𝑀2𝑘+1, 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;vals(𝑀2𝑘+1, 𝑀2𝑘+2],they all belong to𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ock contains all the “fresh” elements of𝐴, looking at scale𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;that𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;that𝐴1haspositiveupperdensity,andlookingatscale𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;spositiveupperdensity,andlookingatscale𝑀2𝑘+2showsthesamefor𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;The key ingredient is a combinatorial sumset bound:if𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The key ingredient is a combinatorial sumset bound:if𝐴=𝐴1 ∪𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a combinatorial sumset bound:if𝐴=𝐴1 ∪𝐴2and every element of𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|(𝐴+𝐴) ∩[1, 𝑁]|≤|(𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|(𝐴+𝐴) ∩[1, 𝑁]|≤|(𝐴1 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•Atscale𝑁=𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•Atscale𝑁=𝑀2𝑘+1:allelementsof𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•Atscale𝑁=𝑀2𝑘+1:allelementsof𝐴2in[1, 𝑁]liebelow𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐾= 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐾= 𝑀2𝑘gives|(𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐾= 𝑀2𝑘gives|(𝐴1 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•At scale𝑁= 𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;•At scale𝑁= 𝑀2𝑘+2:symmetrically, all elements of𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e𝑁= 𝑀2𝑘+2:symmetrically, all elements of𝐴1in[1, 𝑁]lie below𝑀&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|(𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|(𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Question.Is there a basis𝐴of order 2 such that if𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Question.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;estion.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;on.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴1and𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;re a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴1and𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;from&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Step3:Nosyndeticpartitionexists.Suppose𝐴=𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Step3:Nosyndeticpartitionexists.Suppose𝐴=𝐴1⊔𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;2𝑃𝑘,&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴1 + 𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴1 + 𝐴1can cover the interval[11𝑃𝑘, 11𝑃𝑘+ 𝑘]using𝑥𝑘, but𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; + 𝐴1can cover the interval[11𝑃𝑘, 11𝑃𝑘+ 𝑘]using𝑥𝑘, but𝐴2 + 𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;any element in that interval.This leaves a gap of length𝑘in𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;element in that interval.This leaves a gap of length𝑘in𝐴2 +𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑖∈ℕ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;𝑗=1be&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑗=1beastrictlyincreasingsequenceofprimessatisfying𝑞&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑚=0recursively, starting with𝐽&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;First, define the step size𝑃𝑚=Î&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;𝑅𝑚+𝑥𝑃𝑚diverges.Thus,wecancompute&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;below 3/4.Let𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;10𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;10𝐽𝑚0≤𝑘&lt; 10𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑘=𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑑(M({𝐴(𝑖) + 𝑘|𝑖&lt;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;•(Case 2:𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;•(Case 2:𝐽𝑚0≤𝑖&lt;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐴(𝑖)≤0.&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑑(M({𝐴(𝑖) + 𝑘|𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑑(M({𝐴(𝑖) + 𝑘|𝐽𝑚0≤𝑖&lt;𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;•(Case 3:𝑖≥𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1) Consider any element𝐴(𝑖) where 𝑖belongs to some block 𝑚≥𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;meaning 10𝐽𝑚≥10𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑑(M({𝐴(𝑖) + 𝑘|𝑖≥𝐽𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;334&quot;,
+    &quot;context&quot;: &quot;29≈0.&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Theorem.Let𝐴⊂ℝ&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Proof.We will show that there exists an infinite set𝐴⊂ℝ&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Let𝐾∞bethecountablyinfinitecompletegraphwithvertexset𝑉={𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;et𝐾∞bethecountablyinfinitecompletegraphwithvertexset𝑉={𝑥1, 𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑥𝑛= 100&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;We construct our point set𝐴⊂ℝ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑒= (𝑥𝑖+ 𝑥𝑗, 𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑖+ 𝑥𝑖𝑥𝑗+ 𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑎𝑏= (𝑎+ 𝑏, 𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑎𝑏= (𝑎+ 𝑏, 𝑎2+ 𝑎𝑏+ 𝑏&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑏𝑐= (𝑏+ 𝑐, 𝑏&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑏𝑐= (𝑏+ 𝑐, 𝑏2+ 𝑏𝑐+ 𝑐&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑐𝑎= (𝑐+ 𝑎, 𝑐&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃𝑐𝑎= (𝑐+ 𝑎, 𝑐2+ 𝑐𝑎+ 𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚=(𝑏&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚=(𝑏2 + 𝑏𝑐+ 𝑐&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚=(𝑏2 + 𝑏𝑐+ 𝑐2) −(𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚=(𝑏2 + 𝑏𝑐+ 𝑐2) −(𝑎2 + 𝑎𝑏+ 𝑏&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=𝑐&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=𝑐2 −𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sidon sets of size𝑛.Then𝑓(𝑛)≥(𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;16 · 𝐼(𝐴+𝐴) + 100𝑛+ 16 ≥𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1.𝐼(𝑋) + 2𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1.𝐼(𝑋) + 2𝑁1(𝑋)= |𝑋| + 𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2.4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2.4𝑁1(𝑋) + 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2.4𝑁1(𝑋) + 𝑁3(𝑋)≤3|𝑋| +2𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑥∈ℤ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑥∈ℤ1𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3.2𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3.2𝑁2(𝑋)≤𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3.2𝑁2(𝑋)≤𝑁3(𝑋) + 2𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;.2𝑁2(𝑋)≤𝑁3(𝑋) + 2𝑉2(𝑋) + 2𝐼(𝑋).Consider each pair(𝑥, 𝑥+ 2)∈𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;counted exactly by 𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;counted exactly by 𝑉2, so𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;counted exactly by 𝑉2, so𝑁2(𝑋)= 𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•If𝑥−1 ∈𝑋, then(𝑥−1, 𝑥+ 2)is a pair counted in𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•If𝑥+ 3 ∈𝑋, then(𝑥, 𝑥+ 3)is a pair counted in𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;distinct in this construction, we have 2|𝐺|≤𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Next, for each𝑘≥1, count quadruples(𝑎, 𝑏, 𝑐, 𝑑)∈𝐴&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;4𝑁1(𝐷) + 𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4𝑁1(𝐷) + 𝑁3(𝐷)≤3|𝐷| + 2𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;16𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16𝑁1(𝑆) + 4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + 8𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;16𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16𝑁1(𝑆) + 4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + (4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + (4𝑁3(𝑆) + 8𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and notice that the 4𝑁&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8|𝑆| + 8𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8|𝑆| + 8𝑉2(𝑆) −8𝐼(𝑆))≤3|𝐷| + 8𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and see that the 8𝑉&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The standard Sidon estimates |𝑆|≥𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The standard Sidon estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; Sidon estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;on estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛2−3𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;stimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛2−3𝑛2= 𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;.By the standard orthogonality relation, the sum&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ipal term corresponding to𝑗= 0, which evaluates trivially to&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;where𝑃(𝑛)= 𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;where𝑃(𝑛)= 𝑛5+ 𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where𝑃(𝑛)= 𝑛5+ 𝑛4+ 3𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bytelescopingsummation,𝑆𝑛−𝑓𝑛=𝑆&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bytelescopingsummation,𝑆𝑛−𝑓𝑛=𝑆1−𝑓&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2𝑃( 𝑗)( 𝑗−1)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗6−𝑗&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗6−𝑗5( 𝑗−1)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑗&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑗6( 𝑗−1)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥6−𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥6−𝑥5(𝑥−1)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝐴(𝑥)= −4683𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝐴(𝑥)= −4683𝑥5+ 13586𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝐴(𝑥)= −4683𝑥5+ 13586𝑥4−19540𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;In particular, it is easy to show that|𝐴( 𝑗)|≤100000𝑗&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;𝑗&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑛&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;denote the ordinary generating function of𝑎𝑛.Then𝐴(𝑥/3)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑠1 + 𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠2 + 𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠3 + 𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑠2 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠3 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠4 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑠𝑛−(−1)𝑛𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠𝑛+1 −(−1)𝑛𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠𝑛+2 −(−1)𝑛𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑖,&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑠1 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠2 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑠2 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑠3 −𝑠&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;combine these divisibility properties.We explicitly compute𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;the coefficients of this series.Since𝑎&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;the coefficients of this series.Since𝑎0= 1, we have𝑏&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;𝑛=1𝑦𝑛𝑥𝑛is&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Finally, we construct the eighth root𝐶(𝑥)=𝐴(𝑥/3)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(1 + 2𝑋(𝑥))&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)2+ 448𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)2+ 448𝑋(𝑥)3+ 1120𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;+ 1792𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)6+ 1024𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)6+ 1024𝑋(𝑥)7+ 256𝑋(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋6+ 64𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋6+ 64𝑋7+ 16𝑋&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Thus,(1 + 2𝑋(𝑥))&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Thus,(1 + 2𝑋(𝑥))8= 1 + 16(𝑋(𝑥) + 𝑃(𝑋(𝑥))).To satisfy 𝐶(𝑥)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;𝑛=1𝑥𝑛𝑥𝑛inductively.We set𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;coefficient of𝑃(𝑋(𝑥))depends only on the terms𝑥&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;expansionyields(1 + 2𝑋(𝑥))&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;he existence of the desired integer power series 𝐶(𝑥)=𝐴(𝑥/3)&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;coordinate𝑡&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;vector𝑚=(𝑚(0), 𝑚(1), 𝑚(2))∈ℕ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;= 𝑚(0) + 𝑚(1) + 𝑚(2)for total degree.A finite order idealΓ⊂ℕ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ℎΓ(𝑖−1)ℎΓ(𝑖+ 1)≤ℎΓ(𝑖)&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;monomialsare𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;monomialsare𝑚1≠𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;monomialsare𝑚1≠𝑚2.SinceΓispure,|𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;monomialsare𝑚1≠𝑚2.SinceΓispure,|𝑚1|=|𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Γ = {𝑢: 𝑢≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Γ = {𝑢: 𝑢≤𝑚1} ∪{𝑢: 𝑢≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;After possibly interchanging𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;After possibly interchanging𝑚1and𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑚2(𝑥)&gt;𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑚2(𝑦)≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Indeed,the three integers𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Indeed,the three integers𝑚1(𝑖) −𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Let𝑐= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑚2(𝑥) −𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Then|𝑀red|= 𝑒−𝑐.For 𝑢≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑢̸ ≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;If𝑑≥𝑐, the map 𝑢↦→𝑢−𝑐𝑒𝑥bijects{𝑢≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑):= ℎΓ(𝑑)= ℎ𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;We need to prove that𝐻(𝑑−1)𝐻(𝑑+ 1)≤𝐻(𝑑)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In particular, Δ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;econd difference of the principal sequence of𝑀red.ThereforeΔ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; (3) also implies the following useful dichotomy.If𝑡&gt; 0 andΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Nowfix0&lt;𝑑&lt;𝑒=|𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Nowfix0&lt;𝑑&lt;𝑒=|𝑚1|=|𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ𝐻(𝑑) + Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑)2−𝐻(𝑑−1)𝐻(𝑑+ 1)= (Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑)2−𝐻(𝑑−1)𝐻(𝑑+ 1)= (Δ𝐻(𝑑))2−𝐻(𝑑−1)Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Since𝐻(𝑑−1)≥0 andΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)≤(Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2𝐻(𝑑−1)≤(Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Indeed,ifΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Write𝑓(𝑡)=ℎ𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Write𝑓(𝑡)=ℎ𝑚1(𝑡)and𝑔(𝑡)=1𝑡≥𝑐ℎ𝑀red(𝑡−𝑐),sothat𝐻=𝑓+𝑔.SinceΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ2𝑔≤1, ifΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;IfΔ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ2𝑓(𝑑+ 1)= Δ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;for𝑓with𝑡= 𝑑+ 1.Then in particular𝑑+ 1≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)2= (Δ 𝑓(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)2= (Δ 𝑓(𝑑))2= (Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑≥𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑≥𝑚1(𝑥) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑≥𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑≥𝑚1(𝑥) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2𝑑≥2𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2𝑑≥2𝑚1(𝑥) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2𝑑≥2𝑚1(𝑥) + 𝑚1(𝑦) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2𝑑≥2𝑚1(𝑥) + 𝑚1(𝑦) + 𝑚1(𝑧) + 2 = 𝑒+ 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Since𝑐=𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Forthetwocaseswhen(B)holds,thatisΔ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑+ 1)≤(Δ𝐻(𝑑+ 1))&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)≤(Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝐻(𝑑−1)=𝐻(𝑑+ 1) −2Δ𝐻(𝑑+ 1) + 1 ≤(Δ𝐻(𝑑+ 1))&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=𝐻(𝑑+ 1) −2Δ𝐻(𝑑+ 1) + 1 ≤(Δ𝐻(𝑑+ 1))2−2Δ𝐻(𝑑+ 1) + 1 = (Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑔with𝑡= 𝑑+ 1.Let𝐷= 𝑑+ 1.SinceΔ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑔with𝑡= 𝑑+ 1.Let𝐷= 𝑑+ 1.SinceΔ2𝑔(𝐷)= 1, necessarily𝐷≥𝑐, andΔ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;First, since Δ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚1(0) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚1(1) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐷≤𝑚1(0) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;air inequalities involving𝑥follow directly from𝐷−𝑐≤𝑀red(𝑦)≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;two single indicators would be zero; since𝐷≥𝑐= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the right-hand side of (3) would be negative, contradictingΔ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;SinceΔ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑥-single indicator is zero, because𝐷≥𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐴= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝐵= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and recall𝑐= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;onnegative becauseΔ 𝑓(𝐷)≥𝑐and𝐷−𝑐+ 1 ≥1.Therefore𝐻(𝐷)≤(Δ𝐻(𝐷))&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;By midpoint monotonicity (9), applied to𝑓= ℎ𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;giving the desired𝐻(𝐷)≤(Δ𝐻(𝐷))&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;CaseC:(C)holds.So hereΔ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;CaseC:(C)holds.So hereΔ2𝐻(𝑑+ 1)= 2 and henceΔ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;CaseC:(C)holds.So hereΔ2𝐻(𝑑+ 1)= 2 and henceΔ2𝑓(𝑑+ 1)=Δ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Δ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;because it would imply𝑑+ 1≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑+ 1 ≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚2(𝑦)≤𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚2(𝑦)≤𝑚1(𝑥) + 1 + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;But the upper alternative for𝑓gives𝑑+ 1 ≥𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;But the upper alternative for𝑓gives𝑑+ 1 ≥𝑚1(𝑥) + 𝑚&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(Δ𝐻(𝑑))&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(Δ𝐻(𝑑))2−2𝐻(𝑑−1)= 4(𝜌+ 2)&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1)𝐻(𝑑+ 1)≤𝐻(𝑑)&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

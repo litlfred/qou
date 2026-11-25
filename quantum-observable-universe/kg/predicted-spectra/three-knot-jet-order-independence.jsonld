@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-three-knot-jet-order-independence",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:three-knot-jet-order-independence",
+  "kind": "conjecture",
+  "title": "Jet-order algebraic independence (QOU-attackable reduction)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "transcendence",
+    "jet-order",
+    "habiro-ring",
+    "groebner-shirshov",
+    "surreal-error-bound",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.MassTheory.JetOrderIndependence",
+  "text": "three-knot-jet-order-independence.md",
+  "provenance": "authored"
+}

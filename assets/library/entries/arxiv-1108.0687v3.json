@@ -1,0 +1,359 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1108.0687v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1108.0687v3  [math.PR]  28 Jul 2013\nConcentration of Lipschitz functionals of determinantal and other strong\nRayleigh measures\nRobin Pemantle1, 2 and Yuval Peres3\nAbstract: Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n →\nR be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con-\ndition, we show that f−Ef satisﬁes a concentration inequality. The class of strong Rayleigh measures\nincludes determinantal measures, weighted uniform matroids and exclusion measures; some familiar\nexamples from these classes ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nOur goal in this paper is to prove concentration inequalities for Lipschitz functions of certain collections of negatively dependent binary-valued random variables. To illustrate our general methods we state our main result in a special case that was motivated by a question of E. Mossel (personal communication).\n\n::: thm\n[]{#th:sp tree label=\"th:sp tree\"} Let $G = (V,E)$ be a finite connected graph, let ${\\mathbb P}$ be the uniform measure on the spanning trees of $G$, and for $e \\in E$ let $X_e$ be the indicator function of the event that $e$ is in the chosen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical concentration inequalities",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-classical-concentration-inequalities.md",
+      "narrative": null,
+      "content": "Let $\\{ X_n : n \\geq 1 \\}$ be independent Bernoulli random variables with respective means $\\{ p_n \\}$. Let $S_n := \\sum_{k=1}^n X_k$ denote the partial sums, $\\mu_n := {\\mathbb E}S_n = \\sum_{k=1}^n p_k$ denote the means and $V_n := \\sum_{k=1}^n p_k (1-p_k)$ denote the variance of $S_n$. The simple and well known one-sided tail estimate for $S_n$ is the classical Gaussian bound $$\\label{eq:chernoff}\n{\\mathbb P}(S_n - \\mu_n \\geq a) \\leq\n   \\exp \\left  (- \\frac{2 a^2}{n} \\right ) \\, .$$ Replacing $X_n$ with $1-X_n$ gives the two-sided bound $$\\label{eq:two-sided}\n{\\mathbb P}(|S_n - \\mu_n| \\geq a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizations",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-generalizations.md",
+      "narrative": null,
+      "content": "[]{#ss:gen label=\"ss:gen\"}\n\nOur aim is to generalize [\\[eq:chernoff\\]](#eq:chernoff){reference-type=\"eqref\" reference=\"eq:chernoff\"} or its Poissonian version [\\[eq:pois\\]](#eq:pois){reference-type=\"eqref\" reference=\"eq:pois\"} in two ways. Instead of $S_n$ we consider arbitrary Lipschitz functions of $X_1 , \\ldots , X_n$, and instead of independent Bernoullis we consider a more general negatively dependent collection of binary random variables. We will give a number of applications, but before this, we briefly discuss what is known about each of the two generalizations separately.\n\nFor the fir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-2-strong-rayleigh-property-stochastic-covering-p.md",
+      "narrative": null,
+      "content": "[]{#sec:covering label=\"sec:covering\"}\n\nLet $[n]$ denote $\\{ 1 , \\ldots , n \\}$ and let ${\\mathcal B}_n := \\{ 0 , 1 \\}^n$ denote the Boolean lattice of rank $n$, with coordinatewise partial order. The function $N : {\\mathcal B}_n \\to \\mathbb{Z}^+$ will be used throughout to denote the counting function defined by $N(\\omega) := \\sum_{j=1}^n\n\\omega_j$. A measure $\\nu$ on ${\\mathcal B}_n$ is said to be **$k$-homogeneous** if $\\nu$ is supported on the set of $\\{ \\omega : N(\\omega) = k \\}$. The probability measure $\\nu$ on ${\\mathcal B}_n$ is said to be **negatively associated** if $\\int fg \\, d\\nu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-3-results.md",
+      "narrative": null,
+      "content": "[]{#sec:results label=\"sec:results\"}\n\nThe chief consequence of the strong Rayleigh property that we use to prove concentration inequalities is the stochastic covering property. Although all of our examples so far of measures with the SCP are in fact strong Rayleigh, we note that this may not be the case in the future, and with this in mind, we state a result that uses only the SCP.\n\n::: thm\n[]{#th:main label=\"th:main\"} Let ${\\mathbb P}$ be a $k$-homogeneous probability measure on ${\\mathcal B}_n$ satisfying the SCP. Let $f$ be a Lipschitz-1 function on ${\\mathcal B}_n$. Then $${\\mathbb P}(f -",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-4-proofs.md",
+      "narrative": null,
+      "content": "[]{#sec:proofs label=\"sec:proofs\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classical proofs",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-41-the-classical-proofs.md",
+      "narrative": null,
+      "content": "The classical proofs\nTo prove bounds such as (1.1), one obtains an upper bound for EeλSn, and then applies Markov’s\ninequality, choosing λ optimally. Underlying the bounds on EeλSn are corresponding bounds for\ncompensated increments.\nLet ∆denote a variable with mean zero.\nThree classical exponential\nbounds are as follows.\n|∆| ≤1\n⇒\nEeλ∆≤eλ2/2\n(4.10)\n∆∈[r, s]\n⇒\nEeλ∆≤eλ2(s−r)2/8\n(4.11)\n∆∈[r, s]\n⇒\nEeλ∆≤exp\n\u0002\n(eλ −1 −λ) |rs|\n\u0003\n,\n(4.12)\nwhen |r−s| ≤1. These are used together with the following two special cases of Markov’s inequality.\nEeλX ≤ecλ2/2\n=⇒\nP(X ≥a) ≤e−a2/(2c)\n(4.13)\nEeλX ≤eb (eλ−λ−1)\n=⇒\nP(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorems ?? and ??",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-42-proof-of-theorems-and.md",
+      "narrative": null,
+      "content": "Theorem 3.1 is a special case of Theorem 3.4. This is because any probability measure µ on Bn may\nbe viewed as the law of a point process on the n element set [n], where the random counting measure\n9\nZ(ω) is deﬁned by Z(ω)(S) = P\nj∈S ωj. Informally, the points of the process are the coordinates of\nthe ones in the sample ω. With this interpretation, the SCP on Bn is inherited from the SCP for\nthe point process Z, whence Theorem 3.4 with S = R (or any other standard Borel space containing\n[n]) implies Theorem 3.1. It remains to prove Theorem 3.4.\nLet (Ω, F, P) be a probability space on which is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "The variable N is distributed as the sum of independent Bernoullis.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "The variable N satisﬁes Eeλ(N−µ) ≤exp \u0002 µ(eλ −1 −λ) \u0003 and consequently for any a > 0, P \u0010 N ≥µ + a \u0011 ≤exp \u0012 − (a/2)2 2(µ + a/2) \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "The function φ is Lipschitz-1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/lem-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-008-04.md",
+      "narrative": null,
+      "content": "The random variable φ(N) satisﬁes the concentration inequality Eeλ(φ(N)−Eφ(N)) ≤eµ(eλ−1−λ) . Consequently, the upper tails of φ(N) obey the bound P(φ(N) −Eφ(N) > t) ≤e− t2 2(t+µ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-43-proof-of-theorem.md",
+      "narrative": null,
+      "content": "In this section we assume P is the law of a strong Rayleigh measure on Bn with ﬁnite mean EN = µ.\nWe also let f denote an arbitrary but ﬁxed Lipschitz-1 function on conﬁgurations and deﬁne a\nfunction φ on Z+ by\nφ(k) := E(f | N = k) .\nLemma 4.1. The variable N is distributed as the sum of independent Bernoullis.\nProof: In the deﬁnition of the strong Rayleigh property, setting the variables z1, . . . , zn equal\nproduces a univariate polynomial with no roots in the upper half plane. As pointed out at the\nbeginning of Section 3 of [BBL09], such a polynomial with real coeﬃcients must have all its r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-5-applications.md",
+      "narrative": null,
+      "content": "[]{#sec:examples label=\"sec:examples\"}\n\nIn this section we discuss some classes of measures known to satisfy the hypotheses of our concentration results. The following Venn diagram gives a sense of how these classes intersect each other.\n\n![some classes of strong Rayleigh measures](venn){#fig:venn}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matroids",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-51-matroids.md",
+      "narrative": null,
+      "content": "[]{#ss:matroids label=\"ss:matroids\"}\n\nA collection ${\\cal C}$ of subsets of a finite set $E$, all of a given cardinality, $k$, is said to be the set of bases of a matroid if it satisfies the base exchange axiom (see, e.g., [@tutte]): if $A$ and $B$ are distinct members of ${\\cal C}$ and $a \\in A\n\\setminus B$, then there exists $b \\in B \\setminus A$ such that $A \\cup \\{ b \\} \\setminus \\{ a \\} \\in {\\cal C}$. Given a matroid, it is natural to consider the uniform measure on ${\\cal C}$. More generally, the **weighted random base** is chosen from the probability measure $$\\nu_w (B) := C \\prod_{e \\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exclusion measures",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-52-exclusion-measures.md",
+      "narrative": null,
+      "content": "[]{#ss:exclusion label=\"ss:exclusion\"}\n\nThe symmetric group ${\\cal S}_n$ acts on ${\\mathcal B}_n$ by permuting the coordinates. Suppose a nonnegative rate $r(\\tau)$ is given for each transposition $\\tau \\in {\\cal S}_n$. Define a random evolution on ${\\mathcal B}_n$ by letting each pair of coordinates $(i,j)$ transpose independently at rate $r(\\tau_{ij})$. In other words, we have a continuous time chain on ${\\mathcal B}_n$ which jumps from $x$ to $\\tau (x)$ at rate $r(\\tau)$ for each transposition $\\tau$. This process is known as the symmetric exclusion process.\n\nBorcea, Branden and Liggett [@b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal measures on a finite Boolean lattice",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-53-determinantal-measures-on-a-finite-boolean-la.md",
+      "narrative": null,
+      "content": "[]{#ss:finite label=\"ss:finite\"}\n\nWe say that a probability measure ${\\mathbb P}$ on ${\\mathcal B}_n$ is **determinantal** (in the general sense) if there is an $n \\times n$ real or complex matrix $K$ such that that for every $S \\subseteq \\{ 1 , \\ldots , n \\}$, $$\\label{eq:det}\n{\\mathbb E}\\prod_{j \\in S} X_j = \\det K_S$$ where $K_S$ is the submatrix of $K$ obtained by choosing only those rows and columns whose index is in $S$. In this definition, the phrase \"general sense\" refers to the lack of further assumptions on $K$. An important subclass is the **Hermitian** determinantal measures, for w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.0687v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal point processes",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-6-determinantal-point-processes.md",
+      "narrative": null,
+      "content": "[]{#s:continuous label=\"s:continuous\"}\n\nWe consider here only simple point processes and often assume ${\\mathbb E}N < \\infty$ as well. If $\\rho_k : (\\mathbb{R}^d)^k \\to \\mathbb{R}^+$ are measurable functions, then the simple point process ${\\cal Z}$ is said to have joint intensities $\\{ \\rho_k \\}$ if for any $k$ and any family $D_1 , \\ldots , D_k$ of disjoint Borel subsets of $\\mathbb{R}^d$, $${\\mathbb E}\\left [ \\prod_{j=1}^k {\\cal Z}(D_j) \\right ] = \\int_{\\prod_j D_j}\n   \\rho_k (x_1 , \\ldots , x_k) \\, dx_1 \\cdots dx_k \\, .$$ In particular, $${\\mathbb E}N = \\int_{\\mathbb{R}^d} \\rho_1 (x) \\, dx",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

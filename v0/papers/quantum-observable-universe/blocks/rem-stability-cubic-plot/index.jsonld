@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-stability-cubic-plot",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:stability-cubic-plot",
+  "kind": "remark",
+  "title": "The stability cubic at $q = 1.1100$: lattice points and the nuclear chart",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-diophantine-valley",
+    "papers/quantum-observable-universe/blocks/prop-beta-stability",
+    "papers/quantum-observable-universe/blocks/prop-neutron-prediction-comparison"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "tags": [
+    "stability-cubic",
+    "lattice-points",
+    "nuclear-chart",
+    "codata",
+    "plot"
+  ],
+  "text": "stability-cubic-plot.md",
+  "provenance": "authored"
+}

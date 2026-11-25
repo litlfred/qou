@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2311.05446v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
+      "dcterms:creator": [
+        "AISHWARYA, GAUTAM",
+        "ROTEM, LIRAN"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2311.05446",
+      "dcterms:abstract": "We study the connection between the concavity properties of a measure ν and the convexity properties of the associated relative entropy D(·∥ν) along optimal transport. As a corollary we prove a new dimensional Brunn–Minkowski inequality for centered star-shaped bod- ies, when the measure ν is log-concave with a p-homogeneous potential (such as the Gaussian measure). Our method allows us to go beyond the usual convexity assumption on the sets that is fundamentally essential for the standard differential-geometric technique in this area. We then take a finer look at the convexity properties of the Gauss- ian relative entropy, which yields new functional inequalities. First we obtain curvature and dimensional reinforcements to Otto–Villani’s HWI inequality in Gauss space, when restricted to even strongly log-concave measures. As corollaries, we obtain improved versions of Gross’ Loga- rithmic Sobolev inequality and Talagrand’s transportation cost inequal- ity in this setting.",
+      "dcterms:source": "library/arxiv-2311.05446v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2311.05446v3"
+    }
+  ]
+}

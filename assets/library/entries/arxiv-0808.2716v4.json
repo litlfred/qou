@@ -1,0 +1,593 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0808.2716v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nAround 1980, Thurston proved that 3--manifolds with torus boundary decompose into pieces that admit locally homogeneous geometric structures [@thurston:survey], and that in an appropriate sense the most common such structure is hyperbolic [@thurston:notes]. By Mostow--Prasad rigidity, a hyperbolic structure is unique for such a manifold, and thus the geometry of a hyperbolic manifold ought to give a wealth of information to aid in its classification. However, in practice it has been very difficult to determine geometric properties of a hyperbolic manifold from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp shapes and areas",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-cusp-shapes-and-areas.md",
+      "narrative": null,
+      "content": "In a finite--volume hyperbolic 3--manifold $M$, a horoball neighborhood of a torus boundary component becomes a *cusp*, homeomorphic to $T^2\\times[0,\\infty)$. Mostow--Prasad rigidity implies that each cross-sectional torus $T^2$ is endowed with a flat metric, or *cusp shape*, that is determined up to similarity by the topology of $M$. When $M$ has a single torus boundary component, we may expand a horoball neighborhood until it meets itself. This *maximal horoball neighborhood* completely determines a flat metric on the torus, and one can measure lengths of curves and area on the torus using t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0808.2716v4  [math.GT]  11 Feb 2010\nCUSP AREAS OF FAREY MANIFOLDS\nAND APPLICATIONS TO KNOT THEORY\nDAVID FUTER, EFSTRATIA KALFAGIANNI, AND JESSICA S. PURCELL\nAbstract. This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once–\npunctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements. The\ninput for these estimates is purely combinatorial data coming from the Farey tesselation\nof the hyperbolic plane. The bounds on cusp area lead to explicit bounds on the volume\nof Dehn ﬁllings of these manifolds, for example sharp bounds on volumes of hyperb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp area and link diagrams",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-cusp-area-and-link-diagrams.md",
+      "narrative": null,
+      "content": "[]{#sec:diagram-intro label=\"sec:diagram-intro\"}\n\nA closely related class of manifolds are complements of 2--bridge links. Using similar techniques, in this paper we are also able to bound the lengths of slopes on maximal cusps in hyperbolic 2--bridge links. Since all 2--bridge links can be represented by an alternating diagram, our results give further evidence for a conjectural picture of the cusp shapes and maximal cusp metrics of alternating knots.\n\nFor general alternating knots and links, there is increasing evidence that the cusp shape and maximal cusp metric ought to be bounded in terms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications to hyperbolic Dehn filling",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-applications-to-hyperbolic-dehn-filling.md",
+      "narrative": null,
+      "content": "The shapes of the cusps and their actual metrics give information not just on the 3--manifold itself, but also on the Dehn fillings of that manifold.\n\nFor example, modulo the geometrization conjecture, several theorems imply that Dehn fillings on slopes of sufficient length yield hyperbolic manifolds (these are the $2\\pi$--Theorem, due to Gromov and Thurston [@bleiler-hodgson]; the 6--Theorem, due to Agol [@agol:bounds] and Lackenby [@lackenby:word]; and the $7.515$--Theorem, due to Hodgson and Kerckhoff [@hk:univ]). When we combine these theorems with the results on maximal cusp areas and slo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume and Jones polynomial invariants",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-volume-and-jones-polynomial-invariants.md",
+      "narrative": null,
+      "content": "The volume estimate of Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"} has a very interesting application to conjectures on the relationship of the volume to the Jones polynomial invariants of hyperbolic knots.\n\nFor a knot $K$, let $$J_K(t)= \\alpha_K t^m+ \\beta_K t^{m-1}+ \\ldots + \\beta'_K t^{r+1}+\n\\alpha'_K t^r$$\n\ndenote the Jones polynomial of $K$. We will always denote the second and next--to--last coefficients of $J_K(t)$ by $\\beta_K$ and $\\beta'_K$, respectively.\n\nThe Jones polynomial fits into an infinite family of knot invariants:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-15-organization.md",
+      "narrative": null,
+      "content": "We begin by discussing Farey manifolds. In Section [\\[sec:farey-ford\\]](#sec:farey-ford){reference-type=\"ref\" reference=\"sec:farey-ford\"}, we describe the canonical triangulations of the three families of Farey manifolds. In Section [\\[sec:horosphere\\]](#sec:horosphere){reference-type=\"ref\" reference=\"sec:horosphere\"}, we show that the universal cover of one of these manifolds must contain a number of maximal horospheres whose size is bounded below. This leads to the cusp area estimates of Section [\\[sec:cusp-area\\]](#sec:cusp-area){reference-type=\"ref\" reference=\"sec:cusp-area\"}.\n\nThe later s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-16-acknowledgements.md",
+      "narrative": null,
+      "content": "We thank Ian Agol for a number of helpful comments, and in particular for getting us started in the right direction towards Proposition [\\[prop:horosize\\]](#prop:horosize){reference-type=\"ref\" reference=\"prop:horosize\"}. We thank François Guéritaud for enlightening discussions about punctured torus bundles. In order to generate Table [\\[table:jones\\]](#table:jones){reference-type=\"ref\" reference=\"table:jones\"} on page , we used\n\nsoftware written by Dror Bar-Natan and Nathan Broaddus, as well as a handy script by Ilya Kofman. We are grateful to all of them. Finally, we thank the referees for su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The canonical triangulation of a Farey manifold",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-2-the-canonical-triangulation-of-a-farey-manifol.md",
+      "narrative": null,
+      "content": "[]{#sec:farey-ford label=\"sec:farey-ford\"}\n\nIn this section, we review the canonical triangulations of Farey manifolds. We begin by recalling the definition of the Ford domain and the canonical polyhedral decomposition that is its dual. We then describe the combinatorics of the canonical polyhedral decomposition for each of the three families of Farey manifolds; for the manifolds in question, it is always a triangulation. Along the way, we introduce a number of terms and notions that will be needed in the ensuing arguments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ford domain and its dual",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-21-the-ford-domain-and-its-dual.md",
+      "narrative": null,
+      "content": "[]{#sec:ford-rev label=\"sec:ford-rev\"}\n\nFor a hyperbolic manifold $M$ with a single cusp, expand a horoball neighborhood about the cusp. In the universal cover ${\\mathbb{H}}^3$, this neighborhood lifts to a disjoint collection of horoballs. In the upper half space model for ${\\mathbb{H}}^3$, we may ensure that one of these horoballs is centered on the point at infinity. Select vertical planes in ${\\mathbb{H}}^3$ that cut out a fundamental region for the action of the ${\\mathbb{Z}}\\times {\\mathbb{Z}}$ subgroup of $\\pi_1(M)$ that fixes the point at infinity. The Ford domain is defined to be the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Once–punctured torus bundles",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-22-oncepunctured-torus-bundles.md",
+      "narrative": null,
+      "content": "[]{#sec:ptorus label=\"sec:ptorus\"}\n\nLet $V_\\varphi$ be a hyperbolic punctured torus bundle with monodromy $\\varphi$. The mapping class group of the punctured torus is isomorphic to $SL_2({\\mathbb{Z}})$. By a well--known argument that we recall below, either $\\varphi$ or $-\\varphi$ is conjugate to an element of the form $$\\Omega = R^{a_1}L^{b_1}\\cdots R^{a_s}L^{b_s},$$\n\nwhere $a_i, b_i$ are positive integers, and $R$ and $L$ are the matrices $$R := \\begin{bmatrix} 1& 1 \\\\ 0&1\\end{bmatrix}, \\quad\n    L := \\begin{bmatrix} 1& 0 \\\\ 1& 1 \\end{bmatrix}.$$\n\nMoreover, $\\Omega$ is unique up to cyclic pe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4–punctured sphere bundles",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-23-4punctured-sphere-bundles.md",
+      "narrative": null,
+      "content": "[]{#sec:4ps label=\"sec:4ps\"}\n\nConsider the universal abelian cover $X := {\\mathbb{R}}^2 {\\smallsetminus}{\\mathbb{Z}}^2$ of the punctured torus, and define the following transformations of $X$: $$\\alpha(x,y) = (x+1, y), \\quad \\beta(x,y) = (x,y+1), \\quad\n\\sigma(x,y) = (-x,-y).$$\n\nThen one obtains the punctured torus as $T = X/\\langle\\alpha, \\beta\n\\rangle$ and the $4$--punctured sphere as $S = X/\\langle\\alpha^2,\n\\beta^2, \\sigma \\rangle$. Both $S$ and $T$ are covered by the 4--punctured torus $R = X/\\langle\\alpha^2, \\beta^2 \\rangle$. Then the action of $SL_2({\\mathbb{Z}})$ on $T$ lifts to an actio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-bridge links",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-24-two-bridge-links.md",
+      "narrative": null,
+      "content": "[]{#sec:2bridge label=\"sec:2bridge\"}\n\nIf a $4$--punctured sphere bundle $N$ is cut along a pleated fiber $S$, the result is a manifold homeomorphic to $S \\times I$, equipped with an ideal triangulation. To recover $N$, we reglue the top of this *product region* $S \\times I$ to the bottom along faces of this triangulation. Meanwhile, the complement of a two-bridge link $K$ also contains a product region $S \\times I$: namely, the complement of the $4$--string braid that runs between the minima and maxima in a diagram of $K$. It turns out that the combinatorics of this braid once again defines a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric estimates for Ford domains",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-3-geometric-estimates-for-ford-domains.md",
+      "narrative": null,
+      "content": "[]{#sec:horosphere label=\"sec:horosphere\"}\n\nThis section contains a number of geometric estimates on the Ford domains of Farey manifolds. We begin with a few estimates (Lemmas [\\[lemma:triangle-ineq\\]](#lemma:triangle-ineq){reference-type=\"ref\" reference=\"lemma:triangle-ineq\"}--[\\[lemma:length-non-canonical\\]](#lemma:length-non-canonical){reference-type=\"ref\" reference=\"lemma:length-non-canonical\"}) that apply to all triangulated cusped hyperbolic manifolds, and are generally known to hyperbolic geometers. We then restrict our attention to Farey manifolds, and establish several estimates about",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimates for triangulated hyperbolic 3–manifolds",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-31-estimates-for-triangulated-hyperbolic-3manifo.md",
+      "narrative": null,
+      "content": "Recall from Section [\\[sec:ford-rev\\]](#sec:ford-rev){reference-type=\"ref\" reference=\"sec:ford-rev\"} that the Ford domain of a cusped hyperbolic manifold $M$ is a union of finite--sided polyhedra, with one ideal vertex for each cusp of $M$. Consider those faces of the Ford domain which do not meet an ideal vertex. These consist of points that are equidistant from two or more lifts of a cusp into ${\\mathbb{H}}^3$. Each such face is the portion of a geodesic plane in ${\\mathbb{H}}^3$ which can be \"seen\" from infinity. That is, the geodesic planes are Euclidean hemispheres centered on points of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parameterization by radii of Ford domain faces",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-32-parameterization-by-radii-of-ford-domain-face.md",
+      "narrative": null,
+      "content": "[]{#subsec:param label=\"subsec:param\"}\n\nWe now restrict our attention to the case of Farey manifolds. Suppose, for the moment, that $M$ is a punctured torus bundle. Consider one zigzag of $M$; this is a punctured torus $T$. From the canonical triangulation on $M$, $T$ inherits a triangulation. Edges are dual to faces of the Ford domain of $M$. Since $T$ is a punctured torus, there are only three edges in a triangulation of $T$, and two triangles. Thus the zigzag of $T$ meets six hemispheres of the Ford domain, which are identified in pairs. See Figure [1](#fig:torus-lengths){reference-type=\"re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Horosphere estimate",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-33-horosphere-estimate.md",
+      "narrative": null,
+      "content": "[]{#subsec:large-horosphere label=\"subsec:large-horosphere\"}\n\nWe can now show that each zigzag contains a large horosphere.\n\n::: prop\n[]{#prop:horosize label=\"prop:horosize\"} Let $M$ be a Farey manifold. If $M$ is a $4$--punctured sphere bundle or two--bridge link complement, denote its meridian length by $\\mu$; if $M$ is a punctured torus bundle, denote its meridian length by $2\\mu$. (See Definition [\\[def:fibered-meridian\\]](#def:fibered-meridian){reference-type=\"ref\" reference=\"def:fibered-meridian\"}.) Then every zigzag in $M$ contains a horosphere of diameter at least $\\mu^2/7$.\n:::\n\n::: p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The length of a meridian",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-34-the-length-of-a-meridian.md",
+      "narrative": null,
+      "content": "To make the estimate of Proposition [\\[prop:horosize\\]](#prop:horosize){reference-type=\"ref\" reference=\"prop:horosize\"} independent of $\\mu$, we prove a bound on the value of $\\mu$. We note that the following lemma is the *only* result in this section that does not apply to all Farey manifolds: it fails for 2--bridge links.\n\n::: lemma\nIn an equivariant cusp of a 4--punctured sphere bundle $M$, $\\mu \\geq\n\\sqrt{2}$. []{#lemma:meridian label=\"lemma:meridian\"}\n:::\n\n::: proof\n*Proof.* Lift the hyperbolic structure on $M$ to ${\\mathbb{H}}^3$. The cusps lift to collections of horoballs. Conjugate suc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp area estimates",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-4-cusp-area-estimates.md",
+      "narrative": null,
+      "content": "[]{#sec:cusp-area label=\"sec:cusp-area\"}\n\nIn this section, we apply the results of Section [\\[sec:horosphere\\]](#sec:horosphere){reference-type=\"ref\" reference=\"sec:horosphere\"} to prove quantitative estimates on the cusp area of Farey manifolds. For most of the section, we shall focus on punctured torus bundles. At the end of the section, we will generalize these results to $4$--punctured sphere bundles and 2--bridge links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Punctured–torus bundles",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-41-puncturedtorus-bundles.md",
+      "narrative": null,
+      "content": "We shall prove the following result:\n\n::: theorem\n[]{#thm:ptorus-area label=\"thm:ptorus-area\"} Let $M$ be a punctured--torus bundle with monodromy $$\\Omega = \\pm R^{p_1}L^{q_1} \\cdots R^{p_s}L^{q_s}.$$\n\nLet $C$ be a maximal horoball neighborhood about the cusp of $M$. Then $$0.1885 \\, s \\: \\approx \\: \\frac{16 \\sqrt{3}}{147}  \\, s \\: \\leq \\:  {\\rm area}({\\partial}C) \\:<\\: 2\n\\sqrt{3} \\, \\frac{v_8}{v_3} \\, s \\: \\approx \\: 12.505 \\, s.$$\n\nFurthermore, if $\\gamma$ is any simple closed curve on ${\\partial}C$ that is transverse to the fibers, then its length $\\ell(\\gamma)$ satisfies $$\\ell(\\gamma) \\:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4–punctured sphere bundles",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-42-4punctured-sphere-bundles.md",
+      "narrative": null,
+      "content": "Theorem 4.7. Let N be a 4–punctured sphere bundle with monodromy\nΩ= Rp1Lq1 · · · RpsLqs,\nand with the property that the monodromy ﬁxes one preferred boundary circle of the 4–holed\nsphere. Let D be the maximal horoball neighborhood of the cusp corresponding to this preferred\npuncture, and let γ be any simple closed curve on ∂D that is transverse to the ﬁbers. Then\narea(∂D) ≥16\n√\n3\n147 s\nand\nℓ(γ) ≥8\n√\n3\n147 s.\nProof. As described in Section 2.3, the 4–punctured sphere bundle N is commensurable to\na punctured–torus bundle M with the same monodromy Ω. (The common cover is a 4–\npunctured torus bund",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "Let N be a 4–punctured sphere bundle with monodromy Ω= Rp1Lq1 · · · RpsLqs, and with the property that the monodromy ﬁxes one preferred boundary circle of the 4–holed sphere. Let D be the maximal horoball neighborhood of the cusp corresponding to this preferred puncture, and let γ be any simple closed curve on ∂D that is transverse to the ﬁbers. Then area(∂D) ≥16 √ 147 s and ℓ(γ) ≥8 √ 147 s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2–bridge links",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-43-2bridge-links.md",
+      "narrative": null,
+      "content": "::: theorem\n[]{#thm:2bridge label=\"thm:2bridge\"} Let $K$ be a 2--bridge link in $S^3$, whose reduced alternating diagram has twist number $t$. Let $C$ be a maximal neighborhood about the cusps of $S^3 {\\smallsetminus}K$, in which the two cusps have equal volume if $K$ has two components. Then $$\\frac{8\\sqrt{3}}{147}\\,(t-1) \\: \\leq \\: {\\rm area}({\\partial}C) \\: <\\:\n2\\sqrt{3}\\,\\, \\frac{v_8}{v_3}\\,(t-1).$$\n\nFurthermore, if $K$ is a knot, let $\\gamma$ be any non-trivial arc that starts on a meridian and comes back to the same meridian (for example, a non-meridional simple closed curve). Then its l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume estimates for closed 3–braids",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-021-5-volume-estimates-for-closed-3braids.md",
+      "narrative": null,
+      "content": "[]{#sec:volume3braids label=\"sec:volume3braids\"}\n\nIn this section, we give a complete characterization of the closed $3$--braids whose complements are hyperbolic. Then, we apply Theorem [\\[thm:4ps-area\\]](#thm:4ps-area){reference-type=\"ref\" reference=\"thm:4ps-area\"} from Section [\\[sec:cusp-area\\]](#sec:cusp-area){reference-type=\"ref\" reference=\"sec:cusp-area\"} to obtain volume estimates for closed $3$--braids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A normal form for 3–braids",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-022-51-a-normal-form-for-3braids.md",
+      "narrative": null,
+      "content": "We begin with some notation. Let $\\sigma_1$ and $\\sigma_2$ be generators for $B_3$, the braid group on three strands, as in Figure [\\[fig:3braid-generators\\]](#fig:3braid-generators){reference-type=\"ref\" reference=\"fig:3braid-generators\"}. Thus a positive word in $\\sigma_1$ and $\\sigma_2^{-1}$ represents an alternating braid diagram. Let $C =\n(\\sigma_1 \\sigma_2)^3$ denote a full twist of all three strands; $C$ generates the center of $B_3$. For a braid $w \\in B_3$, let $\\hat{w}$ denote the link obtained as the closure of $w$. Note that $\\hat{w}$ only depends on the conjugacy class of $w$. We d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic 3–braids",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-023-52-hyperbolic-3braids.md",
+      "narrative": null,
+      "content": "Our goal in this subsection is to show that the $3$--braids whose closure is a hyperbolic link can be easily identified from their Schreier normal form.\n\nBecause a closed braid presentation of a link $K$ comes with a natural orientation, we need to consider all possible orientations on components of $K$ that are consistent with $K$ being a 3--braid.\n\nIn the lemmas that lead up to Theorem [\\[thm:hyperbolic-3braid\\]](#thm:hyperbolic-3braid){reference-type=\"ref\" reference=\"thm:hyperbolic-3braid\"}, we rely on two classical invariants that are insensitive to orientation changes on a component of $K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume estimates",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-024-53-volume-estimates.md",
+      "narrative": null,
+      "content": "For sufficiently long generic $3$--braids, the methods of the previous sections estimate hyperbolic volume.\n\n::: theorem\n[]{#thm:3braid-volume label=\"thm:3braid-volume\"} Let $K= \\hat{w}$ be the closure of a generic 3--braid $w \\sim C^k\n\\sigma_1^{p_1} \\sigma_2^{-q_1} \\cdots \\sigma_1^{p_s} \\sigma_2^{-q_s}$, where $p_i$, $q_i$ are all positive and $w \\nsim\n\\sigma_1^p\\sigma_2^{-q}$. Then $K$ is hyperbolic, and $$\\label{eq:3braid-volume}\n4v_3 \\, s - 276.6 \\: < \\: {\\rm vol}(S^3 {\\smallsetminus}K) \\: < \\: 4v_8 \\, s.$$ Furthermore, the multiplicative constants in both the upper and lower bounds are sh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jones polynomial and volume of closed 3–braids",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-025-6-the-jones-polynomial-and-volume-of-closed-3bra.md",
+      "narrative": null,
+      "content": "[]{#sec:jones3braids label=\"sec:jones3braids\"}\n\nIn this section, we will apply the previous results to the Jones polynomial of a closed 3--braid. We begin by relating the Jones polynomial of a closed $3$--braid to the Schreier normal form of the braid. By applying Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"}, we will show in Theorem [\\[thm:relations\\]](#thm:relations){reference-type=\"ref\" reference=\"thm:relations\"} that certain coefficients of the Jones polynomial are bounded in terms of the volume. At the end of the section, we will p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jones polynomials of generic 3–braids",
+      "pageStart": 34,
+      "pageEnd": 40,
+      "target": "../sections/sec-026-61-the-jones-polynomials-of-generic-3braids.md",
+      "narrative": null,
+      "content": "[]{#subsec:generic-jones label=\"subsec:generic-jones\"}\n\nIn the case that $K$ is the closure of a 3--braid, we need to relate the Jones polynomial to the Schreier normal form of the braid. (See Theorem [\\[thm:schreier-normal\\]](#thm:schreier-normal){reference-type=\"ref\" reference=\"thm:schreier-normal\"}.) Here, we will concern ourselves with 3--braids whose Schreier normal forms are *generic*. That is, we will consider braids $b\\in B_3$ written in the form $$b= C^k \\sigma_1^{p_1} \\sigma_2^{-q_1} \\cdots \\sigma_1^{p_s}\n\\sigma_2^{-q_s},$$\n\nwhere $p_i, q_i, k \\in {\\mathbb{Z}}$, with $p_i, q_i>0$, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections to volume",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-027-62-connections-to-volume.md",
+      "narrative": null,
+      "content": "[]{#subsec:volume-jones label=\"subsec:volume-jones\"}\n\nProposition [\\[prop:3-braids\\]](#prop:3-braids){reference-type=\"ref\" reference=\"prop:3-braids\"} and Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"} immediately imply the following.\n\n::: theorem\nLet $K$ be a hyperbolic closed $3$--braid. From the Jones polynomial $J_K(t)$, define ${\\zeta_K}, {\\zeta'_K}$ as in Definition [\\[def:zeta\\]](#def:zeta){reference-type=\"ref\" reference=\"def:zeta\"}. Let $\\zeta = \\max \\left\\{ {\\left\\vert \\zeta_K \\right\\vert}, {\\left\\vert \\zeta'_K \\right\\vert} \\righ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.2716v4/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-028-references.md",
+      "narrative": null,
+      "content": "[1] Colin Adams, Waist size for cusps in hyperbolic 3-manifolds II, Preprint.\n[2]\n, Hyperbolic 3-manifolds with two generators, Comm. Anal. Geom. 4 (1996), no. 1-2, 181–206.\n[3] Colin Adams, A. Colestock, J. Fowler, W. Gillam, and E. Katerman, Cusp size bounds from singular\nsurfaces in hyperbolic 3-manifolds, Trans. Amer. Math. Soc. 358 (2006), no. 2, 727–741 (electronic).\n[4] Ian Agol, Bounds on exceptional Dehn ﬁlling, Geom. Topol. 4 (2000), 431–449 (electronic).\n[5] Iain R. Aitchison, E. Lumsden, and J. Hyam Rubinstein, Cusp structures of alternating links, Invent.\nMath. 109 (1992), no. 3,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

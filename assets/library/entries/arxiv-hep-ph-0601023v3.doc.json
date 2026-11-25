@@ -1,0 +1,5686 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-0601023v3",
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
+  "variant": "pdf",
+  "pages": 258,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Experimental bounds and future searches",
+      "number": "2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-experimental-bounds-and-future-searches"
+    },
+    {
+      "level": 1,
+      "title": "Nucleon decay in non-supersymmetric scenarios",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-nucleon-decay-in-non-supersymmetric-scenarios"
+    },
+    {
+      "level": 2,
+      "title": "Baryon number violation in the Standard Model",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-baryon-number-violation-in-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Grand unification and gauge contributions to the decay of the proton",
+      "number": "3.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-grand-unification-and-gauge-contributions-to"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay induced by scalar leptoquarks",
+      "number": "3.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-33-proton-decay-induced-by-scalar-leptoquarks"
+    },
+    {
+      "level": 1,
+      "title": "Nucleon decay in SUSY and SUGRA unified theories",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-nucleon-decay-in-susy-and-sugra-unified-theori"
+    },
+    {
+      "level": 2,
+      "title": "R-parity violation and the decay of the proton",
+      "number": "4.1",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-41-r-parity-violation-and-the-decay-of-the-proto"
+    },
+    {
+      "level": 2,
+      "title": "Supersymmetry breaking and SUGRA unification",
+      "number": "4.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-42-supersymmetry-breaking-and-sugra-unification"
+    },
+    {
+      "level": 2,
+      "title": "Effect of CP violating phases on proton lifetime",
+      "number": "4.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-43-effect-of-cp-violating-phases-on-proton-lifet"
+    },
+    {
+      "level": 2,
+      "title": "Doublet-triplet splitting problem",
+      "number": "4.4",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-44-doublet-triplet-splitting-problem"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in $SU(5)$ supersymmetric grand unification",
+      "number": "4.5",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-45-proton-decay-in-su5-supersymmetric-grand-unif"
+    },
+    {
+      "level": 2,
+      "title": "Nucleon decay in SO(10) theories",
+      "number": "4.6",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-46-nucleon-decay-in-so10-theories"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in models with unified symmetry breaking",
+      "number": "4.7",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-47-proton-decay-in-models-with-unified-symmetry"
+    },
+    {
+      "level": 1,
+      "title": "Testing grand unification",
+      "number": "5",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-5-testing-grand-unification"
+    },
+    {
+      "level": 2,
+      "title": "Textures, Planck scale effects and proton decay",
+      "number": "5.1",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-51-textures-planck-scale-effects-and-proton-deca"
+    },
+    {
+      "level": 2,
+      "title": "Gravitational smearing effects",
+      "number": "5.2",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-52-gravitational-smearing-effects"
+    },
+    {
+      "level": 2,
+      "title": "Constraints from gauge coupling unification",
+      "number": "5.3",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-53-constraints-from-gauge-coupling-unification"
+    },
+    {
+      "level": 2,
+      "title": "Testing GUTs through proton decay",
+      "number": "5.4",
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-54-testing-guts-through-proton-decay"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in flipped $SU(5)$",
+      "number": "5.5",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-55-proton-decay-in-flipped-su5"
+    },
+    {
+      "level": 2,
+      "title": "Upper bound on the proton lifetime in GUTs",
+      "number": "5.6",
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-56-upper-bound-on-the-proton-lifetime-in-guts"
+    },
+    {
+      "level": 1,
+      "title": "Unification in Extra Dimensions and Proton Decay",
+      "number": "6",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-6-unification-in-extra-dimensions-and-proton-dec"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in models with 5D",
+      "number": "6.1",
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-61-proton-decay-in-models-with-5d"
+    },
+    {
+      "level": 2,
+      "title": "SO(10) models in 5D",
+      "number": "6.2",
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-62-so10-models-in-5d"
+    },
+    {
+      "level": 2,
+      "title": "5D Trinification",
+      "number": "6.3",
+      "page": 87,
+      "pageLabel": "87",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-63-5d-trinification"
+    },
+    {
+      "level": 2,
+      "title": "6D models",
+      "number": "6.4",
+      "page": 88,
+      "pageLabel": "88",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-64-6d-models"
+    },
+    {
+      "level": 2,
+      "title": "Gauge-Higgs unification",
+      "number": "6.5",
+      "page": 94,
+      "pageLabel": "94",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-65-gauge-higgs-unification"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in universal extra dimension (UED) models",
+      "number": "6.6",
+      "page": 96,
+      "pageLabel": "96",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-66-proton-decay-in-universal-extra-dimension-ued"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in warped geometry",
+      "number": "6.7",
+      "page": 99,
+      "pageLabel": "99",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-67-proton-decay-in-warped-geometry"
+    },
+    {
+      "level": 2,
+      "title": "Proton stability in kink backgrounds",
+      "number": "6.8",
+      "page": 101,
+      "pageLabel": "101",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-68-proton-stability-in-kink-backgrounds"
+    },
+    {
+      "level": 1,
+      "title": "Proton Decay in String Models",
+      "number": "7",
+      "page": 102,
+      "pageLabel": "102",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-7-proton-decay-in-string-models"
+    },
+    {
+      "level": 2,
+      "title": "Proton Stability in Calabi-Yau Models",
+      "number": "7.1",
+      "page": 104,
+      "pageLabel": "104",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-71-proton-stability-in-calabi-yau-models"
+    },
+    {
+      "level": 2,
+      "title": "Kac-Moody level $k>1$ string models and proton decay",
+      "number": "7.2",
+      "page": 109,
+      "pageLabel": "109",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-72-kac-moody-level-k1-string-models-and-proton-d"
+    },
+    {
+      "level": 2,
+      "title": "A new class of heterotic string models",
+      "number": "7.3",
+      "page": 111,
+      "pageLabel": "111",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-73-a-new-class-of-heterotic-string-models"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in M theory compactifications",
+      "number": "7.4",
+      "page": 112,
+      "pageLabel": "112",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-74-proton-decay-in-m-theory-compactifications"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay in intersecting D brane models",
+      "number": "7.5",
+      "page": 114,
+      "pageLabel": "114",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-75-proton-decay-in-intersecting-d-brane-models"
+    },
+    {
+      "level": 2,
+      "title": "Nucleon stability in string landscape models",
+      "number": "7.6",
+      "page": 117,
+      "pageLabel": "117",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-036-76-nucleon-stability-in-string-landscape-models"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay from black hole and wormhole effects",
+      "number": "7.7",
+      "page": 121,
+      "pageLabel": "121",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-037-77-proton-decay-from-black-hole-and-wormhole-eff"
+    },
+    {
+      "level": 2,
+      "title": "$U(1)$ string symmetries and proton stability",
+      "number": "7.8",
+      "page": 122,
+      "pageLabel": "122",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-038-78-u1-string-symmetries-and-proton-stability"
+    },
+    {
+      "level": 2,
+      "title": "Discrete Symmetries and proton stability",
+      "number": "7.9",
+      "page": 124,
+      "pageLabel": "124",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-039-79-discrete-symmetries-and-proton-stability"
+    },
+    {
+      "level": 1,
+      "title": "Other Aspects",
+      "number": "8",
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-040-8-other-aspects"
+    },
+    {
+      "level": 2,
+      "title": "Neutrino masses and proton decay",
+      "number": "8.1",
+      "page": 128,
+      "pageLabel": "128",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-041-81-neutrino-masses-and-proton-decay"
+    },
+    {
+      "level": 2,
+      "title": "Proton stability and dark matter",
+      "number": "8.2",
+      "page": 133,
+      "pageLabel": "133",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-042-82-proton-stability-and-dark-matter"
+    },
+    {
+      "level": 2,
+      "title": "Exotic $B \\ \\& \\ L$ violation",
+      "number": "8.3",
+      "page": 135,
+      "pageLabel": "135",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-043-83-exotic-b-l-violation"
+    },
+    {
+      "level": 3,
+      "title": "$|\\Delta B| \\ > \\ 1$ violation and other non-standard $B\\& L$ violation",
+      "number": "8.3.1",
+      "page": 135,
+      "pageLabel": "135",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-044-831-delta-b-1-violation-and-other-non-standard-b"
+    },
+    {
+      "level": 3,
+      "title": "$B \\ \\& \\ L$ violation involving higher generations",
+      "number": "8.3.2",
+      "page": 136,
+      "pageLabel": "136",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-045-832-b-l-violation-involving-higher-generations"
+    },
+    {
+      "level": 3,
+      "title": "Monopole catalyzed proton decay",
+      "number": "8.3.3",
+      "page": 137,
+      "pageLabel": "137",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-046-833-monopole-catalyzed-proton-decay"
+    },
+    {
+      "level": 2,
+      "title": "Proton decay and the ultimate fate of the universe",
+      "number": "8.4",
+      "page": 138,
+      "pageLabel": "138",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-047-84-proton-decay-and-the-ultimate-fate-of-the-uni"
+    },
+    {
+      "level": 1,
+      "title": "Summary and Outlook",
+      "number": "9",
+      "page": 139,
+      "pageLabel": "139",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-048-9-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Summary Table of p decay predictions",
+      "number": "10",
+      "page": 144,
+      "pageLabel": "144",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-049-10-summary-table-of-p-decay-predictions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 146,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-050-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "APPENDICES",
+      "number": null,
+      "page": 147,
+      "pageLabel": "147",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-051-appendices"
+    },
+    {
+      "level": 1,
+      "title": "Mathematical aspects of $SU(5)$ and $SO(10)$ unification",
+      "number": "11",
+      "page": 147,
+      "pageLabel": "147",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-052-11-mathematical-aspects-of-su5-and-so10-unificat"
+    },
+    {
+      "level": 1,
+      "title": "Dressing of the d=5 operators",
+      "number": "13",
+      "page": 162,
+      "pageLabel": "162",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-053-13-dressing-of-the-d5-operators"
+    },
+    {
+      "level": 1,
+      "title": "Sparticle spectrum and renormalization",
+      "number": "14",
+      "page": 168,
+      "pageLabel": "168",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-054-14-sparticle-spectrum-and-renormalization"
+    },
+    {
+      "level": 1,
+      "title": "Renormalization of the $d=5$ and $d=6$ operators",
+      "number": "15",
+      "page": 173,
+      "pageLabel": "173",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-055-15-renormalization-of-the-d5-and-d6-operators"
+    },
+    {
+      "level": 1,
+      "title": "Effective lagrangian for nucleon decay",
+      "number": "16",
+      "page": 174,
+      "pageLabel": "174",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-056-16-effective-lagrangian-for-nucleon-decay"
+    },
+    {
+      "level": 1,
+      "title": "Details of the analysis on testing GUTs",
+      "number": "17",
+      "page": 184,
+      "pageLabel": "184",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-057-17-details-of-the-analysis-on-testing-guts"
+    },
+    {
+      "level": 1,
+      "title": "Detailed analysis of upper bounds",
+      "number": "18",
+      "page": 189,
+      "pageLabel": "189",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-058-18-detailed-analysis-of-upper-bounds"
+    },
+    {
+      "level": 1,
+      "title": "Relating 4D parameters to parameters of M theory",
+      "number": "19",
+      "page": 192,
+      "pageLabel": "192",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-059-19-relating-4d-parameters-to-parameters-of-m-the"
+    },
+    {
+      "level": 1,
+      "title": "Gauge coupling unification in string models",
+      "number": "20",
+      "page": 196,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-060-20-gauge-coupling-unification-in-string-models"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "grand uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "proton stability",
+          "heading": false
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed models",
+          "heading": false
+        },
+        {
+          "term": "sugra uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "nucleon decay",
+          "heading": false
+        },
+        {
+          "term": "string-m-theory models",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/0601023v3 23 Apr 2007 Proton Stability in Grand Uniﬁed Theories, in Strings and in Branes Pran Nath1, and Pavel Fileviez P´erez2 1 Department of Physics. Northeastern University Boston, MA 02115, USA. email:nath@lepton.neu.edu 2 Departamento de F´ısica. Centro de F´ısica Te´orica de Part´ıculas, Instituto Superior T´ecnico, Av. Rovisco Pais 1, 1049-001. Lisboa, Portugal. email:ﬁleviez@cftp.ist.utl.pt",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 12,
+      "labelStart": "5",
+      "labelEnd": "12",
+      "words": 2852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "grand unification",
+          "heading": false
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "proton stability",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "supergravity grand",
+          "heading": false
+        },
+        {
+          "term": "unified models",
+          "heading": false
+        },
+        {
+          "term": "violating dimension",
+          "heading": false
+        }
+      ],
+      "extract": "The Standard Model of strong, and the electro-weak interactions, given by the gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$, is a highly successful model of particle interactions~\\cite{Glashow:1961tr,Gross:1973id} which has been tested with great accuracy by the LEP, SLC and Tevatron data. The electro-weak sector of this theory~\\cite{Glashow:1961tr}, i.e., the $SU(2)_L\\times U(1)_Y$ sector, provides a fundamental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-experimental-bounds-and-future-searches",
+      "number": "2",
+      "title": "Experimental bounds and future searches",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 1585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "water cherenkov",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "cherenkov detector",
+          "heading": false
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "super-kamiokande cite",
+          "heading": false
+        },
+        {
+          "term": "decay searches",
+          "heading": false
+        },
+        {
+          "term": "decay experiments",
+          "heading": false
+        },
+        {
+          "term": "centerline epsfxsize",
+          "heading": false
+        }
+      ],
+      "extract": "The issue of proton stability has attracted attention over three quarters of a century. Thus in the period 1929-1949 the law of baryon number conservation was formulated by Weyl, Stueckelberg and Wigner~\\cite{weyl}, and the first experimental test of the idea was proposed by Maurice Goldhaber in 1954~\\cite{Goldhaber:1988gb,Reines:1980by}. The basic idea of Goldhaber was that nucleon decay could leave $Th^{232}$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-nucleon-decay-in-non-supersymmetric-scenarios",
+      "number": "3",
+      "title": "Nucleon decay in non-supersymmetric scenarios",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucleon decay",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "unified theories",
+          "heading": false
+        },
+        {
+          "term": "non-supersymmetric",
+          "heading": true
+        },
+        {
+          "term": "operators induced",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned in Sec.(2) proton decay is a generic prediction of grand unified theories. There are different operators contributing to the nucleon decay in such theories. In supersymmetric scenarios the $d=4$ and $d=5$ contributions are the most important, but quite model dependent. They depend on the whole SUSY spectrum, on the structure of the Higgs sector and on fermion masses. The so-called gauge $d=6$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-baryon-number-violation-in-the-standard-model",
+      "number": "3.1",
+      "title": "Baryon number violation in the Standard Model",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baryon number",
+          "heading": true
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "lepton number",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "global symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "The Standard Model with gauge symmetry $SU(3)_C \\ \\times SU(2)_L \\ \\times U(1)_Y$ has a $U(1)_B$ global symmetry at the classical level, where $B$ is the baryon number, which implies stability of the lightest baryon, i.e., the proton, in the universe. However, this global symmetry is broken at the quantum level by anomalies~\\cite{'tHooft:1976up}, i.e. the baryonic current $J^{\\mu}_B$ is not conserved:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-grand-unification-and-gauge-contributions-to",
+      "number": "3.2",
+      "title": "Grand unification and gauge contributions to the decay of the proton",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "18",
+      "labelEnd": "22",
+      "words": 1515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand unification",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "gauge contributions",
+          "heading": true
+        },
+        {
+          "term": "textit b-l",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "beta overline",
+          "heading": false
+        },
+        {
+          "term": "alpha gut",
+          "heading": false
+        },
+        {
+          "term": "ijk overline",
+          "heading": false
+        }
+      ],
+      "extract": "We discuss now a unifying framework beyond that of the Standard Model. There are many reasons for doing so. One of the major ones is the presence of far too many arbitrary parameters in the Standard Model and it is difficult to accept that a fundamental theory should be that arbitrary. One example of this is the presence of three independent gauge couplings: $\\alpha_s$ for the color interactions, $\\alpha_2$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-proton-decay-induced-by-scalar-leptoquarks",
+      "number": "3.3",
+      "title": "Proton decay induced by scalar leptoquarks",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "dagger underline",
+          "heading": false
+        },
+        {
+          "term": "underline beta",
+          "heading": false
+        },
+        {
+          "term": "alpha underline",
+          "heading": false
+        },
+        {
+          "term": "scalar leptoquarks",
+          "heading": true
+        },
+        {
+          "term": "dagger textit",
+          "heading": false
+        },
+        {
+          "term": "triplet higgs",
+          "heading": false
+        },
+        {
+          "term": "higgs contributions",
+          "heading": false
+        }
+      ],
+      "extract": "In non-supersymmetric scenarios the second most important contributions to the decay of the proton are the Higgs $d=6$ contributions. In this case proton decay is mediated by scalar leptoquarks $T=({\\bf 3},{\\bf 1},-2/3)$. Here, we will study those contributions in detail. For simplicity, let us study the case when we have just one scalar leptoquark (See Figure.~(\\ref{higgs}) for the Feynman graphs.). This is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-nucleon-decay-in-susy-and-sugra-unified-theori",
+      "number": "4",
+      "title": "Nucleon decay in SUSY and SUGRA unified theories",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 873,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ijk hat",
+          "heading": false
+        },
+        {
+          "term": "higgs doublets",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "higgs triplets",
+          "heading": false
+        },
+        {
+          "term": "violating dimension",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "beta ijk",
+          "heading": false
+        }
+      ],
+      "extract": "Supersymmetry in four space-time dimensions~\\cite{Wess:1974tw,wb} arises algebraically from the \"graded algebra\" involving the spinor charge $Q_{\\alpha}$ along with the generators of the Lorentz algebra $P_{\\mu}$ and $M_{\\mu\\nu}$. Among the remarkable features of supersymmetry is the property that aside from some simple generalization, the only graded algebra for an S-matrix one can construct from a local",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-r-parity-violation-and-the-decay-of-the-proto",
+      "number": "4.1",
+      "title": "R-parity violation and the decay of the proton",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "30",
+      "words": 908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "ijk lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha ijk",
+          "heading": false
+        },
+        {
+          "term": "beta ijk",
+          "heading": false
+        },
+        {
+          "term": "violating couplings",
+          "heading": false
+        },
+        {
+          "term": "r-parity violating",
+          "heading": false
+        },
+        {
+          "term": "parity violating",
+          "heading": false
+        },
+        {
+          "term": "alpha tilde",
+          "heading": false
+        }
+      ],
+      "extract": "It is interesting to ask what the constraints on the coupling structures are if one does not impose R-parity invariance. Such constraints for the R-parity violating couplings from proton decay in low energy supersymmetry have been investigated for some time~\\cite{Hall:1983id,Barbieri:1985ty,Ben-Hamo:1994bq,Hinchliffe:1992ad,Smirnov:1996bg,Smirnov:1995ey,Bhattacharyya:1998dt,Bhattacharyya:1998bx}. However, only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-supersymmetry-breaking-and-sugra-unification",
+      "number": "4.2",
+      "title": "Supersymmetry breaking and SUGRA unification",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 36,
+      "labelStart": "30",
+      "labelEnd": "36",
+      "words": 2728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supersymmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "soft breaking",
+          "heading": false
+        },
+        {
+          "term": "non-universalities cite",
+          "heading": false
+        },
+        {
+          "term": "supergravity grand",
+          "heading": false
+        },
+        {
+          "term": "kahler potential",
+          "heading": false
+        },
+        {
+          "term": "cite chamseddine",
+          "heading": false
+        },
+        {
+          "term": "visible sector",
+          "heading": false
+        },
+        {
+          "term": "radiative breaking",
+          "heading": false
+        }
+      ],
+      "extract": "Supersymmetric proton decay involves dressing of the \\bl ~violating dimension five operators by gluino, chargino and neutralino exchanges which convert the dimension five into dimension six operators. The dressing loops depend on the masses of the exchanged sparticles. Thus the prediction of proton lifetime depends in a central way on the soft parameters which break supersymmetry. One could in principle add soft",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-effect-of-cp-violating-phases-on-proton-lifet",
+      "number": "4.3",
+      "title": "Effect of CP violating phases on proton lifetime",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "36",
+      "labelEnd": "40",
+      "words": 1491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "violating phases",
+          "heading": true
+        },
+        {
+          "term": "proton lifetime",
+          "heading": true
+        },
+        {
+          "term": "phases affect",
+          "heading": false
+        },
+        {
+          "term": "chargino masses",
+          "heading": false
+        },
+        {
+          "term": "neutralino exchanges",
+          "heading": false
+        },
+        {
+          "term": "beqn tilde",
+          "heading": false
+        },
+        {
+          "term": "dressing loops",
+          "heading": false
+        },
+        {
+          "term": "gaugino masses",
+          "heading": false
+        }
+      ],
+      "extract": "CP phases affect proton lifetime. As is well known the CP phase that appears in the SM via the CKM matrix is not sufficient to generate the desired amount of baryon asymmetry in the universe. Here supersymmetry is helpful. The soft breaking sector of \\s ~provides a new source of CP violation. This new source of CP violation arises from the soft breaking sector of supergravity and string theory models. Usually this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-44-doublet-triplet-splitting-problem",
+      "number": "4.4",
+      "title": "Doublet-triplet splitting problem",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doublet-triplet splitting",
+          "heading": true
+        },
+        {
+          "term": "higgs doublets",
+          "heading": false
+        },
+        {
+          "term": "higgs triplets",
+          "heading": false
+        },
+        {
+          "term": "light higgs",
+          "heading": false
+        },
+        {
+          "term": "vev formation",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "plet field",
+          "heading": false
+        },
+        {
+          "term": "fine tuning",
+          "heading": false
+        }
+      ],
+      "extract": "One of the main issues in GUT model building is the doublet-triplet splitting. Thus in the simplest $SU(5)$ model one has two Higgs multiplets $5_H$ and $\\bar 5_H$ and the simplest scheme to affect doublet-triplet splitting is via fine tuning where one takes the following combination \\beqn W_{G} =\\lambda_1[\\frac{1}{3} \\Sigma^3 +\\frac{1}{2} M \\Sigma^2] +\\lambda_2 H_{2}[\\Sigma + 3M']H_1 \\eeqn where $\\Sigma$ is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-45-proton-decay-in-su5-supersymmetric-grand-unif",
+      "number": "4.5",
+      "title": "Proton decay in $SU(5)$ supersymmetric grand unification",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 48,
+      "labelStart": "42",
+      "labelEnd": "48",
+      "words": 1941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "higgs triplet",
+          "heading": false
+        },
+        {
+          "term": "hline bar",
+          "heading": false
+        },
+        {
+          "term": "cite bajc",
+          "heading": false
+        },
+        {
+          "term": "eta dagger",
+          "heading": false
+        },
+        {
+          "term": "cite arnowitt",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "triplet fields",
+          "heading": false
+        }
+      ],
+      "extract": "The decay of the proton in the minimal SU(5) model is governed by \\begin{equation} W_Y=-\\frac{1}{8}f_{1ij}\\epsilon_{uvwxy}H_1^u10_i^{vw}10_j^{xy}+ f_{2ij}\\bar H_{2u}\\bar 5_{iv} 10_j^{uv} \\end{equation} where $\\bar 5_{ix}$ and $10_i^{xy}$ (i=1,2,3) are the $\\bar 5$ and 10 of SU(5) which contain the three generations of quarks and leptons, and $H_1, H_2$ are the $\\bar 5$,5 of Higgs, and $f's$ are the Yukawa couplings.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-46-nucleon-decay-in-so10-theories",
+      "number": "4.6",
+      "title": "Nucleon decay in SO(10) theories",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 54,
+      "labelStart": "48",
+      "labelEnd": "54",
+      "words": 2035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline plet",
+          "heading": false
+        },
+        {
+          "term": "higgs doublets",
+          "heading": false
+        },
+        {
+          "term": "higgs triplets",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "quark-lepton textures",
+          "heading": false
+        },
+        {
+          "term": "light higgs",
+          "heading": false
+        },
+        {
+          "term": "higgs fields",
+          "heading": false
+        },
+        {
+          "term": "higgs content",
+          "heading": false
+        }
+      ],
+      "extract": "The SO(10) is an interesting group in that a single spinor representation of SO(10) can accommodate a full generation of quarks and leptons. Thus the 16-plet of SO(10) has the following decomposition in terms of SU(5) \\begin{equation} 16=10+\\bar 5+ 1 \\end{equation} where the $\\bar 5$ and $10$ plets accommodates the full set of one generation of quarks and leptons and in addition on has the singlet field which is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-47-proton-decay-in-models-with-unified-symmetry",
+      "number": "4.7",
+      "title": "Proton decay in models with unified symmetry breaking",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "higgs doublets",
+          "heading": false
+        },
+        {
+          "term": "higgs triplets",
+          "heading": false
+        },
+        {
+          "term": "times higgs",
+          "heading": false
+        },
+        {
+          "term": "light higgs",
+          "heading": false
+        },
+        {
+          "term": "overline times",
+          "heading": false
+        },
+        {
+          "term": "cite bgns",
+          "heading": false
+        }
+      ],
+      "extract": "In all the models discussed above the symmetry breaking is carried out with more than one multiplets of Higgs. However, it is tempting to think that in a truly grand unified scheme only a single representation of the Higgs multiplet might accomplish the breaking to the Standard Model gauge group and even all the way down to the residual gauge group $SU(3)_C\\times U(1)_{em}$. We will discuss this idea within the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-testing-grand-unification",
+      "number": "5",
+      "title": "Testing grand unification",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand unification",
+          "heading": true
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "coupling unification",
+          "heading": false
+        },
+        {
+          "term": "yukawa textures",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "higgs triplet",
+          "heading": false
+        },
+        {
+          "term": "gauge coupling",
+          "heading": false
+        },
+        {
+          "term": "gauge kinetic",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we investigate the possibility of making tests of grand unified theories through the decay of the proton. A variety of phenomena can influence such tests and we investigate them here. In Sec.(5.1) we give a discussion of the effects of Yukawa textures on the proton lifetime. The Yukawa textures at a high scale play the important role of providing a possible explanation for fermion masses. However,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-51-textures-planck-scale-effects-and-proton-deca",
+      "number": "5.1",
+      "title": "Textures, Planck scale effects and proton decay",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 60,
+      "labelStart": "57",
+      "labelEnd": "60",
+      "words": 1094,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textures",
+          "heading": true
+        },
+        {
+          "term": "triplet textures",
+          "heading": false
+        },
+        {
+          "term": "planck scale",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "involves textures",
+          "heading": false
+        },
+        {
+          "term": "textures both",
+          "heading": false
+        },
+        {
+          "term": "higgs triplet",
+          "heading": false
+        },
+        {
+          "term": "grand unification",
+          "heading": false
+        }
+      ],
+      "extract": "The quark-lepton masses and mixing angles pose a challenge in understanding their hierarchical structure. It is suggested that perhaps such structure may be understood from simple hypotheses at high scale, i.e., the grand unification scale or the string scale~\\cite{Georgi:1979df,Ramond:1993kv,Froggatt:1978nt}. Thus, for example, in grand unification where the b quark and the $\\tau$ lepton fall in the same multiplet",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-gravitational-smearing-effects",
+      "number": "5.2",
+      "title": "Gravitational smearing effects",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 1008,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gravitational smearing",
+          "heading": true
+        },
+        {
+          "term": "smearing effects",
+          "heading": true
+        },
+        {
+          "term": "heavy thresholds",
+          "heading": false
+        },
+        {
+          "term": "alpha eff",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "scale effects",
+          "heading": false
+        },
+        {
+          "term": "heavy masses",
+          "heading": false
+        },
+        {
+          "term": "gravity effects",
+          "heading": false
+        }
+      ],
+      "extract": "Gravitational smearing effects can modify the unification of gauge coupling constants as well as affect analysis of proton decay. Consider, for example, the gauge kinetic energy function for gauge fields for a gauge group $G$. Here the conventional kinetic energy term $-(1/2)Tr (FF)$, where F is the Lie valued field strength in the adjoint representation of the gauge group can be modified by the addition of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-constraints-from-gauge-coupling-unification",
+      "number": "5.3",
+      "title": "Constraints from gauge coupling unification",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 67,
+      "labelStart": "62",
+      "labelEnd": "67",
+      "words": 1327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unification",
+          "heading": true
+        },
+        {
+          "term": "frac gut",
+          "heading": false
+        },
+        {
+          "term": "alpha gut",
+          "heading": false
+        },
+        {
+          "term": "mssm sigma",
+          "heading": false
+        },
+        {
+          "term": "gut scale",
+          "heading": false
+        },
+        {
+          "term": "phi hline",
+          "heading": false
+        },
+        {
+          "term": "gut end",
+          "heading": false
+        },
+        {
+          "term": "achieve unification",
+          "heading": false
+        }
+      ],
+      "extract": "The analysis of the previous sections exhibits that the proton lifetime from dimension five operators depends critically on the mass of the Higgs triplet while that from dimension six operators depends on the mass of the superheavy gauge boson. It turns out that these masses are also strongly constrained by the condition that gauge couplings unify at high scale~\\cite{Georgi:1974yf}. Thus consider the renormalization",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-54-testing-guts-through-proton-decay",
+      "number": "5.4",
+      "title": "Testing GUTs through proton decay",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "cite fileviezperez",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "ckm right",
+          "heading": false
+        },
+        {
+          "term": "xxx gamma",
+          "heading": false
+        },
+        {
+          "term": "textit b-l",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "As shown in the previous section the proton decay predictions arising from the gauge $d=6$ operators depend on the fermion mixing, i.e. the predictions are different in each model for fermion masses~\\cite{DeRujula:1980qc}. Let us analyze the possibility to test the realistic grand unified models, the $SU(5)$, the flipped $SU(5)$ and $SO(10)$ theories, respectively. Let us make an analysis of the operators in each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-55-proton-decay-in-flipped-su5",
+      "number": "5.5",
+      "title": "Proton decay in flipped $SU(5)$",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 71,
+      "labelStart": "68",
+      "labelEnd": "71",
+      "words": 996,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "flipped",
+          "heading": true
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "textrm alpha",
+          "heading": false
+        },
+        {
+          "term": "rotate away",
+          "heading": false
+        },
+        {
+          "term": "beta label",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we have shown the possibility to make a clear test of realistic grand unified theories with symmetric Yukawa couplings through the proton decay into a meson and antineutrinos. It is thus interesting to investigate how these conclusions change if one departs from the flavor structure of the minimal renormalizable theories. It is well known that the gauge $d=6$ proton decay cannot be rotated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-56-upper-bound-on-the-proton-lifetime-in-guts",
+      "number": "5.6",
+      "title": "Upper bound on the proton lifetime in GUTs",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton lifetime",
+          "heading": true
+        },
+        {
+          "term": "upper bound",
+          "heading": true
+        },
+        {
+          "term": "alpha gut",
+          "heading": false
+        },
+        {
+          "term": "gut scale",
+          "heading": false
+        },
+        {
+          "term": "decay lifetime",
+          "heading": false
+        },
+        {
+          "term": "gut plane",
+          "heading": false
+        },
+        {
+          "term": "textrm gev",
+          "heading": false
+        },
+        {
+          "term": "nucleon lifetime",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we have discussed the different ways to test grand unified theories through the decay of the proton. In this section we discuss the possibility of finding an upper bound on the total proton decay lifetime~\\cite{Dorsner:2004xa}. In order to establish an upper bound on the total proton lifetime one may focus on the gauge $d=6$ contributions since all other contributions can be set to zero in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-unification-in-extra-dimensions-and-proton-dec",
+      "number": "6",
+      "title": "Unification in Extra Dimensions and Proton Decay",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 73,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "extra dimensions",
+          "heading": true
+        },
+        {
+          "term": "models proton",
+          "heading": false
+        },
+        {
+          "term": "proton stability",
+          "heading": false
+        },
+        {
+          "term": "unification",
+          "heading": true
+        },
+        {
+          "term": "compactification scale",
+          "heading": false
+        },
+        {
+          "term": "planck scale",
+          "heading": false
+        },
+        {
+          "term": "models based",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec_extradim} Over the recent past models based on large extra dimensions have received considerable attention. The largeness of the extra dimension implies that the compactification scale is small compared to the Planck scale, and guided by a desire for new physics at accelerators this scale is often chosen to lie in the TeV region, limited only by the constraints of the precision data. The extreme smallness",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-61-proton-decay-in-models-with-5d",
+      "number": "6.1",
+      "title": "Proton decay in models with 5D",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 84,
+      "labelStart": "73",
+      "labelEnd": "84",
+      "words": 3917,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "higgs multiplets",
+          "heading": false
+        },
+        {
+          "term": "beqn cal",
+          "heading": false
+        },
+        {
+          "term": "hat bar",
+          "heading": false
+        },
+        {
+          "term": "dagger bar",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "higgs triplets",
+          "heading": false
+        },
+        {
+          "term": "nonumber hat",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we discuss proton decay in theories with one extra dimension. Theories with extra dimensions have a long history beginning with the work of Kaluza and Klein in the nineteen twenties~\\cite{kaluza,klein, O'Raifeartaigh:1998pk, freund}. More recently interest in theories with extra dimensions emerged with the realization that string theories could allow for low scale compactifications which removes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-so10-models-in-5d",
+      "number": "6.2",
+      "title": "SO(10) models in 5D",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 87,
+      "labelStart": "84",
+      "labelEnd": "87",
+      "words": 1093,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-dimensional flipped",
+          "heading": false
+        },
+        {
+          "term": "brane model",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "plet representation",
+          "heading": false
+        },
+        {
+          "term": "cite dermisek",
+          "heading": false
+        },
+        {
+          "term": "higgs multiplets",
+          "heading": false
+        },
+        {
+          "term": "cite dorsner",
+          "heading": false
+        },
+        {
+          "term": "cite kim",
+          "heading": false
+        }
+      ],
+      "extract": "The SO(10) models in 5D which have been investigated by a number of authors~\\cite{Dermisek:2001hp,Kim:2002im}. Here the gauge multiplet $\\cal {V}$ is 45 dimensional belonging to the adjoint representation of SO(10). In 4D language the 5D vector multiplet will consist of the N=1 vector multiplet $V$ and an N=1 chiral multiplet $\\Sigma$. We take the Higgs multiplet to lie in the 10 plet representation of SO(10) so in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-5d-trinification",
+      "number": "6.3",
+      "title": "5D Trinification",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 88,
+      "labelStart": "87",
+      "labelEnd": "88",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eeqn beqn",
+          "heading": false
+        },
+        {
+          "term": "trinification",
+          "heading": true
+        },
+        {
+          "term": "qquad eeqn",
+          "heading": false
+        },
+        {
+          "term": "cite carone",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "5D trinification models have also been considered~\\cite{Carone:2005rk,Carone:2005ha}. The trinification is based on the gauge group $SU(3)_C\\times SU(3)_L\\times SU(3)_R\\times Z_3$ where the discrete symmetry permutes the three labels C,L,R which gives a single gauge coupling constant g at the unification scale. The gauge fields for the system can be decomposed in representations of $SU(3)_C\\times SU(3)_L\\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-64-6d-models",
+      "number": "6.4",
+      "title": "6D models",
+      "level": 2,
+      "pageStart": 88,
+      "pageEnd": 94,
+      "labelStart": "88",
+      "labelEnd": "94",
+      "words": 1655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eeqn beqn",
+          "heading": false
+        },
+        {
+          "term": "nonumber eeqn",
+          "heading": false
+        },
+        {
+          "term": "beqn label",
+          "heading": false
+        },
+        {
+          "term": "choose beqn",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "cite buchmuller",
+          "heading": false
+        },
+        {
+          "term": "brane item",
+          "heading": false
+        },
+        {
+          "term": "orbifold point",
+          "heading": false
+        }
+      ],
+      "extract": "There are a number of works which have explored GUT model building in 6D~\\cite{Hall:2001zb, Asaka:2001eh, Buchmuller:2004eg,Haba:2004qf,Gogoladze:2005zh}. In such models one begins with a space $R^4\\times T^2$ where $T^2$ is a two torus and one orbifolds $T^2$ in a way similar to what we discussed in 5D. One model studied in detail in the context of proton decay is the specific",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-65-gauge-higgs-unification",
+      "number": "6.5",
+      "title": "Gauge-Higgs unification",
+      "level": 2,
+      "pageStart": 94,
+      "pageEnd": 96,
+      "labelStart": "94",
+      "labelEnd": "96",
+      "words": 722,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge-higgs",
+          "heading": true
+        },
+        {
+          "term": "nonumber sigma",
+          "heading": false
+        },
+        {
+          "term": "unification",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "orbifold points",
+          "heading": false
+        },
+        {
+          "term": "beqn",
+          "heading": false
+        },
+        {
+          "term": "eeqn",
+          "heading": false
+        },
+        {
+          "term": "cite hall",
+          "heading": false
+        }
+      ],
+      "extract": "Another class of model which are closely related are models with gauge-Higgs couplings unification~\\cite{Hall:2001zb}. Here the Higgs doublet fields arise as a part of the vector multiplet and hence there is a unification of the gauge and Higgs couplings. There are several variants of such models. We discuss briefly an SU(6) model in 6D compactified on $T^2/(Z_2\\times Z_2')$ of Ref.~\\cite{Hall:2001zb}. One",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-66-proton-decay-in-universal-extra-dimension-ued",
+      "number": "6.6",
+      "title": "Proton decay in universal extra dimension (UED) models",
+      "level": 2,
+      "pageStart": 96,
+      "pageEnd": 99,
+      "labelStart": "96",
+      "labelEnd": "99",
+      "words": 887,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "universal extra",
+          "heading": true
+        },
+        {
+          "term": "six dimensions",
+          "heading": false
+        },
+        {
+          "term": "cite appelquist",
+          "heading": false
+        },
+        {
+          "term": "ued",
+          "heading": true
+        },
+        {
+          "term": "cal psi",
+          "heading": false
+        },
+        {
+          "term": "violating operators",
+          "heading": false
+        },
+        {
+          "term": "tilde cal",
+          "heading": false
+        }
+      ],
+      "extract": "We turn now to a discussion of proton decay in the universal extra dimension (UED) models. In these models it is possible to control proton decay via the use of extra symmetries that might arise in models with universal extra dimensions~\\cite{Appelquist:2000nn,Appelquist:2001mj}. Thus in six dimensions with two universal extra dimensions the standard model particles are charged under the $U(1)$ symmetry which arises",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-67-proton-decay-in-warped-geometry",
+      "number": "6.7",
+      "title": "Proton decay in warped geometry",
+      "level": 2,
+      "pageStart": 99,
+      "pageEnd": 101,
+      "labelStart": "99",
+      "labelEnd": "101",
+      "words": 1047,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "cite agashe",
+          "heading": false
+        },
+        {
+          "term": "tev brane",
+          "heading": false
+        },
+        {
+          "term": "planck brane",
+          "heading": false
+        },
+        {
+          "term": "cite randall",
+          "heading": false
+        },
+        {
+          "term": "unification scale",
+          "heading": false
+        },
+        {
+          "term": "beqn alpha",
+          "heading": false
+        },
+        {
+          "term": "composite higgs",
+          "heading": false
+        }
+      ],
+      "extract": "Warped geometry presents a possible solution to the hierarchy problem without necessarily using supersymmetry. Thus in Refs.~\\cite{Randall:1999ee,Randall:1999vf} Randall and Sundrum proposed a metric of the form \\beqn ds^2 =e^{-2k|y|} \\eta_{\\mu\\nu} dx^{\\mu}dx^{\\nu} +dy^2 \\eeqn where y is the coordinate of the extra dimension limited to $0\\leq y\\leq \\pi r_c$ where $r_c$ may be considered the compactification radius",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-68-proton-stability-in-kink-backgrounds",
+      "number": "6.8",
+      "title": "Proton stability in kink backgrounds",
+      "level": 2,
+      "pageStart": 101,
+      "pageEnd": 102,
+      "labelStart": "101",
+      "labelEnd": "102",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "kink",
+          "heading": true
+        },
+        {
+          "term": "cite kakizaki",
+          "heading": false
+        },
+        {
+          "term": "yukawa couplings",
+          "heading": false
+        },
+        {
+          "term": "unified models",
+          "heading": false
+        },
+        {
+          "term": "extra dimensions",
+          "heading": false
+        },
+        {
+          "term": "six operators",
+          "heading": false
+        }
+      ],
+      "extract": "Another approach to suppression of proton decay operators in extra dimensional models comes from fermion localization mechanism~\\cite{Arkani-Hamed:1999pv,Mirabelli:1999ks,Kaplan:2001ga} where chiral fermions are localized in solitonic backgrounds~\\cite{Jackiw:1975fn}. With this mechanism the quarks and leptons have Gaussian wave functions in the extra dimension under a kink background. In this scenario the Yukawa",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-7-proton-decay-in-string-models",
+      "number": "7",
+      "title": "Proton Decay in String Models",
+      "level": 1,
+      "pageStart": 102,
+      "pageEnd": 104,
+      "labelStart": "102",
+      "labelEnd": "104",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "string models",
+          "heading": true
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "proton stability",
+          "heading": false
+        },
+        {
+          "term": "heterotic string",
+          "heading": false
+        },
+        {
+          "term": "discuss proton",
+          "heading": false
+        },
+        {
+          "term": "violating dimension",
+          "heading": false
+        },
+        {
+          "term": "models based",
+          "heading": false
+        }
+      ],
+      "extract": "The string theory holds out the hope of unifying all the interactions of nature including gravity (For a review see~\\cite{reviews,polchinski}). There are five types of known string theories: Type I, Type IIA, Type IIB, $SO(32)$ heterotic and $E_8\\times E_8$ heterotic. These theories are known to be connected by a web of dualities. Indeed all these five theories may have a common origin in a more fundamental theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-71-proton-stability-in-calabi-yau-models",
+      "number": "7.1",
+      "title": "Proton Stability in Calabi-Yau Models",
+      "level": 2,
+      "pageStart": 104,
+      "pageEnd": 109,
+      "labelStart": "104",
+      "labelEnd": "109",
+      "words": 1558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat exchange",
+          "heading": false
+        },
+        {
+          "term": "lambda hat",
+          "heading": false
+        },
+        {
+          "term": "cite arnowitt",
+          "heading": false
+        },
+        {
+          "term": "matter parities",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau",
+          "heading": true
+        },
+        {
+          "term": "states hline",
+          "heading": false
+        },
+        {
+          "term": "lambda ijk",
+          "heading": false
+        },
+        {
+          "term": "matter parity",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a discussion of a class of heterotic string models which on compactifications maintain $N=1$ supersymmetry~\\cite{Candelas:1985en}. These compactifications are of the type $M_4\\times K$ where $M_4$ is the four dimensional Minkowski space and $K$ is a compact six-dimensional Calabi-Yau manifold~\\cite{yau}. The fact that one has residual $N=1$ supersymmetry after compactification is attractive for model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-72-kac-moody-level-k1-string-models-and-proton-d",
+      "number": "7.2",
+      "title": "Kac-Moody level $k>1$ string models and proton decay",
+      "level": 2,
+      "pageStart": 109,
+      "pageEnd": 111,
+      "labelStart": "109",
+      "labelEnd": "111",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kac-moody level",
+          "heading": true
+        },
+        {
+          "term": "cite kakushadze",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "massless scalars",
+          "heading": false
+        },
+        {
+          "term": "massless generations",
+          "heading": false
+        },
+        {
+          "term": "models",
+          "heading": true
+        },
+        {
+          "term": "higgs doublets",
+          "heading": false
+        },
+        {
+          "term": "models building",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed above there is a large number of possibilities for models building in string theory and one way to limit such constructions is to use the constraint of grand unification. Such constructions depend on the nature of the gauge symmetry which is turn depend on the Kac-Moody level which enters in the operator product expansion of world sheet currents [The product of two currents can be expanded so that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-73-a-new-class-of-heterotic-string-models",
+      "number": "7.3",
+      "title": "A new class of heterotic string models",
+      "level": 2,
+      "pageStart": 111,
+      "pageEnd": 112,
+      "labelStart": "111",
+      "labelEnd": "112",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heterotic string",
+          "heading": true
+        },
+        {
+          "term": "cite braun",
+          "heading": false
+        },
+        {
+          "term": "mssm spectrum",
+          "heading": false
+        },
+        {
+          "term": "string model",
+          "heading": false
+        },
+        {
+          "term": "hidden sector",
+          "heading": false
+        },
+        {
+          "term": "visible sector",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "bouchard",
+          "heading": false
+        }
+      ],
+      "extract": "Recently a new class of heterotic string ~\\cite{Gross:1984dd} have been proposed which lead to some remarkably attractive features from the point of view of phenomenology and these models are worthy of attention. The models have the remarkable feature that the spectrum is exactly that of MSSM. Specifically in the work of Ref.~\\cite{Bouchard:2005ag} a compactification of the heterotic string on a Calabi-Yau threefold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-74-proton-decay-in-m-theory-compactifications",
+      "number": "7.4",
+      "title": "Proton decay in M theory compactifications",
+      "level": 2,
+      "pageStart": 112,
+      "pageEnd": 114,
+      "labelStart": "112",
+      "labelEnd": "114",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "cite friedmann",
+          "heading": false
+        },
+        {
+          "term": "compactifications",
+          "heading": true
+        },
+        {
+          "term": "cal times",
+          "heading": false
+        },
+        {
+          "term": "gauge fields",
+          "heading": false
+        },
+        {
+          "term": "beqn",
+          "heading": false
+        },
+        {
+          "term": "eeqn",
+          "heading": false
+        },
+        {
+          "term": "dimensional supergravity",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed already in the beginning of this section M theory is conjectured to be the source of all string theories. The low energy limit of this theory is the 11 dimensional supergravity~\\cite{Nahm:1977tg,Cremmer:1978km} formulated in the late seventies. An interesting phenomenon is that N=1 supersymmetry can be preserved if one compactifies the 11 dimensional supergravity to 4 dimensions on a seven-compact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-75-proton-decay-in-intersecting-d-brane-models",
+      "number": "7.5",
+      "title": "Proton decay in intersecting D brane models",
+      "level": 2,
+      "pageStart": 114,
+      "pageEnd": 117,
+      "labelStart": "114",
+      "labelEnd": "117",
+      "words": 1111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "intersecting brane",
+          "heading": true
+        },
+        {
+          "term": "aug eeqn",
+          "heading": false
+        },
+        {
+          "term": "cite blumenhagen",
+          "heading": false
+        },
+        {
+          "term": "tau gut",
+          "heading": false
+        },
+        {
+          "term": "cite klebanov",
+          "heading": false
+        },
+        {
+          "term": "decay mode",
+          "heading": false
+        },
+        {
+          "term": "ref aug",
+          "heading": false
+        }
+      ],
+      "extract": "An interesting class of models are those based on intersecting D branes~\\cite{berk,Blumenhagen:2000wh,Angelantonj:2000hi,Aldazabal,Blumenhagen:2000ea} and attempts have been made to build semi-realistic models based on these~\\cite{Blumenhagen:2001te,Koko1,Koko2,Cvet,Blumenhagen:2002gw,CvetPap}, and issues of gauge coupling unification, soft breaking and possible applications to the real world have also been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-76-nucleon-stability-in-string-landscape-models",
+      "number": "7.6",
+      "title": "Nucleon stability in string landscape models",
+      "level": 2,
+      "pageStart": 117,
+      "pageEnd": 121,
+      "labelStart": "117",
+      "labelEnd": "121",
+      "words": 1444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string models",
+          "heading": true
+        },
+        {
+          "term": "gaugino masses",
+          "heading": false
+        },
+        {
+          "term": "supersymmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "landscape",
+          "heading": true
+        },
+        {
+          "term": "fine tuning",
+          "heading": false
+        },
+        {
+          "term": "sitter vacua",
+          "heading": false
+        },
+        {
+          "term": "breaking scale",
+          "heading": false
+        },
+        {
+          "term": "radiative breaking",
+          "heading": false
+        }
+      ],
+      "extract": "The natural scale of vacuum energy density $\\rho_V$ is the Planck scale while $\\rho_{\\rm obs}$ is much smaller. \\beq \\rho_V \\sim {\\rm M_{\\rm Pl}}^4,~~~~~\\rho_{\\rm obs}\\leq (3\\times 10^{-3} {\\rm ev})^4 \\eeq To fit observation this requires a fine tuning of order $O(10^{120})$ to get the observed scale. With softly broken SUSY of scale $\\rm M_S=O(1)$ TeV one gets \\beq \\rho_V \\sim \\rm {M_{\\rm S}}^4 \\eeq Here one needs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-77-proton-decay-from-black-hole-and-wormhole-eff",
+      "number": "7.7",
+      "title": "Proton decay from black hole and wormhole effects",
+      "level": 2,
+      "pageStart": 121,
+      "pageEnd": 122,
+      "labelStart": "121",
+      "labelEnd": "122",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "mini black",
+          "heading": false
+        },
+        {
+          "term": "beqn tau",
+          "heading": false
+        },
+        {
+          "term": "virtual black",
+          "heading": false
+        },
+        {
+          "term": "cite adams",
+          "heading": false
+        },
+        {
+          "term": "conserve baryon",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum gravity does not conserve baryon number and thus can catalyze proton decay. There is a significant amount of literature trying to analyze proton decay lifetime arising from such effects~\\cite{Zeldovich:1976vq,Hawking:1979hw,Page:1980qm,Ellis:1983qm,Gilbert:1989nq,Adams:1996xe,Adams:1998gh,Adams:2000za}. Thus in quantum gravity one will have not only the exchange of gravitons but also exchange of mini black",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-78-u1-string-symmetries-and-proton-stability",
+      "number": "7.8",
+      "title": "$U(1)$ string symmetries and proton stability",
+      "level": 2,
+      "pageStart": 122,
+      "pageEnd": 124,
+      "labelStart": "122",
+      "labelEnd": "124",
+      "words": 679,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite faraggi",
+          "heading": false
+        },
+        {
+          "term": "frac tru",
+          "heading": false
+        },
+        {
+          "term": "b-l invariance",
+          "heading": false
+        },
+        {
+          "term": "symmetries suppress",
+          "heading": false
+        },
+        {
+          "term": "operators qqql",
+          "heading": false
+        },
+        {
+          "term": "cite pati",
+          "heading": false
+        },
+        {
+          "term": "five operators",
+          "heading": false
+        },
+        {
+          "term": "delta epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "We are already familiar with the fact that in supersymmetric theories the \\bl dimension four operators $QLD^c$, $U^cD^cD^c$, and $LLE$ are eliminated by the gauge $B-L$ symmetries~\\cite{Weinberg:1981wj}. This is so because these operators have $B-L=-1$, and an imposition of $B-L$ invariance does not allow these operators to appear in the superpotential. On the other hand dimension five operators $QQQL$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-79-discrete-symmetries-and-proton-stability",
+      "number": "7.9",
+      "title": "Discrete Symmetries and proton stability",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 127,
+      "labelStart": "124",
+      "labelEnd": "127",
+      "words": 1283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrete symmetries",
+          "heading": true
+        },
+        {
+          "term": "cite ibanez",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": true
+        },
+        {
+          "term": "constraint alpha",
+          "heading": false
+        },
+        {
+          "term": "vec alpha",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "alpha neq",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetries",
+          "heading": false
+        }
+      ],
+      "extract": "Dimension 4 and dimension 5 proton decay operators can be eliminated by specific choice of discrete symmetries. However, if the symmetries are global they would not be respected by quantum gravity~\\cite{Zeldovich:1976vq, Hawking:1979hw,Page:1980qm} specifically, for example in virtual blackhole exchange and in wormhole tunneling, and thus such phenomena can lead to new sources for proton decay~\\cite{Gilbert:1989nq}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-8-other-aspects",
+      "number": "8",
+      "title": "Other Aspects",
+      "level": 1,
+      "pageStart": 127,
+      "pageEnd": 128,
+      "labelStart": "127",
+      "labelEnd": "128",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "proton stability",
+          "heading": false
+        },
+        {
+          "term": "unified models",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "dark matter",
+          "heading": false
+        },
+        {
+          "term": "lsp",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we discuss a number of topics related to proton stability. One important issue concerns the relationship of proton stability to neutrino masses and mixings in grand unified models. This topic is discussed in Sec.(8.1) in the context of SO(10) grand unified models. Another phenomena which is closely associated with proton stability in supersymmetric grand unified models is dark matter. Thus grand",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-81-neutrino-masses-and-proton-decay",
+      "number": "8.1",
+      "title": "Neutrino masses and proton decay",
+      "level": 2,
+      "pageStart": 128,
+      "pageEnd": 133,
+      "labelStart": "128",
+      "labelEnd": "133",
+      "words": 1850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutrino masses",
+          "heading": true
+        },
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "overline eeqn",
+          "heading": false
+        },
+        {
+          "term": "handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "couplings beqn",
+          "heading": false
+        },
+        {
+          "term": "neutrino mass",
+          "heading": false
+        },
+        {
+          "term": "neutrino sector",
+          "heading": false
+        },
+        {
+          "term": "atmospheric neutrino",
+          "heading": false
+        }
+      ],
+      "extract": "As pointed out above an important issue concerns the implications of neutrino masses and mixings for proton decay lifetime. A grand unified model such as $SO(10)$ has a right handed neutrino which is an SU(5) singlet along with a left handed neutrino, which resides in the $\\bar 5$ in the decomposition $16=1+\\bar 5+10$. This allows for the possibility of both Dirac and Majorana type mass terms for the neutrino",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-82-proton-stability-and-dark-matter",
+      "number": "8.2",
+      "title": "Proton stability and dark matter",
+      "level": 2,
+      "pageStart": 133,
+      "pageEnd": 135,
+      "labelStart": "133",
+      "labelEnd": "135",
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dark matter",
+          "heading": true
+        },
+        {
+          "term": "proton stability",
+          "heading": true
+        },
+        {
+          "term": "cold dark",
+          "heading": false
+        },
+        {
+          "term": "cdm rho",
+          "heading": false
+        },
+        {
+          "term": "omega cdm",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "ref wmap",
+          "heading": false
+        },
+        {
+          "term": "cite arnowitt",
+          "heading": false
+        }
+      ],
+      "extract": "There is a strong correlation between dark matter and proton stability in supersymmetric theories. One may recall that in MSSM one introduces the R parity symmetry to suppress dangerous proton decay from dimensions four operators and this R parity then serves to make the lowest mass supersymmetric particle (LSP) absolutely stable. Further, if the LSP is neutral it becomes a candidate for dark",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-83-exotic-b-l-violation",
+      "number": "8.3",
+      "title": "Exotic $B \\ \\& \\ L$ violation",
+      "level": 2,
+      "pageStart": 135,
+      "pageEnd": 135,
+      "labelStart": "135",
+      "labelEnd": "135",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "8.3.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-044-831-delta-b-1-violation-and-other-non-standard-b",
+      "number": "8.3.1",
+      "title": "$|\\Delta B| \\ > \\ 1$ violation and other non-standard $B\\& L$ violation",
+      "level": 3,
+      "pageStart": 135,
+      "pageEnd": 136,
+      "labelStart": "135",
+      "labelEnd": "136",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "type beqn",
+          "heading": false
+        },
+        {
+          "term": "cite babu",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": true
+        },
+        {
+          "term": "delta effective",
+          "heading": false
+        },
+        {
+          "term": "eeqn",
+          "heading": false
+        },
+        {
+          "term": "effective operators",
+          "heading": false
+        },
+        {
+          "term": "violation",
+          "heading": true
+        },
+        {
+          "term": "charge assignments",
+          "heading": false
+        }
+      ],
+      "extract": "In Sec.(\\ref{ued}) it was found that in models with two universal extra dimensions, the surviving discrete $Z_8$ symmetry which is a remnant of the $U(1)_{45}$ symmetry in the extra dimensions $x_4$ and $x_5$ suppresses the dimension six baryon and lepton number violation but does allow such operators at high order. One possibility is to dispense with the extra dimensional constructions and simply focus on discrete",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-832-b-l-violation-involving-higher-generations",
+      "number": "8.3.2",
+      "title": "$B \\ \\& \\ L$ violation involving higher generations",
+      "level": 3,
+      "pageStart": 136,
+      "pageEnd": 137,
+      "labelStart": "136",
+      "labelEnd": "137",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau decays",
+          "heading": false
+        },
+        {
+          "term": "uud tau",
+          "heading": false
+        },
+        {
+          "term": "cite hou",
+          "heading": false
+        },
+        {
+          "term": "decay modes",
+          "heading": false
+        },
+        {
+          "term": "cite marciano",
+          "heading": false
+        },
+        {
+          "term": "bar gamma",
+          "heading": false
+        },
+        {
+          "term": "branching ratio",
+          "heading": false
+        },
+        {
+          "term": "baryon number",
+          "heading": false
+        }
+      ],
+      "extract": "Another phenomenon concerns baryon number violation (BNV) involving decays of higher generations~\\cite{Marciano:1994bg,Hou:2005iu}. It was noted in Ref.~\\cite{Marciano:1994bg} that an estimate of baryon number violating $\\tau$ decays can be given by using limits on proton decay lifetimes. This can be done using dimension six operators which have all been classified. Let us label these operators by $O^{n}_{ijkl}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-833-monopole-catalyzed-proton-decay",
+      "number": "8.3.3",
+      "title": "Monopole catalyzed proton decay",
+      "level": 3,
+      "pageStart": 137,
+      "pageEnd": 138,
+      "labelStart": "137",
+      "labelEnd": "138",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "monopole",
+          "heading": true
+        },
+        {
+          "term": "magnetic monopoles",
+          "heading": false
+        },
+        {
+          "term": "monopole flux",
+          "heading": false
+        },
+        {
+          "term": "monopole core",
+          "heading": false
+        },
+        {
+          "term": "catalysis",
+          "heading": false
+        },
+        {
+          "term": "rubakov",
+          "heading": false
+        },
+        {
+          "term": "macro",
+          "heading": false
+        }
+      ],
+      "extract": "The existence of magnetic monopoles~\\cite{Dirac:1931kp} is a generic prediction of grand unified theories (GUTs). The magnetic monopoles appear in the early universe at the phase transition corresponding to the breaking of the unified gauge group ($G\\to H\\times U(1))$~\\cite{'tHooft:1974qc}. The mass of the magnetic monopoles $M_m$ is related to the mass of the superheavy gauge bosons which mediate nucleon decay,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+      "number": "8.4",
+      "title": "Proton decay and the ultimate fate of the universe",
+      "level": 2,
+      "pageStart": 138,
+      "pageEnd": 139,
+      "labelStart": "138",
+      "labelEnd": "139",
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton decay",
+          "heading": true
+        },
+        {
+          "term": "white dwarf",
+          "heading": false
+        },
+        {
+          "term": "neutron stars",
+          "heading": false
+        },
+        {
+          "term": "luminosity",
+          "heading": false
+        },
+        {
+          "term": "cite adams",
+          "heading": false
+        },
+        {
+          "term": "fate",
+          "heading": true
+        },
+        {
+          "term": "powered",
+          "heading": false
+        }
+      ],
+      "extract": "Since quantum gravity effects could destabilize the proton, the eventual fate of the universe would be governed by the proton lifetime~\\cite{Dicus:1981ab,Adams:1996xe}. Thus, for example, over long time span white dwarfs and neutron stars will be powered by proton decay. The proton decay mode $p\\to e^+\\pi^0$ within a white dwarf will result in the process \\beqn p+e^-\\to \\gamma +\\gamma+\\gamma +\\gamma \\eeqn where two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-9-summary-and-outlook",
+      "number": "9",
+      "title": "Summary and Outlook",
+      "level": 1,
+      "pageStart": 139,
+      "pageEnd": 144,
+      "labelStart": "139",
+      "labelEnd": "144",
+      "words": 2201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "models proton",
+          "heading": false
+        },
+        {
+          "term": "six proton",
+          "heading": false
+        },
+        {
+          "term": "unified models",
+          "heading": false
+        },
+        {
+          "term": "non-supersymmetric models",
+          "heading": false
+        },
+        {
+          "term": "lifetime predictions",
+          "heading": false
+        },
+        {
+          "term": "decay mode",
+          "heading": false
+        }
+      ],
+      "extract": "We summarize now the main conclusions of this report. \\\\ \\noindent \\underline{Non-supersymmetric grand unification }\\\\ In non-supersymmetric models proton decay proceeds via dimension six operators which are induced by gauge interactions and via exchange of scalar lepto-quarks. In these models one needs an extreme fine tuning to get light Higgs doublets, which however, may be justified in the context of string",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-10-summary-table-of-p-decay-predictions",
+      "number": "10",
+      "title": "Summary Table of p decay predictions",
+      "level": 1,
+      "pageStart": 144,
+      "pageEnd": 146,
+      "labelStart": "144",
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sim hline",
+          "heading": false
+        },
+        {
+          "term": "times hline",
+          "heading": false
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "cite jcpati",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        },
+        {
+          "term": "cite dorsner",
+          "heading": false
+        },
+        {
+          "term": "decay modes",
+          "heading": false
+        },
+        {
+          "term": "experimental limits",
+          "heading": false
+        }
+      ],
+      "extract": "It is useful to summarize in a tabular form the range of theory predictions for the proton lifetime vs the current experimental limits. As the report exhibits the literature on this topic is enormous, and in the Table below we show only a sample of the models discussed in the report. Thus the Table should be used only as a guide to the more detailed discussion in the body of the report. Further, the numerical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 146,
+      "pageEnd": 147,
+      "labelStart": null,
+      "labelEnd": "147",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pocti",
+          "heading": false
+        },
+        {
+          "term": "munich",
+          "heading": false
+        },
+        {
+          "term": "colleagues",
+          "heading": false
+        },
+        {
+          "term": "during",
+          "heading": false
+        },
+        {
+          "term": "planck",
+          "heading": false
+        },
+        {
+          "term": "report",
+          "heading": false
+        },
+        {
+          "term": "period",
+          "heading": false
+        },
+        {
+          "term": "project",
+          "heading": false
+        }
+      ],
+      "extract": "Communications and discussions with many colleagues on topics discussed in this report are acknowledged. They include Kaustubh Agashe, Richard Arnowitt, Kaladi Babu, Jonathan Bagger, Wilfried Buchmuller, Jean -Eric Campagne, David Cline, Ali Chamseddine, Mirjam Cvetic, Ron Donagi, Herbert Dreiner, Alon Faraggi, Paul Frampton, Tamar Friedmann, Takeshi Fukuyama, Ilia Gogoladze, Haim Goldberg, Tarek Ibrahim, Christos",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-appendices",
+      "number": null,
+      "title": "APPENDICES",
+      "level": 1,
+      "pageStart": 147,
+      "pageEnd": 147,
+      "labelStart": "147",
+      "labelEnd": "147",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "A",
+      "extractCut": false
+    },
+    {
+      "id": "sec-052-11-mathematical-aspects-of-su5-and-so10-unificat",
+      "number": "11",
+      "title": "Mathematical aspects of $SU(5)$ and $SO(10)$ unification",
+      "level": 1,
+      "pageStart": 147,
+      "pageEnd": 162,
+      "labelStart": "147",
+      "labelEnd": "162",
+      "words": 3589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger acute",
+          "heading": false
+        },
+        {
+          "term": "ijklm acute",
+          "heading": false
+        },
+        {
+          "term": "acute bar",
+          "heading": false
+        },
+        {
+          "term": "dagger def",
+          "heading": false
+        },
+        {
+          "term": "overline acute",
+          "heading": false
+        },
+        {
+          "term": "dagger underline",
+          "heading": false
+        },
+        {
+          "term": "dagger tilde",
+          "heading": false
+        },
+        {
+          "term": "bar propto",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we will give some technical details of group theory that will facilitate reading the main body of the report. We begin by discussing $SU(5)$ where a single generation of quarks and leptons is placed in the $\\bar 5$ and the $10$ plet of $SU(5)$. The particle decomposition of $\\bar 5$ is \\begin{eqnarray} {\\overline {5}}= \\left(\\begin{array}{c}d_{ L a}^c\\\\ e^-_L\\\\ -\\nu_{eL} \\end{array}\\right)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-13-dressing-of-the-d5-operators",
+      "number": "13",
+      "title": "Dressing of the d=5 operators",
+      "level": 1,
+      "pageStart": 162,
+      "pageEnd": 168,
+      "labelStart": "162",
+      "labelEnd": "168",
+      "words": 1720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eeq beq",
+          "heading": false
+        },
+        {
+          "term": "eea beq",
+          "heading": false
+        },
+        {
+          "term": "eeq bea",
+          "heading": false
+        },
+        {
+          "term": "displaymath beq",
+          "heading": false
+        },
+        {
+          "term": "beq gamma",
+          "heading": false
+        },
+        {
+          "term": "nonumber eeq",
+          "heading": false
+        },
+        {
+          "term": "chi widetilde",
+          "heading": false
+        },
+        {
+          "term": "right eeq",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we exhibit the expressions for the dimension six operators after the dressing of the $d=5$ operators. The full analysis of the dressings of LLLL and RRRR dimension five operators including the chargino, gluino, and neutralino exchanges and including the sfermion mixings is given in the context of supergravity grand unification in Ref.\\cite{Nath:1985ub}, and later in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-14-sparticle-spectrum-and-renormalization",
+      "number": "14",
+      "title": "Sparticle spectrum and renormalization",
+      "level": 1,
+      "pageStart": 168,
+      "pageEnd": 173,
+      "labelStart": "168",
+      "labelEnd": "173",
+      "words": 1300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "displaymath beq",
+          "heading": false
+        },
+        {
+          "term": "beq eeq",
+          "heading": false
+        },
+        {
+          "term": "beq dagger",
+          "heading": false
+        },
+        {
+          "term": "tilde eeq",
+          "heading": false
+        },
+        {
+          "term": "displaymath beta",
+          "heading": false
+        },
+        {
+          "term": "frac eeq",
+          "heading": false
+        },
+        {
+          "term": "begin displaymath",
+          "heading": false
+        },
+        {
+          "term": "end displaymath",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we exhibit the sparticle mass matrices that enter in the analysis of the dressings of the dimension five operators. The matrices are given at the electroweak scale, and they are the most general ones including CP phases. We list all relevant renormalization group equations at the one-loop level for the soft parameters in the MSSM. As discussed already in Sec.(4.2), in MSSM the superpotential is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-15-renormalization-of-the-d5-and-d6-operators",
+      "number": "15",
+      "title": "Renormalization of the $d=5$ and $d=6$ operators",
+      "level": 1,
+      "pageStart": 173,
+      "pageEnd": 174,
+      "labelStart": "173",
+      "labelEnd": "174",
+      "words": 602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gut scale",
+          "heading": false
+        },
+        {
+          "term": "alpha gut",
+          "heading": false
+        },
+        {
+          "term": "ijkl epsilon",
+          "heading": false
+        },
+        {
+          "term": "frac ijkl",
+          "heading": false
+        },
+        {
+          "term": "decay scale",
+          "heading": false
+        },
+        {
+          "term": "electroweak scale",
+          "heading": false
+        },
+        {
+          "term": "gut right",
+          "heading": false
+        },
+        {
+          "term": "proton decay",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we discuss the renormalization effects for the $d=5$ and $d=6$ operators for proton decay. Typically the $d=5$ effective operators are obtained at the GUT scale, once we integrate out the colored triplets. Before we dress those operators at the electroweak scale to obtain the $d=6$ effective operators, we have to run them from the GUT scale to the electroweak scale. After the dressing, we have to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-16-effective-lagrangian-for-nucleon-decay",
+      "number": "16",
+      "title": "Effective lagrangian for nucleon decay",
+      "level": 1,
+      "pageStart": 174,
+      "pageEnd": 184,
+      "labelStart": "174",
+      "labelEnd": "184",
+      "words": 2709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber eeqn",
+          "heading": false
+        },
+        {
+          "term": "dagger eeqn",
+          "heading": false
+        },
+        {
+          "term": "beqn tilde",
+          "heading": false
+        },
+        {
+          "term": "bar nonumber",
+          "heading": false
+        },
+        {
+          "term": "beqn gamma",
+          "heading": false
+        },
+        {
+          "term": "decay beqn",
+          "heading": false
+        },
+        {
+          "term": "d-f sqrt",
+          "heading": false
+        },
+        {
+          "term": "beqn alpha",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed already in supersymmetric theories \\bl ~violating dimension five operators must be dressed by gluino, chargino and neutralino exchanges to produce dimension six operators. These operators are typically of two types: $\\Delta S=0$ and $\\Delta S=1$. The \\bl violating $\\Delta S=0$ operators are: \\beqn O_{RL}^{\\nu_i}=\\epsilon_{abc} \\overline{(d_{Ra})^C} u_{Rb} \\overline{(d_{Lc})^C} \\nu_{iL} \\nonumber\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-17-details-of-the-analysis-on-testing-guts",
+      "number": "17",
+      "title": "Details of the analysis on testing GUTs",
+      "level": 1,
+      "pageStart": 184,
+      "pageEnd": 189,
+      "labelStart": "184",
+      "labelEnd": "189",
+      "words": 1431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger ckm",
+          "heading": false
+        },
+        {
+          "term": "beta ckm",
+          "heading": false
+        },
+        {
+          "term": "ckm right",
+          "heading": false
+        },
+        {
+          "term": "left ckm",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "renormalizable flipped",
+          "heading": false
+        },
+        {
+          "term": "beta delta",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "In Sec.(5.4) we discussed the discussed the tests on $SU(5)$ models with symmetric up Yukawa couplings. In this appendix we expand on those tests to include other groups. These are discussed below.\\\\ \\noindent (i) $SO(10)$ models with symmetric Yukawa couplings\\\\ Next we investigate the predictions in realistic grand unified theories based on the gauge group $SO(10)$~\\cite{SO(10)} with symmetric Yukawa couplings.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-18-detailed-analysis-of-upper-bounds",
+      "number": "18",
+      "title": "Detailed analysis of upper bounds",
+      "level": 1,
+      "pageStart": 189,
+      "pageEnd": 192,
+      "labelStart": "189",
+      "labelEnd": "192",
+      "words": 1161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana neutrino",
+          "heading": false
+        },
+        {
+          "term": "proton lifetime",
+          "heading": false
+        },
+        {
+          "term": "decay rates",
+          "heading": false
+        },
+        {
+          "term": "cite dorsner",
+          "heading": false
+        },
+        {
+          "term": "decay channels",
+          "heading": false
+        },
+        {
+          "term": "beta alpha",
+          "heading": false
+        },
+        {
+          "term": "textrm gev",
+          "heading": false
+        },
+        {
+          "term": "textrm condition",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we give details of the analysis presented in Sec.(5.6). As pointed out in that section the minimization of the total decay rate represents a formidable task since there are in principle 42 unknown parameters in equations~(\\ref{cec} - \\ref{cnuc}). One possibility is to look for solutions where the ``$SU(5)$ contributions'' and the ``flipped $SU(5)$ contributions'' are suppressed (minimized)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-19-relating-4d-parameters-to-parameters-of-m-the",
+      "number": "19",
+      "title": "Relating 4D parameters to parameters of M theory",
+      "level": 1,
+      "pageStart": 192,
+      "pageEnd": 196,
+      "labelStart": "192",
+      "labelEnd": null,
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beqn kappa",
+          "heading": false
+        },
+        {
+          "term": "polchinski beqn",
+          "heading": false
+        },
+        {
+          "term": "beqn alpha",
+          "heading": false
+        },
+        {
+          "term": "finds beqn",
+          "heading": false
+        },
+        {
+          "term": "beqn frac",
+          "heading": false
+        },
+        {
+          "term": "form beqn",
+          "heading": false
+        },
+        {
+          "term": "eeqn",
+          "heading": false
+        },
+        {
+          "term": "int cal",
+          "heading": false
+        }
+      ],
+      "extract": "The compactifications of an 11 dimensional theory to four dimensions allows one to relate 4 dimensional parameters such as Newtons' constant $G_N$, the grand unification scale $M_G$ and the unified coupling constant $\\alpha_G$ to parameters of the higher dimensional theory. In the analysis here we give an abbreviated version of the work of Refs.~\\cite{Friedmann:2002ty,hw}. We begin with the gravity action in 11",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-20-gauge-coupling-unification-in-string-models",
+      "number": "20",
+      "title": "Gauge coupling unification in string models",
+      "level": 1,
+      "pageStart": 196,
+      "pageEnd": 258,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 15660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string models",
+          "heading": true
+        },
+        {
+          "term": "supergravity uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "gauge coupling",
+          "heading": true
+        },
+        {
+          "term": "grand uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "supergravity guts",
+          "heading": false
+        },
+        {
+          "term": "fileviez erez",
+          "heading": false
+        },
+        {
+          "term": "uniﬁcation scale",
+          "heading": false
+        }
+      ],
+      "extract": "els As noted already aside from proton stability, gauge coupling uniﬁcation is an important constraint on uniﬁed models of particle interactions. For uniﬁca- tion of gauge coupling constants it is not necessary that the gauge couplings 196 arise from a grand uniﬁcation since the Standard Model gauge group can emerge directly at the string scale. Here one has an additional constraint, i.e., not only the gauge",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "proton decay",
+      "heading": true
+    },
+    {
+      "term": "decay beqn",
+      "heading": false
+    },
+    {
+      "term": "models proton",
+      "heading": true
+    },
+    {
+      "term": "proton lifetime",
+      "heading": true
+    },
+    {
+      "term": "decay cite",
+      "heading": false
+    },
+    {
+      "term": "eeqn beqn",
+      "heading": false
+    },
+    {
+      "term": "dimension proton",
+      "heading": true
+    },
+    {
+      "term": "five proton",
+      "heading": false
+    },
+    {
+      "term": "six proton",
+      "heading": false
+    },
+    {
+      "term": "decay operators",
+      "heading": false
+    },
+    {
+      "term": "decay scale",
+      "heading": true
+    },
+    {
+      "term": "supersymmetric proton",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": "94",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": "96",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": "99",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": "101",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 102,
+      "label": "102",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": "104",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 105,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": "109",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": "111",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 112,
+      "label": "112",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": "114",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": "117",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": "121",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 122,
+      "label": "122",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": "124",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 125,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 126,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 127,
+      "label": "127",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 128,
+      "label": "128",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": "133",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": "135",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 136,
+      "label": "136",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 137,
+      "label": "137",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 138,
+      "label": "138",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 139,
+      "label": "139",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 140,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 141,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 142,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 143,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 144,
+      "label": "144",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 145,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 146,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 147,
+      "label": "147",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 148,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 149,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 150,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 151,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 152,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 153,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 154,
+      "label": "154",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 155,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 156,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 157,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 158,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 159,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 160,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 161,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 162,
+      "label": "162",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 163,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 164,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 165,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 166,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 167,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 168,
+      "label": "168",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 169,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 170,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 171,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 172,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 173,
+      "label": "173",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 174,
+      "label": "174",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 175,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 176,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 177,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 178,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 179,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 180,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 181,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 182,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 183,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 184,
+      "label": "184",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 185,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 186,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 187,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 188,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 189,
+      "label": "189",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 190,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 191,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 192,
+      "label": "192",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 193,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 194,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 195,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 196,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 197,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 198,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 199,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 200,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 201,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 202,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 203,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 204,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 205,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 206,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 207,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 208,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 209,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 210,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 211,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 212,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 213,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 214,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 215,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 216,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 217,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 218,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 219,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 220,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 221,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 222,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 223,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 224,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 225,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 226,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 227,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 228,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 229,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 230,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 231,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 232,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 233,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 234,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 235,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 236,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 237,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 238,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 239,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 240,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 241,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 242,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 243,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 244,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 245,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 246,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 247,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 248,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 249,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 250,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 251,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 252,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 253,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 254,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 255,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 256,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 257,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 258,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Idealized p →e+π0 decay in Super-Kamiokande [26]. Fig.(1) gives a schematic presentation of an ideal p →e+π0 decay. Here,",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Idealized p →K+ν decay in Super-Kamiokande, K+ →π+π0",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Idealized p →K+ν decay in Super-Kamiokande, K+ →µ+νµ",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Experimental lower bounds on proton lifetimes",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Upper bounds for the R-parity violating couplings. The analysis above shows that the R-parity violating couplings could be large in supersymmetric scenarios with large susy breaking scale",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Contributions to the Bij coeﬃcients in a realistic minimal non-SUSY SU(5) [211]",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "P and P′ parities of the components of bulk Higgs multiplets",
+      "page": 79,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "P and P′ parities for the components of bulk gauge multiplets In setting up the Lagrangian in 5D we have to make sure that the Lagrangian is invariant under the full Z2 × Z′",
+      "page": 80,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "P and P′ parities of SO(10) vector and chiral multiplets",
+      "page": 86,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "C parities and matter parities from Ref. [310] where L1± = (L1 ±",
+      "page": 106,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "The U(1) quantum numbers of the ﬁelds in a class of string derived models [394] From Table (8) one ﬁnds that baryon and lepton number dimension four",
+      "page": 123,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Properties of the dimension six operators under SU(3)L × SU(3)R. To obtain the eﬀective Lagrangian for the operators we want to simulate the transformations of Table (9) using the baryon and meson ﬁelds. For the baryons we introduce the matrix",
+      "page": 177,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Experimental lower bounds on proton decay partial lifetimes [34]",
+      "page": 251,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Gauge contributions to the decay of the proton. In this case the decay of the proton is mediated by vector leptoquarks. The ﬁelds Ψ, ψ and Φ are quark ﬁelds and l corresponds to the leptons. A possible contribution is: Ψ = uL, ψ = (uC)L, Φ = (dC",
+      "page": 252,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Higgs contributions to the decay of the proton. In this case proton decay is mediated by scalar leptoquarks T. The ﬁelds Q = (uL, dL) and L = (νL, eL)",
+      "page": 253,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Values of the gauge couplings of the Standard Model at diﬀerent scales",
+      "page": 254,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Plot of lines of constant MΣ3",
+      "page": 255,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Values of the gauge couplings at diﬀerent scales, in the",
+      "page": 256,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Majorana neutrino case in the MX–αGUT plane",
+      "page": 257,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Dirac neutrino case in the MX–αGUT plane. The value of the unifying coupling constant is varied from 1/60 to 1/10. The conventional values for MX and αGUT in SUSY GUTs are marked in thick lines. The experimentally excluded reg",
+      "page": 258,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p251-1",
+      "file": "images/img-p251-1.png",
+      "page": 251,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 61,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 62,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "11 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "9 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p196); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 62 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-0601023v3"
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2305.14884v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec.intro}\n\nThis paper concerns the topological invariance of a formal power series associated\nto an ideally triangulated 3-manifold $M$ with a torus boundary component~\\cite{DG}. \nThe series is defined by formal Gaussian integration of a finite dimensional integral\n(a so-called ``state-integral'')\nand it is expected to coincide to all orders with the asymptotic expansion of\nthree important topological invariants of 3-manifolds.\n\nThe first is the Kashaev invariant of a hyperbolic\nknot~\\cite{K95}, where Kashaev's famous volume conjecture is refined to an\nasymptotic statement to all order",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Faddeev quantum dilogarithm",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-21-the-faddeev-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "the choice of quad and under the 2–3 Pachner moves follows from a F ourier tranform identity\nand a pentagon identity for ψℏ; see Theorems 3.4 and 3.6 below. Although these identities\nare, in a sense, limits of the corresponding identities for the Faddee v quantum dilogarithm\n(just as ψℏ is a limit of the Faddeev quantum dilogarithm), it would requires addition al\nanalytic work to do so, and instead we give algebraic proofs of theor ems 3.4 and 3.6 using\nproperties of the formal Gaussian integration, together with holo nomic properties of the\ninvolved formal power series.\nHaving discussed the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "It was clear from [ 11] that a NZ-datum Ξ = ( A,B,ν,z,f,f ′′) depends on two square matrices A and B such that ABt is symmetric that may or may not come from topology, and that the series Φ Ξ (ℏ) is deﬁned under the assumption that det( B) ⁄= 0 and det(Λ) ⁄= 0. Doing so, the proof of Theorem 1.1 shows that the series Φ Ξ (ℏ) is invariant under the moves that appear in [ 21, Sec.6]; see also Section 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-2-preliminaries.md",
+      "narrative": null,
+      "content": "2.1. The Faddeev quantum dilogarithm. In this subsection, we recall some basic prop-\nerties of the Faddeev quantum dilogarithm, which are motivations fo r Theorems 3.4 and 3.6\nbelow. At the same time, we will ignore additional properties of the Fa ddeev quantum dilog-\narithm that play no role in our paper, such as the fact that it is a mero morphic function\nwith precise zeros, poles and residues.\nThe Faddeev quantum dilogarithm [ 15] ϕ := Φ b satisﬁes a key integral pentagon iden-\ntity [16]\ne2πixy~ϕ(x)~ϕ(y) =\n∫\n/CA\neπiz 2\n~ϕ(x −z)~ϕ(z)~ϕ(y −z) dz (8)\nwhere both sides are tempered distributions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Neumann–Zagier data",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-neumannzagier-data.md",
+      "narrative": null,
+      "content": "\\label{sub.NZ}\n\nIn this section, we discuss in detail Neumann--Zagier data following~\\cite{DG}.\nWe start with a 3-manifold $M$ with torus boundary component (all manifolds and their\ntriangulations will be oriented throughout the paper) equipped with\na concrete oriented ideal triangulation, that is with a triangulation such that\neach tetrahedron $\\Delta$ of $\\calT$ comes with a bijection of its vertices with\nthose of the standard 3-simplex. (All triangulations that are used in the computer\nprograms \\texttt{SnapPy}~\\cite{snappy} and \\texttt{Regina}~\\cite{regina} are concrete).\n\nEvery concrete te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric aspects",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-geometric-aspects.md",
+      "narrative": null,
+      "content": "\\label{sub.geometric}\n\nIn this section, we discuss some geometric aspects of Theorem~\\ref{thm.1} related\nto the choice of the shapes $z$ in a Neumann--Zagier datum. Let us fix an ideal\ntriangulation $\\calT$. A solution $z \\in (\\BC\\setminus\\{0,1\\})^N$ to the\nNeumann--Zagier equations gives rise, via a developing map, to a representation\n$\\rho_z: \\pi_1(M) \\to \\PSL_2(\\BC)$. For a detailed discussion, see the appendix\nof~\\cite{BoydII}. However, not every representation $\\rho: \\pi_1(M) \\to \\PSL_2(\\BC)$ is\n``seen'' by $\\calT$, that is, is in the image of the map $z \\to \\rho_z$.\nWhat's more, if $\\rho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal Gaussian integration",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-formal-gaussian-integration.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics on formal Gaussian integration",
+      "pageStart": 9,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-31-basics-on-formal-gaussian-integration.md",
+      "narrative": null,
+      "content": "\\label{sub.prelim}\n\nIn this section, we review the basic properties of formal Gaussian integration,\nwhich is a combinatorial analogue of integration of analytic functions. This theory\nwas introduced and studied in detail in~\\cite{AarhusII}, where it was used to\ndefine a universal perturbative finite type invariant of rational homology 3-spheres,\nand to identify it with the trivial connection contribution of Chern--Simons\nperturbation theory. \n\nAs a warm-up, the formal Gaussian integral of a monomial $x^n$ in one variable\nwith respect to the quadratic form $\\lambda \\neq 0$ is defined by\n\\bea\n\\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elementary invariance properties",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-4-elementary-invariance-properties.md",
+      "narrative": null,
+      "content": "\\label{sec.elementary}\n\nIn this section, we review some basic choices needed to define the\nthe Neumann--Zagier data for a triangulation with $N$ tetrahedra, namely:\n\\begin{itemize}\n\\item[(a)] an ordering of the $N$ tetrahedra,\n\\item[(b)] an ordering of the $N$ edges,\n\\item[(c)] an edge equation to remove,   \n\\item[(d)] a path to represent the meridian curve,\n\\item[(e)] a flattening.\n\\end{itemize}\nA change of these choices changes the corresponding Neumann--Zagier data in a simple\nway, which we now describe. Fix a triangulation and the choices needed to define\nNeumann--Zagier data\n\\be\n\\Xi\\=(A,B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under the choice of quad",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-5-invariance-under-the-choice-of-quad.md",
+      "narrative": null,
+      "content": "\\label{sec.quad}\n\nThe definition of the series $\\Phi^\\Xi(\\hbar)$ requires some choices,\nsome of which were described and dealt with in the previous\nSection~\\ref{sec.elementary}. What remains to complete the proof of\nTheorem~\\ref{thm.1} is the independence of $\\Phi^\\Xi(\\hbar)$\nunder the choice of a nondegenerate quad, and the independence\nunder the 2--3 Pachner moves that connect two ideal triangulations.\n\nIn this section, we will prove that $\\Phi^\\Xi(\\hbar)$ is independent\nof the choice of a nondegenerate quad. Recall that to each pair of opposite\nedges of an ideal tetrahedron there is an asso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under Pachner moves",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-6-invariance-under-pachner-moves.md",
+      "narrative": null,
+      "content": "\\label{sec.pachner}\n\nIn this section, we will prove that $\\Phi^{\\Xi}$ is invariant under 2--3 Pachner\nmoves. There are several versions of the 2--3 move (and of the corresponding\npentagon identity in Teichm\\\"uller TQFT~\\cite{Kashaev:beta}) and the\none we choose in the next theorem is slightly different from the one\nin~\\cite[Sec.3.6]{DG} and can be related by\ncomposing with quad moves.\n\nThe 2--3 move involves two triangulations $\\calT$ and $\\widetilde\\calT$ with $N+2$\nand $N+3$ tetrahedra, respectively, shown in Figure~\\ref{fig.23move}.\n\n\\begin{figure}[htpb!]\n\\begin{center}  \n\n\\begin{tikzpictur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "With the notation used in the proof of the previous Proposition 6.2, ~B−1~A =       Q11 + 2Q12 + Q22 − 1 Q11 + Q12 − 1 Q12 + Q22 − 1 Q∗ 1 + Q∗ Q11 + Q12 − 1 Q11 Q12 − 1 Q∗ Q12 + Q22 − 1 Q12 − 1 Q22 Q∗ Q∗ t + Q∗ t Q∗ t Q∗ t Q∗       (105) ~B−1~ν = ( (B−1ν)1 + (B−1ν)2 − 1 B−1ν ) (106) ~ft~B−1~ν = ftB−1ν − ~f0 (107)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "If B has full rank, then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move given in Equation ( 96).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of B with full rank",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-61-the-case-of-b-with-full-rank.md",
+      "narrative": null,
+      "content": "3.6 under the\nassumption that the matrix B has full rank. In this case, Equation ( 98) simpliﬁes to the\nfollowing one\nΦ Ξ (ℏ) Φ ~Ξ (ℏ)\nPentagon\n(100)\nsince we do not need to apply Fourier transform, nor Fubini’s theore m.\nProposition 6.2. If B has full rank, then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move\ngiven in Equation ( 96).\nProof. To begin with, noting that in this case A = A and B = B, we have:\nΦ Ξ (ℏ) = ⟨I0⟩x,Λ (101)\nwhere\nI0 = exp\n(ℏ\n8ftB−1Af − ℏ\n1\n2\n2 xt(B−1ν − 1)\n) N +2∏\nj=1\nψℏ(xj,zj)\nand\nΛ 0 = diag( z′) − Q\n26 STA VROS GAROUF ALIDIS, MATTHIAS STORZER, AND CAMPBELL WH EELER\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "With the notation used in the previous proof of Proposition 6.4 we have Q11 = 0 and the following equalities: ~B−1~A =     Q22 Q12 + 1 Q12 + Q22 Q∗ Q12 + 1 0 Q12 Q∗ Q12 + Q22 Q12 2Q12 + Q22 Q∗ 1 + Q∗ Q∗ t Q∗ t Q∗ t + Q∗ t Q∗    , (123) ~B−1~ν =     (B−1ν )2 (B−1ν )1 (B−1ν )1 + (B−1ν )2 (B−1ν )∗    , (124) ~ft~B−1~ν = ftB−1ν. (125)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "IfB has rank N + 1 then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move given in Equation ( 98).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of B with nullity one",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "../sections/sec-011-62-the-case-of-b-with-nullity-one.md",
+      "narrative": null,
+      "content": "assumption that the matrix B has nullity 1. In this case, starting from the series Φ Ξ (ℏ), there\nare three intermediate formulas (shown as bullets) in Equation ( 98) that eventually iden-\ntify the result with Φ ~Ξ (ℏ). The intermediate formulas involve a Fourier transform (adding\none integration variable), a pentagon (adding a second variable), a n inverse Fourier trans-\nform (adding a third), and an application of Fubini’s theorem that rem oves two integration\nvariables. The detailed computation is given in the next proposition.\nProposition 6.4. IfB has rank N + 1 then Φ Ξ (ℏ) is invariant u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "With the notation used in the proof of the previous Proposition 6.6 we have Q11 = Q12 = Q22 = 0 and the following equalities: ~B−1~A =     −1 1 1 −Q∗ 1 − Q∗ 1 0 0 Q∗ 1 0 0 Q∗ −Q∗ t − Q∗ t Q∗ t Q∗ t Q∗ − Q∗ tQ∗ 2 − Q∗ tQ∗    , (143) ~B−1~ν =     −(B−1ν )1 − (B−1ν )2 + 1 (B−1ν )1 (B−1ν )2 (B−1ν )∗ − (B−1ν )1Q∗ 2 − (B−1ν )2Q∗    , (144) ~ft~B−1~ν = ftB−1ν + ~f0 − 2(B−1ν )1(B−1ν )2. (145) PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS 39",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "If B has rank N then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move given in Equation ( 98).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of B with nullity two",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "../sections/sec-012-63-the-case-of-b-with-nullity-two.md",
+      "narrative": null,
+      "content": "assumption that the matrix B has nullity 2. Similarly to the proof of Proposition 6.4, we use\nthree intermediate formulas in Equation ( 98). They involve two Fourier transforms (adding\ntwo variables), a pentagon (adding a third variable), two inverse Fo urier transforms (adding\ntwo variables) and an applications of Fubini’s Theorem (removing four integration variables).\nThe details are given in the following proposition.\nProposition 6.6. If B has rank N then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move\ngiven in Equation (\n98).\nProof. Following the discussion above, we can assume that rank(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-013-acknowledgements.md",
+      "narrative": null,
+      "content": "The work of M.S. and C.W. has been supported by the Max-Planck-Ge sellschaft. C.W.\nwishes to thank the Southern University of Science and Technology ’s International Center\nfor Mathematics in Shenzhen for their hospitality where the paper w as completed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Complements on the Fourier transform",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-014-appendix-a-complements-on-the-fourier-transform.md",
+      "narrative": null,
+      "content": "In this appendix, we give the omitted details in the last step of the pro of of Theorem 3.4.\nThey are an aﬃne change of coordinates, followed by the correspo nding computation of the\nformal Gaussian integration.\nThe proof requires a version of formal Gaussian integration where the symmetric matrix\nΛ ℏ ∈ GLN ( /C9 (z)[x]/llbracketℏ1/2/rrbracket) depends on ℏ, such that Λ 0 is invertible. In this case, for an\nintegrable function fℏ(x,z ) ∈ /C9 (z)[x]/llbracketℏ1/2/rrbracket, we deﬁne\n⟨ ⟨fℏ(x,z )⟩ ⟩x,Λ ℏ\n:=\n√\ndet(Λ ℏ)\ndet(Λ 0)\n⟨\nexp\n(\n− 1\n2xt(Λ ℏ − Λ 0)x\n)\nfℏ(x,z )\n⟩\nx,Λ 0\n=\n∫\ne− 1\n2xtΛ( ℏ)xfℏ(x,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Complements on the pentagon identity",
+      "pageStart": 43,
+      "pageEnd": 46,
+      "target": "../sections/sec-015-appendix-b-complements-on-the-pentagon-identity.md",
+      "narrative": null,
+      "content": "In this appendix, we give the omitted details in the last step of the pro of of Theorem 3.6.\nThey are an aﬃne change of coordinates, followed by the correspo nding computation of the\nformal Gaussian integration.\nEquations ( 49) and Equation ( 34) give\nψ ℏ(x,z 1)ψ ℏ(y,z 2) = e− ℏ\n24Cℏ(x,z 1)Cℏ(y, ˆz1)\n⟨⟨\nψ ℏ(−w, ˆz1 ˆz−1\n0 )ψ ℏ(w, ˆz0)ψ ℏ(−w, ˆz2 ˆz−1\n0 )\n⟩⟩\nw,ˆδ , (174)\nwhere\nˆz1 = z1exℏ1/2\nˆz2 = z2eyℏ1/2\nˆz0 = ˆz1 + ˆz1 − ˆz1 ˆz2, ˆδ = (ˆz2 + ˆz2 − ˆz1 ˆz2)2\nˆz1 ˆz2(1 − ˆz1)(1 − ˆz2).\n(175)\n44 STA VROS GAROUF ALIDIS, MATTHIAS STORZER, AND CAMPBELL WH EELER\nNote that ˆz1, ˆz2, ˆz0 and ˆδ are p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.14884v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "[1] Jørgen Ellegaard Andersen and Rinat Kashaev. The Teichm¨ uller T QFT. In Proceedings of the Interna-\ntional Congress of Mathematicians—Rio de Janeiro 2018. Vol . III. Invited lectures , pages 2541–2565.\nWorld Sci. Publ., Hackensack, NJ, 2018.\n[2] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from Quan tum Teichm¨ uller theory.Comm.\nMath. Phys. , 330(3):887–934, 2014.\nPERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS 47\n[3] Scott Axelrod and Isadore Singer. Chern-Simons perturbation theory. II. J. Diﬀerential Geom. ,\n39(1):173–213, 1994.\n[4] Dror Bar-Natan, Stavros Garoufalidi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

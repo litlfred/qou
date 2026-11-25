@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-tmli-constituent-composite-agreement",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:tmli-constituent-composite-agreement",
+  "kind": "lemma",
+  "title": "Constituent and composite Markov-trace evaluations agree exactly",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-factorization",
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-product"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-tmli-constituent-composite-agreement"
+  ],
+  "tags": [
+    "markov-trace",
+    "iwahori-hecke",
+    "pawlei-basis",
+    "exact-identity"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.tmli_constituent_composite_agreement",
+  "text": "tmli-constituent-composite-agreement.md",
+  "provenance": "authored"
+}

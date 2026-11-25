@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/deligne-mostow-1986/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cohomology of a rank one local system on a punctured projective line",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "provenance": "ingested"
+}

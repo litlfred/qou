@@ -1,0 +1,872 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-nucl-th-0610105v2",
+  "title": "Universal Properties of the Four-Body System with Large Scattering Length",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Few-Body Bound State Equations in Effective Theory",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-few-body-bound-state-equations-in-effective-theo"
+    },
+    {
+      "level": 2,
+      "title": "The Two-Body Sector",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-two-body-sector"
+    },
+    {
+      "level": 2,
+      "title": "The Three-Body Sector",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-three-body-sector"
+    },
+    {
+      "level": 2,
+      "title": "The Four-Body Sector",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-four-body-sector"
+    },
+    {
+      "level": 1,
+      "title": "Four-Body Universality",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-four-body-universality"
+    },
+    {
+      "level": 2,
+      "title": "Bound State Spectrum",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-bound-state-spectrum"
+    },
+    {
+      "level": 2,
+      "title": "Universal Correlations",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-universal-correlations"
+    },
+    {
+      "level": 1,
+      "title": "Summary and Outlook",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-body system",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        },
+        {
+          "term": "electronic address",
+          "heading": false
+        },
+        {
+          "term": "hammer",
+          "heading": false
+        },
+        {
+          "term": "universal properties",
+          "heading": false
+        },
+        {
+          "term": "bonn",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:nucl-th/0610105v2 29 Mar 2007 HISKP-TH-06/31 Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer∗ Helmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie), Universit¨at Bonn, 53115 Bonn, Germany L. Platter† Department of Physics and Astronomy, Ohio University, Athens, OH 45701, USA (Dated: May 7, 2019) Abstract Few-body systems with large scattering length have universal",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1060,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deepest four-body",
+          "heading": false
+        },
+        {
+          "term": "four-body system",
+          "heading": false
+        },
+        {
+          "term": "four-body spectrum",
+          "heading": false
+        },
+        {
+          "term": "four-body parameter",
+          "heading": false
+        },
+        {
+          "term": "four-body problem",
+          "heading": false
+        },
+        {
+          "term": "three-body system",
+          "heading": false
+        },
+        {
+          "term": "two-body scattering",
+          "heading": false
+        },
+        {
+          "term": "platter",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} Effective theories are a powerful framework to exploit a separation of scales in a physical system. The long-distance degrees of freedom must be included dynamically in the effective theory, while short-distance physics enters only through the values of a few coupling constants, often called low-energy constants. Effective theories are widely used in many areas of physics. Recently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-few-body-bound-state-equations-in-effective-theo",
+      "number": null,
+      "title": "Few-Body Bound State Equations in Effective Theory",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "effpot",
+          "heading": false
+        },
+        {
+          "term": "lambda term",
+          "heading": false
+        },
+        {
+          "term": "platter",
+          "heading": false
+        },
+        {
+          "term": "effective",
+          "heading": true
+        },
+        {
+          "term": "regularization scheme",
+          "heading": false
+        },
+        {
+          "term": "low-energy observables",
+          "heading": false
+        },
+        {
+          "term": "higher-order corrections",
+          "heading": false
+        },
+        {
+          "term": "bedaque",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:effT label=\"sec:effT\"} The effective low-energy interaction potential generated by a non-relativistic EFT with short-range interactions can be written down in a momentum expansion. In the two-body S-wave sector, it takes the general form $$\\langle {\\bf k'} | V | {\\bf k} \\rangle = \\lambda_2 + \\lambda_{2,2} (k^2+k'^2)/2 +\\ldots\\,, \\label{effpot}$$ where ${\\bf k}$ and ${\\bf k'}$ are the relative three-momenta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-two-body-sector",
+      "number": null,
+      "title": "The Two-Body Sector",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-body",
+          "heading": true
+        },
+        {
+          "term": "two-body propagator",
+          "heading": false
+        },
+        {
+          "term": "two-body coupling",
+          "heading": false
+        },
+        {
+          "term": "effpot",
+          "heading": false
+        },
+        {
+          "term": "propagator tau",
+          "heading": false
+        },
+        {
+          "term": "constant lambda",
+          "heading": false
+        },
+        {
+          "term": "efft",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:effT:2body label=\"sec:effT:2body\"} We write the leading order two-body effective potential in momentum space as: $$\\langle {\\bf p}|V|{\\bf q}\\rangle= \\langle {\\bf p}|g \\rangle \\lambda_2 \\langle g|{\\bf q} \\rangle ~, \\label{effpot_2}$$ where $\\lambda_2$ denotes the two-body coupling constant and ${\\bf q}$ (${\\bf p}$) are the relative three-momenta in the incoming (outgoing) channel. The regulator functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-three-body-sector",
+      "number": null,
+      "title": "The Three-Body Sector",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 545,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-body",
+          "heading": true
+        },
+        {
+          "term": "three-body binding",
+          "heading": false
+        },
+        {
+          "term": "three-body wave",
+          "heading": false
+        },
+        {
+          "term": "three-body coupling",
+          "heading": false
+        },
+        {
+          "term": "cutoff lambda",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "limcyc",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:effT:3body label=\"sec:effT:3body\"} The low-energy properties of the three-body system for a given effective potential can be obtained by solving the Faddeev equations. The full wave function can be decomposed into four components: one for each two-body subcluster and one for the three-body cluster [@Meier:hj]. For identical bosons, the three-body wave function is fully symmetric under exchange of particles",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-four-body-sector",
+      "number": null,
+      "title": "The Four-Body Sector",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-body",
+          "heading": true
+        },
+        {
+          "term": "three-body force",
+          "heading": false
+        },
+        {
+          "term": "repulsive three-body",
+          "heading": false
+        },
+        {
+          "term": "four-body wave",
+          "heading": false
+        },
+        {
+          "term": "deep three-body",
+          "heading": false
+        },
+        {
+          "term": "three-body bound",
+          "heading": false
+        },
+        {
+          "term": "full four-body",
+          "heading": false
+        },
+        {
+          "term": "four-body system",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:effT:4body label=\"sec:effT:4body\"} We now turn to the four-body sector. The four-body binding energies are given by the Yakubovsky equations which are a generalization of the Faddeev equations to the four-body system. The full four-body wave function $\\Psi$ is first decomposed into Faddeev components, followed by a second decomposition into Yakubovsky components. For identical bosons, one has two Yakubovsky",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-four-body-universality",
+      "number": null,
+      "title": "Four-Body Universality",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "FOUR-BODY UNIVERSALITY We now apply this eﬀective theory to calculate the universal properties of the 4-boson",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-bound-state-spectrum",
+      "number": null,
+      "title": "Bound State Spectrum",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scattering thresholds",
+          "heading": false
+        },
+        {
+          "term": "four-body states",
+          "heading": false
+        },
+        {
+          "term": "efimov trimers",
+          "heading": false
+        },
+        {
+          "term": "four-body ground",
+          "heading": false
+        },
+        {
+          "term": "tetramer states",
+          "heading": false
+        },
+        {
+          "term": "three-body states",
+          "heading": false
+        },
+        {
+          "term": "dimer-dimer threshold",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        }
+      ],
+      "extract": "The four-body spectrum is most conveniently discussed in a generalized Efimov plot. This plot was introduced by Vitaly Efimov to summarize the universal properties of the three-body spectrum [@Efimov71; @Braaten:2004rn]. The set of all possible low-energy three-body states can be represented as points $(a^{-1}, K)$ on the plane whose horizontal axis is $1/a$ and whose vertical axis is the momentum variable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-universal-correlations",
+      "number": null,
+      "title": "Universal Correlations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-body ground",
+          "heading": false
+        },
+        {
+          "term": "three-body ground",
+          "heading": false
+        },
+        {
+          "term": "three-body system",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "tjon lines",
+          "heading": false
+        },
+        {
+          "term": "state energies",
+          "heading": false
+        },
+        {
+          "term": "excited state",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider the universal correlations in the three-body system for negative scattering length. In particular, we focus on the correlation between the binding energies in the three- and four-body systems. Such correlations were first observed in nuclear physics and are known as Tjon lines [@Tjo75]. For recent discussions of the nuclear Tjon line in the context of the EFT for short-range interactions and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-summary-and-outlook",
+      "number": null,
+      "title": "Summary and Outlook",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 873,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-body interaction",
+          "heading": false
+        },
+        {
+          "term": "four-body system",
+          "heading": false
+        },
+        {
+          "term": "dimer-dimer scattering",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        },
+        {
+          "term": "three-body",
+          "heading": false
+        },
+        {
+          "term": "platter",
+          "heading": false
+        },
+        {
+          "term": "tetramer",
+          "heading": false
+        },
+        {
+          "term": "effective theory",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:conc label=\"sec:conc\"} In this paper, we have studied the universal properties of the four-body system with large scattering length. These properties are useful for understanding the cluster structure of nuclei [@Mar06] as part of the planned experimental program at FAIR and experiments on the creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. We have concentrated on the bound",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "hammer",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "cond-mat",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Eric Braaten for discussions. This research was supported by the U.S. Depart- ment of Energy under grant DE-FG02-93ER40756, by the DFG through funds provided to the SFB/TR 16 “Subnuclear structure of matter”, and by the BMBF under contract number 06BN411. [1] P. F. Bedaque and U. van Kolck, Ann. Rev. Nucl. Part. Sci. 52, 339 (2002) [arXiv:nucl-th/0203055]. [2] E. Epelbaum, Prog. Part. Nucl. Phys. 57, 654",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "four-body energies",
+      "heading": true
+    },
+    {
+      "term": "four-body binding",
+      "heading": false
+    },
+    {
+      "term": "four-body energy",
+      "heading": false
+    },
+    {
+      "term": "three-body binding",
+      "heading": false
+    },
+    {
+      "term": "four-body system",
+      "heading": false
+    },
+    {
+      "term": "four-body interaction",
+      "heading": false
+    },
+    {
+      "term": "three-body state",
+      "heading": true
+    },
+    {
+      "term": "four-body ground",
+      "heading": true
+    },
+    {
+      "term": "low-energy three-body",
+      "heading": false
+    },
+    {
+      "term": "four-body parameter",
+      "heading": false
+    },
+    {
+      "term": "four-body bound",
+      "heading": false
+    },
+    {
+      "term": "four-body problem",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The a−1–K plane for the three-body problem",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The a−1–K plane for the four-body problem. The circles and triangles indicate the fourbody ground and excited state energies B(0)",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The correlation between the three-body ground state energy B(0)",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The correlation between the three-body ground state energy B(0)",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-nucl-th-0610105v2"
+  }
+}

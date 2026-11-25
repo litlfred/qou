@@ -1,0 +1,190 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0702263v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0702263v1  26 Feb 2007\nUWThPh-2007-2\nChiral Low-Energy Constants∗\nGerhard Ecker\nFaculty of Physics, Univ. of Vienna\nBoltzmanngasse 5, A-1090 Vienna, Austria\nAbstract\nThe progress in determining the coupling constants of mesonic chi-\nral Lagrangians is reviewed, with emphasis on the work performed in\nthree successive European Networks (Eurodaphne I and II, Euridice).\nReliable estimates of those constants are essential for making full use of\nnext-to-next-to-leading-order calculations in chiral perturbation the-\nory. The precision in the values of the strong coupling constants of\nO(p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "\\begin{dinglist}{88} \\item Large-$N_c$ methods match CHPT with QCD by bridging the gap $M_K \\lsim E \\lsim 1.5$ GeV with resonance exchange. \\item Lattice QCD. \\end{dinglist} \\end{dinglist}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Chiral low-energy constants (LECs) are the coupling constants of\neffective chiral Lagrangians. \nThey are independent of the light quark \nmasses by construction and they describe the influence of all ``heavy'' \ndegrees of freedom that are not contained explicitly in the effective  \nLagrangians. The construction of effective Lagrangians is based on\nsymmetry considerations only so that a lot of information is lost in \ngoing from the underlying Standard Model to the effective theory. As a \nconsequence, effective Lagrangians contain many LECs, especially at\nhigher orders in the chiral expansion. Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Lattice QCD has come a long way to determine some of the constants directly from QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong interactions",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-strong-interactions.md",
+      "narrative": null,
+      "content": "At lowest order in the chiral expansion, there are only two LECs $B$\nand $F$. $B$ depends on the QCD renormalization scale\nand always appears multiplied by quark masses in CHPT amplitudes. The\nproducts $B m_q$ and the constant $F$ can be expressed in terms of \nmeson masses and of the pion decay constant $F_\\pi$.\nThose relations involve LECs of $O(p^4)$ or higher to be\ndiscussed subsequently.\n\nThe strong chiral Lagrangians of $O(p^4)$ contain 7 measurable LECs\n$l_i$ for chiral $SU(2)$ \\cite{GLsu2} and 10 LECs $L_i$ for chiral\n$SU(3)$ \\cite{GLsu3}. The current\nphenomenological values are based o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonleptonic weak interactions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-nonleptonic-weak-interactions.md",
+      "narrative": null,
+      "content": "The chiral Lagrangian of lowest order, $O(G_F p^2)$, contains two LECs\n$g_8,g_{27}$ to describe nonleptonic weak decays of kaons\n\\cite{cronin67}. Especially\nthe value of the octet coupling $g_8$ is very sensitive to \nchiral corrections \\cite{Kambor:1991ah}. Isospin breaking\ncorrections are potentially\nimportant for the 27-plet coupling constant $g_{27}$. The present\nstatus is presented in Table \\ref{tab:g827}. Although different\nisospin breaking contributions are sizeable the overall\ncorrections are small for both LECs.\n\nThe LECs of $O(G_F p^4)$ (22 couplings $N_i$ in the octet and 28\ncoupling",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dynamical photons",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-dynamical-photons.md",
+      "narrative": null,
+      "content": "Radiative corrections at low energies involve the effective Lagrangians\nin Table \\ref{tab:Leff} with superscripts {\\it em}, {\\it emweak} or\n{\\it leptons} (semileptonic decays).\n\nIn the presence of photons as dynamical degrees of freedom the chiral\ncounting is different from the purely strong or nonleptonic weak\ncases. The lowest-order Lagrangian for electromagnetic corrections\nto strong processes is of $O(e^2 p^0)$ with a single LEC\n\\cite{Ecker:1988te}  that can be determined from the $\\pi^+ - \\pi^0$\nmass difference. The next-to-leading-order Lagrangian of $O(e^2 p^2)$ \nwith 13 LECs $K_i$ was",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Since 1993, when Eurodaphne got started, substantial progress has been made in the understanding of low-energy constants, both from phenomenology and from theory (lattice QCD and large-$N_c$ approaches).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dynamical photons and leptons",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-dynamical-photons-and-leptons.md",
+      "narrative": null,
+      "content": "Radiative corrections for semileptonic weak decays require the\nincorporation of leptons as dynamical degrees of freedom. The\nleading-order Lagrangian ${\\cal L}_{e^2p}^{\\rm leptons}(5)$ in Table \n\\ref{tab:Leff} contains five LECs $X_i$ \\cite{Knecht:1999ag}.\n\nWith a two-step matching procedure (Standard Model \n~$\\leftrightarrow$~  Fermi theory   ~$\\leftrightarrow$~\nCHPT), Descotes-Genon and Moussallam have recently established\nintegral representations for all the $X_i$\n\\cite{Descotes-Genon:2005pw}. \nOne important application is in $K_{l3}$ decays, still the\nbest source for extracting the CKM mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-outlook.md",
+      "narrative": null,
+      "content": "Since 1993, when Eurodaphne got started, substantial progress has\nbeen made in the understanding of low-energy constants, both from\nphenomenology and from theory (lattice QCD and\nlarge-$N_c$ approaches).\n\nIn the strong sector, most of the machinery is now ready for a\nprecision determination of the LECs of $O(p^4)$. This endeavour\ninvolves also LECs of $O(p^6)$ where we are still in the exploratory\nstage. We need reliable estimates for some of those LECs to make full\nuse of \nnext-to-next-to-leading-order calculations. In the nonleptonic sector,\nimprovements both in phenomenology and in theory a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

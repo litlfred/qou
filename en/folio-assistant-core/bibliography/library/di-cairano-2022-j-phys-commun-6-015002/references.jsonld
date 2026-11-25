@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/di-cairano-2022-j-phys-commun-6-015002",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+      "dcterms:creator": [
+        "Equation, Langevin"
+      ],
+      "dcterms:issued": "D:20220107",
+      "bibo:doi": "10.1088/2399-6528/ac438d",
+      "dcterms:identifier": "https://doi.org/10.1088/2399-6528/ac438d",
+      "dcterms:source": "library/di-cairano-2022-j-phys-commun-6-015002/manifest.jsonld",
+      "dcterms:hasVersion": "library/di-cairano-2022-j-phys-commun-6-015002"
+    }
+  ]
+}

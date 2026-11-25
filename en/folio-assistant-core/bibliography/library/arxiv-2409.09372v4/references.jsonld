@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2409.09372v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Markov traces on degenerate cyclotomic Hecke algebras",
+      "dcterms:creator": [
+        "ZHAO, DEKE"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2409.09372",
+      "dcterms:abstract": "Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}. The paper aims to define and construct the (non-)normalized Markov traces on the sequence {Hn(u)}∞ n=1. This allows us to provide the Brou´e–Malle–Michel symmetrizing trace on Hn(u) and show that the Brundan–Kleshchev trace is a specialization of the non-normalized Markov traces on Hn(u).",
+      "dcterms:source": "library/arxiv-2409.09372v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2409.09372v4"
+    }
+  ]
+}

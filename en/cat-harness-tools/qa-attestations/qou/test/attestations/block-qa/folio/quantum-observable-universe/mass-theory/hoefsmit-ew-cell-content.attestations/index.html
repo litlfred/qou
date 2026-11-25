@@ -1,0 +1,2580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1ier06ksbfo.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1ier06ksbfo","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:29.358Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;ref lean/QOU/IwahoriHecke/Hoefsmit.lean:116-129 class `HoefsmitSeminormalBasis` with `dim_partition := fun _ =&gt; 1` (vacuous); sibling .lean:173-174 `def EWIdempotentsIdentified … : Prop := True`; :154-155 orthogonality defined as far-commutativity; ref ≠ sibling. Count 20 / pattern multiplicities verified by SYT enumeration&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.512Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The .md asserts W,Z,H are realised as σ1^4,σ3^6,σ5^8 and that pure patterns give eight pairwise-orthogonal projectors in End_R(V^{⊗6}). folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean states no such theorem: DisjointStrandPairAssignmentB6 and PatternsPairwiseOrthogonal (:125,:154) are both just FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5 on ℕ indices, EWIdempotentsIdentified (:173) is `True`, and the lean.ref QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis is a generic seminormal-basis class that does not mention the EW triplet.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.735Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Items 1-4 of the .md correspond one-for-one to the four conjuncts of hoefsmit_ew_cell_content (carrier_strand_pairs_disjoint, patternsPairwiseOrthogonal_of_hecke, ewPhysicalProjectors_decompose_of_hecke, carrier_powers_closure_invariants). The computed multiplicity table is labelled computed in both.&quot;
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.813111Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.813111Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d78071f562e9&quot;,
+        &quot;ts&quot;: &quot;f203a5e6db52&quot;,
+        &quot;lean&quot;: &quot;a6bd41cb1a54&quot;
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.653Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Lean sibling unchanged in #8609/#8620 (only the .ts uses label edit); lean-direct exit 0; #print axioms totalPureMultiplicity / PatternsPairwiseOrthogonal_holds: no axioms.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.837Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean statement (hoefsmit-ew-cell-content.lean, theorem hoefsmit_ew_cell_content) states all four .md items with the .md hypotheses (generic CommRing R, IsHeckeGen for s1,s3,s5 in a commutative R-algebra); compiled green 2026-11-21 via lean-content-sweep.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.686Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No theorem projects a class field; HoefsmitEWCellContent (:186) has no consumers in the sibling.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.866Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No class carries the conclusion; capstone is an anonymous constructor of four proved lemmas, none of which project a hypothesis field.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.714Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean:173 `def EWIdempotentsIdentified ... : Prop := True` is a field of HoefsmitEWCellContent standing for &#39;the six physical patterns carry the W±,Z±,H± idempotents&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.893Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;All conjuncts are falsifiable propositions (disjointness, idempotent algebra, closure components = 2, writhe = 2k). The old EWIdempotentsIdentified : True def is gone.&quot;
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.742Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No contradictory hypothesis; the class is inhabitable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.931Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Hypotheses (HeckeScalars, IsHeckeGen) are satisfiable, e.g. s = q in R with the scalar Hecke relation.&quot;
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.797Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean:105-107 orthogonality of the eight projectors is reduced by definition to index inequalities on ℕ and closed by `decide`; the substantive claim (idempotent products orthogonal in End_R(V^{⊗6})) is not proved.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.990Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;decide is used only for genuinely finite facts (FarCommutes on literals, Finset equality {1..6}, totalPureMultiplicity literal sum); the projector algebra is proved by ring lemmas, not decide.&quot;
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean:132,162 `(q : R)` is unused in DisjointStrandPairAssignmentB6_holds and PatternsPairwiseOrthogonal_holds; the predicates ignore `_q`, so the q-dependent orthogonality claim is not what is proved.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.960Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;h1,h3,h5 are used by the projector conjuncts; the strand-pair and closure conjuncts use no hypothesis and none is bound for them.&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.549Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;score=0.3: no proof narrative; the .md says &#39;the enumeration shows&#39; and the Lean records a multiplicity table summed by decide.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.759Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;score=0.7: no narrative proof, but the Lean structure (strand pairs, closure perm by induction, projector algebra imported from WeakSpectralCompleteness) is direct and docstring-mapped.&quot;
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.584Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;score=0.3: no sorry, but the main claim (projector realisation/orthogonality) is not formalised at all; the gap is &#39;core&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.784Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;score=1.0: lean-content-sweep.sh on this file 2026-11-21 exit 0, 0 errors, no sorry; statement cut to exactly what is proved.&quot;
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.619Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=0.5: standard seminormal-form count, not duplicated elsewhere.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.810Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;score=0.3: items 2-3 are the standard complete orthogonal idempotent family of three commuting Hecke generators (product of e^+ + e^- = 1); item 1 and 4 are elementary. Content is correct but mostly standard.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.421Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;EW carrier realisation in H_6(q), consumed by the mass-theory N_v/N_sym blocks of the same chapter; no sibling restates it.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.654Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Seminormal-form idempotent decomposition of the far-commuting triple, feeding prop:weak-spectral-completeness and prop:weak-symmetric-normalization in the same chapter.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.858Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Recomputed this session: 76 SYT of size 6, 20 pure for (σ1,σ3,σ5), multiplicities sss 4, ass 2, sas 1, ssa 3, aas 3, asa 1, saa 2, aaa 4 — as stated.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.040Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Recomputed 2026-11-21 (python SYT enumeration, independent of the probe): 76 SYT of size 6, 20 pure for (σ1,σ3,σ5), multiplicities sss 4, ass 2, sas 1, ssa 3, aas 3, asa 1, saa 2, aaa 4 — matches the table. e^s, e^a formulas checked against eigenvalues q, -q^{-1}.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.901Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean: the formal content is a hard-coded multiplicity table summed by decide, index far-commutativity, and a `True` field; nothing about projectors in End_R(V^{⊗6}) is proved.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.068Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Capstone has non-trivial content (orthogonal idempotent family, closure invariants); the hard-coded table is now labelled recorded, not the theorem&#39;s content.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.942Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Not circular; the identification is asserted, not derived from itself.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.092Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No step assumes its conclusion.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.978Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Kind `theorem`, title &#39;categorical existence&#39;, and statement &#39;are realised ... as&#39; (:1) present the W↔σ1^4, Z↔σ3^6, H↔σ5^8 identification as established, while the .ts status note says it is &#39;currently a structural proposal&#39; needing a categorical-physics block, and the Lean does not state it.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.119Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Statement claims exactly what Lean proves; the closure-is-T(2,2k) and W/Z/H readings are explicitly not stated (authorNote + Lean header).&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.015Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Which strand pair carries W vs Z vs H is a choice (the EW theorem&#39;s which_slot_is_W_free shows the W slot is a free label); the block presents the assignment without saying so.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.144Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No free parameter; the W/Z/H strand-pair assignment is no longer in the statement.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.051Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md:1 &#39;identified topologically as T(2,4),T(2,6),T(2,8) on Bring&#39;s surface — are realised inside End_R(V^{⊗6}) as&#39; : no step connects the torus links to these strand-pair powers.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.171Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Each item follows from the cited lemmas.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.117Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Lean proves far-commutativity of the index triple and a sum of a literal table; the .md claims a realisation of carriers as projectors and their pairwise orthogonality (see proof-narrative-lean-equiv).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.221Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean and .md agree item for item (see proof-narrative-lean-equiv). Minor residue: Lean comments on PurePattern constructors still read &#39;W- excited&#39; etc. — naming in comments only.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.146Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No cites[]; the Lean header cites hoefsmit1974 for the seminormal form, which is the right source for that.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.248Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No bibliography cites in the .md; Lean header cites hoefsmit1974 for the seminormal form, appropriate.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.180Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md:1 calls σ1^4, σ3^6, σ5^8 &#39;Hoefsmit projectors&#39;, but braid powers are not idempotents; the projectors are the sym/alt pattern idempotents. &#39;pure-eigenspace tableaux multiplicities identify eight pairwise-orthogonal projectors&#39; conflates the 20 vectors with the 8 projectors.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.271Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;e^s, e^a, E(ε1,ε2,ε3), sym/alt/mixed classification all defined before use.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.207Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No numerical comparison with measurement.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.298Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No comparison with measurement.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.236Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No physical value asserted.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.322Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No physical claim in the statement.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.262Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Enumeration reproduced independently this session (python SYT count: 76 total, 20 pure, pattern multiplicities match).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.349Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Multiplicities reproduced independently 2026-11-21 by a 30-line SYT enumeration; Lean recompiled green.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.288Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: a `theorem` whose only proved content is a tableau count; the carrier realisation is a proposal and the orthogonality claim is replaced in Lean by index arithmetic and a `True` field. Should be a conjecture or a counting proposition.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.376Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Accept as a modest correct lemma: a standard orthogonal idempotent family plus elementary closure invariants, with the computed table honestly labelled. Strongest objection (novelty) is minor.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.322Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md: the italic statement mixes the physical identification, a minimality claim and a projector count; &#39;### Statement (formal)&#39; then restates differently; &#39;pure-eigenspace tableaux multiplicities identify eight pairwise-orthogonal projectors&#39; is not explained. Below the 16/16 bar.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.404Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md: hypotheses, notation e^s/e^a/E, four numbered claims, labelled computed table; the previous mixing of physics naming into the statement is gone.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:38:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d64e21b66f4d5f730cd69ee73596ea2c811d2a97&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.356Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;The informal and formal statements overlap (eight patterns) but carry different content (projectors vs the 20-vector count); nothing semantically identical to delete.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.428Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No repetition; the pointer paragraph is one sentence.&quot;
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;79cccc51faaa&quot;,
+        &quot;ts&quot;: &quot;f203a5e6db52&quot;,
+        &quot;lean&quot;: &quot;a6bd41cb1a54&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;79cccc51faaa&quot;,
+        &quot;ts&quot;: &quot;f203a5e6db52&quot;,
+        &quot;lean&quot;: &quot;a6bd41cb1a54&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.210Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Full read of statement plus formal-statement section; no assertion-by-denial.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.392Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.452Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;&#39;they are not derived in closed form&#39; is a substantive epistemic qualification, not a rhetorical contrast.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.249Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No setup-then-reframe.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.427Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.474Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.301Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;One unspaced parenthetical pair around the torus-link identification; legitimate.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.461Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.496Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No em-dash in the .md body.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.341Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;W / Z / H on three disjoint strand-pairs is forced by the physics, not a reflex list.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.489Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.522Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;The listed contents of the context remark are an enumeration of sections, not a rhetorical triple.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.375Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Closes on a cross-reference to the context remark — bookkeeping.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.518Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.546Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Ends on a pointer sentence, no aphorism.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.436Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No narration of emphasis.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.558Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.572Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.479Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No closing restatement.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.588Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.595Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.535Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Institutional register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.624Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.623Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.578Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;\&quot;the **minimum** at which all three carriers admit simultaneous non-trivial action\&quot; and \&quot;exactly **20** such pure tableaux\&quot; are both precise claims, and the minimality argument is given in the context remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.656Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.651Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;94b8dfc6ff97&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:24:11.654Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;The opening sentence is long but the em-dash aside is a clean parenthetical.&quot;,
+      &quot;notes&quot;: &quot;VERIFIED INDEPENDENTLY, and the arithmetic is CORRECT: I enumerated all 76 standard Young tableaux of size 6 and counted those pure for (sigma_1, sigma_3, sigma_5) — i.e. with {1,2}, {3,4}, {5,6} each row-adjacent (sym) or column-adjacent (alt). The count is exactly 20, and the eight patterns come out (sym,sym,sym) 4, (alt,sym,sym) 2, (sym,alt,sym) 1, (sym,sym,alt) 3, (alt,alt,sym) 3, (alt,sym,alt) 1, (sym,alt,alt) 2, (alt,alt,alt) 4 — matching tbl:...-table1-data row for row and the .ts authorNotes&#39; middle-six (2,1,3,3,1,2). The torus-link identification also checks: the closure of sigma_1^k in B_2 is T(2,k), and T(2,4), T(2,6), T(2,8) all have 2 components since the exponents are even. Separate (non-trap) findings: (1) the two extracted data tables (tbl:hoefsmit-ew-cell-content-table1-data, tbl:hoefsmit-ew-cell-content-table2-data) declare uses[] back to this theorem, but this .md links NEITHER — a reader of the theorem never sees the multiplicities the \&quot;Statement (formal)\&quot; paragraph announces. The double blank line after that paragraph is where the table was lifted out. (2) uses[] is empty although the authorNotes name conj:force-carrier-knot-vs-link-dichotomy, conj:weak-spectral-completeness and prop:weak-symmetric-normalization. (3) Block kind: the authorNotes open \&quot;**Open.**\&quot; and describe the W/Z/H-to-strand-pair assignment as \&quot;currently a structural proposal\&quot;; per AGENTS.md 3b that content belongs in a `conjecture`, or the theorem must be restricted to the tableau arithmetic (which is what is actually proved).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.685Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md in full; no instance of this pattern (the em-dash pair at :1 is a true parenthetical; the six-item list at :18-20 is substantive).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.678Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;All symbols speakable; table is data.&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.507Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.381Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.536Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.407Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.563Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.434Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.591Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.459Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.619Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.483Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.645Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.507Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.673Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.530Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.700Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.554Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.727Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.580Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.754Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.605Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.392Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md: statement plus formal count only; context moved to rem:hoefsmit-ew-cell-content-context (:18-21).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md: italic statement items 1-4 are pure claims; the W/Z/H naming and torus-link reading moved to rem:hoefsmit-ew-cell-content-context (pointer sentence at the end only).&quot;
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.451Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md:1 generic R with q generic; no archimedean construct.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.681Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Statement over a commutative ring R with q and [2]_q invertible; no ordering, sqrt or numerical q0. Lean matches ([CommRing R], HeckeScalars).&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.480Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No narrative proof; the count is a finite tableau enumeration (combinatorial, generic side).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.709Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean proof is ring identities (joint_* lemmas, linear_combination) plus Finset/closure-permutation combinatorics; nothing archimedean.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.825Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;uses[] is empty, while folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md leans on the Hoefsmit seminormal basis / Young tableaux, H_6(q) acting on V^{⊗6}, and the torus-link identification of W,Z,H (conj:electroweak-higgs-torus-link-triplet).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.016Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;uses[] def:braid-group, prop:hoefsmit-seminormal-form; the statement relies on the Hecke relation and seminormal form only; the context remark is linked, not used.&quot;
+    }
+  ],
+  &quot;da-arity-conflation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;194d2b22bdee&quot;,
+        &quot;ts&quot;: &quot;dcea4270793c&quot;,
+        &quot;lean&quot;: &quot;e11cf028642f&quot;,
+        &quot;lean_statement&quot;: &quot;53054cfba164&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:42.086Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No family/instance conflation.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8268820b605a&quot;,
+        &quot;ts&quot;: &quot;42a912c5150e&quot;,
+        &quot;lean&quot;: &quot;2c06e0c2aa79&quot;,
+        &quot;lean_statement&quot;: &quot;2d62b55e8a75&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:41.194Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No family/instance or pointwise/universal conflation.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

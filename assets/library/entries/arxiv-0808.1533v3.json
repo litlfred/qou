@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0808.1533v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "A purpose of this paper is to develop a particular formula for the third order helicity on certain invariant sets of a volume preserving vector field $B$. The third order helicity, [@Khesin98], is an invariant of $B$ under the action of volumorphisms isotopic to the identity (denoted here by $\\text{\\rm SDiff}_0(M)$). Importance of such invariants stems from the basic fact that the evolution of the vorticity in the ideal hydrodynamics or of the magnetic field $B_0$ in the ideal magnetohydrodynamics (MHD), occurs along a path $t\\longrightarrow g(t)\\in \\text{\\rm SDiff}_0(M)$, [@Khesin98 p. 176].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0808.1533v3  [math.DG]  18 Jun 2009\nThe third order helicity of magnetic ﬁelds\nvia link maps.\nR. Komendarczyk∗†\nOctober 28, 2018\nAbstract\nWe introduce an alternative approach to the third order helicity of a volume preserving\nvector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed\napproach exploits correspondence between the Milnor ¯µ123-invariant for 3-component\nlinks and the homotopy invariants of maps to conﬁguration spaces, and we provide a\nsimple geometric proof of this fact in the case of Borromean links. Based on these\nconnections we develop a formulati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Milnor mu-123-invariant and the Hopf degree.",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-the-milnor-mu-123-invariant-and-the-hopf-degree.md",
+      "narrative": null,
+      "content": "[]{#sec:mu-and-hopf label=\"sec:mu-and-hopf\"}\n\nThe $\\bar{\\mu}$-invariants of $n$-component links in $S^3$ have been introduced by Milnor in [@Milnor54; @Milnor57] as invariants of links up to *link homotopy*. Recall that the link homotopy is a deformation of a link in $S^3$ which allows each component to pass through itself but not through a different component. Clearly, this is a weaker equivalence than the equivalence of links up to *isotopy* where components are not allowed to pass through themselves at all. The fundamental example of a $\\bar{\\mu}$-invariant is the linking number (denoted by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of volume preserving flows. Helicities.",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-invariants-of-volume-preserving-flows-helicities.md",
+      "narrative": null,
+      "content": "[]{#sec:invariants-flows label=\"sec:invariants-flows\"}\n\nGiven finitely many volume preserving vector fields $B_1$, $B_2$, $\\ldots B_k\\in \\text{\\rm SVect}(M)$ on $M=S^3$ or a homology 3-sphere one seeks quantities $\\mathsf{I}(B_1,B_2,\\ldots,B_k)$ invariant under the action of volumorphisms isotopic to the identity $g\\in \\text{\\rm SDiff}_0(M)$, commonly known as *helicities* or *higher helicities*: $$\\begin{gathered}\n\\label{eq:invariants}\n \\mathsf{I}(B_1,B_2,\\ldots,B_k)=\\mathsf{I}(g_\\ast B_1,g_\\ast B_2,\\ldots,g_\\ast B_k),\\qquad\\quad \\text{for all }g\\in \\text{\\rm SDiff}_0(M), \n\\end{gathered}$$ wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/figure-img-p011-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-definition-of-mu-123-helicity-on-invariant-unlin.md",
+      "narrative": null,
+      "content": "[]{#sec:handlebody label=\"sec:handlebody\"}\n\nIn this section we apply the formulation of the $\\bar{\\mu}_{123}$-invariant for the 3-component links in $S^3$, obtained in Section [\\[sec:mu-and-hopf\\]](#sec:mu-and-hopf){reference-type=\"ref\" reference=\"sec:mu-and-hopf\"}, to define the third order helicity of a volume preserving vector field $B$ on certain invariant sets $\\mathcal{T}$ of $B$ in $S^3$. In the following paragraphs as a \"warm-up\" to a more general case treated in Section [\\[sec:ergodic\\]](#sec:ergodic){reference-type=\"ref\" reference=\"sec:ergodic\"}, we consider the case of three disjoin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ergodic interpretation of H-123",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-the-ergodic-interpretation-of-h-123.md",
+      "narrative": null,
+      "content": "[]{#sec:ergodic label=\"sec:ergodic\"}\n\nThe following statement is often seen in literature [@Cantarella-DeTurck-Gluck01; @Cantarella-DeTurck-Gluck-Teytel00]:\n\n> *Helicity measures the extent to which vector fields twist and coil around each other.*\n\nA beauty of Arnold's ergodic approach to the helicity $\\mathsf{H}_{12}(B)$ is that it makes this statement precise, by interpreting $\\mathsf{H}_{12}(B)$ as an average asymptotic linking number of orbits of $B$. But, it also has a practical application as it allows us to extend our approach to certain invariant sets of $B$. In this section we apply t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flux formula for H-123.",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-flux-formula-for-h-123.md",
+      "narrative": null,
+      "content": "The following formula is a well known property of the ordinary helicity $\\mathsf{H}_{12}(B;\\mathcal{T})$ of the flux tubes $\\mathcal{T}$ modeled on a 2-component link $L=\\{L_1,L_2\\}$ (see e.g. [@Laurence-Avellaneda93; @Cantarella00])\n\n$$\\label{eq:helicity12-flux-tubes}\n\\mathsf{H}_{12}(B;\\mathcal{T})=\\mathsf{H}_{12}(B_1,B_2)=\\text{lk}(L_1,L_2)\\,\\text{Flux}(B_1)\\,\\text{Flux}(B_2).$$ Here we show an analogous property for $\\mathsf{H}_{123}(B;\\mathcal{T})$, when $\\mathcal{T}$ is an invariant unlinked handlebody. Recall that $\\{L^k_i\\}_{k=1,\\ldots,g(\\partial\\mathcal{T}_i)}$ denotes the basis of $H_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy bound.",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-006-energy-bound.md",
+      "narrative": null,
+      "content": "[]{#sec:energy label=\"sec:energy\"}\n\nIn this section we indicate how the quantity $\\mathsf{H}_{123}(B;\\mathcal{T})$ invariant under frozen-in-field deformations provides a lower bound for the $L^2$-energy $E_2(B)$ of a volume preserving field $B$ on $M=S^3$. We restrict our considerations to the case of an invariant unlinked handlebody $\\mathcal{T}$, defined in Section [\\[sec:handlebody\\]](#sec:handlebody){reference-type=\"ref\" reference=\"sec:handlebody\"}. For the notation used in this section see Appendix [\\[apx:C\\]](#apx:C){reference-type=\"ref\" reference=\"apx:C\"}.\n\nRecall the definition $$\\lab",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to the known approaches via Massey products.",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-007-comparison-to-the-known-approaches-via-massey-pr.md",
+      "narrative": null,
+      "content": "Comparison to the known approaches via Massey\nproducts.\nIn several prior works [5, 13, 25, 27] helicities were developed via the Massey product for-\nmula for ¯µ123. These approaches are equivalent to the one presented here in the sense that\ninvariants obtained this way measure the same topological information. Most notably the\nwork [25] provides an explicit expression for the third order helicity of the Borromean ﬂux\ntubes, where the ergodic interpretation in the style of Arnold’s asymptotic linking number\nis also provided. In [27] one ﬁnds the following formula for the third order helicity\nM1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equations for the frozen-in-field forms",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-008-equations-for-the-frozen-in-field-forms.md",
+      "narrative": null,
+      "content": "Equations for the frozen-in-ﬁeld forms\nGiven a volume preserving vector ﬁeld B on M and a path t −→g(t) ∈SDiﬀ(M), let\nBt := g∗(t)B .\nThen for B0 = B, by deﬁnition\n˙Bt = d\ndtBt\n\nt=0= −LV B = −[V, B],\n(A.1)\nand as a result\nd\ndtιBtµ|t=0 = −ι[V,B]µ\nNext, calculate (∂t + LV ≡L∂t+V )\n(∂t + LV )ιBtµ\n=\n∂t(ιBtµ) + LV ιBtµ\n=\nι ˙Btµ + ιBt(LV µ) + ι[V,Bt]µ\n=\nι ˙Bt+[V,Bt]µ,\nwhere in the second identity we applied the general formula: ι[A,B] = LAιB −ιBLA, and in\nthe third equation the fact that V is volume preserving i.e. LV µ = 0. As a result of (A.1)\nwe obtain\n(∂t + LV )ιBtµ = 0 .\nNext, we justify Formula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zero contribution of short paths to the time average",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-009-zero-contribution-of-short-paths-to-the-time-ave.md",
+      "narrative": null,
+      "content": "Zero contribution of short paths to the time average\nIt is clear when β ∈Ω3( eT ) is at least a C1 on eT ⊂S3 × S3 × S3, then f = β(B1, B2, B3) is\ncontinuous on eT and\nZ\n¯\nO1\nT (x)\nZ\n¯\nO2\nT (y)\nZ\n¯\nO3\nT (z)\nf =\n\u0000Z\nO1\nT (x)\n+\nZ\nσ(Φ1(x,T),x)\n\u0001\u0000Z\nO2\nT (y)\n+\nZ\nσ(Φ2(y,T),y)\n\u0001\u0000Z\nO3\nT (z)\n+\nZ\nσ(Φ3(z,T),z)\n\u0001\nf .\nAfter expanding, it is obvious that we must show the following (for all choices), when T →∞:\n1\nT 3\nZ\nσ(Φ1(x,T),x)\nZ\nO2\nT (y)\nZ\nO3\nT (z)\nf\n−→\n0,\n(B.1)\n1\nT 3\nZ\nσ(Φ1(x,T),x)\nZ\nσ(Φ2(y,T),y)\nZ\nO3\nT (z)\nf\n−→\n0,\n(B.2)\n1\nT 3\nZ\nσ(Φ1(x,T),x)\nZ\nσ(Φ2(y,T),y)\nZ\nσ(Φ3(z,T),z)\nf\n−→\n0.\n(B.3)\nSince the lengths o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation in Section ??",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-notation-in-section.md",
+      "narrative": null,
+      "content": "We adopt notation from the elegant exposition in [34]. Let M be an orientable manifold\nwith smooth boundary.\n29\nΩk(M) = C∞(M, Λk), smooth diﬀerential forms on M.\nΩk\nN(M) = {φ ∈Ωk(M) | nφ = 0, ndφ = 0} the subspace satisfying the Neumann\nboundary conditions, (n denotes a normal component of a form along ∂M).\nThe L2-inner product on Ωk(M) is deﬁned as\n\u0000ω, η\n\u0001\nL2 =\nZ\nM\nω ∧∗η,\nL2Ωk(M), L2-diﬀerential forms on M.\nHk\nN(M) = {λ ∈H1Ωk(M) | dλ = δλ = 0, nλ = 0} the subspace of the Neumann\nharmonic ﬁelds.\nNext we justify (7.5), ﬁrst observe that for any γ ∈H1Ωk−1(M):\n(dγ, λ)L2 =\nZ\n∂M\ntγ ∧∗nλ = 0,\n∀λ ∈Hk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ew-triplet-charge-spin-from-involution",
+  "kind": "theorem",
+  "title": "Sector label and charge of the electroweak triplet computed through the spin involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-spin-involution",
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
+    "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume",
+    "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation"
+  ],
+  "tags": [
+    "electroweak",
+    "spin-involution",
+    "isospin",
+    "charge",
+    "spin",
+    "conditional-on-class",
+    "weak-sector"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.ew_charge_spin_forced",
+  "text": "electroweak-triplet-charge-spin-from-involution.md",
+  "leanSource": "electroweak-triplet-charge-spin-from-involution.lean",
+  "provenance": "authored"
+}

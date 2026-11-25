@@ -1,0 +1,267 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1001.2937v3",
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-microscopic-spectrum-of-the-wilson-dirac-operato"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1001.2937v3 [hep-th] 20 Sep 2010",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1001.2937v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-microscopic-spectrum-of-the-wilson-dirac-operato",
+      "number": null,
+      "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 3349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilson dirac",
+          "heading": true
+        },
+        {
+          "term": "microscopic spectrum",
+          "heading": true
+        },
+        {
+          "term": "dirac operator",
+          "heading": true
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "iˆz cosh",
+          "heading": false
+        },
+        {
+          "term": "microscopic scaling",
+          "heading": false
+        },
+        {
+          "term": "wilson fermions",
+          "heading": false
+        },
+        {
+          "term": "iˆz cos",
+          "heading": false
+        }
+      ],
+      "extract": "P.H. Damgaard,1 K. Splittorﬀ,2 and J.J.M. Verbaarschot3 1Niels Bohr International Academy, Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen Ø, Denmark 2Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen Ø, Denmark 3Department of Physics and Astronomy, SUNY, Stony Brook, New York 11794, USA (Dated: October 23, 2018) We calculate the leading contribution to the spectral density of the Wilson Dirac",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "wilson dirac",
+      "heading": true
+    },
+    {
+      "term": "lattice spacing",
+      "heading": false
+    },
+    {
+      "term": "iˆz cosh",
+      "heading": false
+    },
+    {
+      "term": "microscopic scaling",
+      "heading": false
+    },
+    {
+      "term": "wilson fermions",
+      "heading": false
+    },
+    {
+      "term": "iˆz cos",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectrum",
+      "heading": true
+    },
+    {
+      "term": "dirac operator",
+      "heading": true
+    },
+    {
+      "term": "chiral random",
+      "heading": false
+    },
+    {
+      "term": "microscopic domain",
+      "heading": false
+    },
+    {
+      "term": "chiral lagrangian",
+      "heading": false
+    },
+    {
+      "term": "spectral density",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The microscopic spectrum of D5 for ˆm = 3, ν = 0",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The microscopic spectrum of D5 for ˆm = 3, ν = 2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The real eigenvalues, ζi, of DW repel each other and the |ν| = 4 real modes are clearly visible. We have",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1001.2937v3"
+  }
+}

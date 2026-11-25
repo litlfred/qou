@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Complex phase",
+  "pageStart": 115,
+  "pageEnd": 123,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-021",
+    "library/acsv231201/blocks/prop-sec-021-01",
+    "library/acsv231201/blocks/ex-sec-021-02",
+    "library/acsv231201/blocks/rem-sec-021-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested"
+}

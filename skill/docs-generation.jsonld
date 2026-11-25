@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/docs-generation.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/docs-generation",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "docs-generation",
+      "title": "Documentation Generation Skill",
+      "description": "Generate and deploy documentation artifacts: TypeDoc schema docs, Lean doc-gen4, dependency graphs, schema manifests, and per-paper HTML/PDF/Markdown outputs.",
+      "instructionsPath": "skills/local/docs-generation.md",
+      "instructionLines": 262,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

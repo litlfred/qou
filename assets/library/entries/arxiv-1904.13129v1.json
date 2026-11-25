@@ -1,0 +1,232 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1904.13129v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Knots have always played an important role in arts and crafts, commerce and trade, as well as in our everyday life. Therefore they naturally became a topic of interest for mathematicians. During the 19th century the study of knots strongly influenced the development of topology [@TvdG96]. Today the theory of knots appears in several branches of mathematics such as in calculus of variations, geometric analysis, topology as well as in applications to modern quantum physics (e.g. [@K05]) and biochemistry (e.g. protein molecules [@KS98] or DNA [@CKS98; @GM99]).\n\nA knot in mathematical terms is a J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1904.13129v1  [math.AP]  30 Apr 2019\nOn the regularity of critical points for O’Hara’s knot\nenergies: From smoothness to analyticity.\nNicole Vorderobermeier\nAbstract. We prove the analyticity of smooth critical points for O’Hara’s\nknot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length\nconstraint. This implies, together with the main result in [BR13], that bounded\nenergy critical points of Eα,1 subject to a ﬁxed length constraint are not only\nC∞but also analytic. Our approach is based on Cauchy’s method of majorants\nand a decomposition of the gradient that was adapted from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "3 we decompose the ﬁrst variation of O’Hara’s energies into the orthogonal projec-\ntion of a main part Qα and two remaining parts Rα\n1 and Rα\n2 of lower order. The\nmain part Qα and its derivatives are estimated in Section 4. Since the orthogonal\nprojection of Qα appears in the ﬁrst variation of O’Hara’s energies, we estimate\nthe tangential part of Qα using new estimates for a kind of fractional derivative of\na product of two functions that, in Section 5, that behave like a fractional Leibniz\nrule. In Section 5 and Section 6 we cut-oﬀthe singularities of the singular integrals\ninvolved and deri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fractional Sobolev spaces",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-fractional-sobolev-spaces.md",
+      "narrative": null,
+      "content": "[]{#sec:fractionalsobolevspaces label=\"sec:fractionalsobolevspaces\"}\n\nWe denote by $|\\cdot |$ the Euclidean norm on $\\mathbb{C}^n$ for any integer $n\\geq 1$. In this article we work with closed curves on the periodic domain $\\mathbb{R}/ \\mathbb{Z}$ so that a curve $f: \\mathbb{R}\\rightarrow \\mathbb{R}^n$ is periodic with unit periodicity.\n\nWe know that for any $f\\in L^2(\\mathbb{R}/ \\mathbb{Z}, \\mathbb{C}^n)$ the Fourier series of $f$ in $x\\in \\mathbb{R}/ \\mathbb{Z}$ is given by $\\sum_{k\\in\\mathbb{Z}} \\widehat{f}(k) e^{2\\pi i k x},$ where the $k$-th Fourier coefficient of $f$ are given by $$\\beg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "using Cauchy’s method of majorants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of analytic functions",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-properties-of-analytic-functions.md",
+      "narrative": null,
+      "content": "We shortly recall some basic characteristics of analytic functions. More information on analytic functions can be found for instance in [@E98 Chap. 6.4] and [@F95 Chap. 1, D].\n\nIt is well-known that analytic functions can be characterized by [@KP02 Prop. 2.2.10] and a standard covering argument as follows:\n\n::: thm\n[]{#thm:Tayloranalytic label=\"thm:Tayloranalytic\"} A function $f\\in C^\\infty (\\Omega,\\mathbb{R}^n)$ on $\\Omega \\subseteq \\mathbb{R}^m$ open, $n,m \\geq 1$, is analytic on $\\Omega$ if and only if for every compact set $K \\subseteq \\Omega$ there are positive constants $r_K$ and $C_K$ s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition of the first variation of E",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-3-decomposition-of-the-first-variation-of-e.md",
+      "narrative": null,
+      "content": "[]{#section:decomposition label=\"section:decomposition\"}\n\nResults concerning the differentiability of O'Hara's knot energies go back to the paper [@FHW94] where the Gâteaux differentiability and the $L^2$-gradient of the Möbius energy $\\mathcal{E}^{2}$ was derived. Subsequently, a linearized version for the gradient of the Möbius energy was given by He [@H00 Lem. 2.2] in the context of the heat flow. An application of He's linearization trick to a range of O'Hara's knot energies $\\mathcal{E}^\\alpha$, for $2 \\leq \\alpha <3$, was given by Reiter [@R12 Chap. 2].\n\nIn the following we will use the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An estimate for the Q term",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-4-an-estimate-for-the-q-term.md",
+      "narrative": null,
+      "content": "[]{#sec:maintermQ label=\"sec:maintermQ\"}\n\nLet the quantities $$\\begin{aligned}\nq_k^{(\\alpha)} := \\begin{cases}\n\\frac{4\\pi}{|k|^{\\alpha +1}} \\int_0^\\pi \\frac{(k\\tau)^2 - 2 + 2\\cos(k\\tau)}{\\tau^{2+\\alpha}} \\mathrm{d}\\tau & \\quad k\\neq 0, \\\\\n0 & \\quad k = 0\n\\end{cases}\n\\end{aligned}$$ and set $$\\begin{aligned}\n    \\lambda_k^{(\\alpha)} := \\int_0^{k\\pi} \\frac{\\sin (\\tau)}{\\tau^{\\alpha - 1}} \\mathrm{d} \\tau.\n\\end{aligned}$$ We remark that the $\\lambda_k$ are well-defined for all $k\\in\\mathbb{Z}$ and $\\lambda_\\infty^{(\\alpha)}  := \\lim_{k\\rightarrow \\infty} \\lambda_k^{(\\alpha)} < \\infty$ (cf. [@R12 L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A fractional leibniz rule and the form of PT Q",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q.md",
+      "narrative": null,
+      "content": "[]{#sec:bilinearHilberttransform label=\"sec:bilinearHilberttransform\"}\n\nLet $\\gamma \\in C^\\infty(\\mathbb{R}/ \\mathbb{Z},\\mathbb{R}^n)$ be a closed simple curve parametrized by arc-length. Recall that in the decomposed first variation of O'Hara's range of energies $\\mathcal{E}^\\alpha$, for $2 < \\alpha < 3$, there appears the orthogonal projection of the main part $Q^\\alpha \\gamma$, which is given by $P^\\perp_{\\dot{\\gamma}} Q^\\alpha\\gamma =  Q^\\alpha\\gamma - P^T_{\\dot{\\gamma}} Q^\\alpha\\gamma$. Since we have worked out an estimate for $Q^\\alpha \\gamma$ in the previous section, it remains to study",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The form of the lower order remainder terms R1 and R2",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-6-the-form-of-the-lower-order-remainder-terms-r1.md",
+      "narrative": null,
+      "content": "[]{#sec:remaining parts label=\"sec:remaining parts\"}\n\nWe show that the orthogonal projection of the truncated remainder terms of the decomposition of $\\delta \\mathcal{E}^\\alpha$ found in Section [\\[section:decomposition\\]](#section:decomposition){reference-type=\"ref\" reference=\"section:decomposition\"} can be expressed as multiple integrals of analytic functions.\n\nLet $0 < \\varepsilon \\leq \\frac{1}{2}$, $x\\in [0,1]$ and $\\gamma \\in C^\\infty(\\mathbb{R}/ \\mathbb{Z},\\mathbb{R}^n)$ be a simple closed arc-length parametrized curve. We recall that the truncated remainder terms are given by $$\\begin{a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem by Cauchy's method of majorants",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of.md",
+      "narrative": null,
+      "content": "[]{#sec:mainpart label=\"sec:mainpart\"}\n\nWe now turn to the proof of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}. Our strategy is to first establish a recursive estimate for $\\|\\partial^l \\gamma \\|_{H^{\\alpha -1} }$ from which we can infer, by Cauchy's method of majorants, the analyticity of the curve $\\gamma$.\n\nLet $m := 1 > \\frac{1}{2}$ and $\\gamma = (\\gamma_1,\\ldots, \\gamma_n) :\\mathbb{R}/ \\mathbb{Z}\\rightarrow \\mathbb{R}^n$ be a simple closed arc-length parametrized curve that is in the class $C^\\infty (\\mathbb{R}/ \\mathbb{Z},\\mathbb{R}^n)$. If $\\gamma$ is a critical po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.13129v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[ACF+03] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R. Howard, Circles minimize\nmost knot energies, Topology 42 (2003), no. 2, 381–394.\n[AF03] R. A. Adams and J. J. F. Fournier, Sobolev spaces, Second, Pure and Applied Mathe-\nmatics (Amsterdam), vol. 140, Elsevier/Academic Press, Amsterdam, 2003.\n[Bla12] S. Blatt, Boundedness and regularizing eﬀects of O’Hara’s knot energies, J. Knot\nTheory Ramiﬁcations 21 (2012), no. 1, 1250010.\n[Bla18] S. Blatt, The gradient ﬂow of O’Hara’s knot energies, Math. Ann. 370 (2018), no. 3-4,\n993–1061.\n[BR13] S. Blatt and P. Reiter, Stationary points of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

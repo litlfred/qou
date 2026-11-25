@@ -1,0 +1,137 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1007.2335v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1007.2335v1  [hep-th]  14 Jul 2010\nHopf solitons in the Nicole model\nMike Gillard and Paul Sutcliﬀe\nDepartment of Mathematical Sciences, Durham University, Durham DH1 3LE, U.K.\nEmail:\nmike.gillard@durham.ac.uk,\np.m.sutcliﬀe@durham.ac.uk\nJuly 2010\nAbstract\nThe Nicole model is a conformal ﬁeld theory in three-dimensional space. It has topo-\nlogical soliton solutions classiﬁed by the integer-valued Hopf charge, and all currently\nknown solitons are axially symmetric. A volume-preserving ﬂow is used to numerically\nconstruct soliton solutions for all Hopf charges from one to eight. It is found",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Hopf solitons arise in theories in three-dimensional space where the field takes values in a two-sphere. The Skyrme-Faddeev model [@Fa2] is the most famous example of a theory with Hopf solitons and consists of the $O(3)$ sigma model modified by the addition of a Skyrme term that is quartic in the derivatives of the field. Substantial numerical work [@FN; @GH; @BS5; @HS; @Su] has led to a reasonable understanding of the minimal energy solitons in this theory. There are axially symmetric solitons for all Hopf charges but they are stable only for charges one, two and four. For all other charges",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Nicole model and volume-preserving flow",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-the-nicole-model-and-volume-preserving-flow.md",
+      "narrative": null,
+      "content": "The Nicole model [@Ni] is a rather exotic modification of the $O(3)$ sigma model, although it involves the same field $\\mbox{\\boldmath $\\phi$}:\\hbox{\\mybb R}^3\\mapsto S^2,$ which is realized as a real three-component vector $\\mbox{\\boldmath $\\phi$}=(\\phi_1,\\phi_2,\\phi_3),$ of unit length, $\\mbox{\\boldmath $\\phi$}\\cdot\\mbox{\\boldmath $\\phi$}=1.$ As we are concerned only with static solutions then the Nicole model may be defined by its static energy $$E=\\frac{1}{32\\pi^2\\sqrt{2}}\\int (\\partial_i\\mbox{\\boldmath $\\phi$}\\cdot\\partial_i\\mbox{\\boldmath $\\phi$})\n^\\frac{3}{2}\\ d^3x, \\label{energy_ni}$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Initial conditions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-initial-conditions.md",
+      "narrative": null,
+      "content": "Initial conditions, for a range of values of $Q,$ need to be provided for the volume-preserving flow algorithm discussed in the previous section. We use the approach introduced in [@Su], which is briefly reviewed in this section.\n\nTo construct an initial field the spatial coordinates $(x_1,x_2,x_3)\\in \\hbox{\\mybb R}^3$ are first mapped to the unit three-sphere via a degree one spherically equivariant map. Explicitly, introduce the complex coordinates $Z_1,Z_0$ (on the unit three-sphere $|Z_1|^2+|Z_0|^2=1$) as $$(Z_1,Z_0)=\\bigg((x_1+ix_2)\\frac{\\sin g}{r},\\cos\ng+i\\frac{\\sin g}{r}x_3\\bigg),$$wher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical results",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-4-numerical-results.md",
+      "narrative": null,
+      "content": "[]{#sec-num label=\"sec-num\"} In this section we present the results of numerical computations of Hopf solitons using the volume-preserving flow algorithm, with initial conditions constructed as in the previous section. The simulation region $\\Omega$ consists of the cube $|x_i|\\le 75$ with spatial derivatives approximated by fourth-order accurate finite differences using a lattice spacing $\\Delta x=1.$ The flow is evolved using an explicit method with timestep $\\Delta t=0.1$ and is terminated once the energy has stabilized at a constant value.\n\nIn the continuum theory in Euclidean space the ene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1007.2335v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-5-conclusion.md",
+      "narrative": null,
+      "content": "By introducing a volume-preserving flow we have been able to numerically investigate Hopf solitons and their stability in the Nicole model. It has been demonstrated that the known axially symmetric Hopf solitons are unstable for Hopf charges greater than two and new lower energy solutions have been computed that include links and knots. The formation of links and knots mirrors the situation in the Skyrme-Faddeev model, suggesting that this is likely to be a universal feature of Hopf solitons. However, for Hopf charges four and eight, links are formed in the Nicole model that are not of the sam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

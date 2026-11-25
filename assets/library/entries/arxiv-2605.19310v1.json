@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.19310v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form.\n\n::: theorem\n[]{#thm:roth label=\"thm:roth\"} For every $\\alpha>0$, if $N$ is sufficiently large, then every set $A\\subset\\{0,1,\\ldots,N-1\\}$ with $\\lvert A\\rvert\\geq\\alpha N$ contains a three-term arithmetic progression $x,\\,x+r,\\,x+2r$ with $r\\neq 0$.\n:::\n\nRoth's theorem is a foundational result in density Ramsey theory; its extension to longer arithmetic progressions is a celebrated theorem of Szemerédi  [@Sz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF\nROTH’S THEOREM\nMARK LEWKO\nAbstract. We give an elementary, Fourier-free proof of Roth’s theorem.\nThe proof follows Roth’s original density-increment strategy, but replaces\nthe usual Fourier-analytic step with a direct combinatorial argument\ninvolving averages over sub-progressions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-notation.md",
+      "narrative": null,
+      "content": "We write $A\\lesssim B$ to mean $A\\leq CB$ for a positive absolute constant $C$, and similarly $A\\gtrsim B$. We write $A\\sim B$ when both $A\\lesssim B$ and $B\\lesssim A$ hold. All implicit constants are absolute. For a prime $m$, write $\\mathbb{Z}_m=\\mathbb{Z}/m\\mathbb{Z}$ and $\\mathbb{Z}_m^\\times=\\mathbb{Z}_m\\setminus\\{0\\}$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-preliminaries.md",
+      "narrative": null,
+      "content": "Write $[N]=\\{0,\\ldots,N-1\\}$ and choose a prime $m$ with $4N<m<8N$, which we may do by Bertrand's postulate. We embed $[N]$ in $\\mathbb{Z}_m$ in the obvious way. The point of choosing $m>2N$ is that a three-term progression in $\\mathbb{Z}_m$ whose terms all lie in $[N]$ is a genuine integer progression.\n\nLet $\\alpha=\\lvert A\\rvert/N$ be the density of $A$ in $[N]$, and define $f=\\mathbf{1}_A-\\alpha\\mathbf{1}_{[N]}$ on $\\mathbb{Z}_m$. Then $f$ has mean zero on $\\mathbb{Z}_m$, satisfies $-\\alpha\\leq f\\leq 1$, and is supported on $[N]$. For any function $g\\colon\\mathbb{Z}_m\\to\\mathbb R$, set $$\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "No progressions imply large energy",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-4-no-progressions-imply-large-energy.md",
+      "narrative": null,
+      "content": "For functions $f_1,f_2,f_3\\colon\\mathbb{Z}_m\\to\\mathbb R$, define $$\\Lambda(f_1,f_2,f_3):=\\sum_{x,r\\in\\mathbb{Z}_m} f_1(x)f_2(x+r)f_3(x+2r).$$ If $A\\subset [N]\\subset\\mathbb{Z}_m$, then $\\Lambda(\\mathbf{1}_A,\\mathbf{1}_A,\\mathbf{1}_A)$ is the number of three-term arithmetic progressions in $A$, including the trivial progressions with $r=0$. Hence, if $A$ contains no nontrivial three-term progressions, then $\\Lambda(\\mathbf{1}_A,\\mathbf{1}_A,\\mathbf{1}_A)=\\lvert A\\rvert$. On the other hand, $\\Lambda(\\mathbf{1}_{[N]},\\mathbf{1}_{[N]},\\mathbf{1}_{[N]})\\gtrsim N^2$, since $[N]$ contains $\\gtrsim N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large energy implies a modular density increment",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-5-large-energy-implies-a-modular-density-increme.md",
+      "narrative": null,
+      "content": "Our next goal is to find a long modular progression on which $f$ has positive average. For an integer $1\\leq \\ell<m/2$ and a step $d\\in\\mathbb{Z}_m$, set $$S_d(x):=\\sum_{i=0}^{\\ell-1}f(x+id),\\qquad V_d:=\\sum_{x\\in\\mathbb{Z}_m}\\lvert S_d(x)\\rvert^2.$$ Thus $S_d(x)$ is the sum of $f$ on the length-$\\ell$ modular progression starting at $x$ with step $d$, and $V_d$ is the second moment of these sums as $x$ varies.\n\n::: lemma\n[]{#lem:v-identity label=\"lem:v-identity\"} For every $d\\in\\mathbb{Z}_m$, $$\\label{eq:v-identity}\nV_d=\\sum_{\\lvert h\\rvert<\\ell}(\\ell-\\lvert h\\rvert)R(hd).$$ Also $$\\label{eq:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding a genuine integer progression",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-6-finding-a-genuine-integer-progression.md",
+      "narrative": null,
+      "content": "We now show how to pass from a density increment on a modular progression to one on a genuine integer progression.\n\n::: lemma\n[]{#lem:rect label=\"lem:rect\"} Suppose $d\\in\\mathbb{Z}_m^\\times$ and $x\\in\\mathbb{Z}_m$ satisfy $\\sum_{i=0}^{\\ell-1}f(x+id)\\geq\\eta\\ell$ for some $0<\\eta\\leq1$. If $\\ell\\gtrsim\\eta^{-2}$, then there is an arithmetic progression $P\\subset[N]$ such that $$\\lvert P\\rvert\\gtrsim\\eta\\sqrt{\\ell}\n\\qquad\\text{and}\\qquad\n\\frac{\\lvert A\\cap P\\rvert}{\\lvert P\\rvert}\\geq\\alpha+c\\eta$$ for an absolute constant $c>0$.\n:::\n\n::: proof\n*Proof.* We find a short subprogression of the orig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Roth's theorem and the quantitative bound",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-7-proof-of-roths-theorem-and-the-quantitative-bo.md",
+      "narrative": null,
+      "content": "::: proof\n*Proof of Theorem [\\[thm:roth\\]](#thm:roth){reference-type=\"ref\" reference=\"thm:roth\"}.* Fix $\\alpha_0>0$ and suppose, for contradiction, that there are arbitrarily large $N$ and 3AP-free sets $A\\subset[N]$ with $\\lvert A\\rvert\\geq\\alpha_0N$. Applying Proposition [\\[prop:increment\\]](#prop:increment){reference-type=\"ref\" reference=\"prop:increment\"}, then rescaling the progression it gives back to an interval, produces a new 3AP-free set with density increased by at least $c\\alpha_0^{11}$. Repeating this, the density exceeds $1$ after $O(\\alpha_0^{-11})$ steps.\n\nIt remains only to ens",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.19310v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further remarks",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-8-further-remarks.md",
+      "narrative": null,
+      "content": "Although the proof above is written without Fourier analysis, several of the steps have a simple Fourier interpretation. Let $e(x)=e^{2\\pi i x/m}$ and $\\widehat f(\\xi)=\\sum_{x\\in\\mathbb{Z}_m} f(x)e(-\\xi x)$. One then has $\\widehat R(\\xi)=\\lvert\\widehat f(\\xi)\\rvert^2$. Hence Parseval gives $$\\mathcal E(f)=\\sum_{t\\in\\mathbb{Z}_m}R(t)^2=\n\\frac1m\\sum_{\\xi\\in\\mathbb{Z}_m}\\lvert\\widehat f(\\xi)\\rvert^4.$$ Thus, up to the normalization convention, $\\mathcal E(f)$ is the fourth power of what is called in the modern Gowers-style literature the $U^2$-norm. In the usual modern Fourier-analytic proofs of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

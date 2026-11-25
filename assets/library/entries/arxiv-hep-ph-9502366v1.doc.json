@@ -1,0 +1,2048 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-9502366v1",
+  "title": "Chiral Perturbation Theory",
+  "variant": "pdf",
+  "pages": 57,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Chiral symmetry",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-chiral-symmetry"
+    },
+    {
+      "level": 1,
+      "title": "Eﬀective chiral Lagrangian at lowest order",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order"
+    },
+    {
+      "level": 2,
+      "title": "Chiral loops",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-42-chiral-loops"
+    },
+    {
+      "level": 2,
+      "title": "The chiral anomaly",
+      "number": "4.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-43-the-chiral-anomaly"
+    },
+    {
+      "level": 2,
+      "title": "Decay constants",
+      "number": "5.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-51-decay-constants"
+    },
+    {
+      "level": 2,
+      "title": "Electromagnetic form factors",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-52-electromagnetic-form-factors"
+    },
+    {
+      "level": 2,
+      "title": "Meson and quark masses",
+      "number": "5.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-54-meson-and-quark-masses"
+    },
+    {
+      "level": 1,
+      "title": "The role of resonances in ChPT",
+      "number": "6",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-6-the-role-of-resonances-in-chpt"
+    },
+    {
+      "level": 1,
+      "title": "Short-distance estimates of ChPT parameters",
+      "number": "7",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-7-short-distance-estimates-of-chpt-parameters"
+    },
+    {
+      "level": 1,
+      "title": "∆S = 1 non-leptonic weak interactions",
+      "number": "8",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-8-s-1-non-leptonic-weak-interactions"
+    },
+    {
+      "level": 2,
+      "title": "Radiative K Decays",
+      "number": "8.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-82-radiative-k-decays"
+    },
+    {
+      "level": 2,
+      "title": "The chiral anomaly in non-leptonic K decays",
+      "number": "8.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-83-the-chiral-anomaly-in-non-leptonic-k-decays"
+    },
+    {
+      "level": 1,
+      "title": "Baryons",
+      "number": "9",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-9-baryons"
+    },
+    {
+      "level": 2,
+      "title": "Loops",
+      "number": "9.1",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-91-loops"
+    },
+    {
+      "level": 2,
+      "title": "Heavy baryon ChPT",
+      "number": "9.2",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-92-heavy-baryon-chpt"
+    },
+    {
+      "level": 2,
+      "title": "Non-leptonic hyperon decays",
+      "number": "9.3",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-93-non-leptonic-hyperon-decays"
+    },
+    {
+      "level": 1,
+      "title": "Large-NC limit, U(1)A anomaly and strong CP violation",
+      "number": "10",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-10-large-nc-limit-u1a-anomaly-and-strong-cp-viol"
+    },
+    {
+      "level": 2,
+      "title": "Baryon electric dipole moments",
+      "number": "10.1",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-101-baryon-electric-dipole-moments"
+    },
+    {
+      "level": 1,
+      "title": "Interactions of a light Higgs",
+      "number": "11",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-11-interactions-of-a-light-higgs"
+    },
+    {
+      "level": 1,
+      "title": "Eﬀective theory at the electroweak scale",
+      "number": "12",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-12-eﬀective-theory-at-the-electroweak-scale"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "13",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-021-13-summary"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-022-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-023-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "encia",
+          "heading": false
+        },
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "perturbation theory",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/9502366v1 22 Feb 1995 FTUV/95-4 IFIC/95-4 hep-ph/9502366 Chiral Perturbation Theory A Pich Departament de F´ısica Te`orica and Institut de F´ısica Corpuscular, Universitat de Val`encia – CSIC, E-46100 Burjassot, Val`encia, Spain Abstract. An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the eﬀective Lagrangian technique",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "qcd lagrangian",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "chpt formalism",
+          "heading": false
+        },
+        {
+          "term": "hadronic asymptotic",
+          "heading": false
+        },
+        {
+          "term": "fundamental qcd",
+          "heading": false
+        },
+        {
+          "term": "strong interactions",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Chromodynamics (QCD) is nowadays the established theory of the strong interactions. Owing to its asymptotic-free nature (Gross and Wilczek 1973, Politzer 1973), perturbation theory can be applied at short distances; the resulting predictions have achieved a remarkable success, explaining a wide range of phenomena where large momentum transfers are involved. In the low-energy domain, however, the growing of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-chiral-symmetry",
+      "number": "2",
+      "title": "Chiral symmetry",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral symmetry",
+          "heading": true
+        },
+        {
+          "term": "hadronic states",
+          "heading": false
+        },
+        {
+          "term": "qcd lagrangian",
+          "heading": false
+        },
+        {
+          "term": "global symmetry",
+          "heading": false
+        },
+        {
+          "term": "noether",
+          "heading": false
+        },
+        {
+          "term": "chiral group",
+          "heading": false
+        },
+        {
+          "term": "goldstone",
+          "heading": false
+        },
+        {
+          "term": "δab",
+          "heading": false
+        }
+      ],
+      "extract": "In the absence of quark masses, the QCD Lagrangian [q = column(u, d, . . .)] L0 QCD = −1 4 Ga µνGµν a + i¯qLγµDµqL + i¯qRγµDµqR (2.1) is invariant under independent global G ≡SU(Nf)L ⊗SU(Nf)R transformations† of the left- and right-handed quarks in ﬂavour space: qL G −→gL qL , qR G −→gR qR , gL,R ∈SU(Nf)L,R . (2.2) The Noether currents associated with the chiral group G are [λa are Gell-Mann’s matrices with Tr(λaλb)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order",
+      "number": "3",
+      "title": "Eﬀective chiral Lagrangian at lowest order",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 11,
+      "labelStart": "5",
+      "labelEnd": "11",
+      "words": 2251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eﬀective chiral",
+          "heading": true
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": true
+        },
+        {
+          "term": "dµu dνu",
+          "heading": false
+        },
+        {
+          "term": "goldstone ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "external ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "lowest order",
+          "heading": true
+        }
+      ],
+      "extract": "The Goldstone nature of the pseudoscalar mesons implies strong constraints on their interactions, which can be most easily analyzed on the basis of an eﬀective Lagrangian. Since there is a mass gap separating the pseudoscalar octet from the rest of the hadronic spectrum, we can build an eﬀective ﬁeld theory containing only the Goldstone modes. Our basic assumption is the pattern of SCSB: G ≡SU(3)L ⊗SU(3)R SCSB −→H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-42-chiral-loops",
+      "number": "4.2",
+      "title": "Chiral loops",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lowest-order lagrangian",
+          "heading": false
+        },
+        {
+          "term": "chiral",
+          "heading": true
+        },
+        {
+          "term": "loops",
+          "heading": true
+        },
+        {
+          "term": "non-polynomial",
+          "heading": false
+        },
+        {
+          "term": "dimensional regularization",
+          "heading": false
+        },
+        {
+          "term": "pseudoscalar masses",
+          "heading": false
+        },
+        {
+          "term": "chpt",
+          "heading": false
+        },
+        {
+          "term": "momenta",
+          "heading": false
+        }
+      ],
+      "extract": "ChPT is a quantum ﬁeld theory, perfectly deﬁned through equation (3.19). As such, we must take into account quantum loops with Goldstone-boson propagators in the internal lines. The chiral loops generate non-polynomial contributions, with logarithms and threshold factors, as required by unitarity. The loop integrals are homogeneous functions of the external momenta and the pseudoscalar masses occurring in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-43-the-chiral-anomaly",
+      "number": "4.3",
+      "title": "The chiral anomaly",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral",
+          "heading": true
+        },
+        {
+          "term": "low-energy couplings",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "renormalized couplings",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "chiral counting",
+          "heading": false
+        },
+        {
+          "term": "zweig rule",
+          "heading": false
+        },
+        {
+          "term": "phenomenological values",
+          "heading": false
+        }
+      ],
+      "extract": "Although the QCD Lagrangian (3.10) is invariant under local chiral transforma- tions, this is no longer true for the associated generating functional. The anomalies of the fermionic determinant break chiral symmetry at the quantum level (Adler 1969, Bardeen 1969, Bell and Jackiw 1969). The fermionic determinant can always be de- ﬁned with the convention that Z[v, a, s, p] is invariant under vector transformations.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-51-decay-constants",
+      "number": "5.1",
+      "title": "Decay constants",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leutwyler",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": true
+        },
+        {
+          "term": "gasser",
+          "heading": false
+        }
+      ],
+      "extract": "In the isospin limit (mu = md = ˆm), the O(p4) calculation of the meson-decay constants gives (Gasser and Leutwyler 1985): fπ = f \u001a 1 −2µπ −µK + 4M 2 π f 2 Lr 5(µ) + 8M 2 K + 4M 2 π f 2 Lr 4(µ) \u001b , fK = f \u001a 1 −3 4µπ −3 2µK −3 4µη8 + 4M 2 K f 2 Lr 5(µ) + 8M 2 K + 4M 2 π f 2 Lr 4(µ) \u001b , fη8 = f \u001a 1 −3µK + 4M 2 η8 f 2 Lr 5(µ) + 8M 2 K + 4M 2 π f 2 Lr 4(µ) \u001b , (5.3) where µP ≡ M 2 P 32π2f 2 log \u0012M 2 P µ2 \u0013 . (5.4) The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-52-electromagnetic-form-factors",
+      "number": "5.2",
+      "title": "Electromagnetic form factors",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "form factors",
+          "heading": true
+        },
+        {
+          "term": "k0π",
+          "heading": false
+        },
+        {
+          "term": "π2f log",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic",
+          "heading": true
+        },
+        {
+          "term": "perfect agreement",
+          "heading": false
+        },
+        {
+          "term": "charge radius",
+          "heading": false
+        },
+        {
+          "term": "leutwyler",
+          "heading": false
+        },
+        {
+          "term": "momentum-dependent",
+          "heading": false
+        }
+      ],
+      "extract": "At O(p2) the electromagnetic coupling of the Goldstone bosons is just the minimal one, obtained through the covariant derivative. The next-order corrections generate a momentum-dependent form factor: F φ± V (q2) = 1 + 1 6 ⟨r2⟩φ± V q2 + . . . ; F φ0 V (q2) = 1 6 ⟨r2⟩φ0 V q2 + . . . (5.7) The meson electromagnetic radius ⟨r2⟩φ V gets local contributions from the L9 term, plus logarithmic loop corrections (Gasser and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-54-meson-and-quark-masses",
+      "number": "5.4",
+      "title": "Meson and quark masses",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quark masses",
+          "heading": true
+        },
+        {
+          "term": "meson masses",
+          "heading": true
+        },
+        {
+          "term": "quark-mass ratios",
+          "heading": false
+        },
+        {
+          "term": "quark-mass matrix",
+          "heading": false
+        },
+        {
+          "term": "chiral couplings",
+          "heading": false
+        },
+        {
+          "term": "qcd lagrangian",
+          "heading": false
+        },
+        {
+          "term": "accidental symmetry",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic eﬀects",
+          "heading": false
+        }
+      ],
+      "extract": "The relations (3.25) get modiﬁed at O(p4). The additional contributions depend on the low-energy constants L4, L5, L6, L7 and L8. It is possible, however, to obtain one relation between the quark and meson masses, which does not contain any of the O(p4) couplings. The dimensionless ratios Q1 ≡M 2 K M 2π , Q2 ≡(M 2 K0 −M 2 K+)QCD M 2 K −M 2π , (5.17) get the same O(p4) correction (Gasser and Leutwyler 1985): Q1 = ms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-the-role-of-resonances-in-chpt",
+      "number": "6",
+      "title": "The role of resonances in ChPT",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "25",
+      "words": 1906,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resonances",
+          "heading": true
+        },
+        {
+          "term": "ecker",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "couplings",
+          "heading": false
+        },
+        {
+          "term": "exchange",
+          "heading": false
+        },
+        {
+          "term": "large-nc",
+          "heading": false
+        },
+        {
+          "term": "contributions",
+          "heading": false
+        },
+        {
+          "term": "coupling constants",
+          "heading": false
+        }
+      ],
+      "extract": "It seems rather natural to expect that the lowest-mass resonances, such as ρ mesons, should have an important impact on the physics of the pseudoscalar bosons. In particular, the low-energy singularities due to the exchange of those resonances should generate sizeable contributions to the chiral couplings. This can be easily understood, making a Taylor expansion of the ρ propagator: 1 p2 −M 2ρ = −1 M 2ρ \u001a 1 + p2 M",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-7-short-distance-estimates-of-chpt-parameters",
+      "number": "7",
+      "title": "Short-distance estimates of ChPT parameters",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluonic correction",
+          "heading": false
+        },
+        {
+          "term": "nambu jona-lasinio",
+          "heading": false
+        },
+        {
+          "term": "gluon ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "scsb",
+          "heading": false
+        },
+        {
+          "term": "quark ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "mean-ﬁeld approximation",
+          "heading": false
+        },
+        {
+          "term": "low-energy eﬀective",
+          "heading": false
+        },
+        {
+          "term": "qcd-inspired",
+          "heading": false
+        }
+      ],
+      "extract": "All chiral couplings are in principle calculable from QCD. They are functions of ΛQCD and the heavy-quark masses mc, mb, mt. Unfortunately, we are not able at present to make such a ﬁrst-principle computation. Although the integral over the quark ﬁelds in (3.19) can be done explicitly, we do not know how to perform analytically the remaining integration over the gluon ﬁelds. A perturbative evaluation of the gluonic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-s-1-non-leptonic-weak-interactions",
+      "number": "8",
+      "title": "∆S = 1 non-leptonic weak interactions",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "30",
+      "words": 1420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-leptonic weak",
+          "heading": true
+        },
+        {
+          "term": "weak interactions",
+          "heading": true
+        },
+        {
+          "term": "chiral couplings",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "pich",
+          "heading": false
+        },
+        {
+          "term": "kambor",
+          "heading": false
+        },
+        {
+          "term": "rafael",
+          "heading": false
+        },
+        {
+          "term": "slope parameters",
+          "heading": false
+        }
+      ],
+      "extract": "The Standard Model predicts strangeness-changing transitions with ∆S = 1 via W-exchange between two weak charged currents. At low energies (E << MW), the heavy ﬁelds W, Z, t, b, c can be integrated out; using standard operator-product- expansion techniques, the non-leptonic ∆S = 1 weak interactions are described by an eﬀective Hamiltonian (Gilman and Wise 1979) H∆S=1 eﬀ = GF √ 2VudV ∗ us X i Ci(µ) Qi + h.c. , (8.1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-82-radiative-k-decays",
+      "number": "8.2",
+      "title": "Radiative K Decays",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 36,
+      "labelStart": "30",
+      "labelEnd": "36",
+      "words": 2391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "π0e amplitude",
+          "heading": false
+        },
+        {
+          "term": "π0e decay",
+          "heading": false
+        },
+        {
+          "term": "π0γ π0e",
+          "heading": false
+        },
+        {
+          "term": "cp-violating amplitude",
+          "heading": false
+        },
+        {
+          "term": "cp-conserving amplitude",
+          "heading": false
+        },
+        {
+          "term": "direct cp-violating",
+          "heading": false
+        },
+        {
+          "term": "pich",
+          "heading": false
+        },
+        {
+          "term": "π0γγ",
+          "heading": false
+        }
+      ],
+      "extract": "Owing to the constraints of electromagnetic gauge invariance, radiative K decays with at most one pion in the ﬁnal state do not occur at O(p2). Moreover, only a few terms of the octet O(p4) Lagrangian are relevant for this kind of processes (Ecker, Pich and de Rafael 1987a, 1987b, 1988): L∆S=1,em 4 .= −GF √ 2VudV ∗ us g8 n −ie f 2F µν [w1 ⟨QλLµLν⟩+ w2 ⟨QLµλLν⟩] + e2f 2w4F µνFµν ⟨λQU †QU⟩+ h.c. o . (8.6) The small",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-83-the-chiral-anomaly-in-non-leptonic-k-decays",
+      "number": "8.3",
+      "title": "The chiral anomaly in non-leptonic K decays",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-leptonic decays",
+          "heading": true
+        },
+        {
+          "term": "non-leptonic weak",
+          "heading": false
+        },
+        {
+          "term": "anomalous amplitudes",
+          "heading": false
+        },
+        {
+          "term": "anomalous contributions",
+          "heading": false
+        },
+        {
+          "term": "direct anomalous",
+          "heading": false
+        },
+        {
+          "term": "wess zumino",
+          "heading": false
+        },
+        {
+          "term": "π0γ",
+          "heading": false
+        },
+        {
+          "term": "zumino witten",
+          "heading": false
+        }
+      ],
+      "extract": "The chiral anomaly also appears in the non-leptonic weak interactions. A systematic study of all non-leptonic K decays where the anomaly contributes at leading order, O(p4), has been performed recently (Ecker, Neufeld and Pich 1992). Only radiative K decays are sensitive to the anomaly in the non-leptonic sector. The manifestations of the anomaly can be grouped in two diﬀerent classes of anomalous amplitudes:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-9-baryons",
+      "number": "9",
+      "title": "Baryons",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baryon mass",
+          "heading": false
+        },
+        {
+          "term": "axial-vector currents",
+          "heading": false
+        },
+        {
+          "term": "bγµ",
+          "heading": false
+        },
+        {
+          "term": "mass splittings",
+          "heading": false
+        },
+        {
+          "term": "vector currents",
+          "heading": false
+        },
+        {
+          "term": "gπnn",
+          "heading": false
+        },
+        {
+          "term": "mbb",
+          "heading": false
+        },
+        {
+          "term": "coupling",
+          "heading": false
+        }
+      ],
+      "extract": "The inclusion of baryons in the low-energy eﬀective ﬁeld theory follows the same procedure used in section 6 to incorporate the mesonic resonances. The octet of baryon ﬁelds is collected in a 3 × 3 matrix B(x) ≡   1 √ 2Σ0 + 1 √ 6Λ0 Σ+ p Σ− −1 √ 2Σ0 + 1 √ 6Λ0 n Ξ− Ξ0 −2 √ 6Λ0  , (9.1) which under SU(3)L ⊗SU(3)R transforms non-linearly B G −→h(φ, g) B h†(φ, g) . (9.2) We look for the most general chiral-invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-91-loops",
+      "number": "9.1",
+      "title": "Loops",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "loops",
+          "heading": true
+        },
+        {
+          "term": "pagels",
+          "heading": false
+        },
+        {
+          "term": "baryon",
+          "heading": false
+        },
+        {
+          "term": "langacker",
+          "heading": false
+        },
+        {
+          "term": "non-analytic",
+          "heading": false
+        },
+        {
+          "term": "renormalize",
+          "heading": false
+        },
+        {
+          "term": "lowest-order",
+          "heading": false
+        },
+        {
+          "term": "chiral",
+          "heading": false
+        }
+      ],
+      "extract": "Goldstone loops generate non-analytic corrections to the lowest-order results (Li and Pagels 1971, Langacker and Pagels 1973, Pagels 1975). Due to the diﬀerent Lorentz structure of meson and baryon ﬁelds, the baryon chiral expansion contains terms of O(pn) for each positive integer n, unlike in the mesonic sector where the expansion proceeds in steps of two powers of p. This implies additional types of non-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-92-heavy-baryon-chpt",
+      "number": "9.2",
+      "title": "Heavy baryon ChPT",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy baryon",
+          "heading": true
+        },
+        {
+          "term": "baryon lagrangian",
+          "heading": false
+        },
+        {
+          "term": "baryon ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "decuplet contribution",
+          "heading": false
+        },
+        {
+          "term": "baryon rest",
+          "heading": false
+        },
+        {
+          "term": "jenkins",
+          "heading": false
+        },
+        {
+          "term": "manohar",
+          "heading": false
+        },
+        {
+          "term": "chiral expansion",
+          "heading": false
+        }
+      ],
+      "extract": "Since MB/Λχ ∼O(1), higher-loop contributions are not necessarily suppressed. Thus, in the presence of baryons, the standard chiral expansion is not only complicated but in addition its convergence is suspect. The problem can be circumvented by taking the limit p/MB << 1 and making and additional expansion in inverse powers of MB. Using heavy quark eﬀective theory techniques (Isgur and Wise 1989, Grinstein 1990,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-93-non-leptonic-hyperon-decays",
+      "number": "9.3",
+      "title": "Non-leptonic hyperon decays",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperon decays",
+          "heading": true
+        },
+        {
+          "term": "p-wave amplitudes",
+          "heading": false
+        },
+        {
+          "term": "s-wave amplitudes",
+          "heading": false
+        },
+        {
+          "term": "non-leptonic",
+          "heading": true
+        },
+        {
+          "term": "tree-level",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "jenkins",
+          "heading": false
+        },
+        {
+          "term": "decuplet",
+          "heading": false
+        }
+      ],
+      "extract": "Neglecting the small (27L, 1R) contribution, the lowest-order ∆S = 1 non-leptonic eﬀective Lagrangian involving baryons contains two terms (Manohar and Georgi 1984, Georgi 1984): L(B) ∆S=1 = −GF √ 2 VudV ∗ us \b hD ⟨B{uλu†, B}⟩+ hF ⟨B[uλu†, B]⟩ . (9.20) The invariant matrix elements for non-leptonic hyperon decays are conventionally parametrized as T(Bi →Bjπ) = ¯uBj h A(S) ij + γ5A(P ) ij i uBi , (9.21) where A(S) ij",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-10-large-nc-limit-u1a-anomaly-and-strong-cp-viol",
+      "number": "10",
+      "title": "Large-NC limit, U(1)A anomaly and strong CP violation",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "large-nc",
+          "heading": true
+        },
+        {
+          "term": "log det",
+          "heading": false
+        },
+        {
+          "term": "nine goldstone",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "qcd lagrangian",
+          "heading": false
+        },
+        {
+          "term": "chiral limit",
+          "heading": false
+        },
+        {
+          "term": "quark-mass matrix",
+          "heading": false
+        },
+        {
+          "term": "reabsorbed",
+          "heading": false
+        }
+      ],
+      "extract": "In the large-NC limit the U(1)A anomaly (Adler 1969, Adler and Bardeen 1969, Bell and Jackiw 1969) is absent. The massless QCD Lagrangian (2.1) has then a larger U(3)L⊗U(3)R chiral symmetry, and there are nine Goldstone bosons associated with the SCSB to the diagonal subgroup U(3)V . These Goldstone excitations can be conveniently collected in the 3 × 3 unitary matrix eU(φ) ≡⟨0| eU|0⟩U(φ) ≡⟨0| eU|0⟩exp n i √ 2eΦ/f o",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-101-baryon-electric-dipole-moments",
+      "number": "10.1",
+      "title": "Baryon electric dipole moments",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric dipole",
+          "heading": true
+        },
+        {
+          "term": "baryon",
+          "heading": true
+        },
+        {
+          "term": "baryon lagrangian",
+          "heading": false
+        },
+        {
+          "term": "rafael",
+          "heading": false
+        },
+        {
+          "term": "m2π",
+          "heading": false
+        },
+        {
+          "term": "pich",
+          "heading": false
+        }
+      ],
+      "extract": "It is completely straightforward to extend the previous analysis to the baryon sector (Pich and de Rafael 1991b). One simply writes the matrix eU(φ) in terms of the canonical coset representative, eU(φ) = ˜ξR(φ) ˜ξ† L(φ) , ˜ξL(φ) = ⟨0|˜ξL|0⟩u(φ)† , ˜ξR(φ) = ⟨0|˜ξR|0⟩u(φ) , (10.16) with ⟨0|u|0⟩= 1 and U(φ) = u(φ)2. From equation (10.12) it follows that ⟨0|˜ξ† R|0⟩eχ ⟨0|˜ξL|0⟩= ⟨0|˜ξL|0⟩⟨0|˜ξ† R|0⟩eχ = χ + iH ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-11-interactions-of-a-light-higgs",
+      "number": "11",
+      "title": "Interactions of a light Higgs",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "light higgs",
+          "heading": true
+        },
+        {
+          "term": "heavy quarks",
+          "heading": false
+        },
+        {
+          "term": "µνgµν",
+          "heading": false
+        },
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "yukawa interactions",
+          "heading": false
+        },
+        {
+          "term": "pich",
+          "heading": false
+        },
+        {
+          "term": "π0h",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        }
+      ],
+      "extract": "An hypothetical light Higgs particle provides a good example of the broad range of application of the chiral techniques. Its hadronic couplings are ﬁxed by low-energy theorems which relate the φ →φ′h0 transition with a zero-momentum Higgs to the corresponding φ →φ′ coupling (Gunion et al 1990). Although, within the Standard Model, the possibility of a light Higgs boson is already excluded, an extended scalar sector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-12-eﬀective-theory-at-the-electroweak-scale",
+      "number": "12",
+      "title": "Eﬀective theory at the electroweak scale",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electroweak",
+          "heading": true
+        },
+        {
+          "term": "higgs ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "dobado",
+          "heading": false
+        },
+        {
+          "term": "herrero",
+          "heading": false
+        },
+        {
+          "term": "model lagrangian",
+          "heading": false
+        },
+        {
+          "term": "appelquist",
+          "heading": false
+        },
+        {
+          "term": "chiral couplings",
+          "heading": false
+        }
+      ],
+      "extract": "In spite of the spectacular success of the Standard Model, we still do not really understand the dynamics underlying the electroweak symmetry breaking SU(2)L ⊗ U(1)Y →U(1)QED. The Higgs mechanism provides a renormalizable way to generate the W and Z masses and, therefore, their longitudinal degrees of freedom. However, an experimental veriﬁcation of this mechanism is still lacking. The scalar sector of the Standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-13-summary",
+      "number": "13",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral couplings",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "chiral constants",
+          "heading": false
+        },
+        {
+          "term": "chpt",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "distance dynamics",
+          "heading": false
+        },
+        {
+          "term": "low-energy",
+          "heading": false
+        }
+      ],
+      "extract": "ChPT is a powerful tool to study the low-energy interactions of the pseudoscalar- meson octet. This eﬀective Lagrangian framework incorporates all the constraints implied by the chiral symmetry of the underlying Lagrangian at the quark–gluon level, allowing for a clear distinction between genuine aspects of the Standard Model and additional assumptions of variable credibility, usually related to the problem of long-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "I am grateful to G. Ecker, E. Oset and E. de Rafael for useful discussions and comments. This work has been supported in part by CICYT (Spain) under grant AEN-93-0234.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 57,
+      "labelStart": "50",
+      "labelEnd": "57",
+      "words": 2423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pich phys",
+          "heading": false
+        },
+        {
+          "term": "pich nucl",
+          "heading": false
+        },
+        {
+          "term": "rafael nucl",
+          "heading": false
+        },
+        {
+          "term": "holstein phys",
+          "heading": false
+        },
+        {
+          "term": "herrero phys",
+          "heading": false
+        },
+        {
+          "term": "wyler phys",
+          "heading": false
+        },
+        {
+          "term": "valencia phys",
+          "heading": false
+        },
+        {
+          "term": "pagels phys",
+          "heading": false
+        }
+      ],
+      "extract": "Adler S L 1969 Phys. Rev. 177 2426–38 Adler S L and Bardeen W A 1969 Phys. Rev. 182 1517–36 Adler S and Dashen R F 1968 Current Algebras (Benjamin, New York) de Alfaro V, Fubini S, Furlan G and Rossetti C 1973 Currents in Hadron Physics (North-Holland, Amsterdam) Alliegro C et al 1992 Phys. Rev. Lett. 68 278–81 Altarev I S et al 1992 Phys. Lett. B276 242–6 Amendolia S R et al 1986 Nucl. Phys. B277 168–96 Appelquist",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chiral lagrangian",
+      "heading": true
+    },
+    {
+      "term": "chiral couplings",
+      "heading": false
+    },
+    {
+      "term": "eﬀective chiral",
+      "heading": true
+    },
+    {
+      "term": "low-energy chiral",
+      "heading": false
+    },
+    {
+      "term": "baryon chiral",
+      "heading": false
+    },
+    {
+      "term": "chiral constants",
+      "heading": false
+    },
+    {
+      "term": "chiral symmetry",
+      "heading": true
+    },
+    {
+      "term": "chiral predictions",
+      "heading": false
+    },
+    {
+      "term": "qcd lagrangian",
+      "heading": false
+    },
+    {
+      "term": "lowest-order lagrangian",
+      "heading": false
+    },
+    {
+      "term": "chiral expansion",
+      "heading": false
+    },
+    {
+      "term": "chiral theory",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Phenomenological values of the renormalized couplings Lr",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "V , A, S, S1 and η1 contributions to the coupling constants Lr",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Leading-order (αs = 0) predictions for the Li’s, within the QCD-inspired",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Predicted and measured values of the quadratic slope parameters in the K →3π amplitudes (Kambor et al 1992). All values are given in units of 10−8",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Feynman diagrams for K0",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Feynman diagram for the K0",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "2γ-invariant-mass distribution for KL →π0γγ: O(p4) (· · · · · ·), O(p6) with",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Measured (Barr et al 1992) 2γ-invariant-mass distribution for KL →π0γγ",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 24,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 25,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p50); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 25 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-9502366v1"
+  }
+}

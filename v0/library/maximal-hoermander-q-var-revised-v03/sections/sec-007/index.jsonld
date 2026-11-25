@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Schrödinger and wave maximal estimates",
+  "pageStart": 21,
+  "pageEnd": 28,
+  "contains": [
+    "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-007",
+    "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-007-01",
+    "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-007-02",
+    "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-007-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "provenance": "ingested"
+}

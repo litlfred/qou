@@ -1,0 +1,708 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2408.04921v2",
+  "title": "arxiv-2408.04921v2",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Irreducible characters of CkSn",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-irreducible-characters-of-cksn"
+    },
+    {
+      "level": 1,
+      "title": "Two Iterative Formulas",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-two-iterative-formulas"
+    },
+    {
+      "level": 1,
+      "title": "Further examples",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-further-examples"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. The source code for Theorem 3.5",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-appendix-a-the-source-code-for-theorem-35"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Theorem 3.9",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-appendix-b-theorem-39"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "generalized symmetric",
+          "heading": false
+        },
+        {
+          "term": "iterative",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2408.04921v2 [math.RT] 25 Sep 2024 IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING Abstract. The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms. Af- ter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule by vertex algebraic methods, we formulate a new iterative formula for characters of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2408.04921v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol rho",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol lambda",
+          "heading": false
+        },
+        {
+          "term": "vartriangleleft boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol tau",
+          "heading": false
+        },
+        {
+          "term": "chi boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "partitions boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "murnaghan-nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "backslash boldsymbol",
+          "heading": false
+        }
+      ],
+      "extract": "The character theory of the symmetric group $S_n$ plays an important role in representation theory [@JK]. It is well known that the irreducible characters $\\chi^\\lambda$ of $S_n$ are indexed by partitions $\\lambda$ of $n$, and explicit character values are given by the celebrated Frobenius formula, which expresses the character values as the transition coefficients between the Schur symmetric functions and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-irreducible-characters-of-cksn",
+      "number": "2",
+      "title": "Irreducible characters of CkSn",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol lambda",
+          "heading": false
+        },
+        {
+          "term": "widetilde boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "aligned lambda",
+          "heading": false
+        },
+        {
+          "term": "partition boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "cdots lambda",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol rho",
+          "heading": false
+        },
+        {
+          "term": "langle lambda",
+          "heading": false
+        },
+        {
+          "term": "delta lambda",
+          "heading": false
+        }
+      ],
+      "extract": "The generalized symmetric group $C_k\\wr S_n$ is the wreath product of the cyclic group $C_k$ of order $k$ with the symmetric group $S_n$ of $n$ elements, i.e. the semidirect product $C_k^{n}\\rtimes S_n$, where the symmetric group $S_n$ acts on the direct product $C_k^{n}=C_k\\times \\cdots \\times C_k$ by permutating the factors. The multiplication is given by $$\\begin{aligned} (g;\\sigma)\\cdot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-two-iterative-formulas",
+      "number": "3",
+      "title": "Two Iterative Formulas",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartriangleleft boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol rho",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol lambda",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol tau",
+          "heading": false
+        },
+        {
+          "term": "chi boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "backslash boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "widetilde boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "rim hook",
+          "heading": false
+        }
+      ],
+      "extract": "Using techniques of vertex operators, we have the following commutation relations for the vertex operators (cf. [@J3]): $$\\begin{aligned} \\label{e:com1a} zX_i(z)X_i(w)&+wX_i(w)X_i(z)=0, \\\\ \\label{e:com2a} A_i^*(z)X_i(w)&=X_i(w)A_i^*(z)+\\frac{w}{z-w}X_i(w),\\\\ \\label{e:com3a} X_i^*(z)A_i(w)&=A_i(w)X_i^*(z)+\\frac{w}{z-w}X_i^*(z). \\end{aligned}$$ Taking the coefficients of $z^mw^n$, we derive the following commutation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-further-examples",
+      "number": "4",
+      "title": "Further examples",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol lambda",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol rho",
+          "heading": false
+        },
+        {
+          "term": "chi boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "rim hooks",
+          "heading": false
+        },
+        {
+          "term": "langle boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol kappa",
+          "heading": false
+        },
+        {
+          "term": "partitions boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol beta",
+          "heading": false
+        }
+      ],
+      "extract": "For completeness, we first calculate the degree of any irreducible character of $C_k\\wr S_n$ [@IJS]. Recall that the inner product in $V$ is given by: $$\\begin{aligned} \\langle a_{-\\boldsymbol{\\lambda}},a_{-\\boldsymbol{\\mu}} \\rangle=\\prod_{i=0}^{k-1}\\langle a_{-\\lambda^{(i)}},a_{-\\mu^{(i)}}\\rangle=\\delta_{\\boldsymbol{\\lambda}\\boldsymbol{\\mu}}\\prod_{i=0}^{k-1}z_{\\lambda^{(i)}}. \\end{aligned}$$ Under this inner",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan-nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "jing",
+          "heading": false
+        },
+        {
+          "term": "wreath products",
+          "heading": false
+        },
+        {
+          "term": "generalized symmetric",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. M. Adin, Y. Roichman, On characters of wreath products, Comb. Theory 2 (2022), no. 2, Paper No. 17, 12 pp. [2] S. Ariki, K. Koike, A Hecke algebra of Z/rZ ≀Gn and construction of its irreducible representations, Adv. Math. 106 (1994), 216-243. [3] J. Bandlow, A. Schilling, M. Zabrocki, The Murnaghan-Nakayama rule for k-Schur functions, J. Combin. Theory Ser. A. 118 (2011), 1588-1607. [4] A. Evseev, R. Paget,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-appendix-a-the-source-code-for-theorem-35",
+      "number": null,
+      "title": "Appendix A. The source code for Theorem 3.5",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lam",
+          "heading": false
+        },
+        {
+          "term": "nums",
+          "heading": false
+        },
+        {
+          "term": "coff",
+          "heading": false
+        },
+        {
+          "term": "numpy",
+          "heading": false
+        }
+      ],
+      "extract": "# Take k=3, n=5 P=PartitionTuples(3,5) import random lam=random.choice(P) rho=random.choice(P) print(lam,rho) # Set environment m=max(max(rho)) j=rho.index(max(rho)) r=Zmod(3) w=SR.var(’w’) import numpy def ht(nums): return numpy.count_nonzero(nums)-1 # Filter out lam satisfying conditions for k in range(3): if lam[k].size()>=m: tem=Partitions(lam[k].size()-m,outer=lam[k]).list() for i in tem: if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-b-theorem-39",
+      "number": null,
+      "title": "Appendix B. Theorem 3.9",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "box comb",
+          "heading": false
+        },
+        {
+          "term": "box index",
+          "heading": false
+        },
+        {
+          "term": "index solu",
+          "heading": false
+        },
+        {
+          "term": "nums",
+          "heading": false
+        },
+        {
+          "term": "len",
+          "heading": false
+        },
+        {
+          "term": "index list",
+          "heading": false
+        },
+        {
+          "term": "index copy",
+          "heading": false
+        },
+        {
+          "term": "tmp",
+          "heading": false
+        }
+      ],
+      "extract": "# Take k=3, n=5 P=PartitionTuples(3,5) import random lam=random.choice(P) rho=random.choice(P) print(lam,rho) # Set environment IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP 23 s=max(max(lam)) j=lam.index(max(lam)) r=Zmod(3) w=SR.var(’w’) def sub(nums): res = [[]] for num in nums: res += [ i + [num] for i in res] return res import itertools array1 = sub(rho[0]) array2 = sub(rho[1]) array3 = sub(rho[2])",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "table 1",
+      "table 2",
+      "table 3"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "boldsymbol rho",
+      "heading": false
+    },
+    {
+      "term": "boldsymbol lambda",
+      "heading": false
+    },
+    {
+      "term": "boldsymbol tau",
+      "heading": false
+    },
+    {
+      "term": "vartriangleleft boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "chi boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "partitions boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "widetilde boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "backslash boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "sum boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "rho rim",
+      "heading": false
+    },
+    {
+      "term": "langle boldsymbol",
+      "heading": false
+    },
+    {
+      "term": "arrowvert boldsymbol",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "S9 mod 3 λ\\c",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": []
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2408.04921v2"
+  }
+}

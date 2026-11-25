@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2104.14491v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+      "dcterms:issued": "D:20210430",
+      "dcterms:identifier": "https://arxiv.org/abs/2104.14491",
+      "dcterms:abstract": "We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We ﬁnd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial “smoothly” depends on the pattern but for the “jump” at one critical point deﬁned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and τ-invariant for the same kind of satellites",
+      "dcterms:source": "library/arxiv-2104.14491v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2104.14491v1"
+    }
+  ]
+}

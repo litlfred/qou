@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-luj1yvgo58.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-luj1yvgo58","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/interface-band-between-isospin-weights&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:08.947Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;Kept: the convention contrast is the block&#39;s content.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:08.986Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;No pivot.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.026Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;Three &#39;---&#39; instances, each a genuine parenthetical (the deuteron aside, the table&#39;s empty cell, the Archimedean boilerplate list); not structure substitutes.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.066Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;No reflex triple.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.106Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;&#39;Neither is a margin a refinement absorbs&#39; is quotable-shaped but is a substantive quantitative claim about the two computed misses.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.147Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires. &#39;Both hypotheses are carried explicitly rather than folded into the statement, because they are convention-dependent and one of them fails elsewhere&#39; announces a structural choice, but it states the mathematical REASON (convention-dependence, and an actual failure under C shown two paragraphs later) rather than narrating emphasis.&quot;,
+      &quot;notes&quot;: &quot;Kept.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.186Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;No restating closer.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.226Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;Institutional register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.264Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;&#39;Neither is a knife-edge&#39; is backed by the computed margins.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.303Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the statement, both separation arguments, the convention-dependence section and the Archimedean table. Re-derived and recomputed everything at 40 dps. ALL FOUR TABLE VALUES REPRODUCE EXACTLY under convention D at the stated q_0 = 1.10997858275138080759 (the proton pin): mu_- = 0.24729788674803459841, z-h = 0.40362773835082593617, z = 0.61268803714646525159, mu_+ = 0.75270211325196540159, with only last-digit rounding on two of them. The two misses recompute to 63.2152% and 22.8524% (block: 63.22%, 22.85%). I also re-derived the two reduced inequalities from scratch and confirmed they are the correct criteria: mu_+ = (z + q^-1)/(q + q^-1) and mu_- = (q - z)/(q + q^-1), so z &lt; mu_+ is exactly z(q+q^-1) &lt; z + q^-1 and mu_- &lt; z-h is exactly q - z &lt; (z-h)(q+q^-1). The convention-C figures check too: z_C = 0.49932033 and floor 0.29026004, matching the quoted band [0.290260, 0.499320], and mu_-^C = (q-z_C)/(q+q^-1) = 0.303675 as printed, which does sit inside that band. Ten trap categories clean - the em-dashes are true parentheticals, and &#39;stated rather than buried&#39; is a scope statement of the kind the trace-convention discipline requires.&quot;,
+      &quot;notes&quot;: &quot;Speakable throughout.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;71f99f2290fd&quot;,
+        &quot;ts&quot;: &quot;4809e6743067&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:g01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:20:09.353Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1774741be4c788e6a86af5617241bf69622832b0&quot;,
+      &quot;evidence&quot;: &quot;Independent re-derivation of both reduced inequalities and both thresholds at 40 dps.&quot;,
+      &quot;notes&quot;: &quot;MATH FINDING (report, not fixed) - ONE WRONG REDUCTION AND ONE WRONG THRESHOLD, IN AN OTHERWISE EXEMPLARY BLOCK; THE VERDICT SURVIVES AND IMPROVES. The LOWER separation is right: (z-h)(q+q^-1) = q^-2 identically under convention D, so mu_- &lt; z-h reduces to q/(q^2+1) &lt; 1/q^2, i.e. q^3 &lt; q^2 + 1, whose root is 1.465571232 - exactly the block&#39;s 1.465571. The UPPER separation is NOT what the block says. Under convention D, z(q+q^-1) = q^2 identically, so z &lt; mu_+ reduces to q^2 &lt; z + q^-1, i.e. q^5 - q^4 + q^3 - q^2 - 1 &lt; 0, with threshold 1.249851589. The block states it is &#39;equivalent to q^5 &lt; q^2+1 and therefore holds for q &lt; 1.193859&#39;; 1.193859111 is indeed the root of q^5 = q^2+1, but that is a different criterion. They disagree on a real interval: at q = 1.21 and q = 1.24, z &lt; mu_+ is TRUE while q^5 &lt; q^2+1 is FALSE (checked by direct evaluation; at q = 1.26 both are false). CONSEQUENCES: the margin quoted as &#39;7.56% on the tighter of the two&#39; is computed against the wrong threshold - it is 7.557% against 1.193859 but 12.601% against the true 1.249852; and &#39;moving q upward past 1.193859 closes the upper separation&#39; names a q at which the separation in fact still holds. WHAT DOES NOT CHANGE: both separations still hold comfortably at q_0, the upper is still the tighter of the two, and the corrected margin is LARGER, so the block&#39;s conclusion is strengthened rather than weakened. Only the reduced polynomial, the threshold 1.193859 -&gt; 1.249852, and the margin 7.56% -&gt; 12.60% need correcting. ONE STRUCTURAL OBSERVATION, offered as a possible simplification: mu_- + mu_+ = 1 exactly (both reduce over the common denominator q + q^-1 to numerators q - z and z + q^-1, which sum to q + q^-1), verified to 40 dps. The block never says this, and it makes the two separations manifestly a single statement about where the band sits in [0,1].&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

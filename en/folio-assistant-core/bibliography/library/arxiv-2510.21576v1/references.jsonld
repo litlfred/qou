@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2510.21576v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+      "dcterms:creator": [
+        "Andreoli1, L.",
+        "2",
+        "Weiss3, ∗R.",
+        "Chambers-Wall3, † G.",
+        "Gnech1, ‡ A.",
+        "2",
+        "Pastore3, § S.",
+        "4",
+        "Piarulli3, ¶ M.",
+        "4",
+        "Gandolfi5, ∗∗and S."
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2510.21576",
+      "dcterms:source": "library/arxiv-2510.21576v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2510.21576v1"
+    }
+  ]
+}

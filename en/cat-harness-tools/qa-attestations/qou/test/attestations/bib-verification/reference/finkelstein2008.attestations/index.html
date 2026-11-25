@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/finkelstein2008.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1ah7bff05pu.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1ah7bff05pu","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/finkelstein2008.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/finkelstein2008.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/finkelstein2008.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;finkelstein2008&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 188,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-0806.3105v3/0806.3105v3.pdf&quot;
+      },
+      &quot;id&quot;: &quot;finkelstein2008&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;SLq(2) knot model of elementary particles: the closest published analogue to QOU&#39;s own knot-as-particle construction, and an explicitly owner-requested read (docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md line 532 lists it under &#39;Want&#39;). It supplies a CANDIDATE, not a result QOU consumes: an explicit second diagram invariant (the rotation/Whitney number r) alongside the writhe w, with a published charge assignment Q_e = -(e/6)(w + r + 1). That is exactly the shape of the missing datum named in conj:sm-hypercharge-invariant (&#39;Y does not factor through the writhe&#39;; the currently-recorded candidate is the ribbon-framing twist, cite bilson-thompson2005). Held to &#39;supporting&#39; rather than &#39;core&#39; because Finkelstein&#39;s correspondence is FITTED, not derived: he states (p.5) that the trefoil-to-family ordering is chosen so that a single k = e/3 works (&#39;If one aligns the trefoils and the families in any other relative order, one needs more than one value of k&#39;). Per the block&#39;s own rule, a candidate that requires tuning a coupling is a fit and does not instantiate the class. QOU may adopt the INVARIANT (r) as a candidate to run through the two batteries; it must not adopt the numerology. No ref() entry exists; the corpus&#39;s only preon entries are the two duplicate Bilson-Thompson keys (bilson-thompson2005 line 5363, bilson-thompson2005 line 7784).&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;eq. (2.7), §2&quot;,
+            &quot;statement&quot;: &quot;The SLq(2) irrep labels are identified with knot-diagram invariants by j = N/2, m = w/2, m&#39; = (r+1)/2, where N = crossing number, w = writhe, r = rotation (Whitney degree).&quot;,
+            &quot;useForFolio&quot;: &quot;Supplies the rotation number r as a published second crossing-diagram invariant, independent of the writhe — a concrete alternative to the ribbon-framing twist currently recorded (without endorsement) as the candidate second datum in conj:sm-hypercharge-invariant. Feeds bean qou-q377 (twist-vs-writhe as candidate second crossing invariant).&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:sm-hypercharge-invariant&quot;,
+              &quot;conj:sm-gauge-truncation&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;eq. (2.15)-(2.16), §2, p.5&quot;,
+            &quot;statement&quot;: &quot;t = N/6, t_3 = -w/6, t_0 = -(r+1)/6, Q_e = -(e/6)(w + r + 1), consistent with the Standard-Model relation Q_e = e(t_3 + t_0).&quot;,
+            &quot;useForFolio&quot;: &quot;A published writhe+rotation -&gt; (I_3, Y, Q) assignment that can be run directly through the two batteries conj:sm-hypercharge-invariant demands — Gell-Mann-Nishijima consistency on the nucleon doublet, and the first-generation hypercharge spectrum with its Z_6 relations. Its failure or success on the p/n doublet (which share Y = +1 but differ in writhe) is a cheap, decisive test.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:sm-hypercharge-invariant&quot;,
+              &quot;def:coulomb-charge&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan: no ref() entry despite being an explicitly named &#39;Want&#39; in the eightfold-way dialog assessment and the closest published analogue to the QOU construction. Suggested id finkelstein2008 (Int. J. Mod. Phys. A 24 (2009) 2307).&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-1tjx&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;The block records the ribbon-framing twist as the sole candidate second datum, citing bilson-thompson2005 as literature precedent. Finkelstein&#39;s rotation number r is a second, independent published candidate for the same slot and belongs in the same sentence — recorded without endorsement, with the fitted-ordering caveat stated.&quot;,
+            &quot;target&quot;: &quot;conj:sm-hypercharge-invariant&quot;,
+            &quot;bean&quot;: &quot;qou-3xsv&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;Evaluate Q_e = -(e/6)(w + r + 1) and t_0 = -(r+1)/6 on the QOU proton/neutron knot states: the nucleon doublet is the recorded falsification for writhe-only Y, so whether adding r separates it is a one-shot decisive test of the candidate. A pass does not wire it (the correspondence is fitted upstream); a fail prunes the candidate.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean&quot;,
+            &quot;bean&quot;: &quot;qou-nrty&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;a37b4f2e9636&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/s0273-0979-1985-15304-2",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "A polynomial invariant for knots via von Neumann algebras",
+      "dcterms:creator": [
+        "AMERICAN MATHEMATICAL SOCIETY"
+      ],
+      "dcterms:issued": "D:20070207",
+      "dcterms:source": "library/s0273-0979-1985-15304-2/manifest.jsonld",
+      "dcterms:hasVersion": "library/s0273-0979-1985-15304-2"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9304063v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9304063v2",
+  "contains": [
+    "library/arxiv-hep-th-9304063v2/sections/page-001",
+    "library/arxiv-hep-th-9304063v2/sections/page-002",
+    "library/arxiv-hep-th-9304063v2/sections/page-003",
+    "library/arxiv-hep-th-9304063v2/sections/page-004",
+    "library/arxiv-hep-th-9304063v2/sections/page-005",
+    "library/arxiv-hep-th-9304063v2/sections/page-006",
+    "library/arxiv-hep-th-9304063v2/sections/page-007",
+    "library/arxiv-hep-th-9304063v2/sections/page-008",
+    "library/arxiv-hep-th-9304063v2/sections/page-009",
+    "library/arxiv-hep-th-9304063v2/sections/page-010",
+    "library/arxiv-hep-th-9304063v2/sections/page-011",
+    "library/arxiv-hep-th-9304063v2/sections/page-012",
+    "library/arxiv-hep-th-9304063v2/sections/page-013",
+    "library/arxiv-hep-th-9304063v2/sections/page-014",
+    "library/arxiv-hep-th-9304063v2/sections/page-015",
+    "library/arxiv-hep-th-9304063v2/sections/page-016",
+    "library/arxiv-hep-th-9304063v2/sections/page-017",
+    "library/arxiv-hep-th-9304063v2/sections/page-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-th/9304063v2 29 Jan 1999 — 18 sections: Page 1; Page 2; Page 3\n\n**arXiv:hep-th/9304063v2 29 Jan 1999**\n\n*Department of Mathematics and Institute of Theoretical Dynamics*\n\n18 pp, 18 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9304063&metadataPrefix=arXiv), submitted 1999-01-29, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9304063v2",
+    "title_source": "slug",
+    "source_file": "9304063v2.pdf",
+    "source_sha256": "14a82437462eae238fe81fbb536e7c2ff5f15072a6a4edf26cad9ef06864d67d",
+    "pages": 18,
+    "arxiv": {
+      "id": "hep-th/9304063",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "29 Jan 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-per-braid-mass-tower",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:per-braid-mass-tower",
+  "kind": "proposition",
+  "title": "Per-braid mass tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pentagon-uv-commutation",
+    "papers/quantum-observable-universe/blocks/rem-markov-moves-brane-tower",
+    "papers/quantum-observable-universe/blocks/prop-pieri-photon-shift"
+  ],
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "mass-tower",
+    "per-braid",
+    "sub-braid",
+    "markov-trace",
+    "schur-weyl",
+    "JSJ",
+    "phi-q",
+    "wedderburn"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.perBraidMassTower",
+  "text": "per-braid-mass-tower.md",
+  "leanSource": "per-braid-mass-tower.lean",
+  "provenance": "authored"
+}

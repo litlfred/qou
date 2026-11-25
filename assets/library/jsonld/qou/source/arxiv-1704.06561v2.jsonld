@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.06561v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1704.06561v2",
+  "contains": [
+    "library/arxiv-1704.06561v2/sections/sec-front-matter",
+    "library/arxiv-1704.06561v2/sections/sec-000",
+    "library/arxiv-1704.06561v2/sections/sec-001",
+    "library/arxiv-1704.06561v2/sections/sec-002",
+    "library/arxiv-1704.06561v2/sections/sec-003",
+    "library/arxiv-1704.06561v2/sections/sec-004",
+    "library/arxiv-1704.06561v2/sections/sec-005",
+    "library/arxiv-1704.06561v2/sections/sec-006",
+    "library/arxiv-1704.06561v2/sections/sec-007",
+    "library/arxiv-1704.06561v2/sections/sec-008",
+    "library/arxiv-1704.06561v2/sections/sec-009",
+    "library/arxiv-1704.06561v2/sections/sec-010",
+    "library/arxiv-1704.06561v2/sections/sec-011",
+    "library/arxiv-1704.06561v2/sections/sec-012",
+    "library/arxiv-1704.06561v2/sections/sec-013",
+    "library/arxiv-1704.06561v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions — 16 sections: Front matter; I Introduction; II Simulation details\n\n**Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions**\n\n*D. Giusti, V. Lubicz, and C. Tarantino*\n\n47 pp, 16 sections.\n\n**Outline.** Front matter; I Introduction; II Simulation details; III Evaluation of the IB corrections; A Determination of mfcrit; B Extraction of the e.m. and strong IB correct; IV Analysis of the pion mass splitting M+ - M0; V Determination of 0; VI Analysis of and determination of md - mu; VII Determination of K0; VIII QED and strong IB corrections in charmed ; A Electromagnetic and strong IB corrections to; B Electromagnetic corrections to MD+ + MD0; C Electromagnetic corrections to the Ds+-meson; Acknowledgements; A Numerical evaluation of the diagrams ??(a) -\n\n**Extracted claims (proposals, not verified).**\n- Proposition: In the last few years the determination of several observables in ﬂavor physics by lattice QCD reached such a precision that both electromagnetic (e.m.) eﬀects and strong isospin\n- Proposition: Using a variety of diﬀerent methods to include QED eﬀects in lattice QCD simulations, several collaborations have recently obtained remarkably accurate results for the hadron\n- Proposition: Till now the inclusion of QED eﬀects in lattice QCD simulations has been carried out follow- ing mainly two methods: in the ﬁrst one QED is added directly to the action and\n- Proposition: Instead the experimental value of the kaon mass 1 The quark mass ratio mu/md is renormalization group invariant in pure QCD only.\n- Proposition: In section VI we determine the light quark mass diﬀerence bmd −bmu using the experimental value of the kaon mass splitting MK+ −MK0, while section VII is devoted to the evaluation\n- Proposition: Using our result for bmd −bmu, we present the ﬁrst lattice determination of the D-meson mass diﬀerence MD+ −MD0.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1704.06561v2",
+    "title_source": "slug",
+    "source_file": "1704.06561v2.pdf",
+    "source_sha256": "e1d800fa0b122dbb518c5c42af493017233010e87e390ef6007d4dced91a1b9f",
+    "pages": 47,
+    "arxiv": {
+      "id": "1704.06561",
+      "version": "2",
+      "primary_class": "hep-lat",
+      "stamp_date": "11 Jun 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

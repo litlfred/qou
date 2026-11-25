@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-eigenbasis-structural-lemmas",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:eigenbasis-structural-lemmas",
+  "kind": "remark",
+  "title": "Content/twist eigenbasis: structural lemmas behind the Wedderburn characters (Lean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-categorical"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-categorical",
+  "tags": [
+    "hecke-character",
+    "ribbon-eigenvalue",
+    "eigenbasis",
+    "confinement"
+  ],
+  "text": "eigenbasis-structural-lemmas.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,606 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0612592v1",
+  "title": "Analytic q -diﬀerence equations",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Difference equations in general",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-difference-equations-in-general"
+    },
+    {
+      "level": 1,
+      "title": "First examples of q-difference equations",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-first-examples-of-q-difference-equations"
+    },
+    {
+      "level": 1,
+      "title": "Towards a classification of modules",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-towards-a-classification-of-modules"
+    },
+    {
+      "level": 1,
+      "title": "Moduli spaces for difference modules",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-moduli-spaces-for-difference-modules"
+    },
+    {
+      "level": 1,
+      "title": "Difference Galois groups",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-difference-galois-groups"
+    },
+    {
+      "level": 1,
+      "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-universal-picard-vessiot-rings-and-universal-dif"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "analytic q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "groningen",
+          "heading": false
+        },
+        {
+          "term": "r-s",
+          "heading": false
+        },
+        {
+          "term": "p-s",
+          "heading": false
+        },
+        {
+          "term": "cited",
+          "heading": false
+        },
+        {
+          "term": "slopes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0612592v1 [math.AC] 20 Dec 2006 Analytic q-diﬀerence equations Marius van der Put Department of Mathematics, University of Groningen, P.O.Box 800, 9700 AV Groningen, The Netherlands, mvdput@math.rug.nl Introduction A complex number q with 0 < |q| < 1 is ﬁxed. By an analytic q-diﬀerence equation we mean an equation which can be represented by a matrix equation Y (z) = A(z)Y (qz) where A(z) is an invertible",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0612592v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-difference-equations-in-general",
+      "number": null,
+      "title": "Difference equations in general",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "picard-vessiot ring",
+          "heading": false
+        },
+        {
+          "term": "cdot phi",
+          "heading": false
+        },
+        {
+          "term": "difference",
+          "heading": true
+        },
+        {
+          "term": "automorphism phi",
+          "heading": false
+        },
+        {
+          "term": "difference modules",
+          "heading": false
+        },
+        {
+          "term": "rightarrow otimes",
+          "heading": false
+        },
+        {
+          "term": "form phi",
+          "heading": false
+        },
+        {
+          "term": "difference equation",
+          "heading": false
+        }
+      ],
+      "extract": "A difference field $F$ is a field provided with an automorphism $\\phi$ of infinite order. A scalar linear difference equation is an equation of the form $$\\phi ^n(y)+a_{n-1}\\phi ^{n-1}(y)+\\cdots +a_1\\phi (y) +a_0y=0\\,$$ with given $a_i\\in F$ and, say, $a_0\\neq 0$. As in the case of linear differential equations, one can transform this equation into a matrix difference equation, i.e., an equation of the form $Y=A\\phi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-first-examples-of-q-difference-equations",
+      "number": null,
+      "title": "First examples of q-difference equations",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 611,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "picard-vessiot ring",
+          "heading": false
+        },
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "difference module",
+          "heading": false
+        },
+        {
+          "term": "frac mathbb",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "regular singular",
+          "heading": false
+        },
+        {
+          "term": "multivalued function",
+          "heading": false
+        }
+      ],
+      "extract": "This exposition is concerned with the difference field $K=\\mathbb{C}(\\{z\\})$, i.e., the field of convergent Laurent series over $\\mathbb{C}$, provided with the automorphism $\\phi$ given by $\\phi (z)=qz$, where $q$ is a fixed complex number satisfying $0<|q|<1$. In order to define $\\phi$ on the algebraic closure $K_\\infty =\\cup _{n\\geq 1} K_n$, with $K_n:=\\mathbb{C}(\\{z^{1/n}\\})$, of $K$ we choose a $\\tau \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-towards-a-classification-of-modules",
+      "number": null,
+      "title": "Towards a classification of modules",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indecomposable difference",
+          "heading": false
+        },
+        {
+          "term": "indecomposable module",
+          "heading": false
+        },
+        {
+          "term": "indecomposable pure",
+          "heading": false
+        },
+        {
+          "term": "widehat otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes global",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "indecomposable vector",
+          "heading": false
+        },
+        {
+          "term": "split difference",
+          "heading": false
+        }
+      ],
+      "extract": "We present here the 'classics' by G.D. Birkhof, P.E. Guenther, C.R. Adams et al. and 'modern' work by J.-P. Ramis, Ch. Zhang, J. Sauloy, A. Duval, M.F. Singer, M. van der Put, M. Reversat et al., concerning $q$-difference equations over $K$. Let $K[\\Phi ,\\Phi ^{-1}]$ be the skew ring of difference operators. The elements of this ring are the finite formal sums $\\sum _{n\\in \\mathbb{Z}}a_n\\Phi ^n$ and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-moduli-spaces-for-difference-modules",
+      "number": null,
+      "title": "Moduli spaces for difference modules",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference",
+          "heading": true
+        },
+        {
+          "term": "moduli",
+          "heading": true
+        },
+        {
+          "term": "difference module",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "oplus",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a split difference module $S=P_1\\oplus \\cdots \\oplus P_r$ over $K$, where $P_i$ is pure with slope $\\lambda _i$ and $\\lambda _1<\\cdots <\\lambda _r$. The problem is to classify the difference modules $M$ over $K$ such that $gr(M)$ is isomorphic to $S$. The collection of the isomorphy classes is a rather ugly object due to the fact that $S$ has many automorphisms. A better way to formulate the problem is to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-difference-galois-groups",
+      "number": null,
+      "title": "Difference Galois groups",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference galois",
+          "heading": true
+        },
+        {
+          "term": "rightarrow gal",
+          "heading": false
+        },
+        {
+          "term": "galois groups",
+          "heading": true
+        },
+        {
+          "term": "difference modules",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        },
+        {
+          "term": "times mathbb",
+          "heading": false
+        },
+        {
+          "term": "sequence rightarrow",
+          "heading": false
+        },
+        {
+          "term": "semi-direct product",
+          "heading": false
+        }
+      ],
+      "extract": "In the last section a complete, however complicated, classification of the difference modules over $K$ is given. Using this classification we will be able to give a complete description of the difference Galois groups. The difference Galois group of a module $M$ will be denoted by $Gal(M)$.We start with the easiest case and build up to the general case.\\ (1) *Regular singular modules*.\\ We recall that a regular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-universal-picard-vessiot-rings-and-universal-dif",
+      "number": null,
+      "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "universal picard-vessiot",
+          "heading": true
+        },
+        {
+          "term": "difference galois",
+          "heading": true
+        },
+        {
+          "term": "picard-vessiot ring",
+          "heading": false
+        },
+        {
+          "term": "delta widehat",
+          "heading": false
+        },
+        {
+          "term": "delta split",
+          "heading": false
+        },
+        {
+          "term": "widehat infty",
+          "heading": false
+        },
+        {
+          "term": "hom delta",
+          "heading": false
+        },
+        {
+          "term": "singer galois",
+          "heading": false
+        }
+      ],
+      "extract": "We start by explaining some notions and constructions (see also \\[P-S2\\]). An *affine group scheme $G$ over $\\mathbb{C}$* is given by a $\\mathbb{C}$-algebra $A$ provided with the structure of a Hopf-algebra. The latter is defined by a triple $(m,e,i)$ of $\\mathbb{C}$-algebra morphisms:\\ (a) $m:A\\rightarrow A\\otimes _\\mathbb{C}A$ (the co-multiplication)\\ (b) $e:A\\rightarrow \\mathbb{C}$ with $e(1)=1$ (the co-unit",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "difference galois",
+      "heading": true
+    },
+    {
+      "term": "difference module",
+      "heading": false
+    },
+    {
+      "term": "lambda phi",
+      "heading": false
+    },
+    {
+      "term": "picard-vessiot ring",
+      "heading": false
+    },
+    {
+      "term": "cdots phi",
+      "heading": false
+    },
+    {
+      "term": "mathbb rightarrow",
+      "heading": false
+    },
+    {
+      "term": "split difference",
+      "heading": false
+    },
+    {
+      "term": "otimes mathbb",
+      "heading": false
+    },
+    {
+      "term": "widehat otimes",
+      "heading": false
+    },
+    {
+      "term": "difference equations",
+      "heading": true
+    },
+    {
+      "term": "indecomposable difference",
+      "heading": false
+    },
+    {
+      "term": "singular difference",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0612592v1"
+  }
+}

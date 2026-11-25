@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1923v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Connections on Non-Abelian Gerbes and their Holonomy",
+  "contains": [
+    "library/arxiv-0808.1923v3/sections/sec-front-matter",
+    "library/arxiv-0808.1923v3/sections/sec-000",
+    "library/arxiv-0808.1923v3/sections/sec-001",
+    "library/arxiv-0808.1923v3/sections/sec-002",
+    "library/arxiv-0808.1923v3/sections/sec-003",
+    "library/arxiv-0808.1923v3/sections/sec-004",
+    "library/arxiv-0808.1923v3/sections/sec-005",
+    "library/arxiv-0808.1923v3/sections/sec-006",
+    "library/arxiv-0808.1923v3/sections/sec-007",
+    "library/arxiv-0808.1923v3/sections/sec-008",
+    "library/arxiv-0808.1923v3/sections/sec-009",
+    "library/arxiv-0808.1923v3/sections/sec-010",
+    "library/arxiv-0808.1923v3/sections/sec-011",
+    "library/arxiv-0808.1923v3/sections/sec-012",
+    "library/arxiv-0808.1923v3/sections/sec-013",
+    "library/arxiv-0808.1923v3/sections/sec-014",
+    "library/arxiv-0808.1923v3/sections/sec-015",
+    "library/arxiv-0808.1923v3/sections/sec-016",
+    "library/arxiv-0808.1923v3/sections/sec-017",
+    "library/arxiv-0808.1923v3/sections/sec-018",
+    "library/arxiv-0808.1923v3/sections/sec-019",
+    "library/arxiv-0808.1923v3/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes.\n\n**Connections on Non-Abelian Gerbes and their Holonomy**\n\n*Urs Schreiber and Konrad Waldorf*\n\n57 pp, 22 sections.\n\n**Abstract.** We introduce an axiomatic framework for the parallel transport of connections on gerbes. It incorporates parallel transport along curves and along surfaces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness conditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or structure 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework reproduces in a systematical way several known concepts of gerbes with connection: non-abelian diﬀerential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationships convey a well-deﬁned notion of surface holonomy from our axiomatic framework to each of these concrete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces that known concept and extends it to non-abelian gerbes.\n\n**Outline.** Front matter; 1 Introduction; 2 Foundations of the Transport Functor Formali; 2.1 The Path 2-Groupoid of a Smooth Manifold; 2.2 Local Trivializations and Descent Data; 2.3 Smooth 2-Functors; 2.4 Transport Functors; 3 Transport 2-Functors; 3.1 Smooth Descent Data; 3.2 Transport 2-Functors; 3.3 Some Features of Transport 2-Functors; 3.4 Curvature 2-Functors; 4 Transport 2-Functors are Non-Abelian Gerbes; 4.1 Differential Non-Abelian Cohomology; 4.2 Abelian Bundle Gerbes with Connection; 4.3 Non-Abelian Bundle Gerbes with Connection; 4.4 2-Bundles with Connections; 5 Surface Holonomy",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0808.1923&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0808.1923v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0808.1923v3.pdf",
+    "source_sha256": "3c53f7c0fd9acf8929545496dfb3eab2ec11a5ad9ddf3ac9aed9aa4c75a22019",
+    "pages": 57,
+    "arxiv": {
+      "id": "0808.1923",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "24 Sep 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

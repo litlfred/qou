@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0304010v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
+      "dcterms:creator": [
+        "Ivanov, Vladimir",
+        "Olshanski, Grigori"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0304010",
+      "dcterms:abstract": "Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ. As n →∞, the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω(Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpublished work notes, 1999.",
+      "dcterms:source": "library/arxiv-math-0304010v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0304010v1"
+    }
+  ]
+}

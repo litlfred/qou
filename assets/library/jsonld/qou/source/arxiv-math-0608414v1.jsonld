@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0608414v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
+  "contains": [
+    "library/arxiv-math-0608414v1/sections/sec-front-matter",
+    "library/arxiv-math-0608414v1/sections/sec-000",
+    "library/arxiv-math-0608414v1/sections/sec-001",
+    "library/arxiv-math-0608414v1/sections/sec-002",
+    "library/arxiv-math-0608414v1/sections/sec-003",
+    "library/arxiv-math-0608414v1/sections/sec-004",
+    "library/arxiv-math-0608414v1/sections/sec-005",
+    "library/arxiv-math-0608414v1/sections/sec-006",
+    "library/arxiv-math-0608414v1/sections/sec-007",
+    "library/arxiv-math-0608414v1/sections/sec-008",
+    "library/arxiv-math-0608414v1/sections/sec-009",
+    "library/arxiv-math-0608414v1/sections/sec-010",
+    "library/arxiv-math-0608414v1/sections/sec-011",
+    "library/arxiv-math-0608414v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations — For analytic nonlinear systems of ordinary\n\n**Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations**\n\n47 pp, 14 sections.\n\n**Abstract.** For analytic nonlinear systems of ordinary diﬀerential equations, under some non-degeneracy and integrability conditions we prove that the formal exponential series solutions (trans-series) at an irregular singularity of rank one are Borel summable (in a sense similar to that of Ecalle). The functions obtained by re-summation of the trans-series are precisely the solutions of the diﬀerential equation that decay in a speciﬁed sector in the complex plane. We ﬁnd the dependence of the correspondence between the solu- tions of the diﬀerential equation and trans-series as the ray in the complex plane changes (local Stokes phenomenon). We study, in addition, the general solution in L1 loc of the convo- lution equations corresponding, by inverse Laplace transform, to the given system of ODE’s, and its analytic properties.\n\n**Outline.** Front matter; Proofs and further results; Outline of the proofs of the main results; The convolution equation away from Stokes rays; Behavior of Y0(p) near p=1.; The solutions of (1.25) on [0,1+]; The solutions of (1.25) on [0,); Correspondence with formal solutions; Analytic structure and averaging; Acknowledgments; Appendix; Example of non-typical behavior; AC(f*g) versus AC(f)*AC(g); Useful formulas",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0608414&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0608414v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0608414v1.pdf",
+    "source_sha256": "bd9a8d48a6d66945700c364ea8464629111206967f5779711b5ba055d4b62692",
+    "pages": 47,
+    "arxiv": {
+      "id": "math/0608414",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "16 Aug 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

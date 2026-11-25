@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2007.15570v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A quantum Monte Carlo based approach to intranuclear cascades",
+      "dcterms:creator": [
+        "a, Joshua Isaacson",
+        "a, William I. Jay",
+        "b, Alessandro Lovato",
+        "c",
+        "a, Pedro A. N. Machado",
+        "a, Noemi Rocco",
+        "b"
+      ],
+      "dcterms:issued": "D:20200731",
+      "dcterms:identifier": "https://arxiv.org/abs/2007.15570",
+      "dcterms:source": "library/arxiv-2007.15570v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2007.15570v1"
+    }
+  ]
+}

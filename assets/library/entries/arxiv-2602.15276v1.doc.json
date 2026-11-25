@@ -1,0 +1,1912 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2602.15276v1",
+  "title": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Compact Q-balls and Q-shells within a CPN Skyrme-Faddeev type model",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-compact-q-balls-and-q-shells-within-a-cpn-skyrme"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The extended Skyrme-Faddeev model with potential",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-extended-skyrme-faddeev-model-with-potential"
+    },
+    {
+      "level": 3,
+      "title": "The Lagrangian and Euler-Lagrange equations",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-lagrangian-and-euler-lagrange-equations"
+    },
+    {
+      "level": 3,
+      "title": "Radial reduction",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-radial-reduction"
+    },
+    {
+      "level": 3,
+      "title": "Energy density",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-energy-density"
+    },
+    {
+      "level": 2,
+      "title": "Noether currents",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-noether-currents"
+    },
+    {
+      "level": 2,
+      "title": "Compactons",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-compactons"
+    },
+    {
+      "level": 3,
+      "title": "Expansion at the compacton boundary",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-expansion-at-the-compacton-boundary"
+    },
+    {
+      "level": 3,
+      "title": "Expansion at the center",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-expansion-at-the-center"
+    },
+    {
+      "level": 4,
+      "title": "Q-ball case: N=1, (l=0)",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-q-ball-case-n1-l0"
+    },
+    {
+      "level": 4,
+      "title": "Q-ball case: N=3, (l=1)",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-q-ball-case-n3-l1"
+    },
+    {
+      "level": 4,
+      "title": "Q-shell case: N=5,7,9,…, (l=2,3,4,…)",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-q-shell-case-n579-l234"
+    },
+    {
+      "level": 2,
+      "title": "Numerical solutions",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-numerical-solutions"
+    },
+    {
+      "level": 3,
+      "title": "Shooting method",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-shooting-method"
+    },
+    {
+      "level": 3,
+      "title": "CP1 Q-balls",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-cp1-q-balls"
+    },
+    {
+      "level": 3,
+      "title": "CP3 Q-balls",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-cp3-q-balls"
+    },
+    {
+      "level": 3,
+      "title": "Q-shells",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-q-shells"
+    },
+    {
+      "level": 3,
+      "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-energy-noether-charge-and-radius-of-the-compacto"
+    },
+    {
+      "level": 2,
+      "title": "Summary and remarks",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-summary-and-remarks"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgmets",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-acknowledgmets"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-compact-q-balls-and-q-shells-within-a-cpn-skyrme",
+      "number": null,
+      "title": "Compact Q-balls and Q-shells within a CPN Skyrme-Faddeev type model",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quartic terms",
+          "heading": false
+        },
+        {
+          "term": "ısica",
+          "heading": false
+        },
+        {
+          "term": "universidade",
+          "heading": false
+        },
+        {
+          "term": "brazil",
+          "heading": false
+        },
+        {
+          "term": "derivative terms",
+          "heading": false
+        },
+        {
+          "term": "compact",
+          "heading": true
+        },
+        {
+          "term": "japan",
+          "heading": false
+        }
+      ],
+      "extract": "E. L. Cola¸co,1, ∗P. Klimas,1, † L. R. Livramento,2, 3, ‡ N. Sawado,4, § and S. Yanai5, ¶ 1Departamento de F´ısica, Universidade Federal de Santa Catarina, Campus Trindade, 88040-900, Florian´opolis-SC, Brazil 2Instituto de F´ısica de S˜ao Carlos, Universidade de S˜ao Paulo, 13560-970, S˜ao Carlos-SP, Brazil 3Institute of Theoretical Physics, Jagiellonian University, Lojasiewicza 11, Krak´ow, Poland 4Department of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-topological solutions",
+          "heading": false
+        },
+        {
+          "term": "finite-energy solutions",
+          "heading": false
+        },
+        {
+          "term": "vortex solutions",
+          "heading": false
+        },
+        {
+          "term": "esf model",
+          "heading": false
+        },
+        {
+          "term": "compact q-balls",
+          "heading": false
+        },
+        {
+          "term": "arodz",
+          "heading": false
+        },
+        {
+          "term": "derrick theorem",
+          "heading": false
+        },
+        {
+          "term": "model incorporating",
+          "heading": false
+        }
+      ],
+      "extract": "Scalar fields play a crucial role in theoretical physics. They are extensively employed for modeling physical matter across a diverse range of contexts, from fundamental fields such as the Higgs field [@PhysRevLett.13.508] to effective descriptions like the order parameter field in the Landau-Ginzburg model [@Ginzburg:1950sr]. Depending on the inherent complexity of the physical phenomenon under investigation,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-extended-skyrme-faddeev-model-with-potential",
+      "number": null,
+      "title": "The extended Skyrme-Faddeev model with potential",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "THE EXTENDED SKYRME-FADDEEV MODEL WITH POTENTIAL",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-the-lagrangian-and-euler-lagrange-equations",
+      "number": null,
+      "title": "The Lagrangian and Euler-Lagrange equations",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensionless lagrangian",
+          "heading": false
+        },
+        {
+          "term": "cdot dagger",
+          "heading": false
+        },
+        {
+          "term": "frac dagger",
+          "heading": false
+        },
+        {
+          "term": "sqrt dagger",
+          "heading": false
+        },
+        {
+          "term": "label lagr",
+          "heading": false
+        },
+        {
+          "term": "beta partial",
+          "heading": false
+        },
+        {
+          "term": "widetilde cal",
+          "heading": false
+        },
+        {
+          "term": "partial tilde",
+          "heading": false
+        }
+      ],
+      "extract": "The Extended Skyrme-Faddeev (ESF) model augmented by a potential, defined on a $CP^N$ target space, is conveniently formulated using the principal variable $X$ [@Ferreira:1998zx]. The Lagrangian density is expressed by derivative terms containing $L_{\\mu}\\equiv X^{-1}\\partial_{\\mu}X$, as well as a non-derivative potential term $V(X)$. We examine a model whose Lagrangian density, $\\mathcal{L}$, comprises five terms:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-radial-reduction",
+      "number": null,
+      "title": "Radial reduction",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber widetilde",
+          "heading": false
+        },
+        {
+          "term": "radial",
+          "heading": true
+        },
+        {
+          "term": "nonumber tau",
+          "heading": false
+        },
+        {
+          "term": "radial profile",
+          "heading": false
+        },
+        {
+          "term": "tau theta",
+          "heading": false
+        },
+        {
+          "term": "frac omega",
+          "heading": false
+        },
+        {
+          "term": "sin theta",
+          "heading": false
+        },
+        {
+          "term": "nonumber end",
+          "heading": false
+        }
+      ],
+      "extract": "Following the methodology established in [@Klimas:2017eft], we consider an odd number of scalar fields, specifically $N=2l+1$. For convenience, the field index $i=1, 2, \\ldots, N$ is replaced by the corresponding angular momentum index $m=-l, \\ldots, l$. We introduce spherical coordinates $(r, \\theta, \\phi)$ and apply the following ansatz for the field components $u_m(t, r, \\theta, \\phi)$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-energy-density",
+      "number": null,
+      "title": "Energy density",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy density",
+          "heading": true
+        },
+        {
+          "term": "cal widetilde",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "aligned widetilde",
+          "heading": false
+        },
+        {
+          "term": "cal big",
+          "heading": false
+        },
+        {
+          "term": "delta widetilde",
+          "heading": false
+        },
+        {
+          "term": "cal kappa",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian density",
+          "heading": false
+        }
+      ],
+      "extract": "A crucial prerequisite for constructing physically meaningful solutions is ensuring the positive definiteness of the energy density. Given that the Lagrangian for this model comprises multiple terms connected by various coupling constants, it is essential to guarantee a non-negative energy density across all configurations before proceeding to the derivation of solutions for specific parameter values. Consequently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-noether-currents",
+      "number": null,
+      "title": "Noether currents",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noether",
+          "heading": true
+        },
+        {
+          "term": "noether charges",
+          "heading": false
+        },
+        {
+          "term": "conserved noether",
+          "heading": false
+        },
+        {
+          "term": "widetilde phi",
+          "heading": false
+        },
+        {
+          "term": "widetilde alpha",
+          "heading": false
+        },
+        {
+          "term": "smaller q-balls",
+          "heading": false
+        },
+        {
+          "term": "compact q-balls",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec3 label=\"sec3\"} A primary concern when studying Q-balls is to ensure the stability of their solutions. Given the non-topological nature of Q-balls, their stability must be generated by a mechanism other than topology. Consequently, this section focuses on the model's global symmetry, as it is responsible for the existence of the conserved Noether charges that are crucial for determining stability. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-compactons",
+      "number": null,
+      "title": "Compactons",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "potencjal",
+          "heading": false
+        },
+        {
+          "term": "vacuum state",
+          "heading": false
+        },
+        {
+          "term": "odd values",
+          "heading": false
+        },
+        {
+          "term": "text out",
+          "heading": false
+        },
+        {
+          "term": "q-shells",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec4 label=\"sec4\"} In [@Klimas:2017eft], the authors demonstrated that the $\\mathbb{C}P^N$ model, utilizing the potential defined in Equation [\\[potencjal\\]](#potencjal){reference-type=\"eqref\" reference=\"potencjal\"}, yields compact solutions for odd values of $N$. This implies that the field solutions possess a finite spatial size, characterized by a specific outer radius, $R_{\\text{out}}$. At this radius, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-expansion-at-the-compacton-boundary",
+      "number": null,
+      "title": "Expansion at the compacton boundary",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compacton",
+          "heading": true
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "quartic terms",
+          "heading": false
+        },
+        {
+          "term": "text out",
+          "heading": false
+        },
+        {
+          "term": "radial function",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        }
+      ],
+      "extract": "In the vicinity of the external compacton radius, $R_{\\text{out}}$, the field values approach the vacuum state of zero. Consequently, the behavior of the radial function is governed by the quadratic terms in the Lagrangian. It is therefore anticipated that the leading-order behavior of the compacton's radial function will be quadratic, mirroring the characteristics observed in the previously examined ${C}P^N$ model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-expansion-at-the-center",
+      "number": null,
+      "title": "Expansion at the center",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "center",
+          "heading": true
+        },
+        {
+          "term": "radial function",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "Expansion at the center To obtain a solution for the radial function f(r), we assume it can be expressed as a power series expansion around the center, r = 0: f(r) = ∞ X k=0 akrk. (IV.4) By substituting this series into the field equation (II.23) and expanding the equation into a power series in r, we can solve for the coefficients, ak. This is achieved by setting each coefficient of the resulting series to zero,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-q-ball-case-n1-l0",
+      "number": null,
+      "title": "Q-ball case: N=1, (l=0)",
+      "level": 4,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-ball",
+          "heading": true
+        },
+        {
+          "term": "radial equation",
+          "heading": false
+        },
+        {
+          "term": "numerical solution",
+          "heading": false
+        },
+        {
+          "term": "quartic terms",
+          "heading": false
+        },
+        {
+          "term": "coefficient",
+          "heading": false
+        },
+        {
+          "term": "series expansion",
+          "heading": false
+        },
+        {
+          "term": "constraint",
+          "heading": false
+        }
+      ],
+      "extract": "Unlike the CP N model, which lacks quartic terms, the ESF model yields more than one solution for the coefficients ak. Upon substituting the power series expansion from Equation (IV.4) into the radial equation (II.14) and expanding the resulting expression in powers of r, we obtain: −l(l + 1) r2 a0 −l(l + 1) −2 r a1 + O(1) = 0. (IV.5) The singular terms, which are proportional to r−2 and r−1, must be eliminated to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-q-ball-case-n3-l1",
+      "number": null,
+      "title": "Q-ball case: N=3, (l=1)",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-balls",
+          "heading": false
+        },
+        {
+          "term": "coefficient",
+          "heading": false
+        },
+        {
+          "term": "forthcoming",
+          "heading": false
+        }
+      ],
+      "extract": "For Q-balls with l = 1 (corresponding to N = 3), the coefficient a0 must be zero, while a1 is a free constant. The coefficient a2 is determined by the following expression: a2 = eµ2 32 \u0010 1 + κ (2 −5βe2 −6γe2) a2 1 \u0011 (IV.8) The explicit dependence of a2 on a1 arises exclusively from the quartic terms present in the model’s Lagrangian. A detailed analysis of these specific types of solutions is presented in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-q-shell-case-n579-l234",
+      "number": null,
+      "title": "Q-shell case: N=5,7,9,…, (l=2,3,4,…)",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rin",
+          "heading": false
+        },
+        {
+          "term": "q-shell",
+          "heading": true
+        },
+        {
+          "term": "radial equation",
+          "heading": false
+        },
+        {
+          "term": "ω2a",
+          "heading": false
+        },
+        {
+          "term": "rout",
+          "heading": false
+        },
+        {
+          "term": "series expansion",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "Assuming sgn(f) = +1 and substituting the power series expansion (IV.4) with the boundary conditions a0 = a1 = 0 (consistent with N ≥3 solutions) into the radial equation (II.14), we obtain the following expansion around r = 0: − \u0010 a2 \u0000l2 + l −6 \u0001 + ˜µ2 8 \u0011 + (l −3)(l + 4)a3r + \u0010 ω2a2 + (l −4)(l + 5)a4 \u0011 r2+ + \u0010 ω2a3 + (l −5)(l + 6)a5 \u0011 r3 + O(r4) = 0. To satisfy this equation, every coefficient must vanish. When l",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-numerical-solutions",
+      "number": null,
+      "title": "Numerical solutions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solutions",
+          "heading": true
+        },
+        {
+          "term": "showcase",
+          "heading": false
+        },
+        {
+          "term": "q-shells",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we present several numerical solutions for Q-balls and Q-shells within the ESF model. The parameter space for the coupling constants is extensive, and a detailed investigation of all possible cases would be exceptionally time-consuming and exceeds the primary scope of this paper. Our objective here is to showcase some novel solutions that arise specifically due to the presence of quartic terms. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-shooting-method",
+      "number": null,
+      "title": "Shooting method",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shooting",
+          "heading": true
+        },
+        {
+          "term": "radial function",
+          "heading": false
+        },
+        {
+          "term": "rout",
+          "heading": false
+        },
+        {
+          "term": "rin",
+          "heading": false
+        }
+      ],
+      "extract": "Shooting method To determine the radial profile function, we numerically integrate the radial equation (II.14), starting from either the center (r = 0) or the inner radius (r = Rin). The resulting numerical solution is dependent on a single free parameter: a0 for l = 0, a1 for l = 1, or Rin for l ≥2. By selecting an appropriate value for this parameter, the radial function can simultaneously satisfy the external",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-cp1-q-balls",
+      "number": null,
+      "title": "CP1 Q-balls",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "18",
+      "labelEnd": "22",
+      "words": 2078,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-balls",
+          "heading": true
+        },
+        {
+          "term": "top-right panel",
+          "heading": false
+        },
+        {
+          "term": "bottom-left panel",
+          "heading": false
+        },
+        {
+          "term": "bottom-right panel",
+          "heading": false
+        },
+        {
+          "term": "minimum permissible",
+          "heading": false
+        },
+        {
+          "term": "bottom panel",
+          "heading": false
+        },
+        {
+          "term": "compact q-balls",
+          "heading": false
+        },
+        {
+          "term": "vertical asymptote",
+          "heading": false
+        }
+      ],
+      "extract": "When the leading behavior of the radial function f(r) in the vicinity of the origin (r = 0) is described by a parabolic function, f(r) = a0 +a2r2 +. . ., we can search for compact Q-balls similar to the established CP 1 Q-balls discussed in [36]. This approach is particularly relevant as the model approaches the limit 1/e2 →0, β →0, and γ →0. However, being interested in a wider range of coupling constants, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-cp3-q-balls",
+      "number": null,
+      "title": "CP3 Q-balls",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-balls",
+          "heading": true
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "quartic terms",
+          "heading": false
+        },
+        {
+          "term": "ω4f",
+          "heading": false
+        },
+        {
+          "term": "coupling constants",
+          "heading": false
+        },
+        {
+          "term": "term proportional",
+          "heading": false
+        },
+        {
+          "term": "discontinuity",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we present some compact Q-ball solutions for the CP 3 case (corresponding to l = 1 or N = 3). The radial solution for these Q-balls exhibits a dominant linear behavior at the center, specifically f(r) = a1r + a2r2 + . . ., where the coefficient a2 is determined by Equation (IV.8). The Q-ball solution presented in FIG. 6(a) is qualitatively similar to those found in the CP N model with a sharp",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-q-shells",
+      "number": null,
+      "title": "Q-shells",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-shells",
+          "heading": true
+        },
+        {
+          "term": "q-shell solutions",
+          "heading": false
+        },
+        {
+          "term": "inner radius",
+          "heading": false
+        },
+        {
+          "term": "radius text",
+          "heading": false
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "r-r",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        },
+        {
+          "term": "quartic terms",
+          "heading": false
+        }
+      ],
+      "extract": "The Q-shell solutions are characterized by an internal vacuum region and possess an expansion around the inner radius, $R_{\\text{in}}$, given by: $$f(r)=b_2(r-R_{\\rm in})^2-b_3(r-R_{\\rm in})^3+b_4(r-R_{\\rm in})^4+\\ldots$$ where the coefficients $b_2$, $b_3$, and $b_4$ are determined by Equations [\\[eq:b2\\]](#eq:b2){reference-type=\"eqref\" reference=\"eq:b2\"}-[\\[eq:b4\\]](#eq:b4){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-energy-noether-charge-and-radius-of-the-compacto",
+      "number": null,
+      "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 39,
+      "labelStart": "25",
+      "labelEnd": "39",
+      "words": 4351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noether charge",
+          "heading": true
+        },
+        {
+          "term": "compacton width",
+          "heading": false
+        },
+        {
+          "term": "omega regime",
+          "heading": false
+        },
+        {
+          "term": "kappa increases",
+          "heading": false
+        },
+        {
+          "term": "threshold omega",
+          "heading": false
+        },
+        {
+          "term": "leq omega",
+          "heading": false
+        },
+        {
+          "term": "radius",
+          "heading": true
+        },
+        {
+          "term": "delta omega",
+          "heading": false
+        }
+      ],
+      "extract": "The solutions of the ordinary differential equation [\\[eq:radial\\]](#eq:radial){reference-type=\"eqref\" reference=\"eq:radial\"} were obtained using a shooting method combined with a fourth-order explicit Runge--Kutta method with step size $\\Delta r = 10^{-4}$. The radial coordinate $r$ was restricted to the interval $[R_{\\text{in}}, R_{\\text{out}}]$, with compacton width $R \\equiv R_{\\text{out}} - R_{\\text{in}} \\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-summary-and-remarks",
+      "number": null,
+      "title": "Summary and remarks",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "density profiles",
+          "heading": false
+        },
+        {
+          "term": "esf model",
+          "heading": false
+        },
+        {
+          "term": "compact solutions",
+          "heading": false
+        },
+        {
+          "term": "quartic terms",
+          "heading": false
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "q-balls",
+          "heading": false
+        },
+        {
+          "term": "q-shells",
+          "heading": false
+        },
+        {
+          "term": "extra peak",
+          "heading": false
+        }
+      ],
+      "extract": "This paper successfully generalizes the compact Q-ball type solutions for scalar field models possessing a ${C}P^N$ target space. Specifically, we have investigated the extended Skyrme-Faddeev (ESF) model, which augments the traditional Skyrme-Faddeev framework with the inclusion of a potential and quartic interaction terms. The main objective of this study was to analyze the influence of these quartic terms on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-acknowledgmets",
+      "number": null,
+      "title": "Acknowledgmets",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 44,
+      "labelStart": "40",
+      "labelEnd": "44",
+      "words": 1490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω2f",
+          "heading": false
+        },
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "signum-gordon model",
+          "heading": false
+        },
+        {
+          "term": "extended skyrme-faddeev",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "compact q-balls",
+          "heading": false
+        },
+        {
+          "term": "arodz",
+          "heading": false
+        },
+        {
+          "term": "klimas",
+          "heading": false
+        }
+      ],
+      "extract": "This study was financed in part by the Coordena¸c˜ao de Aperfei¸coamento de Pessoal de N´ıvel Superior – Brasil (CAPES) – Finance Code 001. N.S. was supported in part by JSPS KAKENHI Grant No. JP23K02794. L.R.L. is supported by the grant 2025/20538-2, S˜ao Paulo Research Foundation (FAPESP). Appendix A Many simplifications follow directly from the addition theorem for spherical harmonics: Pl(cos γ) = 4π 2l + 1 l X",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "compacton solutions",
+      "heading": true
+    },
+    {
+      "term": "quartic terms",
+      "heading": true
+    },
+    {
+      "term": "compact q-balls",
+      "heading": true
+    },
+    {
+      "term": "radial equation",
+      "heading": false
+    },
+    {
+      "term": "additional quartic",
+      "heading": false
+    },
+    {
+      "term": "quartic interactions",
+      "heading": false
+    },
+    {
+      "term": "smaller q-balls",
+      "heading": false
+    },
+    {
+      "term": "radial profile",
+      "heading": false
+    },
+    {
+      "term": "energy density",
+      "heading": true
+    },
+    {
+      "term": "q-shell solutions",
+      "heading": false
+    },
+    {
+      "term": "non-topological solutions",
+      "heading": false
+    },
+    {
+      "term": "numerical solutions",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The coupling constant space delimited by the conditions βe2 + 2γe2 ≤0, 2βe2 + 2γe2 −1 ≥0, and βe2 −4 ≥0, ensuring a non-negative contribution from the quartic terms",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Radial solutions for the CP 1 model are characterized by the value of a0. The solutions fall into three categories: (a) those with a2 > 0, (b) those with a2 < 0 and (c) the compacton case, where the radial function and its derivative simultaneously vanish at the external radius, i.e., f(Rout) = 0 =",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The dependence of the coefficient a2 on the parameter a0 is shown for increasing values of ω for the",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The sign of the coefficient a2 is shown as a function of the parameters a0 and ω for the CP 1 case",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "CP 1 Q-balls. (a) Radial profiles and energy density for a solution with a minimal contribution from quartic terms. (b) Radial profiles and energy density for a solution with a significant contribution from quartic terms, demonstrating a shallow local minimum at the origin. (c) The top panel shows t",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "CP 3 Q-balls satisfying the constraint βe2 + 2γe2 = 0. The discontinuity of the second derivative, f ′′(R) precisely matches the discontinuity caused by the signum function in the field equation",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "CP 3 Q-balls for βe2 + 2γe2̸ = 0",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "CP 5 Q-shells",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "CP 11 Q-shells",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The values of n, nS, nω≥20 and nω≥50 that minimizes eP for Q-balls (l = 0, 1) and Q-shells",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The effective CP 1 exponent neff as a function of 1/ω for β e2 = −2 γe2 = 0.1, 5, 40, and as a",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The effective exponent neff as a function of 1/ω for β e2 = −2 γe2 = 1 and l = 0, 1, 2, 5, for some values of κ, restricted to ω ≤50 and Q(m)",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "CP 1 Q-ball fractional energy power E1/n and f(0) as functions of Q(m)",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "CP 1 Q-ball radius R versus the Noether charge Q(m)",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "CP 3 Q-ball fractional energy power E1/n and f ′(0) = df/dr(0) as functions of Q(m)",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "CP 3 Q-ball radius R versus the Noether charge Q(m)",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "CP 5 Q-shell fractional energy power E1/n and the inner radius Rin as functions of Q(m)",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "CP 5 Q-shell radius R ≡Rout −Rin versus the Noether charge Q(m)",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "CP 11 Q-shell fractional energy power E1/n and the inner radius Rin as functions of Q(m)",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "CP 11 Q-shell radius R ≡Rout −Rin versus the Noether charge Q(m)",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-2",
+      "file": "images/img-p018-2.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-3",
+      "file": "images/img-p018-3.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-2",
+      "file": "images/img-p022-2.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-3",
+      "file": "images/img-p022-3.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-2",
+      "file": "images/img-p023-2.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-3",
+      "file": "images/img-p023-3.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-4",
+      "file": "images/img-p023-4.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-5",
+      "file": "images/img-p023-5.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-6",
+      "file": "images/img-p023-6.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-2",
+      "file": "images/img-p024-2.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-3",
+      "file": "images/img-p024-3.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-2",
+      "file": "images/img-p025-2.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-3",
+      "file": "images/img-p025-3.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 21
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2602.15276v1"
+  }
+}

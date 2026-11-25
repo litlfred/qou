@@ -1,0 +1,818 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2205.06874v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "State sum models with defects\nbased on spherical fusion categories\nCatherine Meusburger\nDepartment Mathematik\nFriedrich-Alexander-Universität Erlangen-Nürnberg\nCauerstraße 11, 91058 Erlangen, Germany\nEmail: catherine.meusburger@math.uni-erlangen.de\nMay 13, 2022\nAbstract\nWe define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface,\nline and point defects. Surface defects are oriented embedded 2d PL submanifolds and are labeled with\nbimodule categories over spherical fusion categories with bimodule traces. Line and point defects form\ndirected graphs on these",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "(Theorem 3.1) Evaluations of polygon diagrams are invariant under rotations of the polygon. They satisfy the usual cutting and gluing identities for polygon presentations of oriented surfaces and an additional identity that allows one to cut and glue diagrams for spherical fusion categories in their interior. Triangulation independence With the cutting and gluing identities for polygon diagrams we prove that the state sum of a 3-ball bisected by a defect disc is the evaluation of the polygon diagram obtained by projecting the dual graph of the boundary triangulation on the defect disc. This is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/thm-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "(Theorem 5.16) If two transversal and generic triangulations of a 3-manifold with defect surfaces, defect lines and defect points agree at the boundary, their state sums are equal. This allows one to extend the definition of the state sum to triangulations that are non-generic or non- transversal in the interior of a 3-manifold via generic transversal subdivisions and establishes full triangulation independence for manifolds without boundaries. Examples To illustrate the formalism and the properties of the state sum we treat a number of examples. We compute the state sum of a defect sphere in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical data",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-categorical-data.md",
+      "narrative": null,
+      "content": "Categorical data",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical fusion categories",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-spherical-fusion-categories.md",
+      "narrative": null,
+      "content": "We work over $\\C$ and follow the conventions of Etingof et al.~in \\cite{EGNO}. \nA {\\bf multitensor category} is a  locally finite, $\\C$-linear abelian rigid monoidal category  $\\mac$ with a tensor product $\\oo:\\mac\\times\\mac\\to \\mac$  that is bilinear on the morphisms.  A {\\bf tensor category} is an  indecomposable multitensor category\n with $\\End_\\mac(e)\\cong \\C$, where $e$ is the tensor unit.\nA {\\bf (multi)fusion category} is a finite semisimple (multi)tensor category.  \n\nFor all categories $\\mac$ we denote by $\\mac^{op}$ the opposite category and for all monoidal categories $\\mac$ by $\\mac^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Bi)module categories, functors and natural transformations",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-bimodule-categories-functors-and-natural-transfo.md",
+      "narrative": null,
+      "content": "In this section, we summarise background on (bi)module categories, (bi)module functors and (bi)module natural transformations from \\cite[Ch.~7]{EGNO}.\n\n\\begin{definition}\\label{def:modulecat}\nLet $\\mac, \\mad$ be multitensor categories with associators  $a:\\oo(\\oo\\times\\id)\\Rightarrow\\oo(\\id\\times\\oo)$ \nand left and right unit constraints  $l: e\\oo \\id\\Rightarrow \\id$,  $r:\\id \\oo e\\Rightarrow \\id $.\n\\begin{compactenum}\n\\item  A {\\bf $\\mac$-(left) module category} is a locally finite $\\C$-linear abelian category $\\mam$ together with\n\\begin{compactitem}\n\\item a functor $\\rhd:\\mac\\times\\mam\\to\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "~is shown in \\cite{G14}. As a functor $\\Omega=\\id_\\mam$, and its coherence isomorphisms are given by the pivots $\\omega:**\\Rightarrow \\id$ as $s_{c,m}=\\omega_c\\rhd 1_m: c^{**}\\rhd m \\to c\\rhd m$ and $t_{m,d}=1_m\\lhd \\omega^{\\inv}_d: m\\lhd d\\to m\\lhd d^{**}$. The identity $F\\Omega=\\Omega F^{\\#\\#}$ follows directly from the definition of $F^\\#$ in Example \\ref{ex:modulefuncs}, 7.~and formula \\eqref{eq:bimodcomp} for the coherence data of a composite bimodule functor.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "~is essentially \\cite[Prop.~2.4.9]{DSS} for module categories over pivotal fusion categories. It follows by combining \\cite[Prop.~2.4.9]{DSS} with 1. The $(\\mad,\\mac)$-bimodule structure on $\\Fun_\\mac(\\mam,\\mac)$ is given by $(d\\rhd F)(m)=F(m\\lhd d)$ and $(F\\lhd c)(m)=F(m)\\oo c$ and the one on $\\Fun_{\\mad^{rev}}(\\mam,\\mad)$ by $(d\\rhd F)(m)=d\\oo F(m)$ and $(F\\lhd c)(m)=F(c\\rhd m)$ for all $c\\in\\Ob\\mac$, $m\\in\\Ob\\mam$ and $d\\in\\Ob\\mad$. The equivalences are given by the left adjoints of the functors $-\\rhd m: \\mac\\to\\mam$ and $m\\lhd-:\\mad\\to\\mam$ from Example \\ref{ex:modulefuncs}, 5.~and 6. \\en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite semisimple (bi)module categories over pivotal fusion categories",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-finite-semisimple-bimodule-categories-over-pivot.md",
+      "narrative": null,
+      "content": "\\label{subsec:semisimple}\nWe focus on {\\em finite semisimple} $(\\mac,\\mad)$-bimodule categories  over {\\em fusion categories} $\\mac$, $\\mad$ and on $(\\mac,\\mad)$-bimodule functors and  natural transformations between them. In this case\nall categories $\\Fun_{(\\mac,\\mad)}(\\mam,\\man)$ are finite $\\C$-linear abelian categories  \\cite[Prop.~7.11.6]{EGNO} and  semisimple, see \\cite[Th.~2.16]{ENO} by Etingof et al. \n\nMoreover, the  2-category  $\\Bimod(\\mac,\\mad)$  of finite semisimple $(\\mac,\\mad)$-bimodule categories $(\\mac,\\mad)$-bimodule functors and $(\\mac,\\mad)$-bimodule natural transformations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bimodule categories with bimodule traces",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-bimodule-categories-with-bimodule-traces.md",
+      "narrative": null,
+      "content": "(Bi)module traces on (bi)module categories over fusion categories were first  introduced by Schaumann in \\cite{G12} and investigated further in  \\cite{G14}.\nWe summarise (bi)module traces for finite semisimple (bi)module categories over pivotal fusion categories from \\cite{G12,G14}. \nTo keep notation simple, we focus on left module categories and identify $(\\mac,\\mad)$-bimodule categories with $\\mac\\boxtimes\\mad^{rev}$-left module categories.\n\n\n\\begin{definition}\\label{def:moduletrace} \\cite[Def.~3.7]{G12}\n\nLet $\\mac$ be a pivotal multifusion category and $\\mam$  a finite semisimple $\\mac$-mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatic calculus",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-diagrammatic-calculus.md",
+      "narrative": null,
+      "content": "Diagrammatic calculus",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams for spherical fusion categories",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-diagrams-for-spherical-fusion-categories.md",
+      "narrative": null,
+      "content": "We use the usual graphical calculus for monoidal categories, suppressing the tensor unit and  coherence data. Morphisms in diagrams are composed from top to bottom and tensor products  from the right to the left.  \n\nWe also use the usual diagrammatic notation for the duals. If the categories are pivotal, we draw oriented lines for the objects, where a line that is directed downwards and labeled $x^*$ is replaced by a line that is directed upwards and labeled $x$. Lines without arrows are assumed to be  oriented downwards. The diagrams for the (co)evaluations from \\eqref{eq:coevl} and \\eqref{eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams for (bi)module categories, functors and natural transformations",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-diagrams-for-bimodule-categories-functors-and-na.md",
+      "narrative": null,
+      "content": "In the following, we  use  diagrammatic calculus for 2-categories and apply it  to the 2-categories Cat of (small) categories, functors and natural transformations and to the 2-categories\n$\\Bimod^\\theta(\\mac,\\mad)$ and $\\mathrm{Mod}^\\theta(\\mac)$ from Theorem \\ref{th:pivot}. \nThe diagrammatic calculus goes back to Joyal and Street \\cite{JS}  in the smooth setting, and was also studied by Barrett et al.~\\cite{BMS} in the PL setting. We summarise the description from \\cite{BMS}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams for 2-categories",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-diagrams-for-2-categories.md",
+      "narrative": null,
+      "content": "A {\\bf 2-category diagram} for a 2-category $\\mac$  is a direct generalisation of a diagram for a monoidal category. It is a PL stratification $\\emptyset\\subset X^0\\subset X^1\\subset X^2=[0,1]^2$ of  the unit square. Elements of $X^0$ are called {\\bf vertices}, connected components of $X^1\\setminus X^0$ {\\bf lines} and connected components of $X^2\\setminus X^1$ {\\bf regions} of the diagram.  Lines may end at the top and bottom of the square only and all vertices are  in the interior. A diagram is called  {\\bf progressive}, if its horizontal projection is regular, i.e.~its restriction to each l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams for pivotal 2-categories",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-diagrams-for-pivotal-2-categories.md",
+      "narrative": null,
+      "content": "If the 2-category under consideration \n is a pivotal 2-category in the sense \\cite[Def.~A.12]{G14} or, more strictly, a planar 2-category in the sense of \\cite[Def.~3.2.1]{BMS}, we use the diagrams for planar 2-categories introduced in \\cite[Def.~3.5]{BMS}. The main examples are  $\\mathrm{Mod}^\\theta(\\mac)$ and $\\Bimod^\\theta(\\mac,\\mad)$ from Theorem \\ref{th:pivot}. \n \n The  diagrams for pivotal 2-categories are essentially the diagrams  for a pivotal monoidal category.\nThe only difference is that regions of the diagram are labeled with objects, lines with 1-morphisms and vertices with 2-morph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mixed diagrams",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-mixed-diagrams.md",
+      "narrative": null,
+      "content": "\\label{subsec:bimod}\n\n\n\nThe diagrams for pivotal 2-categories in the previous section can be used to describe morphisms in the pivotal 2-categories\n$\\Bimod^\\theta(\\mac,\\mad)$ and $\\mathrm{Mod}^\\theta(\\mac)$ from Theorem \\ref{th:pivot}.  In this case, regions are labeled with (bi)module categories with (bi)module traces, lines with (bi)module functors and vertices with (bi)module natural transformations. The duals are given by adjoint functors and the pivot is the natural isomorphism between a bimodule functor and its double adjoint. \n\nTo describe the interaction of the data in $\\Bimod^\\theta(\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polygon diagrams",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-polygon-diagrams.md",
+      "narrative": null,
+      "content": "Polygon diagrams",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action on category diagrams",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-action-on-category-diagrams.md",
+      "narrative": null,
+      "content": "We also use the diagrammatic calculus to describe   evaluation functors $\\mathrm{ev}: \\Fun(\\mam,\\man)\\times \\mam\\to \\man$ that send a pair $(F,m)$ of a functor $F:\\mam\\to\\man$ and an object $m\\in\\Ob\\mam$ to the object $F(m)$ and a pair $(\\nu,\\alpha)$ of a natural transformation $\\nu: F\\Rightarrow G$ and a morphism $\\alpha:m\\to m'$ to the morphism\n$\\nu_{m'}\\circ F(\\alpha)=G(\\alpha)\\circ \\nu_m: F(m)\\to G(m')$. \n\nFor this, we describe objects  in $\\mam$ by a thick  vertical line and morphisms between them by  vertices on this line. \nComposition of morphisms is from the top to the bottom, and iden",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/def-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "def-sec-013-01.md",
+      "narrative": null,
+      "content": "Let D be a 2-category diagram for Cat. A bordered diagram D′ for D is a diagram obtained by labeling boundary segments and endpoints of lines at the boundary of D as follows: • each boundary segment with an object of the adjacent category in D, • an endpoint of lines labeled with functors F1, ..., Fn, from right to left, between a segment labeled by a ∈ObA on the right and a segment labeled by b ∈ObB on the left with a morphism α : b →Fn · · · F1(a) if it is on the top and with a morphism α : Fn · · · F1(a) →b if it is on the bottom of D. b a F3 F2 F1 A B α α : b →F3F2F1(a) b a F3 F2 F1 A B α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/def-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "def-sec-013-02.md",
+      "narrative": null,
+      "content": "Let D be a 2-category diagram that represents a natural transformation ν : F ⇒G and D′ a bordered diagram for D labeled with objects n ∈ObN on the left and m ∈ObM on the right. The evaluation of D′ is the morphism ev(D′) = b ◦νm ◦t : n →n, where t : n →F(m) and b : G(m) →n are morphisms assigned to the top and bottom of D′ as follows: • take the image of each morphism at the top or bottom of D under the composite of all functors labeling endpoints of lines to its left, • compose the resulting morphisms from the left to the right at the top and from the right to the left at the bottom of D. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/ex-sec-013-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "ex-sec-013-03.md",
+      "narrative": null,
+      "content": "A bordered diagram D′ for the diagram D in (30) and its evaluation are given by m p p′ n q F G H K L ρ σ M P Q N α β γ δ ϵ n α ρ F p m β σ K δ H γ L p′ ϵ G q n (47) with morphisms α : n →F(p), β : p →K(m), γ : L(m) →p′, δ : H(p′) →q and ϵ : G(q) →n. Its evaluation is the morphism b ◦νm ◦t : n →n, where ν = (ρL) ◦(Fσ) : FK ⇒GHL is the natural transformation represented by D, t = F(β) ◦α : n →FK(m) and b = ϵ ◦(Gδ) ◦(GHγ) : GHL(m) →n. By (45), this coincides with the morphism represented by the diagram on the right, which reads n α−→F(p) F (β) −−−→FK(m) F (σm) −−−−→FL(m) γ−→F(p′) ρp′ −−→GH(p′) G(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bordered diagrams",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-bordered-diagrams.md",
+      "narrative": null,
+      "content": "Bordered diagrams\nUsing the diagrammatic calculus from the previous sections, we define a generalisation of 2-category diagrams\nfor Cat, in which boundary segments and endpoints of lines at the boundary are also labeled with categorical\ndata. We also allow multiple lines to end in a common point on a boundary.\n18\nDefinition 2.8. Let D be a 2-category diagram for Cat. A bordered diagram D′ for D is a diagram\nobtained by labeling boundary segments and endpoints of lines at the boundary of D as follows:\n• each boundary segment with an object of the adjacent category in D,\n• an endpoint of lines l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/cor-sec-014-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "cor-sec-014-05.md",
+      "narrative": null,
+      "content": "For any polygon diagram D one has ev(D) = ev(D*).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/def-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "def-sec-014-01.md",
+      "narrative": null,
+      "content": "Let D be a bordered diagram labeled with data from Bimod?(C, D). The cyclic evaluation of D is the trace of its evaluation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/def-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "def-sec-014-03.md",
+      "narrative": null,
+      "content": "1. A polygon diagram for Bimodθ(C, D) is a cyclic equivalence class of bordered diagrams, represented by a polygon with a diagram for Bimodθ(C, D) in the interior such that all diagram lines are oriented and end in internal vertices or at the sides of the polygon. 2. The evaluation ev(D) of a polygon diagram D is the cyclic evaluation of the associated equivalence class of bordered diagrams. It is clear from Lemma 2.12 that the labeling and the evaluation of a polygon diagram is invariant under rotations of the polygon. Also, one may add additional sides without line endpoints and move endpoin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/def-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "def-sec-014-04.md",
+      "narrative": null,
+      "content": "Let D be a polygon diagram labeled by Bimod’ (C, D). The opposite polygon diagram D* is the polygon diagram by Bimod’(D,C) obtained as follows:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "Let C,D be spherical fusion categories and D, D’ bordered diagrams for Bimod®(C, D) that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polygon diagrams",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-polygon-diagrams.md",
+      "narrative": null,
+      "content": "Polygon diagrams\nBy definition, the evaluation of a bordered diagram is an endomorphism of the object labeling the left-hand\nside of the diagram. For bordered diagrams that involve data from the pivotal 2-category Bimodθ(C, D) one\ncan take the bimodule trace of this morphism to obtain a complex number.\n19\nDefinition 2.11. Let D be a bordered diagram labeled with data from Bimod?(C, D). The cyclic evaluation\nof D is the trace of its evaluation.\n\nThe cyclic evaluation of a bordered diagram has better invariance properties than the evaluation of a bordered\ndiagram. This is most easily seen by usi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing polygon diagrams",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-015-gluing-polygon-diagrams.md",
+      "narrative": null,
+      "content": "\\label{sec:projincl}\n\nIn this section we describe how polygon diagrams for the pivotal 2-category $\\Bimod^\\theta(\\mac,\\mad)$  can be glued by summing over simple objects and bases of the morphism spaces at their boundary. Taking the product of the evaluations of  two diagrams and performing these summations  yields the evaluation of the glued diagram.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projections and inclusions for simple objects",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-016-projections-and-inclusions-for-simple-objects.md",
+      "narrative": null,
+      "content": "Let $\\mam$ a finite semisimple  $\\C$-linear category, equipped with a trace $\\theta$ in the sense of Definition \\ref{def:moduletrace} and let $I$ be a set of representatives of the isomorphism classes of its simple objects. \nThen  every object $x$ in $\\mam$ can be expressed as a direct sum $x\\cong \\oplus_{m\\in I} m^{\\oplus n_{xm}}$ with multiplicities $n_{xm}=\\dim_\\C \\Hom_\\mam(m,x)\\in\\mathbb N_0$. \nOne can choose bases\n $\\{p^\\alpha_{xm}\\}$ of $\\Hom_\\mathcal M(x,m)$ and  $\\{j^\\alpha_{xm}\\}$ of $\\Hom_\\mam(m,x)$ with $m\\in I$ and $\\alpha\\in\\{1,..., n_{xm}\\}$\nsuch that \n\\begin{align}\\label{eq:proj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing identities for polygon diagrams",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-017-gluing-identities-for-polygon-diagrams.md",
+      "narrative": null,
+      "content": "We consider the pivotal 2-category $\\Bimod^\\theta(\\mac,\\mad)$ for spherical fusion categories $\\mac,\\mad$.\nWe fix sets  $I_\\mac$, $I_\\mad$  and $I_\\mam$ of representatives of the isomorphism classes of simple objects in $\\mac$, $\\mad$ and in each bimodule category  \n$\\mam$.  For each object $x$ in $\\mac$, $\\mad$ or $\\mam$ and each simple object $i$ in the set of representatives, we choose projection morphisms $p^\\alpha_{xi}: x\\to i$ and inclusion morphisms $j^\\alpha_{xi}:i\\to x$ that satisfy  \\eqref{eq:projincl}. \n\nThen we can glue and cut  polygon diagrams by summing  over the simple objects",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sum models with defects",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-018-state-sum-models-with-defects.md",
+      "narrative": null,
+      "content": "State sum models with defects",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulated 3-manifolds with defects",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-triangulated-3-manifolds-with-defects.md",
+      "narrative": null,
+      "content": "\\label{subsec:triangsec}\n\n\nWe consider a compact oriented 3d PL manifold  $M$ with (possibly empty) boundary $\\partial M$. Defect structures are assigned to a compact  oriented embedded 2d PL submanifold $D\\subset M$ with boundary  $\\partial D\\subset \\partial M$ that is a finite sum of circles. The submanifold $D$ is equipped with a (finite, possibly empty) embedded PL graph $D^1$ with vertex set $D^0$  such that $D^1\\cap \\partial D\\subset D^0$ contains only univalent vertices. \nConnected components of $M\\setminus D$ are called {\\bf regions} of $M$, \nconnected  components of $D$  {\\bf defect s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Labeling of the triangulation",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-labeling-of-the-triangulation.md",
+      "narrative": null,
+      "content": "To define the state sum of a generic  transversal    triangulated 3-manifold with defect data, we assign   objects and morphisms of the associated categories to the edges and triangles of the triangulation. For this,  we fix sets  $I$ of representatives of the isomorphism classes of simple objects and associated projection and inclusion morphisms $p^\\alpha_{xi}: x\\to i$ and $j^\\alpha_{xi}: i\\to x$ satisfying \\eqref{eq:projincl} \n for all spherical fusion categories at the regions of $M$ and for all bimodule categories at the defect areas.\n\n\\begin{definition} \\label{def:label} Let $M$ be generi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalised 6j symbols",
+      "pageStart": 31,
+      "pageEnd": 37,
+      "target": "../sections/sec-021-generalised-6j-symbols.md",
+      "narrative": null,
+      "content": "We now associate a generalised 6j symbol to each  labeled generic  transversal tetrahedron $t$ with a defect surface. Note that such a defect tetrahedron  is more than a combinatorial tetrahedron with categorical data assigned to each oriented edge. It consists of a combinatorial tetrahedron $t$, an oriented defect polygon $P$,  an assignment of certain edges of $t$ to the vertices  of $P$ and an assignment of the vertices of $t$ to the two regions labeled by $\\mac$ and $\\mad$. \n  In particular,  a labeled generic  transversal tetrahedron inherits an orientation, because the defect surface is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sum model with defects",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-022-state-sum-model-with-defects.md",
+      "narrative": null,
+      "content": "In this section we show how the generalised 6j symbols for generic transversal defect tetrahedra  combine to state sums for a generic transversal triangulated 3-manifolds with defect data. \n\n\nLet $M$ be a generic transversal triangulated 3-manifold with defect data, $R$ its set of regions and $A$ its set of oriented defect areas.  We denote by $\\mac_r$ the spherical fusion category assigned to the region $r$ and  by $\\mam_a$ the bimodule category assigned to the defect area $a$. A vertex, edge or triangle of the triangulation is called {\\bf boundary} if its is contained\n in $\\partial M$ and  {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological invariance",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-023-topological-invariance.md",
+      "narrative": null,
+      "content": "Topological invariance",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moves between triangulated PL manifolds",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-024-moves-between-triangulated-pl-manifolds.md",
+      "narrative": null,
+      "content": "\\label{subsec:PLsubsec}\n\n\nTo establish triangulation independence for  state sum models with defects, we require some background from PL topology. We consider different moves on triangulations that relate PL homeomorphic 3-manifolds with and without boundary. The main references  are the articles \\cite{P, Pshell}  by Pachner, see also  the articles \\cite{L} by Lickorish and \\cite{Cas} by Casali.  \n\n\n\\begin{theorem}\\cite[Th.~5.5]{P},\\cite[Th.~5.9]{L}\\\\\nTwo closed triangulated $n$-dimensional PL manifolds are PL homeomorphic iff they are related by  a finite sequence of bistellar  moves.\n\\end{th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Neighbourhoods of defect surfaces",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-025-neighbourhoods-of-defect-surfaces.md",
+      "narrative": null,
+      "content": "\\label{subsec:gentrans}\n\n\n In the presence of defects,  applying a bistellar move to a generic transversal triangulation may yield a triangulation that is no longer transversal or generic. \n  For this reason, it is not straightforward to establish invariance of the state sums via bistellar moves.  \n  Instead, we refine the triangulations and decompose the underlying  defect 3-manifold   into certain neighbourhoods of defect surfaces and components contained in the regions between them. Their state sums are  computed separately and then  glued with Corollary \\ref{cor:gluing}. This also gives a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sums with defect discs",
+      "pageStart": 44,
+      "pageEnd": 48,
+      "target": "../sections/sec-026-state-sums-with-defect-discs.md",
+      "narrative": null,
+      "content": "To prove the triangulation independence of the state sum, we first show that the state sums of 3-balls $M$ that shell to fine neighbourhoods of defect \ndiscs $D$ are given as cyclic evaluations of certain polygon diagrams. \n\nThese polygon diagrams are obtained by projecting the dual graphs of the boundary triangulations on $\\partial M$ to the defect disc. As  $M$ is PL homeomorphic to $[0,1]\\times D$ via an orientation preserving PL homeomorphism  $\\phi: M\\to [0,1]\\times D$ by Lemma \\ref{lem:finenbtop}, this projection is given by Definition \\ref{def:projection}. Lemma \\ref{lem:projiso} ensure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulation independence",
+      "pageStart": 48,
+      "pageEnd": 51,
+      "target": "../sections/sec-027-triangulation-independence.md",
+      "narrative": null,
+      "content": "In this section we  show  that  any two generic transversal triangulations of a  3-manifold with defect data yield the same state sum if they agree at its boundary. \nNote that this does not follow directly from  Corollary \\ref{cor:pachner}, because it is not guaranteed a priori  that such triangulations are related by \\emph{generic  transversal} bistellar moves. \nAs a first step, we derive a counterpart  of Proposition \\ref{th:topological invariance}  for general defect surfaces. \n\nWe again consider 3-manifolds $M$  that shell to fine neighbourhoods of a defect surface $D$ and project the dual",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of state sums",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-028-examples-of-state-sums.md",
+      "narrative": null,
+      "content": "\\label{sec:examples}\n\nIn this section, we  compute the state sums for some examples of defect 3-manifolds. We first consider state sums with defect surfaces, but  without defect lines or defect vertices. We  then show how to recover ribbon invariants from defect lines and vertices on trivial defect surfaces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sums with defect surfaces",
+      "pageStart": 51,
+      "pageEnd": 59,
+      "target": "../sections/sec-029-state-sums-with-defect-surfaces.md",
+      "narrative": null,
+      "content": "In the following, we assume that all triangulations are generic and transversal at the boundary. \nOur first example is a defect sphere without defect lines or vertices embedded inside a 3-ball.  We suppose that the embedding is \\emph{unknotted} in the sense of Zeeman \\cite{Z}. This means that there is a PL homeomorphism from the 3-ball to itself that  sends the defect sphere to the boundary of a tetrahedron, see also Footnote 1  \\cite{Z}.\n\n\\begin{example} \\label{ex:tetrahedronsphere} Let $M$ be a 3-ball with an unknotted defect sphere  in its interior. Suppose the boundary of $M$ is labeled by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.06874v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon invariants from line defects",
+      "pageStart": 59,
+      "pageEnd": 68,
+      "target": "../sections/sec-030-ribbon-invariants-from-line-defects.md",
+      "narrative": null,
+      "content": "In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants.  These surfaces are labeled by a spherical fusion category $\\mac$ as a $(\\mac,\\mac)$-bimodule category.   As $\\mac$ is a spherical fusion category, its center $\\mathcal Z(\\mac)$ is a  ribbon category, see for instance \\cite[Lemma 10.1]{TVr}. By Example \\ref{ex:modulefuncs}, the monoidal category $\\End_\\mac(\\mac)$  is  monoidally equivalent to $\\mathcal Z(\\mac)$. \nUnder this monoidal equivalence, an object $(a, \\sigma_{-,a})$ of $\\mathcal Z(\\mac)$  corresponds to the $(\\mac,\\mac)$-bimodule functo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

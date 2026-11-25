@@ -1,0 +1,2334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-m0fncupw2j.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-m0fncupw2j","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;,
+        &quot;lean&quot;: &quot;cfefee898781&quot;,
+        &quot;lean_statement&quot;: &quot;0cbf1e983489&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:28.215Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;S↔L: the ref `weak_symmetric_normalization` (sibling-only) is a `noncomputable def … : R := ⅟(3 : R) * (q^4 + q^6 + q^8)` (lean:106-111). The claimed value is taken as a definition; the \&quot;theorems\&quot; are its unfolding and `ring` (lean:114-133). The class hypotheses are `True` carriers: `EWSpectralCompletenessHolds … := True` (lean:51-54) and `EWLinkTripletIdentified … := True` (lean:62-63). Nothing connects N_sym to a Plancherel-weighted character product (md:1), a Hecke algebra or a trace. The md says the formulation is superseded (\&quot;the direct cell-content trace now supersedes this Plancherel-weighted formulation\&quot;, md:13), and the ts marks it DEMOTED and \&quot;**Open** as a formal proposition\&quot; (ts:34, 42). Yet the md still states it as a proposition. The ts also records the upstream N_sym(q₀) = 213.11 \&quot;pinned from CODATA G_F\&quot; as a CAL-3 violation (ts:38). No proof block.&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.058Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;weak_symmetric_normalization / _factored (folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean) match (q^4+q^6+q^8)/3 = q^4(1+q^2+q^4)/3; Lean requires [Invertible (3 : R)], which the .md does not state.&quot;
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote prose sections of mass-theory_seq48.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.888298Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.888298Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;42db83f40061&quot;,
+        &quot;ts&quot;: &quot;b144e2fbc67e&quot;,
+        &quot;lean&quot;: &quot;f022e236eb05&quot;
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.201Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;The def lost its unused WeakSymmetricNormalization argument in this PR (fields were True); .md/.ts updated in the same diff; compiles, no sorryAx.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.232Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No class field projected.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.263Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;weak_symmetric_normalization_eq is `rfl` and _factored is `ring`; legitimate named equations, though content-light.&quot;
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.294Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Only [Invertible 3].&quot;
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.363Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No decide.&quot;
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.335Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;q and Invertible 3 both used.&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.096Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=1.0: unfold + ring.&quot;
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.140Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=1.0: sorry-free; lean-direct exit 0 (against a freshly built QOU.Conjectures.WeakSpectralCompleteness olean), axioms [propext, Classical.choice, Quot.sound].&quot;
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.172Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;score=0.2: a factoring identity.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:43.963Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Legacy EW normalisation formula in mass-theory next to its successor blocks; kept as a referenced special case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.403Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;EW symmetric-channel normalisation beside prop:weak-spectral-completeness in mass-theory.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.434Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:15 calls prop:weak-spectral-completeness an &#39;open premise&#39; that the EW content is exhausted by H_2(q)^{⊗3}; that block is now a proposition whose exhaustion is a proved theorem for A_EW (QOU.Conjectures.carrierAlgebra_le_adjoin, derived instance carrierAlgebra_weakSpectralCompleteness). folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean header still says the class has &#39;no instance&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.766Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:15 &#39;rests on two open premises: prop:weak-spectral-completeness, that the electroweak content is exhausted by the commutative subalgebra ...&#39;: prop:weak-spectral-completeness is now a proposition and its exhaustion item is proved (QOU.Conjectures.carrierAlgebra_le_adjoin, instance carrierAlgebra_weakSpectralCompleteness). Calling it an open premise contradicts the promotion. The same stale claim is in folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean header (&#39;class QOU.Conjectures.WeakSpectralCompleteness, no instance&#39;) and in the witness scope string of computations/weak_symmetric_normalization_value.py:66-69.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.465Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The only proved content is a factoring identity; the reading as a Plancherel weight is explicitly not derived (:15).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.797Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean defines the polynomial and proves its two forms; the premise bundle WeakSymmetricNormalization is content-bearing and not used to prove anything.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.497Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Not circular.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.823Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No circular step.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.528Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:1 opens &#39;N_sym evaluates the Plancherel-weighted character product across the electroweak symmetric channel&#39; as fact; :15 then says that reading is not derived. The italic statement claims more than the block supports.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.851Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:1 &#39;The symmetric-channel normalization N_sym(q) evaluates the Plancherel-weighted character product across the electroweak symmetric channel&#39; states the physical reading as the definition, while :15 says that reading &#39;is not derived&#39;. The proposition proves only the polynomial identity; the opening sentence claims more.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.568Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The uniform weight 1/3 over q^4,q^6,q^8 has no derivation (:11 &#39;uniformizes across ... blocks&#39;); disclosed as superseded at :13.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.880Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11 &#39;The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks&#39; — the uniform 1/[2]_q weight and the factor 1/3 are choices whose source (Plancherel weights on which blocks) is not shown.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.599Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11 &#39;The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks. The resulting expression is a closed-form rational&#39; — no step connects the trace to the formula.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.908Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11-12: from &#39;the trace uniformizes across 1-dim blocks&#39; to the specific (q^4+q^6+q^8)/3 no derivation is given.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.658Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Lean def and identity are exactly the displayed polynomial (modulo the 1/3 hypothesis noted above).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.968Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;.md and Lean agree on the polynomial and both forms (lean-content-sweep 2026-11-21 exit 0). Both carry the stale &#39;conj:weak-spectral-completeness ... no instance&#39; premise (see da-false-claim); the Lean docstring writes q^4·[3]_{q^2}/3 (asymmetric [3]) while the .ts authorNote writes q^6·[3]_{q^2}/3, which equals neither form.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.691Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean weak_symmetric_normalization_eq carries &#39;-- Ref: [kassel1995]&#39; on an `rfl` unfold of a corpus-defined polynomial; Kassel does not contain N_sym.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.991Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean cites [kassel1995] §VI for the Wedderburn decomposition; no misuse.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.727Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;The clash with the g-action N_sym is called out explicitly (:17).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.016Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The block is a proposition whose subject N_sym is defined as a Plancherel-weighted product at :1, yet :13 says the cell-content trace supersedes it and :17 records that the same symbol names a different quantity in conj:g-action-on-substrate. Three meanings of N_sym in the corpus; this block&#39;s own meaning is the polynomial only.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.756Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No measurement comparison in the block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.041Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No comparison with measurement in the block (the G_F anchor 213.11 is explicitly excluded).&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.785Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No physical value asserted.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.065Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No physical value asserted.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.813Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;computation points at computations/q_pinning_50_digit.py with status &#39;verified&#39;, but that script pins q0 and never computes N_sym; its witness scriptHash 58f994b46a01 ≠ current sha256 prefix e6f6426e55c7.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.088Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Computation pointer now points at computations/weak_symmetric_normalization_value.py, which computes exactly the stated polynomial; witness fresh (scriptHash matches) and reproduced independently.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.842Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: a proposition whose proved content is (q^4+q^6+q^8)/3 = q^4(1+q^2+q^4)/3, framed as a Plancherel weight it does not derive, with a computation link that does not compute it; better as a remark recording the legacy formula.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.114Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: a &#39;proposition&#39; whose proved content is a one-line polynomial identity, framed in its first sentence as an electroweak normalisation it also says is superseded and not derived, and which calls a now-proved proposition an open premise. Minor revision: restate as a definition/remark or scope the first sentence; fix :15.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.869Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11 &#39;The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks&#39; is unexplained; :13 &#39;However, the direct cell-content trace now supersedes ...&#39; is status narration. Below 16/16.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:45:21.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5bb7fc3928d5085db61f1d8c377bd56862d2e384&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.900Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No duplicated content.&quot;
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d9422f37f5ec&quot;,
+        &quot;ts&quot;: &quot;b144e2fbc67e&quot;,
+        &quot;lean&quot;: &quot;f022e236eb05&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d9422f37f5ec&quot;,
+        &quot;ts&quot;: &quot;b144e2fbc67e&quot;,
+        &quot;lean&quot;: &quot;f022e236eb05&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.743Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.929Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.137Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;&#39;That reading is not derived from these premises&#39; is a substantive scoping.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.743Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.959Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.158Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:13 &#39;However, the direct cell-content trace now supersedes this Plancherel-weighted formulation.&#39; pivots against the block&#39;s own statement.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.743Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.996Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.182Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No em-dash in the body.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.026Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.207Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;The three candidate values at :17 are data.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.059Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.230Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Ends on a disambiguation sentence.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.090Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.253Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:13-14 &#39;now supersedes ... The structural input is isolated to ...&#39; narrates the document&#39;s history.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.121Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.278Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.304Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Closing sentence carried three intensifiers at once: \&quot;We strictly isolate the structural input to the bar-self-dual cell trace itself, bypassing Plancherel weights entirely.\&quot; (\&quot;strictly\&quot;, \&quot;itself\&quot;, \&quot;entirely\&quot;), with a performed first-person \&quot;We strictly isolate\&quot;.&quot;,
+      &quot;notes&quot;: &quot;FIX APPLIED: -&gt; \&quot;The structural input is isolated to the bar-self-dual cell trace itself, bypassing Plancherel weights.\&quot; Note (structural, not applied): the deprecation prose in L13 duplicates the .ts authorNotes entries kind:\&quot;deprecated\&quot; and kind:\&quot;status\&quot; and belongs there per AGENTS.md 4d.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.177Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.330Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28a68f448c00&quot;,
+        &quot;ts&quot;: &quot;f52b19192eae&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.745Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Full read (statement + 2 short paragraphs).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:45.210Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:40.357Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Symbols speakable.&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.204Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py: all float(...) casts (:285-287, :323-325, :357, :391-407) feed print/f-string text fields only; q0 and its derivation are carried as mpf (50 dps). The 1e-15 literal at :286 is a display divisor.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.458Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py: no float anywhere (grep 2026-11-21); q0 = mp.mpf(q_at(70)) at 70 dps, sympy for the exact factorisation.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.233Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py: no float(mp.*)/np.float64 on a value that re-enters computation; float(Q_ERR/Q) at :285 is display only.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.489Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py: values serialised with _precision.fmt; no float() cast.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.262Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py: no math.*/numpy calls; mpmath throughout.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.518Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py: the exact identity is checked symbolically (generic), the evaluation at the proton q0 is mpmath (archimedean) and labelled as such.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.292Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py:2-60 module docstring; dense inline comments.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.545Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py:1-17 module docstring stating what is and is not computed (not the G_F back-solve).&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.325Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py:134-200 def signatures annotated (q_int(n: int), plancherel_weight(partition: tuple), bloch_wigner(z: mpc), ...).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.587Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py:34,42,46 def signatures annotated (-&gt; bool, q: mp.mpf -&gt; mp.mpf, -&gt; int).&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.355Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py: no &#39;# Ref: [key]&#39; comment line anywhere in the script.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.613Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py:16 &#39;# Ref: folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md&#39; (corpus pointer, no bibliography key, acceptable for a corpus-internal evaluation).&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.385Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py: basename absent from .github/workflows/*.yml and no sibling script imports it (grep &#39;import q_pinning_50_digit|from q_pinning_50_digit&#39; over computations/ is empty); other scripts only mention its witness path.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.640Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/weak_symmetric_normalization_value.py is not named in .github/workflows (dispatch-only repo-wide) and no other script imports it; reachable only via the block&#39;s computation pointer.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.425Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Not under _deprecated/, no DEPRECATED marker.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.661Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No _deprecated path or DEPRECATED marker.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.453Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py:413-414 stamps provenance via WitnessBuilder.stamp_staleness_metadata; no hardcoded pi/e.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.694Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py: WitnessBuilder for the witness, q_parameter.q_at for the proton pin, _precision for dps and fmt; bootstrap inserts its own dir before importing _path_bridge.&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:32.489Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;computations/q_pinning_50_digit.py makes no add_assertion(...) calls.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.731Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/weak_symmetric_normalization_value.py:72-77 two assertions (sympy factorisation identity, |val - factored| &lt; 1e-60) each computed independently of expected=1. Witness re-checked 2026-11-21: n_sym_at_q0 1.897444448400510568875768375 matches an independent mpmath evaluation; scriptHash fce9d84ac5fd equals sha256 of the script.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:43.935Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11-17 are scope/status notes on what is and is not derived, not interpretation.&quot;
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:43.994Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Polynomial identity over generic R with 1/3.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.026Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Proof is `ring`/`rfl` over CommRing.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.392Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;uses[] contains conj:gram-determinant-plancherel-ratio, which folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md never mentions; conj:g-action-on-substrate is linked (:17) but not listed.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.431Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;uses[] lists conj:gram-determinant-plancherel-ratio, prop:weak-spectral-completeness and conj:electroweak-higgs-torus-link-triplet; the .md also links conj:g-action-on-substrate only to disambiguate the symbol, which is not a logical dependency.&quot;
+    }
+  ],
+  &quot;da-arity-conflation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;057a537dac3f&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:44.627Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No family/instance conflation.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3dabb23cd415&quot;,
+        &quot;ts&quot;: &quot;17923f0d6500&quot;,
+        &quot;lean&quot;: &quot;e50107f79f14&quot;,
+        &quot;lean_statement&quot;: &quot;b67794190ea5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:39.938Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No family/instance conflation.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

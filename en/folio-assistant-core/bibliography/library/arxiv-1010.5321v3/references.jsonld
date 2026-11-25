@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1010.5321v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Formulas on hyperbolic volume ∗",
+      "dcterms:creator": [
+        "Budapest University of Technology",
+        "Economics"
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/1010.5321",
+      "dcterms:abstract": "This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨aﬂi diﬀerential formula), using edge-lengthes as the only parameters.",
+      "dcterms:source": "library/arxiv-1010.5321v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1010.5321v3"
+    }
+  ]
+}

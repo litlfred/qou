@@ -1,0 +1,792 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1508.05448v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Concentration of Measure Techniques and\nApplications\nby\nMeg Walters\nSubmitted in Partial Fulﬁllment\nof the\nRequirements for the Degree\nDoctor of Philosophy\nSupervised by\nProfessor Shannon Starr\nProfessor Carl Mueller\nDepartment of Mathematics\nArts, Sciences and Engineering\nSchool of Arts and Sciences\nUniversity of Rochester\nRochester, New York\n2015\narXiv:1508.05448v1  [math.PR]  22 Aug 2015",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Biographical Sketch",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-biographical-sketch.md",
+      "narrative": null,
+      "content": "Meg Walters grew up in Gainesville, FL. She moved to Rochester in 2005 to study\nbassoon performance at the Eastman School of Music and enrolled at the University\nof Rochester as an applied math major in 2007. She graduated with a Bachelor of\nMusic degree from Eastman and a Bachelor of Science in Applied Mathematics from\nthe University of Rochester in 2010. In the fall of 2010, she started her graduate\nstudies in mathematics at the University of Rochester. She received her Master of\nArts degree in 2012 and began studying probability and mathematical physics under\nthe supervision of Shannon Star",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "I would ﬁrst and foremost like to thank my advisor, Shannon Starr, for his encour-\nagement, patience, and guidance during my time as his student. This work would\nnot have been possible without him. I would also like to thank Carl Mueller for all\nof his assistance after Professor Starr’s relocation to Alabama.\nI am extremely grateful for all of the assistance that Joan Robinson, Hazel McK-\nnight, and Maureen Gaelens have provided throughout my graduate studies.\nI would also like to thank my parents and David Langley for all of their love,\nsupport, and patience throughout the years.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-abstract.md",
+      "narrative": null,
+      "content": "Concentration of measure is a phenomenon in which a random variable that depends\nin a smooth way on a large number of independent random variables is essentially\nconstant. The random variable will ”concentrate” around its median or expectation.\nIn this work, we explore several theories and applications of concentration of measure.\nThe results of the thesis are divided into three main parts.\nIn the ﬁrst part, we\nexplore concentration of measure for several random operator compressions and for\nthe length of the longest increasing subsequence of a random walk evolving under the\nasymmetric exclusi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contributors and Funding Sources",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-contributors-and-funding-sources.md",
+      "narrative": null,
+      "content": "This work was supervised by a dissertation committee consisting of Shannon Starr\n(advisor) of the Department of Applied Mathematics at the University of Alabama\nBirmingham, Carl Mueller (co-advisor) and Alex Iosevich of the Department of Math-\nematics, and Yonathan Shapir of the Department of Physics and Astronomy at the\nUniversity of Rochester. The chair of the committee was Daniel ˇStefankoviˇc of the\nDepartment of Computer Science.\nThe results obtained in chapter 3 were obtained in collaboration with Stephen Ng\n(Exelis Geospatial Systems), and the results obtained in chapter 4 were obtained",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "List of Figures",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-list-of-figures.md",
+      "narrative": null,
+      "content": "3.1\nA longest increasing subsequence of a random walk\n. . . . . . . . . .\n40\n4.1\nSome analogous elements in random matrix and spin glass theory.\n(Proofs may diﬀer considerably.)\n. . . . . . . . . . . . . . . . . . . .\n49\n5.1\nLength of the longest increasing subsequence of a uniform permutation\nof length 10, 000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n106\n5.2\nLength of the longest increasing subsequence of a Mallows permutation\nof length 10, 000 with q = 0.99 . . . . . . . . . . . . . . . . . . . . . .\n107\n5.3\nLength of the longest increasing subsequence of a Mallows permuta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThe idea of concentration of measure was ﬁrst introduced by Milman in the asymp-\ntotic theory of Banach spaces [Milman and Schechtman, 1986]. The phenomenon\noccurs geometrically only in high dimensions, or probabilistically for a large number\nof random variables with suﬃcient independence between them. For an overview of\nthe history and some standard results, see [Ledoux, 2005].\nA illustrative geometric example of concentration of measure occurs for the stan-\ndard n-sphere Sn in Rn+1. If we let µn denote the uniform measure on Sn, then for\nlarge enough n, µn is highly concentrated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration of Measure Results and other Necessary Background",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-2-concentration-of-measure-results-and-other-nec.md",
+      "narrative": null,
+      "content": "Results and other Necessary\nBackground\n2.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Talagrand's Gaussian Concentration of Measure Inequality",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-21-talagrands-gaussian-concentration-of-measure.md",
+      "narrative": null,
+      "content": "Michel Talagrand has made numerous contributions to the theory of concentration of measure. The first concentration of measure result that we will present applies to Lipschitz functions of Gaussian random variables, so we will refer to it henceforth as Talagrand's Gaussian concentration of measure inequality, to distinguish it from other results of Talagrand that we will use. Before stating the theorem, recall that a Lipschitz function $F$ on $\\mathbb{R}^M$, with Lipschitz constant $A$, satisfies $$|F({\\bf x})-F({\\bf y})|\\leq A \\|{\\bf x}-{\\bf y}\\|$$ where $\\|\\bf{x}-\\bf{y}\\|$ is the Eucliean di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Talagrand's Isoperimetric Inequality",
+      "pageStart": 19,
+      "pageEnd": 28,
+      "target": "../sections/sec-008-22-talagrands-isoperimetric-inequality.md",
+      "narrative": null,
+      "content": "The concentration of measure inequality presented in this section is also due to Talagrand. In [@Talagrand], a theory of isoperimetric inequaliies on product spaces is developed. The theorem presented here is just one of the many isoperimetric inequalities proved and applied in that work. Once the necessary notions of distance are defined and the theorem proved, the applications of the theorem are vast and obtained quickly. Before stating the theorem, we need to set up our product space and define a special notion of distance on the space.\n\nWe will begin with a probability space which we will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+      "pageStart": 28,
+      "pageEnd": 34,
+      "target": "../sections/sec-009-23-ledouxs-concentration-of-measure-on-reversibl.md",
+      "narrative": null,
+      "content": "A concentration of measure result proved by Ledoux [@LedouxCOM] turns out to be a key foundational piece for some of the results of chapter 3. Before stating the result, we provide a few definitions. Following the notation in [@LedouxCOM], we will let ($\\Pi,\\mu$) denote a Markov chain on a finite or countable set $X$. A Markov chain is a stochastic process which moves between elements of $X$ according to the following rules: if the chain is at a given $x\\in X$, the next position in the chain is chosen according to a fixed probability distribution $\\Pi(x,\\cdot)$. In other words, given a startin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Euler-Maclaurin Formula",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-010-24-the-euler-maclaurin-formula.md",
+      "narrative": null,
+      "content": "The Euler-Maclaurin formula is a formula which enables us to make a connection between a sum and its corresponding integral, provided the function is sufficiently smooth. Before we can state the formula, we need a few preliminary definitions and notation. Let $\\lfloor x\\rfloor$ denote the greatest integer function, so that $\\lfloor x\\rfloor$ returns the greatest integer less than or equal to $x$. For $s=1,2,\\dots$, let $B_s(x)$ denote the Bernoulli polynomials. The generating function for the Bernoulli polynomials is as follows: $$\\frac{te^{xt}}{e^t-1}=\\sum_{s=0}^{\\infty} B_s(x)\\frac{t^s}{s!}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Operator Compressions",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-011-3-random-operator-compressions.md",
+      "narrative": null,
+      "content": "Compressions",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background for First Result",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-012-31-background-for-first-result.md",
+      "narrative": null,
+      "content": "Background for First Result\nIn a recent work of Chatterjee and Ledoux on concentration of measure for random\nsubmatrices [Chatterjee and Ledoux, 2009], it is proved that for an arbitrary Hermi-\ntian matrix of order n and k ≤n suﬃciently large, the distribution of eigenvalues is\nalmost the same for any principal submatrix of order k. Their proof uses the random\ntransposition walk on the symmetric group Sn and concentration of measure tech-\nniques. To further generalize their results, we observe that it is important to use a\nMarkov chain which does not change too many matrix entries all at once",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kac's Walk on SO(n)",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "../sections/sec-013-32-kacs-walk-on-son.md",
+      "narrative": null,
+      "content": "The following model, introduced by Kac [Kac, 1954], describes a system of particles\nevolving under a random collision mechanism such that the total energy of the system\nis conserved. Given a system of n particles in one dimension, the state of the system\nis speciﬁed by⃗v = (v1, . . . vn), the velocities of the particles. At a time step t, i and j\nare chosen uniformly at random from {1, . . . , n} and θ is chosen uniformly at random\non (−π, π]. The i and j correspond to a collision between particles i and j such that\nthe energy,\nE =\nn\nX\nk=1\nv2\nk\nis conserved. Under this constraint, after a coll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[Carlen et al., 2000; Maslen, 2003]",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "Kac’s walk on SO(n) is ergodic and its invariant distribution is the uniform distribution on SO(n). Furthermore, the spectral gap of Kac’s walk on SO(n) is n+2 2(n−1)n. Using our Markov transition operator, we can deﬁne the Dirichlet form, Q (·, ·). As discussed in chapter 2, it is well known that for a Markov chain with spectral gap, λ1, the Poincare inequality holds: λ1Var(f) ≤Q (f, f) . For the Kac’s walk, we have Q (f, f) = \u0000n \u0001 X 1≤i<j≤n Z 2π 2π Z SO(n) (f(G) −f(Rij(θ)G))2 dµn(G)dθ, where µn is the Haar measure on SO(n) normalized so that the total measure is 1. Let us deﬁne the triple no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/thm-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "thm-sec-013-02.md",
+      "narrative": null,
+      "content": "Consider Kac’s walk on SO(n), and let F : SO(n) →R be given such that |||F|||∞≤1. Then, F is integrable with respect to µn, and for every r ≥0, µn \u0012 F ≥ Z Fdµn + r \u0013 ≤3e−r√λ1/2 where λ1 = n+2 2(n−1)n is the spectral gap of Kac’s walk on SO(n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Result",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-014-33-main-result.md",
+      "narrative": null,
+      "content": "Using these results, along with the method of Chatterjee and Ledoux, we are able to prove the following result:\n\n::: thm\nTake any $1\\leq k\\leq n$ and an $n$-dimensional Hermitian matrix $G$. Let $A$ be the $k\\times k$ matrix consisting of the first $k$ rows and $k$ columns of the matrix obtained by conjugating $G$ by a rotation matrix $R^{\\theta}_{ij}\\in SO(n)$ chosen uniformly at random. If we let $F$ be the expected spectral distribution of $A$, then for each $r>0$, $$\\mathbb{P}\\left(\\|F_A-F\\|_{\\infty}\\geq \\frac{1}{\\sqrt{k}}+r\\right)\\leq 12\\sqrt{k}\\exp\\left(-r\\sqrt{\\frac{k}{32}}\\right)$$\n:::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kac's Model Coupled to a Thermostat",
+      "pageStart": 44,
+      "pageEnd": 47,
+      "target": "../sections/sec-015-34-kacs-model-coupled-to-a-thermostat.md",
+      "narrative": null,
+      "content": "Using a spectral gap result from [@BLV], we are able to demonstrate the application of this method to a more complicated Markov chain. In this system, the particles from Kac's system interact amongst themselves with a rate $\\lambda$ and interact with a particle from a thermostat with rate $\\mu$. The particles in the thermostat are Gaussian with variance $\\frac{1}{\\beta}$, so they have already reached equilibrium. The Markov transition operator for Kac's walk is defined as in $(1)$ and the Markov transition operator for the thermostat is given by $$Rf(G)=\\frac{1}{n}\\sum_{j=1}^n \\frac{1}{2\\pi}\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+      "pageStart": 47,
+      "pageEnd": 55,
+      "target": "../sections/sec-016-35-an-additional-application-the-length-of-the-l.md",
+      "narrative": null,
+      "content": "Consider a random walk X on $\\{1,\\dots,n\\}$. Represent $X$ by some element in $\\{0,1\\}^n$, where $X_i=0$ corresponds to a step down in the walk at position $i$ and $X_i=1$ corresponds to a step up. We will assume that $$\\sum_{i=1}^n X_i =\\frac{n}{2}$$ so that we have the same number of up steps as down steps. We can now look at this random walk as the initial configuration of a particle process with $X_i=1$ corresponding to a particle in position $i$ and $X_i=0$ corresponding to no particle at position $i$. Consider the asymmetric exclusion process acting on this configuration with the followi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/figure-img-p049-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../images/img-p049-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Remarks",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-017-36-remarks.md",
+      "narrative": null,
+      "content": "Remarks\nBy generalizing this method introduced by Chatterjee and Ledoux, we are able to\nshow concentration of measure of the empirical spectral distribution not only for\noperator compressions via SO(n) but also for operators that are ”compressed” by\nconjugation with a Gaussian matrix. It is likely that this method could be applied\nto a much wider range of Markov chains, given that the chain does not change too\nmany entries at once, has an appropriate invariant distribution, and for which the\nspectral gap is known. It is possible that better bounds for the Gaussian compression\ncould be obtained",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
+      "pageStart": 57,
+      "pageEnd": 60,
+      "target": "../sections/sec-018-4-mixed-matrix-moments-and-eigenvector-overlap-f.md",
+      "narrative": null,
+      "content": "Eigenvector Overlap Functions\nof the Ginibre Ensemble\nThe purpose of this section is to make some observations about the mixed matrix\nmoments for non-Hermitian random matrices. The results in this chapter can be\nfound in [Walters and Starr, 2015]. Let Matn(C) denote the set of n × n matrices\nwith complex entries. We use this notation here because we will use Mn for something\nelse later.\nThe model we will focus on most is the complex Ginibre ensemble, given by\nAn ∈Matn(C) ,\nAn = (an(j, k))n\nj,k=1 ,\nan(j, k) = X(j, k) + iY (j, k)\n√\n2n\n,\n(4.1)\nwhere (X(j, k))∞\nj,k=1, (Y (j, k))∞\nj,k=1 are IID, N(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mixed Matrix Moments",
+      "pageStart": 60,
+      "pageEnd": 65,
+      "target": "../sections/sec-019-41-mixed-matrix-moments.md",
+      "narrative": null,
+      "content": "Given any $n\\times n$ matrix $A$, any positive integer $k$, and any nonnegative integers $p(1),q(1),\\dots,p(k),q(k)$, we may define $$M_n(\\mathbf{p};\\mathbf{q})\\, \n=\\, \\frac{1}{n}\\, \\operatorname{tr}[A_n^{p(1)} (A_n^*)^{q(1)} \\cdots A_n^{p(k)} (A_n^*)^{q(k)}]\\, ,$$ for $\\mathbf{p}=(p(1),\\dots,p(k))$, $\\mathbf{q}=(q(1),\\dots,q(k))$. Notice that $M_0=1$. As an example, consider $$\\begin{gathered}\nM_n((2,2);(2,2))\\, = \\\\ \\, \\frac{1}{n}\\, \\sum_{j_1,\\dots,j_8=1}^n a_n(j_1,j_2) a_n(j_2,j_3) \\overline{a}_n(j_4,j_3) \\overline{a}_n(j_5,j_4) a_n(j_5,j_6) a_n(j_6,j_7)\n\\overline{a}_n(j_8,j_7) \\overline{a}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Expected Overlap Functions",
+      "pageStart": 65,
+      "pageEnd": 67,
+      "target": "../sections/sec-020-42-the-expected-overlap-functions.md",
+      "narrative": null,
+      "content": "[]{#sec:Expected label=\"sec:Expected\"}\n\nSince the moments $M_n(\\mathbf{p},\\mathbf{q})$ satisfy concentration of measure, one is primarily only interested in their expectations. The next quantity we introduce is also defined just for the expectation. (Studying its distribution may be interesting, but we will not comment on this, here.) It is the expected overlap function of Chalker and Mehlig, introduced in [@CM] and further studied by them in [@MC].\n\nGiven $A_n \\in \\operatorname{Mat}_n(\\mathbb{C})$, randomly distributed according to Ginibre's ensemble, almost surely it may be diagonalized. Thi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulas for the Overlap Functions",
+      "pageStart": 67,
+      "pageEnd": 74,
+      "target": "../sections/sec-021-43-formulas-for-the-overlap-functions.md",
+      "narrative": null,
+      "content": "Chalker and Mehlig were able to relate the overlap functions to expectations of functions involving all the eigenvalues. The eigenvalue distribution for the complex Ginibre ensemble is well-known. In fact it is one of the simplest of the various Gaussian ensembles. For example, as Chalker and Mehlig also point out in their paper, $$\\label{eq:RD}\n\\mathcal{R}_N^{(1)}(z)\\, =\\, \\frac{N}{\\pi N!}\\, e^{-N |z|^2} D_{N-1}(z)\\, ,$$ where $D_{N-1}(z)$ equals the determinant of the $(N-1)$-dimensional square matrix $\\mathcal{D}_N(z)$ where the matrix entries are best indexed for $j,k \\in \\{0,\\dots,N-2\\}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moments and Constraints on the Overlap Functions",
+      "pageStart": 74,
+      "pageEnd": 83,
+      "target": "../sections/sec-022-44-moments-and-constraints-on-the-overlap-functi.md",
+      "narrative": null,
+      "content": "An ideal situation would be to find an explict sum-formula for $\\mathcal{O}_N^{(2)}(z_1,z_2)$, just as Lemma [\\[lem:G\\]](#lem:G){reference-type=\"ref\" reference=\"lem:G\"} provides for $\\mathcal{O}_N^{(1)}(z)$, but so far, this has not been discovered. In the next section, we will suggest a rigorous approach which may work to give the asymptotics, even when no explicit formula is known. For now, let us state the constraints imposed by the moment formula from before.\n\nRecall from ([\\[eq:mnpq\\]](#eq:mnpq){reference-type=\"ref\" reference=\"eq:mnpq\"}) for any nonnegative integers $p$ and $q$, $$m_N((p)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
+      "pageStart": 83,
+      "pageEnd": 89,
+      "target": "../sections/sec-023-45-proposal-to-rigorously-approach-chalker-and-m.md",
+      "narrative": null,
+      "content": "There are various ways to try to prove Chalker and Mehlig's formula for the bulk behavior of $\\mathcal{O}_N^{(2)}$. One way is to try to fill in the details to make Chalker and Mehlig's argument rigorous. Their idea is to express $\\mathcal{O}_N^{(2)}$ in terms of the expectation of a function of the eigenvalues, and then use the known eigenvalue marginal for the complex Ginibre ensemble.\n\nHere we want to propose a second method. The formula for $\\mathcal{O}_N^{(2)}(z_1,z_2)$ is the determinant of a 5-diagonal matrix. One may express such a determinant through a recursion relation, although the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance of the Perturbation Series PN(r)",
+      "pageStart": 89,
+      "pageEnd": 93,
+      "target": "../sections/sec-024-46-invariance-of-the-perturbation-series-pnr.md",
+      "narrative": null,
+      "content": "Let us write $$\\mathcal{P}_N(r)\\, =\\, \\sum_{\\sigma \\in \\{+1,-1\\}^{N-1}} \\mathcal{P}_N(\\sigma;r)\\, ,$$ for $$\\mathcal{P}_N(\\sigma;r)\\,\n=\\, \n\\left(\\prod_{n=0}^{N-2} \\frac{\\lambda_n^{\\sigma(n)}}{\\lambda_n^+}\\right)\n\\frac{([W_0^{\\sigma(0)}]^* e_2) (e_2^* V_{N-2}^{\\sigma(N-2)})}{([W_0^{+}]^* e_2) (e_2^* V_{N-2}^{+})}\n\\cdot \\left(\\prod_{n=0}^{N-1} \\frac{[W_{n+1}^{\\sigma(n+1)}]^* V_n^{\\sigma(n)}}\n{[W_{n+1}^{+}]^* V_n^{+}}\\right)\\, .$$ Let us think of $\\sigma$ as a sequence of switches, from the $+$ state to the $-$ state, or vice-versa.\n\nUsing the notation $t_n = n/N$ and $T_n = N^{1/2} (t_n-r^2)$, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and Outlook",
+      "pageStart": 93,
+      "pageEnd": 96,
+      "target": "../sections/sec-025-47-summary-and-outlook.md",
+      "narrative": null,
+      "content": "We have considered the complex Ginibre ensemble. We consider the problem of calculating the mixed matrix moments to be a nice pedagogical problem. It may be used to illustrate the method of using concentration of measure to derive nonlinear recursion relations. This method is particularly important in spin glass theory, where it led to the Ghirlanda-Guerra identities, which are critical to those models.\n\nThe most natural connection between spin glasses and random matrices are the spherical spin glasses of [@KTJ] and [@CS]. This has been studied vigorously with very detailed results. See for ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mallows Random Permutations",
+      "pageStart": 96,
+      "pageEnd": 96,
+      "target": "../sections/sec-026-5-mallows-random-permutations.md",
+      "narrative": null,
+      "content": "Mallows Random Permutations\n5.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A q-Stirling's Formula",
+      "pageStart": 96,
+      "pageEnd": 104,
+      "target": "../sections/sec-027-51-a-q-stirlings-formula.md",
+      "narrative": null,
+      "content": "Before we say anything about a $q$-deformed Stirling's formula, recall that Stirling's formula says that $$n!\\sim \\sqrt{2\\pi n}\\frac{n^n}{e^n}$$ This is an asymptotic formula. We use the $\\sim$ symbol to denote that $$\\lim_{n\\rightarrow\\infty} \\frac{n!}{\\sqrt{2\\pi n}\\frac{n^n}{e^n}}=1$$ It is worthwhile to note that this formula can be proved using the Euler Maclaurin formula discussed in chapter 2.\n\nFor fixed $0<q<1$, we define $$[n]_q=\\frac{1-q^n}{1-q}$$ We can then define a $q$-deformed factorial as $$[n]_q!=[n]_q[n-1]_q\\dots[1]_q=\\prod_{k=1}^n\\frac{1-q^k}{1-q}$$ For notational convenience,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Mallows Measure",
+      "pageStart": 104,
+      "pageEnd": 105,
+      "target": "../sections/sec-028-52-the-mallows-measure.md",
+      "narrative": null,
+      "content": "Given a permutation of $n$ numbers $\\pi\\in S_n$, we define the inversion number $\\mathrm{Inv}(\\pi)$ to be $$\\mathrm{Inv}(\\pi)=\\#\\{(i,j) \\; : \\;i<j \\;\\mathrm{and}\\; \\pi(i)>\\pi(j)\\}$$ For each $q\\in(0,1)$, the Mallows measure [@Mallows] is defined by $$\\mu_{n,q}(\\pi)=\\frac{q^{\\mathrm{Inv}(\\pi)}}{Z_{n,q}}$$ where $Z_{n,q}$ is a normalization constant given by $$Z_{n,q}=\\sum_{\\pi\\in S_n} q^{\\mathrm{Inv}(\\pi)}=\\prod_{k=1}^n\\frac{1-q^k}{1-q}=[n]_q!$$ where $[n]_q!$ is as stated in the previous chapter. The measure is related to the Iwahori-Hecke algebra as shown by Diaconis and Ram [@DiaconisRam]. N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fisher-Yates Algorithm",
+      "pageStart": 105,
+      "pageEnd": 110,
+      "target": "../sections/sec-029-53-fisher-yates-algorithm.md",
+      "narrative": null,
+      "content": "The Fisher-Yates algorithm is a method of obtaining a uniform random permutation from a finite set. The algorithm was first introduced by Fisher and Yates in [@FisherYates]. Their original introduction of the algorithm was as a \\\"paper and pencil\\\" type algorithm for generating a random permutation of $n$ numbers by hand. The algorithm was first presented as a computer algorithm by Durstenfeld [@Durstenfeld] and became more widely known in a work by Knuth [@Knuth].\n\nThe algorithm consists of the following four steps:\n\n::: fy\n**Fisher Yates Algorithm 1**. * \\\n*1) Set a counting variable $j$ to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Length of the Longest Increasing Subsequence",
+      "pageStart": 110,
+      "pageEnd": 112,
+      "target": "../sections/sec-030-54-length-of-the-longest-increasing-subsequence.md",
+      "narrative": null,
+      "content": "Consider a permutation $\\pi\\in S_n$. An increasing subsequence $i_1,i_2,\\dots,i_k$ of a permutation $i\\mapsto \\pi(i)$ is a subsequence such that $i_1<\\dots<i_k$ and $\\pi(i_1)<\\pi(i_2)<\\dots<\\pi(i_k)$. We will be concerned with determining the length of the longest increasing subsequence in a given permutation. Denote the length of the longest increasing subsequence of $\\pi$ by $\\ell(\\pi)$.\n\nThe following example is due to [@ADHamm]. Consider the permutation given by $$7\\;\\;\\;2\\;\\;\\;8\\;\\;\\;1\\;\\;\\;3\\;\\;\\;4\\;\\;\\;10\\;\\;\\;6\\;\\;\\;9\\;\\;\\;5$$ where $\\pi(1)=4$, $\\pi(2)=2$, $\\pi(3)=5$, etc. Then a longe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Patience Sorting",
+      "pageStart": 112,
+      "pageEnd": 115,
+      "target": "../sections/sec-031-55-patience-sorting.md",
+      "narrative": null,
+      "content": "The presentation of patience sorting that we describe here follows the algorithm as given by Aldous and Diaconis in [@AldousDiaconis]. Patience sorting is a type of one person card game. Imagine that we have a deck of cards with the numbers $1,\\dots,n$ on them. We shuffle the deck thoroughly, and put the cards in a pile face down. We turn the cards face up one at a time and put them into a pile according to the following rule:\\\n*A low card may be placed on top of a higher card (i.e. a 2 on top of a 7), but a higher card must be placed into a new pile to the right of the current piles*.\\\nThe ob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/figure-img-p115-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 115,
+      "pageEnd": 115,
+      "target": "../images/img-p115-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Four Square Problem",
+      "pageStart": 115,
+      "pageEnd": 122,
+      "target": "../sections/sec-032-56-four-square-problem.md",
+      "narrative": null,
+      "content": "We would now like to give an idea as to how the $q$-Stirling's formula arises in the problem of bounding the fluctuations of the length of the longest increasing subsequence in a Mallows random permutation. This work is ongoing, but an important step is discussed in this section. A random permutation (Mallows or otherwise), can be viewed as a set of points in a rectangle, in the following way:\n\nConsider $n$ points $(x_i, y_i)$ in the rectangle $[0,1]\\times [0,1]$ in $\\mathbb{R}^2$ with all coordinates distinct. The set of points specifies a permutation $\\pi\\in S_n$ by the rule: \\\"The point wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/figure-img-p116-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 116,
+      "pageEnd": 116,
+      "target": "../images/img-p116-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/figure-img-p116-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 116,
+      "pageEnd": 116,
+      "target": "../images/img-p116-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and Outlook",
+      "pageStart": 122,
+      "pageEnd": 127,
+      "target": "../sections/sec-033-57-conclusion-and-outlook.md",
+      "narrative": null,
+      "content": "Conclusion and Outlook\nAs previously mentioned, the results in this section are preliminary steps toward\nbounding the ﬂuctuations of the length of the longest increasing subsequence of a\nMallows permutation. The next step is to use the approach of the four square problem\nto solve a nine square problem. Once the asymptotics are computed for that problem,\nwe can generalize to a large number of small squares and obtain a local central limit\ntheorem for the counts on small subsquares. After that, we hope to couple our model\nto the model of Deuschel and Zeitouni [Deuschel and Zeitouni, 1999] and th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.05448v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 127,
+      "pageEnd": 134,
+      "target": "../sections/sec-034-bibliography.md",
+      "narrative": null,
+      "content": "[Aizenman and Contucci, 1998] M. Aizenman and P. Contucci,\n“On the Stability\nof the Quenched State in Mean-Field Spin-Glass Models,” Journal of Statistical\nPhysics, 92(5-6):765–783, 1998.\n[Alcaraz, 1994] Francisco C Alcaraz, “Exact steady states of asymmetric diﬀusion\nand two-species annihilation with back reaction from the ground state of quantum\nspin models,” International Journal of Modern Physics B, 8(25n26):3449–3461,\n1994.\n[Aldous and Diaconis, 1995] David Aldous and Persi Diaconis, “Hammersley’s inter-\nacting particle process and longest increasing subsequences,” Probability theory\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

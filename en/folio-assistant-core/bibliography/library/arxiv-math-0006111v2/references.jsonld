@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0006111v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Approximate factorization and concentration for characters of symmetric groups",
+      "dcterms:creator": [
+        "Biane, Philippe"
+      ],
+      "dcterms:issued": "D:20210914",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0006111",
+      "dcterms:abstract": "We prove a factorization-concentration result for characters of symmet- ric groups. This is then applied to the asymptotic behaviour of the decomposition of the tensor representations. There are connections with the Pastur-Marcenko distri- bution of random matrix theory, and freely inﬁnitely divisible distributions.",
+      "dcterms:source": "library/arxiv-math-0006111v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0006111v2"
+    }
+  ]
+}

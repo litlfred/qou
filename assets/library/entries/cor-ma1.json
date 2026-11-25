@@ -1,0 +1,908 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "cor-ma1",
+  "blocks": [
+    {
+      "id": "library/cor-ma1/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "HAL Id: hal-00017295\nhttps://hal.science/hal-00017295v2\nPreprint submitted on 21 Dec 2006\nHAL is a multi-disciplinary open access archive\nfor the deposit and dissemination of scientific re-\nsearch documents, whether they are published or not.\nThe documents may come from teaching and research\ninstitutions in France or abroad, or from public or pri-\nvate research centers.\nL’archive ouverte pluridisciplinaire HAL, est des-\ntinée au dépôt et à la diffusion de documents scien-\ntifiques de niveau recherche, publiés ou non, émanant\ndes établissements d’enseignement et de recherche\nfrançais ou étrange",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "hal-00017295, version 2 - 21 Dec 2006\nOVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\nSYLVIE CORTEEL AND OLIVIER MALLET\nAbstract. We extend partition-theoretic work of Andrews, Bressoud, and Burge to overpartitions, deﬁning\nthe notions of successive ranks, generalized Durfee squares, and generalized lattice paths, and then relating\nthese to overpartitions deﬁned by multiplicity conditions on the parts. This leads to many new partition\nand overpartition identities, and provides a uniﬁcation of a number of well-known identities of the Rogers-\nRamanujan type. Among these are Gordon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "[5] Let Ck,i(n) be the number of partitions of n whose successive ranks lie in the interval [−i + 2, 2k −i −1] and let Dk,i(n) be the number of partitions of n with i −1 successive Durfee squares followed by k −i successive Durfee rectangles. Then Ak,i(n) = Bk,i(n) = Ck,i(n) = Dk,i(n). An overpartition is a partition where the ﬁnal occurrence of a part can be overlined [18]. For example, there exist 8 overpartitions of 3 (3), (3), (2, 1), (2, 1), (2, 1), (2, 1), (1, 1, 1), (1, 1, 1). In recent years overpartitions have been heavily studied, sometimes under diﬀerent names and guises. They have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "2\nSYLVIE CORTEEL AND OLIVIER MALLET\nNotice that Lovejoy’s result can be seen as an overpartition analogue of Gordon’s theorem, in the sense\nthat the conditions on the Bk(n) reduce to the conditions on the Bk,k(n) if the overpartition has no overlined\nparts and is indeed a partition.\nTwo questions naturally arise. First, given the similarities between Theorems 1.1 and 1.3, is there some\ngeneral framework which contains these two theorems? Second, is there an analogue for overpartitions of\nAndrews’ result, Theorem 1.2? In this paper, both of these questions shall be answered in the aﬃrma-\ntive.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "The generating function Ek,i(a, q) = P n,j Ek,i(n, j)qnaj is: (1.1) Ek,i(a, q) = (−aq)∞ (q)∞ ∞ X n=−∞ (−1)nanqkn2+(k−i+1)n (−1/a)n (−aq)n .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/cor-page-004-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "cor-page-004-01.md",
+      "narrative": null,
+      "content": "Ek,i(0, q) = (qi, q2k+1−i, q2k+1; q2k+1)∞ (q)∞ (1.3) Ek,i(1/q, q2) = (q2; q4)∞(q2i−1, q4k+1−2i, q4k; q4k)∞ (q)∞ (1.4) Ek,i(1, q) = (−q)∞ (q)∞ 2(k−i) X j=0 (−1)j(qi+j, q2k−i−j, q2k; q2k)∞ (1.5) Ek,i(1/q, q) = (−q)∞ (q)∞ ((qi, q2k−i, q2k; q2k)∞ +(qi−1, q2k+1−i, q2k; q2k)∞) (1.6) Hence our result gives a general view of diﬀerent problems on partitions and overpartitions and shows how they are related. • Equation (1.3) corresponds to the Andrews-Gordon identities [5]. • Equation (1.4) corresponds to Andrews’s generalization of the Gordon-G¨ollnitz identities [6, 8]. • Equation (1.5) with i = k and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n3\nCorollary 1.6.\nEk,i(0, q)\n=\n(qi, q2k+1−i, q2k+1; q2k+1)∞\n(q)∞\n(1.3)\nEk,i(1/q, q2)\n=\n(q2; q4)∞(q2i−1, q4k+1−2i, q4k; q4k)∞\n(q)∞\n(1.4)\nEk,i(1, q)\n=\n(−q)∞\n(q)∞\n2(k−i)\nX\nj=0\n(−1)j(qi+j, q2k−i−j, q2k; q2k)∞\n(1.5)\nEk,i(1/q, q)\n=\n(−q)∞\n(q)∞\n((qi, q2k−i, q2k; q2k)∞\n+(qi−1, q2k+1−i, q2k; q2k)∞)\n(1.6)\nHence our result gives a general view of diﬀerent problems on partitions and overpartitions and shows\nhow they are related.\n• Equation (1.3) corresponds to the Andrews-Gordon identities [5].\n• Equation (1.4) corresponds to Andrews’s generaliz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "4\nSYLVIE CORTEEL AND OLIVIER MALLET\nFigure 1. Ferrers diagram of the overpartition λ = (5, 4, 3, 3) of weight 15.\n2 2 2 2 1\n2 2 2 2\n2 2 2\n2 2 1\nFigure 2. Example of a 2-modular diagram of weight 28.\nThe Frobenius representation of an overpartition [18, 30] of n is a two-rowed array\n\u0012a1\na2\n· · ·\naN\nb1\nb2\n· · ·\nbN\n\u0013\nwhere (a1, . . . , aN) is a partition into distinct nonnegative parts and (b1, . . . , bN) is an overpartition into\nnonnegative parts where the ﬁrst occurrence of a part can be overlined and N + P(ai + bi) = n. Following\n[18], we call pQ,O(n) the number of such two-rowed arrays. We c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/ex-page-006-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "ex-page-006-02.md",
+      "narrative": null,
+      "content": "Let ν = \u00127 \u0013 . We thus have N = 5 and j = 2 in this example. By adding 1 to each part of the top line, we get β = (8, 6, 5, 3, 1). From the bottom line, we get δ = (4, 1) and α = (4, 3, 3, 2, 1). By applying the bijection described in the second paragraph of the above proof, we get γ = (8, 7, 5, 5, 3). Since α = (4, 3, 3, 2, 1), the resulting overpartition is λ = (8, 7, 5, 5, 5, 4, 3, 3, 1). It has N −j = 3 overlined parts and its generalized Durfee square is of size 5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "There exists a bijection between overpartitions whose Frobenius representation has N columns and whose bottom line has j overlined parts and overpartitions with generalized Durfee square of size N and N −j overlined parts.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n5\nDeﬁnition 2.1. The successive ranks of an overpartition can be deﬁned from its Frobenius representation.\nIf an overpartition has Frobenius representation\n\u0012a1\na2\n· · ·\naN\nb1\nb2\n· · ·\nbN\n\u0013\nthen its ith successive rank ri is ai −bi minus the number of non-overlined parts in {bi+1, . . . , bN}.\nThis deﬁnition is an extension of Lovejoy’s deﬁnition of the rank [30]. For example, the successive ranks\nof\n\u00127\n4\n2\n0\n3\n3\n1\n0\n\u0013\nare (2, 0, 1, 0).\nWe say that the generalized Durfee square of an overpartition λ has size N if N is the largest in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "6\nSYLVIE CORTEEL AND OLIVIER MALLET\nThis decomposition shows that the generating function for overpartitions with generalized Durfee square\nof size N where the exponent of q counts the weight and the exponent of a counts the number of overlined\nparts is\naNq(N+1\n2 )(−1/a)N\n(q)N(q)N\n.\nDeﬁnition 2.4. The successive Durfee squares of an overpartition are its generalized Durfee square and the\nsuccessive Durfee squares of the partition below the generalized Durfee square, if we represent the partition\nas in Figure 3, with the overlined parts above the non-overlined ones. We can also deﬁne similarly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-01.md",
+      "narrative": null,
+      "content": "Ek,i(0) = 1; (3.1) Ek,i(N) = qNEk,i+1(N) + qNΓk,i−1(N); i < k (3.2) Γk,i(N) = qNΓk,i−1(N) + (a + qN−1)Ek,i+1(N −1); i > 0 (3.3) Ek,k(N) = qN 1 −qN Γk,k−1(N); (3.4) Γk,0(N) = 0. (3.5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n7\nFigure 5. This path has four peaks: two NES peaks (located at (2, 2) and (6, 1)) and two\nNESE peaks (located at (4, 1) and (7, 1)). Its major index is 2 + 4 + 6 + 7 = 19.\nLet Ek,i(n, j, N) be the number of paths of major index n with N peaks and j South steps which satisfy\nthe special (k, i)-conditions.\nLet Ek,i(N) be the generating function for these paths, that is Ek,i(N) =\nEk,i(N, a, q) = P\nn,j Ek,i(n, j, N)ajqn. Moreover, for 0 ≤i < k, let Γk,i(N) be the generating function for\npaths obtained by deleting the ﬁrst NE step of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/thm-page-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "thm-page-008-02.md",
+      "narrative": null,
+      "content": "Ek,i(N) = aNq(N+1 2 )(−1/a)N N X n=−N (−1)n qkn2+n(k−i)−(n 2) (q)N−n(q)N+n Γk,i(N) = aNq( N 2)(−1/a)N N−1 X n=−N (−1)n qkn2+n(k−i)−( n+1 2 ) (q)N−n−1(q)N+n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "8\nSYLVIE CORTEEL AND OLIVIER MALLET\nWe ﬁrst prove that E′k,i(N) and Γ′k,i(N) satisfy E′k,i(N) = qNE′k,i+1(N) + qNΓ′k,i−1(N) for 1 ≤i ≤k :\nqNE′k,i+1(N) + qNΓ′k,i−1(N)\n=aNq(\nN+1\n2 )(−1/a)N\nN\nX\nn=−N\n(−1)n qkn2+n(k−i−1)−(\nn\n2)\n(q)N−n(q)N+n\nqN\n+ aNq(N\n2)(−1/a)N\nN−1\nX\nn=−N\n(−1)n qkn2+n(k−i+1)−(n+1\n2 )\n(q)N−n−1(q)N+n\nqN\n=aNq(\nN+1\n2 )(−1/a)N\nN−1\nX\nn=−N\n(−1)n qkn2+n(k−i)−(n\n2)\n(q)N−n(q)N+n\n(qN−n + (1 −qN−n))\n+ aNq(\nN+1\n2 )(−1/a)N(−1)N qkN 2+N(k−i−1)−(N\n2)\n(q)0(q)2N\nqN\n=aNq(N+1\n2 )(−1/a)N\nN\nX\nn=−N\n(−1)n qkn2+n(k−i)−(n\n2)\n(q)N−n(q)N+n\n=E′k,i(N)\nWe then prove, quite similarly, that they satisfy (3.3):\n(a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-01.md",
+      "narrative": null,
+      "content": "For any n ∈Z X N≥|n| (−aq)n(−qn/a)N−nq( N+1 2 )−(n+1 2 )aN−n (q)N+n(q)N−n = (−aq)∞ (q)∞ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n9\nwhere p = −n\n=aNq(\nN+1\n2 )(−1/a)N\nN\nX\np=−N\n(−1)p qkp2+p−(−p)(−p−1)\n2\n(q)N+p(q)N−p\n=aNq(\nN+1\n2 )(−1/a)N\nN\nX\np=−N\n(−1)p qkp2+p−(p)(p+1)\n2\n(q)N+p(q)N−p\n=aNq(N+1\n2 )(−1/a)N\nN\nX\np=−N\n(−1)p qkp2+p−(p+1\n2 )\n(q)N+p(q)N−p\n=aNq(N+1\n2 )(−1/a)N\nN\nX\np=−N\n(−1)p\nqkp2−(\np\n2)\n(q)N+p(q)N−p\n=E′k,k(N)\nHence we have, using the fact that E′k,i(N) satisﬁes (3.2) for i = k:\nE′k,k(N) = qNE′k,k(N) + qNΓ′k,k−1(N).\nFinally, we have:\nΓ′k,0(N) = aNq(\nN\n2)(−1/a)N\nN−1\nX\nn=−N\n(−1)n qkn2+nk−(n+1\n2 )\n(q)N−n−1(q)N+n\n=aNq(\nN\n2)(−1/a)N\n N−1\nX\nn=0\n(−1)n qkn2+nk−(\nn+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "10\nSYLVIE CORTEEL AND OLIVIER MALLET\nProof. We only prove the case n ≥0. The case n < 0 is identical as (a)−n = (−1/a)nq(\nn+1\n2 )/(aq)n and\ntherefore\n(−aq)n(−qn/a)N−nq(N+1\n2 )−(n+1\n2 )aN−n\n(q)N+n(q)N−n\n= (−aq)−n(−q−n/a)N+nq(N+1\n2 )−(−n+1\n2 )aN+n\n(q)N+n(q)N−n\n.\nWe present an analytical proof and a combinatorial one.\nAnalytical proof:\n∞\nX\nN=n\n(−aq)n(−qn/a)N−nq(\nN+1\n2 )−(\nn+1\n2 )aN−n\n(q)N+n(q)N−n\n=\n∞\nX\nN=0\n(−aq)n(−qn/a)Nq(\nN+n+1\n2\n)−(\nn+1\n2 )aN\n(q)N(q)N+2n\n=(−aq)n\n(q)2n\n∞\nX\nN=0\nqNn+(N+1\n2 )(−qn/a)NaN\n(q)N(q2n+1)N\nWe now apply the q-Gauss summation (Corollary 2.4 of [3] with n →N, a →−qn/a, b →−∞a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "prop-page-012-01.md",
+      "narrative": null,
+      "content": "There exists a one-to-one correspondence between the paths of major index n with j south steps counted by Ek,i(n, j) and the overpartitions of n with j non-overlined parts in the bottom line of their Frobenius representation and whose successive ranks lie in [−i + 2, 2k −i −1] counted by Ck,i(n, j). This correspondence is such that the paths have N peaks if and only if the Frobenius representation of the overpartition has N columns. This proposition can be proved with a recursive argument. We can show that Ck,i(N), the generating function for overpartitions whose Frobenius representation has N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n11\nSumming on N we get\nX\nN≥0\nEk,i(N)\n=\nX\nN≥0\naNq(\nN+1\n2 )(−1/a)N\nN\nX\nn=−N\n(−1)n qkn2+n(k−i)−(\nn\n2)\n(q)N−n(q)N+n\n=\nX\nN≥0\nN\nX\nn=−N\naNq(\nN+1\n2 )(−1/a)N(−1)n qkn2+n(k−i)−(n\n2)\n(q)N−n(q)N+n\n=\n∞\nX\nn=−∞\nX\nN≥|n|\naNq(N+1\n2 )(−1/a)N(−1)n qkn2+n(k−i)−(\nn\n2)\n(q)N−n(q)N+n\n=\n∞\nX\nn=−∞\n(−1)nanqkn2+(k−i+1)n (−1/a)n\n(−aq)n\n·\nX\nN≥|n|\n(−aq)n( −qn\na )N−nq(N+1\n2 )−(n+1\n2 )aN−n\n(q)N−n(q)N+n\n=\n∞\nX\nn=−∞\n(−1)nanqkn2+(k−i+1)n (−1/a)n\n(−aq)n\n(−aq)∞\n(q)∞\nby Proposition 3.3\n=\n(−aq)∞\n(q)∞\n∞\nX\nn=−∞\n(−1)nanqkn2+(k−i+1)n (−1/a)n\n(−aq)n\n.\nThis is equation (1.1) of T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "12\nSYLVIE CORTEEL AND OLIVIER MALLET\nif there are an odd number of East steps to the left of the peak (we then say that the peak is of type\n1). Moreover, we overline t if the peak is a NESE peak. In both cases, s and t are integers and we have\ns + t + 1 = x. In the case of partitions treated in [14], u is always 0.\nLet N be the number of peaks in the path and j the number of South steps of the paths. Let (xi, yi) be\nthe coordinates of the ith peak from the right and (si, ti) be the corresponding pair.\nProposition 4.2. The sequence (s1, s2, . . . , sN) is a partition into distinct nonnegative p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-01.md",
+      "narrative": null,
+      "content": "There exists a one-to-one correspondence between the paths counted by Ek,i(n, j) and the overpartitions counted by Bk,i(n, j). This correspondence is such that the paths have N peaks if and only if the length of the multiplicity sequence of the overpartition is N (see Section 5.2 for the deﬁnition).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n13\n• The sequence t is an overpartition (where the ﬁrst occurrence of a part can be overlined). We need\nto prove that for all i, ti −ti+1 > 0 if ti+1 is overlined and ti −ti+1 ≥0 otherwise. The fact that\nwe always have ti −ti+1 ≥0 is proved in the same way as with the si. If ti+1 is overlined, then it\ncorresponds to a NESE peak, so we have xi −xi+1 ≥2 and ui+1 = ui. By considering the expression\nof ti −ti+1 in the four cases (the peaks i and i + 1 are both of type 0, both of type 1, of type 0 and\nof type 1, or of type 1 and of type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/lem-page-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-page-015-01.md",
+      "narrative": null,
+      "content": "For 1 ≤i ≤k, Bk,i(a, x, q) = Jk,i(−a, x, q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "14\nSYLVIE CORTEEL AND OLIVIER MALLET\nWe will ﬁrst give a generating function proof of that proposition (without the reﬁnement). Then we will\ngive the sketch of a combinatorial proof which is a generalization of Burge’s correspondence for partitions\npresented in [16].\nRecall that Bk,i(n, j) is the number of overpartitions λ of n with j overlined parts such that for all ℓ,\nf1 < i\nλℓ−λℓ+k−1 ≥\n(\n1\nif λℓ+k−1 is overlined\n2\notherwise\nor equivalently,\nf1 < i\n∀ℓ, fℓ+ fℓ+1 <\n(\nk + 1\nif a part ℓis overlined\nk\notherwise\nWe will abbreviate this last condition with the notation ∀ℓ, fℓ+ fℓ+1 < k+1.\n5.1. A g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n15\nProof. We can now prove equation (5.1). The lemma implies that\nBk,i(a, q) = Jk,i(−a, 1, q).\nHence\nBk,i(a, q)\n=\n(−aq)∞\n(q)∞\n∞\nX\nn=0\n(−1)nan qkn2+n(k−i+1)(−1/a)n(1 −q(2n+1)i)\n(−aq)n+1\n+aq (−aq)∞\n(q)∞\n∞\nX\nn=0\n(−1)nan qkn2+n(k−i+2)(−1/a)n(1 −q(2n+1)(i−1))\n(−aq)n+1\n=\n(−aq)∞\n(q)∞\n ∞\nX\nn=0\n(−1)nan qkn2+n(k+1)(−1/a)n(q−in + aq1−(i−1)n)\n(−aq)n+1\n−\n∞\nX\nn=0\n(−1)nan qkn2+n(k+1)(−1/a)n(q(n+1)i + aq(n+1)(i−1)+1)\n(−aq)n+1\n!\n=\n(−aq)∞\n(q)∞\n ∞\nX\nn=0\n(−1)nan qkn2+n(k+1−i)(−1/a)n\n(−aq)n\n−\n∞\nX\nn=0\n(−1)nan+1 qkn2+n(k+i)+i(−1/a)n+1\n(−aq)n+1\n!\n=\n(−aq)∞",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "16\nSYLVIE CORTEEL AND OLIVIER MALLET\n• else if ℓ> 1, remove the overlining of fm+ℓ−1 and overline fm,\n• fm+ℓ←fm+ℓ−1, and\n• fm ←fm + 1.\nFor example if m = 1 and the multuple is (1, ¯1, ¯3), we have n = 12, ℓ= 2 and F(1, ¯1, ¯3) = (¯2, 1, ¯2) whose\nweight is 10.\nLet Bk,i(n, j, N) be the number of overpartitions counted by Bk,i(n, j) of length N.\nLet Bk,i(N) =\nP\nn,j Bk,i(n, j, N)qnaj. Now we divide the multiplicity sequence of an overpartition λ ∈Bk,i(N) into mul-\ntuples going from the right to the left and we apply F to each multuple.\nWe call the result F(λ).\nIf\nF(λ) has a zero part, this part i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/lem-page-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "lem-page-018-01.md",
+      "narrative": null,
+      "content": "If (αn, βn) is a Bailey pair with respect to q, then for all 0 ≤i ≤k we have (q, −aq)∞ × X n1≥···≥nk≥0 q( n1+1 2 )+n2 2+···n2 k+ni+1+···nk(−1/a)n1an1 (q)n1−n2 · · · (q)nk−1−nk βnk = α0 (q)2∞ + (q)2∞ X n≥1 (−1/a)nanq(n2−n)(i−1/2)+in(1 −q) (−aq)n ×",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n17\nNow we have all the ingredients to prove Proposition 5.1. We remark that Bk,k+1(N) = Bk,k(N) and we\nset Γk,i(N) = Gk,i(N) + aBk,i+1(N −1) if i > 0 and 0 otherwise. Then\nBk,i(N)\n=\nqN(Bk,i+1(N) + Γk,i−1(N)), if i < k;\nBk,k(N)\n=\nΓk,k−1(N)/(1 −qN);\nΓk,i(N)\n=\n(a + qN−1)Bk,i+1(N −1) + qNΓk,i−1(N), if i > 0;\nBk,i(0)\n=\n1;\nΓk,0(N)\n=\n0.\nThese are the recurrences proven in Proposition 3.1. Therefore Bk,i(N) = Ek,i(N) and Proposition 5.1 is\nproved.\n6. Paths and successive Durfee squares\nWe prove in this section that\n(6.1)\nEk,i(a, q) =\nX\nn1≥",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/lem-page-019-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "lem-page-019-02.md",
+      "narrative": null,
+      "content": "The coeﬃcient of qn in qn2 1+n2 2+···+n2 k−1+ni+···+nk−1 (q)n1−n2 · · · (q)nk−2−nk−1(q)nk−1 is the number of paths with major index n, no South steps, starting at height k −i, whose height is less than k and having nj peaks of relative height ≥j for 1 ≤j ≤k −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "prop-page-019-01.md",
+      "narrative": null,
+      "content": "The coeﬃcient of qnaℓin (6.3) q( n1+1 2 )+n2 2+···+n2 k−1+ni+···+nk−1(−1/a)n1an1 (q)n1−n2 · · · (q)nk−2−nk−1(q)nk−1 is the number of paths with major index n and ℓSouth steps, starting at height k −i, whose height is less than k and having nj peaks of relative height ≥j for 1 ≤j ≤k −1. Therefore, X n1≥···≥nk−1≥0 q( n1+1 2 )+n2 2+···+n2 k−1+ni+···+nk−1(−1/a)n1an1 (q)n1−n2 · · · (q)nk−2−nk−1(q)nk−1 = Ek,i(a, q). To prove this proposition we will use a result of Bressoud [14]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "18\nSYLVIE CORTEEL AND OLIVIER MALLET\nSubstituting into Lemma 6.1 and simplifying, we obtain\nX\nn1≥···≥nk≥0\nq(\nn1+1\n2 )+n2\n2+···+n2\nk+ni+1+···+nk(−1/a)n1an1\n(q)n1−n2 · · · (q)nk−1−nk(q)nk\n=(−aq)∞\n(q)∞\n \n1 +\n∞\nX\nn=1\nq(k+1)n2+(k−i+1)n+(−a)n(−1/a)n\n(−aq)n\n+\n∞\nX\nn=1\nq(k+1)n2−(k−i)n(−a)n(−1/a)n\n(−aq)n\n!\n=(−aq)∞\n(q)∞\n \n1 +\n∞\nX\nn=1\nq(k+1)n2+(k−i+1)n(−a)n(−1/a)n\n(−aq)n\n+\n−1\nX\nn=−∞\nq(k+1)n2+(k−i+1)n(−a)n(−1/a)n\n(−aq)n\n!\n.\nReplacing k by k −1 and i by i −1 gives (1.1).\n□\n6.2. A combinatorial proof. We will use and generalize the notion of relative height of a peak. This\nnotion was deﬁned by Bressoud in [1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n19\nAn example of such a path, taken from [14], is shown on Figure 10. For that path, we have k = 4, i = 1,\nn1 = 3, n2 = 1 and n3 = 1.\n×\n×\n×\n×\n×\n×\n1\n3\n1\nFigure 10. Another example of a path and its relative heights.\nWe can now move on to the proof of Proposition 6.3.\nProof. We generalize the argument of Bressoud in [14]. Consider a path with no South steps that starts at\nheight k −i, whose height is less than k −1 and that has nj peaks of relative height ≥j −1 for 2 ≤j ≤k −1.\nBy Lemma 6.4, such paths are counted by\n(6.4)\nPk,i(q) =\nq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "prop-page-021-01.md",
+      "narrative": null,
+      "content": "The operations of Figure 14 preserve the number of peaks of relative height ≥j for all j.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "20\nSYLVIE CORTEEL AND OLIVIER MALLET\n×\n×\n×\n×\n×\n×\n×\n×\n×\n×\n×\n1 1\n1\n1\n2\n4\n2\nFigure 13. Eﬀect of transforming some NES peaks into NESE peaks in the path from\nFigure 12. In this example, λ = (5, 4, 3, 1).\n1\n×\n×\n2\n×\n×\n3\n4\n×\n×\n5\n×\n6\nFigure 14. The rules for moving peaks of relative height one.\n×\n×\n×\n×\nFigure 15. We want to move the leftmost peak to the right twice, but after the ﬁrst move,\nwe come up against a sequence of adjacent peaks. We then move the rightmost peak in this\nsequence.\nWhen we move a peak, it can meet the next peak to the right. We say that a peak (x, y) meets a peak\n(x′, y′) if\nx′",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-page-022-01.md",
+      "narrative": null,
+      "content": "The construction used in the proof of Proposition 6.3 is uniquely reversible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-022-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-page-022-02.md",
+      "narrative": null,
+      "content": "Any path in Ek,i(n, j) can be generated by our algorithm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-022-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-page-022-03.md",
+      "narrative": null,
+      "content": "Our algorithm aﬀects the generating function in the appropriate way.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n21\n×\n×\n×\n×\nx′\nx′′\nFigure 16. Case where the relative height of p is not modiﬁed.\n×\n×\n×\n×\nFigure 17. When p meets a peak, their relative heights are inverted. This does not modify\nthe number of peaks with a given relative height.\nx′\nx′′\nx′\nx′′\nFigure 18. The relative height of p remains one when we apply the operation 3 or 6.\n□\nProposition 6.6. The construction used in the proof of Proposition 6.3 is uniquely reversible.\nProof. We describe the algorithm to undo the algorithm used to prove Proposition 6.3. We start with a path\ncounte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "22\nSYLVIE CORTEEL AND OLIVIER MALLET\nThe new peaks introduced after the uplift have total major index\n\u0000n1−n2+1\n2\n\u0001\nand they increase the abscissa\nof each of the old peaks by n1 −n2. Since they are NES peaks, they also give a factor an1−n2. Altogether,\nthe two operations introduce a factor\nq(\nn2+1\n2 )an2 × q(\nn1−n2+1\n2\n)+n2(n1−n2)an1−n2 = q(\nn1+1\n2 )an1.\nIf i = 1, we add an extra SE step at the beginning of the path, which introduces a factor qn1.\nTransforming the jth peak from the right into a NESE peak increases the major index of the path by\nj −1 because the j −1 rightmost peaks are shifted",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prop-page-024-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "prop-page-024-01.md",
+      "narrative": null,
+      "content": "All the following are equal:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 23\n\nWriting half of this series twice, once with n and once with —n, we have\n\nro (dol = 2k(\"$\")—ni_9” ok(\"t)4n(i-2k) 1\nwal = 1)\" ni yn (\"d1)+n(é-2k)\nEx,i(1,9) S> ( a ue +  ( q Ge\n\n(oo \\ nme\nTherefore\noo\nExu(ta) = FPS (-ayngen’S eh\n(Qo i,\n\nand fori<k\n\nExi(lq) = (=9) 0 Se ( ~1)\"q ak(\"S*)—ni > (-1)rq?hCE 9) q\n\nm (doo 1+q\n\nn=—00 n=—00\n\noo\n+ 1)\" 2k(\"S*)+n(i-2k) 1)\" GhCr )+nGt1- 2k)\n> 1)\" we —\n\nn=—0o n=—o0o\n\n_ (=@) oo ( > (- ra rm gt) —Exivi(l,g)\n\n(doo \\ A.\n(—q)oo C5? i nH ;\n_ a oo 3 (-1) > (-1)\"q?hC 3) )—n(it3) |\nDoo j=0 n=—0o\n\nWe subst",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "24\nSYLVIE CORTEEL AND OLIVIER MALLET\n• The number of paths that use four kinds of unitary steps with special (k, i)-conditions where n is\ntwice the sum of the x-coordinates of the peaks minus the number of South steps.\nRemark. The ﬁrst two parts of the theorem are the Andrews’ generalization of the Gordon-G¨ollnitz iden-\ntities. The interpretation in terms of successive ranks and Durfee dissection is new to our knowledge.\n7.3. Superpartitions. We give new partition theorems related to Gordon’s theorems for overpartitions [28]\nwhich are the combinatorial interpretation of the case i = k of equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cor-ma1/blocks/rem-page-025-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "rem-page-025-01.md",
+      "narrative": null,
+      "content": "The ﬁrst two parts of the theorem are the Andrews’ generalization of the Gordon-G¨ollnitz iden- tities. The interpretation in terms of successive ranks and Durfee dissection is new to our knowledge. 7.3. Superpartitions. We give new partition theorems related to Gordon’s theorems for overpartitions [28] which are the combinatorial interpretation of the case i = k of equation (1.5) and i = 1 of equation (1.6). We now interpret combinatorially equations (1.5) and (1.6). Superpartitions [21] are overpartitions where the ﬁrst occurrence of a part can be overlined and the part 0 can appear. Let Bk,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/thm-page-025-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "thm-page-025-02.md",
+      "narrative": null,
+      "content": "For 1 ≤i ≤k −1, the number of overpartitions counted by Bk,i(n) plus the number of overpartitions counted by Bk,i+1(n) is equal to the number of superpartitions where the non-overlined parts are not congruent to 0, ±i modulo 2k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cor-ma1/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES\n25\nReferences\n[1] A.K. Agarwal, G.E. Andrews, and D.M. Bressoud, The Bailey lattice, J. Indian. Math. Soc. 51 (1987), 57-73.\n[2] A. K. Agarwal and D. M. Bressoud, Lattice paths and multiple basic hypergeometric series. Paciﬁc J. Math. 135 (1989)\n209–228.\n[3] G. E. Andrews, The theory of partitions. Cambridge University Press, Cambridge, 1998.\n[4] G. E. Andrews, An analytic generalization of the Rogers-Ramanujan identities for odd moduli. Proc. Nat. Acad. Sci. USA\n71 (1974) 4082–4085.\n[5] G. E. Andrews, Sieves in the theory of parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

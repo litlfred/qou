@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2008.05806v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+      "dcterms:creator": [
+        "Gasser1, J.",
+        "Leutwyler1, H.",
+        "Rusetsky2, A."
+      ],
+      "dcterms:issued": "D:20210105",
+      "dcterms:identifier": "https://arxiv.org/abs/2008.05806",
+      "dcterms:abstract": "The Cottingham formula expresses the lead- ing contribution of the electromagnetic interaction to the proton-neutron mass diﬀerence as an integral over the forward Compton amplitude. Since quarks and glu- ons reggeize, the dispersive representation of this ampli- tude requires a subtraction. We assume that the asymp- totic behaviour is dominated by Reggeon exchange. This leads to a sum rule that expresses the subtraction function in terms of measurable quantities. The evalua- tion of this sum rule leads to mp−n QED = 0.58 ± 0.16 MeV.",
+      "dcterms:source": "library/arxiv-2008.05806v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2008.05806v2"
+    }
+  ]
+}

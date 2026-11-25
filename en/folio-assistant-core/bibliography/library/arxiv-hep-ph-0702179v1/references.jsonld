@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-ph-0702179v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Large-NC estimate of the chiral low-energy constants ∗",
+      "dcterms:creator": [
+        "Portolés, J."
+      ],
+      "dcterms:issued": "D:20211108",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-ph/0702179",
+      "dcterms:source": "library/arxiv-hep-ph-0702179v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-ph-0702179v1"
+    }
+  ]
+}

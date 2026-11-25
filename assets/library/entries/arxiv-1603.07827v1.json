@@ -1,0 +1,398 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1603.07827v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "fermions. In particular we study the remarkable unitary braid group representations associated with Majorana\nfermions.\nKeywords: braiding, fermions, majorana fermions, quantum process, quantum computing.\n1. INTRODUCTION\nIn this paper we study a Cliﬀord algebra generalization of the quaternions and its relationship with braid group\nrepresentations related to Majorana fermions. The Fibonacci model for topological quantum computing is based\non the fusion rules for a Majorana fermion. Majorana fermions can be seen not only in the structure of collectivies\nof electrons, as in the quantum Hall eﬀect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1603.07827v1  [cond-mat.str-el]  25 Mar 2016\nBraiding With Majorana Fermions\nLouis H. Kauﬀmana and Samuel J. Lomonaco Jr.2b\na Department of Mathematics, Statistics and Computer Science (m/c 249), 851 South Morgan\nStreet, University of Illinois at Chicago, Chicago, Illinois 60607-7045, USA\nb Department of Computer Science and Electrical Engineering, University of Maryland\nBaltimore County, 1000 Hilltop Circle, Baltimore, MD 21250, USA",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-001-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "recommendation-sec-001-01.md",
+      "narrative": null,
+      "content": "We shall denote the interaction of two particles P and Q by the expression PQ, but it is understood that the “value” of PQ is the result of the interaction, and this may partake of a number of possibilities.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BRAIDS",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-2-braids.md",
+      "narrative": null,
+      "content": "A braid is an embedding of a collection of strands that have their ends in two rows of points that are set one\nabove the other with respect to a choice of vertical. The strands are not individually knotted and they are\ndisjoint from one another. See Figure 2, and Figure 3 for illustrations of braids and moves on braids. Braids\ncan be multiplied by attaching the bottom row of one braid to the top row of the other braid. Taken up to\nambient isotopy, ﬁxing the endpoints, the braids form a group under this notion of multiplication. In Figure 2\nwe illustrate the form of the basic generators of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-002-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "recommendation-sec-002-01.md",
+      "narrative": null,
+      "content": "In the next sections we shall show how representations of the Artin braid group, rich enough to provide a dense set of transformations in the unitary groups, arise in relation to fermions and Majorana fermions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FERMIONS, MAJORANA FERMIONS AND BRAIDING",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-fermions-majorana-fermions-and-braiding.md",
+      "narrative": null,
+      "content": "Fermion Algebra. Recall fermion algebra. One has fermion annihilation operators ψ and their conjugate\ncreation operators ψ†. One has ψ2 = 0 = (ψ†)2. There is a fundamental commutation relation\nψψ† + ψ†ψ = 1.\nIf you have more than one of them say ψ and φ, then they anti-commute:\nψφ = −φψ.\nThe Majorana fermions c satisfy c† = c so that they are their own anti-particles. There is a lot of interest in\nthese as quasi-particles and they are related to braiding and to topological quantum computing. A group of\nresearchers2,26 have found quasiparticle Majorana fermions in edge eﬀects in nano-wires. (A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(1 + I + J + IJ)(1 + I)",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-2-1-i-j-ij1-i.md",
+      "narrative": null,
+      "content": "= (1/2\n√",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(1 + I + J + IJ + I + I2 + JI + IJI)",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-2-1-i-j-ij-i-i2-ji-iji.md",
+      "narrative": null,
+      "content": "= (1/2\n√",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(1 + I + J + IJ + I −1 −IJ + J)",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-2-1-i-j-ij-i-1-ij-j.md",
+      "narrative": null,
+      "content": "= (1/\n√\n2)(I + J).\nThe same form of computation yields BAB = (1/\n√\n2)(J + I). And so\nABA = BAB.\nand so a natural braid group representation arises from the Majorana fermions.\nThese braiding operators can be seen to act on the vector space over the complex numbers that is spanned\nby the fermions x, y, z. To see how this works, consider\ns = 1 + yx\n√\n2\n,\nT (p) = sps−1 = (1 + yx\n√\n2\n)p(1 −yx\n√\n2\n),\nand verify that T (x) = y and T (y) = −x. Now view Figure 4 where we have illustrated a topological interpretation\nfor the braiding of two fermions. In the topological interpretation the two fermions ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-006-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "recommendation-sec-006-01.md",
+      "narrative": null,
+      "content": "(For more information on this topological interpretation of 2π rotation for fermions, see.10 ) Without a further choice it is not evident which particle of the pair should receive the phase change.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-006-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "recommendation-sec-006-02.md",
+      "narrative": null,
+      "content": "Nevertheless, we shall now examine the braiding representations of the quaternions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-006-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "recommendation-sec-006-03.md",
+      "narrative": null,
+      "content": "In the case of electrons in nano-wires, one at the present time must make do with long range correlations between ends of the wires and forgoe such local interactions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BRAIDING OPERATORS AND UNIVERSAL QUANTUM GATES",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-4-braiding-operators-and-universal-quantum-gates.md",
+      "narrative": null,
+      "content": "A key concept in the construction of quantum link invariants is the association of a Yang-Baxter operator R to\neach elementary crossing in a link diagram. The operator R is a linear mapping\nR: V ⊗V −→V ⊗V\ndeﬁned on the 2-fold tensor product of a vector space V, generalizing the permutation of the factors (i.e.,\ngeneralizing a swap gate when V represents one qubit). Such transformations are not necessarily unitary in\ntopological applications. It is useful to understand when they can be replaced by unitary transformations for\nthe purpose of quantum computing. Such unitary R-matrices can be used",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal Gates",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-41-universal-gates.md",
+      "narrative": null,
+      "content": "A two-qubit gate G is a unitary linear mapping G : V ⊗V −→V where V is a two complex dimensional vector\nspace. We say that the gate G is universal for quantum computation (or just universal) if G together with\nlocal unitary transformations (unitary transformations from V to V ) generates all unitary transformations of\nthe complex vector space of dimension 2n to itself. It is well-known29 that CNOT is a universal gate. (On the\nstandard basis, CNOT is the identity when the ﬁrst qubit is |0⟩, and it ﬂips the second qbit, leaving the ﬁrst\nalone, when the ﬁrst qubit is |1⟩.)\nA gate G, as above, is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Majorana Fermions Generate Universal Braiding Gates",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-42-majorana-fermions-generate-universal-braiding.md",
+      "narrative": null,
+      "content": "Recall that in Section 3 we showed how to construct braid group representations. Let Tk : Vn −→Vn deﬁned by\nTk(v) = skvs−1\nk\nbe deﬁned as in Section 3. Note that s−1\nk\n=\n1\n√\n2(1 −ck+1ck). It is then easy to verify that\nTk(ck) = ck+1,\nTk(ck+1) = −ck\nand that Tk is the identity otherwise.\nFor universality, take n = 4 and regard each Tk as operating on V ⊗V where V is a single qubit space. Then\nthe braiding operators Tk each satisfy the Yang-Baxter equation and are entangling operators, and so we have\nuniversal gates (in the presence of single qubit unitary operators) from Majorana fermions. If e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-5-su2-representations-of-the-artin-braid-group.md",
+      "narrative": null,
+      "content": "The purpose of this section is to determine all the representations of the three strand Artin braid group B3 to the\nspecial unitary group SU(2) and concomitantly to the unitary group U(2). One regards the groups SU(2) and\nU(2) as acting on a single qubit, and so U(2) is usually regarded as the group of local unitary transformations\nin a quantum information setting. If one is looking for a coherent way to represent all unitary transformations\nby way of braids, then U(2) is the place to start. Here we will show that there are many representations of the\nthree-strand braid group that generate a d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "recommendation-sec-010-01.md",
+      "narrative": null,
+      "content": "We shall use this identiﬁcation, and some facts about the quaternions to ﬁnd the SU(2) representations of braiding.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "recommendation-sec-010-02.md",
+      "narrative": null,
+      "content": "In fact we shall see just such representations21 by using a version of topological quantum ﬁeld theory.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "recommendation-sec-010-03.md",
+      "narrative": null,
+      "content": "We shall call this the Fibonacci representation of B3 to SU(2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "1. R.J. Baxter. Exactly Solved Models in Statistical Mechanics. Acad. Press (1982).\n2. C. W. J. Beenakker, Search for Majorana fermions in superconductors, arXiv: 1112.1950.\n3. N. E. Bonesteel, L. Hormozi, G. Zikos and S. H. Simon, Braid topologies for quantum computation, Phys.\nRev. Lett. 95 (2005), no. 14, 140503, 4 pp. quant-ph/0505665.\n4. S. H. Simon, N. E. Bonesteel, M. H. Freedman, N. Petrovic and L. Hormozi, Topological quantum computing\nwith only one mobile quasiparticle, Phys. Rev. Lett. 96 (2006), no. 7, 070503, 4 pp., quant-ph/0509175.\n5. J. L. Brylinski and R. Brylinski, Universal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.07827v1/blocks/table-001",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../tables/table-1.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9408099v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9408099v1  17 Aug 1994\nhep-th/9408099, RU-94-60, IASSNS-HEP-94/55\nMonopoles, Duality and Chiral Symmetry Breaking\nin N=2 Supersymmetric QCD\nN. Seiberg\nDepartment of Physics and Astronomy\nRutgers University, Piscataway, NJ 08855-0849, USA\nand\nInstitute for Advanced Study\nPrinceton, NJ 08540, USA\nand\nE. Witten\nInstitute for Advanced Study\nPrinceton, NJ 08540, USA\nWe study four dimensional N = 2 supersymmetric gauge theories with matter multiplets.\nFor all such models for which the gauge group is SU(2), we derive the exact metric on\nthe moduli space of quantum vacua and the exact spe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The holomorphic properties of supersymmetric ﬁeld theories [1-3] can be a powerful\ntool in deriving exact results about them [3-6]. In N = 1 theories in four dimensions,\nthe superpotential and the coeﬃcients of the gauge kinetic terms are holomorphic and\nare constrained by these considerations. In four-dimensional N = 2 theories, the Kahler\npotential is also constrained by holomorphy [7] and therefore it can be analyzed similarly.\nThis was used in the weak coupling analysis of [8] and in the exact treatment of [9]. The\nability to make exact statements in these four-dimensional strongly coupled",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A warm-up example: QED with matter",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-a-warm-up-example-qed-with-matter.md",
+      "narrative": null,
+      "content": "2.1. QED\nFor background, we ﬁrst consider abelian gauge theories with N = 2 supersymmetry\nand charged matter hypermultiplets - that is, the N = 2 analog of ordinary QED.\nThe “photon,” Aµ is accompanied by its N = 2 superpartners – two neutral Weyl\nspinors λ and ψ that are often called “photinos,” and a complex neutral scalar a. They\nform an irreducible N = 2 representation that can be decomposed as a sum of two N = 1\nrepresentations1: a and ψ are in a chiral representation, A, while Aµ and λ are in a vector\nrepresentation, Wα.\nWe take the charged ﬁelds, the “electrons,” to consist of k hypermu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classical moduli space",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-22-the-classical-moduli-space.md",
+      "narrative": null,
+      "content": "The classical moduli space of this theory has a branch with non-zero a. Along this ﬂat\ndirection the gauge symmetry is unbroken and all the M particles acquire a mass. Since\nthe photon is massless, we will refer to this branch of the moduli space as the Coulomb\nbranch.\nFor k ≥2 and mi = 0 there are also ﬂat directions where M is non-zero. Along these\ndirections the U(1) gauge symmetry is broken and therefore we will refer to this branch of\nthe moduli space as the Higgs branch. Up to gauge and global symmetry transformations\nthese ﬂat directions are\nM = (B, 0, ...)\nf\nM = (0, B, 0, ...).\n(2.2)\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum moduli space",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-23-the-quantum-moduli-space.md",
+      "narrative": null,
+      "content": "Quantum mechanically, this theory is probably not well-deﬁned because it is not\nasymptotically free. However, it is often the case that such a theory is embedded in a\n7\nlarger theory which is asymptotically free. In [9], we have encountered such a theory with\nk = 1 as the low energy limit of an asymptotically free SU(2) gauge theory. Below we will\nsee more examples.\nThe metric on the Higgs branch cannot be corrected quantum mechanically.\nThe\nreason for that is that the space is an almost homogeneous space which has a unique\nhyper-Kahler metric invariant under the symmetries. The metric on the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BPS-saturated states",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-24-bps-saturated-states.md",
+      "narrative": null,
+      "content": "The N = 2 algebra has “large” representations with 16 states and “small” ones with\nonly four states. As explained in [13], the masses of particles in small representations\nare determined by their quantum numbers. Indeed, in terms of the central extension Z\nin the N = 2 supersymmetry algebra, the mass of a particle in a small representation is\nM =\n√\n2|Z|.\nThe N = 2 algebra requires that Z is a linear combination of conserved charges. In [13]\nand also in [9], Z was a linear combination of the electric and magnetic quantum numbers\nne and nm. The classical expression can be written Z = nea + nmaD",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical moduli space of QCD with matter",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-3-classical-moduli-space-of-qcd-with-matter.md",
+      "narrative": null,
+      "content": "We now turn to QCD with an SU(2) gauge group. The gluons are accompanied by\nDirac fermions and complex scalars φ in the adjoint representation of the gauge group. We\nalso add Nf hypermultiplets of quarks in the fundamental representation. (We will also\nconsider the case of a single hypermultiplet in the adjoint representation, this being the\nN = 4 theory.) As in the previous section, each hypermultiplet contains a Dirac fermion\nand four real scalars. In terms of N = 1 superﬁelds the hypermultiplets contain two chiral\nsuperﬁelds Qia and eQia (i = 1, ..., Nf is the ﬂavor index and a = 1, 2 the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A ﬁrst look at the quantum theory",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-4-a-ﬁrst-look-at-the-quantum-theory.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries of the quantum theory",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-41-symmetries-of-the-quantum-theory.md",
+      "narrative": null,
+      "content": "Now we consider the quantum modiﬁcations to the symmetry structure. Since the\none-loop beta function of the theory is proportional to 4 −Nf (higher order perturba-\ntive corrections to it vanish), we limit ourselves to Nf = 0, 1, 2, 3 where the theory is\nasymptotically free and to Nf = 4 where the theory will turn out to be scale invariant.\nThe global U(1)R and the “parity” Z2 ⊂O(2Nf) are anomalous. For Nf > 0, a\ndiscrete Z4(4−Nf ) anomaly free subgroup is generated by\nWα →e\niπ\n2(4−Nf ) Wα(e\n−iπ\n2(4−Nf ) θ)\nΦ →e\niπ\n4−Nf Φ(e\n−iπ\n2(4−Nf ) θ)\nQ1 →eQ1(e\n−iπ\n2(4−Nf ) θ)\neQ1 →Q1(e\n−iπ\n2(4−Nf ) θ)\n(4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A ﬁrst look at the quantum moduli space",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-42-a-ﬁrst-look-at-the-quantum-moduli-space.md",
+      "narrative": null,
+      "content": "We now begin the analysis of the quantum moduli space.\nThe ﬁrst basic fact is\nthat for large ﬁelds, the theory is weakly coupled and the quantum moduli space is well\napproximated by the classical moduli space.\nConsider ﬁrst the Higgs branches. The SO(2Nf) × SU(2)/SO(2Nf −4) × SU(2) ×\nSU(2) structure should persist quantum mechanically. This structure admits a unique\nhyper-Kahler metric up to a constant multiple (and the multiple is ﬁxed by the behavior\nfor large ﬁelds). For instance, for Nf = 2, the metric is the orbifold metric on R4/Z2.\nTherefore, there are no quantum corrections to the metr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BPS-saturated states",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-5-bps-saturated-states.md",
+      "narrative": null,
+      "content": "As we explained in our discussion of QED, a special role is played by the BPS-saturated\nstates which are in “small” representations of the N = 2 algebra and are frequently the\nonly stable states in the spectrum.\nSince on the Higgs branches the gauge group is completely broken, there are no electric\nand magnetic charges that can appear as central charges in the N = 2 algebra. The only\n16\ncentral charge could be a U(1) charge of a hypermultiplet. A Higgs branch exists only when\nthere are at least two degenerate hypermultiplets (not necessarily with zero bare mass).\nThen, if there is an abelian s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 20,
+      "pageEnd": 28,
+      "target": "../sections/sec-010-6-duality.md",
+      "narrative": null,
+      "content": "As in the pure gauge theory [9], we can perform SL(2, Z) duality transformation on\nthe low energy ﬁelds. Although they are non-local on the photon ﬁeld Aµ, they act simply\non (aD, a). Several new issues appear when matter ﬁelds are present.\n19\nFirst, consider the situation of one massive quark with mass mNf and examine what\nhappens when a approaches mNf /\n√\n2 where one of the elementary quarks becomes mass-\nless. As in the discussion in section 2, loop diagrams in which this quark propagates make\na logarithmic contribution to aD. The behavior near a = mNf /\n√\n2 is thus\na ≈a0\naD ≈c −i\n2π (a −a0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low energy theory near the singularities",
+      "pageStart": 28,
+      "pageEnd": 37,
+      "target": "../sections/sec-011-8-low-energy-theory-near-the-singularities.md",
+      "narrative": null,
+      "content": "In this section we study the low energy eﬀective ﬁeld theory near the singularities.\nFor simplicity, we will focus on the massless theories. It is straightforward to extend our\n27\nconsiderations to the massive ones.\nThe light states near all the singularities are a photon multiplet and some charged\nﬁelds. Using the duality transformation, the low energy theory near any of the singularities\nis an abelian gauge theory with some light hypermultiplets. This theory was studied in\nsection 2, but two important points should be noted. First, the N = 2 photon multiplet we\nencounter in our low energy eﬀ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries for determining the metric",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-012-11-preliminaries-for-determining-the-metric.md",
+      "narrative": null,
+      "content": "In the remainder of this paper we will ﬁnd the exact solution for the low energy eﬀective\naction, metric on moduli space, and particle masses for the various theories. The basic\n36\nidea, as in [9], involves introducing a suitable family of elliptic curves, and interpreting\n(aD, a) as periods of an appropriate family of meromorphic one-forms.\n11.1. Nf = 0\nIt is appropriate to start ﬁrst by reconsidering the Nf = 0 theory. In section 6 of [9],\nwe described this theory by the family of curves\ny2 = (x −Λ2)(x + Λ2)(x −u).\n(11.1)\n(The renormalization scale Λ was set to 1 in that reference.) This is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some convenient facts",
+      "pageStart": 39,
+      "pageEnd": 43,
+      "target": "../sections/sec-013-112-some-convenient-facts.md",
+      "narrative": null,
+      "content": "To prove that (11.7) is the modular curve of Γ0(4) is a fairly simple exercise using the\naddition law on a cubic curve.5 For our purposes, it will be more helpful to simply work\nout the singularities and the monodromies of the family.\n5\nΓ0(4) parametrizes elliptic curves with a cyclic subgroup of order four. Such a subgroup is\ngenerated by the points P± with coordinates x = Λ2/2, y = ± 1\n2Λ2√\nΛ2 −u; this follows from the\n38\nA general cubic curve of the form\ny2 = F(x) = x3 + αx2 + βx + γ = (x −e1)(x −e2)(x −e3)\n(11.8)\ndescribes a double cover of the x plane branched over e1, e2, e3, and ∞. This",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General structure of the curve",
+      "pageStart": 43,
+      "pageEnd": 52,
+      "target": "../sections/sec-014-113-general-structure-of-the-curve.md",
+      "narrative": null,
+      "content": "In trying to generalize (11.7) to Nf > 0, it is useful to ﬁrst extract some properties of\nthe Nf = 0 curve that we will try to generalize:\n(1) The family is of the form y2 = F(x, u, Λ), where F is a polynomial in x, u, and Λ that\nis at most cubic in x and u.\n(2) The part of F(x, u, Λ) that is cubic in x and u is F0 = x2(x −u).\n(3) If one assigns the U(1)R charges 4 to u and x, 2 to Λ, and 6 to y, then the family is\nU(1)R invariant; and in particular F has charge 12.\n(4) F can be written F = F0 + Λ4F1 where F1 = 1\n4x.\nFor the time being we will simply assume that property (1) remains valid in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Masses, periods and residues",
+      "pageStart": 52,
+      "pageEnd": 56,
+      "target": "../sections/sec-015-15-masses-periods-and-residues.md",
+      "narrative": null,
+      "content": "As in [9], the particle masses and the low energy metric and couplings are now de-\ntermined by equating a and aD with periods of a certain meromorphic one-form λ on the\ncurve E. λ has two characteristics: (i) λ may have poles but (as long as the monodromies\nare in SL(2, Z)) its residues vanish; (ii) to achieve positivity of the metric on the quantum\nmoduli space, its derivative with respect to u is proportional to dx\ny .\nCondition (i) means that the deﬁnition of a and aD by contour integrals\na =\nZ\nγ1\nλ\naD =\nZ\nγ2\nλ,\n(15.1)\n– with γ1 and γ2 some contours on E – is invariant under deformation of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the scale invariant theories",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-016-16-structure-of-the-scale-invariant-theories.md",
+      "narrative": null,
+      "content": "In this section, we will analyze the Nf = 4 and N = 4 theories. In the absence of bare\nmasses, those theories are conformally invariant. In the presence of N = 2-invariant bare\nmasses, their properties (or at least the properties that we can analyze) are much richer.\n8 This equation has the following interpretation. The curve (15.5) is real for real u, that is,\nthe coeﬃcients in the equation are real. There are two types of real elliptic curve: τ can have\nreal part zero or 1/2. (Thus τ is either invariant or transformed by the SL(2, Z) transformation\nτ →τ −1 under the complex conjugation opera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The massless case",
+      "pageStart": 57,
+      "pageEnd": 70,
+      "target": "../sections/sec-017-161-the-massless-case.md",
+      "narrative": null,
+      "content": "The ﬁrst step is to ﬁnd the right family of curves for the conformally invariant case,\nthat is when the bare masses are zero. In this case, the classical formulas\na =\n\u001a 1\n2\n√\n2u,\nfor Nf = 4\n√\n2u\nfor N = 4,\naD = τa\n(16.2)\nare exact. So we wish to ﬁnd a curve y2 = F(x, u, τ) such that the diﬀerential form\nω =\n( √\n2\n8π\ndx\ny\nfor Nf = 4\n√\n2\n4π\ndx\ny\nfor N = 4,\n(16.3)\n9 Holomorphy of F is needed in order for the coeﬃcient τ(u, mi, Λ) in front of Wα\n2 in the low\nenergy theory to be holomorphic in the ﬁeld u and the parameters mi and Λ, as follows from [3].\nAbsence of singularities in F is less obvious",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Theory Of The Residues",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-018-17-the-theory-of-the-residues.md",
+      "narrative": null,
+      "content": "One important diﬀerence between the mathematical structure of the N = 2 theories\nwith matter considered in this paper and the “pure gauge theory” studied in [9] is that\nin the presence of matter the monodromies do not simply transform (aD, a) linearly, by\nSL(2, Z) transformations; a and aD also pick up additive constants under monodromy. As\nwe explained in section 15, these constants can be detected as the residues of the diﬀerential\nform λ. Since the jumps in a or aD are integral linear combinations of mi/\n√\n2 (with mi\nthe bare masses) and are 2πi times the residues of λ, the residues of λ sh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Meaning Of The Residues",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-019-171-the-meaning-of-the-residues.md",
+      "narrative": null,
+      "content": "The Nf = 4 theory is controlled by a curve y2 = F(x, u, mi, τ) and a diﬀerential form\nλ obeying\ndλ\ndu = ω + exact form in x\n(17.2)\nwith\nω =\n√\n2\n8π\ndx\ny .\n(17.3)\nFor N = 4 the structure is the same, except that 8π is replaced by 4π. F should be such\nthat the residues of λ are linear in the quark bare masses. This is a severe restriction\non F; we will see that it determines F uniquely (up to the usual changes of variables)\nindependently of most of the arguments that we have used up to this point.\nAs a preliminary, let us write (17.2) in a more symmetrical form. If λ = dx a(x, u),\nthen (17.2) mea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Cohomology Of X",
+      "pageStart": 73,
+      "pageEnd": 75,
+      "target": "../sections/sec-020-172-the-cohomology-of-x.md",
+      "narrative": null,
+      "content": "It will be useful to know something about the cohomology of the complex manifold\nX described by the equation\ny2 = F(x, u) = (x −e1u)(x −e2u)(x −e3u) + lower order terms.\n(17.13)\nIt is helpful to compactify X, which will be needed anyway to do the calculation just\nmentioned. We do this by introducing another variable v and making the equation homo-\ngeneous. First we extend F to a polynomial F(x, u, v) homogeneous of degree 3 (such\nthat F(x, u, 1) is the original F).\nWe could now consider the homogeneous equation\nvy2 = F(x, u, v), with x, u, v, y all of degree 1. However, things work out more ea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding the Curves",
+      "pageStart": 75,
+      "pageEnd": 81,
+      "target": "../sections/sec-021-173-finding-the-curves.md",
+      "narrative": null,
+      "content": "Now we would like to ﬁnd a suitable set of curves Ca on which λ will have poles. In this\nsection we set v = 1 and work on the uncompactiﬁed manifold X given by y2 = F(x, u).\nTo guess what the Ca may be, let us look back to some of the models treated earlier,\nfor instance the massive Nf = 2 theory. In equation (15.3), we found an explicit formula\nfor λ in this theory; it had poles at\nx = ±1\n8Λ2\n2\ny = ± i\n8Λ2\n2(m1 ± m2).\n(17.20)\n74\nThis can be interpreted as follows. The equation y2 = F(x, u) describes a double\ncover of the x −u plane. The equation\nx = ±Λ2\n2/8\n(17.21)\ndescribes (for a given choi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determination Of The Equation For Nf = 4",
+      "pageStart": 81,
+      "pageEnd": 87,
+      "target": "../sections/sec-022-174-determination-of-the-equation-for-nf-4.md",
+      "narrative": null,
+      "content": "We have ﬁnally assembled the tools to determine the precise function F in our equa-\ntions y2 = F(x, u). First we do this for the theory with Nf = 4. We will determine\nthe expansion of ω in terms of the C(i)a for some given i; we may as well pick i = 1.\n(The expansions in terms of the C(j)a for j̸ = 1 are then determined by the above triality\nformulas.) By requiring that ω = −1\n√\n2\nP\na ma[C(1)a], F will be determined.\nIn coordinates with v = 1, the cubic part of F is (x −e1u)(x −e2u)(x −e3u). Since e1\nis in any case singled out by the decision to expand in the C(1)a, it is convenient to make\nth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 87,
+      "pageEnd": 88,
+      "target": "../sections/sec-023-acknowledgements.md",
+      "narrative": null,
+      "content": "We would like to thank T. Banks, K. Intriligator, R. Leigh, G. Moore, R. Plesser\nand S. Shenker for useful discussions and P. Deligne for explanations that made possible\nthe analysis in section 17. This work was supported in part by DOE grant #DE-FG05-\n90ER40559 and in part by NSF grant #PHY92-45317.\n86",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 88,
+      "pageEnd": 88,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "[1]\nM.A. Shifman and A.I. Vainshtein, Nucl. Phys. B277 (1986) 456; Nucl. Phys. B359\n(1991) 571.\n[2]\nD. Amati, K. Konishi, Y. Meurice, G.C. Rossi and G. Veneziano, Phys. Rep. 162\n(1988) 169 and references therein.\n[3]\nN. Seiberg, Phys. Lett. 318B (1993) 469.\n[4]\nN. Seiberg, Phys. Rev. D49 (1994) 6857, hep-th/9402044.\n[5]\nK. Intriligator, R. Leigh and N. Seiberg, Phys. Rev. D50 (1994) 1092, hep-th/9403198.\n[6]\nV. Kaplunovsky and J. Louis, hep-th/9402005.\n[7]\nS. J. Gates, Jr., Nucl. Phys. B238 (1984) 349; B. De Wit and A. Van Proeyen, Nucl.\nPhys. B245 (1984) 89.\n[8]\nN. Seiberg, Phys. Lett. 206B (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

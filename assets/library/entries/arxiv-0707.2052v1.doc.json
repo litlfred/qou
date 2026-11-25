@@ -1,0 +1,2040 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.2052v1",
+  "title": "The Mukai pairing, I: a categorical approach",
+  "variant": "pdf",
+  "pages": 39,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The 2-category of kernels",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-2-category-of-kernels"
+    },
+    {
+      "level": 2,
+      "title": "A reminder on 2-categories.",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-a-reminder-on-2-categories"
+    },
+    {
+      "level": 2,
+      "title": "The 2-category Var.",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-2-category-var"
+    },
+    {
+      "level": 1,
+      "title": "Serre functors",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-serre-functors"
+    },
+    {
+      "level": 2,
+      "title": "The Serre functor on D(X).",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-serre-functor-on-dx"
+    },
+    {
+      "level": 2,
+      "title": "Serre kernels and the Serre functor for D(XY).",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-serre-kernels-and-the-serre-functor-for-dxy"
+    },
+    {
+      "level": 1,
+      "title": "Adjoint kernels",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-adjoint-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Adjunctions in 2-categories.",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-adjunctions-in-2-categories"
+    },
+    {
+      "level": 2,
+      "title": "Left and right adjoints of kernels.",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-left-and-right-adjoints-of-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Partial traces.",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-partial-traces"
+    },
+    {
+      "level": 2,
+      "title": "Adjunction as a 2-functor.",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-adjunction-as-a-2-functor"
+    },
+    {
+      "level": 1,
+      "title": "Induced maps on homology",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-induced-maps-on-homology"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild cohomology.",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-hochschild-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild homology.",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-hochschild-homology"
+    },
+    {
+      "level": 2,
+      "title": "Push-forward and pull-back.",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-push-forward-and-pull-back"
+    },
+    {
+      "level": 1,
+      "title": "The Mukai pairing and adjoint kernels",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-the-mukai-pairing-and-adjoint-kernels"
+    },
+    {
+      "level": 1,
+      "title": "The Chern character",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-the-chern-character"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the Chern character.",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-definition-of-the-chern-character"
+    },
+    {
+      "level": 2,
+      "title": "The Chern character as a map on K-theory.",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-the-chern-character-as-a-map-on-k-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Chern character and inner products.",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-the-chern-character-and-inner-products"
+    },
+    {
+      "level": 2,
+      "title": "Example.",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-example"
+    },
+    {
+      "level": 1,
+      "title": "Open-closed TQFTs and the Cardy Condition",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-open-closed-tqfts-and-the-cardy-condition"
+    },
+    {
+      "level": 2,
+      "title": "Open-closed 2d TQFTs.",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-open-closed-2d-tqfts"
+    },
+    {
+      "level": 2,
+      "title": "Open-closed 2d TQFTs with D-branes.",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-open-closed-2d-tqfts-with-d-branes"
+    },
+    {
+      "level": 2,
+      "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo"
+    },
+    {
+      "level": 2,
+      "title": "The Baggy Cardy Condition.",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-the-baggy-cardy-condition"
+    },
+    {
+      "level": 1,
+      "title": "Duality and partial trace",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-duality-and-partial-trace"
+    },
+    {
+      "level": 2,
+      "title": "Polite duality.",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-polite-duality"
+    },
+    {
+      "level": 2,
+      "title": "Reflexively polite kernels.",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-reflexively-polite-kernels"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mukai pairing",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "araru",
+          "heading": false
+        },
+        {
+          "term": "hirzebruch-riemann-roch",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0707.2052v1 [math.AG] 13 Jul 2007 The Mukai pairing, I: a categorical approach Andrei C˘ald˘araru∗and Simon Willerton† July 12, 2007 Abstract We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0707.2052v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 2183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "mukai pairing",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "category mathscr",
+          "heading": false
+        },
+        {
+          "term": "homology mathop",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "hom mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr delta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The purpose of the present paper is to introduce the Mukai pairing on the Hochschild homology of smooth, proper spaces. This pairing is the natural analogue, in the context of Hochschild theory, of the Poincaré pairing on the singular cohomology of smooth manifolds. Our approach is categorical. We start with a geometric category, whose objects will be called *spaces*. For a space $X$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-2-category-of-kernels",
+      "number": null,
+      "title": "The 2-category of kernels",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "kernels",
+          "heading": true
+        },
+        {
+          "term": "integral transforms",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce the 2-category ${\\mathscr{V}\\textsf{ar}}$, which provides the natural context for the study of the structure of integral transforms between derived categories of spaces. The objects of ${\\mathscr{V}\\textsf{ar}}$ are spaces, 1-morphisms are kernels of integral transforms, and 2-morphisms are maps between these kernels. Before introducing ${\\mathscr{V}\\textsf{ar}}$ we remind the reader of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-a-reminder-on-2-categories",
+      "number": null,
+      "title": "A reminder on 2-categories.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1036,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "equiv raisebox",
+          "heading": false
+        },
+        {
+          "term": "circ mathsf",
+          "heading": false
+        },
+        {
+          "term": "qquad raisebox",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        },
+        {
+          "term": "height equiv",
+          "heading": false
+        },
+        {
+          "term": "colon phi",
+          "heading": false
+        }
+      ],
+      "extract": "We will review the notion of a 2-category at the same time as introducing the notation we will be using. Recall that a 2-category consists of three levels of structure: objects; 1-morphisms between objects; and 2-morphisms between 1-morphisms. It is worth mentioning a few examples to bear in mind during the following exposition. - The first example is the 2-category ${\\mathscr{C}\\textsf{at}}$ of categories, functors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-2-category-var",
+      "number": null,
+      "title": "The 2-category Var.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "category mathscr",
+          "heading": false
+        },
+        {
+          "term": "hom mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr delta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "category mathbf",
+          "heading": false
+        },
+        {
+          "term": "phi colon",
+          "heading": false
+        },
+        {
+          "term": "integral kernels",
+          "heading": false
+        }
+      ],
+      "extract": "The 2-category ${\\mathscr{V}\\textsf{ar}}$, of spaces and integral kernels, is defined as follows. The objects are spaces, as defined in the introduction, and the hom-category $\\mathop{\\mathrm{\\textbf{\\textsf{Hom}}}}_{\\mathscr{V}\\textsf{ar}}(X,Y)$ from a space $X$ to a space $Y$ is the derived category $\\mathbf{D}(X\\times Y)$, which is to be thought of as the category of integral kernels from $X$ to $Y$. Explicitly,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-serre-functors",
+      "number": null,
+      "title": "Serre functors",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "serre",
+          "heading": true
+        },
+        {
+          "term": "serre functor",
+          "heading": false
+        },
+        {
+          "term": "realise",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:serre label=\"sec:serre\"} In this section we review the notion of the Serre functor on $\\mathbf{D}(X)$ and then show how to realise the Serre functor on the derived category $\\mathbf{D}(X\\times Y)$ using 2-categorical language.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-the-serre-functor-on-dx",
+      "number": null,
+      "title": "The Serre functor on D(X).",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf mathscr",
+          "heading": false
+        },
+        {
+          "term": "eta mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "colon mathop",
+          "heading": false
+        },
+        {
+          "term": "serre",
+          "heading": true
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "hom mathbf",
+          "heading": false
+        },
+        {
+          "term": "circ alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Serretrace label=\"subsec:Serretrace\"} If $X$ is a space then we consider the functor $$\\mathsf{S}\\colon\\mathbf{D}(X)\\to \\mathbf{D}(X);\\qquad {\\mathscr E}\\mapsto \\omega_X[\\dim X]\\otimes {\\mathscr E},$$ where $\\omega_X$ is the canonical line bundle of $X$. Serre duality then gives natural, bifunctorial isomorphisms $$\\eta_{{\\mathscr E},{\\mathscr F}}\\colon\\mathop{\\mathrm{Hom}}_{\\mathbf{D}(X)}({\\mathscr E},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-serre-kernels-and-the-serre-functor-for-dxy",
+      "number": null,
+      "title": "Serre kernels and the Serre functor for D(XY).",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "serre functor",
+          "heading": true
+        },
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "serre kernel",
+          "heading": false
+        },
+        {
+          "term": "hom mathscr",
+          "heading": false
+        },
+        {
+          "term": "serre trace",
+          "heading": false
+        },
+        {
+          "term": "delta mathscr",
+          "heading": false
+        },
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "anti-serre kernel",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:serXY label=\"subsec:serXY\"} We are interested in kernels and the 2-category ${\\mathscr{V}\\textsf{ar}}$, so are interested in Serre functors for product spaces $X\\times Y$, and these have a lovely description in the 2-categorical language. We can now define one of the key objects in this paper. ::: Definition For a space $X$, the *Serre kernel* $\\Sigma_X\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-adjoint-kernels",
+      "number": null,
+      "title": "Adjoint kernels",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "adjoint",
+          "heading": true
+        },
+        {
+          "term": "category mathscr",
+          "heading": false
+        },
+        {
+          "term": "partial trace",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adjoints label=\"sec:adjoints\"} The reader is undoubtably familiar with the notion of adjoint functors. It is easy and natural to generalize this from the context of the 2-category ${\\mathscr{C}\\textsf{at}}$ of categories, functors and natural transformations to the context of an arbitrary 2-category. In this section it is shown that every kernel, considered as a 1-morphism in the 2-category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-adjunctions-in-2-categories",
+      "number": null,
+      "title": "Adjunctions in 2-categories.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ mathsf",
+          "heading": false
+        },
+        {
+          "term": "height raisebox",
+          "heading": false
+        },
+        {
+          "term": "colon mathsf",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "adjunction psi",
+          "heading": false
+        },
+        {
+          "term": "psi dashv",
+          "heading": false
+        },
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "stackrel mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "The notion of an adjunction in a 2-category simultaneously generalizes the notion of an adjunction between functors and the notion of a duality between objects of a monoidal category. As it is the former that arises in the context of integral transforms, we will use that as the motivation, but will come back to the latter below. The most familiar definition of adjoint functors is as follows. For categories",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-left-and-right-adjoints-of-kernels",
+      "number": null,
+      "title": "Left and right adjoints of kernels.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "height raisebox",
+          "heading": false
+        },
+        {
+          "term": "scriptscriptstyle vee",
+          "heading": false
+        },
+        {
+          "term": "phi scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "quad raisebox",
+          "heading": false
+        },
+        {
+          "term": "dashv phi",
+          "heading": false
+        },
+        {
+          "term": "vee circ",
+          "heading": false
+        },
+        {
+          "term": "epsilon phi",
+          "heading": false
+        },
+        {
+          "term": "adjunctions phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:leftrightadjoints label=\"subsec:leftrightadjoints\"} []{#subsec:yphimphi label=\"subsec:yphimphi\"} In an arbitrary 2-category a given 1-morphism might or might not have a left or a right adjoint, but in the 2-category ${\\mathscr{V}\\textsf{ar}}$ every 1-morphism, that is every kernel, has both a left and a right adjoint. We will see below that for a kernel $\\Phi\\colon X\\to Y$ there are adjunctions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-partial-traces",
+      "number": null,
+      "title": "Partial traces.",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "circ sigma",
+          "heading": false
+        },
+        {
+          "term": "trace mathop",
+          "heading": false
+        },
+        {
+          "term": "mapsto raisebox",
+          "heading": false
+        },
+        {
+          "term": "mathrm mbox",
+          "heading": false
+        }
+      ],
+      "extract": "We can now define the important notion of partial traces. ::: Definition For a kernel $\\Phi\\colon X\\to Y$, and kernels $\\Psi,\\Theta\\colon Z\\to X$ define the *left partial trace* $$\\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Phi\\circ\\Theta,\\Sigma_Y\\circ\\Phi\\circ\\Psi) \\to \\mathop{\\mathrm{{2\\mbox{-}Hom}}}(\\Theta,\\Sigma_X\\circ\\Psi)$$ as $$\\raisebox{-.45\\height}{}\\mapsto\\raisebox{-.45\\height}{}.$$ Similarly we define a *right",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-adjunction-as-a-2-functor",
+      "number": null,
+      "title": "Adjunction as a 2-functor.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptscriptstyle vee",
+          "heading": false
+        },
+        {
+          "term": "colon scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "otimes scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "phi scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "vee xrightarrow",
+          "heading": false
+        },
+        {
+          "term": "tau colon",
+          "heading": false
+        },
+        {
+          "term": "otimes mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:adj2functors label=\"subsec:adj2functors\"} As shown in Section [\\[subsec:leftrightadjoints\\]](#subsec:leftrightadjoints){reference-type=\"ref\" reference=\"subsec:leftrightadjoints\"}, in the 2-category ${\\mathscr{V}\\textsf{ar}}$ every 1-morphism, that is every kernel, $\\Phi\\colon X\\to Y$ has a right adjoint $\\Sigma_X\\circ \\Phi^{\\scriptscriptstyle\\vee}$. This can be extended to a 'right adjunction 2-functor'",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-induced-maps-on-homology",
+      "number": null,
+      "title": "Induced maps on homology",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 51,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "colon mathop",
+          "heading": false
+        },
+        {
+          "term": "phi colon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:defmaps label=\"sec:defmaps\"} In this section we define $\\mathop{\\mathrm{HH}}_\\bullet(X)$, the Hochschild homology of a space $X$, and show that given a kernel $\\Phi\\colon X\\to Y$ we get pull-back and push-forward maps, $\\Phi^*\\colon \\mathop{\\mathrm{HH}}_\\bullet(Y)\\to \\mathop{\\mathrm{HH}}_\\bullet(X)$ and $\\Phi_*\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to \\mathop{\\mathrm{HH}}_\\bullet(Y)$, such that if $\\Phi$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-hochschild-cohomology",
+      "number": null,
+      "title": "Hochschild cohomology.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr textsf",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathscr delta",
+          "heading": false
+        },
+        {
+          "term": "hom bullet",
+          "heading": false
+        }
+      ],
+      "extract": "First recall that for a space $X$, one way to define its Hochschild *cohomology* is as $$\\mathop{\\mathrm{HH}}^\\bullet(X):=\\mathop{\\mathrm{Ext}}_{X\\times X}^\\bullet({\\mathscr O}_\\Delta,{\\mathscr O}_\\Delta).$$ However, the ext-group is just the hom-set $\\mathop{\\mathrm{Hom}}^\\bullet_{\\mathbf{D}(X\\times X)}({\\mathscr O}_\\Delta,{\\mathscr O}_\\Delta)$ which by the definition of ${\\mathscr{V}\\textsf{ar}}$ is just",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-hochschild-homology",
+      "number": null,
+      "title": "Hochschild homology.",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "delta mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathsf bullet",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "hom bullet",
+          "heading": false
+        },
+        {
+          "term": "weibel",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Now we define $\\mathop{\\mathrm{HH}}_\\bullet(X)$ the Hochschild *homology* of a space $X$ as follows: $$\\mathop{\\mathrm{HH}}_\\bullet(X):=\\mathop{\\mathrm{{2\\mbox{-}Hom}}}_{\\mathscr{V}\\textsf{ar}}^\\bullet(\\Sigma_X^{-1},\\mathsf {Id}_X)$$ or, in more concrete terms, $$\\mathop{\\mathrm{HH}}_\\bullet(X) = \\mathop{\\mathrm{Ext}}_{X\\times X}^{-\\bullet}(\\Sigma^{-1}_X,{\\mathscr O}_\\Delta).$$ Thus an element $w\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-push-forward-and-pull-back",
+      "number": null,
+      "title": "Push-forward and pull-back.",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptscriptstyle vee",
+          "heading": false
+        },
+        {
+          "term": "phi scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "psi scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "vee circ",
+          "heading": false
+        },
+        {
+          "term": "circ mathsf",
+          "heading": false
+        },
+        {
+          "term": "circ tau",
+          "heading": false
+        },
+        {
+          "term": "circ sigma",
+          "heading": false
+        },
+        {
+          "term": "phi colon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#def:defmaps label=\"def:defmaps\"} For spaces $X$ and $Y$ and a kernel $\\Phi\\colon X\\to Y$ define the push-forward on Hochschild homology $\\Phi_*\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to \\mathop{\\mathrm{HH}}_\\bullet(Y)$ as follows $$\\Phi_*\\left(\\raisebox{-.45\\height}{}\\right):=\\raisebox{-.45\\height}{}.$$ For the reader still unhappy with diagrams, for $v\\in \\mathop{\\mathrm{Hom}}^\\bullet(\\Sigma_X^{-1},\\mathsf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-the-mukai-pairing-and-adjoint-kernels",
+      "number": null,
+      "title": "The Mukai pairing and adjoint kernels",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mukai pairing",
+          "heading": true
+        },
+        {
+          "term": "adjoint kernels",
+          "heading": true
+        },
+        {
+          "term": "height raisebox",
+          "heading": false
+        },
+        {
+          "term": "ensuremath left",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "colon mathop",
+          "heading": false
+        },
+        {
+          "term": "height right",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adjoint label=\"sec:adjoint\"} In this section we define the Mukai pairing on the Hochschild homology of a space and show that the push-forwards of adjoint kernels are themselves adjoint linear maps with respect to this pairing. First observe from Section [\\[subsec:adj2functors\\]](#subsec:adj2functors){reference-type=\"ref\" reference=\"subsec:adj2functors\"} that we have two isomorphisms:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-the-chern-character",
+      "number": null,
+      "title": "The Chern character",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 54,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern character",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "chernchar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:chernchar label=\"sec:chernchar\"} In this section we define the Chern character map $\\mathop{\\mathrm{ch}}\\colon \\mathop{\\mathrm{K}}_0(X) \\rightarrow\\mathop{\\mathrm{HH}}_0(X)$. We discuss the relationship between our construction and the one of Markarian [@Mar Definition 2]. Then we show that the Chern character maps the Euler pairing to the Mukai pairing: we call this the Semi-Hirzebruch-Riemann-Roch Theorem.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-definition-of-the-chern-character",
+      "number": null,
+      "title": "Definition of the Chern character.",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "circ mathscr",
+          "heading": false
+        },
+        {
+          "term": "dto mathop",
+          "heading": false
+        },
+        {
+          "term": "phi mathop",
+          "heading": false
+        },
+        {
+          "term": "kernel mathsf",
+          "heading": false
+        },
+        {
+          "term": "rto phi",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose $X$ is a space, and ${\\mathscr E}$ is an object in $\\mathbf{D}(X)$. Consider ${\\mathscr E}$ as an object of $\\mathbf{D}({\\mathsf{pt}}\\times X)$, i.e., as a kernel ${\\mathsf{pt}}\\rightarrow X$, so there is an induced linear map $${\\mathscr E}_*\\colon\\mathop{\\mathrm{HH}}_\\bullet({\\mathsf{pt}}) \\rightarrow\\mathop{\\mathrm{HH}}_\\bullet(X).$$ Now, because the Serre functor on a point is trivial,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-the-chern-character-as-a-map-on-k-theory",
+      "number": null,
+      "title": "The Chern character as a map on K-theory.",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr rto",
+          "heading": false
+        },
+        {
+          "term": "iota mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "circ mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr colon",
+          "heading": false
+        },
+        {
+          "term": "chern character",
+          "heading": true
+        },
+        {
+          "term": "mathscr varphi",
+          "heading": false
+        },
+        {
+          "term": "dto iota",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:iotae label=\"subsec:iotae\"} To show that the Chern character descends to a map on K-theory we give a characterization of the Chern character similar to that of Markarian [@Mar]. For any object ${\\mathscr E}\\in \\mathbf{D}(X)$, which is to be considered an object of $\\mathbf{D}( {\\mathsf{pt}}\\times X)$, there are the following two maps: $$\\iota_{\\mathscr E}\\colon \\mathop{\\mathrm{HH}}_\\bullet(X)\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-the-chern-character-and-inner-products",
+      "number": null,
+      "title": "The Chern character and inner products.",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr scriptscriptstyle",
+          "heading": false
+        },
+        {
+          "term": "chern character",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathsf bullet",
+          "heading": false
+        },
+        {
+          "term": "circ mathscr",
+          "heading": false
+        },
+        {
+          "term": "otimes mathscr",
+          "heading": false
+        },
+        {
+          "term": "scriptscriptstyle vee",
+          "heading": false
+        },
+        {
+          "term": "langle mathop",
+          "heading": false
+        }
+      ],
+      "extract": "One reading of the Hirzebruch-Riemann-Roch Theorem is that it says that the usual Chern character map $\\mathop{\\mathrm{ch}}\\colon \\mathop{\\mathrm{K}}_0\\to \\mathsf H^\\bullet(X)$ is a map of inner product spaces when $\\mathop{\\mathrm{K}}_0(X)$ is equipped with the Euler pairing (see below) and $\\mathsf H^\\bullet(X)$ is equipped with the pairing $\\langle x_1,x_2\\rangle:=(x_1\\cup x_2 \\cup \\mathop{\\mathrm{td}}_X)\\cap",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-example",
+      "number": null,
+      "title": "Example.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orbifold",
+          "heading": false
+        },
+        {
+          "term": "representation-theoretic",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "To have a non-commutative example at hand, consider the case when $G$ is a finite group acting trivially on a point. The orbifold $BG$ is defined to be the global quotient $[{\\,\\cdot\\,}/G]$ and then the category of coherent sheaves on the orbifold $BG$ is precisely the category of finite dimensional representations of $G$. One can naturally identify $\\mathop{\\mathrm{HH}}_0(BG)$ with the space of conjugation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-open-closed-tqfts-and-the-cardy-condition",
+      "number": null,
+      "title": "Open-closed TQFTs and the Cardy Condition",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cardy",
+          "heading": true
+        },
+        {
+          "term": "open-closed",
+          "heading": true
+        },
+        {
+          "term": "open-closed topological",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cardy label=\"sec:cardy\"} We conclude with a discussion of open-closed topological field theories in the B-model and we prove that a condition holds for Hochschild homology which is equivalent to the Cardy Condition in the Calabi-Yau case. Appropriate references for open-closed 2d topological field theories include Moore-Segal [@MooSeg], Costello [@Cos] and Lauda-Pfeiffer [@LaudaPfeifer].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-open-closed-2d-tqfts",
+      "number": null,
+      "title": "Open-closed 2d TQFTs.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textsf cob",
+          "heading": false
+        },
+        {
+          "term": "colon textsf",
+          "heading": false
+        },
+        {
+          "term": "category textsf",
+          "heading": false
+        },
+        {
+          "term": "otimes textsf",
+          "heading": false
+        },
+        {
+          "term": "image textsf",
+          "heading": false
+        },
+        {
+          "term": "algebra textsf",
+          "heading": false
+        },
+        {
+          "term": "open-closed",
+          "heading": true
+        },
+        {
+          "term": "open-closed tqft",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the open and closed 2-cobordism category $2\\textsf{Cob}_{\\text{oc}}$ whose objects are oriented, compact one-manifolds --- in other words, disjoint unions of circles and intervals --- and whose morphisms are (diffeomorphism classes of) cobordisms-with-corners between the source and target one-manifolds. A morphism can be drawn as a vertical cobordism, from the source at the bottom to the target at the top.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-open-closed-2d-tqfts-with-d-branes",
+      "number": null,
+      "title": "Open-closed 2d TQFTs with D-branes.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textsf cob",
+          "heading": false
+        },
+        {
+          "term": "category textsf",
+          "heading": false
+        },
+        {
+          "term": "colon textsf",
+          "heading": false
+        },
+        {
+          "term": "otimes textsf",
+          "heading": false
+        },
+        {
+          "term": "open-closed",
+          "heading": true
+        },
+        {
+          "term": "labelled open-closed",
+          "heading": false
+        },
+        {
+          "term": "space textsf",
+          "heading": false
+        },
+        {
+          "term": "lambda labelled",
+          "heading": false
+        }
+      ],
+      "extract": "A more interesting model of string theory is obtained when we specify a set of 'boundary conditions' or 'D-branes' for the open strings. For a mathematician this just means a set of labels for the boundary points of objects. So fix a set $\\Lambda$ of labels, and consider the category $2\\textsf{Cob}_{\\text{oc}}^\\Lambda$ of open-closed cobordisms such that the objects are compact, oriented one-manifolds with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+      "number": null,
+      "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi-yau manifold",
+          "heading": true
+        },
+        {
+          "term": "mathscr delta",
+          "heading": false
+        },
+        {
+          "term": "mathscr colon",
+          "heading": false
+        },
+        {
+          "term": "category textsf",
+          "heading": false
+        },
+        {
+          "term": "maps mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "hom bullet",
+          "heading": false
+        },
+        {
+          "term": "space textsf",
+          "heading": false
+        }
+      ],
+      "extract": "Associated to a Calabi-Yau manifold $X$ there are two standard 2d TQFTs coming from string theory, imaginatively named the A-model and the B-model: it is the B-model we will be interested in here. In the B-model the boundary conditions are supposed to be \"generated\" by complex submanifolds of $X$ so the boundary conditions are taken to be complexes of coherent sheaves on $X$; the open string category is then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-the-baggy-cardy-condition",
+      "number": null,
+      "title": "The Baggy Cardy Condition.",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 624,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cardy condition",
+          "heading": true
+        },
+        {
+          "term": "rangle textsf",
+          "heading": false
+        },
+        {
+          "term": "colon textsf",
+          "heading": false
+        },
+        {
+          "term": "otimes textsf",
+          "heading": false
+        },
+        {
+          "term": "height raisebox",
+          "heading": false
+        },
+        {
+          "term": "iota mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "scriptscriptstyle vee",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of a manifold $X$ that is not necessarily Calabi-Yau we don't have the same coincidence of structure as above: we no longer have a Frobenius algebra $\\mathop{\\mathrm{HH}}^\\bullet(X)$; rather we have an algebra $\\mathop{\\mathrm{HH}}^\\bullet(X)$ and an inner product space $\\mathop{\\mathrm{HH}}_\\bullet(X)$. This means that we can not formulate the Cardy Condition as it stands. We now state a condition which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-duality-and-partial-trace",
+      "number": null,
+      "title": "Duality and partial trace",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "duality",
+          "heading": true
+        },
+        {
+          "term": "patibility",
+          "heading": false
+        },
+        {
+          "term": "idy",
+          "heading": false
+        }
+      ],
+      "extract": "Duality and partial trace In this appendix we show that given a kernel Φ: X →Y and its dual kernel Φ∨: Y →X there are canonical 2-morphisms Σ−1 X →Φ∨◦Φ and Φ ◦ΣX ◦Φ∨→IdY giving rise to a variety of natural adjunctions satisfying a number of com- patibility relations. The notion of duality in V ar is seen to be a middle-ground between the operations τL and τR: it is an involution, unlike τL and τR, but it does not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-polite-duality",
+      "number": null,
+      "title": "Polite duality.",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 35,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polite duality",
+          "heading": true
+        },
+        {
+          "term": "serre trace",
+          "heading": false
+        },
+        {
+          "term": "morphism hom",
+          "heading": false
+        },
+        {
+          "term": "adjunctions",
+          "heading": false
+        },
+        {
+          "term": "partial trace",
+          "heading": false
+        },
+        {
+          "term": "homd",
+          "heading": false
+        },
+        {
+          "term": "counits",
+          "heading": false
+        },
+        {
+          "term": "homv",
+          "heading": false
+        }
+      ],
+      "extract": "Polite duality. Recall from Section 2.2 that for every space X there is the Serre kernel ΣX: X →X such that for spaces X and Y the functor ΣY ◦−◦ΣX: HomV ar(X, Y) →HomV ar(X, Y) is a Serre functor for the category HomV ar(X, Y). 31 Deﬁnition. If Φ: X →Y and Φ† : Y →X are kernels then a polite du- ality between them, denoted Φ ∨ ←→Φ†, consists of adjunctions as follows (numbered as shown) Φ† ◦ΣY ⊣1 Φ ⊣2 ΣX ◦Φ†, Φ ◦ΣX",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-reflexively-polite-kernels",
+      "number": null,
+      "title": "Reflexively polite kernels.",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polite kernels",
+          "heading": true
+        },
+        {
+          "term": "polite duality",
+          "heading": false
+        },
+        {
+          "term": "adjunctions",
+          "heading": false
+        },
+        {
+          "term": "duality correspond",
+          "heading": false
+        },
+        {
+          "term": "homx",
+          "heading": false
+        },
+        {
+          "term": "homv",
+          "heading": false
+        },
+        {
+          "term": "homz",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "Reﬂexively polite kernels. We still need to address one more compatibility between the dualities con- structed above. Given a kernel Φ, the previous proposition yields a polite duality Φ ∨ ←→Φ∨. Given any polite duality Φ ∨ ←→Φ†, we get, symmetrically, a polite duality Φ† ∨ ←→Φ by switching the adjunctions 1 and 3 and the adjunctions 2 and 4. Thus there is a natural polite duality Φ∨ ∨ ←→Φ. On the other hand,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ald araru",
+          "heading": false
+        },
+        {
+          "term": "preprint math",
+          "heading": false
+        },
+        {
+          "term": "mukai pairing",
+          "heading": false
+        },
+        {
+          "term": "triangulated categories",
+          "heading": false
+        },
+        {
+          "term": "derived categories",
+          "heading": false
+        },
+        {
+          "term": "bondal",
+          "heading": false
+        },
+        {
+          "term": "calabi",
+          "heading": false
+        },
+        {
+          "term": "d-branes",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Bondal, A., I., Kapranov, M., M., Enhanced triangulated categories, Mat. Sb. 181 (1990), no. 5, 669–683; translation in Math. USSR-Sb. 70 (1991), no. 1, 93–107. [2] Bondal, A., I., Kapranov, M., M., Representable functors, Serre func- tors, and reconstructions, Izv. Akad. Nauk SSSR Ser. Mat. 53 (1989), no. 6, 1183–1205, 1337; translation in Math. USSR-Izv. 35 (1990), no. 3, 519–541. [3] C˘ald˘araru, A., Derived",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathscr textsf",
+      "heading": false
+    },
+    {
+      "term": "mathscr mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "colon mathscr",
+      "heading": false
+    },
+    {
+      "term": "circ mathscr",
+      "heading": false
+    },
+    {
+      "term": "height raisebox",
+      "heading": false
+    },
+    {
+      "term": "hom mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathscr scriptscriptstyle",
+      "heading": false
+    },
+    {
+      "term": "phi mathop",
+      "heading": false
+    },
+    {
+      "term": "category mathscr",
+      "heading": false
+    },
+    {
+      "term": "morphisms mathop",
+      "heading": false
+    },
+    {
+      "term": "mathsf bullet",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 31,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.2052v1"
+  }
+}

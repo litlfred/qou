@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-pauli-factor-wedderburn",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pauli-factor-wedderburn",
+  "kind": "proposition",
+  "title": "Pauli factor $F_{\\mathrm{Pauli}}$ is the alt/sym Wedderburn-block trace ratio",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-categorical",
+    "papers/quantum-observable-universe/blocks/rem-gram-matrix-spectral-connection"
+  ],
+  "tags": [
+    "pauli-factor",
+    "wedderburn",
+    "alternating-block",
+    "symmetric-block",
+    "trace-ratio",
+    "fermion-statistics"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.pauli_factor_wedderburn",
+  "text": "pauli-factor-wedderburn.md",
+  "leanSource": "pauli-factor-wedderburn.lean",
+  "provenance": "authored"
+}

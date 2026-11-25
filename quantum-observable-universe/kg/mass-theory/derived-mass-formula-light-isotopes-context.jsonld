@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-derived-mass-formula-light-isotopes-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:derived-mass-formula-light-isotopes-context",
+  "kind": "remark",
+  "title": "Scorecard, p-n splitting, and binding under-prediction for the derived mass formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-derived-mass-formula-light-isotopes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-derived-mass-formula-light-isotopes",
+  "tags": [
+    "mass-formula",
+    "light-isotopes",
+    "binding",
+    "codata"
+  ],
+  "text": "derived-mass-formula-light-isotopes-context.md",
+  "provenance": "authored"
+}

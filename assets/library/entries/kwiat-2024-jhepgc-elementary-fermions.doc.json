@@ -1,0 +1,1164 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kwiat-2024-jhepgc-elementary-fermions",
+  "title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-elementary-fermions-strings-planck-constant-preo"
+    },
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Keywords",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-keywords"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Schrödinger Equation",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-schrödinger-equation"
+    },
+    {
+      "level": 1,
+      "title": "A 2-String Analog to the Schrödinger Equation",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-a-2-string-analog-to-the-schrödinger-equation"
+    },
+    {
+      "level": 1,
+      "title": "Interaction Model",
+      "number": "4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-interaction-model"
+    },
+    {
+      "level": 1,
+      "title": "From Strings Back to Schrödinger",
+      "number": "5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-from-strings-back-to-schrödinger"
+    },
+    {
+      "level": 1,
+      "title": "Interference",
+      "number": "6",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-6-interference"
+    },
+    {
+      "level": 1,
+      "title": "Dirac Equation with Real Wave Functions",
+      "number": "7",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-7-dirac-equation-with-real-wave-functions"
+    },
+    {
+      "level": 1,
+      "title": "Transition to a Boosted System",
+      "number": "8",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-8-transition-to-a-boosted-system"
+    },
+    {
+      "level": 1,
+      "title": "Eight Real Components",
+      "number": "9",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-9-eight-real-components"
+    },
+    {
+      "level": 1,
+      "title": "Solution",
+      "number": "10",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-10-solution"
+    },
+    {
+      "level": 1,
+      "title": "Spin up and Spin down",
+      "number": "11",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-11-spin-up-and-spin-down"
+    },
+    {
+      "level": 1,
+      "title": "Weyl and Majorana",
+      "number": "12",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-12-weyl-and-majorana"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "13",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-13-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Conflicts of Interest",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-conflicts-of-interest"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 32,
+      "summary": null,
+      "keywords": [],
+      "extract": "Journal of High Energy Physics, Gravitation and Cosmology, 2024, 10, 82-100 https://www.scirp.org/journal/jhepgc ISSN Online: 2380-4335 ISSN Print: 2380-4327 DOI: 10.4236/jhepgc.2024.101008 Jan. 12, 2024 82 Journal of High Energy Physics, Gravitation and Cosmology",
+      "extractCut": false,
+      "blocks": [
+        "library/kwiat-2024-jhepgc-elementary-fermions/blocks/prose-sec-front-matter",
+        "library/kwiat-2024-jhepgc-elementary-fermions/blocks/figure-img-p001-1",
+        "library/kwiat-2024-jhepgc-elementary-fermions/blocks/figure-img-p001-2",
+        "library/kwiat-2024-jhepgc-elementary-fermions/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-elementary-fermions-strings-planck-constant-preo",
+      "number": null,
+      "title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preons and Hypergluons Doron Kwiat Mazkeret Batyia, Israel",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coupled strings",
+          "heading": false
+        },
+        {
+          "term": "planck constant",
+          "heading": false
+        },
+        {
+          "term": "mions",
+          "heading": false
+        }
+      ],
+      "extract": "Using real fields instead of complex ones, it is suggested here that the fer- mions are pairs of coupled strings with an internal tension. The interaction between the two coupled strings is due to an exchange mechanism which is proportional to Planck’s constant. This may be the result of two massless bo- sons (hypergluons) coupled by a preon (prequark) exchange. It also gives a physical explanation to the origin of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-keywords",
+      "number": null,
+      "title": "Keywords",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "Fermions, Preons, Hypergluons, Strings, Real Fields, Planck Constant, Interference, Spin",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color force",
+          "heading": false
+        },
+        {
+          "term": "dirac fermions",
+          "heading": false
+        },
+        {
+          "term": "elementary fermions",
+          "heading": false
+        },
+        {
+          "term": "ordinary color",
+          "heading": false
+        },
+        {
+          "term": "preons",
+          "heading": false
+        },
+        {
+          "term": "elementary particles",
+          "heading": false
+        },
+        {
+          "term": "dirac equation",
+          "heading": false
+        },
+        {
+          "term": "prequarks",
+          "heading": false
+        }
+      ],
+      "extract": "The Standard Model recognizes two types of elementary fermions: quarks and leptons. Mathematically, there are many varieties of fermions, but we will concentrate on Dirac fermions (massive), including neutrinos, leptons, neutrons, protons and their building blocks-quarks. Most Standard Model fermions are believed to be Dirac fermions. All Dirac fermions have mass and obey the Dirac equation. In the early days of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-schrödinger-equation",
+      "number": "2",
+      "title": "Schrödinger Equation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 749,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-relativistic schrédinger",
+          "heading": false
+        },
+        {
+          "term": "schrédinger equation",
+          "heading": false
+        },
+        {
+          "term": "real fields",
+          "heading": false
+        },
+        {
+          "term": "imaginary components",
+          "heading": false
+        },
+        {
+          "term": "kwiat",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "schrödinger",
+          "heading": true
+        }
+      ],
+      "extract": "In non-relativistic quantum mechanics, for example, a particle (such as an electron or proton) is described by a complex wave-function, ψ(x, t), which time-evolution is governed by the Schrödinger Equation: ( ) ( ) ( ) ( ) ( ) 2 2 , , , , 2 x t i x t x t V x x t t m x ψ ψ ψ ψ ∂ ∂ − = = − + ∂ ∂    (1) Here m is the particle’s mass and V(x) is the applied potential. Physical in- formation about the behavior of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-a-2-string-analog-to-the-schrödinger-equation",
+      "number": "3",
+      "title": "A 2-String Analog to the Schrödinger Equation",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strings",
+          "heading": false
+        },
+        {
+          "term": "x-axis",
+          "heading": false
+        },
+        {
+          "term": "peculiar",
+          "heading": false
+        }
+      ],
+      "extract": "Assume a one-dimensional description in x, and time ¢ Let a single particle of mass m be described by two classical real strings, g,(x,t) and g,(x,t). Here, the functions, g,(x,t) and g,(x,t) represent the amplitudes of the perturbation of the strings from the x-axis as a function of time and position. Assume coupling between these two strings, given by a constant &, and described by the following coupled",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-interaction-model",
+      "number": "4",
+      "title": "Interaction Model",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 899,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tension",
+          "heading": false
+        },
+        {
+          "term": "strings",
+          "heading": false
+        },
+        {
+          "term": "force",
+          "heading": false
+        },
+        {
+          "term": "cea",
+          "heading": false
+        }
+      ],
+      "extract": "Consider two strings g, and g,. Let g,(x,t) represent the amplitude of string 1 at time ¢and at position x. Let 7, be some tension force acting on the string. $, (% 0 $, (x (x,t) } — Ax — ; String 1 F t O(x + Ax) ney cea 7 A(x) VF ‘ String 2 aN Figure 1. Description of a double string analog as described by Equations (7) and (8). The angle @ is used to describe the tangent in the approximation of tan@~sin@ for 0 <1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-from-strings-back-to-schrödinger",
+      "number": "5",
+      "title": "From Strings Back to Schrödinger",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex wave",
+          "heading": false
+        },
+        {
+          "term": "single particle",
+          "heading": false
+        },
+        {
+          "term": "probability density",
+          "heading": false
+        },
+        {
+          "term": "coupled",
+          "heading": false
+        },
+        {
+          "term": "interpreted",
+          "heading": false
+        },
+        {
+          "term": "mathematical",
+          "heading": false
+        }
+      ],
+      "extract": "Create the complex representation again: Defining the complex function y(x,t)=9, +i9, Equations (17) and (18) may be combined together to read: oy ot Oy h na Ot 2m ox i (33) Probabilistic interpretation We remember that y(x,t)dx is the probability density of finding a single particle at an interval dx around position x. Likewise, since y(x,t)=9, +i9, and Jv (Oy @nt)ae =1 then J(@-ia)*(@, +i@, dx = ff (9? + ef )de=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-interference",
+      "number": "6",
+      "title": "Interference",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interference",
+          "heading": true
+        },
+        {
+          "term": "complex wave",
+          "heading": false
+        },
+        {
+          "term": "single particle",
+          "heading": false
+        },
+        {
+          "term": "slits",
+          "heading": false
+        },
+        {
+          "term": "free particle",
+          "heading": false
+        },
+        {
+          "term": "through slit",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "schrödinger equation",
+          "heading": false
+        }
+      ],
+      "extract": "( ) ( ) , , d 1 x t x t x ψ ψ ∗ = ∫ (36) Thus, the classical coupled string system may be interpreted as a quantum mechanical single particle, described by a wave function ( ) ,x t ψ being a prob- ability distribution function. This complex wave function describes a free particle of momentum 2 2 2 2 i t m x ψ ψ ∂ ∂ = − ∂ ∂   . i t ψ ψ ∂ = ∂   (37) m x ∂ = = ∂  , is a free particle Hamiltonian operator. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-7-dirac-equation-with-real-wave-functions",
+      "number": "7",
+      "title": "Dirac Equation with Real Wave Functions",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interference pattern",
+          "heading": false
+        },
+        {
+          "term": "ihy",
+          "heading": false
+        },
+        {
+          "term": "wave",
+          "heading": true
+        }
+      ],
+      "extract": "The relativistic Dirac Equation, describing a free Fermion of mass m is given by: (ihy\"d, —me) ¥ =0 (41) One may separate the Dirac operator ihy“0,—mc and the complex wave function Y into their real and imaginary parts vector Y =¢+iy, which after some work results in: , mc 6 [x°2,-\"2}o-(r Zar'o,+7,x (42) h cot 2 mec 0 0 1 3 y0,-—— |n=-| 7 — +7 0, +70, |b (43) h cot 0 0 0 1 hn 2.2.) © 9].]0 0 -1 0 where 7\" = iy =i)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-transition-to-a-boosted-system",
+      "number": "8",
+      "title": "Transition to a Boosted System",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cooh",
+          "heading": false
+        },
+        {
+          "term": "spin-up",
+          "heading": false
+        },
+        {
+          "term": "spin-down",
+          "heading": false
+        }
+      ],
+      "extract": "Xn = +0,b + 00,0, + CO,0.9, (48) In a system where the particle is moving along the +x axis alone ( p,, p, =0 > 0,,0, =0) 2 ~ ~ Xn = +60, +00,,0.9, (49) me? a B, =+0,L4+CO,0.L5 (50) mc GM =-0,9, —CO,0.9y (51) mc? SF 9s =-O,XLy - COOH 4 (52) These are in fact 8 different real fields, interacting via some coupling form. Define 2-vectors i = 01+ Oy Vr =$1- de Ws=HatXe Wa =Xa- Xe and the equations take the form: —ne Y,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-9-eight-real-components",
+      "number": "9",
+      "title": "Eight Real Components",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real components",
+          "heading": true
+        },
+        {
+          "term": "ese",
+          "heading": false
+        },
+        {
+          "term": "jhepgc",
+          "heading": false
+        }
+      ],
+      "extract": "Each W, is a 2-vector with real components. Thus, the Dirac Equation is ac- tually 8 equations of real components with coupling between the pair (‘,,¥,), and between the pair (¥,,'¥;). Defining _(U, _(U, _(U; _(U, wala} lo.) el) ele and applying a time derivative to the first equation of each pair and using the second component of each pair, one obtains: 2\\7 3 (\"s ) +0 |U,+c0,0,U, =-\"“— av, (57) h h 3 me?) +0?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-10-solution",
+      "number": "10",
+      "title": "Solution",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boosted system",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "cop",
+          "heading": false
+        }
+      ],
+      "extract": "One possible solution to these coupled differential equations (Equations (59)-(66)) is: U, =cos(px- at) (65) D, =sin( px - at) (66) U, =sin(px- at) (67) D, = cos( px - at) (68) U, =cos(px- at) (69) D, =sin(px- at) (70) oes at) (71) , = cos ( px — at) (72) When inserted in the 8-componenents equations and solving, one obtains (a -@°) + cap = -coyp (73) (a -@°)-cap =+ca,p (74) (@ -@°)- cop = +c@ (-p) (75) (a -@°)+ cop",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-11-spin-up-and-spin-down",
+      "number": "11",
+      "title": "Spin up and Spin down",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin down",
+          "heading": true
+        },
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "spin-up state",
+          "heading": false
+        },
+        {
+          "term": "spin-down state",
+          "heading": false
+        },
+        {
+          "term": "precessing around",
+          "heading": false
+        },
+        {
+          "term": "jhepgc",
+          "heading": false
+        },
+        {
+          "term": "anti symmetric",
+          "heading": false
+        },
+        {
+          "term": "positron",
+          "heading": false
+        }
+      ],
+      "extract": "UP ( ) ( ) cos θ + 0 Solving this equation by setting ( ) cos t ω Ψ = or ( ) sin t ω Ψ = shows that all components of this fermion at the rest frame, are oscillating at a rate given by At such high oscillating rate, the spin cannot be determined apriori, and de- pends on the random outcome of the instance of measurement. As a result, the measured spin outcome is random, with equal probabilities for being up or down.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-12-weyl-and-majorana",
+      "number": "12",
+      "title": "Weyl and Majorana",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana",
+          "heading": true
+        },
+        {
+          "term": "majorana fermions",
+          "heading": false
+        },
+        {
+          "term": "own antiparticle",
+          "heading": false
+        },
+        {
+          "term": "weyl fermions",
+          "heading": false
+        },
+        {
+          "term": "massive dirac",
+          "heading": false
+        },
+        {
+          "term": "dirac equation",
+          "heading": false
+        },
+        {
+          "term": "spinors",
+          "heading": false
+        },
+        {
+          "term": "two-component",
+          "heading": false
+        }
+      ],
+      "extract": "Weyl [6] showed that the massless Dirac Equation could be reduced to a two-component equation. The solutions of that equation are called Weyl spi- nors, or Weyl fermions [6]. What is currently accepted is the following status. Weyl fermions are two-component spinors. Massive Dirac spinors can be written as combinations of left- and right-handed massless Weyl fermions. Another way of representing the massive Dirac",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-13-conclusions",
+      "number": "13",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-conflicts-of-interest",
+      "number": null,
+      "title": "Conflicts of Interest",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interacting strings",
+          "heading": false
+        },
+        {
+          "term": "schrödinger equation",
+          "heading": false
+        },
+        {
+          "term": "both schrödinger",
+          "heading": false
+        },
+        {
+          "term": "massless boson",
+          "heading": false
+        },
+        {
+          "term": "physics letters",
+          "heading": false
+        },
+        {
+          "term": "prequarks",
+          "heading": false
+        },
+        {
+          "term": "dirac equations",
+          "heading": false
+        },
+        {
+          "term": "hypergluons",
+          "heading": false
+        }
+      ],
+      "extract": "ˆ 0 i DU = (99) ( ) ( ) cos i U A k x ct = − (100) Representing a massless boson, moving at speed c. As a matter of fact, from the real 8 equations formalism we see that when m = 0, the coupling disappears and we are left with a single equation, similar to all 8 components. Thus, the Weyl particle is actually a single massless boson, moving at speed c. By making all quantum mechanics to be based on real",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "coupled strings",
+      "heading": false
+    },
+    {
+      "term": "real coupled",
+      "heading": false
+    },
+    {
+      "term": "kwiat",
+      "heading": false
+    },
+    {
+      "term": "cos sin",
+      "heading": false
+    },
+    {
+      "term": "jhepgc",
+      "heading": false
+    },
+    {
+      "term": "coupled entities",
+      "heading": false
+    },
+    {
+      "term": "real wave",
+      "heading": true
+    },
+    {
+      "term": "wave equation",
+      "heading": true
+    },
+    {
+      "term": "energy physics",
+      "heading": false
+    },
+    {
+      "term": "interacting strings",
+      "heading": false
+    },
+    {
+      "term": "dirac equation",
+      "heading": true
+    },
+    {
+      "term": "gravitation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Description of a double string analog as described by Equations (7) and (8). The",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The interaction caused be some sort of exchange between the two strings, re-",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The interference experiment. 2 slits at separation D apart, allow for two incoming particles to interfere on plate at distance A",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "An interference pattern example according to Equation (40)",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Summary of possible solutions in the +x boosted system",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kwiat-2024-jhepgc-elementary-fermions"
+  }
+}

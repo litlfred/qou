@@ -1,0 +1,323 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2106.01332v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "\\label{Sec:Introduction}\n\n\n\nIn the topological matter model proposed by Bilson-Thompson \\cite{BT}, the leptons and quarks of the Standard Model (SM) are interpreted as simple braids of three twisted ribbons, bound together at the top and bottom by a parallel disk. The three ribbons are allowed to braid each other, which allows the ribbons to be distinguished by their relative crossings. With the ribbons distinguished in this way, the \\textit{twist structure} of the ribbons accounts for the electrocolor symmetries. The \\textit{braid structure} on the other hand encodes the weak symmetry and chi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Braided matter interactions in quantum gravity via 1-handle attachment\nNiels Gresnigt,1, ∗Antonino Marcian`o,2, 3, † and Emanuele Zappala4, ‡\n1Department of Physics, Xi’an Jiaotong-Liverpool University, 215123 Suzhou, China\n2Center for Field Theory and Particle Physics & Department of Physics, Fudan University, 200433 Shanghai, China\n3Laboratori Nazionali di Frascati INFN, Frascati (Rome), Italy, EU\n4Institute of Mathematics and Statistics, University of Tartu, Tartu, Estonia, EU\nIn a topological description of elementary matter proposed by Bilson-Thompson, the leptons and\nquarks of a single g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II A topological model of composite preons",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-ii-a-topological-model-of-composite-preons.md",
+      "narrative": null,
+      "content": "\\label{sec:Braidmodel}\n\nWe begin by providing a brief overview of the Bilson-Thompson model \\cite{BT}. The fundamental preonic object is a ribbon which may be twisted by $\\pm 2\\pi$. Ribbons are combined into triplets with non-trivial braiding, and connected together at the top and bottom to a parallel disk. Such a braid constitutes a two-dimensional surface. It is assumed that ribbons with twists in opposite directions are not permitted in the same triplet. The resulting topological objects, corresponding to framed braids in the circular Artin braid group $B_3^c$, are called 3-belts. With a si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Theories on ribbon graphs",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-iii-theories-on-ribbon-graphs.md",
+      "narrative": null,
+      "content": "We now define and summarise the class of theories that we focus on. Much of what follows in this section can be found discussed at greater length in \\cite{BT2}. We are interested in theories of ribbon graphs. These relate closely to LQG and spin foam models, but in which the graphs that comprise the states in these theories are framed. The states of these theories then are represented by the embedding of a two surface into the spatial manifold. \\\\\n\nA two-dimensional surface (with boundary) $S$ of genus at least two in a compact three manifold $\\Sigma$, can be considered as a union of trinions,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The evolution algebra",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-a-the-evolution-algebra.md",
+      "narrative": null,
+      "content": "By embedding the braids representing the leptons and quarks in \\cite{BT} in this manner, it becomes possible to define local dynamics by excising subgraphs of the ribbon network $\\Gamma$ and replacing them with new ones. Because trivalent spin networks are the dual skeletons of triangulations of 2D surfaces in which a node is dual to a 2-simplex, the evolution moves of trivalent spin networks which generate such dynamics are dual to the Pachner moves that relate triangulations. In the case of a ribbon network, these Pachner moves need to be suitably adapted. There are three non-trivial generat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV Leptons and quarks as topological excitations",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-iv-leptons-and-quarks-as-topological-excitations.md",
+      "narrative": null,
+      "content": "A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The trivalent scheme",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-a-the-trivalent-scheme.md",
+      "narrative": null,
+      "content": "What was shown in \\cite{BT2} is that the braids proposed in \\cite{BT}, representing leptons and quarks, correspond to the simplest conserved topological excitations in a trivalent network. By conserved, we mean that the generators of such dynamics (the adapted dual Pachner moves) commute with the braiding and twisting content of the topological excitations, and the latter therefore correspond to noiseless subsystems of the quantum dynamics. This means that although the simplest excitations propagate coherently, they are too strongly conserved since they do not destabilise \\cite{BT2}. Thus, alt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V Ribbon networks embedded into 3-manifolds",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-v-ribbon-networks-embedded-into-3-manifolds.md",
+      "narrative": null,
+      "content": "We suppose that particle systems constitute {\\it ribbon graphs} in which vertices are thickened to be (homeomorphic to) two dimensional disks (or rectangles), and edges are thickened to ribbons. These objects are embedded in a 3-dimensional ground space, which is taken to be a 3-manifold, and they are also referred to as {\\it fat graphs} in the literature. See for instance \\cite{Igusa,MP}.   \\\\\n\nRibbon graphs are formally defined as oriented surfaces decomposed into two families of rectangular surfaces, i.e. embeddings of the square $[0,1]\\times [0,1]$ in the base 3-dimensional manifold, calle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Surgery on 3-manifolds",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-a-surgery-on-3-manifolds.md",
+      "narrative": null,
+      "content": "\\label{Surgery}\n\nA cobordism is an ordered triple of manifolds \\cite{Kos}, written $\\{X_0,Y,X_1\\}$, such that $\\partial Y = X_0\\bigsqcup X_1$. If the manifolds are taken to be oriented, one assumes further that the orientations of $X_i$ and the orientations induced on them by that of $Y$ coincide. \\\\\n\nRecall first, the definition of handle attachment, which we hereby provide. Let $X$ be a manifold of dimension $n$, and let $\\psi$ be an embedding of $\\partial B^p\\times B^{n-p}$ in $\\partial X$, where $B^k$ indicates the standard $k$-dimensional closed ball. We say that we attach a $p$-handle to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Braid dynamics via surgery",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-b-braid-dynamics-via-surgery.md",
+      "narrative": null,
+      "content": "\\label{Dynamics}\n\nLet us consider now a trivalent network $\\mathcal N$ embedded in a $3$-manifold $M$. An elementary cobordism obtained via $1$-handle attachment is said to be {\\it admissible} if the two embedded $3$-balls $\\partial B^1\\times B^3$ intersect two braids $b_1, b_2$, representing particles as in the Bilson-Thompson model, in such a way that $\\partial B^1\\times \\partial B^2$ intersect $b_1$ and $b_2$ in exactly two triplets of disks and, moreover, the portions of $b_1$ and $b_2$ contained inside ${\\rm int}(\\partial B^1\\times B^3)$ are isomorphic to the ball with a trivial trivalent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI Isotopy invariants of braided networks",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-vi-isotopy-invariants-of-braided-networks.md",
+      "narrative": null,
+      "content": "The fact that isotopy classes of trivalent braided networks are used in the scheme described above implicitly raises two important issues. The first relates to the possibility of associating conserved quantities to particles embedded in braided networks. Secondly, we ideally want to consider invariants that distinguish different particles in Bilson-Thompson's model, and different configurations of particle networks. In the previous literature the invariant link has been used to argue that particles correspond to different states \\cite{BT2}. This is a link-valued invariant of braided networks,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Examples and Computations",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-a-examples-and-computations.md",
+      "narrative": null,
+      "content": "The computation of twists in Theorem~\\ref{thm:invariant} suggests that the invariant $KL_n$ distinguishes, in general, the particles of Bilson-Thompson model, in the sense that two braided networks that are identical, except for two regions that enclose one of the particles of Figure~\\ref{helonmodel} or Figure~\\ref{bosons}, generally have different values of $KL_n$. Of course, in order to give a specific statement of this sort, regarding what particles are distinguished, one needs to fix the values of $q$ (i.e. $A$) and $n$. It is not the scope of the present article to fix values for them, bu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VII Possible pre-geometric unification of matter and gravity",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-vii-possible-pre-geometric-unification-of-matter.md",
+      "narrative": null,
+      "content": "\\label{Sec:Pre-geometry}\n\nIn this final section, we speculate how the emergence of matter may be naturally related to the emergence of gravity, out from the Planck realm. Here the quantum fluctuations of the fields destroy the common notion of space-time arena, and call for a totally new theoretical perspective. While considering matter to be constituted by braids of pre-geometric fields, one assumes automatically a framework that is the same as that adopted in emergent gravity scenarios. Thus gravity and matter can be finally treated on the same footing. At the same time, describing matter re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2106.01332v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-acknowledgement.md",
+      "narrative": null,
+      "content": "We thank the anonymous Referee for comments and suggestions that helped improve the manuscript. NG was\nsupported by the Natural Science Foundation of the Jiangsu Higher Education Institutions of China Programme Grant\n19KJB140018 and XJTLU REF-18-02-03 Grant. AM wishes to acknowledge support by the NSFC, through the grant\nNo. 11875113, the Shanghai Municipality, through the grant No. KBH1512299, and by Fudan University, through\nthe grant No. JJH1512105. EZ was supported by the Estonian Research Council through the grant MOBJD679.\n[1] Bilson-Thompson, Sundance O. A topological model of composite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

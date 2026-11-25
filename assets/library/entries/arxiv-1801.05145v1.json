@@ -1,0 +1,873 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1801.05145v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1801.05145v1  [math.RT]  16 Jan 2018\nMONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS\nSEOK-JIN KANG, MASAKI KASHIWARA1, MYUNGHO KIM2 AND SE-JIN OH3\nAbstract. We prove that the quantum cluster algebra structure of a unipotent\nquantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra\nand its Weyl group element w, admits a monoidal categoriﬁcation via the representa-\ntions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal,\nwe give a formulation of monoidal categoriﬁcations of quantum cluster algebras and\nprovide a criterion for a monoidal categ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The purpose of this paper is to provide a monoidal categorification of\nthe quantum cluster algebra structure on the unipotent quantum coordinate ring $A_q(\\n(w))$,\nwhich is associated with a symmetric Kac-Moody algebra $\\g$ and a Weyl group element $w$.\n\nThe notion of cluster algebras was introduced by Fomin and Zelevinsky in\n\\cite{FZ02} for studying total positivity and upper global bases.\nSince their introduction,  a lot of  connections and applications have been\ndiscovered in various fields of mathematics including\nrepresentation theory, Teichm\\\"uller theory, tropical geometry, integrable\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum groups and global bases",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-1-quantum-groups-and-global-bases.md",
+      "narrative": null,
+      "content": "In this section, we briefly recall the quantum groups and the crystal and global bases theory for\n$U_q(\\g)$.\nWe refer to \\cite{Kash91,Kas93,Kas95} for materials in this subsection.\n\n\n\\subsection{Quantum groups} \\label{subsec:qgroups}\nLet $I$\nbe an index set. A \\emph{Cartan datum} is a quintuple $(A,\\wl,\n\\Pi,\\wl^{\\vee},\\Pi^{\\vee})$ consisting of\n\\begin{enumerate}[(i)]\n\\item an integer-valued matrix $A=(a_{ij})_{i,j \\in I}$,\ncalled the \\emph{symmetrizable generalized Cartan matrix},\n which satisfies\n\\be[{\\rm(a)}]\n\\item $a_{ii} = 2$ $(i \\in I)$,\n\\item $a_{ij} \\le 0 $ $(i \\neq j)$,\n\\item there exi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrable representations",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-12-integrable-representations.md",
+      "narrative": null,
+      "content": "A $U_q(\\g)$-module $M$ is called {\\em integrable}\nif  $M= \\bigoplus_{\\eta \\in \\wl} M_\\eta$\nwhere $M_\\eta \\seteq \\{  m \\in M \\ | \\ q^hm=q^{\\lan h,\\eta \\ra} m \\}$,  $\\dim M_\\eta < \\infty$, and\n the actions of $e_i$ and $f_i$  on $M$ are locally nilpotent for all $i \\in I$.\nWe denote by $\\Oint(\\g)$ the category of integrable left $U_q(\\g)$-modules $M$ satisfying\n\nthat\nthere exist finitely many weights $\\la_1$, \\ldots, $\\la_m$ such that\n$\\wt(M)\\subset\\cup_{j}(\\la_j+\\rl^-)$. The category $\\Oint(\\g)$ is semisimple with its simple objects being isomorphic to the\nhighest weight modules $V(\\lambda)$ wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystal bases and global bases",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "../sections/sec-003-13-crystal-bases-and-global-bases.md",
+      "narrative": null,
+      "content": "For a  subring $A$ of $\\Q(q)$, we say that $L$ is an $A$-{\\em lattice} of\na $\\Q(q)$-vector space $V$ if\n$L$ is a free $A$-submodule of $V$ such that $V=\\Q(q)\\tens_AL$.\n\nLet us denote by $\\QA_0$ (resp.\\ $\\QA_\\infty$) the ring of rational\nfunctions in $\\Q(q)$ which are regular at $q=0$ (resp.\\ $q=\\infty$).\n Set $\\QA\\seteq\n\\Q[q^{\\pm1}]$ .\n\n\n\n\\medskip\n\nLet $M$ be a $\\U$-module in $\\Oint(\\g)$.\nThen, for each $i \\in I$, any $u\\in M$ can be uniquely written as\n$$u=\\sum_{n \\ge 0}f_i^{(n)}u_n\\quad\\text{with $e_iu_n=0$.}$$\nWe define the {\\em lower Kashiwara operators} by\n\n\\eqn&&\\te^\\low_i(u)=\\sum_{n\\ge1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices for",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-004-22-r-matrices-for.md",
+      "narrative": null,
+      "content": "\\hfill\n\n\n\n\n  For $|\\beta|=n$ and $1\\le a<n$,  we define $\\vphi_a\\in R( \\beta)$\nby\n\\eqn&&\\ba{l}\n  \\vphi_a e(\\nu)=\n\\begin{cases}\n  \\bl\\tau_ax_a-x_{a}\\tau_a\\br e(\\nu)\n  & \\text{if $\\nu_a=\\nu_{a+1}$,} \\\\[2ex]\n\\tau_ae(\\nu)& \\text{otherwise.}\n\\end{cases}\n \\ea \\eneqn\nThey are called the {\\em intertwiners}. Since $\\{\\vphi_a\\}_{1\\le a<n}$\nsatisfies the braid relation, $\\vphi_w\\seteq\\vphi_{i_1}\\cdots\\vphi_{i_\\ell}$\ndoes not depend on the choice of reduced expression $w=s_{i_1}\\cdots s_{i_\\ell}$.\n\n\nFor $m,n\\in\\Z_{\\ge0}$,\nlet us denote by $w[{m,n}]$ the element of $\\sym_{m+n}$  defined by\n\\eqn\n&&w[{m,n}](",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicity of heads and socles of convolution products",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-3-simplicity-of-heads-and-socles-of-convolution.md",
+      "narrative": null,
+      "content": "{\\em In this section,\nwe assume that $R(\\beta)$ is symmetric} for any $\\beta\\in\\rtl^+$,\ni.e., $Q_{ij}(u,v)$ is a function in $u-v$ for any $i,j\\in I$.\n\nWe also work always in the category of graded modules.\nFor the sake of simplicity, {\\em\nwe simply say that $M$ is an $R$-module instead of saying\nthat $M$ is a graded $R(\\beta)$-module for $\\beta\\in\\rtl^+$.}\nWe also sometimes ignore grading shifts if there is no  danger of confusion.\nHence, for $R$-modules $M$ and $N$, {\\em we sometimes say that\n$f\\col M\\to N$ is a homomorphism if\n$f\\col q^aM\\to N$ is a morphism in $R\\gmod$ for some $a\\in\\Z$.}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homogeneous degrees of R-matrices",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-006-31-homogeneous-degrees-of-r-matrices.md",
+      "narrative": null,
+      "content": "\\Def\nFor non-zero $M,N \\in R \\gmod$, we denote by $\\Lambda(M,N)$ the homogeneous degree of the R-matrix\n$\\rmat{M,N}$.\n\\edf\n\nHence\n\\eqn\n&&\\Rm_{M_z,N}:M_z \\conv N \\to   q^{-\\Lambda(M,N)} N \\conv M_z \\quad \\text{and}\\\\\n&&\\rmat{M,N}:M\\conv N \\to q^{-\\Lambda(M,N)} N \\conv M\n\\eneqn\nare morphisms in $R\\gMod$ and in $R \\gmod$, respectively.\n\n\n\n\\Lemma \\label{lem:tLa even}\n For non-zero $R$-modules $M$ and $N$, we have\n\\eqn\n\\Lambda(M,N) \\equiv \\bl\\wt(M),\\wt(N)\\br \\mod 2.\n\\eneqn\n\\enlemma\n\\Proof\nSet $\\beta\\seteq-\\wt(M)$ and $\\gamma\\seteq-\\wt(N)$.\nBy \\cite[(1.3.3)]{K^3}, the homogeneous degree of  $R_{M_z,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of $\\tL(M,N)$ and $\\de(M,N)$",
+      "pageStart": 22,
+      "pageEnd": 31,
+      "target": "../sections/sec-007-32-properties-of-tlmn-and-demn.md",
+      "narrative": null,
+      "content": "\\Lemma \\label{lem:even}\nLet $M$ and $N$ be simple $R$-modules.\nThen we have\n\\bnum\n   \\item $\\Lambda(M,N)+\\Lambda(N,M) \\in 2 \\Z_{\\ge 0}.$\n   \\item If $\\Lambda(M,N)+\\Lambda(N,M) =2m$ for some $m \\in \\Z_{\\ge 0}$, then\n  \\eqn\n\\Rm_{M_z,N} \\circ \\Rm_{N,M_z}=z^m \\id_{N \\conv M_z} \\quad\n\\text{and} \\quad\n\\Rm_{N,M_z} \\circ \\Rm_{M_z,N}=z^m \\id_{M_z \\conv N}\n  \\eneqn\n  up to constant multiples.\n\\end{enumerate}\n\\enlemma\n\\Proof\nBy \\cite[Proposition 1.6.2]{K^3}, the morphism\n\\eqn\n\\Rm_{N,M_z} \\circ \\Rm_{M_z,N} : M_z \\circ N \\to\nM_z \\circ N\n\\eneqn\nis equal to $f(z) \\id_{M_z \\circ N}$ for some $0 \\neq f(z) \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leclerc's conjecture",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-008-4-leclercs-conjecture.md",
+      "narrative": null,
+      "content": "{\\em In this section, $R$ is assumed to be a symmetric KLR algebra\nover a base field $\\cor$.}\n\n\n\\subsection{Leclerc's conjecture}\n\n  The following theorem is a part of Leclerc's conjecture stated in the introduction.\n\\Th\\label{th:leclerc}\nLet $M$ and $N$ be simple modules.\nWe assume that $M$ is real.\nThen we have\nthe equalities in the Grothendieck group $K(R\\gmod)${\\rm:}\n\\bnum\n\\item\n$[M\\conv N]=[M\\hconv N]+\\sum_{k}[S_k]$\\\\[.5ex]\nwith simple modules $S_k$ such that $\\La(M,S_k)<\\La(M,M\\hconv N)=\\La(M,N)$,\n\\item\n$[M\\conv N]=[ M\\sconv N]+\\sum_{k}[S_k]$\\\\[.5ex]\nwith simple modules $S_k$ such that $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "Assume that the base ﬁeld k is a ﬁeld of characteristic 0. Assume that M ∈R-gmod has a socle qcS with a self-dual simple module S and c ∈Z. Then we have the equality in K(R-gmod) [M] = qc[S] + X k qck[Sk] with self-dual simple modules Sk and ck < c. Applying this theorem to convolution products, we obtain the following corollary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/cor-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "cor-sec-009-03.md",
+      "narrative": null,
+      "content": "Assume that the base ﬁeld k is of characteristic 0. Let M and N be simple modules. We assume that one of them is real. Then we have the equalities in K(R-gmod): (i) [M ◦N] = [M ∇N] + P k qck[Sk] with self-dual simple modules Sk and ck > −eΛ(M, N) = \u0000−Λ(M, N) −(wt(M), wt(N) \u0001 /2. (ii) [M ◦N] = [M ∆N] + P k qck[Sk] with self-dual simple modules Sk and ck < \u0000Λ(N, M) −(wt(N), wt(M)) \u0001 /2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/cor-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "cor-sec-009-05.md",
+      "narrative": null,
+      "content": "Assume that the base ﬁeld k is of characteristic 0. Let M and N be simple modules. We assume that one of them is real. Write [M ◦N] = n X k=1 qck[Sk] with self-dual simple modules Sk and ck ∈Z. Then we have max {ck | 1 ≤k ≤n} −min {ck | 1 ≤k ≤n} = d(M, N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric results",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-009-42-geometric-results.md",
+      "narrative": null,
+      "content": "to us by Peter McNamara. It will be used in the proof of the crucial result Theorem\n10.3.1. In this subsection, we assume further that the base ﬁeld k is of characteristic\n0.\nTheorem 4.2.1 ([34, Lemma 7.5]). Assume that the base ﬁeld k is of characteristic\n0. Assume that M ∈R-gmod has a head qcH with a self-dual simple module H and\nc ∈Z. Then we have the equality in the Grothendieck group K(R-gmod)\n[M] = qc[H] +\nX\nk\nqck[Sk]\nwith self-dual simple modules Sk and ck > c.\nBy duality, we obtain the following corollary.\nCorollary 4.2.2. Assume that the base ﬁeld k is a ﬁeld of characteristic 0. Assu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[34, Lemma 7.5]",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "Assume that the base ﬁeld k is of characteristic 0. Assume that M ∈R-gmod has a head qcH with a self-dual simple module H and c ∈Z. Then we have the equality in the Grothendieck group K(R-gmod) [M] = qc[H] + X k qck[Sk] with self-dual simple modules Sk and ck > c. By duality, we obtain the following corollary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "thm-sec-009-04.md",
+      "narrative": null,
+      "content": "M ∇N and M ∆N appear exactly once in a Jordan-H¨older series of M ◦N. Write M ∇N = qmH and M ∆N = qsS for some self-dual simple modules H, S and m, s ∈Z. By Theorem 4.2.1, we have [M ◦N] = qm[H] + qs[S] + X k qck[Sk], where Sk are self-dual simple modules, and m < ck < s for all k. Collecting the terms, we obtain [M ◦N] = qm[H] + qs[S] + X L̸≃H,S γL M,N(q)[L], with γL M,N(q) ∈qm+1Z[q] ∩qs−1Z[q−1], which proves Leclerc’s ﬁrst conjecture via Theorem 2.1.4. We obtain the following result which is a generalization of Lemma 3.2.18 in the characteristic-zero case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-010-43-proof-of-theorem.md",
+      "narrative": null,
+      "content": "geometrically realized as follows ([40]).\nThere exist a reductive group G and a G-\nequivariant projective morphism f : X →Y from a smooth algebraic G-variety X to\nan aﬃne G-variety Y deﬁned over the complex number ﬁeld C such that\nR(β) ≃eEndDb\nG(kY )(Rf∗(kX[dim X]))\nas a graded k-algebra.\nHere, Db\nG(kY ) denotes the G- equivariant derived category of the G-variety Y with\ncoeﬃcient k, and eEndDb\nG(kY )(K) = eHomDb\nG(kY )(K, K) with\neHomDb\nG(kY )(K, K′) := L\nn∈Z\nHomDb\nG(kY )(K, K′[n]).\nWe denote by kX[dim X] the direct sum of the constant sheaves on each connected\ncomponents of X, all of which a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum cluster algebras",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-011-5-quantum-cluster-algebras.md",
+      "narrative": null,
+      "content": "In this section we recall the definition of skew-symmetric quantum cluster algebras following \\cite{BZ05}, \\cite[\\S 8]{GLS}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum seeds",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-012-51-quantum-seeds.md",
+      "narrative": null,
+      "content": "Fix a finite index set\n$\\K=\\Kex\\sqcup\\Kfr$ with the decomposition into\nthe set $\\Kex$ of exchangeable indices   and the set $\\Kfr$ of frozen indices.\nLet $L=(\\lambda_{ij})_{i,j\\in \\K}$ be a skew-symmetric integer-valued $\\K\\times \\K$-matrix.\n\\Def We define $\\mathscr P(L)$ as the  $\\Z[q^{\\pm 1/2}]$-algebra generated by\na family of elements $\\{X_i\\}_{i\\in \\K}$\nwith the defining relations\n\\eqn\n&&X_iX_j=q^{\\lambda_{ij}}X_j X_i \\quad (i,j\\in \\K).\\label{eq:Xcom}\n\\eneqn\nWe denote by $\\mathscr F(L)$ the skew field of fractions of $\\mathscr P(L)$.\n\n\\edf\nFor ${\\bf a}=(a_i)_{i\\in\\K}\\in \\Z^\\K$, we define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mutation",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-013-52-mutation.md",
+      "narrative": null,
+      "content": "For $k\\in\\Kex$, we define a $\\K\\times \\K$-matrix  $E=(e_{ij})_{i,j\\in\\K}$ and a\n$\\Kex\\times \\Kex$-matrix $F=(f_{ij})_{i,j\\in\\Kex}$ as follows:\n\\eqn\ne_{ij}=\n\\begin{cases}\n  \\delta_{ij} & \\text{if} \\ j \\neq k, \\\\\n  -1 & \\text{if} \\ i= j = k, \\\\\n  \\max(0, -b_{ik}) & \\text{if} \\ i \\neq  j = k,\n\\end{cases}\n\\hs{10ex}\nf_{ij}=\n\\begin{cases}\n  \\delta_{ij} & \\text{if} \\ i \\neq k, \\\\\n  -1 & \\text{if} \\ i= j = k, \\\\\n  \\max(0, b_{kj}) & \\text{if} \\ i = k \\neq j.\n\\end{cases}\n\\eneqn\nThe {\\em mutation $\\mu_k(L,\\widetilde B)\\seteq(\\mu_k(L),\\mu_k(\\widetilde B))$ of a compatible pair $(L,\\widetilde B)$ in direct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal categorification of cluster algebras",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-014-6-monoidal-categorification-of-cluster-algebras.md",
+      "narrative": null,
+      "content": "Throughout  this section, fix $\\K=\\Kex\\sqcup\\Kfr$ and a base field\n$\\coro$.\n\nLet $\\shc$ be a $\\coro$-linear abelian monoidal category.\nFor the definition of monoidal category, see,  for example, \\cite[Appendix A.1]{K^3}.\nNote that  in \\cite{K^3}, it was called   the \\emph{tensor category}.\nA  $\\coro$-linear abelian monoidal category is a $\\coro$-linear\nmonoidal category such that\nit is abelian and\nthe tensor functor $\\;\\tens\\;$ is $\\coro$-bilinear and exact.\n\nWe assume further the following conditions on $\\shc$\n\\eq\n&&\\hs{-4ex}\\left\\{\\parbox{60ex}{\n\\bnum\n\\item\nAny object of $\\shc$ has a finite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ungraded cases",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-015-61-ungraded-cases.md",
+      "narrative": null,
+      "content": "\\begin{definition}\n\nLet  $\\seed = (\\{ M_i\\}_{i\\in \\K },\\widetilde B)$ be a pair\nof\na family $\\{ M_i\\}_{i\\in\\K}$ of simple objects in $\\shc$ and\nan  integer-valued $\\K\\times\\Kex$-matrix\n$\\widetilde B = (b_{ij})_{(i,j)\\in\\K\\times\\Kex}$\nwhose principal part is skew-symmetric.\nWe call $\\seed$ a \\emph{monoidal seed in $\\shc$} if\n\\bnum\n  \\item $M_i \\otimes M_j \\simeq M_j \\otimes M_i$ for any $i,j\\in\\K$,\n  \\item $\\sotimes_{i\\in\\K} M_i^{\\otimes a_i}$ is simple for any $(a_i)_{i\\in\\K}\\in \\Z_{\\ge 0}^{\\K}$.\n  \\end{enumerate}\n\\end{definition}\n\n\\begin{definition}\n  \n  For $k\\in\\Kex$,\n  we say that a  monoi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graded cases",
+      "pageStart": 41,
+      "pageEnd": 45,
+      "target": "../sections/sec-016-62-graded-cases.md",
+      "narrative": null,
+      "content": "Let $\\rootl$ be a free abelian group equipped with a symmetric bilinear form\n\\eqn\n( \\ , \\ ) : \\rootl \\times \\rootl \\to \\Z \\quad \\text{such that} \\\n (\\beta,\\beta) \\in 2\\Z \\ \\text{for all} \\ \\beta \\in \\rootl.\n\\eneqn\nWe consider  a $\\coro$-linear abelian monoidal category $\\shc$ satisfying\n\\eqref{cond:monoidal category} and the following conditions:\n\\eq\n&&\\hs{-2ex}\\left\\{\\parbox{67ex}{\n\\bnum\n\\item We have a direct sum decomposition\n  $\\shc = \\soplus_{\\beta \\in \\rootl} \\shc_\\beta $ such that\n the tensor product $\\otimes$\n   sends  $\\shc_\\beta \\times \\shc_\\gamma$ to $\\shc_{\\beta + \\gamma}$\n   for e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal categorification via modules over KLR algebras",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-017-7-monoidal-categorification-via-modules-over-klr.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Admissible pair",
+      "pageStart": 45,
+      "pageEnd": 54,
+      "target": "../sections/sec-018-71-admissible-pair.md",
+      "narrative": null,
+      "content": "In this section, we assume that \\emph{$R$ is a symmetric KLR algebra\nover a base field $\\coro$}.\n\nFrom now on, we focus on the case when $\\shc$ is a full subcategory of $R \\gmod$\n stable under taking convolution products, subquotients, extensions\nand grading shift.\nIn particular, we have\n\\eqn\n\\shc = \\soplus_{\\beta \\in \\rootl^-} \\shc_\\beta, \\quad\n\\text{where} \\ \\shc_\\beta \\seteq\\shc\\cap R(-\\beta) \\gmod,\n\\eneqn\nand we have the grading shift functor $q$ on $\\shc$.\nHence we have\n$$K(\\shc_\\beta)\\subset\\Um_\\beta,$$\nand $K(\\shc)$ has a $\\Z[q^{\\pm1}]$-basis consisting of\nthe isomorphism classes of sel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum coordinate rings and modified quantized enveloping algebras",
+      "pageStart": 54,
+      "pageEnd": 58,
+      "target": "../sections/sec-019-8-quantum-coordinate-rings-and-modified-quantize.md",
+      "narrative": null,
+      "content": "\\subsection{Quantum coordinate ring} Let $U_q(\\g)^*$ be $\\Hom_{\\Q(q)}(U_q(\\g),\\Q(q))$. Then the comultiplication $\\comp$  (see \\eqref{eq: comp})   induces the\n multiplication $\\mu$ on $U_q(\\g)^*$ as follows:\n\\begin{align*}\n \\mu \\cl  & U_q(\\g)^* \\tens U_q(\\g)^* \\to (\\U\\tens\\U)^*\\To[\\;(\\comp)^*\\;]\nU_q(\\g)^* .\n\\end{align*}\nLater on, it will be convenient to use Sweedler's notation\n$\\comp(x)=x_{(1)} \\tens x_{(2)}$.\nWith this notation,\n$$\\text{$\\bl fg\\br(x)=f(x_{(1)})\\,g(x_{(2)})$\\quad\nfor $f,g \\in U_q(\\g)^*$ and  $x\\in\\U$.}$$\n\nThe $U_q(\\g)$-bimodule structure on $U_q(\\g)$ induces\na $U_q(\\g)$-bimod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unipotent quantum coordinate ring",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-020-82-unipotent-quantum-coordinate-ring.md",
+      "narrative": null,
+      "content": "\\label{subsec:unipotent}\nLet us endow $U_q^+(\\g) \\tens U_q^+(\\g)$ with the algebra structure defined by\n$$(x_1 \\tens x_2) \\cdot (y_1 \\tens y_2) = q^{-(\\wt(x_2),\\wt(y_1))}(x_1y_1 \\tens x_2y_2).$$\nLet $\\Delta_\\n$ be the algebra homomorphism $U_q^+(\\g) \\to U_q^+(\\g)\n\\tens U_q^+(\\g)$ given by\n$$ \\Delta_\\n(e_i) = e_i \\tens 1 + 1 \\tens e_i.$$\n\nSet\n$$ A_q(\\n) = \\soplus_{\\beta \\in  \\rl^-} A_q(\\n)_\\beta \\quad \\text{ where } A_q(\\n)_\\beta \\seteq (U^+_q(\\g)_{-\\beta})^*.$$\n\nDefining the bilinear form $\\langle \\ \\cdot \\ , \\ \\cdot \\ \\rangle\\cl\n(A_q(\\n) \\tens A_q(\\n)) \\times (U^+_q(\\g) \\tens U^+_q(\\g))  \\to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modified quantum enveloping algebra",
+      "pageStart": 60,
+      "pageEnd": 66,
+      "target": "../sections/sec-021-83-modified-quantum-enveloping-algebra.md",
+      "narrative": null,
+      "content": "For the materials in this subsection we refer the reader to\n\\cite{Lusz92, Kash94}.\nWe denote by ${\\rm Mod}(\\g,\\wl)$\nthe category of left $U_q(\\g)$-modules with the weight space decomposition. Let $({\\rm forget})$ be the functor from\n${\\rm Mod}(\\g,\\wl)$ to the category of vector spaces over $\\Q(q)$,\nforgetting the $U_q(\\g)$-module structure.\n\nLet us denote by $\\mathscr{R}$ the endomorphism ring of $({\\rm forget})$. Note that $\\mathscr{R}$ contains $U_q(\\g)$. For $\\eta \\in \\wl$, let\n$a_\\eta \\in \\mathscr{R}$ denotes the projector $M \\to M_\\eta$ to the\nweight space of weight $\\eta$. Then the defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum minors and T-systems",
+      "pageStart": 66,
+      "pageEnd": 70,
+      "target": "../sections/sec-022-9-quantum-minors-and-t-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:Quantum minors and T-systems}\n\n\n\n\\subsection{Quantum minors}\nUsing the isomorphism $\\Phi$ in \\eqref{eq: Phi}, for each\n$\\lambda \\in \\wl^+$ and $\\mu, \\zeta \\in W \\lambda$, we define the elements\n$$ \\Delta(\\mu,\\zeta)\\seteq \\Phi(u_\\mu\\tens u_\\zeta^\\ri) \\in A_q(\\g)$$\nand\n$$\\D(\\mu,\\zeta)\\seteq p_\\n(\\Delta(\\mu,\\zeta)) \\in A_q(\\n).$$\nThe element $\\Delta(\\mu,\\zeta)$ is called a {\\em {\\rm (}generalized{\\rm )}  quantum minor}\nand $\\D(\\mu,\\zeta)$ is called {\\em a unipotent quantum minor}.\n\n\n\\begin{lemma} \\label{lem: global element}\n$\\Delta(\\mu,\\zeta)$ is a member of the upper global basis of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "T-system",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-023-92-t-system.md",
+      "narrative": null,
+      "content": "\\label{subsubsec: T-system} In this subsection, we  recall the {\\em $T$-system} among the (unipotent) quantum minors for later use\n(see \\cite{KNS11} for $T$-system).\n\n\\begin{prop} [{\\cite[Proposition 3.2]{GLS}}] \\label{prop: the ses}\nAssume that the Kac-Moody algebra $\\g$ is of symmetric type. Assume that $u,v \\in W$ and $i \\in I$ satisfy $u < us_i$ and $v <\nvs_i$. Then\n\\begin{align*}\n& \\Delta(us_i\\varpi_i,vs_i\\varpi_i)\\Delta(u\\varpi_i,v\\varpi_i) =\nq^{-1}\\Delta(u  s_i \\varpi_i,v\\varpi_i)\\Delta( u\\varpi_i, v s_i\\varpi_i)\n +\\Delta(u\\lambda,v\\lambda),   \\\\\n\n& \\Delta(u\\varpi_i,v\\varpi_i)\\Delta(us_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Revisit of crystal bases and global bases",
+      "pageStart": 70,
+      "pageEnd": 74,
+      "target": "../sections/sec-024-93-revisit-of-crystal-bases-and-global-bases.md",
+      "narrative": null,
+      "content": "In order to prove Theorem~\\ref{thm: DDD} below, we first investigate\nthe upper crystal lattice of\n$\\Dv V$ induced by an upper  crystal lattice of $V\\in\\Oint(\\g)$.\n\nLet $V$ be a $U_q(\\g)$-module in $\\Oint (\\g)$. Let $L^\\up$ be an upper crystal lattice of $V$. Then we have (see Lemma~\\ref{lem:lowup})\n$$ \\soplus_{\\xi \\in \\wl} q^{(\\xi,\\xi)/2}(L^\\up)_\\xi \\text{ is a lower crystal lattice of $V$.}$$\n\nRecall that, for $\\lambda\\in \\wl^+$, the upper crystal lattice $L^\\up(\\lambda)$ and the lower crystal lattice $L^\\low(\\lambda)$ of $V(\\lambda)$ are related by\n\\begin{align}\nL^\\up(\\lambda) = \\soplus_{\\xi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized T-system",
+      "pageStart": 74,
+      "pageEnd": 75,
+      "target": "../sections/sec-025-94-generalized-t-system.md",
+      "narrative": null,
+      "content": "The $T$-system in \\S \\ref{subsubsec: T-system} can be interpreted as  a system of equations among the three products of elements\nin $\\B^\\up(A_q(\\g))$ or $\\B^\\up(A_q(\\n))$.\nIn this subsection, we introduce  another among the three products\nof elements in $\\B^\\up(A_q(\\g))$, called {\\em a generalized $T$-system}.\n\n\\begin{prop} \\label{prop: g T-system D}\nLet $\\mu \\in W \\varpi_i$ and set $b = \\oi_{\\varpi_i}(u_\\mu) \\in B(\\infty)$. Then we have\n\\begin{equation}\\label{eq: G t-sys}\n\\begin{aligned}\n\\Delta(\\mu,s_i\\varpi_i)\\Delta(\\varpi_i,\\varpi_i) & = q_i^{-1}\nG^\\up\\left( \\oi^{-1}_{\\varpi_i,\\varpi_i}(u_\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "KLR algebras and their modules",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-026-10-klr-algebras-and-their-modules.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chevalley and Kashiwara operators",
+      "pageStart": 75,
+      "pageEnd": 80,
+      "target": "../sections/sec-027-101-chevalley-and-kashiwara-operators.md",
+      "narrative": null,
+      "content": "Let us recall the definition of several functors on modules over \\KLRs \\ which  are used to categorify $\\Um_{\\Z[q^\\pm 1]}^\\vee$.\n\\begin{definition} Let $\\beta\\in\\rtl^+$.\n\\bnum\n\\item For $i \\in I$ and $1 \\le a \\le |\\beta|$, set\n$$ e_a(i)=\\sum_{\\nu \\in I^\\beta,\\nu_a=i}e(\\nu)\\in R(\\beta).$$\n\\item We take conventions:\n\\begin{align*}\n&E_iM=e_1(i)M, \\allowdisplaybreaks\\\\\n&E^*_iM=e_{|\\beta|}(i)M,\n\\end{align*}\nwhich are functors from $R(\\beta) \\gmod$ to $R(\\beta-\\al_i) \\gmod$.\n\\item For a simple module $M$, we set\n\\begin{align*}\n&\\eps_i(M)=\\max\\set{n\\in\\Z_{\\ge0}}{E_i^nM\\not=0},\\\\\n&\\eps^*_i(M)=\\max\\set",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantial modules and T-system",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-028-102-determinantial-modules-and-t-system.md",
+      "narrative": null,
+      "content": "We will use the materials in \\S\\,\\ref{sec:Quantum minors and T-systems} to obtain properties on the determinantial modules.\n\nIn the rest of this paper,\nwe assume  that {\\em  $R$ is symmetric and the base field $\\ko$ is of characteristic $0$.}\nUnder this condition, the family of self-dual simple $R$-modules\ncorresponds to the upper global basis of $\\An$\nby Theorem \\ref{thm:categorification 2}.\n\n\nLet $\\ch$ be the map from $K(R \\gmod)$ to $\\An$ obtained by composing $\\iota$ and the isomorphism  \\eqref{eq:KLRU} in Theorem \\ref{thm:categorification 1}.\n\n\\begin{definition}\nFor $\\lambda \\in \\wl^+$ an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized T-system on determinantial module",
+      "pageStart": 81,
+      "pageEnd": 84,
+      "target": "../sections/sec-029-103-generalized-t-system-on-determinantial-modul.md",
+      "narrative": null,
+      "content": "\\begin{theorem} \\label{thm: canonical surjection}\nLet $\\lambda \\in \\wl^+$ and $\\mu_1,\\mu_2,\\mu_3 \\in W \\lambda$ such that $\\mu_1 \\preceq \\mu_2 \\preceq \\mu_3$. Then there exists a canonical epimorphism\n$$ \\M(\\mu_1,\\mu_2) \\conv \\M(\\mu_2,\\mu_3) \\twoheadrightarrow \\M(\\mu_1,\\mu_3),$$\nwhich is equivalent to saying that $\\M(\\mu_1,\\mu_2) \\hconv \\M(\\mu_2,\\mu_3) \\simeq \\M(\\mu_1,\\mu_3)$.\n\nIn particular, we have\n$$\\tLa(\\M(\\mu_1,\\mu_2),\\M(\\mu_2,\\mu_3))=0\\quad\\text{and}\\quad\n\\La(\\M(\\mu_1,\\mu_2),\\M(\\mu_2,\\mu_3)) = -(\\mu_1-\\mu_2,\\mu_2-\\mu_3). $$\n\\end{theorem}\n\n\\begin{proof}\n(a)\\ Our assertion follows from The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal categorification of $A_q(\\mathfrak{n}(w))$",
+      "pageStart": 84,
+      "pageEnd": 84,
+      "target": "../sections/sec-030-11-monoidal-categorification-of-a-qmathfraknw.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum cluster algebra structure on $A_q(\\mathfrak{n}(w))$",
+      "pageStart": 84,
+      "pageEnd": 85,
+      "target": "../sections/sec-031-111-quantum-cluster-algebra-structure-on-a-qmath.md",
+      "narrative": null,
+      "content": "\\label{subsubsec: Q cluster Anw}\nIn this subsection, we shall consider the Kac-Moody algebra\n$\\g$ associated with a symmetric Cartan matrix $\\cmA=(a_{i,j})_{i,j\\in I}$.\nWe shall recall briefly the definition of the subalgebra $A_q(\\n(w))$ of $A_q(\\g)$ and its quantum cluster algebra structure by using\nthe results of \\cite{GLS} and \\cite{Kimu12}.\nRemark that we bring the results in \\cite{GLS}\nthrough the  isomorphism \\eqref{eq:isoAqn}.\n\\medskip\n\nFor a given $w \\in W$, fix a reduced expression $\\widetilde{w}=s_{i_r}\\cdots s_{i_1}$.\n\n\nFor $s \\in \\{ 1,\\ldots,r \\}$ and $j \\in I$, we set\n\\begin{equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/cor-sec-032-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "cor-sec-032-08.md",
+      "narrative": null,
+      "content": "Z[q±1/2] ⊗Z[q±1] Aq(n(w))Z[q±1] has a quantum cluster algebra struc- ture associated with the initial quantum seed [S ] = ({q−(di,di)/4D(i, 0)}1≤i≤r, L, eB); i.e., Z[q±1/2] ⊗ Z[q±1] Aq(n(w))Z[q±1] ≃Aq1/2([S ]). References [1] A. A. Beilinson, J. Bernstein and P. Deligne, Faisceaux pervers, Ast´erisque 100, Soc. Math. France, Paris, 1982. [2] A. Berenstein and A. Zelevinsky, String bases for quantum groups of type Ar, I. M. Gel’fand Seminar, 51–89, Adv. Soviet Math. 16, Part 1, Amer. Math. Soc., Providence, RI, 1993. [3] , Quantum cluster algebras, Adv. Math. 195 (2005), no. 2, 405–455. [4] G.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/lem-sec-032-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "lem-sec-032-03.md",
+      "narrative": null,
+      "content": "There exists an epimorphism (up to a grading) Ω: M(s, 0) ◦M(s+, s) ◦A ։ ◦t;bt,s<0M(t, 0)◦−bt,s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/lem-sec-032-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "lem-sec-032-04.md",
+      "narrative": null,
+      "content": "We have d(X, M(s, 0)) = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prop-sec-032-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "prop-sec-032-05.md",
+      "narrative": null,
+      "content": "The map Ωfactors through M(s, 0) ◦X; that is, M(s, 0) ◦M(s+, s) ◦A τ * *❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ Ω / / ◦t;bt,s<0M(t, 0)◦−bt,s. M(s, 0) ◦X Ω 4 4✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ Here τ is the canonical surjection.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Admissible seeds in the monoidal category $\\shc_w$",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "../sections/sec-032-112-admissible-seeds-in-the-monoidal-category-sh.md",
+      "narrative": null,
+      "content": "M(s, t) = M(λs, λt). It is a real simple module with ch(M(s, t)) = D(s, t).\nDeﬁnition 11.2.1. For w ∈W, let Cw be the smallest monoidal abelian full subcategory\nof R-gmod satisfying the following properties:\n(i) Cw is stable under the subquotients, extensions and grading shifts,\n(ii) Cw contains M(s, s−) for all 1 ≤s ≤ℓ(w).\nThen by [11], M ∈R-gmod belongs to Cw if and only if ch(M) belongs to Aq(n(w)).\nHence we have a Z[q±1]-algebra isomorphism\nK(Cw) ≃Aq(n(w))Z[q±1].\nWe set\nΛ := (Λ(M(i, 0), M(j, 0)))1≤i,j≤r\nand\nD = (di)1≤i≤r := (wt(M(i, 0)))1≤i≤r.\nThen, by Proposition 10.2.3, S :=({M(k, 0)}1≤k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "thm-sec-032-01.md",
+      "narrative": null,
+      "content": "The pair \u0000{M(k, 0)}1≤k≤r, eB \u0001 is admissible. As we already explained, combined with Theorem 7.1.3 and Corollary 7.1.4, this theorem implies the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-032-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "thm-sec-032-02.md",
+      "narrative": null,
+      "content": "The category Cw is a monoidal categoriﬁcation of the quantum clus- ter algebra Aq1/2(n(w)). In the course of proving Theorem 11.2.2, we omit grading shifts if there is no danger of confusion. We shall start the proof of Theorem 11.2.2 by proving that, for each s ∈Jex, there exists a simple module X such that                  (a) there exists a surjective homomorphism (up to a grading shift) X ◦M(s, 0) ։ ◦t; bt,s>0M(t, 0)◦bt,s, (b) there exists a surjective homomorphism (up to a grading shift) M(s, 0) ◦X ։ ◦t; bt,s<0M(t, 0)◦−bt,s, (c) d(X, M(s, 0)) = 1. (11.2) We set x := is ∈I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-032-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "thm-sec-032-06.md",
+      "narrative": null,
+      "content": "□ As a corollary, we prove the following conjecture on the cluster monomials.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.05145v1/blocks/thm-sec-032-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 91,
+      "target": "thm-sec-032-07.md",
+      "narrative": null,
+      "content": "([11, Conjecture 12.9], [23, Conjecture 1.1(2)] ) Every cluster vari- able in Aq(n(w)) is a member of the upper global basis up to a power of q1/2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

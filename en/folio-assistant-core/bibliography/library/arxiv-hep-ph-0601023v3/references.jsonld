@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-ph-0601023v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
+      "dcterms:creator": [
+        "Theories, Grand Unified"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-ph/0601023",
+      "dcterms:abstract": "A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation, SUSY and SUGRA uniﬁed models, uniﬁ- cation based on extra dimensions, and string-M-theory models. The extra dimensional uniﬁcation includes 5D and 6D and universal extra dimensional (UED) models, and models based on warped geometry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uniﬁed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing eﬀect of quantum gravity on the proton is discussed. The possibility of testing grand uniﬁed models, models based on extra dimensions and string-M-theory models via their distinctive modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signiﬁcant light on the nature of uniﬁcation complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
+      "dcterms:source": "library/arxiv-hep-ph-0601023v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-ph-0601023v3"
+    }
+  ]
+}

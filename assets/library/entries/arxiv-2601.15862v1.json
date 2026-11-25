@@ -1,0 +1,305 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2601.15862v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The tenet of \\emph{synthetic differential geometry} (SDG, cf. \\parencites{Kock1979}{lavendhomme1996}{Kock2010}) is that concepts and results in differential geometry often find a more natural and powerful formulation after faithfully embedding the category of smooth manifolds into a suitable \\emph{topos} (cf. \\parencites{MacLaneMoerdijk1992}{Borceux1994III}) where \\emph{infinitesimal spaces} exist as actual objects. \n\n\\smallskip \nSuch a ``well-adapted'' SDG topos is the \\emph{Cahiers topos} due to E. Dubuc (\\cite{Dubuc1979}, cf. \\cite[\\S 2]{GS26-FieldsII}), which we may think of as the categor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED\nGRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER\nAbstract. We have previously observed that the theory of solutions of par-\ntial differential equations, regarded as diffieties inside jet bundles, acquires a\npowerful comonadic formulation after passage from the category of Fr´echet\nsmooth manifolds to the Cahiers topos of formal smooth sets (a well-adapted\nmodel for Synthetic Differential Geometry). However, the tacit assumption\nthat this passage preserves the projective limits that define infinite jet bundles\nhad remained unpro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement and Proof",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-statement-and-proof.md",
+      "narrative": null,
+      "content": "We write $i_!$ (\\cref{ToposOfFormalSmoothSets}) for the inclusion of smooth sets --- such as Fr{\\'e}chet manifolds (\\cref{FrechetManifoldsAsSmoothSets}) --- among formal smooth sets.\n\n\\begin{theorem}\n\\label[theorem]{i!PreservesInfiniteJetBundles}\nFor $\\inlinetikzcd{E \\ar[r] \\& \\Sigma}$ a finite-dimensional surjective submersion of smooth manifolds, passage to formal smooth sets preserves the projective limit involved in forming its infinite jet bundle $J^\\infty_\\Sigma E$ \\textup{(cf. \\cref{OnJetBundles})}, in that there is a natural isomorphism:\n\\begin{equation}\n  \\label{i!PreservingInfiniteJe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/def-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "def-sec-002-01.md",
+      "narrative": null,
+      "content": "1. (i) We write CrtSp for the category whose objects are the Cartesian spaces Rn, n ∈N, and whose morphisms are the smooth func- tions between these. Hence this is the full subcategory of smooth manifolds CrtSp SmthMfd on the Cartesian spaces. We will denote generic Cartesian spaces by U, V ∈ CrtSp. (ii) We regard this category as a site by equipping it with the coverage (Grothendieck pre-topology) of differentiably good open covers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/def-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "def-sec-002-03.md",
+      "narrative": null,
+      "content": "3. The category of infinitesimally thickened points (haloed points) is the full subcategory of the opposite of commutative algebras FrmPnt CAlgop D 7−→ C∞(D) . on those what are called Weil algebras in the SDG literature or Artin local algebras in algebraic geometry, namely those of the form C∞(D) ≃R R ⊕V , where V ⊂C∞(D) is a finite-dimensional ideal which is nilpotent in that ∃k∈N : V k+1 = 0 . The smallest k for which this holds is the order of nilpotency of D.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/def-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "def-sec-002-06.md",
+      "narrative": null,
+      "content": "6. (i) The category of formal Cartesian spaces is the full sub- category of the opposite of commutative algebras, FrmCrtSp CAlgop U × D 7−→ C∞(U) ⊗R C∞(D) , C∞(−) on those which are tensor products of an algebra of smooth functions on a U ∈CrtSp (cf. Prop. A.2) with those on a D ∈FrmPnt (Def. A.3). (ii) We regard this category as a site by equipping it with the coverage (Grothendieck pre-topology) whose covering families are of the form n Ui × D U × D ιi×id o i∈I for {Ui U ιi }i∈I a covering family in CrtSp (a differentiably good open cover). By construction, we have a fully faithful inclusion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/def-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "def-sec-002-07.md",
+      "narrative": null,
+      "content": "7. We say that the sheaf topos (i) over CrtSp is the category of smooth sets, (ii) over FrmCrtSp is the category of formal smooth sets, and that the essential image of the former under the left base change i! along the inclusion (A.1) constitute the reduced formal smooth sets: (A.2) SmthSet := Sh(CrtSp) Sh(FrmCrtSp) =: FrmSmthSet , i! ⊥ i∗ Here i! on sheaves is the left Kan extension i! of presheaves (2.5) followed by sheafification L, and we are using that i∗manifestly preserves sheaves: (A.3) PSh(CrtSp) PSh(FrmCrtSp) Sh(CrtSp) Sh(FrmCrtSp) . i! ⊥ i∗ i! ⊥ i∗ ⊥ L Now, basic category theory sho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/def-sec-002-10",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "def-sec-002-10.md",
+      "narrative": null,
+      "content": "10. A map i : U × D V in FrmCrtSp (Def. A.6) is a formal embedding if its restriction to U ×{0} is an embedding of smooth manifolds and its restriction to each {u} × D is a monomorphism. Moreover, this is a proper formal embedding if the restriction to U × {0} is also a proper map. The following lemma is immediate but still worth recording: 1We are leaving the Yoneda embedding notationally implicit. SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/ex-sec-002-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "ex-sec-002-04.md",
+      "narrative": null,
+      "content": "4. An infinitesimal disk of dimension d ∈N and order of infinitesi- mality k ∈N is an infinitesimally thickened point Dd(k) ∈FrmPnt (Def. A.3) of the form C∞\u0010 Dd(k) \u0011 ≃C∞(Rd)/(x1, · · · , xd)k+1 ≃R[ϵ1, · · · , ϵd]/(ϵ1, · · · , ϵd)k+1 . The second equivalence above follows by Hadamard’s lemma, which we repeat- edly refer to. For reference, we state it in a version that covers both parameters and partial derivatives: SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "5 (Hadamard’s Lemma, cf. [DK04, Lem. 2.2.7], we follow [GS25b, Lem. 4.1]). For any smooth function f(x, y) ∈C∞(Rk × Rm) and any l ∈N, there exist smooth functions {hi1···il+1}i1,··· ,il+1=1,··· ,m ⊂C∞(Rk × Rm) such that f = f(x, 0) + m X i=1 yi∂yif(x, 0) + 1 m X i,j=1 yiyj∂yi∂yjf(x, 0) + · · · + l! m X i1,··· ,il=1 yi1 · · · yil · ∂yi1 · · · ∂yil f(x, 0) + m X i1,··· ,il+1=1 yi1 · · · yil+1 · hi1···il+1(x, y).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/lem-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-002-08.md",
+      "narrative": null,
+      "content": "8. The inclusion i! in (A.2): (i) preserves representables V ∈CrtSp SmthSet in that:1 (A.4) i!V ≃V ≡V × D0 ∈FrmCrtSp FrmSmthSet , (ii) is fully faithful, hence (A.5) i∗◦i! ≃id , (iii) and such that the reduced objects X ∈SmthSet FrmSmthSet i! are equiv- alently those which are isomorphic to their purely reduced aspect ℜ(X), (A.6) X ≃ℜ(X) , where (A.7) ℜ:= i! ◦i∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/lem-sec-002-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-002-09.md",
+      "narrative": null,
+      "content": "9. The evident inclusion of Fr´echet manifolds among smooth sets (and hence further among formal smooth sets Def. A.7) (A.8) FrchtMfd SmthSet X 7−→ \u0000U 7→C∞(U, X) \u0001 is fully faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/lem-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-002-11.md",
+      "narrative": null,
+      "content": "11. Every U × D V X i f is equivalent (2.3) to (ι, f ′), where ι is a formal proper embedding (Def. A.10) of arbitrarily high codimension.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/lem-sec-002-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-002-12.md",
+      "narrative": null,
+      "content": "12. For every proper embedding ι : Rn Rn+c of sufficiently high codimension c, there exists a diffeomorphism of Rn+c under which the embedding is a rectilinear inclusion: i ≃(id, 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "2 (cf. [KMS93, §35]). The functor which forms (plain) R-algebras of smooth functions constitutes a full inclusion of smooth manifolds, hence in par- ticular of Cartesian spaces (Def. A.1): CrtSp SmthMfd CAlgop C∞(−)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Background",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-appendix-a-background.md",
+      "narrative": null,
+      "content": "For reference in the main text, here we briefly record some basic definitions and\nfacts.\n10 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER\nA.1. Formal Smooth Sets. We briefly review the topos of formal smooth sets\n([Sch13, Def. 4.5.5; KS26, §2.1; GS25b, §2], exposition in [Sch25]), equivalent (by\n[GS25b, §4.1]) to Dubuc’s Cahiers topos [Dub79; KR87], which is a “well-adapted\nmodel” for synthetic differential geometry.\nOur ground field is the real numbers. We write CAlg for the category of com-\nmutative R-algebras.\nDefinition A.1.\n(i) We write CrtSp for the category whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.15862v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[Bor94]\nF. Borceux. Categories of Sheaves. Vol. 3. Handbook of Categorical Alge-\nbra. Cambridge: Cambridge University Press, 1994. isbn: 9780521061247.\ndoi: 10.1017/CBO9780511525872 (cit. on p. 1).\n[DK04]\nJ. Duistermaat and J. Kolk. Multidimensional Real Analysis I: Differen-\ntiation. Vol. 86. Cambridge Studies in Advanced Mathematics. London:\nCambridge University Press, 2004. isbn: 9780521551144 (cit. on p. 11).\n[Dub79]\nE. Dubuc. “Sur les mod`eles de la g´eom´etrie diff´erentielle synth´etique”.\nIn: Cahiers de Topologie et G´eom´etrie Diff´erentielle Cat´egoriques 20.3\n(1979), pp. 231–279. ur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

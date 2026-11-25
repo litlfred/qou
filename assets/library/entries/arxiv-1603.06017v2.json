@@ -1,0 +1,1450 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1603.06017v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Automatic Theorem Proving in\nWalnut\nHamoon Mousavi\nMay 27, 2021\nContents\n1\nIntroduction\n2\n2\nBasics\n3\n2.1\nWords and Automata . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n2.2\nNumber Systems\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n2.3\nAutomatic Words . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n6\n2.4\nAutomata accepting Predicates . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:introduction}\nWalnut is a software package that implements a \\emph{mechanical\ndecision procedure} for deciding certain combinatorial properties of\nsome special words referred to as \\emph{automatic words} or\n\\emph{automatic sequences}. To learn more about automatic words and\ntheir applications, see \\cite{Allouche&Shallit:book}. To learn about\ndecision procedures for automatic words, see Schaeffer's Master's\nthesis \\cite{Schaeffer:thesis} and the survey paper\n\\cite{Shallit:survey}. To read more about decidable properties of\nautomatic words, refer to\n\\cite{Charlier&Rampersad&Shallit:en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-basics.md",
+      "narrative": null,
+      "content": "\\label{sec:basics}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Words and Automata",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-words-and-automata.md",
+      "narrative": null,
+      "content": "\\label{sec:words and automata}\nA word $(a_i)_{i\\in I}$ for a finite, infinite, or a possibly empty\nsubset $I$ of natural numbers $\\mathbb{N}$, is a sequence of symbols\n$a_i$ over a finite set called an alphabet. The set $I$ usually equals\n$\\mathbb{N}$ or $\\mathbb{N}_l=\\{k\\in \\mathbb{N}:k<l \\}$ for some $l$.\nThe set of finite and infinite words over the alphabet $\\Sigma$ are\ndenoted by $\\Sigma^*$ and $\\Sigma^\\omega$, respectively. The empty word\nis denoted by $\\epsilon$. For the finite word $w = a_0a_1\\cdots\na_{l-1}$, the length $|w|$, is defined and equals $l$. We let\n$\\Sigma^l$ denote the set",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Number Systems",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-number-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:number systems}\nIn any course on theory of computation, it is customary to talk about\nthe representations of the objects an algorithm/Turing machine takes as\ninputs. At the core of Walnut are automata taking natural numbers as\ninputs, and doing various computations on them, so fixing a\nrepresentation for natural numbers is essential. We could limit\nourselves to binary representations. However, there are many\ninteresting automata accepting representations in number systems other\nthan the binary one. So we are going to define, in general terms, the\nconcept of a number system. Walnut a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p005-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p005-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automatic Words",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-23-automatic-words.md",
+      "narrative": null,
+      "content": "\\label{sec:automatic words}\nAn automatic word $W=(a_i)_{i\\geq 0}$ is a word in $\\Sigma^\\omega$ for\nwhich there exists a number system $\\mathbf{S}$ and an automaton with\noutput $M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S}\\big)$ for which reading\n$x\\in R_{\\mathbf{S}}$ outputs $W[[x]_\\mathbf{S}] = a_{[x]_\\mathbf{S}\n}$. In other words, for an automatic word, the symbol at position $i$\nfor all $i$ can be effectively computed by running an automaton with\noutput on any single representation of $i$ in a number system. As usual\nwe assume $\\Sigma$ is a finite subset of $\\mathbb{Z}$.\n\nThe word $T$ for which t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automata accepting Predicates",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-24-automata-accepting-predicates.md",
+      "narrative": null,
+      "content": "\\label{sec:automata accepting predicates}\nIn Walnut, we are interested in automaton $M$ accepting same-length\nrepresentations in number systems\n$\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}$ of integers\n$x_1,x_2,\\ldots,x_n$ satisfying some predicate $P$. When this is the\ncase we say that automaton $M$ accepts the predicate $P$ (or\nequivalently$M$ accepts relation $R$ of tuples satisfying $P$). We\nalready saw a few examples of such automata in Figures\n\\ref{fig:automaton_accepting_tuples}--\\ref{fig:fib_representations}.\nFrom \\cite{Buchi:1966}, also see \\cite{Schaeffer:thesis}, and as it\nwill be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Syntax and Semantic of Predicates in Walnut",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-3-syntax-and-semantic-of-predicates-in-walnut.md",
+      "narrative": null,
+      "content": "\\label{sec:syntax and semantic}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alphabets",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-31-alphabets.md",
+      "narrative": null,
+      "content": "\\label{sec:alphabets}\nWe mentioned in earlier sections that all input and output alphabets of\nautomata are subsets of integers in Walnut. Specifically for any\nautomatic word $W$, we can assume $W[i]$ is an integer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic and Alphabetic Constants",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-32-arithmetic-and-alphabetic-constants.md",
+      "narrative": null,
+      "content": "\\label{sec:arithmetic and alphabetic constants}\nArithmetic constants in a predicate are allowed to be natural\nnumbers only. There is, however, another type of constant:  the alphabetic\nconstant. Alphabetic constants are useful when referring to symbols at\nparticular positions in automatic words. For example, the predicate that\naccepts positions for which the automatic word $W$ is $1$ is written as\n$W[i]=@1$. In order to draw the distinction between alphabetic and\narithmetic constants, we use alphabetic constants with a prefix of $@$.\nThe reason we call these constants alphabetic (as opposed to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variables",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-33-variables.md",
+      "narrative": null,
+      "content": "\\label{sec:variables}\nA variable's name must start with a letter and can contain\nupper- and lower-case \nalphanumerics and underscores. A variable's name cannot be E or A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operators",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-34-operators.md",
+      "narrative": null,
+      "content": "\\label{sec:operators}\nThe full list of operators allowed in predicates can be found in Table\n\\ref{tab:operators}\\footnote{we prefer this notation to those familiar\nfrom mathematical logic, because we want to liken our notation to those\nof programming languages, as Walnut is ultimately a programming\nlanguage.}. This list has operator precedences. The lower this number\nis, the higher the precedence is. For example, multiplication by constant\nhas the highest precedence. Parentheses override all precedences. All\noperators are associative from left to right, except for complement\n$\\sim$, reverse \\R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic Expressions",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-35-arithmetic-expressions.md",
+      "narrative": null,
+      "content": "\\label{sec:arithmetic expressions}\nThe permissible arithmetic operators are $+,-,*,/$. Equality $=$ is {\\it not\\/}\nan arithmetic operator. A constant expression is an expression\ninvolving only constants and arithmetic operators that evaluates to a\nnatural number, e.g., $4,3+2,6/4,2*3$ but not $-3$ nor $2-3$.  An\narithmetic expression is defined recursively in the usual way:\n\n\\begin{itemize}\n\\item A constant expression is an arithmetic expression, e.g., $2$,$10$,$7-4$, but not $-1$.\n\\item A variable is an arithmetic expression, e.g., $x,y,z$,etc.\n\\item For arithmetic expression $e$, the express",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Indexing Expressions and Their Semantic Rules",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-36-indexing-expressions-and-their-semantic-rules.md",
+      "narrative": null,
+      "content": "\\label{sec:indexing expressions}\nFor an $n$-dimensional automatic word $W$, an indexing expression is\n$W[e_1][e_2]\\cdots[e_n]$ where the $e_i$ are either arithmetic\nexpressions or predicates with one free variable.\n\nAn indexing expression on its own is not a valid predicate, and it is\nnot meaningful to talk about automata accepting indexing expressions.\nSmallest predicates involving indexing expressions are defined in\nSection \\ref{sec:relative expressions} and they involve comparison\noperators.\n\nWe use indexing expressions to refer to positions indicated by $e_i$.\nThe semantic of predicates in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calling Expressions and Their Semantic Rules",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-013-37-calling-expressions-and-their-semantic-rules.md",
+      "narrative": null,
+      "content": "\\label{sec:calling expressions}\nFor an automaton $M$ with $n$ inputs a calling expression is\n$\\$M(e_1,e_2,\\ldots,e_n)$ where the $e_i$ are either arithmetic\nexpressions or predicates with one free variable. For such an\nexpression, we say that $M$ is called with arguments\n$e_1,e_2,\\ldots,e_n$. A calling expression on its own is a valid\npredicate, as we will see in Section \\ref{sec:relative expressions}.\n\n\\begin{DEFN}[semantic rule regarding calling]\nSuppose $M$ is the automaton $y_1,y_2,\\ldots,y_n: P$ for some predicate\n$P$. Suppose expressions $e_1,e_2,\\ldots,e_n$ where the $e_i$ are\neither ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative Expressions",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-014-38-relative-expressions.md",
+      "narrative": null,
+      "content": "\\label{sec:relative expressions}\nComparison operators are $=$,!=,$<$,$>$,<=, and >=. A relative expression is any of the following:\n\\begin{itemize}\n\\item An expression $e_1 \\olessthan e_2$ where $e_1$ and $e_2$ are arithmetic expressions and $\\olessthan$ is any comparison operator.\n\\item An expression $e_1 \\olessthan e_2$ where $e_1$ and $e_2$ are indexing expressions and/or alphabetic constants and $\\olessthan$ is any comparison operator.\n\\item A calling expression is a relative expression.\n\\end{itemize}\nWe stress that $W[a]=b+2$ is not a relative expression based on the definition above, sin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Predicates",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-015-39-predicates.md",
+      "narrative": null,
+      "content": "\\label{sec:predicates}\nA predicate is an expression formed from relative expressions and logical operators:\n\\begin{itemize}\n\\item Every relative expression is a predicate.\n\\item For every predicate $P$ all of $(P)$, ${\\sim (P)}$ and ${\\text{\\textasciigrave}(P)}$ are predicates. \n\\item For every predicate $P_1$ and $P_2$ all of $P_1 \\mathbin{\\&} P_2$, $P_1 \\mid P_2$, $P_1 \\wedge P_2$, $P_1 \\mathbin{\\text{ => }} P_2$, $P_1 \\mathbin{\\text{ <=> }} P_2$ are predicates.\n\\item For every predicate $P$ and free variables $x_1,x_2,\\ldots,x_n$ both of $\\text{E}x_1,x_2,\\ldots,x_n\\text{ }P$ and $\\text{A}x_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decision Procedure: Walnut's Implementation",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-016-4-decision-procedure-walnuts-implementation.md",
+      "narrative": null,
+      "content": "\\label{sec:decision procedure}\nIn this section, we learn about a procedure that takes a predicate and\nconstructs an automaton accepting that predicate. The procedure\nexplained here is what implemented in Walnut, and we shall call it the\ndecision procedure.\n\nFor every defined number system, Walnut knows the automata for valid\nrepresentations, addition, equality, and less-than\npredicates/relations. Every predicate is ultimately built out of these\nfour predicates using logical operators. So we only need to explain the\nconstruction of automata for complex predicates from automata for\nsimpler subpr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cross Product",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-017-41-cross-product.md",
+      "narrative": null,
+      "content": "\\label{sec:cross product}\nLet $M\\big(Q,q_0,F,\\delta,\\mathbf{S_1},\\ldots,\\mathbf{S_m}\\big)$ and\n$M'\\big(Q',q'_0,F',\\delta',\\mathbf{S'_1},\\ldots,\\mathbf{S'_n}\\big)$ be\nthe automaton $(x_1,\\ldots,x_m):P$ and $(x'_1,\\ldots,x'_n):P'$\nrespectively. Let us assume that if $x_i=x'_j$ then\n$\\mathbf{S_i}=\\mathbf{S'_j}$. Let $\\{x''_1,\\ldots,x''_p\\}$ where $p\\leq\nm+n$ be the union of $\\{x_1,\\ldots,x_m\\}$ and $\\{x'_1,\\ldots,x'_n\\}$\nand further assume that the $x''_i$ are appearing in lexicographic\norder. Depending on whether $x''_k=x_i$ or $x''_k=x'_j$, let\n$\\mathbf{S''_k}$ denote $\\mathbf{S_i}$ or $\\mathbf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p013-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p013-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p013-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantification",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-018-42-quantification.md",
+      "narrative": null,
+      "content": "\\label{sec:quantification}\nIn this section we learn how to construct an automaton\n$(x_1,\\ldots,x_{i-1},x_{i+1},\\ldots,x_m): \\text{E}x_{i}\\text{ }P$ from\nautomaton $(x_1,\\ldots,x_m): P$. Let\n$M\\big(Q,q_0,F,\\delta,\\mathbf{S_1},\\ldots,\\mathbf{S_m}\\big)$ be the\nautomaton $(x_1,\\ldots,x_m):P$ and let $P'$ be the predicate\n$\\text{E}x_{i}\\text{ }P$. We first construct the nondeterministic\nautomaton $E(M,i)$\n$$\\big(Q,q_0,F,\\delta',\\mathbf{S_1},\\ldots,\\mathbf{S_{i-1}},\\mathbf{S_{i+1}},\\ldots,\\mathbf{S_m}\\big)$$\nfrom $M$ by eliminating the $i$'th input (coordinate) on all\ntransitions, i.e., letting\n$$\\d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p015-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complement and Reverse",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-019-43-complement-and-reverse.md",
+      "narrative": null,
+      "content": "\\label{sec:complement and reverse}\nTo obtain $(x_1,\\ldots,x_m): \\sim (P)$ from $(x_1,\\ldots,x_m): P$, one\nhas to add all transitions to dead state (in Walnut, we call this\ntotalizing an automaton), and then switching final and non-final\nstates, but one also has to make sure that the resulting automaton is\nintersected with the automaton accepting\n$R_{\\mathbf{S_1}}\\times\\cdots\\times R_{\\mathbf{S_m}}$ where\n$\\mathbf{S_i}$ is the number system assigned to $x_i$ in (annotated)\npredicate $P$. (Recall that $R_{\\mathbf{S}}$ is the set of all valid\nrepresentations in the number system $\\mathbf{S}$. Als",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p016-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p016-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p016-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic and Comparison Operators",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-020-44-arithmetic-and-comparison-operators.md",
+      "narrative": null,
+      "content": "\\label{sec:arithmetic and comparison}\nRecall that for every number system $\\mathbf{S}$ that we use in Walnut\nthe three automata $(a,b,c):\\text{?S }a=b+c$, $(a,b): \\text{?S\n}a=b$\\footnote{This automaton does not need to be defined explicitly by\nthe user, because we assumed for all number systems $\\mathbf{S}$ in\nWalnut $a=_{\\mathbf{S}}b$ if and only if $a=b$.}, and $(a,b):\\text{?S\n}a<b$ are defined. In this section we show that using these three\nautomata and the decision procedure outlined in Sections \\ref{sec:cross\nproduct}--\\ref{sec:complement and reverse}, we can construct automata\nfor more c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p017-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calling an Automaton",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-021-45-calling-an-automaton.md",
+      "narrative": null,
+      "content": "\\label{sec:calling an automaton}\nIn Section \\ref{sec:calling expressions}, we learned about the syntax\nand semantic of calling an automaton. A calling expression is a kind of\nsyntactic\nsugar to save some space when writing long and complicated predicates.\nSuppose we already have computed the automaton $(x_1,x_2,\\ldots,x_n): P$ and\ngiven it the name $M$. We can refer to $P$ in a predicate $P'$\nwithout writing $P$ all over again, by just writing\n$\\$M(e_1,e_2,\\ldots,e_n)$, where $\\$$ symbol is to signify that $M$ is\nan automaton, and the $e_i$ are either arithmetic expressions or\npredicates with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Indexing an Automatic Word",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-022-46-indexing-an-automatic-word.md",
+      "narrative": null,
+      "content": "\\label{sec:indexing to an automatic word}\n\nSuppose $W$ is an $n$-dimensional automatic word and\n$M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}\\big)$\nis its corresponding automaton with output. Also let $\\alpha$ be an\nalphabetic constant. We note that $(x_1,x_2,\\ldots,x_n):\nW[x_1][x_2]\\cdots[x_n]=@\\alpha$ is the automaton\n$$\\big(Q,q_0,F,\\delta,\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}\\big)$$\nwhen minimized, where $F=\\big\\{q:O(q)=\\alpha\\big\\}$. Similar arguments\ncan be made for other comparison operators.\n\nSuppose $W_1$ and $W_2$ are $m$- and $n$-dimensional autom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p019-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special Automata in Walnut",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-023-5-special-automata-in-walnut.md",
+      "narrative": null,
+      "content": "\\label{sec:special automata}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "True and False Automata",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-024-51-true-and-false-automata.md",
+      "narrative": null,
+      "content": "\\label{sec:true and false}\nIn Section \\ref{sec:automata accepting predicates} we saw an example of a predicate with no free variables: \n$$\\text{A}x\\text{ }\\text{E}y\\text{ } x=2*y \\mid x=2*y+1$$\nThis predicate evaluates to true (it is a tautology). Here is an example of a predicate with no free variable that evaluates to false (contradiction):\n$$\\text{E}x\\text{ } x>x+1$$\nWalnut assigns a special automaton called true (false) automaton to predicates with no free variable that evaluate to true (false). However there could be predicates with free variables that are converted to true or false autom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-arithmetic Automata",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-025-52-non-arithmetic-automata.md",
+      "narrative": null,
+      "content": "\\label{sec:non-arithmetic automata}\nThere is a need for automata in which inputs (or some of them) do not\nrepresent numbers in a specific number system. These automata might\naccept patterns, or they might be relying on some non-arithmetic\ninstructions.\n\nFor example, the pattern $0^*10^*$ represents powers of $2$ in\n$\\MSD[2]$. However, the same pattern represents powers of $2$ in\n$\\LSD[2]$. Therefore, by not assigning a number system to the automaton\n$M$ accepting the pattern $0^*10^*$, we are allowed to call $M$ both in\npredicates in $\\MSD[2]$ and in predicates in $\\LSD[2]$. Assigning\nnumber s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Installation",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-026-6-installation.md",
+      "narrative": null,
+      "content": "\\label{sec:installation}\nWalnut is a command line program. You can run Walnut on any platform as long as you have Java 8 or later (preferably JDK 8 or higher) installed. To see which version of Java is installed on your machine type the following in the terminal (without the command line prompt \\$):\n\\begin{lstlisting}[language=bash]\n$java -version\n\\end{lstlisting}\nIf you download Walnut as the zipped file Walnut.zip first thing you need to do is to uncompress it. Then open the terminal (or command prompt in Windows), and change the directory to ``.../Walnut/bin/'', and run Walnut by typing:\n\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eclipse",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-027-61-eclipse.md",
+      "narrative": null,
+      "content": "Eclipse",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commands",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-028-7-commands.md",
+      "narrative": null,
+      "content": "\\label{sec:commands}\nEvery command ends in either a colon, double colon, or a semicolon. If you want to see the reports on the intermediate steps of a computation use colon or double colon, otherwise use semicolon. For example, if we type:\n\\begin{lstlisting}[style=cmd]\neval test \"(*\\textcolor{blue}{$a=b+1$}*)\":\n\\end{lstlisting}\nwe get an output similar to the following written in the console:\n\\begin{lstlisting}[style=out]\n(*\\textcolor{out}{$a=b+1$}*):2 states - 1ms\ntotal computation time: 2ms\n\\end{lstlisting}\nwhich explains that the automaton for predicate $a=b+1$ has 2 states\nand it took 2 mi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "eval: eval <name> <predicate>",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-029-71-eval-eval-name-predicate.md",
+      "narrative": null,
+      "content": "\\label{sec:eval}\nThis is the most important command in Walnut and it stands for ``evaluate.'' This command takes two arguments. The first argument is a name for the evaluation. Name of the evaluation starts with a letter and could contain alphanumerics and underscore. The files generated as the result of the eval command, all share the name given in the first argument. The second argument is a predicate that we want to evaluate. Predicates are always placed between quotation marks. To see the definition for predicates see Section \\ref{sec:predicates}. In this article we typeset predicates in m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p023-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p023-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p026-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p026-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "def: def <name> <predicate>",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-030-72-def-def-name-predicate.md",
+      "narrative": null,
+      "content": "\\label{sec:def}\nThe word def stands for define. The syntax for this command is exactly the same as the syntax for eval command. The only difference between this command and eval is that the automaton constructed is saved in the directory ``/Walnut/Automata Library/'' for later use.  Suppose we write the following:\n\\begin{lstlisting}[style=cmd]\ndef sum10 \"(*\\textcolor{blue}{$x+y=10$}*)\";\n\\end{lstlisting}\nThis creates as usual the files sum10.gv, sum10.txt, and sum10\\_log.txt in the directory ``/Walnut/Result/''. However, it also saves a copy of sum10.txt in the directory ``/Walnut/Automata Libr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p027-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../images/img-p027-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "macro: macro <name> <template>",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-031-73-macro-macro-name-template.md",
+      "narrative": null,
+      "content": "Recall that a subword $W[i..i+n-1]$ is a palindrome if $W[i+k]=W[i+n-1-k]$ for all $k<n$. The following calculates the palindromes in the Thue-Morse word\\footnote{In specific terms, this calculation constructs an automaton accepting $(i,n)$'s for which $W[i..i+n-1]$ is a palindrome.}:\n\\begin{lstlisting}[style=cmd]\neval thue_pal \"Ak k<n => T[i+k] = T[i+n-1-k]\";\n\\end{lstlisting}\nNow in order to calculate palindromes for the Fibonacci word, one has to type the entire predicate above, letter for letter, except for the substitution of $T$ by $F$:\n\\begin{lstlisting}[style=cmd]\neval fibonacci_pal \"?m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrices with eval and def",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-032-74-matrices-with-eval-and-def.md",
+      "narrative": null,
+      "content": "We postponed discussing the exact syntax of the eval and def commands until this section. These two commands can take an optional argument:\n\\begin{itemize}\n\t\\item eval <name> <space separated list of free variables>? <predicate> \n\t\\item def <name> <space separated list of free variables>? <predicate>\n\\end{itemize}\n\nThe question marks are representing the fact that the corresponding arguments are optional. When a list of free variables is preset, in addition to the ordinary computation, Walnut will calculate the \\emph{incidence matrices} of the underlying graph of the computed automaton, corres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "reg",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-033-75-reg.md",
+      "narrative": null,
+      "content": "\\label{sec:reg}\nThe word reg stands for regular expression. Before we talk about this command in detail, let us motivate the need for it through an example. Suppose we need an automaton accepting $\\MSD[2]$ representations of powers of $2$ that are less than $20$. There is no straightforward way of constructing an automaton accepting representations of powers of $2$ using eval and def commands\\footnote{The set of powers of $2$ is not expressible in Presburger arithmetic. However the extended Presburger arithmetic that involves automatic words is powerful enough to express this set (why?)}. Reme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p030-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../images/img-p030-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p031-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "load: load <file name>",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-034-76-load-load-file-name.md",
+      "narrative": null,
+      "content": "\\label{sec:load}\nWe can write any series of legitimate Walnut commands in a text file and save it in the directory ``/Walnut/Command Files/''. Then we can load it by writing the following in Walnut:\n\\begin{lstlisting}[style=reg]\nload file_name.txt;\n\\end{lstlisting}\nThis runs all commands in file\\_name.txt in the order they appear. \nRecall that the file's encoding must be UTF-8.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/figure-img-p032-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Working with Input/Output",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-035-8-working-with-inputoutput.md",
+      "narrative": null,
+      "content": "\\label{sec:working with input and output}\nThroughout this section it is assumed that all files have UTF-8 encoding. This is the default encoding for most text editors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining Automata in Text Files",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-036-81-defining-automata-in-text-files.md",
+      "narrative": null,
+      "content": "\\label{sec:define automata in text files}\nIn this section we learn how to manually define all automata types in\ntext files. Recall that an ordinary automaton can be thought of as an\nautomaton with output, in which states with non-zero outputs are\ntreated as final states; see Section \\ref{sec:words and automata}.\nTherefore suppose\n$M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}\\big)$\nis an automaton with output with $m$ states and $n$ inputs over number\nsystems $\\mathbf{S_i}$. Furthermore suppose that the states are labeled\n$0$ to $m-1$, i.e., $Q=\\big\\{0,1,\\ldots,m-1\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining New Automatic Words",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-037-82-defining-new-automatic-words.md",
+      "narrative": null,
+      "content": "\\label{sec:define new automatic words}\nThe eval and def commands always produce automata accepting a predicate, therefore the result is never an automaton with output. So to define an automatic word $W$, we need to manually define its corresponding automaton with output in the directory ``/Walnut/Word Automata Library/''. For example, the Thue-Morse word is defined in the file ``/Walnut/Word Automata Library/T.txt'' as follows:\n\\begin{figure}[H]\n\\begin{CenteredBox}\n\\begin{lstlisting}[style=file]\nmsd_2\n0 0\n0 -> 0\n1 -> 1\n1 1\n0 -> 1\n1 -> 0\n\\end{lstlisting}\n\\end{CenteredBox}\n\\captionof{lstlisting}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining New Number Systems",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-038-83-defining-new-number-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:define new number systems}\n\nBased on Definition \\ref{def:walnut_number_system}, to define a new\nnumber system $\\mathbf{S}$, we need to define automata for\n$R_{\\mathbf{S}}$, $+_{\\mathbf{S}}$, and $<_{\\mathbf{S}}$. We do not\nneed to define an automaton for $=_{\\mathbf{S}}$, because it can be\ngenerated easily, since we assumed that $w_1=_{\\mathbf{S}} w_2$ if and\nonly if $w_1 = w_2$ for any two words $w_1$ and $w_2$ of the same\nlength. The automata for number systems must be defined in the\ndirectory ``/Walnut/Custom Bases/''. For example, for the number system\n$\\mathbf{S}$, assuming it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Converting .gv files to .jpeg",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-039-84-converting-gv-files-to-jpeg.md",
+      "narrative": null,
+      "content": "The drawings of automata in Walnut are stored in .gv files. Not only can the software Graphviz open the files with this extension,\nbut it can also convert them to many different file formats. For example, suppose you have a file named automaton.gv. To convert it to automaton.jpeg type the following in the terminal:\n\\begin{lstlisting}[language=bash]\n$dot -Tjpg automaton.gv -o automaton.jpeg \n\\end{lstlisting} \nSee \\href{http://www.graphviz.org/}{Graphviz} to learn how to convert\n.gv files to other file types.\n\n\\printbibliography[heading=bibintoc]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1603.06017v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-040-references.md",
+      "narrative": null,
+      "content": "[1]\nJ. R. Buchi. “On a Decision Method in Restricted Second Order Arithmetic”. In: Logic, Methodology and Philosophy of\nScienceProceeding of the 1960 International Congress. Studies in Logic and the Foundations of Mathematics 44 (1966).\nEd. by Patrick Suppes Ernest Nagel and Alfred Tarski, pp. 1 –11.\n[2]\nJ.-P. Allouche and J. Shallit. Automatic Sequences: Theory, Applications, Generalizations. Vol. 1. CUP, 2003.\n[3]\nAnders Møller. dk.brics.automaton – Finite-State Automata and Regular Expressions for Java. http://www.brics.dk/automaton/.\n2010.\n[4]\nE. Charlier, N. Rampersad, and J. Shallit. “En",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

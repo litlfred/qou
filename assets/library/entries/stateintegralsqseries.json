@@ -1,0 +1,586 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "stateintegralsqseries",
+  "blocks": [
+    {
+      "id": "library/stateintegralsqseries/blocks/cor-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "cor-sec-001-02.md",
+      "narrative": null,
+      "content": "Writing PA,B = P k pkPk (a ﬁnite sum), for pk ∈Db and Pk ∈eDb, it follows that (8) IA,B(b) = \u0012 ˜q q \u0013 B−3A eπi B+2(A+1) X k gk(q)Gk(˜q) where (9) gk(q) = ⟨pkFA,B⟩, Gk(˜q) = ⟨Pk eFA,B⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-integrals and their q-series",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-state-integrals-and-their-q-series.md",
+      "narrative": null,
+      "content": "State-integrals and their q-series\n2\n1.2.\nq-diﬀerence equations\n4\n1.3.\nThe case of the 41 knot\n4\n1.4.\nThe case of the 52 knot\n5\n2.\nProofs\n6\n2.1.\nA residue computation\n6\n2.2.\nThe Taylor series of φm(x) and eφn(x)\n8\n2.3.\nThe connection with the diﬀerential operators δl and eδl\n8\n2.4.\nProof of Theorem 1.1\n10\n2.5.\nSome auxiliary power series\n10\n2.6.\nProof of Proposition 2.2\n12\n2.7.\nProof of Lemma 1.5\n13\n3.\nAn application: state-integrals of the 41 and 52 knots\n14\n3.1.\nProof of Corollary 1.7\n14\n3.2.\nProof of Corollary 1.8\n14\nAcknowledgments\n15\nReferences\n15\n1. Introduction\nDate: April 3, 2013.\nS.G.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FROM STATE INTEGRALS TO q-SERIES\nSTAVROS GAROUFALIDIS AND RINAT KASHAEV\nAbstract. It is well-known to the experts that multi-dimensional state integrals of prod-\nucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written\nas ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e−2πi/τ. We\nillustrate this fact by giving a detailed proof for a family of one-dimensional integrals which\nincludes state-integral invariants of 41 and 52 knots.\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "The left hand side of Equation (8) has analytic continuation to the cut plane C \\ {b2 | b2 < 0} whereas each of the series gk and Gk is only well-deﬁned in the upper-half plane {b2 |ℑ(b2) > 0}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "We have: (7) IA,B(b) = \u0012 ˜q q \u0013 B−3A eπi B+2(A+1) D PA,B \u0010 FA,B(q, x) eFA,B(˜q, ex) \u0011 E .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/cor-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "cor-sec-002-02.md",
+      "narrative": null,
+      "content": "(a) If we deﬁne ω(q, x) = FA,B(q, qx)/FA,B(q, x) and ω(q, x)n = Qn j=1 ω(q, qjx), then ω satisﬁes the nonlinear equation B X j=0 (−1)j \u0012B j \u0013 ω(q, x)j −(−1)AqAxω(q, x)A = 0 . (b) F is an admissible power series in the sense of Kontsevich-Soibelman [KS11, Sec.6], the limit limq→1 ω(q, x) = ω(x) ∈Q[[x]] exists and satisﬁes the algebraic equation (also known as the Nahm equation or the gluing equation) (12) (1 −ω(x))B = (−1)Axω(x)A . The Nahm equation has been studied by several authors including [Zag07, Sec.3], [Vla, VZ11], [RV, Sec.4].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/cor-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "cor-sec-003-01.md",
+      "narrative": null,
+      "content": "(a) We have: (14) I41(b) = −i \u0012q ˜q \u0013 1 24 \u0000b G(q)g(˜q) −b−1G(˜q)g(q) \u0001 where g(q) = ∞ X n=0 (−1)nq 2 n(n+1) (q)2 n (15a) G(q) = ∞ X m=0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "(a) We have: (10) FA,B(q−1, x) = eFA,B(q, x) . (b) FA,B satisﬁes the linear q-diﬀerence equation (11) \u0010 (1 −ˆE)B −(−1)AqAx ˆEA\u0011 FA,B(q, x) = 0 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-difference equations",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-q-difference-equations.md",
+      "narrative": null,
+      "content": "Consider the operators ˆx and ˆE which act on f(x) ∈Q(q)[[x]] by:\n( ˆEf)(x) = f(qx),\n(ˆxf)(x) = xf(x) .\nObserve that ˆEˆx = qˆx ˆE.\nLemma 1.5. (a) We have:\n(10)\nFA,B(q−1, x) = eFA,B(q, x) .\n(b) FA,B satisﬁes the linear q-diﬀerence equation\n(11)\n\u0010\n(1 −ˆE)B −(−1)AqAx ˆEA\u0011\nFA,B(q, x) = 0 .\nCorollary 1.6. (a) If we deﬁne ω(q, x) = FA,B(q, qx)/FA,B(q, x) and ω(q, x)n = Qn\nj=1 ω(q, qjx),\nthen ω satisﬁes the nonlinear equation\nB\nX\nj=0\n(−1)j\n\u0012B\nj\n\u0013\nω(q, x)j −(−1)AqAxω(q, x)A = 0 .\n(b) F is an admissible power series in the sense of Kontsevich-Soibelman [KS11, Sec.6], the\nlimit limq→1 ω(q, x) = ω(x) ∈Q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the 41 knot",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-the-case-of-the-41-knot.md",
+      "narrative": null,
+      "content": "and 52 knots is given by [KLV16, AK]\nI1,2 = I41\nI2,3 = I52 .\nIn this section, let\n(13)\nF(q, x) = F1,2(q, x) =\n∞\nX\nn=0\n(−1)nq\n1\n2 n(n+1)\n(q)2\nn\nxn .\nCorollary 1.7. (a) We have:\n(14)\nI41(b) = −i\n2\n\u0012q\n˜q\n\u0013 1\n24 \u0000b G(q)g(˜q) −b−1G(˜q)g(q)\n\u0001\nwhere\ng(q) =\n∞\nX\nn=0\n(−1)nq\n1\n2 n(n+1)\n(q)2\nn\n(15a)\nG(q) =\n∞\nX\nm=0\n \n1 + 2m −4\n∞\nX\ns=1\nqs(m+1)\n1 −qs\n!\n(−1)mq\n1\n2 m(m+1)\n(q)2\nm\n(15b)\nFROM STATE INTEGRALS TO q-SERIES\n5\n(b) The series g(q) and G(q) are given in terms of F(q, x) by:\ng(q) = ⟨F⟩\n(16a)\nG(q) = ⟨(2 + 2δ −4δ1)F⟩\n(16b)\n(c) F satisﬁes the linear q-diﬀerence equation\n(17)\nF(q, q−1x) + F(q, qx) = (2 −x)F(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/cor-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "cor-sec-004-01.md",
+      "narrative": null,
+      "content": "(a) We have: I2,3(q) = −e 3πi \u0012q ˜q \u0013 1 ∞ X m,n=0 Rm,n(q, ˜q)tm(q)Tn(˜q) (21) = −e 3πi \u0012q ˜q \u0013 1 8 \u0012 −b2 2 g1(q)G1(˜q) −1 2πig3(q)G1(˜q) + 1 2g2(q)G2(˜q) + b−2 2 g3(q)G3(˜q) \u0013 (b) F and eF satisfy the linear q-diﬀerence equations F(q, q3x) −(3 −q2x)F(q, q2x) + 3F(q, qx) −F(q, x) = 0 eF(q, q3x) −3 eF(q, q2x) + (3 −q2x) eF(q, qx) −eF(q, x) = 0 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the 52 knot",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-the-case-of-the-52-knot.md",
+      "narrative": null,
+      "content": "F(q, x) = F2,3(q, x) =\n∞\nX\nm=0\ntm(q)xm,\neF(q, ex) = F1,3(q, ex) =\n∞\nX\nm=0\nTm(q)exm\nwhere\ntm(q) = qm(m+1)\n(q)3\nm\n,\nTn(q) = (−1)nq\n1\n2 n(n+1)\n(q)3\nn\n= tn(q−1) .\nLet\nRm,n(q, ˜q) = −b2\n2\n\u0010\n1 + 4m + 4m2 −6E(m)\n1\n(q) −12mE(m)\n1\n(q) + 9E(m)2\n1\n(q) −3E(m)\n2\n(q)\n\u0011\n−\n1\n2πi + 1\n2\n\u0010\n1 + 2m −3E(m)\n1\n(q)\n\u0011 \u0010\n1 + 2n −6E(n)\n1 (˜q)\n\u0011\n+ b−2\n2\n\u0010\n−n −n2 −6E(0)\n2 (˜q) + 3E(n)\n1 (˜q) + 6nE(n)\n1 (˜q) −9E(n)2\n1\n(˜q) + 3E(n)\n2 (˜q)\n\u0011\n,\nwhere E(m)\nl\n(q) are deﬁned in Equation (29a). For k = 1, . . . , 4 let\n(18)\ngk(q) =\n∞\nX\nm=0\npk(m)tm(q),\nGk(˜q) =\n∞\nX\nn=0\nPk(n)Tn(˜q) ,\nwhere\np1,m(q) = 1 + 4m + 4m2 −6E(m)\n1\n(q) −12mE(m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "A computation gives that P(A, B) = P(B −A, B) for (A, B) = (1, 2) and (A, B) = (2, 3) corresponding to the invariants of the 41 and 52 knots. In all other cases that we tried, we found that P(A, B) is not equal to P(B −A, B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "We have: (25) Φb(x + xm,n) = (q; q)∞ (˜q; ˜q)∞ (q; q)m (˜q−1; ˜q−1)n φm(2πbx) eφn(2πb−1x) 1 −e2πb−1x . FROM STATE INTEGRALS TO q-SERIES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-2-proofs.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A residue computation",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-21-a-residue-computation.md",
+      "narrative": null,
+      "content": "residue theorem on a semicircle γR with center 0 and radius R, oriented counterclockwise in\nthe upper half-plane:\nThen, we will take the limit R →∞. To compute the residue of the integrand, we need to\nexpand Φb(x) near the pole\nxm,n = cb + ibm + ib−1n\nfor natural numbers m and n. Let\nφm(x) = (qm+1ex; q)∞\n(qm+1; q)∞\n(23)\neφn(x) =\n(˜q; ˜q)∞\n(˜qex; ˜q)∞\n(˜q−1; ˜q−1)n\n(˜q−1ex; ˜q−1)n\n(24)\nLemma 2.1. We have:\n(25)\nΦb(x + xm,n) = (q; q)∞\n(˜q; ˜q)∞\n1\n(q; q)m\n1\n(˜q−1; ˜q−1)n\nφm(2πbx) eφn(2πb−1x)\n1 −e2πb−1x\n.\nFROM STATE INTEGRALS TO q-SERIES\n7\nProof. Equation (1) implies the functional equations\nΦb(x +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "We have: ∞ X m=0 rY j=1 E(m) lj (q) ! t(m) = ⟨ rY j=1 δljF⟩ (32) ∞ X m=0 mrt(m) = ⟨δrF⟩ (33) and ∞ X n=0 rY j=1 eE(n) lj (˜q) ! et(n) = ⟨ rY j=1 eδlj eF⟩ (34) ∞ X n=0 nret(n) = ⟨edr eF⟩. (35)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection with the differential operators l and \"0365l",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-23-the-connection-with-the-differential-operator.md",
+      "narrative": null,
+      "content": "connect the series E(m)\nl\n(q) and eE(m)\nl\n(˜q) with the action of the diﬀerential operators δl and eδl\non a series F(x) and eF(ex) respectively. Consider formal power series\nF(x) =\n∞\nX\nm=0\nt(m)xm\neF(ex) =\n∞\nX\nm=0\net(m)exm .\nFROM STATE INTEGRALS TO q-SERIES\n9\nLemma 2.3. We have:\n∞\nX\nm=0\n rY\nj=1\nE(m)\nlj\n(q)\n!\nt(m) = ⟨\nrY\nj=1\nδljF⟩\n(32)\n∞\nX\nm=0\nmrt(m) = ⟨δrF⟩\n(33)\nand\n∞\nX\nn=0\n rY\nj=1\neE(n)\nlj (˜q)\n!\net(n) = ⟨\nrY\nj=1\neδlj eF⟩\n(34)\n∞\nX\nn=0\nnret(n) = ⟨edr eF⟩.\n(35)\nProof. For a positive natural number l we have:\n∞\nX\nm=0\nE(m)\nl\n(q)t(m) =\n∞\nX\nm=0\n⟨δl(xm)⟩t(m) =\nD\nδl(\n∞\nX\nm=0\nt(m)xm)\nE\n= ⟨δlF⟩.\nMoreove",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "For l ≥1, we have: (37) dl dxl log(1 −qkebx)|x=0 = blpl−1(qk) + b δl,1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "(a) We have (39) E(m) l,r (q) = ∞ X s=r al,s qs(m+1) 1 −qs where xr (1 −x)l = ∞ X s=r al,sxs (b) It follows that (40) l−1 X r=0 Al−1,rE(m) l,r+1(q) = E(m) l (q)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-009-03.md",
+      "narrative": null,
+      "content": "We have: φm(x) = exp − ∞ X l=1 l! l−1 X r=0 Al−1,rE(m) l,r+1(q)xl ! (41)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-24-proof-of-theorem-11.md",
+      "narrative": null,
+      "content": "t(m) = (−1)AmqA m(m+1)\n2\n(q)B\nm\n,\nF(q, x) =\n∞\nX\nm=0\nt(m)xm\nand\net(n) = (−1)(B−A)n˜q(B−A) n(n+1)\n2\n(˜q)B\nn\n,\neF(˜q, ex) =\n∞\nX\nn=0\net(n)xn .\nUse Equations (27) and (28) and Proposition 2.2 to expand FA,B,m,n(w) as a power series\nwith coeﬃcients polynomials in the variables m, E(m)\nl\n(q) and n, eE(n)\nl\n(˜q) and b±1 and (2πi)−1.\nNow apply Lemma 2.3 to convert the variables m, E(m)\nl\n(q), n, eE(n)\nl\n(˜q) in terms of the action\nof the operators δ, δl, eδ, eδl respectively. This concludes the proof of Theorem 1.1.\n□",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some auxiliary power series",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-25-some-auxiliary-power-series.md",
+      "narrative": null,
+      "content": "(36)\n1\naex −1 =\n∞\nX\nn=0\npn(a)xn\nwhere\npn(a) = −\na\nn!(1 −a)n+1\nn−1\nX\nm=0\nAn,mam\np0(a) = −\n1\n1 −a\nand An,m are Euler triangular numbers (sequence A008292 in the online encyclopedia of\ninteger sequences [Slo]) that satisfy the recursion\nAn,m = (n −m)An−1,m−1 + (m + 1)An−1,m\nand also given by the sum\nAn,m =\nm\nX\nk=0\n(−1)k\n\u0012n + 1\nk\n\u0013\n(m + 1 −k)n .\nFor a detailed discussion on this subject, see [FS70]. A table of the ﬁrst few numbers An,m\nis given by\nn \\ m\n0\n1\n2\n3\n4\n5\n6\n7\n8\n1\n1\n2\n1\n1\n3\n1\n4\n1\n4\n1\n11\n11\n1\n5\n1\n26\n66\n26\n1\n6\n1\n57\n302\n302\n57\n1\n7\n1\n120\n1191\n2416\n1191\n120\n1\n8\n1\n247\n4293\n15619\n15619\n4293\n247",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "For part (b), we will use the series E[m] l (q) = ∞ X s=1 sk−1qs(m+1) 1 −qs Using log(eφn(x)) = log \u0012 (˜q; ˜q)∞ (˜qex; ˜q)∞ \u0013 + log \u0012 (˜q−1; ˜q−1)n (˜q−1ex; ˜q−1)n \u0013 and the proof of part (a) of Proposition 2.2, it follows that log(eφn(x)) = log \u0012 (˜q; ˜q)∞ (˜qex; ˜q)∞ \u0013 + log \u0012 (˜q−1; ˜q−1)n (˜q−1ex; ˜q−1)n \u0013 = ∞ X l=1 l! l−1 X r=0 Al−1,rE(0) l,r+1(˜q)xl + ∞ X l=1 l! l−1 X r=0 Al−1,rE[n] l,r+1(˜q−1)xl = ∞ X l=1 l! l−1 X r=0 Al−1,r \u0010 E(0) l,r+1(˜q) + E[n] l,r+1(˜q−1) \u0011 xl where (42) E[n] l,r (q) = n X k=1 qkr (1 −qk)l . Let (43) eE(n) l,r (˜q) =      −n + E(n) 1,1 (˜q) if l = r = 1 E(n) l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Proposition 2.2",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-26-proof-of-proposition-22.md",
+      "narrative": null,
+      "content": "Lemma 2.6. For part (b), we will use the series\nE[m]\nl\n(q) =\n∞\nX\ns=1\nsk−1qs(m+1)\n1 −qs\nUsing\nlog(eφn(x)) = log\n\u0012 (˜q; ˜q)∞\n(˜qex; ˜q)∞\n\u0013\n+ log\n\u0012 (˜q−1; ˜q−1)n\n(˜q−1ex; ˜q−1)n\n\u0013\nand the proof of part (a) of Proposition 2.2, it follows that\nlog(eφn(x)) = log\n\u0012 (˜q; ˜q)∞\n(˜qex; ˜q)∞\n\u0013\n+ log\n\u0012 (˜q−1; ˜q−1)n\n(˜q−1ex; ˜q−1)n\n\u0013\n=\n∞\nX\nl=1\n1\nl!\nl−1\nX\nr=0\nAl−1,rE(0)\nl,r+1(˜q)xl +\n∞\nX\nl=1\n1\nl!\nl−1\nX\nr=0\nAl−1,rE[n]\nl,r+1(˜q−1)xl\n=\n∞\nX\nl=1\n1\nl!\nl−1\nX\nr=0\nAl−1,r\n\u0010\nE(0)\nl,r+1(˜q) + E[n]\nl,r+1(˜q−1)\n\u0011\nxl\nwhere\n(42)\nE[n]\nl,r (q) =\nn\nX\nk=1\nqkr\n(1 −qk)l .\nLet\n(43)\neE(n)\nl,r (˜q) =\n\n\n\n\n\n−n + E(n)\n1,1 (˜q)\nif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma 1.5",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-27-proof-of-lemma-15.md",
+      "narrative": null,
+      "content": "eFA,B.\nPart (b) follows from an application of Zeilberger’s creative telescoping [Zei91]. To apply\nthe method, deﬁne\nt(m, x) = (−1)AmqA m(m+1)\n2\n(q)B\nm\nxm\nThen, observe that t satisﬁes the recursions with respect to m and x:\n(1 −qm+1)Bt(m + 1, x) = (−1)AqA(m+1)t(m, x)\nt(m, qx) = qmt(m, x) .\nNow, we eliminate qm from the above equations as follows. The second equation implies that\nt(m + 1, qjx) = qj(m+1)t(m + 1, x). Expanding the ﬁrst equation, it follows that\nB\nX\nj=0\n(−1)j\n\u0012B\nj\n\u0013\nt(m + 1, qjx) = (−1)AqAxt(m, qAx)\nSumming for m ≥0 implies (b).\n□\nProof. (of Corollary 1.6) The admissibility of F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-3-an-application-state-integrals-of-the-41-and-5.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Corollary 1.7",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-31-proof-of-corollary-17.md",
+      "narrative": null,
+      "content": "1\n(b(1 −eb−1w))2 = 1\nw2 −b−1\nw + O(1)\n(φm(bw))2 = 1 −2E(m)\n1\n(q)bw + O(w2)\n(eφn(b−1w))2 = 1 + 2 eE(n)\n1 (˜q)b−1w + O(w2)\ne\n1\n4πiw2+w(b(m+1/2)+b−1(n+1/2)) = 1 +\n\u00121\n2 + m\n\u0013\nbw +\n\u00121\n2 + n\n\u0013\nb−1w + O(w2)\nCombined with eE(n)\n1 (˜q) = −n + E(n)\n1 (˜q), it follows that the residue R = Resw=0(F1,2,m,n(w))\nis given by\nR =\n\u0012\nb\n\u00121\n2 + m −2E(m)\n1\n(q)\n\u0013\n−b−1\n\u00121\n2 + n −2E(n)\n1 (˜q)\n\u0013\u0013\nThe above, together with the fact that tn(q) = (−1)n q\n1\n2 n(n+1)\n(q)2n\nsatisﬁes tn(q−1) = tn(q) implies\nEquation (14). Equation (17) follows from Equation (11) for (A, B) = (1, 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Corollary 1.8",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-32-proof-of-corollary-18.md",
+      "narrative": null,
+      "content": "1\n(b(1 −eb−1w))3 = −1\nw3 + 3b−1\n2w2 −b−2\nw + O(1)\n(φm(bw))3 = 1 −3E(m)\n1\n(q) bw + 3\n2\n\u0010\n3E(m)2\n1\n(q) −E(m)\n2\n(q)\n\u0011\nb2w2 + O(w3)\n(eφn(b−1w))3 = 1 + 3 eE(n)\n1 (˜q) b−1w + 3\n2\n\u0010\n3 eE(n)2\n1\n(˜q) + eE(n)\n2 (˜q)\n\u0011\nb−2w2 + O(w3)\ne\n2\n4πiw2+2w(b(m+1/2)+b−1(n+1/2)) = 1 +\n\u0000(1 + 2m)b + (1 + 2n)b−1\u0001\nw+\n\u0012\n1 + b2 + b−2\n2\n+ 1\n2πi + 2b2m2 + 2b−2n2 + 4mn\n+2(1 + b2)m + 2(1 + b−2)n\n\u0001\nw2 + O(w3)\nIf R = Resw=0(F2,3,m,n(w)), then\nRm,n = −b2\n2\n\u0010\n1 + 4m + 4m2 −6E(m)\n1\n(q) −12mE(m)\n1\n(q) + 9E(m)2\n1\n(q) −3E(m)\n2\n(q)\n\u0011\n−\n1\n2πi + 1\n2\n\u0010\n1 + 2m −3E(m)\n1\n(q)\n\u0011 \u0010\n1 + 2n −6E(n)\n1 (˜q)\n\u0011\n+ b−2\n2\n\u0010\n−n −n2 −6E(0)\n2 (˜q) + 3E(n)\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-acknowledgments.md",
+      "narrative": null,
+      "content": "in the spring of 2013. The ﬁrst author wishes to thank the University of Geneva for its\nhospitality, and Don Zagier for encouragement and stimulating conversations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/stateintegralsqseries/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "[AK]\nJørgen E. Andersen and Rinat M. Kashaev, A TQFT from quantum Teichm¨uller theory, arXiv:\n1109.6295, Preprint 2011.\n[And76]\nGeorge E. Andrews, The theory of partitions, Addison-Wesley Publishing Co., Reading, Mass.-\nLondon-Amsterdam, 1976, Encyclopedia of Mathematics and its Applications, Vol. 2.\n[BDP14]\nChristopher Beem, Tudor Dimofte, and Sara Pasquetti, Holomorphic blocks in three dimensions,\nJ. High Energy Phys. (2014), no. 12, 177, front matter+118.\n[DGG13]\nTudor Dimofte, Davide Gaiotto, and Sergei Gukov, 3-manifolds and 3d indices, Adv. Theor.\nMath. Phys. 17 (2013), no. 5, 975–1076.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

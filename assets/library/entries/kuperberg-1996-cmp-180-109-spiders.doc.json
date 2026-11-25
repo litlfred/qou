@@ -1,0 +1,741 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kuperberg-1996-cmp-180-109-spiders",
+  "title": "Spiders for Rank 2 Lie Algebras",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Pa,a<βa) = βa*",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "121",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-paaβa-βa"
+    },
+    {
+      "level": 1,
+      "title": "Equinumeration",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "135",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-6-equinumeration"
+    },
+    {
+      "level": 2,
+      "title": "XX-«'\")c<-r",
+      "number": null,
+      "page": 40,
+      "pageLabel": "148",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-xx-c-r"
+    },
+    {
+      "level": 3,
+      "title": "References",
+      "number": null,
+      "page": 43,
+      "pageLabel": "151",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spider",
+          "heading": false
+        },
+        {
+          "term": "greg",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "quantum link",
+          "heading": false
+        },
+        {
+          "term": "rank",
+          "heading": false
+        }
+      ],
+      "extract": "Commun Math Phys 180, 109-151 (1996) Communications IΠ Mathematical Physics © Springer-Verlag 1996 Spiders for Rank 2 Lie Algebras Greg Kuperberg Department of Mathematics, University of California, Davis, CA95616, USA E-mail: greg@math ucdavis.edu Received: 19 December 1995/Accepted: 26 January 1996 Abstract: A spider is an axiomatization of the representation theory of a group, quantum group, Lie algebra, or other",
+      "extractCut": true,
+      "blocks": [
+        "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": "121",
+      "words": 3806,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasped web",
+          "heading": false
+        },
+        {
+          "term": "spider operations",
+          "heading": false
+        },
+        {
+          "term": "basis web",
+          "heading": false
+        },
+        {
+          "term": "web spaces",
+          "heading": false
+        },
+        {
+          "term": "join operation",
+          "heading": false
+        },
+        {
+          "term": "stitch",
+          "heading": false
+        },
+        {
+          "term": "basis webs",
+          "heading": false
+        },
+        {
+          "term": "internal clasp",
+          "heading": false
+        }
+      ],
+      "extract": "One of the problems of classical invariant theory is to characterize, for all ^-tuples V\\,...,Vn of finite-dimensional, irreducible representations over C of a compact group G or simple Lie algebra g, the vector space of multilinear functions / : Vι x V2 x x Vn -> <C which are invariant under the action of G or cj. In more modern terminology, the problem is to characterize the dual vector space of invariant tensors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-paaβa-βa",
+      "number": "3",
+      "title": "Pa,a<βa) = βa*",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 27,
+      "labelStart": "121",
+      "labelEnd": "135",
+      "words": 4502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasped web",
+          "heading": false
+        },
+        {
+          "term": "clasped spiders",
+          "heading": false
+        },
+        {
+          "term": "unclasped web",
+          "heading": false
+        },
+        {
+          "term": "combinatorial spider",
+          "heading": false
+        },
+        {
+          "term": "spider operations",
+          "heading": false
+        },
+        {
+          "term": "algebraic spider",
+          "heading": false
+        },
+        {
+          "term": "compound web",
+          "heading": false
+        },
+        {
+          "term": "web spaces",
+          "heading": false
+        }
+      ],
+      "extract": "• Join only: 4. (u ixi v) tx w) = u cxi (v txi w) 5. u xi 1 = u • Join and rotation: 6. pa,b(u DXU?0 V) = pa,b( u) ^ba,0 V 7 βab = Pa*,abb*(βa* ^ βb) 8. Pa,bO* >^a,b V) = V DX^β U • Rotation and stitch: 9. Ga,bd σaa*b,c,d = ^b,c,d^a,bcc*d 10. σ αj = σα*,0Pα,«* 122 G Kuperberg • Join, rotation, and stitch: 12. Ob^c(u \\X*ba,a*c V) = pb,c(Pa*,c( V) ^ca\\ab Pb,a( u)) The formal spider axioms are embarrassingly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-6-equinumeration",
+      "number": "6",
+      "title": "Equinumeration",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 40,
+      "labelStart": "135",
+      "labelEnd": "148",
+      "words": 4536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "segregated clasps",
+          "heading": false
+        },
+        {
+          "term": "non-elliptic webs",
+          "heading": false
+        },
+        {
+          "term": "clasped web",
+          "heading": false
+        },
+        {
+          "term": "reverse segregated",
+          "heading": false
+        },
+        {
+          "term": "segregated sign",
+          "heading": false
+        },
+        {
+          "term": "non-convex clasps",
+          "heading": false
+        },
+        {
+          "term": "rank spiders",
+          "heading": false
+        },
+        {
+          "term": "internal clasps",
+          "heading": false
+        }
+      ],
+      "extract": "6. Equinumeration 6.1. The A2 case Theorem 6.1. Let C be an A2 clasp sequence and let wt C be the corresponding sequence of weights. Then the vector spaces W(C) and Inv(F(wt C)) have the same dimension. One of the main steps of the proof of Theorem 6.1 is the same as that of the proof of Theorem 2.3: Given two clasp sequences C and D, there is a decomposition of vector spaces Inv(F(wt C) 0 V(wtD)) ^ 0 Inv(Ύ(wtS) 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-xx-c-r",
+      "number": null,
+      "title": "XX-«'\")c<-r",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "148",
+      "labelEnd": "151",
+      "words": 880,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasped cabling",
+          "heading": false
+        },
+        {
+          "term": "basis web",
+          "heading": false
+        },
+        {
+          "term": "basis webs",
+          "heading": false
+        },
+        {
+          "term": "spiders",
+          "heading": false
+        },
+        {
+          "term": "unclasped",
+          "heading": false
+        },
+        {
+          "term": "children",
+          "heading": false
+        },
+        {
+          "term": "sign string",
+          "heading": false
+        },
+        {
+          "term": "point star",
+          "heading": false
+        }
+      ],
+      "extract": "which leads to an expansion of tangle c: VA—X + q~ m 6 which leads to the evaluation of the entire knot projection: \\A/ -q- m){q ι-q+\\-q- λ+ q~ 2) Spiders for Rank 2 Lie Algebras 149 Given a knot K and a clasp c in one of the combinatorial spiders presented here, consider the clasped cabling of K. I.e., replace the strand of K by several strands tied together with c, for example: (9) The value of a web such as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "151",
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "personal communication",
+          "heading": false
+        },
+        {
+          "term": "ftp",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "percolation",
+          "heading": false
+        },
+        {
+          "term": "canonical bases",
+          "heading": false
+        },
+        {
+          "term": "kauffman",
+          "heading": false
+        },
+        {
+          "term": "yamada",
+          "heading": false
+        },
+        {
+          "term": "preprint",
+          "heading": false
+        }
+      ],
+      "extract": "1 Barrett, J.W , Westbury, B W.: Spherical categories hep-th preprint #9310164 2 Frenkel, I., Khovanov, M : Canonical bases in tensor products and graphical calculus for Uq(ύ2). Preprint, 1995 3. Goulden, I.P. Jackson, D.M.: Combinatorial Enumeration. New York: Wiley, 1983 4 Jaeger, F.: Confluent reductions of cubic plane maps In: Graph Theory and Combinatorics International Conference Marseille, 1990 5 Jones,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "clasped spiders",
+      "heading": false
+    },
+    {
+      "term": "clasped web",
+      "heading": false
+    },
+    {
+      "term": "unclasped web",
+      "heading": false
+    },
+    {
+      "term": "combinatorial spider",
+      "heading": false
+    },
+    {
+      "term": "spider operations",
+      "heading": false
+    },
+    {
+      "term": "rank spiders",
+      "heading": false
+    },
+    {
+      "term": "linear spider",
+      "heading": false
+    },
+    {
+      "term": "web spaces",
+      "heading": false
+    },
+    {
+      "term": "basis web",
+      "heading": false
+    },
+    {
+      "term": "algebraic spider",
+      "heading": false
+    },
+    {
+      "term": "compound web",
+      "heading": false
+    },
+    {
+      "term": "web principle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "114",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "115",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "116",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "134",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kuperberg-1996-cmp-180-109-spiders"
+  }
+}

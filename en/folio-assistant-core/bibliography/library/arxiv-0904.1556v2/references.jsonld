@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0904.1556v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Algebra of Grand Uniﬁed Theories",
+      "dcterms:creator": [
+        "Baez, John",
+        "Huerta, John"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/0904.1556",
+      "dcterms:abstract": "The Standard Model is the best tested and most widely accepted theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relationship between three ‘grand uniﬁed theories’: theories that unify forces and particles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Georgi’s theory based on the group Spin(10), and the Pati–Salam model based on the group SU(2)×SU(2)×SU(4). In this expository account for mathematicians, we ex- plain only the portion of these theories that involves ﬁnite-dimensional group representations. This allows us to reduce the prerequisites to a bare minimum while still giving a taste of the profound puzzles that physicists are struggling to solve.",
+      "dcterms:source": "library/arxiv-0904.1556v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0904.1556v2"
+    }
+  ]
+}

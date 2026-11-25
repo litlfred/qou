@@ -1,0 +1,348 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "blocks": [
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Two-dimensional quantum field theories have served as toy models in attempts to\nunderstand more complicated four-dimensional theories. The two dimensional\ntheories capture many essential features of higher dimensions, without sharing the\ncomplexities of higher dimensions. Certain features of Id QFT's such as Bose-\nFermi equivalence have led to a large number of exactly solvable theories.\nIn string theories, two-dimensional conformal QFT plays an even more\nimportant role [1-3]. The string sweeps out a surface as it moves through space-\ntime, and therefore, the first quantized theory corresponds",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Communications in\nCommun. Math. Phys. 106, 1-40 (1986) \nMathematical\nPhysics\n© Springer-Verlag 1986\nTheta Functions, Modular Invariance, and Strings\nLuis Alvarez-Gaume, Gregory Moore, and Cumrun Vafa\nDepartment of Physics, Harvard University, Cambridge, MA 02138, USA\nAbstract. We use Quillen's theorem and algebraic geometry to investigate the\nmodular transformation properties of some quantities of interest in string\ntheory. In particular, we show that the spin structure dependence of the chiral\nDirac determinant on a Riemann surface is given by Riemann's theta function.\nWe use this result to i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vi",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-17-vi.md",
+      "narrative": null,
+      "content": "Vi\nand they generate SL(25Z).\nUnder SL(2, Z) it is easy to see that three spin structures mix, in the sense that\nThe (P, P) spin structure is invariant under the action of SL(2, Z). So in a sense we\nhave only two inequivalent spin structures. There is a simple way to characterize\neach class. We consider the Dirac operator for each of the spin structures which we\nlabel by α. Let n(ct) denote the number of zero modes of the Dirac operator for spin\nstructure α. Since the Dirac operator is real, there is no chiral index in two\ndimensions and therefore π(α) is even. We call a spin structure even (o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa Using (3.4) with θ = ωb η = cθp it follows that Ω^—Ω^, and if one uses again (3.4) with θ = ή, and η holomorphic, then ^$θΛθ",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-10-l-alvarez-gaume-g-moore-and-c-vafa-using-34-w.md",
+      "narrative": null,
+      "content": "Using (3.4) with θ = ωb η = cθp it follows that Ω^—Ω^, and if one uses again (3.4)\nwith θ = ή, and η holomorphic, then\n^$θΛθ \nImΣTθiθ>Q, \n(3.8)\n2Λ \ni \ndi \nbi\nand we see that ImΩ>0. The matrix Ω is thus a g x g complex symmetric matrix\nwith positive imaginary part, known as the period matrix of the Riemann surface.\nThe space of all matrices satisfying these conditions is known as the Siegel upper\nhalf plane JΊfg (in analogy with the g = 1 case where Ω is the standard modular\nparameter of the torus).\nTensor algebra and analysis are particularly simple on a two-dimensional\nsurface. By raising and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ω-Ωy",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-ω-ωy.md",
+      "narrative": null,
+      "content": "1'ώ \n+ h.c. \n(3.15)\nThus the chiral Dirac operator F\"\n1: L~\nι-±La when coupled to A becomes\nΩ-Ωy\nίω, \n(3.16)\nwhere V~\nι is the operator introduced in (3.10). Thus we have a family of Dirac\noperators parametrized by u = φ + ΩΘ. Since φ->φ + m, θ-»θ + n for n,m integral\nvectors defines the same point on Pic (I\n1), the family is parametrized by another\ncomplex torus known as the Jacobian variety of Σ, denoted by J(Σ), and defined by\nJ(Σ) = C\n9/LΩ, where LΩ is the lattice generated by Z\nd + ΩZ\n9. Since Ω (the period\nmatrix) is a non-singular g x g complex matrix, there is a 1 — 1 correspondence\nbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theta Functions",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-d-theta-functions.md",
+      "narrative": null,
+      "content": "In this section we define the theta functions and explain their relation to spin\nstructures. We follow the notation and treatment of Mumford [13]. Another\nexcellent reference is the book of Fay [14]. In analogy with the genus one case,\nonce we have introduced the Jacobian J{Σ), we can introduce the Riemann theta\nfunction by the series expansion:\n3(z|Ω)= Σ\nneZε\nWe also define theta functions with characteristics a, b for a, b e JR^ by the sum\n9 Π (z|Ω) = Σ exp(iπ(n + a) • Ω (n + a) + 2πi(n + a) (z + b))\n(3 17)\nTheta Functions, Modular Invariance, and Strings \n15\nif we shift z by the lattice LΩ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa case there are six odd spin structures associated to the theta functions ioj",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-18-l-alvarez-gaume-g-moore-and-c-vafa-case-there.md",
+      "narrative": null,
+      "content": "case there are six odd spin structures associated to the theta functions\nioj\n(0|Q)\n(θ|fl)\na \"0\n0\n\"i\n2\nπu\n2\ni\ni~\n2\n12_\n(0|fl)\n(0|β) a\n1\n1\n~o\ni\n0\"\n1\n1\"\n2\n1\n(3.29)\nand ten even ones with theta functions\n9 ΓHΊ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LooJ",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-looj.md",
+      "narrative": null,
+      "content": "f o\n0 0\n0 0]\n(0|β)\n(0|β)\n0 0\"\n.2 0.\n•* o\"\n( 0 | Ω )\n( 0 | Ω )\n(0|fl) 9\n(0|β) 9\nLooJ\nOf\n0 0\nof\n(0|β)\n(0|β)\n(3.30)\nFinally, we will see in Sect. 7 that modular transformations permute all the even\nand odd spin structures separately among themselves. This rather mathematical\nsection will prove to be quite useful in our discussion of the Dirac determinant and\nof modular invariance.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic Factorization",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-4-holomorphic-factorization.md",
+      "narrative": null,
+      "content": "Quillen [15] has recently pointed out that functional determinants of operators on\nRiemann surfaces have interesting holomorphic properties. We will use these\nproperties to investigate the Dirac determinant. However, holomorphic factoriza-\ntion has other important applications. For example, as pointed out in [16,17,18]\nthe very existence of chiral string theories relies on the existence of such\nholomorphic square roots.\nIn this section we will review the statement of Quillen's theorem and its relation\nto the geometry of determinant line bundles. We first give an heuristic Feynman-\ndiagram proo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-εj dsTrδϊ)",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-1--εj-dstrδϊ.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-εj dsTrδϊ) tD-ί-e-\"",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-1--εj-dstrδϊ-td-ί-e.md",
+      "narrative": null,
+      "content": "tD-ί-e-\"\n1 ) t i )D^De-\n( 1-\nί ) DtD. \n(4.11)\no \nD'D\nN o t e t h a t \n'i°\"\n \n( 4 1 2»\nis the projector onto the kernel of D\nf. Thus the first trace in (4.11) is finite\ndimensional and we can take the limit ε-»0. We can get a better understanding of\nthis trace if we take a basis χ^y) for kerDj which varies antiholomorphically with y.\n(Such a basis exists since Dj varies antiholomorphically.) Then, a simple\napplication of perturbation theory shows that\nχ,|χi> = ΊrPδD ^ \nδtf. \n(4.13)\nWe can simplify the second trace by using\nand applying (4.12). Since a finite dimensional trace is killed by the ε",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "\" ~Az(p)Az(-p).",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-1-azpaz-p.md",
+      "narrative": null,
+      "content": "\" ~Az(p)Az(-p). \n(4.26)\nSubstituting for the gauge field and adding the counterterms to restore coordinate\ninvariance (as described in [19]) we obtain the famous result\n(4 27)\n192π",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PJ>, '",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-w-pj.md",
+      "narrative": null,
+      "content": "PJ>, '\nThe coefficient in front of the integral is just that of the usual conformal anomaly in\nour conventions. Finally, one computes the curvature for the metric \\dz-\\-ηdz\\\n2\nR = _ d\n2\nzή - din + 2dzδz(ηή) + \\[_dznd-zη - dzήδzη-] . \n(4.28)\nCombining (4.25), (4.27), and (4.28) we find\nί d\n2σίdzηdzή + 2(dzηήdzψ + dzήηdzφ)\n- 6ηήdzdsφ-], \n(4.29)\nTheta Functions, Modular Invariance, and Strings \n23\nand in terms of the original metric deformations δgww this is simply\n*)\n3 ^r^^^^^g., - f J ^\n(4.30)\nreproducing the result in [18].\nThe Belavin-Knizhnik obstruction can be rewritten in terms of the Weil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vfl^dtlΩ/",
+      "pageStart": 28,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-vfldtlω.md",
+      "narrative": null,
+      "content": "2\nβ\n \n!\nI \nθ + ε iΊ\nL-φ+ε2J (0|β)\nTheta Functions, Modular Invariance, and Strings \n29\nNow we include the full weight lattice, allowing soliton sectors with n\\ m\nι integral\nand half-integral. The partition function then becomes\nz=\\c\\\n2 \nΣ\n* (0|Ω)\n(6.10)\nTherefore, this Bose theory corresponds to a sum over all the 2\n2g Fermi theories on\nΣ. Weighted sums over subsets of the lattice correspond to particular spin\nstructures, suggesting the possibility of bosonizing a Fermi theory with a single\nspin structure. Comparing the overall normalization of the partition functions we\nlearn that the functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Γo lΊ",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-013-γo-lί.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Γl OΊ Γl oΊ",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-014-γl-oί-γl-oί.md",
+      "narrative": null,
+      "content": "U bΓla b\\ la bΓla b]\nΓO 0 1 J \n0 \n0 \"I \nΓl\n[_a b\\ \n\\_a+ί b + ί] \n[a\nUsing this transformation and the Dehn twists for the separate handles one can\neasily see that all the odd characcteristics of (3.29) can be transformed to\nί]\nwhile all the even characteristics of (3.30) can be transformed to\nro on\nLo oj\nWe now assume that at g — 1 loops all odd characteristics can be transformed to\nwhile all even characteristics can be transformed to\n\"0...0\"\n(7.12)\nConsider any even characteristic at g loops. The first g — ί columns define an even\nor odd spin structure depending on whether the final column is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(EL ED (EL ED",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-015-el-ed-el-ed.md",
+      "narrative": null,
+      "content": "which has coefficient C(ee')\n2. Since the orbits of (7.19) and (7.21) are related by the\nDehn twist DaΓ ia2 we must have Ciee\")\n1 = Ciee\"), which means C(ee\") = 0 or 1. The\nfirst choice leads to a theory with tachyons [31], so we investigate the second\nchoice. We then have effectively only four distinct modular orbits corresponding to\nwhether the members of the doublet of spin structures are even or odd. Since a spin\nstructure with the characteristics \nis even or odd depending on whether ab = 0\nor 1 mod2, we can consider C as a function on Z 2 x Z 2. Generalizing the above\nexample of (7.19)-{7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "1. Schwarz, J.:Superstrings: The first fifteen years, Vol. 5,1, II. New York: World Scientific 1985\n2. Polyakov, AM.: Quantum geometry of bosonic strings. Phys. Lett. 103B, 207 (1981);\nQuantum geometry of fermionic strings. Phys. Lett. 103B, 211 (1981)\n3. Friedan, D., Martinec, E., Shenker, S.: Conformal ίnvariance, supersymmetry, and strings.\nPrinceton preprint\n4. Martinec, E.: Nonrenormalization theorems and fermionic string finiteness. Princeton\npreprint\n5. Gross, D.J., Harvey, J.A., Martinec, E., Rohm, R.: Phys. Rev. Lett. 54,502 (1985);Nucl. Phys.\nB256, 253 (1985), and Nucl. Phys. B (to a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

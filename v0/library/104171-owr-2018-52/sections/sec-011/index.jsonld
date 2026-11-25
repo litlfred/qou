@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/104171-owr-2018-52/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On the pure cohomology of multiplicative quiver varieties",
+  "pageStart": 33,
+  "pageEnd": 39,
+  "contains": [
+    "library/104171-owr-2018-52/blocks/prose-sec-011",
+    "library/104171-owr-2018-52/blocks/conj-sec-011-01",
+    "library/104171-owr-2018-52/blocks/thm-sec-011-02",
+    "library/104171-owr-2018-52/blocks/thm-sec-011-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "provenance": "ingested"
+}

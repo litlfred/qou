@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/compute-author.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/compute-author",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "compute-author",
+      "title": "Compute-author skill — read before writing compute code",
+      "description": "Pre-work briefing + durable patterns for anyone writing or modifying compute scripts under `computations/` or the Rust crates under `tools/`. Read this BEFORE you write or change compute code — it covers precision discipline, Rust↔Python boundary cost, exact-arithmetic choices (BigInt vs BigRational vs sympy.Rational), algebraic-preflight requirements before optimization shortcuts, and the canonical references for every load-bearing convention. Sibling to `compute-audit` (which is post-hoc); this skill is pre-work.",
+      "instructionsPath": "skills/local/compute-author.md",
+      "instructionLines": 767,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

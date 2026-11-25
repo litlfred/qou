@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1303.5278v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+      "dcterms:creator": [
+        "GAROUFALIDIS, STAVROS",
+        "HODGSON, CRAIG D.",
+        "RUBINSTEIN, J. HYAM"
+      ],
+      "dcterms:issued": "D:20181031",
+      "dcterms:identifier": "https://arxiv.org/abs/1303.5278",
+      "dcterms:abstract": "In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coeﬃcients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if T is 1-eﬃcient and (b) if M is hyperbolic, it has a canonical set of 1-eﬃcient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.",
+      "dcterms:source": "library/arxiv-1303.5278v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1303.5278v1"
+    }
+  ]
+}

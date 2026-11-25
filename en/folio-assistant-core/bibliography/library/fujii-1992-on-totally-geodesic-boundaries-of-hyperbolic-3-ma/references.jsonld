@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "On totally geodesic boundaries of hyperbolic 3-manifolds",
+      "dcterms:creator": [
+        "J, KODAI MATH."
+      ],
+      "dcterms:issued": "D:20050111",
+      "dcterms:source": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
+      "dcterms:hasVersion": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma"
+    }
+  ]
+}

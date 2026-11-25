@@ -1,0 +1,247 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1108.1048v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The *Khovanov-Lauda-Rouquier algebras* (*KLR algebras*) were introduced independently by Khovanov-Lauda [@KL09; @KL11] and Rouquier [@R08] to give a categorification of quantum groups. Let $U_q(\\mathfrak{g})$ be the quantum group associated with a symmetrizable Cartan datum, and let $R$ be the corresponding KLR algebra. For a dominant integral weight $\\lambda$ of $U_q(\\mathfrak{g})$, the algebra $R$ has a special quotient $R^{\\lambda}$ corresponding to $\\lambda$, which is called the *cyclotomic Khovanov-Lauda-Rouquier algebra* ( *cyclotomic KLR algebra*) of weight $\\lambda$. It was conjectured",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1108.1048v3  [math.RT]  9 Oct 2012\nCONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS\nOVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS\nOF FINITE CLASSICAL TYPE\nGEORGIA BENKART, SEOK-JIN KANG1,2, SE-JIN OH3,4, AND EUIYONG PARK\nIn Memory of Professor Hyo Chul Myung\nAbstract. We give an explicit construction of irreducible modules over Khovanov-Lauda-\nRouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types using a\ncrystal basis theoretic approach. More precisely, for each element v of the crystal B(∞)\n(resp. B(λ)), we ﬁrst construct certain modules ∆(a; k) labeled by the adapted strin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystals",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-crystals.md",
+      "narrative": null,
+      "content": "(resp. a ∈Sλ) as an outer tensor product of modules ∆(a,b) in (3.5). We then construct the\nmaps Ψ : B(∞) −→B(∞) and Ψλ : B(λ) −→B(λ) by taking the head of Ind∆(a(v)) for\nv ∈B(∞) (resp. v ∈B(λ)). We illustrate this construction by presenting an example for\ntype B3 using the Kashiwara-Nakashima tableaux in [18] to realize the crystal B(λ). We\nprove in Proposition 3.4 for any ﬁnite classical type and any v ∈B(λ) that the number η(v)\nof ∆(a,b)’s in ∆(a(v)) has an upper bound; i.e., η(v) ≤nλ(h) for a certain element h ∈P∨\n(which depends on the type).\nSection 4 is devoted to proving that the maps Ψ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras.md",
+      "narrative": null,
+      "content": "1.1. Crystals.\nLet I be a ﬁnite index set. A square matrix A = (aij)i,j∈I is a symmetrizable generalized\nCartan matrix if it satisﬁes (i) aii = 2 for i ∈I, (ii) aij ∈Z≤0 for i̸ = j, (iii) aij = 0 if\naji = 0 for i, j ∈I, (iv) there is a diagonal matrix D = diag(δi ∈Z>0 | i ∈I) such that DA\nis symmetric.\nA Cartan datum (A, P, Π, P∨, Π∨) consists of\n(1) a symmetrizable generalized Cartan matrix A,\nREPRESENTATIONS OVER KLR ALGEBRAS OF FINITE CLASSICAL TYPE\n5\n(2) a free abelian group P of ﬁnite rank, called the weight lattice,\n(3) the set Π = {αi | i ∈I} ⊂P of simple roots,\n(4) the dual weight latt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-12-khovanov-lauda-rouquier-algebras.md",
+      "narrative": null,
+      "content": "For $\\alpha \\in \\mathsf{Q}^+$ with $|\\alpha|=m$, we define $I^\\alpha = \\{ {\\bf i}=(i_1,\\ldots,i_m) \\in I^{m} \\mid \\sum_{k=1}^{m} \\alpha_{i_k}=\\alpha \\}.$ Given $\\mathbf{i}=(i_1,\\ldots,i_m) \\in I^\\alpha$ and $\\mathbf{j}=(j_1,\\ldots,j_{m'}) \\in I^\\beta$, let ${\\bf i}*{\\bf j}$ denote the concatenation of ${\\bf i}$ and ${\\bf j}$: ${\\bf i}*{\\bf j}=(i_1,\\ldots,i_m,j_1,\\ldots,j_{m'}) \\in I^{\\alpha+\\beta}.$ Let $S_m$ be the symmetric group on $m$ letters with simple transpositions $\\sigma_i\\  (i=1,\\ldots,m-1)$. Then $S_m$ acts on $I^m$ in a natural way. For $d_1,\\ldots,d_n \\in \\mathbb{Z}_{\\ge 0}$, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of irreducible R-modules",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-13-construction-of-irreducible-r-modules.md",
+      "narrative": null,
+      "content": "In this subsection, we give a construction of irreducible graded $R$-modules as the irreducible heads of certain induced modules, which is compatible with the Kashiwara operators. More precisely, set $I_{(n+1)} = I$ and let $I_{(k)} \\subset I\\ (k=1, \\ldots,n)$ be subsets of $I$ such that $I_{(k)} \\subseteq I_{(k+1)}$ and $|I_{(k)}| = k$. Let $\\mathfrak{B}_k$ be the crystal obtained from $B(\\infty)$ by forgetting the $i$-arrows for $i \\notin  I_{(k)}$. Using highest weight vectors of connected components of $\\mathfrak{B}_k$, we define irreducible $R$-modules $\\mathcal{N}_k(v)$ for $k=1,\\ldots,n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-2-description-of-nkv-for-finite-type-via-adapted.md",
+      "narrative": null,
+      "content": "[]{#Sec: Description Nk label=\"Sec: Description Nk\"}\n\nIn this section, we give an explicit description of the modules $\\mathcal{N}_k(v)$ for finite type. To that end, we choose a particular reduced expression of the longest element $w_0$ of the Weyl group $W$. Using the notion of adapted strings for crystals given in [@Lit98] with respect to these specially chosen expressions, we describe $\\mathcal{N}_k(v)$ explicitly in terms of Kashiwara operators $\\tilde{f}_i$ (Proposition [\\[Prop: description of Nk\\]](#Prop: description of Nk){reference-type=\"ref\" reference=\"Prop: description of Nk\"}).\n\nTh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+      "pageStart": 17,
+      "pageEnd": 28,
+      "target": "../sections/sec-006-3-explicit-construction-of-irreducible-modules-f.md",
+      "narrative": null,
+      "content": "[]{#Sec: construction for classical type label=\"Sec: construction for classical type\"}\n\nIn Sections [\\[Sec: construction for classical type\\]](#Sec: construction for classical type){reference-type=\"ref\" reference=\"Sec: construction for classical type\"} and [\\[Sec:\nfinal\\]](#Sec:\nfinal){reference-type=\"ref\" reference=\"Sec:\nfinal\"}, we assume that $\\mathfrak{A}$ is of finite classical type. We maintain the notation from Sections [\\[Sec: Crystals and KLR\nalgs\\]](#Sec: Crystals and KLR\nalgs){reference-type=\"ref\" reference=\"Sec: Crystals and KLR\nalgs\"} and [\\[Sec: Description Nk\\]](#Sec: Descriptio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/cor-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 44,
+      "target": "cor-sec-007-03.md",
+      "narrative": null,
+      "content": "Nn(v) = hd Ind∆(a(v); n) for v ∈B(∞), where Nn(v) is the irreducible module given in Proposition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 44,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let a, b, c, d ∈B with a ⪰c ≻d ⪰b. Suppose that one of the following conditions hold: (1) A is of type An, (2) A is of type Bn and one of the following three holds: (i) 0 ⪰a and c̸ = 0, (ii) b ⪰0 and d̸ = 0, (iii) a ⪰n, n ⪰b and either c = 0 or d = 0, (3) A is of type Cn and one of the following three holds: (i) b ⪰n, (ii) a = c = n, (iii) a = 1 and c = n, (4) A is of type Dn and one of the following three holds: (i) b ⪰n −1, (ii) a = c = n −1, (iii) a = 1 and c = n −1. Then Ind \u0000∆(a,b) ⊠∆(c,d) \u0001 ≃Ind \u0000∆(c,d) ⊠∆(a,b) \u0001 and these modules are irreducible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 44,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Let ti ∈Z≥0 be such that t1 ≥t2 ≥· · · ≥tn′−1 ≥tn′ ≥tn′+1 = 0 (An, Cn), 2t1 ≥2t2 ≥· · · ≥2tn−1 ≥tn ≥2tn+1 ≥· · · ≥2tn′−1 ≥tn′ = 0 (Bn), t1 ≥t2 ≥· · · ≥tn−2 ≥tn−1, tn ≥tn+1 ≥· · · ≥tn′−1 ≥tn′ = 0 (Dn), where n′ = n (An), n′ = 2n (Bn), n′ = 2n −1 (Cn, Dn). Set ϑi =                                  ti −ti+1 if i ≤n′ (An, Cn), i ≤n −2 (Bn), i ≤n −3 (Dn), tn−1 −⌈tn 2 ⌉ if i = n −1 (Bn), ⌈tn 2 ⌉−⌊tn 2 ⌋ if i = n (Bn), ⌊tn 2 ⌋−tn+1 if i = n + 1 (Bn), tn−2 −max{tn−1, tn} if i = n −2 (Dn), max{0, tn −tn−1} if i = n −1 (Dn), max{0, tn−1 −tn} if i = n (Dn), min{tn−1, tn}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 28,
+      "pageEnd": 44,
+      "target": "../sections/sec-007-4-proof-of-theorem.md",
+      "narrative": null,
+      "content": "This section is devoted to a proof of Theorem 3.2. We ﬁrst give a suﬃcient condition for\nInd\n\u0000∆(a,b) ⊠∆(c,d)\n\u0001\n≃Ind\n\u0000∆(c,d) ⊠∆(a,b)\n\u0001\nto hold (Lemma 4.1). Then we extend the result\nin [15, Lem. 4.3] for type An to the other ﬁnite classical types in Lemma 4.2 below, and prove\nLemma 4.3 which yields Nn(v) = hd Ind∆(a(v); n) for v ∈B(∞). From that we can deduce\nNk(v) = hd Ind∆(a(v); k) for all k. Using Lemma 1.8, Proposition 1.10, and Lemma 4.3, we\nargue that the map Ψ : B(∞) −→B(∞) is a crystal isomorphism. It then follows from the\ncrystal embedding ιλ : B(λ) →B(∞) ⊗Tλ ⊗C in (1.1) that the map Ψ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.1048v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "1. J. Brundan and A. Kleshchev, Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras, Invent.\nMath. 178 (2009), no. 3, 451–484.\n2. J. Brundan and A. Kleshchev, Graded decomposition numbers for cyclotomic Hecke algebras, Adv. Math.\n222 (2009), no. 6, 1883–1942.\n3. J. Brundan, A. Kleshchev, and W. Wang, Graded Specht modules, J. Reine. Angew. Math. 655 (2011),\n61–87.\n4. J. Brundan and C. Stroppel, Highest weight categories arising from Khovanov’s diagram algebra III:\ncategory O, Represent. Theory 15 (2011), 170–243.\n5. G. Cliﬀ, Crystal bases and Young tableaux, J. Algebra 202 (1998),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

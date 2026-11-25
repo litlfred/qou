@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-bring-isospectrality-question",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:bring-isospectrality-question",
+  "kind": "conjecture",
+  "title": "Open question: is Bring's surface spectrally rigid?",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-photon-response-determines-q",
+    "papers/quantum-observable-universe/blocks/def-photon",
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/prop-photon-filtration-depth-bounds"
+  ],
+  "cites": [
+    "references/kac1966",
+    "references/sunada1985",
+    "references/cook2021"
+  ],
+  "tags": [
+    "bring-surface",
+    "isospectral",
+    "spectral-geometry",
+    "open-problem",
+    "conjectural-framing"
+  ],
+  "text": "bring-isospectrality-question.md",
+  "provenance": "authored"
+}

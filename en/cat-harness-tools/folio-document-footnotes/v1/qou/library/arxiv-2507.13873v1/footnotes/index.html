@@ -1,0 +1,2258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2507.13873v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2507.13873v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2507.13873v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2507.13873v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2507.13873v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;text&quot;: &quot;thomas.mertens@ugent.be&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;AndreasBelaey,∗ThomasG.Mertens,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-2&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;‡&quot;,
+    &quot;text&quot;: &quot;jacopo.papalini@ugent.be&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;AndreasBelaey,∗ThomasG.Mertens,†JacopoPapalini,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Sinedilatongravityhasbeendefinedandstudiedin[62]inadifferentquantizationscheme,leadingto a continuum model instead which was utilized as a toy model for cosmology in [63].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;holographic dual in [59, 60, 61].&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Whenwesaya“compatible”coproduct,wemeanthatatthelevelofthecommutationrelations,we have −q2L0 −q−2L0 \u0012 \u0013 ∆(q2L0L±1) = q±2∆(L±1q2L0), [∆(L+1), ∆(L−1)] = ∆ , (2.8) q −q−1 where by definition of the coproduct, we have ∆(AB) = ∆(A)∆(B).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;L+1= z&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;wenowredefineK→q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;Rq&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;[L+1, L−1] = −q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;Notethatintermsofq&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;Notethatintermsofq2L0,thefirstrelationsarealsoequivalenttoq&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;msofq2L0,thefirstrelationsarealsoequivalenttoq2L0L±1=q±2L±1q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;commutationrelations(2.7).&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;∆(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;∆(q2L0) = q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;∆(q2L0) = q2L0⊗q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;∆(L−1) = q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;m ◦⟨(∆(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;0 = ⟨O(z1)O(z2)⟩−q4∆⟨O(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;0 = ⟨O(z1)O(z2)⟩−q4∆⟨O(q2z1)O(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;⟨O(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;⟨O(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;⟨O(q2z1)O(q&quot;
+      },
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;⟨O(q2z1)O(q2z2)⟩−⟨O(q&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πb&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;−b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;whenq=eiπb&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;−b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;−b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;b∆+ln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;Usingq= eπib&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;b&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;b2π∆−iln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;−π∆+ iln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;−b∆± iln(z1/z&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;2b&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;limb→0 Sb(bx ± iα/πb)∼sinh(α)&quot;
+      },
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;limb→0 Sb(bx ± iα/πb)∼sinh(α)2x−1e−α/b&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;φ →φ +πb&quot;
+      },
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;θ→θ −πb&quot;
+      },
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;πb&quot;
+      },
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;βτ; q&quot;
+      },
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;βτ; q&quot;
+      },
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;ities is then unique depending on the range of q.For q= eiπb&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;WefindK(z∗)=q−2z∗,E+(z∗)=−q1/2andE−(z∗)=−q−3/2z∗2. By successively using the coproduct to find the action on z∗n, one deduces (2.34) - (2.36).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;ustobootstraptheactionofK, E+andE−onarbitrarymonomialsf(z∗).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-1&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;The coordinate φ is periodic with period 2π, which implies the conjugate variable r/2|log q| is discretized ∈N. This is identical to the DSSYK discrete chord number.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;2|log q|(seeFig.2).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;When introducing a boundary, they use a different boundary term than us, and hence their amplitudes (e.g. the disk partition function) would differ from ours.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;theframeworkoftopologicalrecursionandrandommatrixtheory,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-1&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;π2b4&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;2π2b&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;2π2b&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;2π2b&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;4π2b&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;Oneshouldmakeadistinctionbetweenphysicalquantizationandq-deformed“quantization”. Re- instating the quantum mechanical ℏparameter, relating the classical Poisson brackets and the quantum commutation relations, is equivalent to setting b2 →ℏb2. Taking the semiclassical limit ℏ→0 in units where ℏ= 1 is equivalent to taking b →0 in rescaled coordinates of the dilaton, see appendix B.2.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;h is a good semi-classical approximation in the b →0 regime,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;Asatechnicalaside,theparticularratioofSb-functionsin(3.24)hasappearedbeforeintheliterature and has nice structural properties. In [84], it would be denoted as D−iβM (i τ bβ + i 1&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;yonditsdomainofvalidity.Underthisextrapolation,wewouldobtain&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-2&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;b),andwasidentifiedas the kernel of the intertwiner Rα : Pα →PQ−α, mapping Virasoro representations α into their conjugate Q−α. This same function was then identified as the building block of the 3j-symbols of the modular double [84].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;b&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;2b&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;β+πb&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;2+ πb&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;Theclassicalanalogueofthispropertyisthefamiliarfactorizationpropertyϕ(g1 · g2) = ϕ(g1)ϕ(g2).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;alinearmapϕ : V→V⊗SLq(2)suchthat&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-2&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;Note that a corepresentation has the opposite arrow in the commutative diagram compared to a normal representation.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;alinearmapϕ : V→V⊗SLq(2)suchthat8,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-1&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;ThecalculationwasdoneexplicitlyinappendixAof[97]forthesymmetricversionoftheprincipal series representation, but can easily be extended to the case at hand.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;fromtheabovepairingsbetweenthegeneratorsandcoordinatesas:&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-2&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;Intheasymptoticregion,thegeneralclassicalsolutionisactuallyΦ(r)≈ar.Theprefactoraishere set to 1. Note that there is physics contained in a, since the slope with which the dilaton diverges at the boundary is part of the definition of the boundary conditions, just like in JT gravity where this prefactor is essentially the Schwarzian coupling coefficient, usually denoted by C [100].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;Onemaygauge-fixtheclassicalsolutionstobeoftheform&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;Thisspecificboundarytermwasusedinthecaseofsinhdilatongravityin[36]andforsinedilaton gravity in [59]. Here we compile the more general story. The argument follows largely the computation presented in [101] for the case of (deformations of) JT gravity.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;energyoffset.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-1&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;Thereisanorderoflimitsissuehere,sincetofindJTwehavetotakeb →0beforetakingΦ∂→+∞, corresponding to the near-boundary UV region of sinh dilaton gravity deviating from the JT AdS2 spacetime as discussed in subsection 3.1.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 30,
+        &quot;context&quot;: &quot;reproduceJTgravityintheb →0limit.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p033-1&quot;,
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;Forcompleteness,thesolutionisgivenby[91,25,27] Z dξ Sb(−iξ)Sb(−iξ −2is)e−πi(ξ2+2sξ)e−iξL/b, ψs(L/2) = e−isL/b (B.26) C where C denotes an appropriate integration contour.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 33,
+        &quot;context&quot;: &quot;dualequationobtainedbythetransformationb →1/b.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p033-2&quot;,
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;Liouvillegravityhasaquantumgrouptheoreticdescriptionintermsofthemodulardouble Uq(sl(2, R)) ⊗U˜q(sl(2, R)) Hopf algebra [27, 103], building on the same structure present in 2d Liouville CFT [98, 99].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 33,
+        &quot;context&quot;: &quot;ure of the quantum amplitudes of Liouville gravity [25, 27].&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-011&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p007-2&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πb βb&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2507.13873v1/blocks/prose-sec-002&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;wenowredefineK→q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;L+1= −q−1/2+∆z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;L+1= −q−1/2+∆zq−4∆R&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;[L+1, L−1] = −q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;[L+1, L−1] = −q2L0−q−2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Notethatintermsofq2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;otethatintermsofq2L0,thefirstrelationsarealsoequivalenttoq2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;ofq2L0,thefirstrelationsarealsoequivalenttoq2L0L±1=q±2L±1q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆(q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆(q2L0) = q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆(q2L0) = q2L0⊗q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆(L−1) = q2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆(L+1) = 1 ⊗L+1 + L+1 ⊗q−2L&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;m ◦⟨(∆(q2L&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b∆+ln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;bS&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b2π∆−iln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−π∆+ iln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−b∆± iln(z&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;limb→0 Sb(bx ± iα/πb)∼sinh(α)2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;⟨O(φ)O(θ)⟩=S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n=0(1−aq&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;dτe−2πβτeπ(Q−α)τ S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b2S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2b&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ωn,m= −i&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;q2L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Kf(z) = f(q&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(q&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;E+f(z) = −q−1/2z&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;E+f(z) = −q−1/2zf(q−2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;E−f(z∗) = q−1/2z∗f(q−2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(q&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z∗z= q&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z∗z= q2zz∗+ 1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z∗y= q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+∞(theboundary),andz∗−1z= e&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ΦR +sinh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh(2πb&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;πb&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gravityviacφ=1+6Q&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;parameterasq= eiπb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π2b4dr&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dt&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh 2πb2r −cosh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[cosh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[cosh 2πb2r −cosh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;EADM=cosh(2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;EADM=cosh(2πb2Φ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;βBH= 4π&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;βBH= 4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R = −2 cosh 2πb&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dssinh 2πbs sinh&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ood semi-classical approximation in the b →0 regime,6where b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;l approximation in the b →0 regime,6where b4E= cosh(2πbs)/4π&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andβ/b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;holefirstlawEJT=2π&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b2arccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b2arccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b2arccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;cally, the model has a slower power-law ∼E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cally, the model has a slower power-law ∼E1/b&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thantheJTCardygrowth∼e&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ds1ds2ρ(s1)ρ(s2)e−E(s&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) Sb (βM± is&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) Sb (βM± is1 ± is&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;taking ℏ→0 (or equivalently b →0 upon rescaling the field πb&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π2b&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;eff≡d&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff≡ds&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;eff≡ds2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff≡ds2 e−2πb&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E + ω/b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π2b4cosh(2πbs&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;4π2b4cosh(2πbs&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(κ−E)b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(κ−E)b2&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b2 ω S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b2 ω Sb (βM± is&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b2 ω Sb (βM± is1(E, ω) ± is&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;bs&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;bs&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π2b4(E + ω/b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2πbarccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sb(βM± i(s1 + s2))→e&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Sb(βM± i(s1 + s2))→e2πβM(s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sb(βM± i(s1 + s2))→e2πβM(s1+s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Sb(βM± i(s1 + s2))→e2πβM(s1+s2)−πQ(s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sb(βM± i(s1 + s2))→e2πβM(s1+s2)−πQ(s1+s&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b2 arccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b2 arccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b2 arccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;arccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;arccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;arccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;arccosh(4π2b4E)−arccosh(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;arccosh(4π2b4E)−arccosh(4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;arccosh(4π2b4E)−arccosh(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−1 ≪1/b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)2−1 =4π&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)2−1 =4π2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(4π2b4E)2−1 =4π2b&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b2S&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2+ πb2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τpole= βb&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τpole= βb2∆,βb&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τpole= βb2∆,βb2(∆−1),. . . ,0,. . . ,−βb&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;hethreethatweexhibitedinourconstructioninSection2.Hereq=eπib&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and˜q=eπi/b&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;2 ln&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;2 ln&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2ln qHe−βH&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;O(τ1)K−1/2O(τ2)e−˜βH&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2ln qHO(τ1)e&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where˜β≡β−i ln q=β+ πb&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;dinggeneratorsundertheinfinitesimaltransformationf(z)=z + ϵz&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;givenbyLn=∆(n+1)z&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;givenbyLn=∆(n+1)zn+z&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;bz+dwith&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L+1= z&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g= eβE−e&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z11z21= q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z12z22= q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z12z21= q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Nz21= q&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0K ⊗E−+ E−⊗K&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Introducing a scaling operator Rq&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Introducing a scaling operator Rq2f(z) ≡f(q&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;E+= −q−1/2+∆z&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;E+= −q−1/2+∆zq−4∆R&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Rq&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K= q2∆Rq&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;x(q−1)and a&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;x(q−1)and a q-number [x]q=q&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E+= q−3/2−3∆z&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K= q2∆Rq&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;E−= q&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E−= q1/2+∆Dq&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofthenon-deformedCFT(A.3)withtheidentificationK≡q&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= F(r)dτ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= F(r)dτ2+dr&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;2 [−r∂V (r∂) + 2F(r∂) + r&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;2 [−r∂V (r∂) + 2F(r∂) + rhV (r&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;ZΦ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh(2πb&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cosh(2πb&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;hexp(πb&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2π2b&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2π2b&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πb&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;ZΦ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Φ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0+ Φ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;ZΦ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b →0.Here it is convenient to rescale πb&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the whole action is multiplied by 1/b&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;asℏ∼b&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;πb&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ThisleadstoaneffectiverescaleddilatonpotentialV (Φ)→πb&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;E=cosh(2Φ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4πb&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;measuredinaWeyl-rescaledgeometryds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;eff=d&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff=ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;eff=ds2&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gaugeasds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gaugeasds2= ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;flat&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;flate&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;eff= d&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff= ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;eff= ds2&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;eff= ds2e−2Φ= d&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff= ds2e−2Φ= ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;flat&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;flate&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;flate2ρ−2Φ= d&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;flate2ρ−2Φ= ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;flat&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;flate&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;ω= dT∧dEADM=sinh(2Φ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πb&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;2πb2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πb&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;such that after quantization, πb&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4πb&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;4πb2HADM= cosh(P) +e−L&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;form(B.22),theassociatedPoissonbrackets{L, P}=2πb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[L, P] = 2πib&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[L, P] = 2πib2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L, P] = 2πib2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb2ℏ→πb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb2ℏ→πb2,weseethatb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;by setting P= −2πib&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;by setting P= −2πib2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + eiπb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψs(L/2 + iπb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψs(L/2 −iπb&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;factore&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;factore2πib&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;s2(ϕ)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;s2(ϕ) e−2∆ϕ=S&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;s2(ϕ) e−2∆ϕ=Sb(b∆± is&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;s2(ϕ) e−2∆ϕ=Sb(b∆± is1 ± is&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2α(Q−α)eiπαβSb(iτ+ α)Sb(−iτ) =S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2α(Q−α)eiπαβSb(iτ+ α)Sb(−iτ) =Sb(α)S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;dτe−2πβτeπ(Q−α)τ S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dpe&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;dpe2πipxS&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Sb(ip + Q/2 + βM)=S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;dqS&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q2−(p −i)&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b2 (1+i(p+q))(κτ)K&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b4(πb&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b4(πb2)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b4(πb2)2κ&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;j=1cosh (πp ± iπb&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j=1cosh (πp ± iπb2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k=0cosh (πp ± iπb&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sb(ip/b + Q/2 + βM)×cos (πip/b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Sb(ip/b + Q/2 + βM)×cos (πip/b2 + π/2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Sb(ip/b + Q/2 + βM)×cos (πip/b2 + π/2b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Sb(ip/b + Q/2 + βM)→S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cos (πip/b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cos (πip/b2+ π/2b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + 4q&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;cosh (πq)K&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2+iq)(κτ)K&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb2)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb2)2κ&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α2+ β&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dxsech&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4q&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;\u0012τe&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2b&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;cosh&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb2)&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(8πb2)2κ&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;τ+ (β −τ)e&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2b&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τ&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τ2+ (β −τ)&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;q(2, R),”SelectaMathematicaNewSeriesVol&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

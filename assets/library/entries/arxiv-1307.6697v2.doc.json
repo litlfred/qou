@@ -1,0 +1,974 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1307.6697v2",
+  "title": "arxiv-1307.6697v2",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Three geometric structures on three manifolds",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-three-geometric-structures-on-three-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Flag tetrahedra",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-flag-tetrahedra"
+    },
+    {
+      "level": 1,
+      "title": "Ideal triangulations by flag tetrahedra",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-ideal-triangulations-by-flag-tetrahedra"
+    },
+    {
+      "level": 1,
+      "title": "Holonomy of a decoration",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-holonomy-of-a-decoration"
+    },
+    {
+      "level": 1,
+      "title": "Computational steps",
+      "number": "6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-computational-steps"
+    },
+    {
+      "level": 1,
+      "title": "An example: the figure-eight knot",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-an-example-the-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+      "number": "8",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-description-of-the-unipotent-solutions-for-the"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pgl",
+          "heading": false
+        },
+        {
+          "term": "boundary holonomy",
+          "heading": false
+        },
+        {
+          "term": "non-unipotent",
+          "heading": false
+        },
+        {
+          "term": "koseleff",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1307.6697v2 [math.RT] 3 Dec 2013 REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS INTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY. E. FALBEL, P.-V. KOSELEFF AND F. ROUILLIER Abstract. In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2, C), PGL(3, R) and PU(2, 1)). The representations are obtained by gluing",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1307.6697v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne ﬂags",
+          "heading": false
+        },
+        {
+          "term": "unipotent boundary",
+          "heading": false
+        },
+        {
+          "term": "boundary holonomy",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "four tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "unipotent representation",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1 2. Three geometric structures on three manifolds 4 3. Flag tetrahedra 5 4. Ideal triangulations by ﬂag tetrahedra 8 5. Holonomy of a decoration 9 6. Computational steps 12 7. An example: the ﬁgure-eight knot 16 8. Description of the unipotent solutions for the ﬁrst hyperbolic manifolds 20 References 27 1. Introduction In this paper we are interested in obtaining representations of the fundamental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-three-geometric-structures-on-three-manifolds",
+      "number": "2",
+      "title": "Three geometric structures on three manifolds",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line containing",
+          "heading": false
+        },
+        {
+          "term": "ﬂags",
+          "heading": false
+        },
+        {
+          "term": "projective line",
+          "heading": false
+        },
+        {
+          "term": "structures",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic space",
+          "heading": false
+        },
+        {
+          "term": "ﬂag",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        }
+      ],
+      "extract": "Geometric structures on three manifolds have been extensively studied. The usual setting is an action of a Lie group G on a homogeneous 3-manifold X. An (X, G) structure on a 3-manifold M being a family of charts φi : Ui →X from open subsets forming a cover of M with transition functions gij (given by φj = gji ◦φi) in the Lie group G. Hyperbolic structures, that is, (H3 R, PSL(2, C)) structures (where H3 R is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-flag-tetrahedra",
+      "number": "3",
+      "title": "Flag tetrahedra",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zij zik",
+          "heading": false
+        },
+        {
+          "term": "zil zij",
+          "heading": false
+        },
+        {
+          "term": "four ﬂags",
+          "heading": false
+        },
+        {
+          "term": "zkl zlk",
+          "heading": false
+        },
+        {
+          "term": "zijzji zkl",
+          "heading": false
+        },
+        {
+          "term": "generic conﬁgurations",
+          "heading": false
+        },
+        {
+          "term": "zijk",
+          "heading": false
+        },
+        {
+          "term": "projective line",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall the parametrization of conﬁgurations of four ﬂags in the projective space CP2 (more details can be seen in [2]). Let V = C3. A ﬂag in V is usually seen as a line and a plane, the line belonging to the plane. Using the dual vector space V ∗and the projective spaces P(V ) and P(V ∗), deﬁne the spaces of ﬂags Fl by the following: Fl = {([x], [f]) ∈P(V ) × P(V ∗) | f(x) = 0}. The natural action",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-ideal-triangulations-by-flag-tetrahedra",
+      "number": "4",
+      "title": "Ideal triangulations by flag tetrahedra",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedra",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "face equations",
+          "heading": false
+        },
+        {
+          "term": "parabolic decoration",
+          "heading": false
+        },
+        {
+          "term": "ﬂags",
+          "heading": false
+        },
+        {
+          "term": "edge equations",
+          "heading": false
+        },
+        {
+          "term": "zij",
+          "heading": false
+        },
+        {
+          "term": "compact manifold",
+          "heading": false
+        }
+      ],
+      "extract": "We use the deﬁnition of an ideal triangulation of a 3-manifold as it is used usually in computations with SnapPea. It is a union of 3-simplices K = S ν Tν with face identiﬁcations (which are simplicial maps). We let K(0) be the union of vertices in K. The manifold K −K(0) is, topologically, the interior of a compact manifold when the vertices K(0) are deleted. In fact, K −K(0) is an (open) 3-manifold that retracts",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-holonomy-of-a-decoration",
+      "number": "5",
+      "title": "Holonomy of a decoration",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomy",
+          "heading": true
+        },
+        {
+          "term": "zji zij",
+          "heading": false
+        },
+        {
+          "term": "zki zil",
+          "heading": false
+        },
+        {
+          "term": "boundary holonomy",
+          "heading": false
+        },
+        {
+          "term": "holonomy change",
+          "heading": false
+        },
+        {
+          "term": "holonomy representation",
+          "heading": false
+        },
+        {
+          "term": "coordinate change",
+          "heading": false
+        },
+        {
+          "term": "coordinate matrix",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall how to compute the holonomy of a decoration described above (see [2] for more details). A decoration of a triangulation of a manifold M gives rise to a representation (called holonomy representation) ρ : π1(M, p0) →PGL(3, C). The base point is not important if we study representations up to conjugation. In fact, each solution of the consistency equations gives a conjugacy class of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-computational-steps",
+      "number": "6",
+      "title": "Computational steps",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 2154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "computing gröbner",
+          "heading": false
+        },
+        {
+          "term": "gröbner basis",
+          "heading": false
+        },
+        {
+          "term": "rational univariate",
+          "heading": false
+        },
+        {
+          "term": "univariate polynomial",
+          "heading": false
+        },
+        {
+          "term": "univariate representation",
+          "heading": false
+        },
+        {
+          "term": "zij",
+          "heading": false
+        },
+        {
+          "term": "unipotent solutions",
+          "heading": false
+        },
+        {
+          "term": "simpliﬁed system",
+          "heading": false
+        }
+      ],
+      "extract": "Our goal is to obtain the solutions of the system in the cross-ratio coordinates zij and then compute the holonomy representations. We compute: (1) Solving the constraints on gluing decorated tetrahedra, which reduces to study a constructible set deﬁned implicitly by (a) The consistency relations which deﬁne Edge and Face equations (4.1), (b) The holonomy equations (see section 5), (c) The cross-ratio equations (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-an-example-the-figure-eight-knot",
+      "number": "7",
+      "title": "An example: the figure-eight knot",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1824,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solutions belong",
+          "heading": false
+        },
+        {
+          "term": "boundary holonomy",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "conjugated roots",
+          "heading": false
+        },
+        {
+          "term": "holonomy group",
+          "heading": false
+        },
+        {
+          "term": "holonomy representation",
+          "heading": false
+        },
+        {
+          "term": "primitive sixth",
+          "heading": false
+        },
+        {
+          "term": "z12z",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁgure eight knot is given as a gluing of two tetrahedra as in Figure 2. We refer to it to set the equations of compatibility. Let zij and wij be the coordinates associated to the edge ij of each of the tetrahedra. We obtain the edge and face equations: (Le)        z23w24z13w31z14w21 = 1 z32w42z31w13z41w12 = 1 z24w23z21w43z34w41 = 1 z42w32z12w34z43w14 = 1. (Lf)        z21z31z41w21w31w41 = 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-description-of-the-unipotent-solutions-for-the",
+      "number": "8",
+      "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 27,
+      "labelStart": "20",
+      "labelEnd": "27",
+      "words": 2341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic solutions",
+          "heading": true
+        },
+        {
+          "term": "conjugate solutions",
+          "heading": false
+        },
+        {
+          "term": "parameters uij",
+          "heading": false
+        },
+        {
+          "term": "isolated solutions",
+          "heading": false
+        },
+        {
+          "term": "real solutions",
+          "heading": false
+        },
+        {
+          "term": "solutions giving",
+          "heading": false
+        },
+        {
+          "term": "obtain solutions",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        }
+      ],
+      "extract": "As explained in the last section we solve the system consisting of compatibility equations and the unipotent holonomy conditions plus the inequalities which prevent the z-coordinates to be 0 or 1. The solutions will, in turn, give rise to representations in PSL(3, C). We have computed an exhaustive list of solutions for the eleven ﬁrst 3-manifolds and for the Whitehead link complement. Their main properties are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "falbel",
+          "heading": false
+        },
+        {
+          "term": "gröbner bases",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "rouillier",
+          "heading": false
+        },
+        {
+          "term": "lazard",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "guilloux",
+          "heading": false
+        },
+        {
+          "term": "rational univariate",
+          "heading": false
+        }
+      ],
+      "extract": "[1] P. Aubry, D. Lazard, and M. Moreno Maza. On the theories of triangular sets. J. of Symbolic Compu- tation, 28(1):105–124, 1999. [2] N. Bergeron, E. Falbel, and A. Guilloux. Tetrahedra of ﬂags, volume and homology of sl(3). arXiv:1101.2742, 2011. [3] N. Bergeron, E. Falbel, A. Guilloux, P. V. Koseleﬀ, and F. Rouillier. Local rigidity for sl(3,c) represen- tations of 3-manifold groups. Exp. Math., To appear 2013.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "real ﬂags",
+      "heading": false
+    },
+    {
+      "term": "four ﬂags",
+      "heading": false
+    },
+    {
+      "term": "boundary holonomy",
+      "heading": false
+    },
+    {
+      "term": "unipotent holonomy",
+      "heading": false
+    },
+    {
+      "term": "aﬃne ﬂags",
+      "heading": false
+    },
+    {
+      "term": "zji zij",
+      "heading": false
+    },
+    {
+      "term": "zil zij",
+      "heading": false
+    },
+    {
+      "term": "coordinate zij",
+      "heading": false
+    },
+    {
+      "term": "holonomy equations",
+      "heading": false
+    },
+    {
+      "term": "holonomy representation",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic solutions",
+      "heading": true
+    },
+    {
+      "term": "zij zik",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The cross-ratio coordinates (or z-coordinates)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Triangulation of m004",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The holonomy of the ﬁgure eight cusp. The red line corresponds to L and the green line to M",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Description of the solutions",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Triangulation of m007 ◮f1 = Y 3 −2Y 2 −1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Triangulation of m009",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Triangulation of m015",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Triangulation of Whitehead link complement",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1307.6697v2"
+  }
+}

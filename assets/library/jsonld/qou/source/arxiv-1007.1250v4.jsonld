@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.1250v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1007.1250v4",
+  "contains": [
+    "library/arxiv-1007.1250v4/sections/sec-front-matter",
+    "library/arxiv-1007.1250v4/sections/sec-000",
+    "library/arxiv-1007.1250v4/sections/sec-001",
+    "library/arxiv-1007.1250v4/sections/sec-002",
+    "library/arxiv-1007.1250v4/sections/sec-003",
+    "library/arxiv-1007.1250v4/sections/sec-004",
+    "library/arxiv-1007.1250v4/sections/sec-005",
+    "library/arxiv-1007.1250v4/sections/sec-006",
+    "library/arxiv-1007.1250v4/sections/sec-007",
+    "library/arxiv-1007.1250v4/sections/sec-008",
+    "library/arxiv-1007.1250v4/sections/sec-009",
+    "library/arxiv-1007.1250v4/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES — We construct a 2-dimensional twisted nonabelian multiplicative integral.\n\n**NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES**\n\n*AMNON YEKUTIELI*\n\n139 pp, 12 sections.\n\n**Abstract.** We construct a 2-dimensional twisted nonabelian multiplicative integral. This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger’s Theorem.\n\n**Outline.** Front matter; 0 Introduction; 1 Polyhedra and Piecewise Smooth Geometry; 2 Estimates for the Nonabelian Exponential Map; 3 Multiplicative Integration in Dimension One; 4 Multiplicative Integration in Dimension Two; 5 Quasi Crossed Modules and Additive Feedback; 6 Stokes Theorem in Dimension Two; 7 Square Puzzles; 8 Stokes Theorem in Dimension Three; 9 Multiplicative Integration on Triangular Kit; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1007.1250&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1007.1250v4",
+    "title_source": "slug",
+    "source_file": "1007.1250v4.pdf",
+    "source_sha256": "541ba4fb3068de8b464453d4bca4b572f5b0004c4ff948bf487c38f9b96e8a87",
+    "pages": 139,
+    "arxiv": {
+      "id": "1007.1250",
+      "version": "4",
+      "primary_class": "math.DG",
+      "stamp_date": "6 Mar 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

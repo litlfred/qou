@@ -1,0 +1,992 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "19781611972443fm",
+  "title": "Front Matter | Algebraic and Geometric Ideas in the Theory of Discrete Optimization | Society for Industrial and Applied Mathematics",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "undetermined",
+  "tocMethod": "contents",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "Algebraic and Geometric Ideas in the Theory of Discrete Optimization",
+      "extractCut": false,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convex optimization",
+          "heading": false
+        },
+        {
+          "term": "stochastic programming",
+          "heading": false
+        },
+        {
+          "term": "gérard",
+          "heading": false
+        },
+        {
+          "term": "pablo",
+          "heading": false
+        },
+        {
+          "term": "parrilo",
+          "heading": false
+        },
+        {
+          "term": "conn",
+          "heading": false
+        },
+        {
+          "term": "michael",
+          "heading": false
+        },
+        {
+          "term": "william",
+          "heading": false
+        }
+      ],
+      "extract": "This series is published jointly by the Mathematical Optimization Society and the Society for Industrial and Applied Mathematics. It includes research monographs, books on applications, textbooks at all levels, and tutorials. Besides being of high scientific quality, books in the series must advance the understanding and practice of optimization. They must also be written clearly and at an appropriate level for the",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "davis",
+          "heading": false
+        },
+        {
+          "term": "münchen",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic and Geometric Ideas in the Theory of Discrete Optimization Jesús A. De Loera University of California, Davis Davis, California Raymond Hemmecke Technische Universität München München, Germany Matthias Köppe University of California, Davis Davis, California Society for Industrial and Applied Mathematics Philadelphia Mathematical Optimization Society Philadelphia",
+      "extractCut": false,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "köppe",
+          "heading": false
+        },
+        {
+          "term": "permission",
+          "heading": false
+        },
+        {
+          "term": "reprinted",
+          "heading": false
+        },
+        {
+          "term": "davis",
+          "heading": false
+        },
+        {
+          "term": "registered",
+          "heading": false
+        },
+        {
+          "term": "jesús",
+          "heading": false
+        },
+        {
+          "term": "münchen",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        }
+      ],
+      "extract": "Copyright © 2013 by the Society for Industrial and Applied Mathematics and the Mathematical Optimization Society 10 9 8 7 6 5 4 3 2 1 All rights reserved. Printed in the United States of America. No part of this book may be reproduced, stored, or transmitted in any manner without the written permission of the publisher. For information, write to the Society for Industrial and Applied Mathematics, 3600 Market Street,",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "v",
+      "labelEnd": "v",
+      "words": 656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrete optimization",
+          "heading": false
+        },
+        {
+          "term": "ellipsoid method",
+          "heading": false
+        },
+        {
+          "term": "lenstra",
+          "heading": false
+        },
+        {
+          "term": "feasibility",
+          "heading": false
+        },
+        {
+          "term": "polyhedra",
+          "heading": false
+        },
+        {
+          "term": "exercises",
+          "heading": false
+        }
+      ],
+      "extract": "Contents List of Figures ix List of Tables xiii List of Algorithms xv Preface xvii I Established Tools of Discrete Optimization 1 1 Tools from Linear and Convex Optimization 3 1.1 Convex sets and polyhedra . . . . . . . . . . . . . . . . . . . . . . . 3 1.2 Farkas’ lemma and feasibility of polyhedra . . . . . . . . . . . . . . . 5 1.3 Weyl–Minkowski’s representation theorem . . . . . . . . . . . . . . . 9 1.4",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "vi",
+      "labelEnd": "vi",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graver bases",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "integer programs",
+          "heading": false
+        },
+        {
+          "term": "generating functions",
+          "heading": false
+        },
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "indicator functions",
+          "heading": false
+        },
+        {
+          "term": "exercises",
+          "heading": false
+        },
+        {
+          "term": "barvinok",
+          "heading": false
+        }
+      ],
+      "extract": "vi Contents II Graver Basis Methods 61 3 Graver Bases 63 3.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63 3.2 Graver bases and their representation property . . . . . . . . . . . . . 64 3.3 Optimality certiﬁcate for separable convex integer programs . . . . . . 65 3.4 How many augmentation steps are needed? . . . . . . . . . . . . . . . 66 3.5 How do we ﬁnd a Graver-best augmentation",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-006",
+        "library/19781611972443fm/blocks/figure-img-p006-1"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "vii",
+      "labelEnd": "vii",
+      "words": 909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pareto optima",
+          "heading": false
+        },
+        {
+          "term": "pareto optimum",
+          "heading": false
+        },
+        {
+          "term": "selecting pareto",
+          "heading": false
+        },
+        {
+          "term": "gröbner bases",
+          "heading": false
+        },
+        {
+          "term": "toric ideals",
+          "heading": false
+        },
+        {
+          "term": "nullstellensatz",
+          "heading": false
+        },
+        {
+          "term": "lattice ideals",
+          "heading": false
+        },
+        {
+          "term": "exercises",
+          "heading": false
+        }
+      ],
+      "extract": "Contents vii 8 Global Mixed-Integer Polynomial Optimization via Summation 157 8.1 Approximation algorithms and schemes . . . . . . . . . . . . . . . . 157 8.2 The summation method . . . . . . . . . . . . . . . . . . . . . . . . . 159 8.3 FPTAS for maximizing nonnegative polynomials over integer points of polytopes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 159 8.4 Extension to mixed-integer",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "viii",
+      "labelEnd": "viii",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relaxations",
+          "heading": false
+        },
+        {
+          "term": "optimization",
+          "heading": false
+        },
+        {
+          "term": "epilogue",
+          "heading": false
+        }
+      ],
+      "extract": "viii Contents 13 Positivity of Polynomials and Global Optimization 265 13.1 Unconstrained optimization of polynomials and sums of squares . . . 265 13.2 Positivstellensätze for semideﬁnite programming relaxations . . . . . 273 13.3 Approximating the integer hull of combinatorial problems . . . . . . . 277 13.4 Notes and further references . . . . . . . . . . . . . . . . . . . . . . . 279 13.5 Exercises . . . . . . .",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "ix",
+      "labelEnd": "ix",
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-dimensional cone",
+          "heading": false
+        },
+        {
+          "term": "fundamental parallelepiped",
+          "heading": false
+        },
+        {
+          "term": "lattice points",
+          "heading": false
+        },
+        {
+          "term": "one-dimensional identity",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        },
+        {
+          "term": "polygon",
+          "heading": false
+        },
+        {
+          "term": "triangulation",
+          "heading": false
+        },
+        {
+          "term": "minimal",
+          "heading": false
+        }
+      ],
+      "extract": "List of Figures 1.1 Homogenization of a polytope. . . . . . . . . . . . . . . . . . . . . . . . 15 2.1 Convex sets for testing primality. . . . . . . . . . . . . . . . . . . . . . 30 2.2 Parallelogram in the proof of the Diophantine approximation theorem. . . 31 2.3 A (nonconvex) lattice polygon and a triangulation. . . . . . . . . . . . . 32 2.4 Convex and reﬂex vertices in a polygon. The vertex v1 is convex, while",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "x",
+      "labelEnd": "x",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unimodular cones",
+          "heading": false
+        },
+        {
+          "term": "cones spanned",
+          "heading": false
+        },
+        {
+          "term": "lifted conﬁguration",
+          "heading": false
+        },
+        {
+          "term": "half-open exact",
+          "heading": false
+        },
+        {
+          "term": "inclusion-exclusion formula",
+          "heading": false
+        },
+        {
+          "term": "counted twice",
+          "heading": false
+        },
+        {
+          "term": "full-dimensional",
+          "heading": false
+        },
+        {
+          "term": "exact decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "x List of Figures 5.8 A two-dimensional cone of index 6, triangulated into two unimodular cones. The integer points in the one-dimensional intersection would be counted twice, so we subtract them once (inclusion-exclusion principle). 112 5.9 A triangulation of the cone of index 5 generated by b1 and b2 into the two cones spanned by {b1,w} and {b2,w}, having an index of 2 and 3, re- spectively. We have the",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "xi",
+      "labelEnd": "xi",
+      "words": 643,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pareto outcomes",
+          "heading": false
+        },
+        {
+          "term": "ﬁlled circles",
+          "heading": false
+        },
+        {
+          "term": "red ﬁlled",
+          "heading": false
+        },
+        {
+          "term": "circles indicate",
+          "heading": false
+        },
+        {
+          "term": "outcome space",
+          "heading": false
+        },
+        {
+          "term": "dominated solutions",
+          "heading": false
+        },
+        {
+          "term": "erasing",
+          "heading": false
+        },
+        {
+          "term": "critical path",
+          "heading": false
+        }
+      ],
+      "extract": "List of Figures xi 8.3 The principle of grid approximation. Since we can reﬁne the grid only in the direction of the continuous variables, we need to construct an ap- proximating grid point (x,z∗) in the same integral slice as the target point (x∗,z∗). [94] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167 8.4 The geometry of Lemma 8.4.8. For a polynomial with a maximum total degree of 2, we",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pólya",
+          "heading": false
+        },
+        {
+          "term": "xiii",
+          "heading": false
+        },
+        {
+          "term": "siam",
+          "heading": false
+        }
+      ],
+      "extract": "List of Tables 2.1 Trace of the basis reduction algorithm (Algorithm 2.1) on the lattice of Example 2.7.6. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53 13.1 Some polynomials and their Pólya exponents . . . . . . . . . . . . . . . 270 xiii Downloaded 08/31/26 to 85.5.100.194 . Redistribution subject to SIAM license or copyright; see https://epubs.siam.org/terms-privacy",
+      "extractCut": false,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 599,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "buchberger algorithm",
+          "heading": false
+        },
+        {
+          "term": "division algorithm",
+          "heading": false
+        },
+        {
+          "term": "project-and-lift",
+          "heading": false
+        },
+        {
+          "term": "method",
+          "heading": false
+        }
+      ],
+      "extract": "List of Algorithms Algorithm 1.1 Fourier–Motzkin elimination . . . . . . . . . . . . . . . . . . . 7 Algorithm 1.2 Ellipsoid method . . . . . . . . . . . . . . . . . . . . . . . . . 25 Algorithm 2.1 Lattice basis reduction . . . . . . . . . . . . . . . . . . . . . . 52 Algorithm 3.1 Graver-best augmentation algorithm . . . . . . . . . . . . . . . 66 Algorithm 3.2 Normal form algorithm . . . . . . . . . . . . . . . .",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "xvii",
+      "labelEnd": "xvii",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opti mization",
+          "heading": false
+        },
+        {
+          "term": "discrete optimization",
+          "heading": false
+        },
+        {
+          "term": "powerful tools",
+          "heading": false
+        },
+        {
+          "term": "geometric algorithms",
+          "heading": false
+        },
+        {
+          "term": "students",
+          "heading": false
+        },
+        {
+          "term": "courses",
+          "heading": false
+        },
+        {
+          "term": "efﬁcient",
+          "heading": false
+        },
+        {
+          "term": "programming",
+          "heading": false
+        }
+      ],
+      "extract": "Preface It is undeniable that geometric ideas have been very important to the foundations of modern discrete optimization. The inﬂuence that geometric algorithms have in opti- mization was elegantly demonstrated in the, now classic, book Geometric Algorithms and Combinatorial Optimization [145] written more than 25 years ago by M. Grötschel, L. Lovász, and A. Schrijver. There, in a masterful way, we were introduced",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "xviii",
+      "labelEnd": "xviii",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semideﬁnite programming",
+          "heading": false
+        },
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "students",
+          "heading": false
+        },
+        {
+          "term": "integer programs",
+          "heading": false
+        },
+        {
+          "term": "linear constraints",
+          "heading": false
+        },
+        {
+          "term": "course based",
+          "heading": false
+        },
+        {
+          "term": "discusses",
+          "heading": false
+        },
+        {
+          "term": "book",
+          "heading": false
+        }
+      ],
+      "extract": "xviii Preface convex programming and integer programming underwent major changes thanks to the ellipsoid method, semideﬁnite programming, lattice basis reduction, etc. Most of what is contained in Part I is a short summary of tools that students in optimization normally encounter in a course based on the excellent books [50, 145, 206, 259, 296] and probably should be skipped by such readers. They should go directly",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "xix",
+      "labelEnd": "xix",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "klee",
+          "heading": false
+        },
+        {
+          "term": "todo",
+          "heading": false
+        },
+        {
+          "term": "köppe",
+          "heading": false
+        },
+        {
+          "term": "universität",
+          "heading": false
+        },
+        {
+          "term": "jesús",
+          "heading": false
+        },
+        {
+          "term": "wife",
+          "heading": false
+        },
+        {
+          "term": "jeff",
+          "heading": false
+        },
+        {
+          "term": "love",
+          "heading": false
+        }
+      ],
+      "extract": "Preface xix Victor L. Klee, Steve Klee, Jean Bernard Lasserre, Monique Laurent, Jim Lawrence, Hen- drik W. Lenstra, Sven Leyffer, Jeff Linderoth, Diane Maclagan, Jirka Matoušek, Nimrod Megiddo, Bernard Mourrain, Walter Morris, Jiawang Nie, Jorge Nocedal, Edwin O’Shea, Dima Pasechnik, Javier Peña, Vicky Powers, Scott Provan, Franz Rendl, Bruce Reznick, Maurice Rojas, Paco Santos, András Sebö, Bernd Sturmfels, Levent",
+      "extractCut": true,
+      "blocks": [
+        "library/19781611972443fm/blocks/prose-page-016"
+      ]
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 178,
+        "items": [
+          "List of Figures",
+          "I Established Tools of Discrete Optimization",
+          "Tools from Linear and Convex Optimization",
+          "Convex sets and polyhedra",
+          "Farkas’ lemma and feasibility of polyhedra",
+          "Weyl–Minkowski’s representation theorem",
+          "Decomposition of polyhedra as sums of cones and polytopes",
+          "Faces, dimension, extreme points",
+          "Duality of linear optimization",
+          "Remarks on computational complexity",
+          "The ellipsoid method and convex feasibility",
+          "Applications of the ellipsoid method",
+          "Notes and further references",
+          "Exercises",
+          "Tools from the Geometry of Numbers and Integer Optimization",
+          "Geometry of numbers in the plane",
+          "Lattices and linear Diophantine equations",
+          "Hermite and Smith",
+          "Minkowski’s theorems",
+          "Gordan and Dickson",
+          "Hilbert",
+          "Lenstra, Lenstra, Lovász, and the shortest vector problem",
+          "Lenstra’s algorithm, integer feasibility, and optimization",
+          "The integer hull of a polyhedron and cutting planes",
+          "Linear versus nonlinear discrete optimization",
+          "Notes and further references",
+          "Exercises",
+          "II Graver Basis Methods",
+          "Graver Bases",
+          "Introduction",
+          "Graver bases and their representation property",
+          "Optimality certiﬁcate for separable convex integer programs",
+          "How many augmentation steps are needed?",
+          "How do we ﬁnd a Graver-best augmentation step?",
+          "How do we ﬁnd an initial feasible solution?",
+          "Bounds for Graver basis elements",
+          "Computation of Graver bases",
+          "Notes and further references",
+          "Exercises",
+          "Graver Bases for Block-Structured Integer Programs",
+          "N-fold integer programming",
+          "Two-stage stochastic integer programming",
+          "N-fold 4-block decomposable integer programs",
+          "Notes and further references",
+          "Exercises",
+          "III Generating Function Methods",
+          "Introduction to Generating Functions",
+          "The geometric series as a generating function",
+          "Generating functions and objective functions",
+          "Generating functions in two dimensions"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "List of Algorithms: listed p15, found p13"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "convex optimization",
+      "heading": false
+    },
+    {
+      "term": "integer optimization",
+      "heading": false
+    },
+    {
+      "term": "siam license",
+      "heading": false
+    },
+    {
+      "term": "discrete optimization",
+      "heading": false
+    },
+    {
+      "term": "linear optimization",
+      "heading": false
+    },
+    {
+      "term": "optimization society",
+      "heading": false
+    },
+    {
+      "term": "mathematical optimization",
+      "heading": false
+    },
+    {
+      "term": "global optimization",
+      "heading": false
+    },
+    {
+      "term": "redistribution subject",
+      "heading": false
+    },
+    {
+      "term": "integer programming",
+      "heading": false
+    },
+    {
+      "term": "semideﬁnite programming",
+      "heading": false
+    },
+    {
+      "term": "stochastic programming",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "v",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "vii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "viii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "ix",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "x",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "xi",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "xvii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "xviii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "xix",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 16,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/19781611972443fm"
+  }
+}

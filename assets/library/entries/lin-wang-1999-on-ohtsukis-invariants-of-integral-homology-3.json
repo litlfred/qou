@@ -1,0 +1,403 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+  "blocks": [
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Acta Mathematica Sinica, English Series \n1999, July, Vol.15, No.3, p. 293-316 \nActa Mathematica \nSinica, English Series \n\u000e9 Spdnger-Vedag 1999 \nOn Ohtsuki's Invariants of Integral Homology 3-Spheres \nXiaosong Lin \nDepartment of Mathematics, University of California, Riverside, CA 92521, U. S. A. \nE-mail: xl~math.ucr.edu \nZhenghan Waffg \nDepartment of Mathematics, Indiana University, Bloomington, IN 47405, U. S. A. \nDepartment of Mathematics, University of California, La JoUa, CA 92093, U. S. A. \nE-mail: Zhenghan. Wang @math.lsa. umich, edu \nAbstract \nWe provide some more explicit formulae to f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Suppose that f and g are Fermat functions. Then",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-22-suppose-that-f-and-g-are-fermat-functions-the.md",
+      "narrative": null,
+      "content": "Suppose that f and g are Fermat functions. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-for-rational-numbers-a-and3-af-3g-is-a-fermat.md",
+      "narrative": null,
+      "content": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) + \n/3Res(g); \n2 \nf.g is a Fermat function whose residue is Res(f)Res(g); \n3 \n/f Res(g) # 0, then fig is a Fermat function whose residue is Res(f)/Res(g). \nThus, in particular, every polynomial function of r with rational coefficients is a Fermat \nfunction whose residue is its constant term. And every rational function with rational coeffi- \ncients is a Fermat function if the constant term of the denominator is not zero. Its residue will \n296 \nXiaosong Linet al. \nbe the value of the function at r = 0. \nThe foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dk(r)-- (~=~)!",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-dkr.md",
+      "narrative": null,
+      "content": "is a Fermat function whose residue is given by \n1 \n1 \n1 \n{ \n(-~)(-~ \n- 11...(- \n5 - (k- \n11) \nRes(Dk) = \n1 \n1 \nE Z(3 ) \nfor k > 0, \nfork=0, \nfor k < 0. \n(2.2) \nExample 2.2 \nWe denote by aj(Xl,...,x, 0 (1 <: j < n) the j-th elementary symmetric \npolynomial in the indeterminates xl,..., xn, with a0(xl,..., x, 0 = 1. And we will also need \n8j(Xl,''',~n) \n= ~-'~,i=1 aTi\" \nLemma 2.3 \nsj (1, 2,..., n- 1) is a polynomial in n with coefficients in Z(j+2), and sj (1, 2,..., \nn- 1) - 0 mod n. \nProof By the Euler-Maclaurin formula for sj [16], we have \nJ \ni=oJ+ 1-i \nwhere /30 = 1,/~1 -- -1/2, and •=i = (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(H. Murakami) Ao = 1, and A1 = 6)~c, where )~c is the Casson invariant.",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-h-murakami-ao-1-and-a1-6c-where-c-is-the-casso.md",
+      "narrative": null,
+      "content": "(H. Murakami) Ao = 1, and A1 = 6)~c, where )~c is the Casson invariant. \nIt follows from Theorem 3.1 (2) and Lemma 3.1 that the )~n are topological invariants of \nthe oriented integral homology 3-spheres, and we call An the n-th Ohtsuki invariant of integral \nhomology 3-spheres.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of Links",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-4-invariants-of-links.md",
+      "narrative": null,
+      "content": "Invariants of Links \nLet L = KI UK2 U... UK#L be an oriented link in S 3, where we use ~L to denote the number \nof components of L. We will denote the unknot by O, and the empty link by 0. \nThe Conway polynomial V(L; z) e Z[z] is defined by \nv(o; z) = 1, \nv(o; z) = o, \nV(L+;z) - V(L_; z) = -z- v(n0;z). \nHere, as usual, L+, L_ and L0 are the links which have plane projections identical with one \nanother except in one small disk where their projections are a positive crossing, a negative \ncrossing and an orientation preserving smoothing of that crossing, respectively. Note the neg- \native sign o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(#LWi)!",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-lwi.md",
+      "narrative": null,
+      "content": "use to express A,~. \nGiven a link L = K1 U/(2 U.-. t2 K~ with a certain projection. Consider a pair of crossings \nbetween two components K~ and Kj, i r j, with different signs. Denote this link by L+_. We \nmay modify the link diagram at these two crossings to get various other links, say L_+~ L__, \nL++, L0-, L-0 and L0,0. We say L+_ is obtained from L_+ by a double crossing change. A \nlink L = t(1 U/(2 U ..- U K, is called an algebraically split link (ASL) if the linking number \nbetween every pair of components of L is 0. In particular, a knot is always an ASL. If there are \nmutually disjoint",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let n be an ASL link. Then 1",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-41-let-n-be-an-asl-link-then-1.md",
+      "narrative": null,
+      "content": "Let n be an ASL link. Then 1 \nr \nE 6Z. 2 \nr \nE 3Z. \nProof \n(1) Using the double crossing change formula (4.2), we get \nel(L+-) - r \n= -[r \n- r \n= 0. \nBy induction on the double unlinking number and the number of components, it suffices to \nprove (1) for GSL's. IfLis aknot, thenCe(L) = -v2(L) E 6Z. If Lisa \nGSL with #L <_ 2, \nthen r \n= 0. So (1) holds for GSL's and, therefore, also for ASL's . \n(2) Use the double crossing formula (4.2) again: \n3 \nr \n- r \n= -[r \n- r \n- ~ [r \n- r \n302 \nXiaosong Lin et hi. \nBy induction on the double unlinking number and the number of components, it suffices to \np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ifv2(K) # O, then S3,1/,~ and S3K,1/m are distinct as unoriented 3-manifolds.",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-1-ifv2k-o-then-s31-and-s3k1m-are-distinct-as-uno.md",
+      "narrative": null,
+      "content": "Ifv2(K) # O, then S3,1/,~ and S3K,1/m are distinct as unoriented 3-manifolds. \n2 \nlfv2(K) : O, and v3(K) # -180(n + m). c4(K), then $3,11,~ and S3,11m are distinct \nas unoriented 3-manifolds. \nProof (1) follows from comparing AI of the two manifolds, and (2) follows from comparing A2 \nof the two manifolds. \nSome examples are as follows. \nExample \n(1) If M is the Poincare homology 3-sphere E(2,3,5) (+l-surgery on the right- \nhanded trefoil knot), then A2(M) = 39. \n(2) If M is the homology 3-sphere E(2, 3, 7) (+l-surgery on the left-handed trefoil knot), \nthen A2(M) = 63. \nRemark \nSuppose M is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-f~ ~ hl~,q,~(q-l) ~",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-9--f-hlqq-l.md",
+      "narrative": null,
+      "content": "hl~,q,~(q-l) ~ \n;q-1 \n, \n~=1 \nm~=0 \nwhere h&,h,me's are some unknown constants whose existence was established by Ohtsuki. Our \nmain result here is a more practical formula for An. In the following, we will restate several \nlemmas in [1] using Definition 3.1. This unifies those lemmas and clarifies the uniqueness of \nthe constants appearing there. \nLet the constants vf,i,m be defined by the following formal equation, i.e. \nby equating \ncoefficients on both sides in the expansion of a power series in (t - 1): \n+oo \n+cr \nvf,i,m(t - 1) m = t\u000188189 \n. ~ \nhl,i,m(t - I) \"~. \nm=O \nm=O \nTheorem 6.1 \nL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coe~ ~",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-coe.md",
+      "narrative": null,
+      "content": "-f~q~ ~ ~ \nh~,~,~(q-1) ~' \n;q-1 \n~=1 \nm~=O \n@(L') . \n= ~ \n~--~'~ (_2)#L' \n/=1 L'cL t \n\n9 Coeffn_l \n-fr \nE \nvfr162162 (q - 1)me \n;q -- 1 \n. \n~=1 \nrn~--=0 \nBy picking out the n-th coefficient, we get the desired formula. \nCorollary 6.1 \nLet K be a knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot invariant 0,~ induced by ~,~ is defined to be",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-the-knot-invariant-0-induced-by-is-defined-to-be.md",
+      "narrative": null,
+      "content": "O,~(K) = A,(S3 1). Then 0,~ is a Vassiliev invariant of order 2n. \nProof By Theorem 6.1, 0n is alinear combination of@(K j) for 1 < I < n, 1 < j _< I. As \n@(K j) is a Vassiliev invariant of order l + j, 0n is an invariant of order 2n. \nSince An is a finite invariant of order 3n in the sense of [11] (see [13]), Corollary 6.2 also \nfollows from the result in [5]\n9 \nTo get an explicit formula for A,~, we have to determine the constants ~f,i,m. Our discussion \nhere is parallel to the discussion of hf,i,m in Section 8 of [1]. To avoid repetition of many \nformulae, we will quote some formulae from [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "With respect to l(r) = r@, we have f-lim (z~-!)!'G2'(q) = ~m=o+~ gz,m( -- 1) m'",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-with-respect-to-lr-r-we-have-f-lim-z-g2q-mo-gzm.md",
+      "narrative": null,
+      "content": "(q--l) r-~ -1 \nThis is the main technical lemma and is an improvement on Lemma 8.3 in [1]. In [1], Ohtsuki \nestablished the existence of g~,,~, but his proof does not give a formula for these numbers. Here, \nthe g~ l,m are given explicitly in (2.5). We also have g~ t,m E Z(m+2)[\u000189 whereas in [1], it is only \nknown that g' \n1 \n~,m E Z(2m+2)[~]. \nProof \nTo expand G2z(q) into a power series in (q - 1), we take the Taylor expansion of \nr--1 k2lxk~ \n~-~k=0 \nat x = 1 and put x = q. Hence we have \n= ~-2-t(r_~_)E l ~k2'k2(k2-1)'\"(k2-(m-1))mf \n(q- 1)m \nrnml \nk:0 \n+ O((q -- 1)r-l-/;Z) \nr--2--l \nr--1 \n,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-9-l-r----2-q-ffj2-2tq-89163-lfv.md",
+      "narrative": null,
+      "content": "r----2 \n+q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV \ngu,m(q - 1) m-''-'-l+' \n/=1 \n/'=0 \nm=O \n' \nr-3 \n/ \n-~-~F~.:d[2])22tq-'f ~ g,.m(q - 1) m+'-~-I \n+ O((q - 1):~-~-~;Z(~)). \nl=l \nm=0 \nNote that q-I _ 1 = (-f)q- +~(q - 1) and [21 i = q-~(q + 1) i. Separating l' = 0 from the \nsecond term, we get \nsni,i(q ) =--=--.(:i f) q~ (q + 1) i Fi,o([2])(q - 1)-' \n(-2) t q~+\u000189 \n+ ~ fl__~. \n2 2 (q + 1) i Fij([2])(q - 1) -i-l+z \nl=l \n+ ~--~ f, \n__~.,' (-2)' q~+\u000189 \n(q + 1)~ F~,,([21) \n/=1 \nL \n~ \n-......2 3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "\"~,~1 (:l')fe m=o",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-2-1-lfe-mo.md",
+      "narrative": null,
+      "content": "\"~,~1 (:l')fe m=o \ni \n_~-'~fz2 22ti! q2+ \n~ \u000189 \nl=l \nr-__~3 \n2 \n\n9 ~ \ngl,m(q- 1)re+l--i--1 T O((q- \n1)'~A-i;Z(r)). \nrn~0 \nBy changing the order of summations in the third term, and combining the sum with l = 2l' in \nthe new order of summations with the fourth term, we get \n(~.f) q~ (q + 1) i Fi,o([2l)(q \nl) -i \nSr,f,i(q) =.--'::'-- \ni \n+ ~ \nf' (Z//~)..' q~+\u000189189 (q + 1) i F,,t([2])(q- 1) -i-1+' \nl=1 \n• \ni \n+ ~ \n~ \nft+t' (-2)t (/) \nq~+\u000189189 \n2P \n(q+ i)iFiJ([21) \n/'=1 /=2U+1 \nr-3 \n-'5-- \n\n9 ~ \ngl',m(q -- 1) m-l'-i-l+l \nm=O \ni \n+(q-/-1)s \n/=1 \nr-3 \n2 \nE \nm~0 \n= (-f) q~ (q + 1) i \n221 \ni.~..~+L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(t+ l)iFi,t(t~ +t-\u000189",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-2-t-lifitt-t-89.md",
+      "narrative": null,
+      "content": "(t+ l)iFi,t(t~ +t-\u000189 \nl'=0 1=21'+1 \n+oo \n\n9 E \ngl',m'(t- \n1)m'-t'--i-l+l;t- \n1) \nm' =0 \n221 ' \n+ E(_f \n) ft'_.~. Coeff,\"(t~-l' (t + 1) i Fi,21,(t\u000189 + t-\u000189 \nl'=0 \n+oo \nI it, \n\n9 E \ngl\"m'(t - 1)m + \n~;t -- 1). \nmP~O \n(6.2) \nAs gt,,\" and Fi,t(x) both can be computed recursively, so we can compute v],i, m. \nTheorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-63-let-m-be-an-oriented-integral-homology-3-sphe.md",
+      "narrative": null,
+      "content": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U. \nProof \nBy Theorem 6.1, we needuLi,,\" with0<m<n-1, \nand0<i<n-m \nfor A,,. Using \n(6.2), we need m' - l' - i - 1 + l < m and m' + l' - i < m. In both cases, the terms with l' = 0 \nhave the right denominator\n9 So we may assume l' >_ 1. Then it is easy to check that m' < n - 1. \nSo for the formula of An, we need gl',m' with l' < n/2, and m' < n - 1. As gl,,,\", E Z(,\",+2), \nour theorem follows\n9 \nThis theorem tells us that the biggest factor in the denominator of An is indeed n. So it \nagrees with Conjecture 1.1. \nTo tie up the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "1 Let L ~ be as in Theorem 7.2 and assume that the doubled m components of L are the first m components. On Ohtsuki ' s lnvariants (-q\u000189 - q-\u000189 = (Xv + (q\u000189 +q-\u000189174162 r = (A N'\" N A |174 Nid)(r (there are m A's here); r is a Z[q]-linear combination of (q - 1)2jl+~=~JvKiI EJ~ F j~ | Ki2EJ~F j2 | | K~,EJ, F j. such that (a) iv + j~ is even; and (b) /f jl = 0, then K il | Ki~EJ2F j2 | ... | Ki,EL'F i~\" and K -il | Ki2EJ2F j2 | | Ki, Ei, F i. appear in pairs with the same coefficient. The facts in (1), (2) and Part (a) of (3) follow from Lemmas 6.2, 6.3 and 6.5 of [1]. Part (b) of (3) follow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II 2 II",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-ii-2-ii.md",
+      "narrative": null,
+      "content": "rnl +---+rn~, =0 (=1 \n(:i(=O \n(:i(=1 \n(:i(=2 \nThis verifies the formula. \n7 \nIntegrality \nof ,k,~ \nRozansky predicts that there is an integer constant C such that CA,~ ~ Z [3]. The predicted \nconstant C is very large. Conjecture 1.1 says that C = n! is sufficient. In this section, we prove \nthe following theorem which is the case n = 2 of Conjecture 1.1. \nTheorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let M be a homology 3-sphere. Then )~2(M) E 3Z.",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-71-let-m-be-a-homology-3-sphere-then-2m-e-3z.md",
+      "narrative": null,
+      "content": "Let M be a homology 3-sphere. Then )~2(M) E 3Z. \nSuppose we write ~-~(M) as follows: \nT,(M) = a,,o + ar,l(q-- 1) +\"\" + a,,n(q-- 1) '~ +'\" \n+ a,,g(q-- 1) N \nfor some a~,n E Z. Although a~,~ is not well-defined, a~---g E Z/rZ is well-defined for 0 < n < \nr-2. \nCorollary 7.1 \nFor n -- 1, 2, ~",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Z/rZ stabilizes an a fixed integer for all sufficiently large",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-018-e-zrz-stabilizes-an-a-fixed-integer-for-all-suff.md",
+      "narrative": null,
+      "content": "See the remark after Lemma 3.1. \nIt seems to be an interesting question as to when this magic stabilization starts. We suspect \nthat this may happen from the very first term. \n312 \nXiaonong Linet al. \nTheorem 7.1 will follow from Theorem 5.1 and the following theorem, where by doubling a \ncomponent of a link L, we mean to split that component of L into two parallel copies with zero \nlinking number. \nTheorem 7.2 \nSuppose L' is obtained from an ASL link L by doubling m components (m >_ 1) \nof L. Then r \nE 2mZ. \nTo prove this theorem, we will use the universal invaxiant (or the colored Jones poly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

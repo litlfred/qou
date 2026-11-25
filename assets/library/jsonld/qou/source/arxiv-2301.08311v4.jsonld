@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.08311v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2301.08311v4",
+  "contains": [
+    "library/arxiv-2301.08311v4/sections/sec-front-matter",
+    "library/arxiv-2301.08311v4/sections/sec-000",
+    "library/arxiv-2301.08311v4/sections/sec-001",
+    "library/arxiv-2301.08311v4/sections/sec-002",
+    "library/arxiv-2301.08311v4/sections/sec-003",
+    "library/arxiv-2301.08311v4/sections/sec-004",
+    "library/arxiv-2301.08311v4/sections/sec-005",
+    "library/arxiv-2301.08311v4/sections/sec-006",
+    "library/arxiv-2301.08311v4/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians.\n\n**FLOER COHOMOLOGY AND HIGHER MUTATIONS**\n\n*SOHAM CHANDA*\n\n73 pp, 9 sections.\n\n**Abstract.** We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the Lagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation. This result generalizes the wall-crossing formula in [PT20]. For two-dimensional Lagrangians, this result agrees with the invariance result in [PW19].\n\n**Outline.** Front matter; 1 Introduction; 2 Local Mutation; 3 SFT Compactness; 4 Constructing Moduli Space of Broken Maps; 5 Regularity; 6 Classifying Rigid Broken Maps; 7 Floer Cohomology and Mutations; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2301.08311&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2301.08311v4",
+    "title_source": "slug",
+    "source_file": "2301.08311v4.pdf",
+    "source_sha256": "385139c69e18f5b0d43734b1f36250471139baebdadbbb5a216270e2afe31735",
+    "pages": 73,
+    "arxiv": {
+      "id": "2301.08311",
+      "version": "4",
+      "primary_class": "math.SG",
+      "stamp_date": "17 Sep 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

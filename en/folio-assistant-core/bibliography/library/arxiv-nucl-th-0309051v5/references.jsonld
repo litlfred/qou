@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-nucl-th-0309051v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+      "dcterms:creator": [
+        "Cho∗, Y. M."
+      ],
+      "dcterms:issued": "D:20220617",
+      "dcterms:identifier": "https://arxiv.org/abs/nucl-th/0309051",
+      "dcterms:source": "library/arxiv-nucl-th-0309051v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-nucl-th-0309051v5"
+    }
+  ]
+}

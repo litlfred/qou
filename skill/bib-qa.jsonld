@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/bib-qa.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/bib-qa",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "bib-qa",
+      "title": "Bibliography QA Skill",
+      "description": "Bibliography quality-assurance agent — validates every reference in folio/schema/references.ts against five QA checks: URL availability, URL resolution, metadata completeness, citation coverage, and screenshot/image evidence.  Generates bib-qa.json consumed by the standalone bib-qa.html dashboard.",
+      "instructionsPath": "skills/local/bib-qa.md",
+      "instructionLines": 606,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

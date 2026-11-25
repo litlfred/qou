@@ -1,0 +1,755 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p09",
+  "title": "ant-v14-n7-s-p09",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1953",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Blocks with normal defect group",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "1955",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-blocks-with-normal-defect-group"
+    },
+    {
+      "level": 1,
+      "title": "Reducing to simple groups",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "1960",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-reducing-to-simple-groups"
+    },
+    {
+      "level": 1,
+      "title": "Simple groups",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "1963",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-simple-groups"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 25,
+      "pageLabel": "1977",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-004-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": "1977",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1953",
+      "labelEnd": "1953",
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclic sylow",
+          "heading": false
+        },
+        {
+          "term": "blockwise",
+          "heading": false
+        },
+        {
+          "term": "p-block",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1953 Galois action on the principal block and cyclic Sylow subgroups Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo We characterize ﬁnite groups G having a cyclic Sylow p-subgroup in terms of the action of a speciﬁc Galois automorphism on the principal p-block of G, for p = 2, 3. We show that the analog statement for blocks with",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p09/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1953",
+      "labelEnd": "1955",
+      "words": 996,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mckay navarro",
+          "heading": false
+        },
+        {
+          "term": "alperin mckay",
+          "heading": false
+        },
+        {
+          "term": "navarro conjecture",
+          "heading": false
+        },
+        {
+          "term": "principal p-block",
+          "heading": false
+        },
+        {
+          "term": "severo ochoa",
+          "heading": false
+        },
+        {
+          "term": "ciencia innovación",
+          "heading": false
+        },
+        {
+          "term": "schaeffer fry",
+          "heading": false
+        },
+        {
+          "term": "cyclic sylow",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most prevalent questions in the representation theory of ﬁnite groups is to determine what relationships hold between the set Irr(G) of irreducible complex characters of a ﬁnite group G and its local structure, such as the structure of a Sylow p-subgroup P of G. There is, of course, the more sophisticated question of relating the set Irr(B) of irreducible characters belonging to a given Brauer p-block B",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-blocks-with-normal-defect-group",
+      "number": "1",
+      "title": "Blocks with normal defect group",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "1955",
+      "labelEnd": "1960",
+      "words": 2661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal defect",
+          "heading": true
+        },
+        {
+          "term": "defect group",
+          "heading": true
+        },
+        {
+          "term": "mckay navarro",
+          "heading": false
+        },
+        {
+          "term": "navarro conjecture",
+          "heading": false
+        },
+        {
+          "term": "write irr",
+          "heading": false
+        },
+        {
+          "term": "alperin mckay",
+          "heading": false
+        },
+        {
+          "term": "let irr",
+          "heading": false
+        },
+        {
+          "term": "group d2p",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture, stated below. For a ﬁxed prime p, consider the set Bl(G) of Brauer (p-)blocks of G as in [Navarro 1998], so that Bl(G) is a partition of Irr(G)∪IBr(G) (recall that p-Brauer characters are deﬁned on p-regular elements of G). Write Irr(B) = B ∩Irr(G) and IBr(B) = B ∩IBr(G) for any B ∈Bl(G). Every block B has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-reducing-to-simple-groups",
+      "number": "2",
+      "title": "Reducing to simple groups",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "1960",
+      "labelEnd": "1963",
+      "words": 1531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hence irrp",
+          "heading": false
+        },
+        {
+          "term": "some irrp",
+          "heading": false
+        },
+        {
+          "term": "let irr",
+          "heading": false
+        },
+        {
+          "term": "let sylp",
+          "heading": false
+        },
+        {
+          "term": "principal block",
+          "heading": false
+        },
+        {
+          "term": "cyclic sylow",
+          "heading": false
+        },
+        {
+          "term": "simple groups",
+          "heading": true
+        },
+        {
+          "term": "navarro",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to reduce the statement of Theorem A to a problem on simple groups that we will solve in Section 3. 2A. Preliminaries. We start these preliminaries with results concerning the action of Galois automor- phisms on characters belonging to principal blocks. Recall that χ ∈Irr(B0(G)) if, and only if, X x∈G0 χ(x)̸ = 0, where G0 is the subset of elements of G of order not divisible by p. Some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-simple-groups",
+      "number": "3",
+      "title": "Simple groups",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 25,
+      "labelStart": "1963",
+      "labelEnd": "1977",
+      "words": 7626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unipotent characters",
+          "heading": false
+        },
+        {
+          "term": "unipotent block",
+          "heading": false
+        },
+        {
+          "term": "schaeﬀer fry",
+          "heading": false
+        },
+        {
+          "term": "noelia rizo",
+          "heading": false
+        },
+        {
+          "term": "x-invariant member",
+          "heading": false
+        },
+        {
+          "term": "carolina vallejo",
+          "heading": false
+        },
+        {
+          "term": "let pslϵ",
+          "heading": false
+        },
+        {
+          "term": "semisimple characters",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section we prove Theorem C, which will complete the proof of Theorem A. 3A. Some generalities on groups of Lie type. Since the groups of Lie type play a large role in what follows, we begin by recalling some essentials about their blocks and characters. Let q be a power of a prime. When G = GF is the group of ﬁxed points of a connected reductive algebraic group G deﬁned over Fq under a Steinberg map F, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "1977",
+      "labelEnd": "1977",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁrst-named",
+          "heading": false
+        },
+        {
+          "term": "residency",
+          "heading": false
+        },
+        {
+          "term": "gunter",
+          "heading": false
+        },
+        {
+          "term": "mfo",
+          "heading": false
+        }
+      ],
+      "extract": "The authors would like to thank Gabriel Navarro for an inspiring conversation on Galois action and generating properties of Sylow subgroups during the Workshop on Representations of Finite Groups at the MFO in March 2019, and for further discussion on the topic. They would also like to thank the MSRI in Berkeley, CA, and its generous staff for providing a collaborative and productive work environment during their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "1977",
+      "labelEnd": null,
+      "words": 1001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schaeffer fry",
+          "heading": false
+        },
+        {
+          "term": "sylow subgroups",
+          "heading": false
+        },
+        {
+          "term": "sylow p-subgroups",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "navarro",
+          "heading": false
+        },
+        {
+          "term": "tiep",
+          "heading": false
+        },
+        {
+          "term": "malle",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite groups",
+          "heading": false
+        }
+      ],
+      "extract": "[Alperin 1976] J. L. Alperin, “Isomorphic blocks”, J. Algebra 43:2 (1976), 694–698. MR Zbl [Bonnafé 2005] C. Bonnafé, “Quasi-isolated elements in reductive groups”, Comm. Algebra 33:7 (2005), 2315–2337. MR Zbl [Broué and Michel 1989] M. Broué and J. Michel, “Blocs et séries de Lusztig dans un groupe réductif ﬁni”, J. Reine Angew. Math. 395 (1989), 56–67. MR Zbl [Cabanes and Enguehard 2004] M. Cabanes and M.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mckay navarro",
+      "heading": false
+    },
+    {
+      "term": "navarro conjecture",
+      "heading": false
+    },
+    {
+      "term": "cyclic sylow",
+      "heading": false
+    },
+    {
+      "term": "sylow subgroups",
+      "heading": false
+    },
+    {
+      "term": "schaeﬀer fry",
+      "heading": false
+    },
+    {
+      "term": "noelia rizo",
+      "heading": false
+    },
+    {
+      "term": "carolina vallejo",
+      "heading": false
+    },
+    {
+      "term": "schaeffer fry",
+      "heading": false
+    },
+    {
+      "term": "alperin mckay",
+      "heading": false
+    },
+    {
+      "term": "let irr",
+      "heading": false
+    },
+    {
+      "term": "sylow p-subgroup",
+      "heading": false
+    },
+    {
+      "term": "write irr",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1953",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1954",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1955",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1956",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1957",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1958",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1959",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1960",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1961",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1962",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1963",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1964",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1965",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1966",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1967",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1968",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1969",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1970",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1971",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1972",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1973",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1974",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1975",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1976",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1977",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1978",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1979",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Some members of Irr3′(B0(Sn)) irreducible on An, n > 10",
+      "page": 16,
+      "pageLabel": "1968",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Some unipotent characters in Irr3′(B0(S))σ1 for exceptional types with 3∤q",
+      "page": 17,
+      "pageLabel": "1969",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Aϵ",
+      "page": 18,
+      "pageLabel": "1970",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Bn(q) and Cn(q) with",
+      "page": 20,
+      "pageLabel": "1972",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Dn(q) with n ≥5 and 3∤q. eigenvalues {ζ, ζ −1, 1}, where ζ ∈F×",
+      "page": 21,
+      "pageLabel": "1973",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type 2Dn(q) with n ≥4 and 3∤q",
+      "page": 22,
+      "pageLabel": "1974",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p09"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1604.02688v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "THE 3D-INDEX AND NORMAL SURFACES",
+      "dcterms:creator": [
+        "GAROUFALIDIS, STAVROS",
+        "HODGSON, CRAIG D.",
+        "HOFFMAN, NEIL R."
+      ],
+      "dcterms:issued": "D:20160412",
+      "dcterms:identifier": "https://arxiv.org/abs/1604.02688",
+      "dcterms:abstract": "Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series in q1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.",
+      "dcterms:source": "library/arxiv-1604.02688v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1604.02688v1"
+    }
+  ]
+}

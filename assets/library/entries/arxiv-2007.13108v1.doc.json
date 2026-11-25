@@ -1,0 +1,857 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2007.13108v1",
+  "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "A lower bound on the entropy",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-a-lower-bound-on-the-entropy"
+    },
+    {
+      "level": 2,
+      "title": "An application: Concentration of negatively dependent random variables",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-an-application-concentration-of-negatively-de"
+    },
+    {
+      "level": 2,
+      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-relation-to-the-works-of-anari-liu-oveis-ghar"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries and a stochastic construction",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-preliminaries-and-a-stochastic-construction"
+    },
+    {
+      "level": 2,
+      "title": "Some preliminary definitions",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-some-preliminary-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Stochastic localization",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-stochastic-localization"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 2",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-proof-of-theorem-2"
+    },
+    {
+      "level": 2,
+      "title": "Estimating the variance in terms of the transportation distance between tilts",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-estimating-the-variance-in-terms-of-the-trans"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 13: The stochastic coupling",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-proof-of-proposition-13-the-stochastic-coupli"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Fact 3",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-proof-of-fact-3"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 5",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-proof-of-theorem-5"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nontrivial concentration",
+          "heading": false
+        },
+        {
+          "term": "concentration bound",
+          "heading": false
+        },
+        {
+          "term": "hypercube",
+          "heading": false
+        },
+        {
+          "term": "lipschitz functions",
+          "heading": false
+        },
+        {
+          "term": "hamming",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2007.13108v1 [math.PR] 26 Jul 2020 Log concavity and concentration of Lipschitz functions on the Boolean hypercube Ronen Eldan∗and Omer Shamir† July 28, 2020 Abstract It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain strong concentration properties. In search of a notion of log-concavity on the discrete hypercube, we consider measures on {−1, 1}n",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2007.13108v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta semi-log-concave",
+          "heading": false
+        },
+        {
+          "term": "semi-log-concave measures",
+          "heading": false
+        },
+        {
+          "term": "preceq beta",
+          "heading": false
+        },
+        {
+          "term": "log-concave measures",
+          "heading": false
+        },
+        {
+          "term": "multi-linear extension",
+          "heading": false
+        },
+        {
+          "term": "continuous hypercube",
+          "heading": false
+        },
+        {
+          "term": "nabla log",
+          "heading": false
+        },
+        {
+          "term": "function varphi",
+          "heading": false
+        }
+      ],
+      "extract": "In the Euclidean space $\\RR^n$, \\emph{log-concave} measures, namely measures whose density is of the form $e^{-U}$ with $U$ being a convex potential are known to satisfy several concentration inequalities. For instance, if $\\gamma$ is the standard Gaussian measure on $\\RR^n$ and the probability measure $\\nu$ is absolutely continuous with respect to $\\gamma$ with density $d \\nu = e^{V} d \\gamma$ where the potential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-a-lower-bound-on-the-entropy",
+      "number": "1.1",
+      "title": "A lower bound on the entropy",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nabla mathcal",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": true
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "semilc",
+          "heading": false
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        },
+        {
+          "term": "preceq",
+          "heading": false
+        }
+      ],
+      "extract": "Our second result addresses the question of finding conditions under which the entropy of the measure $\\nu$ is close to that of the corresponding product measure, having the same marginals as $\\nu$. This result is inspired by a corresponding bound due to Anari, Oveis-Gharan and Vinzant \\cite[Theorem 5.2]{AOV1}, see the discussion below. Given a measure $\\nu$ on $\\DC$, we define, $$ \\mathcal{H}(\\nu) := \\int_{\\DC}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-an-application-concentration-of-negatively-de",
+      "number": "1.2",
+      "title": "An application: Concentration of negatively dependent random variables",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration",
+          "heading": true
+        },
+        {
+          "term": "sub-gaussian concentration",
+          "heading": false
+        },
+        {
+          "term": "nabla mathcal",
+          "heading": false
+        },
+        {
+          "term": "rayleigh property",
+          "heading": false
+        },
+        {
+          "term": "tnc",
+          "heading": false
+        },
+        {
+          "term": "rangle leq",
+          "heading": false
+        },
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        }
+      ],
+      "extract": "For a sequence of Bernoulli variables $X_1,...,X_n$, there are several notions of \\emph{negative-dependence} between those variables (see e.g., \\cite{BSS82,BK85,BF87,DR98}), some of which are known or conjectured to imply concentration of Lipschitz functions. Some notable first steps towards a theory unifying those notions appear in the work of Permantle \\cite{pemantle04}, to which we also refer for a review of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-relation-to-the-works-of-anari-liu-oveis-ghar",
+      "number": "1.3",
+      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite aov",
+          "heading": false
+        },
+        {
+          "term": "anari",
+          "heading": true
+        },
+        {
+          "term": "log-concavity",
+          "heading": false
+        },
+        {
+          "term": "oveis-gharan",
+          "heading": true
+        },
+        {
+          "term": "nabla mathcal",
+          "heading": false
+        },
+        {
+          "term": "vinzant",
+          "heading": true
+        },
+        {
+          "term": "condition eqref",
+          "heading": false
+        },
+        {
+          "term": "spectral gap",
+          "heading": false
+        }
+      ],
+      "extract": "A seemingly related notion of log-concavity of measures on the discrete hypercube was given in a series of works by Anari, Liu, Oveis-Gharan and Vinzant in \\cite{AOV2,AOV1}. Given $\\{-1,1\\}$-Bernoulli random variables $X_1,\\dots,X_n$ distributed according to a law $\\nu$, which can be identified with a random subset $A \\subset [n]$ by $X_i = 2 \\mathbf{1}_{i \\in A} - 1$, they consider the generating polynomial $$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-preliminaries-and-a-stochastic-construction",
+      "number": "2",
+      "title": "Preliminaries and a stochastic construction",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "Throughout this section, we fix a probability measure $\\nu$ on $\\DC$ and a Lipschitz test function $\\varphi:\\DC \\to \\RR$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-21-some-preliminary-definitions",
+      "number": "2.1",
+      "title": "Some preliminary definitions",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nabla mathcal",
+          "heading": false
+        },
+        {
+          "term": "cumulant-generating",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        }
+      ],
+      "extract": "For a vector $w \\in \\RR^n$, define the \\emph{tilt} of the measure $\\nu$ as $$ \\frac{d \\tau_{w} \\nu(x)}{d \\nu(x)} := Z_\\nu(w)^{-1} e^{\\langle w, x \\rangle} $$ where $$ Z_\\nu(w) := \\int_{\\DC} e^{\\langle w, x \\rangle} d \\nu. $$ Also define the functions $$ a_\\nu(w) := \\int_{\\DC} x d \\tau_w \\nu(x), ~~ A_\\nu(w) := \\int_{\\DC} \\left (x - a_\\nu(w) \\right )^{\\otimes 2} d \\tau_w \\nu(x) = \\COV(\\tau_w \\nu). $$ A well-known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-stochastic-localization",
+      "number": "2.2",
+      "title": "Stochastic localization",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber langle",
+          "heading": false
+        },
+        {
+          "term": "localization",
+          "heading": true
+        },
+        {
+          "term": "stochastic",
+          "heading": true
+        },
+        {
+          "term": "brownian motion",
+          "heading": false
+        },
+        {
+          "term": "process defined",
+          "heading": false
+        },
+        {
+          "term": "dirac measure",
+          "heading": false
+        },
+        {
+          "term": "nonumber left",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:stochastic} We construct a stochastic process driven by a Brownian motion, which we refer to as \\emph{stochastic localization}. A somewhat similar process was originally used in \\cite{Eldan-thin-KLS} to establish concentration properties for log-concave measures on $\\RR^n$. Here we use a discrete version, similar to the construction which appears in \\cite{Eldan-taming, eldan2020spectral}. In this section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-proof-of-theorem-2",
+      "number": "3",
+      "title": "Proof of Theorem 2",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Proof of Theorem 2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-estimating-the-variance-in-terms-of-the-trans",
+      "number": "3.1",
+      "title": "Estimating the variance in terms of the transportation distance between tilts",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sup limsupε",
+          "heading": false
+        },
+        {
+          "term": "transportation distance",
+          "heading": true
+        },
+        {
+          "term": "tilts",
+          "heading": true
+        },
+        {
+          "term": "ϕdνt",
+          "heading": false
+        },
+        {
+          "term": "dνt",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        },
+        {
+          "term": "qtdqt",
+          "heading": false
+        },
+        {
+          "term": "multi-linear extension",
+          "heading": false
+        }
+      ],
+      "extract": "Estimating the variance in terms of the transportation distance be- tween tilts Deﬁne Mt = R ϕdνt. Observe that by part 2 of Proposition 9, Mt is a martingale. We ﬁrst claim that Varν[ϕ] = E[M]t + EVarνt[ϕ], (16) where [M]t denotes the quadratic variation of Mt. Indeed, by part 3 of Proposition 9, we have that M∞:= limt→∞Mt exists almost surely and has the law ϕ⋆ν. Consequently, Varν[ϕ|Ft] = Var[M∞|Ft] almost",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-proof-of-proposition-13-the-stochastic-coupli",
+      "number": "3.2",
+      "title": "Proof of Proposition 13: The stochastic coupling",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "τvν",
+          "heading": false
+        },
+        {
+          "term": "εθν",
+          "heading": false
+        },
+        {
+          "term": "ntr",
+          "heading": false
+        },
+        {
+          "term": "βsds",
+          "heading": false
+        },
+        {
+          "term": "dbt",
+          "heading": false
+        },
+        {
+          "term": "coupling",
+          "heading": true
+        },
+        {
+          "term": "super-martingale",
+          "heading": false
+        },
+        {
+          "term": "βne",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Proposition 13: The stochastic coupling Proposition 13 will be proven via a coupling argument laid out below. Let v ∈Rn and consider the process w0 = v, dwt = dBt + aν(wt)dt. (21) According to Proposition 10, we have that limt→∞aν(wt) ∼τvν. This gives rise to the follow- ing coupling. Let Ut be process adapted to Ft such that for all t, Ut is an orthogonal matrix. Let ε > 0 and θ ∈Sn−1, and consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-proof-of-fact-3",
+      "number": "4",
+      "title": "Proof of Fact 3",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "τxν",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Fact 3 Let ρ : [−1, 1]n →R be the harmonic extension of dν dµ. A calculation gives and write g(x) := log ρ(tanh(x)), g(x) = log Z Cn Y i∈[n] (1 + tanh(xi)) dν(x) = − X i∈[n] log cosh(xi) + L[ν](x). Therefore, Cov(τxν) = ∇2L[ν](x) = ∇2g(x) + diag \u0012 1 cosh2(x) \u0013 . On the other hand, a direct calculate gives ∇2 i,jg(x) = [∇2 i,j log ρ](tanh(x)) cosh2(xi) cosh2(xj) −δi,j 2 tanh(xi) cosh2(xi) [∇i log",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-proof-of-theorem-5",
+      "number": "5",
+      "title": "Proof of Theorem 5",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shayan oveis",
+          "heading": false
+        },
+        {
+          "term": "oveis gharan",
+          "heading": false
+        },
+        {
+          "term": "ronen eldan",
+          "heading": false
+        },
+        {
+          "term": "nima anari",
+          "heading": false
+        },
+        {
+          "term": "cov",
+          "heading": false
+        },
+        {
+          "term": "cynthia vinzant",
+          "heading": false
+        },
+        {
+          "term": "yuval peres",
+          "heading": false
+        },
+        {
+          "term": "kuikui liu",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 5 Fix a measure ν on Cn and consider the process νt constructed in Section 2.2. An application of [7, Lemma 6] gives H(ν) = 1 2E \u0014Z ∞ 0 Tr (Cov(νt)) dt \u0015 . (30) Deﬁne h : Cn →R by h(x) = − X i∈[n] 1 + xi 2 log 1 + xi 2 + 1 −xi 2 log 1 −xi 2 . It is easily veriﬁed that ˜H(ν) = h \u0012Z xdν(x) \u0013 = h (a0) . (31) Recall (equation (11)) that dat = Cov(νt)dBt. Thus, by Itˆo’s formula, dh(at) = ⟨∇h(at), dat⟩+",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "semilc nabla",
+      "heading": false
+    },
+    {
+      "term": "nabla log",
+      "heading": false
+    },
+    {
+      "term": "nabla mathcal",
+      "heading": false
+    },
+    {
+      "term": "log-concave measures",
+      "heading": false
+    },
+    {
+      "term": "concentration bound",
+      "heading": false
+    },
+    {
+      "term": "frac nabla",
+      "heading": false
+    },
+    {
+      "term": "nontrivial concentration",
+      "heading": false
+    },
+    {
+      "term": "rayleigh measures",
+      "heading": false
+    },
+    {
+      "term": "sub-gaussian concentration",
+      "heading": false
+    },
+    {
+      "term": "strong concentration",
+      "heading": false
+    },
+    {
+      "term": "concentration inequalities",
+      "heading": false
+    },
+    {
+      "term": "semi-log-concave measures",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2007.13108v1"
+  }
+}

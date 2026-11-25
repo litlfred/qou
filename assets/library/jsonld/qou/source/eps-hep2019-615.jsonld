@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/eps-hep2019-615/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "eps-hep2019-615",
+  "contains": [
+    "library/eps-hep2019-615/sections/page-001",
+    "library/eps-hep2019-615/sections/page-002",
+    "library/eps-hep2019-615/sections/page-003",
+    "library/eps-hep2019-615/sections/page-004",
+    "library/eps-hep2019-615/sections/page-005",
+    "library/eps-hep2019-615/sections/page-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "PoS(EPS-HEP2019)615 — 6 sections: Page 1; Page 2; Page 3\n\n**PoS(EPS-HEP2019)615**\n\n*Sedenions, the Clifford algebra Cℓ(8), and three*\n\n6 pp, 6 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "eps-hep2019-615",
+    "title_source": "slug",
+    "source_file": "EPS-HEP2019_615.pdf",
+    "source_sha256": "b5fb4982d65e9fcd12e812ba1e056d177dac45b3e43a8c5cfad3e9173fcac399",
+    "pages": 6,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

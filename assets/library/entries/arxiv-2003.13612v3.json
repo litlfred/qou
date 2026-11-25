@@ -1,0 +1,354 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2003.13612v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "Although the angular integration removes the spin 2 singularities altogether, the various pieces occurring in the standard decomposition of the Cottingham formula do pick up such contributions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-03.md",
+      "narrative": null,
+      "content": "Keywords: Electromagnetic mass diﬀerences; Dispersion relations; Regge behaviour; Structure functions; Protons and neutrons; Cottingham formula The fact that proton and neutron nearly have the same mass is understood since the 1930s, as consequence of an approximate symmetry: isospin [1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-04.md",
+      "narrative": null,
+      "content": "For a long time, it was taken for granted that the symmetry is broken only by the e.m. interaction – the Cottingham formula [2] did explain the size of the observed mass diﬀerences with ∆I = 2, mπ+ −mπ0 for instance.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-05.md",
+      "narrative": null,
+      "content": "Evaluating the Cottingham formula with the scarce experimental information available then, they concluded that the elastic contributions dominate over the inelastic ones and arrived at the estimate mQED = 0.7 ± 0.3 MeV [6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-06.md",
+      "narrative": null,
+      "content": "The Cottingham formula represents mγ as an integral over the four components of the photon momentum q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-07.md",
+      "narrative": null,
+      "content": "The Cottingham formula then takes the form of an integral over euclidean space: mγ = e2 2m(2π)4 Z d4Q Q2 φ , φ = 3Q2T1 + (2Q2 4 + Q2)T2 , (3) where T1, T2 are to be evaluated at ν = iQ4, q2 = −Q2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-08.md",
+      "narrative": null,
+      "content": "The key observation in our evaluation of the Cottingham formula is that the spin 2 contributions to T1 and T2 are the same – apart from the sign and a factor of 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-09.md",
+      "narrative": null,
+      "content": "(7) Decomposition of the Cottingham formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-10.md",
+      "narrative": null,
+      "content": "With our decomposition of the Compton ampli- tude, the renormalized Cottingham formula consists of four parts [16]: mQED = mel + m ¯F + mF2 + m ¯S .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-11.md",
+      "narrative": null,
+      "content": "(12) The crude estimate mQCD ≈−2 MeV and the known quark mass ratios imply that C is tiny: with the lattice result ms/mud = 27.23(10) [25] and the value of the ratio Q ≡ q (m2s −m2 ud)/(m2 d −m2u) = 22.1(7) extracted from η-decay [26], we obtain C ≈6 · 10−4 GeV2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-12.md",
+      "narrative": null,
+      "content": "These imply that the Cottingham formula contains subleading divergences proportional to ln ln Λ – for details, we refer to [16].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-13",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-13.md",
+      "narrative": null,
+      "content": "(13) 4 This distinguishes our evaluation of the Cottingham formula from those in the literature [8–12], where the integral as well as the counter term are evaluated at a ﬁnite value of the cutoﬀaround Λ2 ≈2 GeV2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-14.md",
+      "narrative": null,
+      "content": "Since the various attempts at evaluating the Cottingham formula arrive at very similar values for the elastic part, the discrepancies in the results for the mass diﬀerence mainly come from the term m ¯S, i.e. from the fact that the parametrizations used for the Compton amplitude yield diﬀerent representations for 7 the subtraction function ¯S .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-15.md",
+      "narrative": null,
+      "content": "Collecting the various contributions and using the experimental value of the proton-neutron mass diﬀerence, the parts due to the e.m. interaction and to the diﬀerence between mu and md become mQED = 0.58 ± 0.16 MeV , mQCD = −1.87 ∓0.16 MeV .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prop-sec-000-16",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "prop-sec-000-16.md",
+      "narrative": null,
+      "content": "While this conﬁrms the old result [6], which also relies on Reggeon dominance, recent evaluations of the Cottingham formula [8–12] yield central values around 1 MeV or even higher.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of\nthe virtual Compton scattering amplitude. At large photon momenta, this amplitude is dominated\nby short distance singularities associated with operators of spin 0 and spin 2. In the diﬀerence\nbetween proton and neutron, chiral symmetry suppresses the spin 0 term. Although the angular\nintegration removes the spin 2 singularities altogether, the various pieces occurring in the standard\ndecomposition of the Cottingham formula do pick up such contributions. These approach asymp-\ntotics extremely slowly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2003.13612v3  [hep-ph]  22 Jan 2021\nOn the mass diﬀerence between proton and neutron\nJ. Gasser, H. Leutwyler\nAlbert Einstein Center for Fundamental Physics, Institute for Theoretical Physics, University of Bern, Sidlerstrasse\n5, 3012 Bern, Switzerland\nA. Rusetsky\nHelmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie) and Bethe Center for Theoretical Physics, Universit¨at\nBonn, Nussallee 14-16, D-53115 Bonn, Germany\nTbilisi State University, 0186 Tbilisi, Georgia",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-references.md",
+      "narrative": null,
+      "content": "results, but the method is gradually improved. In the long run, these will achieve comparable\naccuracy and thereby put Reggeon dominance to a very stringent test.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2003.13612v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-acknowledgements.md",
+      "narrative": null,
+      "content": "We thank Johannes Bl¨umlein for providing us with numerical tables for the structure functions\nbased on the ABM solutions of the DGLAP equations, Thomas Becher for information about the\nanomalous dimensions in QCD+QED, Vadim Lensky and Vladimir Pascalutsa for a Mathemat-\nica notebook concerning the representation of the Compton amplitude in χPT and Ryan Bignell,\nIrinel Caprini, Stefano Carrazza, Gilberto Colangelo, Cesareo Dominguez, Franziska Hagelstein,\nBastian Kubis, Ulf-G. Meißner, Sven-Olaf Moch, Gerrit Schierholz and Ignazio Scimemi for com-\nments and useful information. A.R. acknowledge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

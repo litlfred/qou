@@ -1,0 +1,748 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0502543v2",
+  "title": "arxiv-math-0502543v2",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "spherical simplices",
+          "heading": false
+        },
+        {
+          "term": "geometric simplices",
+          "heading": false
+        },
+        {
+          "term": "milnor",
+          "heading": false
+        },
+        {
+          "term": "polyhedron",
+          "heading": false
+        },
+        {
+          "term": "luo",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "regularity",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0502543v2 [math.GT] 22 Mar 2005 CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN A. In his paper [6] J. Milnor conjectured that the volume of n-dimensional hyperbolic and spherical simplices, as a function of the dihedral angles, extends continuously to the closure of the space of allowable angles. A prove of this conjecture was recently given by F. Luo ([5]1).",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "non-obtuse dihedral",
+          "heading": false
+        },
+        {
+          "term": "convex polyhedra",
+          "heading": false
+        },
+        {
+          "term": "ideal polyhedra",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed combinatorial",
+          "heading": false
+        },
+        {
+          "term": "combinatorial type",
+          "heading": false
+        },
+        {
+          "term": "hyperideal",
+          "heading": false
+        },
+        {
+          "term": "polytopes",
+          "heading": false
+        }
+      ],
+      "extract": "2 IGOR RIVIN In this paper we begin by answering Milnor’s question in the sharp form (our method gives sharp regularity estimates, though we don’t dwell too much on this). In dimension greater than 3 the argument goes through verbatim to give the same result for general convex polytopes, as long as they are of a combinatorial class where the dihedral angles determine the volume (this includes, eg, all simple",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-002",
+        "library/arxiv-math-0502543v2/blocks/thm-page-002-01",
+        "library/arxiv-math-0502543v2/blocks/cor-page-002-02"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schl aﬂi",
+          "heading": false
+        },
+        {
+          "term": "diameter",
+          "heading": false
+        },
+        {
+          "term": "polar",
+          "heading": false
+        },
+        {
+          "term": "continuity",
+          "heading": false
+        },
+        {
+          "term": "dihedral",
+          "heading": false
+        },
+        {
+          "term": "angles",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "CONTINUITY OF VOLUMES 3 space) in terms of its diameter. The results (which are of independent interest) can be loosely summarized as follows: Theorem 2. Let P be a polyhedron with N vertices in H3 of diameter ρ ≫1. Let M∗be the polar metric of P (as in [10, 8]). The M∗lies within c1(N) exp(−c2(N)ρ) of the boundary of the space of admissible polar metrics, where c1, c2 are strictly positive functions of N. The",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-003",
+        "library/arxiv-math-0502543v2/blocks/thm-page-003-01",
+        "library/arxiv-math-0502543v2/blocks/thm-page-003-02"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gram matrix",
+          "heading": false
+        },
+        {
+          "term": "θij",
+          "heading": false
+        },
+        {
+          "term": "whose columns",
+          "heading": false
+        },
+        {
+          "term": "hyperboloid",
+          "heading": false
+        },
+        {
+          "term": "cij",
+          "heading": false
+        },
+        {
+          "term": "scaled",
+          "heading": false
+        }
+      ],
+      "extract": "4 IGOR RIVIN • (i) If kp < n, the space Wk,p(Ω) is continuously imbedded in Lp∗(Ω), where p∗= np/(n −kp), and compactly imbedded in Lq(Ω) for any q < p∗. • (ii) If 0 ≤m < k−n p < m+1, the space Wk,p is continously embedded in Cm,α(Ω), α = k −n/p −m, and compactly embedded in Cm,β(Ω) for any β < α. Here, the Sobolev space Wk,p is the space of functions whose ﬁrst k (distributional) derivatives are in Lp. In our case,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-004",
+        "library/arxiv-math-0502543v2/blocks/cor-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "polytopes",
+          "heading": false
+        },
+        {
+          "term": "gaussian image",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        },
+        {
+          "term": "polyhedron",
+          "heading": false
+        },
+        {
+          "term": "congruence",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "exterior",
+          "heading": false
+        }
+      ],
+      "extract": "CONTINUITY OF VOLUMES 5 It should be noted that this argument works mutatis mutandis for hyperideal simplices, or simplices with some ﬁnite and some hyper- inﬁnite vertices.. 3. C For arbitrary convex polytopes in dimension n > 3, (and convex spherical polytopes in all dimensions) the proof given in Section 2 goes through without change, with the one proviso that it is not currently known whether the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-005",
+        "library/arxiv-math-0502543v2/blocks/thm-page-005-01",
+        "library/arxiv-math-0502543v2/blocks/thm-page-005-02"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prismatic circuit",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "intersecting edges",
+          "heading": false
+        },
+        {
+          "term": "non-obtuse",
+          "heading": false
+        },
+        {
+          "term": "polyhedron",
+          "heading": false
+        },
+        {
+          "term": "faces",
+          "heading": false
+        },
+        {
+          "term": "whenever",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        }
+      ],
+      "extract": "6 IGOR RIVIN Proof. Assume the contrary. Then, there exists a sequence of polyhe- dra P1, . . . , Pn, . . . with diameter ρ(Pi) ≥ℓ)Pi going to infnity, which are farther than 12N exp(−ρ/2N). By choosing a subsequence, we may assume that there is a ﬁxed cycle of faces F1, . . . , Fk of P, such that the sum of dihedral angles along the edges ei = Fi∩Fi+1 is smaller than 2π + 12N exp(−ρ/2N), (by Theorem 9) and which",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-006",
+        "library/arxiv-math-0502543v2/blocks/cor-page-006-01",
+        "library/arxiv-math-0502543v2/blocks/thm-page-006-02"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperideal polyhedron",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "erality",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        }
+      ],
+      "extract": "CONTINUITY OF VOLUMES 7 hyperideal polyhedron with combinatorics given by σ and exterior dihedral angles given by w if and only if: (1) The sum of the values of w on each circuit in σ1 is not smaller than 2π, and is strictly greater if the circuit is non-elementary. (2) The sum of values of w on each simple path in σ1 is strictly larger than π. The hyperideal polyhedron is then unique. 4. D The",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit normals",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        }
+      ],
+      "extract": "8 IGOR RIVIN while P−⊥= φ(t)P⊥=   cosh(t) −sinh(t) 0 0   , Lemma 1. Let Q be a plane in H3 which intersects both P−and P+. Then, there exists t0, such that Q intersects P, and the cosine of the angle α of intersection satisﬁes | cos(α)| < 3e−t, as long as t > t0. The number t0 can be picked independently of Q. Proof. Let the unit normal Q⊥to Q be Q⊥=   a b c d   .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-008",
+        "library/arxiv-math-0502543v2/blocks/lem-page-008-01",
+        "library/arxiv-math-0502543v2/blocks/rem-page-008-02",
+        "library/arxiv-math-0502543v2/blocks/lem-page-008-03"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        }
+      ],
+      "extract": "CONTINUITY OF VOLUMES 9 Let us now compute. Set (for i = 1, 2) pi =   ai 0 ci di   . It follows that M ∩P+ =   a1 cosh(t) a1 sinh(t) c1 d1   . while M ∩P−=   a2 cosh(t) −a2 sinh(t) c2 d2   . It follows that we can choose x = 1/(2a1), y = 1/(2a2), so that m = xM ∩P+ + yM ∩P−=   cosh(t) 0 1 2(c1/a1 + c2/a2) 1 2(d1/a1 + d2/a2) ",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-009",
+        "library/arxiv-math-0502543v2/blocks/lem-page-009-01"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exterior angles",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "pipi",
+          "heading": false
+        },
+        {
+          "term": "cosines",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "diameter",
+          "heading": false
+        },
+        {
+          "term": "area",
+          "heading": false
+        }
+      ],
+      "extract": "10 IGOR RIVIN Proof. The spherical Law of Cosines states that: cos(A) = cos(α) + cos(β) cos(γ) sin(β) sin(γ) . It follows that cos(A) −2ǫ2 ≤cos(A)(1 −ǫ2) −ǫ2 ≤cos(α) ≤cos(A) + ǫ2. The assertion of the lemma follows immediately. □ Corollary 4. Let F1 and F2 be two planes intersecting at a dihedral angle α, with both F1 and F2 intersecting a third plane P, at angles whose cosines are smaller than ǫ. Let A be the angle",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-010",
+        "library/arxiv-math-0502543v2/blocks/cor-page-010-01",
+        "library/arxiv-math-0502543v2/blocks/lem-page-010-02"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesic curvature",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "intersect",
+          "heading": false
+        },
+        {
+          "term": "polyhedra",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "continuity",
+          "heading": false
+        },
+        {
+          "term": "der",
+          "heading": false
+        }
+      ],
+      "extract": "CONTINUITY OF VOLUMES 11 Theorem 10. With notation as in Theorem 9, the faces F1, . . . , Fk form a curve in the Gaussian image of X with geodesic curvature not exceeding 3k exp(−ρ/N)). Remark 11. The reader is referred to [8, 10] for a more thorough discussion of geodesics on spherical cone manifold, but suﬃce it to say that the contribution of the face Fi to the geodesic curvature is 0 if the two edges are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-011",
+        "library/arxiv-math-0502543v2/blocks/rem-page-011-01"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "igor rivin",
+          "heading": false
+        },
+        {
+          "term": "convex polyhedra",
+          "heading": false
+        },
+        {
+          "term": "princeton university",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic space",
+          "heading": false
+        },
+        {
+          "term": "akira",
+          "heading": false
+        }
+      ],
+      "extract": "12 IGOR RIVIN [7] Jun Murakami and Akira Ushijima. A volume formula for hyperbolic sim- plices in terms of edge lengths. Technical Report math.MG/0402087, arxiv.org, 2004. [8] Igor Rivin. On the Geometry of Convex Polyhedra in Hyperbolic 3-Space. PhD thesis, Princeton University, July 1986. [9] Igor Rivin. Euclidean structures on simplicial surfaces and hyperbolic volume. Annals of Mathematics (ser. 2),",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0502543v2/blocks/prose-page-012"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dihedral angles",
+      "heading": false
+    },
+    {
+      "term": "igor rivin",
+      "heading": false
+    },
+    {
+      "term": "exterior angles",
+      "heading": false
+    },
+    {
+      "term": "non-obtuse dihedral",
+      "heading": false
+    },
+    {
+      "term": "hyperideal polyhedra",
+      "heading": false
+    },
+    {
+      "term": "convex polyhedra",
+      "heading": false
+    },
+    {
+      "term": "hyperideal polyhedron",
+      "heading": false
+    },
+    {
+      "term": "convex polytopes",
+      "heading": false
+    },
+    {
+      "term": "schl aﬂi",
+      "heading": false
+    },
+    {
+      "term": "cosh",
+      "heading": false
+    },
+    {
+      "term": "ideal polyhedra",
+      "heading": false
+    },
+    {
+      "term": "compact convex",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 12,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0502543v2"
+  }
+}

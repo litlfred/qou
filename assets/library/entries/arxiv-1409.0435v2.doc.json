@@ -1,0 +1,1325 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.0435v2",
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Application 1: the Circular Unitary Ensemble",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-application-1-the-circular-unitary-ensemble"
+    },
+    {
+      "level": 2,
+      "title": "Application 2: sine kernel determinants",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-application-2-sine-kernel-determinants"
+    },
+    {
+      "level": 2,
+      "title": "Outline",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-outline"
+    },
+    {
+      "level": 1,
+      "title": "Differential identities for Toeplitz determinants",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Differential identity for general $W$",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Differential identity for $W = 0$",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $Y$",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Equilibrium measures",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-equilibrium-measures"
+    },
+    {
+      "level": 1,
+      "title": "Riemann-Hilbert analysis for $x\\geq x_c$",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "First transformation $Y \\to T$",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $T$",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Second transformation $T \\to S$",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $S$",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Global parametrix",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-43-global-parametrix"
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $P^{(\\infty)}$",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Local parametrix near $z_{0}$",
+      "number": "4.4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $P$",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Bessel model RH problem",
+      "number": "4.4.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-441-bessel-model-rh-problem"
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $\\Psi$",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Modification of the model RH problem",
+      "number": "4.4.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Construction of the local parametrix",
+      "number": "4.4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-443-construction-of-the-local-parametrix"
+    },
+    {
+      "level": 2,
+      "title": "Local parametrix near $\\overline{z_0}$",
+      "number": "4.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $P$",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Local parametrix near $-1$",
+      "number": "4.6",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $P$",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Final transformation $S\\mapsto R$",
+      "number": "4.7",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "RH problem for $R$",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics for $D_n(s,\\theta_0,W)$",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem for $\\epsilon<\\theta_0<\\pi-\\epsilon$",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Alternative proof of Theorem if $W=0$, $s=o(n^{1/2}e^{-nx_c})$",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Extension to the case where $\\theta_0$ depends on $n$",
+      "number": "5.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Heuristic discussion of the asymptotics for $s>e^{-x_cn}$",
+      "number": "5.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-54-heuristic-discussion-of-the-asymptotics-for-s"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz",
+          "heading": false
+        },
+        {
+          "term": "determinants",
+          "heading": false
+        },
+        {
+          "term": "claeys",
+          "heading": false
+        }
+      ],
+      "extract": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap Christophe Charlier∗and Tom Claeys∗ September 14, 2018 Abstract We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an asymptotic expansion by",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.0435v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta approaches",
+          "heading": false
+        },
+        {
+          "term": "extension widom",
+          "heading": false
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "bigo",
+          "heading": false
+        },
+        {
+          "term": "ref extension",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "We consider Toeplitz determinants of the form \\begin{equation}\\label{Toeplitz} D_n(f) = \\det(f_{j-k})_{j,k=0,\\ldots, n-1},\\qquad f_{j} = \\frac{1}{2\\pi} \\int_{0}^{2\\pi} f(e^{i\\theta}) e^{-ij\\theta} d\\theta, \\end{equation} where the symbol $f$ is given by \\begin{equation}\\label{symbol} f(e^{i\\theta}) = e^{W(e^{i\\theta})}\\ \\times\\ \\begin{cases} 1,&\\mbox{ for $-\\theta_0\\leq \\theta\\leq \\theta_0$,}\\\\ s,&\\mbox{ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-application-1-the-circular-unitary-ensemble",
+      "number": null,
+      "title": "Application 1: the Circular Unitary Ensemble",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda theta",
+          "heading": false
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta geq",
+          "heading": false
+        },
+        {
+          "term": "theta prod",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "tan frac",
+          "heading": false
+        },
+        {
+          "term": "prob left",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the Circular Unitary Ensemble (CUE) which is the set of unitary $n\\times n$ matrices with the Haar measure. The eigenvalues $e^{i\\theta_1},\\ldots, e^{i\\theta_n}$ in this ensemble have the joint probability distribution \\begin{equation}\\label{jpdf} \\frac{1}{(2\\pi)^n n!}\\prod_{1\\leq j<k\\leq n}|e^{i\\theta_j}-e^{i\\theta_k}|^2 \\prod_{j=1}^nd\\theta_j,\\qquad \\theta_1,\\ldots, \\theta_n\\in [0,2\\pi). \\end{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-application-2-sine-kernel-determinants",
+      "number": null,
+      "title": "Application 2: sine kernel determinants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite bdik",
+          "heading": false
+        },
+        {
+          "term": "toeplitz fredholm",
+          "heading": false
+        },
+        {
+          "term": "bigo",
+          "heading": false
+        },
+        {
+          "term": "frac sin",
+          "heading": false
+        },
+        {
+          "term": "x-t",
+          "heading": false
+        },
+        {
+          "term": "double scaling",
+          "heading": false
+        },
+        {
+          "term": "scaling asymptotics",
+          "heading": false
+        },
+        {
+          "term": "scaling limit",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: Fredholm} In the double scaling limit where $n\\to\\infty$ and $\\theta_0$ approaches $\\pi$ at rate $\\bigO(1/n)$, the Toeplitz determinant $D_n(s,\\theta_0,0)$ converges to the Fredholm determinant of the operator $1-(1-s)K_y$, where $K_y$ is the integral operator acting on $(-y,y)$ with kernel $\\frac{\\sin\\pi(x-t)}{\\pi(x-t)}$: we have \\cite[formulas (236)-(241)]{DIK-hist} \\begin{equation}\\label{Toeplitz",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-outline",
+      "number": null,
+      "title": "Outline",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix bigo",
+          "heading": false
+        },
+        {
+          "term": "theta partial",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "right theta",
+          "heading": false
+        },
+        {
+          "term": "chi phi",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "overline phi",
+          "heading": false
+        },
+        {
+          "term": "displaystyle chi",
+          "heading": false
+        }
+      ],
+      "extract": "In Section \\ref{section: diff id}, we will derive identities which express $\\frac{d}{ds}\\ln D_n(s,\\theta_0,W)$ in terms of orthogonal polynomials on the unit circle. In Section \\ref{section: eq}, we will study an equilibrium problem which is crucial to obtain asymptotics for the orthogonal polynomials. In Section \\ref{section: RH}, we will obtain asymptotics for the orthogonal polynomials as the degree tends to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-equilibrium-measures",
+      "number": "3",
+      "title": "Equilibrium measures",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 16,
+      "labelStart": "10",
+      "labelEnd": "16",
+      "words": 1974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-e theta",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "thicklines circle",
+          "heading": false
+        },
+        {
+          "term": "gamma put",
+          "heading": false
+        },
+        {
+          "term": "cup gamma",
+          "heading": false
+        },
+        {
+          "term": "setminus gamma",
+          "heading": false
+        },
+        {
+          "term": "thicklines vector",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: eq} It will be convenient to introduce a new parameter $x \\in \\mathbb{R}^{+} \\cup \\{+\\infty\\}$ defined by \\begin{equation}\\label{sx} s = e^{-xn}, \\end{equation} such that $f$ can be written as $f(e^{i\\theta}) = e^{W(e^{i\\theta})}e^{-nV(e^{i\\theta})}$, where \\begin{equation}\\label{V} V(e^{i\\theta}) = \\begin{cases} 0, & \\mbox{ for } e^{i\\theta} \\in \\gamma, \\\\ x, & \\mbox{ for } e^{i\\theta} \\in S_{1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-43-global-parametrix",
+      "number": "4.3",
+      "title": "Global parametrix",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma put",
+          "heading": false
+        },
+        {
+          "term": "thicklines vector",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "bigo",
+          "heading": false
+        },
+        {
+          "term": "cup gamma",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        }
+      ],
+      "extract": "Ignoring the exponentially small jumps for $S$ and small neighborhoods of $z_0, \\overline{z_0}$, $-1$, we are led to the following RH problem: \\subsubsection{RH problem for $P^{(\\infty)}$} \\begin{itemize} \\item[(a)] $P^{(\\infty)} : \\mathbb{C}\\setminus \\gamma \\to \\mathbb{C}^{2\\times 2}$ is analytic. \\item[(b)] $P^{(\\infty)}$ has the jump \\begin{equation}\\label{jump Pinfty}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-441-bessel-model-rh-problem",
+      "number": "4.4.1",
+      "title": "Bessel model RH problem",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat psi",
+          "heading": false
+        },
+        {
+          "term": "zeta frac",
+          "heading": false
+        },
+        {
+          "term": "arg zeta",
+          "heading": false
+        },
+        {
+          "term": "pmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "zeta end",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "array psi",
+          "heading": false
+        },
+        {
+          "term": "sigma psi",
+          "heading": false
+        }
+      ],
+      "extract": "We will construct $P$ in terms of a model RH problem for which the solution is constructed using Bessel functions. Consider the following model RH problem: \\subsubsection{RH problem for $\\Psi$} \\begin{itemize} \\item[(a)] $\\Psi : \\mathbb{C} \\setminus \\Sigma_{\\Psi} \\to \\mathbb{C}^{2\\times 2}$ is analytic, where $\\Sigma_{\\Psi} = \\mathbb{R}^{-} \\cup \\{ xe^{\\pm\\frac{2\\pi }{3}i} : x \\in \\mathbb{R}^{+} \\}$, with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-443-construction-of-the-local-parametrix",
+      "number": "4.4.3",
+      "title": "Construction of the local parametrix",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 26,
+      "labelStart": "20",
+      "labelEnd": "26",
+      "words": 2307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local parametrix",
+          "heading": true
+        },
+        {
+          "term": "bigo left",
+          "heading": false
+        },
+        {
+          "term": "parametrix near",
+          "heading": false
+        },
+        {
+          "term": "jump contour",
+          "heading": false
+        },
+        {
+          "term": "cup overline",
+          "heading": false
+        },
+        {
+          "term": "thicklines vector",
+          "heading": false
+        },
+        {
+          "term": "cup partial",
+          "heading": false
+        },
+        {
+          "term": "cup gamma",
+          "heading": false
+        }
+      ],
+      "extract": "We construct $P$ as follows, \\begin{equation}\\label{Explicit_P} P(z)=E(z)\\widehat\\Psi(n^2\\zeta(z))e^{-\\frac{n}{2}\\phi(z)\\sigma_3}e^{-\\frac{1}{2}W(z)\\sigma_{3}}, \\end{equation} where $E$ is an analytic function in $D(z_0,r)$, and where $\\zeta(z) = \\frac{1}{16} \\phi(z)^{2}$. By (\\ref{phi int}), we have that $\\zeta(z)$ is a conformal map near $z_0$, and that $\\zeta(z_0)=0$. Moreover, $\\zeta$ maps $\\gamma\\cap D(z_0,r)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-54-heuristic-discussion-of-the-asymptotics-for-s",
+      "number": "5.4",
+      "title": "Heuristic discussion of the asymptotics for $s>e^{-x_cn}$",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "elliptic theta",
+          "heading": false
+        },
+        {
+          "term": "dkmvz",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "theta functions",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: elliptic} As $n\\to\\infty$ with $s=e^{-xn}>e^{-(x_c-\\delta)n}$, $\\delta>0$, it is expected that the behavior of the Toeplitz determinants $D_n(s,\\theta_0,W)$ is very different from the behavior described in Theorem \\ref{theorem: extensionWidom}. As shown in Proposition \\ref{thm200}, the equilibrium measure is then supported on two disjoint arcs. In the RH analysis, that means that the RH problem for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "t-r mclaughlin",
+          "heading": false
+        },
+        {
+          "term": "fisher-hartwig singularities",
+          "heading": false
+        },
+        {
+          "term": "krasovsky",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "orthogonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "indiana univ",
+          "heading": false
+        },
+        {
+          "term": "strong asymptotics",
+          "heading": false
+        }
+      ],
+      "extract": "The authors are grateful to Igor Krasovsky for useful discussions and for sharing an early version of [6], and to Alexander Bufetov for useful discussions. They were supported by the Belgian Interuniversity Attraction Pole P07/18 and by F.R.S.-F.N.R.S. TC was also supported by the European Research Council under the European Union’s Seventh Framework Programme (FP/2007/2013)/ ERC Grant Agreement n. 307074. 26",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pmatrix bigo",
+      "heading": false
+    },
+    {
+      "term": "bigo left",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "overline theta",
+      "heading": false
+    },
+    {
+      "term": "right theta",
+      "heading": false
+    },
+    {
+      "term": "int theta",
+      "heading": false
+    },
+    {
+      "term": "leq theta",
+      "heading": false
+    },
+    {
+      "term": "pmatrix mbox",
+      "heading": false
+    },
+    {
+      "term": "begin pmatrix",
+      "heading": false
+    },
+    {
+      "term": "theta partial",
+      "heading": false
+    },
+    {
+      "term": "equation frac",
+      "heading": false
+    },
+    {
+      "term": "end pmatrix",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "As n →∞, ln Dn(s, θ0, W) follows Widom asymptotics for s = 0, Fisher- Hartwig asymptotics for s ∈(0, 1) ﬁxed, and Szeg˝o asymptotics for s = 1. Theorem 1.1 implies that the Widom asymptotics remain valid as n →∞with s = s(n) below the curve s = e−xcn. As n →∞with s = s(n) above the curve, a diﬀerent",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The jump contour for S",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The jump contour for P",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The jump contour for bΨ",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The jump contour for R",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 34,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.0435v2"
+  }
+}

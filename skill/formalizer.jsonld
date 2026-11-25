@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/formalizer.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/formalizer",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "formalizer",
+      "title": "Lean 4 Formalizer (Narrative to Proof)",
+      "description": "Lean 4 Formalizer — translates narrative mathematical statements and proofs into zero-sorry, Mathlib4/Reservoir-compliant Lean 4 modules and content-block siblings. Enforces §7c base-ring generality, Two-Tier Reservoir vs QOU subgraph placement, single-threaded `lean-overlay-env.sh` verification, and `scripts/lean-best-practices-lint.py --diff` pre-commit hygiene.",
+      "instructionsPath": "skills/local/formalizer.md",
+      "instructionLines": 892,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

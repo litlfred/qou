@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2203.06568v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In coding theory, one of the classical problems is to determine $A(n, d)$, the maximum size of a binary $(n,d)$ code with length $n$ and minimum distance at least $d$. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [@MS77]. With this linear relation, the maximum possible size of a code can be formulated as a linear programming problem. Delsarte showed that the transform of the distance distribution is nonnegative and used linear programming techniques to derive upper boun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2203.06568v4  [cs.IT]  10 Jun 2023\nSemideﬁnite programming bounds for binary codes\nfrom a split Terwilliger algebra\nPin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu\nAbstract\nWe study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.\nSchrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We\nderive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming\nbounds on A(n, d). In particular, we improve the semide",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Terwilliger algebra and Schrijver's SDP",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-terwilliger-algebra-and-schrijvers-sdp.md",
+      "narrative": null,
+      "content": "Let ${\\cal P}$ be the power set of $\\{1, \\dots, n\\}$. A binary code $C$ is a subset of ${\\mathcal P}$. For $X,Y \\in {\\mathcal P}$, denote $$X\\Delta Y= \\{a\\in\\{1,\\dots,n\\}: a\\in (X \\setminus Y) \\cup (Y \\setminus X) \\}.$$ Let $\\lvert S \\rvert$ denote the size of a set $S \\in {\\mathcal P}$. Hence the (Hamming) distance of $X$ and $Y \\in {\\mathcal P}$ is $\\lvert X \\Delta Y \\rvert$. The distance distribution of the code $C$ is $$A_{j} = \\frac{1}{\\lvert C \\rvert} \\sum_{x \\in C}\\{ y \\in C : \\lvert x \\Delta y \\rvert = j\\} \\label{eq:dist_distriubtion}$$ for $j=0,\\dots, n$. The minimum distance $d$ of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Split Terwilliger algebra of the Hamming scheme",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-split-terwilliger-algebra-of-the-hamming-scheme.md",
+      "narrative": null,
+      "content": "[]{#sec:split label=\"sec:split\"} In this section, we consider split distance distribution on a partition of $\\{1, \\dots, n\\}$ with two subsets $T_{1}$ and $T_{2}$ such that $T_{1}\\cap T_{2}=\\emptyset$, $\\lvert T_{1}\\rvert = n_{1}$, $\\lvert T_{2}\\rvert = n_{2}$, and $n_1+n_2=n$.\n\nLet $G_{u}$ be the group of all distance-preserving automorphisms of the power set of $T_{u}$, for $u = 1, 2$. We consider the group $G_{1} \\times G_{2}$ acting on ${\\cal P}$ by $$(g, h) \\cdot X = g(X \\cap T_{1}) \\cup h(X \\cap T_{2})$$ for $(g, h) \\in G_{1} \\times G_{2}$ and $X \\in {\\cal P}$. Observe that an orbit of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semidefinite program",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-semidefinite-program.md",
+      "narrative": null,
+      "content": "[]{#sec:SDP label=\"sec:SDP\"} In this section, we provide an SDP that gives an upper bound on the size of an $(n,d)$ code $C\\subset {\\mathcal P}$. We include the known linear constraints in the literature, which are critical in the SDP. We observe that an SDP with semidefinite constraints based on quadruple distances [@GMS12] does not improve the upper bounds of $A(18, 4)$ and $A(19, 4)$. In fact, the bounds obtained with only Schrijver's semidefinite constraints are even worse than the bounds with linear constraints [@Del73; @Bes80] in some cases. For instance, $A(18, 4) \\leq 6552$ can be obta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "linear constraints",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-linear-constraints.md",
+      "narrative": null,
+      "content": "The distance distribution $A_j$ of $C$ in ([\\[eq:dist_distriubtion\\]](#eq:dist_distriubtion){reference-type=\"ref\" reference=\"eq:dist_distriubtion\"}) can be represented in terms of $x_{i,i',j,j'}^{t,t'}$ as $$A_{j} = \\sum_{i+i' = j} \\binom{n_{1}}{i} \\binom{n_{2}}{i'} x_{i, 0, i', 0}^{0, 0}.$$ Furthermore, the propagation rule $A(n-1, 2e-1) = A(n, 2e)$ [@MS77] implies that we need to consider only even distance $j$.\n\n::: lemma\n[@Bes80 Lemma $7$] $$\\sum_{i = 0}^{n} \\binom{n-i}{k}A_{i} \\leq \\binom{n}{k} A(n-k, d). \\label{le3}$$\n:::\n\n::: lemma\n[@MEL02 Theorem $9$] $$\\label{le4}\n        A_{n-\\frac{d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semidefinite program for binary codes",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-semidefinite-program-for-binary-codes.md",
+      "narrative": null,
+      "content": "Collecting all the mentioned linear and semidefinite constraints, we have the following SDP on $A(n,d)$ with variables $x_{i, j,i',j'}^{t,t'} \\in\\mathbb{C}$: $$\\begin{aligned}\n    {\\rm maximize\\ } &\\sum_{a = 0}^{n} \\sum_{i+i' = a} \\binom{n_{1}}{i}\\binom{n_{2}}{i'} x_{i, 0, i', 0}^{0, 0}.  \\notag\\\\\n    {\\rm subject\\ to\\ }       &  \\mbox{ positive semidefiniteness of }(\\ref{sdp_1}), (\\ref{sdp_2}),(\\ref{sem1}), (\\ref{sem2}) \\label{eq:main_SDP} \n    \\\\ & (\\ref{sdp_3}),(\\ref{eqn:id_1}), (\\ref{eqn:id_2}), (\\ref{eq:split_cons})  \\notag \\\\\n    & (\\ref{le3}), (\\ref{le4}), (\\ref{le5}), (\\ref{le6}), (\\re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The correctness of computer computational results",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-the-correctness-of-computer-computational-result.md",
+      "narrative": null,
+      "content": "[]{#subsec:err label=\"subsec:err\"} Since numerical methods will be used to approximate the optimal solution to an SDP, when we have a large number of variables, the accuracy of computer simulations may not be sufficient. In [@Gij05], Gijswijt used the weak duality of the optimization program to verify the SDP bounds. We describe his method here.\n\nConsider an SDP of the following form: $$\\begin{aligned}\n    &\\text{maximize} \\quad \\sum_{i=1}^{m}x_{i}c_{i}\\\\\n    &\\text{subject to} \\quad \\sum_{i=1}^{m}x_{i}F_{i} + F_{0}  \\text{ is positive semidefinite}\n\\end{aligned}$$ with variables $x_{1}, \\dots",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "computational results",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-computational-results.md",
+      "narrative": null,
+      "content": "We use the CVX toolbox [@GB14], [@GB08] in MATLAB with the MOSEK solver to run our SDP. Our main results are as follows. In our SDP, we have tested all possible values of splits $n_{1}$ and $n_{2}$. The computational results give us two improvements $A(18,4) \\leq 6551$ and $A(19,4) \\leq 13087$. However, using Gijswijt's method in the previous subsection, we are only able to ensure one of them is improved.\n\n::: theorem\n$A(18,4) \\leq 6551$.\n:::\n\n::: proof\n*Proof.* Using $n_{1} = 2$, we obtain $A(18,4)\\leq 6551.93$ with an error term less than $10^{-16}$. Thus $A(18,4)\\leq 6551$. ◻\n:::\n\n::: remar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalization",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-generalization.md",
+      "narrative": null,
+      "content": "[]{#sec:gener label=\"sec:gener\"} In this section, we consider an $m$-split distance distribution defined on a partition of $\\{1, \\dots, n\\}$ with arbitrary $m$ subsets, say $T_{1}, \\dots, T_{m}$, each of size $\\lvert T_{p}\\rvert = n_{p}$ for $p \\in \\{1, \\dots, m\\}$. Our method can be generalized in this case to introduce more semidefinite constraints. Proofs to these generalizations are similar to the $2$-split case and will be omitted. Finally, we discuss the underlying association scheme structure.\\",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semidefinite constraints from –split Terwilliger algebras",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-semidefinite-constraints-from-split-terwilliger.md",
+      "narrative": null,
+      "content": "Consider a group $G = \\prod_{p = 1}^{m}G_{p}$, where $G_{p}$ is the isometry group on the power set of $T_{p}$. Let $\\sigma_{1}, \\dots, \\sigma_{q}$ be the orbits of $G$ acting on ${\\cal P}$ for some $q$. Then we define $\\lvert {\\cal P}\\rvert \\times \\lvert {\\cal P}\\rvert$ matrices, indexed by ${\\cal P}$, $$(M_{\\sigma_{k}})_{X, Y} = \\left\\{\n    \\begin{aligned}\n        &1, \\text{ if } X, Y \\in \\sigma_{k},\\\\\n        &0, \\text{ otherwise}\n    \\end{aligned}\\right.$$ for all $k$. Observe that $(X, Y)$ and $(U, V)$ belong to the same orbit if and only if $\\lvert X \\cap T_{k}\\rvert = \\lvert U \\cap T_{k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Underlying structure",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-underlying-structure.md",
+      "narrative": null,
+      "content": "[]{#sec:struct label=\"sec:struct\"}\n\nHerein we describe a special structure for an association scheme, which is inspired by the split method used in this paper.\n\n::: definition\n($m$-split property) Let $S = (X, \\{R_{i}\\}_{i=0}^{k})$ be an association scheme. We say that $S$ is *$m$-split* for some $1 \\leq m \\leq \\lvert X\\rvert$ if there exist $m$ association schemes $S_{1} = (X_{1}, \\{R_{i}^{(1)}\\}_{i=0}^{k_{1}}), \\dots, S_{m} = (X_{m}, \\{R_{i}^{(m)}\\}_{i=0}^{k_{m}})$ and a collection of maps $\\{f_{i}\\}$ such that $f_{i}: X \\longrightarrow X_{i}$ is surjective for each $i$ and for $(x, y) \\in X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-conclusion.md",
+      "narrative": null,
+      "content": "[]{#sec:conslus label=\"sec:conslus\"} In conclusion, we have derived generalized Schrijver semidefinite constraints by considering the split of Terwilliger algebra. Our split semidefinite constraints are a natural generalization of Schrijver's constraints since they also implied the generalized Delsarte inequalities.\n\nBy implementing a $2$-split SDP, we have improved the upper bounds for $A(18, 4)$ and $A(19, 4)$. The MATLAB programs of the SDPs in this paper can be found at:\n\n::: center\n<https://github.com/PinChiehTseng/Split_SDP_solution>\n:::\n\nWe have confirmed that $A(18,4)\\leq 6551$ by show",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.06568v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[ALB20]\nA. Ashikhmin, C.-Y. Lai, and T. A. Brun.\nQuantum data-syndrome codes.\nIEEE J. Sel. Area. Comm., 38(3):449 – 462, 2020.\ndoi:10.1109/JSAC.2020.2968997.\n[Bac10]\nC. Bachoc.\nApplications of semideﬁnite programming to coding theory.\nIn 2010 IEEE Inf. Theory Workshop (ITW), pages 1–5, 2010.\ndoi:10.1109/CIG.2010.5592938.\n[BBIT21]\nE. Bannai, E. Bannai, T. Ito, and R. Tanaka. Algebraic combinatorics. De Gruyter Series in Discrete Mathematics and Applications. Walter de\nGruyter GmbH, Co KG, Berlin, Boston, 2021.\n[BBM+78] M. Best, A. Brouwer, F. MacWilliams, A. Odlyzko, and N. Sloane. Bounds for b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

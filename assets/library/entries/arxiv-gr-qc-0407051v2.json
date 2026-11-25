@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-gr-qc-0407051v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:gr-qc/0407051v2  23 Aug 2004\nBlack hole entropy from Quantum Geometry\nMarcin Domagala1 and Jerzy Lewandowski1,2,3\n1. Instytut Fizyki Teoretycznej, Uniwersytet Warszawski, ul. Ho˙za 69, 00-681 Warszawa, Poland\n2. Physics Department, 104 Davey, Penn State, University Park, PA 16802, USA\n3. Max Planck Institut f¨ur Gravitationsphysik, Albert Einstein Institut, 14476 Golm, Germany\nAbstract\nQuantum Geometry (the modern Loop Quantum Gravity using graphs and\nspin-networks instead of the loops) provides microscopic degrees of freedom\nthat account for the black-hole entropy.\nHowever, the procedur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and results",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction-and-results.md",
+      "narrative": null,
+      "content": "Quantum Geometry [@thiembook; @rovbook; @alrev] provides microscopic degrees of freedom that account for the black-hole entropy. The issue was raised in works by Krasnov [@krasentropy] and Rovelli [@roventropy]. The final quantum Isolated Horizon framework was introduced by Ashtekar, Baez, Corichi and Krasnov [@abk]. The framework describes a black-hole in equilibrium surrounded by a quite arbitrary space-time. In the canonical formulation of the theory, the classical phase space is restricted to the set of space-times containing a black-hole of a fixed area $a$. After quantization, the kinema",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The horizon quantum states",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-the-horizon-quantum-states.md",
+      "narrative": null,
+      "content": "Our departure point is the quantum Isolated Horizon theory introduced in [@abk]. A classical (weakly) isolated horizon is a null, non-expanding world-surface of a space-like 2-sphere $S$, equipped with a null vector field of a constant self-acceleration. This idea gave rise to a new quasi-local theory of black-hole in equilibrium interesting also from purely classical point of view [@IH]. The local degrees of freedom of space-time geometry out of the horizon are not restricted. An additional assumption satisfied by the isolated horizon geometry considered in [@abk] is the spherical symmetry (s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The combinatoric formulation of the problem",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-the-combinatoric-formulation-of-the-problem.md",
+      "narrative": null,
+      "content": "From now our treatment starts to differ from that of [@abk]. Our aim is to define the number of the quantum states of the horizon which contribute to the entropy in a form of a clear and precise combinatoric formula.\n\nRecall that the classical area $a$ of the horizon is fixed as $$a\\ =\\ 4\\pi\\gamma{\\ell}_{\\rm Pl}^2 k,\\ \\ \\ k\\in {\\mathbb{N}}.$$ Calculation of the horizon entropy consists in counting those quantum horizon states, elements of the Hilbert space ${\\cal H}_{S,{\\rm phys}}$ ([\\[Sphys\\]](#Sphys){reference-type=\"ref\" reference=\"Sphys\"}) labeled by the finite sequences defined in ([\\[phi\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The entropy calculations",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-4-the-entropy-calculations.md",
+      "narrative": null,
+      "content": "To find an upper bound for the number $N(a)$ introduced in the previous section (recall that $a=4\\pi\\gamma{\\ell}_{\\rm Pl}^2k$, and $k\\in {\\mathbb{N}}$), consider the set $M^+_k$ of all the finite sequences $(m_1,...,m_n)$ of non-zero elements of $\\frac{1}{2}{\\mathbb{Z}}$ which satisfy the inequality in ([\\[mzero\\]](#mzero){reference-type=\"ref\" reference=\"mzero\"}), but do not necessarily sum to zero,that is, $$M^+_k\\ :=\\ \\{ (m_1,...,m_n)\\ \\Big|\\ n\\in{\\mathbb{N}},\\\n0\\not=m_1,...,m_n\\in\\frac{1}{2}{\\mathbb{Z}},\\\n\\sum_{i=1}^n |m_i|\\ \\le\\ \\frac{k}{2}\\}\\,.$$ Let $N^+_k$ be the number of elements of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The spin probability distribution",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-5-the-spin-probability-distribution.md",
+      "narrative": null,
+      "content": "Given any value $a$ of the classical horizon area, and the $N(a)$ quantum states of the horizon labeled by all the finite sequences $(m_1,...,m_n)$ of the non-zero half-integers such that ([\\[N(a)\\]](#N(a)){reference-type=\"ref\" reference=\"N(a)\"}) one can fix any arbitrary $$0\\not=m\\in\\frac{1}{2}{\\mathbb{Z}}$$ and consider the subset of states corresponding to the sequences such that $$m_1=m .$$ Denote the number of the elements of this subset by $N_{(a)}(m)$. The ratio $$P_{(a)}(m)\\ :=\\ \\frac{N_{(a)}(m)}{N(a)}$$ can be considered as the probability that the first puncture is labeled by $m_1=m$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

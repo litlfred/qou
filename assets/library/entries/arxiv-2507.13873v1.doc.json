@@ -1,0 +1,1296 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2507.13873v1",
+  "title": "Probing the singularity at the holographic screen via $q$-holography",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Correlation functions on the quantum disk",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-correlation-functions-on-the-quantum-disk"
+    },
+    {
+      "level": 2,
+      "title": "q-Correlation functions",
+      "number": null,
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-q-correlation-functions"
+    },
+    {
+      "level": 2,
+      "title": "Quantum hyperbolic disk",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-quantum-hyperbolic-disk"
+    },
+    {
+      "level": 1,
+      "title": "A candidate bulk description for q-holography",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-a-candidate-bulk-description-for-q-holography"
+    },
+    {
+      "level": 2,
+      "title": "Definition and classical structure of sinh dilaton gravity",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-definition-and-classical-structure-of-sinh-dilat"
+    },
+    {
+      "level": 2,
+      "title": "Probe regime of sinh dilaton gravity",
+      "number": null,
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-probe-regime-of-sinh-dilaton-gravity"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": null,
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Corepresentations of (quasi)-primary operators",
+      "number": null,
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-corepresentations-of-quasi-primary-operators"
+    },
+    {
+      "level": 1,
+      "title": "Dilaton gravity models",
+      "number": null,
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-dilaton-gravity-models"
+    },
+    {
+      "level": 2,
+      "title": "Holographic counterterm",
+      "number": null,
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-holographic-counterterm"
+    },
+    {
+      "level": 2,
+      "title": "Sinh dilaton gravity quantization",
+      "number": null,
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-sinh-dilaton-gravity-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Useful manipulations involving Ramanujan's formula",
+      "number": null,
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-useful-manipulations-involving-ramanujans-formul"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ugent",
+          "heading": false
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": false
+        },
+        {
+          "term": "papalini",
+          "heading": false
+        },
+        {
+          "term": "belaey",
+          "heading": false
+        },
+        {
+          "term": "jacopo",
+          "heading": false
+        }
+      ],
+      "extract": "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗Thomas G. Mertens,† Jacopo Papalini,‡ Department of Physics and Astronomy Ghent University, Krijgslaan, 281-S9, 9000 Gent, Belgium Abstract We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the global symmetry of a q-deformed CFT. More precisely, we consider",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2507.13873v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilaton gravity",
+          "heading": false
+        },
+        {
+          "term": "sinh dilaton",
+          "heading": false
+        },
+        {
+          "term": "sine dilaton",
+          "heading": false
+        },
+        {
+          "term": "holographic screen",
+          "heading": false
+        },
+        {
+          "term": "gravity models",
+          "heading": false
+        },
+        {
+          "term": "holographic boundary",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        }
+      ],
+      "extract": "Going beyond the conventional AdS/CFT paradigm [@Maldacena:1997re] is of considerable interest; primarily because we do not live in an AdS universe, but also because it allows us to distill lessons on holography in the more general context. Within the context of holography and string theory, some important examples have been e.g. [@Giveon:1999px; @Klebanov:2000hb; @Kanitscheider:2008kd; @Taylor:2015glc]. To achieve",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-correlation-functions-on-the-quantum-disk",
+      "number": null,
+      "title": "Correlation functions on the quantum disk",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "correlation functions",
+          "heading": true
+        },
+        {
+          "term": "global conformal",
+          "heading": false
+        },
+        {
+          "term": "conformal subgroup",
+          "heading": false
+        },
+        {
+          "term": "partial delta",
+          "heading": false
+        },
+        {
+          "term": "ward identities",
+          "heading": false
+        },
+        {
+          "term": "braket",
+          "heading": false
+        },
+        {
+          "term": "qward",
+          "heading": false
+        },
+        {
+          "term": "primary operators",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:qward label=\"s:qward\"} We first remind the reader of the conventional CFT story. Correlation functions of primary operators in a conformal field theory are strongly constrained by the Ward identities of the corresponding global conformal subgroup. For a 2d CFT, holomorphic (quasi)primary operators with weight $\\Delta$ transform under a global conformal PSL$(2)$ Möbius transformation $$z\\rightarrow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-q-correlation-functions",
+      "number": null,
+      "title": "q-Correlation functions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta braket",
+          "heading": false
+        },
+        {
+          "term": "aligned braket",
+          "heading": false
+        },
+        {
+          "term": "braket mathcal",
+          "heading": false
+        },
+        {
+          "term": "circ braket",
+          "heading": false
+        },
+        {
+          "term": "beta tau",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "delta sin",
+          "heading": false
+        },
+        {
+          "term": "otimes delta",
+          "heading": false
+        }
+      ],
+      "extract": "To construct a $q$-deformed version of holography, we analogously imagine the correlators of the bulk gravitational theory to be invariant under the SL$_q(2)$ global subgroup of the dual $q$-deformed conformal boundary theory. To set up the $q$-deformed SL$_q(2)$ conformal subgroup, we claim that the natural generalization of the quasi-primary transformation law",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-quantum-hyperbolic-disk",
+      "number": null,
+      "title": "Quantum hyperbolic disk",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk coordinates",
+          "heading": false
+        },
+        {
+          "term": "noncom",
+          "heading": false
+        },
+        {
+          "term": "abs log",
+          "heading": false
+        },
+        {
+          "term": "corep",
+          "heading": false
+        },
+        {
+          "term": "q-q",
+          "heading": false
+        },
+        {
+          "term": "azz",
+          "heading": false
+        },
+        {
+          "term": "ayc",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        }
+      ],
+      "extract": "We have up to this point only discussed the boundary quantum algebra action on boundary correlation functions. Here we show how this almost uniquely fixes the non-commutative geometrical features of the induced bulk region if this is to be the boundary theory. This roughly reverses the arguments of [@Berkooz:2022mfk; @Almheiri:2024ayc]. To match with conventional notation for quantum groups, we change the notation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-a-candidate-bulk-description-for-q-holography",
+      "number": null,
+      "title": "A candidate bulk description for q-holography",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qnm",
+          "heading": false
+        },
+        {
+          "term": "bulk",
+          "heading": true
+        },
+        {
+          "term": "bulkq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:bulkq label=\"s:bulkq\"} In the previous section, we derived the $q$-conformal two-point function by constraining its form [\\[res\\]](#res){reference-type=\"eqref\" reference=\"res\"} through the requirement of invariance under the global part of the $q$-conformal group. Furthermore, we interpreted its Fourier transform as encoding information about the quasi-normal modes [\\[qnm\\]](#qnm){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-definition-and-classical-structure-of-sinh-dilat",
+      "number": null,
+      "title": "Definition and classical structure of sinh dilaton gravity",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh dilaton",
+          "heading": true
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": true
+        },
+        {
+          "term": "liouville gravity",
+          "heading": false
+        },
+        {
+          "term": "adm energy",
+          "heading": false
+        },
+        {
+          "term": "boundary two-point",
+          "heading": false
+        },
+        {
+          "term": "liouville cft",
+          "heading": false
+        },
+        {
+          "term": "gravity black",
+          "heading": false
+        },
+        {
+          "term": "spacelike liouville",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:classical label=\"s:classical\"} The most natural approach is to look for a bulk gravitational theory whose asymptotic symmetries reproduce the SL$_q(2)$ algebra, which was used to constrain the two-point function. As we shall see, it turns out that the most natural candidate is Liouville gravity [@Polyakov:1981rd; @Distler:1988jt; @David:1988hj; @Knizhnik:1988ak]. This is a string theory consisting of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-probe-regime-of-sinh-dilaton-gravity",
+      "number": null,
+      "title": "Probe regime of sinh dilaton gravity",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": "14",
+      "labelEnd": "20",
+      "words": 1839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "probe regime",
+          "heading": true
+        },
+        {
+          "term": "sinh dilaton",
+          "heading": true
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": true
+        },
+        {
+          "term": "probe approximation",
+          "heading": false
+        },
+        {
+          "term": "text probe",
+          "heading": false
+        },
+        {
+          "term": "probe answer",
+          "heading": false
+        },
+        {
+          "term": "omega beta",
+          "heading": false
+        },
+        {
+          "term": "beta tau",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:probe label=\"s:probe\"} We now turn to a different regime, the probe regime. To study it, it is beneficial to change coordinates from the momentum labels $s_1,s_2$ to the mass of the background black hole $E$ and the energy of the probe $\\omega$ in terms of $$\\begin{aligned} \\label{eq:transformation} E \\equiv \\frac{1}{4\\pi^2b^4}\\cosh(2\\pi bs_2), \\qquad E+\\omega/b^2 \\equiv \\frac{1}{4\\pi^2b^4} \\cosh(2\\pi bs_1).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-concluding-remarks",
+      "number": null,
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 988,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh dilaton",
+          "heading": false
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": false
+        },
+        {
+          "term": "sine dilaton",
+          "heading": false
+        },
+        {
+          "term": "dilaton supergravity",
+          "heading": false
+        },
+        {
+          "term": "probe regime",
+          "heading": false
+        },
+        {
+          "term": "holographic screen",
+          "heading": false
+        },
+        {
+          "term": "gravity boundary",
+          "heading": false
+        },
+        {
+          "term": "boundary three-point",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:concl label=\"s:concl\"} In this work, we have investigated the probe regime in a $q$-deformed setting of holography. We then illustrated that sinh (or sine) dilaton gravity exhibits this structure explicitly close to its holographic screen. There is an priori puzzling discrepancy between the semi-classical regime and the probe regime, which we interpret as due to there being a curvature singularity at the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-corepresentations-of-quasi-primary-operators",
+      "number": null,
+      "title": "Corepresentations of (quasi)-primary operators",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primary operators",
+          "heading": true
+        },
+        {
+          "term": "global slq",
+          "heading": false
+        },
+        {
+          "term": "defining slq",
+          "heading": false
+        },
+        {
+          "term": "quasi",
+          "heading": true
+        },
+        {
+          "term": "glq",
+          "heading": false
+        },
+        {
+          "term": "series corepresentation",
+          "heading": false
+        },
+        {
+          "term": "series generators",
+          "heading": false
+        },
+        {
+          "term": "principal series",
+          "heading": false
+        }
+      ],
+      "extract": "Corepresentations of (quasi)-primary operators Holomorphic primary operators O(z) with weight ∆in a 2d CFT are defined to transform under the conformal transformation z →f(z) as O(z) → \u0012∂f ∂z \u0013∆ O(f(z)). (A.1) The corresponding generators under the infinitesimal transformation f(z) = z + ϵzn+1 are given by Ln = ∆(n + 1)zn + zn+1∂z. Under a global PSL(2, R) Möbius transformation z →f(z) = az+c bz+d with g = a b c d !",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-dilaton-gravity-models",
+      "number": null,
+      "title": "Dilaton gravity models",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilaton gravity",
+          "heading": true
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "πφh",
+          "heading": false
+        },
+        {
+          "term": "prefactor",
+          "heading": false
+        },
+        {
+          "term": "schwarzian",
+          "heading": false
+        }
+      ],
+      "extract": "Dilaton gravity models The bulk action of a generic (Euclidean) dilaton gravity model with potential V (Φ) is given by S = −1 2 Z d2x√g (ΦR + V (Φ)) . (B.1) One may gauge-fix the classical solutions to be of the form11 ds2 = F(r)dτ 2 + dr2 F(r), Φ = r. (B.2) In this gauge, we have R = −F ′′, such that the solution to the equations of motion is given by F(r) = Z r rh dr′ V (r′), (B.3) 10The calculation was done",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-holographic-counterterm",
+      "number": null,
+      "title": "Holographic counterterm",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 711,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "counterterm",
+          "heading": true
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": false
+        },
+        {
+          "term": "sinh dilaton",
+          "heading": false
+        },
+        {
+          "term": "boundary counterterm",
+          "heading": false
+        },
+        {
+          "term": "bulk on-shell",
+          "heading": false
+        },
+        {
+          "term": "on-shell energy",
+          "heading": false
+        },
+        {
+          "term": "ghy boundary",
+          "heading": false
+        },
+        {
+          "term": "on-shell action",
+          "heading": false
+        }
+      ],
+      "extract": "Holographic counterterm The GHY boundary action with appropriate counter term is of the form − I ∂M dτ √ h \u0012 ΦK − \u0012Z Φ c V (Φ)dΦ \u00131/2 \u0013 , (B.7) where the lower bound c of the counterterm integral is arbitrary and just corresponds to an energy offset.12 We can motivate this counterterm explicitly by looking at the full on-shell Euclidean action SE = −1 2 Z M d2x√g (ΦR + V (Φ)) − I ∂M dτ √ h \u0012 ΦK − sZ Φ∂ c V (Φ)dΦ \u0013 .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-sinh-dilaton-gravity-quantization",
+      "number": null,
+      "title": "Sinh dilaton gravity quantization",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "30",
+      "labelEnd": "33",
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh dilaton",
+          "heading": true
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": true
+        },
+        {
+          "term": "liouville gravity",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": true
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "q-schwarzian",
+          "heading": false
+        },
+        {
+          "term": "πbs",
+          "heading": false
+        }
+      ],
+      "extract": "Sinh dilaton gravity quantization In order to be self-contained, we follow here a more direct approach based on the canonical phase space quantization of the theory, which will allow us to directly identify the boundary dynamics and the associated symmetry algebra. A similar analysis was carried out for sine dilaton gravity in [59, 60], so we will not repeat the full set of equations here, but rather summarize the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-useful-manipulations-involving-ramanujans-formul",
+      "number": null,
+      "title": "Useful manipulations involving Ramanujan's formula",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 44,
+      "labelStart": "33",
+      "labelEnd": "43",
+      "words": 3002,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sitter holography",
+          "heading": false
+        },
+        {
+          "term": "sitter gravity",
+          "heading": false
+        },
+        {
+          "term": "scaled syk",
+          "heading": false
+        },
+        {
+          "term": "syk model",
+          "heading": false
+        },
+        {
+          "term": "dilaton gravity",
+          "heading": false
+        },
+        {
+          "term": "liouville gravity",
+          "heading": false
+        },
+        {
+          "term": "scipost phys",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "A crucial identity for this work is Ramanujan’s summation formula: Z R dτe−2πβτeπ(Q−α)τe−iπ 2 α(Q−α)eiπαβSb(iτ + α)Sb(−iτ) = Sb(α)Sb(β) Sb(α + β) . (C.1) We now aim to rewrite it in a way that will be useful to us. The argument has poles of Sb(−iτ) at τ = −inb −im/b and at τ = iα + inb + im/b for Sb(iτ + α). The contour avoids the pole at τ = 0 from above. Deforming the contour to τ →τ −iα/2, we can rewrite this",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dilaton gravity",
+      "heading": true
+    },
+    {
+      "term": "sinh dilaton",
+      "heading": true
+    },
+    {
+      "term": "sine dilaton",
+      "heading": true
+    },
+    {
+      "term": "gravity two-point",
+      "heading": true
+    },
+    {
+      "term": "liouville gravity",
+      "heading": false
+    },
+    {
+      "term": "gravity boundary",
+      "heading": true
+    },
+    {
+      "term": "gravity black",
+      "heading": false
+    },
+    {
+      "term": "dilaton supergravity",
+      "heading": false
+    },
+    {
+      "term": "general dilaton",
+      "heading": false
+    },
+    {
+      "term": "dilaton potential",
+      "heading": false
+    },
+    {
+      "term": "quantum gravity",
+      "heading": true
+    },
+    {
+      "term": "gravity model",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Left: Visualization of quantum gravitational fluctuations being suppressed close to the holographic boundary in an AdS box. Right: Fluctuations are not obviously suppressed for the case where the near-boundary region contains a classical curvature divergence",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Quantum hyperbolic disk with fuzzy cells of size 2|log q| in (r, φ) coordinates where r ∈[0, +∞[ and φ ∈[0, 2π[ where the cell sizes are uniform",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Geometry of the classical sinh dilaton gravity solution, with a JT region deep in the interior, and a UV region close to the holographic screen where the Ricci scalar blows up R →+∞",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Numerical evaluation of the sinh dilaton gravity two-point function ⟨OβM (τ)OβM (0)⟩β (3.9) as a function of τ, for β = 2π and ∆= 1. The green, red, and blue dots correspond to b = 0.9, b = 0.8, and b = 0.6 respectively. The numerical evaluation was obtained using expression (C.5) following the mani",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Kinematic regime in frequency space where the probe approximation holds, and where the quantum disk geometry and its isometries govern the correlation functions",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The KMS condition requires that there is no defect in the geometrical bulk. The blue endpoint is moved around the boundary to a distance β −τ, but it would pick up any defect in the interior, as illustrated by the dashed line now encircling the red defect (if it would be there)",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Geometry of the quantum sinh dilaton gravity bulk, with a full quantum gravity region deep in the interior, and a UV region closer to the holographic screen where we have an emergent quantum hyperbolic disk and SLq(2, R) symmetry. One way to phrase this is that close to the boundary the gravitationa",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Complexified metric / dilaton contour for sine dilaton gravity, with the boundary at Φ∂= π",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Example of a two-boundary amplitude, where the two boundaries “geometrize” distinct quantum hyperbolic disk isometries: SLq(2, R) versus SL˜q(2, R)",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "9 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 21
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2507.13873v1"
+  }
+}

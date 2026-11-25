@@ -1,0 +1,2528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2108.09349v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2108.09349v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2108.09349v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2108.09349v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2108.09349v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Ifneitherα|Tnorβ|Tisﬂat,thisinequalityfollowsimmediatelyfromthestrictconcavityofV .Weappealto the Mean Value Theorem, because, in general, strict concavity does not extend to the boundary of A(τ).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;0,&quot;
+      },
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;2,&quot;
+      },
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;&gt; V (1) + V (0).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-2&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Joan Birman and Ilya Kofman, A new twist on Lorenz links, J. Topol. 2 (2009), no. 2, 227–248. MR 2529294&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;inkcomplement.ThecoloringindicateshowthetrianglesinthelowerS&quot;
+      },
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;ofK(Ω)whereΩ=R3L&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-3&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Benjamin A. Burton, Ryan Budney, William Pettersson, et al., Regina: Software for low-dimensional topology, http://regina-normal.github.io, 1999–2021.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;ofK(Ω)whereΩ=R&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-2&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-3&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Ian Agol, Ideal triangulations of pseudo-Anosov mapping tori, Topology and geometry in dimension three, Con- temp. Math., vol. 560, Amer. Math. Soc., Providence, RI, 2011, pp. 1–17. MR 2866919&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-4&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;Marc Culler, Nathan M. Dunﬁeld, Matthias Goerner, and Jeﬀrey R. Weeks, SnapPy, a computer program for studying the geometry and topology of 3-manifolds, Available at http://snappy.computop.org (04/18/2021).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-5&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;David Futer and Fran¸cois Gu´eritaud, From angled triangulations to hyperbolic structures, Interactions between hyperbolic geometry, quantum topology and number theory, Contemp. Math., vol. 541, Amer. Math. Soc., Prov- idence, RI, 2011, pp. 159–182. MR 2796632 6. , Explicit angle structures for veering triangulations, Algebr. Geom. Topol. 13 (2013), no. 1, 205–235. MR 3031641&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-6&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;David Futer, Efstratia Kalfagianni, and Jessica S. Purcell, Cusp areas of Farey manifolds and applications to knot theory, Int. Math. Res. Not. IMRN 23 (2010), 4434–4497. MR 2739802&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-7&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;Andreas Giannopolous, Saul Schleimer, and Henry Segerman, A census of veering structures, https://math. okstate.edu/people/segerman/veering.html 2021/03/03.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-8&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;Fran¸cois Gu´eritaud, On canonical triangulations of once-punctured torus bundles and two-bridge link comple- ments, Geom. Topol. 10 (2006), 1239–1284, With an appendix by David Futer. MR 2255497&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2108.09349v2/blocks/prose-sec-019&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;AknotorlinkinS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Kalfagianni,andPurcellhaveshownthatS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Ckσ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ckσp&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1σ−q&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;· · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;· · · σp&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1σ−q&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;σp&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1σq&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;LetLpbethebraidclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;LetLpbethebraidclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;pretzel(Corollary5.6),soprovingC&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;pretzel(Corollary5.6),soprovingC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;well.ToshowC&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;well.ToshowC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;onS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetXp=S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;LetXp=S3−Lp,thecomplementoftheclosureofthebraidC&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;LetXp=S3−Lp,thecomplementoftheclosureofthebraidC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;aclaspateachend.The4-braidlivesinaproductregion,S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Analogously,weobservethattheclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Analogously,weobservethattheclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;fulltwistonboththetopandthebottom.Inthiscontext,the6-braid σ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;canbereplacedbyσ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;lacingidealtetrahedraintheproductregioncontainingthe6-braidσ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Figure2.TheclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Figure2.TheclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;isthe6-braidσ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;—orequivalentlyσ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2in∆b,where&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1sitsontopof&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;025&quot;,
+    &quot;context&quot;: &quot;2withtheir&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2,anotherfaceonthebottomof∆b,so&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2,anotherfaceonthebottomof∆b,sob&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(125) ∼b&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2(012)toitsmate,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(012)toitsmate,m&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;2∼backto&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2∼backto24in&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2∼backto24inm&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2; b represents 3 in&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2; b represents 3 in b&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2; b represents 3 in b1and&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2and 4 in&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2and 4 in m&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;2and 4 in m2;&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2and 4 in m2; c represents 5 in&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2and 4 in m2; c represents 5 in m&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2and 4 in m2; c represents 5 in m2and&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2and 4 in m2; c represents 5 in m2and b&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2.Thesurvivingfacesof&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2.Thesurvivingfacesofm&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2.Thesurvivingfacesofm2,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2.Thesurvivingfacesofm2,b&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2.Thesurvivingfacesofm2,b1,and&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1isidentiﬁedtothe&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1isidentiﬁedtothe2&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1.Thisveryshortcycleofedgesmeans&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1and¯s.Thismoveidentiﬁes&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(025)with¯s(c&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1(025)with¯s(c2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1(035)with¯s(cad).SeeFigure&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1(035)with¯s(cad).SeeFigure6,whichshowshow&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i,where&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(035)hits&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(035)hitsw&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1(035)hitsw1beforeitgetsto&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(035)hitsw1beforeitgetstom&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;)hitsw1beforeitgetstom1.Wewillcallthisinitialtriangulationˆτ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Figure7.AtriangulationofthecomplementoftheclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Figure7.AtriangulationofthecomplementoftheclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure5.Thus&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure5.Thusm&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure5.Thusm2,&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure5.Thusm2,b&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2),allowingforthesame3-2moveshowninFigure5.Thusm2,b1,and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1(025)and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(035)areidentiﬁedwith¯s(c&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1(035)areidentiﬁedwith¯s(c2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2,w&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2,w1,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1,w&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,w2,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2,m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;2,m1,and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;2,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1),sononeofthemwillsurvivethePachnermovesdeﬁningτ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;2, and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1(520).Thisfaceispairedwith&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2(520),so,afterthetwoPachnermoves,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(520),so,afterthetwoPachnermoves,m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;2(520),whichwechoosetowriteas&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2(025) ∼m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1(035),&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(035), m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1(035), m2(345),&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(035), m2(345), b&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1(035), m2(345), b1(035), and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(035) becomes&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(035) becomes s(cad).The other three faces form the rest of&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot; other three faces form the rest of s as indicated in Figure&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2issituatedandlabelledinexactlythesamewayas&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;015&quot;,
+    &quot;context&quot;: &quot;2,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2,015and125,arethesameasthoseon&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;)slidesthroughthehalf-twist,itrotatestothefront,matchingwith&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;slidesthroughthehalf-twist,itrotatestothefront,matchingwithw&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1matches with&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1matches with w&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1matches with w2(105).Similarly,as the face&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;125&quot;,
+    &quot;context&quot;: &quot;1(025),justasthethe&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(025),justasthethe125faceof&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1matcheswith&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2isactingas&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2isactingasatetrahedronlabelled&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2as&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;0and&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0andm&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andm1as&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0andm1asw&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1,sotheyarealsofacepairingsofτ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;,sotheyarealsofacepairingsofτ3,asshownintheﬁrstcolumnofTable&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0(012)∼w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(012)∼w3(021)and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0(025)∼w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(201),andtheothertwoareidentiﬁedtobottomfacesinthelast&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;01),andtheothertwoareidentiﬁedtobottomfacesinthelastw-layer,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1),andtheothertwoareidentiﬁedtobottomfacesinthelastw-layer,w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thecomplementoftheclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thecomplementoftheclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2,consistof&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0,w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0,w1,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1,w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1,w2,and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;aninitialtriangulation,ˆτp,ofXp,thecomplementoftheclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;initialtriangulation,ˆτp,ofXp,thecomplementoftheclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;0(n´ee&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2)in∆t;&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2)in∆t;w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´ee&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem1)and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem1)andm&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem1)andm2in∆m;&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem1)andm2in∆m;b&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2)in∆t;wp(n´eem1)andm2in∆m;b1and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iin∆wiwhere&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;iin∆wiwherei=1, . . . , p −1.Thefacepairingsofˆτ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;2, and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;1, so the Pachner moves depicted in Figures&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1, so the Pachner moves depicted in Figures 5 and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0,w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0,w1,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,. . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1,. . . ,w&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,. . . ,wp−1,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1,and&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1,andw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(01)slidesdownthroughtheﬁrstσ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(01)slidesdownthroughtheﬁrstσ1half-twisttobeidentiﬁedwith&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(01)slidesdownthroughtheﬁrstσ1half-twisttobeidentiﬁedwithw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;idesdownthroughtheﬁrstσ1half-twisttobeidentiﬁedwithw1(10)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;01&quot;,
+    &quot;context&quot;: &quot;0(01)],containsthe&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(01)],containsthe01edgeof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(01)],containsthe01edgeofw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(01)],containsthe01edgeofw1andof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;0(01)]forall&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(01)∼s(bc)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(01)∼s(bc)andw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(01)∼s(bc)andwp−1(01)∼s(ad).Theseedgesof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(01)∼s(bc)andwp−1(01)∼s(ad).Theseedgesofs,&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(01)∼s(bc)andwp−1(01)∼s(ad).Theseedgesofs,s(bc)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1(25)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p−1(25)andw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0andw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;0andwp.TheﬁrstinTable&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andwp.TheﬁrstinTable5,&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0(012)∼w&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(012)∼wp(021)shows&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0(012)∼wp(021)showsw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(012)∼wp(021)showswp(02)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;0(01)]contains&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;0(01)]containsatotalof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0(01)]containsatotalof4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;01&quot;,
+    &quot;context&quot;: &quot;0(01)]containsatotalof4p + 4edges:the&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i;&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i;s(bc)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i;s(bc)ands(ad);thetopedgeof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andthebottomedgeof&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0andthebottomedgeofw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(05) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1(51) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1(51) ∼wp(05) ∼backto&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(02) ∼s(ba) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(02) ∼s(ba) ∼wp−1(20) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(02) ∼s(ba) ∼wp−1(20) ∼wp(21) ∼backto&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(02)and&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(02)andw&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(02)andwp−1(20)areundeﬁnedandarereplacedby&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(02)andwp−1(20)areundeﬁnedandarereplacedbys(db)and&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0(01)]coloredred.Allbut&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0areidentiﬁedtothebottomfacesof&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0areidentiﬁedtothebottomfacesofw&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0areidentiﬁedtothebottomfacesofwpand&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0areidentiﬁedtothebottomfacesofwpandsisgluedtothetopfacesof&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0areidentiﬁedtothebottomfacesofwpandsisgluedtothetopfacesofw&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1andthebottomfacesof&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1andthebottomfacesofw&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1andthebottomfacesofwp−1and&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;p−1asinTable&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;that,if τhas n tetrahedra,A(τ) ⊂(0, π)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;that,if τhas n tetrahedra,A(τ) ⊂(0, π)3&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∂⃗v&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−dθ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;dtlog sin θ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;withV(β) = V(α)andletµ ∈[0, π]3&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ionViscontinuouson[0, 1].Also,becauseα|Tisnotﬂat,γisin(0, π)&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;plement,Xp.Thus,theconstructedtriangulationsaregeometricandC&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;ement,Xp.Thus,theconstructedtriangulationsaregeometricandC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i;theedges&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i;theedgess(bc)and&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i;theedgess(bc)ands(ad);andthetopdiagonalof&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(01)],whosemembersarelistedinObservation&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(02)and&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0(02)andw&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(12)]eachcontainexactlytwodiagonals:Thetopdiagonal&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0(12)]eachcontainexactlytwodiagonals:Thetopdiagonalw&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1(51)andsimilarlyfor&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(02)and&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(02)andw&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(02)andwp−1(20)(or&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i−1(15),thebottomdiagonalsof&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i−1(15),thebottomdiagonalsofw&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i−1(15),thebottomdiagonalsofwi−1and&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;i−1inthebraidcomplementinFigure&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i+1(02).Asimilarargumentappliesto&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i−1(15) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(05) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(21) = w&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1(21) = w&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1(21) = wp−1(21) ∼w&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;blueedges.Thus,wecanwriteθ∈A(τp) ⊂(0, π)3(2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0, θB&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0, θD&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0, . . . , θR&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1, θB&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1, θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0+ θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0+ θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0+ θDw1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ θDw1+ θBs + θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1+ θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1+ θBs + θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1+ θBs + θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1+ θBs + θDwp−1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1+ θBs + θDwp−1+ θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i−1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i−1+ θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i−1+ θBwi+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i+ θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1+ θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1+ θBw1+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1+ θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1+ θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1+ θBwp−1+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1+ θBwp−1+ θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1(02)and&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(02)andw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(02)andwp−1(20)asinObservation&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0+ θDs + θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0+ θDs + θBs + θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ θDs + θBs + θDs + θB&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0+ θDs + θBs + θDs + θBw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1= θDw3−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;3= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;3= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;3= θDw5−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2= θDw4−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;4= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;4= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;4= θDw6−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−2= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−2= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;p−2= θDwp−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0= θDw2−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;p−1= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1= θDw1−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andθD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0andθDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0andθDwp−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andθDwp−θDs,butnotnecessarilyto θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0andθDwp−θDs,butnotnecessarilyto θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0andθDwp−θDs,butnotnecessarilyto θDw1−θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0= θD&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ymmetryofthespaceofanglestructures.Consider the closure of C&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;metryofthespaceofanglestructures.Consider the closure of C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;ito&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;itow&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;i= θ⋆w&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0and&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0and w&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0+ ιθD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0+ ιθDw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1+ ιθB&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1+ ιθBw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−1+ ιθBwp−1+ ιθD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;p−1+ ιθBwp−1+ ιθDw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1+ θD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i∼=θ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;i∼=θw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;i∼=θwp−iandthussatisfy&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;i= θ⋆w&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i= θ⋆wp−i, and the tetrahedra&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;iand&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;iand w&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i∼=θ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;i∼=θw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−i.ThisisometryallowsustoobtainEquations(4)–(9),byreplacing&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;iwith&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;iwithw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0with&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;0withw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0withw1inthe&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;0withw1inthep=1equationofObservation&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,sothediﬀerenceθD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1,sothediﬀerenceθDw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;1,sothediﬀerenceθDw1−θD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1equals&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;iwith&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;iwithw&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iwithwp−i,yieldsEquation(10)forodd&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;iwith&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;iwith w&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2= θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2= θDw&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2= θDwp−2−θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;p−2= θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;p−2= θDs −θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;0= θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0= θDs −θD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;0= θDs −θDw&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Theorem5.1.LetLpbetheclosureofthe3-braidC&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Theorem5.1.LetLpbetheclosureofthe3-braidC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;ito&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;itow&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Corollary5.5.Inthebraidgroup,C&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Corollary5.5.Inthebraidgroup,C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;isnotconjugatetoσ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;isnotconjugatetoσp&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1σq&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Proof.Closuresofbraidsoftheformσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Proof.Closuresofbraidsoftheformσp&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1σq&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;closureofC&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;closureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;so,usingtherelationandthecentralityofC,Lp,theclosureofC&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;so,usingtherelationandthecentralityofC,Lp,theclosureofC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;(σ2σ1σ2)(σ1σ2σ1)Cσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;∼σ2σ1σ2Cσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;= σ1σ2Cσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;∼σ2(σ1σ2σ1)(σ1σ2σ1)σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;= σ1σ2σ1σ1σ1σ2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1σ2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1σ2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;AsindicatedinFigure10,theclosureofσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1σ2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;e (−(p+6), 2, −3)-pretzel is also the closure of the braid σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Thebraidrelationσ1σ2σ1= σ2σ1σ2andthecentralityofC= (σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;thatLpisequivalenttothebraidclosureofσ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;(σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;= σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(σ1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1(σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;= σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1(σ1σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;1(σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1(σ1σ2)5σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;1(σ1σ2)5σ1∼σ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;(σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;(σ1σ2)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;structed geometric triangulations for the braid closure of C&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;ructed geometric triangulations for the braid closure of C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;threestrandsmustbeequivalenttoclosuresofbraidsoftheformC&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;threestrandsmustbeequivalenttoclosuresofbraidsoftheformCkσ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Section2.4canbeextended,withoutdiﬃculty,toC&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Section2.4canbeextended,withoutdiﬃculty,toC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n 5.2) would require additional arguments.After completing C&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5.2) would require additional arguments.After completing C2σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1σ−q&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1σ−q&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tofurtherextendtheconstructiontoC&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;tofurtherextendtheconstructiontoC2σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tofurtherextendtheconstructiontoC2σp&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;· · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;· · · σp&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;JustasinFuter’sAppendix,the4-braidlivesinaproductregion,S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Figure18in[9,Appendix]),Futerusesthe2-bridgelinkK(Ω)whereΩ=R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gure18in[9,Appendix]),Futerusesthe2-bridgelinkK(Ω)whereΩ=R3L&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Figure12.ThelinkK(Ω)whereΩ=R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Figure12.ThelinkK(Ω)whereΩ=R3L&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;012&quot;,
+    &quot;context&quot;: &quot;1isbehindthepagewithfaces&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;023&quot;,
+    &quot;context&quot;: &quot;1isbehindthepagewithfaces012and&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,885 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0504116v2",
+  "blocks": [
+    {
+      "id": "library/0504116v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Algebraic & Geometric Topology 6 (2006) 435–457\n435\narXiv version: fonts, pagination and layout may vary from AGT published version\nOn deformations of hyperbolic 3–manifolds with geodesic\nboundary\nROBERTO FRIGERIO\nLet M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty\ngeodesic boundary and k toric cusps, and let T be a geometric partially truncated\ntriangulation of M. We show that the variety of solutions of consistency equations\nfor T is a smooth manifold or real dimension 2k near the point representing\nthe unique complete structure on M. As a consequence, the relation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulations and hyperbolicity equations",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-triangulations-and-hyperbolicity-equations.md",
+      "narrative": null,
+      "content": "Triangulations and hyperbolicity equations\nLet N be a complete ﬁnite-volume orientable hyperbolic 3–manifold with compact non-\nempty geodesic boundary (from now on we will usually summarize all this information\nsaying just that N is hyperbolic). It is well-known that N consists of a compact portion\ncontaining ∂N together with several cusps of the form T × [0, ∞), where T is the\ntorus, so N admits a natural compactiﬁcation ¯N obtained by adding some boundary\ntori. Since the components of ∂N are totally geodesic, they inherit a hyperbolic metric,\nand have therefore negative Euler characteristic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partially truncated tetrahedra",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-partially-truncated-tetrahedra.md",
+      "narrative": null,
+      "content": "Partially truncated tetrahedra\nA partially truncated tetrahedron is a pair (∆, I), where ∆is a tetrahedron and I is a\nset of vertices of ∆, that will be called ideal vertices. In the sequel we will always refer\nto ∆itself as a partially truncated tetrahedron, tacitly implying that I is also ﬁxed. The\ntopological realization ∆∗of ∆is obtained by removing from ∆the ideal vertices\nand small open stars of the non-ideal vertices. We call lateral hexagon and truncation\nAlgebraic & Geometric Topology 6 (2006)\nDeforming hyperbolic 3–manifolds with boundary\n437\ntriangle the intersection of ∆∗respective",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/conj-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "conj-sec-002-01.md",
+      "narrative": null,
+      "content": "Any hyperbolic N with non-empty geodesic boundary admits a good geometric triangulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulations",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-triangulations.md",
+      "narrative": null,
+      "content": "Triangulations\nLet ¯N be a compact orientable manifold and let N be obtained from ¯N by removing\nthe toric components of ∂¯N. We deﬁne a partially truncated triangulation of N to\nbe a realization of N as a gluing of some ∆∗’s along a pairing of the lateral hexagons\ninduced by a simplicial pairing of the faces of the ∆’s. When N is endowed with a\nhyperbolic structure, a partially truncated triangulation of N is called geometric if, for\neach tetrahedron ∆of the triangulation, the pull-back to ∆∗of the Riemannian metric\nof N deﬁnes a geometric realization of ∆. Equivalently, the hyperbolic struct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli for partially truncated tetrahedra",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-moduli-for-partially-truncated-tetrahedra.md",
+      "narrative": null,
+      "content": "Moduli for partially truncated tetrahedra\nThe following result implies that the dihedral angles can be used as moduli for geometric\ntetrahedra.\nTheorem 1.3 Let ∆be a partially truncated tetrahedron and let ∆(1) be the set of\nedges of ∆. The geometric realizations of ∆are parameterized up to isometry by\nthe dihedral angle assignments θ : ∆(1) →(0, π) such that for each vertex v of ∆, if\ne1, e2, e3 are the edges that emanate from v, then θ(e1) + θ(e2) + θ(e3) is equal to π\nfor ideal v and less than π for non-ideal v.\nHaving introduced moduli for geometric tetrahedra, our next task is to determin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let ∆be a partially truncated tetrahedron without ideal vertices. Then the geometric realizations of ∆are parameterized by the lengths of the internal edges. In fact, the map that associates to the dihedral angles of a geometric realization of ∆ the lengths of its internal edges is a diffeomorphism between open subsets of R6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Let ∆be a partially truncated tetrahedron and let ∆(1) be the set of edges of ∆. The geometric realizations of ∆are parameterized up to isometry by the dihedral angle assignments θ : ∆(1) →(0, π) such that for each vertex v of ∆, if e1, e2, e3 are the edges that emanate from v, then θ(e1) + θ(e2) + θ(e3) is equal to π for ideal v and less than π for non-ideal v. Having introduced moduli for geometric tetrahedra, our next task is to determine, given a triangulated manifold, which values of moduli deﬁne a global hyperbolic structure on the manifold. The following well-known hyperbolic trigonomet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conditions for geometric gluing",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-conditions-for-geometric-gluing.md",
+      "narrative": null,
+      "content": "Conditions for geometric gluing\nLet N be obtained from an orientable compact ¯N by removing all the tori in ∂¯N and\nlet T be a partially truncated triangulation of N. Let also θ be a geometric realization\nof the tetrahedra in T and denote by Lθ the length with respect to this realization.\nWe now describe the conditions under which the realization θ deﬁnes a hyperbolic\nstructure on the whole of N. For our purposes it will be sufﬁcient to deal only with\ngood triangulations, so we assume from now on that T is good. The general case is\ntreated in [7].\nIn order to deﬁne a global hyperbolic structur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "If T were not good, requiring the dihedral angles around each edge to sum up to 2π would not be sufﬁcient to obtain a non-singular hyperbolic metric on the 1–skeleton of T . The point is that when some geometric tetrahedra are arranged one after the other around an edge e with two ideal endpoints, the ﬁrst face of the ﬁrst Algebraic & Geometric Topology 6 (2006) Deforming hyperbolic 3–manifolds with boundary F∗ e1 e5 e4 e1 e2 e2 e3 v123 ∈I e12 e6 e6 e16 e26 Figure 4: An exceptional hexagon tetrahedron and the second face of the last tetrahedron may overlap without coinciding. Namely, the isome",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "We have (3) σθ(F126) = ln(sinh Lθ(e16)/ sinh Lθ(e26)). Proof Let α1, α2 and R, R1, R2 be the angles and lengths shown in Figure 5. An easy computation in the upper half-plane model of H2 shows that Lθ(ei6) = ln cot(αi/2) for i = 1, 2. Moreover we have R = R1 · tan α1 = R2 · tan α2, so exp σθ(F126) = R1/R2 = tan α2/ tan α1. Now for i = 1, 2 we have tan αi = 2 cot(αi/2)/(cot2(αi/2) − 1) = 2 exp Lθ(ei6)/(exp(2Lθ(ei6)) −1). Combining these equations we ﬁnally get exp σθ(F126) = sinh Lθ(e16)/ sinh Lθ(e26).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "Let F and F′ be paired exceptional lateral hexagons. Their pairing can be realized by an isometry if and only if σθ(F) + σθ(F′) = 0 and ℓθ(F) = ℓθ(F′). Proof We concentrate on the “if” part of the statement, the “only if” part being obvious. Let f1, f2 and f ′ 1, f ′ 2 be the boundary edges of of F and F′ respectively, and assume that the orientation-reversing pairing between F and F′ glues f1 to f ′ 2 and f ′ 1 to f2. Since ℓθ(F) = ℓθ(F′), Lemma 1.4 easily implies that L(f1) ⩽L(f ′ 2) if and only if L(f2) ⩾L(f ′ 1). Moreover the assumption that σθ(F) = −σθ(F′) and Proposition 1.8 give L(f1) ⩽",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exceptional hexagons",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-15-exceptional-hexagons.md",
+      "narrative": null,
+      "content": "Exceptional hexagons\nIt is easily seen that gluings match ideal vertices to each other, because these notions\nare part of the initial topological information about a triangulation. When a pairing\nglues two compact lateral hexagons, to be sure that the gluing is an isometric one we\nmay equivalently require the lengths of the internal edges or those of the boundary\nedges to match under the gluing. On the other hand, since T is a good triangulation, a\nnon-compact lateral hexagon F is actually a pentagon with four right angles and an ideal\nvertex: we shall say in this case that F is an exceptional",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "Let ∆be a partially truncated tetrahedron and suppose that v is the unique ideal vertex of ∆. Let F1, F2, F3 be the faces of ∆incident to v and for i = 1, 2, 3 let ei be the edge of Fi not containing v. The isometry classes of the geometric realizations of ∆are parameterized by the lengths of the ei’s and the values taken by σ on the Fi’s. More precisely, the map that associates to any geometric realization θ of ∆the point (Lθ(e1), Lθ(e2), Lθ(e3), σθ(F1), σθ(F2), σθ(F3)) deﬁnes a diffeomorphism between open subsets of two afﬁne hyperplanes of R6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consistency equations",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-16-consistency-equations.md",
+      "narrative": null,
+      "content": "Consistency equations\nRecall now that we are considering a candidate hyperbolic 3–manifold N endowed\nwith a good triangulation T , and that we have ﬁxed a geometric realization θ of the\ntetrahedra in T . The above discussion implies the following:\nTheorem 1.11 The parameterization θ deﬁnes on N a hyperbolic structure with\ngeodesic boundary if and only if the following conditions hold:\n(1) the total dihedral angle along any edge of T in N is equal to 2π;\n(2)\nLθ(e) = Lθ(e′) for all pairs (e, e′) of matching compact internal edges;\n(3)\nσθ(F) + σθ(F′) = 0 for all pairs (F, F′) of matching exceptio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "The parameterization θ deﬁnes on N a hyperbolic structure with geodesic boundary if and only if the following conditions hold: (1) the total dihedral angle along any edge of T in N is equal to 2π; (2) Lθ(e) = Lθ(e′) for all pairs (e, e′) of matching compact internal edges; (3) σθ(F) + σθ(F′) = 0 for all pairs (F, F′) of matching exceptional hexagons. By Propositions 1.5, 1.8, conditions (1), (2), (3) of Theorem 1.11 translate into a set C(T ) of smooth equations on θ, which are called consistency equations. Our next task is to compare the number of equations in C(T ) with the dimension of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "We can discard 2k equations from C(T ) thus obtaining an equivalent set C∗(T ) of n−2k equations, where n is the dimension of the moduli space of geometric realizations of the tetrahedra of T . Algebraic & Geometric Topology 6 (2006) Deforming hyperbolic 3—manifolds with boundary 445",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reducing the number of equations",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-17-reducing-the-number-of-equations.md",
+      "narrative": null,
+      "content": "Reducing the number of equations\nWhen N has cusps, some equations in C(T ) turn out to be redundant. Let T be a ﬁxed\ntoric component of ∂¯N and let j be the number of tetrahedra asymptotic to T. Since\nany such tetrahedron contributes to the triangulation of T with a Euclidean triangle, the\nsum of all the dihedral angles along all the edges of T incident to T is equal to jπ. So\nif we require condition (1) of Theorem 1.11 to hold for all but one edge incident to T,\nthen the same condition is automatically satisﬁed also along the remaining edge. This\nallows us to discard from C(T ) one equation f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "We have ai(x) = (−1)#V( ˆµi) · Q q∈V( ˆµi) Q T∈R( ˆµi,q) zx(T, q), bi(x) = (−1)#V(ˆλi) · Q q∈V(ˆλi) Q T∈R(ˆλi,q) zx(T, q). As a consequence of Mostow–Prasad’s rigidity Theorem for hyperbolic manifolds with geodesic boundary [7, 4] we get the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Completeness",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-18-completeness.md",
+      "narrative": null,
+      "content": "Let 7;,..., 7, be the boundary tori of N. From now on we denote by u;, A; a fixed\nbasis of H\\(7;;Z) = 7 (Tj), i = 1,...,k. Any point in Q(T) naturally defines an\nAff(C)-structure on 7; (see eg, [1, 5]). For x € Q(T), we denote by aj(x) € C (resp. by\nbj(x) € C) the linear component of the holonomy of j1; (resp. of \\;) corresponding to\nthe Aff(C)-structure defined by x on 7;. It is well-known that the hyperbolic structure\ndefined by x on N induces a complete metric on the i\" cusp of N if and only if\naj(x) = bj(x) = 1. Moreover, one can explicitly compute a; and 5; in terms of the\ndihedral angles",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "There exists at most one point in Ω(T ) that deﬁnes on N a complete hyperbolic structure with geodesic boundary. Proof See [7].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "If N is compact then Ωc(T ) is parameterized in a neighbourhood of x0 by the cone angles along the edges of T .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smoothness at the complete structure",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-2-smoothness-at-the-complete-structure.md",
+      "narrative": null,
+      "content": "Smoothness at the complete structure\nSuppose now that x0 is the unique point in Ω(T ) which deﬁnes on N a complete\nhyperbolic structure. For i = 1, . . . , k and x ∈Ω(T ) let us deﬁne\nui(x) = ln ai(x),\nvi(x) = ln bi(x),\nwhere ln is the branch of the complex logarithm deﬁned on {z ∈C : ℜ(z) > 0}\nsuch that ln 1 = 0. Since a non-trivial parabolic isometry does not commute with a\nnon-trivial orientation-preserving non-parabolic isometry, we have the following:\nProposition 2.1 In a neighbourhood of x0 in Ω(T ) we have ui(x) = 0 ⇔vi(x) = 0\n⇔the hyperbolic structure deﬁned by x on the ith cusp of N i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "The tangent map dFx0 : Tx0(W) →R6t−l−(3/2)p−k has maximal rank, so Ωc(T ) is a manifold of real dimension l + p/2 + k near x0. Proof By Remarks 1.6, 1.10, the lengths of the compact internal edges and the values taken by σ on the exceptional lateral hexagons of the tetrahedra of T provide smooth coordinates on W . It is easily seen that with respect to these coordinates the map F is afﬁne and has maximal rank at x0 (whence at any point of W ). Let now α: (−ε, ε) →Ωc(T ) be a smooth arc with α(0) = x0. We will study the deformation associated to α using tools from the cohomology theory of repre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deforming cone structures",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-21-deforming-cone-structures.md",
+      "narrative": null,
+      "content": "Deforming cone structures\nWe begin with the following:\nProposition 2.4 The tangent map dFx0 : Tx0(W) →R6t−l−(3/2)p−k has maximal rank,\nso Ωc(T ) is a manifold of real dimension l + p/2 + k near x0.\nProof By Remarks 1.6, 1.10, the lengths of the compact internal edges and the values\ntaken by σ on the exceptional lateral hexagons of the tetrahedra of T provide smooth\ncoordinates on W . It is easily seen that with respect to these coordinates the map F is\nafﬁne and has maximal rank at x0 (whence at any point of W ).\nLet now α: (−ε, ε) →Ωc(T ) be a smooth arc with α(0) = x0. We will study the\ndefo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "For any S ∈Sgd ∪Spar the map t 7→bS(t) is smooth with respect to t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dual vectors to planes and horospheres",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-22-dual-vectors-to-planes-and-horospheres.md",
+      "narrative": null,
+      "content": "Dual vectors to planes and horospheres\nIf S ∈Sgd, by construction the image of S under the developing map Dt is contained in\na totally geodesic immersed surface in H3. It is easily seen that such a surface must in\nturn be contained in a geodesic plane ˆS(t) of H3. We now need to associate to each ˆS(t)\na suitable ultra-ideal point bS(t), which will be called the dual point of ˆS(t). Such point\nnaturally lies in 4–dimensional Minkowsky space, so we ﬁx some notation about this\nspace.\nWe denote by M 3+1 the space R4 with coordinates x0, x1, x2, x3 endowed with the\nLorentzian inner product ⟨x, y⟩=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "If ˙α(0) ∈Ker dGx0 , then we can choose the Dt’s in such a way that ˙bS(0) = 0 for all S ∈Sgd ∪Spar. 2.4",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "A cocycle zρ ∈Z1(π1(DN); sl(2, C); D ¯ρ0) is naturally induced by ˙Dρ. Moreover, ˙Dρ belongs to B1(π1(DN′); sl(2, C); Dρ0) if and only if zρ belongs to B1(π1(DN); sl(2, C); D ¯ρ0). Now if N is compact, ie, if no cusps are involved, Theorem A.2 directly applies concluding the proof of Proposition 2.7. When there are cusps, Proposition 2.7 can be deduced from Theorem A.3 and the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifting geometric tetrahedra",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-23-lifting-geometric-tetrahedra.md",
+      "narrative": null,
+      "content": "Lifting geometric tetrahedra\nLet now ∆be a tetrahedron in T , and denote by e∆a lift of ∆to eN′. Let Si be the\nboundary component of the universal covering of ¯N′ that corresponds to vi, where\nv1, . . . , v4 are the vertices of e∆. If ¯∆(t) is the convex hull of bS1(t), . . . , bS4(t) in\nM 3+1, then projecting ¯∆(t) to H3 and truncating its inﬁnite-volume ends with the\ncorresponding ˆSi(t)’s gives back a truncated tetrahedron ∆∗(t) isometric to the geometric\nrealization of ∆parameterized by α(t). It is easily seen that the dihedral angles of ∆∗(t)\nsmoothly depend on bS1(t), . . . , bS4(t), so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tangent vector to t",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-24-the-tangent-vector-to-t.md",
+      "narrative": null,
+      "content": "Let us consider the double DN′ of N′ obtained by mirroring N′ along its boundary\n(which is now given by some punctured surfaces of negative Euler characteristic). Since\n∂N′ is totally geodesic with respect to the hyperbolic structure Mt, this structure can be\ndoubled to a smooth hyperbolic metric DMt on DN′.\nLet Dρt : π1(DN′) →PSL(2, C) be a holonomy representation corresponding to a\ndeveloping map for DMt. It is easily seen that we can assume Dρt to vary smoothly\nwith respect to t. We set\n˙Dρ: π1(DN′) →sl(2, C),\n˙Dρ(γ) = d\ndt\n\nt=0\n\u0000Dρt(γ)Dρ0(γ)−1\u0001\n.\nAs explained in Appendix A, we have ˙Dρ ∈Z1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "Let γ ∈π1(DN′) be such that Dρ0(γ) is non-trivial parabolic. Then ¨trγ(0) = 0. As a consequence of Proposition 2.7 and Lemma 2.10 we obtain the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "If ρ0(γ) is non-trivial loxodromic and ˙ρ(γ) = 0, then ˙rγ(0) = 0. On the other hand, let ρ0(γ) be non-trivial parabolic. Also assume that ˙ρ(γ) = 0 and ¨trγ(0) = 0. Then ˙rγ(0) = 0. We can now conclude the proof of Proposition 2.6. Choose Dt and ρt as in the statement of Proposition 2.11. Let S be a boundary component of the universal covering of ¯N′ which belongs to Spar, denote by PS the stabilizer of S in π1(N′) and choose an element γ ∈PS with ρ0(γ)̸ = 1. By construction the projection of bS(t) to ∂H3 is ﬁxed by ρt(γ), so Lemma 2.12 applies ensuring ˙bS(0) = 0. Suppose now that S belongs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "Now a standard result in Kleinian group theory ensures that the set {pγ(0), qγ(0) : γ ∈PS, ρ0(γ)̸ = 1} is dense in the closure at inﬁnity of D0(S) ⊂H3, and this easily implies ˙bS(0) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The final step",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-25-the-final-step.md",
+      "narrative": null,
+      "content": "The ﬁnal step\nFor γ ∈π1(DN′) let trγ : (−ε, ε) →C be the map deﬁned as follows: trγ(t) =\ntrace(D ˆρt(γ)), where t 7→D ˆρt(γ) ∈SL(2, C) is a smooth lift of t 7→Dρt(γ) ∈\nPSL(2, C) (so trγ is well-deﬁned only up to the sign). Also recall that Dt and ρt\nare respectively a developing map and a holonomy representation for the hyperbolic\nstructure Mt on N′. The following result can be easily deduced from the proof of the\nprevious proposition.\nLemma 2.10 Let γ ∈π1(DN′) be such that Dρ0(γ) is non-trivial parabolic. Then\n¨trγ(0) = 0.\nAs a consequence of Proposition 2.7 and Lemma 2.10 we obtain the follo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn filling",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-3-dehn-filling.md",
+      "narrative": null,
+      "content": "Dehn ﬁlling\nOnce the smoothness of Ω(T ) at x0 is established, one can prove Thurston’s hyperbolic\nDehn ﬁlling Theorem just by following the strategy described in [12]. At this stage, this\nargument applies only to those hyperbolic manifolds with geodesic boundary which\nadmit a good geodesic triangulation (but see Conjecture 1.2). The following result is\ntaken from [12].\nAlgebraic & Geometric Topology 6 (2006)\nDeforming hyperbolic 3–manifolds with boundary\n453\nLemma 3.1 Let j ∈{1, . . . , k}. Then there exists a complex number τj with non-zero\nimaginary part such that if {yn}n∈N ⊂Ω(T ) is a seq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "Let X be any smooth manifold and let g: Ω(T ) →X be a smooth map. Suppose that there exists a small neighbourhood U of x0 in Ω(T ) such that for all x, x′ ∈U ∩IΩ(T ) with d(x) = −d(x′) we have g(x) = g(x′). Then dgx0 = 0. Proof Since d : U →Qk i=1 S2 deﬁnes a chart around x0, it is sufﬁcient to observe that U ∩IΩ(T ) accumulates to x0 along any direction in Tx0Ω(T ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thurston's hyperbolic Dehn filling Theorem",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-31-thurstons-hyperbolic-dehn-filling-theorem.md",
+      "narrative": null,
+      "content": "Let U be a sufﬁciently small neighbourhood of x0 in Ω(T ) and let x ∈U. For\nj = 1, . . . , k, we deﬁne the j–Dehn ﬁlling coefﬁcient (pj(x), qj(x)) ∈R2 ∪{∞} as\nfollows: if uj(x) = 0, then (pj(x), qj(x)) = ∞; otherwise, pj(x), qj(x) are the unique real\nsolutions of the equation\npj(x)uj(x) + qj(x)vj(x) = 2πi.\n(Existence and uniqueness of such solutions near x0 can be easily deduced from\nTheorem 2.2 and Lemma 3.1.)\nLet us set\nd = (d1, . . . , dk): U →\nkY\ni=1\nS2,\ndj(x) = (pj(x), qj(x)) ∈S2 = R2 ∪{∞}.\nAs a consequence of Theorem 2.2 and Lemma 3.1 we have the following:\nTheorem 3.2 If U is small enou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/cor-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "cor-sec-017-03.md",
+      "narrative": null,
+      "content": "Fix a boundary edge f lying on a compact lateral hexagon of some tetrahedron of T , and let ℓf : Ω(T ) →R be the function which associates to x ∈Ω(T ) the length of f in the geometric realization parameterized by x. Then dℓf x0 = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/cor-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "cor-sec-017-04.md",
+      "narrative": null,
+      "content": "Fix an internal edge f in a compact tetrahedron of T and let af : Ω(T ) →R be the function that associates to x ∈Ω(T ) the dihedral angle assigned to f by x. Then daf x0 = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "We have dℓf x0 = 0. Proof Let x, x′ ∈U ∩IΩ(T ) be such that d(x) = −d(x′). Then the identity of N extends to a homeomorphism between bN(x) and bN(x′). By Mostow–Prasad’s rigidity",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prop-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "prop-sec-017-02.md",
+      "narrative": null,
+      "content": "The lengths of the boundary edges of a compact lateral hexagon smoothly depend on the lengths of its internal edges, and the dihedral angles of a compact truncated tetrahedron smoothly depend on the lengths of its internal edges. Thus Proposition 3.5 implies the following results. Algebraic & Geometric Topology 6 (2006) Deforming hyperbolic 3–manifolds with boundary",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinitesimal deformations of compact tetrahedra",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-32-infinitesimal-deformations-of-compact-tetrahe.md",
+      "narrative": null,
+      "content": "Inﬁnitesimal deformations of compact tetrahedra\nWe know from Mostow’s rigidity Theorem that compact hyperbolic 3–manifolds do\nnot admit deformations. The following results seem to suggest that in the non-compact\ncase deformations take place mostly near the cusps: even if it has to be affected by\nany non-trivial deformation, the compact core offers resistance to changing its shape.\nMore precisely, we now show that deformations of T near the complete structure affect\ncompact tetrahedra only at the second order.\nLet f be any compact internal edge of T . For x ∈Ω(T ) we denote by ℓf (x) the\nlength",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "1 The map ¯c: Γ/Γ0 →M deﬁned by ¯c([γ]) = c(γ) is well-deﬁned and gives a cocycle ¯c ∈Z1(Γ/Γ0; g; ¯ρ). Moreover, we have ¯c ∈B1(Γ/Γ0; g; ¯ρ) if and only if c ∈B1(Γ; g; ρ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinitesimal deformations of the geodesic boundary",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-018-33-infinitesimal-deformations-of-the-geodesic-bo.md",
+      "narrative": null,
+      "content": "Inﬁnitesimal deformations of the geodesic boundary\nLet Teich(∂N) be the Teichm¨uller space of hyperbolic structures on ∂N, ie, the space of\nequivalence classes of hyperbolic metrics on ∂N, where two such metrics are considered\nequivalent if they are isometric through a diffeomorphism homotopic to the identity\nof ∂N. For x ∈Ω(T ) we denote by B(x) ∈Teich(∂N) the equivalence class of the\nhyperbolic structure induced by N(x) on ∂N. It is well-known that Teich(∂N) admits a\nstructure of differentiable manifold such that B: Ω(T ) →Teich(∂N) is smooth. As a\nconsequence of Mostow–Prasad’s rigidity The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Cohomology theory of representations",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-019-a-cohomology-theory-of-representations.md",
+      "narrative": null,
+      "content": "Cohomology theory of representations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 The tangent space to a representation",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-020-a1-the-tangent-space-to-a-representation.md",
+      "narrative": null,
+      "content": "The tangent space to a representation\nLet G be a Lie group with associated Lie algebra g and Γ be any group, and denote by\nR(Γ, G) the set of representations of Γ in G. We say that a path {ρt ∈R(Γ, G) : t ∈\n(−ε, ε)} is smooth if ρt(γ) is a smooth function of t for any γ ∈Γ. If {ρt} is a smooth\npath of representations, the tangent vector to the map t 7→ρt(γ) at 0 gives an element\nin Tρ0(γ)G. Identifying this tangent space with g = T1G by right translation we get an\nelement ˙ρ(γ) of the Lie algebra g:\n˙ρ(γ) = d\ndt\n\nt=0\n\u0000ρt(γ)ρ0(γ)−1\u0001\n.\nDifferentiating the homomorphism relation ρt(γ1γ2) = ρt(γ1)ρ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Classical rigidity results",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-021-a2-classical-rigidity-results.md",
+      "narrative": null,
+      "content": "Classical rigidity results\nLet N be a smooth 3–manifold without boundary and suppose ρ0 : π1(N) →PSL(2, C)\nis the holonomy representation for a complete ﬁnite-volume hyperbolic structure on N.\nThe following result is due to Weil [16], and can be considered as a local version of\nMostow’s rigidity Theorem for compact hyperbolic 3–manifolds.\nTheorem A.2 Suppose N is compact. Then H1(π1(N); sl(2, C); ρ0) = 0.\nSuppose now that N compactiﬁes to a manifold ¯N with non-empty boundary ∂¯N =\nT1 ⊔. . . ⊔Tk. In this case ρ0 admits non-trivial deformations, so we cannot expect\nH1(π1(N); sl(2, C); ρ0) to be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0504116v2/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "3 We have H1 par(π1(N); sl(2, C); ρ0) = 0. References [1] R Benedetti, C Petronio, Lectures on hyperbolic geometry, Universitext, Springer, Berlin (1992) MR1219310 [2] Y-E Choi, Positively oriented ideal triangulations on hyperbolic three-manifolds, Topology 43 (2004) 1345–1371 MR2081429 [3] R Frigerio, Similar ﬁllings and isolation of cusps of hyperbolic 3-manifolds, Technical report arXiv:math.GT/0504147 [4] R Frigerio, Hyperbolic manifolds with geodesic boundary which are determined by their fundamental group, Topology Appl. 145 (2004) 69–81 MR2100865 [5] R Frigerio, Deforming triangulation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

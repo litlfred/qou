@@ -1,0 +1,1954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/deligne-mostow-1986/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/deligne-mostow-1986/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/deligne-mostow-1986/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/deligne-mostow-1986/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>deligne-mostow-1986</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>11.1</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p045-1&quot;,
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;— ^ 3 — ^ 2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 44,
+        &quot;context&quot;: &quot;(e e\\ - ~~ I&quot;
+      },
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;(ai^)\&quot;&quot;
+      },
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;allows us to write the first coordinate as {m(s^) — w^))&quot;
+      },
+      {
+        &quot;page&quot;: 45,
+        &quot;context&quot;: &quot;II (- m{s))-^. f&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-009&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p016-1&quot;,
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;Tt&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p016-2&quot;,
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;CI&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-1&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;Ti(M(,)) »7Ti(Q)xZ.&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;text&quot;: &quot;e Si&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-2&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;text&quot;: &quot;e Si&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p037-1&quot;,
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;n i j z&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p067-1&quot;,
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;text&quot;: &quot;&gt;, 3.&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p083-1&quot;,
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;2 I I I I&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p083-2&quot;,
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;2 2 2 2 1&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p083-3&quot;,
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I I I I I I&quot;,
+    &quot;block&quot;: &quot;library/deligne-mostow-1986/blocks/prose-sec-018&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;^w^——&amp;)F(a,&amp;;.;.)=f&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;f°° ^-c {u - i)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;metric equation is the basis of Fuchs&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;on either (i) P(W&#39;&lt;t), (ii) P(W&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;w: Ci^P&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;where Q^is the universal covering of the space Q^C (P&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ed only deal with rational ^ and multivalued integrands on P&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;are single valued on a finite ramified covering of P&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;on P&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;v&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;v12 == u\\u - i)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;v12 == u\\u - i)5 (u - x)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(a cyclic covering of order 12 of P&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;The integrality condition that (i — ^ — (A,)\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;113&quot;,
+    &quot;context&quot;: &quot;ied covering D\&quot; = D*~ u {0} of D. The multivalued function z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;z^ == (2&#39;l/s)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;H1&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(resp. x.(P - S, L) := S(- i)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;is independent of L. Each H&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;group of a finite dimensional chain complex K, and dim K&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;For an algebraic variety Y, one always has %c(Y) = x(^0- I&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;For an algebraic variety Y, one always has %c(Y) = x(^0- I11&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;(2.3) De Rham (G&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;Rham complex of L-valued G&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;Currents (2.4). — Instead of using the G&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;H,(P - S, L) ^ H^P - S, L) and Hf(P - S, L) ^&gt; H&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;... -&gt; Hf/(T, U T,, p* L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; (B(TJ — (3(Tg) is the complement of two disjoint trees in S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;The group Hf(P - (B(Ti u T^), L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;is the Poincar^ dual of H&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;is the Poincar^ dual of H2-^? - (B(Ti u T^), L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;to S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;to S1, and the group becomes H&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;oup becomes H2-^1,L^, for L^ a non trivial local system on S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; (2.5.2). — Ifli is a non trivial rank one local system on S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ifli is a non trivial rank one local system on S1, then H&#39;^S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;The H° is o by non triviality, and /(S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;The H° is o by non triviality, and /(S1, L) = ^(S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;et L* be a soft resolution of L, for instance the L-valued G&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;check this vanishing, one can replace D — s by a homotopic S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;z~v&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;pyoo^ — We may assume P == P&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;We define ^(^.^(L) :== ^(S^.^) (L) ® Q&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;For P = P&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and H&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;ofs. The C&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;of 9Ds is 0(r); the boundary term is hence C^r&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of 9Ds is 0(r); the boundary term is hence C^r0&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of 9Ds is 0(r); the boundary term is hence C^r0&#39;1\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;110&quot;,
+    &quot;context&quot;: &quot;The Hermitianform ( , ) is positive definite on H&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;If, for definiteness, we take P = P&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of X is a subextension of the extension C(P&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(7T* C)z == H^\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;If P == P&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;If P == P1 and oo e S, X corresponds to the extension C^P&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; S, X corresponds to the extension C^P1)^ — ^)^s-{oo}) ofC(P&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;n X such that f(g-1 x) == x(^)/W. Similarly, ^(L^) == (7r, Q&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;^(^-(T^Q&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;a == (as)8es:&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;85&quot;,
+    &quot;context&quot;: &quot;For any space X mapping to P&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Let M C P&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;system R&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;system R1 TT, L (= R&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;from R&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and PR&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and PR1 TC, L&#39; is canonically isomorphic to PR&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;monodromy a. The flat projective space bundle PR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;the H^P^.L^) (w&#39; eU) is a horizontal linear form on R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;horizontal system of projective coordinates on PR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Fix a coordinate z : P -&gt; P&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; — A more general method to get horizontal linear forms on R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;on P induces an action on M C P&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;For P = P&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Proo/. — We may take P = P&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;w(»)+oo&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;up to a positive real factor (2.18, 3.3). It induces on R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Assume that card S ^ 4. If positive real numbers (ys)se^ sum&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;YI + ^N ^ I- I&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;. For each m in M, there is then a unique isomorphism P -&gt; P&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;g m{d), m(b), m{c) respectively to o, i, oo. Let z : P^ -&gt; P&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;biguity results, we will write z{x) for z{x,m). Let A: M -^R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;{S)). For any U C M, let Iy denote the locus of {x, m) eTC~&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ipal determination of the multivalued function [z — z(m{s))Y&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;As in section 3, M C P&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;, from (4.2) on, P will be the standard projective line P:=P&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(4.1) The group PGL(2) operates diagonally on P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;A point y e P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;n {S^, Sg} of S with S ^3 == i (i = i, 2), the points y in P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;their partitions. Thus Q^cusp ls&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;points in P := P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;points in P := P1 is defined and is a continuous map into P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; all s e S. One can show that the cross-ratio map Mgg^ -&gt;&#39; P&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(4.3) Let M&#39; be the space of y eP&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;01&quot;,
+    &quot;context&quot;: &quot;(4 •3- x) F&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;For y e P&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Fix a &gt; o as in (4.4.1), and define M&#39;C P&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;dianv(T)^&lt;? for each T C S with S p.,&gt; i. The subset M&#39; of P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;section of the cone over the Veronese embedding of p\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of P\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;one gets 10 lines. The map of M^ to (P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;one gets 10 lines. The map of M^ to (P1)&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; LOI == P\&quot;^1? i)? Li2 == P\&quot;^00. o°). Here, Q^^ a blowup of P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;== P\&quot;^1? i)? Li2 == P\&quot;^00. o°). Here, Q^^ a blowup of P1 x P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;-^i, i), p-^oo, oo), and the p-lifts of the seven lines on P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i), p-^oo, oo), and the p-lifts of the seven lines on P1 x P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;^={^5}? l&lt;.i&lt;.4:&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;CLst is&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(i &lt;^ i &lt;_ 4). It can be obtained from P&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(i &lt;^ i &lt;_ 4). It can be obtained from P1 x P&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;line bundle and ^n == (J^)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Mumford&#39;s \&quot;quotient variety\&quot; for PGL(2)\\P&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;form ( 5 ) is determined, up to a positive real factor, by B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ermined, up to a positive real factor, by B4&#39;. The closure B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;d, up to a positive real factor, by B4&#39;. The closure B4&#39; ofB&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(5.2) The hyperbolic angle 6eR&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;The angle 6(^5/2) is a Riemannian distance on B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of the unitary group U(V) on B&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;of the unitary group U(V) on B&#39;1\&quot; and renders B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;e extend the function 6(/i, —) to a function 6(/i, —) from B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;R4- u{oo}:6(^) = oo for/e^B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(5.3) Fix t e ^B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;on B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;W = | (y, ^)]/(^, y,)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;for r e BB&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;The function d,, is continuous and &gt; o on B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(5.4) On B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;e continuous. A fundamental system of neighborhoods of / e B&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;damental system of neighborhoods of / e B4&#39; (resp. of / e SB&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(resp. V, == {^ 11^ == /&#39; or ^ e B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;usual topology on B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Proposition (5.5). — Fix I e ^B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H consisting of the n e U(V) respecting the filtration V 3 v&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;line /&#39;i spanned by ^ is in B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;nitary transformations a[\\) : v \\-&gt; \\~1 y, v&#39; (-&gt; \\v&#39; (\\ e R&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;A11 == {a{\\) | X ^ R}. The map ^ h-^/i maps isomorphically A&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;onto {^2 e B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;onto {^2 e B4&#39; | d^(l^ ^ R}. The horocycles are closed in B&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;A\\A&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;for a volume element on A&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;image of da. dh on A&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;&lt;/A=f dW&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1, Lie H) of X eR&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tify P with P&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;^(P^, L^), there is hence a unique germ h^ of a section of R&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(constant sheaf H^(P^, LJ) -&gt; R&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;cular, each AeH^(P^,LJ defines a horizontal section If? of R&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;00&quot;,
+    &quot;context&quot;: &quot;ibe A^, for h the class of a L^-valued compactly supported C&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;we apply this to G)^, we get an horizontal section cl^^ of R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;projecting from R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;projecting from R1 TT, Ly to B(a)^, we get a section Pcl^J&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;Proposition (6.4). — 6(^, PcUcoJ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;the complement in P&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;\\z-a,\\-2^dxdy&lt;\\ \\z\\-^dxdy = 2n \\ r&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;an when taken on D^o) results from the fact that | z — a, l\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;nt with compact support u^—d^u? can be used to compute cUcoJ&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;215&quot;,
+    &quot;context&quot;: &quot;are C^R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;two elements, (i — S (JiJ\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Fix a eS(i) and b eS(2), identify P with P == P&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;of y e P&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;provide a horizontal section of R&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;the holomorphic section w^ of B(a)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;568(1)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;o e U. One knows that the functor {g: U -&gt; U) i-^\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X. If a lifting 7ofo is chosen in X, the map 7Ci(U, o)—^/&#39;&#39;\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;identifies y\&quot;&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;the component/\&quot; ^V)^ there corresponds a point J in/\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;r each y e Y, the stabilizer in T^(U, o) of a point 3^ in y\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;function on U. Ifxinf&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;on on U. Ifxinf&#39;1^) corresponds to the connected component/\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;borhood V e V^ ofjy, toward which w converges for y&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;The extended map C[^ -&gt; B(a),&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;bundle of the constant bundle B(a)o&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;We assume that P is the standard projective line P&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;identifies U with D x D&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;identifies U with D x D8&#39;, and U n Mo with D* x D&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and J(o, z) : D\&quot; -&gt; D&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot; point of {0} x W C D x D^ the holomorphic functions yl(^ z)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;{ o J x D ^ C D xD&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;of the spread p&#39;^U)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Proposition (9. xo). — TA^ wfl^ Q.I -&gt; Q,i ls&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(i — p., — P&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(i — p., — P1^\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;mma (10.3). — Let D^, Dg and Dg be three distinct lines in C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tegers &gt; i such that — 4- — 4- — &gt; i. Fix a base point b e C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and consider the coverings of (C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;| W | == area(S&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Let W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;phism PVW&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;phism PVW4- - P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;phism PVW4- - P1 and let /: P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;phism PVW4- - P1 and let /: P1 -&gt; P^V^ - P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;byVofthe line bundle ffl{— i) on P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ffl{— i) on P1 is of degree the negative of d = deg(V) = |W\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;( P ( — I )0 d ^f* ( P ( — i ) . The group W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;of (P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;of (P1, S{— i)) with (A, s&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;of (P1, S{— i)) with (A, s0^ e W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;is C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;is C2—^}, the bundle map being the natural projection C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;action ofHon C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;action ofHon C2 — {0} is induced by a linear action on C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;action on H°(P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;action on H°(P1, ^(i)). The quotient map of the space (P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;may be identified with a &lt;/-th power map of (P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;y be identified with a &lt;/-th power map of (P1, ^(— i)) to (P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tified with a &lt;/-th power map of (P1, ^(— i)) to (P1, G{— i)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;quotient map g : C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;i) minus its zero section, followed by the quotient map to W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;orbits. Thus the quotient maps by H and W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C2 &lt;—) C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;C2 &lt;—) C2-^} —&gt; P&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C2 &lt;—) C&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;C2 &lt;—) C2-^} —&gt; V&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;([4] V (3 • 3) P^P.&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Let d, =/Cft) and D, C C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;index is exactly w,. If X is a covering of C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;back by g can hence be extended to unbranched covering of C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n hence be extended to unbranched covering of C2 — {o}. As C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ly connected, each connected component of this covering of C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g-^C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g-^C2 - (DI u D^ u Da)) -&gt; C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;sion of W&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;sion of W4&#39; by a cyclic group of order |W&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; + (Jig + ^3 &lt; i, and when it holds (i — ^ — ^ — ^)~1 == | W&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(iii) The fundamental group of C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;^-^-(D.uD.uDs)) &lt;-&gt; C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C2 - (DI U D^ u Da) c——^ C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C2, at the upper right corner, is the completion of ^\&quot;^C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;over C^at points of C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;of ^\&quot;^(C&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;of ^\&quot;^(C2 — (DI u D^ u Da)) over C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;for which the projection to C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;XU) = C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;XU) = C2 - D, - D, - D3C C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;CC&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;duct X of the X(j) is the complement of a divisor in Y := (C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;of the X(j) is the complement of a divisor in Y := (C2)^ X C&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;It suffices to show that each J^o&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;can identify a neighborhood ofj^o in Q^ wlt^ a subspace in P&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;neighborhood of p. Then 9\&quot;&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;In the second case, take B&#39; = Bg(^i) n ^~l(y&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;nce X&#39; - 9-1^) is open and closed in X[ - 9-1^). As (X&#39; - y\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ACN—cp\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; of Y — {p}. Let N^ be the component of N containing N — (p\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;Uo&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ding, the function from p^K — V) to R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;replaced by V[ (resp. p~\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;to B^ :== B^o^o, where B&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot; B^o^o, where B4&#39; has the topology (5.4). Fix J e CLusp ^d o&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;to p function (5.3) on B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;18.1). — If condition (INT) is satisfied^ the map S^:CLg^-&gt;B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S^ : (V, o) -&gt; (B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Then the map Z^: Q^ -&gt; B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;restricts to a homeomorphism of Q^ onto B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;f(^x) =f{x) for all Y e7I;l(Q,5&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;points, one can deduce from the (5.4) topology of B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;lows that B^(&lt;p(C).st)) = ^(^st)) and therefore, 9(^3^) == B&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot; over C, G == Aut P, M the subset of injective elements in P&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;and discontinuous on B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Proo/1 — By Theorem (10.17. i), the action of F on B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;subset of B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;subset of B4&#39;. Since F acts on B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;the isometry group of B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4^ operates transitively on B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;isotropy group, F operates discontinously on B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;in Aut B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;homeomorphic to the complement in the ball B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;of a neighborhood of a point in B&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;rators yield C-reflections by (9.2), generating F, if x e B&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;sfs(i^8 == I- Let&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;lying below the set of all y e P&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; set of all v e V with {v, v) &gt; o modulo C*. Let w^: Q^ -&gt; B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;where S^(Q,sst) ls an ^G&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;where S^(Q,sst) ls an ^G11 subset ofB&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;^(Q^ggt) is the union of a compact quotient of a subset of B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;eighborhoods Wj (in the topology of (5.4)) of points /j e ^B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot; Wj (in the topology of (5.4)) of points /j e ^B4&#39;, where Ij&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;subset of B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;easure. By (n .3. i) and Proposition (5.5), the image in I^B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;less than TT and the orbit of each point in B&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;otherwise, some F^ orbits in B&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;spanned over % by {Tr Ad y | Y&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;PCW)-1 = °P(W&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;that is pOOpWpOO-1^0?^)?^)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Yl,2-T2,3-Tl3= al&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Yl,2-T2,3-Tl3= ala2&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;span of the automorphisms Int y : ^ -^ y^T\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot; any g e GL(V), it follows by definition of E that for any y&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Consequently, for any y&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;[X(Y) Y&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;for all Y&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;9&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;o&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L == Q l cos&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L == Q l cos2 —, cos&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L == Q l cos2 —, cos2 —, cos&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;triangle in the real hyperbolic 2-space Rh&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;&lt;&lt;?„ &lt;?,&gt; == i such that (in the projective model ofRA&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;8 == i — ^3 — 4$ ~ ^ji — ^12 ^23&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Any (^-character ^ of the connected component G&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;finite because it has bounded denominators; hence /(G&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;P -&gt;P&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; m(a), m(b), m{c) respectively to o, i, oo. Let u: P x M x P&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;For each m e M, Tr\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w^)&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;111&quot;,
+    &quot;context&quot;: &quot;w^)w ^p&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;G(Z) == G n AutH&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;form&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;in B(a)o&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;y e P&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M,t = {j^ e P&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 76,
+    &quot;mark&quot;: &quot;011&quot;,
+    &quot;context&quot;: &quot;g1&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Remark. — The fact that H^P,, L,)/I\\ « C&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;^-ii&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;If L is a rank one local system on P&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;^ can be identified with the space of ^ : { i, 2, 3, 4} -&gt; P&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= i, jy^) = oo, i.e. (using x : =j/(4) as coordinate) with P&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ball B(a)&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;and T3 = ]i, oo[ to circular arcs in B(a)&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;, o[ and as homogeneous coordinates for w(x) the integrals f&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;holomorphic involution of P&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;map of the real axis to the boundary of a triangle in P&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Then or^ a^ is a holomorphic self-map of P&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; i == i, 2, 3} is 1^ u o^ 1^. It follows at once that o-i^a)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2, 3} is 1^ u o^ 1^. It follows at once that o-i^a)4&#39; = B(a)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;is an isometry ofB(a)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;phism K ofH^L) to H^L) which maps H^^L) to H&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;phism K ofH^L) to H^L) which maps H^^L) to H1&#39;&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; map, the map K induces the anti-holomorphic reflection of P&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;boundary of the ball B(a)&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;F(^jQ = J^0\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;^ t - 2 &#39; 2 &#39; 2 &#39; 2 &#39;&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;mensional affine hyperplane H which is parallel to H&#39;, H w P&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;the preceding case, S^(C[oi) ^les&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;the preceding case, S^(C[oi) ^les m&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;01&quot;,
+    &quot;context&quot;: &quot;reflection Yij f&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,629 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "equations-aux-q-differences",
+  "blocks": [
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Une ´equation diﬀ´erentielle ordinaire est une relation G(x; f, . . . , f (n)) = 0\nentre une fonction inconnue f et ses transform´ees par it´eration de « l’automor-\nphisme inﬁnit´esimal » f \u0005→\nd\ndxf. De fa¸con analogue on peut s’int´eresser au cas\no`u l’automorphisme inﬁnit´esimal est remplac´e par un v´eritable automorphisme\nϕ d’un domaine en x. Le cas le plus simple et le seul que nous consid´ererons\nici, est celui o`u x varie dans la sph`ere de Riemann (ou plus g´en´eralement un\nouvert de celle-ci invariant par ϕ ou un germe de voisinage d’un point ﬁxe\nde cet automorphisme) et o`u de plus l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "´Equations aux q-diﬀ´erences\nL. Di Vizio, J-P. Ramis, J. Sauloy∗, C. Zhang†",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Br´eviaire",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-breviaire.md",
+      "narrative": null,
+      "content": "Nous consid´ererons des ´equations aux q-diﬀ´erences lin´eaires d’ordre n :\n(2.0.3)\nP.f(x) =\ndef a0(x)f(qnx) + a1(x)f(qn−1x) + · · · + an(x)f(x) = 0,\no`u P d´esigne l’op´erateur aux q-diﬀ´erences\nn\n\ni=0\nai σn−i\nq\n,\nque l’on suppose, sans perte de g´en´eralit´e, non d´eg´en´er´e : a0an̸ = 0. Les ai sont\n´el´ements d’un anneau de fonctions K : fractions rationnelles sur un corps de co-\neﬃcients C, fonctions analytiques ou m´eromorphes sur un domaine convenable,\nvoire s´eries de Laurent formelles... et cet anneau est muni de l’automorphisme\nσq qui, `a f(x), associe f(qx).\nLes ´el´ements σq-invari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation et conﬂuence des syst`emes fuchsiens rationnels",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-classiﬁcation-et-conﬂuence-des-systemes-fuchsi.md",
+      "narrative": null,
+      "content": "des syst`emes fuchsiens rationnels\nDans le §3, le nombre complexe q est de module > 1 et les ai sont des\nfonctions rationnelles de la variable complexe x. Si λ ∈C∗, on note λqZ = [λ; q]\nla q-spirale discr`ete {λqn : n ∈Z}.\nSMF – Gazette – 96, Avril 2003\n´EQUATIONS AUX q-DIFF´ERENCES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R´esolution et classiﬁcation locale",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-31-resolution-et-classiﬁcation-locale.md",
+      "narrative": null,
+      "content": "3.1. R´esolution et classiﬁcation locale\nLes seuls points invariants de l’automorphisme x \u0005→qx sur la sph`ere de\nRiemann S sont 0 et ∞et ils jouent un rˆole sym´etrique. Nous aborderons donc\nl’´etude locale en 0, celle en ∞s’en d´eduisant par le changement de variable\nw = 1/x. La plupart des r´esultats locaux gardent un sens (et restent valides)\npour des op´erateurs et des ´equations `a coeﬃcients analytiques.\n`A l’op´erateur aux q-diﬀ´erences P ou mieux, `a l’´equation correspondante\nP.f(x) = a0(x)f(qnx) + a1(x)f(qn−1x) + · · · + an(x)f(x) = 0,\non peut associer un polygone de Newton en 0, qui",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conﬂuence des solutions locales",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-32-conﬂuence-des-solutions-locales.md",
+      "narrative": null,
+      "content": "Nous voudrions donner un sens `a l’id´ee que, « lorsque q →1, la q-d´erivation\nδq =\nσq−1\nq−1\ntend vers la d´erivation δ = x\nd\ndx ». Cette id´ee a ´et´e la source,\ndepuis Heine, de nombreuses q-analogies. Nous consid´ererons donc une famille\nde syst`emes\nσqX = AqX,\no`u les coeﬃcients de Aq d´ependent de q. Pour respecter l’analogie, on peut\nr´e´ecrire ces syst`emes `a l’aide de l’op´erateur δq :\nδqX = BqX, avec Bq = Aq −In\nq −1 ,\nce qui nous conduit `a supposer que Bq tend vers la matrice \nB d´eﬁnissant le\nsyst`eme diﬀ´erentiel\nx d\ndxX = \nBX.\nSi l’on suppose ce dernier fuchsien non r´esonnant e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation globale",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-33-classiﬁcation-globale.md",
+      "narrative": null,
+      "content": "3.3. Classiﬁcation globale\nAvant d’´enoncer le r´esultat g´en´eral, revenons `a l’exemple 2.2 des s´eries hyper-\ng´eom´etriques et ´etudions le d’un point de vue global, c’est-`a-dire sur la sph`ere\nde Riemann S. On constate que l’´equation hyperg´eom´etrique de Gauss\nδ2y −\nλδy + \nµy = 0, avec\n\n\n\n\n\n\nλ = (α + β)x + (1 −γ)\n1 −x\n\nµ = αβx\n1 −x.\nSMF – Gazette – 96, Avril 2003\n´EQUATIONS AUX q-DIFF´ERENCES\n33\ny admet pour seules singularit´es 0, 1 et ∞et que ces singularit´es sont r´eguli`eres.\nLa m´ethode de Frobenius en fournit des syst`emes fondamentaux de solutions\nen 0 et en ∞:\n\n2F1(α, β,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conﬂuence de la matrice de connexion",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-34-conﬂuence-de-la-matrice-de-connexion.md",
+      "narrative": null,
+      "content": "Nous reprenons ici les hypoth`eses du th´eor`eme 3.6, que nous supposons\nsym´etriquement v´eriﬁ´ees en ∞(apr`es changement de variable w = 1/x). Au-\ntrement dit, nous supposons que les singularit´es de Bq tendent vers les pˆoles\nx1, x2, . . . , xr de \nB, que Bq →\nB uniform´ement sur tout compact de l’ouvert\nU = U0 ∩U∞= C∗∖\n\u0018\n0⩽i⩽r\nxiqR\n0 , o`u l’on a pos´e x0 = 1,\net que les structures de Jordan de Bq(0) et Bq(∞) « varient continˆument » (cf.\nle th´eor`eme 3.6). On supposera de plus que les spirales continues xiqR\n0 sont deux\n`a deux disjointes, ce qui est vrai pour un choix g´en´erique de q0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation locale des ´equations irr´eguli`eres",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-35-classiﬁcation-locale-des-equations-irregulier.md",
+      "narrative": null,
+      "content": "Nous consid´erons ici une ´equation\nP.f(x) = a0(x)f(qnx) + a1(x)f(qn−1x) + · · · + an(x)f(x) = 0\n`a coeﬃcients analytiques, que nous ne supposons plus fuchsienne. Nous sup-\nposerons cependant, pour simpliﬁer, que toutes les pentes de son polygone de\nNewton sont enti`eres. On trouvera alors dans [Zha99] et dans [MZ00] la preuve\nde l’existence d’une factorisation analytique de l’op´erateur P en facteurs de\ndegr´e 1. Ce r´esultat est ´etonnant, compar´e `a ce que l’on sait des op´erateurs\ndiﬀ´erentiels : pour ceux-ci, on ne peut esp´erer en g´en´eral qu’une factorisation\nformelle. Ce th´eor`eme d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sommabilit´e des solutions formelles d’´equations aux q-diﬀ´erences et classiﬁcation locale des syst`emes irr´eguliers",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-4-sommabilite-des-solutions-formelles-dequations.md",
+      "narrative": null,
+      "content": "q-diﬀ´erences et classiﬁcation locale des syst`emes irr´eguliers\nDans ce paragraphe, on notera \nC∗la surface de Riemann du logarithme, log\nla d´etermination principale de celui-ci, et logq x = log x\nlog q pour tout x ∈\nC∗, o`u\nlog q est ﬁx´e une fois pour toutes (comme pr´ec´edemment, on suppose |q| > 1).\nOn notera qα = eα log q pour tout α ∈C. La notation [λ; q] du paragraphe 3 est\n´etendue au cas o`u λ ∈\nC∗.\nSi C d´esigne l’un des ensembles C, C∗et \nC∗, on notera OC,0 (resp. MC,0)\nl’ensemble des fonctions holomorphes (resp. m´eromorphes) dans un « disque\nouvert de C centr´e en 0 » {x ∈C : |x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quelques g´en´eralit´es",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-41-quelques-generalites.md",
+      "narrative": null,
+      "content": "Dans la th´eorie des ´equations diﬀ´erentielles lin´eaires dans le champ com-\nplexe, il y a des s´eries formelles divergentes qui sont solutions formelles.\nL’exemple « mod`ele » est la (variante de) s´erie d’Euler :\n(4.0.1)\n\ny(x) =\n\nn≥0\nn! xn+1.\nElle est solution formelle de l’´equation :\n(4.0.2)\nx2y′ −y = −x\nLe type de divergence d’une solution formelle \ny(x) = \u001f\nn≥0 anxn d’une\n´equation diﬀ´erentielle analytique (lin´eaire ou non) n’est pas du tout arbitraire;\nil est Gevrey : | an |≤Ann!s ; A > 0, s ≥0. (C’est un r´esultat de Maillet 1904,\npr´ecis´e plus tard par Ramis et Malgrange, [Ram93].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p020-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sommations de Borel-Laplace q-analogues",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-43-sommations-de-borel-laplace-q-analogues.md",
+      "narrative": null,
+      "content": "Rappelons que la transform´ee de Laplace de la fonction ϕ dans la direction\nd = R+eiα, d’argument α, issue de l’origine dans le plan complexe de la variable\nξ, est (sous r´eserve d’existence) Ldϕ(x) =\n!\nd e−ξ/x ϕ(ξ) dξ.\nLa m´ethode classique de sommation de Borel-Laplace est d´ecrite par le dia-\ngramme suivant.\n\nf =\n\nn≥1\nanxn\n\nB\n−→\nϕ =\n\nn≥1\nan\n(n −1)!ξn−1\nLα\n−→\nf α =\n ∞eiα\n0\ne−ξ/xϕ (ξ) dξ.\n(4.9.2)\nElle fonctionne pour la s´erie formelle \nf si celle-ci est Gevrey 1, ce qui ´equivaut\n`a la convergence de ϕ, et si cette derni`ere se prolonge analytiquement le long\nde d avec une croissance convena",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/conj-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "conj-sec-011-01.md",
+      "narrative": null,
+      "content": "(Grothendieck) L’´equation diﬀ´erentielle aµ(x)dµy dxµ (x) + aµ−1(x)dµ−1y dxµ−1 (x) + · · · + a0(x)y(x) = 0, avec ai(x) ∈Q(x), admet un syst`eme complet des solutions alg´ebriques, i.e. dans la clˆoture alg´ebrique de Q(x), si et seulement si sa r´eduction modulo p admet un syst`eme complet de solutions dans Fp(x), pour presque tout p. La conjecture peut ˆetre reformul´ee de plusieurs fa¸cons, en apparence plus g´en´erales que l’´enonc´e 5.3, mais toutes ´equivalentes entre elles. En particulier elle est ´equivalente `a une caract´erisation arithm´etique de l’alg`ebre de Lie du groupe de Galoi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "´Equations aux q-diﬀ´erences arithm´etiques",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-5-equations-aux-q-diﬀerences-arithmetiques.md",
+      "narrative": null,
+      "content": "L’´etude des ´equations aux q-diﬀ´erences complexes a d´ej`a port´e ses fruits,\nmˆeme si beaucoup reste `a faire. Lorsque l’on pense aux d´eveloppements r´ecents\nde la th´eorie p-adique et arithm´etique des ´equations diﬀ´erentielles, il est clair\nSMF – Gazette – 96, Avril 2003\n´EQUATIONS AUX q-DIFF´ERENCES\n45\nque, relativement aux ´equations aux q-diﬀ´erences, ces points de vue sont moins\navanc´es.\nLa litt´erature sur les ´equations aux q-diﬀ´erences p-adiques est assez pauvre.\nLorsque |q|̸ = 1 les r´esultats existants (cf. les th´eor`emes d’indice dans [BB92]\net la construction des solutions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/figure-img-p027-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../images/img-p027-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/equations-aux-q-differences/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R´ef´erences",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-6-references.md",
+      "narrative": null,
+      "content": "[Ada29]\nC. R. Adams. On the linear ordinary q-diﬀerence equations. Ann. Math. Ser. II,\n30(2), 195–205, 1929.\n[And89]\nY. Andr´e. G-functions and geometry. Aspects of Mathematics, E13. Friedr. Vieweg\n& Sohn, Braunschweig, 1989.\n[And00a] Y. Andr´e. S´eries Gevrey de type arithm´etique. I. Th´eor`emes de puret´e et de dualit´e.\nAnnals of Mathematics. Second Series, 151(2), 705–740, 2000.\n[And00b] Y. Andr´e. S´eries Gevrey de type arithm´etique. II. Transcendance sans transcen-\ndance. Annals of Mathematics. Second Series, 151(2), 741–756, 2000.\n[And01a] Y. Andr´e. Diﬀ´erentielles non commutatives e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

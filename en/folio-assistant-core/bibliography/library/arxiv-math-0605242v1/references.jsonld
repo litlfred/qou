@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0605242v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "N-Fold Integer Programming",
+      "dcterms:issued": "D:20181029",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0605242",
+      "dcterms:abstract": "In this article we study a broad class of integer programming problems in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certain Graver bases. We discuss several applications of our algorithm to multiway transportation problems and to packing problems. One important consequence of our results is a polynomial time algorithm for the d-dimensional integer transportation problem for long multiway tables. Another interesting application is a new algorithm for the classical cutting stock problem.",
+      "dcterms:source": "library/arxiv-math-0605242v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0605242v1"
+    }
+  ]
+}

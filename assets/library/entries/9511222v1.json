@@ -1,0 +1,857 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "9511222v1",
+  "blocks": [
+    {
+      "id": "library/9511222v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Murnaghan-Nakayama Rules for Characters of Iwahori-Hecke\n\nAlgebras of the Complex Reflection Groups G(r, p,n)\n\nToM HALVERSON\nAND\nARUN RAM\n\nDepartment of Mathematics\nMacalester College\nSt. Paul, MN 55105\n\nSchool of Mathematics and Statistics\nUniversity of Sydney\nNSW 2006, Australia\n\nABSTRACT. Iwahori-Hecke algebras for the infinite series of complex reflection groups\nG(r, p,n) were constructed recently in the work of Ariki and Koike, Broué and Malle,\nand Ariki. In this paper we give Murnaghan-Nakayama type formulas for computing\nthe irreducible characters of these algebras. Our method is a gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "a 1. HALVERSON AND AL MANE\n\nthe Iwahori-Hecke algebras of Weyl groups of types B and D [HR], [Pfel], [Pfe2].\nRecently, Iwahori-Hecke algebras have been constructed for the groups Zr) Sn and\nG(r, p,n) [AK], [BM], [Ari]. In this paper we derive Murnaghan-Nakayama type\nformulas for computing the irreducible characters of the Iwahori-Hecke algebras\nthat correspond to Z,US, and G(r, p,n).\n\nHoefsmit [Hfs] has given explicit analogues of Young’s seminormal representa-\ntions for the Iwahori-Hecke algebras of types An—1, Bn, and D,. Ariki and Koike,\n[AK] and [Ari], have constructed “Hoefsmit-analogues”",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/rem-page-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "rem-page-002-01.md",
+      "narrative": null,
+      "content": "In this paper we only give formulas for computing the characters of certain “standard elements” of the Iwahori-Hecke algebra which are given by (2.10) in the case of the Iwahori-Hecke algebras of Z| Sp and by (3.15) in the case of the Iwahori-Hecke algebras of G(r, p,n), p > 1. In this paper we have not made any effort to show that this is sufficient to determine the values of the characters on all elements. We have a method for proving this which will be given in another paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m)\n\nrelations\n(1) TT; =7;T., for |i —j| > 1,\n(2) TTT; = Ti Tiki, for 2 < H < n— 1,\n\n(3) Thi T= hhh,\n\n(4) (Ti — wi )(Ti — ua) ++ (Ti — ur) = 0,\n\n(5) (-q(Ti+¢q')=0, for 2<i<n.\nUpon setting g = 1 and wu; = €'\"!, where € is a primitive rth root of unity, one\nobtains the group algebra C[Z,.S,]. The algebras H,,, were first constructed by\nAriki and Koike [AK], and they were classified as cyclotomic Hecke algebras of type\nB,, by Broué and Malle [BM]. In the special case where r = 1 and uy = 1, we have\nT, = 1, and Ay, is isomorphic to an Iwahori-Hecke a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prop-page-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-page-004-02.md",
+      "narrative": null,
+      "content": "([Hfs], Prop. 3.3.3; [AK], Prop. 3.16) For 1 <i <n, the action of t; on a vector vz, where L is a standard tableau, is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prop-page-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-page-004-03.md",
+      "narrative": null,
+      "content": "({AK], Lemma 3.3) The subalgebra Uy, of Hymn generated by ty,to,...,tn is an abelian subalgebra, i.c., the t; commute.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "+ 1. HALVERSON AND AL MANE\n\nwhere s;L is the same standard tableau as E except that the positions of 7 and i—1\nare switched in s,L. If s;L is not standard, then we define vs,7 = 0.\nThe following theorem is due to Young [You] for the symmetric group S,, to\n\nHoefsmit [Hfs] for Hy,,, and to Ariki and Koike [AK] for H,.,, 7 > 2.\n\nTheorem 2.4. ([You],[Hfs],,[AK]) The modules V*, where \\ runs over all r-\npartitions of size n, form a complete set of nonisomorphic irreducible modules for\nyn.\n\nHoefsmit Elements.\nDefine elements t; € Hy, for 1 <i <n, by\nt= 7 Tj-1--- TMT --TaTi. (2.5)\nTo our knowledge, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "([You],[Hfs],,[AK]) The modules V*, where \\ runs over all r- partitions of size n, form a complete set of nonisomorphic irreducible modules for yn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prop-page-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-01.md",
+      "narrative": null,
+      "content": "Let f= (41,...,m) be an Sy-sequence and i= (415... 5%m)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m)\n\nProposition 2.12. Let f= (41,...,m) be an Sy-sequence and i= (415... 5%m)\n\nbe a Z,-sequence, and let L be a standard tableau of size n. Let T or, denote\n\nthe coefficient of vy, in Tivr. Then\n\nThor), = AVP (DAV, (LAP yo, (D).\n\nIn particular, for given sequences € and z, the value Ti. Lop depends only on the\n\npositions and the linear order of the boxes in L.\n\nProof. This follows from the definition of the action of H,,, on standard tableaux\nand the fact (2.3) that when T; acts on a standard tableau L it affects only the\npositions of Z containi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-02.md",
+      "narrative": null,
+      "content": "Let f = (41,.-.,lm) be an S,-sequence, _ (t1,.-.,%m) bea Z,-sequence, and suppose that \\ is an r-partition of size n. Then (T= ae WEDV AL WILD) AGED Jl\"),",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6 1. HALVERSON AND AL MANE\n\nIn view of Theorem 2.15 it is desirable to give an explicit formula for the value\nof AMX). To do so requires some further notations: The shape A is a border strip\nif it is connected and does not contain two boxes which are adjacent in the same\nnorthwest-to-southeast diagonal. This is equivalent to saying that A is connected\nand does not contain any 2 x 2 block of boxes. The shape \\ is a broken border strip\nif it does not contain any 2 x 2 block of boxes. Therefore, a broken border strip is\na union of connected components, each of which is a border strip.\n\nDrawing Fe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-01.md",
+      "narrative": null,
+      "content": "Let \\ be any shape (possibly skew) with n boxes. Let CC be the set of connected components of \\, and let ce = |CC| be the number of connected components of X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) a\n\nthe number of columns in bs. The content ct(b) of a box 6 is as given in (2.1).\nThe function e(ct(DC)) is the elementary symmetric function in the variables\n{ct(d),d € DC}, and the function h,_1—~cc(ct(SC)) is the homogeneous symmetric\nfunction in the variables {ct(s),s € SC}.\n\nProof. Recall from (2.2) that\nq-¢\"'\n| SGD)\n\nct(L(k))\nIt follows from the definitions of A(M)(L) in (2.13) and (2.14) that we may apply\nCorollary 4.14 with 2, = ct(b) for all boxes 6 in X.\n\nFor two boxes a and 6 in A that are adjacent in a diagonal, we have\n\n1 —ct(a)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/ex-page-008-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "ex-page-008-01.md",
+      "narrative": null,
+      "content": "The following are important special cases of G(r, p,m). (1) GQ, 1,n) = Sy, the symmetric group. (2) Gr, 1,n) = Z,0USy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "fel 1. HALVERSON AND AL MANE\n\nwhere E;; denotes the n x n matrix with a 1 in the 7th row and jth column and\nwith all other entries 0.\n\nExample 3.1. The following are important special cases of G(r, p,m).\n(1) GQ, 1,n) = Sy, the symmetric group.\n(2) Gr, 1,n) = Z,0USy.\n\n(3) G(2,1,n) = WB, the Weyl group of type B.\n\n(4) G(2,2,n) = WD,, the Weyl group of type D.\n\nThe Hecke algebras.\n/p 1/p\n\nLet ¢ = ”/? be a primitive pth root of unity, and let g and xe pee Gy\nbe indeterminates. Then H,., is the associative algebra with 1 over the field\n\nClay!” wee wl!” a) given by generators T,,... ,T,, and relatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "The map 0:V* > V°) is a A,» n-module isomorphism, i.e., 7 commutes with the action of Hy» n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m)\n\nWith the given specializations of the u,, the content of a box b of A, see (2.1), is\nct(b) = ofa PP, if b is in position (7,7) in APY,\n\nAs in Section 2, we define, for each standard tableau L of size n, the scalar\n\nq-¢'\n1- et(L(i-1)) ?\ncul)\n\nFrom (2.3) and (3.2), it follows that the action of H,.».. on V> is given by\n\n(T)irn = for2<i<n.\n\naovz = ct(L(1))Pun =azeve, if1e€ LE,\nct(L(1))\n\navy =(To)rnunt cisaL(1))\n\najor = (Ti)nner +(q7') +(Ti)zx)vst-\n\nRecall that t; = T;---7)T\\T2---T; for 1 <1 <n, and define elements $; € Ay» .n,\nL<i<n, by\n\n(q7) +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "LU 1. HALVERSON AND AL MANE\n\n1 <i <n and all standard tableaux Z. Since o(s2L) = s20(L), it follows that\naiVer = o(ajyvz). (Note that, because ¢ is a pth root of unity, T; does not commute\nwith o but that ag does.) O\n\nThe set of transformations\n{o° |O<a<p—l}\n\ndefines an action of the cyclic group Z/pZ on the set of (d, p)-partitions and on the\nset of vector spaces >,\n\nIrreducible Representations.\n\nFix a (d,p)-partition \\ of size n, and let Ky be the stabilizer of \\ under the\naction of Z/pZ. The group K) is a cyclic group of order |Ay| and is generated by\nthe transformation o/* where f, is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-011-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-03.md",
+      "narrative": null,
+      "content": "The group generated by {a; | 0 <7 <n} in H,.», is a normal subgroup of the group generated by {T; |1 <j <n} in Hpn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) dt\n\nTheorem 3.11. ([Ari], Theorem 2.6) The modules V), where \\ runs over all\nr-partitions and 0 <j < |Ay|—1, form a complete set of nonisomorphic irreducible\nmodules for Hy».\n\nRemark 3.12. It should be noted that if fy = p and thus |A)| = 1, then the\nirreducible H,,,-module V> is also an irreducible fp n-module.\n\nCharacters.\n\nFix a (d,p)-partition \\ and let yO denote the character of the irreducible\nFT, yp. n-module VO9) defined by (3.10). Let \\* denote the Ay pm X Ky-bitrace on\nthe module V, ie. if h € Ayn and o% € Ky, then\n\naN afy) _ afy,,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/rem-page-011-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "rem-page-011-02.md",
+      "narrative": null,
+      "content": "It should be noted that if fy = p and thus |A)| = 1, then the irreducible H,,,-module V> is also an irreducible fp n-module.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "thm-page-011-01.md",
+      "narrative": null,
+      "content": "([Ari], Theorem 2.6) The modules V), where \\ runs over all r-partitions and 0 <j < |Ay|—1, form a complete set of nonisomorphic irreducible modules for Hy».",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-page-012-01.md",
+      "narrative": null,
+      "content": "For a word g = TH ...7s! in the generators of Hy,» (i.e., an element of the group in H,., generated by the T;), let 8(g) denote the number of T,’s minus the number of T,! ’s in g so that 3(q) is the net number of T,’s in the word. Let h be in the group generated by {a; |0 <1 <n} in Hyp». Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-page-012-02.md",
+      "narrative": null,
+      "content": "Let ((1,...,m) be an S,-sequence, and let (t1,... ,im) be a Z,- sequence. satisfying 0 <1; <r—1 for each j.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "a4 1. HALVERSON AND AL MANE\n\nand\nT, aT = T° hnT? = T, (Ty, TeT1Ta)T> ' Th\n= 7, 'TRT ToT, 'Ts'T = aagaz'. o\nLemma 3.17. For a word g = TH ...7s! in the generators of Hy,» (i.e., an\nelement of the group in H,., generated by the T;), let 8(g) denote the number of\nT,’s minus the number of T,! ’s in g so that 3(q) is the net number of T,’s in the\nword. Let h be in the group generated by {a; |0 <1 <n} in Hyp». Then\n\nghg tot? ) = 2 Ch BD) Aha th),\nProof. First note that, by Lemma 3.16, ghg7! € Hy».n, So it makes sense to con-\nsider the bitrace. Then\nW(ghg a2) = (hg ta°*Q).\n\nWe must be very careful he",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) do\n\nTheorem 3.19. Let A be a (d,p)-partition, where pd = r. Let a be such that\n0<a<|K)|—1 where K) is as defined in (3.7). Define\n[Fc\n\n= p/|K d = ——__..\nP= PiWBal, and 7 = a [Rad\n\nTet (11) pa) (im)\nfe RR RO atten\nwhere ((1,-:- ,€m) 18 an S,-sequence and (i1,--+ ,2m) is a Z,-sequence such that\n11 +++: +%m =0 (mod p). The element h is an element of Hy» C Hy». Hf all ¢;\nin the sequence ((,,... ,m) are divisible by > then define\nr=n/y, rF=r/y, P=p/y,\n(C1,.+. sm) = (4/%+-- sm/%)s\nXr) = G7) 5 ha=- R® ... RO\nXr = , for0<1r<p-—1 and h=Rij, Be arin!\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/rem-page-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "rem-page-013-02.md",
+      "narrative": null,
+      "content": "The proof of this theorem will occupy the remainder of this section. Note that the case when a = 0, and thus 7 = 1, is particularly easy, since we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "thm-page-013-01.md",
+      "narrative": null,
+      "content": "Let A be a (d,p)-partition, where pd = r. Let a be such that 0<a<|K)|—1 where K) is as defined in (3.7). Define [Fc",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "lem-page-014-01.md",
+      "narrative": null,
+      "content": "Let the notations be as in Theorem 3.19. If hvy,| # 0, then Va-KT",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "ia 1. HALVERSON AND AL WAN\n\nAs an example, the necklace in Figure 3.23 is part of a standard tableau that is\n3-laced. (This is the analogue of the alternating tableaux defined in [HR}).\n\n4] 16\n8 | 27\n3To 13 al\n21\n=I EE]\n1\n20\n5 fiz\n6 |18\n9 J25\n7 | 26\n14 22]\n2 fa\n2 ae\n\nFigure 3.23. A necklace in a 3-laced standard tableau.\n\nLemma 3.24. Let the notations be as in Theorem 3.19. If hvy,| # 0, then\nVa-KT\n\n(a) L is K-laced and\n(b) every ¢; in the sequence ((1,... ,4m) is divisible by y.\n\nProof. (a) Because of the special form of h the basis elements that appear in huy, are\nof the form vy» 7,, where w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/lem-page-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-page-015-01.md",
+      "narrative": null,
+      "content": "Let the notations be as given in Theorem 3.19 and assume that &K = af), that L is a k-laced standard tableau, and that the sequence ((,,... ,4m) is such that ¢; is divisible by + for all i. Let w = ©? = 7/7, and let F;(L) denote the factor defined in (3.26). Let 1 < j <n and suppose that k is such that (k-1)y <j < ky.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) do\n\n(c) Fy(L) = CT if 7 —1= 4 for some 1 <k<m.\n\nWe shall compute the values of the Fj(Z) explicitly in Lemma 3.30, but first we\nmust introduce a bit more notation. _ - - -\n\nRecall the definitions of m, F, p, (41,--.,4m), A, and h in Theorem 3.19. If L\nis a K-laced tableau define integers pi,..., pn and a (d,p) standard tableau L as\nfollows:\n\nIf L(my) is in position (7,7) of the partition AU emP+7™) | then\nL(m) is in position (i,j) of the partition \\7™),\nIn the above p», and T, are chosen such that 0 <7t, < p-—1.\nThe map 7\nLt (pi,... 5 pn, L)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "16 1. HALVERSON AND AL MANE\n\n(a) If j — 1 is not divisible by 7, then\n\n-1\n\nq q\nTey De TT\n\nFy(L) = (Tj )w; bywj4ib =\n\n(b) If j —1 is divisible by y but j -14 ¢; for any 1 <i<m,\n1\n\n_ (7. ee oe ee\nFj(L) = (Tj aoj 41 bro; 440 ~ 1— wie ct(L((kK=1))) °\nct(L(k))\n\n(c) Ifj —1 = 6-1 = 0-17 for some 0 <i <m, then\nFy(L) = (tiie p= etortet(L(Cina +1)\",\n\nwiih wigr\n\nProof. (a) If j—1 is not divisible by 7 then wj41L(j—1) = L(j—1) and wj4i Lj) =\nL(ky). Thus\n\net(wy4i Lj —1)) = et(L(j —1)) = eG -Mct(L(ky)), and\n\nct(wj41L(7)) = et(L(ky)).\n\nIt follows that\n1\n\n_ q-4a\nFj(L) = (Tj)w; tw yit =O + 1 es LGD)\n~~ et(wj 4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) dé\nand thus we have that\n\nhr|, = TT BiD=¢ JI Ftd). (3.32)\n\nUae E\n1<j<n 1<k<n\n\nwhere we define F(Z) = Fx-1)y41(L). With this notation, the only factor in\n(3.32) which depends on the number d; is F(Z).\nProof of Theorem 3.19.\n\nProof. Let « = afy. Then\n\n(hot) = S- ho®er |, = Ss hveet|,, = S- hor\n\nLEL(X) LEL(A) LEL(A)*\n\n-y ¥ Yaw\n\nEEL(D) diy. .da=0 7\n\n-y ¥ clin\n\nBELO) diy-dn=0  k=1\n\nVa-kKE\n\nsince the only factor in []}_, F(Z) which depends on the number d; is F,(L).\n\n(a) It follows from Lemma 3.24, that if there is some ¢; that is not divisible by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "1s 1. HALVERSON AND AL MANE\n\nand\n= a a\nd(T wsetonat = )) — recep\nd,=0 d,=0 ct(L(k))\n__g-0 yy\n— 1 ct(L(k-1))7\n7 et E)7\n~2f eg\n_ ct(E(m=-1))7\nbl A Sata\n\nwhere j — 1 = (k —1)y and [y] = (q7 -—q-7)/(q—q\"\").\nIt follows that, if 7, = 0 for all k, then\n\nK m x g-q?\nx*(ho\") = » hvern|,, = C7 » II hi \\ 7 eG\n\nLEL(X)* EeL£(X) rshse ~~ et (E(k)?\n\nWith the definitions of Hy, as in the statement of the theorem, (2.11) and Propo-\nsition (2.12) imply that\n\ngq? 3 os\nSs ll 7 atk | — Nan (Pe)\n\nLEL£(X) oe 1- ct(E(k))*\n\nThus,\n\n(hort) = Co Vea (B):\n\nwhere Hj, is as in the statement of the theorem. O",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) dd\n\n4. THE POSET THEOREM\n\nCurtis Greene [Gre] uses the theory of partially ordered sets (posets) and Mobius\nfunctions to prove a rational function identity ([Gre], Theorem 3.3) which can\nbe used to derive the Murnaghan-Nakayama rule for symmetric group charac-\nters. In [HR], we modify Greene’s theorem so that it can be applied to computing\nMurnaghan-Nakayama rules for the irreducible characters of the Iwahori-Hecke al-\ngebras of type A,-1,B,, and D,. In this section, we extend the poset theorem of\n[HR] so that it can be applied to computing M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "1. HALVERSON AND AL MANE\n\nand\n\nS> AME) = AM Pyoe! ( Il | ( Il “'), (4.5)\n\nLEL(P) sE€SC de€DC\n\nThe expansion in (4.5) is equal to zero if there is more than one connected compo-\nnent in P.\n\nThe following is our extension of the poset theorem to include values of k > 1.\n\nTheorem 4.6. Let P bea planar poset (as defined above) with unique minimal\nelement u. Let P = P \\ {u}. Then\n\nSo AML) = (ga AMP),\n\nLeEL(P)\n\nand, for 1 <k<r-—1,\n\nS- AWB) = AMP -gt qe ( I | ( Il “i')\n\nLeL(P) s€SC deDC\n|DC|\nx dt- Jre(2pc )hk—t—ce(@sc)\n\nwhere cc is the number of connected components of P, ex(zpc) is the elementary\nsy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "thm-page-020-01.md",
+      "narrative": null,
+      "content": "Let P bea planar poset (as defined above) with unique minimal element u. Let P = P \\ {u}. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m)\n\nFrom now on assume that 1< k <r—1. Then we have\n\nS> AML) = SP wt (us) AM(P,)\n\nLEL(P) sesc\nA®(P,)\n_ k k -1 3\n= AP) S- wt (a4, 8) DOP)\n\nsescC\n\n4H (gq, pers (ad)\n_ Atk) (kh) “1 wt) (a,b)\n=A (P) owt (u, 8) I wt (a, bynr (a)\naxZb\n\n= A (P) 13 wt (a, 8) Il wt) (a, pyre (ab) —Hpla.b)\n\nsEsc a,beP\naZb\n\nai\n\n(4.7)\n\nwhere jup,(a,b) and yep(a,b) are the Mébius functions for their respective posets.\nWe use the work of Greene [Gre] to compute the differences jup,(a, b) — pep(a, 6)\n\nfora <b € P. Let P* and P} denote the dual of P and P,, respectively (that i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "1. HALVERSON AND AL MANE\n\nUsing the fact that [SC] — [DC] = ce (the number of connected components of\np), we cancel factors of g— q7' and factor out 2, and vy! as follows\n\nOE A) k q-q' L-ase!\nSampson roe TE SE) ( 1 F)\n\nLEL(P) s€sc s' ESC\\{s} deDC\nIl (2a — as)\n\n: 7 )(I)ee Se\n\nses deDC sESC\ns'ESC\\ {3}\n\nNS\n\nFor notational convenience, let\n\nF= any Il ») ( Il a —g iy\"\n\ns€SC de€DC\nOrder the sharp corners s1,52,... ,8|sc| from left to right as the boundary of P is\ntraversed, and let |s;| = 7 (its position in the ordering). Then\n\n(ta — 2s)\nS- AWE) = FY at -1 i \"\nll (25 — 2s)\n\nLeL(P) s€SC lese\\ta}\nTI @",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) vas)\n\nWe then have\n\n[IDC|\nSo ak ak (-1)8¢l- INS cxf zpc)(— y)IPcl- t gIDCl- tC\nS- AW(E) =F pssse t=0\nLec?) V(esc)\nbe] S- 2[DOl-t+k-1(_q)]PCH+ISCl-Is1g\n_FP s€SC\nde Jres( rpc) Viesc)\nDC|-t+k-1 s|-1\nInc| De Pe NARI\n—FP 1)I8Cl- |DC|-1 s€SC\n(-1 d- Jez rpc) Viasc)\nNotice that ae Re ok TABI [DED +/SCl—1 = gh treet SCl-1 and that the\nnumerator\nSo akeertsel-y agit TT (ay 24) (48)\n\ns€SC p<qesc\\{s}\n\nis the alternating symmetrization of the monomial\ngkotoect18C|=1 28 2 2/8 3... glSCl-Ise].\n\nTs, Sisc|\n\nWhen we divide the numerator (4.8) by the Vandermonde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "1. HALVERSON AND AL MANE\n\nreadily computed and has been done so for g = 1 by Green [Gre] and for generic g\nin [HR]. The result uses the natural extension of the theory of shapes and tableaux\nto the theory of partially ordered sets. (For a full treatment of this subject, see\n[Sta], whose notation we use here).\n\nIf \\ is a shape (possibly skew), then we construct a corresponding poset P)\nwhose Hasse diagram is given by placing a node in each box of A and then drawing\nedges connecting nodes in adjacent boxes. The order relation in this poset is so\nthat the smallest nodes are in the upper left corn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/thm-page-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "thm-page-024-01.md",
+      "narrative": null,
+      "content": "([Gre], Theorem 3.3; [HR], Theorem 5.8) Let P, be the poset of any shape (or skew shape) \\, let {)} be a set of commutative variables indexed by {b € Py}, and let q be an indeterminate. Define",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/cor-page-025-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "cor-page-025-01.md",
+      "narrative": null,
+      "content": "Let \\ be any shape (or skew shape) with n boxes. Let {xp} be a set of commutative variables indexed by the boxes b € A, and let q be an indeterminate. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) 29\n\nwith the linear extensions of the poset P,. Thus, we can identify a standard tableau\nT of shape \\ with a linear extension L of the poset Py.\n\nLet ps be the Mébius function of the linear extension L of Py that corresponds\nto the standard tableau T of shape \\. Then, since Lisa chain, ps satisfies\n\n(a,b) = -1, ifa< band ais adjacent to 6 in L, and\nBG) = 0, ifa < band a is not adjacent to 6 in L.\n\nTt follows that\n\nol\nAMT) = AME) = TE w0(a,0)\" = Corry)! 1\n\na<beL ®TG-1)* 703)\n\nCorollary 4.14. Let \\ be any shape (or skew shape) with n boxes. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9511222v1/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "[Ari]\n[AK]\n\n[BM]\n[GP]\n\n[Gre]\n[HR]\n[Hfs]\n[KW]\n\n[Mac]\n[Osi]\n\n[Ptet]\n[Pfe2]\n[Ram]\n[ST]\n\n[Sta]\n[Ste]\n\n[vdJ]\n\n[You]\n\n1. HALVERSON AND AL MANE\n\nREFERENCES\n\nS. Ariki, Representation theory of a Hecke algebra of G(r, p,n), J. of Algebra 177 (1995),\n164-185.\n\nS. Ariki and K. Koike, A Hecke algebra of (Z/rZ)Sn and construction of its irreducible\nrepresentations, Adv. in Math. 106 (1994), 216-243.\n\nM. Broué and G. Malle, Zyklotomische Heckealgebren, Astérisque 212 (1993), 119-189.\nM. Geck and G. Pfeiffer, On the irreducible characters of Hecke algebras, Adv. in Math.\n102 (1993), 79-94.\n\nC. Greene, A rati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

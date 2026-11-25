@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/mario2023.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1xg0a5rp4f5.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1xg0a5rp4f5","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/mario2023.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/mario2023.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/mario2023.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;mario2023&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 412,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-2312.00624v1/2312.00624v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;mario2023&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;Identified from front matter (hep-th preprint). No ref() entry, no \\cite{} site, no Lean -- Ref:, arXiv id absent from content/ -&gt; orphan on all three checks. Subject is the SL(2,C) Chern-Simons wave function on hyperbolic knot complements, worked out for the figure-eight and the three-twist knot -- the corpus&#39;s own knots and the same state integral. Checked specifically against the brief&#39;s Stokes question and it does NOT bear on it in the way a title-level read would suggest: the words Stokes, Borel, resurgence and Donaldson-Thomas do not occur in the body at all (only in its bibliography), and its footnote 1 states explicitly that its resummation is of a *convergent* series and does not involve divergent-series resummation. Its integrality conjecture is about the holomorphic blocks of the resummed WKB q-series and the cancellation of the ll in 2 pi Q singularities, which is a different object from the resurgent Stokes constants of GGM Conjecture 3(d). So it neither proves nor refutes the statement the corpus over-claims. What it does supply is (i) a clean, quotable separation of the convergent-q-series layer from the Borel/resurgent layer, which rem:channel-rotation-askey-lit item 3 currently runs together, and (ii) a calibration datum on the BPS identification (see keyResults). Supporting, not core: no result here is consumed by any block, and the integrality conjecture itself is conjectural and unverified in this setting.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Sec 6 Conclusions, first open question (its ref [42] = `dimofte-gaiotto-gukov2013`)&quot;,
+            &quot;statement&quot;: &quot;The interpretation of the integrality structure of the resummed WKB wave function &#39;in terms of an enumerative problem, or a BPS counting problem, in the dual supersymmetric theory&#39; is listed as an open question raised by the work, citing the same 3d-3d dictionary the corpus&#39;s bridge invokes.&quot;,
+            &quot;useForFolio&quot;: &quot;Calibration for conj:stokes-dt-bps-bridge, which adopts Stokes = DT = dim H_BPS(T[K]) and describes the first equality as &#39;proved ... for the figure-eight 4_1&#39;. This document shares an author with `garoufalidis-gu-marino2023peacock` and, on the same knots, treats the BPS-counting reading of its integer invariants as open. IMPORTANT CAVEAT to carry with any use: those integers are the holomorphic-block integrality invariants of a convergent q-series, NOT the resurgent Stokes constants, so this is adjacent evidence about authorial stance and not a statement about Conjecture 3(d) itself. Scope-(a).&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:stokes-dt-bps-bridge&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;footnote 1, p. 2 (attached to Sec 1)&quot;,
+            &quot;statement&quot;: &quot;The q-series obtained by resumming the WKB expansion is a resummation of a convergent series and therefore does not involve the techniques of resummation of divergent series such as Borel resummation.&quot;,
+            &quot;useForFolio&quot;: &quot;rem:channel-rotation-askey-lit item 3 says the Andersen-Kashaev state integral &#39;factors into a q-series and a q~-series&#39; whose leading asymptotics trace Vol + i CS, and the corpus&#39;s Stokes/Habiro discussion sits next to it. This is a one-line source for the fact that the q-series factorisation layer and the Borel/resurgent layer are analytically different regimes -- useful because conflating them is a live failure mode in the c_k and A_omega chains.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:channel-rotation-askey-lit&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec 1 eq (1.1) with Sec 3.2&quot;,
+            &quot;statement&quot;: &quot;The resummed WKB q-series wave function has apparent singularities at every ll in 2 pi Q (i.e. at roots of unity q = exp(i ll)), absent from the non-perturbative definition; a conjectured integrality of the holomorphic blocks makes them cancel against the anti-holomorphic blocks, leaving a finite wave function, with the epsilon-expansion mechanics in Appendix A.&quot;,
+            &quot;useForFolio&quot;: &quot;A stated cancellation mechanism at rational points, worked explicitly for the figure-eight in Sec 4.1 and Sec 5. Recorded against conj:stokes-dt-bps-bridge only as context for the same 4_1 wave function; there is no block that consumes it, which is why the verdict stays supporting.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:stokes-dt-bps-bridge&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan; same knots and same state integral as the corpus&#39;s A_omega / c_3 chain, and needed as the source for the calibration remark below.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-0ddm&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;One remark covering both usable items: that a GGM co-author lists the BPS-counting interpretation as open (calibrating the bridge block&#39;s &#39;proved ... for the figure-eight&#39; wording), and that the integrality in question is the convergent-q-series holomorphic-block kind, not the resurgent Stokes kind -- so it is adjacent evidence, not a refutation. State explicitly what remains unchecked: whether the holomorphic-block integers and the resurgent Stokes constants of the same knot are related at all.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-eqi3&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T00:10:43.091Z&quot;,
+        &quot;source_sha&quot;: &quot;bda867f7b84f&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

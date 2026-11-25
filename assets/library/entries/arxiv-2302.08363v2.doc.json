@@ -1,0 +1,1362 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2302.08363v2",
+  "title": "On the structure of trans-series in quantum field theory",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Trans-series and their structure",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-trans-series-and-their-structure"
+    },
+    {
+      "level": 1,
+      "title": "The large N sigma model, revisited",
+      "number": null,
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-large-n-sigma-model-revisited"
+    },
+    {
+      "level": 1,
+      "title": "Complex Chern–Simons theory",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-complex-chernsimons-theory"
+    },
+    {
+      "level": 1,
+      "title": "Integrable models",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-integrable-models"
+    },
+    {
+      "level": 2,
+      "title": "The free energy of integrable models",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-free-energy-of-integrable-models"
+    },
+    {
+      "level": 2,
+      "title": "Bosonic models",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-bosonic-models"
+    },
+    {
+      "level": 3,
+      "title": "Trans-series computation",
+      "number": null,
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-trans-series-computation"
+    },
+    {
+      "level": 3,
+      "title": "Numerical analysis",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-numerical-analysis"
+    },
+    {
+      "level": 2,
+      "title": "The Gross–Neveu model",
+      "number": null,
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-the-grossneveu-model"
+    },
+    {
+      "level": 3,
+      "title": "Summary of the recursive problem",
+      "number": null,
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-summary-of-the-recursive-problem"
+    },
+    {
+      "level": 3,
+      "title": "Leading orders in alpha",
+      "number": null,
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-leading-orders-in-alpha"
+    },
+    {
+      "level": 3,
+      "title": "Numerical analysis",
+      "number": null,
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-numerical-analysis"
+    },
+    {
+      "level": 3,
+      "title": "Large N solution",
+      "number": null,
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-large-n-solution"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and open problems",
+      "number": null,
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-conclusions-and-open-problems"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "0",
+      "labelEnd": "1",
+      "words": 217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramon",
+          "heading": false
+        },
+        {
+          "term": "exponential corrections",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": false
+        },
+        {
+          "term": "trieste",
+          "heading": false
+        },
+        {
+          "term": "unige",
+          "heading": false
+        },
+        {
+          "term": "marcos",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP On the structure of trans-series in quantum field theory Marcos Mari˜noa, Ramon Miravitllasa and Tom´as Reisb aD´epartement de Physique Th´eorique et Section de Math´ematiques Universit´e de Gen`eve, Gen`eve, CH-1211 Switzerland bSISSA, 34136 Trieste, Italy, and INFN, Sezione di Trieste, 34127 Trieste, Italy E-mail: marcos.marino@unige.ch, ramon.miravitllasmas@unige.ch, treis@sissa.it",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2302.08363v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 950,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-linear odes",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "partial series",
+          "heading": false
+        },
+        {
+          "term": "convergence property",
+          "heading": false
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        },
+        {
+          "term": "exact wkb",
+          "heading": false
+        },
+        {
+          "term": "integrable models",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1 2 Trans-series and their structure 2 3 The large N sigma model, revisited 4 4 Complex Chern–Simons theory 8 5 Integrable models 10 5.1 The free energy of integrable models 10 5.2 Bosonic models 13 5.2.1 Trans-series computation 14 5.2.2 Numerical analysis 19 5.3 The Gross–Neveu model 23 5.3.1 Summary of the recursive problem 24 5.3.2 Leading orders in ˜α 27 5.3.3 Numerical analysis 28 5.3.4 Large N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-trans-series-and-their-structure",
+      "number": null,
+      "title": "Trans-series and their structure",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trans-series",
+          "heading": true
+        },
+        {
+          "term": "resummed trans-series",
+          "heading": false
+        },
+        {
+          "term": "non-linear odes",
+          "heading": false
+        },
+        {
+          "term": "nonlinear odes",
+          "heading": false
+        },
+        {
+          "term": "borel resummations",
+          "heading": false
+        },
+        {
+          "term": "lateral borel",
+          "heading": false
+        },
+        {
+          "term": "resummations exist",
+          "heading": false
+        },
+        {
+          "term": "partial series",
+          "heading": false
+        }
+      ],
+      "extract": "Trans-series and their structure In this paper we will consider trans-series involving two small parameters: a coupling constant g and an exponentially small term of the form y = g−be−A/g. (2.1) – 2 – These trans-series are of the form Φ = X ℓ≥0 yℓφℓ(g), (2.2) where φℓ(g) = X n≥0 an,ℓgn (2.3) are formal power series in g. Some of the examples we will consider will be however slightly more general, including for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-large-n-sigma-model-revisited",
+      "number": null,
+      "title": "The large N sigma model, revisited",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1844,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full trans-series",
+          "heading": false
+        },
+        {
+          "term": "sigma model",
+          "heading": true
+        },
+        {
+          "term": "lateral resummation",
+          "heading": false
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        },
+        {
+          "term": "partial series",
+          "heading": false
+        },
+        {
+          "term": "convergence property",
+          "heading": false
+        },
+        {
+          "term": "non-linear sigma",
+          "heading": false
+        },
+        {
+          "term": "two-point function",
+          "heading": false
+        }
+      ],
+      "extract": "The large N sigma model, revisited One of the most explicit results for a trans-series expansion in QFT was obtained in [32] for the self-energy of the O(N) non-linear sigma model, at the first non-trivial order in the 1/N expansion. Let us briefly review the result and analyze the properties of the trans-series. The basic field of the O(N) non-linear sigma model is a scalar field σ : R2 →RN satisfying the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-complex-chernsimons-theory",
+      "number": null,
+      "title": "Complex Chern–Simons theory",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ell varphi",
+          "heading": false
+        },
+        {
+          "term": "tilde ell",
+          "heading": false
+        },
+        {
+          "term": "tau sum",
+          "heading": false
+        },
+        {
+          "term": "qquad varphi",
+          "heading": false
+        },
+        {
+          "term": "tau left",
+          "heading": false
+        },
+        {
+          "term": "cite ggm",
+          "heading": false
+        },
+        {
+          "term": "varphi right",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-cs} Complex Chern--Simons (CS) theory is an ideal arena to study trans-series, since as a QFT it is essentially solvable, and at the same time it leads to highly non-trivial perturbative series. The mathematical program of applying resurgence in complex CS theory was pioneered in \\cite{garoufalidis}, and applied in e.g. \\cite{garo-costin,gmp}. In this section we will illustrate our considerations with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-integrable-models",
+      "number": null,
+      "title": "Integrable models",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec-integrable}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-the-free-energy-of-integrable-models",
+      "number": null,
+      "title": "The free energy of integrable models",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free energy",
+          "heading": true
+        },
+        {
+          "term": "omega frac",
+          "heading": false
+        },
+        {
+          "term": "equation epsilon",
+          "heading": false
+        },
+        {
+          "term": "cite mmr-an",
+          "heading": false
+        },
+        {
+          "term": "epsilon integral",
+          "heading": false
+        },
+        {
+          "term": "omega sigma",
+          "heading": false
+        },
+        {
+          "term": "cite hmn",
+          "heading": false
+        },
+        {
+          "term": "tilde epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "Two-dimensional, integrable, asymptotically free quantum field theories are an interesting family of toy models where one can obtain an explicit but highly non-trivial trans-series for the free energy \\cite{fkw-letter,fkw, volin, mr-ren, abbh1, abbh2, mmr, dmss, mmr-an, bbv, bbhv, bbhv2, mmr-theta, bbv2,s-thompson}, and therefore one can hope that the convergent property of the partial series can be tested in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-bosonic-models",
+      "number": null,
+      "title": "Bosonic models",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bosonic models",
+          "heading": true
+        },
+        {
+          "term": "alpha tilde",
+          "heading": false
+        },
+        {
+          "term": "varphi ell",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde def",
+          "heading": false
+        },
+        {
+          "term": "energy transseries",
+          "heading": false
+        },
+        {
+          "term": "residue ambiguity",
+          "heading": false
+        },
+        {
+          "term": "sum ell",
+          "heading": false
+        }
+      ],
+      "extract": "Using the techniques described in \\cite{mmr-an}, one can extract the trans-series of the free energy from the equations above. In this section we will concentrate on the bosonic models, which include the $O(N)$ non-linear sigma model and the $SU(N)$ principal chiral field (PCF). The structure of the trans-series is generically given by \\begin{equation} \\Phi_\\pm(\\tilde{\\alpha}) = \\sum_{\\ell\\geq 0} y^\\ell",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-trans-series-computation",
+      "number": null,
+      "title": "Trans-series computation",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "14",
+      "labelEnd": "19",
+      "words": 2206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa biggl",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": true
+        },
+        {
+          "term": "multline frac",
+          "heading": false
+        },
+        {
+          "term": "alpha biggr",
+          "heading": false
+        },
+        {
+          "term": "log biggl",
+          "heading": false
+        },
+        {
+          "term": "trans-series ansatz",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "frac omega",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec_bosonic_models} In this section, we will compute the formal power series $\\varphi_\\ell(\\tilde\\alpha)$ appearing in the trans-series \\eqref{eq_free_energy_transseries}. Our computation is limited to the leading and subleading corrections in $\\tilde{\\alpha}$, but to arbitrary order $\\ell$ in the exponential corrections. This will be essential in order to extract the large order behavior of the coefficients",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-numerical-analysis",
+      "number": null,
+      "title": "Numerical analysis",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 1515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma ell",
+          "heading": false
+        },
+        {
+          "term": "delta ell",
+          "heading": false
+        },
+        {
+          "term": "ell frac",
+          "heading": false
+        },
+        {
+          "term": "tab pcf",
+          "heading": false
+        },
+        {
+          "term": "ell log",
+          "heading": false
+        },
+        {
+          "term": "coeff bosonic",
+          "heading": false
+        },
+        {
+          "term": "pcf model",
+          "heading": false
+        },
+        {
+          "term": "non-linear sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Using the method discussed in the previous section, we can now generate the first two coefficients of the series \\begin{equation} \\varphi_\\ell(\\tilde\\alpha) = a_{0,\\ell} + a_{1,\\ell} \\tilde\\alpha + \\mathcal{O}\\big(\\tilde\\alpha^2\\big) \\end{equation} appearing in the trans-series \\eqref{eq_free_energy_transseries}, up to very large order in $\\ell$. To the very first values of $\\ell$, we find the following analytic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-the-grossneveu-model",
+      "number": null,
+      "title": "The Gross–Neveu model",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac upsilon",
+          "heading": false
+        },
+        {
+          "term": "alpha tilde",
+          "heading": false
+        },
+        {
+          "term": "cite fnw",
+          "heading": false
+        },
+        {
+          "term": "quad upsilon",
+          "heading": false
+        },
+        {
+          "term": "omega rho",
+          "heading": false
+        },
+        {
+          "term": "omega big",
+          "heading": false
+        },
+        {
+          "term": "alpha delta",
+          "heading": false
+        },
+        {
+          "term": "equation frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec_gross_neveu} The Gross--Neveu model is an integrable model of $N$ Majorana fermions in 1+1 dimensions with a quartic interaction. We restrict ourselves to the case $N>4$. Its Lagrangian is given by \\begin{equation} \\CL = \\frac{\\ri}{2}\\bar{\\boldsymbol{\\chi}}\\cdot\\slashed{\\partial}\\boldsymbol{\\chi}+\\frac{g^2}{8}\\left(\\bar{\\boldsymbol{\\chi}}\\cdot\\boldsymbol{\\chi}\\right)^2. \\end{equation} This model is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-summary-of-the-recursive-problem",
+      "number": null,
+      "title": "Summary of the recursive problem",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upsilon mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rho upsilon",
+          "heading": false
+        },
+        {
+          "term": "frac upsilon",
+          "heading": false
+        },
+        {
+          "term": "upsilon right",
+          "heading": false
+        },
+        {
+          "term": "delta upsilon",
+          "heading": false
+        },
+        {
+          "term": "upsilon log",
+          "heading": false
+        },
+        {
+          "term": "upsilon sum",
+          "heading": false
+        },
+        {
+          "term": "upsilon big",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gn-sum} In contrast to the bosonic models studied in the previous section, the trans-series expansion of the integral equation of the Gross--Neveu model can be cast into a simple recursive problem. Here, we summarize its key ingredients, originally presented in \\cite{mmr-an}. We introduce the variable $\\eta$ and the coupling $v$ such that \\begin{equation} \\frac{1}{v}-2\\Delta\\log v = 2B, \\quad \\omega = \\ri",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-leading-orders-in-alpha",
+      "number": null,
+      "title": "Leading orders in alpha",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leading",
+          "heading": true
+        },
+        {
+          "term": "ℓare",
+          "heading": false
+        },
+        {
+          "term": "leading order",
+          "heading": false
+        },
+        {
+          "term": "shortcuts",
+          "heading": false
+        },
+        {
+          "term": "transcendental",
+          "heading": false
+        }
+      ],
+      "extract": "The leading order in ˜α is obtained by neglecting all terms with the integral operator I. In this case we obtain simple recursive relations. The uk are solved by u(0,0) k = Υ 2k −1, u(0,s) k = Υ 2 X s+1 2 ≥r≥1 ¯ρru(0,s+1−2r) r k + r −1 , (5.101) which is simple to solve order by order, although hard to solve in closed form. Similarly, we obtain u(0,0) i = 1, u(0,s) i = Υ X s+1 2 ≥r≥1 ¯ρru(0,s+1−2r) r 2r −1 + Υ ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-numerical-analysis",
+      "number": null,
+      "title": "Numerical analysis",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h-plane",
+          "heading": false
+        },
+        {
+          "term": "radius",
+          "heading": false
+        },
+        {
+          "term": "bosonic models",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": false
+        },
+        {
+          "term": "richardson",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        },
+        {
+          "term": "coefficients",
+          "heading": false
+        }
+      ],
+      "extract": "Numerical analysis Using these recursion relations, the coefficients a0,ℓcan be obtained analytically, order by order. However, their expressions are very intricate and a general closed formula is unreachable. One straightforward approach is to obtain the coefficients as exact functions of N. This way, one can quickly generate data for different values of N, but it takes significant time to compute the series. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-large-n-solution",
+      "number": null,
+      "title": "Large N solution",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "branch cut",
+          "heading": false
+        },
+        {
+          "term": "h-plane",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": false
+        },
+        {
+          "term": "free energy",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "perturbative",
+          "heading": false
+        },
+        {
+          "term": "happen",
+          "heading": false
+        }
+      ],
+      "extract": "Large N solution It is interesting to compare our results with the large N expansion of the free energy in [50, 53] (see also [23] for further details). There, it is obtained that the leading order term in the small ∆(large N) expansion of the free energy, F(h) = −h2 2π X n≥0 Fn(h)∆n, (5.111) is given by F0(h) = r 1 −m2 h2 −m2 h2 cosh−1 \u0012 h m \u0013 . (5.112) As expected, F0(m) = 0. Furthermore, in the h-plane, there is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-conclusions-and-open-problems",
+      "number": null,
+      "title": "Conclusions and open problems",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 35,
+      "labelStart": "30",
+      "labelEnd": "34",
+      "words": 1889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic trans-series",
+          "heading": false
+        },
+        {
+          "term": "balog",
+          "heading": false
+        },
+        {
+          "term": "renormalons",
+          "heading": false
+        },
+        {
+          "term": "bajnok",
+          "heading": false
+        },
+        {
+          "term": "vona",
+          "heading": false
+        },
+        {
+          "term": "mass gap",
+          "heading": false
+        },
+        {
+          "term": "wiegmann",
+          "heading": false
+        },
+        {
+          "term": "mari",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions and open problems In this paper we have addressed a question which we think is important in the resurgence program of QFT: when is the infinite sum over the non-perturbative sectors well defined, after Borel resummation in the coupling constant? Inspired by [4], we have addressed a proxy question, concerning the convergence of the infinite family of what we have called partial series. In some simple",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "trans-series convergence",
+      "heading": false
+    },
+    {
+      "term": "trans-series eqref",
+      "heading": false
+    },
+    {
+      "term": "trans-series expansion",
+      "heading": false
+    },
+    {
+      "term": "convergent trans-series",
+      "heading": false
+    },
+    {
+      "term": "trans-series ansatz",
+      "heading": false
+    },
+    {
+      "term": "resummed trans-series",
+      "heading": false
+    },
+    {
+      "term": "analytic trans-series",
+      "heading": false
+    },
+    {
+      "term": "formal trans-series",
+      "heading": false
+    },
+    {
+      "term": "full trans-series",
+      "heading": false
+    },
+    {
+      "term": "general trans-series",
+      "heading": false
+    },
+    {
+      "term": "trans-series involving",
+      "heading": false
+    },
+    {
+      "term": "following trans-series",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The sequences (3.24) for n = 1 (left) and n = 6 (right), represented by black dots, together with their Richardson transforms of order 3, represented by red dots",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The singularity structure of the large N two point function is shown on the left, in the p2/m2 plane. There is a single branch cut singularity at −9, as it follows from (3.23). At finite N, it has been argued in [32] that there will be many singularities along the negative real axis, at positions −(",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The free energy F(h) has a branch cut singularity at h = m",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Generic singularity structure of σ(ω). The second integral in (5.14) or (5.15) is integrated over",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Sequence |a0,ℓ/a0,ℓ+1| for the free energy of the O(8) non-linear sigma model (black), together with the 1st (red) and 2nd (orange) Richardson transforms. The dashed line is the value R to which the sequences converge",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Sequence ℓlog",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Parameters R and bn of the asymptotics (2.8), for the free energy of the O(N) non-linear sigma model at different values of N. We extract the parameters from the leading n = 0 and subleading n = 1 corrections in ˜α. For the radius R, we find numerical evidence that this parameter does not depend on",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Parameters R and bn of the asymptotics (2.8), for the free energy of the SU(N) PCF model at different values of N",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Estimates for the radius of convergence R as a function of ∆= (N −2)−1",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Estimated radius as a function of N, using 200 numeric coefficients. R is the radius in the y-plane, while Rh is the radius in the h-plane",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2302.08363v2"
+  }
+}

@@ -1,0 +1,1938 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0410233v4",
+  "title": "arxiv-math-0410233v4",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Cone deformations",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-cone-deformations"
+    },
+    {
+      "level": 2,
+      "title": "Cusp shapes",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-13-cusp-shapes"
+    },
+    {
+      "level": 2,
+      "title": "Applications to knot theory",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-applications-to-knot-theory"
+    },
+    {
+      "level": 2,
+      "title": "Organization of this paper",
+      "number": "1.5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-organization-of-this-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": "1.6",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Background on Cone Deformation",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-2-background-on-cone-deformation"
+    },
+    {
+      "level": 2,
+      "title": "Infinitesimal deformations",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-21-infinitesimal-deformations"
+    },
+    {
+      "level": 2,
+      "title": "Boundary terms",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-22-boundary-terms"
+    },
+    {
+      "level": 1,
+      "title": "Change in Cusp Shape",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-change-in-cusp-shape"
+    },
+    {
+      "level": 2,
+      "title": "Boundary relations",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-boundary-relations"
+    },
+    {
+      "level": 2,
+      "title": "Teichmüller Space",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-teichmüller-space"
+    },
+    {
+      "level": 2,
+      "title": "Normalized lengths on the torus",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-normalized-lengths-on-the-torus"
+    },
+    {
+      "level": 1,
+      "title": "Bounding the boundary terms",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-bounding-the-boundary-terms"
+    },
+    {
+      "level": 2,
+      "title": "Convex combinations of deformations",
+      "number": "4.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-convex-combinations-of-deformations"
+    },
+    {
+      "level": 2,
+      "title": "Selecting local deformations",
+      "number": "4.2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-selecting-local-deformations"
+    },
+    {
+      "level": 2,
+      "title": "Boundary bound",
+      "number": "4.3",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-43-boundary-bound"
+    },
+    {
+      "level": 1,
+      "title": "Bounding the meridian",
+      "number": "5",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-bounding-the-meridian"
+    },
+    {
+      "level": 1,
+      "title": "Cusp shapes of hyperbolic knots",
+      "number": "6",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-6-cusp-shapes-of-hyperbolic-knots"
+    },
+    {
+      "level": 2,
+      "title": "An initial manifold",
+      "number": "6.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-61-an-initial-manifold"
+    },
+    {
+      "level": 2,
+      "title": "Finding values for tube radius",
+      "number": "6.2",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-62-finding-values-for-tube-radius"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "6.3",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-63-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Example: 2–bridge knots",
+      "number": "6.4",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-64-example-2bridge-knots"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "twist",
+          "heading": false
+        },
+        {
+          "term": "horospherical",
+          "heading": false
+        },
+        {
+          "term": "jessica",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0410233v4 [math.GT] 23 Jul 2008 CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL Abstract. A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bounds are in terms of the change in structure in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0410233v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-motivation",
+      "number": "1.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 745,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "main-norm-length",
+          "heading": false
+        },
+        {
+          "term": "main-cusp",
+          "heading": false
+        },
+        {
+          "term": "main-norm-height",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "orientable manifold",
+          "heading": false
+        },
+        {
+          "term": "lower bounds",
+          "heading": false
+        }
+      ],
+      "extract": "The interplay between geometry and topology is an important theme in the study of 3--manifolds. Since Thurston's work in the late 1970's, it has been known that any Haken 3--manifold has a geometric decomposition [@thurston]. Recently Perelman has announced a proof that any closed, orientable 3--manifold has such a decomposition (the geometrization conjecture). However, it is important not only to know the existence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-13-cusp-shapes",
+      "number": "1.3",
+      "title": "Cusp shapes",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "3 However, as far as we are aware, the results of this paper are the ﬁrst of their kind giving actual geometric bounds on cusp shape based only on a diagram.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-12-cone-deformations",
+      "number": "1.2",
+      "title": "Cone deformations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1057,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cone deformations",
+          "heading": true
+        },
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "bromberg",
+          "heading": false
+        },
+        {
+          "term": "incomplete hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "added solid",
+          "heading": false
+        }
+      ],
+      "extract": "Our primary technique is cone deformation, which we will now describe. Using properties of cone deformations, we obtain geometric information on the topological process of Dehn filling. ::: define Given a manifold $M$ with torus boundary $\\partial M$ and specified slope $s$ on $\\partial M$, we obtain a new manifold by gluing a solid torus to $\\partial M$ such that $s$ bounds a disk in the solid torus. This is called",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-applications-to-knot-theory",
+      "number": "1.4",
+      "title": "Applications to knot theory",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shortest non-meridional",
+          "heading": false
+        },
+        {
+          "term": "non-meridional slope",
+          "heading": false
+        },
+        {
+          "term": "twist regions",
+          "heading": false
+        },
+        {
+          "term": "twist reduced",
+          "heading": false
+        },
+        {
+          "term": "main-knot-cusp",
+          "heading": false
+        },
+        {
+          "term": "least twist",
+          "heading": false
+        },
+        {
+          "term": "main-norm-height",
+          "heading": false
+        },
+        {
+          "term": "reduced diagram",
+          "heading": false
+        }
+      ],
+      "extract": "In the last part of this paper we give specific applications of Theorem [\\[thm:main-norm-height\\]](#thm:main-norm-height){reference-type=\"ref\" reference=\"thm:main-norm-height\"}. We determine bounds on the cusp shape of a knot based solely on a diagram of that knot. Before we state the results, we review some definitions. ::: define Let $K \\subset S^3$ be a knot with diagram $D(K)$. Define a *twist region* to be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-organization-of-this-paper",
+      "number": "1.5",
+      "title": "Organization of this paper",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deform-cone",
+          "heading": false
+        },
+        {
+          "term": "main-norm-length",
+          "heading": false
+        },
+        {
+          "term": "main-cusp",
+          "heading": false
+        },
+        {
+          "term": "main-norm-height",
+          "heading": false
+        },
+        {
+          "term": "merbound",
+          "heading": false
+        },
+        {
+          "term": "cusp-est",
+          "heading": false
+        },
+        {
+          "term": "bdrybound",
+          "heading": false
+        },
+        {
+          "term": "main-knot-cusp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:organize label=\"sec:organize\"} In Section [\\[sec:deform-cone\\]](#sec:deform-cone){reference-type=\"ref\" reference=\"sec:deform-cone\"}, we review background information on cone deformations. In Section [\\[sec:cusp-est\\]](#sec:cusp-est){reference-type=\"ref\" reference=\"sec:cusp-est\"}, we begin the proofs of Theorems [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\" reference=\"thm:main-cusp\"},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-acknowledgments",
+      "number": "1.6",
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "willingness",
+          "heading": false
+        },
+        {
+          "term": "lean",
+          "heading": false
+        },
+        {
+          "term": "helpful",
+          "heading": false
+        }
+      ],
+      "extract": "helpful conversations. We lean heavily on his results with Craig Hodgson. His willingness to clarify, explain, and correct has made this paper possible. We would also like to thank the referee for very carefully reading this paper, and for many helpful suggestions, corrections, and comments.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-2-background-on-cone-deformation",
+      "number": "2",
+      "title": "Background on Cone Deformation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cone",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic cone",
+          "heading": false
+        },
+        {
+          "term": "kerckhoﬀ",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will recall deﬁnitions associated with cone deformations and review relevant results from work of Hodgson and Kerckhoﬀ([13], [14]). Deﬁnition 2.1. Let M be a 3–manifold containing a closed 1–manifold Σ. A hyperbolic cone structure on M is an incomplete hyperbolic structure on X = M −Σ, whose completion is singular along Σ. A cross section of a component of Σ is a hyperbolic cone with angle α,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-21-infinitesimal-deformations",
+      "number": "2.1",
+      "title": "Infinitesimal deformations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinitesimal deformations",
+          "heading": true
+        },
+        {
+          "term": "omega eta",
+          "heading": false
+        },
+        {
+          "term": "omega ell",
+          "heading": false
+        },
+        {
+          "term": "decompose omega",
+          "heading": false
+        },
+        {
+          "term": "tube radius",
+          "heading": false
+        },
+        {
+          "term": "form omega",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal isometries",
+          "heading": false
+        },
+        {
+          "term": "horoball neighborhood",
+          "heading": false
+        }
+      ],
+      "extract": "Now, we may study deformations by considering possible \"derivatives at time $t$\" of $X_t$, or infinitesimal deformations of hyperbolic structure, for any time $t$. Each of these infinitesimal deformations corresponds to an element in a certain cohomology group $H^1(X; E)$, where recall $X=M-\\Sigma$. We will be manipulating elements of $H^1(X;E)$, so we recall some information on their structure. ### Cohomology Given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-boundary-terms",
+      "number": "2.2",
+      "title": "Boundary terms",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "main-cusp",
+          "heading": false
+        },
+        {
+          "term": "deta",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "tubular neighborhood",
+          "heading": false
+        },
+        {
+          "term": "omega-decomp",
+          "heading": false
+        },
+        {
+          "term": "deform-cone",
+          "heading": false
+        },
+        {
+          "term": "outward normal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:boundary-terms label=\"subsec:boundary-terms\"} Our proof of Theorem [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\" reference=\"thm:main-cusp\"} will involve certain boundary terms. In this section, we define these terms. We explain how they arise and recall certain properties. They will be used in the proof of Theorem [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-change-in-cusp-shape",
+      "number": "3",
+      "title": "Change in Cusp Shape",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "In Section 2, we set up notation and reviewed known results. Given this information, we are ready to begin the proof of Theorem 1.2. CUSP SHAPES UNDER CONE DEFORMATION",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-boundary-relations",
+      "number": "3.1",
+      "title": "Boundary relations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega l-cusp",
+          "heading": false
+        },
+        {
+          "term": "eta-bound",
+          "heading": false
+        },
+        {
+          "term": "eta mbox",
+          "heading": false
+        },
+        {
+          "term": "eta left",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "eta matrix",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        }
+      ],
+      "extract": "Restrict to the case when we have a single cusp. We will let $U$ be a horoball neighborhood of the one cusp, and $V_1$, ..., $V_n$ be tubular neighborhoods of the components of the singular locus $\\Sigma$, each with radius $R$. Here, we are letting $n$ be the total number of components of $\\Sigma$. We will assume throughout that these neighborhoods are chosen such that all intersections of distinct neighborhoods are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-teichmüller-space",
+      "number": "3.2",
+      "title": "Teichmüller Space",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichmüller space",
+          "heading": true
+        },
+        {
+          "term": "teichmüller metric",
+          "heading": false
+        },
+        {
+          "term": "teichmüller geodesic",
+          "heading": false
+        },
+        {
+          "term": "teichmüller distance",
+          "heading": false
+        },
+        {
+          "term": "lambda zeta",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal change",
+          "heading": false
+        },
+        {
+          "term": "b-gamma",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal deformation",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn our attention to the term $(a^2+b^2)$ in Lemma [\\[lemma:b_U=area\\]](#lemma:b_U=area){reference-type=\"ref\" reference=\"lemma:b_U=area\"}. This term is closely related to the change in metric of the torus $\\partial U$. Under the hyperbolic metric on $X=M-\\Sigma$, the boundary $\\partial U$ inherits a Euclidean structure. This gives a point in the Teichmüller space of the torus, $\\mathcal{T}(T^2)$. ::: remark",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-normalized-lengths-on-the-torus",
+      "number": "3.3",
+      "title": "Normalized lengths on the torus",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dot leq",
+          "heading": false
+        },
+        {
+          "term": "sqrt mbox",
+          "heading": false
+        },
+        {
+          "term": "mbox area",
+          "heading": false
+        },
+        {
+          "term": "dot frac",
+          "heading": false
+        },
+        {
+          "term": "mbox length",
+          "heading": false
+        },
+        {
+          "term": "derivative dot",
+          "heading": false
+        },
+        {
+          "term": "normalized length",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:normlength label=\"sec:normlength\"} We are interested in determining how *normalized lengths* of curves on the torus $\\partial U$ change over the deformation. ::: define Let $\\beta$ be a slope on the torus $T$, that is, an isotopy class of simple closed curves. The normalized length of $\\beta$ is defined to be: $$\\mbox{Normalized length}(\\beta) = \\frac{\\mbox{Length}(\\beta)}{\\sqrt{\\mbox{Area}(T)}},$$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-bounding-the-boundary-terms",
+      "number": "4",
+      "title": "Bounding the boundary terms",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bounding",
+          "heading": true
+        },
+        {
+          "term": "revisiting",
+          "heading": false
+        },
+        {
+          "term": "jessica",
+          "heading": false
+        }
+      ],
+      "extract": "4. Bounding the boundary terms In this section, we ﬁnish the proofs of Theorems 1.2 and 1.3 by ﬁnding a parameterization of the cone deformation for which we may bound the sum P bj. In order to bound P bj, we need more explicit formulas for the bj. Recall that bj was deﬁned in Deﬁnition 2.2 as: bj = bVj(η0, η0). Here η0 is the real part of the 1–form ω0 in the j-th component Vj of a tubular neighborhood of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-41-convex-combinations-of-deformations",
+      "number": "4.1",
+      "title": "Convex combinations of deformations",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega decomp",
+          "heading": false
+        },
+        {
+          "term": "omega ell",
+          "heading": false
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "cone angle",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "singular locus",
+          "heading": false
+        },
+        {
+          "term": "vnonempty",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:convex label=\"subsec:convex\"} Recall that corresponding to an infinitesimal deformation is the 1--form $\\omega_0$. We want $\\omega_0$ to have certain desired properties. By equation ([\\[eqn:omega_0-decomp\\]](#eqn:omega_0-decomp){reference-type=\"ref\" reference=\"eqn:omega_0-decomp\"}), we can decompose $\\omega_0 = (\\omega_0)_j$ in $V_j$ as $$(\\omega_0)_j =u_j\\, \\omega_m + (x_j+iy_j)\\,\\omega_\\ell,$$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-selecting-local-deformations",
+      "number": "4.2",
+      "title": "Selecting local deformations",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vnonempty label",
+          "heading": false
+        },
+        {
+          "term": "cone angles",
+          "heading": false
+        },
+        {
+          "term": "nonempty open",
+          "heading": false
+        },
+        {
+          "term": "arc components",
+          "heading": false
+        },
+        {
+          "term": "j-bound",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        },
+        {
+          "term": "hat",
+          "heading": false
+        },
+        {
+          "term": "singular locus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Vnonempty label=\"subsec:Vnonempty\"} Each choice of $\\bar{s} = (s_1, \\dots, s_n)$ corresponds to a local deformation with 1--form $(\\omega_0)_j$ expressed in $V_j$ as in equation ([\\[eqn:omega_0-S\\]](#eqn:omega_0-S){reference-type=\"ref\" reference=\"eqn:omega_0-S\"}). In terms of the deformation, varying $\\bar{s}$ varies the rates at which the cone angles are changing (instantaneously). When $\\bar{s}=(1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-boundary-bound",
+      "number": "4.3",
+      "title": "Boundary bound",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup cap",
+          "heading": false
+        },
+        {
+          "term": "frac tanh",
+          "heading": false
+        },
+        {
+          "term": "cap partial",
+          "heading": false
+        },
+        {
+          "term": "tube radius",
+          "heading": false
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "sum partial",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "frac upsilon",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:bd} In this subsection, we will show that there exists a parameterization of the cone deformation such that the sum of the terms $b_j$ is of order $n$. We first need two lemmas. Lemma \\ref{lemma:b_j-bound} gives us an initial bound on each $b_j$. Lemma \\ref{lemma:choose-S} will allow us to improve this bound. It is in the proof of Lemma \\ref{lemma:b_j-bound}, giving the initial bounds on the $b_j$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-bounding-the-meridian",
+      "number": "5",
+      "title": "Bounding the meridian",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1204,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tube radius",
+          "heading": false
+        },
+        {
+          "term": "singular locus",
+          "heading": false
+        },
+        {
+          "term": "horoball neighborhood",
+          "heading": false
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic cone",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        },
+        {
+          "term": "developing map",
+          "heading": false
+        },
+        {
+          "term": "normalized height",
+          "heading": false
+        }
+      ],
+      "extract": "We now show that the length of the shortest nontrivial simple closed curve on the cusp torus is bounded throughout the cone deformation, provided the tube radius about the singular locus stays large. Recall here that we are calling this shortest curve the meridian of the torus. The following lemma is the last piece needed to complete the proof of Theorem 1.4. Lemma 5.1. Suppose M is a hyperbolic cone manifold with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-6-cusp-shapes-of-hyperbolic-knots",
+      "number": "6",
+      "title": "Cusp shapes of hyperbolic knots",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twred",
+          "heading": false
+        },
+        {
+          "term": "main-norm-height",
+          "heading": false
+        },
+        {
+          "term": "normalized height",
+          "heading": false
+        },
+        {
+          "term": "def",
+          "heading": false
+        }
+      ],
+      "extract": "We will now apply the results of the previous sections to determine bounds on the shapes of cusps of knot complements. In particular, let $K$ be a hyperbolic knot with a prime, twist reduced diagram, where prime and twist reduced are defined in Definitions [\\[def:prime\\]](#def:prime){reference-type=\"ref\" reference=\"def:prime\"} and [\\[def:twred\\]](#def:twred){reference-type=\"ref\" reference=\"def:twred\"}. We will bound",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-61-an-initial-manifold",
+      "number": "6.1",
+      "title": "An initial manifold",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white faces",
+          "heading": false
+        },
+        {
+          "term": "circle packing",
+          "heading": false
+        },
+        {
+          "term": "shaded faces",
+          "heading": false
+        },
+        {
+          "term": "geodesic white",
+          "heading": false
+        },
+        {
+          "term": "white sides",
+          "heading": false
+        },
+        {
+          "term": "crossing circles",
+          "heading": false
+        },
+        {
+          "term": "andreev theorem",
+          "heading": false
+        },
+        {
+          "term": "along white",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:init label=\"subsec:init\"} Begin with a prime, twist reduced diagram of the knot $K$. At each twist region of the diagram, add a closed curve encircling two strands, called a *crossing circle*. We now have a diagram of a link, which we call $J$. The link complement $S^3-J$ is homeomorphic to the complement of the link $L$ obtained from $J$ by removing pairs of crossings from each twist region. See Figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-62-finding-values-for-tube-radius",
+      "number": "6.2",
+      "title": "Finding values for tube radius",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tube radius",
+          "heading": true
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "cone angle",
+          "heading": false
+        },
+        {
+          "term": "singular locus",
+          "heading": false
+        },
+        {
+          "term": "i-th twist",
+          "heading": false
+        },
+        {
+          "term": "twist region",
+          "heading": false
+        }
+      ],
+      "extract": "radius remains larger than R1 = 0.56 throughout the cone deformation. We can do so by again applying work of Hodgson and Kerckhoﬀ[14]. They show that in the neighborhood of the j-th component of the singular locus, we can increase the cone angle from 0 to 2π, maintaining the tube radius R ≥R1, provided equation (24) of the proof of Lemma 4.3 holds. That is, consider a particular component of the singular locus Σj.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-63-proof-of-theorem",
+      "number": "6.3",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twist region",
+          "heading": false
+        },
+        {
+          "term": "tube radius",
+          "heading": false
+        },
+        {
+          "term": "normalized height",
+          "heading": false
+        },
+        {
+          "term": "least crossings",
+          "heading": false
+        },
+        {
+          "term": "twist reduced",
+          "heading": false
+        },
+        {
+          "term": "crossings required",
+          "heading": false
+        },
+        {
+          "term": "cone deformation",
+          "heading": false
+        },
+        {
+          "term": "cusp",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 1.8 Let K be a knot in S3 which admits a prime, twist reduced diagram with a total of n ≥2 twist regions, with each twist region containing at least c ≥116 crossings. In a hyperbolic structure on S3 −K, take a horoball neighborhood U about K. Normalize so that the meridian on ∂U has length 1. Then the height H of the cusp of S3 −K satisﬁes: H ≥n (1 −f(c))2. Here f(c) is a positive function of c which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-64-example-2bridge-knots",
+      "number": "6.4",
+      "title": "Example: 2–bridge knots",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bridge",
+          "heading": true
+        },
+        {
+          "term": "rectangles tiling",
+          "heading": false
+        },
+        {
+          "term": "circle tangency",
+          "heading": false
+        },
+        {
+          "term": "circle packing",
+          "heading": false
+        },
+        {
+          "term": "tangencies",
+          "heading": false
+        },
+        {
+          "term": "normalized height",
+          "heading": false
+        },
+        {
+          "term": "bridge knot",
+          "heading": false
+        },
+        {
+          "term": "circles tangent",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:2bridge label=\"subsec:2bridge\"} The requirement of Theorem [\\[thm:main-knot-cusp\\]](#thm:main-knot-cusp){reference-type=\"ref\" reference=\"thm:main-knot-cusp\"} that there be at least $116$ crossings per twist region was based on the worst case analysis. This came from Proposition [\\[prop:proj-height\\]](#prop:proj-height){reference-type=\"ref\" reference=\"prop:proj-height\"}, in which we showed that in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zbl pre",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic cone-manifolds",
+          "heading": false
+        },
+        {
+          "term": "ian agol",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Colin C. Adams, Augmented alternating link complements are hyperbolic, Low- dimensional topology and Kleinian groups (Coventry/Durham, 1984), London Math. Soc. Lecture Note Ser., vol. 112, Cambridge Univ. Press, Cambridge, 1986, pp. 115– 130, MR0903861, Zbl 0632.57008. [2] , Waist size for cusps in hyperbolic 3-manifolds, Topology 41 (2002), no. 2, 257–270, MR1876890, Zbl 0985.57012. CUSP SHAPES UNDER CONE",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cone deformation",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic cone",
+      "heading": false
+    },
+    {
+      "term": "cone manifold",
+      "heading": false
+    },
+    {
+      "term": "cusp torus",
+      "heading": false
+    },
+    {
+      "term": "cone angle",
+      "heading": false
+    },
+    {
+      "term": "cone structure",
+      "heading": false
+    },
+    {
+      "term": "cusp shapes",
+      "heading": true
+    },
+    {
+      "term": "singular locus",
+      "heading": false
+    },
+    {
+      "term": "ref eqn",
+      "heading": false
+    },
+    {
+      "term": "ref thm",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic dehn",
+      "heading": false
+    },
+    {
+      "term": "normalized height",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Proof of Lemma 4.1 when k = 3",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Faces TI illustrated when n = 3",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The top edge of the quadrilateral maps to the shortest path on ∂U under the covering projection",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Left to right: The link K",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Left: Gluing 2–punctured discs with no crossings. Right: Gluing 2–punctured discs with a single crossing",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Create a trivalent graph by replacing each twist region with an edge",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "(a.) Form of Γ if γ has an edge with a single vertex at both endpoints. (b.) Corresponding form of original link diagram",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Form of Γ when γ has two vertices connected by two distinct edges. In (a), the edges of γ are the dashed lines, with one of the vertices in A and the other at ∞",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Possible forms of the original link diagram if γ contains two vertices connected by two distinct edges",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The form of the packing of circles about any vertex. Dashed circles correspond to the shaded faces of the polyhedron at this vertex",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Result of taking point of tangency to inﬁnity",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Graphs of ¯f(R) and I(R). Here ¯f(R) gives the bounds in Theorem 1.8 for given tube radius R. I(R) gives the number of crossings required to guarantee tube radius R",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Augmented link of a 2–bridge knot with an even number of twist regions, and an even number of crossings per region",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Trivalent graph associated with a 2–bridge knot",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Circle packing associated with a 2–bridge knot",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "16 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0410233v4"
+  }
+}

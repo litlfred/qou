@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2512.17832v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+      "dcterms:creator": [
+        "Coleridge Faraday, 1, ∗Ben Bert,1, † Jack Brand,1, ‡ Werner Vogelsang,2, §",
+        "Horowitz1, W. A.",
+        "3",
+        "¶"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2512.17832",
+      "dcterms:source": "library/arxiv-2512.17832v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2512.17832v1"
+    }
+  ]
+}

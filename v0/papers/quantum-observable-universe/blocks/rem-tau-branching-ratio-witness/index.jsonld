@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tau-branching-ratio-witness",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tau-branching-ratio-witness",
+  "kind": "remark",
+  "title": "Numerical witness: $\\mathrm{BR}(\\tau \\to e) / \\mathrm{BR}(\\tau \\to \\mu) \\approx 1.028$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tau-leptonic-universality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-tau-leptonic-universality",
+  "tags": [
+    "tau-decay",
+    "branching-ratio",
+    "witness",
+    "computation",
+    "lepton-universality",
+    "PDG"
+  ],
+  "text": "tau-branching-ratio-witness.md",
+  "provenance": "authored"
+}

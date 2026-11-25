@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ising",
+  "contains": [
+    "library/ising/sections/sec-front-matter",
+    "library/ising/sections/sec-000",
+    "library/ising/sections/sec-001",
+    "library/ising/sections/sec-002",
+    "library/ising/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems.\n\n**WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL**\n\n*JEHANNE DOUSSE AND VALENTIN FÉRAY*\n\n24 pp, 5 sections.\n\n**Abstract.** Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.\n\n**Outline.** Front matter; 3.1 At very high temperature, with a weak magn; 3.2 At very low temperature, without magnetic ; 4.1 Weighted dependency graph for the σi’s and; 4.2 Central limit theorem for occurrences of g",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ising",
+    "title_source": "slug",
+    "source_file": "ising.pdf",
+    "source_sha256": "9f84d7209731d299042c7ec2e84a2d7de7729f9e5537bd05596e8540c6254661",
+    "pages": 24,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

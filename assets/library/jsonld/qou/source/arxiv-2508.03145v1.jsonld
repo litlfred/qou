@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2508.03145v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Theta-Categories and Tannakian duality",
+  "contains": [
+    "library/arxiv-2508.03145v1/sections/sec-front-matter",
+    "library/arxiv-2508.03145v1/sections/sec-000",
+    "library/arxiv-2508.03145v1/sections/sec-001",
+    "library/arxiv-2508.03145v1/sections/sec-002",
+    "library/arxiv-2508.03145v1/sections/sec-003",
+    "library/arxiv-2508.03145v1/sections/sec-004",
+    "library/arxiv-2508.03145v1/sections/sec-005",
+    "library/arxiv-2508.03145v1/sections/sec-006",
+    "library/arxiv-2508.03145v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Θ -Categories and Tannakian duality — We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories.\n\n**Θ -Categories and Tannakian duality**\n\n*Joost NUITEN, Bertrand TOEN*\n\n33 pp, 9 sections.\n\n**Abstract.** We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories. We use this notion to prove a Tannakian duality statement, relating Θ-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of Θ-categories. This provides, over a base ring of arbitrary characteris- tic, a strong link between Tannakian Θ-categories and the schematic homotopy types of [Toe06].\n\n**Outline.** Front matter; -Categories; -Categories; -Categories of modules; Tannaka duality; -Categories of quasi-coherent and ind-perfect ; Tannakian -categories and Tannakian gerbes; The Tannakian duality theorem; Positive tor-dimension descent",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2508.03145&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2508.03145v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2508.03145v1.pdf",
+    "source_sha256": "2bf03452cb503e969a2a1b2b393f56270a02563f1e4e62798866f86edf76a988",
+    "pages": 33,
+    "arxiv": {
+      "id": "2508.03145",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "5 Aug 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

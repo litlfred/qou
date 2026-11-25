@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:braiding-eigenvalue-extraction",
+  "kind": "proposition",
+  "title": "Extraction of $q$ from the braiding eigenvalues",
+  "cites": [
+    "references/kassel1995",
+    "references/woronowicz1988"
+  ],
+  "tags": [
+    "braiding",
+    "eigenvalue",
+    "substrate-parameter",
+    "hecke-algebra",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.braiding_eigenvalue_extraction",
+  "text": "braiding-eigenvalue-extraction.md",
+  "leanSource": "braiding-eigenvalue-extraction.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,245 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2109.04664v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:introduction label=\"sec:introduction\"} Let $N\\ge2$ be an integer.\n\nIn [@Kashaev:MODPLA95], R. Kashaev introduced a link invariant $\\langle K\\rangle_{N}$ for a knot $K$ in the three-sphere $S^3$ by using the so-called quantum dilogarithm. In [@Kashaev:LETMP97], he studied its asymptotic behavior when $N\\to\\infty$ for several hyperbolic knots and conjectured that it would determine its hyperbolic volume for any *hyperbolic* knot, where a knot is called hyperbolic if its complement possesses a complete hyperbolic structure with finite volume. More precisely he conjectured\n\n::: conj\nLet $H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2109.04664v4  [math.GT]  16 Aug 2022\nON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES\nPOLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED\nWITH A REAL NUMBER\nHITOSHI MURAKAMI AND ANH T. TRAN\nDedicated to the memory of Toshie Takata\nAbstract. We study the asymptotic behavior of the N-dimensional colored\nJones polynomial evaluated at exp(ξ/N) for a real number ξ greater than a\ncertain constant. We prove that, from the asymptotic behavior, we can extract\nthe SL(2; C) Chern–Simons invariant and the Reidemeister torsion twisted by\nthe adjoint action both associated with a representation determined b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "In this section, we first introduce the colored Jones polynomial, and then we define a quantum dilogarithm, and variants of the logarithm and the dilogarithm. We also describe some of their properties.\n\nFor a knot $K$ in the three-sphere $S^3$, we denote by $J_N(K;q)$ the colored Jones polynomial of $K$ associated with the $N$-dimensional irreducible representation of the Lie algebra $\\frak{sl}(2;\\mathbb{C})$ [@Kirby/Melvin:INVEM1991; @Reshetikhin/Turaev:INVEM1991]. We normalize it so that $J_N(U;q)=1$ for the unknot $U\\subset S^3$. Note that $J_2(K;q)$ is the original Jones polynomial [@Jones",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summation",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-summation.md",
+      "narrative": null,
+      "content": "In this section, we use the quantum dilogarithm $T_N(z)$ to express $J_N(E;e^{\\xi/N})$ without the product of a sequence.\n\nSince the figure-eight knot $E$ is amphicheiral, its colored Jones polynomial is symmetric, that is, $J_{N}(E;q)=J_{N}(E;q^{-1})$. So we have $J_{N}(E;e^{\\xi/N})=J_{N}(E;e^{-\\xi/N})$ and we do not need to consider the case where $\\xi<0$.\n\nRecall that we choose a positive real number $\\theta$ so that $\\tan\\theta<\\frac{\\pi}{\\xi}$ and that we put $\\gamma:=\\frac{\\xi}{2N\\pi\\sqrt{-1}}$. Putting $z:=\\frac{\\xi}{2\\pi\\sqrt{-1}}(1-l/N)$ ($0<l<N$) in [\\[eq:lem\\]](#eq:lem){reference-ty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integration",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-4-integration.md",
+      "narrative": null,
+      "content": "[]{#sec:integration label=\"sec:integration\"} In this section, we use the Poisson summation formula (see [@Ohtsuki:QT2016 Proposition 4.2]) to change the summation in [\\[eq:J_summation\\]](#eq:J_summation){reference-type=\"eqref\" reference=\"eq:J_summation\"} into an integration. Then by using the saddle point method (see also [@Ohtsuki:QT2016 Proposition 3.2]) to prove Theorem [\\[thm:main\\]](#thm:main){reference-type=\"ref\" reference=\"thm:main\"}.\n\nDefine $$\\psi(z)\n  :=\n  F(z+\\varphi(\\xi)/\\xi)-F(\\varphi(\\xi)/\\xi)$$ in the region $$\\label{eq:region_psi}\n  \\left\\{\n    z\\in\\mathbb{C}\n    \\Bigm|\n    -\\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological interpretations",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-5-topological-interpretations.md",
+      "narrative": null,
+      "content": "[]{#sec:CST label=\"sec:CST\"} In this section we give topological interpretations for $T(\\xi)$ and $S(\\xi)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-51-representations.md",
+      "narrative": null,
+      "content": "Let $X$ be the complement of the open tubular neighborhood of $E\\subset S^3$. The fundamental group $\\pi_1(X)$ is presented as $$\\langle\n    x,y\n    \\mid\n    wx=yw\n  \\rangle,$$ with $w:=xy^{-1}x^{-1}y$. Let $\\rho$ be a non-Abelian representation of $\\pi_1(X)$ to $\\rm{SL}(2;\\mathbb{C})$ given by $$\\label{eq:presentation_F_2}\n  \\rho(x)\n  =\n  \\begin{pmatrix}e^{\\xi/2}&1\\\\0&e^{-\\xi/2}\\end{pmatrix},\n  \\quad\n  \\rho(y)\n  =\n  \\begin{pmatrix}e^{\\xi/2}&0\\\\-d&e^{-\\xi/2}\\end{pmatrix},$$ where $d$ annihilates the Riley polynomial $$\\label{eq:Riley}\n  d^2-(2\\cosh(\\xi)-3)d-2\\cosh(\\xi)+3.$$ The preferred longi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjoint Reidemeister torsion",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-52-adjoint-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "For a representation $\\rho\\colon\\pi_1(X)\\to\\rm{SL}(2;\\mathbb{C})$, one can consider the cochain complex $C^{\\ast}(X;\\mathfrak{sl}(2;\\mathbb{C})_{\\rho}):=\\operatorname{Hom}_{\\mathbb{Z}[\\pi_1(X)]}(C_{\\ast}(\\tilde{X};\\mathbb{Z}),\\mathfrak{sl}(2;\\mathbb{C}))$ twisted by the adjoint action of $\\rho$. Here $\\tilde{X}$ is the universal cover of $X$, $\\pi_1(X)$ acts on $\\tilde{X}$ as the deck transformation, and the Lie algebra $\\mathfrak{sl}(2;\\mathbb{C})$ is regarded as a $\\mathbb{Z}[\\pi_1(X)]$-module by the adjoint action of $\\rho$. The Reidemeister torsion $\\mathbb{T}_{\\mu}(\\rho)\\in\\mathbb{C}$ ass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 27,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "If 0 < Re(zeθ√−1) < cos θ, then we have Z Cθ e(2z−1)x sinh(x) dx = −2π√−1 1 −e−2π√−1z .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 27,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "If 0 < Re(zeθ√−1) < cos θ, then we have Z Cθ e(2z−1)x x sinh(x) dx =      −2 log \u0010 1 −e2π√−1z\u0011 if Im z ≥0, −2π√−1(2z −1) −2 log \u0010 1 −e−2π√−1z\u0011 if Im z < 0. and Z Cθ e(2z−1)x x2 sinh(x) dx =        −2√−1 π Li2 \u0010 e2π√−1z\u0011 if Im z ≥0, −2π√−1 \u00002z2 −2z + 1 \u0001 + 2√−1 π Li2 \u0010 e−2π√−1z\u0011 if Im z < 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 27,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "For a complex number w with |w| ≤1, the series P∞ k=1 wk k2 con- verges to Li2(w). Here we use Li2(w) := − R w log(1−t) t dt as the deﬁnition of the dilogarithm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of lemmas",
+      "pageStart": 16,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-6-proofs-of-lemmas.md",
+      "narrative": null,
+      "content": "In this section, we give proofs of lemmas used in this paper.\nProof of Lemma 2.1. Putting x := y eθ√−1, the integral becomes\nZ\nC0\nexp\n\u0010\n(2z −1)y eθ√−1\u0011\ny sinh(y eθ√−1) sinh(γy eθ√−1) dy.\nNoting that\nsinh(as)\n∼\ns→∞\n1\n2eas\nand that\nsinh(as)\n∼\ns→−∞−1\n2e−as\nfor a complex number a with Re(a) > 0, we have\nexp\n\u0010\n(2z −1)y eθ√−1\u0011\ny sinh(y eθ√−1) sinh(γy eθ√−1)\n∼\ny→∞\n1\ny exp\n\u0010\n(2z −2 −γ)eθ√−1y\n\u0011\nand\nexp\n\u0010\n(2z −1)y eθ√−1\u0011\ny sinh(y eθ√−1) sinh(γy eθ√−1)\n∼\ny→−∞\n1\ny exp\n\u0010\n(2z + γ)eθ√−1y\n\u0011\nsince Re\n\u0010\neθ√−1\u0011\n= cos θ > 0 and Re\n\u0010\nγeθ√−1\u0011\n=\nξ\n2Nπ sin θ > 0. So we have\n\nexp\n\u0010\n(2z −1)y eθ√−1\u0011\ny sinh(y eθ√−1) sinh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2109.04664v4/blocks/rem-sec-007-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 27,
+      "target": "rem-sec-007-04.md",
+      "narrative": null,
+      "content": "The proof of Lemma 2.3 in [21] is wrong, which was informed by Ka Ho Wong. References [1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surgeries on the ﬁgure 8 knot, J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548. MR 2221531 [2] T. Dimofte, S. Gukov, J. Lenells, and D. Zagier, Exact results for perturbative Chern-Simons theory with complex gauge group, Commun. Number Theory Phys. 3 (2009), no. 2, 363–443. MR 2551896 (2010k:58038) [3] J. Dubois, Non abelian twisted Reidemeister torsion for ﬁbered knots, Canad. Math. Bull. 49 (2006), no. 1, 55–71. MR 2198719",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

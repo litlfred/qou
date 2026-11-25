@@ -1,0 +1,2407 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0508100v6",
+  "title": "arxiv-math-0508100v6",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of the colored Jones function of a knot",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-asymptotics-of-the-colored-jones-function-of"
+    },
+    {
+      "level": 2,
+      "title": "The generalized volume conjecture",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-generalized-volume-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "The Generalized Volume Conjecture near 2 i",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-generalized-volume-conjecture-near-2-i"
+    },
+    {
+      "level": 2,
+      "title": "Upper bounds for the generalized volume conjecture",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-upper-bounds-for-the-generalized-volume-conje"
+    },
+    {
+      "level": 2,
+      "title": "Relation with hyperbolic geometry, and asymptotically sharp bounds",
+      "number": "1.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-relation-with-hyperbolic-geometry-and-asympto"
+    },
+    {
+      "level": 2,
+      "title": "The main ideas and organization of the paper",
+      "number": "1.6",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-the-main-ideas-and-organization-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": "1.7",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-17-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "Weak versus strong convergence",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-2-weak-versus-strong-convergence"
+    },
+    {
+      "level": 2,
+      "title": "A lemma from complex analysis",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-21-a-lemma-from-complex-analysis"
+    },
+    {
+      "level": 2,
+      "title": "The main difficulty for uniform bounds",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-22-the-main-difficulty-for-uniform-bounds"
+    },
+    {
+      "level": 1,
+      "title": "Two expansions of the colored Jones polynomial",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-two-expansions-of-the-colored-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "The loop expansion",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-the-loop-expansion"
+    },
+    {
+      "level": 2,
+      "title": "The cyclotomic expansion",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-the-cyclotomic-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Comparing the cyclotomic and the loop expansion",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-33-comparing-the-cyclotomic-and-the-loop-expansi"
+    },
+    {
+      "level": 1,
+      "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-a-reduction-of-theorem-22-to-estimates-of-the"
+    },
+    {
+      "level": 2,
+      "title": "Uniform bounds of the colored Jones function",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41-uniform-bounds-of-the-colored-jones-function"
+    },
+    {
+      "level": 2,
+      "title": "Theorem 4.2 implies Theorem 2.2",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-42-theorem-42-implies-theorem-22"
+    },
+    {
+      "level": 1,
+      "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-a-reduction-of-theorem-16-to-estimates-of-the"
+    },
+    {
+      "level": 2,
+      "title": "Some estimates",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-51-some-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Theorem 4.2 implies Theorem 1.6",
+      "number": "5.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-52-theorem-42-implies-theorem-16"
+    },
+    {
+      "level": 1,
+      "title": "Bounds for the degree and coefficients of the colored Jones function",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-bounds-for-the-degree-and-coefficients-of-the"
+    },
+    {
+      "level": 2,
+      "title": "Bounds for the degree",
+      "number": "6.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Bounds for the coefficients",
+      "number": "6.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-bounds-for-the-coefficients"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.12",
+      "number": "6.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-proof-of-theorem-112"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 4.2",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-7-proof-of-theorem-42"
+    },
+    {
+      "level": 2,
+      "title": "The bound for degrees of HK,n",
+      "number": "7.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-71-the-bound-for-degrees-of-hkn"
+    },
+    {
+      "level": 2,
+      "title": "The bound for the l1-norm of HK,n",
+      "number": "7.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-72-the-bound-for-the-l1-norm-of-hkn"
+    },
+    {
+      "level": 1,
+      "title": "Growth rates of R-matrices and the Lobachevsky function",
+      "number": "8",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-8-growth-rates-of-r-matrices-and-the-lobachevsky"
+    },
+    {
+      "level": 2,
+      "title": "The Lobachevsky function",
+      "number": "8.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of the R-matrix using ideal octahedra",
+      "number": "8.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-82-asymptotics-of-the-r-matrix-using-ideal-octah"
+    },
+    {
+      "level": 2,
+      "title": "The maximum of the growth rate of the R-matrix",
+      "number": "8.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-83-the-maximum-of-the-growth-rate-of-the-r-matri"
+    },
+    {
+      "level": 2,
+      "title": "The maximum of the R-matrices at roots of unity",
+      "number": "8.4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-84-the-maximum-of-the-r-matrices-at-roots-of-uni"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.13",
+      "number": "8.5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-85-proof-of-theorem-113"
+    },
+    {
+      "level": 1,
+      "title": "The generalized volume conjecture near =2i",
+      "number": "9",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-9-the-generalized-volume-conjecture-near-2i"
+    },
+    {
+      "level": 1,
+      "title": "The q-holonomic point of view",
+      "number": "10",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-10-the-q-holonomic-point-of-view"
+    },
+    {
+      "level": 2,
+      "title": "Bounds on l1-norm of q-holonomic functions",
+      "number": "10.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-101-bounds-on-l1-norm-of-q-holonomic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Bounds for higher rank groups",
+      "number": "10.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-102-bounds-for-higher-rank-groups"
+    },
+    {
+      "level": 1,
+      "title": "Some physics",
+      "number": "11",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-11-some-physics"
+    },
+    {
+      "level": 2,
+      "title": "A small dose of physics",
+      "number": "11.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-111-a-small-dose-of-physics"
+    },
+    {
+      "level": 2,
+      "title": "The WKB method",
+      "number": "11.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-112-the-wkb-method"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. The volume conjecture for the Borromean rings",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-appendix-a-the-volume-conjecture-for-the-borrome"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Proof of Proposition 8.9",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-appendix-b-proof-of-proposition-89"
+    },
+    {
+      "level": 2,
+      "title": "B.1. Preliminary estimates",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-b1-preliminary-estimates"
+    },
+    {
+      "level": 2,
+      "title": "B.2. Proof of Proposition 8.9",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-b2-proof-of-proposition-89"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nth colored",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic expansion",
+          "heading": false
+        },
+        {
+          "term": "uniform bounds",
+          "heading": false
+        },
+        {
+          "term": "upper bounds",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic function",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0508100v6 [math.GT] 31 Aug 2011 ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT STAVROS GAROUFALIDIS AND THANG TQ LˆE Dedicated to Louis Kauﬀman on the occasion of his 60th birthday Abstract. To a knot in 3-space, one can associate a sequence of Laurent polynomials, whose nth term is the nth colored Jones polynomial. The paper is concerned with the asymptotic behavior of the value of the nth colored",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0508100v6/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-asymptotics-of-the-colored-jones-function-of",
+      "number": "1.1",
+      "title": "Asymptotics of the colored Jones function of a knot",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbl thm",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": true
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.asymptotics} To a knot $K$ in 3-space, one can associate a sequence of Laurent polynomials $$ J_{K,n}(q) \\in \\BZ[q^{\\pm 1}] $$ for $n \\in \\BN=\\{1,2,3,\\dots\\}$. $J_{K,1}(q)=1$ and $J_{K,2}(q)$ is the famous {\\em Jones polynomial} of $K$ introduced by Jones in \\cite{J}, and $J_{K,n}(q)$ are roughly speaking the Jones polynomials of $(n-1)$-parallels of the knot. More precisely, $J_{K,n}(q)$ is the {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-generalized-volume-conjecture",
+      "number": "1.2",
+      "title": "The generalized volume conjecture",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "generalized volume",
+          "heading": true
+        },
+        {
+          "term": "conjecture lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl conj",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "gvc",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.volume} In this section we state some new information about the Volume Conjecture; the latter connects two very different approaches to knot theory, namely Topological Quantum Field Theory and Riemannian (mostly Hyperbolic) Geometry. \\begin{conjecture} \\lbl{conj.vc}\\cite{K,MM} For every hyperbolic knot $K$ in $S^3$ we have: \\begin{equation*} \\lbl{eq.VC} \\lim_{n \\to \\infty} \\frac{\\log| f_{K,n}(2 \\pi i)|}{n}=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-generalized-volume-conjecture-near-2-i",
+      "number": "1.3",
+      "title": "The Generalized Volume Conjecture near 2 i",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "lbl thm",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.faithfulresults} Our next result states that the volume conjecture can only be barely true. \\begin{theorem} \\lbl{thm.near1} {\\rm (Proof in Section \\ref{sec.cyclotomic})} For every knot $K$ and every fixed integer $m \\neq 0$ $$ \\lim_{n\\to\\infty} \\frac{1}{n} \\log|J_{K,n+m}(\\exp(2 \\pi i/n))| =0. $$ \\end{theorem} It follows that the {\\em double-scaling limit} $$ \\lim_{n,k} \\frac{1}{n} \\log|J_{K,n}(\\exp(2 \\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-upper-bounds-for-the-generalized-volume-conje",
+      "number": "1.4",
+      "title": "Upper bounds for the generalized volume conjecture",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "thmup",
+          "heading": false
+        },
+        {
+          "term": "limsup",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.results} Our next theorem is an upper bound for the Generalized Volume Conjecture. Let $\\Re(\\a)$ denote the real part of $\\a$. \\begin{theorem} \\lbl{thm.up} {\\rm (Proof in Section \\ref{sub.thmup})} For every knot $K$ with $c+2$ crossings and every $\\a \\in \\BC$, we have $$ \\limsup_{n \\to \\infty} \\frac{\\log|f_{K,n}(\\a)|}{n} \\leq c \\log 4 + \\frac{c+2}{2}|\\Re(\\a)|. $$ \\end{theorem}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-15-relation-with-hyperbolic-geometry-and-asympto",
+      "number": "1.5",
+      "title": "Relation with hyperbolic geometry, and asymptotically sharp bounds",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm guts",
+          "heading": false
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "thurston cite",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "weave",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.hypgeom} When $\\a=2 \\pi i$, the upper bound in Theorem \\ref{thm.up} is not optimal, and does not reveal any relationship between the $\\limsup$ and hyperbolic geometry. Our next theorem fills this gap. \\begin{theorem} \\lbl{thm.4} {\\rm (Proof in Section \\ref{sub.thm4})} For every knot $K$ with $c+2$ crossings we have $$ \\limsup_{n \\to \\infty} \\frac{\\log|f_{K,n}(2\\pi i)|}{n} \\leq \\frac{v_8}{2 \\pi} c, $$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-the-main-ideas-and-organization-of-the-paper",
+      "number": "1.6",
+      "title": "The main ideas and organization of the paper",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arrow node",
+          "heading": false
+        },
+        {
+          "term": "node text",
+          "heading": false
+        },
+        {
+          "term": "boundc arrow",
+          "heading": false
+        },
+        {
+          "term": "near node",
+          "heading": false
+        },
+        {
+          "term": "text thm",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "uniform bounds",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.ideas} In section \\ref{sub.complex} we show that weak convergence plus uniform boundedness implies strong convergence. Thus the strong convergence of Theorems \\ref{thm.11} and \\ref{thm.1} follows from the weak convergence of Theorems \\ref{thm.MMR} and \\ref{thm.Zrat}, plus uniform bounds. Uniform bounds for the colored Jones function require large cancellations. In order to control these cancellations, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-acknowledgment",
+      "number": "1.7",
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "Zeilberger for many enlightening conversations, and the anonymous referee for his careful reading of our manuscript.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-2-weak-versus-strong-convergence",
+      "number": "2",
+      "title": "Weak versus strong convergence",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-21-a-lemma-from-complex-analysis",
+      "number": "2.1",
+      "title": "A lemma from complex analysis",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniform boundedness",
+          "heading": false
+        },
+        {
+          "term": "weak convergence",
+          "heading": false
+        },
+        {
+          "term": "strong convergence",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "boundc",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "holomorphic functions",
+          "heading": false
+        },
+        {
+          "term": "every geq",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.complex} To prove Theorem \\ref{thm.11}, we need to improve the weak convergence of Theorem \\ref{thm.MMR} to the strong convergence. This uses the next lemma on normal families that is sometimes referred to by the name of {\\em Vitali} or {\\em Montel's} theorem. For a reference, see \\cite{Hi,Sch}. The lemma exhibits the power of holomorphy, coupled with uniform boundedness. \\begin{lemma} \\lbl{lem.complex} If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-the-main-difficulty-for-uniform-bounds",
+      "number": "2.2",
+      "title": "The main difficulty for uniform bounds",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difficulty",
+          "heading": true
+        },
+        {
+          "term": "cancellations",
+          "heading": false
+        },
+        {
+          "term": "boundc",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.keydiff} Before we proceed with the proof of Theorem \\ref{thm.boundC3}, let us point out the main difficulty. As we will see later, $J_{K,n}(q)$ is a Laurent polynomial in $q$ whose span (i.e., the exponents of its monomials) are $O(n^2)$ and whose coefficients are $e^{O(n)}$. In addition, due to our normalization, $J_{K,n}(1)=1$. In other words, the $O(n^2)$ many exponentially growing coefficients of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-two-expansions-of-the-colored-jones-polynomial",
+      "number": "3",
+      "title": "Two expansions of the colored Jones polynomial",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-31-the-loop-expansion",
+      "number": "3.1",
+      "title": "The loop expansion",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqnarray lbl",
+          "heading": false
+        },
+        {
+          "term": "sum leq",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "loop",
+          "heading": true
+        }
+      ],
+      "extract": "\\lbl{sub.loop} With $q=e^h$, one has $$ J_{K,n}(e^h) = \\sum_{i=0}^\\infty a_{K,i}(n)\\, h^i \\in \\BQ[[h]]. $$ It turns out that $a_{K,i}(n)$ is a polynomial in $n$ with degree less than or equal to $i$, see \\cite{B-NG}. Hence there are rational numbers $a_{K,i,j}$, depending on the knot $K$, such that \\begin{eqnarray} \\lbl{eq.pert} J_{K,n}(e^h) &=& \\sum_{0 \\leq j \\leq i} a_{K,i,j}\\, n^j h^i = \\sum_{0 \\leq i, 0 \\leq j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-the-cyclotomic-expansion",
+      "number": "3.2",
+      "title": "The cyclotomic expansion",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotomic expansion",
+          "heading": true
+        },
+        {
+          "term": "eqref cyc",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "qbinom",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "a-b",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.cyclotomic} Habiro found another interesting expansion of the colored Jones function, known as the cyclotomic expansion. Although the cyclotomic expansion has important arithmetic consequences, we discuss only its algebraic properties here. Let us define: \\begin{equation} \\lbl{eq.Ckernel} C_{n,k}(q) = \\prod_{j=1}^{k} (q^n+q^{-n}-q^j-q^{-j}), \\quad \\text{with} \\quad C_{n,0}(q) :=1. \\end{equation} Habiro",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-comparing-the-cyclotomic-and-the-loop-expansi",
+      "number": "3.3",
+      "title": "Comparing the cyclotomic and the loop expansion",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotomic expansion",
+          "heading": true
+        },
+        {
+          "term": "loop expansion",
+          "heading": true
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "comparing",
+          "heading": true
+        }
+      ],
+      "extract": "\\lbl{sub.comparing} In the loop expansion, as well as in the cyclotomic expansion, one should treat $q^n$ and $q$ (where $n$ is the color) as two independent variables. Consider two independent variables $z$ (standing for $\\a$) and $y$ (standing for $\\a/n$). Let us define the following biholomorphic functions \\begin{eqnarray*} c_k(z,y) &=& \\prod_{j=1}^{k} (e^z+e^{-z} -e^{jy}-e^{-jy}), \\\\ h_{K,k}(z,y) &=& c_k(z,y)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-a-reduction-of-theorem-22-to-estimates-of-the",
+      "number": "4",
+      "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-41-uniform-bounds-of-the-colored-jones-function",
+      "number": "4.1",
+      "title": "Uniform bounds of the colored Jones function",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundc",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "boundscyclotomic",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.reductionA} In this section we will deduce Theorem \\ref{thm.boundC3} from estimates of the degree and the coefficients of the cyclotomic expansion of the knot. These estimates will be established in Section \\ref{sec.boundsJones}. By definition $f_{K,n}(\\a) = J_{K,n}(e^{\\a/n})$, hence equation \\eqref{cyc} gives that \\begin{eqnarray} \\lbl{eq.J2Ca} f_{K,n}(\\a) &=& \\sum_{k=0}^{n-1} C_{n,k}(e^{\\a/n})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42-theorem-42-implies-theorem-22",
+      "number": "4.2",
+      "title": "Theorem 4.2 implies Theorem 2.2",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a2a",
+          "heading": false
+        },
+        {
+          "term": "lˆe",
+          "heading": false
+        },
+        {
+          "term": "thang",
+          "heading": false
+        }
+      ],
+      "extract": "have: |Cn,k(eα/n)HK,k(eα/n)| ≤ |αA2A3|k. Let us choose UK to be the disk centered at the 0, with radius 1/(2A2A3 + 1), then |αA2A3| < 1/2 for α ∈UK. Equation (16) and the above estimate imply that for all n and all α ∈UK, we have: |fK,n(α)| ≤ n−1 X k=0 Cn,k(eα/n)HK,k(eα/n) ≤ n−1 X k=0 (1/2)k < 2. which concludes the proof of Theorem 2.2, assuming Theorem 4.2. □ 12 STAVROS GAROUFALIDIS AND THANG TQ LˆE",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-5-a-reduction-of-theorem-16-to-estimates-of-the",
+      "number": "5",
+      "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-51-some-estimates",
+      "number": "5.1",
+      "title": "Some estimates",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 572,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial n-l",
+          "heading": false
+        },
+        {
+          "term": "boundc",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "left frac",
+          "heading": false
+        },
+        {
+          "term": "k-n",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        }
+      ],
+      "extract": "The following is a higher order version of Lemma \\ref{lem.estimate}. The proof is similar. \\begin{lemma} \\lbl{lem.estimate2} Suppose $|\\a| < 1$. \\begin{itemize} \\item[(a)] For $1\\le k \\le n$, $0\\le l$, and $y$ on the interval from 0 to $\\a/n$ we have $$ \\left |\\frac{\\partial^l}{\\partial y^l} c_k(\\a,y) \\right| < (A_3)^k |\\a|^{k-l}\\, k^{2l}. $$ \\item[(b)] For any $y \\in \\BC, |y| < 1/n$ and $1\\le k\\le n$ we have $$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-theorem-42-implies-theorem-16",
+      "number": "5.2",
+      "title": "Theorem 4.2 implies Theorem 1.6",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "assuming theorem",
+          "heading": false
+        },
+        {
+          "term": "lˆe",
+          "heading": false
+        },
+        {
+          "term": "thang",
+          "heading": false
+        }
+      ],
+      "extract": "(20) f [N] K,n(z) := JK,n(ez/n) − N−1 X k=0 PK,k(ez) ∆K(ez)2k+1 \u0010 z n \u0011k . Theorem 1.6 follows from Theorem 1.5, Lemma 2.1 and the following uniform bound. Theorem 5.3. For every knot K there exists an open neighborhood ˜UK of 0 ∈C such that for every N ≥0 there exists a positive number MN such that for α ∈˜UK, and all n ≥0, we have: \u0010n α \u0011N f (N) K,n(α) < MN. Proof. (of Theorem 5.3, assuming Theorem 4.2) We have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-bounds-for-the-degree-and-coefficients-of-the",
+      "number": "6",
+      "title": "Bounds for the degree and coefficients of the colored Jones function",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "quadratic bounds",
+          "heading": false
+        },
+        {
+          "term": "maxdeg",
+          "heading": false
+        },
+        {
+          "term": "mindeg",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.boundsJones} \\subsection{Bounds for the degree} \\lbl{sub.bdegree} In this section we give a bound for the coefficients of the colored Jones polynomial, and deduce Theorem \\ref{thm.up}. This and the next section are logically independent from the previous Sections \\ref{sec.estimates} and \\ref{sec.allorders}. For a Laurent polynomial $f(q)=\\sum_{k=m}^M a_k q^k$, with $a_m a_M \\neq 0$, let us define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-bounds-for-the-coefficients",
+      "number": "6.2",
+      "title": "Bounds for the coefficients",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 924,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "boundary crossings",
+          "heading": false
+        },
+        {
+          "term": "boundary arcs",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "boundary arc",
+          "heading": false
+        },
+        {
+          "term": "qbinom",
+          "heading": false
+        },
+        {
+          "term": "bottom boundary",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.coeffbounds} For a Laurent polynomial $f\\in \\BZ[q^{\\pm 1/4}]$, we define $||f||_1$ as in Definition \\ref{def.l1norm}, i.e. $||f||_1$ is the sum of the absolute values of its coefficients. Observe that \\begin{equation} ||f+g||_1 \\leq ||f||_1+||g||_1, \\qquad ||fg||_1 \\leq ||f||_1 \\, ||g||_1. \\label{eq.ineq} \\end{equation} Since $||\\{j\\}||_1 =2$, we have, for $k \\leq n$ \\begin{equation} \\left|",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-proof-of-theorem-112",
+      "number": "6.3",
+      "title": "Proof of Theorem 1.12",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jqj",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "allow",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 6.1) allow us to write JK,n(q) = X j an,jqj where |j| ≤n2(c + 2 + |w|)/4 + O(n). For such j, we have: |ejα/n| = eℜ(jα)/n ≤e(c+2+|w|)n/4+O(1))|ℜ(α)|. Using Theorem 6.2 we get |JK,n(eα/n)| ≤nc4cne(c+2+|w|)n/4+O(1))|ℜ(α)|. Thus, 1 n log |fK,n(α)| ≤c log 4 + c + 2 + |w| 4 |ℜ(α)| + O \u0012log n n \u0013 . The result follows from the observation that |ω| ≤c + 2, since c + 2 is the total number of crossings. □",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-7-proof-of-theorem-42",
+      "number": "7",
+      "title": "Proof of Theorem 4.2",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "The goal of this Section is to prove Theorem 4.2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-71-the-bound-for-degrees-of-hkn",
+      "number": "7.1",
+      "title": "The bound for degrees of HK,n",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "get maxdeg",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "qbinom",
+          "heading": false
+        },
+        {
+          "term": "boundc",
+          "heading": false
+        }
+      ],
+      "extract": "Note that $$ \\deg_\\pm (fg) = \\deg_\\pm(f) + \\deg_\\pm(g), \\quad \\text{and} \\quad \\maxdeg(f+g) \\le \\max(\\maxdeg(f), \\maxdeg(g)). $$ From $\\deg_\\pm \\{k\\} = \\pm k/2$, we get $$ \\deg_\\pm (\\{k\\}!) = \\pm k(k+1)/4, \\qquad \\deg_\\pm (\\qbinom{n}{k}) = \\pm k(n-k)/2. $$ From these and Equation \\eqref{33} we get $$ \\maxdeg(H_{K,n}(q)) \\le \\max_{1\\le k \\le n+1 } \\left( -\\frac{(2n+2)(2n+3)}{4} + k + \\frac{k}{2}+",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-72-the-bound-for-the-l1-norm-of-hkn",
+      "number": "7.2",
+      "title": "The bound for the l1-norm of HK,n",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mahler measure",
+          "heading": false
+        },
+        {
+          "term": "sum k-i",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "qquad text",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "exponential upper",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        }
+      ],
+      "extract": "Multiply both sides of \\eqref{33} by $\\{2n+2\\}!$, then use \\eqref{31} and Theorem \\ref{95}, we see that there is a constant $A_7$ such that \\begin{equation} \\lbl{eq.L1C} ||\\{2n+2\\}!H_{K,n}(q)||_1 \\leq (A_7)^n. \\end{equation} The polynomials $$ \\tH_{K,n}(q) := q^{A_0n^2} H_{K,n}(q) \\qquad \\text{and} \\qquad g(q):=\\tH_{K,n}(q) \\prod_{j=1}^{2n+2}(1-q^j) $$ have only non-negative degrees in $q$, with $\\maxdeg(\\tH_{K,n})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-8-growth-rates-of-r-matrices-and-the-lobachevsky",
+      "number": "8",
+      "title": "Growth rates of R-matrices and the Lobachevsky function",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 643,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfloor rfloor",
+          "heading": false
+        },
+        {
+          "term": "lobachevsky function",
+          "heading": true
+        },
+        {
+          "term": "int lfloor",
+          "heading": false
+        },
+        {
+          "term": "log sin",
+          "heading": false
+        },
+        {
+          "term": "log left",
+          "heading": false
+        },
+        {
+          "term": "right frac",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "quantum factorials",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.hypgeom} \\subsection{The Lobachevsky function} \\lbl{sub.estimates} In Section \\ref{sec.boundsJones} we got a simple but crude estimate for the $l^1$-norm of the $R$-matrices, which are a ratio of five quantum factorials. In this largely independent section we will give refined (and optimal) estimates for the growth rate of the $R$-matrices. These estimates reveal the close relationship between hyperbolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-82-asymptotics-of-the-r-matrix-using-ideal-octah",
+      "number": "8.2",
+      "title": "Asymptotics of the R-matrix using ideal octahedra",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfloor rfloor",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "quad kappa",
+          "heading": false
+        },
+        {
+          "term": "ideal octahedron",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "five ideal",
+          "heading": false
+        },
+        {
+          "term": "qquad leq",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.assRv8} Since the entries of the $R$-matrix are given by ratios of five quantum factorials (see Equations \\eqref{eq.R+-}), Proposition \\ref{lem.1} gives a formula for the asymptotic behavior of the entries of the $R$-matrix when evaluated at $e^{2 \\pi i/n}$. This is the content of the next proposition. \\begin{proposition} \\lbl{prop.R+limit} {\\rm (a)} Suppose that $\\a,\\b,\\k$ are real numbers that satisfy the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-83-the-maximum-of-the-growth-rate-of-the-r-matri",
+      "number": "8.3",
+      "title": "The maximum of the growth rate of the R-matrix",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maximum",
+          "heading": true
+        },
+        {
+          "term": "winning",
+          "heading": false
+        },
+        {
+          "term": "abk",
+          "heading": false
+        },
+        {
+          "term": "psdraw",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we determine the maximum of $r_\\pm(\\a,\\b,\\k)$. \\begin{proposition} \\lbl{prop.R} {\\rm (a)} With $\\a,\\b,\\k$ satisfying \\eqref{eq.abk}, $r_+(\\a,\\b,\\k)$ achieves maximum when $\\a=3/4, \\b=1/4$, and $\\k=1/2$. Moreover $$ r_+(3/4,1/4,1/2)=\\frac{v_8}{2 \\pi}, $$ where $$ v_8=8 \\La(\\pi/4) \\approx 3.6638623767088760602 \\dots $$ is the volume of the regular hyperbolic ideal octahedron. \\newline {\\rm (b)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-84-the-maximum-of-the-r-matrices-at-roots-of-uni",
+      "number": "8.4",
+      "title": "The maximum of the R-matrices at roots of unity",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfloor rfloor",
+          "heading": false
+        },
+        {
+          "term": "maximum",
+          "heading": true
+        },
+        {
+          "term": "achieves maximum",
+          "heading": false
+        },
+        {
+          "term": "growth rate",
+          "heading": false
+        },
+        {
+          "term": "ref prop",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition \\ref{prop.R} gives the maximum of the growth rate of $\\ev_n(R_+(n;a,b,k))$, as $n\\to \\infty$. The following proposition gives the maximum of $\\ev_n(R_+(n;a,b,k))$, for a fixed $n$. \\begin{proposition} \\lbl{prop.Rpm} {\\rm (Proof in Section \\ref{sub.pf71})} The value of $|\\ev_n(R_+(n;a,b,k))|$ achieves maximum at $a= \\lfloor 3n/4 \\rfloor$, $b= \\lfloor (n-1)/4 \\rfloor$, and $k= a-b$. The value of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-85-proof-of-theorem-113",
+      "number": "8.5",
+      "title": "Proof of Theorem 1.13",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evn",
+          "heading": false
+        },
+        {
+          "term": "crossing points",
+          "heading": false
+        },
+        {
+          "term": "absolute value",
+          "heading": false
+        }
+      ],
+      "extract": "Each summand F(n, k) is the product of R-matrices (which are weights of crossing points) and weights of extreme points (which have absolute value 1). There are c + 2 crossing points, but the weights of the two boundary crossing have absolute value 1. Hence |JK,n(e2πi/n)| ≤nc \u0012 max a,b,k |evn(R±(n; a, b, k))| \u0013c . From the growth rate of maxa,b,k |evn(R±(n; a, b, k))| given by Corollary 8.10 we get the theorem.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-9-the-generalized-volume-conjecture-near-2i",
+      "number": "9",
+      "title": "The generalized volume conjecture near =2i",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "symmetry principle",
+          "heading": false
+        },
+        {
+          "term": "principle implies",
+          "heading": false
+        },
+        {
+          "term": "πip",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will prove Theorems 1.10 and 1.11 which are concerned with the Generalized Volume Conjecture near 2πi. Our proofs use crucially the well-known symmetry principle, see [KM91, Le00]: Suppose m, m′ and n are positive integers with m ≡±m′ mod n, then (44) JK,m(e2πi/n) = JK,m′(e2πi/n). Note that this fact is also a consequence of the existence of the cyclotomic expansion. However, the case of higher",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-10-the-q-holonomic-point-of-view",
+      "number": "10",
+      "title": "The q-holonomic point of view",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-101-bounds-on-l1-norm-of-q-holonomic-functions",
+      "number": "10.1",
+      "title": "Bounds on l1-norm of q-holonomic functions",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maxdeg",
+          "heading": false
+        },
+        {
+          "term": "integral holonomic",
+          "heading": false
+        },
+        {
+          "term": "l1bound",
+          "heading": false
+        },
+        {
+          "term": "holonomic functions",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "longto",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "c'n",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.qholo} The main result of \\cite{GL} is that for every knot $K$, the functions $J_K$ and $H_K$ are $q$-holonomic. Recall that a sequence $f:\\BN\\longto\\BQ(q)$ is $q$-{\\em holonomic} if satisfies a $q$-{linear difference equation}. In other words, there exists a natural number $d$ and polynomial $a_j(u,v) \\in \\BQ[u,v]$ for $j=0,\\dots,d$ with $a_d \\neq 0$ such that for all $n \\in \\BN$ we have: \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-102-bounds-for-higher-rank-groups",
+      "number": "10.2",
+      "title": "Bounds for higher rank groups",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "growth-rate",
+          "heading": false
+        },
+        {
+          "term": "simple lie",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.high} In \\cite{GL}, we considered the colored Jones function $$ J_{\\fg,K}: \\La_w \\longto \\BZ[q^{\\pm 1}] $$ of a knot $K$, where $\\fg$ is a {\\em simple Lie algebra} with {\\em weight lattice} $\\La_w$. In the above reference, the authors proved that $J_{\\fg,K}$ is a $q$-holonomic function, at least when $\\fg$ is not $G_2$. For $\\fg=\\mathfrak{sl}_2$, $J_{\\mathfrak{sl}_2,K}$ is the colored Jones function $J_K$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-11-some-physics",
+      "number": "11",
+      "title": "Some physics",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-111-a-small-dose-of-physics",
+      "number": "11.1",
+      "title": "A small dose of physics",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "abelian flat",
+          "heading": false
+        },
+        {
+          "term": "perturbation theory",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "chern-simons path",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "valid near",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.physics} One does not need to know the relation of the colored Jones function and quantum field theory in order to understand the statement and proof of Theorem \\ref{thm.1}. Nevertheless, we want to add some philosophical comments, for the benefit of the willing reader. According to Witten (see \\cite{Wi}), the Jones polynomial $J_{K,n}$ can be expressed by a partition function of a topological quantum field",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-112-the-wkb-method",
+      "number": "11.2",
+      "title": "The WKB method",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wkb",
+          "heading": true
+        },
+        {
+          "term": "wkb analysis",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "difference equation",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.WKB} Since we are discussing physics interpretations of Theorem \\ref{thm.1} let us make some more comments. Obviously, when the angle $\\a$ is sufficiently big, the asymptotic expansion of Equation \\eqref{eq.thm1} may break down. For example, when $e^{\\a}$ is a complex root of the Alexander polynomial, then the right hand side of \\eqref{eq.thm1} does not make sense, even to leading order. In fact, when $\\a$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-appendix-a-the-volume-conjecture-for-the-borrome",
+      "number": null,
+      "title": "Appendix A. The volume conjecture for the Borromean rings",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borromean rings",
+          "heading": true
+        },
+        {
+          "term": "log evn",
+          "heading": false
+        },
+        {
+          "term": "kmax",
+          "heading": false
+        },
+        {
+          "term": "lim log",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "z2l",
+          "heading": false
+        },
+        {
+          "term": "q2l",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "It is well-known that the complement of the Borromean rings B can be geometrically identiﬁed by gluing two regular ideal octahedra, see [Thu77]. As a result, the volume vol(S3 −B) of S3 −B is equal to 2v8. Suppose L is a k-component framed link, and n1, . . . , nk are positive integers. The colored Jones poly- nomial ˜JL(n1, . . . , nk) ∈Z[q±1/4] is the sl2-quantum invariant of the link whose components are colored",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-appendix-b-proof-of-proposition-89",
+      "number": null,
+      "title": "Appendix B. Proof of Proposition 8.9",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Appendix B. Proof of Proposition 8.9",
+      "extractCut": false
+    },
+    {
+      "id": "sec-041-b1-preliminary-estimates",
+      "number": null,
+      "title": "B.1. Preliminary estimates",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 886,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x2β",
+          "heading": false
+        },
+        {
+          "term": "achieves maximum",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        },
+        {
+          "term": "inequality",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma B.1. (a) The xj, as a function of j, is increasing for j ∈[0, n/2] and decreasing for j ∈[n/2, n]. In particular, for j ≤l ≤n −j we have xj ≤xl. (b) For every 1 ≤j ≤n −1, one has 2 ≥xj. For n/4 ≤j ≤3n/4, one has 2 ≤(xj)2. Lemma B.2. For a ﬁxed k, 1 ≤k ≤n −1, the value of yb(k) := Qb+k j=b+1 xj achieves maximum at (50) b = β(k) := ⌊(n −k)/2⌋. Proof. We will prove that if b < β(k), then yb(k) ≤yb+1(k), while if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-b2-proof-of-proposition-89",
+      "number": null,
+      "title": "B.2. Proof of Proposition 8.9",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin cos",
+          "heading": false
+        },
+        {
+          "term": "achieves maximum",
+          "heading": false
+        },
+        {
+          "term": "absolute minimum",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "end points",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "derivative",
+          "heading": false
+        }
+      ],
+      "extract": "achieves maximum when k satisﬁes the condition in Lemma B.4(b), b = ⌊(n −1)/4⌋, and a = b + k. The value of k satisfying the condition in Lemma B.4(b) can be calculated easily: ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT 29 k =          n/2 + 1 n = 0 mod 4 (n −1)/2 n = 1 mod 4 n/2 n = 2 mod 4 (n + 1)/2 n = 3 mod 4 From there one can calculate a = k + b. It is easy to check that the values of a, b, k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 819,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "nathan dunﬁeld",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "ian agol",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic haken",
+          "heading": false
+        },
+        {
+          "term": "haken manifolds",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "[And98] George E. Andrews, The theory of partitions, Cambridge Mathematical Library, Cambridge University Press, Cam- bridge, 1998, Reprint of the 1976 original. [AST07a] Ian Agol, Peter A. Storm, and William P. Thurston, Lower bounds on volumes of hyperbolic Haken 3-manifolds, J. Amer. Math. Soc. 20 (2007), no. 4, 1053–1077 (electronic), With an appendix by Nathan Dunﬁeld. [AST07b] , Lower bounds on volumes of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "A lemma from complex analysis"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lbl thm",
+      "heading": false
+    },
+    {
+      "term": "boundc lbl",
+      "heading": false
+    },
+    {
+      "term": "lbl sub",
+      "heading": false
+    },
+    {
+      "term": "equation lbl",
+      "heading": false
+    },
+    {
+      "term": "theorem lbl",
+      "heading": false
+    },
+    {
+      "term": "conjecture lbl",
+      "heading": false
+    },
+    {
+      "term": "eqnarray lbl",
+      "heading": false
+    },
+    {
+      "term": "function lbl",
+      "heading": false
+    },
+    {
+      "term": "lemma lbl",
+      "heading": false
+    },
+    {
+      "term": "lbl lem",
+      "heading": false
+    },
+    {
+      "term": "lbl sec",
+      "heading": false
+    },
+    {
+      "term": "proposition lbl",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 46,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 45,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 45 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0508100v6"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gb-spectral-sequence",
+  "kind": "proposition",
+  "title": "Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "cites": [
+    "references/geckpfeiffer2000",
+    "references/weibel1994"
+  ],
+  "tags": [
+    "spectral-sequence",
+    "cohomology",
+    "hochschild",
+    "coxeter-length",
+    "nil-coxeter",
+    "e-infinity",
+    "convergence"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.gb_spectral_sequence",
+  "text": "gb-spectral-sequence.md",
+  "provenance": "authored"
+}

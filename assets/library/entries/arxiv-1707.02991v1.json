@@ -1,0 +1,156 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1707.02991v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BPS states, knots and quivers",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-bps-states-knots-and-quivers.md",
+      "narrative": null,
+      "content": "Piotr Kucharski1, Markus Reineke2, Marko Stoˇsi´c3,4, and Piotr Su lkowski1,5\n1 Faculty of Physics, University of Warsaw,\nul.\nPasteura 5, 02-093 Warsaw, Poland\n2 Faculty of Mathematics, Ruhr-Universit¨at Bochum,\nUniversit¨atsstrasse 150, 44780 Bochum, Germany\n3 CAMGSD, Departamento de Matem´atica,\nInstituto Superior T´ecnico,\nAv.\nRovisco Pais, 1049-001 Lisboa, Portugal\n4 Mathematical Institute SANU,\nKnez Mihailova 36, 11000 Beograd, Serbia\n5 Walter Burke Institute for Theoretical Physics,\nCalifornia Institute of Technology,\nPasadena, CA 91125, USA\nDedicated to John Schwarz on his 75th birthday",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "CALT-2017-039",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants, knot homologies, and LMOV conjecture",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-knot-invariants-knot-homologies-and-lmov-conject.md",
+      "narrative": null,
+      "content": "Ever since its birth knot theory attracted attention of physicists, and various knot invariants turned out to have physical interpretation.\n\nIn particular various knot polynomials have been reinterpreted as expectation values in Chern-Simons theory in [@Witten_Jones], and subsequently they were expressed in terms of topological string theory amplitudes [@Witten:1992fb]. In [@OoguriV] the topological string setup was related to M-theory and it was argued, that colored HOMFLY-PT polynomials are encoded in LMOV invariants, which count bound states of open M2-branes with M5-branes. In this work we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli of quiver representations",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-moduli-of-quiver-representations.md",
+      "narrative": null,
+      "content": "We now turn to a seemingly unrelated field of moduli of quiver representations. A quiver $Q$ is an oriented graph with a finite set of vertices $Q_0$ and finitely many arrows between vertices $\\alpha:i\\rightarrow j$. On ${\\bf Z}Q_0$, we define the Euler form of $Q$ by $\\langle {\\bm d},{\\bm e}\\rangle_Q=\\sum_{i\\in Q_0}d_ie_i-\\sum_{\\alpha:i\\rightarrow j}d_ie_j.$ A quiver representation assigns to each vertex $i\\in Q_0$ a vector space of dimension $d_i$ and a linear map to each arrow. Recently it turned out that the structure of moduli spaces of quiver representations is very rich, and it is a nat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants from quiver representation theory",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-knot-invariants-from-quiver-representation-theor.md",
+      "narrative": null,
+      "content": "We present now our main claim, which is the statement that various types of knot invariants, for a given knot, are encoded in the data of moduli spaces of quiver representations of a certain quiver, assigned to this knot. As explained in the introduction, from physical perspective this is a consequence of the supersymmetric quiver quantum mechanics description of BPS states in brane systems representing knots. Technically this statement is a consequence of our observation -- which we pose as a general conjecture -- that generating functions of colored HOMFLY-PT polynomials ([\\[Pz2\\]](#Pz2){ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example – trefoil knot",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-example-trefoil-knot.md",
+      "narrative": null,
+      "content": "We illustrate the above correspondence in the example of trefoil knot, whose reduced colored HOMFLY-PT polynomials arise by setting $t=-1$ in ([\\[Pr-31\\]](#Pr-31){reference-type=\"ref\" reference=\"Pr-31\"}). Using the $q$-binomial identity $(z;q)_k=\\sum_i {k \\brack i} (-z)^i q^{\\frac{i(i-1)}{2}}$, the $q$-binomial and the last product in ([\\[Pr-31\\]](#Pr-31){reference-type=\"ref\" reference=\"Pr-31\"}) take form $${r \\brack k} \\big(\\frac{a^2}{q^2};q^2\\big)_k = \\sum_{i=0}^k \\frac{(q^2;q^2)_r  \\big( - \\frac{a^2}{q^2} \\big)^i q^{i(i-1)} }{(q^2;q^2)_{r-k} (q^2;q^2)_i (q^2;q^2)_{k-i}}.$$ Introducing $r=d_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.02991v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-summary.md",
+      "narrative": null,
+      "content": "In this letter we presented a surprising duality between knots and quivers, which underlies the supersymmetric quiver quantum mechanics description of BPS states in brane systems describing knots. To conclude, let us indicate various directions in which relations presented above could be generalized. It is natural to expect that various properties, well known on one side of the duality, should have their counterparts on the other side.\n\nFirst, it is desirable to be able to identify a quiver corresponding to a given knot more directly, not necessarily taking advantage of colored HOMFLY-PT polyn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-character-closes-parity-gap",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-character-closes-parity-gap",
+  "kind": "remark",
+  "title": "Symbolic Hecke $q$-character via Hoefsmit seminormal form distinguishes proton from neutron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mn-classical-parity-blind"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition",
+  "tags": [
+    "hecke-character",
+    "hoefsmit",
+    "seminormal",
+    "q-deformation",
+    "proton-neutron",
+    "parity"
+  ],
+  "text": "q-character-closes-parity-gap.md",
+  "provenance": "authored"
+}

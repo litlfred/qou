@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0006111v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0006111v2  14 Jul 2003\nDistribution of the k-th smallest Dirac operator eigenvalue\nPoul H. Damgaard\nThe Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark\nShinsuke M. Nishigaki\nDepartment of Physics, Tokyo Institute of Technology, O-okayama, Meguro, Tokyo 152-8551, Japan\n(June 15, 2000; revised July 14, 2003)\nBased on the exact relationship to Random Matrix Theory, we derive the probability distribution\nof the k-th smallest Dirac operator eigenvalue in the microscopic ﬁnite-volume scaling regime of QCD\nand related gauge theories.\nPACS number(s): 12.38.Aw, 12.38.Lg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "where the integrals are over complex, real, and quaternion real (N + ν) × N matrices W for β = 2, 1, 4, respectively.\nThese chiral random matrix ensembles provide exactly equivalent descriptions of the eﬀective ﬁeld theory partition\nfunctions in the microscopic ﬁnite-volume scaling regime [3,5]. Moreover, all microscopic spectral properties of the\nDirac operator coincide exactly with the corresponding microscopically rescaled Random Matrix Theory eigenvalues\n[8]. This means that either formulation can be used to derive identical results, and in the case of the individual\ndistributions of the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "fermion species, with the partition function now being evaluated in a ﬁxed topological sector of eﬀective charge\nν = 1 + 2/β. Taking into account the deﬁnition (2), we then get, with Z(β)\nν\n({µ}) denoting the partition functions in\nthe microscopic limit,\nω(β)\nk (ζ1, . . . , ζk; {µ}) =\nlim\nN→∞\n\u0010 k\nY\ni=1\n|ζi|\n8N\n\u0011\nΩ(β)\nN,k( ζ2\n1\n8N , . . . , ζ2\nk\n8N ; { µ2\n8N })\n= const. e−βζ2\nk/8ζ\nβ ν+1\n2\n−ν−1+ 2\nβ\nk\nNf\nY\nj=1\n(µ2\nj + ζ2\nk)\n1\n2 −1\nβ\nk−1\nY\ni=1\n\u0010\nζβ(ν+1)−1\ni\n(ζ2\nk −ζ2\ni )\nβ\n2 −1\nNf\nY\nj=1\n(ζ2\ni + µ2\nj)\n\u0011 k−1\nY\ni>j\n(ζ2\ni −ζ2\nj )β\nNf\nY\nj=1\nµν\nj\n×\nZ(β)\n1+2/β(\np\nµ2\n1 + ζ2\nk, . . . ,\nq\nµ2\nNf + ζ2\nk,\nβ\nz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "while for ν = 5 it gives\np(1)\n1 (ζ) = 1\nζ e−ζ2/8 \u00003I3(ζ)2 −4I2(ζ)I4(ζ) + I1(ζ)I5(ζ)\n\u0001\n,\n(15)\nall of these being correctly normalized.\nBy now, the eﬀective ﬁnite-volume partition functions\nare known in analytically closed forms for β = 2 [28]\nand β = 1 [16]. They are also known for a general even\nnumber of pairwise degenerate fermions for β = 4 [16]\n(this is a technical restriction that we expect to be lifted\neventually). We shall here for convenience provide the\nprecise detailed expressions for all these known cases. In\nexhibiting explicit forms of ω(β)\nk (ζ1, . . . , ζk; {µ}) by sub-\nstitutin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "B(4) =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nh\nI4(˜µi, ˜µj)\ni\ni,j=1,...,a\nh\nI4(˜ζi, ˜µj)\ni\ni=1,..,k−1\nj=1,...,a\nh\nS4(˜ζi, ˜µj)\ni\ni=1,..,k−1\nj=1,...,a\nh\nI4(˜µi, ˜ζj)\ni\ni=1,...,a\nj=1,...,k−1\nh\nI4(˜ζi, ˜ζj)\ni\ni,j=1,...,k−1\nh\nS4(˜ζi, ˜ζj)\ni\ni,j=1,..,k−1\nh\n−S4(˜µi, ˜ζj)\ni\ni=1,...,a\nj=1,...,k−1\nh\n−S4(˜ζi, ˜ζj)\ni\ni,j=1,...,k−1\nh\nD4(˜ζi, ˜ζj)\ni\ni,j=1,..,k−1\n\n\n(a : even),\n\n\nh\nI4(˜µi, ˜µj)\ni\ni,j=1,...,a\nh\n−Q4(˜µi)\ni\ni=1,...,a\nh\nI4(˜ζi, ˜µj)\ni\ni=1,..,k−1\nj=1,...,a\nh\nS4(˜ζi, ˜µj)\ni\ni=1,..,k−1\nj=1,...,a\nh\nQ4(˜µj)\ni\nj=1,...,a\n0\nh\nQ4(˜ζj)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006111v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "[3] E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys.\nA560, 306 (1993).\n[4] J.J.M. Verbaarschot and I. Zahed, Phys. Rev. Lett. 70,\n3852 (1993);\nJ.J.M. Verbaarschot, Nucl. Phys. B426 (1994) 559; Phys.\nRev. Lett. 72, 2531 (1994).\n[5] M.A. Halasz and J.J.M. Verbaarschot, Phys. Rev. D52,\n2563 (1995).\n[6] For an exhaustive list of references, see:\nJ.J.M. Ver-\nbaarschot and T. Wettig, hep-ph/0003017.\n[7] P.H. Damgaard, Phys. Lett. B424, 322 (1998).\nG. Akemann and P.H. Damgaard, Nucl. Phys. B528, 411\n(1998); Phys. Lett. B432, 390 (1998); hep-th/9910190.\n[8] J.C. Osborn, D. Toublan and J.J.M. Verbaars",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

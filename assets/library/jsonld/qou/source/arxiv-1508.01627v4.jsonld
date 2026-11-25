@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1508.01627v4",
+  "contains": [
+    "library/arxiv-1508.01627v4/sections/sec-front-matter",
+    "library/arxiv-1508.01627v4/sections/sec-000",
+    "library/arxiv-1508.01627v4/sections/sec-001",
+    "library/arxiv-1508.01627v4/sections/sec-002",
+    "library/arxiv-1508.01627v4/sections/sec-003",
+    "library/arxiv-1508.01627v4/sections/sec-004",
+    "library/arxiv-1508.01627v4/sections/sec-005",
+    "library/arxiv-1508.01627v4/sections/sec-006",
+    "library/arxiv-1508.01627v4/sections/sec-007",
+    "library/arxiv-1508.01627v4/sections/sec-008",
+    "library/arxiv-1508.01627v4/sections/sec-009",
+    "library/arxiv-1508.01627v4/sections/sec-010",
+    "library/arxiv-1508.01627v4/sections/sec-011",
+    "library/arxiv-1508.01627v4/sections/sec-012",
+    "library/arxiv-1508.01627v4/sections/sec-013",
+    "library/arxiv-1508.01627v4/sections/sec-014",
+    "library/arxiv-1508.01627v4/sections/sec-015",
+    "library/arxiv-1508.01627v4/sections/sec-016",
+    "library/arxiv-1508.01627v4/sections/sec-017",
+    "library/arxiv-1508.01627v4/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS\n\n**REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS**\n\n23 pp, 20 sections.\n\n**Abstract.** We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.\n\n**Outline.** Front matter; 1 Introduction; 2 Maximal tori in classical groups; 2.1 Weyl groups and maximal tori in symplectic; 2.2 Regular semisimple elements; 2.3 Maximal connected reductive subgroups; 3 A Murnaghan–Nakayama rule; 3.1 Lusztig restriction; 3.2 Symbols; 3.3 Unipotent characters of symplectic and ort; 3.4 Values of unipotent characters at regular ; 4 Vanishing of characters; 4.1 Non-unipotent characters; 4.2 Unipotent characters; 5 Simple endotrivial modules; 5.1 On certain unipotent characters; 5.2 Simple endotrivial modules in classical ty; 6 Zeroes of characters of quasi-simple groups",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1508.01627&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1508.01627v4",
+    "title_source": "slug",
+    "source_file": "1508.01627v4.pdf",
+    "source_sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
+    "pages": 23,
+    "arxiv": {
+      "id": "1508.01627",
+      "version": "4",
+      "primary_class": "math.RT",
+      "stamp_date": "25 Oct 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

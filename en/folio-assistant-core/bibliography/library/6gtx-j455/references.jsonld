@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/6gtx-j455",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+      "dcterms:creator": [
+        "Ruolin Liu, 1,2,3,* Jerome Quintin ,4,5,6,2,3,†",
+        "Afshordi, Niayesh"
+      ],
+      "dcterms:issued": "D:20260318",
+      "bibo:doi": "10.1103/6gtx-j455",
+      "dcterms:identifier": "https://doi.org/10.1103/6gtx-j455",
+      "dcterms:source": "library/6gtx-j455/manifest.jsonld",
+      "dcterms:hasVersion": "library/6gtx-j455"
+    }
+  ]
+}

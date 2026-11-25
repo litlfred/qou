@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/kontsevich-soibelman-2008.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/kontsevich-soibelman-2008",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "bib-verification attestation: reference kontsevich-soibelman-2008",
+      "description": "The bib-verification judgements recorded for reference kontsevich-soibelman-2008, each pinned to the hash it attested.",
+      "sourceKind": "bib-verification",
+      "sourcePath": "test/attestations/bib-verification/reference/kontsevich-soibelman-2008.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

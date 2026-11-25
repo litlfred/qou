@@ -1,0 +1,346 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9211141v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9211141v1  1 Dec 1992\nITD 92/93–9\nLevel-Spacing Distributions and the Airy Kernel\nCraig A. Tracy∗\nDepartment of Mathematics and Institute of Theoretical Dynamics,\nUniversity of California, Davis, CA 95616, USA\nHarold Widom†\nDepartment of Mathematics,\nUniversity of California, Santa Cruz, CA 95064, USA\nScaling level-spacing distribution functions in the “bulk of the spectrum” in\nrandom matrix models of N × N hermitian matrices and then going to the limit\nN →∞, leads to the Fredholm determinant of the sine kernel sin π(x −y)/π(x −y).\nSimilarly a scaling limit at the “edge of the spe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction-and-summary-of-results.md",
+      "narrative": null,
+      "content": "[]{#sec:intro_summary label=\"sec:intro_summary\"}\n\n##  Introduction {#subsec:intro}\n\nIn this paper we present new results for the *level spacing distribution functions* obtained from scaling random matrix models of $N\\times N$ hermitian matrices at the edge of the support of the (tree-level) eigenvalue densities when the parameters of the potential $V$ are not \"finely tuned.\" This universality class is already present in the Gaussian Unitary Ensemble. It is known [@bowick_brezin; @forrester; @mehta_book; @moore] that these distribution functions are expressible in terms of a Fredholm determinan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The System of Partial Differential Equations",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-12-the-system-of-partial-differential-equations.md",
+      "narrative": null,
+      "content": "[]{#subsec:sum_pde label=\"subsec:sum_pde\"} We set $$J=\\bigcup_{j=1}^m\\left(a_{2j-1},a_{2j}\\right)$$ and write $D(J;\\lambda)$ for the Fredholm determinant of $K$ acting on $J$. We think of this as a function of $a=(a_1,\\ldots,a_{2m})$. Then $$d_a \\log D(J;\\lambda) = - \\sum_{j=1}^{2m} (-1)^j R(a_j,a_j)\\, da_j\n\\label{dlog_tau}$$ where $R(x,y)$ is the kernel of the operator $K(I-K)^{-1}$ and $d_a$ denotes exterior differentiation with respect to the $a_j$'s. We introduce quantities $$q_j=(I-K)^{-1} A(a_j)\\, , \\ \\ p_j=(I-K)^{-1} A^\\prime(a_j)\\, ,\n\\label{qp_defn}$$ (which are the analogue of the qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ordinary Differential Equations",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-13-the-ordinary-differential-equations.md",
+      "narrative": null,
+      "content": "[]{#subsec:sum_ode label=\"subsec:sum_ode\"} For the special case $J=(s,\\infty)$ the above equations can be used to show that $q(s;\\lambda)$ (the quantity $q$ of the last section corresponding to the end-point $s$) satisfies $$q^{\\prime\\prime}= s\\,  q + 2 q^3 \\, ,\\ \\ \\ (^\\prime={d\\over ds})\n\\label{p2}$$ with $$q(s;\\lambda) \\sim \\sqrt{\\lambda}\\> {\\rm Ai}(s)\n \\ \\ \\ {\\rm as}\\ \\  s\\rightarrow\\infty.\n\\label{p2_bc}$$ This equation is a special case of the ${\\rm P}_{II}$ differential equation [@ablowitz_segur; @gauss_painleve; @mtw; @painleve]. One can similarly derive for $R(s):=R(s,s)$, which in view",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "The analogue of our constant $\\tau_0$ in the expansion was found to be equal to $2^{1/12} e^{3\\zeta^\\prime(-1)}$ ($\\zeta(s)$ is the Riemann zeta function).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics and the Commuting Differential Operator",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-14-asymptotics-and-the-commuting-differential-op.md",
+      "narrative": null,
+      "content": "[]{#subsec:sum_commuting label=\"subsec:sum_commuting\"} Again we take $J=(s,\\infty)$ and consider asymptotics as $s\\rightarrow\n-\\infty$. (Asymptotics as $s\\rightarrow\\infty$ can be obtained trivially from the Neumann series for $(I-K)^{-1}$.) From the random matrix point of view the interesting quantities are $$E(n;s):= {(-1)^n\\over n!}\\> {\\partial^n\\over \\partial \\lambda^n}\n\\, D(I;\\lambda)\\biggr\\vert_{\\lambda=1} \\, .$$ This is the probability that exactly $n$ eigenvalues lie in $J$. Using our differential equations plus the known asymptotics of $q(s;1)$ as $s\\rightarrow -\\infty$ [@hastings_mcl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-15-probability-density-for-the-nth-largest-eigen.md",
+      "narrative": null,
+      "content": "An elementary probability argument shows that if $F(n;s)$ ($n=0,1,\\cdots$) denotes the probability density for the (scaled) position of the $n^{th}$ largest eigenvalue ($n=0$ is the largest), then $$F(0;s) = {d E(0;s)\\over ds}$$ and for $n\\geq 1$ $$F(n;s)-F(n-1,s)={d E(n;s)\\over ds}\\, .$$\n\nFrom the preceding expressions for $E(n;s)$ in terms of $q(s;1)$ and $q_n(s)$ we can derive formulas for $F(n;s)$ which can in turn be numerically evaluated to produce tables of values for these probability densities. We have done this for $n=0$ and $n=1$ and in Fig. 1 we plot $E(0;s)$ and $E(1;s)$ and in Fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-2-the-system-of-partial-differential-equations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the Equations",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-21-derivation-of-the-equations.md",
+      "narrative": null,
+      "content": "\\label{subsec:derivation_pde}\nA central role in the derivation of our equations is played by the\ncommutator identity\n\\begin{equation}\n\\left\\lbrack L,\\left(I-K\\right)^{-1}\\right\\rbrack = \\left(I-K\\right)^{-1}\n\\left\\lbrack L,K\\right\\rbrack \\left(I-K\\right)^{-1}\n\\label{CR_1}\n\\end{equation}\nfor any operators $K$ and $L$. Taking $L$ to be $D$ ($=d/dx$) or\n$M$ (=multiplication by the independent variable) give two of the three\nbasic ingredients from which the equations are derived.  The third\nis the equally simple fact that if $K$ depends upon a parameter $\\alpha$\nthen\n\\begin{equation}\n{d\\over d\\alp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hamiltonian Structure",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-22-hamiltonian-structure.md",
+      "narrative": null,
+      "content": "[]{#subsec:hamiltonian label=\"subsec:hamiltonian\"} The partial differential equations ([\\[airy_1\\]](#airy_1){reference-type=\"ref\" reference=\"airy_1\"})--([\\[airy_6\\]](#airy_6){reference-type=\"ref\" reference=\"airy_6\"}) can be rewritten in a compact form that reveals a symplectic structure with ([\\[airy_7\\]](#airy_7){reference-type=\"ref\" reference=\"airy_7\"}) defining a family of commuting Hamiltonians. To see this we first change the notation slightly $$\\begin{aligned}\nq_{2j}&=& -{i\\over 2} x_{2j},\\ \\ \\ \\ p_{2j}=-i y_{2j}, \\\\\nq_{2j-1}&=& {1\\over 2} x_{2j-1},\\ \\ \\ \\ p_{2j-1}=y_{2j-1},\n\\end{aligned",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-3-the-ordinary-differential-equations.md",
+      "narrative": null,
+      "content": "In this section we specialize to the case J = (s, ∞) and derive the diﬀerential equations\n(1.11), (1.13) and (1.14). In the notation of the last section m = 1, a1 = s, a2 = ∞. All\nterms in the formulas we derived which contain a2 vanish because of the decay of the Airy\nkernel at +∞. Recall that we now denote the quantity q corresponding to the endpoint\na1 = s by q(s), and write R(s) for R(s, s).\nFirst, equation (1.14) is immediate from (2.21), which now says that R = u, and (1.8).\nFor (1.13) we observe that (1.6) and (1.7) in the present case read\nq′ = p −qu ,\n(3.1)\np′ = sq + pu −2qv ,\n(3.2)\nw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ASYMPTOTICS",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-4-asymptotics.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics via Painlev'e",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-41-asymptotics-via-painleve.md",
+      "narrative": null,
+      "content": "[]{#subsec:asy_painleve label=\"subsec:asy_painleve\"} Hastings and McLeod [@hastings_mcleod] (see also [@clarkson_mcleod1; @clarkson_mcleod2]) have shown that $q(s;1)$, the unique solution to equation ([\\[p2\\]](#p2){reference-type=\"ref\" reference=\"p2\"}) which is asymptotic to ${\\rm Ai}(s)$ as $s\\rightarrow +\\infty$, is asymptotically equal to $\\sqrt{-s/2}$ as $s\\rightarrow -\\infty$. In fact there is a complete asymptotic expansion in decreasing powers of $-s$, beginnning with this term [@mcleod_private]. Successive terms are easily computed. This result and later ones, become a little easier to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics via the Commuting Differential Operator",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-42-asymptotics-via-the-commuting-differential-op.md",
+      "narrative": null,
+      "content": "[]{#subsec:asy_diffop label=\"subsec:asy_diffop\"} We begin with the integral identity $$K(x,y)=\\int_0^\\infty A(x+z) A(y+z)\\, dz \\, .\n\\label{K_identity}$$ This appears in [@clarkson_mcleod1] but we give a simple proof here. Think of ([\\[partial_K\\]](#partial_K){reference-type=\"ref\" reference=\"partial_K\"}) as a differential equation for the \"unknown\" function $K(x,y)$. Since $$\\left({\\partial\\over\\partial x}+{\\partial\\over \\partial y}\\right)\nA(x+z) A(y+z) = {\\partial\\over\\partial z} A(x+z) A(y+z)$$ one solution is the right side of ([\\[K_identity\\]](#K_identity){reference-type=\"ref\" reference=\"K_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The region $x<<t^{-1/2}$",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-421-the-region-xt-12.md",
+      "narrative": null,
+      "content": "If we make the substitutions\nf(x) = h(t2x) = h(y)\nthen (4.7) becomes\n(yh′(y))′ −h(y) = t−2\n y2\nt4 −2y\nt −µ\n!\nh(y) .\nThe solution of the equation with the right hand side replaced by 0 which satisﬁes h(0) = 1\nis I0(2√y) where I0 is the usual modiﬁed Bessel function. The actual solution h(y) will be\nasymptotic to this in any interval over which the integral of the factor of h(y) on the right\nhand side of the equation is o(1). Recalling that µ = O(t1/2) we see that y << t3/2 suﬃces.\nHence\nf(x) ∼I0\n\u0010\n2t√x\n\u0011\n,\n(x << t−1/2)\n(4.9)\n2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-422-the-region-xt-2-t-xt14.md",
+      "narrative": null,
+      "content": "If in equation (4.8) we set\nα(x) = (t −x)2 −µ\nx\n,\ny =\nZ x\n0\nq\nα(z) dz ,\nh(y) = α(x)1/4g(x)\nthen the equation for h(y) is\nh′′(y) −h(y) =\n\"1\n4\nα′′\nα2 −5\n16\nα′2\nα3 −\n1\n4x2α\n#\nh(y) ,\nwhere on the right side ′ =\nd\ndx. Since dy = α(x)1/2 dx, the integral with respect to y (of the\nfactor of h(y) on the right side of the equation) over any interval equals\nZ 1\n4\nα′′\nα3/2 −5\n16\nα′2\nα5/2 −\n1\n4x2α1/2\n!\ndx\nover the corresponding x interval. This will be o(1) as long as, in this interval, x >> t−2\nand t −x >> t1/4.\nIn this same region y >> 1 and so\nh(y) ∼aey\n(4.10)\nfor some constant a = a(t). In case x << 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The region $x-t>>t^{1/4}$",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-423-the-region-x-tt14.md",
+      "narrative": null,
+      "content": "[]{#subsubsec:region1 label=\"subsubsec:region1\"} If we make the substitutions $$f(x) = h(t^2x)=h(y)$$ then ([\\[eig_eqn1\\]](#eig_eqn1){reference-type=\"ref\" reference=\"eig_eqn1\"}) becomes $$\\left(y h^\\prime(y) \\right)^\\prime - h(y) = t^{-2}\\left(\n{y^2\\over t^4} -2 {y\\over t} -\\mu\\right) h(y)\\, .$$ The solution of the equation with the right hand side replaced by $0$ which satisfies $h(0)=1$ is $I_0(2\\sqrt{y})$ where $I_0$ is the usual modified Bessel function. The actual solution $h(y)$ will be asymptotic to this in any interval over which the integral of the factor of $h(y)$ on the right hand s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotics of $\\lambda_i$",
+      "pageStart": 25,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-425-the-asymptotics-of-lambda-i.md",
+      "narrative": null,
+      "content": "If we look at the asymptotics of $f_i(x)$ (the eigenfunction associated with the eigenvalue $\\mu_i$ of $L$, normalized so that $f_i(0)=1$) given by ([\\[appx1\\]](#appx1){reference-type=\"ref\" reference=\"appx1\"}), ([\\[appx3\\]](#appx3){reference-type=\"ref\" reference=\"appx3\"}), ([\\[appx5\\]](#appx5){reference-type=\"ref\" reference=\"appx5\"}), and ([\\[appx8\\]](#appx8){reference-type=\"ref\" reference=\"appx8\"}) we see that the main contribution to $\\int_0^\\infty f_i(x)^2\\,dx$ comes from any region $$t^{-1/4}\\vert t-x \\vert < \\eta(t)$$ as long as $\\eta(t)\\rightarrow\\infty$. For some such region we have, by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

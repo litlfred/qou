@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1101.0956v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1101.0956v3",
+  "contains": [
+    "library/arxiv-1101.0956v3/sections/sec-front-matter",
+    "library/arxiv-1101.0956v3/sections/sec-000",
+    "library/arxiv-1101.0956v3/sections/sec-001",
+    "library/arxiv-1101.0956v3/sections/sec-002",
+    "library/arxiv-1101.0956v3/sections/sec-003",
+    "library/arxiv-1101.0956v3/sections/sec-004",
+    "library/arxiv-1101.0956v3/sections/sec-005",
+    "library/arxiv-1101.0956v3/sections/sec-006",
+    "library/arxiv-1101.0956v3/sections/sec-007",
+    "library/arxiv-1101.0956v3/sections/sec-008",
+    "library/arxiv-1101.0956v3/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids.\n\n**ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES**\n\n*CONSTANTIN M. ARCUS¸*\n\n44 pp, 11 sections.\n\n**Abstract.** In this paper we present the category of generalized Lie algebroids. Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.\n\n**Outline.** Front matter; 3.1 The pull-back Lie algebroid of a generaliz; 3.2 Interior Differential Systems; 4.1 Exterior Differential Systems; References; 1 Introduction; 2 The category of generalized Lie algebroids; 3 Interior Differential Systems; 4 Exterior differential calculus; 5 Exterior Differential Systems; 6 Torsion and curvature forms. Identities of C",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1101.0956&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1101.0956v3",
+    "title_source": "slug",
+    "source_file": "1101.0956v3.pdf",
+    "source_sha256": "28fffdb404e885017ea586c077b33fc65bb6062cdde667887254fb33ae323642",
+    "pages": 44,
+    "arxiv": {
+      "id": "1101.0956",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "25 Jul 2011"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

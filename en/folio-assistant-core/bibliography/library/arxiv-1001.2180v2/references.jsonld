@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1001.2180v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+      "dcterms:creator": [
+        "FÉRAY, VALENTIN",
+        "MÉLIOT, PIERRE-LOÏC"
+      ],
+      "dcterms:issued": "D:20181024",
+      "dcterms:identifier": "https://arxiv.org/abs/1001.2180",
+      "dcterms:abstract": "In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The ﬁrst lines of such diagrams are typically of order n, so it does not ﬁt in the context of the work of P. Biane and P. Śniady. Using the theory of polynomial functions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the ﬁrst- and second-order asymptotics of the length of the ﬁrst rows. Our method also works for other measures, for example those coming from Schur-Weyl representations.",
+      "dcterms:source": "library/arxiv-1001.2180v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1001.2180v2"
+    }
+  ]
+}

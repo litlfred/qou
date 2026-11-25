@@ -1,0 +1,1366 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ihpmay2025",
+  "blocks": [
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background material",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-0-background-material.md",
+      "narrative": null,
+      "content": "This section consists of background material on hyperbolic space and Teichm¨uller space. We\nwill not cover this material in the lectures, but we include the material for any participants who\nare not familiar with this material or would like a reminder.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The hyperbolic plane",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-01-the-hyperbolic-plane.md",
+      "narrative": null,
+      "content": "Recall that the upper half-plane model for the hyperbolic plane is given by\nH2 = {z ∈C | Im(z) > 0}\nwith Riemannian metric\nds2\nhyp = 1\ny2 dxdy.\nProsaically, if⃗v ∈T(x,y)H2, then its hyperbolic length ||⃗v||hyp = |⃗v|\ny where |⃗v| is the Eucliden\nlength of⃗v\nOne may easily check that the y-axis L is a geodesic in this metric, since if p : H2 →L is\nEuclidean perpendicular projection, then ||Dp(⃗v)||hyp ≤||⃗v||hyp with equality if and only if⃗v is\nvertical. Moreover, segments of L are the only geodesic joining points on L. One may check that\nM¨obius transformations with real co-efficients act as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS\nRICHARD D. CANARY\nAbstract. These notes are designed to accompany my mini-course on hyperbolic 3-manifolds\nat IHP in May 2025. The goal is to develop enough understanding of hyperbolic 3-manifolds\nto understand the background statements and some consequences of the Tameness Theorem,\nthe Ending Lamination Theorem and the Density Theorem. The notes contain much more\nmaterial than we will be able to cover in the actual mini-course.\nI left the four lane highway took a blacktop seven miles\nDown by the old country school I went to as a child\nTwo miles down a gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Life in the hyperbolic plane",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-02-life-in-the-hyperbolic-plane.md",
+      "narrative": null,
+      "content": "One tenet of the Thurstonian viewpoint is that one should obtain a visceral feeling for what\nit is like to love there. Here we explore sports in the hyperbolic plane.\nWe assume, for simplicity, that the baseball field is a quadrant of a disk with radius 300\nfeet and that the infield is contained within a disk of radius 100 feet. In Euclidean space, the\noutfield has area approximately 62,832 square feet. It can be covered by 3 outfielders, so each\noutfielder covers approximately 20,000 square feet.\nIn hyperbolic space, the outfield has area π\n2 cosh(300) > 10100. If you assume that each\noutfiel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Teichmüller space",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-03-teichmüller-space.md",
+      "narrative": null,
+      "content": "A complete orientable Riemannian surface X is said to be hyperbolic if it is locally isometric\nto H2. In this case, the universal cover ˜X is a simply connected complete Riemannian manifold\nlocally isometric to H2 and hence can be identified with H2. Therefore, X = H2/Γ where Γ\nis a discrete subgroup of Isom+(H2) ∼= PSL(2, R). Notice that Γ is only well-defined up to\nconjugacy, since the identification of ˜X with H2 is not canonical.\nA marked hyperbolic structure on a closed oriented surface S is a pair (X, f) where f : S →X\nis an orientation-preserving homeomorphism and X is a hyperbolic surf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic 3-space",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-04-hyperbolic-3-space.md",
+      "narrative": null,
+      "content": "The upper half space model for hyperbolic 3-space is given by\nH3 = {(z, t) ∈C × R|t > 0}\nwith hyperbolic metric given\nds2 = dx2 + · · · + dy2 + dt2\nt2\nwhere x = Re(z) and y = Im(z).\nIt is easy to check, just as in H2, that the t-axis L is a geodesic and that the only geodesics\njoining points on L are given by segments of L. M¨obius transformations (this time with complex\nco-efficients) extend to orientation-preserving isometries of H3. One can do this by writing down\na painful formula, or by noting that translations in C extend to horizontal translations in H3,\ndilations z →λz extend to dilati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "cor-sec-006-06.md",
+      "narrative": null,
+      "content": "If NΓ = H3/Γ is a convex cocompact hyperbolic 3-manifold, then Γ contains no elliptic or parabolic elements, so every non-trivial element of Γ is hyperbolic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "If Γ is a Kleinian group, which is not virtually abelian, then Γ acts on H3 = H3∪∂H3 as a (discrete) convergence group. Specifically, if {γn} is a sequence of distinct elements of Γ, then there exists w, z ∈Λ(Γ) (not necessarily distinct) and a subsequence, still called {γn} so that γn(x) →z uniformly on compact subsets of H3 −{w}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "If Γ is a Kleinian group, then Γ acts properly discontinuously on Ω(Γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "If Γ is a Kleinian group which is not virtually abelian, then ∂C1(Nρ) is a C1- submanifold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prop-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-006-05.md",
+      "narrative": null,
+      "content": "If Γ is a Kleinian group, then b NΓ is homeomorphic to C1(NΓ). We say that Γ is convex cocompact if C1(NΓ) is compact. Notice that this is equivalent to requiring that either b NΓ or C(NΓ) is compact. If ρ is convex cocompact, then we identified Nρ −C1(Nρ) with C1(Nρ) × (1, ∞). We may then show that in these coordinates Nρ −C1(Nρ) is bilipschitz to the metric cosh2 tds2 ∂C1(Nρ) + dt2 where ds2 ∂C1(Nρ) is the intrinsic metric on ∂C1(Nρ) and t is the real coordinate. (This fact is implicit in the work of Epstein-Marden [35]. See Section 4.2 of Biringer-Souto [11] for a more precise discussion.)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convex cocompact hyperbolic 3-manifolds",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-1-convex-cocompact-hyperbolic-3-manifolds.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic definitions",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-11-basic-definitions.md",
+      "narrative": null,
+      "content": "For simplicity, we will assume throughout these lectures that all groups are finitely gener-\nated, non-abelian and torsion-free. Selberg’s Lemma guarantees that every finitely generated\nsubgroup of any linear group contains a finite-index torsion-free subgroup, so the assumption\nthat groups are torsion-free is not very restrictive.\nA Kleinian group Γ is a discrete subgroup of PSL(2, C) ∼= Isom+(H3). Since we have assumed\nthat Γ is torsion-free,\nNΓ = H3/Γ\nis a hyperbolic 3-manifold.\nThe limit set Λ(Γ) of a Kleinian group Γ is the set of accumulation points of an orbit in the\nboundary of H3, i.e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/rem-sec-006-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-006-04.md",
+      "narrative": null,
+      "content": "With a little more care, one can show that ∂C1(NΓ) is actually C1,1. Suppose that x, y ∈NΓ −C1(NΓ) and −−−→ r(x)x and r(y)y intersect ∂C1(NΓ) at the same point z, then r(z) = r(y) = r(x), so −−−→ r(x)x = −−−→ r(y)y = −−−→ r(z)z. It follows that there is a homeomorphism F : NΓ −C(NΓ) →∂C1(NΓ) × (0, ∞) given by F(x) = \u0010−−−→ r(x)x ∩∂C1(NΓ), d(x, r(x)) \u0011 . (Notice that if r(x) = r(y) it need not be the case that −−−→ r(x)x = −−−→ r(y)y, which is another main reason we work mostly with C1(NΓ).) One may continuously extend ˜r to a map ∂˜r : Ω(Γ) →CH(Λ(Γ)) by letting ˜r(z) be the first point of conta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "(Milnor-Svarc Lemma) If Γ acts properly discontinuously, cocompactly and by isometries on a proper, length space X and x ∈X then Γ has a finite generating set S so that the orbit map Γ →X given by γ 7→γ(x), for all γ ∈Γ, is a quasi-isometry from (Γ, dS) to X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "A Kleinian group is convex cocompact if and only if its orbit map τx : Γ →H3 is a quasi-isometric embedding for some (any) x ∈H3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A characterization of convex cocompactness in terms of quasi-isometries",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-12-a-characterization-of-convex-cocompactness-in.md",
+      "narrative": null,
+      "content": "It will be useful to give another characterization of convex cocompactness. This definition\nis well-adapted to show that small deformations of convex cocompact groups remain convex\ncocompact.\nQuasi-isometries and quasi-isometric embeddings are natural classes of mappings in the con-\ntext of geometric group theory. They are generalizations of bilipschitz homeomorphisms and\nembeddings which ignore the local structure. However, they need not even be continuous. For\nexample, an infinite line is quasi-isometric to both an infinite Euclidean cylinder and to Z and\nall compact metric spaces are quasi-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "(Special case of Fellow Traveller Property) Given K ≥1 and C ≥0 there exists R = R(K, C) so that if J is a closed interval in R and f : J →H3 is a (K, C)-quasi-isometric embedding, [a, b] ⊂J and L is a geodesic in H3 joining f(a) to f(b), then the Hausdorff distance between L and f([a, b]) is at most R. Reminder: Suppose that C and D are closed subsets of a metric space Y . We say that the Hausdorff distance between C and D is at most R if both (1) d(c, D) ≤R for all c ∈C, and (2) d(d, C) ≤R for all d ∈D. Alternatively, one can say that C lies in the (closed) metric neighborhood of radius R of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "If Γ is a convex cocompact Kleinian group, then Γ is Gromov hyperbolic. Remarks: 1) Actually, H3 is δ-hyperbolic for δ = tanh−1 \u0010 √ \u0011 ≈0.8814. 2) A stronger notion of negative curvature is given by considering CAT(−1)-spaces. One says that a proper length space is CAT(−k), for some k ≥0, if every geodesic triangle is at least as thin as the triangle with the same lengths in a simply connected, complete Riemannian surface of curvature −k. The Comparision Theorem in Riemannian geometry implies that any simply RICHARD D. CANARY connected Riemannian manifold with sectional curvature ≤−k is CAT(−k)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Hyperbolic space H3 is cosh−1(2)-hyperbolic for any n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-009-04.md",
+      "narrative": null,
+      "content": "(Specialized Milnor-Svarc Lemma) If Γ is a convex cocompact Kleinian group and x ∈CH(Λ(Γ)), then there exists a finite generating set S for Γ, K ≥1 and C ≥0 so that ˆτx : KΓ,S →CH(Λ(Γ)) is K-bilipschitz and a (K, C)-quasi-isometry.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other characterizations",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-13-other-characterizations.md",
+      "narrative": null,
+      "content": "1.3. Other characterizations\nBeardon and Maskit [6] showed that a Kleinian group is convex cocompact if and only every\npoint in the limit set is a conical limit point. We say that z ∈Λ(ρ) is a conical limit point if\nwhenever −→\nxz is a geodesic ray ending at z, there exists R and a sequence {γn} ⊂π1(M) so that\nγn(x) →z and d(γn(x), −→\nxz) ≤R for all n.\nMarden [50] showed that a Kleinian group is convex cocompact if and only if it has a finite-\nsided convex fundamental domain and contains no parabolic elements.\nExercises: (1) Prove that if Γ is a Kleinian group, which is not virtually abelian,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A digression on hyperbolic spaces",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-14-a-digression-on-hyperbolic-spaces.md",
+      "narrative": null,
+      "content": "We will say that a proper length space X is (Gromov) δ-hyperbolic if whenever T is a geodesic\ntriangle in X with sides s1, s2 and s3 and y ∈s1, then d(y, s2 ∪s3) ≤δ. If X is δ-hyperbolic\nfor some δ, we often simply say that it is Gromov hyperbolic or simply hyperbolic.\nThe simplest examples of Gromov hyperbolic spaces are trees, which are 0-hyperbolic. The\nname is motivated, in part, by the observation that H3 is hyperbolic.\nLemma 1.9. Hyperbolic space H3 is cosh−1(2)-hyperbolic for any n.\nProof. Let T be a geodesic triangle in H3 with sides s1, s2 and s3. Since any three points in H3\nare cont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-009-03.md",
+      "narrative": null,
+      "content": "(Fellow Traveller Property) Given (K, C) and δ there exists R so that if X is δ- hyperbolic and f : [a, b] →X is a (K, C)-quasi-isometric embedding and L is a geodesic joining f(a) to f(b), then the Hausdorff distance between L and f([a, b]) is at most R. We sketch the proof in the case when f is a K-Lipschitz, (K, C)-quasi-isometric embedding into H3. Notice that in this case f is rectifiable and its image has length at most K|b−a|. This situation contains all the key ideas of the general proof.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deformation spaces of Kleinian groups",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-2-deformation-spaces-of-kleinian-groups.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic Definitions",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-21-basic-definitions.md",
+      "narrative": null,
+      "content": "Throughout the lecture course, M will denote a compact, oriented, irreducible 3-manifold,\npossibly with boundary, with infinite fundamental group. A 3-manifold M is said to be irre-\nducible if every embedded 2-sphere in M bounds a 3-ball in M. These assumptions guarantee\nthat the universal cover of M is contractible. We will often be considering the simple case where\nM = S×[0, 1] and S is a closed surface. Moreover, S will always denote a closed oriented surface\nin these notes.\nIf ρ : π1(M) →PSL(2, C) is a discrete, faithful representation, then ρ(π1(M)) then we obtain\na hyperbolic 3-manifold",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "If M is a compact 3-manifold whose fundamental group is not virtually abelian, then AH(M) is a closed (possibly empty) subset of X(M). Exercise: Show that if H2 is a handlebody of genus two, then AH(H2) is not open in X(M). Hint: It suffices to consider representations into PSL(2, R). A discrete, faithful representation ρ : π1(M) →PSL(2, C) is said to be convex cocompact if ρ(π1(M) is convex cocompact. Let CC(M) be the set of convex cocompact representations in AH(M). Moreover, a discrete, faithful representation ρ : π1(M) →PSL(2, C) is said to be a convex cocompact uniformization of M if hρ :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "cor-sec-012-03.md",
+      "narrative": null,
+      "content": "If M is a compact, irreducible 3-manifold with non-empty boundary, then CC(M) is open in X(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-22-stability.md",
+      "narrative": null,
+      "content": "It is a crucial property of convex cocompact representations, known as stability, that g\nCC(M)\nis open in Hom(Γ, PSL(2, C)). This was first established by Marden [50]. Informally, if you\nwiggle a convex cocompact representation a little bit it remains convex cocompact.\nOne can easily see how this phenomena works for Schottky groups.\nIf Γ = ⟨γ1, . . . , γn⟩\nis the Schottky group constructed in Section 1, we may view it as the image of a convex\ncocompact representation of Fn = ⟨a1, . . . , an⟩, ρ : Fn →PSL(2, C) where ρ(ai) = γi.\nIf\nσ ∈Hom(Fn, PSL(2, C) is close enough to ρ, then\n{C1, . . . , Cn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/rem-sec-012-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "rem-sec-012-04.md",
+      "narrative": null,
+      "content": "If M is a closed hyperbolic 3-manifold which admits a hyperbolic structure, then Mostow’s Rigidity Theorem [62] implies that CC(M) consists of two points (one for each ori- entation on M), IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "If ρ : π1(M) →PSL(2, C) is convex cocompact, then there exists a neighborhood U of ρ in Hom(π1(M), PSL(2, C)) such that if σ ∈U, then σ is convex cocompact.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "thm-sec-012-02.md",
+      "narrative": null,
+      "content": "(Local to Global Principle) Given K ≥1, C ≥0, there exists ˆK, ˆC and A so that if J is an interval in R and h : J →H3 is a (K, C)-quasi-isometric embedding restricted to every connected subsegment of J with length ≤A, then h is a ( ˆK, ˆC)-quasi-isometric embedding. Let KM denote the Cayley graph of π1(M) with respect to some generating set S and choose x0 ∈H3. There exists (K, C) so that the orbit map τρ : KM →H3 (with basepoint x0) is a (K, C)-quasi-isometric embedding. The local-to-global principle, see Theorem 2.5, implies that there exists A ≥1, ˆK, and ˆC so that if f : J →H3 (where J i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "Given S > 0, T > 0, there exists B = B(S, T) > 0 so that if P and Q are totally geodesic hyperplanes in H3, p ∈P, q ∈Q and x ∈H3, and px and qx are geodesic segments perpendicular to P and Q respectively, so that d(p, x) ≥B, d(q, x) ≥B, and d(x, pq) ≤S , then d(P, Q) ≥T. (The idea of the proof of the lemma is that if B is large enough, then px and pq are nearly tangent, so pq is nearly orthogonal to P. Similarly, pq is nearly orthogonal to Q. So we choose B large enough that the angles between pq and both P and Q is at least .75. Notice that pq has length at least 2B −2S. Let C = {(P, Q, L)} b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A proof of the Local-to-global principle",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-23-a-proof-of-the-local-to-global-principle.md",
+      "narrative": null,
+      "content": "2.3. A proof of the Local-to-global principle\nIn a hyperbolic space, the local-to-global principle takes the following form:\nTheorem 2.5. (Local to Global Principle) Given K ≥1, C ≥0 and δ ≥0, there exists ˆK, ˆC\nand A so that if J is an interval in R, X is δ-hyperbolic and h : J →X is a (K, C)-quasi-\nisometric embedding restricted to every connected subsegment of J with length ≤A, then h is a\n( ˆK, ˆC)-quasi-isometric embedding.\nWe will sketch a proof of Theorem 2.5 in the case that X = H3 and J = R (The assumption\nthat J = R is simply for convenience, while the restriction to X = H3 signific",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "(Local to Global Principle) Given K ≥1, C ≥0 and δ ≥0, there exists ˆK, ˆC and A so that if J is an interval in R, X is δ-hyperbolic and h : J →X is a (K, C)-quasi- isometric embedding restricted to every connected subsegment of J with length ≤A, then h is a ( ˆK, ˆC)-quasi-isometric embedding.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bers' Simultaneous uniformization",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-3-bers-simultaneous-uniformization.md",
+      "narrative": null,
+      "content": "If S is a closed oriented surface, we call a convex cocompact uniformization of S × [0, 1] (and\nits image) quasifuchsian. We also use the simplifying notation\nQF(S) = CC0(S × [0, 1]).\nSince S × [0, 1] admits an orientation-reversing homeomorphism homotopic to the identity,\nwe may assume that hρ is orientation-preserving. Therefore, we get a map\nB : QF(S) →T (S) × T ( ¯S)\ngiven by\nB(ρ) = (∂cNρ, hρ)\nIHP LECTURES ON HYPERBOLIC 3-MANIFOLDS\n21\nwhere ¯S is S with the opposite orientation. The main goal of this section is to show that B is\na homeomorphism.\nRemark: If M is a compact, irreducible 3-man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/rem-sec-014-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "rem-sec-014-01.md",
+      "narrative": null,
+      "content": "If M is a compact, irreducible 3-manifold and h : S × [0, 1] →M is a homotopy equivalence, then h is homotopic to an orientation-preserving homeomorphism (see Section 10 of Hempel [39]). It follows that CC(S × [0, 1]) = CC0(S × [0, 1]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "(Lehto-Virtanen [48, Thm. 1.5.1]) A quasiconformal map is conformal if and only if it is 1-quasiconformal. The most fundamental result concerning quasiconformal maps is the Measurable Riemann Mapping Theorem (see Ahlfors-Bers [5] or Lehto [47]) which asserts that the Beltrami differential RICHARD D. CANARY determines the quasiconformal map (up to normalization) and that every Beltrami differential (of norm less than 1) determines a quasiconformal map. Measurable Riemann Mapping Theorem: Suppose that µ ∈L∞(C, C) and ||µ||∞< 1. Then there exists a unique quasiconformal map ϕµ : C →C whose Beltra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prop-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "prop-sec-015-02.md",
+      "narrative": null,
+      "content": "Let ϕ: C →C be an orientation-preserving homeomorphism. Then ϕ is quasi- conformal if and only if it extends to a homeomorphism Φ: H3 ∪C →H3 ∪C whose restriction to H3 is bilipschitz (with respect to the hyperbolic metric).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasiconformal maps and Beltrami differentials",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-31-quasiconformal-maps-and-beltrami-differential.md",
+      "narrative": null,
+      "content": "We begin with a brief survey of the theory of quasiconformal maps (without proof). Roughly,\nquasiconformal maps are orientation preserving homeomorphisms which distort the conformal\nstructure by a bounded amount. One may view them as the conformal analogue of bilipschitz\nmaps, which distort the metric structure a bounded amount. Good references for the theory\nof quasiconformal maps are the books of Lehto-Virtanen [48] and Lehto [47]. This section is\nplagiarized from the research monograph of Canary-McCullough [30].\nGiven a function f : D →C defined on a domain D in C, we may write it as f(x, y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "thm-sec-015-03.md",
+      "narrative": null,
+      "content": "If f : C ∪{∞} →C ∪{∞} is a quasiconformal map and E ⊂C has measure zero, then f(E) has measure zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "cor-sec-016-02.md",
+      "narrative": null,
+      "content": "If ρ ∈QF(S), then Λ(ρ) has measure zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasifconformal conjugacy",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-32-quasifconformal-conjugacy.md",
+      "narrative": null,
+      "content": "We now show that any two quasifuchsian representations are quasiconformally conjugate.\nTheorem 3.4. If ρ1, ρ2 ∈QF(S), then there exists a quasiconformal map ϕ : ∂H3 →∂H3, so\nthat ρ2(γ) = ϕ ◦ρ2(γ) ◦ϕ−1 for all γ ∈Γ.\nProof. Let hρi : S×[0, 1] →C1(Nρi) be orientation-preserving homeomorphism in the homotopy\nclass of ρi. Since C1(Nρi) is a compact C1-manifold, we may assume that hρi is bilipschitz. So\nh = hρ2 ◦h−1\nρ1 : C1(Nρ1) →C1(Nρ2)\nIHP LECTURES ON HYPERBOLIC 3-MANIFOLDS\n23\nis a bilipschitz homeomorphism. We may then extend h radially in the coordinates to obtain\nan orientation-preserving bilip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "If ρ1, ρ2 ∈QF(S), then there exists a quasiconformal map ϕ : ∂H3 →∂H3, so that ρ2(γ) = ϕ ◦ρ2(γ) ◦ϕ−1 for all γ ∈Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simultaneous uniformization",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-33-simultaneous-uniformization.md",
+      "narrative": null,
+      "content": "Bers [8] showed that B gives a complete parametrization of QF(S).\nTheorem 3.6. The map\nB : QF(S) →T (S) × T ( ¯S)\nis a homeomorphism.\nProof. We first prove that B is injective.\nIf B(ρ1) = B(ρ2), then there exists a conformal\nmap ψ : ∂cNρ1 →∂cNρ2 in the homotopy class of hρ2 ◦h−1\nρ1 . This map lifts to a conformal\nhomeomorphism ˜ψ : Ω(ρ1) →Ω(ρ2) so that ρ2(γ) = ˜ϕ ◦ρ1(γ) ◦˜ϕ−1 for all γ ∈π1(S).\nWe may use the radial coordinates on b\nNρi −C1(Nρi) to extend ψ to a differentiable bilipschitz\nhomeomorphism Ψ from Nρ1 \\ intC1(Nρ1) to Nρ2 \\ intC1(Nρ2). Since C1(Nρ1) and C1(Nρ2) are\nhomeomorphic, we m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "The map B : QF(S) →T (S) × T ( ¯S) is a homeomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general case",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-018-34-the-general-case.md",
+      "narrative": null,
+      "content": "The same outline of proof will always produce a natural parametrization of CC0(M) in\ngeneral.\nWe say that a compact, irreducible 3-manifold M has compressible boundary if there is a\nclosed curve α in ∂M which is not homotopically trivial in ∂M but is homotopically trivial in M.\nOtherwise, we say that M has incompressible boundary. Equivalently, M has incompressible\nboundary if and only if whenever S is a boundary component of ∂M, the inclusion map of S\ninto M induces an injection from π1(S) into π1(M).\nIf M and M′ have incompressible boundary, then Waldhausen’s theorem implies that any\ntwo hom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "thm-sec-018-01.md",
+      "narrative": null,
+      "content": "(Bers) If M is compact, irreducible 3-maniifold with non-empty, compressible boundary and CC0(M) is non-empty, then CC0(M) ∼= T (∂M)/Mod0(M). The eagle-eyed reader will have noticed that one portion of the above sketch of proof admits no obvious generalization. We used the fact that the limit set of a Fuchsian uniformization of a closed surface is round circle in ∂H3, to conclude that every quasifuchsian group has a limit set of measure zero. We used this in turn to conclude that any quasiconformal conjugacy which is conformal on the domain of discontinuity is a globally conformal conjugacy. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometrically tame hyperbolic 3-manifolds",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-4-geometrically-tame-hyperbolic-3-manifolds.md",
+      "narrative": null,
+      "content": "A hyperbolic manifold NΓ is said to have no cusps if Γ contains no parabolic elements.\nEquivalently, we can say that every non-trivial element of Γ has non-zero translation length\nand gives rise to a closed geodesic in NΓ. We will assume from now on, for simplicity, that NΓ\nhas no cusps. This will only be a technical issue in the results we will discuss, but in their proofs\none must consider manifolds with cusps (so we are hiding important details in some sense). We\nwill continue to assume that Γ is finitely generated and torsion-free.\nThere exist many important hyperbolic 3-manifolds without",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first explicit examples",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-41-the-first-explicit-examples.md",
+      "narrative": null,
+      "content": "The most easily understood, and constructed, hyperbolic 3-manifolds which are not convex\ncocompact arise as covers of closed hyperbolic 3-manifolds which fiber over the circle. Thurston\nshowed that if ϕ : S →S is a pseudo-Anosov homeomorphim then its mapping torus\nMϕ = S × [0, 1]/(x, 0) ∼(ϕ(x), 1)\nis homeomorphic to a hyperbolic 3-manifold Nϕ. Since Nϕ is closed, it is itself a convex co-\ncompact hyperbolic 3-manifold. (We recall that ϕ is pseudo-Anosov if whenever C is a simple\nclosed curve on S, then ϕn(C) is not homotopic to C for any n > 0.)\nIf Nϕ = H3/Γϕ, then Λ(Γϕ) = ∂H3 (since if Λ(Γ)̸",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicial hyperbolic surfaces",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-021-42-simplicial-hyperbolic-surfaces.md",
+      "narrative": null,
+      "content": "Instead of working with minimal surfaces, we will work with simplicial hyperbolic surfaces.\nThe intrinsic metric on these manifolds will be hyperbolic except at a finite number of cone\npoints where the total angle around the cone points is greater than 2π. We interpret these cone\npoints as points of concentrated (or infinite) negative curvature. In particular, the intrinsic\nmetric on a simplicial hyperbolic surface is locally CAT(−1), i.e. every geodesic triangle in the\nuniversal cover is at least as thin as a triangle in H2.\nWe will say that a finite graph T on a surface S is a triangulation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simply degenerate ends",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-022-43-simply-degenerate-ends.md",
+      "narrative": null,
+      "content": "Peter Scott [69] proved that every irreducible 3-manifold N with finitely generated fundamen-\ntal group contains a compact submanifold C so that the inclusion of C into M is a homotopy\nequivalence. We call such a submanifold a compact core for N. If N is homeomorphic to the\ninterior of a handlebody, it is easy to construct compact cores which are not isotopic, since one\nmay form a compact core by thickening any bouquet of circles in N whose inclusion into N is\na homotopy equivalence. McCullough, Miller and Swarup [56] proved that this core is unique\nin the sense that if C1 and C2 are two compa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tameness Theorem",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-023-44-the-tameness-theorem.md",
+      "narrative": null,
+      "content": "Marden [50] presciently conjectured that every hyperbolic 3-manifold with finitely generated\nfundamenal group is topologically tame.\nThe first major breakthrough was Thurston’s proof [75] that if M has incompressible bound-\nary and {ρn} ⊂CC(M) converges to ρ ∈AH(M) and ρ(π1(M)) contains no parabolic elements,\nthen Nρ is geometrically tame, and hence topologically tame. Bonahon [13] proved much more\ngenerally that if NΓ has freely indecomposable fundamental group then NΓ is geometrically\n30\nRICHARD D. CANARY\ntame. Canary [25] used Bonahon’s work to show that if NΓ is topologically tame, then NΓ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "cor-sec-024-03.md",
+      "narrative": null,
+      "content": "If N = H3/Γ is a hyperbolic 3-manifold with finitely generated fundamental group, then either Λ(Γ) has measure zero or Λ(Γ) = ∂H3. Moreover, if Λ(Γ) = ∂H3 then Γ acts ergodically on ∂H3, i.e. if A ⊂∂H3 is measurable and Γ-invariant, then A has either measure zero or full measure. Another immediate consequence of this minimum principle is a characterization of which hyperbolic 3-manifolds admit non-constant positive superharmonic functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-024-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "cor-sec-024-04.md",
+      "narrative": null,
+      "content": "Let N = H3/Γ be a hyperbolic 3-manifold with finitely generated fundamental group. The manifold N is strongly parabolic (i.e. admits no non-constant positive superhar- monic functions) if and only if Λ(Γ) = ∂H3. Sullivan [71] showed that the geodesic flow of N is ergodic if and only if it admits a (positive) Green’s function, so one can also completely characterize when the geodesic flow of N is ergodic. RICHARD D. CANARY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-024-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "cor-sec-024-05.md",
+      "narrative": null,
+      "content": "Let N = H3/Γ be a hyperbolic 3-manifold with finitely generated fundamental group. The geodesic flow of N is ergodic if and only if Λ(Γ) = ∂H3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "Given A > 0, there exists C > 0 so that if f : S →N is a simplicial hyperbolic surface and whenever α is a homotopically non-trivial curve on S so that f(α) is homotopically trivial in N, then f(α) has length at least A, then vol \u0000N1(f(S)) \u0001 ≤C|χ(S)| where vol denotes volume, N1(f(S)) is the metric neighborhood of radius one of f(S) and ξ(S) is the Euler characteristic of S. If C(N)̸ = N, we use these facts to show that almost every flow line starting in C(N) must intersect the boundary ∂C(N). Let x be a point in the interior of C(M) and choose a small ball B about x in C(N) so that ϕ1(B) is d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ahlfors' Measure Conjecture",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-024-45-ahlfors-measure-conjecture.md",
+      "narrative": null,
+      "content": "One of the major classical conjectures in the study of hyperbolic 3-manifolds is Ahlfors’\nMeasure Conjecture, which was motivated in part by his result for convex cocompact hyperbolic\n3-manifolds which we discussed as Ahlfors’ Measure Theorem above.\nAhlfors’ Measure Conjecture: If N = H3/Γ is a hyperbolic 3-manifold with finitely generated\nfundamental group, then either Λ(Γ) has measure zero or Λ(Γ) = ∂H3 and Γ acts ergodically\non ∂H3.\nThe proof of Ahlfors’ measure theorem suggests that we study the behavior of hyperbolic\n3-manifolds. Thurston established the following minimum principle for po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "thm-sec-024-01.md",
+      "narrative": null,
+      "content": "(Thurston [75], Canary[25]) Let N be a geometrically tame hyperbolic 3-manifold. If h : N →(0, ∞) is a positive superharmonic function, i.e. div(grad h) ≥0, then infC(N)h = inf∂C(N)h. In particular, if C(N) = N, then h is constant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "cor-sec-025-02.md",
+      "narrative": null,
+      "content": "Let N = H3/Γ be a hyperbolic 3-manifold with finitely generated fundamental group. Then, λ0(N) = D(Λ(Γ))(2 −D(Λ(Γ)) unless D(Λ(Γ) < 1 in which case λ0(N) = 1 and Γ is a free group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "cor-sec-026-01.md",
+      "narrative": null,
+      "content": "If N is a hyperbolic 3-manifold with finitely generated fundamental group, then there exists L so that C(N) does not contain an embedded hyperbolic ball of radius L. Suppose that p is infinite-to-one on U. So there exists a point x ∈N so that p−1(x) ∩U is infinite. Index p−1(x) ∩U = {xi}i∈N so that xi exits the end E. For all i, let fi : S →ˆU be a simplicial hyperbolic surface so that xi ∈fi(S) (homotopic to ι within ˆU). We may pass to a subsequence so that p(fi(S)) converges. Choose i and j large enough so that there is a short homotopy in N between p(fi(S)) and p(fj(S)) and fi(S) and fj(S)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "cor-sec-026-02.md",
+      "narrative": null,
+      "content": "If N = H3/Γ is a closed hyperbolic 3-manifold and ˆΓ is a finitely generated subgroup of Γ, then ˆΓ is either convex cocompact or a virtual fiber subgroup. Thurston gave a beautiful proof, using that a cover of an infinite-volume convex cocompact hyperbolic 3-manifold is convex cocompact if it has finitely generated fundamental group. (See [27] for the general statement and proof.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limit sets of Kleinian groups",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-025-46-limit-sets-of-kleinian-groups.md",
+      "narrative": null,
+      "content": "Another collection of geometric applications of topological tameness involve the Hausdorff\ndimension of the limit set and the bottom of the spectrum of the Laplacian. Patterson [67]\nand Sullivan [72] showed that there are deep relationships between these two quantities. In\nparticular, they showed that if N = H3/Γ is geometrically finite, then\nλ0(N) = D(Λ(Γ))(2 −D(Λ(Γ))\nunless D(Λ(Γ) < 1 in which case λ0(N) = 1. Here, D(Λ(Γ)) denotes the Hausdorff dimension\nof the limit set and λ0(N) = inf spec(−∆) is the bottom of the spectrum of the Laplacian\n∆= div(grad) Moreover, if D(Λ(Γ)) < 1, then Γ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A covering theorem for hyperbolic 3-manifolds",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-026-47-a-covering-theorem-for-hyperbolic-3-manifolds.md",
+      "narrative": null,
+      "content": "The restrictive structure of simply degenerate ends places serious restrictions on how it can\ncover another manifold. Thurston established the following result when the covering manifold\nhas freely indecomposable fundamental group and Canary generalized the argument to the\ngeneral setting.\nCovering Theorem: (Thurston[75], Canary [27]) Let ˆN be a geometrically tame hyperbolic 3-\nmanifold which covers another hyperbolic 3-manifold N by a local isometry p : ˆN →N. If ˆE is\na simply degenerate end of ˆN then either\na) ˆE has a neighborhood ˆU such that p is finite-to-one on ˆU, or\nb) N has finite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "thm-sec-025-01.md",
+      "narrative": null,
+      "content": "(Sullivan [72], Tukia[79], Canary[24]) Let N = H3/Γ be a hyperbolic 3-manifold with finitely generated fundamental group. Then λ0(N) = 0 if and only if either N has finite volume or is geometrically infinite. Bishop and Jones [12] showed that geometrically infinite hyperbolic 3-manifolds have limit sets of Hausdorff dimension 2 without making use of tameness. Combining all the results we have mentioned one gets the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "thm-sec-026-03.md",
+      "narrative": null,
+      "content": "If N = H3/Γ is an infinite volume convex cocompact hyperbolic 3-manifold and Γ0 is a finitely generated (non-abelian) subgroup of Γ, then Γ0 is convex compact.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classification of hyperbolic 3-manifolds",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-027-5-the-classification-of-hyperbolic-3-manifolds.md",
+      "narrative": null,
+      "content": "One may view the conformal boundary of a convex cocompact hyperbolic as capturing the\nasymptotic geometry of the 3-manifolds, so from this viewpoint Bers’ parametrization theo-\nrems assert that a convex cococompact hyperbolic 3-manifold is determined by its asymptotic\ngeometry.\nOne may associate a geodesic lamination to a simply degenerate end, which we call its ending\nlamination, which captures the asymptotic geometry. Thurston conjectured that a hyperbolic 3-\nmanifold is completely determined by its conformal boundary and the ending laminations of its\nsimply degenerate ends. The proof of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic laminations",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-51-geodesic-laminations.md",
+      "narrative": null,
+      "content": "We begin with a brief discussion of the theory of geodesic laminations.\nA geodesic lamination on a hyperbolic surface X is a closed set which is a disjoint union of\nsimple complete geodesics, i.e. geodesics in the disjoint union are either simple closed geodesics\nor bi-infinite simple geodesics.\nThe simplest examples are disjoint unions of simple closed\ngeodesics. In fact every geodesic lamination is a (Gromov-Hausdorff) limit of a sequence of a\nsequence of finite-leaved geodesic laminations.\nWe now explain how to obtain a maximal finite-leaved geodesic lamination whose complement\nis a finite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/lem-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "lem-sec-029-01.md",
+      "narrative": null,
+      "content": "Suppose that N is a geometrically tame hyperbolic 3-manifold with a compact core C with incompressible boundary. If E is a simply degenerate end of N bounded by a component S of ∂C, there exists a constant K so that if α1 and α2 are essential closed curves on S (not necessarily simple) so that α∗ 1, α∗ 2 ⊂E, d(α∗ i , S) ≥D for i = 1, 2, and each α∗ i is either the core curve of a Margulis tube or disjoint from all Margulis tubes in N, then i(α1, α2) ≤KeDℓN(α∗ 1)ℓN(α∗ 2) + 2 where i(α1, α2) is the geometric intersection number of α1 and α2 on S. It E is a simply degenerate end of a hyperbolic 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ending laminations",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-029-52-ending-laminations.md",
+      "narrative": null,
+      "content": "Suppose that E is a simply degenerate end and let U be a neighborhood of E homeomorphic\nto S × (0, ∞) and let {fn : S × U} be a sequence of simplicial hyperbolic surfaces exiting E\n(which are homotopic to the inclusion map ι within U). There exists L > 0 so that for all\nn there exists an essential simple closed curve αn on S so that ℓ(f(αn)) ≤L. By the usual\n“blowing a up a balloon” argument, we may take L to be any number so that\nareaBH2\n\u0012L\n2 , i\n\u0013\n= 2π cosh L\n2 −2π > 2π|ξ(S)| ≥area(S, τf).\nIt is then not difficult to show that fn(αn) is homotopically non-trivial and fn(αn)∗is homotopic\nto fn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/cor-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "cor-sec-031-02.md",
+      "narrative": null,
+      "content": "Let G be a finitely generated, torsion-free group which is not virtually abelian. If two discrete faithful representations ρ1 : G →PSL(2, C) and ρ2 : G →PSL(2, C) are con- jugate by an orientation-preserving homeomorphism ϕ of ∂H3, then they are quasiconformally conjugate. Moreover, if ϕ is conformal on Ω(ρ1(G)), then ϕ is conformal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ending Lamination Theorem",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-030-53-the-ending-lamination-theorem.md",
+      "narrative": null,
+      "content": "5.3. The Ending Lamination Theorem\nWe now describe the ending invariants of a hyperbolic 3-manifold with finitely generated\nfundamental group and no cusps. Let C be a compact core for N (which is well-defined up\nto homeomorphism homotopic to the identity). The conformal boundary is identified with a\ncollection of components of ∂C, so gives rise to a conformal structure on these components.\nThe remaining components of ∂C bound simply degenerate ends of N, so each such component\ninherits an ending lamination. The ending invariants of N consist of the compact submanifold\nC together with either a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-031-54-the-bers-sullivan-thurston-density-conjecture.md",
+      "narrative": null,
+      "content": "Sulivan [73] proved that CC(M) is the interior of AH(M).\nTheorem 5.2. Let M be a compact, oriented, irreducible 3-manifold with non-empty boundary\nsuch that π1(M) is infinite, non-abelian and does not contain a free abelian subgroup of rank 2.\nThen CC(M) is the interior of AH(M).\nIdea of Proof: Let ρ be an interior point of AH(M). One may use the λ-lemma to show that\nthere exists a neighborhood U of ρ so that every representation in U is quasiconformally conju-\ngate to ρ/ Sullivan proved that the Beltrami differential of every quasiconformal deformation of\na finitely generated Kleinian group i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ihpmay2025/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "Let M be a compact, oriented, irreducible 3-manifold with non-empty boundary such that π1(M) is infinite, non-abelian and does not contain a free abelian subgroup of rank 2. Then CC(M) is the interior of AH(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ihpmay2025/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-032-references.md",
+      "narrative": null,
+      "content": "[1] W. Abikoff, The Real Analytic Theory of Teichm¨uller Space, Lecture Notes in Math. vol. 820, Springer-\nVerlag, 1980.\n[2] I. Agol, “Tameness of hyperbolic 3-manifolds,” preprint, arXiv:math/0405568.\n[3] L. Ahlfors, “Finitely generated Kleinian groups,” Am. J. Math. 86(1964), 413–429,\n[4] L. Ahlfors, “Fundamental polyhedrons and limit point sets of Kleinian groups,” Proc. Nat. Acad. Sci. USA\n55 (1966), 251–254.\n[5] L. Ahlfors and L. Bers, “Riemann’s mapping theorem for variable metrics,” Annals of Math. 72 (1960),\n385–404.\n[6] A. Beardon and B. Maskit, “Limit points of Kleinian groups and fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

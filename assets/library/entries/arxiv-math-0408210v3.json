@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0408210v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The famous Atiyah-Singer index theorem \\cite{AS} relates the\nindex of an elliptic pseudo-differential operator on a compact\nmanifold $X$ to the Todd class of $X$ and the Chern character\nof the bundle naturally associated with the symbol of\nthe pseudo-differential operator. It is well-known that\nthe algebra of pseudo-differential operators can be viewed as\na ``quantization'' of the cotangent bundle $T^{*}X$.\nStarting from this point B. Fedosov \\cite{F1} proposed a natural\nanalogue of the Atiyah-Singer index theorem for\nthe deformation quantization of an arbitrary symplectic\nmanifold. This theor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0408210v3  [math.QA]  7 May 2005\nITEP-TH-29/04\nA SIMPLE ALGEBRAIC PROOF OF\nTHE ALGEBRAIC INDEX THEOREM.\nPoNing Chen and Vasiliy Dolgushev1\nDepartment of Mathematics, MIT,\n77 Massachusetts Avenue,\nCambridge, MA, USA 02139-4307,\nE-mails: pnchen@MIT.EDU, vald@MIT.EDU\nAbstract\nIn math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit\nformula for the trace density map from the quantum algebra of functions on an arbitrary\nsymplectic manifold M to the top degree cohomology of M. They also evaluated this\nmap on the trivial element of K-theory of the algebra of quantum fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "In this section we review the Fedosov deformation quantization of endomorphisms of a vector bundle $V$ over a symplectic manifold ${\\cal M}$ (See [@F1], section $5.3$). We also recall the Felder-Feigin-Shoikhet construction [@FFS] of the trace density map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Feigin-Felder-Shoikhet cocycles",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-the-feigin-felder-shoikhet-cocycles.md",
+      "narrative": null,
+      "content": "First, we recall that for any associative algebra ${\\cal A}$ with a unit over a field $K$ (of characteristic zero) we have a chain map $\\phi^N$ from the Hochschild cochain complex $C^{\\bullet}({\\cal A},{\\cal A}^*)$ with coefficients in the dual module ${\\cal A}^*$ to the Lie algebra cochain complex $C^{\\bullet}({\\mathfrak{gl}}_N ({\\cal A});\n{\\mathfrak{gl}}_N({\\cal A})^{*})$ with coefficients in ${\\mathfrak{gl}}_N({\\cal A})^*$ $$\\phi^N(\\psi)(M_1\\otimes a_1 ,\\dots,M_k\\otimes a_k)(M_0\\otimes a_0)$$ $$\\label{phi}\n=\\frac1{k!}\\sum_{\\nu\\in S_k}(-)^{\\nu}\n\\psi(a_{\\nu(1)}\\otimes \\dots \\otimes a_{\\nu(k)}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern-Weil homomorphism",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-the-chern-weil-homomorphism.md",
+      "narrative": null,
+      "content": "Let ${\\mathfrak{g}}$ be a Lie algebra and ${\\mathfrak{h}}\\subset{\\mathfrak{g}}$ be a subalgebra of ${\\mathfrak{g}}$. Suppose that there is an ${\\mathfrak{h}}$-equivariant projection $pr\\,:\\,{\\mathfrak{g}}\\mapsto {\\mathfrak{h}}$, that is a map commuting with the adjoint action of ${\\mathfrak{h}}$ and satisfying the property $\\displaystyle pr\\, |_{{\\mathfrak{h}}} = Id_{{\\mathfrak{h}}}\\,.$ The amount by which $pr$ fails to be a Lie algebra homomorphism is measured by the \"curvature\" $C\\in Hom(\\wedge^2 {\\mathfrak{g}}, {\\mathfrak{h}})$ $$\\label{curvature}\nC(v,w)= [pr(v), pr(w)]- pr ([v,w])\\,,\n\\qqua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fedosov deformation quantization with twisted coefficients.",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-23-fedosov-deformation-quantization-with-twisted.md",
+      "narrative": null,
+      "content": "Let ${\\cal M}$ be a symplectic manifold of dimension $2n$. We denote by ${\\omega}={\\omega}_{ij}(x)dx^i dx^j$ the corresponding symplectic form and by $$\\overline{\\omega}= {\\omega}^{ij}(x)\\frac{{\\partial}}{{\\partial}x^i}\\wedge \\frac{{\\partial}}{{\\partial}x^j}$$ the corresponding Poisson tensor. Here $x^i$ denote local coordinates and the indices $i,j$ run from $1$ from $2n$ . For a vector bundle $V$ of rank $N$ over ${\\cal M}$ we will denote by $End(V)$ the bundle of endomorphisms of $V$ and by $End_V= {\\Gamma}({\\cal M}, End(V))$ the algebra of global sections of $End(V)$ .\n\nIf the vector bundl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Feigin-Felder-Shoikhet trace density map.",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-24-the-feigin-felder-shoikhet-trace-density-map.md",
+      "narrative": null,
+      "content": "Let as above $V$ be a vector bundle of rank $N$ over the symplectic manifold ${\\cal M}$ and $*$ be a star-product ([\\[star\\]](#star){reference-type=\"ref\" reference=\"star\"}) in the algebra $End_V(({\\hbar}))$ . Then,\n\n::: defi\nA trace density map $trd$ is a ${\\Bbb C}(({\\hbar}))$-linear map $$trd\\,:\\, End_V(({\\hbar})) \\mapsto H^{2n}({\\cal M})(({\\hbar}))$$ vanishing on commutators $$trd(a * b - b * a)=0\\,,\n\\qquad a,b \\in End_V(({\\hbar}))\\,.$$\n:::\n\nWe will show that if the star-product $*$ in $End_V(({\\hbar}))$ is obtained via the Fedosov procedure [@F1] then the Feigin-Felder-Shoikhet cocycle ([\\[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The local version of the algebraic index theorem",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-3-the-local-version-of-the-algebraic-index-theor.md",
+      "narrative": null,
+      "content": "Let ${\\cal M}$ be either a smooth real symplectic manifold of dimension $2n$ or a smooth affine algebraic variety (over ${\\Bbb C}$) of the complex dimension $2n$ endowed with an algebraic symplectic form. Let $*$ be a star-product in the vector space $C({\\cal M})(({\\hbar}))$ of smooth (resp. regular) functions on ${\\cal M}$. Throughout this section we denote the algebra $(C({\\cal M})(({\\hbar})),*)$ by ${\\Bbb A}$ and the subalgebra $(C({\\cal M})[[{\\hbar}]],*)$ of ${\\Bbb A}$ by ${\\Bbb A}^+$\n\nDue to remark $2$ after theorem [\\[F\\]](#F){reference-type=\"ref\" reference=\"F\"}, we may safely assume tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0408210v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks.",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-4-concluding-remarks.md",
+      "narrative": null,
+      "content": "We would like to mention that our result (theorem [\\[index\\]](#index){reference-type=\"ref\" reference=\"index\"}) is derived from the purely algebraic fact ([\\[FFS\\]](#FFS){reference-type=\"ref\" reference=\"FFS\"}) about the cohomology of Lie algebra of matrices over the Weyl algebra. In this respect our approach is very reminiscent of finding \"local\" proofs of the Riemann-Roch-Hirzebruch theorem [@ACKP], [@BS], [@BNT], [@BNT1], and [@FT]. Thus, in [@ACKP] and [@BS] the Riemann-Roch theorem for families of Riemann curves is deduced from purely algebraic facts about the cohomology of the Lie algebra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

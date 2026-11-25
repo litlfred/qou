@@ -1,0 +1,1305 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0309214v3",
+  "blocks": [
+    {
+      "id": "library/0309214v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ISSN 1364-0380 (on line) 1465-3060 (printed)\n1253\nGeometry & Topology\nVolume 9 (2005) 1253–1293\nPublished: 24 July 2005\nThe colored Jones function is q–holonomic\nStavros Garoufalidis\nThang T Q Lˆe\nSchool of Mathematics, Georgia Institute of Technology\nAtlanta, GA 30332-0160, USA\nEmail: stavros@math.gatech.edu, letu@math.gatech.edu\nURL: http://www.math.gatech.edu/~stavros\nAbstract\nA function of several variables is called holonomic if, roughly speaking, it is\ndetermined from ﬁnitely many of its values via ﬁnitely many linear recursion\nrelations with polynomial coeﬃcients. Zeilberger was the ﬁrs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zeilberger meets Jones",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-zeilberger-meets-jones.md",
+      "narrative": null,
+      "content": "Zeilberger meets Jones\nThe colored Jones function of a framed knot K in 3–space\nJK : N −→Z[q±1/4]\nis a sequence of Laurent polynomials that essentially measures the Jones poly-\nnomial of a knot and its cables. This is a powerful but not well understood\ninvariant of knots. As an example, the colored Jones function of the 0–framed\nright-hand trefoil is given by\nJK(n) = q1/2−n/2\n1 −q−1\nn−1\nX\nk=0\nq−kn(1 −q−n)(1 −q1−n) . . . (1 −qk−n).\nHere JK(n) denotes the Jones polynomial of the 0–framed knot K colored\nby the n–dimensional irreducible representation of sl2, and normalized by\nJunknot(n) = (qn/2 −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "The colored Jones function can be deﬁned for every simple Lie algebra g. Our proof of Theorem 1 generalizes and proves that the g–colored Jones function of a knot is q–holonomic (except for G2), see Theorem 6 below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "The colored Jones function can be deﬁned for colored links in 3–space. Our proof of Theorem 1 proves that the colored Jones function of a link is q–holonomic in all variables, see Section 3.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "It is well known that computing J(n) for any ﬁxed n > 1 is a #P–complete problem. Theorem 1 claims that this sequence of #P–complete problems is no worse than any of its terms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-001-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-001-05.md",
+      "narrative": null,
+      "content": "The proof of Theorem 1 indicates that many statistical me- chanics models, with complicated partition functions that depend on several variables, are holonomic, provided that their local weights are holonomic. This observation may be of interest to statistical mechanics.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "The colored Jones function of every knot is q–holonomic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Synonymous notions to holonomicity",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-synonymous-notions-to-holonomicity.md",
+      "narrative": null,
+      "content": "Synonymous notions to holonomicity\nWe have chosen to phrase the results of our paper mostly using the high-school\nlanguage of linear recursion relations. We could have used synonymous terms\nsuch as linear q–diﬀerence equations, or q–holonomic functions, or D–modules,\nor maximally overdetermined systems of linear PDEs which is more common in\nthe area of algebraic analysis, see for example [24]. The geometric notion of D–\nmodules gives rise to geometric invariants of knots, such as the characteristic\nvariety introduced by the ﬁrst author in [11].\nThe characteristic variety is\ndetermined by the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plan of the proof",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-plan-of-the-proof.md",
+      "narrative": null,
+      "content": "Plan of the proof\nIn Section 2, we discuss in detail the notion of a q–holonomic function. We give\nexamples of q–holonomic functions (our building blocks), together with rules\nthat create q–holonomic functions from known ones.\nIn Section 3, we discuss the colored Jones function of a link in 3–space, using\nstate sums associated to a planar projection of the link. The colored Jones\nfunction is built out of local building blocks (namely, R–matrices) associated\nto the crossings, which are assembled together in a way dictated by the planar\nprojection. The main observation is that the R–matrix is q–",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nThe authors wish to express their gratitude to D Zeilberger who introduced\nthem to the wonderful world of holonomic functions and its relation to discrete\nmathematics. Zeilberger is a philosophical co-author of the present paper.\nGeometry & Topology, Volume 9 (2005)\n1258\nStavros Garoufalidis and Thang T Q Lˆe\nIn addition, the authors wish to thank A Bernstein, G Lusztig, and N Xie for\nhelp in understanding quantum group theory, G Masbaum and K Habiro for\nhelp in a formula of the cyclotomic expansion of the colored Jones polynomial,\nand D Bar-Natan and A Riese for computer impl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--holonomic and q--hypergeometric functions",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-2-q--holonomic-and-q--hypergeometric-functions.md",
+      "narrative": null,
+      "content": "Theorem 1 follows from the fact that the colored Jones function can be built\nfrom elementary blocks that are q–holonomic, and the operations that patch\nthe blocks together to give the colored Jones function preserve q–holonomicity.\nIN Bernstein deﬁned the notion of holonomic functions f : Rr −→C, [2, 3].\nFor an excellent and complete account, see Bjork [4]. Zeilberger’s brilliant idea\nwas to link the abstract notion of holonomicity to the concrete problem of algo-\nrithmically proving combinatorial identities among hypergeometric functions,\nsee [35, 33] and also [28]. This opened an entirely ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--holonomicity in many variables",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-21-q--holonomicity-in-many-variables.md",
+      "narrative": null,
+      "content": "We brieﬂy review here the deﬁnition of q–holonomicity. First of all, we need an\nr–dimensional version of the q–Weyl algebra. Consider the operators Ei and\nQj for 1 ≤i, j ≤r which act on discrete functions f : Nr −→Z[q±] by:\n(Qif)(n1, . . . , nr)\n=\nqnif(n1, . . . , nr)\n(Eif)(n1, . . . , nr)\n=\nf(n1, . . . , ni−1, ni + 1, ni+1, . . . , nr).\nIt is easy to see that the following relations hold:\nQiQj = QjQi\nEiEj = EjEi\nQiEj = EjQi for i̸ = j\nEiQi = qQiEi\n(Relq)\nWe deﬁne the q–Weyl algebra Ar to be a noncommutative algebra with pre-\nsentation\nAr = Z[q±1]⟨Q1, . . . , Qr, E1, . . . , Er⟩\n(Relq)\n.\nGeome",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Assembling q--holonomic functions",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-22-assembling-q--holonomic-functions.md",
+      "narrative": null,
+      "content": "Despite the unwelcoming deﬁnition of q–holonomic functions, in this paper we\nwill use not the deﬁnition itself, but rather the closure properties of the set of\nq–holonomic functions under some natural operations.\nFact 0\n• Sums and products of q–holonomic functions are q–holonomic.\n• Specializations and extensions of q–holonomic functions are q–holonomic.\nIn other words, if f(n1, . . . , nm) is q–holonomic, the so are the functions\ng(n2, . . . , nm) :=f(a, n2, . . . , nm)\nand\nh(n1, . . . , nm, nm+1) :=f(n1, . . . , nm).\n• Diagonals of q–holonomic functions are q–holonomic. In other words, if\nf(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of q--holonomic functions",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-23-examples-of-q--holonomic-functions.md",
+      "narrative": null,
+      "content": "Here are a few examples of q–holonomic functions. In fact, we will encounter\nonly sums, products, extensions, specializations, diagonals, and multisums of\nthese functions. In what follows we usually extend the ground ring Z[q±1] to\nGeometry & Topology, Volume 9 (2005)\nThe colored Jones function is q–holonomic\n1261\nthe fractional ﬁeld Q(q1/D), where D is a positive integer. We also use v to\ndenote a root of q, v2 = q.\nFor n, k ∈Z, let\n{n} := vn −v−n,\n[n] := {n}\n{1} ,\n[n]! :=\nn\nY\ni=1\n[i],\n{n}! :=\nn\nY\ni=1\n{i}\n{n}k :=\n(Qk\ni=1{n −i + 1},\nif k ≥0\n0\nif k < 0\n\u0014 n\nk\n\u0015\n:=\n( {n}k\n{k}k\nif k ≥0\n0\nif k < 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--hypergeometric functions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-24-q--hypergeometric-functions.md",
+      "narrative": null,
+      "content": "Deﬁnition 2.2 A discrete function f : Zr −→Q(q) is q–hypergeometric iﬀ\nEif/f ∈Q(q, qn1, . . . , qnr) for all i = 1, . . . , r.\nIn that case, we know generators for the annihilation ideal of f . Namely, let\nEif/f = (Ri/Si)|Qi=qni for Ri, Si ∈Z[q, Q1, . . . , Qr]. Then, the annihilation\nideal of f is generated by SiEi −Ri.\nAll the functions in the previous subsections are q–hypergeometric.\nUnfortunately, q–hypergeometric functions are not always q–holonomic. For\nexample, (n, k) −→1/[n2 + k2]! is q–hypergeometric but not q–holonomic.\nHowever, q–proper-hypergeometric functions are q–holonomic. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones function for sl2",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-3-the-colored-jones-function-for-sl2.md",
+      "narrative": null,
+      "content": "The colored Jones function for sl2\n3.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ?? for links",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-31-proof-of-theorem-for-links.md",
+      "narrative": null,
+      "content": "We will formulate and prove an analog of Theorem 1 (see Theorem 3 below)\nfor colored links. Our proof will use a state-sum deﬁnition of the colored Jones\nfunction, coming from a representation of the quantum group Uq(sl2), as was\ndiscovered by Reshetikhin and Turaev in [29, 32].\nSuppose L is a framed, oriented link of p components. Then the colored Jones\nfunction JL : Np →Z[q±1/4] = Z[v±1/2] can be deﬁned using the representa-\ntions of braid groups coming from the quantum group Uq(sl2).\nTheorem 3 The colored Jones function JL is q–holonomic.\nProof We will present the deﬁnition of JL in the for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-011-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "rem-sec-011-01.md",
+      "narrative": null,
+      "content": "In general, JK(n) contains the fractional power q1/4. If K has framing 0, then JK′(n) := JK(n)/[n] ∈Z[q±1]. See [20]. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "There is a unique way to extend a coloring k of K′ to a coloring of the crossings and part-arcs of K′ such that • around each crossing the following consistency relations are satisﬁed: a b+k a−k b k b a+k b−k a k • The color of the lower-left incoming part-arc is 0. Geometry & Topology, Volume 9 (2005) Stavros Garoufalidis and Thang T Q Lˆe Moreover, the labels of the part-arcs are linear forms on k. Proof Start walking along the long knot starting at the incoming part-arc. At the ﬁrst crossing, whether over or under, the label of the outgoing part-arc is determined by the label of the ending",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prop-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "prop-sec-012-02.md",
+      "narrative": null,
+      "content": "The colored Jones function of a long knot K′ is a multisum of a q–proper hypergeometric function: JK′(n) = X k≥0 Fw(n, k). Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A multisum formula for the colored Jones function of a knot",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-32-a-multisum-formula-for-the-colored-jones-func.md",
+      "narrative": null,
+      "content": "A multisum formula for the colored Jones function of a\nknot\nIn this section we will give explicit multisum formulas for the sl2–colored Jones\nfunction of a knot. The calculation here is computerized in Section 6.\nConsider a word w = σǫ1\ni1 . . . σǫc\nic of length m written in the standard generators\nσ1, . . . , σs−1 of the braid group Bm with m strands, where ǫi = ±1 for all i.\nw gives rise to a braid β ∈Bm, and we assume that the closure of β is a knot\nK. Let K′ denote long knot which is the closure of all but the ﬁrst strand of β.\nA coloring of K′ is a tuple k = (k1, . . . , kc) of angle vari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-012-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "rem-sec-012-03.md",
+      "narrative": null,
+      "content": "If a long knot K′ is presented by a planar projection D with c crossings (which is not necessarily the closure of a braid), then similar to the above there is a q–proper hypergeometric function FD(n, k) of c + 1 variables such that JK′(n) = P k≥0 FD(n, k). Of course, FD depends on the planar projection. Occasionally, some of the summation variables can be ignored. This is the case for the right hand-trefoil (where the multisum reduces to a single sum) and the ﬁgure eight (where it reduces to a double sum). D Bar-Natan has kindly provided us with a computerized version of Proposition 3.7, [1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cyclotomic function of a knot is q--holonomic",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-4-the-cyclotomic-function-of-a-knot-is-q--holono.md",
+      "narrative": null,
+      "content": "Habiro [15] proved that the colored Jones polynomial (of sl2) can be rearranged\nin the following convenient form, known as the cyclotomic expansion of the\ncolored Jones polynomial: For every 0–framed knot K, there exists a function\nCK : Z>0 →Z[q±1]\nsuch that\nJK(n) =\n∞\nX\nk=1\nCK(k)S(n, k),\nwhere\nS(n, k) := {n + k −1}2k−1/(v −v−1) =\nQn+k−1\nn−k+1 (vi −v−i)\nv −v−1\n.\nNote that S(n, k) does not depend on the knot K. Note that J is determined\nfrom C and vice-versa by an upper diagonal matrix, thus C takes values in\nQ(q). The diﬃcult part of Habiro’s result is CK takes values in Z[q±]. The\nintegrality",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "The cyclotomic function CK : N →Z[q±] of every knot K is q–holonomic. Proof Habiro showed that CK(n) is the quantum invariant of the knot K with color P ′′(n) := Qn−1 i=1 (V (2) −v2i−1 −v1−2i) {2n −1}2n−2 , Geometry & Topology, Volume 9 (2005) Stavros Garoufalidis and Thang T Q Lˆe where V (n) is the unique n–dimensional simple sl2–module, and (retaining Habiro’s notation with a shift n →n −1) P ′′(n) is considered as an element of the ring of sl2–modules over Q(v). Using induction one can easily prove that P ′′(n) = n X k=1 R(n, k)V (k), where R(k, n) is given by R(n, k) = (−1)n−k {2k} {2n −1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-5-complexity.md",
+      "narrative": null,
+      "content": "Complexity\nIn this section we show that Theorem 1 is eﬀective. In other words, we give a\npriori bounds and computations that appear in Theorem 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding a recursion relation for multisums",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-51-finding-a-recursion-relation-for-multisums.md",
+      "narrative": null,
+      "content": "Finding a recursion relation for multisums\nOur starting point are multisums of q–proper hypergeometric functions. Recall\nthe deﬁnition 2.3 of a q–proper hypergeometric function F(n, k) from Section\n2.4, and let G denote\nG(n) :=\nX\nk≥0\nF(n, k)\nthroughout this section.\nWith the notation of Equation (1), Wilf–Zeilberger show that:\nTheorem 5 ([33, Sec.5.2])\n(a)\nF(n, k) satisﬁes a k–free recurrence relation of order at most\nJ⋆:= (4STB2)r\nr!\nGeometry & Topology, Volume 9 (2005)\nThe colored Jones function is q–holonomic\n1269\nwhere B = maxs,t{|bs|, |vt|, |as|, |ut|} + maxµ,ν |aµ,ν| where aµ,ν are the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds for initial conditions",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-52-upper-bounds-for-initial-conditions.md",
+      "narrative": null,
+      "content": "Upper bounds for initial conditions\nIn another direction, one may ask the following question: if a q–holonomic\nfunction satisﬁes a nontrivial recursion relation, it follows that it is uniquely\ndetermined by a ﬁnite number of initial conditions.\nHow many?\nThis was\nanswered by Yen, [34]. If G is a discrete function which satisﬁes a recursion\nrelation of order J⋆, consider its principal symbol σ(q, Q), that is the coeﬃcient\nof the leading E–term.\nThe principal symbol lies in the commutative ring\nZ[q±, Q±] of Laurrent polynomials in two variables q and Q. For every n,\nconsider the Laurrent polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-53-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Theorem 2 follows from Proposition 3.7 together with the discussion of Sections\n5.1 and 5.2.\nOur luck with the colored Jones function is that we can identify it with a\nmultisum of a q–proper hypergeometric function. Are we really lucky, or is\nthere some deeper explanation? We believe that there is a underlying geomet-\nric reason for coincidence, which in a sense explains the underlying geometry\nof topological quantum ﬁeld theory. We will postpone to a later publication\napplications of this principle to Hyperbolic Geometry; [11].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In computer talk",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-6-in-computer-talk.md",
+      "narrative": null,
+      "content": "In computer talk\nIn this section we will show that Proposition 3.7 can be implemented by com-\nputer.\nFor every knot, one can write down a multisum formula for the colored Jones\nfunction, where the summand is q–hypergeometric. Occasionally, this multisum\nformula can be written as a single sum. There are various programs that can\ncompute the recursion relations and their orders for multisums. In maple, one\nmay use qEKHAD developed by Zeilberger [28]. In Mathematica, one may use\nthe qZeil.m and qMultiSum.m packages of RISC developed by Paule and Riese\n[26, 27, 30].\nGeometry & Topology, Volume 9 (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recursion relations for the cyclotomic function of twist knots",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-61-recursion-relations-for-the-cyclotomic-functi.md",
+      "narrative": null,
+      "content": "Recursion relations for the cyclotomic function of twist\nknots\nThe twist knots Kp for integer p are shown in Figure 2. Their planar projec-\ntions have 2|p| + 2 crossings, 2|p| of which come from the full twists, and 2\ncome from the negative clasp.\n...\nfull twists\np\nFigure 2: The twist knot Kp, for integers p. For p = −1, it is the Figure 8, for p = 0\nit is the unknot, for p = 1 it is the left trefoil and for p = 2 it is the Stevedore’s ribbon\nknot.\nMasbaum, [25], following Habiro and Le gives the following formula for the\ncyclotomic function of a twist knot. Let c(p, ·) denote the cyclotomic f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-020-62-recursion-relations-for-the-colored-jones-fun.md",
+      "narrative": null,
+      "content": "Recursion relations for the colored Jones function of the\nﬁgure 8 knot\nThe Mathematica package qMultiSum.m can compute recursion relations for\nq–multisums. Using this, we can compute equally easily the recursion relation\nfor the colored Jones function. Due to the length of the output, we illustrate\nthis by computing the recursion relation for the colored Jones function of the\nFigure 8 knot. Recall from Equation (2) for p = −1 and from the fact that\nc(−1, n) = 1 that the colored Jones function of the ﬁgure 8 knot is given by:\nJK(−1)(n) =\n∞\nX\nk=0\nqnk(q−n−1; q−1)k(q−n+1; q)k.\n(3)\nIn computer talk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones function for a simple Lie algebra",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-021-7-the-colored-jones-function-for-a-simple-lie-al.md",
+      "narrative": null,
+      "content": "The colored Jones function for a simple Lie algebra\nFix a simple complex Lie algebra g of rank ℓ. For every knot K and every\nﬁnite-dimensional g–module V , called the color of the knot, one can deﬁne\nthe quantum invariant JK(V ) ∈Z[q±1/2D], where D is the determinant of the\nCartan matrix of g. Simple g–modules are parametrized by the set of dominant\nweights, which can be identiﬁed, after we choose ﬁxed fundamental weights, with\nNℓ. Hence JK can be considered as a function JK : Nℓ→Z[q±1/2D].\nTheorem 6 For every simple Lie algebra other than G2, and a set of ﬁxed\nfundamental weights, the colored",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-022-71-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries\nFix a Cartan subalgebra h of g and a basis {α1, . . . , αℓ} of simple roots for\nthe dual space h∗. Let h∗\nR be the R–vector space spanned by α1, . . . , αℓ. The\nroot lattice Y is the Z–lattice generated by {α1, . . . , αℓ}. Let X be the weight\nlattice that is spanned by the fundamental weights λ1, . . . , λℓ. Normalize the\nGeometry & Topology, Volume 9 (2005)\nThe colored Jones function is q–holonomic\n1277\ninvariant scalar product (·, ·) on h∗\nR so that (α, α) = 2 for every short root α.\nLet D be the determinant of the Cartan matrix, then (x, y) ∈1\nDZ for x, y ∈X .\nLet si, i = 1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "The reason we exclude the G2 Lie algebra is technical. Namely, at present we cannot prove that the structure constants of the multiplication of the quantized enveloping algebra of G2 with respect to a standard PBW basis, are q–holonomic; see Remark A.3. We believe however, that the theorem also holds for G2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "For every simple Lie algebra other than G2, and a set of ﬁxed fundamental weights, the colored Jones function JK : Nℓ→Z[q±1/2D] is q– holonomic. Hence the colored Jones function will satisfy some recursion relations, which, together with values at a ﬁnitely many initial colors, totally determine the colored Jones function JK.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum group U",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-023-711-the-quantum-group-u.md",
+      "narrative": null,
+      "content": "The quantum group U\nThe quantum group U = Uq(g) associated to g is a Hopf algebra deﬁned over\nQ(v), where v is the usual quantum parameter (see [17, 22]). Here our v is\nthe same as v of Lusztig [22] and is equal to q of Jantzen [17], while our q is\nv2. The standard generators of U are Eα, Fα, Kα for α ∈{α1, . . . , αℓ}. For a\nfull set of relations, as well as a good introduction to quantum groups, see [17].\nNote that all the Kα’s commute with each other.\nFor an element γ ∈Y , γ = k1α1 + · · · + kℓαℓ, let Kγ := Kk1\nα1 . . . Kk1\nα1 .\nThere is a Y –grading on U deﬁned by |Eα| = α, |Fα| = −α, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verma modules and finite dimensional modules",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-024-712-verma-modules-and-finite-dimensional-modules.md",
+      "narrative": null,
+      "content": "Verma modules and ﬁnite dimensional modules\nLet λ ∈X be a weight. The Verma module M(λ) is a U –module with under-\nlying vector space U−and with the action of U that is uniquely determined by\nthe following condition. Here η is the unit of the algebra U−:\nEα · η\n=\n0\nfor all\nα\nKα · η\n=\nv(α,λ)η\nfor all\nα\nFα · x\n=\nFαx\nfor all\nα ∈{α1, . . . , αℓ}, x ∈U−\nGeometry & Topology, Volume 9 (2005)\n1278\nStavros Garoufalidis and Thang T Q Lˆe\nIf (λ|αi) < 0 for all i = 1, ..., ℓthen M(λ) is irreducible. On the other hand\nif (λ|αi) ≥0 for all i = 1, ..., ℓ(ie, λ is dominant), then M(λ) has a unique\nproper maxi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum braid group action",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-025-713-quantum-braid-group-action.md",
+      "narrative": null,
+      "content": "Quantum braid group action\nFor each fundamental root α ∈{α1, . . . , αℓ} there is an algebra automorphism\nTα : U →U , as described in [17, Chapter 8]. These automorphisms satisfy the\nfollowing relations, known as the braid relations, or Coxeter moves.\nIf (α, β) = 0, then TαTβ = TβTα.\nIf (α, β) = −1, then TαTβTα = TβTαTβ .\nIf (α, β) = −2, then TαTβTαTβ = TβTαTβTα.\nIf (α, β) = −3, then TαTβTαTβTαTβ = TβTαTβTαTβTα.\nNote that the Weyl group is generated by sα with exactly the above relations,\nreplacing Tα by sα, and the extra relations s2\nα = 1.\nSuppose w = si1 . . . sir is a reduced word, one can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ordering of the roots",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-026-714-ordering-of-the-roots.md",
+      "narrative": null,
+      "content": "Ordering of the roots\nSuppose w = si1si2 . . . sit is a reduced word representing the longest element\nω0 of the Weyl group. For r between 1 and t let\nγr(w) := si1si2 . . . sir−1(αir).\nThen the set {γi, i = 1, ..., t} is exactly the set of positive roots. We totally\norder the set of positive roots by γ1 < γ2 < · · · < γt. This order depends on\nthe reduced word w, and has the following convexity property: If β1, β2 are\ntwo positive roots such that β1 + β2 is also a root, then β1 + β2 is between β1\nand β2. In particular, the ﬁrst and the last, γ1 and γt, are always fundamental\nroots. Conversely,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PBW basis for U-, U+, and U",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-027-715-pbw-basis-for-u--u-and-u.md",
+      "narrative": null,
+      "content": "Suppose w = si1 . . . sit is a reduced word representing the longest element of\nW . Let us deﬁne\ner(w)\n=\nTαi1Tαi2 . . . Tαir−1(Eαir ),\nfr(w)\n=\nTαi1Tαi2 . . . Tαir−1(Fαir ).\nThen |er| = γr = −|fr|. (We drop w if there is no confusion.)\nIf γr is one of the fundamental roots, γr = α ∈{α1, . . . , αℓ}, then er(w) = Eα,\nfr(w) = Fα (and do not depend on w).\nFor t ≥j ≥i ≥1 let U−[j, i] be the vector space spanned by f nj\nj f nj−1\nj−1 . . . f ni\ni ,\nfor all nj, nj−1, . . . , ni ∈N and let U+[i, j] the vector space spanned by\neni\ni eni+1\ni+1 . . . enj\nj , for all nj, nj−1, . . . , ni ∈N. It is known th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A commutation rule",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-028-716-a-commutation-rule.md",
+      "narrative": null,
+      "content": "A commutation rule\nFor x, y ∈U homogeneous let us deﬁne\n[x, y]q := xy −v(|x|,|y|)yx.\nNote that, in general, [y, x]q is not proportional to [x, y]q.\nAn important property of the PBW basis is the following commutation rule, see\n[18]. If i < j then [fi, fj]q belongs to U−[j −1, i + 1] (which is 0 if j = i + 1).\nGeometry & Topology, Volume 9 (2005)\n1280\nStavros Garoufalidis and Thang T Q Lˆe\nIt follows that U−[j, i] is an algebra. This allows us to sort algorithmically non-\ncommutative monomials in the variables fi.\nAlso two consecutive variables\nalways q–commute: [fi, fi+1]q = 0.\nSimilarly, if i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prop-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "prop-sec-030-01.md",
+      "narrative": null,
+      "content": "Except for the case of G2, the matrix entry Mσ′ σ is q– holonomic with respect to all its coordinates. Proof Since any two reduced presentations of an element of W are related by a sequence of Coxeter moves, it is enough to consider the case of a single Coxeter move. Since each Coxeter move involves only two fundamental roots and all Tα’s are algebra isomorphisms, it is enough to considered the case of rank 2 Lie algebras. For all rank 2 Lie algebras (except G2) we present the proof in Appendix. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--holonomicity of quantum groups",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-029-72-q--holonomicity-of-quantum-groups.md",
+      "narrative": null,
+      "content": "Suppose A: U →U is a linear operator.\nUsing the PBW basis of U (see\nEquation (4)), we can present A by a matrix:\nA(xσ) =\nX\nσ′\nAσ′\nσ xσ′,\nwith Aσ′\nσ ∈Q(v). We call (σ, σ′) the coordinates of the matrix entry Aσ′\nσ .\nDeﬁnition 7.2 We say that A is q–holonomic if the matrix entry Aσ′\nσ , con-\nsidered as a function of (σ, σ′) is q–holonomic with respect to all the variables.\nA priori this deﬁnition depends on the reduced word w. But we will soon see\nthat if A is q–holonomic in one PBW basis, then it is so in any other PBW\nbasis.\n7.2.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--holonomicity of transition matrix",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-030-721-q--holonomicity-of-transition-matrix.md",
+      "narrative": null,
+      "content": "Suppose xσ(w′) is another PBW basis associate to another reduced word w′\nrepresenting the longest element of W . Then we have the transition matrix Mσ′\nσ\nbetween the two bases, with entries in Q(v). The next proposition checks that\nthe entries of the transition matrix are q–holonomic, by a standard reduction\nto the rank 2 case.\nProposition 7.3 Except for the case of G2, the matrix entry Mσ′\nσ\nis q–\nholonomic with respect to all its coordinates.\nProof Since any two reduced presentations of an element of W are related\nby a sequence of Coxeter moves, it is enough to consider the case of a single",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prop-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "prop-sec-032-01.md",
+      "narrative": null,
+      "content": "For every r with 1 ≤r ≤t, the entries of the matrices ek r, f k r are q–holonomic with respect to k, λ, and the coordinates of the entry. This Proposition follows immediately from Theorem 7 and Fact 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prop-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "prop-sec-034-01.md",
+      "narrative": null,
+      "content": "The matrix of Θ acting on M(λ) in a PBW basis is q– holonomic with respect to all the coordinates of the entry and λ. Proof It’s enough to prove the statement for each Θr. The result for Θr follows from the fact that the actions of ek r, f k r on M(λ), as well as ck, are q–holonomic in k and so are all the coordinates of the matrix entries, by Propo- sition 7.4 . 7.3.2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure constants",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-031-722-structure-constants.md",
+      "narrative": null,
+      "content": "Structure constants\nRecall the PBW basis {xσ | σ ∈S} of the algebra U . The multiplication in U\nis determined by the structure constants c(σ, σ′, σ′′) ∈Q(v) deﬁned by:\nxσxσ′ =\nX\nσ′′\nc(σ, σ′, σ′′)xσ′′.\nWe will show the following:\nTheorem 7 The structure constant c(σ, σ′, σ′′) is q–holonomic with respect\nto all its variables.\nProof will be given in subsection 7.4.5.\n7.2.3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Actions on Verma modules are q--holonomic",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-032-723-actions-on-verma-modules-are-q--holonomic.md",
+      "narrative": null,
+      "content": "Each Verma module M(λ) is naturally isomorphic to U−, as a vector space,\nvia the map u →u · η. Using this isomorphism we identify a PBW basis of U−\nwith a basis of M(λ), also called a PBW basis. If u ∈U , then the action of u\non M(λ) in a PBW basis can be written by a matrix un′\nn with entries in Q(v).\nWe call (n, n′) ∈Nt × Nt the coordinates of the matrix entry.\nProposition 7.4 For every r with 1 ≤r ≤t, the entries of the matrices\nek\nr, f k\nr are q–holonomic with respect to k, λ, and the coordinates of the entry.\nThis Proposition follows immediately from Theorem 7 and Fact 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum knot invariants",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-033-73-quantum-knot-invariants.md",
+      "narrative": null,
+      "content": "Quantum knot invariants\n7.3.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quasi-R--matrix",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-034-731-the-quasi-r--matrix.md",
+      "narrative": null,
+      "content": "Fix a reduced word w representing the longest element of W . For each r, 1 ≤\nr ≤t, let\nΘr :=\nX\nk∈N\nck f k\nr ⊗ek\nr,\nwhere\nck = (−1)kv−k(k−1)/2\nγr\n(vγr −v−1\nγr )k\n[k]γr!\n.\nGeometry & Topology, Volume 9 (2005)\n1282\nStavros Garoufalidis and Thang T Q Lˆe\nHere vγ = v(γ|γ)/2, and\n[k]γ! =\nk\nY\ni=1\nvi\nγ −v−i\nγ\nvγ −v−1\nγ\n.\nThe main thing to observe is that ck is q–holonomic with respect to k. Note\nthat although Θr is an inﬁnite sum, for every weight λ ∈X , the action of Θr\non M(λ) ⊗M(λ) is well-deﬁned. This is because the action of er is locally\nnilpotent, ie, for every x ∈M(λ), there is k such that ek",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "The structure constant c(σ, σ′, σ′′) is q–holonomic with respect to all its variables. Proof will be given in subsection 7.4.5. 7.2.3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The R--matrix and the braiding",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-035-732-the-r--matrix-and-the-braiding.md",
+      "narrative": null,
+      "content": "As usual, let us deﬁne the weight on M(λ) by declaring the weight of Fn · η to\nbe λ −P niγi, where n = (n1, . . . , nt). The space M(λ) is the direct sum of\nits weight subspaces.\nLet D: M(λ) ⊗M(λ) →M(λ) ⊗M(λ) be the linear operator deﬁned by\nD(x ⊗y) = v−(|x|,|y|)x ⊗y.\nClearly D is q–holonomic; it’s called the diagonal part of the R–matrix, which\nis R := ΘD.\nThe braiding is B := Rσ, where σ(x⊗y) = y⊗x. Combining the above results,\nwe get the following:\nTheorem 8 The entry of the matrix of the braiding acting on M(λ) is q–\nholonomic with respect to all the coordinates and λ.\nRemark 7.6 Technical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-035-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "rem-sec-035-02.md",
+      "narrative": null,
+      "content": "Technically, in order to deﬁne the diagonal part D, one needs to extend the ground ring to include a D-th root of v, since (λ, µ), with λ, µ ∈X , is in general not an integer, but belonging to DZ. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic 7.3.3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "thm-sec-035-01.md",
+      "narrative": null,
+      "content": "The entry of the matrix of the braiding acting on M(λ) is q– holonomic with respect to all the coordinates and λ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q--holonomicity of quantum invariants of knots",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-036-733-q--holonomicity-of-quantum-invariants-of-kno.md",
+      "narrative": null,
+      "content": "First let us recall the deﬁnition of quantum knot invariant.\nUsing the braiding B: M(λ) →M(λ) one can deﬁne a representation of the\nbraid group τ : Bm →(M(λ))⊗m by putting\nτ(σi) := id⊗i−1 ⊗B ⊗id⊗m−i−1 .\nLet ρ denote the half-sum of positive roots. For an element x ∈U and an\nU –module V , the quantum trace is deﬁned as\ntrq(x, V ) := tr(xK−2ρ, V ).\nSuppose a framed knot K is obtained by closing a braid β ∈Bm. We would\nsay that the colored Jones polynomial is the quantum trace of τ(β). However,\nsince M(λ) is inﬁnite-dimensional, the trace may not make sense. Instead, we\nwill use a trick of breaki",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-036-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "rem-sec-036-01.md",
+      "narrative": null,
+      "content": "The invariant JK′ of long knots is sometime more convenient. For example, JK(λ) might contain fractional power of q, but (if K′ has framing 0,) JK′(λ) is always in Z[q±1], see [20]. Also the function JK′ can be extended to the whole weight lattice. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic 7.4",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/lem-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "lem-sec-039-01.md",
+      "narrative": null,
+      "content": "Theorem 7 holds true for g = sl2. Geometry & Topology, Volume 9 (2005) Stavros Garoufalidis and Thang T Q Lˆe Proof The PBW basis for U is F nKjEm, with m, n ∈N and j ∈Z. First of all we know that Em α F n α = ∞ X i=0 \u0014 m i \u0015 vα \u0014 n i \u0015 vα F n−i α b(Kα; 2i −n −m, i) Em−i α , where b(Kα; a, i) := iY j=1 Kαva−j+1 α −K−1 α v−a+j−1 α vα −v−1 α . Here for any root γ, one deﬁnes vγ = v(γ,γ)/2, and \u0014 m i \u0015 vα is the usual quantum binomial coeﬃcient calculated with v replaced by vα. Hence (F mKkEn)(F m′Kk′Em′) = ∞ X i=0 F m+m′−i a(m, k, n, m′, k′, n′, i) En+n′−i, where a(m, k, n, m′, k′, n′, i) = v2k(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-037-74-proof-of-theorem.md",
+      "narrative": null,
+      "content": "7.4.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "r is q--holonomic",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-038-741-r-is-q--holonomic.md",
+      "narrative": null,
+      "content": "We will need the linear maps rα, r′\nα : U± →U±, as deﬁned in [17, Chapter 6].\nTheir restriction to U−is uniquely characterized by the properties:\nrα(xy) = rα(x) y + v(α,|x|) x rα(y)\nr′\nα(xy) = x r′\nα(y) + v(α,|x|) r′\nα(x) y\n(5)\nand for any two fundamental roots α, β, (see [17, Eqn.(6.15.4)]) and\nrα(F n\nβ ) = r′\nα(F n\nβ ) = δα,β\n1 −v2n\nα\n1 −v2α\nF n−1\nα\n,\n(6)\nwhere vα := v(α,α)/2; see [17, Eqn.(8.26.2)].\nLemma 7.9 For a ﬁxed α ∈{α1, . . . , αℓ}, the matrix entries of the operators\n(rα)k, (r′\nα)k : U−→U−are q–holonomic with respect to k and the coordinates\nof the matrix entry. Similarly, (rα)k, (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uq(sl2) is q--holonomic",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-039-742-uqsl2-is-q--holonomic.md",
+      "narrative": null,
+      "content": "Lemma 7.10 Theorem 7 holds true for g = sl2.\nGeometry & Topology, Volume 9 (2005)\n1286\nStavros Garoufalidis and Thang T Q Lˆe\nProof The PBW basis for U is F nKjEm, with m, n ∈N and j ∈Z. First of\nall we know that\nEm\nα F n\nα =\n∞\nX\ni=0\n\u0014 m\ni\n\u0015\nvα\n\u0014 n\ni\n\u0015\nvα\nF n−i\nα\nb(Kα; 2i −n −m, i) Em−i\nα\n,\nwhere\nb(Kα; a, i) :=\niY\nj=1\nKαva−j+1\nα\n−K−1\nα v−a+j−1\nα\nvα −v−1\nα\n.\nHere for any root γ, one deﬁnes vγ = v(γ,γ)/2, and\n\u0014 m\ni\n\u0015\nvα\nis the usual\nquantum binomial coeﬃcient calculated with v replaced by vα.\nHence\n(F mKkEn)(F m′Kk′Em′) =\n∞\nX\ni=0\nF m+m′−i a(m, k, n, m′, k′, n′, i) En+n′−i,\nwhere\na(m, k, n, m′, k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prop-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "prop-sec-040-01.md",
+      "narrative": null,
+      "content": "One then can conclude that Tα is q–holonomic. The proof for T −1 α : U →U is similar. One should use the PBW basis of w′ for the source, and that of w for the target. 7.4.5",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "T is q--holonomic",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-040-744-t-is-q--holonomic.md",
+      "narrative": null,
+      "content": "Proposition 7.12 For a ﬁxed fundamental root α ∈{α1, . . . , αℓ}, the braid\noperator Tα : U →U and its inverse T −1\nα\nare q–holonomic.\nProof By Proposition 7.3 we can use any PBW basis.\nChoose a reduced word w′ = si1 . . . sit representing the longest element ω0\nthat begins with α: αi1 = α. Then w = si2 . . . sits¯α is another reduced word\nrepresenting ω0, where ¯α is the dual of α: ¯α = −ω0(α).\nGeometry & Topology, Volume 9 (2005)\n1288\nStavros Garoufalidis and Thang T Q Lˆe\nWe use fr to denote fr(w), and f ′\nr to denote fr(w′). The relation between the\ntwo PBW basis of w and w is as follows:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-041-745-proof-of-theorem.md",
+      "narrative": null,
+      "content": "It is clear that for each j ∈Zℓ, the operator Kj : U →U of left multiplication\nis q–holonomic.\nFix a reduced word w representing the longest element of W . It suﬃces to\nshow that for each 1 ≤r ≤t the operators ek\nr, f k\nr : U →U (left multiplication)\nare q–holonomic with respect to all variables, including k.\nThis is true if er = Eα and fr = Fα, where α is one of the fundamental\nroots, by Proposition 7.11. But any er or fr can be obtained from Eα and\nFα by actions of product of various Tαi ’s. Hence from Proposition 7.12 we get\nTheorem 7.\nGeometry & Topology, Volume 9 (2005)\nThe colored Jones",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/thm-sec-041-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "thm-sec-041-01.md",
+      "narrative": null,
+      "content": "Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic A",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/lem-sec-043-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "lem-sec-043-01.md",
+      "narrative": null,
+      "content": "1 The structure constants of U−, in the basis of w, is q–holonomic. Let us deﬁne a scalar product (·, ·) on U−such that the PBW basis of w is an orthonormal basis. Since f m′ 3′ f n′ 2′ f p′ 1′ = X m,n,p (f m′ 3′ f n′ 2′ f p′ 1′ , f m 3 f n 2 f n 1 )f m 3 f n 2 f p Geometry & Topology, Volume 9 (2005) Stavros Garoufalidis and Thang T Q Lˆe",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Appendix: Proof of Proposition ?? for A2 and B2",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-042-a-appendix-proof-of-proposition-for-a2-and-b2.md",
+      "narrative": null,
+      "content": "In this appendix we will prove Proposition 7.3 for the rank 2 Lie algebras A2\nand B2. We will achieve this by a brute-force calculation.\nFirst, let us discuss some simpliﬁcation, due to symmetry. The transition ma-\ntrix of U leaves invariant each of U+, U−, U0. On U0 the transition matrix is\nidentity. Hence it’s enough to consider the restriction of the transition matrix\nin U−and U+. Furthermore, the Cartan symmetry (the operator τ of [17])\nreduces the case of U+ to that of U−.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 The case of A2",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-043-a1-the-case-of-a2.md",
+      "narrative": null,
+      "content": "The case of A2\nThere are two fundamental roots denoted by α and β. The set of positive roots\nis {α, β, α+β}. The reduced representations of the longest element of the Weyl\ngroup are w = s1s2s1 and w′ = s2s1s2, where s1 = sα and s2 = sβ .\nThe total ordering (see Section 7.1.4) of the set of positive roots corresponding\nto w and w′ are, respectively:\n(γ1, γ2, γ3)\n=\n(α, α + β, β)\n(γ1′, γ2′, γ3′)\n=\n(β, α + β, α).\nNotice that γi′ = γ3−i for i = 1, . . . , 3.\nThe PBW basis of U−(see Section 7.1.5) corresponding to w and w′ are,\nrespectively:\n{f m\n3 f n\n2 f p\n1 | m, n, p ∈N},\n{f m\n3′ f n\n2′f p\n1′ | m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/lem-sec-044-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "lem-sec-044-01.md",
+      "narrative": null,
+      "content": "2 The structure constants of U−, in the basis of w, is q–holonomic. Let us deﬁne a scalar product (·, ·) on U−such that the PBW basis of w is an orthonormal basis. Then Proposition 7.3 is equivalent to (f l′ 4′f m′ 3′ f n′ 2′ f p′ 1′ , f l 4f m 3 f n 2 f n 1 ) is q–holonomic in all variables l, m, n, p, l′m′, n′, p′. Since multiplication is q–holonomic in the PBW basis of w (see Lemma A.2), it suﬃces to show that (f k i′, f l 4f m 3 f n 2 f p 1 ) is q–holonomic in k, l, m, n, p for each i = 1, 2, 3, 4. This is clear for i′ = 1 or i′ = 4, since f1′ = f4 and f4′ = f1. As for i′ = 2 and i′ = 3, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0309214v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 The case of B2",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-044-a2-the-case-of-b2.md",
+      "narrative": null,
+      "content": "The case of B2\nThere are two fundamental roots denoted here by α and β, where α is the\nshort root. The set of positive roots is {α, β, 2α + β, α + β}. The reduced\nrepresentations of the longest element of the Weyl group are w = s1s2s1s2 and\nw′ = s2s1s2s1, where s1 = sα and s2 = sβ.\nThe total ordering of the set of positive roots corresponding to w and w′ are,\nrespectively:\n(γ1, γ2, γ3, γ4)\n=\n(α, 2α + β, α + β, β)\n(γ1′, γ2′, γ3′, γ4′)\n=\n(β, α + β, 2α + β, α).\nNotice that γi′ = γ4−i for i = 1, . . . , 4.\nThe PBW basis of U−(see Section 7.1.5) corresponding to w and w′ are,\nrespectively:\n{f l\n4f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0309214v3/blocks/rem-sec-044-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "rem-sec-044-02.md",
+      "narrative": null,
+      "content": "3 If Lemma A.1 holds for G2, then we can prove Proposition 7.3 for G2. References [1] D Bar-Natan, ColoredJones.nb, Mathematica program, part of “KnotAtlas”, April 2003. [2] I N Bernˇste˘ın, Modules over a ring of diﬀerential operators. An investigation of the fundamental solutions of equations with constant coeﬃcients, Funkcional. Anal. i Priloˇzen. 5 (1971) 1–16, English translation: 89–101 MR0290097 [3] I N Bernˇste˘ın, Analytic continuation of generalized functions with respect to a parameter, Funkcional. Anal. i Priloˇzen. 6 (1972) 26–40, English translation: 273–285 MR0320735 [4] J-E Bj¨",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

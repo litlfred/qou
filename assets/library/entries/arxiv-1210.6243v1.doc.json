@@ -1,0 +1,594 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1210.6243v1",
+  "title": "Controlled double-slit electron diﬀraction",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Experimental Setup",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-experimental-setup"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-results"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double-slit electron",
+          "heading": false
+        },
+        {
+          "term": "electron diﬀraction",
+          "heading": false
+        },
+        {
+          "term": "controlled double-slit",
+          "heading": false
+        },
+        {
+          "term": "thought experiment",
+          "heading": false
+        },
+        {
+          "term": "front",
+          "heading": true
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1210.6243v1 [quant-ph] 22 Oct 2012 Controlled double-slit electron diﬀraction Roger Bach1, Damian Pope2, Sy-Hwang Liou1 and Herman Batelaan1 1 Department of Physics and Astronomy, University of Nebraska-Lincoln, Theodore P. Jorgensen Hall, Lincoln, NE 68588, USA. 2 Perimeter Institute for Theoretical Physics, 31 Caroline ST N Waterloo, Ontario, Canada N2L2Y5. E-mail: hbatelaan@unl.edu Abstract. Double-slit",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1210.6243v1/blocks/prose-sec-front-matter",
+        "library/arxiv-1210.6243v1/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electron diffraction",
+          "heading": false
+        },
+        {
+          "term": "diffraction pattern",
+          "heading": false
+        },
+        {
+          "term": "particle diffraction",
+          "heading": false
+        },
+        {
+          "term": "electron detection",
+          "heading": false
+        },
+        {
+          "term": "electrons traveling",
+          "heading": false
+        },
+        {
+          "term": "individual electron",
+          "heading": false
+        },
+        {
+          "term": "individual slits",
+          "heading": false
+        },
+        {
+          "term": "single electron",
+          "heading": false
+        }
+      ],
+      "extract": "Richard Feynman described electron diffraction as a phenomenon \"which has in it the heart of quantum mechanics. In reality, it contains the *only* mystery\"[@Feynman65]. He went on to describe a thought experiment for which he stated \"that you should not try to set up\" because \"the apparatus would have to be made on an impossibly small scale to show the effects we are interested in.\" He used these effects to help",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-experimental-setup",
+      "number": "2",
+      "title": "Experimental Setup",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double-slit",
+          "heading": false
+        },
+        {
+          "term": "detection scheme",
+          "heading": false
+        },
+        {
+          "term": "slit",
+          "heading": false
+        },
+        {
+          "term": "mask",
+          "heading": false
+        },
+        {
+          "term": "inset",
+          "heading": false
+        },
+        {
+          "term": "lindeberg",
+          "heading": false
+        },
+        {
+          "term": "tall",
+          "heading": false
+        },
+        {
+          "term": "diffraction",
+          "heading": false
+        }
+      ],
+      "extract": "The experimental setup is shown diagrammatically in figure [\\[fig1\\]](#fig1){reference-type=\"ref\" reference=\"fig1\"}a. An electron beam with energy of 600 eV was generated with a thermionic tungsten filament and several electrostatic lenses. The beam was collimated with a slit of 2 $\\mu$m width and 10 $\\mu$m height placed at 16.5 cm. The double-slit was located 30.5 cm from the collimation slit. The resulting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-results",
+      "number": "3",
+      "title": "Results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double-slit diffraction",
+          "heading": false
+        },
+        {
+          "term": "diffraction pattern",
+          "heading": false
+        },
+        {
+          "term": "diffraction orders",
+          "heading": false
+        },
+        {
+          "term": "electron build-up",
+          "heading": false
+        },
+        {
+          "term": "supplementary movie",
+          "heading": false
+        },
+        {
+          "term": "mask",
+          "heading": false
+        },
+        {
+          "term": "moved further",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        }
+      ],
+      "extract": "The movable mask was placed behind the double-slit, see figure [\\[fig1\\]](#fig1){reference-type=\"ref\" reference=\"fig1\"}. The mask was moved from one side to the other (figure [\\[fig2\\]](#fig2){reference-type=\"ref\" reference=\"fig2\"} top to bottom). Initially the majority of the electrons are blocked. As the mask is moved, slit 1 becomes partially, then fully open. When one slit is open, single-slit diffraction can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-conclusion",
+      "number": "4",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electron diﬀraction",
+          "heading": false
+        },
+        {
+          "term": "double-slit electron",
+          "heading": false
+        },
+        {
+          "term": "diﬀraction pattern",
+          "heading": false
+        },
+        {
+          "term": "controlled double-slit",
+          "heading": false
+        },
+        {
+          "term": "supplementary movie",
+          "heading": false
+        },
+        {
+          "term": "electron micrographs",
+          "heading": false
+        },
+        {
+          "term": "mask",
+          "heading": false
+        },
+        {
+          "term": "individual slits",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we show a full realization of Feynman’s thought experiment and illustrate key features of quatum mechanics: interference and the wave-particle duality of matter. By controlling the transmission through the individual slits of a double-slit we were able to observe the diﬀraction patterns from slit 1 (P1), slit 2 (P2), and both (P12), thus observing the wave properties of electrons. Also, by recording",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "double-slit electron",
+      "heading": false
+    },
+    {
+      "term": "double-slit diffraction",
+      "heading": false
+    },
+    {
+      "term": "double-slit experiment",
+      "heading": false
+    },
+    {
+      "term": "controlled double-slit",
+      "heading": false
+    },
+    {
+      "term": "through double-slit",
+      "heading": false
+    },
+    {
+      "term": "electron build-up",
+      "heading": true
+    },
+    {
+      "term": "electron diﬀraction",
+      "heading": true
+    },
+    {
+      "term": "movable mask",
+      "heading": true
+    },
+    {
+      "term": "diffraction pattern",
+      "heading": false
+    },
+    {
+      "term": "electron detection",
+      "heading": false
+    },
+    {
+      "term": "electron beam",
+      "heading": true
+    },
+    {
+      "term": "individual electron",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Simpliﬁed setup. a, An electron beam passes through a wall with two slits in it. A movable mask is positioned to block the electrons, only allowing the ones traversing through slit 1 (P1), slit 2 (P2), or both (P12) to reach the backstop and detector. b,c, Probability distributions are shown, (Exper",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Mask movement",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Buildup of electron diﬀraction. “Blobs” indicate the locations of detected electrons. Shown are intermediate build-up patterns from the central ﬁve orders of the diﬀraction pattern (P12) magniﬁed from ﬁgure 2, with 2, 7, 209, 1004, and 6235 electrons (a-e). A full movie of the electron build-up is i",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-3",
+      "file": "images/img-p007-3.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-5",
+      "file": "images/img-p007-5.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-6",
+      "file": "images/img-p007-6.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-7",
+      "file": "images/img-p007-7.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-8",
+      "file": "images/img-p007-8.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-9",
+      "file": "images/img-p007-9.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-10",
+      "file": "images/img-p007-10.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-11",
+      "file": "images/img-p007-11.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-12",
+      "file": "images/img-p007-12.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-13",
+      "file": "images/img-p007-13.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p4); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1210.6243v1"
+  }
+}

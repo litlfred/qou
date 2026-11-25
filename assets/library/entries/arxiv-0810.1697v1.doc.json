@@ -1,0 +1,716 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0810.1697v1",
+  "title": "arxiv-0810.1697v1",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basic definitions and notations",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-basic-definitions-and-notations"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-examples"
+    },
+    {
+      "level": 2,
+      "title": "The multilinear bracket",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-multilinear-bracket"
+    },
+    {
+      "level": 1,
+      "title": "Expansion of cables in the skein module",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-expansion-of-cables-in-the-skein-module"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1",
+      "number": "4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-proof-of-theorem-1"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": "5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-appendix"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "cable",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0810.1697v1 [math.GT] 9 Oct 2008 ON THE CABLE EXPANSION FORMULA QIHOU LIU Abstract. In this paper, a generalized version of Morton’s formula [8] is proved. Using this formula, one can write down the colored Jones polynomials of cabling of an knot in terms of the colored Jones polynomials of the original knot.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0810.1697v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#intro label=\"intro\"} In [@MO], Morton proved a formula relating the colored Jones polynomials of a cabling of a knot to the colored Jones polynomials of the original knot. Using this formula, Kashaev proved that the volume conjecture is true for the torus knots [@KT]. The original proof of Morton is written in the language of quantum groups. In this paper, an alternative way using skein theory is adopted.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-basic-definitions-and-notations",
+      "number": "2",
+      "title": "Basic definitions and notations",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfig file",
+          "heading": false
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "framed links",
+          "heading": false
+        },
+        {
+          "term": "scalebox",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#def label=\"def\"} To keep the prerequisite minimal, some basic definitions and notations are listed in this section. For details and proofs of certain results, see Lickorish's book [@LBook] and [@BHMV]. For a survey of the skein theory and some generalization, see [@LSurvey]. Given a compact oriented 3-manifold $M$, and a ring of coefficients $R=Z[A,A^{-1}]$, define a $R-module$ by $$SS(M)=the\\ free\\ module\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-examples",
+      "number": "2.1",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfig file",
+          "heading": false
+        },
+        {
+          "term": "skein module",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "instance times",
+          "heading": false
+        },
+        {
+          "term": "basis elements",
+          "heading": false
+        },
+        {
+          "term": "scalebox",
+          "heading": false
+        },
+        {
+          "term": "multiplied",
+          "heading": false
+        },
+        {
+          "term": "eps",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#examples label=\"examples\"} ### The skein module of $S^3$ {#three sphere} The skein module of $S^3$ is equal to $Z[A,A^{-1}]$. The reason is the following. Given a planar diagram of a famed link $L$ in $S^3$, by applying the skein relation repeatedly to resolve the crossings and remove the unknots, $L$ can be reduced to the empty link multiplied by a Laurent polynomial of $A$. In this way, a polynomial is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-multilinear-bracket",
+      "number": "2.2",
+      "title": "The multilinear bracket",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multilinear bracket",
+          "heading": true
+        },
+        {
+          "term": "framing sigma",
+          "heading": false
+        },
+        {
+          "term": "framing convention",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "framed knot",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#multilinear bracket label=\"multilinear bracket\"} Given an framed link $L$ in $M$ with components $K_1,K_2,...K_m$, denote the framing of $K_j$ by $\\sigma_j$. A multilinear bracket $\\langle *,*,...,*\\rangle_L$ in $S(M)$ can be constructed as following: The framing $\\sigma_j$ of $K_j$ determines a diffeomorphism $$\\tau_j:D\\times S^1 \\to a\\ tubular\\ neighbourhood\\ of\\ K_j.$$ $\\tau_j$ gives a map $D\\times S^1 \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-expansion-of-cables-in-the-skein-module",
+      "number": "3",
+      "title": "Expansion of cables in the skein module",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle notag",
+          "heading": false
+        },
+        {
+          "term": "notag langle",
+          "heading": false
+        },
+        {
+          "term": "omega rangle",
+          "heading": false
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "rangle tag",
+          "heading": false
+        },
+        {
+          "term": "file link-l",
+          "heading": false
+        },
+        {
+          "term": "notag equiv",
+          "heading": false
+        },
+        {
+          "term": "psfig file",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#thm label=\"thm\"} []{#thm label=\"thm\"} In this section, the framing convention is assumed. Let $M$ be the standard solid torus $D \\times S^1$, the link $L$, which is to be considered, consists of two components: $K_1$ is given by $$( \\rho \\exp(iq\\theta), \\exp(ip\\theta))|_{0\\le \\theta \\le 2\\pi}$$ where $p,q$ are coprime integers, $0<\\rho<1$; $K_2$ is the core of the solid torus $$(0, \\exp(i\\theta))|_{0\\le \\theta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-proof-of-theorem-1",
+      "number": "4",
+      "title": "Proof of Theorem 1",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "notag sum",
+          "heading": false
+        },
+        {
+          "term": "notag times",
+          "heading": false
+        },
+        {
+          "term": "notag qquad",
+          "heading": false
+        },
+        {
+          "term": "sum sinh",
+          "heading": false
+        },
+        {
+          "term": "notag end",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        },
+        {
+          "term": "substack even",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#proof label=\"proof\"} []{#proof label=\"proof\"} ::: proof *Proof.* Assume it's true for (p,q), let's do the calculation in the case (q,p). By explicit calculation, we got $$\\langle\\omega_r\\rangle_U(A^2-A^{-2})^2\\equiv -2(r+1)$$ So by lemma 2, $$\\begin{aligned} &(-1)^{l+s}g_\\sigma^l(q,p;s)(-2(r+1))\\notag\\\\ &= 4\\sum_{t=0}^{r-1}\\sum_{k\\ge 0} (-1)^{k+t}g_{\\sigma}^k(p,q;t)\\sinh((t+1)(l+1)C)\\sinh((s+1)(k+1)C)\\notag",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-appendix",
+      "number": "5",
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "notag sum",
+          "heading": false
+        },
+        {
+          "term": "alpha zeta",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        },
+        {
+          "term": "notag end",
+          "heading": false
+        },
+        {
+          "term": "substack even",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "even exp",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#apendix label=\"apendix\"} []{#appendix label=\"appendix\"} Now we will present a proof of lemma 3 and lemma 4. ::: proof *Proof of lemma 3.* By change of variables, we have $$\\sum_{k\\ge 0}f(k+1)g(k+1)\\delta(k-t-pk')=\\sum_{k^{''}\\ge 1}f(k^{''})g(k^{''})\\delta(k^{''}-t-1-pk')$$ and $$\\begin{aligned} \\sum_{k\\ge 0}f(k+1)g(k+1)\\delta(k+t+2+pk')&=\\sum_{k^{''}\\ge 1}f(k^{''})g(k^{''})\\delta(k^{''}+t+1+pk')\\notag\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "three-manifold invariants",
+          "heading": false
+        },
+        {
+          "term": "vogel",
+          "heading": false
+        },
+        {
+          "term": "lickorish",
+          "heading": false
+        },
+        {
+          "term": "masbaum",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., Three-manifold invariants derived from the Kauﬀman bracket. Topology 1992 31, no. 4, 685–699. [2] Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., Topological quantum ﬁeld theories derived from the Kauﬀman bracket. Topology 1995 34, no. 4, 883–927. [3] Kashaev, R.M.; Tirkonnen, O., Proof of the Volume Conjecture for Torus Knots. Journal of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "notag times",
+      "heading": false
+    },
+    {
+      "term": "rangle notag",
+      "heading": false
+    },
+    {
+      "term": "notag langle",
+      "heading": false
+    },
+    {
+      "term": "notag sum",
+      "heading": false
+    },
+    {
+      "term": "psfig file",
+      "heading": false
+    },
+    {
+      "term": "notag end",
+      "heading": false
+    },
+    {
+      "term": "times sinh",
+      "heading": false
+    },
+    {
+      "term": "notag equiv",
+      "heading": false
+    },
+    {
+      "term": "sum substack",
+      "heading": false
+    },
+    {
+      "term": "notag qquad",
+      "heading": false
+    },
+    {
+      "term": "eps scalebox",
+      "heading": false
+    },
+    {
+      "term": "substack even",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-2",
+      "file": "images/img-p002-2.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0810.1697v1"
+  }
+}

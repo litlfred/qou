@@ -1,0 +1,1106 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "gambaudo-ghys-braids-signatures-2005",
+  "blocks": [
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Bull. Soc. math. France\n133 (4), 2005, p. 541–579\nBRAIDS AND SIGNATURES\nby Jean-Marc Gambaudo & ´Etienne Ghys\nAbstract. —\nA braid deﬁnes a link which has a signature.\nThis deﬁnes a map\nfrom the braid group to the integers which is not a homomorphism. We relate the\nhomomorphism defect of this map to Meyer cocycle and Maslov class. We give some\ninformation about the global geometry of the gordian metric space.\nR´esum´e (Tresses et signatures). —\nUne tresse d´eﬁnit un entrelacs qui poss`ede une\nsignature. Ceci d´eﬁnit une application du groupe des tresses vers les entiers qui n’est\npas un homomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "542\nGAMBAUDO (J.-M.) & GHYS (E.)\nIn the space Xn of n-tuples of distinct points of D2(n + 1\n2), we consider the\nequivalence relation that identiﬁes two n-tuples if one is obtained from the\nother by a permutation of the indices. We denote by e\nXn the quotient space\nand by πn : Xn →e\nXn the natural projection. The fundamental group of e\nXn,\nbased at πn(x0\n1, x0\n2, . . . , x0\nn), is called the n-th Artin braid group and is denoted\nby Bn; its elements are called braids. Any braid γ in Bn is represented by a\npath t ∈[0, 1] 7→(xt\n1, xt\n2, . . . , xt\nn) ∈Xn, i.e. by a system of n disjoint arcs\nt 7→(t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n543\nα\n∈B3\ni3(α\n) ∈B4\nFigure 2. Adding a trivial strand\na complex number ω̸ = 1 (usually chosen as a root of unity) and the hermitian\nform\neBω(x, y) = (1 −ω)B(x, y) + (1 −ω)B(y, x).\nThe signature of this hermitian form is again independent of the choice of the\nSeifert surface: it is the ω-signature, signω(λ) ∈Z, of the oriented link λ. In the\ncase ω = −1, we recover the signature of the oriented link.\nThere is a natural sequence of embeddings B1 ⊂B2 ⊂· · · ⊂Bn ⊂· · · of\nthe braid groups. The embedding in of Bn in Bn+1 amounts to adding an\nadditional “trivial” strand (see F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "544\nGAMBAUDO (J.-M.) & GHYS (E.)\nhermitian form. Since the imaginary part of such a hermitian form is a sym-\nplectic form, the Burau representation provides symplectic representations:\nBω : B∞−→Sp(∞, R)\nwhere we denote by Sp(∞, R) the ascending union of the symplectic groups\nSp(2g, R) (consisting of the symplectic automorphisms γ of R∞which are the\nidentity on all vectors of the canonical basis of R∞except for a ﬁnite number\nof them).\nIn Section 2, we shall give more information concerning this Burau-Squier\nrepresentation. We shall give explicit formulas for the symplectic form and a\ntopologic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "— Let α and β two braids in B∞and ω̸ = 1 a root of unity. Then: signω( d α · β) −signω(bα) −signω(bβ) = −Meyer \u0000Bω(α), Bω(β) \u0001 . tome 133 – 2005 – no 4",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n545\nRemark 1. — Since the Meyer cocycle evaluated on Sp(2g, R) is the signa-\nture of a quadratic form on a vector space with dimension smaller that 2g,\nit follows easily from the deﬁnition of the Burau-Squier representation that,\nfor any positive integer n, and any pair of braids α and β in Bn, we have\n\f\fsignω( d\nα · β) −signω(w bα) −signω(bβ)\n\f\f ≤2n.\nThus, for any positive integer n, the map α ∈Bn 7→signω(bβ) ∈R is a\nquasimorphism. A direct proof of this result can be found in [5] where the\nauthors use this property to construct non trivial quasimorphisms on the group\nof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/rem-page-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-01.md",
+      "narrative": null,
+      "content": "— Since the Meyer cocycle evaluated on Sp(2g, R) is the signa- ture of a quadratic form on a vector space with dimension smaller that 2g, it follows easily from the deﬁnition of the Burau-Squier representation that, for any positive integer n, and any pair of braids α and β in Bn, we have signω( d α · β) −signω(w bα) −signω(bβ) ≤2n. Thus, for any positive integer n, the map α ∈Bn 7→signω(bβ) ∈R is a quasimorphism. A direct proof of this result can be found in [5] where the authors use this property to construct non trivial quasimorphisms on the group of area preserving diﬀeomorphisms of the 2-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/rem-page-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-02.md",
+      "narrative": null,
+      "content": "— As a trivial illustration of Theorem A, consider the case n = 2. The image of B−1(B2) is contained in Sp(2, R) = SL(2, R) and it is not dif- ﬁcult to see that, up to conjugacy, B−1(σ1) is the matrix \u00001 0 −1 1 \u0001 . Evaluating the Meyer cocycle on 2 × 2 unipotent matrices is very easy so that one can compute sign(σℓ 1) using the method explained in Remark 2. The reader will ﬁnd immediately the value 1−ℓfor ℓ≥1. Of course, one can also compute this signature using an explicit Seifert surface for this elementary braid (see [11]). BULLETIN DE LA SOCI´ET´E MATH´EMATIQUE DE FRANCE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "546\nGAMBAUDO (J.-M.) & GHYS (E.)\nSection 3 is devoted to the proof of Theorem A. This proof will be a visual\ncomputation (following an expression borrowed from [14]). First, we interpret\nboth the signature of an oriented link and the evaluation of the Meyer cocycle\nas the signatures of the intersection forms of some 4-manifolds (subsections 3.1\nand 3.2). Then, in 3.3 we construct an oriented compact connected 4-manifold\nM 4\n2 (α, β) which is a 2-fold branched cover of S2 × D2 where S2 is the oriented\nsurface with genus 2 and the branching locus is a suitable closed surface. We\nshall compute th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-01.md",
+      "narrative": null,
+      "content": "— The function sign + 2 3 lk3 descends to a function on SL(2, Z) which coincides with −1 3 times the Rademacher function. Finally, we show how this knowledge of signatures gives some information concerning the rough geometry of the gordian distance. Denote by Knots the set of (isotopy classes of) knots in 3-space. There is a natural distance dgordian on Knots that we now deﬁne. Given two knots f0, f1 : S1 ,→R3, one considers homotopies (ft)t∈[0,1] : S1 ↬R3 which connect the two knots and are such that for each t ∈[0, 1], the curve ft is an immersion which has at most one double point, this dou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n547\nThe global geometry of this (discrete) metric space is quite intriguing and\nprobably very intricate. Note for instance that this space is not locally ﬁnite\n(an inﬁnite number of knots can be made trivial by allowing one crossing as\nthe reader will check on the examples given on Figure 4, which can be easily\ndistinguished by their Alexander polynomials). As a ﬁrst approach, we propose\nto study the coarse geometry of this metric space, i.e. up to quasi-isometries.\nBased on the observation that the signatures give lower bounds for the gordian\ndistance (see [15]) we prove",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "— For every integer d ≥1, there is a map ξ : Zd →Knots which is a quasi-isometry onto its image, i.e. such that the gordian distance between ξ(x) and ξ(y) satisﬁes A∥x −y∥−B ≤dgordian \u0000ξ(x), ξ(y) \u0001 ≤C∥x −y∥ for some constants A, B, C > 0 and some norm ∥.∥in Rd. Figure 4. Knots at distance 1 from the trivial knot It would be interesting to ﬁnd quasi-isometric embeddings of other nice metric spaces, like for instance an inﬁnite regular tree(1). Another puzzling question concerning this space is to know whether or not it admits non triv- ial global quasi-isometries, i.e. bijections of Knots which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "548\nGAMBAUDO (J.-M.) & GHYS (E.)\n2. The Burau-Squier representation\nMost of this section is probably well known to experts and is included here for\nthe convenience of the reader and because it is necessary for the sequel of this\npaper. We would like to interpret the classical Burau representation in terms\nof the action of the braid groups on the homology of some branched covers of\nthe disc. This will also provide explicit formulas for all these representations.\nWe shall partly follow a presentation of Kolev [8].\n2.1. The Burau representation. — Consider the homomorphism φn from\nthe fundamental",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n549\nIn order to produce an explicit formula for this representation, we choose\na base point z in D2 \\ {x0\n1, . . . , x0\nn} and embed a wedge Rn of n circles based\nat z, made of n positive simple loops e1, . . . , en going once around x0\n1, . . . , x0\nn\nrespectively.\nChoose some lift ez of z in D∞\nn\nand denote by e1, . . . , en the\npaths lifting e1, . . . , en and starting from ez. The inverse image of Rn in D∞\nn\nis a 1-complex eR∞\nn\nand we denote by eC∞\nn\nthe module of integral 1-chains\non eR∞\nn , which can be seen as a Z[t, t−1]-module, using the deck transformations.\nTh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "550\nGAMBAUDO (J.-M.) & GHYS (E.)\nWe also denote by Bt the corresponding linear representation of B∞in the\nascending union GL(∞, Z[t, t−1]) of the GL(n −1, Z[t, t−1]).\nRemark 1. — The convention about the choice of the generators of the\nbraid group is not uniform in the literature. Many authors use the generators\nσ′\ni = σ−1\ni\n. This remark will help the reader to convince himself or herself that\nthe above Burau representation is indeed the Burau representation [13].\nRemark 2. — The matrices that one gets using the action in homology are\nobviously transposed of the previous ones. When referring",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/rem-page-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "rem-page-010-01.md",
+      "narrative": null,
+      "content": "— The convention about the choice of the generators of the braid group is not uniform in the literature. Many authors use the generators σ′ i = σ−1 i . This remark will help the reader to convince himself or herself that the above Burau representation is indeed the Burau representation [13].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n551\ncomponent(s) of Fn,2 pointwise ﬁxed. Clearly the homotopy class of this lift\nis uniquely determined. In particular, the map eh⋆\nβ induced by ehβ on the ﬁrst\nrelative cohomology group H1(Fn,2, ∂Fn,2; R) is determined by β and produces\na representation of Bn as a group of automorphisms of H1(Fn,2, ∂Fn,2; R).\nIn the next subsection, we shall prove the following proposition which gives\na topological interpretation of the Burau representation Bt evaluated at t = −1\n(which is seen as a representation B−1 from Bn in GL(n −1, R)).\nProposition 2.1. — There is an isomorphism be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "552\nGAMBAUDO (J.-M.) & GHYS (E.)\nProposition 2.2. — There is an isomorphism between H1(Fn,k, ∂Fn,k; R)ω\nand R2n−2 ≃Cn−1 which conjugates the representations of the braid group Bn\ngiven by eh⋆\nβ and by Bω.\n2.3. The Squier representation. —\nWe ﬁrst prove Propositions 2.1\nand 2.2. One can compute the homology of the k-fold (unramiﬁed) cover Dk\nn\nof D2 \\ {x0\n1, . . . , x0\nn} associated to the reduction of the homomorphism φn\nmodulo k.\nDenote by eCk\nn the module of 1-chains on the inverse image eRk\nn\nof Rn in Dk\nn. This can be seen as a free Z[t, t−1]/(tk −1)-module on ek\n1, . . . , ek\nn\n(where the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n553\nto Rn−1 and the action of Bn is given by the Burau matrices evaluated at −1.\nFinally, the eigenspace corresponding to +1 is trivial.\nThis completes the proofs of Propositions 2.1 and 2.2.\nThe cohomology groups H1(Fn,2, ∂Fn,2; R) are equipped with the (skew\nsymmetric) intersection form which is naturally preserved by the action of\neh⋆\nβ. This intersection form is non degenerate on H1(Fn,2, ∂Fn,2; R) when n is\nodd, so that one can identify R∞with the symplectic sum of an inﬁnite number\nof copies of the canonical symplectic R2 in such a way that H1(Fn,2, ∂Fn,2; R)\ncoinci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "554\nGAMBAUDO (J.-M.) & GHYS (E.)\nand considers the involution of this ring sending s to s−1. He considers the\ntransposed Burau matrices acting on Z[s, s−1]n−1 and shows that they preserve\nthe hermitian form Hs with values in Z[s, s−1], given by the matrix\n\n\n\n\n\n\n\ns + s−1\n−s−1\n0\n...\n−s\ns + s−1\n−s−1\n...\n0\n−s\ns + s−1 ...\n. . .\n. . .\n. . .\n.\n\n\n\n\n\n\n\n.\nThe determinant of Hs is equal to (sn −s−n)/(s−s−1). When one specializes t\nto be a complex number of modulus 1 and one chooses s as one of the two square\nroots of t, the corresponding hermitian form reduces to a usual hermitian form\nwhic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n555\nwhose boundary ∂V 4\n2 is a 2-fold cover over S3 branched along λ. It turns out\n(see for instance [7]) that:\nsign(λ) = σ(V 4\n2 ).\nIn the general case of a root of unity ω which is diﬀerent from −1, we shall see\nin 3.4 that there is a similar interpretation of the ω-signature of an oriented\nlink in terms of signatures of 4-manifolds.\nRemark. — Ramiﬁed Z/kZ-cyclic coverings are omnipresent in this paper.\nRecall that such a covering is completely determined by a ramiﬁcation locus\n(which is a codimension 2 submanifold) and a homomorphism from the fun-\ndamental group of its",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/rem-page-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-page-015-01.md",
+      "narrative": null,
+      "content": "— Ramiﬁed Z/kZ-cyclic coverings are omnipresent in this paper. Recall that such a covering is completely determined by a ramiﬁcation locus (which is a codimension 2 submanifold) and a homomorphism from the fun- damental group of its complement to Z/kZ. In the previous cases that we considered, the homomorphism was implicit. In the case of the ramiﬁed 2-fold cover of the disc, it was the unique homomorphism which is equal to 1 on small simple positive loops going once around the x0 i ’s. In case of the 2-fold cover of S3 ramiﬁed on an oriented link, it was the reduction modulo 2 of the linking",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-015-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Novikov",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "thm-page-015-02.md",
+      "narrative": null,
+      "content": "— Let M be an oriented 4-manifold obtained by glu- ing two 4-manifolds M1 and M2 along some components of their boundaries. Then the signature is additive: σ(M) = σ(M1) + σ(M2). (The orientations on M1 and M2 are of course induced by the orientation on M.) In the proof of Theorem A, we shall need a more general situation where one glues manifolds with corners. Consider two oriented 4-manifolds M1 and M2 with boundary. In the boundaries ∂M1, ∂M2, choose submanifolds, V1 and V2, of dimension 3, possibly with boundary, and assume that we are given some homeomorphism h from V1 to V2 reversing the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "556\nGAMBAUDO (J.-M.) & GHYS (E.)\n∂M1 \\ V1\n∂M2 \\ V2\nΣ\ne\nX\nM\nM1\nM2\nV1 = V2\nFigure 8. Gluing manifolds with corners\n(contained in the boundary of M) and V1 (which is identiﬁed with V2 in M).\nOne can describe M as the union of three 4-manifolds with boundary: M1, M2,\nand e\nX, where e\nX denotes a regular neighborhood of X in M. If follows from\nNovikov additivity theorem that δ is the signature of the oriented 4-manifold e\nX\n(see Figure 8). This means in particular that the defect only depends on the\ntopology of X, i.e. on the boundaries of M1 and M2 and the gluing map. Let\nus make this defect more",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n557\nsubspaces. This follows from a simple application of Mayer-Vietoris exact se-\nquence which enables an identiﬁcation of the intersection form in H2( e\nX, R)\n(modulo subspaces contained in the kernel) to the quadratic form f associated\nto L1, L2, L3. We shall call this result the Novikov-Wall additivity theorem.\n3.2. The Meyer cocycle. — The Meyer cocycle evaluated on a pair of\nelements in Sp(2g, R) is also related to the signature of 4-manifolds as follows.\nLet P be the oriented pair of pants (the oriented 2-sphere minus three discs)\nand W 4 a 4-manifold which is an or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Meyer",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "thm-page-017-01.md",
+      "narrative": null,
+      "content": "— Let γ1 and γ2 be the two elements in Sp(2g, R) respectively induced by the two generators τ1 and τ2 of the fundamental group BULLETIN DE LA SOCI´ET´E MATH´EMATIQUE DE FRANCE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "558\nGAMBAUDO (J.-M.) & GHYS (E.)\nπ1(P) (see Figure 9). The signature σ(W 4) of the oriented manifold W 4 is\ngiven by the evaluation of the Meyer cocycle on the pair (γ1, γ2):\nσ(W 4) = Meyer(γ1, γ2).\nThis fact is all we need for the proof of Theorem A and the reader might skip\nthe rest of this subsection. However, we believe that it is useful to give a more\nconceptual deﬁnition of Meyer cocycle and its relationship with the signatures\nof ﬁbrations over a pair of pants.\nWe ﬁrst show that Meyer Theorem 3.2 follows from Novikov-Wall Theorem.\nIf one splits the pair of pants in two halves as in Figu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n559\nGoing back to the deﬁnition of the Maslov ternary index, one sees that in\norder to compute Meyer(γ1, γ2), one should consider the space of triples\n(v1, γ−1\n1 (v1)), (v, v), (v2, γ2(v2)) with sum 0, i.e.\nv = −v1 −v2,\n\u0000γ−1\n1 (v1) −v1\n\u0001\n+\n\u0000γ2(v2) −v2\n\u0001\n= 0,\nand one should compute one of the six possible (equal) symplectic products,\none of them being\n(Ω⊕−Ω)\n\u0000(v, v), (v1, γ−1\n1 (v1)\n\u0001\n= Ω\n\u0000v, v1 −γ−1\n1 (v1)\n\u0001\n= Ω(v1 + v2, γ−1\n1 (v1) −v1).\nOne recovers the computational deﬁnition from the introduction.\nUsing the deﬁnition of Meyer cocycle with the ternary index, one immedi-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "560\nGAMBAUDO (J.-M.) & GHYS (E.)\nα\nα\n3\nFigure 11. Juxtaposition of a braid\nIf the quantity\nsign( d\nα · β) −sign(bα) −sign(bβ) + Meyer\n\u0000B−1(α), B−1(β)\n\u0001\nwere non zero, it would follow that\nsign( \\\nαℓ· βℓ) −sign(bαℓ) −sign(bβℓ) + Meyer\n\u0000B−1(αℓ), B−1(βℓ)\n\u0001\nis unbounded as ℓtends to inﬁnity. This would contradict the loose version of\nthe theorem.\nWe now begin the proof of the “loose theorem”. Let α and β be two braids\nin Bn. One can always assume that n is odd so that H1(Fn,2, ∂Fn,2; R) is a\nsymplectic subspace of H1\nc (F∞,2; R) and Meyer(B−1(α), B−1(β)) can be com-\nputed using the representation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n561\nLet ehα and ehβ be two homeomorphisms of Fn,2 respectively associated to\nthe two braids α and β in Bn. We consider an oriented 4-manifold P 4\n2 (α, β)\nwhich is a ﬁbration over P with ﬁber Fn,2, such that the monodromy maps\nassociated with the loops τ1 and τ2 in π1(P) are respectively ehα and ehβ. The\nmanifold P 4\n2 (α, β) can be seen as follows:\nJ\nJ\nP\n1\n2\nFigure 13. Cuts in the pair of pants\n▷On the oriented pair of pants P, we consider two cuts i.e. two intervals\nI1 and I2, and two neighborhoods J1 = I1 × [0, 1] and J2 = I2 × [0, 1] as\nin Figure 13.\n▷We consider two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "lem-page-022-01.md",
+      "narrative": null,
+      "content": "— One has σ \u0000P 4 2 (α, β) \u0001 ∼= −Meyer \u0000B−1(α), B−1(β) \u0001 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "562\nGAMBAUDO (J.-M.) & GHYS (E.)\n(where ehα·β = ehβ ◦ehα). The second part is one copy of P ×S1 (since n is odd).\nThese two parts intersect along the disjoint union Σ of three tori S1×S1. Notice\nalso that the three ﬁbrations that constitute the ﬁrst part of the boundary of\nP 4\n2 (α, β) can be seen as 2-fold covers over the solid torus T = S1×D2 branched\nalong the links bα, bβ and d\nα · β in T .\nThe manifold P 4\n2 (en, en) is constructed in the same way by replacing the\nbraids α and β by the trivial braid en. More simply:\nP 4\n2 (en, en) = P × Fn,2.\nLemma 3.3. — One has\nσ\n\u0000P 4\n2 (α, β)\n\u0001 ∼= −Mey",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n563\ntwisted bands, each band corresponding to a letter in the word, and the sense\nof the twisting depending of the exponent of the letter.\nConsider the unit ball D4 in R4, oriented in a compatible way with its\nboundary ∂D4 = S3. From the spherical shell {x ∈D4; 1\n2 ≤∥x∥≤1}, we\nextract the oriented 4-manifold with boundary\nN4 =\n\b\nx ∈D4;\n1\n2 ≤∥x∥≤1, and x/∥x∥∈T\n\t\n,\nwhich is homeomorphic to T × [0, 1]. One can push the surface Sbα towards the\ninterior of D4 so that it now satisﬁes\n▷the boundary ∂Sbα is in T ⊂S3 = ∂B4 and is equal to bα,\n▷Sbα does not intersect the set of poi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "lem-page-024-01.md",
+      "narrative": null,
+      "content": "— One has σ \u0000C4 2(α) \u0001 ∼= sign(bα).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "lem-page-024-02.md",
+      "narrative": null,
+      "content": "— One has σ \u0000M 4 2 (α, β) \u0001 ∼= sign( d α · β) −sign(bα) −sign(bβ) + Meyer \u0000B1(α), B1(β) \u0001 . In order to prove Theorem A, we have to show: tome 133 – 2005 – no 4",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "564\nGAMBAUDO (J.-M.) & GHYS (E.)\nthe choice of a word in the σ±1\ni\nrepresenting α. However, for any braid α,\nwe choose such a word once for all in an arbitrary way, and we shall denote\nby C4\n2(α) the manifold obtained using this word.\nLemma 3.4. — One has\nσ\n\u0000C4\n2(α)\n\u0001 ∼= sign(bα).\nProof. — Again, it follows from Novikov-Wall additivity theorem.\nIndeed\nlet V 4\n2 (α) be the double cover of D4 branched along Sbα ⊂D4 with sig-\nnature sign(bα).\nOn gets V 4\n2 (α) from C4\n2(α) by gluing ﬁrst one copy of\nS1 × [0, 1] × D2 on one part of the boundary and then V 4\n2 (ˆen) along the new\nboundary (see Figu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-025-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "lem-page-025-01.md",
+      "narrative": null,
+      "content": "— One has σ \u0000M 4 2 (α, β) \u0001 ∼= 0. Let us revisit the construction of the manifold C4 2(α, β). Since it uses a representation of α·β as a concatenation of two words representing α and β, the Seifert surface used in the construction consists in gluing every disc associated with bα with a disc associated with bβ along an interval along their boundary (see Figure 18). Figure 18. Seifert surface for a product of braids It follows that one can choose on the circle S1 identiﬁed with R/Z (already equipped with an origin 0), a second point, say 1 2 such that Sc(α · β) ∩ \b 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n565\nLemma 3.6. — One has\nσ\n\u0000M 4\n2 (α, β)\n\u0001 ∼= 0.\nLet us revisit the construction of the manifold C4\n2(α, β).\nSince it uses a\nrepresentation of α·β as a concatenation of two words representing α and β, the\nSeifert surface used in the construction consists in gluing every disc associated\nwith bα with a disc associated with bβ along an interval along their boundary\n(see Figure 18).\nFigure 18. Seifert surface for a product of braids\nIt follows that one can choose on the circle S1 identiﬁed with R/Z (already\nequipped with an origin 0), a second point, say 1\n2 such that\nSc(α ·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "566\nGAMBAUDO (J.-M.) & GHYS (E.)\nBy Lemma 3.5, the left hand side of this equality is equal to Meyer(B1(α), id) =\n0 so that σ(Q4\n2(α)) ∼= 0. We ﬁnally conclude that σ(M 4\n2 (α, β)) ∼= 0.\nThis\nﬁnishes the proof of Lemma 3.6 and thus the proof of Theorem A.\nFinal remark. — Instead of using the “∼= trick”, we could have computed\nthe exact values of each defect δ for each of our gluing maps. This is indeed\npossible but rather cumbersome.\n3.4. Equivariant signature of 4-manifolds: proof of Theorem A in\nthe general case. — We ﬁrst explain in concrete terms a special case of a\ngeneral construction du",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n567\neach k-th root of unity ω, one can compute the ω-signature of W 4 by considering\nﬁrst H1(P; H1(F)) as a Z/kZ-vector space and then by computing the signature\nof the restriction of the quadratic form to the corresponding ω-subspace. The\nsymplectic automorphisms of H1(F; R) associated to the two loops τ1 and τ2\ncommute with the action of Z/kZ and so deﬁne symplectic automorphisms\n(γ1)ω and (γ2)ω of H1(F; R)ω.\nAs one can expect, there is an equivariant\nversion of Meyer Theorem 3.2: the ω-signature of the Z/kZ-manifold W 4 is\nequal to the Meyer cocycle evaluated on the tw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "with the same proof as in the non equivariant case, given in 2.3",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "thm-page-027-01.md",
+      "narrative": null,
+      "content": "Choose two braids α, β in Bn. Assume, with no loss of generality, that gcd(n, k) = 1. This deﬁnes as before a ﬁbration P 4 k (α, β) over the pair of pants P with ﬁber the closed surface ˜Fn,k obtained from Fn,k by gluing a disc to the boundary. There is a natural action of Z/kZ on P 4 k (α, β). The ω-signature of P 4 k (α, β) is equal to −Meyer(Bω(α), Bω(β)). The end of the proof of Theorem A is now clear. One just repeats the “cut and paste” arguments of Section 3, replacing all double covers by k-fold cyclic covers, considering all manifolds as Z/kZ-manifolds, and replacing usual signatures",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-028-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "lem-page-028-01.md",
+      "narrative": null,
+      "content": "— For any braid α in Bn, one has sign(α · ∆4 n) = sign(α) −n2 + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 28",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/page-028.md",
+      "narrative": null,
+      "content": "568\nGAMBAUDO (J.-M.) & GHYS (E.)\nas the reader will check readily.\nFor instance, if γ2 = −id and if γ1 is hyperbolic (i.e. | trace(γ1)|̸ = 2), one\nsees that the two eigenvectors of γ1 are isotropic for qγ1,γ2.\nHence for all hyperbolic γ, we have\nMeyer(γ, −id) = 0.\nIn the same way, if γ is hyperbolic,\nMeyer(γp1, γp2) = 0\nsince eigenvectors of γ are isotropic for qγp1,γp2.\nAssume now that γ1 is non trivial parabolic and that γ2 is non parabolic.\nUp to conjugacy, we can assume that γ1 =\n\u0000 1 ϵ\n0 1\n\u0001\nwhere ϵ = ±1. The vector\nspace Eγ1,γ2 = Im(γ−1\n1\n−id) ∩Im(γ2 −id) is spanned by e1 = (1, 0). The\nco",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/figure-img-p029-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 29",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/page-029.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n569\nthe signature of ∆4\nn is equal to 1−n2. This numerical value will also be deduced\nfrom a more general computation in the next subsection.\nLet us denote by lkn : Bn →Z the homomorphism sending each generator\nto 1. It follows from the previous lemma that sign +(n + 1)/(2n) lkn descends to\na map from Bn/Z · ∆4\nn to Z. When n = 3, this is a map from SL(2, Z) to Z.\nWe now prove Theorem B according to which this function reduces to “the”\nubiquitous function on SL(2, Z), that appears in so many diﬀerent contexts:\nthe Arnold, Atiyah, Brooks, Dedekind, Dupont, Euler, Guicharde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 30",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/page-030.md",
+      "narrative": null,
+      "content": "570\nGAMBAUDO (J.-M.) & GHYS (E.)\nRecall that torsion elements in SL(2, Z) are conjugate of powers of\nA =\n\u0010\n0\n1\n−1\n0\n\u0011 \u0000= B−1(σ1 · σ2 · σ1)\n\u0001\n,\nB =\n\u0010 1\n−1\n1\n0\n\u0011 \u0000= B−1(σ1 · σ2)\n\u0001\nof order 4 and 6 respectively. We set\n▷Φ(Ap) to be 0, −3, 0, 3 for p = 0, 1, 2, 3 and\n▷Φ(Bp) to be 0, −4, −2, 0, 2, 4 for p = 0, 1, 2, 3, 4, 5.\nThe action of A (resp. B) on Poincar´e’s half space is a rotation of angle π\n(resp. −2\n3π) around i = √−1 (resp.\n1\n2(1 + √−3)).\nParabolic elements in SL(2, Z) are conjugate to powers of\nC =\n\u0010 1\n1\n0\n1\n\u0001\n= B−1(σ2).\nWe set\n▷Φ(Cp) to be p −3 for p ≥1 and p + 3 for p ≤−1.\n▷The remai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-030-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "thm-page-030-01.md",
+      "narrative": null,
+      "content": "— The function sign + 2 3 lk3 : SL(2, Z) →Z coincides with −1 times “the” function Φ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 31",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/page-031.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n571\ny\ny\ny\nz\nz\n−\n3\nx\n+3\nx\nx\n0\nz\nFigure 21. Orientation of a triangle in the tree\nand it is clear that φx and φy diﬀer by at most 6. Moreover, if one chooses\nxℓ= i + ℓ(for ℓ≥1), the sequence φxℓ(γ) is eventually constant for every γ\nand deﬁnes a limit map φ∞: SL(2, Z) →Z which is also at a bounded distance\nfrom the φx’s. Note that the deﬁnition of the Rademacher function Φ shows\nthat Φ and φ∞agree on hyperbolic elements and that Φ −φ∞is bounded.\nThe coboundary dφ∞(γ1, γ2) is easy to understand. It is equal to −3, 0\nor +3 according to the cyclic ordering of the three points",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 32",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/page-032.md",
+      "narrative": null,
+      "content": "572\nGAMBAUDO (J.-M.) & GHYS (E.)\nthat sign(α2) = 0. As for bα1 it coincides with bσ3\n2 whose signature is −2 (as we\nhave seen in Remark 3 in the introduction).\nWe have by Theorem A\nsign(bα) = sign(bα1) + sign(bα2) −Meyer\n\u0000B−1(α1, B−1(α2)\n\u0001\n= −2 + 0 −Meyer\n\u0010\u00104 3\n1 1\n\u0011\n,\n\u00101 1\n1 2\n\u0011\u0011\n= −2.\ni\nBA(i)\n(BA)(BA)(i)\n(BA)(BA)(BA)(i)\n(BA)(BA)(BA)(B−\n1A)(i)\n(BA)(BA)(BA)(B−\n1A)(BA)(i)\n(BA)(BA)(BA)(B−\n1A)(BA)(B−\n1A)(i)\nFigure 22. Φ((BA)(BA)(BA)(B−1A)(BA)(B−1A)) = 2 and the knot 62\nOn the other hand, since\nB−1(σ1) = AB,\nB−1(σ2) = BA\n(keeping the notation A and B for the matrices of order 4 and 6 deﬁned above)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 33",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/page-033.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n573\nLion-Vergne and Turaev and we recall the result (in the case of U(2)). Deﬁne\nthe function ψ : U(2) →R by\nψ(γ) = 2\n\u0000((θ1)) + ((θ2))\n\u0001\n,\nwhere exp(2iπθ1) and exp(2iπθ2) are the two eigenvalues of γ and ((.)) : R →R\nis deﬁned by\n((θ)) =\n\u001a θ −[θ] −1\n2\nif θ is not an integer,\n0\nif θ is an integer.\n([.] denotes the integral part.) It turns out that the coboundary of ψ is the\nrestriction of the Meyer cocycle to U(2):\nψ(γ1γ2) −ψ(γ1) −ψ(γ2) = Meyer(γ1, γ2).\nWe can now give a formula:\nTheorem 4.3. — Let ω = exp(2iπθ) be a root of unity such that 0 < θ < 1\n3.\nThen the ω-signatur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/thm-page-033-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "thm-page-033-01.md",
+      "narrative": null,
+      "content": "— Let ω = exp(2iπθ) be a root of unity such that 0 < θ < 1 3. Then the ω-signature of a braid α in B3 is equal to −2(((θ1)) + ((θ2))) −2θ lk3(α) where exp(2iπθ1) and exp(2iπθ2) are the two eigenvalues of the matrix Bω(α).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prop-page-034-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "prop-page-034-01.md",
+      "narrative": null,
+      "content": "— Let ω = exp(2iπθ) be a root of unity with 0 < θ < 1. The ω-signature of (σ1 · · · σn−1)p is equal to the Dedekind sum signω(σ1 · · · σn−1)p = X 1≤ℓ1≤n−1 1≤ℓ2≤p−1 ϵθ[ℓ1, ℓ2] where ϵθ[ℓ1, ℓ2] =      +1 if 0 < θ + ℓ1/n + ℓ2/p < 1, (mod 2), −1 if 1 < θ + ℓ1/n + ℓ2/p < 2, (mod 2), if θ + ℓ1/n + ℓ2/p ∈Z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 34",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/page-034.md",
+      "narrative": null,
+      "content": "574\nGAMBAUDO (J.-M.) & GHYS (E.)\n5. The gordian space\n5.1. The ω-signatures of torus knots. —\nWe choose a primitive k-\nth root of unity ω and an integer p ≥1 and we would like to compute\nsignω(σ1 · · · σn−1)p. When p is a multiple of n, this reduces to the computation\nof the ω-signatures in the center of Bn.\nProposition 5.1. — Let ω = exp(2iπθ) be a root of unity with 0 < θ < 1.\nThe ω-signature of (σ1 · · · σn−1)p is equal to the Dedekind sum\nsignω(σ1 · · · σn−1)p =\nX\n1≤ℓ1≤n−1\n1≤ℓ2≤p−1\nϵθ[ℓ1, ℓ2]\nwhere\nϵθ[ℓ1, ℓ2] =\n\n\n\n\n\n+1\nif 0 < θ + ℓ1/n + ℓ2/p < 1, (mod 2),\n−1\nif 1 < θ + ℓ1/n + ℓ2/p < 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 35",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/page-035.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n575\nwhere σign denotes the sign of a real number (we are out of symbols for signs\nand signatures!) and Re the real part of a complex number. Note that\n(1 −ω)\n\u00001 −e\n2iπℓ1\nn\n\u0001\u00001 −e\n2iπℓ2\np\n\u0001\n= 8i sin(πθ) sin\n\u0010πℓ1\nn\n\u0011\nsin\n\u0010πℓ2\np\n\u0011\ne\niπ(θ+ ℓ1\nn + ℓ2\np )\nso that the above formula for the ω-signature reduces to the formula in the\nproposition. A challenging exercise for the reader would be to give another\nproof of this proposition using Theorem A.\nWhen ω = −1 and p = 2n, one gets the value 1 −n2 that we used earlier.\nFor every root of unity ω, deﬁne the map\nSignω : α ∈Bn 7−→lim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prop-page-036-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "prop-page-036-01.md",
+      "narrative": null,
+      "content": "— For any root of unity ω and any two knots λ1, λ2, one has signω(λ1) −signω(λ1) ≤2dgordian(λ1, λ2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 36",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/page-036.md",
+      "narrative": null,
+      "content": "576\nGAMBAUDO (J.-M.) & GHYS (E.)\nSignexp(2iπ\nθ\n)(∆\n2\n5)\nθ\n1\n5\n2\n5\n3\n5\n4\n5\n−\n 8\n5\n−\n 12\n5\n1\nFigure 23. Homogeneous signature\nNote in particular that for 0 < θ < 1/n, one has\nSignexp(2iπθ)(σ1· · · σn−1) = −2(n −1)θ\nand that when n is odd and (n −1)/2n < θ < (n + 1)/2n\nSignexp(2iπθ)(σ1· · · σn−1) = 1 −n2\n2n\n·\nNote also that when n = 3 and 0 < θ < 1\n3, we have Signω(σ1 · σ2) = −4θ\nso that signω(∆2k\n3 ) = signω((σ1 · σ2)3k) = −4θ · 3k if ω is a k-th root of unity.\nWe used this value in the proof of Theorem 4.3.\n5.2. The gordian space. — In this section, we prove Theorem C according\nto which it is p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 37",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/page-037.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n577\nLet us ﬁnish the proof of Theorem C assuming this lemma.\nDenote by n the sum n1+· · ·+nd and consider the braid group Bn. Grouping\nthe base points x0\n1, . . . , x0\nn by groups of size n1, n2, . . . , nd, we get d embeddings\nφ1, . . . , φd of Bn1, . . . , Bnd in Bn whose images commute.\nThe choice of d\nelements α1, . . . , αd deﬁnes a homomorphism\nψ : m = (m1, . . . , md) ∈Zd 7−→φ1(α1)m1· · · φd(αd)md ∈Bn.\nReplacing if necessary all the αi’s by some suitable power, we may assume\nthat the image of ψ is contained in the pure braid group, which means that\nthe induced perm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 38",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/page-038.md",
+      "narrative": null,
+      "content": "578\nGAMBAUDO (J.-M.) & GHYS (E.)\naﬃne function of θ which is constant in the interval [i/(2i+1), (i+1)/(2i+1)].\nChoose θj as a variable in the interval ](j −1)/(2j −1), j/(2j + 1)[. In the\nmatrix Signexp(2iπθj)(αi) the entries above the diagonal are constant so that\nwhen one expands the determinant, one realizes that it can be written as\na · θ1· · · θd + U(θ1, . . . , θd)\nwhere a̸ = 0 and U is a polynomial of degree ≤d −1. It follows that this\ndeterminant cannot vanish identically and Lemma 5.4 is proved.\nNote that the quasi-isometric embedding that we constructed is very explicit\nand can be m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 39",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/page-039.md",
+      "narrative": null,
+      "content": "BRAIDS AND SIGNATURES\n579\n[14] Sullivan (D.) – On the intersection ring of compact three manifolds,\nTopology, t. 14 (1975), pp. 275–277.\n[15] Taniyama (K.) & Yasuhara (A.) – On C-distance of knots, Kobe J.\nMath., t. 11 (1994), pp. 117–127.\n[16] Turaev (V.G.) – A cocycle of the symplectic ﬁrst Chern class and Maslov\nindices, Funk. Anal. i Prilozhen., t. 18 (1984), pp. 43–48, Russian; English\ntranslation: Funct. Anal. Appl., t. 18 (1984), pp. 35–39.\n[17] Wall (C.T.C.) – Non-additivity of the signature, Invent. Math., t. 7\n(1969), pp. 269–274.\nBULLETIN DE LA SOCI´ET´E MATH´EMATIQUE DE FRANCE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 40",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/page-040.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

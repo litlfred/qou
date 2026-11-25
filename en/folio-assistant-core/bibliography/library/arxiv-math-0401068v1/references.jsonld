@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0401068v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
+      "dcterms:creator": [
+        "TAKATA, TOSHIE"
+      ],
+      "dcterms:issued": "D:20181024",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0401068",
+      "dcterms:abstract": "@We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the colored Jones polynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
+      "dcterms:source": "library/arxiv-math-0401068v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0401068v1"
+    }
+  ]
+}

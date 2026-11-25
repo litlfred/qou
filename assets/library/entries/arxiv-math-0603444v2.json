@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0603444v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0603444v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulation of the result",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-formulation-of-the-result.md",
+      "narrative": null,
+      "content": "We consider the germ of an isolated hypersurface singularity $D\\subseteq(\\mathbb{C}^n,0)$. Let $\\mathcal{O}=\\mathcal{O}_{\\mathbb{C}^n,0}$ be the ring of germs of holomorphic functions on $\\mathbb{C}^n$ at the origin with maximal ideal $\\mathfrak{m}$ and $f\\in\\mathfrak{m}^2$ a reduced defining equation of $D$. For notational simplicity, we shall write $\\mathbb{C}^n$ instead of $(\\mathbb{C}^n,0)$. In terms of coordinates $x_1,\\dots,x_n$ on $\\mathbb{C}^n$, $\\mathcal{O}=\\mathbb{C}\\{x_1,\\dots,x_n\\}$ is the ring of convergent power series and $\\mathfrak{m}=\\langle x_1,\\dots,x_n\\rangle$. We abbreviat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603444v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0603444v2  [math.AG]  31 Oct 2006\nQUASIHOMOGENEITY OF ISOLATED HYPERSURFACE\nSINGULARITIES AND LOGARITHMIC COHOMOLOGY\nMICHEL GRANGER AND MATHIAS SCHULZE\nAbstract. We characterize quasihomogeneity of isolated hypersurface singu-\nlarities by the injectivity of the map induced by the ﬁrst diﬀerential of the\nlogarithmic diﬀerential complex in the top local cohomology supported in the\nsingular point.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603444v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to the logarithmic comparison theorem",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-relation-to-the-logarithmic-comparison-theorem.md",
+      "narrative": null,
+      "content": "The map $d_1$ is well-known in the context of the logarithmic comparison theorem: By Grothendieck's comparison theorem [@Gro66], the cohomology of the complement $U=\\mathbb{C}^n\\smallsetminus D$ of a germ of a reduced divisor $D\\subseteq\\mathbb{C}^n$ is computed by the complex $\\Omega^\\bullet(\\star D)$. If the inclusion $\\Omega^\\bullet(\\log D)\\subseteq\\Omega^\\bullet(\\star D)$ is a quasi--isomorphism then $\\Omega^\\bullet(\\log D)$ computes the cohomology of $U$ and one says that the logarithmic comparison theorem, or briefly LCT, holds for $D$. The characterization of LCT is an open problem and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603444v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the theorem",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-proof-of-the-theorem.md",
+      "narrative": null,
+      "content": "We denote the $n$th local cohomology module of $\\mathcal{O}$ supported at the origin by $$H:=H_0^n(\\mathcal{O})\n=H^{n-1}(\\mathbb{C}^n\\smallsetminus\\{0\\},\\mathcal{O})\n=\\frac{\\mathcal{O}[\\frac{1}{x_1\\cdots x_n}]}{\\sum_{i=1}^n\\mathcal{O}[\\frac{1}{x_1\\cdots\\widehat{x_i}\\cdots x_n}]}.$$ By right exactness of the tensor product $\\otimes:=\\otimes_\\mathcal{O}$, this implies $$H_0^n(\\Omega^1(\\log D))=H^{n-1}(\\mathbb{C}^n\\smallsetminus\\{0\\},\\Omega^1(\\log D))=\\Omega^1(\\log D)\\otimes H.$$ The total differential $d:\\mathcal{O}\\to\\Omega^1(\\log D)$ induces a natural map $$d_1:H=H_0^n(\\mathcal{O})\\to H_0^n(\\O",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603444v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[Arn72]\nV. I. Arnol′d, Normal forms of functions near degenerate critical points,\nthe Weyl groups Ak, Dk, Ek and Lagrangian singularities, Funkcional. Anal. i\nPriloˇzen. 6 (1972), no. 4, 3–25. MR MR0356124 (50 #8595)\n[CJNMM96]\nFrancisco J. Castro-Jim´enez, Luis Narv´aez-Macarro, and David Mond, Cohomol-\nogy of the complement of a free divisor, Trans. Amer. Math. Soc. 348 (1996),\nno. 8, 3037–3049. MR MR1363009 (96k:32072)\n[CMMNMCJ02] Francisco J. Calder´on Moreno, David Mond, Luis Narv´aez Macarro, and Fran-\ncisco J. Castro Jim´enez, Logarithmic cohomology of the complement of a plane\ncurve, Co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

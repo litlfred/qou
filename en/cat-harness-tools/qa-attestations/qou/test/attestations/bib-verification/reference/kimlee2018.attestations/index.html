@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/kimlee2018.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-2cgoh9spf9q.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-2cgoh9spf9q","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/kimlee2018.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/kimlee2018.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/kimlee2018.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;kimlee2018&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 426,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1808.05026v1/1808.05026v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;kimlee2018&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;tangential&quot;,
+        &quot;rationale&quot;: &quot;VERDICT CHANGED BY THE WRITER from supporting to tangential, on evidence the single-document pass could not have: this is the arXiv sibling of the published document assessed at library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf (registered as kimlee2018), by the same two authors in the same year, and its Sec. 3 -- the only folio-relevant part of either -- is VERBATIM the same type A_{n-1} review, down to Prop. 3.1, the monomial order, the standard-monomial description and Example 3.2 with |M_{T(A_3)}| = C_4 = 14. Both quote that proposition from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2. The two documents differ only in their own theorems: the published one does type B, this one does types B and D (dim T(B_n) = (n+2)C_n - 1, dim T(D_n) = ((n+3)/2)C_n - 1), and the folio is strictly type A -- corpus-grep for &#39;Coxeter type&#39;, &#39;type B_n&#39;, &#39;type D_n&#39; over content/ returns nothing outside .lake. So this document contributes no citable content the published sibling does not already carry, and registering it would create a bibliography entry with no load-bearing citation site. Tangential is the honest verdict on THIS row and it should be read together with the kimlee2018 row rather than as a judgement on the mathematics, which is identical. The Sec. 3 content that does matter to the folio -- dim TL_n = Catalan(n) from an explicit standard-monomial basis, and the convention check that the loop parameter enters only through E_i^2 = delta E_i with E_iE_jE_i = E_i un-rescaled and delta a free complex parameter -- is recorded on the kimlee2018 row and now cited from there. A reviewer who wants type D in the bibliography should register this separately and say what cites it; do not register it unattached.&quot;,
+        &quot;keyResults&quot;: [],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;no-action&quot;,
+            &quot;rationale&quot;: &quot;The document&#39;s own theorems (GS bases and dimensions for Temperley-Lieb of types B and D) have no consumer: the folio&#39;s Hecke tower is the type-A Artin braid group throughout, and no block, Lean declaration or script mentions a Coxeter type other than A.&quot;,
+            &quot;target&quot;: &quot;prop:markov-trace-frobenius-selection&quot;
+          },
+          {
+            &quot;action&quot;: &quot;no-action&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry for this document. Its Sec. 3 is verbatim the published sibling&#39;s, which was registered as kimlee2018 in the same commit as this row and is the citable venue; a second entry would be a bib orphan by construction. Recorded so a later pass does not re-open the question or mint a colliding refid -- both triage passes independently proposed the id &#39;kimlee2018&#39; for these two distinct documents.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T19:30:00Z&quot;,
+        &quot;source_sha&quot;: &quot;2781e0b34e78&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from duplicate copy of fd58d8e182edda805fed0946606c5ab82f81, which carries this key. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 430,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf&quot;
+      },
+      &quot;id&quot;: &quot;kimlee2018&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;Identified from the running head and title page, not the filename (the filename is an opaque hash). A Groebner-Shirshov basis and standard monomials for the Temperley-Lieb algebra of type B_n, after a review of type A_{n-1}, with dim T(B_n) = (n+2)C_n - 1. A document about presentations and counting, not about traces, forms or specialisations, and against the folio&#39;s live fronts it supplies almost nothing: no Markov trace, no Wedderburn weights, no q-integers, no SU(2) specialisation, nothing resembling [2]^n = sum_k m_k [n-2k+1] or sum_k m_k^2 = Catalan(n); no bilinear form of any kind, hence nothing on the meander/TL Gram determinant or positive-definiteness at real delta; nothing on Lip-norms; nothing on the Young-lattice covering relation for qou-7gei; nothing nuclear. Wenzl is not cited anywhere in it, so it neither confirms nor denies the Invent. Math. 92 (1988) attribution the branch wants. What makes it supporting is Sec. 3, and it has two live homes. First, Prop. 3.1 is a published explicit linear basis and normal form for TL_n with cardinality C_n, i.e. dim TL_n = Catalan(n) at general n from the literature, at a moment when thm:jones-markov-trace asserts H_n(q)/rad = TL_n(q) and that Catalan count with an EMPTY cites list (its own title reads &#39;(Jones, 1987)&#39;), and when the folio&#39;s support for the general-n count is TemperleyLiebTower.lean&#39;s catalan_three/four/five checking the folio&#39;s own table against Mathlib -- internal consistency, not a source. Second, and more consequential, Prop. 3.1&#39;s basis needs TWO FAMILIES BEYOND the defining relations (E_{i,j}E_i - E_{i-2,j}E_i and E_jE_{i,j} - E_jE_{i,j+2}), i.e. the presentation must be COMPLETED before it is confluent -- which is exactly the phenomenon that makes def:hecke-normal-form&#39;s uncited assertion &#39;This reduction is confluent&#39; FALSE for the folio&#39;s three-rule system, as NotAGSBasis.hecke_not_gs_basis_four machine-refutes at n = 4. Sec. 3 also serves as an external convention check: the loop parameter enters only through E_i^2 = delta E_i, the E_iE_jE_i = E_i relation is un-rescaled and delta is a free complex parameter, which is the convention the folio adopted (e_i := q - sigma_i, e_i^2 = [2]_q e_i, delta = [2]_q) with no square root. WRITER CORRECTION to the triage that produced this row: it reported the GS basis as E_i^2 - E_i, &#39;the idempotent normalisation in which delta does not appear&#39;. That was a text-extraction artifact -- the delta glyph is dropped by pypdf on this PDF. The relation is E_i^2 - delta E_i, verified against the same verbatim Sec. 3 in the sibling document library/arxiv-1808.05026v1/1808.05026v1.pdf, whose text layer renders delta correctly. Two caveats keep it out of core: Prop. 3.1 is quoted from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2, which is the primary and is not yet in references.ts; and dim TL_n = C_n does not by itself give the open identity sum_k m_k^2 = Catalan(n), which additionally needs semisimplicity of TL_n at delta = 2.0108969 and the two-row indexing of the Wedderburn blocks, neither of which this document states. The document&#39;s own theorem (type B) is deliberately not recorded as a key result: the folio&#39;s type-B cluster is about partition-content cancellation and folded crystals and has no site that wants a type-B TL dimension.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Prop. 3.1, p. 14 (quoted from Kang-Lee-Lee-Oh [9, Prop. 6.2])&quot;,
+            &quot;statement&quot;: &quot;Under degree-lex with E_1 &lt; ... &lt; E_{n-1}, T(A_{n-1}) has the Groebner-Shirshov basis {E_i^2 - delta E_i; E_iE_j - E_jE_i for i &gt; j+1; E_{i,j}E_i - E_{i-2,j}E_i for i &gt; j; E_jE_{i,j} - E_jE_{i,j+2} for i &gt; j} (with E_{i,j} = E_i E_{i-1} ... E_j), and its standard monomials E_{i1,j1}...E_{ip,jp} with strictly increasing i&#39;s and j&#39;s and i_k &gt;= j_k number the nth Catalan number, so dim T(A_{n-1}) = C_n.&quot;,
+            &quot;useForFolio&quot;: &quot;Two uses. (a) A literature source for dim TL_n = Catalan(n) at general n, asserted uncited at thm:jones-markov-trace and at markov-trace-frobenius-selection.md:82 and supported today only by fixed-n Lean instances. (b) The basis needs two families beyond the defining relations, which is the completion phenomenon that def:hecke-normal-form&#39;s confluence claim ignores and that NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4 for the Hecke system.&quot;,
+            &quot;targets&quot;: [
+              &quot;thm:jones-markov-trace&quot;,
+              &quot;def:hecke-normal-form&quot;,
+              &quot;qou:QOU.QBeta.TemperleyLiebTower.counts_are_catalan&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec. 3, defining relations of T(A_{n-1}), pp. 13-14&quot;,
+            &quot;statement&quot;: &quot;The loop parameter enters only through E_i^2 = delta E_i; the relation E_iE_jE_i = E_i for j = i +/- 1 is un-rescaled, and delta is a free complex parameter.&quot;,
+            &quot;useForFolio&quot;: &quot;External convention check for the notation register&#39;s delta = [2]_q = q + q^-1 ruling: the standard presentation in the literature is the one the folio adopted, with no q^{1/2} and no delta-scaling of the E_iE_jE_i relation, which is exactly the excised convention-C error the register warns against.&quot;,
+            &quot;targets&quot;: [
+              &quot;tbl:notation-register-table3-data&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Remark (1), p. 14&quot;,
+            &quot;statement&quot;: &quot;The product of two standard monomials of T(A_{n-1}) is again a standard monomial up to a scalar, so the multiplication table closes on the basis.&quot;,
+            &quot;useForFolio&quot;: &quot;The concrete multiplication rule on the 14-element TL_4 basis, needed only if the C5 / H_4 interface claim recorded as arithmetic in TemperleyLiebTower.interface_dimension_gain is ever exhibited explicitly rather than counted. Not needed today, and qou-8iru is explicit that the H_4 interface must not be fitted.&quot;,
+            &quot;targets&quot;: [
+              &quot;qou:QOU.QBeta.TemperleyLiebTower.interface_dimension_gain&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;def:hecke-normal-form asserts, with no cites field at all, that the three-rule rewriting system on H_n(q) is confluent -- which the folio&#39;s own sorry-free NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4. This is a defect fix, not merely a missing citation: Prop. 3.1 here shows the same completion is needed on the Temperley-Lieb quotient, and [bokut2001] names the Coxeter-side completion family. Cite only after the block is corrected, and note that the q-deformed primary is Kang-Lee-Lee-Oh 2002, not this document.&quot;,
+            &quot;target&quot;: &quot;def:hecke-normal-form&quot;,
+            &quot;bean&quot;: &quot;qou-43co&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;thm:jones-markov-trace has an empty cites list while asserting H_n(q)/rad = TL_n(q), that the vanishing blocks span the radical of the trace form, and that the surviving sum of dim^2 is Catalan(n); its own title names Jones 1987. jones1987 is already in references.ts and is the primary missing citation; this document&#39;s Prop. 3.1 is the secondary source for dim TL_n = Catalan(n) with an explicit basis.&quot;,
+            &quot;target&quot;: &quot;thm:jones-markov-trace&quot;,
+            &quot;bean&quot;: &quot;qou-uyud&quot;
+          },
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Kang-Lee-Lee-Oh, J. Algebra 252 (2002) 258-292 is the source Prop. 3.1 is quoted from and, per this document&#39;s and its sibling&#39;s introductions, the paper that computes GS bases for Hecke algebras AND Temperley-Lieb algebras of type A -- i.e. the q-deformed statement that def:hecke-normal-form and bean qou-auq3 actually need and that [bokut2001] (a Coxeter-group theorem) does not supply. NOT READ: this is a lead from two bibliographies, not a triaged source. Obtain and triage before citing it as load-bearing.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-qspu&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T19:30:00Z&quot;,
+        &quot;source_sha&quot;: &quot;292cb048e709&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

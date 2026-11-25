@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-option-e-isospin-test",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:option-e-isospin-test",
+  "kind": "remark",
+  "title": "Option E ($c_\\lambda$ Kashiwara crystal weight) and the $T = {}^3\\mathrm{He}$ isospin invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-isospin-mass-split-em-localisation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy",
+  "cites": [
+    "references/kashiwara1991",
+    "references/lecouvey2007"
+  ],
+  "tags": [
+    "kashiwara-crystal",
+    "option-e",
+    "isospin",
+    "tritium",
+    "helium-3",
+    "delta-i",
+    "canonical-braid",
+    "h-followup"
+  ],
+  "text": "option-e-isospin-test.md",
+  "provenance": "authored"
+}

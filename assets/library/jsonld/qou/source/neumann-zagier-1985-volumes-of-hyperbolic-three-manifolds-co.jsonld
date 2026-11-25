@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0040-9383(85)90004-7",
+  "contains": [
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-001",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-002",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-003",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-004",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-005",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-006",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-007",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-008",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-009",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-010",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-011",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-012",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-013",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-014",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-015",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-016",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-017",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-018",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-019",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-020",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-021",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-022",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-023",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-024",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-025",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-026"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ — 26 sections: Page 1; Page 2; Page 3\n\n**ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+**\n\n*Printed III Great Britain*\n\n26 pp, 26 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf",
+    "source_sha256": "cf021725c96e29ec51e9d81a6f677b169cedfcca6de5f7f43f74fd7fd0a0ee6a",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

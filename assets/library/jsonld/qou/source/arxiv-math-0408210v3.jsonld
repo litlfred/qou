@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0408210v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A simple algebraic proof of the algebraic index theorem",
+  "contains": [
+    "library/arxiv-math-0408210v3/sections/sec-front-matter",
+    "library/arxiv-math-0408210v3/sections/sec-000",
+    "library/arxiv-math-0408210v3/sections/sec-001",
+    "library/arxiv-math-0408210v3/sections/sec-002",
+    "library/arxiv-math-0408210v3/sections/sec-003",
+    "library/arxiv-math-0408210v3/sections/sec-004",
+    "library/arxiv-math-0408210v3/sections/sec-005",
+    "library/arxiv-math-0408210v3/sections/sec-006",
+    "library/arxiv-math-0408210v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B.\n\n**A simple algebraic proof of the algebraic index theorem**\n\n*PoNing Chen and Vasiliy Dolgushev1*\n\n17 pp, 9 sections.\n\n**Abstract.** In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the ˆA-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 The Feigin-Felder-Shoikhet cocycles; 2.2 The Chern-Weil homomorphism; 2.3 Fedosov deformation quantization with twis; 2.4 The Feigin-Felder-Shoikhet trace density m; 3 The local version of the algebraic index the; 4 Concluding remarks.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0408210&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0408210v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0408210v3.pdf",
+    "source_sha256": "16d5ccb83a86954f958e4277a6a5c5f65b3db17b30d21da2f71a77b979c8e318",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/0408210",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "7 May 2005"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

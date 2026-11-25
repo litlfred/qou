@@ -1,0 +1,1207 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "bn",
+  "blocks": [
+    {
+      "id": "library/bn/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Braid groups and Hodge theory\nCurtis T. McMullen\n25 April, 2009\nAbstract\nThis paper gives an account of the unitary representations of the\nbraid group that arise via the Hodge theory of cyclic branched cover-\nings of P1, highlighting their connections with ergodic theory, complex\nreﬂection groups, moduli spaces of 1-forms and open problems in sur-\nface topology.\nContents\n1\nIntroduction . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n2\nTopological preliminaries . . . . . . . . . . . . . . . . . . . . .\n8\n3\nFrom Hodge theory to topology . . . . . . . . . . . . . . . . .\n13\n4\nAction of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nEvery conﬁguration of distinct points (b1, . . . , bn) in C determines a compact\nRiemann surface X by the equation\nyd = (x −b1)(x −b2) · · · (x −bn).\n(1.1)\nThis paper gives an account of the unitary representations of the braid group,\nand the geometric structures on moduli space, that arise via this branched-\ncovering construction.\nIt also develops new connections with arithmetic\ngroups, Teichm¨uller curves and ergodic theory, and highlights open problems\nin surface topology and complex reﬂection groups.\nThe general approach presented here pivots on the classiﬁcation of cer-\ntain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological preliminaries",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-topological-preliminaries.md",
+      "narrative": null,
+      "content": "Topological preliminaries\nA basic reference for the algebraic structure of the braid groups and mapping-\nclass groups is [Bi]; see also [BZ], [KT] and [FM].\nModuli spaces and point conﬁgurations. Given n ≥2, let C⟨n⟩denote\nthe space of unordered subsets B ⊂C with |B| = n, and similarly for bC⟨n⟩.\nEach of these spaces is naturally a connected complex manifold; for\nexample, C⟨n⟩can be identiﬁed with the space of monic complex polynomials\nof degree n with nonvanishing discriminant.\nThe quotient of C⟨n⟩by the group of aﬃne automorphisms z 7→az + b\nyields the moduli space of n-tuples of points in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "stabilization. Note that if d divides d′, then the correspond- ing branched covering X′ factors through X, and we obtain an equivariant isomorphism ι : H1(X)q ∼= H1(X′)q. Thus the representation ρq of Bn depends only on q, not on d. The isomor- phism ι is not, however, unitary; it multiplies the intersection form by d′/d. To obtain a unitary isomorphism, one must rescale ι by p d/d′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "cor-sec-002-02.md",
+      "narrative": null,
+      "content": "When q = ζ−k d , the signature of the intersection form on H1(X, C)q is given by (r, s) = (⌈n(k/d) −1⌉, ⌈n(1 −k/d) −1⌉). Indeed, the signature (r, s) just counts the number of terms of type (1, 0) and (0, 1) in the expression H1(X)q = L j H1(X)jk, or equivalently the number of terms above and below (but not on) the diagonal in the kth row of Figure 6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "cor-sec-002-03.md",
+      "narrative": null,
+      "content": "The eigenspace H1(X)q has dimension n −2 if qn = 1, and dimension n −1 otherwise. Genus zero quotients. We note that the Riemann surfaces X/⟨R⟩, X/⟨T⟩ and X/⟨RT⟩all have genus zero. This provides another explanation for the vanishing of eigenspaces — any R, T or RT-invariant cohomology class descends to the sphere, and H1(bC) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Hodge theory to topology",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-002-3-from-hodge-theory-to-topology.md",
+      "narrative": null,
+      "content": "From Hodge theory to topology\nIn this section we analyze the action of the braid group further, by using\nholomorphic 1-forms to represent the cohomology of X.\nHodge structure. A given point conﬁguration B ⊂C determines a com-\nplex structure on the genus g cyclic covering space π : X →bC branched\nover B ∪{∞}. The complex structure in turn determines the g-dimensional\nspace of holomorphic 1-forms Ω(X) on X, and the Hodge decomposition\nH1(X) = H1,0(X) ⊕H0,1(X) ∼= Ω(X) ⊕Ω(X).\nThe intersection form\n⟨α, β⟩=\n√−1\n2\nZ\nX\nα ∧β\n(3.1)\nis positive-deﬁnite on H1,0(X) and negative-deﬁnite on H0,1(X).\nSymmetri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-002-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "rem-sec-002-04.md",
+      "narrative": null,
+      "content": "Lefschetz formulas. The eigenspace decomposition of H1(X) shown in Figure 6 can be determined, alternatively, by applying the Lef- schetz formulas Tr(g|H1(X)) = 2 − X g(z)=z and Tr(g|H0,1) = 1 − X g(z)=z (1 −g′(z))−1 to compute the characters of G = ⟨R, T⟩acting on H1(X) and H0,1(X). The Chevalley-Weil formula similarly gives the characters of G|H1,0(X) for general Galois coverings [ChW]; see also [Hu]. Figure 7. A model for the branched covering X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-002-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "rem-sec-002-05.md",
+      "narrative": null,
+      "content": "the hexagon model. Here is an explicit model for H1(X, Z) as a symplectic lattice equipped with the action of G = Z/n × Z/d = ⟨R, T⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "We have dim H1(X)jk = dim H1,0(X)jk = 1 if 0 < j/n < k/d < 1, and dim H1(X)jk = dim H0,1(X)jk = 1 if 0 < k/d < j/n < 1. The remaining eigenspaces are zero. The case of a degree d = 6 covering branched over n = 9 points (and inﬁnity) is shown in Figure 6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "thm-sec-002-06.md",
+      "narrative": null,
+      "content": "The space H1(X, Z) is isomorphic to Z[G]/R as a symplectic Z[G]-module. Sketch of the proof. Let A and B be a pair of 2-disks, colored white and black respectively. Construct a surface Y0 from (A ⊔B) × G by joining A × {g} to B × {g + s} with a band whenever s ∈S (see Figure 7). The group G acts by deck transformations on Y0, with quotient a surface Y0/G of genus 1 with 1 boundary component. Now put a half-twist in each band of Y0 (as in Figure 5), to obtain a new surface Y1. Then Y1/G has genus 0 and 3 boundary components. By ﬁlling in the boundary components of Y1 and Y1/G with disks, we obt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "The kernel of the lifting map Bn →Mod(X)T is the cyclic central subgroup generated by σnd/e.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "cor-sec-003-05.md",
+      "narrative": null,
+      "content": "The lifted twist satisﬁes eτ ∗ i = −T ∗on H1 c (Xi) ⊂H1(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "We have [eσ] = [RT] in Mod(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action of the braid group",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-003-4-action-of-the-braid-group.md",
+      "narrative": null,
+      "content": "Action of the braid group\nIn this section we determine the representation ρq : Bn →U(H1(X)q).\nTheorem 4.1 There is a spanning set (ei)n\n1 for H1(X)q such that the in-\ntersection form is given by\n⟨ei, ei⟩\n=\n2 Im q,\n⟨ei, ei+1⟩\n=\n√\n−1(1 −q),\nand\n⟨ei, ej⟩\n=\n0\nif |i −j| > 1;\nand the action of the braid group is given by\neτ ∗\ni (x) = x −\n√−1\n2\n⟨x, ei⟩ei\n(4.1)\nif q = −1, and otherwise by\neτ ∗\ni (x) = x −(q + 1) ⟨x, ei⟩\n⟨ei, ei⟩ei.\n(4.2)\n(Here the indices i, j ∈Z/n and |i −j| > 1 means i −j̸ = −1, 0 or 1 mod n.)\nDerivatives at inﬁnity. Recall that e = |f\n∞| = gcd(d, n). Near inﬁnity\nwe have yd ∼xn, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "The cases q = ±1. When q = 1 we have H1(X)q = 0, and the formulas in Theorem 4.1 give ⟨ei, ej⟩= 0. On the other hand, if we rescale by (Im q)−1 as q →1 in S1, then the inner product converges to the Coxeter matrix ⟨ei, ej⟩′ =          −1 −1 −1 −1 −1 −1 · · · −1 −1 −1          for the aﬃne diagram eAn, and the action of Bn on H1(X)q converges to the action of Sn as a reﬂection group. As q →−1 in S1, no rescaling is necessary: we have (q + 1)/⟨ei, ei⟩→ √−1/2, and thus the transvection (4.1) arises as a limit of the complex reﬂections (4.2). In the case q = −1 we can also expres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "There is a spanning set (ei)n 1 for H1(X)q such that the in- tersection form is given by ⟨ei, ei⟩ =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "thm-sec-003-04.md",
+      "narrative": null,
+      "content": "For each i and q̸ = 1, we can choose ei̸ = 0 such that H1 c (Xi)q = Cei, τ ∗ i (ei) = −qei, and ⟨ei, ei⟩= −Im q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "If Γ is connected, then ρq is irreducible for all q̸ = −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex reﬂection groups",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "../sections/sec-004-5-complex-reﬂection-groups.md",
+      "narrative": null,
+      "content": "Complex reﬂection groups\nIn this section we put the action of the braid group on H1(X)q in context\nby relating it to Artin systems, complex reﬂection groups and the Burau\nrepresentation.\nArtin systems. Let Γ be a ﬁnite graph with vertex set S. The associated\nArtin group A(Γ) is the group freely generated by S, modulo the following\nrelations:\n1. If s and t are joined by an edge of Γ, then sts = tst (we say s and t\nbraid);\n2. Otherwise, s and t commute.\n21\nA\nA\nn−1\nn\n ~\n*\nFigure 8. The braid groups of n points in C and C∗correspond to the Coxeter\ndiagrams An−1 and eAn.\n(For weighted graphs one al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "The braid group acts on H1(X)q as a reduced complex re- ﬂection group of type An−1(q) with generators si = eτ ∗ i .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "The lifted representation eρq gives a complex reﬂection group of type eAn(q), with phase shift φ(si, si+1) = √−1(1 −q)/|1 −q|. Note however that eρq does not in general factor through Bn, because the relation (τ1 · · · τn−1)τn = τ1(τ1 · · · τn−1) does not lift to a relation between the matrices Ti. The Burau representation. The classical Burau representation eβ : Bn → GLn(Z[t, t−1]) is given by eβ(τi) = Ii−1 ⊕",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "thm-sec-004-04.md",
+      "narrative": null,
+      "content": "For qn̸ = 1, the representation ρq : Bn →U(H1(X)q) is dual to the reduced Burau representation specialized to t = q. (When qn = 1, the reduced Burau representation has an extra trivial sum- mand of dimension one.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "cor-sec-005-02.md",
+      "narrative": null,
+      "content": "Provided qn̸ = 1, the period map gives M∗ 0,n the structure of a (G, X)-manifold, where G = U(r, s) and X = Hr,s. Note: When q = −1, the structure group can be reduced from U(g, g) to Sp2g(R) (see §12).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "The moduli space M∗ 0,n is endowed with a natural K¨ahler metric of constant negative curvature for each k/d ∈(1/n, 2/n), and con- stant positive curvature for each k/d ∈(1−1/n, 1). These metrics are modeled on the symmetric spaces CPn−2 and CHn−2 respectively. (For more on the complex hyperbolic case, see §10 and [Th2].)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "The period map for q = ζ−2 n gives M0,n the structure of a complex hyperbolic orbifold. Positive lines. Given (r, s) with r > 0, we let Hr,s ∼= U(r, s)/ U(r−1, s) × U(1) denote the space of positive lines in the Hermitian vector space Cr,s. Thus Hr,0 ∼= CPr−1 and H1,s ∼= CHs. In general, Hr,s carries an invariant Her- mitian metric of signature (r −1, s). (It should not be confused with the bounded symmetric domain U(r, s)/(U(r) × U(s)), whose natural metric is always Riemannian [Sat, Appendix, §3].) Holomorphic 1-forms. Let Ω(X) denote the g-dimensional vector space of holomorphic 1-forms ω o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-005-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "cor-sec-005-08.md",
+      "narrative": null,
+      "content": "The image of M∗ 0,n in PΩMg is locally a union of linear submanifolds with respect to period coordinates.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/ex-sec-005-10",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "ex-sec-005-10.md",
+      "narrative": null,
+      "content": "conformal mapping. For a concrete instance of the period map, suppose n = 3 and q = ζ−k d with 1/3 < k/d ≤1. We can identify the moduli space f M∗ 0,3 of ordered triples of points in C with C −{0, 1}. Then any t̸ = 0, 1 determines a Riemann surface of the form yd = x(x −1)(x −t), and the (multivalued) period map fq : f M∗ 0,3 →P1 is given by fq(t) = [ R 1 0 dx/yk : R ∞ 1 dx/yk]. This Schwarz triangle function is univalent on the upper halfplane, and T = fq(H) is an equilateral circular triangle with internal angles 2π|k/d −1/2|; compare [SG, §14, §16.6]. The triangle T is Euclidean for k/d = 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/lem-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "lem-sec-005-06.md",
+      "narrative": null,
+      "content": "The map eF covers a bijection T ∗ 0,n →(PΩTg)q, except when d|n and k/d = 2/n, in which case it factors through a bijection on T0,n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/lem-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "lem-sec-005-07.md",
+      "narrative": null,
+      "content": "The relative period map from (ΩTg)q to H1(X0, Z0)q is a local homeomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/lem-sec-005-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "lem-sec-005-09.md",
+      "narrative": null,
+      "content": "The map H1(X0, Z0)q →H1(X0)q is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The period map",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-005-6-the-period-map.md",
+      "narrative": null,
+      "content": "The period map\nIn this section we introduce the period map\nfq : T ∗\n0,n →Hr,s\nfrom the Teichm¨uller space of n points in the plane to the space Hr,s of\npositive lines in Cr,s. This map records, for each conﬁguration B ⊂C and\nfor q = ζ−k\nd , the line in H1(X)q ∼= Cr,s spanned by the holomorphic 1-form\n[dx/yk]. It is deﬁned so long as 1/n < k/d < 1.\nWe then show:\nTheorem 6.1 The period map is a holomorphic local diﬀeomorphism when\nqn̸ = 1. Otherwise it is a submersion, with 1-dimensional ﬁbers.\nCorollary 6.2 Provided qn̸ = 1, the period map gives M∗\n0,n the structure\nof a (G, X)-manifold, where",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "The period map is a holomorphic local diﬀeomorphism when qn̸ = 1. Otherwise it is a submersion, with 1-dimensional ﬁbers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "When q = ζ−2 n , the period map descends to a holomorphic local diﬀeomorphism fq : T0,n →CHn−3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "cor-sec-006-02.md",
+      "narrative": null,
+      "content": "The image of the braid group ρq(Bn) is discrete in the cases appearing in Table 9. Table of arithmetic groups. In Table 9, p gives the order of ρq(τi) in U(Λn,q). Note that the values k/d = 1/6, 1/4, 1/3 and 1/2 occur for every n ≥3. These are exactly the cases where Z[q] is a discrete subring of C, and they account for all cases of discreteness when n > 12. For the entries with n = 3, U(Λn,q) is an arithmetic triangle group of signature (2, 3, p) (or its ﬁnite image in U(1), when p = 6). The complete list of arithmetic triangle groups can be found in [Tak]. Note that the (2, 3, 5) n k/d (r, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic groups",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-006-7-arithmetic-groups.md",
+      "narrative": null,
+      "content": "Arithmetic groups\nWe now turn to arithmetic constraints on the image of the braid group.\nConsider the Z[q]-module\nΛn,q = H1(X, Z[q])q ⊂H1(X)q.\nThe unitary automorphisms preserving this module form a countable sub-\ngroup\nU(Λn,q) ⊂U(H1(X)q) ∼= U(r, s).\nSince our representation of the braid group preserves H1(X, Z[q]), it also\npreserves Λn,q, and hence it factors as:\nρq : Bn →U(Λn,q) ⊂U(r, s).\nIn this section we will show:\nTheorem 7.1 The values of n ≥3 and q̸ = 1 such that U(Λn,q) is a discrete\nsubgroup of U(H1(X)q) ∼= U(r, s) are those given in table Table 9 and their\ncomplex conjugates. In the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "The values of n ≥3 and q̸ = 1 such that U(Λn,q) is a discrete subgroup of U(H1(X)q) ∼= U(r, s) are those given in table Table 9 and their complex conjugates. In these cases, either: 1. U(Λn,q) is an arithmetic lattice in U(r, s), or 2. We have q = −1, and U(Λn,q) ∼= Sp2g(Z) is a lattice in Sp2g(R) ⊂ U(g, g).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "The image of the braid group ρq(Bn) is ﬁnite iﬀU(Λn,q) is ﬁnite. Jacobians. When ρq(Bn) is ﬁnite, the Hodge structure on the correspond- ing part of the H1(X) is rigid; equivalently, we have an isogeny Jac(X) →J(X) × A where dim A > 0 and A is independent of X. We refer to A as a rigid factor of the Jacobian of X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factors of the Jacobian",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-007-8-factors-of-the-jacobian.md",
+      "narrative": null,
+      "content": "Factors of the Jacobian\nIn this section we elaborate some of the algebraic geometry underlying the\ncases where ρq(Bn) is ﬁnite. In particular, we describe a basis of elliptic\ndiﬀerentials for the representative examples (n, d) = (3, 4) and (3, 6).\nWe begin by showing:\nTheorem 8.1 The representation of the braid group ρq(Bn) at a primitive\ndth root of unity is ﬁnite iﬀ\nn = 3 and d = 3, 4, 6 or 10; or\nn = 4 and d = 4 or 6; or\nn = 5, 6 and d = 6.\nProof.\nIn the 8 cases given we ﬁnd, consulting Table 9, that H1(X)q is\ndeﬁnite for all primitive dth roots of unity q; hence U(Λn,q), and its subgroup\nρ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-007-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "rem-sec-007-04.md",
+      "narrative": null,
+      "content": "Shimura–Teichm¨uller curves. Equation (8.2) determines a remarkable curve V ⊂M3 (parameterized by b). M¨oller shows V is the only subvariety of any moduli space Mg, g ≥2 which is both a Shimura curve and a Teichm¨uller curve [Mo]. Irregular covers of elliptic curves. The preceding example was partic- ularly simple because the maps pi : X →A were Galois coverings. To give the ﬂavor of a more typical example, we describe a map p : X →A in the case (n, d) = (3, 6). In this case X is a genus 4 curve, presented as a covering of bC branched over 4 points. We can change the x-coordinate by a M¨obius",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-007-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "rem-sec-007-05.md",
+      "narrative": null,
+      "content": "In the case (n, d) = (3, 10), the projection to the rigid fac- tor Jac(X) →A ∼= C2/Z[ζ5] is not induced by a map p : X →Y with Jac(Y ) ∼= A. This can be established by showing there is no map from the (10, 10, 10, 10) orbifold to the (2, 5, 10) orbifold which lifts to the required Z/10 covering spaces. (It is, however, induced by a correspondence.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "The representation of the braid group ρq(Bn) at a primitive dth root of unity is ﬁnite iﬀ n = 3 and d = 3, 4, 6 or 10; or n = 4 and d = 4 or 6; or n = 5, 6 and d = 6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "The Jacobian of the curve X deﬁned by yd = (x −b1) · · · (x −bn) (for n distinct points) has a rigid factor in the 8 cases shown in Table 10. n d g(X) Factor of Jac(X) C/Z[ζ3] (C/Z[ζ4])2 (C/Z[ζ3])2 (C2/Z[ζ5])2 n d g(X) Factor of Jac(X) (C/Z[ζ4])2 (C/Z[ζ3])3 (C/Z[ζ3])4 (C/Z[ζ3])4 Table 10. Rigid factors of the Jacobian. In Table 10, g(X) indicates the genus of X, and the rigid factor listed comes from L H1(X)q over the primitive dth roots of unity. The factor C2/Z[ζ5], which occurs for (n, d) = (3, 10), denotes quotient of C2 by the image of Z[ζ5] under x 7→(x, x′), where x 7→x′ is the Galois a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deﬁnite integrals",
+      "pageStart": 40,
+      "pageEnd": 45,
+      "target": "../sections/sec-008-9-deﬁnite-integrals.md",
+      "narrative": null,
+      "content": "Deﬁnite integrals\nIn this section we present another consequence of ﬁniteness of the represen-\ntation of the braid group.\nTheorem 9.1 Suppose n ≥3 and 0 < µ < 1. Then\nI(b1, b2, . . . , bn) =\nZ b2\nb1\ndx\n((x −b1)(x −b2) · · · (x −bn))µ\nis an algebraic function of (b1, . . . , bn) iﬀρq(Bn) is ﬁnite for q = exp(−2πiµ),\nand µ̸ = 1/n.\nHere the integral is initially deﬁned for distinct points bi ∈R, and then\nextended to C by analytic continuation. Using Theorem 8.1 to check the\nﬁniteness of ρq(Bn), we obtain:\nCorollary 9.2 The deﬁnite integral I(b1, . . . , bn) is algebraic exactly for the\n17 values",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 45,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "If we change the exponent µ = 3/4 to 1/2, we essentially obtain the complete elliptic integral of the ﬁrst kind, K(k) = Z 1 dx √ 1 −x2√ 1 −k2x2 . This is a transcendental function of k, deﬁned classically by the relation sn(K, k) = 1 [WW, §22.3]. Notes and references. The values (α, β, γ) such that I(b) = Z 1 xα(x −1)β(x −b)γ dx is an algebraic function of b were determined by Schwarz in 1873 [Sch, §VI]; see [CW2] for a generalization to multivariable hypergeometric integrals, which includes Theorem 9.1 as a special case. The failure of algebraicity when ω has nonzero residues (e.g. when µ = 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 45,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "For 1 < a < b < ∞, the deﬁnite integral I(a, b) = Z 1 dx (x(x −1)(x −a)(x −b))3/4 satisﬁes I(a, b)4 = 16π2Γ(1/4)4 Γ(3/4)4 · c(1 + c −2ac)4 a2(a −1)2(a −b)3(c2 −1)4 , where c > 1 is the largest root of the quadratic equation (a −b)c2 + (4ab −2a −2b)c + (a −b) = 0. Eliminating c, we obtain the expression: I(a, b)4 = π2Γ(1/4)4 Γ(3/4)4 · ((2a −1) p b(b −1) + (2b −1) p a(a −1))4 a2b2(a −1)2(b −1)2(a + b −2ab −2 p ab(a −1)(b −1))3 , which exhibits the solution’s symmetry in a and b.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "The moduli space M2 can be completed to a complex hy- perbolic orbifold of ﬁnite volume.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "prop-sec-009-06.md",
+      "narrative": null,
+      "content": "Whenever U(Λn,q) ⊂U(1, s) is a complex hyperbolic lat- tice, the corresponding weights µ satisfy the orbifold condition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex hyperbolic geometry",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "../sections/sec-009-10-complex-hyperbolic-geometry.md",
+      "narrative": null,
+      "content": "Complex hyperbolic geometry\nIn this section we discuss the cases where moduli space acquires a complex\nhyperbolic metric of ﬁnite volume. For example, we will see:\nTheorem 10.1 For n = 4, 5, 6, 8 and 12, the period map\nfq : M0,n →CHn−3/ρq(Bn)\nat q = ζ−2\nn\npresents moduli space as the complement of a divisor in a ﬁnite-\nvolume, arithmetic, complex-hyperbolic orbifold.\n(This divisor corresponds to certain Dehn twists whose images under ρq have\nﬁnite order.) Since M2 ∼= M0,6 we also have:\nCorollary 10.2 The moduli space M2 can be completed to a complex hy-\nperbolic orbifold of ﬁnite volume.\nNote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "For n = 4, 5, 6, 8 and 12, the period map fq : M0,n →CHn−3/ρq(Bn) at q = ζ−2 n presents moduli space as the complement of a divisor in a ﬁnite- volume, arithmetic, complex-hyperbolic orbifold. (This divisor corresponds to certain Dehn twists whose images under ρq have ﬁnite order.) Since M2 ∼= M0,6 we also have:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "thm-sec-009-03.md",
+      "narrative": null,
+      "content": "If ρq(Bn) ⊂U(1, s) is discrete, then it is a lattice.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Deligne–Mostow",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "thm-sec-009-04.md",
+      "narrative": null,
+      "content": "If the weights (µi) satisfy the orbifold condition, then the image ξµ(Pn) of the pure braid group is a lattice in PU(1, n −3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Thurston",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "thm-sec-009-05.md",
+      "narrative": null,
+      "content": "The metric completion of ( f M0,n, gµ) is a com- plex hyperbolic cone manifold of ﬁnite volume. It is an orbifold iﬀthe weights (µi) satisfy the orbifold condition. See [DM1], [Mos1], and [Th2, Thm. 0.2], as well as [Par, Lemma 3.5], which clariﬁes the relationship between the two results. Equal weights. It is straightforward to see that when µ1 = · · · = µn = 2/n, the constructions of Deligne–Mostow and Thurston give the same complex hyperbolic structure on M0,n ∼= f M0,n/Sn as that furnished by the period mapping fq : T0,n →H1,n−3 of §6 at q = ζ−2 n (see Corollary 6.5). Similarly, if µ1 = ·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-010-04.md",
+      "narrative": null,
+      "content": "The map B3 →Sp(X)T d is almost onto if and only if the Fuchsian (2, 3, p) triangle group is ﬁnite or arithmetic, where p is the order of (d −2) in Z/2d. (Explicitly, using Table 9, we ﬁnd B3 →Sp(X)T d is almost onto iﬀd = 2, 3, 4, 5, 6, 7, 9, 10, 14, 15, 16, 18, 22 or 24.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-010-05.md",
+      "narrative": null,
+      "content": "The map Bn →Sp(X)T d is almost onto whenever d and n appear in Table 9 with associated signature (r, s) = (0, s) or (1, s).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-010-06.md",
+      "narrative": null,
+      "content": "The map Bn →Sp(X)T is almost onto for d = 3 and n = 3, 4, 5, 6; d = 5 and n = 3, 4, 5; and d = 7, n = 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/cor-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "cor-sec-010-07.md",
+      "narrative": null,
+      "content": "The image of B4 has inﬁnite index in Sp(X)T 18. Notes and references. It is well-known that for any closed orientable surface Σg of genus g, the natural map Mod(Σg) →Sp(Σg) is surjective [MKS, Thm. N13] (see also [Bu, §7], [FM, Thm. 7.3]). One can then ask, which subgroups H ⊂Sp(Σg) lift to Mod(Σg)? This is a homological form of the Nielsen realization problem; cf. [Ker]. Question 11.1 is related to certain special cases of this question, where H is an abelian group of the form ⟨S, T⟩. A version of question 11.1 for ﬁnite abelian coverings of closed surfaces is addressed in [Lo1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "The following are equivalent: 1. The map Bn →Sp(X)T d is almost onto. 2. The map Mod(X)T →Sp(X)T d is almost onto. 3. There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite index in U(Λn,q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifting homological symmetries",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-010-11-lifting-homological-symmetries.md",
+      "narrative": null,
+      "content": "Lifting homological symmetries\nFor brevity of notation, let Sp(X) = Sp(H1(X, Z)) ∼= Sp2g(Z), let Sp(X)T\ndenote the centralizer of T ∗, and let\nSp(X)T\nd = Sp(X)T | Ker Φd(T ∗),\nwhere Φd(x) is the dth cyclotomic polynomial. As in §7, we have natural\nmaps\nBn →Mod(X)T →Sp(X)T →Sp(X)T\nd .\nWe say a group homomorphism φ : G1 →G2 almost onto if [G2 : φ(G1)] is\nﬁnite.\nIn this section we study the following purely topological question:\nQuestion 11.1 When is the natural map Bn →Sp(X)T\nd almost onto?\nFor example, by [A’C] we have:\nTheorem 11.2 When d = 2, the natural map Bn →Sp(X)T\nd ∼= Sp(X) is\nalmost on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "When d = 2, the natural map Bn →Sp(X)T d ∼= Sp(X) is almost onto for all n ≥3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "Suppose q is a primitive dth root of unity, and Γ = ρq(Bn) ⊂ U(1, s) is a lattice. Then Bn →Sp(X)T d is almost onto if and only if Γ is arithmetic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 55,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "The action of ρq(Bn) on Hg,g is ergodic for g > 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 55,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "The group Ker ρq has inﬁnite orbits on T ∗ 0,2g+1, and hence the period map fq is inﬁnite-to-one for g > 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The hyperelliptic case",
+      "pageStart": 52,
+      "pageEnd": 55,
+      "target": "../sections/sec-011-12-the-hyperelliptic-case.md",
+      "narrative": null,
+      "content": "The hyperelliptic case\nIn this section we discuss the hyperelliptic case, where X takes the form\ny2 = (x −b1) · · · (x −bn)\n(12.1)\nand ω = dx/y. A special feature of this case is that the symmetry T ∗ω = −ω\nis preserved by the Teichm¨uller geodesic ﬂow. Consequently, the period map\nfq : T ∗\n0,n →Hg,g\nis compatible with a natural action of SL2(R). We will use this compatibility\nto analyze fq and its image, and (in the next section) to describe fq explicitly\nfor the Teichm¨uller curves coming from regular polygons [V1].\nThe period domain. In the hyperelliptic case we have d = 2, q = −1,\nand H1(X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 55,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "The period map fq : T ∗ 0,2g+1 →Hg,g sends the Weierstrass foliation W to the secant foliation S. Its restriction to each leaf is an isom- etry. Ergodicity. For g = 1, fq simply gives the standard homeomorphism between T ∗ 0,3 and H1,1 ∼= H. For g > 1 and n = 2g + 1, the period map is still an equivariant local homeomorphism (§6). But the braid group now acts very diﬀerently on its domain and its range: while the orbits of Bn in Teichm¨uller space are discrete, a typical orbit in the period domain is dense. In fact:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 55,
+      "target": "thm-sec-011-04.md",
+      "narrative": null,
+      "content": "For g > 1, the complement of the image of the period map fq : T ∗ 0,2g+1 →Hg,g is a nonempty, countable union of secant lines.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polygons and Teichm¨uller curves",
+      "pageStart": 55,
+      "pageEnd": 64,
+      "target": "../sections/sec-012-13-polygons-and-teichmuller-curves.md",
+      "narrative": null,
+      "content": "Polygons and Teichm¨uller curves\nFinally we describe certain totally geodesic Teichm¨uller curves in moduli\nspace from the perspective of braid groups and polyhedra.\nRegular polygons. We continue in the hyperelliptic setting, with g > 0\nand n = 2g + 1. The Weierstrass foliation of T ∗\n0,2g+1 descends to a foliation\nof M∗\n0,2g+1, which we also denote by W.\nLet\nα = τ1τ3 . . . τ2g−1\nand\nβ = τ2τ4 . . . τ2g\n(13.1)\nbe the elements of Bn obtained by grouping its even and odd generators\ntogether.\nThe generators in each product commute, so their ordering is\nimmaterial.\nNote that αβ is a natural lifting",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bn/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 64,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "The fact that the ratios Li/Lj are algebraic reﬂects the fact that the Jacobian of the curve y2 = p(x) admits complex multiplication by Q(i, ζn + ζ−1 n ). References [A’C] N. A’Campo. Tresses, monodromie et le groupe symplectique. Com- ment. Math. Helvetici 54(1979), 318–327. [Al1] D. Allcock. Braid pictures for Artin groups. Trans. Amer. Math. Soc. 354(2002), 3455–3474. [Al2] D. Allcock. The moduli space of cubic threefolds. J. Algebraic Geom. 12(2003), 201–223. [ACT1] D. Allcock, J. A. Carlson, and D. Toledo. The complex hyperbolic geometry of the moduli space of cubic surfaces. J. Algebraic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bn/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 64,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "The leaf V is a rational, totally geodesic algebraic curve in moduli space; and the image of the inclusion π1(V )֒ →π1(M∗ 0,n) is the (2, n, ∞) triangle group generated by the mapping-classes [α] and [β]. We remark that the triangle group relations follow from the identity (αβ)n = ((αβ)gα)2 = σn in the braid group (recall that the mapping class [σn] is trivial). As shown in [Loch] (see also [Mc5, §5]), the point conﬁgurations arising in V are given explicitly by B(t) = {ζ + tζ−1 : ζn = 1}, where t ∈C and tn̸ = 1. (Note that B(t), B(1/t) and B(ζnt) all represent the same point in moduli space.)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

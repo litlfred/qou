@@ -1,0 +1,1611 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2312.00624v1",
+  "title": "On the structure of wave functions in complex Chern–Simons theory",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Complex Chern–Simons theory and the A-polynomial",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-complex-chernsimons-theory-and-the-a-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Classical and quantum A-polynomials",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-classical-and-quantum-a-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "The case of SL(2,C) gauge group",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-case-of-sl2c-gauge-group"
+    },
+    {
+      "level": 1,
+      "title": "The structure of the wave function",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-structure-of-the-wave-function"
+    },
+    {
+      "level": 2,
+      "title": "General conjectures",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-general-conjectures"
+    },
+    {
+      "level": 2,
+      "title": "Cancellation of singularities",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-cancellation-of-singularities"
+    },
+    {
+      "level": 2,
+      "title": "The wave function in the rational case, I",
+      "number": null,
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-wave-function-in-the-rational-case-i"
+    },
+    {
+      "level": 2,
+      "title": "The wave function in the rational case, II",
+      "number": null,
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-wave-function-in-the-rational-case-ii"
+    },
+    {
+      "level": 3,
+      "title": "Solving a second-order q-difference equation",
+      "number": null,
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-solving-a-second-order-q-difference-equation"
+    },
+    {
+      "level": 3,
+      "title": "Solving a third-order q-difference equation",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-solving-a-third-order-q-difference-equation"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": null,
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-examples"
+    },
+    {
+      "level": 2,
+      "title": "The figure-eight knot",
+      "number": null,
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-the-figure-eight-knot"
+    },
+    {
+      "level": 2,
+      "title": "The three-twist knot",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-the-three-twist-knot"
+    },
+    {
+      "level": 1,
+      "title": "The wave function from the state integral",
+      "number": null,
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-the-wave-function-from-the-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation at rational points",
+      "number": null,
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-evaluation-at-rational-points"
+    },
+    {
+      "level": 2,
+      "title": "Factorization and two special subcases",
+      "number": null,
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-factorization-and-two-special-subcases"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Computing the -expansions",
+      "number": null,
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-computing-the--expansions"
+    },
+    {
+      "level": 1,
+      "title": "An alternative way of obtaining the integer sequences",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-an-alternative-way-of-obtaining-the-integer-sequ"
+    },
+    {
+      "level": 1,
+      "title": "Faddeev's quantum dilogarithm and other special functions",
+      "number": null,
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-faddeevs-quantum-dilogarithm-and-other-special-f"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "0",
+      "labelEnd": "1",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "claudia",
+          "heading": false
+        },
+        {
+          "term": "rella",
+          "heading": false
+        },
+        {
+          "term": "unige",
+          "heading": false
+        },
+        {
+          "term": "simons theory",
+          "heading": false
+        }
+      ],
+      "extract": "On the structure of wave functions in complex Chern–Simons theory Marcos Mari˜no and Claudia Rella D´epartement de Physique Th´eorique and Section de Math´ematiques Universit´e de Gen`eve, CH-1211 Gen`eve, Switzerland E-mail: marcos.marino@unige.ch, claudia.rella@unige.ch Abstract: We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2312.00624v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resummed wkb",
+          "heading": false
+        },
+        {
+          "term": "cancellation mechanism",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "integrality conjecture",
+          "heading": false
+        },
+        {
+          "term": "topological string",
+          "heading": false
+        },
+        {
+          "term": "integrality structure",
+          "heading": false
+        },
+        {
+          "term": "similar integrality",
+          "heading": false
+        },
+        {
+          "term": "open string",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1 2 Complex Chern–Simons theory and the A-polynomial 3 2.1 Classical and quantum A-polynomials 3 2.2 The case of SL(2, C) gauge group 5 3 The structure of the wave function 8 3.1 General conjectures 8 3.2 Cancellation of singularities 11 3.3 The wave function in the rational case, I 13 3.4 The wave function in the rational case, II 16 3.4.1 Solving a second-order q-difference equation 16 3.4.2 Solving a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
+      "number": null,
+      "title": "Complex Chern–Simons theory and the A-polynomial",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "Complex Chern–Simons theory and the A-polynomial In this section, we review the fundamental aspects of complex CS theory on a closed three-manifold",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-classical-and-quantum-a-polynomials",
+      "number": null,
+      "title": "Classical and quantum A-polynomials",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal wedge",
+          "heading": false
+        },
+        {
+          "term": "hat cal",
+          "heading": false
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "cal sigma",
+          "heading": false
+        },
+        {
+          "term": "chi cal",
+          "heading": false
+        },
+        {
+          "term": "delta cal",
+          "heading": false
+        },
+        {
+          "term": "submanifold cal",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: Apoly label=\"sec: Apoly\"} The classical action of CS theory with complex gauge group $G_{{\\mathbb C}}$ can be written as [@witten91] $$S = \\frac{t}{8 \\pi} \\int_M {\\rm Tr}\\left({\\cal A}\\wedge d{\\cal A}+ \\frac{2}{3} {\\cal A}\\wedge {\\cal A}\\wedge {\\cal A}\\right) + \\frac{t'}{8 \\pi} \\int_M {\\rm Tr}\\left(\\bar{{\\cal A}} \\wedge d\\bar{{\\cal A}} + \\frac{2}{3} \\bar{{\\cal A}} \\wedge \\bar{{\\cal A}} \\wedge \\bar{{\\cal A}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-case-of-sl2c-gauge-group",
+      "number": null,
+      "title": "The case of SL(2,C) gauge group",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1068,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat cal",
+          "heading": false
+        },
+        {
+          "term": "descendant hat",
+          "heading": false
+        },
+        {
+          "term": "hat rangle",
+          "heading": false
+        },
+        {
+          "term": "conventional hat",
+          "heading": false
+        },
+        {
+          "term": "hat operator",
+          "heading": false
+        },
+        {
+          "term": "variable hat",
+          "heading": false
+        },
+        {
+          "term": "hat rightarrow",
+          "heading": false
+        },
+        {
+          "term": "label rec41x",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: sl2c label=\"sec: sl2c\"} In this work, we take $G_{{\\mathbb C}} = \\text{SL}(2,{\\mathbb C})$. Therefore, we have simply $r=1$, and $$A_{{\\cal K}}(P,X)=A_{{\\cal K}, 1}(P_1,X_1)$$ is the classical $A$-polynomial of the knot [@Cooper:1994aa]. The operators $\\hat{P}, \\hat{X}$ act on $u$-states as $$\\hat{P} |u\\rangle = |u+ {\\rm i}{\\mathsf{b}}\\rangle \\, , \\quad \\hat{X} |u\\rangle = X |u\\rangle \\, .$$ Equivalently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-structure-of-the-wave-function",
+      "number": null,
+      "title": "The structure of the wave function",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wave function",
+          "heading": true
+        },
+        {
+          "term": "mz-wv",
+          "heading": false
+        },
+        {
+          "term": "kpamir",
+          "heading": false
+        },
+        {
+          "term": "cluttering",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: main label=\"sec: main\"} In this section, we study the non-perturbative wave function $\\chi_{{\\cal K}}(u;\\hbar)$ introduced in Section [\\[sec: theory\\]](#sec: theory){reference-type=\"ref\" reference=\"sec: theory\"} by exploiting ideas from topological string theory. In particular, we propose various new conjectures on the structure of this wave function, which are motivated by similar results in the open",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-general-conjectures",
+      "number": null,
+      "title": "General conjectures",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resummed wkb",
+          "heading": false
+        },
+        {
+          "term": "wkb expansion",
+          "heading": false
+        },
+        {
+          "term": "wkb series",
+          "heading": false
+        },
+        {
+          "term": "wkb-conj",
+          "heading": false
+        },
+        {
+          "term": "multi-conj",
+          "heading": false
+        },
+        {
+          "term": "sigma alpha",
+          "heading": false
+        },
+        {
+          "term": "label struc-an",
+          "heading": false
+        },
+        {
+          "term": "mathsf alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: conjectures label=\"sec: conjectures\"} Our *first claim* is that the WKB expansion in Eq. [\\[WKB\\]](#WKB){reference-type=\"eqref\" reference=\"WKB\"} can be resummed at all orders in $\\hbar$ and order by order in $X={\\rm e}^{2 \\pi {\\mathsf{b}}u}$. Explicitly, for a fixed choice of $\\alpha$, we have that $$\\label{WKB-conj} \\chi^{(\\alpha), \\rm{WKB}} (u; \\hbar)=\\exp \\left( {{\\rm i}\\over \\hbar} s^{(\\alpha)}_0(x) +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-cancellation-of-singularities",
+      "number": null,
+      "title": "Cancellation of singularities",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ahatf-def",
+          "heading": false
+        },
+        {
+          "term": "cancellation",
+          "heading": true
+        },
+        {
+          "term": "hbar epsilon",
+          "heading": false
+        },
+        {
+          "term": "aas",
+          "heading": false
+        },
+        {
+          "term": "exactconj",
+          "heading": false
+        },
+        {
+          "term": "multi-conj",
+          "heading": false
+        },
+        {
+          "term": "frac hat",
+          "heading": false
+        },
+        {
+          "term": "rathbar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: cancellation label=\"sec: cancellation\"} Again, we hide the explicit dependence on the classical solution $\\alpha$ to simplify the notation. Here and in the rest of this work, we will only re-introduce it when necessary. Recall that the exact wave function $\\chi(u;\\hbar)$ is well-defined for $\\hbar>0$. In particular, it is well-defined for $$\\label{rathbar} \\hbar = 2 \\pi {P \\over Q} \\, ,$$ where $P, Q$ are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-wave-function-in-the-rational-case-i",
+      "number": null,
+      "title": "The wave function in the rational case, I",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde varphi",
+          "heading": false
+        },
+        {
+          "term": "align varphi",
+          "heading": false
+        },
+        {
+          "term": "sum varphi",
+          "heading": false
+        },
+        {
+          "term": "sum upsilon",
+          "heading": false
+        },
+        {
+          "term": "int varphi",
+          "heading": false
+        },
+        {
+          "term": "rathbar",
+          "heading": false
+        },
+        {
+          "term": "frac hat",
+          "heading": false
+        },
+        {
+          "term": "phi-struc",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: rational1 label=\"sec: rational1\"} We will now apply the results obtained in Section [\\[sec: cancellation\\]](#sec: cancellation){reference-type=\"ref\" reference=\"sec: cancellation\"} to derive explicitly the exact wave function $\\chi(u;\\hbar)$ in Eq. [\\[exactconj\\]](#exactconj){reference-type=\"eqref\" reference=\"exactconj\"} as a power series in $X, X^{-1}$ for rational values of $\\hbar$. Let us start from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-wave-function-in-the-rational-case-ii",
+      "number": null,
+      "title": "The wave function in the rational case, II",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functions upsilon",
+          "heading": false
+        },
+        {
+          "term": "rational",
+          "heading": true
+        },
+        {
+          "term": "exactconj",
+          "heading": false
+        },
+        {
+          "term": "wave",
+          "heading": true
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: rational3 label=\"sec: rational3\"} In Section [\\[sec: rational1\\]](#sec: rational1){reference-type=\"ref\" reference=\"sec: rational1\"}, we showed that the exact wave function $\\chi(u; \\hbar)$ in Eq. [\\[exactconj\\]](#exactconj){reference-type=\"eqref\" reference=\"exactconj\"} at rational values of $\\hbar$ is determined by the functions $\\Upsilon^{(\\alpha)} (X)$, defined in Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-solving-a-second-order-q-difference-equation",
+      "number": null,
+      "title": "Solving a second-order q-difference equation",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 923,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upsilon mathcal",
+          "heading": false
+        },
+        {
+          "term": "upsilon frac",
+          "heading": false
+        },
+        {
+          "term": "upsilon end",
+          "heading": false
+        },
+        {
+          "term": "cdots upsilon",
+          "heading": false
+        },
+        {
+          "term": "cases upsilon",
+          "heading": false
+        },
+        {
+          "term": "functions upsilon",
+          "heading": false
+        },
+        {
+          "term": "pmatrix cal",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: 2nd-order label=\"sec: 2nd-order\"} Recall that, for each choice of $\\alpha$, the resummed perturbative wave function $\\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar)$ is given in Eq. [\\[WKB-conj\\]](#WKB-conj){reference-type=\"eqref\" reference=\"WKB-conj\"}. Equivalently, we write $$\\label{chi-matrix-2} \\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar) = {\\rm e}^{\\frac{{\\rm i}}{\\hbar} s^{(\\alpha)}_0(x) + s^{(\\alpha)}_1(x)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-solving-a-third-order-q-difference-equation",
+      "number": null,
+      "title": "Solving a third-order q-difference equation",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 1025,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upsilon cal",
+          "heading": false
+        },
+        {
+          "term": "pmatrix cal",
+          "heading": false
+        },
+        {
+          "term": "upsilon frac",
+          "heading": false
+        },
+        {
+          "term": "upsilon end",
+          "heading": false
+        },
+        {
+          "term": "cdots upsilon",
+          "heading": false
+        },
+        {
+          "term": "case upsilon",
+          "heading": false
+        },
+        {
+          "term": "functions upsilon",
+          "heading": false
+        },
+        {
+          "term": "matrix cal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: 3rd-order label=\"sec: 3rd-order\"} We will show how the matrix formalism of Section [\\[sec: 2nd-order\\]](#sec: 2nd-order){reference-type=\"ref\" reference=\"sec: 2nd-order\"} can be applied to solve a third-order $q$-difference equation in closed form. In particular, let us return to the quantum $A$-polynomial equation satisfied by the resummed perturbative wave function $\\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar)$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-conj",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "three-twist",
+          "heading": false
+        },
+        {
+          "term": "rational",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: examples label=\"sec: examples\"} In this section, we will illustrate how the conjectures and calculation methods of Section [\\[sec: main\\]](#sec: main){reference-type=\"ref\" reference=\"sec: main\"} apply to the two simplest hyperbolic knots, *i.e.*, the figure-eight and the three-twist knots. We will first verify the integrality structure of Eq. [\\[multi-conj\\]](#multi-conj){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-the-figure-eight-knot",
+      "number": null,
+      "title": "The figure-eight knot",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "figure-eight knot",
+          "heading": true
+        },
+        {
+          "term": "ahat",
+          "heading": false
+        },
+        {
+          "term": "log cal",
+          "heading": false
+        },
+        {
+          "term": "conjugate branch",
+          "heading": false
+        },
+        {
+          "term": "nd-end",
+          "heading": false
+        },
+        {
+          "term": "dtilde",
+          "heading": false
+        },
+        {
+          "term": "geometric branch",
+          "heading": false
+        },
+        {
+          "term": "align phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: 41 label=\"sec: 41\"} The state integral of the figure-eight knot $\\chi_{{\\bf{4}}_1}(u;\\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2] $$\\label{chi41} \\begin{aligned} \\chi_{{\\bf{4}}_1}(u;\\hbar)={\\rm e}^{-\\frac{\\pi{\\rm i}}{12}-\\frac{2\\pi{\\rm i}}{3}c_{\\mathsf{b}}^2} \\Big( &{\\rm e}^{\\pi{\\rm i}(-2u^2-4c_{\\mathsf{b}}u)} {\\cal J}({\\rm e}^{4\\pi{\\mathsf{b}}u},{\\rm e}^{2\\pi{\\mathsf{b}}u};q) {\\cal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-the-three-twist-knot",
+      "number": null,
+      "title": "The three-twist knot",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-twist knot",
+          "heading": true
+        },
+        {
+          "term": "self-conjugate branches",
+          "heading": false
+        },
+        {
+          "term": "ahat",
+          "heading": false
+        },
+        {
+          "term": "conjugate branch",
+          "heading": false
+        },
+        {
+          "term": "log cal",
+          "heading": false
+        },
+        {
+          "term": "mathsf",
+          "heading": false
+        },
+        {
+          "term": "self",
+          "heading": false
+        },
+        {
+          "term": "geometric branch",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: 52 label=\"sec: 52\"} The state integral of the three-twist knot $\\chi_{{\\bf{5}}_2}(u;\\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2] $$\\label{chi52} \\begin{aligned} \\chi_{{\\bf{5}}_2}(u;\\hbar)=&{\\rm e}^{-\\frac{\\pi{\\rm i}}{12}-\\frac{5\\pi{\\rm i}}{3}c_{\\mathsf{b}}^2}\\Big( {\\rm e}^{\\pi{\\rm i}(-2u^2-4c_{\\mathsf{b}}u)} {\\cal H}({\\rm e}^{2 \\pi {\\mathsf{b}}u},{\\rm e}^{4 \\pi {\\mathsf{b}}u},{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-the-wave-function-from-the-state-integral",
+      "number": null,
+      "title": "The wave function from the state integral",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "garou-kas",
+          "heading": false
+        },
+        {
+          "term": "wave",
+          "heading": true
+        },
+        {
+          "term": "dimofte-rev",
+          "heading": false
+        },
+        {
+          "term": "zakany",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: stateintegral label=\"sec: stateintegral\"} In this section, we consider the Andersen--Kashaev invariant [@ak; @ak2; @dimofte-rev] $\\chi_{{\\cal K}}(u;\\hbar)$ in its original form as a finite-dimensional state integral, whose integrand is a product of Faddeev's quantum dilogarithm functions [@faddeev]. We evaluate it directly at rational values of $\\hbar$ by applying the techniques of [@garou-kas], thus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-evaluation-at-rational-points",
+      "number": null,
+      "title": "Evaluation at rational points",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 1891,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf frac",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac x-y",
+          "heading": false
+        },
+        {
+          "term": "mz-wv",
+          "heading": false
+        },
+        {
+          "term": "mathbb coprime",
+          "heading": false
+        }
+      ],
+      "extract": "Following the conventions of [@ak], the state integral for the $\\bm{4}_1$-knot takes the form $$\\label{41ak} \\chi_{\\bm{4}_1}(u;\\hbar) = \\frac{1}{2 \\pi {\\mathsf{b}}} {\\rm e}^{-\\frac{x}{2}-\\frac{x}{2 {\\mathsf{b}}^2}-\\frac{{\\rm i}x^2}{2 \\pi {\\mathsf{b}}^2}} \\int_{{\\mathbb R}+ {\\rm i}0} \\frac{\\Phi_{{\\mathsf{b}}}\\left(\\frac{x-y}{2 \\pi {\\mathsf{b}}} \\right)}{\\Phi_{{\\mathsf{b}}}\\left(\\frac{y}{2 \\pi {\\mathsf{b}}} \\right)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-factorization-and-two-special-subcases",
+      "number": null,
+      "title": "Factorization and two special subcases",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subcases",
+          "heading": true
+        },
+        {
+          "term": "πip",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "ibk",
+          "heading": false
+        },
+        {
+          "term": "πiq",
+          "heading": false
+        },
+        {
+          "term": "efk",
+          "heading": false
+        },
+        {
+          "term": "factorization formula",
+          "heading": false
+        },
+        {
+          "term": "exq",
+          "heading": false
+        }
+      ],
+      "extract": "Factorization and two special subcases Let us apply the explicit formula for the Faddeev’s quantum dilogarithm at the rational point b2 = P/Q, P, Q ∈Z>0 coprime, in Eq. (C.11) to the expression for Fk(y(x)), 0 ≤k ≤PQ−1, which is given in Eq. (5.17). After appropriately rearranging the terms, we find the factorization eFk(y(x)) = eF0(y(x))f0,k(y(x))f1,k(y(x))f2,k(y(x)) , (5.24) where we have introduced the functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 538,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resummed wkb",
+          "heading": false
+        },
+        {
+          "term": "anti-holomorphic blocks",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "wkb expansion",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "rational values",
+          "heading": false
+        },
+        {
+          "term": "integrality",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions In this paper, we have made various observations on the structure of the wave functions in CS theory with gauge group SL(2, C) on the complement of a hyperbolic knot in the three-sphere. We have first conjectured explicit integrality properties for the resummed WKB expansion of the wave function, which can be tested directly using the decomposition into holomorphic/anti-holomorphic blocks. Our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-computing-the--expansions",
+      "number": null,
+      "title": "Computing the -expansions",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nlo ϵ-expansion",
+          "heading": false
+        },
+        {
+          "term": "combining eqs",
+          "heading": false
+        },
+        {
+          "term": "ℓqℓ",
+          "heading": false
+        },
+        {
+          "term": "qsq",
+          "heading": false
+        }
+      ],
+      "extract": "For completeness, we include here the details of the computations performed in Section 3.2. We observe that, as a consequence of Eqs. (3.3), (3.7), the coefficient functions ˆa±n(q) satisfy the relation ˆa±n(q)q−σ±n = X k|n kD±k \u0010 q n k \u0011 q−n k σ±k k−1 X j=0 q n k j , n ∈Z>0 , (A.1) and we write the Z-polynomials D±k(q) explicitly as D±k(q) = deg D±k X ℓ=0 D±k,ℓqℓ, k ∈Z>0 , (A.2) where D±k,ℓis an integer and deg D±k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-an-alternative-way-of-obtaining-the-integer-sequ",
+      "number": null,
+      "title": "An alternative way of obtaining the integer sequences",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πis log",
+          "heading": false
+        },
+        {
+          "term": "integer sequences",
+          "heading": true
+        },
+        {
+          "term": "ϵ-expansion",
+          "heading": false
+        },
+        {
+          "term": "alternative",
+          "heading": true
+        },
+        {
+          "term": "series component",
+          "heading": false
+        },
+        {
+          "term": "desired integers",
+          "heading": false
+        },
+        {
+          "term": "obtaining",
+          "heading": true
+        },
+        {
+          "term": "eqs",
+          "heading": false
+        }
+      ],
+      "extract": "An alternative way of obtaining the integer sequences We present an alternative, simple way of computing the integer sequences {c±s}, s ∈Z>0, defined in Eqs. (3.27), (3.28), using the results on the exact wave function at rational values obtained in Section 3.3. Let us denote by ϕWKB (±) (X; q) the contributions to the holomorphic block ϕWKB(X; q) from the positive and negative powers of X, respectively, so that Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-faddeevs-quantum-dilogarithm-and-other-special-f",
+      "number": null,
+      "title": "Faddeev's quantum dilogarithm and other special functions",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 43,
+      "labelStart": "38",
+      "labelEnd": "42",
+      "words": 1479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πb πib",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "faddeev quantum",
+          "heading": true
+        },
+        {
+          "term": "imb inb",
+          "heading": false
+        },
+        {
+          "term": "mari",
+          "heading": false
+        },
+        {
+          "term": "annales henri",
+          "heading": false
+        },
+        {
+          "term": "hahn-exton q-bessel",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum dilogarithm is the function of two variables defined by the series [43, 44] (zqα; q)∞= ∞ Y n=0 (1 −zqα+n) , α ∈R , (C.1) which is analytic in z, q ∈C with |z|, |q| < 1, and it has asymptotic expansions around q a root of unity. Furthermore, we denote by (z; q)m = m−1 Y n=0 (1 −zqn) = (z; q)∞ (zqm; q)∞ , m ∈Z , (C.2) with (z; q)0 = 1, the q-shifted factorials, also known as q-Pochhammer symbols. Faddeev’s",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "upsilon cal",
+      "heading": false
+    },
+    {
+      "term": "chi cal",
+      "heading": false
+    },
+    {
+      "term": "resummed wkb",
+      "heading": false
+    },
+    {
+      "term": "hat cal",
+      "heading": false
+    },
+    {
+      "term": "hbar epsilon",
+      "heading": false
+    },
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "function cal",
+      "heading": false
+    },
+    {
+      "term": "mathsf alpha",
+      "heading": false
+    },
+    {
+      "term": "log cal",
+      "heading": false
+    },
+    {
+      "term": "cal right",
+      "heading": false
+    },
+    {
+      "term": "wave function",
+      "heading": true
+    },
+    {
+      "term": "knot cal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The hyperbolic knots known as the figure-eight knot (41), on the left side, and the three-twist knot (52), on the right side",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R, at the bottom,",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The real part of the state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p39); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 16
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2312.00624v1"
+  }
+}

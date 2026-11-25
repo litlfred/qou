@@ -1,0 +1,92 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Mukai pairing, I: a categorical approach",
+  "contains": [
+    "library/arxiv-0707.2052v1/sections/sec-front-matter",
+    "library/arxiv-0707.2052v1/sections/sec-000",
+    "library/arxiv-0707.2052v1/sections/sec-001",
+    "library/arxiv-0707.2052v1/sections/sec-002",
+    "library/arxiv-0707.2052v1/sections/sec-003",
+    "library/arxiv-0707.2052v1/sections/sec-004",
+    "library/arxiv-0707.2052v1/sections/sec-005",
+    "library/arxiv-0707.2052v1/sections/sec-006",
+    "library/arxiv-0707.2052v1/sections/sec-007",
+    "library/arxiv-0707.2052v1/sections/sec-008",
+    "library/arxiv-0707.2052v1/sections/sec-009",
+    "library/arxiv-0707.2052v1/sections/sec-010",
+    "library/arxiv-0707.2052v1/sections/sec-011",
+    "library/arxiv-0707.2052v1/sections/sec-012",
+    "library/arxiv-0707.2052v1/sections/sec-013",
+    "library/arxiv-0707.2052v1/sections/sec-014",
+    "library/arxiv-0707.2052v1/sections/sec-015",
+    "library/arxiv-0707.2052v1/sections/sec-016",
+    "library/arxiv-0707.2052v1/sections/sec-017",
+    "library/arxiv-0707.2052v1/sections/sec-018",
+    "library/arxiv-0707.2052v1/sections/sec-019",
+    "library/arxiv-0707.2052v1/sections/sec-020",
+    "library/arxiv-0707.2052v1/sections/sec-021",
+    "library/arxiv-0707.2052v1/sections/sec-022",
+    "library/arxiv-0707.2052v1/sections/sec-023",
+    "library/arxiv-0707.2052v1/sections/sec-024",
+    "library/arxiv-0707.2052v1/sections/sec-025",
+    "library/arxiv-0707.2052v1/sections/sec-026",
+    "library/arxiv-0707.2052v1/sections/sec-027",
+    "library/arxiv-0707.2052v1/sections/sec-028",
+    "library/arxiv-0707.2052v1/sections/sec-029",
+    "library/arxiv-0707.2052v1/sections/sec-030"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3\n\n**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ald˘araru∗and Simon Willerton†*\n\n39 pp, 32 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respect to the Mukai pairing. We deﬁne a Chern character with values in Hochschild homology, and we discuss analogues of the Hirzebruch-Riemann-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and integral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; The 2-category Var.; Serre functors; The Serre functor on D(X).; Serre kernels and the Serre functor for D(XY).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2052&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2052v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0707.2052v1.pdf",
+    "source_sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
+    "pages": 39,
+    "arxiv": {
+      "id": "0707.2052",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "13 Jul 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

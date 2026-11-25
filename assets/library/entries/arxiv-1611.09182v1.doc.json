@@ -1,0 +1,4715 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1611.09182v1",
+  "title": "uWaterloo LaTeX Thesis Template",
+  "variant": "pdf",
+  "pages": 97,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": "0.1",
+      "page": 2,
+      "pageLabel": "ii",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-01-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "0.2",
+      "page": 3,
+      "pageLabel": "iii",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-02-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 9,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Towards conceptual parsimony",
+      "number": "1.1",
+      "page": 9,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-11-towards-conceptual-parsimony"
+    },
+    {
+      "level": 2,
+      "title": "Outline",
+      "number": "1.2",
+      "page": 10,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-12-outline"
+    },
+    {
+      "level": 1,
+      "title": "What lies in an algebra?",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-what-lies-in-an-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Causality",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-causality"
+    },
+    {
+      "level": 2,
+      "title": "Irreversible time",
+      "number": "2.2",
+      "page": 13,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-irreversible-time"
+    },
+    {
+      "level": 2,
+      "title": "Particles",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-particles"
+    },
+    {
+      "level": 2,
+      "title": "Summary and outlook",
+      "number": "2.4",
+      "page": 15,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-24-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Complex quaternions",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-complex-quaternions"
+    },
+    {
+      "level": 2,
+      "title": "Preamble",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-preamble"
+    },
+    {
+      "level": 2,
+      "title": "Introduction to CH",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-introduction-to-ch"
+    },
+    {
+      "level": 2,
+      "title": "Conjugation",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-conjugation"
+    },
+    {
+      "level": 2,
+      "title": "Generalized ideals",
+      "number": "3.4",
+      "page": 18,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-generalized-ideals"
+    },
+    {
+      "level": 2,
+      "title": "Complex invariant-action, mc",
+      "number": "3.5",
+      "page": 19,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-35-complex-invariant-action-mc"
+    },
+    {
+      "level": 3,
+      "title": "Preliminaries",
+      "number": "3.5.1",
+      "page": 19,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-351-preliminaries"
+    },
+    {
+      "level": 3,
+      "title": "Weyl and Dirac spinors as generalized ideals",
+      "number": "3.5.2",
+      "page": 20,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-352-weyl-and-dirac-spinors-as-generalized-ideals"
+    },
+    {
+      "level": 3,
+      "title": "A seamless new way to conjugate Weyl spinors",
+      "number": "3.5.3",
+      "page": 21,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-353-a-seamless-new-way-to-conjugate-weyl-spinors"
+    },
+    {
+      "level": 3,
+      "title": "Majorana spinors as generalized ideals",
+      "number": "3.5.4",
+      "page": 22,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-354-majorana-spinors-as-generalized-ideals"
+    },
+    {
+      "level": 2,
+      "title": "Hermitian invariant-action, mh",
+      "number": "3.6",
+      "page": 23,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-36-hermitian-invariant-action-mh"
+    },
+    {
+      "level": 2,
+      "title": "Quaternionic invariant-action, mq",
+      "number": "3.7",
+      "page": 24,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-37-quaternionic-invariant-action-mq"
+    },
+    {
+      "level": 2,
+      "title": "Bilinears",
+      "number": "3.8",
+      "page": 25,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-38-bilinears"
+    },
+    {
+      "level": 2,
+      "title": "Summary",
+      "number": "3.9",
+      "page": 25,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-39-summary"
+    },
+    {
+      "level": 2,
+      "title": "Outlook",
+      "number": "3.10",
+      "page": 26,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-310-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Clifford algebras",
+      "number": "4",
+      "page": 27,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-4-clifford-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "4.1",
+      "page": 27,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-41-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-42-definition"
+    },
+    {
+      "level": 2,
+      "title": "Examples of Clifford algebras from CH",
+      "number": "4.3",
+      "page": 29,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-43-examples-of-clifford-algebras-from-ch"
+    },
+    {
+      "level": 2,
+      "title": "Minimal left ideals",
+      "number": "4.4",
+      "page": 30,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-44-minimal-left-ideals"
+    },
+    {
+      "level": 2,
+      "title": "How to identify minimal left ideals",
+      "number": "4.5",
+      "page": 31,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-45-how-to-identify-minimal-left-ideals"
+    },
+    {
+      "level": 3,
+      "title": "Some definitions",
+      "number": "4.5.1",
+      "page": 31,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-451-some-definitions"
+    },
+    {
+      "level": 3,
+      "title": "Procedure",
+      "number": "4.5.2",
+      "page": 32,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-452-procedure"
+    },
+    {
+      "level": 2,
+      "title": "Minimal left ideals in CH",
+      "number": "4.6",
+      "page": 33,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-46-minimal-left-ideals-in-ch"
+    },
+    {
+      "level": 3,
+      "title": "Fock space structure",
+      "number": "4.6.1",
+      "page": 33,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-461-fock-space-structure"
+    },
+    {
+      "level": 2,
+      "title": "The Dirac algebra",
+      "number": "4.7",
+      "page": 34,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-47-the-dirac-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Right action required",
+      "number": "4.8",
+      "page": 36,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-48-right-action-required"
+    },
+    {
+      "level": 2,
+      "title": "Parity and the field strength tensor",
+      "number": "4.9",
+      "page": 36,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-49-parity-and-the-field-strength-tensor"
+    },
+    {
+      "level": 1,
+      "title": "Standard model of particle physics",
+      "number": "5",
+      "page": 40,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-5-standard-model-of-particle-physics"
+    },
+    {
+      "level": 2,
+      "title": "What it is",
+      "number": "5.1",
+      "page": 40,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-51-what-it-is"
+    },
+    {
+      "level": 2,
+      "title": "What it is not",
+      "number": "5.2",
+      "page": 43,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-52-what-it-is-not"
+    },
+    {
+      "level": 2,
+      "title": "What it should be",
+      "number": "5.3",
+      "page": 43,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-53-what-it-should-be"
+    },
+    {
+      "level": 1,
+      "title": "One generation of quarks and leptons from CO",
+      "number": "6",
+      "page": 45,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-6-one-generation-of-quarks-and-leptons-from-co"
+    },
+    {
+      "level": 2,
+      "title": "A summary of the results to come",
+      "number": "6.1",
+      "page": 46,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-61-a-summary-of-the-results-to-come"
+    },
+    {
+      "level": 2,
+      "title": "Introduction to CO",
+      "number": "6.2",
+      "page": 48,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-62-introduction-to-co"
+    },
+    {
+      "level": 2,
+      "title": "Octonionic chain algebra",
+      "number": "6.3",
+      "page": 50,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-63-octonionic-chain-algebra"
+    },
+    {
+      "level": 2,
+      "title": "A system of ladder operators",
+      "number": "6.4",
+      "page": 53,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-64-a-system-of-ladder-operators"
+    },
+    {
+      "level": 2,
+      "title": "Complex conjugation's analogue",
+      "number": "6.5",
+      "page": 54,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-65-complex-conjugations-analogue"
+    },
+    {
+      "level": 2,
+      "title": "Minimal left ideals",
+      "number": "6.6",
+      "page": 55,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-66-minimal-left-ideals"
+    },
+    {
+      "level": 2,
+      "title": "MTIS symmetries: su(3)c and u(1)em",
+      "number": "6.7",
+      "page": 57,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-67-mtis-symmetries-su3c-and-u1em"
+    },
+    {
+      "level": 2,
+      "title": "Ladders to su(3)c and u(1)em",
+      "number": "6.8",
+      "page": 58,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-68-ladders-to-su3c-and-u1em"
+    },
+    {
+      "level": 2,
+      "title": "Towards the weak force",
+      "number": "6.9",
+      "page": 61,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-69-towards-the-weak-force"
+    },
+    {
+      "level": 2,
+      "title": "Summary",
+      "number": "6.10",
+      "page": 62,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-610-summary"
+    },
+    {
+      "level": 1,
+      "title": "Why does SU(2)L act on only left-handed fermions?",
+      "number": "7",
+      "page": 63,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-7-why-does-su2l-act-on-only-left-handed-fermions"
+    },
+    {
+      "level": 2,
+      "title": "A spotlight on right multiplication",
+      "number": "7.1",
+      "page": 63,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-71-a-spotlight-on-right-multiplication"
+    },
+    {
+      "level": 2,
+      "title": "Leptonic subspace of Cl(4)",
+      "number": "7.2",
+      "page": 64,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-72-leptonic-subspace-of-cl4"
+    },
+    {
+      "level": 2,
+      "title": "MTIS symmetries: su(2)L and u(1)Y",
+      "number": "7.3",
+      "page": 65,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-73-mtis-symmetries-su2l-and-u1y"
+    },
+    {
+      "level": 2,
+      "title": "Summary and outlook",
+      "number": "7.4",
+      "page": 66,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-74-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Group representation structure of some grand unified theories",
+      "number": "8",
+      "page": 67,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-8-group-representation-structure-of-some-grand-u"
+    },
+    {
+      "level": 2,
+      "title": "SU(5) unification",
+      "number": "8.1",
+      "page": 67,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-81-su5-unification"
+    },
+    {
+      "level": 3,
+      "title": "Introduction",
+      "number": "8.1.1",
+      "page": 67,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-811-introduction"
+    },
+    {
+      "level": 3,
+      "title": "GSM inside SU(5)",
+      "number": "8.1.2",
+      "page": 68,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-812-gsm-inside-su5"
+    },
+    {
+      "level": 3,
+      "title": "Some notes on symmetry breaking",
+      "number": "8.1.3",
+      "page": 70,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-813-some-notes-on-symmetry-breaking"
+    },
+    {
+      "level": 2,
+      "title": "A fermionic binary code",
+      "number": "8.2",
+      "page": 71,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-82-a-fermionic-binary-code"
+    },
+    {
+      "level": 2,
+      "title": "Spin(10) unification",
+      "number": "8.3",
+      "page": 73,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-83-spin10-unification"
+    },
+    {
+      "level": 2,
+      "title": "Pati-Salam model",
+      "number": "8.4",
+      "page": 76,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-84-pati-salam-model"
+    },
+    {
+      "level": 1,
+      "title": "Towards a three-generation model",
+      "number": "9",
+      "page": 79,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-9-towards-a-three-generation-model"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "9.1",
+      "page": 79,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-91-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Generators of SU(3)c",
+      "number": "9.2",
+      "page": 80,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-92-generators-of-su3c"
+    },
+    {
+      "level": 2,
+      "title": "Three generations under SU(3)c",
+      "number": "9.3",
+      "page": 81,
+      "pageLabel": "73",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-069-93-three-generations-under-su3c"
+    },
+    {
+      "level": 2,
+      "title": "A sample calculation",
+      "number": "9.4",
+      "page": 84,
+      "pageLabel": "76",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-070-94-a-sample-calculation"
+    },
+    {
+      "level": 2,
+      "title": "Summary for SU(3)c",
+      "number": "9.5",
+      "page": 85,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-071-95-summary-for-su3c"
+    },
+    {
+      "level": 2,
+      "title": "Three generations under SU(3)c and U(1)em",
+      "number": "9.6",
+      "page": 86,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-072-96-three-generations-under-su3c-and-u1em"
+    },
+    {
+      "level": 2,
+      "title": "Outlook: From one generation to three",
+      "number": "9.7",
+      "page": 89,
+      "pageLabel": "81",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-073-97-outlook-from-one-generation-to-three"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "10",
+      "page": 91,
+      "pageLabel": "83",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-074-10-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 93,
+      "pageLabel": "85",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "i",
+      "labelEnd": "ii",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "waterloo",
+          "heading": false
+        },
+        {
+          "term": "furey",
+          "heading": false
+        },
+        {
+          "term": "fulﬁllment",
+          "heading": false
+        }
+      ],
+      "extract": "Standard model physics from an algebra? by C. Furey A thesis presented to the University of Waterloo in fulﬁllment of the thesis requirement for the degree of Doctor of Philosophy in Physics Waterloo, Ontario, Canada, 2015 c⃝C. Furey 2015 arXiv:1611.09182v1 [hep-th] 16 Nov 2016",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1611.09182v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-01-abstract",
+      "number": "0.1",
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "ii",
+      "labelEnd": "iii",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rcho",
+          "heading": false
+        },
+        {
+          "term": "model particle",
+          "heading": false
+        },
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "three-generation",
+          "heading": false
+        },
+        {
+          "term": "portion",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": false
+        }
+      ],
+      "extract": "This thesis constitutes a first attempt to derive aspects of standard model particle physics from little more than an algebra. Here, we argue that physical concepts such as particles, causality, and irreversible time may result from the algebra acting on itself. We then focus on a special case by considering the algebra $\\RCHO$, the tensor product of the only four normed division algebras over the real numbers.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-02-acknowledgements",
+      "number": "0.2",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": "iii",
+      "labelEnd": "1",
+      "words": 2439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized ideals",
+          "heading": false
+        },
+        {
+          "term": "left ideals",
+          "heading": false
+        },
+        {
+          "term": "mtis symmetries",
+          "heading": false
+        },
+        {
+          "term": "invariant-action",
+          "heading": false
+        },
+        {
+          "term": "kempf",
+          "heading": false
+        },
+        {
+          "term": "acknowledgements",
+          "heading": true
+        },
+        {
+          "term": "cliﬀord algebras",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements This research was supported by NSERC, the University of Waterloo, the Templeton Foun- dation, and by the Perimeter Institute for Theoretical Physics. Research at Perimeter Institute is supported by the Government of Canada through Industry Canada and by the Province of Ontario through the Ministry of Research and Innovation. A special thanks to my committee members: L. Boyle, F. Cachazo, F. Girelli,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-11-towards-conceptual-parsimony",
+      "number": "1.1",
+      "title": "Towards conceptual parsimony",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "unification",
+          "heading": false
+        },
+        {
+          "term": "towards",
+          "heading": true
+        },
+        {
+          "term": "fields",
+          "heading": false
+        },
+        {
+          "term": "same algebra",
+          "heading": false
+        },
+        {
+          "term": "objects",
+          "heading": false
+        },
+        {
+          "term": "theoretical",
+          "heading": false
+        },
+        {
+          "term": "theories",
+          "heading": false
+        }
+      ],
+      "extract": "The safest conceivable theory is one which implements the fewest initial assumptions possible. That is, any model based on elaborate input will by definition specify more detail than would a simple one, and hence will be more likely to be in conflict with reality. Our current theories of fundamental physics are often described in terms of an assortment of objects such as manifolds, metric tensor fields, matter",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-12-outline",
+      "number": "1.2",
+      "title": "Outline",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mtis symmetries",
+          "heading": false
+        },
+        {
+          "term": "chapter ref",
+          "heading": false
+        },
+        {
+          "term": "unitary mtis",
+          "heading": false
+        },
+        {
+          "term": "basic characteristics",
+          "heading": false
+        },
+        {
+          "term": "fqxi",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "review some",
+          "heading": false
+        },
+        {
+          "term": "gen",
+          "heading": false
+        }
+      ],
+      "extract": "In Chapter~\\ref{m1} of this thesis, we give a brief sketch of our experiment, which motivates the algebraic model being proposed. In Chapter~\\ref{CH}, we introduce the algebra of the complex quaternions, $\\CH$, and with them, demonstrate all of the Lorentz representations necessary to describe the standard model. Then, in Chapter~\\ref{CA}, we review some basic characteristics of Clifford algebras, while in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-what-lies-in-an-algebra",
+      "number": "2",
+      "title": "What lies in an algebra?",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fqxi",
+          "heading": false
+        },
+        {
+          "term": "fewest",
+          "heading": false
+        },
+        {
+          "term": "essay",
+          "heading": false
+        }
+      ],
+      "extract": "In this ﬁrst chapter, we introduce an attempt to describe established results in particle physics, while working from the fewest initial assumptions possible. Our only input will be an algebra, A. The ideas outlined here originate from a Cambridge Part III research essay, [33], [32] and have provided the underlying intuition for three papers published during these PhD years, [36], [35], and [34]. With this being",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-21-causality",
+      "number": "2.1",
+      "title": "Causality",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite cmnotes",
+          "heading": false
+        },
+        {
+          "term": "unevaluated algebraic",
+          "heading": false
+        },
+        {
+          "term": "causal",
+          "heading": false
+        },
+        {
+          "term": "fundamental space-time",
+          "heading": false
+        },
+        {
+          "term": "cite universe",
+          "heading": false
+        },
+        {
+          "term": "dowker",
+          "heading": false
+        },
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "information processing",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose for a moment that nature were represented by an algebra, $A$. We will start, then, simply with an unevaluated algebraic expression. Consider for example \\begin{equation} f \\cdot ( e\\cdot ( d\\cdot c + b\\cdot a) ), \\end{equation} \\noindent where $a$, $b$, $c$, $d$, $e$, $f$ are elements of $A$. Taking multiplication to be the propagation along an edge, and addition to be the joining of two edges at a vertex,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-irreversible-time",
+      "number": "2.2",
+      "title": "Irreversible time",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreversible",
+          "heading": true
+        },
+        {
+          "term": "encapsulating",
+          "heading": false
+        },
+        {
+          "term": "events",
+          "heading": false
+        }
+      ],
+      "extract": "Recently, it has been emphasized in the fundamental physics community, \\cite{fqxi}, that theories like general relativity do a poor job of encapsulating our experience of \\it events unfolding. \\rm For example, there is nothing in the theory to explain why events happen, but do not `unhappen'. It seems, however, that an algebra might well provide such a notion of irreversible time. In the case of an algebra, an event",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-particles",
+      "number": "2.3",
+      "title": "Particles",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv underline",
+          "heading": false
+        },
+        {
+          "term": "generalized ideals",
+          "heading": false
+        },
+        {
+          "term": "rcho",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": true
+        },
+        {
+          "term": "weak isospin",
+          "heading": false
+        },
+        {
+          "term": "cltwo",
+          "heading": false
+        },
+        {
+          "term": "dixon",
+          "heading": false
+        },
+        {
+          "term": "begin center",
+          "heading": false
+        }
+      ],
+      "extract": "Some carefully chosen algebras, such as the complex Clifford algebra, $A=\\CLtwo$, naturally contain subspaces called \\it ideals. \\rm Intuitively speaking, an ideal is a special subspace of an algebra because it can survive multiplication by any element in $A$. \\it Ideals \\rm persisting under multiplication bear a striking resemblance to \\it particles \\rm persisting under propagation. The proposal, then, is that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-summary-and-outlook",
+      "number": "2.4",
+      "title": "Summary and outlook",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rcho",
+          "heading": false
+        },
+        {
+          "term": "physical concepts",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "irreversible",
+          "heading": false
+        },
+        {
+          "term": "sketching",
+          "heading": false
+        }
+      ],
+      "extract": "We come from sketching a model, whose only fundamental input is an algebra, $A$. From the algebraic expressions of $A$, we argue that multiple physical concepts can materialize. Such resulting physical concepts may include causality, particles, and irreversible time. Notably, particles may be seen to arise as the algebra's most stable subspaces. The algebra, $A$, will be taken to be $\\RCHO$ for reasons that will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-complex-quaternions",
+      "number": "3",
+      "title": "Complex quaternions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-preamble",
+      "number": "3.1",
+      "title": "Preamble",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preamble",
+          "heading": true
+        },
+        {
+          "term": "causal",
+          "heading": false
+        },
+        {
+          "term": "impart",
+          "heading": false
+        }
+      ],
+      "extract": "Preamble A signiﬁcant challenge within causal set programs has been to explain the existence of 3+1 dimensions. That is, any causal set chosen at random is highly unlikely to have this particular dimension of our choosing. It is for this reason that we propose here causal sets originating from an algebra, A. The idea then is that a careful choice of algebra will impart on the causal set the desired 3+1 Lorentzian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-introduction-to-ch",
+      "number": "3.2",
+      "title": "Introduction to CH",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iϵz",
+          "heading": false
+        },
+        {
+          "term": "iϵx",
+          "heading": false
+        },
+        {
+          "term": "iϵy",
+          "heading": false
+        }
+      ],
+      "extract": "Any element of the complex quaternions can be described as the complex linear combina- tion, c0 + c1 iϵx + c2 iϵy + c3 iϵz, (3.1) where the cn ∈C. The element i is the usual complex imaginary unit, with i2 = −1, that commutes with all of the elements in the algebra. The quaternionic imaginary units, ϵx, ϵy, and ϵz follow the multiplication rules 8 ϵx 2 = ϵy 2 = ϵz 2 = ϵx ϵy ϵz = −1, (3.2) which lead to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-conjugation",
+      "number": "3.3",
+      "title": "Conjugation",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epsilon mapsto",
+          "heading": false
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": false
+        },
+        {
+          "term": "conjugate",
+          "heading": false
+        }
+      ],
+      "extract": "In this text, the \\it complex conjugate \\rm of an element $a$ will be denoted $a^*$. The conjugate $*$ maps the complex $i\\mapsto -i$, in the usual way. The \\it quaternion conjugate \\rm of $a$ will be denoted $\\widetilde{a}$, and $\\sim$ maps the quaternionic ${\\epsilon_x}\\mapsto -{\\epsilon_x},$ ${\\epsilon_y}\\mapsto -{\\epsilon_y},$ and ${\\epsilon_z}\\mapsto -{\\epsilon_z}$. That which we call the \\it hermitian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-generalized-ideals",
+      "number": "3.4",
+      "title": "Generalized ideals",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline hspace",
+          "heading": false
+        },
+        {
+          "term": "equiv hspace",
+          "heading": false
+        },
+        {
+          "term": "rightarrow hspace",
+          "heading": false
+        },
+        {
+          "term": "hermitian invariant-action",
+          "heading": false
+        },
+        {
+          "term": "invariant-action leads",
+          "heading": false
+        },
+        {
+          "term": "complex invariant-action",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": true
+        }
+      ],
+      "extract": "We define a subalgebra $B$ of an algebra $A$ to be a \\it generalized ideal \\rm if $m \\left( a, \\underline{b} \\right) \\in B, \\hspace{1mm} \\forall \\underline{b} \\in B$ and for any $a \\in A$, where $m$ is (generalized) multiplication. The notion of a generalized ideal was introduced by this author in \\cite{UTI}, and differs from the definition of left ideals by generalizing what is meant by `multiplication'. Directly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-35-complex-invariant-action-mc",
+      "number": "3.5",
+      "title": "Complex invariant-action, mc",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Complex invariant-action, mc",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-351-preliminaries",
+      "number": "3.5.1",
+      "title": "Preliminaries",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "downarrow uparrow",
+          "heading": false
+        },
+        {
+          "term": "uparrow hspace",
+          "heading": false
+        },
+        {
+          "term": "epsilon uparrow",
+          "heading": false
+        },
+        {
+          "term": "uparrow vspace",
+          "heading": false
+        },
+        {
+          "term": "uparrow equiv",
+          "heading": false
+        },
+        {
+          "term": "downarrow right",
+          "heading": false
+        },
+        {
+          "term": "lll epsilon",
+          "heading": false
+        },
+        {
+          "term": "underline hspace",
+          "heading": false
+        }
+      ],
+      "extract": "We will now find that left- and right-handed Weyl spinors, Majorana spinors, and Dirac spinors are all generalized ideals under the same complex invariant-action, \\begin{equation}\\label{cma} \\underline{b}' = a\\hspace{1mm}\\underline{b}\\hspace{1mm} P + a^*\\hspace{1mm}\\underline{b}\\hspace{1mm} P^*. \\end{equation} \\noindent For concreteness, we define $P$ to be the projector $\\frac{1}{2}\\left(1+i{\\epsilon_z}\\right)$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-352-weyl-and-dirac-spinors-as-generalized-ideals",
+      "number": "3.5.2",
+      "title": "Weyl and Dirac spinors as generalized ideals",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uparrow textup",
+          "heading": false
+        },
+        {
+          "term": "downarrow textup",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "textup equiv",
+          "heading": false
+        },
+        {
+          "term": "textup transforms",
+          "heading": false
+        },
+        {
+          "term": "epsilon uparrow",
+          "heading": false
+        },
+        {
+          "term": "lll psi",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now identify two subspaces, which partition the algebra $\\CH$. These subspaces will be given the suggestive nomenclature $\\Psi_{\\textup{L}}$ and $\\Psi_{\\textup{R}}$, and be defined as \\begin{equation}\\begin{array}{lll} \\Psi_{\\textup{L}} \\equiv \\psi^{\\uparrow}_{\\textup{L}} \\hspace{1mm} \\epsilon_{\\uparrow \\uparrow} + \\psi^{\\downarrow}_{\\textup{L}} \\hspace{1mm} \\epsilon_{\\downarrow \\uparrow} & \\hspace{1cm} &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+      "number": "3.5.3",
+      "title": "A seamless new way to conjugate Weyl spinors",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uparrow textup",
+          "heading": false
+        },
+        {
+          "term": "downarrow textup",
+          "heading": false
+        },
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "weyl spinors",
+          "heading": true
+        },
+        {
+          "term": "epsilon uparrow",
+          "heading": false
+        },
+        {
+          "term": "matrix-and-column-vector formalism",
+          "heading": false
+        },
+        {
+          "term": "usual matrix-and-column-vector",
+          "heading": false
+        }
+      ],
+      "extract": "In quantum field theory textbooks, it is typically explained that a left handed Weyl spinor, $\\Psi_{\\textup{L}}$, can be conjugated so as to give a right-handed Weyl spinor. The procedure necessary to do so, in the usual matrix-and-column-vector formalism, entails (1) complex conjugating the left-handed spinor's two components, and (2) multiplying this column vector by the matrix $\\epsilon = -i\\sigma_y=\\left(",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-354-majorana-spinors-as-generalized-ideals",
+      "number": "3.5.4",
+      "title": "Majorana spinors as generalized ideals",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana spinors",
+          "heading": true
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "textup equiv",
+          "heading": false
+        },
+        {
+          "term": "textup right",
+          "heading": false
+        },
+        {
+          "term": "generalized ideals",
+          "heading": true
+        },
+        {
+          "term": "dirac spinors",
+          "heading": false
+        }
+      ],
+      "extract": "Given our description above of Dirac spinors, it is now easy to build Majorana spinors. Any Dirac spinor splits into two Majorana spinors, given by \\begin{equation} \\begin{array}{lll}\\Psi_{\\textup{M}_1} \\equiv \\frac{1}{2}\\left( \\Psi_{\\textup{D}} + \\Psi_{\\textup{D}}^* \\right) &\\hspace{1cm} & \\Psi_{\\textup{M}_2} \\equiv \\frac{1}{2}\\left( \\Psi_{\\textup{D}} - \\Psi_{\\textup{D}}^* \\right). \\end{array}\\end{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-36-hermitian-invariant-action-mh",
+      "number": "3.6",
+      "title": "Hermitian invariant-action, mh",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta epsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon hat",
+          "heading": false
+        },
+        {
+          "term": "epsilon sin",
+          "heading": false
+        },
+        {
+          "term": "lpl dagger",
+          "heading": false
+        },
+        {
+          "term": "epsilon right",
+          "heading": false
+        },
+        {
+          "term": "hermitian",
+          "heading": true
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "underline hspace",
+          "heading": false
+        }
+      ],
+      "extract": "We will now find that the hermitian invariant-action, $m_h$, leads to new generalized ideals, which behave like four-vectors, \\begin{equation} \\underline{b} ' = a\\hspace{1mm} \\underline{b}\\hspace{1mm} a ^{\\dagger}. \\end{equation} Any element of $\\mathbb{C}\\otimes\\mathbb{H}$ can be written as a sum of hermitian $p\\equiv p_0 + p_1i{\\epsilon_x} +p_2i{\\epsilon_y} + p_3i{\\epsilon_z}$ and anti-hermitian $\\hat{p}\\equiv",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-37-quaternionic-invariant-action-mq",
+      "number": "3.7",
+      "title": "Quaternionic invariant-action, mq",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic invariant-action",
+          "heading": true
+        },
+        {
+          "term": "phi widetilde",
+          "heading": false
+        },
+        {
+          "term": "underline hspace",
+          "heading": false
+        },
+        {
+          "term": "lorentz scalar",
+          "heading": false
+        },
+        {
+          "term": "generalized ideals",
+          "heading": false
+        },
+        {
+          "term": "epsilon left",
+          "heading": false
+        },
+        {
+          "term": "strength tensor",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, we will now consider the quaternionic invariant-action, $m_q$. This new action leads to generalized ideals, which are more commonly known as Lorentz scalars, $\\phi$, and the field strength tensor, $F$, \\begin{equation} \\underline{b} ' = a\\hspace{1mm}\\underline{b} \\hspace{1mm}\\widetilde{a}. \\end{equation} $\\mathbb{C}\\otimes\\mathbb{H}$ can be partitioned once again, this time into subspaces of the form $\\phi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-38-bilinears",
+      "number": "3.8",
+      "title": "Bilinears",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bilinears",
+          "heading": true
+        },
+        {
+          "term": "iϵz",
+          "heading": false
+        },
+        {
+          "term": "lψl",
+          "heading": false
+        }
+      ],
+      "extract": "Bilinears Bilinears and other scalars can now be built by combining the various ideal representations, whose SL(2, C) factors, L, ﬁt together like lock and key. Noting that eL = L−1, let us consider for example the real part of Ψ† Li∂ΨL + Ψ† Ri∂∗ΨR, where ∂≡∂t −iϵx ∂x −iϵy ∂y − iϵz ∂z. Under a Lorentz transformation, D Ψ† Li∂ΨL + Ψ† Ri∂∗ΨR E′ = D Ψ† LL† L∗i∂eL LΨL + Ψ† ReL Li∂∗L† L∗ΨR E = D Ψ† Li∂ΨL + Ψ† Ri∂∗ΨR E ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-39-summary",
+      "number": "3.9",
+      "title": "Summary",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lorentz representations",
+          "heading": false
+        },
+        {
+          "term": "weyl spinors",
+          "heading": false
+        },
+        {
+          "term": "generalized ideals",
+          "heading": false
+        },
+        {
+          "term": "higher spin",
+          "heading": false
+        },
+        {
+          "term": "algebra acting",
+          "heading": false
+        },
+        {
+          "term": "summary",
+          "heading": true
+        }
+      ],
+      "extract": "Summary We have just found a set of generalized ideals, originating from three generalized notions of multiplication, mc, mh, and mq. These generalized ideals led directly to left- and right- handed Weyl spinors, Dirac spinors, and Majorana spinors, four-vectors, scalars, and the ﬁeld strength tensor. This accounts for all of the Lorentz representations of the standard model. Furthermore, we found that Lorentz",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-310-outlook",
+      "number": "3.10",
+      "title": "Outlook",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized automorphisms",
+          "heading": false
+        },
+        {
+          "term": "rcho",
+          "heading": false
+        },
+        {
+          "term": "multiplicative structure",
+          "heading": false
+        },
+        {
+          "term": "connes",
+          "heading": false
+        },
+        {
+          "term": "preserve",
+          "heading": false
+        },
+        {
+          "term": "symmetries",
+          "heading": false
+        }
+      ],
+      "extract": "It is plain to see that $m_c$, $m_h$, and $m_q$ each correspond to an involution of the $\\CH$ algebra. That is, $m_c$ corresponds to $*$, $m_h$ corresponds to $\\dagger$, and $m_q$ corresponds to $\\sim$. The complex quaternions, though, have more discrete symmetries available than is shown here, and it would be interesting to see what could come from the corresponding constructions of generalized ideals. Another",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-4-clifford-algebras",
+      "number": "4",
+      "title": "Clifford algebras",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-41-motivation",
+      "number": "4.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clifford algebras",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": false
+        },
+        {
+          "term": "cite",
+          "heading": false
+        },
+        {
+          "term": "quarks",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "some",
+          "heading": false
+        }
+      ],
+      "extract": "It is difficult to ignore the presence of Clifford algebras within elementary particle physics. Clifford algebras inevitably appear whenever spinors do, and ultimately underlie the algebra of some well-known grand unified theories, \\cite{agut}. It was in fact argued in \\cite{Grass}, \\cite{wow}, and \\cite{wowagain} that Clifford algebras alone are the source of internal structure for quarks and leptons. But one may",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-42-definition",
+      "number": "4.2",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf vspace",
+          "heading": false
+        },
+        {
+          "term": "cln simeq",
+          "heading": false
+        },
+        {
+          "term": "clifford algebras",
+          "heading": false
+        },
+        {
+          "term": "complex clifford",
+          "heading": false
+        },
+        {
+          "term": "equation noindent",
+          "heading": false
+        },
+        {
+          "term": "property mathbb",
+          "heading": false
+        },
+        {
+          "term": "equiv oplus",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "In \\cite{paddy}, \\cite{west}, a Clifford algebra over $\\mathbb{R}$ is defined to be an associative algebra, which is generated by $n$ elements, $e_i$. These $n$ generators exhibit the properties \\begin{equation}\\label{CAdefn} \\{e_i, e_j \\}\\equiv e_ie_j + e_je_i = 2\\eta_{ij} \\mathbb{I}, \\end{equation} \\noindent where the entries $\\eta_{ij}=0$ for $i\\neq j$, and $\\eta_{ii} = \\pm 1$ $\\forall i$. The symbol $\\mathbb{I}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-43-examples-of-clifford-algebras-from-ch",
+      "number": "4.3",
+      "title": "Examples of Clifford algebras from CH",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clifford",
+          "heading": true
+        },
+        {
+          "term": "algebra zero-vector",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        },
+        {
+          "term": "complex-dimensional",
+          "heading": false
+        },
+        {
+          "term": "cltwo",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "pdf caption",
+          "heading": false
+        }
+      ],
+      "extract": "Given the multiplication properties from equation~(\\ref{CHmult}), it is straightforward to see that $\\CH$ gives a representation of the real Clifford algebra, $Cl(3,0)$. Please see Figure~(\\ref{cl3}). \\begin{figure}[h!] \\begin{center} \\includegraphics[width=7cm]{cl3_eps-eps-converted-to.pdf} \\caption{\\label{cl3} The algebra $\\CH$ written so as to show its $Cl(3,0)$ structure. Here, the Clifford algebra's zero-vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-44-minimal-left-ideals",
+      "number": "4.4",
+      "title": "Minimal left ideals",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left ideals",
+          "heading": true
+        },
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "clifford algebras",
+          "heading": false
+        },
+        {
+          "term": "underline",
+          "heading": false
+        },
+        {
+          "term": "complex-dimensional",
+          "heading": false
+        },
+        {
+          "term": "column vectors",
+          "heading": false
+        }
+      ],
+      "extract": "For the remainder of this text, we will be interested only in Clifford algebras over $\\mathbb{C}$, where $n$ is even. The most common way to model these algebras is to represent them as $2^{n/2}\\times2^{n/2}$ complex matrices, as mentioned above. These complex matrices then act on spinors in the form of $2^{n/2}$-complex-dimensional column vectors. We would like, however, to avoid resorting to this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-45-how-to-identify-minimal-left-ideals",
+      "number": "4.5",
+      "title": "How to identify minimal left ideals",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left ideals",
+          "heading": true
+        },
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "cliﬀord",
+          "heading": false
+        }
+      ],
+      "extract": "How to identify minimal left ideals We will now summarize for the reader a procedure for ﬁnding minimal left ideals in com- plex Cliﬀord algebras, where n is even. This procedure is described in [1], which also accommodates other types of Cliﬀord algebra. In the special case of C ⊗H, this procedure will allow us to recover the Weyl spinors ΨL or ΨR, which we found earlier via the complex multiplicative action, mc.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-451-some-definitions",
+      "number": "4.5.1",
+      "title": "Some definitions",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isotropic subspaces",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "quadratic vector",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "maximal",
+          "heading": false
+        }
+      ],
+      "extract": "Some deﬁnitions Let V be the vector space over a ﬁeld F. A quadratic form, Q, is a map Q : V →F such that ∀v, w ∈V and λ ∈F, Q(λv) = λ2Q(v) (4.4) and such that the map B : V × V →F, B : (v, w) 7→Q(v + w) −Q(v) −Q(w) (4.5) is linear in both v and w. This V, together with its quadratic form, is called a quadratic vector space. 23 We will be especially interested in the quadratic vector space given by V and Q, where V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-452-procedure",
+      "number": "4.5.2",
+      "title": "Procedure",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primitive idempotent",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "left ideals",
+          "heading": false
+        },
+        {
+          "term": "minimal left",
+          "heading": false
+        },
+        {
+          "term": "procedure",
+          "heading": true
+        }
+      ],
+      "extract": "Procedure With these deﬁnitions in hand, the procedure for constructing minimal left ideals is straightforward: 1. First identify a quadratic vector space (V, Q) . In particular, we will take V to be the generating space of a given Cliﬀord algebra, spanned by the generators {ej} over C, where j = 1 . . . n. We will take our quadratic form to be Q(v) = {v, v}. 2. Identify an MTIS (maximal totally isotropic subspace)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-46-minimal-left-ideals-in-ch",
+      "number": "4.6",
+      "title": "Minimal left ideals in CH",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uparrow textup",
+          "heading": false
+        },
+        {
+          "term": "downarrow textup",
+          "heading": false
+        },
+        {
+          "term": "epsilon uparrow",
+          "heading": false
+        },
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "dagger epsilon",
+          "heading": false
+        },
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "omega dagger",
+          "heading": false
+        }
+      ],
+      "extract": "As a specific example, let us now build a minimal left ideal in $\\CH\\simeq\\CLtwo$, as per Figure (\\ref{cl2}). Following the procedure from Section~(\\ref{proc}), $$\\begin{array}{ll} 1. & \\textup{Our vector space, $V,$ is spanned by the elements $i{\\epsilon_x}$ and $i{\\epsilon_y}$ over $\\mathbb{C}$. The quadratic form is} \\\\ & \\vspace{.5cm} \\textup{given by $Q(v) = \\{v,v\\}$.} \\\\ 2. & \\textup{An MTIS of $V$ is just",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-461-fock-space-structure",
+      "number": "4.6.1",
+      "title": "Fock space structure",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uparrow textup",
+          "heading": false
+        },
+        {
+          "term": "downarrow textup",
+          "heading": false
+        },
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "epsilon uparrow",
+          "heading": false
+        },
+        {
+          "term": "alpha dagger",
+          "heading": false
+        },
+        {
+          "term": "omega dagger",
+          "heading": false
+        },
+        {
+          "term": "fock space",
+          "heading": true
+        }
+      ],
+      "extract": "With a little relabelling, it becomes obvious that these minimal left ideals naturally exhibit Fock space structure. Taking $\\alpha_1 = \\epsilon_{\\downarrow\\uparrow}$, it then follows that $\\alpha_1^{\\dagger} = \\epsilon_{\\uparrow\\downarrow}$, which have the anticommutation relations, \\begin{equation}\\begin{array}{lll} \\{\\alpha_1, \\alpha_1\\} = \\{\\alpha_1^{\\dagger}, \\alpha_1^{\\dagger}\\} = 0 & \\hspace{1cm} &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-47-the-dirac-algebra",
+      "number": "4.7",
+      "title": "The Dirac algebra",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "uparrow textup",
+          "heading": false
+        },
+        {
+          "term": "downarrow textup",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "epsilon hspace",
+          "heading": false
+        },
+        {
+          "term": "mapsto hspace",
+          "heading": false
+        },
+        {
+          "term": "downarrow right",
+          "heading": false
+        },
+        {
+          "term": "mathbb cltwo",
+          "heading": false
+        }
+      ],
+      "extract": "It is not enough for us here to consider minimal left ideals for just $\\Psi_{\\textup{L}}$ or for just $\\Psi_{\\textup{R}}$, separately. We would like also to combine these two objects together into a single four-complex-dimensional Dirac spinor, as shown in Section~\\ref{WD}. It had been mentioned earlier that chirality, L and R, is the analogue of spin, $\\uparrow$ and $\\downarrow$, in this formalism. One can confirm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-48-right-action-required",
+      "number": "4.8",
+      "title": "Right action required",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        },
+        {
+          "term": "left action",
+          "heading": false
+        }
+      ],
+      "extract": "Readers may have noticed that the left action of $\\CH$ on itself was not enough to describe $\\Psi_{\\textup{L}}+\\Psi_{\\textup{R}}$ together as a single irreducible representation. That is, the left action alone has only $\\Psi_{\\textup{L}}$ (or $\\Psi_{\\textup{R}}$) as an irrep. However, the combined Dirac spinor, $\\Psi_{\\textup{L}}+\\Psi_{\\textup{R}}$, does become an irreducible representation of a Clifford algebra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-49-parity-and-the-field-strength-tensor",
+      "number": "4.9",
+      "title": "Parity and the field strength tensor",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 901,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup hspace",
+          "heading": false
+        },
+        {
+          "term": "epsilon hspace",
+          "heading": false
+        },
+        {
+          "term": "hat hspace",
+          "heading": false
+        },
+        {
+          "term": "gamma hspace",
+          "heading": false
+        },
+        {
+          "term": "mapsto hspace",
+          "heading": false
+        },
+        {
+          "term": "psi textup",
+          "heading": false
+        },
+        {
+          "term": "parity",
+          "heading": true
+        },
+        {
+          "term": "widetilde epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "The work in this section is to appear in a joint paper, together with G. Fiore from INFN. In Section~\\ref{mh}, we introduced four-vectors, $p$, as generalized ideals under the hermitian invariant-action, $m_h$. These can be described as \\begin{equation}p = p_0 + p_1i{\\epsilon_x} +p_2i{\\epsilon_y} + p_3i{\\epsilon_z}, \\end{equation} \\noindent which transform under the Lorentz group as $p' = m_h(L,p) = LpL^{\\dagger}$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-5-standard-model-of-particle-physics",
+      "number": "5",
+      "title": "Standard model of particle physics",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-51-what-it-is",
+      "number": "5.1",
+      "title": "What it is",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline textup",
+          "heading": false
+        },
+        {
+          "term": "symbol hspace",
+          "heading": false
+        },
+        {
+          "term": "cite kibble",
+          "heading": false
+        },
+        {
+          "term": "array lccc",
+          "heading": false
+        },
+        {
+          "term": "vspace",
+          "heading": false
+        },
+        {
+          "term": "weak hypercharge",
+          "heading": false
+        },
+        {
+          "term": "higgs boson",
+          "heading": false
+        },
+        {
+          "term": "model gauge",
+          "heading": false
+        }
+      ],
+      "extract": "The standard model of particle physics is the result of decades of collaboration, which began roughly in the 1930s, and converged finally on its current state in 1979, \\cite{ramjbsm}. It is a mosaic of our best efforts in particle physics over that half century. In the decades since 1979, the standard model has seen little in the way of alterations, and yet has survived rigorous experimental testing, nearly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-52-what-it-is-not",
+      "number": "5.2",
+      "title": "What it is not",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "dark",
+          "heading": false
+        },
+        {
+          "term": "incompleteness",
+          "heading": false
+        },
+        {
+          "term": "neutrinos",
+          "heading": false
+        }
+      ],
+      "extract": "If the standard model is to be faulted for anything, that fault would lie almost exclusively in its incompleteness. The first legitimate fracture in the standard model came with the discovery of neutrino oscillations, which imply that neutrinos do indeed have mass, \\cite{Mann}. Having said that, the standard model is easily amended to accommodate massive neutrinos, albeit, at the expense of having to accept a number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-53-what-it-should-be",
+      "number": "5.3",
+      "title": "What it should be",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unifying principles",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "explain",
+          "heading": false
+        },
+        {
+          "term": "came",
+          "heading": false
+        },
+        {
+          "term": "spinors",
+          "heading": false
+        },
+        {
+          "term": "perhaps",
+          "heading": false
+        }
+      ],
+      "extract": "What it should be One might not criticize the standard model too harshly, for simply remaining silent about many of the open problems in physics. However, what is less benign is that the standard model does at times account for various aspects of nature, and yet fails to explain them. For example, the standard model singles out a particular gauge group, SU(3)c × SU(2)L × U(1)Y /Z6, yet does not explain where this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-6-one-generation-of-quarks-and-leptons-from-co",
+      "number": "6",
+      "title": "One generation of quarks and leptons from CO",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quarks",
+          "heading": true
+        },
+        {
+          "term": "leptons",
+          "heading": true
+        },
+        {
+          "term": "generation",
+          "heading": true
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "quark structure",
+          "heading": false
+        },
+        {
+          "term": "unaydin",
+          "heading": false
+        },
+        {
+          "term": "ursey",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        }
+      ],
+      "extract": "from C ⊗O In Chapter 3, we saw how a four-complex-dimensional algebra, C⊗H, supplies an unusually compact description of all the Lorentz representations of the standard model. However, there is more to the standard model than just the Lorentz group. Beyond spin and chirality, standard model fermions also exhibit colour, weak isospin, and charge. Could these physical features also be the result of some algebra acting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-61-a-summary-of-the-results-to-come",
+      "number": "6.1",
+      "title": "A summary of the results to come",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic ladder",
+          "heading": false
+        },
+        {
+          "term": "cite dixon",
+          "heading": false
+        },
+        {
+          "term": "cite ggstats",
+          "heading": false
+        },
+        {
+          "term": "cite wowagain",
+          "heading": false
+        },
+        {
+          "term": "cite wow",
+          "heading": false
+        },
+        {
+          "term": "rsey model",
+          "heading": false
+        },
+        {
+          "term": "cite grass",
+          "heading": false
+        },
+        {
+          "term": "ladder operators",
+          "heading": false
+        }
+      ],
+      "extract": "Using only the algebra of the complex octonions, which we will introduce, we expose an intrinsic structure to a generation of quarks and leptons. This algebraic structure mimics familiar quantum systems, which have a vacuum state acted upon by raising and lowering operators. In this case, the neutrino poses as the vacuum state, and electrons and quarks pose as the excited states. These results are simply the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-62-introduction-to-co",
+      "number": "6.2",
+      "title": "Introduction to CO",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot hspace",
+          "heading": false
+        },
+        {
+          "term": "rightarrow hspace",
+          "heading": false
+        },
+        {
+          "term": "octonionic imaginary",
+          "heading": false
+        },
+        {
+          "term": "sqrt big",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "imaginary units",
+          "heading": false
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "hermitian conjugate",
+          "heading": false
+        }
+      ],
+      "extract": "The complex octonions are not a tool commonly used in physics, so we introduce them here. The generic element of $\\mathbb{C} \\otimes \\mathbb{O}$ is written $ \\sum_{n=0}^7 A_n e_n $, where the $A_n$ are complex coefficients. The $e_n$ are octonionic imaginary units $\\left(e_n^2=-1\\right)$, apart from $e_0=1$, which multiply according to Figure~\\ref{fano}. The complex imaginary unit $i$ commutes with the octonionic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-63-octonionic-chain-algebra",
+      "number": "6.3",
+      "title": "Octonionic chain algebra",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 53,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overleftarrow mathbb",
+          "heading": false
+        },
+        {
+          "term": "otimes overleftarrow",
+          "heading": false
+        },
+        {
+          "term": "overleftarrow cdots",
+          "heading": false
+        },
+        {
+          "term": "dots overleftarrow",
+          "heading": false
+        },
+        {
+          "term": "overleftarrow acting",
+          "heading": false
+        },
+        {
+          "term": "octonionic chain",
+          "heading": true
+        },
+        {
+          "term": "overleftarrow left",
+          "heading": false
+        },
+        {
+          "term": "map overleftarrow",
+          "heading": false
+        }
+      ],
+      "extract": "As a non-associative algebra, the octonions can at times seem temperamental. Equations involving this algebra can quickly become unwieldy, due to the need to repeatedly specify the order of multiplication, by use of brackets. The assumptions we are accustomed to making in associative algebras now do not always apply, and one might be led to wonder how (associative) groups can be described with the (non-associative)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-64-a-system-of-ladder-operators",
+      "number": "6.4",
+      "title": "A system of ladder operators",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha dagger",
+          "heading": false
+        },
+        {
+          "term": "cite ggstats",
+          "heading": false
+        },
+        {
+          "term": "alpha equiv",
+          "heading": false
+        },
+        {
+          "term": "dagger frac",
+          "heading": false
+        },
+        {
+          "term": "cooo",
+          "heading": false
+        },
+        {
+          "term": "ref alpha",
+          "heading": false
+        },
+        {
+          "term": "operators",
+          "heading": true
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        }
+      ],
+      "extract": "With the algebra $\\COOO$ in hand, we can now set out to find a system of ladder operators within the octonionic chain algebra. Consider $\\alpha_1 \\equiv \\frac{1}{2}\\left(-e_5+ie_4\\right)$, $\\alpha_2 \\equiv \\frac{1}{2}\\left(-e_3+ie_1\\right),$ and $\\alpha_3 \\equiv \\frac{1}{2}\\left(-e_6+ie_2\\right)$, similar to that defined in~\\cite{GGquarks}. For all $f$ in $\\mathbb{C}\\otimes\\mathbb{O}$, and assuming right-to-left",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-65-complex-conjugations-analogue",
+      "number": "6.5",
+      "title": "Complex conjugation's analogue",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 118,
+      "summary": null,
+      "keywords": [],
+      "extract": "Under complex conjugation, we ﬁnd an analogous ladder system. Consider α∗ 1 = 1 2 (−e5 −ie4), α∗ 2 = 1 2 (−e3 −ie1) , and α∗ 3 = 1 2 (−e6 −ie2). These three lowering operators obey the an- ticommutation relations {α∗ i , α∗ j} = 0 for all i, j = 1, 2, 3. (6.16) We deﬁne raising operators as ˜α1 = 1 2 (e5 −ie4), ˜α2 = 1 2 (e3 −ie1) , and ˜α3 = 1 2 (e6 −ie2), which obey 46 {˜αi, ˜αj} = 0 for all i, j = 1, 2, 3. (6.17)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-66-minimal-left-ideals",
+      "number": "6.6",
+      "title": "Minimal left ideals",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 57,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left ideals",
+          "heading": true
+        },
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "weyl spinors",
+          "heading": false
+        },
+        {
+          "term": "octonionic operators",
+          "heading": false
+        },
+        {
+          "term": "right-handed weyl",
+          "heading": false
+        },
+        {
+          "term": "complex conjugate",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "complex coeﬃcients",
+          "heading": false
+        }
+      ],
+      "extract": "to mimic the set of quarks and leptons of the standard model. 6.6 Minimal left ideals We are now proposing to represent quarks and leptons using minimal left ideals within our space of octonionic operators, C ⊗←− O ≃Cl(6). That is, within the space of the αi, α† j, and their products. A pair of these ideals, Su and Sd, will be constructed using our procedure from Section 4.5.2: 1. Our vector space, V, is spanned by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-67-mtis-symmetries-su3c-and-u1em",
+      "number": "6.7",
+      "title": "MTIS symmetries: su(3)c and u(1)em",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mtis symmetries",
+          "heading": true
+        },
+        {
+          "term": "mtis spanned",
+          "heading": false
+        },
+        {
+          "term": "unitary mtis",
+          "heading": false
+        },
+        {
+          "term": "eiφkgk",
+          "heading": false
+        },
+        {
+          "term": "iφkgk",
+          "heading": false
+        },
+        {
+          "term": "isotropic subspaces",
+          "heading": false
+        },
+        {
+          "term": "complex coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "left ideals",
+          "heading": false
+        }
+      ],
+      "extract": "MTIS symmetries: su(3)c and u(1)em Having obtained these minimal left ideals, we would now like to know how they transform, so as to justify the labels we gave to their coeﬃcients in equations (6.19) and (6.21). Up until now, however, we have not speciﬁed under which groups these spinors transform. A popular choice in the literature for this symmetry group is take the Cliﬀord algebra’s spin group. For example, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-68-ladders-to-su3c-and-u1em",
+      "number": "6.8",
+      "title": "Ladders to su(3)c and u(1)em",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 61,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ladders",
+          "heading": true
+        },
+        {
+          "term": "type quarks",
+          "heading": false
+        },
+        {
+          "term": "hermitian operators",
+          "heading": false
+        },
+        {
+          "term": "model fermions",
+          "heading": false
+        },
+        {
+          "term": "antineutrino",
+          "heading": false
+        },
+        {
+          "term": "neutrino",
+          "heading": false
+        },
+        {
+          "term": "minimal left",
+          "heading": false
+        },
+        {
+          "term": "full generation",
+          "heading": false
+        }
+      ],
+      "extract": "Ladders to su(3)c and u(1)em We will now ﬁnd a compact way of describing the generators of the MTIS symmetries, su(3) and u(1), and apply them to our minimal left ideals. Consider α ≡c1α1 + c2α2 + c3α3 and α′ ≡c′ 1α1 + c′ 2α2 + c′ 3α3, where the ci and c′ j are complex coeﬃcients. We can then build hermitian operators, H, of the form H ≡α′†α + α†α′. (6.24) 50 Taking the most general sum of these objects results in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-69-towards-the-weak-force",
+      "number": "6.9",
+      "title": "Towards the weak force",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "converts isospin",
+          "heading": false
+        },
+        {
+          "term": "isospin down",
+          "heading": false
+        },
+        {
+          "term": "omega dagger",
+          "heading": false
+        },
+        {
+          "term": "cltwo",
+          "heading": false
+        },
+        {
+          "term": "exhibits features",
+          "heading": false
+        },
+        {
+          "term": "right multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "Perhaps unexpectedly, it turns out that $S^u$ packages all of the isospin up-type states together, and $S^d$ packages all of the down-type states together. This is of course, if one goes ahead and makes an assumption about the placement of $\\nu$ into $S^u$ and $\\bar{\\nu}$ into $S^d$. We point out that $\\omega$ is (automatically) negatively charged, and converts isospin up particles into isospin down, via \\it right",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-610-summary",
+      "number": "6.10",
+      "title": "Summary",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "complex octonions",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "su2l",
+          "heading": false
+        }
+      ],
+      "extract": "Using only the complex octonions acting on themselves, we were able to recover a number of aspects of the standard model's structure. First of all, we introduced unitary MTIS symmetries, which led \\it uniquely \\rm to the two unbroken gauge symmetries of the standard model, $SU(3)_c$ and $U(1)_{em}$. This new $U(1)_{em}$ generator, $Q$, happens to be proportional to a number operator, thereby suggesting an unexpected",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-7-why-does-su2l-act-on-only-left-handed-fermions",
+      "number": "7",
+      "title": "Why does SU(2)L act on only left-handed fermions?",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "left-handed fermions?",
+      "extractCut": false
+    },
+    {
+      "id": "sec-054-71-a-spotlight-on-right-multiplication",
+      "number": "7.1",
+      "title": "A spotlight on right multiplication",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cltwo otimes",
+          "heading": false
+        },
+        {
+          "term": "cltwo came",
+          "heading": false
+        },
+        {
+          "term": "cltwo simeq",
+          "heading": false
+        },
+        {
+          "term": "mtis symmetries",
+          "heading": false
+        },
+        {
+          "term": "clsix otimes",
+          "heading": false
+        },
+        {
+          "term": "effected transitions",
+          "heading": false
+        },
+        {
+          "term": "complex-dimensional spinor",
+          "heading": false
+        },
+        {
+          "term": "isospin up-type",
+          "heading": false
+        }
+      ],
+      "extract": "In Section~\\ref{da}, we found a four-complex-dimensional Dirac spinor, $\\Psi_D\\equiv\\Psi_L+\\Psi_R$, as an irreducible representation of $\\CLtwo \\otimes_{\\C} \\CLtwo$. Here, the second factor of $\\CLtwo$ came from right-multiplying $\\CH$ on itself, and it effected transitions between L and R states. Likewise, in Section~\\ref{susd}, we found a 16-complex-dimensional spinor, $S\\equiv S^u+S^d$, as an irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-72-leptonic-subspace-of-cl4",
+      "number": "7.2",
+      "title": "Leptonic subspace of Cl(4)",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leptonic subspace",
+          "heading": true
+        },
+        {
+          "term": "mtis spanned",
+          "heading": false
+        },
+        {
+          "term": "spin-down",
+          "heading": false
+        },
+        {
+          "term": "previous chapters",
+          "heading": false
+        },
+        {
+          "term": "minimal right",
+          "heading": false
+        },
+        {
+          "term": "right ideal",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        }
+      ],
+      "extract": "Leptonic subspace of Cl(4) We will now build a minimal right ideal, using the procedure laid out in Section 4.5.2. Readers should note that when multiplying elements constructed from R ⊗C ⊗H ⊗O, the quaternionic and octonionic imaginary units always commute with each other. 1. Let us consider a Cliﬀord algebra, Cl(4), generated by the vectors, {τ1iϵx, τ2iϵx, τ3iϵx, iϵy}, where τ1 ≡ω + ω†, τ2 ≡iω −iω†, τ3 ≡ωω† −ω†ω.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-73-mtis-symmetries-su2l-and-u1y",
+      "number": "7.3",
+      "title": "MTIS symmetries: su(2)L and u(1)Y",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mtis symmetries",
+          "heading": true
+        },
+        {
+          "term": "leptonic subspace",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "minimal right",
+          "heading": false
+        },
+        {
+          "term": "right ideal",
+          "heading": false
+        },
+        {
+          "term": "right-handed",
+          "heading": false
+        }
+      ],
+      "extract": "MTIS symmetries: su(2)L and u(1)Y Now that we have constructed a minimal right ideal, we would like to see how it transforms under the MTIS symmetries for this Cliﬀord algebra, as deﬁned in Section 6.7. Again, MTIS symmetries are those which act on the generating space as eiφkgk | e−iφkgk, which map non-trivially the lowering operators to themselves, and the raising operators to themselves, and which commute with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-74-summary-and-outlook",
+      "number": "7.4",
+      "title": "Summary and outlook",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leptonic subspace",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "mtis",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        }
+      ],
+      "extract": "Summary and outlook In this chapter, we have focussed our attention on Cl(2)⊗CCl(2) ≃Cl(4) structure, coming from the right action on our previously constructed minimal left ideals. From this Cliﬀord algebra, Cl(4), we have then constructed a 4-complex-dimensional minimal right ideal, corresponding to a leptonic subspace of a generation of standard model particles. We then found the unitary MTIS symmetries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-8-group-representation-structure-of-some-grand-u",
+      "number": "8",
+      "title": "Group representation structure of some grand unified theories",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theories",
+          "heading": false
+        }
+      ],
+      "extract": "some grand uniﬁed theories We mentioned in the previous chapter, that combing our results for C ⊗H and C ⊗O will bring us to consider the Cliﬀord algebra Cl(12). That is, our Dirac spinor, ΨD = ΨL + ΨR was found to be an irreducible representation of Cl(2)⊗CCl(2), and our generation of quarks and leptons of Chapter 6 was found to be an irreducible representation of Cl(6) ⊗C Cl(2). Taking the tensor product of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-81-su5-unification",
+      "number": "8.1",
+      "title": "SU(5) unification",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "SU(5) uniﬁcation",
+      "extractCut": false
+    },
+    {
+      "id": "sec-060-811-introduction",
+      "number": "8.1.1",
+      "title": "Introduction",
+      "level": 3,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "59",
+      "labelEnd": "60",
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theory",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "lifetime",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "singlet",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction The SU(5) grand uniﬁed theory oﬀers a classic example of what it means to be a grand uniﬁed theory. It was proposed in 1974 by H. Georgi and S. Glashow, [38], and can be seen to successfully unify the gauge groups of the standard model. However, the SU(5) model only partially uniﬁes a generation of quarks and leptons. The group SU(5) has rank 4, as with the standard model’s gauge group, GSM; that is,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-812-gsm-inside-su5",
+      "number": "8.1.2",
+      "title": "GSM inside SU(5)",
+      "level": 3,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gsm",
+          "heading": true
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "model gauge",
+          "heading": false
+        },
+        {
+          "term": "model representations",
+          "heading": false
+        },
+        {
+          "term": "representing elements",
+          "heading": false
+        },
+        {
+          "term": "turns out",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "subgroups",
+          "heading": false
+        }
+      ],
+      "extract": "GSM inside SU(5) Here, we detail the embedding of the standard model’s gauge group into SU(5), as given in [7]. Elements of SU(5) can be written down as 5 × 5 complex matrices, wherein we may embed the standard model’s gauge group, [7], [48]. Starting with SU(2) and SU(3), we have \u0012h2 0 0 h3 \u0013 ∈ SU(5), (8.1) where h2 is a 2 × 2 matrix representing elements of SU(2), and h3 is a 3 × 3 matrix, representing elements of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-813-some-notes-on-symmetry-breaking",
+      "number": "8.1.3",
+      "title": "Some notes on symmetry breaking",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac hspace",
+          "heading": false
+        },
+        {
+          "term": "underline mapsto",
+          "heading": false
+        },
+        {
+          "term": "higgs field",
+          "heading": false
+        },
+        {
+          "term": "mapsto left",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        },
+        {
+          "term": "equation noindent",
+          "heading": false
+        },
+        {
+          "term": "cite lang",
+          "heading": false
+        }
+      ],
+      "extract": "The adjoint Higgs field is responsible for breaking $SU(5)$ symmetry down to $SU(3)\\times SU(2) \\times U(1)/\\mathbb{Z}_6$, \\cite{Robinson}. In the process, the fermionic $\\underline{5}^*$ and $\\underline{10}$ break into $\\left(\\hspace{1mm}SU(3)_c, \\hspace{1mm}SU(2)_L, \\hspace{1mm}U(1)_Y\\hspace{1mm}\\right)$ irreps as \\begin{equation}\\begin{array}{rcccccc} \\underline{5}^* & \\mapsto & \\left(\\hspace{1mm}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-82-a-fermionic-binary-code",
+      "number": "8.2",
+      "title": "A fermionic binary code",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": "63",
+      "labelEnd": "65",
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binary code",
+          "heading": true
+        },
+        {
+          "term": "fermionic binary",
+          "heading": true
+        },
+        {
+          "term": "isospin down",
+          "heading": false
+        },
+        {
+          "term": "particles reside",
+          "heading": false
+        },
+        {
+          "term": "both isospin",
+          "heading": false
+        },
+        {
+          "term": "representing fermionic",
+          "heading": false
+        },
+        {
+          "term": "both red",
+          "heading": false
+        },
+        {
+          "term": "fermion",
+          "heading": false
+        }
+      ],
+      "extract": "A fermionic binary code It turns out that there is a very eﬃcient way of describing the standard model’s fermions, which is helpful in understanding SU(5), Spin(10), Pati-Salam theories, and incidentally, also upcoming R ⊗C ⊗H ⊗O models based on Cl(12). This is in terms of a binary code, [7], [64]. For a thorough explanation of this topic, the reader is encouraged to consult [7]. This fermionic binary code can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-83-spin10-unification",
+      "number": "8.3",
+      "title": "Spin(10) unification",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 76,
+      "labelStart": "65",
+      "labelEnd": "68",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "dirac spinor",
+          "heading": false
+        },
+        {
+          "term": "exterior algebra",
+          "heading": false
+        },
+        {
+          "term": "written underneath",
+          "heading": false
+        },
+        {
+          "term": "binary code",
+          "heading": false
+        },
+        {
+          "term": "model particles",
+          "heading": false
+        },
+        {
+          "term": "fermionic binary",
+          "heading": false
+        },
+        {
+          "term": "model gauge",
+          "heading": false
+        }
+      ],
+      "extract": "Spin(10) uniﬁcation Although the SU(5) model was able to draw together the three gauge groups of the stan- dard model into a single group, it only partially uniﬁed the standard model’s fermions into 65 1 b g u r d g^ b b^ r r^ u r^ d r ^ g g^ u g^d b^u b^ d u^ d r^ g ^ b r^ g ^u r^ g ^ d b ^ r ^u g^ b ^u g^ b ^ d g^ u ^ d b^ u ^d r^ g ^b ^u r^ g ^b ^d r^ g ^u ^ d b^ r ^u ^d g^ b ^u ^d b^ r ^d r ^ u ^d r^ g ^b ^u^d",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-84-pati-salam-model",
+      "number": "8.4",
+      "title": "Pati-Salam model",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 79,
+      "labelStart": "68",
+      "labelEnd": "71",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pati-salam model",
+          "heading": true
+        },
+        {
+          "term": "gab",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "fourth colour",
+          "heading": false
+        },
+        {
+          "term": "fermionic space",
+          "heading": false
+        },
+        {
+          "term": "dirac spinors",
+          "heading": false
+        },
+        {
+          "term": "exterior algebras",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "Pati-Salam model Before the introduction of SU(5)- and Spin(10)-theories came an extension to the standard model, now known as the Pati-Salam model. The model is named after its inventors, J. Pati and A. Salam, who published the proposal in 1974, [57]. The Pati-Salam model may be considered to be a more conservative approach to uni- ﬁcation. It does not unify the gauge groups of the standard model into a simple Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-9-towards-a-three-generation-model",
+      "number": "9",
+      "title": "Towards a three-generation model",
+      "level": 1,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "71",
+      "labelEnd": "71",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-067-91-introduction",
+      "number": "9.1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 80,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "complex octonions",
+          "heading": false
+        },
+        {
+          "term": "oﬀer",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "completed",
+          "heading": false
+        },
+        {
+          "term": "six",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Despite the wide range of proposals to simplify the standard model, most schemes tend to share the same impedances. Few uniﬁed models naturally oﬀer more than a single generation of particles, and few are able to evade proton decay without repercussion. In previous chapters, we were also concerned with ﬁnding just a one-generation model of particle physics, based on C ⊗O. However, this begs the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-92-generators-of-su3c",
+      "number": "9.2",
+      "title": "Generators of SU(3)c",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 81,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lepton representations",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "eight",
+          "heading": false
+        },
+        {
+          "term": "quark",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": true
+        },
+        {
+          "term": "act",
+          "heading": false
+        }
+      ],
+      "extract": "Generators of SU(3)c As mentioned earlier, the automorphism group of the octonions is G2, which is a 14- dimensional exceptional Lie group. Within G2, we may ﬁnd a subgroup, SU(3), which is deﬁned as that subgroup of G2 which keeps the imaginary unit, e7, invariant. The Lie algebra of this SU(3), acting on f ∈C ⊗O may be expressed as Λ1f = i 2 \u0000e1 (e5 f ) −e3 (e4 f ) \u0001 , Λ2f = −i 2 \u0000e1 (e4 f ) + e3 (e5 f ) \u0001 , Λ3f =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-93-three-generations-under-su3c",
+      "number": "9.3",
+      "title": "Three generations under SU(3)c",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 84,
+      "labelStart": "73",
+      "labelEnd": "76",
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv vspace",
+          "heading": false
+        },
+        {
+          "term": "bar vspace",
+          "heading": false
+        },
+        {
+          "term": "triplet bar",
+          "heading": false
+        },
+        {
+          "term": "ell equiv",
+          "heading": false
+        },
+        {
+          "term": "equiv left",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        },
+        {
+          "term": "cdot hspace",
+          "heading": false
+        }
+      ],
+      "extract": "Knowing that the $\\Lambda_n\\nu$ behave as an eight dimensional representation under the action of $\\left[\\Lambda_m\\nu \\hspace{0.5mm} , \\hspace{1.5mm}\\cdot\\hspace{1.5mm}\\right]$, one might wonder how objects of the more general form $a\\nu$ behave under $\\left[\\Lambda_m\\nu \\hspace{0.5mm} ,\\hspace{1.5mm}\\cdot\\hspace{1.5mm}\\right]$. Obeying $\\left[\\Lambda_m\\nu\\hspace{0.5mm} ,\\hspace{0.5mm} \\ell_j\\nu\\right]=0$ $\\forall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-94-a-sample-calculation",
+      "number": "9.4",
+      "title": "A sample calculation",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 85,
+      "labelStart": "76",
+      "labelEnd": "77",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sample",
+          "heading": true
+        },
+        {
+          "term": "λgm",
+          "heading": false
+        },
+        {
+          "term": "basis vector",
+          "heading": false
+        }
+      ],
+      "extract": "A sample calculation We introduce to the reader how calculations are carried out in C ⊗←− O by working through an example. Let us ﬁnd the action of the ﬁrst SU(3) generator of the form Λν, which we will deﬁne as Λ1ν ≡i 2 (e15 −e34) ν, in accordance with equation (6.26). Let Λ1ν act on qR 1 , as deﬁned in equations (9.8): h Λ1ν , qR 1 i = h i 2 (e15 −e34) ν , (−ie12 −e16 + e23 + ie36) ν i = i 2 \u0010 (e15 −e34) (−ie12",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-95-summary-for-su3c",
+      "number": "9.5",
+      "title": "Summary for SU(3)c",
+      "level": 2,
+      "pageStart": 85,
+      "pageEnd": 86,
+      "labelStart": "77",
+      "labelEnd": "78",
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vav",
+          "heading": false
+        },
+        {
+          "term": "six triplets",
+          "heading": false
+        },
+        {
+          "term": "chain algebra",
+          "heading": false
+        },
+        {
+          "term": "complex conjugate",
+          "heading": false
+        },
+        {
+          "term": "antiparticles",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, we conclude by summarizing the main result of this chapter in Figure 9.1: the breakdown of the 64-dimensional C ® O into irreducible representations of SU (3). vav vav ¢, ¢, 4,4 PT bo by bs bs . 4, 4, 4, 4% iAv 0 * -iAv* 9, 4, Is. I - ¢. ¢; ee CF 4, 4% Cx ee * ok * vav vav Figure 9.1: The 64-dimensional octonionic chain algebra splits into two sets of SU(3) generators of the form iAv and —iA*v*, six SU(3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-072-96-three-generations-under-su3c-and-u1em",
+      "number": "9.6",
+      "title": "Three generations under SU(3)c and U(1)em",
+      "level": 2,
+      "pageStart": 86,
+      "pageEnd": 89,
+      "labelStart": "78",
+      "labelEnd": "81",
+      "words": 1082,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "λjν",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "labelled",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": false
+        },
+        {
+          "term": "projector",
+          "heading": false
+        },
+        {
+          "term": "basis vectors",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "Three generations under SU(3)c and U(1)em Since the time that these irreducible representations of SU(3)c were identiﬁed within C⊗←− O, more standard model structure has been uncovered in the algebra. It turns out that we can extend our three-generation results for SU(3)c to include U(1)em as well (presented for the ﬁrst time here). That is, our SU(3)c action on C ⊗←− O given by [ Λjν, aν ], [ −Λ∗ jν∗, aν∗] (9.19)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-97-outlook-from-one-generation-to-three",
+      "number": "9.7",
+      "title": "Outlook: From one generation to three",
+      "level": 2,
+      "pageStart": 89,
+      "pageEnd": 91,
+      "labelStart": "81",
+      "labelEnd": "83",
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-generation model",
+          "heading": false
+        },
+        {
+          "term": "three-generation model",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "symmetry generators",
+          "heading": false
+        }
+      ],
+      "extract": "Outlook: From one generation to three In Section 6.8, we described a one-generation model in C ⊗←− O, transforming under the symmetry generators Λj and Q. In Section 9 we described a three-generation model in C ⊗←− O, transforming under the symmetry generators Λjν and Qν. Given that they make use of the same algebras, and very similar symmetry generators, one might wonder if the one-generation and three-generation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-10-conclusion",
+      "number": "10",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 91,
+      "pageEnd": 93,
+      "labelStart": "83",
+      "labelEnd": "85",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "lorentz representations",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetries",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "generation",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": false
+        },
+        {
+          "term": "quarks",
+          "heading": false
+        }
+      ],
+      "extract": "As a non-associative algebra, one might have naturally expected that R⊗C⊗H⊗O would not be ﬁt to describe the action of groups. And with no more than 32 complex dimensions, one might have further anticipated that R ⊗C ⊗H ⊗O would not have the capacity to describe much of the standard model, whose particle content spans hundreds of degrees of freedom. Upon closer inspection, though, this algebra can be seen to exhibit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-075-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 93,
+      "pageEnd": 97,
+      "labelStart": "85",
+      "labelEnd": "89",
+      "words": 1177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "super-kamiokande collaboration",
+          "heading": false
+        },
+        {
+          "term": "cms collaboration",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebras",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theories",
+          "heading": false
+        },
+        {
+          "term": "algebraic causal",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "aip conf",
+          "heading": false
+        },
+        {
+          "term": "arxiv version",
+          "heading": false
+        }
+      ],
+      "extract": "[1] R. Ab lamowicz. Construction of spinors via Witt decomposition and primitive idempo- tents: a review. Cliﬀord algebras and spinor structures. Kluwer Academic Publishers, 1995. [2] A. Anastasiou, L. Borsten, M. J. Duﬀ, L.J. Hughes, and S. Nagy. A magic pyramid of supergravities. JHEP, 04:178, 2014. [3] A. Anastasiou, L. Borsten, M. J. Duﬀ, L.J. Hughes, and S. Nagy. An octonionic formulation of the M-theory",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "textup hspace",
+      "heading": false
+    },
+    {
+      "term": "epsilon hspace",
+      "heading": false
+    },
+    {
+      "term": "uparrow hspace",
+      "heading": false
+    },
+    {
+      "term": "downarrow hspace",
+      "heading": false
+    },
+    {
+      "term": "underline hspace",
+      "heading": false
+    },
+    {
+      "term": "equiv hspace",
+      "heading": false
+    },
+    {
+      "term": "dagger hspace",
+      "heading": false
+    },
+    {
+      "term": "mapsto hspace",
+      "heading": false
+    },
+    {
+      "term": "frac hspace",
+      "heading": false
+    },
+    {
+      "term": "textup right",
+      "heading": false
+    },
+    {
+      "term": "cdot hspace",
+      "heading": false
+    },
+    {
+      "term": "hat hspace",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "i",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "ii",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "iii",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "iv",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "v",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "vi",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "vii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "viii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "22",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "23",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "25",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "26",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "27",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "28",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "29",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "30",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "31",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "32",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "33",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "34",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "35",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "36",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "37",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "38",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "39",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "40",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "41",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "42",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "43",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "44",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "45",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "46",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "47",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "48",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "49",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "50",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "51",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "52",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "53",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "54",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "55",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "56",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "57",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "58",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "59",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "60",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "61",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "62",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "63",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "64",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "65",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 74,
+      "label": "66",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "67",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "68",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 77,
+      "label": "69",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "70",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "71",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 80,
+      "label": "72",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 81,
+      "label": "73",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "74",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "75",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "76",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 85,
+      "label": "77",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 86,
+      "label": "78",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 87,
+      "label": "79",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "80",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "81",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 90,
+      "label": "82",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "83",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 92,
+      "label": "84",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "85",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 94,
+      "label": "86",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "87",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "88",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "89",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "The unevaluated algebraic expression, f · (e · (d · c + b · a)), gives a causal set",
+      "page": 12,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "The algebra C ⊗H written so as to show its Cl(3, 0) structure. Here, the Cliﬀord algebra’s zero-vector is 1, its generating vectors are iϵx, iϵy, iϵz, its bivectors are iϵyiϵz = −ϵx,",
+      "page": 29,
+      "pageLabel": "21",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "The algebra C⊗H written so as to show its Cl(2) structure. Here, the Cliﬀord algebra’s zero-vector is 1, its generating vectors are iϵx and iϵy, its bivector is iϵxiϵy = −ϵz",
+      "page": 30,
+      "pageLabel": "22",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.1",
+      "title": "Multiplication of octonionic imaginary units",
+      "page": 48,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "The 64-complex-dimensional octonionic chain algebra gives a representation of",
+      "page": 52,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.3",
+      "title": "States behaving as a full generation of standard model fermions, represented",
+      "page": 61,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.1",
+      "title": "This ﬁgure may be thought of as the analogue of Figure 6.3. A minimal",
+      "page": 66,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.1",
+      "title": "",
+      "page": 72,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.2",
+      "title": "The exterior algebra ΛC5, representing a fermionic binary code, broken down into irreps of SU(5). Here, basis elements which are part of the same irreducible representations are connected by red lines",
+      "page": 73,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.3",
+      "title": "The exterior algebra ΛC5, representing a fermionic binary code, with the corresponding standard model particles written underneath. Here, basis elements which are part of the same irreps under GSM are connected by blue lines",
+      "page": 74,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.4",
+      "title": "Readers may recognize that this same pattern has appeared more than once in this thesis. That is, minimal left ideals, such as ΨL and Su, have been built using raising",
+      "page": 75,
+      "pageLabel": "67",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.5",
+      "title": "The tensor product of the exterior algebras ΛC2 and ΛC3, arranged so as",
+      "page": 78,
+      "pageLabel": "70",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9.1",
+      "title": "The 64-dimensional octonionic chain algebra splits into two sets of SU(3) generators of the form iΛν and −iΛ∗ν∗, six SU(3) singlets ℓj, six triplets qk, and their complex conjugates. These objects are sectioned oﬀabove into four quadrants according to their forms: νaν, ν∗aν, νaν∗and ν∗aν∗for a in th",
+      "page": 85,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 76,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 77,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p93); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 77 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1611.09182v1"
+  }
+}

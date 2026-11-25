@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0108215v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0108215v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount of \"rope\" needed to make the knot. This is the energy introduced in [@O1] and studied extensively in [@FHW; @KS]. We follow an overall approach suggested by G. Buck for showing that any inverse-square knot energy should be bounded by the $4/3$ power of the ropelength.\n\nWe and other researchers have defined a number of different energy functions for (smooth or polygonal) knots [@O1; @FHW; @KS; @BO1; @BS; @BS2; @BS3; @DEJ; @Fu; @Lo; @O3; @O2; @O4; @Si3; @Si4; @Si2] based on the idea of inverse-square repell",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0108215v1  [math.GT]  30 Aug 2001\nM¨obius Energy of Thick Knots\nEric J. Rawdon 2\nDepartment of Mathematics and Computer Science,\nDuquesne University,\nPittsburgh, PA 15282, USA\nEmail: rawdon@mathcs.duq.edu\nJonathan Simon 1,3\nDepartment of Mathematics,\nUniversity of Iowa,\nIowa City, IA 52242, USA\nEmail: jsimon@math.uiowa.edu\nAbstract\nThe M¨obius energy of a knot is an energy functional for smooth curves based on\nan idea of self-repelling. If a knot has a thick tubular neighborhood, we would\nintuitively expect the energy to be low. In this paper, we give explicit bounds for\nenergy in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0108215v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Lemmas",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-lemmas.md",
+      "narrative": null,
+      "content": "[]{#thelemmas label=\"thelemmas\"}\n\nThe first lemma is a version of a theorem of Schur. This is taken from [@Ch], with the slight adjustment that we do not need to consider general planar convex curves as the reference curves, just circles.\n\n::: lem\nLet $K$ be a $C^2$ smooth curve in $\\Rset^3$ whose curvature everywhere is $\\leq$ some number $k$. Let $C$ be a circle of curvature $k$, i.e. of radius $r = {\\frac1k}$. Let $x,y \\in K$ and $s,t\n\\in C$ be any points such that $\\mathrm{arc}(x,y)=\\mathrm{arc}(s,t)\n\\leq \\pi r$. Then the chord distances satisfy $$|x-y|\n\\geq |s-t|.$$ []{#schursthm label=\"s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0108215v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thick knots have bounded energy",
+      "pageStart": 8,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-3-thick-knots-have-bounded-energy.md",
+      "narrative": null,
+      "content": "In this section, we prove that the Möbius energy of a knot is bounded by the ropelength. Our goal is partly the theorem itself and partly the paradigm: any \"energy\" defined in terms of inverse-square distances should have an analogous bound, with the proof following this model.\n\n::: thm\nIf $K$ is a smooth knot in $\\Rset^3$ then $$E_{O4}(K) < 4.57\\, E_L(K)^{4/3}.\n\\label{powbound}$$ []{#main label=\"main\"}\n:::\n\n::: thm\nIf $K$ is a smooth knot in $\\Rset^3$ then $$E_{O4}(K) \\leq \\frac{1}{4}E_L(K)^2 \\;.\n\\label{quadbound}$$ []{#quadboundthm label=\"quadboundthm\"}\n:::\n\n**Remark**  For short knots, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

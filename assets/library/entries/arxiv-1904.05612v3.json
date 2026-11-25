@@ -1,0 +1,891 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1904.05612v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a unital inclusion of von Neumann algebras equipped with a faithful\nnormal conditional expectation E from M onto N. Then, a ﬁnite set B := {λ1, . . . , λn} ⊂\nM is called a left Pimsner-Popa basis for M over N via E if every x ∈M can be expressed\nas x = Pn\ni=1 E(xλ∗\ni )λi - see [14, 17, 16, 9, 20] and the references therein. Similarly, B is\ncalled a right Pimsner-Popa basis for M over N via E if every x ∈M can be expressed\nas x = Pn\nj=1 λjE(λ∗\njx). And, B is said to be a two-sided basis if it is simultaneously a left\nand a right Pimsner-Popa basis. It is readily seen that a type II1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1904.05612v3  [math.OA]  27 Jul 2020\nON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR\nSUBFACTORS\nKESHAB CHANDRA BAKSHI AND VED PRAKASH GUPTA\nAbstract. We prove that a regular subfactor of type II1 with ﬁnite Jones index always\nadmits a two-sided Pimsner-Popa basis. This is preceded by a pragmatic revisit of Popa’s\nnotion of orthogonal systems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a regular subfactor of type II1 with ﬁnite Jones index. Then, M admits a two-sided basis over N. As a consequence, we deduce that every ﬁnite index regular subfactor of type II1 is extremal. Recall that an inclusion Q ⊂P of von Neumann algebras is said to be regular if its group of normalizers NP(Q) := {u ∈U(P) : uQu∗= Q} generates P as von Neumann 2010 Mathematics Subject Classiﬁcation. 46L37. Key words and phrases. Orthogonal system, Pimsner-Popa basis, subfactor, regularity. The ﬁrst named author was supported partially by a postdoctoral fellowship of the National Board of Highe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a subfactor of type II1 with ﬁnite index. Then, any Pimsner- Popa system {λ1, · · · , λk} for M over N can be extended to a Pimsner-Popa basis for M over N. One application being that we deduce in Corollary 2.14 that every subfactor of ﬁnite index admits a Pimsner-Popa basis (not necessarily orthonormal) containing at least |G| many unitaries, where G is the generalized Weyl group of the subfactor (as deﬁned in the next paragraph). Given its importance, an important example of an orthogonal system for a ﬁnite index subfactor N ⊂M that we illustrate (in Corollary 2.13) consists of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let N ⊂M, EN be as in the preceding paragraph and let {λ1, . . . , λk} be a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "Let N ⊂M and EN be as in Lemma 2.3. Then, for any ﬁnite set {λ1, . . . , λn}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "may not be true; that is, if for some projection f̸ = 1 in M1 there is a ﬁnite set",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a subfactor of type II1 with [M : N] < ∞, {λi : 1 ≤ i ≤n} be a ﬁnite subset of M and f be a projection in M1 satisfying the following three conditions: (1) f ≥e1, (2) P i λie1λ∗ i = f and (3) {λi : 1 ≤i ≤n} ⊆{f}′ ∩M. Then, {λi : 1 ≤i ≤n} is a Pimsner-Popa system for M/N. ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "prop-sec-002-06.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a subfactor of type II1 with [M : N] < ∞, {λi : 1 ≤",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "prop-sec-002-07.md",
+      "narrative": null,
+      "content": "Let N ⊂M be as in Proposition 2.7. Then, for any projection f ∈M1,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pimsner-Popa bases and systems",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-pimsner-popa-bases-and-systems.md",
+      "narrative": null,
+      "content": "Recall, from [17], that given a unital inclusion of von Neumann algebras N ⊂M with a\nfaithful normal conditional expectation E from M onto N, a family {mj}j in M is called\na right orthogonal system for M over N with respect to E if E(m∗\ni mj) = δijfj for some\nprojections {fj}j in N. In this article, we will be dealing only with ﬁnite right orthogonal\nsystems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pimsner-Popa systems",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-pimsner-popa-systems.md",
+      "narrative": null,
+      "content": "tems generalizes naturally to the following:\nDeﬁnition 2.1. Let N ⊂M be a unital inclusion of von Neumann algebras with a faithful\nnormal conditional expectation E from M onto N. A ﬁnite subset {λj : j ∈J} in M\nwill be called a right Pimsner-Popa system for M over N with respect to E if the matrix\nQ = [qij] with entries qij := E(λ∗\ni λj) is a projection in MJ(N).\nSuch a Pimsner-Popa system will be called a right orthogonal system if qij = δi,jqj for\nsome projections {qj : j ∈J} ⊂N.\nIf each qj is the identity operator, then such an\northogonal system will be called a right orthonormal system.\nRe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "(1) Similarly, one deﬁnes left systems by considering the matrix \u0002 E(λiλ∗ j) \u0003 in MJ(N). A collection which is both a left system and a right system will be called a two-sided system. (2) Hereafter, by a Pimsner-Popa (resp., an orthogonal) system we will always mean a right Pimsner-Popa (resp., a right orthogonal) system and will henceforth drop the adjective ‘right’. And, whenever the conditional expectation is clear from the context, we shall omit the phrase ‘with respect to E’. In this subsection, we systematically study these objects and their generalities in the spirit of Pimsner-Popa bas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "(1) A subcollection of an orthogonal (resp., orthonormal) system is also an orthogonal (resp., orthonormal) system. (2) A Pimsner-Popa system with support equal to 1 turns out to be a Pimsner-Popa basis for M over N (as mentioned in Section 1). For such a basis, the sum Pn i=1 λiλ∗ i is independent of the basis (see [20]) and is called the Watatani index of N ⊂M. This quantity is denoted by Indexw(N ⊂M). If N ⊂M is a ﬁnite index subfactor of type II1, then it is known that Indexw(N ⊂ M) = [M : N] - see [20] The following useful equivalence is folklore and will be used on few occasions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "(1) A subcollection of an orthogonal (resp., orthonormal) system is also",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/rem-sec-002-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-08.md",
+      "narrative": null,
+      "content": "(1) An appropriate customization of above proof actually guarantees the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-002-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-002-09.md",
+      "narrative": null,
+      "content": "Let N ⊂M be as in Proposition 2.7. Then, any Pimsner-Popa system",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of Pimsner-Popa systems",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-examples-of-pimsner-popa-systems.md",
+      "narrative": null,
+      "content": "2.2.1. Pimsner-Popa bases and intermediate subalgebras. Let N ⊂M be an inclu-\nsion of ﬁnite von Neumann algebras. Let P be an intermediate von Neumann subalgebra,\ni.e., N ⊂P ⊂M. Fix a faithful normal tracial state on M and let eP denote the canonical\nJones projection for the basic construction P ⊂M ⊂P1. Let {λi} be a ﬁnite set in P. If\n{λi} is a Pimsner-Popa basis for P/N, then it is easy to see that {λi} is a Pimsner-Popa\nsystem for M/N with support eP. Indeed, for any x ∈M, we have\n\u0000 X\ni\nλie1λ∗\ni\n\u0001\nxΩ=\nX\ni\nλiEM\nN (λ∗\ni x)Ω=\nX\ni\nλiEP\nN (λ∗\ni EM\nP (x))Ω= EM\nP (x)Ω= eP(xΩ),\nwhere the second las",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "[12] Suppose [M : N] < ∞and G denotes the generalized Weyl group of the subfactor N ⊂M . Then, any set of coset representatives {ug : g = [ug] ∈G} of G in NM(N) forms a two-sided orthonormal system for M/N. Also, G is a ﬁnite group with order ≤[M : N].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/cor-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "cor-sec-004-03.md",
+      "narrative": null,
+      "content": "Every ﬁnite index subfactor of type II1 admits a Pimsner-Popa basis containing at least |G| many unitaries.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "[12] Let w ∈NM(N) \\ U(N) U(N ′ ∩M). Then, EN(w) = 0. In particular, for any two elements v, u ∈NM(N), EN(vu∗) = 0 = EN(v∗u) if [u]̸ = [v] in the generalized Weyl group G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized Weyl group and orthonormal systems",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-generalized-weyl-group-and-orthonormal-system.md",
+      "narrative": null,
+      "content": "In this subsection, we illustrate an important example of an orthonormal system con-\nsisting of unitaries, which will attract a good share of limelight of this article. Let N ⊂M\nbe a subfactor of type II1 (which is not necessarily irreducible), let U(N) (resp., U(M))\ndenote the group of unitaries of N (resp., M) and NM(N) := {u ∈U(M) : uNu∗= N}\ndenote the group of unitary normalizers of N in M.\nIt is straightforward to see that\nU(N)U(N ′ ∩M)\n\u0000= U(N ′ ∩M)U(N)\n\u0001\nis a normal subgroup of NM(N).\nDeﬁnition 2.11. [12] The generalized Weyl group of a subfactor N ⊂M is deﬁned as the\nquotient group\nG :=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "Corollary 2.14 could be related somewhat to a recent question asked by Popa in [18] about the maximum number of unitaries possible in an orthonormal basis (in the sense of [14]) of a given subfactor. It, at least, tells us that every ﬁnite index subfactor N ⊂M of type II1 always admits a Pimsner-Popa basis (not necessarily orthonormal) containing at least |G| many unitaries. In view of Corollary 2.14, calculating cardinality of G becomes quite relevant. However, in practice, we are yet to ﬁnd a suitable way to calculate the cardinality of G. Since the generalized Weyl group is the same as the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Let (N, P, Q, M) be a quadruple of type II1 factors such that N ′ ∩M = C and [M : N] < ∞, and let {λi : i ∈I} be a Pimsner-Popa basis for P/N. Then, the following hold: (1) \b 1 √ λλi : i ∈I",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "Let N ⊂M be an irreducible subfactor of type II1 with ﬁnite index and {λi} be a Pimsner-Popa system for M/N with support lying in N ′ ∩M1. Then, 1 ≤ P i λiλi ∗≤[M : N].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "Let N ⊂M be an irreducible subfactor of type II1 with [M : N] < ∞ and f ∈N ′ ∩M1 be a projection. Then, for any orthogonal system {λi} with support f, we have P i λiλ∗ i = q [M1 : N]f. K C BAKSHI AND V P GUPTA",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some useful properties related to Pimsner-Popa systems",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-24-some-useful-properties-related-to-pimsner-pop.md",
+      "narrative": null,
+      "content": "2.4. Some useful properties related to Pimsner-Popa systems.\nLet (N, P, Q, M) be a quadruple of II1-factors, i.e., N ⊂P, Q ⊂M, with [M : N] < ∞.\nLet {λi : i ∈I} and {µj : j ∈J} be (right) Pimsner-Popa bases for P/N and Q/N,\nrespectively. Consider two auxiliary operators p(P, Q) and p(Q, P) (as in [2]) given by\np(P, Q) =\nX\ni,j\nλiµje1µ∗\njλ∗\ni\nand\np(Q, P) =\nX\ni,j\nµjλie1λ∗\ni µ∗\nj.\nBy [2, Lemma 2.18], p(P, Q) and p(Q, P) are both independent of choice of bases. And,\nby [2, Proposition 2.22], Jp(P, Q)J = p(Q, P), where J is the usual modular conjugation\noperator on L2(M); so that, ∥p(P, Q)∥= ∥p(Q, P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/cor-sec-006-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "cor-sec-006-11.md",
+      "narrative": null,
+      "content": "Every regular subfactor of type II1 with ﬁnite index is extremal. It is well known to the experts that every regular subfactor has integer index; for instance, there is a mention of this fact in [5, Page 150] (without a proof). As ﬁnal application of some of the results proved above, we deduce this fact along with a precise expression for the index of such a subfactor. We will use Watatani’s notion of index of a conditional expectation to do so. K C BAKSHI AND V P GUPTA Recall, from [20], that, given an inclusion B ⊂A of unital C∗-algebras, a conditional expectation E : A →B is said to have ﬁn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/cor-sec-006-14",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "cor-sec-006-14.md",
+      "narrative": null,
+      "content": "Every regular subfactor of type II1 with ﬁnite index is extremal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "With notations as in the preceding paragraph, we have NM(N) ⊆NM \u0000R \u0001 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "With notations as in the preceding paragraph, we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-04.md",
+      "narrative": null,
+      "content": "R has a two-sided basis over N contained in N ′ ∩M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-05.md",
+      "narrative": null,
+      "content": "Let θ be an automorphism of R such that its restriction to N is an outer automorphism of N. Then, θ is a free automorphism of R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-07.md",
+      "narrative": null,
+      "content": "Let θ be an automorphism of R such that its restriction to N is an outer",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-08.md",
+      "narrative": null,
+      "content": "Let N ⊂P ⊂M be an inclusion of ﬁnite von Neumann algebras with a faithful tracial state tr on M and {λi : 1 ≤i ≤m} be a basis for P/N. Then, for any u ∈NM(P) ∩NM(N), {uλiu∗: 1 ≤i ≤m} is also a basis for P/N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/lem-sec-006-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-006-11.md",
+      "narrative": null,
+      "content": "Let N ⊂P ⊂M be an inclusion of ﬁnite von Neumann algebras with a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a type II1 subfactor with ﬁnite index. If there exists a two-sided basis for M over N, then N ⊂M is extremal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Let tr denote the restriction of trM on N ′ ∩M. Then, N ′ ∩M has a two-sided Pimsner-Popa basis over C with respect to tr.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-04.md",
+      "narrative": null,
+      "content": "Let tr denote the restriction of trM on N ′ ∩M. Then, N ′ ∩M has a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-06.md",
+      "narrative": null,
+      "content": "Let G denote the generalized Weyl group of N ⊂M. Then, any set of coset representatives {ug : g = [ug] ∈G} of G in NM(N) forms a two-sided orthonormal system for M/R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-07.md",
+      "narrative": null,
+      "content": "Let P := NM(N)′′ and {ug : g ∈G} be an orthonormal system for M/R as in Proposition 3.6. If p denotes the support of {ug : g ∈G}, then p = eP. In particular, if N ⊂M is regular, then {ug : g ∈G} forms a two-sided orthonormal basis for M over R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-08.md",
+      "narrative": null,
+      "content": "Let G denote the generalized Weyl group of N ⊂M. Then, any set of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-09.md",
+      "narrative": null,
+      "content": "Let N ⊂P ⊂M be as in Lemma 3.8. Suppose P/N has a two-sided basis {λi : 1 ≤i ≤m} and M/P has a two-sided basis {µj : 1 ≤j ≤n} contained in NM(P) ∩NM(N). Then, {µjλi : 1 ≤i ≤m, 1 ≤j ≤n} is a two-sided basis for M/N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-10.md",
+      "narrative": null,
+      "content": "Let P := NM(N)′′ and {ug : g ∈G} be an orthonormal system for M/R",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prop-sec-006-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "prop-sec-006-12.md",
+      "narrative": null,
+      "content": "Let N ⊂P ⊂M be as in Lemma 3.8. Suppose P/N has a two-sided",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular subfactor and two-sided basis",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-3-regular-subfactor-and-two-sided-basis.md",
+      "narrative": null,
+      "content": "Before we pursue our hunt for a two-sided basis in a regular subfactor, as asserted in\nthe Introduction, we ﬁrst show that every ﬁnite index subfactor with a two-sided basis is\nextremal, which, most likely, is folklore.\nProposition 3.1. Let N ⊂M be a type II1 subfactor with ﬁnite index. If there exists a\ntwo-sided basis for M over N, then N ⊂M is extremal.\nProof. Given any right basis {λi : 1 ≤i ≤n} for M/N, it is known (see, for instance, [2,\nLemma 2.23]) that the trN ′ preserving conditional expectation EM′ : N ′ →M ′ is given by\nEM′(x) = [M : N]−1 X\ni\nλixλ∗\ni , x ∈N ′.\nThus, if x ∈N ′ ∩M, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-006-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-006-10.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a regular subfactor of type II1 with ﬁnite index. Then, M admits a two-sided Pimsner-Popa basis over N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-006-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-006-12.md",
+      "narrative": null,
+      "content": "Every regular subfactor N ⊂M of type II1 with ﬁnite Jones index has integer valued index and the index is given by [M : N] = |G| dimC(N ′ ∩M), where G denotes the generalized Weyl group of the inclusion N ⊂M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-006-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-006-13.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a regular subfactor of type II1 with ﬁnite index. Then,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/thm-sec-006-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-006-15.md",
+      "narrative": null,
+      "content": "Every regular subfactor N ⊂M of type II1 with ﬁnite Jones index has",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.05612v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "References\n[1] Bakshi, K.C.; Gupta, V.P. A note on quadrilaterals of II1-factors. Internat. J. Math. 30\n(2019),\nno. 12, 1950061, 22pp.\n[2] Bakshi, K.C.; Das, S.; Liu, Z.; Ren, Y. Angle between intermediate subfactors and its rigidity. Trans.\nAmer. Math. Soc. 371 (2019), no. 8, 5973–5991.\n[3] Cameron, J.M. Structure results for normalizers of II1-factors. Internat. J. Math 22 (2011), no. 7,\n947–979.\n[4] Choda, M. A characterization of crossed product of factors by discrete outer automorphism groups.\nJ. Math. Soc. Japan 31 (1979), no. 2, 257–261.\n[5] Goodman, F.; Harpe, P.de la; Jones, V.F.R. Co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

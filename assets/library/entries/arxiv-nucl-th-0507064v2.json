@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-nucl-th-0507064v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "INTRODUCTION\nMatter composed of neutrons and protons exhibits\nremarkable properties.\nCold neutron matter is close\nto a scaling regime for densities n ≲1/10 n0, where\nn0 = 0.16 fm−3 denotes nuclear saturation density. In\nthis regime, thermodynamic properties of neutron mat-\nter scale only with the density, and for the energy per\nparticle E/N one has approximately [1, 2]\nE\nN ≈0.5\n\u0012 E\nN\n\u0013\nfree\n= 0.5 3(3π2)2/3\n10m\nn2/3 ,\n(1)\nwhere m is the nucleon mass. In contrast, below satura-\ntion density, the energy per particle of symmetric nuclear\nmatter is independent of the density E/A ≈−16 MeV,\nand nucle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:nucl-th/0507064v2  17 May 2006\nThe Virial Equation of State of Low-Density Neutron Matter\nC.J. Horowitz∗and A. Schwenk†\nNuclear Theory Center and Department of Physics, Indiana University, Bloomington, IN 47408\nWe present a model-independent description of low-density neutron matter based on the virial\nexpansion.\nThe virial equation of state provides a benchmark for all nuclear equations of state\nat densities and temperatures where the interparticle separation is large compared to the thermal\nwavelength. We calculate the second virial coeﬃcient directly from the nucleon-nucleon scatterin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virial Equation of State",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-virial-equation-of-state.md",
+      "narrative": null,
+      "content": "neutron matter approaches this unitary limit.\nThere are many theoretical approaches to low-density\nneutron matter. Recently, the equation of state of neu-\ntron matter at zero temperature has been calculated us-\ning an eﬀective ﬁeld theory for large scattering length\nand large eﬀective range [2].\nThis provides a model-\nindependent description of neutron matter for densities\nwhere the interparticle separation is comparable to the\neﬀective range. The eﬀective ﬁeld theory calculation is\nparticularly transparent, since the couplings are ﬁtted\ndirectly to the scattering length and the eﬀective range",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-results.md",
+      "narrative": null,
+      "content": "[]{#results label=\"results\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virial Coefficients",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-31-virial-coefficients.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\begin{center}\n\\includegraphics[scale=0.36,clip=]{NN_phases_neut.eps}\n\\caption{(Color online) The total phase shift $\\delta^{\\text{tot}}(E)$ \nversus laboratory energy $E$ obtained from including successively higher \npartial waves.}\n\\label{Fig1}\n\\end{center}\n\\end{figure}\n\n\nWe first calculate the second virial coefficient $b_n$. We use the \n$T=1$ $np$ \nphase shifts obtained\nfrom the Nijmegen partial wave analysis~\\cite{nnphases}. This\nneglects the small charge dependences in nuclear interactions. We have\nincluded all partial waves with $L \\leqslant 6$ and the resulting total\nto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pressure",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-32-pressure.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\begin{center}\n\\includegraphics[scale=0.36,clip=]{pressure_neut+err.eps}\n\\caption{(Color online) The pressure $P$ versus density $n$ \nfor $T=10$, $16$ and $20 \\mev$. The dotted error bands for the \nvirial equation of state are based on an estimate of a neglected \nthird virial coefficient $b^{(3)}_n = \\pm b_n/2$. Note that a \nnegative $b_n^{(3)}$ increases the pressure. Also shown are \nthe FHNC results of Friedman and Pandharipande (crosses)~\\cite{FP}. \nThe circles indicate where the fugacity is $z =0.5$, and the error\nbands are shown for $z \\leqslant 1$. For this density rang",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scaling and Energy",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-33-scaling-and-energy.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\begin{center}\n\\includegraphics[scale=0.36,clip=]{pressure_neut_scaling.eps}\n\\caption{(Color online) The pressure $P$ versus density $n$\ncalculated for $T=1$, $4$, $8$ and $20 \\mev$ and scaled to a \ntemperature of $T'=4 \\mev$ (for details see text). The lower\ncurves are results for the scaled pressures obtained with a \nvirial coefficient calculated only from the S-wave scattering length\n$a_{np}$. The latter curves have been shifted for better readability.\nThe circles indicate where the fugacity is $z =0.5$, and for this\ndensity range, the fugacity is $z<0.87$.}\n\\label{Fig3}\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entropy and Free Energy",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-34-entropy-and-free-energy.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\begin{center}\n\\includegraphics[scale=0.36,clip=]{entropy_neut.eps}\n\\caption{(Color online) The entropy per particle $S/N$ \nversus density $n$ for $T=10$, $16$ and $20 \\mev$.\nAlso shown are the FHNC results of Friedman and Pandharipande\n(crosses)~\\cite{FP}. The circles indicate where the fugacity is $z =0.5$.}\n\\label{Fig5}\n\\end{center}\n\\end{figure}\n\n\nWe present our virial results for the entropy per particle in\nFig.~\\ref{Fig5} for temperatures $T=10$, $16$ and $20 \\mev$. \nThe FHNC results are again in very good agreement with\nthe model-independent virial equation of state, wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-4-conclusions.md",
+      "narrative": null,
+      "content": "[]{#conclusions label=\"conclusions\"}\n\nWe have presented the virial equation of state of low-density neutron matter. The virial expansion provides a systematic way to include strong interactions with a well-defined range of validity. The resulting virial equation of state has a simple parametric form and is thermodynamically consistent. We have calculated the second virial coefficient directly from the NN scattering phase shifts. Therefore, the virial equation of state is model-independent and sets a benchmark for all nuclear equations of state at low densities.\n\nWe have found that the second v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-acknowledgments.md",
+      "narrative": null,
+      "content": "This work is supported by the US Department of En-\nergy under Grant No.\nDE–FG02–87ER40365 and the\nNational Science Foundation under Grant No.\nPHY–\n0244822.\n[1] J. Carlson, J. Morales, V.R. Pandharipande and D.G.\nRavenhall, Phys. Rev. C68 (2003) 025802.\n[2] A. Schwenk and C.J. Pethick, Phys. Rev. Lett. 95 (2005)\n160401.\n[3] C.J. Horowitz and A. Schwenk, nucl-th/0507033.\n[4] M. Costantinit, A. Ianni and F. Visanni, Phys. Rev. D70\n(2004) 043006.\n[5] C. Lunardini and A.Y. Smirnov, Astropart. Phys. 21\n(2004) 703.\n[6] A. Gardestig and D.R. Phillips, Phys. Rev. C73 (2006)\n014002.\n[7] The neutron-prot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

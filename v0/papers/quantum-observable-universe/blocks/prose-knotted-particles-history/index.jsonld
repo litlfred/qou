@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-knotted-particles-history",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:knotted-particles-history",
+  "kind": "prose",
+  "cites": [
+    "references/helmholtz1858",
+    "references/thomson1867vortexatoms",
+    "references/maxwell1873treatise2",
+    "references/tait1877knots",
+    "references/jones1985",
+    "references/kauffman1987",
+    "references/kragh2002vortexatom",
+    "references/silver2006knotorigins",
+    "references/przytycki2007knothistory",
+    "references/moffatt1969",
+    "references/witten1989",
+    "references/faddeevniemi1997",
+    "references/kleckner2013",
+    "references/arxiv-1302.0342v1",
+    "references/avrin-2012",
+    "references/finkelstein2007",
+    "references/finkelstein2008",
+    "references/bilson-thompson2005",
+    "references/bilsonthompson2007",
+    "references/bilson-thompson-hackett-kauffman2009"
+  ],
+  "text": "knotted-particles-history.md",
+  "provenance": "authored"
+}

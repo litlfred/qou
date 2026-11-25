@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0903.2472v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+      "dcterms:creator": [
+        "Tudor Dimofte, 1 Sergei Gukov,1,2 Jonatan Lenells,3",
+        "Don Zagier4, 5"
+      ],
+      "dcterms:issued": "D:20180530",
+      "dcterms:identifier": "https://arxiv.org/abs/0903.2472",
+      "dcterms:abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
+      "dcterms:source": "library/arxiv-0903.2472v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0903.2472v1"
+    }
+  ]
+}

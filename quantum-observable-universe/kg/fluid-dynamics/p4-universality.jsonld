@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-universality",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:universality",
+  "kind": "proposition",
+  "title": "Universality of the critical exponent: dependence on $\\chi(A)$ alone",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-critical-exponent",
+    "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli"
+  ],
+  "tags": [
+    "universality",
+    "critical-exponent",
+    "euler-characteristic",
+    "phase-transition",
+    "renormalization"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.p4_universality",
+  "text": "p4-universality.md",
+  "provenance": "authored"
+}

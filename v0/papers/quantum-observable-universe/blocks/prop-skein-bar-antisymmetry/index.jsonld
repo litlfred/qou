@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-skein-bar-antisymmetry",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skein-bar-antisymmetry",
+  "kind": "proposition",
+  "title": "Skein relation $L_+ - L_- = (q - q^{-1})\\,L_0$ is bar-antisymmetric",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "tags": [
+    "skein-relation",
+    "hecke-algebra",
+    "bar-involution",
+    "skew-symmetry",
+    "crossing",
+    "jones-polynomial"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.SkeinBarAntisymmetry.skein_bar_antisymmetry",
+  "text": "skein-bar-antisymmetry.md",
+  "leanSource": "skein-bar-antisymmetry.lean",
+  "provenance": "authored"
+}

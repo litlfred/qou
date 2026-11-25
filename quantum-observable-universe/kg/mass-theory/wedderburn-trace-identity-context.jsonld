@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-wedderburn-trace-identity-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:wedderburn-trace-identity-context",
+  "kind": "remark",
+  "title": "Descent-decomposition role, scale-versus-weight distinction, and classical limit of the Wedderburn trace identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity",
+  "tags": [
+    "wedderburn",
+    "markov-trace",
+    "descent",
+    "classical-limit"
+  ],
+  "text": "wedderburn-trace-identity-context.md",
+  "provenance": "authored"
+}

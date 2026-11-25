@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1003.4485v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "An Invitation to Higher Gauge Theory",
+  "contains": [
+    "library/arxiv-1003.4485v2/sections/sec-front-matter",
+    "library/arxiv-1003.4485v2/sections/sec-000",
+    "library/arxiv-1003.4485v2/sections/sec-001",
+    "library/arxiv-1003.4485v2/sections/sec-002",
+    "library/arxiv-1003.4485v2/sections/sec-003",
+    "library/arxiv-1003.4485v2/sections/sec-004",
+    "library/arxiv-1003.4485v2/sections/sec-005",
+    "library/arxiv-1003.4485v2/sections/sec-006",
+    "library/arxiv-1003.4485v2/sections/sec-007",
+    "library/arxiv-1003.4485v2/sections/sec-008",
+    "library/arxiv-1003.4485v2/sections/sec-009",
+    "library/arxiv-1003.4485v2/sections/sec-010",
+    "library/arxiv-1003.4485v2/sections/sec-011",
+    "library/arxiv-1003.4485v2/sections/sec-012",
+    "library/arxiv-1003.4485v2/sections/sec-013",
+    "library/arxiv-1003.4485v2/sections/sec-014",
+    "library/arxiv-1003.4485v2/sections/sec-015",
+    "library/arxiv-1003.4485v2/sections/sec-016",
+    "library/arxiv-1003.4485v2/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles.\n\n**An Invitation to Higher Gauge Theory**\n\n*John C. Baez and John Huerta*\n\n60 pp, 19 sections.\n\n**Abstract.** In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles. Just as ordinary gauge theory involves a gauge group, this generalization in- volves a gauge ‘2-group’. We focus on 6 examples. First, every abelian Lie group gives a Lie 2-group; the case of U(1) yields the theory of U(1) gerbes, which play an important role in string theory and multisymplec- tic geometry. Second, every group representation gives a Lie 2-group; the representation of the Lorentz group on 4d Minkowski spacetime gives the Poincar´e 2-group, which leads to a spin foam model for Minkowski space- time. Third, taking the adjoint representation of any Lie group on its own Lie algebra gives a ‘tangent 2-group’, which serves as a gauge 2-group in 4d BF theory, which has topological gravity as a special case.\n\n**Outline.** Front matter; 1 Introduction; 2 Categories and Connections; 3 2-Categories and 2-Connections; 3.1 2-Categories; 3.2 Path 2-Groupoids; 3.3 2-Groups; 3.4 2-Connections; 4 Examples and Applications; 4.1 Shifted Abelian Groups; 4.2 The Poincaré 2-Group; 4.3 Tangent 2-Groups; 4.4 Inner Automorphism 2-Groups; 4.5 Automorphism 2-Groups; 4.6 String 2-Groups; 5 Further Topics; 5.1 Gauge Transformations; 5.2 Curvature",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1003.4485&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1003.4485v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1003.4485v2.pdf",
+    "source_sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
+    "pages": 60,
+    "arxiv": {
+      "id": "1003.4485",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "18 Feb 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

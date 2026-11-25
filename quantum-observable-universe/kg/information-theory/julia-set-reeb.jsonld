@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-julia-set-reeb",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:julia-set-reeb",
+  "kind": "remark",
+  "title": "Julia set of the Reeb flow on the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-reeb-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-reeb-exceptional-divisor",
+  "tags": [
+    "julia-set",
+    "reeb",
+    "exceptional-divisor",
+    "golden-ratio",
+    "hausdorff-dimension",
+    "information-theory",
+    "photon"
+  ],
+  "text": "julia-set-reeb.md",
+  "provenance": "authored"
+}

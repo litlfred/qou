@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links",
+      "dcterms:creator": [
+        "FOR, AND INTEGRAL FORMULAS"
+      ],
+      "dcterms:issued": "D:20210808",
+      "bibo:doi": "10.21711/231766362008/rmc3411",
+      "dcterms:identifier": "https://doi.org/10.21711/231766362008/rmc3411",
+      "dcterms:abstract": "Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such link L we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p, q and r of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-defined modulo twice the greatest common divisor of p, q and r.",
+      "dcterms:source": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest.jsonld",
+      "dcterms:hasVersion": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
+    }
+  ]
+}

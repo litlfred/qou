@@ -1,0 +1,1056 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "bq28-r2r7",
+  "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "I.. INTRODUCTION",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "II.. GROUP THEORY REFRESHER",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-ii-group-theory-refresher"
+    },
+    {
+      "level": 1,
+      "title": "III.. BUILDING THE CHARACTER",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-iii-building-the-character"
+    },
+    {
+      "level": 1,
+      "title": "IV.. CLASSICAL MPS ALGORITHMS",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-iv-classical-mps-algorithms"
+    },
+    {
+      "level": 1,
+      "title": "V.. QUANTUM ALGORITHM",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-v-quantum-algorithm"
+    },
+    {
+      "level": 1,
+      "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-vi-classical-complexity-of-sampling"
+    },
+    {
+      "level": 2,
+      "title": "A.. Granularity and quantum advantage",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-a-granularity-and-quantum-advantage"
+    },
+    {
+      "level": 2,
+      "title": "B.. Row and column sampling",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-b-row-and-column-sampling"
+    },
+    {
+      "level": 1,
+      "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-vii-classical-mps-algorithm-for-kostka-numbers"
+    },
+    {
+      "level": 1,
+      "title": ". ACKNOWLEDGMENTS",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": ". DATA AVAILABILITY",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-data-availability"
+    },
+    {
+      "level": 1,
+      "title": ". REFERENCES",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mps",
+          "heading": false
+        },
+        {
+          "term": "ibm",
+          "heading": false
+        },
+        {
+          "term": "sampling",
+          "heading": false
+        },
+        {
+          "term": "urbana",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        },
+        {
+          "term": "illinois",
+          "heading": false
+        },
+        {
+          "term": "simulation",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        }
+      ],
+      "extract": "PRX QUANTUM 6, 030323 (2025) Classical and Quantum Algorithms for Characters of the Symmetric Group Sergey Bravyi,1 David Gosset,2,3,* Vojtech Havlicek ,1 and Louis Schatzki 4 1IBM Quantum, IBM T.J. Watson Research Center, Yorktown Heights, New York 10598, USA 2Department of Combinatorics and Optimization and Institute for Quantum Computing, University of Waterloo 3Perimeter Institute for Theoretical Physics",
+      "extractCut": true,
+      "blocks": [
+        "library/bq28-r2r7/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": null,
+      "title": "I.. INTRODUCTION",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mps algorithm",
+          "heading": false
+        },
+        {
+          "term": "prakash mapping",
+          "heading": false
+        },
+        {
+          "term": "quan tum",
+          "heading": false
+        },
+        {
+          "term": "sampling problems",
+          "heading": false
+        },
+        {
+          "term": "fermionic modes",
+          "heading": false
+        },
+        {
+          "term": "tum spin",
+          "heading": false
+        },
+        {
+          "term": "granular",
+          "heading": false
+        },
+        {
+          "term": "quantum circuit",
+          "heading": false
+        }
+      ],
+      "extract": "Representation theory provides a powerful set of tools for analyzing systems invariant under the action of some group such as a molecular symmetry group in chemistry or a gauge group in quantum ﬁeld theory. For example, the eigenvalue spectrum of a quantum system is usually com- puted by decomposing the Hilbert space into a direct sum of irreducible representations of the symmetry group and diagonalizing each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-ii-group-theory-refresher",
+      "number": null,
+      "title": "II.. GROUP THEORY REFRESHER",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep resentation",
+          "heading": false
+        },
+        {
+          "term": "irreps",
+          "heading": false
+        },
+        {
+          "term": "ambient hilbert",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite group",
+          "heading": false
+        },
+        {
+          "term": "group homomorphism",
+          "heading": false
+        },
+        {
+          "term": "labeled",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that G is a ﬁnite group. A d-dimensional rep- resentation of G is a group homomorphism from G to the unitary group U(d). A representation is irreducible if the ambient Hilbert space Cd contains no proper subspace invariant under the action of all group elements. It is stan- dard to identify irreps that diﬀer only by a basis change in the ambient Hilbert space. Then any ﬁnite group has a ﬁnite set of irreps.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-iii-building-the-character",
+      "number": null,
+      "title": "III.. BUILDING THE CHARACTER",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jνj",
+          "heading": false
+        },
+        {
+          "term": "bit strings",
+          "heading": false
+        },
+        {
+          "term": "superposition",
+          "heading": false
+        },
+        {
+          "term": "qubit",
+          "heading": false
+        },
+        {
+          "term": "encoding",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": true
+        }
+      ],
+      "extract": "We begin by reproducing the result of Crichigno and Prakash [13] that shows how to build a quantum spin chain encoding all characters χλ(g) of a given permutation g ∈Sn. Let λ = (λ1, . . . , λm) and ν = (ν1, . . . , νc(g)) be the par- titions of n describing the irrep λ and the conjugacy class of g. Consider a complex vector z ∈Cm and a polynomial Pν(z) = c(g) \u0003 j =1 \u0005 m \u0002 k=1 z νj k \u0006 . (1) The Frobenius character",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-iv-classical-mps-algorithms",
+      "number": null,
+      "title": "IV.. CLASSICAL MPS ALGORITHMS",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1083,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mps",
+          "heading": true
+        },
+        {
+          "term": "mps bond",
+          "heading": false
+        },
+        {
+          "term": "mps compression",
+          "heading": false
+        },
+        {
+          "term": "mps tensors",
+          "heading": false
+        },
+        {
+          "term": "mps algorithm",
+          "heading": false
+        },
+        {
+          "term": "maximum mps",
+          "heading": false
+        },
+        {
+          "term": "mps amplitude",
+          "heading": false
+        },
+        {
+          "term": "ﬁnal mps",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a permutation g ∈Sn. Let c(g) be the number of cycles in g and νj be the length of the j th cycle. Our strategy is to represent the 2n-qubit state |ψg⟩= c(g) \u0003 j =1 Jνj |1n0n⟩ (15) by an MPS. To this end, we need the following lemma. Lemma 2. The current operator Jℓis an MPO with bond dimension ℓ+ 2. Proof. Figure 1 deﬁnes a tensor T ∈C2 ⊗Cℓ+2 ⊗ Cℓ+2 ⊗C2, where C2 represents physical indices and Cℓ+2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-v-quantum-algorithm",
+      "number": null,
+      "title": "V.. QUANTUM ALGORITHM",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reversible circuit",
+          "heading": false
+        },
+        {
+          "term": "row sampling",
+          "heading": false
+        },
+        {
+          "term": "circuit computing",
+          "heading": false
+        },
+        {
+          "term": "quantum circuit",
+          "heading": false
+        },
+        {
+          "term": "column sampling",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst register",
+          "heading": false
+        },
+        {
+          "term": "measuring state",
+          "heading": false
+        },
+        {
+          "term": "shifts boxes",
+          "heading": false
+        }
+      ],
+      "extract": "Here we describe a quantum circuit of size poly(n) that prepares a state |ψg⟩/∥ψg∥; see Eq. (15). Our circuit applies the quantum Fourier transform over group Sn to a certain subset state constructed in the following lemma. Lemma 3. Let g ∈Sn be a permutation and Cg ⊆Sn be the conjugacy class of g. There exists a quantum circuit of size poly(n) that prepares a subset state |Cg⟩= 1 \u0011|Cg| \u0002 h∈Cg |h⟩. (22) We defer the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-vi-classical-complexity-of-sampling",
+      "number": null,
+      "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sampling",
+          "heading": true
+        },
+        {
+          "term": "acter",
+          "heading": false
+        },
+        {
+          "term": "computers",
+          "heading": false
+        }
+      ],
+      "extract": "In Sec. V we showed that a quantum computer can eﬃciently sample from probability distributions (28) and (29) associated with a given column or row of the char- acter table of the symmetric group Sn. Are these sampling problems hard for classical computers?",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-a-granularity-and-quantum-advantage",
+      "number": null,
+      "title": "A.. Granularity and quantum advantage",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "granularity",
+          "heading": true
+        },
+        {
+          "term": "average-case hardness",
+          "heading": false
+        },
+        {
+          "term": "bppnp algorithm",
+          "heading": false
+        },
+        {
+          "term": "average-case hard",
+          "heading": false
+        },
+        {
+          "term": "sampling problem",
+          "heading": false
+        },
+        {
+          "term": "bpp algorithm",
+          "heading": false
+        },
+        {
+          "term": "exists bppnp",
+          "heading": false
+        },
+        {
+          "term": "dummy algorithm",
+          "heading": false
+        }
+      ],
+      "extract": "Let us ﬁrst consider a general setting in which a sam- pling problem is deﬁned by a probability distribution P over some ﬁnite set \u0007 called the sample space and an error tolerance ϵ. We consider inﬁnite families of prob- lem instances labeled by an integer n called the problem size. It is required that each point x ∈\u0007 can be speci- ﬁed by poly(n) bits. Likewise, the probability distribution P should admit a succinct",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-b-row-and-column-sampling",
+      "number": null,
+      "title": "B.. Row and column sampling",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 1021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row sampling",
+          "heading": true
+        },
+        {
+          "term": "mps algorithm",
+          "heading": false
+        },
+        {
+          "term": "sampling problem",
+          "heading": false
+        },
+        {
+          "term": "average-case hardness",
+          "heading": false
+        },
+        {
+          "term": "granular whenever",
+          "heading": false
+        },
+        {
+          "term": "ran dom",
+          "heading": false
+        },
+        {
+          "term": "random permutation",
+          "heading": false
+        },
+        {
+          "term": "sample space",
+          "heading": false
+        }
+      ],
+      "extract": "We have already seen that the column sampling prob- lem obeys properties (1) and (2). Furthermore, computing the probability Pλ(g) = |χλ(g)|2/n! is #P-hard in the worst case [4]. Moreover, this problem is not contained in #P unless the polynomial hierarchy collapses to the second level [4]. However, it seems unlikely that average-case hardness property (3) holds for this problem. In particu- lar, the following lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-vii-classical-mps-algorithm-for-kostka-numbers",
+      "number": null,
+      "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mps algorithm",
+          "heading": true
+        },
+        {
+          "term": "kostka numbers",
+          "heading": true
+        },
+        {
+          "term": "mpo constructions",
+          "heading": false
+        },
+        {
+          "term": "polynomial ˆhk",
+          "heading": false
+        },
+        {
+          "term": "bond dimension",
+          "heading": false
+        },
+        {
+          "term": "ˆxi",
+          "heading": false
+        },
+        {
+          "term": "virtual indices",
+          "heading": false
+        },
+        {
+          "term": "spin chains",
+          "heading": false
+        }
+      ],
+      "extract": "KOSTKA NUMBERS In Sec. IV we showed that Crichigno and Prakash’s con- nection between quantum spin chains and characters of the symmetric group can be leveraged in an MPS algorithm for characters. In Ref. [13] they also proved mappings between spin chains and Kostka numbers and Littlewood- Richardson coeﬃcients. Using similar ideas to characters, we show that this correspondence can be used to give an MPS algorithm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgments",
+      "number": null,
+      "title": ". ACKNOWLEDGMENTS",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "universi",
+          "heading": false
+        },
+        {
+          "term": "colleges",
+          "heading": false
+        }
+      ],
+      "extract": "ACKNOWLEDGMENTS This research was supported in part by the Perime- ter Institute for Theoretical Physics. Research at the Perimeter Institute is supported by the Government of Canada through the Department of Innovation, Science, and Economic Development, and by the Province of Ontario through the Ministry of Colleges and Universi- ties. D.G. acknowledges support as a Canadian Institute for Advanced Research fellow,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-data-availability",
+      "number": null,
+      "title": ". DATA AVAILABILITY",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 1142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sergey bravyi",
+          "heading": false
+        },
+        {
+          "term": "dorit aharonov",
+          "heading": false
+        },
+        {
+          "term": "annual acm",
+          "heading": false
+        },
+        {
+          "term": "greta panova",
+          "heading": false
+        },
+        {
+          "term": "vojtech havlicek",
+          "heading": false
+        },
+        {
+          "term": "acm symposium",
+          "heading": false
+        },
+        {
+          "term": "computing machinery",
+          "heading": false
+        },
+        {
+          "term": "python package",
+          "heading": false
+        }
+      ],
+      "extract": "DATA AVAILABILITY The data supporting the ﬁndings of this article and a Python package to implement the MPS algorithms for characters and Kostka numbers are openly available [33]. [1] Daniel Grier and Luke Schaeﬀer, in Proceedings of the 52nd Annual ACM SIGACT Symposium on Theory of Com- puting (Association for Computing Machinery, Chicago, USA, 2020), p. 875. [2] David Lawrence Johnson, Minimal permutation",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mps algorithm",
+      "heading": true
+    },
+    {
+      "term": "mps bond",
+      "heading": true
+    },
+    {
+      "term": "mps compression",
+      "heading": false
+    },
+    {
+      "term": "sampling problem",
+      "heading": false
+    },
+    {
+      "term": "mps amplitudes",
+      "heading": false
+    },
+    {
+      "term": "ﬁnal mps",
+      "heading": false
+    },
+    {
+      "term": "maximum mps",
+      "heading": true
+    },
+    {
+      "term": "quantum algorithm",
+      "heading": true
+    },
+    {
+      "term": "row sampling",
+      "heading": true
+    },
+    {
+      "term": "mps tensors",
+      "heading": false
+    },
+    {
+      "term": "corresponding mps",
+      "heading": false
+    },
+    {
+      "term": "column sampling",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "MPO representation of the current operator Jℓ. Horizontal lines represent virtual indices of dimension ℓ+ 2. We",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Runtime for computing the characters χλ(g) for permutations g ∈Sn composed of n/2 length-2 cycles and all irreps",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Comparison between the observed maximum MPS bond dimension for the problem instances reported in Fig. 2 (blue) and the upper bound (17) (green)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "MPO representation of the noncommuting complete symmetric polynomial ˆhk. Horizontal lines represent virtual",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Runtime for computing Kostka numbers Kλ,μ. Each runtime is, ﬁxing a random μ, for computing the set {Kλ,μ}λ",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-3",
+      "file": "images/img-p006-3.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-4",
+      "file": "images/img-p006-4.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-5",
+      "file": "images/img-p006-5.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-6",
+      "file": "images/img-p006-6.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-14",
+      "file": "images/img-p006-14.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-15",
+      "file": "images/img-p006-15.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-16",
+      "file": "images/img-p006-16.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-18",
+      "file": "images/img-p006-18.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-19",
+      "file": "images/img-p006-19.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-20",
+      "file": "images/img-p006-20.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-21",
+      "file": "images/img-p006-21.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 16
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/bq28-r2r7"
+  }
+}

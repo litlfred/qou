@@ -1,0 +1,347 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1910.12400v2",
+  "title": "Measurement of e + e − Momentum and Angular Distributions from Linearly Polarized Photon Collisions",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "STAR",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-star"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": "6",
+      "words": 4096,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exclusive breit-wheeler",
+          "heading": false
+        },
+        {
+          "term": "breit-wheeler process",
+          "heading": false
+        },
+        {
+          "term": "photon collisions",
+          "heading": false
+        },
+        {
+          "term": "virtual photons",
+          "heading": false
+        },
+        {
+          "term": "texas university",
+          "heading": false
+        },
+        {
+          "term": "polarized photons",
+          "heading": false
+        },
+        {
+          "term": "california university",
+          "heading": false
+        },
+        {
+          "term": "real photons",
+          "heading": false
+        }
+      ],
+      "extract": "Measurement of e+e−Momentum and Angular Distributions from Linearly Polarized Photon Collisions J. Adam,6 L. Adamczyk,2 J. R. Adams,39 J. K. Adkins,30 G. Agakishiev,28 M. M. Aggarwal,40 Z. Ahammed,59 I. Alekseev,3, 35 D. M. Anderson,53 A. Aparin,28 E. C. Aschenauer,6 M. U. Ashraf,11 F. G. Atetalla,29 A. Attri,40 G. S. Averichev,28 V. Bairathi,22 K. Barish,10 A. Behera,51 R. Bellwied,20 A. Bhasin,27 J. Bielcik,14 J.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1910.12400v2/blocks/prose-sec-front-matter",
+        "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-01",
+        "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-02",
+        "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-03",
+        "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-04"
+      ]
+    },
+    {
+      "id": "sec-000-star",
+      "number": null,
+      "title": "STAR",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 2915,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy-ion collisions",
+          "heading": false
+        },
+        {
+          "term": "ion collisions",
+          "heading": false
+        },
+        {
+          "term": "coulomb collisions",
+          "heading": false
+        },
+        {
+          "term": "nuclear collisions",
+          "heading": false
+        },
+        {
+          "term": "vacuum birefringence",
+          "heading": false
+        },
+        {
+          "term": "snn gev",
+          "heading": false
+        },
+        {
+          "term": "atlas collaboration",
+          "heading": false
+        },
+        {
+          "term": "star collaboration",
+          "heading": false
+        }
+      ],
+      "extract": "< 0.1 GeV < 0.76 GeV, P ee 0.45 < M / 20) π counts / ( 1200 Au+Au UPC 0.65 × Au+Au 60-80% Au+Au UPC 0.65 × Au+Au 60-80% ) φ ∆ cos 4 φ ∆ 4 + A φ ∆ cos 2 φ ∆ 2 ( 1 + A × Fit: C σ 1 ± 1000 800 600 400 200 : − e + e → γ γ Polarized Without Polarization : QED SuperChic STARLight 0 0 2 π π e φ − ee φ = φ ∆ FIG. 4. The ∆φ = φee −φe distribution from UPCs and 60 −80% central collisions for Mee > 0.45 GeV with calcula- tions",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "exclusive breit-wheeler",
+      "heading": true
+    },
+    {
+      "term": "photon collisions",
+      "heading": false
+    },
+    {
+      "term": "breit-wheeler cross",
+      "heading": false
+    },
+    {
+      "term": "heavy-ion collisions",
+      "heading": false
+    },
+    {
+      "term": "breit-wheeler process",
+      "heading": true
+    },
+    {
+      "term": "nuclear collisions",
+      "heading": false
+    },
+    {
+      "term": "coulomb collisions",
+      "heading": false
+    },
+    {
+      "term": "ion collisions",
+      "heading": false
+    },
+    {
+      "term": "central collisions",
+      "heading": true
+    },
+    {
+      "term": "polarized photons",
+      "heading": false
+    },
+    {
+      "term": "snn gev",
+      "heading": false
+    },
+    {
+      "term": "photon polarization",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A Feynman diagram for the exclusive Breit-Wheeler process and the related Light-by-Light scattering process illustrating the unique angular distribution predicted for each process due to the initial photon polarization",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The χ2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "All observables are reported for kinematic acceptance within P⊥< 0.1 GeV with the Mee limits noted in each panel",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The ∆φ = φee −φe distribution from UPCs and 60 −80% central collisions for Mee > 0.45 GeV with calculations from QED [44], STARLight [35] and from the publicly available SuperChic3 code [8]",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 21
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1910.12400v2"
+  }
+}

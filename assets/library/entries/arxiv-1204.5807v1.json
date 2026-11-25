@@ -1,0 +1,405 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1204.5807v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "[]{#sect:intro label=\"sect:intro\"}\n\nIt follows from its very definition that the category $\\operatorname{Rep}H$ of finite-dimensional representations of a Hopf algebra $H$ is a tensor category. There is a less obvious way to go from Hopf algebras with some extra structure (called spherical Hopf algebras) to tensor categories. Spherical Hopf algebras and the procedure to obtain a tensor category from them were introduced by Barrett and Westbury [@BaW-adv; @BaW-tams], inspired by previous work by Reshetikhin and Turaev [@RT-cmp; @RT-inv], in turn motivated to give a mathematical foundation to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1204.5807v1  [math.QA]  26 Apr 2012\nFROM HOPF ALGEBRAS TO TENSOR CATEGORIES\nN. ANDRUSKIEWITSCH, I. ANGIONO, A. GARCÍA IGLESIAS,\nB. TORRECILLAS, C. VAY\nAbstract. This is a survey on spherical Hopf algebras. We give criteria\nto decide when a Hopf algebra is spherical and collect examples. We\ndiscuss tilting modules as a mean to obtain a fusion subcategory of the\nnon-degenerate quotient of the category of representations of a suitable\nHopf algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-11-notations.md",
+      "narrative": null,
+      "content": "Let $\\Bbbk$ be an algebraically closed field of characteristic 0 and $\\Bbbk^{\\times}$ its multiplicative group of units. All vector spaces, algebras, unadorned Hom and ${\\otimes}$ are over $\\Bbbk$. By convention, ${\\mathbb N}= \\{1, 2, \\dots\\}$ and ${\\mathbb N}_0 = {\\mathbb N}\\cup \\{0\\}$.\n\nLet $G$ be a finite group. We denote by $Z(G)$ the center of $G$ and by $\\operatorname{Irr}G$ the set of isomorphism classes of irreducible representations of $G$. If $g\\in G$, we denote by $C_{G}(g)$ the centralizer of $g$ in $G$. The conjugacy class of $g$ is denoted by ${\\mathcal O}_g$ or by ${\\mathcal O}^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor categories",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-12-tensor-categories.md",
+      "narrative": null,
+      "content": "We refer to [@BK; @McL; @EGNO; @ENO; @EO] for basic results and terminology on tensor and monoidal categories. A monoidal category is one with tensor product and unit, denoted ${\\bf 1}$; thus $\\operatorname{End}({\\bf 1})$ is a monoid. A monoidal category is rigid when it has right and left dualities. In this article, we understand by tensor category a monoidal rigid abelian $\\Bbbk$-linear category, with $\\operatorname{End}({\\bf 1})\\simeq \\Bbbk$. A particular important class of tensor categories is that of fusion categories, that is semisimple tensor categories with finite set of isomorphism cl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nichols algebras",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-14-nichols-algebras.md",
+      "narrative": null,
+      "content": "[]{#subsec:nichols label=\"subsec:nichols\"}\n\nLet $H$ be a Hopf algebra. We shall say *braided* Hopf algebra for a Hopf algebra in the braided tensor category ${}^H_H\\mathcal{YD}$. Given $V\\in {}^{H}_{H}\\mathcal{YD}$, the *Nichols algebra* of $V$ is the braided graded Hopf algebra $\\mathcal{B}(V)=\\oplus_{n\\geq 0}\\mathcal{B}^n(V)$ satisfying the following conditions:\n\n-   $\\mathcal{B}^0(V)\\simeq\\Bbbk$, $\\mathcal{B}^1(V)\\simeq V$ as Yetter-Drinfeld modules over $H$;\n\n-   $\\mathcal{B}^1(V)={\\mathcal P}\\big(\\mathcal{B}(V)\\big)$, the set of primitives elements of $\\mathcal{B}(V)$;\n\n-   $\\mathcal{B}(V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical Hopf algebras",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-2-spherical-hopf-algebras.md",
+      "narrative": null,
+      "content": "[]{#sec:sph-hopf label=\"sec:sph-hopf\"}\n\n## Spherical Hopf algebras\n\nThe notion of *spherical Hopf algebra* was introduced in [@BaW-adv]: this is a pair $(H, \\omega)$, where $H$ is a Hopf algebra and $\\omega\\in G(H)$ such that $$\\begin{aligned}\n\\label{eq:omega-square-antipode}\n{\\mathcal S}^2(x) &= \\omega x \\omega^{-1}, & x&\\in H, \\\\\n\\label{eq:omega-traza}\n\\operatorname{tr}_V(\\vartheta \\omega) &= \\operatorname{tr}_V(\\vartheta \\omega^{-1}),  & \\vartheta &\\in \\operatorname{End}_H(V), &&\n\\end{aligned}$$ for all $V\\in \\operatorname{Rep}H$. We say that $\\omega\\in G(H)$ is a *pivot* when it satisfies",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical Categories",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-22-spherical-categories.md",
+      "narrative": null,
+      "content": "A monoidal rigid category ${\\mathcal C}$ is pivotal when $X^{**}$ is monoidally isomorphic to $X$ [@FY-adv]; this implies that the left and right dualities coincide. For instance, if $H$ is a Hopf algebra and $\\omega\\in G(H)$ is a pivot, then $\\operatorname{Rep}H$ is pivotal [@BaW-adv Proposition 3.6]. In a pivotal category ${\\mathcal C}$, there are left and right traces $\\operatorname{tr}_L, \\operatorname{tr}_R: \\operatorname{End}(X) \\to \\operatorname{End}({\\bf 1})$, for any $X\\in {\\mathcal C}$. If ${\\mathcal C}= \\operatorname{Rep}H$ and $V\\in \\operatorname{Rep}H$, then these traces are defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum dimensions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-23-quantum-dimensions.md",
+      "narrative": null,
+      "content": "[]{#subsec:qdim label=\"subsec:qdim\"}\n\nThe *quantum dimension* of an object $X$ in a spherical category ${\\mathcal C}$ is given by $\\operatorname{qdim}V := \\operatorname{tr}_L(\\operatorname{id}_X)$. In particular, if $H$ is a spherical Hopf algebra, then $$\\begin{aligned}\n\\label{eq:qdim-sph-Ha}\n\\operatorname{qdim}M &= \\operatorname{tr}_M(\\omega) = \\operatorname{tr}_M(\\omega^{-1}), & M&\\in \\operatorname{Rep}H.\n\\end{aligned}$$\n\n### \n\nIf ${\\mathcal C}$ is a spherical tensor category, then $\\operatorname{End}({\\bf 1})=\\Bbbk$, and the function $V\\mapsto \\operatorname{qdim}V$ is a character of the Gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-degenerate quotient",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-24-the-non-degenerate-quotient.md",
+      "narrative": null,
+      "content": "[]{#subsec:nondeg-quotient label=\"subsec:nondeg-quotient\"}\n\nLet ${\\mathcal C}$ be an additive $\\Bbbk$-linear spherical category with $\\operatorname{End}({\\bf 1})\\simeq \\Bbbk$. For any two objects $X, Y$ in ${\\mathcal C}$ there is a bilinear pairing $$\\begin{aligned}\n\\Theta: \\operatorname{Hom}_{{\\mathcal C}}(X, Y) \\times \\operatorname{Hom}_{{\\mathcal C}}(Y, X) &\\to \\Bbbk, & \\Theta (fg) &= \\operatorname{tr}_L(fg) = \\operatorname{tr}_R(gf);\n\\end{aligned}$$ ${\\mathcal C}$ is non-degenerate if $\\Theta$ is, for any $X,Y$. By [@BaW-adv Theorem 2.9], see also [@T-ijm], any additive spherical category",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pointed or copointed pivotal Hopf algebras",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-25-pointed-or-copointed-pivotal-hopf-algebras.md",
+      "narrative": null,
+      "content": "[]{#subsec:pointed-gral label=\"subsec:pointed-gral\"}\n\n### \n\nLet $H$ be a pointed Hopf algebra and set $G = G(H)$. We assume that $H$ is generated by group-like and skew-primitive elements. For $H$ finite-dimensional, it was conjectured that this is always the case [@AS-adv Conjecture 1.4]. So far this is true in all known cases, see [@Ang3; @AGI] and references therein. As explained in Subsection [\\[subsec:hopf\\]](#subsec:hopf){reference-type=\"ref\" reference=\"subsec:hopf\"}, there exist $g_1, \\dots, g_{\\theta}\\in G$ and $\\rho_i \\in \\operatorname{Irr}C_G(g)$, $1 \\le i \\le \\theta$, such that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical Hopf algebras with involutory pivot",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-26-spherical-hopf-algebras-with-involutory-pivot.md",
+      "narrative": null,
+      "content": "[]{#sec:inv-pivot label=\"sec:inv-pivot\"}\n\nThere are many examples of Hopf algebras with involutory pivot.\n\n### \n\nLet $H$ be a finite-dimensional pointed Hopf algebra with $G(H)$ abelian. Then its infinitesimal braiding $V$ is a braided vector space of diagonal type with matrix $(q_{ij})_{1\\le i,j \\le \\theta}$, $\\theta = \\dim V$. Assume that $q_{ii} = -1$, $1\\le i \\le \\theta$. The list of all braided vector spaces with this property and such that the associated Nichols algebra is finite-dimensional can be easily extracted from the main result of [@He-adv]. We apply Lemma [\\[lema:pointed-omega-s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon Hopf algebras",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-27-ribbon-hopf-algebras.md",
+      "narrative": null,
+      "content": "[]{#subsec:ribbon label=\"subsec:ribbon\"} This is a distinguished class of spherical Hopf algebras. Let $(H, {\\mathcal R})$ be a quasi-triangular Hopf algebra [@Dr1]. We denote the universal matrix as ${\\mathcal R}= {\\mathcal R}^{\\left( 1 \\right)} {\\otimes}{\\mathcal R}^{\\left( 2 \\right)}$. The *Drinfeld element* is $$\\label{eqn:drinfeldelement}\n{\\mathbf u}= {\\mathcal S}({\\mathcal R}^{\\left( 2 \\right)}){\\mathcal R}^{\\left( 1 \\right)}.$$ Let $Q = {\\mathcal R}_{21}{\\mathcal R}$. The Drinfeld element is invertible and satisfies $$\\begin{aligned}\n\\label{eq:drinfeld-element1}\n\\Delta({\\mathbf u}) = Q^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cospherical Hopf algebras",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-28-cospherical-hopf-algebras.md",
+      "narrative": null,
+      "content": "It is natural to look at the notions that insure that the category of comodules of a Hopf algebra is pivotal or spherical. This was done in [@Bi; @o].\n\n::: Def\n[]{#def:cospherical-ha label=\"def:cospherical-ha\"} A *cospherical* Hopf algebra is a pair $(H, t)$, where $H$ is a Hopf algebra and $t\\in \\operatorname{Alg}(H, \\Bbbk)$ is such that $$\\begin{aligned}\n\\label{eq:copivot-square-antipode}\n{\\mathcal S}^2(x_{\\left( 1 \\right)})t(x_{\\left( 2 \\right)})&= t(x_{\\left( 1 \\right)})x_{\\left( 2 \\right)},  & x&\\in H, \\\\\n\\label{eq:copivot-traza}\n\\operatorname{tr}_V((\\operatorname{id}_V\\otimes t)\\rho_V \\v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tilting modules",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-3-tilting-modules.md",
+      "narrative": null,
+      "content": "[]{#sec:titling2 label=\"sec:titling2\"}\n\nThe concept of tilting modules appeared in [@BB1] and was extended to quasi-hereditary algebras in [@Ri]. Observe that finite-dimensional quasi-hereditary Hopf algebras are semisimple. Indeed, quasi-hereditary algebras have finite global dimension, but a finite-dimensional Hopf algebra is a Frobenius algebra, hence it has global dimension 0 or infinite. Instead, the context where the recipe of tilting modules works is a suitable category of modules, or comodules, of an infinite dimensional Hopf algebra. The relevant examples are: algebraic semisimple gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasi-hereditary algebras and tilting modules",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-31-quasi-hereditary-algebras-and-tilting-modules.md",
+      "narrative": null,
+      "content": "[]{#sec-app:tilting label=\"sec-app:tilting\"}\n\nTilting modules work for our purpose because they span a completely reducible category already in $\\operatorname{Rep}H$. We think it is worthwhile to recall the main definitions of the theory of (partial) tilting modules over quasi-hereditary algebras, due to Ringel [@Ri]. A full exposition is available in [@Do2].\n\nLet $A$ be an artin algebra. Consider a family $\\Theta = (\\Theta(1), \\dots, \\Theta(n))$ of $A$-modules such that $$\\begin{aligned}\n\\label{eq:ext-0}\n\\operatorname{Ext}^1_A(\\Theta(j), \\Theta(i)) &= 0, & j&\\geq i.\n\\end{aligned}$$ We denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Induced and produced",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-32-induced-and-produced.md",
+      "narrative": null,
+      "content": "denote by ResA\nB the restriction functor from the category A- Mod to B- Mod.\n3.2.1. The induced and produced modules of T ∈B- Mod are\nIndA\nB T = A⊗BT,\nProA\nB T = HomB(A, T).\n(3.2)\nThese are equipped with morphisms of B-modules ι : T֒ →IndA\nB T, given\nby ι(t) = 1 ⊗t for t ∈T, and π : ProA\nB T ։ T, given by π(f) = f(1) for\nf ∈HomB(A, T). The following properties are well-known.\n(a) HomB(T, ResA\nB M) ≃HomA(IndA\nB T, M); that is, induction is left\nadjoint to restriction.\n(b) For every S ∈Irr A there exists T ∈Irr B such that S is a quotient\nof IndA\nB T.\n(c) HomB(ResA\nB N, T) ≃HomA(N, ProA\nB T); th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-dimensional Nichols algebras of diagonal type",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-33-finite-dimensional-nichols-algebras-of-diagon.md",
+      "narrative": null,
+      "content": "tinue the analysis started in Subsection 1.4.\n3.3.1. Let θ ∈N and I = {1, . . . , θ}. Let Λ be a free abelian group with basis\nα1, . . . , αθ. Let ≤be the partial order in Λ deﬁned by\nλ ≤µ ⇐⇒µ −λ ∈Λ+ :=\nX\ni∈I\nN0αi.\n(3.9)\nLet us ﬁx a Z-linear injective map E : Λ →R such that E(αi) > 0 for all\ni ∈I. This induces a total order on Λ by λ ⪯µ ⇐⇒E(λ) ≤E(µ); clearly,\nλ ≤µ implies λ ⪯µ.\nGiven a Λ-graded vector space M = ⊕λ∈ΛMλ, the λ’s such that Mλ̸ = 0\nare called the weights of M; the set of all its weights is denoted Π(M).\n3.3.2. Let (qij)i,j∈I be a symmetric matrix with entries in k×. Let (V, c) be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The small quantum groups",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-34-the-small-quantum-groups.md",
+      "narrative": null,
+      "content": "We consider finite-dimensional pointed Hopf algebras attached to the matrix $(q_{ij})_{i,j\\in {\\mathbb I}}$, analogues of the small quantum groups or Frobenius-Lusztig kernels. We need the following additional data: A finite abelian group $\\varGamma$, provided with elements $g_1, \\dots, g_\\theta \\in \\varGamma$ and characters $\\chi_1, \\dots, \\chi_\\theta \\in \\operatorname{Hom}_{{\\mathbb Z}}(\\varGamma, \\Bbbk^{\\times})$ such that $$\\begin{aligned}\n\\label{eq:cartan-datum-finite}\n\\chi_j(g_i) &= q_{ij}, &  &i,j\\in {\\mathbb I}.\n\\end{aligned}$$ We define a structure of Yetter-Drinfeld module over $\\Bbb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized quantum groups",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-35-generalized-quantum-groups.md",
+      "narrative": null,
+      "content": "The next idea is to replace $\\varGamma$ by an infinite abelian group $Q$, perhaps free of finite rank, and the Nichols algebras $\\mathcal{B}(V)$, $\\mathcal{B}(W)$ by the distinguished pre-Nichols algebras $\\widehat{\\mathcal{B}}(V)$, $\\widehat{\\mathcal{B}}(W)$. Namely, we assume that $Q$ is provided with elements $K_1, \\dots, K_\\theta$ and characters $\\Upsilon_1, \\dots, \\Upsilon_\\theta \\in \\operatorname{Hom}_{{\\mathbb Z}}(Q, \\Bbbk^{\\times})$ such that $\\Upsilon_j(K_i) = q_{ij}$, $i,j\\in {\\mathbb I}$. Then $W\\oplus V$ is also a Yetter-Drinfeld module over $\\Bbbk Q$ by $v_i \\in V_{K_i}^{\\Upsilon_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1204.5807v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-019-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements. We thank Olivier Mathieu for a course on tilting\nmodules given at the University of Córdoba in November 2009; and also Alain\nBruguières, Flavio Coelho, Juan Cuadra, Michael Müger, Dmitri Nikschych,\nClaus Ringel and Yorck Sommerhäuser for very useful conversations.\nReferences\n[A1]\nAndersen, H. H. Tensor products of quantized tilting modules. Comm. Math.\nPhys. 149 (1992), 149–159.\n[A2]\n, Quotient categories of modular representations. Gyoja, Akihiko (ed.) et\nal., Representation theory of algebraic groups and quantum groups. Boston, MA:\nBirkhäuser. Progress in Mathematics 284 (2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

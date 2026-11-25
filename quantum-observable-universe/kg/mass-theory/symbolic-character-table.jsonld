@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-symbolic-character-table",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:symbolic-character-table",
+  "kind": "proposition",
+  "title": "Symbolic character table $\\chi_\\lambda(\\sigma)$ for all partitions $H_2$--$H_7$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "tags": [
+    "character",
+    "seminormal",
+    "symbolic",
+    "partition",
+    "self-conjugate"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.symbolic_character_table",
+  "text": "symbolic-character-table.md",
+  "provenance": "authored"
+}

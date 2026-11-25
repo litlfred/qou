@@ -1,0 +1,1095 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "maximal-hoermander-q-var-revised-v03",
+  "title": "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "R-boundedness",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-r-boundedness"
+    },
+    {
+      "level": 2,
+      "title": "UMD lattices",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-umd-lattices"
+    },
+    {
+      "level": 2,
+      "title": "Abstract Hörmander functional calculus",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-abstract-hörmander-functional-calculus"
+    },
+    {
+      "level": 1,
+      "title": "q-variational inequalities",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-q-variational-inequalities"
+    },
+    {
+      "level": 1,
+      "title": "q-variation for spherical and euclidean ball means in Rd",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-q-variation-for-spherical-and-euclidean-ball-mea"
+    },
+    {
+      "level": 1,
+      "title": "Schrödinger and wave maximal estimates",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-schrödinger-and-wave-maximal-estimates"
+    },
+    {
+      "level": 1,
+      "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-pointwise-continuity-of-time-paths-for-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Examples and concluding remarks",
+      "number": null,
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-examples-and-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 599,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-variational hörmander",
+          "heading": false
+        },
+        {
+          "term": "luc deleaval",
+          "heading": false
+        },
+        {
+          "term": "christoph kriegler",
+          "heading": false
+        },
+        {
+          "term": "hörmander functional",
+          "heading": false
+        },
+        {
+          "term": "wave maximal",
+          "heading": false
+        },
+        {
+          "term": "maximal estimates",
+          "heading": false
+        },
+        {
+          "term": "functional calculus",
+          "heading": false
+        },
+        {
+          "term": "hal",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: hal-04526930 https://hal.science/hal-04526930v1 Submitted on 29 Mar 2024 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive ouverte pluridisciplinaire HAL, est des-",
+      "extractCut": true,
+      "blocks": [
+        "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-front-matter",
+        "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-1",
+        "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-2",
+        "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "umd banach",
+          "heading": false
+        },
+        {
+          "term": "contractive semigroup",
+          "heading": false
+        },
+        {
+          "term": "umd lattice",
+          "heading": false
+        },
+        {
+          "term": "hörmander calculus",
+          "heading": false
+        },
+        {
+          "term": "carleson problem",
+          "heading": false
+        },
+        {
+          "term": "spectral multipliers",
+          "heading": false
+        },
+        {
+          "term": "euclidean laplacian",
+          "heading": false
+        },
+        {
+          "term": "schrödinger operators",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction This article is a follow-up of our work [DK] concerning maximal estimates for Hörmander spectral multipliers on Lp spaces and UMD lattices. Let us recall the setting in the context of the euclidean Laplacian which provides in fact the leading example for what follows. The operator −∆(deﬁned e.g. as Fourier multiplier with symbol |ξ|2) is a self-adjoint operator on L2(Rd). As such, it has a functional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-r-boundedness",
+      "number": null,
+      "title": "R-boundedness",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ita",
+          "heading": false
+        },
+        {
+          "term": "q-variation",
+          "heading": false
+        },
+        {
+          "term": "hörmander",
+          "heading": false
+        },
+        {
+          "term": "maximal estimate",
+          "heading": false
+        },
+        {
+          "term": "multiplier",
+          "heading": false
+        },
+        {
+          "term": "calculus",
+          "heading": false
+        },
+        {
+          "term": "article",
+          "heading": false
+        }
+      ],
+      "extract": "as type and cotype. Moreover, we introduce the (restricted) necessary notions of Hörmander functional calculus and the class Λβ 2,2(R+) that appears in the results above. Then in Section 3, we state and prove our main result on ﬁnite q-variation of t 7→m(tA)f(x, ω). Our method also allows under the same assumptions to show square function estimates of a family m1, . . . , mn of spectral multipliers satisfying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-preliminaries",
+      "number": null,
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "independent rademacher",
+          "heading": false
+        },
+        {
+          "term": "rademacher variables",
+          "heading": false
+        },
+        {
+          "term": "kxn",
+          "heading": false
+        },
+        {
+          "term": "r-bounded",
+          "heading": false
+        },
+        {
+          "term": "supt",
+          "heading": false
+        },
+        {
+          "term": "functional calculus",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries In this section, we recall the notions on Banach space geometry and functional calculus that we need in this paper. For the Hörmander functional calculus, we only need few facts that we will use as an abstract blackbox in the remainder of the article. 2.1 R-boundedness Deﬁnition 2.1 Let X, Y be Banach spaces. We recall that a family τ ⊆B(X, Y ) is called R-bounded, if for a sequence (εk)k of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-umd-lattices",
+      "number": null,
+      "title": "UMD lattices",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "umd lattices",
+          "heading": true
+        },
+        {
+          "term": "banach lattices",
+          "heading": false
+        },
+        {
+          "term": "banach space",
+          "heading": false
+        },
+        {
+          "term": "idh",
+          "heading": false
+        },
+        {
+          "term": "cotype",
+          "heading": false
+        },
+        {
+          "term": "rdf",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "idz",
+          "heading": false
+        }
+      ],
+      "extract": "UMD lattices In this article, UMD lattices, i.e. Banach lattices which enjoy the UMD property, play a prevalent role. For a general treatment of Banach lattices and their geometric properties, we refer the reader to [LTz, Chapter 1]. We recall now deﬁnitions and some useful properties. A Banach space Y is called UMD space if the Hilbert transform H : Lp(R) →Lp(R), Hf(x) = lim ϵ→0 Z |x−y|⩾ϵ 1 x −y f(y) dy extends to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-abstract-hörmander-functional-calculus",
+      "number": null,
+      "title": "Abstract Hörmander functional calculus",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functional calculus",
+          "heading": true
+        },
+        {
+          "term": "hörmander functional",
+          "heading": true
+        },
+        {
+          "term": "sectorial operator",
+          "heading": false
+        },
+        {
+          "term": "dyadic partition",
+          "heading": false
+        },
+        {
+          "term": "calculus core",
+          "heading": false
+        },
+        {
+          "term": "krw",
+          "heading": false
+        },
+        {
+          "term": "r-bounded",
+          "heading": false
+        },
+        {
+          "term": "spectral multipliers",
+          "heading": false
+        }
+      ],
+      "extract": "Abstract Hörmander functional calculus We recall the necessary background on functional calculus that we will treat in this article. Let −A be a generator of an analytic semigroup (Tz)z∈Σδ on some Banach space X, that is, δ ∈(0, π 2 ], Σδ = {z ∈C\\{0} : | arg z| < δ}, the mapping z 7→Tz from Σδ to B(X) is analytic, Tz+w = TzTw for any z, w ∈Σδ, and limz∈Σδ′, |z|→0 Tzx = x for any x ∈X and any strict subsector Σδ′ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-q-variational-inequalities",
+      "number": null,
+      "title": "q-variational inequalities",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-variational inequalities",
+          "heading": true
+        },
+        {
+          "term": "spectral multipliers",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite q-variation",
+          "heading": false
+        },
+        {
+          "term": "umd lattice",
+          "heading": false
+        },
+        {
+          "term": "lmx",
+          "heading": false
+        },
+        {
+          "term": "blcs",
+          "heading": false
+        },
+        {
+          "term": "atk",
+          "heading": false
+        },
+        {
+          "term": "hörmander",
+          "heading": false
+        }
+      ],
+      "extract": "q-variational inequalities In this section, we consider q-variational inequalities for Hörmander spectral multipliers. The proofs are based on [DK, Section 3]. We refer to the recent papers [LMX], [HoMa2] for q- variational inequalities for the particular spectral multiplier exp(−tA) for contractive regular analytic semigroups. Deﬁnition 3.1 Let q ∈[2, ∞). For a function a : R+ →C, we deﬁne the q-variation ∥a∥V q =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-q-variation-for-spherical-and-euclidean-ball-mea",
+      "number": null,
+      "title": "q-variation for spherical and euclidean ball means in Rd",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-variation",
+          "heading": true
+        },
+        {
+          "term": "atf",
+          "heading": false
+        },
+        {
+          "term": "dyd",
+          "heading": false
+        },
+        {
+          "term": "umd lattice",
+          "heading": false
+        },
+        {
+          "term": "concavity exponents",
+          "heading": false
+        },
+        {
+          "term": "ball means",
+          "heading": true
+        },
+        {
+          "term": "mtf",
+          "heading": false
+        },
+        {
+          "term": "cotype",
+          "heading": false
+        }
+      ],
+      "extract": "q-variation for spherical and euclidean ball means in Rd In this section, we consider for t > 0, d ∈N, 1 < p < ∞and f ∈S(Rd) a Schwartz function, Atf(x) = 1 |Sd| Z Sd f(x −ty)dσ(y), (4.1) Mtf(x) = 1 |Bd| Z Bd f(x −ty)dy = 1 |B(x, t)| Z B(x,t) f(y)dy, (4.2) where Sd (resp. Bd) denotes the unit sphere (resp. the unit euclidean ball) ⊆Rd, |Sd| (resp. |Bd|) denotes the surface measure of Sd (resp. the Lebesgue measure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-schrödinger-and-wave-maximal-estimates",
+      "number": null,
+      "title": "Schrödinger and wave maximal estimates",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sup supp",
+          "heading": false
+        },
+        {
+          "term": "maximal estimates",
+          "heading": true
+        },
+        {
+          "term": "hörmander calculus",
+          "heading": false
+        },
+        {
+          "term": "umd lattice",
+          "heading": false
+        },
+        {
+          "term": "ita",
+          "heading": false
+        },
+        {
+          "term": "obtain sup",
+          "heading": false
+        },
+        {
+          "term": "schrödinger",
+          "heading": true
+        },
+        {
+          "term": "carleson problem",
+          "heading": false
+        }
+      ],
+      "extract": "Schrödinger and wave maximal estimates In the next two sections, we will prove maximal estimates for the operator exp(itA), where A is as before a semigroup generator acting on Lp(Y ) with a Hörmander functional calculus. As an application, we shall obtain pointwise continuity of the function t 7→exp(itA)f(x, ω) with f belonging to the domain of a fractional power of A inside Lp(Y ). The guiding example is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-pointwise-continuity-of-time-paths-for-abstract",
+      "number": null,
+      "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abstract schrödinger",
+          "heading": true
+        },
+        {
+          "term": "ita",
+          "heading": false
+        },
+        {
+          "term": "contractive semigroup",
+          "heading": false
+        },
+        {
+          "term": "pointwise",
+          "heading": true
+        },
+        {
+          "term": "continuity",
+          "heading": true
+        },
+        {
+          "term": "convergence exp",
+          "heading": false
+        },
+        {
+          "term": "carleson problem",
+          "heading": false
+        },
+        {
+          "term": "contraction semigroup",
+          "heading": false
+        }
+      ],
+      "extract": "Pointwise continuity of time paths for abstract Schrödinger and wave equations The goal of this section is to provide an application of Corollary 5.3 to the continuity in time t ∈R 7→u(t, x, ω) = exp(itA)f(x, ω) of the solution of the abstract Schrödinger equation ( −i ∂ ∂tu(t, x, ω) = Axu(t, x, ω) u(0, x, ω) = f(x, ω). This requires naturally the inital data f to be suﬃciently smooth, i.e. belonging to a fractional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-examples-and-concluding-remarks",
+      "number": null,
+      "title": "Examples and concluding remarks",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 947,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hörmander calculus",
+          "heading": false
+        },
+        {
+          "term": "concluding remarks",
+          "heading": true
+        },
+        {
+          "term": "umd lattices",
+          "heading": false
+        },
+        {
+          "term": "hörmander functional",
+          "heading": false
+        },
+        {
+          "term": "gaussian estimates",
+          "heading": false
+        },
+        {
+          "term": "maximal estimates",
+          "heading": false
+        },
+        {
+          "term": "generalised gaussian",
+          "heading": false
+        },
+        {
+          "term": "spectral multiplier",
+          "heading": false
+        }
+      ],
+      "extract": "Examples and concluding remarks In this section, we shortly discuss examples of 0-sectorial operators A and of UMD lattices Y , to illustrate our main results from Sections 3 and 5. We will then end with some concluding remarks and open questions related to the present article. Hörmander calculus for (generalised) Gaussian estimates For the ﬁrst result below, we refer to [DK, Deﬁnitions 4.2 and 4.3] for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schrödinger maximal",
+          "heading": false
+        },
+        {
+          "term": "fourier multipliers",
+          "heading": false
+        },
+        {
+          "term": "schrödinger operators",
+          "heading": false
+        },
+        {
+          "term": "spectral multipliers",
+          "heading": false
+        },
+        {
+          "term": "schrödinger equations",
+          "heading": false
+        },
+        {
+          "term": "fourier anal",
+          "heading": false
+        },
+        {
+          "term": "schrödinger means",
+          "heading": false
+        },
+        {
+          "term": "strichartz estimates",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgments The authors acknowledge ﬁnancial support through the research program ANR-18-CE40-0021 (project HASCON). They also respectively acknowledge ﬁnancial support through the research program ANR-18-CE40-0035 (project REPKA) and ANR-17-CE40-0021 (project FRONT). 35 References [Al79] D. Aldous. Unconditional bases and martingales in Lp(F). Math. Proc. Cambridge Philos. Soc. 85 (1979), no. 1, 117–123. 8",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hörmander calculus",
+      "heading": true
+    },
+    {
+      "term": "umd banach",
+      "heading": false
+    },
+    {
+      "term": "hörmander spectral",
+      "heading": false
+    },
+    {
+      "term": "q-variational hörmander",
+      "heading": false
+    },
+    {
+      "term": "umd lattice",
+      "heading": false
+    },
+    {
+      "term": "hörmander functional",
+      "heading": true
+    },
+    {
+      "term": "hörmander type",
+      "heading": false
+    },
+    {
+      "term": "spectral multiplier",
+      "heading": false
+    },
+    {
+      "term": "abstract hörmander",
+      "heading": true
+    },
+    {
+      "term": "hörmander class",
+      "heading": false
+    },
+    {
+      "term": "q-variation sup",
+      "heading": false
+    },
+    {
+      "term": "schrödinger maximal",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/maximal-hoermander-q-var-revised-v03"
+  }
+}

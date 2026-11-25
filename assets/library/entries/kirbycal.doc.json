@@ -1,0 +1,1173 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kirbycal",
+  "title": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "ixi",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "imbedded",
+          "heading": false
+        },
+        {
+          "term": "circles",
+          "heading": false
+        },
+        {
+          "term": "normal vector",
+          "heading": false
+        },
+        {
+          "term": "unknotted",
+          "heading": false
+        },
+        {
+          "term": "off",
+          "heading": false
+        }
+      ],
+      "extract": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby* University of California, Department of Mathematics, Berkeley, Ca. 94720, USA Dedicated to Arnold Kas w 1. A framed link L in S 3 is a finite, disjoint collection of smoothly imbedded circles, 71 ..... 7r, knotted or unknotted, with an integer ~i (the framing) associated with each circle. If F",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oml",
+          "heading": false
+        },
+        {
+          "term": "craggs",
+          "heading": false
+        },
+        {
+          "term": "full twists",
+          "heading": false
+        },
+        {
+          "term": "framed links",
+          "heading": false
+        },
+        {
+          "term": "orientations",
+          "heading": false
+        },
+        {
+          "term": "intersection form",
+          "heading": false
+        },
+        {
+          "term": "handle",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        }
+      ],
+      "extract": "36 R. Kirby This corresponds in ML to sliding thej th handle over the ith handle via the band b. To compute the framing tkj of 7j, it is helpful to study the intersection form on Hz(ML; Z). If we orient each 7k, they determine a basis F for H2(ML; Z), denoted by ~x .... ,7,. The matrix AL of the intersection form with respect to F has the framings ~k down the diagonal and a~j is the algebraic linking number of the",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-002",
+        "library/kirbycal/blocks/ex-page-002-01",
+        "library/kirbycal/blocks/thm-page-002-02"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "index belonging",
+          "heading": false
+        },
+        {
+          "term": "descending disk",
+          "heading": false
+        },
+        {
+          "term": "morse function",
+          "heading": false
+        },
+        {
+          "term": "connected sums",
+          "heading": false
+        },
+        {
+          "term": "handle",
+          "heading": false
+        },
+        {
+          "term": "diffeomorphic",
+          "heading": false
+        },
+        {
+          "term": "adding",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 By adding copies of -t-CP 2 to ML,, we can arrange that index (N)=0 (this changes L 1 by~l; we still call the result L1). N bounds an oriented, connected 5- manifold W 5. 8Mr., x [1,2] T |2 f 1 Fig. 2.1 Let f: W 5 ~ [1, 23 be a Morse function for which f- 1(i) =ML,, i= 1, 2, and f[ ~ML, x [1, 2] is projection. As is true in any dimension, we may cancel the critical points of index",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "graphic",
+          "heading": false
+        },
+        {
+          "term": "morse functions",
+          "heading": false
+        },
+        {
+          "term": "birth",
+          "heading": false
+        },
+        {
+          "term": "cerf",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "38 R. Kirby We want to compare, for f0 and fl, the descending 2-manifolds of the critical points intersected with 8 M, i.e., the framed links which determine M. To do this, we will find a nice arc connecting fo and fl in the space o~ of DIFF functions, of M to [-K, K], a procedure pioneered by Cerf. Following [Cerf] or [H-W], o~ has a natural stratification o~ = ~o u ~-~ w o ~2 u ..., where o ~ is a stratum of",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graphic",
+          "heading": false
+        },
+        {
+          "term": "cerf",
+          "heading": false
+        },
+        {
+          "term": "rel",
+          "heading": false
+        },
+        {
+          "term": "dovetail",
+          "heading": false
+        }
+      ],
+      "extract": "A Calcuius for Framed Links in S 3 39 where the integers give the index of the critical point. (The lower left birth point is the graphic of the example above.) Our first step is to cancel the critical points of index 0 and 4 by deforming f in ~- rel fo and fa. For this we need some lemmas from [Cerf]. Triangle Lemma [Cerf, p. 78]: Consider the graphics in Figure 3.2. Fig. 3.2 We may change f, rel f0 and fl, so that",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trajectories principle",
+          "heading": false
+        },
+        {
+          "term": "independent trajectories",
+          "heading": false
+        },
+        {
+          "term": "vertical lines",
+          "heading": false
+        },
+        {
+          "term": "descending manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "40 R. Kirby Independent Trajectories Principle [Cerf, p. 255], [H-W, p. 64]: Given two parts of a graphic, suppose that the ascending and descending manifolds of the critical points of one part do not intersect those from the other part. Then we may deform one part relative to the other. Examples. If i 1 <i2 then we can deform as in Figure 3.5. i 2 i2 i 1 J Fig. 3.5 We can add one more feature to the graphic, a",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graphic",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "neighborhood",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 41 i 1 i 2 i 1 12 i 1 -/- Fig. 3.7 Proposition. The following change in graphics is possible: T +1 _~- i+1 I i Fig. 3.8 Proof. This is well known, but not stated explicitly in [Cerf] or [H-W]. The (i + 1)- handle geometrically cancels the/-handle in a neighborhood of the birth point. By easy deformation, we can move the vertical line left under this neighborhood, and then cancel",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-007",
+        "library/kirbycal/blocks/prop-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "i-iii",
+          "heading": false
+        },
+        {
+          "term": "beak",
+          "heading": false
+        }
+      ],
+      "extract": "42 R. Kirby Fig. 3.9 It is easy to arrange the critical points of index 0 as in Figure 3.9, and then to move the critical points of index 1 above those of index 0, by the sequence of graphics in Figure 3.10. 1 Beak lemma 1 indepen- dent t raj ect - ones prmciple 1 0 Fig. 3.10 Step 2. We remove the innermost critical point of index zero. o 0 2 O 1 1 1 III Fig. 3.11. I-III",
+      "extractCut": false,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index critical",
+          "heading": false
+        },
+        {
+          "term": "innermost index",
+          "heading": false
+        },
+        {
+          "term": "dovetail lemma",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "triangle lemma",
+          "heading": false
+        },
+        {
+          "term": "handles",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 43 2 IV 0 VI Fig. 3.11. IV-VII VII In Figure 3.11, I represents the typical difficulty in removing the innermost index zero critical point; we cannot immediately apply the dovetail lemma. In II we introduce a cancelling pair of 1 and 2-handles. This can be done so that the descending 1-manifold of the new critical point of index 1 intersects the ascending 4-manifold of the critical",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal bundle",
+          "heading": false
+        },
+        {
+          "term": "trivialization",
+          "heading": false
+        },
+        {
+          "term": "connected sum",
+          "heading": false
+        },
+        {
+          "term": "outermost",
+          "heading": false
+        }
+      ],
+      "extract": "44 R. Kirby We restrict attention to the smallest value of t for which two index 1 critical points have equal values. As noted in the above proposition, we may remove the vertical arrow and then interchange the two beaks as in Figure 3.13. Fig. 3.13 By iterating this simple process we may change Figure 3.12 to Figure 3.14. Fig. 3.14 Now move the outermost birth and death points just off the edges. Fi~ 3.15 Let D t",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descending two-manifold",
+          "heading": false
+        },
+        {
+          "term": "descending manifolds",
+          "heading": false
+        },
+        {
+          "term": "index critical",
+          "heading": false
+        },
+        {
+          "term": "cancelling pair",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "isotopy carrying",
+          "heading": false
+        },
+        {
+          "term": "manifolds intersect",
+          "heading": false
+        },
+        {
+          "term": "adding pair",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S a 45 function on M t #~ S 2 x S 2 will have the critical point of index 1 replaced by a critical point of index 2. Note that the same comments hold if we are dealing with the ascending one- manifold of an index 3 critical point, as we shall be after applying Figures 3.12-15, inverted, to the index 3 critical points. This surgery must be continuous with respect to t, which means that",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oml",
+          "heading": false
+        },
+        {
+          "term": "hand twist",
+          "heading": false
+        },
+        {
+          "term": "box denotes",
+          "heading": false
+        },
+        {
+          "term": "full right",
+          "heading": false
+        },
+        {
+          "term": "k-move",
+          "heading": false
+        }
+      ],
+      "extract": "46 R. Kirby Fig. 3.16 w 4. Given L 1 and L2, suppose we guess that OML, = t3Mt~. Knowing from the theorem that we would then have L 1 -y L2, it becomes plausible to try to prove that t3ML, = OML: by proving that L1 \"~ L2- When trying to show two framed links are ~- equivalent, it is cumbersome to use only (91 and (92; some shortcuts are needed. Here is the principle one, called a K-move in [-F-R]. Proposition 1A. If",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertical strand",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        },
+        {
+          "term": "push",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 47 Note that Propositions 1A equivalence in Figure 4.2. n-1 -1 and 1B imply and for one vertical strand the O- I n+l +1 Fig. 4.2 Proof We prove only Proposition 1A in the following special case, Figure 4.3. Fig. 4.3 We push off two copies of 70 and add one to each vertical strand ((~02) and then eliminate 70 ((90, see Figure 4.4. (One can verify that this does not depend on the",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "48",
+      "labelEnd": "48",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "substract",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "anytime",
+          "heading": false
+        },
+        {
+          "term": "pes",
+          "heading": false
+        },
+        {
+          "term": "add",
+          "heading": false
+        }
+      ],
+      "extract": "48 R. Kirby Proposition 2. Given a link L, then we may add to (or substract from) L a copy of either ~ or q~ (separated from L by an imbedded 2-sphere) without changing the ~-equivalence class of L. This corresponds to either of the connected sums \"~ 2 ML # S 2 x S 2 or ML # S 2 x S . Proof For S 2 ~S 2, we proceed as follows. -1 +1 L (~, O 0 ~2 -- -- Lu b Lu Fig. 4.5 For S 2 x $2: Prop. 1A 0 L--~LU ~, LU ~, LU Fig.",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-014",
+        "library/kirbycal/blocks/prop-page-014-01",
+        "library/kirbycal/blocks/cor-page-014-02",
+        "library/kirbycal/blocks/prop-page-014-03"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bounds homology",
+          "heading": false
+        },
+        {
+          "term": "homology ball",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "unimodular",
+          "heading": false
+        },
+        {
+          "term": "milnor",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 49 An interesting example involves the homology sphere 1;(2, 7, 13). If L is the left hand (2, 7) torus knot with - 1 framing, see Figure 4.9, then 0M L has fundamental Fig. 4,9 group {x, y lx 13 = y7 = (x 3 y)2}. Also, if we consider the complex variety V given by the solution in C 3 of zl 3+ z~ + z~ = 0 and intersect V with the unit 5-sphere in C 3, then we get a 3-manifold 2;(2,",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "50",
+      "labelEnd": "50",
+      "words": 52,
+      "summary": null,
+      "keywords": [],
+      "extract": "5O Remove the -1 by Proposition 1A: @@@ ....... 2 -1 -2 Fig. 4.12 R. Kirby Again, remove - 1: + 3 -1 -2 -2 .... Fig. 4.13 We iterate, obtaining Figure 4.14: -1 -2 -4 Fig. 4.14 Do the same thing with the -2 circle hanging down: 0 -2 Fi2. 4.15",
+      "extractCut": false,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 61,
+      "summary": null,
+      "keywords": [],
+      "extract": "A Calculus for Framed Links in S 3 51 Several applications of Propositions 1A or 1B give: 0 -1 1 -3 1 2 1 3 2 1 3 1 -t 1 13~2~~~2~ 1 3 ~ 2 ~ ~ ~ ~ Fig. 4.16 Now remove five + 1 circles successively as in Figure 4.17. 2 2 1 1 1 11 2 2",
+      "extractCut": false,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-017"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 651,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "even link",
+          "heading": false
+        },
+        {
+          "term": "mli",
+          "heading": false
+        },
+        {
+          "term": "adding enough",
+          "heading": false
+        },
+        {
+          "term": "hopf circles",
+          "heading": false
+        },
+        {
+          "term": "curves intersect",
+          "heading": false
+        },
+        {
+          "term": "blowing",
+          "heading": false
+        },
+        {
+          "term": "calculus",
+          "heading": false
+        },
+        {
+          "term": "complex surface",
+          "heading": false
+        }
+      ],
+      "extract": "52 R. Kirby The variety V can be compactified at infinity by adding a complex curve with a cusp which is topologically just a 2-sphere imbedded with a non locally flat point which comes from a cone on the right-handed (2, 7) torus knot. We see this by changing the orientation of M L and adding it to Q. Note that - L 7 - A, where - L is the right hand (2, 7) torus knot with + 1 framing, and -A is the link in Figure",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-018",
+        "library/kirbycal/blocks/rem-page-018-01",
+        "library/kirbycal/blocks/rem-page-018-02"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-k",
+          "heading": false
+        },
+        {
+          "term": "imbedded",
+          "heading": false
+        },
+        {
+          "term": "zeeman",
+          "heading": false
+        },
+        {
+          "term": "calculus",
+          "heading": false
+        },
+        {
+          "term": "diffeomorphic",
+          "heading": false
+        },
+        {
+          "term": "pass",
+          "heading": false
+        },
+        {
+          "term": "handle",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 53 the answer is yes, for in w 2, N is almost parallelizable, so W can be spin, and then we can pass from ML, to M 4 by only connected summing with S 2 x S 2 and not S z ~ S 2 ([Wall], p. 147). The remainder of the proof goes through as in the non-even case. Remark 4. What happens to the calculus if we consider links in an arbitrary 3- manifold Y The Theorem continues to hold if",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-019",
+        "library/kirbycal/blocks/rem-page-019-01",
+        "library/kirbycal/blocks/rem-page-019-02"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcs passing",
+          "heading": false
+        },
+        {
+          "term": "spanning disk",
+          "heading": false
+        },
+        {
+          "term": "k-move",
+          "heading": false
+        },
+        {
+          "term": "rolfsen",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "passing through",
+          "heading": false
+        },
+        {
+          "term": "rourke",
+          "heading": false
+        },
+        {
+          "term": "fractions",
+          "heading": false
+        }
+      ],
+      "extract": "54 R. Kirby Akbulut and I have tried to find a homology 3-sphere with Rohlin (or #- invariant zero which does not bound a contractible manifold, or even a homology ball. We conjecture that the (2, 3, 11)-homology sphere does not. It is the link of the hypersurface x 2 + y3 + z 11 = 0 in C 3 (with fundamental group {a, b, c la 2 = b 3 = C 11 and a = b c2}), and is also described by the links in Figure 5.2. 2 Fig. 5.2",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-020",
+        "library/kirbycal/blocks/rem-page-020-01",
+        "library/kirbycal/blocks/rem-page-020-02"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kirby calculus",
+          "heading": false
+        },
+        {
+          "term": "mimeographed notes",
+          "heading": false
+        },
+        {
+          "term": "blowing",
+          "heading": false
+        },
+        {
+          "term": "mca",
+          "heading": false
+        },
+        {
+          "term": "akbulut",
+          "heading": false
+        },
+        {
+          "term": "rourke",
+          "heading": false
+        },
+        {
+          "term": "fenn",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        }
+      ],
+      "extract": "A Calculus for Framed Links in S 3 55 K- move ~'~+I o 2 ~ x,...~ n-I isotopy i sotopy~ -move @ Fig. 5.3 In general, we can make 7i unknotted with framing - i by a series of K-moves, \"blowing up\" circles to change crossings and unknot 71 (e-g-,X---~ ,'c~,- 1) and blowing up circles to make the framing - 1. We proceed as in Figure 5.3 and then reverse this process, \"blowing down\" the circles to restore ?g to its",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dunce",
+          "heading": false
+        },
+        {
+          "term": "husemoller",
+          "heading": false
+        },
+        {
+          "term": "lickorish",
+          "heading": false
+        },
+        {
+          "term": "robertello",
+          "heading": false
+        }
+      ],
+      "extract": "56 R. Kirby Lickorish, W.B.R.: A representation of orientable combinatorial 3-manifolds. Ann. Math. 76, 531-540 (1962) Lickorish, W.B.R.: Surgery on knots. Proc. A.M.S. 60, 296-298 (1977) Milnor, J.: On simply connected 4-manifolds. Syrup. Int. Top. Alg., Mexico 1958 Milnor, J., Husemoller, D.: Symmetric Bilinear Forms. New York: Springer-Verlag 1973 Robertello, R.: An invariant of knot cobordism. Comm. Pure Appl.",
+      "extractCut": true,
+      "blocks": [
+        "library/kirbycal/blocks/prose-page-022"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3.1",
+      "figure 3.2",
+      "figure 3.3",
+      "figure 3.4",
+      "figure 3.5",
+      "figure 3.6",
+      "figure 3.7",
+      "figure 3.8",
+      "figure 3.9",
+      "figure 3.10"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "index critical",
+      "heading": false
+    },
+    {
+      "term": "framed links",
+      "heading": false
+    },
+    {
+      "term": "kirby calculus",
+      "heading": false
+    },
+    {
+      "term": "critical points",
+      "heading": false
+    },
+    {
+      "term": "descending manifolds",
+      "heading": false
+    },
+    {
+      "term": "critical value",
+      "heading": false
+    },
+    {
+      "term": "zero framing",
+      "heading": false
+    },
+    {
+      "term": "innermost index",
+      "heading": false
+    },
+    {
+      "term": "index belonging",
+      "heading": false
+    },
+    {
+      "term": "graphic looks",
+      "heading": false
+    },
+    {
+      "term": "descending two-manifold",
+      "heading": false
+    },
+    {
+      "term": "ascending manifold",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "3.11",
+      "title": "I-III",
+      "page": 8,
+      "pageLabel": "42",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 22,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kirbycal"
+  }
+}

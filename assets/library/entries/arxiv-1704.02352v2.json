@@ -1,0 +1,899 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1704.02352v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random partitions…",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-11-random-partitions.md",
+      "narrative": null,
+      "content": "An *integer partition*, called also a *Young diagram*, is a weakly decreasing finite sequence $\\lambda=(\\lambda_1,\\dots,\\lambda_l)$ of positive integers $\\lambda_1\\geq \\cdots \\geq \\lambda_l>0$. We also say that $\\lambda$ is a partition of $|\\lambda|:=\\lambda_1+\\cdots+\\lambda_l$.\n\n*Random partitions* occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov--Witten and Seiberg--Witten theories, see the overview articles of Okounkov [@Okounkov2003] and Vershik [@VershikICM].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "…and random matrices",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12-and-random-matrices.md",
+      "narrative": null,
+      "content": "Certain random partitions can be regarded as discrete counterparts of some interesting ensembles of random matrices. We shall explore this link on a particular example of random matrices called *$\\beta$-ensembles* or *$\\beta$-log gases* [@Forrester], i.e. the probability distributions on $\\mathbb{R}^n$ with the density of the form $$p(x_1,\\dots,x_n) =  \\frac{1}{Z} e^{V(x_1)+\\cdots+V(x_n)}  \\prod_{i<j} |x_i - x_j|^{\\beta},$$ where $V$ is some real-valued function and $Z$ is the normalization constant. In the special cases $\\beta\\in\\{1,2,4\\}$ they describe the joint distribution of the eigenvalu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1704.02352v2  [math.PR]  15 May 2018\nGAUSSIAN FLUCTUATIONS\nOF JACK-DEFORMED RANDOM YOUNG DIAGRAMS\nMACIEJ DOŁ ˛EGA AND PIOTR ´SNIADY\nABSTRACT. We introduce a large class of random Young diagrams which\ncan be regarded as a natural one-parameter deformation of some classi-\ncal Young diagram ensembles; a deformation which is related to Jack\npolynomials and Jack characters. We show that each such a random\nYoung diagram converges asymptotically to some limit shape and that\nthe ﬂuctuations around the limit are asymptotically Gaussian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Young diagrams related to log-gases",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-13-random-young-diagrams-related-to-log-gases.md",
+      "narrative": null,
+      "content": "Opposite to the special cases $\\beta\\in\\{1,2,4\\}$, in the generic case of $\\beta$-ensembles there seems to be no obvious unique way of defining their discrete counterparts and several alternative approaches are available, see the work of Moll [@Moll2015] as well as the work of Borodin, Gorin and Guionnet [@BorodinGorinGuionnet2015]. In the current paper we took another approach based on a deformation of the character theory of the symmetric groups.\n\nThe class of random Young diagrams considered in the current paper as well as the classes from [@Moll2015; @BorodinGorinGuionnet2015] are of quite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Young diagrams and characters",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-14-random-young-diagrams-and-characters.md",
+      "narrative": null,
+      "content": "The names *integer partitions* and *Young diagrams* are equivalent, but they are used in different contexts; for this reason we will use two symbols $\\mathcal{P}_{n}$ and $\\mathbb{Y}_{n}$ to denote the same object: *the set of integer partitions of $n$*, also known as *the set of Young diagrams with $n$ boxes*. Any function on the set of partitions (or its some subset) will be referred to as *character*.\n\nSuppose that for a given integer $n\\geq 0$ we are given some convenient family $(\\chi_\\lambda)$ of functions $\\chi_\\lambda\\colon \\mathcal{P}_{n}\\to\\mathbb{R}$ which is indexed by $\\lambda\\in\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible characters of symmetric groups. Plancherel measure",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-15-irreducible-characters-of-symmetric-groups-pl.md",
+      "narrative": null,
+      "content": "The most classical choice of the family $(\\chi_\\lambda)$ in [\\[eq:proba-linearcomb\\]](#eq:proba-linearcomb){reference-type=\"eqref\" reference=\"eq:proba-linearcomb\"} stems from the representation theory of the symmetric groups. For a Young diagram $\\lambda\\in\\mathbb{Y}_{n}$ with $n$ boxes let $\\rho_\\lambda\\colon \\mathfrak{S}(n) \\to M_k(\\mathbb{R})$ denotes the corresponding *irreducible representation* [@SaganSymmetric] of the symmetric group $\\mathfrak{S}(n)$. For a permutation $\\pi\\in \\mathfrak{S}(n)$ we define the value of the *irreducible character $\\chi_\\lambda$ of the symmetric group* as t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible Jack characters",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-006-16-irreducible-jack-characters.md",
+      "narrative": null,
+      "content": "In the current paper we will use another, more general, family $(\\chi^{(\\alpha)}_\\lambda)$ of irreducible characters in [\\[eq:proba-linearcomb\\]](#eq:proba-linearcomb){reference-type=\"eqref\" reference=\"eq:proba-linearcomb\"}. Our starting point is the family of *Jack polynomials* $J^{(\\alpha)}_\\lambda$ [@Jack1970/1971] which can be regarded as a deformation of the family of Schur polynomials; a deformation that depends on the parameter $\\alpha>0$. We use the normalization of Jack polynomials from [@Macdonald1995 Section VI.10].\n\nWe expand Jack polynomial in the basis of power-sum symmetric func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Probability measures P()",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-007-17-probability-measures-p.md",
+      "narrative": null,
+      "content": "With $\\chi_\\lambda:=\\chi_\\lambda^{(\\alpha)}$ given by the irreducible Jack characters, [\\[eq:proba-linearcomb\\]](#eq:proba-linearcomb){reference-type=\"eqref\" reference=\"eq:proba-linearcomb\"} takes the following more specific form $$\\label{eq:proba-linearcomb-A}\n\\chi = \\sum_{\\lambda\\in\\mathbb{Y}_{n}} \\mathbb{P}^{(\\alpha)}_\\chi(\\lambda) \\ \\chi^{(\\alpha)}_\\lambda.$$ If the coefficients $\\mathbb{P}^{(\\alpha)}_\\chi(\\lambda)\\geq 0$ are non-negative, we will say that $\\chi$ is a *reducible Jack character*. The resulting probability measure $\\mathbb{P}^{(\\alpha)}_\\chi$ on $\\mathbb{Y}_{n}$ is in the fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Young diagrams related to Thoma's characters",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-008-18-random-young-diagrams-related-to-thomas-chara.md",
+      "narrative": null,
+      "content": "An additional motivation for considering this particular class of random Young diagrams stems from the research related to the problem of finding extremal characters of the infinite symmetric group $\\mathfrak{S}(\\infty)$, solved by Thoma [@Thoma1964]. Vershik and Kerov [@VershikKerov1981a] found an alternative, more conceptual proof of Thoma's result, which was based on the observation that *characters of $\\mathfrak{S}(\\infty)$ are in a natural bijective correspondence with certain sequences $(\\lambda_1\\nearrow \\lambda_2\\nearrow\\cdots)$ of growing random Young diagrams*.\n\nThe original Thoma's",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-009-19-cumulants.md",
+      "narrative": null,
+      "content": "[]{#sec:concatenation label=\"sec:concatenation\"}\n\nFor partitions $\\pi_1,\\dots,\\pi_k$ we define their *product* $\\pi_1 \\cdots \\pi_k$ as their concatenation, for example $(4,3) \\cdot (5,3,1)=(5,4,3,3,1)$. In this way the set of all partitions $\\mathcal{P}=\\bigsqcup_{n\\geq 0} \\mathcal{P}_{n}$ becomes a unital semigroup with the unit $1=\\emptyset$ corresponding to the empty partition; we denote by $\\mathbb{R}[\\mathcal{P}]$ the corresponding semigroup algebra, the elements of which are formal linear combinations of partitions. Any character $\\chi\\colon\\mathcal{P}\\to\\mathbb{R}$ with $\\chi(\\emptyset)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-010-110-asymptotics.md",
+      "narrative": null,
+      "content": "In the current paper we consider asymptotic problems which correspond to the limit when the number of boxes $n\\to\\infty$ of the random Young diagrams tends to infinity. This corresponds to considering a *sequence* $(\\chi_n)$ of reducible characters $\\chi_n\\colon \\mathcal{P}_{n}\\to\\mathbb{R}$ and the resulting *sequence* $(\\mathbb{P}^{(\\alpha)}_{\\chi_n})$ of probability measures on $\\mathbb{Y}_{n}$.\n\nWe also allow that the deformation parameter $\\alpha(n)$ depends on $n$; in order to make the notation light we will make this dependence implicit and write shortly $\\alpha=\\alpha(n)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypothesis: asymptotics of",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-011-111-hypothesis-asymptotics-of.md",
+      "narrative": null,
+      "content": "[]{#sec:hypothesis-double-scaling label=\"sec:hypothesis-double-scaling\"} All results of the current paper will be based on the assumption that $\\alpha=\\alpha(n)$ is a sequence of positive numbers such that $$\\label{eq:double-scaling-refined}\n\\frac{-\\sqrt{\\alpha}+\\frac{1}{\\sqrt{\\alpha}}}{\\sqrt{n}} = \ng+ \\frac{g'}{\\sqrt{n}} + o\\left( \\frac{1}{\\sqrt{n}} \\right)$$ holds true for $n\\to\\infty$ for some constants $g$, $g'$.\n\nNote that the most important case when $\\alpha$ is constant fits into this framework with $g=0$. The generic case $g\\neq 0$ will be referred to as *double scaling limit*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypothesis: approximate factorization of characters",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-012-112-hypothesis-approximate-factorization-of-char.md",
+      "narrative": null,
+      "content": "[]{#sec:partitions label=\"sec:partitions\"}\n\nIn the following we will use the following convention. If $\\chi_n\\colon\\mathcal{P}_{n}\\to\\mathbb{R}$ is a function on the set of partitions of $n$, we will extend its domain to the set $$\\mathcal{P}_{\\leq n}:=\\bigsqcup_{0\\leq k\\leq n} \\mathcal{P}_{k}$$ of partitions of smaller numbers by setting $$\\label{eq:extended-character}\n\\chi_n(\\pi):= \\chi_n( \\pi,1^{n-|\\pi|}) \\qquad \\text{for } |\\pi|\\leq n,$$ i.e. we extend the partition $\\pi$ by adding an appropriate number of parts, each equal to $1$.\n\nIn this way the cumulant $k^{\\chi_n}_\\ell (l_1,\\dots,l_\\e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Drawing Young diagrams",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-013-113-drawing-young-diagrams.md",
+      "narrative": null,
+      "content": "### Anisotropic Young diagrams {#sec:anisotropic-young}\n\n<figure id=\"fig:stretch\">\n<div class=\"center\">\n\n</div>\n<figcaption>A Young diagram <span class=\"math inline\"><em>λ</em> = (4,3,1)</span> shown in the French convention (left) and a generalized Young diagram <span class=\"math inline\">$T_{\\frac{1}{2},\\frac{3}{2}} \\lambda$</span> (right) obtained by an anisotropic scaling. The dashed lines indicate individual boxes.</figcaption>\n</figure>\n\nThe usual way of drawing Young diagrams is to represent each individual box as a unit square, see [1](#fig:stretch){reference-type=\"ref\" reference=\"fig:s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first main result: Law of Large Numbers",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-014-114-the-first-main-result-law-of-large-numbers.md",
+      "narrative": null,
+      "content": "The following theorem is a generalization of the results of Biane [@Biane2001] who considered the special case $\\alpha=1$ and the corresponding representations of the symmetric groups.\n\n::: theorem\n[]{#theo:lln label=\"theo:lln\"} Assume that $\\alpha=\\alpha(n)$ is such that [\\[eq:double-scaling-refined\\]](#eq:double-scaling-refined){reference-type=\"eqref\" reference=\"eq:double-scaling-refined\"} holds true. Assume that $\\chi_n\\colon\\mathcal{P}_{n}\\to\\mathbb{R}$ is a reducible Jack character; we denote by $\\lambda_n$ the corresponding random Young diagram with $n$ boxes distributed according to $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second main result: Central Limit Theorem",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-015-115-the-second-main-result-central-limit-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:clt-simple label=\"sec:clt-simple\"} We keep the notations from [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"}. The difference $$\\label{eq:fluctuations-around-infty}\n\\Delta_n:= \\sqrt{n} \\left( \\omega_{\\Lambda_n}- \\omega_{\\Lambda_\\infty} \\right).$$ is a random function on the real line which quantifies the (suitably rescaled) discrepancy between the shape of the random (anisotropic) Young diagram $\\Lambda_n$ and the limit shape. We will regard ${\\Delta}_n$ as a Schwartz distribution on the real line $\\mathbb{R}$ or, more precisely, as a *random vector* from this spac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-016-116-example.md",
+      "narrative": null,
+      "content": "[]{#example:removal-of-boxes label=\"example:removal-of-boxes\"}\n\nLet $\\alpha>0$ be a fixed positive integer. For a given integer $i>0$ consider the rectangular Young diagram $$(i^{\\alpha i}):=(\\underbrace{i,\\dots,i}_{\\text{$\\alpha i$ times}})$$ with $n':=\\alpha i^2$ boxes. We will assume that $n'$ is an even number. The special case $\\alpha=1$ was considered already by Biane [@Biane1998 Figures 1--3].\n\nUsing a random iterative procedure introduced by Kerov [@Kerov1996boundaryYounglattice] which is an inverse of the Plancherel growth process and which will be presented in detail in a forthcoming",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Content of the paper",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-017-117-content-of-the-paper.md",
+      "narrative": null,
+      "content": "In [\\[sec:approx-fact-characters\\]](#sec:approx-fact-characters){reference-type=\"ref\" reference=\"sec:approx-fact-characters\"} we introduce the main algebraic tool for our considerations, namely [\\[def:approx-factorization-charactersB\\]](#def:approx-factorization-charactersB){reference-type=\"ref\" reference=\"def:approx-factorization-charactersB\"} which gives several convenient characterizations of the approximate factorization property. In [\\[sec:proof-of-key-tool-short\\]](#sec:proof-of-key-tool-short){reference-type=\"ref\" reference=\"sec:proof-of-key-tool-short\"} we prove this result. [\\[sec:mom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Approximate factorization of characters",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-018-2-approximate-factorization-of-characters.md",
+      "narrative": null,
+      "content": "[]{#sec:approx-fact-characters label=\"sec:approx-fact-characters\"}\n\nThe purpose of this section is to give a number of conditions which are equivalent to the approximate factorization property ([\\[def:approx-factorization-charactersA\\]](#def:approx-factorization-charactersA){reference-type=\"ref\" reference=\"def:approx-factorization-charactersA\"}). These conditions often turn out to be more convenient in applications, such as the ones from [@DolegaSniady-examples-AFP].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conditional cumulants",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-019-21-conditional-cumulants.md",
+      "narrative": null,
+      "content": "[]{#sec:conditional-cumulants label=\"sec:conditional-cumulants\"}\n\nLet $\\mathcal{A}$ and $\\mathcal{B}$ be commutative unital algebras and let $\\mathbb{E}\\colon\\mathcal{A}\\to\\mathcal{B}$ be a unital linear map. We will say that $\\mathbb{E}$ is a *conditional expectation value*; in the literature one usually imposes some additional constraints on the structure of $\\mathcal{A}$, $\\mathcal{B}$ and $\\mathbb{E}$, but for the purposes of the current paper such additional assumptions will not be necessary.\n\nFor any tuple $x_1,\\dots,x_\\ell \\in\\mathcal{A}$ we define their *conditional cumulant* as $$\\beg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalized Jack characters",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-020-22-normalized-jack-characters.md",
+      "narrative": null,
+      "content": "The usual way of viewing the characters of the symmetric groups is to fix the irreducible representation $\\lambda$ and to consider the character as a function of the conjugacy class $\\pi$. However, there is also another very successful viewpoint due to Kerov and Olshanski [@KerovOlshanski1994], called *dual approach*, which suggests to do roughly the opposite. Lassalle [@Lassalle2008a; @Lassalle2009] adapted this idea to the framework of Jack characters. In order for this dual approach to be successful one has to choose the most convenient normalization constants. In the current paper we will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The deformation parameters",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-021-23-the-deformation-parameters.md",
+      "narrative": null,
+      "content": "In order to avoid dealing with the square root of the variable $\\alpha$ which is ubiquitous in the subject of Jack deformation, we introduce an indeterminate $A := \\sqrt{\\alpha}$. The algebra of Laurent polynomials in the indeterminate $A$ will be denoted by $\\mathbb{Q}\\left[A,A^{-1}\\right]$.\n\nA special role will be played by the quantity $$\\label{eq:gamma}\n\\gamma := -A +\\frac{1}{A} \\in \\mathbb{Q}\\left[A,A^{-1}\\right]$$ which already appeared in the numerator on the left-hand side of [\\[eq:double-scaling-refined\\]](#eq:double-scaling-refined){reference-type=\"eqref\" reference=\"eq:double-scaling",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The linear space of -polynomial functions",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-022-24-the-linear-space-of--polynomial-functions.md",
+      "narrative": null,
+      "content": "[]{#sec:polynomial label=\"sec:polynomial\"} In a paper [@Sniady-AsymptoticsJack] the second-named author has defined a certain filtered linear space of *$\\alpha$-polynomial functions*. This linear space consists of certain functions in the set $\\mathbb{Y}$ of Young diagrams with values in the ring $\\mathbb{Q}\\left[A,A^{-1}\\right]$ of Laurent polynomials and, among many equivalent definitions, one can define it using normalized Jack characters.\n\n::: definition\n[]{#def:polynomial-functions label=\"def:polynomial-functions\"} The linear space of $\\alpha$-polynomial functions is the linear span (with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebras P and P of -polynomial functions",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-023-25-algebras-p-and-p-of--polynomial-functions.md",
+      "narrative": null,
+      "content": "[]{#sec:polynomial-disjoint label=\"sec:polynomial-disjoint\"}\n\nThe vector space of $\\alpha$-polynomial functions can be equipped with a product in two distinct natural ways (which will be reviewed in the following). With each of these two products it becomes a commutative, unital filtered algebra.\n\nFirstly, as a product we may take the *pointwise product of functions on $\\mathbb{Y}$*. The resulting algebra will be denoted by $\\mathscr{P}$ (the fact that the $\\mathscr{P}$ is closed under such product was proved by Dołęga and Féray [@DolegaFeray2014 Theorem 1.4]).\n\nSecondly, as a product we may t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two probabilistic structures on -polynomial functions",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-024-26-two-probabilistic-structures-on--polynomial-f.md",
+      "narrative": null,
+      "content": "[]{#sec:probabilistic-structures label=\"sec:probabilistic-structures\"}\n\nAssume that $\\chi\\colon\\mathcal{P}_{n}\\to\\mathbb{R}$ is a reducible Jack character and let $\\mathbb{P}_\\chi$ be the corresponding probability measure [\\[eq:proba-linearcomb-A\\]](#eq:proba-linearcomb-A){reference-type=\"eqref\" reference=\"eq:proba-linearcomb-A\"} on the set $\\mathbb{Y}_{n}$ of Young diagrams with $n$ boxes. With this setup, functions on $\\mathbb{Y}_{n}$ can be viewed as random variables; we denote by $\\mathbb{E}_\\chi$ the corresponding expectation.\n\nLet us fix a partition $\\pi\\in\\mathcal{P}_{n}$; we denote by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalent characterizations of approximate factorization of characters",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-025-27-equivalent-characterizations-of-approximate-f.md",
+      "narrative": null,
+      "content": "The following result, [\\[def:approx-factorization-charactersB\\]](#def:approx-factorization-charactersB){reference-type=\"ref\" reference=\"def:approx-factorization-charactersB\"}, is the key tool for the purposes of the current paper. Its main content is part [\\[item:afp2\\]](#item:afp2){reference-type=\"ref\" reference=\"item:afp2\"}; roughly speaking, it states that each of the four families of numbers [\\[eq:AFPPartitions\\]](#eq:AFPPartitions){reference-type=\"eqref\" reference=\"eq:AFPPartitions\"}--[\\[eq:AFPDisjointCumulants\\]](#eq:AFPDisjointCumulants){reference-type=\"eqref\" reference=\"eq:AFPDisjointC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Approximate factorization property for -polynomial functions",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-026-31-approximate-factorization-property-for--polyn.md",
+      "narrative": null,
+      "content": "::: definition\nLet $\\mathcal{A}$ and $\\mathcal{B}$ be filtered, commutative, unital algebras and let $\\mathbb{E}:\\mathcal{A}\\rightarrow\\mathcal{B}$ be a unital map. We say that $\\mathbb{E}$ has *approximate factorization property* if for all choices of $x_1,\\dots,x_\\ell\\in\\mathcal{A}$ we have that $$\\label{eq:approximate-factorization-property}\n    \\deg_{\\mathcal{B}} \\kappa_{\\mathcal{A}}^{\\mathcal{B}}(x_1,\\dots,x_\\ell) \\leq \\left( \\deg_{\\mathcal{A}} x_1 \\right) + \\cdots + \\left( \\deg_{\\mathcal{A}} x_\\ell \\right)- 2(\\ell-1).$$\n:::\n\nWe consider the filtered unital algebras $\\mathscr{P}_\\bullet$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functionals Sk",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-027-34-functionals-sk.md",
+      "narrative": null,
+      "content": "For a Young diagram $\\lambda$, a real number $\\alpha>0$ and an integer $k\\geq 2$ we define $$\\mathcal{S}_k^{(\\alpha)}(\\lambda):= \n(k-1) \\iint_{(x,y)\\in\\lambda}  \\left( \\sqrt{\\alpha}\\ x-\\frac{1}{\\sqrt{\\alpha}}\\ y \\right)^{k-2}  \\dif x \\dif y,$$ where the integral on the right-hand side is taken over a polygon on the plane defined by the Young diagram $\\lambda$ (drawn in the French convention). In order to keep the notation light we shall make the dependence on $\\alpha$ implicit and we shall simply write $\\mathcal{S}_k(\\lambda):=\\mathcal{S}_k^{(\\alpha)}(\\lambda)$.\n\nIn [@Sniady-AsymptoticsJack Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free cumulants Rk",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-028-35-free-cumulants-rk.md",
+      "narrative": null,
+      "content": "\\label{sub:FreeCumu}\nIn many calculations related to \nthe asymptotic representation theory it is convenient to parametrize\nthe shape of the Young diagram~$\\lambda$ by \\emph{free cumulants}\n$\\Rfunct_k(\\lambda)$ (which depend on the parameter $\\alpha$ in our settings). In the context of the representation theory of the symmetric groups\nthese quantities have been introduced by Biane \\cite{Biane1998}.\n\nFor the purposes of the current paper it is enough to know that\nfor a fixed Young diagram $\\lambda$ its sequence of functionals of shape and its \nsequence of free cumulants are related to each other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined asymptotics of characters",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-029-38-refined-asymptotics-of-characters.md",
+      "narrative": null,
+      "content": "[]{#subsec:refinedasymptotics label=\"subsec:refinedasymptotics\"} In order to find more subtle relationships between the asymptotics of various quantities appearing in [\\[def:approx-factorization-charactersB\\]](#def:approx-factorization-charactersB){reference-type=\"ref\" reference=\"def:approx-factorization-charactersB\"} we need an analogue of Equation [\\[eq:Kerov-polynomial-gamma0\\]](#eq:Kerov-polynomial-gamma0){reference-type=\"eqref\" reference=\"eq:Kerov-polynomial-gamma0\"} between the character $\\mathop{\\mathrm{Ch}}_l$ and the free cumulants in the generic case $\\alpha\\neq 1$. We present below",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Technical results",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-030-4-technical-results.md",
+      "narrative": null,
+      "content": "[]{#sec:moments-determine-measure label=\"sec:moments-determine-measure\"}\n\nThis section is devoted to some technical results necessary for the proof of [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Slowly growing sequence of moments determines the measure",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-031-41-slowly-growing-sequence-of-moments-determines.md",
+      "narrative": null,
+      "content": "::: lemma\n[]{#lem:Carleman label=\"lem:Carleman\"} Assume that $\\mu$ is a probability measure which is supported on the interval $[x_0,\\infty)$ (respectively, on the interval $(-\\infty,x_0]$) for some $x_0\\in\\mathbb{R}$ and such that $$\\label{eq:moments-slow}\n    | m_{l} | \\leq C^l\\ l^{2l}$$ holds true for some constant $C$ and all integers $l\\geq 1$, where $$m_l = m_l(\\mu) = \\int_\\mathbb{R}x^l \\dif\\mu$$ is the $l$-th moment of $\\mu$.\n\nThen the measure $\\mu$ is uniquely determined by its moments.\n\nSimilarly, if the measure $\\mu$ is supported on the real line $\\mathbb{R}$ and such that $$\\label{e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Slow growth of (Rn) implies slow growth of (Sn)",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-032-42-slow-growth-of-rn-implies-slow-growth-of-sn.md",
+      "narrative": null,
+      "content": "::: lemma\n[]{#lem:small-free label=\"lem:small-free\"} Let $(\\mathcal{S}_l)_{l\\geq 2}$ be a sequence of real numbers and let $(\\mathcal{R}_l)_{l\\geq 2}$ given by [\\[eq:r-s\\]](#eq:r-s){reference-type=\"eqref\" reference=\"eq:r-s\"} be the corresponding sequence of free cumulants. Assume that the sequence of free cumulants fulfills the estimate $$\\label{eq:free-are-small}\n    | \\mathcal{R}_l | \\leq C^l\\ l^{ml}$$ for some constants $m,C\\geq 0$ and all $l\\geq 2$.\n\nThen the sequence $(\\mathcal{S}_l)$ fulfills an analogous estimate $$\\label{eq:free-are-smallS}\n    | \\mathcal{S}_l | \\leq C^l\\ l^{ml};$$ pos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimates on some classes of permutations",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-033-43-estimates-on-some-classes-of-permutations.md",
+      "narrative": null,
+      "content": "Recall that for a permutation $\\pi$ we denote by $C(\\pi)$ the set of its cycles. The length $$\\|\\pi\\|:=l - |C(\\pi)|$$ of a permutation $\\pi\\in\\mathfrak{S}(l)$ is defined as the minimal number of factors necessary to write $\\pi$ as a product of transpositions.\n\n::: lemma\n[]{#lem:not-many-permutations label=\"lem:not-many-permutations\"} For all integers $r\\geq 0$ and $l\\geq 1$ $$\\#\\Big\\{ \\pi\\in\\mathfrak{S}(l) : \\| \\pi\\| = r \\Big\\} \\leq \\frac{l^{2r}}{r!}.$$\n:::\n\n::: proof\n*Proof.* We claim that for each permutation $\\pi\\in\\mathfrak{S}(l)$ such that $\\|\\pi\\|=r$ there exist at least $r$ transpositio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Growth of free cumulants",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-034-44-growth-of-free-cumulants.md",
+      "narrative": null,
+      "content": "::: proposition\n[]{#prop:CumulantsGrowSlow label=\"prop:CumulantsGrowSlow\"} We use the notations and assumptions of [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"}. For the random variable $\\mathcal{R}_l=\\mathcal{R}_l(\\lambda_n)$ we define $$\\label{eq:free-cumulants-exist}\n    r_l := \\lim_{n\\to\\infty} {n^{- \\frac{l}{2}}}\\  \\mathbb{E}_{\\chi_n} \\mathcal{R}_l.$$\n\nThen there exists some constant $C$ such that $$\\label{eq:free-cumulants-grow-slow}\n    |r_l| \\leq C^{l}\\ l^{ml}$$ holds true for each integer $l\\geq 2$, where $m$ is given by [\\[eq:what-is-m\\]](#eq:what-is-m){referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Law of large numbers. Proof of theo:lln",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-035-5-law-of-large-numbers-proof-of-theolln.md",
+      "narrative": null,
+      "content": "[]{#sec:proof-of-LLN label=\"sec:proof-of-LLN\"}\n\nFor Reader's convenience the proof of [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"} was split into several subsections which consitute the current section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Measure associated with a Young diagram",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-036-51-measure-associated-with-a-young-diagram.md",
+      "narrative": null,
+      "content": "[]{#subsec:MeasureAssociatedWithYoung label=\"subsec:MeasureAssociatedWithYoung\"}\n\nSuppose an anisotropic Young diagram $\\Lambda\\subseteq \\mathbb{R}\\times \\mathbb{R}$ (viewed in the French coordinate system) is given. We will assume that the area of $\\Lambda$ is equal to $1$. Let $(x,y)\\in\\Lambda$ be a random point in $\\Lambda$, sampled with the uniform probability. We denote by $P_{\\Lambda}$ the probability distribution of its Russian coordinate $$u = x-y.$$ It is a probability measure on $\\mathbb{R}$ with the probability density $$\\label{eq:density}\nf_{\\Lambda}(u)=\\frac{\\omega_\\Lambda(u)-|u|}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random variables S[n]k and their convergence in probability.",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-037-52-random-variables-snk-and-their-convergence-in.md",
+      "narrative": null,
+      "content": "We start the proof of [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"}. For $k\\geq 2$ consider the random variable $$S_k^{[n]}:=\\frac{1}{n^{\\frac{k}{2}}} \\mathcal{S}_k(\\lambda_n).$$ By aproximate factorization property, the condition [\\[item:AFP-A\\]](#item:AFP-A){reference-type=\"ref\" reference=\"item:AFP-A\"} from [\\[def:approx-factorization-charactersB\\]](#def:approx-factorization-charactersB){reference-type=\"ref\" reference=\"def:approx-factorization-charactersB\"} is fulfilled; it follows that the condition [\\[item:cumulants-classic-polynomial\\]](#item:cumulants-classic-polyn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The limiting probability measure P",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-038-53-the-limiting-probability-measure-p.md",
+      "narrative": null,
+      "content": "[]{#sec:limit-measure-Plambdainfty label=\"sec:limit-measure-Plambdainfty\"} By [\\[eq:bounds-on-density\\]](#eq:bounds-on-density){reference-type=\"eqref\" reference=\"eq:bounds-on-density\"}, for each $n$ the mean value $$\\label{eq:mean-value}\nu \\mapsto \\mathbb{E}f_{\\Lambda_n}(u)$$ exists, is finite, and fulfills analogous bounds to [\\[eq:bounds-on-density\\]](#eq:bounds-on-density){reference-type=\"eqref\" reference=\"eq:bounds-on-density\"}. It is the density of the probability measure $\\mathbb{E}P_{\\Lambda_n}$; the moments of this measure are given by $$\\int u^k \\dif \\mathbb{E}P_{\\Lambda_n}(u)= \\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The measure P is determined by its moments",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-039-54-the-measure-p-is-determined-by-its-moments.md",
+      "narrative": null,
+      "content": "By a minor modification of the proof of [\\[eq:free-cumulants-behave-nice\\]](#eq:free-cumulants-behave-nice){reference-type=\"eqref\" reference=\"eq:free-cumulants-behave-nice\"} we have $$\\label{eq:free-cumulants-behave-nice-B}\n\\lim_{n\\to\\infty} \\frac{1}{n^{\\frac{k_1+\\cdots+k_\\ell}{2}}} \n\\ \\mathbb{E}_{\\chi_n}\\left[ \\mathcal{S}_{k_1} \\cdots \\mathcal{S}_{k_\\ell} \\right]  =\ns_{k_1} \\cdots s_{k_\\ell}.$$ It follows that the relation between the families of real numbers $(s_k)_{k\\geq 2}$ and $(r_k)_{k \\geq 2}$ (given by [\\[eq:free-cumulants-exist\\]](#eq:free-cumulants-exist){reference-type=\"eqref\" refer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak convergence of probability measures implies uniform convergence of densities",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-040-55-weak-convergence-of-probability-measures-impl.md",
+      "narrative": null,
+      "content": "For $\\epsilon>0$ and $u_0\\in\\mathbb{R}$ let $\\phi_\\epsilon\\colon \\mathbb{R}\\to\\mathbb{R}_+$ be a function on the real line such that $\\phi_\\epsilon$ is supported on an $\\epsilon$-neighborhood of $u_0$ and $\\int \\phi_\\epsilon(u) \\dif u = 1$. Since $\\mathbb{E}f_{\\Lambda_n}$ is Lipschitz with constant $1$, it follows that $$\\begin{gathered}\n\\label{eq:Lipschitz-is-good}\n\\left| \\mathbb{E}f_{\\Lambda_n}(u_0) - \\int\\ \\phi_\\epsilon(u)\\ \\dif \\mathbb{E}P_{\\Lambda_n}(u) \\right| =\\\\\n\\left| \\int \\phi_\\epsilon(u)\\ \\left( \\mathbb{E}f_{\\Lambda_n} (u_0) - \\mathbb{E}f_{\\Lambda_n}(u)\\right)  \\dif u \\right| \\leq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of densities, in probability.",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-041-56-convergence-of-densities-in-probability.md",
+      "narrative": null,
+      "content": "We have proved that the sequence of random variables $(S_k^{[n]})_n$ converges (as $n\\to\\infty$) to $s_k$ in probability; in other words for each $\\epsilon>0$ and each integer $k\\geq 0$ $$\\label{eq:moments-convergence}\n\\lim_{n\\to\\infty} \\mathbb{P}\\left( \\left| \\int u^{k} \\dif P_{\\Lambda_n}(u)\n-  \n\\int u^{k} \\dif P_{\\Lambda_\\infty}(u)\n\\right| >\n\\epsilon \\right) =0;$$ in other words the sequence of random probability measures $P_{\\Lambda_n}$ converges to the measure $P_{\\Lambda_\\infty}$ *in moments, in probability*.\n\nThe weak topology of probability measures can be metrized, for example by Lévy-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Back to Young diagrams.",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-042-57-back-to-young-diagrams.md",
+      "narrative": null,
+      "content": "The function $\\omega_{\\Lambda_\\infty}$ which was promised in the formulation of [\\[theo:lln\\]](#theo:lln){reference-type=\"ref\" reference=\"theo:lln\"} is simply given by the relationship [\\[eq:density\\]](#eq:density){reference-type=\"eqref\" reference=\"eq:density\"} for the specific choice of $f_{\\Lambda}:=f_{\\Lambda_\\infty}$, namely $$\\omega_{\\Lambda_\\infty}(u):= 2 f_{\\Lambda_\\infty}(u) + |u|.$$\n\nWe just finished the proof of the fact that $\\omega_{\\Lambda_n}$ converges to $\\omega_{\\Lambda_\\infty}$ in the supremum norm as $n\n\\to \\infty$, in probability, thus the proof of [\\[theo:lln\\]](#theo:lln){",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central Limit Theorem. Proof of theo:clt",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-043-6-central-limit-theorem-proof-of-theoclt.md",
+      "narrative": null,
+      "content": "[]{#sec:proof-of-CLTCLT label=\"sec:proof-of-CLTCLT\"}\n\n::: proof\n*Proof of [\\[theo:clt\\]](#theo:clt){reference-type=\"ref\" reference=\"theo:clt\"}.* In the light of [\\[remark:theo:clt\\]](#remark:theo:clt){reference-type=\"ref\" reference=\"remark:theo:clt\"} we shall investigate the cumulants of the form $$\\kappa_\\ell \\left(Y_{i_1}, \\dots, Y_{i_\\ell}  \\right)$$ for the random variables $(Y_k)$ given by [\\[eq:my-random-variables-2\\]](#eq:my-random-variables-2){reference-type=\"eqref\" reference=\"eq:my-random-variables-2\"}.\n\nWe start with the case $\\ell\\geq 2$. By [\\[eq:fluctuations-around-infty\\]](#eq:fl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-044-acknowledgments.md",
+      "narrative": null,
+      "content": "Research supported by *Narodowe Centrum Nauki*, grant number /15/B/ST1/00064.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.02352v2/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-045-references.md",
+      "narrative": null,
+      "content": "[BDJ99]\nJ. Baik, P. Deift, and K. Johansson. On the distribution of the length of the\nlongest increasing subsequence of random permutations. J. Amer. Math. Soc.,\n12(4):1119–1178, 1999.\n[BGG17] Alexei Borodin, Vadim Gorin, and Alice Guionnet. Gaussian asymptotics of\ndiscrete β-ensembles. Publ. Math. Inst. Hautes Études Sci., 125:1–78, 2017.\n[Bia98]\nP. Biane. Representations of symmetric groups and free probability. Adv. Math.,\n138(1):126–181, 1998.\n[Bia01]\nP. Biane. Approximate factorization and concentration for characters of sym-\nmetric groups. Internat. Math. Res. Notices, (4):179–192, 2001.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

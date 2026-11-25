@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0603217v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A version of the volume conjecture",
+      "dcterms:creator": [
+        "MURAKAMI, HITOSHI"
+      ],
+      "dcterms:issued": "D:20181122",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0603217",
+      "dcterms:abstract": "We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a representation of the fundamental group of the knot complement to the special linear group of degree two over complex numbers. We also conﬁrm the conjecture for the ﬁgure-eight knot and torus knots. This version is diﬀerent from S. Gukov’s because of a choice of polarization.",
+      "dcterms:source": "library/arxiv-math-0603217v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0603217v3"
+    }
+  ]
+}

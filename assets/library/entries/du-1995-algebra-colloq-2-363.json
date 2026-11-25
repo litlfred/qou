@@ -1,0 +1,508 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "du-1995-algebra-colloq-2-363",
+  "blocks": [
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Algebra Colloquium, 2 (1995), 363–372.\nA NOTE ON QUANTIZED WEYL\nRECIPROCITY AT ROOTS OF UNITY\nJie Du\nSchool of Mathematics\nUniversity of New South Wales\nSydney, 2052, Australia\nIn this note we show that the epimorphism over Q(v) from the quantized enveloping\nalgebra U to a q-Schur algebra can be taken up to any ﬁeld via the quantized Kostant\nZ[v, v−1]-form of U.\n0. Introduction\nLet n, r be integers ⩾1 and let V be a vector space of dimension n over C.\nClassically, we have natural commuting actions of the general linear group GL(V)\nand the symmetric group Sr on the tensor space V⊗r, and both ac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "A-form of U (deﬁned in §2). For a specialization A →C with q being the image\nof v, we put Uq = U ⊗C. Replacing the commuting actions of GL(V) and Sr on\nV⊗r by commuting actions of the quantized enveloping algebra Uq and of the Hecke\nalgebra Hq corresponding to Sr, we obtain the quantum version over C of (0.a)\nwith Schur algebras replaced by the so-called q-Schur algebras. M. Jimbo proved\nin [Ji] a quantized Weyl reciprocity for Uq and Hq over C in which the involved\nparameter q is not a root of 1. That is, the quantum version over C of (0.a) holds\nif q is not a root of 1. It is natural to expe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "and relations\nKiKj = KjKi,\nKiK−1\ni\n= 1\nKiEj,k = vϵ(i,j,k)Ej,kKi,\nwhere ϵ(i, j, k) = 1 if (i, j, k) = (a, a, a + 1) or (a, a, a −1), and −1 if (i, j, k) =\n(a, a −1, a) or (a, a + 1, a),\nEijEkh = EkhEij\nfor j̸ = k and i̸ = h\nEi,i+1Ei+1,i −Ei+1,iEi,i+1 =\nKi,i+1 −K−1\ni,i+1\nv −v−1\nE2\nijEjk −(v + v−1)EijEjkEij + EjkE2\nij = 0\nwhere (i, j, k) = (a, a + 1, a + 2) or (a, a −1, a −2), and Ki,i+1 = KiK−1\ni+1.\nThe algebra U is the quantized deformation of the universal enveloping algebra\nof gln. It is a Hopf algebra with comultiplication Δ deﬁned on the generators by\nΔ(Ei,i+1) = Ei,i+1 ⊗Ki,i+1 + 1 ⊗Ei,i+1;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Δ(2) = Δ and Δ(i) = ( id⊗(i−2)\nU\n⊗Δ) ◦Δ(i−1). We denote by ρr : U →End(E⊗r)\nthe corresponding representation.\nLet H be the Hecke algebra over A associated with the symmetric group Sr on\nr letters. We denote by {Tw}w∈Sr the standard basis for H. Deﬁne a right action\nof H on E⊗r (see e.g. [GL,1.12] or [DPW,§5]) by\n(ei1⊗· · ·⊗eir)T(j,j+1) =\n⎧\n⎪\n⎪\n⎪\n⎨\n⎪\n⎪\n⎪\n⎩\nvei1 ⊗· · ·⊗eij+1 ⊗eij ⊗· · ·⊗eir,\nif ij < ij+1;\nv2ei1 ⊗· · ·⊗eir,\nif ij = ij+1;\n(v2−1)ei1⊗· · ·⊗eir+\n+vei1⊗· · ·⊗eij+1 ⊗eij ⊗· · ·⊗eir,\nif ij > ij+1;\nand put H = H ⊗A. Let π be the corresponding representation. The following\nresult is due to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "E⊗r is a U-H-bimodules and the quantized Weyl reciprocity holds: ρr(U) = EndH(E⊗r), π(H) = EndU(E⊗r). 1.3 A geometric setting for U has been discovered in [BLM] by embedding U into a “limit” algebra of certain ﬁnite dimensional algebras Sn,r which were realized in terms of the geometry of relative positions of pairs of n-step ﬁltrations in an r- dimensional space. For completeness, we restate the deﬁnition of Sn,r as follows. Let V be a vector space of dimension r over a ﬁeld F, and let F be the set of all n-step ﬂags V1 ⊂V2 ⊂· · · ⊂Vn = V. The group G = GL(V ) acts naturally on F, and hence d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Clearly, if (f, f ′) ∈OA as in (1.3.a) then\nro(A) = (dimV1, dimV2/V1, · · · , dimVn/Vn−1)\nand\nco(A) = (dimV ′\n1, dimV ′\n2/V ′\n1, · · · , dimV ′\nn/V ′\nn−1).\nFor A, A′, A′′ ∈Θr, there exist integers c0, c1, · · · , cm such that for any ﬁnite\nﬁeld F = Fq of q elements, we have (see [BLM, Proposition 1.2])\ngA,A′,A′′,q = #{f ∈F | (f1, f) ∈OA, (f, f2) ∈OA′} = c0 + c1q + · · · + cmqm,\nwhere (f1, f2) ∈OA′′. Put\ngA,A′,A′′ = c0 + c1v2 + · · · + cmv2m.\nWe now deﬁne the A-algebra Sn,r to be the free A-module with basis {eA|A ∈\nΘr} satisfying\neAeA′ =\n\b\nA′′∈Θr\ngA,A′,A′′eA′′,\nand deﬁne Sn,r = Sn,r ⊗A.\nLet I(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/rem-page-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-01.md",
+      "narrative": null,
+      "content": "The algebra Sn,r is isomorphic to the q-Schur algebra Sq(n, r) with q = v2 deﬁned by Dipper and James ([DJ]). The basis {eA} corresponds to the stan- dard basis {φd λμ} of Sq(n, r) ([loc.cit., 1.4]) in the following way: for λ, μ ∈Λ(n, r) (the set of all compositions of r into n parts), and d ∈Dλ,μ (the set of distin- guished Wλ −Wμ double coset representatives for the Young subgroups Wλ, Wμ of W = Sr), the double coset WλdWμ determines uniquely a matrix A = (aij) ∈Θr (see [KJ, (1.3.10)]) with the properties:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "(1) ro(A) = λ and co(A) = μ, and\n(2) W d\nλ ∩Wμ = Wν where ν = (ν(1), · · · , ν(n)) with ν(i) = (a1i, · · · , ani).\nThen the linear isomorphism sending eA to φd\nλμ gives the required isomorphism of\nalgebras from Sn,r to Sq(n, r).\n1.5 Let Θ be the set of n×n matrices with non-negative integer entries, σ : Θ →N\nthe map sending A = (aij) to σA = \n aij. Thus, σ−1(r) = Θr. Denote by D the\nset of all diagonal matrices in Θ and Dr = D ∩Θr.\nLet [A] = v−dim OA+dim pr1(OA)eA, where pr1 : X →F is the projection on the\nﬁrst component. We deﬁne a homomorphism αr : U →Sn,r = Sn,r ⊗A, following\n[BLM], by the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "U 0 is a free A-module with basis Kδ1 1 · · · Kδn n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prop-page-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-page-007-02.md",
+      "narrative": null,
+      "content": "U is an A-subalgebra of U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "2. The A-subalgebra U\n2.1 Let U0 be the A-subalgebra of U generated by Ki, K−1\ni\n, and U 0 the A-\nsubalgebra of U0 generated by\nKi, K−1\ni\n,\n\u000b\nKi; c\nt\n\f\n,\nwhere\n\u000b\nKi; c\nt\n\f\n=\nt\ns=1\nKivc−s+1 −K−1\ni\nv−c+s−1\nvs −v−s\nfor 1 ≤i ≤n, t ∈N, c ∈Z. One checks easily that these generators satisfy the\nrelations (g1)–(g5) in [Lu3]. By [loc. cit.] we have the following.\nLemma.\nU 0 is a free A-module with basis\nKδ1\n1 · · · Kδn\nn\n\u000b\nK1; 0\nt1\n\f\n· · ·\n\u000b\nKn; 0\ntn\n\f\n,\nwhere δi ∈{0, 1} and ti ∈N. Moreover, U 0 ⊗A A = U0.\n2.2 From the lemma above and [L2, 4.5], an A-basis for U is given by\nE(A,δ) =\n\n1≤j<i≤n\nE(aij)\nij",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "cor-page-008-01.md",
+      "narrative": null,
+      "content": "Let ′U be deﬁned as in (1.1). Then ′U is a subalgebra of U. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "cor-page-008-02.md",
+      "narrative": null,
+      "content": "For any i, 1 ≤i ≤n, and t ∈N, we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/lem-page-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-03.md",
+      "narrative": null,
+      "content": "Let T1, T2 be two indeterminates and let U 0(X1, X2), for X1, X2 ∈ {T1, T2, T1T −1 }, be the A-subalgebra of A[T1, T −1 ; T2, T −1 ] generated by Xi, X−1 i ,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prop-page-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-04.md",
+      "narrative": null,
+      "content": "The algebra U is free over ′U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "Assume now that (2.3.a) is true for all t < m. By [L1, (2.3)(g9)–(g10)], we have\n\u000b\nK−1\ni,i+1; c\nt\n\f\n∈U\nfor all c ∈Z and t < m. With this and using the commutation relation again, we\nsee that (2.3.a) is true for t = m. So the result is proved.\n□\n2.4 Corollary.\nLet ′U be deﬁned as in (1.1). Then ′U is a subalgebra of U.\n□\n2.5 Corollary.\nFor any i, 1 ≤i ≤n, and t ∈N, we have\n\u000b\nK−1\ni,i+1; 0\nt\n\f\n∈U 0.\nIn particular, the subalgebra ′U 0 of ′U generated by Ki,i+1,\n\u000b\nK−1\ni,i+1; 0\nt\n\f\nis a subal-\ngebra of U 0.\nProof. By displaying the bases for U0 and U, one sees easily that U ∩U0 = U 0,\nand therefore,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/lem-page-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-02.md",
+      "narrative": null,
+      "content": "We have A(0) ∈αr(U) for A ∈Θ0 ∩Θm with m ≤r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "2.8 Remark. (1) As we deﬁne ′U in (1.1), we can deﬁne naturally an A-subalgebra\n′′U of U to be the algebra generated by E(t)\nij , |i −j| = 1, and Ki, K−1\ni\n. Thus, we\nhave\n′U ⊊′′U ⊊U.\n(2) The restrictions to U of the maps ρr (1.2) and αr (1.5) give rise to two\nA-algebra maps from U to EndH(E⊗r) and from U to Sn,r. The former is the\nquantized version of the ﬁrst map in (0.a). We shall prove that the latter is surjective\nin (3.4), and consequently, so is the former as ρr = βr ◦αr by (1.5.a-b).\n3. The Main Result\nNow, we are ready to establish the quantum version of the ﬁrst epimorphism of\n(0.a).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/rem-page-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "rem-page-009-01.md",
+      "narrative": null,
+      "content": "(1) As we deﬁne ′U in (1.1), we can deﬁne naturally an A-subalgebra ′′U of U to be the algebra generated by E(t) ij , |i −j| = 1, and Ki, K−1 i . Thus, we have ′U ⊊′′U ⊊U. (2) The restrictions to U of the maps ρr (1.2) and αr (1.5) give rise to two A-algebra maps from U to EndH(E⊗r) and from U to Sn,r. The former is the quantized version of the ﬁrst map in (0.a). We shall prove that the latter is surjective in (3.4), and consequently, so is the former as ρr = βr ◦αr by (1.5.a-b).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/lem-page-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-01.md",
+      "narrative": null,
+      "content": "Let A = (aij) ∈Θr and A0 = A −diag(a11, · · · , ann) ∈Θ0. Then [A] = [D]A0(0) = A0(0)[D′] in Sn,r for some D, D′ ∈Dr with co(D) = ro(A) and ro(D′) = co(A). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "for any D̸ = D′ with σA + σD = σA + σD′ = r. Note also that O(0) = \nD∈Dr[D],\nwhere O is the zero matrix, is the identity element of Sn,r. These observations have\nproved the following lemma.\n3.3 Lemma.\nLet A = (aij) ∈Θr and A0 = A −diag(a11, · · · , ann) ∈Θ0. Then\n[A] = [D]A0(0) = A0(0)[D′] in Sn,r for some D, D′ ∈Dr with co(D) = ro(A) and\nro(D′) = co(A).\n□\n3.4 Theorem.\nFor each r > 0, the A-algebra homomorphism αr : U →Sn,r is\nsurjective.\nProof. By the previous lemmas, it suﬃces to prove [D] ∈αr(U) for all D ∈Dr.\nGiven a1, · · · , am ∈N with sm = \nm\nj=1 aj ≤r, we deﬁne\nD(a1, · · · , am) =\n\b\ndm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/thm-page-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "thm-page-010-02.md",
+      "narrative": null,
+      "content": "For each r > 0, the A-algebra homomorphism αr : U →Sn,r is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Note also that [D][D′] = δD,D′[D] for all D, D′ ∈Dr. Thus, we have\n(3.4.a)\nαr\n\u000b\nKi; 0\nt\n\f\n= αr\n\u0007 t\ns=1\nKiv−s+1 −K−1\ni\nvs−1\nvs −v−s\n\t\n=\nt\ns=1\n⎛\n⎝\nr\n\b\nj=0\nvj−s+1 −v−(j−s+1)\nvs −v−s\nDi(j)\n⎞\n⎠\n=\nr\n\b\nj=0\n\u0007 t\ns=1\nvj−s+1 −v−(j−s+1)\nvs −v−s\n\t\nDi(j)\n=\nr\n\b\nj=0\n\u000b\nj\nt\n\f\nDi(j),\nwhere\n\u000b\nj\nt\n\f\n= \u0002t\ns=1\nvj−s+1−v−(j−s+1)\nvs−v−s\nis the Gaussian binomial coeﬃcient. Now, we\nare ready to prove the case when m = 1. Note ﬁrst that\n\u000b\nj\nt\n\f\n= 0 for 0 ≤j < t. By\n(3.4.a), we have\n⎧\n⎨\n⎩\nαr(1) = O(0) = Di(0) + Di(1) + · · · + Di(r)\nαr\n\u000b Ki; 0\nt\n\f\n= \nr\nj=t\n\u000b j\nt\n\f\nDi(j), (1 ≤t ≤r).\nSolving these equations for Di(j), for j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/cor-page-012-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "cor-page-012-01.md",
+      "narrative": null,
+      "content": "The algebra homomorphism ρr : U →EndH(E⊗r) is surjective. By now, we have almost obtained our main result. The notation MF below stands for M ⊗A F.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "Solving the simultaneous equations (3.4.b) and (3.4.c), and noting that the expres-\nsion on the L. H. S. of (3.4.b) and (3.4.c) are in αr(U), we obtain that\nD(a1, · · · , am−1, j) ∈αr(U)\nfor all j, 0 ≤j ≤r −s.\n□\nAs mentioned in (2.8), this result together with (1.5.b) and the isomorphism\nSn,r ∼= EndH(T ) imply the following.\n3.5 Corollary.\nThe algebra homomorphism ρr : U →EndH(E⊗r) is surjective.\nBy now, we have almost obtained our main result.\nThe notation MF below\nstands for M ⊗A F.\n3.6 Theorem.\nLet F be a ﬁeld, and A →F a specialization such that the image\nof v is nonzero in F. Put ρr,F = ρ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/thm-page-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-page-012-02.md",
+      "narrative": null,
+      "content": "Let F be a ﬁeld, and A →F a specialization such that the image of v is nonzero in F. Put ρr,F = ρr ⊗1F . Then ρr,F(UF ) = EndHF (E⊗r F ). If n ≥r, then HF = EndUF (E⊗r F ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/du-1995-algebra-colloq-2-363/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "[L2]\nG. Lusztig, Finite dimensional Hopf algebras arising from quantized enveloping algebras,\nJ. Amer. Math. Soc. 3 (1990), 257–296.\n[Ta]\nM. Takeuchi, Some topics on GLq(n), J. Algebra 147 (1992), 379–410.\n[W]\nH. Weyl, Classical groups, Princeton University Press, Princeton, 1953.\nE-mail: j.du@unsw.edu.au",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

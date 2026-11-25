@@ -1,0 +1,109 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1012.5432v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1012.5432v4",
+  "contains": [
+    "library/arxiv-1012.5432v4/sections/sec-front-matter",
+    "library/arxiv-1012.5432v4/sections/sec-000",
+    "library/arxiv-1012.5432v4/sections/sec-001",
+    "library/arxiv-1012.5432v4/sections/sec-002",
+    "library/arxiv-1012.5432v4/sections/sec-003",
+    "library/arxiv-1012.5432v4/sections/sec-004",
+    "library/arxiv-1012.5432v4/sections/sec-005",
+    "library/arxiv-1012.5432v4/sections/sec-006",
+    "library/arxiv-1012.5432v4/sections/sec-007",
+    "library/arxiv-1012.5432v4/sections/sec-008",
+    "library/arxiv-1012.5432v4/sections/sec-009",
+    "library/arxiv-1012.5432v4/sections/sec-010",
+    "library/arxiv-1012.5432v4/sections/sec-011",
+    "library/arxiv-1012.5432v4/sections/sec-012",
+    "library/arxiv-1012.5432v4/sections/sec-013",
+    "library/arxiv-1012.5432v4/sections/sec-014",
+    "library/arxiv-1012.5432v4/sections/sec-015",
+    "library/arxiv-1012.5432v4/sections/sec-016",
+    "library/arxiv-1012.5432v4/sections/sec-017",
+    "library/arxiv-1012.5432v4/sections/sec-018",
+    "library/arxiv-1012.5432v4/sections/sec-019",
+    "library/arxiv-1012.5432v4/sections/sec-020",
+    "library/arxiv-1012.5432v4/sections/sec-021",
+    "library/arxiv-1012.5432v4/sections/sec-022",
+    "library/arxiv-1012.5432v4/sections/sec-023",
+    "library/arxiv-1012.5432v4/sections/sec-024",
+    "library/arxiv-1012.5432v4/sections/sec-025",
+    "library/arxiv-1012.5432v4/sections/sec-026",
+    "library/arxiv-1012.5432v4/sections/sec-027",
+    "library/arxiv-1012.5432v4/sections/sec-028",
+    "library/arxiv-1012.5432v4/sections/sec-029",
+    "library/arxiv-1012.5432v4/sections/sec-030",
+    "library/arxiv-1012.5432v4/sections/sec-031",
+    "library/arxiv-1012.5432v4/sections/sec-032",
+    "library/arxiv-1012.5432v4/sections/sec-033",
+    "library/arxiv-1012.5432v4/sections/sec-034",
+    "library/arxiv-1012.5432v4/sections/sec-035",
+    "library/arxiv-1012.5432v4/sections/sec-036",
+    "library/arxiv-1012.5432v4/sections/sec-037",
+    "library/arxiv-1012.5432v4/sections/sec-038",
+    "library/arxiv-1012.5432v4/sections/sec-039",
+    "library/arxiv-1012.5432v4/sections/sec-040",
+    "library/arxiv-1012.5432v4/sections/sec-041",
+    "library/arxiv-1012.5432v4/sections/sec-042",
+    "library/arxiv-1012.5432v4/sections/sec-043",
+    "library/arxiv-1012.5432v4/sections/sec-044",
+    "library/arxiv-1012.5432v4/sections/sec-045",
+    "library/arxiv-1012.5432v4/sections/sec-046",
+    "library/arxiv-1012.5432v4/sections/sec-047",
+    "library/arxiv-1012.5432v4/sections/sec-048",
+    "library/arxiv-1012.5432v4/sections/sec-049",
+    "library/arxiv-1012.5432v4/sections/sec-050",
+    "library/arxiv-1012.5432v4/sections/sec-051",
+    "library/arxiv-1012.5432v4/sections/sec-052",
+    "library/arxiv-1012.5432v4/sections/sec-053",
+    "library/arxiv-1012.5432v4/sections/sec-054"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Towards topological quantum computation? Knotting and fusing flux tubes — 56 sections: Front matter; I Introduction; II (2+1)-dimensional Topological G\n\n**Towards topological quantum computation? Knotting and fusing flux tubes**\n\n*Knotting and Fusing Flux Tubes*\n\n52 pp, 56 sections.\n\n**Outline.** Front matter; I Introduction; II (2+1)-dimensional Topological Gauge Theorie; III Motivation: Topological Effects in Physics; A Aharonov-Bohm Effect; B Flux Metamorphosis; IV Physics: Hamiltonian Description; B Symmetry Breaking; A Hamiltonian; C Monopoles and Instantons; 1 Dirac Monopoles; 2 Polyakov-'t Hooft Monopoles; 3 Instantons; D Higgs Screening; E Classification Based on the Symmetry Group; 1 Three Dimensions; 2 Two Dimensions; V Spin-Statistics Connection",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1012.5432&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1012.5432v4",
+    "title_source": "slug",
+    "source_file": "1012.5432v4.pdf",
+    "source_sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
+    "pages": 52,
+    "arxiv": {
+      "id": "1012.5432",
+      "version": "4",
+      "primary_class": "quant-ph",
+      "stamp_date": "26 Dec 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

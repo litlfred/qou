@@ -1,0 +1,828 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0803219",
+  "title": "Bai2_Murakami.dvi",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Volume and the Chern–Simons invariant of a representation. For",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-13-volume-and-the-chernsimons-invariant-of-a-rep"
+    },
+    {
+      "level": 1,
+      "title": "Representations of the fundamental group of the trefoil knot. We",
+      "number": "4.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-41-representations-of-the-fundamental-group-of-t"
+    },
+    {
+      "level": 1,
+      "title": "Representations of the fundamental group of the cinquefoil knot.",
+      "number": "4.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-42-representations-of-the-fundamental-group-of-t"
+    },
+    {
+      "level": 2,
+      "title": "Volume and the Chern–Simons invariant of a representation – trefoil knot.",
+      "number": "4.5.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-451-volume-and-the-chernsimons-invariant-of-a-re"
+    },
+    {
+      "level": 2,
+      "title": "Volume and the Chern–Simons invariant of a representation – cinquefoil",
+      "number": "4.5.2",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Volume and the Chern–Simons invariant of a representation – general",
+      "number": "4.5.3",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-453-volume-and-the-chernsimons-invariant-of-a-re"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "n-colored jones",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "homflypt polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "ACTA MATHEMATICA VIETNAMICA 219 Volume 33, Number 3, 2008, pp. 219–253 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS HITOSHI MURAKAMI Abstract. In this paper we give an introduction to the volume conjecture and its generalizations. Especially we discuss relations of the asymptotic be- haviors of the colored Jones polynomials of a knot with diﬀerent parameters to representations of the fundamental",
+      "extractCut": true,
+      "blocks": [
+        "library/0803219/blocks/prose-sec-front-matter",
+        "library/0803219/blocks/ex-sec-front-matter-01",
+        "library/0803219/blocks/thm-sec-front-matter-02",
+        "library/0803219/blocks/ex-sec-front-matter-03",
+        "library/0803219/blocks/thm-sec-front-matter-04"
+      ]
+    },
+    {
+      "id": "sec-000-13-volume-and-the-chernsimons-invariant-of-a-rep",
+      "number": "1.3",
+      "title": "Volume and the Chern–Simons invariant of a representation. For",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": true
+        },
+        {
+          "term": "simons invariant",
+          "heading": true
+        },
+        {
+          "term": "xyx yxy",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "function csm",
+          "heading": false
+        },
+        {
+          "term": "mod π2z",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "modulo π2z",
+          "heading": false
+        }
+      ],
+      "extract": "a closed three-manifold W one can deﬁne the Chern–Simons function csW on the SL(2; C)-character variety of π1(W) as follows. See for example [32, Section 2] for a nice review. Let A be a sl(2; C)-valued 1-form on W satisfying d A + A ∧A = 0. Then A deﬁnes a ﬂat connection on W × SL(2; C) and so it also induces the holonomy representation ρ of π1(W) at SL(2; C) up to conjugation. Then the SL(2; C) Chern–Simons",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-41-representations-of-the-fundamental-group-of-t",
+      "number": "4.1",
+      "title": "Representations of the fundamental group of the trefoil knot. We",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xyx",
+          "heading": false
+        },
+        {
+          "term": "yxy",
+          "heading": false
+        },
+        {
+          "term": "yx2yx",
+          "heading": false
+        },
+        {
+          "term": "yzy",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        }
+      ],
+      "extract": "choose the generators x and y for π1(S3 \\ T) as in Figure 10. Note that we take these generators so that their linking numbers with the knot are one. Then the Figure 10. The two generators of π1(S3 \\ T) element z (see Figure 11) can be expressed in terms of x and y as follows: (4.1) z = xyx−1. From the second crossing and from the third, we have the following relations. Figure 11. The other element of π1(S3 \\ T)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-42-representations-of-the-fundamental-group-of-t",
+      "number": "4.2",
+      "title": "Representations of the fundamental group of the cinquefoil knot.",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cinquefoil knot",
+          "heading": true
+        },
+        {
+          "term": "lad",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "abu",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "Our next example is the cinquefoil knot (or the double overhand knot) C = T(2, 5). The elements z, w and v indicated in Figure 12 are presented in terms Figure 12. Cinquefoil knot and elements of π1(S3 \\ C) of x and y: z = xyx−1, w = zxz−1 = xyxy−1x−1, v = wzw−1 = xyxyx−1y−1x−1. The last two crossings give the same relation yxyxyx−1y−1x−1y−1x−1 = 1. THE VOLUME CONJECTURE AND ITS GENERALIZATIONS 245 Therefore we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-451-volume-and-the-chernsimons-invariant-of-a-re",
+      "number": "4.5.1",
+      "title": "Volume and the Chern–Simons invariant of a representation – trefoil knot.",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod π2z",
+          "heading": false
+        },
+        {
+          "term": "modulo π2z",
+          "heading": false
+        },
+        {
+          "term": "coincide modulo",
+          "heading": false
+        }
+      ],
+      "extract": "Putting m := exp(u), a := 2, b := 3, c := −1, d := −1 and k = l = 1 in (4.6), we have csT \u0000[ρ] \u0001 = \u0014 u 4π√−1, 3(u + 2π√−1) 2π√−1 ; exp \u0012π√−1 12 + 3u 2 \u0013\u0015 . Therefore the corresponding f function introduced in Subsection 1.3 is f(u) := 2π √−1 × \u0012π√−1 12 + 3u 2 \u0013 = π2 6 −3uπ √ −1 (mod π2Z). The corresponding h function deﬁned by the H function is: h(u) = π2 6 −3uπ √ −1 + 4π2 from (4.5). Therefore f(u) and h(u)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-453-volume-and-the-chernsimons-invariant-of-a-re",
+      "number": "4.5.3",
+      "title": "Volume and the Chern–Simons invariant of a representation – general",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soviet math",
+          "heading": false
+        },
+        {
+          "term": "vassiliev knot",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "knot groups",
+          "heading": false
+        }
+      ],
+      "extract": "torus knot. Now for a general torus knot T(a, b), let us consider the represen- tation ρ1,1 parametrized by (k, l) = (1, 1). Then from (4.6) we have csT(a,b) ([ρ1,1]) = \u0014 u 4π√−1, −ab(u + 2π√−1) 4π√−1 ; exp \u0012π√−1 2ab + abu 4 \u0013\u0015 , since ad −bc = 1. So we have f(u) = π2 ab −1 2abuπ √ −1 (mod π2Z) and h(u) = π2 ab −1 2abuπ √ −1 + (ab −2)π2. Therefore for a general torus knot h and f coincide modulo π2Z if we choose",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 8"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hitoshi murakami",
+      "heading": false
+    },
+    {
+      "term": "ﬁgure-eight knot",
+      "heading": false
+    },
+    {
+      "term": "chern simons",
+      "heading": true
+    },
+    {
+      "term": "torus knot",
+      "heading": false
+    },
+    {
+      "term": "volume conjecture",
+      "heading": false
+    },
+    {
+      "term": "cinquefoil knot",
+      "heading": true
+    },
+    {
+      "term": "trefoil knot",
+      "heading": true
+    },
+    {
+      "term": "simons invariant",
+      "heading": true
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "kashaev conjecture",
+      "heading": false
+    },
+    {
+      "term": "mod π2z",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A crossing of a knot diagram We call these double points with over/under data crossings",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A positive crossing (left) and a negative crossing (right)",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Trefoil",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Figure-eight knot",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The two generators of π1(S3 \\ E)",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The other elements of π1(S3 \\ E)",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Graph of Im H(u) for −arccosh(3/2) ⩽u ⩽arccosh(3/2)",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Graph of the CS(Mu)/(2π2) for ⩽arccosh(3/2) < u < 10",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The two generators of π1(S3 \\ T) element z (see Figure 11) can be expressed in terms of x and y as follows: (4.1)",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The other element of π1(S3 \\ T) yzx−1z−1 = 1, yzy−1z−1 = 1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Cinquefoil knot and elements of π1(S3 \\ C) of x and y: z = xyx−1, w = zxz−1 = xyxy−1x−1, v = wzw−1 = xyxyx−1y−1x−1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0803219"
+  }
+}

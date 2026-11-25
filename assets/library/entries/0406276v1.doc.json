@@ -1,0 +1,3603 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0406276v1",
+  "title": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "variant": "pdf",
+  "pages": 40,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Linking integrals in S3 and H3 .",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-linking-integrals-in-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Historical background.",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-historical-background"
+    },
+    {
+      "level": 1,
+      "title": "Organization of this report.",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-organization-of-this-report"
+    },
+    {
+      "level": 1,
+      "title": "Magnetic fields on S3 and H3 .",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-magnetic-fields-on-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Proof scheme for Theorem 2, formula (1).",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-proof-scheme-for-theorem-2-formula-1"
+    },
+    {
+      "level": 1,
+      "title": "Proof scheme for Theorem 2, formula (2).",
+      "number": "6",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-proof-scheme-for-theorem-2-formula-2"
+    },
+    {
+      "level": 1,
+      "title": "Proof scheme for Theorem 2, formula (3).",
+      "number": "7",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-proof-scheme-for-theorem-2-formula-3"
+    },
+    {
+      "level": 1,
+      "title": "Maxwell's equations on S3 and H3 .",
+      "number": "8",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-maxwells-equations-on-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Proof scheme for Theorem 1.",
+      "number": "9",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-9-proof-scheme-for-theorem-1"
+    },
+    {
+      "level": 1,
+      "title": "Link, twist and writhe on S3 and H3 .",
+      "number": "10",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-10-link-twist-and-writhe-on-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Proof scheme for Theorem 5.",
+      "number": "11",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-11-proof-scheme-for-theorem-5"
+    },
+    {
+      "level": 1,
+      "title": "Helicity of vector fields on S3 and H3 .",
+      "number": "12",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-12-helicity-of-vector-fields-on-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Upper bounds for helicity in R3 , S3 and H3 .",
+      "number": "13",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-13-upper-bounds-for-helicity-in-r3-s3-and-h3"
+    },
+    {
+      "level": 1,
+      "title": "Spectral geometry of the curl operator in R3 , S3 and H3 .",
+      "number": "14",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-14-spectral-geometry-of-the-curl-operator-in-r3"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "biot-savart formula",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic space",
+          "heading": false
+        },
+        {
+          "term": "helicity",
+          "heading": false
+        },
+        {
+          "term": "prototypes",
+          "heading": false
+        },
+        {
+          "term": "steady-state",
+          "heading": false
+        }
+      ],
+      "extract": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck We introduce here explicit integral formulas for linking, twisting, writhing and helicity on the 3-sphere and in hyperbolic 3-space. ∙ These formulas, like their prototypes in Euclidean 3-space, are geometric rather than just topological, in the sense that their integrands are invariant under orientation-preserving",
+      "extractCut": true,
+      "blocks": [
+        "library/0406276v1/blocks/prose-sec-front-matter",
+        "library/0406276v1/blocks/figure-img-p002-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-linking-integrals-in-s3-and-h3",
+      "number": "1",
+      "title": "Linking integrals in S3 and H3 .",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transport format",
+          "heading": false
+        },
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "orientation-preserving isometries",
+          "heading": false
+        },
+        {
+          "term": "shifted laplacian",
+          "heading": false
+        },
+        {
+          "term": "lyx",
+          "heading": false
+        },
+        {
+          "term": "pyx",
+          "heading": false
+        },
+        {
+          "term": "unit quaternions",
+          "heading": false
+        },
+        {
+          "term": "csch",
+          "heading": false
+        }
+      ],
+      "extract": "Let K1 = {x(s)} and K2 = {y(t)} be disjoint oriented smooth closed curves in either the unit 3-sphere S3 or hyperbolic 3-space H3 , and let α(x, y) denote the distance from x to y . The integral formulas below contain vectors lying in different tangent spaces; in non-Euclidean settings we must move them to a common location to be combined. In S3 regarded as the group of unit quaternions, the differential Lyx—1 of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-historical-background",
+      "number": "2",
+      "title": "Historical background.",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss linking",
+          "heading": false
+        },
+        {
+          "term": "calugareanu",
+          "heading": false
+        },
+        {
+          "term": "linking integral",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "writhing number",
+          "heading": false
+        },
+        {
+          "term": "woltjer",
+          "heading": false
+        },
+        {
+          "term": "euclidean space",
+          "heading": false
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        }
+      ],
+      "extract": "Carl Friedrich Gauss, in a half-page paper dated January 22, 1833, gave an integral formula for the linking number of two disjoint smooth closed curves in Euclidean 3-space: Lk(K1, K2) = 1/(4π) ∫K1×K2 dx/ds × dy/dt ∙ (x — y)/|x — y|3 ds dt . According to historian Moritz Epple (l998), Gauss was interested in computing the linking number of the earth's orbit with the orbits of certain asteroids, and although he",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-organization-of-this-report",
+      "number": "3",
+      "title": "Organization of this report.",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity integrals",
+          "heading": false
+        },
+        {
+          "term": "linking integrals",
+          "heading": false
+        },
+        {
+          "term": "parsley",
+          "heading": false
+        },
+        {
+          "term": "electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "subdomains",
+          "heading": false
+        },
+        {
+          "term": "jason",
+          "heading": false
+        },
+        {
+          "term": "writhing",
+          "heading": false
+        }
+      ],
+      "extract": "Gauss's degree-of-map derivation of his linking integral does not work on the 3-sphere S3 because the set of ordered pairs of distinct points in S3 deformation retracts to a 3-sphere rather than to a 2-sphere, as it does in R3 . But a degree-of- map derivation, suitably modified, does work in hyperbolic 3-space. So we begin by developing a steady-state version of classical electrodynamics on S3 and H3 in sections 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-magnetic-fields-on-s3-and-h3",
+      "number": "4",
+      "title": "Magnetic fields on S3 and H3 .",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "current flow",
+          "heading": false
+        },
+        {
+          "term": "magnetic",
+          "heading": true
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        },
+        {
+          "term": "supported current",
+          "heading": false
+        }
+      ],
+      "extract": "In Euclidean 3-space R3 , the classical convolution formula of Biot and Savart gives the magnetic field BS(V) generated by a compactly supported current flow V : BS(V)(y) = 1/(4π) ∫R3 V(x) × (y — x) / |y — x|3 dx . For simplicity, we write dx to mean d(volx) . The function ϕ(r) = —1/(4πr) is the fundamental solution of the Laplacian in R3 , ∆ϕ = δ . Because the gradient of ϕ at y , ∇y ϕ(x, y) = (1/(4π)) (y — x)/|y —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-proof-scheme-for-theorem-2-formula-1",
+      "number": "5",
+      "title": "Proof scheme for Theorem 2, formula (1).",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left-translation format",
+          "heading": false
+        },
+        {
+          "term": "green operator",
+          "heading": false
+        },
+        {
+          "term": "divergence-free fields",
+          "heading": false
+        },
+        {
+          "term": "vector laplacian",
+          "heading": false
+        },
+        {
+          "term": "gradient fields",
+          "heading": false
+        },
+        {
+          "term": "lyx",
+          "heading": false
+        },
+        {
+          "term": "scalar laplacian",
+          "heading": false
+        },
+        {
+          "term": "biot-savart operator",
+          "heading": false
+        }
+      ],
+      "extract": "Let VF(S3) denote the set of all smooth (C∞) vector fields on S3 , regarded as an infinite-dimensional vector space with the L2 inner product <V, W> = ∫S3 V ∙ W d(vol) . The vector Laplacian, ∆V = — ∇ × ∇ × V + ∇(∇ ∙ V) , corresponds to the Laplacian on forms, ∆βV = — *d*d βV + d*d* βV , where the one-form βV is defined by βV(W) = V ∙ W . The vector Laplacian ∆: VF(S3) → VF(S3) is an unbounded self-adjoint linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-proof-scheme-for-theorem-2-formula-2",
+      "number": "6",
+      "title": "Proof scheme for Theorem 2, formula (2).",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 834,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "get pyxv",
+          "heading": false
+        },
+        {
+          "term": "maxwell equation",
+          "heading": false
+        },
+        {
+          "term": "bounded subdomain",
+          "heading": false
+        },
+        {
+          "term": "key lemma",
+          "heading": false
+        },
+        {
+          "term": "time rate",
+          "heading": false
+        },
+        {
+          "term": "kernel function",
+          "heading": false
+        },
+        {
+          "term": "electric field",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        }
+      ],
+      "extract": "Now we are working on S3 in parallel transport format, and use an entirely different approach. KEY LEMMA, spherical version. ∇y × {PyxV(x) × ∇yϕ} — ∇y {V(x) ∙ ∇x (cos α ϕ)} = (∆ϕ — ϕ) (V(x) — < V(x), y > y) . The above lemma is quite flexible: V can be a smooth vector field defined on all of S3 , or just on a bounded subdomain Ω of S3 , or just along a smooth closed curve K in S3 , or even just at the single point x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-proof-scheme-for-theorem-2-formula-3",
+      "number": "7",
+      "title": "Proof scheme for Theorem 2, formula (3).",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pyxv",
+          "heading": false
+        },
+        {
+          "term": "key lemma",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "fundamental solution",
+          "heading": false
+        }
+      ],
+      "extract": "We replace R4 by Minkowski space R1,3 with the indefinite inner product < x, y > = x0 y0 — x1 y1 — x2 y2 — x3 y3 , and then regard hyperbolic 3-space as the hyperboloid H3 = { x ∊ R1,3 : < x, x > = 1 and x0 > 0 } ⊂ R1,3 . If u and v are tangent to H3 at x , we define the induced inner product ∙ on TxH3 by u ∙ v = — < u, v > . This time we exploit the interplay between the geometry of H3 and the linear algebra of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-maxwells-equations-on-s3-and-h3",
+      "number": "8",
+      "title": "Maxwell's equations on S3 and H3 .",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maxwell equations",
+          "heading": true
+        },
+        {
+          "term": "current flow",
+          "heading": false
+        },
+        {
+          "term": "steady-state",
+          "heading": false
+        },
+        {
+          "term": "compact support",
+          "heading": false
+        },
+        {
+          "term": "fundamental solution",
+          "heading": false
+        },
+        {
+          "term": "laplacian",
+          "heading": false
+        },
+        {
+          "term": "ask",
+          "heading": false
+        }
+      ],
+      "extract": "Maxwell's equations, so familiar to us in Euclidean 3-space R3 , can also be shown to hold on S3 and H3 , with the appropriate definitions, as follows. Let ρ be a smooth real-valued function, which we think of as a charge density. On R3 and H3 , we ask that ρ have compact support, while on S3 we ask that it have average value zero. In each case, we define the corresponding electric field E = E(ρ) by the formula",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-proof-scheme-for-theorem-1",
+      "number": "9",
+      "title": "Proof scheme for Theorem 1.",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transport format",
+          "heading": false
+        },
+        {
+          "term": "pyx",
+          "heading": false
+        },
+        {
+          "term": "linking integral",
+          "heading": false
+        },
+        {
+          "term": "ampere law",
+          "heading": false
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        },
+        {
+          "term": "circulation",
+          "heading": false
+        },
+        {
+          "term": "current flows",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        }
+      ],
+      "extract": "With steady-state electrodynamics in hand, we can follow what we imagine to be Gauss's second line of reasoning and obtain the linking integral formulas on S3 and H3 given in Theorem 1. To do this, run a unit current V = dx/ds along the first loop K1 , and use one of the three Biot-Savart formulas from Theorem 2 to calculate the resulting magnetic field B . For example, on S3 in parallel transport format, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-link-twist-and-writhe-on-s3-and-h3",
+      "number": "10",
+      "title": "Link, twist and writhe on S3 and H3 .",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "24",
+      "labelEnd": "28",
+      "words": 796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left-translation format",
+          "heading": false
+        },
+        {
+          "term": "transport format",
+          "heading": false
+        },
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "twp",
+          "heading": false
+        },
+        {
+          "term": "wrp",
+          "heading": false
+        },
+        {
+          "term": "twist",
+          "heading": true
+        },
+        {
+          "term": "transport version",
+          "heading": false
+        },
+        {
+          "term": "writhing number",
+          "heading": false
+        }
+      ],
+      "extract": "We follow Calugareanu's lead and replace the two closed curves K1 and K2 in our linking integrals by a single closed curve K , which we must assume to be simple. Now the points x(s) and y(t) run along the same curve, and therefore can coincide, making three out of the four linking integrals appearing in Theorem 1 seem improper (the second integral on S3 in left-translation format is clearly proper). But as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-11-proof-scheme-for-theorem-5",
+      "number": "11",
+      "title": "Proof scheme for Theorem 5.",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "writhing integrand",
+          "heading": false
+        },
+        {
+          "term": "linking integrand",
+          "heading": false
+        },
+        {
+          "term": "linking integral",
+          "heading": false
+        },
+        {
+          "term": "integral converges",
+          "heading": false
+        },
+        {
+          "term": "wrp",
+          "heading": false
+        },
+        {
+          "term": "twp",
+          "heading": false
+        },
+        {
+          "term": "v'p",
+          "heading": false
+        }
+      ],
+      "extract": "In spirit, our proof of Theorem 5 for ribbons in S3 and H3 follows Calugareanu's original proof in R3 : we begin with the linking integrals given in Theorem 1 for the edges K and Kε of our ribbon, let ε shrink to zero, and observe the behavior of the linking integrand. Of course, the value of the linking integral is independent of ε for ε > 0 , since the linking number is invariant under this kind of homotopy. But",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-12-helicity-of-vector-fields-on-s3-and-h3",
+      "number": "12",
+      "title": "Helicity of vector fields on S3 and H3 .",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity",
+          "heading": true
+        },
+        {
+          "term": "transport format",
+          "heading": false
+        },
+        {
+          "term": "lyx",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        },
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "smooth vector",
+          "heading": false
+        }
+      ],
+      "extract": "If V is a smooth vector field on R3 with compact support, then the Woltjer- Moffatt formula for its helicity, H(V) = 1/(4π) ∫ R3 × R3 V(x) × V(y) ∙ (x — y)/|x — y|3 dx dy , can be written succinctly as H(V) = ∫ R3 BS(V)(y) ∙ V(y) dy . This is how Woltjer originally presented his invariant, ∫A ∙ B d(vol) , with the role of V played by the magnetic field B and the role of BS(V) played by its vector potential A . The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-13-upper-bounds-for-helicity-in-r3-s3-and-h3",
+      "number": "13",
+      "title": "Upper bounds for helicity in R3 , S3 and H3 .",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bounded subdomain",
+          "heading": false
+        },
+        {
+          "term": "helicity",
+          "heading": true
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        },
+        {
+          "term": "overestimate",
+          "heading": false
+        },
+        {
+          "term": "current flow",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        },
+        {
+          "term": "upper",
+          "heading": true
+        }
+      ],
+      "extract": "Let Ω be a compact, smoothly bounded subdomain of R3 , S3 or H3 , and V a smooth vector field defined on Ω . Thinking of V as a current flow, its magnetic field BS(V) is defined by the same formulas as before, except that the integration is carried out only over Ω . If Ω ⊂ R3 , then BS(V)(y) = ∫Ω V(x) × ∇y ϕ(x, y) dx , where ϕ(α) = —1/(4πα) . If Ω ⊂ S3 , then, for example in parallel transport format, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-14-spectral-geometry-of-the-curl-operator-in-r3",
+      "number": "14",
+      "title": "Spectral geometry of the curl operator in R3 , S3 and H3 .",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": "34",
+      "labelEnd": "38",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "curl",
+          "heading": true
+        },
+        {
+          "term": "curl eigenfields",
+          "heading": false
+        },
+        {
+          "term": "vector fields",
+          "heading": false
+        },
+        {
+          "term": "bounded subdomain",
+          "heading": false
+        },
+        {
+          "term": "circulation",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "g-dimensional",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Again let Ω be a compact, smoothly bounded subdomain of R3 , S3 or H3 . We are interested here in curl eigenfields on Ω , that is, vector fields V on Ω which satisfy ∇ × V = λ V , for λ ≠ 0 . In R3 these eigenfields are used to model stable plasma flows; see our paper (1999). Curl eigenfields exist for every value of λ . For example, in R3 , if V = sin λz i + cos λz j , then ∇ × V = λ V . We want to constrain the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jason cantarella",
+          "heading": false
+        },
+        {
+          "term": "dennis deturck",
+          "heading": false
+        },
+        {
+          "term": "herman gluck",
+          "heading": false
+        },
+        {
+          "term": "georges calugareanu",
+          "heading": false
+        },
+        {
+          "term": "noeuds tridimensionnels",
+          "heading": false
+        },
+        {
+          "term": "mikhail teytel",
+          "heading": false
+        },
+        {
+          "term": "des noeuds",
+          "heading": false
+        },
+        {
+          "term": "jean-baptiste biot",
+          "heading": false
+        }
+      ],
+      "extract": "1820 Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales de chimie et de physique, 2nd ser., vol 15, 222-223. 1824 Jean-Baptiste Biot, Precise Elementaire de Physique Experimentale, 3rd edition, Vol II, Chez Deterville (Paris). 1833 Carl Friedrich Gauss, Integral formula for linking number, in Zur mathematischen theorie der electrodynamische wirkungen, Collected Works, Vol 5,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "magnetic field",
+      "heading": false
+    },
+    {
+      "term": "linking integral",
+      "heading": false
+    },
+    {
+      "term": "transport format",
+      "heading": false
+    },
+    {
+      "term": "left-translation format",
+      "heading": false
+    },
+    {
+      "term": "biot-savart formula",
+      "heading": false
+    },
+    {
+      "term": "vector field",
+      "heading": false
+    },
+    {
+      "term": "biot-savart operator",
+      "heading": false
+    },
+    {
+      "term": "gauss linking",
+      "heading": false
+    },
+    {
+      "term": "vector laplacian",
+      "heading": false
+    },
+    {
+      "term": "divergence-free fields",
+      "heading": false
+    },
+    {
+      "term": "gradient field",
+      "heading": false
+    },
+    {
+      "term": "smooth vector",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-2",
+      "file": "images/img-p018-2.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-3",
+      "file": "images/img-p018-3.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-4",
+      "file": "images/img-p018-4.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-5",
+      "file": "images/img-p018-5.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-6",
+      "file": "images/img-p018-6.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-7",
+      "file": "images/img-p018-7.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-8",
+      "file": "images/img-p018-8.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-9",
+      "file": "images/img-p018-9.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-10",
+      "file": "images/img-p018-10.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-11",
+      "file": "images/img-p018-11.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-12",
+      "file": "images/img-p018-12.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-13",
+      "file": "images/img-p018-13.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-14",
+      "file": "images/img-p018-14.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-15",
+      "file": "images/img-p018-15.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-16",
+      "file": "images/img-p018-16.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-17",
+      "file": "images/img-p018-17.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-18",
+      "file": "images/img-p018-18.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-19",
+      "file": "images/img-p018-19.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-20",
+      "file": "images/img-p018-20.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-21",
+      "file": "images/img-p018-21.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-22",
+      "file": "images/img-p018-22.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-23",
+      "file": "images/img-p018-23.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-24",
+      "file": "images/img-p018-24.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-25",
+      "file": "images/img-p018-25.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-26",
+      "file": "images/img-p018-26.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-27",
+      "file": "images/img-p018-27.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-28",
+      "file": "images/img-p018-28.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-29",
+      "file": "images/img-p018-29.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-30",
+      "file": "images/img-p018-30.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-31",
+      "file": "images/img-p018-31.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-32",
+      "file": "images/img-p018-32.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-33",
+      "file": "images/img-p018-33.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-34",
+      "file": "images/img-p018-34.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-35",
+      "file": "images/img-p018-35.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-36",
+      "file": "images/img-p018-36.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-37",
+      "file": "images/img-p018-37.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-38",
+      "file": "images/img-p018-38.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-39",
+      "file": "images/img-p018-39.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-40",
+      "file": "images/img-p018-40.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-41",
+      "file": "images/img-p018-41.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-42",
+      "file": "images/img-p018-42.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-43",
+      "file": "images/img-p018-43.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-44",
+      "file": "images/img-p018-44.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-45",
+      "file": "images/img-p018-45.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-46",
+      "file": "images/img-p018-46.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-47",
+      "file": "images/img-p018-47.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-48",
+      "file": "images/img-p018-48.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-49",
+      "file": "images/img-p018-49.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-50",
+      "file": "images/img-p018-50.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-51",
+      "file": "images/img-p018-51.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-52",
+      "file": "images/img-p018-52.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-53",
+      "file": "images/img-p018-53.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-54",
+      "file": "images/img-p018-54.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-55",
+      "file": "images/img-p018-55.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-56",
+      "file": "images/img-p018-56.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-57",
+      "file": "images/img-p018-57.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-58",
+      "file": "images/img-p018-58.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-59",
+      "file": "images/img-p018-59.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-60",
+      "file": "images/img-p018-60.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-61",
+      "file": "images/img-p018-61.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-62",
+      "file": "images/img-p018-62.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-63",
+      "file": "images/img-p018-63.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-64",
+      "file": "images/img-p018-64.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-65",
+      "file": "images/img-p018-65.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-66",
+      "file": "images/img-p018-66.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-67",
+      "file": "images/img-p018-67.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-68",
+      "file": "images/img-p018-68.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-69",
+      "file": "images/img-p018-69.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-70",
+      "file": "images/img-p018-70.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-71",
+      "file": "images/img-p018-71.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-72",
+      "file": "images/img-p018-72.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-73",
+      "file": "images/img-p018-73.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-74",
+      "file": "images/img-p018-74.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-75",
+      "file": "images/img-p018-75.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-76",
+      "file": "images/img-p018-76.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-77",
+      "file": "images/img-p018-77.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-78",
+      "file": "images/img-p018-78.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-79",
+      "file": "images/img-p018-79.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-80",
+      "file": "images/img-p018-80.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-81",
+      "file": "images/img-p018-81.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-82",
+      "file": "images/img-p018-82.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-83",
+      "file": "images/img-p018-83.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-84",
+      "file": "images/img-p018-84.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-85",
+      "file": "images/img-p018-85.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-86",
+      "file": "images/img-p018-86.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-87",
+      "file": "images/img-p018-87.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-88",
+      "file": "images/img-p018-88.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-89",
+      "file": "images/img-p018-89.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-90",
+      "file": "images/img-p018-90.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-91",
+      "file": "images/img-p018-91.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-92",
+      "file": "images/img-p018-92.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-93",
+      "file": "images/img-p018-93.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-94",
+      "file": "images/img-p018-94.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-95",
+      "file": "images/img-p018-95.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-96",
+      "file": "images/img-p018-96.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-97",
+      "file": "images/img-p018-97.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-98",
+      "file": "images/img-p018-98.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-99",
+      "file": "images/img-p018-99.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-100",
+      "file": "images/img-p018-100.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-101",
+      "file": "images/img-p018-101.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-102",
+      "file": "images/img-p018-102.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-103",
+      "file": "images/img-p018-103.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-104",
+      "file": "images/img-p018-104.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-105",
+      "file": "images/img-p018-105.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-106",
+      "file": "images/img-p018-106.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-107",
+      "file": "images/img-p018-107.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-108",
+      "file": "images/img-p018-108.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-109",
+      "file": "images/img-p018-109.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-110",
+      "file": "images/img-p018-110.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-111",
+      "file": "images/img-p018-111.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-112",
+      "file": "images/img-p018-112.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-113",
+      "file": "images/img-p018-113.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-114",
+      "file": "images/img-p018-114.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-115",
+      "file": "images/img-p018-115.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-116",
+      "file": "images/img-p018-116.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-117",
+      "file": "images/img-p018-117.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-118",
+      "file": "images/img-p018-118.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-119",
+      "file": "images/img-p018-119.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-120",
+      "file": "images/img-p018-120.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-121",
+      "file": "images/img-p018-121.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-122",
+      "file": "images/img-p018-122.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-123",
+      "file": "images/img-p018-123.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-124",
+      "file": "images/img-p018-124.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-125",
+      "file": "images/img-p018-125.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-126",
+      "file": "images/img-p018-126.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-127",
+      "file": "images/img-p018-127.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-128",
+      "file": "images/img-p018-128.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-129",
+      "file": "images/img-p018-129.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-130",
+      "file": "images/img-p018-130.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-146",
+      "file": "images/img-p018-146.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-147",
+      "file": "images/img-p018-147.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-148",
+      "file": "images/img-p018-148.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-149",
+      "file": "images/img-p018-149.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-150",
+      "file": "images/img-p018-150.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-151",
+      "file": "images/img-p018-151.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-152",
+      "file": "images/img-p018-152.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-153",
+      "file": "images/img-p018-153.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-154",
+      "file": "images/img-p018-154.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-155",
+      "file": "images/img-p018-155.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-156",
+      "file": "images/img-p018-156.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-168",
+      "file": "images/img-p018-168.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-169",
+      "file": "images/img-p018-169.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-170",
+      "file": "images/img-p018-170.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-171",
+      "file": "images/img-p018-171.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-172",
+      "file": "images/img-p018-172.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-173",
+      "file": "images/img-p018-173.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-174",
+      "file": "images/img-p018-174.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-175",
+      "file": "images/img-p018-175.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-176",
+      "file": "images/img-p018-176.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-177",
+      "file": "images/img-p018-177.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-178",
+      "file": "images/img-p018-178.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-179",
+      "file": "images/img-p018-179.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-180",
+      "file": "images/img-p018-180.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-181",
+      "file": "images/img-p018-181.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-182",
+      "file": "images/img-p018-182.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-183",
+      "file": "images/img-p018-183.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-184",
+      "file": "images/img-p018-184.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-185",
+      "file": "images/img-p018-185.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-186",
+      "file": "images/img-p018-186.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-187",
+      "file": "images/img-p018-187.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-188",
+      "file": "images/img-p018-188.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-189",
+      "file": "images/img-p018-189.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-190",
+      "file": "images/img-p018-190.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-191",
+      "file": "images/img-p018-191.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-192",
+      "file": "images/img-p018-192.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-193",
+      "file": "images/img-p018-193.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-194",
+      "file": "images/img-p018-194.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-195",
+      "file": "images/img-p018-195.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-196",
+      "file": "images/img-p018-196.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-197",
+      "file": "images/img-p018-197.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-198",
+      "file": "images/img-p018-198.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-199",
+      "file": "images/img-p018-199.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-200",
+      "file": "images/img-p018-200.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-201",
+      "file": "images/img-p018-201.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-202",
+      "file": "images/img-p018-202.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-203",
+      "file": "images/img-p018-203.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-204",
+      "file": "images/img-p018-204.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-205",
+      "file": "images/img-p018-205.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-206",
+      "file": "images/img-p018-206.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-207",
+      "file": "images/img-p018-207.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-208",
+      "file": "images/img-p018-208.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-209",
+      "file": "images/img-p018-209.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-210",
+      "file": "images/img-p018-210.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-211",
+      "file": "images/img-p018-211.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-212",
+      "file": "images/img-p018-212.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-213",
+      "file": "images/img-p018-213.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-214",
+      "file": "images/img-p018-214.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-215",
+      "file": "images/img-p018-215.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-216",
+      "file": "images/img-p018-216.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-217",
+      "file": "images/img-p018-217.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-218",
+      "file": "images/img-p018-218.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-219",
+      "file": "images/img-p018-219.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-220",
+      "file": "images/img-p018-220.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-221",
+      "file": "images/img-p018-221.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-13",
+      "file": "images/img-p022-13.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-18",
+      "file": "images/img-p022-18.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-24",
+      "file": "images/img-p022-24.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-25",
+      "file": "images/img-p022-25.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-26",
+      "file": "images/img-p022-26.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-27",
+      "file": "images/img-p022-27.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-28",
+      "file": "images/img-p022-28.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-29",
+      "file": "images/img-p022-29.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-30",
+      "file": "images/img-p022-30.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-31",
+      "file": "images/img-p022-31.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-32",
+      "file": "images/img-p022-32.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-33",
+      "file": "images/img-p022-33.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-34",
+      "file": "images/img-p022-34.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-35",
+      "file": "images/img-p022-35.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-36",
+      "file": "images/img-p022-36.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-37",
+      "file": "images/img-p022-37.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-38",
+      "file": "images/img-p022-38.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-39",
+      "file": "images/img-p022-39.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-40",
+      "file": "images/img-p022-40.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-41",
+      "file": "images/img-p022-41.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-42",
+      "file": "images/img-p022-42.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-43",
+      "file": "images/img-p022-43.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-44",
+      "file": "images/img-p022-44.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-45",
+      "file": "images/img-p022-45.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-46",
+      "file": "images/img-p022-46.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-47",
+      "file": "images/img-p022-47.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-48",
+      "file": "images/img-p022-48.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-49",
+      "file": "images/img-p022-49.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-50",
+      "file": "images/img-p022-50.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-51",
+      "file": "images/img-p022-51.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-52",
+      "file": "images/img-p022-52.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-53",
+      "file": "images/img-p022-53.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-54",
+      "file": "images/img-p022-54.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-55",
+      "file": "images/img-p022-55.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-56",
+      "file": "images/img-p022-56.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-57",
+      "file": "images/img-p022-57.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-58",
+      "file": "images/img-p022-58.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-59",
+      "file": "images/img-p022-59.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-60",
+      "file": "images/img-p022-60.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-61",
+      "file": "images/img-p022-61.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-62",
+      "file": "images/img-p022-62.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-63",
+      "file": "images/img-p022-63.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-64",
+      "file": "images/img-p022-64.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-65",
+      "file": "images/img-p022-65.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-66",
+      "file": "images/img-p022-66.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-67",
+      "file": "images/img-p022-67.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-68",
+      "file": "images/img-p022-68.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-69",
+      "file": "images/img-p022-69.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-70",
+      "file": "images/img-p022-70.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-71",
+      "file": "images/img-p022-71.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-72",
+      "file": "images/img-p022-72.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-73",
+      "file": "images/img-p022-73.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-74",
+      "file": "images/img-p022-74.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-75",
+      "file": "images/img-p022-75.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-76",
+      "file": "images/img-p022-76.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-77",
+      "file": "images/img-p022-77.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-78",
+      "file": "images/img-p022-78.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-79",
+      "file": "images/img-p022-79.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-80",
+      "file": "images/img-p022-80.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-81",
+      "file": "images/img-p022-81.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-82",
+      "file": "images/img-p022-82.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-83",
+      "file": "images/img-p022-83.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-84",
+      "file": "images/img-p022-84.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-85",
+      "file": "images/img-p022-85.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-86",
+      "file": "images/img-p022-86.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-87",
+      "file": "images/img-p022-87.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-88",
+      "file": "images/img-p022-88.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-89",
+      "file": "images/img-p022-89.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-90",
+      "file": "images/img-p022-90.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-91",
+      "file": "images/img-p022-91.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-92",
+      "file": "images/img-p022-92.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-93",
+      "file": "images/img-p022-93.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-94",
+      "file": "images/img-p022-94.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-95",
+      "file": "images/img-p022-95.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-96",
+      "file": "images/img-p022-96.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-97",
+      "file": "images/img-p022-97.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-98",
+      "file": "images/img-p022-98.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-99",
+      "file": "images/img-p022-99.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-100",
+      "file": "images/img-p022-100.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-101",
+      "file": "images/img-p022-101.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-102",
+      "file": "images/img-p022-102.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-103",
+      "file": "images/img-p022-103.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-104",
+      "file": "images/img-p022-104.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-105",
+      "file": "images/img-p022-105.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-106",
+      "file": "images/img-p022-106.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-107",
+      "file": "images/img-p022-107.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-108",
+      "file": "images/img-p022-108.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-109",
+      "file": "images/img-p022-109.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-110",
+      "file": "images/img-p022-110.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-111",
+      "file": "images/img-p022-111.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-112",
+      "file": "images/img-p022-112.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-113",
+      "file": "images/img-p022-113.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-114",
+      "file": "images/img-p022-114.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-115",
+      "file": "images/img-p022-115.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-116",
+      "file": "images/img-p022-116.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-117",
+      "file": "images/img-p022-117.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-118",
+      "file": "images/img-p022-118.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-119",
+      "file": "images/img-p022-119.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-120",
+      "file": "images/img-p022-120.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-121",
+      "file": "images/img-p022-121.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-122",
+      "file": "images/img-p022-122.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-123",
+      "file": "images/img-p022-123.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-124",
+      "file": "images/img-p022-124.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-125",
+      "file": "images/img-p022-125.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-126",
+      "file": "images/img-p022-126.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-127",
+      "file": "images/img-p022-127.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-128",
+      "file": "images/img-p022-128.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-129",
+      "file": "images/img-p022-129.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-130",
+      "file": "images/img-p022-130.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-131",
+      "file": "images/img-p022-131.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-132",
+      "file": "images/img-p022-132.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-133",
+      "file": "images/img-p022-133.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-134",
+      "file": "images/img-p022-134.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-135",
+      "file": "images/img-p022-135.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-136",
+      "file": "images/img-p022-136.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-137",
+      "file": "images/img-p022-137.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-138",
+      "file": "images/img-p022-138.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-139",
+      "file": "images/img-p022-139.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-140",
+      "file": "images/img-p022-140.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-141",
+      "file": "images/img-p022-141.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-142",
+      "file": "images/img-p022-142.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-143",
+      "file": "images/img-p022-143.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-144",
+      "file": "images/img-p022-144.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-145",
+      "file": "images/img-p022-145.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-146",
+      "file": "images/img-p022-146.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-147",
+      "file": "images/img-p022-147.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-148",
+      "file": "images/img-p022-148.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-149",
+      "file": "images/img-p022-149.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "page": 27,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 329
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0406276v1"
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "agt-v12-n2-p04-s",
+  "blocks": [
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The classical Alexander polynomial is deﬁned for null–homologous knots in rational\nhomology spheres, where null–homologous means that the homology class of a knot is\ntrivial in the ﬁrst homology group with Z–coefﬁcients of the ambient space.\nIf the pair . \nM ; y\nK/ of a rational homology sphere \nM and a null-homologous knot y\nK\nin \nM is given by a ﬁnite cyclic branched cover over S3 branched along a knot K,\nwhere y\nK is the lift of K, then we can compute the Alexander polynomial of y\nK by\nusing the well–known formula\n y\nK.t/ D\nY\n\u00182fx2C j xkD1g\nK.\u0018t/\nup to a factor ˙ta .a 2 Z/\nwhere k is t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Algebraic & Geometric Topology 12 (2012) 791–804\nThe twisted Alexander polynomial for ﬁnite abelian covers\nover three manifolds with boundary\nJÉRÔME DUBOIS\nYOSHIKAZU YAMAGUCHI\nWe provide the twisted Alexander polynomials of ﬁnite abelian covers over three-\ndimensional manifolds whose boundary is a ﬁnite union of tori. This is a generaliza-\ntion of a well-known formula for the usual Alexander polynomial of knots in ﬁnite\ncyclic branched covers over the three-dimensional sphere.\n57M25; 57M27",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Reidemeister torsion",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-the-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "We review the basic notions and results about the sign–determined Reidemeister torsion\nintroduced by V Turaev which are needed in this paper. Details can be found in Milnor’s\nsurvey [3] and in Turaev’s monograph [10].\nTorsion of a chain complex Let C\u0003 D .0 ! Cn\ndn\n\u0000! Cn\u00001\ndn\u00001\n\u0000\u0000\u0000! \u0001 \u0001 \u0001\nd1\n\u0000! C0 ! 0/ be\na chain complex of ﬁnite dimensional vector spaces over a ﬁeld F . Choose a basis\nci of Ci and a basis hi of the i th homology group Hi.C\u0003/. The torsion of C\u0003 with\nrespect to these choices of bases is deﬁned as follows.\nFor each i , let bi be a set of vectors in Ci such that di.bi/ is a basis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "We have the same Tor.C\u0003.W I V\u001a/; c\u0003; ∅/ for all orthonormal bases of V since the effect of change of orthonormal bases in V is given by multiplying the determinant of the bases change matrix with power of .W /. If the Euler characteristic .W / is zero, then we have the same torsion for any basis of V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "The torsion Tor.C\u0003.W I V\u001a/; c\u0003; ∅/ depends on the choice of the lifts zei j under the action of \u00191.W / by \u001a. The effect of different lift of a cell is expressed as the determinant of \u001a. / for some in \u00191.W /. To avoid this problem, we often use representations into SL.V /.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "To deﬁne the Reidemeister torsion, we order the cells ˚ ei j",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/ex-sec-003-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "ex-sec-003-01.md",
+      "narrative": null,
+      "content": "Suppose now that M is the link exterior EL D S3 n N.L/ of a link L in S3. We suppose that L has n components, where n > 2. We denote by \u0016i the meridian of the i th component. Consider the abelianization 'W \u00191.EL/ ! Zn deﬁned by '.\u0016i/ D ti . Let \u001aW \u00191.EL/ ! GL.1I C/ D C n f0g be the one– dimensional representation such that \u001a.\u0016i/ D \u0018i . Then the twisted chain complex C\u0003.ELI C.t/\u001a/ is acyclic and the Reidemeister torsion  '˝\u001a EL .t1; : : : ; tn/ is given by (up to ˙.\u0018\u00001 1 t1/k1 : : : .\u0018\u00001 n tn/kn , ki 2 Z) '˝\u001a EL .t1; : : : ; tn/ D L.\u0018\u00001 1 t1; : : : ; \u0018\u00001 n tn/ where L.t1; : : : ; tn/ is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the polynomial torsion",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-3-definition-of-the-polynomial-torsion.md",
+      "narrative": null,
+      "content": "In this section we deﬁne the polynomial torsion. This gives a point of view from the\nReidemeister torsion to polynomial invariants of topological spaces.\nHereafter M denotes a compact and connected three–dimensional manifold such that\nits boundary @M is empty or a disjoint union of b two–dimensional tori:\n@M D T 2\n1 [ : : : [ T 2\nb :\nIn the sequel, we denote by V a vector space over C and by \u001a a representation of\n\u00191.M / into Aut.V /, and such that det \u001a.\n/ D 1 for all \n 2 \u00191.M /.\nNext we introduce a twisted chain complex with some variables. It will be done by\nusing a ZŒ\u00191.M /–module with var",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "Suppose that '.\u00191.M // D hti and y'.\u00191.Mq// D hsi \u001a hti, where we suppose that s D tq . We have y '˝y \u001a Mq .s/ D y '˝\u001a Mq .tq/ D \u000f \u0001 q\u00001 Y kD0 '˝\u001a M .e2\u0019k p \u00001=qt/: The torsion  y '˝\u001a Mq .tq/ in Corollary 4.4 can be regarded as a kind of the total twisted Alexander polynomial introduced in Silver and Williams [7]. Hirasawa and Murasugi [1] worked on the total twisted Alexander polynomial for abelian representations as in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/lem-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-04.md",
+      "narrative": null,
+      "content": "Let x 2V\u001a.t1; : : : ; tn/, c 2C\u0003.  M I Z/. For 2\u00191.M /, x \u00001˝\u00191.  M/ c only depends on \u0019. / 2 G. For g 2 G, choose 2 \u00191.M / such that \u0019. / D g and set (4-3) g ? \u0000x ˝\u00191.  M/ c \u0001 D x \u00001 ˝\u00191.  M/ c: This deﬁnes a natural action of G on V\u001a.t1; : : : ; tn/ ˝\u00191.  M/ C\u0003.  M I Z/. Further observe that, since for any lift of g, is not contained in p.\u00191.  M //, we can not reduce the right hand side in Equation .4-3/. Proof Take another lift 0 in \u00191.M / of g 2 G. Since 0 D y",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/lem-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-05.md",
+      "narrative": null,
+      "content": "The map (4-4) ˆW V\u001a.t/ ˝ZŒ\u00191.  M/ C\u0003.  M I Z/ ! .V\u001a.t/ ˝C CŒG/ ˝ZŒ\u00191.M/ C\u0003.  M I Z/ given by ˆ \u0000x ˝\u00191.  M/ c \u0001 D .x ˝ 1/ ˝ c is an isomorphism of complexes of CŒG–modules where the action of G on the twisted complex .V\u001a.t/ ˝C CŒG/ ˝ZŒ\u00191.M/ C\u0003.  M I Z/ is given by g \u0001 .x ˝ g0 ˝ c/ D x ˝ gg0 ˝ c: and the right action of 2 \u00191.M / on V\u001a.t/ ˝C CŒG is deﬁned by ..f ˝ v/ ˝ g/ \u0001 D f '. / ˝ \u001a\u00001. /.v/ ˝ \u0019. /g; where f 2 C.t/, v 2 V and g 2 G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/lem-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-07.md",
+      "narrative": null,
+      "content": "We have: .'˝\u001a/˝\u0018 M D 0.M /m \u0001 Tor..V\u001a.t/ ˝C CŒf\u0018/ ˝ZŒ\u00191.M/ C\u0003.  M I Z/; c\u0003; ∅/:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torsion for finite sheeted abelian coverings",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-4-torsion-for-finite-sheeted-abelian-coverings.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of the result",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-41-statement-of-the-result.md",
+      "narrative": null,
+      "content": "Let \nM be a ﬁnite sheeted abelian covering of M , where M denotes a compact and\nconnected three–dimensional manifold such that its boundary @M is empty or a disjoint\nunion of b two–dimensional tori:\n@M D T 2\n1 [ : : : [ T 2\nb :\nWe denote by p the induced homomorphism from \u00191. \nM / to \u00191.M / by the covering\nmap \nM ! M . The associated deck transformation group is a ﬁnite abelian group\nG of order jGj. We endow the manifolds M and \nM with some arbitrary homology\norientations.\nWe have the following exact sequence:\n(4-1)\n1\n/\u00191. \nM /\np\n/\u00191.M /\n\u0019\n/G\n/1:\nWhen we consider the polynomial torsion fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "As we already observed, the sign term in Equation (4-2) is not relevant when m is even.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/rem-sec-005-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "rem-sec-005-06.md",
+      "narrative": null,
+      "content": "This decomposition implies that .V\u001a.t/˝C CŒG/˝ZŒ\u00191.M/C\u0003.  M I Z/ is acyclic, since one can see that each chain complex .V\u001a.t/ ˝C CŒf\u0018/ ˝ZŒ\u00191.M/ C\u0003.  M I Z/ is acyclic from our assumptions and a change of variables. The geometric basis in Equation (4-7) induces a basis compatible with the decomposition in Equation (4-8) by replacing fg j g 2 Gg by ff\u0018 j \u0018 2 yGg. The change of bases cancels when we compute the torsion because Euler characteristic is zero, see [5, Lemma 5.2]. And thus decomposition in Equation (4-8) implies that (in the natural geometric bases): (4-9)  y '˝y \u001a  M D 0.  M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "With the above notation, we suppose that the twisted chain complex C\u0003.M I V\u001a.t// is acyclic. Then the twisted chain complex C\u0003.  M I Vy\u001a.t// is also acyclic and the polynomial torsion is expressed as (4-2)  y '˝y \u001a  M .t/ D \u000f \u0001 Y \u00182 yG .'˝\u001a/˝\u0018 M .t/ where \u000f is a sign equal to 0.  M /m \u0001 0.M /mjGj and m D dim V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/agt-v12-n2-p04-s/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1]\nM Hirasawa, K Murasugi, On the twisted Alexander Polynomials of Knots, from:\n“Proceedings of Hakone Seminar on Graphs and 3–manifolds”, (M Yamasita, editor),\nvolume 23 (2007) 1–14\n[2]\nP Kirk, C Livingston, Twisted Alexander invariants, Reidemeister torsion, and Casson–\nGordon invariants, Topology 38 (1999) 635–661 MR1670420\n[3]\nJ Milnor, Whitehead torsion, Bull. Amer. Math. Soc. 72 (1966) 358–426 MR0196736\n[4]\nJ W Milnor, Inﬁnite cyclic coverings, from: “Conference on the Topology of Manifolds\n(Michigan State Univ., E. Lansing, Mich., 1967)”, Prindle, Weber & Schmidt, Boston\n(1968) 115–133",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

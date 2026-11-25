@@ -1,0 +1,980 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0604094v1",
+  "title": "arxiv-math-0604094v1",
+  "variant": "pdf",
+  "pages": 58,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Quantum Dilogarithm Function",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-quantum-dilogarithm-function"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Invariant and Potential Function",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-examples"
+    },
+    {
+      "level": 2,
+      "title": "Figure-Eight knot 41",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-figure-eight-knot-41"
+    },
+    {
+      "level": 2,
+      "title": "52",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-52"
+    },
+    {
+      "level": 2,
+      "title": "Pretzel knot (-2,3,7)",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-pretzel-knot--237"
+    },
+    {
+      "level": 2,
+      "title": "Once-Punctured Torus Bundles over the Circle",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-once-punctured-torus-bundles-over-the-circle"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion and Discussion",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "More Examples",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Complement of Knots up to 7 Crossings",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-complement-of-knots-up-to-7-crossings"
+    },
+    {
+      "level": 2,
+      "title": "Complement of ``Simple'' Hyperbolic Knots",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-complement-of-simple-hyperbolic-knots"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-colored jones",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "faddeev quantum",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0604094v1 [math.QA] 5 Apr 2006 GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INVARIANT KAZUHIRO HIKAMI A. We study quantum invariant Zγ(M) for cusped hyperbolic3-manifold M. We construct this invariant based on oriented ideal triangulation of M by assigning to each tetrahedron the quantum dilogarithm function, which is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0604094v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-quantum-dilogarithm-function",
+      "number": null,
+      "title": "Quantum Dilogarithm Function",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 12,
+      "labelStart": "3",
+      "labelEnd": "12",
+      "words": 3172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "citen hikam00d",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": true
+        },
+        {
+          "term": "pentagon phi",
+          "heading": false
+        },
+        {
+          "term": "mathrm boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "eqref pentagon",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "rogers pentagon",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dilog} We define a function $\\Phi_\\gamma(\\varphi)$ by an integral form following Ref.~\\citen{LFadd99b}. We set $\\gamma \\in \\mathbb{R}$, and for $ | \\Im \\varphi | < \\pi$, we define \\begin{equation} \\label{Faddeev_integral} \\Phi_\\gamma(\\varphi) = \\exp \\left( \\int\\limits_{\\mathbb{R}+\\I \\, 0} \\frac{\\E^{- \\I \\, \\varphi \\, x}} { 4 \\sinh ( \\gamma \\, x) \\, \\sinh(\\pi \\, x) } \\, \\frac{\\mathrm{d} x}{x} \\right)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "cusped hyperbolic 3-manifolds. GENERALIZED VOLUME CONJECTURE & THE A-POLYNOMIALS",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-figure-eight-knot-41",
+      "number": null,
+      "title": "Figure-Eight knot 41",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "figure-eight knot",
+          "heading": true
+        },
+        {
+          "term": "consistency pretzel",
+          "heading": false
+        },
+        {
+          "term": "mathrm boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "begin multline",
+          "heading": false
+        },
+        {
+          "term": "eqref consistency",
+          "heading": false
+        },
+        {
+          "term": "end multline",
+          "heading": false
+        },
+        {
+          "term": "gamma left",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:41} We set $\\mathcal{K}$ as the Figure-Eight knot $4_1$ which is depicted as \\begin{equation*} \\includegraphics[scale=.16]{psm_41.eps} \\end{equation*} It is well known that the complement of the figure eight knot, $\\mathcal{M}=S^3 \\setminus \\mathcal{K}$, is given by two ideal tetrahedra, and the triangulation induces the quantum invariant as \\begin{equation} Z_\\gamma(\\mathcal{M}_u) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-52",
+      "number": null,
+      "title": "52",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "developing map",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "gray",
+          "heading": false
+        },
+        {
+          "term": "potential function",
+          "heading": false
+        },
+        {
+          "term": "dpδc",
+          "heading": false
+        }
+      ],
+      "extract": "4.2 52 We set K as the knot 52 depicted as The knot complement M = S 3 \\ K is constructed from three tetrahedra (see, e.g., Ref. 49) and we obtain the invariant as Zγ (Mu) = Z R dpδC(p; u) D p1, p5|S −1|p4, p3 E D p2, p4|S −1|p6, p5 E D p3, p6|S −1|p1, p2 E (4.9) Modulus of three tetrahedra are respectively z1 = ep3−p5, z2 = ep5−p4, and z3 = ep2−p6. The developing map is depicted in Fig. 4. The meridian is read to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-pretzel-knot--237",
+      "number": null,
+      "title": "Pretzel knot (-2,3,7)",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pretzel knot",
+          "heading": true
+        },
+        {
+          "term": "developing map",
+          "heading": false
+        },
+        {
+          "term": "gray",
+          "heading": false
+        },
+        {
+          "term": "horo",
+          "heading": false
+        },
+        {
+          "term": "dpδc",
+          "heading": false
+        }
+      ],
+      "extract": "Let K be the (−2, 3, 7) Pretzel knot depicted as and we set M as the complement of K. The Pretzel knot (−2, 3, 7) has the same hyperbolic vol- ume with 52, Vol(M) = 2.82812 · · ·, but the triangulations of the complement give the following partition function; Zγ (Mu) = Z R dpδC(p; u) ⟨p4, p7|S |p6, p1⟩⟨p5, p8|S |p7, p5⟩ × ⟨p1, p6|S |p8, p2⟩⟨p3, p2|S |p4, p3⟩ (4.15) Note that this triangulation diﬀers from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-once-punctured-torus-bundles-over-the-circle",
+      "number": null,
+      "title": "Once-Punctured Torus Bundles over the Circle",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 26,
+      "labelStart": "19",
+      "labelEnd": "26",
+      "words": 1884,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "once-punctured torus",
+          "heading": true
+        },
+        {
+          "term": "mathrm boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "begin multline",
+          "heading": false
+        },
+        {
+          "term": "end multline",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "gamma left",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        }
+      ],
+      "extract": "One of benefits of the quantum invariant $Z_\\gamma(\\mathcal{M})$ is that we can compute it explicitly for a once-punctured torus bundle over $S^1$. A once-punctured torus bundle over $S^1$, which we denote $\\mathcal{M}(\\varphi)$, is described by $F \\times [0,1]/(x,0) \\sim (\\varphi(x),1)$ where a monodromy matrix $\\varphi \\in SL(2,\\mathbb{Z})$ is a homeomorphism from the punctured torus $F=\\mathbb{T}^2 \\setminus \\{ 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-complement-of-knots-up-to-7-crossings",
+      "number": null,
+      "title": "Complement of Knots up to 7 Crossings",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 40,
+      "labelStart": "26",
+      "labelEnd": "40",
+      "words": 2586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hikami a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "log hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "dpδc",
+          "heading": false
+        },
+        {
+          "term": "hikami quantum",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "generalized volume",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "A.1.1 61 Vol(S 3 \\ K) = 3.16396 . . . • Quantum invariant Zγ (Mu) = Z R dpδC(p; u) ⟨p3, p1|S −1|p2, p4⟩⟨p6, p4|S |p5, p8⟩ × ⟨p7, p5|S −1|p6, p1⟩⟨p8, p2|S |p7, p3⟩ • Developing map (Fig. 9) F9. Developing map of the knot complement of 61. Gray triangle is a horo- sphere of the top vertex of the tetrahedron with modulus z1, where we have set z1 = ep4−p1 , z2 = ep8−p4, z3 = ep1−p5, and z4 = ep3−p2. GENERALIZED",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-complement-of-simple-hyperbolic-knots",
+      "number": null,
+      "title": "Complement of ``Simple'' Hyperbolic Knots",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 58,
+      "labelStart": "40",
+      "labelEnd": "58",
+      "words": 4152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hikami a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "log hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "a-polynomials potential",
+          "heading": false
+        },
+        {
+          "term": "a-polynomials quantum",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "dpδc",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "A.2.1 K4, 2 @ Vol(S? \\ K) = 3.608689... e Quantum invariant Z, (M,) = f dp 5c(p; u) (ps, PalS~'|P2, P1) (Piz; PslS |P10, P3) (Ps, PilS~'|Pur, Piz) R X (Pio, PolS|Ps, Ps) (Pa, P7lS|Po, Pa) (P11, PalS |P7, Ps) e Condition 6c (p; u) P12 — Pi + Ps — Ps — Po + Py = —2u GENERALIZED VOLUME CONJECTURE & THE A-POLYNOMIALS 41 • Potential function VM(v, w, x, y, z; m) = −Li2 \u0012 x w \u0013 + Li2 1 v m2 y ! −Li2 \u0012 z v m2 \u0013 + Li2 \u0010 m2",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "a-polynomials a-polynomial",
+      "heading": false
+    },
+    {
+      "term": "log hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "hikami a-polynomial",
+      "heading": false
+    },
+    {
+      "term": "a-polynomial mathcal",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic volume",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic consistency",
+      "heading": false
+    },
+    {
+      "term": "log right",
+      "heading": false
+    },
+    {
+      "term": "a-polynomials potential",
+      "heading": false
+    },
+    {
+      "term": "log left",
+      "heading": false
+    },
+    {
+      "term": "eqref hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "volume vol",
+      "heading": false
+    },
+    {
+      "term": "a-polynomials quantum",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0604094v1"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "milnor-1982-hyperbolic-geometry-the-first-150-years",
+  "blocks": [
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "BULLETIN (New Series) OF THE \nAMERICAN MATHEMATICAL SOCIETY \nVolume 6, Number 1, January 1982 \nHYPERBOLIC GEOMETRY: THE FIRST 150 YEARS \nBY JOHN MILNOR \nThis will be a description of a few highlights in the early history of \nnon-euclidean geometry, and a few miscellaneous recent developments. An \nAppendix describes some explicit formulas concerning volume in hyperbolic \n3-space. \nThe mathematical literature on non-euclidean geometry begins in 1829 with \npublications by N. Lobachevsky in an obscure Russian journal. The infant \nsubject grew very rapidly. Lobachevsky was a fanatically hard worker",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/lem-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "lem-sec-000-01.md",
+      "narrative": null,
+      "content": "This function JI(9) is odd, periodic of period IT, and satisfies the identity j\\{nO) = n 2 R(fi + km/n) k modrt for every integer n. Evidently, JI(0) is a continuous function, smooth except at the zeros of sin 0, taking its maximum at 0 = 77/6. PROOF OF LEMMA 1. Start with the trigonometric identity AI — 1 2 sin nO = II 2 sin(0 + km/n) which can be verified, for small positive values of 0, by substituting z = e~2l° in the equation \\zn-l\\= II \\z - e2,nik/n\\. k mod n The general case follows by analytic continuation. W(0) FIGURE 5. Graph of JI(0) JOHN MILNOR Integrating the negative log absolute",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/lem-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "lem-sec-000-02.md",
+      "narrative": null,
+      "content": "Consider an ideal hyperbolic 2>-simplex, that is a simplex A with all four vertices on the sphere of points at infinity. If a, fi, y are the dihedral angles along three edges meeting at a common vertex, then a + fi + y = IT, and volume(A) = Ji(a) + Ji({i) + Ji(y). HYPERBOLIC GEOMETRY It does not matter which particular vertex we choose, since it follows easily that opposite dihedral angles are equal so that we obtain the same three dihedral angles a, /?, y incident to any vertex. This computation would follow easily from formulas of Lobachevsky [1836], although as far as I know he never worked",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md",
+      "narrative": null,
+      "content": "which is uniquely determined, up to inner automorphism and complex conjuga-\ntion. \nSince the image h(U) is contained in the Bianchi group PSL2Z[œ], it is \ncertainly discrete in PSL2C. In fact Riley proves that h maps II isomorphi-\ncally onto a subgroup h(U) c PSL2Z[oi] of index twelve. Using the Haken-\nWaldhausen theory of 3-manifolds, he then proves that the complement \nS3 — K is actually homeomorphic to the hyperbolic manifold H3/'h(Tï). \nIn an interesting complement to these two examples, Thurston [1978] shows \nby direct geometric construction that S3 — K is homeomorphic to the 2-fold \norie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "Haagerup and Monkholm [1979] have proved the analogous theorem in «-dimensional hyperbolic space. The unique n-simplex of maximal volume is the regular ideal n-simplex. Now let us compare Lemma 2 with Humbert's formulas for the volumes of certain fundamental domains. The presentation will be based on Borel [1981], which contains much further information about arithmetic computations of volume. Let Z[a] be the ring of integers in an imaginary quadratic number field F = Q[a], with discriminant -D = (â — a)2 < 0; and let r = PSL2Z[a] CPSL2C be the corresponding Bianchi group of isometries of hype",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/conj-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "conj-sec-001-01.md",
+      "narrative": null,
+      "content": "If we consider only angles 9 which are rational multiples of w, then every Q- linear relation qX0i) + ' * • +«,*(*„)-0 is a consequence of the relations Jl(77 + 0) = Jl(0), Jl(-0) - -Jl(0), Ji(n6) = n 2 a(0 + kir/n) k mod n of Lemma 1. JOHN MILNOR For example ^(7r/3) and JI{IT/6) are subject to the Q-linear relation 2JI(TT/6) = 3JI(W/3), as one easily verifies. But the conjecture would imply that JI(TT/3) and JI(7T/4) are rationally independent. In other words, no finite covering manifold of the figure eight complement should have the same volume as some covering of the Whitehead link compleme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat.md",
+      "narrative": null,
+      "content": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with \nvalues ± 1 or 0. In order to express this infinite series in terms of the function \nJI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to \nits own Fourier transform, up to a factor of V-D = iVD . More precisely \nk£àD\\ k I \n\\ n I \nfor every positive integer n. (See Hecke §§52, 58.) Substituting this formula in \n(3), we obtain \nvolume = 4 \n2 \n(=§-)V*\"V*-\nEvidently the real parts of the exponentials must cancel out. Hence, using the \nFourier series expansion (2) we obtain \nvolume = — \n2 \n( ~r )*(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

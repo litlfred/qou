@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:kashaev-volume-conjecture",
+  "kind": "conjecture",
+  "title": "Kashaev–Murakami–Murakami volume conjecture",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+    "papers/quantum-observable-universe/blocks/rem-kashaev-as-archimedean-realization",
+    "papers/quantum-observable-universe/blocks/def-quantum-bloch-group"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/zagier1986",
+    "references/neumann-zagier1985",
+    "references/arxiv-hep-th-0306165v1",
+    "references/baseilhac2026"
+  ],
+  "tags": [
+    "tier:famous",
+    "kashaev",
+    "volume-conjecture",
+    "archimedean",
+    "phi-q",
+    "axiom-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.Kashaev.VolumeConjecture",
+  "text": "kashaev-volume-conjecture.md",
+  "leanSource": "kashaev-volume-conjecture.lean",
+  "provenance": "authored"
+}

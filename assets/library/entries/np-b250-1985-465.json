@@ -1,0 +1,925 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "np-b250-1985-465",
+  "blocks": [
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "9 and 10 we calculate the first nonleading term in the quark mass expansion of the order parameter (01#q]0) and of the masses and coupling constants in the pseudoscalar octet.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "We calculate the first non-leading term in the quark mass expansion of the order parameters (0[t~u[0), (0[dd]0), (ol.~slO), and of the masses and decay constants in the pseudoscalar octet.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In refs. [26] (quoted as II) we have shown how to systematically determine the \nlow-energy structure of the Green functions in QCD. The method is based on a \nsimultaneous expansion in powers of the external momenta and of the quark masses. \nWe have applied the method to an expansion in powers of mu and md at fixed ms, \nm ..... (chiral SU(2) × SU(2)) and have shown that the observed low-energy structure \nof zr,r scattering offers a precision test of the theory. This confirms that mu and md \nare indeed small parameters: if one expands physical quantities like F~, M,,, form \nfactors or scattering",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Nuclear Physics B250 (1985) 465-516 \nNorth-Holland Publishing Company \nCHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF \nTHE STRANGE QUARK* \nJ. GASSER \nlnstitut f~r Theoretische Physik der Universitiit Bern, 3012 Bern, Switzerland \nH. LEUTWYLER I \nCERN, Geneva, Switzerland \nReceived 3 July 1984 \n(Revised 27 September 1984) \nIn a previous paper, we have shown how to systematically determine the low-energy structure \nof the Green functions in QCD. The present article extends this framework to expansions in the \nmass of the strange quark. We construct the generating functional of U(3) × U(3~",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-j-gasser-h-leutwvler-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "469 \naround the point s(x) = ~, p(x) = O, O(x) = 0o are therefore periodic functions of \n0o. In particular, the spectrum of the theory belonging to the mass matrix Ef/I and to \nthe vacuum angle 0o is the same as the spectrum associated with M, 00+27r. (In the \nabove discussion we have implicitly assumed that the ground state of the theory \ndoes not undergo discontinuous changes under the global transformations con- \nsidered - see sect. 4 for some comments concerning this problem.) \nWe add a remark about the form of the quark mass matrix. The quark masses \noriginate in the asymmetries of the el",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective low-energy lagrangian",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-effective-low-energy-lagrangian.md",
+      "narrative": null,
+      "content": "The behaviour of the Green functions at small momenta is reflected in the structure \nof the generating functional for external fields which vary slowly in comparison \nwith the scale of the theory. An expansion of the Green functions in powers of the \nmomenta corresponds to an expansion of the generating functional in powers of \nthe derivatives of the external fields. The low-energy expansion is not a simple \nTaylor series, however: the Goldstone bosons associated with the spontaneously \nbroken symmetry generate poles at small momenta, e.g. at p2= M~ =0(~,~). The \nGreen functions admit a Taylor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ground state",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-ground-state.md",
+      "narrative": null,
+      "content": "To obtain the generating functional at leading order in the low-energy expansion \nit suffices to evaluate the classical action associated with the lagrangian (3.10); the \nfield U(x) occurring in this lagrangian is determined by the external fields through \nthe equations of motion \n/a \n~- \n/,z \n+ \nUV V.U \n-2B0 \n2B*(s+ip)U-=i),~ \n(4.1) \n-V,,V UU \nU(s-ip)+ \n(~. is a Lagrange multiplier which stems from the constraint (3.3)). We first consider \nthe ground state of the system, i.e. analyze the equations of motion in the absence \nof external perturbations: \nv~, = a u -- p = 0, \nO(x) = O, \ns(x) = ,,~",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leut~Tler / Chiral perturbation theoo'",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-j-gasser-h-leuttler-chiral-perturbation-theoo.md",
+      "narrative": null,
+      "content": "475 \nstate returns smoothly to Uo--'~. It is however not clear that the ground state of \nQCD does behave in this manner if one varies (~ all the way from 0 to 27r. An \nalternative possibility is that the ground state changes discontinuously already if (~ \nreaches½7r, lfthis is the case the regions --~Tr < ff< ~ \n- \n3 \n, \n2rr and ~Tr < 0 < ~Tr are described \nby two different effective lagrangians which differ in the sign of Bo (the sign of B0 \nis determined by the ground state of the system: the sign may be the one for which \nthe ground state energy is lower). \nThe point here is that if the gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low-energy expansion at leading order",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-5-low-energy-expansion-at-leading-order.md",
+      "narrative": null,
+      "content": "To work out the Green functions at leading order in the low-energy expansion it \nsuffices to determine the classical action associated with the lagrangian (3.10) as a \npower series in the external fields. It is convenient to simplify the constraint (3.3) \nby writing \nU(x) = U(x) exp {-~iO(x)}, \n(5.1) \nsuch that det U = 1. The matrix U then collects the Goldstone fields in the standard \nmanner. One may e.g. represent U in the form \nU(x) -=- exp (i4'), \n(5.2) \nwhere 4' is hermitian and traceless and may therefore be decomposed as \n4' = 4',X\" \n(5.3) \nin terms of eight real fields 4'~,..., 4'8. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective lagrangian to order p4",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-6-effective-lagrangian-to-order-p4.md",
+      "narrative": null,
+      "content": "6. Effective lagrangian to order p4 \nAt order p4 the generating functional contains three different classes of contribu- \ntions: \n(i) The anomaly is of order p4; we therefore need to construct a functional ZA \nwhich has the property that its change under a chiral gauge transformation repro- \nduces the anomaly. \n(it) Once the anomaly is taken care of, we need to determine the most general \ngauge invariant effective lagrangian ~. and add the corresponding action Z2 = \nIdx~2. \n(iii) Finally, we have to calculate the one-loop graphs associated with the lowest- \norder lagrangian ~ - these graphs ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Z = Z, +ZA+Z,+Zoo~,,,op",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-z-z-zazzooop.md",
+      "narrative": null,
+      "content": "(6.1) \ngenerates the general solution of the Ward identities at first nonleading order in the \nlow-energy expansion. \nA functional ZA which does correctly reproduce the anomaly was constructed by \nWess and Zumino [54] (Witten has recently given a remarkable geometric interpreta- \ntion of this expression in the limit v, -- a, = 0 [57]). The construction goes as follows. \nDenote the generator of an infinitesimal chiral transformation by D(fl)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'] 8vuSf(x) + V.fl 8a.Sf(x)",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-dfl-f-v-a-s-p-o-i-dx-tr-ifl-a-8vusfx-vfl-8asfx.md",
+      "narrative": null,
+      "content": "~f \n(6.2) \nThe condition to be solved, (2.8), then amounts to \nD(fl)ZA --- --f dx tr {/3(x)f2(x)}, \n(6.3) \nwhere .(2 is an expression involving only v,, and a~,, explicitly given in (2.8). The \noperator exp D(fl) generates the global transformation \nVR(X) = V[(x) = exp (i[3(x)). \n(6.4) \nIndeed, one easily verifies that the action of this operator on the external fields is \ngiven by \net)tt~{v.(x) + a.(x)} -- eim~)(ia. + v. + a~, ) e ,t~l~. \nethIcs{ v,,(x) - a.(x)} = e-imx~(ia. + v,, - a.) e 'oct) , \ne°{*3'{ s(x) + ip(x)} = e'mX~{s(x) + ip( x)} e 'm~ , \net~'O(x) = O(x) -2 tr fl(x). \n(6.5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-j-gasser-h-leutwyler-hiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "J. Gasser, H. Leutwyler / ('hiral perturbation theory \nThe equations of motion for the field U(x) determine this matrix as a functional \nof the external fields. Under a chiral transformation of the external fields U(x) \ntransforms according to the representation \ne °ttj~ U(x) = e iO~ ~ U(x) e '°~'7 \n(6.6) \nThis property may be used to transform U(x) into the unit matrix\" it suffices to \nchoose the matrix/3(x) such that \ne -2~t~xl = U(x). \n(6.7) \n(U(x) is a power series in the external fields, starting with the unit matrix. Eq. (6.7) \nuniquely specifies /3(x) as an analogous power series if we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nc I",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-nc-i.md",
+      "narrative": null,
+      "content": "= \n(x)e \nv,,tj(x)v~,~(x)}+.. \". \n(6.12) \nZA(V, a, U) \n~ \ndxtr{13 \n,,m,~ \nAs is well known, the higher-order terms in (6.11) do not vanish even if the vector \nand axial vector fields are switched off - the anomaly generates interactions among \nfive or more Goldstone bosons. (See [ 57] for an analysis ofthe structure o f ZA(0, 0, U).) \nNext, we construct the general gauge invariant lagrangian of order p4. Since we \ndo not intend to analyze the Green functions involving the singlet currents clYuq, \ngly~,Ysq or the winding number density w beyond leading order, we disregard the \ncorresponding exte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "and D stands for the differential operator ^ab I F• -- tr([A\",Ah]F,)",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-483-and-d-stands-for-the-differential-operator-a.md",
+      "narrative": null,
+      "content": "^ab \nI \nF• -- \ntr([A\",Ah]F,) \n~ab \nu \ntr \n= ~tr ([A , A,][A ~, A~'])+] tr ({A\", Ah}o \") \n(7.10) \nThe contribution of the one-loop graphs to the generating functional is given by \nthe gaussian integral \n........... I d/z[~c] e \ne,.Z \n(t/2 \n= N(det D) -~/: . \n(7.1 I) \nTo evaluate Zo.¢ toop we therefore need to calculate the determinant of the differential \noperator D: \nZone ~oor = ~i In det D. \n(7.12) \nWe regularize the determinant by working in d dimensions (see II for details). \nThe ultraviolet divergences produce poles in In det D at d = 0, 2, 4,.... \nOne loop \n= \ndx \n- \nSP~+47r(d_2) SP0 \n(47",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-c-v-uvu-vo-asv--u-vcv---u-vo.md",
+      "narrative": null,
+      "content": "iN( \nR \n,u. -- \n~. -- + \n• \nL \n~ \n-- ~- \nv -- \n- \nF~,,,V UV U )-tN(F~.~V U V U)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "_N(F~_IF~,.L~j+)",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-013--nf-iflj.md",
+      "narrative": null,
+      "content": "I~/~,R IZ?lavRA. - \nI. \nFlaV[~, \n~, \\-,,~-- \n- F;/~_ \n\", \n(7.21) \nwhereas the explicit expression for Sp 82 becomes \nI \n/x--* \n-- 2 \nI \nta--+ \n~,- \n--4 \n- \nSp c~2=8(V U V,.U) +a(V U V U)(V,.U V~U) \n+ ~N(VU 0+V~. 0V~/]+V ~O) + ¼(V~' O+V~,O)(X+/] + 0+X) \n, \n. -+ \n- \n, \n- \nN2+2 \n+4N(V U V~,U(x O+U*x)>+~.,2 \n()(*O+O+x) 2 \n~ IV \nN \n2 _ \n+ \n4 0(' OX + 0 + O+)¢O+X + 2X+A,) \n(7.22) \n8N \nd = 4 in In det D thus has the form of the general gauge invariant \nThe pole at \nlagrangian ~2 given in sect. 6 - with the exception of the term (V ~' U\" V vUV, U+V ~U) \noccurring in Sp/~,,j'uL Indeed, for arbitrary N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tadpoles and unitarity corrections",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-014-8-tadpoles-and-unitarity-corrections.md",
+      "narrative": null,
+      "content": "To work out the explicit contribution of the one loop-graphs to a given Green \nfunction we need to calculate the determinant of the differential operator D in a \nseries expansion in powers of the external fields. If these fields are switched off, D \nreduces to \nD~) b -- 6 ~blZ] + ~Bo tr ({X ~, A b},///). \n(8.1) \nIf m, and md are different, then this operator is not diagonal in the cartesian basis \nspanned by h ~,..., h 8. It is convenient to instead use the physical basis A,~,,..., A, \ndefined in (5.16), in which we have \nDopo = 6to{[-] + h'~/~,} • \n(8.2) \nIn this basis the full operator D is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-015-mlnmzppf-mlnmp-2-m--mzo.md",
+      "narrative": null,
+      "content": "k- 32rr 2 \nM~- MZo \n' \nJ(s) = J(s) - sJ'(0) . \n(8.10) \nNote that all of these functions depend on s, M~, and M~ and, in the case ofJ ~, M r, \non the renormalization scale/z occurring in the constant k. \nThe generating functional Z, obtained by adding S dx (~t +,~2)+ZA to Zo,etoop \nthen takes the form \nZ = Zt+Z,+ZA+O(cb6). \n(8.1 1) \nZ, denotes the sum of tree graph and tadpole contributions: \nf \nFo{ \n3 \nM~. M~,] a \nZ,=~ dx--~- 1 16rr 2 ro 2 ,n-~-fo'm, \n+~ \ndx \n1 \n-- \ncrX, p+ \ndx~ \n(8.12) \ne \n67r 2 F~ \n' \nwhere .L¢~ is given by (6.16), except that the constants Li, Hi are replaced by the \nrenorm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vacuum expectation values",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-016-9-vacuum-expectation-values.md",
+      "narrative": null,
+      "content": "With the explicit expression for the generating functional given in the preceding \nsection it is a simple matter to determine the vacuum expectation values of tiu, dd \nand gs up to and including contributions of order J~: it suffices to set s(x)= \n~+Ss(x)[v~,(x) = a.(x)=p(x)=0; in the absence of these external fields 0 = l, \nindependently of tSs] and to extract the coefficient of the term linear in 8s(x). The \nresult reads ([32, 39]) \n(0[ ~u [0) = - F~Bo{ 1 - 2/~,~- - 2/zK* -/z,.o(cos e + \"Ji sin e )2 \n-/X,T(-sin e +4'~ cos e)2+ moKi + K2}, \n(0[dd [0) = - Fo2Bo{ 1 - 2#~. - 2/zr,,-/z~,,,(cos e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "} <01 ul0 -!",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-1-01-ul0.md",
+      "narrative": null,
+      "content": "<01 ul0 -! \n- - I \n--+",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "M%- M% In _M.!]",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-m--m-in-m.md",
+      "narrative": null,
+      "content": "(9.5) \n<01 \nul0> \n' \nwhere we have dropped terms of order (mu-ma) 2. (The sum rule holds in any \nsubtraction convention consistent with chiral symmetry.) If the expectation value \nof gs is smaller than the expectation value of t~u then this relation implies I<ad>l < \nI<au>l. Using the numerical values Fo --= F, = 93.3 MeV, (m~- m)/(md- too) = 43.5 \nwe predict that [(dd) I is smaller than I(au>l by (a) 0.3%, (b) 0.6%, (c) 1% if \nis smaller than I<au>l by (a) 0%, (b) 15%, (c) 30%, respectively. Values for the \nasymmetries in the vacuum expectation values, obtained on the basis of QCD sum \nrules,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Masses and decay constants",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-10-masses-and-decay-constants.md",
+      "narrative": null,
+      "content": "To extract the two-point functions of the axial current from the low-energy \nrepresentation (8.11)-(8.13) for the generating functional we expand it to second \norder in the external fields a,, switching all other external sources off. The explicit \nexpression for Z contains the external field a~, both explicitly, and implicitly, through \nthe meson field 4, which is determined by a,, through the equations of motion (5.14). \nThe calculation of the Green functions simplifies considerably if we make use of \nthe following observation. The equations of motion state that the meson field \nrealizes an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-j-gasser-h-leutwyler-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "J. Gasser. H. Leutwyler / Chiral perturbation theory \nIn the case of the two-point function of the axial current only tree graphs and \ntadpoles described by Z, contribute (since a~, counts as O(q~) we need Z to order \n~b2; Zu is of order ~b 4, ZA is of order 03). The positions (residues) of the poles in \nthe two-point function determine the masses (decay constants). For the evaluation \nof these pole terms the contributions proportional to (0,a~-c)~a,) 2 generated by \nthe constants L,o and H~ may be disregarded. The terms linear or quadratic in the \nmeson field are of the form (the components 4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "K~ = (m~+ mj+ mJ ~",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-021-k-m-mj-mj.md",
+      "narrative": null,
+      "content": "(2L 6 -- L4), \n128 so \nKs = (m~- rfi) 2~ \n~ (3L7+ L~), \n4Bo \n, \nK6 =7o2 Ls, \n8Bo \nK7 = (m,+ me+ m~) 7o L~. \n(10.8) \nThe quantity /ze is defined in (9.2). As a check one verifies that the masses and \ndecay constants are independent of the renormalization scale/z. (The nonanalytic \npieces in these expansions coincide with those found by Langacker and Pagels [32], \nif one replaces In ( M2/I z2) by In ( M2//z 2) where M denotes a common meson mass.) \nAt leading order in the quark mass expansion the GelI-Mann-Okubo formula \nholds exactly; at first nonleading order the formula receives a correction.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "(10.12) Eliminating the constants K6 and K7 in (10.7) we obtain the following sum rule expressing F, in terms of F~ and FK: /'FK\\4/3f M 2 , 2 ] +~(3M:ln',~2-M-~lnM~-~.K,~+O(At2) (10.13) F,= F,,~-TJ ]1 96zr Fo\\ MK M~/ With the experimental value [33] F--K-K = 1,22 ~- 0.01, (10.14) F. .I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwvler / Chiral perturbation theo~",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo.md",
+      "narrative": null,
+      "content": "J. Gasser, H. Leutwvler / Chiral perturbation theo~ \nthe sum rule (10.13) predicts \nF,= 1.3+0.05. \n(10.15) \nF. \nThe quark mass difference mu-md generates the following first-order isospin \nbreaking effects in the kaon system: \n2 \nMR /z~ -/x,, \n(M2\"--M2K')QCD=(md--mo)Bo \n1 +3/zn+ \n2 \n2 \nMK-M,, \n+ 2(rn~ + rfi)K3 + K4} + O(M 3) , \nFK\" / \n= l-(m,~-rnu)Bo \nIn \n1 + \n+(ma- rn~)Ks +O(d¢ 2) • \n(10.16) \nAt leading order in the quark mass expansion the ratio (MRo- M~-): (MK -- M~) \nis given by (rod -- rn~) : (rn~ - rfi). Comparing (10.16) with (10.7) we find the following \ncorrection to this relation: \n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "M2÷-M2o+M2-+O(e2A~) (10.19) Next, in order only to use independent information, we determine the ratio R = (m~-rfi):(m~-mu) from isospin breaking in the baryon mass spectrum and from p-o) mixing.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "prop-sec-024-01.md",
+      "narrative": null,
+      "content": "MK-M,-M,,In +O(M 2) \\ FK'/QCD m~ - fit 64r;2 F (10.22) With the experimental value for FK : F~ given above this sum rule predicts that the isospin breaking is very small: FK° =1.004.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(MK°--MK')QCD",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-023-mk--mkqcd.md",
+      "narrative": null,
+      "content": "M2÷-M2o+M2-+O(e2A~) \n(10.19) \nNext, in order only to use independent information, we determine the ratio R = \n(m~-rfi):(m~-mu) from isospin breaking in the baryon mass spectrum and from \np-o) mixing. This is easily done on the basis of table 4 given in reL [25]. Eliminating \nthe contribution from K °- K ÷ in this table one finds R = 43.7 ± 2.7. Inserting this \nnumber in (10.18) and using (10.19) we obtain \nm S \n--:- = 25.7 + 2.6, \n(10.20) \nm \nwhere the error includes the uncertainties due to effects of order M 2 in (10.18) as \nwell as the uncertainties due to the corrections of order eZM to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MK-M,-M,,In",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-024-mk-m-min.md",
+      "narrative": null,
+      "content": "MK-M,-M,,In \n+O(M 2) \n\\ FK'/QCD \nm~ - fit \n64r;2 F \n(10.22) \nWith the experimental value for FK : F~ given above this sum rule predicts that the \nisospin breaking is very small: \nFK° \n=1.004. \n(10.23) \nFK*/QCD \nFurthermore, mu #md induces 7r°r/mixing. To first order in mu - md the contribu- \ntions to the generating functional which are linear or quadratic in the fields 4, 3 and \n4, 8 may be written in the form (v. =p=0, \ns=M) \nZ =½ [ dx{ F2~(V,~63 + EtV~68)2+ \nF2(V.6 s - ~2V~,63) 2 \nd \n2 \n2 \n3 \n2 \n2 \n8 \nF,~M~(da \n+ e,~8)2 \nE2~3)2}+ \n- \n-F,M,(4~ \n.\n.\n.\n.\n \nV,,4) ~ - \n~ _ \n- \nO~,qb \na~, , \n(10.2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^ (MK",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-025-mk.md",
+      "narrative": null,
+      "content": "M~)C., \n2 \nm s - m \ne2 \n4 \nm-\"~----~ 1-31~\"+2#K+~+M~C'-~o(MK-M~)(3LT+Ls) \n' \n1 \nM~ \n, In \nK \n(10.25) \nCl=167r2F ~ 1 \nM~-M~, \n\" \nThey determine the off-diagonal matrix elements \n(0leLl~r\"> = ip.~, F~, \n(013317) = - ip,,e, F, 7 . \n(10.26) \nNote that e~ and e2 are different. The notion ofa rr'~-'q mixing angle is a well-defined \nconcept only at leading order in the quark mass expansion; at the order we are \nconsidering here there is no angle e for which the two orthogonal combinations \ncos (e)A~ +sin (e)A~ and -sin (e)A~, +cos (e)A~ would have nonvanishing matrix \nelements only with the states lT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "+M~ln--~",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-026-mln.md",
+      "narrative": null,
+      "content": ". \n(10.27) \nC2- 167r2F ~ M~-M;~I. \nM~, \nWith the value (MK,,- MK')OCD = 5.28 MeV given in I this becomes \nej = 1.37 • 10 2=0.78°, \ne2 = 1.11 • 10 -2 =0.630 , \n10.28) \nto be compared with the lowest-order mixing angle \n43 md -- mu \ne \n-\n-\n \n- 1.00\" 10--'=0.57 o . \n10.29) \n4 \nm,-rfi \nThe differences M~,- M~,, and F,,,- F~.,, (where F,,o measures the 7r\" matrix \nelement of A~) are of second order in m~- md and are therefore tiny. We did not \nwork out the isospin breaking in the decay constants. The mass difference M~.. - M,,,, \nis discussed at the end of sect. I 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "!. Comparison with SU(2) x SU(2)",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-027-1-comparison-with-su2-x-su2.md",
+      "narrative": null,
+      "content": "The low-energy expansion simplifies considerably if one limits the external \nmomenta to values small compared to MK, Mn and treats mu, md as small in \nJ. Gasser, H. Leutwyler / Chiral perturbation theory \n495 \ncomparison to m~: \np2\"~ M~ , \nmu, mo'~ m~ . \n(11.1) \nIn this region the degrees of freedom of the K- and rt-mesons freeze. \nIf we only consider Green functions involving u- or d-quarks and, furthermore, \nignore the isoscalar currents ~y,u + dr, u, ~y, ysu + dy,, ysd, the generating functional \nat order p4 reduces in the limit (11.1) to the corresponding low-energy expansion \nfor SU(2)xSU",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-028-j-gasser-h-leutwyler-hiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "497 \nmass and of the pion decay constant given in sects. 9 and lO with the corresponding \nSU(2) xSU(2) expansions given in II- the agreement of the two low-energy rep- \nresentations is a rather thorough consistency check on our calculations. \nWE briefly discuss an application of the relation for 17. In II we have shown that \nthis constant determines the mass difference. \n\" \nm 22B21",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(M~*-M;°)ocD=(mu -",
+      "pageStart": 33,
+      "pageEnd": 38,
+      "target": "../sections/sec-029-m-mocdmu.md",
+      "narrative": null,
+      "content": "d) 7 \n7{1+O(r~)}. \n(11.7) \nInserting the expressions for F, B and 17 given above, this becomes \nI (mu-ma)2Bo{i +5~,~+2/2K \n9 \n8 \n-- \n(M~*-M~\")QCD-4 \nm~-rfi \n32 -2 \n, r \nr \nr \nJ \n} \n+~o2MK(-~L4+ L6-9L7-3Ls+~vK)+O(t~, m~)_. \n(11.8) \nNote that contributions of relative order r~ are neglected - in principle these contri- \nbutions could also be extracted from our low-energy representation. We are shortcut- \nring a tedious calculation here at the loss of some ififormation. A representation \nM,*-M 2o up to and \nfor all nonanalytic terms in the quark mass expansion of \n2 \nincluding At 2 log .~ is give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-030-j-gasser-h-leutwyler-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "J. Gasser. H. Leutwyler / Chiral perturbation theory \nare measured (Ao,~o = 0.21, At =0.22, AM = +0.09) and which (at the order in the \nlow-energy expansion we are considering) are determined by the constants L~, L7 \nand L~. It therefore suffices to solve the three relations (10.10) - (10.12) for L~, L7 \nand L~. The result for L7 is \nL7 = -(0.4±0.15). 10 -3 . \n(12.18) \nThe sign is negative, as is required if the 71' is the main source of LT. Using (12.17) \nto determine the value of the coupling constant 3, which measures the strength of \n\"Or/' mixing (see (12.4)) we get 7--- 1.4. Since (12.17)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large No, Zweig rule",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-031-13-large-no-zweig-rule.md",
+      "narrative": null,
+      "content": "If the number of colours is sent to infinity and the coupling constant g is sent to \nzero in such a manner that the product N,.g 2 stays constant, the Green functions of \nJ. Gasser, H. Leutwyler / Chiral perturbation theory \n503 \nthe theory are proportional to a power of N~ [50, 51, 55, 56]. We denote the general \nconnected Green function containing Q quark currents and W winding number \ndensities by \nGQw---(01Tji(x,)\"\" \"jo(xo)to(yl)''\" to(y,.)]0) ...... ,.a, \nj, = gll,q, \nw = (16rr 2) ' tr (G~,d~'\"), \n(13.1) \nwhere the colour neutral matrices F~ act on the spin and on the flavour of the quark",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leut~Tler/ Chiral perturbation theoo'",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-032-z-gasser-h-leuttler-chiral-perturbation-theoo.md",
+      "narrative": null,
+      "content": "505 \nA different test of the large N, predictions is provided by the decays r/--,2y, \nr/--,2y which are sensitive to \",7-77' mixing [28, 8, 35, 44, 22]. The lowest-order \ncontribution to these decays however originates in the anomalous piece ZA of the \ngenerating functional which is of order p4. To reliably calculate SU(3) breaking \neffects we would have to carry the low-energy expansion to order p6. This is beyond \nour scope. \nFinally, let us work out the large-N, behaviour of the low-energy constants which \nappear in the general effective iagrangian (6.16). This lagrangian is relevant for th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "The measured value of FK: F,, the observed deviation from the Gell-Mann-Okubo formula and the relation (l 0.18) between (ME,,- M~. ):(M~ - M~) and the quark mass ratio (rod - rnu): (m~-r~) (on which we have independent information from isospin breaking in the baryon spectrum and from ,oto mixing) provide three further constraints on these low-energy constants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Values of the low-energy constants",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-033-14-values-of-the-low-energy-constants.md",
+      "narrative": null,
+      "content": "We are now in a position to estimate the values of the low-energy constants \nL~,..., L~o. We have shown in II that the experimental information on the D-wave \n7rTr scattering lengths, on the electromagnetic charge radius of the pion and on the \ndecay 7r--~ evy allows one to determine four of the seven low-energy constants of \nSU(2) × SU(2): Ii, 12, l~ and Io. Using the formulae ( i 1.6) which relate these constants \nto the low-energy expansion of SU(3) xSU(3), this information may be taken over \nto determine four of the ten low-energy constants L~,..., Lto. The measured value \nof FK: F,, the o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-034-j-gasser-h-leutwvler-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "507 \n¢rcr scattering lengths \n4 \n0 \n2 \n1 \nf \nM~ \n27) \nIi= 107rF,~(a2-a2)+4--~2~ln---~+-~l. \n(14.1) \nFor definiteness we evaluate all coupling constants at scale \n/.t = M, 7 . \nThe observed scattering lengths as reported by Petersen in the compilation of \ncoupling constants and low-energy parameters [32] \na°=(17+3), \nl0 -4, \na~=(I.3± 3), l0 4, \n(14.2) \n(in units of M,r ~) lead to \nI~ = (6.8+2.7). \n10 -3 . \n(14.3) \nUsing the relation (1 i.6) this value may be converted into a value for L~; the result \nis shown in table I. \nThe D-wave scattering lengths also allow us to pin down the combination",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": ", 8Bom~,~",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-035-8bom.md",
+      "narrative": null,
+      "content": "F~ \nI--/ZK \n- - \n(14.12) \n~,-~= \nT/ZK~- \nFo 2 /-4- \nThe renormalization point dependence of the constant L~ is cancelled by the chiral \nlogarithms appearing in this formula. At the scale/z = M r the quantity P-K- fiK is \nless than 1% • the value of L~ at this scale is therefore a good measure for the Zweig \nrule violating contributions to F,,. Denoting the value of FK in the limit rn~ = 0 by \n'~K the low-energy representation (10.7) gives \n. \n8Bomb. \nr \nI \nr",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FKF-~-K=",
+      "pageStart": 45,
+      "pageEnd": 49,
+      "target": "../sections/sec-036-fkf--k.md",
+      "narrative": null,
+      "content": "I--3(IZK--~K)--3(IZn--~)+----~O (L4+~Ls). \n(14.13) \nAgain, at the scale/z = M, the chiral logarithms amount to less than 1%. In order \nfor F, to be less sensitive to ms than FK we must have \nIL~4[<< ~[L~I , \n(14.14) \ni.e. the reference value for the size of the Zweig rule violating quantity L~ is ½ L; = 10 ~ \nIn view of this we consider the estimate for L~ given in table 1 as conservative. \n(Expressed in terms of L~ the preliminary value [4 = 4.6 + 0.9 given in I I is equivalent \nto L~=(0.5±0.7). l0 3.) \nThe size of L~) may be estimated either by investigating the dependence of the \nvacuum exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-037-appendix.md",
+      "narrative": null,
+      "content": "The kernels M~,~(z), K~,(z) and J(z) defined in eq. (8.6) are linear combinations \nof the functions -iAp(z)Ao(z) , -iO,Al,(Z)Ao(z) and -iO,,O~Ae(z)Ao(z). We con- \nsider therefore the Fourier transforms (s = p2) \n-i I daz eiPZAP(z)Ao(z) = J(s) , \n-i Y daz eiPZO~'AP(z)Ao(z) = -iP~'Jl(s) ' \nf \nip= \n-i \ndaze 8~,~Ae(z)Ao(z)=-[p,,pvJ2(s)+g~,~sJ~(s)], \n(A.I)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gasser, H. Leutwyler / Chiral perturbation theory'",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-038-j-gasser-h-leutwyler-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "J. Gasser, H. Leutwyler / Chiral perturbation theory' \nwhich are given by the standard one-loop integrals \n-i \n7~,~(M~-q2)-'(M~-(p-q)2)-'(l; \nq.;q.q~) \n(27r)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "= (J ; p.J~; p.p~J2+ g.~sJ3) •",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-039-j-pj-ppj2-gsj3.md",
+      "narrative": null,
+      "content": "(A.2) \nThe scalar functions J~, J2 and J3 may be expressed in terms of J(s): \nJ,(s) = 1 ~(Ap(0)- AQ(0)) +~s (s + A)J(s), \n1 \n1 \nJ2(s) \nd - 1 s2~Sll/ -- d12), \n1 \n1 \nJ3(s)= d \nl ~(sl,- 12), \n(A.3) \nwhere Ae(0) is the Feynman propagator evaluated at z = 0: \nM2 \n\" l \nd~( MP~ a-4 \n-iAe(O):~ \n` ( -2] \n~-~] \n(A.4) \nand \nIt(s) = M2 J(s)- \nITAo(O), \n! \nA \n2 \n2 \n= M e - M o . \n(A.5) \nIt su~ces therefore to discuss the function J(s) - the kernels M~,,. and K~ may then \neasily be obtained from eqs. (8.6) and (A.3)-(A.5). \nFor the following it is convenient to make use of the integral representation \nfo'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ja\"",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-040-2-ja.md",
+      "narrative": null,
+      "content": "For convenience we also give the values of the derivatives of the function J(s) at \ns = 0, which are easily obtained from the integral representation (A.7) \nM 2 \nI [Z \n_M~M201n,,~2 1 \n]'¢°) - \n[ \nM . J ' \nl \nf 2 \n2 \nM$M \n \nY\"(0) = 3--~2~-S~(3Z -232)+4~Z \nIn--~2°r} . \n(A.10) \nIf the two masses are equal, M 2 = M~ = M 2, the function J(s) and the constants \nJ'(0), J\"(0), k simplify to \n](s) = \n~ In \n2 \n~+1 \ncr = (I-4M2/s) I/2, \nJ'(0)- \nI \n! \n4807r \n21 \n1 \n~--~-~_2/1 \n/ \n~M 2 \n) \n967r 2 M2 \nJ\"(0) \nM\" \nk= \nIn \n+1 \n(A.I 1) \n, \n,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/np-b250-1985-465/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-041-references.md",
+      "narrative": null,
+      "content": "[I] G. Adkins, C. Nappi and E. Witten, Nucl. Phys. B228 (1983) 552 \n[2] S.L. Adler, Phys. Rev. 177 (1969) 2426 \n[3] E. Bagan, A. Bramon, S. Narison and N. Paver, Phys. Lett. 135B (1984) 463 \n[4] V. Baluni, Phys. Rev. DI9 (1979) 2227 \n[5] W.A. Bardeen, Phys. Rev. 184 (1969) 1848 \n[6] J.S. Bell and R. Jackiw, Nuovo Cim. 60A (1969) 47 \n[7] J.B. Breit and C. Nappi, Phys. Rev. Lett. 53 (1984) 889 \n[8] M.S. Chanowitz, Phys. Rev. Lett. 44 (1980) 59 \n[9] M. Chemtob, The three-flavour skyrmion model applied to the baryon octet and decimet, Saclay \npreprint S PhT/84/100 \n[10] R.J. Crewther, in Field the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

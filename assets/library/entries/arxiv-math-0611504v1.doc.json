@@ -1,0 +1,1946 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0611504v1",
+  "title": "arxiv-math-0611504v1",
+  "variant": "pdf",
+  "pages": 40,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Universal QHG",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-universal-qhg"
+    },
+    {
+      "level": 2,
+      "title": "Building blocks",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-building-blocks"
+    },
+    {
+      "level": 2,
+      "title": "QHG triangulated pseudomanifolds",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-qhg-triangulated-pseudomanifolds"
+    },
+    {
+      "level": 2,
+      "title": "QHG universal functor",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-qhg-universal-functor"
+    },
+    {
+      "level": 2,
+      "title": "Towards geometric specializations",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-towards-geometric-specializations"
+    },
+    {
+      "level": 1,
+      "title": "Parameters for PSL(2,C)-characters of surfaces",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-parameters-for-psl2c-characters-of-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Efficient triangulations",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-efficient-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Cocycle parameters",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-cocycle-parameters"
+    },
+    {
+      "level": 2,
+      "title": "Cross-ratio parameters",
+      "number": "3.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-cross-ratio-parameters"
+    },
+    {
+      "level": 1,
+      "title": "The QHFT bordism category",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-the-qhft-bordism-category"
+    },
+    {
+      "level": 2,
+      "title": "Marked topological bordisms",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-marked-topological-bordisms"
+    },
+    {
+      "level": 2,
+      "title": "Boundary structures",
+      "number": "4.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-boundary-structures"
+    },
+    {
+      "level": 1,
+      "title": "The QHFT functor",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-the-qhft-functor"
+    },
+    {
+      "level": 2,
+      "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo"
+    },
+    {
+      "level": 2,
+      "title": "Amplitudes",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-amplitudes"
+    },
+    {
+      "level": 2,
+      "title": "QHFT variants",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-53-qhft-variants"
+    },
+    {
+      "level": 2,
+      "title": "Mapping class group representations",
+      "number": "5.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-54-mapping-class-group-representations"
+    },
+    {
+      "level": 2,
+      "title": "Tunneling the (+)/(-) states",
+      "number": "5.5",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Partition functions",
+      "number": "6",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-6-partition-functions"
+    },
+    {
+      "level": 2,
+      "title": "QHFT vs QHFT0 partition functions",
+      "number": "6.1",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-61-qhft-vs-qhft0-partition-functions"
+    },
+    {
+      "level": 2,
+      "title": "Invariants of cusped manifolds and surgery formulas",
+      "number": "6.2",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-62-invariants-of-cusped-manifolds-and-surgery-fo"
+    },
+    {
+      "level": 2,
+      "title": "Manifolds that fiber over S1 - Examples",
+      "number": "6.3",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-63-manifolds-that-fiber-over-s1---examples"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft bordisms",
+          "heading": false
+        },
+        {
+          "term": "ephane baseilhac",
+          "heading": false
+        },
+        {
+          "term": "riccardo benedetti",
+          "heading": false
+        },
+        {
+          "term": "cusped manifolds",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "qhg",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic geometry",
+          "heading": false
+        },
+        {
+          "term": "mapping class",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0611504v1 [math.GT] 16 Nov 2006 QUANTUM HYPERBOLIC GEOMETRY ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2 1 Universit´e Grenoble I, Institut Joseph Fourier, UMR CNRS 5582, 100 rue des Maths, B.P. 74, 38402 Saint Martin d’H`eres Cedex, FRANCE 2 Dipartimento di Matematica, Universit`a di Pisa, Largo Bruno Pontecorvo 5, I-56127 Pisa, ITALY Emails: stephane.baseilhac@ujf-grenoble.fr and benedett@dm.unipi.it",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0611504v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft bordism",
+          "heading": false
+        },
+        {
+          "term": "qhft partition",
+          "heading": false
+        },
+        {
+          "term": "qhft surfaces",
+          "heading": false
+        },
+        {
+          "term": "denoted qhft",
+          "heading": false
+        },
+        {
+          "term": "qhg triangulated",
+          "heading": false
+        },
+        {
+          "term": "qhg functors",
+          "heading": false
+        },
+        {
+          "term": "bordism category",
+          "heading": false
+        },
+        {
+          "term": "triangulated pseudomanifold",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we construct a new family {HN}, indexed by the odd integers N ≥1, of (2 + 1)- dimensional quantum ﬁeld theories (QFT) that we call Quantum Hyperbolic Field Theories (QHFT). Here, following [2, 30], by QFT we mean a functor from a (2 + 1)-bordism category, possibly non purely topological, to the tensorial category of ﬁnite dimensional complex linear spaces. The QHFT bordism category is based on triples",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-universal-qhg",
+      "number": "2",
+      "title": "Universal QHG",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-building-blocks",
+      "number": "2.1",
+      "title": "Building blocks",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charged i-tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "u1v",
+          "heading": false
+        },
+        {
+          "term": "matrix dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "form log",
+          "heading": false
+        },
+        {
+          "term": "valued ﬂattenings",
+          "heading": false
+        },
+        {
+          "term": "bcj",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charged",
+          "heading": false
+        },
+        {
+          "term": "cross-ratio moduli",
+          "heading": false
+        }
+      ],
+      "extract": "matrix dilogarithms RN(∆(b, w, f, c)) ∈Aut(CN ⊗CN) deﬁned for every odd positive integer N [5]. Flat/charged-I tetrahedra. Consider the half-space model of the oriented hyperbolic space H3, with the group of direct isometries identiﬁed with PSL(2, C) by the conformal action on ∂H 3 = CP1 = C ∪{∞} by Moebius transformations. An I-tetrahedron is an oriented ideal tetrahedron ∆in ∂H 3 with distinct ordered vertices v0,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-qhg-triangulated-pseudomanifolds",
+      "number": "2.2",
+      "title": "QHG triangulated pseudomanifolds",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhg triangulated",
+          "heading": true
+        },
+        {
+          "term": "qhg transit",
+          "heading": false
+        },
+        {
+          "term": "bubble transit",
+          "heading": false
+        },
+        {
+          "term": "every qhg",
+          "heading": false
+        },
+        {
+          "term": "triangulated pseudomanifold",
+          "heading": false
+        },
+        {
+          "term": "bubble move",
+          "heading": false
+        },
+        {
+          "term": "total modulus",
+          "heading": false
+        },
+        {
+          "term": "common edge",
+          "heading": false
+        }
+      ],
+      "extract": "plicity, but all what follows makes sense for arbitrary singular 3-cycles whose non manifold locus is of codimension ≥2. By a pseudomanifold Z, possibly with non-empty boundary ∂Z, we mean a compact oriented polyhedron with at most a ﬁnite set of non manifold points. The boundary is a pseudo-surface. A QHG triangulated pseudomanifold (Z, T ) is a pseudomanifold Z obtained as the quotient of a ﬁnite family Z = {(∆i,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-qhg-universal-functor",
+      "number": "2.3",
+      "title": "QHG universal functor",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhg",
+          "heading": true
+        },
+        {
+          "term": "trace tensors",
+          "heading": false
+        },
+        {
+          "term": "matrix dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "bordism",
+          "heading": false
+        },
+        {
+          "term": "n-state",
+          "heading": false
+        },
+        {
+          "term": "internal vertices",
+          "heading": false
+        },
+        {
+          "term": "every odd",
+          "heading": false
+        },
+        {
+          "term": "normalization factor",
+          "heading": false
+        }
+      ],
+      "extract": "pseudomanifold (Z, T ) a trace tensor HN(T ), as follows. Deﬁne an N-state of T as a function that gives every 2-simplex an index, with values in {0, . . . , N −1}. Every N-state determines an entry for each matrix dilogarithm RN(∆, b, w, f, c). As two tetrahedra induce opposite orientations on a common 2-face, an index is down for the RN of one tetrahedron while it is up for the other (see Figure 1). By summing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-towards-geometric-specializations",
+      "number": "2.4",
+      "title": "Towards geometric specializations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1922,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charged i-triangulations",
+          "heading": false
+        },
+        {
+          "term": "global ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "reﬁned qhg",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charges",
+          "heading": false
+        },
+        {
+          "term": "distinguished ﬂat",
+          "heading": false
+        },
+        {
+          "term": "qhg isomorphisms",
+          "heading": false
+        },
+        {
+          "term": "log-branches",
+          "heading": false
+        },
+        {
+          "term": "idealization",
+          "heading": false
+        }
+      ],
+      "extract": "built ad hoc on the functional properties of the matrix dilogarithms. In order to eventually get specializations with a geometric content, such as QHFT, it is necessary to reﬁne more and more our rough ﬂat/charged I-triangulations. In fact we have to impose some global constraints that would be preserved by (possibly reﬁned) QHG isomorphisms. It is useful to recall at once some of these reﬁnements, and related",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-parameters-for-psl2c-characters-of-surfaces",
+      "number": "3",
+      "title": "Parameters for PSL(2,C)-characters of surfaces",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psl",
+          "heading": true
+        },
+        {
+          "term": "xirr",
+          "heading": false
+        },
+        {
+          "term": "homirr",
+          "heading": false
+        },
+        {
+          "term": "complex algebraic",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "complex dimension",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "regular functions",
+          "heading": false
+        }
+      ],
+      "extract": "Parameters for PSL(2, C)-characters of surfaces Fix a compact closed oriented surface S of genus g with a non empty set V = {v1, . . . , vr} of marked points, and negative Euler characteristic χ(S \\ V ) < 0. Denote by π the fundamental group of S \\ V , and by R(g, r) = Hom(π, PSL(2, C))/PSL(2, C) the set of all conjugacy classes of PSL(2, C)-valued representations of π. The group π is free of rank κ = 2g+r−1. Any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-efficient-triangulations",
+      "number": "3.1",
+      "title": "Efficient triangulations",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "corner maps",
+          "heading": false
+        },
+        {
+          "term": "corner map",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": true
+        },
+        {
+          "term": "ﬂips",
+          "heading": false
+        },
+        {
+          "term": "triangle",
+          "heading": false
+        },
+        {
+          "term": "interior",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "branching",
+          "heading": false
+        }
+      ],
+      "extract": "from S the interior of small 2-disks Di such that vi ∈∂Di. A triangulation T ′ of S with the set of vertices equal to V is called a topological ideal triangulation of S \\ V . Given such a T ′, we need a marking of corners of the 2-simplices. The best suited to 3-dimensional extension are induced by global branchings b′ of T ′, and it is known that pairs (T ′, b′) always exist. Then, as in section 2, we have a sign",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-cocycle-parameters",
+      "number": "3.2",
+      "title": "Cocycle parameters",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cocycle parameters",
+          "heading": true
+        },
+        {
+          "term": "valued cocycles",
+          "heading": false
+        },
+        {
+          "term": "tgen",
+          "heading": false
+        },
+        {
+          "term": "one-one correspondence",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "residual gauge",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "diagonal entry",
+          "heading": false
+        }
+      ],
+      "extract": "respective fundamental groups. Fix an e-triangulation (T, b) of F. Denote by Z(T, b) the space of PSL(2, C)-valued 1-cocycles on (T, b); we stipulate that on a triangle with ordered b-oriented edges e0, e1, e2 the cocycle relation is z(e0)z(e1)z(e2)−1 = 1. In this section we construct a parametrization of R(g, r) based on cocycle coeﬃcients by specifying subsets of Z(T, b) with small ‘residual gauge groups’, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-cross-ratio-parameters",
+      "number": "3.3",
+      "title": "Cross-ratio parameters",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 2863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential i-parameters",
+          "heading": false
+        },
+        {
+          "term": "exponential shear-bend",
+          "heading": false
+        },
+        {
+          "term": "pleated surfaces",
+          "heading": false
+        },
+        {
+          "term": "pleated hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "idealizable cocycles",
+          "heading": false
+        },
+        {
+          "term": "shear-bend parameters",
+          "heading": false
+        },
+        {
+          "term": "isometry class",
+          "heading": false
+        },
+        {
+          "term": "idealization",
+          "heading": false
+        }
+      ],
+      "extract": "parameters for R(g, r) which are related to the shear-bend coordinates for pleated hyperbolic surfaces. These parameters are obtained via an idealization procedure that includes the choice of a base point on the Riemann sphere. We ﬁx this base point as 0. Note that the B+(2, C)-orbit of 0 is the whole of C, while B−(2, C) ﬁxes 0. Hence the symmetry between Z(T, b)+ and Z(T, b)−given by the map Ψ in (15) shall be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-the-qhft-bordism-category",
+      "number": "4",
+      "title": "The QHFT bordism category",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "We deﬁne ﬁrst a topological (2 + 1)-bordism category. Then we will give it more structure, including the parameter spaces of the previous sections.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-41-marked-topological-bordisms",
+      "number": "4.1",
+      "title": "Marked topological bordisms",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "segments avi",
+          "heading": false
+        },
+        {
+          "term": "horizontal boundary",
+          "heading": false
+        },
+        {
+          "term": "boundary component",
+          "heading": false
+        },
+        {
+          "term": "bordism category",
+          "heading": false
+        },
+        {
+          "term": "tangle line",
+          "heading": false
+        },
+        {
+          "term": "disjoint union",
+          "heading": false
+        },
+        {
+          "term": "marked",
+          "heading": true
+        },
+        {
+          "term": "tunnel",
+          "heading": false
+        }
+      ],
+      "extract": "r > 0, and r > 2 if g = 0, ﬁx a compact closed oriented base surface S of genus g with a set V = {v1, . . . , vr} of r marked points. Denote by −S the same surface with the opposite orientation, and write ∗S for S = +S or −S. Moreover, ﬁx a set of disjoint embedded closed segments avi in S such that avi has one end point at vi. We say that vi is framed by avi. We say that two orientation preserving diﬀeomorphisms φ1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-boundary-structures",
+      "number": "4.2",
+      "title": "Boundary structures",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft bordism",
+          "heading": false
+        },
+        {
+          "term": "log-i-parameters",
+          "heading": false
+        },
+        {
+          "term": "convex core",
+          "heading": false
+        },
+        {
+          "term": "boundary",
+          "heading": true
+        },
+        {
+          "term": "non empty",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "boundary component",
+          "heading": false
+        },
+        {
+          "term": "complete hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "tures by using the notions of section 3. Fix an e-triangulation (T, b) of F. Following Remark 2.2 and the deﬁnition of log-branches, we put: Deﬁnition 4.1. Let z ∈ZI(T, b)±, and e be a non boundary edge of T . Denote lz(e) the canonical log- branch of W ±(z)(e), computed from the idealization of Star(e) as in Lemma 2.9 and before Deﬁnition 3.8. For any collection m = {mλ}λ of integers, one for each edge λ in T , the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-the-qhft-functor",
+      "number": "5",
+      "title": "The QHFT functor",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft",
+          "heading": true
+        },
+        {
+          "term": "functor",
+          "heading": true
+        },
+        {
+          "term": "qhb",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a QHFT bordism B = ( ˜Y , ˜LF, ρ, α±). For every odd integer N ≥1, we associate a ﬁnite dimensional complex linear space V (α±) to α±, and a linear map HN(B) : V (α−) →V (α+) to B, well-deﬁned up to sign and multiplication by Nth roots of unity. This deﬁnes a (moderately projective) functor HN : QHB →Vect, where Vect is the tensor category of complex linear spaces. The construction immediately implies that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
+      "number": "5.1",
+      "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": null,
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distinguished ﬂat",
+          "heading": false
+        },
+        {
+          "term": "tunnel component",
+          "heading": false
+        },
+        {
+          "term": "charged i-triangulations",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charges",
+          "heading": false
+        },
+        {
+          "term": "dki",
+          "heading": false
+        },
+        {
+          "term": "qhft",
+          "heading": true
+        },
+        {
+          "term": "branched triangulation",
+          "heading": false
+        },
+        {
+          "term": "log-i-parameters",
+          "heading": false
+        }
+      ],
+      "extract": "a pseudomanifold Z(B). Fill each tunnel boundary component of ˜Y with a solid tube, thus recovering a copy of the manifold Y . The cores of the solid tubes make a parallel unframed copy λ′′ of L. We deﬁne Z(B) as the result of collapsing to one point each component of λ′′. In other words, we glue to each tunnel component of ˜Y the oriented topological cusp ˆC = B × [0, +∞]/(B × {∞}) with base equal to either B = S1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-amplitudes",
+      "number": "5.2",
+      "title": "Amplitudes",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": "26",
+      "words": 1349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft bordisms",
+          "heading": false
+        },
+        {
+          "term": "even ﬂattenings",
+          "heading": false
+        },
+        {
+          "term": "valued ﬂattenings",
+          "heading": false
+        },
+        {
+          "term": "bordisms supported",
+          "heading": false
+        },
+        {
+          "term": "nth roots",
+          "heading": false
+        },
+        {
+          "term": "charged i-triangulation",
+          "heading": false
+        },
+        {
+          "term": "sign ambiguity",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charged",
+          "heading": false
+        }
+      ],
+      "extract": "V −1 for the dual space. Both are endowed with the hermitian inner product with orthonormal basis the vectors e0 and (ei + eN−i)/ √ 2, i = 1, . . . , N −1. Recall the notations of section 3. For each base surface F ﬁx an e-triangulation (T, b), an or- dering of the set T (2) of 2-simplices, and let V (T, b) = ⊗t∈T (2)V σ±(t). Given a QHFT bordism B = ( ˜Y , ˜LF, ρ, α±) with a distinguished ﬂat/charged",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-53-qhft-variants",
+      "number": "5.3",
+      "title": "QHFT variants",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhft",
+          "heading": true
+        },
+        {
+          "term": "adapted d-triangulations",
+          "heading": false
+        },
+        {
+          "term": "bordism category",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian subcomplex",
+          "heading": false
+        },
+        {
+          "term": "variants",
+          "heading": true
+        },
+        {
+          "term": "qhfte",
+          "heading": false
+        },
+        {
+          "term": "get tensors",
+          "heading": false
+        },
+        {
+          "term": "meridians",
+          "heading": false
+        }
+      ],
+      "extract": "QHFT0: Consider the bordism category supported by triples (Y, L, ρ), where L is an non-empty unframed tangle in Y and ρ is a PSL(2, C)-character on the whole of Y (ie. ρ is trivial at the meridians of L). In fact, we restrict to holonomies ρ such that (Y, L, ρ) admits D-triangulations that extend a topological branched ideal triangulation (T ′, b′) of each boundary component, say (S, V ), and for which the link L is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-54-mapping-class-group-representations",
+      "number": "5.4",
+      "title": "Mapping class group representations",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idealizable cocycle",
+          "heading": false
+        },
+        {
+          "term": "idealizable tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "non idealizable",
+          "heading": false
+        },
+        {
+          "term": "qhft tensor",
+          "heading": false
+        },
+        {
+          "term": "vertical edges",
+          "heading": false
+        },
+        {
+          "term": "vertical boundary",
+          "heading": false
+        },
+        {
+          "term": "charged i-triangulations",
+          "heading": false
+        },
+        {
+          "term": "i-triangulations covering",
+          "heading": false
+        }
+      ],
+      "extract": "Set ˜YF = F × [−1, 1], ˜L = ∂F × [−1, 1] with trivial vertical framing, and let Mod(g, r) be the mapping class group of F, that is, the group of homotopy classes of orientation-preserving diﬀeomorphisms of F ﬁxing pointwise each boundary component. Given ψ± : (±F, (T, b, L)) →F × {±1}, put ψ = ψ−1 + ψ−and [ψ] for the corresponding element in Mod(g, r). Denote by ˜W[ψ] the mapping torus (F × [−1, 1])/(x, −1) ∼(ψ(x),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-6-partition-functions",
+      "number": "6",
+      "title": "Partition functions",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition functions",
+          "heading": true
+        },
+        {
+          "term": "qhft",
+          "heading": false
+        },
+        {
+          "term": "unframed",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "ﬁlling",
+          "heading": false
+        }
+      ],
+      "extract": "Assume that W is a closed oriented 3-manifold, and that L is a link in W with a framed part LF and an unframed one L0. Each variant of quantum hyperbolic ﬁeld theory (see Section 5.3) leads to the respective partition functions. If ρ is trivial at each meridian of L0, we have the QHFT partition functions HN(W, LF, L0, ρ, h, k) that specialize to the QHFT0 ones when L = L0: HN(W, L, ρ, h, k) = HN(W, ∅, L0, h, k) . If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-61-qhft-vs-qhft0-partition-functions",
+      "number": "6.1",
+      "title": "QHFT vs QHFT0 partition functions",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂat charges",
+          "heading": false
+        },
+        {
+          "term": "qhft",
+          "heading": true
+        },
+        {
+          "term": "symmetric tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "d-triangulation",
+          "heading": false
+        },
+        {
+          "term": "admissible triangulation",
+          "heading": false
+        },
+        {
+          "term": "annuli",
+          "heading": false
+        },
+        {
+          "term": "adjacent",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": true
+        }
+      ],
+      "extract": "HN(W, L, ρ, 0, 0) coincide with the invariants HN(W, L, ρ) constructed in [4, 5]. Let us consider more generally (W, LF, L0, ρ, 0, 0). Fix also a framing F0 for L0. Then we can consider the partition function HN(W, LF ∪L0 F0, ∅, ρ, 0, 0). Let us denote by ¯λ the unframed link obtained by splitting each component of L0 in the two corresponding parallel boundary components of the ribbon link L0 F0. We have:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-62-invariants-of-cusped-manifolds-and-surgery-fo",
+      "number": "6.2",
+      "title": "Invariants of cusped manifolds and surgery formulas",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 35,
+      "labelStart": "29",
+      "labelEnd": "35",
+      "words": 4084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charged i-triangulation",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "quasi-geometric triangulation",
+          "heading": false
+        },
+        {
+          "term": "charge transits",
+          "heading": false
+        },
+        {
+          "term": "bubble moves",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charged",
+          "heading": false
+        },
+        {
+          "term": "ﬁlling along",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        }
+      ],
+      "extract": "manifold triangulations T used in [5] (see Deﬁnition 6.2 and Deﬁnition 6.3 in that paper) to deﬁne the quantum hyperbolic invariant trace tensors HN(T ) for oriented cusped hyperbolic manifolds. Let M be a cusped manifold. Denote Z the pseudo-manifold obtained by taking the one point compactiﬁcation of each cusp of M. M admits a triangulation by positively embedded hyperbolic ideal tetrahedra, possibly including",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-63-manifolds-that-fiber-over-s1---examples",
+      "number": "6.3",
+      "title": "Manifolds that fiber over S1 - Examples",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 40,
+      "labelStart": "35",
+      "labelEnd": "40",
+      "words": 2773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charged i-triangulation",
+          "heading": false
+        },
+        {
+          "term": "ﬂip moves",
+          "heading": false
+        },
+        {
+          "term": "log-i-parameters compatible",
+          "heading": false
+        },
+        {
+          "term": "ﬂat charged",
+          "heading": false
+        },
+        {
+          "term": "charged i-tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "monodromy ideal",
+          "heading": false
+        },
+        {
+          "term": "ephane baseilhac",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "the QHFT partition functions of mapping tori. A speciﬁc class of distinguished ﬂat/charged I- triangulations of ( ˜ W[ψ], ˜L[ψ], ρ) is obtained by composing one for the trivial mapping cylinder F × [−1, 1], say Ttriv, with the monodromy action on the e-triangulation (T, b) of F × {1}, and then gluing the two boundary components. The monodromy action can always be decomposed as a sequence of ﬂip moves: a single ﬂip",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pleated surfaces",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "lms lecture",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "teichmuller space",
+          "heading": false
+        },
+        {
+          "term": "cheeger-chern-simons class",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "surface diﬀeomorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "[1] W. Abikoﬀ, The Real Analytic Theory of Teichm¨uller Space, Lect. Notes Math. 820, Springer (1980) [2] M.F. Atiyah, Topological quantum ﬁeld theories, Publ. Math. IHES 68 (1988) 175–186 [3] S. Baseilhac, Hyperbolic ﬁeld theories, geometric quantization and the dynamics of surface diﬀeomorphisms, in preparation [4] S. Baseilhac, R. Benedetti, Quantum hyperbolic invariants of 3-manifolds with P SL(2, C)-characters,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Amplitudes"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "qhft bordism",
+      "heading": true
+    },
+    {
+      "term": "qhft tensors",
+      "heading": false
+    },
+    {
+      "term": "qhft surfaces",
+      "heading": false
+    },
+    {
+      "term": "qhft partition",
+      "heading": true
+    },
+    {
+      "term": "denoted qhft",
+      "heading": false
+    },
+    {
+      "term": "qhft ones",
+      "heading": false
+    },
+    {
+      "term": "qhft functor",
+      "heading": true
+    },
+    {
+      "term": "ephane baseilhac",
+      "heading": false
+    },
+    {
+      "term": "boundary triangulation",
+      "heading": false
+    },
+    {
+      "term": "ﬂat charged",
+      "heading": false
+    },
+    {
+      "term": "riccardo benedetti",
+      "heading": false
+    },
+    {
+      "term": "qhg triangulated",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "I-tetrahedra and dual encoding",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A diagonal exchange",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The pentagon relation",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The moves on naked singular triangulations",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A 2 ↔3 QHG move (x1 = y/x, x2 = y(1 −x)/x(1 −y), and x3 =",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The ﬂips with marked corners",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The branched triangulated cell sv",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The recipe for reading oﬀholonomies from exponential I-parameters",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "More economic e-triangulation",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Notations for Log-I-parameters",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "An I-cusp",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Pasting opposite vertical sides yields an instance of C(T, b) for the once-punctured torus S, based on an economic triangulation of S as in Remark 3.12",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A special admissible triangulation of B",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "An instance of double cone on a disc",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "A normal path a in Link(v) running parallel to a blowing-up curve C",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Flat/charge corrections for a Dehn ﬁlling",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Lifts to e-triangulations (economic ones - see Remark 3.12 - at the ﬁrst row) of ﬂip moves on the corresponding ideal triangulations near marked corners",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "The composition of ﬂip transformations for the monodromy of S3 \\ K",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "The face and edge identiﬁcations for the canonical geodesic ideal trian-",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 24,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "19 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0611504v1"
+  }
+}

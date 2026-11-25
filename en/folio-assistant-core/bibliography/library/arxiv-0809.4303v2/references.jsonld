@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0809.4303v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Exact vortex solutions in an extended Skyrme-Faddeev model",
+      "dcterms:creator": [
+        "Carlos, Instituto de F´ısica de São",
+        "IFSC/USP"
+      ],
+      "dcterms:issued": "D:20181024",
+      "dcterms:identifier": "https://arxiv.org/abs/0809.4303",
+      "dcterms:abstract": "We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and that is believed to describe some aspects of the low energy limit of the pure SU(2) Yang-Mills theory. Despite the eﬀorts in the last decades those are the ﬁrst exact analytical solutions to be constructed for such type of theory. The exact vortices appear in a very parti- cular sector of the theory characterized by special values of the coupling constants, and by a constraint that leads to an inﬁnite number of conserved charges. The theory is scale invariant in that sector, and the solutions satisfy Bogomolny type equations. The energy of the static vortex is proportional to its topological charge, and waves can travel with the speed of light along them, adding to the energy a term proportional to a U(1) Noether charge they create. We believe such vortices may play a role in the strong coupling regime of the pure SU(2) Yang-Mills theory. 1e-mail: laf@ifsc.usp.br",
+      "dcterms:source": "library/arxiv-0809.4303v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0809.4303v2"
+    }
+  ]
+}

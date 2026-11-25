@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-ph-0103325v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantum algebras in phenomenological description of particle properties",
+      "dcterms:creator": [
+        "Quantum",
+        "physics, q-deformed algebras find their application not only in mathematical",
+        "theoretical, field"
+      ],
+      "dcterms:issued": "D:20220523",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-ph/0103325",
+      "dcterms:source": "library/arxiv-hep-ph-0103325v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-ph-0103325v4"
+    }
+  ]
+}

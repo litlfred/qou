@@ -1,0 +1,733 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9609174v2",
+  "title": "arxiv-hep-th-9609174v2",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Chiral unitary ensembles",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-chiral-unitary-ensembles"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of orthogonal polynomials",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-asymptotics-of-orthogonal-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Universal correlations",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-universal-correlations"
+    },
+    {
+      "level": 1,
+      "title": "Unitary ensembles",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-unitary-ensembles"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of orthogonal polynomials",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-31-asymptotics-of-orthogonal-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Universal correlations",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-32-universal-correlations"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion and speculation",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-conclusion-and-speculation"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nordita",
+          "heading": false
+        },
+        {
+          "term": "hannover",
+          "heading": false
+        },
+        {
+          "term": "microscopic limit",
+          "heading": false
+        },
+        {
+          "term": "akemann",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9609174v2 23 Sep 1996 ITP-UH-16/96 NBI-HE-96-43 NORDITA-96/59 hep-th/9609174 Universality of random matrices in the microscopic limit and the Dirac operator spectrum G. Akemann∗, P. H. Damgaard†, U. Magnea‡ and S. Nishigaki§ ∗Institut f¨ur Theoretische Physik, Universit¨at Hannover Appelstraße 2, D-30167 Hannover, Germany † §The Niels Bohr Institute / ‡NORDITA Blegdamsvej 17, DK-2100 Copenhagen Ø,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9609174v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "density rho",
+          "heading": false
+        },
+        {
+          "term": "near lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "llap",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a four-dimensional gauge theory coupled to fermions in given representations of the gauge group, and with given global (and possibly spontaneously broken) flavor symmetries. In the chiral limit, the associated Dirac operator ${\\rm i} D\\!\\llap{/}$ anticommutes with $\\gamma_5$, \\begin{equation} \\{{\\rm i} D\\!\\llap{/},\\gamma_5\\} ~=~ 0 ~. \\end{equation} This means that the associated eigenvalues of ${\\rm i}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-chiral-unitary-ensembles",
+      "number": "2",
+      "title": "Chiral unitary ensembles",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "chiral unitary",
+          "heading": true
+        },
+        {
+          "term": "left det",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we consider the chiral unitary ensemble: \\begin{equation} Z=\\int \\d M \\, {\\rm det}^{N_f} M\\, \\exp \\left\\{ -\\frac{N}{2} {\\rm tr}\\, V(M^2) \\right\\},\\ \\ \\ V(M^2)=\\sum_{k\\geq 1} \\frac{g_k}{k}M^{2k},\\ \\ \\ N_f=0,1,\\cdots \\label{partition} \\end{equation} where $M$ stands for an $(N+N')\\times (N+N')$ block hermitian matrix whose non-zero components are $N\\times N'$ complex matrices on the off-diagonals,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-asymptotics-of-orthogonal-polynomials",
+      "number": "2.1",
+      "title": "Asymptotics of orthogonal polynomials",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "orthogonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "ref vnn",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "label vnn",
+          "heading": false
+        },
+        {
+          "term": "hat lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda left",
+          "heading": false
+        },
+        {
+          "term": "infty lambda",
+          "heading": false
+        }
+      ],
+      "extract": "We shall prove the following theorem on the asymptotic behavior of these orthogonal polynomials: \\begin{quote} {\\bf Theorem 1}:\\ {\\it Let $\\{P^{(\\alpha)}_n(\\lambda)\\}_{n=0,1,\\cdots}$ be the set of polynomials orthogonal with respect to the measure} \\[ \\d \\lambda\\, \\lambda^\\alpha\\,\\e^{-N\\,V(\\lambda)},\\ \\ \\ V(\\lambda)=\\sum_{k\\geq 1} \\frac{g_k}{k}\\,\\lambda^k,\\ \\ \\ \\alpha=0,1,\\cdots \\] {\\it over the range $[0,\\infty)$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-universal-correlations",
+      "number": "2.2",
+      "title": "Universal correlations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "infty rho",
+          "heading": false
+        },
+        {
+          "term": "eqnarray sigma",
+          "heading": false
+        },
+        {
+          "term": "equation rho",
+          "heading": false
+        },
+        {
+          "term": "density rho",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent Theorem 1 can be used to establish a remarkable universal form of spectral correlators of the model (\\ref{chUE1}). We shall consider the spectral density $\\rho(\\lambda)$, and higher order correlators, in the same microscopic limit as above. \\vspace{12pt}\\noindent To begin, we recall the expression for the integration kernel $K_N(\\lambda,\\mu)$ associated with the eigenvalue problem for the positive-definite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-unitary-ensembles",
+      "number": "3",
+      "title": "Unitary ensembles",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λ2α",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": true
+        },
+        {
+          "term": "ensembles",
+          "heading": true
+        }
+      ],
+      "extract": "Unitary ensembles In this section we consider the unitary ensemble: Z = Z dM det2αM e−NtrV (M2), V (M2) = X k≥1 gk 2kM2k, α = 0, 1, · · · (3.1) where M stands for an N ×N hermitian matrix and dM its Haar measure. This model shares the same global symmetries with a Euclidean three-dimensional SU(Nc ≥3) gauge theory coupled to Nf = 2α massless fermions in the fundamental representation [13]. The partition function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-asymptotics-of-orthogonal-polynomials",
+      "number": "3.1",
+      "title": "Asymptotics of orthogonal polynomials",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "p2n",
+          "heading": false
+        },
+        {
+          "term": "λ2k",
+          "heading": false
+        },
+        {
+          "term": "large-n limit",
+          "heading": false
+        },
+        {
+          "term": "normalizing according",
+          "heading": false
+        },
+        {
+          "term": "r2n",
+          "heading": false
+        },
+        {
+          "term": "recursion relation",
+          "heading": false
+        },
+        {
+          "term": "λ2α",
+          "heading": false
+        }
+      ],
+      "extract": "Asymptotics of orthogonal polynomials We shall prove the following theorem‡ on the asymptotic behavior of these orthogonal polynomi- als: Theorem 2: Let {P (α) n (λ)}n=0,1,··· be the set of polynomials orthogonal with respect to the measure dλ λ2α e−NV (λ2), V (λ2) = X k≥1 gk 2k λ2k, α = 0, 1, · · · over the range (−∞, ∞), whose moments are all ﬁnite. If the polynomials can be normalized according to P (α) 2n (0) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-universal-correlations",
+      "number": "3.2",
+      "title": "Universal correlations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic limit",
+          "heading": false
+        },
+        {
+          "term": "universal",
+          "heading": true
+        },
+        {
+          "term": "correlations",
+          "heading": true
+        },
+        {
+          "term": "x2α",
+          "heading": false
+        },
+        {
+          "term": "christoﬀel-darboux",
+          "heading": false
+        }
+      ],
+      "extract": "Universal correlations The integration kernel associated with the eigenvalue problem of M is (for brevity we set N = odd = 2N + 1) KN(λ, µ)=(λ µ)α e−N 2 (V (λ2)+V (µ2)) 1 N N−1 X n=0 P (α) n (λ)P (α) n (µ) h(α) n =(λ µ)α e−N 2 (V (λ2)+V (µ2)) 1 N N X n=0 1 h(α) 2n ! P (α) 2N +1(λ)P (α) 2N (µ) −P (α) 2N (λ)P (α) 2N +1(µ) λ −µ .(3.29) Here use is made of the Christoﬀel-Darboux identity, and the proportionality",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-conclusion-and-speculation",
+      "number": "4",
+      "title": "Conclusion and speculation",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 969,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "llap",
+          "heading": false
+        },
+        {
+          "term": "universality theorems",
+          "heading": false
+        },
+        {
+          "term": "qcd int",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "stackrel mbox",
+          "heading": false
+        },
+        {
+          "term": "prod det",
+          "heading": false
+        },
+        {
+          "term": "frac cal",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In the present work we have proven two theorems concerning the asymptotic behavior of orthogonal polynomials for a broad class of measures. They show a remarkable asymptotic universality near the origin, a relation previously only known for the classical orthogonal polynomials of generalized Laguerre and Jacobi type \\cite{Sze}. Furthermore, we have used this highly universal behavior to prove universality",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "microscopic limit",
+      "heading": false
+    },
+    {
+      "term": "lambda alpha",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectral",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "equation vspace",
+      "heading": false
+    },
+    {
+      "term": "lambda right",
+      "heading": false
+    },
+    {
+      "term": "infty lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda left",
+      "heading": false
+    },
+    {
+      "term": "orthogonal polynomials",
+      "heading": true
+    },
+    {
+      "term": "eqnarray int",
+      "heading": false
+    },
+    {
+      "term": "measure lambda",
+      "heading": false
+    },
+    {
+      "term": "hat lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9609174v2"
+  }
+}

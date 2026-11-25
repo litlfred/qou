@@ -1,0 +1,916 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1512.04993v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Complexity, action, and black holes\nAdam R. Browna, Daniel A. Robertsb, Leonard Susskinda,\nBrian Swinglea, and Ying Zhaoa\naStanford Institute for Theoretical Physics and\nDepartment of Physics, Stanford University,\nStanford, California 94305, USA\nbCenter for Theoretical Physics and\nDepartment of Physics, Massachusetts Institute of Technology,\nCambridge, Massachusetts 02139, USA\nAbstract\nOur earlier paper “Complexity Equals Action” conjectured that the quantum\ncomputational complexity of a holographic state is given by the classical action\nof a region in the bulk (the “Wheeler-DeWitt” patch). We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "It was observed that black hole interiors grow in time long after local equilibrium is reached \\cite{hartmanmaldacena}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "According to the holographic principle all physics is encoded at the boundaries of spacetime.  A good deal is known in the context of AdS/CFT about this encoding as long as we restrict our attention to the region outside horizons. Very much less is known about the holographic encoding  of physics behind black hole horizons. The  purpose of this paper is to explore a proposal for how properties of the black hole interior are represented on the holographic boundary. We propose that the quantum complexity of the boundary state is equal to the classical action of a spacetime region that extends de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity equals action",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-11-complexity-equals-action.md",
+      "narrative": null,
+      "content": "\\label{subsec:CA}\n\nHere we define  CA-duality  within the context of holographic duality. The setup of CA-duality and the relationship between CV-duality and CA-duality is illustrated in Fig.~\\ref{fig:CVduality}. Choosing times $t_L , t_R$ on the left and right AdS boundaries of\n the eternal AdS-Schwarzschild black hole determines a state $\\ket{\\psi(t_L,t_R)}$,\n\\beq\n\\ket{\\psi(t_L,t_R)} = e^{-i (H_L t_L + H_R t_R)} \\TFD,\n\\eeq\nwhere $\\TFD = Z^{-1/2} \\sum_\\alpha e^{-\\frac{\\beta E_\\alpha}{2} } \\ket{E_\\alpha}_L\\ket{E_\\alpha}_R$ is the thermofield double (TFD) state which purifies the thermal state",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on information storage and processing",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-bounds-on-information-storage-and-processing.md",
+      "narrative": null,
+      "content": "\\label{sec:infobound}\n\nGiven limited resources, there are limits on the storage and processing of information. For the purposes of our conjecture we are ultimately interested in information processing, but the bounds on information storage are so much better studied and understood that we will review them first as a model example.\n\n\n\n\\subsection{Bounds on information storage}\n\nWhen the only scarce resource is spacetime, the information that may be stored is given by the holographic bound \\cite{Hooft:1993gx,Susskind:1994vu}. The total information is bounded by the area,\n\\begin{equation}\nS \\leq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on information scrambling or chaos",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-bounds-on-information-scrambling-or-chaos.md",
+      "narrative": null,
+      "content": "For a system with $N$ degrees of freedom, the scrambling time $t_*$ is a measure of how long it takes for information about a small $O(1)$ perturbation to spread over $O(N)$ degrees of freedom \\cite{fastscramble}. Another useful definition \\cite{Page:1993df} is that this is the time required for reduced density matrix of any subsystem with fewer than half the degrees of freedom  to look approximately thermal.\\footnote{In general, this concept is only useful for systems described by  $k$-local Hamiltonian with $k \\ll N$. For more discussion, see Appendix~\\ref{sec:appendix:A1}}\n\n Black holes are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on quantum evolution",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-23-bounds-on-quantum-evolution.md",
+      "narrative": null,
+      "content": "As well as being concerned with how much information may be stored, or how fast information may be scrambled, we are interested in how fast the system can change its global state. The time for the system to reach an orthogonal state is perhaps the simplest way to measure the rate of change of the global state. In this direction, there are two proved theorems, the Aharonov-Anandan-Bohm bound and the Margolus-Levitin bound. However, the orthogonality time is not the right measure to associate with the growth of the black hole interior, so we turn instead to the rate of growth of quantum gate com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-24-complexity.md",
+      "narrative": null,
+      "content": "Given a state $\\ket{\\psi}$ on $n$ qubits, the state complexity of $\\ket{\\psi}$ is the minimum number of gates necessary to construct $\\ket{\\psi}$. We fix a simple reference state $\\ket{\\psi_0}$ and a universal gate set of elementary unitaries $\\{G_\\alpha\\}$ and define the complexity of $\\ket{\\psi}$ to be the minimum number of gates necessary to produce $\\ket{\\psi}$ from $\\ket{\\psi_0}$. More generally, we require only that $\\ket{\\psi}$ be closely approximated by a state produced from $\\ket{\\psi_0}$. The complexity of $\\ket{\\psi}$ in principle depends on all the details of the construction, but",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjectured complexity growth bound",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-25-conjectured-complexity-growth-bound.md",
+      "narrative": null,
+      "content": "We conjecture that the complexity can be defined such that the growth of complexity is bounded by the energy,\n\\beq\n\\label{eq:bound}\n\\frac{d}{dt} \\CC( e^{-i H t}\\ket{\\psi}) \\leq \\frac{2 E_\\psi}{\\pi \\hbar},\n\\eeq\nwhere $E_\\psi$ is the average energy of $\\ket{\\psi}$ relative to the ground state. To be precise, we conjecture that this bound holds for suitable semiclassical bulk states and similar field theory states; see Appendix~\\ref{sec:boundapp}.\n\nIn calculations with black holes, $E_\\psi$ will be the mass $M$ of the black hole. Hence we have defined the complexity so that black holes appear to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bound on complexity growth with a conserved charge",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-26-bound-on-complexity-growth-with-a-conserved-c.md",
+      "narrative": null,
+      "content": "\\label{sec:conserved-charge}\n\nThe bound Eq.~\\ref{C-bound} is general, but if the system carries conserved quantum numbers such as charge $Q$ or angular momentum $J$, a tighter bound might be possible. Intuitively this is because conserved charges provide a barrier to rapid complexification since some energy is tied up in noncomputing degrees of freedom. We first motivate the bound using the charged TFD state and then present the bound.\n\nTo define the charged version of the TFD state we introduce a chemical potential $\\mu$. We may think of the chemical potential as an electrostatic potential th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action growth of black holes",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-3-action-growth-of-black-holes.md",
+      "narrative": null,
+      "content": "\\label{sec:bh}\n\nIn this section, we will calculate the rate of increase of action of a Wheeler-DeWitt patch of the two-sided black hole (which we are conjecturing to be dual to the rate of growth of complexity of the boundary state).\n\nWe will consider the Einstein-Maxwell theory. The action is (using the conventions of \\cite{Poisson})\n \\begin{equation}\n\\CA =   \\frac{1}{16 \\pi G} \\int_{\\mathcal{M}}  \\sqrt{|g|} \\left( \\mathcal{R} - 2 \\Lambda  \\right) - \\frac{1}{16 \\pi } \\int_{\\mathcal{M}}  \\sqrt{|g|} F_{\\mu \\nu} F^{\\mu \\nu}  +  \\frac{1}{8 \\pi G} \\int_{\\partial \\mathcal{M}} \\sqrt{|h|} {K} , \\labe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action of an uncharged black hole",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-31-action-of-an-uncharged-black-hole.md",
+      "narrative": null,
+      "content": "\\label{sec:actionuncharged}\n\n Fig.~\\ref{fig-incrementaluncharged} shows the Wheeler-DeWitt patch bounded by $t_L$ on the left and $t_R$ on the right for an uncharged ($Q=0$) black hole. As time passes on the left boundary, the patch grows in some places (shown in blue) and shrinks in others (shown in red).\n\nThe total volume (and total action) of the patch outside the horizon is infinite but independent of time, due to the time-translation symmetry outside the hole.\n\\begin{figure}[h] \n   \\centering\n   \\includegraphics[width=5in]{fig-incrementaluncharged.pdf}\n   \\caption{An uncharged AdS black h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action of a charged black hole",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-32-action-of-a-charged-black-hole.md",
+      "narrative": null,
+      "content": "Adding electrical charge to an AdS black hole changes how the Wheeler-DeWitt patch terminates. Rather than terminating when the ingoing lights heets run into the singularity at $r=0$, it now terminates when the light sheets run into each other at $t=0$ (for $t_L = t_R$). Nevertheless, we can use much the same reasoning as before to find the late-time growth of the enclosed  action.\n\nThe entire WDW patch lies outside of the inner horizon at $r_-$. This is reassuring because it means the action is not sensitive to quantum instabilities of the inner horizon, so long as the horizon remains null. (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action of a rotating BTZ black hole",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-33-action-of-a-rotating-btz-black-hole.md",
+      "narrative": null,
+      "content": "\\label{subsec-rotating}\n\nA rotating black hole in $(2+1)$-dimensional AdS space has metric\n\\begin{equation}\nds^2=-f(r)dt^2+\\frac{1}{f(r)}dr^2+r^2\\left(d\\phi-\\frac{8GJ}{2r^2}dt\\right)^2\n\\end{equation}\n\\begin{align}\nf(r)=\\frac{r^2}{\\lads^2}-8G M+\\frac{(8G J)^2}{4r^2} =\\frac{(r^2-r_+^2)(r^2-r_-^2)}{r^2 \\lads^2}.\n\\end{align}\nThe inner horizon ($r_-$) and outer horizon ($r_+$) are at\n\\begin{align}\n&8G M=\\frac{r_+^2+r_-^2}{\\lads^2},\\ \\ \\frac{8G J}{\\lads}=\\frac{2r_+r_-}{\\lads^2}. \\label{eq:BTZformulaforMJ}\n\\end{align}\nThe angular momentum is bounded above\n\\begin{equation}\nM\\geq\\frac{J}{\\lads}.\n\\end{e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Testing our conjectures with black holes",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-4-testing-our-conjectures-with-black-holes.md",
+      "narrative": null,
+      "content": "\\label{sec:testingwithbh}\n\nIn this section, we will test our conjectures using the black holes considered in  \\S\\ref{sec:bh}.\nThe weak form is to check whether, assuming complexity equals action (Eq.~\\ref{eq:Boxed-CA}), the rate of complexification of black holes satisfies the proposed bound on the rate of complexification (Eq.~\\ref{C-bound}). The strong form will be to check whether the bound is saturated by black holes.\n\nFor neutral black holes we will find success; for all those that we have studied the complexification bound is exactly saturated. This includes static black holes of all mas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Neutral static black holes",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-41-neutral-static-black-holes.md",
+      "narrative": null,
+      "content": "For neutral black holes, we calculated the rate of change of action of the WDW patch as\n\\begin{equation}\n\\frac{d \\CA }{dt} = 2 M.\n\\end{equation}\nThe simplicity of this result underlies the claim that all nonrotating uncharged black holes\n saturate the bound, Eq.~\\ref{eq:LloydBound}, if the constant  is fixed at\n\\begin{equation}\n\\textrm{Complexity} = \\frac{1}{\\pi \\hbar}  \\textrm{Action}.\n\\end{equation}\nWith this prefactor, an increase of complexity of a single gate corresponds to an advance of $e^{i\\CA/\\hbar}$ from $1$ to $-1$.\nThis translates to a rate of change of complexity of\n\\begin{equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rotating BTZ black holes",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-014-42-rotating-btz-black-holes.md",
+      "narrative": null,
+      "content": "In \\S\\ref{sec:conserved-charge}, we saw that when there is a conserved angular momentum, the complexification bound tightens to\n\\be\n\\frac{d \\CC }{dt} \\leq \\frac{2}{\\pi \\hbar} \\left[ (M - \\Omega J) -(M-\\Omega J)_\\textrm{gs} \\right] .\n\\label{masterform}\n\\ee\nUsing Eq.~\\ref{eq:BTZformulaforMJ}, the chemical potential for angular momentum is\n\\begin{equation}\n\\Omega = \\frac{r_-}{r_+ \\lads}.\n\\end{equation}\nRotating BTZ black holes thus have\n\\begin{align}\nM-\\Omega J=\\frac{r_+^2+r_-^2}{8 G \\lads^2}-\\frac{2r_-^2}{8 G \\lads^2}=\\frac{r_+^2-r_-^2}{8 G \\lads^2}=\\sqrt{M^2-\\frac{J^2}{ \\lads^2}}.\n\\end{align}\nW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Small charged black holes",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-015-43-small-charged-black-holes.md",
+      "narrative": null,
+      "content": "\\label{sec:smallchargedblackholescomplexity}\nWe may also test our conjecture with electric charge. The bound of \\S\\ref{sec:conserved-charge} is now\n\\be\n\\frac{d \\CC}{dt} \\leq \\frac{2}{\\pi \\hbar} \\left[ (M - \\mu Q) -(M-\\mu Q)_\\textrm{gs} \\right] .\n\\label{masterform2}\n\\ee\nWe will now apply this formula to charged black holes that are much smaller than the AdS radius ($r_+ \\ll \\lads$), for which\n\\bea\nf(r) &=& 1 -\\frac{2GM}{r} + \\frac{GQ^2}{r^2} = \\frac{(r-r_+)(r-r_-)}{r^2}.\n\\eea\nThese have\n\\begin{equation}\nGM = \\frac{r_+ + r_-}{2}  \\ \\ \\ \\ \\& \\ \\ \\ \\ GQ^2 = r_+ r_-.\n\\end{equation}\nThe chemical pot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intermediate and large charged black holes",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-44-intermediate-and-large-charged-black-holes.md",
+      "narrative": null,
+      "content": "The situation for intermediate-sized  ($r_+ \\sim \\lads $) and large charged black holes ($r_+ \\gg \\lads $) is more complicated and leads to an apparent  violation of  the complexification bound Eq.~\\ref{C-bound}. Let us consider the phase diagram in Fig.~\\ref{fig-largechargedblackholes}. There are a number of important curves in the $(M,Q)$ diagram. The first  represents black holes at extremality. The extremality curve can be described by the parametric equations,\n\\bea\nG^2M^2 \\biggl|_\\textrm{extremal} &=&\\frac{\\lads^2}{27}  (G\\mu^2-1)(2G\\mu^2 +1)^2 \\cr \\cr\nQ^2 \\biggl|_\\textrm{extremal} &=& \\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-45-discussion.md",
+      "narrative": null,
+      "content": "\\label{sec:A Pattern}\n\nOf the four classes of black holes we have looked at, three worked perfectly. Neutral black holes (of any size and in any dimension), spinning BTZ black holes, and small charged black holes all had action growths that, when fed into our complexity equals action formula, gave rates of change of complexity that exactly saturate our bound.\n\nLarge charged black holes did not work. We found that a naive calculation of their rate of growth of action implied a complexification rate that was too large. While the rate satisfied the $2M$ bound of Eq.~\\ref{C-bound}, it violated the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Superconducting black holes",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-018-46-superconducting-black-holes.md",
+      "narrative": null,
+      "content": "In the last subsection we discussed that large charged black holes may be unstable to growing charged hair. In this subsection, we will look at an example in which this happens: holographic superconductors. We may ask how rapidly the thermal state of a superconducting black hole complexifies. The relevant hairy black holes correspond to far from extremal black holes of the type considered in \\S\\ref{sec:bh} with additional scalar condensate hair \\cite{holosc1}. Our complexity growth calculation for far from extremal charged black holes leads to the action growth estimate $d\\CA/dt \\sim TS$, so w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Testing our conjecture with static shells",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-5-testing-our-conjecture-with-static-shells.md",
+      "narrative": null,
+      "content": "\\label{sec:staticshells}\nSo far we have considered the complexification rate of an isolated black hole. We would like to test our proposal by adding controlled complications. One test is an ingoing shell (a shock wave), which will be considered in \\S\\ref{sec:shockwaves}; in this section we will instead consider a static shell (a Dyson sphere), see Fig.~\\ref{fig-sarcophagus}.\n\n\\begin{figure}[h] \n   \\centering\n\\hspace{2cm}    \\includegraphics[width=3in]{fig-sarcophagus.pdf}\n      \\caption{A black hole surrounded by a static  sphere.}\n      \\label{fig-sarcophagus}\n\\end{figure}\nConsider a static s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Testing our conjecture with shock waves",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-020-6-testing-our-conjecture-with-shock-waves.md",
+      "narrative": null,
+      "content": "\\label{sec:shockwaves}\n\nThe original complexity/geometry duality passed a number of nontrivial tests involving the effects of shock waves on the growth of complexity and volume. It is important that the new CA-proposal passes the same tests.\nIn this section we consider the growth of complexity in eternal black hole geometries perturbed by shock waves and verify this.\n\nShock waves are constructed by perturbing the thermofield double state with thermal scale operators\n\\be\ne^{-i H_L t_L}\\, e^{-i H_R t_R}\\, W(t_{n}) \\dots W(t_1) \\TFD, \\label{eq:multiple-precursors}\n\\ee\nwhere $W(t) = e^{i H_L t}\\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One shock",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-021-61-one-shock.md",
+      "narrative": null,
+      "content": "\\label{sec:one-shock}\nFirst, we will consider the time evolved thermofield double state perturbed by a single precursor smeared over the entire boundary sphere\n\\be\ne^{-i H_L t_L}\\, e^{-i H_R t_R}\\, W(t_w) \\TFD. \\label{eq:sinlge-precursors}\n\\ee\nThis state is dual to an eternal black hole geometry with a spherically symmetric shock wave emerging from the boundary at time $t_w$.\nWe will restrict to $t_w < 0$ and $t_L, t_R > 0$ so that we study the complexity of the state to the future of the shock wave.\n\nThe construction of these geometries has now been covered many places (see, e.g. \\cite{locals",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite energy shocks",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-022-62-finite-energy-shocks.md",
+      "narrative": null,
+      "content": "In the limit studied in the last section, the time of the shock $|t_w|$ was taken to infinity, and the asymptotic energy of the shock (as compared to the mass of the black hole) $E/M$ was taken to zero, such that the quantity $h \\sim e^{2\\pi t_w / \\beta} E/M$ was held fixed. This was to ensure that the precursor was a small perturbation and provided a simple relationship between the coordinates when crossing the shock. A relic of this limit was that the shock wave had to lie on the $u=0$ horizon. Additionally, the rate of complexity growth was always fixed at $2M$. If instead we inject finite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiple shocks",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-023-63-multiple-shocks.md",
+      "narrative": null,
+      "content": "Next, let us comment on states perturbed by multiple precursors as in \\eqref{eq:multiple-precursors}. As before, we will consider a compact boundary theory but this time perturbed $n$ spherically symmetric shock waves described by shifts $h_i\\sim e^{ -\\frac{2\\pi}{\\beta}(t_* \\pm t_i )}$, with a ``$+$'' for $i$ odd and a ``$-$'' for $i$ even. We will also assume that all the shocks are strong, $h_i \\gg 1$.  One can easily construct these geometries following the recipe of \\cite{Shenker:2013yza}. In \\cite{complexityshocks}, it was found that the total complexity of the state, using  CV-duality, i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localized shocks",
+      "pageStart": 39,
+      "pageEnd": 42,
+      "target": "../sections/sec-024-64-localized-shocks.md",
+      "narrative": null,
+      "content": "Another generalization is to localize the precursor operators in the transverse space. In the context of scrambling these geometries were introduced in \\cite{shock} and studied extensively in \\cite{localshocks}. The $D=2+1$ case for a single localized precursor was also studied in purely two-dimensional CFT terms in \\cite{Roberts:2014ifa}. Such a state is given by\n\\be\ne^{-i H_L t_L}\\, e^{-i H_R t_R}\\, W_x(t_w) \\TFD, \\label{eq:sinlge-local-precursors}\n\\ee\nwhere as usual $W_x(t_w) = e^{i H_L t_w}\\, W_x\\, e^{-i H_L t_w}$, and $W_x$ is a simple thermal scale operator localized on the boundary at s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comment on transparency",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-025-65-comment-on-transparency.md",
+      "narrative": null,
+      "content": "Finally, let us comment on the transition in complexity growth that occurs at $|t_w| - t_* = t_R$. This transition is precisely the transparent and opaque horizons of \\cite{opacity}. From \\eqref{eq:one-shock-complexity-strong-shock} we see that there is a period during which the complexity decreases on the right side,\n\\be\n\\frac{d\\CC}{dt_R} < 0, \\qquad (|t_w| - t_* > t_R).\n\\ee\nThis corresponds to the thermodynamically rare situation of an ``opaque'' horizon. Any observer that jumps into the black hole will get destroyed at the horizon by a high energy shock wave!\n\nOn the other hand, for $t_R >",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor network model of Einstein-Rosen bridge growth",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-026-7-tensor-network-model-of-einstein-rosen-bridge.md",
+      "narrative": null,
+      "content": "\\label{sec:tensornetworks}\n\nIn this section we will perform a nontrivial test of our conjecture using tensor networks. Tensor networks provide a microscopic account of complexity growth, and we will show that this microscopic account  agrees with the results from CA-duality. Further, as the case with shock waves in \\S\\ref{sec:shockwaves}, this derivation highlights that the complexity growth is dual to the \\emph{minimal} quantum circuit that builds the state.\n\n\nThe tensor-network model serves several purposes. It justifies the reduction of the UV Hilbert space of the CFT to a number of active",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-027-8-discussion.md",
+      "narrative": null,
+      "content": "Discussion\nThere is no doubt that the interior of a black hole grows with time until some kind of\nnonperturbative quantum eﬀect saturates the growth, probably at an exponential time.\n46\nMoreover there is no doubt that the complexity of the dual gauge theory state grows\nlong after it has relaxed to thermal equilibrium. Identifying these growth phenomena\nis the basis for the complexity-geometry duality. In this paper we have proposed a new\nform of this duality that eliminates some of the less attractive aspects of CV-duality.\nThe resulting CA-duality says that the complexity of a boundary state",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing CA-duality and CV-duality",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-028-81-comparing-ca-duality-and-cv-duality.md",
+      "narrative": null,
+      "content": "\\label{subsec:implications}\n\nFrom the perspective of CA-duality, CV-duality \\cite{complexityshocks} can be expressed as follows:\n\\begin{itemize}\n\\item[1)] The geometry of an Einstein-Rosen bridge may be identified with maximal (spatial) volume slices.\n\n\\item[2)] The rate of complexity increase is bounded by the product of entropy and temperature\\footnote{Reference \\cite{complexityshocks} did not claim that $TS$ was a bound on complexity growth; only that it was a natural expectation for the rate of growth of complexity for a black hole.}\n\\be\n\\frac{d\\CC}{dt}  \\sim TS.\n\\ee\n\\item[3)] Black holes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open questions",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-029-82-open-questions.md",
+      "narrative": null,
+      "content": "A number of open questions remain.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The definition of complexity",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-030-821-the-definition-of-complexity.md",
+      "narrative": null,
+      "content": "In this paper we have defined complexity as the number of primitive gates in the minimal quantum circuit that builds our state. This definition is not ideal. For example, in our definition the value of the complexity depends on the choice of  the set of primitive gates.\n\nOne open question is where there is a better definition. In particular, is there a definition that is suitable for continuous Hamiltonian systems and that can give meaning to the prefactor in the bound Eq.~\\ref{C-bound}?\n\nFurther, assuming such a definition can be found, is the universality of our results indicating a universa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CA-duality as a diagnostic tool",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-031-822-ca-duality-as-a-diagnostic-tool.md",
+      "narrative": null,
+      "content": "Assuming CA-duality, small Reissner-Nordstrom charged black holes saturate our bound on complexification, and large (compared to the AdS radius) charged black  holes violate the naive bound. But in the case of large charged black holes, we understand what goes wrong---the problem is not with our conjecture, the problem is that large charged black holes are not described by the hairless RN solution. The RN truncation does not fully capture the essential physics of UV-complete holographic theories, and the hair renders our calculations unreliable.\n\nThe difficulties of UV-completing large RN blac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagnosing transparency of horizons",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-032-823-diagnosing-transparency-of-horizons.md",
+      "narrative": null,
+      "content": "One interesting relation between complexity and Einstein-Rosen bridges involves the ``transparency\" or ``opacity\" of the horizon: it has been conjectured that black holes with growing complexity have transparent horizons \\cite{opacity} while those with decreasing complexity have opaque horizons. This result found support in the shock wave analysis, both for CV-duality (see \\cite{opacity}) and, in this paper, for CA-duality.\n\n\n\nAlthough the results are very similar for CA-duality and CV-duality, calculations are generally much simpler for CA-duality when shock waves are involved. No differentia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak coupling and stringy corrections",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-033-824-weak-coupling-and-stringy-corrections.md",
+      "narrative": null,
+      "content": "In this paper, we have worked exclusively with strongly coupled holographic theories described in the bulk by Einstein gravity. It is natural to ask how our results and conjecture should be affected by including stringy corrections in the bulk.\nIn the case of $\\CN=4$ $U(N)$ SYM in $D-1=4$ where the 't Hooft coupling $\\lambda$ is related to the string scale $\\ell_{s}$ by $\\lambda = (\\lads/\\ell_{s})^4$, the vanishing string scale implies infinite field theory coupling.\n\nFirst, we will remind the reader of the results in a related holographic information processing scenario: scrambling and chaos.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularizing the action",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-034-825-regularizing-the-action.md",
+      "narrative": null,
+      "content": "\\label{sec:corner}\n\nIn this paper we have calculated the rate of growth of action of the WDW patch at late times. If we wish to calculate the rate of growth at finite times we must introduce a method of regularizing divergences, for example those that occur at the boundary of AdS. A divergence of this type shows up in the part of the WDW patch that lies behind the past horizon. The corner term at the bottom, which consists of the intersection of two lights heets, is divergent.\\footnote{We thank Henry Maxfield for helpful discussions that prompted us to revisit this issue.}\n\n\n\nLet us take for e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action from near the singularity",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-035-826-action-from-near-the-singularity.md",
+      "narrative": null,
+      "content": "In  CV-duality, the maximal slice stayed safely away from the black hole singularity. In  CA-duality, for the Schwarzschild-AdS black hole the WDW patch extends all the way to $r=0$.\n\nNear the singularity, semiclassical physics breaks down. For the black holes have considered in this paper, this is only a small concern because the action contribution from near the singularity is small: the result is insensitive to precisely how close the cutoff is to $r=0$. However, in more complicated situations it is conceivable that the action could be sensitive to the location of the cutoff near the singul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary terms",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-036-827-boundary-terms.md",
+      "narrative": null,
+      "content": "The classical equations of motion do not uniquely define the action. For example, adding an overall constant to the action has no effect. More generally, any function of just the intrinsic properties of the boundary will be ignored by the variational principle and leave the equations of motion unaffected.\n\nThis ambiguity is particularly relevant to our conjecture, since we assign a meaning to the numerical value of the action, and since our boundaries are not only out near the asymptotic edge of AdS, but penetrate deep into the bulk, sometimes all the way to the singularity.\n\nThis is not just",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theories without action formulations",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-037-828-theories-without-action-formulations.md",
+      "narrative": null,
+      "content": "Our conjecture assigns a physical meaning to the value of the action.  It would not be clear what to do if the bulk theory did not have an action formulation, or if the action wasn't a real number,\n\nor if the bulk theory  had more than one action formulation. These are unlikely to make contributions at leading order in $N$, but it would be interesting to explore these issues further.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Very early times",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-038-829-very-early-times.md",
+      "narrative": null,
+      "content": "Throughout this paper we have generally been considering the rate of complexification at times that are neither too early nor too late.\n\nAt early times, the rate of the increase of action is slow. For example, for the uncharged black hole in $D > 3$, $d\\CA/dt$ is zero when $t_R = t_L = 0$, and remains zero up until the past light sheets first cross; it then grows,  asymptoting to the answer quoted in Eq.~\\ref{eq:unchargedactionincrement}.\n\n\\begin{figure}[htbp] \n   \\centering\n   \\includegraphics[width=5in]{fig-earlytimes.pdf}\n   \\caption{At early times, the action of the WDW patch of a neutral",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Very late times",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-039-8210-very-late-times.md",
+      "narrative": null,
+      "content": "At very late times, of order the classical recurrence time $e^S$, the complexity must saturate and stop increasing \\cite{opacity}. It is a nontrivial test of our duality that there is an instanton that invalidates the semiclassical bulk description after a similar time scale. After a time of order $e^S$ it is likely that at some stage the large black hole will have undergone a thermal fluctuation down to the size of a small AdS black hole (plus thermal gas), which would then evaporate (and then recollapse and reform the black hole).\n\nThis signals a breakdown of the semiclassical spacetime desc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principle of least computation",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-040-8211-principle-of-least-computation.md",
+      "narrative": null,
+      "content": "From the perspective of tensor networks, the course-grained geometry encodes the minimal quantum circuit that prepares the state. In this paper we have argued that the complexity of the boundary state is given by the action of the bulk. In the bulk, the classical equations of motion are given by the principle of least action. Can gravity be understood via a principle of least computation, and if so what is the  quantum generalization?\n\n\n\n\n\\section{Acknowledgments}\nWe thank Patrick Hayden, Don Marolf,  Henry Maxfield, Simon Ross, Jorge Santos, and Douglas Stanford for useful discussions. AB tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Further comments on the complexification bound",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-041-a-further-comments-on-the-complexification-bound.md",
+      "narrative": null,
+      "content": "Further comments on the complexiﬁcation bound\nIf we want a notion of complexity such that local Hamiltonian evolution leads to com-\nplexity growth linear in t and the number n of active degrees of freedom, then the\nHamiltonian should ﬁrst be normalized so that the energy is extensive in n. The com-\nplexity can then be preliminarily deﬁned by a limiting procedure where we take the\ngate set {Gα} to consist of elements which are close to the identity, Gα = I + iδHα,\nwith the Hα taken to be simple Hermitian operators. As δ →0 the number of gates\ndiverges as 1/δ, so the complexity may be deﬁned as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
+      "pageStart": 57,
+      "pageEnd": 59,
+      "target": "../sections/sec-042-a1-comments-on-hamiltonian-locality-and-gate-sim.md",
+      "narrative": null,
+      "content": "Comments on Hamiltonian locality and gate simplicity\nIn the previous section, it was mentioned that the elements of the gate set {Gα} are\ntaken to be close to the identity Gα = I + iδHα, with the Hα taken to be simple\nHermitian operators. Here, we will elaborate a bit on what is meant by simple in this\ncontext, and whether it is reasonable to have a bound on complexity.18\n18We thank Douglas Stanford for questions and discussions leading to the creation of this section.\n56\nAn individual Hα will be a product of operators at neighboring points, with the\nnumber of such operators deﬁning the size o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Spherical shock waves at finite time and energy",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "../sections/sec-043-b-spherical-shock-waves-at-finite-time-and-energ.md",
+      "narrative": null,
+      "content": "Spherical shock waves at ﬁnite time and energy\nWe will work in D = 2+1 dimensions for simplicity. The shock wave has energy E and\nthe black hole has energy M, so we want to patch together a spacetime with energy\nE + M (to the left of the shock) and a spacetime with energy M (to the right of the\n58\nshock). See Fig. 18. We will follow [26, 51] for the matching conditions between the\ntwo spacetimes.\nLet us associate coordinates (u, v) with the patch with energy M and (˜u, ˜v) with\nthe patch with energy E + M. Because of the increase in mass, the horizons are at\ndiﬀerent radii in the two spacetime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Precursor at finite time and energy",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "../sections/sec-044-b1-precursor-at-finite-time-and-energy.md",
+      "narrative": null,
+      "content": "Precursor at ﬁnite time and energy\nWhile the geometry Fig. 18 considered in the last section is a proper solution to Ein-\nstein’s equations, it is not the correct dual to the state\n|ψ⟩= W(tw)|TFD⟩,\n(B.11)\nwhere W(tw) = e−iHLtw W eiHLtw and W is an operator smeared over the spatial sphere\nwith energy ϵM, and ϵ is ﬁxed but not necessarily small. This is no longer a small\nperturbation—its energy scales with N 2—but we can still consider its backreaction and\nthe geometry dual to the state.\nThe correct procedure for constructing the geometry is described in [29]. First, we\nstart with the thermoﬁeld",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1512.04993v2/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C The past wedge",
+      "pageStart": 64,
+      "pageEnd": 70,
+      "target": "../sections/sec-045-c-the-past-wedge.md",
+      "narrative": null,
+      "content": "The past wedge\nThe rate of change of action of the Wheeler-DeWitt patch is equal to the rate of change\nof action of the past wedge. The “past wedge” is deﬁned in Fig. 20. This provides\nboth a calculational tool and an alternative perspective on our prescription.\nConsider the two shaded patches in Fig. 20. The patch on the left is the standard\nWheeler-DeWitt patch. The patch on the right is that part of the bulk that can send\na signal to both the left and right boundary observers. The rates of change of action\nof the two patches are identical. The rates are identical not just at late times but",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

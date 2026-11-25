@@ -1,0 +1,367 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0806.4741v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivations",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-motivations.md",
+      "narrative": null,
+      "content": "The idea of the \\emph{formal deformation quantization} program \\cite{BFFLS}, initiated by Bayen, Flato, Fronsdal, Lichnerowicz and Sternheimer, is to generalize the Weyl product to an arbitrary symplectic (or Poisson) manifold. In this context, the framework of quantum mechanics is the same as classical mechanics, observables are the same, and quantization arises as a \\emph{deformation} of the algebra of functions on the manifold, from a commutative to a non-commutative one.\n\n\\noindent A {\\sl formal star product} (or {\\sl deformation quantization}) of a symplectic manifold $(M,\\omega)$\nis an a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "The deformation quantizations of the hyperbolic plane\nP. Bieliavsky\nG´eom´etrie et Physique math´ematique\nUniversit´e Catholique de Louvain\n2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium\nE-mail: Pierre.Bieliavsky@uclouvain.be\nS. Detournay\nINFN, Sezione di Milano\nVia Celoria, 16, 20133 Milano, Italy\nE-mail: stephane.detournay@mi.infn.it\nPh. Spindel\nM´ecanique et Gravitation\nUniversit´e de Mons-Hainaut, 20 Place du Parc\n7000 Mons, Belgium\nE-mail: spindel@umh.ac.be\nOctober 31, 2018\nAbstract\nWe describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is done in the present work",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-what-is-done-in-the-present-work.md",
+      "narrative": null,
+      "content": "We now summarize what is done in the present article as well as the method used. Given the geometric data\nof an affine space (i.e. a manifold endowed with an affine connection), one defines the notion of {\\sl contracted}\nspace as a pair constituted by the same manifold but endowed with a connection whose Riemann's curvature \ntensor appears as the initial one but where some components were `contracted' to zero. One then starts from the standard intuitive idea that every geometric theory (such as deformation quantization for instance) formulated at the \nlevel of the initial space turns into a si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic symmetric spaces",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-symplectic-symmetric-spaces.md",
+      "narrative": null,
+      "content": "expressed as an oscillatory integral, analogous to the oscillatory integral formulation (8) of Weyl’s composi-\ntion. In [33], A. Weinstein suggested a beautiful geometrical interpretation of the asymptotics of the phase\nS = S(x, y, z) occurring in the oscillatory kernel in terms of the area of a geodesic triangle admitting points\nx, y and z as midpoints of its geodesic edges. In section (3.7), we illustrate this by establishing an exact\nformula for the kernel in terms of a speciﬁc geometrical quantity of three points hereafter denoted by Scan,\nin accord with Weinstein’s asymptotics.\n2\nSymplect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions and elementary properties",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-definitions-and-elementary-properties.md",
+      "narrative": null,
+      "content": "\\label{DefandProp}\nEverything in this subsection is entirely standard and can be found e.g. in \\cite{Bithese} and references therein.\nA {\\sl symplectic symmetric space} is a triple $(M,\\omega,s)$ where $M$ is a connected smooth manifold\nendowed with a non-degenerate two-form $\\omega$ and where \n\\begin{equation*}\ns:M\\times M\\to M:(x,y)\\mapsto s(x,y)=:s_xy\n\\end{equation*}\nis a smooth map such that for all point $x$ in $M$, the partial map:\n$s_x:M\\to M$ is an involutive  diffeomorphism \nof $M$ (i.e. $s_x^2=\\mbox{\\rm id}_M$) which preserves the two-form $\\omega$ (i.e. $s_x^\\star\\omega=\\omega$)\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group type symplectic symmetric surfaces, curvature contractions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-group-type-symplectic-symmetric-surfaces-curvatu.md",
+      "narrative": null,
+      "content": "A symplectic symmetric space $(M,\\omega,s)$ is said to be {\\sl of group type} if there exists in its\nautomorphism group $G$ a Lie subgroup $\\SS$ that acts on $M$ in a simply transitive manner i.e.\nin a way that for all $x$ in $M$ there is one and only one element $g$ in $\\SS$ with $x=go$. In that\ncase, one has a $\\SS$-equivariant diffeomorphism:\n\\begin{equation}\n\\SS\\to M:g\\mapsto go\\;.\n\\end{equation}\nThe symplectic structure $\\omega$ on $M$ then pulls back to the group manifold $\\SS$ as a left-invariant\nsymplectic structure $\\omega^\\SS$. Also, the symmetry at $o$ corresponds to a symplectic in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Admissible functions on symplectic symmetric surfaces",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-admissible-functions-on-symplectic-symmetric-sur.md",
+      "narrative": null,
+      "content": "In \\cite{WeinsteinTr}, Alan Weinstein conjectures the relevance of a certain three-point function, here denoted\n$S_W$, as the essential constituent of the phase of an oscillatory kernel defining an invariant star product\non the hyperbolic plane $\\DD$ or more generally on any (reasonable) symplectic symmetric space $\\co=G/K$. Essentially, when three points $x,y$ and $z$ in $\\co$ are close enough to one another, Weinstein\nfunction $S_W=S_W(x,y,z)$ is defined as the symplectic area of the geodesic (defined by the Loos connection) triangle\nin $\\co$ admitting points $x,y,z$ as mid-points of its geo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deformation Quantization",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-deformation-quantization.md",
+      "narrative": null,
+      "content": "Deformation Quantization",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-the-space-of-star-products-on-the-poincaré-orbit.md",
+      "narrative": null,
+      "content": "It is proven in \\cite{Bi07} that every Poincar\\'e invariant star product on $\\MM$ is realized as\na formal  asymptotic expansion in powers of $\\hbar$ of an oscillatory integral expression in terms of the geometrical quantities defined above:\n\\begin{equation*}\nu\\,\\star_{\\hbar,{\\cal P}} \\,v\\,(x_0)\\;=\\;\\frac{1}{\\hbar^2}\\,\\int_{\\MM\\times \\MM}\\,\\sqrt{\\mbox{\\rm Jac}_{\\Phi}(x_0,x_1,x_2)}\\,e^{\\frac{i}{\\hbar}\\,S^{(\\MM)}_{\\mbox{\\rm can}}(x_0,x_1,x_2)}\\,\\frac{{\\cal P}(a_0-a_1){\\cal  P}(a_2-a_0)}{{\\cal  P}(a_1-a_2)}\\,u(x_1)\\,v(x_2)\\,{\\rm d}x_1\\,{\\rm d}x_2\\;;\n\\end{equation*}\nwhere ${\\rm d}x$ denotes the Lio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-sl2r--triplets-of-derivations-and-an-unexpected.md",
+      "narrative": null,
+      "content": "\\noindent Let us now consider {\\sl any} Poincar\\'e invariant formal star $\\star$ product on the contracted plane $\\MM$. Denote\nby $\\Der(\\star)$ its algebra of derivations. Note that from formal equivalence with Moyal, every derivation is interior.\nConsider in $\\Der(\\star)$ any element $D$ with the property that $D,H^\\star$ and $E^\\star$ form an $\\mathfrak{sl}_2(\\R)$-triplet of $\\star$-derivations. The crucial point which the entirety of the present paper relies on resides now in the following totally unexpected fact:\n\n\\vspace{3mm}\n\n\\noindent {\\sl Intertwining the derivation $D$ by the partial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The de-contraction procedure: evolution of the Dalembert operator",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-the-de-contraction-procedure-evolution-of-the-da.md",
+      "narrative": null,
+      "content": "Let us now consider an invariant formal star product $\\sharp$ on the hyperbolic plane $\\DD$.\nThis star product is in particular $\\SS$-invariant. One knows from \\cite{BBG}, that the set \nof $\\SS$-equivariant equivalence classes of $\\SS$-invariant star products is in one-to-one correspondence with the set of  formal series with coefficients in the $\\SS$-invariant second de Rham cohomolgy space. In the present two-dimensional situation, the latter space is simply\n$\\R[[\\hbar]]$ since $H^2_{\\mbox{\\rm de Rham}}(\\DD)^\\SS$ is generated by the (non trivial) class\nof the invariant symplectic structure (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding solutions of the Dalembertian evolution by variable separation",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-finding-solutions-of-the-dalembertian-evolution.md",
+      "narrative": null,
+      "content": "\\label{SectSL}\nFor convenience, we fix a particular choice of closed star product $\\star$ on $\\MM$ associated as above with\nthe function \n\\begin{equation}\n\\cp(\\zeta)\\;=\\;\\cp^{\\mbox{\\tiny{\\rm closed}}}(\\zeta):=\\sqrt{\\cosh(\\hbar \\zeta)}\\;.\n\\end{equation}\nWe denote the corresponding intertwiner by $T^{{\\mbox{\\tiny{\\rm closed}}}}$. We then note that, from the above discussion,  the analogue of equation (\\ref{ES}) for the direct operator $U$ in this case can be rewritten under the following form:\n\\begin{equation}\\label{BoxBrutApp}\n- \\Box_{|\\bar{{  z}}} W({  x},\\bar{{  z}}) = F^\\star_{{ (x)}}\nW({ x}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalizations and asymptotic expansions",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-normalizations-and-asymptotic-expansions.md",
+      "narrative": null,
+      "content": "\\label{Norasympt}\n\\noindent Observe that the   change of variables (\\ref{UVqr}) becomes singular when $\\hbar$ vanishes, while the  equation (\\ref{BoxFqr}) degenenrates into\n\\begin{equation}\\label{BoxFqrdeg}\n(-r\\,\\partial_r^2+2\\,q\\,\\partial_r\\partial_q+r\\,(k-k'q^2))F(q,r)=0\\qquad .\n\\end{equation}\nThe general solution of this equation can be expressed as a superposition of modes\n\\begin{equation}\nF_{0,\\sigma}=C\\,\\frac 1{\\sqrt q}\\,e^{i\\frac{\\sigma\\,q\\,r^2}2}\\,e^{-\\frac i{2\\,\\sigma}\\left(\\frac k q +k'q\\right)}\\qquad.\n\\end{equation}\nLet us notice that these modes can be obtained from special combina",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case k=24 and Zagier type deformations",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-the-case-k24-and-zagier-type-deformations.md",
+      "narrative": null,
+      "content": "We now consider the case of our closed star product $\\star:=T^{\\mbox{\\tiny{\\rm closed}}}(\\star^0_\\hbar)$\ntogether with a particular derivation $D_\\hbar\\in\\mathfrak{Der}(\\star)$ defined as setting $k=\\frac{\\hbar^2}{4}$ in the\nexpression (\\ref{lambdaF}) and then intertwining by $T^{\\mbox{\\tiny{\\rm closed}}}$ following (\\ref{DERIV}).\nWe then proceed as in the subsection \\ref{SectSL}, but use the following variables rather than (\\ref{UVqr}):\n\\begin{equation}\\label{UVqrbis}\n\\xi = q^{\\frac{1}{2}}\\frac{2}{\\hbar}\\sinh(\\frac{\\hbar}{2}\\zeta) \\quad, \\quad \\eta =\nq^{\\frac{1}{2}}\\cosh(\\frac{\\hbar}{2}\\zeta)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unterberger type solutions and Weinstein's asymptotics",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-unterberger-type-solutions-and-weinsteins-asympt.md",
+      "narrative": null,
+      "content": "\\label{Unterberger}\nIn \\cite{Unt,Unt2} an associative $\\SL$ invariant composition law, though not a star product, has been derived  in a totally different context by A.\nand J. Unterberger, for the composition of symbols in the so-called Bessel calculus. We are going to show that a slight modification of their formula yields one of the simplest products in the family we have found.\n\n\\noindent As a prealable, let us notice, that in their works, these authors also make use of an interwiner operator linking an $\\SL$- invariant composition law with an $AN$-invariant star product, but not the strong",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complements",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-complements.md",
+      "narrative": null,
+      "content": "Complements",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On D and M",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-on-d-and-m.md",
+      "narrative": null,
+      "content": "On D and M\n1 Group type structures. To obtain the expressions (33) and (34), we proceed as follows. Consider\nfor instance the hyperbolic plane D = SL2(R)/SO(2) =: G/K. Consider the following usual presentation\nof g := sl2(R) as generated over R by the elements E, F, H with table [E, F] = H , [H, E] = 2E and\n[H, F] = −2F. Then one may set k := R.(E −F), a := R.H ⊂p =: k⊥and ln := R.E. The group S may\nthen be realized as the connected Lie subgroup of G admitting s := a ⊕n as Lie algebra. Within these\n22\nnotations, the Iwasawa decomposition G = SK yields the above-mentioned identiﬁcation S = D an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.4741v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-017-co-adjoint-orbits-of-iso11-the-poincaré-plane.md",
+      "narrative": null,
+      "content": "Let us emphasize that when the Lie group under consideration is not semi-simple (e.g. the Poincar´e group\nIso(1, 1), in opposition to the SL(2, R) group), only the co-adjoint orbits make sense a priori in the framework\nof subsection (2.1). An elementary calculation shows that on Iso(1, 1) the co-adjoint orbits consist generically\ninto hyperbolic cylinder sheets, otherwise remain four planes and a line of ﬁxed point. If we denotes by b,\ne0 and e1 a basis of generators of iso(1, 1) that obey the commutation relations:\n[b, e0] = e1\n,\n[b, e1] = e0\n,\n[e0, e1] = 0\n,\n(157)\nand by β, ε0 and ε1 a basis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-9806163v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Weights of Markov traces on Hecke algebras",
+      "dcterms:creator": [
+        "Orellana, R.C."
+      ],
+      "dcterms:issued": "D:20220305",
+      "dcterms:identifier": "https://arxiv.org/abs/math/9806163",
+      "dcterms:abstract": "We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of type B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.",
+      "dcterms:source": "library/arxiv-math-9806163v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-9806163v1"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0104104v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper we wish to describe certain natural $4$-vector fields \non quaternionic flag manifolds. In the context of the \nPoisson geometry,  a bi-vector field is penultimate in the\nstudy of the geometry of the underlying manifold.  \nAnalogously, we make use of a\n$4$-vector field,\nclosed under the Schouten bracket with itself, \n which we call a  \\emph{quatrisson} structure, to \nreveal the internal structures\nof certain natural spaces arising in geometry, namely\nquaternionic flag manifolds. \nA more general definition involving a multi-vector field was first \ngiven in \\cite{Perelomov}. Another",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0104104v3  [math.DG]  29 Mar 2002\nGeometry of Four-vector Fields on\nQuaternionic Flag Manifolds.\nPhilip Foth\n& Frederick Leitner\nMarch 28, 2002\nAbstract\nThe purpose of this paper is to describe certain natural 4-vector ﬁelds\non quaternionic ﬂag manifolds, which geometrically determine the Bruhat\ncell decomposition.\nThese structures naturally descend from the sym-\nplectic group Sp(n), and are related to the dressing action given by the\nIwasawa decomposition of the general linear group over the quaternions,\nGLn(H).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic matrices and flags",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-quaternionic-matrices-and-flags.md",
+      "narrative": null,
+      "content": "We begin with some generalities on quaternionic matrices for which we\ndefine the following subgroups of $\\GL{\\H}$:\n\\begin{eqnarray*}\n\t\\RR \n\t\t& \n\t\t:= \n\t\t\t&  \n\t\t\t\\{ \\diag{r_1,\\dots,r_n} \\ | \\ r_i \\in \\R_+ \\} \n\t\\\\\n\t\\UU \n\t\t& \n\t\t:= \n\t\t\t& \n\t\t\t\\{\\mbox{upper triangular matrices with  }1\\mbox{'s along the\n\t\t\tdiagonal}\\} \n\t\\\\\n\t\\VV_w \n\t\t&\n\t\t:=\n\t\t\t&\n\t\t\t\\{ U\\in \\UU \\ | \\ \\left( P_w U P_w^{-1}\\right)^{t} \\in \\UU \\}\n\t\\\\\n\t\t&\n\t\t\t&\n\t\t\t\\mbox{here} \\ P_w \\\n\t\t\t\\mbox{denotes the permutation matrix}\n\t\\\\\n\t\t&\n\t\t\t&\n\t\t\t(P_w)_{i,j}=\\delta_{i,w(j)} \\ \\mbox{for} \\\n\t\t\tw\\in S_{n}  \n\t\\\\ \n        \\DD \n\t\t& \n\t\t:= \n\t\t\t& \n\t\t\t\\{ \\d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quatrisson and tetraplectic structures",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-quatrisson-and-tetraplectic-structures.md",
+      "narrative": null,
+      "content": "Recall that a symplectic manifold is a manifold equipped with a closed \nnon-degenerate 2-form. We also recall \nthat a Poisson manifold is a \nmanifold equipped with a  bi-vector field that induces a Lie algebra structure \non the space of smooth functions,  compatible with the commutative\nproduct of functions via the Leibniz rule.\nIn the case of quaternionic flags, \nwe make use of the following structures which reflect the  underlying geometry:\n\n\\begin{definition} \\cite{F1}\n\tLet $X$ be a real orientable manifold of dimension $4m$.  \n\tA {\\emph tetraplectic} structure on X is a  four-form, $\\psi$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quatrisson structures on ${\\bf HP}^1$.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-quatrisson-structures-on-bf-hp1.md",
+      "narrative": null,
+      "content": "For our flag manifolds, we construct a Bruhat quatrisson structure explicitly by \nanalogy to the  Poisson case as in \\cite{LW} or \\cite{Soibel}. \nWe begin by defining a quatrisson 4-vector field, $\\sham$, on $\\Sp[2]$, which  \nwe show descends to the quotient $\\Sph\\backslash\\Sp[2]$.   \n \nWe begin by defining an element $\\Lambda$ of $\\wedge^4\\sp[2]$ \nin terms of the following basis for $\\sp[2]$: \n\\begin{eqnarray*} \n\tE = \\mat{0}{1}{-1}{0}\t  \n\t\t\t&   \t\n\t\t\tS_x = \\mat{0}{x}{x}{0}  \n\t\\\\ \n\tH_x = \\mat{x}{0}{0}{-x}\t  \n\t\t\t&  \t\n\t\t\tM_x = \\mat{x}{0}{0}{x}\t  \n\\end{eqnarray*} \nwhere $x$ is one of $\\{ \\i, \\j, \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quatrisson structures on flag manifolds",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-5-quatrisson-structures-on-flag-manifolds.md",
+      "narrative": null,
+      "content": "Following \\cite{Lu2} \nwe will produce the quatrisson structure on the full flag of \n$\\H^{n}$ by way of the so-called multiplication formula.  By analogy to the $\\Sp[2]$\n case, for $1\\le p<q \\le n$ \n we denote by $E^{p,q}$ the quaternionic matrix whose entries are $0$'s\n everywhere except in the \n($p$,$q$)-th position which is $1$, and the ($q$,$p$)-th position which is $-1$. We also let  \n$S_x^{p,q}$ denote the matrix with $0$'s  everywhere except in the \n($p$,$q$)-th and ($q$,$p$)-th positions where the entries are $x$ where $x$ is again\nchosen from $\\{\\i, \\j, \\k\\}$.  Similarly,\nthese matrice",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quatrisson action and intrinsic derivative",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-6-quatrisson-action-and-intrinsic-derivative.md",
+      "narrative": null,
+      "content": "We elaborate on some general notions related to group actions in the\nquatrisson context where we recall the notation set forth\nin Definition \\ref{def:mult-act} and assume that we have a  multiplicative action.\nDenoting   the Lie algebra of $H$ by $\\hh$, we \nlet:\n\\begin{displaymath} \n\t\\gamma: \\hh\\to \\Chi(P)\n\\end{displaymath}\nbe the usual Lie algebra  anti-homomorphism, and \nrecall the \\emph{intrinsic derivative} of $\\xi$ at $e$:\n\\begin{displaymath}\n\td_e\\xi: \\hh\\to \\Wedge^4 \\hh.\n\\end{displaymath}\nWe also define the $4$-bracket $[\\cdot, \\cdot, \\cdot, \\cdot]$ \non $\\hh^*$ to be the dual of $d\\xi_e$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dressing action",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-7-dressing-action.md",
+      "narrative": null,
+      "content": "The Iwasawa  decomposition of $\\GL{\\H}=\\RR\\UU \\Sp = \\Sp \\RR \\UU $ \nallows us to define:\n\\begin{definition} \n\tThe \\emph{dressing action} of $\\RR\\UU$ on $\\Sp$ is the map\n\t$\\RR\\UU\\times \\Sp \\rightarrow \\Sp $ given by\n\t$(G,K)\\mapsto K'$ where $G \\cdot K = K' \\cdot R \\cdot  U$ for the unique \n\t$R\\in\\RR$ and $U\\in\\UU$.\n\\end{definition}\n\nOur goal of this section is to relate the orbits of\nthe dressing action with the tetraplectic leaves of the group $\\Sp$.\nNotice that we have restricted the usual dressing action to $\\RR\\UU$ since \nwe will be only concerned with $\\RR\\UU$ orbits of the dressing\naction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104104v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further remarks.",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-8-further-remarks.md",
+      "narrative": null,
+      "content": "First of all, the approach that we pursued in the present paper can be easily \nextended to all partial quaternionic flag manifolds, in particular the Grassmannians \nand projective spaces. \n\nIt would be interesting to express the dressing action as a quatrisson action, \nwith respect to a multiplicative $4$-vector field on \n$\\RR\\UU$. While it is clear that such a\nstructure exists, it is not easy to write down a local expression. It seems \nplausible that a suitable generalization of Lu-Ratiu construction \\cite{LuRat}\nwould help. \n\nEvens and Lu \\cite{EL} showed that the Kostant harmonic forms \\cit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

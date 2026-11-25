@@ -1,0 +1,83 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE",
+  "contains": [
+    "library/arxiv-1712.04887v3/sections/sec-front-matter",
+    "library/arxiv-1712.04887v3/sections/sec-000",
+    "library/arxiv-1712.04887v3/sections/sec-001",
+    "library/arxiv-1712.04887v3/sections/sec-002",
+    "library/arxiv-1712.04887v3/sections/sec-003",
+    "library/arxiv-1712.04887v3/sections/sec-004",
+    "library/arxiv-1712.04887v3/sections/sec-005",
+    "library/arxiv-1712.04887v3/sections/sec-006",
+    "library/arxiv-1712.04887v3/sections/sec-007",
+    "library/arxiv-1712.04887v3/sections/sec-008",
+    "library/arxiv-1712.04887v3/sections/sec-009",
+    "library/arxiv-1712.04887v3/sections/sec-010",
+    "library/arxiv-1712.04887v3/sections/sec-011",
+    "library/arxiv-1712.04887v3/sections/sec-012",
+    "library/arxiv-1712.04887v3/sections/sec-013",
+    "library/arxiv-1712.04887v3/sections/sec-014",
+    "library/arxiv-1712.04887v3/sections/sec-015",
+    "library/arxiv-1712.04887v3/sections/sec-016",
+    "library/arxiv-1712.04887v3/sections/sec-017",
+    "library/arxiv-1712.04887v3/sections/sec-018",
+    "library/arxiv-1712.04887v3/sections/sec-019",
+    "library/arxiv-1712.04887v3/sections/sec-020",
+    "library/arxiv-1712.04887v3/sections/sec-021",
+    "library/arxiv-1712.04887v3/sections/sec-022",
+    "library/arxiv-1712.04887v3/sections/sec-023",
+    "library/arxiv-1712.04887v3/sections/sec-024",
+    "library/arxiv-1712.04887v3/sections/sec-025",
+    "library/arxiv-1712.04887v3/sections/sec-026"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn =\n\n**BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE**\n\n*UNITS, AND NAHM’S CONJECTURE*\n\n43 pp, 28 sections.\n\n**Abstract.** Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F(e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Bloch groups and associated units; 1.2 Algebraic K-groups and associated units; 1.4 Motivation from quantum topology; 1.5 Plan of the paper; 2 The maps Pz and Rz; 2.4 Compatibilities; 2.5 The 5-term relation; 2.6 An eigenspace computation; 3 Chern Classes for algebraic K-theory; 3.1 Definitions; 3.2 The relation between étale cohomology and ; 3.4 Upgrading from S-units to units; 3.5 Proof of Theorem 1.5; 4 Reduction to finite fields; 4.1 Local Chern class maps; 4.2 The Bloch group of Fq",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1712.04887&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1712.04887v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1712.04887v3.pdf",
+    "source_sha256": "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5",
+    "pages": 43,
+    "arxiv": {
+      "id": "1712.04887",
+      "version": "3",
+      "primary_class": "math.NT",
+      "stamp_date": "6 Apr 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

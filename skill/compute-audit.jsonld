@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/compute-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/compute-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "compute-audit",
+      "title": "Compute Audit Skill",
+      "description": "Audit Python compute scripts under computations/ for the 30 patterns (P1-P30) extracted from a 50-commit review of QOU performance and mathematical-improvement landings. Distinguishes CORRECTNESS antipatterns (P1-P16) from PERFORMANCE antipatterns (P17-P30). Produces a ranked workplan citing concrete files+lines.",
+      "instructionsPath": "skills/local/compute-audit.md",
+      "instructionLines": 427,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

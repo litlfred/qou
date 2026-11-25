@@ -1,0 +1,1003 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2302.05903v2",
+  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basic example of averaging method",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-basic-example-of-averaging-method"
+    },
+    {
+      "level": 1,
+      "title": "Simple generalizations",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-simple-generalizations"
+    },
+    {
+      "level": 2,
+      "title": "Derivation of various sum formulas by the averaging method",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-derivation-of-various-sum-formulas-by-the-averag"
+    },
+    {
+      "level": 2,
+      "title": "Extension to skew functions",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-extension-to-skew-functions"
+    },
+    {
+      "level": 2,
+      "title": "A collection of sum formulas",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-a-collection-of-sum-formulas"
+    },
+    {
+      "level": 2,
+      "title": "The Gaussian measure",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-gaussian-measure"
+    },
+    {
+      "level": 2,
+      "title": "Calculating various sums",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-calculating-various-sums"
+    },
+    {
+      "level": 1,
+      "title": "Strong superintegrability and W-operators",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-strong-superintegrability-and-w-operators"
+    },
+    {
+      "level": 2,
+      "title": "Strong integrability in Gaussian Hermitian matrix model",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-strong-integrability-in-gaussian-hermitian-matri"
+    },
+    {
+      "level": 2,
+      "title": "Strong superintegrability in the p-Gaussian model",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-strong-superintegrability-in-the-p-gaussian-mode"
+    },
+    {
+      "level": 1,
+      "title": "Relation of sum formulas to Ramanujan sums",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-relation-of-sum-formulas-to-ramanujan-sums"
+    },
+    {
+      "level": 1,
+      "title": "Hurwitz tau-functions",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-hurwitz-tau-functions"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "russia",
+          "heading": false
+        },
+        {
+          "term": "mipt",
+          "heading": false
+        },
+        {
+          "term": "itep",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        }
+      ],
+      "extract": "MIPT/TH-06/22 FIAN/TD-03/22 ITEP/TH-06/22 IITP/TH-05/22 On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials A. Mironovb,c,d 1, A. Morozova,c,d 2 a MIPT, Dolgoprudny, 141701, Russia b Lebedev Physics Institute, Moscow 119991, Russia c Institute for Information Transmission Problems, Moscow 127994, Russia d NRC “Kurchatov Institute” - ITEP, Moscow 117218,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2302.05903v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combinatorial borel",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "exponential borel",
+          "heading": false
+        },
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "sum bar",
+          "heading": false
+        },
+        {
+          "term": "bar right",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "Borel transform [@Borel] is an important tool in the study of non-perturbative phenomena. It is used to extract information from divergent series which typically arise in perturbative expansions. Non-perturbative partition functions depend on extra parameters, like the choice of integration contour, this dependence seems to disappear in perturbative expansion, but is in fact traded for divergence of the series. New",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-basic-example-of-averaging-method",
+      "number": null,
+      "title": "Basic example of averaging method",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 769,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "powerdr end",
+          "heading": false
+        },
+        {
+          "term": "label powerdr",
+          "heading": false
+        },
+        {
+          "term": "gendia",
+          "heading": false
+        },
+        {
+          "term": "ref cauchy",
+          "heading": false
+        },
+        {
+          "term": "frac cdot",
+          "heading": false
+        },
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "cauchy identity",
+          "heading": false
+        }
+      ],
+      "extract": "Eq.([\\[gendia\\]](#gendia){reference-type=\"ref\" reference=\"gendia\"}) counts Young diagrams, or the ordered integer partitions, while ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}) is the Cauchy identity for the Schur functions, i.e. for the characters of linear groups $GL_N$. Technically, upon choosing $p_k=\\bar p_k=\\delta_{k,1}$ in ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-simple-generalizations",
+      "number": null,
+      "title": "Simple generalizations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Simple generalizations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-derivation-of-various-sum-formulas-by-the-averag",
+      "number": null,
+      "title": "Derivation of various sum formulas by the averaging method",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "underbrace left",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "prod infty",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "ccc left",
+          "heading": false
+        },
+        {
+          "term": "aligned text",
+          "heading": false
+        }
+      ],
+      "extract": "The averaging method can be easily modified to handle more examples. Say, we can ask the average $\\left<S_R\\right>=1$ only for *even* diagrams $R$, i.e. with all rows of even lengths, and vanishes otherwise. The corresponding measure is still Gaussian, $$\\begin{aligned} \\text{\\bf Measure B}: \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\left\\{\\begin{array}{ccc}\\left<S_R\\right>^{\\bf\\!B}=1 && {\\rm for\\ even}\\ R \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-extension-to-skew-functions",
+      "number": null,
+      "title": "Extension to skew functions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idlinschur",
+          "heading": false
+        },
+        {
+          "term": "skew",
+          "heading": true
+        },
+        {
+          "term": "cauchy identity",
+          "heading": false
+        },
+        {
+          "term": "bar exp",
+          "heading": false
+        },
+        {
+          "term": "skew schur",
+          "heading": false
+        },
+        {
+          "term": "bar end",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "Now, one can easily obtain similar formulas for sums of the skew Schur functions $S_{R/P}$. To this end, one needs a slight generalization of the Cauchy identity ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}): $$\\begin{aligned} \\label{C2} \\sum_R S_{R/P}\\{p\\}S_{R}\\{\\bar p\\}=\\exp\\left(\\sum_{k=1}^\\infty{p_k\\bar p_k\\over k}\\right)S_{P}\\{\\bar p\\} \\end{aligned}$$ Taking the average of this identity over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-a-collection-of-sum-formulas",
+      "number": null,
+      "title": "A collection of sum formulas",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 696,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infty prod",
+          "heading": false
+        },
+        {
+          "term": "infty exp",
+          "heading": false
+        },
+        {
+          "term": "infty left",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        },
+        {
+          "term": "even prod",
+          "heading": false
+        },
+        {
+          "term": "sum vee",
+          "heading": false
+        },
+        {
+          "term": "right sum",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        }
+      ],
+      "extract": "To summarize, we can reproduce the whole collection of the single-Schur sums from [@Mac secs.1.5,3.4,3.5]. They are naturally divided in three blocks, and the formulas are given also in terms of symmetric variables $x_i$ such that $p_k=\\sum_ix_i^k$. **1.** The first one is already familiar $$\\begin{aligned} \\label{1} \\sum_RS_R=\\prod_i{1\\over 1-x_i}\\prod_{i<j}{1\\over 1-x_ix_j} = \\exp\\left\\{\\sum_{k=1}^\\infty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-gaussian-measure",
+      "number": null,
+      "title": "The Gaussian measure",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        },
+        {
+          "term": "fröbenius",
+          "heading": false
+        },
+        {
+          "term": "vec",
+          "heading": false
+        }
+      ],
+      "extract": "The main Gaussian measure ([\\[Gm\\]](#Gm){reference-type=\"ref\" reference=\"Gm\"}) itself enjoys a curious property: it can be expanded into a simple sum over the Schur functions containing only self-conjugated Young diagrams: $$\\begin{aligned} \\label{Gmex} d\\mu \\sim \\exp\\left\\{-\\sum_{k=1}^\\infty \\left( \\frac{p_{2k-1}^2-2p_{2k-1}}{2(2k-1)} + \\frac{p_{2k}^2}{4k}\\right)\\right\\}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-calculating-various-sums",
+      "number": null,
+      "title": "Calculating various sums",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "sum psi",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        }
+      ],
+      "extract": "Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating the Gaussian moment. For instance (using the Fröbenius formula [@Fulton]), $$\\begin{aligned} \\left<p_\\Delta\\right>^{\\bf A}=\\sum_R\\psi_R(\\Delta)\\left<S_R\\right>^{\\bf A}=\\sum_R\\psi_R(\\Delta) \\end{aligned}$$ i.e. (see also [@Mac Example 11, sec.I.7]) $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-strong-superintegrability-and-w-operators",
+      "number": null,
+      "title": "Strong superintegrability and W-operators",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superintegrability",
+          "heading": true
+        },
+        {
+          "term": "simple averages",
+          "heading": false
+        },
+        {
+          "term": "phenomenon",
+          "heading": false
+        }
+      ],
+      "extract": "As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages, this phenomenon is called superintegrability [@MMsi]. Similarly, one can construct a full set of *bilinear* combinations with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this phenomenon looks like in the case of the Gaussian Hermitian matrix model.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-strong-integrability-in-gaussian-hermitian-matri",
+      "number": null,
+      "title": "Strong integrability in Gaussian Hermitian matrix model",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "displaystyle delta",
+          "heading": false
+        },
+        {
+          "term": "big displaystyle",
+          "heading": false
+        },
+        {
+          "term": "matrix model",
+          "heading": true
+        },
+        {
+          "term": "mmd",
+          "heading": false
+        },
+        {
+          "term": "aligned big",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "The bilinear correlators in the Gaussian Hermitian matrix model are generated by the action of the $W$-operators $\\hat W^{(-)}$ on the Schur function $S_R$ as functions of $P_k:={\\rm Tr}\\,H^k$ [@MMNek], $$\\begin{aligned} \\label{da} \\Big<S_Q\\{\\hat W^{(-)}_k\\}\\cdot S_R\\{P_k\\}\\Big>= {\\displaystyle{S_{R/Q}\\{\\delta_{k,2}\\}S_R\\{N\\}}\\over \\displaystyle{S_R\\{\\delta_{k,1}\\}}}\\nonumber\\\\ \\hat W^{(-)}_k:={\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-strong-superintegrability-in-the-p-gaussian-mode",
+      "number": null,
+      "title": "Strong superintegrability in the p-Gaussian model",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned overleftarrow",
+          "heading": false
+        },
+        {
+          "term": "abp partial",
+          "heading": false
+        },
+        {
+          "term": "infty abp",
+          "heading": false
+        },
+        {
+          "term": "aligned hat",
+          "heading": false
+        },
+        {
+          "term": "hat delta",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "infty big",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "In the $p$-Gaussian model with the measure ([\\[Gm\\]](#Gm){reference-type=\"ref\" reference=\"Gm\"}), which is under our consideration in this paper, there is a formula for the bilinear correlator similar to ([\\[da\\]](#da){reference-type=\"ref\" reference=\"da\"}), however, in this case, one has to deal with the operators[^1] $\\hat W_\\Delta^{(0)}$. They are defined as $$\\begin{aligned} \\hat W_\\Delta^{(0)}={1\\over z_\\Delta}\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-relation-of-sum-formulas-to-ramanujan-sums",
+      "number": null,
+      "title": "Relation of sum formulas to Ramanujan sums",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "powerdr",
+          "heading": false
+        },
+        {
+          "term": "nonumber exp",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "dimrep",
+          "heading": false
+        },
+        {
+          "term": "ordinary exponentials",
+          "heading": false
+        }
+      ],
+      "extract": "Another amusing fact about the two nice cases ([\\[0powerdR\\]](#0powerdR){reference-type=\"ref\" reference=\"0powerdR\"}) and ([\\[1powerdR\\]](#1powerdR){reference-type=\"ref\" reference=\"1powerdR\"}) is their possible relation to the celebrated Ramanujan sums [@Ram] $$\\begin{aligned} c_{m,k}:= \\sum_{(a,m)=1}^k e^{\\frac{2\\pi i ak}{m}} \\end{aligned}$$ where the sum goes over $a$, which are coprime with $m$, and it is always a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-hurwitz-tau-functions",
+      "number": null,
+      "title": "Hurwitz tau-functions",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 745,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxed hline",
+          "heading": false
+        },
+        {
+          "term": "hline psi",
+          "heading": false
+        },
+        {
+          "term": "ldots hline",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "left underbrace",
+          "heading": false
+        },
+        {
+          "term": "frac sum",
+          "heading": false
+        }
+      ],
+      "extract": "The combinatorial Borel transform allows one to enrich the set of the Hurwitz $\\tau$-functions [@MMN; @AMMN] $$\\begin{aligned} \\tau^{(n)}\\{p^{(1)},\\ldots,p^{(n)}\\}:=\\sum_R q^{|R|} d_R^{2-n} S_R\\{p^{(1)}\\}\\ldots S_R\\{p^{(n)}\\} \\end{aligned}$$ to make the power of $d_R$ and the number of Schur functions independent: suppose $m>n$, then $$\\begin{aligned} \\sum_R d_R^{2-m} S_R\\{p^{(1)}\\}\\ldots S_R\\{p^{(n)}\\} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1027,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "combinatorial borel",
+          "heading": false
+        },
+        {
+          "term": "averaging procedure",
+          "heading": false
+        },
+        {
+          "term": "cdot ldots",
+          "heading": false
+        },
+        {
+          "term": "divergent series",
+          "heading": false
+        },
+        {
+          "term": "amusing",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we raised the trick of [@2212.04859] to the level of a *method*, applicable to a large variety of functions and providing a unified treatment of the so far sporadic set of amusing identities. We emphasize its conceptual relation to the Borel transform, which is used in physics to explain and put under control the ambiguity of divergent series. As we demonstrate, the abilities of our suggested",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aligned left",
+      "heading": false
+    },
+    {
+      "term": "aligned sum",
+      "heading": false
+    },
+    {
+      "term": "aligned begin",
+      "heading": false
+    },
+    {
+      "term": "end aligned",
+      "heading": false
+    },
+    {
+      "term": "infty left",
+      "heading": false
+    },
+    {
+      "term": "aligned big",
+      "heading": false
+    },
+    {
+      "term": "aligned boxed",
+      "heading": false
+    },
+    {
+      "term": "aligned overleftarrow",
+      "heading": false
+    },
+    {
+      "term": "frac sum",
+      "heading": false
+    },
+    {
+      "term": "right sum",
+      "heading": false
+    },
+    {
+      "term": "aligned hat",
+      "heading": false
+    },
+    {
+      "term": "aligned label",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A picture, illustrating the concept of the combinatorial Borel transform (CBT) of the series. First, we introduce into the original series an auxiliary function Sr{¯p} such that its average over ¯p with an appropriate measure can change the coefficients",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2302.05903v2"
+  }
+}

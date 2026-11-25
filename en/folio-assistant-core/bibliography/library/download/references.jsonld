@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/download",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+      "dcterms:creator": [
+        "BOBKOV1, S.G.",
+        "GÖTZE2, F."
+      ],
+      "dcterms:issued": "D:20101116",
+      "bibo:doi": "10.3150/10-BEJ254",
+      "dcterms:identifier": "https://doi.org/10.3150/10-BEJ254",
+      "dcterms:source": "library/download/manifest.jsonld",
+      "dcterms:hasVersion": "library/download"
+    }
+  ]
+}

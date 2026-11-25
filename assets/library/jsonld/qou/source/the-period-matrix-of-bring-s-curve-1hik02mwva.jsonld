@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The period matrix of Bring’s curve",
+  "contains": [
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-front-matter",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-000",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-001",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-002",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-003",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-004",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-005",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-006",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-007",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-008",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The period matrix of Bring’s curve — 11 sections: Front matter; Hι(B; This means that under an integral\n\n**The period matrix of Bring’s curve**\n\n*GONZALO RlERA AND RUBI E. RODRIGUEZ*\n\n22 pp, 11 sections.\n\n**Outline.** Front matter; Hι(B; This means that under an integral change of ba; 0 cac~; B does not admit more automorphisms, we obtain; Thus if dw is the differential in H projects t; We may now complete dw to a basis of different; '- 1 + /VΓΓ; We then set; 195 so that we can write oi Λ r o r roi . Λ r ; 5 so that \\ 2niq",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "the-period-matrix-of-bring-s-curve-1hik02mwva",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "the-period-matrix-of-bring-s-curve-1hik02mwva.pdf",
+    "source_sha256": "56f8ce317a00b0f339384c91086715552902d45a4e2021049fdcc054e29762f2",
+    "pages": 22,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

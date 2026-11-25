@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-strangelet-double-beta-minimal-path",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strangelet-double-beta-minimal-path",
+  "kind": "remark",
+  "title": "Minimal Skein-descent path from the cinquefoil to the trefoil",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-strangelet-double-beta",
+  "tags": [
+    "strangelet",
+    "double-beta",
+    "skein-descent"
+  ],
+  "text": "strangelet-double-beta-minimal-path.md",
+  "provenance": "authored"
+}

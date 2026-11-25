@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2402.01890v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the spherical partition algebra",
+      "dcterms:creator": [
+        "Katherine Ormeño Bast´ıas∗1, Paul Martin†2",
+        "Ryom-Hansen‡3, Steen"
+      ],
+      "dcterms:issued": "D:20241105",
+      "dcterms:identifier": "https://arxiv.org/abs/2402.01890",
+      "dcterms:abstract": "For k ∈N we introduce an idempotent subalgebra, the spherical partition algebra SPk, of the partition algebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group Sk. We determine a basis for SPk, and this provides a combinatorial interpretation of the dimension of SPk involving bipartite partitions of k. For t ∈C we consider the specialized algebra SPk(t). For t = n ∈N, we describe the structure of SPk(n) by giving the permutation module decomposition of the kth symmetric power of the defining module for the symmetric group algebra CSn. In general, we show that SPk(t) is quasi-hereditary over C for all t ∈C, except t = 0. We determine the decomposition numbers for SPk(t) for every specialization t ∈C except t = 0, (which includes semisimple and non-semisimple cases). In particular we determine the structure of all indecomposable projective modules, and the indecomposable tilting modules.",
+      "dcterms:source": "library/arxiv-2402.01890v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2402.01890v4"
+    }
+  ]
+}

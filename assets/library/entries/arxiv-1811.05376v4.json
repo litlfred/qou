@@ -1,0 +1,582 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1811.05376v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Resurgence Analysis of Quantum Invariants of Seifert\nFibered Homology Spheres\nJørgen Ellegaard Andersen and William Elbæk Mistegård\nOctober 26, 2020\nAbstract\nFor a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q)\nintroduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki series Z0(X).\nWe\nshow that for every even k ∈N there exists a full asymptotic expansion of ˆZ0(X; q) for q\ntending to e2πi/k, and in particular that the limit ˆZ0(X; e2πi/k) exists and is equal to the\nWRT quantum invariant τk(X). We show that the poles of the Borel transform of Z0(X)\ncoi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/rem-sec-front-matter-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "rem-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "In accordance with the asymptotic expansion conjecture (formulated by the ﬁrst author in [1], and proven in our joint work [5] for generic mapping tori and by the ﬁrst author et al. in [4] for ﬁnite order mapping tori with links s and further proven by Marche and Charles for certain surgeries on the ﬁgure 8 knot in [11]), we expect that the sum in (3) should only range over the Chern-Simons values of ﬂat SU(2)-connections CS(X) = SCS(M(X, SU(2))), e.g. that the terms which does not correspond to such values in the sum in (3) vanishes. This is known to be true for n = 3 [34] and in some cases f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "The Chern-Simons action SCS is injective on π0(M(SL(2, C))) and we have CSC(X) = {[0]} ⊔ \u001a\u0014−m2 4P \u0015 : m ∈Z is divisible by at most n −3 of the pj’s \u001b . The natural inclusion M(SL(2, R)) ⊔M(U(1)) M(SU(2)) →M(SL(2, C)) induces an isomorphism on the level of π0 π0(M(SL(2, R)) ⊔M(U(1)) M(SU(2))) ∼= π0(M(SL(2, C))). The Borel transform and Complex Chern-Simons Set P = Qn j=1 pj. For k ∈N∗set qk = exp(2πi/k) and let ς ∈C∗and φ ∈Q be the constants introduced below in (14). We consider the normalized quantum invariant eZk(X) = ςq φ k τk(X) τk(S2 × S1). (1) Let CS∗(X) = CS(X) \\ {[0]}. Introduce the rat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "There are uniquely determined polynomials Zθ = Zθ(X) for θ ∈CS∗ C(X)} of degree at most n −3 and a formal power series Z0 = Z0(X) ∈x−1 2 C[[x−1]] giving the full asymptotic expansion in the Poincare sense eZk(X) ∼k→∞ X θ∈CSC(X) e2πikθ Zθ(k). (3) The series Z0 is a normalization of the Ohtsuki series of X (see Equation (18)) whose Borel transform B(Z0) is the resurgent function B(Z0)(ζ) = κ πi√ζ G \u0012 exp \u0012κ√ζ P \u0013\u0013 = κi 4π Qn j=1 sinh \u0010 κ√ζ pj \u0011 √ζ \u0000sinh \u0000κ√ζ \u0001\u0001n−2 , (4) and if Ωis the set of poles of B(Z0), then Ω= −2πi CS∗ C(X) + 2πiZ. (5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "q∆ˆZ0(X; q) = λ √τ Z Γ exp(−ζ/τ)B(Z0(X))(ζ) dζ = ∞ X m=m0 χmq m2 4P . (6) R iR Γ+ Γ− Figure 1: The integration contour Γ = Γ+ + Γ−. The asymptotic expansion of the GPPV invariant ˆZ We now turn to the asymptotic expansion of ˆZ0(X) and the radial limit conjecture [12, 28, 29], which is recalled in Conjecture 2. Assume that P is even. Set δ = ∆−φ/4 and µ = (2λς)−1. For a positive parameter t set qk,t = exp",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "For each θ ∈CS∗ C(X) there exists a unique polynomial (deﬁned in (80)) in k of degree at most n −3 with coeﬃcients in formal power series without constant terms ˇZθ(k, t) ∈t · Q[πi, k][[t]] giving a full Poincare asymptotic expansion for small t and ﬁxed even k ( √ kλ)−1q∆ k,tˆZ0(X; qk,t) ∼ t→0 ˜Zk(X) + X θ∈CS∗ C(X) e2πikθˇZθ(k, t). (7) In particular, for every even k we have µ √ k lim q↑qk,0 qδˆZ0(X; q) = τk(X) τk(S2 × S1). (8) Thus the radial limit conjecture (Conjecture 2) holds for X. Comparisons with the literature The existence of an asymptotic expansion eZk(X) ∼k→∞ X θ∈R(Y ) e2πikθ Zθ(k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "(17) In the work [39] it was observed that Z0 is in fact a normalization of the Ohtsuki-series [44, 45, 46].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex Chern-Simons theory on X",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-complex-chern-simons-theory-on-x.md",
+      "narrative": null,
+      "content": "Complex Chern-Simons theory on X\nLet X be the oriented Seifert ﬁbered homology 3-sphere from the introduction. Choose q1, ..., qn ∈\nZ such that (pj, qj) = 1 and\nn\nX\nj=1\nqj\npj\n= 1\nP .\nThen X has a surgery diagram as depicted in Figure 2 below. Without loss of generality we can\np1/q1 p2/q2\np3/q3\npn/qn\nFigure 2: Surgery link for X.\nassume that p2, ..., pn are odd. The homeomorphism type of X is unaltered under a transformation\nqj 7→qj + yj for any choice of integers y1, ..., yn such that (pj, qj + yj) = 1 and\nn\nX\nj=1\nqj\npj\n=\nX\nj=1\nqj + yj\npj\n.\n(13)\nIf qj is odd for j > 1, we perform the transform",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The moduli space and complex Chern-Simons values",
+      "pageStart": 6,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-11-the-moduli-space-and-complex-chern-simons-val.md",
+      "narrative": null,
+      "content": "We now begin our investigation of $\\mathcal{M}(X,\\mathop{\\mathrm{SL}}(2,\\mathbb{C})),$ which closely follows [@FintushelStern90]. We have the following presentation of the fundamental group of $X$ $$\\label{presentation}\n\\pi_1(X) \\simeq \\left\\langle h,  x_1,...,x_n \\mid  x_1x_2\\cdots x_n, x_j^{p_j}h^{-q_j}, [x_j,h], j=1,...,n  \\right\\rangle.$$\n\nLet us first recall a few of Fintushel and Stern's results concerning the moduli space $\\mathcal{M}(X,\\mathop{\\mathrm{SU}}(2))$ establish in [@FintushelStern90]. As $X$ is an integral homology sphere, the only reducible representation into $SU(2)$ is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Borel transform and Complex Cherns-Simons",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-2-the-borel-transform-and-complex-cherns-simons.md",
+      "narrative": null,
+      "content": "[]{#sec:BOREL label=\"sec:BOREL\"}\n\nWe now provide the proof of Theorem [\\[2.1\\]](#2.1){reference-type=\"ref\" reference=\"2.1\"}. The reader not familiar with the Borel transform $\\mathcal{B}$ and its relation to the Laplace transform is encouraged to read Section [\\[sec:Borel\\]](#sec:Borel){reference-type=\"ref\" reference=\"sec:Borel\"}, before reading the proof of Theorem [\\[2.1\\]](#2.1){reference-type=\"ref\" reference=\"2.1\"}. For a measurable function $g:\\mathbb{R}_+ \\rightarrow \\mathbb{C}$ of sufficient decay, we use the notation $\\mathcal{L}_{\\mathbb{R}_+}(g)$ for the Laplace transform -- see Equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resummation of the WRT invariant",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-003-21-resummation-of-the-wrt-invariant.md",
+      "narrative": null,
+      "content": "We now turn to the resummation of the normalized WRT invariant $\\tilde{\\mathop{\\mathrm{Z}}}_k(X)$. Recall that for $\\mu \\in \\mathbb{Q}/ \\mathbb{Z}$ we introduced the set $$\\begin{aligned}\n\\label{R}\n\\mathcal{T}(\\mu) = & \\{m=1,...,2P -1 :-m^2/4P=\\mu \\ \\mathop{\\mathrm{mod}}\\ \\mathbb{Z} \\}.\n\\end{aligned}$$ We also introdude the residue operator $\\mathcal{I}_\\mu$ which for a meromorphic function $\\hat{\\varphi}$ is given by $$\\begin{aligned}\n  \\label{Lmu}  \\mathcal{I}_{\\mu}(\\hat{\\varphi})(\\xi) = -& \\sum_{x \\in \\mathcal{T}(\\mu)} \\mathop{\\mathrm{Res}}\\left (\\frac{\\exp\\left(\\xi \\frac{iy^2}{8\\pi P}\\righ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/conj-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "[26]",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "conj-sec-004-01.md",
+      "narrative": null,
+      "content": "The generating function ZG(M; z) has an analytic continuation to C \\ eΛ where eΛ is a ﬁnite set containing zero and the exponentials of the negatives of the complex classical Chern-Simons values. In other words, the conjecture is that the generating function ZG(M; z) determines the germ at zero of a resurgent function. This conjecture is formally motivated from resurgence of Laplace integrals and the (non-rigorous) path integral formula for the WRT invariant, as explained in [26].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "The generating function ˜Z(X; z) is the germ at zero of a holomorphic function ˜Z ∈O(C \\ eΛ) given by the following formula ˜Z(X; z) = Z ∞ e−2yB(Z0)(y) 1 −ze−y dy + X θ∈CS∗ C(X) e4πiθ n−3 X j=0 Z(j) θ (0) j!",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence of the generating function",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-22-resurgence-of-the-generating-function.md",
+      "narrative": null,
+      "content": "Resurgence of the generating function\nLet G be a simple, simply connected compact Lie group, and let τG,k be the level k Reshetikhin-\nTuraev TQFT constructed from the quantum group Uq(g), where g is the complexiﬁcation of the\nLie algebra h of G. Let ˇh be the dual Coxeter number of h, and set ˇk = k+h. For a closed oriented\nthree manifold M (possibly containing a colored framed link) we consider the normalized invariant\nZG,k(M) =\nτG,ˇk(M)\nτG,ˇk(S2 × S1).\nLet z be a formal variable and consider the generating function\nZG(M; z) ∈C[[z]]\ngiven by\nZG(M; z) =\n∞\nX\nk=0\nZG,k(M)zk.\nBy work of Garoufalid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A resurgence formula for the GPPV invariant",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-3-a-resurgence-formula-for-the-gppv-invariant.md",
+      "narrative": null,
+      "content": "A resurgence formula for the GPPV invariant\nWe now turn to the q-series invariant ˆZ0(X, q). We follow [28]. Let (Γ, m) be an ordered weighted\ntree, i.e. Γ is a tree together with an ordering of its set of vertices V and m is a map m : V →Z.\nSet s = |V | and let M = M(Γ, m) be the s × s matrix with entries given by\nMi,j =\n\n\n\n\n\nmv\nif vi = vj = v,\n1\nif vi and vj are joined by an edge,\n0\notherwise.\nWe say M is weakly negative deﬁnite if M is invertible and M −1 is negative deﬁnite on the subspace\nof Zs spanned by vertices of degree at most 3. Let Y = Y (Γ, m) be the oriented three manifold w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "The invariance of (49) under Neumann moves is proved by Gukov and Manulescu in [28]. We recall that the principal value v.p. is deﬁned such that for every suﬃciently small ϵ > 0 we have v.p. I |z|=1 = 1 I |z|=1+ϵ + I |z|=1−ϵ ! .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/cor-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 26,
+      "target": "cor-sec-006-01.md",
+      "narrative": null,
+      "content": "Let Z0 ∈x−1/2C[[x−1]] be the normalization of the Ohtsuki series from Theorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3",
+      "pageStart": 20,
+      "pageEnd": 26,
+      "target": "../sections/sec-006-31-proof-of-theorem-3.md",
+      "narrative": null,
+      "content": "Proof of Theorem 3\nWe now consider X = Σ(p1, ..., pn) in more detail.\nChoose q1, ..., qn ∈N such that for each\nj = 1, ..., n we have (pj, qj) = 1, pj ≤qj and\np0 := −1\nP −\nX\nj=1\nqj\npj\n∈Z<0.\nThen e = −1/P < 0 is the Seifert Euler number. Choose a continued fraction expansion of qj/pj\nfor each j = 1, ..., n\nqj\npj\n= kj,1 −\n1\nkj,2 −\n1\n...−kj,sj\n.\np0\n−k2,1\n−k2,s2\n−k2,2\n−k1,1\n−k1,2\n−k1,s1\n−k3,1\n−k3,2\n−k3,s3\nFigure 3: Plumbing graph for X in the case n = 3.\nAs explained in [28], X has a negative deﬁnite plumbing graph Γ deﬁned as follows. The graph Γ\nis star-shaped with n arms and central vertex v0 wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/conj-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "[28]",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "conj-sec-007-01.md",
+      "narrative": null,
+      "content": "Let Y be a closed oriented 3-manifold with b1(Y ) = 0. Set T = Spinc(Y )/Z2. For every a ∈T, there exists invariants ∆a ∈Q, c ∈Z+, ˆZa(q) ∈2−cq∆aZ[[q]], with the following properties. The series ˆZa(q) is convergent inside the unit disc {q | |q| < 1}, and for inﬁnitely many k ∈N the radial limits limq↑exp(2πi/k) ˆZa(q) exists and we have that ZCS(Y ; k) = (i √ 2k)−1 X a,b∈T e2πiklk(a,a)|Wb|−1Sa,b lim q↑exp(2πi/k) ˆZb(q). Here Sa,b = e2πikl(a,b) + e−2πikl(a,b) |Wa| p |H1(Y ; Z)| , and Wx is the Z2-stabilizer of x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant.md",
+      "narrative": null,
+      "content": "The asymptotic expansion of the GPPV invariant\nThe invention of ˆZ was party motivated by an attempt to generalize the following discovery of\nLawrence and Zagier. Set qk = exp(2πi/k). For n = 3 they proved in [40] the identity (for some\nσ ∈Q)\nτk (Σ(p1, p2, p3)) (qk −1)qσ\nk = −1\n2 lim\nq→qk\n∞\nX\nm=m0\nχmq\nm2\n4P .\nFor a closed oriented 3-manifold Y consider the normalized WRT invariant\nZCS(Y ; k) =\nτk(Y )\nτk(S2 × S1).\nWe now state the radial limit conjecture.\nConjecture 2 ([28]). Let Y be a closed oriented 3-manifold with b1(Y ) = 0. Set\nT = Spinc(Y )/Z2.\nFor every a ∈T, there exists invariants\n∆a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "Conjecture 2 appeared in slighly diﬀerent form in [12, 29, 27]. The level k WRT invariant τk(M) of a closed oriented 3-manifold M can be seen as a function of the k-root of unity qk = exp(2πi/k), and as such it is a function of a certain subset of the boundary of the unit disc D = {q : |q| < 1}. Assume b1(M) = 0 and deﬁne the k-dependent q-series ˆZk(M; q) = (i √ 2k)−1 X a,b∈T e2πik lk(a,a)|Wb|−1Sa,bˆZb(q). Then ˆZk(M; q) is convergent for q ∈D and the radial limit conjecture states lim q↑qk ˆZk(M; q) = τk(M). Thus ˆZk(M; q) can be seen as an analytic extension of τk(M) to the interior of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 4",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-41-proof-of-theorem-4.md",
+      "narrative": null,
+      "content": "Proof of Theorem 4\nTo simplify notation, we write\nˆZ0(X; q) = ˆZ(q).\nRecall the decomposition (16) of the normalized quantum invariant ˜Zk(X) into an integral part\nZI and a residue part ZR. In Lemma 1 we prove the existence of an analogous decomposition for\nˆZ0(q) into a Laplace integral part L and a residue part R\nq∆ˆZ0(q) = L(τ) + R(τ),\n(60)\nwhere we recall that q = e2πiτ. We present in Proposition 13 a standard result in complex analysis\n[40] which asserts that a q-series with periodic coeﬃcients of mean value zero has an asymptotic\nexpansion, as q tends to a root of unity.\nWe then show in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The decomposition of the GPPV invariant",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-411-the-decomposition-of-the-gppv-invariant.md",
+      "narrative": null,
+      "content": "Recall that $q=\\exp(2 \\pi i \\tau)$ with $\\tau \\in \\mathfrak{h}$ where $\\mathfrak{h}$ denotes the upper half plane, and recall the definitions of $F \\in \\mathcal{M}(\\mathbb{C})$ and $g \\in \\mathbb{C}[x]$ given in [\\[def:F\\]](#def:F){reference-type=\"eqref\" reference=\"def:F\"}. Let $\\tilde\\Gamma_+ = e^{\\frac{\\pi i}{4}}$.\n\n::: lemma\n[]{#Lemmaet label=\"Lemmaet\"} Introduce the holomorphic functions $\\mathcal{L},R \\in \\mathcal{O}(\\mathfrak{h})$ given by $$\\begin{aligned}\n    \\mathcal{L}(\\tau) &= \\frac{2\\lambda}{\\sqrt{\\tau}} \\int_{\\varGamma_+} e^{-x /\\tau} \\mathcal{B}(\\mathop{\\mathrm{Z}}_0)(x) \\ \\matho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[31, 40]",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Let C : Z →C be a periodic function with period M and mean value equal to zero M X m=1 C(n) = 0. Consider the L-series L(s, C), which for ℜ(s) > 1 is deﬁned by L(s, C) = ∞ X m=1 C(m) ms . This L-series admits an analytic extension to all of C and for r ∈N L(−r, C) = −M r r + 1 M X m=1 C(m)Br+1 \u0010 m M \u0011 . (75) For any polynomial Q of degree d Q(x) = d X u=0 quxu ∈C[x] the following asymptotic expansions hold for real and positive t ∞ X m=1 e−tm2C(m)Q(m) ∼ t→0 d X u=0 ∞ X r=0 quL(−2r −u, C)(−t)r r! . (76)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "For j = 1, 2, ..., n −2 deﬁne fj : Z →C as the coeﬁcients of the principal part of F at 2πim for m ∈Z, e.g. for y near 2πim F(y) = n−2 X j=1 fj(m)(y −2πim)−j + reg.. Then each fj is 2P-periodic and if P is even, then we have for each even k ∈Z X m=1,...,2P ekg(2πim)fj(m) = 0. (78)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic expansions of q-series with periodic coefficients",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-412-asymptotic-expansions-of-q-series-with-perio.md",
+      "narrative": null,
+      "content": "Asymptotic expansions of q-series with periodic coeﬃcients\nLet Bm(x) denote the m-th Bernoulli polynomial, i.e.\ntetx\net −1 =\n∞\nX\nm=0\nBm(x)\nm!\ntm.\n(74)\nWe recall the following result.\nProposition 13 ([31, 40]). Let C : Z →C be a periodic function with period M and mean value\nequal to zero\nM\nX\nm=1\nC(n) = 0.\nConsider the L-series L(s, C), which for ℜ(s) > 1 is deﬁned by\nL(s, C) =\n∞\nX\nm=1\nC(m)\nms .\nThis L-series admits an analytic extension to all of C and for r ∈N\nL(−r, C) = −M r\nr + 1\nM\nX\nm=1\nC(m)Br+1\n\u0010 m\nM\n\u0011\n.\n(75)\nFor any polynomial Q of degree d\nQ(x) =\nd\nX\nu=0\nquxu ∈C[x]\nthe following asympto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria.md",
+      "narrative": null,
+      "content": "The asymptotic expansion of the GPPV invariant\nRecall the deﬁnition the functions F and g given in (15). Let m ∈N. For y close to 2πim we use\nthe notation of Propositon 14 and write\nF(y) =\nn−2\nX\nj=1\nfj(m)(y −2πim)−j + reg.,\nwhere each fj : Z →C is 2P-periodic. For each l ∈N there exists a uniquely determined polynomial\nPl(x, y) ∈Q[πi, x, y]\nsuch that\n1\nl!\n∂leg(y)/τ\n∂yl\n(2πim) = eg(2πim)/τPl(τ −1, m).\n(79)\nThere exists uniquely determined complex coeﬃcients pl,u,v, with\nPl(τ −1, m) =\nX\nu,v\npl,u,vτ −umv.\nRecall that Bm(x) denotes the m’th Bernoulli polynomial and is deﬁned by (74). Deﬁne for eac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "Let B : R+ →C be a measurable function and assume the integral deﬁning LR+(B)(λ) is absolutely convergent for Re(λ) > 0. Assume there exists an increasing sequence {αj}∞ j=0 of real numbers strictly greater than −1 and a sequence {βj}∞ j=0 of positive integers giving an asymptotic expansion B(t) ∼t→0 ∞ X j=0 bjtαj log(t)βj. Then the following holds 1. There exists for large λ an asymptotic expansion ˜ϕ(λ) of the form LR+(B)(λ) ∼λ→∞˜ϕ(λ) where ˜ϕ(λ) = X α,β bjλ−αj−1Qαj,βj(log(λ)) and Qαj,βj ∈C[x] is the degree βj polynomial introdced in (89). 2. The Borel transform of ˜ϕ is equal to the expansi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A Resurgence and resummation",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-012-appendix-a-resurgence-and-resummation.md",
+      "narrative": null,
+      "content": "Resurgence and resummation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Resurgent functions and the Borel transform",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-013-a1-resurgent-functions-and-the-borel-transform.md",
+      "narrative": null,
+      "content": "The theory of resurgence was originally developed by Écalle in [@Ecalle81a] and [@Ecalle81b]. See [@MitschiSauzin16] for an introduction to the mathematical theory of resurgence and see [@DunneUnsal15] for an introduction to the general use of resurgence in quantum field theory. Garoufalidis [@Garoufalidis08] and Witten [@Witten11] where the pioneers of the use of resurgence in quantum Chern-Simons theory.\n\n::: definition\n[]{#def:res label=\"def:res\"} For a Riemann surface $C$ with universal covering space $$\\pi: \\tilde{C}\\rightarrow C$$ the algebra of resurgent functions is $\\mathcal{R}(C)=\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Borel-Laplace resummation",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-014-a2-borel-laplace-resummation.md",
+      "narrative": null,
+      "content": "Borel-Laplace resummation\nWe now discuss in more detail the relation between the Borel transform B and the Laplace trans-\nform, which we now introduce. Let γ ⊂C be an oriented contour. Let g be a measurable function\ndeﬁned in a neighbourhood of γ. Denote by Lγ(g) the Laplace transform given by\nLγ(g)(λ) =\nZ\nγ\nexp(−λ · z)g(z) dz,\n(88)\nfor all ζ ∈C such that the integral is absolutely convergent. Here we think of λ ∈C∗as a large\nmodulus asymptotics parameter.\nFor any α ∈C∗we let the contour αR+ be oriented in the\ndirection of α unless we state otherwise.\nThat the transforms B and LR+ are formally",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1811.05376v4/blocks/thm-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "thm-sec-014-02.md",
+      "narrative": null,
+      "content": "Let ˜ϕ(λ) = ∞ X j=0 cjλαj log(λ)βj (91) be a formal series as in Deﬁnition 3 with α0 > −1. Assume that • there exists a sector S ⊂C, such that for all ζ ∈S of suﬃciently small modulus the Borel transform B( ˜ϕ)(ζ) converges to a holomorphic function ˆϕ(ζ) (possibly upon choosing a branch of log(ζ) deﬁned on S), and that • the function ˆϕ extends by analytic continuation along a half axis Γ(θ) = e2πiθR+ ⊂S (for some θ ∈[0, 1] say) and there exists a contant C > 0 such that in a neighbourhood of Γ(θ) we have ˆϕ(z) = O(exp(C|z|)). Then the following holds. 1. The Laplace transform LΓ(θ)( ˆϕ) is h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

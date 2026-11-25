@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-9408045v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Constrained analysis of topologically massive gravity",
+      "dcterms:creator": [
+        "Dargam, J. Barcelos-Neto ∗and T.G."
+      ],
+      "dcterms:issued": "D:20220608",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/9408045",
+      "dcterms:abstract": "We quantize the Einstein gravity in the formalism of weak gravitational ﬁelds by using the constrained Hamiltonian method. Special emphasis is given to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term is added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br 1",
+      "dcterms:source": "library/arxiv-hep-th-9408045v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-9408045v1"
+    }
+  ]
+}

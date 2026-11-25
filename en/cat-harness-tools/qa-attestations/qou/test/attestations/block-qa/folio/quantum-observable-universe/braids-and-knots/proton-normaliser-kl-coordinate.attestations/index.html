@@ -1,0 +1,2880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1cjz61yw05q.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1cjz61yw05q","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/proton-normaliser-kl-coordinate&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No instance; no em-dash.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). Hecke/KL conjecture about the braids-and-knots F_Bor observable; fits.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Hecke/KL conjecture about the braids-and-knots F_Bor observable; fits.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The block&#39;s own &#39;What weakens&#39; section shows a uniform application of the criterion gives k = 0, so the conjecture as stated needs the criterion on the coordinate but not on the element; low prior plausibility, honestly recorded.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Retired by its own negative results; nothing left to rate.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). uses = [def:f-bor-borromean-observable, def:bar-involution]; both linked in the text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). uses = [def:f-bor-borromean-observable, def:bar-involution]; both linked in the text.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The statement opens &#39;Let x_- in H_2(q) be the sign quasi-idempotent ... Then t(z) = tr_z(x_-) vanishes at z_D = q^3/(q^2+1)&#39;. In H_2, x_- = 1 - q^-1 sigma_1 and tr_z(x_-) = 1 - z/q, which vanishes at z = q, not z_D. The zero at z_D and d_z t = -q^-3 belong to the H_3 antisymmetriser sum_{w in S_3} (-q)^{-l(w)} sigma_w (trXMinus). The coordinate b lives in H_2, the element x_- in H_3. The same &#39;Markov trace on H_2&#39; wording is in docs/audits/2026-11-21-proton-q3-kl-coordinate.md (Setup).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Previous major resolved: x_- is now the H_3 antisymmetriser sum_{w in S_3} (-q)^{-l(w)} sigma_w, whose trace vanishes at z_D with d_z t = -q^-3 (trXMinus_factor, hasDerivAt_trXMinus_zD). Other claims re-checked; the other zeros&#39; slopes (+-1/[3]_q!) hold by hand.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Sign slip at proton-normaliser-kl-coordinate.md:12: &#39;The value -q^-3 is c_sign/[3]_q!&#39; -- c_sign/[3]_q! = q^-3, so -q^-3 = -c_sign/[3]_q! (square constant times the slope -1/[3]_q!).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Fixed: -q^-3 = -c_sign/[3]_q! (c_sign/[3]_q! = q^-3). Other claims re-checked.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The Lean carrier KLCoordinateConjecture u v carries only conditions (1) and (2) (IsUnit u, bar-invariance), which are satisfiable by construction (kl_element_meets_conditions) and imply only u = +-1. The conjectured identification (that the q^-3 of F_Bor IS -d_c t in such a coordinate) is not encoded; the docstring says so honestly. Under AGENTS.md 3b-tax a conjecture class must carry the conjecture&#39;s content, so [KLCoordinateConjecture u v] as a hypothesis proves nothing about F_Bor.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). The carrier KLCoordinateConjecture still encodes only conditions (1),(2), not the identification; with the conjecture retired and the docstring saying exactly this, it is a record of the hypotheses rather than a misleading carrier. Downgraded from major.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). The block is kind conjecture but its own text says it records a negative result and does not derive the normaliser; the status authorNote and the \&quot;retired\&quot; tag still say retired, so kind and status disagree.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Kind conjecture and status note now agree: the block is kept as a conjecture recording a negative result, and says it does not derive the normaliser.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The block itself identifies the circularity of the derivative reading.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). The block itself identifies the circularity of the derivative reading.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). Heavily hedged; &#39;What is open&#39; states the gap.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Heavily hedged; &#39;What is open&#39; states the gap.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The coordinate criterion is stated as the choice it is.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). The coordinate criterion is stated as the choice it is.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). Follows, given the H_3 reading of x_-.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Follows, given the H_3 reading of x_-.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-arity-conflation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). H_2 (coordinate b) and H_3 (element x_-) are conflated in the statement; see da-false-claim.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). H_2 (coordinate b) and H_3 (element x_-) now kept apart.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). &#39;Each linear weight y has slope +-1/[3]_q! at its zeros&#39;: Lean proves one zero each (ySign_slope_zD, yTriv_slope_zero); true at the others (checked by hand) but unproved. bar(x_-) = q^6 x_- is flagged as argued, correctly. The claim -d_c t(z_D) = +-q^-3 combines the Lean classification with kl_coordinate_derivative (an |.| lemma); fine.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). &#39;Each linear weight y has slope +-1/[3]_q! at its zeros&#39;: Lean proves one zero each (ySign_slope_zD, yTriv_slope_zero); true at the others (checked by hand) but unproved. bar(x_-) = q^6 x_- is flagged as argued, correctly. The claim -d_c t(z_D) = +-q^-3 combines the Lean classification with kl_coordinate_derivative (an |.| lemma); fine.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Narrative matches kl_unit_exponent_zero / kl_coordinate_derivative; the k=0 step is marked as argued, not formalised.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). kazhdan-lusztig1979 and geer-patureau-mirand-turaev-2009 exist in folio/references and fit; no inline \\cite in the .md.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). kazhdan-lusztig1979 and geer-patureau-mirand-turaev-2009 exist in folio/references and fit; no inline \\cite in the .md.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The conjecture says q^-3 &#39;equals -d_c t at z_D&#39; while the proved value is +-q^-3 (u = -1 gives -q^-3); fix the sign of u or use absolute value. &#39;Square constant&#39; and &#39;integral sign line&#39; are used undefined.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). The conjecture says q^-3 &#39;equals -d_c t at z_D&#39; while the proved value is +-q^-3 (u = -1 gives -q^-3); fix the sign of u or use absolute value. &#39;Square constant&#39; and &#39;integral sign line&#39; are used undefined.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Fixed: square constant now defined inline.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No empirical value.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No empirical value.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). Pure algebra.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Pure algebra.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The proved parts reproduce from Lean; the probe in computations/probes/proton_q3_normaliser re-runs byte-identically.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). The proved parts reproduce from Lean; the probe in computations/probes/proton_q3_normaliser re-runs byte-identically.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). The honesty is good, but the statement as written is false (x_- placed in H_2) and the Lean carrier does not encode the conjecture.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Honest negative record. Remaining: the date in the prose header (script voice-author-notes-pollution fail/major; the status already lives in authorNotes), tags &#39;working-conjecture&#39; and &#39;open-problem&#39; kept beside &#39;retired&#39;, the +-q^-3 sign of u, and &#39;square constant&#39; undefined.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Accept with minor revision: the -c_sign/[3]_q! sign slip and the kind-vs-retired-status mismatch.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). &#39;square constant&#39;, &#39;integral sign line&#39; and &#39;quasi-idempotent&#39; scaling are not defined; H_2 vs H_3 confusion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). &#39;square constant&#39;, &#39;integral sign line&#39; and &#39;quasi-idempotent&#39; scaling are not defined; H_2 vs H_3 confusion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Sign slip at proton-normaliser-kl-coordinate.md:12: &#39;The value -q^-3 is c_sign/[3]_q!&#39; -- c_sign/[3]_q! = q^-3, so -q^-3 = -c_sign/[3]_q! (square constant times the slope -1/[3]_q!).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). Tight.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). Tight.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance.&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2cbd728e6272&quot;,
+        &quot;ts&quot;: &quot;b51e7d872d70&quot;,
+        &quot;lean&quot;: &quot;c7bbd9ba61d5&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:32:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;661ce411ae90621f772145abfd427aea588c3076&quot;,
+      &quot;evidence&quot;: &quot;Full read of new conj:proton-normaliser-kl-coordinate at 661ce411ae (.md, .ts, sibling .lean) against KLCoordinateLaurent.lean, LaurentUnits.lean, ProtonQ3OcneanuSlopes.lean, ProtonQ3SchurElement.lean (all lean-direct exit 0; sibling exit 0; standard axioms). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;99cf709d8558&quot;,
+        &quot;ts&quot;: &quot;89dc48176ccf&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:35:23.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1da25adb4a8aa2867cbd3de17fe4e7c04268eb4b&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 1da25adb4a (retired; statement restated with x_- in H_3, status authorNote, &#39;retired&#39; tag; sibling .lean docstring updated, lean-direct exit 0). No computation attached to this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2065c84bd07&quot;,
+        &quot;ts&quot;: &quot;4ec193da1705&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:42:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;15a21d1173d5418d819974d77ccc5218b11b3e2d&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at 15a21d1173 (header no longer says retired; tags working-conjecture/open-problem removed; -d_c t(z_D) = u^-1 q^-3 with sign following u; square constant defined as the scalar c with x^2 = c x). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Not applicable.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4e7b0b377c4b&quot;,
+        &quot;ts&quot;: &quot;2ec0e9ea624f&quot;,
+        &quot;lean&quot;: &quot;7d8a49e762d4&quot;,
+        &quot;lean_statement&quot;: &quot;4560e01b88b9&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T23:45:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c9a999cbd340aba9864b8500b8b368e47c2279fc&quot;,
+      &quot;evidence&quot;: &quot;Re-read of conj:proton-normaliser-kl-coordinate at c9a999cbd3 (md:12 now reads -c_sign/[3]_q!; status note &#39;Kept as a conjecture that does not derive the normaliser&#39;, tag &#39;negative-result&#39;). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Not applicable.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

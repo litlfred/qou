@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-on-p-modular-hecke-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:on-p-modular-hecke-table-data",
+  "kind": "table",
+  "title": "Data table from conj:on-p-modular-hecke",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-on-p-modular-hecke"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "extracted-table"
+  ],
+  "text": "on-p-modular-hecke-table-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-reidemeister-14c-decay",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:reidemeister-14c-decay",
+  "kind": "example",
+  "title": "Move accounting for the ${}^{14}\\mathrm{C}$ beta decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reidemeister-action-table"
+  ],
+  "text": "reidemeister-14c-decay-example.md",
+  "provenance": "authored"
+}

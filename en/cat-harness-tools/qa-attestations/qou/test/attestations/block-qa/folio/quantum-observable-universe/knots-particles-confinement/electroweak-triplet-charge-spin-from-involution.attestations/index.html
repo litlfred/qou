@@ -1,0 +1,2285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.at… — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-11ihswzncyb.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-11ihswzncyb","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.at…</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Both leaks are gone: \&quot;the corpus spin involution\&quot; is now \&quot;the spin involution\&quot;, and \&quot;collapsing the former C3 (charge) and C4 (spin)\&quot; is now \&quot;so charge and spin are proved consequences rather than separate postulates\&quot;.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote seq18&quot;
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b360725dc26f&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;89c323a45829&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b360725dc26f&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;89c323a45829&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.135Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Sits in knots-particles-confinement beside def:spin-involution, whose sector grading it uses; no sibling restates it.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.602Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;EW carrier charge/sector-label theorem placed in knots-particles-confinement, which hosts the EW torus-link triplet and its slot remark; no sibling restates it.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.645Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Given the postulate as stated in md:2, each conclusion in md:4-10 holds; no counterexample.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.083Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Checked the algebra: skew of minusPart(a,a⁻¹)=a−a⁻¹; affine-T3 refutation; rotation identities in the proof block hold. The 2·T3 table (:15, fixed in 593afbf874) now agrees with ewT3Double.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.687Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:2 postulates &#39;T_3(W^pm) = pm 1, T_3(Z) = T_3(H) = 0&#39;; md:9 concludes the same.&quot;,
+      &quot;notes&quot;: &quot;Charge half is P |- P; spin half is a definition (spin := 0 on singlets, 1 on doublets). Same fix as proof-no-self-assuming-projection; or reframe the block as a definition/remark recording the table.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.117Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Thin but non-vacuous: the label and charge are computed from σ acting on the postulated sector vectors, and Q(W+)≠0 needs a²≠1 and 2 invertible.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.729Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;md:2 &#39;together with the isospin label map T_3(W^pm) = pm 1&#39; is the md:9 conclusion.&quot;,
+      &quot;notes&quot;: &quot;The T3 values are assumed then concluded. Remove the label map from the hypotheses and derive it, or state only the spin half (and say spin is defined from the sector).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.151Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The sector label 2s is a re-encoding of the postulated sector (spinDouble_eq_sector shows 2s = if isSinglet then 0 else 2), so &#39;computed through σ&#39; adds only the check that σ distinguishes A+ from A-. Disclosed at :13 (&#39;a two-valued sector label ... not a computation of Lorentz spin&#39;).&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.775Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:12 &#39;both follow from the one physics selection postulate through the spin involution&#39;&quot;,
+      &quot;notes&quot;: &quot;Charge is postulated, not derived; spin is defined from the sector label; the Lean theorem never uses sigma. Retitle (&#39;The electroweak spin/T3 table under the sector-selection postulate&#39;) and replace md:12 by &#39;Spin is a function of the sector; T_3 is part of the postulate.&#39;&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.185Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Title/statement say &#39;sector label and charge computed through the spin involution&#39;, conditional on the stated postulate; Lorentz spin and isospin are explicitly disclaimed (:13,:15).&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.808Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;All free choices (sector map, T3 labels) are named in md:2; authorNotes record the free W-slot label.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.218Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;The free inputs (sector map, eigenvalues) are listed as the postulate in the statement.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.848Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:12 &#39;...through the spin involution&#39;; ew_charge_spin_forced uses no sigma/swap2 lemma.&quot;,
+      &quot;notes&quot;: &quot;The Task 3 bar-parity lemmas (Lean 69-175) are never invoked by the theorem. Either use them or delete the &#39;through the spin involution&#39; clause.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.251Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Each step in the proof block follows from the projection identities.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.917Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:12 claims derivation &#39;through the spin involution&#39;; Lean electroweak-triplet-charge-spin-from-involution.lean:265-279 only projects EWSectorSelection fields.&quot;,
+      &quot;notes&quot;: &quot;The md asserts a derivation; the Lean proves a restatement of the hypothesis. Align as in da-overclaim.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.326Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Statement and ew_charge_spin_forced agree conjunct by conjunct; the T3 normalisation mismatch was fixed (md :15 and Lean docstring in 593afbf874).&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.948Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;No cites[]; Lean References cite corpus blocks and [leitner2026] only; none misattributed.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.360Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block has no cites[] and the Lean carries no -- Ref: to an external source for the main theorem.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.980Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;md:5 &#39;spin(H) = 0&#39;; Lean spinDouble := if isSinglet then 0 else 2, a sector label, not a rotation-group spin.&quot;,
+      &quot;notes&quot;: &quot;Define spin(-) in md:2 as &#39;the label 0 on A_+, 1 on A_-&#39;. Also define bar-even/bar-odd or link def:spin-involution at first use.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.408Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;2s, Q, v_c, skew, A± each defined in the statement; T3 now stated as 2·T3 with the doublet reading spelled out.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.011Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;No numerical value or comparison to measurement in the block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.444Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No numerical comparison with measurement in the block.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.043Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:2 &#39;the spin-doublet sector A_- ... W^pm, Z the doublets&#39;; md:6 spin = 1. Spin 1 is a triplet.&quot;,
+      &quot;notes&quot;: &quot;Physics stated as fact: a spin doublet is spin 1/2. Also T_3(H) = 0 conflicts with the SM, where the neutral Higgs component has T_3 = -1/2. Rename A_- &#39;spin-odd sector&#39; (def:spin-involution md:9 carries the same term) and mark T_3(H)=0 as a model assignment, not the SM value.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.482Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;The model&#39;s departures from the SM (Z charged by σ-parity, T3(H)=0) are stated as such (:17,:19), not claimed as agreement.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.077Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;No computation or witness backs the block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.515Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No witness; Lean sibling compiles (lean-direct exit 0, standard axioms) this session.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.113Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:12 &#39;Charge and spin are not independent open conjectures&#39; rests on a theorem that returns its own hypothesis fields.&quot;,
+      &quot;notes&quot;: &quot;Verdict: reject as a theorem. Strongest objection: the conclusion is the postulate (T3 fields) plus a definition (spin from sector). Demote to a remark/definition recording the table, or replace the class by hypotheses from which T3 is genuinely derived.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.552Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: the &#39;spin&#39; label is the postulated σ-sector re-read (spinDouble_eq_sector), so the theorem&#39;s content is that ±-projections of (a,a⁻¹) are fixed/negated and have zero/nonzero skew; correct and honestly scoped, but light for a theorem.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.145Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:2 one 90-word italic sentence carries ring, postulate, sectors, sigma, bar-parity and the T3 map.&quot;,
+      &quot;notes&quot;: &quot;Score H1=1 H2=1 H3=0 H4=1 H5=1 H6=1 H7=1 H8=1 = 7/16. Fixes: state purpose first; split md:2 into hypotheses list; define A_pm, bar-even at use; add a one-line proof; drop md:12.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.586Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md:2 the statement is a single ~10-clause paragraph defining v_c, 2s, Q and the postulate inline; :13-19 then pack scope notes, an isospin non-derivation, the Weinberg-mixing argument and an SM interpretation into the theorem block. Fails the strict 16/16 bar on economy and linear argument.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:37:32.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:22.177Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;T_3 values stated in md:2 and again in md:9 (exact-dup of content).&quot;,
+      &quot;notes&quot;: &quot;k=1 exact-dup, but the duplicate is the theorem&#39;s conclusion; resolve by fixing da-circular, not by deleting either display.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.620Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;No duplicated content inside the block; the mixing identity is stated here and proved in the proof block, not repeated within this block.&quot;
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.124Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;&#39;Charge and spin are not independent open conjectures: both follow from the one selection postulate&#39; — epistemic-status contrast.&quot;,
+      &quot;notes&quot;: &quot;pass-with-note: load-bearing epistemic classification (postulate vs consequence).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.653Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md: dense &#39;, not X&#39; tails — &#39;:13 it is not a computation of Lorentz spin&#39;, &#39;not spin multiplets&#39;; &#39;:15 recorded, not derived&#39;, &#39;not an input of this theorem&#39;; &#39;:19 the rotation does not create neutrality&#39;. Several are the claim itself, but the density is high.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.166Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no setup-then-reframe pivot.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.687Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.224Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; em-dash use absent or true parenthetical/range only, low density.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.731Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.270Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no reflex three-item lists; enumerations are substantive.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.765Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.314Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; final line is factual/technical, not quotable closer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.800Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.353Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no narrated emphasis (no &#39;we emphasize&#39;/&#39;note the framing&#39;).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.848Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.391Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Final italic sentence said the same thing twice within one sentence; redundant tail removed.&quot;,
+      &quot;notes&quot;: &quot;fixed: &#39;...through the spin involution, so charge and spin are proved consequences rather than separate postulates.&#39; -&gt; &#39;...through the spin involution.&#39;&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.889Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.425Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; institutional register throughout, no personal warmth.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.930Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.459Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no unqualified maximum-strength claims.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.968Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md in full; no instance of this pattern.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:08.497Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; prose parses aloud; no stalling noun chains.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:41.003Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md:2 &#39;the σ-even projection of (a_c, a_c^{-1}) if c ∈ A+ and its σ-odd projection if c ∈ A-&#39; inside one very long sentence; hard to read aloud.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;79498069b73e&quot;,
+        &quot;lean_statement&quot;: &quot;43989ae4e58d&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:56:01.528Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \&quot;follows\&quot; from the postulate, but T₃ *is* the postulate. Proof: \&quot;neutrality is forced by bar-parity\&quot; is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \&quot;independent physical inputs\&quot; (empirical content in a proof)&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.293Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:2 &#39;assigned to the spin-singlet sector A_+ (sigma-fixed, bar-even)&#39;; Lean EWSectorSelection.isSinglet is a bare Bool with no sigma.&quot;,
+      &quot;notes&quot;: &quot;Conclusions match (spinDouble 0/2 = spin 0/1; t3Double labels). Hypothesis gap: Lean never ties isSinglet to a sigma-eigenspace and R/[Invertible 2] are phantom. Either add a field linking isSinglet to swap2-parity of the carrier, or reword md:2 to &#39;a Boolean sector label, read as the sigma-sector&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.700Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;ew_charge_spin_forced (folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:383) conclusions 2s(H)=0, 2s(W±)=2s(Z)=2, Q(H)=0, Q(W+)≠0, Q(W-)=-Q(W+) match .md display; hypotheses (sectors, eig units, a²≠1, W- eig = inverse) are the class EWSectorSelection fields; Lean takes arbitrary units where .md writes a_c=q^{2k} (Lean is the more general reading).&quot;
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:02.224Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;EWSectorSelection is consistent: an instance with the stated isSinglet/t3Double values exists; no False or 0 = 1 hypothesis.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.937Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;EWSectorSelection is inhabitable (e.g. R=ℚ, eig Wp=2, Wm=1/2, Z=3, H=2, sectors as stated); no False/0=1 hypothesis.&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.499Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:47.928Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.620Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:47.963Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.731Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:47.995Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.785Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.033Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.827Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.070Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.880Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.105Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.940Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.138Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:51.976Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.171Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.029Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.203Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.064Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:42:48.234Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.098Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;md:12 &#39;Charge and spin are not independent open conjectures: both follow from the one physics selection postulate&#39;&quot;,
+      &quot;notes&quot;: &quot;Status/significance sentence inside the italic statement. A companion remark exists (rem:ew-triplet-charge-spin-slot-assignment); move md:12 there or to authorNotes, and drop the physics glosses &#39;(scalar, neutral)&#39;, &#39;(vector)&#39;, &#39;(charged)&#39; from the displays.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.568Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md:19 &#39;*Interpretation.* In the Standard Model W^3 and B both carry zero electric charge...&#39; and the Weinberg-mixing paragraph (:17) sit inside the theorem block although rem companion electroweak-triplet-charge-spin-from-involution-slot.ts already interprets this theorem; the scope notes at :13-15 are legitimate.&quot;
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.173Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Statement over a field R with 1/2 in R; Bool/Nat/Int labels only; no archimedean construct or numeric q.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.636Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md:2 statement over a field with 1/2 in R; the ordered-field sign reading (:15) is commentary outside the theorem and is flagged as such.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.208Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;No md proof; Lean ew_charge_spin_forced uses simp/decide/field projections, no Real lemmas (the unused Mathlib.Data.Real.Basic import is not used by the theorem).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.669Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Lean folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean proves the statement by ring/field algebra over generic [Field R] [Invertible 2]; only the sign side-lemma uses an ordered field, declared in the prose.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.246Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;md:1-12 never mentions def:coulomb-charge, rem:chirality-trefoil-electron-positron, prop:vdw-pskew-isolation or thm:hoefsmit-ew-cell-content, all in uses[].&quot;,
+      &quot;notes&quot;: &quot;Those four support the authorNotes Task 1/1-prime analyses, not this statement. Keep def:spin-involution and prop:self-dual-higgs-real-volume (H singlet); move the others to the slot-assignment remark&#39;s uses[] or justify each in the .md.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.049Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;uses[] = def:spin-involution, thm:hoefsmit-ew-cell-content, prop:self-dual-higgs-real-volume, prop:vdw-pskew-isolation — each is linked and needed in the statement; conj:weinberg-angle-categorical is linked inline only for the comparison paragraph and is deliberately not a dependency (ts comment).&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.339Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;No proof in the .md; Lean docstring line 180 &#39;Spin follows by definition; neutrality by bar-parity&#39; is the only plan.&quot;,
+      &quot;notes&quot;: &quot;Score 0.5 (plan recoverable but implicit). Add a one-line md proof: spin is defined from the sector label, T3 is part of the postulate.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.733Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=0.9: proof block states the plan (project onto σ-even/odd, read fixedness and skew), then the case split A+/A-.&quot;
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.378Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;ew_charge_spin_forced is sorry-free (grep: no sorry/axiom/native_decide in the file); score 1.0.&quot;,
+      &quot;notes&quot;: &quot;Score 1.0. Not re-compiled in this session.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.767Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=1.0: sorry-free; lean -DautoImplicit=false exit 0 this session, #print axioms ew_charge_spin_forced = [propext, Classical.choice, Quot.sound].&quot;
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:50:52.440Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;ew_charge_spin_forced := anonymous constructor of class fields and simp unfoldings; adds no argument beyond the postulate.&quot;,
+      &quot;notes&quot;: &quot;Score 0.2. Not a duplicate of a sibling, but the proof content is definitional relabelling.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.799Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;score=0.5: standard ±-projection argument; not a duplicate of a sibling proof.&quot;
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:01.783Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;ew_charge_spin_forced signature matches the only committed version (9915906cf); no sorry/axiom/native_decide in electroweak-triplet-charge-spin-from-involution.lean. lean_verify not run here.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.834Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Statement was restated in PR #8609/#8620 (T3 conjuncts dropped) with matching .md/.ts edits and an authorNote recording the owner-authorised change; lean-direct exit 0, no sorryAx in #print axioms.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:01.994Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;electroweak-triplet-charge-spin-from-involution.lean:268-275 conclusion conjuncts &#39;t3Double ... Wp = 1&#39; returned as EWSectorSelection.wPlus_t3, a class field.&quot;,
+      &quot;notes&quot;: &quot;Four of ten conjuncts are verbatim fields (wPlus_t3, wMinus_t3, z_t3, higgs_t3); higgs_neutral is the field higgs_singlet; the four spin conjuncts unfold a def of the field isSinglet. Fix: either demote to a remark/definition (&#39;the postulate, restated as a spin/T3 table&#39;) or restate the class with hypotheses not equal to the conclusion (e.g. sigma-parity of each carrier&#39;s eigenvalue pair, with T3 derived).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.869Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;EWSectorSelection carries inputs only; ew_charge_spin_forced is assembled from proved lemmas (spinDouble_eq_sector, ewCharge_of_doublet, sub_inv_ne_zero_of_sq_ne_one), none of which is a class field typed as the conclusion.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:02.087Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;Conclusion is a conjunction of non-tautological equalities in the class data, not True or x = x; vacuity is recorded under self-assuming-projection.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.902Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Conclusion is a 7-way conjunction of non-tautological equalities/inequalities in R and ℕ.&quot;
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:02.289Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;electroweak-triplet-charge-spin-from-involution.lean:200 &#39;class EWSectorSelection (R : Type*) [Field R] [Invertible (2 : R)]&#39; has no field mentioning R.&quot;,
+      &quot;notes&quot;: &quot;R, [Field R], [Invertible 2] are phantom: the theorem holds for any type. Either drop R from the class and the md (&#39;a field with 1/2 in R&#39;), or add the field that uses it (the swap2 sector projections of Task 3).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:39.975Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;[Invertible 2] is used in spinDouble_eq_sector; all class fields used by the component lemmas.&quot;
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:02.358Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;decide closes only finite Bool/Nat facts (false != true, 2 != 4, pigeonhole on Bool); no structural goal is masked.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.013Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Main theorem uses no decide. (Side theorem ew_sigma5_bargrade_forced is `decide` on the definition barSectorOfSpin; not the lean.ref decl.)&quot;
+    }
+  ],
+  &quot;da-arity-conflation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4a577972f512&quot;,
+        &quot;ts&quot;: &quot;816034935aac&quot;,
+        &quot;lean&quot;: &quot;fcd6c07bf3f6&quot;,
+        &quot;lean_statement&quot;: &quot;e4b64ae038a7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-adjudicator-C&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T15:51:21.884Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9e5f5d771b9d330e27c4c4734650331ad8cf39dc&quot;,
+      &quot;evidence&quot;: &quot;No family/universal-closure or cross-instance identification; one class, one instance-generic conclusion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bab5ad9d60c4&quot;,
+        &quot;ts&quot;: &quot;2437f457214a&quot;,
+        &quot;lean&quot;: &quot;42c08567c696&quot;,
+        &quot;lean_statement&quot;: &quot;d7608feb2d11&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T17:43:40.291Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;08a520eec3ff0f69f02772f35d377a90cf9e65b3&quot;,
+      &quot;evidence&quot;: &quot;Single instance of EWSectorSelection throughout; no family/closure conflation.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

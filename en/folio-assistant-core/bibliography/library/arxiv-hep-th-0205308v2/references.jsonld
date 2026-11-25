@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-0205308v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "WDVV Equations as Functional Relations",
+      "dcterms:creator": [
+        "Braden1, H.W.",
+        "Marshakov2, A."
+      ],
+      "dcterms:issued": "D:20210609",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/0205308",
+      "dcterms:source": "library/arxiv-hep-th-0205308v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-0205308v2"
+    }
+  ]
+}

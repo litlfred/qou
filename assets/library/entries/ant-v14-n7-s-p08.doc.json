@@ -1,0 +1,1020 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p08",
+  "title": "ant-v14-n7-s-p08",
+  "variant": "pdf",
+  "pages": 42,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1911",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Method of proof: an overview",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "1918",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-method-of-proof-an-overview"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "1921",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "The stratiﬁcation of complete character sums",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "1925",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-the-stratiﬁcation-of-complete-character-sums"
+    },
+    {
+      "level": 1,
+      "title": "Initiation of the Burgess argument",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "1931",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-initiation-of-the-burgess-argument"
+    },
+    {
+      "level": 1,
+      "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+      "number": "6",
+      "page": 25,
+      "pageLabel": "1935",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-stratiﬁcation-and-a-menshovrademacher-argument"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion of the Burgess argument",
+      "number": "7",
+      "page": 31,
+      "pageLabel": "1941",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-conclusion-of-the-burgess-argument"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": null,
+      "page": 36,
+      "pageLabel": "1946",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-appendix"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 39,
+      "pageLabel": "1949",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 39,
+      "pageLabel": "1949",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1911",
+      "labelEnd": "1911",
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess bound",
+          "heading": false
+        },
+        {
+          "term": "character sums",
+          "heading": false
+        },
+        {
+          "term": "sums evaluated",
+          "heading": false
+        },
+        {
+          "term": "multiplicative character",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1911 Burgess bounds for short character sums evaluated at forms Lillian B. Pierce and Junyan Xu We establish a Burgess bound for short multiplicative character sums in arbitrary dimensions, in which the character is evaluated at a homogeneous form that belongs to a very general class of “admissible” forms. This n-dimensional Burgess bound",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p08/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": "1911",
+      "labelEnd": "1918",
+      "words": 3711,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess bound",
+          "heading": false
+        },
+        {
+          "term": "n-dimensional burgess",
+          "heading": false
+        },
+        {
+          "term": "burgess threshold",
+          "heading": false
+        },
+        {
+          "term": "burgess exponent",
+          "heading": false
+        },
+        {
+          "term": "burgess argument",
+          "heading": false
+        },
+        {
+          "term": "original burgess",
+          "heading": false
+        },
+        {
+          "term": "classical burgess",
+          "heading": false
+        },
+        {
+          "term": "pólya vinogradov",
+          "heading": false
+        }
+      ],
+      "extract": "The celebrated Burgess bound [1957] proves that for χ a nonprincipal multiplicative Dirichlet character modulo a prime q, the character sum S(N, H) = X x∈Z N<x≤N+H χ(x) is bounded for every integer r ≥1 by |S(N, H)| ≪r H1−1/rq(r+1)/4r2 log q. (1-1) From this it can be deduced that S(N, H) admits a nontrivial bound o(H) for H as small as H = q1/4+κ, for any κ > 0. Bounds for S(N, H) have many applications, and as we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-method-of-proof-an-overview",
+      "number": "2",
+      "title": "Method of proof: an overview",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "1918",
+      "labelEnd": "1921",
+      "words": 1568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess method",
+          "heading": false
+        },
+        {
+          "term": "nonmaximal moment",
+          "heading": false
+        },
+        {
+          "term": "square-root cancellation",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "deduce bound",
+          "heading": false
+        },
+        {
+          "term": "k3r",
+          "heading": false
+        },
+        {
+          "term": "maximal moment",
+          "heading": false
+        },
+        {
+          "term": "difﬁculties",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall the main points of the Burgess method in dimension 1, outline the difﬁculties that arise in n ≥2 dimensions, and then sketch how we overcome these difﬁculties to obtain our main theorem. At its heart, the Burgess method in the classical 1-dimensional setting builds from a character sum S(N; H) of length H < q, a character sum over a complete set of residues modulo q. Doing so by a Fourier",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-preliminaries",
+      "number": "3",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "1921",
+      "labelEnd": "1925",
+      "words": 2381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-th power-free",
+          "heading": false
+        },
+        {
+          "term": "d-th power-free",
+          "heading": false
+        },
+        {
+          "term": "reduction modulo",
+          "heading": false
+        },
+        {
+          "term": "primes",
+          "heading": false
+        },
+        {
+          "term": "burgess",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "learn",
+          "heading": false
+        }
+      ],
+      "extract": "3A. Power-free conditions. We say that F ∈Z[x1, . . . , xn] is d-th power-free if each nonconstant irre- ducible factor of F over Z (or equivalently over Q, by Gauss’s lemma) appears with multiplicity strictly less than d. In general, given a ﬁeld k, we say that F ∈k[x1, . . . , xn] is d-th power-free over k when F = cFa1 1 Fa2 2 · · · Faℓ ℓwith c ∈k×, all ai < d and all Fi ∈k[x1, . . . , xn] are irreducible and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-stratiﬁcation-of-complete-character-sums",
+      "number": "4",
+      "title": "The stratiﬁcation of complete character sums",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": "1925",
+      "labelEnd": "1931",
+      "words": 3622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "di-th power-free",
+          "heading": false
+        },
+        {
+          "term": "d-th power-free",
+          "heading": false
+        },
+        {
+          "term": "perfect di-th",
+          "heading": false
+        },
+        {
+          "term": "character sums",
+          "heading": true
+        },
+        {
+          "term": "di-th power",
+          "heading": false
+        },
+        {
+          "term": "power-free rational",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁcation",
+          "heading": true
+        },
+        {
+          "term": "a2nr",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall the stratiﬁcation of complete character sums proved in [Xu 2018] and show how to deduce a slightly stronger formulation that we believe will be of independent interest, as well as being useful in this paper. In our presentation, we will replace the dimension r in the original work by the dimension 2r in each instance, but the content of this section would apply in an analogous way for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-initiation-of-the-burgess-argument",
+      "number": "5",
+      "title": "Initiation of the Burgess argument",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "1931",
+      "labelEnd": "1935",
+      "words": 1360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess",
+          "heading": true
+        },
+        {
+          "term": "burgess bounds",
+          "heading": false
+        },
+        {
+          "term": "j-th coordinate",
+          "heading": false
+        },
+        {
+          "term": "box deﬁned",
+          "heading": false
+        },
+        {
+          "term": "aiq",
+          "heading": false
+        },
+        {
+          "term": "inclusion-exclusion",
+          "heading": false
+        },
+        {
+          "term": "character sum",
+          "heading": false
+        },
+        {
+          "term": "character sums",
+          "heading": false
+        }
+      ],
+      "extract": "We now derive the ﬁrst steps of the Burgess method, generalizing the approach of [Gallagher and Mont- gomery 2010; Heath-Brown 2013] from the one-variable case and [Pierce 2016] in the multi-variable case. The central complications that are distinctive to our new stratiﬁed setting are mainly addressed in Section 6. We make the observation that given a character sum S(F; N, H) with data F, N, H, we may reorder the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-stratiﬁcation-and-a-menshovrademacher-argument",
+      "number": "6",
+      "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 31,
+      "labelStart": "1935",
+      "labelEnd": "1941",
+      "words": 2588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "menshov rademacher",
+          "heading": true
+        },
+        {
+          "term": "rademacher argument",
+          "heading": true
+        },
+        {
+          "term": "rearrangement inequality",
+          "heading": false
+        },
+        {
+          "term": "burgess bounds",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁcation",
+          "heading": true
+        },
+        {
+          "term": "character sums",
+          "heading": false
+        },
+        {
+          "term": "itσ",
+          "heading": false
+        },
+        {
+          "term": "jtσ",
+          "heading": false
+        }
+      ],
+      "extract": "6A. Application of the stratiﬁcation for character sums. We now come to a critical novel step, which is to estimate how often we obtain a certain quality of upper bound for the complete character sum X m (mod q) χ(F{x}(m)). For this, we call upon the stratiﬁcation of complete character sums stated in Theorem 4.4. Let us suppose that k1 ≤. . . ≤kn ≤q. For each 1 ≤j ≤n, deﬁne Y j := \u001a {x} ∈(0, k]2r : X m (mod q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-conclusion-of-the-burgess-argument",
+      "number": "7",
+      "title": "Conclusion of the Burgess argument",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 36,
+      "labelStart": "1941",
+      "labelEnd": "1946",
+      "words": 2226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pierce",
+          "heading": false
+        },
+        {
+          "term": "hmin",
+          "heading": false
+        },
+        {
+          "term": "heath-brown",
+          "heading": false
+        },
+        {
+          "term": "junyan",
+          "heading": false
+        },
+        {
+          "term": "lillian",
+          "heading": false
+        },
+        {
+          "term": "sufﬁces",
+          "heading": false
+        },
+        {
+          "term": "argument",
+          "heading": true
+        },
+        {
+          "term": "approximations",
+          "heading": false
+        }
+      ],
+      "extract": "We now apply Proposition 6.2 to (5-9) with K = 2H/P, recalling that we are working under the assumption (5-1) that H1 ≤H2 ≤· · · ≤Hn. (Also recall that Kn ≤Hn < q.) We conclude that |S(F; N, H)|2r ≪n,r,1,D (log q)2r(n+1)P2nr−1∥H∥−1 \u0012∥H∥ Pn \u00132r n X j=0 q(n+ j)/2eBn,r( j; H/P)−1 = (log q)2r(n+1)∥H∥2r−1P−1qn/2 n X j=0 q j/2eBn,r( j; H/P)−1, (7-1) in which we recall the deﬁnition of the function eBn,r( · , · ) from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "1946",
+      "labelEnd": "1949",
+      "words": 1244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess bounds",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "savings",
+          "heading": false
+        },
+        {
+          "term": "threshold",
+          "heading": false
+        },
+        {
+          "term": "nearest integer",
+          "heading": false
+        },
+        {
+          "term": "larger values",
+          "heading": false
+        },
+        {
+          "term": "character sums",
+          "heading": false
+        },
+        {
+          "term": "short character",
+          "heading": false
+        }
+      ],
+      "extract": "A.1. The role of the stratiﬁcation. It is useful to remark on the crucial role that the stratiﬁcation plays in obtaining our main theorem. Suppose that instead of Theorem A we only gained information about X1, without any further stratiﬁcation into X2, . . . , Xn. Then for those (x(1), . . . , x(2r)) ∈A2nr Fq \\ X1(Fq), we would have |S(x(1), . . . , x(2r))| ≤Cqn/2, but for those (x(1), . . . , x(2r)) ∈X1(Fq) we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "1949",
+      "labelEnd": "1949",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fellowship",
+          "heading": false
+        },
+        {
+          "term": "dms",
+          "heading": false
+        },
+        {
+          "term": "nsf",
+          "heading": false
+        }
+      ],
+      "extract": "The authors thank D. R. Heath-Brown and M. Larsen for helpful advice on this project; the authors also thank the referee for helpful suggestions. Pierce is partially supported by NSF CAREER grant DMS-1652173, a Sloan Research Fellowship and the AMS Joan and Joseph Birman Fellowship. Xu has been partially supported by NSF DMS-1702152.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "1949",
+      "labelEnd": null,
+      "words": 1358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burgess bounds",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "dirichlet l-functions",
+          "heading": false
+        },
+        {
+          "term": "character sums",
+          "heading": false
+        },
+        {
+          "term": "mili cevi",
+          "heading": false
+        },
+        {
+          "term": "heath-brown",
+          "heading": false
+        },
+        {
+          "term": "mixed character",
+          "heading": false
+        },
+        {
+          "term": "multiplicative character",
+          "heading": false
+        }
+      ],
+      "extract": "[Aggarwal et al. 2018] K. Aggarwal, R. Holowinsky, Y. Lin, and Q. Sun, “The Burgess bound via a trivial delta method”, 2018. To appear in Ramanujan J. arXiv [Banks and Guo 2017] W. D. Banks and V. Z. Guo, “Quadratic nonresidues below the Burgess bound”, Int. J. Number Theory 13:3 (2017), 751–759. MR Zbl [Barban et al. 1964] M. B. Barban, Y. V. Linnik, and N. G. Tshudakov, “On prime numbers in an arithmetic",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "burgess bound",
+      "heading": false
+    },
+    {
+      "term": "burgess argument",
+      "heading": true
+    },
+    {
+      "term": "burgess threshold",
+      "heading": false
+    },
+    {
+      "term": "n-dimensional burgess",
+      "heading": false
+    },
+    {
+      "term": "burgess method",
+      "heading": false
+    },
+    {
+      "term": "original burgess",
+      "heading": false
+    },
+    {
+      "term": "burgess exponent",
+      "heading": false
+    },
+    {
+      "term": "classical burgess",
+      "heading": false
+    },
+    {
+      "term": "character sums",
+      "heading": true
+    },
+    {
+      "term": "short character",
+      "heading": false
+    },
+    {
+      "term": "character modulo",
+      "heading": false
+    },
+    {
+      "term": "sums evaluated",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1911",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1912",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1913",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1914",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1915",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1916",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1917",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1918",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1919",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1920",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1921",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1922",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1923",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1924",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1925",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1926",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1927",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1928",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1929",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1930",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1931",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1932",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1933",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1934",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1935",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1936",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1937",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1938",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1939",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1940",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1941",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "1942",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1943",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "1944",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1945",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "1946",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "1947",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "1948",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "1949",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "1950",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "1951",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p39); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p08"
+  }
+}

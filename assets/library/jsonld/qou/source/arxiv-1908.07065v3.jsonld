@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.07065v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "contains": [
+    "library/arxiv-1908.07065v3/sections/sec-front-matter",
+    "library/arxiv-1908.07065v3/sections/sec-000",
+    "library/arxiv-1908.07065v3/sections/sec-001",
+    "library/arxiv-1908.07065v3/sections/sec-002",
+    "library/arxiv-1908.07065v3/sections/sec-003",
+    "library/arxiv-1908.07065v3/sections/sec-004",
+    "library/arxiv-1908.07065v3/sections/sec-005",
+    "library/arxiv-1908.07065v3/sections/sec-006",
+    "library/arxiv-1908.07065v3/sections/sec-007",
+    "library/arxiv-1908.07065v3/sections/sec-008",
+    "library/arxiv-1908.07065v3/sections/sec-009",
+    "library/arxiv-1908.07065v3/sections/sec-010",
+    "library/arxiv-1908.07065v3/sections/sec-011",
+    "library/arxiv-1908.07065v3/sections/sec-012",
+    "library/arxiv-1908.07065v3/sections/sec-013",
+    "library/arxiv-1908.07065v3/sections/sec-014",
+    "library/arxiv-1908.07065v3/sections/sec-015",
+    "library/arxiv-1908.07065v3/sections/sec-016",
+    "library/arxiv-1908.07065v3/sections/sec-017",
+    "library/arxiv-1908.07065v3/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills\n\n**Non-perturbative approaches to the quantum Seiberg–Witten curve**\n\n*Alba Grassia, Jie Gub and Marcos Mariñob*\n\n47 pp, 20 sections.\n\n**Abstract.** We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020\n\n**Outline.** Front matter; 1 Introduction; 2 The all-orders WKB method; 3 Quantum periods from TBA equations; 3.1 Review of the TBA equations of Gaiotto–Moo; 3.2 TBA equations for the modified Mathieu equ; 3.2.1 Strong coupling region; 3.2.2 Weak coupling region; 3.3 Solving the TBA equations in the strong co; 4 Quantum periods from instanton calculus; 4.1 Review of instanton calculus; 4.2 Comparison to Borel resummation; 5 The Fredholm determinant from topological st; 5.1 A closed formula and its derivation; 5.2 Tests of our formula; 5.3 Comparison to Zamolodchikov's TBA equation; 6 On the modified Mathieu operator and Painlev; 7 Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1908.07065&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1908.07065v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1908.07065v3.pdf",
+    "source_sha256": "c43e413aed71aef141585a5ccace94def4cd6e215f3467c5393633b38fcae402",
+    "pages": 47,
+    "arxiv": {
+      "id": "1908.07065",
+      "version": "3",
+      "primary_class": "hep-th",
+      "stamp_date": "20 Jul 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

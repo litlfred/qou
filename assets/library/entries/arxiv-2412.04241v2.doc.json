@@ -1,0 +1,2625 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2412.04241v2",
+  "title": "The Habiro ring of a number field",
+  "variant": "pdf",
+  "pages": 73,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Prologue",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-prologue"
+    },
+    {
+      "level": 2,
+      "title": "Integrality and congruence experiments",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-integrality-and-congruence-experiments"
+    },
+    {
+      "level": 2,
+      "title": "The original Habiro ring",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-original-habiro-ring"
+    },
+    {
+      "level": 2,
+      "title": "The Habiro ring of a number field",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-habiro-ring-of-a-number-field"
+    },
+    {
+      "level": 2,
+      "title": "Modules over the Habiro ring of K indexed by K_3(K)",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by"
+    },
+    {
+      "level": 2,
+      "title": "Admissible series and formal Gaussian integration",
+      "number": "1.6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-admissible-series-and-formal-gaussian-integra"
+    },
+    {
+      "level": 2,
+      "title": "The main theorems",
+      "number": "1.7",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-17-the-main-theorems"
+    },
+    {
+      "level": 2,
+      "title": "The relation with perturbative Chern–Simons theory",
+      "number": "1.8",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-18-the-relation-with-perturbative-chernsimons-th"
+    },
+    {
+      "level": 2,
+      "title": "Future extensions",
+      "number": "1.9",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-19-future-extensions"
+    },
+    {
+      "level": 1,
+      "title": "Two complementary collections of power series at roots of unity",
+      "number": "2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-2-two-complementary-collections-of-power-series"
+    },
+    {
+      "level": 2,
+      "title": "The infinite Pochhammer symbol",
+      "number": "2.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-21-the-infinite-pochhammer-symbol"
+    },
+    {
+      "level": 2,
+      "title": "Admissible series",
+      "number": "2.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-22-admissible-series"
+    },
+    {
+      "level": 2,
+      "title": "Admissibility of q-hypergeometric series",
+      "number": "2.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-23-admissibility-of-q-hypergeometric-series"
+    },
+    {
+      "level": 2,
+      "title": "Level m admissible series",
+      "number": "2.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-24-level-m-admissible-series"
+    },
+    {
+      "level": 2,
+      "title": "Formal Gaussian integration",
+      "number": "2.5",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-25-formal-gaussian-integration"
+    },
+    {
+      "level": 2,
+      "title": "Algebraicity via WKB",
+      "number": "2.6",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-26-algebraicity-via-wkb"
+    },
+    {
+      "level": 2,
+      "title": "Synthesis",
+      "number": "2.7",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-27-synthesis"
+    },
+    {
+      "level": 1,
+      "title": "Integrality and gluing of p-adic series",
+      "number": "3",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-3-integrality-and-gluing-of-p-adic-series"
+    },
+    {
+      "level": 2,
+      "title": "Bloch group and p-adic dilogarithm",
+      "number": "3.1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-31-bloch-group-and-p-adic-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Explicit sections of the p-completed Habiro ring",
+      "number": "3.2",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-32-explicit-sections-of-the-p-completed-habiro-r"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the main theorems",
+      "number": "3.3",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-33-proof-of-the-main-theorems"
+    },
+    {
+      "level": 1,
+      "title": "Examples and computations",
+      "number": "4",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-4-examples-and-computations"
+    },
+    {
+      "level": 2,
+      "title": "Symmetrisation and a residue formula",
+      "number": "4.1",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-41-symmetrisation-and-a-residue-formula"
+    },
+    {
+      "level": 2,
+      "title": "A rank one admissible series",
+      "number": "4.2",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-42-a-rank-one-admissible-series"
+    },
+    {
+      "level": 2,
+      "title": "Torsion in the Bloch group from admissible series",
+      "number": "4.3",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se"
+    },
+    {
+      "level": 2,
+      "title": "Some p-adic computations",
+      "number": "4.4",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-44-some-p-adic-computations"
+    },
+    {
+      "level": 2,
+      "title": "The 4_1 knot",
+      "number": "4.5",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+      "number": "4.6",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-46-the-pair-of-the-5-2-and-the--237-pretzel-knot"
+    },
+    {
+      "level": 2,
+      "title": "A note on modularity",
+      "number": "4.7",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-47-a-note-on-modularity"
+    },
+    {
+      "level": 1,
+      "title": "Alternative approach: Habiro rings via congruences",
+      "number": "5",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-5-alternative-approach-habiro-rings-via-congruen"
+    },
+    {
+      "level": 2,
+      "title": "Functions near roots of unity and the naive Habiro ring",
+      "number": "5.1",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-51-functions-near-roots-of-unity-and-the-naive-h"
+    },
+    {
+      "level": 2,
+      "title": "The Habiro ring of a number field",
+      "number": "5.2",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-52-the-habiro-ring-of-a-number-field"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "5.3",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-53-examples"
+    },
+    {
+      "level": 2,
+      "title": "Some wilder Habiro-like elements",
+      "number": "5.4",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-54-some-wilder-habiro-like-elements"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "admissible series",
+          "heading": false
+        },
+        {
+          "term": "pochhammer symbol",
+          "heading": false
+        },
+        {
+          "term": "infinite pochhammer",
+          "heading": false
+        },
+        {
+          "term": "p-adic dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "peter scholze",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        }
+      ],
+      "extract": "THE HABIRO RING OF A NUMBER FIELD STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER Abstract. We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2412.04241v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-prologue",
+      "number": "1.1",
+      "title": "Prologue",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prologue",
+          "heading": true
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "concern number",
+          "heading": false
+        },
+        {
+          "term": "paper concern",
+          "heading": false
+        },
+        {
+          "term": "frobenius twist",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "number fields",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.prologue} This paper introduces a Habiro ring of a number field $\\BK$ and constructs modules over this ring graded by the third algebraic $K$-theory group $K_3(\\BK)$. Roughly speaking, this ring consists of collections of power series around each root of unity that are integral and $p$-adically glue, after a Frobenius twist, whereas the modules consist of collection of power series around each root of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-integrality-and-congruence-experiments",
+      "number": "1.2",
+      "title": "Integrality and congruence experiments",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac cdot",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "symmetrised series",
+          "heading": false
+        },
+        {
+          "term": "series phi",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "legendre symbol",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.intexp} Early experiments by two of the authors on perturbative invariants of Chern--Simons theory revealed unexpected integrality and gluing properties of functions near roots of unity. The explanation of this phenomenon was the original motivation for this work. One of the experiments in question involved the power series $\\Phi(h)$ that appear in the asymptotic expansion of the Kashaev invariant of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-original-habiro-ring",
+      "number": "1.3",
+      "title": "The original Habiro ring",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "cite habiro",
+          "heading": false
+        },
+        {
+          "term": "eqref iota",
+          "heading": false
+        },
+        {
+          "term": "calh",
+          "heading": false
+        },
+        {
+          "term": "map iota",
+          "heading": false
+        },
+        {
+          "term": "llbracket rrbracket",
+          "heading": false
+        },
+        {
+          "term": "eqref glue",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.habZ} The Habiro ring, given by the remarkably short definition~\\cite{Habiro:completion} \\be \\label{habdefZ} \\calH \\;:=\\; \\varprojlim_n \\;\\BZ[q]/(q;q)_n\\BZ[q] \\ee (where $(q;q)_n=(1-q) \\dots (1-q^n)$ is the $q$-Pochhammer symbol), originated in Quantum Topology as a natural home for quantum invariants of knots and 3-manifolds such as the Kashaev invariant of a knot~\\cite{HuL} or the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-habiro-ring-of-a-number-field",
+      "number": "1.4",
+      "title": "The Habiro ring of a number field",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "number field",
+          "heading": true
+        },
+        {
+          "term": "ζpm",
+          "heading": false
+        },
+        {
+          "term": "frobenius twist",
+          "heading": false
+        },
+        {
+          "term": "jxk",
+          "heading": false
+        },
+        {
+          "term": "order prime",
+          "heading": false
+        },
+        {
+          "term": "φvp",
+          "heading": false
+        },
+        {
+          "term": "gluing property",
+          "heading": false
+        }
+      ],
+      "extract": "number field was motivated by the ideas of q-de Rham cohomology in [43]. Our first task is to give a power series realisation of this ring. As in the case of the Habiro ring, the new definition involves OK-valued functions near the roots of unity, where OK is the ring of integers of a number field K. However, there are two new features that emerge, both of which already appeared in the numerical experiments",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
+      "number": "1.5",
+      "title": "Modules over the Habiro ring of K indexed by K_3(K)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1991,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "m-th root",
+          "heading": false
+        },
+        {
+          "term": "p-adic dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "invertible sections",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": true
+        },
+        {
+          "term": "order prime",
+          "heading": false
+        },
+        {
+          "term": "series coming",
+          "heading": false
+        }
+      ],
+      "extract": "collection of modules HR,ξ over the Habiro ring HR (with R given in (11)) labelled by elements of ξ ∈K3(K). (Philosophically, the modules ought to be labelled by K3(R). However, given the isomorphism K2r−1(R) ≃K2r−1(K) for r > 1 (see e.g., Sec.5.2 of Weibel [45] as well as [10, Eqn.(33)]), we choose to label our modules by K3(K).) These modules turn out to be the home of perturbative quantum knot invariants, as we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-admissible-series-and-formal-gaussian-integra",
+      "number": "1.6",
+      "title": "Admissible series and formal Gaussian integration",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible series",
+          "heading": true
+        },
+        {
+          "term": "phitof fgi",
+          "heading": false
+        },
+        {
+          "term": "formal gaussian",
+          "heading": true
+        },
+        {
+          "term": "gaussian integration",
+          "heading": true
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        },
+        {
+          "term": "nahm sums",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "cite zagier",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.admFGI} It was conjectured by Nahm that the modularity of certain $q$-hypergeometric functions is intimately related to the vanishing of certain associated classes in algebraic $K$-theory, as was indeed later seen in a variety of works~\\cite{Nahm,Zagier:dilog,GZ:asymptotics,CGZ}. The asymptotics of these $q$-hypergeometric functions as $q$ appraoches roots of unity can be defined using formal Gaussian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-the-main-theorems",
+      "number": "1.7",
+      "title": "The main theorems",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phitof fgi",
+          "heading": false
+        },
+        {
+          "term": "inn calh",
+          "heading": false
+        },
+        {
+          "term": "thm phitof",
+          "heading": false
+        },
+        {
+          "term": "ring calh",
+          "heading": false
+        },
+        {
+          "term": "eqref zjt",
+          "heading": false
+        },
+        {
+          "term": "label zjt",
+          "heading": false
+        },
+        {
+          "term": "nahm equations",
+          "heading": false
+        },
+        {
+          "term": "deformed nahm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.results} We now state our main results. The first result identifies the two collections $\\Phitof_{A,m}(t,x)$ and $\\Phitof^\\FGI_{A,m}(t,x)$ of power series at roots of unity and draws complementary conclusions about them. A key ingredient is the fact that both collections are solutions to the $q$-holonomic system of equations \\be \\label{PhiAshift} F_A(t,q) - F_A(\\s_jt,q) \\= (-1)^{A_{j,j}} t_{j} q^{A_{j,j}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-18-the-relation-with-perturbative-chernsimons-th",
+      "number": "1.8",
+      "title": "The relation with perturbative Chern–Simons theory",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbative chern--simons",
+          "heading": false
+        },
+        {
+          "term": "neumann--zagier datum",
+          "heading": false
+        },
+        {
+          "term": "complex chern--simons",
+          "heading": false
+        },
+        {
+          "term": "neumann--zagier equations",
+          "heading": false
+        },
+        {
+          "term": "chern--simons theory",
+          "heading": false
+        },
+        {
+          "term": "nahm equations",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "cite witten",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.CS} Theorem~\\ref{thm.2} involves a symmetric matrix with integer entries and a non-degenerate solution $z$ of the Nahm equations. As such, it looks removed from perturbative Chern--Simons theory with complex gauge group. In this subsection, we briefly explain the relation betwee Theorem~\\ref{thm.2} and perturbative complex Chern--Simons theory. To begin with, Chern--Simons theory with a complex gauge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-19-future-extensions",
+      "number": "1.9",
+      "title": "Future extensions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series phitof",
+          "heading": false
+        },
+        {
+          "term": "noindent bullet",
+          "heading": false
+        },
+        {
+          "term": "mathrm inf",
+          "heading": false
+        },
+        {
+          "term": "bad primes",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "relative bloch",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "line bundles",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.further} We conclude this introduction by discussing several natural extensions of our paper that we hope to come back to. \\noindent $\\bullet$ {\\bf Bad primes.} The current definition of $\\calH_R$ is a collection of power series associated to all roots of unity that satisfies the gluing condition~\\eqref{gluef}, which allows to re-expand the series at $\\z_{pm}$ from the series at $\\z_m$ as long as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-two-complementary-collections-of-power-series",
+      "number": "2",
+      "title": "Two complementary collections of power series at roots of unity",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible series",
+          "heading": false
+        },
+        {
+          "term": "thinspace",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "emph",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.adm} In this section we will describe two beautiful consequences of a formal power series satisfying a simple system of linear $q$-difference equations. On one hand these series will have a subtle integrality property called \\emph{admissibility}\\thinspace---\\thinspace introduced by Kontsevich-Soibelman~\\cite{KS:cohomological}\\thinspace---\\thinspace and on the other hand they will satisfy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-21-the-infinite-pochhammer-symbol",
+      "number": "2.1",
+      "title": "The infinite Pochhammer symbol",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logpoc log",
+          "heading": false
+        },
+        {
+          "term": "label logpoc",
+          "heading": false
+        },
+        {
+          "term": "ell infty",
+          "heading": false
+        },
+        {
+          "term": "infty inn",
+          "heading": false
+        },
+        {
+          "term": "frac ell",
+          "heading": false
+        },
+        {
+          "term": "ell geq",
+          "heading": false
+        },
+        {
+          "term": "sum ell",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.poch} A key role in our paper is played by the infinite Pochhammer symbol $(t;q)_\\infty \\= \\prod_{n \\geq 0} (1-q^n t)$. In this section we collect some elementary, although remarkable, properties of it. There are two well-known complementary expansions of the logarithm of $(t;q)_\\infty$ \\begin{align} \\label{logpoc} \\log (t;q)_\\infty & \\= -\\sum_{\\ell \\geq 1} \\frac{t^\\ell}{\\ell(1-q^\\ell)} \\\\ \\label{logpoc2}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-admissible-series",
+      "number": "2.2",
+      "title": "Admissible series",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible series",
+          "heading": true
+        },
+        {
+          "term": "p-integral",
+          "heading": false
+        },
+        {
+          "term": "parametrising",
+          "heading": false
+        },
+        {
+          "term": "uncountable",
+          "heading": false
+        }
+      ],
+      "extract": "arise as generating series of Poincar´e polynomials of Cohomological Hall Algebras. The latter are algebra structures that one can define on the homology of a moduli stack parametrising objects in abelian categories satisfying appropriate conditions. By their very definition, the product of two admissible series is admissible, and since the choice of the integers cn,i in (28) is arbitrary (as long as they have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-23-admissibility-of-q-hypergeometric-series",
+      "number": "2.3",
+      "title": "Admissibility of q-hypergeometric series",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-hypergeometric series",
+          "heading": true
+        },
+        {
+          "term": "q-difference equations",
+          "heading": false
+        },
+        {
+          "term": "admissible series",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "linear q-difference",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "admissibility",
+          "heading": true
+        }
+      ],
+      "extract": "series FA(t, q) defined by a q-hypergeometric sum that is determined by an integral symmetric matrix A as in (31). These admissible series are in several respects special. Most importantly for us, they are q-holonomic, i.e., satisfy the system (33) of linear q-difference equations with respect to t that, together with the initial condition FA(0, q) = 1, uniquely determine FA(t, q). The proof that FA(t, q) satisfies",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-24-level-m-admissible-series",
+      "number": "2.4",
+      "title": "Level m admissible series",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible series",
+          "heading": true
+        },
+        {
+          "term": "level admissible",
+          "heading": true
+        },
+        {
+          "term": "tnℓ",
+          "heading": false
+        },
+        {
+          "term": "qnm",
+          "heading": false
+        },
+        {
+          "term": "ζmm",
+          "heading": false
+        },
+        {
+          "term": "peter scholze",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "q-difference equation",
+          "heading": false
+        }
+      ],
+      "extract": "tension of admissibility, which is modelled on the congruence sums of equation (32) and equation (126). We introduce this notion here and then prove that the above-mentioned sums give examples of level m admissible series. This will be crucial in proving the integral- ity of Theorem 4 of Section 1.7. To state the definition we need the following: Lemma 2.7. Every F(t, q) ∈1 + t Z[ 1 m]((q))[[t]] can be written",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-25-formal-gaussian-integration",
+      "number": "2.5",
+      "title": "Formal Gaussian integration",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 33,
+      "labelStart": "28",
+      "labelEnd": "33",
+      "words": 1715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phitof fgi",
+          "heading": false
+        },
+        {
+          "term": "delta fgi",
+          "heading": false
+        },
+        {
+          "term": "gaussian integration",
+          "heading": true
+        },
+        {
+          "term": "formal gaussian",
+          "heading": true
+        },
+        {
+          "term": "ell big",
+          "heading": false
+        },
+        {
+          "term": "frac ell",
+          "heading": false
+        },
+        {
+          "term": "frac diag",
+          "heading": false
+        },
+        {
+          "term": "prod ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.FGI} In this section we review a collection of formal power series at roots of unity that were defined by formal Gaussian integration in~\\cite{DG} for $\\z=1$ and in ~\\cite{DG2} for arbitrary complex roots of unity $\\z$. The input to define these power series was a Neumann--Zagier datum, which, in the case of perturbative complex Chern--Simons theory, comes from an ideal triangulation of a 3-manifold and a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-26-algebraicity-via-wkb",
+      "number": "2.6",
+      "title": "Algebraicity via WKB",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inn delta",
+          "heading": false
+        },
+        {
+          "term": "log big",
+          "heading": false
+        },
+        {
+          "term": "exp big",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "wkb",
+          "heading": true
+        },
+        {
+          "term": "pmatrix cdot",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.WKB} In this section we outline an independent proof of Lemma~\\ref{lem.PhiA} of Section~\\ref{sub.FGI} using instead of formal Gaussian integration, the unique solution to the system of linear $q$-difference equations~\\eqref{PhiAshift}. This is essentially the WKB method~\\cite{Bender} for linear $q$-difference equations~\\cite{GG:qdiff}, which writes the first derivative of a new function as a differential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-27-synthesis",
+      "number": "2.7",
+      "title": "Synthesis",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζmm",
+          "heading": false
+        },
+        {
+          "term": "fgi",
+          "heading": false
+        },
+        {
+          "term": "qam",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "tkfa",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "linear q-difference",
+          "heading": false
+        },
+        {
+          "term": "whose coefficients",
+          "heading": false
+        }
+      ],
+      "extract": "the one hand and formal Gaussian integration on the other. It identifies the two collections fA(t, q) and f FGI A (t, q) and deduces a stronger property for their ring of coefficients. This will allow us to specialise to t = 1 later and obtain elements of modules of the Habiro ring. Firstly, we will prove Theorem 3 of Section 1.7 in the following refined form. Theorem 8. For every symmetric matrix A with integer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-3-integrality-and-gluing-of-p-adic-series",
+      "number": "3",
+      "title": "Integrality and gluing of p-adic series",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic",
+          "heading": true
+        },
+        {
+          "term": "p-completed",
+          "heading": false
+        },
+        {
+          "term": "theorems",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will combine the previous sections to prove our main results. Firstly, we study the K-theory of local fields and its image under the p-adic regulator map. Then we provide the technical results needed in the proof of the main theorems. After that we prove our main results about the p-completed Habiro rings (Theorem 1 of the introduction and Theorem 10 of this section) by constructing explicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-31-bloch-group-and-p-adic-dilogarithm",
+      "number": "3.1",
+      "title": "Bloch group and p-adic dilogarithm",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bloch group",
+          "heading": true
+        },
+        {
+          "term": "p-adic",
+          "heading": true
+        },
+        {
+          "term": "fps",
+          "heading": false
+        },
+        {
+          "term": "qps",
+          "heading": false
+        },
+        {
+          "term": "zps",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        },
+        {
+          "term": "unramified",
+          "heading": false
+        }
+      ],
+      "extract": "the dilogarithm function, the Bloch group, and their p-adic counterparts. The dilogarithm function, defined initially for |x| < 1 by Li2(x) = ∞ X k=1 xk k2 , (172) satisfies the famous five-term functional equation. The five-term equation reflects the al- gebraic structure of the third algebraic K-group of a field, which is isomorphic, modulo well-understood torsion, with the Bloch group of the number field [9, 50].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-32-explicit-sections-of-the-p-completed-habiro-r",
+      "number": "3.2",
+      "title": "Explicit sections of the p-completed Habiro ring",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 43,
+      "labelStart": "39",
+      "labelEnd": "43",
+      "words": 1408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "m2p log",
+          "heading": false
+        },
+        {
+          "term": "jxk",
+          "heading": false
+        },
+        {
+          "term": "p-completed",
+          "heading": true
+        },
+        {
+          "term": "akxk",
+          "heading": false
+        },
+        {
+          "term": "dwork",
+          "heading": false
+        },
+        {
+          "term": "sections",
+          "heading": true
+        },
+        {
+          "term": "equation",
+          "heading": false
+        }
+      ],
+      "extract": "modules over the p-completed Habiro ring of Definition 1.3 of Section 1.5. We will prove Theorem 1 of Section 1.5 by explicitly constructing sections using Theorem 9 of Section 3.1. Throughout this section one can keep in mind S = R∧ p , where R = OK and ∆are as in equation (11) and S[ 1 p] = Kp. The next lemma is a variation of a well–known lemma of Dwork [35, IV.Lem.3] and will be the basic tool we use to prove",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-33-proof-of-the-main-theorems",
+      "number": "3.3",
+      "title": "Proof of the main theorems",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 1133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calh",
+          "heading": false
+        },
+        {
+          "term": "phitof",
+          "heading": false
+        },
+        {
+          "term": "eqref fgicong",
+          "heading": false
+        },
+        {
+          "term": "eqref phifgidef",
+          "heading": false
+        },
+        {
+          "term": "habmod",
+          "heading": false
+        },
+        {
+          "term": "ref sub",
+          "heading": false
+        },
+        {
+          "term": "fgi",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.proofmain} We are now ready to give proofs of our main theorems. \\begin{proof}[Proof of Theorem~\\ref{thm.HR} of Section~\\ref{sub.habmod}] Firstly, we see that $\\calH_{R}\\subseteq\\calH_{R,0}$ as $f(q)=1$ is a global invertible $L(0)$-section. For all $p$ prime to $\\Delta$, the constant collection $1$ is an invertible $L_p(0)$-section. Therefore, from Corollary~\\ref{cor:unique.loc} of Section~\\ref{sub.habp}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-4-examples-and-computations",
+      "number": "4",
+      "title": "Examples and computations",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-41-symmetrisation-and-a-residue-formula",
+      "number": "4.1",
+      "title": "Symmetrisation and a residue formula",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned phitof",
+          "heading": false
+        },
+        {
+          "term": "llbracket rrbracket",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "frac diag",
+          "heading": false
+        },
+        {
+          "term": "calh",
+          "heading": false
+        },
+        {
+          "term": "ref sub",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.sym} Elements of the usual Habiro ring $\\calH_{\\BZ}$ are extremely easy to write down. For example, the ring $\\BZ[q]$ is a subring of $\\calH_{\\BZ}$. This is not the case for the Habiro ring of a number field, where $\\calO[q]$ is no longer a subring of $\\calH_{\\calO[1/\\Delta]}$. One can construct elements of these rings for certain presentations of a number field. In this section we explain how to get",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-42-a-rank-one-admissible-series",
+      "number": "4.2",
+      "title": "A rank one admissible series",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "51",
+      "words": 1276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta sym",
+          "heading": false
+        },
+        {
+          "term": "eqref frec",
+          "heading": false
+        },
+        {
+          "term": "aligned delta",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "exp big",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "phitof",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.F3} $q$-hypergeometric series give admissible series that are easy to analyse. We illustrate this with the example of the $1 \\times 1$ matrix $A=(3)$ in~\\eqref{FAdef} \\be \\label{Fexdef} F(t,q) \\= \\sum_{k=0}^\\infty \\frac{(-1)^k q^{3 k(k+1)/2}}{(q;q)_k} t^k \\inn \\BQ(q)[\\![t]\\!] \\,. \\ee It satisfies the linear $q$-difference equation \\be \\label{Frec} F(t,q) - F(q t,q) + q^3 t F(q^3 t,q) \\= 0 \\,. \\ee The DT",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se",
+      "number": "4.3",
+      "title": "Torsion in the Bloch group from admissible series",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 629,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series",
+          "heading": true
+        },
+        {
+          "term": "nahm",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "quartic",
+          "heading": false
+        },
+        {
+          "term": "corresponding series",
+          "heading": false
+        },
+        {
+          "term": "bloch",
+          "heading": true
+        },
+        {
+          "term": "improves",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "part (b) of Corollary 1.11 of Section 1.7 with the matrix A = \u0012 8 5 5 4 \u0013 (255) (symmetric and positive definite) taken from the survey article [50]. The Nahm equations for z = (z1, z2) 1 −z1 = z8 1z5 2, 1 −z2 = z5 1z4 2 , (256) have eight solutions in two Galois orbits defined over two quartic fields, one given by z4 1 + z3 1 + 3z2 1 −3z1 −1 = 0 , z2 = 1 5(−9z3 1 −6z2 1 −25z1 + 37) (257) and the other by z4 1 −z3 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-44-some-p-adic-computations",
+      "number": "4.4",
+      "title": "Some p-adic computations",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 55,
+      "labelStart": "52",
+      "labelEnd": "55",
+      "words": 1112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compute lin",
+          "heading": false
+        },
+        {
+          "term": "unramified prime",
+          "heading": false
+        },
+        {
+          "term": "hensel lemma",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "p-adic",
+          "heading": true
+        },
+        {
+          "term": "frobenius automorphism",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "illustrates theorem",
+          "heading": false
+        }
+      ],
+      "extract": "with the absolute basics. Hensel’s lemma states that if a polynomial factors into irreducible polynomials over Z/pZ, then this factorisation lifts to a unique factorisation over Z/pnZ. Therefore, if ξ is a generator of the field K with minimal polynomial P(x) and p is an THE HABIRO RING OF A NUMBER FIELD 53 unramified prime, applying Hensel’s lemma to P(x) lifts the Frobenius automorphism R/pR to R∧ p ∼= R ⊗Z Zp,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-46-the-pair-of-the-5-2-and-the--237-pretzel-knot",
+      "number": "4.6",
+      "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 57,
+      "labelStart": "55",
+      "labelEnd": "57",
+      "words": 1187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pretzel",
+          "heading": true
+        },
+        {
+          "term": "knots",
+          "heading": true
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "series associated",
+          "heading": false
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        },
+        {
+          "term": "gaussian integral",
+          "heading": false
+        },
+        {
+          "term": "pair",
+          "heading": true
+        },
+        {
+          "term": "discriminant",
+          "heading": false
+        }
+      ],
+      "extract": "of elements of the same module over the Habiro ring of the cubic field K of discriminant −23 that come from the asymptotic series associated to a pair of hyperbolic knots, namely the 52 and the (−2, 3, 7)-pretzel knot. This pair of knots was studied in detail in [26] and was instrumental in formulating the results and conjectures of that paper. Recall that this pair of knots has common trace field K generated by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-47-a-note-on-modularity",
+      "number": "4.7",
+      "title": "A note on modularity",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "frac bigg",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "calh",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.mod} Modular forms at roots of unity give rise to special elements associated to torsion classes in $K_3$. We will consider two simple examples: one coming from a quadratic Gauss sum (and hence related to the asymptotics of Jacobi $\\th$-series) and the other related to the Roger-Ramanujan functions, which are well known to be modular. \\begin{example}[A quadratic Gauss sum] Consider \\be \\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-5-alternative-approach-habiro-rings-via-congruen",
+      "number": "5",
+      "title": "Alternative approach: Habiro rings via congruences",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro",
+          "heading": true
+        },
+        {
+          "term": "ring calh",
+          "heading": false
+        },
+        {
+          "term": "congruences",
+          "heading": true
+        },
+        {
+          "term": "original habiro",
+          "heading": false
+        },
+        {
+          "term": "near roots",
+          "heading": false
+        },
+        {
+          "term": "finite quotients",
+          "heading": false
+        },
+        {
+          "term": "functions near",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.hab} In this final section we study the basic properties of the original Habiro ring $\\calH$ and its generalisation to the Habiro $\\calH_{R}$ of a ring $R$. The most important point is how to identify $\\calH$ explicitly within the ring of ``Galois invariant functions near roots of unity'' by means of a sequence of congruences. The Habiro ring $\\calH_{R}$ when $R$ is the ring of integers (or $S$-integers)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-51-functions-near-roots-of-unity-and-the-naive-h",
+      "number": "5.1",
+      "title": "Functions near roots of unity and the naive Habiro ring",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 64,
+      "labelStart": "59",
+      "labelEnd": "64",
+      "words": 2384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "naive habiro",
+          "heading": true
+        },
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "calp widehat",
+          "heading": false
+        },
+        {
+          "term": "ccccc calp",
+          "heading": false
+        },
+        {
+          "term": "calh widehat",
+          "heading": false
+        },
+        {
+          "term": "hline gamma",
+          "heading": false
+        },
+        {
+          "term": "times hline",
+          "heading": false
+        },
+        {
+          "term": "cccc hline",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:naive} In Habiro's original work~\\cite{Habiro:completion} the Habiro rings of $\\BZ$ and $\\BQ$ were defined as $\\HH:=\\HH_\\BZ$ and $\\HH_{\\BQ}$, where $\\HH_R$ is defined for any ground ring $R$ by \\be \\label{eq:Hnaive} \\HH_{R} \\= \\varprojlim_n R[q]/(q;q)_{n}R[q]\\,. \\ee (Here we use the notation $\\HH_R$, defined as an inverse limit, as opposed to $\\calH_R$, which is defined as a subset of $\\calP_R$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-52-the-habiro-ring-of-a-number-field",
+      "number": "5.2",
+      "title": "The Habiro ring of a number field",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": true
+        },
+        {
+          "term": "frobenius automorphisms",
+          "heading": false
+        },
+        {
+          "term": "naive habiro",
+          "heading": false
+        },
+        {
+          "term": "number field",
+          "heading": true
+        },
+        {
+          "term": "hensel lemma",
+          "heading": false
+        },
+        {
+          "term": "pir",
+          "heading": false
+        },
+        {
+          "term": "jxk",
+          "heading": false
+        },
+        {
+          "term": "ground rings",
+          "heading": false
+        }
+      ],
+      "extract": "was done over an arbitrary ground ring R, the considerations were really based on the case when R = Z (the original Habiro ring), because the congruences needed to recognise whether an element of PR comes from the naive Habiro ring of R were independent of R and came from this special case. In this subsection, we will consider more general ground rings and describe the relation between the naive Habiro ring and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-53-examples",
+      "number": "5.3",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 68,
+      "labelStart": "65",
+      "labelEnd": "68",
+      "words": 1143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hline phantom",
+          "heading": false
+        },
+        {
+          "term": "phantom tfrac",
+          "heading": false
+        },
+        {
+          "term": "array phantom",
+          "heading": false
+        },
+        {
+          "term": "alpha pmod",
+          "heading": false
+        },
+        {
+          "term": "hline gamma",
+          "heading": false
+        },
+        {
+          "term": "hline varphi",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.examples2} We now explore how the approach described in last two subsections works for some different ground rings. We will illustrate how one can test whether a Galois invariant function near roots of unity is actually an element of a Habiro ring. \\begin{example} Recall the Kashaev invariant of the trefoil from equation~\\eqref{eq:KZ} (often called the Kontsevich-Zagier series). We can compute the first",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-54-some-wilder-habiro-like-elements",
+      "number": "5.4",
+      "title": "Some wilder Habiro-like elements",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 71,
+      "labelStart": "68",
+      "labelEnd": "71",
+      "words": 901,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "calo",
+          "heading": false
+        },
+        {
+          "term": "infty bigg",
+          "heading": false
+        },
+        {
+          "term": "bigg begin",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki congruence",
+          "heading": false
+        },
+        {
+          "term": "eqref gluef",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        }
+      ],
+      "extract": "In this final subsection we describe some exotic functions that behave like elements of Habiro rings that involve different fields at each root of unity. On the face of it, it could seem that this would make patching together series via $p$-adic re-expansion impossible. The reason that it nevertheless works is that the fields in question become canonically isomorphic after completion and the gluing of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": "71",
+      "labelEnd": "71",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sustech",
+          "heading": false
+        },
+        {
+          "term": "huawei",
+          "heading": false
+        },
+        {
+          "term": "mpim",
+          "heading": false
+        }
+      ],
+      "extract": "The authors wish to thank Frank Calegari, Maxim Kontsevich, Yan Soibelman, Matthias Storzer and Ferdinand Wagner for enlightening conversations. P.S. was supported by a Leibniz Prize, and through the Hausdorff Center for Mathematics (grant no. EXC-2047/1–390685813) at the MPIM, Bonn. C.W. wants to thank the International Mathematics Center at SUSTech University, Shenzhen for their hospitality. C.W. has been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": "71",
+      "labelEnd": "73",
+      "words": 1116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "amnon besser",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Ni An, Stavros Garoufalidis, and Shana Yunsheng Li. Algebraic aspects of holomorphic quantum mod- ular forms. Preprint 2023, arXiv:2403.02880 to appear in Res. Math. Sciences. [2] Jørgen Ellegaard Andersen and Rinat Kashaev. The Teichm¨uller TQFT. In Proceedings of the Interna- tional Congress of Mathematicians—Rio de Janeiro 2018. Vol. III. Invited lectures, pages 2541–2565. World Sci. Publ., Hackensack, NJ,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Prologue",
+          "Synthesis"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "habiro ring",
+      "heading": true
+    },
+    {
+      "term": "habiro calh",
+      "heading": false
+    },
+    {
+      "term": "series phitof",
+      "heading": false
+    },
+    {
+      "term": "cite habiro",
+      "heading": false
+    },
+    {
+      "term": "habiro modules",
+      "heading": true
+    },
+    {
+      "term": "inn calh",
+      "heading": false
+    },
+    {
+      "term": "phitof fgi",
+      "heading": false
+    },
+    {
+      "term": "power series",
+      "heading": true
+    },
+    {
+      "term": "admissible series",
+      "heading": true
+    },
+    {
+      "term": "series eqref",
+      "heading": false
+    },
+    {
+      "term": "naive habiro",
+      "heading": true
+    },
+    {
+      "term": "p-completed habiro",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 37,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p71); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2412.04241v2"
+  }
+}

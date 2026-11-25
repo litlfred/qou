@@ -1,0 +1,2249 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "104171-rmi-1356",
+  "blocks": [
+    {
+      "id": "library/104171-rmi-1356/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "A large collection of diagram algebras, such as Temperley–Lieb or (type A) Hecke alge-\nbras, are interesting from at least two perspectives: they are of fundamental importance in\nlow-dimensional topology and they also have a rich representation theory.\nHaving an eye on the study of links in 3-manifolds brings the topology of the ambient\nspace into play. In all the classical examples, like Temperley–Lieb or Hecke algebras, the\nambient space is the 3-ball, and these algebras are related to spherical Coxeter groups and\nArtin–Tits braid groups. In the simplest case beyond the 3-ball, when one pass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Rev. Mat. Iberoam. 39 (2023), no. 3, 845–896\nDOI 10.4171/RMI/1356\n© 2022 Real Sociedad Matemática Española\nPublished by EMS Press and licensed under a CC BY 4.0 license\nHandlebody diagram algebras\nDaniel Tubbenhauer and Pedro Vaz\nAbstract. In this paper, we study handlebody versions of some classical diagram\nalgebras, most prominently, handlebody versions of Temperley–Lieb, blob, Brauer,\nBMW, Hecke and Ariki–Koike algebras. Moreover, motivated by Green–Kazhdan–\nLusztig’s theory of cells, we reformulate the notion of (sandwich, inflated or affine)\ncellular algebras. We explain this reformulatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "A sandwich cellular algebra over K is an associative, unital algebra A together with a sandwich cellular datum, that is, \u000f a partial ordered set ƒ D (ƒ;\u0014ƒ ) (we also write <ƒ, etc., having the usual meaning); \u000f finite sets M\u0015 (bottom) and N\u0015 (top) for all \u0015 2 ƒ; \u000f an algebra S\u0015 and a fixed basis B\u0015 of it for all \u0015 2 ƒ; \u000f a K-basis ¹c\u0015 D;b;U j \u0015 2 ƒ; D 2 M\u0015; U 2 N\u0015; b 2 B\u0015º of A; such that we have (1) for all x 2 A, there exist scalars r.S; D/ 2 R that do not depend on U or on b, such that xc\u0015 D;b;U \u0011 X S2M\u0015;a2B\u0015 r.S; D/ \u0001 c\u0015 S;a;U .mod A<ƒ\u0015/; (2.1) where A<ƒ\u0015 is the K-submodule of A spanned by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "def-sec-001-04.md",
+      "narrative": null,
+      "content": "A sandwich cellular algebra A is called involutive if M\u0015 D N\u0015 for all \u0015 2 ƒ and A admits an antiinvolution .\u0000/?W A ! A compatible with the cell structure. That is, .\u0000/? restricts to an antiinvolution .\u0000/?W S\u0015 ! S\u0015 that is a bijection on B\u0015 for all \u0015 2 ƒ, and we have .c\u0015 D;b;U /? D c\u0015 U;b?;D: (2.2) Convention 2.5. We will use diagrammatics from now on. Our reading conventions for diagrams are summarized by a b read ↭ab ↭leftDbottom and rightDtop; which is bottom to top. We omit data, such as a label, if it is not of importance for the situation at hand. Moreover, we use colors in this paper, bu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-001-13",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "def-sec-001-13.md",
+      "narrative": null,
+      "content": "An apex of an A-module M is a \u0015 2 ƒ such that AnnA.M/ D J>ƒ\u0015 D S \u0016>ƒ\u0015 J\u0016 and \u0015 is not constant zero. Recall that in the setting of non-unital algebras simple modules are defined using the usual assumption of having no non-trivial submodules but one also additionally assumes that at least one element acts not as zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-001-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "ex-sec-001-05.md",
+      "narrative": null,
+      "content": "For any group G, the group element basis is a sandwich cellular basis in the sense of Definition 2.2. To see this, we let ƒ D ¹\u000fº D M\u000f D N\u000f be trivial, and set c\u000f;b;\u000f D b for b 2 G seen as an element of S\u000f D KG. For this choice, Theorem 2.16 does not reduce the classification problem of finding the simple KG-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-001-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "ex-sec-001-06.md",
+      "narrative": null,
+      "content": "For (important) special cases, the above has appeared in the literature. If A is involutive, then: Handlebody diagram algebras (1) If S\u0015 D K for all \u0015 2 ƒ, then the notion of a sandwich cell datum above is the same as the classical one from [21]. Conversely, any cell datum in the sense of [21] is a sandwich cell datum in the above sense by letting S\u0015 D K for all \u0015 2 ƒ. (2) If S\u0015 D KŒX;X\u00001 for all \u0015 2 ƒ, then a sandwich cellular algebras is affine cellular as in [34]. Allowing any quotient of a finite polynomial ring as S\u0015, the converse is also true as one can check. Having Section 3 in mind,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-001-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "ex-sec-001-07.md",
+      "narrative": null,
+      "content": "The notion of being (involutive) sandwich cellular is a strict generalization of being cellular. An easy, albeit silly, example is to take ƒ D ¹\u000fº D M\u000f D N\u000f and S\u000f to be a non-cellular algebra. As an explicit example, consider the set of upper triangular 2 \u0002 2 matrices over K, and view it as a semigroup so that ¹c\u000f \u000f;bi;\u000f D biºi is the semigroup basis of the semigroup ring S\u000f. See [14] for several examples of non-cellular algebras which one could take as S\u000f. The comparison of sandwich cellular to cellular algebras is:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-001-19",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "ex-sec-001-19.md",
+      "narrative": null,
+      "content": "The following illustrates basis elements and the cell structure of the cell J2 with two through strands for n D 4 (using the same conventions as in (2.6)). In particular, the columns are L-cells, the rows are R-cells and the small boxes are H-cells. ; D. Tubbenhauer and P. Vaz multiplication table of the colored box: D ; D ; D ; D : Each H-cell is of size two, and the colored box is an H-cell isomorphic to KS2 regardless of c. This is illustrated on the right. We obtain the well-known classification of simple Brn.c/-modules, cf. Theorem 4.17 in [21].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "lem-sec-001-09.md",
+      "narrative": null,
+      "content": "We have the following. (1) The left and right cells are A-modules. (2) As A-modules, L.\u0015; U / Š L.\u0015; U 0/ and R.\u0015; D/ Š R.\u0015; D0/ for all U , U 0 and D, D0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "lem-sec-001-10.md",
+      "narrative": null,
+      "content": "Assume that c\u00150 D0;b0;U 0c\u0015 D;b;U D r.U 0; D/ \u0011 c\u0015 D;b0F b;U 0 .mod A<ƒ\u0015/ for some F 2 S\u0015. If r.U 0; D/ is invertible in K, then H\u0015;D;U Š S\u0015 as algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-001-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "lem-sec-001-11.md",
+      "narrative": null,
+      "content": "The concatenation multiplication on the A-A-bimodule .\u0015/ ˝S\u0015 .\u0015/ is determined by a bilinear map",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-001-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "lem-sec-001-12.md",
+      "narrative": null,
+      "content": "Let K be a field and K be a simple S\u0015-module. If \u0015 K is not constant zero, then L.\u0015; K/ D .\u0015; K/=rad.\u0015; K/ is the simple head of .\u0015; K/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-001-14",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "lem-sec-001-14.md",
+      "narrative": null,
+      "content": "We have the following. (a) Every simple A-module L has a unique apex \u0015 2 ƒ. (b) If K is a field, then the simple modules L.\u0015; K/ from Lemma 2.13 have apex \u0015. (c) A simple A-module L of apex \u0015 is a simple J\u0015-module. Conversely, every simple J\u0015-module L is a simple A-module L with apex \u0015, by inflation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-001-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "prop-sec-001-08.md",
+      "narrative": null,
+      "content": "An involutive sandwich cellular algebra A such that all S\u0015 are cellu- lar (with the same antiinvolution .\u0000/?/ is cellular with a refined sandwich cell datum. Conversely, if at least one S\u0015 is non-cellular, then A is non-cellular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-001-18",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "prop-sec-001-18.md",
+      "narrative": null,
+      "content": "The above defines an involutive sandwich cell datum for Brn.c/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A generalization of cellularity",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-a-generalization-of-cellularity.md",
+      "narrative": null,
+      "content": "2. A generalization of cellularity\nLet K be a unital, commutative, Noetherian domain, e.g. the integers or a field, or polyno-\nmial rings over these. Everything in this paper is linear over K. In particular, algebras are\nK-algebras.\n2A. Inflation by algebras\nWe start by defining sandwich cellular algebras.\nRemark 2.1. Our discussion below is motivated by Green’s theory of cells [23], often\ncalled Green’s relations, and the Clifford–Munn–Ponizovski˘ı theorem (see e.g. [18] for a\nmodern formulation). In fact, we have borrowed part of the terminology from the literature\non semigroups.\nThe followi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "Our discussion below is motivated by Green’s theory of cells [23], often called Green’s relations, and the Clifford–Munn–Ponizovski˘ı theorem (see e.g. [18] for a modern formulation). In fact, we have borrowed part of the terminology from the literature on semigroups. The following generalization of the notion of cellularity from [21] is well known to experts, see e.g. [36] or [25] for basis-free formulations. Nevertheless, we will state this generalization and some consequences of it.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "One of the advantages of the basis-focused formulation above is that Def- inition 2.2 works, mutatis mutandis, for relative cellular algebras as in [14] or (strictly object-adapted) cellular categories [15,67]. D. Tubbenhauer and P. Vaz We also define:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-001-16",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "rem-sec-001-16.md",
+      "narrative": null,
+      "content": "Note a crucial difference to the case S\u0015 D K, which is (up to having an involution) the cellular case: one apex can have any number of simples associated to it. 2D. The Brauer algebra as an example Let Brn.c/ be the Brauer algebra in n-strands with circle evaluation parameter c 2 K. The reader unfamiliar with the Brauer algebra is referred to e.g. [21], Section 4. Alternatively, take g D 0 in Section 5 below. Let also S\u0015 denote the symmetric group in \u0015 strands (or on ¹1; : : : ; \u0015º).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-001-17",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "rem-sec-001-17.md",
+      "narrative": null,
+      "content": "The construction we present below is not new, see e.g. [17] or [37]. How- ever, our exposition is new and might be of some use. The Brauer algebra has a well-known diagrammatic description given by perfect mat- chings of 2n points, and typical Brauer diagrams for n D 4 are ; \u0010 \u0011? D : We have also illustrated the antiinvolution .\u0000/? on Brn.c/ given by vertical mirroring.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-001-21",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "rem-sec-001-21.md",
+      "narrative": null,
+      "content": "The same strategy works, mutatis mutandis, for the oriented (or walled) Brauer algebra, other diagram algebras in the same spirit, e.g. partition algebras, and the quantum versions of these diagram algebras such as the Birman–Murakami–Wenzl alge- bra (we will treat this case for higher genus in Section 5 below). We leave the details to the interested reader.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-001-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "thm-sec-001-15.md",
+      "narrative": null,
+      "content": "Let K be a field. (a) A \u0015 2 ƒ is an apex if and only if the form \u0015 is not constant zero if and only if the form \u0015 K is not constant zero for any simple S\u0015-module K. If the assumptions of Lemma 2.11 hold, then \u0015 2 ƒ is an apex if and only if r.U; D/ ¤ 0 for some D 2 M\u0015; U 2 N\u0015. (b) Assume that S\u0015 is unital and Artinian. For a fixed apex \u0015 2 ƒ, the simple A-modules of that apex are parameterized by simple modules of S\u0015. In other words, we have ¹simple A-modules with apex \u0015º 1W1 ! ¹simple S\u0015-modulesº : Under this bijection, the simple A-module L.\u0015; K/ associated to the simple S\u0015- module K is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-001-20",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "thm-sec-001-20.md",
+      "narrative": null,
+      "content": "Let K be a field. (a) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes. In the remaining case, c D 0 and \u0015 D 0 (this only happens if n is even), all \u0015 2 ƒ \u0000 ¹0º are apexes, but \u0015 D 0 is not an apex. (b) The simple Brn.c/-modules of apex \u0015 2 ƒ are parameterized by simple KS\u0015-mod- ules. (c) The simple Brn.c/-modules of apex \u0015 2 ƒ can be constructed as the simple heads of IndBrn.c/ KS\u0015 .K/, where K runs over (equivalence classes of ) simple KS\u0015-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "def-sec-002-01.md",
+      "narrative": null,
+      "content": "We let the handlebody braid group (in n strands and of genus g) Bg;n be the group generated by ¹ u; ˇi j 1 \u0014 u \u0014 g; 1 \u0014 i \u0014 n \u0000 1º modulo ˇiˇj D ˇj ˇi if ji \u0000 j j > 1; ˇiˇj ˇi D ˇj ˇiˇj if ji \u0000 j j D 1; (3.2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "def-sec-002-06.md",
+      "narrative": null,
+      "content": "We let the handlebody Coxeter group (in n strands and of genus g) Wg;n be the quotient group of Bg;n by the relations ˇ2 i D 1 for i D 1; : : : ; n \u0000 1: We write tu and si for the images of u respectively ˇi in the quotient. Similarly as for the handlebody braid group Bg;n, we think of Definition 3.6 as a handlebody generalization of the extended affine Coxeter group of type A. The asymmetry in (3.3) vanishes and we have the defining relations: s2 i D 1; sisj D sj si if ji \u0000 jj > 1; sisj si D sj sisj if ji \u0000 j j D 1; (3.5) tusi D situ if i > 1; tv.s1tus1/ D .s1tus1/tv 8u; v: (3.6) By (3.5), we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "def-sec-002-08.md",
+      "narrative": null,
+      "content": "We define a (right) action Zz;Y ŒX1; : : : ; Xn ⟲ Wg;n by: (1) The generators si act by the permutation action of Sn. (2) The generators tu act by Xi ⟲ tu D ´ zuX1 C Yu if i D 1; Xi otherwise; Xi ⟲ t\u00001 u D ´ z\u0000uX1 \u0000 z\u0000uYu if i D 1; Xi otherwise: (3.7) The pictorial version of the action (3.7) is X1 u u zuX1CYu : D. Tubbenhauer and P. Vaz",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "def-sec-002-11.md",
+      "narrative": null,
+      "content": "Define Jucys–Murphy elements L˙1 u;i 2Bg;n as follows. We let L˙1 u;1 D",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-002-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "lem-sec-002-10.md",
+      "narrative": null,
+      "content": "The action in Definition 3.8 is well-defined.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-002-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "lem-sec-002-12.md",
+      "narrative": null,
+      "content": "We have L˙1 u;i L\u00071 u;i D 1; ˇj L˙1 u;i D L˙1 u;i ˇj if i \u0000 1; i ¤ j; ˇ\u00001 i\u00001Lu;i D Lu;i\u00001ˇi\u00001; ˇi Lu;i D Lu;iC1ˇ\u00001 i ; ˇi\u00001L\u00001 u;i D L\u00001 u;i\u00001ˇ\u00001 i\u00001; ˇ\u00001 i L\u00001 u;i D L\u00001 u;iC1ˇi; Lu;i L˙1 v;j D L˙1 v;j Lu;i and L\u00001 u;i L˙1 v;j D L˙1 v;j L\u00001 u;i if Œv; j \u001a Œu; iŒ; (3.9) where Œv; j  \u001a Œu; iŒ means u \u0014 v and j < i. Handlebody diagram algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-002-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "lem-sec-002-13.md",
+      "narrative": null,
+      "content": "Any word in the Jucys–Murphy elements can be ordered such that L˙ u;i appears right=above of L˙ v;j only if j < i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-002-14",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "lem-sec-002-14.md",
+      "narrative": null,
+      "content": "The set ´ la1 u1;i1...lam um;imw ˇˇˇˇˇ w 2 Sn; m 2 N; a 2 Zm; .u; i/ 2 .¹1; : : : ; gº \u0002 ¹1; : : : ; nº/m; i1 \u0014 \u0001 \u0001 \u0001 \u0014 im µ (3.10) spans ZWg;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "The handlebody braid group admits the following alternative presenta- tion: Bg;n Š * Q u; u D 1; : : : ; g; ˇi; i D 1; : : : ; n \u0000 1 ˇˇˇˇˇ ˇiˇj D ˇj ˇi if ji \u0000 jj > 1; ˇiˇj ˇi D ˇj ˇiˇj if ji \u0000 j j D 1; Q uˇi D ˇi Q u if i > 1; Q uˇ1 Q uˇ1 D ˇ1 Q uˇ1 Q u; Q v.ˇ1 Q uˇ\u00001 1 / D .ˇ1 Q uˇ\u00001 1 /Q v if u < v + :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "prop-sec-002-05.md",
+      "narrative": null,
+      "content": "The rule u u 7! gC1 u u gC1 ; iC1 i i iC1 7! gCi gCi gCiC1 gCiC1 ; defines an injective group homomorphism \u0013g;nW Bg;n ,! BgCn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-002-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "prop-sec-002-15.md",
+      "narrative": null,
+      "content": "The set in (3.10) is a Z-basis of ZWg;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebody braid and Coxeter groups",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "../sections/sec-002-3-handlebody-braid-and-coxeter-groups.md",
+      "narrative": null,
+      "content": "Throughout, we fix the genus g 2 N as well as the number of strands n 2 N>0. As a\ngeneral conventions, all notions involving g are vacuous if g D 0, and similarly all notions\ninvolving n are vacuous for n D 1.\nHandlebody diagram algebras\n859\n3A. Handlebody braid diagrams\nIn this section we consider handlebody braid diagrams (in n strands and of genus g).\nThese diagrams are similar to classical braid diagrams with g C n strands in the following\nsense. We let\n\nu D\n1\nu\u00001\nu\u00001\n1\n1\nuC1\nuC1\ng\ng\nu\nu\n1\n...\n...\n;\nˇi D\niC1\ni\ni\niC1\n:\n(3.1)\nHere the numbers indicate the corresponding positions, reading lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "Special cases of Definition 3.1 are: (1) The case g D 0 is the classical braid group Bn D B0;n. (2) For g D 1, the handlebody braid group is the braid group of extended affine type A, which is also the braid group of Coxeter type C D B, see [7] or [1]. (3) A perhaps surprising fact is that the handlebody braid group for g D 2 is isomorphic to the braid group of affine Coxeter type C, see [1]. (4) To the best of our knowledge, the case g > 2 was first studied in [64], and then further in [28].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "The handlebody braid group describes the configuration space of a disk with g punctures [28,41,64]. Moreover, after taking an appropriate version of an Alexan- der closure, as explained e.g. in Theorem 2 of [28] or Section 2 of [55] and illustrated in (3.4), these braid groups give an algebraic way to study links in handlebodies. The closure operation merges cores at infinity: ⇝ \u000f \u000f : (3.4) D. Tubbenhauer and P. Vaz In the topological interpretation, as explained e.g. in Section 2 of [55], the core strands correspond to the cores of the handles of a handlebody. This motivates our nomenclature.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-002-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "rem-sec-002-07.md",
+      "narrative": null,
+      "content": "Special cases of Definition 3.6 are: (1) The case g D 0 is the symmetric group Sn. (2) For g D 1, the handlebody Coxeter group is not the Coxeter group of type CDB, but rather the extended affine Coxeter (Weyl) group of type A. For the further study of Wg;n, we use Zz;Y D ZŒz˙1; Y1; : : : ; Yg as our ground ring.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-002-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "rem-sec-002-09.md",
+      "narrative": null,
+      "content": "Special cases of Definition 3.8 are: (1) The case g D 0 and z D 1 is the permutation representation of Sn on the polynomial ring ZŒX1; : : : ; Xn. (2) The case g D 1 and z D 1 recovers the usual polynomial representation of the extended affine Weyl group of type A. (3) The case g D 1, z D \u00001 and Y1 D 0 recovers the root-theoretic version of Tits’ reflection representation of type C D B, i.e., the representation where the type A subdiagram acts by permutation and the additional generator acts as \u00001 on X1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-002-16",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 20,
+      "target": "thm-sec-002-16.md",
+      "narrative": null,
+      "content": "The action of Wg;n in Definition 3.8 is faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "The evaluation of a Fg-colored circle is defined to be the removal of a closed component, contributing a factor c . We call this circle evaluation. We could choose all c to be different or equal, there is no restriction on the choice of these parameters (see however Remark 4.5 below). Note that all non-essential circles are associated to the trivial coloring D 1 and are evaluated to c1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-04.md",
+      "narrative": null,
+      "content": "We let TLg;n.c/, the handlebody Temperley–Lieb algebra (in n strands and of genus g), be the algebra whose underlying free K-module is the K-linear span of all crossingless matchings of 2n points of genus g, and with multiplication given by Fg-colored concatenation of diagrams modulo circle evaluation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-13",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-13.md",
+      "narrative": null,
+      "content": "The evaluation of a closed circle is defined to be the removal of a closed component, contributing a factor c . We call this blob circle evaluation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-26",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-26.md",
+      "narrative": null,
+      "content": "The evaluation of a circle is defined to be the removal of a closed component, contributing a factor c . We call this circle evaluation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-27",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-27.md",
+      "narrative": null,
+      "content": "We let the topological handlebody Temperley–Lieb algebra (in n strands and of genus g) TLtop g;n.c/ be the algebra whose underlying free K-module is the K-linear span of all handlebody tangle diagrams of 2n points of genus g, and with multiplication given by concatenation of diagrams modulo circle evaluation and (4.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-30",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-30.md",
+      "narrative": null,
+      "content": "We call parameters c D .c / such that dimK TLtop g;n.c/ \u0015 Cn weakly admissible. With Remark 4.5 in mind, the following is in contrast to Lemma 4.6 a non-trivial result. To state it let Œkq D qk\u00001 C \u0001 \u0001 \u0001 C q\u0000kC1 denote the usual quantum number for k 2 N, and note that for the choice c D .\u0000Œ2q/ the algebra TLG.\u0000Œ2q/ D TLtop 0;G.c/ is the classical Temperley–Lieb algebra on G strands whose circle evaluates to \u0000Œ2q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-003-35",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "def-sec-003-35.md",
+      "narrative": null,
+      "content": "Retain the notation and conventions from Definition 4.29. We let the topological handlebody blob algebra (in n strands and of genus g) Bltop g;n.c/ be the subal- gebra of TLtop g;n.c/ spanned by all elements containing only positive coils.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-03.md",
+      "narrative": null,
+      "content": "Here are a few examples: u u v v ↭c1; u u v v ↭c Duv; u u v v ↭c 0Du2v: The first word in Fg is the trivial word, the second is uv, and the third is u2v. To each usual strand in a crossingless matching we associate a word in Fg by starting at the rightmost boundary point of the string and read to the other one, again using the identification of coils and generators of Fg. A Fg-colored concatenation of crossingless matchings x and y of 2n points of genus g is, up to colors, a concatenation xy in the usual sense and the colors are concatenated reading bottom to top along the strings respectively",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-10",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-10.md",
+      "narrative": null,
+      "content": "The cells of the algebra TLn;g.c/ are of infinite size, so we can not display them here. However, let us illustrate strands of TL4;g.c/ dashed (and colored) if they can wind around cores. Using the same conventions as in Example 2.20: then the cells J4 (bottom) to J0 (top), in order from smallest (bottom) to biggest (top) are given by : Here we have indicated examples of H-cells that are isomorphic to KFg, with Fg corre- sponding to the leftmost through strand, regardless of the parameters c. For the top cell we can only pick up a copy of K if at least one of the corresponding parameters is in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-14",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-14.md",
+      "narrative": null,
+      "content": "The circle evaluation of the handlebody Temperley–Lieb algebra becomes blob circle evaluation, e.g., u u v v D c 0Du2v ↭ u u v u u v u u v D v u u v u u v u u D u v u u v u u v u D c 0Du2v: D. Tubbenhauer and P. Vaz Note that circles with more than du \u0000 1 blobs of the corresponding kind can be eval- uated by using (4.8) and the above circle evaluation, so we do not need to define their evaluation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-15",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-15.md",
+      "narrative": null,
+      "content": "For g D 2, let us choose d1 D 1 and d2 D 2. We get b1;1 D 0 b2;1 D 0 b2;2 D 0 gives D D D 0; b1;1 D 1 b2;1 D 0 b2;2 D 0 gives D ; D D 0; b1;1 D 1 b2;1 D 1 b2;2 D 0 gives D ; D D D 2 : Note that the final expression can be resolved in two ways: first by removing the blob colored 1, and then by replacing the two blobs colored 2 by one blob colored 2. Second, by applying (4.8) directly, as we did above. Both give the same result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-19",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-19.md",
+      "narrative": null,
+      "content": "We have BN0;d D 1 (by definition), BN1;d D d1 and, for d1 D 2 and d2 D 3, we get BN2;d D \u0000 0 0;0 \u0001 C \u0000 1 1;0 \u0001 C \u0000 1 0;1 \u0001 C \u0000 2 1;1 \u0001 C \u0000 2 0;2 \u0001 C \u0000 3 1;2 \u0001 D 9. Note that there are nine blob diagrams with one strand and at most one 1 blob and two 2 blobs: ; 1 ; 2 ; 2 ; 1 ; 2 ; ; ; : In fact, we have BN2;dD.d1;d2/ D \u0000d1Cd2 d1 \u0001 \u0000 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-003-22",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "ex-sec-003-22.md",
+      "narrative": null,
+      "content": "For g D 0 one obtains that dimK Bld;b 0;n .c/ D Cn, which is of course expec- ted. For g D 1 one can solve the recursion in (4.10) and obtains dimK Bld;b 1;n .c/ D \u00002n n \u0001 , the dimension of the blob algebra, cf. Lemma 5.7 in [24]. Regarding cellular structures, the same strategy as for the handlebody Temperley– Lieb algebra from Subsection 4A works. Precisely, the D part is allowed to have caps with blobs and through strands without blobs, the U part is allowed to have cups with blobs and through strands without blobs, and the middle has blobs on through strands. The picture to keep in mind i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-06.md",
+      "narrative": null,
+      "content": "The algebra TLg;n.c/ is an associative, unital algebra with a K-basis given by all crossingless matchings of 2n points of genus g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-18",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-18.md",
+      "narrative": null,
+      "content": "The algebra Bld;b g;n.c/ is an associative, unital algebra with a K-basis given by all handlebody blob diagrams on 2n points of genus g where all strands have at most du blobs of the corresponding type. Handlebody diagram algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-20",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-20.md",
+      "narrative": null,
+      "content": "For any c, we have an isomorphism of algebras Bld;b g;1.c/ Š Khbu j u 2 ¹1; : : : ; gºi=(4.8): In particular, dimK Bld;b g;1.c/ D BNg;d.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-29",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-29.md",
+      "narrative": null,
+      "content": "The algebra TLtop g;n.c/ is an associative, unital algebra with a K-spanning set given by all crossingless matchings of 2n points of genus g where each coil is positive and appears at most of order 1. Handlebody diagram algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-31",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-31.md",
+      "narrative": null,
+      "content": "Let K be a field. For any q 2 K and G \u0015 g such that Œkq ¤ 0 for all k < G C 1, there exist a set cG and an algebra homomorphism (explicitly given in the proof below) \u0013GW TLtop g;n.cG/ ! TLGCn \u0000\u0000 Œ2q \u0001 : Moreover, the parameters cG are weakly admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-36",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-36.md",
+      "narrative": null,
+      "content": "We have Bltop g;n.c/ D TLtop g;n.c/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-003-37",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "lem-sec-003-37.md",
+      "narrative": null,
+      "content": "Blobs satisfy the following relations: uD u ; u D u : (4.14) u u u uD ; u u u uD : (4.15) u v D ˆˆˆˆˆ< ˆˆˆˆˆ: u v if u \u0014 v; u v if u \u0015 v: (4.16) uDu C .q1=2 \u0000 q\u00001=2/ \u0001 \u0012 u \u0000u \u0013 ; uD u C .q1=2 \u0000 q\u00001=2/ \u0001 \u0012 u \u0000u \u0013 ; u D uC .q1=2 \u0000 q\u00001=2/ \u0001 \u0012 u \u0000u \u0013 ; u D uC .q1=2 \u0000 q\u00001=2/ \u0001 \u0012 u \u0000u \u0013 : (4.17) The relations in (4.14) and (4.17) are called blob slides. Also note the distorted topol- ogy in Lemma 4.39, which is however gets resolved for q D 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "prop-sec-003-09.md",
+      "narrative": null,
+      "content": "The above defines an involutive sandwich cell datum for TLg;n.c/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-003-21",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "prop-sec-003-21.md",
+      "narrative": null,
+      "content": "We have dimK Bld;b g;0.c/ D 1, dimK Bld;b g;1.c/ D BNg;d and dimK Bld;b g;n.c/ D BNg;d X k2¹2;4;6;:::;2nº Ck\u00001 dimK Bld;b g;n\u0000k.c/; (4.10) where Ck\u00001 is the .k \u0000 1/th Catalan number.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-003-23",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "prop-sec-003-23.md",
+      "narrative": null,
+      "content": "The above defines an involutive sandwich cell datum for Bld;b g;n.c/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebody Temperley–Lieb and blob algebras",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "../sections/sec-003-4-handlebody-temperleylieb-and-blob-algebras.md",
+      "narrative": null,
+      "content": "Recall that K denotes a unital, commutative, Noetherian domain. The example the reader\nshould keep in mind throughout this section is K D ZŒc, where c D .c\n/\n is a collection\nof variables c\n which are circle evaluations. Recall further that we have fixed g 2 N and\nn 2 N>0.\n4A. Handlebody Temperley–Lieb algebras\nIn this section we consider non-topological crossingless matchings of 2n points of genus g,\nwhich are all pairings .i; k/ of integers from ¹1; : : : ; 2nº such that i < j < k < l for all\n.i; k/ and .j; l/ together with a choice of a reduced word in the free group Fg for each\nappearing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "We will use a similar notation as in Section 3, e.g., u for elements as illustrated on the right in (4.1). Handlebody diagram algebras These crossingless matchings are not allowed to have any circles (circles, by definition, are a connected components of usual strings not touching the bottom or top). But such circles, as usual for these types of algebras, could appear after concatenation. To address this we need to associate circles in such diagrams to conjugacy classes in Fg. To this end, for each circle in the diagrams we will associate a word in Fg by start- ing somewhere generic on the cir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-05.md",
+      "narrative": null,
+      "content": "There are various ways to define Temperley–Lieb algebras beyond the clas- sical case and some of them are not topological in nature, and the construction in Defini- tion 4.4 is one of those that are not topological. In particular, the Kauffman skein relation D q1=2 \u0001 C q\u00001=2 \u0001 (4.2) does not behave topologically in TLg;n.c/, even for appropriate choices of parameters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-07.md",
+      "narrative": null,
+      "content": "For low genus TLg;n.c/ is well-studied (although for g > 0 the precise definitions and the nomenclature vary throughout the literature): (1) For g D 0, the algebra TL0;n.c/ is the Temperley–Lieb algebra in its crossingless matching definition. (2) In case g D 1, there are the so-called affine Temperley–Lieb algebra or the type CDB Temperley–Lieb algebra (the name comes from the relation of this algebra to the braid group of type CDB as recalled in Remark 3.2), which were studied in many works such as e.g. [22]. The algebra TL1;n.c/ is a version of these. (3) Similarly, for g D 2 there is a so-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-08.md",
+      "narrative": null,
+      "content": "We assume that Brg;\u0015 is trivial if \u0015 D 0. In particular, KFg Š K for \u0015 D 0, since we identify Fg with a subgroup of Brg;\u0015, and the latter is trivial for \u0015 D 0. The construction of the basis ¹c\u0015 D;b;U j \u0015 2 ƒ; D; U 2 M\u0015; b 2 S\u0015º (4.4) works mutatis mutandis as for the classical Temperley–Lieb algebra, having a concatena- tion of a cup diagram D, a cup diagram U and through strands b, but now the caps and cups are allowed to wind around the cores (but not the through strands), and we have coils of through strands in the middle. The following picture clarifies the construction: ; U D ; b D ; D D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-12.md",
+      "narrative": null,
+      "content": "The reader might wonder whether (for appropriate parameters q˙1=2) one can not use (4.2) to define u u i i u D u u u i i : Indeed, in a topological model that is possible. However, as we will explore more carefully in Subsection 4D, these diagrams will not be topological in nature, but have some error terms. So we decided to keep blobs to the left from the start. Using the same reading conventions as for TLg;n.c/ but counting types of blobs instead of coils, we can associated a word in Fg to usual strands and circles. As before, all parameters below will be assumed to be constant on conjugacy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-16",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-16.md",
+      "narrative": null,
+      "content": "We have not defined Bld;b g;n.c/ as a quotient of TLg;n.c/ because blobs would be invertible if we define them as the image of u in the quotient and we want to include the possibility of blobs being nilpotent, cf. Example 4.16.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-17",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-17.md",
+      "narrative": null,
+      "content": "We again discuss a few instances of Definition 4.15: (1) For g D 0, the blob and the Temperley–Lieb algebra coincide. (2) The algebra Bld;b 1;n .c/ is sometimes called the (cyclotomic) blob algebra, see e.g. [45]. (3) In genus g D 2, there is a two-boundary blob algebra, see e.g. [12] (beware that the version of Bld;b 2;n .c/ in that paper is called a two-boundary Temperley–Lieb algebra). For g > 0, the terminology in the literature is not consistent, and Temperley–Lieb algebras and blob algebras might be the same or not. For us, Definition 4.15 generalizes [45]. We need the analog of Lemma 4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-25",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-25.md",
+      "narrative": null,
+      "content": "A subtle behavior due to our choice of framing occurs under unknotting around a core, as one can see from the example below, see also Figure 3 in [26]: D : (4.11) Let us also mention that these diagrams satisfy the classical Reidemeister relations and other types of isotopy relations, e.g., D : As before we fix circle evaluations c D .c / , one for any isotopy class of circles . We also fix any invertible element q 2 K that has a square root in K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-28",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-28.md",
+      "narrative": null,
+      "content": "(1) For g D 0, Definition 4.29 is a classical definition, while the case g D 1 is related by Schur–Weyl duality to Verma modules, see [30]. (2) Without evaluation of circles, the case g > 2 can also be found in [30] under the name multi-polar, but not much appears to be known.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-32",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-32.md",
+      "narrative": null,
+      "content": "Our proof of Lemma 4.33 is directly inspired by [55]: as pointed out in that paper, the handlebody closing (3.4) can be interpreted, in the appropriate algebraic framework, by putting an idempotent on bottom and top. Moreover and alternatively to the usage of (growing) symmetric powers, one might want to associate Verma modules to the core strands as in the g D 1 case, see [30]. This approach has however the disadvantage that we do not know analogs of Jones–Wenzl idempotents which one could use to get coherent circle evaluations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-33",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-33.md",
+      "narrative": null,
+      "content": "For q 2 K being a root of unity and K being a field, there are still Jones– Wenzl type idempotents, see e.g. [46] or [61] for general constructions of such idempo- tents. However, their endomorphism spaces are no longer trivial, so we can not use the argument in the proof of Lemma 4.33. We do not know any explicit condition to check whether parameter choices are admis- sible, meaning that we do not know a “generic” basis of TLtop g;n.c/. We leave it to future work to find such a basis. 4D. Topology of handlebody blob algebras The purpose of this section is to explain a different presentation f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-003-34",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "rem-sec-003-34.md",
+      "narrative": null,
+      "content": "We will also use a similar construction as presented in this section for cyclotomic handlebody Brauer and BMW algebras later on, so we decided to spell it out here despite Lemma 4.38. However, while the topological handlebody blob algebra is the same as the topological handlebody Temperley–Lieb algebra, this phenomena is no longer true for handlebody Brauer and BMW algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "thm-sec-003-11.md",
+      "narrative": null,
+      "content": "Let K be a field. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes. In the remaining case, c D 0 and \u0015 D 0 (this only happens if n is even), all \u0015 2 ƒ \u0000 ¹0º are apexes, but \u0015 D 0 is not an apex. (2) The simple TLn;g.c/-modules of apex \u0015 2 ƒ are parameterized by simple modules of KFg. (3) The simple TLn;g.c/-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind TLn;g.c/ KFg .K/, where K runs over (equivalence classes of ) simple KFg- modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-003-24",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 34,
+      "target": "thm-sec-003-24.md",
+      "narrative": null,
+      "content": "Let K be a field. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes. In the remaining case, c D 0 and \u0015 D 0 (this only happens if n is even), all \u0015 2 ƒ \u0000 ¹0º are apexes, but \u0015 D 0 is not an apex. (2) The simple Bld;b g;n.c/-modules of apex \u0015 2 ƒ are parameterized by simple modules of KBd;b g;1. (3) The simple Bld;b g;n.c/-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind Bld;b g;n.c/ KBd;b g .K/, where K runs over (the equivalence classes of ) simple KBd;b g;1- modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "We let the handlebody BMW algebra (in n strands, and of genus g) BMWg;n.c; q; a/ be the algebra whose underlying free K-module is the K-linear span of all handlebody tangle diagrams of 2n points of genus g, and with multiplication given by concatenation of diagrams modulo circle evaluation, and the skein relation (5.1) and (5.2): \u0000D .q \u0000 q\u00001/ \u0001 \u0012 \u0000\u0013 ; (5.1) D a \u0001 ; D a\u00001 \u0001 : (5.2) For q D q\u00001 we also let a D a\u00001 and let c1 2 K be any parameter.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "def-sec-004-02.md",
+      "narrative": null,
+      "content": "We call the specialization q D a D 1 the Brauer specialization and the resulting algebra the handlebody Brauer algebra (in n strands and of genus g) Brg;n.c/. Handlebody diagram algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "def-sec-004-07.md",
+      "narrative": null,
+      "content": "We call parameters .c;q;a/ such that the K-spanning set in Lemma 5.6 is a K-basis admissible. We call parameters weakly admissible if dimK BMWg;n.c; q; a/ \u0015 .2n \u0000 1/ŠŠ. To state the analog of Lemma 4.33 denote by BMWGCn.c;q;a/DBMW0;GCn.c;q;a/ the classical BMW algebra in G C n strands.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "def-sec-004-11.md",
+      "narrative": null,
+      "content": "using only positive coils and positive crossings (5.3) for the definition. Note that there is a map BC g;\u0015 ! BMWg;n.c; q; a/ that sends positive coils to positive coils and positive crossings to positive crossings. We let S\u0015 D KBC g;\u0015 with the monoid basis as the sandwiched basis. We then get ¹c\u0015 D;b;U j \u0015 2 ƒ; D; U 2 M\u0015; b 2 S\u0015º (5.4) as before, with the D and U part being as for the handlebody Temperley–Lieb algebra, cf. (4.5), namely only caps respectively caps are allowed to wind around the cores. The picture is ; U D ; b D ; D D : The antiinvolution .\u0000/?W BMWg;n.c; q; a/ ! BMWg;n.c; q; a/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-004-19",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "def-sec-004-19.md",
+      "narrative": null,
+      "content": "We call parameters .d;b;c/ such that the K-spanning set in Lemma 5.18 is a K-basis admissible. We do not know any representation theoretical space where Brd;b g;n.c/ acts on, so we can not copy the arguments from e.g. the proof of Lemma 4.33. We rather do the following (which includes the cases where the parameters are generic):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-004-14",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "ex-sec-004-14.md",
+      "narrative": null,
+      "content": "Let us comment on the parametrization given by Theorem 5.12: (1) For g D 0, the algebras KBC 0;\u0015 are Hecke algebras associated to Coxeter type A\u0015\u00001, so we get the same classification as in Theorem 2.21, but for the BMW algebra. This was of course known, see e.g. Corollary 3.14 in [69]. (2) For g D 1, the algebras KBC 1;\u0015 are extended affine Hecke algebras associated to Coxeter type A\u0015\u00001. 5B. Cyclotomic handlebody Brauer and BMW algebras Recall the notion of blobbed presentations from Subsection 4D, and retain the notation from that section. One difference to that section is that here we identi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-004-23",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "ex-sec-004-23.md",
+      "narrative": null,
+      "content": "For g D 0, (5.9) is the dimension of the Brauer algebra. For g D 1, (5.9) is the formula in e.g. Section 11 of [27] or Theorem 4.11 in [70].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-004-29",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "ex-sec-004-29.md",
+      "narrative": null,
+      "content": "For g D 0, Theorem 5.29 is, of course, a BMW version of Theorem 2.21. For g D 1 and the Brauer specialization, this recovers [6], Appendix 6, where KBC;d;b 1;\u0015 is a complex reflection group of type G.d; 1; \u0015/. In the semisimple case, the parametrization of simples of KBC;d;b 1;\u0015 (and thus, of Br1;n.c/ per apex \u0015) is given by d-multipartitions of \u0015.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "The algebra BMWg;n.c; q; a/ is an associative, unital algebra with a K- spanning set given by positive lifts of perfect matchings of 2n points of genus g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-08.md",
+      "narrative": null,
+      "content": "Let K be a field. For any choice of q 2 K and G \u0015 g such that Œkq ¤ 0 for all 1 k, there exist a triple .cG; qG; aG/ and an algebra homomorphism (explicitly given in the proof below) \u0013GW BMWg;n.cG; qG; aG/ ! BMWGCn.Qc; Qq; Qa/: Moreover, the parameters .cG; qG; aG/ are weakly admissible. If q is not a root of unity, then there is always a corresponding triple .cG; qG; aG/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-15",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-15.md",
+      "narrative": null,
+      "content": "Blobs satisfy the following relations. First, (4.14), (4.15) and (4.16), and also uDu C .q \u0000 q\u00001/ \u0001 \u0012 u \u0000u \u0013 ; uD u C .q \u0000 q\u00001/ \u0001 \u0012 u \u0000u \u0013 ; u D uC .q \u0000 q\u00001/ \u0001 \u0012 u \u0000u \u0013 ; u D uC .q \u0000 q\u00001/ \u0001 \u0012 u \u0000u \u0013 : (5.5) (Note the difference in the powers of q between (4.17) and (5.5).) Handlebody diagram algebras We call the relations collected in Lemma 5.14 blob sliding relations. Because of their slightly distorted topology, we introduce cyclotomic handlebody Brauer algebra before their BMW counterparts. That is, we first treat the Brauer specialization q D a D 1. In the following lemma we collect some r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-16",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-16.md",
+      "narrative": null,
+      "content": "Brauer blobs satisfy the following relations additionally to (4.15): uD u ; u D u : (5.6) u vDu v : (5.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-18",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-18.md",
+      "narrative": null,
+      "content": "The algebra Brd;b g;n.c/ has a K-spanning set in bijection with clapped, blobbed perfect matchings of 2n points of genus g where each strand has at most du \u0000 1 blobs of the corresponding type.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-20",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-20.md",
+      "narrative": null,
+      "content": "Let K be a field and let L be a field extension of K of degree ŒL W K 1. For each choice of d and b, there exist c and b with entries in in L such that .d; b; c/ is admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-004-26",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "lem-sec-004-26.md",
+      "narrative": null,
+      "content": "For an admissible choice of parameters, the algebra BMWd;b g;n.c; q; a/ has a K-basis in bijection with clapped, blobbed perfect matchings of 2n points of genus g, where each strand has at most du blobs of the corresponding type. In particular, the dimension of BMWd;b g;n.c; q; a/ is also given by the formula in (5.9), namely it is dimK BMWd;b g;n.c; q; a/ D .BNg;d/n.2n \u0000 1/ŠŠ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "prop-sec-004-10.md",
+      "narrative": null,
+      "content": "For admissible parameters, the handlebody Brauer algebra Brg;n.c/ can be alternatively described as the free K-module spanned by perfect matchings of 2n points of genus g with multiplication given by concatenation and circle evaluation. For the cellular structure, we fix a sandwich cell datum as in Subsection 2D, and also with a very similar cellular basis. Let us for brevity just stress the differences. First, we only consider positive lifts and we let BC g;\u0015 denote the handlebody braid monoid, i.e.,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-004-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "prop-sec-004-12.md",
+      "narrative": null,
+      "content": "The above defines an involutive sandwich cell datum for the algebra BMWg;n.c; q; a/ for any admissible parameters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-004-22",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "prop-sec-004-22.md",
+      "narrative": null,
+      "content": "For admissible parameters we have dimK Brd;b g;n.c/ D .BNg;d/n.2n \u0000 1/ŠŠ: (5.9) Moreover, for admissible parameters, the cyclotomic handlebody Brauer algebra Brd;b g;n.c/ can be alternatively described as the free K-module spanned by perfect matchings of 2n points of genus g with multiplication given by concatenation and circle evaluation modulo the cyclotomic condition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-004-27",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "prop-sec-004-27.md",
+      "narrative": null,
+      "content": "For a choice of admissible parameters the above defines an involutive sandwich cell datum for BMWg;n.c; q; a/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebody Brauer and BMW algebras",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "../sections/sec-004-5-handlebody-brauer-and-bmw-algebras.md",
+      "narrative": null,
+      "content": "We will be brief in this section as it is very similar to the previous discussions. Recall that\nwe have fixed the genus g and the number of strands n.\n5A. Handlebody Brauer and BMW algebras\nWe use handlebody (framed) tangle diagrams of 2n points of genus g as in Subsection 4C.\nWe fix invertible scalars q; a 2 K with q ¤ q\u00001. Circles that may appear after concate-\nnation of these diagrams are evaluated as in Subsection 4C, and we fix c\n 2 K as before,\nexcept for c1 which we define as\nc1 D 1 C a \u0000 a\u00001\nq \u0000 q\u00001 \u0001\nDefinition 5.1.\nWe let the handlebody BMW algebra (in n strands, and of genus g)\nBMWg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "Note that Brg;n.c/ is not a specialization of BMWg;n.c; q; a/ as the q D a D 1 limit of BMWg;n.c; q; a/ has c1 D 2. This technicality will not play any role for us, so we strategically ignore it. In the specialization Brg;n.c/, we can use a simplified notation for the crossings: D D :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "Special cases of Definition 5.1 have appeared in the literature: (1) The case g D 0 is the case of the Birman–Murakami–Wenzl algebra, respectively Brauer algebra, and is classical. (2) For g D 1, these algebras appear under the name of affine BMW or Brauer algebras in many works, e.g. in [26] or [52]. (3) For g D 2, we were not able to find a reference, but the definition is easily deduced from the affine type C braid group combinatorics. However, this would give a two- boundary version of the above, with one core strand to the left and one to the right, see e.g. [11] for the corresponding pic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-05.md",
+      "narrative": null,
+      "content": "With blobs, the situation is trickier because we need to be careful with relation (4.15). Without blobs, we do not have this problem and we can treat these perfect matchings as topological objects. Forgetting isotopy, each perfect matching as above defines an element of the algebra BMWg;n.c; q; a/ by lifting crossings. Note however that we have an ambiguity coming from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-09.md",
+      "narrative": null,
+      "content": "The idempotents used in the proof of Lemma 5.8 do not satisfy an easy recursion as the Jones–Wenzl projectors used in the proof of Lemma 4.33. See how- ever [31] or [42] for some work on projectors in Brauer respectively BMW algebras. As before for the topological handlebody Temperley–Lieb algebra, we do not know any explicit way to construct admissible parameters. However, under the assumption that these exists we conclude this section as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-17",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-17.md",
+      "narrative": null,
+      "content": "Note that the skein relation (5.1) and also (4.15) imply compatibility con- ditions between parameters. See Definition 5.19, Lemma 5.20 and Proposition 5.22 below. We consider clapped, blobbed perfect matchings of 2n points of genus g which we need for counting purposes. We assume that these perfect matchings points are clapped, similar to the crossingless matchings in the proof of Proposition 4.22. Strands can carry blobs that move freely on the strand they belong but are not allowed to pass each other. In particular, there is no condition on being reachable from the left. This implies that e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-21",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-21.md",
+      "narrative": null,
+      "content": "For g D 1 there is such an effective criterion to get admissible parameters, see Theorem 3.2 in [20] and [68]. It would be interesting to have such a criterion for g > 1. The key players to calculate dimK Brd;b g;n.c/ are again the blob numbers BNg;d defined in (4.9):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-24",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-24.md",
+      "narrative": null,
+      "content": "Note also the difference of our construction to [27] or [70]: we define Brd;b g;n.c/ as a tangle algebra to begin with, while those papers start with an algebraic formulation and then prove that they have the suggestive diagrammatic presentation. We keep the cyclotomic parameters b and degree vector d as before. We are now going to define cyclotomic handlebody BMW algebras, where we as before use the correspond- ing positive monoid BMWC g;n.c; q; a/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-004-25",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "rem-sec-004-25.md",
+      "narrative": null,
+      "content": "Cyclotomic versions of BMW and Brauer algebras have appeared in the literature: (1) For g D 0, they are of course just the BMW respectively Brauer algebra. (2) For g D 1, the definition goes back to [27]. D. Tubbenhauer and P. Vaz",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-004-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "thm-sec-004-13.md",
+      "narrative": null,
+      "content": "Let K be a field, and choose admissible parameters. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes. In the remaining case, c D 0 and \u0015 D 0 (this only happens if n is even), all \u0015 2 ƒ \u0000 ¹0º are apexes, but \u0015 D 0 is not an apex. (2) The simple BMWg;n.c; q; a/-modules of apex \u0015 2 ƒ are parameterized by simple modules of KBC g;\u0015. (3) The simple BMWg;n.c; q; a/-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind BMWg;n.c;q;a/ KBC g;\u0015 .K/, where K runs over (equivalence classes of ) simple KBC g;\u0015-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-004-28",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "thm-sec-004-28.md",
+      "narrative": null,
+      "content": "Let K be a field, and choose admissible parameters. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes. In the remaining case, c D 0 and \u0015 D 0 (this only happens if n is even), all \u0015 2 ƒ \u0000 ¹0º are apexes, but \u0015 D 0 is not an apex. (2) The simple BMWg;n.c; q; a/-modules of apex \u0015 2 ƒ are parameterized by simple modules of KBC;d;b g;\u0015 . (3) The simple BMWg;n.c; q; a/-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind BMWg;n.c;q;a/ KBC;d;b g;\u0015 .K/, where K runs over (equivalence classes of ) simple KBC;d;b g;\u0015 -modules. Handlebody diagram algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/cor-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "cor-sec-005-04.md",
+      "narrative": null,
+      "content": "For q D 1, the map given by u 7! tu; Hi 7! si, is an isomorphism of K-algebras Hg;n Š \u0000! KWg;n. In order to define a sandwich cell datum, we first note that there is an antiinvolution .\u0000/? on Hg;n given by mirroring along a horizontal axis, but not changing crossings (e.g. positive crossings as in (5.3) remain positive). Moreover, we now recall the cellular basis of H0;n from [49], see also [47], Chapter 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/def-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "def-sec-005-01.md",
+      "narrative": null,
+      "content": "The handlebody Hecke algebra (in n strands and of genus g) Hg;n is the algebra whose underlying free K-module is spanned by isotopy classes of all handlebody braid diagrams, with multiplication given by concatenation of diagrams, modulo the skein relation \u0000D .q \u0000 q\u00001/ \u0001 : (6.1) Algebraically, Hg;n is the quotient of KBg;n by the two-sided ideal generated by the elements .ˇi C q/.ˇi \u0000 q\u00001/; for i D 1;: : :;n \u0000 1. In this interpretation, we write Hi for the image of ˇi in the quotient, but keep the notation u for the others. In defining Hg;n we only demand that the Hi satisfy a quadratic relatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-005-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "ex-sec-005-06.md",
+      "narrative": null,
+      "content": "The above is best illustrated in an example. For \u0015 D .4;2/ we have Srow \u0015 D S4 \u0002 S2 and H\u0015 D .1 C H1 C \u0001 \u0001 \u0001 C Hw0/.1 C H5/, where w0 is the longest element in S4 written in terms of the generators s1, s2 and s3. Moreover, for T respectively, T 0 as below we construct D D D.T / respectively, U D D.T 0/? by Tc T s4s5s3s2 ; Tc T 0 s4s5s3 ⇝c\u0015 D;U D H\u0015 ; where we illustrated H\u0015 as a box. We let ƒ D .ƒ; \u0014d/ be the set of all partitions of n, which are ordered by the domi- nance order \u0014d (we use the convention from Section 3.1 in [47]). The set M\u0015 is the set of all standard tableaux of shape \u0015. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-005-09",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "ex-sec-005-09.md",
+      "narrative": null,
+      "content": "The cases g D 0 and g D 1 of Theorem 6.8 are well known: (1) We have L0;nH\u0015 D K, so the above is the classical parametrization of simple H0;n- modules, see e.g. Section 3.4 of [47]. (2) For g D 1, Theorem 6.8 can be matched with e.g. Theorem 5.8 in [34]. 6B. Cyclotomic handlebody Hecke algebras We keep the terminology from the previous sections. In order to define and work with cyclotomic quotients, we use blob diagrams of braids instead of coils. Denote by HC g;n the subalgebra of Hg;n generated by H0;n and positive coils. Imitat- ing Subsection 4B we introduce elements b1; : : : ; bg in HC g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/ex-sec-005-19",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "ex-sec-005-19.md",
+      "narrative": null,
+      "content": "For g D 0, nothing new happens of course compared to Theorem 6.8, while the g D 1 version of Theorem 6.19 is a non-explicit version of Theorem 3.30 in [13]. Acknowledgments. We thank a referee, Abel Lacabanne, David Rose, Catharina Strop- pel and Arik Wilbert for comments on this paper and discussions related to the diagram- matics of handlebodies. Funding. D. T. does not deserve to be supported, but was still supported by the Haus- dorff Research Institute for Mathematics (HIM) during the Junior Trimester Program New Trends in Representation Theory. Part of this paper were written during that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-005-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "lem-sec-005-10.md",
+      "narrative": null,
+      "content": "Blobs satisfy relations (4.14) and (4.16) and uDu C .q \u0000 q\u00001/ \u0001 u ; uD u C .q \u0000 q\u00001/ \u0001 u ; u D uC .q \u0000 q\u00001/ \u0001u ; u D uC .q \u0000 q\u00001/ \u0001u : (6.5) (In comparison with Lemma 4.39, note the missing cup-cap term.) Of course, Proposition 6.3 and (6.5) give:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-005-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "lem-sec-005-11.md",
+      "narrative": null,
+      "content": "The set ´ ba1 k1;i1...bam km;imHw ˇˇˇˇˇ w 2 Sn; m 2 N; a 2 Nm; .u; i/ 2 .¹1; : : : ; gº \u0002 ¹1; : : : ; nº/m; i1 \u0014 \u0001 \u0001 \u0001 \u0014 im µ is a K-basis of HC g;n. As in the previous sections, we fix cyclotomic parameters b D .bu;i/ 2 Kd1C\u0001\u0001\u0001Cdg, and a degree vector d D .du/ 2 Ng.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/lem-sec-005-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "lem-sec-005-13.md",
+      "narrative": null,
+      "content": "If bu;1 is of order du, then bu;i is also of order du for all 1 \u0014 i \u0014 n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "The set ´ La1 u1;i1...Lam um;imHw ˇˇˇˇˇ w 2 Sn; m 2 N; a 2 Zm; .u; i/ 2 .¹1; : : : ; gº \u0002 ¹1; : : : ; nº/m; i1 \u0014 \u0001 \u0001 \u0001 \u0014 im µ (6.2) is a K-basis of Hg;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "prop-sec-005-07.md",
+      "narrative": null,
+      "content": "The above defines a sandwich cell datum for Hg;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-005-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "prop-sec-005-14.md",
+      "narrative": null,
+      "content": "The set ´ ba1 k1;i1...bam km;imHw ˇˇˇˇˇ w 2 Sn; m 2 N; a 2 Nm; .u; i/ 2 .¹1; : : : ; gº \u0002 ¹1; : : : ; nº/m; i1 \u0014 \u0001 \u0001 \u0001 \u0014 im; aj < dj µ (6.7) is a K-basis of Hd;b g;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-005-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "prop-sec-005-15.md",
+      "narrative": null,
+      "content": "The dimension of the free K-module Hd;b g;n is dimK Hd;b g;n D .BNg;d/n nŠ:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prop-sec-005-17",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "prop-sec-005-17.md",
+      "narrative": null,
+      "content": "The above defines a sandwich cell datum for Hd;b g;n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebody Hecke and Ariki–Koike algebras",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "../sections/sec-005-6-handlebody-hecke-and-arikikoike-algebras.md",
+      "narrative": null,
+      "content": "We define handlebody Hecke algebras as quotients of handlebody braid groups. All alge-\nbras can alternatively be defined as quotients of an appropriate BMW algebra from Sec-\ntion 5.\n6A. Handlebody Hecke algebras\nFix an invertible scalar q 2 K and recall the definitions regarding the handlebody braid\ngroups Bg;n from Subsection 3A.\nDefinition 6.1. The handlebody Hecke algebra (in n strands and of genus g) Hg;n is the\nalgebra whose underlying free K-module is spanned by isotopy classes of all handlebody\nbraid diagrams, with multiplication given by concatenation of diagrams, modulo the skein\nrela",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "With respect to Definition 6.1, we note: (1) In case g D 0, the algebra H0;n is the type A Hecke algebra. (2) For g D 1, the algebra H1;n is the extended affine Hecke algebra of type A. (3) The algebra Hg;n has been studied in [5], but not much appears to be known. For all w 2 Sn we choose a reduced expression w D sik...si1 2 Sn once and for all. We define Hw D Hw D Hik...Hi1. We still have the Jucys–Murphy elements Lu;i from (3.8), and the analog of Proposition 3.15 is the following. D. Tubbenhauer and P. Vaz",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-005-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "rem-sec-005-05.md",
+      "narrative": null,
+      "content": "The cellular basis we are going to recall is not the Kazhdan–Lusztig basis, but the so-called Murphy basis or standard basis. This basis has the advantage that it has a known generalization to the case of g D 1, see [13]. On the other hand, we are not aware of a generalization of Kazhdan–Lusztig theory to higher genus. Recall that a partition \u0015 of n of length `.\u0015/ D k is a non-increasing sequence \u00151 \u0015 \u00152 \u0015 \u0001 \u0001 \u0001 \u0015 \u0015k > 0 of integers adding up to j\u0015j D n. Associated to \u0015 is its Young diagram Œ\u0015 which we will illustrate using the English convention. Moreover, any filling T of Œ\u0015 with non-repea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-005-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "rem-sec-005-12.md",
+      "narrative": null,
+      "content": "With respect to Definition 6.12 we note: (1) In case g D 0, the algebra Hd;b 0;n is the type A Hecke algebra. (2) For g D 1, the algebra Hd;b 1;n is the Ariki–Koike algebra as defined and studied in e.g. [4], [8] or [10]. D. Tubbenhauer and P. Vaz (3) For g D 2 and d1 D d2 D 2, the algebra Hd;b 2;n can be compared to the two boundary Hecke algebra as in [11]. Note also that imposing a single relation involving only g (this is the first coil counting from the right, cf. (3.1)) gives a handlebody version of Ariki–Koike algebras. For g D 2, this case can be interpreted as an extended affine versi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/rem-sec-005-16",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "rem-sec-005-16.md",
+      "narrative": null,
+      "content": "Recall that BN0;d D 1 and BN1;d D d1, see Example 4.20. Thus, we recover the dimensions dimK Hd;b 0;n D nŠ; dimK Hd;b 1;n D dn 1 nŠ; the former being well-known, of course; the latter appears in equation (3.10) in [4]. To construct a sandwich cell datum one can use the same strategy as in Subsection 6A. Keeping the above discussion in mind, e.g. Proposition 6.15, the only difference is that S\u0015 is now the algebra obtained by taking the quotient of Lg;nH\u0015 by (6.6). The sandwiched basis we choose is the restriction of (6.7). Otherwise nothing changes and we obtain a set ¹c\u0015 D;b;U j \u0015 2 ƒ; D; U 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-005-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "thm-sec-005-08.md",
+      "narrative": null,
+      "content": "Let K be a field. (1) An element \u0015 2 ƒ is an apex if and only if \u0015 is e-restricted. (2) The simple Hn;g-modules of apex \u0015 2 ƒ are parameterized by simple modules of Lg;nH\u0015. (3) The simple Hn;g-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind Hn;g Lg;nH\u0015.K/, where K runs over (equivalence classes of ) simple Lg;nH\u0015-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/thm-sec-005-18",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "thm-sec-005-18.md",
+      "narrative": null,
+      "content": "Let K be a field. (1) A \u0015 2 ƒ is an apex if and only if \u0015 is e-restricted. (2) The simple Hd;b n;g-modules of apex \u0015 2 ƒ are parameterized by simple modules of Ld;b g;nH\u0015. (3) The simple Hd;b n;g-modules of apex \u0015 2 ƒ can be constructed as the simple heads of Ind Hd;b n;g Ld;b g;nH\u0015.K/, where K runs over (equivalence classes of ) simple Ld;b g;nH\u0015-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1356/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] Allcock, D.: Braid pictures for Artin groups. Trans. Amer. Math. Soc. 354 (2002), no. 9,\n3455–3474.\n[2] Andersen, H. H., Stroppel, C. and Tubbenhauer, D.: Semisimplicity of Hecke and (walled)\nBrauer algebras. J. Aust. Math. Soc. 103 (2017), no. 1, 1–44.\n[3] Andersen, H. H., Stroppel, C. and Tubbenhauer, D.: Cellular structures using Uq-tilting mod-\nules. Pacific J. Math. 292 (2018), no. 1, 21–59.\n[4] Ariki, S. and Koike, K.: A Hecke algebra of .Z=rZ/ o Sn and construction of its irreducible\nrepresentations. Adv. Math. 106 (1994), no. 2, 216–243.\n[5] Bardakov, V. G.: Braid groups in handleb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

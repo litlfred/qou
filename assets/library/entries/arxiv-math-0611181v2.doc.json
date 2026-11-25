@@ -1,0 +1,431 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0611181v2",
+  "title": "Proof of the volume conjecture for Whitehead chains",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the main theorem",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-proof-of-the-main-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the lemmas",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-proof-of-the-lemmas"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "whitehead",
+          "heading": false
+        },
+        {
+          "term": "chains",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0611181v2 [math.GT] 30 Jul 2007 Proof of the volume conjecture for Whitehead chains Roland van der Veen November 29, 2021 Abstract We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0611181v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tangles belt",
+          "heading": false
+        },
+        {
+          "term": "whitehead chains",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "type clasp",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "mathrm vol",
+          "heading": false
+        },
+        {
+          "term": "borromean rings",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        }
+      ],
+      "extract": "The volume conjecture relates the colored Jones polynomials of a knot to the simplicial volume of its complement. More precisely, let us denote the normalized $N$-colored Jones polynomial of a knot $K$ by $J_N(K)$ and let $\\mathrm{Vol}(K)$ be $v_3$ times the simplicial volume (Gromov norm) of $\\mathbb{S}^3 - K$, where $v_3$ is the volume of the hyperbolic regular ideal tetrahedron. The volume conjecture can now be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-proof-of-the-main-theorem",
+      "number": null,
+      "title": "Proof of the main theorem",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "lfloor frac",
+          "heading": false
+        },
+        {
+          "term": "tilde frac",
+          "heading": false
+        },
+        {
+          "term": "mathrm tangle",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "unnormalized colored",
+          "heading": false
+        },
+        {
+          "term": "right rfloor",
+          "heading": false
+        },
+        {
+          "term": "left lfloor",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give an overview of the proof of the main theorem, postponing the proofs of the more technical lemmas to the next section. The first step is to obtain an expression for the colored Jones polynomials of a general Whitehead chain. ::: lem Let $a,b,c,d$ be integers, with $b \\geq 2$ and $c,d \\geq 0$. We have the following formulas for the colored Jones polynomial: $$J_N(W_{a,1,c,d})(e^{\\frac{2\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-proof-of-the-lemmas",
+      "number": null,
+      "title": "Proof of the lemmas",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac c-d",
+          "heading": false
+        },
+        {
+          "term": "mathrm erfc",
+          "heading": false
+        },
+        {
+          "term": "erfc left",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "infty int",
+          "heading": false
+        },
+        {
+          "term": "infty exp",
+          "heading": false
+        },
+        {
+          "term": "mathrm central",
+          "heading": false
+        },
+        {
+          "term": "sum mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove the more technical lemmas 2,3,4 and 5. ::: proof *Proof.* (of lemma 2) The proof of this lemma hinges on the following key estimate of $S_{n,k}$ in terms of the Lobachevski function $\\Lambda(x)$ that was proved in [@HaoZheng]. Define $f(x,y)= -2\\Lambda(x+y)+2\\Lambda(y)+\\Lambda(x)$. For integers $0\\leq n,k, n+k < N$ we have the uniform estimate $$\\log",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "frac c-d",
+      "heading": false
+    },
+    {
+      "term": "whitehead chains",
+      "heading": false
+    },
+    {
+      "term": "mathrm erfc",
+      "heading": false
+    },
+    {
+      "term": "infty frac",
+      "heading": false
+    },
+    {
+      "term": "mathrm vol",
+      "heading": false
+    },
+    {
+      "term": "sum mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm tangle",
+      "heading": false
+    },
+    {
+      "term": "tilde frac",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "whitehead link",
+      "heading": false
+    },
+    {
+      "term": "mathrm central",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The tangles Belt, Twist and Clasp",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0611181v2"
+  }
+}

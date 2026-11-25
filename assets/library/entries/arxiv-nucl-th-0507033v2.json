@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-nucl-th-0507033v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "What do we mean by nuclear matter at subsaturation density? This is an important conceptual question. The binding energy of uniform nuclear matter has a minimum at saturation density $n_0 \\approx 0.16 \\, \\text{fm}^{-3}$. Below this density, the system can minimize its energy by forming clusters. Therefore the study of low-density nuclear matter is a study of clusters. What are the properties of these clusters? What role do they play in astrophysics? What is the relationship between clusters formed in the thermodynamic limit for an infinite system and those formed in laboratory heavy-ion collis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:nucl-th/0507033v2  2 Jun 2006\nCluster Formation and The Virial Equation of State of Low-Density Nuclear Matter\nC.J. Horowitz∗and A. Schwenk†\nNuclear Theory Center and Department of Physics, Indiana University, Bloomington, IN 47408\nWe present the virial equation of state of low-density nuclear matter composed of neutrons, pro-\ntons and alpha particles. The virial equation of state is model-independent, and therefore sets a\nbenchmark for all nuclear equations of state at low densities. We calculate the second virial coef-\nﬁcients for nucleon-nucleon, nucleon-alpha and alpha-alpha interact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formalism",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-formalism.md",
+      "narrative": null,
+      "content": "[]{#formalism label=\"formalism\"}\n\nIn this section, we introduce the virial expansion for a system of neutrons, protons, and alpha particles. We first discuss our choice of $n$, $p$ and $\\alpha$ particle degrees of freedom. Then we present the virial equation of state expanded to second order in the fugacities and calculate the entropy and the energy. Finally, we relate the second virial coefficients to the relevant scattering phase shifts.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nuclear Statistical Equilibrium",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-nuclear-statistical-equilibrium.md",
+      "narrative": null,
+      "content": "There is a close relation between the virial expansion and NSE models. The latter include a variety of bound states, while the virial expansion includes both bound states and scattering resonances. The virial equation of state can therefore also be regarded as a systematic extension of NSE models to take into account strong interactions in the resonant continuum.\n\nThe deuteron is automatically included in the virial expansion as a bound-state contribution to the second virial coefficient $b_2 \\sim\ne^{E_d/T}$ with experimental deuteron binding energy $E_d=2.22 \\, \\text{MeV}$. However, the $\\alp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virial Equation of State",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-virial-equation-of-state.md",
+      "narrative": null,
+      "content": "We expand the grand-canonical partition function $\\mathcal{Q}$ for a system of $n$, $p$ and $\\alpha$ particles confined to a volume $V$ as $$\\begin{aligned}\n\\mathcal{Q}(z_n,z_p,z_\\alpha,V,T) &= 1 + z_n Q_n + z_p Q_p \n+ z_\\alpha Q_\\alpha\n\\nonumber \\\\[1mm]\n&+ z_n^2 Q_{nn} + z_p^2 Q_{pp} + z_\\alpha^2 Q_{\\alpha\\alpha}\n\\nonumber \\\\[1mm]\n&+ 2z_pz_n Q_{np}+ 2z_nz_\\alpha Q_{\\alpha n} \\nonumber \\\\[1mm]\n&+ 2z_pz_\\alpha Q_{\\alpha p} + \\mathcal{O}(z_i^3) \\,.\n\\end{aligned}$$ Here, $Q_i=Q_i(V,T)$ and $Q_n$, $Q_p$ and $Q_\\alpha$ are the partition functions for single particle $n$, $p$ or $\\alpha$ systems $$\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virial Coefficients",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-23-virial-coefficients.md",
+      "narrative": null,
+      "content": "We relate the second virial coefficients to the relevant scattering phase shifts. This extends the standard results for spin-zero particles [@b2] to include spin and isospin. The virial coefficient is related to the partition function of the two-particles system $\\sum_{\\text{states}} e^{-E_{2}/T}$, where the sum is over all two-particle states of energy $E_{2}$. This sum can be converted to an integral over relative momentum $k$ weighted by the density of states. The difference between the density of states of an interacting and a free two-particle system can be expressed in terms of the deriv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-3-results.md",
+      "narrative": null,
+      "content": "bα(T ) = 21/2\nπT\nZ ∞\n0\ndE e−E/2T δtot\nα (E) + 2−5/2 ,\n(24)\nwhere +2−5/2 describes the contribution for a free Bose\ngas and the total phase shift δtot\nα (E) for elastic αα scat-\ntering is given by\nδtot\nα (E) =\nX\nL\n(2L + 1) δL(E)\n= δS + 5 δD + 9 δG + 13 δI + . . .\n(25)\nFor the αα virial coeﬃcient and for the following Nα\nvirial coeﬃcient, we have not taken into account the ef-\nfects of inelasticities. For low temperatures, we expect\ntheir contributions to be small due to the tight binding\nof the alpha particle.\nFinally, the Nα virial coeﬃcient is given by\nbαn(T ) =\n\u00125\n4\n\u00131/2 1\nπT\nZ ∞\n0\ndE e−4E/5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virial Coefficients",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-31-virial-coefficients.md",
+      "narrative": null,
+      "content": "bαn(T ) have been calculated, the pressure is determined\nfrom Eq. (11) using fugacities zn and zp that reproduce\nthe desired baryon density nb and proton fraction Yp us-\ning Eqs. (2,13-17).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entropy and Energy",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-24-entropy-and-energy.md",
+      "narrative": null,
+      "content": "Entropy and Energy\nThe entropy S and the energy E can be calculated from\nthe virial equation of state using thermodynamics [11,\n35]. The entropy density s = S/V follows from\ns =\n\u0012∂P\n∂T\n\u0013\nµi\n.\n(28)\nHere the temperature derivative is at constant µp and\nµn, and thus constant µα due to chemical equilibrium.\nThis leads to\ns = 5P\n2T −nn log zn −np log zp −nα log zα\n+ 2T\nλ3\n\u0000(z2\nn + z2\np)b′\nn + 2zpznb′\npn\n\u0001\n+ T\nλ3α\n\u0000z2\nαb′\nα + 2zα(zn + zp)b′\nαn\n\u0001\n,\n(29)\nwhere b′\ni denotes the temperature derivative of the second\nvirial coeﬃcients b′\ni(T ) = dbi(T )/dT . The energy density\nǫ = E/V can be calculated fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Composition",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-32-composition.md",
+      "narrative": null,
+      "content": "We now discuss the $\\alpha$ particle concentration.  The $\\alpha$ mass \nfraction is given by $x_\\alpha=4n_\\alpha/n_b$.  In Fig.~\\ref{Fig4}, we \nshow $x_\\alpha$ for a temperature $T = 4 \\mev$ and proton fraction \n$Y_p=1/2$ with various values of the virial coefficients.  \nThe largest $\\alpha$ particle concentration results for \na free $n$, $p$, $\\alpha$ gas, where all $b_i = 0$. Including nucleonic\ninteractions $b_n, b_{pn}, b_{\\text{nuc}} \\neq 0$, but still keeping \n$b_\\alpha, b_{\\alpha n}=0$ reduces $x_\\alpha$ significantly.  This is \nbecause the attractive nuclear interactions reduce the nuc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pressure",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-33-pressure.md",
+      "narrative": null,
+      "content": "Next, we present our results for the pressure.  In Fig.~\\ref{Fig10}, \nwe plot the pressure of symmetric nuclear matter for $T=10 \\mev$.\nThe formation of $\\alpha$ particles reduces the \ntotal number of particles in the system, and \nthis significantly lowers the pressure. For comparison, we also show \nin Fig.~\\ref{Fig10} the microscopic Fermi hyper-netted-chain (FHNC) \nequation of state of Friedman and Pandharipande~\\cite{FP}.  The\nlatter calculation is based on a variational wave function with only\ntwo-nucleon correlations.  However, the model-independent virial \nequation of state shows that th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entropy and Energy",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-34-entropy-and-energy.md",
+      "narrative": null,
+      "content": "Entropy and Energy\nThe entropy per baryon S/A of symmetric nuclear mat-\nter is shown for T = 4 MeV in Fig. 13. Here, our virial\ncalculation again includes the entropy of an electron and\nphoton gas as in Appendix C of [26].\nThe entropy is\nclearly seen to reﬂect the composition. At low densities,\nthe LS entropy is above the other calculations because\nof the low α mass fraction in the LS model.\nAt high\n10\n-5\n10\n-4\n10\n-3\n0.005\nnb [fm\n-3]\n0\n2\n4\n6\n8\n10\n12\nS/A\nvirial\nLS\nShen\nFIG. 14: (Color online) The entropy per baryon S/A versus\nbaryon density nb for T = 4 MeV and Yp = 0.05. As discussed\nin the te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry Energy",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-35-symmetry-energy.md",
+      "narrative": null,
+      "content": "The symmetry energy $S_E$ characterizes how the energy rises as one \nmoves away from equal numbers of neutrons and protons,\n\\begin{equation}\nS_E = \\frac{1}{8} \\frac{\\partial^2}{{\\partial Y_p}^2} \n\\frac{E}{A} \\: \\biggr|_{Y_p=1/2} \\,.\n\\label{se}\n\\end{equation}\nWe evaluate the second derivative of the energy per baryon with\nrespect to the proton fraction numerically. Fig.~\\ref{Fig16}\nshows the symmetry energy for $T=4 \\mev$.  At very low density, \n$S_E$ rises slowly with density. To lowest order in the density\nand neglecting $\\alpha$ particles, the symmetry energy is given by\n\\begin{equation}\nS_E",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-4-conclusions.md",
+      "narrative": null,
+      "content": "[]{#conclusions label=\"conclusions\"}\n\nWe have presented the equation of state of low-density nuclear matter using the model-independent virial expansion. The virial equation of state is thermodynamically consistent and was calculated directly from binding energies and scattering phase shifts, without the need of a nuclear interaction model or nuclear wave functions. Therefore, our results provide a benchmark for all microscopic or phenomenological equations of state at low densities. The virial equation of state can also be used to constrain models that extend to higher densities. In some case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0507033v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-acknowledgements.md",
+      "narrative": null,
+      "content": "We thank S. Karataglidis for the calculation of the\nnucleon-alpha phase shifts and A. Marek for providing\nus with tables of the LS, Shen and Wolﬀequations of\nstate. This work is supported in part by the US DOE\nunder Grant No.\nDE–FG02–87ER40365 and the NSF\nunder Grant No. PHY–0244822.\n[1] M. Liebend¨orfer, M. Rampp, H.-Th. Janka and A. Mez-\nzacappa, Astrophys. J. 620 (2005) 840.\n[2] R. Walder, A. Burrows, C.D. Ott, E. Livne and M. Jar-\nrah, Astrophys. J. 626 (2005) 317.\n[3] M. Costantinit, A. Ianni and F. Visanni, Phys. Rev. D70\n(2004) 043006.\n[4] C. Lunardini and A.Y. Smirnov, Astropart. Phys.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

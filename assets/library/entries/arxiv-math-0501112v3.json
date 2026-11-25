@@ -1,0 +1,764 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0501112v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1\nGAUSSIAN FLUCTUATIONS OF CHARACTERS OF\nSYMMETRIC GROUPS AND OF YOUNG DIAGRAMS\nABSTRACT. We study asymptotics of reducible representations of the\nsymmetric groups Sq for large q. We decompose such a representation\nas a sum of irreducible components (or, alternatively, Young diagrams)\nand we ask what is the character of a randomly chosen component (or,\nwhat is the shape of a randomly chosen Young diagram). Our main result\nis that for a large class of representations the ﬂuctuations of characters\n(and ﬂuctuations of the shape of the Young diagrams) are asymptoti-\ncally Gaussian; in this way we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations of large symmetric groups",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-representations-of-large-symmetric-groups.md",
+      "narrative": null,
+      "content": "Irreducible representations of the symmetric groups $S_q$ are indexed by Young diagrams and nearly all questions about them, such as values of the characters or decomposition into irreducible components of a restriction, induction, tensor product or outer product of representations can be answered by combinatorial algorithms such as Murnaghan�-Nakayama formula or the Littlewood�-Richardson rule. Unfortunately, these exact combinatorial tools become very complicated and cumbersome when the size of the symmetric group $S_q$ tends to infinity. For example, a restriction of an irreducible represen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0501112v3  [math.CO]  31 May 2005\nPIOTR ´SNIADY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Genus expansion, random matrices and free probability",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-genus-expansion-random-matrices-and-free-prob.md",
+      "narrative": null,
+      "content": "Free probability of Voiculescu [@VoiculescuDykemaNica] is a non-commutative probability theory which turned out to be very successful in describing random matrices. The combinatorial structure behind this theory is the lattice of non-crossing partitions [@Kreweras] and the corresponding notion of free cumulants [@Speicher1997]. It was Biane [@Biane1998] who realized that the same structure describes the leading terms in the asymptotic description of representations of symmetric groups. In this way some notions concerning random matrices were matched (via free probability theory) to some notion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher-order free probability",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13-higher-order-free-probability.md",
+      "narrative": null,
+      "content": "[]{#subsec:higherorder label=\"subsec:higherorder\"} As we mentioned above, the first order approximation is not sufficient to calculate the fluctuations of characters and of Young diagrams and therefore such fluctuations cannot be described in the framework of the (usual) free probability theory. On the other hand, in a series of articles [@HigherOrderFreeness1; @HigherOrderFreeness2; @HigherOrderFreeness3] it was demonstrated that by considering some more complicated versions of non-commutative probability spaces it is possible to describe fluctuations of random matrices in the framework of, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization of characters",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-factorization-of-characters.md",
+      "narrative": null,
+      "content": "Biane [@Biane2001approximate] proved (under some mild technical assumptions) that Young diagrams contributing to some finite-dimensional reducible representation of the symmetric group $S_q$ will concentrate around some limit shape if and only if the normalized character of the representation $$\\chi(\\pi):=\\frac{\\mathop{\\mathrm{Tr}}\\rho(\\pi)}{\\mathop{\\mathrm{Tr}}\\rho(e)}$$ approximately factorizes, i.e. informally speaking $$\\label{eq:approximate} \\chi( \\sigma_1 \\cdots \\sigma_n) \\approx\n\\chi(\\sigma_1) \\cdots \\chi(\\sigma_n)$$ for all permutations $\\sigma_1,\\dots,\\sigma_n$ with disjoint supports",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fluctuations of Young diagrams",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-15-fluctuations-of-young-diagrams.md",
+      "narrative": null,
+      "content": "Every finite-dimensional representation $\\rho_q$ of the symmetric group $S_q$ defines a canonical probability measure on the Young diagrams contributing to $\\rho_q$ given as follows: probability of a Young diagram $\\lambda$ should be proportional to the total dimension of all irreducible components of type $[\\lambda]$. Our goal is to consider some interesting function $f$ on the set of the Young diagrams with $q$ boxes and to study the distribution of the random variable $f(\\lambda)$. In principle, the information about the characters such as [\\[eq:approximate2\\]](#eq:approximate2){reference-t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview of this article",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-16-overview-of-this-article.md",
+      "narrative": null,
+      "content": "In Section [\\[sec:preliminaries\\]](#sec:preliminaries){reference-type=\"ref\" reference=\"sec:preliminaries\"} we present briefly all necessary notions needed to state the main result and its applications. In Section [\\[sec:representations\\]](#sec:representations){reference-type=\"ref\" reference=\"sec:representations\"} we present the main result: Theorem and Definition [\\[theo:main\\]](#theo:main){reference-type=\"ref\" reference=\"theo:main\"} where four equivalent conditions are given which ensure Gaussian fluctuations of the characters and of the shape of the Young diagrams. We also show that the cons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-2-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:preliminaries label=\"sec:preliminaries\"}\n\n## Normalized conjugacy class indicators {#subsec:definicjasigma}\n\nLet integer numbers $k_1,\\dots,k_m\\geq 1$ be given. We define the normalized conjugacy class indicator to be a central element in the group algebra ${\\mathbb{C}}(S_q)$ given by\n\n[@KerovOlshanski1994; @BianeCharacters; @Sniady2003pushing]\n\n$$\\label{eq:definicjasigma} \\Sigma_{k_1,\\dots,k_m}=\n\n\\sum_{a} (a_{1,1},a_{1,2},\\dots,a_{1,{k_1}}) \\cdots\n(a_{m,1},a_{m,2},\\dots,a_{m,k_m}),$$\n\nwhere the sum runs over all one--to--one functions $$a:\\big\\{ \\{r,s\\}: 1\\leq r\\leq m, 1\\leq s\\leq {k_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disjoint product",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-22-disjoint-product.md",
+      "narrative": null,
+      "content": "[]{#subsec:disjoint label=\"subsec:disjoint\"} Usually by a product of normalized conjugacy classes $\\Sigma_{k_1,\\dots,k_m}$ we understand their product as elements of the group algebra ${\\mathbb{C}}(S_q)$. However, sometimes it is convenient to consider their disjoint product defined by $$\\label{eq:disjoint} \\Sigma_{k_1,\\dots,k_m} \\bullet\n\\Sigma_{l_1,\\dots,l_n}= \\Sigma_{k_1,\\dots,k_m,l_1,\\dots,l_n}.$$\n\n::: remark\nThe readers familiar with the notion of partial permutations of Ivanov and Kerov [@IvanovKerov1999] will see that [\\[eq:disjoint\\]](#eq:disjoint){reference-type=\"eqref\" reference=\"eq:d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical cumulants",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-009-23-classical-cumulants.md",
+      "narrative": null,
+      "content": "[]{#subsec:cumulants label=\"subsec:cumulants\"} The notion of cumulants (or semi-invariants) was introduced to describe the convolution of measures in the classical probability theory. For more details about cumulants in the classical and non-commutative probability theory we refer to overview articles [@Hald-EarlyHistoryCumulants; @MattnerWhat-are-cumulants; @Lehner2002cumulantsI].\n\nIf $X_1,\\dots,X_n$ are random variables we define their (classical) cumulant to be an appropriate coefficient of the formal expansion of the logarithm of the multidimensional Fourier transform: $$k(X_1,\\dots,X_n)=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elements of the group algebra as random variables",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-24-elements-of-the-group-algebra-as-random-varia.md",
+      "narrative": null,
+      "content": "Let us fix some finite-dimensional representation $\\rho_q$ of the symmetric group $S_q$. We can treat any commuting family of elements of the group algebra ${\\mathbb{C}}(S_q)$ as a family of random variables equipped with the mean value given by the normalized character: $$\\label{eq:wartoscoczekiwana} {\\mathbb{E}}X:= \\chi^{\\rho_q}(X)= \\frac{\\mathop{\\mathrm{Tr}}\n\\rho_q(X)}{\\mathop{\\mathrm{Tr}}\\rho_q(1)}.$$ It should be stressed that in the general case we treat elements of ${\\mathbb{C}}(S_q)$ as random variables only on a purely formal level; in particular we do not treat them as functions on s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Canonical probability measure on Young diagrams associated to a representation",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-011-25-canonical-probability-measure-on-young-diagra.md",
+      "narrative": null,
+      "content": "There is a special case when it is possible to give a truly probabilistic interpretation to [\\[eq:wartoscoczekiwana\\]](#eq:wartoscoczekiwana){reference-type=\"eqref\" reference=\"eq:wartoscoczekiwana\"}: it is when for the family of random variables we take the center of ${\\mathbb{C}}(S_q)$ and the multiplication is the natural product in the group algebra ${\\mathbb{C}}(S_q)$. The center of ${\\mathbb{C}}(S_q)$ is isomorphic (via Fourier transform) to the algebra of functions on Young diagrams and the expected value [\\[eq:wartoscoczekiwana\\]](#eq:wartoscoczekiwana){reference-type=\"eqref\" reference=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized Young diagrams",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-012-26-generalized-young-diagrams.md",
+      "narrative": null,
+      "content": "Let $\\lambda$ be a Young diagram. We assign to it a piecewise affine function $\\omega^\\lambda:{\\mathbb{R}}\\rightarrow{\\mathbb{R}}$ with slopes $\\pm 1$, such that $\\omega^\\lambda(x)=|x|$ for large $|x|$ as it can be seen on the example from Figure [2](#fig:young2){reference-type=\"ref\" reference=\"fig:young2\"}. By comparing Figure [1](#fig:young1){reference-type=\"ref\" reference=\"fig:young1\"} and Figure [2](#fig:young2){reference-type=\"ref\" reference=\"fig:young2\"} one can easily see that the graph of $\\omega^\\lambda$ can be obtained from the graphical representation of the Young diagram by an appr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functionals of the shape of Young diagrams",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-013-27-functionals-of-the-shape-of-young-diagrams.md",
+      "narrative": null,
+      "content": "The main result of this article is that the fluctuations of the shape of some random Young diagrams converge (after some rescaling) to a Gaussian distribution. Since the space of (generalized) Young diagrams is infinite-dimensional therefore we need to be very cautious when dealing with such statements. In fact, we will consider a family of functionals on Young diagrams and we show that the joint distribution of each finite set of these functionals converges to the Gaussian distribution.\n\nThe functionals mentioned above are given as follows: for a Young diagram $\\lambda$ and the corresponding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transition measure of a Young diagram",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-014-28-transition-measure-of-a-young-diagram.md",
+      "narrative": null,
+      "content": "[]{#subsec:transitionanalytic label=\"subsec:transitionanalytic\"} To any generalized Young diagram $\\omega$ we can assign the unique probability measure $\\mu^{\\omega}$ on ${\\mathbb{R}}$, called transition measure of $\\omega$, the Cauchy transform of which $$\\label{eq:Cauchy} G_{\\mu^{\\omega}}(z)= \\int_{{\\mathbb{R}}} \\frac{1}{z-x} d\n\\mu^{\\omega}(x)$$ is given by $$\\label{eq:definicja3} \\log G_{\\mu^{\\omega}}(z)= -\\frac{1}{2}\n\\int_{{\\mathbb{R}}} \\log(z-x)  \\omega''(x) dx = -\\frac{1}{2} \\int_{{\\mathbb{R}}}\n\\frac{1}{z-x} \\omega'(x) dx$$\n\nfor every $z\\notin{\\mathbb{R}}$. For a Young diagram $\\lambda$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free cumulants of the transition measure",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-015-29-free-cumulants-of-the-transition-measure.md",
+      "narrative": null,
+      "content": "Cauchy transform of a compactly supported probability measure is given at the neighborhood of infinity by a power series $$G_{\\mu}(z)=\\frac{1}{z}+\\sum_{n\\geq 2} M_n z^{-n-1},$$ where $M_n=\\int_R x^n d\\mu$ are the moments of the measure $\\mu$. It follows that on some neighborhood of infinity $G_{\\mu}$ has a right inverse $K_{\\mu}$ with respect to the composition of power series given by $$K_{\\mu}(z)=\\frac{1}{z}+\\sum_{n\\geq 1} R_n z^{n-1}$$ convergent on some neighborhood of $0$. The coefficients $R_i=R_i(\\mu)$ are called free cumulants of measure $\\mu$. Free cumulants appeared implicitly in Voi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations with character factorization property",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-016-3-representations-with-character-factorization-p.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization of characters and Gaussian fluctuations",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-017-31-factorization-of-characters-and-gaussian-fluc.md",
+      "narrative": null,
+      "content": "The following theorem is the main result of this article. In order not to scare the Reader we postpone its proof to Section [\\[sec:Proof-main-result\\]](#sec:Proof-main-result){reference-type=\"ref\" reference=\"sec:Proof-main-result\"}.\n\n::: theoremanddefinition\n[]{#theo:main label=\"theo:main\"} For each $q\\geq 1$ let $\\rho_q$ be a representation of $S_q$. We say that the sequence $(\\rho_q)$\n\nhas the character factorization property if it fulfills one (hence all) of the following equivalent conditions:\n\n-   for any cycles $\\sigma_1,\\dots,\\sigma_n$ with disjoint supports $$\\label{eq:faktoryzacja1} k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-018-32-examples.md",
+      "narrative": null,
+      "content": "All examples presented in this section not only have the character factorization property but additionally are as in Theorem [\\[theo:main2\\]](#theo:main2){reference-type=\"ref\" reference=\"theo:main2\"}.\n\n::: example\n[]{#example:1 label=\"example:1\"} It is easy to check that if $\\rho_q$ is the left-regular representation of $S_q$ then for any permutations $\\sigma_1,\\dots,\\sigma_n$ with disjoint supports $$k(\\sigma_1,\\dots,\\sigma_n) q^{\n\\frac{|\\sigma_1|+\\cdots+|\\sigma_n|+2(n-1)}{2} } = \\begin{cases} 1 &\n\\text{if } n=1 \\text{ and } \\sigma_1=e, \\\\ 0 & \\text{otherwise.}\n\\end{cases}$$ It follows from c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main result",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-019-4-proof-of-the-main-result.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Toy example",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-020-41-toy-example.md",
+      "narrative": null,
+      "content": "Let us have a look on the main result (Theorem and Definition [\\[theo:main\\]](#theo:main){reference-type=\"ref\" reference=\"theo:main\"}) for the simplest nontrivial case of $n=2$. This will give us a heuristical insight into the problems which we shall encounter in the proof.\n\nAs we shall see in the following, the proof of the equivalence [\\[eq:faktoryzacja3\\]](#eq:faktoryzacja3){reference-type=\"eqref\" reference=\"eq:faktoryzacja3\"} and [\\[eq:faktoryzacja4\\]](#eq:faktoryzacja4){reference-type=\"eqref\" reference=\"eq:faktoryzacja4\"} is very easy, therefore the main difficulty is to show the equivale",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partitions",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-021-42-partitions.md",
+      "narrative": null,
+      "content": "[]{#subsec:partitions label=\"subsec:partitions\"} We recall that $\\pi=\\{\\pi_1,\\dots,\\pi_r\\}$ is a partition of a finite ordered set $X$ if sets $\\pi_1,\\dots,\\pi_r$ are nonempty and disjoint and if $\\pi_1\\cup\\cdots\\cup\\pi_r=X$.\n\nWe say that a partition $\\pi$ is smaller (or finer) than a partition $\\rho$ of the same set if every block of $\\pi$ is a subset of some block of $\\rho$ and we denote it by $\\pi\\leq\\rho$. For partitions $\\pi_1,\\pi_2$ of the same set we denote by $\\pi_1\\vee \\pi_2$ the minimal partition which is greater or equal than both $\\pi_1$ and $\\pi_2$. The set of all partitions of so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra of conjugacy classes and its filtration",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-022-43-algebra-of-conjugacy-classes-and-its-filtrati.md",
+      "narrative": null,
+      "content": "[]{#subsec:algebraofconjugacy label=\"subsec:algebraofconjugacy\"} Ivanov and Kerov [@IvanovKerov1999] defined a partial permutation of a set $X$ as a pair $\\alpha=(d,w)$, where $d$ (called support of $\\alpha$) is any subset of $X$ and $w:X\\rightarrow X$ is a bijection which equal to identity outside of $d$. The usual product of partial permutations is given by $$(d_1,w_1)(d_2,w_2)=(d_1\\cup d_2,w_1 w_2)$$ and their disjoint product $\\bullet$ was defined in [\\[eq:definition-of-disjoint\\]](#eq:definition-of-disjoint){reference-type=\"eqref\" reference=\"eq:definition-of-disjoint\"}. Partial permutatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three probability spaces",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-023-44-three-probability-spaces.md",
+      "narrative": null,
+      "content": "Commutative algebras ${\\mathfrak{A}}$ and ${\\mathfrak{A}}^{\\bullet}$ can be regarded as algebras of random variables on a purely formal level (usually it is not possible to represent them as algebras of functions on some Kolmogorov probability space).\n\nAlgebras ${\\mathfrak{A}}$ and ${\\mathfrak{A}}^{\\bullet}$ are trivially isomorphic as vector spaces; we will denote by ${\\mathbb{E}}^{\\text{id}}:{\\mathfrak{A}}\\rightarrow{\\mathfrak{A}}^{\\bullet}$ the identity map between them, in other words $${\\mathbb{E}}^{\\text{id}}(x)=x.$$ One can think that ${\\mathbb{E}}^{\\text{id}}$ is a kind of a conditiona",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants of products",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-024-45-cumulants-of-products.md",
+      "narrative": null,
+      "content": "{1, . . ., n} with blocks ρi = {ρi,1, . . . , ρi,m(i)} we deﬁne partition–indexed\ncumulants given by a multiplicative extension of the usual cumulants:\n(4.7)\nkρ(X1, . . ., Xn) =\nY\ni\nk(Xρi,1, Xρi,2, . . ., Xρi,m(i));\nfor example\nk{1,3,4},{2,5}(X1, X2, X3, X4, X5) = k(X1, X3, X4) k(X2, X5).\nThe following formula for cumulants of products of random variables\nwas proved by Leonov and Sirjaev [LS59].\nTheorem 4.4. Let i1\n<\ni2\n<\n· · ·\n<\nin+1 be integers and let\nXi1+1, Xi1+2, . . ., Xin+1 be a family of random variables; then\n(4.8)\nk\n\u0010\nY\ni1+1≤j≤i2\nXj, . . .,\nY\nin+1≤j≤in+1\nXj\n\u0011\n=\nX\nπ\nkπ(Xi1+1, Xi1+2, .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem: equivalence $\\iff$",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-025-46-proof-of-the-main-theorem-equivalence-iff.md",
+      "narrative": null,
+      "content": "\u0010 X\ndeg kid(xi : i ∈πj) ≤\nThus\n(4.11)\n\u0010 X\n\u0011\n1≤j≤m\ndeg kid(xi : i ∈πj)\nAssumption (3.2) and Corollary 4.7 show that\nkid(xi : i ∈πj) : j = 1, 2, . . .\nk•\u0002\n\u0003\nGAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS\n23\nProof. Partition π can be obtained from the trivial partition (every block\nconsists of exactly one element) by performing P\ntimes the\nfollowing operation: we select two blocks and merge them into a single\none. Clearly, the number of blocks of partition\n\u0000\n\u0001\n|πi| −1\ni\n{i1 + 1, i1 + 2, . . ., i2}, . . ., {in + 1, in + 2, . . ., in+1}\neither decreases by one or stays the same in each ste",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem: equivalence $\\iff$",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-026-47-proof-of-the-main-theorem-equivalence-iff.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants of falling factorials",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-027-471-cumulants-of-falling-factorials.md",
+      "narrative": null,
+      "content": "Element $\\Sigma_{\\underbrace{1,\\dots,1}_{k \\text{ times}} }\\in\n{\\mathbb{C}}(S_q)$ is equal to $q (q-1) \\cdots (q+1-k)$, the multiple of identity, therefore no matter which representation we consider we always have $${\\mathbb{E}}\\Sigma_{\\underbrace{1,\\dots,1}_{k \\text{ times}} }\\in\n{\\mathbb{C}}(S_q)=q (q-1) \\cdots (q+1-k).$$ However, it should be stressed that if we consider the algebra of conjugacy classes equipped with the disjoint product then this element is not longer a multiple of identity and $$\\Sigma_{\\underbrace{1,\\dots,1}_{k_1 \\text{\ntimes}} }\\bullet \\Sigma_{\\underbrace{1,\\dots,1}_{k_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem: equivalence $\\iff$",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-028-48-proof-of-the-main-theorem-equivalence-iff.md",
+      "narrative": null,
+      "content": "Proof of equivalence (3.3) ⇐⇒(3.4). It is enough to apply Corollary 4.7.\n□\n26\nPIOTR ´SNIADY\nThe remaining part of Theorem 3.2, namely\nlim\nq→∞Cov(Rl1+1, Rl2+1)q−l1+l2\n2\n= lim\nq→∞Cov(Σl1, Σl2)q−l1+l2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-029-51-cumulants.md",
+      "narrative": null,
+      "content": "follows from the relation (4.2) between free cumulants and conjugacy\nclasses.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-030-5-proof-of-theorem.md",
+      "narrative": null,
+      "content": "This section is devoted to the proof of Theorem 4.3 which is the only\nmissing component in the proof of the main theorem. We will use some\ntools presented in our recent work [´Sni03].\n5.1. Cumulants. If µ = {µ1, . . ., µk} is a partition of the set {1, . . ., n}\nwith blocks µi = {µi,1, . . ., µi,m(i)} we deﬁne partition–indexed cumulants\ngiven by a multiplicative extension of the usual cumulants:\n(5.1)\nkµ(X1, . . ., Xn) =\nY\ni\nk(Xµi,1, Xµi,2, . . ., Xµi,m(i));\nfor example\nk{1,3,4},{2,5}(X1, X2, X3, X4, X5) = k(X1, X3, X4) k(X2, X5).\nIn this article we will use the following property of cumulant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partition--indexed conjugacy classes",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-031-52-partition--indexed-conjugacy-classes.md",
+      "narrative": null,
+      "content": "some constructions on partitions of the set X = {1, 2, . . ., N}. However,\nit should be understood that by a change of labels these constructions can\nbe performed for any ﬁnite ordered set X.\nWe consider a matrix J, the entries of which belong to C(Sq), the sym-\nmetric group algebra:\nJ =\n\n\n0\n(1, 2)\n. . .\n(1, q)\n1\n(2, 1)\n0\n. . .\n(2, q)\n1\n...\n...\n...\n...\n...\n(q, 1)\n(q, 2)\n. . .\n0\n1\n1\n1\n. . .\n1\n0\n\n\n∈Mq+1(C) ⊗C(Sq).\nExcept for the last row, the last column and the diagonal, the entry in the\ni-th row and the j-th column is equal to the transposition interchanging i\nand j.\nX\n(5.3)\nΣπ =\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Products of conjugacy classes",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-032-53-products-of-conjugacy-classes.md",
+      "narrative": null,
+      "content": "::: theorem\n[]{#claim:mnozenie2 label=\"claim:mnozenie2\"} []{#claim:mnozenie label=\"claim:mnozenie\"} Let $i_1<\\cdots<i_{n+1}$ be integers and for each $1\\leq s\\leq n$ let $\\pi_s$ be a partition of the set $\\rho_s=\\{i_{s}+1,i_{s}+2,\\dots,i_{s+1}\\}$. We denote $$\\pi_1 \\bullet \\cdots \\bullet \\pi_n=   (\\pi_1 \\cup \\cdots \\cup \\pi_n) \\vee\n\\big\\{ \\{i_2,i_3,\\dots,i_{n+1} \\} \\big\\}.$$ Then $$\\label{eq:formulanailoczynrozlaczny} \\Sigma_{\\pi_1} \\bullet \\cdots\n\\bullet \\Sigma_{\\pi_n}= \\Sigma_{(\\pi_1 \\bullet \\cdots \\bullet\n\\pi_n)}.$$\n\nFurthermore, $$\\label{eq:formulanailoczyn} \\Sigma_{\\pi_1} \\cdots\n\\Sigma_{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "For any partition π of an n–element set (5.9) deg Σπ = n −2 genusπ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric interpretation of the degree of $\\Sigma_{\\pi}$",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-033-54-geometric-interpretation-of-the-degree-of-sig.md",
+      "narrative": null,
+      "content": "represent partitions graphically by arranging the elements of the set X =\n{1, . . ., n} counterclockwise on a circle and joining elements of the same\nblock by a line, as it can be seen on Figure 5.1.\nWe consider a large sphere with a small circular hole. The boundary\nof this hole is the circle mentioned above. Let us draw the blocks of the\npartition π with a fat pen; in this way each block becomes a disc glued to\nthe boundary of the hole, cf Figure 5.2.\nAfter gluing the ﬁrst collection of discs, our sphere becomes a surface\nwith a number of holes. The boundary of each hole is a circle and we s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric interpretation of Theorem",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-034-55-geometric-interpretation-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#subsec:zaklejanie label=\"subsec:zaklejanie\"}\n\n<figure id=\"fig:przecinajacapartycja\">\n<embed src=\"figure03.eps\" />\n<figcaption>Graphical representation of a partition <span class=\"math inline\">{{1, 3}, {2, 5, 7}, {4}, {6}}</span>.</figcaption>\n</figure>\n\nIt is very useful to represent partitions graphically by arranging the elements of the set $X=\\{1,\\dots,n\\}$ counterclockwise on a circle and joining elements of the same block by a line, as it can be seen on Figure [1](#fig:przecinajacapartycja){reference-type=\"ref\" reference=\"fig:przecinajacapartycja\"}.\n\nWe consider a large sphere with a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fat partitions",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-035-56-fat-partitions.md",
+      "narrative": null,
+      "content": "[]{#subsec:fat label=\"subsec:fat\"} Let $\\pi=\\{\\pi_1,\\dots,\\pi_r\\}$ be a partition of the set $\\{1,\\dots,n\\}$. For every $1\\leq s\\leq r$ let $\\pi_s=\\{\\pi_{s,1},\\dots,\\pi_{s,l_s}\\}$ with $\\pi_{s,1}<\\cdots<\\pi_{s,l_s}$. We define $\\pi_{\\mathop{\\mathrm{fat}}}$, called fat partition of $\\pi$, to be a pair partition of the $2n$--element ordered set $\\{1,1',2,2',\\dots,n,n'\\}$ given by $$\\pi_{\\mathop{\\mathrm{fat}}}=\n\\big\\{  \\{ \\pi_{s,t}',\\pi_{s,t+1}  \\} :  1\\leq s \\leq r \\text{ and }\n1 \\leq t \\leq l_s  \\big\\},$$ where it should be understood that $\\pi_{s,l_s+1}=\\pi_{s,1}$.\n\n<figure id=\"fig:tlustaparty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit form of the partition--indexed conjugacy class indicator $\\Sigma_\\pi$",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-036-57-explicit-form-of-the-partition--indexed-conju.md",
+      "narrative": null,
+      "content": "[]{#subsec:explicit label=\"subsec:explicit\"} Let $\\pi$ be a partition of the set $\\{1,\\dots,n\\}$. Since the fat partition $\\pi_{\\mathop{\\mathrm{fat}}}$ connects every element of the set $\\{1',2',\\dots,n'\\}$ with exactly one element of the set $\\{1,2,\\dots,n\\}$, we can view $\\pi_{\\mathop{\\mathrm{fat}}}$ as a bijection $\\pi_{\\mathop{\\mathrm{fat}}}:\\{1',2',\\dots,n'\\}\\rightarrow\\{1,2,\\dots,n\\}$. We also consider a bijection $c:\\{1,2,\\dots,n\\}\\rightarrow\\{1',2',\\dots,n'\\}$ given by $\\dots,3\\mapsto 2', 2\\mapsto 1', 1\\mapsto n', n\\mapsto\n(n-1)',\\dots$. Finally, we consider a permutation $\\pi_{\\mathop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0501112v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-037-6-acknowledgments.md",
+      "narrative": null,
+      "content": "I thank Akihito Hora and Philippe Biane for many discussions and re-\nmarks.\nResearch supported by State Committee for Scientiﬁc Research (Komitet\nBada´n Naukowych) grant No. 2P03A00723;\nby EU Network “QP-\napplications”, contract HPRN-CT-2002-00729; by KBN-DAAD project\n36/2003/2004.\nREFERENCES\n[Bia98]\nPhilippe Biane. Representations of symmetric groups and free probability. Adv.\nMath., 138(1):126–181, 1998.\n[Bia01]\nPhilippe Biane. Approximate factorization and concentration for characters of\nsymmetric groups. Internat. Math. Res. Notices, (4):179–192, 2001.\n[Bia03]\nPhilippe Biane. Characters of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

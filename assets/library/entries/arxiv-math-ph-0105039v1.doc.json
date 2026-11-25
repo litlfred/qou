@@ -1,0 +1,1390 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-ph-0105039v1",
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Dilogarithm Function",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-quantum-dilogarithm-function"
+    },
+    {
+      "level": 2,
+      "title": "Classical Dilogarithm Function",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-classical-dilogarithm-function"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Dilogarithm Function and the $R$ Operator",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-quantum-dilogarithm-function-and-the-r-operat"
+    },
+    {
+      "level": 2,
+      "title": "Representation",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-representation"
+    },
+    {
+      "level": 1,
+      "title": "Invariant of Knot and Link",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-invariant-of-knot-and-link"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic Behavior and 3-dimensional Picture",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-asymptotic-behavior-and-3-dimensional-picture"
+    },
+    {
+      "level": 1,
+      "title": "3-Dimensional Picture of the Invariant",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-3-dimensional-picture-of-the-invariant"
+    },
+    {
+      "level": 2,
+      "title": "$R$-Operators as the Braid Operator",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-51-r-operators-as-the-braid-operator"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolicity Condition for Surface",
+      "number": "5.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-52-hyperbolicity-condition-for-surface"
+    },
+    {
+      "level": 2,
+      "title": "Gluing Around Ridgeline of Octahedron",
+      "number": "5.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-53-gluing-around-ridgeline-of-octahedron"
+    },
+    {
+      "level": 1,
+      "title": "Example: Figure-Eight Knot",
+      "number": "6",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-6-example-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "Concluding Remarks",
+      "number": "7",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-7-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-acknowledgement"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot invariant",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        },
+        {
+          "term": "bunkyo",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math-ph/0105039v1 28 May 2001 December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † Department of Physics, Graduate School of Science, University of Tokyo, Hongo 7–3–1, Bunkyo, Tokyo 113–0033, Japan. (Received: ) ABSTRACT We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-ph-0105039v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "citen dthurs99a",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "knot invariant",
+          "heading": false
+        },
+        {
+          "term": "jones invariant",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        }
+      ],
+      "extract": "Since the discovery of the Jones polynomial~\\cite{Jones85}, many knot invariants are proposed. In construction of these quantum invariants, the quantum group plays a crucial role, and a representation of the braid generator is derived from the universal $R$-matrix ~\\cite{Turae88}. Contrary to that the Alexander polynomial was known to be related with the homology of the universal abelian covering, the quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quantum-dilogarithm-function",
+      "number": "2",
+      "title": "Quantum Dilogarithm Function",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "octahedron",
+          "heading": false
+        },
+        {
+          "term": "r-operator",
+          "heading": false
+        }
+      ],
+      "extract": "spondingly the R-operator is identiﬁed with the oriented octahedron, whose vertices belong to the link L. This explains how the octahedron was introduced for each braiding in Ref. 10. We can apply the saddle point method to evaluate the asymptotic behavior of the classical limit of the knot invariant, and we further demonstrate that the saddle point equation for integrals of the knot in- variant exactly coincides",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-classical-dilogarithm-function",
+      "number": "2.1",
+      "title": "Classical Dilogarithm Function",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilogarithm function",
+          "heading": true
+        },
+        {
+          "term": "pentagon euler",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "begin gather",
+          "heading": false
+        },
+        {
+          "term": "end gather",
+          "heading": false
+        },
+        {
+          "term": "euler integral",
+          "heading": false
+        },
+        {
+          "term": "eqref euler",
+          "heading": false
+        },
+        {
+          "term": "label euler",
+          "heading": false
+        }
+      ],
+      "extract": "We collect properties concerning the classical dilogarithm function (see Refs.~\\citen{LLewi91Book,Kiril94} for review). The Euler dilogarithm function $\\Li(x)$ is defined by \\begin{align} \\Li(x) = \\sum_{n=1}^\\infty \\frac{x^n}{n^2} = - \\int_0^x \\frac{\\log(1-s)}{s} \\, \\mathrm{d} s . \\label{Euler_integral} \\end{align} The range $|x| \\leq 1$ in an infinite series is extended outside the unit circle in the second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-quantum-dilogarithm-function-and-the-r-operat",
+      "number": "2.2",
+      "title": "Quantum Dilogarithm Function and the $R$ Operator",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm gamma",
+          "heading": false
+        },
+        {
+          "term": "mathrm varphi",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "pentagon phi",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm bigr",
+          "heading": false
+        },
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "eqref pentagon",
+          "heading": false
+        }
+      ],
+      "extract": "We define a function $\\Phi_\\gamma(\\varphi)$ by an integral form following Ref.~\\citen{LFadd96a}: \\begin{equation} \\label{Faddeev_integral} \\Phi_\\gamma(\\varphi) = \\exp \\left( \\int_{\\mathbb{R}+\\mathrm{i} \\, 0} \\frac{\\mathrm{e}^{- \\mathrm{i} \\, \\varphi \\, x}} { 4 \\sh ( \\gamma \\, x) \\, \\sh(\\pi \\, x) } \\, \\frac{\\mathrm{d} x}{x} \\right) , \\end{equation} where we take $\\gamma \\in \\mathbb{R}$. We note that in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-representation",
+      "number": "2.3",
+      "title": "Representation",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime mathrm",
+          "heading": false
+        },
+        {
+          "term": "prime rangle",
+          "heading": false
+        },
+        {
+          "term": "langle prime",
+          "heading": false
+        },
+        {
+          "term": "mathrm gamma",
+          "heading": false
+        },
+        {
+          "term": "check prime",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "end subequations",
+          "heading": false
+        }
+      ],
+      "extract": "We now give the representation of these operators on the momentum space; $\\Hat{p} \\, |p \\rangle = p \\, | p \\rangle$ with $p\\in \\mathbb{R}$, and we take the vector space as $\\mathbf{V} = L^2(\\mathbb{R})$. The matrix elements of the $S$-operators are given by~\\cite{Hikam00a} \\begin{subequations} \\label{S_element} \\begin{align} \\langle p_1, p_2 \\ | \\ S_{1, 2} \\ | \\ p_1^\\prime , p_2^\\prime \\rangle & = \\frac{1}{4 \\, \\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-invariant-of-knot-and-link",
+      "number": "3",
+      "title": "Invariant of Knot and Link",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot invariant",
+          "heading": true
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm frac",
+          "heading": false
+        },
+        {
+          "term": "invariant tau",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "mathbf otimes",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "yang--baxter operators",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:invariant} With the ${R}$-matrix $\\Check{R}: \\mathbf{W}^{\\otimes 2} \\to \\mathbf{W}^{\\otimes 2}$ satisfying the braid relation~\\eqref{YBE_compact}, we can define the invariant of the knot $K$. We assume that we have the enhanced Yang--Baxter operators ($\\Check{R}, \\mu , \\alpha, \\beta$) satisfying~\\cite{Turae88} \\begin{subequations} \\label{other_enhanced} \\begin{gather} \\bigl( \\mu \\otimes \\mu \\bigr) \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-asymptotic-behavior-and-3-dimensional-picture",
+      "number": "4",
+      "title": "Asymptotic Behavior and 3-dimensional Picture",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime psfrag",
+          "heading": false
+        },
+        {
+          "term": "reflectbox psfrag",
+          "heading": false
+        },
+        {
+          "term": "psfrag psfig",
+          "heading": false
+        },
+        {
+          "term": "psfrag rotatebox",
+          "heading": false
+        },
+        {
+          "term": "psfrag textcolor",
+          "heading": false
+        },
+        {
+          "term": "mathrm prime",
+          "heading": false
+        },
+        {
+          "term": "prime rangle",
+          "heading": false
+        },
+        {
+          "term": "eqref pentagon",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:asymptotic} We shall reveal the 3-dimensional picture of the knot invariant $\\tau_1(K)$ by studying an asymptotic behavior in a limit $\\gamma \\to 0$. Using eq.~\\eqref{Phi_gamma_0}, we find that the $S$-operator~\\eqref{S_element_2} is represented by \\begin{subequations} \\label{S_asymptotics} \\begin{align} \\langle p_1 , p_2 \\ | \\ S_{1,2} \\ | \\ p_1^\\prime , p_2^\\prime \\rangle & \\sim \\delta(p_1 + p_2 -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-3-dimensional-picture-of-the-invariant",
+      "number": "5",
+      "title": "3-Dimensional Picture of the Invariant",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "3-Dimensional Picture of the Invariant 5.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-51-r-operators-as-the-braid-operator",
+      "number": "5.1",
+      "title": "$R$-Operators as the Braid Operator",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 1185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime psfrag",
+          "heading": false
+        },
+        {
+          "term": "psfrag rotatebox",
+          "heading": false
+        },
+        {
+          "term": "reflectbox psfrag",
+          "heading": false
+        },
+        {
+          "term": "psfrag textcolor",
+          "heading": false
+        },
+        {
+          "term": "w-p prime",
+          "heading": false
+        },
+        {
+          "term": "z-p prime",
+          "heading": false
+        },
+        {
+          "term": "mathrm w-p",
+          "heading": false
+        },
+        {
+          "term": "vec prime",
+          "heading": false
+        }
+      ],
+      "extract": "We now give the 3-dimensional picture of the $R$-operators~\\eqref{check_R}, and study the relationship between the hyperbolic geometry and our invariant. The $R$-operator consists from four $S$ operators, and its matrix element $\\langle \\vec{p} \\ | \\ \\Check{R}_{12,34} \\ | \\ \\vec{p^\\prime} \\rangle$ is explicitly given by \\begin{multline} \\label{R_element_int} \\langle p_1, p_2, p_3, p_4 \\ | \\ \\Check{R}_{12,34} \\ | \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-52-hyperbolicity-condition-for-surface",
+      "number": "5.2",
+      "title": "Hyperbolicity Condition for Surface",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm bigr",
+          "heading": false
+        },
+        {
+          "term": "mathcal bigl",
+          "heading": false
+        },
+        {
+          "term": "substack leq",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        },
+        {
+          "term": "mathcal langle",
+          "heading": false
+        },
+        {
+          "term": "int mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm exp",
+          "heading": false
+        },
+        {
+          "term": "cdot prod",
+          "heading": false
+        }
+      ],
+      "extract": "We first consider a surface $D_a$, which is surrounded by alternating crossings as in Fig.~\\ref{fig:alternate_knot}. We assign octahedron for each crossing following eq.~\\eqref{attach_octa}, and introduce variables as shown there. \\begin{figure}[t] \\begin{equation*} \\xy/r2.0pc/:. { { (0,0)*+{D_a} }, { (5, -1.73) \\ar@{-}|@{} (4.4, -0.7) }, { (3.6, 0.7) \\ar@{-}|@{} (1, 5.2) }, { (4, 3.46) \\ar@{-}|@{} (2.5, 3.46) }, {",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-53-gluing-around-ridgeline-of-octahedron",
+      "number": "5.3",
+      "title": "Gluing Around Ridgeline of Octahedron",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 824,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag rotatebox",
+          "heading": false
+        },
+        {
+          "term": "psfrag textcolor",
+          "heading": false
+        },
+        {
+          "term": "reflectbox rotatebox",
+          "heading": false
+        },
+        {
+          "term": "ridge octa",
+          "heading": false
+        },
+        {
+          "term": "textcolor red",
+          "heading": false
+        },
+        {
+          "term": "rotatebox xybox",
+          "heading": false
+        },
+        {
+          "term": "psfrags parbox",
+          "heading": false
+        },
+        {
+          "term": "text rotatebox",
+          "heading": false
+        }
+      ],
+      "extract": "We shall check a correspondence between the hyperbolic condition and the saddle point equation for ridgelines of octahedron. We consider a case such as Fig.~\\ref{fig:Ridge_condition}. Therein $n-1$ over-crossings $\\text{\\rotatebox{45}{$\\xybox{0;/r1.4pc/:, {\\xoverv}}$}}$ are sandwiched by two under-crossings $\\text{\\rotatebox{45}{$\\xybox{0;/r1.4pc/:, {\\xunderv}}$}}$. \\begin{figure}[htbp] \\begin{equation*} \\xy/r1pc/:.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-6-example-figure-eight-knot",
+      "number": "6",
+      "title": "Example: Figure-Eight Knot",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "24",
+      "labelEnd": "28",
+      "words": 740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrags psfrag",
+          "heading": false
+        },
+        {
+          "term": "reflectbox psfrag",
+          "heading": false
+        },
+        {
+          "term": "psfrag rotatebox",
+          "heading": false
+        },
+        {
+          "term": "psfrag textcolor",
+          "heading": false
+        },
+        {
+          "term": "ding psfrag",
+          "heading": false
+        },
+        {
+          "term": "red reflectbox",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": true
+        },
+        {
+          "term": "ding psfig",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:eight} We shall demonstrate how to decompose the knot complement into tetrahedra in a case of the figure-eight knot. The figure-eight knot is given as $\\sigma_1 \\, \\sigma_2^{~-1} \\, \\sigma_1 \\, \\sigma_2^{~-1}$ in the braid group, and is depicted as Fig.~\\ref{fig:fig_eight}. To each crossing in the figure-eight knot, we assign the octahedron (Fig.~\\ref{fig:R_matrix} or eq.~\\eqref{attach_octa}), and give",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-7-concluding-remarks",
+      "number": "7",
+      "title": "Concluding Remarks",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde tau",
+          "heading": false
+        },
+        {
+          "term": "scissors congruence",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "mathrm vol",
+          "heading": false
+        },
+        {
+          "term": "invariant tilde",
+          "heading": false
+        },
+        {
+          "term": "citen",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        }
+      ],
+      "extract": "We have studied the knot invariant by use of the infinite dimensional representation of the quantum dilogarithm function. This invariant can be seen by construction as the non-compact analogue of the colored Jones polynomial. We have found that, by assigning the oriented tetrahedra to the $S$-operator which solves the five-term relation, the braid operators can be depicted as the octahedron as was shown in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "kashaev",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "faddeev",
+          "heading": false
+        },
+        {
+          "term": "preprint",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        }
+      ],
+      "extract": "The author would like to thank Hitoshi Murakami for kind explanation of his results and for stim- ulating discussions. He is also grateful to R. Kashaev and Y. Yokota for useful communications. Thanks are to Referee for useful comments. References [1] V. F. R. Jones: Bull. Amer. Math. Soc. 12, 103 (1985). [2] V. Turaev: Invent. Math. 92, 527 (1988). [3] R. M. Kashaev: Mod. Phys. Lett. A 10, 1409 (1995). [4] R. M.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "psfrags psfrag",
+      "heading": false
+    },
+    {
+      "term": "reflectbox psfrag",
+      "heading": false
+    },
+    {
+      "term": "psfrag rotatebox",
+      "heading": false
+    },
+    {
+      "term": "gamma mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm prime",
+      "heading": false
+    },
+    {
+      "term": "psfrag textcolor",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm langle",
+      "heading": false
+    },
+    {
+      "term": "psfrag psfig",
+      "heading": false
+    },
+    {
+      "term": "mathrm bigr",
+      "heading": false
+    },
+    {
+      "term": "cdot mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm w-p",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Braid relation, or the constant Yang–Baxter equation",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Due to sign of the function V (x, y) in eqs. (4.1) these tetrahedra are mirror images each other. Therein the modulus of the ideal tetrahedron is given by ep′",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Pachner move 2 ↔3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Assignment of the octahedron to the braiding operator ﬁrst appeared in Ref. 10, and it was later used to give the decomposition of the knot complement directly from Kashaev’s invariant [8]",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The braid operator ( ˇR-matrix) ⟨⃗p | ˇR |⃗p′⟩is represented by the octahedron",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A segment of link L which is surrounded by alternating crossings is depicted. We number",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "We parameterize a segment of link L. We substitute eqs. (4.1) and (5.10) into above equation. We get",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The 3-dimensional picture of Fig. 8 is given. Eq. (5.17) coincides with the hyperbolicity",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "A segment of link L",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Depicted are polyhedra which come from Fig. 10. The hyperbolicity condition around",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The ﬁgure-eight knot 41",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "We attach octahedra for each crossing of the ﬁgure-eight knot",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Gluing 3 tetrahedra in surface D1 results in 2 tetrahedra by the 2-3 Pachner move. The",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Gluing 3 tetrahedra in surfaces (a) D0, (b) D2, and (c) D3 gives the 2 adjacent tetrahe-",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Gluing 2 tetrahedra in a surface D4 gives a suspension",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Gluing 2 tetrahedra in a surface D5",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Complement of the ﬁgure-eight knot",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "18 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-ph-0105039v1"
+  }
+}

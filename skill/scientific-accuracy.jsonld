@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/scientific-accuracy.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/scientific-accuracy",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "scientific-accuracy",
+      "title": "Scientific Accuracy Skill",
+      "instructionsPath": "skills/local/scientific-accuracy.md",
+      "instructionLines": 429,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

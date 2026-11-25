@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/fd58d8e182edda805fed0946606c5ab82f81",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS",
+      "dcterms:creator": [
+        "Kim†, Sungsoon",
+        "Lee*, Dong-il"
+      ],
+      "dcterms:issued": "D:20180725",
+      "dcterms:abstract": "For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial interpretation for the fully commutative elements.",
+      "dcterms:source": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
+      "dcterms:hasVersion": "library/fd58d8e182edda805fed0946606c5ab82f81"
+    }
+  ]
+}

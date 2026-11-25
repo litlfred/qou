@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1107.1559v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quaternion-Octonion SU (3) Flavor Symmetry",
+  "contains": [
+    "library/arxiv-1107.1559v1/sections/sec-front-matter",
+    "library/arxiv-1107.1559v1/sections/sec-000",
+    "library/arxiv-1107.1559v1/sections/sec-001",
+    "library/arxiv-1107.1559v1/sections/sec-002",
+    "library/arxiv-1107.1559v1/sections/sec-003",
+    "library/arxiv-1107.1559v1/sections/sec-004",
+    "library/arxiv-1107.1559v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states.\n\n**Quaternion-Octonion SU (3) Flavor Symmetry**\n\n*Pushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1)*\n\n12 pp, 7 sections.\n\n**Abstract.** Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states. Extending this formalism to the case of SU(3) group we have considered the theory of octonion variables. Accordingly, the octonion splitting of SU(3) group have been reconsidered and various commutation relations for SU(3) group and its shift operators are also derived and veriﬁed for diﬀerent iso-spin multiplets i.e. I, U and V - spins.\n\n**Outline.** Front matter; 1 Introduction; 2 Quaternionic representation of isospin SU(2); 3 Octonions and Gelmann Matrices; 4 Octonion Formulation of SU(3) Flavor Group; 5 Commutation relations for Octonion Valued Sh; 6 Discussion and Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1107.1559&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1107.1559v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1107.1559v1.pdf",
+    "source_sha256": "b9f867ae7120eda6f5b1f6aa6e5765371171f65fe5aa40ebe61f23ff5709f07b",
+    "pages": 12,
+    "arxiv": {
+      "id": "1107.1559",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "8 Jul 2011"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

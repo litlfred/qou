@@ -1,0 +1,539 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "akemann-2022-j-phys-a-math-theor-55-194002",
+  "blocks": [
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Physics A:\nMathematical and\nTheoretical\n     \nPAPER • OPEN ACCESS\nConsecutive level spacings in the chiral Gaussian\nunitary ensemble: from the hard and soft edge to\nthe bulk\nTo cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002\n \nView the article online for updates and enhancements.\nYou may also like\nThe smallest eigenvalue distribution in the\nreal Wishart–Laguerre ensemble with even\ntopology\nT Wirtz, G Akemann, T Guhr et al.\n-\nGUE-chGUE transition preserving chirality\nat finite matrix size\nTakuya Kanazawa and Mario Kieburg\n-\nExtreme values of CUE characteris",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/figure-img-p002-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-consecutive-level-spacings-in-the-chiral-gaussia.md",
+      "narrative": null,
+      "content": "Gaussian unitary ensemble: from the hard\nand soft edge to the bulk\nG Akemann1,∗\n, V Gorski1 and M Kieburg2\n1 Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,\nGermany\n2 School of Mathematics and Statistics, University of Melbourne, 813 Swanston\nStreet, Parkville, Melbourne VIC 3010, Australia\nE-mail: akemann@physik.uni-bielefeld.de\nReceived 24 December 2021, revised 15 March 2022\nAccepted for publication 18 March 2022\nPublished 11 April 2022\nAbstract\nThe local spectral statistics of random matrices forms distinct universality\nclasses, strongly depending on the posit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Without going into detail of the vast literature on the application to QCD, and on comparing to lattice data from first principle lattice QCD simulations, cf [17, 18], let us focus on random matrix questions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Section 6 contains the comparison to data from lattice QCD, and in section 7 we present our conclusions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "One of the cornerstonesin applying randommatrix theory is the local level spacing distribution.\nIt provides a statistical description of the spacing between consecutive eigenvalues. For that\npurpose,the mean level density around the point where we zoom in has to be unfolded,meaning\nit is mapped to be approximately constant, see [1]. Then, the energies are measured in units\nof this constant. This procedure applies to the bulk of the spectrum. The spacing distribution\ncontinues to be a popular tool in today’s applications, ranging from quantum spin chains [2],\nquantum circuits [3], chemical isot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transition from Bessel- and Airy- to the sine-kernel",
+      "pageStart": 5,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-2-transition-from-bessel--and-airy--to-the-sine.md",
+      "narrative": null,
+      "content": "The spacing between consecutive eigenvalues of random matrices with unitary symmetry in\nthe bulk of the spectrum is well-approximated by Wigner’s surmise [1, 11] for 2 × 2 GUE\nmatrices,\npWigner(s) = 32s2\nπ2 e−4s2/π.\n(1)\nWe will also give a much more precise expression in appendix A, cf [14], which is universal.\nIn the present case of the χGUE also called complex Wishart–Laguerre ensemble, deviations\nshould show up at the hard edge because there the k-point correlation functions differ from the\nones in the bulk of the spectrum.\nBefore we address this question in terms of the nearest neighbour l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gap probabilities and level spacing distributions",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-3-gap-probabilities-and-level-spacing-distributi.md",
+      "narrative": null,
+      "content": "Let us underscore that most of the ensuing discussion in the present section holds for arbitrary\npositive real spectra with a finite number of eigenvalues. Thus our particular choice of an\nensemble can be readily generalised.\nWe start from a generic joint probability density Pn({x}) of the set of n unordered eigenval-\nues {x} = {xi}n\ni=1, with xi ∈R+ for all i = 1, . . ., n. The emphasis on ‘unordered’ is impor-\ntant, as some combinatorial constants depend on whether the eigenvalues have been ordered or\nnot. In our case, the normalised joint probability density of the χGUE [16, 41] with Nf ins",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analysis at finite matrix dimension",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-4-analysis-at-finite-matrix-dimension.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orthogonal polynomials and partition function",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-41-orthogonal-polynomials-and-partition-function.md",
+      "narrative": null,
+      "content": "To compute the partition functions Z(Nf)\nν,n ({m}) and Z( \u0002\nNf)\n2,n−k−1({#m}) of the χGUE with a given\nnumber of flavours, we begin with the χGUE at Nf = 0, where the partition function and all k-\npoint correlation functions can be expressed in terms of the generalised Laguerre polynomials\nand their kernel. Their orthogonality relation with squared norms h j reads [40, table 18.3.1]\n\u0002 ∞\n0\ndz L(ν)\nl (z2)L(ν)\nj (z2)z2ν+1e−z2 = h jδl j,\nh j = (j + ν)!\nj! 2\n,\n(45)\n13\nJ. Phys. A: Math. Theor. 55 (2022) 194002\nG Akemann et al\nvalid for ν > −1 for convergence. Here [40, equation (8.5.12)]\nL(ν)\nj (z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partition function of shifted masses",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-42-partition-function-of-shifted-masses.md",
+      "narrative": null,
+      "content": "In order to determine the second partition function Z( \u0002\nNf)\n2,n−k−1({#m}) with an extended number of\nshifted masses (41), which are partly degenerate, we will use the following theorem from [44].\nIt expresses the expectation value of the product of characteristic polynomials in several equiv-\nalent forms, in terms of the determinant of a matrix of kernels and orthogonal polynomials.\nAdapted to our setting of the χGUE, it reads for K ⩾L\n15\nJ. Phys. A: Math. Theor. 55 (2022) 194002\nG Akemann et al\n1\nZ(0)\nν,n\n\u0002\n[0,∞)n\nn\n\u001b\nj=1\n\ndy jy2ν+1\nj\ne−y2\nj\nK\n\u001b\nk=1\n(v2\nk −y2\nj)\nL\n\u001b\nl=1\n(u2\nl −y2\nj)\n\u000e\nΔn({y2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hard edge kth spacing distribution at finite-",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-43-hard-edge-kth-spacing-distribution-at-finite.md",
+      "narrative": null,
+      "content": "Inserting the expression (72) as well as (57) into (42), we obtain the following relatively com-\npact expression for the spacing distribution at the hard edge between the kth and (k + 1)st\nsmallest eigenvalue for arbitrary k, with Nf flavours and topology ν at fixed n. Recalling the\ndefinition of the shifted variables from (61), we have\n(73)\nThe expression (73) is our first main result and will serve as the starting point for the asymptotic\nanalysis in the next section.\nBefore we come to this, let us make some comments on the duality between the index ν\nand the number of flavours with mass 0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic analysis at the hard edge",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-5-asymptotic-analysis-at-the-hard-edge.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The large- limit at fixed and",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-51-the-large--limit-at-fixed-and.md",
+      "narrative": null,
+      "content": "In the asymptotic large-n limit of the χGUE at the hard edge, with our convention of an n-\nindependent weight function, it is well known that the eigenvalues, and therefore also the\nspacings and masses scale with √n, see [18]. We therefore define the following variables\nσ ≡√n s,\nμ f ≡√n m f,\nf = 1, . . . , Nf,\n(76)\n20\nJ. Phys. A: Math. Theor. 55 (2022) 194002\nG Akemann et al\nwhere σ and the μ f remain finite in the large-n limit. In view of the integrations to be performed\nin (73), and the definition (61) of the shifted variables therein, we also redefine the integration\nvariables in the follo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to the bulk spacing distribution",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-52-comparison-to-the-bulk-spacing-distribution.md",
+      "narrative": null,
+      "content": "We now turn to the comparison between the hard edge spacing distribution for different param-\neter values k, Nf and ν, and the bulk spacing distribution (A.1). We will also compare with the\nWigner surmise (1), which is often used in comparison to real data, in order to illustrate the\ncloseness between the hard edge and bulk spacing.\nWe begin with the quenched spacing between the first two smallest eigenvalues (k = 1) with\nproper unfolding, meaning the first moment is unity, see figure 3. The deviations of this level\nspacing distribution from the Wigner surmise (1) or from the bulk spacing dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "To get a statistical quantification of this effect, we have performed another Monte Carlo simulation of the random matrix ensemble with ν ∼n for increasing ν, and cal- culated their spacings, differences to the bulk and empirical densities to observe this effect (see figure 7).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics to the Airy statistics",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-53-asymptotics-to-the-airy-statistics.md",
+      "narrative": null,
+      "content": "Another limit is the large-ν limit which should approach the level spacing distributions at the\nsoft edge. Actually this also holds when the number of flavours Nf is sent to infinity, while\nthe corresponding masses are of the order of 1/√n, as we have exploited this scaling in our\ncomputations. In general, we can understand the effect of non-vanishing flavours and topology\nas follows. Both push the eigenvalues further away from the origin, making the effect of the\nhard wall less relevant.\nIn the top plots of figure 6 we have numerically evaluated (86) for k = 1, Nf = 0 and\nν = 0, 1, 2. Hence,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "For that reason we consider empirical data from lattice QCD Dirac operators.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-012-02.md",
+      "narrative": null,
+      "content": "Therefore, we can conclude that the level spacing distribution is not at all a good measure in lattice QCD to discern hard edge from bulk statistics.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to data from lattice QCD",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-012-6-comparison-to-data-from-lattice-qcd.md",
+      "narrative": null,
+      "content": "Finally, we would like to compare with edge statistics from data, notably at the hard edge where\nwe have derived analytical predictions. For that reason we consider empirical data from lattice\nQCD Dirac operators.\nIt is known [17] that strongly interacting quantum field theories in the deepest infrared\nlimit, the ε-regime, agree with the statistics obtained from random matrix theory. In QCD,\n29\nJ. Phys. A: Math. Theor. 55 (2022) 194002\nG Akemann et al\nTable 2. The χ2-test for the level spacing of the smallest two eigenvalues for a few\ndecreasing values of q = n/(n + ν) and increasing matrix di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "One example is the micro- scopic Bessel-density close to the origin, that is relevant when chiral symmetry is important, e.g. in comparison to data from lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-7-conclusion.md",
+      "narrative": null,
+      "content": "In the application of random matrices we have learned to appreciate the predictive power for\nspectral correlations, depending on the location within the spectrum. One example is the micro-\nscopic Bessel-density close to the origin, that is relevant when chiral symmetry is important,\ne.g. in comparison to data from lattice QCD. It depends heavily on the number of zero-modes\nν, that characterise different topological sectors of the theory with broken chiral symmetry,\nand on the number of light flavours Nf when the quark masses are sufficiently small. A sec-\nond example is the Tracy–Widom distrib",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-acknowledgments.md",
+      "narrative": null,
+      "content": "This work was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research\nFoundation)—SFB 1283/2 2021–317210226 ‘Taming uncertainty and profiting from ran-\ndomness and low regularity in analysis, stochastics and their applications’ (GA) and by the\nAustralian Research Council (ARC) via the Grant DP210102887 (MK). Moreover, we would\nlike to thank Hidenori Fukaya for providing us with the lattice data on behalf of the JLQCD\ncollaboration.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data availability statement",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-015-data-availability-statement.md",
+      "narrative": null,
+      "content": "The data generated and/or analysed during the current study are not publicly available for\nlegal/ethical reasons but are available from the corresponding author on reasonable request.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. The spacing distribution in the bulk",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-appendix-a-the-spacing-distribution-in-the-bulk.md",
+      "narrative": null,
+      "content": "There are several alternative formulations of the exact spacing distribution for the GUE in the\nbulk available. For instance in Mehta’s book [14], in chapter 6 an infinite product expansion\nin terms of Fredholm determinant eigenvalues is offered. The latter are given by integrals of\nspheroidal functions.\nThe bulk spacing for the GUE used in the present work is taken from [12]. It is approximated\nby a highly accurate Pad´e expansion [13]. Such an expansion is given in terms of two rational\nfunctions, that takes into account the correct small- and large-s behaviour. In the present case\nthis is g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ORCID iDs",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-017-orcid-ids.md",
+      "narrative": null,
+      "content": "G Akemann\nhttps://orcid.org/0000-0002-1710-4258\nM Kieburg\nhttps://orcid.org/0000-0001-8864-6022",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[1] Guhr T, Müller-Groeling A and Weidenmüller H A 1998 Phys. Rep. 299 190\n[2] Szász-Schagrin D, Pozsgay B and Takacs G 2021 SciPost Phys. 11 037\n[3] Kim J, Oz Y and Rosa D 2022 arXiv:2201.01452\n[4] Majarshin A J, Luo Y-A, Pan F and Draayer J P 2021 J. Phys. G: Nucl. Part. Phys. 48 105107\n[5] Saleki Z, Majarshin A J, Luo Y-A and Zhang D-L 2021 Phys. Rev. E 104 014116\n[6] Elkamshishy A A and Greene C H 2021 Phys. Rev. E 103 062211\n[7] Rao P, Deota H N and Chavda N D 2021 Pramana 95 1–8\n[8] Akemann G, Baik J and Di Francesco P (ed) 2011 The Oxford Handbook of Random Matrix Theory\n(Oxford: Oxford",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

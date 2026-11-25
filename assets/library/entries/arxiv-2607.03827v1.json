@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2607.03827v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The aim of this article is to clarify new and sometimes unexpected\nstructures of affine cellular algebras and properties of embeddings into\nasymptotic algebras, to illustrate these structures and properties by examples\nand to\nput them into the context of algebraic Lie theory. This continues and builds\nupon \\cite{KXaffine} and \\cite{CKLS}.\n\nPlenty of finite dimensional algebras arising in algebraic Lie theory have\nbeen shown to be cellular algebras. For instance, group algebras of symmetric\ngroups and their Hecke algebras as well as classical Schur algebras, blocks\nof the Bernstein-Gelfand-Gelf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS\nPAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP\nAbstract. The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras\nˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s\nasymptotic Hecke algebras. The main new results are about a double centraliser property between A\nand ˆA, about constructing ˆA from cell modules of A, about existence of an embedding A →ˆA and\nabout a faithful functor from torsionless ˆA-modules to A-modules as well as about the e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinants for affine Cellular Algebras",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-determinants-for-affine-cellular-algebras.md",
+      "narrative": null,
+      "content": "Throughout this text let $k$ denote a commutative Noetherian domain. We recall\nthe definition of an affine cell ideal of a $k$-algebra, introduced in\n\\cite{KXaffine}, and then collect basic properties of determinants of\nswich matrices. These determinants will play crucial roles in assumptions and\nproofs of main results.\n\\begin{definition} Let $A$ be a unitary $k$-algebra with a $k$-involution $i$ on $A$. A two-sided ideal $J$ in $A$ is called an \\emph{affine cell ideal} if and only if $i(J)=J$, such that \n\\begin{enumerate}\n\\item there exist a free $k$-module $V$ of finite rank and an affine co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homomorphisms between affine cell ideals.",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-homomorphisms-between-affine-cell-ideals.md",
+      "narrative": null,
+      "content": "The purpose of this section is to show that for affine cellular algebras, whose determinants are not zero-divisors and whose cell ideals are idempotent, there are no non-zero homomorphisms between different cell modules. In particular,\nTheorem \\ref{TheoremE} will be established. At the end of the section, two\nexplicit examples of affine cellular algebras will be discussed in detail.\n\nFirst, some motivation for the results to come will be explained. Let $A$ be  a cellular algebra  over an integral domain $k$ and cell modules $\\Delta_i$ and matrices $\\psi^{(i)}$, for $1\\leq i \\leq n$.  Graham an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotic algebra of an affine cellular algebra",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a.md",
+      "narrative": null,
+      "content": "In this section, the asymptotic algebra of an affine cellular algebra\nand the embedding of an affine cellular algebra into its asymptotic algebra\nwill be described in detail. Moreover, the asymptotic algebra will be\nconstructed as endomorphism ring in a double centraliser property.\nThis proves Theorems A and D. \n\nLet $A$ be an affine cellular algebra with cell chain \n\\begin{equation}\\label{notation:cellchain}\n  0=J_0 \\subset J_1 \\subset \\cdots \\subset J_n=A,\\end{equation} with cell data \n$(B_i, \\sigma_i, \\Delta_i, \\psi^{(i)}, \\alpha_i)$. \nIn particular, \n\\begin{equation}\\label{notation:celldat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of the embedding into the asymptotic algebra",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-004-5-properties-of-the-embedding-into-the-asymptoti.md",
+      "narrative": null,
+      "content": "In this section we will provide further information related with the embedding\ninto the asymptotic algebra by considering the restriction functor associated to the\nembedding $A\\to \\asym$. Moreover we will derive a geometric property of\nthe embedding. This enhances in particular Theorems \\ref{TheoremB} and\n\\ref{TheoremC}.\n\nThroughout this section, $A$ is an affine cellular algebra with cell chain $\\{J_i : 1\\leq i \\leq n\\}$ as in  (\\ref{notation:cellchain}) and cell data $(B_i,\\sigma_i,\\Delta_i, \\psi^{(i)}, \\alpha_i)$ as in (\\ref{notation:celldata}), with $d_i=\\rank_{B_i}(\\Delta_i)$, such that n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and methods",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-6-examples-and-methods.md",
+      "narrative": null,
+      "content": "This section aims at relating the general theory of affine cellular algebras to classes of examples\noccurring in applications, in particular to algebraic Lie theory. This will happen in several respects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An explicit example",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-006-61-an-explicit-example.md",
+      "narrative": null,
+      "content": "\\newcommand{\\gs}{s_1}\n\\newcommand{\\gt}{s_2}\n\\newcommand{\\Cs}{C_{\\gs}}\n\\newcommand{\\Ct}{C_{\\gt}}\n\\newcommand{\\Cst}{C_{\\gs\\gt}}\n\\newcommand{\\Cts}{C_{\\gt\\gs}}\n\\newcommand{\\Csts}{C_{\\gs\\gt\\gs}}\n\n\\newcommand{\\Ts}{t_{\\gs}}\n\\newcommand{\\Tt}{t_{\\gt}}\n\\newcommand{\\Tst}{t_{\\gs\\gt}}\n\\newcommand{\\Tts}{t_{\\gt\\gs}}\n\\newcommand{\\Tsts}{t_{\\gs\\gt\\gs}}\n\nThis section starts by providing a concrete example of the Hecke algebra $H$\nof type $A_2$, which is cellular over $R=\\ZZ[q^{\\pm 1/2}]$,  i.e.\\!\\!\\! of the\nsymmetric group $W=\\Sigma_3 = \\{ id, \\gs, \\gt, \\gs\\gt,\\gt\\gs,\\gs\\gt\\gs \\}$,\nwhere $\\gs=(12)$ and $\\gt=(23)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extended affine Hecke algebra of type A",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-007-62-extended-affine-hecke-algebra-of-type-a.md",
+      "narrative": null,
+      "content": "An extended affine Hecke algebra $H$ of type $A_{n-1}$ is an affine cellular algebras, as shown in \n\\cite[Section 5]{KXaffine}. \n We will briefly revise its affine cellular structure. Let $W$ be an extended Weyl group of type $A_n$ (with Coxeter system $(W,S)$) and let $\\{C_w:w\\in W\\}$ be the Kazhdan-Lusztig basis for the Hecke algebra $H$ of $W$ over $R=\\Z[q^{\\pm 1/2}]$ as in \\cite{KazhdanLusztig}. Then \n\\begin{equation}\nC_wC_u=\\sum_{z\\in W}h_{w,u,z}C_z\n\\end{equation}\nfor some $h_{w,u,z}\\in R$.  Let ${\\mathcal L}$ be Lusztig's asymptotic Hecke algebra of $(W,S)$ as in \\cite{Lusztig2}. This is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gram determinants and Jucys Murphy elements",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-008-63-gram-determinants-and-jucys-murphy-elements.md",
+      "narrative": null,
+      "content": "In the case of extended affine Hecke algebras of type $A$, no determinant\nof a swich matrix is a zero-divisor, by Lemma \\ref{lemma:phic-injective} and\nProposition \\ref{embeddingscoincide}. Thus the assumptions in our main\ntheorems are satisfied for this class of algebras. For other classes of\nalgebras these assumptions are known to be satisfied as well. We are\ngoing to provide some references to methods used and results obtained.\n\nIn the classical situation of cellular algebras in \\cite{GrahamLehrer}, Gram\ndeterminants arise in the following way: A cellular algebra $A$ in\n\\cite{GrahamLehrer} i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.03827v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] Michael Francis Atiyah and Ian Grant Macdonald, Introduction to commutative algebra, Addison-Wesley Publishing\nCo., Reading, Mass.-London-Don Mills, Ont., 1969.\n[2] Paul Baum and Victor Nistor, Periodic cyclic homology of Iwahori-Hecke algebras, K-Theory 27 (2002), no. 4, 329–\n357.\n[3] William C. Brown, Matrices over commutative rings, Monographs and Textbooks in Pure and Applied Mathematics,\nvol. 169, Marcel Dekker, Inc., New York, 1993.\n[4] William Price Brown, Generalized matrix algebras, Canadian J. Math. 7 (1955), 188–190.\n[5] Paula A. A. B. Carvalho, Steffen Koenig, Christian Lomp, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/ontologist.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/ontologist",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "ontologist",
+      "title": "Semantic Ontologist (Ambiguity Detection, Glossary & Mathlib4 Type Alignment)",
+      "description": "Semantic Ontologist — audits narrative `.md` blocks and `defines: [...]` glossary slugs under `folio/` for mathematical ambiguity, maps paper terminology to Mathlib4 / Two-Tier Reservoir / QOU Lean 4 identifiers, and enforces `:defterm` / `:refterm` + universe polymorphism (`BP005c`) before formalization proceeds.",
+      "instructionsPath": "skills/local/ontologist.md",
+      "instructionLines": 92,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1004.1533v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Turaev--Viro (TV) invariants of 3-manifolds $Z_{TV}(M)$ were defined by\nTuraev and Viro in \\ocite{TV} using a quantum analog of 6j symbols for\n$sl_2$. In the same paper it was shown that these invariants can be\nextended to a 3-dimensional TQFT. \n\nLater, Barrett and Westbury \\ocite{barrett} showed that these\ninvariants can be defined for any monoidal category $\\C$ possessing a\nsuitable notion of duality (``spherical category''). In particular, they\ncan be defined for the category of $G$-graded vector spaces, where $G$ is a\nfinite group. In this special case, the resulting TQFT coincides with th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1004.1533v3  [math.GT]  14 Jun 2010\nTURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT\nBENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR.\nAbstract. In this paper we show how one can extend Turaev-Viro invariants,\ndeﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor-\nners. We demonstrate that this gives an extended TQFT which conjecturally\ncoincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld\ncenter Z(C). In the present paper we give a partial proof of this statement.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "Kevin Costello and Owen Gwilliam for helpful suggestions and discussions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries I: spherical categories",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-1-preliminaries-i-spherical-categories.md",
+      "narrative": null,
+      "content": "\\label{s:prelim}\n\n\n\nIn this section we collect notation and some facts about spherical\ncategories.\n\nWe fix   an algebraically  closed field  $\\kk$ of characteristic 0 and\n denote by $\\Vect$ the category of finite-dimensional vector spaces over\n$\\kk$.\n\nThroughout the paper, $\\C$ will denote a spherical fusion category over \n $\\kk$. We refer the reader\nto the paper \\ocite{drinfeld} for the definitions and properties of such\ncategories. Note that we are not requiring a braiding on $\\C$. \n\nIn particular, $\\C$ is semisimple with finitely many\nisomorphism classes of simple objects. We will denote by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries II: Drinfeld Center",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-2-preliminaries-ii-drinfeld-center.md",
+      "narrative": null,
+      "content": "\\label{s:center}\n\n\n\nWe will also need the notion of Drinfeld center of a spherical fusion\ncategory. Recall that the Drinfeld center $Z(\\C)$ of a fusion category $\\C$\nis defined as the category whose objects are pairs $(Y,\\ph_Y)$, where $Y$\nis an object of $\\C$ and $\\ph_Y$ -- a functorial isomorphism $Y\\otimes -\\to\n-\\otimes Y$ satisfying certain compatibility conditions (see\n\\ocite{muger1}).\n\nAs before, we will frequently use graphical presentation of morphisms\nwhich involve objects both of $\\C$ and $Z(\\C)$. In these diagrams, we\nwill show objects of $Z(C)$ by double green lines   and the\nhalf-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polytope decompositions",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-3-polytope-decompositions.md",
+      "narrative": null,
+      "content": "\\label{s:polytope}\n\n\nIt will be convenient to rewrite the definition of Turaev--Viro (TV) \ninvariants using not just triangulations, but more general cellular\ndecompositions. \nIn this section we give precise definitions of these decompositions.\n\n\n\nIn what follows, the word ``manifold'' denotes a compact, oriented,\npiecewise-linear (PL) manifold; unless otherwise specified, we assume that\nit has no boundary. Note that in dimensions 2 and 3, the category of PL\nmanifolds is equivalent to the category of topological manifolds. For an \noriented manifold $M$, we will denote by $\\ov{M}$ the same mani",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TV invariants from polytope decompositions",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-4-tv-invariants-from-polytope-decompositions.md",
+      "narrative": null,
+      "content": "\\label{s:TV}\n\nIn this section, we recall the definition of Turaev--Viro (TV) invariants\nof 3-manifolds. Our exposition essentially follows the approach of\nBarrett and Westbury \\ocite{barrett}; however, instead of triangulations we\nuse more general polytope decompositions as defined in the previous\nsection. \n\n\n\nLet $\\C$ be a spherical fusion category as in \\seref{s:prelim}, and $\\M$\n--- a combinatorial 3-manifold. We denote by $E$ the set of oriented edges\n(1-cells) of $\\M$. Note that each 1-cell of $\\M$ gives rise to two oriented\nedges, with opposite orientations. \n\n\\begin{definition}\\label{e:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of independence of polytope decomposition",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-5-proof-of-independence-of-polytope-decompositio.md",
+      "narrative": null,
+      "content": "\\label{s:proof}\n\nIn this section, we give proofs of \\thref{t:main1}, \\thref{t:main2},\ni.e. prove that TV invariants are independent of the choice of polytope\ndecomposition. The proof is based on \\thref{t:moves},\n\\thref{t:moves_rel}, which state that any two decompositions can be\nobtained from one another by a sequence of moves M1--M3 and their inverses.\n\nFirst, we fix some notation. Unless otherwise stated, we denote simple\nobjects in $\\C$ by \n$X_{i},X_{j}\\dots$ and arbitrary objects by $A, B,\\dots$. We let\n$N_{1}^{i_{1}\\dots i_{k}}=\\dim(\\<X_{i_{1}},\\dots,X_{i_{k}}\\>)$. \n\n\nWe will now show tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under M1",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-invariance-under-m1.md",
+      "narrative": null,
+      "content": "First we consider move M1. Note that by applying M2 and M3, we can\ntransform an open book  with any number of pages to one with only one page\n(see \\firef{f:book}). \n\\begin{figure}[ht]\n\\begin{align*}&\\figscale{0.7}{figures/book0.eps}\n    \\xxto{\\text{add edge to each page}}\n    \\figscale{0.7}{figures/book1.eps}\n    \\\\\n     & \\xxto{\\text{add faces between new edges}}\n    \\figscale{0.7}{figures/book2.eps}\n     \\xxto{\\text{remove all pages but one}}  \n   \\figscale{0.7}{figures/book3.eps} \n   \\end{align*}\n \\caption{Decomposing an open book into a single page book}\\label{f:book}\n \\end{figure} \nThus,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under M2",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-invariance-under-m2.md",
+      "narrative": null,
+      "content": "The invariance under M2 is seen as follows. By definition, the edge being\nremoved is incident to exactly two faces $c_1, c_2$. Each face bounds the\nsame two 3-cells $F_1, F_2$. In  \\firef{f:move2}, we draw the dual graphs.\nIn each of the summands we have two graphs corresponding to cells $F_1,\nF_2$, separated by a dot.  The equality follows\nimmediately from the fact that if $\\ph_\\al,\\ph^\\al$ and $\\psi_\\be,\\psi^\\be$ \nare dual bases, then so are $\\ph_\\al\\ccc{X_i}\\psi_\\be$, $\\psi^\\be\\ccc{X_i^*}\\ph^\\al$ \n(cf. \\coref{c:composition2}). \n\\begin{figure}[ht]\n\\begin{align*}\n&\\sum_{i,\\alpha,\\beta}d_{i}\\t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under M3",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-invariance-under-m3.md",
+      "narrative": null,
+      "content": "diately follows from Lemma 1.3, whith two subgraphs corresponding to two 3-cells\nseparated by the 2-cell being removed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surfaces with boundary",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-6-surfaces-with-boundary.md",
+      "narrative": null,
+      "content": "\\label{s:boundary}\n\nIn this section we extend the definition of TV TQFT to surfaces with\nboundary (and 3-manifolds with corners). Recall that according to general\nideas of extended field theory (see \\ocite{lurie}), an extended 3d \nTQFT should assign to a closed 1-manifold a 2-vector space, or an abelian\ncategory, and to a 2-cobordism between two 1-manifolds, a functor between\ncorresponding categories (which in the special case of cobordism between\ntwo empty 1-manifolds gives a functor $\\Vect\\to \\Vect$, i.e. a  vector\nspace). In this section we show that the extension of the  TV TQFT to\n1-manif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extended combinatorial surfaces",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-7-extended-combinatorial-surfaces.md",
+      "narrative": null,
+      "content": "\\label{s:ext_surfaces}\nWe begin by generalizing the definition of a polytope decomposition to\nextended surfaces.\n\n\\begin{definition}\\label{d:comb_ex_surface}\n    A  combinatorial extended surface $\\N$ is a an extended surface $N$\n  together with a  polytope decomposition such that\n\\begin{enumerate}\n  \\item The interior of each embedded disk is one of the 2-cells of the\n    polytope decomposition.\n  \\item Each marked point $P_\\al$ on the boundary of an embedded disk is a\n    vertex (0-cell) of the polytope decomposition. \n\\end{enumerate}\n\\end{definition}\n\nWe can now define the state space for s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of extended 3-manifolds",
+      "pageStart": 27,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-8-invariants-of-extended-3-manifolds.md",
+      "narrative": null,
+      "content": "\\label{s:ext_mfds}\nWe begin by generalizing the definition of a polytope decomposition to\nextended 3-manifolds as defined in \\deref{d:ex_manifold}.\n\n\\begin{definition}\\label{d:comb_ex_manifold}\n A combinatorial extended 3-manifold $\\M$ is  an extended PL 3-manifold\n  with a polytope decomposition such that\n\n  \\begin{itemize}\n   \\item For an open tube $T_\\al$, its interior is a single 3-cell of the\n    decomposition. Moreover, the interior of the  ``bottom disk''\n    $B_0=\\ph_\\al(\\{0\\}\\times D^2)$ is a single 2-cell of the decomposition,\n    and the marked point $P$ on the boundary of the botto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some computations",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-013-9-some-computations.md",
+      "narrative": null,
+      "content": "\\label{s:computations}\nIn this section we give some explicit computations of the TV invariants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cylinder over an annulus",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-91-cylinder-over-an-annulus.md",
+      "narrative": null,
+      "content": "\\label{s:computations1}\n\n\nLet $F=S^1\\times I\\times I$ be the cylinder over an annulus, as shown\nbelow. \n\n\\tzCylinderI\n \nThen \n$$\n\\del F=C_a\\cup C_b \\cup C_{in}\\cup C_{out} \\cup C\\cup \\ov{C}\n$$\nwhere $C_a, C_b$ are the left and right annuli, $C_{in}$ and $C_{out}$ are\nthe inner and outer cylinders, and $C$ is the internal cell:\n\\begin{align*}\n&C_a=\\tzCL\n\\qquad\nC_b=\\tzCR\\\\\n&C_{in}=\\tzCin\n\\qquad\nC_{out}=\\tzCout\n\\qquad\nC=\\tzC\n\\end{align*}\n\n\nThe pullback of the cell decomposition of $\\del F\\simeq S^2$ to the sphere\nis homeomorphic to the cube shown below:\n$$\n\\tzCube\n$$\n\nDrawing the dual graph, we s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sphere with n holes",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-015-92-sphere-with-n-holes.md",
+      "narrative": null,
+      "content": "by objects Y1, . . . , Yn ∈Obj Z(C) (see Example 7.2). Choose the cell decomposition\nof N as in Example 7.2; then\nH(N, Y1, . . . , Yn)\n=\nM\nX1,...,Xn,U1,...,Un∈Irr(C)\n⟨X1, U1, X∗\n1, . . . , Xn, Un, X∗\nn⟩⊗⟨U ∗\n1 , Y1⟩⊗· · · ⊗⟨U ∗\nn, Yn⟩\n≃\nM\nX1,...,Xn∈Irr(C)\n⟨X1, Y1, X∗\n1, . . . , Xn, Yn, X∗\nn⟩.\nConsider now the cylinder N ×I with the cell decomposition shown in Figure 27.\nl\nj1\njn\ni1\nin\nk1\nkn\nY1\nYn\nFigure 27. Cylinder over sphere with n embedded disks\nTURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT\n37\nThis cell decomposition contains (n + 1) 3-cells: n open tubes and one large\n3-cell. Thus, the invari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1004.1533v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "[BK2001]\nBojko Bakalov and Alexander Kirillov Jr., Lectures on tensor categories and mod-\nular functors, University Lecture Series, vol. 21, American Mathematical Society,\nProvidence, RI, 2001. MR1797619 (2002d:18003)\n[BW1996]\nJohn W. Barrett and Bruce W. Westbury, Invariants of piecewise-linear 3-manifolds,\nTrans. Amer. Math. Soc. 348 (1996), no. 10, 3997–4022, DOI 10.1090/S0002-9947-\n96-01660-1. MR1357878 (97f:57017)\n[Cas1995]\nMaria Rita Casali, A note about bistellar operations on PL-manifolds with boundary,\nGeom. Dedicata 56 (1995), no. 3, 257–262, DOI 10.1007/BF01263566. MR1340786\n(96h:57",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,644 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "proctor1988",
+  "blocks": [
+    {
+      "id": "library/proctor1988/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Invent. math, 92, 307-332 (1988) Inventiones\n\nmathematicae\n© Springer-Verlag 1988\n\nOdd symplectic groups\n\nRobert A. Proctor*\nDepartment of Mathematics, University of California Los Angeles, Los Angeles, California 90024,\nUSA\n\nContents\n\n0. Classical Vandermonde identities . 2 2 2. 2 ee ee 308\nLIntroduction. © 2. 1 311\n2.Mainresults. 2... 314\n3. Character identities. 6 2. 316\n4.Combinatorial identities. ©... 2. ee 319\n5. Complete decomposition of Y* and Schensted’s algorithm ..............4 321\n6. Other occurrences Of Spanty 6 6 0 0 ee 323\n7. Three connections with orthogonal characters. . 2. 2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "308 R.A. Proctor\n0. Classical Vandermonde identities\n\nThe denominator of the Weyl character formula for finite dimensional represen-\ntations of simple Lie groups can be written as either an alternating sum over\nthe associated Weyl group W or as a product over the positive roots 4* of\nthe Lie group. Equating the two expressions yields the denominator identity\nassociated to that Lie group. But one need not refer to Lie groups in order\nto write down the identities: Only knowledge of the root system is needed.\nAnd in fact these identities have important occurrences outside of representation\ntheory",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 309\n\nwhich have an even number of minus signs. The alternating sum over the group\ncan be written\nxx yrty Zipz7\nY (- 1 x7 = X24 772 y? +y7? 2247772\n\ngeW(Dny XPHXTM ya py Ms 2742773]\n\nwhere the subscript “D” means only the monomials with an even number of\nnegative exponents are to be taken. But if y,=0 then we can replace the entries\n1+1 in the ith row by 1’s and erase the subscript “D”. For D, the vector\np=(n—1,n—2,..., 1,0), and so the left hand side of the denominator identity\nIS:\n\n2 2\n\nx?P4x72 0 yPpy 2 22427\nYo (HV x*Ma|xt exo pty ztz7t\noeW(Dy) 1 1 1\n\nIt is aestheticall",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-003-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "recommendation-page-003-01.md",
+      "narrative": null,
+      "content": "Recall that one of the four axioms which must be satisfied in order for a finite set of vectors in Euclidean space to be a root system is that no multiple of a root can occur except —1 times the root.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "310\n\nroot system BC, _,. To our knowledge this identity is new. When n=3 we\nhave\n\nR.A. Proctor\n\nMi-x7? yroy 2 giz? xe=x73 y3a-y73 23-773\na 3 (3 7 a oa\nX?—X72 yr—y \"2 72-7272 x?=x7? y?-y\"? 72-2771 C,\nx@—x72 yRoyT? gig? xtoxtt yloyct glogt\nx?4x72 yp? py\"? 224277 xi¢xc? yity? 1\nxt4x7t ylty7t zt4+z27! XP+X? y+y? 1 BC,\n1 1 1\n1 1 1 etx? yety? 1\nx3 — x73 yroy? x2—x72 y2-y?\nee eee eee on ten Cc,\nX?-xX7? yR—y™? xt—x7h yl—y\nxt+x7! yl+y7! xe+¢x72 1 RC\n1 1\n1 1 +x? 1 ,\n|x?—x7}| |xt—x7}| Cc\nFig. 1a. Left hand sides\nFee ee ee Fee ee ee\n(ay Fax ayioryrax ty a) (ty Fax aye yxy)\n1 1 one oa\n(x?z~2—x~2z2)(x?z2?—x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 311\n\nThis identity can be proved for general n with high school algebra; it exists\nindependently of Lie theory.\n\nThe four infinite families of identities of types B,C, D, and BC can be nicely\norganized with an infinite ladder shaped diagram. (See Figs. 1a and b.) Place\nthe pair of identities corresponding to the same Weyl group on the same level.\nLet one side of the ladder consist of the identities for root systems B,, D2,\nB,, D3, ... and let the other side consist of the identities for root systems C,,\nBC,, C,, BC,,.... Then the largest exponent in a left hand side incre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-005-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "recommendation-page-005-01.md",
+      "narrative": null,
+      "content": "Now symplectic groups exist on odd dimensional vector spaces; i.e. it is no longer a necessary consequence of the definition that the vector space V must be even dimensional.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "312 R.A. Proctor\n\nThen define Sp,41(€):=Sp(V, B), and call this group the (2n + 1)st odd symplect-\nic group. It is easy to compute that\n\noo\n\nSp2,(C\nSpan (Q)= Pas(@)\n\noO\n\n* *...* *\n\nwhere the *’s and z+0 are complex numbers. From now on we write Sp,,,,,\nfor Sp2,+1(C) since we will always work over C. Let SSp,,,,, denote the unimod-\nular subgroup of Sp2,41, Viz. z=1.\n\nThe odd symplectic groups are not semisimple. So the standard highest\nweight theory of irreducible finite dimensional representations of simple Lie\nalgebras does not apply. But there is another (and largely forgotten) view of\nrepre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-006-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "recommendation-page-006-01.md",
+      "narrative": null,
+      "content": "A useful psycho- logical device is to believe that there should have been simple Lie groups Span-1+ but that something went wrong along the way.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 313\n\nThe group Sp,,-, cannot be realized as a Lie subgroup of Sp,,. A recurring\ntheme throughout the paper will be that things (e.g. character identities and\ndecompositions) work out almost (but not quite) as nicely for Sp2,-, as for\nSp2,. For example, the numerator of the character formula for Sp,,-, is an\nalternating sum over the Weyl group W(D,), but with one variable then set\nto 1. This “twist” may help to explain the long delay in noticing the Sp,,_,\nresults obtained here. In Section 7 it will be described how F.L. Bauer in 1954\nand R.C. King in 1979 empirically obse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "314 R.A. Proctor\n\nleaux indexed weight basis for all of @*V (not just the trace free part) with\nrespect to the action of Spz,41-\n\nThere are algorithms due to Schensted and Berele which combinatorially\nmodel in a mysterious way the decompositions of @* V for GLy and Sp,,, respec-\ntively. In [Prcel] we described a mutual extension of these two algorithms to\nthe combinatorial context which parallels the representation @*V for Sp,,, n-\nThe agreement between the original two algorithms and their corresponding\nrepresentation theoretic structures is rather remarkable. The proposed tableau\ndescription",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 315\n\n{1<I<...<n<a<n+1<...<n+m} such that T,j;<T,.,,, and T,j;ST,j41-\nAn N-semistandard tableau is said to be (n,m)-symplectic if the entries i and\n7 do not occur below the ith row for 1<i<n. (This is a special case of the\nmeaning assigned to the same terminology in [Prc1]). Let b;(T) be the number\nof ’'s appearing in T.\n\nIf 9: Sp2n,m— GL(W) is a representation, then weW is a weight vector of\nweight (Cy, 0-65 Cm) if ed) w=yi... yanzprt... zante w for d\n=Diag(y,,¥i 1, +++) n> In is Z15 -++> Zm)- Itreducible polynomial representations\nof GLy are indexed by partitions 4 with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "316 R.A. Proctor\n\nThe quotient of two alternating sums formula was originally obtained by\nusing the ladder diagram viewpoint to guess by analogy with Sp,,, SOane1,\nand 80., the correct choices for W, p, and 4. It was known that the quotient\n“divided out” evenly under the specialization y;=q\"~‘, but small examples soon\nrevealed that the full n-variate version did not divide out evenly. Then setting\nYn=1 was guessed, since Sp,,-, characters are not symmetric under W(D,)\nin n variables. Later it was found that this same operation was necessary in\nthe independent context of Vandermonde identities",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 347\n\nLet N=2n and let x,,x,...,Xy be the eigenvalues of geSp,, listed in any\norder. If (A) <n let sp,(x,, ..., X,) denote the character of the Ath representation\nof Sp2,- It is well known [Weyl] that\n\nSP, (X1, +5 Xp) = Sha, — 140) thy, -1- 54200 «ne\n\nLet s,(ty, ..., t,) be the Ath Schur function [Mcd2] in n variables t;. The following\nseries identity can be inferred from page 219 of [Weyl] and page 240 of [Litt].\nModern explicit references are [KoT1] and [Pre2].\n\nIl (1—t,t))\n1Si<jsn\n\naan = ¥ spas,\nT] T1G-xit) ase\nj=li=t\n\nNowadays [KoT1] it is recognized that it is useful",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "318 R.A. Proctor\n\nProposition 3.2. Fix a shape A with r rows. If [5(N+1)]2r, let P,(N) be the\ndimension of the Ath indecomposable trace free representation of Spy for N even\nor odd. Then ae\n—A A +I+)\nP,(N)= —\nHED Ul A+ -i-jt Ul\n\nN+A,;+4;-i-j+2\nAy+Aj—i-j+1\n\n>\n\nwhich is a product over the squares (i,j) in the shape 4. This is a polynomial\nin N; extend the definition of P,(N) to all integers N. Analogously let Q,(N)\nbe the polynomial defined by the dimensions of the Ath irreducible representation\nof Oy(+SOy) for [5N]2r. Then\n\nQ,(N)=(— 1)\" P.(—N)\nfor both even and odd N.\n\nGelfand patterns can be u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 319\n\nSuch a pattern is an orthogonal Gelfand pattern if b; ;= —b;,-; for j21 and\nif every b;,; is an integer or every b;; is a half-integer. Such a pattern is a\nsymplectic Gelfand pattern if b; ;=b;,-; for j20 and every 6,,; is an integer.\nBy “relevant representation” in the following proposition we mean rational\nrepresentations for GLy, polynomial representations for S6n, and trace-free\nindecomposable representations for Spy. This proposition was Theorem 1 of\n[Prc3]; here we omit the proof. (The symplectic cases can be easily proved\nby rotating the plane partitions of Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "320 R.A. Proctor\n\n(b) Odd pyramid: Shifted row lengths 2n—1, 2n—3, ..., 3, 1.\n\niil, 22299 FT ea\n\nima L\\j=id1 jot =nt1 jJ-1\n\nLet N=2n or 2n—1 and fix m21 and 1SrSn. Let the shape / be an\nrxm rectangle: A4;=m for 1SiSr and A;=0 for r+1SiSn. As far as shifted\nplane partitions are concerned, this choice of 4 in Proposition 4.1 forces S;;=m\nfor jSr and $,;=0 for izr+1. The remaining entries in the region 1Si<r\nand j2r+1 form a “plane partition”: A plane partition is an array of positive\nintegers P; (called “ parts”) with P;=P. ,,, and P,;=P,,, ;. The following corol-\nlary first appeared in [Prc4] (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "Odd symplectic groups mot\n\nof O<P,,<m. This provides the first known combinatorial interpretation of\nthis terminating form of Dixon’s identity. These restrictions can also be per-\nformed with “q” specialized characters to produce the Dixon summation for\nthe basic hypergeometric series 4®,. Analogous procedures for Oy-,@ Oy yield\nthree parameter identities for 4F; when q=1 and for ;®, for general q. For\nGLy the same methods produce the Gauss summations for ,F, or ,®,. Details\nwill be provided elsewhere. So the identities obtained by considering odd sym-\nplectic characters fit nicely into a larg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-015-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "recommendation-page-015-01.md",
+      "narrative": null,
+      "content": "So the notion of “irreducible” should be replaced by the notion of “indecomposable” for the non-reductive group Sp2,,1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "322 R.A. Proctor\n\nthe Sp,, context, producing (n, 0)-symplectic tableaux. In [Prc1] we formulated\na common generalization of Berele’s and Schensted’s algorithms for the context\nof Spon,m- Assuming that the remarkable correspondence between algorithms\nand decompositions continues, we use the output of the generalized algorithm\nto predict the form of the non-trace-free Sp,,,,, characters.\n\nThe additional Sp,,4, characters are defined as follows. A partition with\nspecial part (A,d) is a partition A in which the part 2, has been designated\nas special. Combinatorially define the odd symplectic Schu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 323\n\nif there always existed such a decomposition agreeing with the algorithm output,\nsince the correspondence between algorithms and representations is not well\nunderstood. In any case, the odd symplectic Schur functions sp, 4(y;z) seem\nto be completely satisfactory from a combinatorial-representation viewpoint\nindependent of any algorithmic considerations.\n\n6. Other occurrences of Sp2,+1\n\nA symplectic manifold is a real differentialble manifold together with a smooth\nnon-degenerate closed 2-form. So the manifold must be even dimensional; let\nthe dimension be 2n. At a po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-017-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "recommendation-page-017-01.md",
+      "narrative": null,
+      "content": "So the manifold must be even dimensional; let the dimension be 2n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "324 R.A. Proctor\n\nany two elements of the algebra. Hence the group of automorphisms of the\nHeisenberg algebra is Sp2,41.\n\nLet S be a surface formed by removing m+1 points from a closed oriented\nsurface of genus n. Then the intersection form on H,(S, Z) is the (2n+m) x(2n\n+m) bilinear form used in Section 1 to define Sp,,,,,. The orientation preserving\nself-homeomorphisms of S (fixing the punctures) induce linear actions on\nH,(S,Z) which preserve the form. Hence there is a map from the group of\nself-homeomorphisms to Spo, m(Z). If m= 1, the map is onto SSp2,,4 ;(Z).\n\nI am indebted to R. Gardner",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-018-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "recommendation-page-018-01.md",
+      "narrative": null,
+      "content": "(Note that v should be v—1 in Theorem VIII).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 325\n\n5,(X1, +--» Xy). Such expressions can be used to define the formal characters\nsp,(x,,X2,---) which were mentioned in Section 3, as well as the analogous\n0,(%1,X2,---). Let A’ be the transpose of the shape 2. Set [s,(x,, x2, ...)]*\n=5,(X1,X,-..) and extend * to all symmetric functions by linearity. Proofs\nof the following proposition are given in [KoT1] and [Prce2].\n\nProposition 7.2. In the ring of symmetric functions in x,,X , ... one has\nSP (X1,X2, --.)=[LOx(%1,X2, -.-)]*-\n\nIf (4)SG(N+1)] and 1(2)S[4N] then one can set xy4,=Xy42=...=0\nand obtain an identity involvin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "326 R.A. Proctor\n\nwas equal to 1. (But they failed to state this condition with the final result,\nthereby appearing to confirm the false version.) El Samra and King also viewed\ntheir Sp,,—, quantities as formal, since they state “no group Sp(2k—1) exists”,\nKing was aware that the product formula appearing in part (b) of Proposition\n4.1 gave an expression for the determinant of Proposition 3.1 with all x; set\nto 1 (personal communication).\n\nI thank R.C. King for introducing me to the material presented in this\nsection.\n\n8. Proofs for sections 2, 3, and 4\n\nLet V=C?\"*™ as in Section 2. Let U and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 327\n\nLemma 8.4. The centralizer of the diagonal action of GL, on @*V is Zn.\n\nProof. Clearly Z,, is contained in the centralizer, since both End[W] and CS,\ncommute with GL,,. To show the converse, assume that de End[@*V] such\nthat Pg=g® for every geGL,,. Let [k]={1, 2, ..., k}. Given a subset o S[k],\nlet Y(o) be the tensor product of U’s and W’s with the U’s occurring the\npositions indexed by o, and with W’s elsewhere. Then\n\n@'V= 6 (0).\n\noc[k]\nUsing similar notation for ®, one has\n\n= @® (0,7).\n\na,to[k]\n\nLet g,=a12,01,, for weC*. Then g,6=@g, implies that O(c, t)=0 unless |",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-021-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "recommendation-page-021-01.md",
+      "narrative": null,
+      "content": "But by the famous double centralizer theorem we must have ¥%eCS,CCS,.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "328 R.A. Proctor\n\nabove. Taking the union of all of the bases just constructed, we obtain a basis\nfor ¥¢' as claimed. In particular suppose that 1(A)>n+m. No T}' can have\nmore than m squares in the first column of 4/u. By Lemma 8.1, one has % =0\nif I(u)>n. So the basis just constructed is empty if /(A)>n+m, implying that\nYo} =0. By Lemma 8.2, the GL,, weights of the basis vectors are as claimed.\nBy Lemma 8.1, the Sp,,, weights of the basis vectors are also as claimed, since\n® commutes with GL,,,>Sp,,.\n\nLet v~ be the unique weight vector (up to scalar multiple) in V7? of GL 2,4\nweight (0, Ans m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-022-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "recommendation-page-022-01.md",
+      "narrative": null,
+      "content": "We must confirm that the given formula is equal to the sum of the Sp,,-2¢Sp,,-1 characters described in Corollary 8.1, ignoring the GL, factor since z was set to 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 329\n\n0’s. Subtract the second row from the first, then the third from the second,\netc. The numerator is now equal to an (n—1) x (n—1) determinant:\n\n[pR pe yPo tp pyPe rth oyr pert yore typ,\n\nExpress the ith row as a sum of p;—p;_, rows, obtaining the sum\n\nx lei — yz Pi.\n\nPiZ=P, > P22P,>--2Pn-1>Pn\n\nSet p;=p;+n+i for 1<is<n—1, and put the denominator back in. Now the\nsummation condition is 4,2 p,2A,2H.=...2M,-124,, which is exactly that\nof Corollary 8.1. We are done, since using (n— 1) x (n— 1) determinants one has\n\n; [yeten tyr memati\nSPon-2(H5 Vis ves a a oO\n\nProof of Cor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "330 R.A. Proctor\n\nweakly decreasing condition. The entries on the resulting main diagonal describe\nthe shape of the original (n—1, 1)-symplectic tableau. Each shifted plane partition\ndescribed in part (b) arises exactly once in this fashion. Hence the number\nof plane partitions is given by the dimension formula for ¥% in Corollary 2.1.\nThe factors in the first (second) half of the product formula arise from the\nD,, positive roots e;—e;(e;+e,). Part (a) can be proved in the same fashion\nusing(n, 0)-symplectic tableaux for Sp,,. O\n\n9. The Gelfand-Zelevinsky definition\n\nGelfand and Zelevinsky def",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/recommendation-page-024-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "recommendation-page-024-01.md",
+      "narrative": null,
+      "content": "The Lie algebra pb,,,, is the same as above, except the upper left and lower right corner 0’s should be replaced by —z and z respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "Odd symplectic groups 331\n\nGZon+1 > Poona\n\nSSpant1 % Sponei\n\nThe diagram commutes, and adjacent groups differ by 1 in topological dimen-\nsion. Both GZ,,4, and Sp,,, are of dimension 2N(N +1) (here N=2n+1),\n\n“predicted” by Sp,,. In some situations the Gelfand-Zelevinsky definition\nmay be nicer because of the inclusions ...% Sp2,@ GZ2n41Span420--\n(While Sp2,@Sp2,41, it is not hard to show that Sp,,,,, cannot be realized\nas a Lie subgroup of Sp,,,4..) On the other hand, the dimensions of the defining\nrepresentations of GZ,,(Sp.,) and GZ,,,, are 2n+1 and 2n+2, which is\ncombinatorially undesirable.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/proctor1988/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "332\n\n[Mcd1]\n[Mcd2]\n[Pret]\n\n[Pre2]\n\n[Pre3]\n[Pre4]\n\n[Prce5]\n\n[SiSt]\n[Stn1]\n[Stn2]\n[Weyl]\n[Zhit]\n\n[Zhi2]\n\nR.A. Proctor\n\nMacdonald, I.G.: Affine root systems and Dedekind’s y-function. Invent. Math. 15, 91-143\n(1972)\n\nMacdonald, I.G.: Symmetric functions and Hall polynomials. Oxford University Press,\nLondon, 1979\n\nProctor, R.: A generalized Berele-Schensted algorithm and conjectured Young tableaux\nfor intermediate symplectic groups. Preprint\n\nProctor, R.: Interconnections between symplectic and orthogonal characters. In: Lakshmi-\nbai, V. (ed.) Proceedings of a special session on invariant theory.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

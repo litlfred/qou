@@ -1,0 +1,1151 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2208.13448v2",
+  "title": "arxiv-2208.13448v2",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Notations and conventions",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-notations-and-conventions"
+    },
+    {
+      "level": 1,
+      "title": "Difference algebra",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-difference-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Galois groups",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-21-galois-groups"
+    },
+    {
+      "level": 2,
+      "title": "Factorisations of difference operators",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "From theory to practice",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-from-theory-to-practice"
+    },
+    {
+      "level": 1,
+      "title": "Galois groups of difference systems",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-galois-groups-of-difference-systems"
+    },
+    {
+      "level": 2,
+      "title": "The reducible case",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-the-reducible-case"
+    },
+    {
+      "level": 2,
+      "title": "The imprimitive case",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-the-imprimitive-case"
+    },
+    {
+      "level": 2,
+      "title": "The primitive case",
+      "number": "3.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-the-primitive-case"
+    },
+    {
+      "level": 1,
+      "title": "Galois groups of equations of order one and diagonal systems",
+      "number": "4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-galois-groups-of-equations-of-order-one-and-di"
+    },
+    {
+      "level": 2,
+      "title": "Galois groups of equations of order one",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Galois groups of diagonal systems",
+      "number": "4.2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-galois-groups-of-diagonal-systems"
+    },
+    {
+      "level": 1,
+      "title": "Galois groups of equations of order two",
+      "number": "5",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-galois-groups-of-equations-of-order-two"
+    },
+    {
+      "level": 1,
+      "title": "Galois groups of equations of order three",
+      "number": "6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-6-galois-groups-of-equations-of-order-three"
+    },
+    {
+      "level": 2,
+      "title": "Reducible case",
+      "number": "6.1",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-61-reducible-case"
+    },
+    {
+      "level": 2,
+      "title": "Imprimitive case",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-62-imprimitive-case"
+    },
+    {
+      "level": 2,
+      "title": "Primitive case",
+      "number": "6.3",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Summary",
+      "number": "6.4",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-64-summary"
+    },
+    {
+      "level": 1,
+      "title": "Application to the differential transcendence",
+      "number": "7",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-7-application-to-the-differential-transcendence"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence system",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "galois theory",
+          "heading": false
+        },
+        {
+          "term": "dhr",
+          "heading": false
+        },
+        {
+          "term": "algebraic group",
+          "heading": false
+        },
+        {
+          "term": "algebraic relations",
+          "heading": false
+        }
+      ],
+      "extract": "Diﬀerence Galois theory is the subject of many recent papers b ecause, for instance, of its application to (diﬀerential) transcendence of solution s of diﬀerence equations. More precisely, consider a ﬁeld k equipped with an automorphism φ. Let C ⊂ C be an algebraically closed ﬁeld of characteristic 0. Typical exa mples we are going to consider in this paper are • (Case S, shift) k = C(z) and φY (z) = Y (z + h) with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-galois-groups",
+      "number": "2.1",
+      "title": "Galois groups",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "galois groups",
+          "heading": true
+        },
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "q2z",
+          "heading": false
+        },
+        {
+          "term": "imprimitive case",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "linear diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "of the diﬀerence Galois groups of q-hypergeometric equations, see [ Roq11] and density theorems [ RS06, Pou20] but the present introduction does not pretend to be exhaust ive. Toward the proof of diﬀerential transcendence, we often need to prove that the diﬀerence Galois group is suﬃciently big, making it important to be abl e to compute the latter. However, the computation of diﬀerence Galois groups is in gen eral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-notations-and-conventions",
+      "number": null,
+      "title": "Notations and conventions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lighten",
+          "heading": false
+        },
+        {
+          "term": "notations",
+          "heading": true
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "In what follows, all rings are commutative with identity and contain the field of rational numbers. In particular, all fields are of characteristic zero. If $G$ is an algebraic group, we denote by $G^0$ the connected component of the identity of $G$. Let $(\\k,\\phi)$ be a difference field, that is, a field equipped with an automorphism and let $[A]_{\\phi}$ be the difference system $\\phi(Y)=AY$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-difference-algebra",
+      "number": "2",
+      "title": "Difference algebra",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "combot2022hyperexponential hline",
+          "heading": false
+        },
+        {
+          "term": "phi ell",
+          "heading": false
+        },
+        {
+          "term": "abramov2021rational cite",
+          "heading": false
+        },
+        {
+          "term": "cite dreyfus2015galois",
+          "heading": false
+        },
+        {
+          "term": "vert phi",
+          "heading": false
+        },
+        {
+          "term": "sigmaq big",
+          "heading": false
+        },
+        {
+          "term": "phi alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:diffceAlgebra} \\subsection{Galois groups} \\label{sec:GaloisGp} In this section, we make a short overview of the Galois theory of linear difference equations. For more details on what follows, we refer to \\cite[Chapter~1]{van2006galois}. A difference ring is a commutative ring $\\Rb$ equipped with an automorphism $\\phi : \\Rb\\rightarrow \\Rb$. We denote by $C_{\\Rb}:= \\{c\\in \\Rb| \\phi(c)=c\\}$, the constants of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-from-theory-to-practice",
+      "number": "2.3",
+      "title": "From theory to practice",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combot2022hyperexponential hline",
+          "heading": false
+        },
+        {
+          "term": "abramov2021rational cite",
+          "heading": false
+        },
+        {
+          "term": "sigmaq big",
+          "heading": false
+        },
+        {
+          "term": "tabular hline",
+          "heading": false
+        },
+        {
+          "term": "cite dreyfus2015galois",
+          "heading": false
+        },
+        {
+          "term": "vert phi",
+          "heading": false
+        },
+        {
+          "term": "quad deg",
+          "heading": false
+        },
+        {
+          "term": "cite abr",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:theoryPractice} We recall that the aim of this paper is to explain how one can compute theoretically the Galois group of a difference equation of order $3$. In practice we may also need to make more assumptions on the difference field $(\\k,\\phi)$ in order to compute effectively the difference Galois groups: \\begin{itemize} \\item Assume that $\\mathbf{k}$ is an effective field, i.e. that one can compute",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-galois-groups-of-difference-systems",
+      "number": "3",
+      "title": "Galois groups of difference systems",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diffcesystembase",
+          "heading": false
+        },
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "imprimitive",
+          "heading": false
+        },
+        {
+          "term": "difference",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:GaloisGpDiffceSystems} Consider the difference system \\eqref{eq:diffcesystembase} and let $G\\subset \\GL_{n}(C)$ be its Galois group. In order to compute $G$, we follow the strategy of the seminal paper \\cite{hendriks1998algorithm}, that is, computing a gauge transformation $T\\in \\mathrm{GL}_n (\\k)$ such that $[\\phi(T)AT^{-1}]$ is in reduced form. We will study the following cases (definitions of reducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-the-reducible-case",
+      "number": "3.1",
+      "title": "The reducible case",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix mathscr",
+          "heading": false
+        },
+        {
+          "term": "pmatrix mathrm",
+          "heading": false
+        },
+        {
+          "term": "bloc diagonal",
+          "heading": false
+        },
+        {
+          "term": "bloc triangular",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "star mathrm",
+          "heading": false
+        },
+        {
+          "term": "transfo reduc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:reducible case} Let us treat the case where the Galois group $G$ is reducible. By Lemma \\ref{lem1}, $G$ is reducible if and only if there exist $T\\in \\mathrm{GL}_n(\\k)$, $A_1\\in \\mathrm{GL}_m(\\k)$, $m<n$, and $A_2,A_3$ matrices of convenient size, such that $$\\phi(T)AT^{-1}=\\left(\\begin{array}{cc} A_1 & A_2\\\\ 0 & A_3 \\end{array}\\right). $$ The strategy of reduction will follow the one given in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-the-imprimitive-case",
+      "number": "3.2",
+      "title": "The imprimitive case",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imprimitive",
+          "heading": true
+        },
+        {
+          "term": "alpha rbrace",
+          "heading": false
+        },
+        {
+          "term": "phi n-1-i",
+          "heading": false
+        },
+        {
+          "term": "lbrace mathrm",
+          "heading": false
+        },
+        {
+          "term": "phi j-i",
+          "heading": false
+        },
+        {
+          "term": "imprimitive irreducible",
+          "heading": false
+        },
+        {
+          "term": "phi ell",
+          "heading": false
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:imprimitive case} Let $G$ be an algebraic subgroup of $\\GL_{n}(C)$. We say that $G$ is imprimitive if there exists a nontrivial decomposition into $C$-vector spaces $C^n =V_1 \\oplus \\dots \\oplus V_k$, such that any element of $G$ induces a permutation between the $V_i$. We say that $G$ is primitive otherwise. Consider $G$, an imprimitive group and let us write a decomposition $C^n =V_1 \\oplus \\dots \\oplus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-the-primitive-case",
+      "number": "3.3",
+      "title": "The primitive case",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irred primitive",
+          "heading": false
+        },
+        {
+          "term": "connected irred",
+          "heading": false
+        },
+        {
+          "term": "mathscr alpha",
+          "heading": false
+        },
+        {
+          "term": "permut eigenspace",
+          "heading": false
+        },
+        {
+          "term": "primitive group",
+          "heading": false
+        },
+        {
+          "term": "dilatations",
+          "heading": false
+        },
+        {
+          "term": "begin lem",
+          "heading": false
+        },
+        {
+          "term": "end lem",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we assume that $G$ is irreducible, primitive, and $n$ is prime. We want to prove that the same holds for $G^0$ and $D(G^0)$ where $D(G^0)$ denotes the derived group of $G^0$. Note that $G^0$ is a connected normal subgroup of $G$ and $D(G^0)$ is a connected normal subgroup of $G^0$. First, we recall the following result given in \\cite[Lemma 4.2]{adamczewski2021hypertranscendence}. \\begin{lem}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-galois-groups-of-equations-of-order-one-and-di",
+      "number": "4",
+      "title": "Galois groups of equations of order one and diagonal systems",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta alpha",
+          "heading": false
+        },
+        {
+          "term": "primitive ell",
+          "heading": false
+        },
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "sim ell",
+          "heading": false
+        },
+        {
+          "term": "exists zeta",
+          "heading": false
+        },
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "frac phi",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:GaloisGpsOrderOneEtDiag} \\subsection{Galois groups of equations of order one}\\label{secorder1} We consider the equation of order one \\begin{equation} \\label{eq:orderone} \\phi(y)=\\alpha y \\, \\quad \\alpha\\in \\k^*. \\end{equation} Let us now see how to compute the Galois group $G$ of this difference equation. Recall that since $G\\subset \\mathrm{GL}_1 (C)$ is an algebraic group, either $G$ is $C^*$, or it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-galois-groups-of-diagonal-systems",
+      "number": "4.2",
+      "title": "Galois groups of diagonal systems",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm diag",
+          "heading": false
+        },
+        {
+          "term": "chi mathbf",
+          "heading": false
+        },
+        {
+          "term": "diag left",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "van2006galois",
+          "heading": false
+        },
+        {
+          "term": "galois",
+          "heading": true
+        },
+        {
+          "term": "diagonal",
+          "heading": true
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:diagonalCase} For more details on what follows, we refer to \\cite[Section 2.2]{van2006galois}. Let us consider a diagonal system \\begin{equation} \\label{eq:diagsyst} \\phi(Y)=\\mathrm{Diag}\\left(\\alpha_1,\\ldots,\\alpha_n\\right) Y \\end{equation} where $\\mathrm{Diag}\\left(\\alpha_1,\\ldots,\\alpha_n\\right)\\in\\GL_n\\left(\\k\\right)$ is the diagonal matrix whose nonzero entry at the line $i$ is $\\alpha_i$. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-galois-groups-of-equations-of-order-two",
+      "number": "5",
+      "title": "Galois groups of equations of order two",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "hendriks1997algorithm",
+          "heading": false
+        },
+        {
+          "term": "roques2018algebraic",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{secord2} Consider a difference equation of order $2$ $$ \\phi^2 (y)+a_1 \\phi (y)+a_0 y=0, \\quad \\text{where}\\quad a_i\\in \\k\\quad \\text{and}\\quad a_0 \\neq 0.$$ Let $$ L := \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right> $$ be the corresponding difference operator and let $G\\subset \\GL_{2}(C)$ be its Galois group. We want to compute $G$. An algorithm in the cases (Q), (S), (E), (M) is presented in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-61-reducible-case",
+      "number": "6.1",
+      "title": "Reducible case",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "gamma beta",
+          "heading": false
+        },
+        {
+          "term": "reducible",
+          "heading": true
+        },
+        {
+          "term": "riccati equation",
+          "heading": false
+        },
+        {
+          "term": "equation phi",
+          "heading": false
+        }
+      ],
+      "extract": "We first decide whether $L$ has a right factor of order one. This is the case if and only if $G$ is reducible. Recall, see Lemma \\ref{lem:eq left factor}, that it is equivalent to the existence of a solution $\\alpha$ of the Riccati equation $\\phi(y)y+a_1y+a_0=0$. \\par Assume first that $L$ is reducible and let us write $L=(\\phi-\\beta)(\\phi-\\alpha)$. Then, $\\alpha$ is a solution of the Riccati equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-6-galois-groups-of-equations-of-order-three",
+      "number": "6",
+      "title": "Galois groups of equations of order three",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gdiag ltimes",
+          "heading": false
+        },
+        {
+          "term": "pmatrix mathscr",
+          "heading": false
+        },
+        {
+          "term": "gdiag sim",
+          "heading": false
+        },
+        {
+          "term": "gdiag subset",
+          "heading": false
+        },
+        {
+          "term": "mathscr mathrm",
+          "heading": false
+        },
+        {
+          "term": "ltimes gunip",
+          "heading": false
+        },
+        {
+          "term": "pmatrix phi",
+          "heading": false
+        },
+        {
+          "term": "gunip left",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{secord3} Consider a linear difference equation of order $3$ $$ \\phi^3 (y)+ a_2 \\phi^2 (y)+a_1 \\phi (y)+a_0 y=0, \\quad \\text{where}\\quad a_i\\in \\k\\quad \\text{and}\\quad a_0 \\neq 0.$$ Let $$ L := \\phi^3 + a_2 \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right> $$ be the corresponding difference operator and let $G\\subset \\GL_{3}(C)$ be its Galois group. We want to compute $G$. \\subsection{Reducible case} We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-62-imprimitive-case",
+      "number": "6.2",
+      "title": "Imprimitive case",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilatations matrices",
+          "heading": false
+        },
+        {
+          "term": "marina poulet",
+          "heading": false
+        },
+        {
+          "term": "imprimitive",
+          "heading": true
+        },
+        {
+          "term": "group det",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence galois",
+          "heading": false
+        },
+        {
+          "term": "thomas dreyfus",
+          "heading": false
+        },
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "order hree",
+          "heading": false
+        }
+      ],
+      "extract": "imprimitive. This case is solved in Section 3.2. It is imprimitive if and only if the diﬀerence Galois group of φ3Y = A[3]Y is diagonal. We use the reducible case (with φ replaced by φ3) to check this property. In that case we are able to compute d ∈ k∗, solution of the Riccati equation corresponding to φ3Y = A[3]Y . We now follow Proposition 3.10. Let us compute a reduced form of φ(y) = dy, that is compute f ∈ k∗",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-64-summary",
+      "number": "6.4",
+      "title": "Summary",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "pmatrix beta",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "eqverif",
+          "heading": false
+        },
+        {
+          "term": "reducible case",
+          "heading": false
+        },
+        {
+          "term": "imprimitive",
+          "heading": false
+        }
+      ],
+      "extract": "Let $$ L := \\phi^3 + a_2 \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right> $$ and let $G\\subset \\GL_{3}(C)$ be the Galois group of $Ly=0$. If the Riccati equation attached to $L$ or the similar equation attached to $L^{\\vee}$ has a solution then $G$ is reducible. Otherwise, it is irreducible. \\medskip When it is the reducible case, $L$ or $L^{\\vee}$ has a right factor of order $1$ denoted by $\\phi-\\alpha$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-application-to-the-differential-transcendence",
+      "number": "7",
+      "title": "Application to the differential transcendence",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial transcendent",
+          "heading": false
+        },
+        {
+          "term": "derivation partial",
+          "heading": false
+        },
+        {
+          "term": "partial algebraic",
+          "heading": false
+        },
+        {
+          "term": "difference galois",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "transcendence",
+          "heading": true
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:appliDiffalTranscendence} Let $\\k$ be a field of characteristic zero and $(\\k,\\phi,\\partial)$ be a $\\mathcal{C}^1$-field with no proper finite difference field extension, equipped with an automorphism $\\phi$, and a derivation $\\partial$, that is an additive morphism satisfying the Leibnitz rule $\\partial(fg)=\\partial(f)g+f\\partial(g)$. Let us assume that $\\phi$ and $\\partial$ commute. In our examples, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1096,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charlotte hardouin",
+          "heading": false
+        },
+        {
+          "term": "thomas dreyfus",
+          "heading": false
+        },
+        {
+          "term": "julien roq",
+          "heading": false
+        },
+        {
+          "term": "julien roques",
+          "heading": false
+        },
+        {
+          "term": "marina poulet",
+          "heading": false
+        },
+        {
+          "term": "michael singer",
+          "heading": false
+        },
+        {
+          "term": "petkovˇ sek",
+          "heading": false
+        },
+        {
+          "term": "marko petkovˇ",
+          "heading": false
+        }
+      ],
+      "extract": "[AB98] S. A. Abramov and M. A. Barkatou. Rational solutions o f ﬁrst order linear diﬀerence systems. In Proceedings of the 1998 International Symposium on Symboli c and Algebraic Computation (Rostock), pages 124–131. ACM, New York, 1998. [AB01] Sergei A. Abramov and Manuel Bronstein. On solutions of linear functional systems. In Proceedings of the 2001 International Symposium on Symboli c and Algebraic Computation ,",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "difference galois",
+      "heading": true
+    },
+    {
+      "term": "phi alpha",
+      "heading": false
+    },
+    {
+      "term": "galois group",
+      "heading": false
+    },
+    {
+      "term": "pmatrix phi",
+      "heading": false
+    },
+    {
+      "term": "equation phi",
+      "heading": false
+    },
+    {
+      "term": "phi system",
+      "heading": false
+    },
+    {
+      "term": "diﬀerence galois",
+      "heading": false
+    },
+    {
+      "term": "phi ell",
+      "heading": false
+    },
+    {
+      "term": "order phi",
+      "heading": false
+    },
+    {
+      "term": "let phi",
+      "heading": false
+    },
+    {
+      "term": "diﬀerential galois",
+      "heading": false
+    },
+    {
+      "term": "widetilde phi",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2208.13448v2"
+  }
+}

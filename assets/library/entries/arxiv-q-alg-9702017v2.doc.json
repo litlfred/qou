@@ -1,0 +1,1026 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9702017v2",
+  "title": "Idempotents of Hecke algebras of type A",
+  "variant": "pdf",
+  "pages": 40,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Hecke algebra and Homfly skein theory",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-hecke-algebra-and-homfly-skein-theory"
+    },
+    {
+      "level": 1,
+      "title": "Young diagrams",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-young-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Idempotents",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-idempotents"
+    },
+    {
+      "level": 1,
+      "title": "Framing and the Murphy operators",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-framing-and-the-murphy-operators"
+    },
+    {
+      "level": 1,
+      "title": "Connections with the quantum group invariants",
+      "number": "6",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-connections-with-the-quantum-group-invariants"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "skein-theoretic",
+          "heading": false
+        },
+        {
+          "term": "aiston",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9702017v2 7 Feb 2019 Idempotents of Hecke algebras of type A. A.K. Aiston and H.R. Morton ∗ Department of Mathematical Sciences, University of Liverpool, Liverpool, L69 3BX. February 8, 2019 Version 1.6 Abstract We use a skein-theoretic version of the Hecke algebras of type A to present three-dimensional diagrammatic views of Gyoja’s idempotent el- ements, based closely on the corresponding Young diagram",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9702017v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "skein-theoretic",
+          "heading": false
+        },
+        {
+          "term": "knot invariants",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "full curl",
+          "heading": false
+        }
+      ],
+      "extract": "The Hecke algebras of type A have played a central role in the original discovery of the Homﬂy polynomial for links, as described by Ocneanu [17]. They also relate to the representation theory of the quantum groups SU(N)q in a very direct counterpart to the classical relations between the symmetric group algebras and the representation theory of the linear groups GL(N), [21, 24]. As a result they form a natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-hecke-algebra-and-homfly-skein-theory",
+      "number": "2",
+      "title": "The Hecke algebra and Homfly skein theory",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "skein theory",
+          "heading": true
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "permutation braid",
+          "heading": false
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "oriented tangles",
+          "heading": false
+        }
+      ],
+      "extract": "The Hecke algebra and Homﬂy skein theory We give a brief description of skein theory based on planar pieces of knot diagrams and a framed version of the Homﬂy polynomial. The ideas go back to Conway and have been substantially developed by Lickorish and others. A fuller version of this account can be found in [13]. At a later stage we shall expand our view from diagrams to actual pieces of knot lying in controlled",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-young-diagrams",
+      "number": "3",
+      "title": "Young diagrams",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "extreme cells",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst cell",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst row",
+          "heading": false
+        },
+        {
+          "term": "permutation braid",
+          "heading": false
+        },
+        {
+          "term": "same row",
+          "heading": false
+        },
+        {
+          "term": "inseparable",
+          "heading": false
+        },
+        {
+          "term": "separates",
+          "heading": false
+        }
+      ],
+      "extract": "Young diagrams There is a wealth of detail about the features of Young tableaux in many texts such as [25, 7, 10]. Here we emphasize certain properties which will be to the fore in this article. A partition of n can be represented by a Young diagram; a collection of n cells arranged in rows, with λ1 cells in the ﬁrst row, λ2 cells in the second row up to λk cells in the kth row where λ1 ≥λ2 ≥· · · ≥λk > 0 and Pk i=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-idempotents",
+      "number": "4",
+      "title": "Idempotents",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 2231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idempotents",
+          "heading": true
+        },
+        {
+          "term": "ωπλeλ",
+          "heading": false
+        },
+        {
+          "term": "adjacent cells",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "permutation braids",
+          "heading": false
+        },
+        {
+          "term": "ith row",
+          "heading": false
+        },
+        {
+          "term": "wiring",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "9 4 Idempotents The Hecke algebra Hn is closely related to the group algebra of Sn, whose idem- potents are described by the classical Young symmetrisers. For a Young diagram λ its Young symmetriser is the product of the sum of permutations which pre- serve the rows of T(λ) and the alternating sum of permutations which preserve columns. With care it is possible to make a similar construction of idempo- tents in Hn,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-framing-and-the-murphy-operators",
+      "number": "5",
+      "title": "Framing and the Murphy operators",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 25,
+      "labelStart": "14",
+      "labelEnd": "25",
+      "words": 4258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murphy operators",
+          "heading": true
+        },
+        {
+          "term": "framing",
+          "heading": true
+        },
+        {
+          "term": "extreme rectangle",
+          "heading": false
+        },
+        {
+          "term": "encircling string",
+          "heading": false
+        },
+        {
+          "term": "meλ mλeλ",
+          "heading": false
+        },
+        {
+          "term": "vertical strings",
+          "heading": false
+        },
+        {
+          "term": "smoothed braid",
+          "heading": false
+        },
+        {
+          "term": "blackboard framing",
+          "heading": false
+        }
+      ],
+      "extract": "Framing and the Murphy operators In this section we return to the 3-dimensional views of the skein S(B, P) for a ball B ∼= B3 with a set P of 2n distinguished points on its boundary, introduced in Sect. 4. Idempotents of the Hecke algebra. 15 T Q Q Q Q -1 β β / / Figure 11: The wiring of (D2 × I, P ′) into (D2 × I, P) We noted earlier that this skein is linearly isomorphic to Hn. In order to translate the results",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-connections-with-the-quantum-group-invariants",
+      "number": "6",
+      "title": "Connections with the quantum group invariants",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 40,
+      "labelStart": "25",
+      "labelEnd": null,
+      "words": 1136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "skein theoretic",
+          "heading": false
+        },
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        }
+      ],
+      "extract": "ants Here we discuss brieﬂy the relationship between the Homﬂy polynomial and the SU(N)q–invariants and the bearing the idempotent elements of Sect. 4 have on this relationship. For more details, the reader is referred to [2] and [15]. Let Qλ denotes the closure of (1/αλ) eλ in the Homﬂy skein of the annulus, or equally of (1/αλ) Eλ in the skein of D2 × S1. Theorem 6.1 ([20]) The quantum invariant J(L; V✷, · · ·,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homﬂy skein",
+      "heading": true
+    },
+    {
+      "term": "hecke algebra",
+      "heading": true
+    },
+    {
+      "term": "young diagram",
+      "heading": true
+    },
+    {
+      "term": "skein relations",
+      "heading": true
+    },
+    {
+      "term": "skein element",
+      "heading": false
+    },
+    {
+      "term": "skein theory",
+      "heading": true
+    },
+    {
+      "term": "framed homﬂy",
+      "heading": true
+    },
+    {
+      "term": "skein theoretic",
+      "heading": false
+    },
+    {
+      "term": "extreme cells",
+      "heading": true
+    },
+    {
+      "term": "young symmetriser",
+      "heading": false
+    },
+    {
+      "term": "permutation braid",
+      "heading": false
+    },
+    {
+      "term": "idempotents",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The skein relations for the framed Homﬂy polynomial",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The skein relations for the Homﬂy skein of a surface",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The skein relation for a null homotopic loop",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The wiring of S(Rn",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The Young diagram ν = (4, 2, 1) and its conjugate",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The extreme cells and rectangles of ν",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The tableaux T(ν) and T(ν∨)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The 3-dimensional quasi-idempotent associated to ν",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The element Eν(a)",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "This picture can be obtained from the 3-dimensional picture of Fig. 8 by sliding the rows apart at the top of the diagram and sliding the columns apart at the bottom, using the standard tableau T(ν) to determine how to order the strings",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The wiring of (D2 × I, P ′) into (D2 × I, P)",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The full curl Fn on n strings",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "The braid Ti",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The element EI",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Reduction to the extreme rectangle",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Smoothed braids arising from crossings outside the extreme rectangle",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Now write T ′′ = C1SC2, where C1, S and C2 are shown in Fig. 18. A similar systematic move of the encircling string in S through the vertical strings inside the extreme rectangle, working through the columns from the left and from the top down, will replace S by a braid with all strings vertical, at",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "A smoothed braid arising from a crossing inside the extreme rectangle",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "the vertical string i we get the braid j@(i + 1), while smoothing at the crossing of these strings gives the braid S(β)(ω(i j)), shown also in Fig. 21. Then j@i = (s −s−1)S(β)(ω(i j)) + j@(i + 1),",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "21 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9702017v2"
+  }
+}

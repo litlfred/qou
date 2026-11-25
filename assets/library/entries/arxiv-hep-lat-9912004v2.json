@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-lat-9912004v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral Random Matrix Theory",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-11-chiral-random-matrix-theory.md",
+      "narrative": null,
+      "content": "eigenvalues of the staggered Dirac operator for SU(3) lattice gauge theory with dynamical fermions\nare examined. We consider temperatures below, near, and above the critical temperature Tc for the\nchiral phase transition. Below and above Tc the statistics are in agreement with the exact analytical\npredictions in the microscopic scaling regime. Above Tc we observe a gap in the spectral density and\na distribution compatible with the Airy distribution. Near Tc the eigenvalue correlations appear\ninconsistent with chRMT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "It is inherent to the lattice approach to quantum ﬁeld\ntheory, that one has to extrapolate from ﬁnite lattices, ﬁ-\nnite statistics and non-critical coupling parameters to in-\nﬁnite lattices, inﬁnite statistics and critical points. Since\nthe result supposedly is a non-trivial, non-perturbatively\ndeﬁned quantum ﬁeld theory, this process is plagued by\nuncertainties.\nA typical example of such a situation,\nwhere all these aspects combine, is the study of the ther-\nmal transition in QCD for small quark masses. One is\ninterested in the continuum limit (gauge coupling g →0),\nsmall or vanishing fermion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-lat/9912004v2  9 Mar 2000\nMicroscopic Universality and the Chiral Phase Transition in two Flavor QCD\nF. Farchioni\nDeutsches Elektronen-Synchrotron DESY, Notkestr. 85, D-22603 Hamburg, Germany\nPh. de Forcrand\nInstitut f¨ur Theoretische Physik, ETH-H¨onggerberg, CH-8093 Z¨urich, Switzerland\nI. Hip\nNIC - John von Neumann Institute for Computing, FZ-J¨ulich, D-52425 J¨ulich, Germany\nC. B. Lang\nInstitut f¨ur Theoretische Physik, Karl-Franzens-Universit¨at Graz, A-8010 Graz, Austria\nK. Splittorﬀ\nThe Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark\n(August 5, 2018)\nWe re-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperature transition",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12-temperature-transition.md",
+      "narrative": null,
+      "content": "Strictly speaking, in the continuum limit $a\\to 0$, non-zero temperature is realized for lattices $n_x^3\\times n_t$ with $T=1/(n_t\\,a(\\beta_g))$ and $n_t/n_x\\to 0$. In that limit, for vanishing quark mass $m$, one expects a phase transition at $T_c$. In [@MILC96] the critical temperature was estimated to lie between 143 and 154 MeV. For $T<T_c$ chiral symmetry is broken spontaneously, with massless pseudoscalars and $\\left\\langle\\overline{\\psi}\\psi\\right\\rangle\\neq 0$; above $T_c$ we expect restoration of this symmetry. Whereas for pure Yang-Mills theory the deconfinement transition is associa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expectations from chRMT",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-2-expectations-from-chrmt.md",
+      "narrative": null,
+      "content": "[]{#SecRMT label=\"SecRMT\"}\n\nAccording to the nature of the elements in the random matrix, chRMT appears in three universality classes. In this paper we consider the SU(3) gauge theory with quarks in the fundamental representation, which belongs to the universality class of the chiral unitary ensemble (chUE). The partition function under study is [@ShVe93; @JaVe96; @WeScWe96] $$\\begin{aligned}\n{\\mathcal Z}^{(N_f)}(\\{m\\})&=&\n\\int {\\rm d}M \\,e^{-N{\\rm Tr} U(M^2)}\\nonumber\\\\\n\\label{Z}\n &&\\times \\prod_{f=1}^{N_f}\\det(M+T+im_f) \\;,\n\\end{aligned}$$ where $M$ is a $2N\\times2N$ block hermitian matrix (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge field configurations and analysis",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-3-gauge-field-configurations-and-analysis.md",
+      "narrative": null,
+      "content": "By courtesy of the MILC collaboration [@MILC96] there are sets of gauge configurations [@MILCNERSC] available to the lattice community. These were generated with two species of dynamical staggered fermions, at various lattice sizes, temperatures, values of the gauge coupling and small values of the bare fermion mass. In Table [1](#tabconf){reference-type=\"ref\" reference=\"tabconf\"} the samples used in the present study are listed. For further details on the method of determination of the gauge configurations and the physical parameters we refer to [@MILC96].\n\n::: {#tabconf}\n  ---------- -------",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reporting the results",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-4-reporting-the-results.md",
+      "narrative": null,
+      "content": "We now turn our attention to the measurement of the statistical properties of the Dirac operator. Starting with the distribution of all eigenvalues and then separating out the lowest and the second lowest eigenvalue we observe the first indication of a discrepancy with chRMT. In order to investigate this discrepancy further we study the level spacing distribution. Finally we focus on the inner edge of the spectrum for $T>T_c$ and measure the exponent for the singularity of the spectral density.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eigenvalue density",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-41-eigenvalue-density.md",
+      "narrative": null,
+      "content": "Fig. [1](#all-dist){reference-type=\"ref\" reference=\"all-dist\"} gives the eigenvalue distribution as obtained from the lowest 10 (or 8 for the large lattices) eigenvalues for each configuration. It coincides with the distribution from all eigenvalues only up to the lowest of all 10th (8th) eigenvalues. In order to emphasize this feature we also plot the distribution histogram of this 10th (8th) eigenvalue in full black.\n\nA remarkable change in the features of the distributions occurs around $T_c$, as given in Table [\\[tabconf\\]](#tabconf){reference-type=\"ref\" reference=\"tabconf\"}. In particular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Level spacing distribution",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-42-level-spacing-distribution.md",
+      "narrative": null,
+      "content": "Another observable with definite predictions from RMT (cf. Sect. [\\[SecRMT\\]](#SecRMT){reference-type=\"ref\" reference=\"SecRMT\"}) is the distribution of level spacings. The advantage here is, that the level spacing should not be influenced by possible distortions of the smallest eigenvalues due to the unknown topological charge of the configurations (if the smallest eigenvalues are removed from the data).\n\nThe studies of the level spacing statistics in lattice data so far have shown a uniform picture consistent with the RMT prediction ([\\[WUE\\]](#WUE){reference-type=\"ref\" reference=\"WUE\"}). The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soft inner edge",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-43-soft-inner-edge.md",
+      "narrative": null,
+      "content": "We now turn to the results for $T>T_c$. In our results for $24^3\\times 12$ at $\\beta=5.85$ (Fig. [\\[all-dist\\]](#all-dist){reference-type=\"ref\" reference=\"all-dist\"}(c)) a gap in the spectral distributions is obvious. However even at $\\beta=5.8$ we may speculate, that a clear signal of a gap is only prevented by the (topological) quasi-zero modes responsible for the small bump at small eigenvalues.\n\nRecall, that chRMT[@JaVe96] predicts the presence of a gap in the spectral density $\\rho(\\lambda)$ of the Dirac operator centered around $\\lambda=0$. Furthermore, the inner edge of this gap is pred",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and conclusions",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-5-summary-and-conclusions.md",
+      "narrative": null,
+      "content": "We have examined the manifestations of the chiral phase transition in the\nmicroscopic spectral correlators for the Dirac operator. For the level \nspacing distribution, we find agreement with\nRMT\\space below and above $T_c$. Below $T_c$ the chRMT\\space distributions\nallow us to determine condensate values with implicit consideration of lattice\nvolume and quark mass dependence. This could in principle serve to improve the\nscaling analysis of the condensate near the chiral transition.\n\nNear $T_c$, however, the microscopic spectral statistics differs from the\nchRMT\\space prediction.   By measuring",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

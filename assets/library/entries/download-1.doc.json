@@ -1,0 +1,996 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "download-1",
+  "title": "Central and L^{p}-concentration of 1-Lipschitz maps into \\mbi{R}-trees",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "483",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries.",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "486",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Basics of the concentration and the Lp-concentration.",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "486",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-basics-of-the-concentration-and-the-lp-concen"
+    },
+    {
+      "level": 3,
+      "title": "Observable diameter and separation distance.",
+      "number": "2.1.1",
+      "page": 4,
+      "pageLabel": "486",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-211-observable-diameter-and-separation-distance"
+    },
+    {
+      "level": 3,
+      "title": "Observable Lp-variation.",
+      "number": "2.1.2",
+      "page": 5,
+      "pageLabel": "487",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-212-observable-lp-variation"
+    },
+    {
+      "level": 2,
+      "title": "Basics of R-trees.",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "488",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-22-basics-of-r-trees"
+    },
+    {
+      "level": 2,
+      "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "489",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-23-center-of-mass-of-a-measure-on-a-cat0-space-a"
+    },
+    {
+      "level": 3,
+      "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+      "number": "2.3.1",
+      "page": 7,
+      "pageLabel": "489",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-231-basics-of-the-center-of-mass-of-a-measure-on"
+    },
+    {
+      "level": 3,
+      "title": "Observable central radius.",
+      "number": "2.3.2",
+      "page": 9,
+      "pageLabel": "491",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-232-observable-central-radius"
+    },
+    {
+      "level": 1,
+      "title": "Existence of a median in an R-tree.",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "493",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-3-existence-of-a-median-in-an-r-tree"
+    },
+    {
+      "level": 1,
+      "title": "The necessity in Proposition 2.12 for R-trees.",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "495",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-4-the-necessity-in-proposition-212-for-r-trees"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the main theorems.",
+      "number": "5",
+      "page": 16,
+      "pageLabel": "498",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-5-proof-of-the-main-theorems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": "505",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "483",
+      "labelEnd": "483",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-trees",
+          "heading": false
+        },
+        {
+          "term": "lipschitz maps",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": false
+        }
+      ],
+      "extract": "doi: 10.2969/jmsj/06120483 Central and Lp-concentration of 1-Lipschitz maps into R-trees By Kei FUNANO (Received Feb. 13, 2008) (Revised May 27, 2008) Abstract. In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.",
+      "extractCut": false,
+      "blocks": [
+        "library/download-1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "483",
+      "labelEnd": "486",
+      "words": 1034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central concentration",
+          "heading": false
+        },
+        {
+          "term": "concentration property",
+          "heading": false
+        },
+        {
+          "term": "observable lp-variation",
+          "heading": false
+        },
+        {
+          "term": "concentration properties",
+          "heading": false
+        },
+        {
+          "term": "lipschitz maps",
+          "heading": false
+        },
+        {
+          "term": "general screens",
+          "heading": false
+        },
+        {
+          "term": "let fxng",
+          "heading": false
+        },
+        {
+          "term": "observable diameter",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction. This paper is devoted to investigating the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces (metric measure spaces) to R-trees. Here, an mm-space is a triple ðX; dX; \u0001XÞ of a set X, a complete separable distance function dX on X, and a ﬁnite Borel measure \u0001X on ðX; dXÞ. Let fðXn; dXn; \u0001XnÞg1 n¼1 be a sequence of mm-spaces and fðYn; dYnÞg1 n¼1 a sequence of metric spaces. Given a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries.",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "486",
+      "labelEnd": "486",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-basics-of-the-concentration-and-the-lp-concen",
+      "number": "2.1",
+      "title": "Basics of the concentration and the Lp-concentration.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "486",
+      "labelEnd": "486",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "Basics of the concentration and the Lp-concentration.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-211-observable-diameter-and-separation-distance",
+      "number": "2.1.1",
+      "title": "Observable diameter and separation distance.",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "486",
+      "labelEnd": "487",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "observable diameter",
+          "heading": true
+        },
+        {
+          "term": "separation distance",
+          "heading": true
+        },
+        {
+          "term": "sepðx",
+          "heading": false
+        },
+        {
+          "term": "mm-space",
+          "heading": false
+        },
+        {
+          "term": "metric space",
+          "heading": false
+        },
+        {
+          "term": "lipschitz",
+          "heading": false
+        }
+      ],
+      "extract": "Observable diameter and separation distance. Let Y be a metric space and \u0003 a Borel measure on Y such that m :¼ \u0003ðY Þ < þ1. We deﬁne for any \u0002 > 0 diamð\u0003; m \u0004 \u0002Þ :¼ inffdiam Y0 j Y0 \u0005 Y is a Borel subset such that \u0003ðY0Þ \u0001 m \u0004 \u0002g and call it the partial diameter of \u0003. DEFINITION 2.1 (Observable diameter). Let ðX; dX; \u0001XÞ be an mm-space with m :¼ \u0001XðXÞ < þ1 and Y a metric space. For any \u0002 > 0 we deﬁne the observable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-212-observable-lp-variation",
+      "number": "2.1.2",
+      "title": "Observable Lp-variation.",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "487",
+      "labelEnd": "488",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "observable lp-variation",
+          "heading": true
+        },
+        {
+          "term": "obs lp-varrðxþ",
+          "heading": false
+        },
+        {
+          "term": "borel measurable",
+          "heading": false
+        },
+        {
+          "term": "vpðfþ",
+          "heading": false
+        },
+        {
+          "term": "þ1þ",
+          "heading": false
+        }
+      ],
+      "extract": "Observable Lp-variation. Let ðX; dX; \u0001XÞ be an mm-space and ðY ; dY Þ a metric space. Given a Borel measure \u0003 on Y and p 2 ð0; þ1Þ, we put Vpð\u0003Þ :¼ Z Z Y \u0003Y dY ðx; yÞpd\u0003ðxÞd\u0003ðyÞ \u0001 \u00021=p : For a Borel measurable map f : X ! Y , we also put VpðfÞ :¼ Vpðf\u0002ð\u0001XÞÞ. Let fXng1 n¼1 be a sequence of mm-spaces and fYng1 n¼1 a sequence of metric spaces. For any p 2 ð0; þ1Þ, we say that a sequence ffn : Xn ! Yng1 n¼1 of Borel",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-basics-of-r-trees",
+      "number": "2.2",
+      "title": "Basics of R-trees.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "488",
+      "labelEnd": "489",
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-trees",
+          "heading": true
+        },
+        {
+          "term": "geodesic triangle",
+          "heading": false
+        },
+        {
+          "term": "geodesic space",
+          "heading": false
+        },
+        {
+          "term": "tðzþ",
+          "heading": false
+        },
+        {
+          "term": "arcwise connected",
+          "heading": false
+        },
+        {
+          "term": "connected subset",
+          "heading": false
+        },
+        {
+          "term": "dxþ",
+          "heading": false
+        },
+        {
+          "term": "metric space",
+          "heading": false
+        }
+      ],
+      "extract": "Basics of R-trees. Before reviewing the deﬁnition of R-trees, we recall some standard terminologies in metric geometry. Let ðX; dXÞ be a metric space. A rectiﬁable curve \u0004 : ½0; 1\b ! X is called a geodesic if its arclength coincides with the distance dXð\u0004ð0Þ; \u0004ð1ÞÞ and it has a constant speed, i.e., parametrized proportionally to the arc length. We say that ðX; dXÞ is a geodesic space if any two points in X are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
+      "number": "2.3",
+      "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "489",
+      "labelEnd": "489",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "Center of mass of a measure on a CAT(0)-space and observ- able central radius.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-231-basics-of-the-center-of-mass-of-a-measure-on",
+      "number": "2.3.1",
+      "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "489",
+      "labelEnd": "491",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat",
+          "heading": true
+        },
+        {
+          "term": "wþd ðwþ",
+          "heading": false
+        },
+        {
+          "term": "ðyþ",
+          "heading": false
+        },
+        {
+          "term": "b1ðxþ",
+          "heading": false
+        },
+        {
+          "term": "borel measures",
+          "heading": false
+        },
+        {
+          "term": "metric space",
+          "heading": false
+        },
+        {
+          "term": "centric",
+          "heading": false
+        },
+        {
+          "term": "dtðz",
+          "heading": false
+        }
+      ],
+      "extract": "Basics of the center of mass of a measure on a CAT(0)-space. In this subsection, we review Sturm’s works about measures on a CAT(0)- space. We refer to [8] and [15] for details. A geodesic metric space X is called a CAT(0)-space if we have dXðx; \u0006ð1=2ÞÞ2 \u0006 1 2 dXðx; yÞ2 þ 1 2 dXðx; zÞ2 \u0004 1 4 dXðy; zÞ2 for any x; y; z 2 X and any minimizing geodesic \u0006 : ½0; 1\b ! X from y to z. For example, Hadamard manifolds, Hilbert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-232-observable-central-radius",
+      "number": "2.3.2",
+      "title": "Observable central radius.",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "491",
+      "labelEnd": "493",
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central radius",
+          "heading": true
+        },
+        {
+          "term": "obs lp-varrðxþ",
+          "heading": false
+        },
+        {
+          "term": "observable central",
+          "heading": true
+        },
+        {
+          "term": "cradð",
+          "heading": false
+        },
+        {
+          "term": "vpð",
+          "heading": false
+        },
+        {
+          "term": "lipschitz maps",
+          "heading": false
+        },
+        {
+          "term": "sepðx",
+          "heading": false
+        },
+        {
+          "term": "lipschitz function",
+          "heading": false
+        }
+      ],
+      "extract": "Observable central radius. Let Y be a metric space and assume that \u0003 2 B1ðY Þ has the center of mass. We denote by BY ðy; rÞ the closed ball in Y centered at y 2 Y and with radius r > 0. For any \u0002 > 0, putting m :¼ \u0003ðY Þ, we deﬁne the central radius CRadð\u0003; m \u0004 \u0002Þ of \u0003 as the inﬁmum of \b > 0 such that \u0003ðBY ðcð\u0003Þ; \bÞÞ \u0001 m \u0004 \u0002. Let ðX; dX; \u0001XÞ be an mm-space with \u0001X 2 B1ðXÞ and Y a centric metric space. For any \u0002 > 0,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-existence-of-a-median-in-an-r-tree",
+      "number": "3",
+      "title": "Existence of a median in an R-tree.",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "493",
+      "labelEnd": "495",
+      "words": 1195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ðtþ ð0þ",
+          "heading": false
+        },
+        {
+          "term": "median",
+          "heading": true
+        },
+        {
+          "term": "r-tree",
+          "heading": true
+        },
+        {
+          "term": "monotone increasing",
+          "heading": false
+        },
+        {
+          "term": "increasing sequence",
+          "heading": false
+        },
+        {
+          "term": "claim",
+          "heading": false
+        },
+        {
+          "term": "completes",
+          "heading": false
+        },
+        {
+          "term": "contradiction",
+          "heading": false
+        }
+      ],
+      "extract": "Existence of a median in an R-tree. Let T be an R-tree and \u0003 a ﬁnite Borel measure on T with m :¼ \u0003ðTÞ < þ1. A median of \u0003 is a point z 2 T such that there exist two subtrees T 0, T 00 \u0005 T such that T ¼ T 0 [ T 00, T 0 \\ T 00 ¼ fzg, \u0003ðT 0Þ \u0001 m=3, and \u0003ðT 00Þ \u0001 m=3. EXAMPLE 3.1. For i ¼ 1; 2; 3, let Ti :¼ fði; rÞ j r 2 ½0; þ1Þg be three copies of ½0; þ1Þ equipped with the usual Euclidean distance function. The tripod",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-the-necessity-in-proposition-212-for-r-trees",
+      "number": "4",
+      "title": "The necessity in Proposition 2.12 for R-trees.",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "495",
+      "labelEnd": "498",
+      "words": 740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wþd ðwþ",
+          "heading": false
+        },
+        {
+          "term": "tðcð nþþ",
+          "heading": false
+        },
+        {
+          "term": "dtðcð",
+          "heading": false
+        },
+        {
+          "term": "r-trees",
+          "heading": true
+        },
+        {
+          "term": "ctn",
+          "heading": false
+        },
+        {
+          "term": "necessity",
+          "heading": true
+        },
+        {
+          "term": "etn",
+          "heading": false
+        },
+        {
+          "term": "convex hull",
+          "heading": false
+        }
+      ],
+      "extract": "The necessity in Proposition 2.12 for R-trees. In order to prove the main theorems, we extend the necessity in Proposition 2.12 to R-trees: PROPOSITION 4.1. Let T be an R-tree and \u0003 2 B1ðTÞ. Then, we have Central and Lp-concentration of 1-Lipschitz maps into R-trees 495 ccð\u0003Þ;T 0ð\u0003Þ \u0006 0 for any T 0 2 C 0 Tðcð\u0003ÞÞ. PROOF. For simplicity, we assume that \u0003ðTÞ ¼ 1. We shall approximate the measure \u0003 by a measure whose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-proof-of-the-main-theorems",
+      "number": "5",
+      "title": "Proof of the main theorems.",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 23,
+      "labelStart": "498",
+      "labelEnd": "505",
+      "words": 2038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obs lp-varrðxþ",
+          "heading": false
+        },
+        {
+          "term": "obs lp-vartðxþ",
+          "heading": false
+        },
+        {
+          "term": "dtðcð",
+          "heading": false
+        },
+        {
+          "term": "r-tree",
+          "heading": false
+        },
+        {
+          "term": "b1ðtþ",
+          "heading": false
+        },
+        {
+          "term": "sep",
+          "heading": false
+        },
+        {
+          "term": "obscradrðx",
+          "heading": false
+        },
+        {
+          "term": "lipschitz function",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of the main theorems. Combining Proposition 3.2 with the same proof as [3, Lemma 5.3] implies the following proposition: PROPOSITION 5.1. Let T be an R-tree and \u0003 a ﬁnite Borel measure. Then, for any \u0002 > 0, we have \u0003 BT m\u0003; Sep \u0003; m 3 ; \u0002 2 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 m \u0004 \u0002; ð5:1Þ where m\u0003 is a median of the measure \u0003. In particular, letting X be an mm-space, we have ObsDiamTðX; \u0004\u0002Þ \u0006 2 Sep X; m 3 ; \u0002 2 \u0001 \u0002 : ð5:2Þ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "505",
+      "labelEnd": "506",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "observable concentration",
+          "heading": false
+        },
+        {
+          "term": "birkha user",
+          "heading": false
+        },
+        {
+          "term": "metric spaces",
+          "heading": false
+        },
+        {
+          "term": "funano",
+          "heading": false
+        },
+        {
+          "term": "nonpositive curvature",
+          "heading": false
+        },
+        {
+          "term": "milman",
+          "heading": false
+        },
+        {
+          "term": "mathematical society",
+          "heading": false
+        },
+        {
+          "term": "gromov",
+          "heading": false
+        }
+      ],
+      "extract": "[ 1 ] L. Ambrosio and P. Tilli, Topics on analysis in metric spaces, Oxford Lecture Series in Mathematics and its Applications, 25, Oxford University Press, Oxford, 2004. [ 2 ] I. Chiswell, Introduction to \u0002-trees, World Scientiﬁc Publishing Co. Inc., River Edge, NJ, 2001. [ 3 ] K. Funano, Observable concentration of mm-spaces into nonpositively curved manifolds, preprint, available online at",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "obs lp-varrðxþ",
+      "heading": false
+    },
+    {
+      "term": "lipschitz maps",
+      "heading": false
+    },
+    {
+      "term": "r-trees",
+      "heading": true
+    },
+    {
+      "term": "lipschitz mapg",
+      "heading": false
+    },
+    {
+      "term": "observable concentration",
+      "heading": false
+    },
+    {
+      "term": "wþd ðwþ",
+      "heading": false
+    },
+    {
+      "term": "lipschitz function",
+      "heading": false
+    },
+    {
+      "term": "exists lipschitz",
+      "heading": false
+    },
+    {
+      "term": "observable central",
+      "heading": true
+    },
+    {
+      "term": "lipschitz map",
+      "heading": false
+    },
+    {
+      "term": "borel measure",
+      "heading": false
+    },
+    {
+      "term": "kei funano",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "483",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "484",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "485",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "486",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "487",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "488",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "489",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "490",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "491",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "492",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "493",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "494",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "495",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "496",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "497",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "498",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "499",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "500",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "501",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "502",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "503",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "504",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "505",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "506",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/download-1"
+  }
+}

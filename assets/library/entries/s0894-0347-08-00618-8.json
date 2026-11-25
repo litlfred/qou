@@ -1,0 +1,1176 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s0894-0347-08-00618-8",
+  "blocks": [
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n521\n2.\nA plethora of negative dependence properties and conjectures\n524\n2.1.\nNegative dependence concepts\n524\n2.2.\nStrongly Rayleigh measures\n529\n2.3.\nSymmetric homogenization\n530\n2.4.\nMeasures on countably inﬁnite sets\n530\n2.5.\nTowards a theory of negative dependence: Problems and solutions\n531\n3.\nNegative dependence in mathematics and physics\n533\n3.1.\nReal stable polynomials and transcendental entire functions\n533\n3.2.\nHadamard-Fischer inequalities and GKK-matrices\n535\n3.3.\nDeterminantal probability measures\n537\n3.4.\nGraphs, Laplacians, spanning trees and the random cluster mode",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "JOURNAL OF THE\nAMERICAN MATHEMATICAL SOCIETY\nVolume 22, Number 2, April 2009, Pages 521–567\nS 0894-0347(08)00618-8\nArticle electronically published on September 19, 2008\nNEGATIVE DEPENDENCE\nAND THE GEOMETRY OF POLYNOMIALS\nJULIUS BORCEA, PETTER BR¨AND´EN, AND THOMAS M. LIGGETT\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/ex-sec-002-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "ex-sec-002-02.md",
+      "narrative": null,
+      "content": "The measure µ ∈P4 with generating polynomial gµ(z1, z2, z3, z4) = 1 2(z1z2 + z3z4) trivially satisﬁes NLC but µ(X1X2) = 1 2 while µ(X1)µ(X2) = 1 4, so µ is not p-NC. Deﬁnition 2.4 (Deﬁnition 2.4 in [65]). A measure µ ∈Pn or a polynomial f ∈Pn satisﬁes the hereditary negative lattice condition or h-NLC if every projection sat- isﬁes NLC. One further says that µ (respectively, f) satisﬁes the strong hereditary negative lattice condition or h-NLC+ if every measure (respectively, polynomial) obtained from µ (respectively, f) by imposing an external ﬁeld satisﬁes h-NLC. Deﬁnition 2.5. A polynomial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "A measure in Pn or a polynomial in Pn is Rayleigh if and only if it is h-NLC+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A plethora of negative dependence properties and conjectures",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-a-plethora-of-negative-dependence-properties-a.md",
+      "narrative": null,
+      "content": "In this section we explain in terms of generating polynomials the probabilistic\nnotions and negative dependence properties studied in e.g. [55, 65, 72], and we\nclarify the connections between these as well as new classes of probability measures\nthat we introduce below. We then formulate the problems and conjectures made\nin [55, 65, 72] that we solve in the next sections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative dependence concepts",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-negative-dependence-concepts.md",
+      "narrative": null,
+      "content": "ate polynomial is said to be multi-aﬃne if it has degree at most one in each variable.\nDenote by Pn, n ∈N, the set of all probability measures on the Boolean algebra\n2[n]. (In the ﬁnite case we will always assume that the σ-algebra is the full alge-\nbra.) For i ∈[n] the i-th coordinate function on 2[n] is an atomic (binary) random\nvariable given by Xi(S) = 1 if i ∈S and 0 otherwise, where S ⊆[n], while the char-\nacteristic function χS of S is deﬁned by χS(T) = 1 if T = S and 0 otherwise. Using\nthe inclusion-exclusion principle one can show that any such characteristic function\nmay be written a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "All these “closure” operations are in fact well deﬁned for arbitrary complex measures on 2[n] if one drops the normalization factors appearing in the denominators of the above expressions (these were used just to make sure that the resulting measures are again probability measures). In §4 we will actually use the partial symmetrization procedure (3) for complex measures on 2[n]. The corresponding “closure” operations for generating polynomials – i.e., prod- ucts, projections, conditioning, external ﬁelds, symmetrization, partial symmetriza- tion and truncations (cf. Deﬁnition 2.15 in §2.5)– ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-002-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-002-04.md",
+      "narrative": null,
+      "content": "It is interesting to note that one actually has the following analog of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-002-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-002-05.md",
+      "narrative": null,
+      "content": "It is clear from the deﬁnitions that each of the ﬁve properties h-NLC, Rayleigh/h-NLC+, NA, CNA, and CNA+ implies p-NC.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-002-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "rem-sec-002-06.md",
+      "narrative": null,
+      "content": "As explained in [65], one has the following subordination relations: CNA ⇒h-NLC and CNA+ ⇒Rayleigh/h-NLC+. In §4.2 and §7 below we show that PHR ⇒CNA+ and that this implication is strict. We note that NA can fail to imply NLC even for symmetric measures:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strongly Rayleigh measures",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-strongly-rayleigh-measures.md",
+      "narrative": null,
+      "content": "of multivariate entire functions studied by Levin [50], the following deﬁnition was\nmade in [7, 8, 9] (see also [10, 11]).\nDeﬁnition 2.9. A polynomial f ∈C[z1, . . . , zn] is called stable if f(z1, . . . , zn)̸ = 0\nwhenever Im(zj) > 0 for 1 ≤j ≤n. A stable polynomial with all real coeﬃcients\nis called real stable.\nMultivariate stable polynomials are intimately connected with other fundamental\nobjects such as hyperbolic polynomials, Lee-Yang polynomials and polynomials\nwith the half-plane property. Polynomials of the aforementioned types are widely\nencountered in both mathematics and physics [3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "As we explain in §3.1 and §4, a strongly Rayleigh measure is necessarily Rayleigh. The terminology adopted is motivated by the fact that the equivalent condition for real stability for multi-aﬃne polynomials in Theorem 4.1 is a natural strengthening of the deﬁnition of a Rayleigh polynomial/measure (Deﬁnition 2.5). The term is taken from [20], where a matroid was deﬁned to be strongly Rayleigh if (5) holds for its bases-generating polynomial. However, it was not known then that condition (5) is equivalent to stability. A simple albeit important example of strongly Rayleigh measure is the follo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric homogenization",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-symmetric-homogenization.md",
+      "narrative": null,
+      "content": "tion procedure for arbitrary measures in Pn. This natural construction proves to\nbe quite useful for studying strongly Rayleigh measures (§4.1).\nDeﬁnition 2.12. Given a measure µ ∈Pn deﬁne a new measure µsh ∈P2n called\nthe symmetric homogenization of µ by\nµsh(S) =\n\u000e\nµ(S ∩[n])\n\b\nn\n|S∩[n]|\n\t−1 if |S| = n,\n0 otherwise.\nNote that the generating polynomial of µsh may be written as\ngµsh(z1, . . . , zn, zn+1, . . . , z2n) =\n\u0004\nS⊆[n]\nµ(S)\n\u0014 n\n|S|\n\u0015−1\nzSen−|S|(zn+1, . . . , z2n),\nwhere z = (z1, . . . , zn) and where ek, 0 ≤k ≤n, denotes the k-th elementary sym-\nmetric function. Clearly, gµsh is symmetri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Measures on countably infinite sets",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-24-measures-on-countably-infinite-sets.md",
+      "narrative": null,
+      "content": "of the notions of negative dependence to probability measures on 2E, where E is a\ncountably inﬁnite set. This is canonically done as follows.\nNEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS\n531\nDeﬁnition 2.13. Let µ be a probability measure on 2E, where E is a countably\ninﬁnite set satisfying\n(A)\nfor all x ∈E the set\n\nT ∈2E : x ∈T\n\nis measurable.\nLet P be a property deﬁned for measures on power-sets of ﬁnite sets. We say that\nµ has property P provided that the projection of µ to all ﬁnite subsets of E has\nproperty P. (Note that condition (A) is necessary for projections on ﬁnite sets to\nbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-01.md",
+      "narrative": null,
+      "content": "If the initial conﬁguration of a symmetric exclusion process is non-random/deterministic, then the distribution at time t is NA for all t > 0. In §5 we prove a stronger form of this conjecture using the results on strongly Rayleigh measures obtained in §4. There are several conjectures, ﬁrst published in [65] but apparently of obscure folklore origin (cf. [72]), stating that various negative dependent properties give rise to ULC rank sequences. The strongest form of these is contained in the ﬁrst part of Conjecture 4 in Pemantle’s paper [65] (see also [72, Conjecture 3.9]) and reads as follows",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-02.md",
+      "narrative": null,
+      "content": "If µ ∈Pn is NA, then it is ULC. Inspired by Conjecture 2.3 and motivated by Mason’s long-standing conjecture in enumerative graph/matroid theory [62], Wagner made the following conjecture in [72, Conjecture 3.4] and baptized it “The Big Conjecture” since – if true – it would prove the validity of Mason’s conjecture for a large class of matroids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-03.md",
+      "narrative": null,
+      "content": "Any Rayleigh measure µ ∈Pn is ULC. Since we now know that the Rayleigh and h-NLC+ properties are equivalent (Proposition 2.2), Conjecture 2.4 is actually already contained in the second part of Conjecture 4 in Pemantle’s paper [65]. The weakest form of the latter conjecture is the one stated below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-04.md",
+      "narrative": null,
+      "content": "If µ ∈Pn is CNA+, then it is ULC. J. BORCEA, P. BR¨AND´EN, AND T. M. LIGGETT In §7 we construct examples of measures in Pn for any n ≥20 that disprove all these three conjectures (for the strongest of these, namely Conjecture 2.3, we can actually ﬁnd counterexamples already in P3 and P4; see Remark 7.2). In fact, our examples show that the strongest negative association property (CNA+) need not even give rise to an SLC rank sequence (Deﬁnition 2.8), thus invalidating a still weaker version of Conjecture 2.5. Moreover, these same examples show that neither the PHR property (Deﬁnition 2.6) nor i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-05.md",
+      "narrative": null,
+      "content": "h-NLC ⇒CNA and Rayleigh/h-NLC+ ⇒CNA+. We prove Conjecture 2.6 for almost symmetric measures (cf. Deﬁnition 2.1). Since PHR measures are CNA+ (Theorem 4.10), we are naturally led to consider the following related problem. Problem 2.7. Is PHR = Rayleigh/h-NLC+?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/conj-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "conj-sec-006-06.md",
+      "narrative": null,
+      "content": "Suppose that µ is CNA+ and that µ({S ∈2[n] : |S| = k})µ({S ∈2[n] : |S| = k + 1}) > 0. Then µk ≼µk+1. To underline the relevance of these questions, in [65, §III.C] Pemantle argued that a combination of positive answers to Problem 2.8 and Conjecture 2.9 (for Rayleigh measures) would imply Conjecture 2.6. In §4.3 we give an answer to Problem 2.8 and prove that its conclusion (hence also that of Conjecture 2.9) holds for strongly Rayleigh measures, while in §7 we disprove Conjecture 2.9 in its full generality.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards a theory of negative dependence: Problems and solutions",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-25-towards-a-theory-of-negative-dependence-probl.md",
+      "narrative": null,
+      "content": "A series of problems and conjectures was proposed by several authors as natural\nsteps toward building as general a theory of negative dependence as possible. In\n[65, §III] Pemantle pointed out that although they are desirable, the many nega-\ntive dependence properties listed in §2.1 might not be mutually satisﬁable, and he\nsuggested a problem that may be formulated as follows.\nProblem 2.1. Find a natural and useful class of “negatively dependent measures”.\nNote that there may well exist several such classes, if indeed any, depending on\nthe applications that one has in mind. We show that the cl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative dependence in mathematics and physics",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-3-negative-dependence-in-mathematics-and-physics.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Real stable polynomials and transcendental entire functions",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-31-real-stable-polynomials-and-transcendental-en.md",
+      "narrative": null,
+      "content": "it was proved that a multi-aﬃne polynomial f ∈R[z1, . . . , zn] is stable (in the sense\n534\nJ. BORCEA, P. BR¨AND´EN, AND T. M. LIGGETT\nof Deﬁnition 2.9) if and only if\n(5)\n∂f\n∂zi\n(x) ∂f\n∂zj\n(x) ≥\n∂2f\n∂zi∂zj\n(x)f(x)\nfor all x ∈Rn and 1 ≤i < j ≤n (see also Theorem 4.1 in §4 below). Therefore, a\nstable multi-aﬃne polynomial with non-negative coeﬃcients is Rayleigh/h-NLC+.\nAs we will prove in §4, such polynomials are in fact CNA+.\nClearly, by setting all variables equal in a stable polynomial one gets a uni-\nvariate stable polynomial. Hence, if f(z1, . . . , zn) is stable, then so is its diagonal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hadamard-Fischer inequalities and GKK-matrices",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice.md",
+      "narrative": null,
+      "content": "matrix A over C and S ⊆[n], denote by A[S] the principal submatrix of A with rows\nand columns indexed by S and let A⟨S⟩= det(A[S′]) be the principal minor of A\nwith rows and columns indexed by S′ = [n]\\S, where A⟨[n]⟩= det(A[∅]) := 1. The\nmatrix A is called a P-matrix if all its principal minors are positive. A much studied\nclass of P-matrices that uniﬁes several important types of matrices is the class of\nGKK-matrices; see [28, 40] and the references therein. A P-matrix A is a GKK-\nmatrix (after Gantmacher-Krein and Kotelyansky) if it satisﬁes the Hadamard-\nFischer-Kotelyansky inequalities, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "Suppose that µ is a determinantal measure on 2[n] whose corre- sponding matrix is a positive contraction. Then µ is strongly Rayleigh.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal probability measures",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-33-determinantal-probability-measures.md",
+      "narrative": null,
+      "content": "tal probability measure on 2[n] to be a measure µ ∈Pn such that there is an n × n\nmatrix A so that for any subset S of [n] one has\n(11)\nµ({T : S ⊆T}) = det(A[S]),\nwhere as before A[S] denotes the principal submatrix of A whose rows and columns\nare indexed by S. As discussed in e.g. [5, 57], such measures have important appli-\ncations ranging from fermionic processes/continuous scaling limits of discrete point\nprocesses [23, 59] to the distribution of eigenvalues of random matrices and zeros\nof the Riemann zeta function [21], transfer current matrices [16], non-intersecting\nrandom walks [47], P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "Suppose that µ is a determinantal measure on 2[n] whose corre- sponding matrix is a positive contraction. Then µ is CNA+. This is one of the main results of [57] (cf. [57, Theorem 8.1]), where exterior (Grassmann) algebra methods were used to investigate determinantal probability measures and, in particular, to prove the above theorem. As noted in loc. cit., The- orem 3.4 provides a powerful tool for studying determinantal probability measures, comparable to the FKG theorem in the theory of positive association, and is crucial to most of the results in e.g. [59]. Let us show that Theorem 3.4 a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphs, Laplacians, spanning trees and the random cluster model",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-34-graphs-laplacians-spanning-trees-and-the-rand.md",
+      "narrative": null,
+      "content": "Let G = (V, E) be a graph with vertex set V = [n] and edge set E. Associate to\neach edge e ∈E a variable we. If e connects i and j let Ae be the n × n positive\nsemi-deﬁnite matrix with the ii-entry and the jj-entry equal to 1, the ij-entry and\nji-entry equal to −1, and all other entries equal to 0. The Laplacian, L(G), of G is\ndeﬁned by\nL(G) =\n\u0004\ne∈E\nweAe.\nLet\nfG(z, w) = det(L(G) + Z).\nThus, by (6), fG is a multi-aﬃne real stable polynomial with non-negative coeﬃ-\ncients. The Principal Minors Matrix-Tree Theorem (see, e.g., [18]) says that\nfG(z, w) =\n\u0004\nF\nzroots(F )wedges(F ),\nNEGATIVE DEPENDENC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "For any graph G the polynomial fG(1, w) is real stable. Let G = (V, E) be a graph and let q > 0 and 0 ≤p ≤1 be parameters. The random cluster (RC) model (see [33]) is the measure µ on 2E deﬁned by µ(F) = ZRC qk(F )p|F |(1 −p)|E\\F |, F ⊆E, where k(F) is the number of connected components in the graph (V, F) and ZRC is the appropriate normalizing factor. The uniform spanning tree measure can be obtained from this model by letting p →0 and q/p →0; see [33, Section 1.5]. If q ≥1, the RC model satisﬁes PLC and is therefore positively associated. If q ≤1, NLC is satisﬁed, but other negative correlat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interacting particle systems and exclusion evolutions",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md",
+      "narrative": null,
+      "content": "process is one of the main models considered in the area of Probability Theory\nknown as Interacting Particle Systems. The idea is that particles move in continuous\ntime on a countable set S, in such a way that there is always at most one particle\nper site. The motion of each particle would be a continuous time Markov chain on\nS, except that transitions to occupied sites are forbidden. This process has been\nused to model many situations, including biopolymers and traﬃc ﬂow. We refer to\n[52, Chap. VIII] and [54, Part 3] for detailed treatments of this process.\nThe (ﬁnite) symmetric exclusion pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Exchangeable Strongly Rayleigh Case",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "Suppose µ ∈Pn has a symmetric generating polynomial and rank sequence {rk}n k=0. The following are equivalent: (a) The generating polynomial of µ is stable, i.e., µ is strongly Rayleigh. (b) All zeros of the univariate polynomial \u0001n k=0 rkzk are real. (c) The inﬁnite Toeplitz matrix (ri−j)∞ i,j=0 is TP, where rk = 0 if k /∈{0}∪[n].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative dependence theory for strongly Rayleigh measures",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-4-negative-dependence-theory-for-strongly-raylei.md",
+      "narrative": null,
+      "content": "The importance of strongly Rayleigh measures – that is, measures with stable\ngenerating polynomials (cf. Deﬁnition 2.10) – in negative dependence stems from\nthe theorem below proved by one of the authors in [15] (cf. §3.1).\nTheorem 4.1. Let g ∈R[z1, . . . , zn] be a multi-aﬃne polynomial. Then g is stable\nif and only if\n∂g\n∂zi\n(x) ∂g\n∂zj\n(x) ≥\n∂2g\n∂zi∂zj\n(x)g(x)\nfor any x = (x1, . . . , xn) ∈Rn and i, j ∈[n].\nHence, perhaps somewhat surprisingly, if the Rayleigh condition in Deﬁnition 2.5\nis enforced to hold for all real vectors, then this stronger correlation condition is\nequivalent to real s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric homogenization via Gårding hyperbolic polynomials",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-41-symmetric-homogenization-via-gårding-hyperbol.md",
+      "narrative": null,
+      "content": "following theorem shows that the symmetric homogenization (cf. §2.3) of any\nstrongly Rayleigh measure is again strongly Rayleigh, so that strongly Rayleigh\nmeasures belong to the class PHR (Deﬁnition 2.6).\nTheorem 4.2. If µ ∈Pn is strongly Rayleigh, then so is its symmetric homoge-\nnization µsh ∈P2n.\nThe proof of Theorem 4.2 makes use of the theory of hyperbolic polynomials\nthat has its origins in partial diﬀerential equations and was developed by Petrovsky,\nG˚arding, H¨ormander, Atiyah and Bott [3, 37, 43]. Recently, hyperbolic polynomi-\nals have proved to be quite useful in other areas of ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "If µ ∈Pn is strongly Rayleigh, then so is its symmetric homoge- nization µsh ∈P2n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability implies negative association",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-42-stability-implies-negative-association.md",
+      "narrative": null,
+      "content": "of the following theorem goes back to Feder-Mihail [29], although the proof of the\nfull theorem is scattered over the literature [24, 57, 58, 72].\nTheorem 4.8. Let S be a class of probability measures satisfying:\n(1) Each µ ∈S is a measure on 2E, where E is a ﬁnite subset of {1, 2, . . .}\ndepending on µ.\n(2) S is closed under conditioning.\n(3) For each µ ∈S the variables Xe, e ∈E, are pairwise negatively correlated.\n(4) Each µ ∈S has a homogeneous generating polynomial.\nThen all measures in S are CNA (conditionally negatively associated).\nThe homogeneity condition in (4) above is essential and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "If µ ∈Pn is strongly Rayleigh, then it is CNA+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "thm-sec-015-02.md",
+      "narrative": null,
+      "content": "If µ ∈Pn is PHR, then it is CNA+. Since homogeneous Rayleigh polynomials need not be stable, strongly Rayleigh ⇒PHR strictly. As we will see in §7, one also has PHR ⇒CNA+ strictly.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/cor-sec-016-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "cor-sec-016-07.md",
+      "narrative": null,
+      "content": "Suppose that µ is a strongly Rayleigh probability measure on 2[n] and that 0 ≤p ≤q ≤n with q −p ≤1. Then µp,q is strongly Rayleigh.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/lem-sec-016-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "lem-sec-016-04.md",
+      "narrative": null,
+      "content": "If A, B are positive semi-deﬁnite n×n matrices such that A ≤B < I, then A(I −A)−1 ≤B(I −B)−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/lem-sec-016-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "lem-sec-016-06.md",
+      "narrative": null,
+      "content": "Then (13) E2 k(z) \bd k ≥Ek−1(z) \b d k−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prop-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "prop-sec-016-02.md",
+      "narrative": null,
+      "content": "Let µ and ν be strongly Rayleigh probability measures on 2[n]. Then µ \u0001 ν =⇒µ ≼ν.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stochastic domination and truncations",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-016-43-stochastic-domination-and-truncations.md",
+      "narrative": null,
+      "content": "domination from Deﬁnition 2.14 in §2.5. It turns out that for strongly Rayleigh\nmeasures, stochastic domination is intimately connected with central notions in\nthe theory of stable and real-rooted polynomials, namely the notions of interlacing\nzeros and proper position [7, 8, 9, 15, 50, 66]. In particular, this connection allows\nus to extend one of Lyons’ main results [57] and to answer Pemantle’s questions\non stochastic domination for truncations of “negatively dependent” measures [65]\n(cf. §2.5).\n4.3.1. Partial orders for strongly Rayleigh measures and polynomials. Let α1 ≤\nα2 ≤· · · ≤αn and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-016-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "rem-sec-016-01.md",
+      "narrative": null,
+      "content": "It seems likely that the partial orders \u0001′ and \u0001 on SRn deﬁned above are actually the same. However, since it is irrelevant for the present purposes, we do not further pursue this issue here. As we noted in §2.5, the stochastic domination relation ≼deﬁnes a partial order on Pn (cf. [61]). The anti-symmetry of \u0001 follows from our next result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-016-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "rem-sec-016-05.md",
+      "narrative": null,
+      "content": "Stochastic domination is closely related to the notion of majorization (or spectral order) for real vectors that was axiomatized by Hardy-Littlewood-P´olya and Schur [38, 61]. The latter also induces a partial order (though not the same as the proper position) on univariate real-rooted polynomials; see, e.g., [6]. 4.3.2. Truncations of strongly Rayleigh measures and polynomials. We will now discuss certain truncations of stable polynomials and strongly Rayleigh measures.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "thm-sec-016-03.md",
+      "narrative": null,
+      "content": "Let A and B be positive contractions such that A ≤B and let µ and ν be their corresponding determinantal measures. Then µ \u0001 ν and thus µ ≼ν. In [57, Theorem 8.1] Lyons proved the last statement (µ ≼ν) in Theorem 4.13 under the additional hypothesis [A, B] = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-016-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "thm-sec-016-08.md",
+      "narrative": null,
+      "content": "Let µ be a strongly Rayleigh probability measure on 2[n], and let 1 ≤k ≤n. If µ({S : |S| = k −1})µ({S : |S| = k})̸ = 0, then µk−1 ≼µk.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The partial symmetrization procedure",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-44-the-partial-symmetrization-procedure.md",
+      "narrative": null,
+      "content": "symmetrization of (complex) measures on 2[n] deﬁned in (3), and Deﬁnition 2.9.\nThe main result of this section is the following theorem.\nTheorem 4.20. Let µ be a complex measure on 2[n] with a (complex) stable gener-\nating polynomial. Then for any transposition τ ∈Sn and θ ∈[0, 1] the generating\npolynomial of the partial symmetrization µτ,θ = θµ+(1−θ)τ(µ) is (complex) stable.\nIn particular, Theorem 4.20 implies that the class of strongly Rayleigh measures\non 2[n] is invariant under the partial symmetrization procedure. Clearly, the latter\nresult is real stable in nature. However, in order to e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "There are now elementary proofs of Theorem 4.20 that avoid the mul- tivariate Obresckoﬀtheorem; see [10, 56]. Also, the referee sketched an elementary proof similar to those given in [10, 56].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-017-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "rem-sec-017-03.md",
+      "narrative": null,
+      "content": "From Theorem 4.20 it follows that the symmetrization µs of a strongly Rayleigh measure µ is also strongly Rayleigh. A diﬀerent proof is as follows. If µ is a strongly Rayleigh measure on 2[n], then (2) implies that the diagonal specialization ∆(gµs)(t) = ∆(gµ)(t) (cf. Deﬁnition 2.8) is a real-rooted univariate polynomial and by the Grace-Walsh-Szeg¨o theorem we conclude that the symmetrization µs of µ is also strongly Rayleigh. NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "Let µ be a complex measure on 2[n] with a (complex) stable gener- ating polynomial. Then for any transposition τ ∈Sn and θ ∈[0, 1] the generating polynomial of the partial symmetrization µτ,θ = θµ+(1−θ)τ(µ) is (complex) stable. In particular, Theorem 4.20 implies that the class of strongly Rayleigh measures on 2[n] is invariant under the partial symmetrization procedure. Clearly, the latter result is real stable in nature. However, in order to establish it we have to consider the (wider) complex stable context (cf. Deﬁnition 2.9), as in the above theorem. For the proof of Theorem 4.20 we need",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prop-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "prop-sec-018-01.md",
+      "narrative": null,
+      "content": "Suppose that S is ﬁnite and the initial distribution η0 of a sym- metric exclusion process on {0, 1}S is strongly Rayleigh. Then so is the distribution of ηt for all t > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preservation of negative dependence by symmetric exclusion processes",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-018-5-preservation-of-negative-dependence-by-symmetr.md",
+      "narrative": null,
+      "content": "by symmetric exclusion processes\nIn this section we study some consequences of the results in §4 for symmetric\nexclusion processes and provide an answer to the problem of ﬁnding a natural\nnegative dependence property that is preserved by such evolutions (Problem 3.5).\nLet us ﬁrst describe these processes in more detail. A conﬁguration of particles\non a countable set S is a point η on the Boolean lattice 2S, which we identify with\n{0, 1}S, so η(i) = 1 means that site i is occupied, while η(i) = 0 means that it is\nvacant. One is given a non-negative symmetric kernel Q = (qi,j)i,j∈S satisfying\n(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-018-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "rem-sec-018-03.md",
+      "narrative": null,
+      "content": "In particular, Theorem 5.2 proves Conjecture 2.2 and shows that its conclusion remains valid if the initial conﬁguration is a product measure (since any such measure is obviously strongly Rayleigh; cf. Deﬁnition 2.11 and §2.4). We conclude this section with an application of Theorem 5.2 to the extremal sta- tionary distributions for an irreducible symmetric exclusion process. Theorem 1.44 of [52, Chap. VIII] states that these are exactly {µα : α ∈H}, where (a) H = ( α : S →[0, 1] : \u0001 j qi,j[α(j) −α(i)] = 0 for each i ) are the harmonic functions for Q with values in [0, 1], and (b) µα = limt→∞",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-018-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "rem-sec-018-04.md",
+      "narrative": null,
+      "content": "If S is ﬁnite and qi,j > 0 for all i, j, then as we noted in §3.5 the limiting distribution of ηt as t →∞is the symmetrization of the initial distribution. In §7 we construct examples of measures in Pn, n ≥20, that are CNA+ but do not have ULC rank sequences. By Theorem 3.7 in §3.5, these counterexamples to Conjectures 2.3–2.5 show that none of the properties NLC, h-NLC, Rayleigh/h- NLC+, CNA, or CNA+ is preserved by the symmetrization procedure (2), and by [55, Theorem 3.2], the same can be said about the NA property. Therefore, the analog of Proposition 5.1 fails for all the aforementioned p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-018-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "rem-sec-018-05.md",
+      "narrative": null,
+      "content": "The analog of Theorem 5.2 for asymmetric exclusion processes is false. A simple example is obtained by taking S = {1, 2} in which only transitions from state 1 to state 2 are allowed. If the initial distribution gives probability 1 4 to each of the conﬁgurations in {0, 1}S, then the limiting distribution as t →∞is given by µ({11}) = µ({00}) = 1 4, µ({10}) = 0, and µ({01}) = 1 2. This measure is not NA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/thm-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "thm-sec-018-02.md",
+      "narrative": null,
+      "content": "Suppose that S is countable and the initial distribution η0 of a symmetric exclusion process on {0, 1}S is strongly Rayleigh. Then the distribution of ηt is strongly Rayleigh, and hence CNA+, for all t > 0. NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/cor-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "cor-sec-019-02.md",
+      "narrative": null,
+      "content": "Suppose {ak}n k=0 and {bk}n k=0 are LC sequences that satisfy (i) {λak + bk}n k=0 is LC for all λ > 0, and (ii) akbk+1 ≥ak+1bk for 0 ≤k < n. Then µ is CNA+. J. BORCEA, P. BR¨AND´EN, AND T. M. LIGGETT",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/cor-sec-019-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "cor-sec-019-03.md",
+      "narrative": null,
+      "content": "If µ is an almost symmetric measure (i.e., its generating polyno- mial is symmetric in all but possibly one variable; cf. Deﬁnition 2.1), then (1) µ is Rayleigh/h-NLC+ ⇐⇒µ is CNA+; (2) µ is h-NLC ⇐⇒µ is CNA. This shows that Pemantle’s Conjecture 2.6 is true for almost symmetric measures (recall that by the results in §4.2, Conjecture 2.6 also holds for strongly Rayleigh measures and PHR measures).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "Let {aj}n j=0 and {bj}n j=0 be two LC sequences that satisfy (i) {aj + bj}n j=0 is LC, and (ii) ajbj+1 ≥aj+1bj for all 0 ≤j ≤n −1. If ℓ< k and bℓak > 0, then brar > 0 for all ℓ≤r ≤k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Almost exchangeable measures",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-6-almost-exchangeable-measures.md",
+      "narrative": null,
+      "content": "By Pemantle’s result (Theorem 3.7 in §3.5), for symmetric measures in Pn all\nﬁve conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, and CNA+ are equivalent\nto the ULC condition for the rank sequence. Therefore, the relations between all\nthese negative dependence properties are completely understood in the exchange-\nable case. In this section we study the almost exchangeable case, that is, measures\nwhose generating polynomials are symmetric in all but possibly one variable (Def-\ninition 2.1). We prove that for such measures one has both h-NLC ⇔CNA and\n554\nJ. BORCEA, P. BR¨AND´EN, AND T. M. LIGGETT\nRa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative results on negative dependence",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-020-7-negative-results-on-negative-dependence.md",
+      "narrative": null,
+      "content": "We will now use the results from the previous sections, in particular those of §6,\nto construct counterexamples to the general cases of Pemantle’s and Wagner’s con-\njectures on ULC rank sequences (Conjectures 2.3–2.5) and Pemantle’s conjecture\non stochastic domination and truncations (Conjecture 2.9). We also answer in the\nnegative some related problems as well as Problem 2.7 and [12, Problem 6].\nCounterexample 1. Suppose that µ is a probability measure on 2[n+1] whose gen-\nerating polynomial\nf(z1, . . . , zn+1) = zn+1\nn\n\u0004\nk=0\nakek(z1, . . . , zn) +\nn\n\u0004\nk=0\nbkek(z1, . . . , zn)\nis symmetric in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-020-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "rem-sec-020-01.md",
+      "narrative": null,
+      "content": "In [72] it was shown that Conjectures 3.11 and 3.4 in loc. cit. are equivalent and would follow from either Conjecture 3.13 or Conjecture 3.14 in that same paper. Counterexample 1 above shows that all these conjectures fail. Next we show that the above construction actually yields a counterexample to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/rem-sec-020-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "rem-sec-020-02.md",
+      "narrative": null,
+      "content": "We note that to disprove just the strongest version of Pemantle’s con- jecture on ULC rank sequences (Conjecture 2.3) we can simply invoke Example 2.2 in §2.1, which combined with Theorem 3.7 shows that Conjecture 2.3 actually fails even for symmetric measures. To give yet another counterexample to Conjecture 2.3 we can also employ a construction used in [55]. Indeed, the measure in P4 consid- ered in [55, Theorem 3.5] is seen to be NA but not ULC. Note though that both examples mentioned above fail to be NLC (hence also CNA+, CNA, h-NLC+, and h-NLC), so they do not provide counterexamples to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-021-acknowledgements.md",
+      "narrative": null,
+      "content": "We would like to thank David Wagner for discussions pertaining to this project\nand the anonymous referee for useful comments and suggestions. The ﬁrst author\nis partially supported by Swedish Research Council Grant 621-2005-870. The third\nauthor is supported by NSF Grant DMS-0301795.\nNEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0894-0347-08-00618-8/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "References\n[1] M. Aissen, I. J. Schoenberg, A. Whitney, On the generating functions of totally positive\nsequences I, J. Analyse Math. 2 (1952), 93–103. MR0053174 (14:732d)\n[2] E. D. Andjel, A correlation inequality for the symmetric exclusion process, Ann. Probab. 16\n(1988), 717–721. MR929073 (89d:60192)\n[3] M. F. Atiyah, R. Bott, L. G˚arding, Lacunas for hyperbolic diﬀerential operators with constant\ncoeﬃcients I, Acta Math. 124 (1970), 109–189. MR0470499 (57:10252a)\n[4] H. H. Bauschke, O. G¨uler, A. S. Lewis, H. S. Sendov, Hyperbolic polynomials and convex\nanalysis, Canad. J. Math. 53 (2001)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

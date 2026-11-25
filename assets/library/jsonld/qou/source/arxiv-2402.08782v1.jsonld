@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.08782v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Hecke–Farey coordinates for Bring’s surface",
+  "contains": [
+    "library/arxiv-2402.08782v1/sections/sec-front-matter",
+    "library/arxiv-2402.08782v1/sections/sec-000",
+    "library/arxiv-2402.08782v1/sections/sec-001",
+    "library/arxiv-2402.08782v1/sections/sec-002",
+    "library/arxiv-2402.08782v1/sections/sec-003",
+    "library/arxiv-2402.08782v1/sections/sec-004",
+    "library/arxiv-2402.08782v1/sections/sec-005",
+    "library/arxiv-2402.08782v1/sections/sec-006",
+    "library/arxiv-2402.08782v1/sections/sec-007",
+    "library/arxiv-2402.08782v1/sections/sec-008",
+    "library/arxiv-2402.08782v1/sections/sec-009",
+    "library/arxiv-2402.08782v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hecke–Farey coordinates for Bring’s surface — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group H4 to study the reg- ular map that\n\n**Hecke–Farey coordinates for Bring’s surface**\n\n*Doha Kattan1 and David Singerman2*\n\n12 pp, 12 sections.\n\n**Abstract.** The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group H4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.\n\n**Outline.** Front matter; 1 Introduction; 2 Bring's surface; 3 The congruence subgroups of the Hecke groups; 4 Universal q-gonal maps; 5 Farey fractions modulo n; 6 Hecke-Farey fractions for the cube; 7 The Bring curve M4(5); 9 Hecke–Farey coordinates for Bring's surface; 8 Poles; 10 Equivalence classes of vertices; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2402.08782&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2402.08782v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2402.08782v1.pdf",
+    "source_sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
+    "pages": 12,
+    "arxiv": {
+      "id": "2402.08782",
+      "version": "1",
+      "primary_class": "math.GR",
+      "stamp_date": "13 Feb 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

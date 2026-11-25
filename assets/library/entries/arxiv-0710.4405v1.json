@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0710.4405v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Chiral symmetry of massless Quantum Chromodynamics has turned to be a key tool in order to deal with the low-energy domain of strong interactions (typically $E \\sim M_{\\pi}$) where hadron dynamics is not appropriately described by partonic QCD. It is indeed the guiding principle in the construction of Chiral Perturbation Theory ($\\chi PT$) [@Weinberg:1978kz; @Gasser:1983yg; @Gasser:1984gg] that intends to be the dual effective theory of QCD, i.e. it describes a perturbative quantum field theory of strong interactions at low-energies.\n\nThe $\\chi PT$ Lagrangian involves a perturbative expansion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0710.4405v1  [hep-ph]  24 Oct 2007\nChiral Low-Energy Constants : Status and Prospects ∗\nJ. Portol´es\nInstituto de F´ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia,\nApt. Correus 22085, E-46071 Val`encia, Spain\nChiral low-energy constants (LECs) carry the information of short-\ndistance dynamics involving heavier degrees of freedom not present in the\nchiral Lagrangian. Our knowledge of the LECs is all-important at phe-\nnomenological level because their relevance in the prediction of hadronic\nobservables at low-energies and on the other side because they provide hints\non the construc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tools : Large-NC and QCD asymptotic constraints",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-tools-large-nc-and-qcd-asymptotic-constraints.md",
+      "narrative": null,
+      "content": "As illustrated in the ${\\cal O}(p^4)$ case \\cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically \ndisclose the structure of the resonance contributions to the LECs in $\\chi PT$ is available. \nThe key point is to construct a Lagrangian theory that includes resonances, Goldstone bosons and\nauxiliary fields respecting the underlying chiral symmetry. There are several tools that allow us to grab important properties of QCD and to implement them in an EFT-like Lagrangian model. Two relevant features\nto consider are~:\n\\vspace*{0.2cm} \\\\\ni) S.~Weinberg \\cite{Weinberg:1978kz} and H.~Leutwyler",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Status and Prospects",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-status-and-prospects.md",
+      "narrative": null,
+      "content": "3. Status and Prospects\nI comment brieﬂy the present status and several developments on our\nknowledge of chiral LECs.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "O(p4)",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-op4.md",
+      "narrative": null,
+      "content": "Contributions from the lightest multiplets of vector resonances (JP C =\n1−−) to SU(2) [2] and vector, axial-vector (1++), scalar (0++) and pseu-\ndoscalar (0−+) resonances to SU(3) [7] LECs are in general good agreement\nwith those values extracted from observables [18], showing that those res-\nonances saturate the phenomenological values. This has been lately con-\nﬁrmed by the inclusion of one multiplet of resonances with 2++ and 1+−\nquantum numbers [19] that are shown to play, quantitatively, a minor role.\nA study of the strange quark mass dependence of the O(p4) SU(2) LECs\n(ℓr",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4405v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "O(p6)",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-op6.md",
+      "narrative": null,
+      "content": "tially obtain :\nℓr\ni = δi7\nF 2\n8B0ms\n+ ai + bi x + O(x2) ,\ni = 1, ..., 7 ,\n(5)\nwhere x = M2\nK/(16π2F 2) and ms is the mass of the strange quark. Here\nai = ai(Lj, lK) arise at O(p4) and bi = bi(Lj, Ck, lK) at O(p6), with lK =\nlog(M2\nK/µ2). The dependence on the strange quark or kaon mass is explic-\nitly stated above. In addition, and for later discussion, the bi parameters\ncan be written as bi = p0,i + p1,ilK + p2,il2\nK with an explicit dependence\np0,i = p0,i(LjLk, Cl), p1,i = p1,i(Lj).\n3.2. O(p6)\nIn Ref. [13] we have constructed the RχT Lagrangian needed to evaluate\nthe resonance contributions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

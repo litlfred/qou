@@ -1,0 +1,515 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s20-s0166864101002632-main",
+  "title": "PII: S0166-8641(01)00263-2",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "97",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The lemmas",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "99",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-lemmas"
+    },
+    {
+      "level": 1,
+      "title": "Thick knots have bounded energy",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "103",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-thick-knots-have-bounded-energy"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 11,
+      "pageLabel": "107",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "97",
+      "labelEnd": "97",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "iowa",
+          "heading": false
+        },
+        {
+          "term": "ropelength",
+          "heading": false
+        },
+        {
+          "term": "thick",
+          "heading": false
+        }
+      ],
+      "extract": "Topology and its Applications 125 (2002) 97–109 Möbius energy of thick knots Eric J. Rawdon a,1, Jonathan Simon b,∗ a Department of Mathematics and Computer Science, Duquesne University, Pittsburgh, PA 15282, USA b Department of Mathematics, University of Iowa, Iowa City, IA 52242, USA Received 18 August 2000 Abstract The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self-",
+      "extractCut": true,
+      "blocks": [
+        "library/1-s20-s0166864101002632-main/blocks/prose-sec-front-matter",
+        "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-1",
+        "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-2",
+        "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "97",
+      "labelEnd": "99",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ropelength",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "arclength along",
+          "heading": false
+        },
+        {
+          "term": "rawdon",
+          "heading": false
+        },
+        {
+          "term": "acn",
+          "heading": false
+        },
+        {
+          "term": "energy functions",
+          "heading": false
+        },
+        {
+          "term": "simon topology",
+          "heading": false
+        },
+        {
+          "term": "repelling",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount of “rope” needed to make the knot. This is the energy introduced in [25] and studied extensively in [15,18]. We follow an overall approach suggested by G. Buck for showing that any inverse-square knot energy should be bounded by the 4/3 power of the ropelength. We and other researchers have deﬁned a number of different energy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-lemmas",
+      "number": "2",
+      "title": "The lemmas",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "99",
+      "labelEnd": "103",
+      "words": 1839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical self-distance",
+          "heading": false
+        },
+        {
+          "term": "minimum radius",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "simon topology",
+          "heading": false
+        },
+        {
+          "term": "rawdon",
+          "heading": false
+        },
+        {
+          "term": "monotone union",
+          "heading": false
+        },
+        {
+          "term": "smooth knot",
+          "heading": false
+        },
+        {
+          "term": "thickness",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst lemma is a version of a theorem of Schur. This is taken from [10], with the slight adjustment that we do not need to consider general planar convex curves as the reference curves, just circles. Lemma 1. Let K be a C2 smooth curve in R3 whose curvature everywhere is ⩽some number k. Let C be a circle of curvature k, i.e., of radius r = 1 k . Let x,y ∈K and s,t ∈C be any points such that arc(x,y) = arc(s,t)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-thick-knots-have-bounded-energy",
+      "number": "3",
+      "title": "Thick knots have bounded energy",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": "103",
+      "labelEnd": "107",
+      "words": 1866,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solid tube",
+          "heading": false
+        },
+        {
+          "term": "spherical shell",
+          "heading": false
+        },
+        {
+          "term": "quadratic bound",
+          "heading": false
+        },
+        {
+          "term": "eprox",
+          "heading": false
+        },
+        {
+          "term": "ereg",
+          "heading": false
+        },
+        {
+          "term": "simon topology",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "power bound",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove that the Möbius energy of a knot is bounded by the ropelength. Our goal is partly the theorem itself and partly the paradigm: any “energy” deﬁned in terms of inverse-square distances should have an analogous bound, with the proof following this model. Theorem 8. If K is a smooth knot in R3 then EO4(K) < 4.57EL(K)4/3. (3) Theorem 9. If K is a smooth knot in R3 then EO4(K) ⩽1 4EL(K)2. (4)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "107",
+      "labelEnd": "109",
+      "words": 786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "janse van",
+          "heading": false
+        },
+        {
+          "term": "van rensburg",
+          "heading": false
+        },
+        {
+          "term": "simon topology",
+          "heading": false
+        },
+        {
+          "term": "buck",
+          "heading": false
+        },
+        {
+          "term": "river edge",
+          "heading": false
+        },
+        {
+          "term": "world scientiﬁc",
+          "heading": false
+        },
+        {
+          "term": "topology appl",
+          "heading": false
+        },
+        {
+          "term": "ideal knots",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G. Buck, Four-thirds power law for knots and links, Nature 392 (1998) 238–239. [2] G. Buck, Most smooth closed space curves contain approximate solutions of the n-body problem, Nature 395 (1998) 51–53. [3] G. Buck, J. Orloff, A simple energy function for knots, Topology Appl. 61 (3) (1995) 205–214. [4] G. Buck, J. Simon, Knots as dynamical systems, Topology Appl. 51 (3) (1993) 229–246. [5] G. Buck, J. Simon,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "simon topology",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": false
+    },
+    {
+      "term": "möbius energy",
+      "heading": false
+    },
+    {
+      "term": "rawdon",
+      "heading": false
+    },
+    {
+      "term": "ropelength",
+      "heading": false
+    },
+    {
+      "term": "smooth knot",
+      "heading": false
+    },
+    {
+      "term": "thickness",
+      "heading": false
+    },
+    {
+      "term": "energy functionals",
+      "heading": false
+    },
+    {
+      "term": "knot energies",
+      "heading": false
+    },
+    {
+      "term": "minimum radius",
+      "heading": false
+    },
+    {
+      "term": "energy function",
+      "heading": false
+    },
+    {
+      "term": "energy contribution",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "97",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s20-s0166864101002632-main"
+  }
+}

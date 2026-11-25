@@ -1,0 +1,898 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1203.3404v1",
+  "title": "On local solutions of the Ramanujan equation and their connection formulae",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basic notations",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-basic-notations"
+    },
+    {
+      "level": 1,
+      "title": "Two types of the q-analogue of the Airy function and the connection formula",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi"
+    },
+    {
+      "level": 2,
+      "title": "The Ramanujan function Aq(x)",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-the-ramanujan-function-aqx"
+    },
+    {
+      "level": 2,
+      "title": "The q-Airy function Aiq(x)",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-the-q-airy-function-aiqx"
+    },
+    {
+      "level": 2,
+      "title": "Covering transformations",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-covering-transformations"
+    },
+    {
+      "level": 2,
+      "title": "The q-Airy equation around the infinity",
+      "number": "3.4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-34-the-q-airy-equation-around-the-infinity"
+    },
+    {
+      "level": 2,
+      "title": "The q-Borel transformation and the q-Laplace transformation",
+      "number": "3.5",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-35-the-q-borel-transformation-and-the-q-laplace"
+    },
+    {
+      "level": 2,
+      "title": "The connection formula of the q-Airy function",
+      "number": "3.6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-36-the-connection-formula-of-the-q-airy-function"
+    },
+    {
+      "level": 1,
+      "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-connection-formula-of-the-divergent-series-200"
+    },
+    {
+      "level": 2,
+      "title": "Two different q-exponential functions",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-two-different-q-exponential-functions"
+    },
+    {
+      "level": 2,
+      "title": "The connection formula and alternate representation",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-the-connection-formula-and-alternate-represen"
+    },
+    {
+      "level": 2,
+      "title": "The connection formula of the series 20(0,0;-;q,)",
+      "number": "4.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-the-connection-formula-of-the-series-2000-q"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 70,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection formulae",
+          "heading": false
+        },
+        {
+          "term": "ramanujan equation",
+          "heading": false
+        },
+        {
+          "term": "local solutions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1203.3404v1 [math.CA] 15 Mar 2012 On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ Abstract We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity. These solutions are given by the Ramanujan function, the q-Airy function and the divergent basic hypergeometric series 2ϕ0(0, 0; −; q, x). We use two diﬀerent q-",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1203.3404v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy put",
+          "heading": false
+        },
+        {
+          "term": "frac varphi",
+          "heading": false
+        },
+        {
+          "term": "infty varphi",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "frac abx",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "abx right",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        }
+      ],
+      "extract": "In this papar, we show two essentially different connection formulae of some basic hypergeometric series between the origin and the infinity. In 1846, E. Heine [@hein] introduced the basic hypergeometric series ${}_2\\varphi_1(a,b;c;q,x)$ as follows; $${}_2\\varphi_1(a,b;c;q,x):=\\sum_{n\\ge 0}\\frac{(a,b;q)_n}{(c;q)_n(q;q)_n}x^n,\\quad c\\not \\in q^{-\\mathbb{N}}. \\label{heine}$$ Here, $(a;q)_n$ is the $q$-shifted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-basic-notations",
+      "number": "2",
+      "title": "Basic notations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta function",
+          "heading": false
+        },
+        {
+          "term": "mathbb satisfies",
+          "heading": false
+        },
+        {
+          "term": "difference equation",
+          "heading": false
+        },
+        {
+          "term": "jacobi",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review our notations. We assume that $q\\in\\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\\sigma_q$ is given by $\\sigma_qf(x)=f(qx)$. For any fixed $\\lambda\\in\\mathbb{C}^*\\setminus q^{\\mathbb{Z}}$, the set $[\\lambda ;q]$-spiral is $[\\lambda ;q]:=\\lambda q^{\\mathbb{Z}}=\\{\\lambda q^k;k\\in\\mathbb{Z}\\}$. The (generalized) basic hypergeometric series ${}_r\\varphi_s(a_1,\\dots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi",
+      "number": "3",
+      "title": "Two types of the q-analogue of the Airy function and the connection formula",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy function",
+          "heading": true
+        },
+        {
+          "term": "ramanujan function",
+          "heading": false
+        },
+        {
+          "term": "kmnoy",
+          "heading": false
+        }
+      ],
+      "extract": "There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY] . In this section, we see the properties of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-the-ramanujan-function-aqx",
+      "number": "3.1",
+      "title": "The Ramanujan function Aq(x)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan function",
+          "heading": true
+        },
+        {
+          "term": "airy function",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "function operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "qai",
+          "heading": false
+        }
+      ],
+      "extract": "The Ramanujan function appears in Ramanujan's \"Lost notebook\" [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\\operatorname{A}_q(x):=\\sum_{n\\ge 0}\\frac{q^{n^2}}{(q;q)_n}(-x)^n ={_0\\varphi_1}(-;0;q,-qx).$$ In the theory of ordinary differencial equations, the term",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-the-q-airy-function-aiqx",
+      "number": "3.2",
+      "title": "The q-Airy function Aiq(x)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-airy function",
+          "heading": true
+        },
+        {
+          "term": "aiq",
+          "heading": true
+        },
+        {
+          "term": "q-painlev equations",
+          "heading": false
+        },
+        {
+          "term": "airy function",
+          "heading": false
+        }
+      ],
+      "extract": "The q-Airy function Aiq(x) The q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [8], in their study of the q-Painlev´e equations. This function is the special solution of the second q-Painlev´e equations and given by the following series Aiq(x) := X n≥0 1 (−q, q; q)n n (−1)nq n(n−1) 2 o (−x)n = 1ϕ1(0; −q; q, −x). T. Hamamoto, K. Kajiwara, N. S. Witte [4] proved following asymptotic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-covering-transformations",
+      "number": "3.3",
+      "title": "Covering transformations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "covering",
+          "heading": true
+        },
+        {
+          "term": "covering transformation",
+          "heading": false
+        },
+        {
+          "term": "cdot sigma",
+          "heading": false
+        }
+      ],
+      "extract": "We define a covering transformation of a second order linear $q$-difference equation. ::: defi For a $q$-difference equation $$\\label{sh} a(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the covering transformation as follows $$t^2:=x,\\quad v(t):=u(t^2),\\quad p:=\\sqrt{q}.$$ ::: The covering transform of the equation ([\\[sh\\]](#sh){reference-type=\"ref\" reference=\"sh\"}) is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-the-q-airy-equation-around-the-infinity",
+      "number": "3.4",
+      "title": "The q-Airy equation around the infinity",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qaeq",
+          "heading": false
+        },
+        {
+          "term": "sigma mathcal",
+          "heading": false
+        },
+        {
+          "term": "kram",
+          "heading": false
+        },
+        {
+          "term": "qai",
+          "heading": false
+        },
+        {
+          "term": "sigma right",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the behavior of the equation ([\\[qai\\]](#qai){reference-type=\"ref\" reference=\"qai\"}) around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\\left(-\\sigma_q^2+\\frac{1}{q^2t}\\sigma_q+1\\right)z(t)=0.$$ We set $\\mathcal{E}(t)=1/\\theta (-q^2t)$ and $f(t)=\\sum_{n\\ge 0}a_nt^n,\\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\\mathcal{E}(t)f(t)=\\frac{1}{\\theta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-35-the-q-borel-transformation-and-the-q-laplace",
+      "number": "3.5",
+      "title": "The q-Borel transformation and the q-Laplace transformation",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "laplace transformation",
+          "heading": false
+        },
+        {
+          "term": "borel transformation",
+          "heading": false
+        },
+        {
+          "term": "mathcal right",
+          "heading": false
+        }
+      ],
+      "extract": "::: defi For $f(t)=\\sum_{n\\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\\tau )=\\left(\\mathcal{B}_q^-f\\right)(\\tau ):=\\sum_{n\\ge 0}a_nq^{-\\frac{n(n-1)}{2}}\\tau^n,$$ and the $q$-Laplace transformation is given by $$\\left(\\mathcal{L}_q^-g\\right)(t):=\\frac{1}{2\\pi i}\\int_{|\\tau |=r}g(\\tau )\\theta\\left(\\frac{t}{\\tau}\\right)\\frac{d\\tau}{\\tau },\\qquad 0<r<\\frac{1}{|q^2|}.$$ ::: The $q$-Borel transformation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-36-the-connection-formula-of-the-q-airy-function",
+      "number": "3.6",
+      "title": "The connection formula of the q-Airy function",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "tau lambda",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        },
+        {
+          "term": "infty dfrac",
+          "heading": false
+        },
+        {
+          "term": "operatorname res",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "connection formula",
+          "heading": true
+        }
+      ],
+      "extract": "Applying the $q$-Borel transformation in [\\[qbql\\]](#qbql){reference-type=\"ref\" reference=\"qbql\"} to the equation ([\\[kram\\]](#kram){reference-type=\"ref\" reference=\"kram\"}) and using lemma [\\[orqb\\]](#orqb){reference-type=\"ref\" reference=\"orqb\"}, we obtain the first order $q$-difference equation $$g(q\\tau )=(1+q^2\\tau )(1-q^2\\tau )g(\\tau ).$$ Since $g(0)=1$, $g(\\tau )$ is given by an infinite product $$g(\\tau",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-connection-formula-of-the-divergent-series-200",
+      "number": "4",
+      "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "ram",
+          "heading": false
+        },
+        {
+          "term": "divergent",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we show a connection formula of the divergent series ${}_2\\varphi_0$. This series appears in the second solution of the Ramanujan equation [\\[ram\\]](#ram){reference-type=\"eqref\" reference=\"ram\"}. At first, we review two $q$-exponential functions to consider our connection formula.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-41-two-different-q-exponential-functions",
+      "number": "4.1",
+      "title": "Two different q-exponential functions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential function",
+          "heading": false
+        },
+        {
+          "term": "varphi",
+          "heading": false
+        },
+        {
+          "term": "right",
+          "heading": false
+        },
+        {
+          "term": "alternate",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review two different $q$-exponential functions from the viewpoint of the connection problems. One of the $q$-exponential function $e_q(x)$ is given by $$e_q(x):={}_1\\varphi_0 (0;-;q,x)=\\sum_{n\\ge 0}\\frac{x^n}{(q;q)_n}.$$ The other $q$-exponential function $E_q(x)$ is $$E_q(x):={}_0\\varphi_0(-;-;q,-x)=\\sum_{n\\ge 0}\\frac{q^{\\frac{n(n-1)}{2}}}{(q;q)_n}x^n.$$ The function $e_q(x)$ satisfies the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-the-connection-formula-and-alternate-represen",
+      "number": "4.2",
+      "title": "The connection formula and alternate representation",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqeq",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "infty theta",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "alt",
+          "heading": false
+        },
+        {
+          "term": "alternate",
+          "heading": true
+        }
+      ],
+      "extract": "At first, we show the following connection formula between $e_q(\\cdot )$ and $E_q(\\cdot )$. ::: thm []{#eqEq label=\"eqEq\"} For any $x\\in\\mathbb{C}^*\\setminus [1;q]$, $$e_q(x)=\\frac{(q;q)_\\infty}{\\theta_q(-x)}E_q\\left(-\\frac{q}{x}\\right)$$ where $|x|<1$. ::: ::: proof *Proof.* The function $e_q(x)$ and $E_q(x)$ have infinite product as follows: $$e_q(x)=\\frac{1}{(x;q)_\\infty},\\qquad |x|<1$$ and $$E_q(x)=(-x;q)_\\infty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-the-connection-formula-of-the-series-2000-q",
+      "number": "4.3",
+      "title": "The connection formula of the series 20(0,0;-;q,)",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λqn",
+          "heading": false
+        },
+        {
+          "term": "q-laplace transformation",
+          "heading": false
+        },
+        {
+          "term": "q-borel transformation",
+          "heading": false
+        },
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to give a proof for the following theorem; 15 Theorem 3. For any x ∈C∗\\ [−λ; q], θq(x)2f0 \u0012 0, 0; −; q, −x q \u0013 = (q; q)∞ θq(x)θq2 \u0010 −λ2 qx \u0011 θq \u0010 −λ q \u0011 θq \u0000 λ x \u0001 1ϕ1 \u0012 0; q; q2, q2 x \u0013 + (q; q)∞ 1 −q θq(x)θq2 \u0010 −λ2 x \u0011 θq \u0010 −λ q \u0011 θq \u0000 λ x \u0001 λ x 1ϕ1 \u0012 0; q3; q2, q3 x \u0013 . We deﬁne the q-Borel-Laplace transformations of the ﬁrst kind to obtain the connection formula between the origin and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "frac varphi",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "frac left",
+      "heading": false
+    },
+    {
+      "term": "ramanujan function",
+      "heading": true
+    },
+    {
+      "term": "infty frac",
+      "heading": false
+    },
+    {
+      "term": "mathbb frac",
+      "heading": false
+    },
+    {
+      "term": "operatorname left",
+      "heading": false
+    },
+    {
+      "term": "airy function",
+      "heading": true
+    },
+    {
+      "term": "ramanujan equation",
+      "heading": false
+    },
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1203.3404v1"
+  }
+}

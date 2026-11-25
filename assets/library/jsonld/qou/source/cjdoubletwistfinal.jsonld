@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cjdoubletwistfinal/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "cjdoubletwistfinal",
+  "contains": [
+    "library/cjdoubletwistfinal/sections/page-001",
+    "library/cjdoubletwistfinal/sections/page-002",
+    "library/cjdoubletwistfinal/sections/page-003",
+    "library/cjdoubletwistfinal/sections/page-004",
+    "library/cjdoubletwistfinal/sections/page-005",
+    "library/cjdoubletwistfinal/sections/page-006",
+    "library/cjdoubletwistfinal/sections/page-007",
+    "library/cjdoubletwistfinal/sections/page-008",
+    "library/cjdoubletwistfinal/sections/page-009",
+    "library/cjdoubletwistfinal/sections/page-010",
+    "library/cjdoubletwistfinal/sections/page-011",
+    "library/cjdoubletwistfinal/sections/page-012",
+    "library/cjdoubletwistfinal/sections/page-013",
+    "library/cjdoubletwistfinal/sections/page-014",
+    "library/cjdoubletwistfinal/sections/page-015",
+    "library/cjdoubletwistfinal/sections/page-016",
+    "library/cjdoubletwistfinal/sections/page-017",
+    "library/cjdoubletwistfinal/sections/page-018",
+    "library/cjdoubletwistfinal/sections/page-019",
+    "library/cjdoubletwistfinal/sections/page-020",
+    "library/cjdoubletwistfinal/sections/page-021",
+    "library/cjdoubletwistfinal/sections/page-022",
+    "library/cjdoubletwistfinal/sections/page-023",
+    "library/cjdoubletwistfinal/sections/page-024"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and\n\n**THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS**\n\n*JEREMY LOVEJOY AND ROBERT OSBURN*\n\n24 pp, 24 sections.\n\n**Abstract.** Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the (−m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "cjdoubletwistfinal",
+    "title_source": "slug",
+    "source_file": "cJdoubletwistfinal.pdf",
+    "source_sha256": "a1e18db5232b39f4c76cb6dc74cc3f06cf2683f9a39b652a66ec7e880e4771de",
+    "pages": 24,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

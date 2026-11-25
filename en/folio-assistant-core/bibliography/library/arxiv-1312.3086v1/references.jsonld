@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1312.3086v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
+      "dcterms:creator": [
+        "Brion, E.",
+        "Carlier, F.",
+        "Akulin, V. M."
+      ],
+      "dcterms:issued": "D:20210123",
+      "dcterms:identifier": "https://arxiv.org/abs/1312.3086",
+      "dcterms:source": "library/arxiv-1312.3086v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1312.3086v1"
+    }
+  ]
+}

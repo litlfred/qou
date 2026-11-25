@@ -1,0 +1,361 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2105.09342v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A Unitary Matrix Model for q-deformed Plancherel Growth\nSuvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara\naDepartment of Physics Indian Institute of Science Education and Research Bhopal,\nBhopal bypass, Bhopal 462066, India\nbIndian Institute of Science Education and Research Thiruvananthapuram,\nMaruthamala PO, Vithura, Thiruvananthapuram - 695551, Kerala, India.\nAbstract\nIn this paper we construct a unitary matrix model that captures the asymptotic growth\nof Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog\nof Gross-Witten-Wadia (GWW) matrix model",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\nThe powerful techniques of random matrix models have been applied to numerous fields in physics and mathematics. Quantum gravity in 2D, knot theory, integrable systems, number theory, topological string theory, algebraic geometry are a few from the list of many. In this paper, we study the asymptotic growth of Young diagrams, equipped with \\qq analog of Plancherel measure and show that one can write a unitary matrix model (UMM) to capture such growth processes. The matrix model is a \\qq analog of Gross-Witten-Wadia (GWW) matrix model. The model exhibits a third order phase t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-deformed Plancherel growth",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-q-deformed-plancherel-growth.md",
+      "narrative": null,
+      "content": "\\label{sec:qplancherel}\n\nThe Plancherel growth of Young diagrams has been a topic of intense study over many years. In order to explain the growth process, let $\\lambda_k$ denote a Young diagram with $k$ boxes. Consider two Young diagrams $\\lambda_k$ and $\\lambda_{k+1}$ such that $\\lambda_{k+1}$ is obtained from $\\lambda_k$ by adding one box. One can associate a transition probability\n\\begin{equation}\n\\label{ptransition}\np_{\\text{tran}}(\\lambda_k;\\lambda_{k+1})=\\frac{1}{k+1}\\frac{\\dim \\lambda_{k+1}}{\\dim \\lambda_k}\n\\end{equation}\nif $\\lambda_{k+1}$ is obtained from $\\lambda_{k}$ by adding one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "It was observed in \\cite{Chattopadhyay:2019pkl} that the ordinary Plancherel growth model is equivalent to $U(N)$ GWW model after restricting the Young diagrams to have maximum $N$ number of rows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A unitary matrix model for q-deformed Plancherel growth",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher.md",
+      "narrative": null,
+      "content": "The growth of Young diagrams can be compared with the growth of a two-dimensional crystal as shown in figure \\ref{rotated_YD}. We consider every box as a unit falling from sky under gravity. There is a boundary given by the two lines passing through the origin with slope $\\pm1$. Since the gravity is working downward it is easy to understand that the boxes will arrange themselves following the rules of a rotated Young diagrams. One can study a controlled growth process by assigning a probability to each diagram in this process. Following \\cite{Eynard:2008mt, Chattopadhyay:2019pkl}, we can defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution class 1: No-gap solution",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-31-solution-class-1-no-gap-solution.md",
+      "narrative": null,
+      "content": "Taking the ansatz u(h) = 1 for 0 ≤h ≤a and u(h) = ˜u(h) for a ≤h ≤b in h-plane, we\nhave\nu(w) =\n(\n1\n1−λw\nfor 0 ≤w ≤wa\n˜u(w)\nfor wa ≤w ≤wb\n(3.18)\nwhere wa = 1−e−λa\nλ\nand wb = 1−e−λb\nλ\n. Putting this ansatz in the saddle point equation (3.17),\nwe get\n−\nZ wb\nwa\ndw′ ˜u(w′)\nw −w′ =\n1\n1 −λw log\n\u0014\nw −wa\nξ(1 −λwa)\n\u0015\n.\n(3.19)\nWe deﬁne a resolvent function\nH(w) =\nZ\ndw′ u(w′)\nw −w′,\n(3.20)\nto solve the integral equation. H(w) is analytic in the whole complex plane except at the\nsupport of u(w), where it has a branch cut. The Young diagram density is given by the\ndiscontinuity of H(w) about the branch cut.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-deformed automodel class",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-32-q-deformed-automodel-class.md",
+      "narrative": null,
+      "content": "For 0 < ξ ≤1\nλ(eλ/2 −1), the density (3.25) corresponds to q-automodel diagrams which\nsatisfy the following dynamical equation\n∂ξ˜u(h, ξ, λ) +\n\u0002\n(1 −λ2ξ2)eλ(h−1) −1\n\u0003\nλξ\n∂h˜u(h, ξ, λ) = 0.\n(3.28)\nThis is a q-analogue of the automodel equation. One can translate this equation in terms of\nvariables v and u through an appropriate change of variables deﬁned in [1]. In λ →0 limit\n(3.28) reduces to the automodel equation\n∂ξ˜u(h, ξ) + h −1\nξ\n∂h˜u(h, ξ) = 0\n(3.29)\nconsidered by Kerov [5] and also derived by [1] in the language of Young diagram density.\nFor the limiting value of ξ i.e. ξ = 1\nλ(eλ/2 −1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The unitary matrix model from the droplet picture",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-33-the-unitary-matrix-model-from-the-droplet-pic.md",
+      "narrative": null,
+      "content": "\\label{sec:umm-droplet}\nIn order to give a Hilbert space description of the \\qd growth process we need to find a UMM whose large $N$ phase can capture the growth of Young diagrams. For ordinary Plancherel growth it was shown in \\cite{Chattopadhyay:2019pkl} that using the Frobenius formula one can write the partition function as GWW model. In case of \\qd Plancherel growth (\\ref{eq:qdeformedgrowthpf2}), it is tricky to use the Frobenius formula for \\qd dimension. So, we take a different route. We use the droplet picture \\cite{duttagopakumar,Chattopadhyay} to find the UMM that captures the asympt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g.md",
+      "narrative": null,
+      "content": "\\label{subsec:qdkind1}\n\n\nIn this section, we discuss the growth process controlled by the \\qd probability measure considered in \\cite{Strahov07}, given by \\eqref{eq:Strahov-qPlancherel}. The partition function \\eqref{q-partition} can be written as\n\\begin{equation}\\label{eq:PF_Strahov}\nZ_q=\\sum_{k=1}^{\\infty}\\sum_{\\lambda_k} \\exp[S_{eff}(h_i)]e^{-\\frac{\\ln q}{6}N(N-1)(N-2)}\n\\end{equation}\nwhere the effective action is given by (see \\ref{app:calculationofZ})\n\\begin{equation}\n\\label{eff-S}\n\\begin{aligned}\nS_{eff}(h_i) = k\\ln t(1-q) +k\\ln k -k & + \\sum_{ i\\neq j} \\frac{1}{2} \\ln |h_i-h_j|-\\sum_{i}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hilbert space",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-5-the-hilbert-space.md",
+      "narrative": null,
+      "content": "\\label{sec:hilbertspace}\n\nFollowing \\cite{ Chattopadhyay:2020rle,Chattopadhyay:2019pkl} we give a Hilbert space description of the \\qd growth process. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to different shapes of two dimensional phase space droplets. Quantising these droplets, we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus, growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space. The basic construction of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moments of Young diagrams and conserved charges",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-51-moments-of-young-diagrams-and-conserved-charg.md",
+      "narrative": null,
+      "content": "Following \\cite{Jevicki:1993qn} one can define an infinite sequence of conserved commuting quantities \n\n\\ben\nH_n = \\frac{1}{2\\pi} \\int dh\\ d\\theta\\ \\omega(h,\\theta) \\ h^n.\n\\een\n\nUsing the Poisson bracket (\\ref{eq:poisson}) one can show that \n\n\\ben\n\\{H_m,H_n\\} = 0.\n\\een\n\nAlso, using the equations of motion (\\ref{eq:boundeq}) one can show that \n\\ben\n\\frac{d H_n}{dt} =0. \n\\een\n\nExistence of infinite number of conserved charges makes the system integrable. This is a generic feature of one matrix model and indicates that the theory is exactly solvable.\n\nThese conserved charges are related to moment",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-6-conclusion.md",
+      "narrative": null,
+      "content": "In this paper, we discuss about \\qd Plancherel growth of Young diagrams. We construct a unitary matrix model that captures the growth of Young diagrams with the coupling constant playing the role of time \\cite{Strahov07}. The matrix model is a \\qq analog of GWW model and the growth of Young diagrams equipped with a \\qd Plancherel measure is captured by the no-gap phase of this model. The \\qd limit shape is the \\qd GWW transition point. We use the connection between unitary matrix model and 2D droplet picture of \\cite{duttagopakumar,Chattopadhyay} to construct the unitary matrix model. Construc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A q analog of GWW phase transition",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-appendix-a-q-analog-of-gww-phase-transition.md",
+      "narrative": null,
+      "content": "The no-gap phase of the q-deformed Plancherel growth process captured by the partition\nfunction (3.3) has been discussed in section 3.1. There exist another class of solution for the\nsaddle point equation (3.13), namely the one-gap solution for which\n0 ≤u(h) < 1\nfor\nh ∈[a, b] .\n(A.1)\nTo solve the saddle point equation for this case, we deﬁne new variables\nz = 1 −e−λh\nλ\n(A.2)\n20\nin terms of which the equation becomes\n−\nZ zq\nzp\ndz′ u(z′)\nz −z′ =\n1\n(1 −λz) log\n\u0012z\nξ\n\u0013\n(A.3)\nwhere za and zb correspond to points a and b in the h plane. The resolvent for the above\nintegral equation is given by\nH(z) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B Explicit computation of the partition function",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-appendix-b-explicit-computation-of-the-partition.md",
+      "narrative": null,
+      "content": "Here, we provide some details of the computation for the partition function (4.1) that\nfollows if one takes the q-deformed Plancherel measure following Strahov [9]. The partition\nfunction can be written as\nZq =\n∞\nX\nk=1\nX\n{hi}\nexp [k ln t + k ln(1 −q) + b(λk) ln q + ln k!]\nexp\n\"\nln\nY\n1≤i<j≤N\n(hi −hj) −ln\nN\nY\ni=1\nhi! + ln\nY\n1≤i<j≤N\n[hi −hj] −ln\nN\nY\ni=1\n[hi]!\n#\n.\n(B.1)\nThe total number of boxes in a Young diagram can be expressed as\nk =\nN\nX\ni=1\nλi =\nN\nX\ni=1\n(hi −N + i) =\nN\nX\ni=1\nhi −N(N −1)\n2\n.\n(B.2)\nWe will now write down the above in the large N limit. Large N naturally implies large k\nwhich is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-appendix-c-calculation-of-automodel-density-for.md",
+      "narrative": null,
+      "content": "Here, we give details of derivation for the solution of (4.6). The ﬁrst term in the kernel,\nnamely coth λ(h−h′)\n2\nhas a series representation of the form\ncoth λ(h −h′)\n2\n=\n2\nλ(h −h′) + 2\n∞\nX\nk=1\nB2kλ2k−1\n(2k)!\n(h −h′)2k−1,\n(C.1)\nclearly demonstrating that there is a singularity in the ﬁrst term above as h′ →h. However,\nthe second term is well behaved for any real h′. Motivated by this observation, we deﬁne\nthe function\nG(h) ≡\nZ b\na\ndh′ ˜u(h′)\n\u0014\ncoth λ(h −h′)\n2\n−\n2\nλ(h −h′)\n\u0015\n.\n(C.2)\nNote that in the above deﬁnition, the integral kernal has been precisely deﬁned so as to\nremove any singularitie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh.md",
+      "narrative": null,
+      "content": "In order to perform the contour integrals in (C.8), one needs to reparametrize the inte-\ngration variable s as s = a + xeiϵ along γ+ and s = a + xei(2π−ϵ) along γ−. It can be further\ndemonstrated that the contribution to this integral coming from the parts Ca and Cb i.e.\ntwo inﬁnitesimal circles centered around a and b vanishes in the limit when the radii of the\ncircles are taken to zero.\nCarrying out the above procedure, we get\nHconst(h) = −\np\n(h −a)(h −b)\nI\nC\nds\n2πi\nλ\n4(1 −a)\n(s −h)\np\n(s −a)(s −b)\n= λ\n4(1 −a).\n(C.12)\n25\nFor the next term, we get,\nHλ(h) = −\np\n(h −a)(h −b)\nI\nC\nds\n2πi\n1\n2 ln 1−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.09342v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix D Droplet quantisation",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "../sections/sec-014-appendix-d-droplet-quantisation.md",
+      "narrative": null,
+      "content": "The droplet picture, discussed in section 3.3, has no dynamics. Diﬀerent large N phases,\nobtained by solving the saddle point equation, are possible minimum free energy conﬁgura-\ntions of the model. Hence the corresponding droplets are static - the shapes are not changing\n26\nwith time. To incorporate dynamics into the picture, we follow an ad-hoc way : identify the\nlarge N droplets with Thomas-Fermi distribution at zero temperature and obtain the single\nparticle Hamiltonian by comparing the two. In this way it is possible to incorporate time in\nour system.\nComparing the phase space distributio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

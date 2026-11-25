@@ -1,0 +1,2136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-11so5nsxzx5.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-11so5nsxzx5","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed, both leaks. \&quot;The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$\&quot; -&gt; \&quot;The crossing-to-charge map $Q = \\tfrac12\\,\\mathrm{writhe}$\&quot;, and the heading \&quot;**The chain of conjectures (narrowed).**\&quot; -&gt; \&quot;**The chain of conjectures.**\&quot;. The under-determination it reports is unchanged: $Q(T(2,2k)) = k &gt; 0$ for all three carriers cannot single out the neutral slot, and both $W = \\sigma_1^4$ and the mirror $W = \\sigma_3^6$ satisfy every proved constraint.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote seq18&quot;
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.018Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;score=0.1: the sibling .lean declares conjecture classes (EWSelectionPrinciple, EWSectorEnumeration, EWSectorAssignment, EWHiggsTorusLinkTriplet) with no instance; the open part is the identification itself (C1 selection, C_sector), i.e. the gap restates the target and is a physics postulate rather than a closeable proof step.&quot;
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;25387cfa1f0c&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;,
+        &quot;lean&quot;: &quot;4adb224d5564&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;25387cfa1f0c&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;,
+        &quot;lean&quot;: &quot;4adb224d5564&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.958Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;EW/Higgs torus-link identification sits with the knot-particle identifications in knots-particles-confinement.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.799Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;EW force-carrier identification in knots-particles-confinement, beside the EM/strong carrier blocks it parallels.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.054Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Recomputed with mpmath at proton q0: fixed point N_v=262.4181688192 (cubic root of N=T-(1/N)H(1-hbar^2/N), T=q[2]/2[4][6][8]+1/pi=262.4184737069, H=[2]/(8pi)), v_exp/m_p=262.4181765267 (CODATA 2022 G_F), miss -29.371 ppb; v_pred=246.21964356 GeV; G_F,pred=1.16637876852e-5, +58.742 ppb. m_Z/m_W=(P3/P2)([2]/2)^2=1.1348070 vs 1.1346088, +174.7 ppm, m_W,pred=80.3552. Laurent identity (q+1/q)2P_2(h)=q^5+q^-5 checked. Seifert genera of T(2,2k) are k-1 = 1,2,3, sum 6 = 2g-2 at g=4; 12/(12pi)=1/pi. Slot-sensitivity figures (4.4 sigma ... 4e4 sigma, +2294 ppb, 0.15 ppb) match docs/audits/2026-11-20-ew-vev-fixed-point-derivation.md §2. PSD claim matches the witness (3/7 pass = the triplet).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.147Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Recomputed 2026-11-21 at the proton q0 (mpmath 40 dps): fixed point N_v = 262.41816881923 (stated 262.418168819), v = 246.2196435624 GeV, G_F = 1.16637876852e-5; P_m Laurent identity exact at m = 3; m_Z/m_W = 1.13480700 vs 91.1876/80.3692 = 1.13460878 (+174.70 ppm), m_W = 80.3552 GeV. Residual on v/m_p reproduced as -29.35 ppb with m_p = 0.93827208943 GeV (stated -29.37; within the rounding of v_exp). Zero mode 12/(12π) = 1/π and 2g-2 = 6 check.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.093Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Sibling .lean classes carry content-bearing fields and no fabricated instance (file header and grep: no &#39;: True&#39; bodies, no sorry); the PSD test is weak but stated as necessary-not-sufficient.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.186Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean classes EWSelectionPrinciple, EWSectorEnumeration, EWSectorAssignment, EWHiggsTorusLinkTriplet carry content-bearing fields and no instance.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.123Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The -29.37 ppb agreement is the miss of a formula whose four discrete slots (tree prefactor q[2]/2, carrier-genus zero-mode rule, loop sign s=-1, loop coupling = m_p/v) are not derived; the audit records that the EM-analogue sign gives +2294 ppb, so the sign was chosen against the target. The new scope note discloses this, so it is a disclosed selection, not a hidden one.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.214Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The -29.37 ppb is the miss of a formula with four undetermined discrete choices (tree prefactor, zero-mode counting rule, loop sign, α_v = m_p/v), as the block&#39;s own scope note (:74) says; the agreement is selected, not derived.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.153Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: item 1 still calls 1/pi &#39;the parameter-free zero-mode shift&#39; and heads the paragraph &#39;1-Loop Schwinger Fixed Point (-29.37 ppb on v)&#39; before the scope note says the counting rule is a selection and the -29.37 ppb is &#39;the miss of one selected formula, not of a derivation&#39;; item 2 &#39;predicts m_Z/m_W&#39; and &#39;reconciles&#39; the Higgs anchors with no comparable scope note.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.249Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:59 &#39;The following hold, with the numerical values verified at 50 dps&#39; and the item-1 heading &#39;Fixed Point (-29.37 ppb on v)&#39; present a selected formula as a result; the scope note (:74) retracts this in the same item. :12 &#39;is proved&#39; for the provable base is accurate.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.180Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md item 2: the m_Z/m_W ratio uses the dressing ([2]_q/2)^2 while the N_v tree term in item 1 uses ([2]_q/2)^1 — a per-observable choice of dressing power, plus the choice P_3/P_2 for Z/W; neither is derived nor disclosed. The four N_v choices of item 1 are disclosed.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.278Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Four discrete choices in item 1 and two more in item 2 (dressing exponent 2 vs 1, step P_3/P_2) are disclosed (:74, :75), so not hidden, but six undetermined choices against two compared numbers.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.206Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Sector-to-spin inversion, C1 -&gt; C2 enumeration and the zero-mode arithmetic follow as stated; C1 &#39;selects&#39; is stated as the primary conjecture, not argued.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.314Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:53-55 &#39;shows PSD discrimination. Only the even-twist torus-link triplet ... produced positive-semidefinite Hecke certificates&#39; followed by &#39;It holds for every even-twist T(2,2k) at any k ≥ 1&#39; — if PSD-feasibility holds for every even twist it does not discriminate the triplet; the two sentences contradict unless &#39;only&#39; is scoped to the tested registry.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.267Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Lean names cited in the .md exist (ewSeifertGenusSum_eq_neg_bringTilingEuler, ewBringZeroMode_eq_one_div_pi, ewFixedPoint_iff_cubic, twoMulP2/3/4_laurent, qInt2_sq_eq_h_sq_add_four, higgs_W_Z_anchor_reconciliation in ElectroweakBringSchwingerBridge.lean; namespace QOU.StandardModel.EwVevDecomposition in ElectroweakVevFixedPointDecomposition.lean); the numeric fixed point is stated conditional on ElectroweakVevFixedPointClass, which has no instance, matching the .md.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.371Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Lean C1 (subSaturating 0 &lt; k-1 &lt; 4, carrier_realised), C2 (carriers_eq ↔ {2,3,4}), C_sector (isSinglet, t3Label free) and C_top match the .md table and sections; t3Label freedom matches :46-48.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.299Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;No bibliography cites; Lean and probe paths cited resolve to the stated content.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.397Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No bibliography cites; Lean/probe pointers resolve.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.330Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Two readings of the Higgs on the sigma_5 slot now coexist: this block makes H the bar-even A+ part of sigma_5^8, while conj:g-action-on-substrate §&#39;The value on the strand-pair slots&#39; (rewritten today) makes e_H the -q^-1 eigenprojector e^-(sigma_5), the alt Hecke channel. These are different objects (bar-grading component vs spectral projector); docs/audits/2026-11-20-nsym-derivation.md flags the tension and neither block mentions it. Also &#39;sigma_{G_F}&#39; is used without definition (it is the 257 ppb uncertainty on v/m_p propagated from G_F).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.423Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:36 &#39;bar-odd part in A_- (charged, traceless)&#39; while :38 puts the neutral Z in A_- (neutral via Weinberg mixing): A_- is labelled &#39;charged&#39; and also hosts a neutral boson. folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:42 &#39;It reads σ5^8 ... as the Higgs&#39; — &#39;It&#39; grammatically refers to the Weinberg-angle block, but this block is meant.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.359Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The quoted -0.114 sigma is inside the G_F noise (sigma = 257 ppb on v/m_p), so the comparison cannot distinguish the published formula from any variant within +-257 ppb (e.g. c=h^2 moves it 0.15 ppb); with the selection disclosed this is a fit-noise match. The PSD &#39;discrimination&#39; among the 7 registry entries is the parity of k in the B_2 closed form (alt eigenvalue (-1/q)^k), so it is a parity test, as the block half-concedes.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.450Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;-0.114 σ is inside the G_F noise (σ ≈ 257 ppb on v/m_p), and single-choice changes move N_v by 4.4 σ to 4e4 σ (:74), so the comparison cannot separate this formula from neighbouring ones.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.388Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Using alpha_v = m_p/v as a one-loop Schwinger coupling has no physical reading (the EW couplings are g, g&#39;); the scope note says so. Q = 1/2 writhe makes all three carriers charged, which the block also records. Both are disclosed.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.476Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Loop coupling α_v = m_p/v (:70) is not an electroweak gauge coupling (g, g&#39;), as :74 itself states; the W/Z/H ↔ T(2,4)/T(2,6)/T(2,8) map has no mechanism for the measured masses beyond ordering 4&lt;6&lt;8.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.419Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Backing witness computations/probes/ew-higgs-sdp-probe.witness.json was computed 2026-05-02 at q_0_numeric = 1.1097 (not the proton pin 1.109978582751...) and carries no scriptHash/q0Anchor (the producer gained provenance stamping later; current script hash 99cb4276da09). The B_2 signs are q-independent for q&gt;0, so the PSD verdicts survive; the -29.37 ppb and m_Z/m_W figures reproduce independently (recomputed this session) but come from electroweak_bring_schwinger_bridge_probe.py, not from the .ts-declared producer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.511Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py witness scriptHash a00e24da05aa equals sha256 of the script; regenerated 2026-11-20 at the proton q0; item-1 and item-2 numbers reproduced independently this session (see da-false-claim).&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.455Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: the identification is a postulate supported by a mass-ordering coincidence and a parity-trivial PSD test, and the headline -29 ppb vev agreement is the noise-level miss of a formula with four selected discrete slots (EM-analogue sign gives +2294 ppb); the scope note now says this for N_v, but item 1&#39;s &#39;parameter-free&#39; wording and item 2&#39;s m_Z/m_W &#39;prediction&#39; (different dressing power) still read as derived results.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.536Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Strongest objection: the identification rests on a mass-ordering coincidence and PSD feasibility that, by the block&#39;s own :55, every even-twist link satisfies; the numerical agreement uses six undetermined discrete choices. Honest scoping is present; major revision would remove &#39;hold ... verified&#39; framing and reconcile :53/:55.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.488Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: items 1-2 of &#39;Scope of the closure&#39; are long Title-Case run-on headings carrying Lean identifiers inline (&#39;ewSeifertGenusSum_eq_neg_bringTilingEuler&#39; etc.), and item 1 says &#39;parameter-free&#39; before the scope note retracts it; the reader meets the result before its status. Below the 16/16 standard.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.562Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:66 line begins &#39;. Combining ...&#39; — a stray period after the display math, which renders as a lone &#39;.&#39; paragraph; item headings (:61, :75) are title-case slogans (&#39;Electroweak Bring Seifert–Hodge Zero-Mode (1/π) and 1-Loop Schwinger Fixed Point&#39;); :42 &#39;It reads σ5^8&#39; has the wrong antecedent; :53/:55 contradict.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:50:33.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;02d186467a7012a9a67d014f08bd23e17a916fb6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.520Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;Charge and spin are proved consequences of a single sector postulate&#39; is stated at :12, again after the chain table (&#39;rather than independent postulates&#39;), and again in the C_sector section (&#39;Given the sector assignment ... spin and charge follow&#39;).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.587Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;Charge and spin are proved consequences of a single sector postulate&#39; at :12, again at :23-24 and again at :36-38.&quot;
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.670Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;&#39;is the Higgs mass mechanism, not the 125 GeV Higgs boson&#39; (l.44); &#39;necessary but not sufficient&#39; (l.55).&quot;,
+      &quot;notes&quot;: &quot;pass-with-note: load-bearing disambiguation (4_1 vs T(2,8) collision) and standard mathematical qualification.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.550Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.611Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;&#39;necessary but not sufficient&#39;, &#39;is the Higgs mass mechanism, not the 125 GeV Higgs boson&#39; are substantive.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.708Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no setup-then-reframe pivot.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.579Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: &#39;There is no conflict: sigma_5^8 carries both, bar-graded by the spin involution.&#39; — setup then resolve.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.638Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.744Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; em-dash use absent or true parenthetical/range only, low density.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.608Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:12 parenthetical em-dash pair in prose (&#39;Its provable base — that these three links exist, ... — is proved&#39;); the other em-dashes are heading separators or table placeholders.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.668Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Em-dash only in the provable-base parenthesis at :12 used as a list delimiter; no pivot.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.782Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no reflex three-item lists; enumerations are substantive.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.649Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.695Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.820Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; final line is factual/technical, not quotable closer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.692Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.725Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Ends on the residual list.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.858Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no narrated emphasis (no &#39;we emphasize&#39;/&#39;note the framing&#39;).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.734Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.750Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.894Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;&#39;Charge and spin are proved consequences...&#39; appears l.12 and l.23-24; each anchors its own section in a long block; closer (l.59) is factual scope.&quot;,
+      &quot;notes&quot;: &quot;pass-with-note: intra-block redundancy noted as exposition-duplication anomaly (sections duplicate sibling proof/slot blocks), not a trap closer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.776Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The charge-and-spin thesis is restated three times (:12, after the chain table, C_sector section).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.777Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;See milnor-brevity: the single-sector-postulate sentence is restated three times.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.929Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; institutional register throughout, no personal warmth.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.807Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.803Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:06.964Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; no unqualified maximum-strength claims.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.835Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.832Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f9c1b21c0512&quot;,
+        &quot;ts&quot;: &quot;981f91775759&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:kp-b2&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T12:14:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;10306c29732d9fda968177a50dc3b55046f4a32b&quot;,
+      &quot;evidence&quot;: &quot;Full read; prose parses aloud; no stalling noun chains.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.865Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.866Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Symbols speakable.&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.615Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:170-190 B_2 branch computes sym_eig = q**k and alt_eig from q_0_NUMERIC, which is the float64 q_parameter.Q (joint_tower_sdp_solver_v2.py:45,49); writes float(sym_eig)/float(alt_eig) to the witness; PSD thresholds are bare float literals (-1e-9); alt_eig default 1.0.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.862Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:172 sdp_feasibility_h3(word, q_0_NUMERIC) feeds the float64 q_0_NUMERIC of joint_tower_sdp_solver_v2 into the H_3 SDP entries (acknowledged in the witness, :255); the T(2,2k) entries use the exact closed form at the proton q0 in mpmath.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.652Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: no float(mpf) cast — q_0_NUMERIC is already float64, so the float(...) calls at :180-181 wrap floats (the float64 origin is covered under does_not_default_to_float).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.889Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: no float(mpf) cast on a value that re-enters computation; displays use mp.nstr.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.684Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: no math.* calls; numpy is imported in the B_2 branch but unused; sign checks of q^k are archimedean evaluations at q0 by design.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.918Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Numerical SDP feasibility at the proton q0 is archimedean by nature and is labelled exploratory.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.723Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: module docstring (:2-24), registry comments, branch comments.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.946Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:1-23 docstring, :25-31 bootstrap comments.&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.760Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: solve_ew_entry(entry: dict) -&gt; dict; main() takes no arguments.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.974Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:150 &#39;def solve_ew_entry(entry: dict) -&gt; dict&#39;; main unannotated but argument-free.&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.786Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: no &#39;# Ref: [key]&#39; comment; &#39;ref&#39; registry fields name .md files, not bibliography keys.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.007Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:55 &#39;# Ref: [leitner2026] conj:electroweak-higgs-torus-link-triplet&#39;.&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.816Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py: not named in .github/workflows and no other script imports it (grep over computations/ finds only itself).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.031Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py not in .github/workflows (dispatch-only) and imported by no script; only an audit witness lists it.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.844Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;Not under _deprecated/, no DEPRECATED marker.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.057Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No DEPRECATED marker; docstring calls it exploratory, which the block repeats.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.885Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:274-276 stamps provenance via WitnessBuilder.stamp_staleness_metadata before json.dump.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.084Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py:31-33 inserts the parent dir before importing _path_bridge (correct bootstrap order); SDP via joint_tower_sdp_solver(_v2).&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.919Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py makes no add_assertion(...) calls.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.117Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;computations/probes/ew_higgs_sdp_probe.py records feasibility results without add_assertion(...) calls.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:13.989Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md argues from conj:weinberg-angle-categorical (&#39;The Weinberg-angle block reads the Hoefsmit slot sigma_5^8 as ... B&#39;), thm:hoefsmit-ew-cell-content (&#39;Hoefsmit slot&#39;) and prop:self-dual-higgs-real-volume (&#39;The self-dual figure-eight 4_1 is the Higgs mass mechanism&#39;); none is in uses[] and the .md links none of them.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:22.826Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:42 relies on &#39;the Weinberg-angle block&#39; (reads σ5^8 as B) and :44 on self-dual-higgs-real-volume for 4_1, and :74 on QOU.StandardModel.EwVevDecomposition; none of these is in uses[].&quot;
+    }
+  ],
+  &quot;da-arity-conflation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;045f2a3187ff&quot;,
+        &quot;ts&quot;: &quot;8445ea086b2e&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-20b&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-20T18:52:14.238Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cb166ca94c48797f29a3ac877b532128b906a4d5&quot;,
+      &quot;evidence&quot;: &quot;No family-vs-closure or pointwise-vs-universal reading; claims are about specific carriers.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1855d29c2f60&quot;,
+        &quot;ts&quot;: &quot;61a48d5c8595&quot;,
+        &quot;lean&quot;: &quot;8468d7726f73&quot;,
+        &quot;lean_statement&quot;: &quot;6c553f18e474&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:23.339Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No family-vs-instance conflation; C1/C2 forward/reverse inclusion kept separate.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

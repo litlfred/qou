@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-casimir-unique",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-casimir-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the $q$-Casimir element up to scalar",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-casimir-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-casimir-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "casimir",
+    "central-element"
+  ],
+  "leanRef": "qou:QOU.QCasimir.not_unique_up_to_scalar_unconstrained",
+  "text": "q-casimir-unique.md",
+  "leanSource": "q-casimir-unique.lean",
+  "provenance": "authored"
+}

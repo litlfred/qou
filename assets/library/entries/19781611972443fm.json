@@ -1,0 +1,327 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "19781611972443fm",
+  "blocks": [
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Algebraic and Geometric \nIdeas in the Theory \nof Discrete Optimization",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "This series is published jointly by the Mathematical Optimization Society and the Society for Industrial \nand Applied Mathematics. It includes research monographs, books on applications, textbooks at all \nlevels, and tutorials. Besides being of high scientific quality, books in the series must advance the \nunderstanding and practice of optimization. They must also be written clearly and at an appropriate \nlevel for the intended audience.\nEditor-in-Chief    \nThomas Liebling\nÉcole Polytechnique Fédérale de Lausanne\n \nEditorial Board\nWilliam Cook, Georgia Tech\nGérard Cornuéjols, Carnegie Mellon U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Algebraic and Geometric \nIdeas in the Theory \nof Discrete Optimization\n      \nJesús A. De Loera\nUniversity of California, Davis\nDavis, California\nRaymond Hemmecke\nTechnische Universität München\nMünchen, Germany\nMatthias Köppe\nUniversity of California, Davis\nDavis, California\nSociety for Industrial and Applied Mathematics\nPhiladelphia\nMathematical Optimization Society \nPhiladelphia",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Copyright © 2013 by the Society for Industrial and Applied Mathematics and the Mathematical  \nOptimization Society\n10 9 8 7 6 5 4 3 2 1\nAll rights reserved. Printed in the United States of America. No part of this book may be reproduced, \nstored, or transmitted in any manner without the written permission of the publisher. For information, \nwrite to the Society for Industrial and Applied Mathematics, 3600 Market Street, 6th Floor, Philadelphia, \nPA 19104-2688 USA.\nTrademarked names may be used in this book without the inclusion of a trademark symbol. These names \nare used in an editorial conte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Contents\nList of Figures\nix\nList of Tables\nxiii\nList of Algorithms\nxv\nPreface\nxvii\nI\nEstablished Tools of Discrete Optimization\n1\n1\nTools from Linear and Convex Optimization\n3\n1.1\nConvex sets and polyhedra\n. . . . . . . . . . . . . . . . . . . . . . .\n3\n1.2\nFarkas’ lemma and feasibility of polyhedra . . . . . . . . . . . . . . .\n5\n1.3\nWeyl–Minkowski’s representation theorem . . . . . . . . . . . . . . .\n9\n1.4\nDecomposition of polyhedra as sums of cones and polytopes\n. . . . .\n14\n1.5\nFaces, dimension, extreme points . . . . . . . . . . . . . . . . . . . .\n17\n1.6\nDuality of linear optimization .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "vi\nContents\nII\nGraver Basis Methods\n61\n3\nGraver Bases\n63\n3.1\nIntroduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n63\n3.2\nGraver bases and their representation property . . . . . . . . . . . . .\n64\n3.3\nOptimality certiﬁcate for separable convex integer programs . . . . . .\n65\n3.4\nHow many augmentation steps are needed? . . . . . . . . . . . . . . .\n66\n3.5\nHow do we ﬁnd a Graver-best augmentation step? . . . . . . . . . . .\n68\n3.6\nHow do we ﬁnd an initial feasible solution? . . . . . . . . . . . . . . .\n68\n3.7\nBounds for Graver basis elements . . . . . . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Contents\nvii\n8\nGlobal Mixed-Integer Polynomial Optimization via Summation\n157\n8.1\nApproximation algorithms and schemes\n. . . . . . . . . . . . . . . . 157\n8.2\nThe summation method . . . . . . . . . . . . . . . . . . . . . . . . . 159\n8.3\nFPTAS for maximizing nonnegative polynomials over integer points\nof polytopes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 159\n8.4\nExtension to mixed-integer optimization via discretization . . . . . . . 165\n8.5\nExtension to objective functions of arbitrary range . . . . . . . . . . . 172\n8.6\nNotes and further references . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "viii\nContents\n13\nPositivity of Polynomials and Global Optimization\n265\n13.1\nUnconstrained optimization of polynomials and sums of squares\n. . . 265\n13.2\nPositivstellensätze for semideﬁnite programming relaxations\n. . . . . 273\n13.3\nApproximating the integer hull of combinatorial problems . . . . . . . 277\n13.4\nNotes and further references . . . . . . . . . . . . . . . . . . . . . . . 279\n13.5\nExercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 280\n14\nEpilogue\n281\n14.1\nAlgebraic and topological ideas in linear optimization . . . . . . . . . 281\n14.2\nOther generating func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "List of Figures\n1.1\nHomogenization of a polytope. . . . . . . . . . . . . . . . . . . . . . . .\n15\n2.1\nConvex sets for testing primality.\n. . . . . . . . . . . . . . . . . . . . .\n30\n2.2\nParallelogram in the proof of the Diophantine approximation theorem. . .\n31\n2.3\nA (nonconvex) lattice polygon and a triangulation. . . . . . . . . . . . .\n32\n2.4\nConvex and reﬂex vertices in a polygon. The vertex v1 is convex, while\nv2 is reﬂex. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n32\n2.5\nCases in the proof of Lemma 2.1.6. . . . . . . . . . . . . . . . . . . . .\n33\n2.6\nA step in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "x\nList of Figures\n5.8\nA two-dimensional cone of index 6, triangulated into two unimodular\ncones. The integer points in the one-dimensional intersection would be\ncounted twice, so we subtract them once (inclusion-exclusion principle).\n112\n5.9\nA triangulation of the cone of index 5 generated by b1 and b2 into the\ntwo cones spanned by {b1,w} and {b2,w}, having an index of 2 and 3, re-\nspectively. We have the inclusion-exclusion formula g(cone{b1,b2};z) =\ng(cone{b1,w};z)+ g(cone{b2,w};z)−g(cone{w};z); here the one-\ndimensional cone spanned by w needed to be subtracted. . . . . . . . . . 113\n5.10\nA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "List of Figures\nxi\n8.3\nThe principle of grid approximation. Since we can reﬁne the grid only\nin the direction of the continuous variables, we need to construct an ap-\nproximating grid point (x,z∗) in the same integral slice as the target point\n(x∗,z∗). [94]\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167\n8.4\nThe geometry of Lemma 8.4.8. For a polynomial with a maximum total\ndegree of 2, we construct a reﬁnement 1\nk Zn (small circles) of the standard\nlattice (large circles) such that P ∩1\nk Zn contains an afﬁne image of the\nset {0,1,2}n (large dots). [94]\n. . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "List of Tables\n2.1\nTrace of the basis reduction algorithm (Algorithm 2.1) on the lattice of\nExample 2.7.6. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n53\n13.1\nSome polynomials and their Pólya exponents . . . . . . . . . . . . . . . 270\nxiii\nDownloaded 08/31/26 to 85.5.100.194 . Redistribution subject to SIAM license or copyright; see https://epubs.siam.org/terms-privacy",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "List of Algorithms\nAlgorithm 1.1\nFourier–Motzkin elimination . . . . . . . . . . . . . . . . . . .\n7\nAlgorithm 1.2\nEllipsoid method . . . . . . . . . . . . . . . . . . . . . . . . .\n25\nAlgorithm 2.1\nLattice basis reduction . . . . . . . . . . . . . . . . . . . . . .\n52\nAlgorithm 3.1\nGraver-best augmentation algorithm . . . . . . . . . . . . . . .\n66\nAlgorithm 3.2\nNormal form algorithm . . . . . . . . . . . . . . . . . . . . . .\n71\nAlgorithm 3.3\nPottier’s algorithm\n. . . . . . . . . . . . . . . . . . . . . . . .\n72\nAlgorithm 3.4\nProject-and-lift algorithm . . . . . . . . . . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "Preface\nIt is undeniable that geometric ideas have been very important to the foundations\nof modern discrete optimization. The inﬂuence that geometric algorithms have in opti-\nmization was elegantly demonstrated in the, now classic, book Geometric Algorithms and\nCombinatorial Optimization [145] written more than 25 years ago by M. Grötschel, L.\nLovász, and A. Schrijver. There, in a masterful way, we were introduced to the power\nthat the geometry of ellipsoids, hyperplanes, convex bodies, and lattices can wield in opti-\nmization. After many years, students of integer programming today are expos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "xviii\nPreface\nconvex programming and integer programming underwent major changes thanks to\nthe ellipsoid method, semideﬁnite programming, lattice basis reduction, etc. Most of\nwhat is contained in Part I is a short summary of tools that students in optimization\nnormally encounter in a course based on the excellent books [50, 145, 206, 259, 296]\nand probably should be skipped by such readers. They should go directly to the new\nexciting techniques in Parts II, III, IV, and V. Readers that start with Part I will add\nan extra three or four weeks to the course.\n• Parts II, III, IV, and V form the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/19781611972443fm/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "Preface\nxix\nVictor L. Klee, Steve Klee, Jean Bernard Lasserre, Monique Laurent, Jim Lawrence, Hen-\ndrik W. Lenstra, Sven Leyffer, Jeff Linderoth, Diane Maclagan, Jirka Matoušek, Nimrod\nMegiddo, Bernard Mourrain, Walter Morris, Jiawang Nie, Jorge Nocedal, Edwin O’Shea,\nDima Pasechnik, Javier Peña, Vicky Powers, Scott Provan, Franz Rendl, Bruce Reznick,\nMaurice Rojas, Paco Santos, András Sebö, Bernd Sturmfels, Levent Tunçel, Tamás Ter-\nlaky, Rekha R. Thomas, Mike Todd, Frank Vallentin, Santosh Vempala, Michèle Vergne,\nCynthia Vinzant, Emo Welzl, Laurence Wolsey, Yinyu Ye, Ruriko Yoshida, and Gün",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

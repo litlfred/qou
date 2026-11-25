@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ns-singularity-descartes",
+  "kind": "theorem",
+  "title": "Topology of the Reeb bundle of the Descartes universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "tags": [
+    "theorem",
+    "navier-stokes",
+    "descartes",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.ns_singularity_descartes.descartes_kummer_root_levels",
+  "text": "ns-singularity-descartes.md",
+  "provenance": "authored"
+}

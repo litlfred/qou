@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2509.02354v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms",
+      "dcterms:creator": [
+        "MCPHAIL-SNYDER, CALVIN",
+        "RESHETIKHIN, NICOLAI"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2509.02354",
+      "dcterms:abstract": "We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.",
+      "dcterms:source": "library/arxiv-2509.02354v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2509.02354v2"
+    }
+  ]
+}

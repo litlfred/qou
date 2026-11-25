@@ -1,0 +1,792 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2208.12678v4",
+  "title": "arxiv-2208.12678v4",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Problem Formulation",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-problem-formulation"
+    },
+    {
+      "level": 1,
+      "title": "Energy Minimization",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-3-energy-minimization"
+    },
+    {
+      "level": 2,
+      "title": "Lower Semicontinuity of Plateau Energy",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Equicontinuity at the Boundary",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-32-equicontinuity-at-the-boundary"
+    },
+    {
+      "level": 2,
+      "title": "Convergence in the Interior",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-33-convergence-in-the-interior"
+    },
+    {
+      "level": 1,
+      "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-necessary-conditions-of-möbius-plateau-critica"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Estimating the negative contribution",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-appendix-a-estimating-the-negative-contribution"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy minimization",
+          "heading": false
+        },
+        {
+          "term": "plateau problems",
+          "heading": false
+        },
+        {
+          "term": "obius-plateau",
+          "heading": false
+        },
+        {
+          "term": "ribbon-like",
+          "heading": false
+        },
+        {
+          "term": "screw-like",
+          "heading": false
+        },
+        {
+          "term": "self-repulsive",
+          "heading": false
+        }
+      ],
+      "extract": "STATIONARY CURVES UNDER THE M¨OBIUS-PLATEAU ENERGY MAX LIPTON AND GOKUL G. NAIR Abstract. Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2208.12678v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite freedman1994mobius",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "obius-plateau energy",
+          "heading": false
+        },
+        {
+          "term": "plateau problem",
+          "heading": false
+        },
+        {
+          "term": "minimizing configurations",
+          "heading": false
+        },
+        {
+          "term": "energy minimization",
+          "heading": false
+        },
+        {
+          "term": "elastic energy",
+          "heading": false
+        },
+        {
+          "term": "boundary curves",
+          "heading": false
+        }
+      ],
+      "extract": "The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as \\textit{Plateau's problem}, has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary possesses its own energy and is allowed to deform. Since most experimental realizations of Plateau's problem involve films formed by dipping closed loops of wire in soapy water, it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-energy-minimization",
+      "number": "3",
+      "title": "Energy Minimization",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 40,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy",
+          "heading": true
+        },
+        {
+          "term": "disk-like",
+          "heading": false
+        },
+        {
+          "term": "helicoidal",
+          "heading": false
+        }
+      ],
+      "extract": "properties and lower semicontinuity of the energy and establish the existence of disk-like energy minimizing configurations for simple closed curves in a given irreducible knot type. In Section 4 we turn our attention to helicoidal solutions of the Euler-Lagrange equations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-2-problem-formulation",
+      "number": "2",
+      "title": "Problem Formulation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rectifiable simple",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "bi-lipschitz embedding",
+          "heading": false
+        },
+        {
+          "term": "plateau energy",
+          "heading": false
+        },
+        {
+          "term": "obius-plateau energy",
+          "heading": false
+        },
+        {
+          "term": "bi-lipschitz property",
+          "heading": false
+        },
+        {
+          "term": "lim inf",
+          "heading": false
+        },
+        {
+          "term": "fhw",
+          "heading": false
+        }
+      ],
+      "extract": "Denote the closed unit disk by D ⊂R2 and let γ : ∂D →R3 be a rectifiable simple closed curve. We define the M¨obius energy [O’H03, FHW94] as EM[γ] = ZZ ∂D×∂D \" 1 |γ(y) −γ(x)|2 − 1 D(γ(y), γ(x))2 # |˙γ(x)| |˙γ(y)| dydx, (1) where D(γ(x), γ(y)) denotes the geodesic distance between γ(x) and γ(y) along the curve γ. The M¨obius energy blows up in self intersections, so the gradient descent will not encounter boundary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-32-equicontinuity-at-the-boundary",
+      "number": "3.2",
+      "title": "Equicontinuity at the Boundary",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 663,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abs p-q",
+          "heading": false
+        },
+        {
+          "term": "mathrm diam",
+          "heading": false
+        },
+        {
+          "term": "p-q rho",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "let varepsilon",
+          "heading": false
+        },
+        {
+          "term": "begin lemma",
+          "heading": false
+        },
+        {
+          "term": "infty",
+          "heading": false
+        }
+      ],
+      "extract": "We first prove the following simple lemma, \\begin{lemma}\\label{lemma:diameter-convergence} Suppose $\\left\\{\\mu_k:[a,b]\\rightarrow\\RR^3\\right\\}$ is a sequence of continuous curves that converges uniformly to $\\mu_\\infty$. Then the diameters of the images converge: $\\mathrm{diam}(\\mu_k([a,b]))\\rightarrow\\mathrm{diam}(\\mu_\\infty([a,b]))$. \\end{lemma} \\begin{proof} Let $\\varepsilon>0$ and choose $N$ large such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-33-convergence-in-the-interior",
+      "number": "3.3",
+      "title": "Convergence in the Interior",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abs j-u",
+          "heading": false
+        },
+        {
+          "term": "align mathrm",
+          "heading": false
+        },
+        {
+          "term": "infty mathrm",
+          "heading": false
+        },
+        {
+          "term": "gamma infty",
+          "heading": false
+        },
+        {
+          "term": "leq liminf",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "Since $\\mathrm{e}(u_k)$ is uniformly bounded, we have from compactness that after passing to a subsequence, $u_k\\rightharpoonup u_*$ weakly in $W^{1,2}(D,\\RR^3)$ for some $u_*$, not necessarily equal to $u_\\infty$, and \\begin{align*} \\mathrm{e}(u_*)\\leq\\liminf_{j \\to \\infty}\\mathrm{e}(u_j). \\end{align*} Furthermore, from Proposition~\\ref{prop:equicontinuity}, $\\{u_j\\}$ is equicontinuous on $\\partial D$ and by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-necessary-conditions-of-möbius-plateau-critica",
+      "number": "4",
+      "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "11",
+      "words": 3174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helix",
+          "heading": true
+        },
+        {
+          "term": "textbf gamma",
+          "heading": false
+        },
+        {
+          "term": "omega frac",
+          "heading": false
+        },
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "align int",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "omega right",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:stationary-helix-pairs} In this section, we alter the problem slightly to consider the M\\\"obius energy of links, where $\\gamma_1, \\gamma_2: \\R \\to \\R^3$ are disjoint locally rectifiable curves. The M\\\"obius energy of the link is defined as \\begin{align} \\label{mobiuslink} E_M(\\gamma_1, \\gamma_2) = \\int_{\\R \\times \\R} \\frac{ |\\dot{\\gamma_1}(u)| | \\dot{\\gamma_2}(v) | dudv}{|\\gamma_1(u) - \\gamma_2(v)|^2}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-acknowledgements",
+      "number": "5",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colding",
+          "heading": false
+        },
+        {
+          "term": "titled",
+          "heading": false
+        },
+        {
+          "term": "lipton",
+          "heading": false
+        }
+      ],
+      "extract": "The authors would like to thank Xin Zhou for his numerous helpful discussions about this work, in particular making the initial suggestion to investigate the M\\\"obius-Plateau energy. The authors would also like to thank Steven Strogatz and Tobias Colding for their continued support. \\\\ \\\\ \\noindent This work is partially funded by an NSF RTG grant titled Dynamics, Probability and PDEs in Pure and Applied",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-a-estimating-the-negative-contribution",
+      "number": null,
+      "title": "Appendix A. Estimating the negative contribution",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "estimating",
+          "heading": true
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "obius-plateau",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose cos(ωv) ≥0, and since by assumption A + B −2AB > 0, we have A2 −A + B2 −B + (A + B −2AB) cos(ωv) + v2 ≥A2 −A + B2 −B + v2 ≥−1 2 + v2. The last inequality follows from the fact that inf A+B<2 0<A<B A2 −A + B2 −B = −1 2. (18) Therefore, a necessary condition for the integrand to be negative whilst cos(ωv) > 0 is for v ≤1 4. With a direct calculation or with a computer algebra system, one obtains the Macularin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eliot fried",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "minimal surfaces",
+          "heading": false
+        },
+        {
+          "term": "american mathematical",
+          "heading": false
+        },
+        {
+          "term": "email address",
+          "heading": false
+        },
+        {
+          "term": "zheng-xu",
+          "heading": false
+        },
+        {
+          "term": "rutgers",
+          "heading": false
+        },
+        {
+          "term": "luca",
+          "heading": false
+        }
+      ],
+      "extract": "[BV18] Simon Blatt and Nicole Vorderobermeier, On the analyticity of critical points of the M¨obius energy, Calculus of Variations and Partial Differential Equations 58 (2018), no. 1, 16. [BY01] Felicia Bernatzki and Rugang Ye, Minimal surfaces with an elastic boundary, Annals of Global Analysis and Geometry 19 (2001), no. 1, 1–9. [CF14] Yi-chao Chen and Eliot Fried, Stability and bifurcation of a soap film spanning",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "obius-plateau energy",
+      "heading": false
+    },
+    {
+      "term": "obius energy",
+      "heading": false
+    },
+    {
+      "term": "plateau energy",
+      "heading": true
+    },
+    {
+      "term": "obius minimizers",
+      "heading": false
+    },
+    {
+      "term": "self-repulsive energy",
+      "heading": false
+    },
+    {
+      "term": "energy minimizing",
+      "heading": false
+    },
+    {
+      "term": "energy minimization",
+      "heading": true
+    },
+    {
+      "term": "plateau solutions",
+      "heading": false
+    },
+    {
+      "term": "elastic energy",
+      "heading": false
+    },
+    {
+      "term": "plateau problem",
+      "heading": false
+    },
+    {
+      "term": "disk-like energy",
+      "heading": false
+    },
+    {
+      "term": "dirichlet energy",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Two stationary helicoidal screws with identical parameters A = −1, ω = 2, except B ≈6.15375 in the figure on the left, whilst B = 1 in the figure on the right. In these examples, we set α = 2, β = 1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A graph of the integrand in (15) with A = 0.1, B = 1, and ω = 10, as a function of v",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Contours in the AB-plane for (15) and (17), with α = β = 1, ω = 10, and approximate region of integration [−10000, 10000]. The intersection of the contour curves is (A, B) ≈(0.810515, 0.818991) which is in the valid parameter space {(A, B) : 0 < A < B, A + B < 2}",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-2",
+      "file": "images/img-p008-2.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2208.12678v4"
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1172-4",
+  "title": "1172-4",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "44",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Representation",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "52",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-5-representation"
+    },
+    {
+      "level": 2,
+      "title": "Momentum Space",
+      "number": "5.1",
+      "page": 9,
+      "pageLabel": "52",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-51-momentum-space"
+    },
+    {
+      "level": 2,
+      "title": "Braid",
+      "number": "6.1",
+      "page": 13,
+      "pageLabel": "56",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-61-braid"
+    },
+    {
+      "level": 1,
+      "title": "Simple Examples",
+      "number": "7",
+      "page": 19,
+      "pageLabel": "62",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-7-simple-examples"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 22,
+      "pageLabel": "65",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": "65",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻 樋上和弘 Kazuhiro HIKAMI \\dagger",
+      "extractCut": false,
+      "blocks": [
+        "library/1172-4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": "44",
+      "labelEnd": "52",
+      "words": 1815,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm lume",
+          "heading": false
+        },
+        {
+          "term": "mathrm varphi",
+          "heading": false
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        },
+        {
+          "term": "operato mathrm",
+          "heading": false
+        },
+        {
+          "term": "cdot mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm otimes",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Since the discovery of the Jones polynomial [15], the quantum $\\mathrm{g}\\mathrm{r}o$up has $\\dot{\\mathrm{b}}\\mathrm{e}\\mathrm{e}\\mathrm{n}$ used to construct the invariants of knots and links, and many knot invariants such as HOM- FLY polynomial [9], colored Jones polynomial [4], Kauﬀman $\\mathrm{p}o$lynomial [22], have been $\\mathrm{p}\\mathrm{r}o$posed. Recently Kashaev constructed a knot invariant by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-5-representation",
+      "number": "5",
+      "title": "Representation",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Representation",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-51-momentum-space",
+      "number": "5.1",
+      "title": "Momentum Space",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "52",
+      "labelEnd": "56",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm rangle",
+          "heading": false
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm cdot",
+          "heading": false
+        },
+        {
+          "term": "mathrm phi",
+          "heading": false
+        },
+        {
+          "term": "int mathrm",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "infty mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "Momentum Space We consider a matrix representation of the $R$-matrix given above. Kashaev constructed a ﬁnite-dimensional representation for the R-operator (4.11) by taking $q$ as the N-th root of unity [17], though in this section we rather consider the R-operator on the inﬁnite dimensional space. We consider the Hilbert space of the quantum canonical operators $\\hat{p}$ and $\\hat{q}(4.7)$ . We call the momentum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-61-braid",
+      "number": "6.1",
+      "title": "Braid",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": "56",
+      "labelEnd": "62",
+      "words": 930,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm langle",
+          "heading": false
+        },
+        {
+          "term": "mathrm vec",
+          "heading": false
+        },
+        {
+          "term": "mathrm otimes",
+          "heading": false
+        },
+        {
+          "term": "iint mathrm",
+          "heading": false
+        },
+        {
+          "term": "int mathrm",
+          "heading": false
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        },
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "mathit ther",
+          "heading": false
+        }
+      ],
+      "extract": "Braid $G$roup The knot invariant can be constructed by use of solutions of the Yang-Baxter equa- tion $[30, 37]$ . We suppose that we have the enhanced Yang-Baxter operators $(\\mathrm{R}, \\mu, \\alpha, \\beta)$ $\\mathrm{s}\\mathrm{a}\\mathrm{t}\\mathrm{i}S\\varphi \\mathrm{i}\\mathrm{n}\\mathrm{g}$ $(\\mathrm{R}\\otimes 1)(1\\otimes \\mathrm{R})(\\mathrm{R}\\otimes 1)=(1\\otimes \\mathrm{R})(\\mathrm{R}\\otimes 1)(1\\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-7-simple-examples",
+      "number": "7",
+      "title": "Simple Examples",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "62",
+      "labelEnd": "65",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm lume",
+          "heading": false
+        },
+        {
+          "term": "mathrm ssing",
+          "heading": false
+        },
+        {
+          "term": "mathrm langle",
+          "heading": false
+        },
+        {
+          "term": "mathrm gamma",
+          "heading": false
+        },
+        {
+          "term": "int mathrm",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm exp",
+          "heading": false
+        }
+      ],
+      "extract": "Simple Examples 7.1 Figure-Eight Knot The ﬁgure-eight knot is; This knot is represented as $\\sigma_{12^{-}12}\\sigma\\sigma\\sigma^{-1}1$ by use of the braid generators. We then asso- ciate the tetrahedra for each $\\mathrm{c}\\mathrm{r}o$ssing as In regions $D_{1},$ $\\cdots$ , $D_{4}$ , the three tetrahedra are glued, and due to the pentagon iden- tity (6.7) they reduce to two tetrahedra. By glueing th",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "65",
+      "labelEnd": "65",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author $\\mathrm{w}o$uld like to thank Hitoshi Murakami for useful discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "65",
+      "labelEnd": "69",
+      "words": 786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm lume",
+          "heading": false
+        },
+        {
+          "term": "mathrm sim",
+          "heading": false
+        },
+        {
+          "term": "lattice mathrm",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic mathrm",
+          "heading": false
+        },
+        {
+          "term": "quantum volterra",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "volterra model",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Antonov: Universal $R$-matrix and quantum Volterra model, Theor. Math. Phys. 113, 1520-1529 (1997). [2] V V Bazhanov and N. Reshetikhin: Remarks On the quantum dilogarithm, J. Phys. A: Math. Gen. 28, 2217-2226 (1995). . [3] L. Chekhov and V V Fock: $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Teichm\\\"uller space, Theor. Math. Phys. 120, 1245-1259 (1999). [4] $\\mathrm{T}$",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm lume",
+      "heading": false
+    },
+    {
+      "term": "gamma mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "mathrm rangle",
+      "heading": false
+    },
+    {
+      "term": "mathrm langle",
+      "heading": false
+    },
+    {
+      "term": "int mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm sim",
+      "heading": false
+    },
+    {
+      "term": "hat mathrm",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "operato mathrm",
+      "heading": false
+    },
+    {
+      "term": "cdot mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm ther",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1172-4"
+  }
+}

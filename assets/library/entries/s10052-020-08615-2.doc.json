@@ -1,0 +1,2278 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s10052-020-08615-2",
+  "title": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-sum-rule-for-the-compton-amplitude-and-implicati"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Lorentz invariance, kinematic zeros",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-lorentz-invariance-kinematic-zeros"
+    },
+    {
+      "level": 2,
+      "title": "Dispersion relations",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-dispersion-relations"
+    },
+    {
+      "level": 2,
+      "title": "Reggeon dominance",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-reggeon-dominance"
+    },
+    {
+      "level": 2,
+      "title": "Sum rule for the subtraction function",
+      "number": "5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-sum-rule-for-the-subtraction-function"
+    },
+    {
+      "level": 2,
+      "title": "Wick rotation",
+      "number": "6",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-6-wick-rotation"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition of the mass shift",
+      "number": "7",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-7-decomposition-of-the-mass-shift"
+    },
+    {
+      "level": 2,
+      "title": "Operator product expansion",
+      "number": "8",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-8-operator-product-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Leading Wilson coefficients",
+      "number": "9",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-9-leading-wilson-coefficients"
+    },
+    {
+      "level": 2,
+      "title": "Difference between proton and neutron",
+      "number": "10",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-10-difference-between-proton-and-neutron"
+    },
+    {
+      "level": 2,
+      "title": "Perturbation theory",
+      "number": "11",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-11-perturbation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Moments of the structure functions",
+      "number": "12",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-12-moments-of-the-structure-functions"
+    },
+    {
+      "level": 2,
+      "title": "Prediction for the constant C",
+      "number": "13",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-13-prediction-for-the-constant-c"
+    },
+    {
+      "level": 2,
+      "title": "Renormalization",
+      "number": "14",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-14-renormalization"
+    },
+    {
+      "level": 2,
+      "title": "Subleading divergence",
+      "number": "15",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-15-subleading-divergence"
+    },
+    {
+      "level": 2,
+      "title": "Input used for the structure functions",
+      "number": "16",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-16-input-used-for-the-structure-functions"
+    },
+    {
+      "level": 2,
+      "title": "Polarizabilities overlineS(0)",
+      "number": "17",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Subtraction function at low Q ^2",
+      "number": "18",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-18-subtraction-function-at-low-q-2"
+    },
+    {
+      "level": 2,
+      "title": "Intermediate values of Q ^2",
+      "number": "19",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-19-intermediate-values-of-q-2"
+    },
+    {
+      "level": 2,
+      "title": "Vector meson dominance",
+      "number": "20",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-20-vector-meson-dominance"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "21",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-21-asymptotics"
+    },
+    {
+      "level": 2,
+      "title": "Numerical evaluation of the mass difference",
+      "number": "22",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-22-numerical-evaluation-of-the-mass-difference"
+    },
+    {
+      "level": 3,
+      "title": "Form factors, m_(el)",
+      "number": "22.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-221-form-factors-m-el"
+    },
+    {
+      "level": 3,
+      "title": "Contribution from the subtraction function",
+      "number": "22.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-222-contribution-from-the-subtraction-function"
+    },
+    {
+      "level": 3,
+      "title": "Contributions from the dispersion integrals",
+      "number": "22.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-223-contributions-from-the-dispersion-integrals"
+    },
+    {
+      "level": 3,
+      "title": "Result for m _ (QED) or mstring(QCD)",
+      "number": "22.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Comparison with Lattice calculations",
+      "number": "23",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-23-comparison-with-lattice-calculations"
+    },
+    {
+      "level": 2,
+      "title": "Comparison with other evaluations of the Cottingham formula",
+      "number": "24",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-24-comparison-with-other-evaluations-of-the-cott"
+    },
+    {
+      "level": 3,
+      "title": "Contributions from the elastic part",
+      "number": "24.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-241-contributions-from-the-elastic-part"
+    },
+    {
+      "level": 3,
+      "title": "Contributions from the subtraction function",
+      "number": "24.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-242-contributions-from-the-subtraction-function"
+    },
+    {
+      "level": 2,
+      "title": "Summary and conclusions",
+      "number": "25",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-25-summary-and-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-acknowledgements"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A: Form of the Wilson coefficient for spin 2",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-appendix-a-form-of-the-wilson-coefficient-for-sp"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B: Operator product expansion for free quarks",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-appendix-b-operator-product-expansion-for-free-q"
+    },
+    {
+      "level": 2,
+      "title": "Appendix C: Derivation of the sum rule",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-appendix-c-derivation-of-the-sum-rule"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Eur. Phys. J. C (2020) 80:1121 https://doi.org/10.1140/epjc/s10052-020-08615-2 Regular Article - Theoretical Physics",
+      "extractCut": false,
+      "blocks": [
+        "library/s10052-020-08615-2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-sum-rule-for-the-compton-amplitude-and-implicati",
+      "number": null,
+      "title": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bern",
+          "heading": false
+        },
+        {
+          "term": "universität",
+          "heading": false
+        },
+        {
+          "term": "für",
+          "heading": false
+        }
+      ],
+      "extract": "proton–neutron mass difference J. Gasser1, H. Leutwyler1, A. Rusetsky2,a 1 Albert Einstein Center for Fundamental Physics, Institut für theoretische Physik, Universität Bern, Sidlerstrasse 5, 3012 Bern, Switzerland 2 Helmholtz-Institut für Strahlen- und Kernphysik (Theorie) and Bethe Center for Theoretical Physics, Universität Bonn, Nussallee 14-16, 53115 Bonn, Germany Received: 13 August 2020 / Accepted: 29 October",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum rule",
+          "heading": false
+        },
+        {
+          "term": "inated",
+          "heading": false
+        },
+        {
+          "term": "reggeize",
+          "heading": false
+        }
+      ],
+      "extract": "The Cottingham formula expresses the leading contribution of the electromagnetic interaction to the proton- neutron mass difference as an integral over the forward Compton amplitude. Since quarks and gluons reggeize, the dispersive representation of this amplitude requires a sub- traction. We assume that the asymptotic behaviour is dom- inated by Reggeon exchange. This leads to a sum rule that expresses the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "neutron mass",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "compton amplitude",
+          "heading": false
+        },
+        {
+          "term": "lepton-nucleon scattering",
+          "heading": false
+        },
+        {
+          "term": "cottingham formula",
+          "heading": false
+        },
+        {
+          "term": "mass difference",
+          "heading": false
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction . . . . . . . . . . . . . . . . . . . . . 1 2 Lorentz invariance, kinematic zeros . . . . . . . . 3 3 Dispersion relations . . . . . . . . . . . . . . . . . 3 4 Reggeon dominance . . . . . . . . . . . . . . . . . 4 5 Sum rule for the subtraction function . . . . . . . . 5 6 Wick rotation . . . . . . . . . . . . . . . . . . . . 5 7 Decomposition of the mass shift . . . . . . . . . . 6 8 Operator product",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-lorentz-invariance-kinematic-zeros",
+      "number": "2",
+      "title": "Lorentz invariance, kinematic zeros",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kinematic zeros",
+          "heading": true
+        },
+        {
+          "term": "compton amplitude",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        },
+        {
+          "term": "lorentz",
+          "heading": true
+        },
+        {
+          "term": "born terms",
+          "heading": false
+        },
+        {
+          "term": "q2t",
+          "heading": false
+        },
+        {
+          "term": "problems encountered",
+          "heading": false
+        },
+        {
+          "term": "qμqν",
+          "heading": false
+        }
+      ],
+      "extract": "Causality ensures that the time-ordered amplitude is unique up to contact terms and the ambiguity can be ﬁxed in such a manner that T μν(p, q) is Lorentz covariant.2 Together with symmetry under space reﬂections, this property implies that the Compton amplitude can be decomposed as T μν(p, q) = A gμν + B pμ pν + Cpμqν + C′ pνqμ +D qμqν, (4) where A, B, C, C′, D only depend on the two variables q2 and ν = p · q/m.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-dispersion-relations",
+      "number": "3",
+      "title": "Dispersion relations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dispersion",
+          "heading": true
+        },
+        {
+          "term": "compton amplitude",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "νth",
+          "heading": false
+        },
+        {
+          "term": "xth",
+          "heading": false
+        },
+        {
+          "term": "dispersion relation",
+          "heading": false
+        }
+      ],
+      "extract": "The dispersion relations express the Compton amplitude in terms of the structure functions. These represent the Fourier transform of the current commutator: V μν(p, q) = 1 4π \u0002 d4xeiq·x⟨p|[ jμ(x), jν(0)]|p⟩, V μν(p, q) = V1(ν, q2)K μν 1 + V2(ν, q2)K μν 2 . (10) The structure functions are experimentally accessible only for q2 ≤0 and it is customary to replace q2 by Q2 ≡−q2. In the standard notation, where the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-reggeon-dominance",
+      "number": "4",
+      "title": "Reggeon dominance",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reggeon dominance",
+          "heading": true
+        },
+        {
+          "term": "time-like region",
+          "heading": false
+        },
+        {
+          "term": "model-independent bounds",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "causality",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed pole",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        },
+        {
+          "term": "regge",
+          "heading": false
+        }
+      ],
+      "extract": "While T2 isfullydeterminedbytheformfactorsandthestruc- ture functions because it obeys an unsubtracted dispersion relation, the representation for ¯T involves a subtraction func- tion, which causality alone leaves undetermined. This illus- trates a venerable theorem which concerns the implications of causality for the structure functions [21–23]. The theorem states that the values of ¯V (ν, q2), V2(ν, q2) in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-sum-rule-for-the-subtraction-function",
+      "number": "5",
+      "title": "Sum rule for the subtraction function",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subtraction function",
+          "heading": true
+        },
+        {
+          "term": "sum rule",
+          "heading": true
+        },
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "dispersion relation",
+          "heading": false
+        },
+        {
+          "term": "xth",
+          "heading": false
+        },
+        {
+          "term": "disp",
+          "heading": false
+        },
+        {
+          "term": "m2x2ν",
+          "heading": false
+        },
+        {
+          "term": "cross sections",
+          "heading": false
+        }
+      ],
+      "extract": "As pointed out in [4], Reggeon dominance determines the subtraction function in terms of the cross sections of inelas- tic scattering. In [11], a sum rule for the subtraction func- tion S1(−Q2) ≡T1(0, −Q2) was derived that represents the inelastic part of this quantity in terms of integrals over the cross sections. We now derive an analogous sum rule that expresses the subtraction function ¯S(−Q2) as an integral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-wick-rotation",
+      "number": "6",
+      "title": "Wick rotation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d4q",
+          "heading": false
+        },
+        {
+          "term": "wick",
+          "heading": true
+        },
+        {
+          "term": "cottingham",
+          "heading": false
+        },
+        {
+          "term": "momentum",
+          "heading": false
+        },
+        {
+          "term": "rotation",
+          "heading": true
+        }
+      ],
+      "extract": "We now return to the mass formula (3). In the decomposi- tion introduced above, the trace of the Compton amplitude is given by T μ μ(p, q) = − \u0005 3q2 ¯T (ν, q2) + 2 \u0006 ν2 −1 4q2 \u0007 T2(ν, q2) \b . (24) The integration in (3) runs over all q2, space-like as well as time-like. For the integral to converge, it needs to be regular- ized, for instance by replacing the photon propagator 1/q2 with Λ2/(Λ2 −q2)/q2. In the rest",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-decomposition-of-the-mass-shift",
+      "number": "7",
+      "title": "Decomposition of the mass shift",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mass",
+          "heading": true
+        },
+        {
+          "term": "δmλ",
+          "heading": false
+        },
+        {
+          "term": "angular integral",
+          "heading": false
+        },
+        {
+          "term": "cutoff",
+          "heading": false
+        },
+        {
+          "term": "bare parameters",
+          "heading": false
+        },
+        {
+          "term": "mass difference",
+          "heading": false
+        },
+        {
+          "term": "xth",
+          "heading": false
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        }
+      ],
+      "extract": "In the framework of QCD+QED, the mass of a particle is determined by the bare parameters that occur in the Lagrangian and the cutoff used to regularize the theory. If the electromagnetic interaction is turned off, only the QCD coupling constant, the quark masses and the cutoff are rele- vant. To order e2, the e.m. interaction changes the mass not only by the above integral, but in addition by the contribution ΔmΛ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-8-operator-product-expansion",
+      "number": "8",
+      "title": "Operator product expansion",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilson coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "operator product",
+          "heading": true
+        },
+        {
+          "term": "tμν",
+          "heading": false
+        },
+        {
+          "term": "expansion",
+          "heading": true
+        },
+        {
+          "term": "lowest dimension",
+          "heading": false
+        },
+        {
+          "term": "momentum space",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "The behaviour of the amplitudes ¯T and T2 at large momenta is determined by the short-distance properties of the matrix ele- ment ⟨p|T jμ(x) jν(0)|p⟩, which can be analyzed by means of the operator product expansion (OPE) [37]. The asymp- totic freedom of QCD implies that perturbation theory can be used to work out the leading terms of this expansion [14–17]. For the time-ordered product of two currents, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-9-leading-wilson-coefficients",
+      "number": "9",
+      "title": "Leading Wilson coefficients",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contri bution",
+          "heading": false
+        },
+        {
+          "term": "wilson",
+          "heading": true
+        },
+        {
+          "term": "wilson coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "tμν",
+          "heading": false
+        },
+        {
+          "term": "kinematic tensor",
+          "heading": false
+        },
+        {
+          "term": "ˆpα",
+          "heading": false
+        },
+        {
+          "term": "current conservation",
+          "heading": false
+        },
+        {
+          "term": "gαβ",
+          "heading": false
+        }
+      ],
+      "extract": "Lorentz invariance and current conservation imply that the Wilson coefﬁcient of the scalar operator O f0 is proportional to the kinematic tensor K1 μν speciﬁed in Eq. (6): the contri- bution from this operator is of the form C f0 μν O f0 = K1 μν c f 1 O f0, (40) where the coefﬁcient c f 1 depends on q2. The contribution from OG0 is of the same structure. For operators with spin 2, the situation is not that simple.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-10-difference-between-proton-and-neutron",
+      "number": "10",
+      "title": "Difference between proton and neutron",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton",
+          "heading": true
+        },
+        {
+          "term": "neutron",
+          "heading": true
+        },
+        {
+          "term": "difference",
+          "heading": true
+        },
+        {
+          "term": "compton amplitudes",
+          "heading": false
+        }
+      ],
+      "extract": "For the mass difference between proton and neutron, only the difference between the Compton amplitudes of the two particles is needed. As far as the asymptotic behaviour is concerned, we thus only need the difference between the spin averaged matrix elements of proton and neutron. In the isospinlimit,theneutronmatrixelementsofthegluonicoper- ators OG0 and OG2 αβ coincide with those of the proton. In real- ity, since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-11-perturbation-theory",
+      "number": "11",
+      "title": "Perturbation theory",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin averaged",
+          "heading": false
+        },
+        {
+          "term": "perturbation",
+          "heading": true
+        },
+        {
+          "term": "renormalization group",
+          "heading": false
+        },
+        {
+          "term": "perturbation series",
+          "heading": false
+        },
+        {
+          "term": "leading order",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "λqcd",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient",
+          "heading": false
+        }
+      ],
+      "extract": "To leading order of the QCD perturbation series, the Wil- son coefﬁcients are the same as for free quarks. The explicit expressions are readily obtained by simply replacing the nucleon in the above relations with a free quark of charge Q f = 2 3 or −1 3. If the strong interaction is turned off and the e.m. interaction is accounted for only to leading order, the Compton scattering on a quark is elastic. The Sachs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-12-moments-of-the-structure-functions",
+      "number": "12",
+      "title": "Moments of the structure functions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moments",
+          "heading": true
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        },
+        {
+          "term": "dispersive representation",
+          "heading": false
+        },
+        {
+          "term": "structure functions",
+          "heading": true
+        }
+      ],
+      "extract": "Let us now compare the dispersive representation (15) with the asymptotic formulae (55) obtained from perturbation the- ory. Since the form factors rapidly tend to zero when Q2 becomes large, the elastic part of the amplitudes does not show up in the asymptotic behaviour. The dispersion inte- grals approach moments of the structure functions: Mk(Q2) = \u0002 xth 0 dx Fk(x, Q2), k = 2, L ¯M(Q2) = \u0002 xth 0 dx ¯F(x, Q2).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-13-prediction-for-the-constant-c",
+      "number": "13",
+      "title": "Prediction for the constant C",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proton neutron",
+          "heading": false
+        },
+        {
+          "term": "mass ratio",
+          "heading": false
+        },
+        {
+          "term": "mass difference",
+          "heading": false
+        },
+        {
+          "term": "proton matrix",
+          "heading": false
+        },
+        {
+          "term": "mqcd",
+          "heading": false
+        },
+        {
+          "term": "constant",
+          "heading": true
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        },
+        {
+          "term": "energy theorem",
+          "heading": false
+        }
+      ],
+      "extract": "Neglecting isospin breaking effects of second order, the neu- tron matrix elements of e2 ¯dd agree with the proton matrix elements of e2 ¯uu and vice versa. The constant C can thus be expressed in terms of proton matrix elements: C = 4mu −md 9 ⟨p|¯uu −¯dd|p⟩. (62) The matrix element of the operator ¯uu −¯dd also deter- mines the leading contribution to the QCD part of the proton– neutron mass difference (see e.g.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-14-renormalization",
+      "number": "14",
+      "title": "Renormalization",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "δmλ",
+          "heading": false
+        },
+        {
+          "term": "isospin breaking",
+          "heading": false
+        },
+        {
+          "term": "δmn",
+          "heading": false
+        },
+        {
+          "term": "δmu",
+          "heading": false
+        },
+        {
+          "term": "δmd",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        }
+      ],
+      "extract": "The asymptotic behaviour of the subtraction function in Eq. (58) implies that the corresponding contribution to mQED is logarithmically divergent. The leading divergence is deter- mined by the coefﬁcient C: \u0002 Λ2 0 dQ2Q2 ¯S(−Q2) → Λ→∞ C ln Λ2. (66) A logarithm also occurs in the electromagnetic renormaliza- tion of the bare QCD coupling constant and of the bare quark masses (see e.g. [45]): Δg = −e2g3 256π4 \u0004 f Q2 f",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-15-subleading-divergence",
+      "number": "15",
+      "title": "Subleading divergence",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 545,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilson coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "counter term",
+          "heading": false
+        },
+        {
+          "term": "δmλ",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "subleading",
+          "heading": true
+        },
+        {
+          "term": "proportion",
+          "heading": false
+        },
+        {
+          "term": "divergence",
+          "heading": true
+        },
+        {
+          "term": "regularization",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned above, the asymptotic formulae (55) only account for the leading logarithms – they are valid only up to corrections of order g2. This applies, in particular also to the Wilson coefﬁcient of the spin 0 operator that is responsible for the logarithmic divergence of the Cottingham formula. The correction of order g2 gives rise to a theoretical issue, which does not appear to be covered in the literature",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-16-input-used-for-the-structure-functions",
+      "number": "16",
+      "title": "Input used for the structure functions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "magnetic polarizability",
+          "heading": false
+        },
+        {
+          "term": "baldin sum",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "dglap equations",
+          "heading": false
+        },
+        {
+          "term": "sum rule",
+          "heading": false
+        },
+        {
+          "term": "structure functions",
+          "heading": true
+        }
+      ],
+      "extract": "Forthenumericalevaluationoftheinelasticcontributions,we need a representation for the difference between the structure functions of proton and neutron, and not only for the rela- tively well explored quantity F2, but also for the longitudinal component FL, which is known less well. At low values of Q2, we closely follow the analysis of [11] and distinguish 123 three different regions in the centre of mass energy W =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-18-subtraction-function-at-low-q-2",
+      "number": "18",
+      "title": "Subtraction function at low Q ^2",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subtraction function",
+          "heading": true
+        },
+        {
+          "term": "error band",
+          "heading": false
+        },
+        {
+          "term": "sum rule",
+          "heading": false
+        },
+        {
+          "term": "resonance",
+          "heading": false
+        },
+        {
+          "term": "uncertainty",
+          "heading": false
+        },
+        {
+          "term": "region",
+          "heading": false
+        }
+      ],
+      "extract": "Next, we discuss the solution of the sum rule (23) for Q2 < 1, where the parametrizations listed in (i)–(iii) sufﬁce. Figure 2 displays the contributions arising from the various regions of phase space. The interval of integration in (23) is split into three parts that correspond to the regions where we are using the rep- resentations MD, BC and AI, respectively. The values of x where W = 1.3 and W = 3 are denoted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-19-intermediate-values-of-q-2",
+      "number": "19",
+      "title": "Intermediate values of Q ^2",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abm table",
+          "heading": false
+        },
+        {
+          "term": "values",
+          "heading": true
+        },
+        {
+          "term": "reggeon",
+          "heading": false
+        },
+        {
+          "term": "parametrization",
+          "heading": false
+        },
+        {
+          "term": "intermediate",
+          "heading": true
+        },
+        {
+          "term": "numerical",
+          "heading": false
+        },
+        {
+          "term": "down",
+          "heading": false
+        },
+        {
+          "term": "differ",
+          "heading": false
+        }
+      ],
+      "extract": "The representations of MD and BC are valid also for Q2 > 1, but for AI, this is not the case. We instead rely on ABM. The formula for the corresponding contribution to the subtrac- tion function is the same as for AI, but the representation for ¯F consists of a numerical table rather than an algebraic parametrization like the one of AI. The leading term in Eq. (20) stems from the Reggeon a2 and has α ≃0.55. In order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-20-vector-meson-dominance",
+      "number": "20",
+      "title": "Vector meson dominance",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vmd parametrization",
+          "heading": false
+        },
+        {
+          "term": "dashed red",
+          "heading": false
+        },
+        {
+          "term": "abm",
+          "heading": false
+        },
+        {
+          "term": "red lines",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "experimental information",
+          "heading": false
+        },
+        {
+          "term": "dominance",
+          "heading": true
+        },
+        {
+          "term": "ﬁtting",
+          "heading": false
+        }
+      ],
+      "extract": "parametrization of our results in that region, while the dashed red lines represent the extrapolation of this band for Q2 < 1. The signiﬁcance of the remaining entries is indicated in the caption of Fig. 2 are replaced by those obtained on the basis of ABM. The black dots in Fig. 5 show the outcome – the error bars are obtained by adding those of the contributions from W < 1.3 (MD), 1.3 < W < 3 (BC) and W > 3 (ABM)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-21-asymptotics",
+      "number": "21",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        },
+        {
+          "term": "q4sinel",
+          "heading": false
+        },
+        {
+          "term": "red line",
+          "heading": false
+        },
+        {
+          "term": "abm analysis",
+          "heading": false
+        },
+        {
+          "term": "sinel",
+          "heading": false
+        },
+        {
+          "term": "vmd parametrization",
+          "heading": false
+        },
+        {
+          "term": "asymptotic formulae",
+          "heading": false
+        },
+        {
+          "term": "red dots",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 6 shows the moments M2 and ML obtained from the representation of the structure functions we are using – on a logarithmic scale, so that the entire range covered by the ABM data can be seen. Visibly, the moment ML is signiﬁ- cantly smaller than M2 – this is to be expected, because the structure function FL violates Bjorken scaling (at leading Fig. 6 Moments of the structure functions F2 and FL. The full lines",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-22-numerical-evaluation-of-the-mass-difference",
+      "number": "22",
+      "title": "Numerical evaluation of the mass difference",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-221-form-factors-m-el",
+      "number": "22.1",
+      "title": "Form factors, m_(el)",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dipole formulae",
+          "heading": false
+        },
+        {
+          "term": "elastic contribution",
+          "heading": false
+        },
+        {
+          "term": "form factors",
+          "heading": true
+        },
+        {
+          "term": "mass difference",
+          "heading": false
+        }
+      ],
+      "extract": "The elastic contribution to the e.m. part of the mass difference is determined by the form factors. In early work, the experi- mental information about these was adequately described by the dipole formulae (see e.g. appendix A of [11]). They yield 0.63 MeV for the proton and −0.13 MeV for the neutron, so that the elastic contribution to the self-energy difference amounts to mel = 0.76 MeV [4]. In the meantime, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-222-contribution-from-the-subtraction-function",
+      "number": "22.2",
+      "title": "Contribution from the subtraction function",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "region",
+          "heading": false
+        },
+        {
+          "term": "spike",
+          "heading": false
+        },
+        {
+          "term": "band",
+          "heading": false
+        },
+        {
+          "term": "ﬁctitious",
+          "heading": false
+        }
+      ],
+      "extract": "The contribution to m ¯S depends on the scale μ used in the e.m. renormalization of the quark masses. For deﬁniteness, we use μ = μ2 ≡2 GeV. If μ is taken differently, the mass difference changes by 2NC ln(μ/μ2). In the region 0 < Q2 < 1 our representation of the sub- traction function is based on the parametrizations MD, BC and AI (gray band in Fig 5). Inserting this representation in formula (78) we obtain m ¯S(0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-223-contributions-from-the-dispersion-integrals",
+      "number": "22.3",
+      "title": "Contributions from the dispersion integrals",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mqcd",
+          "heading": false
+        },
+        {
+          "term": "integrals",
+          "heading": true
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        },
+        {
+          "term": "contributions",
+          "heading": true
+        }
+      ],
+      "extract": "Finally, we evaluate the convergent integrals m ¯F, mF2 in Eqs. (29) and (30). In these integrals, the small x region does not require special care. As mentioned above, the angular inte- gration suppresses the contributions from the deep inelastic region. In fact, a very strong suppression also occurs at low values of Q2. Numerically, these integrals are tiny: m ¯F = −0.0004(4) MeV, mF2 = −0.0039(10) MeV. (105) 22.4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-23-comparison-with-lattice-calculations",
+      "number": "23",
+      "title": "Comparison with Lattice calculations",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elastic contribution",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "listed",
+          "heading": false
+        },
+        {
+          "term": "interaction",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": false
+        },
+        {
+          "term": "remainder",
+          "heading": false
+        }
+      ],
+      "extract": "Within QCD, the lattice approach allows a determination of the mass spectrum with steadily increasing precision, not only for the mesons but also for the more difﬁcult case of the baryons. The inclusion of the e.m. interaction gives rise to a serious problem, however, because this interaction is of long range – enclosing the system in a box distorts the results through ﬁnite size effects that need to carefully be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-24-comparison-with-other-evaluations-of-the-cott",
+      "number": "24",
+      "title": "Comparison with other evaluations of the Cottingham formula",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "cottingham",
+          "heading": true
+        },
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "wcm",
+          "heading": false
+        },
+        {
+          "term": "esty",
+          "heading": false
+        },
+        {
+          "term": "ν2t",
+          "heading": false
+        },
+        {
+          "term": "momentum dependence",
+          "heading": false
+        },
+        {
+          "term": "tomalak",
+          "heading": false
+        }
+      ],
+      "extract": "Cottingham formula We are aware of four recent estimates for the proton–neutron mass difference based on evaluations of the Cottingham for- mula:Walker-Loud,CarlsonandMiller(WCM)[6,9],Erben, Shanahan, Thomas and Young (ESTY) [7], Thomas, Wang and Young (TWY) [8] and Tomalak [10]. The ﬁrst three pro- pose models for the subtraction function S1(−Q2), using the experimental information concerning the difference between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-241-contributions-from-the-elastic-part",
+      "number": "24.1",
+      "title": "Contributions from the elastic part",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elastic",
+          "heading": true
+        },
+        {
+          "term": "unsubtracted dispersion",
+          "heading": false
+        },
+        {
+          "term": "born term",
+          "heading": false
+        },
+        {
+          "term": "δmel",
+          "heading": false
+        },
+        {
+          "term": "dispersion relation",
+          "heading": false
+        },
+        {
+          "term": "mel",
+          "heading": false
+        },
+        {
+          "term": "vmd",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        }
+      ],
+      "extract": "Since T2 obeys an unsubtracted dispersion relation, the cor- responding Born term is readily obtained by saturating the dispersion integral with the contributions from the nucleon poles. For T1, however, the Born term is not unique – various different expressions are used in the literature. They all obey a subtracted dispersion relation, but differ in the choice of the subtraction function. Dispersion theory offers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-242-contributions-from-the-subtraction-function",
+      "number": "24.2",
+      "title": "Contributions from the subtraction function",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subtraction function",
+          "heading": true
+        },
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "twy",
+          "heading": false
+        },
+        {
+          "term": "elastic contributions",
+          "heading": false
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        },
+        {
+          "term": "sinel",
+          "heading": false
+        },
+        {
+          "term": "polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "mass difference",
+          "heading": false
+        }
+      ],
+      "extract": "As demonstrated in the preceding sections, the inelastic con- tributions to mQED are totally dominated by the one from the subtraction function ¯S. The differences in the values quoted for the elastic contributions are small compared to those from inelastic processes. Hence we can compare the various deter- minations of the mass difference that rely on dispersion the- ory by comparing the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-25-summary-and-conclusions",
+      "number": "25",
+      "title": "Summary and conclusions",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 1490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "inelastic contributions",
+          "heading": false
+        },
+        {
+          "term": "dispersion integrals",
+          "heading": false
+        },
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "dominance implies",
+          "heading": false
+        },
+        {
+          "term": "compton amplitude",
+          "heading": false
+        },
+        {
+          "term": "mqed",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        }
+      ],
+      "extract": "1. Dispersiontheorydeterminestheamplitudeintermsofits physical singularities (poles, cuts), provided the asymp- totic behaviour is known. The use of amplitudes that contain kinematic zeros is best avoided, because these make it very difﬁcult to sort out the asymptotic behaviour. We work with the invariant amplitudes introduced by Cottingham which do not contain such deﬁciencies and which we denote by T1, T2. 2. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commons licence",
+          "heading": false
+        },
+        {
+          "term": "creative commons",
+          "heading": false
+        },
+        {
+          "term": "article creative",
+          "heading": false
+        },
+        {
+          "term": "ﬁles",
+          "heading": false
+        },
+        {
+          "term": "credit",
+          "heading": false
+        },
+        {
+          "term": "material",
+          "heading": false
+        },
+        {
+          "term": "copy",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        }
+      ],
+      "extract": "withnumericaltablesforthestructurefunctionsbasedontheABMsolu- tions of the DGLAP equations, Thomas Becher for information about the anomalous dimensions in QCD + QED, Vadim Lensky and Vladimir Pascalutsa for a Mathematica notebook concerning the representation of the Compton amplitude in χPT and Ryan Bignell, Irinel Caprini, Stefano Carrazza, Gilberto Colangelo, Cesareo Dominguez, Franziska Hagelstein, Bastian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-appendix-a-form-of-the-wilson-coefficient-for-sp",
+      "number": null,
+      "title": "Appendix A: Form of the Wilson coefficient for spin 2",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oαβ",
+          "heading": false
+        },
+        {
+          "term": "con servation",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "current con",
+          "heading": false
+        }
+      ],
+      "extract": "LorentzinvarianceimpliesthatatensorCμναβ(q)thatissym- metric under μ ↔ν and α ↔β and only depends on the four-vector qμ is of the form: Cμναβ(q) = a gμνgαβ + b {gμαgνβ + gναgμβ} +c gμνqαqβ + d gαβqμqν +e {gμαqνqβ + gμβqνqα +gναqμqβ + gνβqμqα} + f qμqνqαqβ, (A.1) where a, b, c, d, e, f can only depend on q2. Current con- servation, qμCμναβ(q) = 0, ﬁxes a, b, c in terms of d, e, f : a + q2d = 0, b + q2e = 0, c + 2e +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-appendix-b-operator-product-expansion-for-free-q",
+      "number": null,
+      "title": "Appendix B: Operator product expansion for free quarks",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free quarks",
+          "heading": true
+        },
+        {
+          "term": "qαqβ gαβq",
+          "heading": false
+        },
+        {
+          "term": "quark propagator",
+          "heading": false
+        },
+        {
+          "term": "spin operator",
+          "heading": false
+        },
+        {
+          "term": "chp",
+          "heading": false
+        },
+        {
+          "term": "gμν",
+          "heading": false
+        },
+        {
+          "term": "quark ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "gμαo",
+          "heading": false
+        }
+      ],
+      "extract": "For free quarks, the time-ordered product of two currents can be decomposed as T jμ(x) jν(y) = \u0004 f Q2 f tr{γμS f (x −y)γνS f (y −x)}1 +1 i \u0004 f Q2 f N{ ¯f (x)γμS f (x −y)γν f (y) + ¯f (y)γνS f (y −x)γμ f (x)} +N jμ(x) jν(y), (B.1) where S f (z) is the quark propagator and N stands for nor- mal ordering. In this expression, the singularities exclusively reside in the propagator – the matrix elements of the normal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-appendix-c-derivation-of-the-sum-rule",
+      "number": null,
+      "title": "Appendix C: Derivation of the sum rule",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disp",
+          "heading": false
+        },
+        {
+          "term": "xth",
+          "heading": false
+        },
+        {
+          "term": "rule",
+          "heading": true
+        },
+        {
+          "term": "remainder",
+          "heading": false
+        },
+        {
+          "term": "done",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": false
+        }
+      ],
+      "extract": "To calculate the limiting value of the dispersion integral (21), we ﬁrst use partial fractions and split the integral into two parts: ¯T disp = −¯Sa + ¯T disp′, ¯Sa = −m2 Q2 \u0002 xth 0 dx ¯F(x, Q2) Q2 + m2x2 , ¯T disp′ = 4m2ν2 Q2 \u0002 xth 0 dx ¯F(x, Q2) Q4 −4m2x2ν2 −iϵ . (C.1) The reason for denoting the ﬁrst term by −¯Sa is that it is independent of ν and hence amounts to a contribution to the subtraction function. To",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 1259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "lipatov",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "tiburzi",
+          "heading": false
+        },
+        {
+          "term": "gribov",
+          "heading": false
+        },
+        {
+          "term": "walker-loud",
+          "heading": false
+        }
+      ],
+      "extract": "1. W. Heisenberg, Z. Phys. 77, 1 (1932) 2. W.N. Cottingham, Ann. Phys. 25, 424 (1963) 3. M. Elitzur, H. Harari, Ann. Phys. 56, 81 (1970) 4. J. Gasser, H. Leutwyler, Nucl. Phys. B 94, 269 (1975) 5. J.D. Bjorken, Phys. Rev. 179, 1547 (1969) 6. A. Walker-Loud, C.E. Carlson, G.A. Miller, Phys. Rev. Lett. 108, 232301 (2012). arXiv:1203.0254 7. F.B. Erben, P.E. Shanahan, A.W. Thomas, R.D. Young, Phys. Rev. C 90, 065205",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "proton neutron",
+      "heading": true
+    },
+    {
+      "term": "mass difference",
+      "heading": true
+    },
+    {
+      "term": "subtraction function",
+      "heading": true
+    },
+    {
+      "term": "asymptotic behaviour",
+      "heading": false
+    },
+    {
+      "term": "reggeon dominance",
+      "heading": true
+    },
+    {
+      "term": "spin contributions",
+      "heading": false
+    },
+    {
+      "term": "elastic contributions",
+      "heading": true
+    },
+    {
+      "term": "compton amplitude",
+      "heading": true
+    },
+    {
+      "term": "subtraction func",
+      "heading": false
+    },
+    {
+      "term": "leading spin",
+      "heading": false
+    },
+    {
+      "term": "subtraction point",
+      "heading": false
+    },
+    {
+      "term": "inelastic contributions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-2",
+      "file": "images/img-p015-2.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-1",
+      "file": "images/img-p020-1.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 38,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s10052-020-08615-2"
+  }
+}

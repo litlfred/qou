@@ -1,0 +1,734 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "symmetry-11-01298",
+  "blocks": [
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p001-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "General relativity (GR) deepens our view on space-time. In parallel, the appearance of quantum\nﬁeld theory (QFT) gives us a different view of particles, ﬁelds and the measurement process.\nOne approach for the uniﬁcation of QFT and GR, to a quantum gravity, starts with a proposal\nto quantize GR and its underlying structure, space-time. Here, there is a unique opinion in the\ncommunity about the relation between geometry and quantum theory: the geometry as used in GR is\nclassical and should emerge from a quantum gravity in the usual limit that Planck’s constant tends\nto zero. Most theories went a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "symmetry\nS\nS\nArticle\nBraids, 3-Manifolds, Elementary Particles:\nNumber Theory and Symmetry in Particle Physics\nTorsten Asselmeyer-Maluga\nGerman Aeorspace Center, Rosa-Luxemburg-Str. 2, 10178 Berlin, Germany; torsten.asselmeyer-maluga@dlr.de;\nTel.: +49-30-67055-725\nReceived: 25 July 2019; Accepted: 2 October 2019; Published: 15 October 2019\nAbstract: In this paper, we will describe a topological model for elementary particles based on\n3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions\nas hyperbolic knot complements (a complement C(K) = S3 \\ (K × D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-preliminaries-branched-coverings-of-3--and-4-man.md",
+      "narrative": null,
+      "content": "According to Alexander (see [24] for instance), every manifold Mn can be represented as p-fold\nbranched covering π : Mn →Sn along an n −2 dimensional subcomplex Nn−2 ⊂Sn, the branching\nset. In detail, the map π is a covering except for the branching set, i.e., for every point b ∈Sn \\ Nn−2\nthe map π−1(b) consists of p points and the neighborhood U(b) is homeomorphic to one component\nπ−1U(b). Then, Mn \\ π−1(Nn−2) →Sn \\ Nn−2 is a p−fold covering. Usually, Nn−2 has the structure\nof a simplicial subcomplex. The p−fold covering is completely determined by the representation\nπ1(Sn \\ Nn−2) →Sp in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "As Warmup: Branched Coverings of 2-Manifolds",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-as-warmup-branched-coverings-of-2-manifolds.md",
+      "narrative": null,
+      "content": "Let us start with the simplest case, the surface. By results of Riemann and Hurwitz, every surface\ncan be represented by a 2-fold covering of S2. As example, let us take the torus T2 with the 2-fold\ncovering T2 →S2 branched along four points. The idea of the construction is simple: choose a\nsymmetry axis so that the genus g surface can be generated by a rotation (see Figure 1).\nFigure 1. 2-fold covering of torus, α is the equator and the four-point branching set.\nThis axis meets the surface in 4g points which are the branching points of the covering.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Branched Coverings of 3-Manifolds",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-branched-coverings-of-3-manifolds.md",
+      "narrative": null,
+      "content": "For a 3-manifold, one has a one-dimensional, branching set and a result of Alexander states that\nthis branching set is a link with a ﬁnite number of components. Later, Hirsch, Hilden and Montesinos\n[25–27] obtained independently the result that every closed, compact 3-manifold can be represented\nas a 3-fold branched covering of the 3-sphere branched along a knot. As an example, consider the\nPoincare sphere Σ(2, 3, 5) that can be represented by a 3-fold covering Σ(2, 3, 5) →S3 branched along\nthe (2, 5) or (5, 2) torus knot. Now, let us consider a closed, compact 3-manifold N3 with a 3-fold\nbran",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p004-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Branched Covering of 4-Manifolds",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-branched-covering-of-4-manifolds.md",
+      "narrative": null,
+      "content": "In a similar manner, one would expect that every 4-manifold M4 can be represented as 4-fold\nbranched covering of S4 branched along a surface. Piergallini [28] was able to show something similar,\nbut the surface is only immersed and admits a ﬁnite number of singularities (cusps and nodes). If one\nadds an additional sheet, getting a 5-fold branched covering, then one can omit these singularities\n(thus getting a locally ﬂat embedded surface) [29]. For a better understanding, we will discuss the\nway to this result shortly. In [28], Piergallini considered the possible transformations or changes of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p005-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p005-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Branched Coverings of Knot Complements",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-branched-coverings-of-knot-complements.md",
+      "narrative": null,
+      "content": "Now, we will describe the case of a 3-manifold (the knot complement) with boundary a torus T2.\nFirst, we will change the 2-fold covering of the torus to a 3-fold covering by adding a trivial sheet. For\nthat purpose, we consider the 2-fold branched covering T2 →S2 and add a 2-sphere T2#S2 →S2#S2\nwhich changes nothing (S#S2 is diffeomorphic to S for every surface S). However, at the same time,\nwe will obtain a 3-fold covering (see Figure 4).\nFigure 4. 3-fold covering torus.\nFor a 3-manifold Σ with boundary T2, one has to consider a branched covering Σ →S3 \\\nD3(3-sphere with one puncture or p pun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-reconstructing-a-spacetime-the-k3-surface-and-pa.md",
+      "narrative": null,
+      "content": "After so many years of experimental research, the standard model of particle physics and of\ncosmology as well general relativity are conﬁrmed with high precision. There is no real contradicting\nresult which shows the necessity to introduce new physics. An exception may be cosmology with\nSymmetry 2019, 11, 1298\n6 of 26\nthe unknown components of dark matter and dark energy. However, this situation is by no means\nsatisfying. Both standard models have a bunch of free parameters (19 parameters in particle physics,\nfor instance). If there is no sign for new physics, how did we get these parameters?",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-from-k3-surfaces-to-octonions-3-braids-and-parti.md",
+      "narrative": null,
+      "content": "The results of the previous section illustrated the power of the approach and its relation to particle\nphysics. In this section, we will discuss the topological reasons and the relation to the models of Furey,\nGresnigt and Bilson–Thompson. In these models, 3-braids, octonions and quaternions play a key role.\nTherefore, we have to understand how these structures will naturally appear in the K3 surface.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "K3 Surfaces and Octonions",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-k3-surfaces-and-octonions.md",
+      "narrative": null,
+      "content": "The starting point for the description of any K3 surface is the topological splitting (2)\n2|E8|#3(S2 × S2).\nThe K3 surface is a closed, compact, simply connected 4-manifold. According to Freedman [49], the\ntopology is uniquely given by the intersection form, a quadratic form on the second homology\ncharacterizing the intersections of the generators as given by surfaces. The K3 surface has the\nintersection form\nQK3 = E8 ⊕E8 ⊕(⊕3\n \n0\n1\n1\n0\n!\n) := 2E8 ⊕3H,\n(7)\nSymmetry 2019, 11, 1298\n10 of 26\nwith the the matrix E8:\nE8 =\n\n\n2\n1\n0\n0\n0\n0\n0\n0\n1\n2\n1\n0\n0\n0\n0\n0\n0\n1\n2\n1\n0\n0\n0\n0\n0\n0\n1\n2\n1\n0\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-from-immersed-surfaces-in-k3-surfaces-to-fermion.md",
+      "narrative": null,
+      "content": "In the previous subsection, we described a relation between the octonions and a system of\neight intersecting surfaces in the K3 surface. In this system of surfaces, every surface has two\nself-intersections (the diagonal of the matrix (8)). Therefore, every surface is not embedded but\nimmersed in the K3 surface. For immersed surfaces, there is a whole theory, called Weierstrass\nrepresentation, with a close connection between immersed surfaces and spinors. The following\ndiscussion is borrowed from [32], and we will present it here again for completeness. First, we start\nwith the immersion I : Σ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fermions as Knot Complements",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-fermions-as-knot-complements.md",
+      "narrative": null,
+      "content": "In this section, we will discuss the topological reasons for the identiﬁcation of knot complements\nwith fermions. In our paper [31], we obtained a relation between an embedded 3-manifold and a\nspinor in the spacetime. The main idea can be simply described by the following line of argumentation.\nLet ι : Σ ,→M be an embedding of the 3-manifold Σ into the 4-manifold M with the normal vector⃗N\nso that a small neighborhood Uϵ of ι(Σ) ⊂M looks like Uϵ = ι(Σ) × [0, ϵ]. Every 3-manifold admits\na spin structure with a SPIN BUNDLE, i.e., a principal Spin(3) = SU(2) bundle (spin bundle) as a\nlift of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torus Bundle as Gauge Fields",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-torus-bundle-as-gauge-fields.md",
+      "narrative": null,
+      "content": "Now, we have the following situation: two knot complements C(K1) and C(K2) can be connected\nby a so-called tube T(K1, K2) along the boundary, a torus. This tube T(K1, K2) can be described by\nthe complement of a link with two components deﬁned by the knots K1, K2. In the simplest case, it is\nthe 3-manifold T2 × [0, 1]. The knot complements are fermions. Therefore, both knot complements\nhave to carry a hyperbolic structure, i.a. a space of constant negative curvature. The frame bundle of\na 3-manifold is always trivial, so that we need a ﬂat connection of this bundle to describe this space.\nLet I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fermions, Bosons and 3-Braids",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-fermions-bosons-and-3-braids.md",
+      "narrative": null,
+      "content": "In the previous subsection, we identiﬁed the hyperbolic knot complement with a fermion and the\ntorus bundle between them as gauge bosons. The ﬁrst natural question is then: which knot is related\nto a fermion like the electron? However, this question is meaningless in our approach. The knot/link\ncomplements are induced from the singularities of the branching set of the 4-fold branched covering\nof the K3 surface. However, these singularities are another expression of the change of the branching\nset of the 3-manifolds. With other words: the branching set, a knot or link, of a 3-manifold is not\nun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric Charge and Quasimodularity",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-electric-charge-and-quasimodularity.md",
+      "narrative": null,
+      "content": "We argued above that all knot complements admitting a hyperbolic geometry (geometry of\nnegative, constant scalar curvature) have the properties of fermions, i.e., spin 1\n2, are pressureless p = 0\nin cosmology and fulﬁll the Dirac equation (see also the previous section for the action functional).\nHowever, a particle can carry charges (electrical or others like color, etc.).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric Charge as Dehn Twist of the Boundary",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-electric-charge-as-dehn-twist-of-the-boundary.md",
+      "narrative": null,
+      "content": "We described above the knot complement as a branched covering branched along a braid. What\nis the meaning of a charge in this description? Let us start with the case of an electric charge. Given a\ncomplex line bundle over C(K) × (0, 1) with connection A and curvature F = dA, we then have the\nMaxwell equations:\ndF = 0\nd ∗F = ∗j,\nwith the Hodge operator ∗and the 4-current 1-form j. The electric charge Qe is given by\nQe =\nˆ\n∂C(K)=T2\n∗F\nin the temporal gauge (normal to the boundary of C(K)) using d ∗F = ∗j and Stokes theorem. The\nmagnetic charge Qm is deﬁned in an analogous way\nQm =\nˆ\n∂C(K)=T2\nF =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric Charge as a Frame of the Knot Complement",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-electric-charge-as-a-frame-of-the-knot-complemen.md",
+      "narrative": null,
+      "content": "However, what does change in the knot complement and in the branched covering? As a toy\nexample, we consider the complement of the unknot D2 × S1. Then, the Dehn twist along the meridian\nof the boundary torus will be trivialized. By a result of McCullough (see for instance [61]), every\nDehn twist along the longitude induces a diffeomorphism of the solid torus. Then, the complement\nof the unknot can carry an electric charge (by a Dehn twist) but no magnetic charge. This result can\nbe generalized to all knot complements (which are homologically equivalent to the solid torus). The\neffect on the b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Charge Spectrum",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-the-charge-spectrum.md",
+      "narrative": null,
+      "content": "Now, we will discuss the expression (22) for the electric charge. By the argumentation above, the\nrelative Pontrjagin class gives an integer expressing the framing of the knot complement for a ﬁxed\ntime. The appearance of the signature σ(M) added a 4-dimensional element which describes more\ncomplex cases with many components. In [65], this case was also considered with a similar result: this\nformula is valid for links where σ(M) is now the signature of the linking matrix and p1 is the sum of\nframings for each component. The signature can be minimally changed by ±1 leading to a change of\nthe ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vanishing of the Magnetic Charge and Quasimodularity",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-017-vanishing-of-the-magnetic-charge-and-quasimodula.md",
+      "narrative": null,
+      "content": "One may wonder whether there is no magnetic charge anymore. Our argument is only partially\nsatisfying because there are many incompressible surfaces inside of a hyperbolic knot complement\nserving as representatives for magnetic charges. Therefore, we need a stronger argument why the\nsymmetry between electric and magnetic charge is broken. As explained above, the Dehn twists of the\nboundary torus are the generators of the mapping class (or isotopy) group. According to Atiyah [63],\nthe framing can be used to deﬁne a central extension ˆΓ\n1 →Z →ˆΓ →Γ →1\nof the mapping class group Γ so that there i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Drinfeld–Turaev Quantization and Quantum States",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-018-drinfeldturaev-quantization-and-quantum-states.md",
+      "narrative": null,
+      "content": "In [66,67], we discussed the appearance of quantum states from knots known as Turaev–Drinfeld\nquantization. The idea for the following construction can be simply expressed. We start with two\n3-manifolds and consider a cobordism between them. This cobordism is a 4-manifold with a branched\ncovering branched over a surface with self-intersections. Here, it is enough to restrict to a special class\nof these surfaces, so-called ribbon surfaces (see [68]). The 3-manifolds are chosen to be hyperbolic knot\ncomplements, denoted by Y1, Y2. A hyperbolic structure is deﬁned by a homomorphism π1(Yi) →\nSL(2,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fermions and Number Theory",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-fermions-and-number-theory.md",
+      "narrative": null,
+      "content": "In this section, we will present some ideas to uncover some explicit relations between fermions,\ngiven as hyperbolic knot complements, and number theory, notable quaternionic trace ﬁelds and\nalgebraic K theory/Bloch group. However, we ﬁrst need some deﬁnitions.\nA quaternion algebra over a ﬁeld F is a four-dimensional central simple F-algebra. A quaternion\nalgebra has a basis 1, i, j, ij where i2, j2 ∈F× and ij = −ji. A subgroup of PSL(2, C), the isometry\ngroup of the three-dimensional hyperbolic space isomorphic to the Lorentz group SO(3, 1), is said\nSymmetry 2019, 11, 1298\n22 of 26\nto be deri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The K3 Surface and the Number of Generations",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-the-k3-surface-and-the-number-of-generations.md",
+      "narrative": null,
+      "content": "In Section 4.1, we discussed a relation between the K3 surface and octonions by using the\nintersection form. Here, we use only the E8 matrix, i.e., the Cartan matrix of the Lie algebra E8. In this\nsection, we will speculate about the other part\nH =\n \n0\n−1\n−1\n0\n!\nof the intersection form (now with a different orientation). H is the intersection form of the 4-manifold\nS2 × S2. To express it explicitly, there are homology classes α, β ∈H2(S2 × S2) with α2 = β2 = 0 and\nα · β = −1. Therefore, every S2 of this manifold has no self-intersections. For the topology of the\nK3 surface with intersection f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and Outlook",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-021-conclusions-and-outlook.md",
+      "narrative": null,
+      "content": "In this paper, we presented a top-down approach to fermions and bosons, in particular the\nstandard model. What was done in the paper?\n•\nWe constructed a spacetime, the K3 surface and derive some numbers like the cosmological\nconstant or some energy scales and neutrino masses agreeing with experimental data.\n•\nWe derived from a representation of K3 surfaces by branched covering a simple picture: fermions\nare hyperbolic knot complements, whereas bosons are link complements (torus bundles).\n•\nWe obtained the gauge group from this picture (at least in principle).\n•\nWe derived the correct charge sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "1.\nCollaborations, F.G. Testing Einstein’s Special Relativity with Fermi’s Short Hard Gamma-Ray Burst\nGRB090510. Nature 2009, 462, 331–334.\n2.\nFurey, C. Towards a Uniﬁed Theory of Ideals. Phys. Rev. D 2012, 86, 025024. [CrossRef]\n3.\nFurey, C. Generations: Three Prints, in Colour. JHEP 2014, 10, 046. [CrossRef]\n4.\nFurey, C. Charge Quantization from a Number Operator. Phys. Lett. B 2015, 742, 195–199. [CrossRef]\n5.\nFurey, C. Standard Model Physics from an Algebra? Ph.D. Thesis, University of Waterloo, Waterloo, ON,\nCanada, 2015. Available online: https://arxiv.org/abs/1611.09182 (accessed on 1 O",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-11-01298/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

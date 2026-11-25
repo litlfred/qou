@@ -1,0 +1,585 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-0702263v1",
+  "title": "Chiral Low-Energy Constants ∗",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Strong interactions",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-strong-interactions"
+    },
+    {
+      "level": 1,
+      "title": "Nonleptonic weak interactions",
+      "number": null,
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-nonleptonic-weak-interactions"
+    },
+    {
+      "level": 1,
+      "title": "Dynamical photons",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-dynamical-photons"
+    },
+    {
+      "level": 1,
+      "title": "Dynamical photons and leptons",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-dynamical-photons-and-leptons"
+    },
+    {
+      "level": 1,
+      "title": "Outlook",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-outlook"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coupling constants",
+          "heading": false
+        },
+        {
+          "term": "euridice",
+          "heading": false
+        },
+        {
+          "term": "vienna",
+          "heading": false
+        },
+        {
+          "term": "mesonic",
+          "heading": false
+        },
+        {
+          "term": "boltzmanngasse",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/0702263v1 26 Feb 2007 UWThPh-2007-2 Chiral Low-Energy Constants∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna Boltzmanngasse 5, A-1090 Vienna, Austria Abstract The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European Networks (Eurodaphne I and II, Euridice). Reliable estimates of those constants",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-0702263v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral lecs",
+          "heading": false
+        },
+        {
+          "term": "effective chiral",
+          "heading": false
+        },
+        {
+          "term": "effective lagrangians",
+          "heading": false
+        },
+        {
+          "term": "cal delta",
+          "heading": false
+        },
+        {
+          "term": "eurodaphne",
+          "heading": false
+        },
+        {
+          "term": "meson sector",
+          "heading": false
+        },
+        {
+          "term": "glsu",
+          "heading": false
+        },
+        {
+          "term": "emweak",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral low-energy constants (LECs) are the coupling constants of effective chiral Lagrangians. They are independent of the light quark masses by construction and they describe the influence of all ``heavy'' degrees of freedom that are not contained explicitly in the effective Lagrangians. The construction of effective Lagrangians is based on symmetry considerations only so that a lot of information is lost in going",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-strong-interactions",
+      "number": null,
+      "title": "Strong interactions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite glsu",
+          "heading": false
+        },
+        {
+          "term": "resonance exchange",
+          "heading": false
+        },
+        {
+          "term": "chiral resonance",
+          "heading": false
+        },
+        {
+          "term": "resonance lagrangian",
+          "heading": false
+        },
+        {
+          "term": "mbox hspace",
+          "heading": false
+        },
+        {
+          "term": "resonance contributions",
+          "heading": false
+        },
+        {
+          "term": "cite ecker",
+          "heading": false
+        },
+        {
+          "term": "cite buettiker",
+          "heading": false
+        }
+      ],
+      "extract": "At lowest order in the chiral expansion, there are only two LECs $B$ and $F$. $B$ depends on the QCD renormalization scale and always appears multiplied by quark masses in CHPT amplitudes. The products $B m_q$ and the constant $F$ can be expressed in terms of meson masses and of the pion decay constant $F_\\pi$. Those relations involve LECs of $O(p^4)$ or higher to be discussed subsequently. The strong chiral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-nonleptonic-weak-interactions",
+      "number": null,
+      "title": "Nonleptonic weak interactions",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resonance saturation",
+          "heading": false
+        },
+        {
+          "term": "isospin breaking",
+          "heading": false
+        },
+        {
+          "term": "nonleptonic",
+          "heading": true
+        },
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "weak",
+          "heading": true
+        },
+        {
+          "term": "lecs",
+          "heading": false
+        },
+        {
+          "term": "plet",
+          "heading": false
+        },
+        {
+          "term": "cirigliano",
+          "heading": false
+        }
+      ],
+      "extract": "The chiral Lagrangian of lowest order, $O(G_F p^2)$, contains two LECs $g_8,g_{27}$ to describe nonleptonic weak decays of kaons \\cite{cronin67}. Especially the value of the octet coupling $g_8$ is very sensitive to chiral corrections \\cite{Kambor:1991ah}. Isospin breaking corrections are potentially important for the 27-plet coupling constant $g_{27}$. The present status is presented in Table \\ref{tab:g827}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-dynamical-photons",
+      "number": null,
+      "title": "Dynamical photons",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ananthanarayan",
+          "heading": false
+        },
+        {
+          "term": "nonleptonic weak",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic corrections",
+          "heading": false
+        },
+        {
+          "term": "cite ecker",
+          "heading": false
+        },
+        {
+          "term": "radiative corrections",
+          "heading": false
+        },
+        {
+          "term": "strong processes",
+          "heading": false
+        },
+        {
+          "term": "lecs",
+          "heading": false
+        }
+      ],
+      "extract": "Radiative corrections at low energies involve the effective Lagrangians in Table \\ref{tab:Leff} with superscripts {\\it em}, {\\it emweak} or {\\it leptons} (semileptonic decays). In the presence of photons as dynamical degrees of freedom the chiral counting is different from the purely strong or nonleptonic weak cases. The lowest-order Lagrangian for electromagnetic corrections to strong processes is of $O(e^2 p^0)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-dynamical-photons-and-leptons",
+      "number": null,
+      "title": "Dynamical photons and leptons",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite descotes-genon",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": true
+        },
+        {
+          "term": "theoretical prediction",
+          "heading": false
+        },
+        {
+          "term": "moussallam",
+          "heading": false
+        },
+        {
+          "term": "dynamical",
+          "heading": true
+        }
+      ],
+      "extract": "Radiative corrections for semileptonic weak decays require the incorporation of leptons as dynamical degrees of freedom. The leading-order Lagrangian ${\\cal L}_{e^2p}^{\\rm leptons}(5)$ in Table \\ref{tab:Leff} contains five LECs $X_i$ \\cite{Knecht:1999ag}. With a two-step matching procedure (Standard Model ~$\\leftrightarrow$~ Fermi theory ~$\\leftrightarrow$~ CHPT), Descotes-Genon and Moussallam have recently",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-outlook",
+      "number": null,
+      "title": "Outlook",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lecs",
+          "heading": false
+        },
+        {
+          "term": "phenomenology",
+          "heading": false
+        },
+        {
+          "term": "giulia",
+          "heading": false
+        },
+        {
+          "term": "eurodaphne",
+          "heading": false
+        },
+        {
+          "term": "next-to-next-to-leading-order",
+          "heading": false
+        }
+      ],
+      "extract": "Since 1993, when Eurodaphne got started, substantial progress has been made in the understanding of low-energy constants, both from phenomenology and from theory (lattice QCD and large-$N_c$ approaches). In the strong sector, most of the machinery is now ready for a precision determination of the LECs of $O(p^4)$. This endeavour involves also LECs of $O(p^6)$ where we are still in the exploratory stage. We need",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "table 2"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chiral lecs",
+      "heading": true
+    },
+    {
+      "term": "lecs cite",
+      "heading": false
+    },
+    {
+      "term": "electromagnetic lecs",
+      "heading": false
+    },
+    {
+      "term": "some lecs",
+      "heading": false
+    },
+    {
+      "term": "chiral resonance",
+      "heading": false
+    },
+    {
+      "term": "chiral lagrangians",
+      "heading": false
+    },
+    {
+      "term": "cite ecker",
+      "heading": false
+    },
+    {
+      "term": "cite glsu",
+      "heading": false
+    },
+    {
+      "term": "cite cirigliano",
+      "heading": false
+    },
+    {
+      "term": "resonance exchange",
+      "heading": false
+    },
+    {
+      "term": "cite bijnens",
+      "heading": false
+    },
+    {
+      "term": "chiral low-energy",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Eﬀective chiral Lagrangian in the meson sector. The numbers in brackets refer to the number of LECs for chiral SU(3)",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Octet and 27-plet couplings g8, g27 at O(GFp2) and at next-to-",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-0702263v1"
+  }
+}

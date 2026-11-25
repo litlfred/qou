@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-torus-hopf-stability",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:torus-hopf-stability",
+  "kind": "proposition",
+  "title": "Torus knot composites on Bring's surface are stable hadrons",
+  "tags": [
+    "stability",
+    "torus-knot",
+    "hadron",
+    "euler-characteristic",
+    "crossing-energy"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.torus_hopf_stability",
+  "text": "torus-hopf-stability.md",
+  "leanSource": "torus-hopf-stability.lean",
+  "provenance": "authored"
+}

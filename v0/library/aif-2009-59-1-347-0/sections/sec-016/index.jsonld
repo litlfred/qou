@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Definition of different sums of the q-Euler series",
+  "pageStart": 29,
+  "pageEnd": 31,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-016",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-016-01",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-016-02",
+    "library/aif-2009-59-1-347-0/blocks/thm-sec-016-03",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-016-04",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-016-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested"
+}

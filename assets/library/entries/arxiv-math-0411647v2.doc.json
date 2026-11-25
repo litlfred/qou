@@ -1,0 +1,2235 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0411647v2",
+  "title": "arxiv-math-0411647v2",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Irreducible representations of large symmetric groups",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-irreducible-representations-of-large-symmetri"
+    },
+    {
+      "level": 2,
+      "title": "The main technical problem: convolution in Sq",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-main-technical-problem-convolution-in-sq"
+    },
+    {
+      "level": 2,
+      "title": "Free probability and free cumulants",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-free-probability-and-free-cumulants"
+    },
+    {
+      "level": 2,
+      "title": "Applications: Fluctuations of random Young diagrams",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-applications-fluctuations-of-random-young-dia"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the article",
+      "number": "1.5",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-overview-of-the-article"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric group",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-symmetric-group"
+    },
+    {
+      "level": 2,
+      "title": "Partitions",
+      "number": "2.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-partitions"
+    },
+    {
+      "level": 1,
+      "title": "The first main result: Calculus of partitions",
+      "number": "3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-the-first-main-result-calculus-of-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Partition--indexed conjugacy class indicator",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-partition--indexed-conjugacy-class-indicator"
+    },
+    {
+      "level": 2,
+      "title": "Multiplication of partitions",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-multiplication-of-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Map is a homomorphism",
+      "number": "3.3",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Free cumulants of partitions",
+      "number": "4",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-free-cumulants-of-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Free cumulants",
+      "number": "4.1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-42-free-cumulants-of-partitions-and-of-the-jucys"
+    },
+    {
+      "level": 2,
+      "title": "First--order asymptotics of free cumulants",
+      "number": "4.3",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-43-first--order-asymptotics-of-free-cumulants"
+    },
+    {
+      "level": 2,
+      "title": "Higher order expansion for free cumulants",
+      "number": "4.4",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-44-higher-order-expansion-for-free-cumulants"
+    },
+    {
+      "level": 2,
+      "title": "The second main result: the second--order expansion of free cumulants and characters",
+      "number": "4.5",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-45-the-second-main-result-the-second--order-expa"
+    },
+    {
+      "level": 2,
+      "title": "Higher order expansion of characters",
+      "number": "4.6",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-46-higher-order-expansion-of-characters"
+    },
+    {
+      "level": 1,
+      "title": "Proofs of technical results",
+      "number": "5",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-proofs-of-technical-results"
+    },
+    {
+      "level": 2,
+      "title": "Admissible and pushing sequences",
+      "number": "5.1",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-51-admissible-and-pushing-sequences"
+    },
+    {
+      "level": 2,
+      "title": "Pushing partitions",
+      "number": "5.2",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-52-pushing-partitions"
+    },
+    {
+      "level": 1,
+      "title": "Final remarks",
+      "number": "6",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-final-remarks"
+    },
+    {
+      "level": 2,
+      "title": "Connection with the work of Biane",
+      "number": "6.1",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-61-connection-with-the-work-of-biane"
+    },
+    {
+      "level": 2,
+      "title": "Ramified coverings and pushing partitions",
+      "number": "6.2",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-62-ramified-coverings-and-pushing-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Connection with orthogonal polynomials and Wick product",
+      "number": "6.3",
+      "page": 57,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-63-connection-with-orthogonal-polynomials-and-wi"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": "7",
+      "page": 57,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-7-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 58,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "GENUS EXPANSION AND FREE PROBABILITY arXiv:math/0411647v2 [math.CO] 21 Oct 2005 PIOTR ´SNIADY",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0411647v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "indicators",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "prescribed",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        }
+      ],
+      "extract": "1 ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS, ABSTRACT. The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys–Murphy element involves many conjugacy classes with complicated coefﬁcients. In this article we consider a combinato- rial setup which allows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-irreducible-representations-of-large-symmetri",
+      "number": "1.1",
+      "title": "Irreducible representations of large symmetric groups",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": true
+        },
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "okounkov2000randompermutations",
+          "heading": false
+        },
+        {
+          "term": "prescribed genus",
+          "heading": false
+        },
+        {
+          "term": "biane",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:need label=\"subsec:need\"} Irreducible representations of symmetric groups are in the one-to-one correspondence with Young diagrams and due to algorithms such as Murnaghan--Nakayama rule or Robinson--Littlewood rule the essential questions concerning representations and characters of symmetric groups can be answered by a combinatorial study of the corresponding Young diagrams [@FultonYoungtableaux].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-main-technical-problem-convolution-in-sq",
+      "number": "1.2",
+      "title": "The main technical problem: convolution in Sq",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "indicators sigma",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "definicjasigma",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "pierwszawzmiankaofppsq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:convolutioninSq label=\"subsec:convolutioninSq\"} Convolution of central functions $f,g\\in{\\mathbb{C}}({{S}}_{q})$ has a very simple structure if we write them as linear combinations of characters: if $$f(\\pi)=\\sum_{\\lambda\\vdash q} a_\\lambda \\frac{\\chi^{\\lambda}(e) \\chi^\\lambda(\\pi)}{q!}, \\qquad g(\\pi)=\\sum_{\\lambda\\vdash q} b_\\lambda \\frac{\\chi^{\\lambda}(e) \\chi^\\lambda(\\pi)}{q!}$$ then $$(f g)(\\pi)=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-free-probability-and-free-cumulants",
+      "number": "1.3",
+      "title": "Free probability and free cumulants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free cumulants",
+          "heading": true
+        },
+        {
+          "term": "free probability",
+          "heading": true
+        },
+        {
+          "term": "free convolution",
+          "heading": false
+        },
+        {
+          "term": "kerov polynomials",
+          "heading": false
+        },
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "bianecharacters",
+          "heading": false
+        },
+        {
+          "term": "boxplus",
+          "heading": false
+        },
+        {
+          "term": "speicher",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:freeproba label=\"subsec:freeproba\"} In this paper we study free cumulants of the transition measure of a given Young diagram. The notion of free cumulants plays a fundamental role in the free probability, a theory which was initiated by Voiculescu in order to answer some old questions in the theory of operator algebras but it soon evolved into an exciting self--standing theory with many links to other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-applications-fluctuations-of-random-young-dia",
+      "number": "1.4",
+      "title": "Applications: Fluctuations of random Young diagrams",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young",
+          "heading": true
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "fluctuations",
+          "heading": true
+        }
+      ],
+      "extract": "The methods presented in this article are very useful in the study of the asymptotic properties of symmetric groups. An example of such an application is presented in our subsequent work [@Sniady2005GaussuanFluctuationsofYoungdiagrams] where we study the distribution of a random Young diagram contributing to a given reducible representation of the symmetric group $S_q$ in the limit $q\\to\\infty$. We prove that for a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-overview-of-the-article",
+      "number": "1.5",
+      "title": "Overview of the article",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bianeconnection",
+          "heading": false
+        },
+        {
+          "term": "okounkov",
+          "heading": false
+        },
+        {
+          "term": "evercrossing",
+          "heading": false
+        },
+        {
+          "term": "mainresult",
+          "heading": false
+        },
+        {
+          "term": "jucys--murphy element",
+          "heading": false
+        },
+        {
+          "term": "subsec",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        }
+      ],
+      "extract": "In Section [\\[sec:preliminaries\\]](#sec:preliminaries){reference-type=\"ref\" reference=\"sec:preliminaries\"} we introduce the main actors: the normalized indicators of conjugacy classes $\\Sigma_{k_1,\\dots,k_l}$ and the Jucys--Murphy element $J$. We also outline briefly how important properties of Young diagrams and representations of ${{S}}_{q}$ are encoded by the distribution of $J$. It will be convenient to use in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-symmetric-group",
+      "number": "2.1",
+      "title": "Symmetric group",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak rightarrow",
+          "heading": false
+        },
+        {
+          "term": "omega lambda",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "widetilde infty",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathbb",
+          "heading": false
+        },
+        {
+          "term": "rho lambda",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        }
+      ],
+      "extract": "There are many equivalent definitions of the transition measure of a Young diagram [@VershikKerov1995asymptoticbehavior; @Kerov1993transition; @Kerov1999differential; @OkounkovVershik1996; @Biane1998; @Okounkov2000randompermutations] and for the sake of completeness we shall recall them in the following. Nevertheless, we shall use in this article only the description from Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-partitions",
+      "number": "2.2",
+      "title": "Partitions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm fat",
+          "heading": false
+        },
+        {
+          "term": "kreweras complementation",
+          "heading": false
+        },
+        {
+          "term": "fat partition",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm comp",
+          "heading": false
+        },
+        {
+          "term": "rho mathop",
+          "heading": false
+        },
+        {
+          "term": "non--crossing partition",
+          "heading": false
+        },
+        {
+          "term": "pair partition",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:combinatorial label=\"sec:combinatorial\"} ### Partitions {#subsec:partitions} We recall that $\\pi=\\{\\pi_1,\\dots,\\pi_r\\}$ is a partition of a finite ordered set $X$ if sets $\\pi_1,\\dots,\\pi_r$ are nonempty and disjoint and if $\\pi_1\\cup\\cdots\\cup\\pi_r=X$. We denote the set of all partitions of a set $X$ by $\\mathop{\\mathrm{P}}(X)$. We call sets $\\pi_1,\\dots,\\pi_r$ blocks of the partition $\\pi$. We say that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-the-first-main-result-calculus-of-partitions",
+      "number": "3",
+      "title": "The first main result: Calculus of partitions",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-partition--indexed-conjugacy-class-indicator",
+      "number": "3.1",
+      "title": "Partition--indexed conjugacy class indicator",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm fat",
+          "heading": false
+        },
+        {
+          "term": "fat circ",
+          "heading": false
+        },
+        {
+          "term": "fat connects",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "clockwise winds",
+          "heading": false
+        },
+        {
+          "term": "phi mathop",
+          "heading": false
+        },
+        {
+          "term": "definicjasigma",
+          "heading": false
+        },
+        {
+          "term": "mathrm genus",
+          "heading": false
+        }
+      ],
+      "extract": "### Definition of $\\Sigma_\\pi$ {#subsec:pierwszawzmiankaofppsq} Let $\\pi$ be a partition of the set $\\{1,\\dots,n\\}$. Since the fat partition $\\pi_{\\mathop{\\mathrm{fat}}}$ connects every element of the set $\\{1',2',\\dots,n'\\}$ with exactly one element of the set $\\{1,2,\\dots,n\\}$, we can view $\\pi_{\\mathop{\\mathrm{fat}}}$ as a bijection $\\pi_{\\mathop{\\mathrm{fat}}}:\\{1',2',\\dots,n'\\}\\rightarrow\\{1,2,\\dots,n\\}$. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-multiplication-of-partitions",
+      "number": "3.2",
+      "title": "Multiplication of partitions",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho mathop",
+          "heading": false
+        },
+        {
+          "term": "partitions sigma",
+          "heading": false
+        },
+        {
+          "term": "non--crossing partition",
+          "heading": false
+        },
+        {
+          "term": "hole rho",
+          "heading": false
+        },
+        {
+          "term": "rho ordered",
+          "heading": false
+        },
+        {
+          "term": "cdot sigma",
+          "heading": false
+        },
+        {
+          "term": "cdots cup",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mnozeniepartycji label=\"sec:mnozeniepartycji\"} ### Definition of multiplication We will introduce an algebraic structure on the partitions. For any finite ordered set $X$ one can consider a linear space spanned by all partitions of $X$. We will define a 'multiplicative' structure as follows: let $\\rho=\\{\\rho_1,\\dots,\\rho_r\\}$ be a non--crossing partition of a finite ordered set $X$ and for every $1\\leq s\\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-free-cumulants-of-partitions",
+      "number": "4",
+      "title": "Free cumulants of partitions",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spe",
+          "heading": false
+        },
+        {
+          "term": "non crossing",
+          "heading": false
+        },
+        {
+          "term": "cumulants",
+          "heading": true
+        },
+        {
+          "term": "crossing partitions",
+          "heading": false
+        },
+        {
+          "term": "every non",
+          "heading": false
+        }
+      ],
+      "extract": "4.1. Free cumulants. Let us ﬁx some ﬁnite ordered set X, a linear space V and a map M : NC(X) →V called the moment map. Usually, the space V carries some kind of multiplicative structure and there exists a sequence M1, M2, . . ., called moment sequence, such that for every non–crossing partition ρ = {ρ1, . . ., ρr} the moment map is given by a multiplicative extension (4.1) Mρ = Y 1≤s≤r M|ρs|. For every integer n ≥1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-42-free-cumulants-of-partitions-and-of-the-jucys",
+      "number": "4.2",
+      "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kumulantypartycji mathop",
+          "heading": false
+        },
+        {
+          "term": "rho mathop",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "jucys--murphy element",
+          "heading": true
+        },
+        {
+          "term": "moeb rho",
+          "heading": false
+        },
+        {
+          "term": "mathrm comp",
+          "heading": false
+        },
+        {
+          "term": "free cumulants",
+          "heading": true
+        },
+        {
+          "term": "evercrossing partitions",
+          "heading": false
+        }
+      ],
+      "extract": "### Moments and cumulants of partitions {#sec:momentypartycji} Let $X$ be an ordered set. We define the moment $M^{\\mathop{\\mathrm{P}}}_X$ (where the letter $\\mathop{\\mathrm{P}}$ stands for partition) by $$M^{\\mathop{\\mathrm{P}}}_X=\\sum_{\\sigma\\in\\mathop{\\mathrm{P}}(X)} \\sigma,$$ where the sum denotes a formal linear combination and it runs over all partitions of $X$. Let $\\rho=\\{\\rho_1,\\dots,\\rho_r\\}$ be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-43-first--order-asymptotics-of-free-cumulants",
+      "number": "4.3",
+      "title": "First--order asymptotics of free cumulants",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "cdots mathop",
+          "heading": false
+        },
+        {
+          "term": "gradation",
+          "heading": false
+        },
+        {
+          "term": "pierwszystopien",
+          "heading": false
+        },
+        {
+          "term": "definicjawolnejkumulanty",
+          "heading": false
+        },
+        {
+          "term": "kumulantypartycji",
+          "heading": false
+        },
+        {
+          "term": "indicators sigma",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": false
+        }
+      ],
+      "extract": "::: theorem []{#theo:pierwszystopien label=\"theo:pierwszystopien\"} Let integers $k_1,\\dots,k_t\\geq 2$ be given and let us express $R^{\\mathop{\\mathrm{JM}}}_{k_1} \\cdots R^{\\mathop{\\mathrm{JM}}}_{k_t}\\in\\mathfrak{P}$ as a linear combination of normalized conjugacy class indicators $\\Sigma$. Then $$\\begin{gathered} \\label{eq:highestorde} R^{\\mathop{\\mathrm{JM}}}_{k_1} \\cdots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-44-higher-order-expansion-for-free-cumulants",
+      "number": "4.4",
+      "title": "Higher order expansion for free cumulants",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evercrossing partition",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "rho mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm fat",
+          "heading": false
+        },
+        {
+          "term": "simplification algorithm",
+          "heading": false
+        },
+        {
+          "term": "mathrm moeb",
+          "heading": false
+        },
+        {
+          "term": "step subsec",
+          "heading": false
+        },
+        {
+          "term": "leq mathop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:evercrossing label=\"sec:evercrossing\"} In this section we present a method of enumerating all evercrossing partitions with a given genus. The main concept is to simplify a given evercrossing partition by a number of steps. After these simplifications we obtain an evercrossing pair partition (with some extra properties) which can be enumerated easily. By reversing the process of simplifications we shall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-45-the-second-main-result-the-second--order-expa",
+      "number": "4.5",
+      "title": "The second main result: the second--order expansion of free cumulants and characters",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evercrossing partitions",
+          "heading": false
+        },
+        {
+          "term": "binom cdots",
+          "heading": false
+        },
+        {
+          "term": "sigma underbrace",
+          "heading": false
+        },
+        {
+          "term": "dots times",
+          "heading": false
+        },
+        {
+          "term": "second--order",
+          "heading": true
+        },
+        {
+          "term": "frac binom",
+          "heading": false
+        },
+        {
+          "term": "binom prod",
+          "heading": false
+        },
+        {
+          "term": "simplifying algorithm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:secondorderexp label=\"sec:secondorderexp\"} ### Evercrossing partitions with genus $1$ Theorem [\\[theo:gorneszacowanie\\]](#theo:gorneszacowanie){reference-type=\"ref\" reference=\"theo:gorneszacowanie\"} allows us to enumerate (in finite time) all possible outcomes of the simplifying algorithm for a fixed genus of the original evercrossing partition. By reversing all three steps of the simplifying algorithm we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-46-higher-order-expansion-of-characters",
+      "number": "4.6",
+      "title": "Higher order expansion of characters",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secondorderexp",
+          "heading": false
+        },
+        {
+          "term": "gorneszacowanie",
+          "heading": false
+        },
+        {
+          "term": "simplification algorithm",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        }
+      ],
+      "extract": "In principle, there are no obstacles to repeat the reasoning from Section [\\[sec:secondorderexp\\]](#sec:secondorderexp){reference-type=\"ref\" reference=\"sec:secondorderexp\"} for partitions with genus $2$ and in this way obtain higher order asymptotic expansions. The first step is to enumerate all possible outcomes of the simplification algorithm. Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-proofs-of-technical-results",
+      "number": "5",
+      "title": "Proofs of technical results",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-51-admissible-and-pushing-sequences",
+      "number": "5.1",
+      "title": "Admissible and pushing sequences",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pushing sequences",
+          "heading": true
+        },
+        {
+          "term": "admissible sequences",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "phi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf phi",
+          "heading": false
+        },
+        {
+          "term": "cup ast",
+          "heading": false
+        },
+        {
+          "term": "dlaczegopushing",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        }
+      ],
+      "extract": "In this article we manipulate with moments of the Jucys--Murphy element $J$ (or with products of such moments) and we need an efficient way to enumerate the summands in sums similar to [\\[eq:wielkasuma\\]](#eq:wielkasuma){reference-type=\"eqref\" reference=\"eq:wielkasuma\"}. Conceptually the simplest way is to enumerate the summands by sequences $a_1,\\dots,a_n\\in A$ and which will be called admissible. However, it turns",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-pushing-partitions",
+      "number": "5.2",
+      "title": "Pushing partitions",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2920,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pushing partitions",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm fat",
+          "heading": false
+        },
+        {
+          "term": "tau mathop",
+          "heading": false
+        },
+        {
+          "term": "phi mathop",
+          "heading": false
+        },
+        {
+          "term": "fat circ",
+          "heading": false
+        },
+        {
+          "term": "mathrm comp",
+          "heading": false
+        },
+        {
+          "term": "non--crossing partition",
+          "heading": false
+        }
+      ],
+      "extract": "In this article we are concerned mostly with conjugacy classes of permutations and not permutations themselves. For this reason we need a method to enumerate in the sums similar to [\\[eq:wielkasuma\\]](#eq:wielkasuma){reference-type=\"eqref\" reference=\"eq:wielkasuma\"} not the individual summands, but whole classes of summands (summands within each class will be conjugate). Pushing partitions will turn out to be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-final-remarks",
+      "number": "6",
+      "title": "Final remarks",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-61-connection-with-the-work-of-biane",
+      "number": "6.1",
+      "title": "Connection with the work of Biane",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "biane",
+          "heading": true
+        },
+        {
+          "term": "macierzjucysia",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "bianeconnection",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:bianeconnection label=\"subsec:bianeconnection\"} The following connection with article [@Biane1998] was pointed out to me by Philippe Biane. Biane shows [@Biane1998] that the matrix $\\Gamma$ defined in [\\[eq:macierzjucysia\\]](#eq:macierzjucysia){reference-type=\"eqref\" reference=\"eq:macierzjucysia\"} fulfills $$\\begin{gathered} M^{\\mathop{\\mathrm{JM}}}_n=\\frac{1}{q+1} \\mathop{\\mathrm{Tr}}\\Gamma^n=\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-ramified-coverings-and-pushing-partitions",
+      "number": "6.2",
+      "title": "Ramified coverings and pushing partitions",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1316,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sheet ast",
+          "heading": false
+        },
+        {
+          "term": "pushing partitions",
+          "heading": true
+        },
+        {
+          "term": "special sheet",
+          "heading": false
+        },
+        {
+          "term": "mathrm fat",
+          "heading": false
+        },
+        {
+          "term": "fat circ",
+          "heading": false
+        },
+        {
+          "term": "okounkov2000randompermutations",
+          "heading": false
+        },
+        {
+          "term": "glued together",
+          "heading": false
+        },
+        {
+          "term": "pushing sequence",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:okounkov label=\"subsec:okounkov\"} ### Ramified covering and an admissible sequence Suppose that an admissible sequence $a_1,\\dots,a_n\\in\\{1,2,\\dots,q\\}$ is given. Following the idea of Okounkov [@Okounkov2000randompermutations] we consider a two--dimensional sphere ${\\mathbb{S}}^2$ with distinguished points $0,1,2,\\dots,n,\\infty$. Figure [1](#fig:sfera){reference-type=\"ref\" reference=\"fig:sfera\"} depicts",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-connection-with-orthogonal-polynomials-and-wi",
+      "number": "6.3",
+      "title": "Connection with orthogonal polynomials and Wick product",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "definicjamnozenia",
+          "heading": false
+        },
+        {
+          "term": "wick",
+          "heading": true
+        },
+        {
+          "term": "questions concerning",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "price",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that a probability measure $\\mu$ on the real line is given. We consider a sequence $P_0,P_1,\\dots$ of orthogonal polynomials with respect to the measure $\\mu$. Some questions concerning these polynomials are extremely simple, for example the mean value is given by a trivial equation $\\int_{\\mathbb{R}}P_k(x) d\\mu(x)= \\delta_{0k}$, but the price for working with orthogonal polynomials is that we need a formula",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-7-acknowledgments",
+      "number": "7",
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kbn-daad",
+          "heading": false
+        },
+        {
+          "term": "komitet",
+          "heading": false
+        },
+        {
+          "term": "naukowych",
+          "heading": false
+        },
+        {
+          "term": "qp-applications",
+          "heading": false
+        }
+      ],
+      "extract": "I thank Philippe Biane for introducing me into the subject and many discussions. I also thank Roland Speicher, Ilona Królak and Akihito Hora for many discussions and encouragement. Research supported by State Committee for Scientific Research (Komitet Badań Naukowych) grant No. 2P03A00723; by EU Network \"QP-applications\\\", contract HPRN-CT-2002-00729; by KBN-DAAD project 36/2003/2004. The research was conducted in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 887,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "piotr sniady",
+          "heading": false
+        },
+        {
+          "term": "alain goupil",
+          "heading": false
+        },
+        {
+          "term": "philippe biane",
+          "heading": false
+        },
+        {
+          "term": "roland speicher",
+          "heading": false
+        },
+        {
+          "term": "dan voiculescu",
+          "heading": false
+        },
+        {
+          "term": "preprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "kerov character",
+          "heading": false
+        },
+        {
+          "term": "grigori olshanski",
+          "heading": false
+        }
+      ],
+      "extract": "[Bia97] Philippe Biane. Some properties of crossings and partitions. Discrete Math., 175(1-3):41–53, 1997. [Bia98] Philippe Biane. Representations of symmetric groups and free probability. Adv. Math., 138(1):126–181, 1998. [Bia01] Philippe Biane. Approximate factorization and concentration for characters of symmetric groups. Internat. Math. Res. Notices, (4):179–192, 2001. [Bia03] Philippe Biane. Characters of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 2.3"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "cdots mathop",
+      "heading": false
+    },
+    {
+      "term": "leq mathop",
+      "heading": false
+    },
+    {
+      "term": "rho mathop",
+      "heading": false
+    },
+    {
+      "term": "kumulantypartycji mathop",
+      "heading": false
+    },
+    {
+      "term": "elements mathop",
+      "heading": false
+    },
+    {
+      "term": "partitions sigma",
+      "heading": false
+    },
+    {
+      "term": "mathrm fat",
+      "heading": false
+    },
+    {
+      "term": "phi mathop",
+      "heading": false
+    },
+    {
+      "term": "tau mathop",
+      "heading": false
+    },
+    {
+      "term": "prod mathop",
+      "heading": false
+    },
+    {
+      "term": "map mathop",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Young diagram associated with a partition 8 =",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "Generalized Young diagram associated with a",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "Fat partition πfat corresponding to the partition",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.5",
+      "title": "Graphical representation of a non–crossing",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.6",
+      "title": "Fat partition πfat for a non–crossing partition",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.7",
+      "title": "Graphical representation of r(ρ) where ρ is",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.8",
+      "title": "Partition π from Figure 2.5 in a solid line and",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "A version of Figure 3.1 in which all lines wind",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "A version of Figure 3.1 in which all lines of",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "The ﬁrst collection of discs for partition π",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "Graphical representation of example (3.7)",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "Figure 3.5 after inﬂating small holes. 3.3. Map Σ is a homomorphism. Since the map Σ = ΦP",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Example of an evercrossing partition Theorem 4.5. If a partition π is not evercrossing then Iπ = 0",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Example of an evercrossing partition with the",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Partition from Figure 4.1 after the ﬁrst step of",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "Partition from Figure 4.1 after the second step",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "title": "Elementary operation of step 2 of the simpli-",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.6",
+      "title": "The elementary operation of step 3 of the sim-",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.7",
+      "title": "The outcome of the step 3 of the simplifying",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.8",
+      "title": "General pattern of evercrossing partitions with",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.9",
+      "title": "General pattern of evercrossing partitions with",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.10",
+      "title": "The only two possible outcomes of the sim-",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.1",
+      "title": "Two homotopic loops on a sphere. a loop around points 1, 2, . . ., n hence the monodromy around 0 is a prod-",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "A loop on a sphere",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.3",
+      "title": "Shape of the special sheet (the white region)",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "26 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p58); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0411647v2"
+  }
+}

@@ -1,0 +1,969 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s0025-5718-07-02027-3",
+  "title": "s0025-5718-07-02027-3",
+  "variant": "pdf",
+  "pages": 30,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1105",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1106",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "The p-adic polylogarithm",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "1106",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-p-adic-polylogarithm"
+    },
+    {
+      "level": 1,
+      "title": "Method of computation on U0 and U",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "1109",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-method-of-computation-on-u0-and-u"
+    },
+    {
+      "level": 1,
+      "title": "Method of computation in the generic case",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "1110",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-method-of-computation-in-the-generic-case"
+    },
+    {
+      "level": 1,
+      "title": "Method of computation on U1",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "1112",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-method-of-computation-on-u1"
+    },
+    {
+      "level": 1,
+      "title": "Estimates",
+      "number": "6",
+      "page": 11,
+      "pageLabel": "1115",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-estimates"
+    },
+    {
+      "level": 1,
+      "title": "The algorithm",
+      "number": "7",
+      "page": 14,
+      "pageLabel": "1118",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-the-algorithm"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": "8",
+      "page": 24,
+      "pageLabel": "1128",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": "1133",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1105",
+      "labelEnd": "1105",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic",
+          "heading": false
+        },
+        {
+          "term": "service",
+          "heading": false
+        },
+        {
+          "term": "besser",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICS OF COMPUTATION Volume 77, Number 262, April 2008, Pages 1105–1134 S 0025-5718(07)02027-3 Article electronically published on November 5, 2007 Li(p)-SERVICE? AN ALGORITHM FOR COMPUTING p-ADIC POLYLOGARITHMS AMNON BESSER AND ROB DE JEU Abstract. We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision.",
+      "extractCut": false,
+      "blocks": [
+        "library/s0025-5718-07-02027-3/blocks/prose-sec-front-matter",
+        "library/s0025-5718-07-02027-3/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1105",
+      "labelEnd": "1106",
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k2n",
+          "heading": false
+        },
+        {
+          "term": "complex polylogarithm",
+          "heading": false
+        },
+        {
+          "term": "regulator",
+          "heading": false
+        },
+        {
+          "term": "zagier conjecture",
+          "heading": false
+        },
+        {
+          "term": "k-groups",
+          "heading": false
+        },
+        {
+          "term": "p-adic",
+          "heading": false
+        },
+        {
+          "term": "number ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "beilinson",
+          "heading": false
+        }
+      ],
+      "extract": "It is well known that, for a number ﬁeld k with ring of integers Ok, there is a relation between the regulator of the group of units of Ok, O∗ k, and the residue of ζk(s) at s = 1. In terms of K-theory, O∗ k ∼= K1(Ok), and Borel in [6] showed that this relation generalizes, for n = 2, 3, . . . , to a similar relation between a suitably deﬁned regulator of the higher K-group K2n−1(Ok) and the value of ζk(s) at s = n.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-p-adic-polylogarithm",
+      "number": "2",
+      "title": "The p-adic polylogarithm",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1106",
+      "labelEnd": "1106",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic",
+          "heading": true
+        },
+        {
+          "term": "coleman",
+          "heading": false
+        },
+        {
+          "term": "polylogarithm",
+          "heading": true
+        },
+        {
+          "term": "precision",
+          "heading": false
+        },
+        {
+          "term": "technique",
+          "heading": false
+        }
+      ],
+      "extract": "The p-adic polylogarithm is an analogue of its complex cousin. It was deﬁned by Coleman [7] using the technique now referred to as Coleman integration. On the open unit disc in Cp, the so called ﬁeld of p-adic complex numbers, it is again deﬁned by the power series (1.1). To extend it to a function deﬁned on Cp \\ {1} Coleman uses a technique he called “analytic continuation along Frobenius”, which is rather",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "1106",
+      "labelEnd": "1109",
+      "words": 1702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lin",
+          "heading": false
+        },
+        {
+          "term": "p-adic",
+          "heading": false
+        },
+        {
+          "term": "rigid analytic",
+          "heading": false
+        },
+        {
+          "term": "productive",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "algebraic closure",
+          "heading": false
+        },
+        {
+          "term": "growth condition",
+          "heading": false
+        },
+        {
+          "term": "coleman",
+          "heading": false
+        }
+      ],
+      "extract": "tute for a productive stay during the autumn of 2002, during which this paper germinated and a ﬁrst version of an implementation of the algorithm was written. He would also like to thank the University of Alberta and the Tata Institute of Fundamental Research for very productive visits, and the EC network Arithmetic Algebraic Geometry for travel support. He is grateful to Nils Bruin for sharing his magic in order to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-method-of-computation-on-u0-and-u",
+      "number": "3",
+      "title": "Method of computation on U0 and U",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "1109",
+      "labelEnd": "1110",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lin",
+          "heading": false
+        },
+        {
+          "term": "nlin",
+          "heading": false
+        },
+        {
+          "term": "zpm",
+          "heading": false
+        }
+      ],
+      "extract": "On U0 we can use the standard expansion in (1.1), (3.1) Lin(t) = ∞ \u0001 k=1 tk kn , which we shall denote by Fn,0(t). Remark 3.2. As an immediate consequence of the power series expansion of Lin(z) on U0 and the deﬁnition of Li(p) n (z) in (2.5) we see that on U0 (3.3) Li(p) n (z) = \u0001 k≥1 ′ zk kn , where the prime indicates that we only sum over those k for which p̸| k. We can collect terms zk/kn in Lin(z) = \u0002 k≥1 zk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-method-of-computation-in-the-generic-case",
+      "number": "4",
+      "title": "Method of computation in the generic case",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "1110",
+      "labelEnd": "1112",
+      "words": 910,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compute lin",
+          "heading": false
+        },
+        {
+          "term": "residue disc",
+          "heading": false
+        },
+        {
+          "term": "pnf",
+          "heading": false
+        },
+        {
+          "term": "zpk",
+          "heading": false
+        },
+        {
+          "term": "ζpf",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "computation",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we explain how to compute Lin(z) on all residue discs except U0, U1 and U∞. The residue discs U0 and U∞were discussed in the previous section, and U1 will be dealt with in Section 5. We begin with a well known observation. Proposition 4.1. Every residue disc other than U0 and U∞is Uζ for a unique root of unity ζ of order dividing pf −1 for some f > 0, known as the Teichm¨uller representative of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-method-of-computation-on-u1",
+      "number": "5",
+      "title": "Method of computation on U1",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "1112",
+      "labelEnd": "1115",
+      "words": 1390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lin",
+          "heading": false
+        },
+        {
+          "term": "logn",
+          "heading": false
+        },
+        {
+          "term": "rigid analytic",
+          "heading": false
+        },
+        {
+          "term": "p-adic polylogarithms",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "service",
+          "heading": false
+        },
+        {
+          "term": "branch",
+          "heading": false
+        },
+        {
+          "term": "proposition",
+          "heading": false
+        }
+      ],
+      "extract": "To compute Lin(z) for z̸ = 1 in U1 we use the following result. Proposition 5.1 ([7, Proposition 7.1]). For n ≥2 the function (5.2) En(z) = Lin(z) − 1 n −1 log(z)Lin−1(z) extends to a rigid analytic function on U1. (5.3) En(zm) = mn−1 \u0001 for m ≥1 and z in C∗ p. In particular (5.4) En(z2) = 2n−1(En(z) + En(−z)) . Proposition 5.5. On U1 the functions En(z) are independent of the branch of the logarithm. Proof. It is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-estimates",
+      "number": "6",
+      "title": "Estimates",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "1115",
+      "labelEnd": "1118",
+      "words": 1513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logp",
+          "heading": false
+        },
+        {
+          "term": "real logarithm",
+          "heading": false
+        },
+        {
+          "term": "kan",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": true
+        },
+        {
+          "term": "max",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "min",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we provide estimates for the valuations of the coeﬃcients in the power series gn(v) of Proposition 4.3, Fn,ζ(t) of Proposition 4.4 and Hn(t) of Propo- sition 5.8. We shall use these in Section 7 to know how many terms of those power series we have to calculate in order to compute Lin(z) up to a speciﬁed precision for a given z̸ = 1 in Cp. Many expressions in Sections 6 through 8 contain the real",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-the-algorithm",
+      "number": "7",
+      "title": "The algorithm",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 24,
+      "labelStart": "1118",
+      "labelEnd": "1128",
+      "words": 5530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "precision logp",
+          "heading": false
+        },
+        {
+          "term": "tsl",
+          "heading": false
+        },
+        {
+          "term": "precision max",
+          "heading": false
+        },
+        {
+          "term": "hsl",
+          "heading": false
+        },
+        {
+          "term": "relative precision",
+          "heading": false
+        },
+        {
+          "term": "required precision",
+          "heading": false
+        },
+        {
+          "term": "calculate logn",
+          "heading": false
+        },
+        {
+          "term": "gsl",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we use the material from the previous sections in order to give an algorithm for computing Lin(z) for n ≥2 and z̸ = 1 up to a given precision and analyze its eﬃciency. First of all we formalize the notion of “up to a given precision”. Deﬁnition 7.1. (1) For any number α in Cp we say that we know α up to precision N if we have β in Cp such that vp(α −β) > N. (2) We say that we know α̸ = 0 in Cp up to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-concluding-remarks",
+      "number": "8",
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 29,
+      "labelStart": "1128",
+      "labelEnd": "1133",
+      "words": 3071,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unr",
+          "heading": false
+        },
+        {
+          "term": "required precision",
+          "heading": false
+        },
+        {
+          "term": "compute lin",
+          "heading": false
+        },
+        {
+          "term": "tsl",
+          "heading": false
+        },
+        {
+          "term": "logp",
+          "heading": false
+        },
+        {
+          "term": "divisions",
+          "heading": false
+        },
+        {
+          "term": "multiplications",
+          "heading": false
+        },
+        {
+          "term": "residue disc",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we describe how to make the estimates in it uniform for all ele- ments in a ﬁxed ﬁnite extension of Qp, analyze the corresponding asymptotic time and make a remark about an alternative approach for computing the constant term of the Fn,ζ(t). Remark 8.1. In case one wants to compute Lin(z) for several z in a ﬁeld F with ﬁnite ramiﬁcation index e over Qp it is probably more eﬃcient to compute the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "1133",
+      "labelEnd": "1134",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syntomic regulators",
+          "heading": false
+        },
+        {
+          "term": "auser boston",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "beilinson conjectures",
+          "heading": false
+        },
+        {
+          "term": "besser",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        },
+        {
+          "term": "jeu",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. A. Beilinson. Higher regulators and values of L-functions. J. Sov. Math., 30:2036–2070, 1985. MR760999 (86h:11103) [2] A. Besser. Syntomic regulators and p-adic integration I: rigid syntomic regulators. Israel Journal of Math., 120:291–334, 2000. MR1809626 (2002c:14035) [3] A. Besser. Finite and p-adic polylogarithms. Compositio Math., 130(2):215–223, 2002. MR1883819 (2002m:11058) [4] A. Besser, P.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "algorithm 7.1",
+      "algorithm 7.2",
+      "algorithm 7.3",
+      "algorithm 7.4",
+      "algorithm 7.5",
+      "algorithm 7.6",
+      "algorithm 7.7",
+      "algorithm 7.8",
+      "algorithm 7.9"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "precision logp",
+      "heading": false
+    },
+    {
+      "term": "compute lin",
+      "heading": true
+    },
+    {
+      "term": "computing lin",
+      "heading": false
+    },
+    {
+      "term": "p-adic polylogarithms",
+      "heading": false
+    },
+    {
+      "term": "deﬁned lin",
+      "heading": false
+    },
+    {
+      "term": "p-adic logarithm",
+      "heading": false
+    },
+    {
+      "term": "amnon besser",
+      "heading": false
+    },
+    {
+      "term": "p-adic l-functions",
+      "heading": false
+    },
+    {
+      "term": "compute logn",
+      "heading": false
+    },
+    {
+      "term": "p-adic complex",
+      "heading": false
+    },
+    {
+      "term": "p-adic analogue",
+      "heading": false
+    },
+    {
+      "term": "precision max",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1105",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1106",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1107",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1108",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1109",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1110",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1111",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1112",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1113",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1114",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1115",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1116",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1117",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1118",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1119",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1120",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1121",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1122",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1123",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1124",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1125",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1126",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1127",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1128",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1129",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1130",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1131",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1132",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1133",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1134",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "algorithm",
+      "number": "7.10",
+      "title": "In order to compute Lin(z) for z̸ = 0, 1 in F and n ≥2 up to precision N > 0 we ﬁrst determine in which residue disc z lies and then do the following",
+      "page": 16,
+      "pageLabel": "1120",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Timings for Lin(π(ζ −1)). q(x)",
+      "page": 28,
+      "pageLabel": "1132",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Timings for Lin((ζ −1)/π). q(x)",
+      "page": 28,
+      "pageLabel": "1132",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Timings for Lin(ζ + (ζ −1)π). q(x)",
+      "page": 28,
+      "pageLabel": "1132",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Timings for Lin(1 + (ζ −1)π). q(x)",
+      "page": 29,
+      "pageLabel": "1133",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s0025-5718-07-02027-3"
+  }
+}

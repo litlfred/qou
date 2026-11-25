@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-9909027v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Planar Algebras, I",
+      "dcterms:creator": [
+        "Berkeley, California 94720–3840"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/9909027",
+      "dcterms:abstract": "We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions. A planar algebra with suitable positivity properties produces a ﬁnite index subfactor of a II1 factor, and vice versa. 0. Introduction At ﬁrst glance there is nothing planar about a subfactor. A factor M is a unital ∗-algebra of bounded linear operators on a Hilbert space, with trivial centre and closed in the topology of pointwise convergence. The factor M is of type II1 if it admits a (normalized) trace, a linear function tr: M →C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N] for II1 factors N ⊂M. The most surprising result of [J1] was that [M : N] is “quantized” — to be precise, if [M : N] < 4 there is an integer n ≥3 with [M : N] = 4 cos2 π/n. This led to a surge of interest in subfactors and the major theorems of Pimsner, Popa and Ocneanu ([PP],[Po1],[O1]). These results turn around a “standard invariant” for ﬁnite index subfactors, also known variously as the “tower of relative commutants”, the “paragroup”, or the “λ-lattice”. In favorable cases the standard invariant allows one to recon- struct the subfactor, and both the paragroup and λ-lattice approaches give ∗Research supported in part by NSF Grant DMS93–22675, the Marsden fund UOA520, and the Swiss National Science Foundation. 1",
+      "dcterms:source": "library/arxiv-math-9909027v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-9909027v1"
+    }
+  ]
+}

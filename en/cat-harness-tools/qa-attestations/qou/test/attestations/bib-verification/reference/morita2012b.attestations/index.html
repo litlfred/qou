@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/morita2012b.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1xsiiu8r6rm.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1xsiiu8r6rm","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/morita2012b.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/morita2012b.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/morita2012b.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;morita2012b&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 454,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1205.1453v2/1205.1453v2.pdf&quot;
+      },
+      &quot;id&quot;: &quot;morita2012b&quot;,
+      &quot;status&quot;: &quot;uncited&quot;,
+      &quot;note&quot;: &quot;Identified from the title page (arXiv:1205.1453v2, single author, 12 pp, 4 sections). No ref() entry existed; morita2012b created 2026-09-07 by the triage (the suffix distinguishes it from morita2012 = arXiv:1203.3404, the Ramanujan-equation connection formulae). No citation site yet; one bean queued.&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;A worked first-kind q-Borel-Laplace resummation of a divergent BILATERAL series whose connection coefficient is a q-elliptic theta quotient — the same shape as C1&#39;s connection-matrix entries (&#39;elliptic per entry&#39;, bean qou-wgnx) and the precedent that bean&#39;s route (a) needs (resum in two directions lambda != mu, form S_q from the direction dependence). Read: §1 (1psi0 and Ramanujan&#39;s 1psi1 summation, eq. (1); the intro theorem), §2 (theta function, q-Borel and q-Laplace of first and second kind), §3.1 (eq. (19) the degenerate first-order equation ((1/q - ax)sigma_q + x)u = 0 with formal solution 1psi0, eq. (20), and the theta-normalised solution at infinity), §3.2 Thm 1 (the resummation in direction lambda equals (q;q)_inf/(q/a;q)_inf times theta(aq lambda)/theta(q lambda) times theta(ax/lambda)/theta(x/lambda) times 1/(1/ax;q)_inf off the q-spiral [-lambda;q]) and Cor 1 (C(x;q) is q-elliptic), §4 Thm 2 (q -&gt; 1 gives the bilateral 1H0). Corpus-grep: &#39;bilateral&#39; has one Lean hit (BalancedThetaLimit.lean, a bilateral theta series) and one compute hit (the theta-kernel bilateral Laplace of qbeta_g3_5two_qborel_theta_laplace.py, a different object: the Masbaum bar-side series); &#39;1psi0&#39; / &#39;bilateral basic hypergeometric&#39; have no hits. So no block or witness evaluates 1psi0 and there is nothing to compute-check; the value is as a citable precedent beside morita2014 (bean qou-hnuw, todo) at the level-1 q-Borel kernel file. Not inflated to core: one theorem, order one, and no corpus number depends on it.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Thm 1 (§3.2), Cor 1&quot;,
+            &quot;statement&quot;: &quot;The first-kind q-Borel-Laplace resummation of 1psi0(a;-;q,x) in direction lambda is an explicit product of theta quotients times 1/(1/ax;q)_inf, valid off the q-spiral [-lambda;q]; the connection coefficient C(x;q) is q-elliptic.&quot;,
+            &quot;useForFolio&quot;: &quot;The simplest worked instance of the summation-direction dependence of a q-Borel-Laplace resummation sitting entirely in a theta quotient — the route-(a) precedent bean qou-wgnx names, one order below morita2014&#39;s.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.MathlibExt.QBorelKernel&quot;,
+              &quot;qou-wgnx&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;eq. (19)-(20), §3.1&quot;,
+            &quot;statement&quot;: &quot;1psi0 is the divergent formal solution of the degenerate first-order q-difference equation ((1/q - ax)sigma_q + x)u = 0.&quot;,
+            &quot;useForFolio&quot;: &quot;A first-order divergent model equation for the level-1 kernel t_n = q^{C(n,2)} formalised in QBorelKernel.lean.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.MathlibExt.QBorelKernel&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry existed; created as morita2012b in this triage.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Cite beside the morita2014 citation qou-hnuw will add at the level-1 kernel file, as the bilateral / first-order precedent for a theta-quotient connection coefficient.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernel.lean&quot;,
+            &quot;bean&quot;: &quot;qou-89w7&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-09-07T08:38:46Z&quot;,
+        &quot;source_sha&quot;: &quot;29d1b1fd9466&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

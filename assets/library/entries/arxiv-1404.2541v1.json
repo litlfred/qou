@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1404.2541v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this papar, we deal with the Ramanujan equation $$qxu(q^2x)-u(qx)+u(x)=0,\\qquad \\forall x\\in\\mathbb{C}^*.\n\\label{ramanujaneq}$$ We assume that $0<|q|<1$. The Ramanujan equation [\\[ramanujaneq\\]](#ramanujaneq){reference-type=\"eqref\" reference=\"ramanujaneq\"} has solutions $$\\begin{aligned}\nu_1(x)&={}_0\\varphi_1(-;0;q,-qx), \\\\\nu_2(x)&=\\theta_q(x){}_2\\varphi_0\\left(0,0;-;q,-\\frac{x}{q}\\right)\\label{secondram}\n\\end{aligned}$$ around the origin. The equation [\\[ramanujaneq\\]](#ramanujaneq){reference-type=\"eqref\" reference=\"ramanujaneq\"} also has a fundamental system of solutions around the infini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1404.2541v1  [math.CA]  9 Apr 2014\nThe Stokes phenomenon for the Ramanujan’s\nq-diﬀerence equation and its higher order\nextension\nTakeshi MORITA∗\nAbstract\nWe show connection formulae of local solutions of the Ramanu-\njan equation between the origin and the inﬁnity. These solutions are\ngiven by the Ramanujan function, the q-Airy function and the diver-\ngent basic hypergeometric series 2ϕ0(0, 0; −; q, x). We use two diﬀerent\nq-Borel-Laplace resummation methods to obtain our connection for-\nmulae. We also introduce the q-Borel-Laplace transformation of level\nr−1, which are higher order exten",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic notations",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-basic-notations.md",
+      "narrative": null,
+      "content": "In this section, we fix our notations. We assume that $q\\in\\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\\sigma_q$ is given by $\\sigma_qf(x)=f(qx)$. For any fixed $\\lambda\\in\\mathbb{C}^*\\setminus q^{\\mathbb{Z}}$, the set $[\\lambda ;q]$-spiral is $[\\lambda ;q]:=\\lambda q^{\\mathbb{Z}}=\\{\\lambda q^k;k\\in\\mathbb{Z}\\}$. The theta function of Jacobi is important in connection problems. The theta function of Jacobi with the base $q$ is $$\\theta_q(x):=\\sum_{n\\in\\mathbb{Z}}q^{\\frac{n(n-1)}{2}}x^n,\\qquad \\forall x\\in\\mathbb{C}^*.$$ The theta function has the following properties;\n\n1.  Jac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two q-exponential functions",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-3-two-q-exponential-functions.md",
+      "narrative": null,
+      "content": "We review two different $q$-exponential functions $e_q(x)$ and $E_q(x)$ to consider the connection problem on the Ramanujan equation. In this section, we show the relation between them. We review two different $q$-exponential functions from the viewpoint of the connection problems. One of the $q$-exponential function $e_q(x)$ is given by $$e_q(x):={}_1\\varphi_0 (0;-;q,x)=\\sum_{n\\ge 0}\\frac{x^n}{(q;q)_n}.$$ The other $q$-exponential function $E_q(x)$ is $$E_q(x):={}_0\\varphi_0(-;-;q,-x)=\\sum_{n\\ge 0}\\frac{q^{\\frac{n(n-1)}{2}}}{(q;q)_n}x^n.$$ The function $e_q(x)$ satisfies the following first o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Covering transformations",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-covering-transformations.md",
+      "narrative": null,
+      "content": "We define a covering transformation for a second order linear $q$-difference equation.\n\n::: dfn\nFor a $q$-difference equation $$\\label{sh}\na(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the covering transformation as follows $$t^2:=x,\\quad v(t):=u(t^2),\\quad p:=\\sqrt{q}.$$\n:::\n\nThe covering transform of the equation [\\[sh\\]](#sh){reference-type=\"eqref\" reference=\"sh\"} is given by $$a(t^2)v(p^2t)+b(t^2)v(pt)+c(t^2)v(t)=0.$$ By the covering transformation, the equation $$\\left(K\\cdot x\\sigma_q^2-\\sigma_q+1\\right)u(x)=0$$ is transformed to $$\\left(K\\cdot t^2\\sigma_p^2-\\sigma_p+1\\right)v(t)=0,\\labe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ramanujan function and the q-Airy function",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-5-the-ramanujan-function-and-the-q-airy-function.md",
+      "narrative": null,
+      "content": "There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY]. In this section, we see the properties of these functions. We explain the reason why they are called $q$-analogues of the Airy function and we show $q$-difference equations which they satisfy.The Ramanujan function appears in Ram",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Borel-Laplace transformations",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-6-the-q-borel-laplace-transformations.md",
+      "narrative": null,
+      "content": "In this section, we show a connection formula of the divergent series ${}_2\\varphi_0$. This series appears in the second solution of the Ramanujan equation [\\[ram\\]](#ram){reference-type=\"eqref\" reference=\"ram\"}. At first, we define two types of the $q$-Borel-Laplace transformations.\n\n**Definition.** *We assume that $f(x)$ is a formal power series $f(x)=\\sum_{n\\ge 0}a_nx^n$, $a_0=1$.*\n\n1.  The $q$-Borel transformation of the first kind is $$\\left(\\mathcal{B}_q^+f\\right)(\\xi ):=\\sum_{n\\ge 0}a_nq^{\\frac{n(n-1)}{2}}\\xi^n\\left(=:\\varphi (\\xi )\\right).$$\n\n2.  The $q$-Laplace transformation of the f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection formula of the series 20(0,0;-;q,)",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-7-the-connection-formula-of-the-series-2000-q.md",
+      "narrative": null,
+      "content": "The aim of this section is to give a proof for the following theorem;\n\n::: thm\n[]{#divergentramanujan label=\"divergentramanujan\"}For any $x\\in\\mathbb{C}^*\\setminus [-\\lambda ;q],$ $$\\begin{aligned}\n\\theta_q(x){}_2f_0&\\left(0,0;-;q,-\\frac{x}{q}\\right)=(q;q)_\\infty\\frac{\\theta_q(x) \\theta_{q^2}\\left(-\\frac{\\lambda^2}{qx}\\right)}{\\theta_q\\left(-\\frac{\\lambda}{q}\\right)\\theta_q\\left(\\frac{\\lambda}{x}\\right)}\n{}_1\\varphi_1\\left(0;q;q^2,\\frac{q^2}{x}\\right)\\\\\n&+\\frac{(q;q)_\\infty}{1-q}\\frac{\\theta_q(x) \\theta_{q^2}\\left(-\\frac{\\lambda^2}{x}\\right)}{\\theta_q\\left(-\\frac{\\lambda}{q}\\right)\\theta_q\\lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Airy equation around the infinity and the connection formula",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-8-the-q-airy-equation-around-the-infinity-and-th.md",
+      "narrative": null,
+      "content": "We consider the behavior of the equation [\\[qai\\]](#qai){reference-type=\"eqref\" reference=\"qai\"} around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\\left(-\\sigma_q^2+\\frac{1}{q^2t}\\sigma_q+1\\right)z(t)=0.$$ We set $\\mathcal{E}(t)=1/\\theta (-q^2t)$ and $f(t)=\\sum_{n\\ge 0}a_nt^n,\\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\\mathcal{E}(t)f(t)=\\frac{1}{\\theta (-q^2t)}\\left(\\sum_{n\\ge 0}a_nt^n\\right).$$\n\nThe function $\\mathcal{E}(t)$ has the following property;\n\n::: lmm\nFor any $t\\in\\mathbb{C}^*$, $$\\sigma_q\\mathcal{E}(t)=-q^2t\\mathcal{E}(t),\n\\qquad \\si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.2541v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Borel-Laplace transformations of level r-1 and its application",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-9-the-q-borel-laplace-transformations-of-level-r.md",
+      "narrative": null,
+      "content": "The q-Borel-Laplace transformations of level\nr −1 and its application\nIn this section, we deﬁne the higher order extension of the q-Borel-Laplace\nmethod. We also apply this method to the divergent series rϕ0(0, 0, . . . , 0; −; q, x).\nAt ﬁrst, we give the deﬁnition of the q-Borel-Laplace transformations of level\nr −1 as follows:\nDeﬁnition 9.1. The q-Borel transformation of level r −1 is\n\u0010\nB+\nqr−1f\n\u0011\n(ξ) :=\nX\nn≥0\nan(qr−1)\nn(n−1)\n2\nξn =: ˆϕ(ξ),\nwhere f(x) is a formal power series. The q-Laplace transformation of level\nr −1 is\n\u0010\nL+\nqr−1,λ ˆϕ\n\u0011\n(x) :=\nX\nn∈Z\nˆϕ(λq(r−1)n)\nθqr−1\n\u0010\nλq(r−1)n\nx\n\u0011.\nWe al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

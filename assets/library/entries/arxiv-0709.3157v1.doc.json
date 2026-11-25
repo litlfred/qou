@@ -1,0 +1,588 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0709.3157v1",
+  "title": "Chiral Lagrangians with tensor sources",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "QCD in the presence of external sources",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-qcd-in-the-presence-of-external-sources"
+    },
+    {
+      "level": 1,
+      "title": "Chiral building blocks",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-chiral-building-blocks"
+    },
+    {
+      "level": 1,
+      "title": "The chiral Lagrangian",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-chiral-lagrangian"
+    },
+    {
+      "level": 1,
+      "title": "Two comments on tensor sources",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-two-comments-on-tensor-sources"
+    },
+    {
+      "level": 1,
+      "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral lagrangians",
+          "heading": false
+        },
+        {
+          "term": "tensor sources",
+          "heading": false
+        },
+        {
+          "term": "mateu",
+          "heading": false
+        },
+        {
+          "term": "departament",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0709.3157v1 [hep-ph] 20 Sep 2007 Chiral Lagrangians with tensor sources 1 V. Mateu Departament de Física Teòrica, IFIC, Universitat de València-CSIC Apt. Correus 22085, E-46071 València, Spain. Abstract. The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is, quark bilinears of the form ¯qi σ µν q j. Whereas only",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0709.3157v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor currents",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "bilinears",
+          "heading": false
+        },
+        {
+          "term": "green functions",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        },
+        {
+          "term": "dirac",
+          "heading": false
+        },
+        {
+          "term": "external",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral perturbation theory ($\\chi$PT for short) is regarded nowadays as the effective field theory dual to QCD at very low energies. It describes the dynamics of the pseudo--Goldstone bosons ($\\pi,\\, K,\\,\\eta$) in an expansion in powers of external momenta and masses. It incorporates the assumed QCD symmetries such as parity, charge conjugation and, most important, the spontaneous breakdown of chiral symmetry. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-qcd-in-the-presence-of-external-sources",
+      "number": null,
+      "title": "QCD in the presence of external sources",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal qcd",
+          "heading": false
+        },
+        {
+          "term": "cal ext",
+          "heading": false
+        },
+        {
+          "term": "lambda rho",
+          "heading": false
+        },
+        {
+          "term": "sources",
+          "heading": true
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "external",
+          "heading": true
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        }
+      ],
+      "extract": "The external field method was first introduced by Leutwyler [@Leut], and makes easier the computation of QCD Green functions and form factors. It enforces chiral Ward identities exactly by promoting the global chiral symmetry to a local one. The basic idea is to introduce in the QCD action a set of local fields coupled to the QCD currents : $$\\!Z[v_{\\mu},a_{\\mu},s,p,{\\bar{t}}_{\\,\\mu\\nu}]=\\!\\!\\int\\!",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-chiral-building-blocks",
+      "number": null,
+      "title": "Chiral building blocks",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "left dagger",
+          "heading": false
+        },
+        {
+          "term": "cal chi",
+          "heading": false
+        },
+        {
+          "term": "partial rho",
+          "heading": false
+        },
+        {
+          "term": "ccwz",
+          "heading": false
+        },
+        {
+          "term": "gamma rho",
+          "heading": false
+        },
+        {
+          "term": "building",
+          "heading": true
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "$\\chi$PT is based on the spontaneous breakdown of the global $G=SU(n_f)_L\\otimes SU(n_f)_R$ flavour symmetry down to its subgroup $SU(n_f)_V$. The dynamical fields $\\phi^a=(\\pi,K,\\eta)$ are assumed to be the (pseudo--)Goldstone bosons associated to this breakdown. The general formalism for effective Lagrangians with spontaneously broken symmetries was worked out by Callan, Coleman, Wess and Zumino [@CWZ], and for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-chiral-lagrangian",
+      "number": null,
+      "title": "The chiral Lagrangian",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "sim cal",
+          "heading": false
+        },
+        {
+          "term": "tensor sources",
+          "heading": false
+        },
+        {
+          "term": "cata",
+          "heading": false
+        },
+        {
+          "term": "power counting",
+          "heading": false
+        },
+        {
+          "term": "conn",
+          "heading": false
+        },
+        {
+          "term": "cayley--hamilton",
+          "heading": false
+        },
+        {
+          "term": "nabla",
+          "heading": false
+        }
+      ],
+      "extract": "The number of operators entering in the chiral Lagrangian is of course not restricted by symmetry. So in principle there are an infinite number of them, each one multiplied by an unknown coefficient (this is in agreement with the fact that $\\chi$PT is not normalizable *stricto sensu*). So if one has to take them all into account in any calculation, loses all predictive power. At low energies (compared with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-two-comments-on-tensor-sources",
+      "number": null,
+      "title": "Two comments on tensor sources",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor sources",
+          "heading": true
+        },
+        {
+          "term": "chiral-projector",
+          "heading": false
+        },
+        {
+          "term": "anomalous dimension",
+          "heading": false
+        },
+        {
+          "term": "sector",
+          "heading": false
+        },
+        {
+          "term": "scale",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        }
+      ],
+      "extract": "So far we have restricted ourselves to the even--intrinsic sector. The odd--intrinsic sector involving external sources is characterized by being proportional to the Levi--Civitá symbol $\\varepsilon_{\\mu\\nu\\sigma\\rho}$. Using the fact that this symbol appears on the definition of the tensor chiral projectors, Eq. ([\\[chiral-projector\\]](#chiral-projector){reference-type=\"ref\" reference=\"chiral-projector\"}), in Ref.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an",
+      "number": null,
+      "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor sources",
+          "heading": true
+        },
+        {
+          "term": "rangle green",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "langle left",
+          "heading": false
+        },
+        {
+          "term": "resonances",
+          "heading": false
+        },
+        {
+          "term": "right rho",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "mateu",
+          "heading": false
+        }
+      ],
+      "extract": "It is well known that if one wishes to extend the energy domain of $\\chi$PT resonances must be include as active degrees of freedom. The idea of constructing chiral Lagrangians with resonances fields was pioneered in Ref. [@EGPR], but the inclusion of tensor sources was first considered in Ref. [@CMinprogress]. For a consistent introduction of tensor sources one has to consider spin--one resonances of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor sources",
+          "heading": false
+        },
+        {
+          "term": "mec",
+          "heading": false
+        },
+        {
+          "term": "odd--intrinsic--parity",
+          "heading": false
+        },
+        {
+          "term": "disentangling",
+          "heading": false
+        }
+      ],
+      "extract": "We have included tensor sources in the $\\chi$PT formalism and explicitly constructed the $\\mathcal{O}(p^4)$ and $\\mathcal{O}(p^6)$ Lagrangians. The challenging part of this construction is to find a complete and non--redundant set of operators. For the reduction of the basis we have followed standard procedures. We have demonstrated that there is no odd--intrinsic--parity sector with tensor sources at the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tensor sources",
+      "heading": true
+    },
+    {
+      "term": "external sources",
+      "heading": true
+    },
+    {
+      "term": "tensor currents",
+      "heading": false
+    },
+    {
+      "term": "cal chi",
+      "heading": false
+    },
+    {
+      "term": "cal qcd",
+      "heading": false
+    },
+    {
+      "term": "chiral lagrangians",
+      "heading": false
+    },
+    {
+      "term": "left dagger",
+      "heading": false
+    },
+    {
+      "term": "dagger right",
+      "heading": false
+    },
+    {
+      "term": "involving tensor",
+      "heading": false
+    },
+    {
+      "term": "tensor form",
+      "heading": false
+    },
+    {
+      "term": "gamma rho",
+      "heading": false
+    },
+    {
+      "term": "lambda rho",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0709.3157v1"
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2608.15898v1",
+  "title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "s = 105 GeV",
+      "number": "2.00",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-200-s-105-gev"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 2221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jettiness soft",
+          "heading": false
+        },
+        {
+          "term": "hadronization effects",
+          "heading": false
+        },
+        {
+          "term": "thrust event",
+          "heading": false
+        },
+        {
+          "term": "dis thrust",
+          "heading": false
+        },
+        {
+          "term": "nonperturbative hadronization",
+          "heading": false
+        },
+        {
+          "term": "leading hadronization",
+          "heading": false
+        },
+        {
+          "term": "jettiness observable",
+          "heading": false
+        },
+        {
+          "term": "jettiness class",
+          "heading": false
+        }
+      ],
+      "extract": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes Radja Boughezal,1, ∗Haotian Cao,1, 2, † Zhong-Bo Kang,3, 4, 2, ‡ Xiaohui Liu,5, 6, § Sonny Mantry,7, ¶ and Frank Petriello1, ∗∗ 1Northwestern University, Evanston, IL, USA 2Center for Frontiers in Nuclear Science, Stony Brook University, Stony Brook, NY 11794, USA 3Department of Physics and Astronomy, University of California,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2608.15898v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-200-s-105-gev",
+      "number": "2.00",
+      "title": "s = 105 GeV",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 2585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n3ll kinematic",
+          "heading": false
+        },
+        {
+          "term": "hadronization effects",
+          "heading": false
+        },
+        {
+          "term": "dis thrust",
+          "heading": false
+        },
+        {
+          "term": "gev",
+          "heading": true
+        },
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "renormalon subtractions",
+          "heading": false
+        },
+        {
+          "term": "pythia data",
+          "heading": false
+        },
+        {
+          "term": "kinematic dependence",
+          "heading": false
+        }
+      ],
+      "extract": "s = 105 GeV 2 1 DIS thrust 1a 1 FIG. 2: Kinematic dependence of 2Ω1 for DIS thrust (red), τ1 (green), and τ1a (black). There is no (x, Q2) kinematic dependence for DIS thrust and τ1a. For τ1, the dashed, solid, and dotted green curves correspond to Q2 = [200, 400, 800] GeV2, respectively. For τ1a, one can explicitly check that RB,J = 1 in the ξ ≪QH limit. This implies that τ1a corresponds to a special case where the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hadronization effects",
+      "heading": true
+    },
+    {
+      "term": "dis thrust",
+      "heading": true
+    },
+    {
+      "term": "jettiness soft",
+      "heading": true
+    },
+    {
+      "term": "leading hadronization",
+      "heading": false
+    },
+    {
+      "term": "n3ll kinematic",
+      "heading": true
+    },
+    {
+      "term": "thrust event",
+      "heading": false
+    },
+    {
+      "term": "nonperturbative hadronization",
+      "heading": false
+    },
+    {
+      "term": "kinematic lever",
+      "heading": false
+    },
+    {
+      "term": "kinematic dependence",
+      "heading": true
+    },
+    {
+      "term": "function shemi",
+      "heading": false
+    },
+    {
+      "term": "kinematic bins",
+      "heading": false
+    },
+    {
+      "term": "lever arm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "1-Jettiness groups all final state hadrons into beam (B) or jet (J) regions. In the small 1-Jettiness region, shown above, energetic (red) hadrons are restricted to lie along the beam (⃗nB) or jet (⃗nJ) reference axes, with soft (brown) hadrons unrestricted",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Kinematic dependence of 2Ω1 for DIS thrust",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Normalized hadron-level N3LL τ1-distributions with (blue) and without (pink) kinematic effects in hadronization, compared to Pythia data (black dots)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Normalized hadron-level N3LL τ1a-distributions (blue) compared to Pythia data (black dots)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2608.15898v1"
+  }
+}

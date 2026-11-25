@@ -1,0 +1,1584 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "bn",
+  "title": "bn.dvi",
+  "variant": "pdf",
+  "pages": 64,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Topological preliminaries",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-topological-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "From Hodge theory to topology",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-from-hodge-theory-to-topology"
+    },
+    {
+      "level": 1,
+      "title": "Action of the braid group",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-action-of-the-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "Complex reﬂection groups",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-complex-reﬂection-groups"
+    },
+    {
+      "level": 1,
+      "title": "The period map",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-the-period-map"
+    },
+    {
+      "level": 1,
+      "title": "Arithmetic groups",
+      "number": "7",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-arithmetic-groups"
+    },
+    {
+      "level": 1,
+      "title": "Factors of the Jacobian",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-factors-of-the-jacobian"
+    },
+    {
+      "level": 1,
+      "title": "Deﬁnite integrals",
+      "number": "9",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-9-deﬁnite-integrals"
+    },
+    {
+      "level": 1,
+      "title": "Complex hyperbolic geometry",
+      "number": "10",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-10-complex-hyperbolic-geometry"
+    },
+    {
+      "level": 1,
+      "title": "Lifting homological symmetries",
+      "number": "11",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-11-lifting-homological-symmetries"
+    },
+    {
+      "level": 1,
+      "title": "The hyperelliptic case",
+      "number": "12",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-12-the-hyperelliptic-case"
+    },
+    {
+      "level": 1,
+      "title": "Polygons and Teichm¨uller curves",
+      "number": "13",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-13-polygons-and-teichmuller-curves"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hodge theory",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        },
+        {
+          "term": "complex reﬂection",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 Abstract This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cover- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in sur- face topology. Contents 1 Introduction . . . . . . . . . . . . . . .",
+      "extractCut": true,
+      "blocks": [
+        "library/bn/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 9,
+      "labelStart": "1",
+      "labelEnd": "8",
+      "words": 2523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deligne mostow",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "non-arithmetic lattices",
+          "heading": false
+        },
+        {
+          "term": "weierstrass foliation",
+          "heading": false
+        },
+        {
+          "term": "krammer bigelow",
+          "heading": false
+        },
+        {
+          "term": "period map",
+          "heading": false
+        },
+        {
+          "term": "uller curves",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Every conﬁguration of distinct points (b1, . . . , bn) in C determines a compact Riemann surface X by the equation yd = (x −b1)(x −b2) · · · (x −bn). (1.1) This paper gives an account of the unitary representations of the braid group, and the geometric structures on moduli space, that arise via this branched- covering construction. It also develops new connections with arithmetic groups, Teichm¨uller",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-topological-preliminaries",
+      "number": "2",
+      "title": "Topological preliminaries",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 1456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mapping-class group",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "isomor phism",
+          "heading": false
+        },
+        {
+          "term": "braid relation",
+          "heading": false
+        },
+        {
+          "term": "branched covering",
+          "heading": false
+        },
+        {
+          "term": "modc",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        }
+      ],
+      "extract": "Topological preliminaries A basic reference for the algebraic structure of the braid groups and mapping- class groups is [Bi]; see also [BZ], [KT] and [FM]. Moduli spaces and point conﬁgurations. Given n ≥2, let C⟨n⟩denote the space of unordered subsets B ⊂C with |B| = n, and similarly for bC⟨n⟩. Each of these spaces is naturally a connected complex manifold; for example, C⟨n⟩can be identiﬁed with the space of monic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-from-hodge-theory-to-topology",
+      "number": "3",
+      "title": "From Hodge theory to topology",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hodge",
+          "heading": true
+        },
+        {
+          "term": "branched covering",
+          "heading": false
+        },
+        {
+          "term": "hodge structure",
+          "heading": false
+        },
+        {
+          "term": "eigenspaces",
+          "heading": false
+        },
+        {
+          "term": "genus zero",
+          "heading": false
+        },
+        {
+          "term": "holomorphic forms",
+          "heading": false
+        },
+        {
+          "term": "intersection form",
+          "heading": false
+        },
+        {
+          "term": "deck",
+          "heading": false
+        }
+      ],
+      "extract": "From Hodge theory to topology In this section we analyze the action of the braid group further, by using holomorphic 1-forms to represent the cohomology of X. Hodge structure. A given point conﬁguration B ⊂C determines a com- plex structure on the genus g cyclic covering space π : X →bC branched over B ∪{∞}. The complex structure in turn determines the g-dimensional space of holomorphic 1-forms Ω(X) on X, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-action-of-the-braid-group",
+      "number": "4",
+      "title": "Action of the braid group",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "17",
+      "labelEnd": "21",
+      "words": 1500,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "near inﬁnity",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "lifting",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic",
+          "heading": false
+        },
+        {
+          "term": "twists",
+          "heading": false
+        }
+      ],
+      "extract": "Action of the braid group In this section we determine the representation ρq : Bn →U(H1(X)q). Theorem 4.1 There is a spanning set (ei)n 1 for H1(X)q such that the in- tersection form is given by ⟨ei, ei⟩ = 2 Im q, ⟨ei, ei+1⟩ = √ −1(1 −q), and ⟨ei, ej⟩ = 0 if |i −j| > 1; and the action of the braid group is given by eτ ∗ i (x) = x − √−1 2 ⟨x, ei⟩ei (4.1) if q = −1, and otherwise by eτ ∗ i (x) = x −(q + 1) ⟨x, ei⟩",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-complex-reﬂection-groups",
+      "number": "5",
+      "title": "Complex reﬂection groups",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 27,
+      "labelStart": "21",
+      "labelEnd": "26",
+      "words": 1397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reﬂection groups",
+          "heading": true
+        },
+        {
+          "term": "complex reﬂection",
+          "heading": true
+        },
+        {
+          "term": "reduced burau",
+          "heading": false
+        },
+        {
+          "term": "burau representation",
+          "heading": false
+        },
+        {
+          "term": "type ean",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "artin group",
+          "heading": false
+        },
+        {
+          "term": "sts tst",
+          "heading": false
+        }
+      ],
+      "extract": "Complex reﬂection groups In this section we put the action of the braid group on H1(X)q in context by relating it to Artin systems, complex reﬂection groups and the Burau representation. Artin systems. Let Γ be a ﬁnite graph with vertex set S. The associated Artin group A(Γ) is the group freely generated by S, modulo the following relations: 1. If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-the-period-map",
+      "number": "6",
+      "title": "The period map",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "31",
+      "words": 1630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "period map",
+          "heading": true
+        },
+        {
+          "term": "absolute periods",
+          "heading": false
+        },
+        {
+          "term": "relative periods",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "moduli spaces",
+          "heading": false
+        },
+        {
+          "term": "holomorphic forms",
+          "heading": false
+        },
+        {
+          "term": "trivial bundle",
+          "heading": false
+        },
+        {
+          "term": "stratum",
+          "heading": false
+        }
+      ],
+      "extract": "The period map In this section we introduce the period map fq : T ∗ 0,n →Hr,s from the Teichm¨uller space of n points in the plane to the space Hr,s of positive lines in Cr,s. This map records, for each conﬁguration B ⊂C and for q = ζ−k d , the line in H1(X)q ∼= Cr,s spanned by the holomorphic 1-form [dx/yk]. It is deﬁned so long as 1/n < k/d < 1. We then show: Theorem 6.1 The period map is a holomorphic local",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-arithmetic-groups",
+      "number": "7",
+      "title": "Arithmetic groups",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 1259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic groups",
+          "heading": true
+        },
+        {
+          "term": "sp2g",
+          "heading": false
+        },
+        {
+          "term": "arithmetic lattice",
+          "heading": false
+        },
+        {
+          "term": "arithmetic triangle",
+          "heading": false
+        },
+        {
+          "term": "primitive d-th",
+          "heading": false
+        },
+        {
+          "term": "d-th root",
+          "heading": false
+        },
+        {
+          "term": "commensurable",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "Arithmetic groups We now turn to arithmetic constraints on the image of the braid group. Consider the Z[q]-module Λn,q = H1(X, Z[q])q ⊂H1(X)q. The unitary automorphisms preserving this module form a countable sub- group U(Λn,q) ⊂U(H1(X)q) ∼= U(r, s). Since our representation of the braid group preserves H1(X, Z[q]), it also preserves Λn,q, and hence it factors as: ρq : Bn →U(Λn,q) ⊂U(r, s). In this section we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-factors-of-the-jacobian",
+      "number": "8",
+      "title": "Factors of the Jacobian",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "35",
+      "labelEnd": "39",
+      "words": 1712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primitive dth",
+          "heading": false
+        },
+        {
+          "term": "elliptic diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "dth roots",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        },
+        {
+          "term": "jacobian",
+          "heading": true
+        },
+        {
+          "term": "rigid factor",
+          "heading": false
+        },
+        {
+          "term": "jac",
+          "heading": false
+        },
+        {
+          "term": "genus curves",
+          "heading": false
+        }
+      ],
+      "extract": "Factors of the Jacobian In this section we elaborate some of the algebraic geometry underlying the cases where ρq(Bn) is ﬁnite. In particular, we describe a basis of elliptic diﬀerentials for the representative examples (n, d) = (3, 4) and (3, 6). We begin by showing: Theorem 8.1 The representation of the braid group ρq(Bn) at a primitive dth root of unity is ﬁnite iﬀ n = 3 and d = 3, 4, 6 or 10; or n = 4 and d = 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-deﬁnite-integrals",
+      "number": "9",
+      "title": "Deﬁnite integrals",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 45,
+      "labelStart": "39",
+      "labelEnd": "44",
+      "words": 1563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integrals",
+          "heading": true
+        },
+        {
+          "term": "deﬁnite",
+          "heading": true
+        },
+        {
+          "term": "elliptic",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed",
+          "heading": false
+        },
+        {
+          "term": "symmetry",
+          "heading": false
+        },
+        {
+          "term": "discussed",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnite integrals In this section we present another consequence of ﬁniteness of the represen- tation of the braid group. Theorem 9.1 Suppose n ≥3 and 0 < µ < 1. Then I(b1, b2, . . . , bn) = Z b2 b1 dx ((x −b1)(x −b2) · · · (x −bn))µ is an algebraic function of (b1, . . . , bn) iﬀρq(Bn) is ﬁnite for q = exp(−2πiµ), and µ̸ = 1/n. Here the integral is initially deﬁned for distinct points bi ∈R, and then extended to C",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-complex-hyperbolic-geometry",
+      "number": "10",
+      "title": "Complex hyperbolic geometry",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 50,
+      "labelStart": "44",
+      "labelEnd": "49",
+      "words": 1670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "non-arithmetic lattices",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic orbifold",
+          "heading": false
+        },
+        {
+          "term": "arithmetic hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic structures",
+          "heading": false
+        },
+        {
+          "term": "nonarithmetic",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite volume",
+          "heading": false
+        }
+      ],
+      "extract": "Complex hyperbolic geometry In this section we discuss the cases where moduli space acquires a complex hyperbolic metric of ﬁnite volume. For example, we will see: Theorem 10.1 For n = 4, 5, 6, 8 and 12, the period map fq : M0,n →CHn−3/ρq(Bn) at q = ζ−2 n presents moduli space as the complement of a divisor in a ﬁnite- volume, arithmetic, complex-hyperbolic orbifold. (This divisor corresponds to certain Dehn twists",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-11-lifting-homological-symmetries",
+      "number": "11",
+      "title": "Lifting homological symmetries",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 679,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "almost onto",
+          "heading": false
+        },
+        {
+          "term": "primitive dth",
+          "heading": false
+        },
+        {
+          "term": "dth root",
+          "heading": false
+        },
+        {
+          "term": "homological",
+          "heading": true
+        },
+        {
+          "term": "natural map",
+          "heading": false
+        },
+        {
+          "term": "triangle group",
+          "heading": false
+        },
+        {
+          "term": "lifting",
+          "heading": true
+        },
+        {
+          "term": "arithmetic",
+          "heading": false
+        }
+      ],
+      "extract": "Lifting homological symmetries For brevity of notation, let Sp(X) = Sp(H1(X, Z)) ∼= Sp2g(Z), let Sp(X)T denote the centralizer of T ∗, and let Sp(X)T d = Sp(X)T | Ker Φd(T ∗), where Φd(x) is the dth cyclotomic polynomial. As in §7, we have natural maps Bn →Mod(X)T →Sp(X)T →Sp(X)T d . We say a group homomorphism φ : G1 →G2 almost onto if [G2 : φ(G1)] is ﬁnite. In this section we study the following purely topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-12-the-hyperelliptic-case",
+      "number": "12",
+      "title": "The hyperelliptic case",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 55,
+      "labelStart": "51",
+      "labelEnd": "54",
+      "words": 1202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secant foliation",
+          "heading": false
+        },
+        {
+          "term": "secant lines",
+          "heading": false
+        },
+        {
+          "term": "weierstrass foliation",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic case",
+          "heading": true
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "period domain",
+          "heading": false
+        },
+        {
+          "term": "period map",
+          "heading": false
+        },
+        {
+          "term": "weierstrass form",
+          "heading": false
+        }
+      ],
+      "extract": "The hyperelliptic case In this section we discuss the hyperelliptic case, where X takes the form y2 = (x −b1) · · · (x −bn) (12.1) and ω = dx/y. A special feature of this case is that the symmetry T ∗ω = −ω is preserved by the Teichm¨uller geodesic ﬂow. Consequently, the period map fq : T ∗ 0,n →Hg,g is compatible with a natural action of SL2(R). We will use this compatibility to analyze fq and its image, and (in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-13-polygons-and-teichmuller-curves",
+      "number": "13",
+      "title": "Polygons and Teichm¨uller curves",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 64,
+      "labelStart": "54",
+      "labelEnd": null,
+      "words": 2355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": true
+        },
+        {
+          "term": "uller curves",
+          "heading": true
+        },
+        {
+          "term": "artin groups",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "weierstrass foliation",
+          "heading": false
+        },
+        {
+          "term": "polygons",
+          "heading": true
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "immersed disks",
+          "heading": false
+        }
+      ],
+      "extract": "Polygons and Teichm¨uller curves Finally we describe certain totally geodesic Teichm¨uller curves in moduli space from the perspective of braid groups and polyhedra. Regular polygons. We continue in the hyperelliptic setting, with g > 0 and n = 2g + 1. The Weierstrass foliation of T ∗ 0,2g+1 descends to a foliation of M∗ 0,2g+1, which we also denote by W. Let α = τ1τ3 . . . τ2g−1 and β = τ2τ4 . . . τ2g (13.1) be the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "April,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "1 Eigenspaces."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 9",
+      "figure 10",
+      "figure 11",
+      "table 1",
+      "table 2",
+      "table 3",
+      "table 4",
+      "table 5",
+      "table 6",
+      "table 7",
+      "table 8"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid group",
+      "heading": true
+    },
+    {
+      "term": "teichm uller",
+      "heading": true
+    },
+    {
+      "term": "complex teichm",
+      "heading": false
+    },
+    {
+      "term": "period map",
+      "heading": true
+    },
+    {
+      "term": "uller curves",
+      "heading": true
+    },
+    {
+      "term": "uller space",
+      "heading": false
+    },
+    {
+      "term": "reﬂection group",
+      "heading": false
+    },
+    {
+      "term": "mapping-class group",
+      "heading": false
+    },
+    {
+      "term": "arithmetic groups",
+      "heading": true
+    },
+    {
+      "term": "covering map",
+      "heading": false
+    },
+    {
+      "term": "arithmetic lattice",
+      "heading": false
+    },
+    {
+      "term": "triangle group",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The signature of H1(X)q for n = 6",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Quadrilaterals and squares",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Line conﬁguration associated to 5 points on a conic",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Right twists generating the braid group",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The surface Xi is built from the Z/d-covering space of a pair of",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Occupied eigenspaces H1(X)jk are shown in white. Those above",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A model for the branched covering X",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The braid groups of n points in C and C∗correspond to the Coxeter",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "For q = ζ−k",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "Rigid factors of the Jacobian",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The cycle D is modiﬁed by a loop around p′",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "11",
+      "title": "Algebraic deﬁnite integrals",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "The sphere with the ﬂat metric |dx|/|xn −1|1/2, n = 3, 5, 7",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Immersed disks for 1 ≤g ≤8. Thus Q can be visualized as the double of the immersed disk D = f(H) across its boundary. The disk D is a square for g = 1, an L-shaped region for g = 2, and an immersed right-angled polygon for g ≥3 (see Figure 14.)",
+      "page": 57,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The immersion f, factored through z2, for g = 4",
+      "page": 58,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "12 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p55); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/bn"
+  }
+}

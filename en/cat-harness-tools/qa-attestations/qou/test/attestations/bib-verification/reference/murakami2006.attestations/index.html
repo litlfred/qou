@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/murakami2006.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-20oiureozc.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-20oiureozc","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/murakami2006.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/murakami2006.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/murakami2006.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;murakami2006&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 178,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-math-0603217v3/0603217v3.pdf&quot;
+      },
+      &quot;id&quot;: &quot;murakami2006&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;docs/audits/2026-07-26-sdeformed-channel-signflip.md names the literature backing for the corpus&#39;s deformed volume conjecture as &#39;Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami-Yokota&#39; -- with no ref() entry for the H. Murakami item. This is that item, in its most directly usable form: it states the parameterized volume conjecture at exactly the corpus&#39;s evaluation point exp((u + 2*pi*i)/N), defines v_K(u) and the volume function, and -- the part that matters most here -- explains in section 4 that its polarization DIFFERS from Gukov&#39;s and that the two agree only when Re(u) = 0. The corpus&#39;s SDeformedVolumeChannel work is a SIGN-FLIP probe on Im V_41(u) = (sqrt3/4)(Re^2 u - Im^2 u), i.e. it lives precisely where Re(u) != 0 and the polarization choice bites. Citing the wrong polarization there would flip a sign.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Conj 2.1, eqs. (2.1)-(2.3)&quot;,
+            &quot;statement&quot;: &quot;H(K;u) = (u + 2*pi*i) * lim_N log J_N(K; exp((u+2*pi*i)/N))/N is analytic on an open O_K; with v_K(u) := 2 dH/du - 2*pi*i, the volume function satisfies V(K;u) = Im H(K;u) - pi*Re(u) - (1/2)*Re(u)*Im(v_K(u)).&quot;,
+            &quot;useForFolio&quot;: &quot;The precise definition of the (u, v) pair and of the volume function that QOU/Knot/FigureEightComplexVolume.lean encodes as &#39;the NZ relation V&#39;(u) proportional to v(u)&#39;. It replaces a paraphrase with the exact functional relation, including the -pi*Re(u) and -(1/2)Re(u)Im(v) terms that a Re(u) != 0 evaluation cannot drop.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.Knot.FigureEightComplexVolume&quot;,
+              &quot;QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel&quot;,
+              &quot;conj:binding-qbeta-complex-volume&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Section 2, paragraph after Rmk 2.5 (via Murakami-Yokota Cor 2.4), and section 4&quot;,
+            &quot;statement&quot;: &quot;Conjecture 2.1 is PROVED for the figure-eight knot; and for 4_1 the Gukov-type statement that (-exp(-v_K(u)/2), exp(u/2)) is a zero of the A-polynomial is also proved.&quot;,
+            &quot;useForFolio&quot;: &quot;Theorem-level backing for the two facts QOU/Knot/FigureEightComplexVolume.lean assumes about 4_1: that the deformed limit exists and is analytic, and that (u, v) lies on the A-polynomial curve -- the latter is what qbeta_nz_even_series_fourone_probe.py uses to read tau off the CCGLS A-polynomial.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.Knot.FigureEightComplexVolume&quot;,
+              &quot;computations/probes/qbeta_nz_even_series_fourone_probe.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Section 4, final paragraph of the Conj 4.1 discussion; also Rmk 2.2&quot;,
+            &quot;statement&quot;: &quot;Gukov&#39;s generalization uses a different polarization; it agrees with Conjecture 2.1 only when Re(u) = 0, the difference for Re(u) != 0 being a polarization choice. Rmk 2.2 further flags a meridian/longitude convention difference from CCGLS and a missing factor of four in a CCGLS formula.&quot;,
+            &quot;useForFolio&quot;: &quot;A named, published convention hazard sitting directly under the corpus&#39;s sign-flip probe, which evaluates at Re(u) != 0. Any QOU statement citing &#39;the generalized volume conjecture&#39; must say WHICH polarization; this is the source that makes that choice explicit.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/audits/2026-07-26-sdeformed-channel-signflip.md&quot;,
+              &quot;QOU.QBeta.PhiBSArgumentIdentification&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry despite being named (as &#39;H. Murakami&#39;) as theorem backing in a live audit doc; register so the SDeformedVolumeChannel work can cite a key.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts (new id, e.g. murakami2006version)&quot;,
+            &quot;bean&quot;: &quot;qou-06qg&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;The audit doc&#39;s literature-object paragraph and the Lean file&#39;s docstring both assert the deformed VC for 4_1 without a citable source.&quot;,
+            &quot;target&quot;: &quot;QOU.Knot.FigureEightComplexVolume (docstring) and docs/audits/2026-07-26-sdeformed-channel-signflip.md&quot;,
+            &quot;bean&quot;: &quot;qou-lxqf&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;The Gukov-vs-Murakami polarization difference at Re(u) != 0 is a real risk to the sign-flip conclusion and is not recorded anywhere in the corpus. Proposing new-remark rather than aid-proof: I have not checked which polarization the corpus&#39;s V_41 series actually realises, so this flags a check, it does not close one.&quot;,
+            &quot;target&quot;: &quot;a remark on the polarization convention attached to conj:binding-qbeta-complex-volume&quot;,
+            &quot;bean&quot;: &quot;qou-ixu7&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;d7375d4fee00&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

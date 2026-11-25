@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/modified-quantum-dimensions-and-re-normalized-link-invariant",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Modified quantum dimensions and re-normalized link invariants",
+      "dcterms:creator": [
+        "dimensions, Modified quantum",
+        "link, re-normalized"
+      ],
+      "dcterms:issued": "D:20090205",
+      "bibo:doi": "10.1112/S0010437X08003795",
+      "dcterms:identifier": "https://doi.org/10.1112/S0010437X08003795",
+      "dcterms:source": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+      "dcterms:hasVersion": "library/modified-quantum-dimensions-and-re-normalized-link-invariant"
+    }
+  ]
+}

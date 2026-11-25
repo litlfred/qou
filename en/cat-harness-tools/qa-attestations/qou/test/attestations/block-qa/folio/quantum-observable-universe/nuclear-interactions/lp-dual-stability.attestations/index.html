@@ -1,0 +1,2306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1g8bt4shfan.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1g8bt4shfan","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:35.606Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8238eab67b97&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;,
+        &quot;lean&quot;: &quot;a8d36aef85b3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8238eab67b97&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;,
+        &quot;lean&quot;: &quot;a8d36aef85b3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-no-placeholder-stub&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32&quot;,
+      &quot;notes&quot;: &quot;4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement is a bare mathematical claim.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. Statement is the four numbered claims; &#39;Hence partial confinement is not sufficient&#39; is a consequence of claim 3, not commentary.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement respects the chapter&#39;s base-ring regime.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. Norms and condition numbers are ℝ by meaning; the Lean is over ℝ.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. The §7c note now matches the Lean.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). Plain scholarly statement; the confinement-specific material moved to the reading remark.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. Same gap as proof-statement-integrity: Lean ⊂ .md (claims 1, 4 of 4). Also the .md writes claim 4 as tr_M(x*) = y₀*·n_target; the Lean has tᵀx, which equals tr_M(x*) only if tᵢ = tr_M(bᵢ), not stated in either.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. The .md proposition asserts four claims; the Lean proves claims 1 and 4 only. Claim 2 (|y*ᵢ| ≤ κ(G)·‖t‖, κ ≈ 7.0) and claim 3 (the σ₀σ₁⁻¹ sub-braid is LP-unstable) are neither proved nor stated as hypotheses; the Lean docstring says claim 2 does not follow from LP duality in general. The block is still kind proposition; owner-rulings (2026-11-21, &#39;Try and prove&#39;) records that the kind waits on the owner. Not introduced by #8932 (the old Lean was a laundered projection), but left open.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. No class field reaches the conclusion; self-assuming audit reports 0 candidates in the file (it reported the old 4-field projection at 94ba3eb).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. No True/rfl/native_decide. Claim 1 is close to definitional (&#39;LP stability is feasibility&#39;), and the docstring says so.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No false claims identified in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39;: mathematical reasoning is consistent.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The block &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; presents substantial mathematical content: An element $x \\in H_3(q)$ with NF decomposition $x = \\sum_{i=1}^{6} x_i b_i$ is classified by two LP criteria.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No overclaims: the scope of &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; is appropriately qualified.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The argument flow in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; is logically sound, mapping onto the cited dependencies.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;da84b0638b865e5ad2fb78f8eb09caff44827982&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the .md/.ts (unchanged) against the new library Lean at da84b06 (QOU/ParticleInteractions/lp_dual_stability.lean). The carrier class LpDualStabilityContext is gone; `lp_dual_stability` takes G, t and a PrimalOptimal point z of an explicit standard-form LP (opSelA/opSelRhs/opSelCost) and derives (1) G x ≥ 0 from the equality rows plus slack ≥ 0, Σx = n_target, and (4) a DualOptimal l with tᵀx = n_target·l(last) via QOU.Optimization.lp_strong_duality_uncond. lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. qa-sweep on this platform does not resolve this library-Lean ref (Lean criteria came back n/a), so this is the hand review. The 2026-08-08 .ts authorNote still describes fields `t_norm : ℝ` and `κ_G : ℝ` of lp_dual_stability.lean, which no longer exist.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. Divergence left in the prose around it: the Lean module docstring (lp_dual_stability.lean lines 10-17) still says &#39;The block claims four things&#39; and lists the kappa(G) shadow-price bound and the sigma0 sigma1^-1 instability; the .ts authorNote dated 2026-08-08 still describes t_norm : R and kappa_G : R as fields of lp_dual_stability.lean carrying the shadow-price bound. Neither field exists and that claim moved to rem:lp-dual-stability-confinement-reading. Also index-of-definitions/definition-index.md:661 still titles the block &#39;confined hadrons have bounded shadow prices&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. The stale &#39;four things&#39; docstring and t_norm / kappa_G note reported at 2e45b66 are fixed; the .md&#39;s two parts are what the Lean derives.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39;, hence no citation misuse is possible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The algebraic and logical relations in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; are independent of empirical tuning parameters.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The derivation steps and formal definitions in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39; are reproducible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. No issue for this criterion.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. The .ts still carries computation {script: confinement-operator-selection.py, status: verified}. Neither current claim depends on it (both are proved in Lean), and the sibling remark now says that script computes no shadow prices. The script check compute-lp-dual-present fails critical on this link; it fails the same way on the PR base 94ba3eb (re-swept there), so it is not introduced by this PR.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e4d7319f65b&quot;,
+        &quot;ts&quot;: &quot;ee1540e52886&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.408716Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing.&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;verdict&quot;: &quot;open-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing entirely, preventing formal verification of the claims in &#39;LP dual stability: confined hadrons have bounded shadow prices&#39;.&quot;,
+      &quot;evidence&quot;: &quot;Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read at f077b32 after 9c45b23 narrowed the block to two claims. The library Lean QOU.ParticleInteractions.lp_dual_stability (unchanged since da84b06; lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms: propext, Classical.choice, Quot.sound) takes a PrimalOptimal point z of the standard-form LP opSelA/opSelRhs/opSelCost and derives (1) G x &gt;= 0 in every channel and sum x = n from feasibility, and (2) a DualOptimal l with sum t x = n * l(last) from lp_strong_duality_uncond. These are exactly parts 1 and 2 of the .md statement; the Lean is stated for general k, which contains the six-channel case. The earlier drain objection (Lean sibling missing at particle-interactions/...) named a path that is not this block&#39;s; the ref resolves to the library declaration above. No open objection to the two-claim statement.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote seq3&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:28:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a268ce5bc7908cb3ed8eebcdd8083484df4d04d6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:53.919Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;&#39;Hence partial confinement is not sufficient. All three units are required.&#39;&quot;,
+      &quot;notes&quot;: &quot;Substantive contrast, and the positive half is stated immediately -- correct construction. (The claim&#39;s numerical basis is flagged under trap-superlative.)&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:53.961Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No setup-then-reframe construction; no sentence whose second clause carries the paragraph.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.005Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.052Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No reflex three-item list; enumerations present are driven by the underlying content.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.094Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.157Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No narration of the text&#39;s own emphasis; any &#39;note that&#39; is standard mathematical prose.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.209Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No block-final sentence restating what the text already established.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.250Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No personal or institutional-warmth register; prose is impersonal throughout.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.298Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Clause 2 &#39;the dual shadow prices are bounded ... where $\\kappa(G) \\approx 7.0$ is the condition number&#39;; clause 3 &#39;$G\\vec{x}$ has a negative $\\sigma_0$ component&#39;; clause 4 &#39;Strong duality holds&#39;. .ts marks computation.status: verified.&quot;,
+      &quot;notes&quot;: &quot;OPENED THE CITED WITNESS -- three separate failures. (1) EVERY LP-DUAL FIELD IS A STUB: y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap are all null in computations/confinement-operator-selection.witness.json, and three carry the literal string &#39;STUB -- re-run script through lp_dual_solver.py to populate&#39;. Clause 4&#39;s strong-duality equation therefore has no numerical backing whatever, while the .ts says status &#39;verified&#39;. (2) kappa(G) RECOMPUTED FROM THE WITNESS&#39;S OWN GRAM MATRIX = 34.16, not 7.0 -- the six eigenvalues are [-0.855067, 0.101797, 0.855067, 0.855067, 0.855067, 3.47695], so |lam|max/|lam|min = 3.47695/0.101797. Understating kappa by 4.9x makes the shadow-price bound 4.9x tighter than the Gram matrix justifies. (3) Clause 3 is REFUTED by that same Gram matrix -- see the lp-dual-stability-table-data entry. Also: the witness pins q0 = 1.1099785955541805 (the OLD MUON value) and z = 0.4993203340335982 (excised convention C).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6b4eb7612458&quot;,
+        &quot;ts&quot;: &quot;314c808137a6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:54.342Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;Sentences parse aloud; no noun-chain stall.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;f3da4021e482&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T19:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f077b322fe6b71f60c1b9dc8b6ee6d594335d937&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the narrowed .md at f077b32 (statement plus one paragraph: &#39;Both parts hold for every Gram matrix G and cost vector t...&#39;). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fda96d8712ba&quot;,
+        &quot;ts&quot;: &quot;c7ed580ea07a&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T20:15:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;85c994b4d891a5975521c1761a995390eb48a623&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 85c994b (.md unchanged). The 2026-11-21 status note now says the two moved claims went to rem:lp-dual-stability-confinement-reading, &#39;which records that neither is currently checked&#39;. The 2026-08-08 §7c note is rewritten for the current Lean (LP over R, order x &gt;= 0, in-repo LP duality over R) and says the t_norm / kappa_G record is gone. The Lean module docstring now opens &#39;Until 2026-11-21 the block claimed four things&#39;. lean-direct -DautoImplicit=false -s 65536 on lp_dual_stability.lean: exit 0; #print axioms for lp_dual_stability, stable_of_feasible, count_of_feasible, primalObj_opSelCost, dualObj_opSelRhs: propext, Classical.choice, Quot.sound. No instance.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

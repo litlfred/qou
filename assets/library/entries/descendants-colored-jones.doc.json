@@ -1,0 +1,1109 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "descendants-colored-jones",
+  "title": "The descendant colored Jones polynomials",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2308",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The descendant colored Jones polynomials of a knot",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2309",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-descendant-colored-jones-polynomials-of-a-kn"
+    },
+    {
+      "level": 2,
+      "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2309",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-a-conjectured-matrix-valued-invariant-from-gzkas"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the descendants",
+      "number": null,
+      "page": 4,
+      "pageLabel": "2310",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-definition-of-the-descendants"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the descendants",
+      "number": null,
+      "page": 5,
+      "pageLabel": "2311",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-properties-of-the-descendants"
+    },
+    {
+      "level": 2,
+      "title": "A conjecture",
+      "number": null,
+      "page": 8,
+      "pageLabel": "2314",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-a-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": null,
+      "page": 8,
+      "pageLabel": "2314",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-examples"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones polynomials at roots of unity",
+      "number": null,
+      "page": 12,
+      "pageLabel": "2318",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-colored-jones-polynomials-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices with a spectral parameter",
+      "number": null,
+      "page": 13,
+      "pageLabel": "2319",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-r-matrices-with-a-spectral-parameter"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the gauge symmetry equations",
+      "number": null,
+      "page": 15,
+      "pageLabel": "2321",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-proof-of-the-gauge-symmetry-equations"
+    },
+    {
+      "level": 2,
+      "title": "Knot invariants",
+      "number": null,
+      "page": 19,
+      "pageLabel": "2325",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-knot-invariants"
+    },
+    {
+      "level": 2,
+      "title": "An example",
+      "number": null,
+      "page": 23,
+      "pageLabel": "2329",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-an-example"
+    },
+    {
+      "level": 2,
+      "title": "A conjecture",
+      "number": null,
+      "page": 24,
+      "pageLabel": "2330",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-a-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 24,
+      "pageLabel": "2330",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 24,
+      "pageLabel": "2330",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "2307",
+      "labelEnd": "2308",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "quantum modularity",
+          "heading": false
+        }
+      ],
+      "extract": "Pure and Applied Mathematics Quarterly Volume 19, Number 5, 2307–2334, 2023 The descendant colored Jones polynomials Stavros Garoufalidis and Rinat Kashaev In memory of our friend, Vaughan Jones Abstract: We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the",
+      "extractCut": true,
+      "blocks": [
+        "library/descendants-colored-jones/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2308",
+      "labelEnd": "2309",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": false
+        },
+        {
+          "term": "hab",
+          "heading": false
+        },
+        {
+          "term": "kas",
+          "heading": false
+        },
+        {
+          "term": "conjectured",
+          "heading": false
+        }
+      ],
+      "extract": "The Jones polynomial [Jon87] is a fascinating polynomial invariant of knots with deep connections to the topology and geometry in dimension 3. Its dis- covery in 1984, apart from revolutionizing Knot Theory, lead to a new area of research, Quantum Topology, with applications and challenges that we will not attempt to summarize here. The Jones polynomial and its colored ver- sions (a sequence of polynomials, one for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-descendant-colored-jones-polynomials-of-a-kn",
+      "number": null,
+      "title": "The descendant colored Jones polynomials of a knot",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2309",
+      "labelEnd": "2309",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-a-conjectured-matrix-valued-invariant-from-gzkas",
+      "number": null,
+      "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2309",
+      "labelEnd": "2310",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjectured matrix-valued",
+          "heading": true
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst row",
+          "heading": false
+        },
+        {
+          "term": "zag",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "recursion",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by explaining the most recent reappearance of the colored Jones polynomials. An extension of the Volume Conjecture is the Quantum Mod- ularity Conjecture of Zagier [Zag10] which, roughly speaking, discusses the asymptotics of the Kashaev invariant at roots of unity. More recently, a Re- ﬁned Quantum Modularity Conjecture was proposed in [GZ] which suggests the existence of a matrix-valued invariant deﬁned",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-definition-of-the-descendants",
+      "number": null,
+      "title": "Definition of the descendants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "2310",
+      "labelEnd": "2311",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "qkm",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic kernel",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we extend the 2-parameter colored Jones function Jn(q) of a knot in 3-space into a 3-parameter descendant colored Jones function DJ(m) n (q) for n ≥0, m ∈Z, which • specializes to the colored Jones polynomials Jn(q) when m = 0 and n ≥1; • specializes to a sequence of elements of the Habiro ring DJ(m)(q) when n = 0; • is determined by either of the above specializations; • is determined by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-properties-of-the-descendants",
+      "number": null,
+      "title": "Properties of the descendants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "2311",
+      "labelEnd": "2314",
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored habiro",
+          "heading": false
+        },
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "habiro polynomials",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic func",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "minimal recursion",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        }
+      ],
+      "extract": "From their very deﬁnition, the 0-th descendants DJ(0) n (q) and DJ(0)(q) are nothing but the colored Jones polynomial Jn(q) and the Kashaev invariant of 2312 Stavros Garoufalidis and Rinat Kashaev the knot. Thus, one may call DJ(m) n (q) and DJ(m)(q) the descendant colored Jones and the descendant Kashaev invariant of a knot, respectively. Note further that for all integers m, the 3-variable invariant DJ(m)(x, q) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-a-conjecture",
+      "number": null,
+      "title": "A conjecture",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "2314",
+      "labelEnd": "2314",
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "descendant",
+          "heading": false
+        },
+        {
+          "term": "consecutive",
+          "heading": false
+        }
+      ],
+      "extract": "We end this section with a conjecture. Let us denote by r + 1 the size of the matrix J. Conjecture 2.4. The top row of the matrix J of the conjectured knot in- variants [GZ] is a rational linear combination of r + 1 consecutive terms of the descendant invariant DJ(m)(q).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "2314",
+      "labelEnd": "2318",
+      "words": 1486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "habiro polynomials",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous linear",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic module",
+          "heading": false
+        },
+        {
+          "term": "qmf",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give explicit formulas for the descendant colored Jones polynomials and their recursions for the trefoil (a non-hyperbolic knot) and for the two simplest hyperbolic knots, the 41 and 52 knots. For the 31 knot, we have H31 k (q) = (−1)kq 1 2 k(k+3) for all k ≥0 [Hab02, Mas03]. It follows from Equation (5) that the descendant colored Jones poly- nomials DJ31,(m)(x, q) satisfy the inhomogeneous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-colored-jones-polynomials-at-roots-of-unity",
+      "number": null,
+      "title": "The colored Jones polynomials at roots of unity",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "2318",
+      "labelEnd": "2319",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomials",
+          "heading": true
+        },
+        {
+          "term": "kas",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": true
+        },
+        {
+          "term": "spectral parameter",
+          "heading": false
+        },
+        {
+          "term": "continuous spectral",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        },
+        {
+          "term": "knot invariants",
+          "heading": false
+        }
+      ],
+      "extract": "This section ﬁlls a historical gap where we discuss a previously unnoticed con- jectural relationship between the colored Jones polynomials and some quan- tum R-matrices at roots of unity considered by the second author in [Kas96]. Namely, we show that the R-matrices over the vector space CN depending on a primitive N-th root of unity ζ and indexed by an integer parameter 0 < m < N actually give knot invariants",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-r-matrices-with-a-spectral-parameter",
+      "number": null,
+      "title": "R-matrices with a spectral parameter",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "2319",
+      "labelEnd": "2321",
+      "words": 673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matn",
+          "heading": false
+        },
+        {
+          "term": "spectral",
+          "heading": true
+        },
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "spectral parameters",
+          "heading": false
+        },
+        {
+          "term": "discrete spectral",
+          "heading": false
+        },
+        {
+          "term": "remaining copy",
+          "heading": false
+        },
+        {
+          "term": "baxter equation",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        }
+      ],
+      "extract": "We begin our discussion of R-matrices by introducing some useful notation. For a positive integer n ∈Z>0, we deﬁne (18) (x)n := n k=1 (1 −xk), ⟨⟨x⟩⟩n := 1 −xn (1 −x)n with the convention (x)0 := 1. For a ﬁxed root of unity ζ of order N = ord(ζ) ∈Z>0, we deﬁne rational functions w(x|n) ∈C(x) for all integers n ∈Z by the recurrence relation (19) w(x|n)(1 −xζn) = w(x|n −1), w(x|0) = 1. One has the addition property",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-proof-of-the-gauge-symmetry-equations",
+      "number": null,
+      "title": "Proof of the gauge symmetry equations",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "2321",
+      "labelEnd": "2325",
+      "words": 745,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xζk",
+          "heading": false
+        },
+        {
+          "term": "lxl",
+          "heading": false
+        },
+        {
+          "term": "xζj",
+          "heading": false
+        },
+        {
+          "term": "r-matrix coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jxj",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give the proofs of equations (26) and (27) which were stated in [Kas96], but proofs were ommitted. We begin with Equation (26). Writing out its left hand side in matrix coeﬃcients (indexed by i, j ∈{0, . . . , N −1}), we have ⟨i|h(x, m)h(y, m)|j⟩= N−1 \u0002 k=0 ⟨i|h(x, m)|k⟩⟨k|h(y, m)|j⟩ (32) = ζ(j−i)m N−1 \u0002 k=0 ⟨⟨xζk−i⟩⟩N⟨⟨yζj−k⟩⟩N so that Equation (26) is equivalent to N−1 \u0002 k=0 ⟨⟨xζk−i⟩⟩N⟨⟨yζj−k⟩⟩N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-knot-invariants",
+      "number": null,
+      "title": "Knot invariants",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "2325",
+      "labelEnd": "2329",
+      "words": 846,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar projection",
+          "heading": false
+        },
+        {
+          "term": "local extrema",
+          "heading": false
+        },
+        {
+          "term": "kas",
+          "heading": false
+        },
+        {
+          "term": "continuous spectral",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "long knot",
+          "heading": false
+        },
+        {
+          "term": "spectral parameter",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": false
+        }
+      ],
+      "extract": "We can use the r-matrix given in Equation (28) to construct knot invariants from their planar projections. This is a standard construction explained in several places that include [Jon89, RT90, Tur88, Tur94]. We will follow the presentation of [Kas] which does not require neither the theory of Hopf alge- bras nor the existence of ribbon elements, and uses as a combinatorial input a generic planar projection of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-an-example",
+      "number": null,
+      "title": "An example",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "2329",
+      "labelEnd": "2330",
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sub-section",
+          "heading": false
+        },
+        {
+          "term": "rinat",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        }
+      ],
+      "extract": "In this sub-section we write an explicit expression for the invariant ⟨41⟩N,n of the simplest hyperbolic knot 41 in the case of a primitive N-th root of unity ζ and a color n ∈Z/NZ. The invariant is an N × N matrix whose entries Mi,j := ⟨i|⟨41⟩N,n|j⟩are given by Mi,j = \u0002 k1,...,k7 j i k1 k2 k3 k4 k5 k6 k7 n = \u0002 k1,...,k7 Vi,k3−n,k7−n,k2(¯ζ)ζk2−k7+(k2−k3+1+n)n Vk6,k4,k7−n,k3−n−1(ζ)ζk6−k3+1+(k6−k7+1+n)n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-a-conjecture",
+      "number": null,
+      "title": "A conjecture",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "2330",
+      "labelEnd": "2330",
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "kas",
+          "heading": false
+        },
+        {
+          "term": "identity matrix",
+          "heading": false
+        }
+      ],
+      "extract": "When n = −1, Equation (43) implies that the invariant of a long knot K is a multiple of the identity N × N matrix, and the multiple is the specialization of the N-colored Jones polynomial that enters the Volume Conjecture [Kas95, Kas97]. When n ∈Z/NZ is arbitrary, we conjecture the following. Conjecture 3.2. For all knots K, strictly positive integers N and n, and a primitive N-th root of unity ζ, we have (62)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "2330",
+      "labelEnd": "2330",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foun dation",
+          "heading": false
+        },
+        {
+          "term": "science foun",
+          "heading": false
+        },
+        {
+          "term": "swiss national",
+          "heading": false
+        },
+        {
+          "term": "sustech",
+          "heading": false
+        }
+      ],
+      "extract": "The authors wish to thank Jie Gu, Marcos Mariño, Campbell Wheeler and Don Zagier for many enlightening conversations, and the International Math Center in SUSTech and the University of Geneva for their hospitality. R. K. wishes to thank Jerome Dubois, Michael Heusener, Martin Palmer, Cristina Palmer-Anghel and Louis-Hadrien Robert for useful conversations. The work of R. K. is partially supported by the Swiss",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "2330",
+      "labelEnd": "2334",
+      "words": 1028,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "christoph koutschan",
+          "heading": false
+        },
+        {
+          "term": "kazuo habiro",
+          "heading": false
+        },
+        {
+          "term": "patrick shanahan",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "johannes kepler",
+          "heading": false
+        },
+        {
+          "term": "vladimir turaev",
+          "heading": false
+        }
+      ],
+      "extract": "[ADO92] Yasuhiro Akutsu, Tetsuo Deguchi, and Tomotada Oht- suki, Invariants of colored links, J. Knot Theory Ramiﬁcations 1 (1992), no. 2, 161–184. MR1164114 The descendant colored Jones polynomials 2331 [CCG+94] Daryl Cooper, Marc Culler, Henry Gillet, Daryl Long, and Peter Shalen, Plane curves associated to char- acter varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84. MR1288467 [Gar04] Stavros",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "descendant colored",
+      "heading": true
+    },
+    {
+      "term": "colored jones",
+      "heading": true
+    },
+    {
+      "term": "colored habiro",
+      "heading": false
+    },
+    {
+      "term": "jones polynomials",
+      "heading": true
+    },
+    {
+      "term": "rinat kashaev",
+      "heading": false
+    },
+    {
+      "term": "knot invariants",
+      "heading": true
+    },
+    {
+      "term": "stavros garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "jones functions",
+      "heading": false
+    },
+    {
+      "term": "n-colored jones",
+      "heading": false
+    },
+    {
+      "term": "jones polyno",
+      "heading": false
+    },
+    {
+      "term": "vaughan jones",
+      "heading": false
+    },
+    {
+      "term": "habiro ring",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "2307",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 2,
+      "label": "2308",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2309",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "2310",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "2311",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "2312",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "2313",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "2314",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "2315",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "2316",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "2317",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "2318",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "2319",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "2320",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "2321",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "2322",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "2323",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "2324",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "2325",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "2326",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "2327",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "2328",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "2329",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "2330",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "2331",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "2332",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "2333",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "2334",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/descendants-colored-jones"
+  }
+}

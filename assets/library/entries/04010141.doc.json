@@ -1,0 +1,962 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "04010141",
+  "title": "04010141",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Cellular algebras and Temperley-Lieb algebras",
+      "number": null,
+      "page": 3,
+      "pageLabel": "143",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-cellular-algebras-and-temperley-lieb-algebras"
+    },
+    {
+      "level": 1,
+      "title": "n-1 n i i + 1 fn: n-> n",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "150",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Let Aa(n)+ be the set",
+      "number": null,
+      "page": 11,
+      "pageLabel": "151",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-let-aan-be-the-set"
+    },
+    {
+      "level": 2,
+      "title": "Define the equivalence relation ~ on A a ( n) + as that which identifies",
+      "number": null,
+      "page": 11,
+      "pageLabel": "151",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-define-the-equivalence-relation-on-a-a-n-as-that"
+    },
+    {
+      "level": 1,
+      "title": "Interrelationships among various Heeke and Temperley- Lieb algebras",
+      "number": null,
+      "page": 13,
+      "pageLabel": "153",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-interrelationships-among-various-heeke-and-tempe"
+    },
+    {
+      "level": 1,
+      "title": "Some Heeke algebras",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": "154",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-42-some-heeke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "An-1·",
+      "number": null,
+      "page": 15,
+      "pageLabel": "155",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-an-1"
+    },
+    {
+      "level": 3,
+      "title": "HBn(q,Q) ~",
+      "number": null,
+      "page": 18,
+      "pageLabel": "158",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-hbnqq"
+    },
+    {
+      "level": 3,
+      "title": "TLBn(q,Q)",
+      "number": null,
+      "page": 18,
+      "pageLabel": "158",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-tlbnqq"
+    },
+    {
+      "level": 3,
+      "title": "Lifting representations from finite to infinite dimensional algebras",
+      "number": null,
+      "page": 19,
+      "pageLabel": "159",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-lifting-representations-from-finite-to-infinite"
+    },
+    {
+      "level": 3,
+      "title": "References",
+      "number": null,
+      "page": 31,
+      "pageLabel": "171",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heeke algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": false
+        },
+        {
+          "term": "affine",
+          "heading": false
+        },
+        {
+          "term": "semisimple",
+          "heading": false
+        },
+        {
+          "term": "problems",
+          "heading": false
+        },
+        {
+          "term": "diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "Advanced Studies in Pure Mathematics 40, 2004 Representation Theory of Algebraic Groups and Quantum Groups pp. 141-173 Cellular algebras and diagram algebras m representation theory J.J. Graham and G.I. Lehrer Abstract. We discuss a circle of ideas for addressing problems in repre- sentation theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are",
+      "extractCut": true,
+      "blocks": [
+        "library/04010141/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "143",
+      "words": 509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine heeke",
+          "heading": false
+        },
+        {
+          "term": "heeke algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple specialisations",
+          "heading": false
+        },
+        {
+          "term": "cellular structure",
+          "heading": false
+        },
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "representa tion",
+          "heading": false
+        },
+        {
+          "term": "standard modules",
+          "heading": false
+        }
+      ],
+      "extract": "We discuss a circle of ideas for addressing problems in representa- tion theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are often generically semisimple, and have non-semisimple specialisations whose representa- tion theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-cellular-algebras-and-temperley-lieb-algebras",
+      "number": null,
+      "title": "Cellular algebras and Temperley-Lieb algebras",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 11,
+      "labelStart": "143",
+      "labelEnd": "151",
+      "words": 3015,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb",
+          "heading": true
+        },
+        {
+          "term": "affine temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "affine diagrams",
+          "heading": false
+        },
+        {
+          "term": "marked diagrams",
+          "heading": false
+        },
+        {
+          "term": "j-l",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb category",
+          "heading": false
+        },
+        {
+          "term": "unmarked diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "Cellular algebras were first defined in [15] in terms of the existence of a basis with specified multiplicative properties. Subsequently, there has been a significant literature (cf. [25], [26], [27], [28] and [13]) in which structural definitions have been given, in terms of the existence of certain filtrations, and in which cellular algebras have been compared with quasi-hereditary algebras; in particular much is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-let-aan-be-the-set",
+      "number": null,
+      "title": "Let Aa(n)+ be the set",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "151",
+      "labelEnd": "151",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "(3.4) Aa(n)+ = {(t,z) It E Z~o, 0::::; t::::; n, n-t E 2Z; z E Rx}. Define Aa(n) by (3.5)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-define-the-equivalence-relation-on-a-a-n-as-that",
+      "number": null,
+      "title": "Define the equivalence relation ~ on A a ( n) + as that which identifies",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "151",
+      "labelEnd": "153",
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "parametrised",
+          "heading": false
+        },
+        {
+          "term": "irreducible",
+          "heading": false
+        },
+        {
+          "term": "pairs",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": true
+        },
+        {
+          "term": "understand",
+          "heading": false
+        }
+      ],
+      "extract": "(0, z) and (0, z- 1) for all z E Rx, and write (3.6) Aa(n)0 = Aa(n)/ ~ Aa(n)O+ = Aa(n)+ / ~ If (t1, zl), (t2, z2) E Aa(n)+, then Wt1,z1 (n) ~ Wt 2 ,z2 (n) if (tb z1) ~ (t2 , z2). Thus Aa(n)0+ plays the role ofT in §2. We write Radcf>t,z for 152 J.J. Graham and G.I. Lehrer the submodule {x E Wt,z(n) I l/Jt,z(x, y) = 0 for ally E Wt,z-1 (n)} of Wt,z(n). Theorem 3. 7 ([16, (2.8)]). Let R be an algebraically closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-interrelationships-among-various-heeke-and-tempe",
+      "number": null,
+      "title": "Interrelationships among various Heeke and Temperley- Lieb algebras",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "153",
+      "labelEnd": "154",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised artin",
+          "heading": false
+        },
+        {
+          "term": "artin group",
+          "heading": false
+        },
+        {
+          "term": "heeke",
+          "heading": true
+        },
+        {
+          "term": "lieb",
+          "heading": true
+        },
+        {
+          "term": "coxeter generators",
+          "heading": false
+        },
+        {
+          "term": "following facts",
+          "heading": false
+        }
+      ],
+      "extract": "Lieb algebras Our purpose in this section is to give a concise statement of the var- ious connections among several Heeke algebras and Temperley-Lieb al- gebras. Behind these connections are facts concerning generalised Artin groups and their interpretation in terms of braids and ribbons. The topo- logical background may be found in [7] and [39], and a more leisurely exposition may be found in [18, §2]. 4.1. Some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-some-heeke-algebras",
+      "number": "4.2",
+      "title": "Some Heeke algebras",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "154",
+      "labelEnd": "155",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heeke",
+          "heading": true
+        },
+        {
+          "term": "symn",
+          "heading": false
+        },
+        {
+          "term": "algebras",
+          "heading": true
+        },
+        {
+          "term": "weyl group",
+          "heading": false
+        },
+        {
+          "term": "diagmm",
+          "heading": false
+        }
+      ],
+      "extract": "Let R be a commutative ring as in §2, and fix elements g,Q € R*. The various Hecke algebras with which we are concerned all emanate from the group ring RI’, where I, is the Artin braid group of type B,, as above. Definition 4.3. Let 5; be the element S; = (oi — q)(oi +.q7') of RI, (i =1,2,...,n). The affine Hecke algebra He(q) of GL, over R is defined by _ Ha(q) = RV /(S1)- Note that since S;,...,S, are all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-an-1",
+      "number": null,
+      "title": "An-1·",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "155",
+      "labelEnd": "158",
+      "words": 994,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heeke algebras",
+          "heading": false
+        },
+        {
+          "term": "hbn",
+          "heading": false
+        },
+        {
+          "term": "cici",
+          "heading": false
+        },
+        {
+          "term": "tjq",
+          "heading": false
+        },
+        {
+          "term": "symn",
+          "heading": false
+        },
+        {
+          "term": "zlo",
+          "heading": false
+        },
+        {
+          "term": "ideal generated",
+          "heading": false
+        },
+        {
+          "term": "generate subalgebra",
+          "heading": false
+        }
+      ],
+      "extract": "(ii) The elements Tt, ... , Tn- 1 generate a subalgebra Hn(q) of ~(q) which has (finite) R-basis {Tw I wE W ~ Symn}. (iii) We have ~(q) ~ RZ®H~(q) ~ R(V)®H~(q), where the tensor product is twisted, using the action of V on H~(q): VTiv- 1 = Ti+l, where the subscript is taken mod n. (iv) (Bernstein} We have ~(q) ~ Hn(q) ® R[Xf'l, ... , x,;1] as R- module, and the multiplication is given by the \"Bernstein relations\":",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-hbnqq",
+      "number": null,
+      "title": "HBn(q,Q) ~",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "158",
+      "labelEnd": "158",
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbn",
+          "heading": true
+        },
+        {
+          "term": "lind",
+          "heading": false
+        },
+        {
+          "term": "tlbn",
+          "heading": false
+        },
+        {
+          "term": "fori",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "J.J. Graham and G.l. Lehrer of ~(q). Since vn is in the centre of TL';,(q) (cf. 4.2(vi)), it follows that vn acts as a scalar, say A E RX in p. Hence p factors through ~(q)j(Vn- .X.1), which is isomorphic (cf. 4.13) via a map which is ----- the identity on TL~(q), to TL';,(q). But by [17, Theorem (2.8)], every ----- irreducible representation ofT L';, ( q) is the inflation via a homomorphism like ¢a of an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-tlbnqq",
+      "number": null,
+      "title": "TLBn(q,Q)",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "158",
+      "labelEnd": "159",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tlbn",
+          "heading": true
+        },
+        {
+          "term": "tjq",
+          "heading": false
+        },
+        {
+          "term": "c1v",
+          "heading": false
+        }
+      ],
+      "extract": "Cellular algebras and diagram algebras 159 We complete this section with a result which is instrumental in ap- plying our results on T~(q) to the representation theory of f&(q). Theorem 4.18 ([18], (5.11)). Let f3 E R satisfy (32 = -qn-2 • Then there is a unique surjective homomorphism gf3 : T~(q) ~ TLBn(q, Q) such that g(3(/i) = Ci fori= 1, 2, ... , n-1, and g(3(T) = f3v. If a, J-L satisfy a- 11-L = (3, then the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-lifting-representations-from-finite-to-infinite",
+      "number": null,
+      "title": "Lifting representations from finite to infinite dimensional algebras",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 31,
+      "labelStart": "159",
+      "labelEnd": "171",
+      "words": 4755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nilpotent indecomposables",
+          "heading": false
+        },
+        {
+          "term": "tlbn",
+          "heading": false
+        },
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "nilpotent representation",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "inflation",
+          "heading": false
+        },
+        {
+          "term": "lifting",
+          "heading": true
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "algebras 5.1. Commutative diagrams and lifting representations Let A and B be R-algebras and 'ljJ : A -+ B be an R-algebra homo- morphism. If p: B-+ EndR(M) is a representation of B (where M is a free R-module) one may lift p to a representation 'lj;* p of A by composing with 'lj;. This is called the inflation of p via 'ljJ We shall discuss in this section the lifting of representations in the diagram 4.19. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "171",
+      "labelEnd": "173",
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine heeke",
+          "heading": false
+        },
+        {
+          "term": "heeke algebras",
+          "heading": false
+        },
+        {
+          "term": "steffen konig",
+          "heading": false
+        },
+        {
+          "term": "george lusztig",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "affine temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "blob algebra",
+          "heading": false
+        }
+      ],
+      "extract": "References [ 1) S. Ariki, \"On the decomposition numbers of the Heeke algebra of G(m, 1, n)\", J. Math. Kyoto Univ. 36 (1996), 789-808. [ 2) S. Ariki and A. Mathas, \"The number of simple modules of the Heeke algebras of type G(r, 1, n)\", Math. Zeitschrift, to appear. [ 3) D. J. Benson, \"Representations and cohomology. I. Basic representation theory of finite groups and associative algebras. Second edition.\" Cam-",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "heeke algebras",
+      "heading": true
+    },
+    {
+      "term": "affine heeke",
+      "heading": false
+    },
+    {
+      "term": "cellular algebras",
+      "heading": true
+    },
+    {
+      "term": "temperley-lieb algebras",
+      "heading": true
+    },
+    {
+      "term": "diagram algebras",
+      "heading": false
+    },
+    {
+      "term": "cellular structure",
+      "heading": false
+    },
+    {
+      "term": "diagmm algebras",
+      "heading": false
+    },
+    {
+      "term": "tlbn",
+      "heading": true
+    },
+    {
+      "term": "cell modules",
+      "heading": false
+    },
+    {
+      "term": "affine weyl",
+      "heading": false
+    },
+    {
+      "term": "lehrer",
+      "heading": false
+    },
+    {
+      "term": "graham",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "153",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "154",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "155",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "156",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "157",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "158",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "159",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "160",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "161",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "162",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "163",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "164",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "165",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "166",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "167",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "168",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "169",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "170",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "171",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "172",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "173",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/04010141"
+  }
+}

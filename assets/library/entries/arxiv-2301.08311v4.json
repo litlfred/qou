@@ -1,0 +1,2098 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2301.08311v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-000-05.md",
+      "narrative": null,
+      "content": "Let Lµ be a higher mutation of a monotone toric fiber L in (M, ω) as constructed in [PT20]. Equip the Lagrangians with local systems ρL, ρLµ which are related by the mutation formula 1.1.2 and denote the Lagrangian branes as eL, eLµ. Then we have, HF(eLµ, eL) ∼= HF(eL, eL). In particular, by choosing ρ to be a critical point of WL, we know that HF is non-vanishing. Thus, we have that the Clifford and Chekanov-type tori are Hamiltonian non-displaceable from each other. 1.2. Higher toric mutation. Higher-dimensional toric mutation, as described by Pascaleff- Tonkonog [PT20], is a non-Hamiltonian",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "def-sec-000-01.md",
+      "narrative": null,
+      "content": "The mutated local system ρLµ on the mutated Lagrangian Lµ for the pair (L, ρL) is given by ρLµ(xi) = zi for i < n (1.1.2) ρLµ(xn) = zn(1 + z1 + · · · + zn−1) ρLµ(yi) = wi. To obtain regularity of certain moduli spaces, we use domain-dependent perturbations. This paradigm of transversality was introduced in [CM07] for closed curves and extended to discs with boundary on Lagrangians in [CW17], [CW15]. One key step in this model is to stabilize domains by adding mark points coming from intersections with a Donaldson divisor. We assume the existence of such a divisor, which we call nice divisor, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1\n2.\nLocal Mutation\n7\n3.\nSFT Compactness\n14\n4.\nConstructing Moduli Space of Broken Maps\n30\n5.\nRegularity\n44\n6.\nClassifying Rigid Broken Maps\n54\n7.\nFloer Cohomology and Mutations\n65\nReferences\n72\n1. Introduction\nA natural question about Lagrangian submanifolds is how their invariants change if one locally\nmodifies a Lagrangian. We describe a local modification for Lagrangians that contain a torus\nsegment and study the behavior of Lagrangian Floer cohomology under the change. We call this\nmodification a local higher mutation. Intuitively, a local higher mutation is a surgery operati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FLOER COHOMOLOGY AND HIGHER MUTATIONS\nSOHAM CHANDA\nAbstract. We extend the construction of higher mutation as introduced in [PT20] to local higher\nmutation, which is applicable to a larger class of monotone Lagrangians.\nIn two-dimensional\nLagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense\nof [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the\nLagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation.\nThis result generalizes the wall-crossing formula in [PT20]. For",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "The algebraic relation between the local systems in Theorem 1.2 matches with the mutation formulae present in the literature. When n = 2, this formula matches with the expected change in the local system needed for invariance under Lagrangian surgery as done in [Aur07], [Sei13], [PW19]. For higher dimensions, it agrees with the mutation formula for monotone Lagrangian torus in [PT20], see the relation (1.2.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-000-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "rem-sec-000-04.md",
+      "narrative": null,
+      "content": "We need the existence of a divisor to stabilize the disc components in the outside piece of a broken manifold. Usually, one would not require domain dependent perturbation of J when the Lagrangian pair is monotone because Maslov 2 discs are simple from results in [KO00] and [Laz11b]. To regularize holomorphic buildings, we would require a version of structural results in [Laz11b,KO00] which works for manifolds with cylindrical ends. To avoid this technicality, we are assuming the existence of a divisor to regularize our holomorphic buildings.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Invariance under mutation",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let M, L, K be manifolds as described in C[1-9]. Assume that there is a nice divisor D in M. Let Lµ be a local higher mutation of L. Let ρL, ρK be choices of local systems on L, K such that ρL is given as in equation (1.1.1). Let ρLµ be the mutated local system as in equation (1.1.2). Then, we have an isomorphism between the disc potentials of the Lagrangians, WL(ρL) ∼= WLµ(ρLµ) Moreover, if WL(ρL) = WK(ρK), then we have isomorphism of the vector spaces HF((Lµ, ρLµ), (K, ρK)) ∼= HF((L, ρL), (K, ρK))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-001-15",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "cor-sec-001-15.md",
+      "narrative": null,
+      "content": "If γ0 and γ1 are two admissible paths that are equal near the ends and R γ0 λn = R γ1 λn then Tγ0 is Hamiltonian isotopic to Tγ1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Admissible Path",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-01.md",
+      "narrative": null,
+      "content": "We call a path γ : (−t, t) →C∗admissible if there exists an ϵ > 0 such that (1) γ(x) = x for x ∈(−t, −ϵ) ∪(ϵ, t), (2) image of γ|(−t+ϵ,t−ϵ) lies in the disc D(t −ϵ) of radius t −ϵ , (3) γ lies completely inside the upper half plane. FLOER COHOMOLOGY AND HIGHER MUTATIONS γ Tγ Cn C πm Figure 2. Torus segment Tγ over a path γ R γ Figure 3. Admissible path γ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Locally mutable",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "We call a Lagrangian L ,→(M, ω) locally mutable if the following hold: (1) There is an open set B in M that is symplectomorphic via ϕ to an open ball B(0) around 0 ∈Cn such that ϕ(B ∩L) = Tγ for some admissible path γ in C. (2) i∗: H1(B ∩L) ,→H1(L) is a split injection, i.e., 0 →H1(Tγ) →H1(L) extends to split short exact sequence. Here i∗is induced from i : ϕ−1(Tγ) →L. (3) L \\ B is connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Mutation neighborhood",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-05.md",
+      "narrative": null,
+      "content": "The open set B in Definition 2.3 is called the mutation neighborhood. Now we can define local higher mutations. Intuitively, Local Higher Mutation is a cut-paste construction where we cut out a torus segment over a path and replace it with another torus segment over “flipped” curve that goes around 0 in the opposite direction. We need to replace the curve while preserving some symplectic area so that eventually we preserve monotonicity of Lagrangians.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Local Higher Mutation",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-06.md",
+      "narrative": null,
+      "content": "Given a locally mutable Lagrangian L, the local higher mutation Lµ of L is the Lagrangian obtained by removing ϕ−1(Tc) for an arc c of γ i.e. c : (−r, r) → C∗and c(x) = γ(x) and gluing back ϕ−1(Tc′) for a curve c′ such that, FLOER COHOMOLOGY AND HIGHER MUTATIONS M B L ϕ Tγ Cn π γ R iR C Figure 4. Locally mutable L in M (1) there is an ϵ > 0 such that c(x) = c′(x) for x ∈(−r, −r + ϵ) ∪(r −ϵ, r), (2) the glued curve c ∪c′ is homotopic to the unit circle around 0 , (3) the resulting curve γ′ = (γ \\ c) ∪c′ is smooth, (4) R c λn = R c′ λn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Mutated admissible path",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-07.md",
+      "narrative": null,
+      "content": "Given an admissible path γ, we call the curve γ′ as constructed in Definition 2.8 the mutated admissible path of γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-09.md",
+      "narrative": null,
+      "content": "We define Tz, the Lagrangian torus in the fiber over z ∈C∗to be the torus given by the relations |z1| = · · · = |zn| in the fiber π−1 m (z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-17",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Cylindrical path",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-17.md",
+      "narrative": null,
+      "content": "A cylindrical path is defined as a map γ : R →C∗such that γ(r) ∈R when |r| > M for some M > 0 and the following have the following limits lim r→±∞γ(r) = ±∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-18",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Asymptotically cylindrical path",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-18.md",
+      "narrative": null,
+      "content": "A path γ : R →C∗is defined to asymptotically cylindrical if there is an ϵ̸ = 0 such that γ(r) ∈R + iϵ when |r| > M for some M > 0 and the following have the following limits lim r→±∞γ(r) = ±∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-19",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Cylindrical extension",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-19.md",
+      "narrative": null,
+      "content": "Let γ : (−t, t) be an admissible path. From the definition of admissible path, we know there is an ϵ > 0 such that γ(x) = x for x ∈(−t, t) \\ (−ϵ, ϵ). The cylindrical extension γe is defined as γe(x) = x for x ∈R \\ (−ϵ, ϵ) γe(x) = γ(x) otherwise. We conclude this subsection with the definition of a cylindrical version of torus segments, that shows up in the later sections as a result of neck stretching. We define a Lagrangian Tγ over a cylindrical path γ similarly as we define a torus-segment in Definition 2.1. We can similarly define Tγ for an asymptotically cylindrical path γ. Since the path",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-001-21",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "def-sec-001-21.md",
+      "narrative": null,
+      "content": "(Monotone tuple of Lagrangians, Definition 4.1.2 in [WW10]) A pair of Lagrangians (L1, L2) is called a monotone pair if there is a there exists a τ for which we have the following an action-index relation for maps with boundary on Li. Let u : Σ →M where ∂Σ = {Ci} and u(Ci) ⊂Li, then we have Z u∗ω = τµ(u). We can use the method of Lemma 2.21 to prove that monotonicity of a Lagrangian pair is preserved when one of the Lagrangians is mutated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/ex-sec-001-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "ex-sec-001-03.md",
+      "narrative": null,
+      "content": "Note that we can use a Hamiltonian isotopy (with respect to ωn) to map a circle in the complex plane that does not pass through 0 to a curve γ that has an arc which is admissible. Thus, a similar argument as Lemma 2.16 shows that the Clifford and Chekanov tori are locally mutable.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-10.md",
+      "narrative": null,
+      "content": "The manifold Tγ is a Lagrangian submanifold of Cn equipped with the standard symplectic structure and Tγ is diffeomorphic to a torus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-12.md",
+      "narrative": null,
+      "content": "The torus segment Tγ is an exact Lagrangian for any smooth, non-intersecting path γ : [0, 1] →C∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-13.md",
+      "narrative": null,
+      "content": "For any path c to the Lagrangian torus in the fiber over p, i.e. c : [0, 1] →Tp, we have R c λ0 = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-14",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-14.md",
+      "narrative": null,
+      "content": "Let γs be an isotopy of paths that is constant on endpoints as described above, such that R γs λn is constant, Tγ0 is Hamiltonian isotopic to Tγ1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-16",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-16.md",
+      "narrative": null,
+      "content": "we finish the proof of our corollary. □ We define a cylindrical version of the Lagrangian Tγ when the path γ is chosen to be cylindrical. The construction depends on choosing a path on C that lies on the real line away from a compact set.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-20",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-20.md",
+      "narrative": null,
+      "content": "If L is a locally mutable monotone Lagrangian, then its mutation Lµ is also monotone.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-001-22",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-22.md",
+      "narrative": null,
+      "content": "If (L, K) is a monotone pair of Lagrangians and L is locally mutable, then the pair (Lµ, K) is also a monotone pair.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Mutation",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-local-mutation.md",
+      "narrative": null,
+      "content": "In this section, we begin by constructing local higher mutations. Subsequently, we gather some\nsymplectic properties of the objects involved in the construction and prove that local mutations\npreserve monotonicity of Lagrangians.\n2.1. Construction of Local Higher Mutation. Similar to defining a Lagrangian torus over a\nclosed loop in C∗as in (1.2.2) we can define a Lagrangian over a simple open path in C∗.\nDefinition 2.1. Let γ : [0, 1] →C∗be a path that does not intersect itself. Assume γ(0)̸ = γ(1).\nWe define Tγ, a torus segment over γ, as follows,\n(2.1.1)\nTγ =\n\u001a\n(z1, z2, . . . zn) ∈Cn\n\nπm(z1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "For dimension 2, [Hau20] proves that if there is an isotropic surgery disc D whose boundary cleanly intersects a Lagrangian L, then L satisfies condition (1) of Definition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-001-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "rem-sec-001-08.md",
+      "narrative": null,
+      "content": "For dimension 2, Lagrangian mutation is the same as performing an anti-surgery as defined in [Hau20] followed by a Lagrangian surgery. γ γ′ Mutation Figure 5. Mutation of paths We will show that the monodromy of the fiber torus around the origin is trivial in the mapping class group. In Definition 2.8, condition (1) implies replacing c with c′ does not change the topology of the Lagrangian L. We will also show that condition (3) implies that the symplectic areas of the discs remain the same after local higher mutation and Lemma 2.16 implies all such choices of paths c′ produces Hamiltonian iso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-001-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "rem-sec-001-11.md",
+      "narrative": null,
+      "content": "The proof above also shows that torus segments are Lagrangian submanifolds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-002-16",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Broken strip",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "def-sec-002-16.md",
+      "narrative": null,
+      "content": "A broken strip (u, D) from x+ to x−is a broken disc where one of the components of Dout is a strip R × [0, 1] with puncture nodes P on the boundary R × {1} and uout satisfies the boundary condition uout(R × {1} \\ P) ⊂bLout and uout(R × {0}) ⊂K and asymptotic conditions lims→±∞uout(s, t) = x±. We can use an exactly similar technique as in the proof of Theorem 3.13 to get the following compactness result about holomorphic strips.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/ex-sec-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "ex-sec-002-01.md",
+      "narrative": null,
+      "content": "A sphere S2n−1 r of radius r centred at 0 inside Cn has a tubular neighbourhood Φ : (−ϵ, ϵ) × S2n−1 r →Cn given by Φ(s, p) = esp. Clearly Φ∗J0 is a translation invariant almost complex structure as scaling is a biholomorphism in Cn. Moreover, Φ∗ω0 = d(e2sλ) where λ = λ0 P |xi|2+|yi|2 . Here ω0, λ0 are the standard symplectic and contact forms respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Proposition 2.69 [Abb14]",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "Let (W, ω) be a compact symplectic manifold, E0 > 0, let J be an ω-compatible almost complex structure and let L ⊂W be a Lagrangian submanifold. Let D = \b z ∈C",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-06.md",
+      "narrative": null,
+      "content": "If v : H →R × Z is a holomorphic map with boundary on R × Λ with zero horizontal energy, Eω(v) = 0, and bounded derivative, ∥v∥L∞< ∞, then v is a constant map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Proposition 2 [Bao12]",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-07.md",
+      "narrative": null,
+      "content": "Let u : R × [0, 1] →(R+ × Z, R+ × Λ) be a holomorphic map with finite Hofer energy, EH(u) < ∞, then we have ∥∇u∥L∞< ∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-08.md",
+      "narrative": null,
+      "content": "If u : [0, ∞) × [0, 1] →R × Z with boundary on R × Λ, has finite Hofer energy EH(u) < ∞, then u has a limit as s →∞in the compactification N of R × Z and also finite energy EωN (u) < ∞with respect to the symplectic form ωN. Step 4 : Exponential convergence to a point in N We will use results from [Sch16] to show the exponential convergence of u to Reeb chords. In",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-09.md",
+      "narrative": null,
+      "content": "There exists s0, C > 0 such that dcyl(πCP1(u(s, t)), πCP1(uγ(s, t))) < Ce−δs ∀s > s0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Bubbling",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-12.md",
+      "narrative": null,
+      "content": "There exists a ℏ> 0 such that the following is true. Let Fn = (an, fn) : D2 + →(R × Z, R × Λ) be a sequence of holomorphic maps from the upper half disc with Lagrangian boundary such that E(Fn) < C for some constant C and an(0) = 0. Then there is a sequence of points yn ∈D2 + converging to 0 and sequences of real numbers Rn, cn such that the rescaled maps F 0 n(z) = (yn + z Rn ) are functions on the half-disk of radius Rn and have a convergent subsequence to F 0 in C∞ loc such that EHor > ℏ FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Asymptotics of strips",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-13.md",
+      "narrative": null,
+      "content": "Let F=(a,f) : R+×[0, 1] →(R×Z, R×Λ) be a J holomorphic map of finite energy EH(u) < ∞, assume that image of F is unbounded, then there is a number T and a Reeb chord γ of length T such that lim s→∞f(s, t) = γ(tT) and lim s→∞ a(s, t) s = T in C∞[0, 1]. This lemma is a direct consequence of our asymptotic convergence proved in Theorem 3.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-14",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Strip with long neck and small energy",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-14.md",
+      "narrative": null,
+      "content": "Given E0, ϵ > 0 there exists constants σ, c > 0 such that for every R > c and for every J holomorphic function F = (a, f) : [−R, R] × [0, 1] → (R × Z, R × Λ) satisfying the inequalities, EHor(F) ≤σ and E(F) ≤E0, we have f(s, t) ∈Bϵ(f(0, t)) for all s ∈[−R + c, R −c], t ∈[0, 1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-002-15",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Gradient lemma",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "lem-sec-002-15.md",
+      "narrative": null,
+      "content": "There is a natural number K(E) and a sequence Mn of 2K(E) marked points on the disc such that after removing these marked points from D2, we have a uniform bound as follows |∇uin(z)| ≤ C ρ(z) ∀z ∈D2 n, where D2 n = D2 \\ Mn and ρ is the radius of injectivity with respect to the standard hyperbolic metric on D2 n and uin is a subsequence of un.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SFT Compactness",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "../sections/sec-002-3-sft-compactness.md",
+      "narrative": null,
+      "content": "In this section, we will explain a version of the neck-stretching procedure where the Lagrangian\npasses through the neck region and prove a compactness result with assumptions on the Legendrian\nthat models the Lagrangian in the neck region.\nBourgeois, Eliashberg, Hofer, Wysocki and Zehnder [BEH+03] proves compactness result for\nclosed holomorphic curves under neck-stretching for Morse-Bott Reeb dynamics. Abbas [Abb14]\nproves compactness for open holomorphic curves with boundary on cylindrical Lagrangians for\nthe case of non-degenerate Reeb dynamics. We prove a version of the compactness result",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "Lemma 9.2 in [BEH+03] proves that the horizontal energy EHor can be used to bound the total energy of holomorphic maps to (W τ, Jτ). More precisely, there exists a C > 0 depending only on W, Z, λ and not on τ such that E(u) < CEHor(u) for all holomorphic u : S →(W τ, Jτ). Later, this lets us use EHor bounds to compactify moduli of maps to neck-stretched manifold. FLOER COHOMOLOGY AND HIGHER MUTATIONS W τ Z × (a, b) W Z × (−τ, τ) c Win c Wout Z × R Figure 8. Breaking of W 3.1.3. Broken manifold and broken discs. The geometric objects that are obtained as a result of neck stretching can be intui",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "The labels in and out are chosen to refer to the “inside” and “outside” where inside means where we do a local mutation and outside means where we don’t make any changes. Now that we have defined broken discs, we will proceed to define the notion of convergence of broken discs. We say a sequence of discs un : D2 →(W n, Jn, Ln) converge to a broken disc (u, D) with k−necks if the following holds: • there is a sequence of maps ϕn : Dn →D such that they are biholomorphic diffeomorphisms except away from a certain circle or line that might get mapped to a node in D • there is a sequence tn i ∈R su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-002-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "rem-sec-002-10.md",
+      "narrative": null,
+      "content": "We can prove an exponential convergence for strips with boundary on La in R × Z where La projects to the Lagrangian LY in Y and La is asymptotically close to the cylindrical Lagrangian R × Λ so that closure of La in N is a Lagrangian with clean self intersection. We encounter such a boundary condition in the case of TR+iϵ. Steps 1,2,3 and 5 follow verbatim for this case. From a direct computation of eigenvalues and eigenfunctions of Aq∞in this case we get the necessary counterpart of equation (3.2.3) of Step 4. 3.3. The SFT compactness theorem. We state the version of SFT compactness for discs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Exponential Convergence",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "For any δ ∈(0, iΛ) and holomorphic strip u : [0, ∞) × [0, 1] →R × Z , that satisfies the following, • EH(u) < ∞, • u satisfies the boundary condition u ( [0, ∞) × {0, 1}) ⊂R × Λ, • the projection on R , πR(u) is unbounded; there is an s0 > 0, a trivial strip uγ over a Reeb chord γ and a C > 0 such that (3.2.1) dcyl(u(s, t), uγ(s, t)) < Ce−δs ∀s ≥s0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "thm-sec-002-11.md",
+      "narrative": null,
+      "content": "If un : D2 →(W n, Jn, Ln) is a sequence of Jn holomorphic disc to the n−stretched manifolds, with boundary on Ln, and with bounded energy, i.e. E(u) < E < ∞, then there is a subsequence of un that converges to a stable broken disc. This theorem is mentioned in Section 11.3 in [BEH+03] for the case of non-degenerate Reeb chords. Our case is a Morse-Bott version for Reeb chords. The proof in this case is the same as the usual SFT compactness theorem apart from some analytic changes in the lemmas in section 5 in [BEH+03]. We prove the necessary counterparts of the analysis in section 5 in the fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-002-17",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "SFT compactness for strips",
+      "pageStart": 14,
+      "pageEnd": 30,
+      "target": "thm-sec-002-17.md",
+      "narrative": null,
+      "content": "If un : R × [0, 1] →(Mn, Jn, Ln, K) is a sequence of Jn holomorphic strips from x+ to x−in the n−stretched manifolds, with boundary condition on Ln and K, and with bounded energy, i.e. E(u) < E < ∞, then there is a subsequence of un that converges to a broken strip. FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "cor-sec-003-08.md",
+      "narrative": null,
+      "content": "If u is a holomorphic strip R × [0, 1] →R × Z that exponentially converges to a trivial Reeb strip uγ (i.e., satisfies equation (3.2.1)), we have that for all δ < π n there exists a c > 0 such that ||x||W 1,p,δ(R×[0,1]) ≤c||Dux||Lp,δ(R×[0,1]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-003-27",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "cor-sec-003-27.md",
+      "narrative": null,
+      "content": "If (L, K) is a monotone pair and a perturbation scheme is chosen that makes every broken strip either high-index or regular and all the elements in M<E Br,P(M[l], L[l], K, D)0 is regular, then there is a δ0 such that for 0 < δ < δ0, there is a bijection between the rigid broken holomorphic strips and the unbroken holomorphic strips in Mδ and all the rigid unbroken strips in Mδ are regular. FLOER COHOMOLOGY AND HIGHER MUTATIONS MBr(M[l], L[l], K)0 ↔M(Mδ, L, K, D)0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-13",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Nice divisor adapted to J",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-13.md",
+      "narrative": null,
+      "content": "Given a pair of transversely intersecting Lagrangians L, K of M such that L is locally mutable, a submanifold D of codimension two that doesn’t intersect L ∪K ∪Lsing is called a “ nice divisor” if M \\ D is exact symplectic manifold and Lsing is exact Lagrangian in M \\ D. A nice divisor is called “adapted” to a complex structure J if the tangent bundle TD is preserved by J.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-15",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Stabilizing combinatorial type of broken strip",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-15.md",
+      "narrative": null,
+      "content": "Given combinatorial type Γ of a broken strip where each outside piece stable, we define the stabilized type Γst by forgetting all the inner and neck pieces that are not stable along with the puncture nodes that connected the unstable piece to a stable piece. If removing such a puncture node renders an otherwise stable piece into an unstable piece, we forget that as well in Γst.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-16",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Domain dependent almost complex structure for broken strips ",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-16.md",
+      "narrative": null,
+      "content": "A domain dependent almost complex structure of a strip with k interior markings is a smooth map Jk : Uk → Jcyl(c Mout, ω, D) such that near the puncture nodes, the almost complex structure is equal to Jfix, i.e., there is an open neighborhood U in Uk near the locus of puncture nodes such that Jk(w) = Jfix for w ∈U . Now we describe glued domain dependent almost complex structures. Given a domain dependent almost complex structure on a stabilized combinatorial type of broken strip Γst such that near the puncture nodes Jk is equal to Jfix, we can get a domain dependent almost complex structure o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-17",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Coherent families of perturbation data for broken strips",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-17.md",
+      "narrative": null,
+      "content": "We call the set P = {Jk}∞ k=0 where in the k = 0 case we choose a t−dependent complex structure, and for k ≥1, Jk is a domain dependent almost complex structure for broken strips, a coherent family of perturbation data if the T−glued domain dependent almost complex structure forms a coherent family of perturbation for MT as in Definition 3.14 in [CW17] for any T > 0. We explain the notion of being holomorphic with respect to a domain dependent choice of almost complex structure. A map u : Sz →c Mout from a k marked strip Sz = eπ−1 k ([z]) where [z] ∈Mk is called holomorphic with respect to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-18",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Regular broken strip",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-18.md",
+      "narrative": null,
+      "content": "We call a broken strip u ∈MBr(Γ, M[l], L[l], K) regular if the linearizations of ∂Br is surjective at u and the evaluation map, evbig, is transverse to the diagonal ∆|P|. Assuming transversality of everything, the expected dimension of the moduli spaces MBr(Γ, M[l], L[l], K) and MBr(Γ, M[l], L[l]) at a point u is Ind( eDu) −|P|(n −1) where eDu is the linearization of ∂ strip Br or ∂ disc Br at (D, u).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-19",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Virtual dimension",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-19.md",
+      "narrative": null,
+      "content": "For a broken strip or a disc (u, D), the virtual dimension is given by the formula vir(u) = Ind( eDu) −|P|(n −1) −dim aut(D).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-20",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Rigid broken strip",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-20.md",
+      "narrative": null,
+      "content": "We call a broken strip u rigid if vir(u) = 0. The moduli space of rigid strips is denoted as MBr(Γ, M[l], L[l], K)0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-21",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "High-index broken strip",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-21.md",
+      "narrative": null,
+      "content": "We call a broken strip u high-index if vir(u) > 0. In the unbroken compact case, the moduli space Maslov 2 discs with a boundary constraint of passing through a fixed point is of expected dimension 0 and contributes to the disc potential. We define a notion of point constrained broken disc so that we can later compare counts of Maslov two discs passing through a point of the unbroken Lagrangian L with the broken Lagrangian L. Given a point p ∈Lin that is not in the cylindrical part of the Lagrangian Lin, we define the notion of broken disc with point constraint, the choice of p is not relevant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-22",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Broken disc with point constraint",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-22.md",
+      "narrative": null,
+      "content": "Let q be a boundary marking on one of the interior pieces of D which gives us an evaluation map evq with values in Lin. The moduli space of broken discs with point constraint, MBr(M[l], L[l], p) is defined as the space ev−1 q (p). The expected dimension of the point constrained moduli space at a broken disc (u, D) is vir(u) −n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-23",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-23.md",
+      "narrative": null,
+      "content": "We say a broken disc with point constraint is rigid if vir(u) = n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-003-24",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Compactified energy",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "def-sec-003-24.md",
+      "narrative": null,
+      "content": "For a two-level broken strip (u, D) = ((uin, uout), D). The compactified energy Ec(u) is defined as Ec(u) = E(uin) + E(uout) where uin, uout are compactifications obtained by extending the maps to the compactified targets Min, Mout obtained by symplectic cutting. 4.5. Gluing broken things. In this section, we will discuss how to obtain unbroken maps from broken discs and strip. Given a broken strip or disc (u, D) in a broken manifold M with boundary on broken (or unbroken) Lagrangians L or K, we want to investigate if this broken map can be viewed as a limit of a neck-stretching process. More",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Analog of Wendl’s 6.24 [Wen16]",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "The J-holomorphic trivial strip uγ : R×[0, 1] →R×Z for a Reeb chord γ of length T with boundary on R × Λ has linearized Cauchy-Riemann operator Duγ : Γ(u∗ γϵ ⊕u∗ γξ, ∂u∗ γTR ⊕∂u∗ γTΛ) →Ω0,1(R × [0, 1], u∗ γϵ ⊕u∗ γξ) given by (Duγη)∂s = ∂sη + \u0014 i∂t −Aγ \u0015 η.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "For any δ < π n, we have that EDuγE−1 is an operator of form ∂s + A on the space of Sobolev sections W 1,p where A is a non-degenerate operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "For any p ∈LY and R > 0, there is an open set V in Y such that the tangent bundle of U = π−1 Y (V ) has the following trivialization Φ : [R, ∞) × [0, 1] × U × R2n →T(R × Z)|U, (s, t, q, v) 7→Φs,t(q)v ∈Tq(R × Z) that satisfies the following • Js,t(q)Φs,t(q) = Φs,tJ0, • gcyl(Φs,t(q)ξ, Φs,t(q)ξ′) = g0(ξ, ξ′), • Tq(R × Λ) = ϕs,k(Rn ⊕{0}) for all q ∈R × Λ ∩U and k = 0, 1, where J0, g0 are the standard complex structure and metric on R2n. Recall when B is a subbundle of A and D is a subbundle of C, then by an isomorphism F of the pair of bundles F : (A, B) →(C, D) refers to an isomorphism F : A →C s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "If K is a compact operator, T is a bounded operator, and c > 0 such that |x| ≤c(|Tx| + |Kx|) then T is semi-fredholm. If the domain surface Σ were compact, by standard methods in [MS12] one has |x|W 1,p(Σ) ≤c(|Dux|Lp(Σ) + |x|Lp(Σ)), and by the Rellich-Kondrachov compact embedding, we have that the inclusion of W 1,p(Σ) ,→Lp(Σ) is compact for a compact surface Σ with smooth boundary. The argument goes as follows, from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-07.md",
+      "narrative": null,
+      "content": "Let D = ∂s + A(t) be an operator of functions over the strip such that A is an unbounded self-adjoint and non-degenerate operator on W 1,p([0, 1], Cn, Rn−1 × λeR+, Rn−1 × R+), the Sobolev space of functions from [0, 1] to Cn with given boundary conditions.Then D : W 1,p(R × [0, 1], Cn, Rn−1 × λeR+, Rn−1 × R+) →Lp(R × [0, 1], Cn) is an isomorphism. Here λe = ekπ/n for some k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "lem-sec-003-11.md",
+      "narrative": null,
+      "content": "D′∗is semi-Fredholm and we have the following isomorphisms coker D′ = ker D′∗, coker D′∗= ker D′. As a corollary of the previous lemma, we have the following theorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prop-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "prop-sec-003-06.md",
+      "narrative": null,
+      "content": "4.9 in [MS12] we have a local estimate, which is then patched together for a finite covering of the compact space. This argument is outlined in Proposition C.2.1 in the book. The above approach will not directly work when the domain is non-compact. We will show a stronger inequality in the cylindrical setting to avoid the use of Rellich-Kondrachov theorem. We will use the approach in [Wen16] to show a similar inequality for a compact subdomain away from the strips and on the strips we will show there is an inequality (see Lemma 4.18 in [Wen16]) (∗) ||x||W 1,p(R×[0,1]) ≤c||Dux||Lp(R×[0,1]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constructing Moduli Space of Broken Maps",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "../sections/sec-003-4-constructing-moduli-space-of-broken-maps.md",
+      "narrative": null,
+      "content": "4. Constructing Moduli Space of Broken Maps\nIn this section, we describe the construction of moduli space of broken strips and broken discs\nas zero sets of a Fredholm map between Banach manifolds. From this section on wards, we will\nfocus on the broken manifold obtained from performing a neck-stretching along the boundary of a\nmutation neighborhood of a manifold M.\nWe recall the notation from Subsection 3.1 and the spaces which show up in the broken manifold\nafter stretching along the boundary of a mutation neighborhood. The contact hypersurface Z is\nS2n−1 and the Legendrian Λ is diffeomorphic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "We can similarly define a space Mapsk,p δ (ΣP , R × Z, R × Λ) for cylindrical manifolds and Mapsk,p δ (ΣP , c W, bL) for manifolds with cylindrical ends over contact hypersurface. 4.2. Linearization of Cauchy-Riemann map and Fredholmness. In this subsection we show that the Cauchy-Riemann section is a Fredholm map near zeroes of the section . More precise, we show that the vertical derivative at the points where the section F vanishes is a Fredholm map of Banach spaces. One can linearize F at a holomorphic map u as usual in the classical case by choosing a connection on E induced from a connec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-003-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "rem-sec-003-10.md",
+      "narrative": null,
+      "content": "Another approach of defining the formal adjoint D∗ u is to define it on the space W k,p,−δ Tγ (Hom(TΣ, u∗TCn)), where we use a negative Sobolev weight. We can define isomorphism E′ similar to E, but with negative weight such that E′D∗ uE′−1 = D′∗. We can follow the same proof as in Proposition 4.32 in [Wen16] to get the following lemma about D∗ u which finishes the proof of Fredholmness.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-003-14",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "rem-sec-003-14.md",
+      "narrative": null,
+      "content": "In Pn, if we take L to be the Clifford torus, then there is a nice divisor D adapted to the standard J0. We can take two fibers of the map πm in some standard affine chart of Pn and perturb them to obtain a smooth divisor in Pn that makes L exact in the complement. From now on, we assume the existence of a nice divisor. If u is a non-constant holomorphic map in the outside piece with boundary on Lout, then it must intersect D as otherwise exactness of Lsing would imply symplectic area of u is 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-003-26",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "rem-sec-003-26.md",
+      "narrative": null,
+      "content": "The proof of 4.25 involves an application of the SFT compactness theorem. Note that we apply SFT Compactness to a sequence of maps with bounded horizontal energy due to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "thm-sec-003-09.md",
+      "narrative": null,
+      "content": "Du : TuB →Eu is semi-fredholm when δ < π n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "thm-sec-003-12.md",
+      "narrative": null,
+      "content": "The linearization Du of ∂at any holomorphic map u is a Fredholm operator. 4.3. Domain dependent almost complex structure on the outside. In practice, attaining regularity is not possible without allowing some perturbation of the almost complex structure. We see in Section 5 that one can achieve regularity for the inside and neck pieces for the standard almost complex structure J0 in Cn, but we need to allow perturbations of the outside piece to achieve regularity of the broken discs and strips. We use the perturbation scheme of domain dependent almost complex structures as initially done in [C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-003-25",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 6.10 in [PW19]",
+      "pageStart": 30,
+      "pageEnd": 44,
+      "target": "thm-sec-003-25.md",
+      "narrative": null,
+      "content": "Let M be a broken symplectic manifold with 2 levels and L be a broken Lagrangian with 2 levels . Assume perturbations have been chosen so that every strip in M<E Br,P(M[l], L[l], K, D)0 is regular. There exists δ0 such that for δ < δ0 the correspondence u 7→uδ from Theorem 4.24 defines a bijection between the moduli spaces M<E Br,P(M[l], L[l], K, D)0 and MEHor<E(Mδ, L, K, D)0. M<E Br,P(M[l], L[l], K, D)0 ↔MEHor<E(Mδ, L, K, D)0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "cor-sec-004-11.md",
+      "narrative": null,
+      "content": "The moduli space Min of vertically constrained discs in Cn with boundary on Tγ is a smooth manifold and the evaluation map evp at any boundary puncture p that takes a map u to the starting point of the Reeb chord u is asymptotic to at the puncture p, evp : Mvc in →T±, is a submersion to the Legendrian torus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-004-13",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "cor-sec-004-13.md",
+      "narrative": null,
+      "content": "The moduli space Mneck of discs in the neck piece is a smooth manifold and the evaluation map evp evp : Mneck →T±, is a submersion to the Legendrian torus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "ker Di ∼= ker Dc i and coker Di ∼= coker Dc i where the compactified problem for D2 with constraint of having sections that vanish at points mapping to ∞at the same order as πm ◦u.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let Du denote the linearization of the ∂operator at u in the cylindrical setting, then Ind(Du) = n + µ(πm ◦u) −πm ◦u−1 weighted(∞).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Splitting Lemma",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "The Cauchy-Riemann problem, Dc 1 : W k,p(u∗T vCn, ∂u∗T vTγ)comp →W k−1,p(Hom(TD, (u∗T vCn)comp), splits into direct sum of n −1 one dimensional problem under a change of trivialization, Dc 1 : ⊕n−1 i=1 W k,p(Ei, Fi) →⊕n−1 i=1 W k−1,p(Hom(TD, Ei)) where ⊕Ei ∼= u∗T vCn and ⊕Fi ∼= ∂u∗T vTγ. We can apply Lemma 5.6 to obtain the following transversality result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-08.md",
+      "narrative": null,
+      "content": "If u touches the critical points of πm, the index of the vertical linearized operator DV is n −1 + 2mc(u) and the horizontal index is 1 + µ(πm ◦u) −πm ◦u−1 weighted(∞) −2mc(u) Ind(DV ) = n −1 + 2mc(u) Ind(DH) = 1 + µ(πm ◦u) −πm ◦u−1 weighted(∞) −2mc(u)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-09.md",
+      "narrative": null,
+      "content": "ker eDH ∼= ker eDconst πm◦u and coker eDH ∼= coker eDconst πm◦u FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-004-15",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "lem-sec-004-15.md",
+      "narrative": null,
+      "content": "There is a coherent perturbation datum P such that every l−broken strip (u, D) ∈ MBr(Γ, M[l], L[l], K) or broken disc (u, D) ∈Mvc Br(Γ, M[l], L[l], p) where there are no multiply covered pieces and the only nodes are puncture nodes that map asymptotically to Reeb orbit or chord is regular where the standard complex structure of Cn is chosen in the neck pieces and inner pieces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularity",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "../sections/sec-004-5-regularity.md",
+      "narrative": null,
+      "content": "We prove that under a generic perturbation of complex structure, every broken disc or strip\nwith only puncture nodes (the nodes between two levels) are either regular or high-index. As a\nconsequence of this regularity, we will see in Section 6 that the only rigid broken strip or rigid\nbroken disc with point constraint has two levels, and the inner level consists of simple discs.\nFrom the construction of moduli space of broken discs and strips, we know that broken maps\nare fiber products of moduli spaces of levels under the evaluation maps at the punctures. Thus,\nit is enough to show each level",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Transversality of punctured spheres",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "We leave the details of transversality of punctured spheres with cylindrical ends in the broken maps, since it has already been well studied in the literature. See subsection 7.5 in [CW15] for details, specifically Lemma 7.20 proves all the required transversality result needed for spheres. Thus, from now on we will deal with transversality of pieces with nonempty boundary. 5.1. Interior piece. In this subsection, we show that with the standard almost complex structure, we can obtain regularity of the moduli space of punctured discs in the interior piece Cn of the broken manifold M. We prove a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "As a quick application of the index formula, we compute the index of a disc with only one boundary puncture. The index of a disc u : H →(Cn, Tγ) that is asymptotic to a Reeb chord of length kπ/n is n + k. We can also prove the surjectivity of D2 at this stage by using the identification of kernel and cokernel with compactified problem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-06.md",
+      "narrative": null,
+      "content": "(Vertical Transversality) coker D1 = 0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-07.md",
+      "narrative": null,
+      "content": "There exists a complex manifold eCn obtained by iterated blow up of Cn along complex subspaces and a smooth map eϕ : eCn →Pn−1 such that the following diagram commutes, eCn Pn−1 Cn eϕ eπ ϕ where eπ is a composition of blowdown maps. Now, ϕ can be extended to a map eϕ : eC →Pn−1 by doing an inductive iterated blowup. Now the vertical subbundle of u∗TCn over z is defined by ker eϕ ◦eu(z) where eu is the lift of the disc to the blowup. Because the disc u maps to trivial cylinders (or strips) over Reeb orbits (or chords) near the punctures, we can check that there is an extension of eϕ ◦eu to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-10.md",
+      "narrative": null,
+      "content": "For any disc u touching crit (πm), the parameterized vertically constrained moduli space of discs with point constraint preserving the level structure of the critical points is regularly cut out, i.e. eDvc u is a surjective map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-12.md",
+      "narrative": null,
+      "content": "If u is map to the neck-piece with boundary on the cylindrical Lagrangian TR∗, then coker Du = {0}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-14",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Outside Transversality",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-14.md",
+      "narrative": null,
+      "content": "There is a coherent family of perturbation data P satisfying the properties (P1-3) which makes moduli space of strips Mdd k (c Mout, Lout, K, D) or the moduli space of discs with Mdd k (c Mout, Lout, D) regular and the evaluation map at the cylindrical punctures transversely intersecting with the matching condition coming from the inside and neck pieces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-16",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 54,
+      "target": "thm-sec-004-16.md",
+      "narrative": null,
+      "content": "There is a coherent perturbation datum such that every broken strip or a broken disc with point constraint is either regular or high-index.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/cor-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "cor-sec-005-04.md",
+      "narrative": null,
+      "content": "For a Reeb chord ζ of angle π/n from T+ to T−we have that for ϵ > 0 |Mζ(R+iϵ)| = 1 and |Mζ(R −iϵ)| = n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Elementary disc in Cn ",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "def-sec-005-02.md",
+      "narrative": null,
+      "content": "A map u : H →Cn such that the restriction u|R lies on the Lagrangian TR+iϵ or Tγ for a cylindrical γ and u is asymptotic to a trivial strip over a Reeb chord of length π n is called a elementary disc. We denote the set of elementary discs with Reeb chord ζ at infinity with boundary on TR+iϵ and Tγ by Mζ(R + iϵ), Mζ(γ) respectively. In this subsection, we will classify single punctured discs with boundary on TR+iϵ that have a minimal length Reeb chord at its puncture. After classifying such discs, we will use a Gromov- compactness and regularity argument to conclude a classification of elementa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Elementary disc in CPn",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "def-sec-005-06.md",
+      "narrative": null,
+      "content": "A map u : D →CPn with boundary on the Lagrangian T R+iϵ or T γ for a cylindrical γ is called elementary when u−1(CPn−1 ∞) = {1} and the eigenvalue of the leading order eigenfunction of u as in Theorem 3.2 of [Sch16] is π/n. We denote the set of elementary discs that maps 1 7→p ∈T n−1 Clif and boundary on T R+iϵ or T γ by Mp(R + iϵ), Mp(γ) respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-005-12",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Weight Matrix",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "def-sec-005-12.md",
+      "narrative": null,
+      "content": "We call a n × l matrix B a weight matrix if each column is a standard basis vector ei of Cn. ei =   ... ...  ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/def-sec-005-17",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Maslov index for 2-level broken maps",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "def-sec-005-17.md",
+      "narrative": null,
+      "content": "Let (u, D) be a 2-level broken disc (or a broken strip) with boundary on L (and on K). The Maslov index µ(u) is defined to be the Maslov index of a T-gluing uT . Since the homotopy type of the glued map does not depend on the gluing parameter T, the Maslov index for 2-level broken maps is well-defined. FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/ex-sec-005-13",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "ex-sec-005-13.md",
+      "narrative": null,
+      "content": "If B =    , then A(B, (x, y)) = (y, x, 1). A quick counting argument shows that there are nl weight matrices of size n × l. We can now state the classification theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "If (u, D) is a regular vertically constrained broken strip that is also rigid, it has at most two levels and the inside piece does not intersect the critical locus crit(πm). Similarly, if (u, D) is a regular vertically constrained broken disc with point constraint, it has at most two levels and the inside piece does not intersect the critical locus crit(πm).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "An elementary disc u with boundary on TR+iϵ can be viewed as sections of πm over the upper half-space H+iϵ or the lower half-space −H+iϵ i.e. ∃ϕu, a biholomorphism from H →±H+iϵ and a section su : ±H + iϵ →Cne such that u = su ◦ϕu.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-005-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "lem-sec-005-09.md",
+      "narrative": null,
+      "content": "For any elementary disc u in CPn with boundary on T γt , the linearization Du is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-005-18",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "lem-sec-005-18.md",
+      "narrative": null,
+      "content": "Any regular broken strip u has Maslov index at least 1. A regular rigid broken strip has Maslov index 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-005-19",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "lem-sec-005-19.md",
+      "narrative": null,
+      "content": "Any regular broken disc u has Maslov index at least 2. A regular rigid broken disc with point constraint has Maslov index 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prop-sec-005-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "prop-sec-005-14.md",
+      "narrative": null,
+      "content": "Let c be a Reeb chord with boundary on T±, then there is a single punctured holomorphic disc with boundary on TR+iϵ with the puncture asymptotic to c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classifying Rigid Broken Maps",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "../sections/sec-005-6-classifying-rigid-broken-maps.md",
+      "narrative": null,
+      "content": "The aim of this section is to classify combinatorial types of rigid broken strips or rigid broken\ndiscs with the choice of perturbation scheme as done in Section 5. We will show that any rigid\nbroken strip has only two levels and all the inside pieces are either punctured spheres or discs with\none boundary puncture that is asymptotic to a Reeb chord of length π/n.\nLemma 6.1. If (u, D) is a regular vertically constrained broken strip that is also rigid, it has at\nmost two levels and the inside piece does not intersect the critical locus crit(πm). Similarly, if (u, D)\nis a regular vertically con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-005-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Regularity for compactified elementary discs bounding T γt",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "rem-sec-005-08.md",
+      "narrative": null,
+      "content": "We collect some regularity results here that allows us to obtain a cobordism. From Theorem 6.7 we have that any elementary disc in Cn is cut out regularly, i.e., the linearized Cauchy-Riemann operator at any elementary disc u , Du is surjective. Consider the extension to the elementary disc u in CPn, this is a holomorphic disc that maps a boundary point to the self-clean intersection locus. We can set up the moduli problem of discs with boundary on T R±iϵ or T γ similar to the treatment of moduli space of strips with boundary on cleanly intersecting Lagrangians as done by Schm¨aschke in [Sch16",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-005-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Theorem 6.9 for longer Reeb chords",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "rem-sec-005-10.md",
+      "narrative": null,
+      "content": "The proof technique for Theorem 6.9 gives us a bijection between single punctured holomorphic discs with higher multiplicity Reeb chords as well. Let k > 0 be a natural number. We denote the moduli space of single punctured holomorphic discs with boundary on TR+iϵ, that is asymptotic to a Reeb chord ζ of length kπ/n, as Mζ(R + iϵ). We similarly denote the moduli space of single punctured disc with boundary on Tγ with Reeb asymptote ζ as Mζ(γ). A trivial cobordism argument as above shows that we get a bijection (more precisely, a diffeomor- phism) Mζ(R + iϵ) ↔Mζ(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-005-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "rem-sec-005-11.md",
+      "narrative": null,
+      "content": "The results of this subsection should be interpreted as a 1 ←→n correspondence between elementary discs with fixed Reeb chords under mutation. Let ζ+ be a Reeb chord of minimal length starting on T+ and ζ−be a Reeb chord of minimal length starting on T−. From Remark 6.4 and Theorems 6.5 and 6.9 we get the following disc counts. For the pre-mutated Lagrangian boundary Tγ, there is exactly one elementary disc with Reeb chord ζ+ and exactly n elementary discs with Reeb chord ζ−. For the mutated Lagrangian boundary Teγ, the disc count gets reversed. There are exactly n elementary discs with Reeb c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-005-15",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "rem-sec-005-15.md",
+      "narrative": null,
+      "content": "Note that in Proposition 6.20 the number of roots in H is ⌊l 2⌋if the Reeb chord starts at T+ or else it is ⌈l 2⌉.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-005-16",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "rem-sec-005-16.md",
+      "narrative": null,
+      "content": "Using Remark 6.13 we see that Proposition 6.20 holds for the boundary condition Tγ for a cylindrical path γ. FLOER COHOMOLOGY AND HIGHER MUTATIONS 6.3.2. Case 2: Disc with interior punctures. The classification result for discs with interior punctures ( in other words, domains with cylindrical ends) follows a similar proof strategy, except that there is more combinatorial freedom. We illustrate the combinatorial freedom by considering a neighborhood of an interior puncture. Let p ∈D2 be an interior puncture and u is a holomorphic disc with boundary on the Lagrangian TR+iϵ which is asymptotic t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "The sections classified in Theorem 6.5 are transversally cut out, that is, the linearized Cauchy-Riemann operator eDu is surjective for all the sections u classified in Theorem 6.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "thm-sec-005-07.md",
+      "narrative": null,
+      "content": "For each ϵ > 0 and Reeb chord ζ of length π/n with boundary on T±, the moduli space of elementary disc with Reeb asymptote ζ and with boundary on Tγ for an admissible cylindrical γ is in bijection with the moduli space of elementary discs with Reeb asymptote ζ with bounding TR+iϵ Mζ(γ) ↔Mζ(R + iϵ) For a mutated admissible cylindrical γ′, we have a similar bijection, Mζ(γ′) ↔Mζ(R −iϵ) We collect some results about regularity and area computation here before proceeding to the proof of Theorem 6.9",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-005-20",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "thm-sec-005-20.md",
+      "narrative": null,
+      "content": "Each disc component of the inside piece of a rigid broken strip (u, D) or a rigid broken disc with point constraint is a elementary disc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/lem-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "lem-sec-006-04.md",
+      "narrative": null,
+      "content": "The bulk deformed monotone Lagrangian Floer cohomology is isomorphic to monotone Lagrangian Floer cohomology as defined in [Oh93] i.e. HF P D (eL, eK) ∼= HF(eL, eK)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Floer Cohomology and Mutations",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "../sections/sec-006-7-floer-cohomology-and-mutations.md",
+      "narrative": null,
+      "content": "We begin this section with recalling the notion of Lagrangian Intersection Floer cohomology with\nlocal systems. After setting up the conventions and the review of the Floer cohomology, we prove\nthe invariance of Floer cohomology under mutation. This review follows the exposition in Section 2\nof [PT20] and the local system version follows the exposition in [Aur14].\n7.1. Floer Cohomology with local system. We explain the construction of Floer cohomology\nwith local system for monotone Lagrangians. This was first introduced by Oh in [Oh93], [Oh95a].\nLet (L, K) be a monotone pair of compact orienta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "Since the Lagrangian L is exact in the mutation neighborhood, there are no holomorphic discs or spheres lying completely inside the mutation neighborhood. Thus, we can choose any almost complex structure in the mutation neighborhood, and then we can assume that throughout our perturbation scheme, we don’t change the almost complex structure in the mutation neighborhood. We can also ensure that J0 = J1 since Maslov two discs are simple by [Laz11a] and the usual transversality arguments for simple holomorphic maps show that for a Baire dense set one attains regularity. 7.2. Bulk deformed monoton",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/rem-sec-006-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Non-Displaceability of Chekanov tori and Real Projective spaces in odd dimensions",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "rem-sec-006-06.md",
+      "narrative": null,
+      "content": "One straightforward generalization of Theorem 1.2 can be obtained by considering Lagrangians with local-systems coming from F−line bundles, where F is any field. The proof of Theorem 1.2 is based on comparing moduli space of rigid broken disks. The field C was not essential in any part 2This answers a question raised in Remark 3.2.3 of [KS23]. FLOER COHOMOLOGY AND HIGHER MUTATIONS of the proof, thus we can replace the complex local system with F-local systems defined by the holonomy map ρL : H1(L) →F×. An application of such a generalization would let us show that for odd n, the higher mutatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[Oh93],[Oh95a]",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "If the disc potentials of the Lagrangians in the monotone pair match, i.e., W(eL) = W( eK), for a generic choice of Jt we have that ∂2 = 0. We define the Lagrangian Intersection Floer homology HF of (eL, eK) as the homology of the chain complex (CF(eL, eK), ∂). HF(eL, eK) = ker ∂ im ∂ We explain the properties on the almost complex that we require while counting strips. We call a t-dependent family Jt of almost complex structure regular for Floer theory if it satisfies the following properties: • J0,J1 makes the moduli space of Maslov 2 discs with 1 boundary marking with boundary on L or K reg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "If the disc potentials of the Lagrangians in the monotone pair match, i.e. W(eL) = W( eK), for a generic choice of perturbation scheme domain dependent almost complex structure P, we have that ∂P D 2 = 0. We define the bulk D deformed Lagrangian Intersection Floer homology HF P D of (eL, eK) as the homology of the chain complex (CF(eL, eK), ∂). HF P D (eL, eK) = ker ∂P D im ∂P D",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Mutation",
+      "pageStart": 65,
+      "pageEnd": 72,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": "The disc potential is invariant under mutation if the local system ρ is changed to ρµ ie. W(eL) = W(eLµ). Moreover, if W(eL) = W( eK) then the Floer homology is invariant up to the same change of local system i.e. HF(eL, eK) ∼= HF(f Lµ, eK).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2301.08311v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 72,
+      "pageEnd": 73,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[Abb14] Casim Abbas, An Introduction to Compactness results in Symplectic Field Theory, 2014th ed., Springer,\nBerlin, Germany, 2014 (en).\n[Abo12] Mohammed Abouzaid, Framed bordism and Lagrangian embeddings of exotic spheres, Annals of Mathematics\n(2012), 71–185.\n[ADE14] Michele Audin, Mihai Damian, and Reinie Ern´e, Morse theory and Floer homology, Springer, 2014.\n[Als11] Garrett Alston, Lagrangian floer homology of the clifford torus and real projective space in odd dimensions,\nJournal of Symplectic Geometry 9 (2011), no. 1, 83–106.\n[Aur07] Denis Auroux, Mirror symmetry and T-duality in the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1412.4711v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1412.4711v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1412.4711v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1412.4711v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1412.4711v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Neither the name nor the notation is classical.The name has been so choosen because a geometric structure on a variety gives naturally, via the monodromy of the structure, an element in the monodromy variety.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;Themonodromyvariety&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Thisassumptionisnotnecessaryandonemayworkwithatriangulated3-variety (either hyperbolic with more cusps, or with boundary, or even not hyperbolic). We refer to [1] for this setting.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;theﬁgureeightknotcomplement)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;indeed,byconstruction,theexpressionofthematrixentriesarealgebraic.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 7,
+        &quot;context&quot;: &quot;Moreoverthismapisalgebraic&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,4v4,3+ u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ u4,3v1,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ v1,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v1,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v1,4v4,3−v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3−3 u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ 2 v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3−u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3−3 u&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-2&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3−6 u3&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ u4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-14&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v3&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;u43v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;•PY,1= −u4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,4v4,3+ u4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ u4,3v1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3−u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;•PY,2= −v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ 2 v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ v1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u4,3v4,3−v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-57&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;u4,3v4,3 −4 u4,3 −v4,3 + 1&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v1,4v4,3+ u4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,3+ u4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u4,3v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4−v1,4v4,3−v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3−3 u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3−2 v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v4,3+ 2 v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;3 u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4+ 6 v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3+ u&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;4,3v&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;1,4v4,&quot;
+      },
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;u&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;that IY +IY1= IY1,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;that IY +IY1= IY1,1∩IY1,2 and IY +IY2= IY2,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-2&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−u2&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;1,4v3,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;1,4v3,4(v3,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-7&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;u4,3v1,4v4,3 −v1,4u4,3 −u4,3v4,3 −v1,4v4,3 + v4,3&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;1,4v&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;1,4v3,4(v&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-49&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v4&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;v&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;that IY +IY1= IY1,1∩IY1,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;that IY +IY1= IY1,1∩IY1,2 and IY +IY2= IY2,1∩IY2,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;We check that the three ideals IY1,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;We check that the three ideals IY1,2, IY2,&quot;
+      },
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;•H1=u4,3v&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p017-3&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-4&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-5&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−5 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-6&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-7&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-8&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-9&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-10&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-11&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ 3 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-12&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4u4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-13&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-15&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-16&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3+10 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-17&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-18&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-19&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4+2 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-20&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-21&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+2 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-22&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-23&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-24&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-25&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-26&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-27&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3− u4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-28&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v4,3−6 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-29&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-30&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3−2 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-31&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-32&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-33&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-34&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3−6 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-35&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-36&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-37&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-38&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-39&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-40&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+2 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-41&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v4,3+u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-42&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-43&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-44&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-45&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3+2 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-46&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-47&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+u4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-48&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-49&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3−u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-50&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v4,3−2 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-51&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-52&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−4 u3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-53&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−3 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-54&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4,3+ u4,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-55&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ 6 u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-56&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-3&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4v4,3−u4,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-4&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3−u4,3v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-5&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+u2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-6&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v1,4+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-8&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-9&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-10&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−4 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-11&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-12&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-13&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4−2 v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-14&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-15&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−3 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-16&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-17&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-18&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+6 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-19&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-20&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-21&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-22&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-23&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-24&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-25&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-26&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+9 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-27&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-28&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-29&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+5 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-30&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-31&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-32&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-33&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-34&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-35&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-36&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-37&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-38&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-39&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3−12 v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-40&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-41&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−4 v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-42&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-43&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−9 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-44&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-45&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-46&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−15 v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-47&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-48&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-50&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-51&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−5 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-52&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-53&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-54&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-55&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-56&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3,4−v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-57&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-58&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-59&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-60&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-61&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3,4+v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-62&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-63&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-64&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-65&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v4,3+6 v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-66&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-67&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-68&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-69&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3+15 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-70&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-71&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+6 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-72&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-73&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-74&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-75&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-76&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-77&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-78&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-79&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4+v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-80&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-81&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-82&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-83&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-84&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−7 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-85&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-86&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4−3 v1,4v3,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-87&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−2 v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-88&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-89&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-90&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3−5 v4,3v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-91&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4−6 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-92&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-93&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-94&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-95&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3+3 v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-96&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-97&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+2 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-98&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-99&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-100&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-101&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-102&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-103&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-104&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-105&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ 7 v1,4v3,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-106&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ v3,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-107&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-108&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4+ 2 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-109&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-110&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-111&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v4,3−3 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-112&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-113&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−6 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-114&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-115&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−2 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-116&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-117&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−6 v1,4v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-118&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−2 v3,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-119&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-120&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-121&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3+ 2 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-122&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-123&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ v3,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-124&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+ v1,4v2 4,3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-125&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-126&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-127&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-128&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-129&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3+v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-130&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v5&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-131&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-132&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-133&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4−2 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-134&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-135&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-136&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-137&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-138&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-139&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4−v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-140&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-141&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-142&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-143&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-144&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4+v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-145&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-146&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-147&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3+3 v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-148&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-149&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+2 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-150&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-151&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4,3−&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-152&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-153&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-154&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+2 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-155&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-156&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-157&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-158&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-159&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+4 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-160&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-161&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4−2 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-162&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-163&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3+v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-164&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-165&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3− v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-166&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-167&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-168&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;,3−2 v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-169&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-170&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+ 3 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-171&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-172&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+ v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-173&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-174&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3−5 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-175&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-176&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4−v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-177&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4v4,3− v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-178&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4v4,3+ 2 v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-179&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;,4v3,4−2 v1,4v2&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-180&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;,4+ v1,4v3,4v4,3+ 2 v1,4v3,4+ v3,4−1.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-1&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;u2−6uv2+v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-2&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;u2−6uv2+v4&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1412.4711v1/blocks/prose-sec-020&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;˜gofgwhichbelongstoSL(n, C).Thenweput:tr&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;˜gofgwhichbelongstoSL(n, C).Thenweput:trn(g):=tr&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Γ →Cdeﬁnedbyχρ(γ) = tr&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;theﬁgureeightknotcomplement)2.AsM=H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;manifold,weletP⊂CP&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;manifold,weletP⊂CP1=∂H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thespaceofcompleteﬂagsofCP&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Deﬁnition1.4.Letρ∈Hom(Γ, G).ThenΓactsbothonCP&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;•π1(T) ≃Z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−−−→X(Z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−−−−−→X(Z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−−−−−→X(Z2, D) =: DecX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;aﬃnealgebraicgroupisomorphicto(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;DecX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;DecX(Z2, G)=X(Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tion3)morepreciselytousetheisomorphismbetweenDand(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;SothespaceX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;SothespaceX(Z2, D)isisomorphicto(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;Defor(M, T ) ⊂C&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Defor(M, T ) ⊂C16&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Holperiph:Defor(M, T ) →DecX(π1(T), PGL(3, C)) ≃(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; be obtained by gluing two tetrahedra to obtain the sphere S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofanisomorphismD≃(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;torusT,sothatDecXTisisomorphicto(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;meridian.OnecanidentifyDecX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z2.Asbefore,weseethatDecX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Z2.Asbefore,weseethatDecX(Z2, G)isisomorphicto(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; the closure of the image of DecX(π1(M), SL(3, C)) in DecX(Z&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Consider now a natural embedding C∗4⊂CP&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ofbasisoftheboundarytorushomology)tobetheclosureofDMinC&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;2g1&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;1g3,&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;3&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;3g2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;3g2g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;3g2g1&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;⟨a, b|ab&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨a, b|ab3aBA&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2][g&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2][g3, g&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•(d)V (Hi)isirreducibleinC&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thepolynomialPf&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;i=1...l&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1...lf&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;isdeﬁnedinC&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;isdeﬁnedinC16&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;parameters.Fromnowon,weconsiderDefor(M, T )asasubsetofC&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;parameters.Fromnowon,weconsiderDefor(M, T )asasubsetofC12&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;C12&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Defor(M, T ) = V (⟨Le ∪Lf ∪Lc⟩) = {Z∈C&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Defor(M, T ) = V (⟨Le ∪Lf ∪Lc⟩) = {Z∈C12&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;NotethatDefor(M, T )⊂(C \\ {0, 1})&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;NotethatDefor(M, T )⊂(C \\ {0, 1})12&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;therootsofthesystemL&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;therootsofthesystemLc1= 0(resp.L&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;,L&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ID.Notethatifz∈V (ID)⊂C&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ID.Notethatifz∈V (ID)⊂C12&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;whichareimagesbyπYoftheforbiddenpointsofC&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;whichareimagesbyπYoftheforbiddenpointsofC12&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;C12&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;TheresultofStepAisthenanidealIYi⊂Q[Y&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Settingπ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Settingπi= πYi◦πY ,wemaywriteπ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Settingπi= πYi◦πY ,wemaywriteπi(D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;C12&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;V (IY&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;u14, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;u14, u14= 1 −(1−v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;u14, u14= 1 −(1−v34)(1−u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;u13, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;1−u24, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;1−u24, u24= 1 + v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;1−u24, u24= 1 + v14(1 −v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;1−u43, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;1−u34, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;u43v14(1−v43), u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;u43, u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;1−v14, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;v14, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;v24, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;14(1−v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;14(1−v34)−v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;14(1−v34)−v43(1−v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;14(1−v34)−v43(1−v43)(1−v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;1−v34, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;v34, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;v43, v&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3v1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3v1,4v4,3+ u4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4v4,3+ u4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4v4,3+ u4,3v1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3+ 2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4v4,3+ v1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3+ u4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4−v1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;•PY,3= u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;4,3−u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4v4,3−3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;4,3−3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3−2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3+ 2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3v4,3+ 2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4+ 6&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;1,4v4,3−3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4,3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;1,4&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;L =u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;L =u12&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;L =u12u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;, L∗=v&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;, M=u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;, M=u13&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;, M=u13u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;, M=u13u31&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;, M=u13u31v&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;, M=u13u31v14&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;, M=u13u31v14v&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;, M∗=u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;, M∗=u31&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;, M∗=u31v&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;, M∗=u31v13&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;, M∗=u31v13u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;, M∗=u31v13u13&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;, M∗=u31v13u13v&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•(IY2+⟨Ll,m⟩)∩Q[L, L⋆, M, M⋆] = ⟨L&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;thatoverallthepointsofD2,L&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;•(IY3 + ⟨Ll,m⟩) ∩Q[L, L⋆, M, M⋆] = ⟨L&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;alently,thatoverallthepointsofD3,L&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to-fourcorrespondencewiththoseofthehypersurfaceH1ofC&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2± i&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;4± i&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x2y&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M∗=(1 −y)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;y&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;EliminatingxandybetweenLandMwiththeconditionx&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;EliminatingxandybetweenLandMwiththeconditionx2y&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L4M&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L4M2−6 L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L4M2−6 L4M+ L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L4M2−6 L4M+ L4−2 L&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−L8M+ 2 L7M+ 3 L6M−2 L5M+ L4M2−6 L4M+ L4−2 L3M+ 3 L&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1+v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−u3(−2+v)+(−1+v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u(−1+v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−v+v&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;v−v&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tr(a) =(−1 + v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tr(a b)=u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tr(a b)=u3 + (−1 + v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tr(a b)=u3 + (−1 + v)3(1 + v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uv(−1 + v)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;3 i,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;3 i,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∆=4u&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∆=4u3+ 4v&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆=4u3+ 4v3−u&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆=4u3+ 4v3−u2v&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8u2−6uv&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;8u2−6uv2+v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;8(1 + i)(−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8(1 + i)(−2u + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4(1 + i)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16(8 −4uv + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;8(−4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8(−4u + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4(1 −i)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−(1−i)(−16+8uv−2v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8u2−6uv&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;8u2−6uv2+v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;8(1 −i)(−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8(1 −i)(−2u + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4(1 −i)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16(8 −4uv + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;8(−4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;8(−4u + v&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4(1 + i)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;T(3, 3, 4)=⟨α ,β ,γ| α&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;T(3, 3, 4)=⟨α ,β ,γ| α3= β&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;T(3, 3, 4)=⟨α ,β ,γ| α3= β3= γ&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + v)&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ω= e&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(u, v)=(−ω&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Ha−1=a&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Ha−1=a†H,Hb−1=b&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;wherethesuperscript&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;wherethesuperscript†denotesconjugatetranspose,and∆=4u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;wherethesuperscript†denotesconjugatetranspose,and∆=4u3+ 4v&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u2v&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;u2v2−16uv + 16=4(u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;u2v2−16uv + 16=4(u3+ u&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;valuesofuare0 ,4 ,4e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;valuesofuare0 ,4 ,4e2πi/3,4e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x2y&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x2y2−24xy&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x2y2−24xy2+ 8x&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x2y2−24xy2+ 8x3−16x&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(x, y)=−x4−y4−2x2y2−24xy2+ 8x3−16x2−16y&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;he associated homogeneous space (complex projective plane CP&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;or complex hyperbolic plane CH&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[15]S.Lawton.SL(3, C)-charactervarietiesandRP&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

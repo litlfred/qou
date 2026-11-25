@@ -1,0 +1,613 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1807.01453v2",
+  "title": "Standard Model Extension with Flipped Generations",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The model",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-model"
+    },
+    {
+      "level": 1,
+      "title": "Phenomenology highlights",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-phenomenology-highlights"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Anomaly coefficients",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-appendix-a-anomaly-coefficients"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B Bidoublet potential",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-appendix-b-bidoublet-potential"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "notre dame",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "matter",
+          "heading": true
+        },
+        {
+          "term": "fermion",
+          "heading": false
+        },
+        {
+          "term": "masses",
+          "heading": false
+        },
+        {
+          "term": "university",
+          "heading": false
+        }
+      ],
+      "extract": "Standard Model Extension with Flipped Generations Carlos Alvaradoa,b, Alfredo Arandac aDepartment of Physics, University of Notre Dame, 225 Nieuwland Hall, Notre Dame, Indiana 46556, USA. bDepartment of Physics, Tsinghua University, Beijing 100084, China cFacultad de Ciencias, CUICBAS, Universidad de Colima, 28040 Colima, M´exico Abstract An extension of the Standard Model is presented that leads to the possible",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1807.01453v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hid",
+          "heading": false
+        },
+        {
+          "term": "hhid",
+          "heading": false
+        },
+        {
+          "term": "x-charge",
+          "heading": false
+        },
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "dark matter",
+          "heading": false
+        },
+        {
+          "term": "gauge sector",
+          "heading": false
+        },
+        {
+          "term": "additional ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        }
+      ],
+      "extract": "The search for new phenomena at high energy scales has inspired many diﬀerent - sometimes complementary - pro- posals for new physics. From adding extra scalars and/or fermion generations to the Standard Model (SM), extend- ing its gauge sector, adding ﬂavor symmetries, all the way to considering complete grand uniﬁed models where most of the salient features of contemporary particle physics are addressed. So far no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-model",
+      "number": "2",
+      "title": "The model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutral bidoublet",
+          "heading": false
+        },
+        {
+          "term": "ﬂipped generations",
+          "heading": false
+        },
+        {
+          "term": "ﬂipped fermions",
+          "heading": false
+        },
+        {
+          "term": "hid",
+          "heading": false
+        },
+        {
+          "term": "charged states",
+          "heading": false
+        },
+        {
+          "term": "fermion ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "yukawa sector",
+          "heading": false
+        },
+        {
+          "term": "charged leptons",
+          "heading": false
+        }
+      ],
+      "extract": "consist of three ﬂipped fermion generations and one X- neutral scalar bidoublet. In the rest of the paper we present a section with a detailed description of the model, another one with its salient phenomenological features, and we end with our conclusions. We have also included two short appendices with details pertaining to anomaly cancellation and the scalar potential of the model. 2. The model As discussed in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-phenomenology-highlights",
+      "number": "3",
+      "title": "Phenomenology highlights",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 2243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vhid",
+          "heading": false
+        },
+        {
+          "term": "sm-like higgs",
+          "heading": false
+        },
+        {
+          "term": "charged scalars",
+          "heading": false
+        },
+        {
+          "term": "cou plings",
+          "heading": false
+        },
+        {
+          "term": "hid",
+          "heading": false
+        },
+        {
+          "term": "hsm",
+          "heading": false
+        },
+        {
+          "term": "bidoublet",
+          "heading": false
+        },
+        {
+          "term": "tev",
+          "heading": false
+        }
+      ],
+      "extract": "Our main intention in this paper is to present a model with the characteristics mentioned above, namely (i) no additional, stable charged fermions, and (ii) neutrino masses occuring only as dim-5 operators. A complete phe- nomenological analysis of the model is beyond the scope of this paper and we intend to present it in a later publi- cation, however there are a few notable phenomenological aspects that we want to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-conclusions",
+      "number": "4",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "ﬂipped",
+          "heading": false
+        },
+        {
+          "term": "tev",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "additional",
+          "heading": false
+        },
+        {
+          "term": "model",
+          "heading": false
+        }
+      ],
+      "extract": "We have presented a set up where new generations of fermions and gauge interactions are incorporated into a model that is consistent with current experimental re- sults. The model has gauge symmetry SU(2)C ×SU(2)w× SU(2)hid×U(1)X, three additional generations of fermions with ﬂipped charges and chiralities, and three scalar multi- plets (two doublets and a bidoublet). The set up uses the following convention for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-appendix-a-anomaly-coefficients",
+      "number": null,
+      "title": "Appendix A Anomaly coefficients",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anew",
+          "heading": false
+        },
+        {
+          "term": "hid",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcient",
+          "heading": false
+        }
+      ],
+      "extract": "Start with the charge-conjugates of the RH-chiral hid- den quarks and leptons Q ′c R ∼(¯3, 1, 2, +1/6), R ′c ∼(1, 1, 2, −1/2) (A.1) where generation indices are temporarily suppressed. There are new contributions Anew(3, 3, 1), Anew(J, J, 1) and Anew(1, 1, 1) to the SM coeﬃcients, plus an entirely new coeﬃcient A(2hid, 2hid, 1) with no SM counterpart. For the former, with Ngen the number of generations, Anew(3, 3,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-appendix-b-bidoublet-potential",
+      "number": null,
+      "title": "Appendix B Bidoublet potential",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 1397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supersymmetric left-right",
+          "heading": false
+        },
+        {
+          "term": "left-right model",
+          "heading": false
+        },
+        {
+          "term": "left-right gauge",
+          "heading": false
+        },
+        {
+          "term": "higgs boson",
+          "heading": false
+        },
+        {
+          "term": "left-right symmetric",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "minimal left-right",
+          "heading": false
+        },
+        {
+          "term": "physrevd",
+          "heading": false
+        }
+      ],
+      "extract": "The potential VB(H, Hhid) written in Eq.(8) is explicitly expanded below VB(H, Hhid) = −µ2 BTr \u0002 B†B \u0003 −eµ2 B \u0000Tr \u0002 ˜BB†] + Tr \u0002 ˜B†B \u0003\u0001 + λ(1) B Tr \u0002 B†B \u00032 + λ(2) B \u0012 Tr \u0002 eBB†\u00032 + Tr \u0002 eB†B \u00032 \u0013 + λ(3) B Tr \u0002 eBB†\u0003 Tr \u0002 eB†B \u0003 + λ(4) B Tr \u0002 B†B \u0003\u0012 Tr \u0002 eB†B \u0003 + Tr \u0002 eBB†\u0003\u0013 + λBHTr \u0002 B†B \u0003 H†H + λ′ BH \u0002 B†B \u0003 H† hidHhid + eλBH \u0012 Tr \u0002 ˜BB†] + Tr \u0002 ˜B†B \u0003\u0013 H†H + eλ′ BH \u0012 Tr \u0002 ˜BB†] + Tr \u0002 ˜B†B \u0003\u0013 H† hidHhid + \u0012",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hid gauge",
+      "heading": false
+    },
+    {
+      "term": "hid den",
+      "heading": false
+    },
+    {
+      "term": "ﬂipped generations",
+      "heading": false
+    },
+    {
+      "term": "ﬂipped fermions",
+      "heading": false
+    },
+    {
+      "term": "neutral bidoublet",
+      "heading": false
+    },
+    {
+      "term": "gauge model",
+      "heading": false
+    },
+    {
+      "term": "left-right gauge",
+      "heading": false
+    },
+    {
+      "term": "neutrino masses",
+      "heading": false
+    },
+    {
+      "term": "gauge bosons",
+      "heading": false
+    },
+    {
+      "term": "additional generations",
+      "heading": false
+    },
+    {
+      "term": "gauge sector",
+      "heading": false
+    },
+    {
+      "term": "dirac neutrino",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Transformation properties of the fermion and scalar ﬁeld content of the model. Family indices are not shown and three generations for all fermion ﬁelds are included. Fermion ﬁelds not present in the SM are primed",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Generic decay of an electrically charged, color-singlet hidden fermion into SM states. This is possible through the mixing of the interaction-basis f",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Tree-level ρ parameter variation with vhid, at ﬁxed tan β, for several gh values (green solid lines in each panel). Latest ﬁt and",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Main W ′± branching fractions and a few representative subdominant ones. Also shown are the BRs of the mostly-bidoublet",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "This situation is analogous of the one encountered in 2HDMs outside the (β −α) = π/2 (alignment) regime,",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1807.01453v2"
+  }
+}

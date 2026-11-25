@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-2cmkuphez1y.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-2cmkuphez1y","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:01Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.186Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;&#39;It represents a choice of units, not a physical parameter&#39; (of mu_0) is the substantive CAL-1 scale point, and &#39;This replaces classical energy conservation&#39; names a real difference. Both are claims, not emphasis-by-denial.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:00.824Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:00.868Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:00.912Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:00.959Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.003Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.050Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.093Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.230Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;No unqualified maximum-strength claims; the quantitative statements carry explicit values.&quot;,
+      &quot;notes&quot;: &quot;FOUR CONTENT ITEMS REPORTED, one of them a straightforward error. (1) *** &#39;In the classical limit q -&gt; 1, W(1) = 0 and beta decay vanishes&#39; IS FALSE. *** I computed W(q) = tr_Markov((sigma_0 sigma_1)^5) in H_3(q) symbolically: W = z^2 + 4hz + 2h^2 + 8h^2 z^2 + 12h^3 z + h^4 + 14h^4 z^2 + 7h^5 z + 7h^6 z^2 + h^7 z + h^8 z^2, with h = q - q^{-1}. At q = 1 (h = 0) this reduces to exactly z^2, which is 1/4 since z(1) = 1/2 under BOTH the excised convention C and the canonical convention D. The underlying reason: at q = 1 the Hecke algebra is C[S_3] and (s_0 s_1)^5 = (s_0 s_1)^2 = s_1 s_0, whose Markov trace is z^2. Beta decay does vanish at q = 1, but by the route the sibling rem:hadron-half-life-fermi gives (crossing asymmetry vanishes, so Q = 0), not this one. (2) CONVENTION-C VALUE PRESENT: the pair Skein mass formula is written S_ab(q) = (q mu_a + q^{-1} mu_b)/(q^{1/2}+q^{-1/2}), and 1/(q^{1/2}+q^{-1/2}) evaluates to 0.4993203 at q_0, which is exactly z_C - one of the detector-blind spellings the convention-C taxonomy lists. Whether the argument DEPENDS on it I cannot tell from this block: it may be an independent symmetrising normalisation rather than the Markov parameter. Flagged for the producer to adjudicate under R1. (3) The sensitivity formula is presented as &#39;the sensitivity of the decay rate to q&#39; but accounts for only two of the four q-channels the block itself enumerates - it omits |W(q)|^2 (item 1) and |M_q|^2 (item 3), both of which the block says depend on q. (4) SYMBOL COLLISION: s = q^{1/2} - q^{-1/2} here, while prop:golden-skew-dual-node and its proof use s = sqrt(q); the two differ at every q and both appear in this chapter.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90b0a236d0d4&quot;,
+        &quot;ts&quot;: &quot;e1ff2b1a6eb2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:e02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:03:01.141Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e53d3acfb962e469075cc531f777683c3946dd70&quot;,
+      &quot;evidence&quot;: &quot;Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching &#39;approximately 50%&#39;. Both terms are also derivable from the block&#39;s own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. No instance.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;37ed8989492f&quot;,
+        &quot;ts&quot;: &quot;0b307ff7d8b3&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:56:03.749Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;(S↔P column of prop:hadron-half-life row) Sibling `.lean:207` (ref resolves only there): `hadron_half_life` is a `noncomputable def` (= ln 2 / betaRate), not a proposition; `betaRate` *is* the stated formula, with \\ | 𝒲\\ | ², μ₀, \\ | ℳ_q\\ | ², f(Q) as free positive reals in `BetaRateData` (the file says none has a closed form). Only positivity, the collapse lemma onto (q−q⁻¹)⁵ and the ≈48 sensitivity are theorems. Proof (prf:1-51) is a list of identifications (\&quot;replaces the classical…\&quot;), not a derivation of Γ_β; the statement&#39;s \&quot;the decay rate depends only on q and μ₀\&quot; (md:22) is not shown, and f(Q) ∝ Q⁵ is the Sargent rule imported from phenomenology (owner&#39;s no-imported-empirical-term rule). Checked: the closed form 𝒲(q) = q²(q¹²+q⁸−1)/(q²+1)² (prf:21) is correct under convention D (sympy: Markov weights w₍₃₎=(q⁴+1)/(q²+1)², w₍₂,₁₎=q²/(q²+1)², w₍₁,₁,₁₎=0; 𝒲(1)=1/4); the sensitivity (q²−1)/(q²+1)+5(q²+1)/(q²−1) ≈ 48 at q₀ is right&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fc29d8fb78d4&quot;,
+        &quot;ts&quot;: &quot;0b307ff7d8b3&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T08:10:14.388Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b0af11457ef9bb444f5b04ca38c5e93b52e59fdd&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes, label references replaced by titles, and witness/Lean file names removed from the prose. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: (S↔P column of prop:hadron-half-life row) Sibling `.lean:207` (ref resolves only there): `hadron_half_life` is a `noncomputable def` (= ln 2 / betaRate), not a proposition; `betaRate` *is* the stated formula, with \\ | 𝒲\\ | ², μ₀, \\ | ℳ_q\\ | ², f(Q) as free positive reals in `BetaRateData` (the file says none has a closed form). Only positivity, the collapse lemma onto (q−q⁻¹)⁵ and the ≈48 sensitivity are theorems. Proof (prf:1-51) is a list of identifications (\&quot;replaces the classical…\&quot;), not a derivation of Γ_β; the statement&#39;s \&quot;the decay rate depends only on q and μ₀\&quot; (md:22) is not shown, and f(Q) ∝ Q⁵ is the Sargent rule imported from phenomenology (owner&#39;s no-imported-empirical-term rule). Checked: the closed form 𝒲(q) = q²(q¹²+q⁸−1)/(q²+1)² (prf:21) is correct under convention D (sympy: Markov weights w₍₃₎=(q⁴+1)/(q²+1)², w₍₂,₁₎=q²/(q²+1)², w₍₁,₁,₁₎=0; 𝒲(1)=1/4); the sensitivity (q²−1)/(q²+1)+5(q²+1)/(q²−1) ≈ 48 at q₀ is right&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8c4998a8ed3a&quot;,
+        &quot;ts&quot;: &quot;0227db77f3d4&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;eff73f4df05b4183843475f177b14487da298b72&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Only the crossing-partition sentence changed (electron word e⁻ = σ₀σ₁σ₀ as a braid factor of the vertex, citing weakVertex_eq_electron_mul). The earlier finding stands: the rate Γ_β = |𝒲|²μ₀/(2π³)·[2]_q·|ℳ_q|²·f(Q) is asserted rather than derived, and the sibling Lean takes |𝒲|², μ₀, |ℳ_q|², f(Q) as free positive reals, so &#39;the parameter q fixes every factor&#39; does not follow (μ₀ is itself called a free parameter in item 5). Pre-existing.&quot;,
+      &quot;notes&quot;: &quot;Ruling note (pre-existing, not introduced by this PR): the β-decay rate route uses the one-term canonical Markov trace for 𝒲(q); the 2026-11-21 ruling asks all β-decay routes to use the two-term Lagrangian trace.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T18:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f60933ebae4cd2c93b4ac5af617b31b3737edb2f&quot;,
+      &quot;evidence&quot;: &quot;Independent QA of #8908 at f60933ebae. Step 4 now attributes the action evaluation to prop:skein-generation (composite-link resolution) and lem:pair-skein-mass-formula (S_ab). Both are correct targets and both are in uses[]. The lemma&#39;s own convention-C scope is pre-existing.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;036f8dafb9fa&quot;,
+        &quot;ts&quot;: &quot;62f5981035f0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-citations-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:55:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5d946066acee0ea26cd843f8b9a9a8c3df021b86&quot;,
+      &quot;evidence&quot;: &quot;Re-read of step 4: the nucleus action is now attributed to prop:skein-generation and lem:pair-skein-mass-formula. Added prop:skein-generation and lem:pair-skein-mass-formula to uses[].&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

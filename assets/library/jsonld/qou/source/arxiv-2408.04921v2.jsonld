@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2408.04921v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2408.04921v2",
+  "contains": [
+    "library/arxiv-2408.04921v2/sections/sec-front-matter",
+    "library/arxiv-2408.04921v2/sections/sec-000",
+    "library/arxiv-2408.04921v2/sections/sec-001",
+    "library/arxiv-2408.04921v2/sections/sec-002",
+    "library/arxiv-2408.04921v2/sections/sec-003",
+    "library/arxiv-2408.04921v2/sections/sec-004",
+    "library/arxiv-2408.04921v2/sections/sec-005",
+    "library/arxiv-2408.04921v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP — The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms.\n\n**IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP**\n\n*HUIMIN GAO AND NAIHUAN JING*\n\n24 pp, 8 sections.\n\n**Abstract.** The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms. Af- ter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule by vertex algebraic methods, we formulate a new iterative formula for characters of the generalized symmetric group. As applications, we ﬁnd a numerical relation between the character values of Ck≀Sn and modular characters of Skn.\n\n**Outline.** Front matter; 1 Introduction; 2 Irreducible characters of CkSn; 3 Two Iterative Formulas; 4 Further examples; References; Appendix A. The source code for Theorem 3.5; Appendix B. Theorem 3.9",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2408.04921&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2408.04921v2",
+    "title_source": "slug",
+    "source_file": "2408.04921v2.pdf",
+    "source_sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
+    "pages": 24,
+    "arxiv": {
+      "id": "2408.04921",
+      "version": "2",
+      "primary_class": "math.RT",
+      "stamp_date": "25 Sep 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

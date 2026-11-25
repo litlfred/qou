@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-centric-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-centric-table",
+  "kind": "remark",
+  "title": "Knot-centric periodic table: reorganization by nuclear and electronic knot structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/thm-generation-completeness",
+    "papers/quantum-observable-universe/blocks/rem-knot-exhaustiveness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-shell-transition-knot",
+  "tags": [
+    "periodic-table",
+    "knot-centric",
+    "visualization",
+    "nuclear-shell",
+    "borromean",
+    "magic-receptive",
+    "transfer-matrix",
+    "skein-polynomial"
+  ],
+  "text": "knot-centric-table.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1602 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1702.00039v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The basics\nNICOLAS LIBEDINSKY\nAbstract\nThis paper is the ﬁrst of a series of introductory papers on the\nfascinating world of Soergel bimodules. It is combinatorial in nature and\nshould be accessible to a broad audience. The objective of this paper is to\nhelp the reader feel comfortable calculating with Soergel bimodules and\nto explain some of the important open problems in the ﬁeld. The motiva-\ntions, history and relations to other ﬁelds will be developed in subsequent\npapers of this series.\n1\nIntroduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Declaration of intent",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-declaration-of-intent.md",
+      "narrative": null,
+      "content": "As said in the abstract, this paper is an introduction to Soergel bimodules. We give many examples and show explicit calculations with the Hecke algebra and the Hecke category (one of its incarnations being Soergel bimodules). Most of the other Hecke categories (categorifications of the Hecke algebra) such as category $\\mathcal{O}$, Elias-Williamson diagrammatic category, Sheaves on moment graphs, 2-braid groups and Parity Sheaves over Schubert varieties, are left for follow-ups of this paper. The applications of this theory are also left for the follow-ups.\n\nSoergel bimodules were introduced",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "...Bum! Explosion of the field",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-bum-explosion-of-the-field.md",
+      "narrative": null,
+      "content": "Soergel bimodules were (and are) in the heart of an explosion of new discoveries in representation theory, algebraic combinatorics, algebraic geometry and knot theory. We give a list of some results obtained using Soergel bimodules in the last five years.\n\n1.  **Algebraic groups:** A disproof of Lusztig's conjecture predicting the simple characters of reductive algebraic groups (1980). This was probably the most important open conjecture in representation theory of Lie-type objects.\n\n2.  **Lie algebras:** An algebraic proof of Kazhdan-Lusztig conjectures predicting the multiplicities of simple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13-acknowledgements.md",
+      "narrative": null,
+      "content": "This work is supported by the Fondecyt project 1160152 and the Anillo project ACT 1415 PIA Conicyt. The author would like to thank very warmly Macarena Reyes for her hard work in doing most of the pictures. I would also like to thank David Plaza, Paolo Sentinelli, Sebastián Cea and Antonio Behn for detailed comments and suggestions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical level: Coxeter systems",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-2-classical-level-coxeter-systems.md",
+      "narrative": null,
+      "content": "Classical level: Coxeter systems",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some definitions",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-21-some-definitions.md",
+      "narrative": null,
+      "content": "[]{#Some definitions label=\"Some definitions\"}\n\nA *Coxeter matrix* is a symmetric matrix with entries in $\\{1,2,\\ldots\\}\\cup \\{\\infty\\}$, diagonal entries $1$ and off-diagonal entries at least $2$.\n\n::: defi\nA pair $(W,S)$, where $W$ is a group and $S$ is a finite subset of $W,$ is called a *Coxeter system* if $W$ admits a presentation by generators and relations given by $$\\langle s\\in S\\ \\vert \\ (sr)^{m_{sr}}=e\\ \\ \\mathrm{if}\\  s,r \\in S \\ \\mathrm{and}\\  m_{sr} \\ \\mathrm{is}\\ \\ \\mathrm{finite} \\rangle,$$ where $(m_{sr})_{s,r\\in S}$ is a Coxeter matrix and $e$ is the identity element.\n:::\n\nWe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baby examples",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-006-22-baby-examples.md",
+      "narrative": null,
+      "content": "We start with two baby examples of Coxeter systems. In these two cases (as well as in examples (C) and (D)) we will calculate explicitly the two key objects in the theory, namely the Kazhdan-Lusztig basis and the indecomposable Soergel bimodules.\n\n\\(A\\)\n\n:   The group $\\mathrm{Symm}(\\Delta)$ of symmetries of an equilateral triangle is isomorphic to the group with $6$ elements $$\\langle s, r\\ \\vert \\ s^2=r^2=e, \\ srs=rsr\\rangle.$$ One possible isomorphism is given by the map\n\n    <figure>\n    <div class=\"center\">\n    <img src=\"triangle.png\" />\n    </div>\n    </figure>\n\n\\(B\\)\n\n:   The group $\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizing the baby examples: (infinite) regular polygons",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-23-generalizing-the-baby-examples-infinite-regul.md",
+      "narrative": null,
+      "content": "One natural way to generalize the baby examples is to consider the symmetries of a regular $n$-sided polygon. This is also a finite Coxeter group denoted $I_2(n)$ (the subindex $2$ in this notation denotes the rank of the Coxeter system, as defined in Section [\\[Some definitions\\]](#Some definitions){reference-type=\"ref\" reference=\"Some definitions\"}). A presentation of this group is given by\n\n\\(C\\)\n\n:   $I_2(n)= \\langle s, r\\ \\vert \\ s^2=r^2=e, \\ (sr)^{n}=e\\rangle,$\n\nso $\\mathrm{Symm}(\\Delta)\\cong I_2(3)$ and $\\mathrm{Symm}(\\square)\\cong I_2(4).$ Again, one isomorphism here is given by sendin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p007-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p007-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p007-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizing the baby examples: tesselations",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-24-generalizing-the-baby-examples-tesselations.md",
+      "narrative": null,
+      "content": "We will denote by $[n,p,q]$ the Coxeter system with simple reflections $S=\\{s,r,t\\}$ and with Coxeter matrix given by $m_{sr}=n, m_{st}=p$ and $m_{rt}=q.$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tesselations of the Euclidean plane",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-241-tesselations-of-the-euclidean-plane.md",
+      "narrative": null,
+      "content": "A natural way to generalize the equilateral triangle is to consider the following tesselation of the Euclidean plane by equilateral triangles\n\n<figure>\n<div class=\"center\">\n<img src=\"tiling1.png\" />\n</div>\n<figcaption>[6,3,2]</figcaption>\n</figure>\n\nThis tesselation can be generalized by coloring this tiling as in Figure [\\[triang\\]](#triang){reference-type=\"ref\" reference=\"triang\"} or by tiling the plane with other (maybe colored) regular convex polygons as it is the checkboard of Figure [\\[check\\]](#check){reference-type=\"ref\" reference=\"check\"} or the honeycomb of Figure [1](#honey){referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p008-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p008-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tesselations of the hyperbolic plane",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-242-tesselations-of-the-hyperbolic-plane.md",
+      "narrative": null,
+      "content": "[]{#thp label=\"thp\"}\n\nIt is quite fantastic the amount of tesselations by triangles of the hyperbolic plane. Here we give some examples using the Poincaré disk model.\n\n<figure id=\"in\">\n<img src=\"732.png\" />\n<img src=\"666.png\" />\n<img src=\"infinfinf.png\" />\n<figcaption><span class=\"math inline\">[∞,∞,∞,]</span></figcaption>\n</figure>\n\nFigure [\\[seis\\]](#seis){reference-type=\"ref\" reference=\"seis\"} is called by some (at least by me) \"Devil's tesselation\".\n\nIn general, there is a tesselation by triangles of the hyperbolic plane with group of symmetries $[n,p,q]$ if and only if $$\\label{brig}\\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p009-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p009-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizing the baby examples: more dimensions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-25-generalizing-the-baby-examples-more-dimension.md",
+      "narrative": null,
+      "content": "If we raise the rank, we can generalize our baby examples in a different way. We give the $n$-analogue of the baby examples.\n\n1.  The *Weyl group of type $A_{n-1}$*. It can be defined as the symmetries of an $n$-simplex, or equivalently, as $S_n$, the symmetric group in $n$ elements. The isomorphism between these two groups is obvious. It admits a Coxeter presentation given by generators $s_i, 1\\leq i <n$ and relations\n\n    -   $s_i^2=e$ for all $i$.\n\n    -   $s_is_j =s_js_i$ if $\\vert i-j\\vert \\geq 2$\n\n    -   $s_is_{j}s_i=s_{j}s_is_{j}$ if $\\vert i-j\\vert =1$ (i.e. $i=j\\pm 1$)\n\n    The isomo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More examples",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-26-more-examples.md",
+      "narrative": null,
+      "content": "-   Type A and type B groups are examples of *Weyl groups*. These groups appear in the theory of Lie algebras as the groups of symmetries of root systems associated to semisimple Lie algebras over the complex numbers (so they are examples of finite reflection groups). There are three infinite families of Weyl groups, types $A_n, BC_n$ and $D_n$ ($n\\in \\mathbb{N}$) and the exeptional groups of type $E_6$, $E_7,$ $E_8,$ $F_4,$ $G_2$. They are also symmetry groups of regular or semiregular polytopes. For example, this figure is a projection in the plane of an $8$-dimensional semiregular polytope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bruhat order and an important property",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-27-bruhat-order-and-an-important-property.md",
+      "narrative": null,
+      "content": "[]{#imp label=\"imp\"}\n\nOne important concept about Coxeter systems is the *Bruhat order*. It is defined by $x\\leq y$ if some substring of some (or every) reduced word for $y$ is a reduced word for $x$.\n\nFor example, in the case of $S_3$, the Bruhat order is represented in the following diagram\n\n<figure>\n<div class=\"center\">\n<img src=\"Bruhat.png\" />\n</div>\n</figure>\n\nWe see that in this example, the only couples of non-comparable elements are $(s, r)$ and $(sr,rs)$.\n\nA beautiful and important property (proved by Hideya Matsumoto in 1964 [@Ma]) about Coxeter systems is that, if $x\\in W$, one can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum level: Hecke algebras",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-014-3-quantum-level-hecke-algebras.md",
+      "narrative": null,
+      "content": "Quantum level: Hecke algebras\n3.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kazhdan-Lusztig's theory",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-015-31-kazhdan-lusztigs-theory.md",
+      "narrative": null,
+      "content": "For the basic definitions of Hecke algebras and Kazhdan-Lusztig polynomials we follow [@SoKL]. Let $(W,S)$ be a Coxeter system.\n\n::: defi\nThe *Hecke algebra* $\\mathcal{H}$ of a Coxeter system $(W,S)$ is the $\\mathbb{Z}[v,v^{-1}]-$algebra with generators $h_s$ for $s\\in S$ and relations\n\n-   $h_s^2= (v^{-1}-v)h_s +1$ (quadratic relation)\n\n-   $\\underbrace{h_sh_rh_s\\ldots}_{m_{sr}}=\\underbrace{h_rh_sh_r\\ldots}_{m_{sr}}$ for all $s,r\\in S$ (braid relation)\n:::\n\nWhen $v$ is replaced by $1$ in the definition, one obtains the algebra $\\mathbb{Z}W$. Thus we can see the Hecke algebra as a deformation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculations of KL bases in examples",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-016-32-calculations-of-kl-bases-in-examples.md",
+      "narrative": null,
+      "content": "In this section we give an explicit calculation of the Kazhdan-Lusztig basis for the examples A, B and C and we will give the formula (without a proof) for example D.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baby example A",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-017-321-baby-example-a.md",
+      "narrative": null,
+      "content": "It is clear that $b_{\\mathrm{id}}=1$. We have seen that $h_s+v$ is self-dual and it is of the form ([\\[KL\\]](#KL){reference-type=\"ref\" reference=\"KL\"}), so $b_s=(h_s+v).$ By symmetry between $s$ and $r$ we have that $b_r=(h_r+v).$\n\nIt is easy to see that $b_{sr}=b_{s}b_{r}$. It is self-dual because $d$ is a ring morphism and $b_{s}$ and $b_{r}$ both are. On the other hand it is of the form ([\\[KL\\]](#KL){reference-type=\"ref\" reference=\"KL\"}) $$b_{s}b_{r}=h_{sr}+vh_s+vh_r+v^2,$$ and again we obtain $b_{rs}$ by symmetry.\n\nIf we were very optimistic we would believe that $b_{srs}=b_{s}b_{r}b_{s}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baby example B",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-018-322-baby-example-b.md",
+      "narrative": null,
+      "content": "In Example A we never used that $m_{sr}=3$ in our calculations. The point is that if $m_{sr}\\neq 3$ then $b_{s}b_{r}b_{s}-b_{s}\\neq b_{r}b_{s}b_{r}-b_{r}$. In our baby example **(B)** we have $m_{sr}=4.$ For the same reasons as before we have\n\n-   $b_{sr}=b_{s}b_{r}$\n\n-   $b_{srs}=b_{s}b_{r}b_{s}-b_{s}$\n\n-   $b_{rsr}=b_{r}b_{s}b_{r}-b_{r}.$\n\nSo we just need to calculate $b_{srsr}.$ We start again with $$b_{s}b_{r}b_{s}b_{r}=(h_{sr}+vh_s+vh_r+v^2)(h_{sr}+vh_s+vh_r+v^2).$$ When we expand the right hand side, the only terms in the sum that do not give elements of the form ([\\[KL\\]](#KL){reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example C",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-019-323-example-c.md",
+      "narrative": null,
+      "content": "As one might have conjectured looking at the first two examples, for $x\\in I_2(n)$ we have $$\\label{excc}b_x= \\sum_{y\\leq x}v^{l(x)-l(y)}h_y$$ If we would want to play the game we played in the first two examples, this is, if we wanted to express $b_x$ as additions and substractions of *Bott-Samelsons* (i.e. objects of the type $b_sb_r\\cdots b_t,$ with $s,r,\\ldots, t\\in S$) then we obtain the combinatorics appearing in Temperley-Lieb algebras, but this approach is a bit complicated. It is easier to prove directly equation ([\\[excc\\]](#excc){reference-type=\"ref\" reference=\"excc\"}).\n\nWe will pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example D",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-020-324-example-d.md",
+      "narrative": null,
+      "content": "Kazhdan-Lusztig polynomials were discovered (or invented) in 1979, but it was only in 1990 that Matthew Dyer gave a formula [@Dy] to calculate inductively the Kazhdan-Lusztig basis for a Universal Coxeter system (we will not reproduce here the proof, although it is not a difficult one). In this case, every element has only one expression as a product of elements of $S$.\n\n::: thm\n[]{#Dy label=\"Dy\"} Let $x\\in U_n$ and $x=rs\\cdots$ with $r,s, \\ldots \\in S.$ Then we have the following recursive formula $$\\begin{aligned}\n\\label{universal}\nb_rb_x  & = & (v+v^{-1})b_x \\nonumber\\\\ \nb_tb_x&=&b_{tx}\\hsp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-021-33-proof-of-theorem.md",
+      "narrative": null,
+      "content": "\\label{proofth}\n\n\n\\begin{proof} We reproduce the  beautiful (and simple) proof  of  Soergel  \\cite[Theorem 2.1]{SoKL} of the stronger version explained in Remark  \\ref{rem1}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-022-331-existence.md",
+      "narrative": null,
+      "content": "[]{#1 label=\"1\"}\n\nWe prove it by induction on the Bruhat order. It is clear that $b_e=h_e=1$ and we have already seen in equation ([\\[bs\\]](#bs){reference-type=\"ref\" reference=\"bs\"}) that $b_s=h_s+v.$ The following equation is easy (see the important property in Section [\\[imp\\]](#imp){reference-type=\"ref\" reference=\"imp\"}) $$\\label{cases}\n    b_sh_x=\n    \\begin{cases}\n      h_{sx}+vh_x & \\text{if } sx > x\\\\\n      h_{sx}+v^{-1}h_x & \\text{if } sx < x.\n    \\end{cases}$$ Now suppose we have proved the existence for all elements lesser than $x$ in the Bruhat order and $x\\neq e.$ Then we can find",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-023-332-uniqueness.md",
+      "narrative": null,
+      "content": "Suppose that we have two self-dual elements $c=h_x+h$ and $c'=h_x+h'$, with $h,h' \\in \\cH. $ Then one has that $h-h'$ is self-dual as $h-h'=c-c'.$\n\nWe just need to prove \n\\begin{claim}\nIf $h\\in \\sum_yv\\ZZ[v] h_y$ and $h$ is self-dual, then $h=0$. \n\\end{claim}\nLet us call $b_x$ the element that we constructed  in Section \\ref{1}. It is easy to see, by equation (\\ref{KL}) that $$h_x\\in b_x+\\sum_{y<x}\\ZZ[v,v^{-1}]b_y,$$\nthus \\begin{equation}\\label{d}d(h_x)\\in b_x+\\sum_{y<x}\\ZZ[v,v^{-1}]b_y \\subseteq  h_x+\\sum_{y<x}\\ZZ[v,v^{-1}]h_y.\\end{equation}\n\n\nLet us write $h=\\sum_y p_yh_y$, with $p_y\\in v\\ZZ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "{bx}xW is a basis",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-024-333-bxxw-is-a-basis.md",
+      "narrative": null,
+      "content": "The set {bx}x∈W is a Z[v, v−1]−basis given that the set {hx}x∈W is a basis and\nby using the triangularity property in Remark 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Our favorite open questions about Hecke algebras",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-025-34-our-favorite-open-questions-about-hecke-algeb.md",
+      "narrative": null,
+      "content": "It is one of the most important achievements in the theory of Soergel bimodules the proof [@EW] by B. Elias and G. Williamson of the conjecture (stated by Kazhdan and Lusztig) that Kazhdan-Lusztig polynomials have positive coefficients. We will come back to this beautiful and fundamental result in a subsequent paper of this saga. For the moment, this theorem gives rise to the following question.\n\n::: ques\nGive a combinatorial formula for the coefficients of Kazhdan-Lusztig polynomials, i.e. express the coefficients of $p_{x,y}$ as the cardinality of some combinatorially defined set (even for t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical level in the baby example A",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-026-4-categorical-level-in-the-baby-example-a.md",
+      "narrative": null,
+      "content": "Categorical level in the baby example A",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The objects: Soergel bimodules",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-027-41-the-objects-soergel-bimodules.md",
+      "narrative": null,
+      "content": "In this section we will introduce Soergel bimodules in the baby example A, i.e. the symmetric group $S_3.$ This case is hard enough to start with and most of the features of general Soergel bimodules are already visible in this example.\n\nConsider the polynomial ring $R=\\mathbb{R}[x,y,z]$ (we could replace $\\mathbb R$ by any field of characteristic different from $2$ in this section and the results would stay true). We have a natural action of $S_3$ on $R$. The simple reflection $s$ interchanges $x$ and $y$. In formulas $$s\\cdot f(x,y,z)=f(y,x,z).$$ The simple reflection $r$ interchanges $y$ an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability of Soergel bimodules",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-028-42-stability-of-soergel-bimodules.md",
+      "narrative": null,
+      "content": "Stability of Soergel bimodules",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The crucial phenomena",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-029-421-the-crucial-phenomena.md",
+      "narrative": null,
+      "content": "\\begin{st}\\label{st}\nThe category $\\mathcal{B}(S_3)$ is stable under product. \n\\end{st}\n\n\\begin{proof}\nIt is obvious that we just need to prove that we can write any product of two elements of $\\II$ as a direct sum of shifts of elements in $\\II.$\n\n\nOne important fact about $R$ is that if $p\\in R$, then $p-s\\cdot p \\in (y-x)R^s.$  For example, if $p=3xy^2z^7+ yz$, \n \\begin{align*}\np-s\\cdot p &=3xy^2z^7+ yz -3yx^2z^7- xz \\\\\n&= (y-x)(3xyz^7+z).\n\\end{align*}\n \n It is an easy exercise to convince oneself of this fact (hint: start with monomials). One can also see this fact more conceptually by noti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 1",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-030-441-step-1.md",
+      "narrative": null,
+      "content": "*We will prove that* $\\mathrm{im}(1-e)= \\langle 1^{\\otimes} \\rangle$.\n\nAs $(1-e)(1^{\\otimes})=1^{\\otimes}$ we have that $$\\langle 1^{\\otimes} \\rangle  \\subseteq    \\mathrm{im}(1-e).$$ It is a fun and easy exercice (using twice equation ([\\[p\\]](#p){reference-type=\"ref\" reference=\"p\"}) and some smart juggling with the variables) to see that $B_sB_rB_s$ is generated as an $R$-bimodule by the two elements $1^{\\otimes}$ and $1\\otimes x\\otimes 1\\otimes 1$. We already know that $(1-e)(1^{\\otimes})\\in   \\langle 1^{\\otimes} \\rangle$. We will do explicitly some of the juggling we said before to see tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 2",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-031-442-step-2.md",
+      "narrative": null,
+      "content": "\\ \\textit{ We will prove that }$ \\langle 1^{\\otimes} \\rangle \\cong B_{srs}$.\n\n\n\n It is clear that \n\\begin{align*}\n R\\otimes_{R^{s,r}}R(3)  & \\rightarrow  B_sB_rB_s\\\\\np\\otimes q & \\mapsto p\\otimes 1\\otimes 1\\otimes q\n\\end{align*}\nis a graded $R$-bimodule morphism. It is also clear that the image is $  \\langle 1^{\\otimes} \\rangle$. Because of the isomorphism (\\ref{sr}) we have that \n$$B_{srs} \\cong  R(-3)\\oplus R(-1)^{\\oplus 2}\\oplus R(1)^{\\oplus 2}\\oplus R(3)$$\n as a graded left $R$-module. We know by (\\ref{Rgr}) that $$B_s\\cong R(-1)\\oplus R(1)$$ as a graded  left-$R$ module and also \n\\begin{a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel's categorification Theorem",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-032-45-soergels-categorification-theorem.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Indecomposables",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-033-451-indecomposables.md",
+      "narrative": null,
+      "content": "Why did we us the letter $\\mathbb I$ to denote the set $\\{R, B_s, B_r, B_{sr}, B_{rs}, B_{srs}\\}$? Because they are indecomposable objects. Let us see why.\n\nWe will use the following notation. A $\\mathrm{min}$ in the subindex of a graded object means the minimal $i$ for which its degree $i$ part is non-zero. For example $(B_s)_{\\mathrm{min}}=(B_s)_{-1}$\n\nAs we have seen, every element $M\\in \\mathbb I$ is generated as an $R$-bimodule by the element $1^{\\otimes}\\in M_{\\mathrm{min}}$. Let us suppose that $M=N\\oplus P$. Then we have that $M_{\\mathrm{min}}=N_{\\mathrm{min}}\\oplus P_{\\mathrm{min}}$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to produce an algebra from Soergel bimodules",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-034-452-how-to-produce-an-algebra-from-soergel-bimod.md",
+      "narrative": null,
+      "content": "Let us introduce the\n\n::: nota\n[]{#poly label=\"poly\"} If $p=\\sum_i a_i v^i \\in \\mathbb N[v,v^{-1}]$ and $M$ is a graded bimodule, we will denote by $p\\cdot M$ the graded bimodule $$\\bigoplus_{i\\in \\mathbb Z}M(i)^{\\oplus a_i}$$\n:::\n\nOne can see that Soergel bimodules encode all the information of the Hecke algebra. Let us try to make this idea more precise. Consider the following \"algebra\" $\\mathbb N\\mathcal B(S_3)$ over $\\mathbb N[v,v^{-1}]$ (this is not a ring because it lacks of additive inverse, so $\\mathbb N\\mathcal B(S_3)$ is strictly speaking not an algebra, but apart from this \"detail\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recovering the Hecke algebra",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-035-453-recovering-the-hecke-algebra.md",
+      "narrative": null,
+      "content": "If we want to produce an algebra isomorphic to $\\mathcal H$ starting with the category of Soergel bimodules and not just \"the positive part\", we just need to add formally to $\\mathbb N\\mathcal B(S_3)$ the element $-\\langle M\\rangle$ for every Soergel bimodule $M$. This element will satisfy the equation $-\\langle M\\rangle+\\langle M\\rangle=0.$ In this manner we obtain a honest algebra over $\\mathbb Z[v,v^{-1}]$, isomorphic to $\\mathcal H.$ One formal way of doing this is with the following general definition.\n\n::: defi\nLet $\\mathcal A$ be an additive category. The *split Grothendieck group* of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1.md",
+      "narrative": null,
+      "content": "[]{#mor label=\"mor\"}\n\nWe will present the general definition of the category of Soergel bimodules, but we will still work over the field of real numbers. Over a field of positive characteristic the categorification theorem still works, but Soergel bimodules behave quite differently (projectors from the Bott-Samelsons are not the same as over $\\mathbb R$).\n\nWe will recall most of the definitions given in the last section to make this section independent of the last one.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel category B for any Coxeter system over R",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-037-51-soergel-category-b-for-any-coxeter-system-ove.md",
+      "narrative": null,
+      "content": "[]{#any label=\"any\"} Let $(W,S)$ be an arbitrary Coxeter system. Consider $V=\\oplus_{s\\in S} \\mathbb{R}e_s$ the Geometric Representation. It is a linear representation defined by the formula $$s\\cdot e_r=  e_r+2\\, \\mathrm{cos}\\, \\biggl(\\frac{\\pi}{m_{sr}}\\biggr) e_s \\hspace{1cm}\\mathrm{for\\ all\\ }s, r \\in S,$$ where $m_{sr}$ is the order of the element $sr$ in $W.$ By convention $\\pi/\\infty =0.$\n\nLet $R=R(V)$[]{#d1 label=\"d1\"} be the algebra of regular functions on $V$ with the grading induced by putting $V^*$ in degree two, i.e. $R=\\bigoplus_{i\\in\n\\mathbb{Z}}R_i$ with $R_2 = V^*$ and $R_i=0$ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p031-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p031-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Drawing morphisms: one color",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-038-52-drawing-morphisms-one-color.md",
+      "narrative": null,
+      "content": "We fix a simple reflection $s\\in S.$ We will start by explaining how to represent in a drawing a morphism between \"one color Bott-Samelson bimodules\", i.e. bimodules having only $s$ in its expression, for example $B_sB_sB_sB_s.$\n\nMorphisms will be drawn inside the strip $\\mathbb R\\times [0,1]\\subset \\mathbb R^2.$ This will be done in a bottom-up way, i.e. in the line $\\mathbb R\\times \\{0\\}$ we will draw the same number of points as the number of $B_s$ that appear in the source of our morphism and in the line $\\mathbb R\\times \\{1\\}$ we will draw the same number of points as the number of $B_s$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p032-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p032-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p032-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p033-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../images/img-p033-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p033-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../images/img-p033-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p034-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p034-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p034-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One color light leaves",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-039-53-one-color-light-leaves.md",
+      "narrative": null,
+      "content": "A *One Color Light Leaf* is a morphism built-up only with birdcages and dots. In the right-most position one can admit a hanging birdcage as in the picture.\n\n<figure id=\"LL1\">\n<div class=\"center\">\n<img src=\"onecolorLL.png\" />\n</div>\n<figcaption>Example of a one-color light leaf</figcaption>\n</figure>\n\n<figure id=\"LL2\">\n<div class=\"center\">\n<img src=\"onecolorLL2.png\" />\n</div>\n<figcaption>Another example</figcaption>\n</figure>\n\nBy definition a light leaf has two possible targets (as shown in figures [1](#LL1){reference-type=\"ref\" reference=\"LL1\"} and [2](#LL2){reference-type=\"ref\" reference=\"LL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p035-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../images/img-p035-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p035-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../images/img-p035-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two colors light leaves",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-040-54-two-colors-light-leaves.md",
+      "narrative": null,
+      "content": "In this section we will consider only two simple reflections, say $s$ and $r$, represented by two colors, say red and blue. We will explain a version of the Double Leaves Theorem in two colors but only for reduced expressions (we will see that the general version of this theorem (Theorem [\\[DL\\]](#DL){reference-type=\"ref\" reference=\"DL\"}) does not restrict to reduced expressions neither in the source nor in the target). It is for simplicity of exposition that we use reduced expressions.\n\nWe will call a *full birdcage* a morphism of the following type\n\n<figure id=\"fbc\">\n<div class=\"center\">\n<im",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p036-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../images/img-p036-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p036-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../images/img-p036-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p037-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../images/img-p037-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Light leaves in general",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-041-6-light-leaves-in-general.md",
+      "narrative": null,
+      "content": "[]{#Light leaves basis label=\"Light leaves basis\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjunction",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-042-61-adjunction.md",
+      "narrative": null,
+      "content": "[]{#adjunction label=\"adjunction\"} Until now we have spoken about \"adjoint\" morphisms without really saying what the adjunction is.\n\n::: lem\nIf $M$ and $N$ are two Bott-Samelson bimodules, the following map is an isomorphism of graded right $R$-modules $$\\begin{aligned}\n\\mathrm{Hom}(B_sM,N)&\\rightarrow \\mathrm{Hom}(M,B_sN)\\\\\nf&\\mapsto (\\mathrm{id}_{B_s}\\otimes f)\\circ ((j_s^a\\circ m_s^a)\\otimes \\mathrm{id}_M)\n\\end{aligned}$$\n:::\n\nIt is an exercice to prove this (one just needs to find explicitly the inverse map). In any case, a detailed proof can be found in [@Li0 Lemme 2.4]. This adjunction m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p038-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A new morphism",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-043-62-a-new-morphism.md",
+      "narrative": null,
+      "content": "Until now we have just used the morphisms $m_s$, $j_s$ and its adjoints. We need a new morphism that does not appear in the examples that we have seen so far (it would appear in Theorem [\\[DL\\]](#DL){reference-type=\"ref\" reference=\"DL\"} if we would have considered $x$ or $y$ equal to the longest element, or if we would have considered as source a Bott-Samelson not represented by a reduced expression).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The morphism fsr",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-044-621-the-morphism-fsr.md",
+      "narrative": null,
+      "content": "Consider the bimodule $X_{sr}=B_sB_rB_s\\cdots$ the product having $m(s,r)$ terms (recall that $m(s,r)$ is the order of $sr$). We define $f_{sr}$ as the only degree $0$ morphism from $X_{sr}$ to $X_{rs}$ sending $1^{\\otimes}$ to $1^{\\otimes}$. We have essentially encountered this morphism in Section [\\[babyA\\]](#babyA){reference-type=\"ref\" reference=\"babyA\"}.\n\nLet $x=srs\\cdots$ with the product having $m(s,r)$ terms. We have seen in Section [\\[any\\]](#any){reference-type=\"ref\" reference=\"any\"} that one has an isomorphism $$X_{sr}\\cong B_x\\oplus \\bigoplus_{y<x}p_y\\cdot  B_y\\hspace{.3cm}\\mathrm{w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-045-622-examples.md",
+      "narrative": null,
+      "content": "Suppose we are in the case $W=S_n$. In this case $R=\\mathbb R[x_1,x_2, \\ldots, x_n]$ and the group $W$ acts permuting the variables. We have that the simple reflections in $W$ are the $s_i$, the permutation switching the variables $i$ and $i+1$. For simplicity of notation we will denote by $f_{ij}$ the morphism $f_{s_is_j}$ and by $B_i$ the bimodule $B_{s_i}$. In this example we have three cases to consider.\n\n1.  **First case:** $\\vert i-j \\vert>1$. The morphism $f_{ij}:B_iB_j\\rightarrow B_jB_i$ is completeley determined by the formula $f_{ij}(1^{\\otimes})=1^{\\otimes},$ because the element $1^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path morphisms",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-046-63-path-morphisms.md",
+      "narrative": null,
+      "content": "[]{#f label=\"f\"}\n\n::: defi\nFor $(W,S)$ a Coxeter system and $x\\in W$ we define the *Reduced expressions graph of $x$* or simply *Rex($x$)* as the graph with nodes the set of reduced expressions of $x$ and two reduced expressions are joined by an edge if they differ by a single braid relation.\n:::\n\nFor every reduced expression $\\underline{s}$ we have associated a Bott-Samelson bimodule $B_{\\underline{s}}.$ If two Bott-Samelson bimodules $B, B'$ differ by just one braid relation one has a morphism of the type $\\mathrm{id}\\otimes f_{sr}\\otimes \\mathrm{id}\\in \\mathrm{Hom}(B,B')$. For example, for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tree Ts",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-047-64-the-tree-ts.md",
+      "narrative": null,
+      "content": "The tree Ts\nLet (W, S) be an arbitrary Coxeter system. In this section we ﬁx a sequence of\nsimple reﬂections s = (s1, . . . , sn) ∈Sn and construct a tree Ts.\nWe construct a perfect binary tree (i.e a tree in which all interior nodes have\nexactly two children and all leaves have the same depth) with nodes colored\nby Bott-Samelson bimodules and arrows colored by morphisms from parent to\nchild nodes. We construct it by induction on the depth of the nodes. In depth\nzero and one we have the following tree:\n41\n(Bs1Bs2 · · · Bsn)\nms1⊗idn−1\n~\nid\n\"\n(Bs2 · · · Bsn)\n(Bs1)(Bs2 · · · Bsn)\nLet k < n and t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of the double leaves basis",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-048-65-construction-of-the-double-leaves-basis.md",
+      "narrative": null,
+      "content": "[]{#LL label=\"LL\"}\n\nIn this section we consider two arbitrary sequences (not necessarily reduced) of simple reflections $\\underline{s}=s_1\\cdots s_n$ and $\\underline{r}=r_1\\cdots r_p.$ We are interested in calculating the space $\\mathrm{Hom}(B_{\\underline{s}}, B_{\\underline{r}})$.\n\n**Philosophy:** *The natural basis between Bott-Samelson bimodules is the tree $\\mathbb{T}_{\\underline{s}}$ \\\"pasted\\\" with the tree $\\mathbb{T}_{\\underline{r}}$ inverted.*\n\nFor any light leaf $l:B_{\\underline{r}}\\rightarrow B_{\\underline{t}}$ in $\\mathbb{T}_{\\underline{r}}$ we can find its *adjoint light leaf* $l^a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p044-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../images/img-p044-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Final calculations: examples B, C and D",
+      "pageStart": 44,
+      "pageEnd": 47,
+      "target": "../sections/sec-049-7-final-calculations-examples-b-c-and-d.md",
+      "narrative": null,
+      "content": "Final calculations: examples B, C and D\nIn section 4 we were able to calculate the indecomposable Soergel bimodules\nfor the baby example A. Now that we have introduced the graphical notation\nwe are able to do the same thing (although we will not prove it) in the other\nexamples, B, C and D. This method gives also a different way to calculate the\nindecomposable Soergel bimodules in baby example A. We will obtain them as\nthe image of some idempotents of Bott-Samelson’s instead of expressing them\nas tensor products of bimodules (which is not possible in general).\nIt is enough to calculate example",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p045-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1702.00039v1/blocks/figure-img-p046-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../images/img-p046-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

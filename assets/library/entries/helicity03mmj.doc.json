@@ -1,0 +1,1123 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "helicity03mmj",
+  "title": "helicity03mmj",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "What is Helicity?",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-what-is-helicity"
+    },
+    {
+      "level": 1,
+      "title": "Three-Dimensional Ramifications",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-three-dimensional-ramifications"
+    },
+    {
+      "level": 2,
+      "title": "Bilinear and multi-linear forms.",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-bilinear-and-multi-linear-forms"
+    },
+    {
+      "level": 2,
+      "title": "Energy estimates.",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-energy-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Ergodic meaning of the Calabi invariant.",
+      "number": "3.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-ergodic-meaning-of-the-calabi-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Short paths systems.",
+      "number": "3.4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-34-short-paths-systems"
+    },
+    {
+      "level": 1,
+      "title": "Linking of a Vector Field with a Measured Foliation",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-linking-of-a-vector-field-with-a-measured-foli"
+    },
+    {
+      "level": 2,
+      "title": "Linking of a curve with a foliation",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-linking-of-a-curve-with-a-foliation"
+    },
+    {
+      "level": 2,
+      "title": "Linking of a vector field with a foliation.",
+      "number": "4.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-linking-of-a-vector-field-with-a-foliation"
+    },
+    {
+      "level": 2,
+      "title": "Linking of several measured foliations.",
+      "number": "4.3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-43-linking-of-several-measured-foliations"
+    },
+    {
+      "level": 1,
+      "title": "Linking of Foliations and Brownian Motion",
+      "number": "5",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-linking-of-foliations-and-brownian-motion"
+    },
+    {
+      "level": 1,
+      "title": "Novikov's Integrals",
+      "number": "6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-novikovs-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf invariant",
+          "heading": false
+        },
+        {
+          "term": "helicities",
+          "heading": false
+        },
+        {
+          "term": "arnold",
+          "heading": false
+        }
+      ],
+      "extract": "MOSCOW MATHEMATICAL JOURNAL Volume 3, Number 3, July–September 2003, Pages 989–1011 GEOMETRY OF HIGHER HELICITIES BORIS A. KHESIN To Vladimir Igorevich Arnold on the occasion of his 65th birthday Abstract. We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem. We also survey various results related to Arnold’s the- orem on the",
+      "extractCut": true,
+      "blocks": [
+        "library/helicity03mmj/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brownian ergodic",
+          "heading": false
+        },
+        {
+          "term": "ideal ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld curl",
+          "heading": false
+        },
+        {
+          "term": "hopf invariant",
+          "heading": false
+        },
+        {
+          "term": "divergence-free vector",
+          "heading": false
+        },
+        {
+          "term": "asymptotic hopf",
+          "heading": false
+        },
+        {
+          "term": "novikov invariants",
+          "heading": false
+        },
+        {
+          "term": "transverse invariant",
+          "heading": false
+        }
+      ],
+      "extract": "The helicity of a vector ﬁeld in a three-dimensional space can be thought of as a real-valued version of the integral-valued Hopf invariant for a continuous map S3 →S2. The latter has two well-known deﬁnitions: topological or analytic ones. Topologically, the Hopf invariant of a map S3 →S2 is deﬁned as the linking number in S3 of the curves which are preimages of two arbitrary generic points in S2. Alternatively,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-what-is-helicity",
+      "number": "2",
+      "title": "What is Helicity?",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity",
+          "heading": true
+        },
+        {
+          "term": "divergence-free ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld trajectories",
+          "heading": false
+        },
+        {
+          "term": "divergence-free vector",
+          "heading": false
+        },
+        {
+          "term": "average linking",
+          "heading": false
+        },
+        {
+          "term": "shortest geodesics",
+          "heading": false
+        },
+        {
+          "term": "asymptotic linking",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        }
+      ],
+      "extract": "Let M be a simply connected three-dimensional manifold with a volume form µ, and ξ a divergence-free vector ﬁeld on M. The divergence-free property means that the Lie derivative of µ along ξ vanishes: Lξµ = 0, or, which is the same, the substitution ωξ := iξµ of the ﬁeld ξ to the volume form µ, is a closed 2-form: dωξ = 0. On a simply connected manifold M (or, even, for an M with H1(M) = 0) the latter implies that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-three-dimensional-ramifications",
+      "number": "3",
+      "title": "Three-Dimensional Ramifications",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we consider vector ﬁelds on three-dimensional manifolds.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-bilinear-and-multi-linear-forms",
+      "number": "3.1",
+      "title": "Bilinear and multi-linear forms.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "divergence-free vector",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "trilinear form",
+          "heading": false
+        },
+        {
+          "term": "net twist",
+          "heading": false
+        },
+        {
+          "term": "potential forms",
+          "heading": false
+        },
+        {
+          "term": "solid tori",
+          "heading": false
+        },
+        {
+          "term": "massey numbers",
+          "heading": false
+        },
+        {
+          "term": "borromean link",
+          "heading": false
+        }
+      ],
+      "extract": "quadratic form on divergence-free vector ﬁelds, as the explicit formula in Deﬁ- nition 2.1 shows. Similarly, one deﬁnes a symmetric form, the cross-helicity, for two divergence-free vector ﬁelds: H(ξ, η) = Z M ωξ ∧d−1ωη. (2) Its value turns out to be equal to the asymptotic linking of the ξ- and η-trajecto- ries [1]. 994 B. KHESIN The bilinear form H(ξ, η) corresponds to the linking of curves in 3D. For links with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-energy-estimates",
+      "number": "3.2",
+      "title": "Energy estimates.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy estimates",
+          "heading": true
+        },
+        {
+          "term": "volume-preserving diﬀeomorphism",
+          "heading": false
+        },
+        {
+          "term": "trajec tories",
+          "heading": false
+        },
+        {
+          "term": "magnetic ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "energy bound",
+          "heading": false
+        },
+        {
+          "term": "solitori",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "direct energy",
+          "heading": false
+        }
+      ],
+      "extract": "in physics are magnetic ﬁelds. Imagine a magnetic ﬁeld frozen in an inﬁnitely conducting, but viscous medium. Then moving according to the system of the MHD equations, the medium kinetic energy will be dissipating due to the ﬂuid viscosity, until it comes to a rest. The magnetic energy of the transported magnetic ﬁeld should tend to its minimal value during the evolution, as any energy excess beyond the minimum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-ergodic-meaning-of-the-calabi-invariant",
+      "number": "3.3",
+      "title": "Ergodic meaning of the Calabi invariant.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi invariant",
+          "heading": true
+        },
+        {
+          "term": "area-preserving diﬀeomorphism",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "poincare map",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional disk",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian isotopy",
+          "heading": false
+        },
+        {
+          "term": "ergodic",
+          "heading": true
+        },
+        {
+          "term": "asymptotic linking",
+          "heading": false
+        }
+      ],
+      "extract": "ﬁelds with an invariant solid torus knotted in a complicated way. However, in the case of a “complicated ﬁeld” in a “simple” standard solid torus the following approach based on the notion of Calabi invariant in symplectic geometry sometimes gives sharper estimates, see [10], [12]. One has to note that the asymptotic Hopf invariant (unlike the Hopf invariant for a map) is diﬃcult to ﬁnd explicitly for a somewhat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-short-paths-systems",
+      "number": "3.4",
+      "title": "Short paths systems.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "short paths",
+          "heading": true
+        },
+        {
+          "term": "linking form",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "ssp",
+          "heading": false
+        },
+        {
+          "term": "non-closed",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "double integral",
+          "heading": false
+        },
+        {
+          "term": "trajectories",
+          "heading": false
+        }
+      ],
+      "extract": "one needs to pass to linkings of non-closed curves. A way to do this is to introduce a “linking form.” Deﬁnition 3.13. A linking form on an n-dimensional compact manifold M is a (k, l)-form LF ∈Ω∗(M × M) satisfying the condition: the linking number of any two non-intersecting closed oriented compact submanifolds P and Q of linking dimensions k and l (with k + l = n −1) is given by the double integral ZZ P ×Q⊂M×M LF.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-linking-of-a-vector-field-with-a-measured-foli",
+      "number": "4",
+      "title": "Linking of a Vector Field with a Measured Foliation",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-41-linking-of-a-curve-with-a-foliation",
+      "number": "4.1",
+      "title": "Linking of a curve with a foliation",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliation",
+          "heading": true
+        },
+        {
+          "term": "ruelle sullivan",
+          "heading": false
+        },
+        {
+          "term": "linking",
+          "heading": true
+        },
+        {
+          "term": "curve",
+          "heading": true
+        },
+        {
+          "term": "null-homologous",
+          "heading": false
+        },
+        {
+          "term": "smooth form",
+          "heading": false
+        },
+        {
+          "term": "integrates",
+          "heading": false
+        },
+        {
+          "term": "codimension",
+          "heading": false
+        }
+      ],
+      "extract": "foliation of codimension 2 and a divergence-free vector ﬁeld is a direct generaliza- tion of the cross-helicity, cf. [2], [16], [17]. The corresponding helicity invariants in higher dimensions are similar to those appearing in higher-dimensional ideal hy- drodynamics, an odd-dimensional ideal incompressible ﬂuid moving according to the Euler equations. It should be mentioned however, that they do not seem to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-linking-of-a-vector-field-with-a-foliation",
+      "number": "4.2",
+      "title": "Linking of a vector field with a foliation.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliation",
+          "heading": true
+        },
+        {
+          "term": "lkξ",
+          "heading": false
+        },
+        {
+          "term": "transverse holonomy-invariant",
+          "heading": false
+        },
+        {
+          "term": "measured foliation",
+          "heading": false
+        },
+        {
+          "term": "holonomy-invariant measure",
+          "heading": false
+        },
+        {
+          "term": "linking",
+          "heading": true
+        },
+        {
+          "term": "average linking",
+          "heading": false
+        },
+        {
+          "term": "iξµ",
+          "heading": false
+        }
+      ],
+      "extract": "dimensional case, we can now deﬁne an asymptotic and average linking numbers for a vector ﬁeld and a measured foliation. For a ﬁeld ξ on M denote by ΓT (x) a GEOMETRY OF HIGHER HELICITIES 1001 closed curve consisting of the long segment (for time 0 ≤t ≤T) of the ξ-trajectory gt ξx starting at x ∈M and of a short closing path (e. g., geodesic). Deﬁnition 4.2. An asymptotic linking lkξ(x, F) of the trajectory of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-linking-of-several-measured-foliations",
+      "number": "4.3",
+      "title": "Linking of several measured foliations.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliations",
+          "heading": true
+        },
+        {
+          "term": "linking",
+          "heading": true
+        },
+        {
+          "term": "mutual linking",
+          "heading": false
+        },
+        {
+          "term": "average linking",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "intersection points",
+          "heading": false
+        },
+        {
+          "term": "codimensions",
+          "heading": false
+        },
+        {
+          "term": "submanifolds",
+          "heading": false
+        }
+      ],
+      "extract": "the problem of generalizing the ergodic linking to foliations. However, there is one case where such a generalization follows immediately from the deﬁnitions above. Consider an n-dimensional closed manifold M with a volume form µ, and several foliations of arbitrary dimensions with holonomy invariant measures on M. We assume that (at least) one of the foliations is of codimension 2, and that the sum of all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-linking-of-foliations-and-brownian-motion",
+      "number": "5",
+      "title": "Linking of Foliations and Brownian Motion",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliations",
+          "heading": true
+        },
+        {
+          "term": "brownian",
+          "heading": true
+        },
+        {
+          "term": "linking",
+          "heading": true
+        },
+        {
+          "term": "leaf diﬀusion",
+          "heading": false
+        },
+        {
+          "term": "brownian average",
+          "heading": false
+        },
+        {
+          "term": "brownian trajectories",
+          "heading": false
+        },
+        {
+          "term": "holonomy-invariant measures",
+          "heading": false
+        },
+        {
+          "term": "mutual linking",
+          "heading": false
+        }
+      ],
+      "extract": "An attempt to generalize the ergodic view on helicity to higher dimensions en- counters the following diﬃculty. Consider, for instance, the Hopf invariant for a map ρ: S2k−1 →Sk. Just like in the S3 →S2-case, it is deﬁned as the linking number of the preimages in S2k−1 of two generic points in the target sphere Sk. Alternatively, one can deﬁne it as the integral Z S2k−1 β ∧d−1β, (4) where a k-form β is the pullback",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-novikovs-integrals",
+      "number": "6",
+      "title": "Novikov's Integrals",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "form mlf",
+          "heading": false
+        },
+        {
+          "term": "mutual linking",
+          "heading": false
+        },
+        {
+          "term": "brownian ergodic",
+          "heading": false
+        },
+        {
+          "term": "novikov",
+          "heading": true
+        },
+        {
+          "term": "zzz",
+          "heading": false
+        },
+        {
+          "term": "ergodic interpretation",
+          "heading": false
+        },
+        {
+          "term": "kernel foliations",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        }
+      ],
+      "extract": "Novikov’s invariants [21] can be thought of as a generalization of the Hopf-type invariants to a wide class of maps. In particular, he constructed an analog of the Whitehead operations in the homotopy groups for closed diﬀerential forms on manifolds. In [21], Novikov deﬁned a set of invariants on manifolds of an arbitrary dimension, and we consider the four-dimensional case for illustration. Consider the invariants",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 37,
+      "summary": null,
+      "keywords": [],
+      "extract": "Vienna, the IHES in Bures-sur-Yvette, and Ecole Polytechnique in Paris, where this paper was written. Special thanks go to V. Kaimanovich, M. Kapovich and S. Tabachnikov for illuminating discussions and to D. Novikov for drawing the ﬁgures.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "english translation",
+          "heading": false
+        },
+        {
+          "term": "toronto",
+          "heading": false
+        },
+        {
+          "term": "asymptotic hopf",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "gambaudo",
+          "heading": false
+        },
+        {
+          "term": "ghys",
+          "heading": false
+        },
+        {
+          "term": "khesin",
+          "heading": false
+        },
+        {
+          "term": "hopf invariant",
+          "heading": false
+        }
+      ],
+      "extract": "[1] V. I. Arnold, The asymptotic Hopf invariant and its applications, Proc. Summer School in Diﬀ. Equations at Dilizhan (Erevan), 1973, English translation in: Selecta Math. Soviet. 5 (1986), no. 4, 327–345. MR 89m:58053 (Russian). [2] V. I. Arnold and B. A. Khesin, Topological methods in hydrodynamics, Applied Mathematical Sciences, vol. 125, Springer-Verlag, New York, 1998. MR 99b:58002 [3] M. A. Berger,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "average linking",
+      "heading": false
+    },
+    {
+      "term": "higher linking",
+      "heading": false
+    },
+    {
+      "term": "linking form",
+      "heading": false
+    },
+    {
+      "term": "asymptotic linking",
+      "heading": false
+    },
+    {
+      "term": "mutual linking",
+      "heading": false
+    },
+    {
+      "term": "linking number",
+      "heading": false
+    },
+    {
+      "term": "linking dimensions",
+      "heading": false
+    },
+    {
+      "term": "divergence-free ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "linking num",
+      "heading": false
+    },
+    {
+      "term": "pairwise linking",
+      "heading": false
+    },
+    {
+      "term": "brownian ergodic",
+      "heading": false
+    },
+    {
+      "term": "ﬁeld trajectories",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The long segments of the trajectories are closed by the “short paths”",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Brownian trajectories on leaves",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The linking of three surfaces A, B, and C in a four-sphere",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/helicity03mmj"
+  }
+}

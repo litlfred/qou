@@ -1,0 +1,1253 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1404.0724v1",
+  "title": "Introduction to representations of braid groups",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Braid groups",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-2-braid-groups"
+    },
+    {
+      "level": 2,
+      "title": "Artin's presentation",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-artins-presentation"
+    },
+    {
+      "level": 2,
+      "title": "Configuration spaces",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-configuration-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Mapping class groups",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-mapping-class-groups"
+    },
+    {
+      "level": 2,
+      "title": "Pure braids",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-pure-braids"
+    },
+    {
+      "level": 1,
+      "title": "Homological representations",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-homological-representations"
+    },
+    {
+      "level": 2,
+      "title": "The Burau representation",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-the-burau-representation"
+    },
+    {
+      "level": 2,
+      "title": "Homological interpretation",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-homological-interpretation"
+    },
+    {
+      "level": 2,
+      "title": "Braids, knots and the Alexander Conway polynomial",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-braids-knots-and-the-alexander-conway-polynom"
+    },
+    {
+      "level": 2,
+      "title": "The Lawrence-Krammer-Bigelow representation",
+      "number": "3.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-the-lawrence-krammer-bigelow-representation"
+    },
+    {
+      "level": 1,
+      "title": "The Knizhnik-Zamolodchikov connection",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-the-knizhnik-zamolodchikov-connection"
+    },
+    {
+      "level": 2,
+      "title": "Cohomology of configuration spaces and the KZ connection",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-41-cohomology-of-configuration-spaces-and-the-kz"
+    },
+    {
+      "level": 2,
+      "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-42-representations-of-sl2c-and-lawrence-krammer"
+    },
+    {
+      "level": 1,
+      "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-the-yang-baxter-equation-and-the-drinfeld-kohn"
+    },
+    {
+      "level": 2,
+      "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-the-yang-baxter-equation-and-quasi-triangular"
+    },
+    {
+      "level": 2,
+      "title": "The Drinfeld-Kohno theorem",
+      "number": "5.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-the-drinfeld-kohno-theorem"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological representations",
+          "heading": false
+        },
+        {
+          "term": "knizhnik-zamolodchikov connection",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "cimpa",
+          "heading": false
+        },
+        {
+          "term": "drinfeld-kohno theorem",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration spaces",
+          "heading": false
+        },
+        {
+          "term": "lawrence-krammer-bigelow",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction to representations of braid groups Camilo Arias Abad∗ April 4, 2014 Abstract These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation theory, held in Curitiba, Brazil in March 2013. The purpose of the course is to provide an introduction to the study of representations of braid groups. Three general classes of representations",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1404.0724v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-2-braid-groups",
+      "number": "2",
+      "title": "Braid groups",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "anonymous referee for carefully reading a previous version and correcting several mistakes.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "monodromy representations",
+          "heading": false
+        },
+        {
+          "term": "lawrence-krammer-bigelow representation",
+          "heading": false
+        },
+        {
+          "term": "representations constructed",
+          "heading": false
+        },
+        {
+          "term": "groups act",
+          "heading": false
+        },
+        {
+          "term": "marked points",
+          "heading": false
+        },
+        {
+          "term": "artin",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Braid groups were introduced by Emil Artin in 1925, and by now play a role in various parts of mathematics including knot theory, low dimensional topology, public key cryptography and deformation quantization. The braid group Bn admits diﬀerent equivalent deﬁnitions: the fundamental group of the conﬁguration space Cn(C) of n unordered points in the complex plane, the mapping class group of a disk with n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-artins-presentation",
+      "number": "2.1",
+      "title": "Artin's presentation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin",
+          "heading": true
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        },
+        {
+          "term": "strands",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": false
+        },
+        {
+          "term": "satisﬁed follows",
+          "heading": false
+        },
+        {
+          "term": "presentation",
+          "heading": true
+        },
+        {
+          "term": "isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "We denote by D2 the unit disk in the complex plane and ﬁx n marked points −1 < p1 < p2 · · · < pn < 1 ∈D2 ∩R. Deﬁnition 2.1. A braid is a collection of n paths fi : I = [0, 1] 7→D2, called strands, such that: 1. fi(0) = pi. 2. fi(1) = pτ(i), for some permutation τ in the symmetric group Σn. 3. For each t ∈I, fi(t)̸ = fj(t) provided that i̸ = j. Braids are pictured geometrically as a collection of n strands in three",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-configuration-spaces",
+      "number": "2.2",
+      "title": "Configuration spaces",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "space ˆcn",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration space",
+          "heading": false
+        },
+        {
+          "term": "unordered points",
+          "heading": false
+        },
+        {
+          "term": "fundamental group",
+          "heading": false
+        },
+        {
+          "term": "fadell-van",
+          "heading": false
+        }
+      ],
+      "extract": "Conﬁguration spaces The group Bn can also be described as the fundamental group of the conﬁguration space of points in the plane. We will now brieﬂy recall some deﬁnitions regarding conﬁguration spaces. Let M be a smooth manifold. The conﬁguration space of n ordered points in M, denoted ˆCn(M) is the manifold: ˆCn(M) := {(x1, . . . , xn) ∈Mn : xi̸ = xj if i̸ = j}. There is a natural action of the symmetric group Σn",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-mapping-class-groups",
+      "number": "2.3",
+      "title": "Mapping class groups",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mapping class",
+          "heading": true
+        },
+        {
+          "term": "homeo",
+          "heading": false
+        },
+        {
+          "term": "class groups",
+          "heading": true
+        },
+        {
+          "term": "boundary pointwise",
+          "heading": false
+        },
+        {
+          "term": "marked points",
+          "heading": false
+        },
+        {
+          "term": "half twist",
+          "heading": false
+        },
+        {
+          "term": "open topology",
+          "heading": false
+        },
+        {
+          "term": "compact open",
+          "heading": false
+        }
+      ],
+      "extract": "Mapping class groups The braid groups Bn can also be realized as mapping class groups, which exposes the very interesting relation with the topology of surfaces. Let M, N be compact manifolds, possibly with boundary. We denote by C(M, N) the space of all continuous functions from M to N. There is a natural topology on C(M, N), the compact open topology, deﬁned as follows: for any K ⊂M compact and U ⊂N open, set: V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-pure-braids",
+      "number": "2.4",
+      "title": "Pure braids",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆcn",
+          "heading": false
+        },
+        {
+          "term": "eilenberg-maclane",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "pure",
+          "heading": true
+        }
+      ],
+      "extract": "Pure braids There is a natural group homomorphism π : Bn →Σn which sends a braid to the corresponding permutation of the marked points. Alternatively, the homomorphism is characterized by the property that: σi 7→(i, i + 1). Deﬁnition 2.12. The pure braid group on n strands, denoted by Pn, is the kernel of the homo- morphism π : Bn →Σn. The group Pn consists of those braids such that each strand starts and ends at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-homological-representations",
+      "number": "3",
+      "title": "Homological representations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Homological representations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-31-the-burau-representation",
+      "number": "3.1",
+      "title": "The Burau representation",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1066,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burau representation",
+          "heading": true
+        },
+        {
+          "term": "reduced burau",
+          "heading": false
+        },
+        {
+          "term": "uic",
+          "heading": false
+        },
+        {
+          "term": "cwi",
+          "heading": false
+        },
+        {
+          "term": "braid relations",
+          "heading": false
+        },
+        {
+          "term": "uiui",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        }
+      ],
+      "extract": "tion as action of mapping classes on homology, and their relation with the Alexander-Conway polynomial of links. We also introduce the Lawrence-Krammer-Bigelow representation, which has the remarkable property of being faithful. Our exposition follows closely the book by Kassel and Turaev [18]. 3.1 The Burau representation Let us denote by Λ the ring of Laurent polynomials with integer coeﬃcients: Λ := Z[t, t−1]. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-homological-interpretation",
+      "number": "3.2",
+      "title": "Homological interpretation",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological",
+          "heading": true
+        },
+        {
+          "term": "inﬁnite cyclic",
+          "heading": false
+        },
+        {
+          "term": "winding number",
+          "heading": false
+        },
+        {
+          "term": "cyclic group",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        },
+        {
+          "term": "homeomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Homological interpretation Let us denote by D the closed disk in the plane with n distinguished interior points p1 < · · · < pn ∈D ∩R and set Q := {p1, . . . , pn}. Observe that for any point p in the interior of D: H1(D −{p}, Z) ∼= Z, is generated by the homology class of a small circle around p oriented counterclockwise. Set Σ := D −Q and ﬁx a basepoint d ∈∂D. We deﬁne the group homomorphism φ : π1(Σ, d) →Z by [γ]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-braids-knots-and-the-alexander-conway-polynom",
+      "number": "3.3",
+      "title": "Braids, knots and the Alexander Conway polynomial",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "markov move",
+          "heading": false
+        },
+        {
+          "term": "conway",
+          "heading": true
+        },
+        {
+          "term": "markov theorem",
+          "heading": false
+        },
+        {
+          "term": "markov equivalent",
+          "heading": false
+        },
+        {
+          "term": "markov function",
+          "heading": false
+        },
+        {
+          "term": "alexander-conway polynomial",
+          "heading": false
+        },
+        {
+          "term": "conway triple",
+          "heading": false
+        }
+      ],
+      "extract": "Braids, knots and the Alexander Conway polynomial A knot is an isotopy class of an embedding of a circle in three dimensional euclidian space. More generally, a link with k components is an isotopy class of an embedding of k circles in R3. The fundamental problem of knot theory is the classiﬁcation of knots and links. The following is a typical example of a knot:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-the-lawrence-krammer-bigelow-representation",
+      "number": "3.4",
+      "title": "The Lawrence-Krammer-Bigelow representation",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1085,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lawrence-krammer-bigelow representation",
+          "heading": true
+        },
+        {
+          "term": "deﬁnes loop",
+          "heading": false
+        },
+        {
+          "term": "counterclockwise direction",
+          "heading": false
+        },
+        {
+          "term": "group homomorphism",
+          "heading": false
+        },
+        {
+          "term": "deck transformations",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration spaces",
+          "heading": false
+        },
+        {
+          "term": "homeomorphism",
+          "heading": false
+        },
+        {
+          "term": "distinct points",
+          "heading": false
+        }
+      ],
+      "extract": "The Lawrence-Krammer-Bigelow representation We will now discuss another homological representation introduced by R. Lawrence [23] and studied by D. Krammer [22] and S. Bigelow [4]. Let us ﬁx a natural number n ≥1 and denote by D the unit disk with n distinguished points Q = {p1, . . . , pn}. We also set Σ := D −Q, F := ˆC2(Σ), C := C2(Σ). Here we use the notation introduced above for conﬁguration spaces. That is, F",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-the-knizhnik-zamolodchikov-connection",
+      "number": "4",
+      "title": "The Knizhnik-Zamolodchikov connection",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knizhnik-zamolodchikov",
+          "heading": true
+        },
+        {
+          "term": "knizhnik-zamolodchivov",
+          "heading": false
+        },
+        {
+          "term": "connections",
+          "heading": false
+        }
+      ],
+      "extract": "The Knizhnik-Zamolodchikov connection We will now describe representations of braid groups that arise by monodromy of certain ﬂat connections, known as Knizhnik-Zamolodchivov connections, on conﬁguration spaces of points in the plane. More about this connections and the relationship with the Jones polynomial can be found in Kohno’s book [19].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-41-cohomology-of-configuration-spaces-and-the-kz",
+      "number": "4.1",
+      "title": "Cohomology of configuration spaces and the KZ connection",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆcn",
+          "heading": false
+        },
+        {
+          "term": "tij",
+          "heading": false
+        },
+        {
+          "term": "tik",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "forms wij",
+          "heading": false
+        },
+        {
+          "term": "tjk",
+          "heading": false
+        },
+        {
+          "term": "kohno-drinfeld lie",
+          "heading": false
+        },
+        {
+          "term": "arnold relation",
+          "heading": false
+        }
+      ],
+      "extract": "Cohomology of conﬁguration spaces and the KZ connection As before, we denote by ˆCn(C) the conﬁguration space of n ordered points in the plane. The cohomology of ˆCn(C) has been computed explicitly by Arnold in [2]. Since the original article is in russian, some readers may prefer to read [25] for a detailed explanation of the computation. Let us now describe Arnold’s result. Deﬁnition 4.1. The algebra An is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-42-representations-of-sl2c-and-lawrence-krammer",
+      "number": "4.2",
+      "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connection υnθn",
+          "heading": false
+        },
+        {
+          "term": "lawrence-krammer-bigelow",
+          "heading": true
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "ˆcn",
+          "heading": false
+        },
+        {
+          "term": "vector bundle",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "λij",
+          "heading": false
+        },
+        {
+          "term": "basis elements",
+          "heading": false
+        }
+      ],
+      "extract": "Representations of sl2(C) and Lawrence-Krammer-Bigelow We will consider the KZ connection for the semisimple Lie algebras g = sl2(C) of 2 × 2 complex matrices of trace zero. Let us ﬁx the following basis for sl2(C): H = \u0012 1 0 0 −1 \u0013 , E = \u0012 0 1 0 0 \u0013 , F = \u0012 0 0 1 0 \u0013 . In terms of the basis, the bracket is given by: [H, E] = 2E, [H, F] = −2F, [E, F] = H. Deﬁnition 4.11. Let λ ∈C be a complex number. The Verma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-the-yang-baxter-equation-and-the-drinfeld-kohn",
+      "number": "5",
+      "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-51-the-yang-baxter-equation-and-quasi-triangular",
+      "number": "5.1",
+      "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 1402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-triangular bialgebra",
+          "heading": false
+        },
+        {
+          "term": "almost-cocommutative bialgebra",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": true
+        },
+        {
+          "term": "quasi-triangular quasi-bialgebra",
+          "heading": false
+        },
+        {
+          "term": "universal r-matrix",
+          "heading": false
+        },
+        {
+          "term": "r13r",
+          "heading": false
+        },
+        {
+          "term": "braided monoidal",
+          "heading": false
+        },
+        {
+          "term": "natural isomorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "The Yang-Baxter equation and quasi-triangular bialgebras The Yang-Baxter equation was originally introduced in the ﬁeld of statistical mechanics. Solu- tions to this equation provide a systematic way to construct representations of the braid groups Bn. We will introduce the notion of quasi-triangular bialgebra, and explain that these are alge- braic structures with the property that their modules are naturally",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-the-drinfeld-kohno-theorem",
+      "number": "5.2",
+      "title": "The Drinfeld-Kohno theorem",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "32",
+      "words": 2218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-triangular bialgebra",
+          "heading": false
+        },
+        {
+          "term": "drinfeld-jimbo algebra",
+          "heading": false
+        },
+        {
+          "term": "topological quasi-triangular",
+          "heading": false
+        },
+        {
+          "term": "drinfeld-kohno theorem",
+          "heading": true
+        },
+        {
+          "term": "kassel book",
+          "heading": false
+        },
+        {
+          "term": "humphreys book",
+          "heading": false
+        },
+        {
+          "term": "cartan subalgebra",
+          "heading": false
+        },
+        {
+          "term": "semisimple lie",
+          "heading": false
+        }
+      ],
+      "extract": "The Drinfeld-Kohno theorem We have seen that modules over quasi-triangular bialgebras produce representations of the braid groups. However, so far we have not encountered nontrivial examples of quasi-triangular bialge- bras. A rich source of examples comes from Lie theory: the universal enveloping algebra U(g) of a complex semisimple Lie algebra g can be deformed to obtain a quantum enveloping algebra. These provide",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "April 4,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "3 If α, β ∈∆then"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid group",
+      "heading": false
+    },
+    {
+      "term": "space ˆcn",
+      "heading": false
+    },
+    {
+      "term": "braid relations",
+      "heading": false
+    },
+    {
+      "term": "conﬁguration space",
+      "heading": false
+    },
+    {
+      "term": "pure braid",
+      "heading": false
+    },
+    {
+      "term": "lawrence-krammer-bigelow representation",
+      "heading": true
+    },
+    {
+      "term": "burau representation",
+      "heading": true
+    },
+    {
+      "term": "quasi-triangular bialgebra",
+      "heading": false
+    },
+    {
+      "term": "knizhnik-zamolodchikov connection",
+      "heading": true
+    },
+    {
+      "term": "group homomorphism",
+      "heading": false
+    },
+    {
+      "term": "class group",
+      "heading": false
+    },
+    {
+      "term": "homological representation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Examples of braids",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Halftwist of a two pointed disk",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1404.0724v1"
+  }
+}

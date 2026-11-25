@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "E 8 -singularity, invariant theory and modular forms",
+  "contains": [
+    "library/arxiv-2009.03688v6/sections/sec-front-matter",
+    "library/arxiv-2009.03688v6/sections/sec-000",
+    "library/arxiv-2009.03688v6/sections/sec-001",
+    "library/arxiv-2009.03688v6/sections/sec-002",
+    "library/arxiv-2009.03688v6/sections/sec-003",
+    "library/arxiv-2009.03688v6/sections/sec-004",
+    "library/arxiv-2009.03688v6/sections/sec-005",
+    "library/arxiv-2009.03688v6/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "E 8 -singularity, invariant theory and modular forms — As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve\n\n**E 8 -singularity, invariant theory and modular forms**\n\n*Lei Yang*\n\n48 pp, 8 sections.\n\n**Abstract.** As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y ⊂CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is diﬀerent from the Kleinian singularity C2/Γ, where Γ is the binary icosahedral group. This gives a negative answer to Arnol’d and Brieskorn’s questions about the mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, the equa- tion of E8-singularity possesses inﬁnitely many kinds of distinct modular parametrizations, and there are inﬁnitely many kinds of distinct construc- tions of the E8-singularity.\n\n**Outline.** Front matter; Abstract; Contents; 1 Introduction; 2 Standard construction: E8-singularity as the; 3 Invariant theory and modular forms for SL(2,; 4 A diﬀerent construction: E8-singularity from; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2009.03688&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2009.03688v6",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2009.03688v6.pdf",
+    "source_sha256": "8eb9b4cbe2690730e6267dd96dba32aa9079dfe2b0b9e8c5e2ea7893e1ea0a45",
+    "pages": 48,
+    "arxiv": {
+      "id": "2009.03688",
+      "version": "6",
+      "primary_class": "math.NT",
+      "stamp_date": "30 Oct 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

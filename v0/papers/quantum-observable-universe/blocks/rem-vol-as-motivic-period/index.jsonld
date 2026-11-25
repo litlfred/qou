@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-vol-as-motivic-period",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vol-as-motivic-period",
+  "kind": "remark",
+  "title": "$\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\tau_{\\mathrm{arch}}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-bloch-group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+  "cites": [
+    "references/brown-motivic-p1-three-points",
+    "references/zagier1986",
+    "references/neumann-zagier1985",
+    "references/kontsevich1995"
+  ],
+  "tags": [
+    "motivic-period",
+    "bloch-wigner",
+    "regulator",
+    "mixed-tate",
+    "archimedean",
+    "interpretive"
+  ],
+  "text": "vol-as-motivic-period.md",
+  "provenance": "authored"
+}

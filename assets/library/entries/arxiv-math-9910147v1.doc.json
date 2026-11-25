@@ -1,0 +1,1252 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9910147v1",
+  "title": "arxiv-math-9910147v1",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-definition-and-properties-of-various-continuat"
+    },
+    {
+      "level": 2,
+      "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-intertwiners-and-6j0-of-mathfrak-u-qsu2"
+    },
+    {
+      "level": 2,
+      "title": "Definitions and properties of continuation of quantum $6j$ symbols",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-definitions-and-properties-of-continuation-of"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-quantum-lorentz-group-principal-unitary-repre"
+    },
+    {
+      "level": 1,
+      "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-intertwiners-associated-to-unitary-representat"
+    },
+    {
+      "level": 1,
+      "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-alternative-construction-of-intertwiners-in-te"
+    },
+    {
+      "level": 1,
+      "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-decomposition-theorem-of-the-tensor-product-of"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition Theorem of the Tensor Product of Principal Representations",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di"
+    },
+    {
+      "level": 2,
+      "title": "Connection with Askey-Wilson Polynomials.",
+      "number": "5.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-53-connection-with-askey-wilson-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "6",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": "7",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-7-appendix"
+    },
+    {
+      "level": 2,
+      "title": "Formulae on Basic Hypergeometric Functions.",
+      "number": "7.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-71-formulae-on-basic-hypergeometric-functions"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of Intertwiners",
+      "number": "7.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-72-asymptotics-of-intertwiners"
+    },
+    {
+      "level": 2,
+      "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+      "number": "7.3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "askey-wilson polynomials",
+          "heading": false
+        },
+        {
+          "term": "intertwiners",
+          "heading": false
+        },
+        {
+          "term": "laboratoire",
+          "heading": false
+        },
+        {
+          "term": "montpellier",
+          "heading": false
+        },
+        {
+          "term": "principal unitary",
+          "heading": false
+        },
+        {
+          "term": "roche",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buﬀenoir∗, Laboratoire de Physique Math´ematique et Th´eorique†, Universit´e Montpellier 2, Place Eug`ene Bataillon 34000 Montpellier France Ph. Roche‡, Dpt of Mathematics, MIT, Cambridge, MA 02139 USA on leave from CPT Ecole Polytechnique§ 91128 Palaiseau Cedex",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9910147v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "buildrel lambda",
+          "heading": false
+        },
+        {
+          "term": "otimes buildrel",
+          "heading": false
+        },
+        {
+          "term": "phi lambda",
+          "heading": false
+        },
+        {
+          "term": "racah coefficients",
+          "heading": false
+        },
+        {
+          "term": "hat phi",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan coefficients",
+          "heading": false
+        },
+        {
+          "term": "askey-wilson polynomials",
+          "heading": false
+        },
+        {
+          "term": "principal representations",
+          "heading": false
+        }
+      ],
+      "extract": "In [@BR1] we have pursued the work of Podles-Woronowicz [@PW] and Pusz [@Pu]: we have shown that the unitary representations of ${\\mathfrak U}_q(sl(2,\\mathbb{C})_{\\RR})$ can be nicely expressed in terms of one variable complex continuation of $6j$ symbols of ${\\mathfrak U}_q(su(2))$. Using this result we were able to construct the characters of these unitary representations and prove a Plancherel theorem for $L^2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-definition-and-properties-of-various-continuat",
+      "number": "2",
+      "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invited",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "read",
+          "heading": false
+        }
+      ],
+      "extract": "Let us first recall some notations and results of [@BR1] which will be used throughout this work. The reader is also invited to read the first subsection of the appendix of the present article for definitions of basic hypergeometric functions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-intertwiners-and-6j0-of-mathfrak-u-qsu2",
+      "number": "2.1",
+      "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clebpsi buildrel",
+          "heading": false
+        },
+        {
+          "term": "clebpsi clebphi",
+          "heading": false
+        },
+        {
+          "term": "aligned sixjn",
+          "heading": false
+        },
+        {
+          "term": "sixjn mbox",
+          "heading": false
+        },
+        {
+          "term": "sixjn delta",
+          "heading": false
+        },
+        {
+          "term": "sum sixjn",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "infty sixjn",
+          "heading": false
+        }
+      ],
+      "extract": "Let $q=e^{-\\hbar}$ with $\\hbar\\in \\RR^{+*},$ ${\\mathfrak U}_{q}(su(2))$ is the star Hopf algebra generated by $q^{\\pm H}, J^{(\\pm)}$ with the defining relations: $$\\begin{aligned} && q^{H}J^{(\\pm)}q^{-H}=q^{\\pm 1}J^{(\\pm)},\\;\\;\\;\\;\\;\\;\\;\\;[J^{(+)},J^{(-)}]=\\frac{q^{2H}-q^{-2H}}{q-q^{-1}},\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;(J^{(\\pm)})^*=q^{\\mp 1} J^{(\\mp)},\\nonumber\\\\ &&\\Delta(J^{(\\pm)})=q^{-H}\\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-definitions-and-properties-of-continuation-of",
+      "number": "2.2",
+      "title": "Definitions and properties of continuation of quantum $6j$ symbols",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 10,
+      "labelStart": "5",
+      "labelEnd": "10",
+      "words": 2583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sixjn underline",
+          "heading": false
+        },
+        {
+          "term": "aligned sixjn",
+          "heading": false
+        },
+        {
+          "term": "frac sixjn",
+          "heading": false
+        },
+        {
+          "term": "sum sixjn",
+          "heading": false
+        },
+        {
+          "term": "sixjn delta",
+          "heading": false
+        },
+        {
+          "term": "denoted sixjn",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        }
+      ],
+      "extract": "In order to understand the problem of continuation of quantum $6j$ symbols the reader is invited to read the appendix of [@BR1] where definitions, proofs, as well as references on $6j(1)$ are given. Let us give a definition which is essential in order to describe the complex continuations of quantum $6j$ symbols (the notations are explained in the appendix of the present work). ::: definition Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-quantum-lorentz-group-principal-unitary-repre",
+      "number": "2.3",
+      "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "buildrel onehalf",
+          "heading": false
+        },
+        {
+          "term": "aligned buildrel",
+          "heading": false
+        },
+        {
+          "term": "otimes buildrel",
+          "heading": false
+        },
+        {
+          "term": "sum buildrel",
+          "heading": false
+        },
+        {
+          "term": "basis buildrel",
+          "heading": false
+        },
+        {
+          "term": "clebphi clebpsi",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "kmn clebphi",
+          "heading": false
+        }
+      ],
+      "extract": "We will recall in this section fondamental results on $\\mathfrak{U}_q(sl(2,\\mathbb{C})_{\\RR})$ and on the harmonic analysis [@BR1] on $SL_q(2,C)_{\\RR}.$ $\\mathfrak{U}_q(sl(2,\\mathbb{C})_{\\RR})$ by definition is the quantum double of $\\mathfrak{U}_q(su(2)).$ As a result we can write $\\mathfrak{U}_q(sl(2,\\mathbb{C})_{\\RR})= \\mathfrak{U}_q(su(2))\\otimes \\mathfrak{U}_q(su(2))^{*}$ as a vector space, where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-intertwiners-associated-to-unitary-representat",
+      "number": "3",
+      "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 2384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sixjn nonumber",
+          "heading": false
+        },
+        {
+          "term": "times sixjn",
+          "heading": false
+        },
+        {
+          "term": "frac sixjn",
+          "heading": false
+        },
+        {
+          "term": "epsilon onehalf",
+          "heading": false
+        },
+        {
+          "term": "lambda onehalf",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "otimes ontop",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to give explicit formulae of the intertwiners between the representation ${\\buildrel {\\!\\!{}_{(X_0X_1)}} \\over {\\Pi}}\\!\\!\\!\\otimes \\!\\!{\\buildrel {\\!\\!{}_{(Y_0Y_1)}} \\over {\\Pi}}$ and the representation ${\\buildrel {\\!\\!{}_{(Z_0Z_1)}} \\over {\\Pi}},$ in terms of complex continuations of $6j$ symbols of $\\mathfrak{U}_q(su(2)).$ ::: proposition Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-alternative-construction-of-intertwiners-in-te",
+      "number": "4",
+      "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": "17",
+      "labelEnd": "22",
+      "words": 2491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "ijk buildrel",
+          "heading": false
+        },
+        {
+          "term": "frac onehalf",
+          "heading": false
+        },
+        {
+          "term": "nonumber times",
+          "heading": false
+        },
+        {
+          "term": "lambda hbar",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": true
+        },
+        {
+          "term": "nonumber end",
+          "heading": false
+        }
+      ],
+      "extract": "Let us define the linear map ${\\hat \\Phi}[X_0X_1,Y_0Y_1]:V(X_0X_1)\\otimes V(Y_0Y_1)\\rightarrow \\int^{\\oplus} d(Z_0Z_1)H(Z_0Z_1)$ where $\\forall w\\in V(X_0X_1)\\otimes V(Y_0Y_1) ,{\\hat \\Phi}[X_0X_1,Y_0Y_1](w)$ is the family of functions defined by ${\\hat \\Phi}[X_0X_1,Y_0Y_1](w)(Z_0Z_1)=N^{{}_{(X_0X_1)\\;(Y_0Y_1)}}_{\\;\\;\\;{}_{(Z_0Z_1)}}\\GPhin{X_0X_1}{Y_0Y_1}{Z_0Z_1}(w),$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-decomposition-theorem-of-the-tensor-product-of",
+      "number": "5",
+      "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sixjn nonumber",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "hat phi",
+          "heading": false
+        },
+        {
+          "term": "int oplus",
+          "heading": false
+        },
+        {
+          "term": "int cal",
+          "heading": false
+        },
+        {
+          "term": "intlambda",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": true
+        }
+      ],
+      "extract": "## Decomposition Theorem of the Tensor Product of Principal Representations Let us now prove that, chosing $N^{{}_{(X_0X_1)\\;(Y_0Y_1)}}_{\\;\\;\\;{}_{(Z_0Z_1)}}\\!\\!=({\\cal M}_{\\;\\;{}_{(Z_0Z_1)}}^{{}_{(X_0X_1)}{}_{(Y_0Y_1)}})^{1/2}\\!>0$, ${\\hat \\Phi}[X_0X_1,Y_0Y_1]$ is an isometry. ::: theorem []{#isometrytheorem label=\"isometrytheorem\"} ${\\hat \\Phi}[X_0X_1,Y_0Y_1]: V(X_0X_1)\\otimes V(Y_0Y_1) \\rightarrow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di",
+      "number": "5.2",
+      "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes buildrel",
+          "heading": false
+        },
+        {
+          "term": "tilde mathfrak",
+          "heading": false
+        },
+        {
+          "term": "tau epsilon",
+          "heading": false
+        },
+        {
+          "term": "onehalf",
+          "heading": false
+        },
+        {
+          "term": "star",
+          "heading": false
+        },
+        {
+          "term": "infinite",
+          "heading": true
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we will compute the $R$-matrix in the tensor product of two irreducible infinite dimensional representations $({\\buildrel {_{(X_0X_1)}}\\over \\Pi}\\otimes {\\buildrel {_{(Y_0Y_1)}}\\over \\Pi})$. We will in particular show that the expression of $({\\buildrel {_{(X_0X_1)}}\\over \\Pi}\\otimes {\\buildrel {_{(Y_0 Y_1)}}\\over \\Pi})({\\cal R})$ is an operator which domain contains all the vectors of the form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-53-connection-with-askey-wilson-polynomials",
+      "number": "5.3",
+      "title": "Connection with Askey-Wilson Polynomials.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "askey-wilson polynomials",
+          "heading": true
+        },
+        {
+          "term": "elemred underline",
+          "heading": false
+        },
+        {
+          "term": "psi elemred",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "sixjn",
+          "heading": false
+        },
+        {
+          "term": "propsym6j",
+          "heading": false
+        },
+        {
+          "term": "q-racah polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "In the sequel, we will show that we can reexpress $N^{{}_{(X_0X_1)\\;(Y_0Y_1)}}_{\\;\\;\\;{}_{(Z_0Z_1)}}\\ElemRed{A}{B}{C}{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ in terms of q-Racah polynomials and Askey-Wilson polynomials, and that the relation ([\\[completeness\\]](#completeness){reference-type=\"ref\" reference=\"completeness\"}) is an orthogonality property mixing q-Racah polynomials and Askey-Wilson polynomials in a non trivial way.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-conclusion",
+      "number": "6",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "askey-wilson polynomials",
+          "heading": false
+        },
+        {
+          "term": "askeyproof",
+          "heading": false
+        },
+        {
+          "term": "principal representations",
+          "heading": false
+        },
+        {
+          "term": "quantum lorentz",
+          "heading": false
+        },
+        {
+          "term": "explicit expressions",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        }
+      ],
+      "extract": "In this work we have given exact formulae for the Clebsch-Gordan coefficients of the tensor product of two principal unitary representations of the quantum Lorentz Group. We have found explicit expressions of the intertwiners in terms of q-Racah polynomials and Askey-Wilson polynomials. A consequence of this relation is the proof of the proposition ([\\[askeyproof\\]](#askeyproof){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-7-appendix",
+      "number": "7",
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Appendix",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-71-formulae-on-basic-hypergeometric-functions",
+      "number": "7.1",
+      "title": "Formulae on Basic Hypergeometric Functions.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "forall alpha",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma delta",
+          "heading": false
+        },
+        {
+          "term": "aligned varphi",
+          "heading": false
+        },
+        {
+          "term": "array cccc",
+          "heading": false
+        }
+      ],
+      "extract": "In the sequel we shall frequently use the following notations: $\\forall x \\in \\CC, \\forall k \\in \\NN,$ $$\\begin{aligned} &&\\hskip -1.2cm [x]=\\frac{q^x-q^{-x}}{q-q^{-1}}\\;,\\;\\;\\;\\;d_x=2x+1\\;,\\;\\;\\;\\;[x]_k=\\prod_{n=1}^{ k} [x+n-1]\\;,\\;\\;\\;\\;[k]!=[1]_k,\\;\\;\\;\\;\\;v_x^{1/4}=e^{i\\frac{\\pi}{2}x}q^{-\\frac{1}{2}x(x+1)}. \\end{aligned}$$ In this article, the square root of a complex number is defined by: $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-72-asymptotics-of-intertwiners",
+      "number": "7.2",
+      "title": "Asymptotics of Intertwiners",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "frac onehalf",
+          "heading": false
+        },
+        {
+          "term": "cccc mbox",
+          "heading": false
+        },
+        {
+          "term": "infty phi",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "times nonumber",
+          "heading": false
+        },
+        {
+          "term": "frac varphi",
+          "heading": false
+        }
+      ],
+      "extract": "Our aim is to compute the behaviour of $\\ElemRed{\\!\\!P+T}{\\;\\;P}{T}{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ (see ([\\[form6jprol1\\]](#form6jprol1){reference-type=\"ref\" reference=\"form6jprol1\"}) for the explicit expression) for $P=Y_0-Y_1\\geq 0, T\\rightarrow +\\infty.$ The sum on $X_2$ being finite, we can work term by term.\\ The asymptotics of $\\sixjn{X_1}{X_0}{P+T}{T}{P}{\\;\\;X_2}{1}$ is very easy to obtain because, after a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1",
+      "number": "7.3",
+      "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 34,
+      "labelStart": "29",
+      "labelEnd": "34",
+      "words": 2165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sixjn onehalf",
+          "heading": false
+        },
+        {
+          "term": "coefficients lambda",
+          "heading": true
+        },
+        {
+          "term": "vert clebpsi",
+          "heading": false
+        },
+        {
+          "term": "nonumber hskip",
+          "heading": false
+        },
+        {
+          "term": "aligned hskip",
+          "heading": false
+        },
+        {
+          "term": "clebpsi sigma",
+          "heading": false
+        },
+        {
+          "term": "clebphi sigma",
+          "heading": false
+        },
+        {
+          "term": "frac vert",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall some properties of the coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$ which were proved in [@BR1]. We will say that the coefficients $\\Lambda^{BC}_{AD}$ are off-diagonal if $A \\not= D$ and diagonal if $A=D$ (in the latter case we will use the notation $\\Lambda^{BC}_{A}=\\Lambda^{BC}_{AA}$). The coefficients $\\Lambda^{BC}_{A}$ are said to be on the boundary if $B\\!+\\!C\\!=\\!A,\\; A\\!+\\!B\\!=\\!C, \\;$ or",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sixjn onehalf",
+      "heading": false
+    },
+    {
+      "term": "buildrel onehalf",
+      "heading": false
+    },
+    {
+      "term": "nonumber hskip",
+      "heading": false
+    },
+    {
+      "term": "aligned hskip",
+      "heading": false
+    },
+    {
+      "term": "frac sixjn",
+      "heading": false
+    },
+    {
+      "term": "sixjn mbox",
+      "heading": false
+    },
+    {
+      "term": "infty sixjn",
+      "heading": false
+    },
+    {
+      "term": "sixjn delta",
+      "heading": false
+    },
+    {
+      "term": "sum sixjn",
+      "heading": false
+    },
+    {
+      "term": "times sixjn",
+      "heading": false
+    },
+    {
+      "term": "sixjn underline",
+      "heading": false
+    },
+    {
+      "term": "lambda onehalf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9910147v1"
+  }
+}

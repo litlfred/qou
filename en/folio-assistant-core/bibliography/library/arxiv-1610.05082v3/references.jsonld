@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1610.05082v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+      "dcterms:creator": [
+        "DOUSSE, JEHANNE",
+        "FÉRAY, VALENTIN"
+      ],
+      "dcterms:issued": "D:20181120",
+      "dcterms:identifier": "https://arxiv.org/abs/1610.05082",
+      "dcterms:abstract": "Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.",
+      "dcterms:source": "library/arxiv-1610.05082v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1610.05082v3"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/lean-fred2005.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/lean-fred2005",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "lean-fred2005",
+      "path": "folio/fred2005-formal-groups/lean/",
+      "contentSource": {
+        "kind": "directory",
+        "declaredIn": "default"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/lean"
+      ],
+      "description": "Lean sub-KG of the fred2005 Lake package (libraries Fred2005 and Fred2005Blocks; it requires qou, so its imports of QOU are cross-subgraph links). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/fred2005/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
+      "fileCount": 6,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/lean-fred2005"
+    }
+  ]
+}

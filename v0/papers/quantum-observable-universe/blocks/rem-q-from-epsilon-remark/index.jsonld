@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-from-epsilon-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-from-epsilon-remark",
+  "kind": "remark",
+  "title": "The substrate parameter as a derived quantity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "q-from-epsilon-remark.md",
+  "provenance": "authored"
+}

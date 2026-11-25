@@ -1,0 +1,472 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2212.04436v1",
+  "title": "Dilute neutron star matter from neural-network quantum states",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "argonne national",
+          "heading": false
+        },
+        {
+          "term": "dilute neutron",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "auxiliary-ﬁeld diﬀusion",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "neural-network quantum",
+          "heading": false
+        },
+        {
+          "term": "leading-order pionless",
+          "heading": false
+        },
+        {
+          "term": "πeft",
+          "heading": false
+        }
+      ],
+      "extract": "Dilute neutron star matter from neural-network quantum states Bryce Fore,1 Jane M. Kim,2 Giuseppe Carleo,3 Morten Hjorth-Jensen,2, 4 and Alessandro Lovato5, 6, 7 1Physics Division, Argonne National Laboratory, Argonne, IL 60439, USA 2Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, MI 48824, USA 3Institute of Physics, ´Ecole Polytechnique F´ed´erale de",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hidden orbitals",
+          "heading": false
+        },
+        {
+          "term": "visible coordinates",
+          "heading": false
+        },
+        {
+          "term": "hidden nucleons",
+          "heading": false
+        },
+        {
+          "term": "nqs",
+          "heading": false
+        },
+        {
+          "term": "neural networks",
+          "heading": false
+        },
+        {
+          "term": "constrained-path",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "spin coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "slightly larger than the experimental value of −18.9(4) fm, see [41] and references therein, while the eﬀective range is well reproduced. The Hamiltonian also contains a repulsive three-body force that ensures the stability of nuclei. We approximate the ground-state solution of the nu- clear many-body problem with an NQS ansatz that be- longs to the hidden-fermion family [42], recently general- ized to continuum",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-002",
+        "library/arxiv-2212.04436v1/blocks/prop-page-002-01"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triplet nqs",
+          "heading": false
+        },
+        {
+          "term": "nqs ansatz",
+          "heading": false
+        },
+        {
+          "term": "singlet nqs",
+          "heading": false
+        },
+        {
+          "term": "fermi gas",
+          "heading": false
+        },
+        {
+          "term": "non-interacting fermi",
+          "heading": false
+        },
+        {
+          "term": "triplet two-body",
+          "heading": false
+        },
+        {
+          "term": "πeft",
+          "heading": false
+        },
+        {
+          "term": "uix",
+          "heading": false
+        }
+      ],
+      "extract": "0.010 0.015 0.020 0.025 0.030 0.035 0.040 Density (fm−3) 4 6 8 10 12 14 Energy (MeV) /πEFT AV18+UIX Fermi Gas FIG. 2. Low-density neutron-matter /πEFT equation of state as obtained with the hidden-nucleon NQS (solid green circles) compared with FHNC/SOC calculations with the AV18+UIX Hamiltonian (red triangles) and the non-interacting Fermi Gas (solid blue line). As shown in Fig. 1 for ρ = 0.04 fm−3, after ≃2000",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-003",
+        "library/arxiv-2212.04436v1/blocks/prop-page-003-01"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 844,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omar benhar",
+          "heading": false
+        },
+        {
+          "term": "neutron stars",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "binary neutron",
+          "heading": false
+        },
+        {
+          "term": "nuclear matter",
+          "heading": false
+        },
+        {
+          "term": "tron matter",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "dense matter",
+          "heading": false
+        }
+      ],
+      "extract": "yields energies per particle of low-density neutron mat- ter that are in excellent agreement with unconstrained AFDMC calculations at a fraction of the computa- tional cost. In contrast, the computationally-inexpensive AFDMC constrained-path approximation brings about appreciable violations of the variational principle. We have shown that /πEFT yields a low-density neu- tron matter equation of state that is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "giuseppe carleo",
+          "heading": false
+        },
+        {
+          "term": "alessandro lovato",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "artiﬁcial neural",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "neural-network quantum",
+          "heading": false
+        },
+        {
+          "term": "noemi rocco",
+          "heading": false
+        }
+      ],
+      "extract": "[18] Fr´ed´eric Nowacki, Alexandre Obertelli, and Alfredo Poves, “The neutron-rich edge of the nuclear landscape: Experiment and theory.” Prog. Part. Nucl. Phys. 120, 103866 (2021), arXiv:2104.06238 [nucl-th]. [19] J. Carlson, S. Gandolﬁ, F. Pederiva, Steven C. Pieper, R. Schiavilla, K. E. Schmidt, and R. B. Wiringa, “Quan- tum Monte Carlo methods for nuclear physics,” Rev. Mod. Phys. 87, 1067 (2015),",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1707.02883 [nucl-th]. [50] John W. Negele and D. Vautherin, “Neutron star mat- ter at subnuclear densities,” Nucl. Phys. A 207, 298–320 (1973).",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2212.04436v1/blocks/prose-page-006"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hidden-nucleon nqs",
+      "heading": true
+    },
+    {
+      "term": "nqs ansatz",
+      "heading": false
+    },
+    {
+      "term": "neutron matter",
+      "heading": true
+    },
+    {
+      "term": "triplet nqs",
+      "heading": false
+    },
+    {
+      "term": "singlet nqs",
+      "heading": false
+    },
+    {
+      "term": "monte carlo",
+      "heading": false
+    },
+    {
+      "term": "low-density neutron",
+      "heading": false
+    },
+    {
+      "term": "nqs suitable",
+      "heading": false
+    },
+    {
+      "term": "neutron stars",
+      "heading": false
+    },
+    {
+      "term": "variational monte",
+      "heading": false
+    },
+    {
+      "term": "nuclear matter",
+      "heading": false
+    },
+    {
+      "term": "dilute neutron",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "NQS training data in neutron matter at ρ = 0.04",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Low-density neutron-matter /πEFT equation of state as obtained with the hidden-nucleon NQS (solid green circles) compared with FHNC/SOC calculations with the AV18+UIX Hamiltonian (red triangles) and the non-interacting Fermi Gas (solid blue line)",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Spin-singlet and triplet two-body distribution func-",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 6,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2212.04436v1"
+  }
+}

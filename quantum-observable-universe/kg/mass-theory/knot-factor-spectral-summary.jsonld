@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-factor-spectral-summary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-factor-spectral-summary",
+  "kind": "remark",
+  "title": "Spectral derivation of the empirical $a_K$ pattern across nuclei",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-borromean-composite",
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-shell-closed"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-factor-spectral-form",
+  "tags": [
+    "interpretation",
+    "knot-factor",
+    "summary-table",
+    "no-fitting"
+  ],
+  "text": "knot-factor-spectral-summary.md",
+  "provenance": "authored"
+}

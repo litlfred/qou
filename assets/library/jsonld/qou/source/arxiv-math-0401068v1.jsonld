@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0401068v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0401068v1",
+  "contains": [
+    "library/arxiv-math-0401068v1/sections/sec-front-matter",
+    "library/arxiv-math-0401068v1/sections/sec-000",
+    "library/arxiv-math-0401068v1/sections/sec-001",
+    "library/arxiv-math-0401068v1/sections/sec-002",
+    "library/arxiv-math-0401068v1/sections/sec-003",
+    "library/arxiv-math-0401068v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the\n\n**THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS**\n\n*TOSHIE TAKATA*\n\n12 pp, 6 sections.\n\n**Abstract.** @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the colored Jones polynomial. Our result supports the AJ conjecture due to S.Garoufalidis.\n\n**Outline.** Front matter; 1 introduction; 2 Main Theorem; 3 Proof of Theorem ??; 4 Observations; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0401068&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0401068v1",
+    "title_source": "slug",
+    "source_file": "0401068v1.pdf",
+    "source_sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
+    "pages": 12,
+    "arxiv": {
+      "id": "math/0401068",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "8 Jan 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

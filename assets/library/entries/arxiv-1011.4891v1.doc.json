@@ -1,0 +1,921 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1011.4891v1",
+  "title": "arxiv-1011.4891v1",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "The mechanical model",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-mechanical-model"
+    },
+    {
+      "level": 1,
+      "title": "The idealized models",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-idealized-models"
+    },
+    {
+      "level": 1,
+      "title": "The Whitney index and jumps",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-whitney-index-and-jumps"
+    },
+    {
+      "level": 1,
+      "title": "Local moves of mechanical knots",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-local-moves-of-mechanical-knots"
+    },
+    {
+      "level": 1,
+      "title": "Nonuniqueness of normal forms",
+      "number": "5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-nonuniqueness-of-normal-forms"
+    },
+    {
+      "level": 1,
+      "title": "§6. Flat knots",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-flat-knots"
+    },
+    {
+      "level": 1,
+      "title": "§7. Perspectives: new knot energies for computer simulations",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-perspectives-new-knot-energies-for-computer-si"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂat knot",
+          "heading": false
+        },
+        {
+          "term": "knot recognition",
+          "heading": false
+        },
+        {
+          "term": "mechanical normal",
+          "heading": false
+        },
+        {
+          "term": "whitney trick",
+          "heading": false
+        },
+        {
+          "term": "device",
+          "heading": false
+        },
+        {
+          "term": "s-normal form",
+          "heading": false
+        },
+        {
+          "term": "knot diagrams",
+          "heading": false
+        },
+        {
+          "term": "markov moves",
+          "heading": false
+        }
+      ],
+      "extract": "1 Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold Abstract. A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in diﬀerent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1011.4891v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-mechanical-model",
+      "number": "1",
+      "title": "The mechanical model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 788,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mechanical model",
+          "heading": true
+        },
+        {
+          "term": "mechanical normal",
+          "heading": false
+        },
+        {
+          "term": "mechanical knot",
+          "heading": false
+        },
+        {
+          "term": "seventeen crossings",
+          "heading": false
+        },
+        {
+          "term": "seven crossings",
+          "heading": false
+        },
+        {
+          "term": "normal forms",
+          "heading": false
+        },
+        {
+          "term": "prime knot",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "Our mechanical model of fat knots is constructed from a ﬂexible but re- silient hollow rectilinear metallic cylinder of length 50 cm and diameter 2mm. If one bends the cylinder and places it on a table, it straightens out almost in- stantly (after some oscilliations) and reacquires its original rectilinear shape; if one bends it so that several loops are formed and the cylinder is released, it will jump up slightly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-idealized-models",
+      "number": "2",
+      "title": "The idealized models",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mechanical knot",
+          "heading": false
+        },
+        {
+          "term": "fat knot",
+          "heading": false
+        },
+        {
+          "term": "idealized",
+          "heading": true
+        },
+        {
+          "term": "s-normal form",
+          "heading": false
+        },
+        {
+          "term": "smooth knot",
+          "heading": false
+        },
+        {
+          "term": "normal form",
+          "heading": false
+        },
+        {
+          "term": "ideal versions",
+          "heading": false
+        },
+        {
+          "term": "sliding",
+          "heading": false
+        }
+      ],
+      "extract": "We mentioned ideal versions of our mechanical model above in connection with the question of uniqueness. Here we note that in ideal versions of the model, it should be required that there be no friction preventing the sliding of one branch of the fat knot along another branch, and that the weight of the mechanism be negligible as compared with its resilience (internal energy). In practice, this is not always so: in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-whitney-index-and-jumps",
+      "number": "3",
+      "title": "The Whitney index and jumps",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "winding number",
+          "heading": false
+        },
+        {
+          "term": "oﬀthe table",
+          "heading": false
+        },
+        {
+          "term": "mechanical knot",
+          "heading": false
+        },
+        {
+          "term": "whitney",
+          "heading": true
+        },
+        {
+          "term": "device",
+          "heading": false
+        },
+        {
+          "term": "jumps",
+          "heading": true
+        },
+        {
+          "term": "crossing points",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the winding number (or Whitney index) w(C) of a smooth regular curve C in the plane is the number of revolutions that its tangent vector performs when we go around the curve. To every initial position M of our mechanical knot on the table, we can associate a smooth planar curve 7 CM, the projection of the smooth curve in space constituting the core (cen- tral curve) of M onto the plane of the table.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-local-moves-of-mechanical-knots",
+      "number": "4",
+      "title": "Local moves of mechanical knots",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1029,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mechanical knots",
+          "heading": true
+        },
+        {
+          "term": "local moves",
+          "heading": true
+        },
+        {
+          "term": "glass pane",
+          "heading": false
+        },
+        {
+          "term": "reidemeister move",
+          "heading": false
+        },
+        {
+          "term": "markov move",
+          "heading": false
+        },
+        {
+          "term": "crossing points",
+          "heading": false
+        },
+        {
+          "term": "points perform",
+          "heading": false
+        },
+        {
+          "term": "little loops",
+          "heading": false
+        }
+      ],
+      "extract": "In observing the evolution of the shape of mechanical knots, we were able to notice that the device actually performs certain local moves well known in classical knot theory. In particular, mechanical knots can (under appropriate “boundary conditions”): • perform the ﬁrst Reidemeister move Ω1 in both directions; we have already seen that our device immediately gets rid of little loops, but it can also create a loop:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-nonuniqueness-of-normal-forms",
+      "number": "5",
+      "title": "Nonuniqueness of normal forms",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idealized mechanical",
+          "heading": false
+        },
+        {
+          "term": "mechanical normal",
+          "heading": false
+        },
+        {
+          "term": "mechanical models",
+          "heading": false
+        },
+        {
+          "term": "tiny values",
+          "heading": false
+        },
+        {
+          "term": "markov moves",
+          "heading": false
+        },
+        {
+          "term": "device",
+          "heading": false
+        },
+        {
+          "term": "normal form",
+          "heading": false
+        }
+      ],
+      "extract": "Experimenting with our mechanical device (of diameter to length ratio s = d/L = 0.004), we were unable to ﬁnd any knots that have more than one mechanical normal form, and we claim that no such knots (with 7 crossings or less) exist. However, we believe that uniqueness of mechanical normal forms holds only for a small number of crossing points (less than 30, less than 20?). More speciﬁcally, having in mind idealized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-flat-knots",
+      "number": null,
+      "title": "§6. Flat knots",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1000,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flat knots",
+          "heading": true
+        },
+        {
+          "term": "whitney trick",
+          "heading": false
+        },
+        {
+          "term": "ﬂat mechanical",
+          "heading": false
+        },
+        {
+          "term": "whitney index",
+          "heading": false
+        },
+        {
+          "term": "ﬂat normal",
+          "heading": false
+        },
+        {
+          "term": "ﬂat unknots",
+          "heading": false
+        },
+        {
+          "term": "ﬂat isotopic",
+          "heading": false
+        },
+        {
+          "term": "same whitney",
+          "heading": false
+        }
+      ],
+      "extract": "§6. Flat knots Flat mechanical knots were described in the previous section. Numerous experiments of the following type were performed with them: the device was knotted (i.e., given the shape of some planar knot diagram and pressed against the table top by a pane of glass) and then the glass pane was raised to the height of approximately 7mm above the table. The device would then move very rapidly on the surface of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-perspectives-new-knot-energies-for-computer-si",
+      "number": null,
+      "title": "§7. Perspectives: new knot energies for computer simulations",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "little device",
+          "heading": false
+        },
+        {
+          "term": "ﬂat knots",
+          "heading": false
+        },
+        {
+          "term": "energy functional",
+          "heading": false
+        },
+        {
+          "term": "jun hara",
+          "heading": false
+        },
+        {
+          "term": "repulsive term",
+          "heading": false
+        },
+        {
+          "term": "knot diagrams",
+          "heading": false
+        },
+        {
+          "term": "sossinsky",
+          "heading": false
+        },
+        {
+          "term": "same knot",
+          "heading": false
+        }
+      ],
+      "extract": "The analytical speciﬁcation of a knot energy mimicking the resilience of our little device is ongoing joint research with Oleg Karpenkov and will be published elsewhere. Here we only mention that our functional is deﬁned for ﬂat knots only, it depends on a small parameter d in the space of smooth ﬂat knots in R2; roughly speaking, the functional is based on an “unbending force” (the larger the curvature in the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mechanical device",
+      "heading": false
+    },
+    {
+      "term": "mechanical knot",
+      "heading": true
+    },
+    {
+      "term": "mechanical normal",
+      "heading": true
+    },
+    {
+      "term": "ﬂat mechanical",
+      "heading": false
+    },
+    {
+      "term": "little device",
+      "heading": false
+    },
+    {
+      "term": "device jumps",
+      "heading": false
+    },
+    {
+      "term": "idealized mechanical",
+      "heading": false
+    },
+    {
+      "term": "mechanical model",
+      "heading": true
+    },
+    {
+      "term": "fat knot",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": true
+    },
+    {
+      "term": "whitney trick",
+      "heading": false
+    },
+    {
+      "term": "smooth knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Mechanical normal forms of prime knots with 7 crossings or less a unique (up to isometry) mechanical normal form. These normal forms, which are almost planar, are shown in Figure 1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "M¨obius energy normal forms of the eight knot The reasons for which our mechanical knot sometimes jumps and sometimes only slides are related to Whitney’s winding number of plane curves",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "“Reidemeister move” forming a little loop",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The second Reidemeister move destroying crossing points • perform the second Reidemeister move Ω2 (Figure 5); here the “boundary points” must be allowed to slide in the directions indicated",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The second Reidemeister move creating crossing points • perform the third Reidemeister move Ω3 (Figure 6); here the “boundary points” must be allowed to slide in the directions indicated",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The third Reidemeister move conditions for these moves occur “much more often” than those creating new crossing points",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "First Markov move (destabilization) • perform the second Markov move from right to left, i.e., a−1ba −→b; this move is quite spectacular: the braids a−1, a, b begin stretching along",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Second Markov move (deconjugation) Note that in the example shown in the ﬁgure, the evolution of the knot",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Some ﬂat normal forms Note that if the initial position of the ﬂat knot has little loops, then these",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Deﬁnition of the twisting number Theorem 2. Flat knots possess the following three invariants: the Kauﬀman bracket ⟨K⟩, the Whitney index w(K), and the twisting number τ(K)",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-2",
+      "file": "images/img-p008-2.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-2",
+      "file": "images/img-p010-2.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1011.4891v1"
+  }
+}

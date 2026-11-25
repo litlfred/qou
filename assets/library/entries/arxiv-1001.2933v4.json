@@ -1,0 +1,500 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1001.2933v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (title, abstract, contents)",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1001.2933v4 [hep-th] 28 Aug 2010\nhep-th/yymm.nnnn\nAnalytic Continuation Of Chern-Simons Theory\nEdward Witten\nSchool of Natural Sciences, Institute for Advanced Study\nEinstein Drive, Princeton, NJ 08540 USA\nAbstract\nThe title of this article refers to analytic continuation of three-dimensional Chern\u0002Simons gauge theory away from integer values of the usual coupling parameter k, to\nexplore questions such as the volume conjecture, or analytic continuation of three\u0002dimensional quantum gravity (to the extent that it can be described by gauge theory)\nfrom Lorentzian to Euclidean signature. Suc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1 Introduction\nThis paper is devoted to the analytic continuation of three-dimensional Chern-Simons gauge\ntheory as a function of its coupling parameters. One motivation for this study concerns\nthree-dimensional quantum gravity, which plausibly has at least some sort of relationship\nto three-dimensional Chern-Simons theory with gauge group SL(2, C). In that context,\nEuclidean quantum gravity is obtained by analytic continuation to imaginary values of the\ncoupling parameter s that is introduced in section 2.1 However, for imaginary s, the Chern\u0002Simons path integral, like the Euclidean quantum g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-overview.md",
+      "narrative": null,
+      "content": "2 Overview\nWe begin by considering Chern-Simons gauge theory with the gauge group G a complex Lie\ngroup such as SL(2, C). Let A be a connection on a G-bundle E over a three-manifold M.\nSuch a connection has a complex-valued Chern-Simons invariant\nW(A) = 1\n4π\nZ\nM\nTr \u0012A ∧ dA +\n2\n3\nA ∧ A ∧ A\n\u0013\n, (2.1)\nwhich we have normalized to be gauge-invariant modulo 2π. (For G = SL(N, C), the symbol\nTr denotes the trace in the N-dimensional representation. In general, it denotes a suitably\nnormalized quadratic form on the Lie algebra g of G.) Just as in the case of a compact\ngroup, W(A) is gauge-invariant mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-Dimensional Analogs",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-1-finite-dimensional-analogs.md",
+      "narrative": null,
+      "content": "2.1 Finite-Dimensional Analogs\nA much simpler prototype of this problem is a finite-dimensional oscillatory integral such as\nthe one that defines the Airy function:\nZλ =\nZ ∞\n−∞\ndx exp iλ(x\n3\n/3 − x)\n\u0001\n. (2.6)\nFor real λ, this integral converges, though not absolutely so, because of rapid oscillations at\ninfinity; when λ becomes complex, it must be defined by a process of analytic continuation.\nThe Airy integral will serve as a useful practice case in section 3. The following slightly\nmore elaborate example is also useful. Introduce a complex variable z and a complex-valued\npolynomial\ng(z) = Xn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Role Of Morse Theory",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-2-2-role-of-morse-theory.md",
+      "narrative": null,
+      "content": "2.2 Role Of Morse Theory\nFinding a suitable integration cycle in the infinite-dimensional path integral of Chern-Simons\ngauge theory may seem hopeless at first sight. What saves the day is that suitable integration\ncontours can be found by Morse theory and steepest descent (or in a different language, via\nPicard-Lefschetz theory). The facts we need for understanding oscillatory integrals have been\ndescribed in [35–40] (and the aspiration of applying this approach to Feynman integrals is\nstated in [37], p. 321). Section 3 of the present paper is devoted to a hopefully self-contained\nexposition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes Phenomena",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-2-3-stokes-phenomena.md",
+      "narrative": null,
+      "content": "2.3 Stokes Phenomena\nOnce one expresses the integration cycle C in terms of critical point cycles for real values\nof the Chern-Simons coupling constant s (or of the appropriate parameters in the other\nexamples) via a formula C =\nP\nσ\nnσJσ, the next step is to make an analytic continuation\nin s. There is no problem in defining the critical points pσ and the corresponding Lefschetz\nthimbles Jσ for any generic value of s. In fact, in Chern-Simons theory, the critical point\nequation (2.14) is independent of s (except at s = ±iℓ, where t or et vanishes). The Jσ do\ndepend on s (their definition by st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Singularities Of The Analytically Continued Theory",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-2-4-singularities-of-the-analytically-contin.md",
+      "narrative": null,
+      "content": "2.4 Singularities Of The Analytically Continued Theory\nAt this stage, it is very illuminating to ask what sort of singularities the analytically con\u0002tinued theory has as a function of s. Generically, the analytic continuation of an oscillatory\nintegral grows exponentially as the appropriate complex parameter goes to infinity in certain\ndirections in the complex plane. The appropriate parameters are s for complex Chern-Simons\ntheory, λ for the Airy function, and the coefficients of the polynomials g and eg in our other\nexample.\nBecause of this exponential growth, the analytically continued Cher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic Continuation For Compact Gauge Groups",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-2-5-analytic-continuation-for-compact-gauge.md",
+      "narrative": null,
+      "content": "2.5 Analytic Continuation For Compact Gauge Groups\nNow we will discuss the analytic continuation of Chern-Simons theory with a compact gauge\ngroup. We consider it first in a naive way and then in relation to the theory with a complex\ngauge group.\n12\n\nIn Chern-Simons gauge theory on a three-manifold M with a compact gauge group H,\nthe gauge field is a connection A on an H-bundle E → M. In terms of the Chern-Simons\nfunction W(A), which we normalize as usual to be well-defined modulo 2πZ, the action is\nI = kW, where k is taken to be an integer so that the integrand exp(iI) = exp(ikW) of\nthe path",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing Compact And Complex Lie Groups",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-2-6-comparing-compact-and-complex-lie-groups.md",
+      "narrative": null,
+      "content": "2.6 Comparing Compact And Complex Lie Groups\nIf we do not require that the generalized integral ZH,C(k) should agree with the original\nChern-Simons integral ZH(k) when k is an integer, we have much more freedom in the\nchoice of the cycle C. We can take C to be any integer linear combination of Lefschetz\nthimbles\nC =\nX\nσ∈Σ\nnσJσ, (2.26)\nwith coefficients nσ that jump in crossing Stokes lines to ensure that the homology cycle C\nvaries smoothly.\nThe functions ZH,C(k) of eqn. (2.20), as C runs over the possible choices, form a vector\nspace V. (This space is actually infinite-dimensional when one al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other Real Forms",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-2-7-other-real-forms.md",
+      "narrative": null,
+      "content": "2.7 Other Real Forms\nLet H′ be a noncompact real form of the complex Lie group G = HC. (For example, if\nH = SU(2), H′ might be SL(2, R).) We sometimes describe this more briefly by calling H′\na noncompact real form of H. Chern-Simons theory with gauge group H′is formally defined\nby the familiar sort of integral\nZH′(k\n′\n) = Z\nU′\nDA′exp(ik′W(A\n′\n)), (2.32)\nwhere now A′is a connection on an H′ bundle E′ → M and U\n′\nis the space of such connec\u0002tions, up to gauge transformation.\nSince the complexification of H′is simply G = HC, the complexification of U\n′\nis the\nfamiliar space UC of complex-valued",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-Dimensional Oscillatory Integrals, Morse Theory, And Steepest De\u0002scent",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-3-finite-dimensional-oscillatory-integrals-m.md",
+      "narrative": null,
+      "content": "3 Finite-Dimensional Oscillatory Integrals, Morse The\u0002ory, And Steepest Descent\nThe goal of the present section is to describe in more detail the finite-dimensional case of\nthe theory that was sketched in section 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Airy Function",
+      "pageStart": 23,
+      "pageEnd": 34,
+      "target": "../sections/sec-010-3-1-the-airy-function.md",
+      "narrative": null,
+      "content": "3.1 The Airy Function\nWe begin by examining the Airy integral, initially defined for real λ:\nZλ =\nZ ∞\n−∞\ndx exp iλ(x\n3\n/3 − x)\n\u0001\n. (3.1)\nWe want to analytically continue the integral to complex λ. This will require deforming the\nintegration contour away from the real x axis, so we will regard the Airy exponent\nI = iλ(x\n3\n/3 − x) (3.2)\nas a function of complex variables x and λ. For real λ, the integration is over the real axis.\nAs λ varies, we will deform the integration cycle C so as to vary smoothly with λ and in such\na way that the integral always converges.\n23\n\nIn the case of the Airy func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalization To Dimension n",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "../sections/sec-011-3-2-generalization-to-dimension-n.md",
+      "narrative": null,
+      "content": "3.2 Generalization To Dimension n\nIn our analysis of the Airy function, we introduced much more machinery than was really\nneeded. The advantage of having done so is that the generalization to an oscillatory integral\nof higher dimension is now straightforward.\nWe consider a real-valued polynomial function f(x\n1\n, . . . , xn) of n real variables, and we\nassume that f is sufficiently generic that (even after analytic continuation to complex values\nof the x\ni\n) it has only finitely many critical points, which are all nondegenerate. We want to\nstudy the analytic continuation of the oscillatory inte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries",
+      "pageStart": 41,
+      "pageEnd": 48,
+      "target": "../sections/sec-012-3-3-symmetries.md",
+      "narrative": null,
+      "content": "3.3 Symmetries\nSince gauge symmetry is an essential ingredient in Chern-Simons theory, including symme\u0002tries in our finite-dimensional models will improve their analogy with Chern-Simons. Before\ntaking this step, we consider a few preliminaries.\n3.3.1 Oscillatory Integrals On More General Manifolds\nOne generalization is to consider, instead of an oscillatory integral on R\nn\n, an oscillatory\nintegral on some other space Y . Y must have a suitably nice complexification X, but we\nwill not attempt to be precise about this. Instead we just describe a typical example. We\ntake Y to be a real affine v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Singularities",
+      "pageStart": 48,
+      "pageEnd": 55,
+      "target": "../sections/sec-013-3-4-singularities.md",
+      "narrative": null,
+      "content": "3.4 Singularities\nIn studying an oscillatory integral Rd\nnx exp(iλf), for a single and fairly generic polynomial\nf, it is reasonable to expect that the critical points of f are isolated and irreducible, as we\nhave assumed so far. But as soon as f depends on one or more parameters, one should\nexpect to meet singularities, where two or more critical points meet.\nSingularities play an important role because Stokes surfaces always pass through the locus\n(in the parameter space of the polynomial f) at which two or more critical points meet. If\nwe vary a parameter in f so that two critical points pσ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic Continuation In k: A Prototype",
+      "pageStart": 55,
+      "pageEnd": 62,
+      "target": "../sections/sec-014-3-5-analytic-continuation-in-k-a-prototype.md",
+      "narrative": null,
+      "content": "3.5 Analytic Continuation In k: A Prototype\nWe have discussed at great length the analytic continuation of the integral of an exponential\nexp(iλf) from real to complex values of λ. For a more precise analog of Chern-Simons theory,\nwe should consider analytic continuation of an integer parameter (such as the Chern-Simons\nlevel k) to complex values.\nFor an example, we consider the integral representation of the Bessel function:\nI(κ, λ) = 1\n2πi I\ndz\nz\nz\nκ\nexp(λ(z − z\n−1\n)), (3.66)\nwith an integer κ that in our analysis of section 5 will correspond roughly13 to the Chern\u0002Simons level k.\nWe take th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application To Chern-Simons Theory",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-015-4-application-to-chern-simons-theory.md",
+      "narrative": null,
+      "content": "4 Application To Chern-Simons Theory\nCan the framework of section 3 be applied in the infinite-dimensional context of Chern\u0002Simons gauge theory? The critical points pσ certainly make sense. The Euler-Lagrange\nequations simply say that the gauge field should be flat (perhaps when restricted to the\ncomplement of a knot). Moreover, by standard quantum field theory methods, one certainly\nknows how to expand the path integral around any given critical point, and hence in effect\n62\n\nthe Lefschetz thimbles Jσ are known at least perturbatively.\nThe aspects of this framework that are not standard in qu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Flow Equation For Chern-Simons",
+      "pageStart": 63,
+      "pageEnd": 71,
+      "target": "../sections/sec-016-4-1-the-flow-equation-for-chern-simons.md",
+      "narrative": null,
+      "content": "4.1 The Flow Equation For Chern-Simons\nLet M be a three-manifold. Let H be a compact Lie group and set G = HC. Let T be the\nspace of connections A on a fixed H-bundle E → M, and let TC be the space of complex\u0002valued connections A on the complexification of E. We can write A = A + iφ where A and\nφ are the real and imaginary parts of A; A is an h-valued connection, and φ is a one-form\non M with values in the adjoint bundle ad(E). The curvature of A will be denoted as\nF = dA + A ∧ A, and that of A as F = dA + A ∧ A.\nTC is a complex manifold; to define a flow equation, we need to endow it with a K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots And Morse Theory",
+      "pageStart": 71,
+      "pageEnd": 85,
+      "target": "../sections/sec-017-4-2-knots-and-morse-theory.md",
+      "narrative": null,
+      "content": "4.2 Knots And Morse Theory\nBeginning in section 2.5.3, we described the analytic continuation of Chern-Simons knot\ninvariants in a rather informal way. To make this more precise, we need to incorporate in\nthe language of oscillatory integrals the holonomy functions that are included in the path\nintegral to define knot invariants. How to do this has been briefly explained in [51], section\n3.3, and in [54], pp. 1218-9, and in much more detail in [34]. We consider first the case of a\ncompact gauge group H with connection A.\nFor a knot K labeled by a representation R, the basic factor is\nTrR P exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic Continuation Of The Colored Jones Polynomial",
+      "pageStart": 85,
+      "pageEnd": 86,
+      "target": "../sections/sec-018-5-analytic-continuation-of-the-colored-jones.md",
+      "narrative": null,
+      "content": "5 Analytic Continuation Of The Colored Jones Poly\u0002nomial\nHere we will finally apply all this machinery to some specific examples. We will consider\nSU(2) Chern-Simons theory at level k on S\n3\n, with a knot K labeled by the n-dimensional\nrepresentation of SU(2). We denote as Jn(q), where q = exp(2πi/(k+2)), the (unnormalized)\nChern-Simons path integral in the presence of this knot. Jn(q) is essentially the colored Jones\npolynomial, though our normalization is not the most common one in the mathematical\nliterature. (As explained at the end of section 2.5.3, the two normalizations differ by whethe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 86,
+      "pageEnd": 94,
+      "target": "../sections/sec-019-5-1-preliminaries.md",
+      "narrative": null,
+      "content": "5.1 Preliminaries\nTo apply the Morse theory machinery, we need to start at some point in the complex γ plane\nwhere we know how to express the integration cycle of Chern-Simons theory as a sum over\nLefschetz thimbles. With this in hand, one can then vary γ and take Stokes phenomena into\naccount.\nIf k and n are positive integers, so γ > 0, Chern-Simons theory is defined by an integral\nover SU(2)-valued connections modulo gauge transformations. In the framework of the\npresent paper, this means that the integration cycle for A = A + iφ is the real cycle φ = 0,\nwhich we call CR. This cycle can be e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Trefoil Knot",
+      "pageStart": 94,
+      "pageEnd": 108,
+      "target": "../sections/sec-020-5-2-the-trefoil-knot.md",
+      "narrative": null,
+      "content": "5.2 The Trefoil Knot\nFor both of our examples, the necessary facts about the representation of the fundamental\ngroup of the knot complement are described in [17]. We begin with the case that our knot\nK is the trefoil.\nThe fundamental group of S\n3\\K can be described by two generators x, y with one relation\nxyx = yxy. x and y are both conjugate to the meridian mb; for further details, see fig. 11\nin [17]. The longitude is bl = yx2yx−4.\nFor every choice of the conjugacy class of mb (apart from certain exceptional values that\nwill be discussed), there are up to gauge transformation two SL(2, C) fl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Figure-Eight Knot",
+      "pageStart": 108,
+      "pageEnd": 121,
+      "target": "../sections/sec-021-5-3-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "5.3 The Figure-Eight Knot\nHere we will consider in a similar way the figure-eight knot (also known as the 41 knot),\nwhich we denote K. The fundamental group of S\n3\\K again has two generators x, y, either\nof them conjugate to the meridian mb, with one relation. The relation is ωx = yω, with\nω = xy−1x\n−1y.\nFor a generic eigenvalue m of the meridian, there are up to gauge transformation three\nSL(2, C) flat connections on S\n3\\K. As usual, one is an abelian flat connection Aab, whose\nmonodromies are up to conjugacy x = y = diag(m, m−1). In addition, there are two non\u0002abelian flat connections with m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Four Or Five-Dimensional Interpretation",
+      "pageStart": 121,
+      "pageEnd": 122,
+      "target": "../sections/sec-022-6-four-or-five-dimensional-interpretation.md",
+      "narrative": null,
+      "content": "6 Four Or Five-Dimensional Interpretation\nIn section 4.1, we observed that the flow equations of three-dimensional Chern-Simons theory\nhave a natural four-dimensional symmetry. This is a familiar fact for the flow equations of\nChern-Simons theory with a compact gauge group; what is novel and perhaps surprising is\nthat four-dimensional symmetry also emerges in flows of complex connections. Here we will\nmake only a few simple remarks about how this fact may be interpreted. The ultimate goal\nof such considerations might be to give a gauge theory interpretation to Khovanov homology,\nwhich is a fou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 122,
+      "pageEnd": 122,
+      "target": "../sections/sec-023-acknowledgments.md",
+      "narrative": null,
+      "content": "Acknowledgments This research was supported in part by NSF Grant Phy-0503584. The\nproject was stimulated by lectures at the conference Chern-Simons Gauge Theory: 20 Years\nAfter at the Hausdorff Institute in Bonn (August, 2009). I would like to thank the organizers\nfor their hospitality, and to acknowledge discussions during the meeting and on other occa\u0002sions with J. Anderson, C. Beasley, T. Dimofte, D. Gaiotto, S. Garoufalidis, A. Givental, M.\nGoresky, S. Gukov, R. MacPherson, G. Moore, and H. Murakami.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2933v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 122,
+      "pageEnd": 126,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "References\n[1] W. Li, W. Song, and A. Strominger, “Chiral Gravity in Three Dimensions,” JHEP\n0804, 082 (2008), arXiv:0801.4566 [hep-th].\n[2] R. M. Kashaev, “The Hyperbolic Volume Of Knots From The Quantum Dilogarithm,”\nLett. Math. Phys. 39 (1997) 269-275.\n[3] H. Murakami and J. Murakami, “The Colored Jones Polynomial And The Simplicial\nVolume Of A Knot,” Acta Math. 186 (2001) 85-104.\n[4] H. Murakami, J. Murakami, M. Okamoto, T. Takata, and Y. Yokota, “Kashaev’s Con\u0002jecture And The Chern-Simons Invariants Of Knots And Links,” Experiment. Math.\n11 (2002) 427-435.\n[5] R. M. Kashaev and O. Tirkkon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/022201-1-online",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Efficient algorithms for approximating quantum partition functions",
+      "dcterms:creator": [
+        "62, J. Math. Phys.",
+        "(2021), 022201"
+      ],
+      "dcterms:issued": "D:20211122",
+      "bibo:doi": "10.1063/5.0013689",
+      "dcterms:identifier": "https://doi.org/10.1063/5.0013689",
+      "dcterms:source": "library/022201-1-online/manifest.jsonld",
+      "dcterms:hasVersion": "library/022201-1-online"
+    }
+  ]
+}

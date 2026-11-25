@@ -1,0 +1,230 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2507.12454v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical motivation",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-classical-motivation.md",
+      "narrative": null,
+      "content": "One way character varieties naturally arise is as follows. Suppose we have a linear ODE $$\\label{eq:ODE}\n        \\frac\\partial{\\partial t} \\vec{\\varphi}(t) = A(t) \\vec{\\varphi}(t)\\quad(t\\in \\mathbb{C}).$$ Here $A(t)$ is an $n\\times n$ matrix-valued meromorphic function of one complex variable $t$, and we are looking for vector-valued solutions $\\vec{\\varphi}(t)$. Let $t_1,\\ldots, t_k$ be the poles of $A(t)$ (including $\\infty$ if necessary), which we call *punctures*. Choose a basepoint $\\ast$, away from the poles of $A(t)$. In a neighborhood of $\\ast$, we have an $n$-dimensional vector space",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "COHOMOLOGY RINGS OF CHARACTER VARIETIES\nANTON MELLIT\nAbstract. In this talk I give an introduction and present some recent progress towards\nunderstanding the cohomology rings of character varieties of Riemann surfaces, such as the\nproof of the P = W conjecture and the computation of the zero-dimensional COHA. In the\ncase of punctured sphere I present an explicit description relating the cohomology rings to\nthe Hilbert scheme of C2, refining conjectures of Hausel-Letellier-Rodriguez-Villegas and\nChuang-Diaconescu-Donagi-Pantev. I explain how the general case should be related to\nthe symplectic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fricke-Klein example",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-fricke-klein-example.md",
+      "narrative": null,
+      "content": "## Equations\n\nThis example was essentially worked out in [@fricke1965vorlesungen]. Let $k=4$, $n=2$. Let $a_1,\\ldots,a_4\\in\\mathbb C\\setminus\\{-2,2\\}$. Let us try to parameterize all $4$-tuples of $2\\times 2$ matrices $M_1, M_2, M_3, M_4\\in \\mathrm{GL}_2(\\mathbb{C})$, up to conjugation, satisfying $$\\prod_{i=1}^4 M_i = I_2, \\quad \\det M_i = 1, \\quad \\mathop{\\mathrm{tr}}M_i=a_i.$$ Let $x=\\mathop{\\mathrm{tr}}(M_1 M_2)$, $y=\\mathop{\\mathrm{tr}}(M_1 M_3)$, $z=\\mathop{\\mathrm{tr}}(M_2 M_3)$. The following code computes the ideal of relations between $x,y,z$:\n\n            R.<m111,m112,m121,a1,m211,m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Setup",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-setup.md",
+      "narrative": null,
+      "content": "After reviewing in detail the basic example, we turn to the general setup and precise definitions. There is no reason to consider only genus $0$ surfaces, and the classical motivation directly extends to the more general case, for instance ODEs can be studied on complex curves of arbitrary genus.\n\n::: definition\nFix $g\\geq 0$, $n, k\\geq 1$ and Jordan forms $J_1, J_2, \\ldots, J_k \\in\\mathrm{GL}_n$. The associated genus $g$ *character variety* $X=\\mathrm{Char}_{g;J_1,\\dots,J_k}$ is the space $$\\{(A_1,\\ldots,A_g,B_1\\ldots,B_g,M_1, \\cdots, M_k): M_i\\sim J_i,$$ $$A_1 B_1 A_1^{-1} B_1^{-1} \\cdots A_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is known?",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-4-what-is-known.md",
+      "narrative": null,
+      "content": "Having defined our basic object of study, we explain some important structural results.\n\n## Non-abelian Hodge correspondence\n\nThe non-abelian Hodge correspondence, pioneered by Hitchin [@hitchin1987self] and developed by Simpson [@simpson1990harmonic; @simpson1991nonabelian; @simpson1992higgs], is a construction of a remarkable bijection between local systems and stable Higgs bundles, which induces a diffeomorphism between the character variety and the moduli space that parametrizes stable Higgs bundles.\n\nTo define Higgs bundles, we need to view the Riemann surface with punctures as a compact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "COHAs/Coulomb branches",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-5-cohascoulomb-branches.md",
+      "narrative": null,
+      "content": "In order to explain our approach we need to introduce some ideas.\n\n## Cohomological Hall Algebra (COHA)\n\nDenote by $\\mathscr{H}_2$ the Lie algebra of Poisson vector fields on $\\mathbb{C}^2$. Explicitly, it is the Lie algebra with basis elements $T_{r,s}$ for each pair $r,s\\geq 0$, corresponding to the vector field with Hamiltonian $x^r y^s$. It is convenient not to impose $T_{0,0}=0$, although the corresponding vector field vanishes. The Lie bracket is given as follows: $$[T_{r,s}, T_{r',s'}] = (r's - r s') T_{r+r'-1,s+s'-1}\\qquad(r,s\\geq 0).$$ The tensor product $\\mathscr{H}_2 \\otimes H^*(C)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main example",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-6-main-example.md",
+      "narrative": null,
+      "content": "A special case can be worked out in full detail. We take $g=0$, i.e. $C=\\mathbb P^1$, and consider the $k+1$-twisted Higgs bundles, so that the Higgs field is a morphism $\\mathcal E\\to \\mathcal E(k-1)$. Equivalently, we may consider $k+1$ marked points without any parabolic structures and conditions on the residue of the Higgs field. The corresponding specialization of the partition function is given by $$\\label{eq:omega example}\n        \\Omega_k(z; q,t) := \n        \\sum_{n=0}^\\infty \\sum_{\\lambda\\vdash n} \\frac{(-1)^{(k+1)|\\lambda|}\\left(q^{n(\\lambda')} t^{n(\\lambda)}\\right)^{k+1}}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poisson geometry of Coulomb branches",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-7-poisson-geometry-of-coulomb-branches.md",
+      "narrative": null,
+      "content": "We would like to conclude by explaining a curious formalism which hints at how Conjectures [\\[conj:iso vector spaces\\]](#conj:iso vector spaces){reference-type=\"ref\" reference=\"conj:iso vector spaces\"}--[\\[conj:iso rings\\]](#conj:iso rings){reference-type=\"ref\" reference=\"conj:iso rings\"} can be extended to surfaces of higher genus. First, observe that, in view of [\\[eq:geometric engineering\\]](#eq:geometric engineering){reference-type=\"eqref\" reference=\"eq:geometric engineering\"}, we should consider the bundle of multiforms, i.e. the $g$-fold tensor product of the bundle of differential forms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-acknowledgments.md",
+      "narrative": null,
+      "content": "This research is supported by the Consolidator Grant No. 101001159 \"Refined invariants in combinatorics, low-dimensional topology and geometry of moduli spaces\" of the European Research Council.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.12454v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[BFN18]\nAlexander Braverman, Michael Finkelberg, and Hiraku Nakajima, Towards a mathematical\ndefinition of Coulomb branches of 3-dimensional N = 4 gauge theories, II, Adv. Theor. Math.\nPhys. 22 (2018), no. 5, 1071–1147. MR 3952347\n[BFN21]\n, Line bundles on Coulomb branches, Adv. Theor. Math. Phys. 25 (2021), no. 4, 957–\n993. MR 4407969\n[CDDP15] Wu-yen Chuang, Duiliu-Emanuel Diaconescu, Ron Donagi, and Tony Pantev, Parabolic refined\ninvariants and Macdonald polynomials, Comm. Math. Phys. 335 (2015), no. 3, 1323–1379.\nMR 3320315\n[CM18]\nErik Carlsson and Anton Mellit, A proof of the shuffle conje",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

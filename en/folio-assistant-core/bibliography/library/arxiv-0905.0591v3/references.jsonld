@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0905.0591v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS",
+      "dcterms:creator": [
+        "FRIEDL, STEFAN",
+        "VIDUSSI, STEFANO"
+      ],
+      "dcterms:issued": "D:20100208",
+      "dcterms:identifier": "https://arxiv.org/abs/0905.0591",
+      "dcterms:abstract": "We give a short introduction to the theory of twisted Alexander polynomials of a 3–manifold associated to a representation of its fundamental group. We summarize their formal properties and we explain their relationship to twisted Reidemeister torsion. We then give a survey of the many applications of twisted invariants to the study of topological problems. We conclude with a short summary of the theory of higher order Alexander polynomials.",
+      "dcterms:source": "library/arxiv-0905.0591v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0905.0591v3"
+    }
+  ]
+}

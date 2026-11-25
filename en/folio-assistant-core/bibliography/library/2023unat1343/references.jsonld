@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/2023unat1343",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "2023-UNAT-1343, Ann-Christin Raschdorf UNAT Held or UNDT Pronouncements The UNAT dismissed the appeal. The UNAT held that the UNDT correctly found not receivable Ms. Raschdorf's application with respect to the non-renewal decision and",
+      "dcterms:issued": "D:20260831",
+      "dcterms:source": "library/2023unat1343/manifest.jsonld",
+      "dcterms:hasVersion": "library/2023unat1343"
+    }
+  ]
+}

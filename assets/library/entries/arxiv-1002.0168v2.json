@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1002.0168v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In [@MR2183279 §2], Etingof, Nikshych and Ostrik ask if every fusion category over the complex numbers can be defined over a cyclotomic field. More precisely, does every fusion category over $\\Complex$ have a complete rational form over a cyclotomic field? (See Section [\\[sec:background\\]](#sec:background){reference-type=\"ref\" reference=\"sec:background\"} for definitions and examples of the key notions \"rational form\\\" and \"complete rational form.\\\")\n\nTheir question is motivated by the following results.\n\n-   The representation category of any finite group has a complete rational form over a cy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Non-cyclotomic fusion categories\nScott Morrison\nNoah Snyder\nURLs: http://tqft.net/ and http://math.columbia.edu/~nsnyder\nEmail: scott@tqft.net nsnyder@math.columbia.edu\nAbstract Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category\ncan be completely deﬁned over a cyclotomic ﬁeld. We show that this is not\nthe case: in particular one of the fusion categories coming from the Haagerup\nsubfactor [1] and one coming from the newly constructed extended Haagerup\nsubfactor [2] can not be completely deﬁned over a cyclotomic ﬁeld. On the\nother hand, we show that the Drinfel’d center of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-background.md",
+      "narrative": null,
+      "content": "[]{#sec:background label=\"sec:background\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion categories and fields of definition",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-fusion-categories-and-fields-of-definition.md",
+      "narrative": null,
+      "content": "Let $k$ be a field. An object in an additive category is called simple if it has no non-trivial proper subobjects. An additive category is called semisimple if every object is a direct sum of simple objects (and in particular, every indecomposable object is simple). A category is called idempotent complete (or Karoubian or psuedoabelian) if every idempotent has an image (that is, a subobject which the idempotent factors through). It is easy to see that any idempotent complete additive semisimple category is abelian. A *split semisimple category over $k$* is a semisimple category over $k$ such",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subfactors and category theory",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-subfactors-and-category-theory.md",
+      "narrative": null,
+      "content": "The main examples in this paper come from the theory of subfactors. A subfactor is an inclusion $A \\subset B$ of von Neumann algebras with trivial centers. The applications of subfactor theory to tensor categories involve subfactors of finite index.\n\nFrom such a subfactor $A \\subset B$, we can construct a pair of $\\Complex$-linear abelian semisimple rigid tensor categories (that is, categories that only fail to be fusion categories by possibly having infinitely many non-isomorphic simple objects). See [@MR1424954] for more details. These tensor categories are the subcategory of the category of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shaded planar algebras",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-shaded-planar-algebras.md",
+      "narrative": null,
+      "content": "One of the main tools for understanding monoidal categories (and more generally $2$-categories) is the diagram calculus (pioneered by Penrose [@MR0281657], Joyal-Street [@MR1113284], Reshetikhin-Turaev [@MR1036112], etc.) of string diagrams. Planar algebras are a version of this diagram calculus which allows you to study monoidal categories from the point of view of a particular object, where you only consider strings labelled by that object.\n\nIn particular, given a subfactor the resulting string diagrams have regions which are checkerboard shaded (corresponding to $A$ and $B$) and unoriented",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principal graphs",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-24-principal-graphs.md",
+      "narrative": null,
+      "content": "Given a unitary irreducible shaded planar algebra $\\cP$ the principal graphs are a pair of bipartite graphs which together encode the fusion rules for tensoring with the single strand.\n\nThe principal graph has even vertices corresponding to isomorphism classes of simple projections in $V_{\\text{even},+}$ and odd vertices corresponding to the isomorphism classes of simple projections in $V_{\\text{odd},+}$. An even vertex $V$ and an odd vertex $W$ are connected by $\\dim \\Hom{}{W \\otimes X}{V}$ edges, where $X$ is the single strand. The dual principal graph has even vertices corresponding to isom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The lopsided normalization",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-25-the-lopsided-normalization.md",
+      "narrative": null,
+      "content": "[]{#sec:lopsided label=\"sec:lopsided\"} In an irreducible shaded planar algebra $\\cP$ over a field $k$, the shaded inside and shaded outside circles each evaluate to a scalar multiple of the empty diagram. These multiples are called the shaded and unshaded moduli. The product of the two moduli is called the index of $\\cP$.\n\nIf the two moduli are equal, we say the planar algebra is spherical. (In particular, because in this section we are assuming irreducibility, this condition implies the usual notion of a planar algebra being spherical.) If the shaded modulus is equal to one, we say the planar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The shaded planar algebras H0 and H1",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-3-the-shaded-planar-algebras-h0-and-h1.md",
+      "narrative": null,
+      "content": "[]{#sec:construction label=\"sec:construction\"}\n\nThe goal of this section is to prove Theorem [\\[thm:detailed\\]](#thm:detailed){reference-type=\"ref\" reference=\"thm:detailed\"} part [\\[pa:construct\\]](#pa:construct){reference-type=\"ref\" reference=\"pa:construct\"} and the \"if\\\" direction of parts [\\[pa:dualprojs\\]](#pa:dualprojs){reference-type=\"ref\" reference=\"pa:dualprojs\"} and [\\[pa:principalprojs\\]](#pa:principalprojs){reference-type=\"ref\" reference=\"pa:principalprojs\"}. Thus we explicitly construct certain rational forms and determine when they are complete. These constructions all follow quic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rational forms and twisted moments",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-4-rational-forms-and-twisted-moments.md",
+      "narrative": null,
+      "content": "[]{#sec:noncyclotomic label=\"sec:noncyclotomic\"}\n\nThe goal of this section is to prove the \"only if\\\" direction of Thereom [\\[thm:detailed\\]](#thm:detailed){reference-type=\"ref\" reference=\"thm:detailed\"} parts [\\[pa:dualprojs\\]](#pa:dualprojs){reference-type=\"ref\" reference=\"pa:dualprojs\"} and [\\[pa:principalprojs\\]](#pa:principalprojs){reference-type=\"ref\" reference=\"pa:principalprojs\"} and as an immediate corollary Theorem [\\[thm:noncyclotomic\\]](#thm:noncyclotomic){reference-type=\"ref\" reference=\"thm:noncyclotomic\"}.\n\nFirst we prove part [\\[pa:dualprojs\\]](#pa:dualprojs){reference-type=\"ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Drinfel'd center",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-5-the-drinfeld-center.md",
+      "narrative": null,
+      "content": "[]{#sec:center label=\"sec:center\"}\n\nThe goal of this section is to give a proof of part [\\[pa:center\\]](#pa:center){reference-type=\"ref\" reference=\"pa:center\"} of Theorem [\\[thm:detailed\\]](#thm:detailed){reference-type=\"ref\" reference=\"thm:detailed\"}, completing the proof of Theorem [\\[thm:detailed\\]](#thm:detailed){reference-type=\"ref\" reference=\"thm:detailed\"}. Our proof is somewhat unsatisfying since it is indirect and relies on extensive computations from [@MR1832764]. Presumably one could use calculations along the lines of [@MR1832764] to give a more direct proof (specifically by explic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1002.0168v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois conjugates",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-6-galois-conjugates.md",
+      "narrative": null,
+      "content": "Galois conjugates\nThe ﬁeld\nK = Q(λ0) = Q\n\ni\ns\n−1 +\n√\n13\n2\n\n\nis a degree 4 non-Galois extension of Q. Its Galois closure L has degree 8 and\nhas Galois group the dihedral group with 8 elements which we think of as the\nautomorphisms of a ﬁxed square. The ﬁeld K is the ﬁxed points of the subgroup\ngenerated by a reﬂection in one of the sides in the square. In particular, the orbit of\nK under the Galois group Gal(L/Q) consists of two ﬁelds, K and\nK′ = Q\n\ni\ns\n−1 −\n√\n13\n2\n\n.\nEach of K and K′ is ﬁxed pointwise by two elements of Gal(L/Q) and each has a\nsingle nontrivial automorphism over Q. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

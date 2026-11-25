@@ -1,0 +1,489 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2601.15862v1",
+  "title": "Synthetic Differential Jet Bundles are Reduced",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Statement and Proof",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-statement-and-proof"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Background",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-appendix-a-background"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bundles",
+          "heading": false
+        },
+        {
+          "term": "synthetic differential",
+          "heading": false
+        },
+        {
+          "term": "grigorios",
+          "heading": false
+        },
+        {
+          "term": "hisham",
+          "heading": false
+        }
+      ],
+      "extract": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER Abstract. We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´echet smooth manifolds to the Cahiers topos of formal smooth sets (a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2601.15862v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emph formal",
+          "heading": false
+        },
+        {
+          "term": "sdg",
+          "heading": false
+        },
+        {
+          "term": "formal smooth",
+          "heading": false
+        },
+        {
+          "term": "jet bundles",
+          "heading": false
+        },
+        {
+          "term": "infinite jet",
+          "heading": false
+        },
+        {
+          "term": "cref",
+          "heading": false
+        },
+        {
+          "term": "parencites",
+          "heading": false
+        },
+        {
+          "term": "differential geometry",
+          "heading": false
+        }
+      ],
+      "extract": "The tenet of \\emph{synthetic differential geometry} (SDG, cf. \\parencites{Kock1979}{lavendhomme1996}{Kock2010}) is that concepts and results in differential geometry often find a more natural and powerful formulation after faithfully embedding the category of smooth manifolds into a suitable \\emph{topos} (cf. \\parencites{MacLaneMoerdijk1992}{Borceux1994III}) where \\emph{infinitesimal spaces} exist as actual objects.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-statement-and-proof",
+      "number": "2",
+      "title": "Statement and Proof",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vec phantom",
+          "heading": false
+        },
+        {
+          "term": "infty cref",
+          "heading": false
+        },
+        {
+          "term": "begin tikzcd",
+          "heading": false
+        },
+        {
+          "term": "end tikzcd",
+          "heading": false
+        },
+        {
+          "term": "row sep",
+          "heading": false
+        },
+        {
+          "term": "column sep",
+          "heading": false
+        },
+        {
+          "term": "reduced cref",
+          "heading": false
+        },
+        {
+          "term": "simeq varprojlim",
+          "heading": false
+        }
+      ],
+      "extract": "We write $i_!$ (\\cref{ToposOfFormalSmoothSets}) for the inclusion of smooth sets --- such as Fr{\\'e}chet manifolds (\\cref{FrechetManifoldsAsSmoothSets}) --- among formal smooth sets. \\begin{theorem} \\label[theorem]{i!PreservesInfiniteJetBundles} For $\\inlinetikzcd{E \\ar[r] \\& \\Sigma}$ a finite-dimensional surjective submersion of smooth manifolds, passage to formal smooth sets preserves the projective limit involved",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-appendix-a-background",
+      "number": null,
+      "title": "Appendix A. Background",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grigorios giotopoulos",
+          "heading": false
+        },
+        {
+          "term": "crtsp",
+          "heading": false
+        },
+        {
+          "term": "hisham sati",
+          "heading": false
+        },
+        {
+          "term": "igor khavkine",
+          "heading": false
+        },
+        {
+          "term": "frmcrtsp",
+          "heading": false
+        },
+        {
+          "term": "differential jet",
+          "heading": false
+        },
+        {
+          "term": "jet bundle",
+          "heading": false
+        },
+        {
+          "term": "urs schreiber",
+          "heading": false
+        }
+      ],
+      "extract": "For reference in the main text, here we briefly record some basic definitions and facts. 10 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER A.1. Formal Smooth Sets. We briefly review the topos of formal smooth sets ([Sch13, Def. 4.5.5; KS26, §2.1; GS25b, §2], exposition in [Sch25]), equivalent (by [GS25b, §4.1]) to Dubuc’s Cahiers topos [Dub79; KR87], which is a “well-adapted model” for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abu dhabi",
+          "heading": false
+        },
+        {
+          "term": "diff erentielle",
+          "heading": false
+        },
+        {
+          "term": "eom etrie",
+          "heading": false
+        },
+        {
+          "term": "erentielle cat",
+          "heading": false
+        },
+        {
+          "term": "cit",
+          "heading": false
+        },
+        {
+          "term": "university abu",
+          "heading": false
+        },
+        {
+          "term": "synthetic geometry",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        }
+      ],
+      "extract": "[Bor94] F. Borceux. Categories of Sheaves. Vol. 3. Handbook of Categorical Alge- bra. Cambridge: Cambridge University Press, 1994. isbn: 9780521061247. doi: 10.1017/CBO9780511525872 (cit. on p. 1). [DK04] J. Duistermaat and J. Kolk. Multidimensional Real Analysis I: Differen- tiation. Vol. 86. Cambridge Studies in Advanced Mathematics. London: Cambridge University Press, 2004. isbn: 9780521551144 (cit. on p. 11).",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "synthetic differential",
+      "heading": false
+    },
+    {
+      "term": "differential jet",
+      "heading": false
+    },
+    {
+      "term": "jet bundles",
+      "heading": false
+    },
+    {
+      "term": "cahiers topos",
+      "heading": false
+    },
+    {
+      "term": "synthetic geometry",
+      "heading": false
+    },
+    {
+      "term": "infinite jet",
+      "heading": false
+    },
+    {
+      "term": "formal smooth",
+      "heading": false
+    },
+    {
+      "term": "reduced cref",
+      "heading": false
+    },
+    {
+      "term": "smooth manifolds",
+      "heading": false
+    },
+    {
+      "term": "cref onjetbundles",
+      "heading": false
+    },
+    {
+      "term": "grigorios giotopoulos",
+      "heading": false
+    },
+    {
+      "term": "infty cref",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2601.15862v1"
+  }
+}

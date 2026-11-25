@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Spiders for Rank 2 Lie Algebras",
+  "contains": [
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-front-matter",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-000",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-001",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-002",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-003",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Spiders for Rank 2 Lie Algebras — A spider is an axiomatization of the representation theory of a group, quantum group, Lie algebra, or other group or group-like object.\n\n**Spiders for Rank 2 Lie Algebras**\n\n*Greg Kuperberg*\n\n44 pp, 6 sections.\n\n**Abstract.** A spider is an axiomatization of the representation theory of a group, quantum group, Lie algebra, or other group or group-like object. It is also known as a spherical category, or a strict, monoidal category with a few extra properties, or by several other names. A recently useful point of view, developed by other authors, of the representation theory of sl(2) has been to present it as a spider by generators and relations. That is, one has an algebraic spider, defined by invariants of linear representations, and one identifies it as isomorphic to a combinatorial spider, given by generators and relations. We generalize this approach to the rank 2 simple Lie algebras, namely A2, B2, and G2.\n\n**Outline.** Front matter; 1 Introduction; 3 Pa,a<βa) = βa*; 6 Equinumeration; XX-«'\")c<-r; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kuperberg-1996-cmp-180-109-spiders",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "kuperberg-1996-cmp-180-109-spiders.pdf",
+    "source_sha256": "b6c94630554cc15ac98c5801fca01834c93f54a9ef74586ddcc3339cd684b6ea",
+    "pages": 44,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

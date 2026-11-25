@@ -1,0 +1,192 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9910019v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec-intro}\n\nSuppose that we are selecting $n$ points, $p_1,p_2,\\cdots,p_n$, \nat random in a rectangle, \nsay $R=[0,1]\\times[0,1]$ (see Figure \\ref{fig-randompoints}). \nWe denote by $\\pi$ the configuration of $n$ random points.\nWith probability 1, no two points have same $x$-coordinates nor $y$-coordinates.\nAn up/right path of $\\pi$ \nis a collection of points $p_{i_1},p_{i_2},\\cdots,p_{i_k}$ \nsuch that $x(p_{i_1})<x(p_{i_2})<\\cdots<x(p_{i_k})$ \nand $y(p_{i_1})<y(p_{i_2})<\\cdots<y(p_{i_k})$.\nThe length of such a path is defined by the number of the points in the path.\nNow we denote by $l_n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9910019v1  [math.CO]  5 Oct 1999\nSymmetrized random permutations\nJinho Baik∗and\nEric M. Rains†\nSeptember 23, 1999",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tracy-Widom distribution functions",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-tracy-widom-distribution-functions.md",
+      "narrative": null,
+      "content": "\\label{sec-dist}\n\n\nLet $u(x)$ be the solution of the Painlev\\'e II (PII) equation,\n\\begin{equation}\\label{as10}\n  u_{xx}=2u^3+xu,\n\\end{equation}\nwith the boundary condition\n\\begin{equation}\\label{as11}\n  u(x)\\sim -Ai(x)\\quad\\text{as}\\quad x\\to +\\infty,\n\\end{equation}\nwhere $Ai$ is the Airy function.\nThe proof of the (global) existence and the uniqueness of the solution \nwas first established in \\cite{HM} : \nthe asymptotics as $x\\to -\\infty$ are \n(see e.g. \\cite{HM,DZ2}) \n\\begin{eqnarray}\n\\label{as17}  u(x) &=&\n-Ai(x) + O\\biggl( \\frac{e^{-(4/3)x^{3/2}}}{x^{1/4}}\\biggr),\n\\qquad\\text{as $x\\to +\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Results",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-main-results.md",
+      "narrative": null,
+      "content": "\\label{sec-result}\n\nAs in the Introduction, let $N$ denote \n$n, 2n+m, 2n+m,2n,4n+2m_++2m_-$ for\neach of $\\tsymmU, \\tsymmO, \\tsymmS, \\tsymmUU, \\tsymmu$ case respectively.\nWe scale the random variables : for permutations and involutions, \n\\begin{equation}\n\\chi^\\symmU_n = \\frac{L^\\symmU_n-2\\sqrt{N}}{N^{1/6}}, \\qquad \n\\chi^\\symmO_{n,m} = \\frac{L^{\\symmO}_{n,m}-2\\sqrt{N}}{N^{1/6}}, \\qquad \n\\chi^\\symmS_{n,m} = \\frac{L^{\\symmS}_{n,m}-2\\sqrt{N}}{N^{1/6}}, \n\\end{equation}\nand for signed permutations and signed involutions, \n\\begin{equation}\n\\chi^\\symmUU_{n} = \\frac{L^\\symmUU_n-2\\sqrt{N}}{2^{2/3}N^{1/6}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications and related topics",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-applications-and-related-topics.md",
+      "narrative": null,
+      "content": "Applications and related topics",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random involutions and random signed involutions",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-41-random-involutions-and-random-signed-involuti.md",
+      "narrative": null,
+      "content": "The ensemble $S^\\symmO_{n,m}$ is the set of involutions with \n$n$ 2-cycles and $m$ 1-cycles.\nIn the previous section, we considered the limiting statistics when \n$n$ and $m$ are related by $m=[\\sqrt{2n}\\alpha]$ with $\\alpha$ \nbeing finite ; either fixed or $\\alpha\\to 1$ with certain rate.\nIt is of interest to consider the whole set of involutions \nwithout constraints on the number of fixed points.\nSimilarly, the signed involutions without constraint \non the number of fixed points and negated points is also of interest.\nWe define the ensembles of involutions and signed involutions \n\\begin{align",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random turn vicious walker model",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-43-random-turn-vicious-walker-model.md",
+      "narrative": null,
+      "content": "Random permutations and random involutions arise also in certain random \nwalk process in a one dimensional integer lattice.\nWe call a particle left-movable (resp. right-movable) \nif its left (resp. right) site is vacant.\nInitially, $p$ particles are located at the points $1,2,3,\\cdots,p$.\nAt each time step $t$ ($t=1,2,\\cdots$), \none particle \namong the left-movable particles \nis selected at random,  \nand is moved to its left site\n(so at $t=1$, the leftmost particle is moved.)\nSuppose this process is repeated for $n$ time steps. \nIt is found that \\cite{forrester99}\nthere is a bijection between",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetrized versions of Johansson's model",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-44-symmetrized-versions-of-johanssons-model.md",
+      "narrative": null,
+      "content": "In [22], Johansson introduced a certain model which has several probabilistic interpretations, as a randomly\ngrowing Young diagram, a totally asymmetric one dimensional exclusion process, a certain zero-temperature\ndirected polymer in a random environment or as a kind of ﬁrst-passage site percolation model. Here we consider\nthe symmetrized versions. The limiting distributions are parallel to the results of Section 3 depending on the\nsymmetry type.\nEach model is deﬁned on M, a subset of Z2, and at each site (i, j) ∈M, we deﬁne a random variable w(i, j)\nof geometric distribution. We are interest",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "The results (4.23) and (4.26) with w = 0 are obtained in [21]. For , the longest up/right path in (1, 1) ր (M, N), M̸ = N, is also considered.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9910019v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "Set η(q) = 2√q 1 −√q , ρ(q) = q1/6(1 + √q)1/3 1 −√q . (4.22) We have (i). lim N→∞Pr \u0012G (N; q) −η(q)N ρ(q)N 1/3 ≤x \u0013 = F2(x). (4.23) (ii). lim N→∞Pr \u0012G · (N; q) −η(q)(2N) 22/3ρ(q)(2N)1/3 ≤x \u0013 = F2(x)2. (4.24) (iii). lim N→∞Pr \u0012G (N; q, α) −η(q)N ρ(q)N 1/3 ≤x \u0013 = F4(x), 0 ≤α < 1, (4.25) lim N→∞Pr \u0012G (N; q, α) −η(q)N ρ(q)N 1/3 ≤x \u0013 = F (x; w), α = 1 − 2w ρ(q)N 1/3 , (4.26) lim N→∞Pr \u0012G (N; q, α) −η(q)N ρ(q)N 1/3 ≤x \u0013 = 0, α > 1. (4.27) (iv). lim N→∞Pr \u0012G (N; q, β) −η(q)N ρ(q)N 1/3 ≤x \u0013 = F1(x), 0 ≤β. (4.28) (v). lim N→∞Pr \u0012G (N; q, α, β) −η(q)(2N) 22/3ρ(q)(2N)1/3 ≤x \u0013 = F2(x), 0 ≤α < 1, β ≥0, (4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

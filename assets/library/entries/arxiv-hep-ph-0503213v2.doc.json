@@ -1,0 +1,647 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-0503213v2",
+  "title": "A topological model of composite preons",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Helon model",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-helon-model"
+    },
+    {
+      "level": 1,
+      "title": "Phenomenology of the helon model",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-phenomenology-of-the-helon-model"
+    },
+    {
+      "level": 1,
+      "title": "Unresolved issues",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-unresolved-issues"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "6",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preons",
+          "heading": false
+        },
+        {
+          "term": "shupe",
+          "heading": false
+        },
+        {
+          "term": "adelaide",
+          "heading": false
+        },
+        {
+          "term": "substructure",
+          "heading": false
+        },
+        {
+          "term": "harari",
+          "heading": false
+        },
+        {
+          "term": "model",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/0503213v2 27 Oct 2006 ADP-05-05/T615 A topological model of composite preons Sundance O. Bilson-Thompson∗ Centre for the Subatomic Structure of Matter, Department of Physics, University of Adelaide, Adelaide SA 5005, Australia (Dated: February 2, 2008) We describe a simple model, based on the preon model of Shupe and Harari, in which the binding of preons is represented topologically. We then",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rishon model",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "preon models",
+          "heading": false
+        },
+        {
+          "term": "hypercolour",
+          "heading": false
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "harari",
+          "heading": false
+        },
+        {
+          "term": "anti-rishons",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The Standard Model (SM) provides an extremely succesful and simple means of classifying and understanding the physical processes which fill the Universe. However the existence of many seemingly arbitrary features hints at a more fundamental physical theory from which the SM arises. Considering the successful series of ideas leading through molecules, to atoms, nuclei, nucleons, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-helon-model",
+      "number": "2",
+      "title": "The Helon model",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "unbraided triplets",
+          "heading": false
+        },
+        {
+          "term": "tweedles",
+          "heading": false
+        },
+        {
+          "term": "braided triplets",
+          "heading": false
+        },
+        {
+          "term": "rishon model",
+          "heading": false
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "twist through",
+          "heading": false
+        },
+        {
+          "term": "phenom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:helons label=\"sec:helons\"} Let us now introduce our topologically-based toy model of quarks, leptons, and gauge bosons. It is convenient to represent the most fundamental objects in this model by twists through $\\pm\\pi$ in a ribbon. For convenience let us denote a twist through $\\pi$ as a \"dum\", and a twist through $-\\pi$ as a \"dee\" ($U$ and $E$ for short, after Tweedle-dum and Tweedle-dee [@wonderland]).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-phenomenology-of-the-helon-model",
+      "number": "3",
+      "title": "Phenomenology of the helon model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 2392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "helon vertices",
+          "heading": false
+        },
+        {
+          "term": "basic helon",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "colour interaction",
+          "heading": false
+        },
+        {
+          "term": "charged fermions",
+          "heading": false
+        },
+        {
+          "term": "beta reproduces",
+          "heading": false
+        },
+        {
+          "term": "overline mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:phenom label=\"sec:phenom\"} A braid on $n$ strands is said to be an element of the braid group $B_n$. Given any element of $B_n$, it is also possible to create a corresponding anti-braid, which is the top-to-bottom mirror image of that braid, and is also an element of $B_n$ (it is therefore merely a matter of convention what we call a braid or an anti-braid). If we join the strands of a braid with those of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-unresolved-issues",
+      "number": "4",
+      "title": "Unresolved issues",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "issues",
+          "heading": true
+        },
+        {
+          "term": "spin frac",
+          "heading": false
+        },
+        {
+          "term": "form spin",
+          "heading": false
+        },
+        {
+          "term": "triplet",
+          "heading": false
+        },
+        {
+          "term": "mass",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "origin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:issues label=\"sec:issues\"} There are three significant issues the helon model has not yet addressed: the origin of spin, the origin of mass, and the nature of Cabbibo-mixing.\\ At the outset we hoped that spin would be emergent. Thus far we have been partly successful, identifying helicity of helon triplets, but not spin itself. It may be tempting then to assume that helons carry spin-$\\frac{1}{2}$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-discussion",
+      "number": "5",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "rishon model",
+          "heading": false
+        },
+        {
+          "term": "colour charge",
+          "heading": false
+        },
+        {
+          "term": "preon",
+          "heading": false
+        },
+        {
+          "term": "interactions",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "neutrinos",
+          "heading": false
+        },
+        {
+          "term": "discussion",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:discussion label=\"sec:discussion\"} The Helon Model differs from previous preon models in that we have chosen to describe the properties of composite fermions and bosons not in terms of fundamental properties of the preons themselves (e.g. hypercolour), but in the interrelations between the preons (in essence extending the idea behind Harari and Shupe's original explanation of colour charge to other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-acknowledgements",
+      "number": "6",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "smolin",
+          "heading": false
+        },
+        {
+          "term": "harari",
+          "heading": false
+        },
+        {
+          "term": "acknowledgements",
+          "heading": true
+        },
+        {
+          "term": "helpful",
+          "heading": false
+        }
+      ],
+      "extract": "ACKNOWLEDGEMENTS The author is extremely grateful to Alex Kalloniatis for numerous helpful comments on style and content, Larisa Lindsay for proofreading, and to L. J. Nickisch and John Hedditch for encouragement and helpful discussions. [1] J. C. Pati, A. Salam, Phys. Rev. D10, 275 (1974). [2] See e.g. H. Terazawa, K. Akama, Phys. Lett. B96, 276 (1980) and references therein. [3] H. Harari, Phys. Lett. B86, 83",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "helon model",
+      "heading": true
+    },
+    {
+      "term": "helon vertices",
+      "heading": true
+    },
+    {
+      "term": "basic helon",
+      "heading": true
+    },
+    {
+      "term": "rishon model",
+      "heading": false
+    },
+    {
+      "term": "preon model",
+      "heading": false
+    },
+    {
+      "term": "colour charge",
+      "heading": false
+    },
+    {
+      "term": "colour interactions",
+      "heading": false
+    },
+    {
+      "term": "charged leptons",
+      "heading": false
+    },
+    {
+      "term": "electric charge",
+      "heading": false
+    },
+    {
+      "term": "gws model",
+      "heading": false
+    },
+    {
+      "term": "original rishon",
+      "heading": false
+    },
+    {
+      "term": "braided triplets",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The fermions formed by adding zero, one, two or three charges to a neutral braid. Charged fermions come in two handedness states each, while ν and",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A representation of the decay µ →νµ+e−+",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The bosons of the electroweak interaction. Notice",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The charge transferring vertex (TV) and the polarising vertex (PV) are basic helon vertices from which the electroweak basic vertices can be formed",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-0503213v2"
+  }
+}

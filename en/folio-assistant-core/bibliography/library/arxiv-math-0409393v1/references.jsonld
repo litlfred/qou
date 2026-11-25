@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0409393v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+      "dcterms:creator": [
+        "Sauloy, Jacques"
+      ],
+      "dcterms:issued": "D:20210414",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0409393",
+      "dcterms:abstract": "— The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy and C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuya type and is based on a discrete summation process due to C. Zhang. We show here another road to some of these results by algebraic means and we describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an elliptic curve. R´esum´e (Construction alg´ebrique du faisceau de Stokes pour les ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres) La classiﬁcation analytique locale des ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres a ´et´e r´ecemment r´ealis´ee par J.-P. Ramis, J. Sauloy et C. Zhang. Leur description fait intervenir un q-analogue du faisceau de Stokes et des th´eor`emes de type Malgrange-Sibuya et elle s’appuie sur la sommation discr`ete de C. Zhang. Nous montrons ici comment retrouver une partie de ces r´esultats par voie alg´ebrique et nous d´ecrivons le d´evissage q-Gevrey du q-faisceau de Stokes par des ﬁbr´es vectoriels holomorphes sur une courbe elliptique. Je laisse aux nombreux avenirs (non `a tous) mon jardin aux sentiers qui bifurquent (Jorge Luis Borges, Fictions).",
+      "dcterms:source": "library/arxiv-math-0409393v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0409393v1"
+    }
+  ]
+}

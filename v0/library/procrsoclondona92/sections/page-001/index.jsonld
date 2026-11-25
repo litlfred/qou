@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/procrsoclondona92/sections/page-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 1",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/procrsoclondona92/blocks/prose-page-001",
+    "library/procrsoclondona92/blocks/figure-img-p001-1",
+    "library/procrsoclondona92/blocks/figure-img-p001-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/procrsoclondona92/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/procrsoclondona92/manifest.jsonld",
+  "provenance": "ingested"
+}

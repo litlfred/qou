@@ -1,0 +1,841 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2402.01890v4",
+  "title": "On the spherical partition algebra",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basic notation",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-basic-notation"
+    },
+    {
+      "level": 1,
+      "title": "Bipartite partitions",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-bipartite-partitions"
+    },
+    {
+      "level": 1,
+      "title": "The partition algebra and the spherical partition algebra",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-partition-algebra-and-the-spherical-partitio"
+    },
+    {
+      "level": 1,
+      "title": "Rank of the Spherical Partition Algebra",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-rank-of-the-spherical-partition-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Schur-Weyl duality for SP k(n)",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-schur-weyl-duality-for-sp-kn"
+    },
+    {
+      "level": 1,
+      "title": "Cellularity of SP k(t)",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-cellularity-of-sp-kt"
+    },
+    {
+      "level": 1,
+      "title": "The decomposition numbers for SP k(n) when SP k(n) is non-semisimple.",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-decomposition-numbers-for-sp-kn-when-sp-kn-i"
+    },
+    {
+      "level": 1,
+      "title": "Tilting modules for P k(n) and SP k(n)",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-tilting-modules-for-p-kn-and-sp-kn"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra spk",
+          "heading": false
+        },
+        {
+          "term": "matem aticas",
+          "heading": false
+        },
+        {
+          "term": "spherical partition",
+          "heading": false
+        },
+        {
+          "term": "chile",
+          "heading": false
+        },
+        {
+          "term": "instituto",
+          "heading": false
+        },
+        {
+          "term": "universidad",
+          "heading": false
+        }
+      ],
+      "extract": "On the spherical partition algebra Katherine Orme˜no Bast´ıas∗1, Paul Martin†2, and Steen Ryom-Hansen‡3 1Instituto de Matem´aticas, Universidad de Talca, Chile 2School of Mathematics, Leeds University, UK 3Instituto de Matem´aticas, Universidad de Talca, Chile Abstract For k ∈N we introduce an idempotent subalgebra, the spherical partition algebra SPk, of the partition algebra Pk, that we define using an embedding",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2402.01890v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra sphealg",
+          "heading": false
+        },
+        {
+          "term": "simple sphealg",
+          "heading": false
+        },
+        {
+          "term": "algebra paralg",
+          "heading": false
+        },
+        {
+          "term": "lambda sph",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "cite pmartin",
+          "heading": false
+        },
+        {
+          "term": "bipartite partitions",
+          "heading": false
+        },
+        {
+          "term": "partitions bipar",
+          "heading": false
+        }
+      ],
+      "extract": "The {\\it partition algebra} $ \\ParAlg $ arose around thirty years ago in the second named author's work on the Potts model in statistical mechanics, see \\cite{PMartin}. Since then it has been understood that $ \\ParAlg $ is in fact connected with many other areas of mathematics and physics, including Deligne's category $ \\underline{\\rm Rep}(S_t) $, the Kronecker problem in the representation theory of the symmetric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-basic-notation",
+      "number": null,
+      "title": "Basic notation",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "to be used throughout the paper. This concerns integer partitions, Young tableaux and other concepts related to",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-bipartite-partitions",
+      "number": null,
+      "title": "Bipartite partitions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 2119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bipartite partitions",
+          "heading": true
+        },
+        {
+          "term": "semistandard λ-tableaux",
+          "heading": false
+        },
+        {
+          "term": "bipar",
+          "heading": false
+        },
+        {
+          "term": "spk",
+          "heading": false
+        },
+        {
+          "term": "let park",
+          "heading": false
+        },
+        {
+          "term": "λ-tableau",
+          "heading": false
+        },
+        {
+          "term": "row column",
+          "heading": false
+        },
+        {
+          "term": "gessel normal",
+          "heading": false
+        }
+      ],
+      "extract": "and introduce the corresponding diagrammatic representations. For b ∈BiPark, we further recall the lexicographic normal form N(b) and Garsia and Gessel’s normal form GG(b) from [23]. In section 4 we recall the partition algebra Pk and introduce the spherical partition algebra SPk, the main protagonist of our paper. In section 5 we show that rkC[x]SPk = bpk, by constructing a concrete basis for SPk. This uses",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-partition-algebra-and-the-spherical-partitio",
+      "number": null,
+      "title": "The partition algebra and the spherical partition algebra",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra paralg",
+          "heading": false
+        },
+        {
+          "term": "raisebox height",
+          "heading": false
+        },
+        {
+          "term": "pdf raisebox",
+          "heading": false
+        },
+        {
+          "term": "algebra sphealg",
+          "heading": false
+        },
+        {
+          "term": "partition algebra",
+          "heading": true
+        },
+        {
+          "term": "spherical partition",
+          "heading": true
+        },
+        {
+          "term": "cap prime",
+          "heading": false
+        },
+        {
+          "term": "label dib",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{The partition algebra} We next recall the partition algebra $ \\ParAlg$; it was introduced by the second named author via considerations in statistical mechanics, see \\cite{PMartin}. Let $ \\SetPar_k $ be the set of set partitions on $ \\{ 1,2 \\ldots, k \\} $, that is the set of equivalence relations $ d $ on $ \\{ 1,2 \\ldots, k \\}$. For even subscript $ 2 k $ we shall usually think of $ \\SetPar_{2k} $ as set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-rank-of-the-spherical-partition-algebra",
+      "number": null,
+      "title": "Rank of the Spherical Partition Algebra",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref dib",
+          "heading": false
+        },
+        {
+          "term": "raisebox height",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "height includegraphics",
+          "heading": false
+        },
+        {
+          "term": "setpar",
+          "heading": false
+        },
+        {
+          "term": "propagating blocks",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Rank of the} As a $ \\CC[x]$-module $ \\SpheAlg $ is automatically free, since $ \\CC[x]$ is a PID and $ \\SpheAlg $ is a submodule of the free $ \\CC[x]$-module $ \\ParAlg $, and hence torsion-free. Our first task is to determine the rank of $ \\SpheAlg $. \\medskip For this, we first observe that any diagrammatic representation of $ b \\in \\BiPar_k $ may be viewed as an element of $\\SetPar_{2k} $. For example, for $",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-schur-weyl-duality-for-sp-kn",
+      "number": null,
+      "title": "Schur-Weyl duality for SP k(n)",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "15",
+      "words": 3162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "paralg rhd",
+          "heading": false
+        },
+        {
+          "term": "raisebox height",
+          "heading": false
+        },
+        {
+          "term": "pdf raisebox",
+          "heading": false
+        },
+        {
+          "term": "rhd lambda",
+          "heading": false
+        },
+        {
+          "term": "dem medskip",
+          "heading": false
+        },
+        {
+          "term": "par lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda sph",
+          "heading": false
+        },
+        {
+          "term": "lambda psi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Schur-Weyl duality} In this section we study the specialized spherical partition algebra $\\SpheAlg(n)$, where $ n \\in \\N$. Our main result is a double centralizer property involving $\\SpheAlg(n)$ and $ \\Si_n $, both acting on the symmetric power $ S^{k} V_n $ where $ V_n$ is a $\\CC $-vector space of dimension $ n $. It is an analogue of Schur-Weyl duality, see \\cite{Schur}, \\cite{Weyl}. \\medskip Fix a basis $",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-cellularity-of-sp-kt",
+      "number": null,
+      "title": "Cellularity of SP k(t)",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 22,
+      "labelStart": "15",
+      "labelEnd": "22",
+      "words": 3985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parl",
+          "heading": false
+        },
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "cellular algebra",
+          "heading": false
+        },
+        {
+          "term": "spk",
+          "heading": false
+        },
+        {
+          "term": "cell datum",
+          "heading": false
+        },
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "cellularity",
+          "heading": true
+        },
+        {
+          "term": "red line",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we initiate the study of the representation theory of SPk(t), for arbitrary t ∈C. It was shown in [33] that Pk(t) is semisimple if and only if t /∈{0, 1, 2, . . . , 2k −2}. This gives us immediately the following Theorem. Theorem 8. Suppose that t /∈{0, 1, 2, . . . , 2k −2}. Then SPk(t) is a semisimple algebra. Proof: Let Jk and SJ k be the Jacobson radicals for Pk(t) and SPk(t), respectively. Then,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-decomposition-numbers-for-sp-kn-when-sp-kn-i",
+      "number": null,
+      "title": "The decomposition numbers for SP k(n) when SP k(n) is non-semisimple.",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 1274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ext paralg",
+          "heading": false
+        },
+        {
+          "term": "hom paralg",
+          "heading": false
+        },
+        {
+          "term": "lambda sph",
+          "heading": false
+        },
+        {
+          "term": "unlhd lambda",
+          "heading": false
+        },
+        {
+          "term": "raisebox height",
+          "heading": false
+        },
+        {
+          "term": "irreducible sphealg",
+          "heading": false
+        },
+        {
+          "term": "pdf raisebox",
+          "heading": false
+        },
+        {
+          "term": "dem medskip",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{decompositionnumbers} In this section we shall use the results of the previous sections to determine the decomposition numbers for $ \\SpheAlg(n) $ when $ \\SpheAlg(n) $ is quasi-hereditary and non-semisimple, that is when $ n \\in \\{1,2,\\ldots, 2k-2\\} $. \\medskip Our arguments depend crucially on \\cite{PMartin1} in which the decomposition numbers for $ \\ParAlg(n)$ are determined. The results in \\cite{PMartin1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-tilting-modules-for-p-kn-and-sp-kn",
+      "number": null,
+      "title": "Tilting modules for P k(n) and SP k(n)",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 2232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting modules",
+          "heading": true
+        },
+        {
+          "term": "quasi-hereditary algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "multiset partition",
+          "heading": false
+        },
+        {
+          "term": "schur algebras",
+          "heading": false
+        },
+        {
+          "term": "potts model",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "canadian mathematical",
+          "heading": false
+        }
+      ],
+      "extract": "We already saw that Pk(n) are quasi-hereditary algebras when n̸ = 0 and therefore, in particular, they are endowed with families of tilting modules, see the appendix to [15]. In this section we take the opportunity to describe the structure of these tilting modules, using standard arguments from the theory of quasi-hereditary algebras. We observe that the same arguments also provide us with a description of the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sphealg paralg",
+      "heading": false
+    },
+    {
+      "term": "algebra sphealg",
+      "heading": false
+    },
+    {
+      "term": "equation sphealg",
+      "heading": false
+    },
+    {
+      "term": "irreducible sphealg",
+      "heading": false
+    },
+    {
+      "term": "paralg rhd",
+      "heading": false
+    },
+    {
+      "term": "involving sphealg",
+      "heading": false
+    },
+    {
+      "term": "simple sphealg",
+      "heading": false
+    },
+    {
+      "term": "raisebox height",
+      "heading": false
+    },
+    {
+      "term": "ext paralg",
+      "heading": false
+    },
+    {
+      "term": "lambda raisebox",
+      "heading": false
+    },
+    {
+      "term": "hom paralg",
+      "heading": false
+    },
+    {
+      "term": "partitions bipar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Example using n = 6, k = 3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2402.01890v4"
+  }
+}

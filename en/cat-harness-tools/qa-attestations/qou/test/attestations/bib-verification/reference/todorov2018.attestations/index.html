@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/todorov2018.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-gpwvjff3c.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-gpwvjff3c","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/todorov2018.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/todorov2018.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/todorov2018.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;todorov2018&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 263,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1806.09450v1/1806.09450v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;todorov2018&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;Derives the Standard Model gauge group in its Z_6 global form as the intersection of two maximal-rank subgroups of the compact automorphism group of the exceptional Jordan algebra, using Borel-de Siebenthal theory (eq. 1.4 = eq. 4.4). prose:sm-open-problems states in its status table that the Z_6 global form of G_SM is &#39;doubly grounded: representation-kernel condition (Baez-Huerta) and geometric F_4-stabilizer derivation (Dubois-Violette-Todorov) agree&#39; -- and that second grounding is uncited in the corpus. The two entries that exist, dubois-violette2016 and dubois-violette-todorov2018, are themselves bib orphans cited from no block, and neither is this Borel-de Siebenthal F_4 derivation. So the corpus names this derivation by author and uses it in the Z_6 compatibility battery without a source. Core: the claim is load-bearing for conj:sm-hypercharge-invariant&#39;s battery and this document is the derivation being invoked.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;eq. (1.4) = eq. (4.4), sec. 4&quot;,
+            &quot;statement&quot;: &quot;The intersection of the maximal-rank subgroups Spin(9) and SU(3)xSU(3)/Z_3 inside the compact automorphism group of the exceptional Jordan algebra is S[U(2)xU(3)] = (SU(3)xSU(2)xU(1))/Z_6, i.e. the Standard Model gauge group in its Z_6 global form.&quot;,
+            &quot;useForFolio&quot;: &quot;Sources the &#39;geometric F_4-stabilizer derivation&#39; half of the Z_6 grounding claimed in prose:sm-open-problems and used as the battery condition tau/3 + w/2 + Y/2 in Z for conj:sm-hypercharge-invariant.&quot;,
+            &quot;targets&quot;: [
+              &quot;prose:sm-open-problems&quot;,
+              &quot;conj:sm-hypercharge-invariant&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;eq. (1.5)-(1.6), sec. 4&quot;,
+            &quot;statement&quot;: &quot;The analogous intersections inside the compact forms of the structure and conformal groups of the same Jordan algebra give S[U(2)xU(2)xU(3)] and S[U(2)xU(3)xU(3)].&quot;,
+            &quot;useForFolio&quot;: &quot;Gives the concrete extension candidates a Z_6-grounded framework would have to rule out; useful for the &#39;a completed derivation would have to predict Gamma&#39; remark in sm-gauge-truncation.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:sm-gauge-truncation&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry. Distinct from the existing dubois-violette-todorov2018 entry, which is a different paper in the same programme.&quot;,
+            &quot;target&quot;: &quot;prose:sm-open-problems&quot;,
+            &quot;bean&quot;: &quot;qou-fte6&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;The Z_6 row of prose:sm-open-problems attributes a derivation to named authors with no citation; this is that derivation.&quot;,
+            &quot;target&quot;: &quot;prose:sm-open-problems&quot;,
+            &quot;bean&quot;: &quot;qou-cix3&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;conj:sm-hypercharge-invariant&#39;s Z_6 compatibility battery cites only baez-huerta2010 (the representation-kernel route); the geometric route the corpus claims agrees with it is unsourced there.&quot;,
+            &quot;target&quot;: &quot;conj:sm-hypercharge-invariant&quot;,
+            &quot;bean&quot;: &quot;qou-6x01&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;8556b67d9785&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

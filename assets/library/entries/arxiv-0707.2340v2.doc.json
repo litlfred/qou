@@ -1,0 +1,1708 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.2340v2",
+  "title": "arxiv-0707.2340v2",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A Plethora of Negative Dependence Properties and Conjectures",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-plethora-of-negative-dependence-properties-a"
+    },
+    {
+      "level": 2,
+      "title": "Negative Dependence Concepts",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-negative-dependence-concepts"
+    },
+    {
+      "level": 2,
+      "title": "Strongly Rayleigh Measures",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-strongly-rayleigh-measures"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric Homogenization",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-symmetric-homogenization"
+    },
+    {
+      "level": 2,
+      "title": "Measures on countably infinite sets",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-measures-on-countably-infinite-sets"
+    },
+    {
+      "level": 2,
+      "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+      "number": "2.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-towards-a-theory-of-negative-dependence-probl"
+    },
+    {
+      "level": 1,
+      "title": "Negative Dependence in Mathematics and Physics",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-negative-dependence-in-mathematics-and-physics"
+    },
+    {
+      "level": 2,
+      "title": "Real Stable Polynomials and Transcendental Entire Functions",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-real-stable-polynomials-and-transcendental-en"
+    },
+    {
+      "level": 2,
+      "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+      "number": "3.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice"
+    },
+    {
+      "level": 2,
+      "title": "Determinantal Probability Measures",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-33-determinantal-probability-measures"
+    },
+    {
+      "level": 2,
+      "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+      "number": "3.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-34-graphs-laplacians-spanning-trees-and-the-rand"
+    },
+    {
+      "level": 2,
+      "title": "Interacting Particle Systems and Exclusion Evolutions",
+      "number": "3.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-35-interacting-particle-systems-and-exclusion-ev"
+    },
+    {
+      "level": 1,
+      "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-negative-dependence-theory-for-strongly-raylei"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol"
+    },
+    {
+      "level": 2,
+      "title": "Stability Implies Negative Association",
+      "number": "4.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-42-stability-implies-negative-association"
+    },
+    {
+      "level": 2,
+      "title": "Stochastic Domination and Truncations",
+      "number": "4.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-43-stochastic-domination-and-truncations"
+    },
+    {
+      "level": 2,
+      "title": "The Partial Symmetrization Procedure",
+      "number": "4.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-44-the-partial-symmetrization-procedure"
+    },
+    {
+      "level": 1,
+      "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+      "number": "5",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-preservation-of-negative-dependence-by-symmetr"
+    },
+    {
+      "level": 1,
+      "title": "Almost Exchangeable Measures",
+      "number": "6",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-6-almost-exchangeable-measures"
+    },
+    {
+      "level": 1,
+      "title": "Negative Results on Negative Dependence",
+      "number": "7",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-7-negative-results-on-negative-dependence"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "exclusion processes",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        },
+        {
+          "term": "symmetric exclusion",
+          "heading": false
+        },
+        {
+          "term": "stochastic domination",
+          "heading": false
+        },
+        {
+          "term": "spanning trees",
+          "heading": false
+        },
+        {
+          "term": "symmetric homogenization",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0707.2340v2 [math.PR] 27 Jul 2008 NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS JULIUS BORCEA, PETTER BR¨AND´EN, AND THOMAS M. LIGGETT Abstract. We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0707.2340v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "cite bbs",
+          "heading": false
+        },
+        {
+          "term": "rayleigh probability",
+          "heading": false
+        },
+        {
+          "term": "exchangeable measures",
+          "heading": false
+        },
+        {
+          "term": "cite fkg",
+          "heading": false
+        },
+        {
+          "term": "pemantle cite",
+          "heading": false
+        },
+        {
+          "term": "ultra log-concave",
+          "heading": false
+        },
+        {
+          "term": "exclusion processes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s1} Let $\\mu : 2^{[n]} \\rightarrow \\RR$, $[n]=\\{1,\\ldots,n\\}$, be a function attaining nonnegative values and satisfying $\\sum_{S \\in 2^{[n]}}\\mu(S)=1$. The function $\\mu$ is said to satisfy the {\\em positive lattice condition} \\cite{FKG,P} if \\begin{equation*} \\mu(S)\\mu(T) \\leq \\mu(S\\cup T)\\mu(S\\cap T)\\tag*{(PLC)} \\end{equation*} for all $S,T \\subseteq [n]$. The corresponding probability measure (also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
+      "number": "2",
+      "title": "A Plethora of Negative Dependence Properties and Conjectures",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dependence properties",
+          "heading": true
+        },
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "exchangeable measures",
+          "heading": false
+        },
+        {
+          "term": "symmetric exclusion",
+          "heading": false
+        },
+        {
+          "term": "exclusion process",
+          "heading": false
+        },
+        {
+          "term": "initial distribution",
+          "heading": false
+        },
+        {
+          "term": "conjectures",
+          "heading": true
+        },
+        {
+          "term": "cna",
+          "heading": false
+        }
+      ],
+      "extract": "The problem of describing natural negative dependence properties that are pre- served by symmetric exclusion evolutions has attracted some attention in the the- ory of interacting particle systems and Markov processes [52, 54, 55]. In §4.4 we prove that the class of strongly Rayleigh measures is invariant under partial sym- metrization (this and several other properties fail for e.g. Rayleigh measures). As a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-negative-dependence-concepts",
+      "number": "2.1",
+      "title": "Negative Dependence Concepts",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "9",
+      "words": 2561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh h-nlc",
+          "heading": false
+        },
+        {
+          "term": "rayleigh measure",
+          "heading": false
+        },
+        {
+          "term": "rayleigh polynomial",
+          "heading": false
+        },
+        {
+          "term": "satisfies nlc",
+          "heading": false
+        },
+        {
+          "term": "rayleigh inequalities",
+          "heading": false
+        },
+        {
+          "term": "multi-affine polynomial",
+          "heading": false
+        },
+        {
+          "term": "homogeneous rayleigh",
+          "heading": false
+        },
+        {
+          "term": "cna rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s21} Recall that a (real or complex) multivariate polynomial is said to be {\\em multi-affine} if it has degree at most one in each variable. Denote by $\\fP_n$, $n\\in\\NN$, the set of all probability measures on the Boolean algebra $2^{[n]}$. (In the finite case we will always assume that the $\\sigma$-algebra is the full algebra.) For $i\\in [n]$ the $i$-th coordinate function on $2^{[n]}$ is an atomic (binary)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-strongly-rayleigh-measures",
+      "number": "2.2",
+      "title": "Strongly Rayleigh Measures",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh",
+          "heading": true
+        },
+        {
+          "term": "rayleigh measure",
+          "heading": false
+        },
+        {
+          "term": "rayleigh polynomial",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "bbs",
+          "heading": false
+        },
+        {
+          "term": "ref s-stable",
+          "heading": false
+        },
+        {
+          "term": "eqref stable",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s23} Motivated by similar notions in the theory of multivariate entire functions studied by Levin \\cite{Le}, the following definition was made in \\cite{BBS,BBS1,BBS2} (see also \\cite{BB,BB-2}). \\begin{definition}\\label{d-rs-pol} A polynomial $f \\in \\CC[z_1,\\ldots, z_n]$ is called {\\em stable} if $f(z_1,\\ldots, z_n) \\neq 0$ whenever $\\Im(z_j) >0$ for $1\\le j\\le n$. A stable polynomial with all real",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-symmetric-homogenization",
+      "number": "2.3",
+      "title": "Symmetric Homogenization",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric homogenization",
+          "heading": true
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "s-gar",
+          "heading": false
+        },
+        {
+          "term": "binom",
+          "heading": false
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s22} We will now define a symmetric homogenization procedure for arbitrary measures in $\\fP_n$. This natural construction proves to be quite useful for studying strongly Rayleigh measures (\\S \\ref{s-gar}). \\begin{definition}\\label{d-sh} Given a measure $\\mu\\in\\fP_n$ define a new measure $\\mu_{sh}\\in\\fP_{2n}$ called the {\\em symmetric homogenization} of $\\mu$ by $$ \\mu_{sh}(S) = \\begin{cases}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-measures-on-countably-infinite-sets",
+      "number": "2.4",
+      "title": "Measures on countably infinite sets",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinite",
+          "heading": true
+        },
+        {
+          "term": "measures",
+          "heading": true
+        },
+        {
+          "term": "property mathcal",
+          "heading": false
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s240} In \\S \\ref{n-s6} we will need to extend some of the notions of negative dependence to probability measures on $2^{E}$, where $E$ is a countably infinite set. This is canonically done as follows. \\begin{definition}\\label{infinite} Let $\\mu$ be a probability measure on $2^E$, where $E$ is a countably infinite set satisfying $$ \\mbox{ (A): \\ \\ }\\mbox{ for all } x \\in E \\mbox{ the set } \\left\\{T \\in 2^E : x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-towards-a-theory-of-negative-dependence-probl",
+      "number": "2.5",
+      "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh h-nlc",
+          "heading": false
+        },
+        {
+          "term": "normalsize rayleigh",
+          "heading": false
+        },
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "phr measures",
+          "heading": false
+        },
+        {
+          "term": "text cna",
+          "heading": false
+        },
+        {
+          "term": "ref con-cna-r",
+          "heading": false
+        },
+        {
+          "term": "cna rightarrow",
+          "heading": false
+        },
+        {
+          "term": "ref cna-ulc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s24} A series of problems and conjectures was proposed by several authors as natural steps toward building as general a theory of negative dependence as possible. In \\cite[\\S III]{P} Pemantle pointed out that although they are desirable, the many negative dependence properties listed in \\S \\ref{s21} might not be mutually satisfiable, and he suggested a problem that may be formulated as follows.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-negative-dependence-in-mathematics-and-physics",
+      "number": "3",
+      "title": "Negative Dependence in Mathematics and Physics",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-real-stable-polynomials-and-transcendental-en",
+      "number": "3.1",
+      "title": "Real Stable Polynomials and Transcendental Entire Functions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 997,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real stable",
+          "heading": true
+        },
+        {
+          "term": "stable polynomials",
+          "heading": true
+        },
+        {
+          "term": "semi-definite matrices",
+          "heading": false
+        },
+        {
+          "term": "cite bbs",
+          "heading": false
+        },
+        {
+          "term": "ref pro-rs",
+          "heading": false
+        },
+        {
+          "term": "multi-affine",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "hermitian matrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-real-s} In \\cite{PB} it was proved that a multi-affine polynomial $f \\in \\RR[z_1,\\ldots,z_n]$ is stable (in the sense of Definition~\\ref{d-rs-pol}) if and only if \\begin{equation}\\label{stable} \\frac {\\partial f} {\\partial z_i}(x) \\frac {\\partial f} {\\partial z_j}(x) \\geq \\frac {\\partial^2 f} {\\partial z_i \\partial z_j}(x) f(x) \\end{equation} for all $x \\in \\RR^n$ and $1\\leq i<j \\leq n$ (see also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice",
+      "number": "3.2",
+      "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gkk matrices",
+          "heading": false
+        },
+        {
+          "term": "rayleigh matrices",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "rayleigh matrix",
+          "heading": false
+        },
+        {
+          "term": "rangle det",
+          "heading": false
+        },
+        {
+          "term": "cup rangle",
+          "heading": false
+        },
+        {
+          "term": "rangle cdot",
+          "heading": false
+        },
+        {
+          "term": "definite matrices",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-gkk} Given an $n\\times n$ matrix $A$ over $\\CC$ and $S\\subseteq [n]$ denote by $A[S]$ the principal submatrix of $A$ with rows and columns indexed by $S$ and let $A\\langle S\\rangle=\\det(A[S'])$ be the principal minor of $A$ with rows and columns indexed by $S'=[n]\\setminus S$, where $A\\langle [n]\\rangle=\\det(A[\\emptyset]):=1$. The matrix $A$ is called a $P$-{\\em matrix} if all its principal minors are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-determinantal-probability-measures",
+      "number": "3.3",
+      "title": "Determinantal Probability Measures",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "determinantal probability",
+          "heading": true
+        },
+        {
+          "term": "probability measures",
+          "heading": true
+        },
+        {
+          "term": "cite lyons",
+          "heading": false
+        },
+        {
+          "term": "cite joh",
+          "heading": false
+        },
+        {
+          "term": "ref contract",
+          "heading": false
+        },
+        {
+          "term": "semi-definite",
+          "heading": false
+        },
+        {
+          "term": "contractions",
+          "heading": false
+        },
+        {
+          "term": "rayleigh",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-det-m} In \\cite{Lyons} Lyons defined a {\\em determinantal probability measure} on $2^{[n]}$ to be a measure $\\mu\\in\\fP_n$ such that there is an $n \\times n$ matrix $A$ so that for any subset $S$ of $[n]$ one has \\begin{equation}\\label{det-me} \\mu(\\{T: S \\subseteq T\\}) = \\det(A[S]), \\end{equation} where as before $A[S]$ denotes the principal submatrix of $A$ whose rows and columns are indexed by $S$. As",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-34-graphs-laplacians-spanning-trees-and-the-rand",
+      "number": "3.4",
+      "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spanning forests",
+          "heading": false
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "tree measure",
+          "heading": false
+        },
+        {
+          "term": "rayleigh",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "model",
+          "heading": true
+        },
+        {
+          "term": "entry equal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-trees} Let $G=(V,E)$ be a graph with vertex set $V=[n]$ and edge set $E$. Associate to each edge $e \\in E$ a variable $w_e$. If $e$ connects $i$ and $j$ let $A_e$ be the $n \\times n$ positive semi-definite matrix with the $ii$-entry and the $jj$-entry equal to $1$, the $ij$-entry and $ji$-entry equal to $-1$, and all other entries equal to $0$. The {\\em Laplacian}, $L(G)$, of $G$ is defined by $$ L(G)=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-35-interacting-particle-systems-and-exclusion-ev",
+      "number": "3.5",
+      "title": "Interacting Particle Systems and Exclusion Evolutions",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exclusion evolutions",
+          "heading": true
+        },
+        {
+          "term": "rayleigh h-nlc",
+          "heading": false
+        },
+        {
+          "term": "exclusion process",
+          "heading": false
+        },
+        {
+          "term": "symmetric exclusion",
+          "heading": false
+        },
+        {
+          "term": "ref p-see",
+          "heading": false
+        },
+        {
+          "term": "ref con-lig",
+          "heading": false
+        },
+        {
+          "term": "cna",
+          "heading": false
+        },
+        {
+          "term": "initial distribution",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-ex-case} The exclusion process is one of the main models considered in the area of Probability Theory known as Interacting Particle Systems. The idea is that particles move in continuous time on a countable set $S$, in such a way that there is always at most one particle per site. The motion of each particle would be a continuous time Markov chain on $S$, except that transitions to occupied sites are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-negative-dependence-theory-for-strongly-raylei",
+      "number": "4",
+      "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh measures",
+          "heading": true
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "real stability",
+          "heading": false
+        },
+        {
+          "term": "dependence",
+          "heading": true
+        },
+        {
+          "term": "r-term",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-stable} The importance of strongly Rayleigh measures -- that is, measures with stable generating polynomials (cf.~Definition~\\ref{def-rsm}) -- in negative dependence stems from the theorem below proved by one of the authors in \\cite{PB} (cf.~\\S \\ref{ss-real-s}). \\begin{theorem}\\label{stable-Rayleigh} Let $g \\in \\RR[z_1,\\ldots, z_n]$ be a multi-affine polynomial. Then $g$ is stable if and only if $$ \\frac",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol",
+      "number": "4.1",
+      "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric homogenization",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic polynomials",
+          "heading": true
+        },
+        {
+          "term": "hyperbolicity cone",
+          "heading": false
+        },
+        {
+          "term": "ref pro-rs",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-gar} The following theorem shows that the symmetric homogenization (cf.~\\S \\ref{s22}) of any strongly Rayleigh measure is again strongly Rayleigh, so that strongly Rayleigh measures belong to the class PHR (Definition~\\ref{phr}). \\begin{theorem}\\label{SH} If $\\mu\\in \\fP_{n}$ is strongly Rayleigh then so is its symmetric homogenization $\\mu_{sh}\\in\\fP_{2n}$. \\end{theorem} The proof of Theorem~\\ref{SH} makes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-stability-implies-negative-association",
+      "number": "4.2",
+      "title": "Stability Implies Negative Association",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat mathcal",
+          "heading": false
+        },
+        {
+          "term": "chi mathcal",
+          "heading": false
+        },
+        {
+          "term": "cite djr",
+          "heading": false
+        },
+        {
+          "term": "ref d-na",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "cite feder",
+          "heading": false
+        },
+        {
+          "term": "stable homogeneous",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-sna} The main argument in the proof of the following theorem goes back to Feder-Mihail \\cite{feder} although the proof of the full theorem is scattered over the literature \\cite{DJR,Lyons,Lyons-Peres,W}. \\begin{theorem}\\label{FM} Let $\\mathcal{S}$ be a class of probability measures satisfying: \\begin{enumerate} \\item Each $\\mu \\in \\mathcal{S}$ is a measure on $2^{E}$, where $E$ is a finite subset of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-43-stochastic-domination-and-truncations",
+      "number": "4.3",
+      "title": "Stochastic Domination and Truncations",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "29",
+      "words": 2365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stochastic domination",
+          "heading": true
+        },
+        {
+          "term": "unlhd frac",
+          "heading": false
+        },
+        {
+          "term": "order unlhd",
+          "heading": false
+        },
+        {
+          "term": "q-p leq",
+          "heading": false
+        },
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "truncations",
+          "heading": true
+        },
+        {
+          "term": "rayleigh probability",
+          "heading": false
+        },
+        {
+          "term": "frac det",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss-trunc} Recall the notion of stochastic domination from Definition~\\ref{d-stoc} in \\S \\ref{s24}. It turns out that for strongly Rayleigh measures, stochastic domination is intimately connected with central notions in the theory of stable and real-rooted polynomials, namely the notions of interlacing zeros and proper position \\cite{BBS,BBS1,BBS2,PB,Le,RS}. In particular, this connection allows us to extend",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-44-the-partial-symmetrization-procedure",
+      "number": "4.4",
+      "title": "The Partial Symmetrization Procedure",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial symmetrization",
+          "heading": true
+        },
+        {
+          "term": "multivariate obreschkoff",
+          "heading": false
+        },
+        {
+          "term": "ref asym",
+          "heading": false
+        },
+        {
+          "term": "obreschkoff theorem",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "stable polynomial",
+          "heading": false
+        },
+        {
+          "term": "theta preserves",
+          "heading": false
+        },
+        {
+          "term": "ref d-rs-pol",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{n-s5} Recall Remark~\\ref{r-complex}, the partial symmetrization of (complex) measures on $2^{[n]}$ defined in \\eqref{t-theta}, and Definition~\\ref{d-rs-pol}. The main result of this section is the following theorem. \\begin{theorem}\\label{asym} Let $\\mu$ be a complex measure on $2^{[n]}$ with (complex) stable generating polynomial. Then for any transposition $\\tau\\in\\fS_n$ and $\\theta\\in[0,1]$ the generating",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
+      "number": "5",
+      "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 1067,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exclusion processes",
+          "heading": true
+        },
+        {
+          "term": "symmetric exclusion",
+          "heading": true
+        },
+        {
+          "term": "alpha eta",
+          "heading": false
+        },
+        {
+          "term": "eta equiv",
+          "heading": false
+        },
+        {
+          "term": "distribution eta",
+          "heading": false
+        },
+        {
+          "term": "configuration eta",
+          "heading": false
+        },
+        {
+          "term": "exclusion process",
+          "heading": false
+        },
+        {
+          "term": "split eta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{n-s6} In this section we study some consequences of the results in \\S \\ref{s-stable} for symmetric exclusion processes and provide an answer to the problem of finding a natural negative dependence property that is preserved by such evolutions (Problem~\\ref{p-see}). Let us first describe these processes in more detail. A configuration of particles on a countable set $S$ is a point $\\eta$ on the Boolean lattice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-6-almost-exchangeable-measures",
+      "number": "6",
+      "title": "Almost Exchangeable Measures",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 41,
+      "labelStart": "33",
+      "labelEnd": "41",
+      "words": 3849,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "almost exchangeable",
+          "heading": true
+        },
+        {
+          "term": "geq ell-m",
+          "heading": false
+        },
+        {
+          "term": "rayleigh h-nlc",
+          "heading": false
+        },
+        {
+          "term": "k-g ell",
+          "heading": false
+        },
+        {
+          "term": "eqref cna",
+          "heading": false
+        },
+        {
+          "term": "cna sum",
+          "heading": false
+        },
+        {
+          "term": "ell leq",
+          "heading": false
+        },
+        {
+          "term": "leftrightarrow cna",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Almost} By Pemantle's result (Theorem~\\ref{pro-w} in \\S \\ref{ss-ex-case}), for symmetric measures in $\\fP_n$ all five conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, CNA+ are equivalent to the ULC condition for the rank sequence. Therefore, the relations between all these negative dependence properties are completely understood in the exchangeable case. In this section we study the almost exchangeable case, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-7-negative-results-on-negative-dependence",
+      "number": "7",
+      "title": "Negative Results on Negative Dependence",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "45",
+      "words": 1733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref cna-ulc",
+          "heading": false
+        },
+        {
+          "term": "frac binom",
+          "heading": false
+        },
+        {
+          "term": "ulc rank",
+          "heading": false
+        },
+        {
+          "term": "ref c-p",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "ref prob-phr-cna",
+          "heading": false
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "rayleigh measure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-countex} We will now use the results from the previous sections, in particular those of \\S \\ref{Almost}, to construct counterexamples to the general cases of Pemantle's and Wagner's conjectures on ULC rank sequences (Conjectures~\\ref{c-p}--\\ref{cna-ulc}) and Pemantle's conjecture on stochastic domination and truncations (Conjecture~\\ref{st}). We also answer in the negative some related problems as well as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": null,
+      "words": 1451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "determinantal inequalities",
+          "heading": false
+        },
+        {
+          "term": "determinantal processes",
+          "heading": false
+        },
+        {
+          "term": "olya-schur programs",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "cambridge univ",
+          "heading": false
+        },
+        {
+          "term": "matroids",
+          "heading": false
+        },
+        {
+          "term": "exclusion process",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M. Aissen, I. J. Schoenberg, A. Whitney, On the generating functions of totally positive sequences I, J. Analyse Math. 2 (1952), 93–103. [2] E. D. Andjel, A correlation inequality for the symmetric exclusion process, Ann. Probab. 16 (1988), 717–721. [3] M. F. Atiyah, R. Bott, L. G˙arding, Lacunas for hyperbolic diﬀerential operators with constant coeﬃcients I, Acta Math. 124 (1970), 109–189. [4] H. H. Bauschke,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rayleigh measures",
+      "heading": true
+    },
+    {
+      "term": "rayleigh h-nlc",
+      "heading": false
+    },
+    {
+      "term": "rayleigh polynomial",
+      "heading": false
+    },
+    {
+      "term": "rayleigh probability",
+      "heading": false
+    },
+    {
+      "term": "rayleigh inequalities",
+      "heading": false
+    },
+    {
+      "term": "rayleigh property",
+      "heading": false
+    },
+    {
+      "term": "rightarrow rayleigh",
+      "heading": false
+    },
+    {
+      "term": "rayleigh matrices",
+      "heading": false
+    },
+    {
+      "term": "rayleigh matrix",
+      "heading": false
+    },
+    {
+      "term": "rayleigh matroids",
+      "heading": false
+    },
+    {
+      "term": "homogeneous rayleigh",
+      "heading": false
+    },
+    {
+      "term": "normalsize rayleigh",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Subordination relations between negative dependence properties. where gp,q(z) = P",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p45); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.2340v2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/np-b250-1985-465",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark",
+      "dcterms:creator": [
+        "Company, North-Holland Publishing"
+      ],
+      "dcterms:issued": "D:20080521",
+      "dcterms:source": "library/np-b250-1985-465/manifest.jsonld",
+      "dcterms:hasVersion": "library/np-b250-1985-465"
+    }
+  ]
+}

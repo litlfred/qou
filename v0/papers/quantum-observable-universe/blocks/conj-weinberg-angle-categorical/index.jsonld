@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-weinberg-angle-categorical",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:weinberg-angle-categorical",
+  "kind": "conjecture",
+  "title": "Weinberg angle $\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+    "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments"
+  ],
+  "tags": [
+    "tier:E",
+    "weinberg-angle",
+    "electroweak-mixing",
+    "hoefsmit-projector",
+    "hecke-eigenvalue",
+    "frobenius-trace",
+    "categorical-physics",
+    "open-problem",
+    "tier-a"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.WeinbergAngleCategorical",
+  "text": "weinberg-angle-categorical.md",
+  "leanSource": "weinberg-angle-categorical.lean",
+  "provenance": "authored"
+}

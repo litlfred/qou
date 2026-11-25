@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-spin-involution-lp-dual-invariance-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:spin-involution-lp-dual-invariance-interpretation",
+  "kind": "remark",
+  "title": "Mathematical content of \"isospin\": the Z/2 grading of any Frobenius spin involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-involution-lp-dual-invariance"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-spin-involution-lp-dual-invariance",
+  "text": "spin-involution-lp-dual-invariance-interpretation.md",
+  "provenance": "authored"
+}

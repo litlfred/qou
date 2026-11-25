@@ -1,0 +1,6107 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0406276v1",
+  "blocks": [
+    {
+      "id": "library/0406276v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "The GAUSS LINKING INTEGRAL \n \non the 3-SPHERE  \n \nand in HYPERBOLIC 3-SPACE \n \nDennis DeTurck and Herman Gluck \n \n \n      \nWe introduce here explicit integral formulas for linking, twisting, writhing and helicity \non the 3-sphere and in hyperbolic 3-space.   \n \n   ∙ These formulas, like their prototypes in Euclidean 3-space, are geometric rather than           \n   just topological, in the sense that their integrands are invariant under orientation-preserving  \n   isometries of the ambient space. \n \n   ∙ They are obtained by developing and then applying a steady-state version of classical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking integrals in S3 and H3 .",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-linking-integrals-in-s3-and-h3.md",
+      "narrative": null,
+      "content": "Let  K1  =  {x(s)}  and  K2  =  {y(t)}  be disjoint oriented smooth closed curves in \neither the unit 3-sphere  S3  or hyperbolic 3-space  H3 ,  and let  α(x, y)  denote the \ndistance from  x  to  y .   \n \nThe integral formulas below contain vectors lying in different tangent spaces; in \nnon-Euclidean settings we must move them to a common location to be combined. \nIn  S3  regarded as the group of unit quaternions, the differential  Lyx—1  of left \ntranslation by  yx—1 moves tangent vectors from  x  to  y .  In either  S3  or  H3 , \nparallel transport  Pyx  along the geodesic segment from  x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "LINKING INTEGRALS in S3 and H3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical background.",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-historical-background.md",
+      "narrative": null,
+      "content": "Carl Friedrich Gauss, in a half-page paper dated January 22, 1833, gave an \nintegral formula for the linking number of two disjoint smooth closed curves in \nEuclidean 3-space: \n \nLk(K1, K2)  =  1/(4π) ∫K1×K2  dx/ds × dy/dt ∙ (x — y)/|x — y|3  ds dt . \n \nAccording to historian Moritz Epple (l998), Gauss was interested in computing the \nlinking number of the earth's orbit with the orbits of certain asteroids, and although \nhe presented his formula without proof, it is believed that he simply counted up how \nmany times the vector from the earth to the asteroid covered the \"heavenly sphere\" \n.....",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization of this report.",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-organization-of-this-report.md",
+      "narrative": null,
+      "content": "Gauss's degree-of-map derivation of his linking integral does not work on the  \n3-sphere  S3  because the set of ordered pairs of distinct points in  S3  deformation \nretracts to a 3-sphere rather than to a 2-sphere, as it does in  R3 .  But a degree-of- \nmap derivation, suitably modified, does work in hyperbolic 3-space. \n \nSo we begin by developing a steady-state version of classical electrodynamics on  S3  \nand  H3  in sections 4 through 8, including an explicit Biot-Savart formula for the \nmagnetic field and a corresponding Ampere's law contained in Maxwell's equations. \nIn section 9, this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic fields on S3 and H3 .",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-4-magnetic-fields-on-s3-and-h3.md",
+      "narrative": null,
+      "content": "In Euclidean 3-space  R3 ,  the classical convolution formula of Biot and Savart gives \nthe magnetic field  BS(V)  generated by a compactly supported current flow  V : \n \nBS(V)(y)  =  1/(4π) ∫R3  V(x) × (y — x) / |y — x|3  dx . \n \nFor simplicity, we write  dx  to mean  d(volx) . \n \nThe function  ϕ(r)  =  —1/(4πr)  is the fundamental solution of the Laplacian in  R3 , \n \n∆ϕ  =  δ . \n \nBecause the gradient of  ϕ  at  y , \n \n∇y ϕ(x, y)  =  (1/(4π)) (y — x)/|y — x|3 , \n \nis the kernel function appearing in the Biot-Savart formula above, this formula can \nbe written as \n \nBS(V)(y)  =  ∫R3  V(x) × ∇",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "BIOT-SAVART INTEGRALS in S3 and H3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof scheme for Theorem 2, formula (1).",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-5-proof-scheme-for-theorem-2-formula-1.md",
+      "narrative": null,
+      "content": "Let  VF(S3)  denote the set of all smooth (C∞) vector fields on  S3 ,  regarded as an \ninfinite-dimensional vector space with the L2 inner product   \n \n<V, W>  =  ∫S3  V ∙ W  d(vol) . \n \nThe vector Laplacian, \n \n∆V  =  — ∇ × ∇ × V  +  ∇(∇ ∙ V) , \n \ncorresponds to the Laplacian on forms, \n \n∆βV  =  — *d*d βV  +  d*d* βV  , \n \nwhere the one-form  βV  is defined by  βV(W)  =  V ∙ W .   \n \nThe vector Laplacian  ∆: VF(S3)  →  VF(S3)  is an unbounded self-adjoint linear \noperator which is bijective, and which takes divergence-free fields to divergence- \nfree fields, and gradient fields to gradient f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "On S3 in left-translation format, the Green's operator on vector fields is given by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof scheme for Theorem 2, formula (2).",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-6-proof-scheme-for-theorem-2-formula-2.md",
+      "narrative": null,
+      "content": "Now we are working on  S3  in parallel transport format, and use an entirely different \napproach. \n \n \nKEY LEMMA, spherical version. \n \n     ∇y × {PyxV(x) × ∇yϕ}  —  ∇y {V(x) ∙ ∇x (cos α  ϕ)}   \n \n                                                                 =  (∆ϕ  —  ϕ) (V(x)  —  < V(x), y > y) .  \n \n \nThe above lemma is quite flexible:  V  can be a smooth vector field defined on all \nof  S3 ,  or just on a bounded subdomain  Ω  of  S3 ,  or just along a smooth closed \ncurve  K  in  S3 ,  or even just at the single point  x .  The kernel function  ϕ(α)  is \nany smooth function, which typi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "Jason Parsley, in his thesis (2004), proves Maxwell's equation in the case that the current flow J runs only within some bounded subdomain Ω ⊂ S3 . In that situation, the ∂E/∂t term also reflects the time rate of change of the electric field due to the gradual deposit or removal of charge along the boundary of Ω . His proof of this in left-invariant format inspired our own arguments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-100",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-100.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-101",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-101.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-102",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-102.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-103",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-103.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-104",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-104.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-105",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-105.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-106",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-106.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-107",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-107.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-108",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-108.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-109",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-109.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-11",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-11.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-110",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-110.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-111",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-111.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-112",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-112.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-113",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-113.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-114",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-114.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-115",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-115.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-116",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-116.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-117",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-117.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-118",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-118.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-119",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-119.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-12",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-12.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-120",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-120.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-121",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-121.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-122",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-122.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-123",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-123.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-124",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-124.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-125",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-125.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-126",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-126.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-127",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-127.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-128",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-128.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-129",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-129.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-130",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-130.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-14",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-14.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-146",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-146.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-147",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-147.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-148",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-148.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-149",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-149.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-15",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-15.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-150",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-150.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-151",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-151.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-152",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-152.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-153",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-153.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-154",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-154.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-155",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-155.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-156",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-156.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-16",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-16.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-168",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-168.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-169",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-169.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-17",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-17.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-170",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-170.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-171",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-171.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-172",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-172.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-173",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-173.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-174",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-174.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-175",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-175.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-176",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-176.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-177",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-177.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-178",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-178.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-179",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-179.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-180",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-180.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-181",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-181.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-182",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-182.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-183",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-183.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-184",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-184.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-185",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-185.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-186",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-186.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-187",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-187.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-188",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-188.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-189",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-189.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-19",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-19.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-190",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-190.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-191",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-191.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-192",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-192.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-193",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-193.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-194",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-194.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-195",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-195.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-196",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-196.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-197",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-197.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-198",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-198.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-199",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-199.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-20",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-20.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-200",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-200.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-201",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-201.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-202",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-202.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-203",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-203.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-204",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-204.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-205",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-205.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-206",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-206.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-207",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-207.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-208",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-208.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-209",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-209.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-21",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-21.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-210",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-210.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-211",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-211.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-212",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-212.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-213",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-213.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-214",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-214.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-215",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-215.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-216",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-216.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-217",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-217.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-218",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-218.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-219",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-219.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-22",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-22.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-220",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-220.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-221",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-221.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-23",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-23.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-24",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-24.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-25",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-25.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-26",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-26.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-27",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-27.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-28",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-28.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-29",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-29.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-30",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-30.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-31",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-31.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-32",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-32.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-33",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-33.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-34",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-34.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-35",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-35.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-36",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-36.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-37",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-37.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-38",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-38.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-39",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-39.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-40",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-40.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-41",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-41.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-42",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-42.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-43",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-43.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-44",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-44.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-45",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-45.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-46",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-46.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-47",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-47.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-48",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-48.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-49",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-49.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-50",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-50.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-51",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-51.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-52",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-52.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-53",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-53.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-54",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-54.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-55",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-55.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-56",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-56.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-57",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-57.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-58",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-58.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-59",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-59.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-60",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-60.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-61",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-61.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-62",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-62.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-63",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-63.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-64",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-64.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-65",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-65.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-66",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-66.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-67",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-67.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-68",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-68.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-69",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-69.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-70",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-70.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-71",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-71.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-72",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-72.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-73",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-73.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-74",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-74.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-75",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-75.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-76",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-76.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-77",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-77.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-78",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-78.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-79",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-79.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-80",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-80.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-81",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-81.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-82",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-82.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-83",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-83.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-84",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-84.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-85",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-85.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-86",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-86.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-87",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-87.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-88",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-88.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-89",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-89.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-90",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-90.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-91",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-91.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-92",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-92.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-93",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-93.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-94",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-94.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-95",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-95.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-96",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-96.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-97",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-97.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-98",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-98.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p018-99",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-99.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof scheme for Theorem 2, formula (3).",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-7-proof-scheme-for-theorem-2-formula-3.md",
+      "narrative": null,
+      "content": "We replace  R4   by Minkowski space  R1,3  with the indefinite inner product \n \n< x, y >  =  x0 y0  —  x1 y1  —  x2 y2  —  x3 y3 , \n \nand then regard hyperbolic 3-space as the hyperboloid \n \nH3  =  { x  ∊  R1,3 :  < x, x >  =  1  and  x0  >  0 }  ⊂  R1,3 . \n \n \n \nIf  u  and  v  are tangent to  H3  at  x ,  we define the induced inner product  ∙   \non  TxH3  by \nu ∙ v  =  — < u, v > . \n \nThis time we exploit the interplay between the geometry of  H3  and the linear \nalgebra of  R1,3  to prove the following \n \nKEY LEMMA, hyperbolic version. \n \n     ∇y × {PyxV(x) × ∇yϕ}  —  ∇y {V(x) ∙ ∇x (cosh α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maxwell's equations on S3 and H3 .",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-8-maxwells-equations-on-s3-and-h3.md",
+      "narrative": null,
+      "content": "Maxwell's equations, so familiar to us in Euclidean 3-space  R3 ,  can also be shown \nto hold on  S3  and  H3 ,  with the appropriate definitions, as follows. \n \nLet  ρ  be a smooth real-valued function, which we think of as a charge density.  \nOn  R3  and  H3 ,  we ask that  ρ  have compact support, while on  S3  we ask that  \nit have average value zero. \n \nIn each case, we define the corresponding electric field  E  =  E(ρ)  by the formula \n \nE(ρ)(y)  =  ∇y ∫ ρ(x) ϕ(x, y) dx , \n \nwhere  ϕ  is the fundamental solution of the Laplacian. \n \nLet  J  be a smooth vector field, which we think of as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "MAXWELL'S EQUATIONS in S3 and H3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-100",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-100.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-101",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-101.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-102",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-102.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-103",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-103.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-104",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-104.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-105",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-105.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-106",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-106.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-107",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-107.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-108",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-108.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-109",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-109.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-110",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-110.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-111",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-111.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-112",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-112.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-113",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-113.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-114",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-114.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-115",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-115.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-116",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-116.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-117",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-117.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-118",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-118.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-119",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-119.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-120",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-120.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-121",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-121.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-122",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-122.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-123",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-123.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-124",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-124.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-125",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-125.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-126",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-126.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-127",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-127.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-128",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-128.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-129",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-129.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-130",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-130.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-131",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-131.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-132",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-132.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-133",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-133.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-134",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-134.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-135",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-135.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-136",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-136.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-137",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-137.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-138",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-138.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-139",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-139.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-140",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-140.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-141",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-141.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-142",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-142.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-143",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-143.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-144",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-144.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-145",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-145.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-146",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-146.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-147",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-147.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-148",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-148.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-149",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-149.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-24",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-24.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-25",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-25.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-26",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-26.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-27",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-27.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-28",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-28.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-29",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-29.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-30",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-30.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-31",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-31.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-32",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-32.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-33",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-33.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-34",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-34.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-35",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-35.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-36",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-36.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-37",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-37.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-38",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-38.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-39",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-39.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-40",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-40.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-41",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-41.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-42",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-42.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-43",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-43.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-44",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-44.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-45",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-45.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-46",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-46.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-47",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-47.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-48",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-48.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-49",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-49.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-50",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-50.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-51",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-51.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-52",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-52.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-53",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-53.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-54",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-54.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-55",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-55.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-56",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-56.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-57",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-57.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-58",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-58.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-59",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-59.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-60",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-60.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-61",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-61.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-62",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-62.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-63",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-63.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-64",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-64.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-65",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-65.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-66",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-66.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-67",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-67.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-68",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-68.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-69",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-69.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-70",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-70.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-71",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-71.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-72",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-72.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-73",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-73.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-74",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-74.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-75",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-75.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-76",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-76.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-77",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-77.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-78",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-78.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-79",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-79.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-80",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-80.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-81",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-81.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-82",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-82.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-83",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-83.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-84",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-84.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-85",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-85.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-86",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-86.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-87",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-87.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-88",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-88.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-89",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-89.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-90",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-90.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-91",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-91.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-92",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-92.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-93",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-93.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-94",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-94.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-95",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-95.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-96",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-96.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-97",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-97.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-98",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-98.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p022-99",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-99.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof scheme for Theorem 1.",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-008-9-proof-scheme-for-theorem-1.md",
+      "narrative": null,
+      "content": "With steady-state electrodynamics in hand, we can follow what we imagine to be \nGauss's second line of reasoning and obtain the linking integral formulas on  S3   \nand  H3  given in Theorem 1. \n \nTo do this, run a unit current  V  =  dx/ds  along the first loop  K1 ,  and use one of \nthe three Biot-Savart formulas from Theorem 2 to calculate the resulting magnetic \nfield  B .  For example, on  S3  in parallel transport format, we have \n \nB(y)  =  BS(dx/ds)(y)  =  ∫K1  Pyx dx/ds  ×  ∇y ϕ(x, y)  ds , \n \nwhere  ϕ(α)  =  (—1/(4π2)) (π — α) csc α ,  and where the integration takes place with \nrespe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/ex-sec-009-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "ex-sec-009-01.md",
+      "narrative": null,
+      "content": "Consider the great circle K = {(cos s , sin s , 0 , 0): 0 ≤ s ≤ 2π} on S3 , and along it the unit normal vector field V(s) = (0 , 0 , cos s , sin s) . Then we have TwL(V) = 0 and TwP(V) = 1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Link, twist and writhe on S3 and H3 .",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-10-link-twist-and-writhe-on-s3-and-h3.md",
+      "narrative": null,
+      "content": "We follow Calugareanu's lead and replace the two closed curves  K1  and  K2  in our \nlinking integrals by a single closed curve  K ,  which we must assume to be simple.   \nNow the points  x(s)  and  y(t)  run along the same curve, and therefore can coincide, \nmaking three out of the four linking integrals appearing in Theorem 1 seem improper  \n(the second integral on  S3  in left-translation format is clearly proper).  But as \nCalugareanu noted for the corresponding  R3 integral, the three threatening integrands \nactually vanish along the diagonal of  K × K ,  so the integrals converge.  The r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "LINK = TWIST + WRITHE in S3 and H3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/figure-img-p027-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../images/img-p027-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof scheme for Theorem 5.",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-11-proof-scheme-for-theorem-5.md",
+      "narrative": null,
+      "content": "In spirit, our proof of Theorem 5 for ribbons in  S3  and  H3  follows Calugareanu's \noriginal proof in  R3 :  we begin with the linking integrals given in Theorem 1 for \nthe edges  K  and  Kε  of our ribbon, let  ε  shrink to zero, and observe the behavior \nof the linking integrand. \n \nOf course, the value of the linking integral is independent of  ε  for  ε  >  0 ,  since \nthe linking number is invariant under this kind of homotopy.  But the linking  \nintegrand develops a δ-function type singularity along the diagonal of  K × K ,   \nwhich is handled as follows.   \n \nOutside an appropriately",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Helicity of vector fields on S3 and H3 .",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-12-helicity-of-vector-fields-on-s3-and-h3.md",
+      "narrative": null,
+      "content": "If  V  is a smooth vector field on  R3  with compact support,  then the Woltjer-\nMoffatt formula for its helicity, \n \nH(V)  =  1/(4π) ∫ R3 × R3   V(x) × V(y) ∙ (x — y)/|x — y|3  dx dy , \n \ncan be written succinctly as \n \nH(V)  =  ∫ R3  BS(V)(y) ∙ V(y)  dy . \n \nThis is how Woltjer originally presented his invariant,  ∫A ∙ B d(vol) ,  with the \nrole of  V  played by the magnetic field  B  and the role of  BS(V)  played by its \nvector potential  A .  The helicity of a vector field, as we mentioned earlier, is a \nmeasure of the extent to which its orbits wrap and coil around one another. \n \nWe use",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "HELICITY INTEGRALS in S3 and H3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds for helicity in R3 , S3 and H3 .",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-13-upper-bounds-for-helicity-in-r3-s3-and-h3.md",
+      "narrative": null,
+      "content": "Let  Ω  be a compact, smoothly bounded subdomain of  R3 ,  S3  or  H3 ,  and  V  a \nsmooth vector field defined on  Ω .  Thinking of  V as a current flow, its magnetic \nfield  BS(V)  is defined by the same formulas as before, except that the integration is \ncarried out only over  Ω .   \n \nIf  Ω  ⊂  R3 ,  then \n \nBS(V)(y)  =  ∫Ω  V(x) × ∇y ϕ(x, y)  dx , \n \nwhere  ϕ(α)  =  —1/(4πα) . \n \nIf  Ω  ⊂  S3 ,  then, for example in parallel transport format, we have \n \nBS(V)(y)  =  ∫Ω  PyxV(x) × ∇y ϕ(x, y)  dx , \n \nwhere  ϕ(α)  =  (—1/(4π2)) (π — α) csc α .   \n \nIf  Ω  ⊂  H3 ,  then we have \n \nBS(V)(y)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "Let Ω be a compact, smoothly bounded subdomain of R3 , S3 or H3 , and let R = R(Ω) be the radius of a ball in that space having the same volume as Ω . Let V be a smooth vector field defined on Ω . Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "If Ω is simply connected, or equivalently, if all the components of ∂Ω are 2-spheres, then curl : CK(Ω) → K(Ω) is self-adjoint, but not otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral geometry of the curl operator in R3 , S3 and H3 .",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-14-spectral-geometry-of-the-curl-operator-in-r3.md",
+      "narrative": null,
+      "content": "Again let  Ω  be a compact, smoothly bounded subdomain of  R3 ,  S3  or  H3 . \nWe are interested here in curl eigenfields on  Ω ,  that is, vector fields  V  on  Ω  \nwhich satisfy  ∇ × V  =  λ V ,  for  λ  ≠  0 .  In  R3  these eigenfields are used to  \nmodel stable plasma flows; see our paper (1999). \n \nCurl eigenfields exist for every value of  λ .  For example, in  R3 ,  if \n \nV  =  sin λz  i   +   cos λz  j , \n \nthen \n∇ × V  =  λ V . \n \nWe want to constrain the choice of vector fields  V  by interior and boundary \nconditions which guarantee a discrete spectrum, while at the same time being",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406276v1/blocks/rem-sec-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "rem-sec-013-02.md",
+      "narrative": null,
+      "content": "It is a simple consequence of the Hodge Decomposition Theorem that we have an L2 orthogonal direct sum",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/thm-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "thm-sec-013-03.md",
+      "narrative": null,
+      "content": "Let Ω be a compact, smoothly bounded subdomain of R3 , S3 or H3 , and let R = R(Ω) be the radius of a ball in that space having the same volume as Ω .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406276v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "1820 Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, \n \nAnnales de chimie et de physique, 2nd ser., vol 15, 222-223. \n \n1824   Jean-Baptiste Biot, Precise Elementaire de Physique Experimentale, \n \n3rd edition, Vol II, Chez Deterville (Paris). \n \n1833 Carl Friedrich Gauss, Integral formula for linking number, in \n \nZur mathematischen theorie der electrodynamische wirkungen, \n \nCollected Works, Vol 5, Koniglichen Gesellschaft des Wissenschaften, \n \nGottingen, 2nd edition, page 605. \n \n1891 James Clerk Maxwell, A Treatise on Electricity and Magnetism, \n \nReprinted",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

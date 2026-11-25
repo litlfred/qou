@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2507.13873v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Probing the singularity at the holographic screen via\nq-holography\nAndreas Belaey,∗Thomas G. Mertens,† Jacopo Papalini,‡\nDepartment of Physics and Astronomy\nGhent University, Krijgslaan, 281-S9, 9000 Gent, Belgium\nAbstract\nWe study the emergence of q-deformed spacetime in a lower-dimensional gravitational\nsystem whose asymptotic region geometrizes the global symmetry of a q-deformed\nCFT. More precisely, we consider the 2d sinh dilaton gravity model, whose classical\nmetric solutions exhibit a curvature singularity at the holographic boundary.\nOur\naim is to probe this UV near-boundary regime by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Going beyond the conventional AdS/CFT paradigm [@Maldacena:1997re] is of considerable interest; primarily because we do not live in an AdS universe, but also because it allows us to distill lessons on holography in the more general context. Within the context of holography and string theory, some important examples have been e.g. [@Giveon:1999px; @Klebanov:2000hb; @Kanitscheider:2008kd; @Taylor:2015glc]. To achieve further progress towards this goal, especially when aiming for quantized gravity, exactly solvable models serve as powerful benchmarks. In this light, lower-dimensional dilaton grav",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlation functions on the quantum disk",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-correlation-functions-on-the-quantum-disk.md",
+      "narrative": null,
+      "content": "[]{#s:qward label=\"s:qward\"} We first remind the reader of the conventional CFT story. Correlation functions of primary operators in a conformal field theory are strongly constrained by the Ward identities of the corresponding global conformal subgroup. For a 2d CFT, holomorphic (quasi)primary operators with weight $\\Delta$ transform under a global conformal PSL$(2)$ Möbius transformation $$z\\rightarrow \\frac{az+c}{bz+d},$$ as $$\\begin{aligned}\n\\label{eq:quasiprimarytransf}\n    \\mathcal{O}(z)\\rightarrow \\left(bz+d\\right)^{-2\\Delta} \\;\\mathcal{O}\\left(\\frac{az+c}{bz+d}\\right),\n\\end{aligned}$$ w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-Correlation functions",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-q-correlation-functions.md",
+      "narrative": null,
+      "content": "To construct a $q$-deformed version of holography, we analogously imagine the correlators of the bulk gravitational theory to be invariant under the SL$_q(2)$ global subgroup of the dual $q$-deformed conformal boundary theory. To set up the $q$-deformed SL$_q(2)$ conformal subgroup, we claim that the natural generalization of the quasi-primary transformation law [\\[eq:quasiprimarytransf\\]](#eq:quasiprimarytransf){reference-type=\"eqref\" reference=\"eq:quasiprimarytransf\"} acts as a *corepresentation* in a tensor product structure $$\\begin{aligned}\n\\label{eq:corep}\n    \\mathcal{O}(z) \\mapsto  (1\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum hyperbolic disk",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-quantum-hyperbolic-disk.md",
+      "narrative": null,
+      "content": "We have up to this point only discussed the boundary quantum algebra action on boundary correlation functions. Here we show how this almost uniquely fixes the non-commutative geometrical features of the induced bulk region if this is to be the boundary theory. This roughly reverses the arguments of [@Berkooz:2022mfk; @Almheiri:2024ayc]. To match with conventional notation for quantum groups, we change the notation from the previous subsection into: $$q^{2L_0} \\to K, \\qquad  L_{+1} \\to E^+, \\qquad  L_{-1} \\to E^-.$$\n\nWe introduce a new antiholomorphic coordinate $z^*$, and if we demand that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A candidate bulk description for q-holography",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-a-candidate-bulk-description-for-q-holography.md",
+      "narrative": null,
+      "content": "[]{#s:bulkq label=\"s:bulkq\"} In the previous section, we derived the $q$-conformal two-point function by constraining its form [\\[res\\]](#res){reference-type=\"eqref\" reference=\"res\"} through the requirement of invariance under the global part of the $q$-conformal group. Furthermore, we interpreted its Fourier transform as encoding information about the quasi-normal modes [\\[qnm\\]](#qnm){reference-type=\"eqref\" reference=\"qnm\"} of a dual bulk system. This observation hints at the presence of a black hole in the bulk, whose properties we now seek to identify.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition and classical structure of sinh dilaton gravity",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-definition-and-classical-structure-of-sinh-dilat.md",
+      "narrative": null,
+      "content": "[]{#s:classical label=\"s:classical\"} The most natural approach is to look for a bulk gravitational theory whose asymptotic symmetries reproduce the SL$_q(2)$ algebra, which was used to constrain the two-point function. As we shall see, it turns out that the most natural candidate is Liouville gravity [@Polyakov:1981rd; @Distler:1988jt; @David:1988hj; @Knizhnik:1988ak]. This is a string theory consisting of a spacelike Liouville CFT, a matter CFT and the usual bc ghost system ensuring cancellation of the conformal anomaly. If we select a timelike Liouville CFT as the matter sector, then we have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Probe regime of sinh dilaton gravity",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-probe-regime-of-sinh-dilaton-gravity.md",
+      "narrative": null,
+      "content": "[]{#s:probe label=\"s:probe\"}\n\nWe now turn to a different regime, the probe regime. To study it, it is beneficial to change coordinates from the momentum labels $s_1,s_2$ to the mass of the background black hole $E$ and the energy of the probe $\\omega$ in terms of $$\\begin{aligned}\n\\label{eq:transformation}\n          E \\equiv \\frac{1}{4\\pi^2b^4}\\cosh(2\\pi bs_2), \\qquad E+\\omega/b^2 \\equiv \\frac{1}{4\\pi^2b^4} \\cosh(2\\pi bs_1).\n\\end{aligned}$$ Such types of approximations were extensively studied in JT gravity in [@Lam:2018pvp]. The Jacobian of this transformation is given by $$\\mathrm{d}M \\mathr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-concluding-remarks.md",
+      "narrative": null,
+      "content": "[]{#s:concl label=\"s:concl\"} In this work, we have investigated the probe regime in a $q$-deformed setting of holography. We then illustrated that sinh (or sine) dilaton gravity exhibits this structure explicitly close to its holographic screen. There is an priori puzzling discrepancy between the semi-classical regime and the probe regime, which we interpret as due to there being a curvature singularity at the boundary. This singularity gets resolved by the non-commutative geometry of the quantum hyperbolic disk. We end by listing some possible directions for the future.\\\n*Other boundary corre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Corepresentations of (quasi)-primary operators",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-008-corepresentations-of-quasi-primary-operators.md",
+      "narrative": null,
+      "content": "Corepresentations of (quasi)-primary operators\nHolomorphic primary operators O(z) with weight ∆in a 2d CFT are defined to transform\nunder the conformal transformation z →f(z) as\nO(z) →\n\u0012∂f\n∂z\n\u0013∆\nO(f(z)).\n(A.1)\nThe corresponding generators under the infinitesimal transformation f(z) = z + ϵzn+1 are\ngiven by Ln = ∆(n + 1)zn + zn+1∂z.\nUnder a global PSL(2, R) Möbius transformation\nz →f(z) =\naz+c\nbz+d with g =\n \na\nb\nc\nd\n!\n∈SL(2, R), (quasi)-primary operators consequently\ntransform as\nO(z) →(bz + d)−2∆O\n\u0012az + c\nbz + d\n\u0013\n,\n(A.2)\nusing the defining determinant property ad −bc = 1. This is equivalent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilaton gravity models",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-009-dilaton-gravity-models.md",
+      "narrative": null,
+      "content": "Dilaton gravity models\nThe bulk action of a generic (Euclidean) dilaton gravity model with potential V (Φ) is given\nby\nS = −1\n2\nZ\nd2x√g (ΦR + V (Φ)) .\n(B.1)\nOne may gauge-fix the classical solutions to be of the form11\nds2 = F(r)dτ 2 + dr2\nF(r),\nΦ = r.\n(B.2)\nIn this gauge, we have R = −F ′′, such that the solution to the equations of motion is given\nby\nF(r) =\nZ r\nrh\ndr′ V (r′),\n(B.3)\n10The calculation was done explicitly in appendix A of [97] for the symmetric version of the principal\nseries representation, but can easily be extended to the case at hand.\n11In the asymptotic region, the general",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holographic counterterm",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-010-holographic-counterterm.md",
+      "narrative": null,
+      "content": "Holographic counterterm\nThe GHY boundary action with appropriate counter term is of the form\n−\nI\n∂M\ndτ\n√\nh\n\u0012\nΦK −\n\u0012Z Φ\nc\nV (Φ)dΦ\n\u00131/2 \u0013\n,\n(B.7)\nwhere the lower bound c of the counterterm integral is arbitrary and just corresponds to an\nenergy offset.12 We can motivate this counterterm explicitly by looking at the full on-shell\nEuclidean action\nSE = −1\n2\nZ\nM\nd2x√g (ΦR + V (Φ)) −\nI\n∂M\ndτ\n√\nh\n\u0012\nΦK −\nsZ Φ∂\nc\nV (Φ)dΦ\n\u0013\n.\n(B.8)\nUsing R = −V ′(Φ) and denoting F(r) =\nR r\nrh dr V (r), the bulk on-shell action on the classical\nsolution in “Schwarzschild gauge” leads to the following expression\nSon-shell",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sinh dilaton gravity quantization",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-011-sinh-dilaton-gravity-quantization.md",
+      "narrative": null,
+      "content": "Sinh dilaton gravity quantization\nIn order to be self-contained, we follow here a more direct approach based on the canonical\nphase space quantization of the theory, which will allow us to directly identify the boundary\ndynamics and the associated symmetry algebra. A similar analysis was carried out for sine\ndilaton gravity in [59, 60], so we will not repeat the full set of equations here, but rather\nsummarize the key steps leading to the derivation of the gravitational Hamiltonian for sinh\ndilaton gravity.\nThe above formulation of the action (3.1) is convenient to directly take the JT limit a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13873v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Useful manipulations involving Ramanujan's formula",
+      "pageStart": 34,
+      "pageEnd": 44,
+      "target": "../sections/sec-012-useful-manipulations-involving-ramanujans-formul.md",
+      "narrative": null,
+      "content": "A crucial identity for this work is Ramanujan’s summation formula:\nZ\nR\ndτe−2πβτeπ(Q−α)τe−iπ\n2 α(Q−α)eiπαβSb(iτ + α)Sb(−iτ) = Sb(α)Sb(β)\nSb(α + β) .\n(C.1)\nWe now aim to rewrite it in a way that will be useful to us. The argument has poles of\nSb(−iτ) at τ = −inb −im/b and at τ = iα + inb + im/b for Sb(iτ + α). The contour avoids\nthe pole at τ = 0 from above. Deforming the contour to τ →τ −iα/2, we can rewrite this\nformula suggestively as\nZ\nR\ndτe−2πβτeπ(Q−α)τ Sb(α/2 ± iτ)\nSb(α)\n=\nSb(β)\nSb(α + β).\n(C.2)\nMoreover, a useful rewriting of the exact Liouville gravity two-point function (3.9) can be\nach",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

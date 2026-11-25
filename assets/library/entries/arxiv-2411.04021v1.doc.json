@@ -1,0 +1,499 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2411.04021v1",
+  "title": "On the Gram determinants of the Specht modules",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.1",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-proof-of-theorem-11"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gram determinant",
+          "heading": false
+        },
+        {
+          "term": "specht module",
+          "heading": false
+        },
+        {
+          "term": "hoyer",
+          "heading": false
+        },
+        {
+          "term": "zahlentheorie",
+          "heading": false
+        }
+      ],
+      "extract": "On the Gram determinants of the Specht modules Linda Hoyer ∗ Lehrstuhl für Algebra und Zahlentheorie, RWTH Aachen University, Germany Abstract For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis of Sλ. Writing det(λ) = m · 2a(2) λ for integers",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2411.04021v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda mathrm",
+          "heading": false
+        },
+        {
+          "term": "gram determinants",
+          "heading": false
+        },
+        {
+          "term": "oddness rank",
+          "heading": false
+        },
+        {
+          "term": "odd partition",
+          "heading": false
+        },
+        {
+          "term": "orthogonal determinants",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "specht module",
+          "heading": false
+        }
+      ],
+      "extract": "Let $n$ be a positive integer and let $\\mathfrak{S}_n$ be the symmetric group of $n$ letters. There is a canonical bilinear form on the Specht module $S^{\\lambda}$ for a partition $\\lambda$ of $n$, arising from the embedding of the Specht module in a permutation representation. In [@JamesMurphyFormula], James and Murphy introduced the determinant $\\det(\\lambda) \\in \\mathbb{Z}$ of the Gram matrix of the canonical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-preliminaries",
+      "number": null,
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "β-numbers",
+          "heading": false
+        },
+        {
+          "term": "hook diagram",
+          "heading": false
+        },
+        {
+          "term": "hook length",
+          "heading": false
+        },
+        {
+          "term": "odd branches",
+          "heading": false
+        },
+        {
+          "term": "gram determinant",
+          "heading": false
+        },
+        {
+          "term": "podd",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "specht module",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries We fix a positive integer n. A partition is a sequence λ = (a1, . . . , am) of non-negative integers such that a1 ≥a2 ≥· · · ≥am. We identify partitions that only differ by a string of zeros at the end. We say that λ is a partition of n if |λ| := a1+a2+· · ·+am = n. We denote by Pn the set of partitions of n and by P := S∞ i=0 Pi the set of all partitions. If µ = (c1, . . . , cl) is another partition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-proof-of-theorem-11",
+      "number": null,
+      "title": "Proof of Theorem 1.1",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "podd",
+          "heading": false
+        },
+        {
+          "term": "odd branch",
+          "heading": false
+        },
+        {
+          "term": "gabriele nebe",
+          "heading": false
+        },
+        {
+          "term": "β-numbers",
+          "heading": false
+        },
+        {
+          "term": "distinguished representative",
+          "heading": false
+        },
+        {
+          "term": "odd partitions",
+          "heading": false
+        },
+        {
+          "term": "reordering",
+          "heading": false
+        },
+        {
+          "term": "hook lengths",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.1 We fix a positive integer n and an even partition λ. Let r be the integer such that 2r ≤n < 2r+1. Our goal is to work towards a proof of Theorem 1.1. The following definition will be useful: Definition 3.1. Let M ⊆Podd λ be any subset. We say that M is odd if there is a square-free odd integer d such that Y µ∈M h1 λ(µ) h2 λ(µ) · (Q×)2 = d · (Q×)2. Remark 3.2. Recall that det(λ) = m · 2a(2) λ for",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "odd partition",
+      "heading": false
+    },
+    {
+      "term": "odd branch",
+      "heading": true
+    },
+    {
+      "term": "odd branches",
+      "heading": false
+    },
+    {
+      "term": "gram determinants",
+      "heading": false
+    },
+    {
+      "term": "hook diagram",
+      "heading": true
+    },
+    {
+      "term": "β-numbers",
+      "heading": true
+    },
+    {
+      "term": "hook lengths",
+      "heading": false
+    },
+    {
+      "term": "specht module",
+      "heading": false
+    },
+    {
+      "term": "podd",
+      "heading": false
+    },
+    {
+      "term": "even partition",
+      "heading": false
+    },
+    {
+      "term": "mathrm odd",
+      "heading": false
+    },
+    {
+      "term": "determinant det",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Hook diagram of (7, 4, 3), with the hook of the cell c = (1, 2) colored gray. Note that the entries of the first column of a hook diagram uniquely determine the underlying partition. Generalizing that observation, a sequence of β-numbers is a sequence β = (b1, . . . , bm) of non-negative integers su",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Hook diagrams of (2, 1(5)) and (3, 3, 1)",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Hook diagrams of (6, 3, 2) and (6, 4, 1). We are left with the case that d(λ, D(µ)) = 2 for an odd branch µ of λ. This case",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The values of A(n) and B(n) for the first 40 values of n. Some patterns are easily observed: It seems that A(n) = B(n)/2 in most cases; for 1 ≤n ≤100, this holds true for 75 values of n. Moreover, it holds that the difference B(n)/2 −A(n) ≥0 with only a few exceptions; these being n = 12, 36, 48, 54",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2411.04021v1"
+  }
+}

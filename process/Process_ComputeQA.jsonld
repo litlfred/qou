@@ -1,0 +1,154 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Process",
+      "name": "compute-QA: are the computations and witnesses sound?",
+      "summary": "Run qou's compute-QA gates over `computations/` and its witnesses, and publish one verdict per gate to the `qa-reports` branch.",
+      "description": "Run qou's compute-QA gates over `computations/` and its witnesses, and publish one verdict per gate to the `qa-reports` branch.\n\nWHY ONE PROCESS. The gates used to live as inline steps in four workflow files, so nothing named them as a set, and the order an agent ran them in locally was whatever it remembered. They are now one table (`scripts/compute-qa.py`) and this one diagram; the workflows call the table, and each step carries a `# bpmn-node:` back-reference here.\n\nTHE COMMANDS DID NOT CHANGE. Each gate runs the exact command the workflow step ran, with the same exit-code handling: a strict gate fails on a non-zero exit, a warn or advisory gate never fails the run and its output is the report; when it exits non-zero its verdict is WARN rather than PASS, so a finding is not recorded as green. Measured on `main` before the move and after it, every gate's exit codes and output are identical.\n\nQA IS AGENT-OWNED; CI IS A BACKUP. These workflows are dispatch-only (owner directive 2026-06-30, Actions billing), and several have never run. So the normal way through this process is an agent running `python3 scripts/compute-qa.py` before it commits, not CI. The lane says who runs a gate, not where.\n\nTHREE OUTCOMES. A gate whose script cannot start (a missing module or binary) is UNKNOWN and never a pass. A failing self-test fails its gate whatever the gate's mode, because a detector that has stopped matching its known positive reports everything clean.\n\nVERDICTS ARE NOT COMMITTED. Each gate writes `test/results/compute-qa/<gate>.json`, which is gitignored and is the layout `bun run qa:publish` reads.",
+      "enforcement": "strict",
+      "sourcePath": "processes/tools/compute-qa.bpmn",
+      "sourceUrl": "https://github.com/litlfred/qou/blob/main/processes/tools/compute-qa.bpmn",
+      "startNode": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA/node/StartEvent_Change"
+      ],
+      "nodeCount": 13,
+      "flowCount": 16,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_1",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/StartEvent_Change",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_P",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Precision",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_S",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Staleness",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_L",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_LpDual",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_F",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Probe",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_W",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Words",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_P2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Precision",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_S2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Staleness",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_L2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_LpDual",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_F2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Probe",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_W2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Words",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Join",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Publish",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_3",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Task_Publish",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Green",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "all pass or warn",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/EndEvent_Green",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Red",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "any fail",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/EndEvent_Red",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Unknown",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "none fail, one unknown",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "from": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict",
+      "to": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/EndEvent_Unknown",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

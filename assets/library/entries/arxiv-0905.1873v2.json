@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0905.1873v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0905.1873v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:0905.1873v2  [nucl-th]  17 Aug 2009\nEvolution of Nuclear Many-Body Forces\nwith the Similarity Renormalization Group\nE.D. Jurgenson,1 P. Navr´atil,2 and R.J. Furnstahl1\n1Department of Physics, The Ohio State University, Columbus, OH 43210, USA\n2Lawrence Livermore National Laboratory, P.O. Box 808, L-414, Livermore, CA 94551, USA\nThe ﬁrst practical method to evolve many-body nuclear forces to softened form using the Similarity\nRenormalization Group (SRG) in a harmonic oscillator basis is demonstrated. When applied to 4He\ncalculations, the two- and three-body oscillator matrix elements yiel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.1873v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "Our calculations are performed in the Jacobi coordi-\nnate harmonic oscillator (HO) basis of the No-Core Shell\nModel (NCSM) [14]. This is a translationally invariant,\nanti-symmetric basis for each A, with a complete set of\nstates up to a maximum excitation of NmaxℏΩabove the\nminimum energy conﬁguration, where Ωis the harmonic\noscillator parameter. The procedures used here build di-\nrectly on Ref. [13], which presents a one-dimensional im-\nplementation of our approach along with a general anal-\nysis of the evolving many-body hierarchy.\nWe start by evolving Hλ in the A = 2 subsystem, which\ncomple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.1873v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "TABLE I: Deﬁnitions of the various calculations.\nNN-only\nNo initial NNN interaction and do not keep NNN-induced interaction.\nNN + NNN-induced\nNo initial NNN interaction but keep the SRG-induced NNN interaction.\nNN + NNN\nInclude an initial NNN interaction and keep the SRG-induced NNN interaction.\nserved in all SRG calculations of light nuclei [3]. When\nthe induced NNN is included, the evolution is close to\nunitary and the pattern only depends slightly on an ini-\ntial NNN interaction. In both cases the dotted line rep-\nresents the converged value for the initial Hamiltonian.\nAt large λ, the disc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.1873v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "7.6\n7.8\n8\n8.2\n8.4\n8.6\n8.8\nEb(\n3H) [MeV]\n24\n25\n26\n27\n28\n29\n30\nEb(\n4He) [MeV]\nTjon line for NN-only potentials\nSRG NN-only\nSRG NN+NNN (λ >1.7 fm\n−1)\n8.45\n8.5\n28.2\n28.3\n28.4\n28.5\nN\n3LO\nλ=3.0\nλ=1.2\nλ=2.5\nλ=1.5\nλ=2.0\nλ=1.8\nExpt.\n(500 MeV)\nFIG. 5: (Color online) Binding energy of the alpha particle\nvs. the binding energy of the triton. The Tjon line from phe-\nnomenological NN potentials (dotted) is compared with the\ntrajectory of SRG energies when only the NN interaction is\nkept (circles).\nWhen the initial and induced NNN interac-\ntions are included, the trajectory lies close to experiment for\nλ > 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9608020v2",
+  "title": "Shifted Jack polynomials, binomial formula, and applications",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "binomial",
+          "heading": false
+        },
+        {
+          "term": "chicago",
+          "heading": false
+        },
+        {
+          "term": "grant",
+          "heading": false
+        },
+        {
+          "term": "institute",
+          "heading": false
+        },
+        {
+          "term": "supported",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9608020v2 8 Sep 1997 SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS A. Okounkov1and G. Olshanski2 Abstract. In this note we prove an explicit binomial formula for Jack polynomials and discuss some applications of it. 1. Jack polynomials ([M,St]). In this note we use the parameter θ = 1/α inverse to the standard parameter α for Jack polynomials. Jack symmetric poly- nomials Pλ(x1, . . . ,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shifted schur",
+          "heading": false
+        },
+        {
+          "term": "schur functions",
+          "heading": false
+        },
+        {
+          "term": "sahi",
+          "heading": false
+        },
+        {
+          "term": "explicit formulas",
+          "heading": false
+        },
+        {
+          "term": "polynomials",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        }
+      ],
+      "extract": "2 A. OKOUNKOV AND G. OLSHANSKI 2. Shifted Jack polynomials ([S1,OO,Ok1,KS,Ok3]). Denote by Λθ(n) the al- gebra of polynomials f(x1, . . . , xn) that are symmetric in variables xi −θi. We call such polynomials shifted symmetric. By (1.1) one has the Harish-Chandra isomorphism (2.1) D(n; θ) →Λθ(n) which takes an operator D ∈D(n; θ) to the polynomial d ∈Λθ(n) such that D Pλ(x; θ) = d(λ) Pλ(x; θ) . If D is of order k",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shifted jack",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "binomial formula",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "combinatorial formula",
+          "heading": false
+        }
+      ],
+      "extract": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS 3 particular, they provide an eﬀective proof of the existence of P ∗ µ(x; θ) and a diﬀerent proof of (2.2) and (2.3). We call these polynomials shifted Jack polynomials. They are a degenerate case of shifted Macdonald polynomials [Kn,S2,Ok3]. It easily follows from the deﬁnition that P ∗ µ(x; θ) are stable, that is P ∗ µ(x1, . . ., xn, 0; θ) = P ∗ µ(x1, .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric distributions",
+          "heading": false
+        },
+        {
+          "term": "olshanski",
+          "heading": false
+        },
+        {
+          "term": "jack",
+          "heading": false
+        },
+        {
+          "term": "okounkov",
+          "heading": false
+        }
+      ],
+      "extract": "4 A. OKOUNKOV AND G. OLSHANSKI Let O1 be the local ring of symmetric rational functions regular at the point (3.3) ¯1 = (1, . . ., 1) and let m1 ⊂O1 be its maximal ideal. We call functionals ψ ∈ \u0000O1/mk 1 \u0001∗⊂O∗ 1 symmetric distributions of order ≤k supported at the point ¯1 deﬁned in (3.3). Denote by S1 the space of all symmetric distributions supported at ¯1. Looking at the highest derivatives one easily proves that",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binomial formula",
+          "heading": false
+        },
+        {
+          "term": "lassalle",
+          "heading": false
+        },
+        {
+          "term": "shifted",
+          "heading": false
+        },
+        {
+          "term": "jack",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        }
+      ],
+      "extract": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS 5 Remark. The coeﬃcients \u0000λ µ \u0001 θ in the expansion Pλ(1 + x1, . . ., 1 + xn; θ) Pλ(1, . . ., 1; θ) = µ \u0012λ µ \u0013 θ Pµ(x1, . . . , xn; θ) Pµ(1, . . ., 1; θ) . are called the generalized binomial coeﬃcients. They were studied by C. Bingham [Bi] in the special case θ = 1/2, using group–theoretical methods, and by M. Lassalle [La] for general θ. Then a proof of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "θ-dim",
+          "heading": false
+        },
+        {
+          "term": "spherical functions",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "bessel functions",
+          "heading": false
+        },
+        {
+          "term": "skew diagram",
+          "heading": false
+        },
+        {
+          "term": "euclidean type",
+          "heading": false
+        },
+        {
+          "term": "symmetric space",
+          "heading": false
+        },
+        {
+          "term": "compact",
+          "heading": false
+        }
+      ],
+      "extract": "6 A. OKOUNKOV AND G. OLSHANSKI where the second equality is based on the binomial formula and the last equality follows from (2.3) □. We call F(l, x; θ) the Bessel functions. They are in the same relation to Jack polynomials as ordinary Bessel functions to Jacobi polynomials. They are eigen- functions of the corresponding degeneration of Sekiguchi operators. The formula (4.2) makes obvious the following known",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-006",
+        "library/arxiv-q-alg-9608020v2/blocks/prop-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "θ-dim",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "lhs",
+          "heading": false
+        }
+      ],
+      "extract": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS 7 Lemma. (5.3) ( X xi −|µ|)P ∗ µ(x; θ) = X |λ|=|µ|+1 θ-dim λ/µ P ∗ λ(x; θ) . Proof. Let f be the diﬀerence of the LHS and RHS in (5.3). By (2.3) and (5.1) we have deg f ≤|µ|. One easily checks that f(ν) = 0 for all |ν| ≤|µ|. It follows that f = 0. □ Applying this lemma k times, where k = |λ| −|µ|, we obtain (5.4) ( X xi −|µ|) · · · ( X xi −|µ|−k +1)P ∗",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-007",
+        "library/arxiv-q-alg-9608020v2/blocks/lem-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "capelli identities",
+          "heading": false
+        },
+        {
+          "term": "higher capelli",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "macdonald polynomials",
+          "heading": false
+        },
+        {
+          "term": "rendus acad",
+          "heading": false
+        },
+        {
+          "term": "shifted schur",
+          "heading": false
+        },
+        {
+          "term": "kirillov seminar",
+          "heading": false
+        },
+        {
+          "term": "binomial formula",
+          "heading": false
+        }
+      ],
+      "extract": "8 A. OKOUNKOV AND G. OLSHANSKI Proposition. If µ has < n parts then Pµ(λ) = 1 C(µ, n) 1 V (λ)2θ−1 Z λ1 λ2 dν1. . . Z λn−1 λn dνn−1 Pµ(ν) V (ν) Π(λ, ν; θ) . Here λ1 ≥· · · ≥λn are arbitrary real (this assumption is not essential since Pµ is symmetric). If θ = 1, 2, . . . then the integrand is holomorphic and λ can be arbitrary complex. Iteration of this proposition together with (1.2) gives an integral representation",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vershik",
+          "heading": false
+        },
+        {
+          "term": "brylinski",
+          "heading": false
+        },
+        {
+          "term": "jack",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "eds",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS 9 [Op] E. M. Opdam, Dunkl operators, Bessel functions, and the discriminant of a ﬁnite Coxeter group, Compos. Math. 85 (1993), 333-373. [OV] G. Olshanski and A. Vershik, Ergodic unitarily invariant measures on the space of inﬁnite Hermitian matrices, in Contemporary Mathematical Physics. F. A. Berezin’s memorial volume (R. L. Dobrushin, R. A. Minlos, M. A.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9608020v2/blocks/prose-page-009"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "shifted jack",
+      "heading": false
+    },
+    {
+      "term": "jack polynomials",
+      "heading": false
+    },
+    {
+      "term": "jack symmetric",
+      "heading": false
+    },
+    {
+      "term": "shifted macdonald",
+      "heading": false
+    },
+    {
+      "term": "binomial formula",
+      "heading": false
+    },
+    {
+      "term": "shifted schur",
+      "heading": false
+    },
+    {
+      "term": "binomial coeﬃcients",
+      "heading": false
+    },
+    {
+      "term": "binomial theorem",
+      "heading": false
+    },
+    {
+      "term": "generalized binomial",
+      "heading": false
+    },
+    {
+      "term": "symmetric functions",
+      "heading": false
+    },
+    {
+      "term": "θ-dim",
+      "heading": false
+    },
+    {
+      "term": "symmetric space",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 9,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9608020v2"
+  }
+}

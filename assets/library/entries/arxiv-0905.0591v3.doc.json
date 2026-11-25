@@ -1,0 +1,2807 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0905.0591v3",
+  "title": "arxiv-0905.0591v3",
+  "variant": "pdf",
+  "pages": 42,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Definition and basic properties",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-definition-and-basic-properties"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Reidemeister torsion",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-twisted-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Computation of twisted Reidemeister torsion",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-computation-of-twisted-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Torsion invariants",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-torsion-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander invariants",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-twisted-alexander-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Computation of twisted Alexander polynomials",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-computation-of-twisted-alexander-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Basic properties of twisted invariants",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-basic-properties-of-twisted-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Relationship between twisted invariants",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-relationship-between-twisted-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Twisted invariants for conjugate representations",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-twisted-invariants-for-conjugate-representati"
+    },
+    {
+      "level": 2,
+      "title": "Change of variables",
+      "number": "3.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-33-change-of-variables"
+    },
+    {
+      "level": 2,
+      "title": "Duality for twisted invariants",
+      "number": "3.4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-34-duality-for-twisted-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Shapiro's lemma for twisted invariants",
+      "number": "3.5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-35-shapiros-lemma-for-twisted-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Twisted invariants of knots and links",
+      "number": "3.6",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-36-twisted-invariants-of-knots-and-links"
+    },
+    {
+      "level": 1,
+      "title": "Distinguishing knots and links",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-distinguishing-knots-and-links"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Alexander polynomials and concordance",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-5-twisted-alexander-polynomials-and-concordance"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials of zero–surgeries",
+      "number": "5.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-51-twisted-alexander-polynomials-of-zerosurgerie"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials and knot concordance",
+      "number": "5.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-52-twisted-alexander-polynomials-and-knot-concor"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon knots and doubly slice knots",
+      "number": "5.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-53-ribbon-knots-and-doubly-slice-knots"
+    },
+    {
+      "level": 2,
+      "title": "Twisted invariants and slice links",
+      "number": "5.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-54-twisted-invariants-and-slice-links"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+      "number": "6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-twisted-alexander-polynomials-the-thurston-nor"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials and fibered manifolds",
+      "number": "6.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-twisted-alexander-polynomials-and-fibered-man"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials and the Thurston norm",
+      "number": "6.2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-twisted-alexander-polynomials-and-the-thursto"
+    },
+    {
+      "level": 2,
+      "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+      "number": "6.3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-normalized-twisted-reidemeister-torsion-and-t"
+    },
+    {
+      "level": 1,
+      "title": "Twisted invariants of knots and special representations",
+      "number": "7",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-7-twisted-invariants-of-knots-and-special-repres"
+    },
+    {
+      "level": 2,
+      "title": "Parabolic representations",
+      "number": "7.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-71-parabolic-representations"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+      "number": "7.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-72-twisted-alexander-polynomials-and-the-space-o"
+    },
+    {
+      "level": 2,
+      "title": "Twisted invariants of hyperbolic knots and links",
+      "number": "7.3",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-73-twisted-invariants-of-hyperbolic-knots-and-li"
+    },
+    {
+      "level": 2,
+      "title": "Metabelian representations",
+      "number": "7.4",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-74-metabelian-representations"
+    },
+    {
+      "level": 1,
+      "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+      "number": "8",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-8-miscellaneous-applications-of-twisted-reidemei"
+    },
+    {
+      "level": 2,
+      "title": "A Partial order on knots",
+      "number": "8.1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-81-a-partial-order-on-knots"
+    },
+    {
+      "level": 2,
+      "title": "Periodic and freely periodic knots",
+      "number": "8.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-82-periodic-and-freely-periodic-knots"
+    },
+    {
+      "level": 2,
+      "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+      "number": "8.3",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-83-zeroes-of-twisted-alexander-polynomials-and-n"
+    },
+    {
+      "level": 2,
+      "title": "Seifert fibered surgeries",
+      "number": "8.4",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-84-seifert-fibered-surgeries"
+    },
+    {
+      "level": 2,
+      "title": "Homology of cyclic covers",
+      "number": "8.5",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-85-homology-of-cyclic-covers"
+    },
+    {
+      "level": 2,
+      "title": "Alexander polynomials for links in R P3",
+      "number": "8.6",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-86-alexander-polynomials-for-links-in-r-p3"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Alexander polynomials of CW–complexes and groups",
+      "number": "9",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-9-twisted-alexander-polynomials-of-cwcomplexes-a"
+    },
+    {
+      "level": 2,
+      "title": "Definitions and basic properties",
+      "number": "9.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-91-definitions-and-basic-properties"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Alexander polynomials of groups",
+      "number": "9.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-92-twisted-alexander-polynomials-of-groups"
+    },
+    {
+      "level": 2,
+      "title": "Plane algebraic curves",
+      "number": "9.3",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-93-plane-algebraic-curves"
+    },
+    {
+      "level": 1,
+      "title": "Alexander polynomials and representations over non–commutative rings",
+      "number": "10",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-10-alexander-polynomials-and-representations-ove"
+    },
+    {
+      "level": 2,
+      "title": "Non–commutative Alexander polynomials",
+      "number": "10.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-101-noncommutative-alexander-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Higher order Alexander polynomials",
+      "number": "10.2",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-102-higher-order-alexander-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Comparing different –compatible maps",
+      "number": "10.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-103-comparing-different-compatible-maps"
+    },
+    {
+      "level": 2,
+      "title": "Miscellaneous applications of higher order Alexander polynomials",
+      "number": "10.4",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-104-miscellaneous-applications-of-higher-order-a"
+    },
+    {
+      "level": 1,
+      "title": "Open questions and problems",
+      "number": "11",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-11-open-questions-and-problems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:0905.0591v3 [math.GT] 5 Feb 2010 A SURVEY OF TWISTED ALEXANDER POLYNOMIALS STEFAN FRIEDL AND STEFANO VIDUSSI",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0905.0591v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "polynomial carries",
+          "heading": false
+        },
+        {
+          "term": "helpful comments",
+          "heading": false
+        },
+        {
+          "term": "polynomial invariant",
+          "heading": false
+        },
+        {
+          "term": "lin",
+          "heading": false
+        },
+        {
+          "term": "fundamental group",
+          "heading": false
+        },
+        {
+          "term": "information",
+          "heading": false
+        },
+        {
+          "term": "cite",
+          "heading": false
+        }
+      ],
+      "extract": "In 1928 Alexander introduced a polynomial invariant for knots and links which quickly got referred to as the Alexander polynomial. His definition was later recast in terms of Reidemeister torsion by Milnor \\cite{Mi62} and it was extended by Turaev \\cite{Tu75,Tu86} to an invariant of 3-manifolds. More precisely, to a 3-manifold with empty or toroidal boundary $N$ we can associate its Alexander polynomial $\\Delta_N$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-definition-and-basic-properties",
+      "number": "2",
+      "title": "Definition and basic properties",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-twisted-reidemeister-torsion",
+      "number": "2.1",
+      "title": "Twisted Reidemeister torsion",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": true
+        },
+        {
+          "term": "torsion tau",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "representation alpha",
+          "heading": false
+        },
+        {
+          "term": "well--defined",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:twitorsion}\\label{section:twitau} Let $N$ be a 3--manifold with empty or toroidal boundary, $F$ a torsion--free abelian group and $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ a representation. Recall that we denote by $Q(R[F])$ the quotient field of $R[F]$. We endow $N$ with a finite CW--structure. We denote the universal cover of $N$ by $\\tilde{N}$. Recall that there exists a canonical left",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-computation-of-twisted-reidemeister-torsion",
+      "number": "2.2",
+      "title": "Computation of twisted Reidemeister torsion",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "cw--structure exists",
+          "heading": false
+        },
+        {
+          "term": "xrightarrow partial",
+          "heading": false
+        },
+        {
+          "term": "cdot psi",
+          "heading": false
+        },
+        {
+          "term": "cong mathbb",
+          "heading": false
+        },
+        {
+          "term": "limits det",
+          "heading": false
+        },
+        {
+          "term": "doteq prod",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:comptau} Let $N$ be a 3--manifold with empty or toroidal boundary, $\\psi:\\pi_1(N)\\to F$ a non--trivial homomorphism to a free abelian group $F$ and $\\gamma:\\pi_1(N)\\to \\mbox{GL}(k,R)$ a representation. In this section we will give an algorithm for computing $\\tau(N,\\gamma \\otimes \\psi)$ which is based on ideas of Turaev (cf. in particular \\cite[Theorem~2.2]{Tu01}). We will first consider the case that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-torsion-invariants",
+      "number": "2.3",
+      "title": "Torsion invariants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noetherian ufd",
+          "heading": false
+        },
+        {
+          "term": "s-i",
+          "heading": false
+        },
+        {
+          "term": "mbox ord",
+          "heading": false
+        },
+        {
+          "term": "principal ideal",
+          "heading": false
+        },
+        {
+          "term": "torsioninvariants",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:torsioninvariants} Let $S$ be a Noetherian unique factorization domain (henceforth UFD). Examples of Noetherian UFD's are given by $\\mathbb{Z}$ and by fields, furthermore if $R$ is a Noetherian UFD and $F$ a free abelian group, then $R[F]$ is again a Noetherian UFD. For a finitely generated $S$-module $A$ we can find a presentation $$ S^r \\xrightarrow{P} S^s \\to A \\to 0 $$ since $S$ is Noetherian. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-twisted-alexander-invariants",
+      "number": "2.4",
+      "title": "Twisted Alexander invariants",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "delta alpha",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "noetherian ufd",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "representation gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:twialex} Let $N$ be a 3-manifold and let $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ be a representation with $R$ a Noetherian UFD. Similarly to Section \\ref{section:twitau} we define the $R[F]$--chain complex $C_*(\\tilde{N})\\otimes_{\\mathbb{Z}[\\pi_1(N)]}R[F]^k$. For $i\\ge 0$, we define \\emph{the $i$-th twisted Alexander module of $(N,\\alpha)$} to be the $R[F]$--module $$ H_i(N;R[F]^k) \\mathrel{\\mathop:}=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-computation-of-twisted-alexander-polynomials",
+      "number": "2.5",
+      "title": "Computation of twisted Alexander polynomials",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "polynomials delta",
+          "heading": false
+        },
+        {
+          "term": "finite presentation",
+          "heading": false
+        },
+        {
+          "term": "fox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:compdelta} Let $N$ be a 3--manifold with empty or toroidal boundary, and ${\\alpha}:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ a representation with $R$ a Noetherian UFD and $F$ a free abelian group. Given a finite presentation for $\\pi_1(N)$ the polynomials $\\Delta_{N,1}^{\\alpha}\\in R[F]$ and $\\Delta_{N,0}^{\\alpha}\\in R[F]$ can be computed efficiently using Fox calculus (cf. e.g. \\cite[p.~98]{CF77} and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-basic-properties-of-twisted-invariants",
+      "number": "3",
+      "title": "Basic properties of twisted invariants",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{section:basics} In this section we summarize various basic algebraic properties of twisted Reidemeister torsion and twisted Alexander polynomials.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-relationship-between-twisted-invariants",
+      "number": "3.1",
+      "title": "Relationship between twisted invariants",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "doteq prod",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "deltatau",
+          "heading": false
+        },
+        {
+          "term": "noetherian ufd",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        }
+      ],
+      "extract": "The following proposition is \\cite[Theorem~4.7]{Tu01}. \\begin{proposition}\\label{prop:deltataualpha} Let $N$ be a 3--manifold with empty or toroidal boundary and let $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ a representation where $R$ is a Noetherian UFD and $F$ a free abelian group. If $\\Delta_{N,i}^{\\alpha} \\ne 0$ for $i=0,1,2$, then \\[ \\tau(N,{\\alpha} )\\doteq \\prod_{i=0}^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-twisted-invariants-for-conjugate-representati",
+      "number": "3.2",
+      "title": "Twisted invariants for conjugate representations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "conjugate",
+          "heading": true
+        },
+        {
+          "term": "doteq",
+          "heading": false
+        }
+      ],
+      "extract": "Given a group $\\pi$ we say that two representations $\\gamma_1,\\gamma_2:\\pi \\to \\mbox{GL}(k,R)$ are \\emph{conjugate} if there exists $P\\in \\mbox{GL}(k,R)$ such that $\\gamma_1(g)=P\\gamma_2(g)P^{-1}$ for all $g\\in \\pi$. We recall the following elementary lemma. \\begin{lemma}\\label{lem:equ:rep} Let $N$ be a 3--manifold with empty or toroidal boundary and let $\\psi:\\pi_1(N)\\to F$ a non--trivial homomorphism to a free",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-change-of-variables",
+      "number": "3.3",
+      "title": "Change of variables",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doteq phi",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "psi right",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "phi left",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will show how to reduce the number of variables in twisted Alexander polynomials, in particular this discussion will show how to obtain one--variable twisted Alexander polynomials from multi--variable twisted Alexander polynomials. Throughout this section let $N$ be a 3--manifold with empty or toroidal boundary, let $\\psi:\\pi_1(N)\\to F$ be a non--trivial homomorphism to a free abelian group $F$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-34-duality-for-twisted-invariants",
+      "number": "3.4",
+      "title": "Duality for twisted invariants",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha doteq",
+          "heading": false
+        },
+        {
+          "term": "overline tau",
+          "heading": false
+        },
+        {
+          "term": "overline gamma",
+          "heading": false
+        },
+        {
+          "term": "overline delta",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "let alpha",
+          "heading": false
+        },
+        {
+          "term": "non--trivial homomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:duality} Let $R$ be a ring with a (possibly trivial) involution $r\\mapsto \\overline{r}$. Let $F$ be a free abelian group, with its natural involution. We extend the involution on $R$ to the group ring $R[F]$ and the quotient field $Q(R[F])$ in the usual way. We equip $R[F]^k$ with the standard hermitian inner product $\\langle v ,w \\rangle=v^t\\overline{w}$ (where we view elements in $R[F]^k$ as column",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-35-shapiros-lemma-for-twisted-invariants",
+      "number": "3.5",
+      "title": "Shapiro's lemma for twisted invariants",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shapiro",
+          "heading": true
+        },
+        {
+          "term": "hat alpha",
+          "heading": false
+        },
+        {
+          "term": "hat psi",
+          "heading": false
+        },
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "let hat",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "finite cover",
+          "heading": false
+        }
+      ],
+      "extract": "Let $N$ be a 3--manifold with empty or toroidal boundary. Let $p:\\hat{N}\\to N$ be a finite cover of degree $d$. Let $F$ be a free abelian group and let $\\hat{\\alpha}:\\pi_1(\\hat{N})\\to \\mbox{GL}(k,R[F])$ a representation. Now consider the $R[F]^k$--module \\[ \\mathbb{Z}[\\pi_1({N})]\\otimes_{\\mathbb{Z}[\\pi_1(\\hat{N})]} R[F]^k.\\] If $g_1,\\dots,g_d$ are representatives of $\\pi_1(N)/\\pi_1(\\hat{N})$ and if $e_1,\\dots,e_k$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-36-twisted-invariants-of-knots-and-links",
+      "number": "3.6",
+      "title": "Twisted invariants of knots and links",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup dots",
+          "heading": false
+        },
+        {
+          "term": "dots subset",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        },
+        {
+          "term": "let cup",
+          "heading": false
+        },
+        {
+          "term": "oriented link",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "Let $L=L_1\\cup\\dots \\cup L_m\\subset S^3$ be an ordered oriented link. Recall that given a representation $\\gamma:\\pi_1(S^3\\setminus \\nu L)\\to \\mbox{GL}(k,R)$ with $R$ a Noetherian UFD we can consider the twisted Alexander polynomial $\\Delta_L^\\gamma$ as an element in the Laurent polynomial ring $R[t_1^{\\pm 1},\\dots,t_m^{\\pm 1}]$ and we write $\\Delta^\\gamma_{L,i}(t_1,\\dots,t_m)=\\Delta^\\gamma_{L,i}\\in R[t_1^{\\pm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-distinguishing-knots-and-links",
+      "number": "4",
+      "title": "Distinguishing knots and links",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite fv07a",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "kinoshita--terasaka knot",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "distinguish knot",
+          "heading": false
+        },
+        {
+          "term": "conway knot",
+          "heading": false
+        },
+        {
+          "term": "polynomials detect",
+          "heading": false
+        },
+        {
+          "term": "knot types",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:dist} In this section we will restrict ourselves to twisted Alexander polynomials of knots and links. Recall that given an oriented knot $K\\subset S^3$ the \\emph{reverse} $\\overline{K}$ is given by reversing the orientation. Given a knot $K\\subset S^3$ we denote by $K^*$ its \\emph{mirror image}, i.e. the result of reflecting $K$ in $S^2\\subset S^3$. The mirror image is also sometimes referred to as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-5-twisted-alexander-polynomials-and-concordance",
+      "number": "5",
+      "title": "Twisted Alexander polynomials and concordance",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup dots",
+          "heading": false
+        },
+        {
+          "term": "cup subset",
+          "heading": false
+        },
+        {
+          "term": "concordant",
+          "heading": false
+        },
+        {
+          "term": "oriented component",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:conc} We first recall the relevant definitions. Let $L=L_1\\cup \\dots \\cup L_m\\subset S^3$ be an oriented $m$--component link. We say that $L$ is (topologically) \\emph{slice} if the components bound $m$ disjointly embedded locally flat disks in $D^4$. Given two ordered oriented $m$--component links $K=K_1\\cup \\dots \\cup K_m\\subset S^3$ and $L=L_1\\cup \\dots \\cup L_m\\subset S^3$ we say that $K$ and $L$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-51-twisted-alexander-polynomials-of-zerosurgerie",
+      "number": "5.1",
+      "title": "Twisted Alexander polynomials of zero–surgeries",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zero--framed surgery",
+          "heading": false
+        },
+        {
+          "term": "twisted",
+          "heading": true
+        },
+        {
+          "term": "zerosurgery",
+          "heading": false
+        },
+        {
+          "term": "well--known",
+          "heading": false
+        },
+        {
+          "term": "kl99a",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "twisted invariants",
+          "heading": false
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:zerosurgery} Given a knot $K\\subset S^3$ the zero--framed surgery $N_K$ of $S^3$ along $K$ is defined to be \\[ N_K =S^3\\setminus \\nu K \\cup_{T} S^1\\times D^2\\] where $T=\\partial (S^3\\setminus \\nu K)$ and $T$ is glued to $S^1\\times D^2$ by gluing the meridian to $S^1\\times \\mbox{pt}$. The inclusion map induces an isomorphism $\\mathbb{Z}\\cong H_1(S^3\\setminus \\nu K;\\mathbb{Z})\\xrightarrow{\\cong}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-twisted-alexander-polynomials-and-knot-concor",
+      "number": "5.2",
+      "title": "Twisted Alexander polynomials and knot concordance",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "sliceness obstruction",
+          "heading": false
+        },
+        {
+          "term": "cite kl99a",
+          "heading": false
+        },
+        {
+          "term": "cite hkl",
+          "heading": false
+        },
+        {
+          "term": "letsche cite",
+          "heading": false
+        },
+        {
+          "term": "slice knots",
+          "heading": false
+        },
+        {
+          "term": "concordance",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{section:slice} The first significant result in the study of slice knots is due to Fox and Milnor \\cite{FM66} who showed that if $K$ is a slice knot, then $\\Delta_K \\doteq f(t)f(t^{-1})$ for some $f(t)\\in \\mathbb{Z}[t^{\\pm 1}]$. In this section we will give an exposition and a slight generalization of the Kirk--Livingston \\cite{KL99a} sliceness obstruction theorem, which generalizes the Fox--Milnor condition.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-ribbon-knots-and-doubly-slice-knots",
+      "number": "5.3",
+      "title": "Ribbon knots and doubly slice knots",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slice knots",
+          "heading": true
+        },
+        {
+          "term": "blanchfield pairing",
+          "heading": false
+        },
+        {
+          "term": "exists metabolizer",
+          "heading": false
+        },
+        {
+          "term": "ribbon",
+          "heading": true
+        },
+        {
+          "term": "homotopy ribbon",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "slicetensor",
+          "heading": false
+        },
+        {
+          "term": "prime power",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:ds} A knot $K$ is called \\emph{homotopy ribbon} if there exists a slice disk $D$ such that $\\pi_1(N_K)\\to \\pi_1(D^4\\setminus \\nu D)$ is surjective. Note that if a knot is ribbon, then it is also homotopy ribbon. It is an open conjecture whether every knot that is slice is also homotopy ribbon. Let $K\\subset S^3$ be a knot. Recall that there exists a non--singular hermitian pairing \\[",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-54-twisted-invariants-and-slice-links",
+      "number": "5.4",
+      "title": "Twisted invariants and slice links",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kawauchi cite",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "tau alpha",
+          "heading": false
+        },
+        {
+          "term": "slice",
+          "heading": true
+        },
+        {
+          "term": "tilde tau",
+          "heading": false
+        },
+        {
+          "term": "turaev cite",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "det big",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:slicelinks} \\label{section:linkslice} Kawauchi \\cite[Theorems~A~and~B]{Ka78} showed that if $L$ is a slice link with more than one component, then the ordinary Alexander module is necessarily non--torsion, in particular the corresponding Reidemeister torsion is zero. We will follow an idea of Turaev \\cite[Section~5.1]{Tu86} to define a (twisted) invariant for links even if the (twisted) Alexander",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-twisted-alexander-polynomials-the-thurston-nor",
+      "number": "6",
+      "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "manifolds",
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-61-twisted-alexander-polynomials-and-fibered-man",
+      "number": "6.1",
+      "title": "Twisted Alexander polynomials and fibered manifolds",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "phi deg",
+          "heading": false
+        },
+        {
+          "term": "emph monic",
+          "heading": false
+        },
+        {
+          "term": "morifuji cite",
+          "heading": false
+        },
+        {
+          "term": "epimorphism gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:fib} Let $\\phi\\in H^1(N;\\mathbb{Z}) = \\mbox{Hom}(\\pi_1(N),\\mathbb{Z})$ be non--trivial. We say \\emph{$(N,\\phi)$ fibers over $S^{1}$} if there exists a fibration $p:N\\to S^1$ such that the induced map $p_*:\\pi_1(N)\\to \\pi_1(S^1)=\\mathbb{Z}$ coincides with $\\phi$. If $K$ is a fibered knot, then it is a classical result of Neuwirth that $\\Delta_K$ is monic and that $\\deg(\\Delta_K)=2 \\, \\mbox{genus}(K)$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-twisted-alexander-polynomials-and-the-thursto",
+      "number": "6.2",
+      "title": "Twisted Alexander polynomials and the Thurston norm",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander norm",
+          "heading": true
+        },
+        {
+          "term": "thurston norm",
+          "heading": true
+        },
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "mcmullen alexander",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "norm cite",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:genus} It is a classical result of Alexander that given a knot $K\\subset S^3$ the following inequality holds: \\[ 2\\mbox{genus}(K) \\geq \\deg(\\Delta_K). \\] This result was first generalized to general 3--manifolds by McMullen \\cite{McM02} and then to twisted Alexander polynomials in \\cite{FK06}. The following theorem is \\cite[Theorem~1.1]{FK06}. The proof builds partly on ideas of Turaev's in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-normalized-twisted-reidemeister-torsion-and-t",
+      "number": "6.3",
+      "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free genus",
+          "heading": true
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": true
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "mbox genus",
+          "heading": false
+        },
+        {
+          "term": "free seifert",
+          "heading": false
+        },
+        {
+          "term": "kitayama cite",
+          "heading": false
+        },
+        {
+          "term": "tilde delta",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:normalized} Let $K\\subset S^3$ a knot and let $\\gamma:\\pi_1(S^3\\sm \\nu K)\\to \\mbox{GL}(k,R)$ be a representation with $R$ a Noetherian UFD. Let $\\epsilon=\\det(\\gamma(\\mu))$ where $\\mu$ denotes a meridian of $K$. Kitayama \\cite{Kiy08a} introduced an invariant $\\tilde{\\Delta}_{K,\\gamma}\\in Q(R(\\epsilon^{\\frac{1}{2}})[t^{\\pm \\frac{1}{2}}])$ which is a normalized version of the twisted Reidemeister",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-7-twisted-invariants-of-knots-and-special-repres",
+      "number": "7",
+      "title": "Twisted invariants of knots and special representations",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 38,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representations",
+          "heading": true
+        },
+        {
+          "term": "metabelian",
+          "heading": false
+        },
+        {
+          "term": "twisted",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{section:twodim} Given a knot $K\\subset S^3$ the representations which have been studied most are the 2--dimensional complex representations and the metabelian representations. It is therefore natural to consider special properties of twisted Alexander polynomials corresponding to such representations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-71-parabolic-representations",
+      "number": "7.1",
+      "title": "Parabolic representations",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite sw09c",
+          "heading": false
+        },
+        {
+          "term": "parabolic",
+          "heading": true
+        },
+        {
+          "term": "gamma zeta",
+          "heading": false
+        },
+        {
+          "term": "gamma phi",
+          "heading": false
+        },
+        {
+          "term": "bridge knot",
+          "heading": false
+        },
+        {
+          "term": "parabolic representation",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:specialknots} Let $K\\subset S^3$ be a knot. A representation $\\gamma:\\pi_1(S^3\\setminus \\nu K)\\to \\mbox{SL}(2,\\mathbb{C})$ is called \\emph{parabolic} if the image of any meridian is a matrix with trace 2. Note that Thurston \\cite{Th87} showed that given a hyperbolic knot $K$ the discrete faithful representation $\\pi_1(S^3\\setminus \\nu K) \\to \\mbox{PSL}(2,\\mathbb{C})$ lifts to a parabolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-72-twisted-alexander-polynomials-and-the-space-o",
+      "number": "7.2",
+      "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": true
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        }
+      ],
+      "extract": "It is a natural question to study the behavior of twisted Alexander polynomials under a change of representation. Recall that given a group $\\pi$ we say that two representations $\\alpha,\\beta:\\pi\\to \\mbox{GL}(k,R)$ are \\emph{conjugate} if there exists $P\\in \\mbox{GL}(k,R)$ with $\\alpha(g)=P\\beta(g)P^{-1}$ for all $g\\in \\pi$. By Lemma \\ref{lem:equ:rep} we can view Alexander polynomials as function on the set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-73-twisted-invariants-of-hyperbolic-knots-and-li",
+      "number": "7.3",
+      "title": "Twisted invariants of hyperbolic knots and links",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "porti cite",
+          "heading": false
+        },
+        {
+          "term": "adj",
+          "heading": false
+        },
+        {
+          "term": "invariant tau",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": true
+        }
+      ],
+      "extract": "Let $L\\subset S^3$ be a hyperbolic link. Then the corresponding representation $\\pi_1(S^3\\sm \\nu L)\\to PSL(2,\\C)$ lifts to a canonical representation $\\g_{can}:\\pi_1(S^3\\sm \\nu L)\\to SL(2,\\C)$ and it induces the adjoint representation $\\g_{adj}: \\pi_1(S^3\\sm \\nu L)\\to PSL(2,\\C)\\to \\aut(sl(2,\\C))\\cong \\mbox{SL}(3,\\C)$. The corresponding invariant $\\tau(L,\\g_{adj})$ has been studied in great detail by Dubois and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-74-metabelian-representations",
+      "number": "7.4",
+      "title": "Metabelian representations",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "metabelian representations",
+          "heading": true
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "hm09a",
+          "heading": false
+        }
+      ],
+      "extract": "Given a group $G$ the derived series of $G$ is defined inductively by $G^{(0)}=G$ and $G^{(i+1)}=[G^{(i)},G^{(i)}]$. A representation of a group $G$ is called metabelian if it factors through $G/G^{(2)}$. Note that if $K$ is a knot, then the metabelian quotient $\\pi_1(S^3\\setminus \\nu K)/\\pi_1(S^3\\setminus \\nu K)^{(2)}$ is well--known to be determined by the Alexander module of $K$ (cf. e.g. \\cite[Section~2]{BF08}).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-8-miscellaneous-applications-of-twisted-reidemei",
+      "number": "8",
+      "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{section:misc} In this section we will summarize various applications of twisted Alexander polynomials to the study of knots and links.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-81-a-partial-order-on-knots",
+      "number": "8.1",
+      "title": "A Partial order on knots",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ks05a",
+          "heading": false
+        },
+        {
+          "term": "partial order",
+          "heading": true
+        },
+        {
+          "term": "knots",
+          "heading": true
+        },
+        {
+          "term": "prime knots",
+          "heading": false
+        },
+        {
+          "term": "hkms",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:po} Given a knot $K$ we write $\\pi_1(S^3\\sm \\nu K)\\mathrel{\\mathop:}=\\pi_1(S^3\\setminus K)$. For two prime knots $K_1$ and $K_2$ one defines $K_1 \\geq K_2$ if there exists a surjective group homomorphism $\\varphi:\\pi_1(K_1)\\to \\pi_1(K_2)$. The relation $``\\geq\"$ defines a partial order on the set of prime knots (cf. \\cite{KS05a}). Its study is often related to a well--known conjecture of J. Simon,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-82-periodic-and-freely-periodic-knots",
+      "number": "8.2",
+      "title": "Periodic and freely periodic knots",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "periodic knots",
+          "heading": true
+        },
+        {
+          "term": "gamma overline",
+          "heading": false
+        },
+        {
+          "term": "delta overline",
+          "heading": false
+        },
+        {
+          "term": "write overline",
+          "heading": false
+        },
+        {
+          "term": "hln",
+          "heading": false
+        },
+        {
+          "term": "doteq delta",
+          "heading": false
+        },
+        {
+          "term": "let overline",
+          "heading": false
+        },
+        {
+          "term": "gamma circ",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:periodic} A knot $K\\subset S^3$ is called \\emph{periodic of period $q$}, if there exists a smooth transformation of $S^3$ of order $q$ which leaves $K$ invariant and such that the fixed point set is a circle $A$ disjoint from $K$. Note that $A\\subset S^3$ is the trivial knot by the Smith conjecture. We refer to \\cite[Section~10.1]{Ka96} for more details on periodic knots. Now assume that $K\\subset",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-83-zeroes-of-twisted-alexander-polynomials-and-n",
+      "number": "8.3",
+      "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array rcl",
+          "heading": false
+        },
+        {
+          "term": "rho alpha",
+          "heading": false
+        },
+        {
+          "term": "alexander",
+          "heading": true
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "heusener",
+          "heading": false
+        },
+        {
+          "term": "zeroes",
+          "heading": true
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "Let $N$ be a 3--manifold with one boundary component and $b_1(N)=1$. Put differently, let $N$ be the complement of a knot in a rational homology sphere. Let $\\alpha:\\pi_1(N)\\to \\mathbb{C}^*=\\mbox{GL}(1,\\mathbb{C})$ be a one--dimensional representation. Note that $\\alpha$ necessarily factors through a representation $H_1(N;\\mathbb{Z})\\to \\mbox{GL}(1,\\mathbb{C})$ which we also denote by $\\alpha$. Heusener and Porti",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-84-seifert-fibered-surgeries",
+      "number": "8.4",
+      "title": "Seifert fibered surgeries",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seifert fibered",
+          "heading": true
+        },
+        {
+          "term": "kiy",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:sfs} In \\cite[Section~3]{Kiy09} Kitayama gives a surgery formula for twisted Reidemeister torsion. Furthermore in \\cite[Lemma~4.3]{Kiy09} a formula for the Reidemeister torsion of a Seifert fibered space is given. By studying a suitable invariant derived from twisted Reidemeister torsion an obstruction for a Dehn surgery on a knot to equal a specific Seifert fibered space are given. These obstructions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-85-homology-of-cyclic-covers",
+      "number": "8.5",
+      "title": "Homology of cyclic covers",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gordon cite",
+          "heading": false
+        },
+        {
+          "term": "branched covers",
+          "heading": false
+        },
+        {
+          "term": "theta dots",
+          "heading": false
+        },
+        {
+          "term": "mathrel mathop",
+          "heading": false
+        },
+        {
+          "term": "sw09c",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "homology",
+          "heading": true
+        },
+        {
+          "term": "int theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:cycliccovers} Let $K\\subset S^3$ be a knot. We denote by $H\\mathrel{\\mathop:}=H_1(S^3\\setminus \\nu K;\\mathbb{Z}[t^{\\pm 1}])$ its Alexander module. Given $n\\in \\mathbb{N}$ we denote by $L_n$ the $n$--fold cyclic branched cover of $K$. Recall that we have a canonical isomorphism $H/(t^n-1)\\cong H_1(L_n)$. Put differently, the Alexander module determines the homology of the branched covers. In the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-86-alexander-polynomials-for-links-in-r-p3",
+      "number": "8.6",
+      "title": "Alexander polynomials for links in R P3",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t-t",
+          "heading": false
+        },
+        {
+          "term": "huynh",
+          "heading": false
+        },
+        {
+          "term": "indeterminacy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:rp} Given a link $L\\subset \\mathbb{R} P^3$ Huynh and Le \\cite[Section~5.3.2]{HL08} use Reidemeister torsion corresponding to abelian representations to define an invariant $\\nabla_L(t)$ which lies in general in $\\mathbb{Z}[t^{\\pm 1}, (t-t^{-1})^{-1}]$ and has no indeterminacy. Furthermore they show in \\cite[Theorem~5.7]{HL08} the surprising fact that this invariant satisfies in fact a skein relation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-9-twisted-alexander-polynomials-of-cwcomplexes-a",
+      "number": "9",
+      "title": "Twisted Alexander polynomials of CW–complexes and groups",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-91-definitions-and-basic-properties",
+      "number": "9.1",
+      "title": "Definitions and basic properties",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "homomorphism psi",
+          "heading": false
+        },
+        {
+          "term": "noetherian ufd",
+          "heading": false
+        },
+        {
+          "term": "torsion--free abelian",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:generalprop} Let $X$ be a CW--complex with finitely many cells in each dimension. Assume we are given a non--trivial homomorphism $\\psi:\\pi_1(X)\\to F$ to a torsion--free abelian group and a representation $\\gamma:\\pi_1(X)\\to \\mbox{GL}(k,R)$ where $R$ is a Noetherian UFD. As in Section \\ref{section:twialex} we can define the twisted Alexander modules \\[",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-92-twisted-alexander-polynomials-of-groups",
+      "number": "9.2",
+      "title": "Twisted Alexander polynomials of groups",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "alexander norm",
+          "heading": false
+        },
+        {
+          "term": "turaev norm",
+          "heading": false
+        },
+        {
+          "term": "cite tu02c",
+          "heading": false
+        },
+        {
+          "term": "morifuji cite",
+          "heading": false
+        },
+        {
+          "term": "faithful representation",
+          "heading": false
+        }
+      ],
+      "extract": "The twisted Alexander polynomial has been calculated by Morifuji \\cite[Theorem~1.1]{Mo01} for the braid groups $B_n$ with $\\psi:B_n\\to \\mathbb{Z}$ the abelianization map and together with the Burau representation. Morifuji \\cite[Theorem~1.2]{Mo01} also proves a symmetry theorem for twisted Alexander polynomials of braid groups for Jones representations corresponding to dual Young diagrams. In \\cite{Suz04} Suzuki",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-93-plane-algebraic-curves",
+      "number": "9.3",
+      "title": "Plane algebraic curves",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "mathbb setminus",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        },
+        {
+          "term": "affine algebraic",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:cf} Let $\\mathcal{C}\\subset \\mathbb{C}^2$ be an affine algebraic curve. Denote by $P_1,\\dots,P_k$ the set of singularities and denote by $L_1,\\dots,L_k$ the links at the singularities and let $L_\\infty$ be the link at infinity (we refer to \\cite{CF07} for details). Note that $\\mathbb{C}^2\\setminus \\nu \\mathcal{C}$ is homotopy equivalent to a finite CW--complex. By Section \\ref{section:generalprop} we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-10-alexander-polynomials-and-representations-ove",
+      "number": "10",
+      "title": "Alexander polynomials and representations over non–commutative rings",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "rings",
+          "heading": true
+        },
+        {
+          "term": "flm",
+          "heading": false
+        },
+        {
+          "term": "invariants corresponding",
+          "heading": false
+        },
+        {
+          "term": "cochran",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{section:ho} In the previous sections we only considered finite dimensional representations over commutative rings. One possible approach to studying invariants corresponding to infinite dimensional representations is to use the theory of $L^2$--invariants. We refer to \\cite{Lu02} for the definition of various $L^2$--invariants and for some applications to low--dimensional topology. Even though",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-101-noncommutative-alexander-polynomials",
+      "number": "10.1",
+      "title": "Non–commutative Alexander polynomials",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi varphi",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "non--commutative alexander",
+          "heading": false
+        },
+        {
+          "term": "homomorphism varphi",
+          "heading": false
+        },
+        {
+          "term": "cite tu02b",
+          "heading": false
+        },
+        {
+          "term": "phi compatible",
+          "heading": false
+        },
+        {
+          "term": "lowerboundho",
+          "heading": false
+        },
+        {
+          "term": "let phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:phicompatible} Let $\\mathbb{K}$ be a (skew) field and $\\gamma:\\mathbb{K}\\to \\mathbb{K}$ a ring homomorphism. Denote by $\\mathbb{K}[t^{\\pm 1}]$ the corresponding skew Laurent polynomial ring over $\\mathbb{K}$. The elements in $\\mathbb{K}[t^{\\pm 1}]$ are formal sums $\\sum_{i=-r}^s a_it^i$ with $a_i\\in \\mathbb{K}$ and multiplication in $\\mathbb{K}[t^{\\pm 1}]$ is given by the rule $t^ia=\\gamma^i(a)t^i$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-102-higher-order-alexander-polynomials",
+      "number": "10.2",
+      "title": "Higher order Alexander polynomials",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion--free solvable",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "order alexander",
+          "heading": true
+        },
+        {
+          "term": "group gamma",
+          "heading": false
+        },
+        {
+          "term": "ore localization",
+          "heading": false
+        },
+        {
+          "term": "let gamma",
+          "heading": false
+        },
+        {
+          "term": "item mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "We now recall the construction of what are arguably the most interesting examples of $\\phi$--compatible homomorphisms from $\\pi_1(N)$ to a non--commutative Laurent polynomial ring. The ideas of this section are due to Cochran and Harvey. \\begin{theorem}\\label{thm:tfa} Let $\\gamma$ be a torsion--free solvable group and let $\\mathbb{F}$ be a commutative field. Then the following hold. \\begin{enumerate} \\item",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-103-comparing-different-compatible-maps",
+      "number": "10.3",
+      "title": "Comparing different –compatible maps",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi varphi",
+          "heading": false
+        },
+        {
+          "term": "circ varphi",
+          "heading": false
+        },
+        {
+          "term": "delta phi",
+          "heading": false
+        },
+        {
+          "term": "let varphi",
+          "heading": false
+        },
+        {
+          "term": "torsion--free solvable",
+          "heading": false
+        },
+        {
+          "term": "mathrel mathop",
+          "heading": false
+        },
+        {
+          "term": "thurston norm",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:comparison} \\noindent We now recall a definition from \\cite{Ha06}. \\begin{definition} Let $N$ be a 3--manifold with empty or toroidal boundary. We write $\\pi=\\pi_1(N)$. Let $\\phi:\\pi\\to \\mathbb{Z}$ an epimorphism. Furthermore let $\\varphi_1:\\pi \\to \\gamma_1$ and $\\varphi_2:\\pi \\to \\gamma_2$ be epimorphisms to torsion--free solvable groups $\\gamma_1$ and $\\gamma_2$. We call $(\\varphi_1,\\varphi_2,\\phi)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-104-miscellaneous-applications-of-higher-order-a",
+      "number": "10.4",
+      "title": "Miscellaneous applications of higher order Alexander polynomials",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "order alexander",
+          "heading": true
+        },
+        {
+          "term": "higher order",
+          "heading": true
+        },
+        {
+          "term": "item leidy",
+          "heading": false
+        },
+        {
+          "term": "alexander invariants",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we quickly summarize various applications of higher order Alexander polynomials and related invariants to various aspects of low--dimensional topology: \\begin{enumerate} \\item Leidy \\cite{Lei06} studied the relationship between higher order Alexander modules and non--commutative Blanchfield pairings. \\item Leidy and Maxim (\\cite{LM06} and \\cite{LM08}) studied higher order Alexander polynomials of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-11-open-questions-and-problems",
+      "number": "11",
+      "title": "Open questions and problems",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "delta gamma",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        },
+        {
+          "term": "representation gamma",
+          "heading": false
+        },
+        {
+          "term": "delta rho",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:question} We conclude this survey paper with a list of open questions and problems. \\begin{enumerate} \\item Using elementary ideals one can define the twisted $k$--th Alexander polynomial, generalizing the $k$--th Alexander polynomial of a knot $K\\subset S^3$. What information do these invariants contain? \\item Let $K\\subset S^3$ a knot and let $\\gamma:\\pi_1(S^3\\setminus \\nu K)\\to \\mbox{SL}(k,R)$ be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stefan friedl",
+          "heading": false
+        },
+        {
+          "term": "stefano vidussi",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "alexander invariants",
+          "heading": false
+        },
+        {
+          "term": "higher-order alexander",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "ﬁbered knots",
+          "heading": false
+        }
+      ],
+      "extract": "[Ag08] I. Agol, Criteria for virtual ﬁbering, Journal of Topology 1: 269-284 (2008) [Al28] J.W. Alexander, Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928), no. 2, 275–306 [Bl57] R. Blanchﬁeld, Intersection theory of manifolds with operators with applications to knot theory, Ann. of Math. (2) 65: 340–356 (1957) [BF08] H. Boden and S. Friedl, Metabelian SL(n, C) representations of knot",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "twisted alexander",
+      "heading": true
+    },
+    {
+      "term": "alexander polynomials",
+      "heading": true
+    },
+    {
+      "term": "mbox torsion",
+      "heading": false
+    },
+    {
+      "term": "delta gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma otimes",
+      "heading": false
+    },
+    {
+      "term": "alexander norm",
+      "heading": true
+    },
+    {
+      "term": "alexander module",
+      "heading": false
+    },
+    {
+      "term": "twisted reidemeister",
+      "heading": true
+    },
+    {
+      "term": "order alexander",
+      "heading": true
+    },
+    {
+      "term": "non--commutative alexander",
+      "heading": false
+    },
+    {
+      "term": "alexander invariants",
+      "heading": true
+    },
+    {
+      "term": "gamma phi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 47,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 48,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 48 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0905.0591v3"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/integration-watch.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/integration-watch",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "integration-watch",
+      "title": "/integration-watch — dispatcher for the 5 integration watchers",
+      "description": "Dispatcher for the `/integration-watch` slash command. Routes to one or more of the six concrete integration watchers / audits (proof-integration-watcher, canonical-watcher, compute-integration-watcher, detangler-integration-watcher, one-voice-integration-watcher, proposition-consolidation-audit). With no argument, lists the available watchers and asks the user which to invoke. With arguments, dispatches the named watchers in parallel (each gets its own Monitor, queue, ledger, and PR-subscription set).",
+      "instructionsPath": "skills/local/integration-watch.md",
+      "instructionLines": 226,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

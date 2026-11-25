@@ -1,0 +1,1241 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ki52",
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki Introduction",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Calculation of the Kashaev invariant of the 52 knot",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-calculation-of-the-kashaev-invariant-of-the-52"
+    },
+    {
+      "level": 2,
+      "title": "The Kashaev invariant of the 52 knot",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-the-kashaev-invariant-of-the-52-knot"
+    },
+    {
+      "level": 2,
+      "title": "Calculation of ⟨52 ⟩N toward its asymptotic expansion",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-calculation-of-52-n-toward-its-asymptotic-exp"
+    },
+    {
+      "level": 1,
+      "title": "Calculation by the saddle point method",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-calculation-by-the-saddle-point-method"
+    },
+    {
+      "level": 1,
+      "title": "Calculation by the Poisson summation formula",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-calculation-by-the-poisson-summation-formula"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.1",
+      "number": "5",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-proof-of-theorem-11"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1",
+      "number": "5.1",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-proof-of-theorem-11"
+    },
+    {
+      "level": 2,
+      "title": "Calculation of the asymptotic expansion",
+      "number": "5.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-52-calculation-of-the-asymptotic-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the saddle point method",
+      "number": "5.3",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-53-verifying-the-assumption-of-the-saddle-point"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "number": "5.4",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-54-verifying-the-assumption-of-the-poisson-summa"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Lemma 2.1",
+      "number": "D",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-d-proof-of-lemma-21"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 49,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "tomotada",
+          "heading": false
+        }
+      ],
+      "extract": "On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki Abstract We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern-Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asymptotics",
+      "extractCut": true,
+      "blocks": [
+        "library/ki52/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction In [16, 17] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · · by using the quantum dilogarithm. In [18] he conjectured that, for any hyperbolic link L, 2π · lim N→∞ log ⟨L ⟩N N = vol(S3 −L), where “vol” denotes the hyperbolic volume, and gave evidence for the conjecture for the ﬁgure-eight knot, the 52 knot and the 61 knot, by formal calculations. In 1999, H. Murakami and J.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-calculation-of-the-kashaev-invariant-of-the-52",
+      "number": "2",
+      "title": "Calculation of the Kashaev invariant of the 52 knot",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 42,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we review the definition of the Kashaev invariant and the calculation of the Kashaev invariant (52), of the 52 knot in Section 2.1. Further, we continue to calculate the value of (52), toward its asymptotic expansion in Section 2.2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-kashaev-invariant-of-the-52-knot",
+      "number": "2.1",
+      "title": "The Kashaev invariant of the 52 knot",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "ppr",
+          "heading": false
+        },
+        {
+          "term": "ror",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the definition of the Kashaev invariant of oriented knots, and review the calculation of the Kashaev invariant (52), of the 5) knot, which are due to Yokota [43]. The aim of this section is to show (7) which gives the value of (52),,. Let N be an integer > 2. We put q = exp(2a/—1/N), and put (a), = (l—2)(1—2?)---(1— 2\") for n > 0. It is known [24] that, for any n,m with n < m,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-calculation-of-52-n-toward-its-asymptotic-exp",
+      "number": "2.2",
+      "title": "Calculation of ⟨52 ⟩N toward its asymptotic expansion",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic expansion",
+          "heading": true
+        },
+        {
+          "term": "toward",
+          "heading": true
+        },
+        {
+          "term": "enςn",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "summation formula",
+          "heading": false
+        },
+        {
+          "term": "calculation",
+          "heading": true
+        }
+      ],
+      "extract": "Calculation of ⟨52 ⟩N toward its asymptotic expansion In this section, we continue to calculate the value of the Kashaev invariant ⟨52 ⟩N of the 52 knot toward its asymptotic expansion. To calculate the asymptotic expansion of ⟨52 ⟩N, we review an integral expression of (q)n. It is known [8, 40] that (q)n = exp ( φ ( 1 2N ) −φ (2n + 1 2N )) , (q)n = exp ( φ ( 1 −2n + 1 2N ) −φ ( 1 −1 2N )) . (8) Here, following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-calculation-by-the-saddle-point-method",
+      "number": "3",
+      "title": "Calculation by the saddle point method",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x2d nx2dx",
+          "heading": false
+        },
+        {
+          "term": "xke nx2dx",
+          "heading": false
+        },
+        {
+          "term": "zta zdz",
+          "heading": false
+        },
+        {
+          "term": "r2d x2d",
+          "heading": false
+        },
+        {
+          "term": "uim exp",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "b3z b4z",
+          "heading": false
+        },
+        {
+          "term": "point method",
+          "heading": true
+        }
+      ],
+      "extract": "Calculation by the saddle point method In this section, we calculate Gaussian integrals by the saddle point method. We calculate a Gaussian integral in Proposition 3.1, a Gaussian integral with perturbative terms in Proposition 3.2, and multi-variable cases in Propositions 3.4 and 3.5. We use Proposition 3.5 in the proof of Theorem 1.1 in Section 5. For the saddle point method, see e.g. [39]. 10 Proposition 3.1. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-calculation-by-the-poisson-summation-formula",
+      "number": "4",
+      "title": "Calculation by the Poisson summation formula",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "π2n",
+          "heading": false
+        },
+        {
+          "term": "required formula",
+          "heading": false
+        },
+        {
+          "term": "generalize proposition",
+          "heading": false
+        },
+        {
+          "term": "nct",
+          "heading": false
+        },
+        {
+          "term": "holomorphic function",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        }
+      ],
+      "extract": "Calculation by the Poisson summation formula In this section, we calculate the sums corresponding to the integrals of the propositions in the previous section by the Poisson summation formula. Corresponding to Propositions 3.1, 3.2, 3.4 and 3.5 in the previous section, we show Propositions 4.1, 4.2, 4.5 and 4.6 in this section. We use Proposition 4.6 in the proof of Theorem 1.1 in Section 5. We remark that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-proof-of-theorem-11",
+      "number": "5",
+      "title": "Proof of Theorem 1.1",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 971,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "enς",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "above critical",
+          "heading": false
+        },
+        {
+          "term": "vts",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.1 In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of the theorem by using lemmas proved in Sections 5.2, 5.3 and 5.4. In Section 5.2, we show lemmas which calculate the asymptotic expansion. In Section 5.3, we show a lemma which veriﬁes the assumption of the saddle point method. In Section 5.4, we show a lemma which veriﬁes the assumption of the Poisson summation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-52-calculation-of-the-asymptotic-expansion",
+      "number": "5.2",
+      "title": "Calculation of the asymptotic expansion",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vttvss",
+          "heading": false
+        },
+        {
+          "term": "put e2π",
+          "heading": false
+        },
+        {
+          "term": "vts",
+          "heading": false
+        },
+        {
+          "term": "c3ℏ",
+          "heading": false
+        },
+        {
+          "term": "expansion",
+          "heading": true
+        },
+        {
+          "term": "vss",
+          "heading": false
+        },
+        {
+          "term": "vtt",
+          "heading": false
+        },
+        {
+          "term": "x0y",
+          "heading": false
+        }
+      ],
+      "extract": "Calculation of the asymptotic expansion In this section, we show some lemmas used in the proof of Theorem 1.1. Let (t0, s0) and (tc, sc) be the critical points of ˆV (t, s) and V (t, s) given in the previous section. We put x0 = e2π√−1 ·t0, y0 = e2π√−1 ·s0 and xc = e2π√−1 ·tc, yc = e2π√−1 ·sc. In order to show Lemma 5.2 below, we calculate (xc, yc) in terms of (x0, y0), as follows. We show a proof of the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-53-verifying-the-assumption-of-the-saddle-point",
+      "number": "5.3",
+      "title": "Verifying the assumption of the saddle point method",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "point method",
+          "heading": true
+        },
+        {
+          "term": "put e2π",
+          "heading": false
+        },
+        {
+          "term": "put arg",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "verifying",
+          "heading": true
+        },
+        {
+          "term": "diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "yokota",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the saddle point method In this section, in Lemma 5.7, we verify the assumption of the saddle point method (Proposition 3.5, see also Remark 3.6 and Appendix B) when we apply Proposition 3.5 and Remark 3.6 to (46). The arguments of this section are due to Yokota [44]. Let V (t, s) and ˆV (t, s) be as in Section 2.2. As shown in Appendix B, V (t, s) uniformly converges to ˆV (t, s) on ∆′",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-54-verifying-the-assumption-of-the-poisson-summa",
+      "number": "5.4",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3053,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "sinh x2d",
+          "heading": false
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "x0y",
+          "heading": false
+        },
+        {
+          "term": "c2k",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the Poisson summation formula In this section, in Lemma 5.8, we verify the assumption of the Poisson summation formula (Proposition 4.6, see also Remark 4.8 and Appendix B) when we apply Proposition 4.6 and Remark 4.8 to (14). As in the previous section, we consider ˆV (t, s) instead of V (t, s) in this section. We calculate a critical point (tr, sr) ∈∆′ of Re ˆV (t, s), as follows.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-d-proof-of-lemma-21",
+      "number": "D",
+      "title": "Proof of Lemma 2.1",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "area",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Lemma 2.1 In this appendix, we give a proof of Lemma 2.1. Proof of Lemma 2.1. We put Λ(t) = Re ( 1 2π√−1 Li2(e2π√−1 t) ) for t ∈R. We note that this function has period 1, and Λ(−t) = −Λ(t). Since Λ′(t) = −log ( 2 sin πt ) for 0 < t < 1, the behavior of Λ(t) is as follows. t 0 · · · 1 6 · · · 1 2 · · · 5 6 · · · 1 Λ(t) 0 → Λ( 1 6) → 0 → −Λ(1 6) → 0 Here, Λ( 1 6) = 0.161533... . See Figure 6 for the graph of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1081,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tokyo metropolitan",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariants",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "seifert manifolds",
+          "heading": false
+        },
+        {
+          "term": "metropolitan university",
+          "heading": false
+        },
+        {
+          "term": "author aﬃliation",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the ﬁgure 8 knot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548. [2] Dimofte T.D., Garoufalidis, S., The quantum content of the gluing equations, Geom. Topol. 17 (2013) 1253–1315. [3] Dimofte, T., Gukov, S., Lenells, J., Zagier, D., Exact results for perturbative Chern-Simons theory with complex gauge group, Commun. Number",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "put e2π",
+      "heading": false
+    },
+    {
+      "term": "putting e2π",
+      "heading": false
+    },
+    {
+      "term": "put exp",
+      "heading": false
+    },
+    {
+      "term": "poisson summation",
+      "heading": true
+    },
+    {
+      "term": "saddle point",
+      "heading": true
+    },
+    {
+      "term": "put arg",
+      "heading": false
+    },
+    {
+      "term": "asymptotic expansion",
+      "heading": true
+    },
+    {
+      "term": "summation formula",
+      "heading": true
+    },
+    {
+      "term": "kashaev invariant",
+      "heading": true
+    },
+    {
+      "term": "kashaev conjecture",
+      "heading": false
+    },
+    {
+      "term": "critical point",
+      "heading": false
+    },
+    {
+      "term": "point method",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The domain",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The domain {z ∈C | Re az2 < 0} is shaded",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The domain {z ∈C | Re ψ(z) < 0} is shaded",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The domain {z ∈C | Re az2 < 0} is shaded",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The domain {z ∈C | Re ψ(z) < 0} is shaded",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The graph of Λ(t) for 0 ≤t ≤1",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p49); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ki52"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9310070v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9310070v1  13 Oct 1993\nSeptember, 1993\nQuantum Dilogarithm\nL.D. Faddeev1,2,†, R.M. Kashaev1,∗,†\n1Research Institute for Theoretical Physics,\nP.O.Box 9 (Siltavuorenpenger 20C), SF-00014 University of Helsinki, Finland\n2St. Petersburg Branch of the Steklov Mathematical Institute,\nFontanka 27, St. Petersburg 191011, Russia\nAbstract\nA quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity\nis suggested. It is shown that the classical limit gives usual Rogers’ identity. The case\nwhere the quantum identity is realized in ﬁnite dimensional space is also considered",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "1. Introduction\nRecently, the dilogarithm function appeared in the study of the two dimensional quantum\nconformal ﬁeld theory (CFT)[1] and solvable lattice models both in two [2] and three\ndimensions [3]. Particularly, the eﬀective central charges of some rational CFT can be\nexpressed as ﬁnite sums of Rogers’ dilogarithm function with the arguments being solutions\nfor certain algebraic relations (e. g. thermodynamical Bethe anzats relations).\nPeople use the dilogarithm function in two forms, L2(x) and L(x), introduced by\nEuler and Rogers, respectively. Euler’s dilogarithm for any complex x can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Motivated by relation (1.5) we address the following problem: What is the proper general-\nization of Rogers’ “pentagon” identity (1.3) in terms of Ψ(x)? The purpose of this paper\nis to answer this question.\nIn Section 2 a quantized “pentagon” identity is suggested and it is shown that in the\nclassical limit it is reduced to (1.3). In Section 3 the case where θ is a root of unity is\nconsidered. The quantum dilogarithm for such a θ is a function on Fermat curve, while\nthe classical limit of the “pentagon” identity again gives (1.3). In the summary the main\nformulae are enumerated with a little d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "while the corresponding decompositions of the unity are\n1 =\nZ +∞\n−∞\n|q⟩dq⟨q| =\nZ +∞\n−∞\n|p⟩dp\n2π¯h⟨p|.\n(2.9)\nThe “q-p” symbol of any operator ˆA, acting in H, is deﬁned as follows:\n( ˆA)(q, p) = ⟨q| ˆA|p⟩\n⟨q|p⟩.\n(2.10)\nThe symbol of the product of two operators ˆA and ˆB is given by\n( ˆA ˆB)(q, p) =\nZ +∞\n−∞\nZ +∞\n−∞\ndq′dp′\n2π¯h exp(i(q −q′)(p′ −p)/¯h)( ˆA)(q, p′)( ˆB)(q′, p).\n(2.11)\nThe symbols of the operators Ψ( ˆU), Ψ( ˆV ), and Ψ(−ˆU ˆV ), with ˆU and ˆV given by (2.6),\nhave the form\n(Ψ( ˆU))(q, p) = Ψ(xq),\n(Ψ( ˆV ))(q, p) = Ψ(yp),\n(2.12a)\n(Ψ(−ˆU ˆV ))(q, p) = 1/Ψ(xqyp),\n(2.12b)\nwhere\nxq = x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "3. Quantum Dilogarithm at θN = 1\nWhen |θ| = 1, deﬁnition (1.4) of the quantum dilogarithm needs qualiﬁcation because the\ninﬁnite product is not convergent. In this section we restrict ourselves to a particular case,\nθN = 1, for some integer, N ≥2, and properly modify the formulae of Section 2.\nLet θ = ω, where ω is a primitive N-th root of unity. We choose ω together with its\nsquare root ω1/2 as\nω = exp(2πi/N),\nω1/2 = exp(πi/N).\n(3.1)\nIn this case, operators, satisfying algebra (2.1), can be realized as N-by-N matrices, since\ntheir N-th powers are the central elements. Let us ﬁx them equal to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "which completely determines operator Ψ( ˆA) up to a complex factor. Now, we formulate\nour statement.\nTheorem. The following “quantum pentagon” identity holds:\nΨ( ˆV )Ψ′( ˆU) = Ψ′′( ˆU)Ψ′′′(−ˆU ˆV )Ψ′′′′( ˆV ),\n(3.9)\nwhere Ψ# (# symbolizes any number of dashes from zero to four) are deﬁned by (3.8) with\na#, b#, c# satisfying (3.4), and\nyy′′ = y′y′′′′,\ny′ = y′′y′′′,\nx′′′ = xx′,\nx′′ = x′y′′′′,\nx′′′′ = xy′′,\n(3.10a)\nfor\nx# = ω1/2a#/b#,\ny# = c#/b#.\n(3.10b)\nTo prove the theorem, note that the combination\nΨ′′( ˆU)−1Ψ( ˆV )Ψ′( ˆU)Ψ′′′′( ˆV )−1\n(3.11)\ncommutes with operator −ˆU ˆV , provided relations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/thm-page-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-01.md",
+      "narrative": null,
+      "content": "The following “quantum pentagon” identity holds: Ψ( ˆV )Ψ′( ˆU) = Ψ′′( ˆU)Ψ′′′(−ˆU ˆV )Ψ′′′′( ˆV ), (3.9) where Ψ# (# symbolizes any number of dashes from zero to four) are deﬁned by (3.8) with a#, b#, c# satisfying (3.4), and yy′′ = y′y′′′′, y′ = y′′y′′′, x′′′ = xx′, x′′ = x′y′′′′, x′′′′ = xy′′, (3.10a) for x# = ω1/2a#/b#, y# = c#/b#. (3.10b) To prove the theorem, note that the combination Ψ′′( ˆU)−1Ψ( ˆV )Ψ′( ˆU)Ψ′′′′( ˆV )−1 (3.11) commutes with operator −ˆU ˆV , provided relations (3.10) hold. Therefore (3.11) is some function of −ˆU ˆV . It is a simple task to show that this function sati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "To deﬁne the “symbol” of a ﬁnite dimensional operator, in analogy with Section 2, con-\nsider two basis sets {|n⟩} and {|m⟩}, n, m ∈ZN, which diagonalize operators ˆU and ˆV ,\nrespectively:\n⟨n| ˆU|n′⟩= ωn−1/2δn,n′,\n⟨n| ˆV |n′⟩= ω−1/2δn,n′+1,\n(3.15a)\n⟨m| ˆV |m′⟩= ωm−1/2δm,m′,\n⟨m| ˆU|m′⟩= ω−1/2δm,m′−1.\n(3.15b)\nThe scalar products are given by\n⟨n|n′⟩= δn,n′,\n⟨n|m⟩= ω−nm,\n⟨m|m′⟩= Nδm,m′,\n(3.16)\nwhile the decompositions of the unit operator are\n1 =\nX\nn∈ZN\n|n⟩⟨n| = 1\nN\nX\nm∈ZN\n|m⟩⟨m|.\n(3.17)\nThe “U-V” symbol of an operator, ˆA, is deﬁned as a mixed matrix element\n( ˆA)n,m = ⟨n| ˆA|m⟩\n⟨n|m⟩,\n(3.18)\nthe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "Summary\nIn this paper we have shown that the quantum identity (2.4) for the function (1.4) with\noperator arguments satisfying (2.1) in the classical limit is reduced to Rogers’ dilogarithm\nidentity (1.3). We used the “q-p” symbols (2.10), (2.12) of the operators ˆU, ˆV , and −ˆU ˆV\nto convert (2.4) into the integral identity (2.16), as well as asymptotics (1.5), and the\nstationary phase method to evaluate the integrals.\nIn Section 3 we proved another, ﬁnite dimensional counterpart of the quantized Rogers’\nidentity (3.9). The deformation parameter in this case is a root of unity θN = 1 for some",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310070v1/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "A.Yu. Volkov, Phys. Lett. A167 (1992) 345\n[6] L. Faddeev and A.Yu. Volkov,“Abelian Current Algebra and the Virasoro Algebra on\nthe Lattice”, Preprint HU-TFT-93-29\n[7] Berezin, F.A., “The Method of Second Quantization” (in Russian), Nauka, Moscow,\n1965; English transl., Academic Press, New York, 1966.\n[8] V.V. Bazhanov, R.J. Baxter, J. Stat. Phys. 71 (1993) 839\n8",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

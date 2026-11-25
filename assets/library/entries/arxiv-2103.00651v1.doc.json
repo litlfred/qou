@@ -1,0 +1,447 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2103.00651v1",
+  "title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries and Main Result",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries-and-main-result"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1 and Additional Results",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof-of-theorem-1-and-additional-results"
+    },
+    {
+      "level": 1,
+      "title": "Example",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-example"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coordinated science",
+          "heading": false
+        },
+        {
+          "term": "ise department",
+          "heading": false
+        },
+        {
+          "term": "ece department",
+          "heading": false
+        },
+        {
+          "term": "illinois",
+          "heading": false
+        },
+        {
+          "term": "vector-valued lipschitz",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2103.00651v1 [math.PR] 28 Feb 2021 On Concentration Inequalities for Vector-Valued Lipschitz Functions Dimitrios Katselis katselis@illinois.edu ECE Department, University of Illinois at Urbana-Champaign, USA Xiaotian Xie xx5@illinois.edu ISE Department and Coordinated Science Lab, University of Illinois at Urbana-Champaign, USA Carolyn L. Beck beck3@illinois.edu ISE Department and Coordinated Science Lab,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2103.00651v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real-valued lipschitz",
+          "heading": false
+        },
+        {
+          "term": "transportation cost",
+          "heading": false
+        },
+        {
+          "term": "lipschitz functions",
+          "heading": false
+        },
+        {
+          "term": "mathbb rightarrow",
+          "heading": false
+        },
+        {
+          "term": "götze",
+          "heading": false
+        },
+        {
+          "term": "theta otimes",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": false
+        },
+        {
+          "term": "bobkov",
+          "heading": false
+        }
+      ],
+      "extract": "In many statistical settings, vector-valued estimators naturally arise and determining their statistical rates is essential. As an example, assume that $X=(X_1,\\ldots, X_n)$ corresponds to a random sample drawn from a product measure $\\nu_{\\theta}^{\\otimes n}$, denoted by $X\\sim \\nu_{\\theta}^{\\otimes n}$, where $\\theta$ is a parameter vector taking values in a compact set $\\Theta \\subset \\mathbb{R}^k$ with a fixed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries-and-main-result",
+      "number": "2",
+      "title": "Preliminaries and Main Result",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mainthm",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        },
+        {
+          "term": "geq epsilon",
+          "heading": false
+        },
+        {
+          "term": "frac epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(\\mathbb{X},d_{\\mathbb{X}})$ be a Polish space and $\\rho$ be a (Borel) probability measure on $(\\mathbb{X},d_{\\mathbb{X}})$. The triplet $(\\mathbb{X},d_{\\mathbb{X}},\\rho)$ defines a metric probability space in the sense of Gromov [@rs13], [@g07]. Given two metric spaces $(\\mathbb{X}, d_{\\mathbb{X}})$ and $(\\mathbb{Y}, d_{\\mathbb{Y}})$, let $f:\\mathbb{X}\\rightarrow \\mathbb{Y}$ be a Lipschitz mapping with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
+      "number": "3",
+      "title": "Proof of Theorem 1 and Additional Results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lip lipschitz",
+          "heading": false
+        },
+        {
+          "term": "mainthm proof",
+          "heading": false
+        },
+        {
+          "term": "lip right",
+          "heading": false
+        },
+        {
+          "term": "lambda epsilon",
+          "heading": false
+        },
+        {
+          "term": "geq epsilon",
+          "heading": false
+        },
+        {
+          "term": "lambda langle",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ProofMain label=\"sec:ProofMain\"} **Proof of the first bound in ([\\[eq:MainThm_1\\]](#eq:MainThm_1){reference-type=\"ref\" reference=\"eq:MainThm_1\"})**: The proof of the first bound relies on covering arguments; see [@v18; @w19; @lc20] and references therein for results based on such arguments. For some $\\varepsilon$ in the interval $(0,1]$, let $\\mathcal{N}(\\varepsilon)$ be an $\\varepsilon$-net of the unit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-example",
+      "number": "4",
+      "title": "Example",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sample complexity",
+          "heading": false
+        },
+        {
+          "term": "complexity markov",
+          "heading": false
+        },
+        {
+          "term": "frac varrho",
+          "heading": false
+        },
+        {
+          "term": "left varrho",
+          "heading": false
+        },
+        {
+          "term": "markov geq",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "geq epsilon",
+          "heading": false
+        },
+        {
+          "term": "forall epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a sample $X_{0:n-1}=\\{X_0,X_1,\\ldots, X_{n-1}\\}$ of size $n$ drawn from an ergodic, discrete-time, finite-state Markov chain $(X_k)_{k\\geq 0}$ with state space $\\mathbb{E}=[K]=\\{1,2,\\ldots, K\\}$, transition matrix $\\mathrm{P}=[\\mathrm{P}_{ij}]$ and $X_0\\sim \\varrho$, where $\\varrho$ denotes the initial measure of the chain. We denote such a Markov chain by $(\\mathrm{P},\\varrho)$ and the corresponding",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lip lipschitz",
+      "heading": false
+    },
+    {
+      "term": "mainthm proof",
+      "heading": false
+    },
+    {
+      "term": "geq epsilon",
+      "heading": false
+    },
+    {
+      "term": "forall epsilon",
+      "heading": false
+    },
+    {
+      "term": "bobkov gotze",
+      "heading": false
+    },
+    {
+      "term": "frac epsilon",
+      "heading": false
+    },
+    {
+      "term": "vector-valued lipschitz",
+      "heading": false
+    },
+    {
+      "term": "lip right",
+      "heading": false
+    },
+    {
+      "term": "epsilon left",
+      "heading": false
+    },
+    {
+      "term": "forall varepsilon",
+      "heading": false
+    },
+    {
+      "term": "epsilon sigma",
+      "heading": false
+    },
+    {
+      "term": "markov geq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2103.00651v1"
+  }
+}

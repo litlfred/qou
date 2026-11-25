@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/kwiat-2024-jhepgc-elementary-fermions",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+      "dcterms:creator": [
+        "Elementary Fermions: Strings, Planck Constant"
+      ],
+      "dcterms:issued": "D:20240111",
+      "bibo:doi": "10.4236/jhepgc.2024.101008",
+      "dcterms:identifier": "https://doi.org/10.4236/jhepgc.2024.101008",
+      "dcterms:abstract": "Using real fields instead of complex ones, it is suggested here that the fer- mions are pairs of coupled strings with an internal tension. The interaction between the two coupled strings is due to an exchange mechanism which is proportional to Planck’s constant. This may be the result of two massless bo- sons (hypergluons) coupled by a preon (prequark) exchange. It also gives a physical explanation to the origin of the Planck constant, and origin of spin.",
+      "dcterms:source": "library/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+      "dcterms:hasVersion": "library/kwiat-2024-jhepgc-elementary-fermions"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s-p01/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix: An integral formula for the Asai L-function",
+  "pageStart": 34,
+  "pageEnd": 41,
+  "contains": [
+    "library/ant-v14-n7-s-p01/blocks/prose-sec-007",
+    "library/ant-v14-n7-s-p01/blocks/prop-sec-007-01",
+    "library/ant-v14-n7-s-p01/blocks/prop-sec-007-02",
+    "library/ant-v14-n7-s-p01/blocks/prop-sec-007-03",
+    "library/ant-v14-n7-s-p01/blocks/lem-sec-007-04",
+    "library/ant-v14-n7-s-p01/blocks/cor-sec-007-05",
+    "library/ant-v14-n7-s-p01/blocks/cor-sec-007-06",
+    "library/ant-v14-n7-s-p01/blocks/thm-sec-007-07",
+    "library/ant-v14-n7-s-p01/blocks/cor-sec-007-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
+  "provenance": "ingested"
+}

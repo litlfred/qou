@@ -1,0 +1,274 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2302.04022v1",
+  "title": "arxiv-2302.04022v1",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Cay(Sn,C(n,I)) with I{n-1,n}=",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Cay(Sn,C(n,I)) with I{n-1,n}={n-1}",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Cay(Sn,C(n,I)) with I{n-1,n}={n}",
+      "number": "5",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Cay(Sn,C(n,I)) with {n-1,n}I",
+      "number": "6",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "aldous spectral",
+          "heading": false
+        },
+        {
+          "term": "cayley graph",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "cap emptyset",
+          "heading": false
+        },
+        {
+          "term": "graph gamma",
+          "heading": false
+        },
+        {
+          "term": "normal cayley",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Introduction label=\"sec:Introduction\"} In this paper all graphs are finite, undirected and simple, and all groups are finite. Let $\\Gamma=(V(\\Gamma),E(\\Gamma))$ be a graph with vertex set $V(\\Gamma)$ and edge set $E(\\Gamma)$. Then all eigenvalues of the adjacency matrix $A(\\Gamma)$ of $\\Gamma$ are real, and they are referred to as the *eigenvalues* of $\\Gamma$. We always arrange these eigenvalues in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-k nonumber",
+          "heading": false
+        },
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "frac n-k",
+          "heading": false
+        },
+        {
+          "term": "zeta vdash",
+          "heading": false
+        },
+        {
+          "term": "chi zeta",
+          "heading": false
+        },
+        {
+          "term": "n-k right",
+          "heading": false
+        },
+        {
+          "term": "n-k sum",
+          "heading": false
+        },
+        {
+          "term": "nonumber binom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:preliminaries label=\"sec:preliminaries\"} All definitions in this section can be found in [@Sagan]. In what follows we use $$\\widehat{G}=\\{\\rho_1,\\rho_2,\\ldots,\\rho_k\\}$$ to denote a complete set of inequivalent (complex) irreducible matrix representations of a group $G$, with the convention that $\\rho_1$ is the trivial representation. For any $\\rho_i \\in \\widehat{G}$, the map $$\\chi_i: g \\mapsto",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm cay",
+      "heading": false
+    },
+    {
+      "term": "largest eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "n-k binom",
+      "heading": false
+    },
+    {
+      "term": "n-k nonumber",
+      "heading": false
+    },
+    {
+      "term": "frac n-k",
+      "heading": false
+    },
+    {
+      "term": "leq mathrm",
+      "heading": false
+    },
+    {
+      "term": "leq lambda",
+      "heading": false
+    },
+    {
+      "term": "odd eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "normal eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "n-k right",
+      "heading": false
+    },
+    {
+      "term": "aldous property",
+      "heading": false
+    },
+    {
+      "term": "aldous label",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2302.04022v1"
+  }
+}

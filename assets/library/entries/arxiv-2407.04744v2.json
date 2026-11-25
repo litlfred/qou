@@ -1,0 +1,551 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2407.04744v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic structure of A 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-magnetic-structure-of-a-10-nuclei-using-the-norf.md",
+      "narrative": null,
+      "content": "Monte Carlo methods\nG.\nChambers-Wall1,∗A.\nGnech2,3,† G. B.\nKing1,‡ S.\nPastore1,4,§ M. Piarulli1,4,¶ R. Schiavilla2,3,∗∗and R. B. Wiringa5††\n1Department of Physics, Washington University in Saint Louis, Saint Louis, MO 63130, USA\n2Department of Physics, Old Dominion University, Norfolk, VA 23529\n3Theory Center, Jefferson Lab, Newport News, VA 23610\n4McDonnell Center for the Space Sciences at Washington University in St. Louis, MO 63130, USA\n5Physics Division, Argonne National Laboratory, Argonne, IL 60439\nWe present Quantum Monte Carlo calculations of magnetic moments, form factors, and densiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nIn this work, we present quantum Monte Carlo (QMC) calculations, including both variational Monte Carlo (VMC) and Green's Function Monte Carlo (GFMC) methods, to study magnetic moments and form factors of $A\\le 10$ nuclei. We use the precise experimental measurements of these electromagnetic observables to validate our microscopic modeling; namely, we verify the accuracy of the approach in which we treat the nucleus as a system of correlated nucleons interacting amongst themselves via two- and three-nucleon forces. Additionally, we include the coupling to exte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theory",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:theory label=\"sec:theory\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Monte Carlo methods",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-quantum-monte-carlo-methods.md",
+      "narrative": null,
+      "content": "[]{#sec:qmc label=\"sec:qmc\"}\n\nQuantum Monte Carlo (QMC) approaches [@Carlson:2014vla] are a suite of computational methods used to stochastically solve the Schrödinger equation $$H \\Psi(J^\\pi;T,T_z)= E \\Psi(J^\\pi;T,T_z) \\ ,$$ where $\\Psi(J^\\pi;T,T_z)$ is a nuclear wave function with specific spin-parity $J^\\pi$, isospin $T$, and charge state $T_z$. The Hamiltonian has the form $$\\begin{aligned}\n\\label{eq:hamiltonian} H = \\sum_{i} K_i + {\\sum_{i<j}} v_{ij} + \\sum_{i<j<k}\nV_{ijk} \\ ,\n\\end{aligned}$$ where $K_i$ is the non-relativistic kinetic energy and $v_{ij}$ and $V_{ijk}$ are respectively tw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Norfolk interaction model",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-the-norfolk-interaction-model.md",
+      "narrative": null,
+      "content": "[]{#sec:nv23 label=\"sec:nv23\"}\n\nWe base our calculations on electromagnetic many-body currents [@Pastore:2008ui; @Pastore:2009is; @Schiavilla:2018udt; @Gnech:2022vwr] derived consistently with the Norfolk two- and three-body (NV2+3) nuclear interactions [@Piarulli:2014bda; @Piarulli:2016vel; @Piarulli:2017dwd; @Baroni:2018fdn; @Piarulli:2019cqu]. The Norfolk two-body potential (NV2) is a fully local interaction -- hence suitable to be utilized within QMC methods -- and includes terms up to N3LO in the $\\chi$EFT expansion. To this order, the NV2 consists of one- (OPE) and two-pion-exchange (TPE",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The electromagnetic current operator",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-the-electromagnetic-current-operator.md",
+      "narrative": null,
+      "content": "[]{#sec:current label=\"sec:current\"}\n\n<figure id=\"fig:currn3lo\">\n<div class=\"center\">\n<embed src=\"em_current3.pdf\" style=\"width:2.2in\" />\n</div>\n<figcaption>Diagrams illustrating the contributions to the electromagnetic current at N3LO adopted in this work. Nucleons, pions, and external fields are denoted by solid, dashed, and wavy lines, respectively. The solid circle in panel (f) is associated with a sub-leading <span class=\"math inline\"><em>γ</em><em>π</em><em>N</em></span> interaction. Figure from Ref. <span class=\"citation\" data-cites=\"Schiavilla:2018udt\"></span>. </figcaption>\n</figure>",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic form factors and moments",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-magnetic-form-factors-and-moments.md",
+      "narrative": null,
+      "content": "[]{#sec:multipole label=\"sec:multipole\"}\n\nThe magnetic form factors are extracted from elastic electron scattering differential cross section data (see Ref. [@Donnelly1984] for a review). For this work we use the definition given in Ref. [@Donnelly1984], *i.e.*, $$\\begin{aligned}\nF_M^2(q)= \\frac{1}{2 J+1} \\sum_{L=1}^{\\infty}\\left|\\left\\langle J ||M_L(q)|| J\\right\\rangle\\right|^2\\,,\\label{eq:fm}\n\\end{aligned}$$ where we express the magnetic form factor as a function of the reduced matrix elements (RMEs) of the magnetic multipole operators ($M_L$), and $J$ is the total angular momentum of the nu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results and Discussion",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-results-and-discussion.md",
+      "narrative": null,
+      "content": "[]{#sec:results label=\"sec:results\"}\n\nIn this section, we summarize our calculations. Specifically, we report the results for i) magnetic moments; ii) two-body magnetic densities; and iii) magnetic form factors of light nuclei.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic moments",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-magnetic-moments.md",
+      "narrative": null,
+      "content": "[]{#sec:mm label=\"sec:mm\"}\n\n::: table*\n::: center\n::: tabular\nl l \\*9d3.3 &Model & & & & & & & & &\\\n$^3{\\rm H}(\\frac{1}{2}^+;\\frac{1}{2})$ &Ia$^{\\star}$ &2.588 &0.196 &0.036 &0.042 &0.089 &-0.005 &0.027 &2.973 &0.385\\\n&IIa$^{\\star}$ &2.588 &0.197 &0.035 &0.038 &0.125 &-0.038 & 0.027 & 2.972 &0.384\\\n&Ib$^{\\star}$ &2.589 &0.224 &0.061 &0.042 &0.076 &-0.030 &0.021 &2.972 &0.394\\\n&IIb$^{\\star}$ &2.592 &0.226 &0.059 &0.033 &0.072 &-0.014 &0.020 &2.986 &0.394\\\n&Exp & & & & & & & &2.979 &\\\n$^3{\\rm He}(\\frac{1}{2}^+;\\frac{1}{2})$ &Ia$^{\\star}$ &-1.766 &-0.193 &-0.042 &0.030 &-0.117 &-0.002 &-0.027 &-2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VMC magnetic moments of A=3-7 nuclei",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-vmc-magnetic-moments-of-a3-7-nuclei.md",
+      "narrative": null,
+      "content": "The computation of the $^3$H and $^3$He magnetic moments represents a benchmark with the exact hyperspherical harmonics calculation of Ref. [@Gnech:2022vwr]. The VMC calculations are in excellent agreement with the previous results, and thus we do not summarize again the findings contained therein. The salient features of these systems are a strong two-body component of $\\sim13\\%~(16\\%)$ to the overall $^3{\\rm H}~(^3{\\rm He})$ magnetic moments, as well as a $\\lesssim 0.5\\%$ model dependence due to the inclusion of trinucleon magnetic moments in the fit to determine the unknown electromagnetic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VMC magnetic moments of A=8-10 nuclei",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-vmc-magnetic-moments-of-a8-10-nuclei.md",
+      "narrative": null,
+      "content": "The computation of the $^3$H and $^3$He magnetic moments represents a benchmark with the exact hyperspherical harmonics calculation of Ref. [@Gnech:2022vwr]. The VMC calculations are in excellent agreement with the previous results, and thus we do not summarize again the findings contained therein. The salient features of these systems are a strong two-body component of $\\sim13\\%~(16\\%)$ to the overall $^3{\\rm H}~(^3{\\rm He})$ magnetic moments, as well as a $\\lesssim 0.5\\%$ model dependence due to the inclusion of trinucleon magnetic moments in the fit to determine the unknown electromagnetic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "In Ref. [@King:2020wmp], a similar behavior was observed for axial transition densities in a study of Gamow-Teller $\\beta$-decay matrix elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GFMC magnetic moments of A=3-9 nuclei",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-gfmc-magnetic-moments-of-a3-9-nuclei.md",
+      "narrative": null,
+      "content": "We now turn our attention to the GFMC results summarized in Table [\\[tab:gfmc.mm.light\\]](#tab:gfmc.mm.light){reference-type=\"ref\" reference=\"tab:gfmc.mm.light\"}. Due to the relatively small model dependence found in the summed contributions, we perform GFMC propagation only for model Ia$^{\\star}$. Typically, we extracted the GFMC result for the magnetic moment by averaging ${\\sim}30$ mixed estimates after convergence is reached. However, for the $^8$B ($^8$Li) ground state we observe a behaviour consistent with the findings of Ref. [@King:2020wmp]. During the GFMC propagation, the point proto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scaled two-body magnetic densities",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-scaled-two-body-magnetic-densities.md",
+      "narrative": null,
+      "content": "<figure id=\"fig:dens.is\">\n<div class=\"center\">\n<embed src=\"mdens-is.pdf\" style=\"width:46.0%\" />\n</div>\n<figcaption>Scaled two-body VMC IS magnetic densities for different nuclei computed with model IIb<span class=\"math inline\"><sup>⋆</sup></span> as a function of interparticle spacing <span class=\"math inline\"><em>r</em><sub><em>i</em><em>j</em></sub></span>. Different colors represent different nuclei.</figcaption>\n</figure>\n\n::: figure*\n::: center\n![image](mdens-iv.pdf){width=\"90%\"}\n:::\n:::\n\nThe study of scaled two-body magnetic densities is relevant to identify universal behaviours in both",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Model dependencies in two-body magnetic densities",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-model-dependencies-in-two-body-magnetic-densitie.md",
+      "narrative": null,
+      "content": "<figure id=\"fig:dens.comp.iv\">\n<div class=\"center\">\n<embed src=\"mdens-comp.pdf\" style=\"width:45.0%\" />\n</div>\n<figcaption>Two-body VMC magnetic densities arising from the NLO (blue circles), N2LO-<span class=\"math inline\"><em>Δ</em></span> (orange squares), and the N3LO(NM) IV (green triangles) contributions for <span class=\"math inline\"><sup>3</sup></span>H computed with model Ia<span class=\"math inline\"><sup>⋆</sup></span> (filled symbols) and IIb<span class=\"math inline\"><sup>⋆</sup></span> (open symbols) as a function of interparticle spacing <span class=\"math inline\"><em>r</em><sub><em>i<",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetic form factors and high-momentum structure",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-magnetic-form-factors-and-high-momentum-structur.md",
+      "narrative": null,
+      "content": "[]{#sec:ff label=\"sec:ff\"}\n\n::: figure*\n![${}^3\\text{H}$](h3_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n![${}^3\\text{He}$](he3_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n![${}^6\\text{Li}$](li6_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n\\\n\n![${}^7\\text{Li}$](li7_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n![${}^7\\text{Be}$](be7_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n![${}^8\\text{Li}$](li8_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n\\\n\n![${}^8\\text{B}$](b8_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}\n\n![${}^9\\text{Li}$](li9_order_by_order_nviib.pdf){width=\"\\\\lin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tritium and Helium-3",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-tritium-and-helium-3.md",
+      "narrative": null,
+      "content": "The experimental magnetic form factors (shortened to f.f.'s, throughout the reminder of this section) of ${}^3\\text{H}$ and ${}^3\\text{He}$ [@Amroun:1994qj; @Sick2001] are well reproduced by the VMC calculation as can be seen in Figs. [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}a and [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}b. The contribution of the N3LO(NM) and N3LO(OPE) fitted terms are able to fill in the diffraction minimum appearing at $q\\simeq3$ fm$^{-1}$ in the magnetic f.f.'s of ${}^3\\text{He}$. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lithium-6",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-lithium-6.md",
+      "narrative": null,
+      "content": "The ${}^6\\text{Li}$ experimental magnetic form factor presents two peaks at $q\\simeq0.5$ and 2 fm$^{-1}$ [@Peterson1962; @Goldemberg1963; @Rand1966; @Lapikas1978; @Bergstrom1982]. Our calculations are able to reproduce the two peaks even if, for all the interactions considered, the zero tends to come a little too early, and the second peak contains too much strength. This is evidenced when comparing the theoretical error bands with the experimental data in Fig. [\\[fig:MFF_err\\]](#fig:MFF_err){reference-type=\"ref\" reference=\"fig:MFF_err\"}c. This is in line with the results of Ref. [@Wiringa:199",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lithium-7 and Beryllium-7",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-017-lithium-7-and-beryllium-7.md",
+      "narrative": null,
+      "content": "The ${}^7\\text{Li}$ and ${}^7\\text{Be}$ magnetic f.f.'s receive contributions from $M_1$ and $M_3$ multipoles, as can be seen in Figs. [\\[fig:MFF_multipole_IIb\\]](#fig:MFF_multipole_IIb){reference-type=\"ref\" reference=\"fig:MFF_multipole_IIb\"}a and [\\[fig:MFF_multipole_IIb\\]](#fig:MFF_multipole_IIb){reference-type=\"ref\" reference=\"fig:MFF_multipole_IIb\"}b. The $M_3$ contribution becomes dominant in the region $1.0\\leq q \\leq 2.5$ fm$^{-1}$ where it fills in the diffraction minimum appearing in $M_1$. This is consistent with the findings of Ref. [@Donnelly1984] and references there in, where ${}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lithium-8 and Boron-8",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-lithium-8-and-boron-8.md",
+      "narrative": null,
+      "content": "There are no experimental data for the magnetic f.f.'s of the $A=8$ systems; however, from our calculations, we observe again a large contribution from two-body currents (Figs. [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}, panels (f) and (g)). This is particularly striking in $^8$B, where two-body currents reduce the strength of the form factor for all $q$. It is also worth noting the difference in the structure imprinted on the calculations. $^8$B only has a single dominant peak at low $q$ generated by the $M_1$ multipole and a quenched $M_3$ contribu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boron-10",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-019-boron-10.md",
+      "narrative": null,
+      "content": "The experimental data for the ${}^{10}\\text{B}$ magnetic f.f. are provided for $0.5\\lesssim q \\lesssim 2.0$ fm$^{-1}$ region [@Goldemberg1963; @Goldemberg1965; @Rand1966; @Vanpraet1965; @Lapikas1978]. We did not include the data of Refs. [@Goldemberg1963; @Goldemberg1965] in the plots because of the strong disagreement with the more recent experimental results reported in Ref. [@Donnelly1984]. The VMC calculation has a very nice agreement with the data in the region of the main peak (see Fig. [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}l). Contribution",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-020-conclusions.md",
+      "narrative": null,
+      "content": "[]{#sec:conclusion label=\"sec:conclusion\"} In this work we presented QMC calculations of magnetic moments and magnetic form factors of nuclei for $A\\leq10$ based on chiral effective field theory. For the calculation we used the Norfolk two- and three- body interaction and consistent one- and two-body current operators.\n\nThe computation of magnetic moments in light nuclei displayed the important role of two-body contributions. Consistent with previous QMC studies [@Pastore:2012rp; @Martin:2023dhl], two-body currents can make up a significant fraction (${\\approx}$<!-- -->30% -- 40%) of the total",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-021-acknowledgments.md",
+      "narrative": null,
+      "content": "The\nauthors\nwould\nlike\nto\nthank\nJosh\nMartin,\nEmanuele Mereghetti, and Ingo Tews for useful dis-\ncussions at various stages in the preparation of this\nmanuscript.\nThis work is supported by the US Department of En-\nergy under Contracts No.\nDE-SC0021027 (G. C.-W.,\nG. B. K. and S. P.), DE-AC02-06CH11357 (R.B.W.), DE-\nAC05-06OR23177 (A.G. and R.S.), a 2021 Early Career\nAward number DE-SC0022002 (M. P.), the FRIB Theory\nAlliance award DE-SC0013617 (M. P.), and the NUCLEI\nSciDAC program (S.P., M.P., and R.B.W.).\nG. B. K.\nwould like to acknowledge support from the U.S. DOE\nNNSA Stewardship Science Gra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetic currents in configuration space",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-022-electromagnetic-currents-in-configuration-space.md",
+      "narrative": null,
+      "content": "configuration space\nIn this appendix, we collect the r-space expressions\nof the electromagnetic current operators used in this\nwork, which are currently dispersed across various ref-\nerences [6, 7, 11–14]. The electromagnetic current oper-\nators are written as an expansion in a generic low mo-\nmentum scale Q.\nThe LO (Q−2) one-body current operator, displayed\nin panel (a) of Fig. 1, is given by\njLO(q) = ϵi(q2\nµ)\n2 m\n\u0002\npi , eiq·ri\u0003\n+ + i µi(q2\nµ)\n2 m\neiq·ri σi × q ,\n(A1)\nwhere pi = −i ∇i, ri is the single-nucleon coordinate, and\nm is the average nucleon mass. The brackets [. . . , . . .]+\nindica",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation of the magnetic multipoles",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-023-evaluation-of-the-magnetic-multipoles.md",
+      "narrative": null,
+      "content": "Using Eq. (18) we can evaluate the value of the reduced\nmatrix elements for the magnetic multipole operators. To\ndo that we need a number of linear equations equal to the\nnumber of the multipoles allowed by the transition.\nAs stated in Ref. [67] for VMC and GFMC, in order\nto obtain the linear equations we need for the extraction\nof the reduced matrix elements, is more computationally\nefficient to change the direction of ˆq rather than repeat-\ning the calculation of the matrix elements for different\nprojection of the total angular momentum. Therefore, if\nwe have n possible multipoles, we select",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Note on the magnetic form factors data",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-024-note-on-the-magnetic-form-factors-data.md",
+      "narrative": null,
+      "content": "The experimental data of the magnetic form factors\nshown in this work have been obtained directly the orig-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2407.04744v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-025-references.md",
+      "narrative": null,
+      "content": "perimental works for the magnetic f.f. are different com-\npared to the one used in this work, therefore we renor-\nmalize them with an appropriate factor given by the ratio\namong the experimental values F 2∗\nM (q) in the paper and\nthe one defined in Eq. (15). For example, in the cases of\nRefs. [94, 97, 100], this ratio is given by\nF 2\nM(q)\nF 2∗\nM (q) = 1\n2π µ2 \u0010 q\n2M\n\u00112 J + 1\n3J\n,\n(C1)\nwhere µ is the magnetic moment and J the total angular\nmomentum of the nucleus.\nNote that Refs. [92, 93, 99, 102] report only the elastic\nscattering cross section data from which we obtain the\nvalues of the magne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

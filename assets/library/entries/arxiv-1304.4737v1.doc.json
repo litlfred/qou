@@ -1,0 +1,1096 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1304.4737v1",
+  "title": "Toroidal domain walls as Hopﬁons Abstract",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "I Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "II The model and solitons in 1+1 and 2+1 dimensions",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-ii-the-model-and-solitons-in-11-and-21-dimension"
+    },
+    {
+      "level": 1,
+      "title": "III Toroidal domain walls in 3+1 dimensions",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-iii-toroidal-domain-walls-in-31-dimensions"
+    },
+    {
+      "level": 1,
+      "title": "IV Discussion",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toroidal domain",
+          "heading": false
+        },
+        {
+          "term": "domain walls",
+          "heading": false
+        },
+        {
+          "term": "japan department",
+          "heading": false
+        },
+        {
+          "term": "hopﬁons",
+          "heading": false
+        },
+        {
+          "term": "hopf charge",
+          "heading": false
+        },
+        {
+          "term": "construct stable",
+          "heading": false
+        }
+      ],
+      "extract": "Toroidal domain walls as Hopﬁons Michikazu Kobayashi1, 2 and Muneto Nitta3 1 Department of Basic Science, University of Tokyo, Komaba 3-8-1, Meguro-ku, Tokyo 153-8902, Japan 2 Department of Physics, Kyoto University, Oiwake-cho, Kitashirakawa, Sakyo-ku, Kyoto 606-8502, Japan 3Department of Physics, and Research and Education Center for Natural Sciences, Keio University, Hiyoshi 4-1-1, Yokohama, Kanagawa 223-8521,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1304.4737v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "domain walls",
+          "heading": false
+        },
+        {
+          "term": "toroidal domain",
+          "heading": false
+        },
+        {
+          "term": "lump charge",
+          "heading": false
+        },
+        {
+          "term": "wall tubes",
+          "heading": false
+        },
+        {
+          "term": "skyrme term",
+          "heading": false
+        },
+        {
+          "term": "wall ring",
+          "heading": false
+        },
+        {
+          "term": "hopf charge",
+          "heading": false
+        },
+        {
+          "term": "modulus twisted",
+          "heading": false
+        }
+      ],
+      "extract": "Topological solitons are ubiquitous in various subjects in physics from condensed matter physics [1] to high energy physics [2] and cosmology [3]. One of the most simplest and most frequently appearing solitons are kinks in d = 1 + 1 dimensions or domain walls d = 2 + 1 or larger dimensions, which are present in various condensed matter systems such as optical ﬁbers, ferromagnets, charge density waves, Bose-Einstein",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-ii-the-model-and-solitons-in-11-and-21-dimension",
+      "number": null,
+      "title": "II The model and solitons in 1+1 and 2+1 dimensions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lump charge",
+          "heading": false
+        },
+        {
+          "term": "topological lump",
+          "heading": false
+        },
+        {
+          "term": "domain wall",
+          "heading": false
+        },
+        {
+          "term": "baby skyrmion",
+          "heading": false
+        },
+        {
+          "term": "wall solution",
+          "heading": false
+        },
+        {
+          "term": "wall ring",
+          "heading": false
+        },
+        {
+          "term": "twisted domain",
+          "heading": false
+        },
+        {
+          "term": "domain line",
+          "heading": false
+        }
+      ],
+      "extract": "Let n(x) = (n1(x), n2(x), n3(x)) be a unit three vector of scalar ﬁelds with a constraint n · n = 1. The Lagrangian of our model is given by (µ = 0, 1, 2, 3) L = 1 2∂µn · ∂µn −L4(n) −V (n). (1) Here, the four-derivative (Faddeev-Skyrme) term is given by L4(n) = κF 2 µν = κ [n · (∂µn × ∂νn)]2 = κ(∂µn × ∂νn)2 (2) with a “ﬁeld strength,” Fµν = n · (∂µn × ∂νn). (3) We take the potential term [16, 22] V (n) = m2(1 −n2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-iii-toroidal-domain-walls-in-31-dimensions",
+      "number": null,
+      "title": "III Toroidal domain walls in 3+1 dimensions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 14,
+      "labelStart": "6",
+      "labelEnd": "14",
+      "words": 2263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toroidal domain",
+          "heading": true
+        },
+        {
+          "term": "domain walls",
+          "heading": true
+        },
+        {
+          "term": "wall tube",
+          "heading": false
+        },
+        {
+          "term": "lump strings",
+          "heading": false
+        },
+        {
+          "term": "wall becomes",
+          "heading": false
+        },
+        {
+          "term": "skyrme term",
+          "heading": false
+        },
+        {
+          "term": "hopﬁons",
+          "heading": false
+        },
+        {
+          "term": "potential term",
+          "heading": false
+        }
+      ],
+      "extract": "The domain wall ring can be linearly extended to a domain wall tube in d = 3 + 1 dimensions. Here we further consider a closed domain wall tube, i.e., a toroidal domain wall. Such a toroidal domain wall is unstable unless the U(1) modulus is twisted along the torus. Therefore, we twist the U(1) modulus along the torus, resulting in a doubly twisted toroidal domain wall. First, let us put a charge Q (or −Q) lump in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 1268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nitta",
+          "heading": false
+        },
+        {
+          "term": "ohashi",
+          "heading": false
+        },
+        {
+          "term": "bps walls",
+          "heading": false
+        },
+        {
+          "term": "non-abelian walls",
+          "heading": false
+        },
+        {
+          "term": "isozumi",
+          "heading": false
+        },
+        {
+          "term": "domain walls",
+          "heading": false
+        },
+        {
+          "term": "eto",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "We thank the organizers of the conference “Quantized Flux in Tightly Knotted and Linked Systems,” held in 3 - 7 December 2012 at Isaac Newton Institute for Mathematical Sciences, where this work was initiated. This work is supported in part by Grant-in-Aid for Scientiﬁc Research (Grant No. 22740219 (M.K.) and No. 23740198 and 25400268 (M.N.)) and the work of M. N. is also supported in part by the “Topological",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "domain wall",
+      "heading": true
+    },
+    {
+      "term": "toroidal domain",
+      "heading": true
+    },
+    {
+      "term": "lump charge",
+      "heading": true
+    },
+    {
+      "term": "lump soliton",
+      "heading": false
+    },
+    {
+      "term": "topological lump",
+      "heading": true
+    },
+    {
+      "term": "lump strings",
+      "heading": false
+    },
+    {
+      "term": "stable domain",
+      "heading": false
+    },
+    {
+      "term": "wall ring",
+      "heading": true
+    },
+    {
+      "term": "non-abelian walls",
+      "heading": false
+    },
+    {
+      "term": "twisted domain",
+      "heading": true
+    },
+    {
+      "term": "wall tube",
+      "heading": true
+    },
+    {
+      "term": "constituent lump",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A twisted domain wall ring as a baby Skyrmion with the lump charges of Q = 1 (left), Q = 2 (middle), and Q = 3 (right). (a): The texture n(x). Color of each arrow show the value of n3. (b): The total energy density E. (c): The topological lump charge density c ≡F12/(4π)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The two cycles of the torus",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A cut along the β cycle of the toroidal domain walls. The gray n3 = 0 surfaces represent domain wall tubes that separate the two vacua n = (0, 0, 1) denoted by ⊙outside the tube and n = (0, 0, −1) denoted by ⊗inside the tube. Along the tubes, there are sequences of lumps with the lump charges of (a)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Toroidal domain walls with (P, Q) = (1, 1), (2, 1) and (3, 1) for the left, middle and right ﬁgures, respectively. (a): Isosurface plot of the n3 = 0 region. (b) The texture n(x) and (c) the",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Toroidal domain walls with (P, Q) = (1, 2), (2, 2) and (3, 2) for the left, middle and right",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Toroidal domain walls with (P, Q) = (1, 3), (2, 3) and (3, 3) for the left, middle and right",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-4",
+      "file": "images/img-p005-4.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-7",
+      "file": "images/img-p005-7.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-10",
+      "file": "images/img-p005-10.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-11",
+      "file": "images/img-p005-11.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-12",
+      "file": "images/img-p005-12.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-13",
+      "file": "images/img-p005-13.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-14",
+      "file": "images/img-p005-14.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-15",
+      "file": "images/img-p005-15.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-16",
+      "file": "images/img-p005-16.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-17",
+      "file": "images/img-p005-17.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-18",
+      "file": "images/img-p005-18.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-2",
+      "file": "images/img-p010-2.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-3",
+      "file": "images/img-p010-3.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-4",
+      "file": "images/img-p010-4.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-5",
+      "file": "images/img-p010-5.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-6",
+      "file": "images/img-p010-6.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-7",
+      "file": "images/img-p010-7.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-8",
+      "file": "images/img-p010-8.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-9",
+      "file": "images/img-p010-9.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-10",
+      "file": "images/img-p010-10.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-11",
+      "file": "images/img-p010-11.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-12",
+      "file": "images/img-p010-12.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-13",
+      "file": "images/img-p010-13.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-14",
+      "file": "images/img-p010-14.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-15",
+      "file": "images/img-p010-15.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-16",
+      "file": "images/img-p010-16.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-17",
+      "file": "images/img-p010-17.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-18",
+      "file": "images/img-p010-18.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-19",
+      "file": "images/img-p010-19.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-3",
+      "file": "images/img-p011-3.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-4",
+      "file": "images/img-p011-4.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-5",
+      "file": "images/img-p011-5.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-6",
+      "file": "images/img-p011-6.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-7",
+      "file": "images/img-p011-7.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-8",
+      "file": "images/img-p011-8.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-9",
+      "file": "images/img-p011-9.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-10",
+      "file": "images/img-p011-10.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-11",
+      "file": "images/img-p011-11.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-12",
+      "file": "images/img-p011-12.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-13",
+      "file": "images/img-p011-13.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-14",
+      "file": "images/img-p011-14.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-15",
+      "file": "images/img-p011-15.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-16",
+      "file": "images/img-p011-16.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-17",
+      "file": "images/img-p011-17.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-18",
+      "file": "images/img-p011-18.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-19",
+      "file": "images/img-p011-19.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-2",
+      "file": "images/img-p012-2.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-3",
+      "file": "images/img-p012-3.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-4",
+      "file": "images/img-p012-4.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-5",
+      "file": "images/img-p012-5.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-6",
+      "file": "images/img-p012-6.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-7",
+      "file": "images/img-p012-7.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-8",
+      "file": "images/img-p012-8.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-9",
+      "file": "images/img-p012-9.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-10",
+      "file": "images/img-p012-10.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-11",
+      "file": "images/img-p012-11.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-12",
+      "file": "images/img-p012-12.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-13",
+      "file": "images/img-p012-13.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-14",
+      "file": "images/img-p012-14.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-15",
+      "file": "images/img-p012-15.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-16",
+      "file": "images/img-p012-16.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-17",
+      "file": "images/img-p012-17.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-18",
+      "file": "images/img-p012-18.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-19",
+      "file": "images/img-p012-19.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 69
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1304.4737v1"
+  }
+}

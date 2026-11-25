@@ -1,0 +1,372 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9901120v3",
+  "title": "arxiv-math-9901120v3",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Revised table",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-revised-table"
+    },
+    {
+      "level": 1,
+      "title": "Preparing the table",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-preparing-the-table"
+    },
+    {
+      "level": 1,
+      "title": "Getting the program",
+      "number": "4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-getting-the-program"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "montesinos knots",
+          "heading": false
+        },
+        {
+          "term": "boundary slopes",
+          "heading": false
+        },
+        {
+          "term": "dunfield",
+          "heading": false
+        }
+      ],
+      "extract": "math/9901120v3 [math.GT] 18 Jun 2010: ‘arXiv A table of boundary slopes of Montesinos knots Nathan M. Dunfield! Revised version of June 2010 email: nathan@dunfield.info Abstract This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-9901120v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gettingprogram",
+          "heading": false
+        },
+        {
+          "term": "corrected table",
+          "heading": false
+        },
+        {
+          "term": "computer program",
+          "heading": false
+        },
+        {
+          "term": "montesinos knot",
+          "heading": false
+        },
+        {
+          "term": "hatcheroertel",
+          "heading": false
+        },
+        {
+          "term": "oertel",
+          "heading": false
+        },
+        {
+          "term": "boundary slopes",
+          "heading": false
+        }
+      ],
+      "extract": "In [@HatcherOertel], Hatcher and Oertel gave an algorithm for computing the boundary slopes of a Montesinos knot. At the end of their paper they provided a table giving the boundary slopes for each Montesinos knot in the standard table in Rolfsen's book [@Rolfsen76]. Unfortunately, their table contains several (17) errors. These errors were due to problems with the computer program that generated the table, as well",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-revised-table",
+      "number": "2",
+      "title": "Revised table",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-seifert surface",
+          "heading": false
+        },
+        {
+          "term": "montesinos knots",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "incompressible surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#table label=\"table\"} Throughout this section ^\\*^ denotes an entry which differs from the corresponding entry in the table in [@HatcherOertel], and ^$\\dagger$^ denotes one that differs from the 1999 version of this note. Below are the boundary slopes for those Montesinos knots of ten or fewer crossings. Notation follows [@HatcherOertel] and [@Rolfsen76]. The program computes the Euler characteristic and number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-preparing-the-table",
+      "number": "3",
+      "title": "Preparing the table",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oertel program",
+          "heading": false
+        },
+        {
+          "term": "hatcheroertel",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": true
+        },
+        {
+          "term": "boundary slopes",
+          "heading": false
+        },
+        {
+          "term": "normal boundary",
+          "heading": false
+        },
+        {
+          "term": "hatcher",
+          "heading": false
+        },
+        {
+          "term": "errors",
+          "heading": false
+        },
+        {
+          "term": "output",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#method label=\"method\"} In this section I briefly describe the precautions taken to insure that the table in Section [\\[table\\]](#table){reference-type=\"ref\" reference=\"table\"} is correct. I first noticed errors in the table in [@HatcherOertel] when comparing it with the output of a program that computes the *normal* boundary slopes of a knot (that is, the boundary slopes of all surfaces which are normal with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-getting-the-program",
+      "number": "4",
+      "title": "Getting the program",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gettingprogram",
+          "heading": false
+        },
+        {
+          "term": "python",
+          "heading": false
+        },
+        {
+          "term": "platforms",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#gettingprogram label=\"gettingprogram\"} The programs I used in preparing this note are available at <http://dunfield.info/montesinos>. They are written the programming language Python, and you will need a Python interpreter to run them. These interpreters are available, for free and for almost all platforms, from <http://python.org>.",
+      "extractCut": false
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "oertel program",
+      "heading": false
+    },
+    {
+      "term": "boundary slopes",
+      "heading": false
+    },
+    {
+      "term": "montesinos knots",
+      "heading": false
+    },
+    {
+      "term": "hatcheroertel",
+      "heading": false
+    },
+    {
+      "term": "corrected table",
+      "heading": false
+    },
+    {
+      "term": "computer program",
+      "heading": false
+    },
+    {
+      "term": "additional errors",
+      "heading": false
+    },
+    {
+      "term": "gettingprogram",
+      "heading": false
+    },
+    {
+      "term": "hatcher",
+      "heading": false
+    },
+    {
+      "term": "normal boundary",
+      "heading": false
+    },
+    {
+      "term": "thomas mattman",
+      "heading": false
+    },
+    {
+      "term": "marc culler",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9901120v3"
+  }
+}

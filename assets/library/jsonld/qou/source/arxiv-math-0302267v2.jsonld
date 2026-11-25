@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0302267v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Groupes fondamentaux motiviques de Tate mixte",
+  "contains": [
+    "library/arxiv-math-0302267v2/sections/sec-front-matter",
+    "library/arxiv-math-0302267v2/sections/sec-000",
+    "library/arxiv-math-0302267v2/sections/sec-001",
+    "library/arxiv-math-0302267v2/sections/sec-002",
+    "library/arxiv-math-0302267v2/sections/sec-003",
+    "library/arxiv-math-0302267v2/sections/sec-004",
+    "library/arxiv-math-0302267v2/sections/sec-005",
+    "library/arxiv-math-0302267v2/sections/sec-006",
+    "library/arxiv-math-0302267v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld.\n\n**Groupes fondamentaux motiviques de Tate mixte**\n\n84 pp, 9 sections.\n\n**Abstract.** We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld. We deﬁne the motivic fundamental group (made unipotent) of a unirational variety over a number ﬁeld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, inﬁnity and all N-th roots of unity. ∗Research partially supported by NSF Grant DMS-0099390\n\n**Outline.** Front matter; Bibliographie; 0 Introduction; 1 Motifs de Tate mixte sur l’anneau des S-enti; 2 Le point de vue tannakien; 3 Cohomologie et groupe fondamental; 4 Le groupe fondamental unipotent motivique d’; 5 Le groupe fondamental motivique du compl´eme; 6 Profondeur",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0302267&metadataPrefix=arXiv), submitted 2003-02-27, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0302267v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0302267v2.pdf",
+    "source_sha256": "c09c8cabd5f9d8e62c9bc35cb1e158c75b54a88e6106ef5b83397fbfa8e8943d",
+    "pages": 84,
+    "arxiv": {
+      "id": "math/0302267",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "27 Feb 2003"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

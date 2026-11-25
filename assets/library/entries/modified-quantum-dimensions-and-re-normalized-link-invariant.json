@@ -1,0 +1,974 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "modified-quantum-dimensions-and-re-normalized-link-invariant",
+  "blocks": [
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "COMPOSITIO MATHEMATICA\nModiﬁed quantum dimensions and re-normalized link\ninvariants\nNathan Geer, Bertrand Patureau-Mirand and Vladimir Turaev\nCompositio Math. 145 (2009), 196–212.\ndoi:10.1112/S0010437X08003795\nFOUNDATION \nCOMPOSITIO \nMATHEMATICA\nCompositio Math. 145 (2009) 196–212\ndoi:10.1112/S0010437X08003795\nModiﬁed quantum dimensions and\nre-normalized link invariants\nNathan Geer, Bertrand Patureau-Mirand and Vladimir Turaev\nAbstract\nIn this paper we give a re-normalization of the Reshetikhin–Turaev quantum invariants\nof links, using modiﬁed quantum dimensions. In the case of simple Lie alge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "One obstruction to applications of quantum link invariants associated with a ribbon category C\nstems from the fact that certain simple (irreducible) objects of C may have zero quantum\ndimensions. If the dimension of a simple object V ∈Ob(C) is zero, then the quantum invariants\nof all (framed oriented) links with components labeled by V are equal to zero. A well-known\ntopological trick allows us to derive possibly non-trivial invariants in this setting, at least in the\ncase of knots. Namely, one presents a V -labeled knot L as the closure of a (1, 1) tangle T and\nconsiders the endomorphism of V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon Ab-categories",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-ribbon-ab-categories.md",
+      "narrative": null,
+      "content": "We describe the concept of a ribbon Ab-category (for details see [Tur94]). A tensor category C is\na category equipped with a covariant bifunctor ⊗: C × C →C called the tensor product, a unit\nobject I, an associativity constraint, and left and right unit constraints such that the triangle and\npentagon axioms hold. When the associativity constraint and the left and right unit constraints\nare all identities we say that the category C is a strict tensor category. By Mac Lane’s coherence\ntheorem any tensor category is equivalent to a strict tensor category.\nA tensor category C is said to be an Ab-c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "We have two examples of ambidextrous elements. (1) If J is an object of C such that the braiding cJ,J commutes with any element of End(J ⊗J), then J is ambidextrous. (2) If J is a simple object of C such that dimC(J)̸ = 0, then J is ambidextrous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "For all simple objects U, V , W of C such that W is ambidextrous and for any C-colored ribbon graph T with two inputs and two outputs colored by U, V ,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The invariant F' of closed ribbon graphs",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-the-invariant-f-of-closed-ribbon-graphs.md",
+      "narrative": null,
+      "content": "Let C be a strict ribbon Ab-category with ground ring K and the set of objects Ob(C). We\nassume everywhere that K is an integral domain with ﬁeld of fractions F.\nFor any object V of C and any endomorphism f of V ⊗V , set\ntrL(f) = (dV ⊗IdV ) ◦(IdV ∗⊗f) ◦(b′\nV ⊗IdV ) ∈End(V ),\ntrR(f) = (IdV ⊗d′\nV ) ◦(f ⊗IdV ∗) ◦(IdV ⊗bV ) ∈End(V ).\nAn object V of C is called ambidextrous if trL(f) = trR(f) for all f ∈End(V ⊗V ).\nThe following lemma gives examples of ambidextrous elements.\nLemma 1. We have two examples of ambidextrous elements.\n(1) If J is an object of C such that the braiding cJ,J commutes with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "Let L ∈LA(J) and V be the color of an edge of L belonging to A(J). Cutting this edge, we obtain a colored (1, 1)-ribbon graph TV whose closure is L. Then F ′(L) = dJ(V )⟨TV ⟩∈F is independent of the choice of the edge to be cut and yields a well-deﬁned invariant of L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "A E-bimodule is a map M : Ob(E) × Ob(E) →Sets endowed with two operations: \u0003 : HomE(Y, Z) × M(X, Y ) →M(X, Z), \u0001 : M(Y, Z) × HomE(X, Y ) →M(X, Z), where X, Y and Z are any objects of E. Given morphisms f and g of E and m ∈M we require that: (1) (f ◦g) \u0003 m = f \u0003 (g \u0003 m); (2) m \u0001 (f ◦g) = (m \u0001 f) \u0001 g; (3) (f \u0003 m) \u0001 g = f \u0003 (m \u0001 g); whenever the operations in these equalities make sense.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "def-sec-003-04.md",
+      "narrative": null,
+      "content": "We call M a monoidal E-bimodule if it is endowed with two bilinear operations: : HomE(X, Y ) × M(X′, Y ′) →M(X ⊗X′, Y ⊗Y ′), : M(X, Y ) × HomE(X′, Y ′) →M(X ⊗X′, Y ⊗Y ′) such that for any morphisms f, g and h in E and any m ∈M: (1) (f ⊗g) m = f (g m); (2) m (f ⊗g) = (m f) g; (3) f (m g) = (f m) g; (4) (f ◦g) (h \u0003 m) = (f ⊗h) \u0003 (g m); (5) (h \u0003 m) (f ◦g) = (h ⊗f) \u0003 (m g); (6) (f ◦g) (m \u0001 h) = (f m) \u0001 (g ⊗h); (7) (m \u0001 h) (f ◦g) = (m f) \u0001 (f ⊗g); whenever the operations in these equalities make sense. N. Geer, B. Patureau-Mirand and V. Turaev Deﬁnition 7 can be illustrated with diagrams. For examp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "def-sec-003-06.md",
+      "narrative": null,
+      "content": "A G-bilinear monoidal quasi-functor G′ : M′ →M is a family of maps G′ : M′(X, Y ) →M(G(X), G(Y )) indexed by the objects X and Y of E, such that for every m ∈M′(X, Y ) and every morphism f of D one has: (1) G′(f \u0003 m) = G(f) \u0003 G′(m); (2) G′(m \u0001 f) = G′(m) \u0001 G(f); (3) G′(f m) = G(f) G′(m); (4) G′(m f) = G′(m) G(f); whenever the operations in these equalities make sense. Let us now go back to the situation of § 3. Deﬁne a C-bimodule structure on HC = HomK (HomC, F) as in Example 6. In particular, for any objects U, V of C we have HC(U, V ) = HomK(HomC(V, U), F) and if f and g are morphisms of C a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "The functor HomE is a E-bimodule with \u0001 = \u0003 = ◦.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-003-03.md",
+      "narrative": null,
+      "content": "Let K be an integral domain and suppose that (M, \u0003, \u0001) is a E-bimodule with values in K-modules. If Γ is a K-module, then we deﬁne an E-bimodule HE by HE(X, Y ) = HomK(M(Y, X), Γ) with operations \u0003 and \u0001 deﬁned as follows. Let f : Y →Z and f′ : Z →X be morphisms of E and let φ be an element of HE(X, Y ), then (f \u0003 φ)(m) = φ(m \u0001 f) and (φ \u0001 f′)(m′) = φ(f′ \u0003 m′), where m ∈M(Z, X) and m′ ∈M(Y, Z). Suppose now that E is a tensor Ab-category and that M is a E-bimodule which takes values in abelian groups. We assume that the operations \u0003 and \u0001 are bilinear.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-003-05.md",
+      "narrative": null,
+      "content": "The functor HomE is a monoidal E-bimodule with \u0001 = \u0003 = ◦and = = ⊗. Suppose that G : D →E is a monoidal functor between two tensor Ab-categories. Let M be a monoidal E-bimodule and M′ be a monoidal D-bimodule.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quasi-functor F'",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-4-the-quasi-functor-f.md",
+      "narrative": null,
+      "content": "In this section we extend the invariant F ′ to C-colored ribbon graphs with endpoints. This leads\nus to a notion of a quasi-functor which we brieﬂy discuss in a more general setting. This section\nis essentially independent from the rest of the paper.\nLet E be a category. Given a map M : Ob(E) × Ob(E) →Sets we use the notation m ∈M to\nmean that there exist two objects X and Y of E such that m ∈M(X, Y ).\nModified quantum dimensions and re-normalized link invariants\nDefinition 4. A E-bimodule is a map M : Ob(E) × Ob(E) →Sets endowed with two operations:\n\u0003 : HomE(Y, Z) × M(X, Y ) →M(X, Z),\n\u0001 : M(Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "thm-sec-003-07.md",
+      "narrative": null,
+      "content": "The invariant F ′ : LA →F extends naturally to a F-bilinear monoidal quasi- functor F ′ : RibA →HC by the formula F ′(T)(g) = F ′(trRibC(T ◦cg)) where T ∈RibA(V, W), g ∈HomC(F(W), F(V )) and where cg is a coupon labeled by g. This expression can be represented by the following diagram.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-1500",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1500.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-750",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-750.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-751",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-751.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "cor-sec-004-04.md",
+      "narrative": null,
+      "content": "For any simple ambidextrous object J ∈Ob(C), we have A(J∗) = {V ∗| V ∈A(J)} and dJ∗(V ∗) = dJ(V ) for all V ∈A(J). If V, V ∗∈A(J) satisfy S′(V, V ∗)̸ = 0, then dJ(V ∗) = dJ(V ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "cor-sec-004-08.md",
+      "narrative": null,
+      "content": "The following hold: (1) if dimC(J) = 0, then dimC(V ) = 0 for all V ∈A(J) and F(L) = 0 for all L in LA; (2) if dimC(J)̸ = 0, then F ′ is proportional to F. The following two propositions show that F ′ has behavior similar to the functor F.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let J ∈Ob(C) be a simple ambidextrous object such that J ∈A(J). Suppose that d : A(J) →F is a function such that the construction of Theorem 3 with dJ replaced by d yields a well-deﬁned invariant for all L ∈LA(J). Then d = dJ for an appropriate choice of d0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Let V, W be simple objects in C, then S′(V, W) = S′(V ∗, W ∗).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "If an object J in C is ambidextrous, then so is J∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "Let B be a complete subset of the set I, which contains at least one ambidextrous object. Then: (1) all objects in B are ambidextrous; (2) for any object J ∈B, we have A(J) = B; (3) let F ′ J, F ′ J′ be the invariants derived above from arbitrary pairs (J ∈B, d0) and (J′ ∈B, d′ 0), respectively, where d0, d′ 0 ∈F \\ {0}; then F ′ J = dJ(J′) d′ F ′ J′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "The equality A(J) = B follows from the deﬁnitions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-07.md",
+      "narrative": null,
+      "content": "For any V ∈A(J), dimC(V ) = d−1 dimC(J) dJ(V ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "prop-sec-004-09.md",
+      "narrative": null,
+      "content": "Let U, V, W ∈Ob(C) be such that W ∼= U ⊗V . Let L be a C-colored link, such that a component of L is colored by W. Let L∥be the link obtained from L by replacing this component of L by two parallel copies colored by U and V . If L∥is an element of LA(J), then F ′(L) = F ′(L∥).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "prop-sec-004-10.md",
+      "narrative": null,
+      "content": "Let L be an element of LA(J) with a circle component colored by W ∈Ob(C). If W is the only color of L in A(J), then we additionally assume that W ∗∈A(J) and S′(W, W ∗)̸ = 0. Let L−be obtained from L by reversing the orientation of the W-colored component and changing its color to W ∗. Then F ′(L) = F ′(L−).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "prop-sec-004-11.md",
+      "narrative": null,
+      "content": "If L ∈LA(J), L+ ∈LOb(C), then the disjoint union L ⊔L+ belongs to LA(J) and F ′(L ⊔L+) = F ′(L)F(L+).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of dJ and F'",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-5-properties-of-dj-and-f.md",
+      "narrative": null,
+      "content": "The following lemma shows that the function dJ satisfying the conditions of Theorem 3 is\nessentially unique.\nLemma 11. Let J ∈Ob(C) be a simple ambidextrous object such that J ∈A(J). Suppose that\nd : A(J) →F is a function such that the construction of Theorem 3 with dJ replaced by d yields\na well-deﬁned invariant for all L ∈LA(J). Then d = dJ for an appropriate choice of d0.\nProof. Let L be the Hopf link with components colored V and J, where V is a simple object\nof C. By opening one strand of L and then the other, we obtain\nd(V )S′(J, V ) = d(J)S′(V, J).\nSo, d = d−1\n0 d(J) dJ.\n2\nThis lemma im",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/rem-sec-004-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "rem-sec-004-12.md",
+      "narrative": null,
+      "content": "Both Propositions 18 and 19 can be extended to analogous statements for non- closed C-colored ribbon graphs. In other words, F ′ behaves under cabling and reversing orientation in the same way as the standard ribbon functor F.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p011-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "The object J0 of C is ambidextrous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-005-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "cor-sec-005-10.md",
+      "narrative": null,
+      "content": "The element J0 is ambidextrous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "All simple objects of C are ambidextrous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "If V is an element of B, then dimC(V ) = 0. The link invariant F restricted to LB is zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-04.md",
+      "narrative": null,
+      "content": "There exists an element J0 ∈B such that J0 ⊗J0 splits as a direct sum of elements of B with multiplicity one. In particular, the algebra EndC(J0 ⊗J0) is commutative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-09.md",
+      "narrative": null,
+      "content": "The tensor product J0 ⊗J0 splits as a direct sum of typical ¯Uq(sl(2))-modules with no multiplicity. In particular, the algebra EndC(J0 ⊗J0) is commutative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-11.md",
+      "narrative": null,
+      "content": "Let Vλ be typical ¯Uq(sl(2))-module, then dimC(Vλ) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-12.md",
+      "narrative": null,
+      "content": "Let Vλ be a typical module and let Vλ′ be any simple weight module with highest weight λ′. We have S′(Vλ, Vλ′) = q(λ+1−N)(λ′+1−N) {N(λ′ + 1 −N)} {λ′ + 1 −N} , where {N(λ′ + 1 −N)}/{λ′ + 1 −N} is a Laurent polynomial in qλ′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-005-13.md",
+      "narrative": null,
+      "content": "The usual invariant F restricted to LB is zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "For any J ∈I and d0 = qdim(J), the J-determined quantum dimension dJ is equal to the usual quantum dimension and F ′ is the usual Reshetikhin–Turaev quantum group invariant arising from g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "prop-sec-005-06.md",
+      "narrative": null,
+      "content": "Every element J ∈B is ambidextrous and A(J) = B. The construction in § 3 gives a function d = dJ : B →C[[h]][h−1] and an invariant F ′ = F ′ J, which do not depend on J up to multiplication by a non-zero element of C[[h]][h−1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "prop-sec-005-14.md",
+      "narrative": null,
+      "content": "Every element of J ∈B is ambidextrous and B = A(J). The construction in § 3 gives a function dJ : B →C and an invariant F ′ J, which do not depend on J up to multiplication by a non-zero element of C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-6-examples.md",
+      "narrative": null,
+      "content": "We give three classes of examples of ambidextrous objects and associated re-normalized link\ninvariants.\n6.1 Link invariants from Lie algebras\nLet g be a simple Lie algebra and let Uq(g) be the Drinfeld–Jimbo C(q)-algebra associated to g\n(see [Tur94, § XI.6]). (Note here that q is not a root of unity.) Let C be the category of ﬁnite-\ndimensional Uq(g)-modules. It is well known that C is a ribbon Ab-category with ground ring\nK = C(q). Here F = K and trC (respectively dimC) is the quantum trace (respectively quantum\ndimension).\nLemma 22. All simple objects of C are ambidextrous.\nProof. This follo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/rem-sec-005-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "rem-sec-005-07.md",
+      "narrative": null,
+      "content": "(1) In this example there is no canonical choice for J ∈B. However, for each J there is a suitable choice of d0 (possibly, distinct from d0 = 1) such that dJ has a nice formula (cf. [GP08b]). This justiﬁes our choice to include the factor d0 in the deﬁnition of F ′. (2) The extension of F ′ in § 3 could be useful in computing F ′ for links colored with non- semisimple modules. (3) It would be interesting to extend the constructions of this section to other Lie superalgebras. 6.3 Link invariants from Uq(sl(2)) at roots of unity In this section we consider the generalized multivariable Alexander",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/rem-sec-005-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "rem-sec-005-08.md",
+      "narrative": null,
+      "content": "It is important that ¯Uq(sl(2)) contains H because the modules Vλ and Vλ+2N over Uq(sl(2))/{EN = F N = 0} are isomorphic but the action of the R-matrix on V ⊗2 λ and V ⊗2 λ+2N are diﬀerent. These modules are distinct in C as H acts diﬀerently. Let V and W be objects of C. Let {vi} be a basis of V and {v∗ i } be a dual basis of V ∗. Then bV : C →V ⊗V ∗, given by 1 7→ X vi ⊗v∗ i dV : V ∗⊗V →C, given by f ⊗w 7→f(w) are duality morphisms of C. Also, in [Oht02] Ohtsuki deﬁnes an element u given by q−H2/2 N−1 X n=0 S(tn)sn where Rt = qH⊗H/2 PN−1 n=0 sn ⊗tn and q−H/2 is a formal symbol whose action o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-005-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "thm-sec-005-15.md",
+      "narrative": null,
+      "content": "The invariant F ′ restricted to framed links colored with typical modules is equal to the colored Alexander invariant ΦN L .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "ADO92\nY. Akutsu, T. Deguchi and T. Ohtsuki, Invariants of colored links, J. Knot Theory\nRamiﬁcations 1 (1992), 161–184.\nGP08a\nN. Geer and B. Patureau-Mirand, On the colored HOMFLY-PT, multivariable and Kashaev\nlink invariants, Commun. Contemp. Math. 10, Suppl. 1 (2008), 993–1011.\nGP08b\nN. Geer and B. Patureau-Mirand, Multivariable link invariants arising from Lie superalgebras\nof type I, Paciﬁc J. Math. 238 (2008), 331–348, math.GT/0609034\nKas95\nR. M. Kashaev, A link invariant from quantum dilogarithm, Modern Phys. Lett. A 10 (1995),\n1409–1418.\nKS91\nL. H. Kauﬀman and H. Saleur, Free fermions a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

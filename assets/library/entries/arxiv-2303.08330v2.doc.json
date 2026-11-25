@@ -1,0 +1,658 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2303.08330v2",
+  "title": "arxiv-2303.08330v2",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "(2w+1,2)-cables (w>3)",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-examples"
+    },
+    {
+      "level": 2,
+      "title": "Example 1",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-example-1"
+    },
+    {
+      "level": 2,
+      "title": "Example 2",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-example-2"
+    },
+    {
+      "level": 3,
+      "title": "Dehn surgery and",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-dehn-surgery-and"
+    },
+    {
+      "level": 2,
+      "title": "Example 3",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-example-3"
+    },
+    {
+      "level": 1,
+      "title": "(3w+1,3)-cables (w>3)",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-examples"
+    },
+    {
+      "level": 2,
+      "title": "Example 1",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-example-1"
+    },
+    {
+      "level": 2,
+      "title": "Example 2",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-example-2"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones polynomial of a cable knot",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-the-colored-jones-polynomial-of-a-cable-knot"
+    },
+    {
+      "level": 1,
+      "title": "The recursion relation for the figure eight knot",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The definitions of the operators",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1033,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "initial conditions",
+          "heading": false
+        },
+        {
+          "term": "nonzero initial",
+          "heading": false
+        },
+        {
+          "term": "vdots",
+          "heading": false
+        },
+        {
+          "term": "functions left",
+          "heading": false
+        },
+        {
+          "term": "coefficient functions",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "cabling",
+          "heading": false
+        }
+      ],
+      "extract": "Categorification of link invariants has been a fruitful program that has deepened and broadened our understanding of link invariants. Beginning with the advent of the Khovanov homology that categorifies the (colored) Jones polynomials of links [@Kh]([@Kh2]), there has been a series of constructions of other link invariants such as categorification of $sl(N)$ polynomial by $sl(N)$ Khovanov-Rozannsky homology [@KR]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q3n",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcient functions",
+          "heading": false
+        },
+        {
+          "term": "nonzero initial",
+          "heading": false
+        },
+        {
+          "term": "cabling",
+          "heading": false
+        },
+        {
+          "term": "initial conditions",
+          "heading": false
+        },
+        {
+          "term": "pattern",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "the initial conditions. This provides a strong evidence tha t we can obtain FC(r, 2)(41)(x, q ) to any desired order in x± 1/2 eﬃciently without resorting to the laborious recursion met hod. We state the nonzero initial conditions needed for (5) in the case of r = 2w + 1, w > 3, which covers the most of the positive subspace of the cabling param eter space (see below for the negative case). Conjecture 2.1. For a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-example-1",
+      "number": null,
+      "title": "Example 1",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 46,
+      "summary": null,
+      "keywords": [],
+      "extract": "We first analyze $K=C_{(9,2)}(\\bm{4_1})$. Applying Conjecture 2.1 to $w=4$, its predictions agree with the initial data listed in Section 7 of [@C][^1]. [^1]: There is an overall factor of $2$ difference due to a different convention of $f_m (q)$ in $F_K$",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-example-2",
+      "number": null,
+      "title": "Example 2",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 891,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar left",
+          "heading": false
+        },
+        {
+          "term": "hbar expansions",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "vdots",
+          "heading": false
+        },
+        {
+          "term": "laurent polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "The next simplest case is $K=C_{(11,2)}(\\bm{4_1})$. ::: prop The $\\hbar$ expansion of the $J_{K,n}(q)$ is given by $$\\begin{aligned} J_{K,n}(e^{\\hbar}) & = 1 + \\left(11 - 11 n^2 \\right)\\hbar^2 + \\left(-88 + 88 n^2 \\right)\\hbar^3 + \\left(\\frac{11891}{12} - 1137 n^2 + \\frac{1753}{12} n^4 \\right)\\hbar^4\\\\ & + \\left(- 12826 + \\frac{47036}{3} n^2 - \\frac{8558}{3} n^4 \\right)\\hbar^5 + \\left(\\frac{69672971}{360} -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-dehn-surgery-and",
+      "number": null,
+      "title": "Dehn surgery and",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "cdots big",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": true
+        },
+        {
+          "term": "hat",
+          "heading": false
+        },
+        {
+          "term": "wrt",
+          "heading": false
+        },
+        {
+          "term": "dehn",
+          "heading": true
+        }
+      ],
+      "extract": "In [@GPPV], it was conjectured that the $sl(2)$ WRT invariant of a rational homology 3-sphere $Y\\, (b_1(Y)=0)$ decomposes into a linear combination of power series $\\hat{Z}(q)$, which converges in $|q|<1$ and itself is an invariant of $Y$. Specifically, $$WRT[Y;k]= \\frac{1}{i\\sqrt{2k}} \\sum_{a,b \\in Spin^c (Y)} c^{WRT}_{ab}\\, \\hat{Z}_{b}(q) \\Big\\vert_{q \\rightarrow e^{\\frac{i2\\pi}{k}}},$$ where $$\\hat{Z}_{b}(Y;q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-example-3",
+      "number": null,
+      "title": "Example 3",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar left",
+          "heading": false
+        },
+        {
+          "term": "hbar cdots",
+          "heading": false
+        },
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "delta notag",
+          "heading": false
+        },
+        {
+          "term": "notag right",
+          "heading": false
+        },
+        {
+          "term": "hbar rightarrow",
+          "heading": false
+        },
+        {
+          "term": "delta phantom",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        }
+      ],
+      "extract": "We next consider $K=C_{(13,2)}(\\bm{4_1})$. ::: prop The $\\hbar$ expansion of the $J_{K,n}(q)$ is given by $$\\begin{aligned} J_{K,n}(e^{\\hbar}) & = 1 + \\left(17 - 17 n^2 \\right)\\hbar^2 + \\left(-156 + 156 n^2 \\right)\\hbar^3 + \\left(\\frac{24749}{12} - 2365 n^2 + \\frac{3631}{12} n^4 \\right)\\hbar^4\\\\ & + \\left(- 31629 + 38662 n^2 - 7033 n^4 \\right)\\hbar^5 + \\Big( \\frac{203413517}{360} - \\frac{8687953}{12} n^2 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-example-1",
+      "number": null,
+      "title": "Example 1",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recursion",
+          "heading": false
+        },
+        {
+          "term": "initial data",
+          "heading": false
+        },
+        {
+          "term": "omial",
+          "heading": false
+        },
+        {
+          "term": "polyn",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with the simplest example K = C(13,3)(41). Proposition 5.1. The ℏ expansion of the JK,n(q) is given by JK,n(eℏ) = 1 + ( 47− 47n2) ℏ2 + ( −624 + 624n2) ℏ3 + (151919 12 − 14605n2 + 23341 12 n4 ) ℏ4 + ( −294528 + 361088n2− 66560n4) ℏ5 + (2864712407 360 − 122607733 12 n2 + 28027787 12 n4 − 27314027 360 n6 ) ℏ6 +··· Lemma 5.2. The Alexander polynomial of C(13,3)(41) is given by ∆ C(13, 3)(41)(x) = ∆ 41(x3)∆ T(3,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-example-2",
+      "number": null,
+      "title": "Example 2",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial data",
+          "heading": false
+        },
+        {
+          "term": "omial",
+          "heading": false
+        },
+        {
+          "term": "polyn",
+          "heading": false
+        }
+      ],
+      "extract": "We move onto K = C(16,3)(41). Proposition 5.5. The ℏ expansion of the JK,n(q) is given by JK,n(eℏ) = 1 + ( 111− 111n2) ℏ2 + ( −2128 + 2128n2) ℏ3 + (253477 4 − 73197n2 + 39311 4 n4 ) ℏ4 + ( −2159616 + 7947776 3 n2− 1468928 3 n4 ) ℏ5 +··· 13 Lemma 5.6. The Alexander polynomial of C(16,3)(41) is given by ∆ C(16, 3)(41)(x) = t21− 1 t21 + t20 + 1 t20 + 2t18 + 2 t18− 2t17− 2 t17 + t15 + 1 t15− t14− 1 t14 + t12 + 1 t12−",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
+      "number": null,
+      "title": "The colored Jones polynomial of a cable knot",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "melvin morton",
+          "heading": false
+        },
+        {
+          "term": "t12m",
+          "heading": false
+        },
+        {
+          "term": "deta",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "For (r,2)-cabling of a knot K in S3, its unnormalized sl2(C) colored Jones polynomial of is [22] ˜JC(r, 2)(K),n(t) = t− rs(n2− 1) n− 1 2∑ w=− n− 1 2 t4rw(sw+1) ˜JK,(2sw+1)(t), t 4 = q The 0-framed unknot U normalization is ˜JU,n(t) = t2n− t− 2n t2− t− 2 . 14 B The recursion relation for the ﬁgure eight knot We record the recursion relation and its initial data for the ﬁgure eight knot found in [6]. We note that a",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hbar left",
+      "heading": false
+    },
+    {
+      "term": "recursion match",
+      "heading": false
+    },
+    {
+      "term": "frac delta",
+      "heading": false
+    },
+    {
+      "term": "delta right",
+      "heading": false
+    },
+    {
+      "term": "aligned delta",
+      "heading": false
+    },
+    {
+      "term": "nonzero initial",
+      "heading": false
+    },
+    {
+      "term": "recursion relation",
+      "heading": true
+    },
+    {
+      "term": "initial data",
+      "heading": false
+    },
+    {
+      "term": "laborious recursion",
+      "heading": false
+    },
+    {
+      "term": "hbar big",
+      "heading": false
+    },
+    {
+      "term": "hbar cdots",
+      "heading": false
+    },
+    {
+      "term": "mathbb left",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2303.08330v2"
+  }
+}

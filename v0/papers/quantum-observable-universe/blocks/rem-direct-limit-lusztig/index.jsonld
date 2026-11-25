@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-direct-limit-lusztig",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:direct-limit-lusztig",
+  "kind": "remark",
+  "title": "Direct limit algebra and the Lusztig integral form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+  "cites": [
+    "references/lusztig1993"
+  ],
+  "tags": [
+    "lusztig",
+    "integral-form",
+    "divided-power"
+  ],
+  "text": "direct-limit-lusztig.md",
+  "provenance": "authored"
+}

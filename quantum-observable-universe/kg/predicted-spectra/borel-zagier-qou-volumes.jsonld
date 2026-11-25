@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-borel-zagier-qou-volumes",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:borel-zagier-qou-volumes",
+  "kind": "conjecture",
+  "title": "Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-single-volume-irrationality"
+  ],
+  "cites": [
+    "references/borel1986",
+    "references/borel1974"
+  ],
+  "tags": [
+    "tier:famous",
+    "borel-regulator",
+    "zagier-conjecture",
+    "linear-independence",
+    "hyperbolic-volume",
+    "K-theory",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.MassTheory.BorelZagierQouVolumes",
+  "text": "borel-zagier-qou-volumes.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0503227v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Plancherel measure of a finite group $G$ is a probability measure on the set of irreducible representations of $G$ which chooses a representation $\\rho$ with probability $\\frac{dim(\\rho)^2}{|G|}$, where $dim(\\rho)$ denotes the dimension of $\\rho$. For instance if $G$ is the symmetric group, the irreducible representations are parameterized by partitions $\\lambda$ of $n$, and the Plancherel measure chooses a partition $\\lambda$ with probability $\\frac{n!}{\\prod_{x \\in \\lambda} h(x)^2}$ where the product is over boxes in the partition and $h(x)$ is the hooklength of a box. The hooklength of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0503227v2  [math.CO]  8 Aug 2006\nAn Inductive Proof of the Berry-Esseen Theorem for Character\nRatios\nRunning head: Berry-Esseen Theorem for Character Ratios\nSubmitted 3/9/05; Revised 8/6/06\nBy Jason Fulman\nDepartment of Mathematics, University of Southern California\nLos Angeles, CA 90089, USA\nfulman@usc.edu\nAbstract: Bolthausen used a variation of Stein’s method to give an\ninductive proof of the Berry-Esseen theorem for sums of independent, iden-\ntically distributed random variables. We modify this technique to prove a\nBerry-Esseen theorem for character ratios of a random representa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for Plancherel measure",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+      "narrative": null,
+      "content": "[]{#plancherel label=\"plancherel\"}\n\nThe random variable we wish to study is $T_n(\\lambda) =\n    \\frac{\\sqrt{n \\choose 2} \\chi^{\\lambda}(12)}{dim(\\lambda)}$ where $\\lambda$ is chosen from the Plancherel measure of the symmetric group $S_n$. To begin we write $T_n$ as a sum of other random variables. For this we need Kerov's growth process on partitions [@K2]; this has a natural generalization to arbitrary finite groups [@F3], but we only recall it in the case of interest. Given a partition $\\lambda(j)$ of size $j$, one obtains a partition $\\lambda(j+1)$ of size $j+1$ by choosing $\\lambda(j+1)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for Jack measure",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
+      "narrative": null,
+      "content": "[]{#jack label=\"jack\"}\n\nFor $\\alpha>0$ the Jack$_{\\alpha}$ measure on partitions of size $n$ chooses a partition $\\lambda$ with probability $$\\frac{\\alpha^n n!}{\\prod_{x \\in \\lambda} (\\alpha a(x) + l(x) +1)\n(\\alpha a(x) + l(x) + \\alpha)},$$ where the product is over all boxes in the partition. Here $a(x)$ denotes the number of boxes in the same row of $x$ and to the right of $x$ (the \"arm\" of x) and $l(x)$ denotes the number of boxes in the same column of $x$ and below $x$ (the \"leg\" of x). For example the partition of 5 below $$\\begin{array}{c c c} \\framebox{\\ }& \\framebox{\\ }& \\framebox{\\ }",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-4-acknowledgements.md",
+      "narrative": null,
+      "content": "The author was partially supported by NSA grant number H98230-05-1-0031.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0503227v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "[AlD]\nD. Aldous and P. Diaconis, Longest increasing subsequences: from patience sorting\nto the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999) 413-432.\n[Bol]\nE. Bolthausen, An estimate of the remainder term in a combinatorial central limit\ntheorem, Z. Wahrsch. Verw. Gebiete 66 (1984) 379-386.\n[BOO] A. Borodin, A. Okounkov, and G. Olshanski, Asymptotics of Plancherel measures\nfor symmetric groups, J. Amer. Math. Soc. 13 (2000) 481-515.\n[BO]\nA. Borodin and G. Olshanski, Z-measures on partitions and their scaling limits,\nEuropean J. Combin. 26 (2005) 795-834.\n[De]\nP. Deift, Integrable sy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

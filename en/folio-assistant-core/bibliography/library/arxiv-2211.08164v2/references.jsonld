@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2211.08164v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+      "dcterms:creator": [
+        "REYES-CAROCCA, SEBASTIÁN",
+        "SPEZIALI, PIETRO"
+      ],
+      "dcterms:issued": "D:20240416",
+      "dcterms:identifier": "https://arxiv.org/abs/2211.08164",
+      "dcterms:abstract": "In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorphism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Riemann sur- faces with automorphism group acting transitively on the Weierstrass points, under the assumption that they are simple.",
+      "dcterms:source": "library/arxiv-2211.08164v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2211.08164v2"
+    }
+  ]
+}

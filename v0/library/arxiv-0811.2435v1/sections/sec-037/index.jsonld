@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-0811.2435v1/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+  "pageStart": 105,
+  "pageEnd": 109,
+  "contains": [
+    "library/arxiv-0811.2435v1/blocks/prose-sec-037"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
+  "provenance": "ingested"
+}

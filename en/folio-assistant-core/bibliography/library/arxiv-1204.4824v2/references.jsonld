@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1204.4824v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Spectral networks",
+      "dcterms:creator": [
+        "Gaiotto, Davide",
+        "Moore2, 1 Gregory W.",
+        "Neitzke3, Andrew"
+      ],
+      "dcterms:issued": "D:20131008",
+      "dcterms:identifier": "https://arxiv.org/abs/1204.4824",
+      "dcterms:abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensional N = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
+      "dcterms:source": "library/arxiv-1204.4824v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1204.4824v2"
+    }
+  ]
+}

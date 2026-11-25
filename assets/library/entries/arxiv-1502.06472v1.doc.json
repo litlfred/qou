@@ -1,0 +1,940 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1502.06472v1",
+  "title": "arxiv-1502.06472v1",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Gröbner-Shirshov bases for associative algebras and Lie algebras",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-gröbner-shirshov-bases-for-associative-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Composition-Diamond lemma for associative algebras",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-composition-diamond-lemma-for-associative-alg"
+    },
+    {
+      "level": 2,
+      "title": "Composition-Diamond lemma for Lie algebras over a field",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-composition-diamond-lemma-for-lie-algebras-ov"
+    },
+    {
+      "level": 1,
+      "title": "PBW theorems",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-pbw-theorems"
+    },
+    {
+      "level": 2,
+      "title": "Lie algebras–associative algebras (Shirshov)",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-lie-algebrasassociative-algebras-shirshov"
+    },
+    {
+      "level": 2,
+      "title": "Lie algebras–pre-Lie algebras (Segal)",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-lie-algebraspre-lie-algebras-segal"
+    },
+    {
+      "level": 2,
+      "title": "Leibniz algebras–dialgebras (Aymon, Grivel)",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-leibniz-algebrasdialgebras-aymon-grivel"
+    },
+    {
+      "level": 2,
+      "title": "Akivis algebras–non-associative algebras (Shestekov)",
+      "number": "3.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-34-akivis-algebrasnon-associative-algebras-shest"
+    },
+    {
+      "level": 2,
+      "title": "Sabinin algebras–modules (Perez-Izquierdo)",
+      "number": "3.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-35-sabinin-algebrasmodules-perez-izquierdo"
+    },
+    {
+      "level": 2,
+      "title": "Dendriform algebras–Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
+      "number": "3.6",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-36-dendriform-algebrasrota-baxter-algebras-chen"
+    },
+    {
+      "level": 2,
+      "title": "Shirshov's, Cartier's, Cohn's counter examples to PBW for Lie algebras over commutative algebra",
+      "number": "3.7",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-37-shirshovs-cartiers-cohns-counter-examples-to"
+    },
+    {
+      "level": 2,
+      "title": "``1/2 PBW theorem\" (Bokut-Fong-Ke)",
+      "number": "3.8",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-38-12-pbw-theorem-bokut-fong-ke"
+    },
+    {
+      "level": 1,
+      "title": "Linear bases of free universal algebras",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-linear-bases-of-free-universal-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Normal forms for groups and semigroups",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-normal-forms-for-groups-and-semigroups"
+    },
+    {
+      "level": 1,
+      "title": "Schreier extensions of groups and algebras",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-schreier-extensions-of-groups-and-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Embedding of algebras",
+      "number": "7",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-7-embedding-of-algebras"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "south china",
+          "heading": false
+        },
+        {
+          "term": "china normal",
+          "heading": false
+        },
+        {
+          "term": "normal university",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1502.06472v1 [math.RA] 8 Nov 2014 Gr¨obner-Shirshov bases and PBW theorems∗ L. A. Bokut† School of Mathematical Sciences, South China Normal University Guangzhou 510631, P. R. China Sobolev Institute of Mathematics, Novosibirsk 630090, Russia bokut@math.nsc.ru Yuqun Chen School of Mathematical Sciences, South China Normal University Guangzhou 510631, P. R. China yqchen@scnu.edu.cn Abstract: We review some",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1502.06472v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial lcm",
+          "heading": false
+        },
+        {
+          "term": "rota-baxter algebras",
+          "heading": false
+        },
+        {
+          "term": "associative algebras",
+          "heading": false
+        },
+        {
+          "term": "conformal algebras",
+          "heading": false
+        },
+        {
+          "term": "commutative algebras",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "composition-diamond lemmas",
+          "heading": false
+        }
+      ],
+      "extract": "Combinatorial algebra seminar at South China Normal University was organized by the authors in March 2006. Since then, there were some 30 Master Theses and 4 PhD Theses, about 40 published papers in JA, IJAC, PAMS, JPAA, Comm. Algebra, Algebra Coll., Siberian Math. J., Science in China and other Journals and Proceedings. There were organized 2 International Conferences (2007, 2009) with E. Zelmanov as Chairman of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-gröbner-shirshov-bases-for-associative-algebra",
+      "number": "2",
+      "title": "Gröbner-Shirshov bases for associative algebras and Lie algebras",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebras",
+          "heading": true
+        },
+        {
+          "term": "gröbner-shirshov",
+          "heading": true
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        }
+      ],
+      "extract": "Gröbner-Shirshov bases for Lie algebras is established by Shirshov [@{[Sh62]}; @{[Sh09]}] for the free Lie algebras (with deg-lex order) in 1962 (see also Bokut [@b72]). In 1976, Bokut [@{[Bok76]}] specialized the approach of Shirshov to associative algebras (see also Bergman [@b]). For commutative polynomials, this is due to Buchberger [@bu65; @bu70].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-composition-diamond-lemma-for-associative-alg",
+      "number": "2.1",
+      "title": "Composition-Diamond lemma for associative algebras",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lcm",
+          "heading": false
+        },
+        {
+          "term": "overline mapsto",
+          "heading": false
+        },
+        {
+          "term": "equiv mod",
+          "heading": false
+        }
+      ],
+      "extract": "Let $k\\langle X\\rangle$ be the free associative algebra over a field $k$ generated by $X$ and $(X^{*},<)$ a well-ordered free monoid generated by $X$, $S\\subset k\\langle X\\rangle$ such that every $s\\in S$ is monic ($s$ is monic if the coefficient of the leading word of $s$ is 1). Let us prove $(i)\\Rightarrow(ii)$ and define a GS basis. Let $f=\\sum_{i=1}^n\\alpha_ia_is_ib_i\\in Id(S)$ where each $\\alpha_i\\in k, \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-composition-diamond-lemma-for-lie-algebras-ov",
+      "number": "2.2",
+      "title": "Composition-Diamond lemma for Lie algebras over a field",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "alsw",
+          "heading": false
+        },
+        {
+          "term": "overline mapsto",
+          "heading": false
+        },
+        {
+          "term": "nlsw",
+          "heading": false
+        }
+      ],
+      "extract": "Let $S\\subset{Lie(X)}\\subset{k\\langle X\\rangle}$ be a nonempty set of monic Lie polynomials, $(X^*,<)$ deg-lex order, $\\bar s$ means the maximal word of $s$ as non-commutative polynomial. Then compositions are defined as follows $$\\langle s_1,s_2\\rangle_w=[w|_{\\overline{s_1}\\mapsto s_1}]_{\\overline{s_1}}-[w|_{\\overline{s_2}\\mapsto s_2}]_{\\overline{s_2}},\\ \\ w\\in ALSW(X)$$ associative composition with the special",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-pbw-theorems",
+      "number": "3",
+      "title": "PBW theorems",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "There are 8 PBW (Poincare-Birkhoff-Witt) theorems that are proved by using GS bases and Composition-Diamond lemmas.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-lie-algebrasassociative-algebras-shirshov",
+      "number": "3.1",
+      "title": "Lie algebras–associative algebras (Shirshov)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdots preceq",
+          "heading": false
+        },
+        {
+          "term": "alsw",
+          "heading": false
+        },
+        {
+          "term": "shirshov",
+          "heading": true
+        }
+      ],
+      "extract": "Let $L=Lie_k(X|S)$ be an arbitrary Lie algebra with generators $X$ and defining relations $S$ and $U(L)=k\\langle X|S^{(-)}\\rangle$ the universal enveloping associative algebra of $L$. Then 1. $S$ is a Lie GS basis $\\Leftrightarrow$ $S$ is an associative GS basis. 2. In this case, a linear basis of $U(L)$ is $$\\begin{aligned} u_1u_2\\cdots u_t,\\ \\ u_1\\preceq u_2\\preceq\\cdots\\preceq u_t\\ \\mbox{ (lex-order)},\\ \\ u_i\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-lie-algebraspre-lie-algebras-segal",
+      "number": "3.2",
+      "title": "Lie algebras–pre-Lie algebras (Segal)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pre-lie algebras",
+          "heading": true
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        }
+      ],
+      "extract": "Pre-Lie algebras are defined by an identity $(x,y,z)=(x,z,y)$, where $(x,y,z)=(xy)z-x(yz)$. Let $X=\\{x_i|i\\in I\\}$ be a linear basis of the Lie algebra $L$ and $[x_i,x_j]=\\sum\\alpha_{ij}^tx_t=:\\{x_i,x_j\\}$ the multiplication table of the linear basis $X$. Then $L$ has a presentation $$L=Lie(x_i,i\\in I|[x_i,x_j]=\\{x_i,x_j\\},\\ i,j\\in I)=Lie(X|S)$$ and the universal enveloping pre-Lie algebra of $L$ $$U_{\\mbox{{\\small",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-leibniz-algebrasdialgebras-aymon-grivel",
+      "number": "3.3",
+      "title": "Leibniz algebras–dialgebras (Aymon, Grivel)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dashv",
+          "heading": false
+        },
+        {
+          "term": "vdash",
+          "heading": false
+        },
+        {
+          "term": "dialgebras",
+          "heading": true
+        }
+      ],
+      "extract": "Dialgebra: $a\\dashv(b\\vdash c)=a\\dashv b\\dashv c,\\ (a\\dashv b)\\vdash c=a\\vdash b\\vdash c,\\ a\\vdash(b\\dashv c)=(a\\vdash b)\\dashv c$ and $\\vdash,\\dashv$ associative. Leibniz identity: $[[a,b],c]=[[a,c],b]+[a,[b,c]]$. Di-commutator: $[a,b]=a\\dashv b-b\\vdash a$. $$\\begin{aligned} &&L=Lei(x_i,i\\in I|[x_i,x_j]=\\{x_i,x_j\\},\\ i,j\\in I),\\\\ &&U_{Dialg}(L)=D(X|S^{(-)}). \\end{aligned}$$ A GS basis for $U_{Dialg}(L)$ is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-34-akivis-algebrasnon-associative-algebras-shest",
+      "number": "3.4",
+      "title": "Akivis algebras–non-associative algebras (Shestekov)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 108,
+      "summary": null,
+      "keywords": [],
+      "extract": "Any nonassociative algebra is an Akivis algebra relative the commutator $[x,y]=xy-yx$ and the associator $(x,y,z)=(xy)z - x(yz)$. Akivis identity: $[[x,y],z]+[[y,z],x]+[[z,x],y]=(x,y,z)+(z,x,y)+(y,z,x)-(x,z,y)-(y,x,z)-(z,y,x)$. $$\\begin{aligned} &&A=A(x_i,i\\in I|[x_i,x_j]=\\{x_i,x_j\\},\\ (x_i,x_j,x_t)=\\{x_i,x_j,x_t\\},\\ i,j,t\\in I),\\\\ &&U(A)=k\\{X|S^{(-)}\\},\\\\ && S^{(-)}=\\{[x_i,x_j]=\\{x_i,x_j\\},\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-35-sabinin-algebrasmodules-perez-izquierdo",
+      "number": "3.5",
+      "title": "Sabinin algebras–modules (Perez-Izquierdo)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "rangle mbox",
+          "heading": false
+        },
+        {
+          "term": "sabinin",
+          "heading": true
+        }
+      ],
+      "extract": "Let $(V,\\langle;\\rangle)$ be a Sabinin algebra, $$\\begin{aligned} \\widetilde{S}(V)&=&T(V)/span\\langle xaby-xbay +\\sum x_{(1)}\\langle x_{(2)};a,b\\rangle y|x,y\\in T(V),a,b\\in V\\rangle\\\\ &\\cong&mod\\langle X|I\\rangle_{k\\langle X\\rangle}\\ \\ \\mbox{as }\\ k\\langle X\\rangle\\mbox{-modules} \\end{aligned}$$ the universal enveloping module for $V$, where $I=\\{xab-xba+\\sum x_{(1)}\\langle x_{(2)};a,b\\rangle|x\\in X^*,a>b, \\ a,b\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-36-dendriform-algebrasrota-baxter-algebras-chen",
+      "number": "3.6",
+      "title": "Dendriform algebras–Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prec succ",
+          "heading": false
+        },
+        {
+          "term": "dendriform",
+          "heading": true
+        },
+        {
+          "term": "rota-baxter",
+          "heading": true
+        }
+      ],
+      "extract": "Rota-Baxter identity: $$\\begin{aligned} P(x)P(y)=P(P(x)y)+P(xP(y)), \\forall x,y\\in A. \\end{aligned}$$ Dendriform identities: $(x\\prec y)\\prec z=x\\prec(y\\prec z+y\\succ z),\\ (x\\succ y)\\prec z=x\\succ(y\\prec z),\\ (x\\prec y+x\\succ y)\\succ z=x\\succ(y\\succ z).$ $$\\begin{aligned} D&=&Den(X|x_i\\prec x_j=\\{x_i\\prec x_j\\},\\ x_i\\succ x_j=\\{x_i\\succ x_j\\}, x_i,x_j\\in X);\\\\ U(D)&=&RB(X|x_iP(x_j)=\\{x_i\\prec x_j\\},\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-37-shirshovs-cartiers-cohns-counter-examples-to",
+      "number": "3.7",
+      "title": "Shirshov's, Cartier's, Cohn's counter examples to PBW for Lie algebras over commutative algebra",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohn",
+          "heading": true
+        },
+        {
+          "term": "cartier",
+          "heading": true
+        },
+        {
+          "term": "lie algebras",
+          "heading": true
+        }
+      ],
+      "extract": "Shirshov [@{[Sh53b]}] 1953 and Cartier [@{[Cartier]}] 1958 give counter examples to PBW for Lie algebras over commutative algebra. Cohn [@{[Cohn63]}] 1963 posts the conjecture: $$\\begin{aligned} \\mathcal{L}_p&=&Lie_{K}(x_1,x_2,x_3 \\ | \\ y_3x_3=y_2x_2+y_1x_1),\\\\ K&=&k[y_1,y_2,y_3|y_i^p=0, i=1,2,3]. \\end{aligned}$$ $\\mathcal{L}_p$ can not be embedded into its universal enveloping associative algebra. Bokut-Chen-Chen",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-38-12-pbw-theorem-bokut-fong-ke",
+      "number": "3.8",
+      "title": "``1/2 PBW theorem\" (Bokut-Fong-Ke)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal associative",
+          "heading": false
+        },
+        {
+          "term": "lie conformal",
+          "heading": false
+        },
+        {
+          "term": "conformal algebra",
+          "heading": false
+        },
+        {
+          "term": "bochzhang-n-conf",
+          "heading": false
+        }
+      ],
+      "extract": "Let $k$ be a field with the characteristic 0 and $C$ a $k$-algebra with operations $a(n)b,\\ n\\geq 0$, and $D(a)$. Then $C$ is called a conformal algebra, if \\(1\\) (the locality condition). For any $a,b\\in C$, there exist $N(a,b)\\geq 0$ such that $a(n)b=0$ for $n\\geq N(a,b)$. \\(2\\) $D(a(n)b)= D(a)(n)b +a(n)D(b)$ and $D(a)(n)b= -na(n-1)b$. Let $C$ be a conformal algebra. Then $C$ is an associative conformal algebra if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-linear-bases-of-free-universal-algebras",
+      "number": "4",
+      "title": "Linear bases of free universal algebras",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lyndon-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "loday basis",
+          "heading": false
+        },
+        {
+          "term": "bases",
+          "heading": true
+        },
+        {
+          "term": "hall basis",
+          "heading": false
+        },
+        {
+          "term": "free",
+          "heading": true
+        }
+      ],
+      "extract": "--Bases of free Lie algebras M. Hall and A.I. Shirshov use constructions and check axioms. One may use anti-commutative Gröbner-Shirshov bases for a free Lie algebra. Hall basis (Bokut-Chen-Li [@{[BCLi09]}]): $Lie(X)=AC(X|S_1)$, $S_1$ is a anti-commutative GS basis, $Irr(S_1)=$Hall basis in $X$. Lyndon-Shirshov basis (Bokut-Chen-Li [@{[BCLi13]}]): $Lie(X)=AC(X|S_2)$, $S_2$ is a anti-commutative GS basis,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-normal-forms-for-groups-and-semigroups",
+      "number": "5",
+      "title": "Normal forms for groups and semigroups",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-relator groups",
+          "heading": false
+        },
+        {
+          "term": "bok",
+          "heading": false
+        },
+        {
+          "term": "normal",
+          "heading": true
+        },
+        {
+          "term": "czhong",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        },
+        {
+          "term": "standard normal",
+          "heading": false
+        }
+      ],
+      "extract": "--Braid groups in Artin-Burau generators (Bokut-Chanikov-Shum [@{[Bo-Ch-Shum]}]); in Artin-Garside generators (Bokut [@{[Bok08]}]); in Birman-Ko-Lee generators (Bokut [@{[Bok09]}]); in Adyan-Thurston generators (Chen-Zhong [@{[CZhong13]}]). --Chinese monoid (Chen-Qiu [@Chen-Qiu]) --Plactic monoid (Bokut-Chen-Chen-Li [@BoChLiJing-plactic]). --HNN extension Britton Lemma and Lyndon-Schupp normal form lemma for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-schreier-extensions-of-groups-and-algebras",
+      "number": "6",
+      "title": "Schreier extensions of groups and algebras",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schreier",
+          "heading": true
+        },
+        {
+          "term": "chen",
+          "heading": false
+        },
+        {
+          "term": "hnn-extensions",
+          "heading": false
+        }
+      ],
+      "extract": "In (Chen [@{[Chen08]}]), it is dealing with a Schreier extension $$1\\rightarrow A\\rightarrow C\\rightarrow B\\rightarrow 1$$ of a group $A$ by $B$. M. Hall [@{[H]}] mentioned that for any $B$ it is difficult to find an analogous conditions. Actually this problem was solved in [@{[Chen08]}] using the GS bases technique. As applications there were given above conditions for cyclic and free abelian cases, as well as for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-embedding-of-algebras",
+      "number": "7",
+      "title": "Embedding of algebras",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 1376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "obner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        },
+        {
+          "term": "rota-baxter algebras",
+          "heading": false
+        },
+        {
+          "term": "algebra logika",
+          "heading": false
+        },
+        {
+          "term": "chen",
+          "heading": false
+        },
+        {
+          "term": "southeast asian",
+          "heading": false
+        },
+        {
+          "term": "associative algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Embedding of algebras In Bokut-Chen-Mo [23], we were dealing with the problem of embedding of countably generated associative and Lie algebras, groups, semigroups, Ω-algebras into (simple) 2- generated ones. We proved some known results (of Higman-Neuman-Neuman, Evance, Malcev, Shirshov) and some new ones using GS bases technique. For example 8 Theorem 1. Every countable Lie algebra is embeddable into simple",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "associative algebras",
+      "heading": true
+    },
+    {
+      "term": "lie algebras",
+      "heading": true
+    },
+    {
+      "term": "obner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "rota-baxter algebras",
+      "heading": true
+    },
+    {
+      "term": "associative conformal",
+      "heading": false
+    },
+    {
+      "term": "pre-lie algebras",
+      "heading": true
+    },
+    {
+      "term": "enveloping associative",
+      "heading": false
+    },
+    {
+      "term": "obner-shirshov basis",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov bases",
+      "heading": true
+    },
+    {
+      "term": "free lie",
+      "heading": false
+    },
+    {
+      "term": "commutative lie",
+      "heading": true
+    },
+    {
+      "term": "composition-diamond lemma",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1502.06472v1"
+  }
+}

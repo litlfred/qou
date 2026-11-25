@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Reidemeister torsion on character varieties",
+  "contains": [
+    "library/2018sorus020/sections/sec-front-matter",
+    "library/2018sorus020/sections/sec-000",
+    "library/2018sorus020/sections/sec-001",
+    "library/2018sorus020/sections/sec-002",
+    "library/2018sorus020/sections/sec-003",
+    "library/2018sorus020/sections/sec-004",
+    "library/2018sorus020/sections/sec-005",
+    "library/2018sorus020/sections/sec-006",
+    "library/2018sorus020/sections/sec-007",
+    "library/2018sorus020/sections/sec-008",
+    "library/2018sorus020/sections/sec-009",
+    "library/2018sorus020/sections/sec-010",
+    "library/2018sorus020/sections/sec-011",
+    "library/2018sorus020/sections/sec-012",
+    "library/2018sorus020/sections/sec-013",
+    "library/2018sorus020/sections/sec-014",
+    "library/2018sorus020/sections/sec-015",
+    "library/2018sorus020/sections/sec-016",
+    "library/2018sorus020/sections/sec-017",
+    "library/2018sorus020/sections/sec-018",
+    "library/2018sorus020/sections/sec-019",
+    "library/2018sorus020/sections/sec-020",
+    "library/2018sorus020/sections/sec-021",
+    "library/2018sorus020/sections/sec-022",
+    "library/2018sorus020/sections/sec-023",
+    "library/2018sorus020/sections/sec-024",
+    "library/2018sorus020/sections/sec-025",
+    "library/2018sorus020/sections/sec-026",
+    "library/2018sorus020/sections/sec-027",
+    "library/2018sorus020/sections/sec-028",
+    "library/2018sorus020/sections/sec-029",
+    "library/2018sorus020/sections/sec-030",
+    "library/2018sorus020/sections/sec-031",
+    "library/2018sorus020/sections/sec-032",
+    "library/2018sorus020/sections/sec-033",
+    "library/2018sorus020/sections/sec-034",
+    "library/2018sorus020/sections/sec-035",
+    "library/2018sorus020/sections/sec-036",
+    "library/2018sorus020/sections/sec-037",
+    "library/2018sorus020/sections/sec-038",
+    "library/2018sorus020/sections/sec-039",
+    "library/2018sorus020/sections/sec-040",
+    "library/2018sorus020/sections/sec-041",
+    "library/2018sorus020/sections/sec-042",
+    "library/2018sorus020/sections/sec-043",
+    "library/2018sorus020/sections/sec-044",
+    "library/2018sorus020/sections/sec-045",
+    "library/2018sorus020/sections/sec-046",
+    "library/2018sorus020/sections/sec-047",
+    "library/2018sorus020/sections/sec-048",
+    "library/2018sorus020/sections/sec-049",
+    "library/2018sorus020/sections/sec-050"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist\n\n**Reidemeister torsion on character varieties**\n\n*The documents may come from teaching and research*\n\n110 pp, 52 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Character varieties and Reidemeister torsion; 1.1.1 Representation variety; 1.1.2 Algebro-geometric quotient; 1.1.3 Traces and skein algebra; 1.1.4 Characters, reducibility and irreducibil; 1.1.5 Saito’s Theorem and some consequences; 1.1.6 The augmented variety; 1.1.7 The tautological representation; 1.1.8 Examples; 1.2 Twisted cohomology; 1.3 Culler-Shalen theory, group acting on tree; 1.3.1 The tree; 1.3.2 Link of a vertex and ends of the tree; 1.3.3 The SL2 action : stabilizers of vertices; 1.3.4 Curves and valuations; 1.3.5 Group acting on a tree and splitting",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "2018sorus020",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2018SORUS020.pdf",
+    "source_sha256": "c3f929e5195983cec88f2c01dcc0395771877f7793ca6aa246ae4f8325e44c9f",
+    "pages": 110,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,3320 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1203.2182v1",
+  "title": "Volume Conjecture: Reﬁned and Categoriﬁed",
+  "variant": "pdf",
+  "pages": 92,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Generalized volume conjecture",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-generalized-volume-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Quantum volume conjecture",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-quantum-volume-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Quantization and deformation of algebraic curves",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-quantization-and-deformation-of-algebraic-cur"
+    },
+    {
+      "level": 1,
+      "title": "The new conjectures: incorporating $t$",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-the-new-conjectures-incorporating-t"
+    },
+    {
+      "level": 2,
+      "title": "Quantum volume conjecture: refined",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-21-quantum-volume-conjecture-refined"
+    },
+    {
+      "level": 2,
+      "title": "Generalized volume conjecture: refined",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-22-generalized-volume-conjecture-refined"
+    },
+    {
+      "level": 1,
+      "title": "Examples coming from knots",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-examples-coming-from-knots"
+    },
+    {
+      "level": 2,
+      "title": "$S^r$ homological invariants of $(2,2p+1)$ torus knots",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-31-sr-homological-invariants-of-22p1-torus-knots"
+    },
+    {
+      "level": 3,
+      "title": "Refined braid operators and gamma factors",
+      "number": "3.1.1",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-311-refined-braid-operators-and-gamma-factors"
+    },
+    {
+      "level": 3,
+      "title": "The gamma factors for symmetric and anti-symmetric representations",
+      "number": null,
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-the-gamma-factors-for-symmetric-and-anti-symmetr"
+    },
+    {
+      "level": 3,
+      "title": "From partition functions to superpolynomials",
+      "number": "3.1.2",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-312-from-partition-functions-to-superpolynomials"
+    },
+    {
+      "level": 3,
+      "title": "Homological algebra of colored knot invariants",
+      "number": "3.1.3",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-313-homological-algebra-of-colored-knot-invarian"
+    },
+    {
+      "level": 2,
+      "title": "Recursion relations for homological knot invariants",
+      "number": "3.2",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-32-recursion-relations-for-homological-knot-inva"
+    },
+    {
+      "level": 3,
+      "title": "Unknot",
+      "number": "3.2.1",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-321-unknot"
+    },
+    {
+      "level": 3,
+      "title": "Trefoil",
+      "number": "3.2.2",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-322-trefoil"
+    },
+    {
+      "level": 3,
+      "title": "Recursion in various limits",
+      "number": "3.2.3",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-323-recursion-in-various-limits"
+    },
+    {
+      "level": 2,
+      "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+      "number": "3.3",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-33-refined-a-polynomials-and-the-refined-volume"
+    },
+    {
+      "level": 3,
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the unknot",
+      "number": "3.3.1",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-331-refined-a-polynomial-and-s-0-ut-for-the-unkn"
+    },
+    {
+      "level": 3,
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+      "number": "3.3.2",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref"
+    },
+    {
+      "level": 3,
+      "title": "Saddle point analysis of the homological torus knot invariants",
+      "number": "3.3.3",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-333-saddle-point-analysis-of-the-homological-tor"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotic behavior in different grading conventions",
+      "number": "3.3.4",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-334-asymptotic-behavior-in-different-grading-con"
+    },
+    {
+      "level": 2,
+      "title": "Relation to algebraic K-theory",
+      "number": "3.4",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-34-relation-to-algebraic-k-theory"
+    },
+    {
+      "level": 3,
+      "title": "Quantizability of refined $A$-polynomials",
+      "number": "3.4.1",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-341-quantizability-of-refined-a-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Examples coming from refined BPS invariants",
+      "number": "4",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-4-examples-coming-from-refined-bps-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Refined quantum mirror curves",
+      "number": "4.1",
+      "page": 58,
+      "pageLabel": "57",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-41-refined-quantum-mirror-curves"
+    },
+    {
+      "level": 3,
+      "title": "Conifold",
+      "number": null,
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-conifold"
+    },
+    {
+      "level": 2,
+      "title": "Refined mirror curves, $S_0(u,t)$ and quantizability",
+      "number": "4.2",
+      "page": 60,
+      "pageLabel": "59",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-42-refined-mirror-curves-s-0ut-and-quantizabilit"
+    },
+    {
+      "level": 2,
+      "title": "Refinement as a twisted mass parameter",
+      "number": "4.3",
+      "page": 63,
+      "pageLabel": "62",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-43-refinement-as-a-twisted-mass-parameter"
+    },
+    {
+      "level": 1,
+      "title": "Miscellaneous results on knot invariants",
+      "number": "A",
+      "page": 68,
+      "pageLabel": "67",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-a-miscellaneous-results-on-knot-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Macdonald polynomials",
+      "number": "A.1",
+      "page": 68,
+      "pageLabel": "67",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-a1-macdonald-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Consistency check of the gamma factor () and ()",
+      "number": "A.2",
+      "page": 70,
+      "pageLabel": "69",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-a2-consistency-check-of-the-gamma-factor-and"
+    },
+    {
+      "level": 2,
+      "title": "WKB analysis",
+      "number": "A.3",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-a3-wkb-analysis"
+    },
+    {
+      "level": 3,
+      "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+      "number": "A.3.1",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-a31-another-expression-for-p-nt22p1qt"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotic limit of ${\\cal P}^{S^{n-1}}_{\\rm{DGR}}(T^{2,2p+1};a,q,t)$ with $a=q^2 t^2$",
+      "number": "A.3.2",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-034-a32-asymptotic-limit-of-cal-psn-1-rmdgrt22p1aqt"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the gamma factor () and (), by Hidetoshi Awata",
+      "number": "B",
+      "page": 75,
+      "pageLabel": "74",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-b-proof-of-the-gamma-factor-and-by-hidetoshi-awa"
+    },
+    {
+      "level": 1,
+      "title": "Refined A-polynomials",
+      "number": "C",
+      "page": 79,
+      "pageLabel": "78",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-036-c-refined-a-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Newton polygons",
+      "number": "C.1",
+      "page": 79,
+      "pageLabel": "78",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-037-c1-newton-polygons"
+    },
+    {
+      "level": 2,
+      "title": "Matrix forms of A-polynomials",
+      "number": "C.2",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-038-c2-matrix-forms-of-a-polynomials"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reﬁned a-polynomials",
+          "heading": false
+        },
+        {
+          "term": "reﬁned bps",
+          "heading": false
+        },
+        {
+          "term": "hidetoshi awata",
+          "heading": false
+        },
+        {
+          "term": "nagoya university",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "homological knot",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "colored knot",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1203.2182v1 [hep-th] 9 Mar 2012 Preprint typeset in JHEP style - HYPER VERSION Volume Conjecture: Reﬁned and Categoriﬁed Hiroyuki Fuji1,2, Sergei Gukov1,3 and Piotr Su lkowski1,4,5 with an appendix by Hidetoshi Awata6 1 California Institute of Technology, Pasadena, CA 91125, USA 2 Nagoya University, Dept. of Physics, Graduate School of Science, Furo-cho, Chikusa-ku, Nagoya 464-8602, Japan 3 Max-Planck-Institut",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1203.2182v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vcbasic",
+          "heading": false
+        },
+        {
+          "term": "sec-intro",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "text vol",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec-intro label=\"sec-intro\"} The story of the \"volume conjecture\" started with the crucial observation [@Kashaev] that the so-called Kashaev invariant of a knot $K$ defined at the $n$-th root of unity $q = e^{2 \\pi i / n}$ in the classical limit has a nice asymptotic behavior determined by the hyperbolic volume $\\text{Vol} (M)$ of the knot complement $M = S^3 \\setminus K$. Shortly after, it was realized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-generalized-volume-conjecture",
+      "number": "1.1",
+      "title": "Generalized volume conjecture",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vcparam",
+          "heading": false
+        },
+        {
+          "term": "vcbasic",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        },
+        {
+          "term": "parametrized",
+          "heading": false
+        }
+      ],
+      "extract": "Once the volume conjecture is put in the context of analytically continued Chern-Simons theory, it becomes clear that the right-hand side is simply the value of the classical $SL(2,{\\mathbb C})$ Chern-Simons action functional on a knot complement $M$. Since classical solutions in Chern-Simons theory (*i.e.* flat connections on $M$) come in families, parametrized by the holonomy of the gauge connection on a small",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-quantum-volume-conjecture",
+      "number": "1.2",
+      "title": "Quantum volume conjecture",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acurve",
+          "heading": false
+        },
+        {
+          "term": "widehat",
+          "heading": false
+        },
+        {
+          "term": "vcquant",
+          "heading": false
+        },
+        {
+          "term": "chern-simons partition",
+          "heading": false
+        },
+        {
+          "term": "vcparam",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "Classical solutions in Chern-Simons theory (*i.e.* flat connections on $M$) are labeled by the holonomy eigenvalue $x = e^u$ or, to be more precise, by a point on the algebraic curve $${\\cal C }: \\quad \\left\\{(x,y)\\in\\mathbb{C}^*\\times \\mathbb{C}^*\\Big| A(x,y) \\; = \\; 0 \\right\\}\\,, \\label{Acurve}$$ defined by the zero locus of the $A$-polynomial, a certain classical invariant of a knot. In quantum theory, $A(x,y)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-quantization-and-deformation-of-algebraic-cur",
+      "number": "1.3",
+      "title": "Quantization and deformation of algebraic curves",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acurve",
+          "heading": false
+        },
+        {
+          "term": "operator widehat",
+          "heading": false
+        },
+        {
+          "term": "table-qt",
+          "heading": false
+        },
+        {
+          "term": "deformation",
+          "heading": true
+        },
+        {
+          "term": "xycomm",
+          "heading": false
+        },
+        {
+          "term": "abmodel",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        }
+      ],
+      "extract": "The above structure -- and its \"refinement\" that we are going to construct -- is not limited to applications in knot theory. Similar mathematical structure appears in matrix models [@BIPZ; @Dijkgraaf:1990rs; @Fukuma:1990jw], in four-dimensional ${\\mathcal{N}}=2$ supersymmetric gauge theories [@SW-I; @Nekrasov; @NS; @Braverman:2004cr], and in topological string theory [@ADKMV; @DHSV; @DHS; @ACDKV]. In all of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-the-new-conjectures-incorporating-t",
+      "number": "2",
+      "title": "The new conjectures: incorporating $t$",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined bps",
+          "heading": false
+        },
+        {
+          "term": "vcquant",
+          "heading": false
+        },
+        {
+          "term": "vcparam",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we describe general aspects of the mathematical structure shared by a wide variety of examples, ranging from the counting of refined BPS invariants to categorification of quantum group invariants. Then, in later sections we focus on each class of examples separately. In particular, one of our goals is to promote the volume conjectures [\\[VCparam\\]](#VCparam){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-quantum-volume-conjecture-refined",
+      "number": "2.1",
+      "title": "Quantum volume conjecture: refined",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat text",
+          "heading": false
+        },
+        {
+          "term": "widehat sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac widehat",
+          "heading": false
+        },
+        {
+          "term": "equation widehat",
+          "heading": false
+        },
+        {
+          "term": "operator widehat",
+          "heading": false
+        },
+        {
+          "term": "xycomm",
+          "heading": false
+        },
+        {
+          "term": "vcquantref",
+          "heading": false
+        },
+        {
+          "term": "vcquant",
+          "heading": false
+        }
+      ],
+      "extract": "The fact that a $q$-difference operator $\\widehat A (\\widehat x, \\widehat y; q)$ annihilates the partition function of Chern-Simons theory / matrix model / B-model / instanton partition function is easy to refine. Just like each of these partition functions becomes $t$-dependent, so does the operator $\\widehat A (\\widehat x, \\widehat y; q,t)$ that annihilates it. The commutation relations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-generalized-volume-conjecture-refined",
+      "number": "2.2",
+      "title": "Generalized volume conjecture: refined",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s0ref",
+          "heading": false
+        },
+        {
+          "term": "vclimit",
+          "heading": false
+        },
+        {
+          "term": "xuyv",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "qquad text",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "vcparam",
+          "heading": false
+        }
+      ],
+      "extract": "The refinement / categorification of the generalized volume conjecture [\\[VCparam\\]](#VCparam){reference-type=\"eqref\" reference=\"VCparam\"} involves taking the limit [\\[VClimit\\]](#VClimit){reference-type=\"eqref\" reference=\"VClimit\"} while keeping the extra parameter $t$ fixed: $$q = e^{\\hbar} \\to 1 \\,, \\qquad t = \\text{fixed} \\,, \\qquad x \\equiv e^u = q^n = \\text{fixed} \\label{reflimit}$$ We conjecture that, in this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-examples-coming-from-knots",
+      "number": "3",
+      "title": "Examples coming from knots",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "11",
+      "words": 1681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superpolunmial hier",
+          "heading": false
+        },
+        {
+          "term": "superpolynomial cal",
+          "heading": false
+        },
+        {
+          "term": "superwrong",
+          "heading": false
+        },
+        {
+          "term": "colored superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "homology cal",
+          "heading": false
+        },
+        {
+          "term": "vcquantref",
+          "heading": false
+        },
+        {
+          "term": "vcparamref",
+          "heading": false
+        },
+        {
+          "term": "dim cal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:knots label=\"sec:knots\"} In this section, we illustrate the refined / categorified volume conjectures stated in the general form in [\\[VCquantref\\]](#VCquantref){reference-type=\"eqref\" reference=\"VCquantref\"} and [\\[VCparamref\\]](#VCparamref){reference-type=\"eqref\" reference=\"VCparamref\"} for a large class of examples coming from knots. In these examples, the invariants $P_n (q,t)$ whose recursive behavior",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-sr-homological-invariants-of-22p1-torus-knots",
+      "number": "3.1",
+      "title": "$S^r$ homological invariants of $(2,2p+1)$ torus knots",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superpolunmial hier",
+          "heading": false
+        },
+        {
+          "term": "aligned psi",
+          "heading": false
+        },
+        {
+          "term": "cal sigma",
+          "heading": false
+        },
+        {
+          "term": "quad varrho",
+          "heading": false
+        },
+        {
+          "term": "braid slice",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "operator cal",
+          "heading": false
+        },
+        {
+          "term": "aligned lambda",
+          "heading": false
+        }
+      ],
+      "extract": "Our goal in this section is to compute the colored superpolynomials ${\\cal P}^{R} (a,q,t)$ for $(2,2p+1)$ torus knots and symmetric and anti-symmetric representations, $R=S^r$ and $R=\\Lambda^r$. In performing this calculation, we first review the analogous computation of the polynomial knot invariants (on the left side of Figure [\\[fig:superpolunmial_hier\\]](#fig:superpolunmial_hier){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-311-refined-braid-operators-and-gamma-factors",
+      "number": "3.1.1",
+      "title": "Refined braid operators and gamma factors",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 1805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined",
+          "heading": true
+        },
+        {
+          "term": "refined bps",
+          "heading": false
+        },
+        {
+          "term": "bps cal",
+          "heading": false
+        },
+        {
+          "term": "text bps",
+          "heading": false
+        },
+        {
+          "term": "refined chern-simons",
+          "heading": false
+        },
+        {
+          "term": "gamma factors",
+          "heading": true
+        },
+        {
+          "term": "upgrading cal",
+          "heading": false
+        },
+        {
+          "term": "refined analogue",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:refinedbraid label=\"sec:refinedbraid\"} A physical framework for knot homologies was first proposed in [@GSV] and later studied from various viewpoints and in a number of closely related systems in [@Gknothom; @Wknothom; @DGH; @AS]. Regardless of the details and duality frames used, the basic idea is that a graded vector space ${\\cal H }^{R} (K)$ associated to a knot $K$ colored by a representation $R$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-the-gamma-factors-for-symmetric-and-anti-symmetr",
+      "number": null,
+      "title": "The gamma factors for symmetric and anti-symmetric representations",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anti-symmetric representations",
+          "heading": true
+        },
+        {
+          "term": "gamma factors",
+          "heading": true
+        },
+        {
+          "term": "gamma anti-sym",
+          "heading": false
+        },
+        {
+          "term": "ell frac",
+          "heading": false
+        },
+        {
+          "term": "lambda ell",
+          "heading": false
+        },
+        {
+          "term": "ell prod",
+          "heading": false
+        },
+        {
+          "term": "frac r-i",
+          "heading": false
+        },
+        {
+          "term": "consistency gamma",
+          "heading": false
+        }
+      ],
+      "extract": "In order to determine the gamma factors from the consistency condition ([\\[consistency_gamma\\]](#consistency_gamma){reference-type=\"ref\" reference=\"consistency_gamma\"}), one needs the explicit form of the Littlewood-Richardson coefficients $N_{RR}^Q$. For the symmetric representation $R=S^r$ and the anti-symmetric representation $R=\\Lambda^r$, the explicit expression for the Littlewood-Richardson coefficients can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-312-from-partition-functions-to-superpolynomials",
+      "number": "3.1.2",
+      "title": "From partition functions to superpolynomials",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 26,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 1717,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superpolunmial hier",
+          "heading": false
+        },
+        {
+          "term": "grading conventions",
+          "heading": false
+        },
+        {
+          "term": "homology cal",
+          "heading": false
+        },
+        {
+          "term": "prright",
+          "heading": false
+        },
+        {
+          "term": "superright",
+          "heading": false
+        },
+        {
+          "term": "superpdef",
+          "heading": false
+        },
+        {
+          "term": "text conventions",
+          "heading": false
+        },
+        {
+          "term": "differentials",
+          "heading": false
+        }
+      ],
+      "extract": "As we already explained around [\\[superPdef\\]](#superPdef){reference-type=\"eqref\" reference=\"superPdef\"}, the reduced colored superpolynomial ${\\cal P}^R (K; a,q,t)$ is defined as the Poincaré polynomial of the triply graded homology ${\\cal H }^R_{i,j,k} (K)$ that categorifies the colored HOMFLY polynomial $P^R (K;a,q)$. Here, the word \"reduced\" means that the normalization is such that $P^R",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-313-homological-algebra-of-colored-knot-invarian",
+      "number": "3.1.3",
+      "title": "Homological algebra of colored knot invariants",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 32,
+      "labelStart": "25",
+      "labelEnd": "31",
+      "words": 2900,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superpolynomial anti-sym",
+          "heading": false
+        },
+        {
+          "term": "dgr refined",
+          "heading": false
+        },
+        {
+          "term": "superpolynomial cal",
+          "heading": false
+        },
+        {
+          "term": "canceling differentials",
+          "heading": false
+        },
+        {
+          "term": "colored superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "anti-symmetric dgr",
+          "heading": false
+        },
+        {
+          "term": "superpolynomial sym",
+          "heading": false
+        },
+        {
+          "term": "super monomial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:homological label=\"sec:homological\"} Our next goal is to describe a very rich structure of the colored superpolynomials that can be used either as an alternative way to compute them or as a tool to verify their correctness. As in the previous discussion and in most of the literature on this subject [@KhPatterns; @KhR1; @DGR], ${\\cal P}^R (K;a,q,t)$ stands for the *reduced* superpolynomial of a knot $K$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-recursion-relations-for-homological-knot-inva",
+      "number": "3.2",
+      "title": "Recursion relations for homological knot invariants",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recursion",
+          "heading": true
+        },
+        {
+          "term": "baref",
+          "heading": false
+        },
+        {
+          "term": "homological",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we ﬁnd recursion relations which are satisﬁed by homological knot invariants, therefore, providing concrete examples for one of the new volume conjectures proposed in section 2. In other words, we ﬁnd reﬁned quantum A-polynomials bAref(bx, by; q, t). These are the objects which generalize the unreﬁned quantum curves considered e.g. in [3, 17, 59, 7, 19].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-321-unknot",
+      "number": "3.2.1",
+      "title": "Unknot",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unknot",
+          "heading": true
+        },
+        {
+          "term": "widehat text",
+          "heading": false
+        },
+        {
+          "term": "pnunkot",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "raisebox",
+          "heading": false
+        },
+        {
+          "term": "colored superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "width",
+          "heading": false
+        },
+        {
+          "term": "aunknot1x1y",
+          "heading": false
+        }
+      ],
+      "extract": "As we already mentioned in [\\[unknotMqtR\\]](#unknotMqtR){reference-type=\"eqref\" reference=\"unknotMqtR\"} and [\\[unknotsuperSr\\]](#unknotsuperSr){reference-type=\"eqref\" reference=\"unknotsuperSr\"}, in every approach to knot homologies based on the refined BPS invariants [@GIKV; @AS] the colored superpolynomial of the unknot is given essentially by the Macdonald polynomial [@IK11]. In particular, after the change of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-322-trefoil",
+      "number": "3.2.2",
+      "title": "Trefoil",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat acts",
+          "heading": false
+        },
+        {
+          "term": "widehat text",
+          "heading": false
+        },
+        {
+          "term": "pn-single",
+          "heading": false
+        },
+        {
+          "term": "refinerecursion",
+          "heading": false
+        },
+        {
+          "term": "trefoil-aqt",
+          "heading": false
+        },
+        {
+          "term": "aligned alpha",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "xyactionp",
+          "heading": false
+        }
+      ],
+      "extract": "Our next task is to derive refined recursion relations for the trefoil. Similarly as in the unknot case, we will be able to determine these relations from the structure of the $sl(2)$ specialization $P_{n}(T^{2,3};q,t)$ of the colored superpolynomial. For general $(2,2p+1)$ torus knots, we found an explicit expression for this homological invariant in ([\\[refined_SU(2)\\]](#refined_SU(2)){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-323-recursion-in-various-limits",
+      "number": "3.2.3",
+      "title": "Recursion in various limits",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refinerecursion",
+          "heading": false
+        },
+        {
+          "term": "ratioc",
+          "heading": false
+        },
+        {
+          "term": "superpolynomial sym",
+          "heading": false
+        },
+        {
+          "term": "recursion",
+          "heading": true
+        },
+        {
+          "term": "inhomogeneous relation",
+          "heading": false
+        },
+        {
+          "term": "sym refined",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous term",
+          "heading": false
+        },
+        {
+          "term": "delta epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "In order to understand better the refined recursion relation ([\\[RefineRecursion\\]](#RefineRecursion){reference-type=\"ref\" reference=\"RefineRecursion\"}), let us consider what happens in various special limits, when $t=-1$ or $q=\\pm 1$. We begin with the unrefined limit $t=-1$, which is special for several reasons. First, a direct substitution $\\boxed{t=-1}$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-33-refined-a-polynomials-and-the-refined-volume",
+      "number": "3.3",
+      "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined polynomials",
+          "heading": true
+        },
+        {
+          "term": "vcparamref",
+          "heading": false
+        },
+        {
+          "term": "widehat text",
+          "heading": false
+        },
+        {
+          "term": "s0ref",
+          "heading": false
+        },
+        {
+          "term": "aaaa",
+          "heading": false
+        },
+        {
+          "term": "text ref",
+          "heading": false
+        },
+        {
+          "term": "reflimit",
+          "heading": false
+        },
+        {
+          "term": "bmodel",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:knotS0 label=\"sec:knotS0\"} One next goal is to test the second new conjecture of the present paper -- namely, the refinement of the generalized volume conjecture ([\\[VCparamref\\]](#VCparamref){reference-type=\"ref\" reference=\"VCparamref\"}a) -- in a large class of examples associated with $(2,2p+1)$ torus knots. Specifically, in this section we derive the refined $A$-polynomials $A^{\\text{ref}}(x,y;t)$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-331-refined-a-polynomial-and-s-0-ut-for-the-unkn",
+      "number": "3.3.1",
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the unknot",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unknot",
+          "heading": true
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "atunknot",
+          "heading": false
+        },
+        {
+          "term": "refined",
+          "heading": true
+        },
+        {
+          "term": "unrefined polynomial",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "ys0prim",
+          "heading": false
+        },
+        {
+          "term": "aunknot1x1y",
+          "heading": false
+        }
+      ],
+      "extract": "We start our analysis with the example of the unknot. This example is quite instructive: being relatively simple, it captures all essential ingredients which arise for more complicated knots. Recall, that we already determined the quantum refined curve in ([\\[qAt-unknot\\]](#qAt-unknot){reference-type=\"ref\" reference=\"qAt-unknot\"}), and its classical limit reads ([\\[At-unknot\\]](#At-unknot){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref",
+      "number": "3.3.2",
+      "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined polynomial",
+          "heading": true
+        },
+        {
+          "term": "trefoil",
+          "heading": true
+        },
+        {
+          "term": "trefoil-aqt",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "log frac",
+          "heading": false
+        },
+        {
+          "term": "non-abelian branch",
+          "heading": false
+        },
+        {
+          "term": "s0ref",
+          "heading": false
+        }
+      ],
+      "extract": "The next example is naturally the trefoil knot $T^{2,3} = {\\bf 3}_1$. First, let us discuss the structure of its refined $A$-polynomial and the associated free energy $S_0(u,t)$ from the viewpoint of the quantum $A$-polynomial given in ([\\[trefoil-Aqt\\]](#trefoil-Aqt){reference-type=\"ref\" reference=\"trefoil-Aqt\"}). The refined $A$-polynomial can be determined by setting $q = 1$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-333-saddle-point-analysis-of-the-homological-tor",
+      "number": "3.3.3",
+      "title": "Saddle point analysis of the homological torus knot invariants",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 46,
+      "labelStart": "41",
+      "labelEnd": "45",
+      "words": 1871,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "braid saddle",
+          "heading": false
+        },
+        {
+          "term": "refined polynomials",
+          "heading": false
+        },
+        {
+          "term": "nonumber quad",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": true
+        },
+        {
+          "term": "saddle end",
+          "heading": false
+        },
+        {
+          "term": "determine refined",
+          "heading": false
+        },
+        {
+          "term": "nonumber frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:saddle_point label=\"sec:saddle_point\"} In this section we analyze general $(2,2p+1)$ torus knots ($p \\ge 1$). For this class of knots, the quantum refined curves $\\widehat{A}^{\\text{ref}}_{T^{2,2p+1}}(\\widehat{x},\\widehat{y};q,t)$ are not known at present (apart from the case of trefoil, *i.e.* $p=1$, with the quantum curve determined in ([\\[RefineRecursion\\]](#RefineRecursion){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-334-asymptotic-behavior-in-different-grading-con",
+      "number": "3.3.4",
+      "title": "Asymptotic behavior in different grading conventions",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 50,
+      "labelStart": "45",
+      "labelEnd": "49",
+      "words": 1267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle dgr",
+          "heading": false
+        },
+        {
+          "term": "grading conventions",
+          "heading": true
+        },
+        {
+          "term": "dgr refined",
+          "heading": false
+        },
+        {
+          "term": "text dgr",
+          "heading": false
+        },
+        {
+          "term": "symmetric dgr",
+          "heading": false
+        },
+        {
+          "term": "braid saddle",
+          "heading": false
+        },
+        {
+          "term": "colored superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "nonumber quad",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:saddle_DGR label=\"sec:saddle_DGR\"} It is instructive to study the asymptotic behavior of the colored superpolynomial and its specialization [\\[Pq2special\\]](#Pq2special){reference-type=\"eqref\" reference=\"Pq2special\"} in different grading conventions. For example, another popular set of grading conventions is the one where differentials $d_{N<0}$ have degree $(-2,2N,2N-1)$, see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-34-relation-to-algebraic-k-theory",
+      "number": "3.4",
+      "title": "Relation to algebraic K-theory",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 1033,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined polynomials",
+          "heading": false
+        },
+        {
+          "term": "quantizability",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": true
+        },
+        {
+          "term": "curve cal",
+          "heading": false
+        },
+        {
+          "term": "face polynomials",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "log frac",
+          "heading": false
+        },
+        {
+          "term": "newton polygon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:quantizability label=\"sec:quantizability\"} So far in this section we have discovered a number of refined $A$-polynomials $A^{\\textrm{ref}}(x,y;t)$ for various knots, including the unknot ([\\[At-unknot\\]](#At-unknot){reference-type=\"ref\" reference=\"At-unknot\"}), the trefoil knot ([\\[deformed_A-poly_trefoil\\]](#deformed_A-poly_trefoil){reference-type=\"ref\" reference=\"deformed_A-poly_trefoil\"}), and more",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-341-quantizability-of-refined-a-polynomials",
+      "number": "3.4.1",
+      "title": "Quantizability of refined $A$-polynomials",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "51",
+      "labelEnd": "53",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined polynomials",
+          "heading": true
+        },
+        {
+          "term": "newton polygons",
+          "heading": false
+        },
+        {
+          "term": "quantizability",
+          "heading": true
+        },
+        {
+          "term": "unrefined polynomials",
+          "heading": false
+        },
+        {
+          "term": "face polynomials",
+          "heading": false
+        },
+        {
+          "term": "appendixb",
+          "heading": false
+        },
+        {
+          "term": "yellow crosses",
+          "heading": false
+        },
+        {
+          "term": "both newton",
+          "heading": false
+        }
+      ],
+      "extract": "We can now analyze under what conditions the refined $A$-polynomials which we found earlier are quantizable. Since we already found the explicit form of such refined polynomials $A^{\\textrm{ref}}(x,y;t)$, in order to test quantizability we can simply apply the condition ([\\[tempered\\]](#tempered){reference-type=\"ref\" reference=\"tempered\"}). To this end, we need to identify face polynomials associated to the Newton",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-4-examples-coming-from-refined-bps-invariants",
+      "number": "4",
+      "title": "Examples coming from refined BPS invariants",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 58,
+      "labelStart": "53",
+      "labelEnd": "57",
+      "words": 1322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined bps",
+          "heading": true
+        },
+        {
+          "term": "toric calabi-yau",
+          "heading": false
+        },
+        {
+          "term": "bps text",
+          "heading": false
+        },
+        {
+          "term": "reproduces nekrasov",
+          "heading": false
+        },
+        {
+          "term": "refined mirror",
+          "heading": false
+        },
+        {
+          "term": "string amplitudes",
+          "heading": false
+        },
+        {
+          "term": "bps degeneracies",
+          "heading": false
+        },
+        {
+          "term": "refined vertex",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Bmodel label=\"sec:Bmodel\"} It is known that $\\mathcal{N}=2$ gauge theories can be geometrically engineered by considering type II string theory on appropriate toric Calabi-Yau manifolds [@engineering]. The corresponding mirror manifolds have the form of a hypersurface $$z_1 z_2 \\; = \\; A(x,y) \\label{Amirror}$$ in ${\\mathbb C}^2 \\times {\\mathbb C}^{*\\, 2}$. Upon the suitable identification of parameters the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-41-refined-quantum-mirror-curves",
+      "number": "4.1",
+      "title": "Refined quantum mirror curves",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mirror curves",
+          "heading": true
+        },
+        {
+          "term": "refined",
+          "heading": true
+        },
+        {
+          "term": "quantum curves",
+          "heading": true
+        },
+        {
+          "term": "bps text",
+          "heading": false
+        },
+        {
+          "term": "frac widehat",
+          "heading": false
+        },
+        {
+          "term": "sqrt widehat",
+          "heading": false
+        },
+        {
+          "term": "text open",
+          "heading": false
+        },
+        {
+          "term": "amirror",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we derive the refined quantum curves relevant in the context of the open BPS state counting (or topological string theory). They can be regarded as refined and quantum versions of mirror curves $A(x,y)=0$ which appear in the mirror geometry ([\\[Amirror\\]](#Amirror){reference-type=\"ref\" reference=\"Amirror\"}) for toric three-folds. Specifically, we consider open refined topological string amplitudes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-conifold",
+      "number": null,
+      "title": "Conifold",
+      "level": 3,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conifold",
+          "heading": true
+        },
+        {
+          "term": "sqrt widehat",
+          "heading": false
+        },
+        {
+          "term": "frac widehat",
+          "heading": false
+        },
+        {
+          "term": "sqrt big",
+          "heading": false
+        },
+        {
+          "term": "bps text",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "bullet",
+          "heading": false
+        },
+        {
+          "term": "c00r",
+          "heading": false
+        }
+      ],
+      "extract": "We now repeat the above calculation for the conifold, whose ordinary mirror curve in general framing takes the form [@abmodel]: $$A^{\\text{ref}} (x,y;q_1=1) = 1 - y + x(-y)^f + Q x (-y)^{f+1} \\; = \\; 0 \\,. \\label{mirrorConif}$$ To find the refined and quantum version of this curve, we again consider the brane located along the preferred direction of the conifold. More precisely, we wish to consider the brane",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-42-refined-mirror-curves-s-0ut-and-quantizabilit",
+      "number": "4.2",
+      "title": "Refined mirror curves, $S_0(u,t)$ and quantizability",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 63,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 1314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refined mirror",
+          "heading": true
+        },
+        {
+          "term": "mirror curves",
+          "heading": true
+        },
+        {
+          "term": "refined polynomials",
+          "heading": false
+        },
+        {
+          "term": "quantizability",
+          "heading": true
+        },
+        {
+          "term": "zopen-bps-coni",
+          "heading": false
+        },
+        {
+          "term": "q-dlog exp",
+          "heading": false
+        },
+        {
+          "term": "conifold",
+          "heading": false
+        },
+        {
+          "term": "kähler parameter",
+          "heading": false
+        }
+      ],
+      "extract": "Once we found the refined quantum curves, we can easily determine the classical refined mirror curves. Namely, much as in the knot theory examples, we can find them in two ways. First, they arise as $q_2\\to 1$ limit of the quantum curves. Secondly, they can be determined by the saddle point analysis. As we will see momentarily, both methods consistently give the same result. The limit $q_2\\to 1$ of the ${\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-43-refinement-as-a-twisted-mass-parameter",
+      "number": "4.3",
+      "title": "Refinement as a twisted mass parameter",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 68,
+      "labelStart": "62",
+      "labelEnd": "67",
+      "words": 1853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted mass",
+          "heading": true
+        },
+        {
+          "term": "epsilon mathcal",
+          "heading": false
+        },
+        {
+          "term": "bps text",
+          "heading": false
+        },
+        {
+          "term": "twisted superpotential",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "open bps",
+          "heading": false
+        },
+        {
+          "term": "frac epsilon",
+          "heading": false
+        },
+        {
+          "term": "closed bps",
+          "heading": false
+        }
+      ],
+      "extract": "Now, let us discuss the physical interpretation of the general setup considered in this section and the corresponding interpretation of the classical action $S_0 (u,t)$. As we already reviewed in the beginning of this section, compactification of type II string theory on a toric Calabi-Yau 3-fold $X$ is a natural arena for a \"geometric engineering\" of ${\\mathcal{N}}=2$ supersymmetric gauge theories in the remaining",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-a-miscellaneous-results-on-knot-invariants",
+      "number": "A",
+      "title": "Miscellaneous results on knot invariants",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "67",
+      "labelEnd": "67",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-a1-macdonald-polynomials",
+      "number": "A.1",
+      "title": "Macdonald polynomials",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "67",
+      "labelEnd": "69",
+      "words": 868,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "macdonald",
+          "heading": true
+        },
+        {
+          "term": "q1q",
+          "heading": false
+        },
+        {
+          "term": "macdonald functions",
+          "heading": false
+        },
+        {
+          "term": "p1p",
+          "heading": false
+        },
+        {
+          "term": "qri",
+          "heading": false
+        }
+      ],
+      "extract": "Let pn be the power sum symmetric function in x = (x1, x2, . . .): pn := ∞ X i=1 xn i . (A1) For any symmetric functions f and g, a scalar product is introduced as: ⟨f(p), g(p)⟩q1,q2 := f(p∗)g(p)|constant part, p∗ n := n1 −qn 1 1 −qn 2 ∂ ∂pn . (A2) with p = (p1, p2, . . .) and p∗= (p∗ 1, p∗ 2, . . .). The Macdonald function PR(x; q1, q2) is uniquely speciﬁed by the following orthogonality condition and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-a2-consistency-check-of-the-gamma-factor-and",
+      "number": "A.2",
+      "title": "Consistency check of the gamma factor () and ()",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consistency",
+          "heading": true
+        },
+        {
+          "term": "zref",
+          "heading": false
+        },
+        {
+          "term": "q1q",
+          "heading": false
+        }
+      ],
+      "extract": "Here we check the consistency of the gamma factors (3.47) and (3.48) by applying the identity of the q-hypergeometric function. Plugging γSr+ℓ,r−ℓ SrSr of (3.47) into the consistency condition for Zref SU(N)(S3, T 2,1 Sr ; q1, q2) = Zref SU(N)(S3, Sr; q1, q2) in (3.43), we expect the following rela- tion: PSr(q̺2; q1, q2) = (A; q1)r (q2; q1)r A−r 2 q r 2 2 = r X ℓ=0 (q2; q1)ℓ(q1; q1)r(A; q1)r+ℓ(q−1 2 A; q1)r−ℓ (q1;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-a3-wkb-analysis",
+      "number": "A.3",
+      "title": "WKB analysis",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": "70",
+      "labelEnd": "70",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-a31-another-expression-for-p-nt22p1qt",
+      "number": "A.3.1",
+      "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+      "level": 3,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "70",
+      "labelEnd": "71",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log zaz",
+          "heading": false
+        },
+        {
+          "term": "t2x",
+          "heading": false
+        },
+        {
+          "term": "t3x",
+          "heading": false
+        },
+        {
+          "term": "expression",
+          "heading": true
+        },
+        {
+          "term": "z1z",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "As an analogy with an expression for the colored Jones polynomial for T 2,2p+1,we ﬁnd a conjecture for yet another expression of Pn(T 2,2p+1; q, t) which is consistent with (3.97). In [94, 95, 96, 97], the expression for the colored Jones polynomial for (2, 2p + 1) torus knots is given as: Jn(T 2,2p+1; q) = qp(n2−1) X kp≥···≥k2≥k1≥0 (−1)kpq−kp(kp+1) 2 (q1−n; q)kp(q1+n; q)kp (q; q)kp × p−1 Y a=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-a32-asymptotic-limit-of-cal-psn-1-rmdgrt22p1aqt",
+      "number": "A.3.2",
+      "title": "Asymptotic limit of ${\\cal P}^{S^{n-1}}_{\\rm{DGR}}(T^{2,2p+1};a,q,t)$ with $a=q^2 t^2$",
+      "level": 3,
+      "pageStart": 72,
+      "pageEnd": 75,
+      "labelStart": "71",
+      "labelEnd": "74",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dgr",
+          "heading": true
+        },
+        {
+          "term": "x2p",
+          "heading": false
+        },
+        {
+          "term": "reﬁned a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "q2t",
+          "heading": false
+        },
+        {
+          "term": "txz",
+          "heading": false
+        },
+        {
+          "term": "t3x",
+          "heading": false
+        },
+        {
+          "term": "grading conventions",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "DGR (T 2,2p+1; a, q, t) with a = q2t2 As we discussed in section 3.3.4, for the (colored) superpolynomials in grading conventions of [27], the right limit to consider is q2t2 →1 , (A22) with x = qn and t kept ﬁxed. In other words, in this grading conventions, the combination log(qt) plays the role of a small expansion parameter ℏ→0. On the other hand, if we think of the HOMFLY variable a as a = eNℏ(as opposed to a =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-b-proof-of-the-gamma-factor-and-by-hidetoshi-awa",
+      "number": "B",
+      "title": "Proof of the gamma factor () and (), by Hidetoshi Awata",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 79,
+      "labelStart": "74",
+      "labelEnd": "78",
+      "words": 1094,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pλr",
+          "heading": false
+        },
+        {
+          "term": "psr",
+          "heading": false
+        },
+        {
+          "term": "resq",
+          "heading": false
+        },
+        {
+          "term": "srsr",
+          "heading": false
+        },
+        {
+          "term": "mλr",
+          "heading": false
+        },
+        {
+          "term": "γsr",
+          "heading": false
+        },
+        {
+          "term": "msr",
+          "heading": false
+        },
+        {
+          "term": "limq",
+          "heading": false
+        }
+      ],
+      "extract": "Let PR h c 1−L 1−q2 i be the Macdonald function PR(x; q1, q2) with the specialization pn := P∞ i=1 xn i = cn 1−Ln 1−qn 2 . The Pieri formula [51](Ch. VI.6) gives PSr(x; q1, q2)PSr(x; q1, q2) = r X ℓ=0 N Sr+ℓ,r−ℓ SrSr PSr+ℓ,r−ℓ(x; q1, q2), (B1) PΛr(x; q1, q2)PΛr(x; q1, q2) = r X ℓ=0 N Λr+ℓ,r−ℓ ΛrΛr PΛr+ℓ,r−ℓ(x; q1, q2) (B2) with N Sr+ℓ,r−ℓ SrSr := r−ℓ Y j=1 1 −qj−1 1 q2 1 −qj 1 · r+ℓ Y j=2ℓ+1 1 −qj−1 1 q2 2 1 −qj 1q2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-c-refined-a-polynomials",
+      "number": "C",
+      "title": "Refined A-polynomials",
+      "level": 1,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this appendix we present detailed structure of reﬁned A-polynomials Aref(x, y; t) in various examples which we found in this paper: the unknot, (2, 2p + 1) torus knots, and the trefoil in DGR grading.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-c1-newton-polygons",
+      "number": "C.1",
+      "title": "Newton polygons",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 82,
+      "labelStart": "78",
+      "labelEnd": "81",
+      "words": 566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton polygons",
+          "heading": true
+        },
+        {
+          "term": "yellow crosses",
+          "heading": false
+        },
+        {
+          "term": "red circles",
+          "heading": false
+        },
+        {
+          "term": "unreﬁned",
+          "heading": false
+        },
+        {
+          "term": "reﬁned",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "aref",
+          "heading": false
+        }
+      ],
+      "extract": "well as for their t = −1 limit. A red circle at position (i, j) in such a polygon represents a monomial of the form ci,jxiyj in the reﬁned A-polynomial. Smaller yellow crosses represent such monomials in the unreﬁned A-polynomial Aref(x, y; −1). In section C2 we present matrix form of reﬁned A-polynomials. The entry (i + 1, j + 1) of such a matrix represents the coeﬃcient ci,j in Aref(x, y; t). Note that the role of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-c2-matrix-forms-of-a-polynomials",
+      "number": "C.2",
+      "title": "Matrix forms of A-polynomials",
+      "level": 2,
+      "pageStart": 82,
+      "pageEnd": 92,
+      "labelStart": "81",
+      "labelEnd": "91",
+      "words": 8421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reﬁned topological",
+          "heading": false
+        },
+        {
+          "term": "instanton counting",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "knot homologies",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "topological string",
+          "heading": false
+        },
+        {
+          "term": "link homologies",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "1 H-tL32 -1 H-tL32 1 Figure C8: Matrix form of A-polynomial for the unknot. 0 1 -1 0 -t2 -t3 0 2 t2 H1 + tL 0 t4 t5 0 -t4 t6 0 Figure C9: Matrix form of A-polynomial for trefoil, i.e. T 2,3 torus knot. 0 0 -1 1 0 0 t2 - t3 2 t3 0 0 -2 t2 - 2 t3 + t5 t6 0 0 2 t4 - 2 t6 0 0 0 -3 t4 - 4 t5 - t6 + 2 t7 + 2 t8 0 0 -2 t6 -4 t7 - 3 t8 - t9 0 0 2 t6 + t8 - t9 -2 t8 - t10 + t11 0 0 -4 t8 - 3 t9 - t10 -2 t11 0 0 3 t8 + 4 t9",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "refined bps",
+      "heading": true
+    },
+    {
+      "term": "dgr refined",
+      "heading": false
+    },
+    {
+      "term": "refined polynomial",
+      "heading": true
+    },
+    {
+      "term": "quantum refined",
+      "heading": true
+    },
+    {
+      "term": "refined curve",
+      "heading": false
+    },
+    {
+      "term": "classical refined",
+      "heading": false
+    },
+    {
+      "term": "refined chern-simons",
+      "heading": false
+    },
+    {
+      "term": "refined volume",
+      "heading": true
+    },
+    {
+      "term": "refined theory",
+      "heading": false
+    },
+    {
+      "term": "refined recursion",
+      "heading": false
+    },
+    {
+      "term": "refined mirror",
+      "heading": true
+    },
+    {
+      "term": "open refined",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Deformation and quantization of the A-polynomial",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Classical curves in prominent examples, in unreﬁned limit (which are well known, left column) and for general t (derived in this paper, right column). In this paper we also derive reﬁned",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Reﬁned quantum curves derived in this paper",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Categoriﬁcation of quantum knot invariants. To help the reader navigate through this picture we suggest to keep track of the variables a, q, t, as well as the rank of sl(N). Note, the polynomial (resp. homological) knot invariants which have a-dependence (resp. a-grading) are not labeled by sl(N)",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Slicing and braiding",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Conformal block φQ′(R1, R2,",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Slicing along Σ2 ≃S2",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Young diagrams for tensor products of symmetric and anti-symmetric representations",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "There is one fundamental diﬀerence between the specialization Pn(K; q, t) of the colored superpolynomial for torus knots found in (3.97) and that of the unknot (3.99). Namely, the latter is given by an inﬁnite product, whose asymptotic expansion is obtained simply from the expansion of the quantum d",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Newton polygon for the unknot (left). Red circles denote monomials of the reﬁned polynomial, and smaller yellow crosses denote monomials of the unreﬁned polynomial. In this example both Newton polygons look the same, so that positions of all circles and crosses overlap. More detailed structure of th",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Face polynomials for the unknot",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Newton polygons for the trefoil (left). Bigger red circles denote monomials of the reﬁned polynomial, and smaller yellow crosses denote monomials of the unreﬁned polynomial. More detailed structure of the reﬁned A-polynomial is also shown in matrix representation (right). All conventions are the sam",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Face polynomials for (2, 2p + 1) torus knots",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Face polynomials for the trefoil knot in grading conventions of [27]",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "With our choice of conventions, the parameter q2 = q = eℏis responsible for quantization,",
+      "page": 57,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Newton polygons for reﬁned (black dots) and unreﬁned (white dots) A-polynomials, for",
+      "page": 63,
+      "pageLabel": "62",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Values of ni",
+      "page": 66,
+      "pageLabel": "65",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C1",
+      "title": "Newton polygons for the unknot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 79,
+      "pageLabel": "78",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C2",
+      "title": "Newton polygons for trefoil, i.e. T 2,3 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 79,
+      "pageLabel": "78",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C3",
+      "title": "Newton polygons for T 2,5 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 80,
+      "pageLabel": "79",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C4",
+      "title": "Newton polygons for T 2,7 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 80,
+      "pageLabel": "79",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C5",
+      "title": "Newton polygons for T 2,9 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 81,
+      "pageLabel": "80",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C6",
+      "title": "Newton polygons for T 2,11 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 81,
+      "pageLabel": "80",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C7",
+      "title": "Newton polygons for trefoil knot in DGR (see section 3.3.4) and DGR’ (see section A3.2) gradings: reﬁned (red circles) and unreﬁned (yellow crosses)",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C8",
+      "title": "Matrix form of A-polynomial for the unknot",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C9",
+      "title": "Matrix form of A-polynomial for trefoil, i.e. T 2,3 torus knot",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C10",
+      "title": "Matrix form of A-polynomial for T 2,5 torus knot",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C11",
+      "title": "Matrix form of A-polynomial for T 2,7 torus knot",
+      "page": 83,
+      "pageLabel": "82",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C12",
+      "title": "Matrix form of A-polynomial for T 2,9 knot",
+      "page": 84,
+      "pageLabel": "83",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C13",
+      "title": "Matrix form of A-polynomial for T 2,11 torus knot",
+      "page": 85,
+      "pageLabel": "84",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C14",
+      "title": "Matrix form of A-polynomial for trefoil knot in DGR (see section 3.3.4) and DGR’ (see section A3.2) gradings",
+      "page": 86,
+      "pageLabel": "85",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 39,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 40,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "24 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p82); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 54
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 40 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1203.2182v1"
+  }
+}

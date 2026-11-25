@@ -1,0 +1,1007 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p01",
+  "title": "ant-v14-n7-s-p01",
+  "variant": "pdf",
+  "pages": 42,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1669",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries and notation",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "1672",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries-and-notation"
+    },
+    {
+      "level": 1,
+      "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "1682",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme"
+    },
+    {
+      "level": 1,
+      "title": "Proving the norm relations (Theorem 3.13)",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "1687",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-proving-the-norm-relations-theorem-313"
+    },
+    {
+      "level": 1,
+      "title": "Asai–Eisenstein elements in higher weights",
+      "number": "5",
+      "page": 24,
+      "pageLabel": "1692",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-asaieisenstein-elements-in-higher-weights"
+    },
+    {
+      "level": 1,
+      "title": "The p-adic Asai L-function",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "1695",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-the-p-adic-asai-l-function"
+    },
+    {
+      "level": 1,
+      "title": "Interpolation of critical L-values",
+      "number": "7",
+      "page": 30,
+      "pageLabel": "1698",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-interpolation-of-critical-l-values"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: An integral formula for the Asai L-function",
+      "number": null,
+      "page": 34,
+      "pageLabel": "1702",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-appendix-an-integral-formula-for-the-asai-l-func"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 41,
+      "pageLabel": "1709",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 41,
+      "pageLabel": "1709",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1669",
+      "labelEnd": "1669",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bianchi modular",
+          "heading": false
+        },
+        {
+          "term": "asai",
+          "heading": false
+        },
+        {
+          "term": "l-function",
+          "heading": false
+        },
+        {
+          "term": "p-adic",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1669 p-adic Asai L-functions of Bianchi modular forms David Loeﬄer and Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form 9 is the L-function attached to the tensor induction to Q of its associated Galois representation. When 9 is ordinary at p we construct a p-adic analogue of this L-function: that is, a",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p01/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1669",
+      "labelEnd": "1672",
+      "words": 1803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asai l-function",
+          "heading": false
+        },
+        {
+          "term": "p-adic l-function",
+          "heading": false
+        },
+        {
+          "term": "bianchi modular",
+          "heading": false
+        },
+        {
+          "term": "eisenstein classes",
+          "heading": false
+        },
+        {
+          "term": "p-adic measure",
+          "heading": false
+        },
+        {
+          "term": "weight eisenstein",
+          "heading": false
+        },
+        {
+          "term": "standard l-function",
+          "heading": false
+        },
+        {
+          "term": "eisenstein series",
+          "heading": false
+        }
+      ],
+      "extract": "1A. Background. Several of the most important conjectures in modern number theory, such as the Bloch–Kato and Beilinson conjectures, relate the special values of L-functions to arithmetic data. In much of the work on these conjectures to date, an important role has been played by p-adic L-functions: measures or distributions on Z× p, for a prime p, interpolating the special values of a given complex L-function and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries-and-notation",
+      "number": "2",
+      "title": "Preliminaries and notation",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 14,
+      "labelStart": "1672",
+      "labelEnd": "1682",
+      "words": 4672,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-function las",
+          "heading": false
+        },
+        {
+          "term": "l-factor las",
+          "heading": false
+        },
+        {
+          "term": "asai l-function",
+          "heading": false
+        },
+        {
+          "term": "bianchi eigenform",
+          "heading": false
+        },
+        {
+          "term": "normalised eigenform",
+          "heading": false
+        },
+        {
+          "term": "imprimitive l-function",
+          "heading": false
+        },
+        {
+          "term": "p-adic asai",
+          "heading": false
+        },
+        {
+          "term": "primitive l-function",
+          "heading": false
+        }
+      ],
+      "extract": "2A. Basic notation. We ﬁx notation for a general number ﬁeld K, which will either be Q or an imaginary quadratic ﬁeld. (We’ll generally denote this imaginary quadratic ﬁeld by F to distinguish it from the p-adic Asai L-functions of Bianchi modular forms 1673 rationals in the notation). Denote the ring of integers by OK, the adele ring by AK and the ﬁnite adeles by A f K. We let b OK := bZ⊗Z OK be the ﬁnite integral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme",
+      "number": "3",
+      "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": "1682",
+      "labelEnd": "1687",
+      "words": 1968,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "siegel units",
+          "heading": true
+        },
+        {
+          "term": "eisenstein",
+          "heading": true
+        },
+        {
+          "term": "asai",
+          "heading": true
+        },
+        {
+          "term": "m2n",
+          "heading": false
+        },
+        {
+          "term": "p-adic asai",
+          "heading": false
+        },
+        {
+          "term": "rham realisation",
+          "heading": false
+        },
+        {
+          "term": "asai l-functions",
+          "heading": false
+        },
+        {
+          "term": "betti realisation",
+          "heading": false
+        }
+      ],
+      "extract": "3A. Modular units. Let U ⊂GL2(bZ) be an open compact subgroup, with associated symmetric space YQ(U). In this section, we work exclusively over Q, so we shall drop the subscript Q from the notation. As is well known, the manifolds Y(U) are naturally the complex points of algebraic varieties deﬁned over Q. Deﬁnition 3.1. A modular unit on Y(U) is an element of O(Y(U))×, that is, a regular function on Y(U) with no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-proving-the-norm-relations-theorem-313",
+      "number": "4",
+      "title": "Proving the norm relations (Theorem 3.13)",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 24,
+      "labelStart": "1687",
+      "labelEnd": "1692",
+      "words": 1807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "czm",
+          "heading": false
+        },
+        {
+          "term": "ccmn",
+          "heading": false
+        },
+        {
+          "term": "chris williams",
+          "heading": false
+        },
+        {
+          "term": "pushforward along",
+          "heading": false
+        },
+        {
+          "term": "czpr",
+          "heading": false
+        },
+        {
+          "term": "siegel units",
+          "heading": false
+        },
+        {
+          "term": "david loeﬄer",
+          "heading": false
+        },
+        {
+          "term": "αpm",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 3.13 is directly analogous to the norm-compatibility relations for Euler systems constructed from Siegel units; speciﬁcally, it is the analogue in our context of [Lei et al. 2014, Theorem 3.3.2]. Exactly as in [op. cit.] it is simplest not to prove the theorem directly but rather to deduce it from a related result concerning cohomology classes on the symmetric spaces Y ∗ F(m, mn), analogous to [op. cit.,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-asaieisenstein-elements-in-higher-weights",
+      "number": "5",
+      "title": "Asai–Eisenstein elements in higher weights",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "1692",
+      "labelEnd": "1695",
+      "words": 1434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eisk mot",
+          "heading": false
+        },
+        {
+          "term": "class eisk",
+          "heading": false
+        },
+        {
+          "term": "tkk",
+          "heading": false
+        },
+        {
+          "term": "eisenstein",
+          "heading": true
+        },
+        {
+          "term": "maps momkk",
+          "heading": false
+        },
+        {
+          "term": "higher-weight eisenstein",
+          "heading": false
+        },
+        {
+          "term": "kings",
+          "heading": false
+        },
+        {
+          "term": "eisenstein classes",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous sections, we have deﬁned compatible systems of classes in the Betti cohomology of the spaces Y ∗ F,1(n) with trivial coefﬁcients. We now extend this to coefﬁcients arising from nontrivial algebraic representations. We ﬁx, for the duration of this section, a prime p and a ﬁnite extension L of Qp large enough that F embeds into L (and we ﬁx such an embedding). We let R be the ring of integers of L. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-the-p-adic-asai-l-function",
+      "number": "6",
+      "title": "The p-adic Asai L-function",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "1695",
+      "labelEnd": "1698",
+      "words": 1448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic asai",
+          "heading": true
+        },
+        {
+          "term": "c8k",
+          "heading": false
+        },
+        {
+          "term": "c4k",
+          "heading": false
+        },
+        {
+          "term": "eord",
+          "heading": false
+        },
+        {
+          "term": "p-power conductor",
+          "heading": false
+        },
+        {
+          "term": "asai l-functions",
+          "heading": false
+        },
+        {
+          "term": "tkk",
+          "heading": false
+        },
+        {
+          "term": "modular eigenform",
+          "heading": false
+        }
+      ],
+      "extract": "In this short section, we put together the norm-compatibility and p-adic interpolation relations proved above in order to deﬁne a measure on Z× p with values in a suitable eigenspace of the Betti H2. This will be our p-adic L-function. To ease the notation, we will assume for the rest of the paper that p is odd. Similar arguments — with some additional care — should also hold for p = 2, but we leave this case to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-interpolation-of-critical-l-values",
+      "number": "7",
+      "title": "Interpolation of critical L-values",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "1698",
+      "labelEnd": "1702",
+      "words": 1899,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eis2k p2r",
+          "heading": false
+        },
+        {
+          "term": "asai l-function",
+          "heading": false
+        },
+        {
+          "term": "p-adic l-function",
+          "heading": false
+        },
+        {
+          "term": "measure las",
+          "heading": false
+        },
+        {
+          "term": "bianchi eigenform",
+          "heading": false
+        },
+        {
+          "term": "let skk",
+          "heading": false
+        },
+        {
+          "term": "whittaker coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "automorphic forms",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we want to show that the values of the Asai p-adic L-function at suitable locally algebraic characters are equal to special values of the complex L-function. 7A. Automorphic forms for G∗. We shall need to work with automorphic forms for the group G∗of Deﬁnition 2.1 above. We refer the reader to [Lei et al. 2018] for an account of automorphic forms for the group G∗, and their relation to those for G,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-an-integral-formula-for-the-asai-l-func",
+      "number": null,
+      "title": "Appendix: An integral formula for the Asai L-function",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 41,
+      "labelStart": "1702",
+      "labelEnd": "1709",
+      "words": 2584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asai",
+          "heading": true
+        },
+        {
+          "term": "p-adic asai",
+          "heading": false
+        },
+        {
+          "term": "asai l-functions",
+          "heading": false
+        },
+        {
+          "term": "ghate",
+          "heading": false
+        },
+        {
+          "term": "dirichlet l-series",
+          "heading": false
+        },
+        {
+          "term": "bianchi modular",
+          "heading": false
+        },
+        {
+          "term": "chris williams",
+          "heading": false
+        },
+        {
+          "term": "david loeﬄer",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we provide a slight extension of Ghate’s results on the rationality of Asai L-values. The main result is given in Theorem A.9. Most of the arguments go through almost exactly as in [Ghate 1999]. However, in order to present the p-adic interpolation computations in the main body of the paper in the most natural way, we have adopted conventions which differ from those of Ghate’s in a few places:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "1709",
+      "labelEnd": "1709",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "The authors would like to thank Aurel Page for suggesting the proof of Proposition 2.5; and the two anonymous referees, who provided valuable comments and corrections on an earlier draft of the paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "1709",
+      "labelEnd": "1710",
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rankin eisenstein",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "p-adic l-functions",
+          "heading": false
+        },
+        {
+          "term": "l-functions attached",
+          "heading": false
+        },
+        {
+          "term": "barrera salazar",
+          "heading": false
+        },
+        {
+          "term": "automorphic forms",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "loefﬂer",
+          "heading": false
+        }
+      ],
+      "extract": "[Ash and Stevens 1986] A. Ash and G. Stevens, “Modular forms in characteristic l and special values of their L-functions”, Duke Math. J. 53:3 (1986), 849–868. MR Zbl [Balasubramanyam et al. 2019] B. Balasubramanyam, E. Ghate, and R. Vangala, “p-adic Asai L-functions attached to Bianchi cusp forms”, preprint, 2019. arXiv [Barrera Salazar and Williams 2019] D. Barrera Salazar and C. Williams, “Exceptional zeros and L",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "p-adic asai",
+      "heading": true
+    },
+    {
+      "term": "asai l-function",
+      "heading": true
+    },
+    {
+      "term": "asai eisenstein",
+      "heading": true
+    },
+    {
+      "term": "l-function las",
+      "heading": false
+    },
+    {
+      "term": "bianchi modular",
+      "heading": false
+    },
+    {
+      "term": "bianchi eigenform",
+      "heading": false
+    },
+    {
+      "term": "chris williams",
+      "heading": false
+    },
+    {
+      "term": "asai representation",
+      "heading": false
+    },
+    {
+      "term": "dirichlet l-function",
+      "heading": false
+    },
+    {
+      "term": "p-adic interpolation",
+      "heading": false
+    },
+    {
+      "term": "david loeﬄer",
+      "heading": false
+    },
+    {
+      "term": "primitive asai",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1669",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1670",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1671",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1672",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1673",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1674",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1675",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1676",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1677",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1678",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1679",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1680",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1681",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1682",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1683",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1684",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1685",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1686",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1687",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1688",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1689",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1690",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1691",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1692",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1693",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1694",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1695",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1696",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1697",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1698",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1699",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "1700",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1701",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "1702",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1703",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "1704",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "1705",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "1706",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "1707",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "1708",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "1709",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "1710",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p41); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p01"
+  }
+}

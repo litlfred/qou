@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1508.06401v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+      "dcterms:creator": [
+        "Horsleya, R.",
+        "Nakamurab, Y.",
+        "Perltc, H.",
+        "Pleiterd, D.",
+        "Rakowe, P. E. L."
+      ],
+      "dcterms:issued": "Wed Feb 24",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.06401",
+      "dcterms:abstract": "Lattice QCD simulations are now reaching a precision where isospin breaking eﬀects become important. Previously, we have developed a program to systematically investigate the pattern of ﬂavor symmetry beaking within QCD and successfully applied it to meson and baryon masses involving up, down and strange quarks. In this Letter we extend the calculations to QCD + QED and present our ﬁrst results on isospin splittings in the pseu- doscalar meson and baryon octets. In particular, we obtain the nucleon mass diﬀerence of Mn −Mp = 1.35(18)(8) MeV and the electromagnetic contribution to the pion splitting Mπ+ −Mπ0 = 4.60(20) MeV. Further we report ﬁrst determination of the separation between strong and electromagnetic contributions in the MS scheme. 1",
+      "dcterms:source": "library/arxiv-1508.06401v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1508.06401v2"
+    }
+  ]
+}

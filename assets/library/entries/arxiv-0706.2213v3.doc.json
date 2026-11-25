@@ -1,0 +1,1679 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0706.2213v3",
+  "title": "arxiv-0706.2213v3",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Organization",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-organization"
+    },
+    {
+      "level": 1,
+      "title": "Twist knots",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-twist-knots"
+    },
+    {
+      "level": 1,
+      "title": "On the SL2(C)-character variety and non–abelian representations",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-on-the-sl2c-character-variety-and-nonabelian-r"
+    },
+    {
+      "level": 2,
+      "title": "Review on the SL2(C)-character variety of knot groups",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-31-review-on-the-sl2c-character-variety-of-knot"
+    },
+    {
+      "level": 2,
+      "title": "Review on the character varieties of two–bridge knots",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-32-review-on-the-character-varieties-of-twobridg"
+    },
+    {
+      "level": 2,
+      "title": "The holonomy representation of a hyperbolic twist knot",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-33-the-holonomy-representation-of-a-hyperbolic-t"
+    },
+    {
+      "level": 2,
+      "title": "On parabolic representations of twist knot groups",
+      "number": "3.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-34-on-parabolic-representations-of-twist-knot-gr"
+    },
+    {
+      "level": 2,
+      "title": "The character varieties of twist knots: a recursive description",
+      "number": "3.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-35-the-character-varieties-of-twist-knots-a-recu"
+    },
+    {
+      "level": 1,
+      "title": "Review on the non–abelian Reidemeister torsion and twisted polynomial torsion",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-review-on-the-nonabelian-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries: the sign-determined torsion of a CW-complex",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-preliminaries-the-sign-determined-torsion-of"
+    },
+    {
+      "level": 2,
+      "title": "Regularity for representations",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-regularity-for-representations"
+    },
+    {
+      "level": 2,
+      "title": "Review on the non–abelian Reidemeister torsion for knot exteriors",
+      "number": "4.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-review-on-the-nonabelian-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Review on the non–abelian Reidemeister torsion polynomial",
+      "number": "4.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-44-review-on-the-nonabelian-reidemeister-torsion"
+    },
+    {
+      "level": 1,
+      "title": "The non–abelian Reidemeister torsion for twist knots",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-the-nonabelian-reidemeister-torsion-for-twist"
+    },
+    {
+      "level": 2,
+      "title": "The non–abelian Reidemeister torsion for even twist knots",
+      "number": "5.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-the-nonabelian-reidemeister-torsion-for-even"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-examples"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Reidemeister torsion at the holonomy representation.",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-twisted-reidemeister-torsion-at-the-holonomy"
+    },
+    {
+      "level": 2,
+      "title": "A remark on the asymptotic behavior of the non–abelian Reidemeister torsion at holonomy",
+      "number": "5.4",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-54-a-remark-on-the-asymptotic-behavior-of-the-no"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Program list and Tables",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-appendix-a-program-list-and-tables"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Program list for Maxima",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-a1-program-list-for-maxima"
+    },
+    {
+      "level": 2,
+      "title": "A.2. Tables",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-a2-tables"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0706.2213v3 [math.GT] 9 Mar 2008 NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS J´ER ˆOME DUBOIS, VU HUYNH, AND YOSHIKAZU YAMAGUCHI Abstract. This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots. For hyperbolic twist knots, we also prove that the non–abelian Reidemeister torsion at the holonomy representation can be expressed as",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0706.2213v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "two--bridge knots",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "jdfibre",
+          "heading": false
+        },
+        {
+          "term": "knot group",
+          "heading": false
+        }
+      ],
+      "extract": "Twist knots form a family of special two--bridge knots which include the trefoil knot and the figure eight knot. The knot group of a two--bridge knot has a particularly nice presentation with only two generators and a single relation. One could find our interest in this family of knots in the following facts: first, twist knots except the trefoil knot are hyperbolic; and second, twist knots are not fibered except",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-twist-knots",
+      "number": "2",
+      "title": "Twist knots",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "step in the understanding of the non–abelian Reidemeister torsion for two–bridge knots.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-organization",
+      "number": null,
+      "title": "Organization",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twist knot",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "bridge knot",
+          "heading": false
+        },
+        {
+          "term": "knot admits",
+          "heading": false
+        },
+        {
+          "term": "abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "knot notation",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "The outline of the paper is as follows. We recall some properties of twist knots in Sec- tion 2. In Section 3, we give a review of the character variety of twist knots including remarks on parabolic representations and Riley’s method for describing the non–abelian part of the character variety. Next we give an explicit formula for the cusp shape of hyper- bolic twist knots. In Section 4, we recall the deﬁnition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-on-the-sl2c-character-variety-and-nonabelian-r",
+      "number": "3",
+      "title": "On the SL2(C)-character variety and non–abelian representations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-31-review-on-the-sl2c-character-variety-of-knot",
+      "number": "3.1",
+      "title": "Review on the SL2(C)-character variety of knot groups",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm nab",
+          "heading": false
+        },
+        {
+          "term": "mathrm irr",
+          "heading": false
+        },
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "called emph",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": true
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ModuliK} Given a finitely genera\\-ted group $\\pi$, we let $$R(\\pi; \\SL) = \\mathrm{Hom}(\\pi; \\SL)$$ denote the space of $\\SL$-representations of $\\pi$. As usual, this space is endowed with the {compact--open topology}. Here $\\pi$ is assumed to have the discrete topology and the Lie group $\\SL$ is endowed with the usual one. A representation $\\rho \\colon \\pi \\to \\SL$ is called \\emph{abelian} if $\\rho(\\pi)$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-review-on-the-character-varieties-of-twobridg",
+      "number": "3.2",
+      "title": "Review on the character varieties of two–bridge knots",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix sqrt",
+          "heading": false
+        },
+        {
+          "term": "pmatrix hphantom",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "two--bridge knot",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "cite riley",
+          "heading": false
+        },
+        {
+          "term": "non--abelian representation",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ReviewCharK} Here we briefly review Riley's method~\\cite{Riley} for describing the non--abelian part of the representation space of two--bridge knot groups. The knot group of a two--bridge knot $K$ admits a presentation of the following form: \\begin{equation}\\label{P:G2B} \\Pi(K)=\\left\\langle {x,y \\, | \\, \\Omega x=y \\Omega} \\right\\rangle \\text{ where }",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-33-the-holonomy-representation-of-a-hyperbolic-t",
+      "number": "3.3",
+      "title": "The holonomy representation of a hyperbolic twist knot",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomy representation",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": true
+        },
+        {
+          "term": "hphantom end",
+          "heading": false
+        },
+        {
+          "term": "smallmatrix right",
+          "heading": false
+        },
+        {
+          "term": "begin smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "emph holonomy",
+          "heading": false
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sechyp} \\subsubsection{Some generalities} It is well known that the complete hyperbolic structure of a hyperbolic knot complement determines a unique discrete faithful representation of the knot group in $\\mathrm{PSL}_2(\\CC)$, called the \\emph{holonomy representation}. It is proved~\\cite[Proposition 1.6.1]{HandBookGT} that such a representation lifts to $\\SL$ and determines two irreducible representations in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-34-on-parabolic-representations-of-twist-knot-gr",
+      "number": "3.4",
+      "title": "On parabolic representations of twist knot groups",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 824,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twist knot",
+          "heading": true
+        },
+        {
+          "term": "riley equation",
+          "heading": false
+        },
+        {
+          "term": "cuspshape bridge",
+          "heading": false
+        },
+        {
+          "term": "two--bridge knot",
+          "heading": false
+        },
+        {
+          "term": "ref cuspshape",
+          "heading": false
+        },
+        {
+          "term": "label cuspshape",
+          "heading": false
+        },
+        {
+          "term": "gets omega",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ParRep} In this subsection, we are interested in the \\emph{parabolic representations} of (hyperbolic) two--bridge knot groups and especially twist knot groups. The holonomy representation is one of them. Lemma~\\ref{L8} characterizes the holonomy representation algebraically and says that it corresponds to a root of Riley's equation $\\phi_K(1,u) = 0$. A natural and interesting question is the following: which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-35-the-character-varieties-of-twist-knots-a-recu",
+      "number": "3.5",
+      "title": "The character varieties of twist knots: a recursive description",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 1836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi dotsb",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": true
+        },
+        {
+          "term": "word omega",
+          "heading": false
+        },
+        {
+          "term": "mathbf phi",
+          "heading": false
+        },
+        {
+          "term": "split mathbf",
+          "heading": false
+        },
+        {
+          "term": "dotsb sum",
+          "heading": false
+        },
+        {
+          "term": "omega rangle",
+          "heading": false
+        },
+        {
+          "term": "quad mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "T. Le~\\cite{Le} gives a recursive description of the $\\SL$-character variety of two--bridge knots and apply it to obtain an \\emph{explicit} description of the $\\SL$-character variety of torus knots. Here we apply his method to obtain an explicit recurrent description of the $\\SL$-character variety of twist knots. This is the main difference with the description given by Hoste and Shanahan~\\cite{HS}. Let $n = 2m$ or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-review-on-the-nonabelian-reidemeister-torsion",
+      "number": "4",
+      "title": "Review on the non–abelian Reidemeister torsion and twisted polynomial torsion",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-41-preliminaries-the-sign-determined-torsion-of",
+      "number": "4.1",
+      "title": "Preliminaries: the sign-determined torsion of a CW-complex",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sll rho",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "basis mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathcal",
+          "heading": false
+        },
+        {
+          "term": "leqslant dim",
+          "heading": false
+        },
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "right leqslant",
+          "heading": false
+        }
+      ],
+      "extract": "We review the basic notions and results about the sign--determined Reidemeister torsion introduced by Turaev which are needed in this paper. Details can be found in Milnor's survey~\\cite{Milnor:1966} and in Turaev's monograph~\\cite{Turaev:2002}. \\subsubsection{Torsion of a chain complex} Let $C_* = (\\xymatrix@1@-.5pc{0 \\ar[r] & C_n \\ar[r]^-{d_n} & C_{n-1} \\ar[r]^-{d_{n-1}} & \\cdots \\ar[r]^-{d_1} & C_0 \\ar[r] & 0})$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-regularity-for-representations",
+      "number": "4.2",
+      "title": "Regularity for representations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace--function gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma regular",
+          "heading": false
+        },
+        {
+          "term": "cite porti",
+          "heading": false
+        },
+        {
+          "term": "dim rho",
+          "heading": false
+        },
+        {
+          "term": "regular characters",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "cite jdfourier",
+          "heading": false
+        },
+        {
+          "term": "curve gamma",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we briefly review two notions of regularity {(see~\\cite{Heu:2003},~\\cite{Porti:1997} and~\\cite{JDFibre})}. In the sequel $K \\subset S^3$ denotes an oriented knot. Observe that for any representation $\\rho$, $\\dim H_1^\\rho(E_K)$ is always greater or equal to $1$. We say that $\\rho \\in R^\\mathrm{irr}(\\Pi(K); \\SL)$ is \\emph{regular} if $\\dim H_1^\\rho(E_K) = 1$. This notion is invariant by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-review-on-the-nonabelian-reidemeister-torsion",
+      "number": "4.3",
+      "title": "Review on the non–abelian Reidemeister torsion for knot exteriors",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bord rbrack",
+          "heading": false
+        },
+        {
+          "term": "lbrack bord",
+          "heading": false
+        },
+        {
+          "term": "rbrack otimes",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "knot exteriors",
+          "heading": true
+        },
+        {
+          "term": "sll rho",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "homology orientation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Torsion} This subsection gives a detailed review of the constructions made in~\\cite[Section~6]{JDFourier}. In particular, we shall explain how to construct distinguished bases for the twisted homology groups of knot exteriors. \\subsubsection{Canonical homology orientation of knot exteriors} We equip the exterior of $K$ with its \\emph{canonical homology orientation} defined as follows (see~\\cite[Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-44-review-on-the-nonabelian-reidemeister-torsion",
+      "number": "4.4",
+      "title": "Review on the non–abelian Reidemeister torsion polynomial",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 857,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "torsion polynomial",
+          "heading": true
+        },
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "sll otimes",
+          "heading": false
+        },
+        {
+          "term": "rho otimes",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        },
+        {
+          "term": "rho twisted",
+          "heading": false
+        },
+        {
+          "term": "kitano cite",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{TorsionPoly} To compute the non--abelian Reidemeister torsion for twist knots, we use techniques developed by the third author in~\\cite{YY2}. In fact, we compute a more general invariant of knots called the non--abelian Reidemeister torsion polynomial. It is a sort of {twisted} Alexander polynomial invariant (but with non--abelian twisted coefficients) whose \\lq\\lq derivative coefficient\" at $t = 1$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-the-nonabelian-reidemeister-torsion-for-twist",
+      "number": "5",
+      "title": "The non–abelian Reidemeister torsion for twist knots",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "twist knots",
+          "heading": true
+        },
+        {
+          "term": "ref remarktwist",
+          "heading": false
+        },
+        {
+          "term": "non--abelian",
+          "heading": false
+        },
+        {
+          "term": "remark ref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:results} In this section, we compute the non--abelian Reidemeister torsion for twist knots. Since there exists an isomorphism between the knot groups $\\Pi(J(2, 2m+1))$ and $\\Pi(J(2, -2m))$ (see Remark~\\ref{remarktwist}), it is enough for us to make the computations in the case of even twist knots $K = J(2, 2m)$, $m \\in \\ZZ$. The method used is the following. We will make the computation at the acyclic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-51-the-nonabelian-reidemeister-torsion-for-even",
+      "number": "5.1",
+      "title": "The non–abelian Reidemeister torsion for even twist knots",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 25,
+      "labelStart": "17",
+      "labelEnd": "25",
+      "words": 3063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "torsion twist",
+          "heading": true
+        },
+        {
+          "term": "align trace",
+          "heading": false
+        },
+        {
+          "term": "align frac",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "frac sigma",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": true
+        }
+      ],
+      "extract": "We calculate the non--abelian Reidemeister torsion for even twist knots $J(2, 2m)$ where $m$ is an integer. \\subsubsection{Preliminaries} Following Section \\ref{ReviewCharK} and using Riley's method, we can parametrize a non--abelian $\\SL$-representation $\\rho$ by two parameters $u$ and $s$ as follows: \\[ \\rho(x) = \\left( \\begin{array}{cc} \\sqrt{s} & 1/\\sqrt{s} \\\\ 0 & 1/\\sqrt{s} \\end{array} \\right),\\, \\rho(y) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-examples",
+      "number": "5.2",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "tau left",
+          "heading": false
+        },
+        {
+          "term": "align mathbb",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "sqrt lambda",
+          "heading": false
+        },
+        {
+          "term": "riley polynomial",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sexamples} As an illustration of our main Theorem~\\ref{theorem_J(2,2m)}, we explicitly compute ${\\mathbb T}^{K}_{\\lambda}$ on the character variety $X^{\\mathrm{irr}}_\\lambda(\\Pi(K))$ for the following four examples: the trefoil knot $3_1 = J(2,2)$, $5_2 = J(2,4)$, the figure eight knot $4_1 = J(2,-2)$, and $6_1 = J(2,-4)$ respectively. The computer program for the computation is written on the free computer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-twisted-reidemeister-torsion-at-the-holonomy",
+      "number": "5.3",
+      "title": "Twisted Reidemeister torsion at the holonomy representation.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "holonomy representation",
+          "heading": true
+        },
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "align trace",
+          "heading": false
+        },
+        {
+          "term": "tor hol",
+          "heading": false
+        },
+        {
+          "term": "align lefteqn",
+          "heading": false
+        },
+        {
+          "term": "diff hol",
+          "heading": false
+        },
+        {
+          "term": "align mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:results_holonomy} In this section, we consider the non--abelian Reidemeister torsion for hyperbolic twist knots at holonomy representations. Formulas of the non--abelian Reidemeister torsion associated to twist knots are complicated. But we see here that formulas for the non--abelian Reidemeister torsion at holonomy representations are simpler. Every twist knots except the trefoil knot are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-54-a-remark-on-the-asymptotic-behavior-of-the-no",
+      "number": "5.4",
+      "title": "A remark on the asymptotic behavior of the non–abelian Reidemeister torsion at holonomy",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "31",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "sll rho",
+          "heading": false
+        },
+        {
+          "term": "cusp shapes",
+          "heading": false
+        },
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathcal",
+          "heading": false
+        },
+        {
+          "term": "ref remarktwist",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ExTb} We close this paper with some remarks on the behavior of the cusp shape and of the non--abelian Reidemeister torsion at the holonomy for twist knots. \\begin{remark}[Behavior of the cusp shape] In {the Notes}~\\cite[p.~5.63]{TN}, Thurston explains that the sequence of {exteriors of the twist knots ${J(2, -2m)}$} converges to the exterior of the Whitehead link on Fig. \\ref{fig:Whitehead} (link $5^2_1$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-appendix-a-program-list-and-tables",
+      "number": null,
+      "title": "Appendix A. Program list and Tables",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-a1-program-list-for-maxima",
+      "number": null,
+      "title": "A.1. Program list for Maxima",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ident",
+          "heading": false
+        },
+        {
+          "term": "riley polynomial",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": false
+        },
+        {
+          "term": "thru",
+          "heading": false
+        },
+        {
+          "term": "print",
+          "heading": false
+        },
+        {
+          "term": "top term",
+          "heading": false
+        }
+      ],
+      "extract": "Reidemeister torsion for a given twist knot. This program works on the free computer al- gebra system Maxima [Sa06]. The function R(m) in the list computes the Riley polynomial of J(2, 2m). The function T(m) computes the twisted Reidemeister torsion for J(2, 2m). It gives a polynomial of s and u such that the top degree of u is lower than that in the Riley polynomial φJ(2,2m)(s, u). Here we use Expressions (49) &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a2-tables",
+      "number": null,
+      "title": "A.2. Tables",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abelian torsion",
+          "heading": false
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "riley equation",
+          "heading": false
+        },
+        {
+          "term": "non abelian",
+          "heading": false
+        }
+      ],
+      "extract": "which is not hyperbolic), u denotes the root of Riley’s equation φK(1, u) = 0 corresponding to the discrete and faithful representation of the complete hyperbolic structure. Tables 1 and 2 give the non–abelian Reidemeister torsion for twist knots at the holo- nomy (except in the case of the trefoil) with respect to the corresponding root of Riley’s equation and to the cusp shape of the knot exterior. 32 Non–abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "visited",
+          "heading": false
+        },
+        {
+          "term": "crm",
+          "heading": false
+        },
+        {
+          "term": "partment",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst author is supported by the European Community with Marie Curie Intra– European Fellowship (MEIF–CT–2006–025316). While writing the paper, J.D. visited the CRM. He thanks the CRM for hospitality. The third author is partially supported by the 21st century COE program at Graduate School of Mathematical Sciences, University of Tokyo. On ﬁnishing the paper, J.D. visited the Department of Mathematics of Tokyo",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "non-acyclic reidemeister",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "ﬁbered knots",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "knot groups",
+          "heading": false
+        }
+      ],
+      "extract": "[Ada94] C. Adams, The knot book, W. H. Freeman and Company, 1994. [Cal06] D. Calegari, Real places and torus bundles, Geom. Dedicata 118 (2006), 209–227. [CGLS87] M. Culler, C. McA. Gordon, J. Luecke, and P. Shalen, Dehn surgery on knots, Ann. of Math. 125 (1987), 237–300. [CS83] M. Culler and P. Shalen, Varieties of group representations and splittings of 3-manifolds, Ann. of Math. 117 (1983), 109–146. [DK07] J.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "non--abelian reidemeister",
+      "heading": false
+    },
+    {
+      "term": "non--abelian torsion",
+      "heading": false
+    },
+    {
+      "term": "sll rho",
+      "heading": false
+    },
+    {
+      "term": "torsion twist",
+      "heading": true
+    },
+    {
+      "term": "rho right",
+      "heading": false
+    },
+    {
+      "term": "representation rho",
+      "heading": false
+    },
+    {
+      "term": "torsion mathrm",
+      "heading": false
+    },
+    {
+      "term": "rho twisted",
+      "heading": false
+    },
+    {
+      "term": "torsion mathbb",
+      "heading": false
+    },
+    {
+      "term": "twist knot",
+      "heading": true
+    },
+    {
+      "term": "cite riley",
+      "heading": false
+    },
+    {
+      "term": "riley equation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The diagrams of J(2, n) and J(−2, n), n > 0. Here are some important facts about twist knots",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The Whitehead link. (5) Twist knot exteriors can be obtained by surgery on the trivial component of the",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Graph of the cusp shape of J(2, −2m) (from Snappea [Wee99])",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Graph of |TJ(2,−2m)",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Table for the sequence of knots J(2, 2m), (1 ≤m ≤10)",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Table for the sequence of knots J(2, −2m), (1 ≤m ≤10)",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 24,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 25,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 25 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0706.2213v3"
+  }
+}

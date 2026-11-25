@@ -1,0 +1,5038 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/candetgl/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/candetgl/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/candetgl/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/candetgl/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>candetgl</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;G.Ca˘luga˘reanu,‘‘L’integraldeGaussetl’analysedesnoeudstridimensionnels,’’Rev.Math.PuresAppl.4,5–20 ~1959!.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;¹•~x&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;¹•~x1V!5~¹x&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;¹•~x1V!5~¹x1!•V1x&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;¹•~x1V!5~¹x1!•V1x1~¹•V!5~¹x&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;¹•~x1V!5~¹x1!•V1x1~¹•V!5~¹x1!•V5V&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;VV&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;V¹•~x&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;]Vx&quot;
+      },
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;]V5]V&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-3&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;G. Ca˘luga˘reanu, ‘‘Sur les enlacements tridimensionnels des courbes fermees,’’ Comm. Acad. R. P. Romine 11, 829–832 ~1961!.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;$xuyu&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;$xuyu3/uy2xu&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;$~~y2x!uyu&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;uyu&quot;
+      },
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;ndedforall y,andhencethatBS(V)(y)decaysat`atleastasfastas1/r&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;text&quot;: &quot;!Electronicmail:cantarel@math.uga.edu&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;text&quot;: &quot;!Electronicmail:deturck@math.upenn.edu&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-3&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;text&quot;: &quot;!Electronicmail:gluck@math.upenn.edu 0022-2488/2001/42(2)/876/30/$18.00&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-4&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;CGÄcurly gradients&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-2&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;HGÄharmonic gradients&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-3&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-1&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p011-1&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p013-1&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p016-1&quot;,
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-1&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-018&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-1&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p023-1&quot;,
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-021&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-1&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-1&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p027-1&quot;,
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-1&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-2&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;G.Ca˘luga˘reanu,‘‘Surlesclassesd’isotopiedesnoeudstridimensionnelsetleursinvariants,’’Czech.Math.J.11, 588–625 ~1961!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-4&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;F.BrockFuller,‘‘Thewrithingnumberofaspacecurve,’’Proc.Natl.Acad.Sci.U.S.A.68,815–819~1971!. This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-5&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-024&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-1&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;J. Cantarella, D. DeTurck, and H. Gluck, ‘‘The principal eigenvalue of the curl operator on the ﬂat torus,’’ J. Math. Phys. ~to be submitted!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-2&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;text&quot;: &quot;J.Cantarella,D.DeTurck,H.Gluck,andM.Teytel,‘‘Isoperimetricproblemsforthehelicityofvectorﬁeldsandthe Biot–Savart and curl operators,’’ J. Math. Phys. 41, 5615–5641 ~2000!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-3&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;text&quot;: &quot;J.Cantarella,‘‘Topologicalstructureofstableplasmaﬂows,’’Ph.D.thesis,UniversityofPennsylvania,1999.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-4&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;J.Cantarella,D.DeTurck,H.Gluck,andM.Teytel,‘‘Inﬂuenceofgeometryandtopologyonhelicity,’’inMagnetic Helicity in Space and Laboratory Plasmas, edited by M. Brown, R. Canﬁeld, and A. Pevtsov ~American Geophysical Union, Washington, D.C., 1999!, Geophysical Monograph Vol. 111, pp. 17–24.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-5&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;Z.YoshidaandY.Giga,‘‘Remarksonspectraofoperatorrot,’’Math.Z.204,235–245~1990!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-6&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;Z.Yoshida,‘‘DiscreteeigenstatesofplasmasdescribedbytheChandrasekhar–Kendallfunctions,’’Prog.Theor.Phys. 86, 45–55 ~1991!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-7&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;text&quot;: &quot;H. K. Moffatt, Magnetic Field Generation in Electrically Conducting Liquids ~Cambridge University Press, Cambridge, 1978!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-8&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;text&quot;: &quot;S.Childress,‘‘Fastdynamotheory,’’inTopologicalAspectsoftheDynamicsofFluidsandPlasmas,editedbyH.K. Moffatt et al. ~Kluwer Academic, Dordrecht, 1992!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-9&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;text&quot;: &quot;H.K.MoffattandA.Tsinober,TopologicalFluidMechanics~CambridgeUniversityPress,Cambridge,1990!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-10&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;text&quot;: &quot;H.K.Moffatt,G.M.Zaslavsky,P.Comte,andM.Tabor,TopologicalAspectsoftheDynamicsofFluidsandPlasmas ~Kluwer Academic, Dordrecht, 1992!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-11&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;text&quot;: &quot;J.EtnyreandR.Ghrist,‘‘Contacttopologyandhydrodynamics:I.BeltramiﬁeldsandtheSeifertconjecture,’’Nonlin- earity 13, 441–458 ~2000!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-12&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;text&quot;: &quot;H.Weyl,‘‘Themethodoforthogonalprojectioninpotentialtheory,’’DukeMath.J.7,411–444~1940!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-13&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;text&quot;: &quot;K.O.Friedrichs,‘‘DifferentialformsonRiemannianmanifolds,’’Commun.PureAppl.Math.8,551–590~1955!.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-14&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;A.A.Blank,K.O.FriedrichsandH.Grad,‘‘TheoryofMaxwell’sequationswithoutdisplacementcurrent.Theoryon magnetohydrodynamics V,’’ AEC Research and Development Report No. MHS , NYO-6486, 1957.&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-15&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;G. Schwarz, Problems, Lecture Notes in Hodge Decomposition: A Method for Solving Boundary Value Mathematics, No. 1607 ~Springer-Verlag, Berlin, 1995!. This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p030-16&quot;,
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p031-1&quot;,
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;129&quot;,
+    &quot;text&quot;: &quot;215.149.98 On: Sat, 10 May 2014 06:24:42&quot;,
+    &quot;block&quot;: &quot;library/candetgl/blocks/prose-sec-025&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;smoothvectorﬁeldsonVwiththeL&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;boundedoperatorontheL&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Wr~K!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2y!/u&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2y!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2y!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2y!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K3K~dx/ds3dy/dt!•~x2y!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;wasintroducedbyCaˇlugaˇreanu1–3in1959–1961andnamedbyFuller&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;H~V!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/u&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3d~volx!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;wasintroducedbyWoltjer&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;wasintroducedbyWoltjer5in1958andnamedbyMoffatt&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;H~V!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/u&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV~x!3V~y!•~x2y!/ux2yu3d~volx!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;VV~y!•F~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~volx!G&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~volx!Gd~vol&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~y!•BS~V!~y!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sothehelicityofVisjusttheL&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;ceattheprehistoryofthewrithingnumber,seeGauss’shalf-pagenote&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;knottedduplexDNAandoftheenzymeswhichaffectit;seeWhite,&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;ottedduplexDNAandoftheenzymeswhichaffectit;seeWhite,8Fuller,&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;White,&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;White,10Wang,&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;hite,10Wang,11Sumners,12–14andCantarella,Kusner,andSullivan.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;Lomonaco.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;believedittobeforce-free,andstudied&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;neticﬁeldsareLundquist&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;neticﬁeldsareLundquist18andChandrasekhar–Kendall.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;and Avellaneda&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;and Avellaneda20and Tsuji.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;and Avellaneda20and Tsuji.21Marsh’s book&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;yoftheconnectionbetweenwrithingandhelicity,seeBergerandField&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;Whitehead&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;context&quot;: &quot;Whitehead26andArnold.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;seeCantarella.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;seeCantarella.32Foranoverviewofourwork,seeoursurveypaper.&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;Giga.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;nectionbetweenthisspectraltheoryandplasmaphysics,seeYoshida.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;Moffatt.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;rconnectionswithdynamotheory,seethesurveyarticlebyChildress.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;byMoffattandTsinober&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;byMoffattandTsinober38andbyMoffatt,Zaslavsky,Comte,andTabor.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;andGhrist.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;domains in R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VF~V!ofsmoothvectorﬁeldsonVwiththeusualL&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;ThepapersofWeyl&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;ThepapersofWeyl41andFriedrichs,&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;sofWeyl41andFriedrichs,42thenotesofBlank,Friedrichs,andGrad,&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;book of Schwarz&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;‘‘ﬂuidknot.’’Wedidexactlythisinourpaper&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2215x&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2215x21y&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r2215x21y21z&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V5¹~r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Since the function r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;A~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(V) and A(V) are of class C`on V, and on the closure V8 of R&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;onR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;classC&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;classC1onR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(4)¹3A(V)5BS(V)onR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(5)IfVeK(V),thenA(V)isdivergence-freeonR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;fVeK(V),then*CBS(V)•ds50forallclosedcurvesCon]VwhichboundinR&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;neral, A(V)decays at ` like 1/rand BS(V)decays at ` like 1/r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thenA(V)decaysat`like1/r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;thenA(V)decaysat`like1/r2andBS(V)decaysat`like1/r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;example,Grifﬁths&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;The argument to follow begins as in Grifﬁths,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5$V~y!inV / 0inV8%1~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/u&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x•V~x!!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/u&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/uy&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!•n/uy2xud~area&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Er~y,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Er~y,t!5F~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Er~y,t!5F~1/4p!¹&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/u&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2xud~volx!G&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Es~y,&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Es~y,t!5F&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Es~y,t!5F2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Es~y,t!5F2~1/4p!¹&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy2xud~area&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n~x!/uy2xud~areax!G&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5¹y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5¹y3~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y2x!/u~y&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y2x!/u~y2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y2x!/u~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹y3$V~x!3~y2x!/u~y2x!u3%d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y3$V~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5„~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;5„~y2x!/uy2xu3•¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;5„~y2x!/uy2xu3•¹y)V~x!2~V~x!•¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5„~y2x!/uy2xu3•¹y)V~x!2~V~x!•¹y!~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;1V~x!¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1V~x!¹y•~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1V~x!¹y•~~y2x!/uy2xu3!2~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;1V~x!¹y•~~y2x!/uy2xu3!2~~y2x!/uy2xu3!~¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y3$V~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;¹y3$V~x!3~y2x!/uy2xu3%5V~x!¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y3$V~x!3~y2x!/uy2xu3%5V~x!¹y•~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;¹y3$V~x!3~y2x!/uy2xu3%5V~x!¹y•~~y2x!/uy2xu3!2~V~x!•¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x!3~y2x!/uy2xu3%5V~x!¹y•~~y2x!/uy2xu3!2~V~x!•¹y!~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;¹&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y•~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r25~1/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r25~1/r2!~]/]r!~r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r25~1/r2!~]/]r!~r2~1/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Buttheintegralof¹•rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ball¹•rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;ball¹•rˆ/r2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sphere~rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;sphere~rˆ/r2!•n&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;sphere~rˆ/r2!•nd~area!5&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;sphere~rˆ/r2!•nd~area!54&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹•rˆ/r254pd&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;whered&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y\&quot;~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y\&quot;~~y2x!/uy2xu3!54pd&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!¹&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy2xu3!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;VV~x!¹y\&quot;~~y2x!/uy2xu3!d~volx!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!4pd&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!4pd3~y&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!4pd3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!4pd3~y2x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5$V~y! / 0%2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2xu3!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~V~x!\&quot;¹y!~~y2x!/uy2xu3!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~¹x\&quot;V~x!!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2xud~area&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;6~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V~something!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;~V~x!\&quot;¹y!~~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;~V~x!\&quot;¹y!~~y2x!/uy2xu3!5¹y~V~x!\&quot;~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Weusethiswith¹5¹y ,V5V(x),andW5(y2x)/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]VV~x!\&quot;n/uy2xud~area&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V¹x\&quot;~V~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V¹x\&quot;~V~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹x\&quot;~V~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V¹x\&quot;~V~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹x\&quot;~V~x!/uy2xu!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2V~x!\&quot;~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS~V!5~a&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;BS~V!5~a3/3!~sin u!/r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹3BS~V!5~a&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹3BS~V!5~a3/3!$~2 cos u/r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹3BS~V!5~a3/3!$~2 cos u/r3!rˆ1~sin u/r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V5¹f52rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Es5rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(x,y,z)5x&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(x,y,z)5x21y&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(x,y,z)5x21y21z&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(x,y,z)5x21y21z2215r&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;522rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;52rˆ/r&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;heorem A: The equation ¹3BS(V)50holds in the closure V8 of R&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5$V~y!inV / 0inV8%2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yud~area&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Es&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Es8~y!52~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yud~area&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;c~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yud~area&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Nevertheless,wehave¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Nevertheless,wehave¹•Es850inVand¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;FirstwewillshowthatEs850inV8,theclosureofR&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cE&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•Es81c~¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•Es81c~¹•Es8!52E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•Es81c~¹•Es8!52Es8•E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•Es81c~¹•Es8!52Es8•Es852uE&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•~cEs8!5~¹c!•Es81c~¹•Es8!52Es8•Es852uEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;uEs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uEs8&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;¹•~cEs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;cE&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;goestozeroasitrecedestowardsinﬁnity,becausetheareagrowsliker&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;decayslike1/r&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;uEs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uEs8&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;cE&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;cEs&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;cEs8•n&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;cEs8•n8&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Es8•n8d~area!56totalcharge‘‘inside’’]V&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thus,*V8uEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;thefollowinglemma,whichisstatedwithoutproofonp.60ofGrifﬁths.&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹3V&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;]VV&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV3&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV3n&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹•V&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV•n&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹•~V&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;]V~V&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]V~V3C!•n&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹3V&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;]VV&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV3&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV3n&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹3V&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;]VV&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]VV3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VV3n&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Fixy,andletW5(y2x)/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V~¹w!3W&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V¹&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]V~wW! 3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]V~wW! 3n&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!52~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]V~wW!3&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]V~wW!3n&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iw&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;52~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;W&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuVu&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuVu2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;c~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yud~area&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vc]w/]n&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;ofofLemma2:Thisisastandardresultinelectrostatics;seeGrifﬁths&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vcs&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;sultingelectrostaticﬁeld,becauseinthissituationwecanwrite¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8u2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N~]V!cr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;N~]V!c~¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;N~]V!c~¹•Er&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;¹•~cE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;¹•~cEr8! 5~¹c!•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;¹•~cEr8! 5~¹c!•Er81c~¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;¹•~cEr8! 5~¹c!•Er81c~¹•Er8!52uE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¹•~cEr8! 5~¹c!•Er81c~¹•Er8!52uEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;¹•~cEr8! 5~¹c!•Er81c~¹•Er8!52uEr8u21c~¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N~]V!cr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;N~]V!c~¹•E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;N~]V!c~¹•Er&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;N~]V!¹•~cE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;N~]V!¹•~cEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;N~]V!uE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;N~]V!uEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;N~]V!uEr8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N~]V!uEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N~]V!uEr8u2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;¹•~cEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;V*uE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;V*uEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V*uEr8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V*uEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V*uEr8u2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;~cEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;~cEr8!•n&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;V*uE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;V*uEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V*uEr8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V*uEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V*uEr8u2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;inﬁnity.Thencdecayslike1/r,whileEr8decayslike1/r&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ecayslike1/r,whileEr8decayslike1/r2andtheareaof]V*growsliker&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;N~]V!cr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEr8u2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vcs&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;V2E&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;V2Es&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V2Es8•V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹c•¹w&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹•A&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]VA•n&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vc¹w•n&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vc]w/]n&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;V2E&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;V2Es&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V2Es8•V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;VuE&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;VuEs&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuVu&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuVu2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuVu&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuVu2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-space&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;3-spaceuE&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;3-spaceuEs8u2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuVu&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuVu2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¹y&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;¹y3BS~V!~y!5V~y!2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;xe]VV~x!•n~x!/ux2yud~area&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;operatorontheL&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;operator BS:VF(V)→VF(V)is self-adjoint with respect to the L&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;context&quot;: &quot;Folland,&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;context&quot;: &quot;Folland,47p.9,orZimmer,&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;isﬁnite,wherethemaximumisoverallpointsyeR&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;VV~x! 3&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x! 3f~y&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x! 3f~y2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;isaboundedmapwithrespecttotheL&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;VuV~x!uu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!uuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!uuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuV~x!uuf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!uuf~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2uu$f~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2uu$f~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2uu$f~y2x!%1/2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2uu$f~y2x!%1/2u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!$f~y2x!%1/2uu$f~y2x!%1/2ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2uf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2uf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2uf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2uf~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u2d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;VuT&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuTf~V!~y!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuTf~V!~y!u2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VuTf~V!~y!u2d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u2d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!uuV~x!u2d~volx!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuf~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!ud~voly!D&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuf~y2x!ud~voly!D d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VuV~x!u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuV~x!u2d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V1/u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V1/uy&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V1/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V1/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V1/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V1/uy2xu2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V1/uy2xu2d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;wherethemaximumistakenoverallpointsyeR&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;5T&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f0~y2x!5~1/4p!~1/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NowletVF(V)denotetheL&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofVF(V)asL&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;FirstisthefactthatforanycompactdomainV,iff(x)iscontinuousonR&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vf~y&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vf~y2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vf~y2x!f~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;deﬁnesacompactoperatoronL&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;context&quot;: &quot;deﬁnesacompactoperatoronL2(V);seeZimmer,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;context&quot;: &quot; the norm-limit of compact operators is compact; see Zimmer,&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1/~4puxu&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NV~f0&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;NV~f02&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Vuw&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuw0~y&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2x! 2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2x! 2wN~y&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2x! 2wN~y2&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2x! 2wN~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuw0~y2x! 2wN~y2x!ud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;&lt;~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~~1/u&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~~1/ux&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~~1/uxu&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~~1/uxu2!2N&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~~1/uxu2!2N2!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;&lt;~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~1/u&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~1/ux&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~1/uxu&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;uxu&lt;1/N~1/uxu2!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;By the ﬁrst functional analysis fact, T&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Lemma, we see that as T&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Lemma, we see that as TfNconverges in norm to T&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;VV&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV1~y!•BS~V&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV1~y!•BS~V2!~y!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;VV&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;VV1~y!•F~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2xu3d~volx!G&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV2~x!3~y2x!/uy2xu3d~volx!Gd~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V3VV&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV1~y!3V2~x!•~y2x!/uy2xu3d~volx!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2y&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2yu&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2yu3&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2yu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V3VV2~x!3V1~y!•~x2y!/ux2yu3d~voly!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;extendedtotheL&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;A(V)decays at ` like 1/rand that BS(V)decays at ` like 1/r&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;weassertedthatA(V)decaysat`like1/r&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ssertedthatA(V)decaysat`like1/r2andthatBS(V)decaysat`like1/r&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;A~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;uA(V)(y)uuyuhasaﬁniteupperboundonR&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;BS~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;immediatelythatBS(V)decaysatinﬁnityatleastasfastas1/r&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1)A(V)decaysatinﬁnityatleastasfastas1/r&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)BS(V)decaysatinﬁnityatleastasfastas1/r&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;uyuA~V!~y!&#39;~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;IftheintegralofVisnotzero,thenuyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;uyu2A~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2xud~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Vuyu2V~x!/uy2xud~volx!2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;Vu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;Vuy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VuyuV~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V$~u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V$~uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V$~uy2/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2xu!2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2xu!2u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2xu!2uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V$~uy2/uy2xu!2uyu%V~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;$~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;$~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Since*VuV(x)ud(volx)iscertainlybounded,itfollowsthatuyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;hencethatA(V)decaysat`atleastasfastas1/r&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;uyu3BS~V!~y!5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu3&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu3d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;VV~x!3~y2x!uyu3/uy2xu3d~volx!2~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x! 3&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV~x! 3y&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x! 3yd~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;5~1/4&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/u&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy2x&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy2xu3!2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!3$~~y2x!uyu3/uy2xu3!2y%d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu3!2y%5$y~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu3!2y%5$y~uyu32uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu3!2y%5$y~uyu32uy2xu3!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu3!2y%5$y~uyu32uy2xu3!/uy2xu3%2$xuyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$~~y2x!uyu3/uy2xu3!2y%5$y~uyu32uy2xu3!/uy2xu3%2$xuyu3/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu32uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu32uy2xu3!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;$y~uyu32uy2xu3!/uy2xu3%5$y/uy2xu%$uyu2uy2xu%$~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;u32uy2xu3!/uy2xu3%5$y/uy2xu%$uyu2uy2xu%$~uyu21uyuuy2xu1uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;3!/uy2xu3%5$y/uy2xu%$uyu2uy2xu%$~uyu21uyuuy2xu1uy2xu2!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu32uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;$y~uyu32uy2xu3!/uy2xu&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV1~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;V¹•~x1V!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;]V&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vx1V•n&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;VV~x!d~vol&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹w&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;]V&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]Vw&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vwn&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹w&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;V¹wd~vol!D •C&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V~¹w!•C&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]V~wC!•n&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;]V&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]Vw&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vwn&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹w&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;]V&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]Vw&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vwn&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;]V5]V1ø¯ø]V&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;VV&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;V¹w&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;]V&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;]Vw&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;]Vwn&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;context&quot;: &quot;slittlevolume,EarlyElectrodynamics,TheFirstLawofCirculation.&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;context&quot;: &quot;the original works of Oersted,&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

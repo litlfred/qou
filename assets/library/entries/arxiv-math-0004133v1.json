@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0004133v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Prediction is hard, especially when it comes to the future, but barring some unforeseen catastrophe, we can expect the amount of mathematics produced in the 21st century to dwarf that of all the centuries that came before. By the very nature of its subject matter, mathematics is capable of limitless expansion. Thanks to rapid improvements in technology, our computational power is in a phase of exponential growth. Even if this growth slows, we have barely begun to exploit our new abilities. Thus the interesting question is not whether the 21st century will see an unprecedented explosion of new",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0004133v1  [math.QA]  20 Apr 2000\nFrom Finite Sets to Feynman Diagrams\nJohn C. Baez and James Dolan\nDepartment of Mathematics, University of California\nRiverside, California 92521\nUSA\nemail: baez@math.ucr.edu, jdolan@math.ucr.edu\nApril 14, 2000\nto appear in Mathematics Unlimited - 2001 and Beyond,\neds. Bj¨orn Engquist and Wilfried Schmid\nAbstract\n‘Categoriﬁcation’ is the process of replacing equations by isomor-\nphisms. We describe some of the ways a thoroughgoing emphasis on\ncategoriﬁcation can simplify and unify mathematics. We begin with\nelementary arithmetic, where the category",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equality and Isomorphism",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-equality-and-isomorphism.md",
+      "narrative": null,
+      "content": "[]{#equality label=\"equality\"}\n\nOne of the most fundamental notions in mathematics is that of *equality*. For the most part we take it for granted: we say an equation expresses the identity of a thing and itself. But the curious thing is that an equation is only interesting or useful to the extent that the two sides are *different!* The one equation that truly expresses identity, $$x = x,$$ is precisely the one that is completely boring and useless. Interesting equations do not merely express the identity of a thing and itself; instead, they hint at the existence of a reversible transformation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Natural Numbers and Finite Sets",
+      "pageStart": 7,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-3-natural-numbers-and-finite-sets.md",
+      "narrative": null,
+      "content": "[]{#natural label=\"natural\"}\n\nStarting from the realization that the set of natural numbers is obtained by decategorifying ${\\rm FinSet}$, let us see how the basic operations of arithmetic have their origins in the theory of finite sets. First of all, addition in ${\\Bbb N}$ arises from disjoint union of finite sets, since $$|S + T| = |S| + |T|$$ where $S + T$ denotes the disjoint union of the finite sets $S$ and $T$. However, it is worth noting that there is really no such thing as 'the' disjoint union of two sets $S$ and $T$! Before forming their union, we must use some trick to ensure that t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Power Series and Structure Types",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-003-4-power-series-and-structure-types.md",
+      "narrative": null,
+      "content": "[]{#power label=\"power\"}\n\nIn combinatorics, a standard problem is to count the number of structures of a given type that can be put on a finite set. For example, the number of ways to linearly order an $n$-element set is $n!$, while the number of ways to partition it into disjoint nonempty subsets is some more complicated function of $n$. Such counting problems can often be solved with almost magical ease using formal power series [@BLL; @Rota; @Wilf].\n\nThe idea is simple. Let $F$ be any type of structure that we can put on finite sets, and let $F_n$ be the set of all structures of this type t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Feynman Diagrams and Stuff Operators",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "../sections/sec-004-5-feynman-diagrams-and-stuff-operators.md",
+      "narrative": null,
+      "content": "From here we could go in various directions. But since we are dreaming about the future of mathematics, let us choose a rather speculative one, and discuss some applications of categorification to *quantum theory*. By now it is clear that categorification is necessary for understanding the connections between quantum field theory and topology. It has even played a role in some attempts to find a quantum theory of gravity. But having reviewed these subjects elsewhere [@HDA0; @HDA2; @Planck], we restrict ourselves here to some of the simplest aspects of quantum physics.\n\nOne of the first steps i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0004133v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-005-acknowledgements.md",
+      "narrative": null,
+      "content": "We dedicate this paper to Gian-Carlo Rota and Irving Segal.\nReferences\n[1] J. Adams, Inﬁnite Loop Spaces, Princeton U. Press, Princeton, 1978.\n[2] J. Baez, Higher-dimensional algebra II: 2-Hilbert spaces, Adv. Math.\n127 (1997), 125-189.\n[3] J. Baez, Higher-dimensional algebra and Planck-scale physics, to appear\nin Physics Meets Philosophy at the Planck Length, eds. C. Callender and\nN. Huggett, Cambridge U. Press, Cambridge.\n[4] J. Baez and J. Dolan, Higher-dimensional algebra and topological quan-\ntum ﬁeld theory, Jour. Math. Phys. 36 (1995), 6073-6105.\n[5] J. Baez and J. Dolan, Higher-dimensi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

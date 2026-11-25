@@ -1,0 +1,717 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0911.4494v2",
+  "title": "The geometry of Markov traces",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Hecke algebras",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-hecke-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Hecke algebras and geometry",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-hecke-algebras-and-geometry"
+    },
+    {
+      "level": 1,
+      "title": "A categorified trace",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-a-categorified-trace"
+    },
+    {
+      "level": 1,
+      "title": "Character sheaves and character expansions",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-character-sheaves-and-character-expansions"
+    },
+    {
+      "level": 1,
+      "title": "Character sheaves and Molien series",
+      "number": "6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-character-sheaves-and-molien-series"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-ocneanu trace",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "geordie",
+          "heading": false
+        },
+        {
+          "term": "williamson",
+          "heading": false
+        },
+        {
+          "term": "homology",
+          "heading": false
+        },
+        {
+          "term": "sheaves",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0911.4494v2 [math.AG] 8 Jul 2010 The geometry of Markov traces Ben Webster Geordie Williamson Department of Mathematics, Mathematical Institute, University of Oregon University of Oxford Email: bwebster@math.mit.edu geordie.williamson@maths.ox.ac.uk Abstract. We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn. This construction",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0911.4494v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-ocneanu trace",
+          "heading": false
+        },
+        {
+          "term": "cite gomi",
+          "heading": false
+        },
+        {
+          "term": "hec gamma",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig basis",
+          "heading": false
+        },
+        {
+          "term": "cite jon",
+          "heading": false
+        },
+        {
+          "term": "homflypt polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:introduction} The mid 1980's saw a remarkable burst of knot invariants appearing from surprising directions; one of the foremost was the HOMPLYPT polynomial, independently discovered by several groups of researchers (see \\cite{HOMFLY,PT}). In \\cite{Jon87} this invariant was then interpreted by Jones in terms of a trace, now known as the {\\bf Jones-Ocneanu trace}, on the Hecke algebra $\\Hec_n$. In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postdoctoral fellowship",
+          "heading": false
+        },
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "dao",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:acknowledgments} We would like to thank Jean Michel for explaining Gomi's trace to us and asking if there is a relation with the Hochschild homology of Soergel bimodules. We would also like to thank Roman Bezrukavnikov, Victor Ginzburg, Hailong Dao and Rapha\\\"el Rouquier for useful conversations and Jim Humphreys for comments on a previous version of this paper. BW was supported by an NSF Postdoctoral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-hecke-algebras",
+      "number": "2",
+      "title": "Hecke algebras",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 668,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nicefrac cdot",
+          "heading": false
+        },
+        {
+          "term": "hec gamma",
+          "heading": false
+        },
+        {
+          "term": "frac nicefrac",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture node",
+          "heading": false
+        },
+        {
+          "term": "algebras hec",
+          "heading": false
+        },
+        {
+          "term": "inner sep",
+          "heading": false
+        },
+        {
+          "term": "dynkin diagrams",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:hecke-algebras} Let $\\Gamma$ be a Dynkin diagram. Attached to this Dynkin diagram, we have: \\begin{itemize} \\item An {\\bf Artin braid group} $\\Br_{\\Gamma}$, which is generated by symbols $\\si_i$ corresponding to vertices $i$ of $\\Gamma$, with the relations \\begin{equation*} \\underbrace{\\si_i\\si_j\\cdots}_{m_{ij} \\text{ terms}}=\\underbrace{\\si_j\\si_i\\cdots}_{m_{ij} \\text{ terms}} \\end{equation*} where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-hecke-algebras-and-geometry",
+      "number": "3",
+      "title": "Hecke algebras and geometry",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline qlb",
+          "heading": false
+        },
+        {
+          "term": "cdot dot",
+          "heading": false
+        },
+        {
+          "term": "mathscr times",
+          "heading": false
+        },
+        {
+          "term": "hec gamma",
+          "heading": false
+        },
+        {
+          "term": "nicefrac",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": true
+        },
+        {
+          "term": "convolution algebra",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:hecke-algebr-geom} Let $\\FF_q$ denote a finite field with $q$ elements and let $G$ denote a split semi-simple algebraic group over $\\FF_q$ with fixed split maximal torus $T$ and Borel subgroup $B$. If $\\Gamma$ denotes the Dynkin diagram of the root system of $G$, then we may canonically identify $W_{\\Gamma}$ with the Weyl group of $G$. Given any $w \\in W_{\\Gamma}$ we denote by $\\dot{w}$ a representative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-a-categorified-trace",
+      "number": "4",
+      "title": "A categorified trace",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star gio",
+          "heading": false
+        },
+        {
+          "term": "v-q nicefrac",
+          "heading": false
+        },
+        {
+          "term": "nicefrac cdot",
+          "heading": false
+        },
+        {
+          "term": "widetilde delta",
+          "heading": false
+        },
+        {
+          "term": "frac nicefrac",
+          "heading": false
+        },
+        {
+          "term": "widetilde cong",
+          "heading": false
+        },
+        {
+          "term": "times widetilde",
+          "heading": false
+        },
+        {
+          "term": "qquad widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:categorified-trace} Let $\\BD\\subset\\BB$ be the diagonal subgroup. Then we can associate to $\\IC_w$ and $S_w$ bigraded vector spaces $\\hc_{\\BD}\\!(\\IC_w)$ and $\\HH^*(S_w)$, the $\\BD$-equivariant cohomology and Hochschild homology respectively. The bigrading on $\\HH^*(S_a)$ is easy to describe: one grading, which we call the {\\bf $t$-grading}, is given by the homological grading on $\\HH^*$ and one is given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-character-sheaves-and-character-expansions",
+      "number": "5",
+      "title": "Character sheaves and character expansions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1097,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character sheaves",
+          "heading": true
+        },
+        {
+          "term": "sheaf iic",
+          "heading": false
+        },
+        {
+          "term": "widehat chi",
+          "heading": false
+        },
+        {
+          "term": "chi prime",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "varpi chi",
+          "heading": false
+        },
+        {
+          "term": "chi cdot",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        }
+      ],
+      "extract": "Any trace on a semi-simple algebra can be expanded as a direct sum of the traces on irreducible representations, i.e. as a sum of irreducible characters. A formula for this was given in type A by Ocneanu \\cite{Wenzl}, in type B by Orellana \\cite{Orellana}, and in arbitrary type by Gomi \\cite{Gomi}. Using our geometric perspective, we can give a much simpler proof than that of \\cite{Gomi}, which depended on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-character-sheaves-and-molien-series",
+      "number": "6",
+      "title": "Character sheaves and Molien series",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde reg",
+          "heading": false
+        },
+        {
+          "term": "sym bullet",
+          "heading": false
+        },
+        {
+          "term": "qlb",
+          "heading": false
+        },
+        {
+          "term": "cong bullet",
+          "heading": false
+        },
+        {
+          "term": "molien series",
+          "heading": true
+        },
+        {
+          "term": "indgt",
+          "heading": false
+        },
+        {
+          "term": "otimes bullet",
+          "heading": false
+        },
+        {
+          "term": "bullet delta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:char-sheav-moli} Proposition \\ref{block} shows that in equation (\\ref{weight}), we need only sum over the sheaves that appear as summands of $\\IndGT$, since the trivial local system is the only unipotent character sheaf on $T$. Let us give a more careful description of these sheaves. Consider the variety $\\tG=G_\\Delta\\times_{B_\\Delta}B$ and let $c:G_\\Delta\\times_{B_\\Delta}B\\to G$ be the map induced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character sheaves",
+          "heading": false
+        },
+        {
+          "term": "cohomologie etale",
+          "heading": false
+        },
+        {
+          "term": "meinolf geck",
+          "heading": false
+        },
+        {
+          "term": "eom etrie",
+          "heading": false
+        },
+        {
+          "term": "reine angew",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "alg ebrique",
+          "heading": false
+        }
+      ],
+      "extract": "[BBD82] A. A. Beilinson, J. Bernstein, and P. Deligne, Faisceaux pervers, Analysis and topology on singular spaces, I (Luminy, 1981), Ast´erisque, vol. 100, Soc. Math. France, Paris, 1982, pp. 5– 171. [BH93] Winfried Bruns and J¨urgen Herzog, Cohen-Macaulay rings, Cambridge Studies in Advanced Mathematics, vol. 39, Cambridge University Press, Cambridge, 1993. MR MR1251956 (95h:13020) [BL94] Joseph Bernstein and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nicefrac cdot",
+      "heading": false
+    },
+    {
+      "term": "cite gomi",
+      "heading": false
+    },
+    {
+      "term": "v-q nicefrac",
+      "heading": false
+    },
+    {
+      "term": "hec gamma",
+      "heading": false
+    },
+    {
+      "term": "equivariant sheaves",
+      "heading": false
+    },
+    {
+      "term": "frac nicefrac",
+      "heading": false
+    },
+    {
+      "term": "algebra hec",
+      "heading": false
+    },
+    {
+      "term": "character sheaves",
+      "heading": true
+    },
+    {
+      "term": "jones-ocneanu trace",
+      "heading": false
+    },
+    {
+      "term": "perverse sheaves",
+      "heading": false
+    },
+    {
+      "term": "equivariant cohomology",
+      "heading": false
+    },
+    {
+      "term": "hecke algebra",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The type B and D Dynkin diagrams traces1 Trn with values in Z((q",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0911.4494v2"
+  }
+}

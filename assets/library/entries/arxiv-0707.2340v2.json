@@ -1,0 +1,443 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0707.2340v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0707.2340v2  [math.PR]  27 Jul 2008\nNEGATIVE DEPENDENCE AND\nTHE GEOMETRY OF POLYNOMIALS\nJULIUS BORCEA, PETTER BR¨AND´EN, AND THOMAS M. LIGGETT\nAbstract. We introduce the class of strongly Rayleigh probability measures\nby means of geometric properties of their generating polynomials that amount\nto the stability of the latter. This class covers important models such as de-\nterminantal measures (e.g. product measures, uniform random spanning tree\nmeasures) and distributions for symmetric exclusion processes. We show that\nstrongly Rayleigh measures enjoy all virtues of negative dependence an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{s1}\n\nLet $\\mu : 2^{[n]} \\rightarrow \\RR$, $[n]=\\{1,\\ldots,n\\}$, be a function attaining nonnegative values and satisfying $\\sum_{S \\in 2^{[n]}}\\mu(S)=1$. The function $\\mu$ is said to satisfy the \n{\\em positive lattice condition} \\cite{FKG,P} if \n\\begin{equation*}\n\\mu(S)\\mu(T) \\leq \\mu(S\\cup T)\\mu(S\\cap T)\\tag*{(PLC)}\n\\end{equation*}\nfor all $S,T \\subseteq [n]$. The corresponding probability measure (also denoted by $\\mu$) on $2^{[n]}$ defined by $\\mu(\\mathcal{A})=\\sum_{S \\in \\mathcal{A}}\\mu(S)$ is said to be {\\em positively associated}\nif\n$$\\int Fd\\mu \\int Gd\\mu \\le \\int FG d\\mu$$\nfor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Plethora of Negative Dependence Properties and Conjectures",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-a-plethora-of-negative-dependence-properties-a.md",
+      "narrative": null,
+      "content": "The problem of describing natural negative dependence properties that are pre-\nserved by symmetric exclusion evolutions has attracted some attention in the the-\nory of interacting particle systems and Markov processes [52, 54, 55]. In §4.4 we\nprove that the class of strongly Rayleigh measures is invariant under partial sym-\nmetrization (this and several other properties fail for e.g. Rayleigh measures). As a\nconsequence, in §5 we provide an answer to the aforementioned problem and show\nthat if the initial distribution of a symmetric exclusion process is strongly Rayleigh,\nthen so is the distri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative Dependence Concepts",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-negative-dependence-concepts.md",
+      "narrative": null,
+      "content": "\\label{s21}\n\nRecall that a (real or complex) multivariate polynomial is said to be \n{\\em multi-affine} \nif it has degree at most one in each variable. \nDenote by $\\fP_n$, $n\\in\\NN$, the set of all \nprobability measures on the Boolean algebra\n$2^{[n]}$. (In the finite case we will always assume that the \n$\\sigma$-algebra is the full algebra.) For $i\\in [n]$ the $i$-th coordinate \nfunction on $2^{[n]}$ \nis an atomic (binary) random variable given by $X_i(S)=1$ if \n$i\\in S$ and $0$ otherwise, where $S\\subseteq [n]$, while the \ncharacteristic function $\\chi_S$ of $S$ is defined by $\\chi_S(T)=1$ if",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strongly Rayleigh Measures",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-strongly-rayleigh-measures.md",
+      "narrative": null,
+      "content": "\\label{s23}\nMotivated by similar notions in the theory of multivariate entire functions\nstudied by Levin \\cite{Le}, the following definition was made in\n\\cite{BBS,BBS1,BBS2} (see also \\cite{BB,BB-2}).\n\n\\begin{definition}\\label{d-rs-pol}\nA polynomial $f \\in \\CC[z_1,\\ldots, z_n]$ is called {\\em stable} if \n$f(z_1,\\ldots, z_n) \\neq 0$ \nwhenever $\\Im(z_j) >0$ for $1\\le j\\le n$. A stable polynomial with all\nreal coefficients is called {\\em real stable}.\n\\end{definition}\n\nMultivariate stable polynomials are intimately connected with other fundamental\nobjects such as hyperbolic polynomials, Lee-Yang",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric Homogenization",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-symmetric-homogenization.md",
+      "narrative": null,
+      "content": "\\label{s22}\nWe will now define a symmetric homogenization \nprocedure for arbitrary measures in $\\fP_n$. This natural construction \nproves to be quite useful for studying strongly Rayleigh measures \n(\\S \\ref{s-gar}).\n\n\\begin{definition}\\label{d-sh}\nGiven a measure $\\mu\\in\\fP_n$ define a new measure $\\mu_{sh}\\in\\fP_{2n}$ \ncalled the {\\em symmetric homogenization} of $\\mu$ by\n$$\n\\mu_{sh}(S) = \n\\begin{cases}\n\\mu(S\\cap[n])\\binom{n}{|S\\cap [n]|}^{-1} \\mbox{ if } |S|=n, \\\\\n0 \\mbox{ otherwise. } \n\\end{cases} \n$$\n\\end{definition}\n\nNote that the generating polynomial of $\\mu_{sh}$ may be written as\n$$g_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Measures on countably infinite sets",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-24-measures-on-countably-infinite-sets.md",
+      "narrative": null,
+      "content": "\\label{s240}\nIn \\S \\ref{n-s6} we will need to extend some of the notions of  \nnegative dependence to probability \nmeasures on $2^{E}$, where $E$ is a countably infinite set. This is \ncanonically done as follows. \n\n\\begin{definition}\\label{infinite}\nLet $\\mu$ be a probability measure on $2^E$, where $E$ is a countably \ninfinite set satisfying \n$$\n\\mbox{ (A): \\ \\ }\\mbox{ for all } x \\in E \\mbox{ the set } \n\\left\\{T \\in 2^E : x \\in T\\right\\} \\mbox{ is measurable. } \n$$\n Let $\\mathcal{P}$ be a property defined for measures on power-sets of finite \nsets. We say that $\\mu$ has property $\\mathcal{P}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-25-towards-a-theory-of-negative-dependence-probl.md",
+      "narrative": null,
+      "content": "\\label{s24}\n\nA series of problems and conjectures was proposed by several authors as \nnatural steps toward building as general a theory of negative dependence as \npossible. In \\cite[\\S III]{P} Pemantle pointed out that although\nthey are desirable, the many negative dependence properties listed in \n\\S \\ref{s21} might not be mutually satisfiable, and he suggested a problem that\nmay be formulated as follows.\n\n\\begin{problem}\\label{pem-prob}\nFind a natural and useful class of ``negatively dependent measures''.\n\\end{problem}\n\nNote that there may well exist several such classes, if indeed any, \ndepe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative Dependence in Mathematics and Physics",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-3-negative-dependence-in-mathematics-and-physics.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Real Stable Polynomials and Transcendental Entire Functions",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-31-real-stable-polynomials-and-transcendental-en.md",
+      "narrative": null,
+      "content": "\\label{ss-real-s}\n\nIn \\cite{PB} it was proved that a multi-affine polynomial \n$f \\in \\RR[z_1,\\ldots,z_n]$ is stable (in the sense of \nDefinition~\\ref{d-rs-pol}) \nif and only if \n\\begin{equation}\\label{stable}\n\\frac {\\partial f} {\\partial z_i}(x) \\frac {\\partial f} {\\partial z_j}(x)\n\\geq \\frac {\\partial^2 f} {\\partial z_i \\partial z_j}(x) f(x)\n\\end{equation}\nfor all $x \\in \\RR^n$ and $1\\leq i<j \\leq n$ (see also \nTheorem~\\ref{stable-Rayleigh} in \\S \\ref{s-stable} below). Therefore, \na stable multi-affine polynomial with non-negative coefficients is \nRayleigh/h-NLC+. As we will prove in \\S \\ref{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice.md",
+      "narrative": null,
+      "content": "\\label{ss-gkk}\n\nGiven an $n\\times n$ matrix $A$ over $\\CC$ and $S\\subseteq [n]$ denote\nby $A[S]$ the principal submatrix of $A$ with rows\nand columns indexed by $S$ and let $A\\langle S\\rangle=\\det(A[S'])$ be the \nprincipal minor of $A$ with rows\nand columns indexed by $S'=[n]\\setminus S$, where \n$A\\langle [n]\\rangle=\\det(A[\\emptyset]):=1$. The matrix $A$ is called  a\n$P$-{\\em matrix} if all its principal minors are positive. A much studied \nclass of $P$-matrices that unifies several important types of matrices is \nthe class of $\\GKK$-matrices, see \\cite{FJ,HS} and references \ntherein. \nA $P$-m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal Probability Measures",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-33-determinantal-probability-measures.md",
+      "narrative": null,
+      "content": "\\label{ss-det-m}\n\nIn \\cite{Lyons} Lyons defined a {\\em determinantal probability measure} \non $2^{[n]}$ to \nbe a measure $\\mu\\in\\fP_n$ such that\nthere is an $n \\times n$ matrix $A$ so that for any subset $S$ of \n$[n]$ one has \n\\begin{equation}\\label{det-me}\n\\mu(\\{T: S \\subseteq T\\}) = \\det(A[S]),\n\\end{equation}\nwhere as before $A[S]$ denotes the principal submatrix of $A$ whose rows and \ncolumns are indexed by $S$. As discussed in e.g.~\\cite{BKPV,Lyons}, such \nmeasures have important applications ranging from \nfermionic processes/continuous scaling limits of discrete point \nprocesses \\cite{DVJ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-34-graphs-laplacians-spanning-trees-and-the-rand.md",
+      "narrative": null,
+      "content": "\\label{ss-trees}\n\nLet $G=(V,E)$ be a graph with vertex set $V=[n]$ and edge set $E$. Associate \nto each edge $e \\in E$ a variable $w_e$. If $e$ connects $i$ and $j$ let \n$A_e$ be the $n \\times n$ positive semi-definite matrix with the $ii$-entry \nand \nthe $jj$-entry equal to $1$, the $ij$-entry and $ji$-entry equal to $-1$, \nand all other entries equal to $0$. The {\\em Laplacian}, $L(G)$,  of $G$ is \ndefined by \n$$\nL(G)= \\sum_{e \\in E}w_eA_e.\n$$\nLet\n$$\nf_G(z,w)= \\det(L(G)+Z).\n$$\nThus, by \\eqref{pencil}, $f_G$ is a multi-affine real stable polynomial with \nnon-negative coefficients.   \nThe Prin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interacting Particle Systems and Exclusion Evolutions",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md",
+      "narrative": null,
+      "content": "\\label{ss-ex-case}\n\nThe exclusion process is one of the main models considered in the area of\nProbability Theory known as Interacting Particle Systems. The idea is \nthat particles move in continuous time on a countable set $S$, in such a way \nthat there is always at most one particle per site. The motion of\neach particle would be a continuous time Markov chain on $S$, except that\ntransitions to occupied sites are forbidden. This process has been used to \nmodel many situations, including biopolymers and traffic flow. We refer to\n\\cite[Chap.~VIII]{L0} and \\cite[Part 3]{L00} for detailed\ntreatmen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-4-negative-dependence-theory-for-strongly-raylei.md",
+      "narrative": null,
+      "content": "\\label{s-stable}\n\nThe importance of strongly Rayleigh measures -- that is, measures with stable \ngenerating polynomials (cf.~Definition~\\ref{def-rsm}) -- in negative \ndependence stems from the theorem below proved by one of the authors  \nin \\cite{PB} (cf.~\\S \\ref{ss-real-s}).  \n\n\\begin{theorem}\\label{stable-Rayleigh}\nLet $g \\in \\RR[z_1,\\ldots, z_n]$ be a multi-affine polynomial. Then $g$ is \nstable if and only if \n$$\n\\frac {\\partial g} {\\partial z_i}(x) \\frac {\\partial g} {\\partial z_j}(x) \n\\geq \\frac {\\partial^2 g} {\\partial z_i \\partial z_j}(x) g(x)$$\nfor any $x=(x_1,\\ldots,x_n)\\in \\RR^n$ an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-41-symmetric-homogenization-via-gårding-hyperbol.md",
+      "narrative": null,
+      "content": "\\label{s-gar}\n\nThe following theorem shows that the symmetric \nhomogenization (cf.~\\S \\ref{s22}) of any strongly Rayleigh measure is again\nstrongly Rayleigh, so that \nstrongly Rayleigh measures belong to the class PHR (Definition~\\ref{phr}).\n \n\\begin{theorem}\\label{SH}\nIf $\\mu\\in \\fP_{n}$ is strongly Rayleigh then so is its symmetric \nhomogenization $\\mu_{sh}\\in\\fP_{2n}$.\n\\end{theorem}\n\nThe proof of Theorem~\\ref{SH} makes use of the theory of hyperbolic \npolynomials that has its origins in partial differential equations \nand was developed by \nPetrovsky, G\\aa rding, H\\\"ormander, Atiyah and Bott",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability Implies Negative Association",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-42-stability-implies-negative-association.md",
+      "narrative": null,
+      "content": "\\label{s-sna}\n\nThe main argument in the proof of the following theorem goes back to \nFeder-Mihail \\cite{feder} although the proof of the full theorem is scattered \nover the literature \\cite{DJR,Lyons,Lyons-Peres,W}. \n\n\\begin{theorem}\\label{FM}\nLet $\\mathcal{S}$ be a class of probability measures satisfying: \n\\begin{enumerate}\n\\item Each $\\mu \\in \\mathcal{S}$ is a measure on $2^{E}$, where $E$ is a \nfinite subset of $\\{1,2,\\ldots\\}$ depending on $\\mu$; \n\\item $\\mathcal{S}$ is closed under conditioning; \n\\item For each $\\mu \\in \\mathcal{S}$ the variables $X_e$, $e \\in E$, \nare pairwise negativel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stochastic Domination and Truncations",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-016-43-stochastic-domination-and-truncations.md",
+      "narrative": null,
+      "content": "\\label{ss-trunc}\n\nRecall the notion of stochastic domination from Definition~\\ref{d-stoc} in \n\\S \\ref{s24}. \nIt turns out that for strongly Rayleigh measures, stochastic domination is \nintimately connected with central notions in the theory of stable and \nreal-rooted polynomials, namely the notions of interlacing zeros and \nproper position \\cite{BBS,BBS1,BBS2,PB,Le,RS}. In particular, this connection\nallows us to extend one of Lyons' main results \\cite{Lyons} and to answer\nPemantle's questions on stochastic domination for truncations of ``negatively\ndependent'' measures \\cite{P} (cf.~\\S \\ref{s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Partial Symmetrization Procedure",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-44-the-partial-symmetrization-procedure.md",
+      "narrative": null,
+      "content": "\\label{n-s5}\n\nRecall Remark~\\ref{r-complex}, the partial \nsymmetrization\nof (complex) measures on $2^{[n]}$ defined in \\eqref{t-theta}, and\nDefinition~\\ref{d-rs-pol}. The main \nresult of this section is the following theorem. \n\n\\begin{theorem}\\label{asym}\nLet $\\mu$ be a complex measure on $2^{[n]}$ with \n(complex) stable generating polynomial. Then for any  \ntransposition $\\tau\\in\\fS_n$ and $\\theta\\in[0,1]$ the generating polynomial of\nthe partial symmetrization \n$\\mu^{\\tau,\\theta}=\\theta\\mu+(1-\\theta)\\tau(\\mu)$ is (complex) stable.\n\\end{theorem}\n\n\nIn particular, Theorem~\\ref{asym} implies tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-018-5-preservation-of-negative-dependence-by-symmetr.md",
+      "narrative": null,
+      "content": "\\label{n-s6}\n\nIn this section we study some consequences of the results in \\S \n\\ref{s-stable} for symmetric exclusion processes and provide an answer to\nthe problem of finding a natural negative dependence \nproperty that is preserved by such evolutions (Problem~\\ref{p-see}).\n\nLet us first describe these processes in more detail. A configuration of \nparticles on a countable set $S$ is a point\n$\\eta$ on the Boolean lattice $2^S$, which we identify with $\\{0,1\\}^S$, so \n$\\eta(i)=1$ means that site $i$ is occupied, while $\\eta(i)=0$ means that it \nis vacant. One is given a non-negative symmetric k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Almost Exchangeable Measures",
+      "pageStart": 33,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-6-almost-exchangeable-measures.md",
+      "narrative": null,
+      "content": "\\label{Almost}\n\nBy Pemantle's result (Theorem~\\ref{pro-w} in \\S \\ref{ss-ex-case}), for \nsymmetric measures in $\\fP_n$ all five conditions NLC, h-NLC, \nRayleigh/h-NLC+, CNA, CNA+ are equivalent to the ULC condition for the rank \nsequence. Therefore, the relations between \nall these negative dependence properties are completely understood in the \nexchangeable case. In this section we study the almost exchangeable\ncase, that is, measures whose generating polynomials are \nsymmetric in all but possibly one variable (Definition~\\ref{d-exc}). We prove \nthat for such measures one has both \nh-NLC $\\Lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative Results on Negative Dependence",
+      "pageStart": 41,
+      "pageEnd": 45,
+      "target": "../sections/sec-020-7-negative-results-on-negative-dependence.md",
+      "narrative": null,
+      "content": "\\label{s-countex}\n\nWe will now use the results from the previous \nsections, in particular those of \\S \\ref{Almost}, to construct\ncounterexamples to the general cases of Pemantle's and Wagner's conjectures\non ULC rank sequences (Conjectures~\\ref{c-p}--\\ref{cna-ulc}) and   \nPemantle's conjecture\non stochastic domination and truncations \n(Conjecture~\\ref{st}). We also answer in the negative  \nsome related problems as well as Problem~\\ref{prob-phr-cna} and \n\\cite[Problem 6]{BBCV}.\n \n\\begin{proof}[Counterexample 1]\nSuppose that $\\mu$ is a probability measure on $2^{[n+1]}$ whose \ngenerating polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2340v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-021-references.md",
+      "narrative": null,
+      "content": "[1] M. Aissen, I. J. Schoenberg, A. Whitney, On the generating functions of totally positive\nsequences I, J. Analyse Math. 2 (1952), 93–103.\n[2] E. D. Andjel, A correlation inequality for the symmetric exclusion process, Ann. Probab. 16\n(1988), 717–721.\n[3] M. F. Atiyah, R. Bott, L. G˙arding, Lacunas for hyperbolic diﬀerential operators with constant\ncoeﬃcients I, Acta Math. 124 (1970), 109–189.\n[4] H. H. Bauschke, O. G¨uler, A. S. Lewis, H. S. Sendov, Hyperbolic polynomials and convex\nanalysis, Canad. J. Math. 53 (2001), 470–488.\n[5] J. Ben Hough, M. Krishnapur, Y. Peres, B. Vir´ag, Determina",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

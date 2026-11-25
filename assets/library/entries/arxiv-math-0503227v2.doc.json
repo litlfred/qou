@@ -1,0 +1,507 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0503227v2",
+  "title": "arxiv-math-0503227v2",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Central limit theorem for Plancherel measure",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-central-limit-theorem-for-plancherel-measure"
+    },
+    {
+      "level": 1,
+      "title": "Central limit theorem for Jack measure",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-central-limit-theorem-for-jack-measure"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berry-esseen theorem",
+          "heading": false
+        },
+        {
+          "term": "character ratios",
+          "heading": false
+        },
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "fulman",
+          "heading": false
+        },
+        {
+          "term": "inductive proof",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0503227v2 [math.CO] 8 Aug 2006 An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios Submitted 3/9/05; Revised 8/6/06 By Jason Fulman Department of Mathematics, University of Southern California Los Angeles, CA 90089, USA fulman@usc.edu Abstract: Bolthausen used a variation of Stein’s method to give an inductive proof of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0503227v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "framebox",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "character ratios",
+          "heading": false
+        },
+        {
+          "term": "probability frac",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "The Plancherel measure of a finite group $G$ is a probability measure on the set of irreducible representations of $G$ which chooses a representation $\\rho$ with probability $\\frac{dim(\\rho)^2}{|G|}$, where $dim(\\rho)$ denotes the dimension of $\\rho$. For instance if $G$ is the symmetric group, the irreducible representations are parameterized by partitions $\\lambda$ of $n$, and the Plancherel measure chooses a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-central-limit-theorem-for-plancherel-measure",
+      "number": "2",
+      "title": "Central limit theorem for Plancherel measure",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "leq sqrt",
+          "heading": false
+        },
+        {
+          "term": "ismart",
+          "heading": false
+        },
+        {
+          "term": "sqrt choose",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": true
+        },
+        {
+          "term": "lambda choose",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "frac int",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#plancherel label=\"plancherel\"} The random variable we wish to study is $T_n(\\lambda) = \\frac{\\sqrt{n \\choose 2} \\chi^{\\lambda}(12)}{dim(\\lambda)}$ where $\\lambda$ is chosen from the Plancherel measure of the symmetric group $S_n$. To begin we write $T_n$ as a sum of other random variables. For this we need Kerov's growth process on partitions [@K2]; this has a natural generalization to arbitrary finite groups",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-central-limit-theorem-for-jack-measure",
+      "number": "3",
+      "title": "Central limit theorem for Jack measure",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack measure",
+          "heading": true
+        },
+        {
+          "term": "jack alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "ismart",
+          "heading": false
+        },
+        {
+          "term": "jack frac",
+          "heading": false
+        },
+        {
+          "term": "leq alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "boundmom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#jack label=\"jack\"} For $\\alpha>0$ the Jack$_{\\alpha}$ measure on partitions of size $n$ chooses a partition $\\lambda$ with probability $$\\frac{\\alpha^n n!}{\\prod_{x \\in \\lambda} (\\alpha a(x) + l(x) +1) (\\alpha a(x) + l(x) + \\alpha)},$$ where the product is over all boxes in the partition. Here $a(x)$ denotes the number of boxes in the same row of $x$ and to the right of $x$ (the \"arm\" of x) and $l(x)$ denotes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-acknowledgements",
+      "number": "4",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author was partially supported by NSA grant number H98230-05-1-0031.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel mea",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "mea sure",
+          "heading": false
+        },
+        {
+          "term": "fulman",
+          "heading": false
+        },
+        {
+          "term": "character ratios",
+          "heading": false
+        },
+        {
+          "term": "gaussian ﬂuctuations",
+          "heading": false
+        }
+      ],
+      "extract": "[AlD] D. Aldous and P. Diaconis, Longest increasing subsequences: from patience sorting to the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999) 413-432. [Bol] E. Bolthausen, An estimate of the remainder term in a combinatorial central limit theorem, Z. Wahrsch. Verw. Gebiete 66 (1984) 379-386. [BOO] A. Borodin, A. Okounkov, and G. Olshanski, Asymptotics of Plancherel measures for symmetric groups, J. Amer.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "jack frac",
+      "heading": false
+    },
+    {
+      "term": "jack measure",
+      "heading": true
+    },
+    {
+      "term": "jack alpha",
+      "heading": false
+    },
+    {
+      "term": "plancherel measure",
+      "heading": true
+    },
+    {
+      "term": "lambda frac",
+      "heading": false
+    },
+    {
+      "term": "jack polynomials",
+      "heading": false
+    },
+    {
+      "term": "partitions lambda",
+      "heading": false
+    },
+    {
+      "term": "ismart label",
+      "heading": false
+    },
+    {
+      "term": "frac sqrt",
+      "heading": false
+    },
+    {
+      "term": "leq sqrt",
+      "heading": false
+    },
+    {
+      "term": "random transpositions",
+      "heading": false
+    },
+    {
+      "term": "choose lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0503227v2"
+  }
+}

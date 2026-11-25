@@ -1,0 +1,345 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2009.03688v6",
+  "blocks": [
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0\ncan be obtained from a quotient CY /SL(2, 13) over the modular curve X(13),\nwhere Y\n⊂CP5 is a complete intersection curve given by a system of\nSL(2, 13)-invariant polynomials and CY is a cone over Y . It is diﬀerent from\nthe Kleinian singularity C2/Γ, where Γ is the binary icosahedral group. This\ngives a negative answer to Arnol’d and Brieskorn’s questions about the mys-\nterious relation between the icosahedron and E8, i.e., the E8-singularity is\nnot necessarily the Kleinian icosahedral singularity. In particular, the equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2009.03688v6  [math.NT]  30 Oct 2020\nE8-singularity, invariant theory and modular\nforms\nLei Yang",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-contents.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n2.\nStandard construction: E8-singularity as the icosahedral singularity\n3.\nInvariant theory and modular forms for SL(2, 13)\n4.\nA diﬀerent construction: E8-singularity from CY /SL(2, 13) over X(13)\nand a variation of the E8-singularity structure over X(13)\n5.\nQ18 and E20-singularities from CY /SL(2, 13) over X(13) and\nvariations of Q18 and E20-singularity structures over X(13)\n1. Introduction\nBy a rational double point or a simple singularity we understand the\nsingularity of the quotient of C2 by the action of a ﬁnite subgroup of SL(2, C)\n(see [28]). Let Γ be a ﬁnite subgroup of SL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "(Main Theorem 1) (A variation of the E8-singularity structure over the modular curve X: algebraic version) The equation of E8- singularity Φ3 20 −Φ2 30 −1728Φ5 12 = 0 possesses an inﬁnitely many kinds of distinct modular parametrizations (with the cardinality of the continuum in ZFC set theory) (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) (1.14) over the modular curve X as follows:      Φλ 12 = λΦ3,0 + (1 −λ)Φ0,2 mod a1, Φµ 20 = µΦ5,0 + (1 −µ)Φ2,2 mod a2, Φγ 30 = γ1Φ0,5 + γ2Φ3,3 + (1 −γ1 −γ2)Φ6,1 mod a3, (1.15) where Φ12, Φ20 and Φ30 are invariant homogeneous polynomials of degree 12, 20 and 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "(Main Theorem 2) (A variation of the E8-singularity structure over the modular curve X: geometric version) There is a morphism of schemes f : CY /G →Spec \u0000C[Φ12, Φ20, Φ30]/(Φ3 20 −Φ2 30 −1728Φ5 12) \u0001 (1.17) over the modular curve X. In particular, there are inﬁnitely many such triples (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) whose parameter space {(λ, µ, γ)} ∼= C4. They form a variation of the E8-singularity structure over the modular curve X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "(Variations of Q18 and E20-singularity structures over the modular curve X: algebraic version) The equations of Q18 and E20- singularities Φ3 32 −Φ12Φ2 42 −1728Φ8 12 = 0, Φ3 44 −Φ4 12Φ2 42 −1728Φ11 12 = 0 possess an inﬁnitely many kinds of distinct modular parametrizations (with the cardinality of the continuum in ZFC set theory) (Φ12, Φ32, Φ42, Φ44) = (Φλ 12, Φµ 32, Φγ 42, Φ44) (1.20) over the modular curve X as follows:          Φλ 12 = λΦ3,0 + (1 −λ)Φ0,2 mod a1, Φµ 32 = µ1Φ8,0 + µ2Φ5,2 + (1 −µ1 −µ2)Φ2,4 mod a3, Φγ 42 = γ1Φ0,7 + γ2Φ3,5 + γ3Φ6,3 + (1 −γ1 −γ2 −γ3)Φ9,1 mod a4, Φ44 = Φ1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "(Variations of Q18 and E20-singularity structures over the modular curve X: geometric version) There are two morphisms from the cone CY over Y to the Q18 and E20-singularities: f1 : CY /G →Spec \u0000C[Φ12, Φ32, Φ42]/(Φ3 32 −Φ12Φ2 42 −1728Φ8 12) \u0001 (1.23) and f2 : CY /G →Spec \u0000C[Φ12, Φ42, Φ44]/(Φ3 44 −Φ4 12Φ2 42 −1728Φ11 12) \u0001 (1.24) over the modular curve X. In particular, there are inﬁnitely many such triples (Φ12, Φ32, Φ42) = (Φλ 12, Φµ 32, Φγ 42) whose parameter space {(λ, µ, γ)} ∼= C6. They form variations of Q18 and E20-singularity structures over the modular curve X. In fact, Klein had notice",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-002-05.md",
+      "narrative": null,
+      "content": "(Main Theorem 3) (A variation of the structure of de- composition formulas of the elliptic modular functions j over the modular curve X) There are inﬁnitely many kinds of distinct decomposition formulas of the elliptic modular function j in terms of the invariants Φ12, Φ20 and Φ30 over the modular curve X: j(z) : j(z) −1728 : 1 = Φ3 20 : Φ2 30 : Φ5 12, (1.29) where (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) are given by (1.15). They form a variation of the structure of decomposition formulas of the elliptic modular functions j over the modular curve X. In fact, these inﬁnitely many kinds of disti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard construction: E8-singularity as the icosahedral singularity",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-2-standard-construction-e8-singularity-as-the-ic.md",
+      "narrative": null,
+      "content": "icosahedral singularity\nLet us recall some classical result on the relation between the icosahedron\nand the E8-singularity (see [25]). Starting with the polynomial invariants of\nthe ﬁnite subgroup of SL(2, C), a surface is deﬁned from the single syzygy\nwhich relates the three polynomials in two variables.\nThis surface has a\nsingularity at the origin; the singularity can be resolved by constructing a\nsmooth surface which is isomorphic to the original one except for a set of\ncomponent curves which form the pre-image of the origin. The components\nform a Dynkin curve and the matrix of their inters",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see [31], Proposition 2.5",
+      "pageStart": 16,
+      "pageEnd": 39,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "If z ∈H, then the following relations hold: A(z + 1) = e−3πi 4 TA(z), A \u0012 −1 z \u0013 = e πi 4 √zSA(z), (3.16) where S and T are given in (3.1) and (3.2), and 0 < arg√z ≤π/2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariant theory and modular forms for SL(2, 13)",
+      "pageStart": 16,
+      "pageEnd": 39,
+      "target": "../sections/sec-004-3-invariant-theory-and-modular-forms-for-sl2-13.md",
+      "narrative": null,
+      "content": "The representation of SL(2, 13) which we will consider is the unique six-\ndimensional irreducible complex representation for which the eigenvalues of\n\u00121\n1\n0\n1\n\u0013\nare the exp(a.2πi/13) for a a non-square mod 13. We will give an\nexplicit realization of this representation. This explicit realization will play a\nmajor role for giving a complete system of invariants associated to SL(2, 13).\nAt ﬁrst, we will study the six-dimensional representation of the ﬁnite group\nSL(2, 13) of order 2184, which acts on the ﬁve-dimensional projective space\nP5 = {(z1, z2, z3, z4, z5, z6) : zi ∈C\n(i = 1, 2, 3, 4, 5,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A diﬀerent construction: E8-singularity from",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "../sections/sec-005-4-a-diﬀerent-construction-e8-singularity-from.md",
+      "narrative": null,
+      "content": "CY /SL(2, 13) over X(13) and a variation of the\nE8-singularity structure over X(13)\nIn this section, we will give a diﬀerent construction of the E8-singularity\nfrom a quotient CY /G over the modular curve X. The signiﬁcance of the\ncomplete intersection curve Y with multi-degree (4, 8, 10, 14) is that the ﬁnite\ngroup G acts linearly on C6 and on CP5 leaving invariant Y ⊂CP5 and the\ncone CY ⊂C6.\nTheorem 4.1.\n(A variation of the E8-singularity structure over the\nmodular curve X: algebraic version) The equation of E8-singularity\nΦ3\n20 −Φ2\n30 −1728Φ5\n12 = 0\npossesses an inﬁnitely many kinds of dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "(A variation of the E8-singularity structure over the modular curve X: algebraic version) The equation of E8-singularity Φ3 20 −Φ2 30 −1728Φ5 12 = 0 possesses an inﬁnitely many kinds of distinct modular parametrizations (with the cardinality of the continuum in ZFC set theory) (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) (4.1) over the modular curve X as follows:      Φλ 12 = λΦ3,0 + (1 −λ)Φ0,2 mod a1, Φµ 20 = µΦ5,0 + (1 −µ)Φ2,2 mod a2, Φγ 30 = γ1Φ0,5 + γ2Φ3,3 + (1 −γ1 −γ2)Φ6,1 mod a3, (4.2) where Φ12, Φ20 and Φ30 are invariant homogeneous polynomials of degree 12, 20 and 30, respectively. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "(A variation of the E8-singularity structure over the modular curve X: geometric version) There is a morphism from the cone CY over Y to the E8-singularity: f : CY /G →Spec \u0000C[Φ12, Φ20, Φ30]/(Φ3 20 −Φ2 30 −1728Φ5 12) \u0001 (4.4) over the modular curve X. In particular, there are inﬁnitely many such triples (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) whose parameter space {(λ, µ, γ)} ∼= C4. They form a variation of the E8-singularity structure over the modular curve X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "(A variation of the structure of decomposition formulas of the elliptic modular functions j over the modular curve X) There are in- ﬁnitely many kinds of distinct decomposition formulas of the elliptic modular function j in terms of the invariants Φ12, Φ20 and Φ30 over the modular curve X: j(z) : j(z) −1728 : 1 = Φ3 20 : Φ2 30 : Φ5 12, (4.5) where (Φ12, Φ20, Φ30) = (Φλ 12, Φµ 20, Φγ 30) are given by (4.2). They form a vari- ation of the structure of decomposition formulas of the elliptic modular func- tions j over the modular curve X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "(Variations of Q18 and E20-singularity structures over the modular curve X: algebraic version) The equations of Q18 and E20- singularities Φ3 32 −Φ12Φ2 42 −1728Φ8 12 = 0, Φ3 44 −Φ4 12Φ2 42 −1728Φ11 12 = 0 possess an inﬁnitely many kinds of distinct modular parametrizations (with the cardinality of the continuum in ZFC set theory) (Φ12, Φ32, Φ42, Φ44) = (Φλ 12, Φµ 32, Φγ 42, Φ44) (5.5) over the modular curve X as follows:          Φλ 12 = λΦ3,0 + (1 −λ)Φ0,2 mod a1, Φµ 32 = µ1Φ8,0 + µ2Φ5,2 + (1 −µ1 −µ2)Φ2,4 mod a3, Φγ 42 = γ1Φ0,7 + γ2Φ3,5 + γ3Φ6,3 + (1 −γ1 −γ2 −γ3)Φ9,1 mod a4, Φ44 = Φ11",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 46,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "(Variations of Q18 and E20-singularity structures over the modular curve X: geometric version) There are two morphisms from the cone CY over Y to the Q18 and E20-singularities: f1 : CY /G →Spec \u0000C[Φ12, Φ32, Φ42]/(Φ3 32 −Φ12Φ2 42 −1728Φ8 12) \u0001 (5.8) and f2 : CY /G →Spec \u0000C[Φ12, Φ42, Φ44]/(Φ3 44 −Φ4 12Φ2 42 −1728Φ11 12) \u0001 (5.9) over the modular curve X. In particular, there are inﬁnitely many such triples (Φ12, Φ32, Φ42) = (Φλ 12, Φµ 32, Φγ 42) whose parameter space {(λ, µ, γ)} ∼= C6. They form variations of Q18 and E20-singularity structures over the modular curve X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2009.03688v6/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] V. I. Arnol’d, Critical points of smooth functions, in: Proceedings of the\nInternational Congress of Mathematicians (Vancouver, B. C., 1974),\nVol. 1, 19-39, Canad. Math. Congress, Montreal, Que., 1975.\n[2] V. I. Arnol’d, S. M. Gusein-Zade and A. N. Varchenko, Singularities of\nDiﬀerentiable Maps, Vol. I. The Classiﬁcation of Critical Points, Caus-\ntics and Wave Fronts, Translated from the Russian by Ian Porteous and\nMark Reynolds, Monographs in Mathematics, 82, Birkh¨auser, 1985.\n[3] V. I. Arnol’d, Catastrophe Theory, translated from the Russian by G. S.\nWassermann, based on a translation b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

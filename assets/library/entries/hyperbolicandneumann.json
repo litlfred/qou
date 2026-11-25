@@ -1,0 +1,175 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "hyperbolicandneumann",
+  "blocks": [
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations and the gluing equations",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-ideal-triangulations-and-the-gluing-equations.md",
+      "narrative": null,
+      "content": "Ideal triangulations and the gluing equations\n1\n2.\nVolumes and Dehn surgeries\n3\n3.\nThe Bloch group and the extended Bloch group\n7\n4.\nSymplectic properties\n9\n5.\nQuantization\n10\n6.\nConnections to number theory\n12\nReferences\n17\nWalter Neumann—henceforth simply Walter—has made huge contributions to topology,\nsingularity theory, and number theory. His work on the combinatorics of triangulations of\n3-manifolds and its interactions with algebraic K-theory certainly can be counted as among\nthe most far-reaching and beautiful of these. In this short note we will try to recount some\nof the high points o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP,\nAND THE WORK OF WALTER NEUMANN\nSTAVROS GAROUFALIDIS AND DON ZAGIER\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volumes and Dehn surgeries",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-volumes-and-dehn-surgeries.md",
+      "narrative": null,
+      "content": "As already stated, the original main purpose of [31] was to study the arithmetic of the set\nof volumes of all hyperbolic 3-manifolds. It had been observed by Thurston, using earlier\nwork of Jørgensen, that this volume spectrum is a well-ordered subset of the positive reals. In\nother words, there is a smallest volume (which is known), a second smallest, a third smallest,\n. . . , then a smallest limit point, a second smallest limit point, . . . , then limits of these, and\nso on. The proof of well-orderedness shows that these simple and higher-order limit points\n4\nSTAVROS GAROUFALIDIS AND DON ZAG",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bloch group and the extended Bloch group",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-the-bloch-group-and-the-extended-bloch-group.md",
+      "narrative": null,
+      "content": "The Bloch group of a ﬁeld is an analogue of its multiplicative group, but with the relation\n[xy] = [x] + [y] satisﬁed by the logarithm function replaced by the functional equation of\nthe dilogarithm. In this section we recall its deﬁnition and the deﬁnition of the “extended\nBloch group” that was introduced by Walter [30] and further developed by Zickert and\nGoette [21, 39], and explain their connections with the volume and complexiﬁed volume. The\nnext section tells how these things relate to the symplectic structure. We should mention\nthat parts of both sections have been transferred here from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic properties",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-4-symplectic-properties.md",
+      "narrative": null,
+      "content": "In retrospect, the symplectic properties as descibed in equation (3) and the following text,\nand their reﬁnement from Q to Z as given in the follow-up paper [28], turned out to be the\nmost important aspects of these papers. They are responsible both for the existence of the\npotential function and for all of the applications to quantization that we will describe in the\nnext section, as well as many of the connections to number theory described in Section 6.\nDeﬁne an N ×2N matrix H = (A B) whose rows form a Z-basis for the lattice spanned by\nthe edge equations (1) together with one “peripheral”",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-5-quantization.md",
+      "narrative": null,
+      "content": "Perhaps the most far-reaching consequences of Walter’s work on the combinatorics of\n3-dimensional triangulations have been the applications of the symplectic structure to quan-\ntization.\nRecall the deﬁnition of J∆for a single tetrahedron ∆as the abelian group ⟨e1, e2, e3 |\ne1 + e2 + e3 = 0⟩with the sympectic structure (11). This symplectic structure on each\nspace J∆⊗Z Q for any ideal tetrahedron ∆leads to an integral Lagrangian subspace of the\n10-dimensional symplectic space ⊕5\nj=1J∆j ⊗Z Q associated to 5 tetrahedra ∆1, . . . , ∆5 that\nparticipate in a 2–3 Pachner move. Roughly speaking, the L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "This consequence was observed in [35] and was also generalized there to the value of ζF(2) for HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN 13 arbitrary number ﬁelds F, with [F : Q] = r1+2r2 for any value of r2 ≥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections to number theory",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-6-connections-to-number-theory.md",
+      "narrative": null,
+      "content": "The paper [31] and its sequel [28] suggested or led to several interesting developments in\npure number theory as well as in topology. In this ﬁnal section we describe of a few of these.\nValues of Dedekind zeta functions and higher Bloch groups\nAn important subclass of hyperbolic manifolds M = H3/Γ are the arithmetic ones, where Γ\nis either the Bianchi group SL2(OF) for some imaginary quadratic ﬁeld F or more generally\na group of units in a quaternion algebra over a number ﬁeld F of higher degree n = r1 + 2\nhaving only one complex embedding up to complex conjugation. In both cases, classical\nre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hyperbolicandneumann/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] Spencer Bloch. Applications of the dilogarithm function in algebraic K-theory and algebraic geometry.\nIn Proceedings of the International Symposium on Algebraic Geometry (Kyoto Univ., Kyoto, 1977),\npages 103–114. Kinokuniya Book Store, Tokyo, 1978.\n[2] Frank Calegari, Stavros Garoufalidis, and Don Zagier. Bloch groups, algebraic K-theory, units and\nNahm’s Conjecture. Preprint 2017, arXiv:1807.00957.\n[3] Abhijit Champanerkar. A-polynomial and Bloch invariants of hyperbolic 3-manifolds. ProQuest LLC,\nAnn Arbor, MI, 2003. Thesis (Ph.D.)–Columbia University.\n[4] Daryl Cooper, Marc Culler, Henr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

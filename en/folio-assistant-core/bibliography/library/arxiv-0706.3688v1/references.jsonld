@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0706.3688v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "WHY THE STANDARD MODEL",
+      "dcterms:creator": [
+        "CHAMSEDDINE, ALI H.",
+        "CONNES, ALAIN"
+      ],
+      "dcterms:issued": "D:20181107",
+      "dcterms:identifier": "https://arxiv.org/abs/0706.3688",
+      "dcterms:abstract": "The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging for a conceptual understanding. We propose a purely gravitational explanation: space-time has a ﬁne structure given as a product of a four dimensional continuum by a ﬁnite noncommutative geometry F. The raison d’ˆetre for F is to correct the K-theoretic dimension from four to ten (modulo eight). We classify the irreducible ﬁnite noncommutative geometries of K-theoretic dimension six and show that the dimension (per generation) is a square of an integer k. Under an additional hypothesis of quaternion linearity, the geometry which reproduces the Standard Model is singled out (and one gets k = 4) with the correct quantum numbers for all ﬁelds. The spectral action applied to the product M × F delivers the full Standard Model, with neutrino mixing, coupled to gravity, and makes predictions (the number of generations is still an input).",
+      "dcterms:source": "library/arxiv-0706.3688v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0706.3688v1"
+    }
+  ]
+}

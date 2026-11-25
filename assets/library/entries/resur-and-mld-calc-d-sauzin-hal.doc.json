@@ -1,0 +1,1219 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "resur-and-mld-calc-d-sauzin-hal",
+  "title": "Resurgence and Mould Calculus",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "``Simple'' version of Resurgence Theory",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-simple-version-of-resurgence-theory"
+    },
+    {
+      "level": 2,
+      "title": "Simple -resurgent series",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-simple--resurgent-series"
+    },
+    {
+      "level": 2,
+      "title": "Stability under product and nonlinear operations",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-stability-under-product-and-nonlinear-operations"
+    },
+    {
+      "level": 2,
+      "title": "Alien operators. Alien derivations",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-alien-operators-alien-derivations"
+    },
+    {
+      "level": 2,
+      "title": "Freeness of the alien derivations and first hint of mould calculus",
+      "number": null,
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-freeness-of-the-alien-derivations-and-first-hint"
+    },
+    {
+      "level": 1,
+      "title": "Simple resurgent functions obtained by Borel-Laplace summation",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-simple-resurgent-functions-obtained-by-borel-lap"
+    },
+    {
+      "level": 2,
+      "title": "Borel-Laplace summation",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-borel-laplace-summation"
+    },
+    {
+      "level": 2,
+      "title": "Transseries, symbolic Stokes automorphism",
+      "number": null,
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The algebra R of general resurgent singularities",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-algebra-r-of-general-resurgent-singularities"
+    },
+    {
+      "level": 2,
+      "title": "Relaxing the constraint on the location of singularities.",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-relaxing-the-constraint-on-the-location-of-singu"
+    },
+    {
+      "level": 2,
+      "title": "Examples from mathematical physics.",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-examples-from-mathematical-physics"
+    },
+    {
+      "level": 2,
+      "title": "Relaxing the constraint on the nature of singularities.",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-relaxing-the-constraint-on-the-nature-of-singula"
+    },
+    {
+      "level": 1,
+      "title": "Mould Calculus",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-mould-calculus"
+    },
+    {
+      "level": 2,
+      "title": "The mould algebra",
+      "number": null,
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-the-mould-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The hyperlogarithmic mould.",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-the-hyperlogarithmic-mould"
+    },
+    {
+      "level": 2,
+      "title": "Mould aspects of the MZV world",
+      "number": null,
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-mould-aspects-of-the-mzv-world"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": null,
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-applications"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mould calculus",
+          "heading": false
+        },
+        {
+          "term": "david sauzin",
+          "heading": false
+        },
+        {
+          "term": "hal",
+          "heading": false
+        },
+        {
+          "term": "documents",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "archive",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: hal-04253203 https://hal.science/hal-04253203v2 Preprint submitted on 23 Oct 2023 (v2), last revised 23 Jan 2024 (v3) HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive",
+      "extractCut": true,
+      "blocks": [
+        "library/resur-and-mld-calc-d-sauzin-hal/blocks/prose-sec-front-matter",
+        "library/resur-and-mld-calc-d-sauzin-hal/blocks/figure-img-p001-1",
+        "library/resur-and-mld-calc-d-sauzin-hal/blocks/figure-img-p001-2",
+        "library/resur-and-mld-calc-d-sauzin-hal/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction . . . . . . . . . . . . . . . . . . 1 2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-simple-version-of-resurgence-theory",
+      "number": null,
+      "title": "``Simple'' version of Resurgence Theory",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resurgence theory",
+          "heading": true
+        },
+        {
+          "term": "alien derivations",
+          "heading": false
+        },
+        {
+          "term": "mould calculus",
+          "heading": false
+        },
+        {
+          "term": "borel-laplace summation",
+          "heading": false
+        },
+        {
+          "term": "eca",
+          "heading": false
+        },
+        {
+          "term": "mzv",
+          "heading": false
+        },
+        {
+          "term": "dynamical systems",
+          "heading": false
+        },
+        {
+          "term": "relaxing",
+          "heading": false
+        }
+      ],
+      "extract": ". . 1 2.1 Simple Ω-resurgent series . . . . . . 2 2.2 Stability under product and nonlin- ear operations . . . . . . . . . . . . . 3 2.3 Alien operators. Alien derivations . 3 2.4 Freeness of the alien derivations and ﬁrst hint of mould calculus . . . . . 4 3 Simple resurgent functions obtained by Borel-Laplace summation . . . . . . . . . . 5 3.1 Borel-Laplace summation . . . . . . 5 3.2 Transseries, symbolic Stokes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-simple--resurgent-series",
+      "number": null,
+      "title": "Simple -resurgent series",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω-resurgent series",
+          "heading": false
+        },
+        {
+          "term": "simple ω-resurgent",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "contγ",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "resurgent",
+          "heading": true
+        },
+        {
+          "term": "worst simple",
+          "heading": false
+        },
+        {
+          "term": "simple singularities",
+          "heading": false
+        }
+      ],
+      "extract": "It is convenient to denote the indeterminate by z−1 because our formal series will appear as asymptotic expansions at inﬁnity of functions analytic in certain unbounded domains. Let us ﬁx a rank-1 lattice Ω of C. We shall sometimes use the notations ‘ω1’ for a generator of Ωand ωk := k ω1, k ∈Z (2) for the elements of Ω. Deﬁnition 1. The space eRs Ωof simple Ω-resurgent series is deﬁned as the set of all formal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-stability-under-product-and-nonlinear-operations",
+      "number": null,
+      "title": "Stability under product and nonlinear operations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω-resurgent series",
+          "heading": false
+        },
+        {
+          "term": "simple ω-resurgent",
+          "heading": false
+        },
+        {
+          "term": "ers",
+          "heading": false
+        },
+        {
+          "term": "ωis",
+          "heading": false
+        }
+      ],
+      "extract": "erations It is obvious that eRs Ωis a C-vector space stable under d dz (note that B maps diﬀerentiation to multiplication by −ζ). Much less obviously, it is also stable under multiplication and is thus a subalgebra of C[[z−1]]. This is due to the compatibility of the process of an- alytic continuation with the convolution bϕ ∗bψ(ζ) := Z ζ 0 bϕ(u) bψ(ζ −u) du (8) and to the fact that B maps the standard (Cauchy)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-alien-operators-alien-derivations",
+      "number": null,
+      "title": "Alien operators. Alien derivations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alien derivations",
+          "heading": true
+        },
+        {
+          "term": "alien operators",
+          "heading": true
+        },
+        {
+          "term": "ers",
+          "heading": false
+        },
+        {
+          "term": "eϕs",
+          "heading": false
+        },
+        {
+          "term": "leibniz",
+          "heading": false
+        },
+        {
+          "term": "rule",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "path",
+          "heading": false
+        }
+      ],
+      "extract": "Alien operators. Alien derivations Notice that in (4), the regular part F depends on the choice of the branch of the logarithm, whereas a0 and bχ are uniquely determined. Thus, for γ and ω as above, we can use the formula A γ ω eϕ := B−1(a0 δ + bχ) (9) to deﬁne a C-linear operator A γ ω , which clearly maps eRs Ωto itself (because Ωis an additive group and bχ, being the diﬀerence of two branches of bϕ translated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-freeness-of-the-alien-derivations-and-first-hint",
+      "number": null,
+      "title": "Freeness of the alien derivations and first hint of mould calculus",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mould calculus",
+          "heading": true
+        },
+        {
+          "term": "ω-valued mould",
+          "heading": false
+        },
+        {
+          "term": "alternal moulds",
+          "heading": false
+        },
+        {
+          "term": "ers",
+          "heading": false
+        },
+        {
+          "term": "alien",
+          "heading": true
+        },
+        {
+          "term": "lie subalgebra",
+          "heading": false
+        },
+        {
+          "term": "free lie",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "hint of mould calculus The term ‘alien derivation’ was coined by ´Ecalle [´Eca81] to highlight how this array of operators is dif- ferent in nature from the natural derivation d dz. If we focus on DerC( eRs Ω), viewed as a Lie subalgebra of EndC( eRs Ω) with commutator as Lie bracket, we have the relation \u0002 d dz, ∆ω \u0003 = ω∆ω for each ω ∈Ω′ (14) (easy to check from the deﬁnition), but the striking fact is that the Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-simple-resurgent-functions-obtained-by-borel-lap",
+      "number": null,
+      "title": "Simple resurgent functions obtained by Borel-Laplace summation",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-borel-laplace-summation",
+      "number": null,
+      "title": "Borel-Laplace summation",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel-laplace summation",
+          "heading": true
+        },
+        {
+          "term": "resurgent series",
+          "heading": false
+        },
+        {
+          "term": "resurgent function",
+          "heading": false
+        },
+        {
+          "term": "summation operator",
+          "heading": false
+        },
+        {
+          "term": "laplace transforms",
+          "heading": false
+        },
+        {
+          "term": "ers",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "summable",
+          "heading": false
+        }
+      ],
+      "extract": "3.1 Borel-Laplace summation Many resurgent series encountered in practice are use- ful because they are also ‘summable’ (or ‘accelero- summable’, but we won’t touch on accelero- summability in this article). Borel-Laplace summation is the application of Laplace transform (or some variant) to (B eϕ)(ζ), giv- ing rise to a function ϕ(z) for which the formal se- ries eϕ(z) appears as asymptotic expansion at inﬁnity;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-algebra-r-of-general-resurgent-singularities",
+      "number": null,
+      "title": "The algebra R of general resurgent singularities",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singularities",
+          "heading": true
+        },
+        {
+          "term": "resurgent",
+          "heading": true
+        },
+        {
+          "term": "obstacles",
+          "heading": false
+        }
+      ],
+      "extract": "▽ R of general resurgent singularities We now relax one by one the two requirements im- posed by Deﬁnition 1, namely that the only obstacles to analytic continuation may occur at points of a given lattice Ωand that the singularities are no worse than simple. 4.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-relaxing-the-constraint-on-the-location-of-singu",
+      "number": null,
+      "title": "Relaxing the constraint on the location of singularities.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "continuable",
+          "heading": false
+        },
+        {
+          "term": "generaliz",
+          "heading": false
+        }
+      ],
+      "extract": "singularities. Deﬁnition 8. We call endlessly continuable any bϕ(ζ) analytic near 0 for which, for every real L > 0, there exists a ﬁnite subset FL of C such that bϕ(ζ) can be analytically continued along every Lipschitz path of length < L starting in the initial domain of deﬁnition of bϕ and avoiding FL. Variants are possible—see [CNP93; KS20], or [´Eca85] for the most general deﬁnition (‘continuable with no cut’).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-examples-from-mathematical-physics",
+      "number": null,
+      "title": "Examples from mathematical physics.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resurgent series",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "iπz",
+          "heading": false
+        },
+        {
+          "term": "countable union",
+          "heading": false
+        },
+        {
+          "term": "simple poles",
+          "heading": false
+        },
+        {
+          "term": "exponentiation",
+          "heading": false
+        },
+        {
+          "term": "singular",
+          "heading": false
+        }
+      ],
+      "extract": "Examples from mathematical physics. In [GK21], the logarithm of Faddeev’s quantum dilog- arithm Φb(x) (a special function that plays a key role in quantum Teichm¨uller theory and Chern-Simons theory) is shown to arise from the Borel-Laplace sum- mation of a simple resurgent series: for ﬁxed x ∈C with arg x ∈(−π, π), log Φb( x 2πb) = z 2πi Li2(−ex) + (S {0} eG)(z, x) (40) for z = b−2, where eG(z, x) ∈z−1C[[z−2]] has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-relaxing-the-constraint-on-the-nature-of-singula",
+      "number": null,
+      "title": "Relaxing the constraint on the nature of singularities.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hankel contour",
+          "heading": false
+        },
+        {
+          "term": "eψk",
+          "heading": false
+        },
+        {
+          "term": "πiζ",
+          "heading": false
+        },
+        {
+          "term": "transseries",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": true
+        },
+        {
+          "term": "laplace",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "singularities. Our earlier computation of a diﬀerence of Laplace transforms illustrated by Figure 4 relied on the fact 8 that, given a direction θ ∈R, one has a0 = Z Hθ e−zζ a0 2πiζ dζ, (L θ bχ)(z) = Z Hθ e−zζ ∨χ(ζ) dζ, (44) where ∨χ(ζ) := bχ(ζ) log ζ 2πi + F(ζ), F(ζ) ∈C{ζ}, (45) and Hθ is a rotated Hankel contour as on Figure 5. Figure 5: θ-rotated Hankel contour. Let us thus introduce the Hankel-type Laplace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-mould-calculus",
+      "number": null,
+      "title": "Mould Calculus",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Mould Calculus",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-the-mould-algebra",
+      "number": null,
+      "title": "The mould algebra",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mould",
+          "heading": true
+        },
+        {
+          "term": "alternal moulds",
+          "heading": false
+        },
+        {
+          "term": "mould expansions",
+          "heading": false
+        },
+        {
+          "term": "mould composition",
+          "heading": false
+        },
+        {
+          "term": "mould deﬁned",
+          "heading": false
+        },
+        {
+          "term": "expan sions",
+          "heading": false
+        },
+        {
+          "term": "symmetral",
+          "heading": false
+        },
+        {
+          "term": "associative algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The mould algebra We have encountered eRs Ω-valued moulds in the context of alien calculus, and Ω′, a rank-one lattice minus the origin, was then used as alphabet. We now develop the basics of mould calculus in the broader context of a commutative Q-algebra A and an arbitrary alpha- bet N. We denote by N the free monoid on N, which is not supposed to be countable or contained in C, but, when necessary, we assume N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-the-hyperlogarithmic-mould",
+      "number": null,
+      "title": "The hyperlogarithmic mould.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperlogarithmic mould",
+          "heading": true
+        },
+        {
+          "term": "scalar mould",
+          "heading": false
+        },
+        {
+          "term": "symmetral",
+          "heading": false
+        },
+        {
+          "term": "elementary manipulations",
+          "heading": false
+        },
+        {
+          "term": "alternal",
+          "heading": false
+        }
+      ],
+      "extract": "The hyperlogarithmic mould. Here is a reinforcement of Theorem 5: Theorem 11 ([´Eca81]). Let A := eR (resp. eRs, resp. eRs Ω) and N := eC (resp. C∗, resp. Ω′). There ex- ists a symmetral A-valued mould (U ω)ω∈N such that, for every ω0 ∈N and ω = ω1 · · · ωr ∈N, ∆ω0U ω1···ωr = ( U ω2···ωr if r ≥1 and ω0 = ω1 0 otherwise. (63) Sketch of proof with A = eRs and N = C∗. Pick an entire function baω such that baω(ω)̸ = 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-mould-aspects-of-the-mzv-world",
+      "number": null,
+      "title": "Mould aspects of the MZV world",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mould",
+          "heading": true
+        },
+        {
+          "term": "mzv",
+          "heading": true
+        },
+        {
+          "term": "eca",
+          "heading": false
+        },
+        {
+          "term": "multizeta values",
+          "heading": false
+        },
+        {
+          "term": "nsr",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        }
+      ],
+      "extract": "Mould aspects of the MZV world ´Ecalle [´Eca81, §12e] introduced the multizetas ζ(s1, s2, . . . , sr) = X n1>n2>···>nr>0 1 ns1 1 ns2 2 · · · nsr r (69) as a scalar mould on Z>0. He later studied systemat- ically their natural generalization, known as coloured (or modulated) multizeta values (‘MZV’), Ze( ε1, ... , εr s1, ... , sr ) = X n1>···>nr>0 e2πi(n1ε1+···+nrεr) ns1 1 · · · nsr r (70) for s1, . . . , sr ∈Z>0,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-applications",
+      "number": null,
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mould calculus",
+          "heading": false
+        },
+        {
+          "term": "mould expansions",
+          "heading": false
+        },
+        {
+          "term": "resur gence",
+          "heading": false
+        },
+        {
+          "term": "resur gent",
+          "heading": false
+        },
+        {
+          "term": "ematiques orsay",
+          "heading": false
+        },
+        {
+          "term": "math ematiques",
+          "heading": false
+        },
+        {
+          "term": "sauzin",
+          "heading": false
+        },
+        {
+          "term": "eca",
+          "heading": false
+        }
+      ],
+      "extract": "Applications Resurgence Theory originated with local analytic dy- namics [´Eca81; ´Eca85]. Indeed, the Abel equation that governs the dynamics of tangent-to-identity holo- morphic germs in (C, 0) belongs to a class of diﬀerence equations giving rise to resurgent series. A related problem is that of nonlinear ODEs of saddle-node type [MR82]—see also [Kam22]. In such problems, the resurgent analysis leads to a ‘Bridge",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "alternal mould",
+      "heading": false
+    },
+    {
+      "term": "mould calculus",
+      "heading": true
+    },
+    {
+      "term": "logarithm mould",
+      "heading": false
+    },
+    {
+      "term": "mould algebra",
+      "heading": true
+    },
+    {
+      "term": "ω-valued mould",
+      "heading": false
+    },
+    {
+      "term": "mould expansions",
+      "heading": false
+    },
+    {
+      "term": "a-valued mould",
+      "heading": false
+    },
+    {
+      "term": "hyperlogarithmic mould",
+      "heading": true
+    },
+    {
+      "term": "mould composition",
+      "heading": false
+    },
+    {
+      "term": "scalar mould",
+      "heading": false
+    },
+    {
+      "term": "mould deﬁned",
+      "heading": false
+    },
+    {
+      "term": "mould aspects",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The path γ avoids Ωand ends at ζ1, near ω",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "An example of path γ(ε), here with r = 4 and ε = (+, −, +)",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Above: Directions for Laplace integration with J = (θ1, θ2). Below: the union of half-planes DJ",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Decomposition of the contour for the diﬀerence of two Laplace transforms as a sum of contours",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "θ-rotated Hankel contour",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/resur-and-mld-calc-d-sauzin-hal"
+  }
+}

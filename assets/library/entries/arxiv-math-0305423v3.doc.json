@@ -1,0 +1,659 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0305423v3",
+  "title": "arxiv-math-0305423v3",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Harmonic functions and exchangeable pairs",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-harmonic-functions-and-exchangeable-pairs"
+    },
+    {
+      "level": 1,
+      "title": "Irreducible characters of the symmetric group",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-irreducible-characters-of-the-symmetric-group"
+    },
+    {
+      "level": 1,
+      "title": "Stein's method and Kerov's central limit theorem",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-steins-method-and-kerovs-central-limit-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic multiplicities in tensor products of representations",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-asymptotic-multiplicities-in-tensor-products-o"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "pittsburgh",
+          "heading": false
+        },
+        {
+          "term": "fulman",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0305423v3 [math.RT] 11 Nov 2003 Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure By Jason Fulman University of Pittsburgh Department of Mathematics 301 Thackeray Hall Pittsburgh, PA 15260 Email: fulman@math.pitt.edu Abstract: We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0305423v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "ref maintheorem",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "framebox",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        }
+      ],
+      "extract": "It is accurate to state that one of the most important developments in probability theory in the last century was Stein's method. Stein's method is a highly original technique and has been useful in proving normal and Poisson approximation theorems in probability problems with limited information such as the knowledge of only a few moments of the random variable. Stein's method can be difficult to work with and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
+      "number": "2",
+      "title": "Harmonic functions and exchangeable pairs",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda nearrow",
+          "heading": false
+        },
+        {
+          "term": "harmonic functions",
+          "heading": true
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "bratelli diagram",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "frac dim",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "exchangeable",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{harmonic} To begin we recall the theory of harmonic functions on Bratelli diagrams. This is a beautiful subject with deep connections to probability theory and representation theory. Two excellent surveys are \\cite{K2} and \\cite{BO}. The basic set-up is as follows. One starts with a Bratteli diagram; that is an oriented graded graph $\\Gamma= \\cup_{n \\geq 0} \\Gamma_n$ such that \\begin{enumerate} \\item",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
+      "number": "3",
+      "title": "Irreducible characters of the symmetric group",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "ref parents",
+          "heading": false
+        },
+        {
+          "term": "overline chi",
+          "heading": false
+        },
+        {
+          "term": "sum chi",
+          "heading": false
+        },
+        {
+          "term": "atop tau",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": true
+        },
+        {
+          "term": "ref countsol",
+          "heading": false
+        },
+        {
+          "term": "ref orth",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{repreview} This section collects properties we will use about characters of irreducible representations of the symmetric group. For more background on this topic, see the book \\cite{Sa}. Lemmas \\ref{orth1}, \\ref{mult}, and $\\ref{real}$ are well known. Lemma \\ref{countsol} is known but not well known. Lemmas \\ref{induced}, \\ref{parents} are elementary consequences of known facts but perhaps new. Throughout",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-steins-method-and-kerovs-central-limit-theorem",
+      "number": "4",
+      "title": "Stein's method and Kerov's central limit theorem",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": true
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "eqnarray lambda",
+          "heading": false
+        },
+        {
+          "term": "frac dim",
+          "heading": false
+        },
+        {
+          "term": "leq sqrt",
+          "heading": false
+        },
+        {
+          "term": "events lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{provebound} In this section we prove Theorem \\ref{maintheorem}. Recall that $W(\\lambda) = \\frac{(n-1)}{\\sqrt{2}} \\frac{\\chi^{\\lambda}(12)}{dim(\\lambda)}$ and that the Plancherel measure chooses a partition $\\lambda$ with probability $\\frac{dim(\\lambda)^2}{n!}$. If $n=1$ we use the convention that $W=0$. Then Lemma \\ref{countsol} implies the known fact that the mean and variance of $W$ are $0$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-asymptotic-multiplicities-in-tensor-products-o",
+      "number": "5",
+      "title": "Asymptotic multiplicities in tensor products of representations",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind n-k",
+          "heading": false
+        },
+        {
+          "term": "n-k res",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "beta psi",
+          "heading": false
+        },
+        {
+          "term": "frac dim",
+          "heading": false
+        },
+        {
+          "term": "beta leq",
+          "heading": false
+        },
+        {
+          "term": "ref constructchain",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{decompose} This section gives an intruiging method for understanding some asymptotic aspects of the decomposition of tensor products of certain representations of the symmetric group. A recent paper which investigates this topic from the viewpoint of free probability theory is \\cite{Bi}. However the methods and results are completely different from those presented here. The main new idea of this section is to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-acknowledgements",
+      "number": "6",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author was partially supported by National Security Agency grant MDA904-03-1-0049.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 600,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "plancherel mea",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "fulman",
+          "heading": false
+        },
+        {
+          "term": "diaconis",
+          "heading": false
+        },
+        {
+          "term": "poisson approximation",
+          "heading": false
+        },
+        {
+          "term": "probab",
+          "heading": false
+        },
+        {
+          "term": "probability theory",
+          "heading": false
+        }
+      ],
+      "extract": "[AlD] Aldous, D. and Diaconis, P., Longest increasing subsequences: from patience sort- ing to the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999), 413-432. [ArGG] Arratia, R., Goldstein, L. and Gordon, L., Poisson approximation and the Chen- Stein method. Statist. Sci. 5 (1990), 403-434. [BHJ] Barbour, A.D., Holst, L., and Janson, S., Poisson approximation. Oxford Science Publications. Clarendon Press,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "chi lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda tau",
+      "heading": false
+    },
+    {
+      "term": "frac dim",
+      "heading": false
+    },
+    {
+      "term": "eqnarray lambda",
+      "heading": false
+    },
+    {
+      "term": "stein method",
+      "heading": true
+    },
+    {
+      "term": "plancherel measure",
+      "heading": false
+    },
+    {
+      "term": "lambda sqrt",
+      "heading": false
+    },
+    {
+      "term": "partition lambda",
+      "heading": false
+    },
+    {
+      "term": "sum lambda",
+      "heading": false
+    },
+    {
+      "term": "n-k dim",
+      "heading": false
+    },
+    {
+      "term": "markov chain",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0305423v3"
+  }
+}

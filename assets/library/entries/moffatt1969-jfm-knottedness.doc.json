@@ -1,0 +1,498 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "moffatt1969-jfm-knottedness",
+  "title": "The degree of knottedness of tangled vortex lines",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction; discrete vortex fields",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "117",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction-discrete-vortex-fields"
+    },
+    {
+      "level": 1,
+      "title": "The effect of the presence of solid boundaries",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "121",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-the-effect-of-the-presence-of-solid-boundaries"
+    },
+    {
+      "level": 1,
+      "title": "A simple consequence of the invariance of I in an incompressible",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "122",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-4-a-simple-consequence-of-the-invariance-of-i-in"
+    },
+    {
+      "level": 1,
+      "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "123",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-relation-with-the-magnetohydrodynamic-invarian"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "117",
+      "labelEnd": "117",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
+          "term": "filaments",
+          "heading": false
+        },
+        {
+          "term": "vorticity",
+          "heading": false
+        },
+        {
+          "term": "fluid",
+          "heading": false
+        },
+        {
+          "term": "flows",
+          "heading": false
+        },
+        {
+          "term": "linked",
+          "heading": false
+        }
+      ],
+      "extract": "J . Fluid Mech. (1969), vol. 35, part 1, pp. 117-129 Printed in Great Britain 117 The degree of knottedness of tangled vortex lines By H. K. MOFFATT Department of Applied Mathematics and Theoretical Physics, Silver Street, Cambridge (Received 17 May 1968) Let u(x) be the velocity field in a fluid of infinite extent due to a vorticity distri- bution w(x) which is zero except in two closed vortex filaments of",
+      "extractCut": true,
+      "blocks": [
+        "library/moffatt1969-jfm-knottedness/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-discrete-vortex-fields",
+      "number": "1",
+      "title": "Introduction; discrete vortex fields",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "117",
+      "labelEnd": "121",
+      "words": 1578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vortex",
+          "heading": true
+        },
+        {
+          "term": "vortex filament",
+          "heading": false
+        },
+        {
+          "term": "vorticity field",
+          "heading": false
+        },
+        {
+          "term": "continuous vorticity",
+          "heading": false
+        },
+        {
+          "term": "vorticity segments",
+          "heading": false
+        },
+        {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
+          "term": "tangled vortex",
+          "heading": false
+        },
+        {
+          "term": "opposite vorticity",
+          "heading": false
+        }
+      ],
+      "extract": "Consider any flow u(x, t ) under conservative body forces, of an inviscid fluid whose density is either uniform or a function of pressure only. Under these conditions, the circulation round any circuit C moving with the fluid, c K = $ u.dl, C -~ is constant. In the particular circumstance that the vorticity w = Q A u is zero except inside two closed vortex filaments C,, C2 of strengths K,, K~ each of which moves",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-the-effect-of-the-presence-of-solid-boundaries",
+      "number": "3",
+      "title": "The effect of the presence of solid boundaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "121",
+      "labelEnd": "122",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vortex sheet",
+          "heading": false
+        },
+        {
+          "term": "boundary layer",
+          "heading": false
+        },
+        {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
+          "term": "solid",
+          "heading": true
+        },
+        {
+          "term": "surface contribution",
+          "heading": false
+        },
+        {
+          "term": "fluid",
+          "heading": false
+        },
+        {
+          "term": "viscous",
+          "heading": false
+        },
+        {
+          "term": "thickness",
+          "heading": false
+        }
+      ],
+      "extract": "An inviscid flow in the presence of a solid boundary 8, need not satisfy the condition n . o = 0 on 8, since n A u may vary from one point to another on the boundary. It would therefore appear that the value of I may then change accord- ing to (171, and this is at first sight surprising in view of the interpretation given above of the invariance of I in terms of the conservation of linkages of vortex lines; vortex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-4-a-simple-consequence-of-the-invariance-of-i-in",
+      "number": "4",
+      "title": "A simple consequence of the invariance of I in an incompressible",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "122",
+      "labelEnd": "123",
+      "words": 365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vorticity field",
+          "heading": false
+        },
+        {
+          "term": "duct",
+          "heading": false
+        },
+        {
+          "term": "blob",
+          "heading": false
+        },
+        {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
+          "term": "incompressible",
+          "heading": true
+        },
+        {
+          "term": "decrease",
+          "heading": false
+        },
+        {
+          "term": "fluid",
+          "heading": false
+        },
+        {
+          "term": "contraction",
+          "heading": false
+        }
+      ],
+      "extract": "fluid Henceforth we restrict attention to vorticity blobs in an inviscid incom- pressible fluid with w . n = 0 on all solid boundaries. The integrals satisfy the Schwarz inequality Iz < E n , or R > P/E, This may be contrasted (in the incompressible case) with the behaviour of the energy T = i p u2dV = p u . ( x A w ) d V , s s for a localized vorticity blob, which satisfies when S, is stationary. As v + 0, dT/dt =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-relation-with-the-magnetohydrodynamic-invarian",
+      "number": "5",
+      "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": "123",
+      "labelEnd": "129",
+      "words": 2227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
+          "term": "tangled vortex",
+          "heading": false
+        },
+        {
+          "term": "woltjer",
+          "heading": true
+        },
+        {
+          "term": "vortex axis",
+          "heading": false
+        },
+        {
+          "term": "vorticity distribution",
+          "heading": false
+        },
+        {
+          "term": "steady flow",
+          "heading": false
+        },
+        {
+          "term": "stream function",
+          "heading": false
+        },
+        {
+          "term": "surfaces const",
+          "heading": false
+        }
+      ],
+      "extract": "(1958a, b) Let B = V A A and E = - aA/at - V$ be the magnetic field and electric field in a perfectly conducting fluid; then, since E + u A B = 0, Hence ”(”.”) = -.V(A.u+$), B Dt P P which may be compared with (14). It follows that A.BdV = const. (27) s provided B . n = 0 on the surface S of V. This result was proved (under slightly more restrictive conditions) by Woltjer (1958~). The interpretation of the invariant",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vorticity blob",
+      "heading": false
+    },
+    {
+      "term": "vortex filaments",
+      "heading": false
+    },
+    {
+      "term": "vortex lines",
+      "heading": false
+    },
+    {
+      "term": "tangled vortex",
+      "heading": false
+    },
+    {
+      "term": "knotted vortex",
+      "heading": false
+    },
+    {
+      "term": "vorticity field",
+      "heading": false
+    },
+    {
+      "term": "localized vorticity",
+      "heading": false
+    },
+    {
+      "term": "inviscid fluid",
+      "heading": false
+    },
+    {
+      "term": "continuous vorticity",
+      "heading": false
+    },
+    {
+      "term": "vorticity distribution",
+      "heading": false
+    },
+    {
+      "term": "vortex sheet",
+      "heading": false
+    },
+    {
+      "term": "closed vortex",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "contents from inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "figures",
+      "state": "none",
+      "count": 0,
+      "note": "0 caption(s) read off the pages"
+    },
+    {
+      "kind": "tables",
+      "state": "none",
+      "count": 0,
+      "note": "backend pdfplumber 0.11.10; 13 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)"
+    },
+    {
+      "kind": "references",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme"
+    },
+    {
+      "kind": "footnotes",
+      "state": "partial",
+      "note": "no footnote linked to a mark; 2 foot-of-page line(s) no mark calls, 2 mark(s) with no note found, kept for a reader to judge"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/moffatt1969-jfm-knottedness"
+  }
+}

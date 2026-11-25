@@ -1,0 +1,541 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9310070v1",
+  "title": "Quantum dilogarithm",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "petersburg",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "finland",
+          "heading": false
+        },
+        {
+          "term": "russia",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9310070v1 13 Oct 1993 September, 1993 Quantum Dilogarithm L.D. Faddeev1,2,†, R.M. Kashaev1,∗,† 1Research Institute for Theoretical Physics, P.O.Box 9 (Siltavuorenpenger 20C), SF-00014 University of Helsinki, Finland 2St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, Russia Abstract A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euler dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "cft",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        },
+        {
+          "term": "models",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction Recently, the dilogarithm function appeared in the study of the two dimensional quantum conformal ﬁeld theory (CFT)[1] and solvable lattice models both in two [2] and three dimensions [3]. Particularly, the eﬀective central charges of some rational CFT can be expressed as ﬁnite sums of Rogers’ dilogarithm function with the arguments being solutions for certain algebraic relations (e. g.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pentagon",
+          "heading": false
+        },
+        {
+          "term": "classical limit",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "operators",
+          "heading": false
+        },
+        {
+          "term": "quantized",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "identity",
+          "heading": false
+        }
+      ],
+      "extract": "Motivated by relation (1.5) we address the following problem: What is the proper general- ization of Rogers’ “pentagon” identity (1.3) in terms of Ψ(x)? The purpose of this paper is to answer this question. In Section 2 a quantized “pentagon” identity is suggested and it is shown that in the classical limit it is reduced to (1.3). In Section 3 the case where θ is a root of unity is considered. The quantum",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iαβ",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "q-p",
+          "heading": false
+        },
+        {
+          "term": "nxn",
+          "heading": false
+        }
+      ],
+      "extract": "while the corresponding decompositions of the unity are 1 = Z +∞ −∞ |q⟩dq⟨q| = Z +∞ −∞ |p⟩dp 2π¯h⟨p|. (2.9) The “q-p” symbol of any operator ˆA, acting in H, is deﬁned as follows: ( ˆA)(q, p) = ⟨q| ˆA|p⟩ ⟨q|p⟩. (2.10) The symbol of the product of two operators ˆA and ˆB is given by ( ˆA ˆB)(q, p) = Z +∞ −∞ Z +∞ −∞ dq′dp′ 2π¯h exp(i(q −q′)(p′ −p)/¯h)( ˆA)(q, p′)( ˆB)(q′, p). (2.11) The symbols of the operators Ψ(",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "n-th",
+          "heading": false
+        },
+        {
+          "term": "spectrum",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "3. Quantum Dilogarithm at θN = 1 When |θ| = 1, deﬁnition (1.4) of the quantum dilogarithm needs qualiﬁcation because the inﬁnite product is not convergent. In this section we restrict ourselves to a particular case, θN = 1, for some integer, N ≥2, and properly modify the formulae of Section 2. Let θ = ω, where ω is a primitive N-th root of unity. We choose ω together with its square root ω1/2 as ω = exp(2πi/N), ω1/2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xtm",
+          "heading": false
+        },
+        {
+          "term": "dashes",
+          "heading": false
+        },
+        {
+          "term": "star-triangle",
+          "heading": false
+        },
+        {
+          "term": "complex factor",
+          "heading": false
+        },
+        {
+          "term": "bazhanov",
+          "heading": false
+        }
+      ],
+      "extract": "which completely determines operator Ψ( ˆA) up to a complex factor. Now, we formulate our statement. Theorem. The following “quantum pentagon” identity holds: Ψ( ˆV )Ψ′( ˆU) = Ψ′′( ˆU)Ψ′′′(−ˆU ˆV )Ψ′′′′( ˆV ), (3.9) where Ψ# (# symbolizes any number of dashes from zero to four) are deﬁned by (3.8) with a#, b#, c# satisfying (3.4), and yy′′ = y′y′′′′, y′ = y′′y′′′, x′′′ = xx′, x′′ = x′y′′′′, x′′′′ = xy′′, (3.10a) for",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-006",
+        "library/arxiv-hep-th-9310070v1/blocks/thm-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbol",
+          "heading": false
+        },
+        {
+          "term": "u-v",
+          "heading": false
+        },
+        {
+          "term": "sider",
+          "heading": false
+        },
+        {
+          "term": "diagonalize",
+          "heading": false
+        }
+      ],
+      "extract": "To deﬁne the “symbol” of a ﬁnite dimensional operator, in analogy with Section 2, con- sider two basis sets {|n⟩} and {|m⟩}, n, m ∈ZN, which diagonalize operators ˆU and ˆV , respectively: ⟨n| ˆU|n′⟩= ωn−1/2δn,n′, ⟨n| ˆV |n′⟩= ω−1/2δn,n′+1, (3.15a) ⟨m| ˆV |m′⟩= ωm−1/2δm,m′, ⟨m| ˆU|m′⟩= ω−1/2δm,m′−1. (3.15b) The scalar products are given by ⟨n|n′⟩= δn,n′, ⟨n|m⟩= ω−nm, ⟨m|m′⟩= Nδm,m′, (3.16) while the decompositions",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "bazhanov",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        },
+        {
+          "term": "pearce",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "zamolodchikov",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        }
+      ],
+      "extract": "Summary In this paper we have shown that the quantum identity (2.4) for the function (1.4) with operator arguments satisfying (2.1) in the classical limit is reduced to Rogers’ dilogarithm identity (1.3). We used the “q-p” symbols (2.10), (2.12) of the operators ˆU, ˆV , and −ˆU ˆV to convert (2.4) into the integral identity (2.16), as well as asymptotics (1.5), and the stationary phase method to evaluate the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volkov",
+          "heading": false
+        },
+        {
+          "term": "hu-tft",
+          "heading": false
+        },
+        {
+          "term": "berezin",
+          "heading": false
+        }
+      ],
+      "extract": "A.Yu. Volkov, Phys. Lett. A167 (1992) 345 [6] L. Faddeev and A.Yu. Volkov,“Abelian Current Algebra and the Virasoro Algebra on the Lattice”, Preprint HU-TFT-93-29 [7] Berezin, F.A., “The Method of Second Quantization” (in Russian), Nauka, Moscow, 1965; English transl., Academic Press, New York, 1966. [8] V.V. Bazhanov, R.J. Baxter, J. Stat. Phys. 71 (1993) 839 8",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-9310070v1/blocks/prose-page-009"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rogers dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "quantum dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "rogers identity",
+      "heading": false
+    },
+    {
+      "term": "dilogarithm function",
+      "heading": false
+    },
+    {
+      "term": "quantized rogers",
+      "heading": false
+    },
+    {
+      "term": "euler dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "classical limit",
+      "heading": false
+    },
+    {
+      "term": "bazhanov",
+      "heading": false
+    },
+    {
+      "term": "fermat curve",
+      "heading": false
+    },
+    {
+      "term": "quantum generalization",
+      "heading": false
+    },
+    {
+      "term": "operator arguments",
+      "heading": false
+    },
+    {
+      "term": "star-triangle relation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 9,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9310070v1"
+  }
+}

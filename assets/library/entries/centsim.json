@@ -1,0 +1,1036 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "centsim",
+  "blocks": [
+    {
+      "id": "library/centsim/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules\nfor Iwahori-Hecke Algebras\n\nMeinolf Geck and Raphaél Rouquier\n\n1. Introduction\n\nThe work of Dipper and James on Iwahori-Hecke algebras associated\nwith the finite Weyl groups of type A, has shown that these algebras be-\nhave in many ways like group algebras of finite groups. Moreover, there\nare “generic” features in the modular representation theory of these al-\ngebras which, at present, can only be verified in examples by explicit\ncomputations. This paper arose from an attempt to provide a concep-\ntual explanation of these phenomena, in the general framework of the\nr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "252 M. Geck and R. Rouquier\n\nH to central functions on kH (induced by reduction modulo the maxi-\nmal ideal of ©). In Proposition 3.1, generalizing a theorem of Hattori,\nwe show that the surjectivity of this map implies that the decomposition\nmap has finite cokernel and that the Cartan matrix of kH has non-zero\ndeterminant. For a symmetric algebra, this surjectivity is equivalent to\nthe surjectivity of the reduction map Z(H) — Z(kH). In Theorem 5.2\nwe prove that this surjectivity holds for Iwahori-Hecke algebras, by con-\nstructing a basis of the center from [Ge-Pf]. This part is inspired by the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "lem-page-003-01.md",
+      "narrative": null,
+      "content": "One has (z,ch(y)) = (2,y)-lo for « € Ko(H) andy € Ro(H).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 253\n\nH-lattices). The imbedding of the first category into the second one\ninduces a map (“Cartan map”) co : Ko(H) — Ro(H). We denote by\nRg (H) the subset of Ro(H) given by the classes of the H-lattices. Note\nthat Rj (H) generates Ro(H).\n\nIn what follows, all modules are supposed to be finitely generated.\n\nThere is a bilinear form (-,-)o : Ko(H) x Ro(H) — Z defined by\n([P], [V])o = rankoHomy(P, V)\n\nfor P a projective H-module and V an H-lattice (where [P] and [V]\ndenote the classes of P and V in Ko(H) and Ro(H) respectively). The\nfact that H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-01.md",
+      "narrative": null,
+      "content": "Let x € Ko(H), y € Ro(H) and f € CF(H). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-02.md",
+      "narrative": null,
+      "content": "Assume B is flat over O. Then, the map 1p @t§\": B® CF(H) > CF(BH) is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "254 M. Geck and R. Rouquier\n\nGiven an H-lattice M and x € H, we let po([M])(x) be the charac-\nteristic polynomial of x acting on the free O-module M.\n\nLet B be a commutative local O-algebra given by tp: O > B. If M\nis an O-module, we denote by BM the B-module BoM. Without spec-\nification, tensor products are taken over Q, i.e., B@ M means B@o M.\nThere are canonical maps t4° : Ko(H) > Ko(BH), t® : Ro(H) >\nRo(BH), t : CF(H) > CF(BH) and t¥ : Maps(H,O[X]) >\nMaps( BH, B[X]) induced by extension of scalars. The following lemma\ngives the compatiblities with extension of scalars:\n\nLemma 2.2 Let x € K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-page-005-01.md",
+      "narrative": null,
+      "content": "The following statements are equivalent for H a simple K-algebra with simple module V and D = Endy(V):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 255\n\nbe a simple H-module, D = Endy(V) and n = dimp(V). Then, H is\nisomorphic to the ring M,(D°) of (n x n)-matrices over the skewfield D°\nopposite to D.\n\nLet m be the integer such that [D : Z(D)] = m?. Let Trd : H >\nZ(D) be the reduced trace of the central simple Z(D)-algebra H. It has\nthe property that if L is a neutralizing field for H, i.e., such that Z(D) C\nLCD and H @zp) L ~ Myp,(L), then the usual trace M,,,(L) — L is\ngiven by Trd @ 1z. Denote by chx(V) and chzip)(V) the character of V\nrespectively viewed as a module over the K-algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "Recall that K is assumed to be perfect. Then the map px: Rf (H) > Maps(H, K[X]) is an injection.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "256 M. Geck and R. Rouquier\n\nLet us go back to the case where H is any finite dimensional algebra\nover K. From now, we assume that K is perfect (one could as well work\nwith the weaker assumption that given any simple H-module V, then\nZ(Endy(V)) is a separable extension of K).\n\nA basis for Ro(H) (resp. Ko(#)) is given by the images of a complete\nset of representatives of isomorphism classes of simple (resp. projective\nindecomposable) modules. Hence, one has an isomorphism Ro(H) >\nKo(H) given by sending the class of a simple module to the class of one\nof its projective covers.\n\nAn irreducible ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "The subgroup Ro(H) of Ro(K'H) consists of those elements f such that px(f)(k) € K[X] for allh € H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-page-007-02.md",
+      "narrative": null,
+      "content": "The map 1x @ ch: K @ Ro(H) — CF(H) is an in- jection, i.e., the elements of Irt(H) are linearly independent. If H is semisimple, then the map above is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 257\n\nProof. (cf [Bra-Ne, Lemma 2]) It is enough to prove the lemma in the\ncase KH split, which we assume now. Let M and N be two H-modules\nsuch that p([!]) = p([N]). By replacing M and N with their associated\nsemisimple modules, one can assume that M and N are semisimple. Let\nS be a set of representatives of isomorphism classes of simple H-modules.\nFor V € S, let ay and by be the multiplicities of V as a composition factor\nof M and N. Since ch({Af]) = ch([N]), one has (ay—by)-1x = 0. If O has\ncharacteristic zero, this implies ay = by, hence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-03.md",
+      "narrative": null,
+      "content": "The image of ch : Ro(KH) — CF(KH) is con- tained in the O-submodule CF(H) and the image of px : RE (KH) — Maps (KH, K[X]) is contained in the O-submodule Maps(H, O[X]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-01.md",
+      "narrative": null,
+      "content": "Assume that H is quasicentral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-02.md",
+      "narrative": null,
+      "content": "The following statements are equivalent: (1) the K-algebra H is quasicentral; (2) Ro(H) = Ro(K'H) for any extension K' of K; (3) rank Ro(H) = rank Ro(K'H) for any extension K' of K;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "258 M. Geck and R. Rouquier\n\nProposition 2.8 Assume that H is quasicentral.\n\n(1) The form (-,-) induces a perfect pairing between Ko(H) and Ro(H):\nif V,V' are two simple H- modules and Py is a projective cover of\n1\nV, then we have (S-[Pv], aa lV) = dvi:\n(2) If K' is an extension of K, then the maps the : Ro(H) = Ro(K’H)\nand th? : Ko(H) > Ko(K'H) are isomorphisms.\n\n(3) If K' is a neutralizing field for H, then Ro(H) = Ro(K'H) and\nrank Ro(H) = rank Ro(K'#).\n\nProof. Since Homy(Py,V’) ~ Homy(V,V’) and dimg Homy(V, V’) =\n\nmi? évjqvy we have ([Py], [V‘]) = m?6vyvy. This implies that the pair-\n\ning i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-01.md",
+      "narrative": null,
+      "content": "There exists a unique map do : Ro(KH) > Ro(k#) which makes the following diagram commutative:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-02.md",
+      "narrative": null,
+      "content": "Let p be a prime ideal of O such that k, = (O,)/p is perfect and O/p is integrally closed. Then, the following diagram is commutative:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 259\n\nProof. Let V be a simple K’H-module where K’ is a finite extension\nof K, with ch(V)(x) € K for all x € KH. Then, for A € H, the\ncharacteristic polynomial p(V)(h) divides (in K’[X]) the characteristic\npolynomial p(K H)(h) = p(H)(h) associated to the regular representa-\ntion. Since p(H)(h) € O[X], the roots of p(V)(h) are algebraic over O,\nhence ch(V)(h) is algebraic over O. Since ch(V)(h) € K and O is inte-\ngrally closed in K’, this implies ch(V)(h) € O. Similarly, the coefficients\nof p(V)(h) are algebraic over O and are in K, hence are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "260 M. Geck and R. Rouquier\n\nSuppose now that KH is a quasicentral K-algebra. We define the\nmap e : Ko(kH) — Ko(KH) as the map dual to d with respect to the\npairing (-,-), .e., for 7 € Ko(kH) and x € Ro( KH), we have\n\n(n, d(x))e = (e(n), x) K-\n\nLet us now give an alternative definition of e, without using d.\n\nLet O be a strict henselisation of O [Ray, Chapitre VIII]: this is\nan henselian (local) ring, local extension of O, faithfully flat as an O-\nmodule, with residue field k a separable closure of k. Furthermore, since\nO is integrally closed, the ring O is an integral domain [Ray, Chapitre\nIX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-02.md",
+      "narrative": null,
+      "content": "Assume that the canonical map t, : CF(H) > CF(kH) is surjective and that KH is quasicentral. Then kH also is a quasicentral algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "prop-page-011-01.md",
+      "narrative": null,
+      "content": "Assume that kH is quasicentral. If the image of the canonical map t, : CF(H) — CF(kH) contains ch(Ro(kH)), then the map e is injective (hence, given two projective H-modules M and N, we have KM ~ KN if and only if M ~ N). In particular, the decomposi- tion map d has finite cokernel and the algebra KH has at least as many simple modules as the algebra kH.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 261\n\ntheorem, it is assumed that H/[H, H] is free as an O-module (and O is\nassumed to be a discrete valuation ring).\n\nProposition 3.1 Assume that kH is quasicentral. If the image of the\ncanonical map t, : CF(H) — CF(kH) contains ch(Ro(kH)), then the\nmap e is injective (hence, given two projective H-modules M and N, we\nhave KM ~ KN if and only if M ~ N). In particular, the decomposi-\ntion map d has finite cokernel and the algebra KH has at least as many\nsimple modules as the algebra kH.\n\nProof. Let us prove first that e is injective. Replaci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "262 M. Geck and R. Rouquier\n\nRo(k'H) has finite cokernel, we get rank Ro(kH) = rank Ro(k'H); hence\nkH is quasicentral, by Proposition 2.9. Oo\n\nAssume O is noetherian and has Krull dimension 2. Let p be a height\none prime ideal of O with O/p integrally closed (i.e., O/p is a discrete\nvaluation ring) and k, = (O,)/p perfect. _\n\nFor q a height one prime ideal of O, let k, be a finite separable exten-\nsion of ky = (O,)/q neutralizing for k,H and ©, a discrete valuation ring,\n(unramified) extension of O, with residue field k, and field of fractions\n\nKy; let O, denote the completion of O, and K q it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/thm-page-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-page-012-01.md",
+      "narrative": null,
+      "content": "Assume that KH is quasicentral and that the canonical",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 263\n\nmap CF(H) — CF((O/p)#) is surjective, hence the bilinear form (., Ys\n\nrestricted to Ko(O,H) x CF(H) has values in © if and only if (a \")ep\nrestricted to Ko(k,H) x CF((O/p)H) has values in O/p.\n\nSince (-,-) induces a perfect pairing between Ko(k,H) and Ro(k,H),\nthe submodule ch Ro(k,H) of CF((O/p)H) is pure if and only if the\nform (.,-)s, restricted to Ko(k,H) x CF((O/p)H) has values in O/p. By\nProposition 3.1, the decomposition map doy, : Ro(kyH) > Ro(kH) has\nfinite cokernel; hence the map 1, ® doy is an isomorphism if and only\nif it i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "lem-page-014-01.md",
+      "narrative": null,
+      "content": "The module M is projective if and only if there is f € Endo(M) such that Tr(f) is the identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-02.md",
+      "narrative": null,
+      "content": "Let x € Ir(KH) and let cy, be the scalar by which x* € Z(KH) acts on a simple KH-module V affording a multiple of x. Then the following hold:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "264 M. Geck and R. Rouquier\n\nZ(H) — CF(#): If A is a commutative O-algebra, then the canonical\nmap CF(H) — CF(A#) is surjective if and only if the canonical map\nZ(H) — Z(AR) is surjective.\n\nIf B is an O-basis of H, then the dual basis {bY }4ep is defined by the\nrequirement 7(bbY) = 64,5, for b),b2 € B. For f € Homo(H, 0), one has\nf° = Dies f(b)\"\n\nLet M be an H-module. We have a map Tr : Endo(M) — Endy(M)\ngiven by\n\nTr(F)(m) = oF (%m).\nbeB\nWe have Higman’s lemma, following [Br] :\n\nLemma 4.1 The module M is projective if and only if there is f €\nEndo(M) such that Tr(f) is the identity.\n\nAssume ©",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Ge3",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-page-015-01.md",
+      "narrative": null,
+      "content": "The algebra kH is semisimple if and only if for every x € Inr(KH), we have 1,c, #0. If KH is semisimple, then KH is semisimple and kH is quasicentral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 265\n\nNow, if V is a projective module and e, the central primitive idempo-\ntent of KH such that e,V # 0, then the algebras e, KH and (l—e,)KH\nare symmetric algebras with symmetrizing form Te,.KH and T\\1-e,)KH\nand we have KH = e,KH © (1—e,)KH. It is then clear that for the\nremaining part of the proposition, we can assume that AA is simple and\nlet x be the unique irreducible character of KH.\n\nThen Z(KH) = K -1, hence x* = cy. It impliesy = c,7. If i is a\nprimitive idempotent of AH, we have x(i) = 1, hence c, # 0 and the\nproof is complete. QO",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-page-016-01.md",
+      "narrative": null,
+      "content": "The map W(P) restricts to a map Z(H) — O and 1, @U(P) =7(P). In particular,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "266 M. Geck and R. Rouquier\n\nAssume in addition KH semisimple and split. Given P a projective\nkH-module, J. Miiller suggested considering the map 7(P) : Z(KH) >\nK defined by\n\n1\nwP)=  (e(lPl).x) ms\nxélrr(K H) x\nwhere w, is the one dimensional representation of Z(KH) acting (as\nmultiplication by scalars) on a simple K H-module with character x.\n\nProposition 4.4 The map W(P) restricts to a map Z(H) — O and\n1, @U(P) =7(P). In particular,\n\nwrn= x CPD co,\n\nx€ fr K H) &\n\nProof. Let ©’ be an henselisation of O; we have KO’ = O, where the\nintersection is taken in the field of fractions of O’, since ©’",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 267\n\nof Laurent polynomials in these indeterminates. The generic Iwahori-\nHecke algebra H is the A-free A-algebra with A-basis {T.}wew and\nrelations:\n\nTwT uy = Tow if [(ww’) =l(w) + l(w’),\n(hath ey =0 for se\nwhere w + I(w) is the length function on W with respect to the gen-\nerating set S. The algebra 1 is symmetric, with respect to the form\n7: HA defined by 7(T)) = 1 and 7(T,) = 0 for w # 1. The\nelements in the dual basis of {T,,} are given by TY = ind(Ty)7!Ty-1,\nwhere ind: H — A is the 1-dimensional representation of H defined by\nind(T;,)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/lem-page-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "lem-page-018-01.md",
+      "narrative": null,
+      "content": "Let B be a commutative A-algebra and z = Dwew duTw € Z(BH). Let C be a conjugacy class in W. Then the following hold:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "268 M. Geck and R. Rouquier\n\nNote that the class polynomials have the following properties. Let C,C’\nbe conjugacy classes in W, and w € C’. Then\n\nfue = bcc\" ifwe Chin:\n\nMoreover, if we specialize all parameters u, to 1 then the function fc\nspecializes to the indicator function of the conjugacy class C and, hence,\nthe element zc specializes to the class sum of C' in AW. Thus, the\nelements {zc} indeed are “generic” analogues of the class sums.\n\nLemma 5.1 Let B be a commutative A-algebra and z = Dwew duTw €\nZ(BH). Let C be a conjugacy class in W. Then the following hold:\n\n(1) If w,w' € Crin then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/thm-page-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "thm-page-018-02.md",
+      "narrative": null,
+      "content": "Let B be a commutative A-algebra. Then, the set {1p @ zc} (where C runs over the conjugacy classes of W) forms a B-basis for",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 269\n\nthe centre of BH. In particular, the centre of BH is free as a B-module\nof rank equal to the number of conjugacy classes in W and the canonical\nmorphism B @ Z(H) — Z(BH) is an isomorphism.\n\nProof. Since fug,c’ = 6c,c’, the elements 1g @ 2c are linearly indepen-\ndent in BH. So we must show that they generate Z(BH). The strategy\nfor the following proof is taken from [Di-Ja].\n\nLet z = Duew @wTw € Z(BH) (where a, € B). Assume that z # 0\nand let w € W be of minimal possible length such that a, 4 0. Then\nw lies in some conjugacy class C and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p020-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prop-page-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Ge3",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "prop-page-020-01.md",
+      "narrative": null,
+      "content": "Let k be a perfect field which is a B-algebra. Then, the algebra kH is semisimple if and only if 1,-Qw/(ts,; Us.) #0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "270 M. Geck and R. Rouquier\n\nThe following proposition gives a criterion for a multi-parameter\nIwahori-Hecke algebra to be semisimple. It generalizes [Gy-Uno] which\ndeals with the equal parameters case and characteristic zero fields.\n\nAssume W is irreducible and let {s,, s2} be a set of representatives of\nconjugacy classes of elements in S, with s, corresponding to a long root in\ntype By. Let B = Z[Vis Vie ‘lacs = AlVilecs and K = Q(/)ecs\nthe field of fractions of B. Note that, by [Di-Mi, théoréme 3.1], the\nalgebra KH is quasicentral (actually, by [Ge2], the algebra KH is even\nsplit, but we wo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/thm-page-020-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "thm-page-020-02.md",
+      "narrative": null,
+      "content": "Assume that £ and ®.¢- do not divide Qw forr > 0. Then, the number of simple kH-modules is equal to the number of simple k’H- modules. More precisely, the map 1, @ doy :k @ Ro(k'H) = k® Ro(kH) is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "Centers and Simple Modules for Iwahori-Hecke algebras 271\n\nTheorem 5.2, hence the canonical map CF(H) — CF(kH) is surjective,\nsince H is a symmetric algebra (cf §4).\n\nLet now q be a height one prime ideal of O, q # p. The algebra\n((O,)/q) #1 is semisimple if and only if Qw ¢ a, according to Proposition\n5.3. If 2 q, then Qw ¢ q. If ©, Eq, then &, = ®1,,, for some integer r,\nr > Osince q #p. But ®¢r doesn’t divide Qw, hence ©/,, doesn’t divide\nQw (as a polynomial in V#), hence Qw ¢ q. It follows that for q # p,\nthen Qw ¢ gq, i.e., the algebra ((O,)/a)H is semisimple and we are done.\nOo\n\nRemark 5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/centsim/blocks/rem-page-021-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "rem-page-021-01.md",
+      "narrative": null,
+      "content": "The decomposition map doy is the map denoted d; in [Gel]. In [Gel], it is conjectured that do : Ro(k'H) — Ro(kH) maps actually classes of simple modules to classes of simple modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/centsim/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "272 M. Geck and R. Rouguier\n\n[Ge2] M. Geck, On the character values of Iwahori-Hecke alge-\nbras of exceptional type, Proc. London Math. Soc. 68, 51-76\n(1994).\n\n[Ge3] M. Geck, Beitrége zur Darstellungstheorie von Iwahori-Hecke\nAlgebren, Aachener Beitrage zur Mathematik 11, Verlag der\nAugustinus Buchhandlung, Aachen, 1995.\n\n[Ge4] M. Geck, The decomposition numbers of the Hecke algebra of\ntype Eg, Math. of Comp. 61, 889-899 (1993).\n\n[Ge-Pf]  M. Geck and G. Pfeiffer, On the irreducible characters of\nHecke algebras, Advances in Math. 102, 79-94 (1993).\n\n[Go] D.M. Goldschmidt, Lectures on character",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

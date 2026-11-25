@@ -1,0 +1,264 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0707.3910v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec-intro} \n\\setcounter{equation}{0}\n \nWe consider the space of\neven rational functions of degree $2p$\n\\ba\n{\\E}_{2p} & := & \\left\\{ R(z) = \\frac{P(z)}{Q(z)} \\; {\\Big{|}} \\; \nP(z) := \\sum_{k=0}^{p-1} b_{k} z^{2(p-1-k)} \\text{ and }\nQ(z) := \\sum_{k=0}^{p} a_{k} z^{2(p-k)} \\right\\} \\nn\n\\ea\n\\no\nwith positive real coefficients $a_{k}, \\, b_{k} \\in \\rplus$ \nnormalized by the condition $a_{0} = a_{p} = 1$,  the space\n\\ba\n{\\E}_{\\infty}  & := & \\bigcup_{p=1}^{\\infty} {\\E}_{2p} \\nn\n\\ea\n\\no\nof normalized even rational functions, and the set \nof $2p-1$ parameters \n$${\\mathfrak{P}}_{2p} := \\{ a_{1},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0707.3910v1  [math.CA]  26 Jul 2007\nLANDEN TRANSFORMATIONS AND THE INTEGRATION OF\nRATIONAL FUNCTIONS\nGEORGE BOROS AND VICTOR H. MOLL\nAbstract. We present a rational version of the classical Landen transfor-\nmation for elliptic integrals. This is employed to obtain explicit closed-form\nexpressions for a large class of integrals of even rational functions and to de-\nvelop an algorithm for numerical integration of these functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The reduction formula",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-the-reduction-formula.md",
+      "narrative": null,
+      "content": "\\label{sec-reduc}\n\\setcounter{equation}{0}\n\nIn this section we present a map ${\\mathfrak{F}}_{p}: \n{\\mathfrak{E}}_{2p}^{m,s} \\to {\\mathfrak{E}}_{p}^{m}$ that is the basis of the \nintegration algorithm described in Section \\ref{sec-landen}. The proof \nis elementary and the\nbinomial sums discussed in the Appendix are employed.  \n\nLet $D_{p}(z)$ be the general symmetric polynomial of degree $4p$. We express\nthe integral of $z^{2n}/D_{p}^{m+1}$ as a linear combination of integrals of \n$z^{2j}/E_{p}^{m+1}$ where $E_{p}$ is a polynomial of degree $2p$ whose \ncoefficients are determined by those of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quartic case",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-the-quartic-case.md",
+      "narrative": null,
+      "content": "\\label{sec-quartic}\n\\setcounter{equation}{0}\n\n\nIn this section we describe the computability of rational functions \n$R \\in {\\E}_{4}^{m}$. These are functions of the form \n\\ba\nR(z) & = &  \\frac{P(z)}{(z^{4} + 2az^{2} + 1)^{m+1} } \\nn\n\\ea\n\\no\nwhere $P(z)$ is an even polynomial of degree $4m+2$. Observe that\nthe normalization $a_{0}=a_{2} = 1$ makes the denominator of $R$ \nautomatically symmetric.  It suffices to evaluate\n\\ba\nN_{n,4}(d_{1};m) & := &  \\int_{0}^{\\infty} \\frac{z^{2n} \\; dz}{(z^{4} + 2d_{1}z^{2} \n+1)^{m+1} } \\label{n04}\n\\ea\n\\no\nwhere $0 \\leq n \\leq 2m+1$ is required for convergence.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The symmetric case of degree 8",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-4-the-symmetric-case-of-degree-8.md",
+      "narrative": null,
+      "content": "\\label{sec-degree8}\n\\setcounter{equation}{0}\n\nIn this section we prove the computability of the set ${\\E}_{8}^{m,s}$ of \nsymmetric rational functions with denominator of degree $8$ and establish an \nexplicit formula for the integral \n\\ba\nN_{n,8}(a_{1},a_{2};m) & = & \\int_{0}^{\\infty} \n\\frac{z^{2n} \\; dz} { (z^{8} + a_{2} z^{6} + 2a_{1}z^{4} + a_{2}z^{2} \n+ 1)^{m+1} } \\nn\n\\ea\n\\no\nwhere $0 \\leq n \\leq 4m+3$ is required for convergence. Observe that \n(\\ref{symrule}) reduces the discussion to the case  $0 \\leq n \\leq 2m+1$. \nThe expression (\\ref{ep}), with $p=2$,  produces\n$E_{2}(a_{1},a_{2};z) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A sequence of Landen transformations",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-5-a-sequence-of-landen-transformations.md",
+      "narrative": null,
+      "content": "\\label{sec-landen}\n\\setcounter{equation}{0}\n\nThe transformation theory of elliptic integrals was initiated \nby Landen in 1771. He proved the invariance of the function\n\\ba\nG(a,b) & := & \\int_{0}^{\\pi/2} \\frac{d \\, \\theta} \n{ \\sqrt{ a^{2} \\cos^{2} \\theta + b^{2} \\sin^{2}  \\theta } }   \\label{gab}\n\\ea\n\\no\nunder the transformation \n\\ba\na_{1} = (a+b)/2 &  \\qquad &  b_{1} = \\sqrt{ab}, \\label{transgl}\n\\ea\n\\no\ni.e. that\n\\ba\nG(a_{1},b_{1}) & = & G(a,b). \\label{invargl}\n\\ea\n\\no\nGauss \\cite{gauss1} rediscovered this invariance \nwhile numerically calculating the length of \na lemniscate.  \nAn elegant proo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The sixth degree case",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-6-the-sixth-degree-case.md",
+      "narrative": null,
+      "content": "\\label{sec-degree6}\n\\setcounter{equation}{0}\n\nWe discuss the map \n${\\mathfrak{T}}_{2p}: {{\\mathfrak{E}}_{2p}} \\to \n{{\\mathfrak{E}}_{2p}}$\nfor the case $p=3$. The effect of ${\\mathfrak{T}}_{6}$ on the \ncoefficients \n${\\mathfrak{P}}_{6} =  \\{ b_{0},b_{1},b_{2},a_{1},a_{2} \\}$\nis denoted by $\\Phi_{6} : {{\\mathfrak{O}}}_{6}^{+} \\to \n{{\\mathfrak{O}}}_{6}^{+}$ and is given explicitly by \n\n\\ba\na_{1} & \\to & \\frac{9 + 5a_{1} + 5a_{2} + a_{1}a_{2}}\n{( a_{1} + a_{2} + 2)^{4/3} } \\label{scheme6} \\\\\na_{2} & \\to & \\frac{a_{1} + a_{2}+6}{( a_{1} + a_{2} + 2)^{2/3} } \\nn \\\\\nb_{0} & \\to & \\frac{b_{0} + b_{1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 11,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-7-examples.md",
+      "narrative": null,
+      "content": "\\label{sec-examples}\n\\setcounter{equation}{0}\n\nIn this section we present a variety of closed-form evaluations of integrals of \nrational functions. \\\\\n\n\\no\n{\\bf Example 1}. The integral \n\\ba\n\\ift \\frac{z^2}{(z^4 + 4z^2 + 1)^9} \\; dz & = & \\frac{23698523 \\, \\pi}\n{12230590464 \\sqrt{6} } \\nn\n\\ea\n\\no\nis computed by Mathematica 3.0 using (\\ref{quartic1}) in $.01$ seconds. The \ndirect calculation took $12.27$ seconds and $6.4$ extra seconds to simplify \nthe answer. \\\\\n\n\n\n\\no\n{\\bf Example 2}. The integral of any even rational function with denominator a \npower of an even quartic polynomial can be com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "1. Let k, N be positive integers with k ≤N. Then N−k X j=0 \u00122N + 1 2j \u0013\u0012N −j k \u0013 = \u00122N −k k \u0013 4N−k. (A.1)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "2. Let N ∈N. Then N X j=0 \u00122N + 1 2j \u0013 (1 + z2)N−j = N X j=0 \u0012N + j 2j \u0013 4jz2(N−j).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "3. Let k, N ∈N with k ≤N. Then k X j=0 \u00122N 2j \u0013\u0012N −j N −k \u0013 = 22k−1N k \u0012k + N −1 N −k \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "4. Let p ∈N, d1, d2, · · · , dp be parameters, and deﬁne dp+1 := 1. Then p X k=0 dp+1−kz2k p−k X j=0 \u00122p −2k 2j \u0013 (1 + z2)p−k−j = (A.3)   p+1 X j=1 dj  z2p + p X i=1 22i−1z2(p−i)   p+1−i X j=1 j + i −1 i \u0012j + 2i −2 j −1 \u0013 dj+i  . LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS 19",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Two binomial sums",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-appendix-a-two-binomial-sums.md",
+      "narrative": null,
+      "content": "The closed-form evaluation of sums involving binomials coeﬃcients can be ob-\ntained by traditional analytical techniques or by using the powerful WZ-method\nas described in [16]. We discuss two sums used to simplify expressions in later\nsections, presenting one proof in each style.\nLemma A.1. Let k, N be positive integers with k ≤N. Then\nN−k\nX\nj=0\n\u00122N + 1\n2j\n\u0013\u0012N −j\nk\n\u0013\n=\n\u00122N −k\nk\n\u0013\n4N−k.\n(A.1)\nProof. Multiply the left hand side of (A.1) by xk and sum over k to produce\nN\nX\nk=0\nN−k\nX\nj=0\n\u00122N + 1\n2j\n\u0013\u0012N −j\nk\n\u0013\nxk\n=\nN\nX\nj=0\n\u00122N + 1\n2j\n\u0013 N−j\nX\nk=0\n\u0012N −j\nk\n\u0013\nxk\n=\nN\nX\nj=0\n\u00122N + 1\n2j\n\u0013\n(x + 1)N−j\n=\n(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.3910v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[1] BOROS, G. - MOLL, V.: A criterion for unimodality. Elec. Jour. of Combinatorics, 6 (1999),\n#R10.\n[2] BOROS, G. - MOLL, V.: An integral hidden in Gradshteyn and Ryzhik. Jour. Comp. Appl.\nMath. 106, 361-368, 1999.\n[3] BOROS, G. - MOLL, V.: A rational Landen transformation. Contemporary Mathematics\n251, 83-91, 2000.\n[4] BORWEIN, J. - BORWEIN, P.: Pi and the AGM. Canadian Mathematical Society. Wiley-\nInterscience Publication.\n[5] BRONSTEIN, M.: Symbolic Integration I. Transcendental functions. Algorithms and Com-\nputation in Mathematics, 1. Springer-Verlag, 1997.\n[6] GEDDES, K. - CZAPOR, S.R.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

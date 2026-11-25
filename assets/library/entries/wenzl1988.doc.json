@@ -1,0 +1,1537 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "wenzl1988",
+  "title": "wenzl1988",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial centralizers",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "index values",
+          "heading": false
+        },
+        {
+          "term": "relative commutants",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "greater",
+          "heading": false
+        },
+        {
+          "term": "factor",
+          "heading": false
+        }
+      ],
+      "extract": "Invent. math. 92, 349-383 (1988) Inventiones mathematicae © Springer-Verlag 1988 Hecke algebras of type A, and subfactors Hans Wenzl* Department of Mathematics, University of California, Berkeley, CA 94720, USA In his paper [J-1] V. Jones introduced an index, which ‘measures’ the size of a subfactor in a II, factor. The main result of that paper is that the index of a subfactor has to be either greater or equal than",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representa tion",
+          "heading": false
+        },
+        {
+          "term": "relative commutant",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "subfactor",
+          "heading": false
+        },
+        {
+          "term": "modifications",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        },
+        {
+          "term": "jones",
+          "heading": false
+        }
+      ],
+      "extract": "350 H. Wenzl a suitable trace, we obtain for q=e?*!, |=4, 5, ... a subfactor p(<gp, g3, ...))’ of p(H .(q))’. Refining this method we construct for each irreducible representa- tion x of SU(k), k=2 a sequence of subfactors with trivial centralizers such that if | oo, its index values converge to the square of the dimension of z. Jones’ examples of subfactors in [J-1] correspond to SU(2) in its standard repre-",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative commutants",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "trivial relative",
+          "heading": false
+        },
+        {
+          "term": "higher relative",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "ocneanu",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 351 In the following section we will consider a special class of traces tr on H,,(q) which we will call Markov traces. They are defined inductively by tr(1)=1 and by tr(g,, w)=ztr(w), where zeC is a fixed number and weH,(q). They were first studied for the full Hecke algebra by A. Ocneanu who used them to general- ize Jones’ link polynomial (see [J-3] and [O]). Markov traces",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beb",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "minimal projection",
+          "heading": false
+        },
+        {
+          "term": "centers",
+          "heading": false
+        },
+        {
+          "term": "forall",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "352 H. Wenz! In all of this paper A and B will be finite von Neumann algebras. We will always assume that there exists a finite faithful normal trace tr on B with tr(1)=1. We can then define a map ¢,: B— A, the so-called trace preserving conditional expectation by the equation tr(ae,(b))=tr(ab) forall aceA, beB (1.1) Let L?(B, tr) be the Hilbert space generated by B and the inner product given by the trace. To be",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inclusion matrix",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "dimension vectors",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        },
+        {
+          "term": "basic construction",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 353 A trace tr on B is completely determined by a weight vector f: =(t,;) with t;=tr(p,;) where p; is a minimal projection of B;. We can similarly characterize a trace on A by a vector §=(s,). The weight vectors and dimension vectors of A and B are related by the following equations: Gt=s and,ifAand Bhavethesamel, G'd=b. (1.5) If tr is faithful, the inclusion matrix for BC<B,",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative commutants",
+          "heading": false
+        },
+        {
+          "term": "higher relative",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        }
+      ],
+      "extract": "354 H. Wenzl Hence b=0 by (+*) and the faithfulness of the conditional expectation. It follows ®(ay + Ya; eb;)(b) =5,=0. The statement about K will follow from (ii). (ii) The central support of e contains z by (i) and (1.4). On the other hand, we can write 1—z as an expression of the form a)+) a; eb;. Obviously (1—z) =0. Hence, with b=ay+ 5a; e4(b), be,=6((1—z) be)=0. It follows, as in the proof of (i) that 6=0,",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-006",
+        "library/wenzl1988/blocks/recommendation-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimal projection",
+          "heading": false
+        },
+        {
+          "term": "direct summand",
+          "heading": false
+        },
+        {
+          "term": "projec tion",
+          "heading": false
+        },
+        {
+          "term": "wec",
+          "heading": false
+        },
+        {
+          "term": "contains direct",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "basic construction",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 355 additional structure are a complete invariant for a large class of subfactors of the hyperfinite II, factor up to conjugacy by automorphisms. We will apply theorem (1.1) to determine the structure of a direct summand of C, from C,_, and C,,—2. The following result was first mentioned by Ocneanu. Corollary 1.2. C,, contains a direct summand which is isomorphic to <C,,- 1,",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jpj",
+          "heading": false
+        },
+        {
+          "term": "ascending sequence",
+          "heading": false
+        },
+        {
+          "term": "surjectiv",
+          "heading": false
+        },
+        {
+          "term": "jpeg",
+          "heading": false
+        }
+      ],
+      "extract": "356 H. Wenzl Proposition 1.3. Let p be a projection in A’ 1 B. Then «Bp C4.) =<B, C4) ps ps Proof. Note that J p J p projects onto the subspace of L?(B, tr) which is generated by the elements of B,. Moreover, if tr, is the normalized trace on B,, we have tr,(b)=1/tr(p) tr(b) forall beB,. (+) Hence pJ pJ L?(B, tr)¥L?(B,, tr,), as their inner products only differ by a fixed scalar multiple. It follows immediately from",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "periodic sequence",
+          "heading": false
+        },
+        {
+          "term": "central projections",
+          "heading": false
+        },
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "inclusion matrix",
+          "heading": false
+        },
+        {
+          "term": "period",
+          "heading": false
+        },
+        {
+          "term": "additional condition",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 357 We are, of course, mainly interested in constructing proper subfactors of B. This can not be expected in general even if A, is a proper subalgebra of B, for all neN. We therefore need the following additional condition (see also [PP1]): (iii) Let &,,,, &4, and ég, be the trace preserving conditional expectations onto A,4,, A, and B, respectively. Then we will require",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "semifinite",
+          "heading": false
+        },
+        {
+          "term": "dime",
+          "heading": false
+        },
+        {
+          "term": "trg",
+          "heading": false
+        }
+      ],
+      "extract": "358 H. Wenzl a suitable relabeling. By omitting sufficiently many algebras at the beginning of the sequence we can also assume ny=1. In this case the inclusion matrix for A,<A,4, is a fixed primitive matrix D with nonnegative integer entries for all neN. Similarly, also the inclusion matrix for A,< B, is a constant matrix G. It follows from the Perron-Frobenius theorem (see for instance [G], p. 53 and 63) that the",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "periodicity",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 359 (ii) If (A,) is periodic and if [B:A]<0oo, there exists an n,EN such that for n>ny, G, Gi$,=[B:A]§,. If e,4 is the projection coming from the basic construction for A&B, we also have forn>n, «By, €4) = «By, C4, (iii) If (A,) <(B,) is periodic, there exists ann,eN such that for n>n, [B:A] = |15,17/Iltyll?. If pe A’ OB, for some néN, then [B,:A,]=tr(p)?[B:A]. Proof. (i) Let",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commutants",
+          "heading": false
+        },
+        {
+          "term": "nonzero projection",
+          "heading": false
+        },
+        {
+          "term": "scc",
+          "heading": false
+        },
+        {
+          "term": "xea",
+          "heading": false
+        },
+        {
+          "term": "ved",
+          "heading": false
+        }
+      ],
+      "extract": "360 H. Wenzl Remark. We will construct examples with period k where only after k steps we will have the same inclusion matrix. However for all of these matrices we have ||G;, G,||=||Gn+1 Ga+ill=-.. =[B:A] for n>npo. In the rest of this section we will give an upper bound for the dimension of the relative commutant of a subfactor constructed by periodic Bratteli dia- grams. We will need the following simple",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "defining relations",
+          "heading": false
+        },
+        {
+          "term": "spectral",
+          "heading": false
+        },
+        {
+          "term": "projections",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": false
+        },
+        {
+          "term": "whenever",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 361 §2. Orthogonal representations of Hecke algebras of type A, In this context, we will mean by the Hecke algebra H,(q) of type A,-, the free complex algebra with generators 1, g,,...,g,-; and parameter qeC with the defining relations (ALY 858541 8i=8i418:8i+1 for i=1,2,...,n—2, (H2) g:g;=8;gi, whenever |i—j|22, (H3) g?=(q—lgit+q for i=1,2,...,n—-1. Note that for g=1 the",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxes",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        },
+        {
+          "term": "sequence converging",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "decreasing",
+          "heading": false
+        }
+      ],
+      "extract": "362 H. Wenzl Note that these functions, in the first notation, are well-defined for all geC except for q=1 or q a d-th root of unity. As we are mainly interested in the case q+ 1, we will usually use the slightly more convenient second notation. Lemma 2.1. (i) aj+a_,=1. (ii) Let k, l, meN with k+m=l. Then GML + Q)? = Oy yg + By A yy — Ay y= Fy, Ay +. A—K— Ay and ay a_4-,=q/(1+4)’. (iii) a4(q)=a4(q~*) for all qeC.",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-014",
+        "library/wenzl1988/blocks/recommendation-page-014-01"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "k-th root",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        },
+        {
+          "term": "well-defined",
+          "heading": false
+        },
+        {
+          "term": "row",
+          "heading": false
+        },
+        {
+          "term": "box",
+          "heading": false
+        },
+        {
+          "term": "subspace",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 363 by arbitrary tableaux of shape A. Our representations will depend on the relative position of boxes containing successive numbers. If the numbers | and m are contained in the c-th box of the r-th row and in the c,,-th box of the r,,-th row of a tableau t respectively, we define 41, m=C1— Cm +l mT If follows immediately from the definition that qe m= =i tm: For brevity, we",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ien",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": false
+        },
+        {
+          "term": "wenzl",
+          "heading": false
+        }
+      ],
+      "extract": "364 H. Wenzl teT, and let ieN, i<n—2. Let also k=d,iisi, l=d,iis2 and m=d, 41 i+2- We assume that a,(q), a,(q) and a,,(q) are well-defined. If p=g;, Bin Bij» WE define p*=g;,g;,_,..-81- It is easy to check by induction on j that Op (),r,5=4t, per), pris) We then obtain Ta (€;) Ty (Ci4 1) 7, (2) 8, = (Ag Op, + Oy A 44) B+ (Ay 4) \"? (Ay Gy + A—— A) be, +44 (Aq Am)\" ? Oy By, (+ Am (Ay 4)? (@, —)\"? By, ecto $04 (yy",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-016",
+        "library/wenzl1988/blocks/recommendation-page-016-01"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subdiagram",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": false
+        },
+        {
+          "term": "faithful",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "irreducible",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 365 We can now determine the structure of H,(q) for all but finitely many values of q. For similar results see [Bou], p. 54, 55 and 56, [H] and [O]. Theorem 2.2. Let qeC be n-regular, i.e. q+0 and q is not an I-th root of unity for 1=2,3, ...,n. Then 1, as defined in (2.3) is an irreducible representation of H,(q) on V, for all 24€A,. If ue A,, 7, is isomorphic to n, if and",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-017"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-regular",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": false
+        },
+        {
+          "term": "tetn",
+          "heading": false
+        },
+        {
+          "term": "ten",
+          "heading": false
+        },
+        {
+          "term": "belonging",
+          "heading": false
+        }
+      ],
+      "extract": "366 H. Wenzl 2. It can be checked by straightforward computations that relations (H1)—(H3) also hold for 1—e; instead of e; for i=1,2,...,n—1. Using the same inductive procedure as in the proof of the last theorem, we can show that the representation e;++7,(1—e,) is equivalent to 2,+, where 1* is obtained from A by interchanging rows with columns (e.g. [1\"]* =[n]). As a first consequence of theorem (2.2) we can",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-018"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": false
+        },
+        {
+          "term": "tableaux",
+          "heading": false
+        },
+        {
+          "term": "well-defined",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": false
+        },
+        {
+          "term": "belonging",
+          "heading": false
+        },
+        {
+          "term": "pro",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 367 (d) If to€T,, and r=to, p,, can be computed inductively by Pr &n-1 Pr—4a, Pr Po= TI Ee tari iy wher v=r,ttto 9a, — Fay (e) Pro &n Pto = 94, Pro- We remark here that for q=1, these idempotents do not specialize to the well known Young idempotents but to a different class of minimal idempotents belonging to Young’s seminormal (or orthogonal) representations (see [KJ],",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "box containing",
+          "heading": false
+        },
+        {
+          "term": "xeh",
+          "heading": false
+        },
+        {
+          "term": "aged",
+          "heading": false
+        },
+        {
+          "term": "limites",
+          "heading": false
+        }
+      ],
+      "extract": "368 H. Wenzl need to consider the case with e,_, and e,_,. By (2.11) the only problem could oceur if |d,,,-2,,1=/. But as A(t’) is also a (k, [) diagram, this could only happen if the box containing n—2 is in the last row next to the last box there and the box containing n is at the end of the first row. But then it is easy to see that t'’” would no longer be a (k, /) tableau. With this observation the proof that 2”",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimal central",
+          "heading": false
+        },
+        {
+          "term": "grtt",
+          "heading": false
+        },
+        {
+          "term": "bys",
+          "heading": false
+        },
+        {
+          "term": "eag",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 369 Let n<mand let G,, ,, be the inclusion matrix for B, ¢ B,,. By (2.10), the inclusion matrix G,-1,,=(8,,,), Where 2’c A®”, is given by 1 if a<a gram{g if ved (2.14) It is easy to show by induction on m—n that for we A, and Ae A,, the entry 8,,2 iS positive if and only if p<. Our aim is to show that the inclusion diagrams for the B,’s eventually become periodic with period",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial representation",
+          "heading": false
+        },
+        {
+          "term": "spectral value",
+          "heading": false
+        },
+        {
+          "term": "wenz",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "subal",
+          "heading": false
+        }
+      ],
+      "extract": "370 H. Wenz! square roots. We will need the orthogonal representations in the following when positivity will play an important role. So from now on JV, is assumed to be a complex Hilbert space with orthonormal basis {#,, te 7;}. It will be essential for the construction of subfactors that for a representation p of H,,(q) also subal- gebras of the form p((@m, @m+1> +++» €n—1>) are C* algebras. Definition 2.8. A",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k2m",
+          "heading": false
+        },
+        {
+          "term": "ret",
+          "heading": false
+        },
+        {
+          "term": "ible",
+          "heading": false
+        },
+        {
+          "term": "len",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 371 To show the statement for the second case, we proceed by induction on n. By induction assumption, p(H,,- ,(q)) decomposes into a direct sum of irreduc- ible C* representations of H,-,(q) which are isomorphic to representations labeled by m-diagrams with n—1 boxes. Let A€A,_, be such a diagram and let reT, with p, as in (2.7). Again by corollary (2.3), the spectral values",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-023"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "traces",
+          "heading": false
+        },
+        {
+          "term": "xeh",
+          "heading": false
+        },
+        {
+          "term": "expecta",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        }
+      ],
+      "extract": "372 H. Wenzl Proof. (a) As d,, ;, ;= —4d,,;,;, we can assume i<j. If d, ; ;=0, the box containing j has to be both to the right of and below the box containing i. But if t is standard, there have to be at least 2 boxes in t which contain numbers between i and j (see Fig. 1). (b) Let A=[A,, ...4,] and let 7=[7,, ...7,]. Let s be the smallest index for which 4,4, and let without restriction of generality 1,<7,. If",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "markov",
+          "heading": false
+        },
+        {
+          "term": "ntr",
+          "heading": false
+        },
+        {
+          "term": "xeh",
+          "heading": false
+        },
+        {
+          "term": "xep",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 373 a C* representation of H,,(q). We will give complete proofs of the results announced in [O] as far as necessary for our purposes. In the following a trace tr on H,,(q) will always mean a linear functional tr:H..(q) > C such that tr(ab)=tr(ba) for all a, beH,,(q) and tr(1)=1. Definition 3.1. A trace tr on H,,(q) is said to be a Markov trace if there is an néC such that",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-025"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ret",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "tetn",
+          "heading": false
+        },
+        {
+          "term": "ken",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "restriction",
+          "heading": false
+        }
+      ],
+      "extract": "374 H. Wenzl = {P(Ven(H,(q))), KEN}. Note that this algebra is isomorphic to @® p(H,(q)) by (H2). As v,, is an inner automorphism for all keN the restriction of tr to this subalgebra can be regarded as a symmetric trace, ie. tr(@a,)=I] tr(a)) for aj¢H,(q) and jeZ. Hence tr is an extremal trace on ©@® p(H,(q)) by [St], Theorem (2.8) and therefore tr and tr coincide on this subalgebra. In particular, tr(x)=tr(x). To",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-026"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur functions",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "bqit",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 375 It follows tr(enxPJ= — Y Grnnt1 &(X) Way. teTns1,t'=r Comparing this with (*) we see that tr(e, xp,)=n tr(xp,) is equivalent to the formula in the statement. For the proof of (b) we use the set of idempotents p‘” as defined after Corol- lary 2.5 in the same way as we used the idempotents p, in (a). The rest of the proof goes exactly as in (a). O Similarly as with class",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-027"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "qtn",
+          "heading": false
+        },
+        {
+          "term": "gantt",
+          "heading": false
+        },
+        {
+          "term": "special choice",
+          "heading": false
+        }
+      ],
+      "extract": "376 H. Wenzl j-th column of A. It follows from [Mc], I. §3, Ex. 3 (following [L], p. 125) that a—bqii s, (a,b, =a\" Il 1—gh@a’ (Dea (3.5) where n(d)= ) (i—1) 4; and A(i,)=A,-i+A4*—j+1 is the length of the hook i2z1 through (i, j). For the special choice a=1—n(1+q) and b=q—n(1+q) we have —q@-)-(1 1—qi-? sing=a J] (q—-4 Ser) q an (36) Gi, er Let yw be the Young diagram obtained from / by removing the box (i, 4).",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-028"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [],
+      "extract": "Hecke algebras of type A, and subfactors 377 Let h,(i, j) and hui, j) denote the hook lengths corresponding to the box (i,j) of A and A“ respectively. It follows from the previous remarks that hb )=hywoli,j+1) for i<ig and j>A,, and hi j=hyo(i-1,j) for i> ig. Ifi<ip and jSA,,, hy (i, j)=hyay. We define 5,(a, b, q)=s,(qa, b, q). Let we A,_1 and reT,, such that the box containing n—1 is in the io-th row. Let teT, be",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-029"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov property",
+          "heading": false
+        },
+        {
+          "term": "sina",
+          "heading": false
+        },
+        {
+          "term": "nef",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "rod",
+          "heading": false
+        }
+      ],
+      "extract": "378 H. Wenzl and for such diagrams s, ,(q)=0 iff equality holds in (*). In particular, s, ,(q)+0 for all (k, l) diagrams. (d) If q=e*?\"\"\" and if A is a (k,l) diagram, s, ,(q)>0. Proof. For (a) note that the factor belonging to the box (k+1, 1) is equal to 0. For (b), observe that hp,,(i,j+ 1)=h,(i,j) and that n(F(A))—n(A)=k(k—1)/2. Hence we obtain for sp,,),,(q) the expression I] (1—q) Titky )Ta- rare qitt- i- ky",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-030"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "ken",
+          "heading": false
+        },
+        {
+          "term": "huse",
+          "heading": false
+        },
+        {
+          "term": "kez",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 379 (a) I(1+4)SnSq/(1+q) or (B) n=a,(q), keZ\\{O}. If 0<q<1, the same statements hold except that one has to reverse the “<” sign in (a). The traces are faithful in case (a). In case (B), they are nonzero exactly on those representations of H,(q) which belong to Young diagrams with at most k columns for k>0 and with at most |k| rows for k <0. (b) If q=e*?\"\"\", there is a Markov",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-031"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "sks",
+          "heading": false
+        },
+        {
+          "term": "ken",
+          "heading": false
+        },
+        {
+          "term": "ett",
+          "heading": false
+        },
+        {
+          "term": "wenz",
+          "heading": false
+        }
+      ],
+      "extract": "380 H. Wenz] 72 + o (2,4) 4 q=si t © (2,5) o (3,5) V3 + 0 (2,6) o (3,6) 0 (4,6) 4q= ett“ ° ° ° ° J ° o° © %o ° q 174 FN =a. (q) n= az(q) 4q=t N= a_3(q) n= a3(q) 1/(1+q) ns q/(1+q)' 0 v2 n Fig. 2 are given by the Schur functions s,(q, 1) with A€A,_,. Let py-,, be the minimal projection corresponding to the only standard tableau belonging to [/—1]. By (2.8), the eigenvalues of py—3)@1-1 Py-1, ate O and a,_,(q)=0. So",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-032"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bratteli diagram",
+          "heading": false
+        },
+        {
+          "term": "minimal projection",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "ysk",
+          "heading": false
+        },
+        {
+          "term": "subfactor",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 381 (c) For each (k, 1) diagram A there is a subfactor of the hyperfinite 11, factor with trivial relative commutant and index 1Sr<s<k sin? ((s—r) x/l) Proof. (a) Recall that the inner automorphism v,, as defined before Proposition 2.9 maps e; to e,4,-;. Hence v,(A,)=B,_,, and if s; and ty denote the weight vectors of tr for A; and B,, we have §,=t,-m- AS inner automorphisms",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-033"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "index values",
+          "heading": false
+        },
+        {
+          "term": "diagram",
+          "heading": false
+        },
+        {
+          "term": "box",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        },
+        {
+          "term": "induction",
+          "heading": false
+        }
+      ],
+      "extract": "382 H. Wenzl (iii) it is enough to show for every Ae A” that 1—q chs sin? ((A,—4,+s—r) x/l) 2 ——_ +} = passa ce ac sta0(gu-nmrmg) ~, HI , snttoe a oY As usual we prove this by induction on m. If m=0, we have A=B and therefore [B: A]=1, while on the other hand s,o),,(q)=1. Let us denote the right hand side of (*) by ind(A). Assume that the formula holds for all (k,l) diagrams with m—1 boxes. Let w be the diagram",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-034"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "relative commutants",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "fyhlmo",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "pimsner",
+          "heading": false
+        },
+        {
+          "term": "wenzl",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras of type A, and subfactors 383 where we set J,=0. The index is equal to the character of the element with eigenvalues que V2, gh kt 3v2, we gh 92, qh 1)/2 with qa=erril, The subfactors in the limiting case g=1 have been studied by Wassermann in [Wa], who computed their indices and higher relative commutants using techniques different from our periodicity arguments. 4. We will treat the subfactors",
+      "extractCut": true,
+      "blocks": [
+        "library/wenzl1988/blocks/prose-page-035"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hecke algebras",
+      "heading": false
+    },
+    {
+      "term": "subfactors coming",
+      "heading": false
+    },
+    {
+      "term": "young diagram",
+      "heading": false
+    },
+    {
+      "term": "markov trace",
+      "heading": false
+    },
+    {
+      "term": "diagram belonging",
+      "heading": false
+    },
+    {
+      "term": "relative commutants",
+      "heading": false
+    },
+    {
+      "term": "representations belonging",
+      "heading": false
+    },
+    {
+      "term": "tableau tet",
+      "heading": false
+    },
+    {
+      "term": "index sin",
+      "heading": false
+    },
+    {
+      "term": "minimal projection",
+      "heading": false
+    },
+    {
+      "term": "dimensional algebras",
+      "heading": false
+    },
+    {
+      "term": "let ret",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 35,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 35 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/wenzl1988"
+  }
+}

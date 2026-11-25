@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.3475v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+  "contains": [
+    "library/arxiv-1208.3475v2/sections/sec-front-matter",
+    "library/arxiv-1208.3475v2/sections/sec-000",
+    "library/arxiv-1208.3475v2/sections/sec-001",
+    "library/arxiv-1208.3475v2/sections/sec-002",
+    "library/arxiv-1208.3475v2/sections/sec-003",
+    "library/arxiv-1208.3475v2/sections/sec-004",
+    "library/arxiv-1208.3475v2/sections/sec-005",
+    "library/arxiv-1208.3475v2/sections/sec-006",
+    "library/arxiv-1208.3475v2/sections/sec-007",
+    "library/arxiv-1208.3475v2/sections/sec-008",
+    "library/arxiv-1208.3475v2/sections/sec-009",
+    "library/arxiv-1208.3475v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Poisson - Random Matrix transition in the QCD Dirac spectrum — 12 sections: Front matter; Introduction; Simulation details\n\n**Poisson - Random Matrix transition in the QCD Dirac spectrum**\n\n*Tamás G. Kovács*\n\n10 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Simulation details; 3 Anderson transition in the Dirac spectrum; 3.1 Analogy with the Anderson transition; 3.2 Second moment of the unfolded level spacin; 3.3 Eigenvector statistics; 4 Continuum limit and renormalization; 4.1 Localization length; 4.2 Renormalization and temperature dependence; 5 Conclusions; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1208.3475&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1208.3475v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1208.3475v2.pdf",
+    "source_sha256": "d53fc4eefa070ba38b1651b3d2bc999133159ceb12fd79de25d4fed3e8fe55eb",
+    "pages": 10,
+    "arxiv": {
+      "id": "1208.3475",
+      "version": "2",
+      "primary_class": "hep-lat",
+      "stamp_date": "12 Sep 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

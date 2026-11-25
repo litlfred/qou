@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/proof-narrative-lean-equivalence.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/proof-narrative-lean-equivalence",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "proof-narrative-lean-equivalence",
+      "title": "Proof Narrative ↔ Lean Equivalence Audit",
+      "description": "For each content block with both a narrative proof (.md) and a Lean sibling (.lean), verify the two prove the same thing. Detect stub-weakening (Lean claims less than the paper), overreach (Lean claims more than the paper), hypothesis mismatches, and notation drift. Produces a structured equivalence report; no edits.",
+      "instructionsPath": "skills/local/proof-narrative-lean-equivalence.md",
+      "instructionLines": 332,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

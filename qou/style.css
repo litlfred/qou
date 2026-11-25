@@ -1,0 +1,224 @@
+/* signature rules extracted from doc-gen4's style.css by lean-kg-publish.ts */
+:root{
+    --header-height: 3em;
+    --fragment-offset: calc(var(--header-height) + 1em);
+    --content-width: 55vw;
+
+    --header-bg: #f8f8f8;
+    --body-bg: white;
+    --code-bg: #f3f3f3;
+    --text-color: black;
+    --link-color: hsl(210, 100%, 30%);
+
+    --implicit-arg-text-color: var(--text-color);
+
+    --def-color: #92dce5;
+    --def-color-hsl-angle: 187;
+    --theorem-color: #8fe388;
+    --theorem-color-hsl-angle: 115;
+    --axiom-and-constant-color: #f44708;
+    --axiom-and-constant-color-hsl-angle: 16;
+    --structure-and-inductive-color: #f0a202;
+    --structure-and-inductive-color-hsl-angle: 40;
+    --starting-percentage: 100;
+
+    --hamburger-bg-color: #eee;
+    --hamburger-active-color: white;
+    --hamburger-border-color: #ccc;
+
+    --tags-border-color: #555;
+
+    --fragment-offset: calc(var(--header-height) + 1em);
+    --content-width: 55vw;
+}
+@media (prefers-color-scheme: dark){:root{
+        --header-bg: #111010;
+        --body-bg: #171717;
+        --code-bg: #363333;
+        --text-color: #eee;
+        --link-color: #58a6ff;
+
+        --implicit-arg-text-color: var(--text-color);
+
+        --def-color: #1F497F;
+        --def-color-hsl-angle: 214;
+        --theorem-color: #134E2D;
+        --theorem-color-hsl-angle: 146;
+        --axiom-and-constant-color: #6B1B1A;
+        --axiom-and-constant-color-hsl-angle: 1;
+        --structure-and-inductive-color: #73461C;
+        --structure-and-inductive-color-hsl-angle: 29;
+        --starting-percentage: 30;
+
+        --hamburger-bg-color: #2d2c2c;
+        --hamburger-active-color: black;
+        --hamburger-border-color: #717171;
+
+        --tags-border-color: #AAA;
+    }}
+@supports (width: min(10px, 5vw)){:root{
+        --content-width: clamp(20em, 55vw, 60em);
+    }}
+@media screen and (max-width: 1000px){:root{
+        --content-width: 100vw;
+    }}
+@media screen and (max-width: 700px){:root{ --header-side-padding: 1ex; }}
+.lkg-sig .decl_name{
+    overflow-wrap: break-word;
+}
+.lkg-sig .decl_name::after{
+    content: "\A";
+    white-space: pre;
+}
+.lkg-sig .decl > div{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.lkg-sig .decl{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.lkg-sig .decl > div{
+    
+    overflow-x: auto;
+}
+.lkg-sig .decl{
+    scroll-margin-top: var(--fragment-offset);
+}
+@supports not (scroll-margin-top: var(--fragment-offset)){.lkg-sig .decl::before{
+        content: "";
+        display: block;
+        height:      var(--fragment-offset);
+        margin-top:  calc(-1 * var(--fragment-offset));
+        box-sizing: inherit;
+        visibility: hidden;
+        width: 1px;
+    }}
+.lkg-sig .decl + .mod_doc > h2,.lkg-sig .decl + .mod_doc > h3,.lkg-sig .decl + .mod_doc > h4,.lkg-sig .decl + .mod_doc > h5,.lkg-sig .decl + .mod_doc > h6{
+    margin-top: 4rem;
+}
+.lkg-sig .def,.lkg-sig .instance{
+    border-left: 10px solid var(--text-color);
+    border-top: 2px solid var(--text-color);
+}
+.lkg-sig .theorem{
+    border-left: 10px solid var(--theorem-color);
+    border-top: 2px solid var(--theorem-color);
+}
+.lkg-sig .axiom,.lkg-sig .opaque{
+    border-left: 10px solid var(--axiom-and-constant-color);
+    border-top: 2px solid var(--axiom-and-constant-color);
+}
+.lkg-sig .structure,.lkg-sig .inductive,.lkg-sig .class{
+    border-left: 10px solid var(--structure-and-inductive-color);
+    border-top: 2px solid var(--structure-and-inductive-color);
+}
+.lkg-sig .fn{
+    display: inline-block;
+    
+    text-indent: -1ex;
+    padding-left: 1ex;
+    white-space: pre-wrap;
+    vertical-align: top;
+}
+.lkg-sig .fn{ --fn: 1; }
+.lkg-sig .fn .fn{ --fn: 2; }
+.lkg-sig .fn .fn .fn{ --fn: 3; }
+.lkg-sig .fn .fn .fn .fn{ --fn: 4; }
+.lkg-sig .fn .fn .fn .fn .fn{ --fn: 5; }
+.lkg-sig .fn .fn .fn .fn .fn .fn{ --fn: 6; }
+.lkg-sig .fn .fn .fn .fn .fn .fn .fn{ --fn: 7; }
+.lkg-sig .fn .fn .fn .fn .fn .fn .fn .fn{ --fn: 8; }
+.lkg-sig .fn{
+    transition: background-color 100ms ease-in-out;
+}
+.lkg-sig .def .fn:hover,.lkg-sig .instance .fn:hover{
+    background-color: hsla(var(--def-color-hsl-angle), 61%, calc(var(--starting-percentage) - 5%*var(--fn)));
+    box-shadow: 0 0 0 1px hsla(var(--def-color-hsl-angle), 61%, calc(var(--starting-percentage) - 5%*(var(--fn) + 1)));
+    border-radius: 5px;
+}
+.lkg-sig .theorem .fn:hover{
+    background-color: hsla(var(--theorem-color-hsl-angle), 62%, calc(var(--starting-percentage) - 5%*var(--fn)));
+    box-shadow: 0 0 0 1px hsla(var(--theorem-color-hsl-angle), 62%, calc(var(--starting-percentage) - 5%*(var(--fn) + 1)));
+    border-radius: 5px;
+}
+.lkg-sig .axiom .fn:hover,.lkg-sig .opaque .fn:hover{
+    background-color: hsla(var(--axiom-and-constant-color-hsl-angle), 94%, calc(var(--starting-percentage) - 5%*var(--fn)));
+    box-shadow: 0 0 0 1px hsla(var(--axiom-and-constant-color-hsl-angle), 94%, calc(var(--starting-percentage) - 5%*(var(--fn) + 1)));
+    border-radius: 5px;
+}
+.lkg-sig .structure .fn:hover,.lkg-sig .inductive .fn:hover,.lkg-sig .class .fn:hover{
+    background-color: hsla(var(--structure-and-inductive-color-hsl-angle), 98%, calc(var(--starting-percentage) - 5%*var(--fn)));
+    box-shadow: 0 0 0 1px hsla(var(--structure-and-inductive-color-hsl-angle), 98%, calc(var(--starting-percentage) - 5%*(var(--fn) + 1)));
+    border-radius: 5px;
+}
+.lkg-sig .decl_args,.lkg-sig .decl_type .decl_parent{
+    font-weight: normal;
+}
+.lkg-sig .impl_arg{
+    color: var(--text-color);
+    white-space: normal;
+}
+.lkg-sig .decl_kind,.lkg-sig .decl_name,.lkg-sig .decl_extends{
+    font-weight: bold;
+}
+.lkg-sig .break_within{
+    word-break: break-all;
+}
+.lkg-sig .break_within .name{
+    word-break: normal;
+}
+.lkg-sig .decl_header{
+    
+    text-indent: -8ex; padding-left: 8ex;
+}
+.lkg-sig .decl_type{
+    margin-top: 2px;
+    margin-left: 4ex; 
+}
+.lkg-sig .decl.sorried .decl_name{
+    text-decoration: underline wavy #cca733;
+}
+.lkg-sig .decl .sorry_msg > strong{
+    color: #a90000;
+}
+.lkg-sig .decl_header,.lkg-sig .attributes,.lkg-sig .constructor,.lkg-sig .instances li,.lkg-sig .instances-for-list li{
+    font-size: 92%;
+    font-family: 'JuliaMono', monospace;
+}
+.lkg-sig .structure_fields{
+    display: block;
+    padding-inline-start: 0;
+    margin-top: 1ex;
+    text-indent: -2ex; padding-left: 2ex;
+}
+.lkg-sig .structure_field{
+    display: block;
+    margin-left: 2ex;
+}
+.lkg-sig .structure_ext_fields .structure_field{
+    margin-left: -1ex !important;
+}
+.lkg-sig .constructor{
+    display: block;
+}
+.lkg-sig .constructor:before{
+    content: '| ';
+    color: gray;
+}
+.lkg-sig .impl_arg{
+    font-style: italic;
+    transition: opacity 300ms ease-in;
+}
+.lkg-sig .decl_header:not(:hover) .impl_arg,.lkg-sig .constructor:not(:hover) .impl_arg,.lkg-sig .structure_field_info:not(:hover) .impl_arg{
+    opacity: 30%;
+    transition: opacity 1000ms ease-out;
+}
+.lkg-sig .structure_fields:not(:hover) .inherited_field{
+    opacity: 30%;
+    transition: opacity 1000ms ease-out;
+}
+.lkg-sig .gh_link{
+    float: right;
+    margin-left: 10px;
+}

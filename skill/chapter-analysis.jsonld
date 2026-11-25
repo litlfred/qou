@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/chapter-analysis.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/chapter-analysis",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "chapter-analysis",
+      "title": "Chapter Analysis & Formalization",
+      "description": "Thorough analysis and Lean 4 formalization of a single manuscript chapter. Extracts all narrative definitions/propositions (excluding remarks), identifies missing glossary terms, writes comprehensive Lean stubs using mathlib, and proves classical-limit and structural theorems where possible.",
+      "instructionsPath": "skills/local/chapter-analysis.md",
+      "instructionLines": 190,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

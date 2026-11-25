@@ -1,0 +1,665 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1601.02479v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1601.02479v5  [math.RT]  6 Mar 2020\nCOHOMOLOGICAL DONALDSON–THOMAS THEORY OF A\nQUIVER WITH POTENTIAL AND QUANTUM ENVELOPING\nALGEBRAS\nBEN DAVISON AND SVEN MEINHARDT\nAbstract. This paper concerns the cohomological aspects of Donaldson–\nThomas theory for Jacobi algebras and the associated cohomological Hall alge-\nbra, introduced by Kontsevich and Soibelman. We prove the Hodge-theoretic\ncategoriﬁcation of the integrality conjecture and the wall crossing formula, and\nfurthermore realise the isomorphism in both of these theorems as Poincar´e-\nBirkhoﬀ-Witt isomorphisms for the associated cohomo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-background.md",
+      "narrative": null,
+      "content": "The critical cohomological Hall algebra $\\mathop{\\mathrm{H}}(\\mathcal{A}_{B,W})$ associated to a noncommutative smooth algebra $B$ and potential $W\\in B/[B,B]_{\\mathop{\\mathrm{vect}}}$ was introduced by Kontsevich and Soibelman in [@KS2] as a way of categorifying the theory of Donaldson--Thomas invariants. The meaning of \"critical\" here is that the Hall algebra is built out of the hypercohomology of the sheaf of *vanishing cycles* of the superpotential $\\mathop{\\mathrm{Tr}}(W)$ on the stack of finite-dimensional $B$-modules. This sheaf is supported on the critical locus of $\\mathop{\\mathrm{Tr}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Absolute versus relative Donaldson–Thomas theory",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-absolute-versus-relative-donaldsonthomas-theo.md",
+      "narrative": null,
+      "content": "[]{#abvsrel label=\"abvsrel\"} For the Donaldson--Thomas theory and cohomological Hall algebras associated to quivers, a vital role is always played by the grading by $\\mathbb{N}^{Q_0}$, the semigroup of dimension vectors, which should be seen as a weight space decomposition in the language of Lie algebras and quantum groups. As an illustration, consider the case in which we forget about potentials and stability conditions, set $\\mathcal{S}$ to be the category of all finite-dimensional $\\mathbb{C}Q$-modules, and consider the $\\mathbb{N}^{Q_0}$-graded vector space $$\\label{baby}\n\\bigoplus_{\\matho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomological integrality",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-13-cohomological-integrality.md",
+      "narrative": null,
+      "content": "Now that we have introduced the relative version of Donaldson--Thomas theory, we can state the first main result of this paper, a cohomological refinement of the integrality conjecture.\n\n::: thmx\n[]{#ThmA label=\"ThmA\"} Let $Q,W$ be a quiver with potential, let $\\upmu\\in (-\\infty,\\infty]$ be a slope, and let $\\upzeta$ be a $\\upmu$-generic stability condition. Let $\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}},\\mathcal{S}}_{\\upmu}$ be a locally closed substack of the stack of $\\upzeta$-semistable $\\mathbb{C}Q$-representations, the closed points of which correspond to the representations in a Serre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomological wall-crossing",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-14-cohomological-wall-crossing.md",
+      "narrative": null,
+      "content": "Our second main result is a (relative) cohomological lift of the following incarnation of the wall crossing formula, with $\\int$ denoting the Kontsevich--Soibelman integration map: $$\\label{WCI}\n\\int[\\mathfrak{M}^{\\mathcal{S}},\\upphi_{\\mathop{\\mathrm{Tr}}(W)}]=\\prod_{\\infty\\xrightarrow{\\upmu}-\\infty}\\int[\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}},\\mathcal{S}}_{\\upmu},\\upphi_{\\mathop{\\mathrm{Tr}}(W)}].$$ This is an identity in the completed motivic quantum torus of finite-dimensional modules of the Jacobi algebra for the pair $(Q,W)$. Instead of defining any of the terms in ([\\[WCI\\]](#WCI){ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The perverse filtration",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-15-the-perverse-filtration.md",
+      "narrative": null,
+      "content": "An advantage of considering constructions relative to the base $\\mathcal{M}_{\\upmu}^{\\upzeta\\mathop{\\mathrm{-ss}}}$ instead of $\\Uplambda_{\\upmu}^{\\upzeta}$ is that it leads naturally to the introduction of the perverse filtration on $\\mathop{\\mathrm{H}}(\\mathcal{A}_{W,\\upmu}^{\\upzeta,\\mathcal{S}})$.\n\nLet $\\mathbf{f}\\in\\mathbb{N}^{Q_0}$ be a framing vector, and let $\\uppi\\hspace{0.05em}^{\\upzeta}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}\\colon \\mathcal{M}^{\\upzeta}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}\\rightarrow\\mathcal{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}}$, be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results for cohomological Hall algebras",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-16-main-results-for-cohomological-hall-algebras.md",
+      "narrative": null,
+      "content": "Assume that the stability condition $\\upzeta$ is generic. The object $\\mathop{\\mathrm{H}}(\\mathcal{A}^{\\upzeta,\\mathcal{S}}_{W,\\upmu})$ is a unital algebra in the category of $\\Uplambda_{\\upmu}^{\\upzeta}$-graded monodromic mixed Hodge structures, which corresponds to a monoid in the category $\\mathcal{D}(\\mathop{\\mathrm{MMHM}}(\\Uplambda_{\\upmu}^{\\upzeta}))$. The monoidal product in this category is defined by $$\\mathcal{F}\\boxtimes_+\\mathcal{G}\\colonequals +_*(\\mathcal{F}\\boxtimes \\mathcal{G}),$$ where $\\mathcal{F}\\boxtimes\\mathcal{G}$ is the usual external tensor product, and $+\\colon\\mathbb{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The BPS Lie algebra",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-17-the-bps-lie-algebra.md",
+      "narrative": null,
+      "content": "[]{#BPSLA label=\"BPSLA\"} One of the main contributions of the current paper, and a direct corollary of the above structural theorems, is the definition of the BPS Lie algebra. This is a natural Lie algebra, for any choice of $Q,W,\\upmu,\\mathcal{S},\\uppsi$ and $\\upmu$-generic stability condition $\\upzeta$, the characteristic function of which recovers the (refined) BPS invariants for this data. Part of Theorem [\\[qea\\]](#qea){reference-type=\"ref\" reference=\"qea\"} states that $\\mathop{\\mathrm{Gr}}_{\\mathop{\\mathrm{\\mathfrak{P}}}}(\\mathop{\\mathrm{H}}(^{\\uppsi}\\!\\!\\mathcal{A}_{W,\\upmu}^{\\upzeta,\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the paper",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-18-structure-of-the-paper.md",
+      "narrative": null,
+      "content": "The paper is broken roughly into three parts: there is the introduction above, a second part which goes up to Section [\\[cwcfSec\\]](#cwcfSec){reference-type=\"ref\" reference=\"cwcfSec\"}, and then a third part. The purpose of the second part is to prove the cohomological integrality theorem (Theorem [\\[ThmA\\]](#ThmA){reference-type=\"ref\" reference=\"ThmA\"}) and the cohomological wall crossing theorem (Theorem [\\[CWCT\\]](#CWCT){reference-type=\"ref\" reference=\"CWCT\"}). For many applications of cohomological Donaldson--Thomas theory (especially positivity results) these two theorems are all one needs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-19-acknowledgements.md",
+      "narrative": null,
+      "content": "During the writing of this paper, Ben Davison was a postdoctoral researcher at EPFL, supported by the Advanced Grant \"Arithmetic and physics of Higgs moduli spaces\" No. 320593 of the European Research Council. During the extensive redrafting of the paper he was supported by the University of Glasgow and the University of Edinburgh, partly supported by a Royal Society University Research Fellowship, and by the starter grant \"Categorified Donaldson-Thomas theory\" No. 759967 of the European Research Council. He would like to sincerely thank Davesh Maulik for the many stimulating conversations tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hodge theory and equivariant vanishing cycles",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-2-hodge-theory-and-equivariant-vanishing-cycles.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monodromic mixed Hodge modules",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-21-monodromic-mixed-hodge-modules.md",
+      "narrative": null,
+      "content": "[]{#MMHMs label=\"MMHMs\"} Let $X$ be a complex variety. Then we define as in [@Saito89; @Saito90] the category $\\mathop{\\mathrm{MHM}}(X)$ of mixed Hodge modules on $X$. See [@Saito1] for an overview of the theory. There is an exact functor $\\mathop{\\mathrm{rat}}_X\\colon \\mathcal{D}(\\mathop{\\mathrm{MHM}}(X))\\rightarrow\\mathcal{D}(\\mathop{\\mathrm{Perv}}(X))$ which takes a complex of mixed Hodge modules $\\mathcal{F}$ to its underlying complex of perverse sheaves, and commutes with $f_*,f_!,f^*,f^!,\\mathbb{D}_X$ and tensor product. If no remark is made to the contrary, and a non-derived target or d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivariant vanishing cycles",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-22-equivariant-vanishing-cycles.md",
+      "narrative": null,
+      "content": "[]{#TotCon label=\"TotCon\"} We do not propose here to write down a full six functor and vanishing cycles functor formalism for equivariant monodromic mixed Hodge modules via a theory of monodromic mixed Hodge modules on stacks. Instead we mimic the constructions of [@BL94] and Totaro's approximation [@To99] of the Chow ring of classifying spaces by finite-dimensional algebraic approximations to produce only the definitions and constructions we will need for the rest of this paper. We will want to be able to work with equivariant monodromic mixed Hodge modules, in the following generality. We as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli spaces of quiver representations",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-013-3-moduli-spaces-of-quiver-representations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic notions",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-31-basic-notions.md",
+      "narrative": null,
+      "content": "[]{#Bassection label=\"Bassection\"}We will use the notations and conventions from [@DaMe4], which we briefly recall. Let $Q=(Q_0,Q_1,s,t)$ denote a quiver, that is, a pair of finite sets $Q_0$ and $Q_1$, and a pair of maps $s\\colon Q_1\\rightarrow Q_0$ and $t\\colon Q_1\\rightarrow Q_0$, taking an arrow to its source and target, respectively. Denote by $\\mathbb{C} Q$ the free path category of $Q$ over $\\mathbb{C}$. Alternatively we may think of $\\mathbb{C} Q$ as the free path algebra of $Q$, with a distinguished family of mutually orthogonal idempotents $e_i$ in bijection with the vertices $Q_0$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal products",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-015-32-monoidal-products.md",
+      "narrative": null,
+      "content": "[]{#prodss label=\"prodss\"} In this section we define and introduce the first properties of the categorification of the quantum torus from refined DT theory.\n\n::: definition\n[]{#lfDef label=\"lfDef\"} Let $\\mathcal{F}\\in\\mathcal{D}(\\mathop{\\mathrm{MMHM}}(X))$ for $X$ a scheme. We say that $\\mathcal{F}$ is *locally finite* if for each $Z\\in \\uppi\\hspace{0.05em}_0(X)$\n\n1.  for each $n\\in\\mathbb{Z}$, the element $\\bigoplus_{i\\in\\mathbb{Z}}\\mathop{\\mathrm{Gr}}^W_{n}(\\mathop{\\mathrm{\\mathcal{H}}}^i(\\mathcal{F})|_Z)$ belongs to $\\mathcal{D}^{b}(\\mathop{\\mathrm{MMHM}}(Z))$\n\n2.  For $n\\ll 0$, we have $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Framed moduli spaces",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-33-framed-moduli-spaces.md",
+      "narrative": null,
+      "content": "[]{#framedSec label=\"framedSec\"} Framed moduli spaces will play a central role in what follows. Their cohomology provides an approximation to the cohomology of $\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}$, in a way which we will make precise in Section [\\[cohaDT\\]](#cohaDT){reference-type=\"ref\" reference=\"cohaDT\"}.\n\nLet $\\mathbf{f}\\in\\mathbb{N}^{Q_0}$ be a dimension vector (called the framing vector). We form a new quiver $Q_{\\mathbf{f}}$ by setting $Q_{\\mathbf{f}}=(Q_0\\sqcup\\{\\infty\\}, Q_1\\sqcup \\{\\upbeta_{i,l_i}\\colon \\infty \\to i \\mid i\\in Q_0, \\hbox{ }1\\le l_i\\le \\mathbf{f}_i \\})$. Given",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jacobi algebras and potentials",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-017-34-jacobi-algebras-and-potentials.md",
+      "narrative": null,
+      "content": "Let $W\\in\\mathbb{C} Q/[\\mathbb{C}Q,\\mathbb{C}Q]$ be a finite linear combination of equivalence classes of cyclic words in $\\mathbb{C} Q$. Such a $W$ is called a *potential*. A potential $W$ induces a function $\\mathfrak{Tr}(W)$ on $\\mathfrak{M}$, defined as follows. Firstly, assume that $W$ lifts to a single cyclic word $c=a_r\\ldots a_0$ in $\\mathbb{C} Q$. Then a $\\mathbb{C}Q$-module $F$ determines an endomorphism $$F(a_r)\\circ\\ldots\\circ F(a_0)\\colon F(s(a_0))\\rightarrow F(s(a_0)),$$ and $\\mathop{\\mathrm{Tr}}(F(a_r)\\circ\\ldots\\circ F(a_0))$ determines a function on $X(Q)_{\\mathop{\\mathrm{\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomological Donaldson–Thomas invariants",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-018-4-cohomological-donaldsonthomas-invariants.md",
+      "narrative": null,
+      "content": "[]{#CoDTSec label=\"CoDTSec\"}\n\n## Approximation of $p^{\\upzeta}_{\\mathop{\\mathrm{\\mathbf{d}}}}$ by proper maps {#cohaDT}\n\nRecall from ([\\[pdef\\]](#pdef){reference-type=\"ref\" reference=\"pdef\"}) (and the remark following it) the morphism $$p^{\\upzeta}_{\\mathop{\\mathrm{\\mathbf{d}}}}\\colon \\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}}\\rightarrow\\mathcal{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}}$$ taking a $\\upzeta$-semistable $\\mathop{\\mathrm{\\mathbf{d}}}$-dimensional $\\mathbb{C}Q$-representation to the associated polystable representation. We sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The integrality isomorphism — Theorem A",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-42-the-integrality-isomorphism-theorem-a.md",
+      "narrative": null,
+      "content": "Assume that $\\upzeta$ is a $\\upmu$-generic Bridgeland stability condition. As in [@DaMe4] and the introduction, for $\\mathop{\\mathrm{\\mathbf{d}}}\\in\\Uplambda_{\\upmu}^{\\upzeta}\\setminus \\{0\\}$ we define the following elements of $\\mathop{\\mathrm{MMHM}}(\\mathcal{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}})$ and $\\mathcal{D}^{b}(\\mathop{\\mathrm{MMHM}}(\\mathop{\\mathrm{pt}}))$, respectively $$\\begin{aligned}\n\\mathcal{BPS}_{W,\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta}\\colonequals&\\begin{cases} \\upphi^{\\mathop{\\mathrm{mon}}}_{\\mathcal{T}r(W)^\\upzeta_{\\mathop{\\mathrm{\\mathbf{d}}}}}\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cohomological wall crossing isomorphism — Theorem B",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-43-the-cohomological-wall-crossing-isomorphism-t.md",
+      "narrative": null,
+      "content": "[]{#cwcfSec label=\"cwcfSec\"} In this section we prove Theorem [\\[CWCT\\]](#CWCT){reference-type=\"ref\" reference=\"CWCT\"}, which is a categorification of the motivic wall crossing formula ([\\[WCI\\]](#WCI){reference-type=\"ref\" reference=\"WCI\"}). In Section [\\[CWCF\\]](#CWCF){reference-type=\"ref\" reference=\"CWCF\"} we will prove that this isomorphism can be realised in terms of multiplication in the cohomological Hall algebra. Even without considering the CoHA we can still prove that there is *some* isomorphism ([\\[gthmd\\]](#gthmd){reference-type=\"ref\" reference=\"gthmd\"}). The mere existence of this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomological Hall algebras",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-5-cohomological-hall-algebras.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The relative cohomological Hall algebra",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-51-the-relative-cohomological-hall-algebra.md",
+      "narrative": null,
+      "content": "[]{#relc label=\"relc\"} In this section we define the relative cohomological Hall algebra $\\mathop{\\mathrm{\\mathcal{H}}}(\\mathop{\\mathrm{\\mathcal{A}}}_{W,\\upmu}^{\\upzeta})$. For now we will not assume that the stability condition $\\upzeta\\in\\mathbb{H}_+^{Q_0}$ is generic. The underlying cohomologically graded monodromic mixed Hodge module of $\\mathop{\\mathrm{\\mathcal{H}}}(\\mathop{\\mathrm{\\mathcal{A}}}_{W,\\upmu}^{\\upzeta})$ is $\\mathop{\\mathrm{\\mathcal{H}}}\\left(p^{\\upzeta}_{\\upmu,*}\\mathfrak{IC}_{W,\\upmu}^{\\upzeta}\\right)$ from Definition [\\[abbrev\\]](#abbrev){reference-type=\"ref\" reference=\"ab",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The absolute cohomological Hall algebra",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-023-52-the-absolute-cohomological-hall-algebra.md",
+      "narrative": null,
+      "content": "We start to complete Remark [\\[absRem\\]](#absRem){reference-type=\"ref\" reference=\"absRem\"} by recalling the definition of the cohomological algebra structure on $\\mathop{\\mathrm{H}}(\\mathcal{A}^{\\upzeta,\\mathcal{S}}_{W,\\upmu})$ from [@KS2]. Extending ([\\[XNdef\\]](#XNdef){reference-type=\"ref\" reference=\"XNdef\"}, [\\[XXNdef\\]](#XXNdef){reference-type=\"ref\" reference=\"XXNdef\"}) we set $$\\begin{aligned}\nX^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}'\\blacksquare\\mathop{\\mathrm{\\mathbf{d}}}'',N} \\colonequals &X_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}''}^{\\upzeta\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ambient perverse filtration",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-024-53-the-ambient-perverse-filtration.md",
+      "narrative": null,
+      "content": "[]{#PervSec label=\"PervSec\"} For $\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}\\in \\mathbb{N}^{Q_0}$ set $$\\upgamma(\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}})=(\\mathop{\\mathrm{\\mathbf{d}}},\\mathop{\\mathrm{\\mathbf{d}}})/2-\\mathbf{f}\\cdot\\mathop{\\mathrm{\\mathbf{d}}}.$$ Since $\\mathcal{M}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta}$ is smooth, and $\\uppi\\hspace{0.05em}^{\\upzeta}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}\\colon \\mathcal{M}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta}\\rightarrow \\mathcal{M}_{\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta\\mathop{\\mathrm{-ss}}}$ is proper, by the decom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structural results for cohomological Hall algebras",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-025-6-structural-results-for-cohomological-hall-alge.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric monoidal structures, revisited",
+      "pageStart": 50,
+      "pageEnd": 53,
+      "target": "../sections/sec-026-61-symmetric-monoidal-structures-revisited.md",
+      "narrative": null,
+      "content": "[]{#lc_signs label=\"lc_signs\"} Let $\\upzeta\\in \\mathbb{H}_+^{Q_0}$ be a stability condition, and let $\\upmu\\in(-\\infty,\\infty)$ be a slope. We assume that $\\upzeta$ is $\\upmu$-generic. We define $X^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}},N}$ and $X^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}'',N}$ as in ([\\[XNdef\\]](#XNdef){reference-type=\"ref\" reference=\"XNdef\"}) and ([\\[XXNdef\\]](#XXNdef){reference-type=\"ref\" reference=\"XXNdef\"}) respectively. As throughout the paper, we assume that we are given a Serre subcategory of the ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The perverse associated graded Hopf algebra",
+      "pageStart": 53,
+      "pageEnd": 56,
+      "target": "../sections/sec-027-62-the-perverse-associated-graded-hopf-algebra.md",
+      "narrative": null,
+      "content": "Next we describe the localised comultiplication in a little more detail, for further details see [@Da13]. Consider the proper map $s_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}''}\\colon \\mathfrak{M}_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}''}^{\\upzeta\\mathop{\\mathrm{-ss}}}\\rightarrow\\mathfrak{M}_{\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta\\mathop{\\mathrm{-ss}}}$ defined as in ([\\[smap\\]](#smap){reference-type=\"ref\" reference=\"smap\"}). We form the map $$\\label{gammadef}\n\\upgamma\\colon \\mathop{\\mathrm{H}}_c(\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}},\\mathcal{S}}_{\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem C and construction of the BPS Lie algebra",
+      "pageStart": 56,
+      "pageEnd": 60,
+      "target": "../sections/sec-028-63-proof-of-theorem-c-and-construction-of-the-bp.md",
+      "narrative": null,
+      "content": "[]{#ThmCproof label=\"ThmCproof\"}\n\nWe start with a couple of technical lemmas for the proofs in this section.\n\n::: lemma\n[]{#Tech1 label=\"Tech1\"} Let $\\mathcal{F},\\mathcal{G}\\in\\mathop{\\mathrm{MMHM}}(X)$. Then $f\\colon \\mathcal{F}\\rightarrow \\mathcal{G}$ is an isomorphism if and only if $f_x$ is an isomorphism for every closed point $x\\in X$.\n:::\n\n::: proof\n*Proof.* One implication is trivial, so we assume that $f_x$ is an isomorphism for every $x$ and prove that $f$ is an isomorphism. Since the functor $$\\mathop{\\mathrm{forg}}^{\\mathop{\\mathrm{mon}}}_{X}\\colon \\mathop{\\mathrm{MMHM}}(X)\\rightar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/cor-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "cor-sec-029-03.md",
+      "narrative": null,
+      "content": "For a generic stability condition ζ there exist embeddings BPSζ,S W,µ ⊗H(BC*)vir ⊂ H((ψ)AW ) such that the induced morphism ⊠tw ⊕,∞ µ−→−∞ \u0010 (τ)Sym⊠+ \u0010 BPSζ,S W,µ ⊗H(BC*)vir \u0011\u0011 (¬ψ)H(˜∗W ) −−−−−−−→H(AS W ) is an isomorphism. The meaning of the bracketed superscripts is as in Theorem 6.12.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem D",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "../sections/sec-029-64-proof-of-theorem-d.md",
+      "narrative": null,
+      "content": "6.4. Proof of Theorem D. We ﬁnish by proving Theorem D. Fix a generic sta-\nbility condition ζ. By Corollary 4.11 there are canonical split inclusions\nH(BC*)vir ⊗BPSζ\nW,µ →H\n\u0010\npζ\nµ,∗ICζ\nW,µ\n\u0011\nCOHAS AND QUANTUM ENVELOPING ALGEBRAS\n61\ngiving rise to canonical split inclusions H(BC*)vir⊗qζ\nµ,∗BPSζ\nW,µ →qζ\nµ,∗H\n\u0010\npζ\nµ,∗ICζ\nW,µ\n\u0011\nand thus split inclusions\nι′\nµ : H(BC*)vir ⊗qζ\nµ,∗BPSζ\nW,µ֒ →H\n\u0010\nqζ\nµ,∗pζ\nµ,∗ICζ\nW,µ\n\u0011\nby the decomposition theorem and properness of qζ\nµ. Via the proof of Theorem 4.12\nwe can pick a right inverse ηµ,∗to the restriction map in cohomology\nη∗\nµ : H (pµ,∗ICW,µ) →H\n\u0010\nqζ\nµ,∗pζ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/thm-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "thm-sec-029-01.md",
+      "narrative": null,
+      "content": "Let ζ be a generic stability condition, and consider the morphism (104) ⊠tw ⊕,∞ µ−→−∞ \u0010 (τ)Sym⊠⊕ \u0010 H(BC*)vir ⊗qζ µ,∗BPSζ W,µ \u0011\u0011 (¬ψ)H(˜∗W ) −−−−−−−→H (p∗ICW ) induced by the inclusions ιµ and the Hall algebra structure on H((ψ)AW ), where the bracketed superscripts indicate that if we are not taking the symmetrizing morphism τtw to deﬁne the functor τSym⊠⊕, then we take the ψ-twisted multiplication, for ψ a bilinear form as in (16). Then (104) is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/thm-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "thm-sec-029-02.md",
+      "narrative": null,
+      "content": "the domain and image are isomorphic. Since η∗ µ is a morphism of monoids, the diagram η∗ µ (τ)Sym⊠⊕ \u0010 ηµ,∗BPSζ µ ⊗H(BC*)vir \u0011 ∼ = \u000f / η∗ µH((¬ψ)Aµ) ∼ = \u000f (τ)Sym⊠⊕ \u0010 BPSζ µ ⊗H(BC*)vir \u0011 / H((¬ψ)Aζ µ) commutes, with the horizontal maps deﬁned via the relative multiplications on H((ψ)Aµ) and H((ψ)Aζ µ) respectively. We deduce as above that the theorem is true after passing to the associated graded with respect to the Harder–Narasimhan COHAS AND QUANTUM ENVELOPING ALGEBRAS ﬁltration, and so is injective, and hence an isomorphism since the domain and target are isomorphic pure monodromic mixed Hodg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1601.02479v5/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-030-references.md",
+      "narrative": null,
+      "content": "[1] The Stacks Project. http://stacks.math.columbia.edu/.\n[2] M. Atiyah and R. Bott. The Yang-Mills equations over Riemann surfaces. Philos. Trans. Roy.\nSoc. London, 308:523–615, 1983.\n[3] A. Beilinson, J. Bernstein, and P. Deligne. Faisceaux pervers. Ast´erisque, 100, 1983.\n[4] J. Bernstein and V. Lunts. Equivariant Sheaves and Functors, volume 1578. Springer, 1994.\n[5] C. Brav, V. Bussi, D. Dupont, D. Joyce, and B. Szendr˝oi. Symmetries and stabilization\nfor sheaves of vanishing cycles. J. Singul., 11:85–151, 2015. With an appendix by J¨org\nSch¨urmann.\n[6] T. Bridgeland. Stability conditions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

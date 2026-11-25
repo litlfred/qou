@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0806.2317v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Bounds for codes and designs in complex subspaces",
+      "dcterms:creator": [
+        "Roy∗, Aidan"
+      ],
+      "dcterms:issued": "D:20210726",
+      "dcterms:identifier": "https://arxiv.org/abs/0806.2317",
+      "dcterms:abstract": "We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsarte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association schemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, and the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.",
+      "dcterms:source": "library/arxiv-0806.2317v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0806.2317v1"
+    }
+  ]
+}

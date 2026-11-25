@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ojm27-03-04/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ojm27-03-04",
+  "contains": [
+    "library/ojm27-03-04/sections/sec-front-matter",
+    "library/ojm27-03-04/sections/sec-000",
+    "library/ojm27-03-04/sections/sec-001",
+    "library/ojm27-03-04/sections/sec-002",
+    "library/ojm27-03-04/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553).\n\n**Hyperbolic 3-manifolds with totally geodesic boundary** — Michihiko Fujii. Osaka Journal of Mathematics 27(3), 1990, 539–553. DOI 10.18910/11468.\n\n**Why it may bear here.** Geodesic-boundary hyperbolic 3-manifolds are the setting of the Frigerio deformation result (frigerio2006) also held, and of the fundamental-shadow-link complements this corpus uses. Distinct from fujii1992 (Kodai Math. J. 15, 244–257), a different paper by the same author also in the library.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ojm27-03-04",
+    "title_source": "slug",
+    "source_file": "ojm27_03_04.pdf",
+    "source_sha256": "b357cc8378dae3fdb81346201aac1ad1895fea5de9d204b9e885950eae2e2c96",
+    "pages": 17,
+    "arxiv": null,
+    "doi": "10.18910/11468",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

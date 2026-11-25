@@ -1,0 +1,947 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9802116v1",
+  "title": "Quasialgebra structure of the octonions",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries: General constructions",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries-general-constructions"
+    },
+    {
+      "level": 1,
+      "title": "More about the quasi-algebras kFG",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-more-about-the-quasi-algebras-kfg"
+    },
+    {
+      "level": 1,
+      "title": "Cayley algebras",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-cayley-algebras"
+    },
+    {
+      "level": 1,
+      "title": "The quaternion algebra is of this form with",
+      "number": "ii",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-ii-the-quaternion-algebra-is-of-this-form-with"
+    },
+    {
+      "level": 1,
+      "title": "The octonion algebra is of this form with",
+      "number": "iii",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-iii-the-octonion-algebra-is-of-this-form-with"
+    },
+    {
+      "level": 1,
+      "title": "New quasialgebras",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-new-quasialgebras"
+    },
+    {
+      "level": 1,
+      "title": "Automorphism quasi-Hopf algebras",
+      "number": "6",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-automorphism-quasi-hopf-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Quasiassociative linear algebra",
+      "number": "7",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-7-quasiassociative-linear-algebra"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coimbra",
+          "heading": false
+        },
+        {
+          "term": "damtp",
+          "heading": false
+        },
+        {
+          "term": "quasi-hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "majid",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9802116v1 [math.QA] 25 Feb 1998 DAMTP/97-138 QUASIALGEBRA STRUCTURE OF THE OCTONIONS Helena Albuquerque1 Departamento de Matematica-Faculdade de Ciencias e Tecnologia Universidade de Coimbra, Apartado 3008 3000 Coimbra, Portugal + Shahn Majid2 Department of Applied Mathematics & Theoretical Physics University of Cambridge, Cambridge CB3 9EW, UK www.damtp.cam.ac.uk/user/majid December, 1997 – February,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9802116v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "quasi-associative algebras",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "algebras beyond",
+          "heading": false
+        },
+        {
+          "term": "twisting",
+          "heading": false
+        },
+        {
+          "term": "gauge-equivalent",
+          "heading": false
+        },
+        {
+          "term": "group algebra",
+          "heading": false
+        },
+        {
+          "term": "quasitensor",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we provide a natural setting for the octonion algebra, namely as an algebra in a quasitensor category. Such categories have a tensor product and associativity isomorphisms V ⊗(W ⊗Z)∼=(V ⊗W) ⊗Z for any three objects, but these need not, however, be the trivial vector space isomorphisms. These categories also arise naturally as the representation categories of quasi-Hopf algebras[1]. Our ﬁrst result is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries-general-constructions",
+      "number": "2",
+      "title": "Preliminaries: General constructions",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 1630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-graded quasialgebra",
+          "heading": false
+        },
+        {
+          "term": "h-comodule quasialgebra",
+          "heading": false
+        },
+        {
+          "term": "comodule quasialgebra",
+          "heading": false
+        },
+        {
+          "term": "dual quasi-hopf",
+          "heading": false
+        },
+        {
+          "term": "quasi-hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "dual quasitriangular",
+          "heading": false
+        },
+        {
+          "term": "g-graded vector",
+          "heading": false
+        },
+        {
+          "term": "convolution-invertible map",
+          "heading": false
+        }
+      ],
+      "extract": "An introduction to quantum groups, including quasitensor categories and quasi-Hopf algebras is in [2], the main notations of which we use here. In fact, the natural setting for us is the dual of Drinfeld’s axioms[1], namely the notion of a dual quasi-Hopf algebra[3][2]. Thus, a dual quasibialgebra is a (H, ∆, ǫ, φ) where the coproduct ∆: H →H ⊗H and counit ǫ : H →k form a coalgebra (the axioms are those of a unital",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-more-about-the-quasi-algebras-kfg",
+      "number": "3",
+      "title": "More about the quasi-algebras kFG",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 15,
+      "labelStart": "7",
+      "labelEnd": "15",
+      "words": 2898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kfg",
+          "heading": true
+        },
+        {
+          "term": "element αxx",
+          "heading": false
+        },
+        {
+          "term": "strong involution",
+          "heading": false
+        },
+        {
+          "term": "alternative algebra",
+          "heading": false
+        },
+        {
+          "term": "diagonal strong",
+          "heading": false
+        },
+        {
+          "term": "norm quadratic",
+          "heading": false
+        },
+        {
+          "term": "αee",
+          "heading": false
+        },
+        {
+          "term": "quasi-algebras",
+          "heading": true
+        }
+      ],
+      "extract": "More about the quasi-algebras kFG In this section, we will study further properties of the G-graded quasialgebras kF G beyond the general ones arising from their categorical structure in the preceding section. We assume that G is Abelian, that F is a 2-cochain and φ a 3-cocycle. First of all, we note that kF G has a natural symmetric bilinear form whereby the basis of group elements is orthonormal. In general, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-cayley-algebras",
+      "number": "4",
+      "title": "Cayley algebras",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 1428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley algebras",
+          "heading": true
+        },
+        {
+          "term": "cayley-dickson process",
+          "heading": false
+        },
+        {
+          "term": "cayley-dickson extension",
+          "heading": false
+        },
+        {
+          "term": "standard cayley-dickson",
+          "heading": false
+        },
+        {
+          "term": "strong involution",
+          "heading": false
+        },
+        {
+          "term": "diagonal involution",
+          "heading": false
+        },
+        {
+          "term": "cochain approach",
+          "heading": false
+        },
+        {
+          "term": "dickson extension",
+          "heading": false
+        }
+      ],
+      "extract": "will see in the next section. Finally, for completeness, we include a slight generalisation of Proposition 3.7. Proposition 3.9 Let kF G be an algebra that admits a strong diagonal involution σ(x) = s(x)x. Then the non degenerate form n(x) = x · σ(x) makes kF G a composition algebra if and only if i) s(xy)F(x, y)2F(xy, xy) = s(x)s(y)F(x, x)F(y, y), for all x, y ∈G. ii) F(x, xz)F(y, yz)F(z, z)s(z) + F(x, yz)F(y,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-ii-the-quaternion-algebra-is-of-this-form-with",
+      "number": "ii",
+      "title": "The quaternion algebra is of this form with",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "¯G = Z2 × Z2, ¯f(⃗x,⃗y) = x1y1 + (x1 + x2)y2 where⃗x = (x1, x2) ∈¯G is a vector notation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-iii-the-octonion-algebra-is-of-this-form-with",
+      "number": "iii",
+      "title": "The octonion algebra is of this form with",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associativity cocycle",
+          "heading": false
+        },
+        {
+          "term": "xiyj",
+          "heading": false
+        },
+        {
+          "term": "diagonal involution",
+          "heading": false
+        },
+        {
+          "term": "associative",
+          "heading": false
+        },
+        {
+          "term": "coboundary",
+          "heading": false
+        },
+        {
+          "term": "bilinear",
+          "heading": false
+        },
+        {
+          "term": "commutative",
+          "heading": false
+        }
+      ],
+      "extract": "¯¯G = Z2 × Z2 × Z2, ¯¯f(⃗x,⃗y) = X i≤j xiyj + y1x2x3 + x1y2x3 + x2x2y3. iv) The 16-onion algebra is of the form ¯¯¯G = Z2 × Z2 × Z2 × Z2 and ¯¯¯f(⃗x,⃗y) = X i≤j xiyj + X i̸=j̸=k̸=i xixjyk + X distinct i,j,k,l xixjykyl + X i̸=j̸=k̸=i xiyjykx4 We are now able to apply our various criteria in the last section for the structure of the algebras of the form kF G, to this construction and to all these algebras. Note in all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-new-quasialgebras",
+      "number": "5",
+      "title": "New quasialgebras",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 1213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasialgebras",
+          "heading": true
+        },
+        {
+          "term": "hadamard matrix",
+          "heading": false
+        },
+        {
+          "term": "symmetric hadamard",
+          "heading": false
+        },
+        {
+          "term": "cochain deﬁned",
+          "heading": false
+        },
+        {
+          "term": "nonassociative algebra",
+          "heading": false
+        },
+        {
+          "term": "αyy",
+          "heading": false
+        },
+        {
+          "term": "αxx",
+          "heading": false
+        },
+        {
+          "term": "multiplication table",
+          "heading": false
+        }
+      ],
+      "extract": "New quasialgebras It is clear that there are many examples of quasialgebras kF G according to the group G and the cochain F. In this section we will consider examples where F 2 = 1; we will see that even in this case we can obtain very diﬀerent types of algebras. By Proposition 3.7 we know that if kF G is an n-dimensional composition algebra for the Euclidean norm, the cochain F is deﬁned by an Hadamard matrix H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-automorphism-quasi-hopf-algebras",
+      "number": "6",
+      "title": "Automorphism quasi-Hopf algebras",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 30,
+      "labelStart": "24",
+      "labelEnd": "30",
+      "words": 2459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "dual quasi-hopf",
+          "heading": false
+        },
+        {
+          "term": "tip tjq",
+          "heading": false
+        },
+        {
+          "term": "trigonometric bialgebra",
+          "heading": false
+        },
+        {
+          "term": "tij",
+          "heading": false
+        },
+        {
+          "term": "tjβ",
+          "heading": false
+        },
+        {
+          "term": "quasi-associative algebra",
+          "heading": false
+        },
+        {
+          "term": "tia taj",
+          "heading": false
+        }
+      ],
+      "extract": "Automorphism quasi-Hopf algebras We return to the general setting of Section 2, where G is equipped with a 3-cocycle φ forming a dual quasi-Hopf algebra. We let A be a ﬁnite-dimensional G-graded quasi-algebra in the sense of Deﬁnition 2.3, and introduce a general construction for its comeasuring or ‘automorphism’ dual quasi-Hopf algebra. We let {ei} be a basis of A with homogeneous degrees, denoted |ei| = |i| ∈G. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-quasiassociative-linear-algebra",
+      "number": "7",
+      "title": "Quasiassociative linear algebra",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": "30",
+      "labelEnd": "33",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-graded quasialgebra",
+          "heading": false
+        },
+        {
+          "term": "eij ekl",
+          "heading": false
+        },
+        {
+          "term": "g-graded vector",
+          "heading": false
+        },
+        {
+          "term": "quasiassociative",
+          "heading": true
+        },
+        {
+          "term": "linear algebra",
+          "heading": true
+        },
+        {
+          "term": "quasihopf algebra",
+          "heading": false
+        },
+        {
+          "term": "dual quasihopf",
+          "heading": false
+        },
+        {
+          "term": "emn",
+          "heading": false
+        }
+      ],
+      "extract": "Quasiassociative linear algebra In this section we use our categorical approach to octonions to provide the natural ‘quasiasso- ciative’ setting for the basic linear algebra associated to them. We deﬁne the natural notion of ‘representation’. We also provide the deﬁnition of V ∗for any ﬁnite-dimensional G-graded vector space, and the associated endomorphism quasialgebra V ⊗V ∗. These constructions are the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasihopf algebras",
+          "heading": false
+        },
+        {
+          "term": "majid",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "braided",
+          "heading": false
+        },
+        {
+          "term": "mac",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "[1] V.G. Drinfeld. QuasiHopf algebras. Leningrad Math. J., 1:1419–1457, 1990. [2] S. Majid. Foundations of Quantum Group Theory. Cambridge Univeristy Press, 1995. [3] S. Majid. Tannaka-Krein theorem for quasiHopf algebras and other results. Contemp. Maths, 134:219–232, 1992. [4] S. Mac Lane. Categories for the Working Mathematician. Springer, 1974. GTM vol. 5. [5] A. Joyal and R. Street. Braided monoidal categories.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "g-graded quasialgebra",
+      "heading": false
+    },
+    {
+      "term": "quasi-hopf algebra",
+      "heading": false
+    },
+    {
+      "term": "comodule quasialgebra",
+      "heading": false
+    },
+    {
+      "term": "h-comodule quasialgebra",
+      "heading": false
+    },
+    {
+      "term": "g-graded quasi-algebra",
+      "heading": false
+    },
+    {
+      "term": "associative algebra",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite-dimensional g-graded",
+      "heading": false
+    },
+    {
+      "term": "dual quasi-hopf",
+      "heading": false
+    },
+    {
+      "term": "g-graded vector",
+      "heading": false
+    },
+    {
+      "term": "quasi-associative algebra",
+      "heading": false
+    },
+    {
+      "term": "group algebra",
+      "heading": false
+    },
+    {
+      "term": "cochain deﬁned",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p33); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9802116v1"
+  }
+}

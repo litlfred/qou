@@ -1,0 +1,441 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0807.2679v1",
+  "title": "A cabling formula for the colored Jones polynomial",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the cabling formula",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-proof-of-the-cabling-formula"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the volume conjecture for zero volume links",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-proof-of-the-volume-conjecture-for-zero-volume-l"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabling formula",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0807.2679v1 [math.GT] 17 Jul 2008 A cabling formula for the colored Jones polynomial Roland van der Veen November 18, 2021 Abstract We prove an explicit cabling formula for the colored Jones polynomial. As an application we prove the volume conjecture for all zero volume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0807.2679v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabling formula",
+          "heading": false
+        },
+        {
+          "term": "banded link",
+          "heading": false
+        },
+        {
+          "term": "hdots",
+          "heading": false
+        },
+        {
+          "term": "volume link",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "unnormalized colored",
+          "heading": false
+        },
+        {
+          "term": "frac mathbf",
+          "heading": false
+        },
+        {
+          "term": "volume knots",
+          "heading": false
+        }
+      ],
+      "extract": "In this note we study how the unnormalized colored Jones polynomial or quantum $sl_2$ invariant of a link changes under the operation of cabling. We work with a banded link or ribbon link $L$ so that every component is an embedded annulus. Given a diagram $D$ of a banded link inside an annulus we can construct a satellite of $L$ by embedding $D$ into a component $L_i$ of $L$. The $(r,s)$-cabling operation is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-proof-of-the-cabling-formula",
+      "number": null,
+      "title": "Proof of the cabling formula",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2860,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hdots lambda",
+          "heading": false
+        },
+        {
+          "term": "vdash mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "vdash chi",
+          "heading": false
+        },
+        {
+          "term": "mathrm sgn",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        }
+      ],
+      "extract": "Let us fix a banded link $L$ with $c$ components $L_1,\\hdots, L_c$. Choosing a component $L_i$ of $L$ and opening it up we can write $L$ as the closure of a banded $(1,1)$-tangle $T_i$. Define $T_{i;s}$ to be the banded $(s,s)$-tangle obtained from $T_i$ by replacing the opened component $L_i$ of $T_i$ by $s$ parallel bands. In terms of these tangles the $(i;r,s)$-cabling of $L$ is equal to the closure of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-proof-of-the-volume-conjecture-for-zero-volume-l",
+      "number": null,
+      "title": "Proof of the volume conjecture for zero volume links",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "zero volume",
+          "heading": true
+        },
+        {
+          "term": "hdots",
+          "heading": false
+        },
+        {
+          "term": "again moderate",
+          "heading": false
+        },
+        {
+          "term": "repeated cabling",
+          "heading": false
+        },
+        {
+          "term": "unnormalized colored",
+          "heading": false
+        },
+        {
+          "term": "cabling formula",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "As an application of the cabling formula we just proved we will show that the volume conjecture holds true for all zero volume knots and links (corollary 1). Such links are related to cabling by the fact that all links of zero simplicial volume are obtained from the unknot by repeated cabling and connected sum [@Gordon]. In the volume conjecture the usual normalization of the colored Jones polynomial for knots is to",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac hdots",
+      "heading": false
+    },
+    {
+      "term": "hdots lambda",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathrm",
+      "heading": false
+    },
+    {
+      "term": "cabling formula",
+      "heading": true
+    },
+    {
+      "term": "repeated cabling",
+      "heading": false
+    },
+    {
+      "term": "vdash mathbf",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "unnormalized colored",
+      "heading": false
+    },
+    {
+      "term": "choose mathbf",
+      "heading": false
+    },
+    {
+      "term": "banded link",
+      "heading": false
+    },
+    {
+      "term": "vector mathbf",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "We have drawn the link L4",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Sliding the coupon α up through the tangle Ti;s",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The Pascal-like triangle of all two part partitions that can be glued from 5 or less border strips of length p = 4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0807.2679v1"
+  }
+}

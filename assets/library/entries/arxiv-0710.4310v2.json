@@ -1,0 +1,762 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0710.4310v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0710.4310v2  [math.DG]  20 Jul 2008\nOn Two-Dimensional Holonomy\nJo˜ao Faria Martins\nCentro de Matem´atica da Universidade do Porto\nRua do Campo Alegre, 687, 4169-007 Porto, Portugal\njmartins@math.ist.utl.pt\nRoger Picken\nDepartamento de Matem´atica,\nInstituto Superior T´ecnico, TU Lisbon\nAv. Rovisco Pais, 1049-001 Lisboa, Portugal\nrpicken@math.ist.utl.pt\nNovember 8, 2018\nAbstract\nWe deﬁne the thin fundamental categorical group P2(M, ∗) of a based\nsmooth manifold (M, ∗) as the categorical group whose objects are rank-1\nhomotopy classes of based loops on M, and whose morphisms are rank-\n2 h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resumé of results and notation from the theory of principal fibre bundles",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-resumé-of-results-and-notation-from-the-theory-o.md",
+      "narrative": null,
+      "content": "Resum´e of results and notation from the theory of\nprincipal ﬁbre bundles",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections on principal fibre bundles",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-connections-on-principal-fibre-bundles.md",
+      "narrative": null,
+      "content": "[]{#CCC label=\"CCC\"}\n\nFor full details on connections on principal fibre bundles see [@KN; @P].\n\nLet $M$ be a paracompact smooth manifold. Let $G$ be a Lie group with Lie algebra $\\lg$. Consider a principal $G$-bundle $P$ over $M$, with canonical projection $\\pi\\colon P \\to M$. For each $x \\in M$, let $P_x=\\pi^{-1}(x)$ be the fibre at $x$. Let also $\\X(P)$ denote the Lie algebra of smooth vector fields on $P$. Recall that there exists a Lie algebra morphism $A \\in \\lg \\mapsto A^\\# \\in \\X(P)$, such that $A^\\#_u=\\frac{d}{dt}u \\exp(tA)_{t=0}, \\forall u \\in P, \\forall A \\in \\lg$. Here if $X\\in \\X(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curvature",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-curvature.md",
+      "narrative": null,
+      "content": "[]{#curv label=\"curv\"}\n\nLet $P$ be a principal $G$-bundle over $M$. Let $\\w \\in \\A^1(P,\\lg)$ be a connection 1-form on $P$. Given an $n$-form $a$ on $P$, the exterior covariant derivative of $a$ is given by $$Da=d a \\circ (\\underbrace{H \\times H \\ldots \\times  H}_{(n+1)\\textrm{-times }} ).$$\n\nLet $\\W\\in \\A^2(P,\\lg)$ be the curvature 2-form of the connection $\\w$. It can be defined as the exterior covariant derivative $D\\w$ of the connection 1-form $\\w$, in other words: $$\\W(X,Y)=d \\w(X^H,Y^H),$$ where $X,Y \\in \\X(P)$. The curvature $2$-form $\\W$ is $G$-equivariant, which means: $$R_g^*(\\W)=g^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parallel transport",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-parallel-transport.md",
+      "narrative": null,
+      "content": "[]{#Hol label=\"Hol\"}\n\nLet $P$ be a principal $G$-bundle over the manifold $M$. Let $\\w \\in \\A^1(P,\\lg)$ be a connection on $P$. Recall that $\\w$ determines a parallel transport along smooth curves. Specifically, given $x \\in M$ and a smooth curve $\\gamma\\colon [0,1] \\to M$, with $\\gamma(0)=x$, then there exists a smooth map: $$(t,u) \\in [0,1] \\times P_x \\mapsto {\\mathcal{H}}_\\w(\\ga,t,u) \\in  P,$$ uniquely defined by the conditions:\n\n1.  $\\frac{d}{d t} {\\mathcal{H}}_\\w(\\ga,t,u)=\\left(\\t{\\frac{d}{dt} \\ga(t)}\\right)_{{\\mathcal{H}}_\\w(\\ga,t,u) };\\forall t \\in [0,1], \\forall u \\in P_x,$\n\n2.  ${\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-the-dependence-of-the-parallel-transport-on-a-sm.md",
+      "narrative": null,
+      "content": "[]{#BBB label=\"BBB\"}\n\nLet $M$ be a smooth manifold. Let ${{\\rm D}}^n\\doteq [0,1]^n$ be the $n$-cube, where $n \\in \\N$. A map $f\\colon  {{\\rm D}}^n \\to M$ is said to be smooth if its partial derivatives of any order exist and are continuous as maps ${{\\rm D}}^n \\to M$. Let $G$ be a Lie group with Lie algebra $\\lg$. Consider a smooth principal $G$-bundle $\\pi \\colon P \\to M$ with a connection 1-form $\\w \\in \\A^1(P,\\lg)$.\n\nNow let $s \\in [0,1] \\mapsto \\g_s$ be a smooth 1-parameter family of smooth curves $[0,1] \\to M$. Here smooth means that the map $\\G\\colon (t,s) \\in [0,1]^2 \\mapsto \\ga_s(t) \\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crossed modules",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-crossed-modules.md",
+      "narrative": null,
+      "content": "All Lie groups and Lie algebras are taken to be finite-dimensional.\n\n::: Definition\n[]{#LCM label=\"LCM\"} A crossed module ${\\Gc= ( \\d\\colon E \\to  G,\\tr)}$ is given by a group morphism $\\d\\colon E \\to G$ together with a left action $\\tr$ of $G$ on $E$ by automorphisms, such that:\n\n1.  $\\d(X \\tr e)=X \\d(e)X^{-1}; \\forall X \\in G, \\forall e \\in E,$\n\n2.  $\\d(e) \\tr f=efe^{-1};\\forall e,f  \\in E.$\n\nIf both $G$ and $E$ are Lie groups, $\\d\\colon E \\to G$ is a smooth morphism, and the left action of $G$ on $E$ is smooth then $\\Gc$ will be called a Lie crossed module.\n:::\n\nA morphism $\\Gc \\to \\Gc'$ be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crossed modules and categorical groups",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-crossed-modules-and-categorical-groups.md",
+      "narrative": null,
+      "content": "[]{#CCG label=\"CCG\"}\n\n::: Definition\nA categorical group $\\mathcal{C}$ is a groupoid provided with a strict monoidal structure $\\C \\times \\C \\ra{\\tn} \\C$, as well as a \"group inversion\" functor ${^{-1}}\\colon C  \\to C$ such that both the set of objects $C_0$ of $\\C$ and the set of morphisms $C_1$ of $\\C$ are groups under the tensor product, and both the source and target maps $\\sigma,\\tau \\colon C_1 \\to C_0$ are group morphisms. A Lie categorical group is defined analogously by replacing groups by Lie groups and group morphisms by Lie group morphisms.\n:::\n\nSee [@BM; @BL] for more details.\n\n:::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The thin fundamental categorical group of a manifold",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-the-thin-fundamental-categorical-group-of-a-mani.md",
+      "narrative": null,
+      "content": "[]{#thinfund label=\"thinfund\"}\n\nLet $M$ be a smooth manifold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1-Tracks",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-1-tracks.md",
+      "narrative": null,
+      "content": "[]{#1-Tracks label=\"1-Tracks\"}\n\n::: Definition\nA 1-path is given by a smooth map $\\gamma\\colon [0,1] \\to M$ such that there exists an $\\epsilon >0$ such that $\\g$ is constant in $[0,\\e] \\cup [1-\\e,1]$; in the terminology of [@CP], this can be abbreviated by saying that each end point of $\\g$ has a sitting instant. Given a 1-path $\\g$, define the source and target of $\\g$ as $\\sigma(\\g)=\\g(0)$ and $\\tau(\\g)=\\g(1)$, respectively.\n:::\n\nGiven two 1-paths $\\g$ and $\\f$ with $\\tau(\\g)=\\sigma(\\f)$, their concatenation $\\g\\f$ is defined in the usual way: $$(\\g\\f)(t)=\\left \\{ \\begin{CD} \\g(2t), \\textrm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Tracks",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-2-tracks.md",
+      "narrative": null,
+      "content": "[]{#2-Tracks label=\"2-Tracks\"}\n\n::: Definition\n[]{#thin2 label=\"thin2\"}\n\nTwo 2-paths $\\G$ and $\\G'$ are said to be rank-2 homotopic (and we write $\\G\\cong_2 \\G'$) if there exists a smooth map ${J}\\colon [0,1]^2 \\times [0,1] \\to M$ such that:\n\n1.  $J(t,s,0)=\\G(t,s),\\, J(t,s,1)=\\G'(t,s)$ for $s,t\\in [0,1]$.\n\n2.  ${J}$ is constant over $\\{0\\} \\times [0,1]^2$ and $\\{1\\} \\times [0,1]^2$.\n\n3.  Over $[0,1] \\times \\{0\\} \\times [0,1]$ the map ${J} \\colon [0,1]^2 \\times [0,1] \\to M$ restricts to a rank-1 homotopy $\\d_d(\\G) \\to \\d_d(\\G')$.\n\n4.  ${J}$ restricts to a rank-1 homotopy $\\d_u(\\G) \\to \\d_u(\\G')",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Horizontal and vertical compositions of 2-tracks",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-horizontal-and-vertical-compositions-of-2-tracks.md",
+      "narrative": null,
+      "content": "[]{#HVC label=\"HVC\"}\n\nNote that the horizontal composition of 2-paths descends immediately to a horizontal composition in $\\S_2(M)$. Suppose that $\\G$ and $\\G'$ are 2-paths with $\\d_u(\\G)\\cong_1 \\d_d(\\G')$. Choose a rank-1 homotopy ${J}$ connecting $\\d_u(\\G)$ and $\\d_d(\\G')$. Then $[\\G]\\circ_v[\\G']$ is defined as $[(\\G \\circ_v J) \\circ_v \\G'].$ The fact that this composition is well defined in $\\S_2(M)$ follows immediately from lemma [\\[MAIN\\]](#MAIN){reference-type=\"ref\" reference=\"MAIN\"} in the appendix.\n\nTherefore both the vertical and horizontal compositions of 2-paths descend to $\\S_2(M)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-definition-of-the-thin-fundamental-categorical-g.md",
+      "narrative": null,
+      "content": "[]{#TCM label=\"TCM\"}\n\nSince $\\Sc_2(M)$ is a 2-category, given a base point $*$ of $M$ (in other words an object of $\\Sc_2(M)$) we can define a monoidal category $\\Pc_2(M,*)$. The objects of $\\Pc_2(M,*)$ are given by all 1-tracks of $M$ starting and ending at $*$, and therefore by all elements of $\\pi_1^1(M,*)$. On the other hand, the set $\\P_2(M,*)$ of morphisms of $\\Pc_2(M,*)$ is given by the set of all 2-tracks $[\\G] \\in \\S_2(M)$ such that $\\d_l([\\G])=\\d_r([\\G])=*$. Therefore, given $[\\g],[\\g'] \\in \\pi_1^1(M,*)$, the set of morphisms $[\\g] \\to [\\g']$ is given by all 2-tracks $[\\G]$ connectin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The thin fundamental crossed module of a smooth manifold",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-the-thin-fundamental-crossed-module-of-a-smooth.md",
+      "narrative": null,
+      "content": "[]{#fcm label=\"fcm\"} Since $\\Pc_2(M,*)$ is a categorical group, it defines a crossed module $\\Pi_2^{2,1}(M,*)$, which we call the *thin fundamental crossed module of $M$.* Let us explain how to construct $\\Pi_2^{2,1}(M,*)$ directly. Define a group $\\pi_2^{2,1}(M,*)$ as being given by $$\\pi_2^{2,1}(M,*)=\\left \\{[\\G] \\in \\P_2(M,*) \\colon \\d_d({[\\G]})=[*]\\right \\}$$ with the product law being the horizontal composition. Note that the map $\\d \\doteq \\d_u \\colon \\pi_2^{2,1}(M,*)\\to \\pi_1^1(M,*)$ is therefore a group morphism. In addition $\\pi_1^1(M,*)$ acts on $\\pi_2^{2,1}(M,*)$ on the left as foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two exact sequences",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-two-exact-sequences.md",
+      "narrative": null,
+      "content": "[]{#2es label=\"2es\"} This subsection is not necessary to understand the rest of the article.\n\n::: Definition\nLet $M$ be a smooth manifold. Let $* \\in M$. The group $\\pi_2^2(M,*)$ is given by all 2-paths $\\G \\in S_2(M)$ such that $\\G(\\d([0,1]^2))=\\{*\\}$, up to the equivalence relation given by $\\G \\cong \\G'$ if there exists a rank-2 homotopy ${J\\colon [0,1]^2\\times [0,1] \\to M}$, connecting $\\G$ and $\\G'$, such that, in addition, $J\\left ((\\d ([0,1]^2) \\times I\\right)=\\{*\\}$. The group law is taken to be the horizontal composition.\n:::\n\nFor more details see [@MP].\n\n::: Theorem\nLet $M$ be a smoo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-dimensional holonomies",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-two-dimensional-holonomies.md",
+      "narrative": null,
+      "content": "Two-dimensional holonomies",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical connections",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-016-categorical-connections.md",
+      "narrative": null,
+      "content": "::: Definition\nLet $G$ be a Lie group. Let $M$ be a smooth manifold. Let $P \\to M$ be a smooth principal bundle with structure group $G$. Denote the right action of $G$ on $P$ as $g \\in G\\mapsto {R_g} \\in \\diff(M)$. Let also ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, where $\\tr$ is a Lie group left action of $G$ on $E$ by automorphisms. Let also ${\\mathfrak{G}=(\\d \\colon \\le \\to  \\lg,\\tr )}$ be the associated differential crossed module. A $\\Gc$-categorical connection on $P$ is a pair $(\\w,m)$, where $\\w$ is a connection 1-form on $P$, i.e. $\\w\\in \\A^1(P,\\lg)$ is a $1$-form on $P$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-curvature 3-form of a G-categorical connection",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-the-2-curvature-3-form-of-a-g-categorical-connec.md",
+      "narrative": null,
+      "content": "Recall the definition of the curvature 2-form $\\W$ of a connection 1-form $\\w$ as the covariant exterior derivative of the 1-form $\\w$.\n\n::: Definition\nLet ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, and let $P \\to  M$ be a smooth principal $G$-bundle. The 2-curvature 3-form of a $\\Gc$-categorical connection $(\\w,m)$ on $P$ is defined as $$\\M=d m\\circ(H \\times H \\times H).$$ In other words: $$\\M(A,B,C)=dm(A^H,B^H,C^H),$$ where $A,B,C \\in \\X(P)$ are smooth vector fields on $P$.\n:::",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic preliminaries",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-018-algebraic-preliminaries.md",
+      "narrative": null,
+      "content": "Let $M$ be a smooth manifold. Consider a differential crossed module ${\\mathfrak{G}=(\\d\\colon \\le \\to \\lg,\\tr)}$. In particular the map $(X,e) \\in \\lg \\times \\le  \\mapsto X \\tr e \\in \\le$ is bilinear.\n\nLet $a \\in \\A^n(M,\\lg )$ and $b \\in \\A^m(M,\\le)$ be $\\lg$- and $\\le$-valued (respectively) differential forms on $M$. We define $a \\tn^\\tr b$ as being the $\\le$-valued covariant tensor field on $M$ such that $$(a \\tn^\\tr b)(A_1,\\ldots, A_n,B_1,\\ldots B_m)= a (A_1,\\ldots, A_n)\\tr b(B_1,\\ldots, B_m);A_i,B_j \\in \\X(M).$$ We also define an alternating tensor field $a \\wedge^\\tr b \\in \\A^{n+m}(M,\\le)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-structure equation",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-019-the-2-structure-equation.md",
+      "narrative": null,
+      "content": "[]{#se label=\"se\"} The following equation is an analogue of Cartan's structure equation. It will be of prime importance later.\n\n::: Proposition\nLet ${\\Gc= ( \\d\\colon E \\to  G,\\tr)}$ be a Lie crossed module. Let $P$ be a principal $G$-bundle over the manifold $M$. Let also $(\\w,m)$ be a categorical $\\Gc$-connection on $P$. We have: $\\M=dm {+}\\w\\wedge^\\tr m,$ where $\\M=D m$ is the 2-curvature $3$-form of $(\\w,m)$. In particular the 2-curvature 3-form $\\M$ is $G$-equivariant, in other words: $R_g^*(\\M)=g^{-1} \\tr \\M,$ for each $g \\in G$.\n:::\n\nThe proof of the 2-structure equation follows directly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-Bianchi identity",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-020-the-2-bianchi-identity.md",
+      "narrative": null,
+      "content": "Fix a Lie crossed module ${\\Gc= ( \\d\\colon E \\to  G,\\tr)}$. Let $P$ be a smooth principal $G$-bundle over $M$ with a connection $\\w$. Choose a $\\Gc$-categorical connection $(\\w,m)$ on $P$.\n\n::: Proposition\nLet $\\M\\in \\A^3(P,\\le)$ be the 2-curvature 3-form of $(\\w,m)$. Then the exterior covariant derivative $D \\M$ of $M$ vanishes. In other words: $$d \\M \\circ (H \\times H \\times H \\times H)=0,$$ which by lemma [\\[ext\\]](#ext){reference-type=\"ref\" reference=\"ext\"} is the same as: $$d \\M +\\w \\wedge^{\\tr} \\M=0.$$\n:::\n\n::: Proof\nLet us prove the second form of the 2-Bianchi identity. By the 2-struct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local form of a categorical connection",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-021-local-form-of-a-categorical-connection.md",
+      "narrative": null,
+      "content": "[]{#lform label=\"lform\"}\n\nLet ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be some Lie crossed module, and let ${\\mathfrak{G}=(\\d \\colon \\le \\to  \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $P \\to M$, with a categorical $\\Gc$-connection $(\\w,m)$, where, as usual, $\\w \\in \\A^1(P,\\lg)$ and $m \\in \\A^2(P,\\le)$.\n\nThe local form of the categorical $\\Gc$-connection $(\\w,m)$ is similar to the local form of a connection. Let $\\{U_\\a\\}$ be an open covering of the manifold $M$. We can suppose that each $U_\\a$ is contractible and that, for each",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical holonomy",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-022-categorical-holonomy.md",
+      "narrative": null,
+      "content": "Categorical holonomy",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of a holonomy.",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-023-definition-of-a-holonomy.md",
+      "narrative": null,
+      "content": "The following definition appears in [@CP].\n\n::: Definition\nLet $M$ and $N$ be smooth manifolds. Suppose that $M$ has a chosen base point $*$. A map $F \\colon \\pi_1^1(M,*) \\to N$ is said to be smooth if, for any $2$-path $\\G\\colon [0,1]^2 \\to M,$ with $\\d_l(\\G)=\\d_r(\\G)=*$, the map $$s \\in [0,1] \\mapsto F([\\g_s])\\in N$$ is smooth. Here $\\G(t,s)=\\g_s(t)$, where $s,t \\in [0,1]$.\n\nLet $G$ be a Lie group. A holonomy is, by definition, a smooth group morphism $\\pi_1^1(M,*) \\to G$.\n:::\n\nThe following result appears in [@CP].\n\n::: Theorem\n[]{#E label=\"E\"} Let $M$ be a smooth manifold with a base point",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of a categorical holonomy",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-024-definition-of-a-categorical-holonomy.md",
+      "narrative": null,
+      "content": "::: Definition\n[]{#K label=\"K\"} Let $M$ be a manifold. A smooth map $J \\colon[0,1]^3\\to M$, say $J(t,s,x)=\\G^x(t,s)=\\g^x_s(t),$ where $t,s,x \\in [0,1]$, is said to be a 3-path if:\n\n1.  $J$ is constant over $\\{0\\} \\times [0,1]^2$ and over $\\{1\\} \\times [0,1]^2$.\n\n2.  $J$ restricts to a rank-1 homotopy (connecting $\\g^0_0$ with $\\g^1_0$) over $[0,1] \\times \\{0\\} \\times [0,1]$ and over $[0,1] \\times \\{1\\} \\times [0,1]$ (connecting $\\g^0_1$ with $\\g^1_1$).\n\n3.  $J$ has a product structure close to the boundary of $[0,1]^3$; see definition [\\[thin2\\]](#thin2){reference-type=\"ref\" reference=\"thin2\"}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical connections and categorical connection holonomies",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-025-categorical-connections-and-categorical-connecti.md",
+      "narrative": null,
+      "content": "[]{#ccch label=\"ccch\"} The aim of this subsection is to prove the following main theorem.\n\n::: Theorem\n[]{#FFF label=\"FFF\"} Let $G$ be a Lie group. Let $M$ be a smooth manifold. Let also $P \\to M$ be a smooth principal fibre bundle with structure group $G$. Let ${\\Gc= ( \\d\\colon E \\to  G,\\tr)}$ be a Lie crossed module. A $\\Gc$-categorical connection $(\\w,m)$ on $P$ together with an element $u\\in P_*$, the fibre of $P$ over $*\\in M$, determines a categorical holonomy $F_{(\\w,m,u)}\\colon \\Pc_2(M,*) \\to \\C(\\Gc)$, which we call a categorical connection holonomy, since it arises from a categorical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining a categorical holonomy from a categorical connection",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-026-defining-a-categorical-holonomy-from-a-categoric.md",
+      "narrative": null,
+      "content": "[]{#dchcc label=\"dchcc\"} Consider a base point $*\\in M$. Choose also $u \\in P_*$, the fibre of $P$ at $*$. To describe $F_{(\\w,m,u)}$ on the set $\\pi_1^1(M,*)$ of objects of $\\Pc_2(M,*)$, we use theorem [\\[E\\]](#E){reference-type=\"ref\" reference=\"E\"}. Therefore we define: $$F_{(\\w,m,u)}^1([\\g])=F_{(\\w,u)}^{{1}}([\\g]), \\textrm{ where } [\\g] \\in \\pi_1^1(M,*).$$\n\nLet now $\\G$ be a 2-path in $M$ with $\\d_l(\\G)=\\d_r(\\G)=*$. Let $\\g_s(t)=\\G(t,s); s,t \\in [0,1]$. To define $F^2_{(\\w,m,u)}$, consider the smooth function $s \\in [0,1] \\mapsto e_\\G(s)\\in E$, which solves the following differential equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/lem-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[\\[WKL\\]](#WKL",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "lem-sec-028-01.md",
+      "narrative": null,
+      "content": "{reference-type=\"ref\" reference=\"WKL\"}) leads to: $$\\begin{gathered} \\frac{d }{ d x} e_{\\G^x} =e_{\\G^x} \\int_0^1 \\int_{0}^{1} \\frac{\\d }{ \\d x} \\left (m \\left (\\t{\\frac{\\d}{\\d t}\\g^x_s(t)},\\t{\\frac{\\d}{\\d s}\\g^x_s(t)} \\right) _{{\\mathcal{H}}_\\w(\\g_{s} ^x,t,u_x) } \\right) dt ds\\\\ {-} e_{\\G^x} \\int_0^1 d \\theta\\left( \\frac{\\d }{ \\d x} e_{\\G^x}(s) , \\frac{\\d }{ \\d s} e_{\\G^x}(s) \\right) ds. \\end{gathered}$$ Let $$\\begin{aligned} A_x&=\\int_0^1 \\int_{0}^{1} \\frac{\\d }{ \\d x} \\left ( m \\left (\\t{\\frac{\\d}{\\d t}\\g^x_s(t)},\\t{\\frac{\\d}{\\d s}\\g^x_s(t)} \\right) _{{\\mathcal{H}}_\\w(\\g_{s} ^x,t,u_x) } \\rig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A well-known lemma",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-027-a-well-known-lemma.md",
+      "narrative": null,
+      "content": "[]{#wkl label=\"wkl\"} Let $G$ be a Lie group. Consider a $\\lg$-valued smooth function $V(s,x)$ defined on $[0,1]^2$. Consider the following differential equation in $G$: $$\\frac{\\d}{\\d s} a(s,x)=a(s,x)V(s,x),$$ with initial condition $a(0,x)=1_G, \\forall x \\in [0,1]$. We want to know $\\frac{\\d}{\\d x} a(s,x)$.\n\nLet $\\theta$ be the canonical $\\lg$-valued $1$-form on $G$. Thus $\\theta$ is left invariant and satisfies $\\theta(A)=A, \\forall A \\in \\lg$, being defined uniquely by these properties. Also $$\\label{AAA}\nd \\theta(A,B)=- \\theta ([A,B]),$$ where $A,B \\in \\lg$. We have: $$\\frac{\\d }{ \\d x} \\t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "../sections/sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo.md",
+      "narrative": null,
+      "content": "The discussion in this subsection will be very similar to that of [\\[BBB\\]](#BBB){reference-type=\"ref\" reference=\"BBB\"}. We want to prove an analogue of lemma [\\[EEE\\]](#EEE){reference-type=\"ref\" reference=\"EEE\"} for the surface holonomy of a family of 2-paths $\\G^x$.\n\nConsider a smooth map $J\\colon [0,1]^3 \\to M$, where $J(t,s,x)=\\G^x(t,s); \\forall t,s,x \\in [0,1]$. Given $x,s \\in [0,1]$, a smooth curve $\\g^x_s\\colon [0,1] \\to M$ is defined as $\\g^x_s(t)=J(t,s,x)$, where $t,s,x \\in [0,1]$. Suppose that, for each $x \\in [0,1]$, there exists $q(x) \\in M$ such that $J(0,s,x)=J(1,s,x)=q(x)$ for e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Re-scaling",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-029-re-scaling.md",
+      "narrative": null,
+      "content": "Let $\\G$ be a 2-path in $M$ such that $\\d_l(\\G)=\\d_r(\\G)=*$. As usual put $\\G(t,s)=\\g_s(t); s,t \\in [0,1]$. Consider a smooth map $f \\colon [a,b] \\to [0,1]$, where $-\\infty < a <b <+\\infty$. We suppose that $f(a)=0$ and $f(b)=1$. Let $\\G'(s,t)=\\g'_s(t)$ be such that $\\g'_s(t)=\\g_{f(s)}(t)$, where $s \\in [a,b]$ and $t \\in [0,1]$. Even though $\\G'$ is not a 2-path, for its domain is $[0,1]\\times [a,b]$, the elements $g_{\\g'_s}\\in E$ and $e_{\\G'}(s)\\in E$, where $s \\in [a,b]$, defined in [\\[dchcc\\]](#dchcc){reference-type=\"ref\" reference=\"dchcc\"}, still make sense.\n\n::: Lemma\n[]{#rescaling label=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verification of the axioms for a categorical holonomy",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-030-verification-of-the-axioms-for-a-categorical-hol.md",
+      "narrative": null,
+      "content": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module and let ${\\mathfrak{G}=(\\d \\colon \\le \\to  \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ with a base point $*$, a principal $G$-bundle $P$ over $M$ and an element $u\\in P_*$, the fibre of $P$ over $*$. Consider a categorical connection $(\\w,m)$ on $P$. Let us prove that the assignments $$[\\g] \\in \\pi_1^1(M,*) \\mapsto F^1_{(\\w,u)}([\\g]) \\in G$$ and $$[\\G] \\in \\P_2(M,*) \\mapsto  F^2_{(\\w,m,u)}([\\G])  \\in G \\ltimes E,$$ defined in [\\[dchcc\\]](#dchcc){reference-type=\"ref\" reference=\"dchcc\"}, yield a c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Bundles",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-031-2-bundles.md",
+      "narrative": null,
+      "content": "[]{#2bundles label=\"2bundles\"}\n\nLet ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Let the associated differential crossed module be ${\\mathfrak{G}=(\\d \\colon \\le \\to  \\lg,\\tr )}$. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $\\pi\\colon P \\to M$.\n\nA natural weakening of the notion of a categorical connection $(\\w,m)$ in $P$ is to consider $m$ to be only locally defined on $P$, but so that $\\d(m_i)=\\W$, for any $i$. Here $m_i \\in \\A^2(P_i,\\le)$, where $P_i=\\pi^{-1}(U_i)$ and $\\{U_i\\}$ is an open cover of $P$. This can be done by using the general theory of 2-bundles [@BS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wilson Spheres",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-032-wilson-spheres.md",
+      "narrative": null,
+      "content": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, and let ${\\mathfrak{G}=(\\d \\colon \\le \\to  \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $P \\to M$, with a connection $\\w \\in \\A^1(P,\\lg)$, as well as a $\\Gc$-categorical connection $(\\w,m)$. The aim of this subsection is to define the categorical holonomy of a 2-sphere $\\Sigma$ embedded in $M$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-033-the-dependence-of-a-categorical-connection-holon.md",
+      "narrative": null,
+      "content": "Choose $u,v \\in P$. We want to relate $F_{(\\w,m,u)}$ with $F_{(\\w,m,v)}$. Suppose first that $u,v$ each belong to the fibre $P_x$ of $P$ at a certain point $x\\in M$. Let $g\\in G$ be the unique element such that $u=vg$. Let $\\g$ be a 1-path of $M$ starting and ending at $x$. Then ${\\mathcal{H}}_\\w(\\g,1,u)={\\mathcal{H}}_\\w(\\g,1,vg)={\\mathcal{H}}_\\w(\\g,1,v)g$. Therefore since $\\mathcal{H}_\\w(\\g,1,u)F_{(\\w,u)}^1(\\g)=u$ and ${\\mathcal{H}}_\\w(\\g,1,v)F_{(\\w,v)}^1(\\g)=v$ we have the well-known formula: $$\\label{A1}F^1_{(\\w,v)}(\\g)=g F^1_{(\\w,u)}(\\g) g^{-1},$$ for $\\g$ a smooth curve starting and endin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-034-the-dependence-of-a-categorical-connection-holon.md",
+      "narrative": null,
+      "content": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Fix a smooth manifold $M$, and a smooth principal $G$-bundle $P \\to M$ with a connection $\\w \\in \\A^1(P,\\lg)$. Let $(\\w,m)$ be a $\\Gc$-categorical connection on $P$. Let $x,y\\in M$. Choose $v \\in P_y$. Let $\\n$ be a 1-path connecting $y$ with $x$. This curve $\\n$ defines a categorical group isomorphism $T_\\n\\colon \\Pc_2(M,y)  \\to  \\Pc_2(M,x)$ in the obvious way, by considering horizontal compositions. More precisely let $\\G_\\n$ be the 2-path such that $\\G_\\n(t,s)=\\n(t);\\forall s,t \\in [0,1]$. Let also $\\G_{\\n^{-1}}(t,s)=\\n^{-1}(t);\\fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Associating 2-holonomies to embedded spheres",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-035-associating-2-holonomies-to-embedded-spheres.md",
+      "narrative": null,
+      "content": "[]{#WS label=\"WS\"}\n\nLet ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Let $M$ be a smooth manifold. Consider a principal $G$-bundle $P$ over $M$ with a $\\Gc$-categorical connection $(\\w,m)$. Consider an embedded oriented 2-sphere $\\Sigma\\subset M$. We want to define the categorical holonomy of $\\Sigma$, which we call a *Wilson Sphere*, by analogy with Wilson loops, familiar in gauge theory.\n\n::: Definition\nChoose an orientation preserving parametrisation $$S^2 = {{\\rm D}}^2 / \\d {{\\rm D}}^2 \\ra{\\f} \\Sigma \\subset M$$ of $\\Sigma$. Let $*=\\f(\\d {{\\rm D}}^2) \\in \\Sigma \\subset M$. Choos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/lem-sec-036-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 46,
+      "target": "lem-sec-036-01.md",
+      "narrative": null,
+      "content": "Let f : ∂(D3) →M be a smooth map such that Rank(Dvf) ≤ 1, ∀v ∈∂(D3). Here D3 = [0, 1]3. Suppose that f is constant in a neighbourhood of each vertex of ∂(D3). In addition, suppose also that in a neighbourhood I × [−ǫ, ǫ] of each edge I of ∂(D3), f(x, t) = φ(x), where (x, t) ∈I × [−ǫ, ǫ] and φ: I →M is smooth. Then f can be extended to a smooth map F : D3 →M such that Rank(DwF) ≤2, ∀w ∈D3. Moreover we can choose F so that it has a product structure close to the boundary of D3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0710.4310v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: Technical Lemmas",
+      "pageStart": 43,
+      "pageEnd": 46,
+      "target": "../sections/sec-036-appendix-technical-lemmas.md",
+      "narrative": null,
+      "content": "Appendix: Technical Lemmas\nThe following lemmas provide the foundation for the construction of the 2-\ncategory S2(M), deﬁned for any smooth manifold M. Speciﬁcally, lemma 52 is\nused to prove that the vertical composition of 2-tracks is well deﬁned; see 1.3.3.\nLemma 51 Let M be a smooth manifold. Let f : S2 →M be a smooth map.\nConsider a handle decomposition H of M. Let Hi be the i-skeleton of H; in\nother words Hi is the handlebody made from the handles of H of index less than\nor equal to i, where i = 0, 1, . . . , dim(M). There exists an ambient isotopy of\nM, sending H to a handle decompositio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

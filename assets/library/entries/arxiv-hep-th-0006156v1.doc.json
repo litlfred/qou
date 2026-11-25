@@ -1,0 +1,1884 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0006156v1",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Recollecting the facts",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-recollecting-the-facts"
+    },
+    {
+      "level": 2,
+      "title": "Liouville formula and M\"obius-invariance",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-liouville-formula-and-mobius-invariance"
+    },
+    {
+      "level": 2,
+      "title": "Magri bracket",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-magri-bracket"
+    },
+    {
+      "level": 2,
+      "title": "Volterra model",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-volterra-model"
+    },
+    {
+      "level": 2,
+      "title": "Bi-hamiltonity",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-14-bi-hamiltonity"
+    },
+    {
+      "level": 2,
+      "title": "Quantization",
+      "number": "1.5",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-15-quantization"
+    },
+    {
+      "level": 2,
+      "title": "Proof",
+      "number": "1.6",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-16-proof"
+    },
+    {
+      "level": 2,
+      "title": "It has to do with braids",
+      "number": "1.7",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-17-it-has-to-do-with-braids"
+    },
+    {
+      "level": 2,
+      "title": "Lattice Virasoro algebra",
+      "number": "1.8",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-18-lattice-virasoro-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Difference-difference Liouville equation",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-2-difference-difference-liouville-equation"
+    },
+    {
+      "level": 2,
+      "title": "Liouville formula",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-21-liouville-formula"
+    },
+    {
+      "level": 2,
+      "title": "Discrete Liouville equation",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-22-discrete-liouville-equation"
+    },
+    {
+      "level": 2,
+      "title": "Poisson bracket",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-23-poisson-bracket"
+    },
+    {
+      "level": 1,
+      "title": "Formal quantization",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-3-formal-quantization"
+    },
+    {
+      "level": 2,
+      "title": "Algebra of observables",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-31-algebra-of-observables"
+    },
+    {
+      "level": 2,
+      "title": "Quantum lattice Liouville equation",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-32-quantum-lattice-liouville-equation"
+    },
+    {
+      "level": 2,
+      "title": "Shift and evolution operators",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-33-shift-and-evolution-operators"
+    },
+    {
+      "level": 2,
+      "title": "Odd (N) or no condition ()",
+      "number": "3.4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Chiral evolution operator",
+      "number": "3.5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-35-chiral-evolution-operator"
+    },
+    {
+      "level": 2,
+      "title": "Proof of eqn ()",
+      "number": "3.6",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Dualization",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-4-dualization"
+    },
+    {
+      "level": 2,
+      "title": "Involution",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-41-involution"
+    },
+    {
+      "level": 2,
+      "title": "Change of function $\\epsilon$",
+      "number": "4.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Unitarity",
+      "number": "4.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-43-unitarity"
+    },
+    {
+      "level": 2,
+      "title": "Dual Liouville equation",
+      "number": "4.4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-44-dual-liouville-equation"
+    },
+    {
+      "level": 2,
+      "title": "Baxter equation",
+      "number": "4.5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-45-baxter-equation"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and comments",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-5-conclusions-and-comments"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: the non-compact quantum dilogarithm",
+      "number": "6",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-6-appendix-the-non-compact-quantum-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Functional relations",
+      "number": "6.1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-61-functional-relations"
+    },
+    {
+      "level": 2,
+      "title": "Analytic properties",
+      "number": "6.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-62-analytic-properties"
+    },
+    {
+      "level": 2,
+      "title": "Integral Ramanujan identity",
+      "number": "6.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-63-integral-ramanujan-identity"
+    },
+    {
+      "level": 2,
+      "title": "Fourier transformation of the QDL",
+      "number": "6.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-64-fourier-transformation-of-the-qdl"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the Pentagon identity",
+      "number": "6.5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-65-proof-of-the-pentagon-identity"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrete liouville",
+          "heading": false
+        },
+        {
+          "term": "quantum discrete",
+          "heading": false
+        },
+        {
+          "term": "chanical",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0006156v1 20 Jun 2000 STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE THEORY. I: ALGEBRAIC APPROACH AND DUALITY L.D. FADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV Abstract. The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential ﬁelds related",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006156v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 631,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "liouville equation",
+          "heading": false
+        },
+        {
+          "term": "blz",
+          "heading": false
+        },
+        {
+          "term": "tau theta",
+          "heading": false
+        },
+        {
+          "term": "takhtajan",
+          "heading": false
+        },
+        {
+          "term": "indispensable",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "couplings",
+          "heading": false
+        }
+      ],
+      "extract": "The Liouville equation[@liouville] $$\\label{liouville} \\phi_{tt} -\\phi_{xx}-4e^{-2\\phi}=0$$ has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays the indispensable role in uniformization theory of Riemannian surfaces [@poinc] (for some recent approach see [@takhtajan; @takhtajan1; @takhtajan2]). In modern physics the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-recollecting-the-facts",
+      "number": "1",
+      "title": "Recollecting the facts",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we remind in appropriate form some facts about the Liouville model and the technique of its discretization.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-liouville-formula-and-mobius-invariance",
+      "number": "1.1",
+      "title": "Liouville formula and M\"obius-invariance",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "qquad beta",
+          "heading": false
+        },
+        {
+          "term": "chiral halves",
+          "heading": false
+        },
+        {
+          "term": "x-t",
+          "heading": false
+        },
+        {
+          "term": "triangleleft",
+          "heading": false
+        },
+        {
+          "term": "liouville",
+          "heading": true
+        },
+        {
+          "term": "textstyle",
+          "heading": false
+        }
+      ],
+      "extract": "Liouville formula makes solutions, all of them in fact, from pairs of arbitrary functions of one variable \"moving\" in light-cone directions $$\\label{lf} -e^{-2\\phi(x,t)}=\\frac{\\alpha'(x-t)\\beta'(x+t)} {(\\alpha(x-t)-\\beta(x+t))^2} \\; .$$ The right hand side of eqn ([\\[lf\\]](#lf){reference-type=\"ref\" reference=\"lf\"}) is invariant under simultaneous point-wise Möbius transformations $$\\alpha\\mapsto\\alpha\\triangleleft",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-magri-bracket",
+      "number": "1.2",
+      "title": "Magri bracket",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magri bracket",
+          "heading": true
+        },
+        {
+          "term": "varphi varpi",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "tfrac",
+          "heading": false
+        },
+        {
+          "term": "x-y",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "dot",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "The canonical Poisson bracket $$\\{\\varpi(x),\\varphi(y)\\}=\\delta(x-y)$$ on the laboratory Cauchy data $$\\varphi=\\phi|_{t=0}\\qquad\\qquad \\varpi=\\phi_t|_{t=0} ,$$ together with canonical total momentum and energy $$P=\\int\\varpi\\varphi'dx\\qquad\\qquad H={\\tfrac12}\\int(\\varpi^2 +\\varphi^{\\prime2}+4e^{-2\\varphi})dx$$ gives the equations of motion in the Hamiltonian formalism: $$\\begin{aligned} \\varphi'&=\\{P,\\varphi\\} \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-volterra-model",
+      "number": "1.3",
+      "title": "Volterra model",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volterra",
+          "heading": true
+        },
+        {
+          "term": "tag ref",
+          "heading": false
+        },
+        {
+          "term": "kdv",
+          "heading": false
+        },
+        {
+          "term": "fadtak",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        }
+      ],
+      "extract": "The first such attempt [@fadtak] produced a viable lattice counterpart of the Magri bracket $$\\tag{\\ref{mb}\\('\\)}\\begin{aligned} \\{u_m,u_n\\}={\\tfrac14}\\:u_mu_n\\big((4-u_m &-u_n)(\\delta_{m+1,n}-\\delta_{m-1,n}) \\\\ &-u_{\\frac12(m+n)}(\\delta_{m+2,n} -\\delta_{m-2,n}) , \\end{aligned}$$ with $u_n\\sim1-\\Delta^2u(n\\Delta)$. In the traditional difference-differential scheme of things it has to do with Volterra's venerable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-bi-hamiltonity",
+      "number": "1.4",
+      "title": "Bi-hamiltonity",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magri bracket",
+          "heading": false
+        },
+        {
+          "term": "free motion",
+          "heading": false
+        },
+        {
+          "term": "downarrow",
+          "heading": false
+        },
+        {
+          "term": "uparrow",
+          "heading": false
+        },
+        {
+          "term": "guise",
+          "heading": false
+        }
+      ],
+      "extract": "Historically, the Magri bracket brought about the notion of \"raising and lowering\" which soon became paramount for the whole Hamiltonian theory of soliton equation. In our case, one lifts $L_0$ to $$L_0^\\uparrow=\\int{\\tfrac14}\\:u^2dx$$ to turn the free motion ([\\[cr\\]](#cr){reference-type=\"ref\" reference=\"cr\"}) into the KdV equation $$\\dot u={\\tfrac12}u'''-3uu' =\\{L_0^\\uparrow,u\\} ,$$ then drops the Magri bracket to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-15-quantization",
+      "number": "1.5",
+      "title": "Quantization",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goquant",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": true
+        },
+        {
+          "term": "qquad",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "subsec",
+          "heading": false
+        },
+        {
+          "term": "hat",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:goquant label=\"subsec:goquant\"} Going quantum, bracket $_\\downarrow$ ought to become Weyl-style exchange relations $$u_mu_n=q^{2(\\delta_{m+1,n} -\\delta_{m-1,n})}u_nu_m\\;.$$ We do not want to discuss before time the nature of quantization constant $q$ or the exact degree of formality implied in what follows, but we want to be very clear about boundary conditions: the $u$'s are strictly periodic and so is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-16-proof",
+      "number": "1.6",
+      "title": "Proof",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots hat",
+          "heading": false
+        },
+        {
+          "term": "c1c",
+          "heading": false
+        },
+        {
+          "term": "subsecproof",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        },
+        {
+          "term": "gathered",
+          "heading": false
+        },
+        {
+          "term": "infty",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsecProof label=\"subsecProof\"} We just honestly start from $n=1$: $$\\begin{gathered} Q^{-1}u_1^{}Q=Q^{-1}u_1^{} b_1^{}b_2^{}b_3^{}\\ldots b_{N-1}^{}=Q^{-1} b_1^{}\\sum_{a=-\\infty}^\\infty q^{a^2+2a}u_2^a u_1^{}b_3^{}\\ldots b_{N-1}^{} \\\\ =Q^{-1}b_1^{}b_2^{}q^{-1}u_2^{-1} u_1^{}b_3^{}\\ldots b_{N-1}^{}=Q^{-1}b_1^{} b_2^{}b_3^{}u_2^{-1}u_1^{}u_3^{}b_4^{} \\ldots b_{N-1}^{}=\\cdots \\end{gathered}$$ --- every step adds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-17-it-has-to-do-with-braids",
+      "number": "1.7",
+      "title": "It has to do with braids",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qbezier",
+          "heading": false
+        },
+        {
+          "term": "picture raisebox",
+          "heading": false
+        },
+        {
+          "term": "setlength unitlength",
+          "heading": false
+        },
+        {
+          "term": "qquad raisebox",
+          "heading": false
+        },
+        {
+          "term": "begin picture",
+          "heading": false
+        },
+        {
+          "term": "end picture",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "artin",
+          "heading": false
+        }
+      ],
+      "extract": "Let us compile a list of what we know about the $b$'s. They are periodic, $b_{n+N}=b_n$, they are this \"local\" $$b_mb_n=b_nb_m\\qquad \\text{if }|m-n|\\not\\equiv1\\pmod{N} ,$$ and they satisfy \"global\" relations which closed the previous subsection $$b_1b_2\\ldots b_{N-1}=b_2b_3\\ldots b_N =\\cdots=b_Nb_{N+1}\\ldots b_{N-2}\\;.$$ Let us now consider these as defining relations and identify the emerging group. It is $B_N$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-18-lattice-virasoro-algebra",
+      "number": "1.8",
+      "title": "Lattice Virasoro algebra",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lva",
+          "heading": false
+        },
+        {
+          "term": "tag ref",
+          "heading": false
+        },
+        {
+          "term": "virasoro",
+          "heading": true
+        },
+        {
+          "term": "coup",
+          "heading": false
+        },
+        {
+          "term": "volkov97c",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:lva label=\"sec:lva\"} Now we look for a generalization of this construction by natural interpretation of the \"raising\". So, we want the lattice Virasoro algebra actually to be a group. If that is to be, the \"global\" relations ought to remain the same as in the braid group $$d_1d_2\\ldots d_{N-1}=d_2d_3\\ldots d_N =\\cdots=d_Nd_{N+1}\\ldots d_{2N-2}\\;,$$ or equivalently $$\\tag{\\ref{cr}\\(''\\)} \\hat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-difference-difference-liouville-equation",
+      "number": "2",
+      "title": "Difference-difference Liouville equation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-21-liouville-formula",
+      "number": "2.1",
+      "title": "Liouville formula",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circle put",
+          "heading": false
+        },
+        {
+          "term": "thicklines put",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "j-k",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        },
+        {
+          "term": "begin picture",
+          "heading": false
+        },
+        {
+          "term": "end picture",
+          "heading": false
+        }
+      ],
+      "extract": "For aesthetical reason alone, its difference approximation can only be $$\\begin{picture}(260,65)(-10,0)\\thicklines \\put(-10,5){\\vector(1,0){85}}\\put(80,2){\\(x\\)} \\put(0,0){\\vector(0,1){40}}\\put(-10,37){\\(t\\)} \\put(10,20){\\line(1,1){40}}\\put(53,57){\\(\\alpha\\)} \\put(10,50){\\line(1,-1){40}}\\put(0,47){\\(\\beta\\)} \\put(20,10){\\line(1,1){40}}\\put(63,47){\\(\\alpha'\\)} \\put(20,60){\\line(1,-1){40}}\\put(10,57){\\(\\beta'\\)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-discrete-liouville-equation",
+      "number": "2.2",
+      "title": "Discrete Liouville equation",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "liouville equation",
+          "heading": true
+        },
+        {
+          "term": "dfrac chi",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "cross-ratios",
+          "heading": false
+        },
+        {
+          "term": "frac",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        }
+      ],
+      "extract": "It not only ideologically justifies the chosen discretization but also helps make the following action more entertaining. In continuum, the Liouville equation may be considered as a compatibility condition for the Liouville formula overloaded with Möbius-invariance. It ought to be just the same on the lattice, so let us find out what \"equation of motion\" the $\\chi$'s might solve. We pick four of them next to each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-23-poisson-bracket",
+      "number": "2.3",
+      "title": "Poisson bracket",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qquad chi",
+          "heading": false
+        },
+        {
+          "term": "lse",
+          "heading": false
+        },
+        {
+          "term": "lle",
+          "heading": false
+        },
+        {
+          "term": "bracket",
+          "heading": true
+        }
+      ],
+      "extract": "Two rows of $\\chi$'s make perfect Cauchy data $$\\chi_{2n}=\\chi_{2n,-1}\\qquad\\qquad \\chi_{2n+1}=\\chi_{2n+1,0}\\;,$$ just in case one may directly check that the lattice canonical bracket of [@fadVol97] $$\\{\\chi_{2n\\pm1},\\chi_{2n}\\}=\\chi_{2n\\pm1} \\chi_{2n}\\qquad\\{\\chi_j,\\chi_i\\}=0 \\mbox{ if }|j-i|\\not\\equiv1\\pmod{N}$$ both a) reproduces itself as the $\\chi$'s evolve according to the lattice Liouville equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-formal-quantization",
+      "number": "3",
+      "title": "Formal quantization",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-31-algebra-of-observables",
+      "number": "3.1",
+      "title": "Algebra of observables",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi ldots",
+          "heading": false
+        },
+        {
+          "term": "goquant",
+          "heading": false
+        },
+        {
+          "term": "weyl-style",
+          "heading": false
+        }
+      ],
+      "extract": "In a virtual replay of subsection [\\[subsec:goquant\\]](#subsec:goquant){reference-type=\"ref\" reference=\"subsec:goquant\"}, we introduce a formal quantization constant $q$, replace the above lattice canonical bracket by Weyl-style exchange relations $$\\chi_{2n\\pm1}\\chi_{2n}=q^2\\chi_{2n} \\chi_{2n\\pm1}\\qquad\\chi_j\\chi_i=\\chi_i\\chi_j \\mbox{ if }|j-i|\\not\\equiv1\\pmod{2N} ,$$ opt for even $N$ and impose an additional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-32-quantum-lattice-liouville-equation",
+      "number": "3.2",
+      "title": "Quantum lattice Liouville equation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi",
+          "heading": false
+        },
+        {
+          "term": "liouville",
+          "heading": true
+        },
+        {
+          "term": "qeq",
+          "heading": false
+        }
+      ],
+      "extract": "We can only afford a Heisenberg evolution of observables, so let us again consider $\\chi_j$ as initial data ($\\chi_{2n,-1}=\\chi_{2n}$, $\\chi_{2n+1,0}=\\chi_{2n+1}$) and determine elements $\\chi_{j,k+1}$, $j+k\\equiv0\\pmod2$ step by step using a slightly \"quantized\" lattice Liouville equation $$\\label{qeq} \\chi_{j,k+1}\\chi_{j,k-1}=\\frac{q^2\\chi_{j-1,k} \\chi_{j+1,k}}{(1+q\\chi_{j-1,k}) (1+q\\chi_{j+1,k})} .$$ We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-33-shift-and-evolution-operators",
+      "number": "3.3",
+      "title": "Shift and evolution operators",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi infty",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "prod epsilon",
+          "heading": false
+        },
+        {
+          "term": "subsecproof",
+          "heading": false
+        },
+        {
+          "term": "ldots theta",
+          "heading": false
+        },
+        {
+          "term": "shevol",
+          "heading": false
+        },
+        {
+          "term": "evolution",
+          "heading": true
+        },
+        {
+          "term": "fadvol",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:shevol label=\"subsec:shevol\"} If we guessed the equation right, there must exist the \"evolution operator\", that is an element $K$ such that $$\\chi_{j,k+1}=K^{-1}\\chi_{j,k-1}K.$$ Needless to say, these relations will hold everywhere if and only if they do so for $k$ equal $0$ and $-1$ where they become $$\\begin{aligned} \\chi_{2n-1}K\\chi_{2n-1} K^{-1}&=\\frac{q^2\\chi_{2n-2}\\chi_{2n}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-35-chiral-evolution-operator",
+      "number": "3.5",
+      "title": "Chiral evolution operator",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shevol",
+          "heading": false
+        },
+        {
+          "term": "times epsilon",
+          "heading": false
+        },
+        {
+          "term": "function epsilon",
+          "heading": false
+        },
+        {
+          "term": "chi",
+          "heading": false
+        },
+        {
+          "term": "lva",
+          "heading": false
+        },
+        {
+          "term": "lse",
+          "heading": false
+        },
+        {
+          "term": "subsec",
+          "heading": false
+        },
+        {
+          "term": "quantum lattice",
+          "heading": false
+        }
+      ],
+      "extract": "We define it as $$Q=UE_1 \\; ,$$ and it indeed moves the $\\chi$'s in the right direction $$\\chi_{j,k+1}=Q^{-1}\\chi_{j+1,k}Q$$ and equals $\\sqrt{J^{-1}K}$, in the sense that $Q^2=J^{-1}K$. So, the total momentum $P$, Hamiltonian $H$ and the chiral Hamiltonian $\\frac12(H-P)$ of the original equation have finally become shift-evolution-operators $J$, $K$ and $Q$ of the quantum lattice equation, but we have yet to find",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-4-dualization",
+      "number": "4",
+      "title": "Dualization",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-41-involution",
+      "number": "4.1",
+      "title": "Involution",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "leftrightarrow tau",
+          "heading": false
+        },
+        {
+          "term": "sqrt tau",
+          "heading": false
+        },
+        {
+          "term": "chi dagger",
+          "heading": false
+        },
+        {
+          "term": "leq leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "varphi",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        },
+        {
+          "term": "tfrac",
+          "heading": false
+        }
+      ],
+      "extract": "The formal quantization of section [\\[sec:fquant\\]](#sec:fquant){reference-type=\"ref\" reference=\"sec:fquant\"} can be put in the usual framework of quantum mechanics if we assume that both the formal parameter $q$ and the generators $\\chi$ are exponentials $$q=e^{\\pi i\\tau}\\qquad\\qquad \\chi_j=e^{-2\\pi\\sqrt\\tau\\varphi_j},$$ and the new generators $\\varphi_j$ have the commutation relations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-43-unitarity",
+      "number": "4.3",
+      "title": "Unitarity",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varphi",
+          "heading": false
+        },
+        {
+          "term": "kappa",
+          "heading": false
+        },
+        {
+          "term": "fantasy",
+          "heading": false
+        },
+        {
+          "term": "mission",
+          "heading": false
+        }
+      ],
+      "extract": "Replace $\\epsilon$ by $f$ in every factor of every shift-evolution operator, all those little factors and big operators will at once become unitary but all the relations we have found them to satisfy will remain intact, for they rely only on that one and only functional equation. For instance, let us write out the so upgraded chiral evolution operator: $$Q=\\kappa^{2(N-1)} e^{\\pi i(\\varphi_1-\\varphi_2)^2} e^{\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-44-dual-liouville-equation",
+      "number": "4.4",
+      "title": "Dual Liouville equation",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi tilde",
+          "heading": false
+        },
+        {
+          "term": "qeq",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "mathcal frac",
+          "heading": false
+        },
+        {
+          "term": "tag ref",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": true
+        },
+        {
+          "term": "liouville",
+          "heading": true
+        }
+      ],
+      "extract": "Let us permute the factors in the l.h.s of the lattice Liouville equation ([\\[qeq\\]](#qeq){reference-type=\"ref\" reference=\"qeq\"}) $$\\begin{aligned} \\chi_{j,k-1}^{}\\chi_{j,k+1}^{} &=\\chi_{j,k-1}^{}\\left(\\chi_{j,k+1}^{} \\chi_{j,k-1}^{}\\right)\\chi_{j,k-1}^{-1} \\\\ &=\\chi_{j,k-1}^{}\\left(\\frac{q^2\\chi_{j-1,k} \\chi_{j+1,k}}{(1+q\\chi_{j-1,k}) (1+q\\chi_{j+1,k})}\\right)\\chi_{j,k-1}^{-1} \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-45-baxter-equation",
+      "number": "4.5",
+      "title": "Baxter equation",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda tfrac",
+          "heading": false
+        },
+        {
+          "term": "tfrac tau",
+          "heading": false
+        },
+        {
+          "term": "baxter",
+          "heading": true
+        },
+        {
+          "term": "equation",
+          "heading": true
+        }
+      ],
+      "extract": "It reads $$t_\\tau(\\lambda)Q(\\lambda)=Q(\\lambda+{\\tfrac12}) +(e^{4\\pi i\\tau\\lambda}+1)^N Q(\\lambda-{\\tfrac12}) ,$$ where $t_\\tau(\\lambda)$ and $Q(\\lambda)$ are two families of elements (of $\\mathcal A_\\tau$ and $\\mathcal B$ respectively), which all commute with each other $$[t_\\tau(\\lambda),t_\\tau(\\mu)]=[Q(\\lambda), t_\\tau(\\mu)]=[Q(\\lambda),Q(\\mu)] .$$ In this paper we do not define those families explicitly and do",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-5-conclusions-and-comments",
+      "number": "5",
+      "title": "Conclusions and comments",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blz",
+          "heading": false
+        },
+        {
+          "term": "quantum kdv",
+          "heading": false
+        },
+        {
+          "term": "baxter equations",
+          "heading": false
+        },
+        {
+          "term": "liouville model",
+          "heading": false
+        },
+        {
+          "term": "fofz",
+          "heading": false
+        },
+        {
+          "term": "gervais",
+          "heading": false
+        },
+        {
+          "term": "central charge",
+          "heading": false
+        },
+        {
+          "term": "smirnov",
+          "heading": false
+        }
+      ],
+      "extract": "We have shown, that the appropriate lattice regularization of the quantum Liouville model allows to enter the \"forbidden region\" of the Virasoro central charge $1\\le c\\le25$. The key for this is using the double family of dual quantum fields, which are not selfadjoint, but normal and adjoint to each other. The results are still rather modest, but proving the point quite persuasively. The real problem is that of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-6-appendix-the-non-compact-quantum-dilogarithm",
+      "number": "6",
+      "title": "Appendix: the non-compact quantum dilogarithm",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 113,
+      "summary": null,
+      "keywords": [],
+      "extract": "Let complex $b$ have a nonzero real part $\\Re b\\ne0$. The non-compact QDL, $e_b(z)$, $z\\in\\mathbb C$, $|\\Im z|<|\\Im c_b|$, $$c_b\\equiv i(b+b^{-1})/2,$$ is defined by the formula $$\\label{ncqdl} e_b(z)\\equiv\\exp\\left(\\frac{1}{4} \\int_{-\\infty}^{+\\infty} \\frac{e^{-2iz x}\\, dx}{\\sinh(xb) \\sinh(x/b) x}\\right),$$ where the singularity at $x=0$ is put below the contour of integration. This definition implies that $e_b(z)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-61-functional-relations",
+      "number": "6.1",
+      "title": "Functional relations",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf",
+          "heading": false
+        },
+        {
+          "term": "ncqdl",
+          "heading": false
+        },
+        {
+          "term": "heisen",
+          "heading": false
+        },
+        {
+          "term": "pent",
+          "heading": false
+        }
+      ],
+      "extract": "Function ([\\[ncqdl\\]](#ncqdl){reference-type=\"ref\" reference=\"ncqdl\"}) satisfies the 'inversion' relation $$\\label{inversion} e_b(z)e_b(-z)=e^{i\\pi z^2 -i\\pi(1+2c_b^2)/6},$$ and a pair of functional equations $$\\label{shift} e_b(z-ib^{\\pm1}/2)=(1+e^{2\\pi zb^{\\pm1} }) e_b(z+ib^{\\pm1}/2).$$ The latter equations enable us to extend the definition of the QDL to the entire complex plane. When $b$ is real or a pure phase,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-62-analytic-properties",
+      "number": "6.2",
+      "title": "Analytic properties",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ncqdl",
+          "heading": false
+        },
+        {
+          "term": "fofz",
+          "heading": false
+        },
+        {
+          "term": "entire complex",
+          "heading": false
+        },
+        {
+          "term": "ratio",
+          "heading": false
+        },
+        {
+          "term": "complex plane",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "inversion",
+          "heading": false
+        }
+      ],
+      "extract": "We can perform the integration in ([\\[ncqdl\\]](#ncqdl){reference-type=\"ref\" reference=\"ncqdl\"}) by the residue method. The result can be written as ratio of two q-exponentials $$\\label{ratio} e_b(z)= (e^{2\\pi (z+c_b)b};q^2)_\\infty/ (e^{2\\pi (z-c_b)b^{-1}};\\bar q^2)_\\infty,$$ where $$q=e^{i\\pi b^2},\\quad \\bar q=e^{-i\\pi b^{-2}},$$ thus reprpoducing definition ([\\[eq:fofz\\]](#eq:fofz){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-63-integral-ramanujan-identity",
+      "number": "6.3",
+      "title": "Integral Ramanujan identity",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "raminv",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "ramanujan",
+          "heading": true
+        },
+        {
+          "term": "inversion relation",
+          "heading": false
+        },
+        {
+          "term": "ramanujan sum",
+          "heading": false
+        },
+        {
+          "term": "mathbb frac",
+          "heading": false
+        },
+        {
+          "term": "w-c",
+          "heading": false
+        },
+        {
+          "term": "non-compact analogue",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the following Fourier integral: $$\\label{ramanint} \\Psi(u,v,w)\\equiv \\int_{\\mathbb R}\\frac{e_b(x+u)}{e_b(x+v)}e^{2\\pi iwx}\\, dx,$$ where $$\\label{restrictions1} \\Im(v+c_b)>0,\\quad\\Im(-u+c_b)>0, \\quad \\Im(v-u)<\\Im w<0.$$ Restrictions ([\\[restrictions1\\]](#restrictions1){reference-type=\"ref\" reference=\"restrictions1\"}) actually can be considerably relaxed by deforming the integration path in the complex $x$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-64-fourier-transformation-of-the-qdl",
+      "number": "6.4",
+      "title": "Fourier transformation of the QDL",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourier lefteqn",
+          "heading": false
+        },
+        {
+          "term": "lefteqn phi",
+          "heading": false
+        },
+        {
+          "term": "qdl",
+          "heading": true
+        }
+      ],
+      "extract": "Certain specializations of $\\Psi(u,v,w)$ lead to the following Fourier transformation formulas for the QDL: $$\\begin{gathered} \\label{fourier1} \\lefteqn{\\phi_+(w)\\equiv \\int_{\\mathbb R}e_b(x)e^{2\\pi i wx}\\,dx =\\Psi(0,v,w)\\vert_{v\\to-\\infty}}\\\\ =e^{2\\pi iwc_b-i\\pi(1-4c_b^2)/12}/ e_b(-w-c_b)=e^{-i\\pi w^2+i\\pi(1-4c_b^2)/12} e_b(w+c_b), \\end{gathered}$$ and $$\\begin{gathered} \\label{fourier2} \\lefteqn{\\phi_-(w)\\equiv",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-65-proof-of-the-pentagon-identity",
+      "number": "6.5",
+      "title": "Proof of the Pentagon identity",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "liouville ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "helsinki institute",
+          "heading": false
+        },
+        {
+          "term": "liouville model",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        },
+        {
+          "term": "integrable models",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "gervais",
+          "heading": false
+        },
+        {
+          "term": "coupled gravity",
+          "heading": false
+        }
+      ],
+      "extract": "tion relation (19), we equate the coeﬃcients of the operator terms e−2πixXe−2πiyP in the pentagon relation (20), the result being an integral identity: φ+(x)φ+(y)e2πixy = Z R φ+(z)φ+(x −z)φ+(y −z)eiπz2dz, where the singularities at z = x, z = y are put below, and at z = 0, above the integration path. Now, multiplying both sides of this identity by exp(−2πiyu), integrating over y, and using (32), we obtain φ+(x)eb(u",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chi frac",
+      "heading": false
+    },
+    {
+      "term": "chi qquad",
+      "heading": false
+    },
+    {
+      "term": "lattice liouville",
+      "heading": true
+    },
+    {
+      "term": "chi ldots",
+      "heading": false
+    },
+    {
+      "term": "chi infty",
+      "heading": false
+    },
+    {
+      "term": "liouville equation",
+      "heading": true
+    },
+    {
+      "term": "aligned chi",
+      "heading": false
+    },
+    {
+      "term": "chi dagger",
+      "heading": false
+    },
+    {
+      "term": "chi tilde",
+      "heading": false
+    },
+    {
+      "term": "quantum liouville",
+      "heading": true
+    },
+    {
+      "term": "chi mbox",
+      "heading": false
+    },
+    {
+      "term": "dfrac chi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 34,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0006156v1"
+  }
+}

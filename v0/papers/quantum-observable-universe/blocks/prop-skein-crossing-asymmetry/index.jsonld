@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-skein-crossing-asymmetry",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skein-crossing-asymmetry",
+  "kind": "proposition",
+  "title": "Crossing asymmetry and per-crossing Coulomb correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "tags": [
+    "skein",
+    "crossing",
+    "coulomb",
+    "asymmetry",
+    "r-matrix"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.skein_crossing_asymmetry",
+  "text": "skein-crossing-asymmetry-prop.md",
+  "leanSource": "skein-crossing-asymmetry-prop.lean",
+  "provenance": "authored"
+}

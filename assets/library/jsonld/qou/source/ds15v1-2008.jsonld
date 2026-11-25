@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ds15v1-2008",
+  "contains": [
+    "library/ds15v1-2008/sections/page-001",
+    "library/ds15v1-2008/sections/page-002",
+    "library/ds15v1-2008/sections/page-003",
+    "library/ds15v1-2008/sections/page-004",
+    "library/ds15v1-2008/sections/page-005",
+    "library/ds15v1-2008/sections/page-006",
+    "library/ds15v1-2008/sections/page-007",
+    "library/ds15v1-2008/sections/page-008",
+    "library/ds15v1-2008/sections/page-009",
+    "library/ds15v1-2008/sections/page-010",
+    "library/ds15v1-2008/sections/page-011",
+    "library/ds15v1-2008/sections/page-012",
+    "library/ds15v1-2008/sections/page-013",
+    "library/ds15v1-2008/sections/page-014",
+    "library/ds15v1-2008/sections/page-015",
+    "library/ds15v1-2008/sections/page-016",
+    "library/ds15v1-2008/sections/page-017",
+    "library/ds15v1-2008/sections/page-018",
+    "library/ds15v1-2008/sections/page-019",
+    "library/ds15v1-2008/sections/page-020",
+    "library/ds15v1-2008/sections/page-021",
+    "library/ds15v1-2008/sections/page-022",
+    "library/ds15v1-2008/sections/page-023",
+    "library/ds15v1-2008/sections/page-024",
+    "library/ds15v1-2008/sections/page-025",
+    "library/ds15v1-2008/sections/page-026",
+    "library/ds15v1-2008/sections/page-027",
+    "library/ds15v1-2008/sections/page-028",
+    "library/ds15v1-2008/sections/page-029",
+    "library/ds15v1-2008/sections/page-030",
+    "library/ds15v1-2008/sections/page-031",
+    "library/ds15v1-2008/sections/page-032",
+    "library/ds15v1-2008/sections/page-033",
+    "library/ds15v1-2008/sections/page-034",
+    "library/ds15v1-2008/sections/page-035",
+    "library/ds15v1-2008/sections/page-036",
+    "library/ds15v1-2008/sections/page-037",
+    "library/ds15v1-2008/sections/page-038",
+    "library/ds15v1-2008/sections/page-039",
+    "library/ds15v1-2008/sections/page-040",
+    "library/ds15v1-2008/sections/page-041",
+    "library/ds15v1-2008/sections/page-042",
+    "library/ds15v1-2008/sections/page-043",
+    "library/ds15v1-2008/sections/page-044",
+    "library/ds15v1-2008/sections/page-045",
+    "library/ds15v1-2008/sections/page-046",
+    "library/ds15v1-2008/sections/page-047",
+    "library/ds15v1-2008/sections/page-048",
+    "library/ds15v1-2008/sections/page-049",
+    "library/ds15v1-2008/sections/page-050",
+    "library/ds15v1-2008/sections/page-051",
+    "library/ds15v1-2008/sections/page-052",
+    "library/ds15v1-2008/sections/page-053",
+    "library/ds15v1-2008/sections/page-054",
+    "library/ds15v1-2008/sections/page-055",
+    "library/ds15v1-2008/sections/page-056",
+    "library/ds15v1-2008/sections/page-057",
+    "library/ds15v1-2008/sections/page-058",
+    "library/ds15v1-2008/sections/page-059"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of\n\n**Rogers-Ramanujan-Slater Type Identities**\n\n*James Mc Laughlin*\n\n59 pp, 59 sections.\n\n**Abstract.** In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of similar type, which were discovered after the publication of Slater’s papers, and older identities (such as those in Ramanujan’s lost notebook) which were not included in Slater’s papers. We attempt to supply the earliest known reference for each identity. Also in- cluded are identities of false theta functions, along with their relationship to Rogers- Ramanujan type identities. We also describe several ways in which pairs/larger sets of identities may be related, as well as dependence relationships between identities.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ds15v1-2008",
+    "title_source": "slug",
+    "source_file": "ds15v1-2008.pdf",
+    "source_sha256": "aef155a324c6fdf486184dfbc7b575c2ba93d754146a798740c25790a6ba80d5",
+    "pages": 59,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

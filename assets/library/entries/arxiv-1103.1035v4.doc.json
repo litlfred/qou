@@ -1,0 +1,997 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1103.1035v4",
+  "title": "arxiv-1103.1035v4",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Some Facts about DG Lie Algebras",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-some-facts-about-dg-lie-algebras"
+    },
+    {
+      "level": 1,
+      "title": "The Reduced Deligne Groupoid",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-reduced-deligne-groupoid"
+    },
+    {
+      "level": 1,
+      "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras"
+    },
+    {
+      "level": 1,
+      "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Some Facts on 2-Groupoids",
+      "number": "5",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-some-facts-on-2-groupoids"
+    },
+    {
+      "level": 1,
+      "title": "The Deligne 2-Groupoid",
+      "number": "6",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-the-deligne-2-groupoid"
+    },
+    {
+      "level": 1,
+      "title": "L Morphisms and Coalgebras",
+      "number": "7",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-l-morphisms-and-coalgebras"
+    },
+    {
+      "level": 1,
+      "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+      "number": "8",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deligne groupoids",
+          "heading": false
+        },
+        {
+          "term": "lie quasi",
+          "heading": false
+        },
+        {
+          "term": "pronilpotent case",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "quasi isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "MC ELEMENTS IN PRONILPOTENT DG LIE ALGEBRAS AMNON YEKUTIELI Abstract. Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1103.1035v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbf del",
+          "heading": false
+        },
+        {
+          "term": "groupoid mbf",
+          "heading": false
+        },
+        {
+          "term": "del mrm",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism til",
+          "heading": false
+        },
+        {
+          "term": "mrm infty",
+          "heading": false
+        },
+        {
+          "term": "opn exp",
+          "heading": false
+        },
+        {
+          "term": "deligne groupoid",
+          "heading": false
+        },
+        {
+          "term": "unbounded pronilpotent",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Int} Let $\\K$ be a field of characteristic $0$. By {\\em parameter algebra} over $\\K$ we mean a complete local noetherian commutative $\\K$-algebra $R$, with maximal ideal $\\m$, such that $R / \\m = \\K$. The important example is $R = \\K[[\\hbar]]$, the ring of formal power series in the variable $\\hbar$. Let $(R, \\m)$ be a parameter algebra, and let $\\g = \\bigoplus_{i \\in \\Z}\\, \\g^i$ be a DG (differential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-some-facts-about-dg-lie-algebras",
+      "number": "1",
+      "title": "Some Facts about DG Lie Algebras",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hot opn",
+          "heading": false
+        },
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "hot bigl",
+          "heading": false
+        },
+        {
+          "term": "otimes opn",
+          "heading": false
+        },
+        {
+          "term": "algebra hatotimes",
+          "heading": false
+        },
+        {
+          "term": "equation opn",
+          "heading": false
+        },
+        {
+          "term": "opn end",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:facts} Let $\\K$ be a field of characteristic $0$. Given $\\K$-modules $V, W$ we write $V \\otimes W$ and $\\opn{Hom}(V, W)$ instead of $V \\otimes_{\\K} W$ and $\\opn{Hom}_{\\K}(V, W)$, respectively. \\begin{dfn} By {\\em parameter algebra} over $\\K$ we mean a complete noetherian local commutative $\\K$-algebra $R$, with maximal ideal $\\m$, such that $R / \\m = \\K$. We call $\\m$ a {\\em parameter ideal}. \\end{dfn}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-reduced-deligne-groupoid",
+      "number": "2",
+      "title": "The Reduced Deligne Groupoid",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "mbf del",
+          "heading": false
+        },
+        {
+          "term": "hatotimes bigr",
+          "heading": false
+        },
+        {
+          "term": "deligne groupoid",
+          "heading": true
+        },
+        {
+          "term": "eta mbf",
+          "heading": false
+        },
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "group opn",
+          "heading": false
+        },
+        {
+          "term": "exp bigl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:red-del} As before, $\\K$ is a field of characteristic $0$, $(R, \\m)$ is a parameter algebra over $\\K$, and $\\g = \\boplus_{i \\in \\Z} \\g^i$ is a DG Lie algebra over $\\K$. Let us write \\begin{equation} \\label{eqn:44} \\opn{MC}(\\g, R) := \\opn{MC}(R \\hatotimes \\g) \\end{equation} and \\begin{equation} \\label{eqn:45} \\opn{G}(\\g, R) := \\exp(\\m \\hatotimes \\g^0) . \\end{equation} Given $\\om, \\om' \\in \\opn{MC}(\\g, R)$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras",
+      "number": "3",
+      "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "del mrm",
+          "heading": false
+        },
+        {
+          "term": "opn cur",
+          "heading": false
+        },
+        {
+          "term": "otimes mrm",
+          "heading": false
+        },
+        {
+          "term": "bar chi",
+          "heading": false
+        },
+        {
+          "term": "mbf del",
+          "heading": false
+        },
+        {
+          "term": "homomorphism mrm",
+          "heading": false
+        },
+        {
+          "term": "equation opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dg-quasi-nilp} In this section we prove several lemmas that will be used in Section \\ref{sec:dg-quasi-comp}. We assume that $(R, \\m)$ is an artinian parameter algebra, but $\\m \\neq 0$. Also we have a DG Lie algebra quasi-isomorphism $\\phi : \\g \\to \\h$. Let \\[ l(R) := \\min\\, \\{ l \\in \\N \\mid \\m^{l+1} = 0 \\} , \\] and define $\\n := \\m^{l(R)}$. Thus $\\n$ is an ideal in $R$ satisfying $\\m \\n = 0$. Let $\\bar{R}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra",
+      "number": "4",
+      "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "del mrm",
+          "heading": false
+        },
+        {
+          "term": "mbf del",
+          "heading": false
+        },
+        {
+          "term": "sequence til",
+          "heading": false
+        },
+        {
+          "term": "opn ker",
+          "heading": false
+        },
+        {
+          "term": "groupoids mbf",
+          "heading": false
+        },
+        {
+          "term": "group opn",
+          "heading": false
+        },
+        {
+          "term": "hot bigr",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dg-quasi-comp} In this section we extend \\cite[Theorem 2.4]{GM} (attributed to Deligne) to the case of complete noetherian local rings and unbounded DG Lie algebras. This is Theorem \\ref{thm:2}. Let $(R, \\m)$ be a complete parameter algebra, and let $\\phi : \\g \\to \\h$ be a DG Lie algebra quasi-isomorphism. As in Section \\ref{sec:facts}, for any $j \\in \\N$ we write $R_j := R / \\m^{j+1}$ and $\\m_j := \\m /",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-some-facts-on-2-groupoids",
+      "number": "5",
+      "title": "Some Facts on 2-Groupoids",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1684,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groupoid bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym circ",
+          "heading": false
+        },
+        {
+          "term": "bsym curvearrowright",
+          "heading": false
+        },
+        {
+          "term": "morphisms bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym bigl",
+          "heading": false
+        },
+        {
+          "term": "circ twoto",
+          "heading": false
+        },
+        {
+          "term": "group bsym",
+          "heading": false
+        },
+        {
+          "term": "suppose bsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:2-grpd} Let us recall that a (strict) {\\em $2$-groupoid} $\\bsym{G}$ is a groupoid enriched in the monoidal category of groupoids. Another way of saying this is that a $2$-groupoid $\\bsym{G}$ is a $2$-category in which all $1$-morphisms and $2$-morphisms are invertible. A comprehensive review of $2$-categories and related constructions is available in \\cite[Section 1]{Ye3}. See also \\cite{Ma, Bw, Ge}. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-the-deligne-2-groupoid",
+      "number": "6",
+      "title": "The Deligne 2-Groupoid",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deligne groupoid",
+          "heading": true
+        },
+        {
+          "term": "mbf del",
+          "heading": false
+        },
+        {
+          "term": "bsym hot",
+          "heading": false
+        },
+        {
+          "term": "hot phi",
+          "heading": false
+        },
+        {
+          "term": "del mrm",
+          "heading": false
+        },
+        {
+          "term": "opn exp",
+          "heading": false
+        },
+        {
+          "term": "opn ker",
+          "heading": false
+        },
+        {
+          "term": "group opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:del-2-grpd} \\begin{dfn} A DG Lie algebra $\\g = \\bigoplus_{i \\in \\Z}\\, \\g^i$ is said to be of {\\em quantum type} if $\\g^i = 0$ for all $i < -1$. A DG Lie algebra $\\til{\\g} = \\bigoplus_{i \\in \\Z}\\, \\til{\\g}^i$ is said to be of {\\em quasi quantum type} if there exists a quantum type DG Lie algebra $\\g$, and a DG Lie algebra quasi-isomorphism $\\til{\\g} \\to \\g$. \\end{dfn} \\begin{exa} \\label{exa:102} Let $C$ be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-l-morphisms-and-coalgebras",
+      "number": "7",
+      "title": "L Morphisms and Coalgebras",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 933,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn sym",
+          "heading": false
+        },
+        {
+          "term": "cat dglie",
+          "heading": false
+        },
+        {
+          "term": "cat dgcog",
+          "heading": false
+        },
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "opn infty",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        },
+        {
+          "term": "opn ker",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:L-infty} We shall use the coalgebra approach to $\\mrm{L}_{\\infty}$ morphisms, following \\cite{Qu}, \\cite[Section 4]{Ko2}, \\cite{Hi2}, \\cite[Section 3.7]{CKTB} and \\cite[Section 3]{Ye2}. Let us denote by $\\cat{DGLie}(\\K)$ the category of DG Lie algebras over $\\K$, and by $\\cat{DGCog}(\\K)$ the category of DG unital cocommutative coalgebras over $\\K$. Note that commutativity here is in the graded (or super)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge",
+      "number": "8",
+      "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": "26",
+      "labelEnd": "31",
+      "words": 1453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "til phi",
+          "heading": false
+        },
+        {
+          "term": "opn infty",
+          "heading": false
+        },
+        {
+          "term": "til psi",
+          "heading": false
+        },
+        {
+          "term": "functor opn",
+          "heading": false
+        },
+        {
+          "term": "til end",
+          "heading": false
+        },
+        {
+          "term": "hot",
+          "heading": false
+        },
+        {
+          "term": "hatotimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:L-infty-cplt} Let $(R, \\m)$ be a parameter $\\K$-algebra, and let $\\Phi : \\g \\to \\h$ be an $\\mrm{L}_{\\infty}$ morphism between DG Lie algebras. Then $\\Phi$ extends uniquely to an $R$-multilinear $\\mrm{L}_{\\infty}$ morphism \\[ \\Phi_{R} : R \\hot \\g \\to R \\hot \\h , \\] whose $i$-th Taylor coefficient \\[ \\partial^i \\Phi_{R} : \\underset{i}{\\underbrace{(R \\hot \\g) \\times \\cdots \\times (R \\hot \\g)}} \\to R \\hot \\h",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "deformation theory",
+          "heading": false
+        },
+        {
+          "term": "hinich",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "groupoids",
+          "heading": false
+        },
+        {
+          "term": "kontsevich",
+          "heading": false
+        }
+      ],
+      "extract": "References [Bo] N. Bourbaki, “Lie Groups and Lie Algebras”, Chapters 1-3, Springer, 1989. [Bw] R. Brown, Groupoids and crossed objects in algebraic topology, Homology, Homotopy and Applications 1, No. 1 (1999), 1-78. [CKTB] A. Cattaneo, B. Keller, C. Torossian and A. Bruguières, “Déformation, Quantiﬁcation, Théorie de Lie”, Synthèses 20, SMF. [GM] W.M. Goldman and J.J. Millson, The deformation theory of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "opn mrm",
+      "heading": false
+    },
+    {
+      "term": "hot opn",
+      "heading": false
+    },
+    {
+      "term": "bsym opn",
+      "heading": false
+    },
+    {
+      "term": "circ opn",
+      "heading": false
+    },
+    {
+      "term": "opn end",
+      "heading": false
+    },
+    {
+      "term": "equation opn",
+      "heading": false
+    },
+    {
+      "term": "opn exp",
+      "heading": false
+    },
+    {
+      "term": "morphism opn",
+      "heading": false
+    },
+    {
+      "term": "otimes opn",
+      "heading": false
+    },
+    {
+      "term": "homomorphisms opn",
+      "heading": false
+    },
+    {
+      "term": "group opn",
+      "heading": false
+    },
+    {
+      "term": "element opn",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Illustration for the proof of Lemma 3.9. The diagram is commutative",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Illustration for the proof of Lemma 3.11. Some of the arrows, like g and h, belong to the groupoid Delr(−, −). Other",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1103.1035v4"
+  }
+}

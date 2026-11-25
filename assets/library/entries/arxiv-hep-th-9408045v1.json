@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9408045v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We quantize the Einstein gravity in the formalism of weak gravitational ﬁelds by using\nthe constrained Hamiltonian method.\nSpecial emphasis is given to the 2+1 spacetime\ndimensional case where a (topological) Chern-Simons term is added to the Lagrangian.\nPACS: 03.70.+k; 04.20.Fy; 11.30.-j\n(∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9408045v1  8 Aug 1994\nIF-UFRJ-21/94\nConstrained analysis\nof topologically massive gravity\nJ. Barcelos-Neto ∗and T.G. Dargam\nInstituto de F´ısica\nUniversidade Federal do Rio de Janeiro\nRJ 21945-970 - Caixa Postal 68528 - Brazil",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-i-introduction.md",
+      "narrative": null,
+      "content": "One of the ultimate goals of the quantum ﬁeld theory (QFT) is the quantization\nof gravity. It is well-known that usual rules of quantization when applied to the Einstein\nLagrangian for the gravitational ﬁeld do not lead to a ﬁnite theory in a sense that inﬁnities\ncannot be eliminated by means of regularization and renormalization procedures [1]. With\nthe advent of supersymmetry and strings [2] there was the expectation of solving all the\nproblems that the usual QFT was not able to do. Unfortunately, this does not appear to be\nthe case, unless till now. We already know that supersymmetry when a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation.md",
+      "narrative": null,
+      "content": "The Hilbert-Einstein Lagrangian reads\nL =\n1\n2κ2\n√−g R ,\n(2.1)\nwhere κ is the Einstein constant and we shall use the following ﬂat metric convention\ndiag. (+, −, . . ., −). At it was said in the introduction, we are not making here any re-\nstriction to the spacetime dimensions D.\nConsidering weak gravitational ﬁelds we take the expansion around the ﬂat space\ngeometry as\ngµν(x) = ηµν −κ hµν(x) .\n(2.2)\nIntroducing (2.2) into (2.1) and just keeping free ﬁelds we get\nL = 1\n4 ∂λhµν ∂λhµν −1\n4 ∂λhµ\nµ ∂λhν\nν + 1\n2 ∂λhλ\nµ ∂µhν\nν −1\n2 ∂λhλ\nµ ∂νhνµ ,\n(2.3)\nwhere it was considered that the metric is symme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topologically massive gravitation",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-iii-topologically-massive-gravitation.md",
+      "narrative": null,
+      "content": "When the spacetime dimension is odd, it is possible to introduce a CS term in the\nLagrangian.\nIn this section we concentrate on the 2+1 case.\nThe corresponding CS\nLagrangian reads\n7\nLCS = 1\nµ ǫλµν Γρ\nλσ\n\u0000∂µ Γσ\nρν + 2\n3 Γσ\nµξ Γξ\nνρ\n\u0001\n.\n(3.1)\nConsidering the expansion of weak gravitational ﬁelds given by (2.2) we get\nLCS = κ2\n2µ ǫλµν \u0010\n∂σhρ\nλ ∂ρ∂µhσ\nν −∂σhρ\nλ ∂σ∂µhρν\n\u0011\n.\n(3.2)\nMaking the separation of space and time components and adding the result to (2.5) the\nresult is\nL = 1\n4\n\u0000˙hij ˙hij −˙hi\ni ˙hj\nj\n\u0001\n+\n\u0000∂ihj\nj −∂jhij\u0001 ˙h0\ni + κ2\nµ ǫij \u0010\n˙hk\n0 ∂k∂i h0j\n−∂i∂k h00 ˙hk\nj −∂ihk\n0 ¨hkj + ¨hk\ni ∂kh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-iv-conclusion.md",
+      "narrative": null,
+      "content": "We have studied the quantization of the Einstein gravitational theory in the formalism\nof weak gravitational ﬁelds.\nThis is a high constrained system and we have used the\nHamiltonian Dirac method to quantize it. We have given a particular emphasis to the case\nof the spacetime dimension D=2+1 where a CS term can be added. The ﬁnal propagators\nin this case exhibit a massive (topological) pole. This result is in agreement with previous\none found in literature that use other quantization procedure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-acknowledgment.md",
+      "narrative": null,
+      "content": "This work was supported in part by Conselho Nacional de Desenvolvimento Cient´ıﬁ-\nco e Tecnol´ogico - CNPq (Brazilian Research Agency).\n14",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408045v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] See, for example, N.D. Birrel and P.C.W. Davies: Quantum ﬁelds in curved space\n(Cambridge University Press, Cambridge, 1984) and references therein.\n[2] See for example, M.B. Green, J.H. Schwarz and E.Witten, Superstring theory (Cam-\nbridge University Press, Cambridge, 1984) and references therein.\n[3] S.Deser, R. Jackiw and S. Templeton, Phys. Rev. Lett. 48 (1982) 975; Ann. Phys.\n(NY) 140 (1982) 372.\n[4] S. Deser and Z. Yang, Class. Quantum Grav.7 (1990) 1603;\n[5] P.A.M. Dirac, Can. J. Math. 2 (1950) 129; Lectures on quantum mechanics (Yeshiva\nUniversity, New York, 1964); See also A. Hans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9504111v1",
+  "title": "Discrete Heisenberg–Weyl group and modular group",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": "7",
+      "words": 1943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solitonic modes",
+          "heading": false
+        },
+        {
+          "term": "irrational",
+          "heading": false
+        },
+        {
+          "term": "algebra generated",
+          "heading": false
+        },
+        {
+          "term": "modular group",
+          "heading": false
+        },
+        {
+          "term": "discrete heisenberg-weyl",
+          "heading": false
+        },
+        {
+          "term": "duality principles",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "quantum ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9504111v1 21 Apr 1995 PDMI PREPRINT - 1/1995 Discrete Heisenberg-Weyl Group and Modular Group L. D. Faddeev St.Petersburg Branch of Steklov Mathematical Institute, Fontanka 27, St.Petersburg 191011, Russia Research Institute for Theoretical Physics, University of Helsinki, Siltavuorenpenger 20C, SF 00014 Helsinki, Finland Abstract It is shown that the generators of two discrete Heisenberg-Weyl groups",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9504111v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volkov",
+          "heading": false
+        },
+        {
+          "term": "faddeev",
+          "heading": false
+        },
+        {
+          "term": "finnish",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J.Schwinger, Proc. Nat. Acad. Sci. USA, 46, 1950, 1401. [2] L.Faddeev, A.Volkov, Phys.Lett. B 315, 1993, 311. [3] L.Faddeev, Lectures delivered at the International School of Physics ”Enrico Fermi” Varenna, Italy, 1994, hep-th/9408041. [4] A.Connes, Non-Commutative Geometry, IHES/H/93/54. [5] A. Polyakov, Gauge Fields and Strings, Harwood, 1991. [6] L.Faddeev, Lett. ZhETP 21, 1975, 141. This work was partly",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "solitonic modes",
+      "heading": false
+    },
+    {
+      "term": "irrational",
+      "heading": false
+    },
+    {
+      "term": "algebra generated",
+      "heading": false
+    },
+    {
+      "term": "schwinger",
+      "heading": false
+    },
+    {
+      "term": "volkov",
+      "heading": false
+    },
+    {
+      "term": "modular group",
+      "heading": false
+    },
+    {
+      "term": "varenna",
+      "heading": false
+    },
+    {
+      "term": "discrete heisenberg-weyl",
+      "heading": false
+    },
+    {
+      "term": "duality principles",
+      "heading": false
+    },
+    {
+      "term": "commutation relations",
+      "heading": false
+    },
+    {
+      "term": "connes",
+      "heading": false
+    },
+    {
+      "term": "faddeev",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9504111v1"
+  }
+}

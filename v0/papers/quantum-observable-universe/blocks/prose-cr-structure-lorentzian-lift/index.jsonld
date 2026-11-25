@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-cr-structure-lorentzian-lift",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:cr-structure-lorentzian-lift",
+  "kind": "prose",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-rieffel-metric-quotient-faithfulness",
+    "papers/quantum-observable-universe/blocks/ex-rieffel-quotient-temperley-lieb",
+    "papers/quantum-observable-universe/blocks/prop-gram-degeneracy-blocks-connes"
+  ],
+  "cites": [
+    "references/nurowski-trautman2002",
+    "references/lewandowski-nurowski-tafel1990",
+    "references/fefferman1976",
+    "references/lee1986",
+    "references/leibniz-clarke1717",
+    "references/earman1989",
+    "references/barbour-bertotti1982",
+    "references/rieffel1999"
+  ],
+  "text": "cr-structure-lorentzian-lift.md",
+  "provenance": "authored"
+}

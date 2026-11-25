@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-aeon-boundary-generates-chart",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:aeon-boundary-generates-chart",
+  "kind": "remark",
+  "title": "Aeon recycling: $\\Phi_1^q \\circ \\mathrm{CMB}$ lands in $\\mathrm{Bun}^{\\circ}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-cmb-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-cmb-functor",
+  "tags": [
+    "aeon",
+    "recycling-functor",
+    "cmb-functor",
+    "integrability",
+    "torsion-flow"
+  ],
+  "leanRef": "qou:QOU.AeonBoundary.AeonRecycling",
+  "text": "aeon-boundary-generates-chart.md",
+  "leanSource": "aeon-boundary-generates-chart.lean",
+  "provenance": "authored"
+}

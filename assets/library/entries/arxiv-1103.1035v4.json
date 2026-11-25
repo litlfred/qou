@@ -1,0 +1,249 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1103.1035v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:Int}\n\nLet $\\K$ be a field of characteristic $0$.\nBy {\\em parameter algebra} over $\\K$ we mean a complete\nlocal noetherian commutative $\\K$-algebra $R$, with maximal ideal $\\m$, such\nthat $R / \\m = \\K$. The important example is $R = \\K[[\\hbar]]$, the ring of \nformal power series in the variable $\\hbar$.\n\nLet $(R, \\m)$ be a parameter algebra, and let \n$\\g = \\bigoplus_{i \\in \\Z}\\, \\g^i$ be a DG\n(differential graded) Lie algebra over $\\K$.\nThere is an induced pronilpotent DG Lie algebra \n\\[ \\m \\hot \\g = \\bigoplus_{i \\in \\Z}\\, \\m \\hot \\g^i . \\]\nA solution $\\om \\in \\m \\hot \\g^1$ of the Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MC ELEMENTS IN PRONILPOTENT DG LIE ALGEBRAS\nAMNON YEKUTIELI\nAbstract. Consider a pronilpotent DG (differential graded) Lie algebra over a\nﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced\nDeligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi-\nisomorphism between two such algebras induces an equivalence between the\ncorresponding reduced Deligne groupoids. This extends the famous result of\nGoldman-Millson (attributed to Deligne) to the unbounded pronilpotent case.\nIn the second part of the paper we consider the Deligne 2-groupoid. We show",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Facts about DG Lie Algebras",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-1-some-facts-about-dg-lie-algebras.md",
+      "narrative": null,
+      "content": "\\label{sec:facts}\n\nLet $\\K$ be a field of characteristic $0$.\nGiven $\\K$-modules $V, W$ we write $V \\otimes W$ and \n$\\opn{Hom}(V, W)$ instead of $V \\otimes_{\\K} W$ and $\\opn{Hom}_{\\K}(V, W)$,\nrespectively.\n\n\\begin{dfn}\nBy {\\em parameter algebra} over $\\K$ we mean a complete noetherian local\ncommutative $\\K$-algebra $R$, with maximal ideal $\\m$, such that $R / \\m = \\K$.\nWe call $\\m$ a {\\em parameter ideal}.\n\\end{dfn}\n\nThe most important example is of course\n$R = \\K[[\\hbar]]$, where $\\hbar$ is a variable, called the deformation\nparameter.\n\nNote that $R = \\K \\oplus \\m$, so the ring $R$ can be rec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Reduced Deligne Groupoid",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-the-reduced-deligne-groupoid.md",
+      "narrative": null,
+      "content": "\\label{sec:red-del}\n\nAs before, $\\K$ is a field of characteristic $0$,\n$(R, \\m)$ is a parameter algebra over $\\K$, and \n$\\g = \\boplus_{i \\in \\Z} \\g^i$ is a DG Lie algebra over $\\K$. \n\nLet us write \n\\begin{equation} \\label{eqn:44}\n\\opn{MC}(\\g, R) := \\opn{MC}(R \\hatotimes \\g)\n\\end{equation}\nand \n\\begin{equation} \\label{eqn:45}\n\\opn{G}(\\g, R) := \\exp(\\m \\hatotimes \\g^0) .\n\\end{equation} \nGiven $\\om, \\om' \\in \\opn{MC}(\\g, R)$, let\n\\begin{equation} \\label{eqn:43}\n\\opn{G}(\\g, R)(\\om, \\om') :=\n\\{ g \\in \\opn{G}(\\g, R) \\mid \\opn{Af}(g)(\\om) = \\om' \\} .\n\\end{equation}\nAs in \\cite{GM} we define the {\\em",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras.md",
+      "narrative": null,
+      "content": "\\label{sec:dg-quasi-nilp}\n\nIn this section we prove several lemmas that will be used in Section \n\\ref{sec:dg-quasi-comp}. We assume that \n$(R, \\m)$ is an artinian parameter algebra, but $\\m \\neq 0$. Also we have a DG\nLie algebra quasi-isomorphism $\\phi : \\g \\to \\h$. \n\nLet \n\\[ l(R) := \\min\\, \\{ l \\in \\N \\mid \\m^{l+1} = 0 \\} , \\]\nand define $\\n := \\m^{l(R)}$. Thus $\\n$ is an ideal in $R$ satisfying \n$\\m \\n = 0$. Let \n$\\bar{R} := R / \\n$ and $\\bar{\\m} := \\m / \\n$. \nSo $(\\bar{R}, \\bar{\\m})$ is a parameter algebra, and there is a \ncanonical surjection $p : R \\to \\bar{R}$.\n\nOur assumption that $\\m \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra.md",
+      "narrative": null,
+      "content": "\\label{sec:dg-quasi-comp}\n\nIn this section we extend \\cite[Theorem 2.4]{GM} (attributed to Deligne) to the\ncase of complete noetherian local rings and unbounded DG Lie algebras. \nThis is Theorem \\ref{thm:2}.\n\nLet $(R, \\m)$ be a complete parameter algebra, and let\n$\\phi : \\g \\to \\h$ be a DG Lie algebra quasi-isomorphism. \nAs in Section \\ref{sec:facts}, for any $j \\in \\N$ we write \n$R_j := R / \\m^{j+1}$ and $\\m_j := \\m / \\m^{j+1}$. We denote by \n$p_j : R \\to R_j$ and $p_{j, i} : R_j \\to R_i$ the canonical projections \n(for $j \\geq i$).\nLet $\\n_j := \\m^{j} / \\m^{j + 1}$, which is an ideal in $R_j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Facts on 2-Groupoids",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-5-some-facts-on-2-groupoids.md",
+      "narrative": null,
+      "content": "\\label{sec:2-grpd}\n\nLet us recall that a (strict) {\\em $2$-groupoid} $\\bsym{G}$ is a groupoid\nenriched in the monoidal category of groupoids. Another way of saying this is\nthat a $2$-groupoid $\\bsym{G}$ is a $2$-category in which all $1$-morphisms and\n$2$-morphisms are invertible. A comprehensive review of $2$-categories and\nrelated constructions is available in \\cite[Section 1]{Ye3}. \nSee also \\cite{Ma, Bw, Ge}.\n\nWe wish to make things as explicit as possible, to make calculations\n(both in Section \\ref{sec:del-2-grpd} of this paper, and in the new\nversion of \\cite{Ye4}) easier.\nA (small stric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Deligne 2-Groupoid",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-6-the-deligne-2-groupoid.md",
+      "narrative": null,
+      "content": "\\label{sec:del-2-grpd}\n\n\\begin{dfn}\nA DG Lie algebra $\\g =  \\bigoplus_{i \\in \\Z}\\, \\g^i$ is\nsaid to be of {\\em quantum type} if $\\g^i = 0$ for all $i < -1$. \n\nA DG Lie algebra\n$\\til{\\g} =  \\bigoplus_{i \\in \\Z}\\, \\til{\\g}^i$ is said to be of\n{\\em quasi quantum type} if there exists\na quantum type DG Lie algebra $\\g$, and a DG Lie algebra quasi-isomorphism \n$\\til{\\g} \\to \\g$.\n\\end{dfn}\n\n\\begin{exa} \\label{exa:102}\nLet $C$ be a commutative $\\K$-algebra. The DG Lie algebras \n$\\mcal{T}_{\\mrm{poly}}(C)$ and $\\mcal{D}_{\\mrm{poly}}(C)$\nthat occur in deformation quantization are of quantum type (and he",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L Morphisms and Coalgebras",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-7-l-morphisms-and-coalgebras.md",
+      "narrative": null,
+      "content": "\\label{sec:L-infty}\n\nWe shall use the coalgebra approach to $\\mrm{L}_{\\infty}$ morphisms, following\n\\cite{Qu}, \\cite[Section 4]{Ko2}, \\cite{Hi2}, \\cite[Section 3.7]{CKTB} and\n\\cite[Section 3]{Ye2}. \n\nLet us denote by $\\cat{DGLie}(\\K)$ the category of DG Lie algebras over $\\K$,\nand by $\\cat{DGCog}(\\K)$ the category of DG unital cocommutative coalgebras\nover $\\K$. Note that commutativity here is in the graded (or super) sense.\nRecall that a unital coalgebra $C$ has a comultiplication \n$\\Delta : C \\to C \\ot C$,\na counit $\\ep : C \\to \\K$ and a unit $1 \\in C$. The differential $\\d$ has to be\na code",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "../sections/sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge.md",
+      "narrative": null,
+      "content": "\\label{sec:L-infty-cplt}\n\nLet $(R, \\m)$ be a parameter $\\K$-algebra, and let\n$\\Phi : \\g \\to \\h$ be an $\\mrm{L}_{\\infty}$ morphism between DG Lie algebras. \nThen $\\Phi$ extends uniquely to an $R$-multilinear $\\mrm{L}_{\\infty}$ morphism \n\\[ \\Phi_{R} : R \\hot \\g \\to R \\hot \\h , \\]\nwhose $i$-th Taylor coefficient\n\\[ \\partial^i \\Phi_{R} :\n\\underset{i}{\\underbrace{(R \\hot \\g) \\times \\cdots \\times \n(R \\hot \\g)}} \\to R \\hot \\h \\]\nis the $R$-multilinear homogeneous extension of \n$\\partial^i \\Phi$. See \\cite[Section 3]{Ye2} for more details. \n\n\\begin{dfn} \\label{dfn:6}\nLet $\\Phi : \\g \\to \\h$ be an $\\mrm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.1035v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "References\n[Bo]\nN. Bourbaki, “Lie Groups and Lie Algebras”, Chapters 1-3, Springer, 1989.\n[Bw]\nR. Brown, Groupoids and crossed objects in algebraic topology, Homology, Homotopy and\nApplications 1, No. 1 (1999), 1-78.\n[CKTB] A. Cattaneo, B. Keller, C. Torossian and A. Bruguières, “Déformation, Quantiﬁcation, Théorie\nde Lie”, Synthèses 20, SMF.\n[GM]\nW.M. Goldman and J.J. Millson, The deformation theory of representations of fundamental\ngroups of compact Kähler manifolds, Publ. Math. IHES 67 (1988), 43-96.\n[Ge]\nE. Getzler, A Darboux theorem for Hamiltonian operators in the formal calculus of vari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

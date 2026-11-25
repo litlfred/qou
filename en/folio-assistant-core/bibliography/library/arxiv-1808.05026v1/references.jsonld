@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1808.05026v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+      "dcterms:creator": [
+        "B, TYPES",
+        "D"
+      ],
+      "dcterms:issued": "D:20210722",
+      "dcterms:identifier": "https://arxiv.org/abs/1808.05026",
+      "dcterms:abstract": "For Temperley-Lieb algebras of types B and D, we construct their Gr¨obner-Shirshov bases and the corresponding standard monomials.",
+      "dcterms:source": "library/arxiv-1808.05026v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1808.05026v1"
+    }
+  ]
+}

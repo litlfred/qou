@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
+  "contains": [
+    "library/arxiv-math-ph-0105039v1/sections/sec-front-matter",
+    "library/arxiv-math-ph-0105039v1/sections/sec-000",
+    "library/arxiv-math-ph-0105039v1/sections/sec-001",
+    "library/arxiv-math-ph-0105039v1/sections/sec-002",
+    "library/arxiv-math-ph-0105039v1/sections/sec-003",
+    "library/arxiv-math-ph-0105039v1/sections/sec-004",
+    "library/arxiv-math-ph-0105039v1/sections/sec-005",
+    "library/arxiv-math-ph-0105039v1/sections/sec-006",
+    "library/arxiv-math-ph-0105039v1/sections/sec-007",
+    "library/arxiv-math-ph-0105039v1/sections/sec-008",
+    "library/arxiv-math-ph-0105039v1/sections/sec-009",
+    "library/arxiv-math-ph-0105039v1/sections/sec-010",
+    "library/arxiv-math-ph-0105039v1/sections/sec-011",
+    "library/arxiv-math-ph-0105039v1/sections/sec-012",
+    "library/arxiv-math-ph-0105039v1/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function.\n\n**Hyperbolic Structure Arising from a Knot Invariant**\n\n*Department of Physics, Graduate School of Science*\n\n31 pp, 15 sections.\n\n**Abstract.** We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s invariant, or the colored Jones invariant, and is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.\n\n**Outline.** Front matter; 1 Introduction; 2 Quantum Dilogarithm Function; 2.1 Classical Dilogarithm Function; 2.2 Quantum Dilogarithm Function and the $R$ O; 2.3 Representation; 3 Invariant of Knot and Link; 4 Asymptotic Behavior and 3-dimensional Pictur; 5 3-Dimensional Picture of the Invariant; 5.1 $R$-Operators as the Braid Operator; 5.2 Hyperbolicity Condition for Surface; 5.3 Gluing Around Ridgeline of Octahedron; 6 Example: Figure-Eight Knot; 7 Concluding Remarks; Acknowledgement",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0105039&metadataPrefix=arXiv), submitted 2001-05-28, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-ph-0105039v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0105039v1.pdf",
+    "source_sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
+    "pages": 31,
+    "arxiv": {
+      "id": "math-ph/0105039",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "28 May 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

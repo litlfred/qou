@@ -1,0 +1,673 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0804.0917v1",
+  "title": "Composition-Diamond Lemma for Modules ∗",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Composition-Diamond lemma for left ideals of a free algebra",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f"
+    },
+    {
+      "level": 1,
+      "title": "Composition-Diamond lemma for ``double-free\" modules",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-composition-diamond-lemma-for-double-free-module"
+    },
+    {
+      "level": 1,
+      "title": "Highest weight modules over sl2",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-highest-weight-modules-over-sl2"
+    },
+    {
+      "level": 1,
+      "title": "Verma module over Kac-Moody algebras",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-verma-module-over-kac-moody-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Verma module over the coefficient algebra of a free Lie conformal algebra",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-verma-module-over-the-coefficient-algebra-of-a-f"
+    },
+    {
+      "level": 1,
+      "title": "Universal enveloping module for a Sabinin algebra",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-universal-enveloping-module-for-a-sabinin-algebr"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sabinin algebra",
+          "heading": false
+        },
+        {
+          "term": "composition-diamond lemma",
+          "heading": false
+        },
+        {
+          "term": "verma module",
+          "heading": false
+        },
+        {
+          "term": "kac-moody algebra",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "obner-shirshov",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0804.0917v1 [math.RA] 6 Apr 2008 Composition-Diamond Lemma for Modules∗ Yuqun Chen, Yongshan Chen and Chanyan Zhong School of Mathematical Sciences South China Normal University Guangzhou 510631 P. R. China yqchen@scnu.edu.cn jackalshan@126.com zhongchanyan@tom.com Abstract: In this paper we give some relationships among the Gr¨obner-Shirshov bases in free associative algebras, free left modules and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0804.0917v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "composition-diamond lemma",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "mod langle",
+          "heading": false
+        },
+        {
+          "term": "verma module",
+          "heading": false
+        },
+        {
+          "term": "double-free",
+          "heading": false
+        },
+        {
+          "term": "free associative",
+          "heading": false
+        }
+      ],
+      "extract": "Composition-Diamond lemma for modules was first formulated and proved by S.-J. Kang and K.-H. Lee in [@kl1] and [@kl3]. According to their approach, a Gröbner-Shirshov basis of a cyclic module $M$ over an algebra $A$ is a pair $(S,T)$, where $S$ is the set of the defining relations of $A, \\ A=k\\langle X|S\\rangle$ and $T$ is the defining relations for the $A$-module $_A M= mod_A\\!\\langle e|T\\rangle$. Then Kang-Lee's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f",
+      "number": null,
+      "title": "Composition-Diamond lemma for left ideals of a free algebra",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "composition-diamond lemma",
+          "heading": true
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "kang-lee composition-diamond",
+          "heading": false
+        },
+        {
+          "term": "rangle module",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "ideal langle",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov pair",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a set and $``<\"$ a well order on $X^*$. Let $S\\subset k\\langle X\\rangle$ with each $s\\in S$ monic. Then $k\\langle X\\rangle S$ is the left ideal of $k\\langle X\\rangle$ generated by $S$. For left ideal $k\\langle X\\rangle S$, we define the compositions in $S$ as follows. ::: definition For any $f, \\ g\\in S$, if $w=\\overline{f}=a\\overline{g}$ for some $a\\in X^*$, then the composition of $f$ and $g$ is defined",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-composition-diamond-lemma-for-double-free-module",
+      "number": null,
+      "title": "Composition-Diamond lemma for ``double-free\" modules",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "overline prec",
+          "heading": false
+        },
+        {
+          "term": "overline succ",
+          "heading": false
+        },
+        {
+          "term": "mod langle",
+          "heading": false
+        },
+        {
+          "term": "rangle module",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "rangle free",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X,Y$ be sets and $mod_{k\\langle X\\rangle} \\langle Y\\rangle$ a free left $k\\langle X\\rangle$-module with the basis $Y$. Then $mod_{k\\langle X\\rangle} \\langle Y\\rangle=\\oplus_{y\\in Y} k\\langle X\\rangle y$ is called a \"double-free\\\" module. We now define Gröbner-Shirshov basis in $mod_{k\\langle X\\rangle} \\langle Y\\rangle$. Suppose that $<$ is a monomial order on $X^*$, $<$ a well order on $Y$ and $X^*Y=\\{uy|u\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-highest-weight-modules-over-sl2",
+      "number": null,
+      "title": "Highest weight modules over sl2",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": true
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "weight module",
+          "heading": false
+        },
+        {
+          "term": "chk",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, as an application of Lemma [\\[l2\\]](#l2){reference-type=\"ref\" reference=\"l2\"}, we re-prove that the highest weight module over $sl_2$ is irreducible (see [@book; @l]) and we show that any finite dimensional irreducible $sl_2$-module has the presentation $(**)$ as below. Let $X=\\{x, \\ y, \\ h\\}$ and $sl_2=Lie(X| S)$ a Lie algebra over a field $k$ with $chk=0$, where $$x=\\left( \\begin{array}{ll} 0 & 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-verma-module-over-kac-moody-algebras",
+      "number": null,
+      "title": "Verma module over Kac-Moody algebras",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verma module",
+          "heading": true
+        },
+        {
+          "term": "langle mathfrak",
+          "heading": false
+        },
+        {
+          "term": "leq n-l",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "mod mathcal",
+          "heading": false
+        },
+        {
+          "term": "algebra mathcal",
+          "heading": false
+        },
+        {
+          "term": "weight lambda",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we give the definitions of Kac-Moody algebra $\\mathcal {G}(A)$ and Verma module over $\\mathcal {G}(A)$. Then, by using Lemma [\\[l3.5\\]](#l3.5){reference-type=\"ref\" reference=\"l3.5\"}, we find a Gröbner-Shirshov basis for this Verma module. Let $A=(a_{ij})$ be an (integral) symmetrizable n-by-n Cartan matrix over $\\mathbb{C}$, where $\\mathbb{C}$ is the complex field. It means that $a_{ii}=2, \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-verma-module-over-the-coefficient-algebra-of-a-f",
+      "number": null,
+      "title": "Verma module over the coefficient algebra of a free Lie conformal algebra",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verma module",
+          "heading": true
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "mod langle",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "n-s",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, by using Lemma [\\[l3.5\\]](#l3.5){reference-type=\"ref\" reference=\"l3.5\"}, we find a basis of Verma module over Lie algebras of coefficients of free conformal algebras. Let $\\mathcal {B}$ be a set of symbols. Let the locality function $N: \\mathcal {B}\\times \\mathcal {B}\\rightarrow \\mathbb{Z}_+$ be a constant, i.e. $N(a,b)\\equiv N$ for any $a, \\ b\\in \\mathcal {B}$. Let $X=\\{b(n)| \\ b\\in \\mathcal {B}, \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-universal-enveloping-module-for-a-sabinin-algebr",
+      "number": null,
+      "title": "Universal enveloping module for a Sabinin algebra",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": "11",
+      "labelEnd": "16",
+      "words": 1519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "rangle vba",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "alpha langle",
+          "heading": false
+        },
+        {
+          "term": "rangle equiv",
+          "heading": false
+        },
+        {
+          "term": "sabinin algebra",
+          "heading": true
+        },
+        {
+          "term": "mod langle",
+          "heading": false
+        },
+        {
+          "term": "xab-xba sum",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we deal with the universal enveloping module for a Sabinin algebra. ::: definition *([@pe]) A vector space $V$ is called a Sabinin algebra if it is endowed with multilinear operation $\\langle;\\rangle$: for any $x_1,x_2,\\cdots,x_m,y,z\\in V$ and any $m\\geq0$, $$\\langle x_1,x_2,\\cdots,x_m;y,z\\rangle$$ satisfying the identities $$\\begin{aligned} && \\langle x_1,x_2,\\cdots,x_m;y, z\\rangle =-\\langle",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "langle rangle",
+      "heading": false
+    },
+    {
+      "term": "rangle module",
+      "heading": false
+    },
+    {
+      "term": "rangle mod",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov basis",
+      "heading": false
+    },
+    {
+      "term": "rangle free",
+      "heading": false
+    },
+    {
+      "term": "alpha langle",
+      "heading": false
+    },
+    {
+      "term": "algebra langle",
+      "heading": false
+    },
+    {
+      "term": "left langle",
+      "heading": false
+    },
+    {
+      "term": "rangle sum",
+      "heading": false
+    },
+    {
+      "term": "rangle equiv",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "subset langle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0804.0917v1"
+  }
+}

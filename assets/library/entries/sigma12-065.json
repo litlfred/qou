@@ -1,0 +1,503 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "sigma12-065",
+  "blocks": [
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nBring’s curve is the genus 4 Riemann surface with the automorphism group of maximal size, S5\n[3, 9, 10, 19]. It may be expressed as the complete intersection in P4 given by\nx1 + x2 + x3 + x4 + x5 = 0,\nx2\n1 + x2\n2 + x2\n3 + x2\n4 + x2\n5 = 0,\nx3\n1 + x3\n2 + x3\n3 + x3\n4 + x3\n5 = 0.\nHere the permutations of the coordinates xi make manifest the S5 symmetry. The curve naturally\narises in the study of the general quintic\n5Q\ni=1\n(x −xi) when this is reduced to Bring–Jerrard form\nx5 +bx+c. Just as with Klein’s curve, Bring’s curve may be studied by either plane algebraic or\nhyperbolic models.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Symmetry, Integrability and Geometry: Methods and Applications\nSIGMA 8 (2012), 065, 20 pages\nBring’s Curve: its Period Matrix\nand the Vector of Riemann Constants⋆\nHarry W. BRADEN and Timothy P. NORTHOVER\nSchool of Mathematics, Edinburgh University, Edinburgh, Scotland, UK\nE-mail: hwb@ed.ac.uk, T.P.Northover@gmail.com\nReceived June 10, 2012, in final form September 27, 2012; Published online October 02, 2012\nhttp://dx.doi.org/10.3842/SIGMA.2012.065\nAbstract.\nBring’s curve is the genus 4 Riemann surface with automorphism group of\nmaximal size, S5. Riera and Rodr´ıguez have provided the most deta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two sextics",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-two-sextics.md",
+      "narrative": null,
+      "content": "Two sextics\n2.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dye's sextic",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-dyes-sextic.md",
+      "narrative": null,
+      "content": "Let j = 1+\n√\n5\n2\n, a root of j2 = j + 1. Dye [8] introduces the plane sextic curves given by\nDλ(x, y, z) := (x + jy)6 + (x −jy)6 + (y + jz)6\n+ (y −jz)6 + (z + jx)6 + (z −jx)6 + λ\n\u0000x2 + y2 + z2\u00013 = 0.\nFor generic λ ∈C the curve has genus 10, but if λ is chosen to be −78+104j\n5\nthen the genus drops\nto 4 and the resulting curve is shown to be equivalent to Bring’s. We correspondingly define\nD(x, y, z) := D−78+104j\n5\n(x, y, z).\nThe curve D(x, y, z) has the obvious order three cyclic symmetry\nb′ : (x, y, z) 7→(y, z, x),\nas well as the less obvious order two symmetry\na′ :\n\n\nx\ny\nz\n\n7→\n\n\n−j\n1\nj2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hulek–Craig sextic",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-22-the-hulekcraig-sextic.md",
+      "narrative": null,
+      "content": "The Hulek–Craig sextic\nHulek and Craig both introduce the sextic\nC(¯x, ¯y, ¯z) := ¯x\n\u0000¯y5 + ¯z5\u0001\n+ (¯x¯y¯z)2 −¯x4¯y¯z −2(¯y¯z)3 = 0.\n(2.1)\nThis curve is also of genus 4 and admits A5 as a symmetry group2. In this case an order five\nsymmetry is obvious and we may take\nab : (¯x, ¯y, ¯z) 7→\n\u0000ζ2¯x, ζ4¯y, ¯z\n\u0001\n,\nwhere ζ = e2πi/5. There is also a corresponding order two symmetry\na :\n\n\n¯x\n¯y\n¯z\n\n7→\n\n\n1\n2\n2\n1\nζ + ζ−1\nζ2 + ζ−2\n1\nζ2 + ζ−2\nζ + ζ−1\n\n\n\n\n¯x\n¯y\n¯z\n\n.\nTogether these generate A5 again since aab =: b has order three (hence the slightly unusual\nchoice of notation for ab above).\nIn fa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Details of the Hulek-Craig curve",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-3-details-of-the-hulek-craig-curve.md",
+      "narrative": null,
+      "content": "The representation (2.1) will turn out to be the most convenient for later work so it is worth\nspending some time on its detail, particularly its desingularisation.\n2Here a bar over variables is used to distinguish them from the Dye curve, rather than to denote complex con-\njugation. Craig notes the results of Ramanujan [1, Chapter 19, Entry 10(iv), 10(vii)] entail the parameterization\n(¯x, ¯y, ¯z) =\n \n∞\nX\nn=−∞\nq(5n)2,\n∞\nX\nn=−∞\nq(5n+1)2,\n∞\nX\nn=−∞\nq(5n+2)2\n!\n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "With A =   j −i√2 + j i√2 + j −j −j  then D(Ax) = −960(9+4 √ 5)C(x) and hence D(x) = 0 ⇐⇒C(A−1x) = 0. This may be directly verified. The choice of the matrix A follows upon consideration of the conjugacy classes of automorphisms of both models (see [15] for further details). We observe that the antiholomorphic involution [¯x, ¯y, ¯z] 7→[¯x∗, ¯y∗, ¯z∗] (where ∗is complex conjugation) is a symmetry of C though it is orientation-reversing and so not a conformal auto- morphism. This involution endows C with a real structure. The fixed point set of such a real structure is either empty or the d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special points of the Hulek–Craig representation and desingularisation",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-31-special-points-of-the-hulekcraig-representati.md",
+      "narrative": null,
+      "content": "Special points of the Hulek–Craig representation and desingularisation\nThe points at infinity for the HC curve (2.1) are given by (the real points) [0, 1, 0] and [1, 0, 0],\nbut the latter is singular. In fact the singularities of the HC curve are [1, 0, 0] and [ζk, ζ2k, 1]\nfor k ∈{0, . . . , 4} so we must work out expansions nearby in order to form a properly compact\ncurve.\nFirst the infinite singularity: consider the structure near [1, 0, 0], say at points [1, y, z] for\nsmall y, z. The curve reduces to\ny5 + z5 + y2z2 −yz −2y3z3 = 0,\nso in the usual Puiseux construction we suppose z = Ayα + ·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Branched covers of P1",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-32-branched-covers-of-p1.md",
+      "narrative": null,
+      "content": "Branched covers of P1\nWe now consider the curve (2.1) as a branched cover of P1 with x as the coordinate. The affine\npart of the HC curve is obtained by setting z = 1 in (2.1) yielding\nxy5 + x + x2y2 −x4y −2y3 = 0.\n(3.2)\nThere are 5 sheets above the generic x, with branch points at 0, ∞and\n\u001aζk\n4\n\u00001674 ± 870i\n√\n15\n\u00011/5 : k ∈{0, . . . , 4}\n\u001b\n.\nThere is also a double solution at x = ζk but these are precisely the singular points similar to\n[1, 1, 1] we investigated before and after resolution the cover is regular there.\nAt x = 0 we have two preimages, one corresponding to [0, 0, 1] with an expans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Real paths on the Hulek-Craig curve",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-33-real-paths-on-the-hulek-craig-curve.md",
+      "narrative": null,
+      "content": "The real structure of the HK curve leads to real ovals. Here we shall show there is in fact one.\nWe begin by looking at portions of this oval, which we shall refer to as a ‘real path’ and then\nindicate how they join together4. The real paths in this cover will be of particular interest later\non so we will take some time to explore their nature now. We begin with the affine curve,\nfurther noting what happens at the real infinite points [0, 1, 0], [1, 0, 0]1,2 which compactify the\nreal curve.\nFirst, if the number of real roots of (3.2) considered as a polynomial in y changes then its\ndiscriminan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Riera and Rodríguez hyperbolic model",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-4-the-riera-and-rodríguez-hyperbolic-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction to H",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-41-introduction-to-h.md",
+      "narrative": null,
+      "content": "Introduction to H\nRiera and Rodr´ıguez, in [17], give Bring’s curve as a quotient, H, of the hyperbolic disc. They\nthen proceed to calculate a period matrix taking account of the symmetries of the curve.\nThe essential features of the model can be seen in Fig. 2. The surface is seen to be a 20-\ngon with edges identified as shown in the table below the figure. (We refer, for example, to\nthe identified edges 2 and 9 as 2/9.)\nThis leads to the polygon’s vertices falling into three\nequivalence classes, also annotated in the figure. Naturally, this surface has genus 4.\nFor future calculations it wil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riera and Rodríguez basis",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-42-riera-and-rodríguez-basis.md",
+      "narrative": null,
+      "content": "We start by recapitulating the hyperbolic basis of interest. Riera and Rodr´ıguez begin with a\nsimple non-canonical basis. They first define\nα1 = 1 + 2,\nα2 = 3 + 4\n(in edge traversal notation, see [16, 17]) and then act on these cycles by rotations of 2πk\n5\nto\nobtain their initial basis. So essentially\nαi = (2i −1) + (2i).\nC\nP1\nP2\nP3\nP2\nP1\nP2\nP3\nP2\nP1\nP2\nP3\nP2\nP1\nP2\nP3\nP2\nP1\nP2\nP3\nP2\nR\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\nEdge identifications\n1\n↔14\n5\n↔18\n9\n↔2\n13\n↔6\n17\n↔10\n3\n↔12\n7\n↔16\n11\n↔20\n15\n↔4\n19\n↔8\nFigure 2. Riera and Rodr´ıguez hyperbolic model, H, of Bring’s curve.\nNext the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Understanding the isomorphism f",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-43-understanding-the-isomorphism-f.md",
+      "narrative": null,
+      "content": "Understanding the isomorphism f\nWe now turn our attention to the isomorphism, f, mentioned in (4.1). Clearly there won’t be\na single isomorphism since if a is an automorphism of H and σ of an automorphism of the\nHC curve then σ ◦f ◦a will also be an isomorphism from the hyperbolic model H to the HC\nrepresentation. We will exploit this fact.\nThere are two key ingredients to our identification. First is the rotation of the entire hy-\nperbolic polygon about its centre by 2π/5 (the automorphism cd above). This automorphism\nallows us to express all twenty of the polygon’s edges in terms of just fou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riera and Rodríguez basis algebraically",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-44-riera-and-rodríguez-basis-algebraically.md",
+      "narrative": null,
+      "content": "We are now in a position to express the Riera and Rodr´ıguez basis on this branched cover.\nRecall that\nαi = (2i −1) + (2i)\nas a prescription on which edges to traverse in the hyperbolic model.\nα1\nα2\nFigure 6. α1 and α2 homology cycles for the Hulek–Craig branched cover. Graphs of subsequent αi are\nrotations of these by 2πi\n5 .\nThis becomes a specification to look up the relevant edges in Table 1, and construct a path\nthat has its main component in the specified regions (circling x = 0 and outside all finite branch\npoints enough times to reach the correct sheets). In fact, just like Riera and R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "The homology cycles α1 and α2 for the Hulek–Craig branched cover reproduce the cycles of Riera and Rodr´ıguez and their corresponding period matrix τ = τ0     −1 −1 −1 −1    , where τ0 is deﬁned by (4.3). We also note that the action on the homology basis α1,...,8 associated with the antiinvolution of the real structure is given by S′ :=             −1 −1 −1 −1 −1 −1 −1             . It is algorithmic to show that S := TS′T −1 =             −1 −1 −1 −1             , where T is the symplectic transformation (with respect to the canonical s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector of Riemann constants",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-5-vector-of-riemann-constants.md",
+      "narrative": null,
+      "content": "Vector of Riemann constants",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The vector of Riemann constants",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-51-the-vector-of-riemann-constants.md",
+      "narrative": null,
+      "content": "other quantities on the way. This vector together with Riemann’s theta function and the Abel\nmap provide a bridge between the analytic and algebraic structures of a Riemann surface C,\nand as such are critical elements in the implementation of the modern approach to integrable\nsystems.\n5.1\nThe vector of Riemann constants\nRiemann established the fundamental result,\nθ(e | τ) = 0 ⇐⇒e ≡AQ\n g−1\nX\ni=1\nPi\n!\n−KQ ∈Jac C,\nwhere θ is Riemann’s theta function, AQ is the Abel map with base point Q ∈C, τ is the\nperiod matrix, g is the genus of C, Pi ∈C and the equivalence holds in the Jacobian Jac C =\nCg/(Zg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/cor-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "cor-sec-015-03.md",
+      "narrative": null,
+      "content": "Assuming the conditions of Lemma 1 and that ψ ∈Aut(C), then R ψ(Q) Q ω is a 2N(g −1)-torsion point. Although these simple results do not necessarily give the best bound on the order of the torsion point for the vectors involved, we see that, given a suitable symmetry and fixed point, we have that KQ is a torsion point: 2KQA = nΠ [L −Id]−1 = n(M −Id)−1Π = n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "Suppose the automorphism σ has order N > 1. If L −Id is invertible and Q is a ﬁxed point of σ then KQ is a 2N-torsion point.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries and the vector of Riemann constants",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md",
+      "narrative": null,
+      "content": "Symmetries and the vector of Riemann constants\nWe now describe how symmetries may be used to restrict the vector of Riemann constants by\nrecalling some results we have established elsewhere.\nSuppose that a curve has a nontrivial group of symmetries Aut(C). Then the holomorphic\ndifferentials of the curve, H1,0(C, C), and the homology group H1(C, Z) are both Aut(C)-modules.\nLet σ ∈Aut(C) and denote the actions on these spaces by\nσ∗vj =\nX\nk\nvkLk\nj ,\nσ∗\n\u0012ai\nbi\n\u0013\n= M\n\u0012ai\nbi\n\u0013\n:=\n\u0012A\nB\nC\nD\n\u0013 \u0012ai\nbi\n\u0013\n,\nwhere L ∈GL(g, C), M ∈Sp(2g, Z) and {vi} is a (not necessarily normalized) basis of\nH1,0(C, C). Den",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "We have the map π : C →C/⟨σ⟩. Any holomorphic differential on C/⟨σ⟩pulls back to an invariant differential on C, and so the assumption that L −Id is invertible is equivalent to C/⟨σ⟩∼= P1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to Bring's curve",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-53-application-to-brings-curve.md",
+      "narrative": null,
+      "content": "For Bring’s curve we find that everything follows from study of the single (order 5) automorphism\ngiven in the Hulek–Craig representation by\nφ : [¯x, ¯y, ¯z] 7→\n\u0002\nζ2¯x, ζ4¯y, ¯z\n\u0003\n.\nThis has fixed point [0, 0, 1], or Q = (0, 0) in affine coordinates.\nThe first and easiest calculation is deriving its action on the differentials. We fix the ordered\nbasis of (unnormalized) holomorphic differentials\nv1 = (¯y3 −¯x)d¯x\n∂yC(¯x, ¯y, 1),\nv2 = (¯y2¯x −1)d¯x\n∂yC(¯x, ¯y, 1) ,\nv3 = (¯y −¯x2)d¯x\n∂yC(¯x, ¯y, 1),\nv4 = ¯y(¯x2 −¯y)d¯x\n∂yC(¯x, ¯y, 1) .\nThe construction of such holomorphic differentials is algori",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sigma12-065/blocks/rem-sec-016-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "rem-sec-016-03.md",
+      "narrative": null,
+      "content": "Klein’s curve has a unique invariant spin structure [14] and we have shown elsewhere that the vector of Riemann constants is the Abel image of this. To show the analogous result for Bring’s curve requires a better understanding of this spin-structure. Acknowledgements We are grateful to Maurice Craig for helpful email exchanges and also to an anonymous referee for careful reading and suggested improvements to the paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "For the Riera and Rodr´ıguez homology basis of Bring’s curve we have that the vector of Riemann constants is KQ = 1 \u00003 −2 −3 \u0001 + Im(τ0) \u00001 −2 −2 \u0001 i, where τ0 is deﬁned by (4.3). The transformation of theta characteristics g · (a, b) = (a, b)g−1 + 1 \u0000diag \u0000CDT \u0001 , diag \u0000ABT \u0001\u0001 for any g = \u0012 A B C D \u0013 ∈Sp(2g, Z) and characteristic (a, b) ∈Q2g together with the explicit representations of the symmetries yields",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/thm-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "thm-sec-016-02.md",
+      "narrative": null,
+      "content": "Bring’s curve has a unique invariant spin-structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sigma12-065/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[1] Berndt B.C., Ramanujan’s notebooks. Part III, Springer-Verlag, New York, 1991.\n[2] Braden H.W., Northover T.P., Klein’s curve, J. Phys. A: Math. Theor. 43 (2010), 434009, 17 pages,\narXiv:0905.4202.\n[3] Breuer T., Characters and automorphism groups of compact Riemann surfaces, London Mathematical Society\nLecture Note Series, Vol. 280, Cambridge University Press, Cambridge, 2000.\n[4] Bujalance E., Etayo J.J., Gamboa J.M., Gromadzki G., Automorphism groups of compact bordered Klein\nsurfaces. A combinatorial approach, Lecture Notes in Mathematics, Vol. 1439, Springer-Verlag, Berlin, 1990.\n[5]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

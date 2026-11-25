@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  
+
+  
+
+  <script src="../../../../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>content-graph (skill) | Quantum Observable Universe</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="content-graph (skill)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories" />
+<meta name="twitter:description" property="og:description" content="Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories" />
+<link rel="canonical" href="https://litlfred.github.io/qou/en/cat-harness/processes/skills/content-graph.html" />
+<meta property="og:url" content="https://litlfred.github.io/qou/en/cat-harness/processes/skills/content-graph.html" />
+<meta property="og:site_name" content="Quantum Observable Universe" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="content-graph (skill)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories","headline":"content-graph (skill)","url":"https://litlfred.github.io/qou/en/cat-harness/processes/skills/content-graph.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <script type="application/json" id="fa-site-scheme">{"scheme": "dark"}</script><!-- fa-first-paint:begin -->
+<script>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<style>html{background-color:#27262b}html[data-fa-scheme="light"]{background-color:#ffffff}</style>
+<!-- fa-first-paint:end --><meta name="fa-render-regions" content="1">
+<script>document.documentElement.setAttribute("data-fa-render","pending");</script><style>
+  .bpmn-figure {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    margin: 1em 0 0.4em;
+  }
+  .bpmn-figure img {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    max-width: none;
+  }
+  .bpmn-source {
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+</style><script type="application/json" id="fa-translation-meta">{
+  "lang": "en",
+  "translationStatus": "",
+  "translationSource": "",
+  "supportedLocales": ["ar","zh","en","fr","ru","es"],
+  "availableLocales": null,
+  "translationQa":{
+    "key": "page.translation",
+    "slug": "en-cat-harness-processes-skills-content-graph",
+    "src": "../../../../assets/qa/en-cat-harness-processes-skills-content-graph/page.translation.json",
+    "index": "../../../../assets/qa/en-cat-harness-processes-skills-content-graph/qa-index.json",
+    "list": "../../../../assets/qa/translation-qa-pages.json"
+  },
+  "sweep":{
+    "absent": "qou publishes no translation QA sweep on this site",
+    "run": false,
+    "sweptAt": "",
+    "totalPages": 0,
+    "pagesWithTranslations": 0,
+    "complete": false
+  },
+  "statusSrc":"../../../../assets/translation-status/index.json",
+  "reviewSrc":"../../../../assets/translation-status/review.json"
+}</script><script type="application/json" id="fa-navbar-row" data-fa-row-src="harness-data"></script><script type="application/json" id="fa-site-links">{"kg":"https://litlfred.github.io/folio-assistant/qou/","jsonld":"https://litlfred.github.io/folio-assistant/qou/qou.jsonld","source":"https://github.com/litlfred/qou"}</script><meta name="fa-site-index-src" content="../../../../assets/harness/site.json">
+<meta name="fa-todo-src" content="../../../../assets/todos/index.json"><meta name="fa-todo-graph" content="../../../../todos.jsonld"><meta name="fa-zoom-src" content="../../../../assets/semantic-zoom.json"><meta name="fa-tiles" content="" data-fa-src="harness-data">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]"><meta name="fa-baseurl" content="../../../.."><meta name="fa-staging" content=""><meta name="fa-search-index" content="">
+
+<meta name="fa-beans-src" content="../../../../assets/beans/index.json"><meta name="fa-processes-src" content="../../../../subgraph/index.jsonld"><meta name="fa-build-src" content="../../../../build.json"><link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=263225e79ed9">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=4c7265cca407"><link rel="stylesheet" href="../../../../assets/css/narrow-viewport.css?v=173ef819dbf2"><link rel="stylesheet" href="../../../../assets/css/themes.css?v=5c199f8420d3"><link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66"><link rel="stylesheet" href="../../../../assets/css/avatars.css?v=996b3ffe2ab3"><script type="application/json" id="fa-declared-kinds">["attestations","beans","code","computation-witness","folio","fsh-guts","lake-cache","lean","library","mn-chi-cache","processes","qa","references","tools","trace-cache","typologies","wheel-cache","xbot-relaxation-ckpt"]</script><script src="../../../../assets/js/harness-data.js" defer></script><script src="../../../../assets/js/kg-render.js" defer></script><script src="../../../../assets/js/navbar-row.js?v=fb3cd5c0d28c" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=cae1ad7ba8e7" defer></script><script src="../../../../assets/js/edit-links.js?v=7b072444cbb5" defer></script><script src="../../../../assets/js/translation-review.js?v=3ab638979d22" defer></script><script src="../../../../assets/js/code-highlight.js?v=0f94772226c3" defer></script><style>
+  .folio-landing { position: relative; margin: 0 0 2rem; }
+
+  /* WHAT IS LEFT HERE, AND WHY IT IS SO LITTLE.
+     `landing.html` emits exactly one folio-landing class —
+     `folio-landing folio-landing--plain` — the no-stickies fallback, which
+     renders the description and no art. The art path moved to the sticky
+     board (`fa-sticky--backdrop` in docs-ui.css), which composites text into
+     the picture through a declared `textRegion` and a scrim.
+
+     So this block used to carry fourteen selectors of which ELEVEN matched
+     nothing: every rule reaching for `folio-landing__art`,
+     `folio-landing__text` or `folio-landing--no-region`. Measured before they
+     were cut — those three classes appear in no markup in this repository and
+     on none of the 331 published pages that were inlining the CSS for them.
+     CSS has no error for a selector that matches nothing, which is the same
+     silence that let `.fa-sticky--backdrop > .fa-sticky-art` ship wrong.
+
+     The reasoning did not go with them. The blend-direction argument for the
+     fade is now at `.fa-sticky--backdrop::before`, where a scrim replaces it;
+     the region, overflow and breakpoint-parity lessons were already
+     re-derived and better stated on `.fa-landing-sticky--fixed`. What is NOT
+     carried over is the `cqw` container-query sizing: the successor scales
+     through `--fa-text-scale` rather than container queries, so a note about
+     `container-type` not being its own query container would be advice about
+     a mechanism nothing here uses. Bean `alox`, issue #873. */
+  .folio-landing--plain {
+    position: static; width: auto; height: auto; color: inherit;
+  }
+  .folio-landing--plain p { font-size: inherit; font-weight: inherit; }
+</style><style id="fa-page-ground" data-instance="cat-harness">
+  /* Grumpy cyborg agents, the theme of cat-harness. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
+
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-pinned-data" content="../../../.."></head>
+
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/processes/skills/content-graph.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#overview","label":"Overview"},{"href":"#when-to-use-this-skill","label":"When to Use This Skill"},{"href":"#prerequisites","label":"Prerequisites"},{"href":"#heuristics","label":"Heuristics","children":[{"href":"#h1--forward-references-severity-high","label":"H1 — Forward references (severity: HIGH)","depth":1},{"href":"#h2--cross-chapter-coupling-severity-medium","label":"H2 — Cross-chapter coupling (severity: MEDIUM)","depth":1},{"href":"#h3--cross-section-coupling-severity-medium","label":"H3 — Cross-section coupling (severity: MEDIUM)","depth":1},{"href":"#h4--section-too-sparse-severity-low","label":"H4 — Section too sparse (severity: LOW)","depth":1},{"href":"#h5--section-too-dense-severity-low","label":"H5 — Section too dense (severity: LOW)","depth":1},{"href":"#h6--isolated-blocks-severity-low","label":"H6 — Isolated blocks (severity: LOW)","depth":1},{"href":"#h7--remark--example-ratio-severity-info","label":"H7 — Remark / example ratio (severity: INFO)","depth":1}],"fold":"7 sub-sections"},{"href":"#lean-4-subgraph-heuristics-l1l6--process_graphdetanglement","label":"Lean 4 Subgraph Heuristics (L1..L6 — Process_GraphDetanglement)","children":[{"href":"#l1--unassigned-first-completeness-severity-critical","label":"L1 — Unassigned-first completeness (severity: CRITICAL)","depth":1},{"href":"#l2--strict-zero-qou-boundary-on-tier-a--tier-b-reservoir-libraries-severity-critical-bp008","label":"L2 — Strict zero-QOU.* boundary on Tier-A & Tier-B Reservoir libraries (severity: CRITICAL, BP008)","depth":1},{"href":"#l3--subgraph-condensation-acyclicity-severity-high","label":"L3 — Subgraph condensation acyclicity (severity: HIGH)","depth":1},{"href":"#l4--synonym-directory-anti-sprawl--open-pr-fixup-severity-critical-bp009","label":"L4 — Synonym-directory anti-sprawl & Open-PR Fixup (severity: CRITICAL, BP009)","depth":1},{"href":"#l5--7c-base-ring--empirical-wall-alignment-severity-high-bp005--bp006","label":"L5 — §7c Base-ring & empirical wall alignment (severity: HIGH, BP005 / BP006)","depth":1},{"href":"#l6--root--leanref-reachability-severity-medium","label":"L6 — Root & lean.ref reachability (severity: MEDIUM)","depth":1}],"fold":"6 sub-sections"},{"href":"#placement-principles-for-newchanged-content","label":"Placement Principles for New/Changed Content","children":[{"href":"#pr1--topical-home-chapter--canonical-lean-subgraph","label":"PR1 — Topical home chapter & canonical Lean subgraph","depth":1},{"href":"#pr2--forward-reference--upward-leak-avoidance","label":"PR2 — Forward-reference & upward-leak avoidance","depth":1},{"href":"#pr3--section-density-bounds","label":"PR3 — Section density bounds","depth":1},{"href":"#pr4--cross-chapter-dependency-direction","label":"PR4 — Cross-chapter dependency direction","depth":1},{"href":"#pr5--topic-coherent-blocks","label":"PR5 — Topic-coherent blocks","depth":1},{"href":"#pr6--table-extraction-on-creation","label":"PR6 — Table extraction on creation","depth":1},{"href":"#pr7--reorganisation-map-update","label":"PR7 — Reorganisation map update","depth":1}],"fold":"7 sub-sections"},{"href":"#placement-checklist-for-agents","label":"Placement Checklist (for agents)"},{"href":"#workflow","label":"Workflow","children":[{"href":"#step-1--parse-the-content-tree","label":"Step 1 — Parse the content tree","depth":1},{"href":"#step-2--build-the-block-graph","label":"Step 2 — Build the block graph","depth":1},{"href":"#step-3--build-the-chaptersection-graph","label":"Step 3 — Build the chapter/section graph","depth":1},{"href":"#step-4--apply-heuristics","label":"Step 4 — Apply heuristics","depth":1},{"href":"#step-5--generate-visualisations","label":"Step 5 — Generate visualisations","depth":1},{"href":"#step-6--report-findings","label":"Step 6 — Report findings","depth":1},{"href":"#step-7--interactive-suggestions","label":"Step 7 — Interactive suggestions","depth":1},{"href":"#step-8--implement-approved-moves","label":"Step 8 — Implement approved moves","depth":1}],"fold":"8 sub-sections"},{"href":"#python-cli-tools-prose--lean-kg","label":"Python CLI Tools (Prose + Lean KG)","children":[{"href":"#proposal-kinds-proposals-output","label":"Proposal kinds (–proposals output)","depth":1},{"href":"#implemented-reorganisations-tracking","label":"Implemented reorganisations (tracking)","depth":1},{"href":"#chapter-naming-convention-r5r6","label":"Chapter naming convention (R5/R6)","depth":1}],"fold":"3 sub-sections"},{"href":"#integration-with-other-skills","label":"Integration with other skills"},{"href":"#output-artefacts","label":"Output artefacts"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Quantum Observable Universe</a></nav>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../">Quantum Observable Universe</a>
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Quantum Observable Universe" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Quantum Observable Universe</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+<span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <blockquote class="note">
+  <p>The skill <code class="language-plaintext highlighter-rouge">content-graph</code> as its source file <a href="https://github.com/litlfred/qou/blob/main/skills/local/content-graph.md"><code class="language-plaintext highlighter-rouge">skills/local/content-graph.md</code></a> writes it, rendered by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> because it has no instruction page on this site — do not edit here. <a href="../index.html">All processes</a></p>
+</blockquote>
+<h1 id="content--lean-subgraph-graph--editorial--kg-organisation-skill">
+  
+  
+    <a href="#content--lean-subgraph-graph--editorial--kg-organisation-skill" class="anchor-heading" aria-labelledby="content--lean-subgraph-graph--editorial--kg-organisation-skill"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Content &amp; Lean Subgraph Graph — Editorial &amp; KG Organisation Skill
+  
+  
+</h1>
+    
+
+<p><strong>Skill <code class="language-plaintext highlighter-rouge">content-graph</code>:</strong> Editorial &amp; Lean Knowledge-Graph organisation skill — analyses (1) the prose/content block graph (<code class="language-plaintext highlighter-rouge">uses[]</code>, <code class="language-plaintext highlighter-rouge">interprets</code>, <code class="language-plaintext highlighter-rouge">proofs</code>, <code class="language-plaintext highlighter-rouge">examples</code>), (2) the chapter/section reading-order graph (<code class="language-plaintext highlighter-rouge">H1..H7</code>), and (3) the Lean 4 module &amp; Two-Tier Reservoir <code class="language-plaintext highlighter-rouge">lean_lib</code> import DAG (<code class="language-plaintext highlighter-rouge">L1..L6</code> via <code class="language-plaintext highlighter-rouge">scripts/lean-kg-detangler.py</code> and <code class="language-plaintext highlighter-rouge">scripts/lean-best-practices-lint.py</code>). Produces actionable reorganisation suggestions and implements approved moves.</p>
+
+<p><strong>Named by:</strong> <a href="../methodology-from-source.html">Adopt a methodology from a source document</a>, <a href="../translation-workflow.html">Translation Workflow</a>, <a href="../copy-into-folio.html">Copy a knowledge-graph asset into a folio</a>, <a href="../graph-detanglement.html">A sub-graph wants to leave</a>, <a href="../kg-separation-authorise.html">Authorise the extraction</a>, <a href="../kg-separation-move.html">Move the graph into its repositories</a>, <a href="../kg-separation-prepare.html">Prepare a graph to stand alone</a>, <a href="../kg-separation.html">A knowledge graph leaves for its own repositories</a>, <a href="../slice-sqlite-publish.html">Build and publish a per-slice SQLite file</a>, <a href="../sub-kg-lifecycle.html">A sub-KG is staged in place, then leaves for its own repository</a>, <a href="../ask-the-person.html">Ask the person</a>, <a href="../crdm-close.html">CRDM close-out</a>, <a href="../crdm-data-model.html">CRDM data model</a>, <a href="../crdm-deliver.html">CRDM Phase 6 — implement, MVP, acceptance</a>, <a href="../crdm-issue-linking.html">CRDM — link the work to an issue</a>, <a href="../crdm-needs.html">CRDM Phase 1 — needs</a>, <a href="../crdm-requirements-definition.html">CRDM Phases 2–4 — BPA and requirements</a>, <a href="../crdm-requirements.html">CRDM requirements</a>, <a href="../crdm-signoff.html">CRDM Phase 5 — beans and sign-off</a>, <a href="../hand-back-to-discussion.html">Hand back to the discussion</a>, <a href="../related-work.html">Related work: find, sort, summarize, ask to coordinate</a>, <a href="../secure-agent-permissions.html">Secure agent permissions</a>, <a href="../session-state-machine.html">Session state machine</a>, <a href="../wireframe-design-review.html">Wireframe design review</a>, <a href="../contributor-feedback.html">Contributor feedback on a working draft</a>, <a href="../record-agent-step.html">Record agent step</a>, <a href="../review-log-watch.html">Review-log watch</a></p>
+<h2 id="overview">
+  
+  
+    <a href="#overview" class="anchor-heading" aria-labelledby="overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Overview
+  
+  
+</h2>
+    
+
+<p>This skill analyses the <strong>full knowledge graph</strong> of the monograph at three coupled levels:</p>
+
+<ol>
+  <li>
+    <p><strong>Block graph</strong> — Every content block under <code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/</code> is a node. Edges represent
+relationships: <code class="language-plaintext highlighter-rouge">uses[]</code> (dependency), <code class="language-plaintext highlighter-rouge">interprets</code> (remark → statement),
+<code class="language-plaintext highlighter-rouge">proofs[]</code> (proof → statement), <code class="language-plaintext highlighter-rouge">examples[]</code> (example → statement).
+The block graph captures the logical argument structure.</p>
+  </li>
+  <li>
+    <p><strong>Chapter/section graph</strong> — Chapters and sections in <a href="https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/quantum-observable-universe.ts"><code class="language-plaintext highlighter-rouge">quantum-observable-universe.ts</code></a> are nodes. A
+directed edge from section S₁ to section S₂ exists whenever a block in
+S₁ uses a block in S₂. The section graph captures the pedagogical
+reading order (<code class="language-plaintext highlighter-rouge">H1..H7</code>).</p>
+  </li>
+  <li>
+    <p><strong>Lean 4 module &amp; Reservoir <code class="language-plaintext highlighter-rouge">lean_lib</code> subgraph DAG</strong> — Every <code class="language-plaintext highlighter-rouge">.lean</code> module in <code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/lean/</code> and chapter <code class="language-plaintext highlighter-rouge">.lean</code> sibling is a node (<code class="language-plaintext highlighter-rouge">L1..L6</code>, audited by <a href="https://github.com/litlfred/qou/blob/main/scripts/lean-kg-detangler.py"><code class="language-plaintext highlighter-rouge">scripts/lean-kg-detangler.py</code></a> and <a href="https://github.com/litlfred/qou/blob/main/scripts/lean-best-practices-lint.py"><code class="language-plaintext highlighter-rouge">scripts/lean-best-practices-lint.py</code></a>), stratified strictly from <code class="language-plaintext highlighter-rouge">Mathlib4</code> → Tier-A <code class="language-plaintext highlighter-rouge">MathlibExt</code> → Tier-B 6 Lean Reservoir community <code class="language-plaintext highlighter-rouge">lean_lib</code> packages → 12 canonical chapter-aligned <code class="language-plaintext highlighter-rouge">QOU.&lt;Subgraph&gt;</code> modules → chapter <code class="language-plaintext highlighter-rouge">.lean</code> siblings.</p>
+  </li>
+</ol>
+<h2 id="when-to-use-this-skill">
+  
+  
+    <a href="#when-to-use-this-skill" class="anchor-heading" aria-labelledby="when-to-use-this-skill"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> When to Use This Skill
+  
+  
+</h2>
+    
+
+<ul>
+  <li>“content graph” / “content organisation”</li>
+  <li>“cross-chapter arrows” / “cross-section dependencies”</li>
+  <li>“forward references” / “minimise forward refs”</li>
+  <li>“sections too small” / “sections too large” / “section balance”</li>
+  <li>“disentangle content” / “reorganise chapters”</li>
+  <li>“analyse content connections”</li>
+  <li>“show me the block graph” / “show me the chapter graph”</li>
+  <li>“what blocks should move?” / “suggest reorganisation”</li>
+</ul>
+<h2 id="prerequisites">
+  
+  
+    <a href="#prerequisites" class="anchor-heading" aria-labelledby="prerequisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Prerequisites
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Python 3 and <code class="language-plaintext highlighter-rouge">graphviz</code> (installed automatically if missing)</li>
+  <li>Content block <code class="language-plaintext highlighter-rouge">.ts</code> files in <code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/</code></li>
+  <li>Chapter manifests with <code class="language-plaintext highlighter-rouge">sections → blocks</code> structure</li>
+</ul>
+<h2 id="heuristics">
+  
+  
+    <a href="#heuristics" class="anchor-heading" aria-labelledby="heuristics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Heuristics
+  
+  
+</h2>
+    
+
+<p>The skill applies the following heuristics, each producing a severity-
+ranked finding:</p>
+<h3 id="h1--forward-references-severity-high">
+  
+  
+    <a href="#h1--forward-references-severity-high" class="anchor-heading" aria-labelledby="h1--forward-references-severity-high"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H1 — Forward references (severity: HIGH)
+  
+  
+</h3>
+    
+
+<p>A <strong>forward reference</strong> occurs when block A <code class="language-plaintext highlighter-rouge">uses</code> block B, but B appears
+<em>later</em> in the document than A.  These cause readers to encounter concepts
+before they are defined.</p>
+
+<p>A block’s position is its (chapter_number, section_index, block_index)
+tuple in document order.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>forward_ref: A (pos P_A) uses B (pos P_B) where P_B &gt; P_A
+</code></pre></div></div>
+
+<p><strong>Ideal:</strong> 0 forward references.
+<strong>Acceptable:</strong> ≤ 5 (architectural cycles across categorical/archimedean wall).
+<strong>Flag for action:</strong> &gt; 5.</p>
+<h3 id="h2--cross-chapter-coupling-severity-medium">
+  
+  
+    <a href="#h2--cross-chapter-coupling-severity-medium" class="anchor-heading" aria-labelledby="h2--cross-chapter-coupling-severity-medium"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H2 — Cross-chapter coupling (severity: MEDIUM)
+  
+  
+</h3>
+    
+
+<p>A <strong>cross-chapter edge</strong> occurs when block A in chapter C₁ uses block B in
+chapter C₂ (C₁ ≠ C₂).</p>
+
+<p>Count cross-chapter edges per chapter pair (C₁ → C₂):</p>
+<ul>
+  <li>Edges going <em>forward</em> (C₁.number &lt; C₂.number): normal; blocks in early
+chapters depend on later chapters’ content → <strong>may be a problem</strong> (forward
+reference by chapter).</li>
+  <li>Edges going <em>backward</em> (C₁.number &gt; C₂.number): normal; later chapters
+build on earlier ones → fine.</li>
+</ul>
+
+<p><strong>Flag</strong>: chapters with more than 10 cross-chapter forward edges.</p>
+<h3 id="h3--cross-section-coupling-severity-medium">
+  
+  
+    <a href="#h3--cross-section-coupling-severity-medium" class="anchor-heading" aria-labelledby="h3--cross-section-coupling-severity-medium"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H3 — Cross-section coupling (severity: MEDIUM)
+  
+  
+</h3>
+    
+
+<p>Same as H2 but at section granularity within a single chapter.  Report
+any section pair where ≥ 3 blocks reference each other across section
+boundaries.</p>
+
+<p><strong>Ratio metric</strong>: cross_section_edges / total_edges_in_chapter.</p>
+<ul>
+  <li>Ratio &lt; 0.20: well-structured</li>
+  <li>0.20–0.40: moderate coupling</li>
+  <li>
+    <blockquote>
+      <p>0.40: high coupling — restructuring likely needed</p>
+    </blockquote>
+  </li>
+</ul>
+<h3 id="h4--section-too-sparse-severity-low">
+  
+  
+    <a href="#h4--section-too-sparse-severity-low" class="anchor-heading" aria-labelledby="h4--section-too-sparse-severity-low"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H4 — Section too sparse (severity: LOW)
+  
+  
+</h3>
+    
+
+<p>Sections with fewer than 3 content blocks (excluding intro prose) risk
+fragmenting the narrative.  They are candidates for merging with an
+adjacent section.</p>
+
+<p><strong>Threshold:</strong> &lt; 3 non-prose blocks.
+<strong>Exception:</strong> Intro/overview sections (first block is <code class="language-plaintext highlighter-rouge">prose</code>).</p>
+<h3 id="h5--section-too-dense-severity-low">
+  
+  
+    <a href="#h5--section-too-dense-severity-low" class="anchor-heading" aria-labelledby="h5--section-too-dense-severity-low"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H5 — Section too dense (severity: LOW)
+  
+  
+</h3>
+    
+
+<p>Sections with more than 18 content blocks are hard to navigate.</p>
+
+<p><strong>Threshold:</strong> &gt; 18 blocks.
+<strong>Suggestion:</strong> Split along natural dependency boundaries within the
+section.</p>
+<h3 id="h6--isolated-blocks-severity-low">
+  
+  
+    <a href="#h6--isolated-blocks-severity-low" class="anchor-heading" aria-labelledby="h6--isolated-blocks-severity-low"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H6 — Isolated blocks (severity: LOW)
+  
+  
+</h3>
+    
+
+<p>A block with no <code class="language-plaintext highlighter-rouge">uses[]</code> edges (other than prose/intro) and no block in
+<code class="language-plaintext highlighter-rouge">uses[]</code> of other blocks is <strong>isolated</strong>.  It may belong to a different
+section or chapter, or may be dead content.</p>
+<h3 id="h7--remark--example-ratio-severity-info">
+  
+  
+    <a href="#h7--remark--example-ratio-severity-info" class="anchor-heading" aria-labelledby="h7--remark--example-ratio-severity-info"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> H7 — Remark / example ratio (severity: INFO)
+  
+  
+</h3>
+    
+
+<p>Sections where <code class="language-plaintext highlighter-rouge">remark + example</code> blocks outnumber provable blocks
+(<code class="language-plaintext highlighter-rouge">definition + theorem + lemma + proposition + corollary + conjecture</code>)
+by more than 2:1 may have too much interpretation and too little formal
+content — or vice versa.</p>
+<h2 id="lean-4-subgraph-heuristics-l1l6--process_graphdetanglement">
+  
+  
+    <a href="#lean-4-subgraph-heuristics-l1l6--process_graphdetanglement" class="anchor-heading" aria-labelledby="lean-4-subgraph-heuristics-l1l6--process_graphdetanglement"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Lean 4 Subgraph Heuristics (<code class="language-plaintext highlighter-rouge">L1..L6</code> — <code class="language-plaintext highlighter-rouge">Process_GraphDetanglement</code>)
+  
+  
+</h2>
+    
+
+<p>In addition to prose heuristics <code class="language-plaintext highlighter-rouge">H1..H7</code>, <a href="https://github.com/litlfred/qou/blob/main/scripts/lean-kg-detangler.py"><code class="language-plaintext highlighter-rouge">scripts/lean-kg-detangler.py</code></a> and <a href="https://github.com/litlfred/qou/blob/main/scripts/lean-best-practices-lint.py"><code class="language-plaintext highlighter-rouge">scripts/lean-best-practices-lint.py</code></a> enforce six Lean subgraph invariants derived from <code class="language-plaintext highlighter-rouge">Process_GraphDetanglement</code>:</p>
+<h3 id="l1--unassigned-first-completeness-severity-critical">
+  
+  
+    <a href="#l1--unassigned-first-completeness-severity-critical" class="anchor-heading" aria-labelledby="l1--unassigned-first-completeness-severity-critical"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L1 — Unassigned-first completeness (severity: CRITICAL)
+  
+  
+</h3>
+    
+<p>Every library <code class="language-plaintext highlighter-rouge">.lean</code> module and every resolved <code class="language-plaintext highlighter-rouge">import</code> edge must be classified (<code class="language-plaintext highlighter-rouge">unassigned_library_modules == 0</code>, <code class="language-plaintext highlighter-rouge">unassigned_resolved_edges == 0</code>) BEFORE evaluating cross-edge or cut-edge counts. Zero cross-edges over an unjudged subset is never read as clean.</p>
+<h3 id="l2--strict-zero-qou-boundary-on-tier-a--tier-b-reservoir-libraries-severity-critical-bp008">
+  
+  
+    <a href="#l2--strict-zero-qou-boundary-on-tier-a--tier-b-reservoir-libraries-severity-critical-bp008" class="anchor-heading" aria-labelledby="l2--strict-zero-qou-boundary-on-tier-a--tier-b-reservoir-libraries-severity-critical-bp008"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L2 — Strict zero-<code class="language-plaintext highlighter-rouge">QOU.*</code> boundary on Tier-A &amp; Tier-B Reservoir libraries (severity: CRITICAL, <code class="language-plaintext highlighter-rouge">BP008</code>)
+  
+  
+</h3>
+    
+<p>Pure-mathematics modules in Tier-A (<code class="language-plaintext highlighter-rouge">MathlibExt</code>) and the 6 Tier-B Lean Reservoir community <code class="language-plaintext highlighter-rouge">lean_lib</code> packages (<code class="language-plaintext highlighter-rouge">HeckeTemperleyLieb</code>, <code class="language-plaintext highlighter-rouge">TwistedFrobeniusHopf</code>, <code class="language-plaintext highlighter-rouge">ToricConicOpt</code>, <code class="language-plaintext highlighter-rouge">CompactQuantumMetrics</code>, <code class="language-plaintext highlighter-rouge">QCalculus</code>, <code class="language-plaintext highlighter-rouge">BraidKnotOctonion</code>) MUST have <strong>zero</strong> upward <code class="language-plaintext highlighter-rouge">import QOU.&lt;Model&gt;</code> edges into QOU physics/framework modules. Resolve any <code class="language-plaintext highlighter-rouge">community_to_qou_cut_edges</code> via the four detanglement moves: <strong>prune</strong> an unused import, <strong>merge</strong> mutually-defining helpers, <strong>factor</strong> the pure base definition downward, or <strong>reclassify</strong> a misbucketed target.</p>
+<h3 id="l3--subgraph-condensation-acyclicity-severity-high">
+  
+  
+    <a href="#l3--subgraph-condensation-acyclicity-severity-high" class="anchor-heading" aria-labelledby="l3--subgraph-condensation-acyclicity-severity-high"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L3 — Subgraph condensation acyclicity (severity: HIGH)
+  
+  
+</h3>
+    
+<p>Both the module-level <code class="language-plaintext highlighter-rouge">import</code> graph and the inter-<code class="language-plaintext highlighter-rouge">lean_lib</code> condensation graph must be strictly acyclic (<code class="language-plaintext highlighter-rouge">0</code> Tarjan SCCs of size &gt; 1; imports point monotonically toward lower architectural layers <code class="language-plaintext highlighter-rouge">L0 Mathlib → L1 MathlibExt/UGB → L2 QCalculus → L3 TwistedFrobeniusHopf → L4 ToricConicOpt → L5 CompactQuantumMetrics → L6 HeckeTemperleyLieb → L7 BraidKnotOctonion → L8..L15 QOU.&lt;Chapter&gt;</code>).</p>
+<h3 id="l4--synonym-directory-anti-sprawl--open-pr-fixup-severity-critical-bp009">
+  
+  
+    <a href="#l4--synonym-directory-anti-sprawl--open-pr-fixup-severity-critical-bp009" class="anchor-heading" aria-labelledby="l4--synonym-directory-anti-sprawl--open-pr-fixup-severity-critical-bp009"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L4 — Synonym-directory anti-sprawl &amp; Open-PR Fixup (severity: CRITICAL, <code class="language-plaintext highlighter-rouge">BP009</code>)
+  
+  
+</h3>
+    
+<p><code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/lean/</code> is isolated under <strong>Q3 Option 1</strong> (<code class="language-plaintext highlighter-rouge">7</code> top-level community <code class="language-plaintext highlighter-rouge">[[lean_lib]]</code> roots + <code class="language-plaintext highlighter-rouge">12</code> canonical <code class="language-plaintext highlighter-rouge">QOU/&lt;Chapter&gt;/</code> subgraphs; <code class="language-plaintext highlighter-rouge">0</code> loose <code class="language-plaintext highlighter-rouge">QOU/*.lean</code> files). Never create ad-hoc synonym directories under <code class="language-plaintext highlighter-rouge">QOU/</code> or <code class="language-plaintext highlighter-rouge">lean/</code>. New pure math goes directly to <code class="language-plaintext highlighter-rouge">MathlibExt/</code> or one of the 6 Tier-B roots (see <a href="https://github.com/litlfred/qou/blob/main/skills/local/lean-mathlibext-curator.md"><code class="language-plaintext highlighter-rouge">lean-mathlibext-curator.md</code></a>); new QOU model Lean goes to <code class="language-plaintext highlighter-rouge">QOU/&lt;Chapter&gt;/</code>. When rebasing a pre-migration branch or open PR, run <code class="language-plaintext highlighter-rouge">nice -n 15 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch</code> to relocate legacy <code class="language-plaintext highlighter-rouge">QOU/&lt;OldDir&gt;/</code> modules and rewrite imports/<code class="language-plaintext highlighter-rouge">lean.ref</code>s deterministically.</p>
+<h3 id="l5--7c-base-ring--empirical-wall-alignment-severity-high-bp005--bp006">
+  
+  
+    <a href="#l5--7c-base-ring--empirical-wall-alignment-severity-high-bp005--bp006" class="anchor-heading" aria-labelledby="l5--7c-base-ring--empirical-wall-alignment-severity-high-bp005--bp006"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L5 — §7c Base-ring &amp; empirical wall alignment (severity: HIGH, <code class="language-plaintext highlighter-rouge">BP005</code> / <code class="language-plaintext highlighter-rouge">BP006</code>)
+  
+  
+</h3>
+    
+<p>Tier-A/Tier-B community libraries and pre-wall chapters stay over generic <code class="language-plaintext highlighter-rouge">{R : Type*} [CommRing R]</code> / <code class="language-plaintext highlighter-rouge">[Field R]</code> / <code class="language-plaintext highlighter-rouge">[LinearOrderedField R]</code> with zero decimal literals, <code class="language-plaintext highlighter-rouge">Float</code>, <code class="language-plaintext highlighter-rouge">CODATA</code>, or <code class="language-plaintext highlighter-rouge">substrate_q</code>. Concrete <code class="language-plaintext highlighter-rouge">(R := ℝ)</code> evaluations live exclusively post-wall.</p>
+<h3 id="l6--root--leanref-reachability-severity-medium">
+  
+  
+    <a href="#l6--root--leanref-reachability-severity-medium" class="anchor-heading" aria-labelledby="l6--root--leanref-reachability-severity-medium"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> L6 — Root &amp; <code class="language-plaintext highlighter-rouge">lean.ref</code> reachability (severity: MEDIUM)
+  
+  
+</h3>
+    
+<p>Every <code class="language-plaintext highlighter-rouge">.lean</code> module should be reachable either from its <code class="language-plaintext highlighter-rouge">lean_lib</code> root aggregator (<code class="language-plaintext highlighter-rouge">QOU.lean</code> / Tier-B root) or from a live <code class="language-plaintext highlighter-rouge">.ts</code> <code class="language-plaintext highlighter-rouge">lean.ref</code> / chapter sibling import (<code class="language-plaintext highlighter-rouge">scripts/lean-root-coverage-audit.py</code> + <code class="language-plaintext highlighter-rouge">scripts/dead-lean-pointer-audit.py</code>).</p>
+<h2 id="placement-principles-for-newchanged-content">
+  
+  
+    <a href="#placement-principles-for-newchanged-content" class="anchor-heading" aria-labelledby="placement-principles-for-newchanged-content"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Placement Principles for New/Changed Content
+  
+  
+</h2>
+    
+
+<p>The heuristics above detect problems <strong>post-hoc</strong>. The placement
+principles below are <strong>proactive</strong>: agents must follow them when
+creating new blocks or <code class="language-plaintext highlighter-rouge">.lean</code> modules, or significantly changing existing ones.</p>
+<h3 id="pr1--topical-home-chapter--canonical-lean-subgraph">
+  
+  
+    <a href="#pr1--topical-home-chapter--canonical-lean-subgraph" class="anchor-heading" aria-labelledby="pr1--topical-home-chapter--canonical-lean-subgraph"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR1 — Topical home chapter &amp; canonical Lean subgraph
+  
+  
+</h3>
+    
+
+<p>Every prose block belongs in the chapter whose topic it primarily addresses (matching <a href="https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/quantum-observable-universe.ts"><code class="language-plaintext highlighter-rouge">quantum-observable-universe.ts</code></a>), and every new <code class="language-plaintext highlighter-rouge">.lean</code> library module belongs either in Tier-A/Tier-B (if pure math with 0 QOU coupling) or in the paired canonical <code class="language-plaintext highlighter-rouge">QOU.&lt;Subgraph&gt;</code>:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th>Chapter directory (<code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/&lt;dir&gt;/</code>)</th>
+      <th>Canonical <code class="language-plaintext highlighter-rouge">QOU.&lt;Subgraph&gt;</code></th>
+      <th>Primary topic scope</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Front</td>
+      <td><code class="language-plaintext highlighter-rouge">introduction</code>, <code class="language-plaintext highlighter-rouge">authors-note</code></td>
+      <td><em>(no new Lean)</em></td>
+      <td>Framing motivation &amp; contribution/open-problems note (preview chapter)</td>
+    </tr>
+    <tr>
+      <td><strong>I: Foundations</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">quantum-universes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Core</code></td>
+      <td>Abstract QU axioms, fibre functors, rigid braided monoidal dagger categories</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td><code class="language-plaintext highlighter-rouge">quantum-observable-universes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Core</code></td>
+      <td>QOU axioms, state/jet bundles, $q$-codifferentials, categorical Reeb</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td><code class="language-plaintext highlighter-rouge">models-of-qous</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Core</code> / <code class="language-plaintext highlighter-rouge">QOU.MassTheory</code></td>
+      <td>5-step arc framing gallery, Archimedean wall (<code class="language-plaintext highlighter-rouge">sec:archimedean-models</code>), non-Archimedean models</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td><code class="language-plaintext highlighter-rouge">lifting-and-descent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.LiftingDescent</code> <em>(pure Hopf/Sweedler → <code class="language-plaintext highlighter-rouge">TwistedFrobeniusHopf</code>)</em></td>
+      <td>Yekutieli torsion lifting, descent, brane tower, Gröbner–Shirshov filtration</td>
+    </tr>
+    <tr>
+      <td><strong>II: Structural Mechanics</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">braids-and-knots</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.BraidsAndKnots</code> <em>(pure → <code class="language-plaintext highlighter-rouge">HeckeTemperleyLieb</code> / <code class="language-plaintext highlighter-rouge">BraidKnotOctonion</code>)</em></td>
+      <td>Braid groups, Iwahori–Hecke $H_n(q)$, Temperley–Lieb, Jones–Markov trace</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">brings-surface</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.BringsSurface</code> <em>(pure → <code class="language-plaintext highlighter-rouge">BraidKnotOctonion</code>)</em></td>
+      <td>Bring’s surface $\Sigma_4$ ($\chi = -6$), $S_5/A_5$ action, cohomological defect</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">knots-particles-confinement</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Confinement</code></td>
+      <td>Knot–particle dictionary, hadron algebra, Borromean nucleons, confinement hierarchy</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">eightfold-way</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.EightfoldWay</code> <em>(pure octonion/$\mathfrak{g}_2$ → <code class="language-plaintext highlighter-rouge">BraidKnotOctonion</code>)</em></td>
+      <td>$A_2$ from 3-strand braiding, $\mathrm{SU}(3)$ flavour multiplets, octonionic colour</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">mass-endomorphism</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.MassTheory</code></td>
+      <td>Categorical mass identity, topological mass decomposition, complex volume, $\chi$-characters</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">climax-volume-mass</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.MassTheory</code></td>
+      <td>$q$-hyperbolic geometry, Möbius/crossing energy, Lagrange resolvents, spectral filter</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">mass-theory</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.MassTheory</code></td>
+      <td>Geometric &amp; Archimedean mass pipeline across elementary particles, gauge bosons, and nuclei</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">nuclear-interactions</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Nuclear</code> <em>(pure LP/Graver → <code class="language-plaintext highlighter-rouge">ToricConicOpt</code>; pure $q$-calc → <code class="language-plaintext highlighter-rouge">QCalculus</code>)</em></td>
+      <td>Many-body Gröbner–Shirshov reduction, LP/SDP operator selection, $\beta$-decay, $Q$-values</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td><code class="language-plaintext highlighter-rouge">gravity-spacetime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.MassTheory</code> / <code class="language-plaintext highlighter-rouge">QOU.FluidDynamics</code></td>
+      <td>Contact-geometric gravity emergence, geodesic Madelung bridge</td>
+    </tr>
+    <tr>
+      <td><strong>III: Physical Realization</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">predicted-spectra</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.StandardModel</code> / <code class="language-plaintext highlighter-rouge">QOU.MassTheory</code></td>
+      <td>Fundamental fermion, meson/nucleon, atomic shell, and $\alpha_{\mathrm{EM}}$ spectra</td>
+    </tr>
+    <tr>
+      <td>III</td>
+      <td><code class="language-plaintext highlighter-rouge">observations</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Observations</code></td>
+      <td>CODATA comparisons, experimental falsifiers, astrophysical/laboratory tests</td>
+    </tr>
+    <tr>
+      <td>III</td>
+      <td><code class="language-plaintext highlighter-rouge">molecular-construction</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Observations</code></td>
+      <td>Molecular braids ($\mathrm{H}_2$ through benzene), stoichiometry</td>
+    </tr>
+    <tr>
+      <td>III</td>
+      <td><code class="language-plaintext highlighter-rouge">organic-chemistry</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Observations</code></td>
+      <td>Covalent / Hopf-ring organic chemistry</td>
+    </tr>
+    <tr>
+      <td><strong>IV: Dynamics &amp; Information</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">fluid-dynamics</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.FluidDynamics</code></td>
+      <td>$q$-Navier–Stokes brane fluid dynamics, vorticity, Kelvin waves</td>
+    </tr>
+    <tr>
+      <td>IV</td>
+      <td><code class="language-plaintext highlighter-rouge">stochastic-mechanics</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.FluidDynamics</code></td>
+      <td>Markov-trace stochastic mechanics, Nelson/Itô diffusion</td>
+    </tr>
+    <tr>
+      <td>IV</td>
+      <td><code class="language-plaintext highlighter-rouge">information-theory</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.InformationTheory</code> <em>(pure Rieffel/KR → <code class="language-plaintext highlighter-rouge">CompactQuantumMetrics</code>)</em></td>
+      <td>Complexity barriers, Bekenstein/Planck horizons, CMB</td>
+    </tr>
+    <tr>
+      <td>IV</td>
+      <td><code class="language-plaintext highlighter-rouge">measurement-observation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.InformationTheory</code></td>
+      <td>Internalised quantum measurement via fibre-functor behaviour</td>
+    </tr>
+    <tr>
+      <td>IV</td>
+      <td><code class="language-plaintext highlighter-rouge">q-geometric-langlands</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.InformationTheory</code></td>
+      <td>$q$-Geometric Langlands, Tannaka–Krein, Hasse–Weil</td>
+    </tr>
+    <tr>
+      <td>Back</td>
+      <td><code class="language-plaintext highlighter-rouge">glossary</code>, <code class="language-plaintext highlighter-rouge">appendix-*</code>, <code class="language-plaintext highlighter-rouge">index-of-definitions</code>, <code class="language-plaintext highlighter-rouge">notation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">QOU.Observations</code> / <code class="language-plaintext highlighter-rouge">QOU.Core</code></td>
+      <td>Ch 8 Mathlib glossary, knot/NF/Q-value/SM/surreal/Lean-library appendices, symbol register</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>If a block spans two chapters’ topics, split it (see PR5).</p>
+<h3 id="pr2--forward-reference--upward-leak-avoidance">
+  
+  
+    <a href="#pr2--forward-reference--upward-leak-avoidance" class="anchor-heading" aria-labelledby="pr2--forward-reference--upward-leak-avoidance"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR2 — Forward-reference &amp; upward-leak avoidance
+  
+  
+</h3>
+    
+
+<p>A new prose block must appear <strong>after</strong> all blocks it <code class="language-plaintext highlighter-rouge">uses[]</code>, and a new <code class="language-plaintext highlighter-rouge">.lean</code> module must import only same-or-lower architectural layers (<code class="language-plaintext highlighter-rouge">BP008</code>). Run <code class="language-plaintext highlighter-rouge">computations/forward_ref_classifier.py</code> (prose) and <code class="language-plaintext highlighter-rouge">nice -n 15 python3 scripts/lean-best-practices-lint.py --diff</code> + <code class="language-plaintext highlighter-rouge">scripts/lean-kg-detangler.py --summary-only</code> (Lean) after placement.</p>
+<h3 id="pr3--section-density-bounds">
+  
+  
+    <a href="#pr3--section-density-bounds" class="anchor-heading" aria-labelledby="pr3--section-density-bounds"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR3 — Section density bounds
+  
+  
+</h3>
+    
+
+<p>When adding blocks to a section, check the count stays within
+<strong>3–18 blocks</strong>.  If adding would exceed 18, split the section first
+(H5).  If a removal would drop a section below 3, consider merging
+(H4).</p>
+<h3 id="pr4--cross-chapter-dependency-direction">
+  
+  
+    <a href="#pr4--cross-chapter-dependency-direction" class="anchor-heading" aria-labelledby="pr4--cross-chapter-dependency-direction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR4 — Cross-chapter dependency direction
+  
+  
+</h3>
+    
+
+<p>New blocks should depend <strong>backward</strong> (on earlier chapters), not
+forward.  If a new block in Ch 3 needs to use something from Ch 7,
+either:</p>
+<ul>
+  <li>Move the dependency to Ch 3 first, or</li>
+  <li>Place the new block in Ch 7 instead.</li>
+</ul>
+<h3 id="pr5--topic-coherent-blocks">
+  
+  
+    <a href="#pr5--topic-coherent-blocks" class="anchor-heading" aria-labelledby="pr5--topic-coherent-blocks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR5 — Topic-coherent blocks
+  
+  
+</h3>
+    
+
+<p>Before accepting a new block, verify it addresses a <strong>single topic</strong>.
+If the <code class="language-plaintext highlighter-rouge">.md</code> content contains material belonging to multiple chapters,
+split it into separate blocks placed in their respective chapters.
+Defer to <code class="language-plaintext highlighter-rouge">block-density</code> R1 for the full audit.</p>
+<h3 id="pr6--table-extraction-on-creation">
+  
+  
+    <a href="#pr6--table-extraction-on-creation" class="anchor-heading" aria-labelledby="pr6--table-extraction-on-creation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR6 — Table extraction on creation
+  
+  
+</h3>
+    
+
+<p>If a new block’s <code class="language-plaintext highlighter-rouge">.md</code> contains a table with <strong>&gt; 5 data rows</strong>, extract
+it immediately to a <code class="language-plaintext highlighter-rouge">table</code> block (<code class="language-plaintext highlighter-rouge">kind: "table"</code>, label:
+<code class="language-plaintext highlighter-rouge">tbl:&lt;name&gt;-data</code>).  Reference it from the parent block via <code class="language-plaintext highlighter-rouge">uses[]</code>.
+Do not wait for a later audit.  See <code class="language-plaintext highlighter-rouge">block-density</code> R3 for details.</p>
+<h3 id="pr7--reorganisation-map-update">
+  
+  
+    <a href="#pr7--reorganisation-map-update" class="anchor-heading" aria-labelledby="pr7--reorganisation-map-update"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PR7 — Reorganisation map update
+  
+  
+</h3>
+    
+
+<p>After any block move, section split/merge, or directory rename, update
+<code class="language-plaintext highlighter-rouge">docs/reorganization-map.md</code> with the change.  This is mandatory — it
+is the downstream debugging reference for tracing broken labels and
+imports.</p>
+<h2 id="placement-checklist-for-agents">
+  
+  
+    <a href="#placement-checklist-for-agents" class="anchor-heading" aria-labelledby="placement-checklist-for-agents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Placement Checklist (for agents)
+  
+  
+</h2>
+    
+
+<p>When adding a new block or significantly changing an existing block:</p>
+
+<ol>
+  <li>□ Identify the primary topic → select home chapter (PR1)</li>
+  <li>□ Check <code class="language-plaintext highlighter-rouge">uses[]</code> deps appear earlier in document order (PR2)</li>
+  <li>□ Check target section has 3–18 blocks after insertion (PR3)</li>
+  <li>□ Verify no new forward cross-chapter edges (PR4)</li>
+  <li>□ Verify block is single-topic; split if not (PR5)</li>
+  <li>□ Extract tables &gt; 5 rows to <code class="language-plaintext highlighter-rouge">table</code> blocks (PR6)</li>
+  <li>□ Update <code class="language-plaintext highlighter-rouge">docs/reorganization-map.md</code> if anything moved (PR7)</li>
+  <li>□ Run <code class="language-plaintext highlighter-rouge">python3 pipeline/content-graph-analysis.py</code> to confirm</li>
+</ol>
+<h2 id="workflow">
+  
+  
+    <a href="#workflow" class="anchor-heading" aria-labelledby="workflow"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Workflow
+  
+  
+</h2>
+    
+<h3 id="step-1--parse-the-content-tree">
+  
+  
+    <a href="#step-1--parse-the-content-tree" class="anchor-heading" aria-labelledby="step-1--parse-the-content-tree"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 — Parse the content tree
+  
+  
+</h3>
+    
+
+<p>Read the paper manifest <code class="language-plaintext highlighter-rouge">quantum-observable-universe.ts</code> to enumerate
+chapters.  For each chapter, read its manifest to enumerate sections and
+their block lists.  Assign each block a document position
+<code class="language-plaintext highlighter-rouge">(chapter_number, section_index, block_index)</code>.</p>
+
+<p>For each block <code class="language-plaintext highlighter-rouge">.ts</code> file, extract:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">label</code>, <code class="language-plaintext highlighter-rouge">kind</code>, <code class="language-plaintext highlighter-rouge">uses[]</code>, <code class="language-plaintext highlighter-rouge">interprets</code>, <code class="language-plaintext highlighter-rouge">proofs[]</code>, <code class="language-plaintext highlighter-rouge">examples[]</code></li>
+</ul>
+<h3 id="step-2--build-the-block-graph">
+  
+  
+    <a href="#step-2--build-the-block-graph" class="anchor-heading" aria-labelledby="step-2--build-the-block-graph"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 — Build the block graph
+  
+  
+</h3>
+    
+
+<p>Build an adjacency map:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">edges</span><span class="p">[(</span><span class="n">from_label</span><span class="p">,</span> <span class="n">to_label</span><span class="p">)]</span> <span class="o">=</span> <span class="n">edge_type</span>  <span class="c1"># "uses"|"interprets"|"proof"|"example"
+</span></code></pre></div></div>
+
+<p>Index every block’s document position:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">position</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">chapter_no</span><span class="p">,</span> <span class="n">section_idx</span><span class="p">,</span> <span class="n">block_idx</span><span class="p">)</span>
+</code></pre></div></div>
+<h3 id="step-3--build-the-chaptersection-graph">
+  
+  
+    <a href="#step-3--build-the-chaptersection-graph" class="anchor-heading" aria-labelledby="step-3--build-the-chaptersection-graph"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3 — Build the chapter/section graph
+  
+  
+</h3>
+    
+
+<p>For each chapter pair (C₁, C₂) count directed edges from blocks in C₁
+to blocks in C₂:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chapter_edges</span><span class="p">[(</span><span class="n">c1_num</span><span class="p">,</span> <span class="n">c2_num</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>For each section pair within the same chapter, count cross-section edges:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">section_edges</span><span class="p">[(</span><span class="n">s1_label</span><span class="p">,</span> <span class="n">s2_label</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+<h3 id="step-4--apply-heuristics">
+  
+  
+    <a href="#step-4--apply-heuristics" class="anchor-heading" aria-labelledby="step-4--apply-heuristics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 4 — Apply heuristics
+  
+  
+</h3>
+    
+
+<p>Run each heuristic (H1–H7) and collect findings.  Each finding has:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">severity</code>: HIGH / MEDIUM / LOW / INFO</li>
+  <li><code class="language-plaintext highlighter-rouge">heuristic</code>: H1–H7</li>
+  <li><code class="language-plaintext highlighter-rouge">description</code>: human-readable explanation</li>
+  <li><code class="language-plaintext highlighter-rouge">blocks</code>: list of involved block labels</li>
+  <li><code class="language-plaintext highlighter-rouge">suggestion</code>: proposed action</li>
+</ul>
+<h3 id="step-5--generate-visualisations">
+  
+  
+    <a href="#step-5--generate-visualisations" class="anchor-heading" aria-labelledby="step-5--generate-visualisations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 5 — Generate visualisations
+  
+  
+</h3>
+    
+
+<p>Two DOT/SVG outputs (via Graphviz):</p>
+
+<p><strong>5a. Chapter/section graph</strong> (<code class="language-plaintext highlighter-rouge">/tmp/content_chapter_graph.svg</code>)</p>
+<ul>
+  <li>Nodes: chapters (large boxes) containing sections (small boxes)</li>
+  <li>Edges: weighted directed arrows between sections</li>
+  <li>Color: red = forward cross-chapter edges, orange = high cross-section
+coupling, gray = normal backward dependencies</li>
+</ul>
+
+<p><strong>5b. Block graph heat-map</strong> (<code class="language-plaintext highlighter-rouge">/tmp/content_block_heatmap.svg</code>)</p>
+<ul>
+  <li>Nodes: blocks (grouped by chapter/section in clusters)</li>
+  <li>Edges: forward references only (red), cross-chapter edges (orange)</li>
+  <li>Isolated blocks highlighted in yellow</li>
+</ul>
+<h3 id="step-6--report-findings">
+  
+  
+    <a href="#step-6--report-findings" class="anchor-heading" aria-labelledby="step-6--report-findings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 6 — Report findings
+  
+  
+</h3>
+    
+
+<p>Print a ranked report (HIGH → LOW → INFO):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Content Graph Analysis: quantum-observable-universe
+
+### Summary
+- Total blocks: N  |  Chapters: N  |  Sections: N
+- Total block edges: N (uses/interprets/proof/example)
+- Cross-chapter edges: N  |  Cross-section edges: N
+- Forward references: N
+
+### HIGH — Forward References (H1)
+- block A (ch1/sec2) uses block B (ch3/sec5) ← B defined later
+  Suggestion: move B earlier, or add stub to ch1
+
+### MEDIUM — Cross-Chapter Coupling (H2)
+- Ch4 → Ch1: 14 forward edges  ← Ch4 blocks depend on Ch1
+  Top offending blocks: ...
+
+### LOW — Sparse Sections (H4)
+- sec:my-section (Ch3): 2 non-prose blocks
+  Suggestion: merge with adjacent sec:other-section
+
+### LOW — Dense Sections (H5)
+- sec:hadrons-knot-composites (Ch4): 20 blocks
+  Suggestion: split into "Hadron operations" + "Quark structure"
+</code></pre></div></div>
+<h3 id="step-7--interactive-suggestions">
+  
+  
+    <a href="#step-7--interactive-suggestions" class="anchor-heading" aria-labelledby="step-7--interactive-suggestions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 7 — Interactive suggestions
+  
+  
+</h3>
+    
+
+<p>After the report, offer the user a numbered menu of actions they can
+approve:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What would you like to do?
+[1] Move block X from sec:A to sec:B
+[2] Split sec:large-section into two sections
+[3] Add a new section "Preliminaries" in Ch3 to absorb forward refs
+[4] Merge sec:sparse-1 and sec:sparse-2
+[5] Show detailed block graph for chapter N
+[6] Re-run analysis after changes
+[0] Done
+</code></pre></div></div>
+
+<p>For each approved action, make the minimal changes to the <code class="language-plaintext highlighter-rouge">.ts</code> manifest
+files.</p>
+<h3 id="step-8--implement-approved-moves">
+  
+  
+    <a href="#step-8--implement-approved-moves" class="anchor-heading" aria-labelledby="step-8--implement-approved-moves"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 8 — Implement approved moves
+  
+  
+</h3>
+    
+
+<p>For a block move (action [1]):</p>
+<ol>
+  <li>Remove the block name from <code class="language-plaintext highlighter-rouge">blocks[]</code> in its current section.</li>
+  <li>Add the block name to <code class="language-plaintext highlighter-rouge">blocks[]</code> in the target section at the
+correct position (after its <code class="language-plaintext highlighter-rouge">uses[]</code> dependencies).</li>
+  <li>Re-run the analysis to confirm improvement.</li>
+</ol>
+
+<p>For a section split (action [2]):</p>
+<ol>
+  <li>Ask the user to name the two new sections and choose a split point.</li>
+  <li>Rewrite the chapter manifest with two <code class="language-plaintext highlighter-rouge">section({...})</code> entries.</li>
+  <li>Move blocks to the correct new section.</li>
+</ol>
+
+<p>For a section merge (action [4]):</p>
+<ol>
+  <li>Combine the two <code class="language-plaintext highlighter-rouge">blocks[]</code> arrays in document order.</li>
+  <li>Remove the merged-away section from the chapter manifest.</li>
+</ol>
+
+<p>Always show a before/after energy comparison:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Before: energy=142, backward_edges=12, sparse_sections=3
+After:  energy=87,  backward_edges=4,  sparse_sections=1
+</code></pre></div></div>
+<h2 id="python-cli-tools-prose--lean-kg">
+  
+  
+    <a href="#python-cli-tools-prose--lean-kg" class="anchor-heading" aria-labelledby="python-cli-tools-prose--lean-kg"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Python CLI Tools (Prose + Lean KG)
+  
+  
+</h2>
+    
+
+<ol>
+  <li><strong>Lean 4 Module &amp; Reservoir Subgraph Detangler (<code class="language-plaintext highlighter-rouge">L1..L6</code>):</strong>
+    <ul>
+      <li><a href="https://github.com/litlfred/qou/blob/main/scripts/lean-kg-detangler.py"><code class="language-plaintext highlighter-rouge">scripts/lean-kg-detangler.py</code></a> (<code class="language-plaintext highlighter-rouge">&lt; 15s</code> deterministic analyzer across all ~4,750 <code class="language-plaintext highlighter-rouge">.lean</code> files)</li>
+      <li><a href="https://github.com/litlfred/qou/blob/main/scripts/lean-best-practices-lint.py"><code class="language-plaintext highlighter-rouge">scripts/lean-best-practices-lint.py</code></a> (<code class="language-plaintext highlighter-rouge">--diff</code> and <code class="language-plaintext highlighter-rouge">--package</code> Mathlib4/Reservoir linter)
+```bash
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 <br />
+     OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1</li>
+    </ul>
+<h1 id="concise-dag--reservoir-cut-edge-summary">
+  
+  
+    <a href="#concise-dag--reservoir-cut-edge-summary" class="anchor-heading" aria-labelledby="concise-dag--reservoir-cut-edge-summary"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Concise DAG + Reservoir cut-edge summary:
+  
+  
+</h1>
+    
+    <p>nice -n 15 python3 scripts/lean-kg-detangler.py –summary-only</p>
+<h1 id="regenerate-full-json-ld--markdown-architecture-options-audit">
+  
+  
+    <a href="#regenerate-full-json-ld--markdown-architecture-options-audit" class="anchor-heading" aria-labelledby="regenerate-full-json-ld--markdown-architecture-options-audit"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Regenerate full JSON-LD + Markdown architecture options audit:
+  
+  
+</h1>
+    
+    <p>nice -n 15 python3 scripts/lean-kg-detangler.py <br />
+  –json-out docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-audit.json <br />
+  –md-out docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md</p>
+<h1 id="lint-branch-lean-changes-for-upward-leaks-bp008-and-synonym-dir-sprawl-bp009">
+  
+  
+    <a href="#lint-branch-lean-changes-for-upward-leaks-bp008-and-synonym-dir-sprawl-bp009" class="anchor-heading" aria-labelledby="lint-branch-lean-changes-for-upward-leaks-bp008-and-synonym-dir-sprawl-bp009"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Lint branch .lean changes for upward leaks (BP008) and synonym-dir sprawl (BP009):
+  
+  
+</h1>
+    
+    <p>nice -n 15 python3 scripts/lean-best-practices-lint.py –diff
+```</p>
+  </li>
+  <li><strong>Prose Forward-Reference Classifier &amp; Manifest Validator:</strong>
+    <ul>
+      <li><a href="https://github.com/litlfred/qou/blob/main/computations/forward_ref_classifier.py"><code class="language-plaintext highlighter-rouge">computations/forward_ref_classifier.py</code></a> (<code class="language-plaintext highlighter-rouge">logical</code> vs <code class="language-plaintext highlighter-rouge">storytelling</code> vs <code class="language-plaintext highlighter-rouge">structural</code> forward-ref discriminator)</li>
+      <li><a href="https://github.com/litlfred/qou/blob/main/scripts/run-validate.ts"><code class="language-plaintext highlighter-rouge">scripts/run-validate.ts</code></a> &amp; <a href="https://github.com/litlfred/qou/blob/main/folio/pipeline/block-manifest-audit.ts"><code class="language-plaintext highlighter-rouge">folio/pipeline/block-manifest-audit.ts</code></a>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">nice</span> <span class="nt">-n</span> 15 python3 computations/forward_ref_classifier.py
+<span class="nb">nice</span> <span class="nt">-n</span> 15 bun run scripts/run-validate.ts
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+<h3 id="proposal-kinds-proposals-output">
+  
+  
+    <a href="#proposal-kinds-proposals-output" class="anchor-heading" aria-labelledby="proposal-kinds-proposals-output"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Proposal kinds (–proposals output)
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Kind</th>
+      <th>Description</th>
+      <th>Trigger</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">split</code></td>
+      <td>Split a dense section (&gt; 18 blocks) along natural comment boundaries</td>
+      <td>H5</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">merge</code></td>
+      <td>Merge two adjacent sparse sections (&lt; 3 non-prose blocks each)</td>
+      <td>H4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">move</code></td>
+      <td>Move a block that is forward-referenced by ≥ 3 earlier blocks</td>
+      <td>H1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reverse</code></td>
+      <td>Fix an <code class="language-plaintext highlighter-rouge">interprets</code>/<code class="language-plaintext highlighter-rouge">example</code> block that appears before its target</td>
+      <td>H1</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Each proposal includes:</p>
+<ul>
+  <li>A unique ID (<code class="language-plaintext highlighter-rouge">P1</code>, <code class="language-plaintext highlighter-rouge">P2</code>, …) for stable reference</li>
+  <li>Exact chapter manifest path and section labels to edit</li>
+  <li>Concrete <code class="language-plaintext highlighter-rouge">blocks[]</code> array changes to make</li>
+  <li>Expected forward-reference reduction</li>
+</ul>
+<h3 id="implemented-reorganisations-tracking">
+  
+  
+    <a href="#implemented-reorganisations-tracking" class="anchor-heading" aria-labelledby="implemented-reorganisations-tracking"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Implemented reorganisations (tracking)
+  
+  
+</h3>
+    
+
+<p>The following reorganisations have been applied to the paper manifests:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kind</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R1</td>
+      <td>move</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:fivefold-symmetry</code> + <code class="language-plaintext highlighter-rouge">sec:orbital-space</code> from Ch2 → Ch9 (Descartes)</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>R2</td>
+      <td>merge</td>
+      <td>4 single-block sparse sections → <code class="language-plaintext highlighter-rouge">sec:non-archimedean-models</code> in Models</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>R3</td>
+      <td>merge</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:jones-polynomials</code> (1 block) merged into <code class="language-plaintext highlighter-rouge">sec:finite-fields</code> in Models</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>R4</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:descartes-particles</code> (84 blocks) → 5 sections of 17–25 blocks in Descartes</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>R5</td>
+      <td>rename</td>
+      <td>Remove <code class="language-plaintext highlighter-rouge">ch#-</code> prefix from all chapter directory names</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>R6</td>
+      <td>auto-number</td>
+      <td>Chapter numbers derived from manifest order, not stored in manifests</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P1</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:vertex-operators-markov</code> (19 blocks) → 4 sections in Braids and Knots</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:hadrons-knot-composites</code> (20 blocks) → 3 sections in Braids and Knots</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P4</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:brane-fluid</code> (19 blocks) → 3 sections in Fluid Dynamics</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P5</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:brings-geometry</code> (31 blocks) → 4 sections in Descartes Universe</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P8</td>
+      <td>split</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:small-scale</code> (21 blocks) → 3 sections in Observations</td>
+      <td>✅ done</td>
+    </tr>
+    <tr>
+      <td>P9</td>
+      <td>merge</td>
+      <td><code class="language-plaintext highlighter-rouge">sec:orbital-space</code> + <code class="language-plaintext highlighter-rouge">sec:fivefold-symmetry</code> → <code class="language-plaintext highlighter-rouge">sec:orbital-symmetry-embedding</code> in Descartes</td>
+      <td>✅ done</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="chapter-naming-convention-r5r6">
+  
+  
+    <a href="#chapter-naming-convention-r5r6" class="anchor-heading" aria-labelledby="chapter-naming-convention-r5r6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Chapter naming convention (R5/R6)
+  
+  
+</h3>
+    
+
+<p>Directory names are <strong>descriptive slugs</strong> with NO chapter numbers:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">introduction/</code>, <code class="language-plaintext highlighter-rouge">quantum-universes/</code>, <code class="language-plaintext highlighter-rouge">braids-and-knots/</code>, etc.</li>
+  <li>The paper manifest <code class="language-plaintext highlighter-rouge">chapters[]</code> array defines the chapter order</li>
+  <li>Chapter numbers are auto-derived: numbered chapters get sequential 1, 2, 3…</li>
+  <li>Chapters with <code class="language-plaintext highlighter-rouge">tabLabel</code> set (e.g. <code class="language-plaintext highlighter-rouge">"I"</code>, <code class="language-plaintext highlighter-rouge">"G"</code>) are unnumbered (<code class="language-plaintext highlighter-rouge">\chapter*{}</code>)</li>
+  <li>To reorder chapters: just reorder lines in the paper manifest — no renames needed</li>
+</ul>
+
+<p><strong>Key functions:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">parse_paper(root)</code> → <code class="language-plaintext highlighter-rouge">{chapters, sections, blocks, positions}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">build_block_graph(blocks)</code> → <code class="language-plaintext highlighter-rouge">{nodes, edges}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">build_section_graph(blocks, positions)</code> → <code class="language-plaintext highlighter-rouge">{chapter_edges, section_edges}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">apply_heuristics(graph, positions)</code> → <code class="language-plaintext highlighter-rouge">[Finding]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">generate_proposals(...)</code> → <code class="language-plaintext highlighter-rouge">[Proposal]</code> (split/merge/move/reverse)</li>
+  <li><code class="language-plaintext highlighter-rouge">generate_dot_chapter(graph)</code> → SVG path</li>
+  <li><code class="language-plaintext highlighter-rouge">generate_dot_blocks(graph)</code> → SVG path</li>
+  <li><code class="language-plaintext highlighter-rouge">report(findings)</code> → formatted text</li>
+</ul>
+<h2 id="integration-with-other-skills">
+  
+  
+    <a href="#integration-with-other-skills" class="anchor-heading" aria-labelledby="integration-with-other-skills"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Integration with other skills
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>After this skill</th>
+      <th>Use next</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Block moves approved</td>
+      <td><code class="language-plaintext highlighter-rouge">content-validation</code> — verify schema integrity</td>
+    </tr>
+    <tr>
+      <td>Forward refs identified</td>
+      <td><code class="language-plaintext highlighter-rouge">chapter-complexity-review</code> — block-level reorder within chapter</td>
+    </tr>
+    <tr>
+      <td>Cross-chapter coupling found</td>
+      <td><code class="language-plaintext highlighter-rouge">critical-path-analysis</code> — trace logical dependency chain</td>
+    </tr>
+    <tr>
+      <td>Sparse sections found</td>
+      <td><code class="language-plaintext highlighter-rouge">editor</code> — add missing content blocks</td>
+    </tr>
+    <tr>
+      <td>Dense sections found</td>
+      <td><code class="language-plaintext highlighter-rouge">content-block-review</code> — audit individual blocks for splitting</td>
+    </tr>
+    <tr>
+      <td>Proposals generated</td>
+      <td>Approve with user, then implement via manifest edits + re-run</td>
+    </tr>
+    <tr>
+      <td>New content proposed</td>
+      <td>Run placement checklist (PR1–PR7) before accepting</td>
+    </tr>
+    <tr>
+      <td>Block too long / multi-topic</td>
+      <td><code class="language-plaintext highlighter-rouge">block-density</code> — single-topic coherence audit</td>
+    </tr>
+    <tr>
+      <td>Large table found in block</td>
+      <td><code class="language-plaintext highlighter-rouge">block-density</code> R3 — extract to <code class="language-plaintext highlighter-rouge">table</code> block</td>
+    </tr>
+    <tr>
+      <td>Feature branch ready to merge</td>
+      <td><code class="language-plaintext highlighter-rouge">/prepare-merge</code> (slash command) — upstream check + placement + density + one-voice</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="output-artefacts">
+  
+  
+    <a href="#output-artefacts" class="anchor-heading" aria-labelledby="output-artefacts"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Output artefacts
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/tmp/content_chapter_graph.svg</code></td>
+      <td>Section-level topology</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/tmp/content_block_heatmap.svg</code></td>
+      <td>Block-level dependency heat-map</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/tmp/content-graph.json</code></td>
+      <td>Machine-readable graph export</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/tmp/content-graph-report.md</code></td>
+      <td>Full analysis report</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/tmp/content-graph-proposals.md</code></td>
+      <td>Concrete reorganisation proposals</td>
+    </tr>
+  </tbody>
+</table></div>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Quantum Observable Universe — built with <a href="https://litlfred.github.io/folio-assistant/">folio-assistant</a>.</p><p class="text-small mb-0 fa-build-stamp">
+  deployed
+  <a href="https://github.com/litlfred/folio-assistant/actions"><code>dev</code></a></p>
+
+
+  
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+  
+</body>
+</html>

@@ -1,0 +1,1321 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-astro-ph-0203462v1",
+  "title": "arxiv-astro-ph-0203462v1",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Observations and reductions",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-observations-and-reductions"
+    },
+    {
+      "level": 1,
+      "title": "Abundance analysis, and derived abundances of the lighter elements",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-abundance-analysis-and-derived-abundances-of-t"
+    },
+    {
+      "level": 2,
+      "title": "Model atmosphere and stellar parameters",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-model-atmosphere-and-stellar-parameters"
+    },
+    {
+      "level": 2,
+      "title": "Abundances of light and iron-peak elements",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-abundances-of-light-and-iron-peak-elements"
+    },
+    {
+      "level": 1,
+      "title": "Neutron-capture elements",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-neutron-capture-elements"
+    },
+    {
+      "level": 2,
+      "title": "Linelists and physical data",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-41-linelists-and-physical-data"
+    },
+    {
+      "level": 2,
+      "title": "Error budget",
+      "number": "4.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-42-error-budget"
+    },
+    {
+      "level": 2,
+      "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+      "number": "4.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-43-the-lighter-elements-38leqzleq48"
+    },
+    {
+      "level": 2,
+      "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
+      "number": "4.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-44-the-second-peak-elements-56leqzleq72"
+    },
+    {
+      "level": 2,
+      "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+      "number": "4.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-45-the-third-peak-elements-and-the-actinides-76l"
+    },
+    {
+      "level": 1,
+      "title": "Is the r-process universal ?",
+      "number": "5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-5-is-the-r-process-universal"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and future work",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-7-conclusions-and-future-work"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "halo giant",
+          "heading": false
+        },
+        {
+          "term": "solar r-element",
+          "heading": false
+        },
+        {
+          "term": "halo stars",
+          "heading": false
+        },
+        {
+          "term": "r-process elements",
+          "heading": false
+        },
+        {
+          "term": "extreme halo",
+          "heading": false
+        },
+        {
+          "term": "production ratio",
+          "heading": false
+        },
+        {
+          "term": "observatoire",
+          "heading": false
+        },
+        {
+          "term": "observatory",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:astro-ph/0203462v1 26 Mar 2002 1 Astronomy & Astrophysics manuscript no. (will be inserted by hand later) The extreme r-element rich, iron-poor halo giant CS 31082-001 Implications for the r-process site(s) and radioactive cosmochronology ⋆ V. Hill1, B. Plez2, R. Cayrel3, T. C. Beers4, B. Nordstr¨om5,6, J. Andersen6, M. Spite1, F. Spite1, B. Barbuy7, P. Bonifacio8, E. Depagne1, P. Fran¸cois3, and F. Primas9 1",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 831,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "halo stars",
+          "heading": false
+        },
+        {
+          "term": "metal-poor halo",
+          "heading": false
+        },
+        {
+          "term": "extreme halo",
+          "heading": false
+        },
+        {
+          "term": "beers",
+          "heading": false
+        },
+        {
+          "term": "age determination",
+          "heading": false
+        },
+        {
+          "term": "process pattern",
+          "heading": false
+        },
+        {
+          "term": "abundance",
+          "heading": false
+        },
+        {
+          "term": "sneden",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#introduction label=\"introduction\"} The detailed chemical abundances of the most metal-poor halo stars contain unique information on the earliest epochs of star formation and nucleosynthesis in our own and other galaxies. Previous studies of these extreme halo stars (Bessell & Norris [@bessell84]; Norris et al. [@norris01]; see other references in Table 2 of Cayrel [@cayrel96]) have revealed abundance patterns",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-observations-and-reductions",
+      "number": "2",
+      "title": "Observations and reductions",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uves",
+          "heading": false
+        },
+        {
+          "term": "radial velocity",
+          "heading": false
+        },
+        {
+          "term": "pixel",
+          "heading": false
+        },
+        {
+          "term": "spectrograph",
+          "heading": false
+        },
+        {
+          "term": "observations",
+          "heading": true
+        },
+        {
+          "term": "barycentric",
+          "heading": false
+        },
+        {
+          "term": "resolving power",
+          "heading": false
+        },
+        {
+          "term": "wavelength",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#observations label=\"observations\"} CS 31082-001 was first observed at high dispersion (R$>$<!-- -->45,000) with the new ESO-VLT spectrograph UVES (Dekker et al. [@dekker00]) in August 2000, and was immediately found to display outstandingly strong europium and thorium lines. The star was promptly re-observed at the highest possible resolution ($R=75,000$ in the blue arm of the spectrograph) during a subsequent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-abundance-analysis-and-derived-abundances-of-t",
+      "number": "3",
+      "title": "Abundance analysis, and derived abundances of the lighter elements",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "the lighter elements",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-model-atmosphere-and-stellar-parameters",
+      "number": "3.1",
+      "title": "Model atmosphere and stellar parameters",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "collisional broadening",
+          "heading": false
+        },
+        {
+          "term": "plez",
+          "heading": false
+        },
+        {
+          "term": "effective temperature",
+          "heading": false
+        },
+        {
+          "term": "b-v",
+          "heading": false
+        },
+        {
+          "term": "barklem",
+          "heading": false
+        },
+        {
+          "term": "molecular species",
+          "heading": false
+        },
+        {
+          "term": "relative abundances",
+          "heading": false
+        },
+        {
+          "term": "figure width",
+          "heading": false
+        }
+      ],
+      "extract": "The adopted model atmospheres (OSMARCS) were computed with the latest version of the MARCS code, initially developed by Gustafsson et al. ([@gben75]) and subsequently updated by Plez et al. ([@pbn92]), Edvardsson et al. ([@edvardsson]), and Asplund et al. ([@agke97]). The current version includes up-to-date continuum and line opacities for atomic and molecular species, treated in opacity sampling with more than",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-abundances-of-light-and-iron-peak-elements",
+      "number": "3.2",
+      "title": "Abundances of light and iron-peak elements",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nitrogen abundance",
+          "heading": false
+        },
+        {
+          "term": "halo stars",
+          "heading": false
+        },
+        {
+          "term": "metal-poor halo",
+          "heading": false
+        },
+        {
+          "term": "mean abundances",
+          "heading": false
+        },
+        {
+          "term": "log epsilon",
+          "heading": false
+        },
+        {
+          "term": "kotlar",
+          "heading": false
+        },
+        {
+          "term": "lithium",
+          "heading": false
+        },
+        {
+          "term": "line positions",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#light label=\"light\"} Most of the abundances for the light and the iron-group elements were determined via equivalent width measurement of a selection of unblended lines. Exceptions are Li, C, N, and O, for which synthesis spectra were directly compared to the observed spectrum. The linelist used for all light and iron-peak elements will be published together with the analysis of the complete sample of our Large",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-neutron-capture-elements",
+      "number": "4",
+      "title": "Neutron-capture elements",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutron capture",
+          "heading": false
+        },
+        {
+          "term": "neutron-capture",
+          "heading": true
+        },
+        {
+          "term": "peak",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#neutron capture label=\"neutron capture\"} <figure id=\"F-HfEu\"> <p><span><embed src=\"M2317f11.ps\" style=\"width:4.2cm\" /> <embed src=\"M2317f12.ps\" style=\"width:4.2cm\" /></span></p> <figcaption>The observed Eu 4129 and Hf II 3999 Å line in CS 31082-001 . Symbols as in Fig. <a href=\"#F-C\" data-reference-type=\"ref\" data-reference=\"F-C\">[F-C]</a>.</figcaption> </figure> In this section we discuss our adopted linelist,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-linelists-and-physical-data",
+      "number": "4.1",
+      "title": "Linelists and physical data",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "synthetic spectra",
+          "heading": false
+        },
+        {
+          "term": "oscillator strengths",
+          "heading": false
+        },
+        {
+          "term": "f-u",
+          "heading": false
+        },
+        {
+          "term": "f-nb-ru-rh",
+          "heading": false
+        },
+        {
+          "term": "abundances",
+          "heading": false
+        },
+        {
+          "term": "log epsilon",
+          "heading": false
+        },
+        {
+          "term": "hyperfine structure",
+          "heading": false
+        },
+        {
+          "term": "equivalent widths",
+          "heading": false
+        }
+      ],
+      "extract": "Lines from 28 neutron-capture elements were observed in CS 31082-001 , mainly concentrated in the blue and UV parts of the spectrum. The full linelist for heavy elements is provided in an Appendix to this paper, which also lists the references for our adopted oscillator strengths. When available from the paper of Sneden et al. [@sneden96], the same oscillator strengths were adopted in order to make the comparison to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-error-budget",
+      "number": "4.2",
+      "title": "Error budget",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abundance ratios",
+          "heading": false
+        },
+        {
+          "term": "stellar parameters",
+          "heading": false
+        },
+        {
+          "term": "systematic errors",
+          "heading": false
+        },
+        {
+          "term": "total uncertainties",
+          "heading": false
+        },
+        {
+          "term": "delta log",
+          "heading": false
+        },
+        {
+          "term": "log epsilon",
+          "heading": false
+        },
+        {
+          "term": "oscillator strengths",
+          "heading": false
+        },
+        {
+          "term": "t-heavy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#errors label=\"errors\"} Table [\\[T-error\\]](#T-error){reference-type=\"ref\" reference=\"T-error\"} summarizes the various sources of uncertainties affecting the derived neutron-capture-element abundances in CS 31082-001 . Stochastic errors ($\\Delta$(obs) listed in column 6) arise from random uncertainties in the oscillator strengths (gf values) and in the measured equivalent widths. The magnitude of this error is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-the-lighter-elements-38leqzleq48",
+      "number": "4.3",
+      "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-process abundances",
+          "heading": false
+        },
+        {
+          "term": "lighter elements",
+          "heading": true
+        },
+        {
+          "term": "r-process peak",
+          "heading": false
+        },
+        {
+          "term": "system r-process",
+          "heading": false
+        },
+        {
+          "term": "f-r-sun",
+          "heading": false
+        },
+        {
+          "term": "solar system",
+          "heading": false
+        },
+        {
+          "term": "leq",
+          "heading": true
+        },
+        {
+          "term": "burris",
+          "heading": false
+        }
+      ],
+      "extract": "This group includes the classically observed elements Sr, Y, and Zr, but also the less well-studied species Nb, Ru, Rh, Pd, and Ag, whose lines are weak and lie in the near-UV part of the spectrum, hampering their detection in normal metal-poor halo giants. The only metal-poor star in which all these elements have been previously detected is CS 22892-052 (Sneden et al. [@sneden00]), thanks to its large enhancement",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-44-the-second-peak-elements-56leqzleq72",
+      "number": "4.4",
+      "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "second-peak",
+          "heading": true
+        },
+        {
+          "term": "johnson bolte",
+          "heading": false
+        },
+        {
+          "term": "abundance determinations",
+          "heading": false
+        },
+        {
+          "term": "sneden",
+          "heading": false
+        },
+        {
+          "term": "leq",
+          "heading": true
+        },
+        {
+          "term": "r-process",
+          "heading": false
+        },
+        {
+          "term": "solar system",
+          "heading": false
+        },
+        {
+          "term": "hyperfine structure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#second-peak label=\"second-peak\"} The group of elements between barium and hafnium is the best studied mass-range of the neutron-capture elements, thanks to the relatively strong lines in the visible region of elements such as Ba, Eu, and La. In CS 31082-001 we were able to detect lines from *all* stable elements between Z=56 and Z=72. However, three of them cannot be used for abundance determinations because of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-45-the-third-peak-elements-and-the-actinides-76l",
+      "number": "4.5",
+      "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite sneden",
+          "heading": false
+        },
+        {
+          "term": "dex difference",
+          "heading": false
+        },
+        {
+          "term": "uranium line",
+          "heading": false
+        },
+        {
+          "term": "solar r-process",
+          "heading": false
+        },
+        {
+          "term": "oscillator strengths",
+          "heading": false
+        },
+        {
+          "term": "log epsilon",
+          "heading": false
+        },
+        {
+          "term": "r-process peak",
+          "heading": false
+        },
+        {
+          "term": "r-process fraction",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{actinides} The third r-process peak (near the magic number N=126) is sampled in \\cs by Os and Ir. The two heaviest species detected are the radioactive actinides Th and U, the use of which as chronometers we discuss in section \\ref{age}. \\begin{figure} \\centering {\\includegraphics[angle=0,width=4.2cm]{M2317f18.ps} \\includegraphics[angle=0,width=4.2cm]{M2317f19.ps}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-is-the-r-process-universal",
+      "number": "5",
+      "title": "Is the r-process universal ?",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 2137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-process",
+          "heading": true
+        },
+        {
+          "term": "solar r-process",
+          "heading": false
+        },
+        {
+          "term": "r-process peak",
+          "heading": false
+        },
+        {
+          "term": "r-process pattern",
+          "heading": false
+        },
+        {
+          "term": "qian wasserburg",
+          "heading": false
+        },
+        {
+          "term": "neutron-capture-element abundances",
+          "heading": false
+        },
+        {
+          "term": "observed abundances",
+          "heading": false
+        },
+        {
+          "term": "r-process elements",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#r universal label=\"r universal\"} <figure id=\"F-r-sun\"> <p><span><embed src=\"M2317f24.ps\" style=\"width:8.5cm\" /> <embed src=\"M2317f25.ps\" style=\"width:8.5cm\" /> <embed src=\"M2317f26.ps\" style=\"width:8.5cm\" /></span></p> <figcaption><span><em>Top:</em></span> Neutron-capture-element abundances of CS 31082-001 compared to the Solar System r-process scaled to match the 56<span class=\"math inline\">≤</span>Z<span",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-7-conclusions-and-future-work",
+      "number": "7",
+      "title": "Conclusions and future work",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 3115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syn",
+          "heading": false
+        },
+        {
+          "term": "apj",
+          "heading": false
+        },
+        {
+          "term": "iron-poor halo",
+          "heading": false
+        },
+        {
+          "term": "halo giant",
+          "heading": false
+        },
+        {
+          "term": "sneden",
+          "heading": false
+        },
+        {
+          "term": "extreme r-element",
+          "heading": false
+        },
+        {
+          "term": "r-element rich",
+          "heading": false
+        },
+        {
+          "term": "lawler",
+          "heading": false
+        }
+      ],
+      "extract": "The apparent brightness, very low [Fe/H], and enormous r-process enhancement, in combination with the lack of molecular blanketing, makes CS 31082-001a uniquely fa- vorable object for study of the r-process nucleosynthesis history in the early Galaxy. The most conspicuous result of these characteristics is the breakthrough in the measure- ment of the abundance of uranium in this very old star, facilitated by our",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 31,
+        "items": [
+          "Cowley R.C., Aikman G.C.C. & Fisher W.A. 1977, Publ. Dom. McWilliam, A., Preston, G. W., Sneden, C., & Searle, L. 1995, Astrophys. Obs. Victoria, 15, 37 AJ 109,",
+          "Delyannis, C. 1998, AJ 116, 2489 Michaud, G. Charland, Y., Vauclair, S., & Vauclair, G. 1976, Cutri, R.M., et al., 2002, Second Incremental Data Release ApJ 210,",
+          "Kotzlowski, H. 2000, in ”Optical and IR Telescope Washington D.C., 1970) Instrumentation and Detectors”, Masanori Iye and Alan Musiol, K., & Labuz, S. 1993, Phys. Scr. 27,",
+          "Moorwood (Eds.), Proc. SPIE Vol. 4008, p. 534 Nilsson, H., Ivarsson, S., Johansson, S., & Lundberg, H. 2001 Depagne, E., et al., 2002, in preparation A&A 381,",
+          "Edvardsson, B., Andersen, J., Gustafsson, B., et al. 1993 A&A Nilsson, H., Zhang, Z., Lundberg, H., Johansson, S., & 275, 101 Nordstr¨om, B. 2001, A&A 382,",
+          "Fouqu´e, P., Chevallier, L., Cohen, M., et al. 2000 A&AS 141, Nissen, P., Primas, F., & Asplund, M., 2001, New Astronomy 313 Reviews, 45,",
+          "Gallagher, A., 1967, Phys. Rev. 157, 24 Norris, J.E., Ryan, S.G., & Beers, T.C. 2001, ApJ 561,",
+          "Goly, A., Kusz, J., Nguyen Quang, B., & Weniger, S. 1991, J. Pagel, B., & Tautvai˘sien`e, G. 1997, MNRAS 288,",
+          "Quant. Spectrosc. Radiat. Transfer 45, 157 Plez, B. 1998 A&A 337,",
+          "Goriely, S., & Arnould, M. 2001, A&A in press Plez, B., Brett, J.M., & Nordlund, ˚A. 1992, A&A 256,",
+          "Goriely, S., & Clerbaux, B. 1999, A&A 346, 798 Plez, B., Smith, & V.V., Lambert, D.L. 1993, ApJ 418,",
+          "Gratton, R.G. & Sneden, C., 1994, A&A 287, 927 Prantzos, N., Hashimoto, M., & Nomoto, K. 1990, A&A 234, Gustafsson, B., Bell, R. A., Eriksson, K., & Nordlund, ˚A.,",
+          "A&A 42, 407 Prasad, C.V.V., & Bernath, P.F. 1992, JMS 156,",
+          "Gustafsson, B., & Mitzuno-Wiedner, M. 2001 in ”Astrophysical Prasad, C.V.V., Bernath, P.F., Frum, C., & Engleman, R.Jr. Timescales”, PASP Conf. Series 245, 271 1992, JMS 151,",
+          "Qian, Y.-Z., Wasserburg, G. J. 2001a, 552, L55 Whaling, W. 1982, ApJ 261,",
+          "Qian, Y.-Z., Wasserburg, G. J. 2001b, 559,",
+          "Hill, V., Plez, B., Cayrel, C., & Beers, T. 2001 in Qian, Y.-Z., Wasserburg, G. J. 2002, 567,",
+          "”Astrophysical Timescales”, PASP Conf. Series 245,",
+          "Reader, J., & Sansonetti, C.J. 1986, Phys. Rev. 33,",
+          "Israelian, G., Garc´ıa L´opez, R., Ram´on, J., & Rebolo, R. 1998, Rehfuss, B.D., Suh, M.H., & Miller, T.A. 1992, JMS 151,",
+          "ApJ 507,",
+          "Ryan, S.G., Norris, J.E., & Beers, T.C. 1992, ApJ, 471,",
+          "1988, JMS 127,",
+          "Sneden, C., McWilliam, A., Preston, G. W., et al. 1996, ApJ, Jaschek, M., & Malaroda, S. 1970, Nature, 225,",
+          "Johnson, J., & Bolte M. 2001, ApJ 554, 888 467,",
+          "Jørgensen, U.G., Larsson, M., Iwamae, A., & Yu, B. 1996, A&A Sneden, C., Cowan, J. J., Burris, D. L. & Truran, J. W. 1998, 315, 204 ApJ, 496,",
+          "N. 1984, A&A 135, 59 Spite, M. 1967, Ann. Astrophys. 30,",
+          "Lage, C.S. & Whaling, W. 1976, J. Quant. Spectrosc. Radiat. Tsujimoto, T., Shigeyama, T., & Yoshii, Y. 2000, ApJ 531, L33 Transfer 16, 537 Anthony-Twarog, B.J., & Twarog, B. 2000 AJ 119,",
+          "Larsson, M., Siegbahn, P.E.M., & Agren, H. 1983, ApJ 272, Umeda, H., & Nomoto, K. 2002, ApJ 565,",
+          "369 Van Eck, S., Goriely, S., Jorissen, A., & Plez, B. 2001, Nature Lawler, J.E., Bonvallet, G., & Sneden, C. 2001a ApJ 556,452 412,",
+          "Lawler, J.E., Wickliﬀe, M.E., Sen Harog, E.A., & Sneden, C. Vladilo, G., Bonifacio, P., Centuri´on, M., & Molaro, P. 2000, 2001b, ApJ 563, 1088 ApJ, 543,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 7,
+        "items": [
+          "1 Introduction",
+          "2 Observations and reductions",
+          "3 Abundance analysis, and derived abundances of the lighter elements",
+          "3 LTE",
+          "4 Neutron-capture elements",
+          "5 Is the r-process universal ?",
+          "7 Conclusions and future work"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "table 3",
+      "table 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "r-process abundances",
+      "heading": true
+    },
+    {
+      "term": "abundance log",
+      "heading": true
+    },
+    {
+      "term": "solar r-process",
+      "heading": true
+    },
+    {
+      "term": "abundance ratio",
+      "heading": false
+    },
+    {
+      "term": "observed abundances",
+      "heading": false
+    },
+    {
+      "term": "thorium abundance",
+      "heading": false
+    },
+    {
+      "term": "abundance pattern",
+      "heading": false
+    },
+    {
+      "term": "neutron-capture-element abundances",
+      "heading": true
+    },
+    {
+      "term": "mean abundance",
+      "heading": true
+    },
+    {
+      "term": "r-process elements",
+      "heading": false
+    },
+    {
+      "term": "derived abundances",
+      "heading": true
+    },
+    {
+      "term": "abundance determinations",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Comparison of the spectrum of CS 31082-001(thick line) and CS 22892-052 (narrow line) showing the much reduced molecular band strength in the former. Upper panel: CN 3871 and 3883˚A band heads; lower panel: G band (CH). The spectrum of CS 22892-052was obtained during the comissioning of the spectrog",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Fit of CH lines of the G band in CS 31082-001. Dots: observations: lines: synthetic spectra computed for the abundances indicated in the ﬁgure",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The forbidden [O I] 6300 ˚A line in CS 31082-001. Symbols as in Fig. 2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Log of the observations, and measured signal-to-noise ratio per pixel from the extracted and co-added spectra",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Colors and eﬀective temperature of CS 31082- 001",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The observed Nb II 3215 ˚A, Ru I 3799 ˚A, and Rh I 3434 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The observed Pd I 3242 ˚A, Ag I 3281 ˚A, and 3383 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The observed Eu 4129 and Hf II 3999 ˚A line in CS 31082-001. Symbols as in Fig. 2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Th and U lines used in the abundance determination",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The observed Os I 4261 ˚A, 4420 ˚A, and Ir I 3513 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Error budget for neutron-capture elements",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The observed Pb I 4057 ˚A lines in CS 31082- 001 (upper",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The observed Th II 3351 ˚A, 3434˚A, 4019˚A and 4086˚A lines in CS 31082-001. Dots: observations; line: synthetic spectrum computed for the mean Th abundance, log ǫ(Th)=-0.98",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The observed U II 3859 ˚A line in CS 31082-001. Symbols as in Fig. 2. The best ﬁt is found for log ǫ(U)=−1.92",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Top: Neutron-capture-element abundances of CS 31082-001compared to the Solar System r-process scaled to match the 56≤Z≤69 elemental abundances of",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Neutron-capture-element",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Abundances of CS 31082-001compared to the predictions of Qian & Wasserburg (2001b,2002) three component phenomenological model",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-astro-ph-0203462v1"
+  }
+}

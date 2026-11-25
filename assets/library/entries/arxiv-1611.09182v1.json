@@ -1,0 +1,1486 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1611.09182v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Standard model physics from an\nalgebra?\nby\nC. Furey\nA thesis\npresented to the University of Waterloo\nin fulﬁllment of the\nthesis requirement for the degree of\nDoctor of Philosophy\nin\nPhysics\nWaterloo, Ontario, Canada, 2015\nc⃝C. Furey 2015\narXiv:1611.09182v1  [hep-th]  16 Nov 2016",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-01-abstract.md",
+      "narrative": null,
+      "content": "This thesis constitutes a first attempt to derive aspects of standard  model particle physics from little more than an algebra.  Here, we argue that physical concepts such as particles, causality, and irreversible time may result from the algebra acting on itself.\n\nWe then focus on a special case by considering the algebra $\\RCHO$, the tensor product of the only four normed division algebras over the real numbers.  Using nothing more than $\\RCHO$ acting on itself, we set out to find standard model particle representations:  a task which occupies the remainder of this text.\n\n\nFrom the $\\CH$ por",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-02-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nThis research was supported by NSERC, the University of Waterloo, the Templeton Foun-\ndation, and by the Perimeter Institute for Theoretical Physics. Research at Perimeter\nInstitute is supported by the Government of Canada through Industry Canada and by the\nProvince of Ontario through the Ministry of Research and Innovation.\nA special thanks to my committee members: L. Boyle, F. Cachazo, F. Girelli, A. Kempf,\nR. Mann, and P. Ramond. I am especially grateful to L. Boyle, A. Kempf, and R. Mann\nfor giving me a hand when I needed one, and feel very fortunate to have had A. Kempf a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards conceptual parsimony",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-11-towards-conceptual-parsimony.md",
+      "narrative": null,
+      "content": "The safest conceivable theory is one which implements the fewest initial assumptions possible.\n\nThat is, any model based on elaborate input will by definition specify more detail than would a simple one, and hence will be more likely to be in conflict with reality.  \n\nOur current theories of fundamental physics are often described in terms of an assortment of objects such as manifolds, metric tensor fields, matter fields, gauge fields, Fock spaces, etc. One might wonder if it could be possible to choose our starting point more conservatively.\n\nThis thesis may be thought of as an experiment of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-12-outline.md",
+      "narrative": null,
+      "content": "In Chapter~\\ref{m1} of this thesis, we give a brief sketch of our experiment, which motivates the algebraic model being proposed.  In Chapter~\\ref{CH}, we introduce the algebra of the complex quaternions, $\\CH$, and with them, demonstrate all of the Lorentz representations necessary to describe  the standard model.  Then, in Chapter~\\ref{CA}, we review some basic characteristics of Clifford algebras, while in Chapter~\\ref{SM}, we review some basic characteristics of the standard model.  In Chapter~\\ref{CO} we introduce the complex octonions, $\\CO$, and show how they can provide a direct route",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What lies in an algebra?",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-2-what-lies-in-an-algebra.md",
+      "narrative": null,
+      "content": "In this ﬁrst chapter, we introduce an attempt to describe established results in particle\nphysics, while working from the fewest initial assumptions possible. Our only input will\nbe an algebra, A.\nThe ideas outlined here originate from a Cambridge Part III research essay, [33], [32]\nand have provided the underlying intuition for three papers published during these PhD\nyears, [36], [35], and [34]. With this being said, the results from those three publications\nmay be considered independently from the ideas sketched here in this chapter, which are\nstill at an early stage of development.\nMuch of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Causality",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-21-causality.md",
+      "narrative": null,
+      "content": "Suppose for a moment that nature were represented by an algebra, $A$.  We will start, then, simply with an unevaluated algebraic expression.  Consider for example\n\n\\begin{equation}\nf \\cdot ( e\\cdot ( d\\cdot c + b\\cdot a) ),\n\\end{equation}\n\n\\noindent where $a$, $b$, $c$, $d$, $e$, $f$ are elements of $A$.  Taking multiplication to be the propagation along an edge, and addition to be the joining of two edges at a vertex, it can be seen that this unevaluated algebraic expression gives a causal set.\n\nPlease see Figure~(\\ref{cs}).  \n\n\\vspace{.5cm}\n\n\\begin{figure}[h!]\n\\begin{center}\n\\includegraphics",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreversible time",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-22-irreversible-time.md",
+      "narrative": null,
+      "content": "Recently, it has been emphasized in the fundamental physics community, \\cite{fqxi}, that theories like general relativity do a poor job of encapsulating our experience of \\it events unfolding. \\rm For example, there is nothing in the theory to explain why events happen, but do not `unhappen'.\n\nIt seems, however, that an algebra might well provide such a  notion of irreversible time.    In the case of an algebra, an event is a calculation.  Taking our algebra $A=\\mathbb{R}$, for example, an event is the evaluation of 6+3 to give 9, or the evaluation of 5$\\cdot$2 to give 10.  \n\nAddition and mult",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Particles",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-23-particles.md",
+      "narrative": null,
+      "content": "Some carefully chosen algebras, such as the complex Clifford algebra, $A=\\CLtwo$, naturally contain subspaces called \\it ideals. \\rm  Intuitively speaking, an ideal  is a special subspace of an algebra because it can survive multiplication by any element in $A$.  \n\n\\it Ideals \\rm persisting under multiplication bear a striking resemblance to \\it particles \\rm persisting under propagation.  The proposal, then, is that particles could be singled out in the algebra, thanks to a mathematical incarnation of Darwin's natural selection.   \n\n\\begin{center} Ideals $\\sim$ particles.\n\\end{center}\n\nGiven",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and outlook",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-24-summary-and-outlook.md",
+      "narrative": null,
+      "content": "We come from sketching a model,  whose only fundamental input is an algebra, $A$.  \nFrom the  algebraic expressions of $A$, we argue that multiple physical concepts can materialize.  \nSuch resulting physical concepts may include causality, particles, and irreversible time.  Notably, particles may be seen to arise as the algebra's most stable subspaces.\n\n\nThe algebra, $A$,  will be taken to be $\\RCHO$ for reasons that will become clear throughout this thesis.  In the future, however, it would be worth investigating whether or not even $\\RCHO$ could be simplified.  Explicitly, $\\RCHO$ could be r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex quaternions",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-3-complex-quaternions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preamble",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-31-preamble.md",
+      "narrative": null,
+      "content": "Preamble\nA signiﬁcant challenge within causal set programs has been to explain the existence of\n3+1 dimensions. That is, any causal set chosen at random is highly unlikely to have this\nparticular dimension of our choosing.\nIt is for this reason that we propose here causal sets originating from an algebra, A. The\nidea then is that a careful choice of algebra will impart on the causal set the desired 3+1\nLorentzian structure. In this section, we will consider A = C⊗H, the complex quaternions.\nBetween the left and right action of C ⊗H on itself, we will now introduce an unusually\ncompact way of d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction to CH",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-32-introduction-to-ch.md",
+      "narrative": null,
+      "content": "Any element of the complex quaternions can be described as the complex linear combina-\ntion,\nc0 + c1 iϵx + c2 iϵy + c3 iϵz,\n(3.1)\nwhere the cn ∈C. The element i is the usual complex imaginary unit, with i2 = −1, that\ncommutes with all of the elements in the algebra. The quaternionic imaginary units, ϵx,\nϵy, and ϵz follow the multiplication rules\n8\nϵx\n2 = ϵy\n2 = ϵz\n2 = ϵx ϵy ϵz = −1,\n(3.2)\nwhich lead to the identities ϵxϵy = −ϵyϵx = ϵz, ϵyϵz = −ϵzϵy = ϵx, ϵzϵx = −ϵxϵz = ϵy. The\ncomplex quaternions form an associative algebra, meaning that (ab) c = a (bc) ∀a, b, c\n∈C ⊗H. (Note that all tensor pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugation",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-33-conjugation.md",
+      "narrative": null,
+      "content": "In this text, the \\it complex conjugate \\rm of an element $a$ will be denoted $a^*$.   The conjugate $*$ maps the complex $i\\mapsto -i$, in the usual way.  \n\nThe \\it quaternion conjugate \\rm of $a$ will be denoted $\\widetilde{a}$, and $\\sim$ maps the quaternionic ${\\epsilon_x}\\mapsto -{\\epsilon_x},$ ${\\epsilon_y}\\mapsto -{\\epsilon_y},$ and ${\\epsilon_z}\\mapsto -{\\epsilon_z}$.  \n\nThat which we call the \\it hermitian conjugate \\rm of $a$ will be denoted $a^{\\dagger}$, and $\\dagger$ is the result of performing both the complex and quaternion conjugates simultaneously:  $i\\mapsto -i$, ${\\epsilon_x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized ideals",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-34-generalized-ideals.md",
+      "narrative": null,
+      "content": "We define a subalgebra $B$ of an algebra $A$ to be a \\it generalized ideal \\rm if $m \\left( a, \\underline{b} \\right) \\in B,  \\hspace{1mm} \\forall \\underline{b} \\in B$ and for any $a \\in A$, where $m$ is (generalized) multiplication.  The notion of a generalized ideal was introduced by this author in \\cite{UTI}, and differs from the definition of left ideals by generalizing what is meant by `multiplication'.   Directly from the definition, it can be seen that ideals make up the algebra's most robust subspaces, which persist no matter what $a$ is multiplied onto them. \n\nStarting from the algebra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex invariant-action, mc",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-35-complex-invariant-action-mc.md",
+      "narrative": null,
+      "content": "Complex invariant-action, mc",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-351-preliminaries.md",
+      "narrative": null,
+      "content": "We will now find that left- and right-handed Weyl spinors, Majorana spinors, and Dirac spinors are all generalized ideals under the same complex invariant-action, \n\\begin{equation}\\label{cma}\n\\underline{b}' =  a\\hspace{1mm}\\underline{b}\\hspace{1mm} P + a^*\\hspace{1mm}\\underline{b}\\hspace{1mm} P^*.  \n\\end{equation}\n\\noindent For concreteness, we define $P$ to be the projector $\\frac{1}{2}\\left(1+i{\\epsilon_z}\\right)$, although it is  clear that a continuum of other possibilities exist.  $P$ and its complex conjugate, $P^*$, exhibit the properties \n\\begin{equation}\\begin{array}{lllllll}\nPP=P,  &",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weyl and Dirac spinors as generalized ideals",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-352-weyl-and-dirac-spinors-as-generalized-ideals.md",
+      "narrative": null,
+      "content": "Let us now identify two subspaces, which partition the algebra $\\CH$.  These subspaces will be given the suggestive nomenclature $\\Psi_{\\textup{L}}$ and $\\Psi_{\\textup{R}}$, and be defined as\n\\begin{equation}\\begin{array}{lll}\n\\Psi_{\\textup{L}} \\equiv \\psi^{\\uparrow}_{\\textup{L}} \\hspace{1mm} \\epsilon_{\\uparrow \\uparrow} +  \\psi^{\\downarrow}_{\\textup{L}} \\hspace{1mm} \\epsilon_{\\downarrow \\uparrow}  & \\hspace{1cm} &  \\Psi_{\\textup{R}} \\equiv \\psi^{\\uparrow}_{\\textup{R}} \\hspace{1mm} \\epsilon_{\\uparrow \\downarrow} +  \\psi^{\\downarrow}_{\\textup{R}} \\hspace{1mm} \\epsilon_{\\downarrow \\downarrow},\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A seamless new way to conjugate Weyl spinors",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-018-353-a-seamless-new-way-to-conjugate-weyl-spinors.md",
+      "narrative": null,
+      "content": "In quantum field theory textbooks, it is typically explained that a left handed Weyl spinor, $\\Psi_{\\textup{L}}$, can be conjugated so as to give a right-handed Weyl spinor.  The procedure necessary to do so, in the usual matrix-and-column-vector formalism, entails (1) complex conjugating the left-handed spinor's two components, and (2) multiplying this column vector by the matrix $\\epsilon = -i\\sigma_y=\\left( \\begin{smallmatrix}0&-1\\\\1&0 \\end{smallmatrix}  \\right)$, \n\n\\begin{equation}\\label{old} \\begin{array}{lllll}\\left[\\hspace{1mm}\\psi^{\\uparrow}_{\\textup{L}} , \\hspace{1mm} \\psi^{\\downarrow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Majorana spinors as generalized ideals",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-019-354-majorana-spinors-as-generalized-ideals.md",
+      "narrative": null,
+      "content": "Given our description above of Dirac spinors, it is now easy to build Majorana spinors.  Any Dirac spinor splits into two Majorana spinors, given by \n\\begin{equation} \\begin{array}{lll}\\Psi_{\\textup{M}_1} \\equiv  \\frac{1}{2}\\left( \\Psi_{\\textup{D}} + \\Psi_{\\textup{D}}^* \\right) &\\hspace{1cm} & \\Psi_{\\textup{M}_2} \\equiv  \\frac{1}{2}\\left( \\Psi_{\\textup{D}} - \\Psi_{\\textup{D}}^* \\right). \n\\end{array}\\end{equation}\n\\noindent Clearly, $\\Psi_{\\textup{M}_1}$ is invariant under complex conjugation, $\\Psi_{\\textup{M}_1}^* = \\Psi_{\\textup{M}_1}$, while $\\Psi_{\\textup{M}_2}$ acquires a minus sign, $\\Ps",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hermitian invariant-action, mh",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-020-36-hermitian-invariant-action-mh.md",
+      "narrative": null,
+      "content": "We will now find that the hermitian invariant-action, $m_h$, leads to new generalized ideals, which behave like four-vectors, \n\n\\begin{equation}\n\\underline{b} ' = a\\hspace{1mm} \\underline{b}\\hspace{1mm} a ^{\\dagger}.\n\\end{equation}\n\nAny element of $\\mathbb{C}\\otimes\\mathbb{H}$ can be written as a sum of hermitian $p\\equiv p_0 + p_1i{\\epsilon_x} +p_2i{\\epsilon_y} + p_3i{\\epsilon_z}$ and anti-hermitian $\\hat{p}\\equiv i\\hat{p}_0 + \\hat{p}_1{\\epsilon_x} +\\hat{p}_2{\\epsilon_y} + \\hat{p}_3{\\epsilon_z}$ parts, where the $p_n$ and $\\hat{p}_n$ $\\in \\mathbb{R}$.  \n As $a p a ^{\\dagger}$ is hermitian and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic invariant-action, mq",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-021-37-quaternionic-invariant-action-mq.md",
+      "narrative": null,
+      "content": "Finally, we will now consider the quaternionic invariant-action, $m_q$.  This new action leads to generalized ideals, which are more commonly known as Lorentz scalars, $\\phi$, and the field strength tensor, $F$,\n\n\\begin{equation} \\underline{b} ' = a\\hspace{1mm}\\underline{b} \\hspace{1mm}\\widetilde{a}.\n\\end{equation}\n\n$\\mathbb{C}\\otimes\\mathbb{H}$ can be partitioned once again, this time into subspaces of the form $\\phi \\in \\mathbb{C} $ and $F = \\left( F^{32} +iF^{01}\\right){\\epsilon_x} + \\left( F^{13}+iF^{02} \\right){\\epsilon_y}  + \\left( F^{21}+iF^{03}  \\right){\\epsilon_z}  $, with $F^{mn} \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bilinears",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-022-38-bilinears.md",
+      "narrative": null,
+      "content": "Bilinears\nBilinears and other scalars can now be built by combining the various ideal representations,\nwhose SL(2, C) factors, L, ﬁt together like lock and key. Noting that eL = L−1, let us\nconsider for example the real part of Ψ†\nLi∂ΨL + Ψ†\nRi∂∗ΨR, where ∂≡∂t −iϵx ∂x −iϵy ∂y −\niϵz ∂z. Under a Lorentz transformation,\nD\nΨ†\nLi∂ΨL + Ψ†\nRi∂∗ΨR\nE′\n=\nD\nΨ†\nLL† L∗i∂eL LΨL + Ψ†\nReL Li∂∗L† L∗ΨR\nE\n=\nD\nΨ†\nLi∂ΨL + Ψ†\nRi∂∗ΨR\nE\n,\n(3.24)\nwhere ⟨· · · ⟩means to take the real part.\nThis scalar is the same as the scalar between Dirac spinors of quantum ﬁeld theory, at\na ﬁxed space-time point, ΨDiˆ∂ΨD = Ψ†\nDβiγα∂",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-023-39-summary.md",
+      "narrative": null,
+      "content": "Summary\nWe have just found a set of generalized ideals, originating from three generalized notions\nof multiplication, mc, mh, and mq. These generalized ideals led directly to left- and right-\nhanded Weyl spinors, Dirac spinors, and Majorana spinors, four-vectors, scalars, and the\nﬁeld strength tensor. This accounts for all of the Lorentz representations of the standard\nmodel.\nFurthermore, we found that Lorentz transformations can be described concisely by\nb′ = m(L, b),\n(3.25)\n(or by b′ = m(L∗, b)). These results were obtained using nothing but the algebra C ⊗H\nacting on itself.\nIn contrast to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-024-310-outlook.md",
+      "narrative": null,
+      "content": "It is plain to see that $m_c$, $m_h$, and $m_q$ each correspond to an involution of the $\\CH$ algebra.  That is, $m_c$ corresponds to  $*$, $m_h$ corresponds to $\\dagger$, and $m_q$ corresponds to $\\sim$.  The complex quaternions, though, have more discrete symmetries available than is shown here, and it would be interesting to see what could come from the corresponding constructions of generalized ideals. \n\n\nAnother proposal is to take the concept of generalized multiplication further by considering \\it generalized automorphisms. \\rm  Just as automorphisms preserve the multiplicative structur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Clifford algebras",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-025-4-clifford-algebras.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-026-41-motivation.md",
+      "narrative": null,
+      "content": "It is difficult to ignore the presence of Clifford algebras within elementary particle physics.  Clifford algebras inevitably appear whenever spinors do, and ultimately underlie the algebra of some well-known grand unified theories, \\cite{agut}.  It was in fact argued in \\cite{Grass}, \\cite{wow}, and \\cite{wowagain} that Clifford algebras alone are the source of internal structure for quarks and leptons.  \n\n\n\n\n\n\n\n\nBut one may ask, where do these Clifford algebras come from?   Certainly, there is an infinite number of Clifford algebras available, and nature appears to choose only some of them.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-027-42-definition.md",
+      "narrative": null,
+      "content": "In \\cite{paddy}, \\cite{west}, a Clifford algebra over $\\mathbb{R}$ is defined to be an associative algebra, which is generated by $n$ elements, $e_i$.  These $n$ generators exhibit the properties\n\n\\begin{equation}\\label{CAdefn}\n\\{e_i, e_j \\}\\equiv e_ie_j + e_je_i = 2\\eta_{ij} \\mathbb{I}, \n\\end{equation}\n\n\\noindent where the entries $\\eta_{ij}=0$ for $i\\neq j$, and $\\eta_{ii} = \\pm 1$ $\\forall i$.  The symbol $\\mathbb{I}$ represents the identity.   A Clifford algebra over $\\mathbb{R}$ with $p$ generators having the property $e_i^2 = +\\mathbb{I}$, and $q$ generators having the property $e_i^2 =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of Clifford algebras from CH",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-028-43-examples-of-clifford-algebras-from-ch.md",
+      "narrative": null,
+      "content": "Given the multiplication properties from equation~(\\ref{CHmult}), it is straightforward to see that $\\CH$ gives a representation of the real Clifford algebra, $Cl(3,0)$.  Please see Figure~(\\ref{cl3}).\n\n\\begin{figure}[h!]\n\\begin{center}\n\\includegraphics[width=7cm]{cl3_eps-eps-converted-to.pdf}\n\\caption{\\label{cl3}\nThe algebra $\\CH$ written so as to show its $Cl(3,0)$ structure.  Here, the Clifford algebra's zero-vector is 1, its generating vectors are $i{\\epsilon_x}$, $i{\\epsilon_y}$, $i{\\epsilon_z}$, its bivectors are ${i\\epsilon_y}{i\\epsilon_z} = -{\\epsilon_x}$, \\hspace{1mm} ${i\\epsilon_z}{i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal left ideals",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-029-44-minimal-left-ideals.md",
+      "narrative": null,
+      "content": "For the remainder of this text, we will be interested only in Clifford algebras over $\\mathbb{C}$, where $n$ is even.  The most common way to model these algebras is to represent them as $2^{n/2}\\times2^{n/2}$ complex matrices, as mentioned above.  These complex matrices then act on spinors in the form of $2^{n/2}$-complex-dimensional column vectors.  \n\n\n\n\nWe would like, however, to avoid resorting to this matrix-and-column-vector formalism, which posits two separate entities:  matrices, and column vectors.   Instead, we will opt for a more streamlined formalism, based simply on a single algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to identify minimal left ideals",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-030-45-how-to-identify-minimal-left-ideals.md",
+      "narrative": null,
+      "content": "How to identify minimal left ideals\nWe will now summarize for the reader a procedure for ﬁnding minimal left ideals in com-\nplex Cliﬀord algebras, where n is even.\nThis procedure is described in [1], which also\naccommodates other types of Cliﬀord algebra.\nIn the special case of C ⊗H, this procedure will allow us to recover the Weyl spinors\nΨL or ΨR, which we found earlier via the complex multiplicative action, mc. We will then\nmove on to the algebra of C ⊗O, which can be seen to generate Cl(6). This leads us to\nminimal left ideals behaving as a full generation of quarks and leptons.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some definitions",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-031-451-some-definitions.md",
+      "narrative": null,
+      "content": "Some deﬁnitions\nLet V be the vector space over a ﬁeld F. A quadratic form, Q, is a map Q : V →F such\nthat ∀v, w ∈V and λ ∈F,\nQ(λv) = λ2Q(v)\n(4.4)\nand such that the map B : V × V →F,\nB : (v, w) 7→Q(v + w) −Q(v) −Q(w)\n(4.5)\nis linear in both v and w. This V, together with its quadratic form, is called a quadratic\nvector space.\n23\nWe will be especially interested in the quadratic vector space given by V and Q, where\nV is the n-dimensional vector space spanned by the generating elements ej of deﬁnition\n(4.1). Here, the quadratic form will be given by Q(v) = {v, v}, and the corresponding\nbilinear f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Procedure",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-032-452-procedure.md",
+      "narrative": null,
+      "content": "Procedure\nWith these deﬁnitions in hand, the procedure for constructing minimal left ideals is\nstraightforward:\n1.\nFirst identify a quadratic vector space (V, Q) . In particular, we will take V to be\nthe generating space of a given Cliﬀord algebra, spanned by the generators {ej}\nover C, where j = 1 . . . n. We will take our quadratic form to be Q(v) = {v, v}.\n2.\nIdentify an MTIS (maximal totally isotropic subspace) U of V as the largest possible\nsubspace of V such that {αi, αj} = 0 ∀αi, αj ∈U.\n3.\nDeﬁne the nilpotent object Ω≡α1α2 · · · αn/2, where the αi are linearly independent\nbasis vectors",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal left ideals in CH",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-033-46-minimal-left-ideals-in-ch.md",
+      "narrative": null,
+      "content": "As a specific example, let us now build a minimal left ideal in $\\CH\\simeq\\CLtwo$, as per Figure (\\ref{cl2}).   Following the procedure from Section~(\\ref{proc}),\n\n$$\\begin{array}{ll} \n 1. &  \\textup{Our vector space, $V,$ is spanned by the elements $i{\\epsilon_x}$ and $i{\\epsilon_y}$ over $\\mathbb{C}$.  The quadratic form is} \\\\\n& \\vspace{.5cm} \\textup{given by $Q(v) = \\{v,v\\}$.}\n \\\\\n  2. & \\textup{An MTIS of $V$ is just one-complex-dimensional in this case, and can be spanned}\\\\\n & \\vspace{.5cm} \\textup{by $\\alpha_1 = \\epsilon_{\\downarrow\\uparrow} = \\frac{1}{2}\\left({\\epsilon_y} +i {\\epsilon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fock space structure",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-034-461-fock-space-structure.md",
+      "narrative": null,
+      "content": "With a little relabelling, it becomes obvious that these minimal left ideals naturally exhibit Fock space structure.  Taking $\\alpha_1 = \\epsilon_{\\downarrow\\uparrow}$, it then follows that $\\alpha_1^{\\dagger} = \\epsilon_{\\uparrow\\downarrow}$, which have the anticommutation relations,\n\n\\begin{equation}\\begin{array}{lll} \\{\\alpha_1, \\alpha_1\\} =  \\{\\alpha_1^{\\dagger}, \\alpha_1^{\\dagger}\\} = 0 & \\hspace{1cm} &  \\{\\alpha_1, \\alpha_1^{\\dagger}\\} = 1.\n\\end{array}\\end{equation}\n\n\\noindent Defining the (formal) vacuum states to be $v\\equiv \\Omega\\Omega^{\\dagger}$ and $v^{*}\\equiv \\Omega^{\\dagger}\\Ome",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dirac algebra",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-035-47-the-dirac-algebra.md",
+      "narrative": null,
+      "content": "It is not enough for us here to consider minimal left ideals for just $\\Psi_{\\textup{L}}$ or for just $\\Psi_{\\textup{R}}$, separately.  We would like also to combine these two objects together into a single four-complex-dimensional Dirac spinor, as shown in Section~\\ref{WD}.\n\nIt had been mentioned earlier that chirality, L and R, is the analogue of spin, $\\uparrow$ and $\\downarrow$, in this formalism.  One can confirm that left multiplying $\\Psi_{\\textup{L}}$ and $\\Psi_{\\textup{R}}$ by $\\CH$ causes rotation between their spin states, $\\uparrow$ and $\\downarrow$, whereas right multiplying $\\Psi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Right action required",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-036-48-right-action-required.md",
+      "narrative": null,
+      "content": "Readers may have noticed that the left action of $\\CH$ on itself was not enough to describe $\\Psi_{\\textup{L}}+\\Psi_{\\textup{R}}$ together as a single irreducible representation.  That is, the left action alone has only $\\Psi_{\\textup{L}}$ (or $\\Psi_{\\textup{R}}$) as an irrep.  However, the combined Dirac spinor, $\\Psi_{\\textup{L}}+\\Psi_{\\textup{R}}$, does become an irreducible representation of a Clifford algebra when the right action of $\\CH$ is also included.  Readers will find this theme coming up again in future chapters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parity and the field strength tensor",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-037-49-parity-and-the-field-strength-tensor.md",
+      "narrative": null,
+      "content": "The work in this section is to appear in a joint paper, together with G. Fiore from INFN.\n\n\nIn Section~\\ref{mh}, we introduced four-vectors, $p$,  as generalized ideals under the hermitian invariant-action, $m_h$.   These can be described as \n\n\\begin{equation}p =  p_0 + p_1i{\\epsilon_x} +p_2i{\\epsilon_y} + p_3i{\\epsilon_z}, \n\\end{equation}\n\n\\noindent which transform under the Lorentz group as $p' = m_h(L,p) = LpL^{\\dagger}$, for $L\\in SL(2,\\C)$.\n\n\n\n\nFurthermore, in Section~\\ref{mq}, we introduced the  field strength tensor, $F$, as a generalized ideal under the quaternionic invariant-action, $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard model of particle physics",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-038-5-standard-model-of-particle-physics.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What it is",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-039-51-what-it-is.md",
+      "narrative": null,
+      "content": "The standard model of particle physics is the result of decades of collaboration, which began roughly in the 1930s, and converged finally on its current state in 1979, \\cite{ramjbsm}.  It is a mosaic of our best efforts in particle physics over that half century.  In the decades since 1979, the standard model has seen little in the way of alterations, and yet has survived rigorous experimental testing, nearly completely unscathed.\n\n\n\n\nA brief history:  In 1928, P.A.M. Dirac set up the foundations for quantum electrodynamics (QED), which was later generalized to incorporate the neutrino by E. F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What it is not",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-040-52-what-it-is-not.md",
+      "narrative": null,
+      "content": "If the standard model is to be faulted for anything, that fault would lie almost exclusively in its incompleteness.  The first  legitimate fracture in the standard model came with the discovery of neutrino oscillations, which imply that neutrinos do indeed have mass, \\cite{Mann}.  Having said that, the standard model is easily amended to accommodate massive neutrinos, albeit, at the expense of having to accept a number of additional free parameters in the theory.  \n\n\n\nIn the absence of any major conflict with experiment, much criticism of the standard model is based in the theory's apparent in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What it should be",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-041-53-what-it-should-be.md",
+      "narrative": null,
+      "content": "What it should be\nOne might not criticize the standard model too harshly, for simply remaining silent about\nmany of the open problems in physics. However, what is less benign is that the standard\nmodel does at times account for various aspects of nature, and yet fails to explain them.\nFor example, the standard model singles out a particular gauge group, SU(3)c ×\nSU(2)L × U(1)Y /Z6, yet does not explain where this group came from. It further speciﬁes\na list of particle representations for this group, Section 5.1, without explaining why these\nrepresentations were chosen over any other possible s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One generation of quarks and leptons from CO",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-042-6-one-generation-of-quarks-and-leptons-from-co.md",
+      "narrative": null,
+      "content": "from C ⊗O\nIn Chapter 3, we saw how a four-complex-dimensional algebra, C⊗H, supplies an unusually\ncompact description of all the Lorentz representations of the standard model. However,\nthere is more to the standard model than just the Lorentz group. Beyond spin and chirality,\nstandard model fermions also exhibit colour, weak isospin, and charge. Could these physical\nfeatures also be the result of some algebra acting on itself? If so, which one?\nIn our work with C ⊗H, the reader may have noticed the trivial identity,\nC ⊗H = R ⊗C ⊗H.\n(6.1)\nThat is, the algebra we have dealt with up until now is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A summary of the results to come",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-043-61-a-summary-of-the-results-to-come.md",
+      "narrative": null,
+      "content": "Using only the algebra of the complex octonions, which we will introduce, we expose an intrinsic structure to a generation of quarks and leptons.  This algebraic structure mimics familiar quantum systems, which have a vacuum state acted upon by raising and lowering operators.     In this case, the neutrino poses as the vacuum state, and electrons and quarks pose as the excited states.  These results are simply the analogue of the Fock space we found earlier in Section~\\ref{fock}.\n\nWith these raising and lowering operators in hand, we are then able to construct a number operator in the usual wa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction to CO",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-044-62-introduction-to-co.md",
+      "narrative": null,
+      "content": "The complex octonions are not a tool commonly used in physics, so we introduce them here.\n\nThe generic element of $\\mathbb{C} \\otimes \\mathbb{O}$ is written $ \\sum_{n=0}^7 A_n e_n $, where the $A_n$ are complex coefficients.  The $e_n$ are octonionic imaginary units $\\left(e_n^2=-1\\right)$, apart from $e_0=1$, which multiply according to Figure~\\ref{fano}.  The complex imaginary unit $i$ commutes with the octonionic $e_n$.\n\n\\begin{figure}[h!] \\begin{center}\n\\includegraphics[width=7cm]{doubling_fano-eps-converted-to.pdf}\n\\caption{\\label{fano}\nMultiplication of octonionic imaginary units}\n\\end{c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonionic chain algebra",
+      "pageStart": 50,
+      "pageEnd": 53,
+      "target": "../sections/sec-045-63-octonionic-chain-algebra.md",
+      "narrative": null,
+      "content": "As a non-associative algebra, the octonions can at times seem temperamental.  Equations involving this algebra can quickly become unwieldy, due to the need to repeatedly specify the order of multiplication, by use of brackets.  The assumptions we are accustomed to making in associative algebras now do not always apply, and one might be led to wonder how (associative) groups can be described with the (non-associative) octonions.  \n\nIn this section, however,  we explain how this is not the conundrum that it might seem to be.  Every multiplication between two octonions can be considered as a line",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A system of ladder operators",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-046-64-a-system-of-ladder-operators.md",
+      "narrative": null,
+      "content": "With the algebra $\\COOO$ in hand, we can now set out to find a system of ladder operators within the octonionic chain algebra.  Consider $\\alpha_1 \\equiv \\frac{1}{2}\\left(-e_5+ie_4\\right)$,  $\\alpha_2 \\equiv \\frac{1}{2}\\left(-e_3+ie_1\\right),$ and $\\alpha_3 \\equiv \\frac{1}{2}\\left(-e_6+ie_2\\right)$, similar to that defined in~\\cite{GGquarks}.  For all $f$ in $\\mathbb{C}\\otimes\\mathbb{O}$, and assuming right-to-left multiplication, these three lowering operators obey the anticommutation relations\n\n\\begin{equation}\\label{alpha}\n\\{\\alpha_i, \\alpha_j\\}f =\\alpha_i(\\alpha_jf)+\\alpha_j (\\alpha_if) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex conjugation's analogue",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-047-65-complex-conjugations-analogue.md",
+      "narrative": null,
+      "content": "Under complex conjugation, we ﬁnd an analogous ladder system. Consider α∗\n1 = 1\n2 (−e5 −ie4),\nα∗\n2 = 1\n2 (−e3 −ie1) , and α∗\n3 = 1\n2 (−e6 −ie2). These three lowering operators obey the an-\nticommutation relations\n{α∗\ni , α∗\nj} = 0\nfor all i, j = 1, 2, 3.\n(6.16)\nWe deﬁne raising operators as ˜α1 = 1\n2 (e5 −ie4), ˜α2 = 1\n2 (e3 −ie1) , and ˜α3 = 1\n2 (e6 −ie2),\nwhich obey\n46\n{˜αi, ˜αj} = 0\nfor all i, j = 1, 2, 3.\n(6.17)\nFinally, we have also\n{α∗\ni , ˜αj} = δij\nfor all i, j = 1, 2, 3.\n(6.18)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal left ideals",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-048-66-minimal-left-ideals.md",
+      "narrative": null,
+      "content": "to mimic the set of quarks and leptons of the standard model.\n6.6\nMinimal left ideals\nWe are now proposing to represent quarks and leptons using minimal left ideals within our\nspace of octonionic operators, C ⊗←−\nO ≃Cl(6). That is, within the space of the αi, α†\nj, and\ntheir products. A pair of these ideals, Su and Sd, will be constructed using our procedure\nfrom Section 4.5.2:\n1.\nOur vector space, V, is spanned by the elements ie1, ie2, . . . ie6 over C, in keeping\nwith Figure 6.2. The quadratic form is given by Q(v) = {v, v}.\n2.\nAn MTIS of V is three-complex-dimensional in this case, and can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MTIS symmetries: su(3)c and u(1)em",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-049-67-mtis-symmetries-su3c-and-u1em.md",
+      "narrative": null,
+      "content": "MTIS symmetries: su(3)c and u(1)em\nHaving obtained these minimal left ideals, we would now like to know how they transform,\nso as to justify the labels we gave to their coeﬃcients in equations (6.19) and (6.21). Up\nuntil now, however, we have not speciﬁed under which groups these spinors transform.\nA popular choice in the literature for this symmetry group is take the Cliﬀord algebra’s\nspin group. For example, the well-known “SO(10)” grand uniﬁed theory is built from the\nSpin(10) group acting on 16-dimensional spinors. (Here, spinors are deﬁned as irreducible\nrepresentations of Spin(10).) We p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ladders to su(3)c and u(1)em",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "../sections/sec-050-68-ladders-to-su3c-and-u1em.md",
+      "narrative": null,
+      "content": "Ladders to su(3)c and u(1)em\nWe will now ﬁnd a compact way of describing the generators of the MTIS symmetries,\nsu(3) and u(1), and apply them to our minimal left ideals.\nConsider α ≡c1α1 + c2α2 + c3α3 and α′ ≡c′\n1α1 + c′\n2α2 + c′\n3α3, where the ci and c′\nj are\ncomplex coeﬃcients. We can then build hermitian operators, H, of the form\nH ≡α′†α + α†α′.\n(6.24)\n50\nTaking the most general sum of these objects results in nine hermitian operators:\nX\nH\nH = r0 Q +\n8\nX\ni=1\nriΛi,\n(6.25)\nwhere r0 and ri are real coeﬃcients. Q is our electromagnetic generator from equation (6.3),\nand the eight Λi can be see",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards the weak force",
+      "pageStart": 61,
+      "pageEnd": 62,
+      "target": "../sections/sec-051-69-towards-the-weak-force.md",
+      "narrative": null,
+      "content": "Perhaps unexpectedly, it turns out that $S^u$  packages all of the  isospin up-type states together,  and $S^d$ packages all of the  down-type states together.  This is of course, if one goes ahead and makes an assumption about the placement of $\\nu$ into $S^u$ and $\\bar{\\nu}$ into $S^d$.  \n\n\nWe point out that $\\omega$ is (automatically) negatively charged, and converts isospin up particles into isospin down, via \\it right \\rm multiplication on $S^u$.   It thereby exhibits features of the $W^-$ boson.  Similarly, $\\omega^{\\dagger}$ is positively charged, and converts isospin down particles int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-052-610-summary.md",
+      "narrative": null,
+      "content": "Using only the complex octonions acting on themselves, we were able to recover a number of aspects of the standard model's structure.\n\nFirst of all, we introduced unitary MTIS symmetries, which led \\it uniquely \\rm to the two unbroken gauge symmetries of the standard model, $SU(3)_c$ and $U(1)_{em}$.  This new $U(1)_{em}$ generator, $Q$, happens to be proportional to a number operator, thereby suggesting an unexpected resolution to the question:  Why is electric charge quantized?\n\nThen, using octonionic ladder operators, we have built a pair of minimal left ideals, which is found to transform",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Why does SU(2)L act on only left-handed fermions?",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-053-7-why-does-su2l-act-on-only-left-handed-fermions.md",
+      "narrative": null,
+      "content": "left-handed fermions?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A spotlight on right multiplication",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-054-71-a-spotlight-on-right-multiplication.md",
+      "narrative": null,
+      "content": "In Section~\\ref{da}, we found a four-complex-dimensional Dirac spinor, $\\Psi_D\\equiv\\Psi_L+\\Psi_R$, as an irreducible representation of  $\\CLtwo \\otimes_{\\C} \\CLtwo$.  Here, the second factor of $\\CLtwo$ came from right-multiplying $\\CH$ on itself, and it effected transitions between L and R states.\n\nLikewise, in Section~\\ref{susd}, we found a 16-complex-dimensional spinor, $S\\equiv S^u+S^d$, as an irreducible representation of $\\CLsix \\otimes_{\\C} \\CLtwo$.  Again, we see that the factor of $\\CLtwo$  came from right multiplication, but this time it effected transitions between isospin up-type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leptonic subspace of Cl(4)",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-055-72-leptonic-subspace-of-cl4.md",
+      "narrative": null,
+      "content": "Leptonic subspace of Cl(4)\nWe will now build a minimal right ideal, using the procedure laid out in Section 4.5.2.\nReaders should note that when multiplying elements constructed from R ⊗C ⊗H ⊗O, the\nquaternionic and octonionic imaginary units always commute with each other.\n1. Let us consider a Cliﬀord algebra, Cl(4), generated by the vectors, {τ1iϵx, τ2iϵx, τ3iϵx, iϵy},\nwhere\nτ1 ≡ω + ω†,\nτ2 ≡iω −iω†,\nτ3 ≡ωω† −ω†ω.\n(7.1)\nNotice, that these four generators involve the right-multiplied octonionic object, ω, of\nSection 6.9, and also the right-multiplied quaternionic objects of Section 4.7.\n2. Wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MTIS symmetries: su(2)L and u(1)Y",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-056-73-mtis-symmetries-su2l-and-u1y.md",
+      "narrative": null,
+      "content": "MTIS symmetries: su(2)L and u(1)Y\nNow that we have constructed a minimal right ideal, we would like to see how it transforms\nunder the MTIS symmetries for this Cliﬀord algebra, as deﬁned in Section 6.7.\nAgain, MTIS symmetries are those which act on the generating space as eiφkgk | e−iφkgk,\nwhich map non-trivially the lowering operators to themselves, and the raising operators to\nthemselves, and which commute with hermitian conjugation, here, ‡. The generators gk\nthis time will be elements of (C ⊗H) ⊗C (C ⊗←−\nO) ≡R ⊗C ⊗H ⊗←−\nO.\nReaders may conﬁrm that there are four solutions to these constrain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and outlook",
+      "pageStart": 66,
+      "pageEnd": 67,
+      "target": "../sections/sec-057-74-summary-and-outlook.md",
+      "narrative": null,
+      "content": "Summary and outlook\nIn this chapter, we have focussed our attention on Cl(2)⊗CCl(2) ≃Cl(4) structure, coming\nfrom the right action on our previously constructed minimal left ideals. From this Cliﬀord\nalgebra, Cl(4), we have then constructed a 4-complex-dimensional minimal right ideal,\ncorresponding to a leptonic subspace of a generation of standard model particles. We then\nfound the unitary MTIS symmetries corresponding to this Cliﬀord algebra. It turns out\nthat the four MTIS symmetry generators correspond to su(2)L and Y on this leptonic\nsubspace, and furthermore provide an explanation as to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prop-sec-058-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "prop-sec-058-01.md",
+      "narrative": null,
+      "content": "That is, our Dirac spinor, ΨD = ΨL + ΨR was found to be an irreducible representation of Cl(2)⊗CCl(2), and our generation of quarks and leptons of Chapter 6 was found to be an irreducible representation of Cl(6) ⊗C Cl(2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group representation structure of some grand unified theories",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-058-8-group-representation-structure-of-some-grand-u.md",
+      "narrative": null,
+      "content": "some grand uniﬁed theories\nWe mentioned in the previous chapter, that combing our results for C ⊗H and C ⊗O will\nbring us to consider the Cliﬀord algebra Cl(12). That is, our Dirac spinor, ΨD = ΨL + ΨR\nwas found to be an irreducible representation of Cl(2)⊗CCl(2), and our generation of quarks\nand leptons of Chapter 6 was found to be an irreducible representation of Cl(6) ⊗C Cl(2).\nTaking the tensor product of the two Cliﬀord algebras gives Cl(2) ⊗C Cl(2) ⊗C Cl(6) ⊗C\nCl(2) ≃Cl(12).\nNow, the Cliﬀord algebra, Cl(12), can be rewritten as Cl(10) ⊗C Cl(2), where we have\nseparated out a factor of Cl(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(5) unification",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-059-81-su5-unification.md",
+      "narrative": null,
+      "content": "SU(5) uniﬁcation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-060-811-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThe SU(5) grand uniﬁed theory oﬀers a classic example of what it means to be a grand\nuniﬁed theory. It was proposed in 1974 by H. Georgi and S. Glashow, [38], and can be seen\nto successfully unify the gauge groups of the standard model. However, the SU(5) model\nonly partially uniﬁes a generation of quarks and leptons.\nThe group SU(5) has rank 4, as with the standard model’s gauge group, GSM; that\nis, its Lie algebra has a 4-dimensional Cartan subalgebra, [48]. The Lie algebra of SU(5)\n59\nessentially doubles the gauge symmetry of the standard model by subsuming the standard\nmodel’s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GSM inside SU(5)",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-061-812-gsm-inside-su5.md",
+      "narrative": null,
+      "content": "GSM inside SU(5)\nHere, we detail the embedding of the standard model’s gauge group into SU(5), as given\nin [7].\nElements of SU(5) can be written down as 5 × 5 complex matrices, wherein we may\nembed the standard model’s gauge group, [7], [48]. Starting with SU(2) and SU(3), we\nhave\n\u0012h2\n0\n0\nh3\n\u0013\n∈\nSU(5),\n(8.1)\nwhere h2 is a 2 × 2 matrix representing elements of SU(2), and h3 is a 3 × 3 matrix,\nrepresenting elements of SU(3). Written in this way, the SU(2) and SU(3) subgroups\nclearly commute with each other.\nWe might then ask, what groups remain in SU(5),\nwhich commute with both of these SU(2) an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some notes on symmetry breaking",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-062-813-some-notes-on-symmetry-breaking.md",
+      "narrative": null,
+      "content": "The adjoint Higgs field  is responsible for breaking $SU(5)$ symmetry down to $SU(3)\\times SU(2) \\times U(1)/\\mathbb{Z}_6$, \\cite{Robinson}.  In the process, the fermionic $\\underline{5}^*$ and $\\underline{10}$ break into $\\left(\\hspace{1mm}SU(3)_c, \\hspace{1mm}SU(2)_L, \\hspace{1mm}U(1)_Y\\hspace{1mm}\\right)$ irreps as\n\n\\begin{equation}\\begin{array}{rcccccc}\n\\underline{5}^* & \\mapsto & \\left(\\hspace{1mm} \\underline{3}^*, \\hspace{1mm}\\underline{1}, \\hspace{1mm}\\frac{1}{3} \\hspace{1mm}\\right) &+&\\left(\\hspace{1mm} \\underline{1}, \\hspace{1mm}\\underline{2}^*, \\hspace{1mm}-\\frac{1}{2} \\hspace{1mm}\\r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A fermionic binary code",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-063-82-a-fermionic-binary-code.md",
+      "narrative": null,
+      "content": "A fermionic binary code\nIt turns out that there is a very eﬃcient way of describing the standard model’s fermions,\nwhich is helpful in understanding SU(5), Spin(10), Pati-Salam theories, and incidentally,\nalso upcoming R ⊗C ⊗H ⊗O models based on Cl(12). This is in terms of a binary code,\n[7], [64]. For a thorough explanation of this topic, the reader is encouraged to consult [7].\nThis fermionic binary code can be thought of as a sequence of answers to ﬁve diﬀerent\nyes or no questions:\n63\nIs the fermion red?\nIs the fermion green?\nIs the fermion blue?\nDoes the fermion have isospin up?\nDoes the f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin(10) unification",
+      "pageStart": 73,
+      "pageEnd": 76,
+      "target": "../sections/sec-064-83-spin10-unification.md",
+      "narrative": null,
+      "content": "Spin(10) uniﬁcation\nAlthough the SU(5) model was able to draw together the three gauge groups of the stan-\ndard model into a single group, it only partially uniﬁed the standard model’s fermions into\n65\n1\nb\ng\nu\nr\nd\ng^ b\nb^ r\nr^ u\nr^ d\nr ^ g\ng^ u\ng^d\nb^u\nb^ d\nu^ d\nr^ g ^ b\nr^ g ^u\nr^ g ^ d\nb ^ r ^u\ng^ b ^u\ng^ b ^ d\ng^ u ^ d\nb^ u ^d\nr^ g ^b ^u\nr^ g ^b ^d\nr^ g ^u ^ d\nb^ r ^u ^d\ng^ b ^u ^d\nb^ r ^d\nr ^ u ^d\nr^ g ^b ^u^d\ndR\nr\ndR\ng\ndR\nb\ne R\n+\nv R\nv L\nuL\nr\nuL\ng\nuL\nb\nuL\nr\nuL\ng\nuL\nb\ndL\nr\ndL\ng\ndL\nb\ne L\n+\ne R\n-\ndR\nr\ndR\ng\ndR\nb\nuR\nr\nuR\ng\nuR\nb\nuR\nr\nuR\ng\nuR\nb\nv L\ne L\n-\ndL\nr\ndL\ng\ndL\nb\nv R\nFigure 8.3:\nThe exteri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pati-Salam model",
+      "pageStart": 76,
+      "pageEnd": 79,
+      "target": "../sections/sec-065-84-pati-salam-model.md",
+      "narrative": null,
+      "content": "Pati-Salam model\nBefore the introduction of SU(5)- and Spin(10)-theories came an extension to the standard\nmodel, now known as the Pati-Salam model. The model is named after its inventors, J.\nPati and A. Salam, who published the proposal in 1974, [57].\nThe Pati-Salam model may be considered to be a more conservative approach to uni-\nﬁcation.\nIt does not unify the gauge groups of the standard model into a simple Lie\ngroup, as with SU(5) and Spin(10). Instead, it is based on the gauge group, SU(2) ×\nSU(2) × SU(4) ≃Spin(4) × Spin(6), [7], which extends the dimension of GSM from 12 to\n3 + 3 + 15 =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards a three-generation model",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-066-9-towards-a-three-generation-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 79,
+      "pageEnd": 80,
+      "target": "../sections/sec-067-91-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nDespite the wide range of proposals to simplify the standard model, most schemes tend\nto share the same impedances.\nFew uniﬁed models naturally oﬀer more than a single\ngeneration of particles, and few are able to evade proton decay without repercussion.\nIn previous chapters, we were also concerned with ﬁnding just a one-generation model\nof particle physics, based on C ⊗O. However, this begs the question: could C ⊗O provide\nroom for three?\nIn this chapter, we point out a somewhat mysterious appearance of SU(3)c represen-\ntations, which exhibit the behaviour of three full generation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generators of SU(3)c",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-068-92-generators-of-su3c.md",
+      "narrative": null,
+      "content": "Generators of SU(3)c\nAs mentioned earlier, the automorphism group of the octonions is G2, which is a 14-\ndimensional exceptional Lie group. Within G2, we may ﬁnd a subgroup, SU(3), which\nis deﬁned as that subgroup of G2 which keeps the imaginary unit, e7, invariant. The Lie\nalgebra of this SU(3), acting on f ∈C ⊗O may be expressed as\nΛ1f = i\n2\n\u0000e1 (e5 f ) −e3 (e4 f )\n\u0001\n,\nΛ2f = −i\n2\n\u0000e1 (e4 f ) + e3 (e5 f )\n\u0001\n,\nΛ3f = i\n2\n\u0000e4 (e5 f ) −e1 (e3 f )\n\u0001\n,\nΛ4f = i\n2\n\u0000e2 (e5 f ) + e4 (e6 f )\n\u0001\n,\nΛ5f = i\n2\n\u0000e5 (e6 f ) −e2 (e4 f )\n\u0001\n,\nΛ6f = i\n2\n\u0000e1 (e6 f ) + e2 (e3 f )\n\u0001\n,\nΛ7f = i\n2\n\u0000e1 (e2 f ) + e3 (e6 f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three generations under SU(3)c",
+      "pageStart": 81,
+      "pageEnd": 84,
+      "target": "../sections/sec-069-93-three-generations-under-su3c.md",
+      "narrative": null,
+      "content": "Knowing that the $\\Lambda_n\\nu$ behave as an eight dimensional representation under the action of $\\left[\\Lambda_m\\nu \\hspace{0.5mm} , \\hspace{1.5mm}\\cdot\\hspace{1.5mm}\\right]$, one might wonder how objects of the more general form $a\\nu$ behave under $\\left[\\Lambda_m\\nu \\hspace{0.5mm} ,\\hspace{1.5mm}\\cdot\\hspace{1.5mm}\\right]$.\n\n\nObeying $\\left[\\Lambda_m\\nu\\hspace{0.5mm} ,\\hspace{0.5mm} \\ell_j\\nu\\right]=0$ $\\forall m=1\\dots8$, we find six $SU(3)$ singlets, whose basis vectors are given by\n\n\\begin{equation}\\begin{array}{l}\\label{lept}\n\\ell_{a}\\equiv \\left(1+ie_{13}+ie_{26}+ie_{45}\\right)\\nu, \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A sample calculation",
+      "pageStart": 84,
+      "pageEnd": 85,
+      "target": "../sections/sec-070-94-a-sample-calculation.md",
+      "narrative": null,
+      "content": "A sample calculation\nWe introduce to the reader how calculations are carried out in C ⊗←−\nO by working through\nan example. Let us ﬁnd the action of the ﬁrst SU(3) generator of the form Λν, which we\nwill deﬁne as Λ1ν ≡i\n2 (e15 −e34) ν, in accordance with equation (6.26). Let Λ1ν act on qR\n1 ,\nas deﬁned in equations (9.8):\nh\nΛ1ν , qR\n1\ni\n=\nh\ni\n2 (e15 −e34) ν , (−ie12 −e16 + e23 + ie36) ν\ni\n=\ni\n2\n\u0010\n(e15 −e34) (−ie12 −e16 + e23 + ie36)\n−(−ie12 −e16 + e23 + ie36) (e15 −e34)\n\u0011\nν\n=\ni\n2\n\u0000−ie1512 −e1516 + e1523 + ie1536\n+ie3412 + e3416 −e3423 −ie3436\n+ie1215 + e1615 −e2315 −ie3615\n−ie1234 −e1634 + e233",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary for SU(3)c",
+      "pageStart": 85,
+      "pageEnd": 86,
+      "target": "../sections/sec-071-95-summary-for-su3c.md",
+      "narrative": null,
+      "content": "Finally, we conclude by summarizing the main result of this chapter in Figure 9.1: the\nbreakdown of the 64-dimensional C ® O into irreducible representations of SU (3).\n\nvav vav\n¢, ¢,\n4,4\nPT bo by bs bs\n. 4, 4, 4, 4%\niAv\n0\n*\n-iAv* 9, 4, Is. I\n- ¢. ¢; ee CF\n4, 4%\nCx ee\n* ok *\nvav vav\n\nFigure 9.1: The 64-dimensional octonionic chain algebra splits into two sets of SU(3)\ngenerators of the form iAv and —iA*v*, six SU(3) singlets @;, six triplets q,, and their\ncomplex conjugates. These objects are sectioned off above into four quadrants according\nto their forms: vav, v*av, vav* and v*av* for a in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three generations under SU(3)c and U(1)em",
+      "pageStart": 86,
+      "pageEnd": 89,
+      "target": "../sections/sec-072-96-three-generations-under-su3c-and-u1em.md",
+      "narrative": null,
+      "content": "Three generations under SU(3)c and U(1)em\nSince the time that these irreducible representations of SU(3)c were identiﬁed within C⊗←−\nO,\nmore standard model structure has been uncovered in the algebra. It turns out that we\ncan extend our three-generation results for SU(3)c to include U(1)em as well (presented for\nthe ﬁrst time here).\nThat is, our SU(3)c action on C ⊗←−\nO given by\n[ Λjν, aν ],\n[ −Λ∗\njν∗, aν∗]\n(9.19)\ncan be generalized, so as to include electric charges.\nFurthermore, we will be able to\nincorporate U(1)em by making use of the Q we had already introduced in our one-generation\nmodel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook: From one generation to three",
+      "pageStart": 89,
+      "pageEnd": 91,
+      "target": "../sections/sec-073-97-outlook-from-one-generation-to-three.md",
+      "narrative": null,
+      "content": "Outlook: From one generation to three\nIn Section 6.8, we described a one-generation model in C ⊗←−\nO, transforming under the\nsymmetry generators Λj and Q. In Section 9 we described a three-generation model in\nC ⊗←−\nO, transforming under the symmetry generators Λjν and Qν. Given that they make\nuse of the same algebras, and very similar symmetry generators, one might wonder if the\none-generation and three-generation models could be connected.\nDirect veriﬁcation shows that the one-generation representation and its symmetries do\nnot ﬁt directly into the three-generation model in any obvious way. H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 91,
+      "pageEnd": 93,
+      "target": "../sections/sec-074-10-conclusion.md",
+      "narrative": null,
+      "content": "As a non-associative algebra, one might have naturally expected that R⊗C⊗H⊗O would\nnot be ﬁt to describe the action of groups. And with no more than 32 complex dimensions,\none might have further anticipated that R ⊗C ⊗H ⊗O would not have the capacity to\ndescribe much of the standard model, whose particle content spans hundreds of degrees of\nfreedom.\nUpon closer inspection, though, this algebra can be seen to exhibit a surprising amount\nof the standard model’s structure. Over the years, numerous authors have pointed out\nvarious Lorentz representations, within C ⊗H. In this thesis, we have then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1611.09182v1/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 93,
+      "pageEnd": 97,
+      "target": "../sections/sec-075-references.md",
+      "narrative": null,
+      "content": "[1] R. Ab lamowicz. Construction of spinors via Witt decomposition and primitive idempo-\ntents: a review. Cliﬀord algebras and spinor structures. Kluwer Academic Publishers,\n1995.\n[2] A. Anastasiou, L. Borsten, M. J. Duﬀ, L.J. Hughes, and S. Nagy. A magic pyramid\nof supergravities. JHEP, 04:178, 2014.\n[3] A. Anastasiou, L. Borsten, M. J. Duﬀ, L.J. Hughes, and S. Nagy. An octonionic\nformulation of the M-theory algebra. JHEP, 11:022, 2014.\n[4] J. Baez. The octonions. Bull.Am.Math.Soc., 39:145–205, 2002.\n[5] J. Baez and J. Huerta. Division algebras and supersymmetry I. Superstrings, Geom-\netry, T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

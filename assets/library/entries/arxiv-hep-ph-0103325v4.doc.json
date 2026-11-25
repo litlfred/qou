@@ -1,0 +1,777 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-0103325v4",
+  "title": "Quantum algebras in phenomenological description of particle properties",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Vector mesons: $q$-deformation vs mixing",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-vector-mesons-q-deformation-vs-mixing"
+    },
+    {
+      "level": 1,
+      "title": "Octet baryon mass sum rules: best candidates from $q$-deformation",
+      "number": "3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-octet-baryon-mass-sum-rules-best-candidates-fr"
+    },
+    {
+      "level": 1,
+      "title": "Mass sum rules for decuplet baryons: the $q$-analog matches empirical masses",
+      "number": "4",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-mass-sum-rules-for-decuplet-baryons-the-q-anal"
+    },
+    {
+      "level": 1,
+      "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+      "number": "5",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-highly-nonlinear-su3-breaking-effects-in-baryo"
+    },
+    {
+      "level": 1,
+      "title": "Using the Hopf-algebra structure",
+      "number": "6",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-using-the-hopf-algebra-structure"
+    },
+    {
+      "level": 1,
+      "title": "The link: $q$-parameter $\\leftrightarrow$ Cabibbo angle",
+      "number": "7",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+      "number": "8",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-8-mass-relations-from-anyonic-realization-of-u-q"
+    },
+    {
+      "level": 1,
+      "title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
+      "number": "9",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p"
+    },
+    {
+      "level": 1,
+      "title": "Outlook",
+      "number": "10",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-10-outlook"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum algebras",
+          "heading": false
+        },
+        {
+          "term": "particle properties",
+          "heading": false
+        },
+        {
+          "term": "sun",
+          "heading": false
+        },
+        {
+          "term": "intercept",
+          "heading": false
+        },
+        {
+          "term": "ukraine",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/0103325v4 16 Oct 2002 1 Quantum algebras in phenomenological description of particle properties A.M. Gavrilika ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine Quantum and q-deformed algebras ﬁnd their application not only in mathematical physics and ﬁeld theoretical context, but also in phenomenology of particle properties. We describe (i) the use of quantum algebras Uq(sun)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite dr-j",
+          "heading": false
+        },
+        {
+          "term": "frt",
+          "heading": false
+        },
+        {
+          "term": "hadrons",
+          "heading": false
+        },
+        {
+          "term": "algebras",
+          "heading": false
+        },
+        {
+          "term": "talk",
+          "heading": false
+        },
+        {
+          "term": "deformed",
+          "heading": false
+        },
+        {
+          "term": "basic",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum groups and quantum or $q$-deformed algebras \\cite{dr-j,frt}, whose basic mathematical aspects and diverse quantum physical applications are intensively studied for about a decade and half, will belong to most important and perspective tools of research in the 3rd millenium, too. In this talk, meant as a mini-review, we concentrate on two examples of applying $q$-algebras to phenomenology of hadrons. Within",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-vector-mesons-q-deformation-vs-mixing",
+      "number": "2",
+      "title": "Vector mesons: $q$-deformation vs mixing",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ga-ser",
+          "heading": false
+        },
+        {
+          "term": "omega equiv",
+          "heading": false
+        },
+        {
+          "term": "nonumber hspace",
+          "heading": false
+        },
+        {
+          "term": "equiv delta",
+          "heading": false
+        },
+        {
+          "term": "mixing",
+          "heading": true
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "omega phi",
+          "heading": false
+        },
+        {
+          "term": "rho nonumber",
+          "heading": false
+        }
+      ],
+      "extract": "We use (see \\cite{ga-ser,ga-bre,ga-uzh}) Gelfand-Tsetlin basis vectors for meson states from $(n^2\\!-\\!1)$-plet of '$n$-flavor' $U_q(u_n)$ embedded into $\\{(n\\!+\\!1)^2\\!-\\!1\\}$-plet of 'dynamical' $U_q(u_{n+1});\\ $ construct mass operator $\\hat {M_n}$, invariant under the 'isospin+hypercharge' $q$-algebra $U_q(u_2)$, from the generators of dynamical algebra $U_q(u_{n+1})$ (e.g., $\\hat {M_3} = M_0{\\bf 1}+{\\gamma}_3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-octet-baryon-mass-sum-rules-best-candidates-fr",
+      "number": "3",
+      "title": "Octet baryon mass sum rules: best candidates from $q$-deformation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ga-bre",
+          "heading": false
+        },
+        {
+          "term": "eqnarray vspace",
+          "heading": false
+        },
+        {
+          "term": "theta scr",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "classical gmo",
+          "heading": false
+        },
+        {
+          "term": "ga-uzh",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "Using $U_q(su_n)$, the $q$-deformed mass relation \\begin{eqnarray} \\vspace{-0.6mm} {} & [2]M_N+\\frac{[2] M_{\\Xi}}{[2]-1} = [3] M_{\\Lambda } + \\Bigl ( \\frac{[2]^2}{[2]-1}-[3] \\Bigr ) M_{\\Sigma } \\nonumber \\\\ {} & +\\frac{A_q}{B_q}\\left( M_{\\Xi } + [2] M_N - [2]M_{\\Sigma } - M_{\\Lambda } \\right) \\label{(8)} \\end{eqnarray} was obtained \\cite{ga-bre,ga-uzh} where $A_q$, $B_q$ are certain polynomials of $[2]_q$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-mass-sum-rules-for-decuplet-baryons-the-q-anal",
+      "number": "4",
+      "title": "Mass sum rules for decuplet baryons: the $q$-analog matches empirical masses",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decuplet",
+          "heading": true
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "esr",
+          "heading": false
+        },
+        {
+          "term": "mev leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "sigma delta",
+          "heading": false
+        },
+        {
+          "term": "masses",
+          "heading": true
+        },
+        {
+          "term": "delta omega",
+          "heading": false
+        },
+        {
+          "term": "mass",
+          "heading": true
+        }
+      ],
+      "extract": "In the case of $SU(3)$-decuplet baryons ${\\frac32}^+$, 1st order symmetry breaking yields \\cite{8-fold} equal spacing rule (ESR) for isoplet members in ${\\bf 10}$-plet. Empirically, $M_{\\Sigma^*}{-}M_{\\Delta},$ $ M_{\\Xi^*}{-}M_{\\Sigma^*}$ and $M_{\\Omega}{-}M_{\\Xi^*}$ show sensible deviation from ESR: $152.6~MeV\\leftrightarrow 148.8~MeV\\leftrightarrow 139.0~MeV$. The other mass relation known long ago \\cite{oku-ko},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-highly-nonlinear-su3-breaking-effects-in-baryo",
+      "number": "5",
+      "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baryon masses",
+          "heading": true
+        },
+        {
+          "term": "breaking effects",
+          "heading": true
+        },
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "octet baryon",
+          "heading": false
+        },
+        {
+          "term": "hypercharge",
+          "heading": false
+        },
+        {
+          "term": "scr",
+          "heading": false
+        },
+        {
+          "term": "dependence",
+          "heading": false
+        }
+      ],
+      "extract": "Formula (15) involves {\\it highly nonlinear dependence} of mass on hypercharge (for decuplet, $Y$ alone causes $SU(3)$-breaking). Since for the $q$-number $[N]_q$ we have $[N]_q=q^{N-1}+q^{N-3}+\\ldots +q^{-N+3}+q^{-N+1}$ ($N$ terms), this shows exponential $Y$-dependence of masses. Such high nonlinearity makes (14) and (15) radically different from the result (13) of traditional treatment accounting linear and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-using-the-hopf-algebra-structure",
+      "number": "6",
+      "title": "Using the Hopf-algebra structure",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1074,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta scr",
+          "heading": false
+        },
+        {
+          "term": "scr frac",
+          "heading": false
+        },
+        {
+          "term": "cabibbo angle",
+          "heading": false
+        },
+        {
+          "term": "equation theta",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "tan theta",
+          "heading": false
+        },
+        {
+          "term": "sin theta",
+          "heading": false
+        },
+        {
+          "term": "fermion mixing",
+          "heading": false
+        }
+      ],
+      "extract": "As demonstrated, our approach supplies a plenty of $q$-analogs (with different pairs $A_q,B_q$) of the form (8). A completely different, as regards (8), version of $q$-deformed analog can be derived \\cite{ga-io} using for the symmetry breaking term in mass operator a component of $q$-{\\em tensor operator}. This implies usage of the Hopf algebra structure (comultiplication, antipode) of the quantum algebras",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-8-mass-relations-from-anyonic-realization-of-u-q",
+      "number": "8",
+      "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anyonic realization",
+          "heading": true
+        },
+        {
+          "term": "anyonic oscillators",
+          "heading": false
+        },
+        {
+          "term": "delta rangle",
+          "heading": false
+        },
+        {
+          "term": "nontrivial prs",
+          "heading": false
+        },
+        {
+          "term": "theta gamma",
+          "heading": false
+        },
+        {
+          "term": "cite ga-io",
+          "heading": false
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "hadron mass",
+          "heading": false
+        }
+      ],
+      "extract": "Necessary setting adopted from \\cite{ler-sci} includes lattice angle functions $\\theta_{\\gamma}({\\bf x},{\\bf y})$ and $\\theta_{\\delta}({\\bf x},{\\bf y})$ for the two opposite ($\\gamma$- and $\\delta$- ) types of cuts and the related definition of ordering of sites on the lattice (${\\bf x} > {\\bf y}$ or $ {\\bf y} > {\\bf x}$). Accordingly, the two types of statistical operator, $K_i({\\bf x}_{\\gamma})$ and $K_i({\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p",
+      "number": "9",
+      "title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intercept lambda",
+          "heading": false
+        },
+        {
+          "term": "theta scr",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "theta circ",
+          "heading": false
+        },
+        {
+          "term": "b-e distribution",
+          "heading": false
+        },
+        {
+          "term": "dagger rangle",
+          "heading": false
+        },
+        {
+          "term": "langle dagger",
+          "heading": false
+        },
+        {
+          "term": "angle theta",
+          "heading": false
+        }
+      ],
+      "extract": "The model of ideal gas of $q$-bosons based on the algebra of $q$-deformed oscillators either of Biedenharn-Macfarlane (BM) type \\cite{BM} or Arik-Coon (AC) type \\cite{AC}, was recently utilized within the approach aimed to describe \\cite{AGI,AGI2} unusual properties of 2-particle correlations of identical pions or kaons produced in heavy ion collisions. The approach yields clear predictions based on explicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-10-outlook",
+      "number": "10",
+      "title": "Outlook",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformed oscillators",
+          "heading": false
+        },
+        {
+          "term": "lukierski",
+          "heading": false
+        },
+        {
+          "term": "noncomutative",
+          "heading": false
+        },
+        {
+          "term": "isaev",
+          "heading": false
+        },
+        {
+          "term": "kaons",
+          "heading": false
+        }
+      ],
+      "extract": "A question naturally arises: does there exist more intimate connection between the two discussed applications - of the quantum algebras $U_q(su_n)$ taken as flavor symmetries, on one hand, and of the algebras of $q$-deformed oscillators corresponding to discretized momenta of (correlated) pairs of pions or kaons as produced in relativistic heavy ion collisions, on the other hand? The value of $q$-parameter (given by",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "theta scr",
+      "heading": false
+    },
+    {
+      "term": "scr frac",
+      "heading": false
+    },
+    {
+      "term": "angle theta",
+      "heading": false
+    },
+    {
+      "term": "cos theta",
+      "heading": false
+    },
+    {
+      "term": "equation theta",
+      "heading": false
+    },
+    {
+      "term": "equiv theta",
+      "heading": false
+    },
+    {
+      "term": "cite ga-io",
+      "heading": false
+    },
+    {
+      "term": "cabibbo angle",
+      "heading": true
+    },
+    {
+      "term": "theta gamma",
+      "heading": false
+    },
+    {
+      "term": "deformed mass",
+      "heading": false
+    },
+    {
+      "term": "cite ga-bre",
+      "heading": false
+    },
+    {
+      "term": "frac beta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The transverse momentum |Kt| depen-",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-0103325v4"
+  }
+}

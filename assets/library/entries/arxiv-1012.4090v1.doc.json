@@ -1,0 +1,571 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1012.4090v1",
+  "title": "Generalized Skyrme Crystals",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Generalized Skyrme System",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-generalized-skyrme-system"
+    },
+    {
+      "level": 1,
+      "title": "Crystals in the Generalized Skyrme Family",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-crystals-in-the-generalized-skyrme-family"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skyrme",
+          "heading": false
+        },
+        {
+          "term": "squashed",
+          "heading": false
+        },
+        {
+          "term": "durham",
+          "heading": false
+        },
+        {
+          "term": "round",
+          "heading": false
+        }
+      ],
+      "extract": "Generalized Skyrme Crystals J. Silva Loboa,∗, R. S. Warda aDepartment of Mathematical Sciences, Durham University, South Road, Durham, DH1 3LE, United Kingdom Abstract This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1012.4090v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skyrme crystal",
+          "heading": false
+        },
+        {
+          "term": "triply-periodic crystalline",
+          "heading": false
+        },
+        {
+          "term": "skyrme model",
+          "heading": false
+        },
+        {
+          "term": "skyrme case",
+          "heading": false
+        },
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "chunk",
+          "heading": false
+        },
+        {
+          "term": "topological charge",
+          "heading": false
+        },
+        {
+          "term": "parameter alpha",
+          "heading": false
+        }
+      ],
+      "extract": "In the basic SU(2) Skyrme model, the solution with the lowest energy-per-charge $E_N$ is the triply-periodic skyrme crystal [@MS04]. For a given value of the topological charge (winding number, or baryon number) $N$, there are in general many isolated $N$-skyrmion solutions, *i.e.* local minima of the energy; but the belief is that for $N\\gg1$, the lowest-energy solution will resemble a chunk of the skyrme crystal.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-generalized-skyrme-system",
+      "number": "2",
+      "title": "The Generalized Skyrme System",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "label enden",
+          "heading": false
+        },
+        {
+          "term": "phi beta",
+          "heading": false
+        },
+        {
+          "term": "partial phi",
+          "heading": false
+        },
+        {
+          "term": "phi gamma",
+          "heading": false
+        },
+        {
+          "term": "vec psi",
+          "heading": false
+        },
+        {
+          "term": "skyrme",
+          "heading": true
+        },
+        {
+          "term": "omega beta",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we give some details of the one-parameter interpolating family of Skyrme systems. The field is denoted $\\Phi_{\\beta}=(\\Phi_1,\\Phi_2,\\Phi_3,\\Phi_4)$, where each component $\\Phi_{\\beta}$ is a function of the spatial coordinates $x^j=(x^1,x^2,x^3)=(x,y,z)$, and the constraint $\\Phi_{\\beta}\\Phi_{\\beta}=1$ is imposed. The energy density for the system, parametrized by $\\alpha\\in[0,1]$, is $$\\label{Enden}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-crystals-in-the-generalized-skyrme-family",
+      "number": "3",
+      "title": "Crystals in the Generalized Skyrme Family",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 2208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enden hopf",
+          "heading": false
+        },
+        {
+          "term": "skyrme",
+          "heading": true
+        },
+        {
+          "term": "multi-sheet solution",
+          "heading": false
+        },
+        {
+          "term": "parallel vortex-antivortex",
+          "heading": false
+        },
+        {
+          "term": "alpha ranging",
+          "heading": false
+        },
+        {
+          "term": "emin",
+          "heading": false
+        },
+        {
+          "term": "triply-periodic solutions",
+          "heading": false
+        },
+        {
+          "term": "leq alpha",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we investigate various triply-periodic solutions in the family of generalized Skyrme systems para- metrized by $\\alpha$. There are many of these, corresponding to different local minima of the energy, and we shall describe only some of them. The results that follow are obtained by numerical minimization of the energy functional $E[\\Phi]$. More specifically, the expression for the energy is replaced",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-conclusions",
+      "number": "4",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skyrme-faddeev",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "multi-sheet",
+          "heading": false
+        },
+        {
+          "term": "vortex-antivortex",
+          "heading": false
+        },
+        {
+          "term": "sublinear",
+          "heading": false
+        }
+      ],
+      "extract": "We have studied triply-periodic stable solutions (local minima of the energy) in a family of Skyrme-type systems parametrized by $\\alpha\\in[0,1]$, which interpolates between the standard Skyrme model (at $\\alpha=0$) and the Skyrme-Faddeev system (at $\\alpha=1$). At $\\alpha=0$, the lowest-energy crystal resembles a cubic lattice of half-skyrmion particles, and this picture persists near $\\alpha=0$, as one would",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "skyrme crystal",
+      "heading": false
+    },
+    {
+      "term": "skyrme energy",
+      "heading": false
+    },
+    {
+      "term": "triply-periodic crystalline",
+      "heading": false
+    },
+    {
+      "term": "enden hopf",
+      "heading": false
+    },
+    {
+      "term": "skyrme system",
+      "heading": true
+    },
+    {
+      "term": "triply-periodic solutions",
+      "heading": false
+    },
+    {
+      "term": "skyrme model",
+      "heading": false
+    },
+    {
+      "term": "skyrme case",
+      "heading": false
+    },
+    {
+      "term": "standard skyrme",
+      "heading": false
+    },
+    {
+      "term": "generalized skyrme",
+      "heading": true
+    },
+    {
+      "term": "label enden",
+      "heading": false
+    },
+    {
+      "term": "lowest-energy crystal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The V+AV+V+AV solution. Optimal values of L1 = L2, and L3; and the energy density for α = 0.3, 0.6, 0.9",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Normalized energy EN of crystalline solutions, versus α",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The 2V+2AV solution:",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The “multi-sheet” solution:",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-4",
+      "file": "images/img-p003-4.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-3",
+      "file": "images/img-p004-3.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-4",
+      "file": "images/img-p004-4.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-5",
+      "file": "images/img-p004-5.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-6",
+      "file": "images/img-p004-6.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-7",
+      "file": "images/img-p004-7.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-8",
+      "file": "images/img-p004-8.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-9",
+      "file": "images/img-p004-9.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-10",
+      "file": "images/img-p004-10.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-11",
+      "file": "images/img-p004-11.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1012.4090v1"
+  }
+}

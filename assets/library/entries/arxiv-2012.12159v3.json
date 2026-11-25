@@ -1,0 +1,488 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2012.12159v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE\nGEOMETRY AND MAHLER VOLUME\nDMITRY FAIFMAN\nAbstract. We explore connections furnished by the Funk metric, a relative\nof the Hilbert metric, between projective geometry, billiards, convex geome-\ntry and aﬃne inequalities. We ﬁrst show that many metric invariants of the\nFunk metric are invariant under projective maps, as well as under projective\nduality. These include the Holmes-Thompson volume and surface area of con-\nvex subsets, and the length spectrum of their boundary, extending results of\nHolmes-Thompson and ´Alvarez Paiva on Sch¨aﬀer’s dual girth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Funk and Hilbert metrics",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-funk-and-hilbert-metrics.md",
+      "narrative": null,
+      "content": "The Hilbert metric in the interior of a convex set $K\\subset\\mathbb R^n$ is given by $$d^H_K(x,y)=\\frac12 \\log \\frac{|ay||xb|}{|ax||yb|},$$ where $a,x,y,b$ appear in that order on the line through $x,y$ with $a,b\\in\\partial K$. It is evidently invariant under invertible projective maps. Hilbert discovered this metric while attempting to generalize the Beltrami-Klein model of hyperbolic geometry. It is moreover a *projective* metric, meaning that straight segments are geodesic. Hilbert's fourth problem [@hilbert_problems] asks for a construction of all projective metrics.\n\nA different example o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of results",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-summary-of-results.md",
+      "narrative": null,
+      "content": "If $K\\subset\\mathbb{R}\\mathbb{P}^n$ is a convex body with interior, we may fix a hyperplane at infinity $\\eta$ that is disjoint from $K$, and consider the corresponding $\\eta$-Funk metric on $K$, denoted $\\mathop{\\mathrm{Funk}}_K^\\eta$. Changing $\\eta$ results in a change to the Funk metric, but of a very particular type: the Finsler norm is changed by an exact 1-form. This is the core reason behind the projective invariance of many metric invariants associated to the Funk metric, as follows.\n\nFor a submanifold $X\\subset \\mathop{\\mathrm{int}}(K)$, let $\\mathop{\\mathrm{Funk}}^\\eta_K(X)$ stand f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plan of the paper",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-plan-of-the-paper.md",
+      "narrative": null,
+      "content": "In section [\\[sec:preliminaries\\]](#sec:preliminaries){reference-type=\"ref\" reference=\"sec:preliminaries\"} we recall the basics of the various geometries that we use, mostly to fix notation. The rest of the paper consists of three main parts, namely sections [\\[sec:outlook\\]](#sec:outlook){reference-type=\"ref\" reference=\"sec:outlook\"}-[\\[sec:girth\\]](#sec:girth){reference-type=\"ref\" reference=\"sec:girth\"}, [\\[sec:every_scale\\]](#sec:every_scale){reference-type=\"ref\" reference=\"sec:every_scale\"}-[\\[sec:inequalities\\]](#sec:inequalities){reference-type=\"ref\" reference=\"sec:inequalities\"} and [\\[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-acknowledgements.md",
+      "narrative": null,
+      "content": "This project was born out of many fruitful discussions with Alina Stancu, whose interest and encouragement made this work possible. I greatly benefited from discussions with, and ideas contributed by Shiri Artstein-Avidan, Yaron Ostrover, Bo'az Klartag and Gil Solanes, to whom much gratitude and appreciation are extended. Thanks are also due to Constantin Vernicos for several useful comments on a first draft of the paper. The project got started during the author's stay in Montreal as a CRM-ISM postdoctoral fellow; the support provided by those institutes, as well as the excellent working atmo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective geometry",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-22-projective-geometry.md",
+      "narrative": null,
+      "content": "A Funk perspective on billiards, projective geometry and Mahler volume",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convexity",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-21-convexity.md",
+      "narrative": null,
+      "content": "A convex body $K\\subset V=\\mathbb{R}^n$ is a compact convex set, which we will henceforth assume to have non-empty interior. We write $|K|$ for the Euclidean volume of $K$, and $\\mathcal H^{n-1}$ for the Hausdorff measure on $\\partial K$.\n\nThe Euclidean unit ball is $B^n$, and $\\omega_n:=|B^n|=\\frac{\\pi^{\\frac n 2}}{\\Gamma(\\frac n 2 +1)}$. The support function of $K\\subset V$ is $h_K(\\xi)=\\sup_{x\\in K}\\langle x,\\xi\\rangle:V^*\\to \\mathbb{R}$, which is a convex function. We say that $K$ is smooth and strictly convex if $\\partial K$ is $C^2$-smooth of strictly positive gaussian curvature.\n\nBy $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/cor-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "cor-sec-010-04.md",
+      "narrative": null,
+      "content": "The symmetrization of the projective co-nomadic Finsler metric is the Hilbert metric.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "Given an exact co-nomadic Finsler structure [F] on a manifold M, represented by the Finsler norm F, and an oriented closed curve, its length only depends on [F]. Moreover, the geodesics of F only depend on [F].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "Identify a convex body K ⊂RPn with the cone ˜K ⊂V = Rn+1, and with Kt = ˜K ∩{xn+1 = t}. For x ∈V \\ {0}, write [x] = Rx ∈RPn. Then for ˆp = (p, 1) ∈int(K1) ⊂Rn, the set −(K1 −ˆp)o ⊂Rn = {xn+1 = 0} coincides with πn(K∨∩([ˆp]⊥+ en+1)), where πn projects orthogonally to Rn. A Funk perspective on billiards, projective geometry and Mahler volume",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "Let K ⊂RPn be a convex set, and ﬁx η ∈int(K∨). The η- anchored projective Finsler metric then coincides with RFunkη K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prop-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-010-06.md",
+      "narrative": null,
+      "content": "Fix η, θ ∈int(K∨), and let Fη, Fθ be the corresponding Funk metrics on int(K). Then Fθ −Fη is an exact 1-form on int(K). The same holds for the reverse Funk metric.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The projective co-nomadic Finsler structure",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-31-the-projective-co-nomadic-finsler-structure.md",
+      "narrative": null,
+      "content": "A Funk perspective on billiards, projective geometry and Mahler volume\na pencil is deﬁned as their cross ratio in P∨. It can be computed by intersecting\nthe hyperplanes with a generic line, and taking the cross ratio of the respective\nintersection points.\nA quadric E = [A] ⊂P is given by the homogeneous quadratic equation {x :\n⟨Ax, x⟩= 0}, for some symmetric matrix A = AE. A linear pencil of quadrics is\nany family of quadrics of the form [tA1 + sA2], t, s ∈R. A dual pencil is a family\nof the form [(tA−1\n1\n+ sA−1\n2 )−1], t, s ∈R.\nGiven two non-degenerate quadrics E1, E2 ∈RPn, the projective map",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finsler geometry",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-23-finsler-geometry.md",
+      "narrative": null,
+      "content": "A *non-reversible Finsler manifold* $(M,\\phi)$ is a smooth manifold equipped with a function $\\phi :TM\\setminus \\underline 0\\to [0,\\infty)$, which restricts to a non-symmetric norm on each tangent space. The assumed smoothness of $\\phi$ depends on the problem at hand.\n\nThe tangent unit ball at $x$ is $B_xM=\\{v\\in T_xM: \\phi(x,v)\\leq 1\\}$, and the cotangent ball is $B_x^*M=(B_xM)^o\\subset T_x^*M$. The co-ball bundle is $B^*M=\\cup_{x\\in M}B_x^*M$.\n\nThe *Holmes-Thompson* volume is the measure $\\mu^{HT}:=\\frac{1}{\\omega_n}\\pi_*(\\mathop{\\mathrm{vol}}_{2n}|_{B^*M})$, where $\\mathop{\\mathrm{vol}}_{2n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A projective outlook on the Funk metric",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-3-a-projective-outlook-on-the-funk-metric.md",
+      "narrative": null,
+      "content": "3.1. The projective co-nomadic Finsler structure. We start with some ter-\nminology.\n9\nA Funk perspective on billiards, projective geometry and Mahler volume\nDeﬁnition 3.1. Two Finsler structures F1, F2 on M are co-translate if F2 −F1\nis a 1-form on M. A co-nomadic Finsler structure on a manifold is an equivalence\nclass of co-translate Finsler structures. Similarly, we deﬁne an exact co-nomadic\nFinsler structure to be the equivalence class of Finsler norms up to an exact 1-form\non M.\nGeometrically, a co-nomadic Finsler structure is the data of all cotangent unit\nballs, ﬁxed up to translation in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/rem-sec-010-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-010-05.md",
+      "narrative": null,
+      "content": "Thus we obtain a construction of the Hilbert metric which is trans- parently projectively invariant and Finslerian at the same time. An equivalent de- scription can be found in [33, section 3]. A careful examination reveals that the Funk metric itself is projectively invariant, up to the addition of an exact 1-form. A Funk perspective on billiards, projective geometry and Mahler volume",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The volume in Funk geometry",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-32-the-volume-in-funk-geometry.md",
+      "narrative": null,
+      "content": "[]{#sec:volume_funk label=\"sec:volume_funk\"}\n\nFor a convex set $K\\subset \\mathbb{P}$, let us construct a smooth measure $\\widetilde \\mu$ on $\\mathop{\\mathrm{int}}(K)$. Given $x\\in \\mathop{\\mathrm{int}}(K)$, choose a density $d_x=\\alpha_x\\otimes\\nu_x\\in \\mathop{\\mathrm{Dens}}(T_x\\mathbb{P})=\\mathop{\\mathrm{Dens}}(x^*\\otimes V/x)=\\mathop{\\mathrm{Dens}}(V^*/x^\\perp)\\otimes \\mathop{\\mathrm{Dens}}((x^\\perp)^*)$. Then $\\nu_x^*\\in \\mathop{\\mathrm{Dens}}(x^\\perp)$ is defined by having $\\nu_x^*\\otimes\\nu_x$ the symplectic (Liouville) volume on $x^\\perp\\oplus (x^\\perp)^*$. Choose $\\xi\\in V^*/x^\\perp$ wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Funk billiards and duality",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-4-funk-billiards-and-duality.md",
+      "narrative": null,
+      "content": "[]{#sec:billiards label=\"sec:billiards\"}\n\nLet $K\\subset \\mathop{\\mathrm{int}}(L)$ in $\\mathbb{P}^n$ be a pair of convex bodies. Using the $L$-Funk metric on $K$, we can consider the corresponding billiard dynamics inside $K$ following [@gutkin_tabachnikov], which we call the $L$-Funk billiard in $K$. As it is a non-reversible Finsler structure, some care should be taken, however the results we need go through unaltered. In particular, using [@gutkin_tabachnikov Lemma 3.3] we get the following description of the reflection law, illustrated in figure [1](#fig:reflectionla){reference-type=\"ref\" r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrability of Funk billiard in conics",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-5-integrability-of-funk-billiard-in-conics.md",
+      "narrative": null,
+      "content": "[]{#sec:conics label=\"sec:conics\"} Recall that by Example [\\[exm:hyperbolic\\]](#exm:hyperbolic){reference-type=\"ref\" reference=\"exm:hyperbolic\"}, the reflection laws of the $B^n$-Funk and Beltrami-Klein hyperbolic metrics coincide. Similarly, the Funk geodesics on a manifold $M\\subset \\mathop{\\mathrm{int}}(B^n)$ are also those of the metric induced from hyperbolic space.\n\nIn particular, if $K$ is an ellipsoid nested in $B^n$, the Funk billiard in $K$ is completely integrable [@veselov; @tabachnikov_hyperbolic]. We now recover and refine this observation in the case of the projective plane by a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schäffer's dual girth conjecture",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-6-schäffers-dual-girth-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sec:girth label=\"sec:girth\"}\n\nThe Gutkin-Tabachnikov duality of Minkowski billiards has a continuous counterpart, namely Schäffer's dual girth conjecture [@schaeffer], which is a theorem of Álvarez Paiva [@alvarez-paiva]. The setting of Funk geometry is no different, providing another collection of projective invariants enjoying duality.\n\n::: Theorem\n[]{#thm:girth label=\"thm:girth\"} Let $L$ be a smooth, strictly convex body in $\\mathbb{P}^n$.\n\n1.  Let $M\\subset\\mathop{\\mathrm{int}}(L)$ be a compact submanifold with boundary, and consider $\\mathop{\\mathrm{Funk}}^\\eta_L(M)$. Then its Holmes-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mahler volumes of every Funk scale",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-7-mahler-volumes-of-every-funk-scale.md",
+      "narrative": null,
+      "content": "[]{#sec:every_scale label=\"sec:every_scale\"} Define the *Funk-Mahler volume of radius $0<r<\\infty$ (around $q\\in \\mathop{\\mathrm{int}}(K)$)* by $$M_r(K,q)=\\omega_n r^{-n}\\mathop{\\mathrm{vol}}_K^F(B_r^F(q, K)), \\quad  M_r(K)=\\inf_{q\\in \\mathop{\\mathrm{int}}(K)}M_r(K,q).$$\n\nIn Euclidean terms, we have $$M_r(K,q)=r^{-n}\\int_{z\\in q+(1-e^{-r})(K-q)}|K^z|dz,$$ where $K^z$ denotes the dual body with respect to $z$. Evidently, $M_r(K,q)$ is invariant under the full linear group with $q$ at the origin.\n\n::: Lemma\n[]{#lem:mahler_convex label=\"lem:mahler_convex\"} For any convex $K$, $M_r(K, q)$ is a str",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maximizing the Funk-Mahler volume",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-8-maximizing-the-funk-mahler-volume.md",
+      "narrative": null,
+      "content": "[]{#sec:inequalities label=\"sec:inequalities\"}\n\nLet us introduce for convenience $\\rho=1-e^{-r}$, and the modified Funk-Mahler volumes $$\\widetilde M_\\rho(K,q):=r^nM_{r}(K,q)=\\int_{z\\in q+\\rho (K-q)}|K^z|dz,\\quad \\widetilde M_\\rho(K)=\\inf_{q\\in \\mathop{\\mathrm{int}}(K)}\\widetilde M_\\rho(K, q).$$\n\n::: Lemma\nLet $B\\subset\\mathbb{R}^n$ be an ellipsoid. Then $$\\widetilde M_\\rho(B)=n\\omega_n^2\\int_0^\\rho\\frac{t^{n-1}dt}{(1-t^2)^{\\frac{n+1}{2}}}.$$\n:::\n\nBy Lemmas [\\[lem:mahler_convex\\]](#lem:mahler_convex){reference-type=\"ref\" reference=\"lem:mahler_convex\"} and [\\[lem:volume_ellipsoid\\]](#lem:volume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularizing the total Funk volume",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "../sections/sec-017-9-regularizing-the-total-funk-volume.md",
+      "narrative": null,
+      "content": "[]{#sec:projective_total_volume label=\"sec:projective_total_volume\"} We use the notation of subsection [\\[sec:volume_funk\\]](#sec:volume_funk){reference-type=\"ref\" reference=\"sec:volume_funk\"}. Recall that we use the standard Euclidean structure on $V=\\mathbb{R}^{n+1}$, and identify the double cover of $\\mathbb{P}$ and $\\mathbb{P}^\\vee$ with the unit sphere. Let $x_0\\in x$ be a unit vector, well-defined up to sign. We write $\\sigma_x, \\sigma_\\xi$ for the standard Euclidean measure on the corresponding copy of $S^2$.\n\n::: Lemma\n[]{#lem:lemma91 label=\"lem:lemma91\"}For $g\\in \\mathop{\\mathrm{PGL}}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2012.12159v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[1] J. C. ´Alvarez Paiva. Dual spheres have the same girth. Amer. J. Math., 128(2):361–371, 2006.\n[2] J. C. ´Alvarez Paiva and G. Berck. What is wrong with the Hausdorﬀmeasure in Finsler\nspaces. Adv. Math., 204(2):647–663, 2006.\n[3] J. C. ´Alvarez Paiva and A. C. Thompson. Volumes on normed and Finsler spaces. In A\nsampler of Riemann-Finsler geometry, volume 50 of Math. Sci. Res. Inst. Publ., pages 1–48.\nCambridge Univ. Press, Cambridge, 2004.\n[4] M. Andersson, M. Passare, and R. Sigurdsson. Complex convexity and analytic functionals,\nvolume 225 of Progress in Mathematics. Birkh¨auser Verlag,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-composite-crossing-sublimation-criteria",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:composite-crossing-sublimation-criteria",
+  "kind": "remark",
+  "title": "Sublimation, crossing parity, and the full phase criterion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-composite-crossing-parity",
+  "tags": [
+    "sublimation",
+    "crossing-parity",
+    "phase-behaviour",
+    "withdrawn-mechanism"
+  ],
+  "text": "composite-crossing-sublimation-criteria.md",
+  "provenance": "authored"
+}

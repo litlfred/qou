@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006111v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Approximate factorization and concentration for characters of symmetric groups",
+  "contains": [
+    "library/arxiv-math-0006111v2/sections/page-001",
+    "library/arxiv-math-0006111v2/sections/page-002",
+    "library/arxiv-math-0006111v2/sections/page-003",
+    "library/arxiv-math-0006111v2/sections/page-004",
+    "library/arxiv-math-0006111v2/sections/page-005",
+    "library/arxiv-math-0006111v2/sections/page-006",
+    "library/arxiv-math-0006111v2/sections/page-007",
+    "library/arxiv-math-0006111v2/sections/page-008",
+    "library/arxiv-math-0006111v2/sections/page-009",
+    "library/arxiv-math-0006111v2/sections/page-010",
+    "library/arxiv-math-0006111v2/sections/page-011",
+    "library/arxiv-math-0006111v2/sections/page-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Approximate factorization and concentration for characters of symmetric groups — We prove a factorization-concentration result for characters of symmet- ric groups.\n\n**Approximate factorization and concentration for characters of symmetric groups**\n\n*Philippe Biane*\n\n12 pp, 12 sections.\n\n**Abstract.** We prove a factorization-concentration result for characters of symmet- ric groups. This is then applied to the asymptotic behaviour of the decomposition of the tensor representations. There are connections with the Pastur-Marcenko distri- bution of random matrix theory, and freely inﬁnitely divisible distributions.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0006111&metadataPrefix=arXiv), submitted 2000-06-16, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0006111v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0006111v2.pdf",
+    "source_sha256": "cd99f45d686eb6e235cdb56326775ceded2564111636c87051a933a6a158ca3b",
+    "pages": 12,
+    "arxiv": {
+      "id": "math/0006111",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "16 Jun 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

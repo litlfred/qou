@@ -1,0 +1,1271 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0905.0488v5",
+  "title": "arxiv-0905.0488v5",
+  "variant": "pdf",
+  "pages": 50,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Background on Crossed Groupoids and Stacks",
+      "number": "1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-background-on-crossed-groupoids-and-stacks"
+    },
+    {
+      "level": 1,
+      "title": "Deformations of Sheaves of Rings",
+      "number": "2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-deformations-of-sheaves-of-rings"
+    },
+    {
+      "level": 1,
+      "title": "DG Lie Algebras and Deformations of Affine Varieties",
+      "number": "3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Objects in a Stack of Crossed Groupoids",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid"
+    },
+    {
+      "level": 1,
+      "title": "Combinatorial Descent Data",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-combinatorial-descent-data"
+    },
+    {
+      "level": 1,
+      "title": "Geometric Descent Data and Decomposition",
+      "number": "6",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-geometric-descent-data-and-decomposition"
+    },
+    {
+      "level": 1,
+      "title": "Total Trivialization of Twisted Deformations",
+      "number": "7",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-total-trivialization-of-twisted-deformations"
+    },
+    {
+      "level": 1,
+      "title": "Lie Descent Data",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-lie-descent-data"
+    },
+    {
+      "level": 1,
+      "title": "From Lie Descent to Geometric Descent",
+      "number": "9",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-9-from-lie-descent-to-geometric-descent"
+    },
+    {
+      "level": 1,
+      "title": "Cosimplicial Formality",
+      "number": "10",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-10-cosimplicial-formality"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Quantization",
+      "number": "11",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-11-twisted-quantization"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted associative",
+          "heading": false
+        },
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "stack-like",
+          "heading": false
+        },
+        {
+          "term": "mother",
+          "heading": false
+        }
+      ],
+      "extract": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI Dedicated to Rina Yekutieli, my Mother, on her 80th Birthday Abstract. Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0905.0488v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": "11",
+      "words": 5802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "groupoids twocat",
+          "heading": false
+        },
+        {
+          "term": "deformations gerbe",
+          "heading": false
+        },
+        {
+          "term": "opn desc",
+          "heading": false
+        },
+        {
+          "term": "algebroids gerbe",
+          "heading": false
+        },
+        {
+          "term": "twocat assdef",
+          "heading": false
+        },
+        {
+          "term": "stack twocat",
+          "heading": false
+        },
+        {
+          "term": "sheaf mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Int} \\numberwithin{equation}{subsection} \\subsection{Deformation Quantization} Let $\\K$ be a field of characteristic $0$, and let $X$ be a smooth algebraic variety over $\\K$, with structure sheaf $\\mcal{O}_X$. Suppose $R$ is a {\\em parameter algebra} over $\\K$; namely $R$ is a complete local noetherian commutative $\\K$-algebra, with maximal ideal $\\m$ and residue field $R / \\m = \\K$. The main example is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
+      "number": "1",
+      "title": "Background on Crossed Groupoids and Stacks",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "15",
+      "words": 2140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed groupoids",
+          "heading": true
+        },
+        {
+          "term": "twocat grp",
+          "heading": false
+        },
+        {
+          "term": "crvar twocat",
+          "heading": false
+        },
+        {
+          "term": "twocat cat",
+          "heading": false
+        },
+        {
+          "term": "twocat assoc",
+          "heading": false
+        },
+        {
+          "term": "aut twocat",
+          "heading": false
+        },
+        {
+          "term": "twoto opn",
+          "heading": false
+        },
+        {
+          "term": "category twocat",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:back} \\numberwithin{equation}{section} In this paper we work a lot with stacks on topological spaces. The reader can consult our earlier paper \\cite{Ye4}, that contains a pretty detailed account of $2$-categories, stacks and gerbes, with the same notation (Sections 1-2 of that paper). Regarding set theoretic considerations, we employ Grothendieck universes. We consider a universe $\\cat{U}$, that we call",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-deformations-of-sheaves-of-rings",
+      "number": "2",
+      "title": "Deformations of Sheaves of Rings",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 2064,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal acyclic",
+          "heading": false
+        },
+        {
+          "term": "sheaf mcal",
+          "heading": false
+        },
+        {
+          "term": "mcal psi",
+          "heading": false
+        },
+        {
+          "term": "mcal module",
+          "heading": false
+        },
+        {
+          "term": "otimes mcal",
+          "heading": false
+        },
+        {
+          "term": "coherent mcal",
+          "heading": false
+        },
+        {
+          "term": "mcal cong",
+          "heading": false
+        },
+        {
+          "term": "mcal times",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:defs-alg-vars} In this section we recall material from the companion papers \\cite{Ye7} and \\cite{Ye9}. For the rest of the paper we work over a base field $\\K$ of characteristic $0$. All algebras are by default $\\K$-algebras, and all homomorphisms are by default over $\\K$. Further conventions are that associative algebras are unital, and commutative algebras are associative (and unital). For $\\K$-modules",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
+      "number": "3",
+      "title": "DG Lie Algebras and Deformations of Affine Varieties",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 1107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "opn del",
+          "heading": false
+        },
+        {
+          "term": "opn geo",
+          "heading": false
+        },
+        {
+          "term": "groupoid opn",
+          "heading": false
+        },
+        {
+          "term": "opn exp",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": true
+        },
+        {
+          "term": "group opn",
+          "heading": false
+        },
+        {
+          "term": "deformation mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:defs-DG-Lie} We now recall some facts on DG Lie algebras from \\cite{Ye7, Ye9}. \\begin{dfn} \\label{dfn:220} \\begin{enumerate} \\item A DG Lie algebra $\\g = \\bigoplus_{i \\in \\mbb{Z}} \\mfrak{g}^{i}$ is said to be of {\\em quantum type} if $\\g^i = 0$ for $i < -1$. \\item A {\\em quasi quantum type DG Lie algebra} is a DG Lie algebra $\\til{\\mfrak{g}}$ that admits a DG Lie quasi-isomorphism $\\til{\\g} \\to \\g$ to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
+      "number": "4",
+      "title": "Twisted Objects in a Stack of Crossed Groupoids",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "25",
+      "words": 1972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed groupoids",
+          "heading": true
+        },
+        {
+          "term": "gerbe opn",
+          "heading": false
+        },
+        {
+          "term": "bsym opn",
+          "heading": false
+        },
+        {
+          "term": "twocat grp",
+          "heading": false
+        },
+        {
+          "term": "opn twob",
+          "heading": false
+        },
+        {
+          "term": "gerbe circ",
+          "heading": false
+        },
+        {
+          "term": "stack twocat",
+          "heading": false
+        },
+        {
+          "term": "twocat assoc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tw.sh} In this section we present some geometric constructions that generalize the concepts of gerbe and stack of algebroids. As a warmup we begin with the non-geometric version. Recall that a crossed groupoid $\\cat{P} = (\\cat{P}_1, \\cat{P}_2, \\opn{Ad}_{\\cat{P}_1 \\crvar \\cat{P}_{2}}, \\opn{D})$ determines a functor $\\opn{IG} : \\cat{P}_1 \\to \\cat{Grp}$, and a natural transformation $\\opn{ig} : \\opn{IG}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-combinatorial-descent-data",
+      "number": "5",
+      "title": "Combinatorial Descent Data",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn desc",
+          "heading": false
+        },
+        {
+          "term": "combinatorial descent",
+          "heading": true
+        },
+        {
+          "term": "cosimplicial crossed",
+          "heading": false
+        },
+        {
+          "term": "descent data",
+          "heading": true
+        },
+        {
+          "term": "bsym delta",
+          "heading": false
+        },
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "face bsym",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial simplicial",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:cosim} We begin with a quick review of cosimplicial theory. Let $\\bsym{\\Delta}$ denote the simplex category. The set of objects of $\\bsym{\\Delta}$ is the set $\\mbb{N}$ of natural numbers. Given $p, q \\in \\mbb{N}$, the morphisms $\\alpha : p \\to q$ in $\\bsym{\\Delta}$ are the order preserving functions $\\alpha : \\{ 0, \\ldots, p \\} \\to \\{ 0, \\ldots, q \\}$. We denote this set of morphisms by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-geometric-descent-data-and-decomposition",
+      "number": "6",
+      "title": "Geometric Descent Data and Decomposition",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 33,
+      "labelStart": "28",
+      "labelEnd": "33",
+      "words": 2836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "til gerbe",
+          "heading": false
+        },
+        {
+          "term": "opn glu",
+          "heading": false
+        },
+        {
+          "term": "groupoids twocat",
+          "heading": false
+        },
+        {
+          "term": "opn desc",
+          "heading": false
+        },
+        {
+          "term": "descent data",
+          "heading": true
+        },
+        {
+          "term": "datum bsym",
+          "heading": false
+        },
+        {
+          "term": "trivializes twocat",
+          "heading": false
+        },
+        {
+          "term": "geometric descent",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:mdd} In this section we study the decomposition of twisted objects on open coverings. Given a set $K$ and $p \\in \\N$, we let \\begin{equation} \\label{eqn:mdd.111} \\bsym{\\Delta}_p(K) := \\{ (k_0, \\ldots, k_p) \\mid k_i \\in K \\} . \\end{equation} The collection $\\{ \\bsym{\\Delta}_p(K) \\}_{p \\in \\N}$ is a simplicial set. Recall that for an open covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of a topological space $X$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-total-trivialization-of-twisted-deformations",
+      "number": "7",
+      "title": "Total Trivialization of Twisted Deformations",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal gerbe",
+          "heading": false
+        },
+        {
+          "term": "mcal acyclic",
+          "heading": false
+        },
+        {
+          "term": "filtration gerbe",
+          "heading": false
+        },
+        {
+          "term": "groupoid gerbe",
+          "heading": false
+        },
+        {
+          "term": "iso gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe geq",
+          "heading": false
+        },
+        {
+          "term": "mcal cong",
+          "heading": false
+        },
+        {
+          "term": "subset mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tttf} In this section we assume Setup \\ref{setup:200}. Acyclic open sets were introduced in Definition \\ref{dfn:23}. Let $\\mcal{A}$ be an $R$-deformation of $\\mcal{O}_U$ (associative of Poisson) , for some open set $U \\subset X$. By \\cite[Corollary 3.8]{Ye9}, for every $p \\geq 1$ the sheaf of $R$-modules $\\m^p \\mcal{A}$ is $\\m$-adically complete. As explained in Section \\ref{sec:defs-alg-vars}, there is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-lie-descent-data",
+      "number": "8",
+      "title": "Lie Descent Data",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 1796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn desc",
+          "heading": false
+        },
+        {
+          "term": "opn del",
+          "heading": false
+        },
+        {
+          "term": "opn cat",
+          "heading": false
+        },
+        {
+          "term": "hot mfrak",
+          "heading": false
+        },
+        {
+          "term": "cat dglie",
+          "heading": false
+        },
+        {
+          "term": "til psi",
+          "heading": false
+        },
+        {
+          "term": "lie descent",
+          "heading": true
+        },
+        {
+          "term": "xar opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Lie-desc} We begin this section by recalling what are $\\mrm{L}_{\\infty}$ morphisms between DG Lie algebras, following \\cite[Sections 7-8]{Ye7}; see also \\cite{Ko1, Hi2, CKTB}. We denote by $\\cat{DGLie} (\\K)$ the category of differential graded Lie algebras over $\\K$, and by $\\cat{DGCog}(\\K)$ the category of DG unital cocommutative coalgebras over $\\K$. There are functors \\[ \\cat{DGLie}(\\K) \\xar{\\opn{C}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-9-from-lie-descent-to-geometric-descent",
+      "number": "9",
+      "title": "From Lie Descent to Geometric Descent",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "39",
+      "labelEnd": "42",
+      "words": 1417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym tup",
+          "heading": false
+        },
+        {
+          "term": "opn desc",
+          "heading": false
+        },
+        {
+          "term": "coverings bsym",
+          "heading": false
+        },
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "bsym coprod",
+          "heading": false
+        },
+        {
+          "term": "bsym extending",
+          "heading": false
+        },
+        {
+          "term": "opn twob",
+          "heading": false
+        },
+        {
+          "term": "opn geo",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Lie-Geo} Suppose $\\mcal{G}$ is a sheaf of abelian groups on a topological space $X$. Let us recall how to construct the \\v{C}ech cosimplicial abelian group $\\mrm{C}(\\bsym{U}, \\mcal{G})$ associated to $\\mcal{G}$ and to an open covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of $X$. For $p \\in \\mbb{N}$ we take the abelian group \\begin{equation} \\label{eqn:Lie-Geo.103} \\mrm{C}^p(\\bsym{U}, \\mcal{G}) :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-10-cosimplicial-formality",
+      "number": "10",
+      "title": "Cosimplicial Formality",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "mix bsym",
+          "heading": false
+        },
+        {
+          "term": "opn mix",
+          "heading": false
+        },
+        {
+          "term": "quasi-coherent mcal",
+          "heading": false
+        },
+        {
+          "term": "boprod mcal",
+          "heading": false
+        },
+        {
+          "term": "psi bsym",
+          "heading": false
+        },
+        {
+          "term": "algebras mcal",
+          "heading": false
+        },
+        {
+          "term": "covering bsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:cosim-form} In this section we prove Theorem \\ref{thm:221}. We work in Setup \\ref{setup:6}. Recall the sheaves of DG Lie algebras $\\mcal{T}_{\\mrm{poly}, X}$ and $\\mcal{D}_{\\mrm{poly}, X}$ from Section \\ref{sec:defs-DG-Lie}. The Lie brackets are not $\\mcal{O}_X$-linear (they are differential operators), but forgetting them, both $\\mcal{T}_{\\mrm{poly}, X}$ and $\\mcal{D}_{\\mrm{poly}, X}$ are bounded below",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-11-twisted-quantization",
+      "number": "11",
+      "title": "Twisted Quantization",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "mcal tup",
+          "heading": false
+        },
+        {
+          "term": "hot mcal",
+          "heading": false
+        },
+        {
+          "term": "mix bsym",
+          "heading": false
+        },
+        {
+          "term": "opn twob",
+          "heading": false
+        },
+        {
+          "term": "twisted quantization",
+          "heading": true
+        },
+        {
+          "term": "opn quant",
+          "heading": false
+        },
+        {
+          "term": "deformation mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:TDQ} Let $X$ be a smooth algebraic variety over $\\K$, and $R$ a parameter algebra. We have the stacks of crossed groupoids $\\twocat{PoisDef}(R, \\mcal{O}_X)$ and $\\twocat{AssDef}(R, \\mcal{O}_X)$ on $X$. Recall that a twisted object of $\\twocat{PoisDef}(R, \\mcal{O}_X)$ is a twisted Poisson $R$-deformation of $\\OX$, and a twisted object of $\\twocat{AssDef}(R, \\mcal{O}_X)$ is a twisted associative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": null,
+      "words": 905,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "advances math",
+          "heading": false
+        },
+        {
+          "term": "twisted deformation",
+          "heading": false
+        },
+        {
+          "term": "den bergh",
+          "heading": false
+        },
+        {
+          "term": "van den",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "gorokhovsky",
+          "heading": false
+        }
+      ],
+      "extract": "[BGNT1] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformation quantization of gerbes, Advances Math. 214, Issue 1 (2007), 230-266. [BGNT2] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformations of algebroid stacks, Advances Math. 226 (2011), 3018-3087. [BGNT3] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for Algebroids I: Nerves of Two-Groupoids, eprint arXiv:1211.6603. [BGNT4]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "0 Then there is a function",
+          "9 3, and let U be a ﬁnite aﬃne open covering of X. We consider two cases:"
+        ]
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Introduction: listed p1, found p45"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bsym opn",
+      "heading": false
+    },
+    {
+      "term": "mcal mrm",
+      "heading": false
+    },
+    {
+      "term": "gerbe opn",
+      "heading": false
+    },
+    {
+      "term": "groupoids opn",
+      "heading": false
+    },
+    {
+      "term": "opn cat",
+      "heading": false
+    },
+    {
+      "term": "opn desc",
+      "heading": false
+    },
+    {
+      "term": "opn bigl",
+      "heading": false
+    },
+    {
+      "term": "opn twob",
+      "heading": false
+    },
+    {
+      "term": "mcal tup",
+      "heading": false
+    },
+    {
+      "term": "opn del",
+      "heading": false
+    },
+    {
+      "term": "hot mcal",
+      "heading": false
+    },
+    {
+      "term": "sheaf mcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Diagram of bijections in the proof of Theorem 0.10.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Illustration of a combinatorial descent datum (ω, g, a) in the cosimplicial crossed groupoid G = {Gp}p∈N",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p48); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0905.0488v5"
+  }
+}

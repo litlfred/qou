@@ -1,0 +1,380 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "5s032x",
+  "blocks": [
+    {
+      "id": "library/5s032x/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Standard Model Symmetry and Qubit Entanglement",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-the-standard-model-symmetry-and-qubit-entangleme.md",
+      "narrative": null,
+      "content": "Jochen Szangolies∗\nResearch at the intersection of quantum gravity and quantum information theory has seen sig-\nnificant success in describing the emergence of spacetime and gravity from quantum states whose\nentanglement entropy approximately obeys an area law. In a different direction, the Kaluza-Klein\nproposal aims to recover gauge symmetries by means of dimensional reduction of higher-dimensional\ngravitational theories. Integrating both, gravitational and gauge degrees of freedom in 3 + 1 dimen-\nsions may be obtained upon dimensional reduction of higher-dimensional emergent gravity. To this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction: The `Quantum First'-Program",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-introduction-the-quantum-first-program.md",
+      "narrative": null,
+      "content": "If our world, as is widely believed, is quantum, it is in principle representable as a single vector evolving in Hilbert\nspace, and thus, all spatiotemporal notions must be reducible to this description. This suggests a research program\nthat has been variously called ‘Hilbert Space Fundamentalism’ [1], ‘Mad Dog Everettianism’ [2], ‘extreme Occam’s\nrazor’ [3], or simply ‘physics from scratch’ [4]. Essentially, rather than trying to find quantized versions of classical\nnotions, whether of spacetime or of classical fields, one instead starts with a quantum description, and aims to locate\nthe appr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-abstract.md",
+      "narrative": null,
+      "content": "Indeed, the links appear so deep that Susskind has proposed to generalize ER = EPR, the conjecture that quantum\nentanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum\nmechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but\nthat geometry is dynamical, approximating general relativistic spacetimes in a classical limit.\nThe origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered\nfrom thermodynamics in the presence of black hole hor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/5s032x/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Complex Case: Single Qubits",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-the-complex-case-single-qubits.md",
+      "narrative": null,
+      "content": "THE COMPLEX CASE: SINGLE QUBITS\nWe start by treating the simplest case, that of single qubits in ordinary, complex quantum mechanics. Any pure\nqubit state can be written as\n|ψ⟩= c0 |0⟩+ c1 |1⟩,\n(5)\nwhere c0, c1 ∈C, |c0|2 + |c1|2 = 1, and {|0⟩, |1⟩} denotes a standard basis of the two-qubit Hilbert space C2.\nIt will be useful to represent qubit states in terms of the Pauli matrices\nσ1 =\n\u0012\n0 1\n1 0\n\u0013\nσ2 =\n\u0012\n0 −i\ni\n0\n\u0013\nσ3 =\n\u0012\n1\n0\n0 −1\n\u0013\n,\nyielding\nρψ = |ψ⟩⟨ψ| =\n\u0012\nc0c∗\n0 c1c∗\n0\nc0c∗\n1 c1c∗\n1\n\u0013\n= 1\n2\n\u0012\n1 + x3\nx1 −ix2\nx1 + ix2\n1 −x3\n\u0013\n(6)\n= 1\n2 (1 + rψ · σ) ,\nwith x1 = c1c∗\n0 + c0c∗\n1, x2 = i(c0c∗\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SL(2,C) and 3+1-Dimensional Spacetime",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-sl2c-and-31-dimensional-spacetime.md",
+      "narrative": null,
+      "content": "The correspondence between elementary quantum systems and 3 + 1 dimensional spacetime may be explicated in\nvarious ways. Von Weizs¨acker proposed a symmetry-based argument in the ‘50s [29], which has been echoed by Brukner\nand Zeilinger in more recent times [53]. M¨uller and Masanes give a more operationalistic argument, showing that\nprobabilistically interacting systems exchanging ‘minimal amounts of direction information’ yield a three-dimensional\nlaboratory space. H¨ohn and M¨uller then show that the descriptions of two experimenters of such a situation will be\nrelated by an element of O+(3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bloch Sphere and the Complex Hopf Fibration",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-the-bloch-sphere-and-the-complex-hopf-fibration.md",
+      "narrative": null,
+      "content": "The Bloch Sphere and the Complex Hopf Fibration\nAbove, we have already introduced the Bloch sphere representation of single qubits. The normalization condition\n|c0|2 + |c1|2 = 1 implies that the Hilbert space of a single qubit is the 3-sphere S3. However, quantum states are\nproperly represented by rays in Hilbert space, and hence, only unique up to an overall U(1) phase factor exp (iϕ).\nTaking account of this, each qubit can be represented in the projective Hilbert space S2 = S3/U(1) = S3/S1. Hence,\nthere must be a map taking elements of S3 to S2. This is the complex Hopf map, and can be expli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin(3) and the Complex Hopf Fibration",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-spin3-and-the-complex-hopf-fibration.md",
+      "narrative": null,
+      "content": "Spin(3) and the Complex Hopf Fibration\nWe will now connect the story so far with the formalism in Ref. [28]. Thus, consider matrices of the form\nX(r, c) =\n\u0012\nr\nLc\nLc∗−r\n\u0013\n, r ∈R, c ∈C,\n(15)\nwhere by Lc we mean left-multiplication by c (for the commutative complex numbers, this is obviously not a salient\ndistinction, but it will become important in the generalization to higher division algebras). This is just the matrix\nrψ · σ from Eq. (6) with r = x3 and c = x1 −ix2.\nThese matrices generate the Clifford algebra Cℓ3, as they fulfill the relation\nX(r, c)X(r, c) = (r2 + |c|2)1.\n(16)\nFurthermore, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Quaternionic Case: Two Qubits",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-the-quaternionic-case-two-qubits.md",
+      "narrative": null,
+      "content": "THE QUATERNIONIC CASE: TWO QUBITS\nThe above construction admits a ready generalization to the quaternionic case. The skew-field of quaternions H can\nbe obtained from the complex numbers by starting with two complex numbers c0 = r0 + r1i and c1 = r2 + r3i (where\nwe use bolding to mark quaternion imaginary directions), and introducing j such that j2 = −1, which anticommutes\nwith i. Then, a quaternion q0 is given by\nq0 = c0 + c1j\n= r0 + r1i + r2j + r3k,\nwhere we have introduced ij = −ji = k as the third quaternion imaginary unit. This directly entails Hamilton’s\nrelations\ni2 = j2 = k2 = ijk = −1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-sl2h-and-51-dimensional-spacetime.md",
+      "narrative": null,
+      "content": "Analogously to Sec. II A, we can write a point in 5 + 1-dimensional Minkowski-space by means of the quaternion\nHermitian matrix\nX = 1\n2\n\u0012\nx0 + x5\nx1 −x2i −x3j −x4k\nx1 + x2i + x3j + x4k\nx0 −x5\n\u0013\n,\n(21)\nwhose determinant again gives the 5 + 1-dimensional Minkowski interval, yielding det(X) = 0 →x2\n0 −x2\n1 −x2\n2 −x2\n3 −\nx2\n4 −x2\n5 = 0. On these, the Lorentz transformations again act via conjugation by matrices from SL(2, H).\nDue to the non-commutativity of the quaternions, some care has to be taken in defining this group. One possibility\nhere is to take SL(2, H) to be the group of 2 × 2 matrices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two Qubits and the Quaternionic Hopf Fibration",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-two-qubits-and-the-quaternionic-hopf-fibration.md",
+      "narrative": null,
+      "content": "Two Qubits and the Quaternionic Hopf Fibration\nAs in the complex case, we have above already implicitly introduced the second, quaternionic, Hopf fibration. To\nmake it more explicit, we again start with a map from the two-qubit state space S7 to the extended quaternionic\nplane,\nhq\n1 :\nS7\n−→H ∪{∞}\n(q0, q1) −→\nq0q−1\n1\n,\n(23)\nwhich is then composed with the inverse stereographic projection\nhq\n2 : H ∪{∞} −→\nS4\nq0q−1\n1\n−→(x1, x2, x3, x4, x5),\n(24)\nwhere again P5\ni=1 x2\ni = 1.\nThus, this shows how S7 is realized as a nontrivial S3-fibration over S4,\nS7\nS3\n−→S4,\n(25)\nexemplified in the fact that two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin(5) and SU(2)U(1)/Z2",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-spin5-and-su2u1z2.md",
+      "narrative": null,
+      "content": "As in the discussion of the complex case (Sec. II C), following Ref. [28] we consider matrices of the form\nX(r, q) =\n\u0012\nr\nLq\nLq∗−r\n\u0013\n, r ∈R, q ∈H,\nwhere here, due to the non-commutative nature of the quaternions, the specification of left-multiplication is essential.\nThese matrices now generate Spin(5) in the case of r2 + |q|2 = 1.\nAs in the complex single-qubit case, Spin(5) can be understood as the equivariance group of the quaternionic Hopf\nfibration [59], where again the Spin(5)-action on the 4-sphere S4 is induced by its action on R5, and its action on the\n7-sphere S7 follows from the isom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Octonionic Case: Three Qubits",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-the-octonionic-case-three-qubits.md",
+      "narrative": null,
+      "content": "THE OCTONIONIC CASE: THREE QUBITS\nThe third step in this construction takes us to the octonionic case. Remarkably, this is also the final step: the\noctonions are the largest division algebra, and the octonionic one is the final Hopf fibration. The next algebra that\ncan be constructed via the Cayley-Dickson process, the sedenions, is no longer a division algebra, as it possesses\nnontrivial zero divisors, and hence, the Hopf map cannot always be defined.\nThere is thus a certain finality to this case. Having this construction naturally stop here then may go some way\ntowards explaining why it is j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-sl2o-and-91-dimensional-spacetime.md",
+      "narrative": null,
+      "content": "Despite the nonassociativity of the octonions, the general picture described above is still valid. As before, we can\ntake matrices of the form\nX = 1\n2\n\u0012\nx0 + x9\nx1 −P7\ni=1 xi+1ei\nx1 + P7\ni=1 xi+1ei\nx0 −x9\n\u0013\n(35)\nto parametrize the light-cone in 9 + 1-dimensional Minkowski space (recall that such matrices always have a well-\ndefined determinant, Eq. (8)), on which the Lorentz transformations are realized via conjugation by matrices from\n‘SL(2, O)’. However, the octonions being non-associative in addition to non-commutative, it is not immediately clear\nwhat, exactly, could be meant by this group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three Qubits and the Octonionic Hopf Fibration",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-three-qubits-and-the-octonionic-hopf-fibration.md",
+      "narrative": null,
+      "content": "Three Qubits and the Octonionic Hopf Fibration\nDue to the normalization |o0|2 +|o1|2 = 1, an octonionic qubit defines a point on the sphere S15. There again exists\na map taking points of the sphere to the extended octonionic plane,\nho\n1 :\nS15\n−→O ∪{∞}\n(o0, o1) −→\no0o−1\n1\n,\n(36)\nwhich can then be projected to S8 by means of\nho\n2 : O ∪{∞} −→\nS8\no0o−1\n1\n−→(xi)i=1...9\n,\n(37)\nonce more with P9\ni=1 x2\ni = 1. As before, this is just the map taking (o0, o1) to the ‘Bloch-vector’ coordinates,\nh2 ◦h1 (o0, o1) = (xi)i=1...9 .\n(38)\nThis realizes S15 as an S7-fibration over an S8 base,\nS15\nS7\n−→S8,\n(39)\nan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-014-spin9-and-su3su2u1z6.md",
+      "narrative": null,
+      "content": "As with the previous two sections, there exists a generalization of the connection between the spin-groups and Hopf\nfibrations to the octonionic case. One can arrive at an analogous description of the group Spin(9) in terms of matrices\nof the form given in Eq. (15), with Lc replaced by Lo, denoting left-multiplication by octonions. However, we can\nalso again simply note that the octonionic Hopf fibration can be equivalently given as [62]\nS15\nS7\n−→S8 ≡Spin(9)\nSpin(7)\nSpin(8)\nSpin(7)\n−→\nSpin(9)\nSpin(8).\n(40)\nThen, one must find the subgroup of Spin(9) respecting a split O ≃C ⊕C3, that is, singli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement and Massive Particles",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-entanglement-and-massive-particles.md",
+      "narrative": null,
+      "content": "ENTANGLEMENT AND MASSIVE PARTICLES\nThe above has given us a way to interpret the degrees of freedom contained within a single octonionic qubit as\nthe left-handed part of one generation of the fermion content of the Standard Model, transforming under the gauge\nsymmetry SU(3) × SU(2) × U(1)/Z6 in the appropriate way, after singling out a complex direction and splitting O\ninto C ⊕C3.\nHowever, some ambiguity still exists about the coordinates {x1, x2, x9}: if we view the octonionic spinor as spanning\nthe 9-dimensional heavenly sphere, these coordinates should be interpreted as the spatial coordina",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/5s032x/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-conclusion.md",
+      "narrative": null,
+      "content": "CONCLUSION\nThe present study draws inspiration and arguments from several disparate sources, aiming to integrate them into\na coherent whole. These avenues are, as delineated above:\n◦The ‘quantum first’ program of deriving physics from scratch, starting from a quantum state in Hilbert space,\n◦the Kaluza-Klein-like emergence of forces and matter from dimensional reduction,\n◦the connection between spacetimes of dimensions 2 + 1, 3 + 1, 5 + 1 and 9 + 1 and the division algebras R, C,\nH and O,\n◦the division-algebraic approach to particle physics, and\n◦the application of division algebras to entangl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

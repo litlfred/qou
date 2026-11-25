@@ -1,0 +1,740 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "erlijman-wenzl-pjm-231-2",
+  "blocks": [
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Paciﬁc\nJournal of\nMathematics\nSUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES\nJULIANA ERLIJMAN AND HANS WENZL\nVolume 231\nNo. 2\nJune 2007\nPACIFIC JOURNAL OF MATHEMATICS\nVol. 231, No. 2, 2007\ndx.doi.org/10.2140/pjm.2007.231.361\nSUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES\nJULIANA ERLIJMAN AND HANS WENZL\nWe extend subfactor constructions originally deﬁned for unitary braid rep-\nresentations to the setting of braided C∗-tensor categories. The categorical\napproach is then used to compute the principal graph of these subfactors.\nWe also determine the dual principal graph for several important cases.\nHere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "lem-sec-000-07.md",
+      "narrative": null,
+      "content": "With notations as above, we have: (a) P ν ind(Kν) = P λ ind(Hλ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-000-03.md",
+      "narrative": null,
+      "content": "Let Hi be A–Bi bimodules for i = 1, 2, and let D be a type II1 factor. If H2 is weakly reduced from H1, then also L ⊗A H2 is weakly reduced from L ⊗A H1, for any D–A bimodule L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-000-04.md",
+      "narrative": null,
+      "content": "Let N ⊂M be a ﬁnite depth subfactor with ﬁnite index. Then (a) The inclusions N ⊂M2k+1, N ⊂M2k, M ⊂M2k+1, M ⊂M2k are given by the bimodule M⊗k = M ⊗N M ⊗N · · · ⊗N M (k times), viewed, respectively, as an N–N, N–M, M–N and M–M bimodule. (b) The embedding of N′ ∩Mk ⊂N′ ∩Mk+1 coincides with the embedding of the algebras EndM–N(M⊗k) ⊂EndN–N(M⊗k) for k even. If k is odd, the embed- ding of N′∩Mk ⊂N′∩Mk+1 coincides with the embedding of EndN–N(M⊗k)⊂ EndM–N(M⊗k+1), given by x ∈EndN–N(M⊗k) →1M ⊗x. (c) Analogous statements hold for the embedding of M′ ∩Mk ⊂M′ ∩Mk+1; we only need to replace HomX–N by H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-000-05.md",
+      "narrative": null,
+      "content": "Let ({Hλ}λ, {Kν}ν) be a system of N–B- and M–B-bimodules which is closed under induction and restriction. (a) If {Hλ}λ contains a bimodule H0 which is weakly reduced from the trivial N–N-bimodule N, then the principal graph for N ⊂M is given by the con- nected component of the induction- restriction graph for ({Hλ}λ, {Kν}ν) which contains H0. (b) If {Kν}ν contains a bimodule K0 which is weakly reduced from the trivial M–M-bimodule M, then the dual principal graph for N ⊂M is given by the connected component of the induction- restriction graph for ({Hλ}λ, {Kν}ν) which contains K0. (c) If φ : B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bimodules",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-bimodules.md",
+      "narrative": null,
+      "content": "1. Bimodules\n1A. Deﬁnitions.\nDeﬁnition 1.1. Let A and B be type II1 factors, and let H be a Hilbert space.\n(i) H is a left A-module if there exists an action of A on H determined by a\nnormal unital morphism λ : A →B(H), where B(H) is the von Neumann\nalgebra of all bounded linear operators on H.\n(ii) A right B-module H is a left Bopp-module (here, Bopp denotes the opposite\nalgebra of B).\n(iii) H is an A–B bimodule if it is a left A-module, a right B-module, and if\nthe left and right actions intertwine. That is, if λ : A →B(H) is the left\naction, and if ρ : Bopp →B(H) is the right action, then w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-000-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "rem-sec-000-01.md",
+      "narrative": null,
+      "content": "Similarly, if we have an inclusion of type II1-factors N ⊂M, we can make L2(M, tr) into an M–M, M–N, N–M or N–N-bimodule via usual left and right multiplication. If N⊂M is a reducible inclusion, i.e., the relative commutant N′∩M is larger than C1, then we obtain further examples by reducing by projections in the relative commutant. For example, if p ∈N′ ∩M, we obtain the N–M bimodule L2(pM, tr). If φi : M →M are endomorphisms for i = 1, 2, we can also deﬁne an M–M- bimodule structure on L2(M, tr) by perturbing the right and left actions by these endomorphisms, that is, by deﬁning the action by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "(1) Since right multiplication by p commutes with the left action of A and also with the commutant of the right action of B1, we obtain isomorphic inclusions λ1(A) ⊂ρ1(B1)′ and λ1(A)p ⊂ρ1(B1)′ p. It follows from this and the fact that isomorphic bimodules deﬁne isomorphic inclusions that a left weak reduction of a bimodule yields an isomorphic inclusion. (2) If we perturb the right-action on an A–B bimodule H by an outer automorphism α of B, the resulting bimodule Hα is not isomorphic to H. However, it is a left weak reduction of H. (3) One can similarly deﬁne a notion of (right)-weak reductio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-000-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "rem-sec-000-06.md",
+      "narrative": null,
+      "content": "In the setting of Proposition 1.8(a), there may be more than one bimodule Hλ which is weakly reduced from the trivial N–N-bimodule N. Which of those will correspond to the trivial N–N-bimodule N will depend on the choice of the automorphism between pNp and B. The resulting graph will be independent of this choice. A similar phenomenon may also occur in part (b). Let H be an A–B bimodule. We deﬁne ind(H) to be equal to the index [ρ(B)′ : λ(A)]=[λ(A)′ :ρ(B)]. In the following lemma, (Hλ)λ and (Kν)ν are bimodules as in the last proposition, where we now assume for simplicity that they only denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "There are similar axioms involving the morphisms lX : 1 ⊗X →X and rX : X ⊗1 →X called the left and right unit constraints. Moreover, C being a complex category just means that the homomorphisms Hom(X, Y) form a complex vector space for any objects X and Y in C. The complex tensor category C is called a ∗tensor category if there exists a contragredient complex conjugate functor ∗: C →C which is compatible with ⊗. This means in detail that: – if f ∈Hom(X, Y), then f ∗∈Hom(Y, X), – (αf )∗= ¯α f ∗for all α ∈C and f ∈Hom(X, Y), – ( f g)∗= g∗f ∗for f ∈Hom(X, Y) and g ∈Hom(U, X), – ( f ⊗g)∗= f ∗⊗g∗fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "The algebras A, B, C, D form a commuting square; that is, EB EC = E A = EC EB. 2D. Braided tensor categories. A strict monoidal category C is called braided if, for any objects X, Y in C, there exists a natural isomorphism cX,Y : X ⊗Y →Y ⊗X called the braiding such that: cX,Y⊗Z = (1Y ⊗cX,Z)(cX,Y ⊗1Z) SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES and cX⊗Y,Z = (cX,Z ⊗1Y)(1X ⊗cY,Z). Naturality means that for any morphisms f : X →X′ and g : Y →Y ′ (g ⊗f ) ◦cX,Y = cX′,Y ′ ◦( f ⊗g). Finally, we also require that c1,X = 1X = cX,1 under the isomorphisms 1 ⊗X ∼= X ∼= X ⊗1. 2E. C∗tensor categories. We cal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-2-categories.md",
+      "narrative": null,
+      "content": "367\n(b) Assume that the A–B-bimodule H decomposes as H = L mi Hi, with Hi\nirreducible A–B-bimodules, and let l = dim(EndA,B(H)) = P\ni m2\ni . Then we\nhave P\ni ind(Hi)≥ind(H)/l, with equality only if dimA(Hi)=mi dimA(H)/l\nfor all i.\nProof. It is well-known that the inclusion of higher relative commutants M′ ∩\nMk ⊂N′ ∩Mk deﬁnes periodic commuting squares which generate in the limit\na subfactor of index [M : N]. Hence we can use the results of [Wenzl 1988],\nTheorem 1.5(iii). It follows that the index is equal to the quotient of the l2-norms\nof the weight vectors of M′ ∩Mk and N′ ∩Mk for k sufﬁcien",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "iii",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "It follows that the index is equal to the quotient of the l2-norms of the weight vectors of M′ ∩Mk and N′ ∩Mk for k sufﬁciently large. Let pλ and pµ be minimal idempotents in M′ ∩Mk and N′ ∩Mk respectively. Then we have ind(pνMk) = tr(pν)2[M : N]k and ind(pλMk) = tr(pλ)2[M : N]k+1. Solving for tr(pλ)2 and tr(pν)2, we obtain [M : N] = P ν ind(pνMk)/[M : N]k P λ ind(pλMk)/[M : N]k+1 . The claimed formula follows from this in the case that our system of bimodules la- bels the vertices of the principal graph. One obtains the claim for the dual principal graph by the same proof applied to the inclu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let € be a finite C*-tensor category, not necessarily braided. Then we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "The diagram (3-2) above commutes and also forms a commuting square. Moreover, the inclusion pattern is k-periodic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Moreover, the sequence of algebras as in the statement has a k- periodic pattern: By part (a), we have the same labeling sets for the algebras in Diagram (3-1) if we substitute n by n + k everywhere, for n sufficiently large. Moreover, also the inclusion pattern remains the same by the discussion before Diagram (3-1). It follows from [Wenzl 1988], Theorem 1.5(iii), that the index [A : B] is given by the ratio ||¥q{|7/l|%n41||7, for n large enough. As this holds for SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES any sufﬁciently large n, we have [A : B]k = kY i=1 ∥⃗vn−1+i∥2 ∥⃗vn+i∥2 = ∥⃗vn∥2 ∥⃗vn+k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The multisided construction",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-002-3-the-multisided-construction.md",
+      "narrative": null,
+      "content": "3A. Categorical setting. We shall use the following conventions: Let C be a ﬁ-\nnite braided C∗tensor category, where ﬁnite means that we only have ﬁnitely\nmany equivalence classes of simple objects in C. Let {Xλ, λ ∈3} be a set of\nrepresentative nonequivalent simple objects, indexed by some labeling set 3. We\ndeﬁne dλ to be the dimension of Xλ. We shall also assume that the category C\nis generated by an object X, so any simple object appears in some tensor power\nof X. We deﬁne algebras An = End(X⊗n) = EndC(X⊗n). By the deﬁnition of\nAn, the simple components of An are labeled by the equivalence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Fix s ∈N, s > 1. There is an embedding of the factor N := lim ind A⊗s n (inductive limit) in M := lim ind Ans given by ˆu := lim ind ˆun, with un as above. The index of the resulting inclusion is \u0012 X λ∈3′ d2 λ \u0013s−1 , where 3′ is an indexing set for the simple objects of the subcategory C′ as deﬁned at the beginning of this subsection and dλ = dim(Xλ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "(c) implies that ShiftM⃗ m(un A⊗s n u∗ n) = 1|⃗m| ⊗un A⊗s n u∗ n for every n. So A|⃗m| ⊗1sn commutes with ShiftM⃗ m(un A⊗s n u∗ n) for every n and (ShiftM⃗ m ◦ˆu)(N)′ ∩M (= (ˆu⃗m ◦ShiftN⃗ m)(N)′ ∩M) has a subalgebra isomorphic to A|⃗m|. Conversely, for the other inclusion, we apply a dimension upper bound result for relative commu- tants of inclusions generated by periodic commuting squares (see [Wenzl 1988], SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let Shift, be as in Lemma 3.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In other words, we have a",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-003-m-in-other-words-we-have-a.md",
+      "narrative": null,
+      "content": "JULIANA ERLIJMAN AND HANS WENZL\nn+m1\nn+m2 m1−m2\nn+m3\nn+m4\nm1−m3\nn+ms\n· · · m1−ms−1\nm1−ms\nn+m1\nn+m3\nn+m4 · · ·\nm1−m2\nm1−m3\nbn =\nn+ms\nm1−ms−1\n· · ·\nn+m2\nm1−ms\nFigure 9. Pictorial description of bn ∈As(n+m1).\nIt is easy to check that the maps 8n are compatible with respect to n, and so we\ncan deﬁne 8 : M = lim ind Asn+|⃗m| →M = lim ind As(n+m1) by 8 := lim ind 8n.\nWe observe that\nu⃗m,n(a1 ⊗· · · ⊗as)u∗⃗\nm,n\n8\n7→un+m1(a1 ⊗· · · ⊗as)u∗\nn+m1\nfor ai ∈An+mi, so 8 carries ˆu⃗m(N) to ˆu(N). To check that 8 is an automorphism,\none ﬁrst observes that 8 = lim ind 8n = lim ind\n\u0000ˆun+m1 ◦ˆbn ◦ι ◦ˆu∗⃗\nm,n\n\u0001\n(t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let the notation be as above. (a) If we view both N⃗λ,⃗m and Hν,⃗m as left N-modules, then dimN N⃗λ,⃗m = d⃗λ/(dim X)|⃗m| and dimN Hν,⃗m = dν[M : N]/(dim X)|⃗m|. Moreover, we have ind(N⃗λ,⃗m) = d2⃗ λ = ind(M⃗λ,⃗m), where d⃗λ = Q dλi, and ind(Hν,⃗m) = d2 ν[M : N]. (b) If |⃗m| = |⃗k|, then Hµ,⃗m ∼= Hµ,⃗k as M–N-bimodules, and Kµ,⃗m ∼= Kµ,⃗k as N–M-bimodules. SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES (c) If |⃗m| = |⃗k|, we have HomM–M(M⃗λ,⃗m, M⃗µ,⃗k) ⊂HomN–M(M⃗λ,⃗m, M⃗µ,⃗k) ∼= HomC(X⃗λ, X⃗µ), where X⃗λ = ⊗s i=1Xλi and X⃗µ = ⊗s i=1Xµi.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bimodules and the principal graph",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-004-4-bimodules-and-the-principal-graph.md",
+      "narrative": null,
+      "content": "4A. Examples of bimodules. We are going to construct systems of bimodules in\norder to calculate the principal and the dual principal graph, as described in Propo-\nsition 1.8. This will be done using the endomorphisms Shift deﬁned in the last\nsection.\nThe N–N-bimodules. Let λi ∈3 and let Ami,λi be the simple component of Ami\ncorresponding to the simple object Xλi ⊂X⊗mi with mi being large multiples\nof k for i = 1, 2, . . . , s. We ﬁrst ﬁx minimal projections pλi ∈Ami,λi. Deﬁne\np⃗λ = pλ1 ⊗· · · ⊗pλs, where⃗λ = (λ1, . . . , λs). The underlying Hilbert space will\nbe given by\nL2(N, tr)p⃗λ := {ζ p⃗λ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "The fusion graph from (C′)s to C′ may not be connected. An easy example is obtained for C being the representation category of a ﬁnite abelian group G, where it decomposes into |G| connected components.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/cor-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "cor-sec-005-01.md",
+      "narrative": null,
+      "content": "The equality in Lemma 5.1 still holds if the rings on both sides are labeled by an irreducible object in C′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/cor-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "cor-sec-005-04.md",
+      "narrative": null,
+      "content": "Let f ∈HomM–M(M⃗λ, M⃗µ) (with the notation as explained at the beginning of Section 4B), viewed as an element in HomC(X⃗λ, X⃗µ) (see Lemma 4.5(c)), and let P be as in Proposition 5.4. Then ˆfr = P( ˆfr) = ( ˆfr)T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "the equality there also holds if we label the ring by  = P ωµXµ, with the ωµ as in Proposition 5.4. Observe that the ring on the left hand side becomes the scalar P µ ωµdµ = 1, by Proposition 5.4. Now multiply both sides with suitable morphisms which change f to ˆfr, such that all strands ending up go under the ring, and all strands ending at the bottom go above the ring. Then the right-hand side is equal to P( ˆfr), which is equal to the left-hand side, ˆfr. But by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "With notations above, PXµ( f ) = X λ sλµ dλ fλ and P( f ) = X λ,µ ωµ sλµ dλ fλ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "lem-sec-005-06.md",
+      "narrative": null,
+      "content": "If f ∈Hom(M⃗λ, M⃗µ) then ˆf = (⊗s i=1 pT(Xλi ⊗Xµi)) ˆf .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/lem-sec-005-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "lem-sec-005-11.md",
+      "narrative": null,
+      "content": "(b), and Proposition 5.7 that X i ind(Q⃗λ,i) ≥ ind(M⃗λ) dim(End(M⃗λ)) ≥ind(M⃗λ) |StabGs 1⃗λ| . Now let (Q j) j = S⃗ λ(Q⃗λ,i)i be the collection of nonisomorphic representatives of irreducible M–M submodules of any module M⃗λ with⃗λ ∈3s",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "Fix the category D and let T=TD. There exists a linear combina- tion  = P µ∈3′ ωµXµ such that P( f ) = fT for any morphism f in D. Moreover, P µ ωµdµ = 1. JULIANA ERLIJMAN AND HANS WENZL",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "prop-sec-005-07.md",
+      "narrative": null,
+      "content": "Under the above assumptions we have (a) Hom(M⃗λ, M⃗µ)̸ = 0 only if there exists a g ∈Gs 1 such that⃗µ = g.⃗λ. (b) dim End(M⃗λ) ≤|StabGs 1⃗λ|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dual principal graph",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "../sections/sec-005-5-dual-principal-graph.md",
+      "narrative": null,
+      "content": "5A. Ring lemma. The precise structure of Shift⃗m(M)′∩M is still open after Propo-\nsition 3.6. To say more about this, we need the following lemma. Similar tech-\nniques have appeared before in topological quantum ﬁeld theory, and within sub-\nfactors in work of Ocneanu and others; see [Evans and Kawahigashi 1998; M¨uger\nSUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES\n387\n2003], for example. Dual principal graphs in a similar setting (corresponding to\nthe case s = 2) have also been calculated in [Izumi 2000] by somewhat different\ntechniques.\nLemma 5.1. If a ∈Shift⃗m(M)′ ∩M, take ˜a := t∗⃗\nmat⃗m with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-005-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "rem-sec-005-12.md",
+      "narrative": null,
+      "content": "If the stabilizer StabGs 1⃗λ is trivial, which usually is the case for most labels, the bimodule M⃗λ is irreducible, and its decomposition into N–M-bimodules is again determined by the fusion coefﬁcients Lν⃗ λ. Unfortunately, our theorem does not say anything about what End(M⃗λ) looks like if |StabGs 1⃗λ| ≥4. For example, if the stabilizer has four elements, End(M⃗λ) could be isomorphic to C4 or to the 2 × 2 matrices. Neither does it say how the submodules of M⃗λ decompose into irreducible N–M modules in these cases.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-005-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "thm-sec-005-08.md",
+      "narrative": null,
+      "content": "If the S-matrix for the category C′ is invertible, the dual principal graph for the inclusion N ⊂M coincides with its principal graph. In particular, each M–M bimodule M⃗λ, with⃗λ = (λi) such that each λi labels a simple object in C′ is irreducible. SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-005-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "thm-sec-005-09.md",
+      "narrative": null,
+      "content": "As our original inclusion N ⊂M is of ﬁnite depth by Theorem 4.6(c), it follows from Lemma 1.10(a) that there can not be any additional M–M- bimodules in the higher relative commutants. □ 5E. Noninvertible S-matrix. We shall make the following assumptions: We as- sume that the category T for our chosen category D = C is equivalent to the representation category of a ﬁnite abelian group G, and, moreover, that |G| = k, with k as deﬁned in Section 3A. This also implies that |Gs 1| = ks−1. For λ ∈3 we also deﬁne |λ| to be the residue class mod k such that |λ| ≡n mod k whenever Xλ ⊂X⊗n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-005-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 36,
+      "target": "thm-sec-005-10.md",
+      "narrative": null,
+      "content": "Let the conditions be as just stated. (a) EndM–M(M⃗λ) has dimension |StabGs 1⃗λ| for any⃗λ∈3s 0 := \b⃗ λ∈3s : k| P |λi|",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let N⊂M be the subfactor constructed from the s-sided inclusion from the Jones subfactor at an l-th root of unity, with l even. Then we have (a) The even vertices of the principal graph are labeled by all s-tuples of odd positive numbers less than l and the odd vertices are labeled by all odd pos- itive numbers less than l. The number of edges between two vertices can be computed from the tensor product rule stated in (6-1). (b) Each s-tuple of positive integers less than l whose sum is even and which con- tains the number l/2 at most once labels an even vertex of the dual principal graph; the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-006-6-examples.md",
+      "narrative": null,
+      "content": "6A. Examples of C∗-tensor categories. (1) The easiest example for our set-up is\nthe representation category Rep(G) of ﬁnite-dimensional unitary representations\nof a ﬁnite group. In order to avoid degenerate trivial cases, we take for X in our\nconstruction an object such that some tensor power of it contains the whole group\nring CG as a subobject. For example, for G a ﬁnite cyclic group, we could take\nthe direct sum of the trivial and of a faithful one-dimensional representation. For\nthese examples, the braiding structure is just given by the permutation of tensor\nfactors, which commutes with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "If s = 3, part (b) of the last proposition completely determines the number of edges in the dual principal graph except for the decomposition of the bimodule M⃗λ with⃗λ = (l/2,l/2,l/2), which could decompose into the direct sum of four nonisomorphic irreducible M–M bimodules or into the direct sum of two isomorphic irreducible M–M bimodules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-007-acknowledgement.md",
+      "narrative": null,
+      "content": "We thank the referee for a careful reading of the manuscript and for several useful\nsuggestions, which lead to an improved presentation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 40,
+      "pageEnd": 44,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[Andersen 1992] H. H. Andersen, “Tensor products of quantized tilting modules”, Comm. Math.\nPhys. 149:1 (1992), 149–159. MR 94b:17015 Zbl 0760.17004\n[Andersen and Paradowski 1995] H. H. Andersen and J. Paradowski, “Fusion categories arising\nfrom semisimple Lie algebras”, Comm. Math. Phys. 169:3 (1995), 563–588. MR 96e:17026 Zbl\n0827.17010\n[Asaeda 2006] M. Asaeda, “Quantum multiple construction of subfactors”, preprint, UC Riverside,\n2006. math.OA/0602265\n[Barrett and Westbury 1999] J. W. Barrett and B. W. Westbury, “Spherical categories”, Adv. Math.\n143:2 (1999), 357–375. MR 2000c:18007 Zbl 09",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/chinta-2025-j-phys-a-math-theor-58-035203",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The discrete analogue of the Gaussian",
+      "dcterms:creator": [
+        "updates, View the article online for",
+        "enhancements"
+      ],
+      "dcterms:issued": "D:20250111",
+      "bibo:doi": "10.1088/1751-8121/ada64b",
+      "dcterms:identifier": "https://doi.org/10.1088/1751-8121/ada64b",
+      "dcterms:source": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+      "dcterms:hasVersion": "library/chinta-2025-j-phys-a-math-theor-58-035203"
+    }
+  ]
+}

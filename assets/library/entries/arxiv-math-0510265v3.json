@@ -1,0 +1,163 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0510265v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "ex-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "m = 2. Let y = x1 −x2. Then R = Q[y], R1 = Q[y2] and B1 = Q[y]⊗Q[y2]Q[y]. The bimodule homomorphism rb1 is deﬁned by rb1(1) = y ⊗1 + 1 ⊗y. We have an R′-bimodule isomorphism, for an arbitrary tensor product: B′ j1 ⊗R′ B′ j2 ⊗· · · ⊗R′ B′ jn ∼= (Bj1 ⊗R Bj2 ⊗R · · · ⊗R Bjn) ⊗Q Q[x1]. Thus, the left hand side can be recovered from the tensor product Bj1 ⊗R Bj2 ⊗R · · · ⊗R Bjn and vice versa. Soergel bimodules and a braid group action (after Rapha¨el Rouquier). Rapha¨el Rouquier [R] pointed out and explored an explicit relation between Soergel bimodules Bi and the braid group. We recall his result",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "ex-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "When m = 2 and σ = σn 1 , the reduction leads to a simple computation of homology groups HHH(σ). The complex F(σ) consists of 2n terms which are tensor powers of B1. The minimal complex has only n + 1 indecomposable bimodules: 0 −→R{2n} d0 −→B1{2n −2} d1 −→B1{2n −4} d2 −→· · · dn −→B1 −→0 The diﬀerential is d0(1) = 1 ⊗y + y ⊗1, di(1 ⊗1) = 1 ⊗y −y ⊗1 odd i > 0, di(1 ⊗1) = 1 ⊗y + y ⊗1 even i > 0, where R = Q[y], y = x1 −x2, R1 = Q[y2] and B1 = Q[y] ⊗Q[y2] Q[y]. We take the Hochschild homology of each term, and the resulting complex splits into the direct sum of two complexes of graded R-modules",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "If braid words σ and eσ represent the same element of the braid group then complexes F(σ) and F(eσ) are isomorphic in B(R). See Rouquier [R, Section 3] for a proof of this proposition and of more general results. In particular, the tensor product F(σi) ⊗R F(σ−1 i ) is chain homotopy equivalent to the complex 0 −→R −→0 of R-bimodules. The tensor product over R is a bifunctor B(R) × B(R) −→B(R), and each object N of B(R) gives rise to an endofunctor of the category B(R) which takes a complex M to the tensor product M ⊗R N. The above proposition says that bimodule complexes F(σi) give rise to a (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "prop-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "The Hecke algebra has a basis {C′ w}, over all w ∈Sm, with the elements uniquely determined by the conditions ι(C′ w) = C′ w and C′ w = q−l(w) X y≤w Py,w(q)Ty, where Py,w(q) ∈Z[q2], Pw,w = 1 and deg Py,w < l(w) −l(y) if y̸ = w. The inequality sign under the sum sign refers to the Bruhat partial order on Sm. This proposition is due to Kazhdan and Lusztig [KL1] and admits a direct combinatorial proof. The basis {C′ w} is called the Kazhdan-Lusztig basis (they also introduced a related basis {Cw} which won’t appear in this exposition). The incredibly hard result, though, is the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "prop-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "Coeﬃcients of polynomials Py,w are nonnegative integers. The multiplication in the basis {C′ w} has coeﬃcients in N[q, q−1]. Kazhdan-Lusztig’s proof of this result [KL2] is essentially a categoriﬁca- tion: coeﬃcients of Py,w are realized as dimensions of cohomology groups associated to simple perverse sheaves on the ﬂag variety G/B, where G = SL(m, C) and B a Borel subgroup of G. Multiplication in the basis {C′ w} corresponds to the convolution of correspondences on the product variety G/B×G/B. Both positivity results rely on Beilinson, Bernstein and Deligne’s theory of perverse sheaves [BBD]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "prop-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "There are isomorphisms of graded R-bimodules Bi ⊗R Bi ∼= Bi{1} ⊕Bi{−1}, (Bi ⊗R Bi+1 ⊗R Bi) ⊕Bi+1 ∼= (Bi+1 ⊗R Bi ⊗R Bi+1) ⊕Bi, Bi ⊗R Bj ∼= Bj ⊗R Bi |i −j| > 1. Only the middle isomorphism is non-trivial. Let Bi,i+1 = R ⊗Ri,i+1 R{−3}, where Ri,i+1 is the ring of invariants under the action of S3 on R permuting xi, xi+1, xi+2. Soergel shows Bi ⊗R Bi+1 ⊗R Bi ∼= Bi,i+1 ⊕Bi, Bi+1 ⊗R Bi ⊗R Bi+1 ∼= Bi,i+1 ⊕Bi+1, which implies the middle isomorphism. The above isomorphisms between tensor products of Soergel bimodules lift deﬁning relations in the Hecke algebra, when we associate bimodule Bi to the elem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0510265v3  [math.GT]  28 May 2006\nTriply-graded link homology and Hochschild\nhomology of Soergel bimodules\nMikhail Khovanov\nOctober 14, 2005\nAbstract\nWe trade matrix factorizations and Koszul complexes for Hochschild\nhomology of Soergel bimodules to modify the construction of triply-\ngraded link homology and relate it to Kazhdan-Lusztig theory.\nHochschild homology.\nLet R be a k-algebra, where k is a ﬁeld, Re = R ⊗k Rop be the enveloping\nalgebra of R, and M be an R-bimodule (equivalently, a left Re-module). The\nfunctor of R-coinvariants associates to M the factorspace MR = M/[R, M],",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/thm-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 17,
+      "target": "thm-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "Up to an overall shift in the grading, HHH(σ) is an invariant of oriented links and, up to isomorphism, depends only on the closure of σ. This homology theory is isomorphic to the reduced homology H(σ) as deﬁned in [KR2, end of Section 1]. The theorem implies that the Euler characteristic of HHH(σ) is the HOM- FLYPT link polynomial [HOMFLY], [PT]. By introducing a fractional 1 2Z- trigrading and a suitable shift, as in Wu [W], the grading indeterminancy can be renormalized away.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0510265v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[BN1] D. Bar-Natan, Khovanov’s homology for tangles and cobordisms, Geom.\nTopol. 9 (2005) 1443-1499, arxiv math.GT/0410495.\n[BN2] D. Bar-Natan, I’ve computed Kh(T(9,5)) and I’m happy, talk at\nGeorge Washington University, February 2005, available online.\n[BN3] D. Bar-Natan, Knot Atlas, http://katlas.math.toronto.edu/wiki.\n[BB] A. Beilinson and J. Bernstein, Localization de g-modules, C. R. Acad.\nSci. Paris (1) 292 (1981), 15–18.\n[BBD] A. Beilinson, J. Bernstein and P. Deligne, Faisceaux pervers, Ast´erisque\n100 (1982).\n[BK] J. L. Brylinski, M. Kashiwara, Kazhdan-Lusztig conjecture and holo-\nno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

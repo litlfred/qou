@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "cat-harness": "https://litlfred.github.io/cat-harness/v0/ns/",
+    "cito": "http://purl.org/spar/cito/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "doco": "http://purl.org/spar/doco/",
+    "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cites": {
+      "@id": "cito:cites",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "contains": {
+      "@id": "dcterms:hasPart",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "defines": {
+      "@id": "cat-harness:defines",
+      "@container": "@set"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "examples": {
+      "@id": "cat-harness:examples",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "file": {
+      "@id": "cat-harness:file"
+    },
+    "foreshadows": {
+      "@id": "cat-harness:foreshadows",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "headers": {
+      "@id": "cat-harness:headers",
+      "@container": "@list"
+    },
+    "inSubgraph": {
+      "@id": "cat-harness:inSubgraph",
+      "@type": "@id"
+    },
+    "interprets": {
+      "@id": "cat-harness:interprets",
+      "@type": "@id"
+    },
+    "kind": "cat-harness:kind",
+    "label": "cat-harness:label",
+    "leanRef": "cat-harness:leanRef",
+    "leanSource": {
+      "@id": "cat-harness:leanSource"
+    },
+    "licenceRecord": {
+      "@id": "cat-harness:licenceRecord",
+      "@type": "@json"
+    },
+    "license": {
+      "@id": "dcterms:license"
+    },
+    "meta": {
+      "@id": "cat-harness:blockMeta",
+      "@type": "@json"
+    },
+    "narrative": {
+      "@id": "cat-harness:narrative",
+      "@type": "@json"
+    },
+    "pageEnd": "cat-harness:pageEnd",
+    "pageStart": "cat-harness:pageStart",
+    "proofs": {
+      "@id": "cat-harness:proofs",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "provenance": "cat-harness:provenance",
+    "sorryFree": "cat-harness:sorryFree",
+    "sourceDocument": {
+      "@id": "cat-harness:sourceDocument",
+      "@type": "@id"
+    },
+    "tags": {
+      "@id": "cat-harness:tag",
+      "@container": "@set"
+    },
+    "text": {
+      "@id": "cat-harness:text"
+    },
+    "title": "dcterms:title",
+    "uses": {
+      "@id": "cat-harness:uses",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  }
+}

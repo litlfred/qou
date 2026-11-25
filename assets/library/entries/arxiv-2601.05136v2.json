@@ -1,0 +1,365 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2601.05136v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "State integrals for the quantized SL2(C) Chern-Simons invariant\nCalvin McPhail-Snyder\nDepartment of Mathematics, Duke University\ncalvin@sl2.site\nAbstract\nPrevious work of the author and N. Reshetikhin deﬁnes an invariant\nZψ\nN(K, ρ, µ) of a knot K, a representation ρ: π1(S3 \\ K) →SL2(C),\nand a logarithm µ of a meridian eigenvalue of ρ. It can be interpreted as a\ngeometric twist of the Kashaev invariant or as a quantization of the SL2(C)\nChern-Simons invariant and is deﬁned via a discrete state-sum involving\nquantum dilogarithms. In this paper we show how to express Zψ\nN(K, ρ, µ)\nas a sum over c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "1\n[Kas97] R. M. Kashaev, “The hyperbolic volume\nof knots from the quantum dilogarithm”. arXiv\ndoi\n[Guk05] S. Gukov, “Three-dimensional quan-\ntum gravity, Chern-Simons theory, and the A-\npolynomial”. arXiv doi\n[Wit10] E. Witten, Analytic Continuation Of\nChern-Simons Theory. arXiv\n[Wit89] E. Witten, “Quantum ﬁeld theory and\nthe Jones polynomial”. doi\n[BB04] S. Baseilhac and R. Benedetti, “Quan-\ntum hyperbolic invariants of 3-manifolds with\nPSL(2,C)-characters”. arXiv doi\n[BWY21] F. Bonahon, H. Wong, and T. Yang,\nAsymptotics of quantum invariants of surface dif-\nfeomorphisms I: conjecture and alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background and motivation",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-background-and-motivation.md",
+      "narrative": null,
+      "content": "[]{#sec:Background and motivation label=\"sec:Background and motivation\"}\n\nKashaev's [@Kashaev1997] proposes a striking connection between the geometry of hyperbolic knots and their quantum invariants. This conjecture appears to be related to quantum $\\slg$ Chern-Simons theory, a TQFT arising as a complexification [@Gukov2005] or analytic continuation [@Witten2010] of the more familiar quantum $\\operatorname{SU}(2)$ Chern-Simons theory [@zbMATH04092352]. A number of authors [@Baseilhac2004; @Bonahon2021; @Kashaev2005; @McPhailSnyderVolume] have constructed geometric quantum invariants that can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Our results",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-our-results.md",
+      "narrative": null,
+      "content": "[]{#sec:Our results label=\"sec:Our results\"}\n\nLet $K$ be an oriented, framed knot in $S^{3}$ and $\\rho$ a decorated representation of $K$, which is a representation $\\rho \\colon\n\\pi_{1}(\\comp{K}) \\to \\slg$ along with a choice of eigenspace for the image of the peripheral subgroup under $\\rho$. In particular this choice distinguishes an eigenvalue $m$ of the meridians of $K$. A is a complex number $\\mu$ with $e^{\\tu \\mu} = m$. The main result of [@McPhailSnyderVolume] is the definition of a sequence of invariants $$\\qinv{K, \\rho, \\mu} \\in \\mathbb{C}$$ for integers $N\\ge 2$. We can view them as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cyclic and principal type invariants",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-cyclic-and-principal-type-invariants.md",
+      "narrative": null,
+      "content": "[]{#sec:negative type label=\"sec:negative type\"}\n\nThere appear to be two inequivalent (but perhaps both natural) branches of complex Chern-Simons theory. Above we described invariants [@Baseilhac2004; @Bonahon2021; @Kashaev2005; @McPhailSnyderVolume] that\n\n-   are defined as a sum over a finite state space,\n\n-   are conjectured to exponentially grow as $N\\to \\infty$, and\n\n-   are well-defined for any (or any geometrically non-degenerate) hyperbolic structure.\n\nIn contrast, invariants [@zbMATH06324352; @arXiv:1305.4291; @arXiv:2508.05120]\n\n-   are defined using integrals over a noncompact, cont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-preliminaries.md",
+      "narrative": null,
+      "content": "4\n[McP22] C. McPhail-Snyder, Hyperbolic struc-\ntures on link complements, octahedral decomposi-\ntions, and quantum sl2. arXiv\n4 Our invariant is deﬁned in terms of the octa-\nhedral decomposition associated to D. This is\na semi-ideal triangulation with two non-ideal\nvertices. The extra degrees of freedom are re-\nlated to the choice of location of these vertices.\nAcknowledgements\nI would like to thank Francis Bonahon, Eﬃe Kalfagianni, Lillian Pierce, and Ka Ho Wong for helpful\nconversations.\n2. Preliminaries\nHere we give some preliminary facts about SL2(C) representations of link complements and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams and colorings",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-diagrams-and-colorings.md",
+      "narrative": null,
+      "content": "[]{#sub:Diagrams label=\"sub:Diagrams\"}\n\n::: definition\nA of a knot $K$ is a representation $\\rho \\colon \\pi_{1}(\\comp{K}) \\to \\slg$ and a choice of eigenspace for the image of each peripheral subgroup of $K$ under $\\rho$.\n:::\n\nMore formally, given a choice of peripheral subgroup $\\Pi \\subset\n\\pi_{1}(\\comp{K})$ a decoration is an eigenspace $L \\subset\n\\mathbb{C}^{2}$ of $\\rho(\\Pi)$, which we take to be a right eigenspace. This does not depend on the choice of peripheral subgroup: any other choice is a conjugate $y^{-1} \\Pi y$ and the corresponding eigenspace is $L \\rho(y)$. An orientation of $K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge transformations and nondegeneracy",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-gauge-transformations-and-nondegeneracy.md",
+      "narrative": null,
+      "content": "[]{#sec:Gauge transformations and admissibility label=\"sec:Gauge transformations and admissibility\"}\n\nThe diagram $D$ determines a semi-ideal triangulation $\\mathcal{T}_{D}$ of $\\comp{K}$ (with two non-ideal points) called the ; we refer to [@Kim2018] for a detailed discussion and [@McphailSnyder2022hyperbolicstructureslinkcomplements; @McphailSnyder2024octahedralcoordinateswirtingerpresentation] for the relationship to our parameters. $\\mathcal{T}_{D}$ assigns each crossing of $D$ four tetrahedra, with one in each corner of the crossing. The segment parameters naturally parametrize hyperbolic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Segment equations",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-segment-equations.md",
+      "narrative": null,
+      "content": "[]{#sec:Segment equations label=\"sec:Segment equations\"}\n\nThe segment parameters have a natural geometric interpretation: they parametrize the locations of the ideal vertices of the octahedral decomposition. Following [@McphailSnyder2024octahedralcoordinateswirtingerpresentation] we obtained the segment parameters from a shadow coloring but one can also work in the opposite direction. An assignment of numbers $b_{i}$ to the segments of $D$ induces a decorated representation of $K$ if and only if the shape parameters satisfy Thurston's gluing equations. These can be summarized in one equation f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integrals for the quantized Chern-Simons invariant",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-state-integrals-for-the-quantized-chern-simons-i.md",
+      "narrative": null,
+      "content": "8\n[FKV01] L. D. Faddeev, R. M. Kashaev, and A. Y.\nVolkov, “Strongly coupled quantum discrete Li-\nouville theory. I: Algebraic approach and dual-\nity”. arXiv doi\n3. State integrals for the quantized Chern-Simons invariant",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum dilogarithms",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-quantum-dilogarithms.md",
+      "narrative": null,
+      "content": "[]{#sec:Quantum dilogarithms label=\"sec:Quantum dilogarithms\"}\n\nFor a nonzero complex parameter $\\mathsf b$ [@Faddeev2001] is $$\\Phi_{\\mathsf b}(z) \\mathrel{:=}\n  \\exp\n  \\int_{\\mathbb{R} + \\ii \\epsilon}\n  \\frac{\n    \\exp(-2 \\ii zw)\n  }{\n    4 \\sinh(w \\mathsf b ) \\sinh(w/\\mathsf b)\n  }\n  \\frac{dw}{w}$$ for $|\\operatorname{Im}z| < |\\operatorname{Im}c_{\\mathsf b}|$, where $c_{\\mathsf b} \\mathrel{:=}\\frac{i}{2} \\left( \\mathsf b + \\mathsf b^{-1}\\right).$ $\\Phi_{\\mathsf b}$ extends to a meromorphic function on $\\mathbb{C}$ with an essential singularity at infinity. We consider the case where $\\maths",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The action and state sums",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-the-action-and-state-sums.md",
+      "narrative": null,
+      "content": "[]{#sec:Definition of the invariant label=\"sec:Definition of the invariant\"}\n\nFollowing [@McPhailSnyderVolume Section 6] we define the action functional of a diagram. Consider the functions $$\\label{eq:crossing qlog}\n  \\begin{aligned}\n    \\crossingfunction{+}{\\mu}{t_{1}, t_{2}, t_{3}, t_{4}}\n    &\\mathrel{:=}\n    \\pfl{t_{4} - t_{1}}\n    +\n    \\pfl{t_{2} - t_{3}}\n    \\\\\n    &\\phantom{\\mathrel{:=}}\n    -\n    \\pfl{t_{2} - t_{1} - \\mu/N+ 1 - 1/N}\n    -\n    \\pfl{t_{4} - t_{3} + \\mu/N}\n    \\\\\n    &\\phantom{\\mathrel{:=}}\n    - \\tu \\mu(t_{2} + t_{3} - t_{1}- t_{4} - \\mu/N)\n    \\\\\n    \\crossingfunction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integrals",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-state-integrals.md",
+      "narrative": null,
+      "content": "10\n(b) If the shadow coloring avoids the unit circle, then none of the poles of the function CE →C\ndeﬁned by\nt 7→exp NSN(D, µ|β/N + t)\noccur for t ∈RE.\n⌟\nProof. (a) Equation (3.3) gives the quasi-periodicity relation\neϕN(ζ/N+1) =\neϕN(ζ/N)\n(1 −e2πi(ζ+1)/N) · · · (1 −e2πi(ζ+N)/N) = eϕN(ζ/N)\n1 −e2πiζ\nso\nexp Ω+\nN\n\u0012\nµ\n\nβ1\nN + 1, β2\nN , β1′\nN , β2′\nN\n\u0013\n= exp Ω+\nN\n\u0012\nµ\n\nβ1\nN , β2\nN , β1′\nN , β2′\nN\n\u0013\n(1 −b2′/b1)\nm(1 −b2/mb1)\n= a1 exp Ω+\nN\n\u0012\nµ\n\nβ1\nN , β2\nN , β1′\nN , β2′\nN\n\u0013\nwhere a1 is the parameter assigned to the segment by equation (2.8). Similarly\nexp Ω+\nN\n\u0012\nµ\n\nβ1\nN , β2\nN , β1′\nN + 1, β2′\nN\n\u0013\n= a−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Under the hypotheses above Zψ N is given by the sum (3.10) Zψ N(K, ρ, µ) = N |E|/2−1/2 X k∈ZE JN(D, µ, β|k) over all state integrals. ⌟",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal asymptotics",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-formal-asymptotics.md",
+      "narrative": null,
+      "content": "11\n[Neu04] W. D. Neumann, “Extended Bloch\ngroup and the Cheeger-Chern-Simons class”.\narXiv doi\n[MY18] H. Murakami and Y. Yokota, Volume\nconjecture for knots. doi\nf has Fourier coeﬃcients ak :=\nR\n[0,1]E f(t)e−2πik·t dt and our claim is that\nZψ\nN(K, ρ, µ) = N |E|/2−1/2\nX\nk∈(NZ)E\nak.\nEquation (3.11) says that f has bounded variation, so its Fourier series P\nk∈ZE ake2πik·t converges\neverywhere and converges to f(t) when t is a point of continuity for f. By Lemma 3.4(a) f is\ncontinuous on the lattice\n\u0000 1\nN Z\n\u0001E, so when n ∈ZE\nf(n/N) =\nX\nk∈ZE\nake2πik·n/N.\nPlugging this into the state sum (3.8) gives",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical dilogarithms",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-013-classical-dilogarithms.md",
+      "narrative": null,
+      "content": "[]{#sec:Classical dilogarithms label=\"sec:Classical dilogarithms\"}\n\nThe computation of Chern-Simons invariants is closely related to a special function called the defined by $$\\operatorname{Li}_{2}(z)\n  \\mathrel{:=}\n  - \\int_{0}^{z} \\frac{\\log(1 - t)}{t} \\, d t$$ We refer to @Zagier2007 for more information on the dilogarithm. It has a branch point at $1$ and crossing the branch cut picks up a $\\log(z)$ term, which itself has a branch point at $0$. Analytic continuation of $e^{\\operatorname{Li}_{2}(z)}$ leads to the flattenings of @Neumann2004 [@Neumann2004]. To avoid dealing with these in ful",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classical action",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-014-the-classical-action.md",
+      "narrative": null,
+      "content": "Here we deﬁne an action S(D) corresponding to the N →∞limit of SN(D). Set\n(4.2)\nΩ+(t1, t2, t3, t4) := L(t4 −t1) + L(t2 −t3)\n−L(t2 −t1 + 1) −L(t4 −t3)\n−2πi(t2 −t1)\nΩ−(t1, t2, t3, t4) := −L(t1 −t4 + 1) −L(t3 −t2 + 1)\n+ L(t1 −t2) + L(t3 −t4 + 1)\n+ 2πi(t2 −t1)\nAssign complex variables ti to the segments as before and construct a function S(D|t) by taking a\nsum over crossing functions\nt2\nt4\nt1\nt3\n→Ω+(t1, t2, t3, t4)\n(4.3)\nt1\nt3\nt2\nt4\n→Ω−(t1, t2, t3, t4)\n(4.4)\nand assigning critical points shifts in the variables (which we could also think of as δ functions)\nt\nt\nt\nt\nt −1\nt\nt + 1\nt\n(4.5)\nDeﬁnition 4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-asymptotics.md",
+      "narrative": null,
+      "content": "[]{#sec:Asymptotics label=\"sec:Asymptotics\"}\n\nIt is immediate from [\\[thm:dilog lemma\\]](#thm:dilog lemma){reference-type=\"ref\" reference=\"thm:dilog lemma\"} that $\\actq{D}{}$ converges pointwise on $\\Omega_{D}$ to $\\act{D}{}$ as $N\\to\n\\infty$, which suggests we can approximate the state integrals $\\stint{D, \\mu, \\beta}{k}$ of [\\[eq:state integral again\\]](#eq:state integral again){reference-type=\"eqref\" reference=\"eq:state integral again\"} by using a saddle-point approximation. @zbMATH06684922 gives a detailed explanation of the saddle point approximation in the context of the Volume Conjectur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.05136v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Barriers to moving the contour",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-barriers-to-moving-the-contour.md",
+      "narrative": null,
+      "content": "Establishing the volume asymptotics of Conjecture 1 requires replacing our original state integrals\nJN(D, µ, β|k) :=\nZ\n[0,1]E exp N (SN(D, µ|t + β/N) −2πik · t) dt\nwith shifted ones\neJN(D|k) :=\nZ\nΓ\nexp N (S(D|t) −2πik · t) dt.\nThis is Step 2 for Zψ\nN. The idea is to use Stokes’ Theorem to shift the initial contour [0, 1]E to\nsome new contour Γ in saddle position for the correct critical point. The obvious problem is that\nReferences\n15\nX\nζ\nζ + [−1, 1]\nζ/2 + [−1, 1]\nFigure 1: The arguments of the dilogarithms in the state integrals JN(D, µ, β|k) are of the form\nζ/N + ti −tj with ti, tj ∈[0, 1].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

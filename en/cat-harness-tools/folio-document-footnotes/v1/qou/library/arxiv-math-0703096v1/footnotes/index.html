@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-math-0703096v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-math-0703096v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-math-0703096v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-math-0703096v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-math-0703096v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;ThePolisheditionwaspreparedforthe“KnotTheory”mini-semesterattheStefan Banach Center, Warsaw, Poland, July-August, 1995.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;werepublishedinPolish&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Therearebookswhichtreatthehistoryoftopicsrelatedtoknottheory[B-L-W, Ch-M, Crowe, Die, T-G]. J.Stillwell’s textbook [Stil] contains very interesting historical digressions.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;chaptersofthebook&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;TheearlyBronzeAgeinGreeceisdivided,asinCreteandtheCyclades,intothree phases. The second phase lasted from 2500 to 2200 BC, and was marked by a considerable increase in prosperity. There were palaces at Lerna, and Tiryns, and probably elsewhere, in contact with the Second City of Troy. The end of this phase (in the Peloponnese) was brought about by invasion and mass burnings. The invaders are thought to be the ﬁrst speakers of the Greek language to arrive in Greece.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;atedfromabout2200BCcontainsseveralimpressionsofknotsandlinks&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;GiorgioVasariwritesin[Va]:“[LeonardodaVinci]spentmuchtimeinmakinga regular design of a series of knots so that the cord may be traced from one end to the other, the whole ﬁlling a round space. There is a ﬁne engraving of this most diﬃcult design, and in the middle are the words: Leonardus Vinci Academia.”&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;inknots:EngravingsbyLeonardodaVinci&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-2&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;“AnothergreatartistwithwhoseworksD¨urernowbecameacquaintedwasLeonardo da Vinci. It does not seem likely that the two artists ever met, but he may have been brought into relation with him through Luca Pacioli, the author of the book De Divina Pro- portione, which appeared at Venice in 1509, and an intimate friend of the great Leonardo. D¨urer would naturally be deeply interested in the proportion theories of Leonardo and Pa- cioli. He was certainly acquainted with some engravings of Leonardo’s school, representing a curious circle of concentric scrollwork on a black ground, one of them entitled Accademia Leonardi Vinci; for he himself executed six woodcuts in imitation, the Six Knots, as he calls them himself. D¨urer was amused by and interested in all scientiﬁc or mathematical problems...” From: http://www.cwru.edu/edocs/7/258.pdf, compare [Dur-2].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;andwoodcutsbyAlbrechtD¨urer&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;EulernevervisitedK¨onigsberg. He was informed about the puzzle of bridges of K¨onigsberg (and possible relation to Leibniz geometria situs) by future Major of Danzig (Gda´nsk) Carl Leonhard Gottlieb Ehler (1685-1753); the ﬁrst letter from Ehler to Euler is dated April 8, 1735. Ehler in turn was acting on behalf of Danzig mathematician Heinrich Kuhn (1690-1769) [H-W]. Kuhn was born in K¨onigsberg, he studied at the Pedagogicum there, ... in 1733 he settled in Danzig. One should add that Kuhn was the ﬁrst person to suggest geometric interpretation of complex numbers [Jan].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;(theninEastPrussia)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;Accordingto[Gr-2],theﬁrstEnglishsailingbookwithpicturesofknotsappearedin 1769 [Falc].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;withsketchesofknots.Oneisdated1819;theotherismuchlater,...”.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-2&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;Firsteightdrawingsarereproducedintheprefaceto[T-G].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;seeFig.3.3foroneofthedrawings&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-3&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;Asacuriosityonecanaddthatofoneofthenotebooks(Handb.3)inwhichGauss had also drawn some knot diagrams has braids motives on its cover.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;thatitwasdonebetween1814and1830,Iwouldguesscloserto1814&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;Gausscoordinatesarenotalwaysconsistent;mostofthetimeiispointingdownward but there are exceptions.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;Figure3.4&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p016-1&quot;,
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;Hismethodisanalytical-theGaussintegral;inmodernlanguageGaussintegral computes analytically the degree of the map from a torus parameterizing a 2 component link to the unit 2-sphere.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;knots&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p016-2&quot;,
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;ItwasonlysixyearsafterGaussnotewasﬁrstpublishedinhiscollectedworksin 1867.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 16,
+        &quot;context&quot;: &quot;treatiseonelectricity&amp;magnetism”[Max]writes&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-2&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;BornAugust1,1862Rome(Italy),diedSept.20,1939(Munchen,Germany)[Bl].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;ounded by the ﬁrst curve[Boe-1,Boe-2,Bog]. HermannKarl Brunn&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-3&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;ItisalsonotedbyTaitin1877([Ta],page308).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;eredbyGauss,canbereadfromadiagramofthelink&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-4&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;JohannHeinrichM¨uller(1787-1844)wasthemathematicsandastronomymasterat Musterschule which Listing entered in 1816 [Bre-2].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;wrotealetterfromCataniato”HerrMuller”,hisformerschoolteacher&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;ThiswasobservedinthenotedatedMarch18,1849[Lit-1]&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;eightknot,alsocalledtheListingknot,isamphicheiral)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;In1883TaitwroteinNatureobituaryafterListingdeath[Ta-1]:Oneofthefew remaining links that still continued to connect our time with that in which Gauss had made G¨ottingen one of the chief intellectual centres of the civilised world has just be broken by the death of Listing... This paper [Vorstudien zur Topologie], which is throughout elementary, deserves careful translation into English.... After more than a hundred years the paper is not translated (only Tait summary exists [Ta-2]) and one should repeat Tait appeal again: The paper very much deserves translation. One can add that in 1932 the paper was translated into Russian.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;Listing&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-2&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;LibraryoftheUniversityofCaliforniahasacopyofVorstudienzurTopologiewhich Listing sent to Tait with the dedication.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;digest,hadbeenread,IobtainedfromProfessorListing&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-3&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;Kleinobservationwasnoticedinnon-mathematicalcirclesanditbecamepartof&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;cannotbeknots.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-2&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;Itwasprovenonlyin1930byBankwitz[Ban],usingthedeterminantofaknot.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;thecrossingarenotalternatelyoverandunder&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-3&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;Born Madura India, May 19, 1858.A.B., Nebraska 1879, A.M. 1884;Ph.D, Yale, 1885. Instructor math. and civil eng, Nebraska, 1880-84, assoc.prof.civil eng.84-90, prof, 90-93; visited G¨ottingen and Berlin, 1898-1899; math, Stanford, 1893-1901; civil eng, Moscow, Idaho, from 1901 , dean, col. eng, from 1911., died August 31, 1923 [Amer, Yale].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;1895),andindependentlyCharlesNewtonLittle&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-4&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;MaryGertrudeHaseman,bornMarch6,1889,Linton,Indiana,wastheﬁfth doctoral student of C.A.Scott at Brynn Mawr College. She was teaching at University of Illinois, and died April 9, 1979.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;tationof1917/8&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-5&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;K.A.Perko, a student of Fox at Princeton,and later a lawyer from New York, observed a duplication in the tables: two 10-crossing diagrams represented the same knot, see Figure 3.8. Perko corrected also the Conway’s eleven crossing tables: 4 knots were missed [Per-0, Per-2].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;JohnH.Conway[Co-1]before1969&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-1&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;text&quot;: &quot;BeforemybookinPolishwaspublishedin1995,IaskedJimHosteabouttheac- tual status of knot’s tabulation and he has informed me that he and, independently, M.B.Thistlethwaite are working on the extension up to 15 crossings of the existing knots’ tables. They found already that there are 19 536 prime alternating, 14 crossing knots and&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 22,
+        &quot;context&quot;: &quot;[D-T,This-1],1983&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-3&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;text&quot;: &quot;OrthoFlintandStuartRankin,withcodingbyPeterdeVries,calculatedalter- nating(23) = 25182878921 on a Compaq ES 45 in 228 hours, ﬁnishing on Mar 14, 2004 [EIS].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 22,
+        &quot;context&quot;: &quot;25182878921.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p023-1&quot;,
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;AccordingtoDehn’swife,Mrs. Toni Dehn, Dehn and Heegaard met at the third International Congress of Mathematicians at Heidelberg in 1904 and took to each other immediately. They left Heidelberg on the same train, Dehn going to Hamburg and Hee- gaard returning to Copenhagen. They decided on the train that an Encyclopedia article on topology would be desirable, that they would propose themselves as authors to the editors, and that Heegaard would take care of literature whereas Dehn would outline a systematic approach which would lay the foundations of the discipline [Mag].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 23,
+        &quot;context&quot;: &quot;Encyclopedia[D-H],1907&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p023-2&quot;,
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;text&quot;: &quot;BornApril23,1852inVienna,diedApril6,1915inVienna[Pogg].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 23,
+        &quot;context&quot;: &quot;fromVienna&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-1&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;text&quot;: &quot;FortheEnglishtranslationofthetopologicalpartoftheHeegaardthesisseethe appendix to [P-22].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;theunknot;see[Stil]p.226.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-2&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;Accordingto[Ch-M]Hurwitz’paperof1891[Hur]“mayverywellbeinterpretedas giving the ﬁrst approach to the idea of a fundamental group of a space of arbitrarily many dimensions.”&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;wasﬁrst&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;Alexanderdescribedthenumericalprecursortohispolynomial,fortheﬁrsttime,in the letter to Oswald Veblen, 1919 [A-V].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;1971)ofaLaurentpolynomialinvariantoflinks ([Al-3],1928)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-2&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;text&quot;: &quot;Birkhoﬀwritesin[Birk-3]:“...Alexander,then[1911]agraduatestudent[atPrince- ton], began to be especially interested in the subject [analysis situs]. His well known “duality theorem,” his contributions to the theory of knots, and various other results, have made him a particularly important worker in the ﬁeld”. We can also mention that in the fall of 1909 Birkhoﬀbecame a member of the faculty at Princeton and left for Harvard in 1912. His 1912 paper [Birk-1] ends with “Princeton University, May 4, 1912.”&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;chromaticpolynomial.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-2&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;text&quot;: &quot;TherelationwasalsodiscoveredindependentlyinJuly1984byLickorishand Millett.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;Conwayandestablishedthemeaningoft=−1.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-3&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;text&quot;: &quot;Homﬂy or Homﬂypt is the acronym after the initials of the inventors:Hoste, Ocneanu, Millett, Freyd, Lickorish, Yetter, Przytycki and Traczyk.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;Homﬂy,Homﬂypt&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-4&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;text&quot;: &quot;Firsthethoughtthatheproducedanewknotpolynomialandonlyanalyzingthe polynomial he realized that he found a variant of the Jones polynomial.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 28,
+        &quot;context&quot;: &quot;mial&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p046-1&quot;,
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;text&quot;: &quot;Theonly,knowntome,researchpapersontopologybyHeegaardare[D-H,Heeg]. For other Heegaard’s work see his bibliography (Brjan Toft found the box donated to Odense Math. Dept. by Niels Erik Nørlund (1885-1981) with Heegaard papers (as in the Heegaard’s bibliography except [D-H] and only French version of [Heeg]).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 46,
+        &quot;context&quot;: &quot;inknottheoryaremuchlessknown.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p046-2&quot;,
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;text&quot;: &quot;Noteontwothree-dimensionalmanifoldswiththesamegroup,Trans.Amer.Math. Soc., 20 (1919), 339-342.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 46,
+        &quot;context&quot;: &quot;etze’sconjectures:Alexander1919a&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p046-3&quot;,
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;NoteonRiemannspaces,Bull.Amer.Math.Soc.,26(1919),370-372.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 46,
+        &quot;context&quot;: &quot;spaceswiththesamegroup,whileAlexander1919b&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-1&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;Aﬁguregenerallycontainsbesidesanextent(quantitas)anature(qualitas)orform.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 50,
+        &quot;context&quot;: &quot;sionofhistheory:&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p052-1&quot;,
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;Itiscalledaspineofthemanifoldinthemodernterminology[translator’sremark]&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 52,
+        &quot;context&quot;: &quot; asystem of manifolds oflower dimensionsthan theoriginal one&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Onthepages179-180theycomment:Themajorityofthepictorialsurfaceiscovered with the inter- twined coils of a serpent, forming a lattice pattern. To the right its tail appears below the coils and its head above, with a bird perched upon it. Two snakes intertwined rather than one are shown on earlier representations of this motif. Snakes twist themselves together in this fashion when mating, suggesting this symbol’s association with fertility.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;Heliodorus,wholivedatthetimeofTrajan(RomanEmperor98–117A.D.),also mentions in his work knots and loops [Sar]&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;HippocratesofCos(c.460-375B.C.)inhiscollectionofnotes:Inthesurgery;De oﬃcina medici; Cat’ i¯etreion, deals with bandaging. Thessalos, Hippocrates’ son, has been named also as the author. A commentary on the Hippocratic treatise on Joints was written by Apollonios of Citon (in Cypros), who ﬂourished in Alexandria in the ﬁrst half of the ﬁrst century B.C. That commentary has obtained a great importance because of an accident in its transmition. A manuscript of it in Florence (Codex Laurentianus) is a Byzantine copy of the ninth century, including surgical illustrations (for example, with reference to reposition methods), which might go back to the time of Apollonios and even Hippocrates. Iconographic tradition of this kind are very rare, because the copying of ﬁgures was far more diﬃcult than the writing of the text and was often abandoned [Sar]. The story of the illustrations to Apollonios’ commentary is described in [Sar-2].&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;Gausswrotein1833,inthesamenoteinwhichheintroducedthelinkingnumber: “On the geometry of position, which Leibniz initiated and to which only two geometers, Euler and Vandermonde, have given a feeble glance, we know and possess, after a century and a half, very little more than nothing.”&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p021-1&quot;,
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;Infactitwasprovenonly20-30yearslateranddependedonthefundamentalwork of Poincar´e on foundation of algebraic topology.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-2&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;85&quot;,
+    &quot;text&quot;: &quot;263 prime alternating, 15 crossing knots. Census for all knots (not necessary alternat- ing) is not yet veriﬁed but suggests over 40 000 knots of 14 crossings and over 200 000 knots.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-3&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;In1978,W.Magnuswrote[Mag]:Today,itappearstobeahopelesstasktoassign priorities for the deﬁnition and the use of fundamental groups in the study of knots, par- ticularly since Dehn had announced [De-0] one of the important results of his 1910 paper (the construction of Poincar´e spaces with the help of knots) already in 1907.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p028-1&quot;,
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;text&quot;: &quot;Joneswrotein[Jo-6]:“ItwasawarmspringmorninginMay,1984,whenItook the uptown subway to Columbia University to meet with Joan S. Birman, a specialist in the theory of “braids”... In my work on von Neumann algebras, I had been astonished to discover expressions that bore a strong resemblance to the algebraic expression of certain topological relations among braids. I was hoping that the techniques I had been using would prove valuable in knot theory. Maybe I could even deduce some new facts about the Alexander polynomial. I went home somewhat depressed after a long day of discussions with Birman. It did not seem that my ideas were at all relevant to the Alexander polynomial or to anything else in knot theory. But one night the following week I found myself sitting up in bed and running oﬀto do a few calculations. Success came with a much simpler approach than the one that I had been trying. I realized I had generated a polynomial invariant of knots.”&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p047-1&quot;,
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;the elementary algebraic theorems. Among these we can mention (a) Examination of the adjoint polynomials, created by Brill and N¨other in the paper: Ueber die algebraischen Functionen (M.A. vol. 7, 1873). (b) The examinations of the linear groups of points made by Italians. They have tried to liberate the former theory from its projective form, so they&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p047-2&quot;,
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;Weseefromtheproceedingtheimportantdiﬀerencesthatseparatethetheoryofal- gebraic functions of one variable from the theory of algebraic functions of two independent variables. The analogy that often is an excellent guide, can just as well be faulty.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-1&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Elementary algebraic examinations. (a) Adjoint polynomials. This theory originates from Clebsch (C.R. Dec. 1868) an N¨other (Zur aindeutigen Entsprechen... I &amp; II, M.A. vol.2, 1869 and vol.8, 19874) (b) Linear systems of curves. The Italians have created a theory of linear systems of curves on surfaces that is analogous with the before mentioned theory of groups of points on curves. By means of this the invariants of surfaces can be determined (cf. the mentioned summery by Castelnuevo and Enriques). (c) Surface transformations have also been examined by Zeuthen from the num- ber geometrical point of view (´Etudes g´eom’etriques..., M.A. vol.4).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-2&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Examinations by transcendent functions. Already in his paper in M.A. vol. 2 N¨other considers the integrals of the form: Z Z Q(xyz)dxdy f ′x&quot;,
+    &quot;block&quot;: &quot;library/arxiv-math-0703096v1/blocks/prose-sec-004&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;e(aknot)orof anumber ofdisjoint circles(a link)in the spaceR&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in the sphere S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;apupilorassociateofHeliodorus,wroteanessayonsurgeon’sslings&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ogousbranchcoveroftheunknotisS&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ogousbranchcoveroftheunknotisS3.HedistinguishedL(3, 1)fromS&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;fundamental groupoftheexteriorofaknotin R&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;alsothatifthreeorientedlinks,L+, L−andL&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;t)∆L&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;t)VL&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(ii)aPL++ a−1PL−= zPL&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;&gt;= µ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;&lt; L+&gt;= A &lt; L&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;&lt; L−&gt;= B&lt; L&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;whereL+, L−, L&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;IfweassignB= A−1andµ = −(A&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;VL(t) = (−A&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3-manifoldisabranchedcoverofS&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Heegaard’sexampleandlookedfortorsionincycliccoversofS&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

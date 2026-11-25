@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0005038v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Braid groups are linear",
+      "dcterms:creator": [
+        "BIGELOW, STEPHEN J."
+      ],
+      "dcterms:issued": "D:20181101",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0005038",
+      "dcterms:abstract": "The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of the braid group is the induced action on a certain twisted second homology of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.",
+      "dcterms:source": "library/arxiv-math-0005038v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0005038v1"
+    }
+  ]
+}

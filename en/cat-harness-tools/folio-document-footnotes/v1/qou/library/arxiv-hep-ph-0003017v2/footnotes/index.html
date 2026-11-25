@@ -1,0 +1,3226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-hep-ph-0003017v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-hep-ph-0003017v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-hep-ph-0003017v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-hep-ph-0003017v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-hep-ph-0003017v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  6
+]</pre></dd>
+<dt>body_size</dt><dd>10.9</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p011-1&quot;,
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Actually, the symmetry group is Gl(Nf)×Gl(Nf).The restriction to U(Nf) is a consequence of the Riemannian nature of the integration manifold (see Sec. 4.3).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;γ&quot;
+      },
+      {
+        &quot;page&quot;: 11,
+        &quot;context&quot;: &quot;symmetryisthus&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;ThereasonforthisnomenclatureisthatinaFermi-gasformulationofRMT,wherethe eigenvalues are interpreted as the positions of particles, this symmetry corresponds to choosing a potential that is inﬁnite for negative values of the eigenvalues. In this picture, the soft edge corresponds to a potential with a ﬁnite slope.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;⟨ν&quot;
+      },
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;∂θ&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;“hardedge”ofthespectrum.&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;correlationsarecharacterizedbythelevel-numbervarianceΣ&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;(n(L) −L)&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;Σ&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;rigidity∆3(L)[44],whichisdeﬁnedasanintegraltransformofΣ&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;du (L −u)(L&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;du (L −u)(L2−Lu −u&quot;
+      },
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;du (L −u)(L2−Lu −u2)Σ&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-1&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Forβ=4andµ=0,theDiracoperatorsatisﬁestherelation(CD)T=−CDwhereas (Cµγ0)T = Cµγ0 (with C the charge conjugation matrix). Therefore, for β = 4 and µ̸ = 0, the Pfaﬃan of the Dirac operator is not deﬁned and the fermion determinant detNf /2(D + µγ0) cannot be expressed as an integral over Nf Majorana fermions with ﬂavor symmetry U(Nf), as discussed in Sec. 2.2.3. Instead, we write detNf (D + µγ0) as an integral over Nf Dirac fermions with ﬂavor symmetry U(2Nf).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;theﬂavorsymmetrygroupisenhancedtoU(2Nf)inbothcases(forν=0).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-034&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p052-1&quot;,
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;Thereisanelaborateliteratureontheclassicaldynamicsofgaugeﬁelds.Foradiscussion of this topic, see Ref. [242].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 52,
+        &quot;context&quot;: &quot;wethusconcludethattheclassicalmotionofthequarksischaotic&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-039&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p050-1&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;text&quot;: &quot;Tr H2(x)+P&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-035&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-1&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;M. Gell-Mann and M. L´evy, Nuovo Cim. 16 (1960) 705.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-2&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;B.W. Lee, Chiral Dynamics (Gordon and Breach, New York, 1972).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-3&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;J. Goldstone, Nuovo Cim. 19 (1961) 154.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-4&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;C. DeTar, Quark-gluon plasma in numerical simulations of QCD, in Quark gluon plasma 2, R. Hwa ed. (World Scientiﬁc, Singapore, 1995) p. 1.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-5&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;E.V. Shuryak, Nucl. Phys. B 203 (1982) 93; E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys. B 341 (1990) 1; D.I. Diakonov and V.Y. Petrov, Nucl. Phys. B 272 (1986) 457; T. Sch¨afer and E. Shuryak, Rev. Mod. Phys. 70 (1998) 323.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-6&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;S. Weinberg, Phys. Rev. Lett. 18 (1967) 188; Phys. Rev. 166 (1968) 1568; Physica A 96 (1979) 327.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-7&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;J. Gasser and H. Leutwyler, Ann. Phys. 158 (1984) 142; Nucl. Phys. B 250 (1985) 465; H. Leutwyler, Ann. Phys. 235 (1994) 165.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-8&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;E.V. Shuryak, Nucl. Phys. B 302 (1988) 599; D.I. Diakonov and V.Y. Petrov, Sov. Phys. JETP 62 (1985) 204; D.I. Diakonov, hep-ph/9602375.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-9&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;A.V. Smilga, Phys. Rep. 291 (1997) 1.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-10&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;F. Karsch, Nucl. Phys. B (Proc. Suppl.) 83-84 (2000) 14.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-11&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;D.T. Son, Phys. Rev. D 59 (1999) 094019.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-12&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;M. Alford, K. Rajagopal, and F. Wilczek, Phys. Lett. B 422 (1998) 247; Nucl. Phys. B 537 (1999) 443.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-1&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;T. Nagao and M. Wadati, J. Phys. Soc. Jap. 60 (1991) 3298; J. Phys. Soc. Jap. 61 (1992) 78, 1910.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-2&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;F.J. Dyson and M. Mehta, J. Math. Phys. 4 (1963) 701.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-3&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot and I. Zahed, Phys. Rev. Lett. 70 (1993) 3852.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-4&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;C.A. Tracy and H. Widom, Commun. Math. Phys. 161 (1994) 289.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-5&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, Nucl. Phys. B 426 (1994) 559.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-6&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;text&quot;: &quot;T. Nagao and P.J. Forrester, Nucl. Phys. B 435 (1995) 401.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-7&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;text&quot;: &quot;E. Br´ezin, S. Hikami, and A. Zee, Nucl. Phys. B 464 (1996) 411.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-8&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, Nucl. Phys. B 427 (1994) 534.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-9&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;51&quot;,
+    &quot;text&quot;: &quot;J.C. Osborn, D. Toublan and J.J.M. Verbaarschot, Nucl. Phys. B 540 (1999) 317.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-10&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;52&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard, J.C. Osborn, D. Toublan, and J.J.M. Verbaarschot, Nucl. Phys. B 547 (1999) 305.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-11&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;53&quot;,
+    &quot;text&quot;: &quot;A.V. Andreev, B.D. Simons, and N. Taniguchi, Nucl. Phys. B 432 (1994) 487.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-12&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;54&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard, Phys. Lett. B 424 (1998) 322; G. Akemann and P.H. Damgaard, Nucl. Phys. B 528 (1998) 411; Nucl. Phys. B 576 (2000) 597. P.H. Damgaard, hep-th/9807026.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-13&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;55&quot;,
+    &quot;text&quot;: &quot;G. Akemann and P.H. Damgaard, Phys. Lett. B 432 (1998) 390.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-14&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;56&quot;,
+    &quot;text&quot;: &quot;G. Akemann, P.H. Damgaard, U. Magnea, and S. Nishigaki, Nucl. Phys. B 487 (1997) 721.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-15&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;57&quot;,
+    &quot;text&quot;: &quot;E. Kanzieper and V. Freilikher, Phys. Rev. Lett. 78 (1997) 3806; Phys. Rev. E 55 (1997) 3712; Diﬀuse Waves in Complex Media, ed. J. P. Fouque, NATO ASI, Series C (Kluwer, Dordrecht, 1999) p. 165 (cond-mat/9809365).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-16&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;text&quot;: &quot;S.M. Nishigaki, P.H. Damgaard, and T. Wettig, Phys. Rev. D 58 (1998) 087704.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-17&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;59&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard and S.M. Nishigaki, Phys. Rev. D 57 (1998) 5299.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p056-18&quot;,
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;60&quot;,
+    &quot;text&quot;: &quot;J. Feinberg and A. Zee, J. Stat. Phys. 87 (1997) 473.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-1&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;93&quot;,
+    &quot;text&quot;: &quot;A.D. Jackson, M.K. S¸ener and J.J.M. Verbaarschot, Phys. Lett. B 387 (1996) 355.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-2&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;94&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, Phys. Lett. B 329 (1994) 351.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-3&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;95&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard, Phys. Lett. B 425 (1998) 151.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-4&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;96&quot;,
+    &quot;text&quot;: &quot;K. Zyablyuk, JHEP 6 (2000) 025.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-5&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;97&quot;,
+    &quot;text&quot;: &quot;F. Farchioni, hep-lat/9902029.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-6&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;98&quot;,
+    &quot;text&quot;: &quot;S. Descotes and J. Stern, hep-ph/9912234.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-7&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;99&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, in Continuous Advances in QCD, Minneapolis 1994, A.V. Smilga ed. (World Scientiﬁc, Singapore, 1994) sp. 195 (hep-th/9405006).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-8&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;100&quot;,
+    &quot;text&quot;: &quot;A. Morel, J. Phys. France I 48 (1987) 1111.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-9&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;101&quot;,
+    &quot;text&quot;: &quot;E. Br´ezin, Lec. Notes Phys. 216 (1984) 115.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-10&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;102&quot;,
+    &quot;text&quot;: &quot;K.B. Efetov, Adv. Phys. 32 (1983) 53; Supersymmetry in disorder and chaos (Cambridge University Press, Cambridge, 1997).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-11&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;103&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, H.A. Weidenm¨uller, and M.R. Zirnbauer, Phys. Rep. 129 (1985) 367.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-12&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;104&quot;,
+    &quot;text&quot;: &quot;C.W. Bernard and M.F.L. Golterman, Phys. Rev. D49 (1994) 486; Nucl. Phys. B (Proc. Suppl.) 34 (1994) 331; M.F.L. Golterman, Acta Phys. Polon. B 25 (1994) 1731.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-13&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;105&quot;,
+    &quot;text&quot;: &quot;S. Sharpe, Phys. Rev. D 46 (1992) 3146.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-14&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;106&quot;,
+    &quot;text&quot;: &quot;M.F.L. Golterman and K.C. Leung, Phys. Rev. D 57 (1998) 5703.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-15&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;107&quot;,
+    &quot;text&quot;: &quot;S.F. Edwards and P.W. Anderson, J. Phys. F5 (1975) 965.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-16&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;108&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot and M.R. Zirnbauer, Ann. Phys. 158 (1984) 78.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-17&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;109&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard and K. Splittorﬀ, Nucl. Phys. B 572 (2000) 478. P.H. Damgaard, Phys. Lett. B 476 (2000) 465. P.H. Damgaard and K. Splittorﬀ, hep-lat/0003017.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-18&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;110&quot;,
+    &quot;text&quot;: &quot;A. Kamenev and M. Mezard, J. Phys. A 32 (1999) 4373; Phys. Rev. B 60 (1999) 3944.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-19&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;111&quot;,
+    &quot;text&quot;: &quot;I.V. Yurkevich and I.V. Lerner, Phys. Rev. B 60 (1999) 3955.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-1&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;141&quot;,
+    &quot;text&quot;: &quot;P.H. Ginsparg and K.G. Wilson, Phys. Rev. D 25 (1982) 2649.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-2&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;142&quot;,
+    &quot;text&quot;: &quot;H. Neuberger, Phys. Lett. B 417 (1998) 141; Phys. Lett. B 427 (1998) 353; R. Narayanan and H. Neuberger, Phys. Rev. Lett. 71 (1993) 3251; Nucl. Phys. B 412 (1994) 574; Nucl. Phys. B 443 (1995) 305.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-3&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;143&quot;,
+    &quot;text&quot;: &quot;D.B. Kaplan, Phys. Lett. B 288 (1992) 342; Y. Shamir, Nucl. Phys. B 406 (1993) 90; V. Furman and Y. Shamir, Nucl. Phys. B 439 (1995) 54.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-4&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;144&quot;,
+    &quot;text&quot;: &quot;P. Hasenfratz, Nucl. Phys. B 525 (1998) 401; P. Hasenfratz and F. Niedermeyer, Nucl. Phys. B 414 (1994) 785.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-5&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;145&quot;,
+    &quot;text&quot;: &quot;H. Hehl and A. Sch¨afer, Phys. Rev. D 59 (1999) 117504.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-6&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;146&quot;,
+    &quot;text&quot;: &quot;J. Cullum and R.A. Willoughby, J. Comp. Phys. 44 (1981) 329.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-7&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;147&quot;,
+    &quot;text&quot;: &quot;T. Kalkreuter, Phys. Rev. D 51 (1995) 1305; Comput. Phys. Commun. 95 (1996) 1.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-8&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;148&quot;,
+    &quot;text&quot;: &quot;M.´A. Hal´asz and J.J.M. Verbaarschot, Phys. Rev. Lett. 74 (1995) 3920; M.´A. Hal´asz, T. Kalkreuter, and J.J.M. Verbaarschot, Nucl. Phys. B (Proc. Suppl.) 53 (1997) 266.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-9&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;149&quot;,
+    &quot;text&quot;: &quot;J.J.M. Verbaarschot, Nucl. Phys. B (Proc. Suppl.) 53 (1997) 88.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-10&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;150&quot;,
+    &quot;text&quot;: &quot;R. Pullirsch, K. Rabitsch, T. Wettig, and H. Markum, Phys. Lett. B 427 (1998) 119.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-11&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;151&quot;,
+    &quot;text&quot;: &quot;B.A. Berg, H. Markum, and R. Pullirsch, Phys. Rev. D 59 (1999) 097504.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-12&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;152&quot;,
+    &quot;text&quot;: &quot;R.G. Edwards, U.M. Heller, J. Kiskis, and R. Narayanan, Phys. Rev. Lett. 82 (1999) 4188.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-13&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;153&quot;,
+    &quot;text&quot;: &quot;S. Chandrasekharan and N. Christ, Nucl. Phys. B (Proc. Suppl.) 47 (1996) 527.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-14&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;154&quot;,
+    &quot;text&quot;: &quot;P.H. Damgaard, R.G. Edwards, U.M. Heller, and R. Narayanan, Phys. Rev. D 61 (2000) 094503; Nucl. Phys. B (Proc. Suppl.) 83-84 (2000) 434.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-15&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;155&quot;,
+    &quot;text&quot;: &quot;M.E. Berbenni-Bitsch, S. Meyer, A. Sch¨afer, J.J.M. Verbaarschot, and T. Wettig, Phys. Rev. Lett. 80 (1998) 1146.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-16&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;156&quot;,
+    &quot;text&quot;: &quot;J.-Z. Ma, T. Guhr, and T. Wettig, Eur. Phys. J. A 2 (1998) 87, 425.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-1&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;180&quot;,
+    &quot;text&quot;: &quot;T. Wettig, A. Sch¨afer, and H.A. Weidenm¨uller, Phys. Lett. B 367 (1996) 28.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-2&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;181&quot;,
+    &quot;text&quot;: &quot;M.A. Stephanov, Phys. Lett. B 375 (1996) 249.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-3&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;182&quot;,
+    &quot;text&quot;: &quot;A. Zee, Nucl. Phys. B 474 (1996) 726.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-4&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;183&quot;,
+    &quot;text&quot;: &quot;M.´A. Hal´asz, A.D. Jackson, R.S. Shrock, M.A. Stephanov, and J.J.M. Verbaarschot, Phys. Rev. D 58 (1998) 096007.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-5&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;184&quot;,
+    &quot;text&quot;: &quot;I.M. Barbour, N.E. Behilil, E. Dagotto, F. Karsch, A. Moreo, M. Stone, and H.W. Wyld, Nucl. Phys. B 275 (1986) 296; M.-P. Lombardo, J.B. Kogut, and D.K. Sinclair, Phys. Rev. D 54 (1996) 2303.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-6&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;185&quot;,
+    &quot;text&quot;: &quot;I.M. Barbour, S.E. Morrison, E.G. Klepﬁsh, J.B. Kogut, and M.-P. Lombardo, Nucl. Phys. (Proc. Suppl.) A 60 (1998) 220.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-7&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;186&quot;,
+    &quot;text&quot;: &quot;M.A. Stephanov, Phys. Rev. Lett. 76 (1996) 4472.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-8&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;187&quot;,
+    &quot;text&quot;: &quot;B. Vanderheyden and A.D. Jackson, Phys. Rev. D 61 (2000) 076004.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-9&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;188&quot;,
+    &quot;text&quot;: &quot;B. Vanderheyden and A.D. Jackson, hep-ph/0003150.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-10&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;189&quot;,
+    &quot;text&quot;: &quot;M.´A. Hal´asz, A.D. Jackson, and J.J.M. Verbaarschot, Phys. Lett. B 395 (1997) 293; Phys. Rev. D 56 (1997) 5140.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-11&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;190&quot;,
+    &quot;text&quot;: &quot;I.M. Barbour, A.J. Bell, M. Bernaschi, G. Salina, and A. Vladikas, Nucl. Phys. B 386 (1992) 683.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-12&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;191&quot;,
+    &quot;text&quot;: &quot;M.´A. Hal´asz, J.C. Osborn, M.A. Stephanov, and J.J.M. Verbaarschot, Phys. Rev. D 61 (2000) 076005.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-13&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;192&quot;,
+    &quot;text&quot;: &quot;J. Feinberg and A. Zee, Nucl. Phys. B 504 (1997) 579; Nucl. Phys. B 501 (1997) 643.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-14&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;193&quot;,
+    &quot;text&quot;: &quot;M.´A. Hal´asz, J.C. Osborn, and J.J.M. Verbaarschot, Phys. Rev. D 56 (1997) 7059.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p059-15&quot;,
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;194&quot;,
+    &quot;text&quot;: &quot;R.A. Janik, M.A. Nowak, G. Papp, J. Wambach, and I. Zahed, Phys. Rev. E 55 (1997) 4100; R.A. Janik, M.A. Nowak, G. Papp and I. Zahed, Nucl. Phys. B 501 (1997) 603.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-1&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;222&quot;,
+    &quot;text&quot;: &quot;A. Mironov, A. Morozov, and G. Semenoﬀ, Int. J. Mod. Phys. A 11 (1996) 5031.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-2&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;223&quot;,
+    &quot;text&quot;: &quot;D. Gross and E. Witten, Phys. Rev. D 21 (1980) 446; E. Br´ezin and D. Gross, Phys. Lett. B 97 (1980) 120.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-3&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;224&quot;,
+    &quot;text&quot;: &quot;S. Chandrasekharan, Phys. Lett. B 395 (1997) 83.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-4&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;225&quot;,
+    &quot;text&quot;: &quot;T. Eguchi and H. Kawai, Phys. Rev. Lett. 48 (1982) 1063.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-5&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;226&quot;,
+    &quot;text&quot;: &quot;S.R. Das, Rev. Mod. Phys. 59 (1987) 235.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-6&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;227&quot;,
+    &quot;text&quot;: &quot;R. Dijkgraaf, hep-th/9201003.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-7&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;228&quot;,
+    &quot;text&quot;: &quot;I.K. Kostov, hep-th/9907060.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-8&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;229&quot;,
+    &quot;text&quot;: &quot;V.A. Kazakov and A.A. Migdal, Nucl. Phys. B 397 (1993) 214.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-9&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;230&quot;,
+    &quot;text&quot;: &quot;M. Moshe, H. Neuberger, and B. Shapiro, Phys. Rev. Lett. 73 (1994) 1497.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-10&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;231&quot;,
+    &quot;text&quot;: &quot;D.J. Thouless, Phys. Rep. 13 (1974) 93.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-11&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;232&quot;,
+    &quot;text&quot;: &quot;B.L. Altshuler and B.I. Shklovskii, Zh. Exp. Teor. Fiz. 91 (1986) 220 (Sov. Phys. JETP 64 (1986) 127).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-12&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;233&quot;,
+    &quot;text&quot;: &quot;S. Washburn and R.A. Webb, Adv. Phys. 35 (1986) 375.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-13&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;234&quot;,
+    &quot;text&quot;: &quot;D.R. Hofstadter, Phys. Rev. B 14 (1976) 2239.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-14&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;235&quot;,
+    &quot;text&quot;: &quot;K. Slevin and T. Nagao, Phys. Rev. Lett. 70 (1993) 635.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-15&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;236&quot;,
+    &quot;text&quot;: &quot;G. Parisi, J. Phys. A 14 (1981) 735.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-16&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;237&quot;,
+    &quot;text&quot;: &quot;M.E. Berbenni-Bitsch, private communication.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-17&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;238&quot;,
+    &quot;text&quot;: &quot;B.L. Altshuler, I.K. Zharekeshev, S.A. Kotochigova, and B.I. Shklovskii, Sov. Phys. JETP&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-18&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;67&quot;,
+    &quot;text&quot;: &quot;(1988) 625.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-19&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;239&quot;,
+    &quot;text&quot;: &quot;A.J. McKane and M. Stone, Ann. Phys. (NY) 131 (1981) 36.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p060-20&quot;,
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;240&quot;,
+    &quot;text&quot;: &quot;O. Bohigas, M. Giannoni, and C. Schmit, Phys. Rev. Lett. 52 (1984) 1.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;det(D + m&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;action,theproductisoverquarkﬂavorsofmassm&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;toλ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;WenowconsiderQCDinaﬁniteEuclideanvolumeV4=L&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ofvolumeV3=L&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;det(D + m&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Aµ= A&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Thisoperatorisanti-Hermitian,D&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Weusethechiralrepresentationinwhichγ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;γ1γ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ1γ2γ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;γ1γ2γ3γ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;{γ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Dψ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Dψn= iλ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Dψn= iλnψ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;an show that the nonzero eigenvalues of D occur in pairs ±iλ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;eigenfunctionsofγ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Inachiralbasiswithγ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n⟩forall&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n⟩forallmand&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;n⟩forallmandn,where¯ψ=ψ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;n⟩forallmandn,where¯ψ=ψ†γ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(λ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;n+ m&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n+ mf&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fm&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fm&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fm&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;¯ψ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;¯ψf(D + m&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;¯ψf(D + mf)ψ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;det(D + m&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Againgoingtoachiralbasiswithγ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;where¯ψ=ψ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;fiW&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fm&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;f&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fm&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;symmetryisthus1U(N&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;symmetryisthus1U(Nf) ×U(N&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot; symmetry group in the chiral limit is thus givenby G = SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Ifthequarkmassesarenonzero,theaxialSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fordiﬀerentquarkmasses(m&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;fordiﬀerentquarkmasses(mf̸= m&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;cate that ⟨¯ψψ⟩≈−(240 MeV)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;andsothereareN&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Diracoperator,thenthesymmetryoperatorA&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Diracoperator,thenthesymmetryoperatorA2= (UK)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;classiﬁed according to the sign of A&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;symmetries(denotedbytheDysonindexβ=2);(b)ifA&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;β=1);(c)ifA&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ForQCDwithN&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Diracoperatoris givenby Eq. (7)with Aµ= A&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;µτ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;µτa/2,where the τ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[Cτ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;operatoris(Cτ2K)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;alU(1)isbrokenexplicitlybyinstantonsortheaxialanomaly,asforN&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;dictsapatternofspontaneouschiralsymmetrybreakinggivenbySU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;setofantisymmetricunitarymatrices.Wethushave2N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;f−N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ofcolors,theDiracoperatorisDab=γµ(∂µδab+fabcA&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;µ),where&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;µ),whereaand&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Becauseof(CK)&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;→O(N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;→O(Nf),withtheGoldstonemanifoldgivenbythecosetSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;→O(Nf),withtheGoldstonemanifoldgivenbythecosetSU(Nf)/O(N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Wethushave(N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Wethushave(Nf+2)(N&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;δ(λ −λ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Tobeprecise,weshouldhavewrittenΣ=limε→0 lim&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Sincethenonzeroeigenvaluesoccurinpairs±iλ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;canbe writtenas2m/(λ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n+ m&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n+ m2)(withλ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Assuming⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2m/(λ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2m/(λ2+ m&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dλ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ2+ m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;lculation.Asymptotically,thespectraldensitybehavesasρ(λ)∼V λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dλ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;dλ2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;dλ2m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ2+ m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ubjecttoultravioletdivergences.Usingagainthefactthatρ(λ)∼V λ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;largeλ,weﬁndthattheleadingdivergenceis∼m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;largeλ,weﬁndthattheleadingdivergenceis∼mvΛ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;massesonthemicroscopicscale(24)wehavem&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;det(D + m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4Tr&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;4Tr v(W&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Nf ,ν(m&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Nf ,ν(m1, . . . , mN&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;akφ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ThesimplestcaseistheGaussiancase,wherev(φ) = Σ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;occurinpairs±iλ&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;•Theﬂavorsymmetry,whichisthesameasinQCD.Forβ= 2itisSU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;breakingpatternis[25]SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;breakingpatternis[25]SU(Nf) × SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;breakingpatternis[25]SU(Nf) × SU(Nf)→SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;breakingpatternis[25]SU(Nf) × SU(Nf)→SU(Nf),SU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;breakingpatternis[25]SU(Nf) × SU(Nf)→SU(Nf),SU(2Nf)→Sp(2N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;and SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;and SU(Nf) →O(N&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;W→U&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;W= U&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;,Λ is a diagonal matrix with real diagonal matrix elements λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;4&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4v(λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dλ|∆(λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k+ m&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Nf ,ν(m&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Nf ,ν(m1, . . . , mN&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆(λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k−λ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;only appearininvariantcombinationsof the form σfg∼¯ψ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;iψ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Dσ e−nΣ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Dσ e−nΣ2Tr σσ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Dσ e−nΣ2Tr σσ†detν(σ + m1)det&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Dσ e−nΣ2Tr σσ†detν(σ + m1)detn[(σ + m1)(σ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;integrationis over the real and imaginary parts of the N&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;integrationis over the real and imaginary parts of the Nf ×N&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;V∈SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Σ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Σ2(σ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∂m log Z=Σ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;⟨Tr(σ + σ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;DUdetνUe&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;DUdetνUenΣTr (MU+M&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;U∈U(N&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(θ−iTrlog U)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2ΣV Tr (MU+M&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;U∈U(N&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨ν&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(θ−φ)&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;δ(λ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;δ(λ1 −E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;δ(λ1 −Ej&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;δ(λ1 −Ej1) · · · δ(λ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;δ(λ1 −Ej1) · · · δ(λk −E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;δ(λ1 −Ej1) · · · δ(λk −Ej&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;j&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;j1 · · · j&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;j&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;jp̸=j&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;where the E&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;ρ(λ).By“local”wemeanthattheenergydiﬀerences|λ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;ρ(λ).By“local”wemeanthattheenergydiﬀerences|λp −λ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;±iλ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;characterizedbyλ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;characterizedbyλp∼O(1)and|λ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;characterizedbyλp∼O(1)and|λp−λ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;muchsmallerthanthoseoftheΣ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;muchsmallerthanthoseoftheΣ2-statistic.ThequantitiesΣ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;isgivenbyΣ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;isgivenbyΣ2(L) ∼(ln L)/π&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;isgivenbyΣ2(L) ∼(ln L)/π2and∆3(L) ∼(ln L)/2π&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eigenvaluesoneﬁndsΣ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;edge of the spectrum are characterizedby λ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;edge of the spectrum are characterizedby λp∼O(1/N)and |λ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;edge of the spectrum are characterizedby λp∼O(1/N)and |λp −λ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Thus,intheunfoldedvariableswehavex&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;|x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;|xp −x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;|xp −xq| ∼O(1).Asadvertisedabove,thefunctionalformoftheR&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;x2−y&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;whereJαdenotesBesselfunctionsandα=N&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;whereJαdenotesBesselfunctionsandα=Nf+ |ν|,withN&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;N&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Nf +|ν|(z) −JN&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Nf +|ν|(z) −JNf+|ν|+1(z)JN&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;correlationfunctionforthecaseN&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;InadditiontothepartitionfunctionZ(N&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;masslessseaquarks,onecanalsocomputethepartitionfunctionZ(N&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2(xy)N&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;2(xy)Nf +1/2Z(N&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Z(N&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;siandistributionP(W)∝exp(−Na&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;siandistributionP(W)∝exp(−Na1 Tr WW&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;k=1&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1a&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;k=1akTr (WW&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k=1akTr (WW †)&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;valuesofWW&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;modescorrespondingtothesymmetry-breakingpatternSUR(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;descorrespondingtothesymmetry-breakingpatternSUR(Nf) × SUL(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;withUR∈SUR(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;withUR∈SUR(Nf)andUL∈SUL(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;LorentzinvariantandinvariantunderSUR(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;LorentzinvariantandinvariantunderSUR(Nf)×SUL(N&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lkin=F&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2Σ Tr (MU+ M&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;WewillstudytheeﬀectiveLagrangianatﬁnitevolumeinaboxofvolumeL&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;U∈SU(N&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;stitutionm →m exp(iθ/N&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ΛL&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;U∈U(N&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;k(m + iλ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + m&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;kiλ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;= m|ν|(a0 + a1m&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;and(69)andequatingthecoeﬃcientsoftheO(m&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Σ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;DUUijU&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=Σ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;λ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;asymptoticallyforlargeλthespectraldensityisproportionaltoV λ&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detN&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;z′= 0thepartitionfunctionisinvariantunderthesupergroupGlR(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;GlL(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;subgroupGlV(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;thengivenby themaximumRiemanniansubmanifoldofGlA(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F2m&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−F&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2Str (MU+M&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Gl(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;themaximumRiemanniansubmanifoldofGl(N&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;nextsubsection.Theparameterm&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thetwodeterminantsbydet&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;U= e&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a)Π&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;mm=2&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;z&quot;,
+    &quot;context&quot;: &quot;zz=2&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;momentum modes is of order 1/(k&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;momentum modes is of order 1/(k2+M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tionsofthezero-momentummodesisoforder1/M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;sizeofthebox.FornonzeroquarkmassesoforderO(L&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;z≪E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z≪Ec≡F&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ΣL&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2V Σ Str (MU+M&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Gl(N&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;= u [I&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;= u [Ia(u)K&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;= u [Ia(u)Ka(u) + I&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;= u [Ia(u)Ka(u) + Ia+1(u)K&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;wherea=N&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ζ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ζ2+ u&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;ζ2+ u2 ρ&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;= 4.Theresultfortheslopeofthespectraldensityatzero,validforN&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;ρ(0)=(N&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;ρ(0)=(Nf−2)(N&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Σ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(q&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(q2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(q2+ M2)&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherethemesonmassisgivenbyM&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z′2)Σ/F&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(λ −λ′)&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(λ + λ′)&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;foldedspectrum,{x&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ZE&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;where{E&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thesequence{x&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;theBrillouinzone,whichgivesrisetoatotalof2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;unwanted2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Dγ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Dγ5 + γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Dγ5 + γ5D= 2aDγ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;{D, γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Wilson Dirac operator DWdoes not anticommute with γ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;ribedbyanyofthechiralensembles.However,theHermitianoperatorγ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Forexample,inSU(3)ona10&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Figure3:NumbervarianceΣ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Top:Wilsonfermions,V=8&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Top:Wilsonfermions,V=83×12,N&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;V=12&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;resultforΣ(m&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;resultforΣ(mv)forN&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;shiftedatﬁnitelatticespacingabyanamountproportionaltoa&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;operatorona4&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;E&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;thelatticeinquenchedSU(3)withstaggeredfermions(V=10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D= γ&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;sumofMatsubarafrequenciesω&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;DWdetN&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2NΣ&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2NΣ2Tr (W&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;inageometricseriesoftherandommatrix,itcanbeshownthatg=G/Σ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g3−2zg&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g3−2zg2+ g(z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g3−2zg2+ g(z2−t&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g3−2zg2+ g(z2−t2+ 1/Σ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g3−2zg2+ g(z2−t2+ 1/Σ2) −z/Σ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −(Σt)&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;G ∝z&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;4π λ&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;z= λN&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;baryonmassperunitquarknumber.Therefore,forµ &lt; µ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;ThequarkchemicalpotentialappearsintheLagrangianintheformµψ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D(µ) = µγ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;DWdetN&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2NΣ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2NΣ2Tr (W&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dσdσ∗[(σ + m)(σ∗+ m) −µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z= µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Z= µ2&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z= e−n(µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;µcgivenbythepointwherethetwopartitionfunctionsareequal,i.e.µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;exp(−1−µ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;c),whichissolvedbyµ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;partitionfunctiondependonµforµ ≤µ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;D(µ) = γ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Dkl= δk,l−1Ukleµ−δk,l+1U&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;kl&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ions result in an extra minus sign for the matrix elements D&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ult in an extra minus sign for the matrix elements D1Nand DN&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ZN= 2 cosh(NcNµ) +sinh[(N&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ZN= 2 cosh(NcNµ) +sinh[(Nc + 1)N sinh−1&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + m&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;thequenchedlimitisthelimitN&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;| det(D(µ) + m)|N&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;[det(D(µ) + m)]N&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;\u0012 iW&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;det(D + m) det(D&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;z= πδ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherethecomplexdeltafunctionisdeﬁnedasδ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detN&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNf(D(µ) + z)detN&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;detNf(D(µ) + z)detNf(D&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;iW1&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detN&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNf(D(µ) + z)detN&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;detNf(D(µ) + z)detNf(D&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;iW†1&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;iW†12N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;−µ1N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;matrices1&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;invariantunder SUR(2N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;invariantunder SUR(2Nf) × SUL(2N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;terizedbymatricesU∈SU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;chemicalpotentialtermremainsinvariantunderSU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;chemicalpotentialtermremainsinvariantunderSU(2Nf) × SU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;DUe−F&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2ΣV Tr (MU+M&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;U∈SU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;relationdet(D&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;Z= eΣV N&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;densityiszerointheregionwhere(139)holds.Becausem&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π= (z + z∗)Σ/F&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|Re z| &lt;2µ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|Re z| &lt;2µ2F&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2NΣ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;2NΣ2Tr W W&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;DWdetN&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;iW&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2 log[(σ + m)(σ∗+ m) −(µ + it)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2 log[(σ + m)(σ∗+ m) −(µ −it)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;σ[σ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;σ[σ4−2(µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;σ[σ4−2(µ2−t&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ2 + (µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ2 + (µ2 + t&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ2 + (µ2 + t2)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ2 + (µ2 + t2)2 + µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)σ2 + (µ2 + t2)2 + µ2 −t&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withthesolutionσ=0,i.e.alongthecurve(µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withthesolutionσ=0,i.e.alongthecurve(µ2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)2+ µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)2+ µ2−t&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;l point, three solutions merge.This happens if in addition µ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;oint, three solutions merge.This happens if in addition µ2−t&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ertiesoftherandommatrixmodel(141)areverysimilartothoseofaφ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;−W&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kl=σ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;kl=σ2Wklσ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detN&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNfWdetN&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;detNfWdetNfWT= det&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNfWdetNfWT= det2N&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detN&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNfW detN&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;detNfW detNfW&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;detNfW detNfW†= det&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;detNfW detNfW†= det2N&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;potentialbreaksthesymmetryaccordingtoU(2N&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;potentialbreaksthesymmetryaccordingtoU(2Nf)→U(N&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;potentialbreaksthesymmetryaccordingtoU(2Nf)→U(Nf) × U(N&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;partitionfunctionvalidtolowestorderinmandµ&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;classofmatrixmodelsforQCDarelatticeQCDpartitionfunctionsona2&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;DUeTr (JU&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;DUeTr (JU†+J&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Z(J, J&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;identity(withtheinterpretationofJ∼1/g&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;x,µTr [U(x)H(x)U&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thusthevariance,⟨δg&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;conductanceisrelatedtothenumbervariance,Σ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;observedﬂuctuationsingareoftheorderofe&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ψ(r) ∼e−r/L&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;byL&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of eigenfunctions φ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of eigenfunctions φi(t = 0), many of the overlaps ⟨ψ(t)|φ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withtheThoulessenergy,andisgivenbyD∼F&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;2m(p + i&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2m(p + ih)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;B&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

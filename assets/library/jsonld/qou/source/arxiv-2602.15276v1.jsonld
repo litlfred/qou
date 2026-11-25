@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2602.15276v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model",
+  "contains": [
+    "library/arxiv-2602.15276v1/sections/sec-000",
+    "library/arxiv-2602.15276v1/sections/sec-001",
+    "library/arxiv-2602.15276v1/sections/sec-002",
+    "library/arxiv-2602.15276v1/sections/sec-003",
+    "library/arxiv-2602.15276v1/sections/sec-004",
+    "library/arxiv-2602.15276v1/sections/sec-005",
+    "library/arxiv-2602.15276v1/sections/sec-006",
+    "library/arxiv-2602.15276v1/sections/sec-007",
+    "library/arxiv-2602.15276v1/sections/sec-008",
+    "library/arxiv-2602.15276v1/sections/sec-009",
+    "library/arxiv-2602.15276v1/sections/sec-010",
+    "library/arxiv-2602.15276v1/sections/sec-011",
+    "library/arxiv-2602.15276v1/sections/sec-012",
+    "library/arxiv-2602.15276v1/sections/sec-013",
+    "library/arxiv-2602.15276v1/sections/sec-014",
+    "library/arxiv-2602.15276v1/sections/sec-015",
+    "library/arxiv-2602.15276v1/sections/sec-016",
+    "library/arxiv-2602.15276v1/sections/sec-017",
+    "library/arxiv-2602.15276v1/sections/sec-018",
+    "library/arxiv-2602.15276v1/sections/sec-019",
+    "library/arxiv-2602.15276v1/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 21 sections: Compact Q-balls and Q-shells withi; Introduction; The extended Skyrme-Faddeev model\n\n**Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model**\n\n*E. L. Cola¸co,1, ∗P. Klimas,1, † L. R. Livramento,2, 3, ‡ N. Sawado,4, § and S. Yanai5, ¶*\n\n44 pp, 21 sections.\n\n**Outline.** Compact Q-balls and Q-shells within a CPN Skyr; Introduction; The extended Skyrme-Faddeev model with potenti; The Lagrangian and Euler-Lagrange equations; Radial reduction; Energy density; Noether currents; Compactons; Expansion at the compacton boundary; Expansion at the center; Q-ball case: N=1, (l=0); Q-ball case: N=3, (l=1); Q-shell case: N=5,7,9,…, (l=2,3,4,…); Numerical solutions; Shooting method; CP1 Q-balls; CP3 Q-balls; Q-shells",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2602.15276&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2602.15276v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2602.15276v1.pdf",
+    "source_sha256": "18d77d6aa140fc50acbd58b10496818adad25bcb9174f1911b6a50dfcc24bed8",
+    "pages": 44,
+    "arxiv": {
+      "id": "2602.15276",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "17 Feb 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

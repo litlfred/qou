@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-planck-reynolds",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:planck-reynolds",
+  "kind": "remark",
+  "title": "Planck--Reynolds number and the turbulence transition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum",
+    "papers/quantum-observable-universe/blocks/rem-vortex-intensity-modes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "reynolds-number",
+    "turbulence",
+    "planck-scale",
+    "fluid-dynamics"
+  ],
+  "text": "planck-reynolds.md",
+  "provenance": "authored"
+}

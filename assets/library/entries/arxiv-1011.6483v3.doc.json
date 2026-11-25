@@ -1,0 +1,1615 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1011.6483v3",
+  "title": "arxiv-1011.6483v3",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminary definitions and notation",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminary-definitions-and-notation"
+    },
+    {
+      "level": 2,
+      "title": "Simplicial sets",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-simplicial-sets"
+    },
+    {
+      "level": 2,
+      "title": "Commutative Differential Graded Algebras",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-commutative-differential-graded-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Dwyer-Kan localization and (,1)-categories",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-dwyer-kan-localization-and-1-categories"
+    },
+    {
+      "level": 1,
+      "title": "Derived higher Hochschild functor",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-derived-higher-hochschild-functor"
+    },
+    {
+      "level": 2,
+      "title": "Naive axiomatic approach to higher Hochschild homology",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-naive-axiomatic-approach-to-higher-hochschild"
+    },
+    {
+      "level": 2,
+      "title": "Higher Hochschild as an (, 1)-functor",
+      "number": "3.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-higher-hochschild-as-an-1-functor"
+    },
+    {
+      "level": 2,
+      "title": "Pointed simplicial sets and modules",
+      "number": "3.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-pointed-simplicial-sets-and-modules"
+    },
+    {
+      "level": 1,
+      "title": "Factorization algebras and derived Hochschild functor over spaces",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-factorization-algebras-and-derived-hochschild"
+    },
+    {
+      "level": 2,
+      "title": "The Hochschild (,1)-functor in Top",
+      "number": "4.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "(Pre)Factorization algebras",
+      "number": "4.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-prefactorization-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Locally constant factorization algebras and En-algebras",
+      "number": "4.3",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-43-locally-constant-factorization-algebras-and-e"
+    },
+    {
+      "level": 1,
+      "title": "Relationship with topological chiral homology",
+      "number": "5",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-relationship-with-topological-chiral-homology"
+    },
+    {
+      "level": 2,
+      "title": "Review of topological chiral homology à la Lurie",
+      "number": "5.1",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-review-of-topological-chiral-homology-à-la-lu"
+    },
+    {
+      "level": 2,
+      "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+      "number": "5.2",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-locality-axiom-and-the-equivalence-of-topolog"
+    },
+    {
+      "level": 2,
+      "title": "Relation with the Blob complex",
+      "number": "5.3",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-53-relation-with-the-blob-complex"
+    },
+    {
+      "level": 2,
+      "title": "Topological chiral homology as a factorization algebra",
+      "number": "5.4",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-54-topological-chiral-homology-as-a-factorizatio"
+    },
+    {
+      "level": 2,
+      "title": "Some applications",
+      "number": "5.5",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-55-some-applications"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 59,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild functor",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "higher hochschild",
+          "heading": false
+        },
+        {
+          "term": "hochschild chain",
+          "heading": false
+        },
+        {
+          "term": "factorization algebras",
+          "heading": false
+        },
+        {
+          "term": "chiral homology",
+          "heading": false
+        },
+        {
+          "term": "topological chiral",
+          "heading": false
+        },
+        {
+          "term": "constant factorization",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1011.6483v3 [math.QA] 31 May 2012 DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS GR´EGORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN Abstract. We study the higher Hochschild chain functor, factorization alge- bras and their relationship with topological chiral homology. To this end, we emphasize that the higher Hochschild complex is a (∞, 1)-functor sSet∞×",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1011.6483v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 2544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "cdga infty",
+          "heading": false
+        },
+        {
+          "term": "hochschild chains",
+          "heading": false
+        },
+        {
+          "term": "times cdga",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "higher hochschild",
+          "heading": false
+        },
+        {
+          "term": "factorization homology",
+          "heading": false
+        },
+        {
+          "term": "derived hochschild",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we study the higher Hochschild chain[^1] complex $CH^{{\\scriptstyle\\bullet}}_{X_\\bullet}(A)$, functorially assigned to a simplicial set $X_\\bullet$ (or a topological space), and a commutative differential graded algebra (CDGA) $A$, from an axiomatic point of view. Recently, motivated by topological quantum field theories, several concepts integrating (higher) categories of spaces or manifolds with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminary-definitions-and-notation",
+      "number": "2",
+      "title": "Preliminary definitions and notation",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "differential graded",
+          "heading": false
+        },
+        {
+          "term": "graded algebras",
+          "heading": false
+        },
+        {
+          "term": "hochschild chain",
+          "heading": false
+        },
+        {
+          "term": "commutative differential",
+          "heading": false
+        },
+        {
+          "term": "graded modules",
+          "heading": false
+        },
+        {
+          "term": "mod infty",
+          "heading": false
+        },
+        {
+          "term": "textit mod",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall some standard definitions and constructions. **Conventions:** 1. We fix a ground field $k$ of characteristic zero. The $(\\infty,1)$-category of differential graded $k$-modules (*i.e.* complexes) will be denoted $k\\textit{-}Mod_\\infty$. 2. The (naïve) categories of simplicial sets and of commutative differential graded algebras will be respectively denoted by $sSet$ and $CDGA$. The category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-simplicial-sets",
+      "number": "2.1",
+      "title": "Simplicial sets",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "stackrel scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "let scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "simplicial",
+          "heading": true
+        },
+        {
+          "term": "pointed simplicial",
+          "heading": false
+        },
+        {
+          "term": "contravariant functor",
+          "heading": false
+        },
+        {
+          "term": "base point",
+          "heading": false
+        },
+        {
+          "term": "degeneracies",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:Delta label=\"S:Delta\"} Denote by $\\Delta$ the category whose objects are the ordered sets $[k]=\\{0,1,\\dots,k\\}$, and morphisms $f:[k]\\to [l]$ are non-decreasing maps $f(i)\\geq f(j)$ for $i>j$. In particular, we have the morphisms $\\delta_i:[k-1]\\to[k], i=0,\\dots, k$, which are injections that miss $i$ and we have surjections $\\sigma_j:[k+1]\\to [k], i=0,\\dots,k$, which send $j$ and $j+1$ to $j$. A *simplicial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-commutative-differential-graded-algebras",
+      "number": "2.2",
+      "title": "Commutative Differential Graded Algebras",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential graded",
+          "heading": true
+        },
+        {
+          "term": "graded commutative",
+          "heading": true
+        },
+        {
+          "term": "cdga",
+          "heading": false
+        },
+        {
+          "term": "tove chapter",
+          "heading": false
+        },
+        {
+          "term": "weak equivalences",
+          "heading": false
+        },
+        {
+          "term": "textit mod",
+          "heading": false
+        },
+        {
+          "term": "model category",
+          "heading": false
+        },
+        {
+          "term": "monoidal model",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:CDGA label=\"S:CDGA\"} We let $CDGA$ be the category of commutative differential graded algebras (over the characteristic zero field $k$). We do not assume the underlying chain complexes of our algebras to be bounded since in practice, it happens that one has to consider the Hochschild chains of de Rham forms on a space, which is generally $\\mathbb Z$-graded. We follow the approach of [@ToVe Chapter 1.1] and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-dwyer-kan-localization-and-1-categories",
+      "number": "2.3",
+      "title": "Dwyer-Kan localization and (,1)-categories",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdga infty",
+          "heading": false
+        },
+        {
+          "term": "sset infty",
+          "heading": false
+        },
+        {
+          "term": "dwyer-kan localization",
+          "heading": true
+        },
+        {
+          "term": "category cdga",
+          "heading": false
+        },
+        {
+          "term": "categories textit",
+          "heading": false
+        },
+        {
+          "term": "textit mod",
+          "heading": false
+        },
+        {
+          "term": "text cdga",
+          "heading": false
+        },
+        {
+          "term": "fibrant replacement",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:DKL label=\"S:DKL\"} The $(\\infty,1)$-categories that we are concerned about in this paper arise from model categories structures via the Dwyer-Kan localization turning them into simplicial categories. Indeed simplicial categories are model for $(\\infty,1)$-categories [@Be1]. We now explain briefly how one gets $(\\infty,1)$-categories out of model categories such as those considered in Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-derived-higher-hochschild-functor",
+      "number": "3",
+      "title": "Derived higher Hochschild functor",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-naive-axiomatic-approach-to-higher-hochschild",
+      "number": "3.1",
+      "title": "Naive axiomatic approach to higher Hochschild homology",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 2460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "otimes scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "stackrel scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "module scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "coprod scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "map scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "product scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:NaiveHH label=\"S:NaiveHH\"} We first recall the standard construction of chain complexes computing higher Hochschild homology (also called Hochschild homology over spaces) following [@P; @GTZ]. The higher Hochschild complex is a functor $CH: sSet \\times CDGA \\to CDGA$. This functor is defined as follows: the tensor products $A\\otimes B$ of two CDGAs has an natural structure of CDGA(in other words, $CDGA$ has a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-higher-hochschild-as-an-1-functor",
+      "number": "3.2",
+      "title": "Higher Hochschild as an (, 1)-functor",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 22,
+      "labelStart": "15",
+      "labelEnd": "22",
+      "words": 3293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "pushout scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "cong scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "bullet coprod",
+          "heading": false
+        },
+        {
+          "term": "widehat scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "delta scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "equivalence scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "bigcup scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:inftyfunctor label=\"S:inftyfunctor\"} In this section we deal with axioms for the theory of higher Hochschild *chains* instead of mere homology. That is, we upgrade the previous section, in particular Corollary [\\[C:Homologyfunctor\\]](#C:Homologyfunctor){reference-type=\"ref\" reference=\"C:Homologyfunctor\"}, to the setting of derived categories, or more precisely $(\\infty,1)$-categories. Said otherwise, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-pointed-simplicial-sets-and-modules",
+      "number": "3.3",
+      "title": "Pointed simplicial sets and modules",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "widehat scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "cup scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "coprod scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "bigcup scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "times scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "mapsto scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "let scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "·[]{#SS:modules label=\"SS:modules\"} In this section we quickly explain how to add an $A$-module $M$ to the story developed in Section [\\[S:inftyfunctor\\]](#S:inftyfunctor){reference-type=\"ref\" reference=\"S:inftyfunctor\"}. Let $A$ be a CDGA and recall from Example [\\[E:Amod\\]](#E:Amod){reference-type=\"ref\" reference=\"E:Amod\"} the $(\\infty,1)$-category $A\\textit{-}Mod_\\infty$ induced by the (model category)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-factorization-algebras-and-derived-hochschild",
+      "number": "4",
+      "title": "Factorization algebras and derived Hochschild functor over spaces",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "bullet mathop",
+          "heading": false
+        },
+        {
+          "term": "array bullet",
+          "heading": false
+        },
+        {
+          "term": "textstyle longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "limits textstyle",
+          "heading": false
+        },
+        {
+          "term": "bullet mbox",
+          "heading": false
+        },
+        {
+          "term": "htop stackrel",
+          "heading": false
+        },
+        {
+          "term": "bullet tilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:factor-alg label=\"S:factor-alg\"} The main goal of this section is to prove that Hochschild chains are a special kind of *factorization algebras* in the sense of [@CG] (allowing to compute it using covers or CW-decomposition). ## The Hochschild $(\\infty,1)$-functor in $\\Top$ The Quillen equivalence between the model categories of simplicial sets and topological spaces induces an equivalence $\\hTop",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-prefactorization-algebras",
+      "number": "4.2",
+      "title": "(Pre)Factorization algebras",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 37,
+      "labelStart": "28",
+      "labelEnd": "37",
+      "words": 4484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization algebras",
+          "heading": true
+        },
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "hochschild prefactorization",
+          "heading": false
+        },
+        {
+          "term": "commutative prefactorization",
+          "heading": false
+        },
+        {
+          "term": "cdga infty",
+          "heading": false
+        },
+        {
+          "term": "factorizing cover",
+          "heading": false
+        },
+        {
+          "term": "times scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "xymatrix cdga",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:Factorization label=\"S:Factorization\"} We now explain a relationship between factorization algebras (as defined by Costello and Gwilliam [@CG; @Co]) and Higher Hochschild chains. Let $A$ be a CDGA and $X$ be a topological space. We denote $Op(X)$ the set of open subsets of $X$. For every open subset $V$ of $X$ and a family of disjoint open subsets $U_1,\\dots, U_n \\subset V$, there is a canonical morphism of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-43-locally-constant-factorization-algebras-and-e",
+      "number": "4.3",
+      "title": "Locally constant factorization algebras and En-algebras",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "constant factorization",
+          "heading": true
+        },
+        {
+          "term": "cvx factorization",
+          "heading": false
+        },
+        {
+          "term": "mathcal cvx",
+          "heading": false
+        },
+        {
+          "term": "mathop fac",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathit",
+          "heading": false
+        },
+        {
+          "term": "cong mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "mathcal big",
+          "heading": false
+        }
+      ],
+      "extract": "If $\\mathcal{A}$ is a locally constant factorization algebra on $M\\times D^{n-m}$, pushforward along the natural projection ${\\pi_1}: M\\times D^{m-n}\\to M$ induces a factorization algebra ${\\pi_1}_*(\\mathcal{A})$ on $M$, which is locally constant. Given a monoidal $(\\infty,1)$-category $\\mathcal{C}$ and a manifold $X$, we denote by **$Fac_X^{lc}(\\mathcal{C})$ the (sub)category of locally constant factorization",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-relationship-with-topological-chiral-homology",
+      "number": "5",
+      "title": "Relationship with topological chiral homology",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-51-review-of-topological-chiral-homology-à-la-lu",
+      "number": "5.1",
+      "title": "Review of topological chiral homology à la Lurie",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": null,
+      "words": 1496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral homology",
+          "heading": true
+        },
+        {
+          "term": "topological chiral",
+          "heading": true
+        },
+        {
+          "term": "text disj",
+          "heading": false
+        },
+        {
+          "term": "times n-m",
+          "heading": false
+        },
+        {
+          "term": "n-m algebras",
+          "heading": false
+        },
+        {
+          "term": "l-tft section",
+          "heading": false
+        },
+        {
+          "term": "l-vi section",
+          "heading": false
+        },
+        {
+          "term": "limits textstyle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:ReviewTCH label=\"S:ReviewTCH\"} Let $A$ be an $E_n$-algebra and $M$ a manifold of dimension $m$ which is *(stably) $n$-framed*, that is a manifold of dimension $m$ equipped with a framing of $M\\times D^{n-m}$. The **topological chiral homology** of $M$ with coefficients in $A$ was defined in [@L-TFT; @L-VI] and [@Francis] and will be denoted $\\int_{M} A$. Note that the above definition *does* depend on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-locality-axiom-and-the-equivalence-of-topolog",
+      "number": "5.2",
+      "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "cong m-j",
+          "heading": false
+        },
+        {
+          "term": "limits textstyle",
+          "heading": false
+        },
+        {
+          "term": "chiral homology",
+          "heading": true
+        },
+        {
+          "term": "times m-j",
+          "heading": false
+        },
+        {
+          "term": "m-j big",
+          "heading": false
+        },
+        {
+          "term": "textstyle longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "topological chiral",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#S:locality label=\"S:locality\"} In view of Proposition [\\[P:TCHpushout\\]](#P:TCHpushout){reference-type=\"ref\" reference=\"P:TCHpushout\"} and Theorem [\\[T:derivedfunctor\\]](#T:derivedfunctor){reference-type=\"ref\" reference=\"T:derivedfunctor\"}, Morse theory (or any triangulation) suggests the following result, which is the main result of this section. ::: theorem []{#T:TCH=CH label=\"T:TCH=CH\"} Let $M$ be a manifold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-53-relation-with-the-blob-complex",
+      "number": "5.3",
+      "title": "Relation with the Blob complex",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blob complex",
+          "heading": true
+        },
+        {
+          "term": "textit alg",
+          "heading": false
+        },
+        {
+          "term": "blob label",
+          "heading": false
+        },
+        {
+          "term": "tch",
+          "heading": false
+        },
+        {
+          "term": "alg infty",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "textit mod",
+          "heading": false
+        },
+        {
+          "term": "tchpushout",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:blob label=\"S:blob\"} It is asserted in [@MW Example 6.2.10] that the **Blob complex** of Morrison-Walker is equivalent to *an unoriented variant of* topological chiral homology. We briefly explain here how to deduce this equivalence from the proof of Theorem [\\[T:TCH=CH\\]](#T:TCH=CH){reference-type=\"ref\" reference=\"T:TCH=CH\"} and several statements from [@MW]. The main difference with §",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-54-topological-chiral-homology-as-a-factorizatio",
+      "number": "5.4",
+      "title": "Topological chiral homology as a factorization algebra",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization homology",
+          "heading": true
+        },
+        {
+          "term": "factorization algebra",
+          "heading": true
+        },
+        {
+          "term": "chiral homology",
+          "heading": true
+        },
+        {
+          "term": "topological chiral",
+          "heading": true
+        },
+        {
+          "term": "textit alg",
+          "heading": false
+        },
+        {
+          "term": "n-m textit",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathit",
+          "heading": false
+        },
+        {
+          "term": "otimes textit",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:TCH=Fact label=\"S:TCH=Fact\"} In this section we give a precise relationship between factorization algebras, topological chiral homology for (stably) framed manifolds, and $E_n$-algebras. ### Topological chiral homology and factorization algebras for $n$-framed manifolds For any manifold $M$ of dimension $m$ which is $n$-framed (*i.e.* $M\\times D^{n-m}$ is framed) and $E_n$-algebra $A$, we can consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-55-some-applications",
+      "number": "5.5",
+      "title": "Some applications",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "times scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "times n-m",
+          "heading": false
+        },
+        {
+          "term": "stack mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathfrak",
+          "heading": false
+        },
+        {
+          "term": "bullet mathbb",
+          "heading": false
+        },
+        {
+          "term": "fubinitch",
+          "heading": false
+        },
+        {
+          "term": "tch",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SS:applications label=\"SS:applications\"} ### Another construction of topological chiral homology for framed manifolds Let $M$ be an $m$-dimensional manifold which is $n$-framed. Given an $E_n$-algebra $A$, we can define the topological chiral homology $\\int_M A$ of $M$ with values in $A$. By Proposition [\\[P:TCHisFact\\]](#P:TCHisFact){reference-type=\"ref\" reference=\"P:TCHisFact\"} and Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "ginot",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "tradler",
+          "heading": false
+        },
+        {
+          "term": "zeinalian",
+          "heading": false
+        },
+        {
+          "term": "homotopy theory",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        },
+        {
+          "term": "vezzosi",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] R. Andrade, From Manifolds to invariants of En-algebras, Thesis, MIT (2010). [2] D. Ayala, J. Francis, H.-L. Tanaka, Factorization homology for stratiﬁed manifolds, in preparation [3] A. Beilinson, V. Drinfeld, Chiral algebras, American Mathematical Society Colloquium Publications, 51. American Mathematical Society, Providence, RI, 2004 [4] C. Berger, B. Fresse, Combinatorial operad actions on",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "5.2 Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs. In view of Proposition 11 and"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bullet scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "cong scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "mathcal scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "otimes scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "mathbb scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "stackrel scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "times scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "equivalence scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "pushout scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "coprod scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "bullet mathop",
+      "heading": false
+    },
+    {
+      "term": "simplicial cdga",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p59); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1011.6483v3"
+  }
+}

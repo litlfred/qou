@@ -1,0 +1,791 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1406.4088v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "Ab initio calculation of the neutron-proton mass difference Sz.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "Here, we show that this difference results from the competition between electromagnetic and mass isospin breaking effects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "We performed lattice quantum-chromodynamics and quantum-electrodynamics computations with four nondegenerate Wilson fermion ﬂavors and computed the neutron-proton mass-splitting with an accuracy of 300 kilo-electron volts, which is greater than 0 by 5 standard deviations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Ab initio calculation of\nthe neutron-proton mass difference\nSz. Borsanyi1, S. Durr1,2, Z. Fodor1,2,3, C. Hoelbling1, S. D. Katz3,4, S. Krieg1,2, L. Lellouch5, T. Lippert1,2, A.\nPortelli5,6, K. K. Szabo1,2, B. C. Toth1\n1 Department of Physics, University of Wuppertal, D-42119 Wuppertal, Germany\n2 J¨ulich Supercomputing Centre, Forschungszentrum J¨ulich, D-52428 J¨ulich, Germany\n3 Institute for Theoretical Physics, E¨otv¨os University, H-1117 Budapest, Hungary\n4 Lend¨ulet Lattice Gauge Theory Research Group, Magyar Tudom´anyos Akad´emia–E¨otvos Lor´and University,\nH-1117 Budapest, Hungary\n5 CNRS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 13,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Here, we provide a fully controlled ab initio calculation for these isospin splittings.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 13,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "Because the precision of the experimental result for the nucleon is far greater than ours, we additionally give the QED and QCD separation obtained using the experimental value of Mn −Mp: (Mn −Mp)QCD/(Mn −Mp)QED = −2.49(23)(29).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 13,
+      "target": "prop-sec-000-03.md",
+      "narrative": null,
+      "content": "Supplementary Materials for Ab initio calculation of the neutron-proton mass difference Sz.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1",
+      "pageStart": 2,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-1.md",
+      "narrative": null,
+      "content": "together quarks into protons and neutrons. To establish this with percent-level accuracy, very precise calcula-\ntions based on the lattice formulation of quantum chromodynamics(QCD), the theory of the strong interaction,\nwere needed. Going beyond such calculations to control much ﬁner effects that are at the per mil (h) level is\nnecessary to, for instance, account for the relative neutron-proton mass difference which was experimentally\nmeasured to be close to 0.14% (2). Precisely, this difference is needed to explain the physical world as we\nknow it today (3). For example, a relative neutron-p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-1-outline.md",
+      "narrative": null,
+      "content": "Outline\nIn the following sections we provide details of the work presented in the main paper. In Sec. 2 we deﬁne the\ntheory that we use, namely QCD and QED with four quark ﬂavors on a four dimensional lattice. After ﬁxing\nour notations we discuss the action for the photon ﬁeld in Sec. 2.1. There are many subtleties here, such as\ngauge ﬁxing and zero-mode subtraction. In Sec. 2.2 we deﬁne our Dirac operator, which contains both photon\nand gluon ﬁelds. We apply one step of APE smearing to the electromagnetic ﬁeld and 3 steps of HEX smearing\nto the SU(3) ﬁeld. In Sec. 2.3 we discuss in detail wha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice and action details",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-2-lattice-and-action-details.md",
+      "narrative": null,
+      "content": "Lattice and action details\nThe elementary particles that we consider in this paper are photons (A), gluons (U), and the up, down, strange\nand charm quarks (ψf with f = u, d, s, c). The contributions from other known elementary particles to the\nisospin splittings can be neglected given the accuracy required for our study. The following action describes\n1While we were writing up the results of the present paper, an analytical calculation of ﬁnite-volume effects in a non-relativistic\neffective ﬁeld theory framework was presented (32). We agree on the universality of the 1/L and 1/L2 coefﬁcients a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "However signiﬁcant complications were observed in simulations with a non-vanishing zero-mode (34).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "This setup is the one used in all previous studies which include QED corrections to hadronic observables in lattice QCD (7, 10, 11, 35).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Photon action",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-21-photon-action.md",
+      "narrative": null,
+      "content": "the following parameters: the gluon gauge coupling g, the electromagnetic coupling e, the four quark masses\nmf and the four charge parameters qu = qc = 2/3 and qd = qs = −1/3.\nWe work on a four dimensional, cubic, Euclidean lattice with L points in the spatial and T points in the time\ndirection. The boundary condition is periodic for the photon and gluon ﬁelds. For the quark ﬁelds it is periodic\nin the spatial directions and anti-periodic in time. Lattice ﬁelds in coordinate space fx can be transformed into\nmomentum space fk and back by Fourier transformation. To avoid cumbersome notations we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dirac operator",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-22-the-dirac-operator.md",
+      "narrative": null,
+      "content": "The Dirac operator\nThe Wilson operator with tree-level clover improvement (36) is chosen as our lattice Dirac operator. The\nstarting point is the gauge-covariant Dirac operator, which acts on a spinor ﬁeld, ψ, as follows:\n(D[U, A; e, q, m]ψ)x =\n(4\na + m)ψx−\n−1\n2a\nX\nµ\nh\n(1 + γµ) exp(ieqa ˜Aµ,x) ˜Uµ,xψx+µ + (1 −γµ) exp(−ieqa ˜Aµ,x−µ) ˜U †\nµ,x−µψx−µ\ni\n+\n−ia\n4\nX\nν>µ\n\u0010\nF ( ˜U)\nµν,x + eqF ( ˜\nA)\nµν,x\n\u0011\n[γµ, γν]ψx.\nThe gauge-invariance of the quark action is ensured by exponentializing the non-compact photon ﬁelds. We use\nthe MILC convention for the gamma matrices γµ (37). Note also that this Dirac o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "HEX smearing",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-23-hex-smearing.md",
+      "narrative": null,
+      "content": "HEX smearing\nIn our study, the gluon ﬁelds U have undergone three levels of HEX smearing (39). The smearing procedure\nreplaces the original gluon ﬁelds U with the HEX smeared ˜U:\nVµ,νρ,x = exp\n\u0010ρ1\n2\nX\n±σ̸=µ,ν,ρ\nn\u0002\nUσ,x Uµ,x+σ U †\nσ,x+µ U †\nµ,x −h.c.\n\u0003\n−1\n3Tr[.]\no\u0011\nUµ,x,\nWµ,ν,x = exp\n\u0010ρ2\n2\nX\n±ρ̸=µ,ν\nn\u0002\nVρ,µν,x Vµ,νρ,x+ρ V †\nρ,µν,x+µ U †\nµ,x −h.c.\n\u0003\n−1\n3Tr[.]\no\u0011\nUµ,x,\n˜Uµ,x = exp\n\u0010ρ3\n2\nX\n±ν̸=µ\nn\u0002\nWν,µ,x Wµ,ν,x+ν W †\nν,µ,x+µ U †\nµ,x −h.c.\n\u0003\n−1\n3Tr[.]\no\u0011\nUµ,x.\n(S6)\nFor further details on our implementation see (23).\nHere, we illustrate our procedure of iterated HEX smearings on lattices generated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytical studies of various QED formulations in finite volume",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-3-analytical-studies-of-various-qed-formulations.md",
+      "narrative": null,
+      "content": "Analytical studies of various QED formulations in ﬁnite volume\nIn this section we derive a number of important results concerning the properties of the pole mass of a charged\nparticle in various formulations of QED on a ﬁnite spacetime volume. We focus here on point particles, because\nthe main features are already present in this simpler situation. For the formulation of QED that we use in our\nsimulations, in Sec. 5 we investigate the modiﬁcations to these calculations which result from the fact that\nmesons and baryons have internal structure.\nIt is important to have a solid analytical handle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of finite-volume corrections in various QED formulations",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-31-computation-of-finite-volume-corrections-in-v.md",
+      "narrative": null,
+      "content": "Computation of ﬁnite-volume corrections in various QED formulations\nFinite-volume corrections in QEDL on R × T3\nQEDL on R×T3 is not a setup that can be considered directly in lattice simulations, as it describes a spacetime\nwith an inﬁnite time direction. However, it is a useful ﬁrst step for computing FV corrections to masses\nanalytically. These corrections are obtained from Eqs. (S7) and (S8) with the FV self-energy sum deﬁned\nthrough Eq. (S9). To evaluate the resulting expressions and obtain an asymptotic expansion in powers of 1/L,\nwe apply the Poisson summation formula to the sum over the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Finite-volume corrections in QEDTL on T4 The setup considered in this section, QEDTL on the four-torus T4 of dimensions L3 × T, is the one used in all previous studies which include QED corrections to hadronic observables in lattice QCD (7,8,10–13,35,38,45).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results for finite-volume corrections to the pole mass and consequences for the various QED formulations",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-32-results-for-finite-volume-corrections-to-the.md",
+      "narrative": null,
+      "content": "Results for ﬁnite-volume corrections to the pole mass and consequences for the\nvarious QED formulations\nIn this subsection we combine the results of the previous subsection to obtain the FV corrections to the pole\nmasses of point spinor and scalar particles for two versions of FV QED of interest for lattice calculations:\n• QEDL on T4, which is the formulation used in the present study;\n• QEDTL on T4, which is the formulation used in previous lattice studies of isospin breaking effects.\nWhile some of the details of the results obtained in this section are speciﬁc to point particles, the general",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "Both the unimproved and the improved results agree with the analytical formula, though the unimproved has a much larger systematic error coming from the continuum extrapolation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-volume and lattice-spacing corrections in QED: numerical investigations",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-4-finite-volume-and-lattice-spacing-corrections.md",
+      "narrative": null,
+      "content": "Finite-volume and lattice-spacing corrections in QED: numerical in-\nvestigations\nThe results of this section serve to verify the implementation of the QED part of our simulation, which is\none of the novel features of this work. The inﬁnite volume and continuum extrapolations will be shown to\nbe under control. Both extrapolations from the numerical data yield results that are consistent with analytical\ncalculations.\nOur QED setup is obtained from the full case by setting the gluon ﬁelds to U = 1. Since we focus on the\norder e2 behavior, we will use the quenched QED approximation in this illustr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-volume effects for composite particles",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-5-finite-volume-effects-for-composite-particles.md",
+      "narrative": null,
+      "content": "Finite-volume effects for composite particles\nAs discussed in Sec. 3, ﬁnite-volume (FV) effects are particularly important, because of the presence of the\nmassless photon. While in that section we computed these effects for point-like scalar and spinor particles,\nhere we generalize the discussion to composite particles, which can be hadrons, nuclei, etc. We consider only\nthe QED formulation that was actually used in our numerical work, namely QEDL on the four-torus T4 of\ndimensions T × L3 and use the fact that it differs from QEDL on R × T3 by corrections in T which fall of\nfaster than any pow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to numerical QCD+QED results",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-51-comparison-to-numerical-qcdqed-results.md",
+      "narrative": null,
+      "content": "Comparison to numerical QCD+QED results\nHere we compare the ﬁnite-volume behavior of hadron masses to the analytical ﬁndings of the previous sub-\nsections.\nLet us begin with the kaon mass, whose volume dependence is shown in Fig. 1 of the main text. Panel A\nshows the neutral kaon mass as a function of the box size. For the plot we used four ensembles which differ only\nin box size, all other lattice parameters being the same (see Sec. 7). There is no signiﬁcant volume dependence\nin accordance with Eq. (S26), since q = 0. In contrast, the charged kaon mass is strongly dependent on the\nvolume as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algorithms",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-6-algorithms.md",
+      "narrative": null,
+      "content": "Algorithms\nIn this Section we describe the implementation of our updating algorithm. The main novelty is the acceler-\nation of the HMC by means of Fourier transformation, which is essential to obtain a reliable update of the\nphoton ﬁeld. Another algorithmic feature, which is taken from the literature, is the combined use of multi-grid\ntechniques and all-mode averaging (this will be discussed in Sec. 9).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hybrid Monte Carlo",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-013-61-hybrid-monte-carlo.md",
+      "narrative": null,
+      "content": "Hybrid Monte Carlo\nWe use standard techniques to generate gauge conﬁgurations, including the hybrid Monte-Carlo (HMC) al-\ngorithm (46) with even-odd preconditioning (47), multiple time-scale integration aka. “Sexton-Weingarten\nscheme” (48), mass preconditioning aka. “Hasenbusch trick” (49), Omelyan integrator (50), Rational Hybrid\nMonte Carlo acceleration with multiple pseudofermions (51). Conﬁgurations are separated by ten unit-length\ntrajectories.\nIn previous isospin symmetric simulations, the two lightest quarks could be bundled together and a standard\nHybrid Monte Carlo was applicable. Now",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Updating the photon field",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-014-62-updating-the-photon-field.md",
+      "narrative": null,
+      "content": "Updating the photon ﬁeld\nThe HMC has to generate photon ﬁelds that fulﬁll the zero mode constraint, Eq. (S3). Since the constraint\nis linear in the ﬁelds, the implementation of such HMC is straightforward: one has to require that the HMC\nmomenta also satisfy the same constraint. This has to be enforced by removing the zero-mode part of the usual\nHMC force in each microcanonical step.\nDue to the vanishing mass of the photon and the correspondingly large correlation lengths a standard HMC\nintegration of the photon ﬁelds results in large autocorrelation times. Even for a pure photon simulation we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cost issues",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-63-cost-issues.md",
+      "narrative": null,
+      "content": "Cost issues\nCompared to a calculation with physical quark masses in the degenerate 2 light ﬂavor setup the 1+1 light ﬂavor\nframework doubles the computational costs. Using two different electromagnetic couplings increases the cost\nby another factor of two. Fixing the up-down quark mass difference to near its physical value reduces the\nmass of the up quark by up to 40%, which slows down the inversions. The small mass region also requires\nlarge volumes to avoid deceleration due to the ﬂuctuations of the smallest Dirac eigenvalue toward the origin.\nTo guarantee that the mean of the distribution o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "Ideally one would like to tune e so that, in the Thomson limit, i.e. at the scale of the electron mass, the renormalized coupling α = e2 R/(4π) takes on its experimental value, α−1 = 137.036 . . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-017-02.md",
+      "narrative": null,
+      "content": "If α in the Thomson-limit takes the experimental value, the relative difference is on the percent level and can be neglected in our results, since it is much smaller than other errors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ensembles",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-7-ensembles.md",
+      "narrative": null,
+      "content": "Ensembles\nWe generated gauge ensembles at several different lattice parameter values to be able to extrapolate to the\nphysical quark mass point. The following strategy was applied to ﬁnd parameter values in the desired range,\nfollowing closely the method of Ref. (56). First we tuned, in nf = 3 + 1 simulations, the common light quark\n(q) mass and the charm quark mass, so that the pseudo-scalar meson masses approximately took the following\nvalues:\nM¯qq = 410 MeV\nand\nM¯cc = 2980 MeV.\nThe value for M¯qq is approximately the average of the physical masses of the mesons in the meson-octet\nwith non-v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric charge renormalization",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-017-8-electric-charge-renormalization.md",
+      "narrative": null,
+      "content": "Electric charge renormalization\nFor small electromagnetic couplings there is a signal/noise problem. Operators that are symmetric under charge\nconjugation, including the particle propagators in this study, can only depend on e2. However on a given gauge\nconﬁguration the operators in general have a linear contribution in e, which vanishes after doing the ensemble\naverage. The remaining signal is proportional to e2, whereas the noise is of O(e). This linear noise term can\nbe set to zero in the case of quenched QED: one averages the observables at couplings +e and −e, canceling\nthe linear term co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extracting hadron masses",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-018-9-extracting-hadron-masses.md",
+      "narrative": null,
+      "content": "Extracting hadron masses\nTo calculate hadron propagators we ﬁx the smeared photon and gluon ﬁelds to Coulomb gauge. We use local\nhadron operators, in which the quark ﬁelds are Gaussian smeared, with a smearing radius of about 0.3 fm. We\nobserve, as in many other studies that reducing the noise in hadron propagators can be efﬁciently done by using\nmany different quark sources per gauge conﬁguration. In the case of the nucleon propagator we use several\nhundred different source positions. For these propagator calculations we use the 2-level multi-grid approach of\nRef. (60) and also the variance r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "Its experimental value is well known and it can be measured with high accuracy on the lattice.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "prop-sec-020-02.md",
+      "narrative": null,
+      "content": "For both methods the lattice spacing at a given g2 was determined by the Omega baryon mass at the physical mass point (its experimental value is MΩ= 1672.4 MeV).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reaching the physical point",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-019-10-reaching-the-physical-point.md",
+      "narrative": null,
+      "content": "Reaching the physical point\nOur present procedure closely follows our earlier studies of the hadron spectrum (16). We consider two dif-\nferent paths, in bare parameter space, to the physical mass point and continuum limit. These two techniques",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalizing hadron masses",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-020-101-normalizing-hadron-masses.md",
+      "narrative": null,
+      "content": "parameters. For both methods we follow several strategies for the extrapolation to the physical mass point and\nto the continuum limit. The physical mass point is deﬁned by Mπ+ = 139.570 MeV, MK+ = 493.68 MeV,\nMK0 = 497.61 MeV, MD0 = 1864.9 MeV and the electromagnetic coupling in the Thomson-limit α−1 =\n137.036 (2). A particularly important quantity of the analysis is the kaon mass splitting. Its experimental\nvalue is well known and it can be measured with high accuracy on the lattice. We use the value ∆M 2\nK=M 2\nK0-\nM 2\nK+ = 3896 MeV2. For both methods the lattice spacing at a given g2 was det",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determining the isospin splittings",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-021-102-determining-the-isospin-splittings.md",
+      "narrative": null,
+      "content": "Determining the isospin splittings\nThere are two sources of isospin violation: electromagnetism and the mass difference of the up and down\nquarks. The isospin splittings are expanded in powers of the renormalized coupling α = e2\nR/(4π) and the\nquark mass difference δm = md −mu. This expansion is expected to converge rapidly at the physical values\nof these parameters. However we work at somewhat larger electromagnetic coupling values. As was shown in\nSec. 8, higher-order terms in α are negligible if we use a coupling deﬁned at a hadronic scale. So we work only\nwith the linear terms, i.e. in O(δ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "In the seminal quark mass review (63), Gasser and Leutwyler ﬁnd ∆MΣ = 0.17(30) MeV by evaluating the Cottingham formula (for a recent discussion see (64)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prop-sec-022-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-022-02.md",
+      "narrative": null,
+      "content": "Using ∆M 2 = 0 to deﬁne the electro- magnetic contribution to splittings we found ∆QEDMΣ = −0.08(12)(34) MeV in our electroquenched lattice computation (10), which is consistent with 0, albeit within relatively large uncertainties.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Separating QED and QCD effects",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-022-103-separating-qed-and-qcd-effects.md",
+      "narrative": null,
+      "content": "Separating QED and QCD effects\nHere we show how to separate the electromagnetic and strong contributions in an isospin splitting, i.e.\n∆MX = ∆QEDMX + ∆QCDMX,\nwhere the ﬁrst and second terms are proportional to α and δm, respectively. It is clear, that it is sufﬁcient to\ndecompose the kaon mass squared difference,\n∆M 2\nK = ∆QEDM 2\nK + ∆QCDM 2\nK,\nsince the separation for the other splittings can be obtained from this decomposition through Eq. (S37). Any\nsuch decomposition has an ambiguity of O (αδm), which is NLO in isospin breaking, i.e. one order higher than\nthe one at which we work. This aris",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Coleman-Glashow relation",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-023-104-the-coleman-glashow-relation.md",
+      "narrative": null,
+      "content": "The Coleman-Glashow relation\nIn addition to the mass splittings, we also compute ∆CG = ∆MN −∆MΣ + ∆MΞ, which parametrizes the\nviolation of the Coleman-Glashow relation, ∆CG = 0 (30,65). From quark exchange symmetries we know that\nat vanishing α the leading contribution to ∆CG ∝(ms −md)(ms −mu)(md −mu), see e.g. Ref. (66). At\nnon-vanishing α there is a remnant d ↔s exchange symmetry yielding the leading order contributions\n∆CG = ˆFCG · α · (ms −md) + ˆGCG · (ms −md)(ms −mu)(md −mu).\n(S39)\nWe now trade the quark mass differences for mass-squared differences of suitable pseudoscalars. We deﬁne\nM",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Akaike's information criterion",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-024-11-akaikes-information-criterion.md",
+      "narrative": null,
+      "content": "When we have several candidate models to ﬁt our lattice results, e.g. several ﬁt functions with a different\nnumber of parameters, or several ﬁt ranges in Euclidean propagator ﬁts, Akaike’s information criterion (AIC)\ngives a guideline on how to weigh the results of the various models.\nLet Γ1, . . . , Γn denote the result of n independent measurements from the same (unknown) probability dis-\ntribution g(1)(Γ), e.g. of the Euclidean propagator of a hadron measured on n independent conﬁgurations. Let\nf (1)(Γ|θ) be the model which is used to approximate the true distribution g(1)(Γ), depending on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1406.4088v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Final results and systematic errors",
+      "pageStart": 36,
+      "pageEnd": 57,
+      "target": "../sections/sec-025-12-final-results-and-systematic-errors.md",
+      "narrative": null,
+      "content": "Final results and systematic errors\nHadron masses or mass splittings in the continuum limit at the physical point are extracted from lattice data\nfollowing a two step procedure. First one extracts the hadron masses and splittings from Euclidean propagators\nwhich are then, in a second step, extrapolated and interpolated to the physical point in the continuum limit. The\nﬁrst step is already discussed in Sec. 9.\nThe second step of the analysis consists in performing the extra- and interpolations to the physical point. As\ndescribed in the previous sections, we have some freedom in carrying out thi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

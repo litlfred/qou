@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2301.00125v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
+      "dcterms:creator": [
+        "Hossein, Samen"
+      ],
+      "dcterms:issued": "D:20230503",
+      "dcterms:identifier": "https://arxiv.org/abs/2301.00125",
+      "dcterms:abstract": "Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k = |{(i1, . . . , ik) ∈Zk : 1 ≤i1 < · · · < ik ≤n , πi1 < · · · < πik}|. In an important paper, Ross Pinsky proved E \u0002 Z2 n,k \u0003 is equal to P i A(k −i, i)B(n, 2k −i), where for any nonnegative integers N and j, we have B(N, j) = \u0000N j \u0001 /j! and A(N, j) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N, j) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn = o(n2/5) as n →∞. In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n →∞. Here, we return to his combinatorial formula for the the second moment of Zn,k, and we obtain a generating function for the A(N, j) triangular array. We are motivated by the hope of applying spin glass techniques to the well-known Ulam’s problem to see if this gives a new perspective.",
+      "dcterms:source": "library/arxiv-2301.00125v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2301.00125v3"
+    }
+  ]
+}

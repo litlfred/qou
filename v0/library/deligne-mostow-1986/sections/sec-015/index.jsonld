@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/deligne-mostow-1986/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tr^...^=.^(-2)^n^^ ^.^",
+  "pageStart": 72,
+  "pageEnd": 76,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-015",
+    "library/deligne-mostow-1986/blocks/thm-sec-015-01",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-02",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-03",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-04",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-05",
+    "library/deligne-mostow-1986/blocks/lem-sec-015-06",
+    "library/deligne-mostow-1986/blocks/thm-sec-015-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "provenance": "ingested"
+}

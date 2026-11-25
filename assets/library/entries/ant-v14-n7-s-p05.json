@@ -1,0 +1,1016 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p05",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/cor-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "cor-sec-001-02.md",
+      "narrative": null,
+      "content": "Suppose that k = R and X is of even pure dimension 2n. Then the symmetric bilinear form Hn(X, n X/R) × Hn(X, n X/R) ∪→H2n(X, 2n X/R) Tr −→R has signature equal to χtop(X(R)), the classical Euler characteristic of the real points of X in the analytic topology. In particular, we have |χtop(X(R))| ≤dimR Hn(X, n X/R). Motivic Gauss–Bonnet formulas This is Corollary 8.8 in the text. Besides giving an explicit formula for the rather abstractly deﬁned χ(X/k), Theorem 1.3 opens the way to computing χ(X/k) in the situation that X is a twisted form of another k-scheme Y, namely by twisting the symme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "The inﬁnite suspension spectrum 6∞",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n2.\nDuality and Euler characteristics\n1804\n3.\nSL-oriented motivic spectra\n1813\n4.\nProjective pushforward in twisted cohomology\n1821\n5.\nMotivic Gauss–Bonnet\n1826\n6.\nSL-oriented cohomology theories\n1827\n7.\nComparison isomorphisms\n1831\n8.\nApplications\n1836\nAcknowledgements\n1850\nReferences\n1850\n1. Introduction\nLet k be a ﬁeld and let X be a smooth projective k-scheme. Let SH(k) denote the motivic stable homotopy\ncategory over k; recall that this comes equipped with the structure of a symmetric monoidal category,\nwhose tensor product we denote ∧k and whose unit object (the motivic spher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc.md",
+      "narrative": null,
+      "content": "associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition\n1k\nδ→6∞\nT X+ ∧k (6∞\nT X+)∨τ→(6∞\nT X+)∨∧k 6∞\nT X+\nϵ→1k,\nwhere the maps δ and ϵ are the coevaluation and evaluation that comprise the duality, and τ is the\nsymmetry isomorphism.\nMSC2010: primary 14F42; secondary 55N20, 55N35.\nKeywords: motivic homotopy theory, Chow ring, Euler characteristics, hermitian K-theory.\n1801\n1802\nMarc Levine and Arpon Raksit\nFor k perfect, a theorem of Morel identiﬁes EndSH(k)(1k) with the Grothendieck–Witt group GW(k),\ni.e., the Grothendieck group of k-vector spaces equipped",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1801\nMotivic Gauss–Bonnet formulas\nMarc Levine and Arpon Raksit\nThe apparatus of motivic stable homotopy theory provides a notion of Euler characteristic for smooth\nprojective varieties, valued in the Grothendieck–Witt ring of the base ﬁeld. Previous work of the ﬁrst\nauthor and recent work of Déglise, Jin and Khan established a motivic Gauss–Bonnet formula relating\nthis Euler characteristic to pushforwards of Euler classes in motivic cohomology theories. We apply this\nformula to SL-oriented motivic cohomology theorie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "Bachmann and Wickelgren [2020] discussed results closely related to those discussed here. For example, they identiﬁed the abstract pushforward maps in hermitian K-theory with those deﬁned by Grothendieck–Serre duality in the case of a ﬁnite syntomic morphism (as opposed to the case of a smooth and proper morphism between smooth schemes addressed here). Moreover, combining their identiﬁcations of various Euler classes with our motivic Gauss–Bonnet formula, one may recover Theorem 1.3 above. Outline. The paper is organized as follows. In Section 2, we review the basic framework of motivic homoto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Assume that k is a perfect ﬁeld of characteristic different from two. Then χ(X/k) = (Hdg(X/k), Tr) ∈GW(k). We prove a more general result over a base-scheme B; see Theorem 8.6 and Corollary 8.7 for details. If k =R, a class in GW(k) is determined by two Z-valued invariants, rank and signature, and Theorem 1.3 reproves the following known result (see [Abelson 1976, Theorem 1; Kharlamov 1974, Theorem A]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "motivic Gauss–Bonnet",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Let E be an SL-oriented motivic ring spectrum in SH(k). Let u : 1k →E denote the unit map, inducing the map u∗: GW(k) ≃10,0 k (Spec k) →E0,0(Spec k). Then u∗(χ(X/k)) = π∗(eE(TX/k)) ∈E0,0(Spec k). A general motivic Gauss–Bonnet formula is also proven in [Déglise et al. 2018, Theorem 4.6.1], which implies the above formula by applying the unit map. Our method is somewhat different from [Déglise et al. 2018] in that we replace their general theory of Euler classes with the more special version for SL-oriented theories used here; see Theorem 5.3 below for our general statement of this result. As s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "lem-sec-002-06.md",
+      "narrative": null,
+      "content": "Let πX : X →B be an object of SmB. View X ×B X as a X-scheme via the projection p2 : X ×B X →X onto the second factor. Then there are canonical isomorphisms π∗ X(X/BB.M.) ≃p2♯6−p∗ 1TX/B(1X×B X) ≃X ×B X/XB.M. in SH(X) and a canonical isomorphism πX♯(X ×B X/XB.M.) ≃X/BB.M. ∧B X/B in SH(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "lem-sec-002-07.md",
+      "narrative": null,
+      "content": "For X smooth and proper over B, χ(X/B) is equal to the composition 1B π∗ X −→Th(−TX/B) βX/B −−→X/B πX∗ −→1B Motivic Gauss–Bonnet formulas",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality and Euler characteristics",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-2-duality-and-euler-characteristics.md",
+      "narrative": null,
+      "content": "In this section, we review the strong dualizability of smooth projective schemes as objects of the stable\nmotivic homotopy category, which supplies a notion of Euler characteristic for these schemes. We also\nrecall a result from [Levine 2017b] that gives an alternative characterization of this Euler characteristic.\nMotivic Gauss–Bonnet formulas\n1805\n2A. Preliminaries. Let us ﬁrst recall the basic framework of stable motivic homotopy theory, which\nwill be used throughout.\nNotation 2.1. Throughout, we let B denote a noetherian separated base scheme of ﬁnite Krull dimension.\nLet SchB denote the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "For p : E →X an afﬁne space bundle in SchB (that is, a torsor in the Zariski topology for a vector bundle), the composition p♯◦p∗is an autoequivalence of SH(X) (this is a formulation of homotopy invariance). Notation 2.4 (the localization triangle). Let j : U →X be an open immersion in SchB with (reduced) complement i : Z →X. We have the localization distinguished triangle of endofunctors on SH(X) j! j! →idSH(X) →i∗i∗→j! j![1], (2.4.1) where the morphism j! j! →idSH(X) is the counit of the adjunction j! ⊣j! and the morphism idSH(X) →i∗i∗ is the unit of the adjunction i∗⊣i∗. Moreover i∗= i!, j!",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let Dperf(X)iso denote the subcategory of isomorphisms in the perfect derived category Dperf(X) and let K(X) denote the groupoid associated to the K-theory space of X. Then the assignment V 7→6V extends to a functor 6(−) : Dperf(X)iso →Aut(SH(X)), and moreover factors through the canonical functor Dperf(X)iso →K(X), so that a distinguished triangle E′ →E →E′′ →E′[1] in Dperf(X) determines a natural isomorphism 6E′ ◦6E′′ ≃6E. See for example [Riou 2010, Proposition 4.1.1] for a proof of this last statement in the special case concerning the functor ThX(−) = 6(−)(1X) : Dperf(X)iso →SH(X) (which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Atiyah duality",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "For f : Y →X a smooth morphism in SchB with relative tangent bundle T f →Y, there are canonical natural isomorphisms f! ≃f♯◦6−T f , f ! ≃6T f ◦f ∗; see [Hoyois 2017, Theorem 6.18(2)]. In addition, for f as above and V →X a vector bundle, there are canonical natural isomorphisms f♯◦6± f ∗V ≃6±V ◦f♯, f ∗◦6±V ≃6±V ◦f ∗, the latter valid for an arbitrary morphism f : Y →X in SmB. Moreover, for f : Y →X an arbitrary morphism in SchB and V →X a vector bundle, there is a canonical natural isomorphism f ! ◦6±V ≃6± f ∗V ◦f !; see the beginning of [Hoyois 2017, §5.2]. Finally, for f : Y →X a regular emb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-002-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-002-04.md",
+      "narrative": null,
+      "content": "The assignment Z 7→Z/XB.M. extends to a functor (−)/XB.M. : (Schpr X )op →SH(X). This is described in a number of places, for example [Levine 2017a, §1]; we recall the construction for the reader’s convenience, referring to [loc. cit.] for details. Let g : Z →Y be a proper morphism in SchX. Let πY : Y →X and πZ : Z →X denote the structural morphisms. As mentioned in Notation 2.2, we have a natural isomorphism ηg !∗: g! ≃g∗. We may then deﬁne a natural transformation g∗: πY! →πZ!g∗as the composition πY! ug −→πY!g∗g∗(ηg !∗)−1 −−→πY!g!g∗≃πZ!g∗, Motivic Gauss–Bonnet formulas where ug : idSH(Y) →g∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-002-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-002-05.md",
+      "narrative": null,
+      "content": "Let (C, ⊗, 1, µ, τ) be a symmetric monoidal category and let x ∈C. If a triple (y, δ, ϵ) satisfying the above deﬁnition of the dual exists, then it is unique up to unique isomorphism. We often omit speciﬁc mention of δ and ϵ and denote the dual object y by x∨. When x admits a dual (x∨, δ, ϵ), then it is immediate that x∨is also dualizable, with dual (x, τ ◦δ, τ ◦ϵ), so that x is canonically isomorphic to (x∨)∨. Sending x 7→x∨extends to a contravariant functor (−)∨on the full subcategory of C consisting of those objects x that admit a dual with canonical isomorphism, and the above determines a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let (E, th(−)) be an SL-oriented motivic spectrum and let q : V →X be a rank r vector bundle on X ∈SmB with an isomorphism θ : det V →OX. Then sending x ∈Ea,b Z (X) to q∗(x) ∪thV,θ deﬁnes an isomorphism ϑV,θ : Ea,b Z (X) →Ea+2r,b+r Z (Th(V )) natural in (X, V, θ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "The map ×thV deﬁned above is an isomorphism in SH(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prop-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "prop-sec-003-10.md",
+      "narrative": null,
+      "content": "Let X ∈SmB, let L, M be two line bundles on X, and let Z ⊆X a closed subset. Then there is a natural isomorphism ψL,M : E∗,∗ Z (X; L) →E∗,∗ Z (X; L ⊗M⊗2). Marc Levine and Arpon Raksit",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SL-oriented motivic spectra",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "../sections/sec-003-3-sl-oriented-motivic-spectra.md",
+      "narrative": null,
+      "content": "In this section, we discuss the deﬁnition and basic features of SL-oriented motivic spectra. This is treated\nin [Ananyevskiy 2016a] in the context of the motivic stable homotopy category SH(k) for k a ﬁeld.\nEssentially all of the constructions in [op. cit.] go through without change in the setting of a separated\nnoetherian base-scheme B of ﬁnite Krull dimension; the most one needs to do is replace a few arguments\nthat rely on Jouanolou covers with some properties coming out of the six-functor formalism. We will\nrecall and suitably extend Ananyevskiy’s treatment here without any claim of origin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "The product structure on E-cohomology extends to a product structure on twisted E- cohomology: namely, for X ∈SmB and L, M two line bundles on X, combining the cup product ∪: Ea+2,b+1 0L (L) ⊗Ec+2,d+1 0M (M) →Ea+c+4,b+d+2 0L⊕M (L ⊕M), the canonical isomorphism αL,M : det(L ⊕M) →L ⊗M, and the Thom isomorphism ϑL⊕M, we get a map ∪: Ea,b(X; L) ⊗Ec,d(X; M) →Ea+c,b+d(X; L ⊗M), as well as a version with supports.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "The deﬁnitions of twisted E-cohomology given in Deﬁnition 3.7 are instances of a more general deﬁnition. Namely, for X ∈SmB, L →X a line bundle, and any T ∈SH(B) equipped with an identiﬁcation T ≃πX♯(T ′) for some T ′ ∈SH(X), we may deﬁne the twisted E-cohomology E∗∗(T ; L) by Ea,b(T ; L) := HomSH(X)(6LT ′, Sa+2,b+1 ∧π∗ XE). Of course, this notation is abusive since E∗∗(T ; L) really depends on T ′ ∈SH(X). This construction recovers the notions introduced in Deﬁnition 3.7 as follows: – We have E∗∗(X; L) ≃E∗∗(T ; L) for T = 6∞ T X+ ≃πX♯(1X). – We have E∗∗ Z (X; L) ≃E∗∗(T ; L) for T = X Z/B ≃πX♯",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let X and V be as in Deﬁnition 3.11. Let πX : X →B denote the structure morphism. Then the Thom class thV is an element of E2r,r(Th(V ); det−1 V ) = E2r+2,r+1(πX♯(6V ⊕det−1(V )(1X)) = HomSH(B)(πX♯(6V ⊕det−1(V )(1X), S2r+2,r+1 ∧E) ≃HomSH(X)(6V ⊕det−1(V )(1X), S2r+2,r+1 ∧π∗ XE) ≃HomSH(X)(1X, S2r+2,r+1 ∧6−(V ⊕det−1(V ))π∗ XE). Thus, via the multiplication on E, the class thV induces a map ×thV : π∗ XE →S2r+2,r+1 ∧6−(V ⊕det−1(V ))π∗ XE in SH(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "Let X ∈SmB and let V →X be a rank r vector bundle. Under the identiﬁcation Th(V ) = πX#6V (1X) and the isomorphisms Ea,b(X, det V ) ≃HomSH(X)(1X, Sa+2,b+1 ∧6−det V π∗ XE) and E2r+a,r+b(Th(V )) ≃HomSH(X)(1X, S2r+a,r+b ∧6−V π∗ XE), the Thom isomorphism ϑV : Ea,b(X, det V ) →E2r+a,r+b(Th(V )) is the map induced by ϑE V . Motivic Gauss–Bonnet formulas",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-07.md",
+      "narrative": null,
+      "content": "Let X ∈SmB and let V →X and W →X be vector bundles of respective ranks rV and rW. We have the multiplication map Ea,b(Th(V ), det−1 V ) ⊗Ec,d(Th(W), det−1 W) →Ea+c,b+d(Th(V ⊕W), det−1(V ⊕W)) induced by the isomorphism V/(V \\ {0V }) ∧X W/(W \\ {0W}) →(V ⊕W)/(V ⊕W \\ {0V ⊕W}) in H•(X) and our canonical isomorphism det(V ) ⊗det(W) ≃det(V ⊕W). The multiplicative property of the Thom classes (Deﬁnition 3.4(ii)) implies a similar multiplicativity for the canonical Thom classes: thV ⊕W = thV ∪thW. This then implies, roughly speaking, that “ϑE W⊕V = ϑE W ◦ϑE V .” More precisely, after using properties o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-08.md",
+      "narrative": null,
+      "content": "Using Remark 3.16, the deﬁnition of ϑE −extends to virtual bundles by setting ϑE V −W := ϑE V ◦(ϑE W)−1 = (ϑE W)−1 ◦ϑE V (with these identities understood as in Remark 3.16), giving the isomorphism ϑE V −W : 61−det V ⊗det−1 Wπ∗ XE −→ ∼ 6rV −rW −V +Wπ∗ XE.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-003-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "rem-sec-003-09.md",
+      "narrative": null,
+      "content": "If the SL-orientation on E extends to a GL-orientation, then all the results of this section for SL-oriented theories hold for E in simpliﬁed form: we can omit all the twisting by line bundles and replace 61−det V π∗ XE with π∗ XE using the Thom class thdet V to deﬁne an isomorphism 6Tπ∗ XE ≃6det V π∗ XE. We close this section with one last result about twisted E-cohomology in the SL-oriented setting.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let s : Y →X be a section of a smooth morphism p : X →Y and let η : id →s∗s∗, ϵ : s∗s∗→id be unit and counit of adjunction. Then the composition idSH(Y) −→ ∼ p! ◦s! = p! ◦s∗ s∗→s∗◦s∗ ϵ→idSH(Y) is the identity. Here the morphism s∗: p! →s∗is the one constructed in Remark 2.9.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let (E, th(−)) be an SL-oriented motivic spectrum in SH(B). Suppose given X ∈SmB of dimension dX over B, i : Z →X a closed subset, and p : L →X a line bundle. Then the isomorphism ϑE L−TX/B : 61−det(L−TX/B)π∗ XE →6rL−TX/B −L+TX/Bπ∗ XE induces an isomorphism ρX,Z,L : Ea,b Z (X; ωX/B ⊗L) ≃Ea−2dX,b−dX(X Z/BB.M.; L), where the right-hand side is as deﬁned in Remark 3.9.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Let 1E Y ∈E0,0(Y) be the unit π∗ Y/B(u). Then s∗(1E Y) = thV ∈E2r,r 0V (V, p∗det−1 V ). As a consequence, s∗(1E Y) in E2r,r(V, p∗det−1 V ) is the image of thV under the “forget supports” map E2r,r 0V (V, p∗det−1 V ) →E2r,r(V, p∗det−1 V ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective pushforward in twisted cohomology",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-4-projective-pushforward-in-twisted-cohomology.md",
+      "narrative": null,
+      "content": "In this section, we describe how one gets projective pushforward maps in twisted E-cohomology for E\nan SL-oriented motivic spectrum. We rely on the six-functor formalism. This is a bit different from the\ntreatment of projective pushforward given by Ananyevskiy [2016a]: in that treatment, one relies on the\nfactorization of an arbitrary projective morphism Y →X into a closed immersion Y →X × PN followed\nby a projection X × PN →X. This factorization property will however reappear in our treatment when\nwe discuss the uniqueness of the pushforward maps in Section 6.\nWe continue to work over a noeth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "Let s : Y →V be the zero-section of a vector bundle p : V →Y. Then the canonical isomorphism idSH(Y) ≃p!s∗is equal to the composition idSH(Y) ≃6−V 6V = 6−V p#s∗≃p#6−p∗V s∗≃p!s∗. Marc Levine and Arpon Raksit Indeed 6−V 6V →idSH(Y) is the counit of the adjunction 6−V ⊣6V, corresponding to id : 6V →6V, 6−V p#s∗→idSH(Y) is the counit of the adjunction 6−V = s! p∗⊣p#s∗. The functors 6−V and p# are both left adjoints, so 6−V p# is left adjoint to s∗and the counit of the adjunction 6−V p# ⊣p∗6V ≃6 p∗V p∗≃p! ≃s∗ is the same as that of 6−V ⊣p#s∗. Composing with the isomorphism p! ≃p#6−p∗V ≃6−V p#, we s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-004-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "rem-sec-004-05.md",
+      "narrative": null,
+      "content": "If we have a GL-orientation on E, we have functorial pushforward maps f∗: Ea,b W (Y) →Ea−2d,b−d Z (X) for f : Y →X a projective morphism in SmB, of relative dimension d, with W ⊂Y, Z ⊂X closed subsets with f (W) ⊂Z. All the results of this section hold in the oriented context after deleting the twist by line bundles. This follows from Remark 3.18. Marc Levine and Arpon Raksit",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic Gauss–Bonnet",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-005-5-motivic-gaussbonnet.md",
+      "narrative": null,
+      "content": "Deﬁnition 5.1. Let p : V →X be a rank r vector bundle on some X ∈SmB, and let E ∈SH(B) be an\nSL-oriented motivic ring spectrum. The Euler class eE(V ) ∈E2r,r(X, det−1 V ) is deﬁned as\neE(V ) := s∗s∗(1E\nX);\n1E\nX ∈E0,0(X) the unit.\nRemark 5.2. By Lemma 4.5, eE(V ):=s∗s∗(1E\nX)= ¯s∗thV , where ¯s : X →ThX(V ) is the map induced by s.\nTheorem 5.3 (motivic Gauss–Bonnet). Let E ∈SH(B) be an SL-oriented motivic ring spectrum, πX :\nX →B a smooth and projective B-scheme, let uE : 1B →E be the unit map. Then\nπX/B∗(eE(TX/B)) = uE∗(χ(X/B)) ∈E0,0(B).\nProof. We have the canonical Thom isomorphism\nϑE\n−TX/B :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "By Lemma 4.5, eE(V ):=s∗s∗(1E X)= ¯s∗thV , where ¯s : X →ThX(V ) is the map induced by s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "motivic Gauss–Bonnet",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "Let E ∈SH(B) be an SL-oriented motivic ring spectrum, πX : X →B a smooth and projective B-scheme, let uE : 1B →E be the unit map. Then πX/B∗(eE(TX/B)) = uE∗(χ(X/B)) ∈E0,0(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/ex-sec-006-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "ex-sec-006-02.md",
+      "narrative": null,
+      "content": "The primary example of an SL-oriented cohomology theory on SmB is the one induced by an SL-oriented motivic spectrum E ∈SH(B): (X, Z, L) 7→E∗,∗ Z (X; L). One deﬁnes, for X ∈SmB of dimension dX over B, E Z m,n(X; L) := E2dX−m,dX−n Z (X; ωX/B ⊗L); we extend the deﬁnition to arbitrary X ∈SmB by taking the sum over the connected components of X and write this also as E2dX−m,dX−n Z (X; ωX/B ⊗L) by considering dX as a locally constant functor on X. The pushforward maps for a proper morphism of relative dimension d, f : Y →X, closed subsets W ⊂Y, Z ⊂X with f (W) ⊂Z and line bundle L →X are given by t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SL-oriented cohomology theories",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-006-6-sl-oriented-cohomology-theories.md",
+      "narrative": null,
+      "content": "Our ultimate goal is to apply the Gauss–Bonnet theorem of Section 5 when projective pushforwards are\ndeﬁned on a representable cohomology theory in some concrete manner, not necessarily relying on the\nsix-functor formalism. For this, we need a suitable axiomatization for such theories; we use a modiﬁcation\nof the axioms of Panin and Smirnov [Panin 2003; 2009]. As before, our base-scheme B is a noetherian,\nseparated scheme of ﬁnite Krull dimension.\nDeﬁnition 6.1. We let Sm-LB denote the category of triples (X, Z, L) with X in SmB, Z ⊂X a closed\nsubset and L →X a line bundle. A morphism ( f, ˜f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "It may seem strange that the proper pushforward maps respect products in the sense of (A5); one might rather expect a projection formula. However, (A5) asks that the proper pushforward maps respect external products, not cup products, and in fact, having the pushforward and pullback maps Marc Levine and Arpon Raksit respect products as in (A5) implies the projection formula, as one sees by considering the commutative pentagon associated to a proper morphism f : Y →X in SmB of relative dimension d: Y f \u000f γ f :=( f ×idX)◦1Y \u0015 1Y / Y ×B Y f ×idY % X ×B Y idX× f y X 1X / X ×B X Note that the squar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Suppose that E ∈SH(B) is SL oriented and that E−1,0(U) = 0 for all afﬁne U in SmB. Then the induced SL orientation on E+ ∈SH(B)+ extends to a GL orientation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "For u ∈0(X, O× X) we have [u]η = η[u] : 6∞ T X+ →6∞ T X+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "The projection η−of η to SH(B)−is an isomorphism and the projection η+ of η to SH(B)+ is zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison isomorphisms",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-7-comparison-isomorphisms.md",
+      "narrative": null,
+      "content": "We recall the element η ∈HomSH(B)(1B, S−1,−1∧1B) induced by the map of B-schemes η : A2\\{0} →P1,\nη(a, b) = (a : b). As every E ∈SH(B) is a module for 1B, we have the map ×η : E →S−1,−1 ∧E for\neach x ∈SH(B). We say that η acts invertibly on E if ×η is an isomorphism in SH(B).\nWe consider the following situation: ﬁx an SL-oriented motivic spectrum E ∈SH(B). This gives us the\ntwisted cohomology theory E∗,∗underlying the oriented cohomology deﬁned by E. Let (E∗,∗, ˜E∗,∗) be an ex-\ntension of E∗,∗to an oriented cohomology theory on SmB, in other words, we deﬁne new pushforward maps\nˆf∗: E∗,∗\nW (Y,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Suppose the pushforward maps f∗, ˆf∗: E∗,∗ W (Y, ωY/B ⊗f ∗L) →E∗−2d,∗−d Z (X, ωX/B ⊗L) Marc Levine and Arpon Raksit agree for W, Z, L, X = V a vector bundle over Y and f : Y →V the zero-section. Suppose in addition that one of the following conditions holds: (i) The SL-orientation of E extends to a GL-orientation. (ii) η acts invertibly on E. (iii) 2 acts invertibly on E and E−1,0 + (U) = 0 for afﬁne U in SmB. Then f∗= ˆf∗for all X, Y, Z, W, L, f for which the pushforward is deﬁned.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/cor-sec-008-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "cor-sec-008-07.md",
+      "narrative": null,
+      "content": "Let k be a perfect ﬁeld of characteristic different from two. Let H ∈GW(k) denote the class of the hyperbolic form x2 −y2. Let X be a smooth and projective k-scheme. (1) Suppose X has odd dimension 2n −1. Let m := X i+ j<2n−1 (−1)i+ j dimk Hi(X,  j X/k) − X 0≤i< j i+ j=2n−1 dimk Hi(X,  j X/k). Then χ(X/k) = m · H ∈GW(k). (2) Assume X has even dimension 2n. Let m := X i+ j<2n (−1)i+ j dimk Hi(X,  j X/k) + X 0≤i< j i+ j=2n dimk Hi(X,  j X/k) and let Q be the symmetric bilinear form Hn(X, n X/k) × Hn(X, n X/k) ∪ −→H2n(X, 2n X/k) Tr −→k. Then χ(X/k) = m · H + Q ∈GW(k). Marc Levine and Arpon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/cor-sec-008-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "cor-sec-008-08.md",
+      "narrative": null,
+      "content": "Let k be a ﬁeld equipped with an embedding σ : k ,→R. Let X be a smooth projective k-scheme of even dimension 2n. Then |χtop(X(R))| ≤dimk Hn(X, n X/k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "../sections/sec-008-8-applications.md",
+      "narrative": null,
+      "content": "In this section, we apply the motivic Gauss–Bonnet formula of Section 5 and the comparison results of\nSection 7 to various speciﬁc SL-oriented cohomology theories, and thereby make computations of the\nmotivic Euler characteristic χ(X/B) in different contexts.\n8A. Motivic cohomology and cohomology of the Milnor K-theory sheaves. We work over the base-\nscheme B = Spec k, with k a perfect ﬁeld. In SH(k) we have the motivic cohomology spectrum HZ\nrepresenting Voevodsky’s motivic cohomology (see, e.g., [Levine 2008, §6.2] for a construction valid in\narbitrary characteristic). By [Voevodsky 2002], t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-008-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "rem-sec-008-09.md",
+      "narrative": null,
+      "content": "Let k be a perfect ﬁeld of characteristic different from two. The formula for the Euler characteristic given in Theorem 8.6 shows that the invariant χ(X/k) is “motivic” in the following sense. Let X and Y be smooth projective k-schemes of respective even dimensions 2n and 2m and let α : X 99K Y be a correspondence with k-coefﬁcients of degree n, that is, an element α ∈CHm+n(X × Y)k. The correspondence α induces the map of k-vector spaces α∗: Hm(Y, m Y/k) →Hn(X, n X/k). Suppose that α∗ is an isomorphism and is compatible with the trace pairings on Hm(Y, m Y/k) and Hn(X, n X/k) appearing in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-008-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "rem-sec-008-10.md",
+      "narrative": null,
+      "content": "In the case of a smooth projective surface S with pg(S) = 0, over a characteristic zero ﬁeld k, the twisting construction reduces to a computation involving CH1(S¯k)/∼num as a Gal(k)-module; here ¯k is the algebraic closure of k and ∼num is numerical equivalence. Indeed, the assumption pg(S) = 0 implies that the cycle class map in Hodge cohomology cycHdg : CH1(S¯k) →H1(S¯k, 1 S/¯k) induces an isomorphism CH1(S¯k)/∼num ⊗Z ¯k −→ ∼ H1(S¯k, 1 S/¯k) ≃H1(S, 1 S/k) ⊗k ¯k and the cycle class map cycHdg transforms the intersection product on CH1(S¯k)/∼num to the quadratic form b0 on H1(S¯k, 1 S/¯k)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/rem-sec-008-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "rem-sec-008-11.md",
+      "narrative": null,
+      "content": "Bayer-Fluckiger and Serre [2019] considered the ﬁnite k-scheme W representing the 27 lines on a cubic surface V and computed the trace form TrW/k(⟨1⟩) in [Bayer-Fluckiger and Serre 2019,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let X ∈Smk be projective of dimension dX. Then uHZ(χ(X/k)) = degk(cdX(TX/k)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "Let X ∈Smk be projective of dimension dX. Then uH0HZ(χ(X/k)) = degk(cdX(TX/k)) in CH0(Spec k) = Z. 8B. Algebraic K-theory. We now let B be any regular separated base-scheme of ﬁnite Krull dimension. Algebraic K-theory on SmB is represented by the motivic commutative ring spectrum KGL ∈SH(B); see [Voevodsky 1998, §6.2]. Just as for HZ, the purity theorem KGLa,b Z (X) ≃KGLa−2c,b−c(Z) for i : Z →X a closed immersion of codimension d in SmB (a consequence of Quillen’s localization sequence for algebraic K-theory [1973, §7, Proposition 3.2]) gives Thom class ϑKGL(V ) ∈KGL2r,r 0V (V ) for V →X a ran",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-03.md",
+      "narrative": null,
+      "content": "Let πX : X →B be a smooth projective morphism with B a regular separated scheme of ﬁnite Krull dimension. Then uKGL(χ(X/B)) = dimB X X j=0 dimB X X i=0 (−1)i+ j[R jπX∗i X/B] ∈K0(B) = KGL0,0(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-04.md",
+      "narrative": null,
+      "content": "Let k be a perfect ﬁeld of characteristic different from two. For πX : X →Spec k smooth and projective over k, we have χ(X/k) = g degk(eH0(1k)(TX/k)). Motivic Gauss–Bonnet formulas",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-05.md",
+      "narrative": null,
+      "content": "Let B be a regular noetherian separated scheme of ﬁnite Krull dimension with 2 invertible in 0(B, OB). Let X be a smooth projective B-scheme. Then: (1) We have uBOη(χ(X/B)) = \u0010 dimk X M i, j=0 RiπX∗ j X/B[ j −i], Tr \u0011 in BO0,0 η (B) ≃W(Dperf(B)) ≃W(B). (2) Let f : GW(B) →K0(B) denote the forgetful map discarding the symmetric bilinear form. Suppose that the map ( f, q) : GW(B) →K0(B) × W(B) is injective (this is the case if for example B is the spectrum of a local ring). Then uBO(χ(X/B)) = \u0010 dimB X M i, j=0 Hi(X,  j X/B)[ j −i], Tr \u0011 in GW(Dperf(B)) ≃GW(B). Motivic Gauss–Bonnet formulas (3)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/thm-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 50,
+      "target": "thm-sec-008-06.md",
+      "narrative": null,
+      "content": "Finally, (3) follows from (2), after we check that the unit map uBO induces the identity map on GW(k) via GW(k) (Morel) ∼ −−−→10,0 k (Spec k) uBO ∼ −→BO0,0(Spec k) ≃KO[0] 0 (k) = GW(k), where the ﬁrst isomorphism arises from Morel’s theorem [2004, Theorem 6.4.1, Remark 6.4.2; 2012,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "Both authors thank the referees for detailed comments and suggestions, which helped us correct a number\nof ambiguities in an earlier version and have greatly improved the exposition.\n(Raksit) I would like to thank my PhD advisor, Søren Galatius, for many suggestions and ideas that led\nto my thinking about the questions discussed in this paper. I would also like to thank Tony Feng and Jesse\nSilliman for helpful conversations. My work has been supported by an NSF Graduate Research Fellowship.\n(Levine) I would like to thank J-P. Serre for proposing the formula Theorem 1.3 for the motivic\nEuler ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p05/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[Abelson 1976] H. Abelson, “On the Euler characteristic of real varieties”, Michigan Math. J. 23:3 (1976), 267–271. MR Zbl\n[Ananyevskiy 2016a] A. Ananyevskiy, “On the push-forwards for motivic cohomology theories with invertible stable Hopf\nelement”, Manuscripta Math. 150:1-2 (2016), 21–44. MR Zbl\n[Ananyevskiy 2016b] A. Ananyevskiy, “On the relation of special linear algebraic cobordism to Witt groups”, Homology\nHomotopy Appl. 18:1 (2016), 204–230. MR Zbl\n[Ayoub 2007] J. Ayoub, Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique, I,\nAstérisque 314",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

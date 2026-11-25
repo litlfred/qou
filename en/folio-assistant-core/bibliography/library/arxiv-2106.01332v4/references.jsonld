@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2106.01332v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+      "dcterms:creator": [
+        "Niels Gresnigt, 1, ∗Antonino Marcianò,2, 3, †",
+        "Emanuele Zappala4, ‡"
+      ],
+      "dcterms:issued": "D:20211028",
+      "dcterms:identifier": "https://arxiv.org/abs/2106.01332",
+      "dcterms:source": "library/arxiv-2106.01332v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2106.01332v4"
+    }
+  ]
+}

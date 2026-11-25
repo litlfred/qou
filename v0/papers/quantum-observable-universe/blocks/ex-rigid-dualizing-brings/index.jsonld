@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-rigid-dualizing-brings",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:rigid-dualizing-brings",
+  "kind": "example",
+  "title": "Constructive rigid dualizing complex for Bring's coordinate ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-dualizing-complex",
+    "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-rigid-dualizing-complex",
+  "cites": [
+    "references/woronowicz1988"
+  ],
+  "tags": [
+    "brings-surface",
+    "dualizing-complex",
+    "constructive",
+    "hochschild"
+  ],
+  "text": "rigid-dualizing-brings.md",
+  "provenance": "authored"
+}

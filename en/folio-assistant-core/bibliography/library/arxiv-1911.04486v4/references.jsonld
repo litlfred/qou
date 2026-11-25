@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1911.04486v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Knots and the Maxwell Equations",
+      "dcterms:creator": [
+        "Vancea, Ion V."
+      ],
+      "dcterms:issued": "D:20200415",
+      "dcterms:identifier": "https://arxiv.org/abs/1911.04486",
+      "dcterms:abstract": "In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.",
+      "dcterms:source": "library/arxiv-1911.04486v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1911.04486v4"
+    }
+  ]
+}

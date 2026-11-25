@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-content-scaling-dictionary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:content-scaling-dictionary",
+  "kind": "remark",
+  "title": "Box content as the isospin dictionary for the Bethe--Weizsäcker scaling functions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-content-scaling-correspondence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-content-scaling-correspondence",
+  "tags": [
+    "schur-weyl",
+    "content",
+    "scaling",
+    "isospin",
+    "bethe-weizsacker"
+  ],
+  "text": "content-scaling-dictionary.md",
+  "provenance": "authored"
+}

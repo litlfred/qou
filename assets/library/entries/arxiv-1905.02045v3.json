@@ -1,0 +1,391 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1905.02045v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Among knot invariants, the colored Jones polynomials $\\{J_{K,n}\\}_{n\\geq2}$ and the Kashaev invariants $\\{\\langle K\\rangle_N\\}_{N\\geq 2}$ are of particular interest, by their relation to quantum field theory, and the geometry of hyperbolic manifolds [@Witten1994; @MurakamiMurakami2001]. We refer to *e.g.* [@MurakamiMurakami2001; @Yokota2011] for their definitions; by [@MurakamiMurakami2001], the two invariants are related by $\\langle K\\rangle_N=J_{K,N}(\\ifthenelse{\\equal{}{}}{{\\rm e}}{\\operatorname{e}\\mathchoice{\\mathopen{}\\mathclose\\bgroup\\originalleft(  \\aftergroup\\egroup\\originalright)}{( )",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM\nINVARIANTS OF HYPERBOLIC KNOTS\nS. BETTIN AND S. DRAPPEAU\nAbstract. We obtain an exact modularity relation for the q-Pochhammer symbol. Using\nthis formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces\nto the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds\nfor hyperbolic knots K̸ = 72 with at most seven crossings. For K = 41, we also prove a\ncomplementary reciprocity formula which allows us to prove a law of large numbers for the\nvalues of the colored Jones polynomials at roots of u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/figure-img-p006-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/figure-img-p006-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the paper and sketch of the proofs",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs.md",
+      "narrative": null,
+      "content": "Theorem [\\[th:1\\]](#th:1){reference-type=\"ref\" reference=\"th:1\"} and Theorem [\\[th:2\\]](#th:2){reference-type=\"ref\" reference=\"th:2\"} are both based on two new relations for the $q$-Pochhammer symbol, given in Theorems [\\[th:Ir\\]](#th:Ir){reference-type=\"ref\" reference=\"th:Ir\"} (cf. [\\[eq:mro\\]](#eq:mro){reference-type=\"eqref\" reference=\"eq:mro\"}) and [\\[thp\\]](#thp){reference-type=\"ref\" reference=\"thp\"}. These relations are proved in Section [\\[repsec\\]](#repsec){reference-type=\"ref\" reference=\"repsec\"} and both make use of the Abel-Plana summation formula [@Abel1992 p.23], [@Plana1820 p.408]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-acknowledgment.md",
+      "narrative": null,
+      "content": "This paper was partially written during a visit of of S. Bettin at the Aix-Marseille University, a visit of S. Drappeau at the University of Genova, and a visit of both authors at ICTP Trieste. The authors thank these Institution for the hospitality and Aix-Marseille University, INdAM and ICTP for the financial support for these visits.\n\nThe authors wish to thank Don Zagier for useful discussions, Brian Conrey for putting us in contact with him, and Hitoshi Murakami for many helpful comments on this work.\n\nS. Bettin is member of the INdAM group GNAMPA and his work is partially supported by PRI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-notation.md",
+      "narrative": null,
+      "content": "Given $D\\subset \\mathbb{R}$ and $f:D\\to\\mathbb{R}$, we write $\\|f\\|_{\\infty, D}:=\\sup_{t\\in D}|f(t)|$. Also, given $t\\in\\mathbb{R}$, we write $\\|t\\|:=\\textnormal{dist}(t,\\mathbb{Z})$ and $\\{t\\}:=t-\\lfloor t\\rfloor$, where $\\lfloor t\\rfloor$ is the integer part of $t$. Given a property $P$, we define ${\\mathbf 1}_{P}$ (or ${\\mathbf 1}(P)$) to be $1$ if the property $P$ is satisfied and $0$ otherwise.\n\nAll the implicit constants of the error terms are understood to be uniform in the various parameters unless otherwise indicated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer.md",
+      "narrative": null,
+      "content": "[]{#repsec label=\"repsec\"}\n\n## Abel-Plana's summation formula\n\nOur argument is based on the Abel-Plana summation formula.\n\nWe denote by $\\gamma_\\varepsilon$ the following integration contour.\n\n<figure id=\"fig:contour\">\n\n</figure>\n\n::: lemma\n[]{#lem:abelplana label=\"lem:abelplana\"} Let $\\alpha, \\beta,\\beta'\\in\\mathbb{R}$ with $\\alpha \\leq \\beta<\\beta'$. Let $f$ be an analytic function on a neighborhood of $U:=\\{z\\in\\mathbb{C}\\mid \\alpha\\leq \\operatorname{Re}(z)\\leq \\beta'\\}\\setminus\\{\\alpha,\\beta\\}$. Assume that the following holds :\n\n1.  $f(z)$ is holomorphic at $\\beta$ if $\\beta$ is an intege",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First reciprocity formula for the q-Pochhammer symbol",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-22-first-reciprocity-formula-for-the-q-pochhamme.md",
+      "narrative": null,
+      "content": "[]{#ss:1rf label=\"ss:1rf\"}\n\nWe fix the notations as follows. Let $N, d\\geq 1$ be coprime. Let $\\alpha = p/q$ in reduced form, and $\\gamma = \\mathopen{}\\mathclose\\bgroup\\originalleft( \\begin{smallmatrix} p & -\\overline{q} \\\\ q & \\overline{p} \\end{smallmatrix} \\aftergroup\\egroup\\originalright)$ for some $(\\overline{p}, \\overline{q})$ satisfying $p\\overline{p} + q\\overline{q} = 1$. Throughout the rest of Section [\\[ss:1rf\\]](#ss:1rf){reference-type=\"ref\" reference=\"ss:1rf\"}, all error terms will be allowed to depend on $d$ and $\\gamma$ (but not on $N$). We write $h=Np-d\\overline{q}$, $k=Nq+d\\over",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sums of cotangents",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-23-sums-of-cotangents.md",
+      "narrative": null,
+      "content": "In this section and the next, we introduce the following extension of the Landau $O$-symbol. Let $D_1\\subset D_2\\subset \\mathbb{C}$ be two sets given by the context, and $g: D_2 \\to \\mathbb{R}_+$. We will write $$f(z) = \\mathcal{O}_{(p_1, p_2, \\dotsc)}^z(g(z)) \\qquad (z\\in D_1)\\label{eq:def-Oh}$$ whenever, for any fixed choice of the parameters $p_1, p_2, \\dotsc$, there exists a function $\\varphi$ holomorphic on $D_2$, which satisfies $\\varphi(z) = f(z)$ for $z\\in D_1$, and $\\mathopen{}\\mathclose\\bgroup\\originalleft|\\varphi(z)\\aftergroup\\egroup\\originalright|\\ll g(z)$ for $z\\in D_2$, the impli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second reciprocity formula for the q-Pochhammer symbol",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-24-second-reciprocity-formula-for-the-q-pochhamm.md",
+      "narrative": null,
+      "content": "[]{#sec:recip2-poch label=\"sec:recip2-poch\"}\n\n::: theorem\n[]{#thp label=\"thp\"} Let $4\\leq h< k$ with $(h,k)=1$ and $r_0\\in \\{0, \\dotsc, h-1\\}$. Let $0\\leq r<k$ with $r\\equiv r_0~\\mathchoice{\\mathopen{}\\mathclose\\bgroup\\originalleft( \\textnormal{mod}~h\\aftergroup\\egroup\\originalright)}{(\\textnormal{mod}~h)}{(\\textnormal{mod}~h)}{(\\textnormal{mod}~h)}$. We have $$\\begin{aligned}\n    \\frac{(\\ifthenelse{\\equal{-{\\overline h}/k}{}}{{\\rm e}}{\\operatorname{e}\\mathchoice{\\mathopen{}\\mathclose\\bgroup\\originalleft(  -{\\overline h}/k\\aftergroup\\egroup\\originalright)}{( -{\\overline h}/k)}{( -{\\overline h}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 21,
+      "pageEnd": 31,
+      "target": "../sections/sec-008-3-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#pmt1 label=\"pmt1\"}\n\nThroughout the rest of the section, $K$ will denote any hyperbolic knot $K\\neq 7_2$ with at most $7$ crossings.\n\nWe will use the same notation as in Section [\\[ss:1rf\\]](#ss:1rf){reference-type=\"ref\" reference=\"ss:1rf\"}. In particular, all error terms will be allowed to depend on $d$ and $\\gamma$.\n\nFor $n\\in\\mathbb{N}_{\\geq 0}$ and $\\alpha=\\frac hk\\in\\mathbb{Q}$, with $(h,k)=1$, we let $$\\begin{aligned}\n\\label{sb}\n  [\\alpha]_n :=k^{-1/2}  (\\ifthenelse{\\equal{\\alpha}{}}{{\\rm e}}{\\operatorname{e}\\mathchoice{\\mathopen{}\\mathclose\\bgroup\\originalleft(  \\alpha\\aftergroup\\egr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "Assume Re(λ) ∈(ε, 1 −ε) with ε ∈(0, 1/2) and let s ∈Z/qZ. Then, for all M ≥0 uniformly in λ we have Es(λ, d/k) = M X ℓ=0 \u0010qd k \u0011ℓ Es,ℓ(λ) + Oε \u0010qd k \u0011M+1 , E∗ s (λ, d/k) = M X ℓ=0 \u0010qd k \u0011ℓ E∗ s,ℓ(λ) + Oε \u0010qd k \u0011M+1 , (3.23) where E0,ℓ(λ) := q X g=1 f \u0010g −λ q \u0011 B1 \u0010⟨gp −s⟩ q \u0011 , E∗ 0,ℓ(λ) := q X g=1 f \u0010g −λ q \u0011 B1 \u0010⟨gp −s⟩ q \u0011 , Es,ℓ(λ) := (−1)ℓ qℓ(ℓ+ 1)! q X g=1 f(ℓ)\u0010g −λ q \u0011 ˜Bℓ+1 \u0010gp −s q \u0011 , ℓ≥1, E∗ s,ℓ(λ) := (−1)ℓ qℓ(ℓ+ 1)! q X g=1 f(ℓ)\u00101 −g + λ q \u0011 ˜Bℓ+1 \u0010gp −s q \u0011 , ℓ≥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma ??",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-009-32-proof-of-lemma.md",
+      "narrative": null,
+      "content": "Remark 8. We have L(λ) = −L(1−λ) for λ ∈[0, 1) and f(z) = f(1−z) for z ∈(C\\R)∪(0, 1).\nIn particular we can write the conjugates of Φr(λ) and gd(λ) given in (3.4) and (2.16) ((2.14)\nif λ = 0) as\nΦr(λ) = exp\n\u0012\n−k\nqd\n\u0010\nL(1 −λ) + πi\n12\n\u0011\n−πid\n12kq + E∗\nr (λ, d/k)\n\u0013\nE∗\nr (λ, d/k) := 1\n2f\n\u0010q −⟨pr⟩+ λ\nq\n\u0011\n+\nq\nX\ng=1\ni\nZ ∞\n0\n\u0012 f(q−g+λ\nq\n−idt\nk )\ne(−gp−r\nq\n)e2πt −1\n−\nf(q−g+λ\nq\n+ idt\nk )\ne( gp−r\nq\n)e2πt −1\n\u0013\ndt,\n(λ̸ = 0)\nand E∗\nr (0, d/k) = Er(0, d/k). In particular, we can extend Φr(λ) to a holomorphic function\nof λ in the strip 0 < Re(λ) < 1.\nIn the following lemmas we give some properties of the expan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "We have L(λ) = −L(1−λ) for λ ∈[0, 1) and f(z) = f(1−z) for z ∈(C\\R)∪(0, 1). In particular we can write the conjugates of Φr(λ) and gd(λ) given in (3.4) and (2.16) ((2.14) if λ = 0) as Φr(λ) = exp \u0012 −k qd \u0010 L(1 −λ) + πi \u0011 −πid 12kq + E∗ r (λ, d/k) \u0013 E∗ r (λ, d/k) := 1 2f \u0010q −⟨pr⟩+ λ q \u0011 + q X g=1 i Z ∞ \u0012 f(q−g+λ q −idt k ) e(−gp−r q )e2πt −1 − f(q−g+λ q + idt k ) e( gp−r q )e2πt −1 \u0013 dt, (λ̸ = 0) and E∗ r (0, d/k) = Er(0, d/k). In particular, we can extend Φr(λ) to a holomorphic function of λ in the strip 0 < Re(λ) < 1. In the following lemmas we give some properties of the expansion of Er and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorems ??",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-010-4-proof-of-theorems.md",
+      "narrative": null,
+      "content": "We proceed in a similar way as in the proof of Theorem 1. For x = h/k, with (h, k) = 1 and\n1 ≤h < k, we write J41(x) as in (3.2) and we divide the sum into congruence classes modulo\nh, that is we write\nJ41(h/k) = k\n3−m\n2\nX\n0≤s≤h−1\nJ41(h/k; s)\n(4.1)\nwhere, for 0 ≤s ≤h −1, we write\nJ41(h/k; s) =\nX\n0≤r<k,\nr≡s (mod h)\n|[h/k]r|2.\n(4.2)\nwith [·]r as in (3.1). We apply Theorem 7, which for 0 ≤s < h, s ≡r (mod h), gives\n|[h/k]r|2 = |[k/h]s|2Φ†\ns(r/k) exp\n\u0010\n−2πr\nhk c0(k/h) + E†\ns(r/k)\n\u0011\n(4.3)\nfor some E†\ns(r/k) satisfying |E†\ns(r/k)| ≪E(h, k) for all 0 ≤r < k, where\nE(h, k) := 1 + log k\nh + k\nh2 +\nmax",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "Let 1 ≤h ≤k with (h, k) = 1 and assume c0(k/h) < 0. Then, log |J41,0 \u0000e \u0000h/k \u0001\u0001 | = log |J41,0 \u0000e \u0000k/h \u0001\u0001 | −2π h c0 \u0000k/h \u0001 + O \u0010k h + max 0≤r′<h",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-011-5-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Before starting, we state some basic properties of continued fractions (see [26] for a ref-\nerence). Given h/k ∈Q ∩(0, 1) with h, k ∈N, (h, k) = 1, we denote by [0; b1, . . . , br] the\ncontinued fraction expansion of h/k. Then for 0 ≤s ≤r the convergents of h/k are the\nfractions [0; b1, . . . , bs] = us\nvs with (us, vs) = 1 (as usual u0/v0 = 0/1, v−1 := 0, u−1 := 1);\nthe vs are called the partial quotients. The partial quotients satisfy the bounds vs ≪2−s/2,\nvr−s ≪k2−s/2 for 0 ≤s ≤r, and vs/vs−1 ≤bs + 1 for 1 ≤s ≤r. Also, r ≪log k. For all\n1 ≤s ≤r we have vsus−1 −vs−1us = (−1)s and so vs−1\nvs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.02045v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[1] N. H. Abel. Œuvres compl`etes. Tome I. ´Editions Jacques Gabay, Sceaux, 1992. Edited and with a preface\nby L. Sylow and S. Lie, Reprint of the second (1881) edition.\n[2] J. E. Andersen and S. K. Hansen. Asymptotics of the quantum invariants for surgeries on the ﬁgure 8\nknot. J. Knot Theory Ramiﬁcations, 15(4):479–548, 2006.\n[3] L. B´aez-Duarte. A strengthening of the Nyman-Beurling criterion for the Riemann hypothesis. Atti Accad.\nNaz. Lincei Rend. Lincei Mat. Appl., 14(1):5–11, 2003.\n[4] L. B´aez-Duarte, M. Balazard, B. Landreau, and ´E. Saias. ´Etude de l’autocorr´elation multiplicative",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.6531v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Gröbner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type $A_n,B_n$ and $D_n$ in [@bokut1]. They also proposed a conjecture for the general form of Gröbner-Shirshov bases for all Coxeter groups. In [@chen], an example was given an to show that the conjecture is not true in general. The Gröbner-Shirshov bases of the other finite Coxeter groups are given in [@E1] and [@E2]. This paper is another example of finding Gröbner-Shirshov bases for groups, defined by generators and defining relations.\n\nWe first cite some concepts and results from the litera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "TRANSACTIONS OF THE\nAMERICAN MATHEMATICAL SOCIETY\nVolume 00, Number 0, Pages 000–000\nS 0002-9947(XX)0000-0\nGR¨OBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR\nAFFINE WEYL GROUP f\nAn\nEROL YILMAZ, CENAP ¨OZEL AND U ˇGUR USTAO ˇGLU\nAbstract. Using Buchberger-Shirshov Algorithm and Composition-Diamond\nlemma we obtain the reduced Gr¨obner-Shirshov bases of f\nAn and classify all\nreduced words of the aﬃne Weyl group f\nAn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gröbner-Shirshov Basis and Reduced Words",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-gröbner-shirshov-basis-and-reduced-words.md",
+      "narrative": null,
+      "content": "::: defn\nThe affine Weyl group $\\widetilde{A_n}$ has a presentation with generators $S=\\{r_0,r_1, \\ldots,r_n\\}$ and defining relations\n\n$r_ir_i=1 \\quad   0 \\leq i \\leq n$\n\n$r_ir_j=r_jr_i \\quad   0\\leq i < j-1 < n \\; \\mathrm{and} \\; (i,j) \\neq (0,n)$\n\n$r_ir_{i+1}r_i=r_{i+1}r_ir_{i+1} \\quad 0 \\leq i \\leq n-1$\n\n$r_0r_nr_0=r_nr_0r_n$.\n:::\n\nIdentifying each relation $u=v$ by a polynomial $u-v$, we define\n\n$f_{1}^{(i)}=r_ir_i-1 \\quad   0 \\leq i \\leq n$\n\n$f_{2}^{(i,j)}=r_ir_j-r_jr_i \\quad   0\\leq i < j-1 < n \\; \\mathrm{and} \\; (i,j) \\neq (0,n)$\n\n$f_{3}^{(i)}=r_ir_{i+1}r_i-r_{i+1}r_ir_{i+1} \\quad 0 \\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Counting Reduced Words",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-counting-reduced-words.md",
+      "narrative": null,
+      "content": "::: thm\n[]{#reduced label=\"reduced\"} Let $\\widehat{w}=a_{i_{s}}a_{i_{s-1}}\\ldots a_{i_{1}}v^{(b_t)}$ where $a_{i_{j}}=r_{0}r_{nk_{j}}r_{nl_{j}}$.Then $a_{i_{j}}$'s are marked components of an arranged word $w=uv^{(b_t)}$ where $b_t=r_0r_{np}r_{1q}$ if and only if $k_{s}<k_{s-1}<\\ldots<k_{1}<p$ and $q<l_{1}<l_{2}<\\ldots<l_{s}<n$\n:::\n\n::: proof\n*Proof.* By construction of arranged words, the marked components satisfy the given conditions. Conversely, if $\\widehat{w}=a_{i_{s}}a_{i_{s-1}}\\ldots a_{i_{1}}v^{(b_t)}$ is a word satisfying the conditions, then an arranged word $(w=u v^{(b_{t})})$ whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6531v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] L.A. Bokut and L.S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29\n(2001), 4305–4319.\n[2] L. A. Bokut, Imbeddings into Simple Associative Algebras, Algebra Logika 15 (1976), 117-\n142.\n[3] L.A. Bokut, Unsolvability of the word problem, and subalgebras of ﬁnitely presented Lie\nalgebras, Izv. Akad. Nauk. SSSR Ser. Mat., 36 (1972), 1173-1219.\n[4] G. M. Bergman,The Diamond Lemma for Ring Theory, Adv. Math. 29 (1978), 178-218.\nGR ¨OBNER-SHIRSHOV BASIS FOR AFFINE WEYL GROUP f\nAn\n11\n[5] B. Buchberger, An Algorithm for Finding a Basis for the Residue Class Ring of a Zero-\ndimen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

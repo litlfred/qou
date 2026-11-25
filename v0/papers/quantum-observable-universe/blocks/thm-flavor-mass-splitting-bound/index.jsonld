@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-flavor-mass-splitting-bound",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:flavor-mass-splitting-bound",
+  "kind": "theorem",
+  "title": "Two-sided substrate bound on the dressed-quark splitting",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-substrate-split",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass"
+  ],
+  "tags": [
+    "flavor",
+    "dressing",
+    "quark-mass",
+    "substrate-bound",
+    "splitting-only"
+  ],
+  "leanRef": "qou:QOU.Confinement.FlavorDressing.flavor_mass_splitting_bound",
+  "text": "flavor-mass-splitting-bound.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2603.25236v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2603.25236v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A Concentration of Measure Phenomenon in\nLattice Yang-Mills\nT. Tlas\nAbstract\nWe demonstrate that the pushforward of the product of Haar measures\nby the lattice Yang-Mills action concentrates as a Gaussian. It is also\nsketched how using this fact, one can recover the strong-coupling expan-\nsion.\nThe aim of this note is to explore the concentration of measure phenomenon [1]\nin the context of lattice Yang-Mills theory. We shall see below that while this\nphenomenon does indeed manifest in this setting, it does not allow us to go\nbeyond what is already known by using other methods. This is due to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.25236v1/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "As N →∞the rescaled measures ρN(Nt) converge weakly to the measure q 2K πD(D−1)e− 2K D(D−1) t2dt.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2603.25236v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] M. Ledoux, “The concentration of measure phenomenon”, Math. Surveys\nMonogr., 89, American Mathematical Society, Providence, 2001.\n[2] B. Collins, S. Matsumoto, J. Novak, “The Weingarten Calculus”, Notices\nAmer. Math. Soc. 69 (2022), no. 5, 734–745.\n[3] D. Weingarten, “Asymptotic behavior of group integrals in the limit of\ninfinite rank”, J. Mathematical Phys. 19 (1978), no. 5, 999-1001.\n[4] M. Creutz, “Quarks, Gluons and Lattices”, Cambridge University Press,\n2023.\n[5] D. Gross, E. Witten, “Possible third-order phase transition in the large-N\nlattice gauge theory”, Phys. Rev. D 21, (1980),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

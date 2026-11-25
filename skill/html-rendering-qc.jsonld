@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/html-rendering-qc.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/html-rendering-qc",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "html-rendering-qc",
+      "title": "HTML Rendering QC",
+      "instructionsPath": "skills/local/html-rendering-qc.md",
+      "instructionLines": 101,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

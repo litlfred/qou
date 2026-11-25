@@ -1,0 +1,343 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "104171-rmi-1408",
+  "blocks": [
+    {
+      "id": "library/104171-rmi-1408/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In [5], Lie algebras g over a field F that admit a Z=2-grading such that the even part is\nthe direct sum of sl2.F/ and another ideal d, and its odd part is, as a module for the even\npart, a tensor product of the two-dimensional natural module for sl2.F/ and a module T\nfor d, were considered. Thus, we have\n(1.1)\ng D .sl2.F/ ˚ d/ ˚ .F2 ˝ T /:\nIn this case, T becomes a so-called symplectic triple system, and the invariance of the\nLie bracket under the action of sl2.F/ forces the bracket of odd elements to present the\nfollowing form:\nŒu ˝ x; v ˝ y D .x j y/\nu;v C hu j vidx;y\nfor all u; v 2 F2 and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Rev. Mat. Iberoam. 40 (2024), no. 1, 129–152\nDOI 10.4171/RMI/1408\n© 2023 Real Sociedad Matemática Española\nPublished by EMS Press and licensed under a CC BY 4.0 license\nFrom octonions to composition superalgebras\nvia tensor categories\nAlberto Daza-García, Alberto Elduque and Umut Sayin\nAbstract. The nontrivial unital composition superalgebras, of dimension 3 and 6,\nwhich exist only in characteristic 3, are obtained from the split Cayley algebra and\nits order 3 automorphisms, by means of the process of semisimplification of the sym-\nmetric tensor category of representations of the cyclic group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/cor-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "cor-sec-001-02.md",
+      "narrative": null,
+      "content": "Let .A;\u0016/ be an algebra in Rep C3, with \u0016.x ˝ y/ D xy for all x;y 2 A. Pick a splitting as in (2.1). Then the algebra .A; Œ\u0016/ in Ver3 is isomorphic to the algebra .A0;Œ\u00160/, where A0 D A0 ˚ A1 and \u00160 2 HomRep C3.A0 ˝ A0;A0/ is given by the formula \u00160.x ˝ y/ D x \u0001 y WD ´ projA0xy for x; y 2 A0 or x; y 2 A1, projA1xy for x 2 A0; y 2 A1, or x 2 A1; y 2 A0. (The projections are relative to the splitting A D A0 ˚ A1 ˚ A2.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/cor-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "cor-sec-001-05.md",
+      "narrative": null,
+      "content": "Let .A;\u0016/ be an algebra in Rep C3, with \u0016.x ˝ y/ D xy for all x;y. Pick a splitting A D A0 ˚ A1 ˚ A2 as in (2.1), and a refinement A D AN0 ˚ AN1 ˚ ı.AN1/ ˚ A2 as in (2.9). Define a multiplication in A D AN0 ˚ AN1 by means of Recipe 2.7. Then the algebras .A; Œ\u0016/ and .F.A/; F.m/ ı JA;A/ in Ver3 are isomorphic. In other words, .A;m/ is the superalgebra that corresponds to the ‘semisimplification’ of .A; \u0016/. A. Daza-García, A. Elduque and U. Sayin",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Given objects A, B and C in Rep C3 with the above decompositions, let \u0016W A ˝ B ! C be a homomorphism in Rep C3. Then the inclusion maps A0 ,! A, B0 ,! B and C0 ,! C, induce isomorphisms in Ver3, and the diagram A0 ˝ B0 C0 A ˝ B C Œ\u00160 Œ\u0016 is commutative, where \u00160 2 HomRep C3.A0 ˝ B0; C0/ is given by the formula \u00160.x ˝ y/ WD ´ projC0\u0016.x ˝ y/ for x 2 A0; y 2 B0 or x 2 A1; y 2 B1, projC1\u0016.x ˝ y/ for x 2 A0; y 2 B1, or x 2 A1; y 2 B0. (The projections are relative to the splitting C D C0 ˚ C1 ˚ C2.) From octonions to composition superalgebras via tensor categories In particular, if .A; \u0016/ is an al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From algebras to superalgebras",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-2-from-algebras-to-superalgebras.md",
+      "narrative": null,
+      "content": "This section will review, in a way suitable for our purposes, known results on the cate-\ngories Rep C3, Ver3, and sVec. For details, the reader may consult [12, 13, 17] and refer-\nences therein.\nThroughout this section, the characteristic of the ground field F will always be 3.\n2.1. Semisimplification of Rep C3\nThe category Rep C3, whose objects are the finite-dimensional representations of the finite\ngroup C3 over F or, equivalently, of the corresponding constant group scheme, and whose\nmorphisms are the equivariant homomorphisms, is a symmetric tensor category, with the\nusual tensor product",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "Let \u0016W A ˝ B ! C be a homomorphism in Rep C3 as before. On each of A, B and C, let the endomorphism ı in Rep C3 be defined by ı.x/ D \u001b.x/ \u0000 x. Let \u00160W A0 ˝ B0 ! C0 be defined as in Lemma 2.2. Then, for any x 2 A1 and y 2 B1, the following equation holds: (2.8) \u00160.x ˝ ı.y// D \u0000\u00160.ı.x/ ˝ y/ D 1 2 .\u00160.x ˝ ı.y// \u0000 \u00160.ı.x/ ˝ y//: Indeed, write \u00160.x ˝ y/ D x \u0001 y. Let c D x \u0001 ı.y/, which belongs to C0. Then we get c D \u001b.c/ D \u001b.x/ \u0001 \u001b.ı.y// D .x C ı.x// \u0001 ı.y/ D c C ı.x/ \u0001 ı.y/; so that ı.x/ \u0001 ı.y/ D 0 holds. Now write d D x \u0001 y 2 A0. We get d D \u001b.d/ D \u001b.x/ \u0001 \u001b.y/ D .x C ı.x// \u0001 .y C ı.y// D d C x \u0001 ı",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/thm-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "thm-sec-001-04.md",
+      "narrative": null,
+      "content": "Let \u0016WA ˝ B ! C be a homomorphism in Rep C3. Pick splittings of A, B, and C as in (2.1), and refinements as in (2.9). Define a homomorphism mW A ˝ B ! C in sVec by means of Recipe 2.5. Then, with \u0013A, \u0013B and \u0013C as in (2.10), the diagram (2.7) is commutative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let .A; \u0016; n/ be a composition algebra endowed with an automorphism \u001b with \u001b3 D id. Let A D A0 ˚ A1 ˚ A2 be a splitting as in (2.1). Then, with ı D \u001b \u0000 id, the following conditions hold: (1) n.ker ı; ı.A// D 0, (2) n.ı.A1/; ı.A// D 0, (3) n.ı.x/; y/ C n.x; ı.y// D 0 for all x 2 A1 and y 2 A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let .A; \u0016; n/ be a composition algebra in Rep C3. Then the composition algebra .A; Œ\u0016; Œn/ in Ver3 is isomorphic to the composition algebra .A0; Œ\u00160; Œn0/, where A0 D A0 ˚ A1, \u00160 2 HomRep C3.A0 ˝ A0; A0/ as in Corollary 2.3 and n0 is given by the formula n0.x ˝ y/ WD ´ n.x ˝ y/ for x; y 2 A0 or x; y 2 A1, for x 2 A0; y 2 A1, or x 2 A1; y 2 A0. Recipe 2.5 with A D B and C D F gives the following. Recipe 3.3. Let .A; \u0016; n/ be a composition algebra in Rep C3. Take AN0 D A0 and AN1 as in (2.9), and define a bilinear map n on A D AN0 ˚ AN1 (or equivalently, a linear map A ˝ A ! F/ as follows: n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From octonions to composition superalgebras",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+      "narrative": null,
+      "content": "3. From octonions to composition superalgebras\nThe notion of composition algebra on a symmetric tensor category over a field of charac-\nteristic not 2 will be considered here. The order 3 automorphisms of the Cayley algebras,\ni.e., of the eight-dimensional unital composition algebras, were determined in [7]. In par-\nticular, any such automorphism on a Cayley algebra over a field of characteristic 3 allows\nus to view the Cayley algebra as an algebra in Rep C3, and hence to obtain, through the\nsemisimplification functor in (2.2), an algebra in Ver3 and thus, through the equivalence F\nin (2.4), a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "Let .A; \u0016; n/ be a composition algebra in Rep C3, with \u0016.x ˝ y/ D xy for all x; y. Pick a splitting A D A0 ˚ A1 ˚ A2 as in (2.1), and a refinement A D AN0 ˚ AN1 ˚ ı.AN1/ ˚ A2 as in (2.9). Define a multiplication m in A D AN0 ˚ AN1 by means of Recipe 2.7, and a norm n as in Recipe 3.3. Then the composition algebras .A; Œ\u0016; Œn/ and .F.A/; JA;A ı F.m/; JA;A ı F.n// in Ver3 are isomorphic. In other words, .A; m; n/ is the composition superalgebra that corresponds to the ‘semisimplification’ of .A; \u0016; n/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 6.3 in [7]",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Let .C; \u0016; n/ be a Cayley algebra over a field F of characteristic 3, and let \u001b be an order 3 automorphism of .C; \u0016; n/. Then .C; \u0016; n/ is the split Cayley algebra, and one of the following conditions holds: (1) .\u001b \u0000 id/2 D 0, and there exists a canonical basis of C such that \u001b.ui/ D ui; i D 1; 2; \u001b.u3/ D u3 C u2: (2) .\u001b \u0000 id/2 ¤ 0 and there is a quadratic étale subalgebra K of C fixed elementwise by \u001b. If F is algebraically closed, then there is a canonical basis of C such that \u001b.ui/ D uiC1 (indices modulo 3/. (3) There is a canonical basis such that \u001b.ui/ D ui; i D 1; 2; \u001b.u3/ D u3 C v3 \u0000 .e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let V be an object in Rep C3. • The associative superalgebras EndF.Vss/ and .EndF.V//ss are isomorphic. • Let bWV ˝ V ! F be a morphism in Rep C3 such that the bilinear form (denoted by the same symbol) given by b.x;y/ WD b.x ˝ y/ is symmetric and nondegenerate. Then the bilinear form corresponding to the morphism bssW Vss ˝ Vss ! F in sVec is super- symmetric and nondegenerate, and the orthosymplectic Lie algebra osp.Vss; bss/ is isomorphic to the semisimplification so.V; b/ss.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "For any algebra .A; \u0016/ in Rep C3, there is a natural homomorphism Der.A; \u0016/ss ! Der.Ass; \u0016ss/ from the semisimplification of the Lie algebra of deriva- tions of .A; \u0016/ into the Lie superalgebra of derivations of the superalgebra .Ass; \u0016ss/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplification: skew transformations, derivations",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-4-semisimplification-skew-transformations-deriva.md",
+      "narrative": null,
+      "content": "4. Semisimplification: skew transformations, derivations\nThis section will show some features of the semisimplification process. The Lie algebra\nof derivations of an algebra .A; \u0016/ in Rep C3 is also an algebra in Rep C3 in a natural\nway, but its semisimplification may fail to be the Lie superalgebra of derivations of the\nsemisimplification of .A; \u0016/. However, the semisimplification of the Lie algebra of the\nskew-symmetric transformations, relative to the norm, of a composition algebra in Rep C3\nis isomorphic to the orthosymplectic Lie superalgebra of skew-transformations (in the\nsuper setting)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The extended Freudenthal magic square",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-5-the-extended-freudenthal-magic-square.md",
+      "narrative": null,
+      "content": "Assume for a while that the characteristic of the ground field F is just different from 2.\nDifferent authors [1,16,19] have considered several symmetric constructions of Freu-\ndenthal’s magic square in terms of two unital composition algebras. We shall follow\nhere [4], but restricted, for simplicity, to the use of the so-called para-Hurwitz algebras.\nLet .C; \u0016; n/ and .C0; \u00160; n0/ be two unital composition algebras over a field F of char-\nacteristic not 2. Denote in both cases the multiplication by juxtaposition, and consider the\nnew multiplications N\u0016 given by N\u0016.x; y/ D x \u000f y WD x y, where x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-rmi-1408/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] Barton, C. H. and Sudbery, A.: Magic squares and matrix models of Lie algebras. Adv. Math.\n180 (2003), no. 2, 596–647.\n[2] Bouarroudj, S., Grozman, P. and Leites, D.: Classification of finite dimensional modular\nLie superalgebras with indecomposable Cartan matrix. SIGMA Symmetry Integrability Geom.\nMethods Appl. 5 (2009), article no. 060, 63 pp.\n[3] Cunha, I. and Elduque, A.: An extended Freudenthal magic square in characteristic 3. J. Alge-\nbra 317 (2007), no. 2, 471–509.\n[4] Elduque, A.: The magic square and symmetric compositions. Rev. Mat. Iberoamericana 20\n(2004), no. 2, 475–491.\n[5]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

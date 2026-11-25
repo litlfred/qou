@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1904.13129v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
+      "dcterms:creator": [
+        "Vorderobermeier, Nicole"
+      ],
+      "dcterms:issued": "D:20211110",
+      "dcterms:identifier": "https://arxiv.org/abs/1904.13129",
+      "dcterms:abstract": "We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of Eα,1 subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is based on Cauchy’s method of majorants and a decomposition of the gradient that was adapted from the Möbius energy case E2,1 in [BV19].",
+      "dcterms:source": "library/arxiv-1904.13129v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1904.13129v1"
+    }
+  ]
+}

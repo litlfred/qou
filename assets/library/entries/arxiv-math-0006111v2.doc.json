@@ -1,0 +1,713 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0006111v2",
+  "title": "Approximate factorization and concentration for characters of symmetric groups",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "approximate factorization",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviour",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "pastur-marcenko",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        },
+        {
+          "term": "occuring",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0006111v2 [math.RT] 16 Jun 2000 APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane Abstract. We prove a factorization-concentration result for characters of symmet- ric groups. This is then applied to the asymptotic behaviour of the decomposition of the tensor representations. There are connections with the Pastur-Marcenko distri- bution of random matrix theory,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "notations",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        },
+        {
+          "term": "measures",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": false
+        },
+        {
+          "term": "continuous",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": false
+        },
+        {
+          "term": "free",
+          "heading": false
+        }
+      ],
+      "extract": "2 PHILIPPE BIANE in the theory of free probability, where it appears under the name of “free Poisson distribution”. We shall also consider more general measures on Young diagrams coming from tensor states on B(H)⊗q. By tuning the state with q we will get limit diagrams which are related to freely inﬁnitely divisible measures. This paper is organized as follows. In Section 1 we settle notations, recall results from",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "free cumulants",
+          "heading": false
+        },
+        {
+          "term": "deﬁne probability",
+          "heading": false
+        },
+        {
+          "term": "unitary representation",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        }
+      ],
+      "extract": "APPROXIMATE FACTORIZATION AND CONCENTRATION 3 continuous diagram. We shall denote them by mn(ω) = Z R xn mω(dx) The measure corresponding to a diagram in CY has bounded support, it is centered (i.e. m1 = 0), and its second moment is equal to half the area of the set {(u, v) ∈R2| |u| ≤v ≤ω(u)} Besides moments of measures we shall also consider their free cumulants. Recall ([B], [VDN]), that the free cumulants are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "disjoint supports",
+          "heading": false
+        },
+        {
+          "term": "exists constant",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        },
+        {
+          "term": "integer",
+          "heading": false
+        },
+        {
+          "term": "supported",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        }
+      ],
+      "extract": "4 PHILIPPE BIANE of B(H) ⊗Mq+1(C). By [B], Proposition 3.3, the measure mψ is the distribution of the self adjoint element Γ(ψ) := Γ(rψ) in the non-commutative probability space (B(Vψ) ⊗Mq+1(C), τψ ⊗⟨.⟩) where ⟨.⟩denotes the normalized trace on Mq+1(C). In particular, one has mn(ψ) = τψ(⟨Γ(ψ)n⟩) for all n ≥1 1.3 Approximate factorization. We now give a precise deﬁnition of the approx- imate factorization property",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-004",
+        "library/arxiv-math-0006111v2/blocks/thm-page-004-01",
+        "library/arxiv-math-0006111v2/blocks/cor-page-004-02",
+        "library/arxiv-math-0006111v2/blocks/thm-page-004-03"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i1i",
+          "heading": false
+        },
+        {
+          "term": "in1i",
+          "heading": false
+        },
+        {
+          "term": "jn2j",
+          "heading": false
+        },
+        {
+          "term": "j1j",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        }
+      ],
+      "extract": "APPROXIMATE FACTORIZATION AND CONCENTRATION 5 2. Proof of Theorems 1 and 2 We shall rely heavily on results of [B], especially Section 4. Let ψ be a normalized positive deﬁnite function, then mn(ψ) = P λ∈Yq pλmn(λ) is the mean value for Πψ of the random variable λ 7→mn(λ) on Yq. The proof of Theorem 1 consists in giving an estimate for the variance of this random variable and using Markov’s inequality. The key",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "in1i",
+          "heading": false
+        },
+        {
+          "term": "i1i",
+          "heading": false
+        },
+        {
+          "term": "jn2j",
+          "heading": false
+        },
+        {
+          "term": "j1j",
+          "heading": false
+        },
+        {
+          "term": "comp",
+          "heading": false
+        },
+        {
+          "term": "cqn",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        }
+      ],
+      "extract": "6 PHILIPPE BIANE depends only on the set J of places where ik or jk is 0, and the partition of the set ({1, 2, . . . , n1} ∪{1′, 2′, . . . , n′ 2}) \\ J given by the equivalence relation u ∼v if iu = iv, u ∼v′ if iu = jv′, or u′ ∼v′ if ju′ = jv′. Given such a set J ⊂ {1, 2, . . . , n1} ∪{1′, 2′, . . . , n′ 2} and the partition π, the number of corresponding terms in the sum is equal to (q)comp(π) where (q)r = q(q −1)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "comp",
+          "heading": false
+        },
+        {
+          "term": "cql",
+          "heading": false
+        },
+        {
+          "term": "moment-cumulant",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": false
+        }
+      ],
+      "extract": "APPROXIMATE FACTORIZATION AND CONCENTRATION 7 making an error bounded by Cδql/2. On the other hand the right hand side of (2.1.5) can be replaced by (2.1.8) X (π1,π2) 1 (q + 1)2 (q)comp(π1)(q)comp(π2)ψ(π1)ψ(π2) The diﬀerence between (2.1.7) and (2.1.8) is X (π1,π2) 1 (q + 1)2 ((q)comp(π) −(q)comp(π1)(q)comp(π2))ψ(π1)ψ(π2) One has comp(π1 ∪π2) = comp(π1) + comp(π2) thus |(q)comp(π1∪π2) −(q)comp(π1)(q)comp(π2)|",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-007",
+        "library/arxiv-math-0006111v2/blocks/thm-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcsin",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "arccos",
+          "heading": false
+        },
+        {
+          "term": "isotypic",
+          "heading": false
+        }
+      ],
+      "extract": "8 PHILIPPE BIANE 3. Asymptotics of the tensor representation 3.1 The case of the canonical trace. In this section we consider the action of Sq on (CN)⊗q by permutation of the factors in the tensor product. This representation plays a key role in the treatment by Schur and Weyl of the representation theory of both symmetric and general linear groups [W]. We consider the decomposition of this representation into",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cumulant sequence",
+          "heading": false
+        },
+        {
+          "term": "pastur-marcenko",
+          "heading": false
+        },
+        {
+          "term": "supq",
+          "heading": false
+        },
+        {
+          "term": "towards",
+          "heading": false
+        },
+        {
+          "term": "vdn",
+          "heading": false
+        }
+      ],
+      "extract": "APPROXIMATE FACTORIZATION AND CONCENTRATION 9 The diagrams are depicted below for various values of c. −2 −1 0 1 2 3 4 0 0.5 1 1.5 2 2.5 3 3.5 4 c=0 c=1/2 c=1 c=2 The limit result for the Πq is the following. Theorem 3. As q →∞and √q/N →c ∈[0, +∞[, the measure Πq converges uniformly, in probability, towards the Dirac measure at the continuous diagram Pc. Proof. The character of the tensor representation can be",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-009",
+        "library/arxiv-math-0006111v2/blocks/thm-page-009-01"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh measure",
+          "heading": false
+        },
+        {
+          "term": "lenghty",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        },
+        {
+          "term": "philippe",
+          "heading": false
+        }
+      ],
+      "extract": "10 PHILIPPE BIANE is R(z) = ∞ X n=1 zncn−1 = z 1 −cz thus K(z) = 1 z + R(z) = 1 z + z 1 −cz Inverting the function K gives the Cauchy transform G(z) = z + c − p (z −c)2 −4 2(1 + cz) = 2 z + c + p (z −c)2 −4 where the branch of the square root on C \\ [0, +∞[ is chosen to have positive imaginary part. We now compute the Rayleigh measure τ according to the formula ∂ ∂z log G(z) = − Z R τ(du) z −u One has −∂ ∂z log G(z)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cumulants",
+          "heading": false
+        },
+        {
+          "term": "measure",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        },
+        {
+          "term": "explicit expression",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "adv",
+          "heading": false
+        },
+        {
+          "term": "amer",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": false
+        }
+      ],
+      "extract": "APPROXIMATE FACTORIZATION AND CONCENTRATION 11 In this last section we shall consider the representation of Sq on H⊗q, given by (i i + 1)(v1 ⊗. . . vi ⊗vi+1 . . . ⊗vq) = (−1)ε(vi)ε(vi+1)v1 ⊗. . . vi+1 ⊗vi . . . ⊗vq where vk are graded vectors, with graduation ε(vk) ∈{0, 1}. The positive deﬁnite function on Sq determined by this representation and the state τ ⊗q is given by (3.2.1) τ ⊗q(ρ) = Y c|ρ p|c|+1 where the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-011",
+        "library/arxiv-math-0006111v2/blocks/rem-page-011-01"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "philippe",
+          "heading": false
+        },
+        {
+          "term": "biane",
+          "heading": false
+        },
+        {
+          "term": "marˇcenko",
+          "heading": false
+        },
+        {
+          "term": "dma",
+          "heading": false
+        }
+      ],
+      "extract": "12 PHILIPPE BIANE [MP] V.A. Marˇcenko and L. A. Pastur, Distribution of eigenvalues in certain sets of random matrices, Mat. Sb. (N.S.) 72 (114) (1967), 507–536. [S] R. Speicher, Combinatorial theory of the free product with amalgamation and operator- valued free probability theory, Mem. A.M.S., vol. 627, Amer. Math. Soc., Providence, RI, 1998. [VK] A. M. Vershik and S. V. Kerov, Asymptotics of the Plancherel",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0006111v2/blocks/prose-page-012"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "probability measure",
+      "heading": false
+    },
+    {
+      "term": "philippe biane",
+      "heading": false
+    },
+    {
+      "term": "approximate factorization",
+      "heading": false
+    },
+    {
+      "term": "measure corresponding",
+      "heading": false
+    },
+    {
+      "term": "young diagrams",
+      "heading": false
+    },
+    {
+      "term": "measure associated",
+      "heading": false
+    },
+    {
+      "term": "free probability",
+      "heading": false
+    },
+    {
+      "term": "plancherel measure",
+      "heading": false
+    },
+    {
+      "term": "rayleigh measure",
+      "heading": false
+    },
+    {
+      "term": "free cumulants",
+      "heading": false
+    },
+    {
+      "term": "factorization property",
+      "heading": false
+    },
+    {
+      "term": "deﬁne probability",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 12,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0006111v2"
+  }
+}

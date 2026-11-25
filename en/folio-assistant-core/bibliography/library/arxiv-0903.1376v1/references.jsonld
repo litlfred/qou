@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0903.1376v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Particle Topology, Braids and Braided Belts",
+      "dcterms:creator": [
+        "Bilson-Thompson, Sundance"
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/0903.1376",
+      "dcterms:abstract": "Recent work [1, 2] suggests that topological features of certain quantum gravity theories can be interpreted as particles, matching the known fermions and bosons of the ﬁrst generation in the Standard Model. This is achieved by identifying topological structures with elements of the framed Artin braid group on three strands, and demonstrating a correspondence between the invariants used to characterise these braids (a braid is a set of non-intersecting curves, that connect one set of N points with another set of N points), and quantities like electric charge, colour charge, and so on [1, 3]. In this paper we show how to manipulate a modiﬁed form of framed braids to yield an invariant standard form for sets of isomorphic braids, characterised by a vector of real numbers. This will serve as a basis for more complete discussions of quantum numbers in future work. arXiv:0903.1376v1 [math.AT] 7 Mar 2009",
+      "dcterms:source": "library/arxiv-0903.1376v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0903.1376v1"
+    }
+  ]
+}

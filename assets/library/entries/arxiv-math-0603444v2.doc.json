@@ -1,0 +1,418 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0603444v2",
+  "title": "arxiv-math-0603444v2",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Formulation of the result",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-formulation-of-the-result"
+    },
+    {
+      "level": 1,
+      "title": "Relation to the logarithmic comparison theorem",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-relation-to-the-logarithmic-comparison-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the theorem",
+      "number": "3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof-of-the-theorem"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isolated hypersurface",
+          "heading": false
+        },
+        {
+          "term": "quasihomogeneity",
+          "heading": false
+        },
+        {
+          "term": "mathias",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0603444v2 [math.AG] 31 Oct 2006 QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY MICHEL GRANGER AND MATHIAS SCHULZE Abstract. We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by the ﬁrst diﬀerential of the logarithmic diﬀerential complex in the top local cohomology supported in the singular point.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0603444v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-formulation-of-the-result",
+      "number": "1",
+      "title": "Formulation of the result",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega bullet",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm der",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathbb",
+          "heading": false
+        },
+        {
+          "term": "partial derivatives",
+          "heading": false
+        },
+        {
+          "term": "differential forms",
+          "heading": false
+        },
+        {
+          "term": "quasihomogeneous",
+          "heading": false
+        },
+        {
+          "term": "subseteq",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the germ of an isolated hypersurface singularity $D\\subseteq(\\mathbb{C}^n,0)$. Let $\\mathcal{O}=\\mathcal{O}_{\\mathbb{C}^n,0}$ be the ring of germs of holomorphic functions on $\\mathbb{C}^n$ at the origin with maximal ideal $\\mathfrak{m}$ and $f\\in\\mathfrak{m}^2$ a reduced defining equation of $D$. For notational simplicity, we shall write $\\mathbb{C}^n$ instead of $(\\mathbb{C}^n,0)$. In terms of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-relation-to-the-logarithmic-comparison-theorem",
+      "number": "2",
+      "title": "Relation to the logarithmic comparison theorem",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lct holds",
+          "heading": false
+        },
+        {
+          "term": "lct implies",
+          "heading": false
+        },
+        {
+          "term": "isolated singularities",
+          "heading": false
+        },
+        {
+          "term": "logarithmic comparison",
+          "heading": true
+        },
+        {
+          "term": "omega bullet",
+          "heading": false
+        },
+        {
+          "term": "mathbb smallsetminus",
+          "heading": false
+        },
+        {
+          "term": "comparison theorem",
+          "heading": true
+        },
+        {
+          "term": "euler homogeneity",
+          "heading": false
+        }
+      ],
+      "extract": "The map $d_1$ is well-known in the context of the logarithmic comparison theorem: By Grothendieck's comparison theorem [@Gro66], the cohomology of the complement $U=\\mathbb{C}^n\\smallsetminus D$ of a germ of a reduced divisor $D\\subseteq\\mathbb{C}^n$ is computed by the complex $\\Omega^\\bullet(\\star D)$. If the inclusion $\\Omega^\\bullet(\\log D)\\subseteq\\Omega^\\bullet(\\star D)$ is a quasi--isomorphism then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof-of-the-theorem",
+      "number": "3",
+      "title": "Proof of the theorem",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "rangle mathop",
+          "heading": false
+        },
+        {
+          "term": "widehat mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm der",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "mathrm res",
+          "heading": false
+        },
+        {
+          "term": "otimes omega",
+          "heading": false
+        }
+      ],
+      "extract": "We denote the $n$th local cohomology module of $\\mathcal{O}$ supported at the origin by $$H:=H_0^n(\\mathcal{O}) =H^{n-1}(\\mathbb{C}^n\\smallsetminus\\{0\\},\\mathcal{O}) =\\frac{\\mathcal{O}[\\frac{1}{x_1\\cdots x_n}]}{\\sum_{i=1}^n\\mathcal{O}[\\frac{1}{x_1\\cdots\\widehat{x_i}\\cdots x_n}]}.$$ By right exactness of the tensor product $\\otimes:=\\otimes_\\mathcal{O}$, this implies $$H_0^n(\\Omega^1(\\log",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "david mond",
+          "heading": false
+        },
+        {
+          "term": "logarithmic diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "logarithmic vector",
+          "heading": false
+        },
+        {
+          "term": "enez",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential forms",
+          "heading": false
+        },
+        {
+          "term": "luis",
+          "heading": false
+        },
+        {
+          "term": "sai",
+          "heading": false
+        },
+        {
+          "term": "francisco",
+          "heading": false
+        }
+      ],
+      "extract": "[Arn72] V. I. Arnol′d, Normal forms of functions near degenerate critical points, the Weyl groups Ak, Dk, Ek and Lagrangian singularities, Funkcional. Anal. i Priloˇzen. 6 (1972), no. 4, 3–25. MR MR0356124 (50 #8595) [CJNMM96] Francisco J. Castro-Jim´enez, Luis Narv´aez-Macarro, and David Mond, Cohomol- ogy of the complement of a free divisor, Trans. Amer. Math. Soc. 348 (1996), no. 8, 3037–3049. MR MR1363009",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "omega bullet",
+      "heading": false
+    },
+    {
+      "term": "mathrm der",
+      "heading": false
+    },
+    {
+      "term": "rangle mathop",
+      "heading": false
+    },
+    {
+      "term": "subseteq omega",
+      "heading": false
+    },
+    {
+      "term": "xymatrix mathop",
+      "heading": false
+    },
+    {
+      "term": "isolated singularities",
+      "heading": false
+    },
+    {
+      "term": "widehat mathop",
+      "heading": false
+    },
+    {
+      "term": "logarithmic cohomology",
+      "heading": false
+    },
+    {
+      "term": "mathcal mathbb",
+      "heading": false
+    },
+    {
+      "term": "otimes omega",
+      "heading": false
+    },
+    {
+      "term": "mathrm hom",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0603444v2"
+  }
+}

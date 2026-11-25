@@ -1,0 +1,3197 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "pjm-v161-n1-p02-p",
+  "title": "Studying links via closed braids. III. Classifying links which are closed 3-braids",
+  "variant": "pdf",
+  "pages": 93,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+      "number": null,
+      "page": 2,
+      "pageLabel": "25",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-studying-links-via-closed-braids-iii-classifying"
+    },
+    {
+      "level": 3,
+      "title": "i f p > 4 , (σισ2)",
+      "number": "2",
+      "page": 82,
+      "pageLabel": "105",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-054-2-i-f-p-4-σισ2"
+    },
+    {
+      "level": 2,
+      "title": "PACIFIC JOURNAL OF MATHEMATICS",
+      "number": null,
+      "page": 92,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-055-pacific-journal-of-mathematics"
+    },
+    {
+      "level": 3,
+      "title": "EDITORS",
+      "number": null,
+      "page": 92,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-056-editors"
+    },
+    {
+      "level": 3,
+      "title": "SUPPORTING INSTITUTIONS",
+      "number": null,
+      "page": 92,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-057-supporting-institutions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "25",
+      "words": 37,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "journal",
+          "heading": false
+        },
+        {
+          "term": "pacific",
+          "heading": false
+        }
+      ],
+      "extract": "Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS JOAN BIRMAN AND WILLIAM W. MENASCO Volume 161 No. 1 November 1993 PACIFIC JOURNAL OF MATHEMATICS Vol. 161, No. 1, 1993",
+      "extractCut": false,
+      "blocks": [
+        "library/pjm-v161-n1-p02-p/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-studying-links-via-closed-braids-iii-classifying",
+      "number": null,
+      "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 22,
+      "labelStart": "25",
+      "labelEnd": "45",
+      "words": 7105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braids iii",
+          "heading": true
+        },
+        {
+          "term": "studying links",
+          "heading": true
+        },
+        {
+          "term": "closed braids",
+          "heading": true
+        },
+        {
+          "term": "bennequin surface",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "half-twisted bands",
+          "heading": false
+        },
+        {
+          "term": "shortest word",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        }
+      ],
+      "extract": "PACIFIC JOURNAL OF MATHEMATICS Vol. 161, No. 1, 1993 STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS JOAN S. BIRMAN AND WILLIAM W. MENASCO A complete solution is given to the classification problem for ori- ented links which are closed three-braids. The Classification Theo- rem asserts that, up to a finite list of exceptional cases, links which can be represented by closed 3-braids",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-it",
+      "number": null,
+      "title": "it",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 32,
+      "labelStart": "45",
+      "labelEnd": "55",
+      "words": 3343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliated region",
+          "heading": false
+        },
+        {
+          "term": "non-standard foliation",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "middle picture",
+          "heading": false
+        },
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        },
+        {
+          "term": "equivalence class",
+          "heading": false
+        },
+        {
+          "term": "fibers",
+          "heading": false
+        }
+      ],
+      "extract": "u K elementary 3-braids, viewed as they appear \"projected\" onto dT (dotted edges to be identified) Diagram on dT of a'^a? a^ (opposite sides of rectangle to be identified) FIGURE 3.8 In the pictures at the left in Figure 3.8 we have augmented the pic- tures in Figure 1.5 by adding the digons and shading the two sides of F. On the right in Figure 3.8 we show an example of a link diagram on <9T. The reader is advised",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-resp-b-page-32",
+      "number": null,
+      "title": "(resp. b^ (page 32)",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "isotope",
+          "heading": false
+        },
+        {
+          "term": "instant",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "reinterpreted",
+          "heading": false
+        },
+        {
+          "term": "name",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 55 3-ball B in M. Then we can use B to isotope d r to d. Similarly, we can isotope δ r to δ. After the change we tip the discs d and δ a little bit, to make the new digon transverse to the fibers of H'. The effect of the isotopy is to eliminate the given singularity of the foliation. See Figure 4.3. This reduces c$, keeping C\\, ... , C4 fixed. Since C is by hypothesis minimal,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-resp-b-page-33",
+      "number": null,
+      "title": "(resp. b^ (page 33)",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossing dots",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": true
+        },
+        {
+          "term": "split along",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "contain",
+          "heading": false
+        }
+      ],
+      "extract": "56 JOAN S. BIRMAN AND WILLIAM W. MENASCO FIGURE 4.4 dA — dA n L, the two crossing dots are on the same side of Δ split along a. Let T be the closure of the region of Δ\\α which does not contain the crossing dots. Then T must meet Hψ transversally, as in Figure 4.4, also the 2 (respectively 4) endpoint of a lies on the arc F2ψ (resp. F4<^) of F + n H^ which runs out to p\\ (resp. p'2). Now, dT c dA is in F, so F",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-resp-b-page-34",
+      "number": null,
+      "title": "(resp. b^ (page 34)",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 57 FIGURE 4.5 Proof. Let aγ and a2 be the leaves to be surgered. From Table 4.1 we see that each α, has type [22] or [24]. Let 7) , y = 1, 2, be the region of Δ - αy which does not contain the crossing dots. Then 7) is degenerately foliated, by Lemmas 4.2 and 4.3. Now <97) = α, U βj where βj is in <9Δ + for j = 1 and 2. There are two possibilities (depicted in Figure 4.5): (i) β\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-resp-b-page-35",
+      "number": null,
+      "title": "(resp. b^ (page 35)",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "58",
+      "labelEnd": "58",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding occurs",
+          "heading": false
+        },
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "foliated region",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": false
+        },
+        {
+          "term": "violates",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": false
+        },
+        {
+          "term": "begins",
+          "heading": false
+        }
+      ],
+      "extract": "58 JOAN S. BIRMAN AND WILLIAM W. MENASCO instant of degeneracy there must be a braiding of type b^ 1. Now, there is no obstruction to changing the ίibration a little bit so that the braiding occurs before the surgery. The effect of the braiding of type b^ 1 is to change the names of the leaves which are involved in the surgeries to 44 + rA —> 4r + 44 or 22 + rl -> 2r + 22. However, that violates Lemma 4.1. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-resp-b-page-36",
+      "number": null,
+      "title": "(resp. b^ (page 36)",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pierced twice",
+          "heading": false
+        },
+        {
+          "term": "unknotted",
+          "heading": false
+        },
+        {
+          "term": "sub-arcs",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III y 59 (c) picture in 3-space FIGURE 4.6 j = 1,2. The sub-arcs δ\\+ and 62+ are in <9Δ +, while <5i_ and £2_ are in dA~. Figure 4.6c puts the pictures in 4.6a and b together to give view in 3-space. The disc Δi, together with a triangular region in F, is a cone C\\ on αUjS with vertex W\\. The union of C\\ and D is then a 2-sphere S\\ which is pierced twice by L, at w\\ and at z. There",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-resp-b-page-37",
+      "number": null,
+      "title": "(resp. b^ (page 37)",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange leaf",
+          "heading": false
+        },
+        {
+          "term": "surgeries",
+          "heading": false
+        },
+        {
+          "term": "leaves",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "nine",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": false
+        }
+      ],
+      "extract": "60 JOAN S. BIRMAN AND WILLIAM W. MENASCO for j = 1 and 2, and since L = (Ln£Ί) U (LnE2) that's impossible. We assume the notation to have been chosen so that Li =LnB\\ is unknotted. This means that the triangular region of F with vertices z, y, W\\ is a disc. Let N be a neighborhood of Li in 3-space which includes Δi. Then we can modify FT, if necessary, by pushing the fibers up a little bit through N, to insure that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-resp-b-page-38",
+      "number": null,
+      "title": "(resp. b^ (page 38)",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "61",
+      "labelEnd": "61",
+      "words": 497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 61 45. However, since 11 has sign — and 22 has sign + + , while 41, 61 and 45 all have sign H— this contradicts Lemma 4.5. The surgery 24 + 55 —> 45 + 52 remains. The leaf 24 divides Δ into two regions, one of which contains the singularity of the given foliation. The other one must be degenerately foliated by Lemma 4.2. Moreover, there is a braiding of type b\\ 1 at the instant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-resp-b-page-39",
+      "number": null,
+      "title": "(resp. b^ (page 39)",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "62",
+      "labelEnd": "62",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-standard foliation",
+          "heading": false
+        },
+        {
+          "term": "parallel leaves",
+          "heading": false
+        },
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "disc",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        },
+        {
+          "term": "name",
+          "heading": false
+        }
+      ],
+      "extract": "62 JOAN S. BIRMAN AND WILLIAM W. MENASCO leaves of type 11 and 22 each divide Δ into two pieces, one of which contains the two crossing dots. By Lemma 4.3, the side which does not contain the dots is degenerately foliated. Two leaves of name 12 are produced by the surgery. Each divides Δ into two regions, one of which contains the singularity. By Lemma 4.6 the other must be degenerately foliated. But then, all of Δ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-resp-b-page-40",
+      "number": null,
+      "title": "(resp. b^ (page 40)",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "minimization",
+          "heading": false
+        },
+        {
+          "term": "undercrossing",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 63 (a)Picture on a fiber of after the singularity (b) Corresponding picture in aβi FIGURE 4.8 which are illustrated in Figure 4.8b must be part of the same digon. But then, this digon must be joined to itself by the undercrossing arc L|, so our digon is the only digon which joins the discs D, and D +i. Since the number of digons between D, and D / + 1 is equal to the number of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-resp-b-page-41",
+      "number": null,
+      "title": "(resp. b^ (page 41)",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "64",
+      "labelEnd": "64",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pierce points",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "cyclic word",
+          "heading": false
+        },
+        {
+          "term": "labels",
+          "heading": false
+        },
+        {
+          "term": "cycle",
+          "heading": false
+        },
+        {
+          "term": "non-standard",
+          "heading": false
+        },
+        {
+          "term": "segments",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        }
+      ],
+      "extract": "64 JOAN S. BIRMAN AND WILLIAM W. MENASCO PROPOSITION 5.1. The non-standard axis A! is inside the T com- ponent in the decomposition of S 3 split open along F u Ω . The proof will occupy most of the section. After it is completed we will establish a significant corollary. Proof of Proposition 5.1. We begin by describing a set of partial \"co- ordinates\" for the non-standard and standard axes. By Corollary 2.3 we know",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-resp-b-page-42",
+      "number": null,
+      "title": "(resp. b^ (page 42)",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "65",
+      "labelEnd": "65",
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "triangular region",
+          "heading": false
+        },
+        {
+          "term": "p'i",
+          "heading": false
+        },
+        {
+          "term": "pierce-point",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "disc",
+          "heading": false
+        },
+        {
+          "term": "bands",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 65 pierces F in set #3 its label will change from Bz to B / + 1. This shows immediately that the cycles 222, 133, 211, 233, 311, 123, 321 do not occur because they do not correspond to cycles of labels. Also, the cycle of labels is B1B2B3 if and only if the cycle of pierce-points is 333. This reduces things to the pierce-point sequences 111, 122 and 322. The subset #1 of F, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-resp-b-page-43",
+      "number": null,
+      "title": "(resp. b^ (page 43)",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "66",
+      "labelEnd": "66",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pierce-point",
+          "heading": false
+        },
+        {
+          "term": "ures",
+          "heading": false
+        },
+        {
+          "term": "punctures",
+          "heading": false
+        },
+        {
+          "term": "i'll",
+          "heading": false
+        },
+        {
+          "term": "ays",
+          "heading": false
+        }
+      ],
+      "extract": "66 JOAN S. BIRMAN AND WILLIAM W. MENASCO FIGURE 5.1 3 4 Positions of the p^'s, the ays and of 1,2,3,4,5,6 -m~ 3 cased) case(ii) case(iii) FIGURE 5.2 case(iv) case(v) occur are 1 Ί T , l ' Ί ' Ί \" , I'll, 1\"22 and 322. Notice that the axis A' necessarily passes from T to T if it punctures F in set #1', from B/ to B, if it punctures F in 1\". Thus our five pierce-point cycles correspond to the cycles of labels and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-resp-b-page-44",
+      "number": null,
+      "title": "(resp. b^ (page 44)",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "67",
+      "labelEnd": "67",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joins",
+          "heading": false
+        },
+        {
+          "term": "fuω",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "pierce-point",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "endpoint",
+          "heading": false
+        },
+        {
+          "term": "figure",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 67 picture in 3-space picture on djor dQr Choosing H 1* FIGURE 5.3 of F into subsets V, 1\" ,2 and 3 and the latter illustrates the induced decomposition of 9B, . Case (ϋ). Assume that case (ii) occurs. We begin by examining the geometry near the pierce-point p\\, which (unlike p[ and p'2) is in subset #1' of F. See Figure 5.3 (and set / = 3). The facts that: (1) L is transverse to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-resp-b-page-45",
+      "number": null,
+      "title": "(resp. b^ (page 45)",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibration",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "across",
+          "heading": false
+        }
+      ],
+      "extract": "68 JOAN S. BIRMAN AND WILLIAM W. MENASCO 3 4 The arcs μ23(Φ0) and μ5g(Φ0) viewed onHV (a) The arc μ23(Φ viewed on d (b) FIGURE 5.4 The disc δ (c) is in subset 2 of F + , cuts across the L/(fe) 's and various digons as it passes from F + to F~ , then across additional digons and possibly across Lz(fc) again in F~ , ending at the point 3, which is in subset 2 of F~ . From our earlier observations, we know that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-resp-b-page-46",
+      "number": null,
+      "title": "(resp. b^ (page 46)",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "69",
+      "labelEnd": "69",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "crossing-arc",
+          "heading": false
+        },
+        {
+          "term": "proceeds",
+          "heading": false
+        },
+        {
+          "term": "pierce-point",
+          "heading": false
+        },
+        {
+          "term": "crosses",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 69 Removing L-crossΐngs ! FIGURE 5.5 Removing [ 12],[ 11 ] and [24] arcs FIGURE 5.6 L. Thus, going to Figure 5.4(c) we conclude that the only possibility is that μ23(Φo) begins at 2 in F+, proceeds in set 2 to one of the adjacent digons, crosses that digon to subset 2 of F~ using a single digon crossing-arc of name 23, and then proceeds in subset 2 of F~ to 3. From Figure 5.4(c),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-resp-b-page-47",
+      "number": null,
+      "title": "(resp. b^ (page 47)",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "70",
+      "labelEnd": "70",
+      "words": 331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic fiber",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "h'φ",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "closed curves",
+          "heading": false
+        },
+        {
+          "term": "simple closed",
+          "heading": false
+        }
+      ],
+      "extract": "70 JOAN S. BIRMAN AND WILLIAM W. MENASCO FUΩ modified Removing simple closed curves FIGURE 5.7 LEMMA 5.4. Suppose that p\\ and p'i+ι are in subsets #2 and/or #3 of F Π <9Bj•. Let H^ be any generic fiber. Then {after a modification of H') we may assume that an arc in Ή!ώ Π <9B/ which joins pi to Pi+ι does not cross L. LEMMA 5.5. Let H^ be any generic fiber. Then we may assume that H'φ nΩ does not include any digon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-resp-b-page-48",
+      "number": null,
+      "title": "(resp. b^ (page 48)",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "71",
+      "labelEnd": "71",
+      "words": 294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "digon-crossing",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 71 FIGURE 5.8 Thus pushing a\\ across δ into T, reduces complexity. Therefore there are no digon-crossing arcs of name 23. The fact that p[, p f 2 and p'3 are in distinct components of subset 1\" of F shows that we may apply Lemma 5.3 three times to choose a fiber H^ such that H^ Π<9B/ is a union of arcs {//2/-i,2/(0o), / = 1 ? 2 ? 3} which join 2i — 1 to 2i, crossing L once and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-resp-b-page-49",
+      "number": null,
+      "title": "(resp. b^ (page 49)",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "72",
+      "labelEnd": "72",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon-crossing arcs",
+          "heading": false
+        },
+        {
+          "term": "simple arc",
+          "heading": false
+        },
+        {
+          "term": "joins",
+          "heading": false
+        },
+        {
+          "term": "isotope",
+          "heading": false
+        },
+        {
+          "term": "meets",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        }
+      ],
+      "extract": "72 JOAN S. BIRMAN AND WILLIAM W. MENASCO 21-1 FIGURE 5.9 in distinct components of subset 1\". Thus case (iii) does not occur. Case (iv). Assume that case (iv) occurs. By Lemma 5.4 applied 3 times, we may choose a fiber H^ of H' which meets <9B/ in a simple arc μ23(Φo) which joins 2 to 3 without crossing L, meets <9B;+i in a simple arc μtsiΦo) which joins 4 to 5 without crossing L, and meets dΎ in a simple arc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-resp-b-page-50",
+      "number": null,
+      "title": "(resp. b^ (page 50)",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "73",
+      "labelEnd": "73",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disc fiber",
+          "heading": false
+        },
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": true
+        },
+        {
+          "term": "cannot occur",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 73 Pi FIGURE 5.10 crosses a digon, the digon crossing-arc will have a name pq e {13, 14, 24 or 23}. However, the names 13 and 24 cannot occur by Lemma 5.5, and the name 23 cannot occur by Lemma 5.6, so pq can only be 14. Thus, we may assume that we have a disc fiber H^ for which H^ Π (Fn Ω) is as illustrated in Figure 5.11 (a) (next page). That is, μu(Φo) begins at 1 c F~,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-resp-b-page-51",
+      "number": null,
+      "title": "(resp. b^ (page 51)",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "74",
+      "labelEnd": "74",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliating",
+          "heading": false
+        },
+        {
+          "term": "h'φ",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        }
+      ],
+      "extract": "74 JOAN S. BIRMAN AND WILLIAM W. MENASCO 3 4 FIGURE 5.11 of name 22 or 33 will be introduced in pairs (two 22's or two 33's), as in Figure 5.1 l(f), because μu(Φ) will meet a type 3 region on both sides. Since the surgeries pp + pp —• pp + pp cannot occur, the only possibility for foliating the intermediate digons is with a surgery 22 + 33 —• 23 + 32. However, notice that the regions between the two 22's in H'φ has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-resp-b-page-52",
+      "number": null,
+      "title": "(resp. b^ (page 52)",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "75",
+      "labelEnd": "75",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inessential scc",
+          "heading": false
+        },
+        {
+          "term": "special scc",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "exists parallel",
+          "heading": false
+        },
+        {
+          "term": "non-empty intersection",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": true
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "digon",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS HI 75 the situation of subcase v.1, with the same contradiction to minimum complexity as before. Thus case (v) does not occur. We are reduced to case (i) of Figure 5.2. The cycle of labels is TTT and the cycle of pierce-points is 1/1’1’. The integer cy in the complexity 5-tuple is 0. The proof of Proposition 5.1 is complete. O A simple closed curve (scc) ¢ = ¢(¢o) in the foliation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-resp-b-page-53",
+      "number": null,
+      "title": "(resp. b^ (page 53)",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "76",
+      "labelEnd": "76",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        },
+        {
+          "term": "link types",
+          "heading": false
+        },
+        {
+          "term": "simple closed",
+          "heading": false
+        },
+        {
+          "term": "classification theorem",
+          "heading": false
+        },
+        {
+          "term": "fiber",
+          "heading": false
+        }
+      ],
+      "extract": "76 JOAN S. BIRMAN AND WILLIAM W. MENASCO digon FIGURE 5.12 to eliminate the sec. Thus without loss of generality we may assume that every simple closed curve in the foliation of 9T and every special simple closed curve in the foliation of <9B; is essential. D COROLLARY 5.8. We may assume that there is a fiber H^ with the property: H', ΠdT is a union of three arcs μn, μ$4, and μ^y where μn-i,2i joins the pierce",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-resp-b-page-54",
+      "number": null,
+      "title": "(resp. b^ (page 54)",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shortest words",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "anγ",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 77 the following exceptions: (i) W is conjugate to a\\a,2 and X to a\\a^ x or ( ^ I ^ ) \" 1 and L represents the unknot, which has braid index 1. (ii) W is conjugate to a\\ai and X to ctfa^ 1, where \\p\\ Φ 1, and L represents a type (2, p) torus link, which has braid index 2. (iii) W is conjugate to (a^(anγ\\am) r or (a^(an)<*(am) r(an) ±ι, where {i9 n, m} — {1,2,3} and X is conjugate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-resp-b-page-55",
+      "number": null,
+      "title": "(resp. b^ (page 55)",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-standard foliation",
+          "heading": false
+        },
+        {
+          "term": "letter length",
+          "heading": false
+        },
+        {
+          "term": "link type",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        }
+      ],
+      "extract": "78 JOAN S. BIRMAN AND WILLIAM W. MENASCO and also they use all three generators. By Proposition 5.1 we know that the non-standard axis A' is in the interior of T. By Proposition 3.2 we know that there is a natural link diagram for L on ΘΎ. We begin to investigate the non-standard foliation of dΊ. We are interested in its Ω-singularities and F-singularities. By Proposition 4.8 the Ω- singularities are restricted to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-resp-b-page-56",
+      "number": null,
+      "title": "(resp. b^ (page 56)",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "79",
+      "labelEnd": "79",
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-standard fibrations",
+          "heading": false
+        },
+        {
+          "term": "standard fibration",
+          "heading": false
+        },
+        {
+          "term": "a2a",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "fiber",
+          "heading": false
+        },
+        {
+          "term": "cylinder",
+          "heading": false
+        },
+        {
+          "term": "exponent sum",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 79 block P=aP FIGURE 6.1 [1 —2], to conclude that W = a\\a2a\\, with \\p\\ > 2. Interchange the roles of the standard and non-standard fibrations. The new non- standard fibration has n = 3, 2, 1 or 0 singularities of type [1 - 2]. Now if n = 3 we are done by the argument used earlier for the standard fibration. If n = 2, then W or (W)\" 1 must also have the form a\\a2{a^) q, where \\a\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-resp-b-page-57",
+      "number": null,
+      "title": "(resp. b^ (page 57)",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "80",
+      "labelEnd": "80",
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "augmented cycle",
+          "heading": false
+        },
+        {
+          "term": "ω-singularities",
+          "heading": false
+        },
+        {
+          "term": "events",
+          "heading": false
+        },
+        {
+          "term": "nsf-singularity",
+          "heading": false
+        },
+        {
+          "term": "nsf",
+          "heading": false
+        },
+        {
+          "term": "backward",
+          "heading": false
+        }
+      ],
+      "extract": "80 JOAN S. BIRMAN AND WILLIAM W. MENASCO (ii) The second possibility is that the foliation near an F-singularity is not isotopic to the standard foliation. We call this a non-standard or NSF-singularity. Thus the non-standard fibration of S 3-L is described by a sequence of events, each of which is either a block of standard F-singularities, an NSF-singularity or an Ω-singularity. We call the NSF and Ω-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-resp-b-page-58",
+      "number": null,
+      "title": "(resp. b^ (page 58)",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": "81",
+      "labelEnd": "81",
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon-crossing arcs",
+          "heading": false
+        },
+        {
+          "term": "ω-singularities",
+          "heading": false
+        },
+        {
+          "term": "augmented cycle",
+          "heading": false
+        },
+        {
+          "term": "events contains",
+          "heading": false
+        },
+        {
+          "term": "pierce-points",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "main step",
+          "heading": false
+        },
+        {
+          "term": "opposite sides",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 81 contains only blocks and Ω-singularities of type [1 - 4]. The second main step is to prove (Lemma 6.4) that the conditions of the theo- rem are also satisfied if the augmented cycle of events contains no singularities of type [1 - 4]. The third main step (Lemma 6.5) is to prove that the augmented cycle of events either contains only blocks and Ω-singularities of type [1 - 4],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-resp-b-page-59",
+      "number": null,
+      "title": "(resp. b^ (page 59)",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "82",
+      "labelEnd": "82",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bounds disc",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        },
+        {
+          "term": "undercrossing",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        }
+      ],
+      "extract": "82 JOAN S. BIRMAN AND WILLIAM W. MENASCO 3 4 3 4 initial fiber 11 and 44 diqon after the singularity crossing arcs appear Snapshots on fibers of H' evolving foliation of aT type (1-4)\"* singularity FIGURE 6.2 This curve bounds a disc d in H^_j, which (by the discussion in the proof of Lemma 5.7) is necessarily in one of the 3-balls, say B,. The subarcs ax and a2 are also in dΊ, but β\\ and β2 are not. Figure 6.3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-resp-b-page-60",
+      "number": null,
+      "title": "(resp. b^ (page 60)",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": "83",
+      "labelEnd": "83",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon-crossing arcs",
+          "heading": false
+        },
+        {
+          "term": "undercrossing arcs",
+          "heading": false
+        },
+        {
+          "term": "digon singularity",
+          "heading": false
+        },
+        {
+          "term": "sublemma",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": false
+        },
+        {
+          "term": "followed",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 83 FIGURE 6.3 is parallel to c and which intersects distinct digons. Thus δ f contains one or more of the undercrossing arcs. This means that the singularity must be followed by a block P = b?, p / 0 . The integer p is the number of undercrossing arcs between a\\ and a\\, in δ', on <9B/, when φι is chosen so that p is maximal. The digon-crossing arcs a\\ and a\\ both have name 23,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-resp-b-page-61",
+      "number": null,
+      "title": "(resp. b^ (page 61)",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": "84",
+      "labelEnd": "84",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "local picture",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "essential",
+          "heading": false
+        },
+        {
+          "term": "disc",
+          "heading": false
+        }
+      ],
+      "extract": "84 JOAN S. BIRMAN AND WILLIAM W. MENASCO 3 4 picture on split-open fiber of H 1 after a singularity (2-3)\"* local picture on dΎ after a (2-3)\"* singularity FIGURE 6.4 (1 — 4)\"~ are impossible, because the initial arcs which are required for such a singularity don't exist. So we are reduced to (1—4)\"* or ( 1 - 4 ) - . We now claim that the initial forward sequence cannot begin with (1 - 4)~% (1 - 4)~\\ For, suppose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-resp-b-page-62",
+      "number": null,
+      "title": "(resp. b^ (page 62)",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "85",
+      "labelEnd": "85",
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syllable",
+          "heading": false
+        },
+        {
+          "term": "cyclic word",
+          "heading": false
+        },
+        {
+          "term": "partial picture",
+          "heading": false
+        },
+        {
+          "term": "occur",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 85 Partial picture on fiber of H' Partial picture on dT FIGURE 6.5 which has shorter syllable length. So, W is not admissible and this case does not occur. We are reduced to the case where the initial forward sequence begins with (1 - 4)~>, followed by (1 - 4)*~ . Recall that the (1 - 4)~> and subsequent block resulted in the foliation of a disc δ 1, with dδ' = c', on <9B/. After",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-resp-b-page-63",
+      "number": null,
+      "title": "(resp. b^ (page 63)",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "86",
+      "labelEnd": "86",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon attaching",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "joins",
+          "heading": false
+        },
+        {
+          "term": "same situation",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "leaves",
+          "heading": false
+        }
+      ],
+      "extract": "86 JOAN S. BIRMAN AND WILLIAM W. MENASCO LEMMA 6.2. The cycle of events does not begin with any of the follow- ing, or with any other sequences equivalent to these under symmetries: (6.2.1) ( l - 4 Γ , ( l - 4 ) - \\ (6.2.2) (2-3Γ,(2-3Γ, (6.2.3) (δiΓMftiΓ 1, (6.2.4) bx,{bxY x orψxy\\bx. Proof of Lemma 6.2. Proof of 6.2.1 and 6.2.2. Assertion 6.2.1 was proved in the course of the proof of Lemma 6.2.1. The proof of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-resp-b-page-64",
+      "number": null,
+      "title": "(resp. b^ (page 64)",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": "87",
+      "labelEnd": "87",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon-crossing arcs",
+          "heading": false
+        },
+        {
+          "term": "joining arc",
+          "heading": false
+        },
+        {
+          "term": "name",
+          "heading": false
+        },
+        {
+          "term": "nsf-singularity",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 87 Γ component of subset * 1 ' ' ! attaching curves fordigons ί ^ π j component of ) subset (b) viewed on dT c) joining arc on dT (a) viewed on F (d) Viewed on fibers of H' NSF-singularity of type \\-i FIGURE 6.6 arcs of H'φ Π F come together for the future type (bι)~ ι-singularity we see a pair of digon crossing arcs of name 11 and 33 appear. The endpoints of each are separated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-resp-b-page-65",
+      "number": null,
+      "title": "(resp. b^ (page 65)",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": "88",
+      "labelEnd": "88",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bridge region",
+          "heading": false
+        },
+        {
+          "term": "digon crossing",
+          "heading": false
+        },
+        {
+          "term": "crossing arcs",
+          "heading": false
+        },
+        {
+          "term": "following sequences",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": false
+        },
+        {
+          "term": "fibers",
+          "heading": false
+        }
+      ],
+      "extract": "88 JOAN S. BIRMAN AND WILLIAM W. MENASCO Proof of 6.2.4. W is freely reduced, so b[ and (6/)\" 1 cannot be adjacent in W . D For future use, we note that events b^ x, [1 - 6]\"* and [1 - 4]~^ each result in the creating of a pair of parallel digon crossing arcs in fibers of H'. We call these arcs bridges. The name of the bridge is the name of its digon-crossing arcs. The bridge region is the region on fibers of H' cut",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-resp-b-page-66",
+      "number": null,
+      "title": "(resp. b^ (page 66)",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "89",
+      "labelEnd": "89",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local picture",
+          "heading": false
+        },
+        {
+          "term": "right picture",
+          "heading": false
+        },
+        {
+          "term": "sublemma",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 89 4 that p = 0, contradicting Sublemma 6.1.1. Therefore this case does not occur. Proof of 6.3.2, 6.3.3, 6.3.4, 6.3.5. The arguments are all essentially the same as the one used to prove 6.3.1. The final event is a singularity of type (q - r)~*, where qr — 23, 23, 45, 45 in the four cases. By Sublemma 6.1.1 that bridge must be followed by a non-empty block. Part of the picture",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-resp-b-page-67",
+      "number": null,
+      "title": "(resp. b^ (page 67)",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "90",
+      "labelEnd": "90",
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rules out",
+          "heading": false
+        },
+        {
+          "term": "pierce-points",
+          "heading": false
+        },
+        {
+          "term": "local picture",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "leaf",
+          "heading": false
+        },
+        {
+          "term": "fibers",
+          "heading": false
+        }
+      ],
+      "extract": "90 JOAN S. BIRMAN AND WILLIAM W. MENASCO 1 2 digor} I, • d digoπ Singular leaves in the foliation of dT after <2-3)-», b* 1 FIGURE 6.8 If i Φ k the local picture on 9T must be the one on the right in Figure 6.8. It is essentially identical to Figure 6.5 and is ruled out for the same reasons as were used to rule out the sequence (1 — 4)~*, (1 — 4)\"~* in the proof of Lemma 6.1. Proof of 6.3.7. The events b^ 1 and (2 —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-resp-b-page-68",
+      "number": null,
+      "title": "(resp. b^ (page 68)",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "91",
+      "labelEnd": "91",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "subword",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 91 opposite sides of rectangle to be identified FIGURE 6.9 the \" 1 \" side and the \"6\" side of the leaf ζ. The arcs a and β must cobound a disc Δ in S 3, and the singularity will be realized by an isotopy along Δ. Since the block P is maximal, the only way that a can exist is if P is followed (in the projection of L onto <9T) by a crossing a^ x, as illustrated in Figure 6.9. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-resp-b-page-69",
+      "number": null,
+      "title": "(resp. b^ (page 69)",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "92",
+      "labelEnd": "92",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syllable length",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": false
+        },
+        {
+          "term": "non-empty",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        },
+        {
+          "term": "followed",
+          "heading": false
+        }
+      ],
+      "extract": "92 JOAN S. BIRMAN AND WILLIAM W. MENASCO FIGURE 6.10 P, the crossing we called a^ x and the block Q exist as before. Again W does not have shortest syllable length. Proof of'6.3.8. If the sequence (1 - 4)\"\", (2 - 3)\"^ occurs, the local picture on <9T begins with the configuration which was illustrated in Figure 6.2. We leave it to the reader to extend it to the full picture, using the following considerations: In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-resp-b-page-70",
+      "number": null,
+      "title": "(resp. b^ (page 70)",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": "93",
+      "labelEnd": "93",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial backward",
+          "heading": false
+        },
+        {
+          "term": "backward sequence",
+          "heading": false
+        },
+        {
+          "term": "forward sequence",
+          "heading": false
+        },
+        {
+          "term": "ω-singularity",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 93 in the initial fiber, i.e. the arcs μ12 , /*34, βsβ > cross L once, without crossing any digons. In Figure 6.13, right picture, we have shown, in addition to the blocks P and Q, a (possibly empty) block R = (α3) Γ located above μ^ and below P. To show that the block R must be non-empty, we notice that the three arcs //2/-1,2/ c u t directly across L shows that A' loops",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-resp-b-page-71",
+      "number": null,
+      "title": "(resp. b^ (page 71)",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": "94",
+      "labelEnd": "94",
+      "words": 471,
+      "summary": null,
+      "keywords": [],
+      "extract": "94 JOAN S. BIRMAN AND WILLIAM W. MENASCO For the case (2 - 3)\"*, φi)~ x with / φ k, we refer to Figure 6.10, focusing on the foliation shown there on <9T after φ2)~ ι, (2 - 3)\"\" and before the subsequent (1 - 6)\"\". There is no obstruc- tion on d T to reversing the order of the singularities and doing the (2 — 3)~* singularity first. There is also no obstruction in fibers of H'. Therefore the two cases are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-resp-b-page-72",
+      "number": null,
+      "title": "(resp. b^ (page 72)",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": "95",
+      "labelEnd": "95",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω-singularity",
+          "heading": false
+        },
+        {
+          "term": "events",
+          "heading": false
+        },
+        {
+          "term": "subword",
+          "heading": false
+        },
+        {
+          "term": "bridges",
+          "heading": false
+        },
+        {
+          "term": "followed",
+          "heading": false
+        },
+        {
+          "term": "fibers",
+          "heading": false
+        },
+        {
+          "term": "occur",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 95 6.3.10, for we can exchange the order of the (62)\" ι and the (2 - 3)\"\", which reduces things to a sequence in which the first two events are not both, NSF singularities. The same reason rules out {b\\)~ ι, b2> (1—6)— because b2, (1 — 6)~* is equivalent under symmetries to to)\" 1, (2-3)-*. The sequence to)\" 1, to)\" 1, (1-6)-\" is ruled out because if it occurs, then after the (1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-resp-b-page-73",
+      "number": null,
+      "title": "(resp. b^ (page 73)",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": "96",
+      "labelEnd": "96",
+      "words": 365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-standard axis",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "bridge",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        },
+        {
+          "term": "picture",
+          "heading": false
+        }
+      ],
+      "extract": "96 JOAN S. BIRMAN AND WILLIAM W. MENASCO ωi FIGURE 6.11 Case 2. b2,(2- 3)\"* with i = k, Case 3. (2 - 3)~*, b2 with Case 4. b2,(2- 3)~\" w i t h To handle Case 1 we reason as follows. Since the first singularity is type (2 — 3)~* we know that the initial local picture is as in Figure 6.4. In Figure 6.11 we have illustrated the same situation, but omit- ted the digons and the leaves of the foliation in order to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-resp-b-page-74",
+      "number": null,
+      "title": "(resp. b^ (page 74)",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 74,
+      "labelStart": "97",
+      "labelEnd": "97",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bridge created",
+          "heading": false
+        },
+        {
+          "term": "so-doing",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "cluttering",
+          "heading": false
+        },
+        {
+          "term": "pierce-points",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 97 b2, (2-3)-+, i=k FIGURE 6.12 arc. However, we see from Figure 6.12 that no such block can occur. Thus case 2 cannot occur. We now claim that in Case 3 there is a non-standard axis, the word W satisfies the conditions of Lemma 6.4. (Remark: we could reduce Case 3 to Case 4 in the same way as we reduced Case 1 to Cases 2 and 4, but it will be easier if we do not.) The first step",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-resp-b-page-75",
+      "number": null,
+      "title": "(resp. b^ (page 75)",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": "98",
+      "labelEnd": "98",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-standard axis",
+          "heading": false
+        },
+        {
+          "term": "sketched",
+          "heading": false
+        },
+        {
+          "term": "pierce-points",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        }
+      ],
+      "extract": "98 JOAN S. BIRMAN AND WILLIAM W. MENASCO ! R 1 F \\ i Q • \" • 1 ί*k FIGURE 6.13 f P A' Q (2-3) 4,b 2 (2-3)^,b 2, with q=+i FIGURE 6.14 have also sketched in part of the axis A' in Figure 6.14. We know it looks as sketched because the cyclic order of the six points on A! must be 1, 2, ... , 6 and because the axis A' can't do anything more complicated than to simply loop under the / th braid strand between the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-resp-b-page-76",
+      "number": null,
+      "title": "(resp. b^ (page 76)",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 76,
+      "labelStart": "99",
+      "labelEnd": "99",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ibs begins",
+          "heading": false
+        },
+        {
+          "term": "joining arc",
+          "heading": false
+        },
+        {
+          "term": "initial forward",
+          "heading": false
+        },
+        {
+          "term": "backward",
+          "heading": false
+        },
+        {
+          "term": "nsf-singularity",
+          "heading": false
+        },
+        {
+          "term": "same digon",
+          "heading": false
+        },
+        {
+          "term": "ω-singularity",
+          "heading": false
+        },
+        {
+          "term": "forward sequence",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 99 the initial forward sequence we know there is a subword o f W w i t h p φ O , q φ θ , l . We now study the possibilities for the initial backward sequence (IBS), using this initial forward sequence (IFS). The IBS begins with the same initial fiber, with the pierce-points arranged as in the left picture in Figure 6.14. What can the first backward event be? The first thing to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-resp-b-page-77",
+      "number": null,
+      "title": "(resp. b^ (page 77)",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "100",
+      "labelEnd": "100",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial projection",
+          "heading": false
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "digons",
+          "heading": false
+        },
+        {
+          "term": "non-standard",
+          "heading": false
+        },
+        {
+          "term": "axis",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        }
+      ],
+      "extract": "100 JOAN S. BIRMAN AND WILLIAM W. MENASCO completed cycle, with non-standard axis A\" (opposite sides of rectangle to be identified) (2-3)->,b2 FIGURE 6.15 (2 - 3)~*, followed by a block (a\\) r, which results in the foliation of all of B{ too. Thus the cyclic word W is {aλ) r {a3)~ x {ax) p {a2) q , as claimed. Straightening out A' in Figure 6.15, and referring back to Figure 1.3 at the beginning of this paper, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-resp-b-page-78",
+      "number": null,
+      "title": "(resp. b^ (page 78)",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "101",
+      "labelEnd": "101",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial fiber",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "bridge",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": false
+        },
+        {
+          "term": "union",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 101 initial forward sequence b 2 / (2-3)\"* FIGURE 6.16 [ 1 - 4 ] . In particular, there are no NSF Λ-singularities and there are no ^-singularities of type [ 1 - 6 ] or [ 1 - 2 ] . Proof of Lemma 6.5. We are given a non-standard axis and a fibra- tion H' which includes a singularity of type [ 1 - 4 ] . By symmetry, we may suppose that the singularity is type (1 — 4)~*.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-resp-b-page-79",
+      "number": null,
+      "title": "(resp. b^ (page 79)",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "102",
+      "labelEnd": "102",
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "bridges",
+          "heading": false
+        },
+        {
+          "term": "local picture",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": false
+        }
+      ],
+      "extract": "102 JOAN S. BIRMAN AND WILLIAM W. MENASCO (opposite sides of rectangle to be identified) FIGURE 6.17 &2 singularity the names of the 25 bridge arcs will have changed to 23. Thus Hφ Π F u Ω includes bridges of name 24 and 23. There is another sequence of singularities which also leads to bridges of name 24 and 23, i.e. Z?2? (2-3)~*. We investigated it in the proof of Lemma 6.4. It is not difficult to see that region",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-resp-b-page-80",
+      "number": null,
+      "title": "(resp. b^ (page 80)",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 80,
+      "labelStart": "103",
+      "labelEnd": "103",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schreier solution",
+          "heading": false
+        },
+        {
+          "term": "shortest words",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "elementary braids",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "unique representatives",
+          "heading": false
+        },
+        {
+          "term": "classification theorem",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 103 details from Figure 6.2. We have cut T open between the first and second strands. We see that W contains the subword b^(b2)~ ιb^, which is equivalent to (b2)~ ι(b^) p+ι. We conclude that W does not have shortest syllable length and is therefore not admissible. Thus the only possibility is that each singularity of type [1-4] is followed by another of type [1 - 4]. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-resp-b-page-81",
+      "number": null,
+      "title": "(resp. b^ (page 81)",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 81,
+      "labelStart": "104",
+      "labelEnd": "104",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kxy",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        }
+      ],
+      "extract": "104 JOAN S. BIRMAN AND WILLIAM W. MENASCO Step 1. Introduce new generators x and y, where: (7.1) x = {a\\O2(J\\)~ x and y = O\\O2, so that: (7.1)* σ{=y 2x, σ2 = xy 1, σ~ ι =xy, σ^ x=yx. Use (7.1)* to rewrite W as a cyclically reduced word WQ in powers of x and y. Step 2. Notice that if we use x and y as generators then B3 is a free product with amalgamations of the cyclic groups generated by x and y, the amalgamation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-resp-b-page-82",
+      "number": null,
+      "title": "(resp. b^ (page 82)",
+      "level": 2,
+      "pageStart": 82,
+      "pageEnd": 82,
+      "labelStart": "105",
+      "labelEnd": "105",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "p'σ",
+          "heading": false
+        }
+      ],
+      "extract": "STUDYING LINKS VIA CLOSED BRAIDS III 105 and σ2 > the list of the distinct conjugacy classes is: ( 7 . 4 ) * C kσ; p*σ*..'σϊ p'σ}9 ( k , r,Pi, ? ί G Z ; r,pi9 qt > 1 ) , C*σf, (k,peZ)9 (keZ). We shall refer to the first case in (7.4)* as the generic case. 7.2. 77ze algorithm. Let ^ be a link which is represented by a closed 3-braid L. Let W = W{L) be a cyclic word in the standard elementary braids σ\\, σ2 which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-σΐ",
+      "number": null,
+      "title": "σΐ",
+      "level": 3,
+      "pageStart": 82,
+      "pageEnd": 82,
+      "labelStart": "105",
+      "labelEnd": "105",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        }
+      ],
+      "extract": "p'σ}9 ( k , r,Pi, ? ί G Z ; r,pi9 qt > 1 ) , C*σf, (k,peZ)9 (keZ). We shall refer to the first case in (7.4)* as the generic case. 7.2. 77ze algorithm. Let ^ be a link which is represented by a closed 3-braid L. Let W = W{L) be a cyclic word in the standard elementary braids σ\\, σ2 which defines L. Let C^T be Schreier's unique representative of the conjugacy class of W. Then the conju- gacy class of W is the only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-2-i-f-p-4-σισ2",
+      "number": "2",
+      "title": "i f p > 4 , (σισ2)",
+      "level": 3,
+      "pageStart": 82,
+      "pageEnd": 92,
+      "labelStart": "105",
+      "labelEnd": null,
+      "words": 3080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schreier representative",
+          "heading": false
+        },
+        {
+          "term": "admit flypes",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "studying links",
+          "heading": false
+        },
+        {
+          "term": "generalized flypes",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braids iii",
+          "heading": false
+        },
+        {
+          "term": "bennequin surface",
+          "heading": false
+        }
+      ],
+      "extract": "(σισ2) 2 and C 1 i — C~ ισχ if P = - 3 , if p = -2. Lwfe of braid index 3 w/wcλ \" admit flypes\". 5? or its mirror image has two representatives, namely: C kσϊ ισ$σΐ υσ? and C^σf^^σfV^, where k = 0 or 1, v > 2 and u and tί; are distinct positive integers, 106 JOAN S. BIRMAN AND WILLIAM W. MENASCO or C sσ- ισ%σ- ισ%σ- ισ? and C σ f ^ f σ f 1 ^ σf 1^, where s = 1 or 2 and u, v , w are pairwise distinct positive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-pacific-journal-of-mathematics",
+      "number": null,
+      "title": "PACIFIC JOURNAL OF MATHEMATICS",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 92,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "los angeles",
+          "heading": false
+        },
+        {
+          "term": "clemens",
+          "heading": false
+        },
+        {
+          "term": "utah",
+          "heading": false
+        }
+      ],
+      "extract": "Founded by E. F. BECKENBACH (1906-1982) F. WOLF (1904-1989) SUN-YUNG A. CHANG (Managing Editor) University of California Los Angeles, CA 90024-1555 chang@math.ucla.edu F. MICHAEL CHRIST University of California Los Angeles, CA 90024-1555 christ@math.ucla.edu HERBERT CLEMENS University of Utah Salt Lake City, UT 84112 clemens@math.utah.edu",
+      "extractCut": false
+    },
+    {
+      "id": "sec-056-editors",
+      "number": null,
+      "title": "EDITORS",
+      "level": 3,
+      "pageStart": 92,
+      "pageEnd": 92,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stanford university",
+          "heading": false
+        },
+        {
+          "term": "san diego",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        },
+        {
+          "term": "finn",
+          "heading": false
+        }
+      ],
+      "extract": "THOMAS ENRIGHT University of California, San Diego La Jolla, CA 92093 tenright@ucsd.edu NICHOLAS ERCOLANI University of Arizona Tucson, AZ 85721 ercolani@math.arizona.edu R. FINN Stanford University Stanford, CA 94305 finn@gauss.stanford.edu VAUGHAN F. R. JONES University of California Berkeley, CA 94720 vfr@math.berkeley.edu STEVEN KERCKHOFF Stanford University Stanford, CA 94305 spk@gauss.stanford.edu MARTIN",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-supporting-institutions",
+      "number": null,
+      "title": "SUPPORTING INSTITUTIONS",
+      "level": 3,
+      "pageStart": 92,
+      "pageEnd": 93,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state university",
+          "heading": false
+        },
+        {
+          "term": "oregon",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "washington",
+          "heading": false
+        },
+        {
+          "term": "links",
+          "heading": false
+        }
+      ],
+      "extract": "UNIVERSITY OF ARIZONA UNIVERSITY OF BRITISH COLUMBIA CALIFORNIA INSTITUTE OF TECHNOLOGY UNIVERSITY OF CALIFORNIA UNIVERSITY OF MONTANA UNIVERSITY OF NEVADA, RENO NEW MEXICO STATE UNIVERSITY OREGON STATE UNIVERSITY UNIVERSITY OF OREGON UNIVERSITY OF SOUTHERN CALIFORNIA STANFORD UNIVERSITY UNIVERSITY OF HAWAII UNIVERSITY OF UTAH WASHINGTON STATE UNIVERSITY UNIVERSITY OF WASHINGTON PACIFIC JOURNAL OF MATHEMATICS Volume",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1.3",
+      "figure 1.4",
+      "figure 3.1",
+      "figure 3.2",
+      "figure 3.4",
+      "figure 3.5",
+      "figure 3.6",
+      "figure 3.7",
+      "figure 3.8",
+      "figure 3.9",
+      "figure 5.1",
+      "figure 5.3",
+      "figure 5.4",
+      "figure 6.1",
+      "figure 6.3",
+      "figure 6.4",
+      "figure 6.5",
+      "figure 6.6",
+      "figure 6.7",
+      "figure 6.9",
+      "figure 6.10",
+      "figure 6.11",
+      "figure 6.12",
+      "figure 6.13",
+      "figure 6.14",
+      "figure 6.15"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "digon singularity",
+      "heading": false
+    },
+    {
+      "term": "digon crossing",
+      "heading": false
+    },
+    {
+      "term": "crossing arcs",
+      "heading": false
+    },
+    {
+      "term": "non-standard foliation",
+      "heading": false
+    },
+    {
+      "term": "digon-crossing arcs",
+      "heading": false
+    },
+    {
+      "term": "joining arcs",
+      "heading": false
+    },
+    {
+      "term": "joan birman",
+      "heading": false
+    },
+    {
+      "term": "parallel digon",
+      "heading": false
+    },
+    {
+      "term": "same digon",
+      "heading": true
+    },
+    {
+      "term": "bridge arcs",
+      "heading": false
+    },
+    {
+      "term": "closed braids",
+      "heading": true
+    },
+    {
+      "term": "braids iii",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "A flype",
+      "page": 5,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "A braid-preserving flype an infinite family of counterexamples to the long-standing conjecture that the map from conjugacy classes in 2?3 to oriented link types was injective on links of braid index 3. The examples in (iii) are especially important because they generalize to related examples for eve",
+      "page": 5,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.5",
+      "title": "The axes A and A' are oriented by the right hand rule, relative to the given orientation on L. The outward-drawn normal to F is also determined by the right hand rule relative to the given orientation on L. Notice that with this convention the axes A and A' pass from F~ to F",
+      "page": 14,
+      "pageLabel": "37",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.10",
+      "title": "Assume this to be the case. Then, since β is an arc with its endpoints on F",
+      "page": 27,
+      "pageLabel": "50",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1c",
+      "title": "We examine a split-open fiber of H' just before, during and after the singularity at φ = φ0",
+      "page": 39,
+      "pageLabel": "62",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "There are three components of set #3, one in each disc. The manner in which set #2 meets a band can be seen from Figure 3.1(b). There are two components, one of which connects to D; and the other to D/+i. Recall that the digons which join the discs Di and D, +i (respectively D, _i) are attached to D",
+      "page": 41,
+      "pageLabel": "64",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.2",
+      "title": "Note that we have fixed notation, so that (for example) in case (ii) the pierce-points p[ and p",
+      "page": 43,
+      "pageLabel": "66",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.5",
+      "title": "Therefore we may modify the fibration by pushing FT, forward in the fibration in a neighborhood of Γ (Λ ) to remove the intersection",
+      "page": 45,
+      "pageLabel": "68",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.8",
+      "title": "It is essentially identical to Figure 6.5 and is ruled out for the same reasons as were used to rule out the sequence (1 — 4)~*, (1 — 4)\"~* in the proof of Lemma 6.1",
+      "page": 67,
+      "pageLabel": "90",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "We leave it to the reader to extend it to the full picture, using the following considerations: In order for the (2-3)\"\" event to be possible, the \"2\" side and the \"3\" side of the arc which joins 2 to 3 in Figure 6.4 must be on opposite sides of the same digon. The only way this can happen is if the",
+      "page": 69,
+      "pageLabel": "92",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.16",
+      "title": "Since there was only one way to complete the sequence (2-3)~*, b2 to a cycle, the two cases must be identical. This completes the proof of Lemma 6.4",
+      "page": 77,
+      "pageLabel": "100",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 59,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p82); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 59 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/pjm-v161-n1-p02-p"
+  }
+}

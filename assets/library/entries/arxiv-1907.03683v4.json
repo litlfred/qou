@@ -1,0 +1,585 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1907.03683v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random partitions as point processes",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-random-partitions-as-point-processes.md",
+      "narrative": null,
+      "content": "The aim of this article is to study deformations of discrete determinantal point processes describing distributions or limit distributions on partitions, namely the poissonized Plancherel measure, the $z$-measures and its limiting Gamma process (see e.g. [@boo], [@johanssonplancherel], [@infinitewedge], [@bodist], [@bogamma] and [@bomarkov]). Recall that a partition $\\lambda=(\\lambda_1 \\geq \\lambda_2 \\geq ...)$ is a finite non-increasing sequence of non-negative integers, and that it can be identified with a Young diagram ([@macdonald]). The set of all partitions will be denoted by $\\mathbb{Y}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1907.03683v4  [math.PR]  7 Mar 2024\nEXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND\nPALM MEASURES OF THE PLANCHEREL MEASURE, THE\nz-MEASURES AND THE GAMMA PROCESS\nPIERRE LAZAG\nAbstract. Christoﬀel deformation of a measure on the real line consists of multipying\nthis measure by a squared polynomial having its roots in R.\nWe introduce Christoﬀel\ndeformations of discrete orthogonal polynomial ensembles by considering the Christoﬀel de-\nformations of the underlying measure, and prove that this construction extends to more\ngeneral point processes describing distribution on partitions: the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinantal point processes and Christoffel deformations",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12-determinantal-point-processes-and-christoffel.md",
+      "narrative": null,
+      "content": "A specific and important class of determinantal point processes are the so called *orthogonal polynomial ensembles*, see e.g. the survey [@konig] and references therein. They are $N$-points random configurations for some fixed deterministic $N$ governed by the kernel of the orthogonal projection onto the first $N$ polynomials in the Hilbert space $L^2(\\mathbb{R},\\mu)$ for some measure $\\mu$ with finite moments of all orders. This kernel is namely the $N$-th Christoffel-Darboux kernel of the polynomials orthogonal with respect to $\\mu$. For example, the classical G.U.E. from random matrix theor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background and motivations: characteristic polynomials and Palm measures",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-background-and-motivations-characteristic-pol.md",
+      "narrative": null,
+      "content": "We prove in this note that the multiplicative structure of Christoffel deformations of orthogonal polynomial ensembles carries on to more general determinantal point processes. Our method is essentially by approximation of the models in consideration by orthogonal polynomial ensembles. However, since from [@bufetovconditional] we know that any determinantal point process on the real line is approximated by orthogonal polynomial ensemble in a particular sense, we hope to establish the existence and the explicit descritption of Christoffel deformations of determinantal point processes in full ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-main-results.md",
+      "narrative": null,
+      "content": "As mentioned above, it is easy to define Christoffel deformations of orthogonal polynomial ensembles, but neither the Plancherel nor the $z$-measures are orthogonal polynomial ensembles. As for the characteristic polynomials, an obstacle is that, unlike for orthogonal polynomial ensembles, the number of points might be random or infinite. We still manage to give a meaning to Christoffel deformations of these processes, and also for the process with the Gamma kernel, and we now briefly explain our arguments and state our main results in an informal way.\\\n\nOn the one hand, we know from Johansson",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization of the paper",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-15-organization-of-the-paper.md",
+      "narrative": null,
+      "content": "The paper is organized as follows. In section [\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"}, we collect definitions and basic properties of Christoffel deformations, orthogonal polnomial ensembles and determinantal point processes, and formally state that such deformations contain the description of their Palm measure.\n\nIn section [\\[sec3\\]](#sec3){reference-type=\"ref\" reference=\"sec3\"}, we introduce the Charlier ensemble and the Plancherel measure. We describe the Christoffel deformation of the Charlier ensemble and pass to the limit, in the same regime as in [@johanssonplancherel]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-acknowledgments.md",
+      "narrative": null,
+      "content": "I am deeply grateful to Alexander Bufetov who posed the problem to me and for helpful discussions. I also would like to thank Alexander Boritchev and Pascal Hubert for helpful discussions and comments.\\\nThis project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 647133 I-CHAOS).\n\nThe author acknowledges the support of the fellowship \\\"Assegni di ricerca FSE SISSA 2019\\\" from Fondo Sociale Europeo - Progetto SISSA OPERAZIONE 1 codice FP195673001.\n\nThe author acknowledges the financial su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conflict of interest",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-conflict-of-interest.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data availability",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-008-data-availability.md",
+      "narrative": null,
+      "content": "or analysed during the current study.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Christoffel deformations of orthogonal polynomial ensembles",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-009-2-christoffel-deformations-of-orthogonal-polynom.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-010-21-notation.md",
+      "narrative": null,
+      "content": "The set of non-negative integers is denoted by $\\mathbb{N}$. For $n \\in \\mathbb{N}$ and $a \\in \\mathbb{C}$, $(a)_n$ is the Pochhammer symbol: $$\\begin{aligned}\n(a)_0= 1 \\quad ; \\quad  (a)_n := a(a+1)...(a+n-1)=\\frac{\\Gamma(a+n)}{\\Gamma(a)}, \\quad n = 1,2,...\n\\end{aligned}$$ where $\\Gamma$ is the Euler Gamma function.\\\nFor $a_1,a_2,...,a_p \\in \\mathbb{C}$, $b_1,...,b_q \\in \\mathbb{C} \\setminus (-\\mathbb{N})$ the hypergeometric function $\\left._pF_q \\right.(a_1,...,a_p ; b_1,...,b_q ; . )$ is defined by $$\\begin{aligned}\n \\label{defgauss}\n\\left._pF_q \\right.(a_1,...,a_p ; b_1,...,b_q ; z) = \\sum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Christoffel deformations of discrete orthogonal polynomials",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-011-22-christoffel-deformations-of-discrete-orthogon.md",
+      "narrative": null,
+      "content": "Let $\\omega$ be a discrete measure on $\\mathbb{R}$ with infinite support and finite moments of all orders: $$\\begin{aligned}\n\\int_{\\mathbb{R}}|x|^nd\\omega(x) < +\\infty \\quad \\text{for all $n  \\in \\mathbb{N}$}.\n\\end{aligned}$$ We denote by $\\{p_n\\}_{n\\in \\mathbb{N}}$ a family of orthogonal polynomials with respect to $\\omega$. The number $c_n$ stands for the leading coefficient of $p_n$, and its squared norm will be denoted by $h_n$: $$\\begin{aligned}\np_n(x)&= c_nx^n + \\text{terms of degree less than $n$}, \\\\\n\\int_{\\mathbb{R}} p_n(x)p_m(x) d\\omega(x) & = \\begin{cases} 0 \\quad \\text{if $n \\neq m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete orthogonal polynomial ensembles and determinantal point processes",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-012-23-discrete-orthogonal-polynomial-ensembles-and.md",
+      "narrative": null,
+      "content": "Let $E$ be an infinite countable discrete subset of $\\mathbb{R}$. We first recall the definition of an orthogonal polynomial ensemble in our setting. Let $\\omega$ be a discrete weight as in the previous subsection. We assume that its support lies inside $E$, and in all the sequel, we may identify a measure on $E$ with its density with respect to the counting measure on $E$. Let $N$ be a positive integer.\n\n::: defi\nAn $N$-orthogonal polynomial ensemble is a probability measure $\\mathbb{P}_N$ on $E^N$ given by the following formula: $$\\label{orthpolenseq}\nd\\mathbb{P}_N(x_1,...x_N)= C_N \\prod_{1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Palm measures of determinantal point processes",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-013-24-palm-measures-of-determinantal-point-processe.md",
+      "narrative": null,
+      "content": "[]{#secpalm label=\"secpalm\"} We here give a probabilistic interpretation of Christoffel deformations of orthogonal polynomial ensembles in the case when the points $u_1,...,u_k$ belong to the support of the measure $\\omega$. We first recall the basics on Palm distributions of a general point process $\\mathbb{P}$ on a discrete space $E$, see for instance [@daley-verejones], [@shiraitakahashi] or [@bufetovquasisymmetries] and references therein for a more general treatment.\n\n::: defi\nLet $\\mathbb{P}$ be a point process on the discrete set $E$. For pairwise distinct points $u_1,...,u_k \\in E$ suc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Charlier ensemble and a deformation of the Plancherel measure",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-014-3-the-charlier-ensemble-and-a-deformation-of-the.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the Plancherel measure on partitions",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-015-31-on-the-plancherel-measure-on-partitions.md",
+      "narrative": null,
+      "content": "The Plancherel measure is a probability measure $\\text{Pl}_n$ on the set of Young diagrams of fixed size $n$, $\\mathbb{Y}_n=\\{\\lambda \\in \\mathbb{Y}, \\hspace{0.1cm} |\\lambda|=n \\}$. It is given by $$\\begin{aligned}\n\\text{Pl}_n(\\lambda)= \\frac{\\dim(\\lambda)^2}{n!}, \\quad \\lambda \\in \\mathbb{Y}_n,\n\\end{aligned}$$ where $\\dim(\\lambda)$ is the dimension of the irreducible representation of the $n$-th symmetric group parametrized by $\\lambda$, or equivalentely, the number of stantard Young tableaux of shape $\\lambda$ (see [@macdonald] or [@sagan]). It is well known that the poissonization of the Pl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Christoffel deformations of the Charlier ensemble and main result",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-016-32-christoffel-deformations-of-the-charlier-ense.md",
+      "narrative": null,
+      "content": "We now define the Christoffel deformation of the Charlier ensemble. We know from [@johanssonplancherel] that this ensemble approximates the poissonized Plancherel measure, and the aim of this section is to generalize this fact by proving that Christoffel deformations of this ensemble admit a limit that is expressed through Bessel functions. Our discrete measure is $$\\begin{aligned}\n\\omega(x)=\\omega_a(x)=e^{-a}\\frac{a^x}{x!}, \\quad x \\in \\mathbb{N},\n\\end{aligned}$$ where $a>0$ is a parameter, and the $N$-th orthogonal polynomial ensemble that this measure defines is denoted by $\\mathbb{P}_{N,a}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3.1",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-017-33-proof-of-theorem-31.md",
+      "narrative": null,
+      "content": "We will use the following Lemma, which we prove at the end of this section. This Lemma gives simple asymptotic results on the Charlier polynomials involving Bessel functions and their derivatives. As far as we know, the asymptotics we give can not be found in the litterature in this simple form. However, one may consult [@ouwong] for a complete study of the asymptotics of Charlier polynomials.\n\n::: lem\n[]{#lemme1 label=\"lemme1\"} For any $l \\in \\mathbb{Z}$ and any $u \\in \\mathbb{R}$, we have $$\\begin{aligned}\n\\lim_{N \\rightarrow \\infty}\\sqrt{\\omega_{\\alpha/N}(u+N)} C_{N+l}(u+N;\\alpha/N)=J_{u-l}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Palm measures of the discrete Bessel point process",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-018-34-palm-measures-of-the-discrete-bessel-point-pr.md",
+      "narrative": null,
+      "content": "In regards of subsection [\\[secpalm\\]](#secpalm){reference-type=\"ref\" reference=\"secpalm\"} and Proposition [\\[proppalm\\]](#proppalm){reference-type=\"ref\" reference=\"proppalm\"}, we can now give a description of the Palm measures of the discrete Bessel point process $\\mathfrak{S}^0_*(\\mathbb{P}_\\alpha)$, the determinantal point process with kernel $K_\\alpha$ given by ([\\[discretebesselkernel\\]](#discretebesselkernel){reference-type=\"ref\" reference=\"discretebesselkernel\"}).\n\n::: thm\n[]{#thmpalmbessel label=\"thmpalmbessel\"}Let $\\tilde{u}_1,...,\\tilde{u}_k \\in \\mathbb{Z}$ be pairwise distinct. For",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The z-measures and a deformation of the gamma process",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-019-4-the-z-measures-and-a-deformation-of-the-gamma.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Christoffel deformations of the z-measures",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "../sections/sec-020-41-christoffel-deformations-of-the-z-measures.md",
+      "narrative": null,
+      "content": "The $z$-measures on partitions were introduced and extensively studied by Borodin and Olshanski in a series of papers, see e.g. [@bodist], [@bogamma], [@bomeixner] and [@bomarkov] and references therein. We first briefly explain their construcion. The $z$-measures are defined on the set $\\mathbb{Y}$ of all partitions by: $$\\begin{aligned}\nM_{z,z',\\xi}(\\lambda)=(1-\\xi)^{zz'}\\xi^{|\\lambda|}(z)_\\lambda(z')_\\lambda \\left(\\frac{\\dim(\\lambda)}{|\\lambda|!}\\right)^2.\n\\end{aligned}$$ They depend on three complex parameters, $z$, $z'$ and $\\xi$ and they are in general complex measures. The following cho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Palm measures of the z-measures",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-021-42-palm-measures-of-the-z-measures.md",
+      "narrative": null,
+      "content": "We now state in Theorem [\\[thmpalmzmeas\\]](#thmpalmzmeas){reference-type=\"ref\" reference=\"thmpalmzmeas\"} below the interpretation of Theorem [\\[thmzmeas\\]](#thmzmeas){reference-type=\"ref\" reference=\"thmzmeas\"} in terms of Palm measures of the $z$-measures.\n\n::: thm\n[]{#thmpalmzmeas label=\"thmpalmzmeas\"} Let $\\xi \\in (0,1)$ and let $z, z'$ be admissible parameters. Let $u_1, \\dots , u_k \\in \\mathbb{Z}'$ be pairwise distinct and denote by $\\mathbb{P}^k_{z,z',\\xi}$ the reduced Palm measure of the point process $\\mathfrak{S}_*(M_{z,z',\\xi})$ at points $u_1,\\dots, u_k$. Then, the kernel $K_{z-k,z',",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A deformation of the Gamma kernel",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+      "narrative": null,
+      "content": "in the principal or in the complementary series cases. In [9] and [11], the authors show that\nwith such a choice of parameters, the z-measure, viewed as a point process on Z′, converges as\nξ tends to 1, without any scaling, to a determinantal point process with a correlation kernel\nexpressed only through the Gamma function. They call this kernel the ”Gamma kernel”. The\ngoal of this section is to show that such a statement still holds for the Christoﬀel deformation\nof the z-measure of order one, i.e. with k = 1. Our argument is a slight modiﬁcation of\nthe one presented in [9], Theorem 2.3. As m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/rem-sec-022-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "rem-sec-022-02.md",
+      "narrative": null,
+      "content": "An explicit expression for the function Ψz,z′,i,j(x, y) may be found from: hz,z′(x, a)hz′,z(y, b) + hz′,z(x, a)hz,z′(y, b) −hz,z′(x, b)hz′,z(y, a) −hz′,z(x, b)hz,z′(y, a) = Γ(z −z′)Γ(z′ −z) × \u0012Γ(x + z + 1/2)Γ(x + z′ + 1/2)Γ(y + z + 1/2)Γ(y + z′ + 1/2) Γ(z −a + 1/2)Γ(z′ −a + 1/2)Γ(z −b + 1/2)Γ(z′ −b + 1/2) \u00131/2 × \u001a Γ(−z + a + 1/2)Γ(−z′ + b + 1/2)Γ(x + z′ + 1/2)Γ(y + z + 1/2) + Γ(−z′ + a + 1/2)Γ(−z + b + 1/2)Γ(x + z + 1/2)Γ(y + z′ + 1/2) − Γ(−z′ + a + 1/2)Γ(−z + b + 1/2)Γ(x + z′ + 1/2)Γ(y + z + 1/2) − Γ(−z + a + 1/2)Γ(−z′ + b + 1/2)Γ(x + z + 1/2)Γ(y + z′ + 1/2) \u001b . It only involves the Gamma fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/rem-sec-022-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "rem-sec-022-03.md",
+      "narrative": null,
+      "content": "The factor (1−ξ)2 appearing in our statement should be interpreted as (1−ξ)2k in order to recover Borodin-Olshanski Theorem from [9] and [11] in the case k = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "Let (z, z′) be admissible parameters either in the principal or in the comple- mentary series cases, and let K1 z,z′,ξ be the correlation kernel of the Christoﬀel deformation of order 1 at u ∈R deﬁned by (16). We have, for all x, y ∈Z′, x̸ = y: lim ξ→1(1 −ξ)2K1 z,z′,ξ(x, y) = Cz,z′ |(x −u)(y −u)| Az,z′(x, y) Φz,z′,0,−1(u)2(x −y) where: Az,z′(x, y) = X i,j=0 Φz,z′,a(i)b(i)(u)Φz,z′,a(j)+1,b(j)+1(u)Ψz,z′,i,j(x, y), Ψz,z′,i,j(x, y) = hz,z′(x, −1/2 + i)hz′,z(y, 1/2 + j) + hz′,z(x, −1/2 + i)hz,z′(y, 1/2 + j) −hz,z′(x, 1/2 + j)hz′,z(y, −1/2 + i) −hz′,z(x, 1/2 + j)hz,z′(y, −1/2 + i), Φz,z′,a(i),b(i)(u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/lem-sec-023-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "lem-sec-023-02.md",
+      "narrative": null,
+      "content": "For any a, b ∈Z + 1/2, and any x, y ∈R, we have: lim ξ→1(1 −ξ)−1 (ψa(x)ψb(y) −ψa(y)ψb(x)) = hz,z′(x, a)hz′,z(y, b) + hz′,z(x, a)hz,z′(y, b) −hz,z′(x, b)hz′,z(y, a) −hz′,z(x, b)hz,z′(y, a) and lim ξ→1(1 −ξ)−1(ψa(x)φb(x) −ψb(x)φa(x)) = hz,z′(x, a)h′ z′,z(x, b) + hz′,z(x, a)h′ z,z′(x, b) −hz,z′(x, b)h′ z′,z(x, a) −hz′,z(x, b)h′ z,z′(x, a).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "For any u ∈R, a ∈Z′, we have: (1 −ξ)−1 2ψa(u; z, z′, ξ) = hz,z′(u, a)(1 −ξ) z′−z (1 + O(1 −ξ)) + hz′,z(u, a)(1 −ξ) z−z′ (1 + O(1 −ξ)) and (1 −ξ)−1 2φa(u; z, z′, ξ) = h′ z,z′(u, a)(1 −ξ) z′−z (1 + O(1 −ξ)) + h′ z′,z(u, a)(1 −ξ) z−z′ (1 + O(1 −ξ)) as ξ tends to 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 4.5",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-023-44-proof-of-theorem-45.md",
+      "narrative": null,
+      "content": "asymptotic results we need.\nProposition 4.8. For any u ∈R, a ∈Z′, we have:\n(1 −ξ)−1\n2ψa(u; z, z′, ξ) = hz,z′(u, a)(1 −ξ)\nz′−z\n2\n(1 + O(1 −ξ))\n+ hz′,z(u, a)(1 −ξ)\nz−z′\n2\n(1 + O(1 −ξ))\nand\n(1 −ξ)−1\n2φa(u; z, z′, ξ) = h′\nz,z′(u, a)(1 −ξ)\nz′−z\n2\n(1 + O(1 −ξ))\n+ h′\nz′,z(u, a)(1 −ξ)\nz−z′\n2\n(1 + O(1 −ξ))\nas ξ tends to 1.\nProof. This is similar to that in [9], Theorem 2.3 . We apply the formula:\n1\nΓ(C) 2F1 (A, B; C; w) = Γ(B −A)(−w)−A\nΓ(B)Γ(C −A)\n2F1 (A, 1 −C + A; 1 −B + A; w−1)\n+ Γ(A −B)(−w)−B\nΓ(A)Γ(C −B)\n2F1 (B, 1 −C + B; 1 −A + B; w−1)\n28\nWe specialize this results with:\nA = −z + a + 1/2\n;\nB = −z′",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1907.03683v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "[1] G.E. Andrews, R. Askey, R. Roy Special functions Cambridge university press (2000)\n[2] J. Baik, P. Deift, E. Strahov. Products and ratios of characteristic polynomials of random herimtian\nmatrices Journal of mathematical physics Vol. 44 No. 8 (2003), 923-975.\n[3] M Bertola, G. Ruzza. Matrix models for stationary Gromov-Witten invariants of the Riemann sphere\nPreprint arXiv:2001.10466 (2020)\n[4] A. Borodin. Riemann-Hilbert problem and the discrete Bessel kernel International Mathematics Research\nNotices Vol. 2000 (2000)\n[5] A. Borodin, V. Gorin. Lectures on integrable probability, Probabili",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

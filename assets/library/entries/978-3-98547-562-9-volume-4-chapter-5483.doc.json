@@ -1,0 +1,816 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "978-3-98547-562-9-volume-4-chapter-5483",
+  "title": "Floer cohomology, singularities, and birational geometry",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2617",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Minimal discrepancy of isolated singularities",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2618",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-minimal-discrepancy-of-isolated-singularities"
+    },
+    {
+      "level": 1,
+      "title": "Cohomological McKay correspondence",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "2623",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-cohomological-mckay-correspondence"
+    },
+    {
+      "level": 1,
+      "title": "Quantum cohomology of birational Calabi–Yau manifolds",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "2627",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-quantum-cohomology-of-birational-calabiyau-man"
+    },
+    {
+      "level": 2,
+      "title": "Example",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "2629",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-example"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic cohomology of compact subsets",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": "2629",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-symplectic-cohomology-of-compact-subsets"
+    },
+    {
+      "level": 2,
+      "title": "Idea of proof",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": "2631",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-43-idea-of-proof"
+    },
+    {
+      "level": 2,
+      "title": "Further directions",
+      "number": "4.4",
+      "page": 17,
+      "pageLabel": "2632",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-44-further-directions"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": "2633",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "2616",
+      "labelEnd": "2617",
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "birational geometry",
+          "heading": false
+        },
+        {
+          "term": "mclean",
+          "heading": false
+        },
+        {
+          "term": "licensed",
+          "heading": false
+        },
+        {
+          "term": "mckay",
+          "heading": false
+        }
+      ],
+      "extract": "Floer cohomology, singularities, and birational geometry Mark McLean Abstract We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated",
+      "extractCut": true,
+      "blocks": [
+        "library/978-3-98547-562-9-volume-4-chapter-5483/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2617",
+      "labelEnd": "2618",
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "morse homology",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "morse function",
+          "heading": false
+        },
+        {
+          "term": "homology groups",
+          "heading": false
+        },
+        {
+          "term": "cell",
+          "heading": false
+        },
+        {
+          "term": "infinite-dimensional version",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        }
+      ],
+      "extract": "Objects in algebraic geometry provide a rich source of symplectic and contact man- ifolds. Smooth projective varieties X \u001a CP N , for instance, have symplectic structures !X given by restricting the standard Fubini–Study form on CP N . Links of isolated singularities admit natural contact structures, given by a complex hyperplane distribution. What can such structures tell us about the underlying algebraic variety?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-minimal-discrepancy-of-isolated-singularities",
+      "number": "2",
+      "title": "Minimal discrepancy of isolated singularities",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "2618",
+      "labelEnd": "2623",
+      "words": 2699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimal discrepancy",
+          "heading": true
+        },
+        {
+          "term": "minimal sft",
+          "heading": false
+        },
+        {
+          "term": "sft index",
+          "heading": false
+        },
+        {
+          "term": "q-gorenstein",
+          "heading": false
+        },
+        {
+          "term": "contact structure",
+          "heading": false
+        },
+        {
+          "term": "reeb",
+          "heading": false
+        },
+        {
+          "term": "sup pose",
+          "heading": false
+        },
+        {
+          "term": "contact form",
+          "heading": false
+        }
+      ],
+      "extract": "(2) The Cohomological McKay correspondence (Section 3); (3) Quantum cohomology of birational Calabi–Yau manifolds (Section 4). 2. Minimal discrepancy of isolated singularities Let A \u001a CN be an irreducible affine variety of complex dimension n with at most one singularity at 0 2 CN . In other words, A \u001a CN is cut out by a finite number of polynomial equations whose Jacobian matrix has constant rank along A \u0000 0. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-cohomological-mckay-correspondence",
+      "number": "3",
+      "title": "Cohomological McKay correspondence",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "2623",
+      "labelEnd": "2627",
+      "words": 1873,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomological mckay",
+          "heading": true
+        },
+        {
+          "term": "mckay correspondence",
+          "heading": true
+        },
+        {
+          "term": "crepant resolution",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian floer",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "floer trajectories",
+          "heading": false
+        },
+        {
+          "term": "divide jgj",
+          "heading": false
+        },
+        {
+          "term": "jzj near",
+          "heading": false
+        }
+      ],
+      "extract": "Quotient singularities Cn=G, where G \u001a SU.n/ is a finite group, are natural exam- ples of singularities to study from a Floer-theoretic perspective. One reason for this is that they are homogeneous, and this ensures that the link has a compatible contact 1-form with nice Reeb dynamics. In this section, we will show how Floer theory can shed light on the cohomological McKay correspondence [44]. Definition 3.1. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-quantum-cohomology-of-birational-calabiyau-man",
+      "number": "4",
+      "title": "Quantum cohomology of birational Calabi–Yau manifolds",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "2627",
+      "labelEnd": "2629",
+      "words": 922,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi yau",
+          "heading": true
+        },
+        {
+          "term": "birational calabi",
+          "heading": true
+        },
+        {
+          "term": "yau manifolds",
+          "heading": true
+        },
+        {
+          "term": "quantum cohomology",
+          "heading": true
+        },
+        {
+          "term": "novikov rings",
+          "heading": false
+        },
+        {
+          "term": "cup product",
+          "heading": false
+        },
+        {
+          "term": "cohomology classes",
+          "heading": false
+        },
+        {
+          "term": "xik",
+          "heading": false
+        }
+      ],
+      "extract": "manifolds Recall that two algebraic varieties are birational to each other if they have iso- morphic dense Zariski-open subsets. The minimal model program in algebraic geometry, very roughly, is concerned with finding the “smallest” varieties in their birational equiva- lence class (minimal models). These minimal models are not necessarily unique. Calabi–Yau manifolds are examples of such minimal models. Therefore",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-example",
+      "number": "4.1",
+      "title": "Example",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "2629",
+      "labelEnd": "2629",
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atiyah flop",
+          "heading": false
+        },
+        {
+          "term": "flop along",
+          "heading": false
+        },
+        {
+          "term": "lxi",
+          "heading": false
+        },
+        {
+          "term": "lcj",
+          "heading": false
+        },
+        {
+          "term": "normal bundle",
+          "heading": false
+        },
+        {
+          "term": "poincaré",
+          "heading": false
+        }
+      ],
+      "extract": "We will now illustrate Theorem 4.2 with an example (see [38, Section 7.3]). Suppose that X and LX are connected Calabi–Yau 3-folds and that there exists a disjoint union of connected genus 0 curves C1; : : : ; Ck in X and LC1; : : : ; LCk in LX together with a class  2 H2.XI Z/ so that • ŒCj  D  2 H2.XI Z/ and Œ LCj  D \u0000 2 H2. LXI Z/ for each j and all connected genus-zero curves mapping to X or LX,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-symplectic-cohomology-of-compact-subsets",
+      "number": "4.2",
+      "title": "Symplectic cohomology of compact subsets",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "2629",
+      "labelEnd": "2631",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symplectic cohomology",
+          "heading": true
+        },
+        {
+          "term": "liouville subdomain",
+          "heading": false
+        },
+        {
+          "term": "capped orbits",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "displaceable",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "limits",
+          "heading": false
+        }
+      ],
+      "extract": "The main tool in the proof of Theorem 4.2 is a version of symplectic cohomology, which is very similar to definitions of symplectic cohomology in [21,57,58]. Definition 4.3. Let .M; !/ be a closed symplectic manifold and let K \u001a M be a compact subset. Then we define symplectic cohomology of K \u001a M to be SH\u0003.K \u001a M/ WD lim \u0000! a lim \u0000b lim \u0000! HjK<0 HF\u0003 Œa;b.H/ (4.6) 2629 Floer cohomology, singularities and birational",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-idea-of-proof",
+      "number": "4.3",
+      "title": "Idea of proof",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "2631",
+      "labelEnd": "2632",
+      "words": 468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer trajectories",
+          "heading": false
+        },
+        {
+          "term": "liouville subdomains",
+          "heading": false
+        },
+        {
+          "term": "displaceable",
+          "heading": false
+        },
+        {
+          "term": "t2œ",
+          "heading": false
+        },
+        {
+          "term": "kähler",
+          "heading": false
+        },
+        {
+          "term": "subvarieties",
+          "heading": false
+        },
+        {
+          "term": "birational",
+          "heading": false
+        },
+        {
+          "term": "codimension",
+          "heading": false
+        }
+      ],
+      "extract": "Here we will give an idea of the proof of Theorem 4.2. Let W X Ü LX be our birational isomorphism between Calabi–Yau manifolds X and LX, and let ! and L! be Kähler forms on X and LX, respectively, which admit integral lifts. Choose Zariski-dense affine subvarieties A \u001a X and LA \u001a LX so that maps A isomorphically to LA. We can modify L! so that !jQ D \u0003. L!/jQ for an arbitrarily large compact subset Q of A. Now one of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-44-further-directions",
+      "number": "4.4",
+      "title": "Further directions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "2632",
+      "labelEnd": "2633",
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "birational calabi",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian floer",
+          "heading": false
+        },
+        {
+          "term": "calabi yau",
+          "heading": false
+        },
+        {
+          "term": "birational transform",
+          "heading": false
+        },
+        {
+          "term": "symplectic cohomology",
+          "heading": false
+        },
+        {
+          "term": "gromov witten",
+          "heading": false
+        },
+        {
+          "term": "quantum cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "One of the problems with Theorem 4.2 is that the isomorphisms are not explicit. Let  \u001a X \u0002 LX be the closure of the graph of the birational isomorphism . Then we have a push–pull map ‰ W H \u0003.XI K/ ! H \u0003. LXI K/; ‰.˛/ WD PD \u0000.pr LX/\u0003 \u0000 \\ pr\u0003 X ˛ \u0001\u0001 (4.10) where prX and pr LX are the natural projection maps from X \u0002 LX to X and LX, respectively, and PD is Poincaré duality. Conjecture 4.4 ([60, Section 4.3,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "2633",
+      "labelEnd": "2637",
+      "words": 1559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "birational calabi",
+          "heading": false
+        },
+        {
+          "term": "calabi yau",
+          "heading": false
+        },
+        {
+          "term": "floer theory",
+          "heading": false
+        },
+        {
+          "term": "symplectic homology",
+          "heading": false
+        },
+        {
+          "term": "nary flops",
+          "heading": false
+        },
+        {
+          "term": "birational geometry",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M. Audin and M. Damian, Morse theory and floer homology. Universitext, Springer, London; EDP Sciences, Les Ulis, 2014. [2] E. Bao and K. Honda, Semi-global Kuranishi charts and the definition of contact homology. 2015, arXiv:1512.00580. [3] V. V. Batyrev, Birational Calabi–Yau n-folds have equal Betti numbers. In New trends in algebraic geometry (Warwick, 1996), edited by K. Hulek, M. Reid, C. Peters, and F.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "floer cohomology",
+      "heading": false
+    },
+    {
+      "term": "birational calabi",
+      "heading": true
+    },
+    {
+      "term": "hamiltonian floer",
+      "heading": false
+    },
+    {
+      "term": "floer homology",
+      "heading": false
+    },
+    {
+      "term": "symplectic cohomology",
+      "heading": true
+    },
+    {
+      "term": "floer groups",
+      "heading": false
+    },
+    {
+      "term": "floer differential",
+      "heading": false
+    },
+    {
+      "term": "floer trajectories",
+      "heading": false
+    },
+    {
+      "term": "calabi yau",
+      "heading": true
+    },
+    {
+      "term": "floer theory",
+      "heading": false
+    },
+    {
+      "term": "birational geometry",
+      "heading": false
+    },
+    {
+      "term": "birational isomorphism",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "2616",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2617",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2618",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "2619",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "2620",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "2621",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "2622",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "2623",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "2624",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "2625",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "2626",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "2627",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "2628",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "2629",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "2630",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "2631",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "2632",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "2633",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "2634",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "2635",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "2636",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "2637",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/978-3-98547-562-9-volume-4-chapter-5483"
+  }
+}

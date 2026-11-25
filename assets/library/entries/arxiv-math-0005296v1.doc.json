@@ -1,0 +1,247 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0005296v1",
+  "title": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd prime",
+          "heading": false
+        },
+        {
+          "term": "kirby-melvin",
+          "heading": false
+        },
+        {
+          "term": "e2r",
+          "heading": false
+        },
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki",
+          "heading": false
+        },
+        {
+          "term": "lens",
+          "heading": false
+        },
+        {
+          "term": "determine",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0005296v1 [math.QA] 31 May 2000 An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗ Bang-He Li & Tian-Jun Li Abstract Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ ′ r, r odd ≥3} By using partial Kirby-Melvin’s quautum SO(3) invariants {τ ′ r(M), r odd prime > |H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0005296v1/blocks/prose-sec-front-matter",
+        "library/arxiv-math-0005296v1/blocks/thm-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witten reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "iss",
+          "heading": false
+        },
+        {
+          "term": "ias",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "china",
+          "heading": false
+        }
+      ],
+      "extract": "[RT] Reshetikhin, N.Yu., Turaev, V.G.: Invariants of 3-manifolds via link polynomials and quantum groups, Invent. Math. 103 (1991), 547-597 [KM] Kirby, R., Melvin, P.: The 3-manifold invariants of Witten and Reshetikhin-Turaev for sl(2, C), Invent. Math. 105 (1991), 473-545 [Li] Li, B.H., Relations among Chern-Simons-Witten-Jones invariants , Science in China, series A, 38 (1995), 129-146 [LL1] Li, B.H., Li, T.J.:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "reshetikhin-turaev invariants",
+      "heading": false
+    },
+    {
+      "term": "witten reshetikhin-turaev",
+      "heading": false
+    },
+    {
+      "term": "lens spaces",
+      "heading": false
+    },
+    {
+      "term": "odd prime",
+      "heading": false
+    },
+    {
+      "term": "bang-he",
+      "heading": false
+    },
+    {
+      "term": "tian-jun",
+      "heading": false
+    },
+    {
+      "term": "homology spheres",
+      "heading": false
+    },
+    {
+      "term": "rational homology",
+      "heading": false
+    },
+    {
+      "term": "math",
+      "heading": false
+    },
+    {
+      "term": "china",
+      "heading": false
+    },
+    {
+      "term": "ohtsuki",
+      "heading": false
+    },
+    {
+      "term": "iss",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p3); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0005296v1"
+  }
+}

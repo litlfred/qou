@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1508.07379v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Continuous particle systems are an important subject of investigation in rigorous statistical mechanics. Since the thirties it was clear that the equation of state of a non ideal gas in thermodynamics can be deduced from statistical mechanics via the Mayer series of the pressure in the grand canonical ensemble. The Mayer series, proposed by Mayer (see, e.g., [@MM] and references therein) is an expansion in powers of the fugacity $\\l$ of the logarithm of the Grand Canonical partition function of the the system under study, whose $n^{\\rm th}$-order coefficient is given by a sum of terms indexed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1508.07379v2  [math-ph]  9 Dec 2016\nConvergence of Mayer and Virial expansions and the Penrose tree-graph\nidentity\nAldo Procacci∗, Sergio A. Yuhjtman†\nNovember 8, 2018\nAbstract\nWe establish new lower bounds for the convergence radius of the Mayer series and the\nVirial series of a continuous particle system interacting via a stable and tempered pair\npotential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for\nthe Mayer series and by Lebowitz and Penrose in 1964 for the Virial series. To get our results\nwe exploit the tree-graph identity given by Penrose in 1967",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Model and Results",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-model-and-results.md",
+      "narrative": null,
+      "content": "[]{#sec2 label=\"sec2\"}\n\n## Model\n\nWe consider a continuous system of classical particles in the $d$-dimensional Euclidean space $\\mathbb{R}^d$. Denote by $x_i\\in \\mathbb{R}^d$ the position vector of the $i^{\\rm th}$ particle of the system and by $\\|x_i\\|$ its Euclidean norm. We suppose hereafter that particles interact through a pair potential $V:\\mathbb{R}^d\\to \\mathbb{R}\\cup\\{+\\infty\\}$ such that $V(-x)=V(x)$ and we set shortly $\\mathbb{R}^*\\doteq \\mathbb{R}\\cup\\{+\\infty\\}$. Given a configuration $(x_1,\\dots,x_n)\\in {\\mathbb R}^{dn}$ of the system such that $n$ particles are present, the ene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-22-results.md",
+      "narrative": null,
+      "content": "\\\nAs said in the introduction, the bound on the absolute value of the $n^{\\rm th}$-order Mayer coefficient $C_n(\\b,\\L)$ appearing in Theorem 0 has been obtained \"indirectly\\\" using the method of Kirkwood-Salzburg equations. Our main result is the following Theorem [\\[teo1\\]](#teo1){reference-type=\"ref\" reference=\"teo1\"} below which improves strongly Theorem 0 via a direct bound on $C_n(\\b,\\L)$ by using the old Penrose tree-graph identity proposed in [@Pe67].\n\n::: teorema\n[]{#teo1 label=\"teo1\"} Let $V$ be a stable and tempered pair potential with stability constant $B$. Then the $n$-order Mayer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Proposition ??",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-proof-of-proposition.md",
+      "narrative": null,
+      "content": "[]{#sec3 label=\"sec3\"} In this section we set $[n]:=\\{1, ... ,n\\}$ and $E_n:=\\{\\{i,j\\} :\\; i,j \\in [n], \\ i <j \\}$. We recall also that ${\\mathcal G}_n$ is the set of all connected graphs with vertex set $[n]$ (i.e labeled connected graphs with $n$ vertices) and ${\\mathcal T}_n$ is the set of all trees with vertex set $[n]$ (i.e labeled trees with $n$ vertices). Given $g\\in {\\mathcal G}_n$, we denote $E_g$ its edge set. Given $g\\in {\\mathcal G}_n$ and $g'\\in {\\mathcal G}_n$ such that $E_g\\subset E_{g'}$, we say that $g$ is a subgraph of $g'$ and write $g\\subset g'$. Note that the pair $({\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Penrose identity",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-31-general-penrose-identity.md",
+      "narrative": null,
+      "content": "Penrose identity is a rewriting of the Ursell functions $$\\Phi^T(x_1,\\dots,x_n)~=~\\sum\\limits_{g\\in {\\mathcal G}_{n}}~\n\\prod\\limits_{\\{i,j\\}\\in E_g}\\left[  e^{ -\\b V(x_i -x_j)} -1\\right]$$ based on the existence of a map (*partition scheme*) from the set ${\\mathcal T}_n$ of the trees with vertex set $[n]$ to the set ${\\mathcal G}_n$ of the connected graphs with vertex set $[n]$.\n\n::: defi\n[]{#partschem label=\"partschem\"} A map $\\bm{M}: {\\mathcal T}_n\\to {\\mathcal G}_n$ is called a partition scheme in the set of the connected graphs ${\\mathcal G}_n$ if, for all $\\tau\\in {\\mathcal T}_n$, $\\tau\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partition scheme via minimum spanning tree",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-32-partition-scheme-via-minimum-spanning-tree.md",
+      "narrative": null,
+      "content": "[]{#asas label=\"asas\"}\n\nThe key point now is to find a partition scheme $\\bm M$ in such a way that is possible to find a good bound for the factor $\\exp\\{-\\b\\sum_{\\{i,j\\}\\in E_{\\bm{M}(\\t)}\\backslash E^+_\\t}V(x_i-x_j)\\}$ appearing in the r.h.s. of ([\\[tre\\]](#tre){reference-type=\"ref\" reference=\"tre\"}).\n\n\\\nWe will construct explicitly our partition scheme $\\bm M: {\\mathcal T}_n\\to {\\mathcal G}_n$ by first defining an auxiliary map $\\bm T :{\\mathcal G}_n\\to {\\mathcal T}_n$ and then deriving $\\bm M$ from $\\bm T$ according to the following proposition.\n\n::: pro\n[]{#twomaps label=\"twomaps\"} The fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion of the proof of Proposition ??",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-33-conclusion-of-the-proof-of-proposition.md",
+      "narrative": null,
+      "content": "We now have all ingredients to conclude the proof of Proposition [\\[pro1\\]](#pro1){reference-type=\"ref\" reference=\"pro1\"}. Indeed, for any fixed configuration $(x_1,\\dots,x_n)\\in \\mathbb{R}^{dn}$, by Corollary [\\[cor1\\]](#cor1){reference-type=\"ref\" reference=\"cor1\"} and Lemma [\\[l1\\]](#l1){reference-type=\"ref\" reference=\"l1\"} we have\n\n$$\\Big| \\sum_{g \\in {\\mathcal G}_n} \\prod_{\\{i,j\\} \\in E_g} (e^{-\\b V(x_i-x_j)}-1) \\Big| \\leq\n \\left[ \\prod_{\\{i,j\\} \\in E_\\tau} (1-e^{-\\b| V(x_i-x_j)|})\\right]\n e^{-\\b \\sum_{\\{i,j\\} \\in E_{\\bm M_f(\\tau)} \\setminus E^+_\\tau}V(x_i-x_j)}~\\le$$ $$~~~~~~~ \\le e^{\\b B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-4-proof-of-theorem.md",
+      "narrative": null,
+      "content": "To deduce Theorem [\\[teo1\\]](#teo1){reference-type=\"ref\" reference=\"teo1\"} from Proposition [\\[pro1\\]](#pro1){reference-type=\"ref\" reference=\"pro1\"} we just need to show the following easy lemma.\n\n::: lem\n[]{#le3 label=\"le3\"} For any $\\t\\in T_n$ it holds $$\\int_{\\L}dx_1\\dots \\int_{\\L}dx_{n} \\prod_{\\{i,j\\}\\in E_{\\t}}\n\\left(1-e^{-\\b |V(x_i-x_j)|}\\right)\\le\n|\\L|\\left[\\hat C(\\b)\\right]^{n-1}$$\n:::\n\n\\\n**Proof**. Without loss of generality we can always assume (eventually through a renomination of the indices in the integral of the l.h.s. of equation above) that $E_{\\t}~=~\\{2,j_2\\},\\{3,j_3\\},\\dots \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.07379v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with recent results and concluding remarks",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-5-comparison-with-recent-results-and-concluding.md",
+      "narrative": null,
+      "content": "As observed in Section 2, the improvement of Theorem [\\[teo1\\]](#teo1){reference-type=\"ref\" reference=\"teo1\"} respect to the old Penrose-Ruelle bound is manifestly evident, as far as general stable and tempered pair potentials are concerned. There have been however recent works [@MPS; @dLP; @dLPY] which also obtain improvements on the convergence radius of the Mayer series for systems of particles interacting via a restricted class of stable and tempered pair potentials. In particular, in a recent paper [@dLPY], which is a development of an early work by Basuev [@Ba2], the authors obtain new b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

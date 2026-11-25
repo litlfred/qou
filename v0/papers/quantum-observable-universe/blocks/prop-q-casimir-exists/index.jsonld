@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-casimir-exists",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-casimir-exists",
+  "kind": "proposition",
+  "title": "Existence of the $q$-Casimir element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-casimir"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-casimir-exists"
+  ],
+  "tags": [
+    "existence",
+    "casimir",
+    "quantum-group",
+    "central-element"
+  ],
+  "leanRef": "qou:QOU.QCasimir.not_exists_unconstrained",
+  "text": "q-casimir-exists.md",
+  "leanSource": "q-casimir-exists.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.5522v6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1206.5522v6",
+  "contains": [
+    "library/arxiv-1206.5522v6/sections/sec-front-matter",
+    "library/arxiv-1206.5522v6/sections/sec-000",
+    "library/arxiv-1206.5522v6/sections/sec-001",
+    "library/arxiv-1206.5522v6/sections/sec-002",
+    "library/arxiv-1206.5522v6/sections/sec-003",
+    "library/arxiv-1206.5522v6/sections/sec-004",
+    "library/arxiv-1206.5522v6/sections/sec-005",
+    "library/arxiv-1206.5522v6/sections/sec-006",
+    "library/arxiv-1206.5522v6/sections/sec-007",
+    "library/arxiv-1206.5522v6/sections/sec-008",
+    "library/arxiv-1206.5522v6/sections/sec-009",
+    "library/arxiv-1206.5522v6/sections/sec-010",
+    "library/arxiv-1206.5522v6/sections/sec-011",
+    "library/arxiv-1206.5522v6/sections/sec-012",
+    "library/arxiv-1206.5522v6/sections/sec-013",
+    "library/arxiv-1206.5522v6/sections/sec-014",
+    "library/arxiv-1206.5522v6/sections/sec-015",
+    "library/arxiv-1206.5522v6/sections/sec-016",
+    "library/arxiv-1206.5522v6/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds\n\n**FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS**\n\n*DAVID AYALA & JOHN FRANCIS*\n\n37 pp, 19 sections.\n\n**Abstract.** Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coeﬃcients in n-disk algebras in terms of a generalization of the Eilenberg–Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum ﬁeld theory, for which observables can be deﬁned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coeﬃcients, these ﬁeld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications.\n\n**Outline.** Front matter; 1 Introduction; 2 B-framed disks and manifolds; 2.1 B-framings; 2.2 Disks; 2.3 Manifolds with boundary; 2.4 Localizing with respect to isotopy equival; 3 Homology theories for topological manifolds; 3.1 Disk algebras; 3.2 Factorization homology over oriented 1-man; 3.3 Homology theories; 3.4 Pushforward; 3.5 Homology theories; 4 Nonabelian Poincaré duality; 5 Commutative algebras, free algebras, and Lie; 5.1 Factorization homology with coefficients i; 5.2 Factorization homology with coefficients i; 5.3 Factorization homology from Lie algebras",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1206.5522&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1206.5522v6",
+    "title_source": "slug",
+    "source_file": "1206.5522v6.pdf",
+    "source_sha256": "6e992242435b5e9fba57ab43673ab0235e60afa2cd6c31976e50d659e41da839",
+    "pages": 37,
+    "arxiv": {
+      "id": "1206.5522",
+      "version": "6",
+      "primary_class": "math.AT",
+      "stamp_date": "23 Jun 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

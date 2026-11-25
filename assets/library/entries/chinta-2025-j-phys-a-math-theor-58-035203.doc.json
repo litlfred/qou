@@ -1,0 +1,1022 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "chinta-2025-j-phys-a-math-theor-58-035203",
+  "title": "The discrete analogue of the Gaussian",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "The discrete analogue of the Gaussian",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-the-discrete-analogue-of-the-gaussian"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The building block of heat kernels of graphs",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-building-block-of-heat-kernels-of-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Discrete local limit theorem",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-discrete-local-limit-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Application 1: Bessel identities",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-application-1-bessel-identities"
+    },
+    {
+      "level": 2,
+      "title": "Application 2: finite trigonometric sums",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-application-2-finite-trigonometric-sums"
+    },
+    {
+      "level": 2,
+      "title": "Application 3: asymptotics by passing from the discrete to the continuous",
+      "number": "6",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-application-3-asymptotics-by-passing-from-the"
+    },
+    {
+      "level": 2,
+      "title": "Spectral zeta functions",
+      "number": "7",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-spectral-zeta-functions"
+    },
+    {
+      "level": 3,
+      "title": "Spectral zeta function of Z",
+      "number": "7.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-71-spectral-zeta-function-of-z"
+    },
+    {
+      "level": 3,
+      "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
+      "number": "7.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-72-application-4-spectral-zeta-function-of-regul"
+    },
+    {
+      "level": 2,
+      "title": "Potential applications to differential privacy",
+      "number": "8",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-8-potential-applications-to-differential-privacy"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marrani",
+          "heading": false
+        },
+        {
+          "term": "zucconi",
+          "heading": false
+        },
+        {
+          "term": "maxime",
+          "heading": false
+        },
+        {
+          "term": "alessio",
+          "heading": false
+        }
+      ],
+      "extract": "Journal of Physics A: Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203 View the article online for updates and enhancements. You may also like Unitary branching rules for the general linear Lie superalgebra Mark D Gould and Yang Zhang - Physics with non-unital algebras? An invitation to the Okubo",
+      "extractCut": true,
+      "blocks": [
+        "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-front-matter",
+        "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-the-discrete-analogue-of-the-gaussian",
+      "number": null,
+      "title": "The discrete analogue of the Gaussian",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential privacy",
+          "heading": false
+        },
+        {
+          "term": "author acknowledges",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "grant support",
+          "heading": false
+        },
+        {
+          "term": "karlsson",
+          "heading": false
+        },
+        {
+          "term": "uppsala",
+          "heading": false
+        },
+        {
+          "term": "discrete",
+          "heading": true
+        },
+        {
+          "term": "genève",
+          "heading": false
+        }
+      ],
+      "extract": "Gautam Chinta1,5,6, Jay Jorgenson1,6, Anders Karlsson2,3,7,∗and Lejla Smajlovi´c4 1 Department of Mathematics The City College of New York Convent Avenue at 138th Street, New York, NY 10031 United States of America 2 Section de mathématiques Université de Genève, Case Postale 64, 1211 Genève 4, Switzerland 3 Matematiska institutionen Uppsala universitet Box 256, 751 05 Uppsala, Sweden 4 Department of Mathematics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1616,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrete heat",
+          "heading": false
+        },
+        {
+          "term": "discrete gaussian",
+          "heading": false
+        },
+        {
+          "term": "discretized gaussian",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "sampled gaussian",
+          "heading": false
+        },
+        {
+          "term": "heat equation",
+          "heading": false
+        },
+        {
+          "term": "gaussian appears",
+          "heading": false
+        },
+        {
+          "term": "integer-valued random",
+          "heading": false
+        }
+      ],
+      "extract": "The Gaussian density function, or simply Gaussian, is the two-variable function defined by KR (t,x) := 1 √ 4πt e−x2/4t for x ∈R and t ∈R+. (1) In common language the Gaussian is sometimes referred to as the bell-shaped curve. In prob- ability theory, (1) is the density function of a normal random variable. The universality of the Gaussian is evident from the classical central limit theorem, the theory of Brownian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-building-block-of-heat-kernels-of-graphs",
+      "number": "2",
+      "title": "The building block of heat kernels of graphs",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat",
+          "heading": true
+        },
+        {
+          "term": "building block",
+          "heading": true
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "regular tree",
+          "heading": false
+        },
+        {
+          "term": "regular graph",
+          "heading": false
+        },
+        {
+          "term": "cjk",
+          "heading": false
+        },
+        {
+          "term": "tir",
+          "heading": false
+        },
+        {
+          "term": "laplacian",
+          "heading": false
+        }
+      ],
+      "extract": "Let X = (VX,EX) be a countable graph of bounded degree, where VX and EX denote the sets of vertices and edges, respectively. The Laplacian is an operator on L2(VX,C) defined by (∆Xf)(x) = X y∼x (f(x) −f(y)), (10) where the sum is taken over all vertices adjacent to x in X. A graph is called (q + 1)-regular or regular if every vertex has degree q + 1. The reason for the normalization of ‘q + 1’ comes form number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-discrete-local-limit-theorem",
+      "number": "3",
+      "title": "Discrete local limit theorem",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integer-valued random",
+          "heading": false
+        },
+        {
+          "term": "local limit",
+          "heading": true
+        },
+        {
+          "term": "limit theorem",
+          "heading": true
+        },
+        {
+          "term": "distributed integer-valued",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "probability distribution",
+          "heading": false
+        },
+        {
+          "term": "nσ2im",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        }
+      ],
+      "extract": "Let us continue with the setting of the last paragraph with p,q > 0 and p + q = 1. Then the heat kernel Kp,q(2t,x) with x ∈Z can be viewed as the probability distribution of the continuous- time random walk on Z which steps one unit to the left (resp. right) with probability p (resp. q = 1 −p.) Further, the time interval between steps has an exponential distribution with density 2e−2t, see [Fe66] or [Fe70, chapter",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-application-1-bessel-identities",
+      "number": "4",
+      "title": "Application 1: Bessel identities",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "bessel",
+          "heading": true
+        },
+        {
+          "term": "j2k",
+          "heading": false
+        },
+        {
+          "term": "bessel function",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": true
+        },
+        {
+          "term": "chinta",
+          "heading": false
+        },
+        {
+          "term": "cjks",
+          "heading": false
+        },
+        {
+          "term": "tij",
+          "heading": false
+        }
+      ],
+      "extract": "Bessel functions are ubiquitous in mathematical physics, perhaps first appearing as a solution to Bessel’s differential equations arising from the Laplace equation with cylindrical symmetry. A classic text on Bessel functions is Watson’s book [Wa44]. The fact that the I-Bessel func- tion is essentially a heat kernel makes many of the classical identities immediate from physical principles. Note that we continue to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-application-2-finite-trigonometric-sums",
+      "number": "5",
+      "title": "Application 2: finite trigonometric sums",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jks",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "resolvent kernel",
+          "heading": false
+        },
+        {
+          "term": "trigonometric",
+          "heading": true
+        },
+        {
+          "term": "sums",
+          "heading": true
+        },
+        {
+          "term": "xzz",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "laplace transform",
+          "heading": false
+        }
+      ],
+      "extract": "Finite sums of powers of trigonometric functions of multiple angles, such as m−1 X j=1 e2π irj/m sinn (jπ/m) form ∈N and r ∈{0,1,...,m −1} appear in many contexts, including Verlinde formulas, chiral Potts models, expressions for resistance in electrical network, and modeling angles in proteins and circular genomes; see [Do92, JKS23] for references. Let us now describe the methodology developed in [JKS23] to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-application-3-asymptotics-by-passing-from-the",
+      "number": "6",
+      "title": "Application 3: asymptotics by passing from the discrete to the continuous",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discrete",
+          "heading": true
+        },
+        {
+          "term": "discrete gaussians",
+          "heading": false
+        },
+        {
+          "term": "cjk",
+          "heading": false
+        },
+        {
+          "term": "discrete torus",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "azd",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "rectangular box",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a discrete tori in d dimensions, or equivalently, a rectangular box in the standard lattice Zd equipped with periodic boundary conditions, see figure 2. The question is how does the determinant of the (finite) graph Laplacian grows as the rectangular box becomes larger. This invariant counts the number of rooted spanning trees. (We note that arbitrary tori can also be treated; see [CJK12].) In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-spectral-zeta-functions",
+      "number": "7",
+      "title": "Spectral zeta functions",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-71-spectral-zeta-function-of-z",
+      "number": "7.1",
+      "title": "Spectral zeta function of Z",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral zeta",
+          "heading": true
+        },
+        {
+          "term": "zeta function",
+          "heading": true
+        },
+        {
+          "term": "riemann zeta",
+          "heading": false
+        },
+        {
+          "term": "circular disk",
+          "heading": false
+        },
+        {
+          "term": "solid cylinder",
+          "heading": false
+        },
+        {
+          "term": "regularization method",
+          "heading": false
+        },
+        {
+          "term": "mellin",
+          "heading": false
+        },
+        {
+          "term": "integral transform",
+          "heading": false
+        }
+      ],
+      "extract": "The zeta function regularization method in physics started in the 1970 s with papers by Dowker-Critchley and by Hawking. For a survey of applications to mathematical physics of this procedure, see [V03, El12, DEK12]. The zeta function in question is defined by a integral transform, specifically the Mellin transform, of the heat kernel. The case of the circle essen- tially gives rise to the Riemann zeta function. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-72-application-4-spectral-zeta-function-of-regul",
+      "number": "7.2",
+      "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral zeta",
+          "heading": true
+        },
+        {
+          "term": "ζtq",
+          "heading": false
+        },
+        {
+          "term": "zeta function",
+          "heading": true
+        },
+        {
+          "term": "hypergeometric function",
+          "heading": true
+        },
+        {
+          "term": "chinta",
+          "heading": false
+        },
+        {
+          "term": "tin",
+          "heading": false
+        },
+        {
+          "term": "degree polynomials",
+          "heading": false
+        },
+        {
+          "term": "theor",
+          "heading": false
+        }
+      ],
+      "extract": "The spectral zeta function ζTq+1 on the (q + 1)-regular tree Tq+1 was computed in [FK17, theorem 1.4] by representing it as an integral over the spectral measure on Tq+1. Note that the case q = 1 was discussed in the previous subsection. It was proved that for q > 1 one has that ζTq+1 (s) = q(q + 1) (q −1)2 \u0000√q −1 \u00012s F1 3 2,s + 1,1,3;− 4√q \u0000√q −1 \u00012 , 4√q \u0000√q + 1 \u00012 ! . (27) 16 J. Phys. A: Math. Theor. 58 (2025)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-potential-applications-to-differential-privacy",
+      "number": "8",
+      "title": "Potential applications to differential privacy",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential privacy",
+          "heading": true
+        },
+        {
+          "term": "discretized gaussian",
+          "heading": false
+        },
+        {
+          "term": "cks",
+          "heading": false
+        },
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "discrete gaussian",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "probability density",
+          "heading": false
+        },
+        {
+          "term": "cjk",
+          "heading": false
+        }
+      ],
+      "extract": "Differential privacy is a mathematically rigorous criterion by which an algorithm that acts on a dataset can be assessed. We refer to the article [CKS22] and references therein for an excel- lent presentation. In practice, as described in [CKS22], one alters the output of a Z-valued algorithm M which produces results from a given dataset D by adding a random amount. The main results of [CKS22] are that one can use a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat kernels",
+          "heading": false
+        },
+        {
+          "term": "karlsson",
+          "heading": false
+        },
+        {
+          "term": "spectral zeta",
+          "heading": false
+        },
+        {
+          "term": "spanning trees",
+          "heading": false
+        },
+        {
+          "term": "modified bessel",
+          "heading": false
+        },
+        {
+          "term": "zeta functions",
+          "heading": false
+        },
+        {
+          "term": "jorgenson",
+          "heading": false
+        },
+        {
+          "term": "discrete gaussian",
+          "heading": false
+        }
+      ],
+      "extract": "[AGMP24] Abadías L, Gonzalez-Camus J, Miana P and Pozo J 2021 Large time behaviour for the heat equation on Z, moments and decay rates J. Math. Anal. Appl. 500 125137 [AR24] Aggarwal D and Regev O A note on discrete Gaussian combinations of lattice vectors (arXiv:1308.2405) [AA19] Agostini D and Amendola C 2019 Discrete Gaussian distributions via theta functions SIAM J. Appl. Algebra Geom. 3 1–30 [Am74] Amos D E",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "heat kernel",
+      "heading": false
+    },
+    {
+      "term": "discrete heat",
+      "heading": false
+    },
+    {
+      "term": "heat equation",
+      "heading": false
+    },
+    {
+      "term": "gautam chinta",
+      "heading": false
+    },
+    {
+      "term": "discrete gaussian",
+      "heading": true
+    },
+    {
+      "term": "spectral zeta",
+      "heading": true
+    },
+    {
+      "term": "gaussian random",
+      "heading": false
+    },
+    {
+      "term": "bessel function",
+      "heading": false
+    },
+    {
+      "term": "discretized gaussian",
+      "heading": false
+    },
+    {
+      "term": "resolvent kernel",
+      "heading": false
+    },
+    {
+      "term": "discrete analogue",
+      "heading": true
+    },
+    {
+      "term": "discrete tori",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The dots show the discrete Gaussian at t = 1 as a function of integers x and the curve is the ordinary Gaussian with t = 1 as a function of real numbers x",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Spectral asymptotics of a discretized torus as the mesh goes to zero",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/chinta-2025-j-phys-a-math-theor-58-035203"
+  }
+}

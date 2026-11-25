@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2008.09788v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
+      "dcterms:creator": [
+        "KANEL-BELOV, ALEXEI",
+        "CHILIKOV, ALEXEI",
+        "IVANOV-POGODAEV, ILYA",
+        "MALEV, SERGEY"
+      ],
+      "dcterms:issued": "D:20200924",
+      "dcterms:identifier": "https://arxiv.org/abs/2008.09788",
+      "dcterms:abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The ﬁrst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for automorphisms of the group of polynomial symplectomorphisms. This setting has applications to math- ematical physics through the use of model theory (non-standard analysis) in the studying of homomorphisms between groups of symplectomorphisms and automor- phisms of the Weyl algebra. The last two sections deal with algorithmic problems for noncommutative and commutative algebraic geometry. Section 3.1 is devoted to the Gr¨obner basis in non-commutative situation. Despite the existence of an algorithm for checking equalities, the zero divisors and nilpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with the problem of embedding of algebraic varieties; a sketch of the proof of its algorithmic undecidability over a ﬁeld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
+      "dcterms:source": "library/arxiv-2008.09788v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2008.09788v2"
+    }
+  ]
+}

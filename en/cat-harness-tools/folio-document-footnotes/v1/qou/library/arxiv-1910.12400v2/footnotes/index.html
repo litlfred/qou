@@ -1,0 +1,2141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1910.12400v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1910.12400v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1910.12400v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1910.12400v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1910.12400v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;AbileneChristianUniversity,Abilene,Texas79699&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;udhury,18W.Christie,6H.J.Crawford,7M.Csan´ad,16M.Daugherity,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;er,19A.A.Derevschikov,42L.Didenko,6X.Dong,31J.L.Drachenberg,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.Huang,37X.Huang,55T.J.Humanic,39P.Huo,51G.Igo,9D.Isenhower,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-2&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;AGHUniversityofScienceandTechnology,FPACS,Cracow30-059,Poland&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;J.Adam,6L.Adamczyk,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;P.Filip,28E.Finch,50Y.Fisyak,6A.Francisco,62L.Fulek,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;,16J.Pluta,60J.Porter,31M.Posik,52N.K.Pruthi,40M.Przybycien,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;W.Q.Shen,49S.S.Shi,11Q.Y.Shou,49E.P.Sichtermann,31R.Sikora,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-3&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;AlikhanovInstituteforTheoreticalandExperimentalPhysicsNRC”KurchatovInstitute”,Moscow117218,Russia&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;L.C.Bland,6I.G.Bordyuzhin,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;B.Summa,41X.M.Sun,11Y.Sun,47Y.Sun,21B.Surrow,52D.N.Svirida,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-4&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;ArgonneNationalLaboratory,Argonne,Illinois60439&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;L.K.Kosarzewski,14L.Kramarik,14P.Kravtsov,35K.Krueger,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Singha,26N.Smirnov,62W.Solyst,25P.Sorensen,6H.M.Spinka,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;D.G.Underwood,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;UniversidadedeS˜aoPaulo,S˜aoPaulo,Brazil05314-970&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;0D.J.Stewart,62M.Strikhanov,35B.Stringfellow,43A.A.P.Suaide,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;text&quot;: &quot;UniversityofScienceandTechnologyofChina,Hefei,Anhui230026&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;nkova-Bunzarova,28A.Chatterjee,11D.Chen,10J.H.Chen,18X.Chen,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;W.W.Jacobs,25C.Jena,23A.Jentsch,6Y.JI,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;W.W.Jacobs,25C.Jena,23A.Jentsch,6Y.JI,47J.Jia,6, 51K.Jiang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;a,23A.Jentsch,6Y.JI,47J.Jia,6, 51K.Jiang,47S.Jowzaee,61X.Ju,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,6Y.H.Leung,31C.Li,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,6Y.H.Leung,31C.Li,47W.Li,44W.Li,49X.Li,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Liu,11H.Liu,25P.Liu,51P.Liu,49T.Liu,62X.Liu,39Y.Liu,53Z.Liu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Seyboth,33N.Shah,24E.Shahaliev,28P.V.Shanmuganathan,6M.Shao,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;B.Summa,41X.M.Sun,11Y.Sun,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.Tang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Vokal,28S.A.Voloshin,61F.Wang,43G.Wang,9J.S.Wang,21P.Wang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Zbroszczyk,60W.Zha,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Zbroszczyk,60W.Zha,47D.Zhang,11S.Zhang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;60W.Zha,47D.Zhang,11S.Zhang,47S.Zhang,49X.P.Zhang,55Y.Zhang,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-3&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;text&quot;: &quot;ShandongUniversity,Qingdao,Shandong266237&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;zarova,28A.Chatterjee,11D.Chen,10J.H.Chen,18X.Chen,47Z.Chen,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;52Md.Nasim,22K.Nayak,11D.Neﬀ,9J.M.Nelson,7D.B.Nemes,62M.Nie,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;O.V.Rogachevskiy,28J.L.Romero,8L.Ruan,6J.Rusnak,38N.R.Sahoo,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;3N.Shah,24E.Shahaliev,28P.V.Shanmuganathan,6M.Shao,47F.Shen,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Wang,43G.Wang,9J.S.Wang,21P.Wang,47Y.Wang,11Y.Wang,55Z.Wang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,55G.Xie,31W.Xie,43H.Xu,21N.Xu,31Q.H.Xu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Xiao,55G.Xie,31W.Xie,43H.Xu,21N.Xu,31Q.H.Xu,48Y.F.Xu,49Y.Xu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.Xu,9C.Yang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.Xu,9C.Yang,48Q.Yang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;ang,48Q.Yang,48S.Yang,6Y.Yang,37Z.Yang,11Z.Ye,44Z.Ye,12L.Yi,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.Zhang,37Z.Zhang,6J.Zhao,43C.Zhong,49C.Zhou,49X.Zhu,55Z.Zhu,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-4&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;text&quot;: &quot;ShanghaiInstituteofAppliedPhysics,ChineseAcademyofSciences,Shanghai201800&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,6Y.H.Leung,31C.Li,47W.Li,44W.Li,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Lin,53Y.Lin,11M.A.Lisa,39F.Liu,11H.Liu,25P.Liu,51P.Liu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.J.Llope,61R.S.Longacre,6N.S.Lukow,52S.Luo,12X.Luo,11G.L.Ma,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Y.G.Ma,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;W.Q.Shen,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;W.Q.Shen,49S.S.Shi,11Q.Y.Shou,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;,10Z.G.Xiao,55G.Xie,31W.Xie,43H.Xu,21N.Xu,31Q.H.Xu,48Y.F.Xu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Zbroszczyk,60W.Zha,47D.Zhang,11S.Zhang,47S.Zhang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.J.Zhang,37Z.Zhang,6J.Zhao,43C.Zhong,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.J.Zhang,37Z.Zhang,6J.Zhao,43C.Zhong,49C.Zhou,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-5&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;text&quot;: &quot;SouthernConnecticutStateUniversity,NewHaven,Connecticut06515&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;P.Filip,28E.Finch,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-6&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;51&quot;,
+    &quot;text&quot;: &quot;StateUniversityofNewYork,StonyBrook,NewYork11794&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;G.S.Averichev,28V.Bairathi,22K.Barish,10A.Behera,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Dunlop,6T.Edmonds,43N.Elsey,61J.Engelage,7G.Eppley,44R.Esha,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Z.Huang,9S.L.Huang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.Huang,9S.L.Huang,51T.Huang,37X.Huang,55T.J.Humanic,39P.Huo,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.KunnawalkamElayavalli,61J.H.Kwasizur,25R.Lacey,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Lin,53Y.Lin,11M.A.Lisa,39F.Liu,11H.Liu,25P.Liu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.Sandweiss,62S.Sato,56W.B.Schmidke,6N.Schmitz,33B.R.Schweid,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-7&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;52&quot;,
+    &quot;text&quot;: &quot;TempleUniversity,Philadelphia,Pennsylvania19122&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Ljubicic,6W.J.Llope,61R.S.Longacre,6N.S.Lukow,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;J.D.Nam,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.L.Pint´er,16J.Pluta,60J.Porter,31M.Posik,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;A.Quintero,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;B.Summa,41X.M.Sun,11Y.Sun,47Y.Sun,21B.Surrow,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-8&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;53&quot;,
+    &quot;text&quot;: &quot;TexasA&amp;MUniversity,CollegeStation,Texas77843&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;I.Alekseev,3, 35D.M.Anderson,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;,28E.Finch,50Y.Fisyak,6A.Francisco,62L.Fulek,2C.A.Gagliardi,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Lin,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;isa,39F.Liu,11H.Liu,25P.Liu,51P.Liu,49T.Liu,62X.Liu,39Y.Liu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;N.G.Minaev,42S.Mioduszewski,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;C.A.Tomkiel,32S.Trentalange,9R.E.Tribble,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-9&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;54&quot;,
+    &quot;text&quot;: &quot;UniversityofTexas,Austin,Texas78712&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Ma,49N.Magdy,12R.Majka,62D.Mallick,36S.Margetis,29C.Markert,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;A.Quintero,52S.K.Radhakrishnan,29S.Ramachandran,30R.L.Ray,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-10&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;55&quot;,
+    &quot;text&quot;: &quot;TsinghuaUniversity,Beijing100084&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;.Chatterjee,11D.Chen,10J.H.Chen,18X.Chen,47Z.Chen,48J.Cheng,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Z.Huang,9S.L.Huang,51T.Huang,37X.Huang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Kabana,29M.L.Kabir,10S.Kagamaster,32D.Kalinkin,25K.Kang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;cky,28J.H.Lee,6Y.H.Leung,31C.Li,47W.Li,44W.Li,49X.Li,47Y.Li,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;shin,61F.Wang,43G.Wang,9J.S.Wang,21P.Wang,47Y.Wang,11Y.Wang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;broszczyk,60W.Zha,47D.Zhang,11S.Zhang,47S.Zhang,49X.P.Zhang,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Z.J.Zhang,37Z.Zhang,6J.Zhao,43C.Zhong,49C.Zhou,49X.Zhu,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-11&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;56&quot;,
+    &quot;text&quot;: &quot;UniversityofTsukuba,Tsukuba,Ibaraki305-8571,Japan&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Edmonds,43N.Elsey,61J.Engelage,7G.Eppley,44R.Esha,51S.Esumi,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Niida,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;hevskiy,28J.L.Romero,8L.Ruan,6J.Rusnak,38N.R.Sahoo,48H.Sako,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Salur,45J.Sandweiss,62S.Sato,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-12&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;57&quot;,
+    &quot;text&quot;: &quot;UnitedStatesNavalAcademy,Annapolis,Maryland21402&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;kaﬀ,19L.Wen,9G.D.Westfall,34H.Wieman,31S.W.Wissink,25R.Witt,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-13&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;text&quot;: &quot;ValparaisoUniversity,Valparaiso,Indiana46383&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;A.Gibson,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;A.Gibson,58K.Gopal,23D.Grosnick,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;t,25P.Sorensen,6H.M.Spinka,4B.Srivastava,43T.D.S.Stanislaus,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-14&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;59&quot;,
+    &quot;text&quot;: &quot;VariableEnergyCyclotronCentre,Kolkata700064,India&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;dams,39J.K.Adkins,30G.Agakishiev,28M.M.Aggarwal,40Z.Ahammed,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-15&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;60&quot;,
+    &quot;text&quot;: &quot;WarsawUniversityofTechnology,Warsaw00-661,Poland&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;ane,29A.Kechechyan,28M.Kelsey,31Y.V.Khyzhniak,35D.P.Kiko la,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;D.Kincses,16T.A.Kinghorn,8I.Kisel,17A.Kiselev,6A.Kisiel,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.Pak,6A.Pandav,36Y.Panebratsev,28B.Pawlik,2, 63D.Pawlowska,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.L.Pint´er,16J.Pluta,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;M.Stefaniak,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;M.Sun,11Y.Sun,47Y.Sun,21B.Surrow,52D.N.Svirida,3P.Szymanski,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;H.Zbroszczyk,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-16&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;61&quot;,
+    &quot;text&quot;: &quot;WayneStateUniversity,Detroit,Michigan48201&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;J.C.Dunlop,6T.Edmonds,43N.Elsey,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;25C.Jena,23A.Jentsch,6Y.JI,47J.Jia,6, 51K.Jiang,47S.Jowzaee,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;R.KunnawalkamElayavalli,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Ljubicic,6W.J.Llope,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;N.G.Minaev,42S.Mioduszewski,53B.Mohanty,36I.Mooney,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;0J.Porter,31M.Posik,52N.K.Pruthi,40M.Przybycien,2J.Putschke,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Vokal,28S.A.Voloshin,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-17&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;62&quot;,
+    &quot;text&quot;: &quot;YaleUniversity,NewHaven,Connecticut06520&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;J.D.Brandenburg,48, 6A.V.Brandin,35J.Butterworth,44H.Caines,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;P.Filip,28E.Finch,50Y.Fisyak,6A.Francisco,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;on,58K.Gopal,23D.Grosnick,58A.I.Hamad,29A.Hamed,5J.W.Harris,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;lmann,41N.Herrmann,19E.Hoﬀman,20L.Holub,14Y.Hong,31S.Horvat,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;,53Y.Lin,11M.A.Lisa,39F.Liu,11H.Liu,25P.Liu,51P.Liu,49T.Liu,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;Y.G.Ma,49N.Magdy,12R.Majka,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;J.D.Nam,52Md.Nasim,22K.Nayak,11D.Neﬀ,9J.M.Nelson,7D.B.Nemes,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;T.Niida,56L.V.Nogach,42T.Nonaka,11G.Odyniec,31A.Ogawa,6S.Oh,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Salur,45J.Sandweiss,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;S.Singha,26N.Smirnov,&quot;
+      },
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;M.Stefaniak,60D.J.Stewart,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p002-18&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;63&quot;,
+    &quot;text&quot;: &quot;InstituteofNuclearPhysicsPAN,Cracow31-342,Poland (Dated: August 5, 2021) The Breit-Wheeler process which produces matter and anti-matter from photon collisions is in- vestigated experimentally through the observation of 6085 exclusive electron-positron pairs in ultra- peripheral Au+Au collisions at √sNN = 200 GeV. The measurements reveal a large fourth-order&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;07&quot;,
+    &quot;text&quot;: &quot;(2018), 153. Proc. 7th International Conference on Hard and Elec- [32] G. Aad et al. (ATLAS Collaboration), Measurement of tromagnetic Probes of High Energy Nuclear Collisions, exclusive γγ →l+l−production in proton–proton colli- 276-278, 313 (2016). sions at √s=7 TeV with the ATLAS detector, Phys. Lett. [51] D. E. Kharzeev, J. Liao, S. A. Voloshin, and G. Wang, B 749, 242 (2015). Chiral magnetic and vortical eﬀects in high-energy nu- [33] C. R. Vane et al., Electron-positron pair production in clear collisions - a status report, Prog. Part. Nucl. Phys. Coulomb collisions of ultrarelativistic sulfur ions with 88, 1 (2016). ﬁxed targets, Phys. Rev. Lett. 69, 1911 (1992). [52] D. E. Kharzeev, L. D. McLerran, and H. J. Warringa, [34] G. Baur, K. Hencken, and D. Trautmann, Electron- The eﬀects of topological charge change in heavy ion col- positron pair production in relativistic heavy ion colli- lisions: ’event by event P and CP violation’, Nucl. Phys. sions, Phys. Rep. 453, 1 (2007). A803, 227 (2008).&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1910.12400v2/blocks/prose-sec-000&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;J.Adam,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;J.Adam,6L.Adamczyk,2J.R.Adams,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;J.Adam,6L.Adamczyk,2J.R.Adams,39J.K.Adkins,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;J.Adam,6L.Adamczyk,2J.R.Adams,39J.K.Adkins,30G.Agakishiev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;mczyk,2J.R.Adams,39J.K.Adkins,30G.Agakishiev,28M.M.Aggarwal,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;I.Alekseev,3, 35D.M.Anderson,53A.Aparin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;I.Alekseev,3, 35D.M.Anderson,53A.Aparin,28E.C.Aschenauer,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;v,3, 35D.M.Anderson,53A.Aparin,28E.C.Aschenauer,6M.U.Ashraf,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;rson,53A.Aparin,28E.C.Aschenauer,6M.U.Ashraf,11F.G.Atetalla,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;parin,28E.C.Aschenauer,6M.U.Ashraf,11F.G.Atetalla,29A.Attri,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;G.S.Averichev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;G.S.Averichev,28V.Bairathi,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;G.S.Averichev,28V.Bairathi,22K.Barish,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;S.Averichev,28V.Bairathi,22K.Barish,10A.Behera,51R.Bellwied,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;context&quot;: &quot;,28V.Bairathi,22K.Barish,10A.Behera,51R.Bellwied,20A.Bhasin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;i,22K.Barish,10A.Behera,51R.Bellwied,20A.Bhasin,27J.Bielcik,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;A.Behera,51R.Bellwied,20A.Bhasin,27J.Bielcik,14J.Bielcikova,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;L.C.Bland,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;L.C.Bland,6I.G.Bordyuzhin,3J.D.Brandenburg,48, 6A.V.Brandin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;ordyuzhin,3J.D.Brandenburg,48, 6A.V.Brandin,35J.Butterworth,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M.Calder´ondelaBarcaS´anchez,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M.Calder´ondelaBarcaS´anchez,8D.Cebra,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;ondelaBarcaS´anchez,8D.Cebra,8I.Chakaberia,29, 6P.Chaloupka,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;S´anchez,8D.Cebra,8I.Chakaberia,29, 6P.Chaloupka,14B.K.Chan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;.Cebra,8I.Chakaberia,29, 6P.Chaloupka,14B.K.Chan,9F-H.Chang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Z.Chang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;Z.Chang,6N.Chankova-Bunzarova,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;Z.Chang,6N.Chankova-Bunzarova,28A.Chatterjee,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;Z.Chang,6N.Chankova-Bunzarova,28A.Chatterjee,11D.Chen,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;ng,6N.Chankova-Bunzarova,28A.Chatterjee,11D.Chen,10J.H.Chen,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;M.Cherney,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M.Cherney,13M.Chevalier,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;M.Cherney,13M.Chevalier,10S.Choudhury,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M.Cherney,13M.Chevalier,10S.Choudhury,18W.Christie,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;rney,13M.Chevalier,10S.Choudhury,18W.Christie,6H.J.Crawford,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;evalier,10S.Choudhury,18W.Christie,6H.J.Crawford,7M.Csan´ad,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;T.G.Dedovich,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;T.G.Dedovich,28I.M.Deppner,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;T.G.Dedovich,28I.M.Deppner,19A.A.Derevschikov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;T.G.Dedovich,28I.M.Deppner,19A.A.Derevschikov,42L.Didenko,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;dovich,28I.M.Deppner,19A.A.Derevschikov,42L.Didenko,6X.Dong,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;J.C.Dunlop,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;J.C.Dunlop,6T.Edmonds,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;J.C.Dunlop,6T.Edmonds,43N.Elsey,61J.Engelage,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;J.C.Dunlop,6T.Edmonds,43N.Elsey,61J.Engelage,7G.Eppley,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;sey,61J.Engelage,7G.Eppley,44R.Esha,51S.Esumi,56O.Evdokimov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;A.Ewigleben,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;A.Ewigleben,32O.Eyser,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;A.Ewigleben,32O.Eyser,6R.Fatemi,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;A.Ewigleben,32O.Eyser,6R.Fatemi,30S.Fazio,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;A.Ewigleben,32O.Eyser,6R.Fatemi,30S.Fazio,6P.Federic,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;eben,32O.Eyser,6R.Fatemi,30S.Fazio,6P.Federic,38J.Fedorisin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;ser,6R.Fatemi,30S.Fazio,6P.Federic,38J.Fedorisin,28C.J.Feng,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;temi,30S.Fazio,6P.Federic,38J.Fedorisin,28C.J.Feng,37Y.Feng,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;P.Filip,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;P.Filip,28E.Finch,50Y.Fisyak,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;Y.Fisyak,6A.Francisco,62L.Fulek,2C.A.Gagliardi,53T.Galatyuk,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;.Francisco,62L.Fulek,2C.A.Gagliardi,53T.Galatyuk,15F.Geurts,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;A.Gibson,58K.Gopal,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;A.Gibson,58K.Gopal,23D.Grosnick,58A.I.Hamad,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;A.Gibson,58K.Gopal,23D.Grosnick,58A.I.Hamad,29A.Hamed,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;Gopal,23D.Grosnick,58A.I.Hamad,29A.Hamed,5J.W.Harris,62S.He,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;3D.Grosnick,58A.I.Hamad,29A.Hamed,5J.W.Harris,62S.He,11W.He,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;nick,58A.I.Hamad,29A.Hamed,5J.W.Harris,62S.He,11W.He,18X.He,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;S.Heppelmann,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;S.Heppelmann,8S.Heppelmann,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;S.Heppelmann,8S.Heppelmann,41N.Herrmann,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;S.Heppelmann,8S.Heppelmann,41N.Herrmann,19E.Hoﬀman,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;.Heppelmann,8S.Heppelmann,41N.Herrmann,19E.Hoﬀman,20L.Holub,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;nn,8S.Heppelmann,41N.Herrmann,19E.Hoﬀman,20L.Holub,14Y.Hong,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;1N.Herrmann,19E.Hoﬀman,20L.Holub,14Y.Hong,31S.Horvat,62Y.Hu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;H.Z.Huang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;H.Z.Huang,9S.L.Huang,51T.Huang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;H.Z.Huang,9S.L.Huang,51T.Huang,37X.Huang,55T.J.Humanic,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;S.L.Huang,51T.Huang,37X.Huang,55T.J.Humanic,39P.Huo,51G.Igo,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;W.W.Jacobs,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;W.W.Jacobs,25C.Jena,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;W.W.Jacobs,25C.Jena,23A.Jentsch,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;ch,6Y.JI,47J.Jia,6, 51K.Jiang,47S.Jowzaee,61X.Ju,47E.G.Judd,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;S.Kabana,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;S.Kabana,29M.L.Kabir,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;S.Kabana,29M.L.Kabir,10S.Kagamaster,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;S.Kabana,29M.L.Kabir,10S.Kagamaster,32D.Kalinkin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;L.Kabir,10S.Kagamaster,32D.Kalinkin,25K.Kang,55D.Kapukchyan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;.Kagamaster,32D.Kalinkin,25K.Kang,55D.Kapukchyan,10K.Kauder,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ter,32D.Kalinkin,25K.Kang,55D.Kapukchyan,10K.Kauder,6H.W.Ke,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;D.Keane,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;D.Keane,29A.Kechechyan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;D.Keane,29A.Kechechyan,28M.Kelsey,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;D.Keane,29A.Kechechyan,28M.Kelsey,31Y.V.Khyzhniak,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;Kechechyan,28M.Kelsey,31Y.V.Khyzhniak,35D.P.Kiko la,60C.Kim,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M.Kelsey,31Y.V.Khyzhniak,35D.P.Kiko la,60C.Kim,10B.Kimelman,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;D.Kincses,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;D.Kincses,16T.A.Kinghorn,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;D.Kincses,16T.A.Kinghorn,8I.Kisel,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;D.Kincses,16T.A.Kinghorn,8I.Kisel,17A.Kiselev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;s,16T.A.Kinghorn,8I.Kisel,17A.Kiselev,6A.Kisiel,60S.R.Klein,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;nghorn,8I.Kisel,17A.Kiselev,6A.Kisiel,60S.R.Klein,31M.Kocan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;el,17A.Kiselev,6A.Kisiel,60S.R.Klein,31M.Kocan,14L.Kochenda,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;L.K.Kosarzewski,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;L.K.Kosarzewski,14L.Kramarik,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;L.K.Kosarzewski,14L.Kramarik,14P.Kravtsov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;ramarik,14P.Kravtsov,35K.Krueger,4N.KulathungaMudiyanselage,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;P.Kravtsov,35K.Krueger,4N.KulathungaMudiyanselage,20L.Kumar,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;R.KunnawalkamElayavalli,61J.H.Kwasizur,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;R.KunnawalkamElayavalli,61J.H.Kwasizur,25R.Lacey,51S.Lan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;mElayavalli,61J.H.Kwasizur,25R.Lacey,51S.Lan,11J.M.Landgraf,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;i,61J.H.Kwasizur,25R.Lacey,51S.Lan,11J.M.Landgraf,6J.Lauret,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;sizur,25R.Lacey,51S.Lan,11J.M.Landgraf,6J.Lauret,6A.Lebedev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;R.Lednicky,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,6Y.H.Leung,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;R.Lednicky,28J.H.Lee,6Y.H.Leung,31C.Li,47W.Li,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;Lee,6Y.H.Leung,31C.Li,47W.Li,44W.Li,49X.Li,47Y.Li,55Y.Liang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;ng,31C.Li,47W.Li,44W.Li,49X.Li,47Y.Li,55Y.Liang,29R.Licenik,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;T.Lin,53Y.Lin,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;T.Lin,53Y.Lin,11M.A.Lisa,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;T.Lin,53Y.Lin,11M.A.Lisa,39F.Liu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;T.Lin,53Y.Lin,11M.A.Lisa,39F.Liu,11H.Liu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;,11M.A.Lisa,39F.Liu,11H.Liu,25P.Liu,51P.Liu,49T.Liu,62X.Liu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;T.Ljubicic,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;T.Ljubicic,6W.J.Llope,61R.S.Longacre,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;T.Ljubicic,6W.J.Llope,61R.S.Longacre,6N.S.Lukow,52S.Luo,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;ubicic,6W.J.Llope,61R.S.Longacre,6N.S.Lukow,52S.Luo,12X.Luo,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;e,61R.S.Longacre,6N.S.Lukow,52S.Luo,12X.Luo,11G.L.Ma,49L.Ma,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;.Longacre,6N.S.Lukow,52S.Luo,12X.Luo,11G.L.Ma,49L.Ma,18R.Ma,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Y.G.Ma,49N.Magdy,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;Y.G.Ma,49N.Magdy,12R.Majka,62D.Mallick,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;Y.G.Ma,49N.Magdy,12R.Majka,62D.Mallick,36S.Margetis,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;,12R.Majka,62D.Mallick,36S.Margetis,29C.Markert,54H.S.Matis,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;2D.Mallick,36S.Margetis,29C.Markert,54H.S.Matis,31J.A.Mazer,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;N.G.Minaev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;N.G.Minaev,42S.Mioduszewski,53B.Mohanty,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;inaev,42S.Mioduszewski,53B.Mohanty,36I.Mooney,61Z.Moravcova,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;uszewski,53B.Mohanty,36I.Mooney,61Z.Moravcova,14D.A.Morozov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;53B.Mohanty,36I.Mooney,61Z.Moravcova,14D.A.Morozov,42M.Nagy,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;J.D.Nam,52Md.Nasim,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;J.D.Nam,52Md.Nasim,22K.Nayak,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;J.D.Nam,52Md.Nasim,22K.Nayak,11D.Neﬀ,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;J.D.Nam,52Md.Nasim,22K.Nayak,11D.Neﬀ,9J.M.Nelson,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;ayak,11D.Neﬀ,9J.M.Nelson,7D.B.Nemes,62M.Nie,48G.Nigmatkulov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;T.Niida,56L.V.Nogach,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;T.Niida,56L.V.Nogach,42T.Nonaka,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;T.Niida,56L.V.Nogach,42T.Nonaka,11G.Odyniec,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;T.Niida,56L.V.Nogach,42T.Nonaka,11G.Odyniec,31A.Ogawa,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;ogach,42T.Nonaka,11G.Odyniec,31A.Ogawa,6S.Oh,62V.A.Okorokov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;onaka,11G.Odyniec,31A.Ogawa,6S.Oh,62V.A.Okorokov,35B.S.Page,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;R.Pak,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;R.Pak,6A.Pandav,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;R.Pak,6A.Pandav,36Y.Panebratsev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;.Pandav,36Y.Panebratsev,28B.Pawlik,2, 63D.Pawlowska,60H.Pei,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;Panebratsev,28B.Pawlik,2, 63D.Pawlowska,60H.Pei,11C.Perkins,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;v,28B.Pawlik,2, 63D.Pawlowska,60H.Pei,11C.Perkins,7L.Pinsky,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;R.L.Pint´er,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;R.L.Pint´er,16J.Pluta,60J.Porter,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;R.L.Pint´er,16J.Pluta,60J.Porter,31M.Posik,52N.K.Pruthi,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;r,31M.Posik,52N.K.Pruthi,40M.Przybycien,2J.Putschke,61H.Qiu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;A.Quintero,52S.K.Radhakrishnan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;A.Quintero,52S.K.Radhakrishnan,29S.Ramachandran,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;ero,52S.K.Radhakrishnan,29S.Ramachandran,30R.L.Ray,54R.Reed,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;hakrishnan,29S.Ramachandran,30R.L.Ray,54R.Reed,32H.G.Ritter,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;J.B.Roberts,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;J.B.Roberts,44O.V.Rogachevskiy,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;J.B.Roberts,44O.V.Rogachevskiy,28J.L.Romero,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;J.B.Roberts,44O.V.Rogachevskiy,28J.L.Romero,8L.Ruan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;B.Roberts,44O.V.Rogachevskiy,28J.L.Romero,8L.Ruan,6J.Rusnak,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;S.Salur,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;S.Salur,45J.Sandweiss,62S.Sato,56W.B.Schmidke,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;S.Salur,45J.Sandweiss,62S.Sato,56W.B.Schmidke,6N.Schmitz,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;s,62S.Sato,56W.B.Schmidke,6N.Schmitz,33B.R.Schweid,51F.Seck,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;,56W.B.Schmidke,6N.Schmitz,33B.R.Schweid,51F.Seck,15J.Seger,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;M.Sergeeva,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M.Sergeeva,9R.Seto,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;M.Sergeeva,9R.Seto,10P.Seyboth,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;M.Sergeeva,9R.Seto,10P.Seyboth,33N.Shah,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;M.Sergeeva,9R.Seto,10P.Seyboth,33N.Shah,24E.Shahaliev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;eto,10P.Seyboth,33N.Shah,24E.Shahaliev,28P.V.Shanmuganathan,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;W.Q.Shen,49S.S.Shi,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;W.Q.Shen,49S.S.Shi,11Q.Y.Shou,49E.P.Sichtermann,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;,49S.S.Shi,11Q.Y.Shou,49E.P.Sichtermann,31R.Sikora,2M.Simko,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;,11Q.Y.Shou,49E.P.Sichtermann,31R.Sikora,2M.Simko,38J.Singh,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;S.Singha,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;S.Singha,26N.Smirnov,62W.Solyst,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;S.Singha,26N.Smirnov,62W.Solyst,25P.Sorensen,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;N.Smirnov,62W.Solyst,25P.Sorensen,6H.M.Spinka,4B.Srivastava,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;M.Stefaniak,60D.J.Stewart,62M.Strikhanov,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;M.Stefaniak,60D.J.Stewart,62M.Strikhanov,35B.Stringfellow,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;,62M.Strikhanov,35B.Stringfellow,43A.A.P.Suaide,46M.Sumbera,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;B.Summa,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;B.Summa,41X.M.Sun,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;B.Summa,41X.M.Sun,11Y.Sun,47Y.Sun,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;un,47Y.Sun,21B.Surrow,52D.N.Svirida,3P.Szymanski,60A.H.Tang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;Z.Tang,47A.Taranenko,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;Z.Tang,47A.Taranenko,35T.Tarnowsky,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;Z.Tang,47A.Taranenko,35T.Tarnowsky,34J.H.Thomas,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;Tang,47A.Taranenko,35T.Tarnowsky,34J.H.Thomas,31A.R.Timmins,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;ranenko,35T.Tarnowsky,34J.H.Thomas,31A.R.Timmins,20D.Tlusty,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;Tarnowsky,34J.H.Thomas,31A.R.Timmins,20D.Tlusty,13M.Tokarev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;C.A.Tomkiel,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;C.A.Tomkiel,32S.Trentalange,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;C.A.Tomkiel,32S.Trentalange,9R.E.Tribble,53P.Tribedy,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;kiel,32S.Trentalange,9R.E.Tribble,53P.Tribedy,6S.K.Tripathy,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;entalange,9R.E.Tribble,53P.Tribedy,6S.K.Tripathy,16O.D.Tsai,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;nge,9R.E.Tribble,53P.Tribedy,6S.K.Tripathy,16O.D.Tsai,9Z.Tu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;ibble,53P.Tribedy,6S.K.Tripathy,16O.D.Tsai,9Z.Tu,6T.Ullrich,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;D.G.Underwood,4I.Upsal,48, 6G.VanBuren,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;D.G.Underwood,4I.Upsal,48, 6G.VanBuren,6J.Vanek,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;.Underwood,4I.Upsal,48, 6G.VanBuren,6J.Vanek,38A.N.Vasiliev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;Upsal,48, 6G.VanBuren,6J.Vanek,38A.N.Vasiliev,42I.Vassiliev,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;.VanBuren,6J.Vanek,38A.N.Vasiliev,42I.Vassiliev,17F.Videbæk,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;S.Vokal,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;S.Vokal,28S.A.Voloshin,61F.Wang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;S.Vokal,28S.A.Voloshin,61F.Wang,43G.Wang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;S.Vokal,28S.A.Voloshin,61F.Wang,43G.Wang,9J.S.Wang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;8S.A.Voloshin,61F.Wang,43G.Wang,9J.S.Wang,21P.Wang,47Y.Wang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;J.C.Webb,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;J.C.Webb,6P.C.Weidenkaﬀ,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;J.C.Webb,6P.C.Weidenkaﬀ,19L.Wen,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;J.C.Webb,6P.C.Weidenkaﬀ,19L.Wen,9G.D.Westfall,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;J.C.Webb,6P.C.Weidenkaﬀ,19L.Wen,9G.D.Westfall,34H.Wieman,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;.C.Weidenkaﬀ,19L.Wen,9G.D.Westfall,34H.Wieman,31S.W.Wissink,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;Y.Wu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,55G.Xie,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,55G.Xie,31W.Xie,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,55G.Xie,31W.Xie,43H.Xu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;Y.Wu,10Z.G.Xiao,55G.Xie,31W.Xie,43H.Xu,21N.Xu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;G.Xie,31W.Xie,43H.Xu,21N.Xu,31Q.H.Xu,48Y.F.Xu,49Y.Xu,48Z.Xu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;Z.Xu,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Z.Xu,9C.Yang,48Q.Yang,48S.Yang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;Z.Xu,9C.Yang,48Q.Yang,48S.Yang,6Y.Yang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;Z.Xu,9C.Yang,48Q.Yang,48S.Yang,6Y.Yang,37Z.Yang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;Z.Xu,9C.Yang,48Q.Yang,48S.Yang,6Y.Yang,37Z.Yang,11Z.Ye,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;Xu,9C.Yang,48Q.Yang,48S.Yang,6Y.Yang,37Z.Yang,11Z.Ye,44Z.Ye,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Yang,48S.Yang,6Y.Yang,37Z.Yang,11Z.Ye,44Z.Ye,12L.Yi,48K.Yip,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;H.Zbroszczyk,60W.Zha,47D.Zhang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;D.Zhang,11S.Zhang,47S.Zhang,49X.P.Zhang,55Y.Zhang,47Y.Zhang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;Z.J.Zhang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Z.J.Zhang,37Z.Zhang,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;Z.J.Zhang,37Z.Zhang,6J.Zhao,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;.Zhang,6J.Zhao,43C.Zhong,49C.Zhou,49X.Zhu,55Z.Zhu,48M.Zurek,&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;ao,43C.Zhong,49C.Zhou,49X.Zhu,55Z.Zhu,48M.Zurek,31andM.Zyzak&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨P&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⊥⟩=38.&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;⊥⟩=38.1 ± 0.&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;⊥⟩=38.1 ± 0.9MeVanddisplays&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;23×10&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;aρ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;FIG.2.Theχ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eevs.χ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;constructing a χ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ee(ππ)= nσ&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e1(π1)+nσ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;ρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;contributionfromphoto-nuclearproductionofρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨P&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;⊥⟩(MeV)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⊥⟩(MeV)38.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;⊥⟩(MeV)38.1 ± 0.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨P&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;plicable.TheﬁtstothedatawithEq.(1)resultinχ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨P&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;vectormesons[48]withthedecaybranchρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tion(e.g.γγ→ρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tion(e.g.γγ→ρ0ρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;photoproductionofasingleρ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;process of semi-inclusive ρ&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⟨P&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;60&quot;,
+    &quot;context&quot;: &quot;⊥⟩in&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;σ= 14±4(stat.)±4(syst.) MeV (χ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ﬁt (χ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;diﬀractivephotoproductionofρ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;diﬀractivephotoproductionofρ&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

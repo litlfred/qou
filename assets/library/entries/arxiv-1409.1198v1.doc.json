@@ -1,0 +1,2052 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.1198v1",
+  "title": "arxiv-1409.1198v1",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "What is categorification?",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-what-is-categorification"
+    },
+    {
+      "level": 2,
+      "title": "The Grothendieck group",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-grothendieck-group"
+    },
+    {
+      "level": 2,
+      "title": "The trace decategorification map",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-trace-decategorification-map"
+    },
+    {
+      "level": 2,
+      "title": "Comparing Grothendieck group and trace",
+      "number": "1.4",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-comparing-grothendieck-group-and-trace"
+    },
+    {
+      "level": 2,
+      "title": "Quantum group categorifications",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-quantum-group-categorifications"
+    },
+    {
+      "level": 2,
+      "title": "Traces of categorified quantum groups",
+      "number": "1.6",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-traces-of-categorified-quantum-groups"
+    },
+    {
+      "level": 1,
+      "title": "Elementary notions of trace",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-2-elementary-notions-of-trace"
+    },
+    {
+      "level": 2,
+      "title": "Traces of linear maps",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-21-traces-of-linear-maps"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild homology and the trace of a ring",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-22-hochschild-homology-and-the-trace-of-a-ring"
+    },
+    {
+      "level": 1,
+      "title": "Trace of a linear category",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-trace-of-a-linear-category"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild–Mitchell homology and the trace",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-hochschildmitchell-homology-and-the-trace"
+    },
+    {
+      "level": 2,
+      "title": "The trace and direct sums",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-the-trace-and-direct-sums"
+    },
+    {
+      "level": 2,
+      "title": "The trace and idempotent completions",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-the-trace-and-idempotent-completions"
+    },
+    {
+      "level": 2,
+      "title": "The trace and categories of complexes",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-the-trace-and-categories-of-complexes"
+    },
+    {
+      "level": 2,
+      "title": "The trace and split Grothendieck groups",
+      "number": "3.5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-35-the-trace-and-split-grothendieck-groups"
+    },
+    {
+      "level": 2,
+      "title": "The trace of a graded linear category",
+      "number": "3.6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-36-the-trace-of-a-graded-linear-category"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
+      "number": "3.7",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-37-hochschildmitchell-homology-of-strongly-upper"
+    },
+    {
+      "level": 1,
+      "title": "Categorified quantum groups",
+      "number": "4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-4-categorified-quantum-groups"
+    },
+    {
+      "level": 2,
+      "title": "Quantum sln",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-41-quantum-sln"
+    },
+    {
+      "level": 2,
+      "title": "The 2-category UQ(sln)",
+      "number": "4.2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-42-the-2-category-uqsln"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric functions and bubbles",
+      "number": "4.3",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-43-symmetric-functions-and-bubbles"
+    },
+    {
+      "level": 2,
+      "title": "Kar, K0 and Tr for 2-categories",
+      "number": "4.4",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-44-kar-k0-and-tr-for-2-categories"
+    },
+    {
+      "level": 2,
+      "title": "Two categorifications of Lusztig's integral form A(sl2)",
+      "number": "4.5",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-45-two-categorifications-of-lusztigs-integral-fo"
+    },
+    {
+      "level": 2,
+      "title": "Two categorifications of A(sln)",
+      "number": "4.6",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Graded traces of categorified quantum groups",
+      "number": "5",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-5-graded-traces-of-categorified-quantum-groups"
+    },
+    {
+      "level": 2,
+      "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
+      "number": "5.1",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-51-the-trace-of-2-category-usl2-and-the-current"
+    },
+    {
+      "level": 2,
+      "title": "The current algebra for sln",
+      "number": "5.2",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-52-the-current-algebra-for-sln"
+    },
+    {
+      "level": 1,
+      "title": "Action on center of objects in",
+      "number": "6",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-6-action-on-center-of-objects-in"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decategoriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "sln",
+          "heading": false
+        },
+        {
+          "term": "categoriﬁed",
+          "heading": false
+        },
+        {
+          "term": "zaur",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1409.1198v1 [math.QA] 3 Sep 2014 TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA Abstract. Categoriﬁcation is a process of lifting structures to a higher categorical level. The original structure can then be recovered by means of the so-called “decategoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additional",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.1198v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-what-is-categorification",
+      "number": "1.1",
+      "title": "What is categorification?",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat gvect",
+          "heading": false
+        },
+        {
+          "term": "categorification",
+          "heading": true
+        },
+        {
+          "term": "cat vect",
+          "heading": false
+        },
+        {
+          "term": "cal dim",
+          "heading": false
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "decategorification",
+          "heading": false
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "categorical structure",
+          "heading": false
+        }
+      ],
+      "extract": "Categorification is perhaps best explained by defining decategorification. Quite broadly, {\\em decategorification} is a rigorously defined procedure for forgetting information and reducing the complexity of a given mathematical structure. A bit more formally, a {\\em decategorification} can be thought of as a map \\[ \\xy (-20,0)*+{\\txt{$(n-1)$-category}}=\"1\"; (20,0)*+{\\txt{$n$-category}}=\"2\"; {\\ar_-{\\cal{D}} \"2\";\"1\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-grothendieck-group",
+      "number": "1.2",
+      "title": "The Grothendieck group",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grothendieck group",
+          "heading": true
+        },
+        {
+          "term": "cat gvect",
+          "heading": false
+        },
+        {
+          "term": "cat vect",
+          "heading": false
+        },
+        {
+          "term": "spaces cat",
+          "heading": false
+        },
+        {
+          "term": "cong dim",
+          "heading": false
+        },
+        {
+          "term": "group decategorification",
+          "heading": false
+        },
+        {
+          "term": "graded additive",
+          "heading": false
+        },
+        {
+          "term": "split grothendieck",
+          "heading": false
+        }
+      ],
+      "extract": "For any additive category $\\C$, its split Grothendieck group $K_0(\\C)$ is the abelian group generated by isomorphisms classes of its objects $\\{[X]_{\\cong} \\, |\\, X\\in \\Ob(\\C)\\}$, modulo the relation that $[A \\oplus B]_{\\cong} = [A]_{\\cong} + [B]_{\\cong}$. Categories are organized into a 2-categorical structure $\\cat{Cat}$ consisting of categories, functors, and natural transformations. (Here and throughout this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-trace-decategorification-map",
+      "number": "1.3",
+      "title": "The trace decategorification map",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat vect",
+          "heading": false
+        },
+        {
+          "term": "trace lincat",
+          "heading": false
+        },
+        {
+          "term": "endomorphism phi",
+          "heading": false
+        },
+        {
+          "term": "traced euler",
+          "heading": false
+        },
+        {
+          "term": "usual trace",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "sec trace",
+          "heading": false
+        },
+        {
+          "term": "decategorification",
+          "heading": true
+        }
+      ],
+      "extract": "The trace, or zeroth Hochschild homology, is another procedure for turning a linear category $\\C$ into an abelian group. It is defined by \\begin{gather*} \\Tr(\\C ):= \\bigoplus_{x\\in \\Ob(\\modC )}\\modC (x,x)/\\Span\\{fg-gf\\} \\end{gather*} where $f$ and $g$ run through all pairs of morphisms $f:x\\to y$ and $g:y\\to x$ with $x,y\\in \\Ob(\\C)$. We write $[f]$ for the class of an endomorphism $f \\maps x \\to x$ in $\\Tr(\\C)$. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-comparing-grothendieck-group-and-trace",
+      "number": "1.4",
+      "title": "Comparing Grothendieck group and trace",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace decategorification",
+          "heading": false
+        },
+        {
+          "term": "traced euler",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "grothendieck",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "khovanov",
+          "heading": false
+        },
+        {
+          "term": "bar-natan",
+          "heading": false
+        }
+      ],
+      "extract": "We have now described two flavors of decategorification. One which we will refer to as the {\\em Grothendieck decategorification} which is closely connected to the notion of dimension, graded dimension, and Euler characteristic. Our second notion of decategorification, which we will call the {\\em trace decategorification}, seems to generalize the Grothendieck group decategorification in much the same way that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-quantum-group-categorifications",
+      "number": "1.5",
+      "title": "Quantum group categorifications",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scs ell",
+          "heading": false
+        },
+        {
+          "term": "cal onel",
+          "heading": false
+        },
+        {
+          "term": "category ucat",
+          "heading": false
+        },
+        {
+          "term": "dir",
+          "heading": false
+        },
+        {
+          "term": "crv",
+          "heading": false
+        },
+        {
+          "term": "category ucatd",
+          "heading": false
+        },
+        {
+          "term": "onel maps",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": true
+        }
+      ],
+      "extract": "There is a strong interplay between quantum link invariants and algebraic objects known as quantum groups. Given the existence of link homology theories categorifying link invariants, it is perhaps not surprising to discover that quantum groups can also be categorified. In this article we will examine how the two notions of decategorification given by the Grothendieck group and the trace can be applied to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-traces-of-categorified-quantum-groups",
+      "number": "1.6",
+      "title": "Traces of categorified quantum groups",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorified quantum",
+          "heading": true
+        },
+        {
+          "term": "ucat ast",
+          "heading": false
+        },
+        {
+          "term": "quantum fsl",
+          "heading": false
+        },
+        {
+          "term": "algebra bfu",
+          "heading": false
+        },
+        {
+          "term": "trace decategorification",
+          "heading": false
+        },
+        {
+          "term": "udot",
+          "heading": false
+        },
+        {
+          "term": "onel",
+          "heading": false
+        },
+        {
+          "term": "karoubi envelope",
+          "heading": false
+        }
+      ],
+      "extract": "In this article we hope to emphasize that the trace decategorification map $\\Tr$ has various advantages to $K_0$. \\begin{itemize} \\item Using $\\Tr$ we can work with the 2-category $\\Ucat(\\mf{g})$ rather than its Karoubi envelope, since $\\Tr$ does not change under the passage to the Karoubi envelope. This is a nice advantage as the passage to the Karoubi envelope often takes us out of the purely diagrammatic world.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-2-elementary-notions-of-trace",
+      "number": "2",
+      "title": "Elementary notions of trace",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-21-traces-of-linear-maps",
+      "number": "2.1",
+      "title": "Traces of linear maps",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tikzpicture draw",
+          "heading": false
+        },
+        {
+          "term": "rounded corners",
+          "heading": false
+        },
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "qquad hackcenter",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "inner sep",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "ast otimes",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we recall the definition and properties of the trace for any linear endomorphism. Throughout this paper $\\k$ is assumed to be a field. The trace of an $n \\times n$ matrix $M=\\{M_{ij}\\}_{1 \\leq i,j,\\leq n}$ is the sum of its diagonal entries $\\sum_{i} M_{ii}$. Given two square matrices $A,B$, the trace satisfies the {\\em trace property} \\begin{equation} \\label{trace-property}\\tr(AB)=\\tr(BA)\\, .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-hochschild-homology-and-the-trace-of-a-ring",
+      "number": "2.2",
+      "title": "Hochschild homology and the trace of a ring",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 952,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture draw",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        },
+        {
+          "term": "dir",
+          "heading": false
+        },
+        {
+          "term": "fill red",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture path",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec_HH0ring} In this section we will explain how the Hochschild homology of a ring $R$ can be viewed as ``trace\" of the ring $R$. Recall that for a ring $R$, the Hochschild homology $\\HH_*(R)$ of $R$ can be defined as the homology of the Hochschild complex (see \\cite{Mitchell,Loday}): $$ C_{\\bullet}=C_{\\bullet}(R):\\quad \\quad \\dots\\longrightarrow C_n \\xto{d_n} C_{n-1} \\xto{d_{n-1}} \\dots \\xto{d_2} C_1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-trace-of-a-linear-category",
+      "number": "3",
+      "title": "Trace of a linear category",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tikzpicture draw",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "controls",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "thick",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        },
+        {
+          "term": "bullet",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec_trace_lincat} In this section we define trace or zeroth Hochschild homology groups for linear and additive categories, and discuss their properties. A category $\\C$ is called {\\it linear} if its hom-spaces are equipped with structures of abelian groups and the composition maps are bilinear. Such a structure is sometimes called an $\\rm\\bf {Ab}$-category, or a category enriched in the monoidal category $\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-hochschildmitchell-homology-and-the-trace",
+      "number": "3.1",
+      "title": "Hochschild–Mitchell homology and the trace",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category modc",
+          "heading": false
+        },
+        {
+          "term": "hochschild--mitchell homology",
+          "heading": false
+        },
+        {
+          "term": "otimes sigma",
+          "heading": false
+        },
+        {
+          "term": "dots otimes",
+          "heading": false
+        },
+        {
+          "term": "sigma n-i",
+          "heading": false
+        },
+        {
+          "term": "col longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "xto",
+          "heading": false
+        },
+        {
+          "term": "linear category",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec_HH0trace} Any ring $R$ with unit $1_R$ can be viewed as a linear category with one object $\\ast$ and whose morphisms $\\Hom(\\ast,\\ast)$ are given by the abelian group $R$. Composition is given by multiplication in $R$ and the identity morphisms of $\\ast$ corresponds to the unit $1_R \\in R$. Utilizing this observation, it possible to define the Hochschild--Mitchell homology of an arbitrary linear category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-the-trace-and-direct-sums",
+      "number": "3.2",
+      "title": "The trace and direct sums",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modc oplus",
+          "heading": false
+        },
+        {
+          "term": "modc rightarrow",
+          "heading": false
+        },
+        {
+          "term": "col oplus",
+          "heading": false
+        },
+        {
+          "term": "cat gvect",
+          "heading": false
+        },
+        {
+          "term": "cat vect",
+          "heading": false
+        },
+        {
+          "term": "direct sums",
+          "heading": true
+        },
+        {
+          "term": "additive category",
+          "heading": false
+        },
+        {
+          "term": "begin gather",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that the trace behaves well with respect to direct sums in additive categories. An {\\em additive} category is a linear category equipped with a zero object and biproducts, also called direct sums. \\begin{lem} \\label{r14} If $\\modC $ is an additive category, then for $f\\col x\\rightarrow x$ and $g\\col y\\rightarrow y$, we have \\begin{gather*} [f\\oplus g]=[f]+[g] \\end{gather*} in $\\Tr(\\modC)$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-the-trace-and-idempotent-completions",
+      "number": "3.3",
+      "title": "The trace and idempotent completions",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rounded corners",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture draw",
+          "heading": false
+        },
+        {
+          "term": "category modc",
+          "heading": false
+        },
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "envelope kar",
+          "heading": false
+        },
+        {
+          "term": "inner sep",
+          "heading": false
+        },
+        {
+          "term": "karoubi envelope",
+          "heading": false
+        },
+        {
+          "term": "scs",
+          "heading": false
+        }
+      ],
+      "extract": "A {\\em projection} or {\\em idempotent} in $\\cat{Vect}_{\\k}$ is an endomorphism $p \\maps V \\to V$ satisfying the relation $p^2=p$. In this case, $(\\Id_V-p )\\maps V \\to V$ is also an idempotent and together these two idempotents decompose the space $V$ into a direct sum of the image of the projection $p$ and the image of the projection $\\Id_V-p$. More generally, idempotents can be defined in any category $\\modC$ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-the-trace-and-categories-of-complexes",
+      "number": "3.4",
+      "title": "The trace and categories of complexes",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "traced euler",
+          "heading": false
+        },
+        {
+          "term": "xto",
+          "heading": false
+        },
+        {
+          "term": "kom",
+          "heading": false
+        },
+        {
+          "term": "cite dror",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "bullet",
+          "heading": false
+        },
+        {
+          "term": "cob",
+          "heading": false
+        },
+        {
+          "term": "khovanov bracket",
+          "heading": false
+        }
+      ],
+      "extract": "The trace of a linear category $\\C$ gives rise to an interesting variant of Euler characteristic. Let $\\Kom(\\C)$ be the category of bounded complexes over $\\C$. Recall that the objects of $\\Kom(\\C)$ are complexes $$ A_{\\bullet}:\\quad \\quad \\dots\\longrightarrow A_i \\xto{d_i} A_{i-1} \\xto{d_{i-1}} \\dots \\xto{d_2} A_1 \\xto{d_1} A_0 \\longrightarrow 0, $$ where $A_i \\in \\Ob(\\C)$ and $d_i\\in \\C(A_i, A_{i-1})$, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-35-the-trace-and-split-grothendieck-groups",
+      "number": "3.5",
+      "title": "The trace and split Grothendieck groups",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gather modc",
+          "heading": false
+        },
+        {
+          "term": "split grothendieck",
+          "heading": true
+        },
+        {
+          "term": "begin gather",
+          "heading": false
+        },
+        {
+          "term": "end gather",
+          "heading": false
+        },
+        {
+          "term": "gras",
+          "heading": false
+        },
+        {
+          "term": "chern character",
+          "heading": false
+        },
+        {
+          "term": "cite loday",
+          "heading": false
+        },
+        {
+          "term": "additive category",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:split-groth-groups} For a small additive category $\\modC $, the {\\em split Grothendieck group} $K_0(\\modC )$ of $\\modC $ is the abelian group generated by the isomorphism classes of objects of $\\modC $ with relations $[x\\oplus y]_{\\cong}=[x]_{\\cong}+[y]_{\\cong}$ for $x,y\\in \\Ob(\\modC)$. Here $[x]_{\\cong}$ denotes the isomorphism class of $x$. The split Grothendieck group $K_0$ defines a functor from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-36-the-trace-of-a-graded-linear-category",
+      "number": "3.6",
+      "title": "The trace of a graded linear category",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modc ast",
+          "heading": false
+        },
+        {
+          "term": "graded category",
+          "heading": true
+        },
+        {
+          "term": "graded linear",
+          "heading": true
+        },
+        {
+          "term": "translation modc",
+          "heading": false
+        },
+        {
+          "term": "subset modc",
+          "heading": false
+        },
+        {
+          "term": "graded ring",
+          "heading": false
+        },
+        {
+          "term": "object ast",
+          "heading": false
+        },
+        {
+          "term": "graded local",
+          "heading": false
+        }
+      ],
+      "extract": "A {\\em graded} linear category is a category equipped with an auto-equivalence $\\la 1 \\ra$. We denote by $\\la t \\ra$ the auto-equivalence obtained by applying $\\la 1 \\ra$ $t$ times. Thus, given any object $x\\in \\Ob(\\modC)$, there exists an object $x \\la t \\ra \\in \\Ob(\\modC)$ for all $t$. Likewise, given any morphism $f \\maps x \\to y$ in $\\modC$, there is a morphism $f \\la t \\ra \\maps x \\la t \\ra \\to y \\la t \\ra$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-37-hochschildmitchell-homology-of-strongly-upper",
+      "number": "3.7",
+      "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 913,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category modc",
+          "heading": false
+        },
+        {
+          "term": "let modc",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "upper triangular",
+          "heading": true
+        },
+        {
+          "term": "upper-triangular linear",
+          "heading": false
+        },
+        {
+          "term": "upper-triangular basis",
+          "heading": false
+        },
+        {
+          "term": "cong modz",
+          "heading": false
+        },
+        {
+          "term": "end gather",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:upper-triang-line} Recall that the trace of a linear category is just the zeroth Hochschild--Mitchell homology. There is a class of linear categories for which we can compute explicitly their Hochschild--Mitchell homology. The results developed in this section will be useful in our study of the Hochschild--Mitchell homology of categorified quantum groups. \\begin{defn} \\label{r22} A linear category $\\modC",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-4-categorified-quantum-groups",
+      "number": "4",
+      "title": "Categorified quantum groups",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "Fix a base ﬁeld k. We will always work over this ﬁeld which is not assumed to be of characteristic 0, nor algebraically closed.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-41-quantum-sln",
+      "number": "4.1",
+      "title": "Quantum sln",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sln",
+          "heading": true
+        },
+        {
+          "term": "weight lattice",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "cartan",
+          "heading": false
+        },
+        {
+          "term": "collection",
+          "heading": false
+        },
+        {
+          "term": "unit",
+          "heading": false
+        },
+        {
+          "term": "symmetric",
+          "heading": false
+        }
+      ],
+      "extract": "4.1.1. The Cartan datum. Let I = {1, 2, . . ., n−1} consist of the set of vertices of the Dynkin diagram of type An−1 ◦ ◦ ◦ ◦ 1 2 3 n−1 · · · enumerated from left to right. Let X = Zn−1 denote the weight lattice for sln and {αi}i ∈I ⊂X and {Λi}i∈I ⊂X denote the collection of simple roots and fundamental weights, respectively. There is a symmetric bilinear form on X deﬁned by (αi, αj) = aij where aij =    2 if i =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-42-the-2-category-uqsln",
+      "number": "4.2",
+      "title": "The 2-category UQ(sln)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2061,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sln",
+          "heading": true
+        },
+        {
+          "term": "zaur guliyev",
+          "heading": false
+        },
+        {
+          "term": "tji",
+          "heading": false
+        },
+        {
+          "term": "fi1λ",
+          "heading": false
+        },
+        {
+          "term": "tij",
+          "heading": false
+        },
+        {
+          "term": "ei1λ",
+          "heading": false
+        },
+        {
+          "term": "anna beliakova",
+          "heading": false
+        },
+        {
+          "term": "kazuo habiro",
+          "heading": false
+        }
+      ],
+      "extract": "[33]. For an elementary introduction to the categoriﬁcation of sl2 see [38]. 4.2.1. Choice of scalars Q. Associated to the Cartan datum for sln we also ﬁx a choice of scalars Q consisting of: • tij for all i, j ∈I, such that • tii = 1 for all i ∈I and tij ∈k× for i̸ = j, • tij = tji when aij = 0. 4.2.2. The deﬁnition. By a graded linear 2-category we mean a category enriched in graded linear categories, so that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-43-symmetric-functions-and-bubbles",
+      "number": "4.3",
+      "title": "Symmetric functions and bubbles",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scs spadesuit",
+          "heading": false
+        },
+        {
+          "term": "endxy mbox",
+          "heading": false
+        },
+        {
+          "term": "endxy begin",
+          "heading": false
+        },
+        {
+          "term": "endxy sum",
+          "heading": false
+        },
+        {
+          "term": "category ucat",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "bubbles",
+          "heading": true
+        },
+        {
+          "term": "bbe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec_sym-bub} The calculus of closed diagrams in the 2-category $\\Ucat_Q(\\mf{sl}_n)$ is remarkably rich. A prominent role is played by the non-nested dotted bubbles of a fixed orientation since any closed diagram in the graphical calculus for $\\Ucat_Q(\\mf{sl}_n)$ can be reduced to composites of such diagrams. There is a beautiful analogy between dotted bubbles in the graphical calculus and various bases for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-44-kar-k0-and-tr-for-2-categories",
+      "number": "4.4",
+      "title": "Kar, K0 and Tr for 2-categories",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kar",
+          "heading": true
+        },
+        {
+          "term": "karoubi envelope",
+          "heading": false
+        },
+        {
+          "term": "additive functor",
+          "heading": false
+        },
+        {
+          "term": "additive linear",
+          "heading": false
+        },
+        {
+          "term": "composition functor",
+          "heading": false
+        },
+        {
+          "term": "linear category",
+          "heading": false
+        },
+        {
+          "term": "categories",
+          "heading": true
+        },
+        {
+          "term": "split grothendieck",
+          "heading": false
+        }
+      ],
+      "extract": "deﬁned for (additive) linear categories to the 2-categorical setting. A 2-category C is linear if the categories C(x, y) are linear for all x, y ∈Ob(C) and the composition functor preserves the linear structure (see [10] for more details). Similarly, an additive linear 2-category is a linear 2-category in which the categories C(x, y) are also additive and composition is given by an additive functor. The following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-45-two-categorifications-of-lusztigs-integral-fo",
+      "number": "4.5",
+      "title": "Two categorifications of Lusztig's integral form A(sl2)",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "udot",
+          "heading": false
+        },
+        {
+          "term": "cite klms",
+          "heading": false
+        },
+        {
+          "term": "cite bhlz",
+          "heading": false
+        },
+        {
+          "term": "foamation functors",
+          "heading": false
+        },
+        {
+          "term": "cite lqr",
+          "heading": false
+        },
+        {
+          "term": "cite bghl",
+          "heading": false
+        },
+        {
+          "term": "foam category",
+          "heading": false
+        },
+        {
+          "term": "cite lau",
+          "heading": false
+        }
+      ],
+      "extract": "Here we present the results of \\cite{Lau1,KLMS} computing $K_0$ and of \\cite{BHLZ} computing $\\Tr$ of $\\Ucat(\\mf{sl}_2)$. The algebra $\\UA(\\mf{sl}_2)$ has a well-known basis, called Lusztig's canonical basis $\\Bbb B$ consisting of \\begin{enumerate}[(i)] \\item $E^{(a)}F^{(b)}1_{n} \\quad $ for $a,b\\geq 0$, $n\\in\\Z$, $n\\leq b-a$, \\item $F^{(b)}E^{(a)}1_{n} \\quad$ for $a$,$b\\geq 0$, $n\\in\\Z$, $n\\geq b-a$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-5-graded-traces-of-categorified-quantum-groups",
+      "number": "5",
+      "title": "Graded traces of categorified quantum groups",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ucat ast",
+          "heading": false
+        },
+        {
+          "term": "onel",
+          "heading": false
+        },
+        {
+          "term": "hom spaces",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        }
+      ],
+      "extract": "By allowing homogeneous, but not necessarily grading preserving 2-morphisms in $\\Ucat(\\mf{g})$ we can define a version of the 2-category with larger 2-hom spaces. Let $\\Ucat^{\\ast}(\\mf{g})$ denote the 2-category with the same objects and the same 1-morphisms as $\\Ucat(\\mf{g})$, but with 2-hom spaces between one morphisms $X \\onel$ and $Y\\onel$ given by \\[ \\Ucat^{\\ast}(\\mf{g})(X\\onel, Y\\onel) := \\bigoplus_{t\\in \\Z}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-51-the-trace-of-2-category-usl2-and-the-current",
+      "number": "5.1",
+      "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cbub spadesuit",
+          "heading": false
+        },
+        {
+          "term": "spadesuit s-j",
+          "heading": false
+        },
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture path",
+          "heading": false
+        },
+        {
+          "term": "endxy end",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "controls",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we outline the results of \\cite{BHLZ}. We work with $\\g=\\fsl_2$ and our 2-morphisms are defined over $\\Z$. Let us consider the algebra $\\fsl_2[t]=\\fsl_2\\otimes \\modQ [t]$. As a $\\modQ $-algebra, its universal enveloping algebra $\\mathbf U (\\fsl_2[t])$ is generated by $E_i,F_i$ and $H_i$ for $i\\geq 0$, where $X_i=X\\otimes t^i$, subject to the following relations: \\begin{gather*}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-52-the-current-algebra-for-sln",
+      "number": "5.2",
+      "title": "The current algebra for sln",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1999,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scs",
+          "heading": false
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        },
+        {
+          "term": "dir",
+          "heading": false
+        },
+        {
+          "term": "crv",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture path",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "endxy end",
+          "heading": false
+        },
+        {
+          "term": "lambda mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{current-sln} We expect to be able to generalize Theorem~\\ref{qqq} to $\\fsl_n$. Let us define the current algebra ${\\bf U}(\\fsl_n[t])={\\bf U}(\\fsl_n\\otimes\\Q[t])$. This algebra is generated over $\\k$ by $x^+_{i,r}$, $x^-_{i,s}$ and $\\xi_{i,k}$ for $r,s,k\\in \\N\\cup\\{0\\}$ and $1\\leq i<n$ modulo the following relations: \\begin{description} \\item[C1] For $i,j$ in $I$ and $r,s \\in \\N\\cup\\{0\\}$ \\[ [ \\xi_{i,r},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-6-action-on-center-of-objects-in",
+      "number": "6",
+      "title": "Action on center of objects in",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 969,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ucat ast",
+          "heading": false
+        },
+        {
+          "term": "category ucat",
+          "heading": false
+        },
+        {
+          "term": "endxy mapsto",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "additive category",
+          "heading": false
+        },
+        {
+          "term": "onel",
+          "heading": false
+        },
+        {
+          "term": "additive bbbk",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{action} This section is devoted to the proof of Theorem \\ref{2-reps}. The action of the current algebra on the trace of any 2-representation follows directly from the functotiality of the trace. The rest of the section establishes the action on the center. \\subsubsection{Centers of categories} The center $Z(\\C)$ of an additive category $\\C$ is the endomorphism ring of the identity functor $\\Id_{\\C}$ on $\\C$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categoriﬁed quantum",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "skew howe",
+          "heading": false
+        },
+        {
+          "term": "lauda",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "crystal bases",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S. Al-Nofayee. Simple objects in the heart of a t-structure. J. Pure Appl. Algebra, 213(1):54–59, 2009. [2] J. Baez and J. Dolan. Categoriﬁcation. In Higher category theory (Evanston, IL, 1997), volume 230 of Contemp. Math., pages 1–36. Amer. Math. Soc., Providence, RI, 1998. arXiv:9802029. 46 ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA [3] M. Balagovic. Degeneration of trigonometric dynamical",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "category modc",
+      "heading": false
+    },
+    {
+      "term": "tikzpicture draw",
+      "heading": false
+    },
+    {
+      "term": "modc ast",
+      "heading": false
+    },
+    {
+      "term": "category ucat",
+      "heading": false
+    },
+    {
+      "term": "endxy begin",
+      "heading": false
+    },
+    {
+      "term": "endxy end",
+      "heading": false
+    },
+    {
+      "term": "additive category",
+      "heading": false
+    },
+    {
+      "term": "graded category",
+      "heading": true
+    },
+    {
+      "term": "hackcenter begin",
+      "heading": false
+    },
+    {
+      "term": "fill blue",
+      "heading": false
+    },
+    {
+      "term": "linear category",
+      "heading": true
+    },
+    {
+      "term": "functor modc",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "An example of a diagram representing a 2-morphism in U(g) from E2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 30,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p45); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 30 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.1198v1"
+  }
+}

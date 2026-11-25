@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Decide.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Decide",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Decide: regenerate the Lean, or fix the generator?",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:UserTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "inLane": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/lane/Lane_Owner",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_Drift"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_3"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

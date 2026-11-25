@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0309051v5/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0309051v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0309051v5/manifest.jsonld",
+  "provenance": "ingested"
+}

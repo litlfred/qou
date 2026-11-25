@@ -1,0 +1,1573 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1909.06797v5",
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Review 1 : Droplet description of unitary matrix models",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-review-1-droplet-description-of-unitary-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The large N droplets",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-large-n-droplets"
+    },
+    {
+      "level": 1,
+      "title": "Review 2 : Plancherel Growth of Young diagrams",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-review-2-plancherel-growth-of-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "The Universal Diagram and Automodel",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-31-the-universal-diagram-and-automodel"
+    },
+    {
+      "level": 2,
+      "title": "Fluctuations of automodel diagrams",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-32-fluctuations-of-automodel-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Partition Function for Young lattice",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-partition-function-for-young-lattice"
+    },
+    {
+      "level": 2,
+      "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-41-a-connection-between-young-lattice-and-gross"
+    },
+    {
+      "level": 1,
+      "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-large-n-analysis-of-partition-function-an-alte"
+    },
+    {
+      "level": 2,
+      "title": "Large N solutions and automodel diagrams",
+      "number": "5.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-large-n-solutions-and-automodel-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "A connection with automodel",
+      "number": "5.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-52-a-connection-with-automodel"
+    },
+    {
+      "level": 1,
+      "title": "The Hilbert space for Plancherel growth",
+      "number": "6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-6-the-hilbert-space-for-plancherel-growth"
+    },
+    {
+      "level": 2,
+      "title": "Droplet quantisation",
+      "number": "6.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-61-droplet-quantisation"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "7",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-7-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Analysing Unitary Matrix Models",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-appendix-a-analysing-unitary-matrix-models"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A.1 Eigenvalue analysis",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-a1-eigenvalue-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A.2 Young diagram analysis",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-a2-young-diagram-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A.3 Finding the connection between two pictures",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-appendix-a3-finding-the-connection-between-two-p"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B Spectral curve",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-appendix-b-spectral-curve"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C Asymmetric solutions",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-appendix-c-asymmetric-solutions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automodel diagrams",
+          "heading": false
+        },
+        {
+          "term": "plancherel growth",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "indian institute",
+          "heading": false
+        },
+        {
+          "term": "young lattice",
+          "heading": false
+        },
+        {
+          "term": "droplet description",
+          "heading": false
+        },
+        {
+          "term": "arghya",
+          "heading": false
+        },
+        {
+          "term": "bhopal",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Mechanics of Plancherel Growth Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc aInstitute of Mathematical Sciences, Homi Bhaba National Institute (HBNI), IV Cross Road, Taramani, Chennai 600113, India bNational Institute for Theoretical Physics, School of Physics and Mandelstam Institute for Theoretical Physics, University of the Witwatersrand, Wits, 2050, South Africa. cDepartment",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1909.06797v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emph automodel",
+          "heading": false
+        },
+        {
+          "term": "automodel diagrams",
+          "heading": false
+        },
+        {
+          "term": "plancherel growth",
+          "heading": false
+        },
+        {
+          "term": "growth process",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "automodel class",
+          "heading": false
+        },
+        {
+          "term": "cite verker",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:intro} The theory of random matrices has wide applications both in physics and mathematics. A particular class of random matrix model namely the unitary matrix model (UMM) plays a pivotal role in understanding the various thermodynamic properties, phase structure and dynamics of gauge theories in diverse dimensions. In this paper we explore yet another interesting application of UMM in the field of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-review-1-droplet-description-of-unitary-matrix",
+      "number": "2",
+      "title": "Review 1 : Droplet description of unitary matrix models",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi vec",
+          "heading": false
+        },
+        {
+          "term": "plaquette model",
+          "heading": false
+        },
+        {
+          "term": "unitary matrix",
+          "heading": true
+        },
+        {
+          "term": "droplet",
+          "heading": true
+        },
+        {
+          "term": "single plaquette",
+          "heading": false
+        },
+        {
+          "term": "cite chattopadhyay",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:umm} We start with a very brief discussion on droplet description of different large $N$ phases of a generic UMM. The partition function of UMM is given by, \\begin{equation}\\label{eq:Zumm} Z=\\int [dU] e^{S(U)} \\end{equation} where $[dU]$ is the Haar measure and $S(U)$ is a generic function of $N\\times N$ unitary matrices $U$. The Haar measure $[dU]$ and $S(U)$ are invariant under unitary transformation. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-large-n-droplets",
+      "number": "2.1",
+      "title": "The large N droplets",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": "9",
+      "words": 779,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "droplets",
+          "heading": true
+        },
+        {
+          "term": "split een",
+          "heading": false
+        },
+        {
+          "term": "theta omega",
+          "heading": false
+        },
+        {
+          "term": "hbar int",
+          "heading": false
+        },
+        {
+          "term": "cite chattopadhyay",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "cite duttagopakumar",
+          "heading": false
+        },
+        {
+          "term": "droplet description",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:connection} Droplet description of large $N$ phases is based on the fact that the partition function of UMM has two equivalent descriptions - in eigenvalue basis and in Young diagram basis. It is well known that eigenvalues of unitary matrices behave like position of free fermions \\cite{BIPZ}. On the other hand, hook lengths of Young diagrams are like momenta of these fermions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-review-2-plancherel-growth-of-young-diagrams",
+      "number": "3",
+      "title": "Review 2 : Plancherel Growth of Young diagrams",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "plancherel",
+          "heading": true
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "young lattice",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "growth",
+          "heading": true
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:plancherel} The Markovian growth process of large Young diagrams can be given a statistical interpretation described through a partition function. In order to achieve that we define a Young lattice \\cite{Eynard:2008mt} \\be\\label{eq:Ylattice} \\cY = \\bigcup\\limits_{k=0}^{\\infty} \\cY_k. \\ee All the members of $\\cY_k$ have same number of boxes but different shapes. $\\cY_k$ can be thought of as an ensemble of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-the-universal-diagram-and-automodel",
+      "number": "3.1",
+      "title": "The Universal Diagram and Automodel",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automodel",
+          "heading": true
+        },
+        {
+          "term": "rotated french",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "partial hat",
+          "heading": false
+        },
+        {
+          "term": "french notation",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "footnotesize typical",
+          "heading": false
+        },
+        {
+          "term": "een",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:automodel} Although we are using the ``English\" notation for Young diagrams, but the limit shape of Young diagrams takes a simple form in rotated French notation. A typical shape of Young diagram in French notation is given in \\cref{fig:YDFrench}. The centres of boxes are marked with $(X,Y)$ coordinates. The function $X(Y)$ specifies a particular shape of Young diagram in this notation. \\begin{figure}[h]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-fluctuations-of-automodel-diagrams",
+      "number": "3.2",
+      "title": "Fluctuations of automodel diagrams",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fluctuations",
+          "heading": true
+        },
+        {
+          "term": "gaussian fluctuations",
+          "heading": false
+        },
+        {
+          "term": "fluctuations around",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        },
+        {
+          "term": "cite math",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "Fluctuations of Young diagrams have been under investigation in the mathematics literature \\cite{Kerovfluctuation,johansson1998,2003math.4010I,2005math.1112S,2006math.7635B,BogachevSu,2014arXiv1402.4615D,2016arXiv160805163E,2017arXiv170402352D,2004math.5191M,2004math.5258M,2006math.6431C}. A \\emph{rescaled} Young diagram defined in (\\ref{eq:vk}) in the $k\\ra \\infty$ limit takes the form of limit shape (denoted by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-partition-function-for-young-lattice",
+      "number": "4",
+      "title": "Partition Function for Young lattice",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "gcpf",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": true
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "growth process",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "een",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:partitionfunction} Following (\\ref{eq:GCPF}, \\ref{eq:CPF}) and \\cref{eq:Plancherelmeasure}, the grand canonical partition function for $\\cY$ can be written as, \\ben\\label{eq:GCPF2} \\cQ_\\cY = \\sum_{k=0}^{\\infty} z^k \\sum_{\\lambda_{k}} \\frac{(\\text{dim}\\lambda_{k})^2}{k!} \\delta(k-|\\lambda_{k}|), \\quad z>0. \\een This partition function is related to \\emph{Poissonised Plancherel measure}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-a-connection-between-young-lattice-and-gross",
+      "number": "4.1",
+      "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "sum chi",
+          "heading": false
+        },
+        {
+          "term": "coupling phase",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": true
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "gross-witten-wadia",
+          "heading": true
+        },
+        {
+          "term": "matrix model",
+          "heading": false
+        },
+        {
+          "term": "wadia",
+          "heading": false
+        }
+      ],
+      "extract": "The Gross-Witten-Wadia model is a well studied unitary matrix model in physics. The partition function for this model is defined over an ensemble of $N\\times N$ unitary matrices with a real potential $\\Tr U+\\Tr U^{\\dagger}$, where the $trace$ is taken over fundamental representations. The partition function of GWW model is given by \\be\\label{eq:GWWPF} \\cZ_{GWW} = \\int [dU] \\ e^{ \\frac N{\\lambda} (\\Tr U+\\Tr",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-large-n-analysis-of-partition-function-an-alte",
+      "number": "5",
+      "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "een",
+          "heading": false
+        },
+        {
+          "term": "seff",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "gcpf",
+          "heading": false
+        },
+        {
+          "term": "sim cal",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:largek} The large $N$ analysis of partition function (\\ref{eq:GCPF2}) was explicitly done in \\cite{duttagopakumar}. We briefly review the procedure for the readers not familiar with matrix model techniques (for a more comprehensive treatment of matrix models, see \\cite{Marino:2005sj,Eynard:2015aea,eynard_book}). To analyse the partition function (\\ref{eq:GCPF3}) we denote a valid Young diagram of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-51-large-n-solutions-and-automodel-diagrams",
+      "number": "5.1",
+      "title": "Large N solutions and automodel diagrams",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite duttagopakumar",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "rectangular diagrams",
+          "heading": false
+        },
+        {
+          "term": "saddeq",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "gww transition",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "een",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:largeNphases} All possible large $N$ solutions of (\\ref{eq:saddeq2}) were discussed in \\cite{duttagopakumar} and it was observed that (\\ref{eq:saddeq2}) admits two possible solutions. However, here we look at the problem more carefully keeping the symmetry of the growth process in mind. From the Plancherel measure (\\ref{eq:Plancherelmeasure2}) we see that at any level $k$, two Young diagrams related to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-52-a-connection-with-automodel",
+      "number": "5.2",
+      "title": "A connection with automodel",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automodel",
+          "heading": true
+        },
+        {
+          "term": "automodel class",
+          "heading": false
+        },
+        {
+          "term": "dow",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "diagram density",
+          "heading": false
+        },
+        {
+          "term": "box number",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        },
+        {
+          "term": "emph",
+          "heading": false
+        }
+      ],
+      "extract": "To make a precise connection between automodel class and the above solution, we need to set up a dictionary between the variables defined in $(u,v)$ plane and $(h,x)$ plane. The relation between \\emph{French} notation and \\emph{English} notation is $Y=n\\ \\tand \\ X=x$. We use the following transformation between $(n,x)$ and $(u,v)$ so that $u=v=2$ point is mapped to $n=1, x=0$ \\ben \\begin{split} \\frac u2 &= n-x \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-6-the-hilbert-space-for-plancherel-growth",
+      "number": "6",
+      "title": "The Hilbert space for Plancherel growth",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert space",
+          "heading": true
+        },
+        {
+          "term": "hilbertspace",
+          "heading": false
+        },
+        {
+          "term": "growth",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:hilbertspace} As we have reviewed in section \\ref{sec:umm}, the unitary matrix models admit a phase space or droplet description in two dimensions spanned by $(h,\\theta)$. Following \\cite{Chattopadhyay:2020rle} we show that the growth of Young diagrams can be described in terms of evolution of \\emph{classical} or coherent states in a Hilbert space. The goal of this section is to construct the Hilbert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-61-droplet-quantisation",
+      "number": "6.1",
+      "title": "Droplet quantisation",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 25,
+      "labelStart": "19",
+      "labelEnd": "25",
+      "words": 1926,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ben ket",
+          "heading": false
+        },
+        {
+          "term": "ket vec",
+          "heading": false
+        },
+        {
+          "term": "theta een",
+          "heading": false
+        },
+        {
+          "term": "ben bar",
+          "heading": false
+        },
+        {
+          "term": "ket tau",
+          "heading": false
+        },
+        {
+          "term": "state ket",
+          "heading": false
+        },
+        {
+          "term": "quad ket",
+          "heading": false
+        },
+        {
+          "term": "split een",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:fluctuation} The single particle Hamiltonian (\\ref{eq:singleh}) is not in diagonal form. We define a new variable \\ben \\bar h = h-S(\\theta). \\een In terms of this new variables $(\\bar h, \\theta)$ the Hamiltonian density is given by \\ben\\label{eq:singleh2} \\mathfrak{h}(\\bar h,\\theta) = \\frac{\\bar h^2}2 -\\frac{\\pi^2}2 \\rho(\\theta)^2 \\een and the droplet boundary is given by \\ben\\label{eq:boundaryeqn2} \\bar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-7-conclusion",
+      "number": "7",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermi droplets",
+          "heading": false
+        },
+        {
+          "term": "fluid droplets",
+          "heading": false
+        },
+        {
+          "term": "automodel class",
+          "heading": false
+        },
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "fermi surfaces",
+          "heading": false
+        },
+        {
+          "term": "free fermi",
+          "heading": false
+        },
+        {
+          "term": "lower fermi",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:conclusion} In this paper we show that the growth of Young diagrams equipped with Plancherel measure can be studied through a simple unitary matrix model, namely Gross-Witten-Wadia model. Considering the growth process to be Markovian and governed by Plancherel probability naturally we write down a partition function for such growth process. Plancherel growth also serves as an interesting toy model to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-appendix-a-analysing-unitary-matrix-models",
+      "number": null,
+      "title": "Appendix A Analysing Unitary Matrix Models",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-appendix-a1-eigenvalue-analysis",
+      "number": null,
+      "title": "Appendix A.1 Eigenvalue analysis",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plaquette model",
+          "heading": false
+        },
+        {
+          "term": "single plaquette",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will brieﬂy review the eigenvalue analysis, the Young diagram analysis and their connection in the context of the so-called single plaquette model. Interested readers may refer to [18] for further details. In the diagonal basis the partition function of the single plaquette model described by the action (2.2) is given by (up to an overall volume dependent factor), Z = Z N Y i=1 dθi Y i< j sin2 θi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-appendix-a2-young-diagram-analysis",
+      "number": null,
+      "title": "Appendix A.2 Young diagram analysis",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagram",
+          "heading": true
+        },
+        {
+          "term": "nkn",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "diagram basis",
+          "heading": false
+        },
+        {
+          "term": "eﬀective action",
+          "heading": false
+        },
+        {
+          "term": "dominant",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent",
+          "heading": false
+        }
+      ],
+      "extract": "The exponential appearing in the partition function of the single plaquette model can be expanded into an inﬁnite series which runs over representations R of unitary group U(N), Z = X R X⃗ k ε(⃗β,⃗k) z⃗k X⃗ l ε(⃗β,⃗l) z⃗l χR(C(⃗k))χR(C(⃗l)). (A.5) Here χR(C(⃗k)) is the character of conjugacy class C(⃗k) of permutation group S K, K = P n nkn and ε(⃗β,⃗k) = ∞ Y n=1 Nknβkn n , z⃗k = ∞ Y n=1 kn!nkn. (A.6) Sum of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-appendix-a3-finding-the-connection-between-two-p",
+      "number": null,
+      "title": "Appendix A.3 Finding the connection between two pictures",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dθρ",
+          "heading": false
+        },
+        {
+          "term": "auxiliary variables",
+          "heading": false
+        },
+        {
+          "term": "branch cuts",
+          "heading": false
+        },
+        {
+          "term": "eiθ",
+          "heading": false
+        },
+        {
+          "term": "n2s",
+          "heading": false
+        },
+        {
+          "term": "unit circle",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "The character of permutation group is given by Frobenius formula χR(C(⃗k)) = ∆(x) Y n (Pn(x))kn  (h1,h2,···hN) (A.13) where Pn(x) = N X i=1 xn i , ∆(x) = Y i< j (xi −x j) (A.14) and (x1, · · · , xN) are set of auxiliary variables. The notation [· · · ](h1,··· ,hN) implies \u0002f(x)\u0003 (h1,··· ,hN) = coeﬃcient of xh1 1 · · · xhN N in f(x). (A.15) Promoting N auxiliary variables to N complex variables (z1, · ·",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-appendix-b-spectral-curve",
+      "number": null,
+      "title": "Appendix B Spectral curve",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann sheets",
+          "heading": false
+        },
+        {
+          "term": "cuts",
+          "heading": false
+        },
+        {
+          "term": "π2ρ",
+          "heading": false
+        },
+        {
+          "term": "two-sheeted",
+          "heading": false
+        }
+      ],
+      "extract": "Complexifying the above equation by replacing θ →−i ln z yields, h(z)2 −2S (z)h(z) + S 2(z) −π2ρ2(z) = 0, S (z) = 1 2 + X n βn 2 \u0010 z + z−1\u0011 . (B.1) h(z) is deﬁned on a two-sheeted cover of our original complex plane. The two sheets correspond to the two solutions of the quadratic equation (B.1). The solutions are given by h±(z) = S (z) ± πρ(z). (B.2) 30 The analytic properties of h±(z) on two Riemann sheets depends",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-appendix-c-asymmetric-solutions",
+      "number": null,
+      "title": "Appendix C Asymmetric solutions",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": null,
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "mathematics e-prints",
+          "heading": false
+        },
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "gaussian ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "phase transition",
+          "heading": false
+        },
+        {
+          "term": "collective string",
+          "heading": false
+        }
+      ],
+      "extract": "In large k limit the matrix model (4.5) renders another class of solution [7]. This solution is given by u(h) = 2 π cos−1  h + ξ −1/2 2 p ξh , for p ≤h ≤q = 0 otherwise (C.1) where, √p = p ξ −1√ 2 , and √q = p ξ + 1√ 2 (C.2) and fugacity z (or a) is given by z = 4ξ2 4ξ −1. (C.3) The solution is valid for ξ > 1/2. The Young diagrams for this distribution is not symmetric under transposition. This is a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 4,
+        "items": [
+          "1 Introduction",
+          "2 Review 1 : Droplet description of unitary matrix models",
+          "2 Review 1 : Droplet description of unitary matrix models",
+          "2.1 The large N droplets"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "young diagrams",
+      "heading": true
+    },
+    {
+      "term": "automodel diagrams",
+      "heading": true
+    },
+    {
+      "term": "theta een",
+      "heading": false
+    },
+    {
+      "term": "diagram ben",
+      "heading": false
+    },
+    {
+      "term": "different young",
+      "heading": false
+    },
+    {
+      "term": "dominant young",
+      "heading": false
+    },
+    {
+      "term": "young lattice",
+      "heading": true
+    },
+    {
+      "term": "duttagopakumar ben",
+      "heading": false
+    },
+    {
+      "term": "random young",
+      "heading": false
+    },
+    {
+      "term": "young tableaux",
+      "heading": false
+    },
+    {
+      "term": "gww model",
+      "heading": false
+    },
+    {
+      "term": "rectangular young",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Growth of Young diagrams",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Typical structure of a Young diagram in French notation",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Typical structure of a 45◦anti-clockwise rotated Young diagram",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A generic Young diagram in English notation. Here N is an arbitrary positive integer. The number of boxes in the ﬁrst column is less than or equal to N. In general, ∃a number 0 < M ≤N such that ni = 0 for i = M + 1, · · · , N",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A Young diagram in English notation for automodel class (0 < ξ < 1/2)",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1909.06797v5"
+  }
+}

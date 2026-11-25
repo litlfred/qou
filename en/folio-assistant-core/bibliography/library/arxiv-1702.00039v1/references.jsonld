@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1702.00039v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Gentle introduction to Soergel bimodules I: The basics",
+      "dcterms:creator": [
+        "LIBEDINSKY, NICOLAS"
+      ],
+      "dcterms:issued": "D:20170202",
+      "dcterms:identifier": "https://arxiv.org/abs/1702.00039",
+      "dcterms:abstract": "This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.",
+      "dcterms:source": "library/arxiv-1702.00039v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1702.00039v1"
+    }
+  ]
+}

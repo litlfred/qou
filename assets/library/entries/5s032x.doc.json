@@ -1,0 +1,1205 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "5s032x",
+  "title": "The Standard Model Symmetry and Qubit Entanglement",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "The Standard Model Symmetry and Qubit Entanglement",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-the-standard-model-symmetry-and-qubit-entangleme"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction: The `Quantum First'-Program",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction-the-quantum-first-program"
+    },
+    {
+      "level": 2,
+      "title": "The Complex Case: Single Qubits",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-complex-case-single-qubits"
+    },
+    {
+      "level": 3,
+      "title": "SL(2,C) and 3+1-Dimensional Spacetime",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-sl2c-and-31-dimensional-spacetime"
+    },
+    {
+      "level": 3,
+      "title": "The Bloch Sphere and the Complex Hopf Fibration",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-bloch-sphere-and-the-complex-hopf-fibration"
+    },
+    {
+      "level": 3,
+      "title": "Spin(3) and the Complex Hopf Fibration",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-spin3-and-the-complex-hopf-fibration"
+    },
+    {
+      "level": 2,
+      "title": "The Quaternionic Case: Two Qubits",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-quaternionic-case-two-qubits"
+    },
+    {
+      "level": 3,
+      "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-sl2h-and-51-dimensional-spacetime"
+    },
+    {
+      "level": 3,
+      "title": "Two Qubits and the Quaternionic Hopf Fibration",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-two-qubits-and-the-quaternionic-hopf-fibration"
+    },
+    {
+      "level": 3,
+      "title": "Spin(5) and SU(2)U(1)/Z2",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-spin5-and-su2u1z2"
+    },
+    {
+      "level": 2,
+      "title": "The Octonionic Case: Three Qubits",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-the-octonionic-case-three-qubits"
+    },
+    {
+      "level": 3,
+      "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-sl2o-and-91-dimensional-spacetime"
+    },
+    {
+      "level": 3,
+      "title": "Three Qubits and the Octonionic Hopf Fibration",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-three-qubits-and-the-octonionic-hopf-fibration"
+    },
+    {
+      "level": 3,
+      "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-spin9-and-su3su2u1z6"
+    },
+    {
+      "level": 2,
+      "title": "Entanglement and Massive Particles",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-entanglement-and-massive-particles"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-conclusion"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-the-standard-model-symmetry-and-qubit-entangleme",
+      "number": null,
+      "title": "The Standard Model Symmetry and Qubit Entanglement",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "dimensional reduction",
+          "heading": false
+        },
+        {
+          "term": "gravity",
+          "heading": false
+        },
+        {
+          "term": "higher-dimensional",
+          "heading": false
+        },
+        {
+          "term": "area",
+          "heading": false
+        }
+      ],
+      "extract": "Jochen Szangolies∗ Research at the intersection of quantum gravity and quantum information theory has seen sig- nificant success in describing the emergence of spacetime and gravity from quantum states whose entanglement entropy approximately obeys an area law. In a different direction, the Kaluza-Klein proposal aims to recover gauge symmetries by means of dimensional reduction of higher-dimensional gravitational",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction-the-quantum-first-program",
+      "number": null,
+      "title": "Introduction: The `Quantum First'-Program",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "research program",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        },
+        {
+          "term": "notions",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "information",
+          "heading": false
+        }
+      ],
+      "extract": "If our world, as is widely believed, is quantum, it is in principle representable as a single vector evolving in Hilbert space, and thus, all spatiotemporal notions must be reducible to this description. This suggests a research program that has been variously called ‘Hilbert Space Fundamentalism’ [1], ‘Mad Dog Everettianism’ [2], ‘extreme Occam’s razor’ [3], or simply ‘physics from scratch’ [4]. Essentially, rather",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 2327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "long-range entanglement",
+          "heading": false
+        },
+        {
+          "term": "hopf fibration",
+          "heading": false
+        },
+        {
+          "term": "area-law contribution",
+          "heading": false
+        },
+        {
+          "term": "three-qubit state",
+          "heading": false
+        },
+        {
+          "term": "octonionic hopf",
+          "heading": false
+        },
+        {
+          "term": "quaternionic hopf",
+          "heading": false
+        },
+        {
+          "term": "higher-dimensional spacetime",
+          "heading": false
+        }
+      ],
+      "extract": "Indeed, the links appear so deep that Susskind has proposed to generalize ER = EPR, the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-complex-case-single-qubits",
+      "number": null,
+      "title": "The Complex Case: Single Qubits",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "c0c c1c",
+          "heading": false
+        },
+        {
+          "term": "single qubits",
+          "heading": true
+        },
+        {
+          "term": "pauli matrices",
+          "heading": false
+        }
+      ],
+      "extract": "THE COMPLEX CASE: SINGLE QUBITS We start by treating the simplest case, that of single qubits in ordinary, complex quantum mechanics. Any pure qubit state can be written as |ψ⟩= c0 |0⟩+ c1 |1⟩, (5) where c0, c1 ∈C, |c0|2 + |c1|2 = 1, and {|0⟩, |1⟩} denotes a standard basis of the two-qubit Hilbert space C2. It will be useful to represent qubit states in terms of the Pauli matrices σ1 = \u0012 0 1 1 0 \u0013 σ2 = \u0012 0 −i i 0 \u0013",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-sl2c-and-31-dimensional-spacetime",
+      "number": null,
+      "title": "SL(2,C) and 3+1-Dimensional Spacetime",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "light cone",
+          "heading": false
+        },
+        {
+          "term": "minkowski space",
+          "heading": false
+        },
+        {
+          "term": "brukner",
+          "heading": false
+        },
+        {
+          "term": "obius group",
+          "heading": false
+        },
+        {
+          "term": "qubit",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": true
+        },
+        {
+          "term": "sphere",
+          "heading": false
+        }
+      ],
+      "extract": "The correspondence between elementary quantum systems and 3 + 1 dimensional spacetime may be explicated in various ways. Von Weizs¨acker proposed a symmetry-based argument in the ‘50s [29], which has been echoed by Brukner and Zeilinger in more recent times [53]. M¨uller and Masanes give a more operationalistic argument, showing that probabilistically interacting systems exchanging ‘minimal amounts of direction",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-bloch-sphere-and-the-complex-hopf-fibration",
+      "number": null,
+      "title": "The Bloch Sphere and the Complex Hopf Fibration",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bloch sphere",
+          "heading": true
+        },
+        {
+          "term": "hopf fibration",
+          "heading": true
+        },
+        {
+          "term": "complex hopf",
+          "heading": true
+        },
+        {
+          "term": "c0c",
+          "heading": false
+        },
+        {
+          "term": "hopf map",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "qubit",
+          "heading": false
+        },
+        {
+          "term": "division",
+          "heading": false
+        }
+      ],
+      "extract": "The Bloch Sphere and the Complex Hopf Fibration Above, we have already introduced the Bloch sphere representation of single qubits. The normalization condition |c0|2 + |c1|2 = 1 implies that the Hilbert space of a single qubit is the 3-sphere S3. However, quantum states are properly represented by rays in Hilbert space, and hence, only unique up to an overall U(1) phase factor exp (iϕ). Taking account of this, each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-spin3-and-the-complex-hopf-fibration",
+      "number": null,
+      "title": "Spin(3) and the Complex Hopf Fibration",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf fibration",
+          "heading": true
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "complex hopf",
+          "heading": true
+        },
+        {
+          "term": "group spin",
+          "heading": false
+        },
+        {
+          "term": "matrices generate",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        }
+      ],
+      "extract": "Spin(3) and the Complex Hopf Fibration We will now connect the story so far with the formalism in Ref. [28]. Thus, consider matrices of the form X(r, c) = \u0012 r Lc Lc∗−r \u0013 , r ∈R, c ∈C, (15) where by Lc we mean left-multiplication by c (for the commutative complex numbers, this is obviously not a salient distinction, but it will become important in the generalization to higher division algebras). This is just the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-quaternionic-case-two-qubits",
+      "number": null,
+      "title": "The Quaternionic Case: Two Qubits",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic case",
+          "heading": true
+        },
+        {
+          "term": "define quaternionic",
+          "heading": false
+        },
+        {
+          "term": "quaternion imaginary",
+          "heading": false
+        },
+        {
+          "term": "two-qubit state",
+          "heading": false
+        },
+        {
+          "term": "r2j",
+          "heading": false
+        }
+      ],
+      "extract": "THE QUATERNIONIC CASE: TWO QUBITS The above construction admits a ready generalization to the quaternionic case. The skew-field of quaternions H can be obtained from the complex numbers by starting with two complex numbers c0 = r0 + r1i and c1 = r2 + r3i (where we use bolding to mark quaternion imaginary directions), and introducing j such that j2 = −1, which anticommutes with i. Then, a quaternion q0 is given by q0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-sl2h-and-51-dimensional-spacetime",
+      "number": null,
+      "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singling out",
+          "heading": false
+        },
+        {
+          "term": "dimensional minkowski",
+          "heading": false
+        },
+        {
+          "term": "out preferred",
+          "heading": false
+        },
+        {
+          "term": "preferred complex",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": true
+        },
+        {
+          "term": "lorentz transformations",
+          "heading": false
+        },
+        {
+          "term": "minkowski space",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        }
+      ],
+      "extract": "Analogously to Sec. II A, we can write a point in 5 + 1-dimensional Minkowski-space by means of the quaternion Hermitian matrix X = 1 2 \u0012 x0 + x5 x1 −x2i −x3j −x4k x1 + x2i + x3j + x4k x0 −x5 \u0013 , (21) whose determinant again gives the 5 + 1-dimensional Minkowski interval, yielding det(X) = 0 →x2 0 −x2 1 −x2 2 −x2 3 − x2 4 −x2 5 = 0. On these, the Lorentz transformations again act via conjugation by matrices from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-two-qubits-and-the-quaternionic-hopf-fibration",
+      "number": null,
+      "title": "Two Qubits and the Quaternionic Hopf Fibration",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf fibration",
+          "heading": true
+        },
+        {
+          "term": "quaternionic",
+          "heading": true
+        },
+        {
+          "term": "qubits",
+          "heading": true
+        },
+        {
+          "term": "q0q",
+          "heading": false
+        },
+        {
+          "term": "qubit spaces",
+          "heading": false
+        },
+        {
+          "term": "base space",
+          "heading": false
+        }
+      ],
+      "extract": "Two Qubits and the Quaternionic Hopf Fibration As in the complex case, we have above already implicitly introduced the second, quaternionic, Hopf fibration. To make it more explicit, we again start with a map from the two-qubit state space S7 to the extended quaternionic plane, hq 1 : S7 −→H ∪{∞} (q0, q1) −→ q0q−1 1 , (23) which is then composed with the inverse stereographic projection hq 2 : H ∪{∞} −→ S4 q0q−1 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-spin5-and-su2u1z2",
+      "number": null,
+      "title": "Spin(5) and SU(2)U(1)/Z2",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "hopf fibration",
+          "heading": false
+        },
+        {
+          "term": "eiϕ",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrices",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "preserving",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        }
+      ],
+      "extract": "As in the discussion of the complex case (Sec. II C), following Ref. [28] we consider matrices of the form X(r, q) = \u0012 r Lq Lq∗−r \u0013 , r ∈R, q ∈H, where here, due to the non-commutative nature of the quaternions, the specification of left-multiplication is essential. These matrices now generate Spin(5) in the case of r2 + |q|2 = 1. As in the complex single-qubit case, Spin(5) can be understood as the equivariance",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-the-octonionic-case-three-qubits",
+      "number": null,
+      "title": "The Octonionic Case: Three Qubits",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic case",
+          "heading": true
+        },
+        {
+          "term": "o1o",
+          "heading": false
+        },
+        {
+          "term": "three-qubit state",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "division algebra",
+          "heading": false
+        },
+        {
+          "term": "qubits",
+          "heading": true
+        },
+        {
+          "term": "eiej",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        }
+      ],
+      "extract": "THE OCTONIONIC CASE: THREE QUBITS The third step in this construction takes us to the octonionic case. Remarkably, this is also the final step: the octonions are the largest division algebra, and the octonionic one is the final Hopf fibration. The next algebra that can be constructed via the Cayley-Dickson process, the sedenions, is no longer a division algebra, as it possesses nontrivial zero divisors, and hence,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-sl2o-and-91-dimensional-spacetime",
+      "number": null,
+      "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonassociativity",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "celestial",
+          "heading": false
+        }
+      ],
+      "extract": "Despite the nonassociativity of the octonions, the general picture described above is still valid. As before, we can take matrices of the form X = 1 2 \u0012 x0 + x9 x1 −P7 i=1 xi+1ei x1 + P7 i=1 xi+1ei x0 −x9 \u0013 (35) to parametrize the light-cone in 9 + 1-dimensional Minkowski space (recall that such matrices always have a well- defined determinant, Eq. (8)), on which the Lorentz transformations are realized via",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-three-qubits-and-the-octonionic-hopf-fibration",
+      "number": null,
+      "title": "Three Qubits and the Octonionic Hopf Fibration",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic",
+          "heading": true
+        },
+        {
+          "term": "qubits",
+          "heading": true
+        },
+        {
+          "term": "o0o",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": true
+        }
+      ],
+      "extract": "Three Qubits and the Octonionic Hopf Fibration Due to the normalization |o0|2 +|o1|2 = 1, an octonionic qubit defines a point on the sphere S15. There again exists a map taking points of the sphere to the extended octonionic plane, ho 1 : S15 −→O ∪{∞} (o0, o1) −→ o0o−1 1 , (36) which can then be projected to S8 by means of ho 2 : O ∪{∞} −→ S8 o0o−1 1 −→(xi)i=1...9 , (37) once more with P9 i=1 x2 i = 1. As before,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-spin9-and-su3su2u1z6",
+      "number": null,
+      "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "hopf fibration",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "qubit",
+          "heading": false
+        },
+        {
+          "term": "triplet",
+          "heading": false
+        },
+        {
+          "term": "split",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "As with the previous two sections, there exists a generalization of the connection between the spin-groups and Hopf fibrations to the octonionic case. One can arrive at an analogous description of the group Spin(9) in terms of matrices of the form given in Eq. (15), with Lc replaced by Lo, denoting left-multiplication by octonions. However, we can also again simply note that the octonionic Hopf fibration can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-entanglement-and-massive-particles",
+      "number": null,
+      "title": "Entanglement and Massive Particles",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1849,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right-handed fermion",
+          "heading": false
+        },
+        {
+          "term": "octonionic qubit",
+          "heading": false
+        },
+        {
+          "term": "singling out",
+          "heading": false
+        },
+        {
+          "term": "celestial sphere",
+          "heading": false
+        },
+        {
+          "term": "full generation",
+          "heading": false
+        },
+        {
+          "term": "model symmetry",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "two-qubit state",
+          "heading": false
+        }
+      ],
+      "extract": "ENTANGLEMENT AND MASSIVE PARTICLES The above has given us a way to interpret the degrees of freedom contained within a single octonionic qubit as the left-handed part of one generation of the fermion content of the Standard Model, transforming under the gauge symmetry SU(3) × SU(2) × U(1)/Z6 in the appropriate way, after singling out a complex direction and splitting O into C ⊕C3. However, some ambiguity still",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 2625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sean carroll",
+          "heading": false
+        },
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "quantum entanglement",
+          "heading": false
+        },
+        {
+          "term": "josef jauch",
+          "heading": false
+        },
+        {
+          "term": "van raamsdonk",
+          "heading": false
+        },
+        {
+          "term": "cristinel stoica",
+          "heading": false
+        },
+        {
+          "term": "katsusada morita",
+          "heading": false
+        },
+        {
+          "term": "hopf fibrations",
+          "heading": false
+        }
+      ],
+      "extract": "CONCLUSION The present study draws inspiration and arguments from several disparate sources, aiming to integrate them into a coherent whole. These avenues are, as delineated above: ◦The ‘quantum first’ program of deriving physics from scratch, starting from a quantum state in Hilbert space, ◦the Kaluza-Klein-like emergence of forces and matter from dimensional reduction, ◦the connection between spacetimes of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "octonionic qubit",
+      "heading": false
+    },
+    {
+      "term": "quaternionic hopf",
+      "heading": true
+    },
+    {
+      "term": "hopf fibration",
+      "heading": true
+    },
+    {
+      "term": "qubit state",
+      "heading": false
+    },
+    {
+      "term": "quaternionic quantum",
+      "heading": false
+    },
+    {
+      "term": "entanglement degrees",
+      "heading": false
+    },
+    {
+      "term": "quaternionic imaginary",
+      "heading": false
+    },
+    {
+      "term": "entanglement entropy",
+      "heading": true
+    },
+    {
+      "term": "qubit hilbert",
+      "heading": false
+    },
+    {
+      "term": "single qubit",
+      "heading": false
+    },
+    {
+      "term": "complex hopf",
+      "heading": true
+    },
+    {
+      "term": "quaternionic case",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The entanglement entropy of a region R across its boundary ∂R is computed by summing up the contributions of entanglement ‘links’ cut by the boundary. For a state with ‘short-range’ entanglement, this yields an area law",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A state with additional long-range entanglement, or entanglement due to a state ‘encoded’ into it in the sense of quantum error correction, receives subleading corrections to the entanglement entropy from these additional terms",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/5s032x"
+  }
+}

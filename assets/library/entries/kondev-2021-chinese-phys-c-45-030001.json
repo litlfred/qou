@@ -1,0 +1,2318 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "kondev-2021-chinese-phys-c-45-030001",
+  "blocks": [
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Chinese Physics C\nPAPER • OPEN ACCESS\nThe NUBASE2020 evaluation of nuclear physics\nproperties *\nTo cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001\n \nView the article online for updates and enhancements.\nYou may also like\nThe NUBASE2016 evaluation of nuclear\nproperties\nG. Audi,  , F. G. Kondev et al.\n-\nPhenomenological model for favored\nproton radioactivity\nXiao-Yan Zhu, Wei Gao, Jia Liu et al.\n-\nDecay properties of undetected\nsuperheavy nuclei with Z > 110\nA Jain, P K Sharma, S K Jain et al.\n-\nThis content was downloaded from IP address 45.67.99.30 on 15/08/2026 at 22:22\nCh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nNUBASE2020 is an evaluated nuclear data library that\ncontains the recommended values of the main nuclear physics\nproperties: masses, excitation energies (for excited isomers),\nhalf-lives, spins and parities and decay modes, and their in-\ntensities, for all known nuclei in their ground and excited,\nisomeric (T1/2≥100 ns) states. It also includes information\nfor yet unobserved nuclides that is based on systematic trends\nof nuclear properties in neighboring nuclei. The present pub-\nlication includes updated results for these properties, which\nwere reported in previous versions of thi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isomers",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-22-isomers.md",
+      "narrative": null,
+      "content": "the systematic trends in neighboring nuclei (TNN, see sec-\ntion 3.1).\nFor each nuclide and for each state (ground or isomeric),\nthe following properties were compiled and, when necessary,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mass excess",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-mass-excess.md",
+      "narrative": null,
+      "content": "meric state, half-life, spin and parity, decay modes and their\nintensities, isotopic abundance (for stable nuclides), year of\ndiscovery and the corresponding bibliographical information\nfor all experimental values of the above items.\n2.1\nMass excess\nIn general, the knowledge of atomic masses can provide\nvaluable information on the lifetimes of nuclear states and\ntheir decay modes, and in particular on the β-delayed particle\ndecay probabilities for nuclei far from the line of stability.\nThe mass-excess values and their uncertainties that are\npresented in Table I were adopted from the latest edi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Half-life",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-23-half-life.md",
+      "narrative": null,
+      "content": "Half-life\nThe lifetime is a fundamental property of a nuclear level.\nIt is related to the total decay width, Γ, a linear sum of all\npartial decay widths (γ ray, conversion electrons, α decay, β\ndecay, ﬁssion, etc.), through the uncertainty relationship:\nΓ = ¯h\nτ\n(1)\nwhere τ=T1/2/ln(2) is the level mean life and T1/2 is the half-\nlife.\nFigures 3 displays the ground-state half-life as a function\nof N and Z for all nuclei included in Table I.\nSome light nuclei (A<30) that are located beyond the par-\nticle drip-lines are known to exist for a very short time before\ndisintegrating by particle emissi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin and parity",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-24-spin-and-parity.md",
+      "narrative": null,
+      "content": "Spin and parity\nSpin and parity values are presented with or without\nparentheses, based on “weak” or “strong” arguments, respec-\ntively, as adopted in ENSDF [12], but with one important\nexception. Since, it is a policy of NUBASE2020 to make a\nclear distinction between experimental and non-experimental\ninformation, parentheses are used only when the so-called\n“weak” arguments are based on experimental observations.\nIn cases where the assignments are based on theoretical pre-\ndictions or TNN, the values are presented without parentheses\nand they are ﬂagged with the symbol ‘#’. This is in contras",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decay modes and their intensities",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-25-decay-modes-and-their-intensities.md",
+      "narrative": null,
+      "content": "Decay modes and their intensities\nFigure 6 displays the main ground-state decay modes for\nall nuclei included in Table I.\nThe most important policy in assembling the informa-\ntion about the decay modes and their intensities was to un-\nambiguously establish whether a particular decay is energet-\nically allowed, but not experimentally observed (represented\nby a question mark alone ‘?’, e.g. ‘IT ?’ or ‘α ?’, the ques-\ntion mark refers to the decay mode), and whether the decay\nis actually observed, but its intensity is not determined (rep-\nresented by ‘=?’, e.g. ‘IT =?’ or ‘α=?’, the question mark",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isotopic abundances",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-26-isotopic-abundances.md",
+      "narrative": null,
+      "content": "Isotopic abundances\nIsotopic abundances are given in the decay ﬁeld of Table I\nwith the symbol IS and the values were taken from the most-\nrecent publication of Meija et al. [20]. In several cases the\nIS values are listed in Ref. [20] as an interval [a,b], but in\nTable I they are given as IS = (a + b)/2 with a variance σ2=\n(b−a)2/12 (see section 3.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Year of discovery",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-27-year-of-discovery.md",
+      "narrative": null,
+      "content": "Year of discovery\nSimilarly to the previous version of NUBASE [3, 4], Ta-\nble I includes information about the year of discovery for each\nnuclide in its ground or isomeric state. For the former, rec-\nommendations by Thoennessen [21] were adopted. Similar\ncriteria were used when assigning the year of discovery for\nisomeric states.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References and Dissemination",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-28-references-and-dissemination.md",
+      "narrative": null,
+      "content": "References and Dissemination\nThe year of the ENSDF archival ﬁle that was consulted\nduring the development of NUBASE2020 is given in Table I.\nThe entry is left blank when information for a particular nu-\nclide was not available in ENSDF.\nThe bibliographical information used in NUBASE2020\nis referenced by means of the “Nuclear Science Reference”\n(NSR) database [22] keynumber style. However, references\nquoted in Table I are abbreviated with the ﬁrst two digits\nof the year of publication being omitted from the NSR-style\nkeynumbers.\nThey are followed by up to three one-letter\ncodes which specify th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trends in neighboring nuclei (TNN)",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-31-trends-in-neighboring-nuclei-tnn.md",
+      "narrative": null,
+      "content": "Trends in neighboring nuclei (TNN)\nIn general, NUBASE2020 contains numerical and biblio-\ngraphical information for all known nuclei for which at least\none property is experimentally known. However, it also in-\ncludes results on yet unobserved nuclides, as well as data on\nproperties (mostly excitation energy for isomers, half-lives\nand spins and/or parities) that are not yet measured. Such\nvalues are estimated from the systematics trends of a par-\nticular property in neighboring nuclei by ensuring a conti-\nnuity in N, in Z, A, and in N −Z. This approach allowed\nto follow the behavior of a parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Averaging procedure and uncertainties",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-32-averaging-procedure-and-uncertainties.md",
+      "narrative": null,
+      "content": "Averaging procedure and uncertainties\nIt is a policy of NUBASE2020 to use one standard devi-\nation as a representation of uncertainties associated with the\nrecommended values. Unfortunately, authors of research ar-\nticles do not always clarify the meaning of their reported un-\ncertainties and, under such circumstances, these values are\nassumed to be one standard deviation. In several instances,\nuncertainties are not given at all and in such cases they were\nestimated by the evaluators, considering the limitations of the\nemployed experimental method. When both the statistical and\nsystematic unce",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetrization of asymmetric uncertainties",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-33-symmetrization-of-asymmetric-uncertainties.md",
+      "narrative": null,
+      "content": "Symmetrization of asymmetric uncertainties\nExperimental results are sometimes reported in the litera-\nture with asymmetric uncertainties, e.g. X+a\n−b , and it is a policy\nof NUBASE to symmetrize these uncertainties.\nSimilarly to the previous version of NUBASE [1–4], the\nasymmetric uncertainty is associated with a two-piece normal\ndistribution (sometimes called “split-normal distribution” or\n“Fechner distribution”), TN(X,a,b), and the symmetrization\nis achieved by mapping this distribution into a normal (sym-\nmetric) distribution, N(µ,σ), where µ is the mean value and\nσ is the standard deviatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rounding policy",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-34-rounding-policy.md",
+      "narrative": null,
+      "content": "Rounding policy\nIn\ngeneral,\nvalues\nfor\nproperties\npresented\nin\nNUBASE2020 and their uncertainties are rounded off, even\nif unrounded ones were given in the literature or in ENSDF.\nHowever, for some very precise data, as well as for data that\nwere deemed essential for traceability purposes (e.g. isotopic\nabundances), the precisions quoted in the original publica-\ntions were retained.\nIn cases where the two furthest-left signiﬁcant digits in\nthe uncertainty were larger than a given limit (set to 30 for\nthe mass excess and excitation energy of isomers in order\nto be consistent with AME, and set t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and outlook",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-4-conclusions-and-outlook.md",
+      "narrative": null,
+      "content": "Conclusions and outlook\nThe NUBASE2020 evaluated nuclear data library contains\nthe recommended values for the basic nuclear physics prop-\nerties for all known nuclei, such as mass excess, excitation\n030001-13\nChinese Physics C Vol. 45, No. 3 (2021) 030001\nX\nb\nσ\nm\na\nx\nFig. 7.\n(dashed black) original Normal distributions, N(X,b) (left on X) and N(X,a) (right on X), associated with the measured\nquantity X+a\n−b ; (solid blue) a two-piece normal distribution TN(X,a,b); (solid red) the equivalent Normal (symmetric) distribu-\ntion, N(m,σ); see section 3.3 for details.\nenergy of the excited isomeric s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "experimental results, especially for cases that are not included\nin ENSDF or in other topical evaluations. Such a traceability\nwould allow any user to promptly review the recommended\ndata and, if necessary, to undertake a re-evaluation.\nNUBASE2020 is an integral part of AME2020 and the\nsynchronization of these two libraries allows better homo-\ngeneity of all experimental data to be achieved. Furthermore,\nassignments of isomeric states and determination of their ex-\ncitation energies were put on a ﬁrm basis and the data were\nimproved.\nIn the future development of NUBASE, it is envisioned to\ninc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 15,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-5-acknowledgments.md",
+      "narrative": null,
+      "content": "Acknowledgments\nThis work was supported by the U.S. Department of En-\nergy, Ofﬁce of Science, Ofﬁce of Nuclear Physics, under\nContract No. DE-AC02-06CH11357 (ANL) and in part by\nthe National Key Research and Development Program of\nChina (Grant No. 2016YFA0400504) and the Strategic Prior-\nity Research Program of Chinese Academy of Sciences (CAS,\nGrant No. XDB34000000) (IMP). W.J. Huang acknowledges\nthe ﬁnancial support by the Max-Planck-Society. S. Naimi\nacknowledges the support of the RIKEN Pioneering Project\nFunding.\nWe thank many colleagues who responded to our queries\nabout the experimental",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-15-mmc12-j.md",
+      "narrative": null,
+      "content": "α=?;p=?\n∗\n22Al\n18200#\n400#\n91.1 ms0.5\n(4)+\n15\n1982\nβ +=100;β +p=55 3;\n∗\nβ +2p=1.10 11;\nβ +α=0.038 17\n22Si\n33640#\n500#\n28.7 ms1.1\n0+\n15 20Le16\nTD 1987\nβ +=100;β +p=62 5;\n∗\nβ +2p=0.7 3\n∗22C\nT : symmetrized from 03Yo02=6.1(+1.4-1.2)\n∗∗\n∗22C\nD : %β −n symmetrized from 03Yo02=61(+14-13)\n∗∗\n∗22Nei\nE : from 16Ma.A, but T=2 assignment is not ﬁrm\n∗∗\n∗22Na\nD : from 71GoYM\n∗∗\n∗22Mg\nT : average 17Du11=3.87400(0.00079) 03Ha20=3.8755(0.0012)\n∗∗\n∗22Mgi\nJ : IAS of 22Al gs [J=(4)+]\n∗∗\n∗22Si\nT : average 20Le16=28.6(1.4), supersedes 17Xu01=27.8(3.5), 96Bl11=29(2)\n∗∗\n∗22Si\nD : %β +p from 20Le16, based on %I(p)=5.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AHW",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-17-ahw.md",
+      "narrative": null,
+      "content": "E\nIT=100\n∗\n40Caj\n−22858.4\n1.0\n11988\n1\n0+ T=2\n17\nIT=100\n40Sc\n−20523.4\n2.8\n182.3 ms0.7\n4−\n17\n1955\nβ +=100;β +p=0.44 7;\nβ +α=0.017 5\n40Sci\n−16164\n6\n4359\n6\nRQ\n0+ T=2\n17\nIT=100\n40Ti\n−8990\n70\n52.4 ms0.3\n0+\n17 07Do17 TD 1982\nβ +=100;β +p=95.8 13\n40V\n12470#\n300#\n2−#\np ?\n∗40Mg\nI : 5 events observed in direct two-proton removal from 42Si\n∗∗\n∗40Si\nT : average 17Tr02=27.6(1.4) 04Gr20=33(1); Birge ratio=3.14\n∗∗\n∗40K\nJ : also 14Kr04j=4\n∗∗\n∗40Cai\nE : originally 7658.23(0.05), recalibrated -0.05 keV for 27Al+p\n∗∗\n∗40Cai\nE : resonances\n∗∗\n41Mg\n58100#\n500#\n3/2−#\nβ −?;β −n ?\n41Al\n34590#\n400#\n6# ms>260ns\n5/2+#\n16",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-018-06-mmc12-j.md",
+      "narrative": null,
+      "content": "p=100\n48Fe\n−18010\n90\n45.3 ms0.6\n0+\n06 07Do17 TD 1987\nβ +=100;β +p=15.3 5\n48Co\n1730#\n500#\n6+#\n06\np ?\n48Ni\n18180#\n420#\n2.8 ms0.8\n0+\n06 11Po09\nTD 2000\n2p=70 20;β +=30 20;β +p ?\n∗\n∗48Ar\nT : average 12We08=381(35) 412(19) 04Gr20=475(40)\n∗∗\n∗48K\nJ : 14Kr04,14Pa45=1\n∗∗\n∗48K\nT : average 75Mu08=6.8(0.2) 81HuZT=6.9(0.2) 78De17=6(1)\n∗∗\n030001-36\nChinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗48Ca\nT : 2β −symm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 42)",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-mmc12-j-page-42.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n57Coi\n−52092.3\n0.4\n7253.3\n0.6\nRQ\n1/2−T=5/2\nMMC120J\n57Ni\n−56084.0\n0.6\n35.60 h 0.06\n3/2−\n98\n1938\nβ +=100\n57Nii\n−50845.2\n0.9\n5238.8\n0.7\n7/2−frg. T=3/298\n∗\n57Cu\n−47309.0\n0.5\n196.4 ms0.7\n3/2−∗\n98 17Ku12 T\n1976\nβ +=100\n∗\n57Cui\n−42010\n25\n5299\n25\np\n7/2−T=3/2\n57Zn\n−32550#\n200#\n45.7 ms0.6\n7/2−#\n98 20Gi02\nT\n1976\nβ +=100;β +p=87 9\n∗\n57Ga\n−15410#\n400#\n1/2−#\np ?\n∗57S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 43)",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-mmc12-j-page-43.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n59Mn\n−55525.3\n2.3\n4.59 s 0.05\n5/2−∗\n18 15Ba49\nJ\n1976\nβ −=100\n59Fe\n−60665.0\n0.3\n44.500 d 0.012\n3/2−∗\n18 FGK204 T\n1938\nβ −=100\n59Co\n−62229.8\n0.4\nSTABLE\n7/2−∗\n18\n1923\nIS=100\n59Ni\n−61156.8\n0.4\n81 ky 5\n3/2−\n18 94Ru19\nT\n1951\nβ +=100\n∗\n59Nii\n−53814.9\n2.1\n7341.9\n2.1\nRQ\n7/2−frg. T=5/2\n∗\n59Cu\n−56358.5\n0.5\n81.5 s 0.5\n3/2−∗\n18\n1947\nβ +=100\n∗\n59Cui\n−52473.0\n2.2\n3885",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 44)",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-021-mmc12-j-page-44.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n61Ca\n19010#\n800#\n1# ms\n1/2−#\nβ −?;β −n ?;β −2n ?\n61Sc\n500#\n600#\n7# ms>620ns\n7/2−#\n15 09Ta24\nI\n2009\nβ −?;β −n ?;β −2n ?\n61Ti\n−16370#\n300#\n15 ms4\n1/2−#\n15\n1997\nβ −=100;β −n ?;β −2n ?\n61Tim\n−16250#\n300#\n125.0\n0.5\n200 ns 28\n5/2−#\n15 19Wi04 TEJ 2019\nIT=100\n∗\n61Tin\n−15670#\n300#\n700.1\n0.7\n354 ns 69\n9/2+#\n15 19Wi04 TEJ 2019\nIT=100\n∗\n61V\n−30180\n230\n48.2 ms0.6\n(3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 45)",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-022-mmc12-j-page-45.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗62Ge\nT : average 14Gr10=82.9(1.4) 17Ku12=76(6)\n∗∗\n∗62As\nD : most likely p-unstable from estimated Sp=-1980#(420#) keV\n∗∗\n63Sc\n13070#\n700#\n1# ms\n7/2−#\nβ −?;β −n ?;β −2n ?\n63Ti\n−5860#\n500#\n10# ms>620ns\n1/2−#\n09 09Ta24\nI\n2009\nβ −?;β −n ?;β −2n ?\n63V\n−21740\n340\n19.6 ms0.9\n(3/2−,5/2−) 09 14Su07\nTJ\n1997\nβ −=100;β −n>35;β −2n ?\n∗\n63Cr\n−36180\n70\n129 ms2\n1/2−#",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 46)",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-023-mmc12-j-page-46.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗64As\nT : from 20Gi02, supersedes 19Ru.A=63.4(1.2) (same collaboration);\n∗∗\n∗64As\nT : others 14Ro14=72(6) 02Lo13=18(+43-7)\n∗∗\n65Ti\n5210#\n700#\n1# ms\n1/2−#\nβ −?;β −n ?;β −2n ?\n65V\n−12110#\n500#\n14# ms>620ns\n5/2−#\n10 09Ta24\nI\n2009\nβ −?;β −n ?;β −2n ?\n65Cr\n−28310#\n200#\n27.5 ms2.1\n1/2−#\n10 11Da08\nT\n1997\nβ −=100;β −n ?;β −2n ?\n∗\n65Mn\n−40967\n4\n91.9 ms0.7\n(5/2−)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 47)",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../sections/sec-024-mmc12-j-page-47.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗66Mn\nJ : 11Li50=(1+) due to large ground-state feeding from 66Cr (J=0+);\n∗∗\n∗66Mn\nJ : large direct β −feeding to 66Fe gs (J=0+) in 18St18\n∗∗\n∗66Mn\nT : avgerage 18St18=64.1(1.1) 17Ol08=70(15) 13Li04=60(3) 03So21=64(2)\n∗∗\n∗66Mn\nT : 99Ha05=66(4); other 11Pa.A=64.2(0.8) is superseded by 18St18\n∗∗\n∗66Mn\nD : %β −n symmetrized from 18St18=7.3(+1.4-1.3)\n∗∗\n∗66",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 48)",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-025-mmc12-j-page-48.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n68Con\n−51450#\n150#\n195#\n150#\n101 ns 10\n(1)\n12 10Da06\nT\n2010\nIT=100\n∗\n68Ni\n−63463.8\n3.0\n29 s 2\n0+\n12\n1977\nβ −=100\n68Nim\n−61860\n3\n1603.51\n0.28\n270 ns 5\n0+\n12 15Fl01\nE\n1984\nIT=100\n∗\n68Nin\n−60615\n3\n2849.1\n0.3\n850 µs 30\n5−\n12 15Wi02 T\n1995\nIT=100\n∗\n68Cu\n−65567.0\n1.6\n30.9 s 0.6\n1+∗\n12 20De21\nJ\n1953\nβ −=100\n∗\n68Cum −64845.7\n1.6\n721.26\n0.08\n3.75 m 0.05\n6−∗\n12 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 49)",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-026-mmc12-j-page-49.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗69Sen\nT : average 00Ch07=950(21) 95Po01=960(23)\n∗∗\n∗69Kr\nT : average 20Gi02=27.8(1.6) 14De41=28(1) 11Ro47=27(3); other 97Xu01=32(10)\n∗∗\n∗69Kr\nD : %β +p average 02Gi02=93(+7-6) 11Ro47=99(+1-11); other\n∗∗\n∗69Kr\nD : 14De41=52.5(6.5) + 2.4(0.5), conﬂicting\n∗∗\n70Cr\n−5640#\n600#\n6# ms>620ns\n0+\n16 13Ta14\nI\n2013\nβ −?;β −n ?;β −2n ?\n70Mn\n−20450#\n500#\n19.9 ms1.7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 50)",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-027-mmc12-j-page-50.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗71Co\nT : 98Am04=210(40) 95Am.A=200(50)\n∗∗\n∗71Cu\nT : average 99Pr10=19(3) 83Ru06=19.5(1.6)\n∗∗\n∗71Cu\nJ : 20De21,10Vi07=3/2\n∗∗\n∗71Cum\nT : average 98Is11=250(30) 98Gr14=275(14)\n∗∗\n∗71Zn\nT : average 17Kr01=2.36(0.08) 61Th04=2.45(0.10)\n∗∗\n∗71Znm\nJ : 17Wr01=9/2\n∗∗\n∗71Znm\nT : average 17Kr01=4.155(0.004) 12Re05=4.127(0.007); Birge ratio=3.47\n∗∗\n∗71Znm\nD : 156 k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 51)",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-028-mmc12-j-page-51.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n73Kri\n−53350#\n120#\n3204#\n118#\nT=3/2\n20Ho17 E\n73Rb\n−46010\n40\n< 81 ns\n3/2−#\n19 17Su31\nT\n1996\nβ + ?; p≈100\n73Rbm −45580#\n110#\n430#\n100#\n9/2+#\nMirror\nI\n73Rbi\n−42809\n20\n3200\n40\np\n(5/2−) T=5/2 19 20Ho06 JD\n1993\np=100\n∗\n73Sr\n−31950#\n400#\n25.3 ms1.4\n(5/2−)\n19 20Ho06 TDJ 1993\nβ +=100;β +p=63 3\n∗\n∗73Co\nD : %β −n from 20Go10=6(3), supersedes 12Ra10<22(8) 05Ma95>9(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 52)",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-029-mmc12-j-page-52.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n75Sr\n−46620\n220\n85.2 ms2.3\n(3/2−)\n13 19Si33\nT\n1991\nβ +=100;β +p=5.2 9\n∗\n75Y\n−31820#\n300#\n100# µs\n5/2+#\nβ + ?;β +p ?;p ?\n∗75Co\nD : %β −n from 11Ho21<16\n∗∗\n∗75Co\nT : from 14Xu07=26.5(1.2); others 20Go10=27(13) 11Ho21=30(11)\n∗∗\n∗75Cu\nT : average 11Il01=1.222(0.008) 91Kr15=1.224(0.003) 00KoZH=1.225(0.007)\n∗∗\n∗75Cu\nD : %β −n average 00KoZH=2.2(0.5) 85Re01=3.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 53)",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-030-mmc12-j-page-53.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n77Asm\n−73440.8\n1.7\n475.48\n0.04\n114.0 µs 2.5\n9/2+\n20\n1957\nIT=100\n77Se\n−74599.50\n0.06\nSTABLE\n1/2−∗\n20\n1922\nIS=7.60 7\n77Sem\n−74437.58\n0.06\n161.9223\n0.0010\n17.36 s 0.05\n7/2+\n20\n1947\nIT=100\n77Br\n−73234.8\n2.8\n57.04 h 0.12\n3/2−∗\n20\n1948\nβ +=100\n77Brm\n−73128.9\n2.8\n105.86\n0.08\n4.28 m 0.10\n9/2+∗\n20\n1961\nIT=100\n77Kr\n−70169.5\n2.0\n72.6 m 0.9\n5/2+∗\n20 19Ze02\nT\n1948\nβ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 54)",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-031-mmc12-j-page-54.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n79Ga\n−62548.4\n1.2\n2.848 s 0.003\n3/2−∗\n16\n1974\nβ −=100;β −n=0.089 19\n∗\n79Ge\n−69530\n40\n18.98 s 0.03\n(1/2)−\n16\n1970\nβ −=100\n79Gem −69340\n40\n185.95\n0.04\n39.0 s 1.0\n7/2+#\n16\n1970\nβ −=96 1;IT=4 1\n79As\n−73636\n5\n9.01 m 0.15\n3/2−\n16\n1950\nβ −=100\n79Asm\n−72863\n5\n772.81\n0.06\n1.21 µs 0.01\n(9/2)+\n16 98Gr14\nT\n1998\nIT=100\n79Se\n−75917.47\n0.22\n327 ky 28\n7/2+∗\n16\n1950\nβ −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 55)",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-032-mmc12-j-page-55.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n81As\n−72533.3\n2.6\n33.3 s 0.8\n3/2−\n08\n1960\nβ −=100\n81Se\n−76389.0\n1.0\n18.45 m 0.12\n1/2−\n08\n1948\nβ −=100\n81Sem\n−76286.0\n1.0\n103.00\n0.06\n57.28 m 0.02\n7/2+\n08\n1971\nIT≈100;β −=0.051 14\n81Br\n−77977.1\n1.0\nSTABLE\n3/2−∗\n08\n1920\nIS=49.35 9\n81Brm\n−77440.9\n1.0\n536.20\n0.09\n34.6 µs 2.8\n9/2+\n08\n1967\nIT=100\n81Kr\n−77696.2\n1.1\n229 ky 11\n7/2+∗\n08 95Ke04\nJ\n1950\nε=100\n81Krm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 56)",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-033-mmc12-j-page-56.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗82Se\nT : 19Az04=86.0(0.3)(+1.9-1.3) 12Si23=96(10) 15Ba11=92(7) (evaluation);\n∗∗\n∗82Se\nT : 0nu-BB: 19Az02>3.5 Yy 18Az05>2.4 Yy 99Pi08=83(+9-7) 98Ar10=83(12)\n∗∗\n∗82Se\nT : 92El07=108(+26-6) 88Li11=120(10)\n∗∗\n∗82Ym\nT : average 94Mu02=220(50) 93Wo04=268(25)\n∗∗\n∗82Nbm\nT : 09Ga40 superseded 08Ga04=92(17); other 07Ca26=80(50)\n∗∗\n83Cu\n−20390#\n500#\n21# ms>410ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 57)",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/sec-034-mmc12-j-page-57.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n84Y\n−73894\n4\n39.5 m 0.8\n(6+)\n09\n1962\nβ +=100\n84Ym\n−73827\n4\n67.0\n0.2\n4.6 s 0.2\n1+\n09\n1976\nβ +=100\n84Yn\n−73684\n4\n210.42\n0.16\n292 ns 10\n(4−)\n09\n2005\nIT=100\n84Zr\n−71422\n5\n25.8 m 0.5\n0+\n09\n1977\nβ +=100\n84Nb\n−61193.8\n0.4\n9.8 s 0.9\n(1+)\n09 09St04\nJ\n1977\nβ +=100\n84Nbm −61145.8\n1.1\n48\n1\n176 ns 46\n(3+)\n09Ga40\nETJ 2009\nIT=100\n84Nbn\n−60856.1\n0.6\n337.7\n0.4\n92 ns 5\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 58)",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/sec-035-mmc12-j-page-58.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗85Nbm\nE : from 05Ka39 > 69 keV\n∗∗\n∗85Nbn\nI : activity reported in 98Oi02 and adopted in Ensdf2014 as a new isomer;\n∗∗\n∗85Nbn\nI : not conﬁrmed in 05Ka39 (the same laboratory as 98Oi02)\n∗∗\n∗85Tc\nI : also 99Ja02<100 ns; estimated T1/2=100# ms for β + decay\n∗∗\n86Zn\n−20060#\n500#\n0+\nβ −?;β −n ?\n86Ga\n−33760#\n400#\n49 ms2\n15 19Yo03\nTD 1997\nβ −=100;β −n=69 6;\n∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 59)",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../sections/sec-036-mmc12-j-page-59.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n87Tcm\n−57683\n4\n7\n1\n*\n2# s\n1/2−#\n09Ga40\nE\nβ + ?;IT ?\n∗\n87Tcn\n−57619\n4\n71\n1\n647 ns 24\n7/2+#\n15\n2007\nIT=100\n87Ru\n−45730#\n400#\n50# ms>1.5us\n1/2−#\n15 95Ry03\nI\n1995\nβ + ?;β +p ?\n∗87As\nT : average 15Ko19=560(80) 13Ma22=484(35) 93Ru01=485(40); others\n∗∗\n∗87As\nT : 12Qu01=1450(550)(+3900-1100) 78Cr03=730(60)\n∗∗\n∗87Se\nT : average 93Ru01=5.29(11) 70Kr05=5.85(15) 70",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 60)",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../sections/sec-037-mmc12-j-page-60.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n89Ym\n−86802.2\n0.3\n908.97\n0.03\n15.663 s 0.005\n9/2+∗\n13 94It.A\nT\n1951\nIT=100\n∗\n89Zr\n−84878.0\n2.8\n78.360 h 0.023\n9/2+\n13 20Fe10\nT\n1948\nβ +=100\n∗\n89Zrm\n−84290.2\n2.8\n587.82\n0.10\n4.161 m 0.010\n1/2−\n13\n1953\nIT=93.77 12;β +=6.23 12\n89Nb\n−80626\n24\n*\n2.03 h 0.07\n(9/2+)\n13\n1954\nβ +=100\n89Nbm −80630#\n40#\n0#\n30#\n*\n1.10 h 0.03\n(1/2)−\n13\n1954\nβ +=100\n89Mo\n−75015\n4\n2.1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 61)",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../sections/sec-038-mmc12-j-page-61.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n91Br\n−61107\n4\n543 ms4\n5/2−#\n13 14Ag12 D\n1974\nβ −=100;β −n=29.5 5\n91Kr\n−70974.0\n2.2\n8.57 s 0.04\n5/2+∗\n13\n1951\nβ −=100;β −n ?\n91Rb\n−77745\n8\n58.2 s 0.3\n3/2−∗\n13\n1951\nβ −=100;β −n ?\n∗\n91Sr\n−83652\n5\n9.65 h 0.06\n5/2+∗\n13 19Kr10\nT\n1943\nβ −=100\n∗\n91Y\n−86351.3\n1.8\n58.51 d 0.06\n1/2−∗\n13\n1943\nβ −=100\n91Ym\n−85795.7\n1.8\n555.58\n0.05\n49.71 m 0.04\n9/2+\n13\n1953\nIT≈100;β",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 62)",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../sections/sec-039-mmc12-j-page-62.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n92Rh\n−62999\n4\n5.61 s 0.08\n(6+)\n12 19Pa16\nTD 1994\nβ +=100;β +p=2.05 7\n∗\n92Rhm −62950#\n100#\n50#\n100#\n3.18 s 0.22\n(2+)\n12 19Pa16\nTD 2004\nβ +=100;β +p=1.7 3\n∗\n92Rhn\n−62890#\n100#\n105#\n100#\n232 ns 15\n(4+)\n17Pa35\nETJ 2017\nIT=100\n∗\n92Pd\n−54780\n350\n1.06 s 0.03\n0+\n12 19Pa16\nTD 1994\nβ +=100;β +p=1.6 2\n92Ag\n−37530#\n400#\n1# ms>400ns\n16 16Ce02\nI\n2016\nβ + ?; p ?\n∗92Se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 63)",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-040-mmc12-j-page-63.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗93Sr\nJ : 90Li28=5/2\n∗∗\n∗93Y\nJ : 07Ch07=1/2\n∗∗\n∗93Ym\nJ : 07Ch07=9/2\n∗∗\n∗93Nb\nJ : also 09Ch25=9/2\n∗∗\n∗93Nbn\nE : from 7435.3(2.1)+x keV in Ensdf2011; x<50 keV assumed in Nubase\n∗∗\n∗93Nbn\nJ : week population (non-yrast) in 07Wa45, feeding the 7435.3 keV 37/2-\n∗∗\n∗93Nbn\nJ : level; given the Weisskopf T1/2 estimates and the measured T1/2,\n∗∗\n∗93Nbn\nJ : the d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 64)",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-041-mmc12-j-page-64.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗94Agn\nD : %p=1.9(5) + 2.2(4) from 05Mu15, %2p from 06Mu03\n∗∗\n95Se\n−30460#\n500#\n70# ms>400ns\n3/2+#\n12 10Oh02 I\n2010\nβ −?;β −n ?;β −2n ?\n95Br\n−43850#\n300#\n80# ms>300ns\n5/2−#\n10 97Be70\nI\n1997\nβ −?;β −n ?;β −2n ?\n95Brm\n−43310#\n300#\n537.9\n0.5\n6.8 µs 1.0\n12Ka36\nET 2012\nIT=100\n∗\n95Kr\n−56159\n19\n114 ms3\n1/2+∗\n10 95Ke04\nJ\n1994\nβ −=100;β −n=2.87 18;\nβ −2n ?\n95Krm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 65)",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../sections/sec-042-mmc12-j-page-65.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n96Rhm −79636\n10\n51.98\n0.09\n1.51 m 0.02\n3+\n08\n1966\nIT=60 5;β +=40 5\n96Pd\n−76183\n4\n122 s 2\n0+\n08\n1980\nβ +=100\n96Pdm\n−73652\n4\n2530.57\n0.23\n1.804 µs 0.007\n8+#\n08 17Pa35\nT\n1983\nIT=100\n∗\n96Ag\n−64510\n90\n*\n4.45 s 0.03\n(8)+\n08 19Pa16\nTD 1982\nβ +=100;β +p=4.2 4\n∗\n96Agm −64510#\n100#\n0#\n50#\n*\n6.9 s 0.5\n(2+)\n08 12Lo08\nTD 2003\nβ +=100;β +p=14.9 18\n∗\n96Agn\n−62050\n90\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 66)",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../sections/sec-043-mmc12-j-page-66.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n97Nb\n−85603\n4\n72.1 m 0.7\n9/2+\n10\n1951\nβ −=100\n97Nbm −84860\n4\n743.35\n0.03\n58.7 s 1.8\n1/2−\n10\n1950\nIT=100\n97Mo\n−87544.70\n0.16\nSTABLE\n5/2+∗\n10\n1930\nIS=9.582 15\n97Tc\n−87224\n4\n4.21 My0.16\n9/2+∗\n10 20Kr09\nJ\n1946\nε=100\n∗\n97Tcm\n−87127\n4\n96.57\n0.06\n91.1 d 0.6\n1/2−\n10 98Ko27 DT 1954\nIT=96.06 18;ε=3.94 18\n∗\n97Ru\n−86120.6\n2.8\n2.8370 d 0.0014\n5/2+\n10 09Go29 T\n1946\nβ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 67)",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-044-mmc12-j-page-67.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n98Mo\n−88115.98\n0.17\nSTABLE\n>100Ty\n0+\n20 52Fr23\nT\n1930\nIS=24.292 80;2β −?\n∗\n98Tc\n−86432\n3\n4.2 My0.3\n6+∗\n20 20Kr09\nJ\n1955\nβ −=100;β +=0\n98Tcm\n−86341\n3\n90.77\n0.16\n14.7 µs 0.5\n(2,3)−\n20\n1976\nIT=100\n98Ru\n−88225\n6\nSTABLE\n0+\n20\n1944\nIS=1.87 3\n98Rh\n−83175\n12\n*\n8.72 m 0.12\n(2)+\n20\n1955\nβ +=100\n98Rhm −83119\n12\n56.3\n1.0\n*\n3.6 m 0.2\n(5+)\n20\n1966\nIT=89 5;β +=11 5\n98",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 68)",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-045-mmc12-j-page-68.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗99Zrm\nT : other 04Hw02=316(48) 99Ge01=400(20) 79Se01=292(20) 70Gr38=400(80)\n∗∗\n∗99Nb\nJ : 09Ch25=9/2\n∗∗\n∗99Mo\nJ : 74Ru05=1/2\n∗∗\n∗99Tc\nJ : 20Kr09,58Lo62=9/2\n∗∗\n∗99Ru\nJ : 13Ma15=5/2\n∗∗\n∗99Ag\nJ : 14Fe01=(9/2)\n∗∗\n∗99Agm\nJ : 14Fe01=(1/2)\n∗∗\n∗99Sn\nD : %β +p symmetrized from 18Pa20=3.9(+3.4-1.7)\n∗∗\n100Kr\n−34470#\n400#\n12 ms8\n0+\n11 11Ni01\nTD 1997\nβ −=100;β −n ?;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 69)",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../sections/sec-046-mmc12-j-page-69.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗100Mo\nT : 19Ar04=6.81(0.01,stat)(+0.38-0.40,syst)\n∗∗\n∗100Mo\nT : 17Ar18=6.90(0.15,stat)(0.37,syst) 15Ba11=7.1(0.4) (evaluation)\n∗∗\n∗100Ag\nJ : 14Fe01=(5)\n∗∗\n∗100Sn\nT : also 12Hi07=1.16(0.20) 08Ba53=0.55(+0.70-0.31) 96Ki23=0.94(+0.54-0.26)\n∗∗\n101Kr\n−28580#\n500#\n9# ms>400ns\n5/2+#\n10 10Oh02 I\n2010\nβ −?;β −n ?;β −2n ?\n101Rb\n−42567\n20\n31.8 ms3.3\n3/2+#\n06 11Ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 70)",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-047-mmc12-j-page-70.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n102Rh\n−86783\n6\n207.0 d 1.5\n2−∗\n09 98Sh21\nT\n1941\nβ +=78 5;β −=22 5\n∗\n102Rhm −86642\n6\n140.73\n0.09\n3.742 y 0.010\n6+∗\n09 99Gi14\nJ\n1962\nβ +≈100;IT=0.233 24\n102Pd\n−87903.0\n0.4\nSTABLE\n>7.6Ey\n0+\n09 16Le16\nT\n1935\nIS=1.02 1;2β + ?\n102Ag\n−82247\n8\n12.9 m 0.3\n5+∗\n09\n1960\nβ +=100\n102Agm −82238\n8\n9.40\n0.07\n7.7 m 0.5\n2+∗\n09\n1967\nβ +=51 5;IT=49 5\n102Cd\n−79659.7\n1.7\n5.5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 71)",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-048-mmc12-j-page-71.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n104Y\n−54080#\n200#\n197 ms4\n(0+,1+)#\n15 09Pe06\nD\n1994\nβ −=100;β −n=34 10;β −2n ?\n∗\n104Zr\n−65718\n9\n920 ms28\n0+\n07 09Pe06\nTD 1990\nβ −=100;β −n<1\n104Nb\n−71811.0\n1.8\n*\n0.98 s 0.05\n(5−)\n07\n1976\nβ −=100;β −n=0.05 3\n∗\n104Nbm −71801.2\n1.9\n9.8\n2.6\nMD*\n4.9 s 0.3\n(0−,1−)\n07 FGK207 J\n1971\nβ −=100;β −n=0.06 3\n∗\n104Mo −80344\n9\n60 s 2\n0+\n07\n1962\nβ −=100\n104Tc\n−82499\n25",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 72)",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../sections/sec-049-mmc12-j-page-72.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗105Sb\nD : %p from 05Li47<0.1% above 430 keV, disagrees with 96FaZZ,94Ti03 1%\n∗∗\n∗105Te\nT : average 06Li41=620(70) 06Se08=700(+250-170)\n∗∗\n∗105Te\nJ : favorite α decay to the 171.7-keV state [J=(7/2+)] in 101Sn\n∗∗\n106Sr\n−34300#\n600#\n21 ms8\n0+\n15 15Lo04\nT\n2010\nβ −=100;β −n ?;β −2n ?\n∗\n106Y\n−45790#\n500#\n75 ms6\n2+#\n15 15Lo04\nT\n1997\nβ −=100;β −n ?;β −2n ?\n∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 73)",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../sections/sec-050-mmc12-j-page-73.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n107Sb\n−70653\n4\n4.0 s 0.2\n5/2+#\n08\n1994\nβ +=100\n107Te\n−60660#\n100#\n3.22 ms0.09\n5/2+#\n08 19Au02 T\n1979\nα=70 30;β + ?;β +p ?\n∗\n107I\n−49430#\n300#\n20# µs\n5/2+#\nα ?\n∗107Y\nT : other 11Ni01=41(+15-9)\n∗∗\n∗107Zr\nT : average 15Lo04=150(3) 11Ni01=138(4); not used 09Pe06=150(+40-30)\n∗∗\n∗107Nb\nT : average 19Ku16=270(20) 15Lo04=280(20) 09Pe06=290(11) 96Me09=300(30)\n∗∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 74)",
+      "pageStart": 74,
+      "pageEnd": 74,
+      "target": "../sections/sec-051-mmc12-j-page-74.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n109Ag\n−88719.4\n1.3\nSTABLE\n1/2−∗\n16\n1924\nIS=48.161 8\n∗\n109Agm −88631.4\n1.3\n88.0337\n0.0010\n39.79 s 0.21\n7/2+∗\n16\n1967\nIT=100\n109Cd\n−88504.3\n1.5\n461.3 d 0.5\n5/2+∗\n16 FGK209 T\n1950\nε=100\n∗\n109Cdm −88444.7\n1.5\n59.60\n0.07\n11.8 µs 1.6\n1/2+\n16\n1956\nIT=100\n109Cdn −88041.2\n1.5\n463.10\n0.11\n10.6 µs 0.4\n11/2−\n16\n1964\nIT=100\n109In\n−86490\n4\n4.159 h 0.010\n9/2+∗\n16\n1948",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 75)",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-052-mmc12-j-page-75.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n111Zr\n−36480#\n600#\n24.0 ms0.5\n5/2+#\n15 15Lo04\nT\n2010\nβ −=100;β −n ?;β −2n ?\n111Nb\n−48960#\n300#\n54 ms2\n3/2−#\n15\n1997\nβ −=100;β −n ?;β −2n ?\n111Mo −59940\n13\n193.6 ms4.4\n1/2+#\n15 15Lo04\nT\n1994\nβ −=100;β −n<12\n∗\n111Mom −59840#\n50#\n100#\n50#\n∼200 ms\n7/2−#\n15\n2011\nβ −=100;β −n ?\n111Tc\n−69025\n11\n350 ms11\n5/2+#\n09 09Pe06\nT\n1988\nβ −=100;β −n=0.85 20\n∗\n111Ru\n−7678",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 76)",
+      "pageStart": 76,
+      "pageEnd": 76,
+      "target": "../sections/sec-053-mmc12-j-page-76.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗112Tcm\nT : from 10Br15=150(17); other 12Ka36=218(+60-43)\n∗∗\n∗112Rh\nT : 99Lh01=3.45(0.37) supersedes 91Jo11=2.1(0.3), 88Ay02=3.8(0.6) same group\n∗∗\n∗112Rhm\nT : supersedes 88Ay02=6.8(0.2) of the same group\n∗∗\n∗112Xe\nD : %α symmetrized from 94Pa11=0.8(+1.1-0.5); other 78Ro19∼0.84\n∗∗\n113Zr\n−26340#\n300#\n15# ms>550 ns\n3/2+\n18Sh11\nIT\n2018\nβ −?;β −n ?;β −2n ?",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 77)",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../sections/sec-054-mmc12-j-page-77.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n114Sb\n−84497\n20\n3.49 m 0.03\n3+\n12\n1959\nβ +=100\n114Sbm −84002\n20\n495.5\n0.7\n219 µs 12\n(8−)\n12\n1973\nIT=100\n114Te\n−81890\n24\n15.2 m 0.7\n0+\n12\n1968\nβ +=100\n114I\n−72639\n20\n2.01 s 0.15\n1+\n12 20Ay05\nTD 1977\nβ +=100;β +p ?;α≈7.7e-9#\n∗\n114Im\n−72373\n20\n265.9\n0.5\n6.2 s 0.5\n(7−)\n12\n1995\nβ += ?;IT= ?\n∗\n114Xe\n−67086\n11\n10.0 s 0.4\n0+\n12\n1977\nβ +=100\n114Cs\n−54690\n90\n570",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 78)",
+      "pageStart": 78,
+      "pageEnd": 78,
+      "target": "../sections/sec-055-mmc12-j-page-78.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n116Agm −82495\n3\n47.90\n0.10\n20 s 1\n(3+)\n10 05Ba94\nTJD 2005\nβ −=93 4;IT=7 4\n116Agn −82413\n3\n129.80\n0.22\n9.3 s 0.3\n(6−)\n10 05Ba94\nTJD 1970\nβ −=92 4;IT=8 4\n116Cd\n−88712.49\n0.16\n26.9 Ey 0.9\n0+\n10 20Ba.A\nT\n1925\nIS=7.512 54;2β −=100\n∗\n116In\n−88249.76\n0.22\n14.10 s 0.03\n1+\n10 13Wr01 D\n1937\nβ −≈100;ε=0.0237 43\n∗\n116Inm −88122.49\n0.22\n127.267\n0.006\n54.29 m 0.17\n5+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MMC12 J (page 79)",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-056-mmc12-j-page-79.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n117Cs\n−66490\n60\n*\n8.4 s 0.6\n9/2+#\n11\n1972\nβ +=100\n117Csm −66340#\n100#\n150#\n80#\n*\n6.5 s 0.4\n3/2+#\n11\n1978\nβ +=100\n117Csx −66440\n80\n50\n50\nR =?\nspmix\n117Ba\n−57460\n250\n1.75 s 0.07\n(3/2+)\n11 97Ja12\nD\n1977\nβ +=100;β +p=13 3;\n∗\nβ +α=0.024 8\n117La\n−46270#\n200#\n21.7 ms1.8\n(3/2+)\n11 11Li28\nTJ\n2001\np≈100;β + ?;β +p ?\n∗\n117Lam\nnon−exist\nRN\n10 ms5\n(9/2+)\n11 01So02\nI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 JD",
+      "pageStart": 79,
+      "pageEnd": 97,
+      "target": "../sections/sec-057-95-fgk208-jd.md",
+      "narrative": null,
+      "content": "1971\nβ −=59 3;IT=41 3\n∗\n118Agp −79274.4\n2.5\n279.37\n0.20\n∼0.1 µs\n(3+)\n95 93Ja03\nTJ\n1989\nIT=100\n118Cd\n−86702\n20\n50.3 m 0.2\n0+\n95\n1961\nβ −=100\n118In\n−87228\n8\n*\n5.0 s 0.5\n1+\n95\n1949\nβ −=100\n118Inm −87130#\n50#\n100#\n50#\n*\n4.364 m 0.007\n5+∗\n95 94It.A\nT\n1964\nβ −=100\n118Inn\n−86990#\n50#\n240#\n50#\n8.5 s 0.3\n8−∗\n95\n1969\nIT=98.6 3[gs=0,m=98.6];\n∗\nβ −=1.4 3\n118Sn\n−91652.8\n0.5\nSTABLE\n0+\n95\n1924\nIS=24.22 9\n118Snm −89077.9\n0.5\n2574.91\n0.04\n230 ns 10\n7−\n95\n1961\nIT=100\n118Snn −88544.7\n0.5\n3108.06\n0.22\n2.52 µs 0.06\n(10+)\n95 11Fo15\nJ\n1973\nIT=100\n118Sb\n−87996\n3\n3.6 m 0.1\n1+∗\n95\n1947\nβ +=100\n118Sbm −87945\n3\n50.814\n0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK205 EJ",
+      "pageStart": 97,
+      "pageEnd": 123,
+      "target": "../sections/sec-058-17-fgk205-ej.md",
+      "narrative": null,
+      "content": "1982\nβ + ?\n∗\n138Eum −61650#\n60#\n100#\n50#\n*&\n12.1 s 0.6\n7−#\n17 FGK205 EJ\n1982\nβ +=100\n∗\n138Gd\n−55660#\n200#\n4.7 s 0.9\n0+\n17\n1985\nβ +=100\n138Gdm −53430#\n200#\n2232.6\n1.1\n6.2 µs 0.2\n(8−)\n17\n1997\nIT=100\n138Tb\n−43600#\n300#\n800# ms>200ns\n2+#\n17\n1993\nβ + ?;β +p ?;p=0\n138Dy\n−34930#\n500#\n200# ms\n0+\nβ + ?;β +p ?\n∗138Sn\nT : average 20Wu04=158(15) 20Ju02t=142(12), supersedes 15Lo04=140(+30-20)\n∗∗\n∗138Sb\nT : average 20Wu04=326(8) 15Le14=346(19) 11Ar18=350(15)\n∗∗\n∗138Te\nD : %β −n from 17AgZZ; other 75As04=6.3(2.1)\n∗∗\n∗138Te\nT : average 20Wu04=1.50(0.32) 75As04=1.4(0.4); other 06KeZZ=1.151(0.028)\n∗∗\n∗138I\nD :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 123)",
+      "pageStart": 123,
+      "pageEnd": 123,
+      "target": "../sections/sec-059-fgk208-ij-page-123.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n176Hf\n−54576.4\n1.5\nSTABLE\n0+\n06\n1934\nIS=5.26 70\n176Hfm −53243.3\n1.5\n1333.07\n0.07\n9.6 µs 0.3\n6+\n06\n1964\nIT=100\n176Hfn −53017.1\n1.5\n1559.31\n0.09\n9.9 µs 0.2\n8−\n06\n1967\nIT=100\n176Hfp −51710.6\n1.7\n2865.8\n0.7\n401 µs 6\n14−\n06\n1975\nIT=100\n176Hfq −49712.8\n1.7\n4863.6\n0.9\n43 µs 4\n22−\n06 10Mu13 JT\n1976\nIT=100\n176Ta\n−51370\n30\n8.09 h 0.05\n(1)−\n06\n1948\nβ +=100\n176Tam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 124)",
+      "pageStart": 124,
+      "pageEnd": 124,
+      "target": "../sections/sec-060-fgk208-ij-page-124.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n177Os\n−41956\n15\n3.0 m 0.2\n1/2−\n19\n1970\nβ +=100\n177Ir\n−36047\n20\n29.8 s 1.7\n5/2−\n19\n1967\nβ +≈100;α=0.06 1\n177Irm\n−35950#\n50#\n100#\n50#\n> 100 ns\n(9/2−)\n19\nIT=100\n177Irn\n−35866\n20\n180.9\n0.4\n> 100 ns\n5/2+\n19\n1991\nIT=100\n177Pt\n−29370\n15\n10.0 s 0.4\n5/2−\n19\n1966\nβ +=94.3 5;α=5.7 5\n177Ptm −29223\n15\n147.5\n0.4\n2.35 µs 0.04\n1/2−\n19 19Gi11\nT\n1979\nIT=100\n177Au\n−21546",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 125)",
+      "pageStart": 125,
+      "pageEnd": 125,
+      "target": "../sections/sec-061-fgk208-ij-page-125.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n179Er\n−36080#\n500#\n3# s >550ns\n3/2−#\n18Fu08\nI\n2018\nβ −?;β −n ?\n179Tm −41900#\n400#\n18# s >300ns\n1/2+#\n13 12Ku26 I\n2012\nβ −?;β −n ?\n179Yb\n−46640#\n200#\n8.0 m 0.4\n(1/2−)\n09\n1982\nβ −=100\n179Lu\n−49059\n5\n4.59 h 0.06\n7/2+∗\n09\n1961\nβ −=100\n179Lum −48467\n5\n592.4\n0.4\n3.1 ms0.9\n1/2+\n09\n1982\nIT=100\n179Hf\n−50463.0\n1.4\nSTABLE\n9/2+∗\n09\n1934\nIS=13.62 11\n179Hfm −50088.0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 126)",
+      "pageStart": 126,
+      "pageEnd": 126,
+      "target": "../sections/sec-062-fgk208-ij-page-126.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n180Hf\n−49779.5\n1.4\nSTABLE\n0+\n15\n1934\nIS=35.08 33\n180Hfm −48637.9\n1.4\n1141.552\n0.015\n5.53 h 0.02\n8−\n15\n1951\nIT≈100;β −=0.31 8\n180Hfn −48405.1\n1.4\n1374.36\n0.04\n570 µs 20\n4−\n15 15Ko14 J\n1990\nIT=100\n∗\n180Hfp −47294.0\n1.5\n2485.5\n0.5\n940 ns 110\n12+\n15 16Ta23\nT\n2000\nIT=100\n180Hfq −46180.5\n1.7\n3599.0\n1.0\n90 µs 10\n(18−)\n15\n1999\nIT=100\n180Ta\n−48933.6\n2.1\n8.154 h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 127)",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-063-fgk208-ij-page-127.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n181Au\n−27871\n20\n13.7 s 1.4\n(5/2−)\n06\n1968\nβ +=97.3 5;α=2.7 5\n∗\n181Aup −27660#\n200#\n210#\n200#\n(11/2−)\n06\n181Hg\n−20661\n15\n3.6 s 0.1\n1/2−∗\n06\n1969\nβ +=73 2;α=27 2;\n∗\nβ +p=0.014 3;β +α=9e-6 3\n181Hgm −20450\n50\n210\n50\nIT\n480 µs 20\n13/2+\n06 09An17 T\n2009\nIT=100\n181Tl\n−12799\n9\n2.9 s 0.1\n1/2+∗\n09 18Cu04\nTD 1996\nβ + ?;α=8.6 6\n∗\n181Tlm −11963\n9\n835.9\n0.4\n1.40 ms0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 128)",
+      "pageStart": 128,
+      "pageEnd": 128,
+      "target": "../sections/sec-064-fgk208-ij-page-128.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗182Aum\nI : direct β + feeding to 4+ and 5+ levels in 182Pt (99Da18)\n∗∗\n∗182Aum\nI : indicates the existence of an isomer\n∗∗\n∗182Hg\nD : %α average 97Ba21=13.3(0.5) 80Sc09=15.2(0.8); β +p 71Ho07<1e-5\n∗∗\n∗182Tl\nJ : 17Ba04=(4)\n∗∗\n∗182Tlm\nJ : 17Ba04=(7)\n∗∗\n∗182Tlm\nD : %α from 91Bo01<5%\n∗∗\n183Yb\n−35000#\n400#\n30# s >300ns\n3/2−#\n16 12Ku26 I\n2012\nβ −?\n183Lu\n−397",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 129)",
+      "pageStart": 129,
+      "pageEnd": 129,
+      "target": "../sections/sec-065-fgk208-ij-page-129.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n184Rem −44032\n4\n188.0463\n0.0017\n169 d 8\n8+\n10\n1964\nIT=74.5 8;ε=25.5 8\n∗\n184Os\n−44252.6\n0.8\n11.2 Ty 2.3\n0+\n10 14Pe22\nT\n1937\nIS=0.02 2;α ?;2β + ?\n∗\n184Ir\n−39611\n28\n3.09 h 0.03\n5−\n10\n1960\nβ +=100\n184Irm\n−39385\n28\n225.65\n0.11\n470 µs 30\n3+\n10\n1988\nIT=100\n184Irn\n−39283\n28\n328.40\n0.24\n350 ns 90\n7+\n10\n1988\nIT=100\n∗\n184Pt\n−37332\n15\n17.3 m 0.2\n0+\n10 95Bi01\nD\n1963",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 130)",
+      "pageStart": 130,
+      "pageEnd": 130,
+      "target": "../sections/sec-066-fgk208-ij-page-130.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗185Irm\nE : 2157.3(0.5) + x keV; x<80 keV\n∗∗\n∗185Pt\nJ : 92Hi07,99Le52=9/2\n∗∗\n∗185Pt\nD : %α from E(a)=4444(10) keV in 91Bi04\n∗∗\n∗185Ptm\nJ : 92Hi07,99Le52=1/2\n∗∗\n∗185Hg\nJ : 19Se04=1/2\n∗∗\n∗185Hgm\nJ : 19Se04=13/2\n∗∗\n∗185Pb\nJ : 09Se13=3/2\n∗∗\n∗185Pbm\nT : average 02An15=4.3(0.2) 80Sc09=3.73(0.24) (excluding the 6.1 s activity)\n∗∗\n∗185Pbm\nJ : 09Se13=13/2\n∗∗\n∗18",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 131)",
+      "pageStart": 131,
+      "pageEnd": 131,
+      "target": "../sections/sec-067-fgk208-ij-page-131.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n187Ta\n−36900\n60\n2.3 m 6\n(7/2+)\n09 10Re07\nT\n1999\nβ −=100\n∗\n187Tam −35110\n60\n1778\n1\n7.3 s 0.9\n(25/2−)\n20Wa29 ETJ 2010\nIT≈100;β −?\n∗\n187Tan −33970\n60\n2935\n14\n> 5 m\n41/2+#\n10Re07\nET 2010\nβ −?; IT ?\n∗\n187W\n−39904.0\n1.2\n23.809 h 0.025\n3/2−∗\n09 19Kr02\nT\n1940\nβ −=100\n∗\n187Wm −39493.9\n1.2\n410.06\n0.04\n1.38 µs 0.07\n11/2+\n09 08Bo26\nJ\n2008\nIT=100\n∗\n187Re\n−41216.5\n0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 132)",
+      "pageStart": 132,
+      "pageEnd": 132,
+      "target": "../sections/sec-068-fgk208-ij-page-132.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n188Wm −36741\n3\n1926.7\n0.8\n109.5 ns 3.5\n8−\n18\n2010\nIT=100\n188Re\n−39016.9\n0.7\n17.005 h 0.003\n1−∗\n18\n1939\nβ −=100\n188Rem −38844.8\n0.7\n172.0848\n0.0024\n18.59 m 0.04\n6−\n18\n1953\nIT=100\n188Os\n−41137.3\n0.7\nSTABLE\n>3.3Ey\n0+\n18\n1931\nIS=13.24 27;α ?\n∗\n188Ir\n−38345\n9\n41.5 h 0.5\n1−∗\n18\n1950\nβ +=100\n188Irm\n−37381\n25\n964\n23\n4.15 ms0.15\n11−#\n18\n1971\nIT≈100;β + ?\n∗\n188Pt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 133)",
+      "pageStart": 133,
+      "pageEnd": 133,
+      "target": "../sections/sec-069-fgk208-ij-page-133.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗189Tam\nT : other 11St21=0.58(0.22), possibly a different isomer\n∗∗\n∗189Tam\nE : 11St11=154,284,343,389,482 keV gammas in a mutual coincidence; other\n∗∗\n∗189Tam\nE : 09Al30=57,83,134,154,199,246,284,389,481 keV gammas in singles\n∗∗\n∗189Rem\nIJ : M2 to 5/2+; existence of a similar isomer in 187Re\n∗∗\n∗189Rem\nT : estimated from B(M2)=0.7 (W.u.) for 187Rem\n∗∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 134)",
+      "pageStart": 134,
+      "pageEnd": 134,
+      "target": "../sections/sec-070-fgk208-ij-page-134.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗190Tlp\nE : 236(7) keV above 190Tlm\n∗∗\n∗190Tlp\nT : from BM2=5.2(0.6)e-6 (W.u.) for a similar isomer in 188Tl; other\n∗∗\n∗190Tlp\nT : 91Va04>1 us\n∗∗\n∗190Pbm\nT : uncertainty from 12Dr.A\n∗∗\n∗190Pbn\nE : x keV above 190Pbm; x=50#(50#)\n∗∗\n∗190Pbn\nT : uncertainty from 12Dr.A\n∗∗\n∗190Pbp\nT : average 01Dr05=7.2(0.6) 85St16=7.9(0.4)\n∗∗\n∗190Bi\nD : %α symmetrized from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 135)",
+      "pageStart": 135,
+      "pageEnd": 135,
+      "target": "../sections/sec-071-fgk208-ij-page-135.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗191Ptm\nJ : E2 to 5/2-\n∗∗\n∗191Ptm\nT : other 2 us, estimated from B(E2)=0.088(5) (W.u.) in 189Pt\n∗∗\n∗191Ptn\nJ : M2 to 9/2-\n∗∗\n∗191Aun\nJ : E2 to 27/2+; measured magnetic moment\n∗∗\n∗191Hgm\nE : original uncertainty (8 keV) increased by 20 keV for gs+m lines in trap\n∗∗\n∗191Tl\nJ : 92Me07=1/2\n∗∗\n∗191Tlm\nJ : 13Ba41,12Ba32=9/2\n∗∗\n∗191Pb\nJ : favored α decay to 18",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 136)",
+      "pageStart": 136,
+      "pageEnd": 136,
+      "target": "../sections/sec-072-fgk208-ij-page-136.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗192Aum\nJ : E3 to 2-; M2 to 3-\n∗∗\n∗192Aun\nJ : E3 to 8+\n∗∗\n∗192Tl\nJ : also 92Me07=2\n∗∗\n∗192Tlm\nJ : also 92Me07=7\n∗∗\n∗192Tlm\nE : from 91Va04=168+x keV, 15 keV <x< 40 keV\n∗∗\n∗192Tln\nE : 250.6(0.2) keV above 192Tlm\n∗∗\n∗192Bi\nJ : 17Ba12=(3)\n∗∗\n∗192Bim\nJ : 17Ba12=(10); favored α decay to 188Tl (J=10-)\n∗∗\n∗192Pom\nJ : E1 to 10+\n∗∗\n∗192Pom\nE : uncertainty estima",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 137)",
+      "pageStart": 137,
+      "pageEnd": 137,
+      "target": "../sections/sec-073-fgk208-ij-page-137.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗193Atn\nJ : favored α decay to 189Bin (J=13/2+)\n∗∗\n∗193Rn\nJ : favored α decay to 189Po [J=(3/2-)]\n∗∗\n194Ta\n−17130#\n500#\n2# s >300ns\n13 12Ku26 I\n2012\nβ −?;β −n ?\n194W\n−24410#\n300#\n20# s >300ns\n0+\n11\n2008\nβ −?\n194Re\n−27260#\n200#\n5 s 1\n1−#\n14 12Al05\nT\n1999\nβ −=100\n∗\n194Rem −27110#\n210#\n150#\n50#\n45 µs 18\n4−#\n14 11St21\nTD 2011\nIT=100\n∗\n194Ren −26980#\n200#\n28",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 138)",
+      "pageStart": 138,
+      "pageEnd": 138,
+      "target": "../sections/sec-074-fgk208-ij-page-138.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n195Os\n−29510\n60\n6.5 m 1.1\n(3/2−)\n14 13Bi14\nTD 2004\nβ −=100\n∗\n195Osm −29080\n60\n427.8\n0.3\n47 s 3\n(13/2+)\n14 20Wa12 ETJ 2012\nIT≈100;β −?\n∗\n195Ir\n−31692.3\n1.3\n2.29 h 0.17\n3/2+\n14 13Bi14\nTD 1952\nβ −=100\n195Irm\n−31592\n5\n100\n5\n3.74 h 0.07\n11/2−\n14\n1968\nβ −≈100;IT ?\n∗\n195Irn\n−29338\n6\n2354\n6\n4.4 µs 0.6\n(27/2+)\n11St21\nETJ 2011\nIT=100\n∗\n195Pt\n−32793.9\n0.5\nSTABLE\n>",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 139)",
+      "pageStart": 139,
+      "pageEnd": 139,
+      "target": "../sections/sec-075-fgk208-ij-page-139.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n196Ir\n−29440\n40\n52.0 s 1.1\n(1,2−)\n07 20Mu16 TJ\n1966\nβ −=100\n∗\n196Irm\n−29227\n20\n210\n40\nBD\n1.40 h 0.02\n11−#\n07\n1959\nβ −≈100;IT ?\n196Pt\n−32644.5\n0.5\nSTABLE\n0+\n07\n1935\nIS=25.211 340\n196Au\n−31138.7\n3.0\n6.165 d 0.011\n2−∗\n07 11Hi19\nT\n1937\nβ +=93.0 3;β −=7.0 3\n∗\n196Aum −31054\n3\n84.656\n0.020\n8.1 s 0.2\n5+\n07\n1971\nIT=100\n196Aun −30543\n3\n595.66\n0.04\n9.603 h 0.022\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 140)",
+      "pageStart": 140,
+      "pageEnd": 140,
+      "target": "../sections/sec-076-fgk208-ij-page-140.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n197Pb\n−24745\n5\n8.1 m 1.7\n3/2−\n05\n1955\nβ +=100\n197Pbm −24426\n5\n319.31\n0.11\nIT\n42.9 m 0.9\n13/2+∗\n05\n1957\nβ +=81 2;IT=19 2\n∗\n197Pbn −22831\n5\n1914.10\n0.25\n1.15 µs 0.20\n21/2−\n05\n1978\nIT=100\n197Bi\n−19687\n8\n9.33 m 0.50\n9/2−∗\n05\n1971\nβ +=100;α ?\n∗\n197Bim −19155\n8\n533\n12\nAD\n5.04 m 0.16\n1/2+∗\n05\n1966\nα=55 40;β +=45 40;IT ?\n∗\n197Bin\nnon−exist\nRN\n204 ns 18\n(23/2−)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 141)",
+      "pageStart": 141,
+      "pageEnd": 141,
+      "target": "../sections/sec-077-fgk208-ij-page-141.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n198Tlm −26985\n8\n543.6\n0.4\n1.87 h 0.03\n7+∗\n16\n1949\nβ +=55.9 23;IT=44.1 23\n198Tln\n−26842\n8\n686.8\n0.5\n150 ns 40\n(5)+\n16 77Kr04\nEJT 1977\nIT=100\n198Tlp\n−26787\n8\n742.4\n0.4\n32.1 ms1.0\n10−\n16 FGK128 J\n1975\nIT=100\n∗\n198Pb\n−26067\n9\n2.4 h 0.1\n0+\n16\n1955\nβ +=100\n198Pbm −23926\n9\n2141.4\n0.4\n4.12 µs 0.07\n7−\n16 FGK128 J\n1972\nIT=100\n∗\n198Pbn −23836\n9\n2231.4\n0.5\n137 ns 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 142)",
+      "pageStart": 142,
+      "pageEnd": 142,
+      "target": "../sections/sec-078-fgk208-ij-page-142.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n199Bi\n−20798\n11\n27 m 1\n9/2−∗\n07\n1950\nβ +=100\n199Bim −20131\n11\n667\n3\nIT\n24.70 m 0.15\n(1/2+)\n07\n1950\nβ +=?;IT<2;α≈0.01\n199Bin\n−18836\n25\n1962\n23\n100 ns 30\n25/2+#\n07\n1974\nIT=100\n∗\n199Bip −18250\n25\n2548\n23\n168 ns 13\n29/2−#\n07\n1985\nIT=100\n∗\n199Po\n−15239\n5\n5.47 m 0.15\n3/2−∗\n07 13Se03\nJ\n1965\nβ +=92.5 3;α=7.5 3\n∗\n199Pom −14927\n5\n311.7\n2.7\nAD\n4.17 m 0.05\n13/2+∗\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-079",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 143)",
+      "pageStart": 143,
+      "pageEnd": 143,
+      "target": "../sections/sec-079-fgk208-ij-page-143.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n200Bin\n−19943\n23\n428.20\n0.10\n400 ms50\n(10−)\n07\n1972\nIT=100\n200Po\n−16942\n8\n11.51 m 0.08\n0+\n07\n1951\nβ +=88.9 3;α=11.1 3\n200Pom −14346\n8\n2596.1\n0.3\n100 ns 10\n11−\n07\n1985\nIT=100\n200Pon −14125\n11\n2817\n7\n268 ns 3\n12+\n07\n1985\nIT=100\n∗\n200At\n−8988\n24\n43.2 s 0.9\n(3+)∗\n07 96Ta18\nT\n1963\nα=52 3;β +=48 3\n∗\n200Atm\n−8875\n25\n112.9\n2.9\nAD\n47 s 1\n(7+)∗\n07\n1967\nα=43 7;β +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-080",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 144)",
+      "pageStart": 144,
+      "pageEnd": 144,
+      "target": "../sections/sec-080-fgk208-ij-page-144.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n201Rn\n−4107\n10\n7.0 s 0.4\n3/2−\n07\n1967\nα=?;β + ?\n∗\n201Rnm\n−3863\n7\n245\n12\nAD\n3.8 s 0.1\n13/2+\n07 17Al34\nE\n1967\nα=?;β + ?\n∗\n201Fr\n3589\n9\n62.8 ms1.9\n9/2−\n07 14Ka23\nTD 1980\nα≈100;β + ?\n∗\n201Frm\n3718\n10\n129\n10\nAD\n24 ms6\n1/2+\n07 20Au01 T\n2005\nα=100\n∗\n201Frn\n3879\n9\n289.5\n0.4\n720 ns 40\n13/2+\n20Au01 ETJ 2014\nIT=100\n∗\n201Ra\n11937\n20\n20 ms30\n(3/2−)\n14Ka23\nTJ\n2005\nα=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-081",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 145)",
+      "pageStart": 145,
+      "pageEnd": 145,
+      "target": "../sections/sec-081-fgk208-ij-page-145.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗202Ir\nT : 14Ku23=11(3) supersedes 14Mo15=15(3)\n∗∗\n∗202Irm\nE : 311.5, 655.9, 737.2, 889.2, 967.6 gamma rays seen in decay and by\n∗∗\n∗202Irm\nE : assuming that 655.9 and 967.6 depopulate the same level\n∗∗\n∗202Pbn\nE : 4091.0(0.7) + x keV; x=50#(50#) keV by Nubase\n∗∗\n∗202Pbn\nT : average 19Ro12=93(4) 86Ja13=110(5) 18La03=103(10)\n∗∗\n∗202Pbp\nE : 5251.0(0.5) +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-082",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 146)",
+      "pageStart": 146,
+      "pageEnd": 146,
+      "target": "../sections/sec-082-fgk208-ij-page-146.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗203Hgm\nT : average 11St21=21.9(1.0) 86Ze03=27(5) 64Br27=21(5)\n∗∗\n∗203Tl\nJ : other 13Ba41=1/2\n∗∗\n∗203Tlm\nT : not directly measured; half-life expected ∼2-20 ns\n∗∗\n∗203Tln\nE : 3514.6 + x keV; x=50#(50#) keV by Nubase\n∗∗\n∗203Pb\nT : average 14Un01=51.92(0.04) 01Li17=51.99(0.03) 80Ho17=51.88(0.02)\n∗∗\n∗203Pb\nT : 71Ch54=52.02(0.05)\n∗∗\n∗203Pbp\nE : 2923.4(0.7)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-083",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 147)",
+      "pageStart": 147,
+      "pageEnd": 147,
+      "target": "../sections/sec-083-fgk208-ij-page-147.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗204At\nT : other 10Ka29=9.6(2)\n∗∗\n∗204At\nJ : 18Cu02=(7)\n∗∗\n∗204Fr\nT : average 05Uu02=1.9(0.5) 92Hu04=1.7(0.3)\n∗∗\n∗204Fr\nJ : 15Vo05,14Ly01,13Vo10=3\n∗∗\n∗204Frm\nT : average 13Ja06=2.6(0.3) 05Uu02=1.6(+0.5-0.3) 92Hu04=2.6(0.3)\n∗∗\n∗204Frm\nJ : 15Vo05,14Ly01=7\n∗∗\n∗204Frn\nE : 276.1 keV above 204Frm from 95Bi.A\n∗∗\n∗204Frn\nT : 13Ja06=1.65(0.15) supersedes 05Uu02=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-084",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 148)",
+      "pageStart": 148,
+      "pageEnd": 148,
+      "target": "../sections/sec-084-fgk208-ij-page-148.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n206Hgm −18844\n20\n2102.4\n0.3\n2.088 µs 0.017\n5−\n08 11St21\nT\n1982\nIT=100\n∗\n206Hgn −17224\n20\n3722.3\n1.0\n106 ns 3\n(10+)\n08 18La03\nT\n2001\nIT=100\n∗\n206Tl\n−22253.3\n1.3\n4.202 m 0.011\n0−∗\n08\n1935\nβ −=100\n206Tlm −19610.2\n1.3\n2643.10\n0.18\n3.74 m 0.03\n(12)−\n08\n1976\nIT=100\n∗\n206Pb\n−23785.5\n1.1\nSTABLE\n>2.5Zy\n0+\n08 13Be16\nT\n1927\nIS=24.1 30;α ?\n206Pbm −21585.3\n1.1\n2200.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-085",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 149)",
+      "pageStart": 149,
+      "pageEnd": 149,
+      "target": "../sections/sec-085-fgk208-ij-page-149.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n207Ra\n3510\n60\n1.38 s 0.18\n5/2−#\n11\n1967\nα≈86;β + ?\n∗\n207Ram\n4071\n10\n560\n60\nAD\n57 ms8\n13/2+\n11 96Le09\nT\n1987\nIT=85#;α=?;β + ?\n∗\n207Ac\n11150\n60\n31 ms8\n9/2−\n11 98Es02\nT\n1994\nα≈100\n∗\n∗207Tl\nT : others 05Oh08=4.25(0.14) 10Ku02=4.70(0.19) for q=81+ (bare ion)\n∗∗\n∗207Po\nJ : other 15Fi07=5/2\n∗∗\n∗207At\nJ : 18Cu02=9/2\n∗∗\n∗207Fr\nJ : other 17Wi11,14Ly01=9/2\n∗∗\n∗207",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-086",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 150)",
+      "pageStart": 150,
+      "pageEnd": 150,
+      "target": "../sections/sec-086-fgk208-ij-page-150.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n209Pom −12100.6\n1.8\n4265.4\n0.3\n119 ns 4\n31/2−\n15\n1974\nIT=100\n209At\n−12884\n5\n5.42 h 0.05\n9/2−∗\n15 17Lo13\nD\n1951\nβ +=96.1 4;α=3.9 4\n∗\n209Atm −10455\n5\n2429.32\n0.22\n916 ns 10\n29/2+\n15\n1975\nIT=100\n209Rn\n−8941\n10\n28.8 m 1.0\n5/2−∗\n15 87Bo29\nJ\n1952\nβ +=83 2;α=17 2\n∗\n209Rnm\n−7767\n10\n1174.01\n0.13\n13.4 µs 1.3\n13/2+\n15\n1985\nIT=100\n209Rnn\n−5304\n10\n3636.81\n0.23\n3.0 µ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-087",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 151)",
+      "pageStart": 151,
+      "pageEnd": 151,
+      "target": "../sections/sec-087-fgk208-ij-page-151.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗210Rnn\nE : 2147.4(0.2) keV above the 8+ level at 1664.6(0.1)\n∗∗\n∗210Rnp\nE : 4803.7(0.4) keV above the 8+ level at 1664.6(0.1)\n∗∗\n∗210Frm\nE : uncertainty estimated by evaluator\n∗∗\n∗210Ra\nT : others 07Le14=2.5(+1.4-0.7) and 3.5(+4.8-1.3) 68Lo15=3.6(0.2)\n∗∗\n∗210Ra\nT : 67Va22=3.8(0.2)\n∗∗\n∗210Ram\nT : average 13Ba29=2.1(0.1) 06Ha17=2.28(0.08) 04Re04=2.1(0.1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-088",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 152)",
+      "pageStart": 152,
+      "pageEnd": 152,
+      "target": "../sections/sec-088-fgk208-ij-page-152.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n212Po\n−10369.4\n1.2\n294.4 ns 0.8\n0+\n20 17Ap03 T\n1906\nα=100\n∗\n212Pom\n−7446\n5\n2923\n4\nAD\n45.1 s 0.6\n(18+)\n20\n1962\nα=99.93 2;IT ?\n212At\n−8628.1\n2.4\n314 ms3\n(1−)\n20\n1954\nα≈100;β + ?;β −?\n212Atm\n−8405.2\n2.4\n222.9\n0.9\nAD\n119 ms3\n(9−)\n20\n1970\nα≈100;IT ?\n212Atn\n−3856.7\n2.8\n4771.4\n1.5\n152 µs 5\n(25−)\n20\n1998\nIT=100\n212Rn\n−8659\n3\n23.9 m 1.2\n0+\n20\n1950\nα=100\n212Rnm\n−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-089",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 153)",
+      "pageStart": 153,
+      "pageEnd": 153,
+      "target": "../sections/sec-089-fgk208-ij-page-153.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗213Tln\nE : 19Go10 and similarity with 209Tlm\n∗∗\n∗213Bi\nT : average 21Ta01=45.60(0.09) 13Ma13=45.62(0.06) 73Po16=45.59(0.06)\n∗∗\n∗213Bim\nE : from 12Ch19\n∗∗\n∗213Po\nT : average 20Ko06=3.709(12) 18Al32=3.705(1) 13Su13=3.708(8); other\n∗∗\n∗213Po\nT : 18Sa45=3.5(0.5)\n∗∗\n∗213Atm\nE : 1318.1(0.6) + x keV; 20<x<100 keV from 80Sj01\n∗∗\n∗213Atn\nE : 1615(2) + y keV abo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-090",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 154)",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "target": "../sections/sec-090-fgk208-ij-page-154.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n215Hg\n17110#\n400#\n600# ms>300ns\n9/2+#\n13 10Al24\nI\n2010\nβ −?;β −n ?\n215Tl\n10030#\n300#\n9.7 s 3.8\n1/2+#\n13 17Ca12\nTD 2010\nβ −=100;β −n=4.6 46\n215Pb\n4340\n50\n142 s 11\n9/2+#\n13 17Ca12\nT\n1998\nβ −=100\n∗\n215Bi\n1629\n6\n7.62 m 0.13\n(9/2−)\n13 14Mo02 T\n1953\nβ −=100\n∗\n215Bim\n2996#\n21#\n1367#\n20#\n36.9 s 0.6\n(25/2−)\n13\n2001\nIT=76.9 5;β −=23.1 5\n∗\n215Po\n−541.8\n2.1\n1.781 m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-091",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 155)",
+      "pageStart": 155,
+      "pageEnd": 155,
+      "target": "../sections/sec-091-fgk208-ij-page-155.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗216Pbm\nE : 1459 + x keV; x=20-90 keV from 12Go19\n∗∗\n∗216Bi\nT : average 14Mo02=2.21(25) 00Ku06=2.25(0.05) 96Ry.B=2.17(0.05);\n∗∗\n∗216Bi\nT : other 90Ru02=3.6(0.4)\n∗∗\n∗216Po\nT : others 19Mi18=145(11) 18Ba44=136(6) 03Da24=144(8) 63Di05=145(2)\n∗∗\n∗216Rn\nT : other 61Ru06=45(5)\n∗∗\n∗216Ra\nT : average 19Pa45=161(11) 17Su18=167(53) 73No09=182(10)\n∗∗\n∗216Acn\nE : 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-092",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 156)",
+      "pageStart": 156,
+      "pageEnd": 156,
+      "target": "../sections/sec-092-fgk208-ij-page-156.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n218Frm\n7147\n5\n87\n4\nAD\n21.9 ms0.5\n(8−)\n19 99Sh03\nJ\n1982\nα≈100;IT ?\n218Ra\n6646\n10\n25.91 µs 0.14\n0+\n19\n1970\nα=100\n218Ac\n10850\n60\n*\n1.00 µs 0.04\n(1−)\n19 19Ya04\nT\n1970\nα=100\n∗\n218Acm\n10900\n90\n50\n70\n*\n> 100# ns\n8−#\nIT ?;α ?;β + ?\n218Acn\n11460#\n110#\n607#\n86#\n103 ns 11\n(11+)\n19\n1994\nIT=100\n∗\n218Th\n12367\n11\n122 ns 5\n0+\n19\n1973\nα=100\n218Pa\n18650\n18\n108 µs 5\n8−#\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-093",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 157)",
+      "pageStart": 157,
+      "pageEnd": 157,
+      "target": "../sections/sec-093-fgk208-ij-page-157.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n220Pan\n20570\n50\n290\n50\nAD\n260 ns 210\n18Hu13 ET 2018\nα=100\n∗\n220U\n23010#\n100#\n60# ns\n0+\nα ?;β + ?\n220Np\n30480\n30\n29 ns 11\n1−#\n19Zh23\nTD 2019\nα=100\n∗\n∗220Rn\nT : other 18Ba44=58(4)\n∗∗\n∗220Fr\nJ : other 14Ly01=1\n∗∗\n∗220Ra\nT : average 18Sa45=19(3) 00He17=18(2) 90An19=17(2) 61Ru06=23(5)\n∗∗\n∗220Ac\nT : average 90An19=26.4(0.2) 70Bo13=26.1(0.5)\n∗∗\n∗220Th\nT : aver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-094",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 158)",
+      "pageStart": 158,
+      "pageEnd": 158,
+      "target": "../sections/sec-094-fgk208-ij-page-158.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n223Bi\n32240#\n400#\n1# s >300ns\n9/2−#\n11 10Al24\nI\n2009\nβ −?;β −n ?\n223Po\n27080#\n200#\n6# s >300ns\n11/2+#\n11 10Al24\nI\n2010\nβ −?\n223At\n23428\n14\n50 s 7\n3/2−#\n01\n1989\nβ −≈100;α ?\n223Rn\n20390\n8\n24.3 m 0.4\n7/2+∗\n01\n1964\nβ −=100;α ?\n∗\n223Fr\n18382.3\n1.9\n22.00 m 0.07\n3/2−∗\n01\n1939\nβ −≈100;α=0.006\n223Ra\n17233.2\n2.1\n11.4352 d 0.0010\n3/2+∗\n01 15Ko06 T\n1905\nα=100;14C=8",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-095",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 159)",
+      "pageStart": 159,
+      "pageEnd": 159,
+      "target": "../sections/sec-095-fgk208-ij-page-159.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗225Ac\nJ : also favored α decay to J=3/2- level at 552.1 keV in 221Fr\n∗∗\n∗225Th\nJ : favored α decay to J=3/2+ level at 321.4 keV in 221Ra\n∗∗\n∗225Th\nD : %α from 51Me10\n∗∗\n∗225Th\nT : from 87Mi10; other 51Me10=8.0(0.5)\n∗∗\n∗225Pa\nT : average 70Bo13=1.8(0.3) 78IbZZ=1.7(0.1)\n∗∗\n∗225U\nT : average 19Mi08=63(7) 00He17=59(+5-2); others 03Ni10=135(+93-39)\n∗∗\n∗225U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-096",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 160)",
+      "pageStart": 160,
+      "pageEnd": 160,
+      "target": "../sections/sec-096-fgk208-ij-page-160.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n228Am\n42850#\n200#\n100# ms\nα ?;SF ?\n∗228Frm\nT : symmetrized from 08Ch.A=94(+170-29) s\n∗∗\n∗228Acm\nT : symemtrized from 08Ch.A=149(+95-42) s\n∗∗\n∗228Th\nT : average 14Un01=698.4(0.4) 71Jo14=698.77(0.32) 56Ki16=697.6(0.7)\n∗∗\n∗228U\nD : %ε from 61Ru05<5%\n∗∗\n∗228Np\nD : %β +SF from 94Kr13=0.020(9) relative to %ε=59(7); %α=40(+8-6)\n∗∗\n∗228Np\nD : %β +=60(+6-8), der",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-097",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 161)",
+      "pageStart": 161,
+      "pageEnd": 161,
+      "target": "../sections/sec-097-fgk208-ij-page-161.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n230Pu\n36932\n14\n105 s 10\n0+\n12 18Mi11\nT\n1990\nα≈100;β + ?\n∗\n230Am\n42870#\n140#\n40 s 9\n1−#\n12 17Wi13 TD 2003\nβ +≈100;β +SF>30\n∗\n∗230Pu\nT : average 18Mi11=200(+77-43) 01Ca.B=102(10)\n∗∗\n∗230Am\nT : average 17Wi13=36(+15-8) 16Ka13td=32(+22-9)\n∗∗\n231Rn\n46550#\n300#\n2# s >300ns\n1/2+#\n13 10Al24\nI\n2010\nβ −?\n231Fr\n42081\n8\n17.6 s 0.6\n(1/2+)\n13 14Bu06\nJ\n1985\nβ −=100\n23",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-098",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 162)",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "target": "../sections/sec-098-fgk208-ij-page-162.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗233Np\nD : %α observed in 50Ma14 with β +/α=1.5e5\n∗∗\n∗233Am\nD : %α combining 10Kh06<6 and 00Sa52>3\n∗∗\n∗233Cm\nT : symmetrized from 10Kh06=23(+13-6)\n∗∗\n∗233Bk\nT : symmetrized from 15De22=21(+48-17)\n∗∗\n234Ra\n46931\n8\n30 s 10\n0+\n07\n1990\nβ −=100;β −SF ?\n234Ac\n44841\n14\n45 s 2\n1+#\n07 08Ch.A\nT\n1986\nβ −=100\n∗\n234Acm\n44980\n30\n140\n30\n> 93 s\n08Ch.A\nTE 2008\nβ −?;IT ?",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-099",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 163)",
+      "pageStart": 163,
+      "pageEnd": 163,
+      "target": "../sections/sec-099-fgk208-ij-page-163.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n236Npp\n43616\n14\n240\n50\nAD\n(3−)\n06\n236Pu\n42901.5\n1.8\n2.858 y 0.008\n0+\n06 90Og01 D\n1949\nα=100;SF=1.9e-7 4;\n28Mg=2e-12;2β + ?\n236Pum\n44087.0\n1.8\n1185.45\n0.15\n1.2 µs 0.3\n5−\n06\n2005\nIT=100\n236Am\n46040#\n120#\n3.6 m 0.1\n5−\n06 04Sa05\nD\n1998\nβ +≈100;α=4.0e-3 1\n236Amm\n46090#\n130#\n50#\n50#\n2.9 m 0.2\n(1−)\n06\n2004\nβ +≈100;α ?\n236Cm\n47853\n18\n6.8 m 0.8\n0+\n06 10Kh06 TD 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-100",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 164)",
+      "pageStart": 164,
+      "pageEnd": 164,
+      "target": "../sections/sec-100-fgk208-ij-page-164.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n239Th\n56500#\n400#\n1# m\n7/2+#\nβ −?\n239Pa\n53340#\n200#\n1.8 h 0.5\n1/2+#\n14\n1995\nβ −=100\n239U\n50572.7\n1.5\n23.45 m 0.02\n5/2+\n14\n1937\nβ −=100\n239Um\n50706.5\n1.5\n133.7991\n0.0010\n780 ns 40\n1/2+\n14\n1975\nIT=100\n239Un\n53070#\n900#\n2500#\n900#\n> 250 ns\n14 94Ob0\n1IT 1994\nSF ?; IT ?\n∗\n239Np\n49311.0\n1.3\n2.356 d 0.003\n5/2+∗\n14\n1940\nβ −=100;α ?\n239Pu\n48588.2\n1.1\n24.11 ky 0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-101",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 165)",
+      "pageStart": 165,
+      "pageEnd": 165,
+      "target": "../sections/sec-101-fgk208-ij-page-165.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n241Cfp\n59480#\n200#\n150#\n100#\nNm\n1/2+#\n15\n241Es\n63890#\n230#\n5.1 s 0.8\n3/2−#\n15 20Kh08 TD 1996\nα≈100;β + ?\n∗\n241Esp\n64120#\n250#\n230#\n100#\nam\n241Fm\n69220#\n300#\n730 µs 60\n5/2+#\n15 08Kh10 TD 2008\nSF=?;α<14;β +<12\n∗241Pu\nD : %α from β −/α=2.45(0.08)e-5 in 68Ah01\n∗∗\n∗241Cf\nT : from 10As.A=141(11) s; other 70Si19=3.78(0.70) m\n∗∗\n∗241Es\nT : symmetrized from 20Kh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-102",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 166)",
+      "pageStart": 166,
+      "pageEnd": 166,
+      "target": "../sections/sec-102-fgk208-ij-page-166.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗243Es\nD : %α from 10An08; SF was not observed\n∗∗\n∗243Fm\nD : %β + 20Kh10,08Kh10<10%\n∗∗\n244Np\n63240#\n100#\n2.29 m 0.16\n7−#\n17\n1987\nβ −=100\n244Pu\n59806.0\n2.3\n81.3 My0.3\n0+\n17\n1954\nα=99.877 6;SF=0.123 6;\n2β −<7.3e-9\n244Pum\n61022.0\n2.4\n1216.0\n0.5\n1.75 s 0.12\n8−\n17 15Ko14 E\n2016\nIT=100\n244Am\n59879.1\n1.5\n10.01 h 0.03\n(6−)\n17 19Tr05\nT\n1950\nβ −=100\n244Amm\n59968.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prop-sec-103-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 167,
+      "pageEnd": 167,
+      "target": "prop-sec-103-01.md",
+      "narrative": null,
+      "content": "247Fmm 71720# 180# 49 8 AD 5.1 s 0.2 (1/2+) 15 1967 α=88 2;β + ?;IT ? ∗ 247Md 75940# 210# 1.19 s 0.09 7/2−# 15 10An08 TJD 1981 α≈100;SF<0.1 ∗ 247Mdm 76200# 210# 260 40 AD 250 ms40 1/2−# 15 10An08 TJD 1993 α=79 5;SF=21 5 ∗247Fmm D : %IT from 06He27=12(2), but no direct gamma-ray decay was observed ∗∗ ∗247Md T : average 10An08=1.2(0.1) 93Ho.A=1.12(0.22) ∗∗ 248Am 70560# 200# 3# m 3+# 14 β −?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-103",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 167)",
+      "pageStart": 167,
+      "pageEnd": 167,
+      "target": "../sections/sec-103-fgk208-ij-page-167.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n246Pu\n65395\n15\n10.84 d 0.02\n0+\n11\n1955\nβ −=100\n246Am\n64994#\n18#\n39 m 3\n7−\n11\n1955\nβ −=100\n∗\n246Amm\n65024\n15\n30#\n10#\n25.0 m 0.2\n2(−)\n11\n1955\nβ −≈100;IT ?\n∗\n246Amn\n66990#\n800#\n2000#\n800#\n73 µs 10\n11\n1972\nSF≈100;IT ?\n246Cm\n62616.9\n1.5\n4.706 ky 0.040\n0+\n11\n1954\nα=99.97385 7;\nSF=0.02615 7\n246Cmm\n63796.6\n1.5\n1179.66\n0.13\n1.12 s 0.24\n8−\n11 19Sh34\nETJ 2012\nIT=1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-104",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 168)",
+      "pageStart": 168,
+      "pageEnd": 168,
+      "target": "../sections/sec-104-fgk208-ij-page-168.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n249Cm\n70750.7\n2.4\n64.15 m 0.03\n1/2+\n11\n1956\nβ −=100\n249Cmm\n70799.5\n2.4\n48.76\n0.04\n23 µs\n7/2+\n11\n1966\nα=100\n249Bk\n69846.3\n1.2\n327.2 d 0.3\n7/2+∗\n11 14Ch47\nT\n1954\nβ −≈100;α=0.00145 8;\nSF=47e-9 2\n249Bkm\n69855.1\n1.2\n8.777\n0.014\n300 µs\n3/2−\n11 60As06\nT\n1960\nIT=100\n249Cf\n69722.7\n1.2\n351 y 2\n9/2−\n11\n1954\nα=100;SF=5.0e-7 4\n249Cfm\n69867.7\n1.2\n144.98\n0.05\n45 µs 5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-105",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 169)",
+      "pageStart": 169,
+      "pageEnd": 169,
+      "target": "../sections/sec-105-fgk208-ij-page-169.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗251Fmm\nT : average 18Re07=23.7(1.1) 11As03=21.1(1.9) 06He20=21(3) 71Di03=15.2(2.3)\n∗∗\n∗251Md\nT : average 06Ch52=4.27(0.26) 73Es01=4.0(0.5)\n∗∗\n∗251No\nD : %α symmetrized from 01He35=91(+9-22)%\n∗∗\n∗251Non\nE : 142.4(0.5) + 203.1(0.5) + 782.5(0.6) keV gammas in a cascade to 7/2+ gs\n∗∗\n∗251Non\nJ : expected conf=n3(1/2[631],7/2[624],9/2[734]),K=17/2-\n∗∗\n252Cm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-106",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 170)",
+      "pageStart": 170,
+      "pageEnd": 170,
+      "target": "../sections/sec-106-fgk208-ij-page-170.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗253Non\nE : greater than 1011 keV and less than 1380 keV\n∗∗\n∗253Non\nT : 11Lo06=706(24); others: 07Lo11=970(210), 11An13=627(5) (r-ce-g(t))\n∗∗\n∗253Non\nT : 650(15) (r-ce-802,713,209g(t))\n∗∗\n∗253Nop\nE : less than 120 keV above 253Non in 11Lo06t\n∗∗\n∗253Nop\nT : from 11An13 using (r-ce-K x rays(t))\n∗∗\n∗253Lr\nT : average 09He20=670(60) 11An13=552(15) 01He35=57",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-107",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 171)",
+      "pageStart": 171,
+      "pageEnd": 171,
+      "target": "../sections/sec-107-fgk208-ij-page-171.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n255Lrp\n91412\n22\n1465\n12\n1.78 ms0.05\n(25/2+)\n13\n2008\nIT≈100;α<0.15\n∗\n255Rf\n94330#\n180#\n1.63 s 0.05\n(9/2−)\n13 15An05 D\n1975\nα=52.8 22;SF=47.2 22;\n∗\nβ +<6\n255Rfm\n94480#\n180#\n150\n22\nAD\n43 µs 9\n(5/2+)\n15An05 ETJ 2015\nIT=100\n∗\n255Rfn\n95380#\n200#\n1050\n87\n16 µs 5\n19/2+#\n20Mo11 TED2020\nIT=100\n∗\n255Rfp\n95630#\n200#\n1300\n87\n41 µs 10\n25/2+#\n20Mo11 TED2020\nIT=100\n∗\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-108",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 172)",
+      "pageStart": 172,
+      "pageEnd": 172,
+      "target": "../sections/sec-108-fgk208-ij-page-172.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\nSF ?\n257Rfn\n97022\n10\n1155\n11\nAD\n106 µs 6\n21/2+#\n13 13Ri07\nTJ\n2009\nIT=100\n∗\n257Db\n100150\n160\n*\n2.3 s 0.2\n9/2+#\n13 09He20\nT\n1985\nα>94;SF<6;β + ?\n∗\n257Dbm 100290#\n200#\n140#\n110#\n*\n670 ms60\n(1/2−)\n13 09He20\nT\n1985\nα>87;SF<13;β + ?\n∗\n∗257Lr\nT : average 10St14=6.3(+0.9-0.7) and 5.8(0.5); others (not used)\n∗∗\n∗257Lr\nT : 97He29=3.3(+0.5-0.4), 4.3(+1.3-0.8) 76Be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-109",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 173)",
+      "pageStart": 173,
+      "pageEnd": 173,
+      "target": "../sections/sec-109-fgk208-ij-page-173.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n259Lr\n95850#\n70#\n6.2 s 0.3\n1/2−#\n13\n1971\nα=78 2;SF=22 2;β + ?\n259Lrp\n96200#\n170#\n350#\n150#\n259Rf\n98370#\n70#\n2.63 s 0.26\n3/2+#\n13 08Ga08\nT\n1969\nα=85 4;β +=15 4;SF<3\n∗\n259Rfp\n98430#\n100#\n60\n70\nNm\n(7/2+)\n259Rfq\n98570#\n110#\n210\n90\nNm\n(9/2+)\n259Db\n101990\n60\n510 ms160\n9/2+#\n13 01Ga20\nD\n2001\nα=100\n259Sg\n106520#\n180#\n402 ms56\n(11/2−)\n13 15An05 TJD 1985\nα≈100;SF",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prop-sec-110-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 174,
+      "pageEnd": 174,
+      "target": "prop-sec-110-01.md",
+      "narrative": null,
+      "content": "The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗261Sg T : average 10St14=184(5), supersedes 09He20=195(15), 10Be16=178(14) ∗∗ ∗261Sgm T : symmetrized from 10Be16=9.0(+2.0-1.5) ∗∗ ∗261Bh T : symmetrized from 10He11=11.8(+3.9-2.4); others 06Fo02=10(+14-5) ∗∗ ∗261Bh T : 08Ne08=6.7(+3.8-1.8) 89Mu09=11.8(+5.3-2.8), superseded by 10He11 ∗∗ ∗261Bh D : no SF decays were observed in 10He11 (%SF<5) ∗∗ 262Md 101670# 450# 3# m SF ?;α ?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-110",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 174)",
+      "pageStart": 174,
+      "pageEnd": 174,
+      "target": "../sections/sec-110-fgk208-ij-page-174.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗261Sg\nT : average 10St14=184(5), supersedes 09He20=195(15), 10Be16=178(14)\n∗∗\n∗261Sgm\nT : symmetrized from 10Be16=9.0(+2.0-1.5)\n∗∗\n∗261Bh\nT : symmetrized from 10He11=11.8(+3.9-2.4); others 06Fo02=10(+14-5)\n∗∗\n∗261Bh\nT : 08Ne08=6.7(+3.8-1.8) 89Mu09=11.8(+5.3-2.8), superseded by 10He11\n∗∗\n∗261Bh\nD : no SF decays were observed in 10He11 (%SF<5)\n∗∗\n262Md\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-111",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 175)",
+      "pageStart": 175,
+      "pageEnd": 175,
+      "target": "../sections/sec-111-fgk208-ij-page-175.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n264Sg\n110780#\n280#\n78 ms25\n0+\n06 17He08\nTD 2006\nSF>80;α ?\n∗\n264Bh\n115960#\n180#\n1.07 s 0.21\n99 04Mo26 TD 1995\nα≈86;SF≈14;β + ?\n∗\n264Bhp\n116290#\n230#\n330#\n150#\nam\n264Hs\n119563\n29\n0.7 s 0.3\n0+\n99 17He08\nTD 1986\nα=70 30;SF=30 30\n∗\n∗264Sg\nT : symmetrized from 17He08=68(+32-16), determined by merging data from\n∗∗\n∗264Sg\nT : 10Ni14, 06Ni10 and 06Gr24\n∗∗\n∗264Sg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-112",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 176)",
+      "pageStart": 176,
+      "pageEnd": 176,
+      "target": "../sections/sec-112-fgk208-ij-page-176.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n267Bh\n118770#\n260#\n22 s 10\n5/2−#\n05\n2000\nα=100\n∗\n267Hs\n122660#\n100#\n*\n55 ms11\n05 04Mo40 T\n1995\nα>80;SF ?\n∗\n267Hsm 122700#\n100#\n39\n24\nAD*\n990 µs 90\n05 04Fo08\nTD 2004\nα=?;IT ?\n∗\n267Mt\n127790#\n500#\n10# ms\nα ?\n267Ds\n133880#\n200#\n10 µs 8\n3/2+#\n05 95Gh04 T\n1995\nα=100\n∗\n∗267Rf\nT : symmetrized from 17Og01,06Og05=1.3(+2.3-0.5), supersedes 04Og12 one\n∗∗\n∗267Rf\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-113",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 177)",
+      "pageStart": 177,
+      "pageEnd": 177,
+      "target": "../sections/sec-113-fgk208-ij-page-177.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n271Bh\n125860#\n380#\n2.9 s 1.9\n05 17Og01 TD 2013\nα=100\n∗\n271Hs\n127690#\n280#\n10# s\n2008\nα ?;SF ?\n271Mt\n131100#\n330#\n400# ms\nα ?\n271Ds\n135950#\n100#\n*&\n144 ms53\n05 16Ho09 TD 1998\nSF=75;α=25\n∗\n271Dsm 136020#\n100#\n68\n27\nAD*&\n1.7 ms0.4\n05\n1995\nα=100\n∗\n∗271Sg\nT : symmetrized from 17Og01=1.6(+1.5-0.5)\n∗∗\n∗271Bh\nT : symmetrized from 17Og01=1.5(+2.8-0.6)\n∗∗\n∗271Ds",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-114",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 178)",
+      "pageStart": 178,
+      "pageEnd": 178,
+      "target": "../sections/sec-114-fgk208-ij-page-178.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n∗276Mt\nT : symmetrized from 16Fo10=690(+90-70); other 17Og01=520(100)\n∗∗\n∗276Mtm\nT : symmetrized from 17Og01=4(+5-1)\n∗∗\n277Bh\n141100#\n600#\n10# s\nα ?;SF ?\n277Hs\n141380#\n450#\n*\n12 ms9\n14 16Ho09 TD 2010\nSF≈100;α ?\n∗\n277Hsm 141480#\n460#\n100#\n100#\n*\n130 s 100\n14 12Ho12 TD 2012\nSF=100\n∗\n277Hsp\n142000#\n490#\n620#\n200#\n277Mt\n143010#\n660#\n9 s 6\n14 17Og01 TD 2013",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-115",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 179)",
+      "pageStart": 179,
+      "pageEnd": 179,
+      "target": "../sections/sec-115-fgk208-ij-page-179.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n281Ds\n153270#\n490#\n*\n14 s 3\n05 17Ka66\nT\n2004\nSF=90 7;α=10 7\n∗\n281Dsm 153350#\n460#\n80#\n240#\n*\n0.9 s 0.7\n12Ho12 TD 2012\nα=100\n∗\n281Dsp\n153340#\n500#\n70#\n100#\n281Rg\n155330#\n770#\n19 s 5\n10 17Og01 TD 2010\nSF=87 8;α=13 8\n∗\n281Cn\n157950#\n400#\n180 ms80\n15 17Og01 T\n2010\nα≈100;SF ?\n∗\n281Nh\n161810#\n300#\n100# ms\nα ?;SF ?\n∗281Ds\nT : average 17Ka66=9.9(+13.6-3.6) 17Og",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-116",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 180)",
+      "pageStart": 180,
+      "pageEnd": 180,
+      "target": "../sections/sec-116-fgk208-ij-page-180.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n286Fl\n171610#\n550#\n130 ms30\n0+\n19 17Og01 TD 2004\nα=59 11;SF=41 11\n∗\n∗286Rg\nT : 16Ho09=640(+3100-300)s not trusted by evaluator, based on TNN\n∗∗\n∗286Cn\nT : symmetrized from 17Ka66=8.4(+40.5-3.9); other: 16Ho09=640(+3100-300)s\n∗∗\n∗286Nh\nT : symmetrized from 17Og01=9.5(+6.3-2.7) (recommended), based on data from\n∗∗\n∗286Nh\nT : 14Kh04=2.9(+5.5-1.1) 13Og04=13",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-117",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FGK208 IJ (page 181)",
+      "pageStart": 181,
+      "pageEnd": 181,
+      "target": "../sections/sec-117-fgk208-ij-page-181.md",
+      "narrative": null,
+      "content": "Chinese Physics C Vol. 45, No. 3 (2021) 030001\nTable I. The NUBASE2020 table (Explanation of Table on page 030001-16)\nNuclide\nMass excess\nExcitation Energy\nHalf-life\nJπ\nEns Reference\nYear of\nDecay modes and intensities\n(keV)\n(keV)\ndiscovery\n(%)\n293Lv\n190570#\n520#\n70 ms30\n05 17Og01 T\n2004\nα≈100; SF ?\n∗\n293Lvm 191290#\n470#\n720#\n290#\n80 ms60\n12Ho12 TD 2012\nα=100\n∗\n293Ts\n194430#\n780#\n25 ms6\n10 17Og01 TD 2010\nα=100\n∗\n293Og\n198800#\n710#\nRN\n1# ms\n00 02Ni10\nI\n2010\nα ?\n∗\n∗293Lv\nT : symmetrized from 17Og01,15Og05=57(+43-17); others 16Ho09=57(+46-18)\n∗∗\n∗293Lv\nT : 17Ka66t=188(+342-74)\n∗∗\n∗293Lvm\nT : symm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

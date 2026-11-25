@@ -1,0 +1,1033 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "li-braid-closures",
+  "blocks": [
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "def-sec-000-01.md",
+      "narrative": null,
+      "content": "A splitting of a link L is a manifold B ⊂S3\\L such that B is homeomorphic to S2 and L intersects both connected components of S3 \\ B. Informally, this occurs exactly when L can be separated into two rigid components that can be moved arbitrarily far away from each other without disturbing isotopy classes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-000-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "ex-sec-000-02.md",
+      "narrative": null,
+      "content": "The Hopf link features two linked circles; physical intuition implies that it exhibits no splitting. Indeed, if a split link has two circles, then it must be the unlink on two circles, which has Jones polynomial −1 √ t(1 + t). Meanwhile, the Hopf link has different Jones polynomial −1 √ t(1 + 1 t2). The Jones polynomial VL(t) is obtained upon specialization of the HOMFLYPT poly- nomial XL(q, Λ) at q = Λ = t, where we have used the capital letter Λ instead of the more standard λ in order to avoid confusion with the partitions λ ⊢n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-03.md",
+      "narrative": null,
+      "content": "If L is a split link, then ∆L(t) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nA knot is an embedding of the circle S1 in S3, while a link is an embedding of several circles\nin S3. Through the remainder of this paper, we tacitly work with tame links only.\nDefinition 1.1. A splitting of a link L is a manifold B ⊂S3\\L such that B is homeomorphic\nto S2 and L intersects both connected components of S3 \\ B.\nInformally, this occurs exactly when L can be separated into two rigid components that\ncan be moved arbitrarily far away from each other without disturbing isotopy classes.\nExample 1.2. The Hopf link features two linked circles; physical intuition implies that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Knot polynomials on braid closures\nEddy Li\nJanuary 29, 2025\nAbstract\nWe explore properties of the Jones and Alexander polynomials of braid closures\nof braids of index 3. We analyze how the evaluations of these polynomials at t = −1\nforce implications regarding the topological structure of the braid closure, such as its\nnumber of circles or the existence of splittings. As a consequence, we construct an\ninfinite number of pairs of distinct non-split links that have the same HOMFLYPT\npolynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorems 3.8 and 3.9",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "There exists an infinite family of links Lm,k, indexed by pairs of integers (m, k), with the property that any link L satisfying VL(−1) = ∆L(−1) = 0 is equivalent to some Lm,k. In addition, Lm,k has a splitting if and only if m = 0. The construction of each Lm,k is much simpler than that of [2]. It turns out our work also yields pairs of distinct non-split links with the same HOMFLYPT polynomial, as in our second main result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.10",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "If 6 | k, then Xˆγm,k(q, Λ) = Xˆγm+ k 6 ,−k(q, Λ). The links Lm,k all contain either two or three circles, motivating us to consider how ∆L(−1) would behave if L had braid index at most 3 but was forced to be a knot. Surpris- ingly, we prove the following third main result in Section 3.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.15",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-06.md",
+      "narrative": null,
+      "content": "If L is a knot with braid index at most 3, then VL(−1) ≡ ∆L(−1) ≡1 (mod 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "def-sec-002-01.md",
+      "narrative": null,
+      "content": "Given a braid α ∈Bn, the braid closure ˆα is the oriented link obtained by identifying each endpoint on the top row with the endpoint directly below it on the bottom row. The orientation of the link points away from the top row and towards the bottom row.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "def-sec-002-04.md",
+      "narrative": null,
+      "content": "The braid index of a link L is the minimal satisfactory value of n in the statement of Theorem 2.4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-002-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "ex-sec-002-02.md",
+      "narrative": null,
+      "content": "The braid closure of σ3 1 ∈B2 is the right-handed trefoil. We reproduce a famous theorem of Alexander [3] below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The braid group",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-the-braid-group.md",
+      "narrative": null,
+      "content": "The braid group\nLet n be a positive integer.\nDefinition 2.1. The braid group Bn is generated by σ1, σ2, . . . , σn−1 with relations\nσiσi+1σi = σi+1σiσi+1 and σiσj = σjσi if |i −j| ≥2.\nNaturally, elements of Bn are called braids.\n2\nWe can diagrammatically depict σi as\nσi =\n1 2\ni\nn\n· · ·\n· · ·\n.\nUnder this interpretation, each braid can be viewed as consisting of n strands of string, each\nconnecting a point in the top row to a point in the bottom row. Multiplication of braids is\ndetermined by diagrammatic concatenation.\nDefinition 2.2. Given a braid α ∈Bn, the braid closure ˆα is the oriented li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[3, Alexander’s Theorem]",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "Let L be a link. Then there exists an integer n and a braid α ∈Bn such that L is isotopic to the braid closure ˆα.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "Let λ ⊢n be a partition. For a box b ∈λ in its Young diagram, the hook length h(b) is the number of boxes directly below or to the right to b, including b itself. Let r(b) be the number of rows below the topmost row that b resides in, and define c(b) analogously but in comparison to the leftmost column.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "[4, Example A.4]",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "Consider the partition (9, 9, 7, 5, 3, 2, 1) = ♣♢♢♢♢♢♢ ♡ ♡ ♡ . The box b marked with a club (♣) has 3 boxes below it, denoted with a heart (♡), and 6 boxes to its right, denoted with a diamond (♢). Its hook length is h(b) = 3 + 6 + 1 = 10. Also check that r(b) = 1 and c(b) = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Young diagrams",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-young-diagrams.md",
+      "narrative": null,
+      "content": "Young diagrams\nNow we discuss partitions of n and their Young diagrams.\nDefinition 2.6. Let λ ⊢n be a partition. For a box b ∈λ in its Young diagram, the hook\nlength h(b) is the number of boxes directly below or to the right to b, including b itself.\nLet r(b) be the number of rows below the topmost row that b resides in, and define c(b)\nanalogously but in comparison to the leftmost column.\nExample 2.7 ([4, Example A.4]). Consider the partition\n(9, 9, 7, 5, 3, 2, 1) =\n♣♢♢♢♢♢♢\n♡\n♡\n♡\n.\nThe box b marked with a club (♣) has 3 boxes below it, denoted with a heart (♡), and 6\nboxes to its right, denot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "For σ ∈Sn, let ℓ(σ) = {(a, b) | 1 ≤a < b ≤n, σ(a) > σ(b)} be its length. For τ = (i i + 1) ∈Sn, define Tτ = gi ∈Hn(q) for all i < n, and define for all σ Tστ := ( TσTτ if ℓ(στ) = ℓ(σ) + 1 q−1(TσTτ + (1 −q)Tσ) otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "def-sec-004-03.md",
+      "narrative": null,
+      "content": "Let λ ⊢n be a partition. The canonical Young tableau tλ is formed by writing the first n positive integers in increasing order in the boxes of the Young diagram of λ, going row by row from left to right. Let the row stabilizer Pλ ⊂Sn be the subgroup of all permutations that fix the numbers in each row under the natural action of Sn. Define the q-Young symmetrizer to be zλ q := X σ∈Pλ Tσ ! Twλ  X σ∈Pλ⊤ (−q)−ℓ(σ)Tσ  , where wλ ∈Sn is the unique permutation mapping tλ to the mirror image of tλ⊤. The q-Specht module Sλ q is the ideal zλ q Hn(q), where Hn(q) acts from the right.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "def-sec-004-04.md",
+      "narrative": null,
+      "content": "Let χλ : Bn →C denote the character of π(α) with respect to Sλ q .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-004-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-06.md",
+      "narrative": null,
+      "content": "We first consider the q-Specht module S(n) q , which is of dimension 1 by the hook-length formula. Indeed, P(n) = Sn, P(n)⊤= {e}, and w(n) = e, so z(n) q = X σ∈Sn Tσ. For the transposition τ = (i i + 1), by Definition 2.9 Tσgi = ( Tστ if ℓ(στ) = ℓ(σ) + 1 qTστ + (q −1)Tσ otherwise. Define Qi = {σ | ℓ(στ) = ℓ(σ) + 1} ⊂Sn, and note that σ ∈Qi iff στ /∈Qi. Thus, z(n) q gi = X σ∈Sn Tσgi = X σ∈Qi Tστ + X σ /∈Qi (qTστ + (q −1)Tσ) = X σ /∈Qi Tσ + q X σ∈Qi Tσ + (q −1) X σ /∈Qi Tσ = qz(n) q . It follows that each gi acts by multiplication by q in S(n) q . This is the trivial representation of Hn(q) and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-004-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-07.md",
+      "narrative": null,
+      "content": "Following Example 2.12, one can analogously check that S(n)⊤ q is the sign representation, in which each gi acts as −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-004-08",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-08.md",
+      "narrative": null,
+      "content": "The Burau representation is the q-Specht module S(n−1,1)⊤ q [1, Note 5.7]. Let us investigate the case where n = 3 and λ = (2, 1). One verifies using Definition 2.10 that P(2,1) = P(2,1)⊤= ⟨g1⟩, so z(2,1) q = (1 + g1)g2 \u0012 1 −g1 q \u0013 . We check that (q −g1)g1 = g1 −q, so z(2,1) q g1 = −z(2,1) q . Since by Remark 2.3 we have that dim S(2,1) q = 3! 3·1·1 = 2, it follows that S(2,2) q is spanned by z(2,1) q and z(2,1) q g2. Now, one can verify, say by direct computation, that z(2,2) q g2g1 = −q2z(2,2) q + qz(2,2) q g2, while by the relations of H3(q) we have z(2,2) q g2 2 = qz(2,2) q + (q −1)z(2,2)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-004-09",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-09.md",
+      "narrative": null,
+      "content": "The q-Specht module S(2,2) q exhibits similarities to the Burau representation from Example 2.14. Again, Definition 2.10 implies that P(2,2) = ⟨g1, g3⟩, so z(2,2) q = (1 + g1)(1 + g3)g2 \u0012 1 −g1 q \u0013 \u0012 1 −g3 q \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specht modules of the Hecke algebra",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-specht-modules-of-the-hecke-algebra.md",
+      "narrative": null,
+      "content": "Specht modules of the Hecke algebra\nWe now introduce the Hecke algebra.\nDefinition 2.8. For q ∈C\\{0}, the Hecke algebra Hn(q) is the generated by g1, g2, . . . , gn−1\nwith relations\n(gi −q)(gi + 1) = 0, gigi+1gi = gi+1gigi+1, and gigj = gjgi if |i −j| ≥2.\nThere is a canonical epimorphism π: C[Bn] →Hn(q) satisfying π(σi) = gi for all i.\nIt is well-known that the irreducible representations of C[Sn] are the Specht modules\nSλ, which are indexed by partitions λ ⊢n. As Hn(q) is a deformation of Hn(1) ∼= C[Sn],\nthe q-Specht modules themselves deform as q varies. They remain irreducible for generic q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "One can show without much difficulty that {Tσ | σ ∈Sn} forms a basis for Hn(q), and hence it is clear that dim Hn(q) = n! regardless of the choice of q ∈C. Writing out each Tσ as a product of generators gi also expresses this basis in a “normal form” of Jones. We can now finally demonstrate how the Specht modules deform as q changes value [5].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-004-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-004-05.md",
+      "narrative": null,
+      "content": "Regardless of the value of q, its dimension [1, Remark 3.5] is given by the hook- length formula dim Sλ q = n! Q b∈λ h(b). Recall the hook length h(b) of a box from Definition 2.6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "[6, Theorem 1.1]",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "def-sec-005-01.md",
+      "narrative": null,
+      "content": "Let λ ⊢n be a partition. The Ocneanu weight corre- sponding to λ is the product Ωλ = Y b∈λ qr(b)w −qc(b)z 1 −qh(b) , where z = −1−q 1−Λq and w = 1 −q + z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "def-sec-005-02.md",
+      "narrative": null,
+      "content": "Let e: Bn →Z denote the braid exponent, the additive homomorphism where e(σi) = 1 for all i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "[1, Definition 6.1]",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "def-sec-005-03.md",
+      "narrative": null,
+      "content": "For a braid α ∈Bn, the HOMFLYPT polynomial under Jones normalization is the product Xˆα(q, Λ) := \u0012 − 1 −Λq √ Λ(1 −q) \u0013n−1 ( √ Λ)e(α) X λ⊢n Ωλχλ(α). This two-variable polynomial Xˆα(q, Λ) is a link invariant. The sum P λ⊢n Ωλχλ(α) is some- times referred to as the Ocneanu trace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-005-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "[4, Example A.10]",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "ex-sec-005-05.md",
+      "narrative": null,
+      "content": "Under the Jones specialization q = Λ = t, the weights Ωλ simplify drastically, as shown in [4]. Specifically, Ωλ = 0 if λ has more than two columns, and the braid closure of any α ∈Bn has Jones polynomial Vˆα(t) = (−1)n−1( √ t)e(α)−n+1 t + 1 ⌊n/2⌋ X k=0 n−k X i=k ti ! χ(n−k,k)⊤(α). When n = 3, this simplifies to Vˆα(t) = ( √ t)e(α)−2((t2 + 1)χ(1,1,1)(α) + tχ(2,1)(α)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/ex-sec-005-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "[1, Section 7]",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "ex-sec-005-06.md",
+      "narrative": null,
+      "content": "Under the Alexander specialization q = Λ = t, the sim- plification of the weights is less clear as it seems like z = −1−q 1−Λq will exhibit a singularity. However, it turns out that such singularities are removable due to the factor of (1 −Λq)n−1 in Definition 2.18. Let µi be the hook-type partition made up of one row of i squares and one column of n −i squares beneath. As computed in [1, Equation 7.2], we find that ∆α(t) = (−1)n(t −1) ( √ t)e(α)−n+1(tn −1) n X i=1 (−1)iχµi(α). When n = 3, this implies that ∆ˆα(t) = χ(1,1,1)(α) −χ(2,1)(α) + χ(3)(α) ( √ t)e(α)−2(t2 + t + 1) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The HOMFLYPT polynomial",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-the-homflypt-polynomial.md",
+      "narrative": null,
+      "content": "The HOMFLYPT polynomial\nIn [1, Section 6], Jones proposed a multivariable polynomial link invariant XL(q, Λ), which\nreduces to the Jones polynomial under the specialization q = Λ = t and to the Alexander\npolynomial under the specialization q =\n1\nΛ = t. We recall the key definitions organized\nin [4].\nDefinition 2.16 ([6, Theorem 1.1]). Let λ ⊢n be a partition. The Ocneanu weight corre-\nsponding to λ is the product\nΩλ =\nY\nb∈λ\nqr(b)w −qc(b)z\n1 −qh(b)\n,\nwhere z = −1−q\n1−Λq and w = 1 −q + z.\nDefinition 2.17. Let e: Bn →Z denote the braid exponent, the additive homomorphism\nwhere e(σi) = 1 for all i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-005-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-005-04.md",
+      "narrative": null,
+      "content": "The HOMFLYPT polynomial often admits the much more common normalization PL(a, z), related to the Jones normalization by XL(q, Λ) = PL((Λq)−1/2, q1/2 −q−1/2). Ocneanu originally calculated the eponymous weights, but this work has been lost. A reproof of the validity of these weights was given by Geck [6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-005-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-005-07.md",
+      "narrative": null,
+      "content": "If we substitute t = ζn = e2πi/n into Example 2.20 above, the denominator vanishes, implying that the numerator must vanish too. In particular, we must have n X i=1 (−1)iχµi(α) = 0 at t = ζn. If we apply the KZ functor to the exact sequence proven due to the BGG resolution in [7], we expect an exact sequence of ζn-Specht modules on hook-shape partitions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/def-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "def-sec-006-01.md",
+      "narrative": null,
+      "content": "Let ϕ: B3 →SL2(Z) be the homomorphism satisfying ϕ(σi) = Mi, where (M1, M2) = \u0012\u0012 1 −1 \u0013 , \u00121 \u0013\u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "For a braid α ∈B3, the Jones and Alexander polynomials of ˆα satisfy Vˆα(−1) = (−i)e(α)(tr(ϕ(α)) −2) and ∆ˆα(−1) = ie(α)(tr(ϕ(α)) −2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Closures of 3-braids",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-closures-of-3-braids.md",
+      "narrative": null,
+      "content": "Closures of 3-braids\nWe investigate the Jones and Alexander polynomials of 3-braid closures at −1.\nRecall from Examples 2.12 and 2.13 that S(1,1,1)\nq\nis the sign representation, where each\ngi acts as −1, while S(3)\nq\nis the trivial representation, where each gi acts as q. When q = −1,\nthe representations become isomorphic, so χ(1,1,1)(α) = χ(3)(α). Hence\nVˆα(−1) = (\n√\n−1)e(α)−2(2χ(1,1,1)(α) −χ(2,1)(α))\nand\n∆ˆα(−1) = (\n√\n−1)−e(α)+2(χ(1,1,1)(α) −χ(2,1)(α) + χ(3)(α))\n= (\n√\n−1)−e(α)+2(2χ(1,1,1)(α) −χ(2,1)(α)).\nNote the use of √−1 rather than i or −i due to the lack of a continuous, single-valued s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/cor-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "cor-sec-007-01.md",
+      "narrative": null,
+      "content": "Let α ∈B3. Then Vˆα(−1) = ∆ˆα(−1) = 0 if and only if tr ϕ(α) = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "The following statements are true. (a) The matrices M1 and M2 generate the group SL2(Z). (b) The group SL2(Z) admits the presentation SL2(Z) ∼= ⟨m1, m2 | (m1m2m1)4 = m1m2m1m−1 2 m−1 1 m−1 = 1⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[8, Theorem 2.1.4]",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "The group SL2(Z) has presentation SL2(Z) ∼= ⟨s, t | s4 = 1, (st)3 = s2⟩ where the correspondence of matrices is given from (s, t) to (S, T) = \u0012\u0012 0 −1 \u0013 , \u00121 \u0013\u0013 . Now we claim the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "The map ϕ induces an isomorphism between the groups B3/⟨∆4 3⟩and SL2(Z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-007-05.md",
+      "narrative": null,
+      "content": "Let α ∈B3 satisfy ϕ(α) = 2. Then there exists some α0 ∈B3 and k ∈Z such that ϕ(α0) = M k 2 and ˆα = ˆα0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-007-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-007-07.md",
+      "narrative": null,
+      "content": "it follows that σ−k 2 α0 ∈⟨∆4 3⟩. Then α0 is of the form σk 2∆4m for some m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-007-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "prop-sec-007-10.md",
+      "narrative": null,
+      "content": "The Jones and Alexander polynomials of ˆγm,k are Vˆγm,k(t) = (− √ t)12m+k \u0012 t6m((−t)k + 1) + 1 t + t \u0013 and ∆ˆγm,k(t) = (−t)12m+k −t6m((−t)k + 1) + 1 (− √ t)12m+k−2(t2 + t + 1) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Split Links",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-split-links.md",
+      "narrative": null,
+      "content": "Split Links\nFrom from Proposition 1.3 we have VL(−1) = ∆L(−1) = 0 for all split links. We show that\nthis condition is not sufficient.\nCorollary 3.3. Let α ∈B3. Then Vˆα(−1) = ∆ˆα(−1) = 0 if and only if tr ϕ(α) = 2.\nProof. Immediate by Proposition 3.2.\nThe following result is due to Serre [8].\nProposition 3.4 ([8, Theorem 2.1.4]). The group SL2(Z) has presentation\nSL2(Z) ∼= ⟨s, t | s4 = 1, (st)3 = s2⟩\nwhere the correspondence of matrices is given from (s, t) to\n(S, T) =\n\u0012\u0012 0\n1\n−1\n0\n\u0013\n,\n\u00121\n0\n1\n1\n\u0013\u0013\n.\nNow we claim the following.\nLemma 3.5. The following statements are true.\n(a) The matrices M1 an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-007-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "rem-sec-007-11.md",
+      "narrative": null,
+      "content": "For even k, Proposition 3.11 simplifies to Vˆγm,k(t) = t6m+ k 2 −1 + t6m+ k 2 +1 + t12m+ k 2 + t12m+ 3k and ∆ˆγm,k(t) = t6m+ k 2 +1 −t k 2 +1 −t−k 2 +1 + t−6m−k 2 +1 t2 + t + 1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "thm-sec-007-06.md",
+      "narrative": null,
+      "content": "Let α ∈B3 satisfy Vˆα(−1) = ∆ˆα(−1) = 0. Then there exist integers m and k for which ˆα is equivalent to the braid closure of σk 2∆4m 3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "thm-sec-007-08.md",
+      "narrative": null,
+      "content": "For m, k ∈Z, let γm,k denote the braid σk 2∆4m 3 , so that ˆγm,k denotes its oriented link closure. (a) The link ˆγm,k is split if and only if m = 0. (b) For m1, m2, k1, k2 ∈Z, the links ˆγm1,k1 and ˆγm2,k2 are equivalent iff (m1, k1) = (m2, k2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-007-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "thm-sec-007-09.md",
+      "narrative": null,
+      "content": "If 6 | k, then Xˆγm,k(q, Λ) = Xˆγm+ k 6 ,−k(q, Λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/cor-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "cor-sec-008-03.md",
+      "narrative": null,
+      "content": "If ˆα is a knot for α ∈B3, then ϕ(α) ∈{( 0 1 1 1 ), ( 1 1 1 0 )} (mod 2). In partic- ular, tr(ϕ(α)) is odd.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Braids α1, α2 ∈B3 satisfy ψ(α1) = ψ(α2) iff ϕ(α1) ≡ϕ(α2) (mod 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prop-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "prop-sec-008-04.md",
+      "narrative": null,
+      "content": "For α ∈B3, the trace tr(ϕ(α)) is odd only when e(α) is even. In this case, tr(ϕ(α)) ≡e(α) −1 (mod 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-knots.md",
+      "narrative": null,
+      "content": "Knots\nRecall from Proposition 3.9 the natural homomorphism ψ: B3 →S3 from the braid group\nto the symmetric group, given by ψ(σi) = (i i + 1). The number of circles in the link ˆα is\ndetermined by the cycle type of ψ(α), with ˆα being a knot iff ψ(α) is a 3-cycle.\nProposition 3.12. Braids α1, α2 ∈B3 satisfy ψ(α1) = ψ(α2) iff ϕ(α1) ≡ϕ(α2) (mod 2).\nProof. It suffices to show that α ∈B3 satisfies ψ(α) = e iff ϕ(α) ≡I (mod 2).\nFirst, we have by definition that\nB3 ∼= ⟨σ1, σ2 | σ1σ2σ1σ−1\n2 σ−1\n1 σ−1\n2\n= 1⟩\nwhile\nS3 ∼= ⟨s1, s2 | s2\n1 = s2\n2 = s1s2s1s−1\n2 s−1\n1 s−1\n2\n= e⟩∼= ⟨s1, s2 | s1s2s1s−1\n2 s−1\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "Observe that S3 and SL2(Z/2Z) are isomorphic, as both groups are nonabelian of order 6. The isomorphism map θ: S3 →SL2(Z/2Z) is canonically constructed via the permutation action of SL2(Z/2Z) on { \u00000 \u0001 , \u00001 \u0001 , \u00001 \u0001 } ⊂F2 2. Let π2 : SL2(Z) →SL2(Z/2Z) be the usual projection. Then Proposition 3.12 induces θ to be precisely the lift from ψ to π2 ◦ϕ, as in the following commutative diagram. B3 SL2(Z) S3 SL2(Z/2Z) ϕ ψ π2 θ Note that Proposition 3.12 implies that the number of circles in the link ˆα depends only on the parity of the entries of ϕ(α).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/rem-sec-008-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "rem-sec-008-05.md",
+      "narrative": null,
+      "content": "Observe the semidirect decomposition SL2(Z/4Z) ∼= X0 ⋊Z/4Z, and X0 ∼= A4 is the commutator of SL2(Z/4Z). This implies the epimorphism η: SL2(Z/4Z) →Z/4Z. In the case of Proposition 3.14, η(m) = i if m ∈Xi. Letting π4 : SL2(Z) →SL2(Z/4Z) be the usual projection, the composition of all relevant maps from B3 to Z/4Z is exactly the braid exponent modulo 4, yielding the following commutative diagram. B3 Z/4Z SL2(Z) SL2(Z/4Z) e mod 4 ϕ η π4 The main result of this subsection now follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/thm-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "thm-sec-008-06.md",
+      "narrative": null,
+      "content": "If L is a knot with index at most 3, then VL(−1) ≡∆L(−1) ≡1 (mod 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4-braids and beyond",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-4-braids-and-beyond.md",
+      "narrative": null,
+      "content": "4-braids and beyond\nConsider the Jones polynomial of 4-braid closures. In particular, Example 2.19 yields that\nVˆα(t) = −(\n√\nt)e(α)((1 + t + t2 + t3 + t4)χ(1,1,1,1)(α) + (t + t2 + t3)χ(2,1,1)(α) + t2χ(2,2)(α))\nt3/2 + t5/2\nfor α ∈B4. Substituting t = −1, it must then be the case that\nχ(1,1,1,1)(α) −χ(2,1,1)(α) + χ(2,2)(α) = 0\nfor all α ∈B4 upon specialization to t = −1, which can also seen to be true as, applying\ncategorification, we have the long exact sequence\n0 −→S(1,1,1,1)\n−1\n−→S(2,1,1)\n−1\n−→S(2,2)\n−1\n−→0\ndue to one of the main results developed in [4]. We may possibly circumvent this issue",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/li-braid-closures/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-acknowledgments.md",
+      "narrative": null,
+      "content": "Acknowledgments\nThe author expresses his gratitude towards Kenta Suzuki for his teaching and guidance\nthroughout the research period.\nThe author also extends his appreciation to the MIT\nPRIMES program for making this research opportunity possible.\nReferences\n[1] V. F. R. Jones. Hecke algebra representations of braid groups and link polynomials.\nAnn. of Math. (2), 126(2):335–388, 1987.\n[2] Shalom Eliahou, Louis H. Kauffman, and Morwen B. Thistlethwaite. Infinite families of\nlinks with trivial Jones polynomial. Topology, 42(1):155–169, 2003.\n[3] J. W. Alexander. A lemma on systems of knotted cur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

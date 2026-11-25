@@ -1,0 +1,1208 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "104171-qt-83",
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
+  "variant": "pdf",
+  "pages": 67,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "670",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Calculation of the Kashaev invariant of the 5_2 knot",
+      "number": null,
+      "page": 7,
+      "pageLabel": "675",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-calculation-of-the-kashaev-invariant-of-the-5-2"
+    },
+    {
+      "level": 1,
+      "title": "Calculation by the saddle point method",
+      "number": null,
+      "page": 14,
+      "pageLabel": "682",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-calculation-by-the-saddle-point-method"
+    },
+    {
+      "level": 1,
+      "title": "Calculation by the Poisson summation formula",
+      "number": null,
+      "page": 25,
+      "pageLabel": "693",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-calculation-by-the-poisson-summation-formula"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.1",
+      "number": null,
+      "page": 36,
+      "pageLabel": "704",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-proof-of-theorem-11"
+    },
+    {
+      "level": 1,
+      "title": "Properties of phi (t)",
+      "number": null,
+      "page": 55,
+      "pageLabel": "723",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-properties-of-phi-t"
+    },
+    {
+      "level": 1,
+      "title": "Convergence of V(t,s) to hat V(t,s)",
+      "number": null,
+      "page": 58,
+      "pageLabel": "726",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-convergence-of-vts-to-hat-vts"
+    },
+    {
+      "level": 1,
+      "title": "Critical points of V(t,s) and hat V(t,s)",
+      "number": null,
+      "page": 60,
+      "pageLabel": "728",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-critical-points-of-vts-and-hat-vts"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Lemma 2.1",
+      "number": null,
+      "page": 62,
+      "pageLabel": "730",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-proof-of-lemma-21"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 63,
+      "pageLabel": "731",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "669",
+      "labelEnd": "670",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "kakenhi",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Topol. 7 (2016), 669–735 DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 Abstract. We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern–Simons invariant of",
+      "extractCut": true,
+      "blocks": [
+        "library/104171-qt-83/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "670",
+      "labelEnd": "675",
+      "words": 1877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invariant h52in",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "twisted reidemeister",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        }
+      ],
+      "extract": "In [16] and [17] Kashaev deﬁned the Kashaev invariant hLiN 2 C of a link L for N D 2; 3; \u0001 \u0001 \u0001 by using the quantum dilogarithm. In [18] he conjectured that, for any hyperbolic link L, 2\u0019 \u0001 lim N!1 loghLiN N D vol.S 3 \u0000 L/; where “vol” denotes the hyperbolic volume, and gave evidence for the conjecture for the ﬁgure-eight knot, the 52 knot and the 61 knot, by formal calculations. In 1999, H. Murakami and J. Murakami",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-calculation-of-the-kashaev-invariant-of-the-5-2",
+      "number": null,
+      "title": "Calculation of the Kashaev invariant of the 5_2 knot",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 14,
+      "labelStart": "675",
+      "labelEnd": "682",
+      "words": 2013,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "invariant h52in",
+          "heading": false
+        },
+        {
+          "term": "ˇˇˇˇ",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "icj",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the deﬁnition of the Kashaev invariant and the cal- culation of the Kashaev invariant h52iN of the 52 knot in Section 2.1. Further, we continue to calculate the value of h52iN toward its asymptotic expansion in Section 2.2. 2.1. The Kashaev invariant of the 52 knot. In this section, we review the deﬁnition of the Kashaev invariant of oriented knots, and review the calculation of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-calculation-by-the-saddle-point-method",
+      "number": null,
+      "title": "Calculation by the saddle point method",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 25,
+      "labelStart": "682",
+      "labelEnd": "693",
+      "words": 3224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uta ˇˇˇ",
+          "heading": false
+        },
+        {
+          "term": "exp uta",
+          "heading": false
+        },
+        {
+          "term": "uim exp",
+          "heading": false
+        },
+        {
+          "term": "jxj ˇˇˇˇ",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "nx2dx",
+          "heading": false
+        },
+        {
+          "term": "b3z b4z",
+          "heading": false
+        },
+        {
+          "term": "rmj max",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we calculate Gaussian integrals by the saddle point method. We calculate a Gaussian integral in Proposition 3.1, a Gaussian integral with per- turbative terms in Proposition 3.2, and multi-variable cases in Propositions 3.4 and 3.5. We use Proposition 3.5 in the proof of Theorem 1.1 in Section 5. For the saddle point method, see e.g. [39]. Proposition 3.1. For a non-zero a 2 C, the domain ¹z 2 C j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-calculation-by-the-poisson-summation-formula",
+      "number": null,
+      "title": "Calculation by the Poisson summation formula",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 36,
+      "labelStart": "693",
+      "labelEnd": "704",
+      "words": 2829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "nct",
+          "heading": false
+        },
+        {
+          "term": "required formula",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "generalize proposition",
+          "heading": false
+        },
+        {
+          "term": "ˇˇˇ",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we calculate the sums corresponding to the integrals of the propo- sitions in the previous section by the Poisson summation formula. Corresponding to Propositions 3.1, 3.2, 3.4 and 3.5 in the previous section, we show Proposi- tions 4.1, 4.2, 4.5, and 4.6 in this section. We use Proposition 4.6 in the proof of Theorem 1.1 in Section 5. We remark that the Poisson summation formula has also been used",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-proof-of-theorem-11",
+      "number": null,
+      "title": "Proof of Theorem 1.1",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 55,
+      "labelStart": "704",
+      "labelEnd": "723",
+      "words": 6123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "put arg",
+          "heading": false
+        },
+        {
+          "term": "h52in",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "above critical",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of the theorem by using lemmas proved in Sections 5.2, 5.3, and 5.4. In Section 5.2, we show lemmas which calculate the asymptotic expansion. In Section 5.3, we show a lemma which veriﬁes the assumption of the saddle point method. In Section 5.4, we show a lemma which veriﬁes the assumption of the Poisson summation formula. 5.1. Proof",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-properties-of-phi-t",
+      "number": null,
+      "title": "Properties of phi (t)",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 58,
+      "labelStart": "723",
+      "labelEnd": "726",
+      "words": 1046,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˇˇˇˇ",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "c2k",
+          "heading": false
+        },
+        {
+          "term": "jzj",
+          "heading": false
+        },
+        {
+          "term": "c2ky2k",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "bounded",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we review some basic properties of '.t/. We put „ D 2\u0019 p \u00001=N, and put ˆd.z/ D Li2.z/ C X 1\u0014k\u0014d „2kc2k \u0001 \u0010 z d dz \u00112k\u00002 z 1 \u0000 z ; where we deﬁne c2k by y=2 sinh.y=2/ D X k\u00150 c2ky2k: Proposition A.1. We ﬁx any suﬃciently small ı > 0 and any M > 0. Let d be any non-negative integer. Then, in the domain ¹t 2 C j ı \u0014 Re t \u0014 1 \u0000 ı; j Im tj \u0014 Mº; (69) '.t/ and '.k/.t/ are presented by '.t/ D N 2\u0019 p \u00001",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-convergence-of-vts-to-hat-vts",
+      "number": null,
+      "title": "Convergence of V(t,s) to hat V(t,s)",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "726",
+      "labelEnd": "728",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "icj",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "summation formula",
+          "heading": false
+        },
+        {
+          "term": "point method",
+          "heading": false
+        },
+        {
+          "term": "domain",
+          "heading": false
+        },
+        {
+          "term": "converges",
+          "heading": false
+        }
+      ],
+      "extract": "When we apply the saddle point method and the Poisson summation formula to V.t; s/, it is necessary to note how V.t; s/ converges to yV .t; s/ as N ! 1. In this appendix, we verify that this convergence is suitable in those applications. We recall that in Section 2.2 we put V.t; s/ and yV .t; s/ by V.t; s/ D 1 N .\u0000'.1 \u0000 t/ \u0000 2'.1 \u0000 s// \u00001 2\u0019 p \u00001 \u00192 6 \u0000 2\u0019 p \u00001 \u00101 2 \u0010 t C s \u0000 1 2N \u00112 C 1 2s2 \u0000 1 2t \u0000 s C 1 6 \u0011 \u0000 3\u0019",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-critical-points-of-vts-and-hat-vts",
+      "number": null,
+      "title": "Critical points of V(t,s) and hat V(t,s)",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": "728",
+      "labelEnd": "730",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x0y",
+          "heading": false
+        },
+        {
+          "term": "e2r",
+          "heading": false
+        },
+        {
+          "term": "cca",
+          "heading": false
+        },
+        {
+          "term": "critical",
+          "heading": true
+        }
+      ],
+      "extract": "In this appendix, we show a proof of Lemma 5.1. We put „ D 2\u0019 p \u00001=N, and use the notation in Section 5.2. By Proposi- tion A.1, we can put 1 N '0.1 \u0000 t/ D \u0000 log.1 \u0000 e\u00002\u0019 p \u00001t/ C r.t; „/„2 for some smooth function r.t; „/ of t and „. Then, from the deﬁnition of V.t; s/, we have @ @t V.t; s/ D \u0000 log \u0010 1 \u0000 1 x \u0011 \u0000 2\u0019 p \u00001 \u0010 t C s \u0000 1 2 \u0000 1 2N \u0011 C r.t; „/„2; @ @s V.t; s/ D \u00002 log \u0010 1 \u0000 1 y \u0011 \u0000 2\u0019 p \u00001 \u0010 t C 2s \u0000 1 \u0000 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-proof-of-lemma-21",
+      "number": null,
+      "title": "Proof of Lemma 2.1",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "730",
+      "labelEnd": "731",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "area",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "proof",
+          "heading": true
+        }
+      ],
+      "extract": "In this appendix, we give a proof of Lemma 2.1. Proof of Lemma 2.1. We put ƒ.t/ D Re \u0010 1 2\u0019 p \u00001 Li2.e2\u0019 p \u00001t/ \u0011 for t 2 R. We note that this function has period 1, and ƒ.\u0000t/ D \u0000ƒ.t/. Since ƒ0.t/ D \u0000 log.2 sin \u0019t/ for 0 < t < 1, the behavior of ƒ.t/ is as follows. t 0 \u0001 \u0001 \u0001 1 6 \u0001 \u0001 \u0001 1 2 \u0001 \u0001 \u0001 5 6 \u0001 \u0001 \u0001 1 ƒ.t/ 0 ! ƒ. 1 6/ ! 0 ! \u0000ƒ. 1 6/ ! 0 Here, ƒ. 1 6/ D 0:161533 : : :. See Figure 6 for the graph of ƒ.t/. 0.6 0.2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 67,
+      "labelStart": "731",
+      "labelEnd": "735",
+      "words": 1540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "workshop held",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "held june",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "simons theory",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surg- eries on the ﬁgure 8 knot. J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548. MR 2221531 Zbl 1102.57007 [2] T. D. Dimofte and S. Garoufalidis, The quantum content of the gluing equations. Geom. Topol. 17 (2013), no. 3, 1253–1315. MR 3073925 Zbl 1283.57017 732 T. Ohtsuki [3] T. Dimofte, S. Gukov, J. Lenells, and D. Zagier, Exact",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "kashaev invariant",
+      "heading": true
+    },
+    {
+      "term": "invariant h52in",
+      "heading": false
+    },
+    {
+      "term": "asymptotic expansion",
+      "heading": false
+    },
+    {
+      "term": "integral h52in",
+      "heading": false
+    },
+    {
+      "term": "put exp",
+      "heading": false
+    },
+    {
+      "term": "poisson summation",
+      "heading": true
+    },
+    {
+      "term": "tomotada ohtsuki",
+      "heading": false
+    },
+    {
+      "term": "summation formula",
+      "heading": true
+    },
+    {
+      "term": "put arg",
+      "heading": false
+    },
+    {
+      "term": "saddle point",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    },
+    {
+      "term": "simons invariant",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "669",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "670",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 3,
+      "label": "671",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "672",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "673",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "674",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "675",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 8,
+      "label": "676",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "677",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "678",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "679",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "680",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "681",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "682",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "683",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "684",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "685",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "686",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "687",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "688",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "689",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "690",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "691",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "692",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "693",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "694",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "695",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "696",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "697",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "698",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "699",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "700",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "701",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "702",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "703",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "704",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "705",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "706",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "707",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "708",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "709",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "710",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "711",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "712",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "713",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "714",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "715",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "716",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "717",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "718",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "719",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "720",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "721",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "722",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "723",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 56,
+      "label": "724",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "725",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "726",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 59,
+      "label": "727",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "728",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 61,
+      "label": "729",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "730",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 63,
+      "label": "731",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 64,
+      "label": "732",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "733",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "734",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "735",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The domain ¹.t; s/ j Re yV .t;s/ \u0015 &Rº",
+      "page": 12,
+      "pageLabel": "680",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The domain ¹z 2 C j Re az2 < 0º is shaded",
+      "page": 15,
+      "pageLabel": "683",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The domain ¹z 2 C j Re .z/ < 0º is shaded",
+      "page": 17,
+      "pageLabel": "685",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The domain ¹z 2 C j Re az2 < 0º is shaded",
+      "page": 26,
+      "pageLabel": "694",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The domain ¹z 2 C j Re .z/ < 0º is shaded",
+      "page": 29,
+      "pageLabel": "697",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The graph of ƒ.t/ for 0 \u0014 t \u0014 1",
+      "page": 62,
+      "pageLabel": "730",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p63); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/104171-qt-83"
+  }
+}

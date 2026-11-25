@@ -1,0 +1,1003 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2111.06645v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part 0: Introduction and overview",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-part-0-introduction-and-overview.md",
+      "narrative": null,
+      "content": "In this paper and the companion paper [44], we will define and study three different types of\nobjects that can be associated to a hyperbolic knot:\n• periodic functions on Q with values in Q with striking arithmetic properties and belonging\nto a generalization of the Habiro ring;\n• divergent formal series in an infinitesimal variable h, or more precisely infinite collections\nof such power series, indexed by a rational number α (here “h” is meant to remind one of\nPlanck’s constant and the perturbative expansions of quantum field theory); and\narXiv:2111.06645v3  [math.GT]  24 Jun 2024\n• q-series",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Symmetry, Integrability and Geometry: Methods and Applications\nSIGMA 20 (2024), 055, 87 pages\nKnots, Perturbative Series and Quantum Modularity\nStavros GAROUFALIDIS a and Don ZAGIER bc\na) International Center for Mathematics, Department of Mathematics,\nSouthern University of Science and Technology, Shenzhen, P.R. China\nE-mail: stavros@mpim-bonn.mpg.de\nURL: http://people.mpim-bonn.mpg.de/stavros\nb) Max Planck Institute for Mathematics, Bonn, Germany\nE-mail: dbz@mpim-bonn.mpg.de\nURL: http://people.mpim-bonn.mpg.de/zagier\nc) International Centre for Theoretical Physics, Trieste, Italy\nReceived Ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part I: The main story",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-part-i-the-main-story.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The original quantum modularity conjecture",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-1-the-original-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sec.QMCK label=\"sec.QMCK\"}\n\nThe starting point for this paper is the quantum modularity conjecture of [@Za:QMF], which itself is a refinement of the famous volume conjecture of Kashaev [@K95]. Let us recall them briefly here. Kashaev defined an invariant $\\langle K \\rangle_N \\in \\mathbb Z[{\\rm e}^{2 \\pi {\\rm i}/N}]$ for every knot $K$ and positive integer $N$ and conjectured that if $K$ is hyperbolic knot the absolute values of these numbers grow exponentially like ${\\rm e}^{c_KN}$, where $2\\pi c_K$ is the hyperbolic volume of $S^3\\smallsetminus K$. A more precise version of the conjecture",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A collection of formal power series",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-2-a-collection-of-formal-power-series.md",
+      "narrative": null,
+      "content": "A collection of formal power series\n2.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The indexing set P_K",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-21-the-indexing-set-p-k.md",
+      "narrative": null,
+      "content": "[]{#sub.p label=\"sub.p\"}\n\nThe power series mentioned above are labeled by a finite set $\\mathcal P_K$ that coincides with the set of boundary parabolic $\\mathrm{SL}_2(\\mathbb C)$-representations of $\\Gamma:=\\pi_1\\big(S^3\\smallsetminus K\\big)$ (or equivalently, of flat connections on $S^3\\smallsetminus K$ whose restriction to the peripheral subgroup of $\\Gamma$ are parabolic) whenever the latter is finite. For a hyperbolic knot, this set has three distinguished elements, denoted $\\sigma_0$, $\\sigma_1$ and $\\sigma_2$, corresponding respectively to the trivial representation, the geometric repres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Four constructions of the power series Phi^{(K,s)}_a(h)",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-22-four-constructions-of-the-power-series-phiks.md",
+      "narrative": null,
+      "content": "[]{#sub.Formal label=\"sub.Formal\"}\n\nWe will now describe several different approaches to obtaining the formal power series associated to an element $\\sigma$ of $\\mathcal P_K$ and a number $\\alpha\\in\\mathbb Q/\\mathbb Z$.\n\nIf $\\sigma=\\sigma_1$ is the geometric representation, then is by definition just the power series $\\Phi^K_\\alpha(h)$ whose existence is asserted by the quantum modularity conjecture, and for $\\sigma$ in the Galois orbit of $\\sigma_1$ we simply apply Galois conjugation to this series (at the level of its $n$-th power if $\\alpha$ has denominator $n$), with some special considera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interrelations among the power series Phi_a^{(s)}(h)",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-3-interrelations-among-the-power-series-phi-ash.md",
+      "narrative": null,
+      "content": "[]{#sec.inter label=\"sec.inter\"}\n\nIn this section, we describe four empirically found properties, of very different natures, that link and motivate the formal power series introduced above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The generalized quantum modularity conjecture",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-31-the-generalized-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sub.GQMC label=\"sub.GQMC\"}\n\nThe function $J^{(K)}$ from $\\mathbb Q/\\mathbb Z$ to $\\overline{\\mathbb Q}$, which was originally defined as the Galois-equivariant extension of the Kashaev invariant $\\langle K\\rangle_N$, has now re-appeared as the constant term of one of a collection of formal power series indexed by the elements $\\sigma$ of a finite set $\\mathcal P_K$ associated to the knot. This suggests that we should look also at the constant terms of the other series as well, i.e., that we should study the functions (*generalized Kashaev invariants*) $$\\begin{gathered}\n\\label{cherries}\nJ^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifting the QMC from constant terms to power series",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-32-lifting-the-qmc-from-constant-terms-to-power.md",
+      "narrative": null,
+      "content": "[]{#sub.QMCwithh label=\"sub.QMCwithh\"}\n\nIn the previous subsection, we generalized the original QMC by replacing the Kashaev invariant $J^{(K)}$ by the generalized Kashaev invariants $J^{(K,\\sigma)}$ for any $\\sigma\\in\\mathcal P_K$. This in turn will be further refined in Section [\\[sec.RQMC\\]](#sec.RQMC){reference-type=\"ref\" reference=\"sec.RQMC\"} by adding terms of exponentially lower order to the right-hand side of the asymptotic formula. Here we discuss instead a different refinement.\n\nOur starting point, just as in Section [\\[sub.GQMC\\]](#sub.GQMC){reference-type=\"ref\" reference=\"sub.GQMC\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "The special case of this when $\\alpha=0$ was observed independently by Gang, Kim and Yoon [@torsion].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quadratic relations",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-33-quadratic-relations.md",
+      "narrative": null,
+      "content": "[]{#sub.quad label=\"sub.quad\"}\n\nThe next interconnection among the power series associated to a given knot $K$ that we discover (experimentally, as always) from the examples is that they satisfy an unexpected quadratic relation, namely $$\\label{quadrel}\n\\sum_{\\sigma\\in \\mathcal{P}^{\\text{red}}_K} \\Phi^{(K,\\sigma)}_\\alpha(h) \\Phi^{(K,\\sigma)}_{-\\alpha}(-h) = 0 .$$ Notice that this relation is non-trivial even at the level of its constant term, where it says, for example, that the value of the generalized Kashaev invariant $J^{(5_2,\\sigma)}(\\alpha)$ defined in the last subsection belongs to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of the coefficients",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-34-asymptotics-of-the-coefficients.md",
+      "narrative": null,
+      "content": "[]{#sub.CoeffA label=\"sub.CoeffA\"}\n\nThe third interrelationship between the series $\\Phi^{(\\sigma)}_\\alpha$ for different elements $\\sigma$ of $\\mathcal P_K$ arises via the asymptotics of their coefficients.\n\nFor both theoretical and numerical purposes, we need to be able to compute the \"values\" of the divergent series for very small $h$, and for this we need to know how their coefficients grow. We will write for the coefficient of $h^n$ in .\n\nAs usual, we start with the simplest example $K=4_1$, $\\sigma=\\sigma_1$ (geometric representation), and  $\\alpha=0$, where is just the series [\\[as41\\]]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refining the quantum modularity conjecture",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-4-refining-the-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sec.RQMC label=\"sec.RQMC\"}\n\nIn this section, we will show how one can go beyond the original QMC as described in Section [\\[sec.QMCK\\]](#sec.QMCK){reference-type=\"ref\" reference=\"sec.QMCK\"} or its generalization as described in Section [\\[sub.GQMC\\]](#sub.GQMC){reference-type=\"ref\" reference=\"sub.GQMC\"}. We will present this via a series of successive refinements, each one found experimentally and building on its predecessors. This will culminate in the complete, though of course still conjectural, definition (in Sections [\\[sub.4.1\\]](#sub.4.1){reference-type=\"ref\" reference=\"sub.4.1\"}--[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Improving the quantum modularity conjecture: optimal truncation",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-41-improving-the-quantum-modularity-conjecture-o.md",
+      "narrative": null,
+      "content": "[]{#sub.4.1 label=\"sub.4.1\"}\n\nThe QMC in its original form says that $J^{(K)}(-1/X)$ agrees with to all orders in $1/X$ as $X$ tends to infinity with fixed denominator, with a similar statement when $-1/X$ is replaced by $\\frac{aX+b}{cX+d}$ for any $\\bigl(\\smallmatrix a&b\\\\c&d\\endsmallmatrix\\bigr)\\in\\mathrm{SL}_2(\\mathbb Z)$. A natural question is whether we can do better than this and obtain an asymptotic estimate, or even a precise asymptotic formula, for the *difference* of these two expressions. At first sight this seems to makes no sense, since  (or more generally ) is given in terms of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New elements of the Habiro ring",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-013-42-new-elements-of-the-habiro-ring.md",
+      "narrative": null,
+      "content": "[]{#sub.4.2 label=\"sub.4.2\"}\n\nFor the knot $K=5_2$ the set $\\mathcal P_K$ has four elements: the Habiro one, the geometric and antigeometric ones, and the one corresponding to the real embedding of the cubic field $F_K=\\mathbb Q(\\xi)$. However, it has only three distinct real volumes: the geometric volume $\\operatorname{Im} \\mathbf V(\\sigma_1)=\\mathrm{Vol}(K)$ (with the numerical value $2.82812\\dots$), the anti-geometric volume $\\operatorname{Im} \\mathbf V(\\sigma_2)=-\\mathrm{Vol}(K)$, and 0 for both ${\\sigma=\\sigma_0}$ and $\\sigma=\\sigma_3$, and consequently only three distinct orders of growt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smoothed optimal truncation",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-014-43-smoothed-optimal-truncation.md",
+      "narrative": null,
+      "content": "[]{#sub.4.3 label=\"sub.4.3\"}\n\nWe already mentioned at the end of Section [\\[sub.4.1\\]](#sub.4.1){reference-type=\"ref\" reference=\"sub.4.1\"} that it would be natural to expect a third term in [\\[FirstRQMC\\]](#FirstRQMC){reference-type=\"eqref\" reference=\"FirstRQMC\"} involving the missing $\\widehat\\Phi$-function $\\widehat\\Phi^{(K,\\sigma_2)}(h)$, and the same applies even more strikingly to the two knots discussed in Section [\\[sub.4.2\\]](#sub.4.2){reference-type=\"ref\" reference=\"sub.4.2\"}, where we were obliged to omit the $\\sigma_2$-term in both [\\[52WeakRQMC\\]](#52WeakRQMC){reference-type=\"eqref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strengthening the generalized quantum modularity conjecture",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-44-strengthening-the-generalized-quantum-modular.md",
+      "narrative": null,
+      "content": "[]{#sub.4.4 label=\"sub.4.4\"}\n\nSo far we have generalized the original quantum modularity conjecture [\\[QMCb\\]](#QMCb){reference-type=\"eqref\" reference=\"QMCb\"} in two very different ways: in Section [\\[sub.GQMC\\]](#sub.GQMC){reference-type=\"ref\" reference=\"sub.GQMC\"}, we extended it from the Kashaev invariant $J=J^{(\\sigma_0)}$ to the functions defined in [\\[cherries\\]](#cherries){reference-type=\"eqref\" reference=\"cherries\"}, and in the last three subsections we refined it by adding additional terms of lower order to the right-hand side. Not surprisingly, these two can be combined, but with som",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The refined quantum modularity conjecture",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-45-the-refined-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sub.4.5 label=\"sub.4.5\"}\n\nThe refinement of the quantum modularity conjecture that we have obtained so far, equation [\\[RQMC\\]](#RQMC){reference-type=\"eqref\" reference=\"RQMC\"}, has two noteworthy aspects. One is that, although we find new collections of \"Habiro-like\" functions $J^{(\\sigma,\\sigma')}$ for the asymptotic expansion as $X\\to\\infty$ of the functions $J^{(\\sigma_0,\\sigma)}(\\gamma X)$ for different $\\sigma\\in\\mathcal P_K$ (here we continue the practice of omitting the knot from all notations when it is not varying), these arise as coefficients of the *same* completed formal power",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The matrix-valued cocycle associated to a knot",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-5-the-matrix-valued-cocycle-associated-to-a-knot.md",
+      "narrative": null,
+      "content": "[]{#sec.Matrix label=\"sec.Matrix\"}\n\nLet us define, for a fixed knot $K$ (suppressed from the notation as usual), matrix $\\gamma\\in\\mathrm{SL}_2(\\mathbb Z)$ and number $x\\in\\mathbb Q\\smallsetminus\\big\\{\\gamma^{-1}(\\infty)\\big\\}$, an $(r+1)\\times (r+1)$ matrix $W_\\gamma(x)$ by $$\\label{Wdef}\nW_\\gamma(x) = \\mathbf{J}(\\gamma x)^{-1} \\widetilde{\\mathbf{j}}_\\gamma(x)  \\mathbf{J}(x)  ,$$ where $\\widetilde{\\mathbf{j}}$ is the automorphy factor defined in [\\[autofactor\\]](#autofactor){reference-type=\"eqref\" reference=\"autofactor\"}. (This formula makes sense because the matrix $\\mathbf{J}$ is conjectura",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Habiro-like matrix and the perturbative matrix",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-018-51-the-habiro-like-matrix-and-the-perturbative-m.md",
+      "narrative": null,
+      "content": "[]{#sub.habmat label=\"sub.habmat\"}\n\nIn Section [\\[sec.RQMC\\]](#sec.RQMC){reference-type=\"ref\" reference=\"sec.RQMC\"}, we saw how successive refinements of the original quantum modularity conjecture [\\[QMCb\\]](#QMCb){reference-type=\"eqref\" reference=\"QMCb\"} led to a whole matrix $\\mathbf{J}^{(K)}(x)$ of generalized Kashaev invariants and to a collection of matrices of formal power series having  as their constant term. The existence of these new matrices and the description of their properties is the main content of this paper. We emphasize that, although the refined QMC which led to the definit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smoothness",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-019-52-smoothness.md",
+      "narrative": null,
+      "content": "[]{#sub.lift label=\"sub.lift\"}\n\nWe now come to the really exciting point. The cocycle $W_\\gamma(x)$ is defined in terms of the \"Habiro-like\" matrix $\\mathbf{J}$ by [\\[Wdef\\]](#Wdef){reference-type=\"eqref\" reference=\"Wdef\"}. The entries of $\\mathbf{J}^{(4_1)}$, one of which was shown in Figure [\\[OldJplot\\]](#OldJplot){reference-type=\"ref\" reference=\"OldJplot\"} of the introduction, would all have a \"cloudlike\" structure like the one seen there. But when one graphs the entries of the matrix $W_\\gamma(x)$, they are all smooth! For instance, Figure [1](#WS41plot){reference-type=\"ref\" reference=\"WS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "``Functions near Q''",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-020-53-functions-near-q.md",
+      "narrative": null,
+      "content": "[]{#sec.nearQ label=\"sec.nearQ\"}\n\nWe now come to an important and somewhat subtle point. In the calculation that we gave to prove Proposition [\\[prop.W1\\]](#prop.W1){reference-type=\"ref\" reference=\"prop.W1\"}, we used only the refined quantum modularity conjecture in its \"rational version\" [\\[dQPhi\\]](#dQPhi){reference-type=\"eqref\" reference=\"dQPhi\"}, since the statement of Proposition [\\[prop.W1\\]](#prop.W1){reference-type=\"ref\" reference=\"prop.W1\"} involves only the values of $W_\\gamma$ at rational arguments. If we had used instead the full version [\\[MatQMC\\]](#MatQMC){reference-type=\"eqref\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analyticity",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-021-54-analyticity.md",
+      "narrative": null,
+      "content": "[]{#sub.holomorphic label=\"sub.holomorphic\"}\n\nIn Section [\\[sub.lift\\]](#sub.lift){reference-type=\"ref\" reference=\"sub.lift\"}, we discussed the surprising smoothness properties of the function $W_\\gamma$ on $\\mathbb R\\smallsetminus\\{\\gamma^{-1}(\\infty)\\}$. In this subsection, we come to a point much deeper than the smoothness, namely analyticity properties of functions defined in a cut plane. These functions are closely related to *state integrals*. Such integrals appeared originally in the work of Hikami, Andersen, Kashaev and others (see, for example, [@AK; @DGLZ; @Hikami]) in relation to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-hyperbolic case",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-55-the-non-hyperbolic-case.md",
+      "narrative": null,
+      "content": "The main thrust of this paper, and all of the examples which we have treated in detail, concern the case of hyperbolic knots, for which the volume is positive. We expect that matrix-valued cocycles exist for nonhyperbolic 3-manifolds, with or without boundary, and know that this is so for the example of the complement of the trefoil [@Za:strange] (where the corresponding invariant is sometimes known by the name Kontsevich--Zagier series) as well as for WRT invariant of the Poincaré homology sphere (a spherical 3-manifold), which was studied by Lawrence and Zagier [@LZ]. In these examples and m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part II. Complements",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-023-part-ii-complements.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Half-symplectic matrices and their perturbative series",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-024-6-half-symplectic-matrices-and-their-perturbativ.md",
+      "narrative": null,
+      "content": "[]{#sec.perturbation label=\"sec.perturbation\"}\n\nIn Section [\\[sec.Phi\\]](#sec.Phi){reference-type=\"ref\" reference=\"sec.Phi\"}, we introduced a finite set $\\mathcal P_K$ associated to a knot $K$ and the formal power series  for each $\\alpha\\in\\mathbb Q$ and $\\sigma\\in\\mathcal{P}^{\\text{red}}_K=\\mathcal P_K\\smallsetminus\\{\\sigma_0\\}$, as defined by Dimofte and the first author in [@DG; @DG2] in terms of the Neumann--Zagier data of a triangulation of the knot complement. In this section, we provide details and also a somewhat more general construction, depending on more general data consisting of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Half-symplectic matrices and the Bloch group",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-025-61-half-symplectic-matrices-and-the-bloch-group.md",
+      "narrative": null,
+      "content": "[]{#sub.HalfSymplectic label=\"sub.HalfSymplectic\"}\n\nTo each knot $K$ and each element $\\sigma\\in\\mathcal P_K$ there is an associated element of the Bloch group (or third algebraic $K$-group) of $\\overline{\\mathbb Q}$ that plays a central role for many of the constructions and that can be described in terms of the Neumann--Zagier data of a triangulation of the knot complement. In fact, this construction produces an invariant lying in a set defined by \"half-symplectic matrices\" (= upper halves of symplectic matrices over $\\mathbb Z$) which is a refinement of the usual Bloch group that has severa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations and the Neumann–Zagier equations",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-026-62-ideal-triangulations-and-the-neumannzagier-eq.md",
+      "narrative": null,
+      "content": "[]{#sub.Ideal label=\"sub.Ideal\"}\n\nIn 3-dimensional geometry, the shape of an ideal tetrahedron in $\\mathbb H^3$ is encoded by a complex number (\"shape parameter\") $z \\in \\mathbb C\\smallsetminus\\{0,1\\}$, the tetrahedron being isometric to the convex hull of the four points $0,1,\\infty,z \\in\\mathbb P^1(\\mathbb C)=\\partial\\big(\\mathbb H^3\\big)$. The shape $z$ has three forms $z$, $z'=1/(1-z)$ and ${z''=1-1/z}$, each corresponding to the choice of a pair of opposite edges of the tetrahedron as shown in Figure [1](#fig.tetrahedron){reference-type=\"ref\" reference=\"fig.tetrahedron\"}.\n\n![A tetrahedron",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nahm sums and the perturbative definition of the Phi-series",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-027-63-nahm-sums-and-the-perturbative-definition-of.md",
+      "narrative": null,
+      "content": "[]{#sub.PhiPerturbative label=\"sub.PhiPerturbative\"}\n\nIn this final subsection, we describe how to attach to $\\Xi=((A B),\\nu)$ as in [\\[DefXi\\]](#DefXi){reference-type=\"eqref\" reference=\"DefXi\"}, a solution $z$ of the equation [\\[NZeq\\]](#NZeq){reference-type=\"eqref\" reference=\"NZeq\"} and a number $\\alpha\\in\\mathbb Q$ a completed formal power series belonging to ${\\rm e}^{\\mathbf V(z)/\\mathrm{den}(\\alpha)^2h} \\mathbb C[[h]]$. As already stated in Section [\\[sec.Phi\\]](#sec.Phi){reference-type=\"ref\" reference=\"sec.Phi\"}, this was done in [@DG] (for $\\alpha=0$) and [@DG2] (for general $\\alpha$)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two q-holonomic modules",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-028-7-two-q-holonomic-modules.md",
+      "narrative": null,
+      "content": "[]{#sec.NewHolonomy label=\"sec.NewHolonomy\"}\n\nIn Part I we were led by the refined quantum modularity conjecture to find an entire matrix $\\mathbf{J}^{(K)}$ of Habiro-like functions generalizing the Kashaev invariant, the first column being the vector of formal power series found in [@DG; @DG2]. In this section, we will study the structure of the other columns of this matrix and will see that they have a natural \"$q$-holonomic structure\" in terms of an infinite collection of functions that satisfy a recursion of finite length and hence all lie in a finite-dimensional module. In Section [\\[sub.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Descendant Habiro-like functions",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-029-71-descendant-habiro-like-functions.md",
+      "narrative": null,
+      "content": "[]{#sub.qholo label=\"sub.qholo\"}\n\nIt turns out that the first row of $\\mathbf{J}$ and the first row of $\\mathbf{\\widehat\\Phi}$ are basis elements of the span of an inhomogeneous recursion, and the same holds (but now with the corresponding homogeneous recursion) for each of the remaining rows of $\\mathbf{J}$ and of $\\mathbf{\\widehat\\Phi}$ as well as for the matrix of $q$-series of [@GZ:qseries]. To illustrate how this works, we give the complete formulas for the matrix for the $4_1$ knot. The corresponding formulas for the $5_2$ knot, which are considerably more complicated and illustrate seve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The J-matrix for the 5_2 knot",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-030-72-the-j-matrix-for-the-5-2-knot.md",
+      "narrative": null,
+      "content": "[]{#sub.52statesum label=\"sub.52statesum\"}\n\nIn this subsection, we describe that analogues of the formulas just given for our second standard knot $5_2$, because as usual the figure 8 knot has such special properties that some of the interesting features are obscured.\n\nThe Kashaev invariant of the $5_2$ knot is given by $$\\label{Kashaev.52}\n \\mathcal J^{(5_2)}(q) =\\sum_{m=0}^{\\infty} \\sum_{k=0}^m\nq^{-(m+1)k} \\frac{(q;q)_m^2}{\\big(q^{-1};q^{-1}\\big)_k} .$$ (See [@K97 equation 2.3].) This is manifestly an element of the Habiro ring. We generalize it to the two-parameter family of elements of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-sums",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-031-73-state-sums.md",
+      "narrative": null,
+      "content": "[]{#sub.statesum label=\"sub.statesum\"}\n\nIn this subsection, we explain where the formulas just given come from. More precisely, we discuss a heuristic method to discover a formula for the first column of the matrix $\\mathbf{J}^{(5_2)}$ given a formula for its top entry i.e., for the Kashaev invariant of the knot. This method produces periodic functions similar to the constant term of the formal power series discussed in Section [\\[sec.perturbation\\]](#sec.perturbation){reference-type=\"ref\" reference=\"sec.perturbation\"}. It also generalizes to the further columns, by replacing the Kashaev invar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-holonomic module of formal power series",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-032-74-the-q-holonomic-module-of-formal-power-series.md",
+      "narrative": null,
+      "content": "[]{#sub.qholonomicPhi label=\"sub.qholonomicPhi\"}\n\nWe now explain one of the most mysterious aspects of our story, the appearance of two very different realizations of the same $q$-holonomic system in the contexts of state sums and of perturbative formal power series. In fact, as we will indicate briefly at the end, we believe that there are actually four $q$-holonomic systems, of totally different origins, given by recursions with the same Laurent polynomials as coefficients.\n\nWe begin by recalling the derivation of the perturbative series in $h$ from Nahm sums, as described in Section [\\[sub.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the modularity conjecture for the 4_1 knot",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-033-8-proof-of-the-modularity-conjecture-for-the-4-1.md",
+      "narrative": null,
+      "content": "Proof of the modularity conjecture for the 41 knot\nIn this section, we give our proof of the quantum modularity conjecture for the figure 8 knot,\nannounced several years ago. Another proof was given by [6], as well as proofs of the quantum\nmodularity conjecture for a few other knots, but we give our proof for completeness and because\nthe point of view here is somewhat different from the one there.\nWe denote by J(x) the J-function for the 41 knot, as given explicitly by equation (2.6)\nwith q = e(x). We have to show that\nJ\n\u0012aX + b\ncX + d\n\u0013\n∼(cX + d)3/2J(X)bΦa/c\n\u0012\n2πi\nc(cX + d)\n\u0013\n(8.1)\nto all ord",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prop-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "prop-sec-034-01.md",
+      "narrative": null,
+      "content": "Fix an integer m ≥0, and set M = m + 5",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of a=0",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "../sections/sec-034-81-the-case-of-a0.md",
+      "narrative": null,
+      "content": "We begin with the case α = 0, which makes it clear where the factor J(X) in equation (8.1)\ncomes from. We use the notation\nPn(x) = |(q; q)n|2,\nfor q = e(x) with x rational, so that Pn(x) is the n-th summand in the definition of J(x), and\ndenote by cr (r ≥0) the numbers defined by the Taylor expansion\ncot\n\u0010π\n6 −x\n2\n\u0011\n=\n∞\nX\nr=0\ncr\nxr\nr! ,\nthe first values being given by the table\nr\n0\n1\n2\n3\n4\n5\n6\n7\ncr\n√\n3\n2\n2\n√\n3\n10\n22\n√\n3\n182\n602\n√\n3\n6970\nNote that these numbers can also be written cr = 2 Im(i−rLi−r(e(1/6))) and hence have a natural\nextrapolation backwards by c−1 = 0, c−2 = −V . We want to study",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general case",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "../sections/sec-035-82-the-general-case.md",
+      "narrative": null,
+      "content": "[]{#sub.proof41 label=\"sub.proof41\"}\n\nWe now apply the same analysis to the expansion of $J(x)$ around an arbitrary rational number $\\alpha$. The second part of the argument, replacing sums by integrals and computing them by using the functional $I_\\lambda$, is unchanged, but the analogue of Proposition [\\[prop.a1\\]](#prop.a1){reference-type=\"ref\" reference=\"prop.a1\"} is now slightly more complicated, since the asymptotic formula for $P_n(x)$ near the $m$-th peak depends on both $m$ and the residue class of $n$ modulo the denominator of $\\alpha$. We use the notations given above, i.e., with $X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic aspects",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-036-9-arithmetic-aspects.md",
+      "narrative": null,
+      "content": "[]{#sec.arithmetic label=\"sec.arithmetic\"}\n\nIn this section, we discuss the arithmetic properties of the power series , in particular the identification of the number fields in which their coefficients lie and the integrality properties of these coefficients.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic number theory aspects",
+      "pageStart": 63,
+      "pageEnd": 65,
+      "target": "../sections/sec-037-91-algebraic-number-theory-aspects.md",
+      "narrative": null,
+      "content": "[]{#sub.field label=\"sub.field\"}\n\nA detailed study of the power series (or more generally ) reveals several interesting algebraic number theoretical aspects, especially concerning the field of definition, transformation under the action of the Galois group, and above all the appearance of non-trivial algebraic units.\n\nWe begin by looking in more detail at the series because this example is quite illuminating. The first few terms of the series were given in [@Za:QMF p. 670], as $$\\begin{aligned}\n\\Phi^{(4_1,\\sigma_1)}_{a/5}(h)\n={}&\\sqrt[4]3\\sqrt[10]{E^{(a)}}\n\\big(\\bigl(2-E^{(a)}_1+E^{(a)}_2+2E^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Denominators and integrality properties",
+      "pageStart": 65,
+      "pageEnd": 71,
+      "target": "../sections/sec-038-92-denominators-and-integrality-properties.md",
+      "narrative": null,
+      "content": "[]{#sub.denominators label=\"sub.denominators\"}\n\nThe universal denominator statement given in formula [\\[Dn\\]](#Dn){reference-type=\"eqref\" reference=\"Dn\"} above was found empirically on the basis of the extensive numerical data for the $4_1$, $5_2$ and the $(-2,3,7)$ pretzel knots presented in the appendix to this paper. In this section, we prove it for the denominators of the power series defined in terms of Gaussian-type integrals in [@DG2]. This proof only applies to $\\sigma\\in\\mathcal P^{\\text{red}}_K$, since there is no such integral representation for the trivial representation, but the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prop-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 74,
+      "target": "prop-sec-040-01.md",
+      "narrative": null,
+      "content": "The Kashaev invariant ⟨K⟩N of a knot K can be computed in O(N) steps. This linear-time algorithm, which seems to be new even for the Kashaev invariant, can be used equally well to compute J(γN) for γ = \u0000 a b c d \u0001 ∈SL2(Z) fixed and N tending to infinity, or even J(γX) with γ = \u0000 a b c d \u0001 fixed and X tending to infinity with fixed fractional part, since this simply the value of Jn(γX) with n equal to the denominator of γX and can be calculated by the same trick. Note that the computation takes time O(N) numerically and O \u0000N3\u0001 if we work over Q[ζN]. Step 3: Computing Φ(K,σ1) α (h). Once we know",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prop-sec-040-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 74,
+      "target": "prop-sec-040-02.md",
+      "narrative": null,
+      "content": "The series Φ(K,σ0) α (h) + O(h)N+1 is computable in O(N) steps. This follows from the fact that the expansion of the Habiro element at q = ζαeh up to O(h)N+1 requires cN terms of the cyclotomic polynomial of K, which is a linear combination of the first cN colored Jones polynomials of K. An alternative formula, inspired by Mahler’s ideas on p-adic interpolation, gives the following expansion of the Habiro element: Φ(K,σ0) α (h) = cn X k=1 bJK n \u0000ζαeh\u0001 + O \u0000hn+1\u0001 , (10.1) where c is the denominator of α, ζα = e(α) and bJK n (q) = n X k=1 (−1)n−k \u0012n k \u0013 q q k(k−1) JK n−k+1(q)q−n(n+1) and \u0000n k \u0001",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical aspects",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-039-10-numerical-aspects.md",
+      "narrative": null,
+      "content": "Numerical aspects\nIn this section, we describe how the power series whose existence is predicted by the modularity\nconjecture can be computed effectively via a numerical computation of the Kashaev invariant,\nextrapolation, and recognition of algebraic numbers in a known number field. We also describe\nother methods that are applicable to the power series Φ(K,σ)\nα\n(h) for σ different from σ1, as well\nas the smooth truncation methods of “evaluating” factorially divergent power series at non-zero\narguments that were discussed in Section 4.3. The actual numerical data for several knots will\nthen be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computing the power series Phi_a^{(K,s)}(h)",
+      "pageStart": 71,
+      "pageEnd": 74,
+      "target": "../sections/sec-040-101-computing-the-power-series-phi-aksh.md",
+      "narrative": null,
+      "content": "α\n(h)\nIn this subsection, we explain the various methods that can be used to compute the coefficients\nof the power series Φ(K,σ)\nα\n(h) for all α ∈Q and σ ∈PK numerically and then exactly as algebraic\nnumbers.\nStep 1: Computing the colored Jones polynomials.\nTo compute the Kashaev in-\nvariant ⟨K⟩N of a knot K, we use the Murakami–Murakami formula ⟨K⟩N = JN\n\u0000e2πi/N\u0001\n,\nwhere Jn(q)=JK,n(q) is the n-th colored Jones polynomial, together with a theorem of T.T.Q. Lˆe\nand the first author [35] that asserts the existence of a recursion relation for the polynomi-\nals Jn(q). This reduces the problem to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Optimal truncation and smoothed optimal truncation",
+      "pageStart": 74,
+      "pageEnd": 75,
+      "target": "../sections/sec-041-102-optimal-truncation-and-smoothed-optimal-trun.md",
+      "narrative": null,
+      "content": "[]{#sub.optimal label=\"sub.optimal\"}\n\nOne of the main numerical aspects concerns smoothed optimal truncation, which was originally an appendix to an earlier draft of this paper but has now been relegated to a planned independent publication [@GZ:optimal] because the methods are applicable to many problems outside the realm of quantum topology. This is a method for the numerical summation of factorially divergent series when only a finite number of coefficients are known and we do not have information about the possible analytic continuation of the Borel transform, which is the method usually u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Numerical data for five sample knots",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-042-a-numerical-data-for-five-sample-knots.md",
+      "narrative": null,
+      "content": "Numerical data for five sample knots\nIn this appendix, we present numerical data that support the quantum modularity conjecture for\na choice of knots. Initially, we hoped that pairs of geometrically similar knots (that have identical\ntrace fields and equal elements in the Bloch group, modulo torsion—henceforth called “sisters”)\nmight have identical or nearly identical series Φ(K,σ1)\nα\n. With this in mind, and having already\nperformed the computations for the 41 knot, we were led to consider its sister, the m003 census\nmanifold. The latter is not a knot complement (it is the complement of a kno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 The figure eight knot",
+      "pageStart": 75,
+      "pageEnd": 77,
+      "target": "../sections/sec-043-a1-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "The figure eight knot\nIn this appendix, we discuss the numerical aspects of the quantum modularity conjecture for\nthe simplest hyperbolic 41 knot, for which we currently know how to prove the modularity\nconjecture. (The proof was presented in Section 8.) Needless to say, the numerically obtained\nresults agree with the exact computation of the expansion coefficients given in Section 8. Some\ninformation about the numerical aspects of the Kashaev invariant of the 41 knot were already\npresented in the introduction, but we give some additional data (e.g., for the expansion near\nseventh roots of uni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 The sister of the figure eight knot",
+      "pageStart": 77,
+      "pageEnd": 81,
+      "target": "../sections/sec-044-a2-the-sister-of-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "The sister of the figure eight knot\nIts quotient by Z/5Z, which is a knot in the lens space L(5, 1) rather than the 3-sphere, is the\nsister of the 41 knot, with the same trace field and same Bloch group invariant. We therefore\nexpect to find similarities between the asymptotic power series associated to K1 and to K2.\nNext, we discuss the case of the sister of the 41 knot, the manifold m003 in the hyperbolic\nknot census [12], which is not the complement of a knot in the 3-sphere, but is the complement\nof a nullhomologous knot in the Lens space L(5, 1). This complicates things since the sister k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prop-sec-045-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 84,
+      "target": "prop-sec-045-01.md",
+      "narrative": null,
+      "content": "It was observed by Borot that his recent work with Eynard [7] suggested a mechanism (based on the topological recursion) that could explain at least a weak part of the modularity conjecture, namely that the asymptotics of JK(ϵ) (as ϵ tends to zero through rational numbers with bounded denominators), is always given by the same series ΦK 0 (ϵ) up to a constant factor, not predicted by their model.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4 The (-2,3,7) pretzel knot",
+      "pageStart": 81,
+      "pageEnd": 84,
+      "target": "../sections/sec-045-a4-the--237-pretzel-knot.md",
+      "narrative": null,
+      "content": "Next, we discuss the case of a sister the 52 knot, namely the (mirror of) the (−2, 3, 7) pretzel\nknot. Note that the trace fields of 52 and (−2, 3, 7) coincide, which allow us to use the notation\nof (A.3).\nUnlike the case of the 41 and 52 knots, the Kashaev invariant of (−2, 3, 7) can only be\ncomputed via the recursion of the colored Jones polynomial which was guessed in [33], with\nthe convention that the Jones polynomial of (−2, 3, 7) is given by J(−2,3,7)(q) = q−5 + q−7 −\nq−11 +q−12 −q−13. The above inhomogeneous recursion has order 6, maximal degree (6, 58, 233)\nwith respect to the shift va",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.06645v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 84,
+      "pageEnd": 87,
+      "target": "../sections/sec-046-references.md",
+      "narrative": null,
+      "content": "[1] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014),\n887–934, arXiv:1109.6295.\n[2] Atiyah M.F., Hirzebruch F., Cohomologie-Operationen und charakteristische Klassen, Math. Z. 77 (1961),\n149–187.\n[3] Bar-Natan D., KnotAtlas, 2005, available at http://katlas.org.\n[4] Beem C., Dimofte T., Pasquetti S., Holomorphic blocks in three dimensions, J. High Energy Phys. 2014\n(2014), no. 12, 177, 118 pages, arXiv:1211.1986.\n[5] Bender C.M., Orszag S.A., Advanced mathematical methods for scientists and engineers, Int. Ser. Monogr.\nPure Appl. Math., McGraw-Hi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

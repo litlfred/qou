@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/monodromyhitchiny/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the monodromy of the Hitchin connection",
+  "contains": [
+    "library/monodromyhitchiny/sections/sec-front-matter",
+    "library/monodromyhitchiny/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the monodromy of the Hitchin connection — 2 sections: Front matter; ON THE MONODROMY OF THE HITCHIN CO\n\n**On the monodromy of the Hitchin connection**\n\n*The documents may come from teaching and research*\n\n14 pp, 2 sections.\n\n**Outline.** Front matter; ON THE MONODROMY OF THE HITCHIN CONNECTION",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "monodromyhitchiny",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "MonodromyHitchinY.pdf",
+    "source_sha256": "1c9288ddbb5bc2d8a49a882ef996938967ff8c1a96ecc58fa005bbb5e75028e8",
+    "pages": 14,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

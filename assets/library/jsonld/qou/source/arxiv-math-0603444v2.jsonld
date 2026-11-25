@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0603444v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0603444v2",
+  "contains": [
+    "library/arxiv-math-0603444v2/sections/sec-front-matter",
+    "library/arxiv-math-0603444v2/sections/sec-000",
+    "library/arxiv-math-0603444v2/sections/sec-001",
+    "library/arxiv-math-0603444v2/sections/sec-002",
+    "library/arxiv-math-0603444v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by\n\n**QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY**\n\n*MICHEL GRANGER AND MATHIAS SCHULZE*\n\n5 pp, 5 sections.\n\n**Abstract.** We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by the ﬁrst diﬀerential of the logarithmic diﬀerential complex in the top local cohomology supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆(Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m and f ∈m2 a reduced deﬁning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1, . . . , xn on Cn, O = C{x1, . . . , xn} is the ring of convergent power series and m = ⟨x1, . . . , xn⟩. We abbreviate by fi = ∂f ∂xi , i = 1, . . . , n, the partial derivatives of f.\n\n**Outline.** Front matter; 1 Formulation of the result; 2 Relation to the logarithmic comparison theor; 3 Proof of the theorem; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0603444&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0603444v2",
+    "title_source": "slug",
+    "source_file": "0603444v2.pdf",
+    "source_sha256": "46edfcddca963d08dfb3c5e149f962ea017a707296165d0ec1370b6f3b1a2b75",
+    "pages": 5,
+    "arxiv": {
+      "id": "math/0603444",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "31 Oct 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

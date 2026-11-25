@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/bib-human-review/reference/ohara1991.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/bib-human-review/reference/ohara1991",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "bib-human-review attestation: reference ohara1991",
+      "description": "The bib-human-review judgements recorded for reference ohara1991, each pinned to the hash it attested.",
+      "sourceKind": "bib-human-review",
+      "sourcePath": "test/attestations/bib-human-review/reference/ohara1991.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

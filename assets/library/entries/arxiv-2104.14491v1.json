@@ -1,0 +1,716 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2104.14491v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Khovanov polynomials for satellites and asymptotic adjoint polynomials\nA. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡\nITEP/TH-09/21\nIITP/TH-06/21\nMIPT/TH-05/21\na Institute for Theoretical and Experimental Physics, Moscow 117218, Russia\nb Institute for Information Transmission Problems, Moscow 127994, Russia\nc Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia\n∗anokhina@itep.ru † morozov.itep@mail.ru ‡ popolit@gmail.com\nAbstract\nWe compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for\nthe two simplest families of the satellite knot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nWhy satellites?\nOne can image a satellite knot as a knot inside (i.e., non-tivially embedded into) a solid\ntorus tied in the form of another (companion) knot [1]. In this paper, we study the Khovanov polynomials\nof the satellite knots. We see at least two reasons to do this.\nFirst, the satellite knots are interesting in themselves. Being rare among relatively simple prime knots,\nthe satellite knots can actually predominate in the entire knot space [2, 3]. This is already a reason to\ndevelop eﬃcient calculus for associated knot polynomials.Apart from that, the Khovanov polynomial o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p003-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p003-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knots we study and the questions we ask",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-the-knots-we-study-and-the-questions-we-ask.md",
+      "narrative": null,
+      "content": "In this section we describe the simplest families of satellites knots and their relation to the coloured knot polynomials. We see at least two reasons to use the HOMFLY polynomial as a knot identifier. First, many statements look simpler in terms of knot invariants than in purely geometric terms (far from being a complete invariant, the HOMFLY polynomial is good enough for our purposes). Second, it is the properties of the HOMFLY polynomials that we wish to extend to the Khovanov case.\n\n \n\nThe standard definition of a **satellite knot** $\\mathcal{S}_{\\widetilde{\\mathcal{K}}}^{\\mathcal{K}}$ (se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coloured decompositions for the simplest satellites",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-coloured-decompositions-for-the-simplest-sate.md",
+      "narrative": null,
+      "content": "Many colored knot polynomials (the symmetric and adjoint HOMFLY are among them) can be computed (or even defined) as linear combinations of plain polynomials for the knot cables [@AMcab] and, more generally, for the knot satellites [@KnotBook]. The simplest family, the torus satellites $\\mathcal{S}_{\\mathtt{Tor}_k}^{\\mathcal{K}}$, looks like multiply twisted ribbons tied in the (companion) knot $\\mathcal{K}$ (fig.[\\[fig:sat\\]](#fig:sat){reference-type=\"ref\" reference=\"fig:sat\"}.I). The closure of the ribbon is then a two-strand torus knot (fig.[\\[fig:tortw\\]](#fig:tortw){reference-type=\"ref\" r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pattern decomposition",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-the-pattern-decomposition.md",
+      "narrative": null,
+      "content": "The pattern decomposition\nFollowing [23], one can identically rewrite (5) and (4) in form of pattern decompositions. Namely,\nHSK\nTwk = HTwk+γ + A−k−γ+1{Aq}{A/q}HK\nadj,\n(6)\nand\nHSK\nTork = (Aq)δ HTork+δ −(Aq)k+δ{Aq−1}HK\nasm + (A/q)k+δ{Aq}HK\nsym,\n(7)\nwhere\nHK\nasm = (Aq)δ\n{q2}\n\u0010\nHK\nasm −1\n\u0011\n, HK\nsym = (A/q)−δ\n{q2}\n\u0010\nHK\nsym −q2δ\u0011\n, and HK\nadj = Aγ\n{A}\n\u0010\nHK\nadj −A−γ\u0011\n(8)\nare Lauren polynomials in A and q with integer coeﬃcients. One can chose any integers for γ and δ, but\nthey must be knot invariants if one wishes the H to be a knot invariant too. Some values δ = γ ≡ShK\ngiven by (18) prove to be dis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to get the satellite class from a knot diagram",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-how-to-get-the-satellite-class-from-a-knot-di.md",
+      "narrative": null,
+      "content": "#### The first Reidemeister of the companion and the full twist in the pattern.\n\nThe parameter $k$ of the satellite defined by ([\\[tor-cab-top\\]](#tor-cab-top){reference-type=\"ref\" reference=\"tor-cab-top\"},[\\[tw-cab-top\\]](#tw-cab-top){reference-type=\"ref\" reference=\"tw-cab-top\"}) is a topological invariant, since it enters in the relations of the topologically invariant quantities. On the other hand, a satellite is often presented with its the planar diagram, e.g., with one in fig.[\\[fig:sat\\]](#fig:sat){reference-type=\"ref\" reference=\"fig:sat\"}. Then $k$ must be expressed via the number of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of Jones formulae",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-24-summary-of-jones-formulae.md",
+      "narrative": null,
+      "content": "Summary of Jones formulae\nNow we address to the case which is currently the only deﬁnite common point of the HOMFLY and Khovanov\ncases. This is the case of Jones polynomial, which is obtained for A = q2 from the former and for t = −1\nfrom the latter ones. Explicitly, the Jones polynomial of the satellites we consider has the form\nJSK\nTork(q) = q−3k+1\u0010\n−\n1\n1 + q2 + q2k−2 1 −q6\n1 −q4 JK\nadj(q)\n\u0011\n,\nJSK\nTwk(q) =\nq−4\u0010\n1 + q4\n1 + q2\n−q−2k\n1 −q6\n1 + q2 JK\nadj(q)\n\u0011\n.\n(11)\nThe antisymmetric Jones as well as the trivial Jones identically equals one. Both kinds of the satellite\npolynomials are now expres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Khovanov-evolution formulae for satellite families",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-3-khovanov-evolution-formulae-for-satellite-fami.md",
+      "narrative": null,
+      "content": "Now we return to the Khovanov polynomials and formulate the PPCD conjecture form sec.[\\[sec:int\\]](#sec:int){reference-type=\"ref\" reference=\"sec:int\"} as a precise statement.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-31-preliminaries.md",
+      "narrative": null,
+      "content": "By definition, a positive polynomial is a Laurent polynomial in $q$ and $t$ with non-negative coefficients. Moreover, in our cases these coefficients are integers by construction. Throughout the text $$\\begin{aligned}\n\\{x\\}=x-x^{-1}.\\label{figx}\n\\end{aligned}$$ The jumps in the Khovanov polynomials at critical points of the evolution flow are captured by the sign and step functions, $$\\begin{aligned}\n\\mathtt{sgn}_x=\\left\\{\\begin{array}{cl}-1,&x<0\\\\0,&x=0\\\\1,&x>0\\end{array}\\right.,\\ \\ \\\n\\Theta_x=\\left\\{\\begin{array}{cl}0,&x\\le0\\\\1,&x> 0\\end{array}\\right..\n\\end{aligned}$$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positive pattern-companion decompositions",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-32-positive-pattern-companion-decompositions.md",
+      "narrative": null,
+      "content": "$\\star$ The reduced Khovanov polynomial of a twisted satellite (Whitehead double) of a knot $\\mathcal{K}$ has the form ($k$ in $\\mathtt{Tw}_k$ is *even*, see [\\[app:coltw\\]](#app:coltw){reference-type=\"ref\" reference=\"app:coltw\"}) $$\\begin{aligned}\n\\mathtt{Kh}^{\\mathcal{S}_{\\mathtt{Tw}_k}^{\\mathcal{K}}}=\\mathtt{Kh}^{\\mathtt{Tw}_{k}}(q,t)+\\left(q^2t\\right)^{-k-2}\\left(1+q^6t^3\\right)\\left(1+q^2t\\right){\\mathfrak{K}}^{\\mathcal{K}}(q,t).\n\\label{ppcd-tw-sat}\n\\end{aligned}$$ $\\star$ The reduced Khovanov polynomial of a two-strand torus satellite (two-strand cable) of a knot $\\mathcal{K}$ has the fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "False adjoint Khovanov polynomials",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-33-false-adjoint-khovanov-polynomials.md",
+      "narrative": null,
+      "content": "We call the invariant $\\mathfrak{K}^{\\mathcal{K}}$ an **asymptotic adjoint Khovanov**/**AAK** polynomial. It is *almost* the adjoint/symmetric Khovanov polynomial. Namely, the polynomial $$\\begin{aligned}\n\\widehat{\\mathtt{Kh}}^{\\mathcal{K}}_k(q,t)=\n(-t)^{-1}\\left(q^2t\\right)^{-\\mathtt{Sh}_{\\mathcal{K}}}\\Big((-t)^{\\Theta_k}-\\left(1-q^4t^2\\right){\\mathfrak{K}}^{\\mathcal{K}}(q,t)\\Big)\\label{FAK}\n\\end{aligned}$$ stands for the symmetric polynomial in ([\\[ppcd-tw-sat\\]](#ppcd-tw-sat){reference-type=\"ref\" reference=\"ppcd-tw-sat\"},[\\[ppcd-tor-sat\\]](#ppcd-tor-sat){reference-type=\"ref\" reference=\"ppcd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit form of the pattern and companion invariants",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-4-explicit-form-of-the-pattern-and-companion-inv.md",
+      "narrative": null,
+      "content": "Explicit form of the pattern and companion invariants\nNow we give an explicit form of the two basic ingredients in PPCD formulae from sec.3.2.\nFirst, we\ndescribe the pattern invariant in sec.4.1. In fact, we recall the well known Khovanov polynomials of the two-\nstrand torus and twist knots, bringing the expressions to a proper form. In next sec.4.2,4.3,4.4, we present\nthe explicit expressions for the companion invariants extracted from PPCD. We call them an asymptotic\nadjoint Khovanov (AAK) polynomials, since we believe them to be “tails” of the true adjoint Khovanov\npolynomials that survive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pattern-defining polynomial",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-41-the-pattern-defining-polynomial.md",
+      "narrative": null,
+      "content": "The pattern-deﬁning polynomial\nBy deﬁnition, the k in our STwk and STork, as well as in (15,16,17) is a satellite invariant independent of the\ncompanion knot. Hence k and thus the knot Twk or Tork deﬁnes the pattern of the satellite (see sec.2.3).\nThe ﬁrst term in the PPCD decomposition is just the respective Khovanov polynomial. Namely, the reduced\npolynomial for the twist knot is\nKhTwk\n=\n−(−t)Θk \u0000q2t\n\u0001−k−2·\n \n1 + q2t·\n\u00001 + q4t2\u0001 \u00001 −(q2t)k−1\u0001\n1 −q2t\n!\n(23)\n=\n(−t)Θk \u0000q2t\n\u0001−k·\n \n1 +\n\u0000q2t\n\u0001k−2·\n\u00001 + q4t2\u0001 \u00001 −(q2t)−k\u0001\n1 −q2t\n!\n=\n=\n(−t)Θk(q2t)−2\n \n1 + q4t2\n1 −q2t −(q2t)−k 1 + q6t3\n1 −q2t\n!\n,\nwhi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AAK for the simplest prime knots",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-012-42-aak-for-the-simplest-prime-knots.md",
+      "narrative": null,
+      "content": "AAK for the simplest prime knots\nWe studied decompositions (15) for the simplest prime knots up to 89.\nBelow we present the explicit\nexpressions for the corresponding AAK of the prime knots with no more than 6 crossings.\nK\nKK(q, t)\n31\n1/q2 + 1/(q10t5) + 1/(q8t4) + t2 + q4t4\n41\n1 + 1/q2 + 1/(q12t7) + 1/(q10t6) + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t2 + q6t5 + q8t6\n51\n1/q2 + 1/(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t2) + t/q2 + 2t2 + q4t4 +\nq6t6 + q8t8 + q12t10\n52\n2/q2 + 1/q4 + 1/(q22t13) + 1/(q20t12) + 1/(q16t9) + 2/(q14t8) + 1/(q12t7) + 1/(q14t7) + 2/(q12t6)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AAK for the two-strand torus knots",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-013-43-aak-for-the-two-strand-torus-knots.md",
+      "narrative": null,
+      "content": "We have already considered the simplest torus knots, which are the knots $T[2,n]$ with $n=3,5,7$, or the prime knots $3_1$, $5_1$, $7_1$, respectively. The AAK for the former two ones are explicitly given in ([\\[RolfAAK\\]](#RolfAAK){reference-type=\"ref\" reference=\"RolfAAK\"}). Now we study ([\\[ppcd-tor-sat\\]](#ppcd-tor-sat){reference-type=\"ref\" reference=\"ppcd-tor-sat\"},[\\[ppcd-tw-sat\\]](#ppcd-tw-sat){reference-type=\"ref\" reference=\"ppcd-tw-sat\"}), and ([\\[ppcd-u-tor-sat\\]](#ppcd-u-tor-sat){reference-type=\"ref\" reference=\"ppcd-u-tor-sat\"}) for the two-strand torus knots $T[2,2k+1]\\equiv\\mathtt{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General formulae",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-014-431-general-formulae.md",
+      "narrative": null,
+      "content": "The unreduced (label $u$) AAK polynomials for the two-strand torus knots have the following form $$\\begin{aligned}\n\\mathfrak{K}^{\\mathtt{Tor}_n}&=&t\\left(q^2t\\right)^{\\mathtt{Sh}_{\\mathtt{Tor}_n}\\!\\!-4n}\\hspace{-5mm}\\sum_{\\lambda=1,q^2t,q^6t^4}\\hspace{-5mm}C^{\\mathtt{Tor}_{\\mathtt{sgn}_n}}_{\\lambda}\\lambda^{n-\\mathtt{sgn}_n},\\\\\n{_u}\\mathfrak{K}^{\\mathtt{Tor}_n}&=&\\left(q^2t\\right)^{\\mathtt{Sh}_{\\mathtt{Tor}_n}}\\Big(q^{n-\\mathtt{Sh}_{\\mathtt{Tor}_n}}\\left(q^{-1}+q\\right)+q^{-2}t^{-\\Theta_n}\\left(1+q^4t\\right)\n\\left(q^2t\\right)^{-4n}\\hspace{-5mm}\\sum_{\\lambda=1,q^2t,q^6t^4}\\hspace{-5mm}{_u}C^{\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduced vs unreduced polynomials",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-015-432-reduced-vs-unreduced-polynomials.md",
+      "narrative": null,
+      "content": "The unreduced Khovanov polynomials are expectedly more complicated compared to the reduced ones. In particular, one must extract an \"extra\" exceptional pair in ([\\[ppcd-u-tor-sat\\]](#ppcd-u-tor-sat){reference-type=\"ref\" reference=\"ppcd-u-tor-sat\"}), and our unreduced formulae are invalid for the unknot. The simple quantum group relations are restored for $t=-1$, $$\\begin{aligned}\n\\frac{\\mathtt{Kh}_u^{\\mathcal{K}}(q,t=-1)}{\\mathtt{Kh}(q,t=-1)}=\\frac{\\widehat{\\mathtt{Kh}}_u^{\\mathcal{K}}(q,t=-1)}{\\widehat{\\mathtt{Kh}}^{\\mathcal{K}}(q,t=-1)}=\\frac{q^4+q^2+1}{q^2}.\n\\end{aligned}$$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mirror symmetry",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-016-433-mirror-symmetry.md",
+      "narrative": null,
+      "content": "Mirror symmetry\nBy construction, the Khovanov polynomial have the mirror symmetry for all knots including the torus-torus\nsatellites, i.e.,\nKhK\nTork(q, t) = KhK\nTor−k(q−1, t−1)\n⇒\nKhSTorn\nTork (q, t) = Kh\nS\nTor−n\nTor−k (q−1, t−1).\n(34)\nOur formulae do respect this symmetry, although not explicitly. In particular, the expansion coeﬃcients\nsatisfy\nCTor−\nλ\n(q, t) = CTor−\nλ\n(q−1, t−1)/(q4t3),\nwhile\nuCTor+\nλ\n(q, t) = uCTor−\nλ\n(q−1, t−1).\n(35)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AAK for the twist knots",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-017-44-aak-for-the-twist-knots.md",
+      "narrative": null,
+      "content": "AAK for the twist knots\nThe simplest twist knots (with 1,2,3 half-twist) are the prime knots 31, 52, 72 (positive half-twists), and\n41, 61, 81 (negative half-twists). The AAK for the up to 2 half-twists are explicitly given in (26). Below\nwe present the explicit evolution formulae for the entire twist family Twn (an even integer n is the crossing\nnumber, not to mix the half-twist number l = ±n−2\n2 ). Both decompositions (16) and (15) give the same\nAAK. The obtained formulae describe a “smooth” exponential dependence on n in each of the domains\nn < 0 and n > 0, aside the critical jumps at the u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/figure-img-p011-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General formulae",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-018-441-general-formulae.md",
+      "narrative": null,
+      "content": "General formulae\nThe AAK of the twist knots have the form\nKTwn = t\n\u0000q2t\n\u0001ShTwn X\nλ=1,q2t,q6t4\nC\nTwsgnn\nλ\nλ2Θn−n,\nC\nTwsgnn\nλ\n= (λ/t)−2Θn \u0010\n`CTw\nλ + (−t)−Θn ``CTw\nλ\n\u0011\n,\n(36)\nwith the coeﬃcients\nλ\n1\nq2t\nq6t4\n`CTw\nλ\n1+q6t4+q8t5+q10t7\nq12t8(1−q2t)(1−q6t4)\n−1\n1−q2t\n\u0012(1+q2t2)(1+q6t4)\nq12t8\n+ (t+1)\n1−q4t3+\n(t+1)2\nq2t2(1−q6t8)\n\u0013 (1+q2t)(1+q8t5)(1+q10t7)\nq10t6(1−q6t4)(1−q8t6)\n``Cλ\nTw\n1+q4t(q2t)−6Θn\nq4t2(1−q4t2)\n−(1+t)\nq4t3(1−q4t2)\n0\n. (37)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Why there is no mirror symmetry?",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-019-442-why-there-is-no-mirror-symmetry.md",
+      "narrative": null,
+      "content": "Because the $\\mathtt{Tw}_+$ and $\\mathtt{Tw}_-$ are the two distinct families, and their polynomials are not related in any simple way (see App.[\\[app:coltw\\]](#app:coltw){reference-type=\"ref\" reference=\"app:coltw\"}).\n\n::: wrapfigure\nl180pt $$\\arraycolsep=0cm\n    \\begin{array}{cc}\n    \\includegraphics[width=3cm]{Fig5.png}&\n    \\includegraphics[width=3cm]{Fig6.png}\\\\\n    \\mathrm{I.}\\ \\mathcal{K}=\\mathtt{Tor}_{n}&\\mathrm{II.}\\ \\mathcal{K}=\\mathtt{Tw}_{-2}\\\\\n    \\end{array}$$\n:::",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double-evolution phase diagrams",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-020-45-double-evolution-phase-diagrams.md",
+      "narrative": null,
+      "content": "Now one can combine companion-evolution formulae ([\\[tor-evo\\]](#tor-evo){reference-type=\"ref\" reference=\"tor-evo\"},[\\[tw-evo\\]](#tw-evo){reference-type=\"ref\" reference=\"tw-evo\"}) with pattern-evolution formulae ([\\[ppcd-tw-sat\\]](#ppcd-tw-sat){reference-type=\"ref\" reference=\"ppcd-tw-sat\"},[\\[ppcd-tor-sat\\]](#ppcd-tor-sat){reference-type=\"ref\" reference=\"ppcd-tor-sat\"},[\\[ppcd-u-tor-sat\\]](#ppcd-u-tor-sat){reference-type=\"ref\" reference=\"ppcd-u-tor-sat\"}) to obtain double-evolution diagrams as in [@DBPev; @APev]. A subtle point is that the invariant pattern-evolution variable $k$ is related to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eigenvalue expressions, polynomiality and positivity",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-021-5-eigenvalue-expressions-polynomiality-and-posit.md",
+      "narrative": null,
+      "content": "Our evolution formulae for the Khovanov polynomials must give the positive Laurent polynomials in $q$ and $t$, but it is far from obvious that they do. Now we rewrite the formulae so that this property becomes explicit.\n\nIn this section, we introduce the eigenvalue variables $$\\begin{aligned}\nu=1,\\ \\ x=q^2t,\\ \\ y=q^4t^6.\\label{evars}\n\\end{aligned}$$ as follows. First we substitute $$\\begin{aligned}\nq^2=\\frac{x^4}{y},\\ \\ t=\\frac{y}{x^3}.\n\\end{aligned}$$ Then we place proper powers of $u$ to complete the coefficients to the fractions of homogeneous polynomials, so that the total homogeneity degr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Possible applications and further development",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-022-6-possible-applications-and-further-development.md",
+      "narrative": null,
+      "content": "Possible applications and further development\nThe above results broaden the class of the knot families, for which the Khovanov polynomials are explicitly\ndescribed. The two-cables and the Whitehead doubles naturally complement torus, twisted, ﬁgure-eight-like,\nand pretzel knots. And now this list is to be further extended, probably in a more systematic way.\nThe used approach to the satellite polynomials is a good example of tangle calculus [40, 41], which one\nday should become a truly working formalism for 3d TQFTs far beyond knot and Chern-Simons theories.\nWe mean a properly extended techniqu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Cabling and an invariant definition of the m-strand satellite",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-023-a-cabling-and-an-invariant-definition-of-the-m-s.md",
+      "narrative": null,
+      "content": "Cabling and an invariant deﬁnition of the m-strand satellite\nIn this section, we assume that a satellite is deﬁned by a planar diagram, like one in ﬁg.1. We wish to\nsubstitute the two strands that ﬁrst go along the companion and than intertwine with each other with any\nnumber of such ones.\nLet K◦m\nw\nbe the satellite of the knot K that is obtained when each line on the K diagram with the\nwrithe number w is substituted with m parallel strands. The satellite polynomial is then expanded over the\ncoloured polynomials of the as\nˇHK◦m\nν\n=\nX\nQ⊢□⊗m\nˇHKν\nQ ,\n(46)\nwhere the colour (representation) label",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B First symmetric polynomials for the simplest knot families",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-024-b-first-symmetric-polynomials-for-the-simplest-k.md",
+      "narrative": null,
+      "content": "First symmetric polynomials for the simplest knot families\nHere we summarise the explicit formulae and the basic properties of the coloured HOMFLY polynomials of\nthe two-strand torus and twist knots. The need references can be found in [37].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Two-strand torus knots",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-025-b1-two-strand-torus-knots.md",
+      "narrative": null,
+      "content": "Two-strand torus knots\nAll torus knots Torn (ﬁg.2.I) have odd half-twist number n (while even n yields a two-component link). The\nﬁrst torus knots have the standard prime-knot names n1 (n = 3, 5, 7, 9), and 11a367 (n = −11). The torus\nknots with n and −n are the mirror images of each other, in general the topologically distinct knots. The\nexceptions are Tor−1 = Tor1, which both represent the unknot. Hence the Jones, HOMFLY, and Khovanov\npolynomials equal 1 for Tw±1.\nTorus knots, Torn, n = 2k −1\nHTorn = P\nλ Cλλn\nEigen-\nvalues,\nCoeﬃcients, Cλ\nλ\nSymmetric representation Adjoint representation\n(A/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 Twist knots",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-026-b2-twist-knots.md",
+      "narrative": null,
+      "content": "Twist knots\nThe twist knots are obtained both for odd and even half-twists numbers n, but the knot diagrams with 2k−1\nand 2k half twists yield the same knot. Yet there is no nice formula for the HOMFLY polynomials where\nn can be both odd and even, but rather two separate formulae for the two cases. Unlike the case of torus\nknots, the mirror image of a twist knot Twn the topologically distinct from the knot Tw−n. Instead that, there\nare the two diﬀerent families of the knots Tw◦◦and Tw••, diﬀering by the orientation of the two lock-down\ncrossings (adjacent to the gray area in ﬁg.2.II). The mirr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Technical guidance to the experimental data",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-027-c-technical-guidance-to-the-experimental-data.md",
+      "narrative": null,
+      "content": "Technical guidance to the experimental data",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.1 Simplest knots",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-028-c1-simplest-knots.md",
+      "narrative": null,
+      "content": "Simplest knots\nThe source ﬁles have the names like “kh-red-precomp-whiteheadized-rolfsen-knot-c-m”, where “c-m” is the\nRolfsen name of the knot [35], e.g., “6-3”. The MAPLE function is called “KhTwKn(kn,k)”, where the kn\nis the knot number in the list “Knots” (contains all available cases) and k is the satellite class (see sec.2.3).\n(q2t)−1 · PrecompKhRed[K, crK + k, 2] = KhSK\nTwk\nK\n31\n41\n51\n52\n61\n62 63\n71\n72 73 74 75 76 77\n81\n82 83 84 85 86 87 88 89\n≃Tor3\nTor5\nTor7\n≃\nTw2 Tw−2\nTw3 Tw−4\nTw5\nTw−6\ncrK\n0\n0\n−2\n4\n4\n−2 0\n−4\n8 −2 −8 2 0 −2\n8\n−4 0 −6 4 2 2 −4 0\ncrTorn<0 = 3n + 3\ncrTorn>0 = 3n −3\ncrTwn≤",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.2 Simplest knot families",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-029-c2-simplest-knot-families.md",
+      "narrative": null,
+      "content": "Simplest knot families\nThe source ﬁles have the names like “kh-red-precomp-<label>-<knot name>” (reduced polynomials) or\n“kh-precomp-<label>-<knot name>” (unreduced polynomials, the torus-torus case). The notations are\nexplained in sec.2.\nDescription of families\nMatching pairs\nCompanion, Pattern/\ncompanion,\nMAPLE\nSource ﬁle, label;\nsource/\n♯half-twists, ♯half-twists\nfunction\nthe matching\nMAPLE\nwrithe\n(arguments)\narguments\nfactor\nTorus\nTorus,\nKuTorTor\n(−n,−n+3sgnn+w)\ntwst-torus\nq2t, n>0, red.\nn=2l+1,\nw=2p+1\nKTorTor\n(n,n−3sgnn+w)\nn, w\nq−1, othw.\nν = n\nTwist,\nKTorTw\n(n,n−3sgnn +w)\nwhiteheadized-t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.14491v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.3 Precaution",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-030-c3-precaution.md",
+      "narrative": null,
+      "content": "Precaution\nThe program from [35] seems to work incorrectly for some knot diagrams. The simplest example is the\ndiagram X[1, 2, 2, 1] that represents the twisted unknot. This can be usually coped with by inserting a long\nenough trivial two-strand braid of the form (1, −1, 1, −1, . . .) (converted to a Gauss diagram).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

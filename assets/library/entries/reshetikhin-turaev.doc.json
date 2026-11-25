@@ -1,0 +1,1209 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "reshetikhin-turaev",
+  "title": "Ribbon graphs and their invaraints derived from quantum groups",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Compact Braided Categories",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-compact-braided-categories"
+    },
+    {
+      "level": 1,
+      "title": "Quasitriangular and Ribbon Hopf Algebras",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-quasitriangular-and-ribbon-hopf-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Coloured Ribbon Graphs",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-coloured-ribbon-graphs"
+    },
+    {
+      "level": 2,
+      "title": "I vl vl vl",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-i-vl-vl-vl"
+    },
+    {
+      "level": 1,
+      "title": "The Main Theorem",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-main-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
+      "number": "5.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-53-lemma-figure-8-presents-a-generating-set-of-r"
+    },
+    {
+      "level": 1,
+      "title": "Applications and Generalizations of Theorem 5.1",
+      "number": "6",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-applications-and-generalizations-of-theorem-51"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-7-examples"
+    },
+    {
+      "level": 2,
+      "title": "V~ ~Va|",
+      "number": "f",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-f-v-va"
+    },
+    {
+      "level": 2,
+      "title": "R=exp(~H|",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-rexph"
+    },
+    {
+      "level": 2,
+      "title": "Jm~,,~",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-jm"
+    },
+    {
+      "level": 2,
+      "title": "In]q!",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-inq"
+    },
+    {
+      "level": 3,
+      "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+      "number": "24",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl"
+    },
+    {
+      "level": 3,
+      "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+      "number": "2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12"
+    },
+    {
+      "level": 3,
+      "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189",
+      "number": "2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189 [jl +mt +r]l [j2 +j-ml-r]!",
+      "number": "2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "V JlJ2J ] j~ F. [m~m2mJe,,,~e,,~ 9",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-015-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graphs",
+          "heading": false
+        },
+        {
+          "term": "fontanka",
+          "heading": false
+        },
+        {
+          "term": "ussr",
+          "heading": false
+        }
+      ],
+      "extract": "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics \u000e9 Springer-Verlag 1990 Ribbon Graphs and Their Invariants Derived from Quantum Groups N. Yu. Reshetikhin and V. G. Turaev L.O.M.I., Fontanka 27, SU-191011 Leningrad, USSR Abstract. The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the",
+      "extractCut": true,
+      "blocks": [
+        "library/reshetikhin-turaev/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 745,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-coloured ribbon",
+          "heading": false
+        },
+        {
+          "term": "coloured ribbon",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "jones-type polynomials",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "covariant functor",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The present paper is intended to generalize the Jones polynomial of links and the related Jones-Conway and Kauffman polynomials to the case of graphs in R 3. Originally the Jones polynomial was defined for links of circles in R 3 via an astonishing use of yon Neumann algebras (see [Jo]). Later on it was understood that this and related polynomials may be constructed using the quantum R-matrices (see, for instance,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-compact-braided-categories",
+      "number": "2",
+      "title": "Compact Braided Categories",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strict monoidal",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "cvv",
+          "heading": false
+        },
+        {
+          "term": "braided",
+          "heading": true
+        },
+        {
+          "term": "covariant functor",
+          "heading": false
+        },
+        {
+          "term": "compact",
+          "heading": true
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, •) consists of a category Co, a covariant functor (the tensor product) | : C o x Co-~C o, an object I of Co, and natural isomorphisms a = avvw : (U | V) | W--* U |174 W), r=rv: V| E=dv:I| Ribbon Graphs Derived from Their Invariants 3 t~ (where U, V, W are arbitrary objects of Co) so that the following two diagrams commute: )/(u|174174",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quasitriangular-and-ribbon-hopf-algebras",
+      "number": "3",
+      "title": "Quasitriangular and Ribbon Hopf Algebras",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasitriangular hopf",
+          "heading": true
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": true
+        },
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "category repa",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "braided monoidal",
+          "heading": false
+        },
+        {
+          "term": "algebra homomorphism",
+          "heading": false
+        },
+        {
+          "term": "fli",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the comultiplication A, counit ~ and antipodal mapping s. Let R be an invertible element of A |174 Denote the permutation homomorphism a|174 : A|174 by P. The pair (A, R) is called a quasitriangular Hopf Ribbon Graphs Derived from Their Invariants algebra if for any a ~ A, A'(a)=RA(a)R -~ , (A | (R) -- R 13R23, (id a| (R) = R 13R12. (3.1.1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-coloured-ribbon-graphs",
+      "number": "4",
+      "title": "Coloured Ribbon Graphs",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imbedding",
+          "heading": false
+        },
+        {
+          "term": "bands",
+          "heading": false
+        },
+        {
+          "term": "ribbon",
+          "heading": true
+        },
+        {
+          "term": "annuli",
+          "heading": false
+        }
+      ],
+      "extract": "4.1. Bands and Annuli. A band is the image of the square [0, 1] x [0, 1] under its (smooth) imbedding in R 3. The images of the segments [0,1] x 0 and [0, I] x 1 under this imbedding are called bases of the band. The image of the segment (1/2) x [0, 1] is called the core of the band. An annulus is the image of the cylinder S 1 • [0,1] under an imbedding in R 3. The image of the circle S 1 x (1/2) under this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-i-vl-vl-vl",
+      "number": null,
+      "title": "I vl vl vl",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "border ribbons",
+          "heading": false
+        },
+        {
+          "term": "directed ribbon",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "incident ribbon",
+          "heading": false
+        },
+        {
+          "term": "coloured directed",
+          "heading": false
+        },
+        {
+          "term": "type bands",
+          "heading": false
+        },
+        {
+          "term": "white side",
+          "heading": false
+        },
+        {
+          "term": "graph surface",
+          "heading": false
+        }
+      ],
+      "extract": "9 (d) S meets RZx {0,1} exactly in bases of certain type 2 bands and the collection of these bases is the collection of segments {[i_~ . 1 ~,l+~] x0x0[i=l .... ,k}tu{[j-\u000188188 (4.2.1) (e) the remaining bases of type 2 bands are contained in the bases of type 1 bands. The surface S is called the surface of the graph. The type 1 bands are called coupons, the type 2 bands are called ribbons. Those ribbons which are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-the-main-theorem",
+      "number": "5",
+      "title": "The Main Theorem",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generate hcdr",
+          "heading": false
+        },
+        {
+          "term": "hcdr-graphs",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "transforms",
+          "heading": false
+        },
+        {
+          "term": "a-linear",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "standard position",
+          "heading": false
+        },
+        {
+          "term": "associates",
+          "heading": false
+        }
+      ],
+      "extract": "5.1. Theorem. Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a unique covariant functor F = F A : HCDR(A)~ RepDA which has the following properties: (i) F preserves the tensor product; (ii) For any A-module V of finite dimension over I the functor F transforms the object (V,e) into V ~, where VI=V and V-I=VV; (aft) F transforms the CDR-graphs r'. v, r v, Xv, w (see Fig. 2) respectively in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-53-lemma-figure-8-presents-a-generating-set-of-r",
+      "number": "5.3",
+      "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 719,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rel",
+          "heading": false
+        },
+        {
+          "term": "rell",
+          "heading": false
+        },
+        {
+          "term": "ret",
+          "heading": false
+        },
+        {
+          "term": "coupons",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "rels",
+          "heading": false
+        },
+        {
+          "term": "graphs derived",
+          "heading": false
+        },
+        {
+          "term": "fix bases",
+          "heading": false
+        }
+      ],
+      "extract": "HCDR(A) given by Lemma 5.2. Note that all the relations Rel~-Rel~3 of Fig. 8 may be written purely algebraically. For example, the first relation Rel~ means that (~v| Iv) ~ (Iv| = Iv. 14 Ret I Ret 2 Rets Rat 7 Ret 9 Ret e Re111 N. Yu. Reshetikhin and V. G. Turaev ReL~ Ret~ Rei 6 RB[IO Ribbon Graphs Derived from Their Invariants Fig. 8 Re112 W1 Wb W~ W b V 1 V a 15 The main point in the proof of Lemma 5.3 is to show",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-applications-and-generalizations-of-theorem-51",
+      "number": "6",
+      "title": "Applications and Generalizations of Theorem 5.1",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colouring coupons",
+          "heading": false
+        },
+        {
+          "term": "coloured ribbons",
+          "heading": false
+        },
+        {
+          "term": "border ribbons",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "directed ribbon",
+          "heading": false
+        },
+        {
+          "term": "coloured framed",
+          "heading": false
+        },
+        {
+          "term": "coloured link",
+          "heading": false
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": false
+        }
+      ],
+      "extract": "6. Applications and Generalizations of Theorem 5.1 6.1. Isotopy lnvariants of Coloured Links. A link in R 3 is a finite set of disjoint oriented smooth circles imbedded in R 3. The circles are called the components of the link. Fix a ribbon Hopf algebra A. An A-colouring of the link is a function associating with each component an A-module of finite dimension over the ground field. A link is called framed if each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-examples",
+      "number": "7",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valent coupons",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": false
+        },
+        {
+          "term": "h-adic topology",
+          "heading": false
+        },
+        {
+          "term": "u-modules",
+          "heading": false
+        },
+        {
+          "term": "highest weights",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "7.1. Algebra Uh15. The theory of quantum groups developed in [Dr1, J] gives nontrivial examples of (topological) ribbon Hopf algebras. We mean the quantized universal enveloping algebras of simple Lie algebras, called also briefly quantized Lie algebras. Let 15 be a simple Lie algebra. The quantized Lie algebra Uh15 is the associative algebra over the ring of formal power series ll2~h~ generated (as an algebra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-f-v-va",
+      "number": "f",
+      "title": "V~ ~Va|",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coupons",
+          "heading": false
+        },
+        {
+          "term": "uhsl",
+          "heading": false
+        },
+        {
+          "term": "colours",
+          "heading": false
+        },
+        {
+          "term": "hcdr",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "weight basis",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "annuli",
+          "heading": false
+        }
+      ],
+      "extract": "~, g: Va| ~. Such homomorphisms bijeetive!y correspond to elements of W~ u (respectively (Wff\")*). There are rather explicit parametrizations of the elements of Wff\". In the case IB = sl, the simplest parametrization is given by the Young tableaux. 7.3. Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of U = Uh~ with the highest weight. Let (Va) Y be the dual representation (3.2./). Put ;~*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-rexph",
+      "number": null,
+      "title": "R=exp(~H|",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 39,
+      "summary": null,
+      "keywords": [],
+      "extract": ".h(h:) s (t) X e hn(H| | +)n@(x -)n It is not difficult to compute the matrix elements of R j~j2 = (0J~| 0J2)R in the weight basis: jlJ2 Jl J2 __ (Rjzj2]ml +n, m2-neJ~ ~aJl R (e,,l| Y,~",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-jm",
+      "number": null,
+      "title": "Jm~,,~",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": ",,~+,\"~'~m2-,\" n Here the non-zero matrix elements may be expressed as follows: ilnlm 2 -- (j __q-1)n ([Jl --/111]! []1 -I-m1 -l-HI' []2 + m2\"l' [J2 \"-[-/'I-- rn2] .I~ i/2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-inq",
+      "number": null,
+      "title": "In]q!",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 44,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\U,-m,-n]! U1-}-ml]! [J2+m2-n] ! [j2--m2] ?1 X q2- (n 1 - n2 + 2n) The tensor product V jl | V j2 is decomposable into the direct sum of irreducible summands V j by the formula (7.2.1) where all multiplicity spaces are 1-dimen- 24",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl",
+      "number": "24",
+      "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sional",
+          "heading": true
+        },
+        {
+          "term": "coupon",
+          "heading": false
+        },
+        {
+          "term": "annuli",
+          "heading": false
+        },
+        {
+          "term": "ribbon",
+          "heading": false
+        },
+        {
+          "term": "cores",
+          "heading": false
+        }
+      ],
+      "extract": "sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2= @ V j. (7.4.1) IJl - J21 <- J <=J~ + J2 2j = 2ji + 2jz(mod 2) Therefore, the Vhslz-colouring of 3-valent ribbon graphs is extremely similar. It suffices to associate with each ribbon and integer or half-integer j and with each coupon a complex number. Of course, the invariant F of the graph may be non- zero only if for every",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12",
+      "number": "2",
+      "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hcdr",
+          "heading": false
+        },
+        {
+          "term": "lul",
+          "heading": true
+        },
+        {
+          "term": "repa",
+          "heading": false
+        },
+        {
+          "term": "racah-wigner",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "associativity",
+          "heading": false
+        }
+      ],
+      "extract": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189 [jl +mt +r]l [j2 +j-ml-r]! r [r]! [j-m-r]! [jl-mt-r]! [_jz-j +mx +r]!\" These numbers are called q-3j-symbols (see [KR, K]). They constitute the transformation matrix for (7.4.1): for IJ~ - J2[ < J < J~ + J2 and m = - j, ..., j, we have 9 V JlJ2J ] j~ J2 e~= F. [m~m2mJe,,,~e,,~ 9",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lomi-preprint",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebras",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin",
+          "heading": false
+        },
+        {
+          "term": "leningrad",
+          "heading": false
+        },
+        {
+          "term": "operator invariants",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        }
+      ],
+      "extract": "1. [Br] Breliariaer, M.R., Moody, R.V., Patera, J.: Tables of dominant weight multiplicities for representation of simple Lie groups. New York: Dekker 1984 2. FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura varieties. Lecture Notes in Mathematics, vol. 900. Berlin, Heidelberg, New York: Springer 1982 3. [Drl] Drinfeld, V.G.: Proceedings of the International Congress of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ribbon graphs",
+      "heading": true
+    },
+    {
+      "term": "ribbon hopf",
+      "heading": true
+    },
+    {
+      "term": "coloured ribbon",
+      "heading": true
+    },
+    {
+      "term": "a-coloured ribbon",
+      "heading": false
+    },
+    {
+      "term": "directed ribbon",
+      "heading": false
+    },
+    {
+      "term": "incident ribbon",
+      "heading": false
+    },
+    {
+      "term": "ribbon tangles",
+      "heading": false
+    },
+    {
+      "term": "colouring coupons",
+      "heading": false
+    },
+    {
+      "term": "graphs derived",
+      "heading": false
+    },
+    {
+      "term": "valent coupons",
+      "heading": false
+    },
+    {
+      "term": "border ribbons",
+      "heading": false
+    },
+    {
+      "term": "even graphs",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/reshetikhin-turaev"
+  }
+}

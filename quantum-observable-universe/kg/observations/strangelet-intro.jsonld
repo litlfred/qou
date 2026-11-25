@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-strangelet-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:strangelet-intro",
+  "kind": "prose",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+    "papers/quantum-observable-universe/blocks/sec-confinement-selection-intro",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-chamber-groebner-basis"
+  ],
+  "cites": [
+    "references/alford1999",
+    "references/witten1984"
+  ],
+  "text": "strangelet-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

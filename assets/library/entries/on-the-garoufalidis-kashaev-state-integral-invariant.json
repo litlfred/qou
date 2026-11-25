@@ -1,0 +1,1891 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "on-the-garoufalidis-kashaev-state-integral-invariant",
+  "blocks": [
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL\nINVARIANT\nby\nAmelia Palmer Dusenbury\nA thesis\nsubmitted in partial fulfillment\nof the requirements for the degree of\nMaster of Science in Mathematics\nBoise State University\nAugust 2025\n© 2025\nAmelia Palmer Dusenbury\nALL RIGHTS RESERVED\nBOISE STATE UNIVERSITY GRADUATE COLLEGE\nDEFENSE COMMITTEE AND FINAL READING APPROVALS\nof the thesis submitted by\nAmelia Palmer Dusenbury\nThesis Title: On the Garoufalidis-Kashaev State-Integral Invariant\nDate of Final Oral Examination: 20 June 2025\nThe following individuals read and discussed the thesis submitted by stu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGMENTS",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-acknowledgments.md",
+      "narrative": null,
+      "content": "This thesis is the product of guidance, encouragement, and quiet generosity\nfrom people whom I cannot adequately thank.\nFirst and foremost, I thank my advisor, Dr. Uwe Kaiser, whose insight, patience,\nand relentless curiosity have shaped both this work and my mathematical growth.\nI am grateful to the members of my thesis committee—Dr. Zachariah Teitler and\nDr. Jens Harlander—for their careful reading, constructive criticism, and invaluable\nsuggestions.\nThis research was supported in part by a Mathematics Department Graduate\nTeaching Assistantship. I am deeply appreciative of this financial s u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 5,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "This thesis explores a construction of the family of topological invariants\nfor certain oriented 3-manifolds based on the state-integral approach developed by\nAndersen, Garoufalidis, and Kashaev in the Archimedean setting. Starting from an\nideal triangulation of a 3-manifold equipped with angle data, variables are assigned\nto the faces and tetrahedra, taking values in a so-called ’Gaussian group’. The\ninvariant is defined by integrating a distribution defined from the combinatorics of\nthe triangulation and a special function over a product of the Gaussian group.\nThe special function is a quant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LIST OF TABLES",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-list-of-tables.md",
+      "narrative": null,
+      "content": "5.1\nSummary of targets of FF,X,θ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44\nx\n1\nCHAPTER 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation and Background",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-motivation-and-background.md",
+      "narrative": null,
+      "content": "Motivation and Background\nThis thesis considers a class of analytic topological constructions known as face-\ntype state-integrals, focusing on their formulation over Archimedean local fields. These\nintegrals originate in a framework developed by Andersen, Garoufalidis, and Kashaev,\nwhich draws together tools from quantum topology, Teichm¨uller theory, and aspects\nof quantum group representation theory.\nFace-type state-integrals aim to assign quantum amplitudes to triangulated 3-\nmanifolds by combining combinatorial input (such as ideal triangulations and an-\ngle structures) with algebraically",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview of the Construction",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-overview-of-the-construction.md",
+      "narrative": null,
+      "content": "Overview of the Construction\nThe construction proceeds by associating combinatorial and algebraic data to a\ntriangulated 3-manifold M: In the following F denotes a local field (see 2.4), F × =\nF \\ {0} and ˆ\nF × denotes the Pontryagin dual of F ×.\n• An ideal triangulation X is fixed (specifying the tetrahedra and their face\npairings), equipped with an angle structure taking values in R×F × (see 3.3.1).\n• State variables and dynamical variables are assigned to faces and tetrahedra,\nrespectively, with values in c\nF × × F × for F.\n• Each tetrahedron is equipped with angle data that deforms a primi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Results",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-main-results.md",
+      "narrative": null,
+      "content": "Main Results\nThe main results of this work include:\n3\n1. A construction of the state-integral FF,X,θ over an Archimedean local field F,\ndepending on an ideal triangulation X and a balanced angle structure θ.\n2. An exposition that, under positivity assumptions on the angle data and a homo-\nlogical constraint on the complex, the integrand defines a tempered distribution\nand the state-integral converges\n3. A demonstration that the deformed quantum dilogarithm Ψa,c satisfies a pen-\ntagon identity, supporting invariance of the partition function under Pachner\n2 ↔3 moves.\n4. A definiton of gauge tra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the Thesis",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-structure-of-the-thesis.md",
+      "narrative": null,
+      "content": "Structure of the Thesis\nThe thesis is organized as follows:\n• Chapter 2 introduces locally compact abelian groups and Pontryagin duality,\nalong with the Gaussian group structures used in the formulation of the integral.\n• Chapter 3 presents the quantum dilogarithm, its deformation by angle data,\nand its key functional identities, including inversion and the pentagon relation.\n• Chapter 4 defines the face-type state-integral, detailing the roles of kinematical\nconstraints and dynamical weights.\n• Chapter 5 describes the output space of the integral, including the structure of\nits dependence on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections and Outlook",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-connections-and-outlook.md",
+      "narrative": null,
+      "content": "Connections and Outlook\nWhile the focus of this thesis is on a specific construction, the state-integral\napproach touches on several areas of broader mathematical interest:\n• Quantum topology: The construction provides different quantum invariants\nthan those usually derived from modular categories and skein-theoretic methods\n(SL2(C) as opposed to compact gauge groups) [18].\n• Teichm¨uller theory: The angle-deformed quantum dilogarithm Ψa,c corre-\nsponds to the charged tetrahedra operator defined in [1], section 4, which is\nrelated to functions arising in quantum Teichm¨uller theory (Faddeev qu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections to Representation Theory",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-connections-to-representation-theory.md",
+      "narrative": null,
+      "content": "Connections to Representation Theory\nAlthough harmonic analysis appears only peripherally in this work, the representa-\ntion-theoretic context provides important background motivation. At a classical level,\nthe moduli space of flat G-connections on a 3-manifold (character variety) and the\nboundary data in the state-integral may be interpreted as holonomy-type parameters\nin this setting.\nIn the quantum case, the function Ψa,c has close connections to the representation\ntheory of quantum groups, including Uq(sl2), where it arises in the construction of\nintertwiners and associators.\nThe pentagon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "def-sec-011-01.md",
+      "narrative": null,
+      "content": "A locally compact abelian group (LCA group) is a topological group L satisfying: 1. Abelian structure: xy = yx for all x, y ∈L. 2. Local compactness: Every point x ∈L admits a neighborhood whose closure is compact. 3. Hausdorff separation: Distinct points are separable via disjoint open sets. The combination of commutativity and local compactness ensures the existence of Haar measure and well-posed harmonic analysis.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Locally Compact Abelian Groups, Pontryagin Duality, and Gaussian Structures HR",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-locally-compact-abelian-groups-pontryagin-dualit.md",
+      "narrative": null,
+      "content": "PONTRYAGIN DUALITY, AND GAUSSIAN\nSTRUCTURES [10]\n2.1\nLocally Compact Abelian Groups",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Foundational Definitions",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-foundational-definitions.md",
+      "narrative": null,
+      "content": "Foundational Definitions\nDefinition 1. A locally compact abelian group (LCA group) is a topological group L\nsatisfying:\n1. Abelian structure: xy = yx for all x, y ∈L.\n2. Local compactness: Every point x ∈L admits a neighborhood whose closure\nis compact.\n3. Hausdorff separation: Distinct points are separable via disjoint open sets.\nThe combination of commutativity and local compactness ensures the existence\nof Haar measure and well-posed harmonic analysis.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-examples.md",
+      "narrative": null,
+      "content": "Examples\nThe class of LCA groups encompasses:\n7\n• Euclidean spaces Rn.\n• The circle group T (written multiplicatively), central to Fourier series.\n• Discrete groups such as Z, finite cyclic groups Z/nZ, and their countable direct\nsums.\n• Compact profinite groups, as inverse limits of finite abelian groups.\n• Non-Archimedean fields such as Qp.\n• Direct sums and products of LCA groups, which are also LCA groups. For\nexample, the group R × Z is an LCA group as both R and Z are LCA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "def-sec-015-01.md",
+      "narrative": null,
+      "content": "A homomorphism of LCA groups is a continuous group homomorphism between locally compact abelian groups. An isomorphism of LCA groups is a group isomorphism ϕ: L →H that is also a homeomorphism. In other words, it is a bijective continuous map whose inverse is also continuous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "def-sec-015-02.md",
+      "narrative": null,
+      "content": "Let L be a locally compact abelian (LCA) group, equipped with its topology as a topological group. A Pontryagin character on L is a continuous group homomorphism χ: L →T, where T = {z ∈C | |z| = 1} is the circle group with its standard topology. The set of all such characters forms the Pontryagin dual group bL := Homcont(L, T), which is itself a topological group when endowed with the compact-open topology—that is, the topology of uniform convergence on compact subsets of L. This makes bL into an LCA group as well.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure Theorem (Informal)",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-structure-theorem-informal.md",
+      "narrative": null,
+      "content": "Structure Theorem (Informal)\nEvery LCA group decomposes (non-canonically) into:\nTheorem 1 (Structure Theorem (informal)). Any LCA group L admits an isomor-\nphism\nL ∼= Rn × D × K,\nwhere D is discrete, K is compact, and n ∈Z≥0 (the set on non-negative integers).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pontryagin Duality",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-pontryagin-duality.md",
+      "narrative": null,
+      "content": "Pontryagin Duality",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Character Groups and Duality",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-character-groups-and-duality.md",
+      "narrative": null,
+      "content": "Character Groups and Duality\nPontryagin duality equips every LCA group with a harmonic dual.\nDefinition 2. A homomorphism of LCA groups is a continuous group homomorphism\nbetween locally compact abelian groups.\n8\nAn isomorphism of LCA groups is a group isomorphism\nϕ: L →H\nthat is also a homeomorphism. In other words, it is a bijective continuous map whose\ninverse is also continuous.\nDefinition 3. Let L be a locally compact abelian (LCA) group, equipped with its\ntopology as a topological group. A Pontryagin character on L is a continuous group\nhomomorphism χ: L →T, where T = {z ∈C | |z| = 1} is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pontryagin Duality Theorem",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-016-pontryagin-duality-theorem.md",
+      "narrative": null,
+      "content": "Pontryagin Duality Theorem\nTheorem 2 (Pontryagin Duality). For any LCA group L, the canonical evaluation\nmap\nι: L →bbL, x 7→(χ 7→χ(x)),\nis an isomorphism of topological abelian groups.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of Dual Pairs",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-examples-of-dual-pairs.md",
+      "narrative": null,
+      "content": "Examples of Dual Pairs\nPontryagin duality inverts compactness and discreteness: bZ ∼= T, bT ∼= Z,\nc\nRn ∼= Rn.\n9",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Pontryagin Duality",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "For any LCA group L, the canonical evaluation map ι: L →bbL, x 7→(χ 7→χ(x)), is an isomorphism of topological abelian groups.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "def-sec-018-01.md",
+      "narrative": null,
+      "content": "Let G be a locally compact abelian (LCA) group. A Gaussian group is a pair (G, ⟨·⟩) where ⟨·⟩: G →T is a continuous function, called a quadratic exponential, satisfying: 1. Evenness: ⟨x⟩= ⟨−x⟩for all x ∈G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian Group",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-gaussian-group.md",
+      "narrative": null,
+      "content": "Gaussian Group\nA Gaussian Group developed in previous works [2, 13] and denominated in [7].\nDefinition 4. Let G be a locally compact abelian (LCA) group. A Gaussian group\nis a pair (G, ⟨·⟩) where\n⟨·⟩: G →T\nis a continuous function, called a quadratic exponential, satisfying:\n1. Evenness: ⟨x⟩= ⟨−x⟩for all x ∈G.\n2. Polarization: the function\n⟨x; y⟩:= ⟨x + y⟩\n⟨x⟩⟨y⟩\ndefines a continuous, symmetric bicharacter ⟨·; ·⟩: G × G →T, meaning:\n⟨x + x′; y⟩= ⟨x; y⟩⟨x′; y⟩,\n⟨x; y + y′⟩= ⟨x; y⟩⟨x; y′⟩,\n⟨x; y⟩= ⟨y; x⟩.\nRemark 1. For any quadratic exponential ⟨·⟩on a Gaussian group G, the polarization\nidentity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-018-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-018-02.md",
+      "narrative": null,
+      "content": "For any quadratic exponential ⟨·⟩on a Gaussian group G, the polarization identity satisfies: ⟨x; x⟩= ⟨x⟩2 for all x ∈G. This follows directly from applying the definition to 0 = x + (−x), using evenness and symmetry.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-018-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-018-03.md",
+      "narrative": null,
+      "content": "Similarly, one obtains ⟨2x⟩= ⟨x⟩4 and recovers the same identity from the definition of the Polarization.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-018-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-018-04.md",
+      "narrative": null,
+      "content": "• The function ⟨·⟩generalizes the Gauss character (quadratic expo- nential), serving as a quadratic refinement of the Fourier kernel. • The symmetric bicharacter ⟨x; y⟩captures the failure of ⟨·⟩to be additive, encoding it in a bilinear form.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/ex-sec-019-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "ex-sec-019-01.md",
+      "narrative": null,
+      "content": "= R ⟨x⟩:= eπix2 =⇒⟨x; y⟩= e2πixy. For each y ∈R, g 7→e2πiyg is a Pontryagin character; the map y 7→(g 7→e2πiyg) identifies R with bR.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pontryagin Characters and Gauss Characters",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-019-pontryagin-characters-and-gauss-characters.md",
+      "narrative": null,
+      "content": "Pontryagin Characters and Gauss Characters\nA Pontryagin character is a continuous homomorphism χ : L −→T, T := {z ∈C |\n|z| = 1}, so χ(x + y) = χ(x)χ(y). The set of all such characters forms the Pontryagin\ndual bL, an LCA group in its own right.\nGauss characters (quadratic exponentials) on G\nA Gauss character on the Gaussian group G is a map ⟨·⟩: G −→T with Evenness\n⟨−g⟩= ⟨g⟩; polarisation ⟨g + h⟩= ⟨g⟩⟨h⟩⟨g; h⟩, ⟨g; h⟩:=\n⟨g+h⟩\n⟨g⟩⟨h⟩, where ⟨g; h⟩is a\nsymmetric bicharacter (a Pontryagin character in each slot).\nHence ⟨·⟩is in general quadratic, not linear.\nFix h ∈G. The map g 7−→⟨g; h⟩is a Pont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Special Gaussian group created from a local field",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "def-sec-020-01.md",
+      "narrative": null,
+      "content": "Let F be a local field [3]. Denote by F × its multiplicative group, endowed with the subspace topology, and by c F × := Homcont(F ×, T) its Pontryagin dual—the group of continuous T-valued characters. Canonical evaluation pairing. There is a natural evaluation map e : c F × × F × −→T, e(α, x) := α(x). It is a continuous, symmetric bicharacter (additive in each argument, since each character is a homomorphism) satisfying e(α, x) = e(x, α). We shall write ⟨α, x⟩ev := e(α, x). Quadratic exponential. Consider the product group GF := c F × × F ×. Define a map ⟨⟨· ⟩⟩: GF −→T, ⟨⟨(α, x)⟩⟩:= α(x). This",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Fields",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-local-fields.md",
+      "narrative": null,
+      "content": "Local Fields\nLocal fields give rise to special Gaussian groups [7].\nDefinition 5 (Special Gaussian group created from a local field). Let F be a local\nfield [3]. Denote by F × its multiplicative group, endowed with the subspace topology,\nand by\nc\nF × := Homcont(F ×, T)\nits Pontryagin dual—the group of continuous T-valued characters.\nCanonical evaluation pairing. There is a natural evaluation map\ne : c\nF × × F × −→T, e(α, x) := α(x).\nIt is a continuous, symmetric bicharacter (additive in each argument, since each\ncharacter is a homomorphism) satisfying e(α, x) = e(x, α). We shall write ⟨α, x⟩ev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "def-sec-022-01.md",
+      "narrative": null,
+      "content": "[7] A quantum dilogarithm over a Gaussian group G is a tempered distribution on G, represented by a locally integrable function φ: G →C defined almost everywhere, satisfying the following two conditions: 1. Inversion relation: There exists a nonzero constant c ∈C \\ {0} such that φ(x)φ(−x) = c · ⟨x⟩ (3.1) for almost all x ∈G. 2. Pentagon identity: For almost all pairs (x, y) ∈G × G, we have φ(x)φ(y) = γ Z G3 ⟨x −u; y −w⟩ ⟨u −v + w⟩φ(u)φ(v)φ(w)dudvdw, (3.2) where the constant γ := Z G ⟨x⟩dx is defined as an (improper) integral over G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Dilogarithm",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-021-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "The quantum dilogarithm arose as a deformation of the classical dilogarithm. Its\nmyriad of forms and versions are a mathematical epic [21]. Notable are [5] which\nquantized the Rogers five-term dilogarithm identity and relating a cyclic quantum\ndilogarithm to a 6j-symbol [15].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A quantum dilogarithm over a Gaussian group",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-022-a-quantum-dilogarithm-over-a-gaussian-group.md",
+      "narrative": null,
+      "content": "A quantum dilogarithm over a Gaussian group\nDefinition 6. [7] A quantum dilogarithm over a Gaussian group G is a tempered\ndistribution on G, represented by a locally integrable function\nφ: G →C\ndefined almost everywhere, satisfying the following two conditions:\n1. Inversion relation: There exists a nonzero constant c ∈C \\ {0} such that\nφ(x)φ(−x) = c · ⟨x⟩\n(3.1)\nfor almost all x ∈G.\n14\n2. Pentagon identity: For almost all pairs (x, y) ∈G × G, we have\nφ(x)φ(y) = γ\nZ\nG3\n⟨x −u; y −w⟩\n⟨u −v + w⟩φ(u)φ(v)φ(w)dudvdw,\n(3.2)\nwhere the constant\nγ :=\nZ\nG\n⟨x⟩dx\nis defined as an (improper) integral over G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "def-sec-023-01.md",
+      "narrative": null,
+      "content": "[7] The quantum dilogarithm over A = ˆB × B for B = F × is the function φ : ˆB × (B \\ {−1}) →T, φ(α, x) := α(1 + x) We refer to φ as a tempered distribution on A, undefined at x = −1, but this is inconsequential since {−1} is a measure-zero subset of B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "Let F be an Archimedean local field (R or C), and set A := c F × × F ×. For φ(α, x) := α(1 + x), (α, x) ∈A, x̸ = −1, the inverse Fourier transform (with respect to the kernel recalled in 2.4) ˜φ(β, y) := Z A φ(α, x) ⟨(α, x); (β, y)⟩d(α, x) is, for y̸ = 1, ˜φ(β, y) = β(y −1) ∥1 −y−1∥.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A quantum dilogarithm over a Special Gaussian Group",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-023-a-quantum-dilogarithm-over-a-special-gaussian-gr.md",
+      "narrative": null,
+      "content": "A quantum dilogarithm over a Special Gaussian Group\nDefinition 7. [7] The quantum dilogarithm over A = ˆB × B for B = F × is the\nfunction\nφ : ˆB × (B \\ {−1}) →T, φ(α, x) := α(1 + x)\nWe refer to φ as a tempered distribution on A, undefined at x = −1, but this is\ninconsequential since {−1} is a measure-zero subset of B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fourier transform of the Archimedean quantum dilogarithm",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-024-fourier-transform-of-the-archimedean-quantum-dil.md",
+      "narrative": null,
+      "content": "Fourier transform of the Archimedean quantum dilogarithm\nLemma 1. Let F be an Archimedean local field (R or C), and set A := c\nF × × F ×.\nFor\nφ(α, x) := α(1 + x), (α, x) ∈A, x̸ = −1,\nthe inverse Fourier transform (with respect to the kernel recalled in 2.4)\n˜φ(β, y) :=\nZ\nA\nφ(α, x)\n⟨(α, x); (β, y)⟩d(α, x)\nis, for y̸ = 1,\n15\n˜φ(β, y) =\n1\nβ(y −1)\n1\n∥1 −y−1∥.\nProof. Let F be an Archimedean local field, so that F × is a Lie group and A =\nc\nF × × F × is the special Gaussian group defined in §2.4.\nDefine the function φ(α, x) := α(1 + x) for (α, x) ∈A, with x̸ = −1. The inverse\nFourier transform of φ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-024-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "rem-sec-024-02.md",
+      "narrative": null,
+      "content": "All Haar measures are taken in the self-dual normalisation for the pairing c F × × F × →T, so that the Fourier inversion formula holds without extra constants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pentagon identity in the Archimedean case",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-025-pentagon-identity-in-the-archimedean-case.md",
+      "narrative": null,
+      "content": "Pentagon identity in the Archimedean case\nTheorem 3. The function φ(α, x) = α(1 + x) satisfies the distributional pentagon\nidentity:\n˜φ(α, x) ˜φ(β, y)α(y)β(x) =\nZ\nA\n˜φ(β −γ, y/z) ˜φ(γ, z) ˜φ(α −γ, x/z)γ(z) d(γ, z)\n(3.3)\nfor all (α, x), (β, y) ∈A.\nProof of Theorem 3. Recall from Lemma 1 that for (η, t) ∈bB × B =: A with t̸ = 1\n˜φ(η, t) =\n1\nη(t −1)\n1\n∥1 −t−1∥=\nf(t)\nη(t −1), f(t) :=\n1\n∥1 −t−1∥.\nCompute LHS.\n˜φ(α, x) ˜φ(β, y)α(y)β(x) = f(x)f(y)α(\ny\nx−1)β(\nx\ny−1) =: LHS.\n17\nExpand RHS. Insert the same formula for every ˜φ in the integral:\nRHS =\nZ\nb\nB\nZ\nB\nf(y/z)\n(β −γ)(y/z −1)\nf(z)\nγ(z −1)\nf(x/z)\n(α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "thm-sec-025-01.md",
+      "narrative": null,
+      "content": "The function φ(α, x) = α(1 + x) satisfies the distributional pentagon identity: ˜φ(α, x) ˜φ(β, y)α(y)β(x) = Z A ˜φ(β −γ, y/z) ˜φ(γ, z) ˜φ(α −γ, x/z)γ(z) d(γ, z) (3.3) for all (α, x), (β, y) ∈A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angled Quantum Dilogarithm",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-026-angled-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "Angled Quantum Dilogarithm\nTo define the analytic weight functions that drive the state-integral invariant, we\nnow introduce an angle-deformed quantum dilogarithm Ψa,c derived from the primitive\nfunction φ. This deformation encodes geometric data and satisfies a pentagon identity\nmodified by angle parameters, crucial for proving the topological invariance of the\nstate-integral under Pachner moves.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle Space and Structure",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-027-angle-space-and-structure.md",
+      "narrative": null,
+      "content": "Angle Space and Structure\nLet us define the angle space as the product group:\nC := R × B, where B := F ×\nis the multiplicative group of a local field F with the group law being addition for\nthe first component and multiplication for the second; so the the product is a LCA\ngroup.\nAn element a ∈C is called an angle and is written as\na = (˙a, ¨a),\nwhere ˙a ∈R is the additive component and ¨a ∈B is the multiplicative component.\nThis structure encodes both real and field-valued geometric data.\nWe define an involutive automorphism (conjugation) on C by:\n19\n¯a := (˙a, ¨a−1),\nwhich fixes the additive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Angled Quantum Dilogarithm as a Distribution [7]",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "def-sec-029-01.md",
+      "narrative": null,
+      "content": "The angle-dependent quantum dilogarithm is defined as the tempered distribution Ψa,c ∈S′( bB × B), whose representative on test functions (α, x) ∈bB × (B \\ {¨a−1}) is given almost everywhere by the complex-valued formula: Ψa,c(α, x) = α((1 −¨ax)¨c) · ∥¨ax∥˙c ∥1 −¨ax∥1−˙a. Here, ∥·∥denotes the absolute value on F ×, and the expression is well-defined except at the singularity x = ¨a−1. The interpretation as a tempered distribution ensures that all convolution, Fourier, and integral identities involving Ψa,c are valid in the sense of distributions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Angled quantum dilogarithm as a Distribution [7]",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "def-sec-029-02.md",
+      "narrative": null,
+      "content": "Fix an angle pair a = (˙a, ¨a), c = (˙c, ¨c) ∈C = R × F ×. Define Ψa,c ∈S′(A) to be the tempered distribution whose representative on (α, x) ∈c F × × (F × \\ {¨a−1}) is Ψa,c(α, x) = α((1 −¨ax)¨c) ∥¨ax∥˙c ∥1 −¨ax∥1−˙a (the expression is well-defined except at the singularity x = ¨a−1.). The interpretation as a tempered distribution ensures that all convolution, Fourier, and integral identities involving Ψa,c are valid in the sense of distributions (see [7] Lemma #). Specialization to the inverse Fourier transform The conjugate form is given by: ¯Ψa,c(α, x) := Ψ¯a,¯c(α, x) = α \u00121 −x/¨a ¨c \u0013 · ∥x/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangle Angle Condition",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-028-triangle-angle-condition.md",
+      "narrative": null,
+      "content": "Triangle Angle Condition\nWhen three angles a, b, c ∈C are assigned to a triangle, they are required to\nsatisfy:\na + b + c = (1, −1),\nensuring a canonical normalization. In terms of a and c, the third angle b is given by:\nb = (1, −1) −a −c = (1 −˙a −˙c, −(¨a¨c)−1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the Angled Quantum Dilogarithm",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-029-definition-of-the-angled-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "Definition of the Angled Quantum Dilogarithm\nDefinition 8 (Angled Quantum Dilogarithm as a Distribution [7]). The angle-dependent\nquantum dilogarithm is defined as the tempered distribution\nΨa,c ∈S′( bB × B),\nwhose representative on test functions (α, x) ∈bB × (B \\ {¨a−1}) is given almost\neverywhere by the complex-valued formula:\nΨa,c(α, x) =\n1\nα((1 −¨ax)¨c) ·\n∥¨ax∥˙c\n∥1 −¨ax∥1−˙a.\n20\nHere, ∥·∥denotes the absolute value on F ×, and the expression is well-defined except\nat the singularity x = ¨a−1. The interpretation as a tempered distribution ensures\nthat all convolution, Fourier, and integral",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/lem-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-030-01.md",
+      "narrative": null,
+      "content": "Let F be a local field (R or C). Then Ψa,c ∈S′(A), the space of tempered distributions on the Gaussian group A, provided: 0 ≤˙a, ˙b, ˙c ≤1, with ˙a + ˙b + ˙c = 1. (Here ˙b = 1 −˙a −˙c.) If all inequalities are strict, Ψa,c is locally integrable. This positivity guarantees convergence of the state-integral and compatibility with the Fourier analysis over A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperedness and Positivity",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-030-temperedness-and-positivity.md",
+      "narrative": null,
+      "content": "Temperedness and Positivity\nWhile several known examples in [1, 14, 6] define versions of Ψ within the Schwartz\nspace, our function is generally a tempered distribution under a positivity constraint\non the angle parameters.\nThe Schwartz space S(Rn) (see [12] chapter 5, [16] chapter 1, and [17] chapter\n5) consists of smooth functions whose derivatives decay faster than any polynomial.\nThese functions are ideal for Fourier analysis and serve as test functions for tempered\ndistributions.\nThe space is stable under differentiation and Fourier transform,\nmaking it fundamental in analysis, quantum th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries of the Angled Quantum Dilogarithm",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-031-symmetries-of-the-angled-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "Symmetries of the Angled Quantum Dilogarithm\nThroughout this section we adopt the shorthand\n(−α)(z) := α−1(z) = α(z)−1,\ni.e. the inverse character. Note in particular (−α)(z)̸ = −α(z).\nTheorem 4 (Symmetry relations). Let b := (1, −1) −a −c. Then\nΨa,c(α−1, 1/x)α(x) = ¯Ψa,b(α, x),\n(3.4a)\nZ\nb\nB×B\nΨa,c(β, y)α(x/y)β(y/x)d(β, y) = ¯Ψb,c(α, x).\n(3.4b)\nProof of (3.4a). Insert (α−1, 1/x) into the definition of Ψa,c:\nΨa,c(α−1, 1/x) = α((1 −¨a/x)¨c)\n∥¨a/x∥˙c\n∥1 −¨a/x∥1−˙a,\nbecause α−1(z) = α(z)−1. Multiply by α(x) and use multiplicativity:\nΨa,c(α−1, 1/x)α(x) = α((x −¨a)¨c)\n∥¨a/x∥˙c\n∥1 −¨a/x∥1−˙a.\nSince b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Symmetry relations",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "Let b := (1, −1) −a −c. Then Ψa,c(α−1, 1/x)α(x) = ¯Ψa,b(α, x), (3.4a) Z b B×B Ψa,c(β, y)α(x/y)β(y/x)d(β, y) = ¯Ψb,c(α, x). (3.4b) Proof of (3.4a). Insert (α−1, 1/x) into the definition of Ψa,c: Ψa,c(α−1, 1/x) = α((1 −¨a/x)¨c) ∥¨a/x∥˙c ∥1 −¨a/x∥1−˙a, because α−1(z) = α(z)−1. Multiply by α(x) and use multiplicativity: Ψa,c(α−1, 1/x)α(x) = α((x −¨a)¨c) ∥¨a/x∥˙c ∥1 −¨a/x∥1−˙a. Since b = (1, −1) −a −c, one checks that 1 −x/¨b ¨b = (x −¨a)¨c and ∥x/¨b∥˙c ∥1 −x/¨b∥1−˙b = ∥¨a/x∥˙c ∥1 −¨a/x∥1−˙a. Hence α \u0010 1−x/¨b ¨b \u0011 ∥x/¨b∥˙c ∥1 −x/¨b∥1−˙b = ¯Ψa,b(α, x) and (3.4a) follows. Proof of (3.4b). Write the i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angled Pentagon Identity",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-032-angled-pentagon-identity.md",
+      "narrative": null,
+      "content": "Angled Pentagon Identity\nA central result is the angle-dependent pentagon identity:\nTheorem 5 (Angled Pentagon Identity). Let Ψi := Ψai,ci. Then:\nΨ1(α, x)Ψ3(β, y) =\nZ\nb\nB×B\nΨ0(α −γ, x/z)Ψ2(γ, z)Ψ4(β −γ, y/z) · α(y/z)β(x/z)\nγ(xy/z2)\nd(γ, z),\n(3.5)\nprovided the angle parameters satisfy:\na1 = a0 + a2, a3 = a2 + a4, c1 = c0 + a4, c3 = a0 + c4, c2 = c1 + c3.\nThese relations correspond to a 2–3 Pachner move in the triangulated 3-manifold\nand guarantee the invariance of the state-integral under such local modifications.\nRemark 5. The undeformed pentagon identity (3.3) is recovered by setting all angl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Angled Pentagon Identity",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "thm-sec-032-01.md",
+      "narrative": null,
+      "content": "Let Ψi := Ψai,ci. Then: Ψ1(α, x)Ψ3(β, y) = Z b B×B Ψ0(α −γ, x/z)Ψ2(γ, z)Ψ4(β −γ, y/z) · α(y/z)β(x/z) γ(xy/z2) d(γ, z), (3.5) provided the angle parameters satisfy: a1 = a0 + a2, a3 = a2 + a4, c1 = c0 + a4, c3 = a0 + c4, c2 = c1 + c3. These relations correspond to a 2–3 Pachner move in the triangulated 3-manifold and guarantee the invariance of the state-integral under such local modifications.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The State-Integral Invariant",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-033-the-state-integral-invariant.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulations and State Variables",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-034-triangulations-and-state-variables.md",
+      "narrative": null,
+      "content": "Triangulations and State Variables\nLet X be a finite ∆–complex obtained by gluing the faces of a finite collection\nof oriented tetrahedra in pairs; see Hatcher [9] for background on ∆–complexes. We\ndenote\n• X3 – the set of tetrahedra;\n• X2 – the set of triangular faces;\n• (∂X)2 ⊂X2 – those faces that are not glued to a partner face. (These are the\ngenuine boundary faces of the 3–complex; note the round bracket: (∂X)2̸ =\n∂X2, the latter being the set of edges in the boundary of the 2–skeleton.)\nIdeal–triangulated knot complements.\nIf X is an ideal triangulation of a knot\n(or link) complement, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kinematical Kernel",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-035-the-kinematical-kernel.md",
+      "narrative": null,
+      "content": "The Kinematical Kernel\nThe combinatorial coherence of the triangulation is enforced via the kinematical\nkernel, which incorporates the gluing relations among face variables.\nLocal Kernel\nFor each tetrahedron T ∈X3, with vertices labeled 0 < 1 < 2 < 3, we define the\nlocal kernel:\nKT(x, z) := ⟨x0; zT⟩sgn(T) · δA(x0 −x1 + x2) · δA(x2 −x3 + zT),\n(4.1)\nwhere:\n• xi ∈A are the state variables assigned to the faces opposite vertex i,\n• sgn(T) ∈{±1} encodes the orientation of T,\n• δA denotes the Dirac measure on A.\nGlobal Kernel\nThe kinematical kernel aggregates these local constraints:\n32\nKX(y, z) :=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Balanced Edge",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "def-sec-037-01.md",
+      "narrative": null,
+      "content": "Let X3,1 = {(T, e) | e is an edge of T} denote the set of edge–tetrahedron pairs in a triangulation X, and let ϕ : X3,1 →X1, (T, e) 7→e be the natural projection that assigns each local edge to its corresponding global edge in the triangulation. Given an angle structure θ : X3,1 →C := R × F ×, we say that an edge e ∈X1 is balanced if X (T,e)∈ϕ−1(e) θ(T, e) = (2, 1) ∈C. This condition expresses that the angle assigned around the edge e is 2π in the additive component and trivial in the multiplicative component. In other words, the sum of dihedral angles equals 2π, and the associated holonomy (i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle Structures and Dynamical Weights",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-036-angle-structures-and-dynamical-weights.md",
+      "narrative": null,
+      "content": "Angle Structures and Dynamical Weights",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Balanced Angle Structures",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-037-balanced-angle-structures.md",
+      "narrative": null,
+      "content": "Balanced Angle Structures\nA balanced angle structure assigns combinatorial dihedral angles to each pair (T, e),\nwhere T is an ideal tetrahedron in a triangulation X3, and e is an edge of T. Let\nθ: X3,1 −→C := R × F ×,\nwhere X3,1 = {(T, e) : T ∈X3, e is an edge of T}.\nDefine the projection\nϕ: X3,1 −→X1,\nϕ(T, e) := e,\nwhich forgets the tetrahedron and retains only the edge.\nDefinition 10 (Balanced Edge). Let X3,1 = {(T, e) | e is an edge of T} denote the\nset of edge–tetrahedron pairs in a triangulation X, and let\nϕ : X3,1 →X1,\n(T, e) 7→e\n33\nbe the natural projection that assigns each local edge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Dilogarithmic Weights",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-038-quantum-dilogarithmic-weights.md",
+      "narrative": null,
+      "content": "Quantum Dilogarithmic Weights\nGiven a balanced angle structure θ, each tetrahedron T ∈X3 contributes a\nquantum weight depending on its assigned angle parameters. If θ assigns (a, c) ∈C\nto T, and zT is the associated integration variable, define the local weight:\nDT,θ(zT) :=\n\n\n\n\n\n\n\nΨa,c(zT),\nif sgn(T) = +1,\nΨa,c(zT),\nif sgn(T) = −1,\nwhere Ψa,c is the quantum dilogarithm function defined in Section 3.3.\nThe total dynamical content is then given by:\n34\nDX,θ(z) :=\nY\nT∈X3\nDT,θ(zT).\nRemark 6. The positivity condition 0 < ˙a, ˙b, ˙c < 1, where (˙a, ˙b, ˙c) are the real\nprojections of the angle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-038-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "rem-sec-038-01.md",
+      "narrative": null,
+      "content": "The positivity condition 0 < ˙a, ˙b, ˙c < 1, where (˙a, ˙b, ˙c) are the real projections of the angle parameters, ensures absolute convergence and good analytic behavior of the integrand in the state-integral model.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The State-Integral Definition",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-039-the-state-integral-definition.md",
+      "narrative": null,
+      "content": "The State-Integral Definition\nThe Archimedean state-integral is defined as:\nFR,X,θ(y) :=\nZ\nAX3\nKX(y, z) · DX,θ(z)dz.\n(4.3)\n• If (∂X)2 = ∅, this integral yields a scalar.\n• If (∂X)2̸ = ∅, it yields a tempered distribution in the boundary variables y ∈\nA∂X2.\nRemark 7. In physical terms, FR,X,θ(y) may be viewed as a quantum wavefunction\nencoding boundary holonomy data within the Chern–Simons framework [19, 4].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of the Construction",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-040-summary-of-the-construction.md",
+      "narrative": null,
+      "content": "Summary of the Construction\nTo summarize, the construction consists of:\n• An ideal triangulation X of M;\n• A balanced angle structure θ: X3,1 →C;\n• State variables x ∈AX2, dynamical variables z ∈AX3;\n35\n• The kinematical kernel KX(y, z);\n• The dynamical weight DX,θ(z);\n• The final integral yielding FR,X,θ(y).\nThe analytic convergence, Pachner invariance, and angle gauge invariance of this\nintegral will be elucidated systematically in the chapters to follow.\n36\nCHAPTER 5",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-039-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "rem-sec-039-01.md",
+      "narrative": null,
+      "content": "In physical terms, FR,X,θ(y) may be viewed as a quantum wavefunction encoding boundary holonomy data within the Chern–Simons framework [19, 4].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Target of the State-Integral",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-041-target-of-the-state-integral.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Target Statement for the Archimedean State-Integral",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-042-target-statement-for-the-archimedean-state-integ.md",
+      "narrative": null,
+      "content": "Target Statement for the Archimedean State-Integral\nLet M be a compact, oriented 3-manifold equipped with an ordered ideal tri-\nangulation X.\nThe analytic target of the Archimedean state-integral depends on\nthe topology and boundary structure of M, and reflects the deformation parameters\nintroduced via the angle-dependent quantum dilogarithm Ψa,c.\n5.2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Manifolds with Boundary (M =)",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-043-manifolds-with-boundary-m.md",
+      "narrative": null,
+      "content": "Let (∂X)2 denote the set of boundary faces of the triangulation.\n• The analytic state space is the Archimedean Gaussian group:\nA := c\nF × × F ×, where F = R or C.\n• For a fixed balanced angle structure θ, the state-integral defines a tempered\ndistribution:\nFF,X,θ ∈S′(A(∂X)2),\nacting on Schwartz test functions over the boundary face variables.\n37\n• Equivalently, FF,X,θ may be interpreted as a quantum boundary wavefunction\nvalued in holonomy-represented Gaussian variables.\n5.2.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Manifolds with Torus Boundary (M .5-.5.5-.5.5-.5.5-.5T2)",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-044-manifolds-with-torus-boundary-m-5-55-55-55-5t2.md",
+      "narrative": null,
+      "content": "For manifolds with toroidal boundary components:\n• The quantum state-integral acquires dependence on longitudinal–meridional\nholonomy data via\nH1(∂M; C) ∼= C2, whereC = R × F ×.\nHere, C is the group parameterizing the angle structure—specifically, the addi-\ntive and multiplicative angle holonomies associated to each peripheral direction\nof the boundary torus. In this framework, holonomies are not generic complex\nnumbers but reflect the geometric data assigned by the state-integral construc-\ntion.\n• After enforcing the internal balancing (gluing) equations, the state-integral\nyields a holonomy-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Closed Manifolds (M = )",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-045-closed-manifolds-m.md",
+      "narrative": null,
+      "content": "• If M is closed, the state-integral becomes a scalar:\nFF,M ∈C,\ncomputed as an absolutely convergent integral over internal dynamical variables\nz ∈AX3.\n• The value depends on the choice of balanced angle structure (if multiple such\nstructures exist), but no distributional structure appears in this case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle Structures and Parameter Dependence",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-046-angle-structures-and-parameter-dependence.md",
+      "narrative": null,
+      "content": "Angle Structures and Parameter Dependence\n• The state-integral requires a choice of balanced angle structure:\nθ ∈Angle(X) ⊆CX3,1, with C := R × F ×,\nsatisfying compatibility constraints (tetrahedra and edge balancing).\n• The angle structure θ determines the dilogarithmic deformation parameters\n(a, c) ∈C used in each quantum weight Ψa,c.\n• The target space S′(A(∂X)2) does not depend on θ itself; rather, θ determines\nthe integrand of the state-integral.\n39\n• Invariance under angle gauge transformations ensures that the output depends\nonly on the gauge equivalence class of θ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-047-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Cochains on an Ordered Ideal Triangulation",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "def-sec-047-01.md",
+      "narrative": null,
+      "content": "Let X be an ordered ideal triangulation of a compact 3-manifold M, and let G be an abelian group. A k-cochain on X with coefficients in G is a function defined on the set of combinatorial k-simplices of X, respecting orientation. We denote: Ck(X; G) := {ϕ: Xor k →G}, where Xor k is the set of oriented k-simplices in the triangulation X, with orientation induced by the global vertex ordering. These cochains form an abelian group under pointwise addition. The coboundary operator δ: Ck(X; G) →Ck+1(X; G) is defined by: (δϕ)(σk+1) = k+1 X i=0 (−1)iϕ(σk+1 i ), where σk+1 i denotes the i-th oriented",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-047-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "Gauge group and gauge shifts",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "def-sec-047-02.md",
+      "narrative": null,
+      "content": "Let X be an ordered ideal triangu- lation of an oriented pseudo 3-manifold M. Let Eint(X) ⊂X1 be its set of internal edges and let C = R × F ×. 1. Gauge group. Denote by GX := C1 int(X; C) = {λ : Eint(X) −→C} the abelian group of C-valued 1-cochains supported on internal edges. 2. Gauge shift of angles. Given an angle structure θ : X3,1 →C, its gauge-shift by λ ∈GX is the map θλ(T, e) := θ(T, e) +                λ(e) if e is opposite e in T, −1 2λ(e′) for the remaining four edges e′ ⊂T, if e ⊂∂M. (Inside each tetrahedron the two opposite edges get +λ, the other four get −1 2λ; i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic Background",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-047-algebraic-background.md",
+      "narrative": null,
+      "content": "Algebraic Background\nDefinition 11 (Cochains on an Ordered Ideal Triangulation). Let X be an ordered\nideal triangulation of a compact 3-manifold M, and let G be an abelian group.\nA k-cochain on X with coefficients in G is a function defined on the set of\ncombinatorial k-simplices of X, respecting orientation. We denote:\nCk(X; G) := {ϕ: Xor\nk →G},\nwhere Xor\nk is the set of oriented k-simplices in the triangulation X, with orientation\ninduced by the global vertex ordering.\nThese cochains form an abelian group under pointwise addition.\nThe coboundary operator δ: Ck(X; G) →Ck+1(X; G) is defined by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary Table",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-048-summary-table.md",
+      "narrative": null,
+      "content": "Summary Table\nTable 5.1:  \nSummary of targets of FF,X,θ\nGeometric Setting\nTarget of FF,X,θ\nGeneral 3-manifold with boundary\nS′(A(∂X)2)\nManifold with torus boundary\nC, labeled by (λ, µ) ∈H1(∂M; C)\nClosed 3-manifold\nC",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Remark",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-049-remark.md",
+      "narrative": null,
+      "content": "Remark\nThe analytic nature of the state-integral reflects a synthesis of:\n• Combinatorial topology via ideal triangulations and face gluings;\n• Harmonic analysis on self-dual Gaussian groups;\n• Functional identities of the angled quantum dilogarithm Ψa,c, including the\npentagon relation;\n• Quantum holonomy representation theory via angle structures and boundary\ndata.\nThis aligns with frameworks developed in Garoufalidis–Kashaev and Andersen–\nKashaev, and elucidates the role of quantum deformation parameters in determining\nthe analytic and distributional nature of the state-integral.\n42\nCHAPTER",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological Invariance of the State-Integral",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-050-topological-invariance-of-the-state-integral.md",
+      "narrative": null,
+      "content": "STATE-INTEGRAL\nWe now show, the state-integral, constructed using the angle-dependent quantum\ndilogarithm Ψa,c over a self-dual Gaussian group, defines a topological invariant of\n3-manifolds with torus boundary. This invariance rests on three core principles:\n(P1) Invariance under ordered Pachner 2 ↔3 moves — ensured by the angled\npentagon identity of Ψa,c;\n(P2) Analytic convergence and tempered behavior — guaranteed by positivity\nconditions on angle parameters;[7, 1]\n(P3) Gauge invariance under internal angle shifts — due to symmetries of the\nangle-dependent dilogarithm.\n[7] Together, these p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Pentagon Identity and Pachner Moves",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-051-the-pentagon-identity-and-pachner-moves.md",
+      "narrative": null,
+      "content": "The Pentagon Identity and Pachner Moves",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of the Pachner Move",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-052-combinatorics-of-the-pachner-move.md",
+      "narrative": null,
+      "content": "Combinatorics of the Pachner Move\nThe 2 ↔3 Pachner move alters an ideal triangulation by replacing two tetrahedra\nsharing a face with three tetrahedra sharing an edge. At the analytic level, this local\nmodification is governed by the angled pentagon identity satisfied by the function\nΨa,c, as developed in Theorem 5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic Expression via Pentagon Identity",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-053-analytic-expression-via-pentagon-identity.md",
+      "narrative": null,
+      "content": "Analytic Expression via Pentagon Identity\nLet A := c\nF × × F × be the Gaussian group over a local field F. The pentagon\nidentity ensures:\nΨa1,c1(α, x) · Ψa3,c3(β, y) =\nZ\nA\nΨa0,c0(α −γ, x/z)Ψa2,c2(γ, z)Ψa4,c4(β −γ, y/z) · α(y/z)β(x/z)\nγ(xy/z2)\nd(γ, z),\nprovided the angle parameters satisfy the balancing relations:\na1 = a0 + a2, a3 = a2 + a4,\nc1 = c0 + a4, c3 = a0 + c4,\nc2 = c1 + c3.\nThis identity reflects exact equivalence between the two triangulations under the\nstate-integral.\n44",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-055-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "def-sec-055-01.md",
+      "narrative": null,
+      "content": "Two ordered triangulations X and X′ of a 3-manifold are Pachner- equivalent if they are related by a finite sequence of 2 ↔3 moves, preserving vertex ordering and orientation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(P1) Pachner Invariance",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-054-p1-pachner-invariance.md",
+      "narrative": null,
+      "content": "(P1) Pachner Invariance",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulation Equivalence",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-055-triangulation-equivalence.md",
+      "narrative": null,
+      "content": "Triangulation Equivalence\nDefinition 13. Two ordered triangulations X and X′ of a 3-manifold are Pachner-\nequivalent if they are related by a finite sequence of 2 ↔3 moves, preserving vertex\nordering and orientation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance Theorem",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-056-invariance-theorem.md",
+      "narrative": null,
+      "content": "Invariance Theorem\nTheorem 6 (P1: Pachner Move Invariance). Let X ∼X′ via Pachner moves. Then\nfor any compatible balanced angle structure θ, the state-integrals coincide:\nFF,X,θ = FF,X′,θ′.\nSketch. Each local move is mediated by the angled pentagon identity of Ψa,c. The\nidentity ensures that integrating over three tetrahedra is analytically equal to the\nproduct over two, provided angle parameters satisfy the required balancing conditions.\nSince each such move preserves the face pairing relations and global structure, the\noverall integral remains invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(P2) Analytic Control and Temperedness",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-057-p2-analytic-control-and-temperedness.md",
+      "narrative": null,
+      "content": "(P2) Analytic Control and Temperedness",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tempered Distribution Framework",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-058-tempered-distribution-framework.md",
+      "narrative": null,
+      "content": "Tempered Distribution Framework\nThe state-integral is:\nFF,X,θ(y) =\nZ\nAX3\nKX(y, z) · DX,θ(z)dz,\n45\nwhere:\n• KX imposes gluing via delta constraints and pairings;\n• DX,θ = Q Ψa,c assigns weighted quantum amplitudes to tetrahedra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-056-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "P1: Pachner Move Invariance",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "thm-sec-056-01.md",
+      "narrative": null,
+      "content": "Let X ∼X′ via Pachner moves. Then for any compatible balanced angle structure θ, the state-integrals coincide: FF,X,θ = FF,X′,θ′. Sketch. Each local move is mediated by the angled pentagon identity of Ψa,c. The identity ensures that integrating over three tetrahedra is analytically equal to the product over two, provided angle parameters satisfy the required balancing conditions. Since each such move preserves the face pairing relations and global structure, the overall integral remains invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conditions Ensuring Convergence",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-059-conditions-ensuring-convergence.md",
+      "narrative": null,
+      "content": "Conditions Ensuring Convergence\nFrom Lemma 2, the function Ψa,c is a tempered distribution on A under:\n0 < ˙a, ˙b, ˙c < 1, ˙a + ˙b + ˙c = 1.\nThis ensures:\n• Local integrability of the integrand;\n• Polynomial boundedness at infinity;\n• Distributional action on test functions ϕ ∈S(A(∂X)2).\nTheorem 7 (P2: Analytic Control). Let θ be a balanced angle structure satisfying\nthe positivity constraints above.\nThen FF,X,θ ∈S′(A(∂X)2), the space of tempered\ndistributions on the boundary face state space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(P3) Angle Gauge Invariance",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-060-p3-angle-gauge-invariance.md",
+      "narrative": null,
+      "content": "(P3) Angle Gauge Invariance",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Internal Angle Shifts",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-061-internal-angle-shifts.md",
+      "narrative": null,
+      "content": "Internal Angle Shifts\nA gauge transformation modifies internal angles without changing their sum around\nany edge:\nθ 7→θ + λ,\n46\nwhere λ: X3,1 →C is a closed 1-cochain supported away from boundary data.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-059-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "P2: Analytic Control",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "thm-sec-059-01.md",
+      "narrative": null,
+      "content": "Let θ be a balanced angle structure satisfying the positivity constraints above. Then FF,X,θ ∈S′(A(∂X)2), the space of tempered distributions on the boundary face state space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cancellation in the Integral",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-062-cancellation-in-the-integral.md",
+      "narrative": null,
+      "content": "Cancellation in the Integral\nDue to the symmetries of Ψa,c (see Theorem 4), these shifts propagate through\nthe integral but cancel globally when:\n• The sum of internal angles at each edge remains unchanged;\n• The gluing equations are preserved.\nTheorem 8 (P3: Gauge Invariance). The state-integral FF,X,θ is invariant under\ngauge transformations (Definition 12)of the internal angle structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological Invariance Theorem",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-063-topological-invariance-theorem.md",
+      "narrative": null,
+      "content": "Topological Invariance Theorem\nTheorem 9 (Topological Invariance). Let M be a compact, oriented 3-manifold with\ntorus boundary and H2(M, Z) = 0. Then the state-integral\nFF,M : H1(∂M; C) →C\nis independent of the choice of ideal triangulation X and balanced angle structure θ,\nand thus defines a topological invariant of M.\nRemark 8. C = c\nR× × R× denotes the coefficient system arising from the Gaussian\ngroup, reflecting the multiplicative harmonic analysis used in defining the model.\nThe target space H1(∂M; C) parametrizes generalized boundary holonomies: that is,\nvalues of the angle structure as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-063-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "rem-sec-063-02.md",
+      "narrative": null,
+      "content": "C = c R× × R× denotes the coefficient system arising from the Gaussian group, reflecting the multiplicative harmonic analysis used in defining the model. The target space H1(∂M; C) parametrizes generalized boundary holonomies: that is, values of the angle structure assigned to edges lying in the boundary torus. These data specify the “external” parameters for the quantum wavefunction defined by the state-integral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-063-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "rem-sec-063-03.md",
+      "narrative": null,
+      "content": "Let C = c R× × R× be the self-dual Gaussian group used for the state variables. It acts (by pointwise multiplication) on the boundary edge chain group C1(∂X; Z). After we integrate out the internal face variables and impose the face–pairing constraints, the resulting tempered distribution is supported on assignments that satisfy the edge relations; hence it factors through edge homology: FF,M : A(∂X)2 −→H1(∂M; C) −→C. Each boundary component of M is a torus, so H1(∂M; Z) is free abelian. For a free abelian group F there is a canonical isomorphism F ⊗C ∼= Hom(F, C); hence H1(∂M; C) = H1(∂M) ⊗C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-063-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "rem-sec-063-04.md",
+      "narrative": null,
+      "content": "The condition H2(M; Z) = 0 is imposed for analytic reasons: it rules out closed normal surfaces that would cause squared Dirac δ-factors when the kine- matical kernel is multiplied by the pushed-forward dynamical content, see [1, Proof of Theorem 7] and [6]. It does not imply the existence of a globally balanced angle structure on any given triangulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-063-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "rem-sec-063-05.md",
+      "narrative": null,
+      "content": "The balancing condition requires that the angle sum around each internal edge equals (2, 1) ∈C. This enforces a discrete flatness condition—zero holonomy around internal edges—which is essential for gluing consistency. It parallels the kernel constraints in Andersen–Kashaev [1], where vanishing holonomy ensures the state- integral is a well-defined distribution.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-063-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "rem-sec-063-06.md",
+      "narrative": null,
+      "content": "It also ensures that the product of the kinematical kernel and the dynam- ical content defines a well-behaved distribution after integrating out the internal edge parameters. More precisely, it guarantees that the quantum operator algebra defined by the edge equations is non-degenerate, which is necessary for consistent gluing. This mirrors the analytic condition in the TQFT construction of Andersen–Kashaev [1], where a gluing distribution GY is well-defined only when certain operator combi- nations vanish. These correspond to cycles generating ker[H1(∂M) →H1(M)], and their vanishing is equiva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-062-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "P3: Gauge Invariance",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "thm-sec-062-01.md",
+      "narrative": null,
+      "content": "The state-integral FF,X,θ is invariant under gauge transformations (Definition 12)of the internal angle structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-063-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Topological Invariance",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "thm-sec-063-01.md",
+      "narrative": null,
+      "content": "Let M be a compact, oriented 3-manifold with torus boundary and H2(M, Z) = 0. Then the state-integral FF,M : H1(∂M; C) →C is independent of the choice of ideal triangulation X and balanced angle structure θ, and thus defines a topological invariant of M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conceptual Summary",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-064-conceptual-summary.md",
+      "narrative": null,
+      "content": "Conceptual Summary\nThe angle-deformed state-integral formalism upholds a mathematically rigorous\ntopological invariant by combining:\n• Triangulation combinatorics, captured via Pachner moves;\n• Angle structures, encoding geometric deformation parameters;\n• Quantum harmonic analysis over Gaussian groups;\n• Functional identities of the quantum dilogarithm Ψa,c;\n• Tempered distribution theory, ensuring analytic well-definedness.\nThis framework realizes a quantized version of decorated Teichm¨uller theory and\nconnects to Chern–Simons theory, TQFTs, and arithmetic quantum topology over\nboth Archime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 59,
+      "pageEnd": 61,
+      "target": "../sections/sec-065-references.md",
+      "narrative": null,
+      "content": "REFERENCES\n[1] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from quantum Te-\nichm¨uller theory, May 2012.\n[2] Jørgen Ellegaard Andersen and Rinat Kashaev.\nComplex Quantum Chern-\nSimons. 9 2014.\n[3] Qaiser Jahan Biswaranjan Behera. Wavelet Analysis on Local Fields of Positive\nCharacteristic. Springer, 2021.\n[4] Tudor Dimofte.\nQuantum Riemann Surfaces in Chern-Simons Theory.\nAdv.\nTheor. Math. Phys., 17(3):479–599, 2013.\n[5] L.D. FADDEEV and R.M. KASHAEV. Quantum dilogarithm. Modern Physics\nLetters A, 09(05):427–434, 1994.\n[6] Stavros Garoufalidis and Rinat Kashaev. A meromorphic extension",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

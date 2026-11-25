@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-genus-filtration-derivation-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:genus-filtration-derivation-chain",
+  "kind": "remark",
+  "title": "The derivation chain from $H_n(q)$ to Bring's surface, and where it breaks",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+    "papers/quantum-observable-universe/blocks/rem-torus-evaluation-block-rank"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+  "tags": [
+    "derivation-chain",
+    "brings-surface",
+    "genus",
+    "hecke"
+  ],
+  "text": "genus-filtration-derivation-chain.md",
+  "provenance": "authored"
+}

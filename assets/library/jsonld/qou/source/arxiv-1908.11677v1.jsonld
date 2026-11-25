@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.11677v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Variational formulae and estimates of O’Hara’s knot energies",
+  "contains": [
+    "library/arxiv-1908.11677v1/sections/sec-front-matter",
+    "library/arxiv-1908.11677v1/sections/sec-000",
+    "library/arxiv-1908.11677v1/sections/sec-001",
+    "library/arxiv-1908.11677v1/sections/sec-002",
+    "library/arxiv-1908.11677v1/sections/sec-003",
+    "library/arxiv-1908.11677v1/sections/sec-004",
+    "library/arxiv-1908.11677v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type\n\n**Variational formulae and estimates of O’Hara’s knot energies**\n\n*Shoya Kawakami*\n\n19 pp, 7 sections.\n\n**Abstract.** O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type, and were conﬁgured so that the less the energy value of a knot is, the “better” its shape is. The existence and regularity of minimizers has been well studied. In this article, we calculate the ﬁrst and second variational formulae of the (α, p)-O’Hara energies and show absolute integrability, uniform bounded- ness, and continuity properties. Although several authors have already considered the variational formulae of the (α, 1)-O’Hara energies, their techniques do not seem to be applicable to the case p > 1. We obtain the variational formulae in a novel manner by extracting a certain function from the energy density.\n\n**Outline.** Front matter; 1 Introduction; 2 Variational formulae; 3 Estimates of the first and second variationa; 3.1 Strategy; 3.2 Estimates and continuity of the quantities; 3.3 Proof of Theorem ??",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1908.11677&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1908.11677v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1908.11677v1.pdf",
+    "source_sha256": "c53663eeb457daf97d31447655b450d448abc48ffba9bf432bee5e8cabc4f0f7",
+    "pages": 19,
+    "arxiv": {
+      "id": "1908.11677",
+      "version": "1",
+      "primary_class": "math.AP",
+      "stamp_date": "30 Aug 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1205.4617v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quaternion Octonion Reformulation of Grand Uniﬁed Theories",
+      "dcterms:creator": [
+        "Theories, Unified"
+      ],
+      "dcterms:issued": "D:20210614",
+      "dcterms:identifier": "https://arxiv.org/abs/1205.4617",
+      "dcterms:abstract": "In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis el- ements with Pauli matrices and Octonions with Gell Mann λ matri- ces. Connection between the unitary groups of GUTs and the normed division algebra has been established to re-describe the SU(5) gauge group. We have thus described the SU(5) gauge group and its subgroup SU(3)C × SU(2)L × U(1) by using quaternion and octonion basis ele- ments. As such the connection between U(1) gauge group and complex number, SU(2) gauge group and quaternions and SU(3) and octonions is established. It is concluded that the division algebra approach to the the theory of uniﬁcation of fundamental interactions as the case of GUTs leads to the consequences towards the new understanding of these theories which incorporate the existence of magnetic monopole and dyon.",
+      "dcterms:source": "library/arxiv-1205.4617v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1205.4617v1"
+    }
+  ]
+}

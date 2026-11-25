@@ -1,0 +1,779 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2205.07095v1",
+  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "On some mathematical concepts",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-on-some-mathematical-concepts"
+    },
+    {
+      "level": 2,
+      "title": "Configuration spaces and Lebesgue-Poisson measure.",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-configuration-spaces-and-lebesgue-poisson-mea"
+    },
+    {
+      "level": 2,
+      "title": "Algebra of generating functionals.",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-algebra-of-generating-functionals"
+    },
+    {
+      "level": 1,
+      "title": "Description of the system of interacting particles in the canonical ensemble.",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-description-of-the-system-of-interacting-parti"
+    },
+    {
+      "level": 2,
+      "title": "Interaction between particles",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-interaction-between-particles"
+    },
+    {
+      "level": 2,
+      "title": "Derivation of equations for correlation functions.",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-derivation-of-equations-for-correlation-funct"
+    },
+    {
+      "level": 1,
+      "title": "Construction of expansion for correlation functions in the density parameter .",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-construction-of-expansion-for-correlation-func"
+    },
+    {
+      "level": 2,
+      "title": "Solution of equations for correlation functions.",
+      "number": "4.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-solution-of-equations-for-correlation-functio"
+    },
+    {
+      "level": 2,
+      "title": "Graphic interpretation of solutions.",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-graphic-interpretation-of-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion on the convergence of the expansion.",
+      "number": "4.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-43-conclusion-on-the-convergence-of-the-expansio"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical ensemble",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "virial",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2205.07095v1 [math-ph] 14 May 2022 Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine. Abstract The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2205.07095v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "bogolyubov",
+          "heading": false
+        },
+        {
+          "term": "integro-differential equations",
+          "heading": false
+        },
+        {
+          "term": "thermodynamic limit",
+          "heading": false
+        },
+        {
+          "term": "canonical ensemble",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "bog",
+          "heading": false
+        },
+        {
+          "term": "forest-graphs",
+          "heading": false
+        }
+      ],
+      "extract": "The first mathematically rigorous studies of infinite statistical systems were the works of Bogolyubov [@Bog46] in the canonical ensemble and Ruelle [@Ru63; @Ru69] in the grand canonical ensemble. In the monograph [@Bog46] Bogolyubov developed a theory of expansions in degrees of density, which, although not yet rigorously mathematically justified, but was based on the fundamental principles of statistical mechanics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-on-some-mathematical-concepts",
+      "number": "2",
+      "title": "On some mathematical concepts",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "On some mathematical concepts",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-configuration-spaces-and-lebesgue-poisson-mea",
+      "number": "2.1",
+      "title": "Configuration spaces and Lebesgue-Poisson measure.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lebesgue-poisson measure",
+          "heading": true
+        },
+        {
+          "term": "int bbb",
+          "heading": false
+        },
+        {
+          "term": "gamma int",
+          "heading": false
+        },
+        {
+          "term": "gamma lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda sigma",
+          "heading": false
+        },
+        {
+          "term": "cup gamma",
+          "heading": false
+        },
+        {
+          "term": "mapsto bbb",
+          "heading": false
+        },
+        {
+          "term": "subseteq gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\sigma$ be a Lebesgue measure in $\\Bbb R^d$. *Configuration space* $\\Gamma\\;: = \\; \\Gamma_{\\Bbb R^d}$ consists of all locally finite subsets of the space $\\Bbb R^d$. This definition is quite natural from the point of view of physics, because an infinite number of particles cannot be in a bounded volume. Denote the set of all finite configurations of the space $\\Gamma$ by $\\Gamma_0$, and by $\\Gamma^{(n)}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-algebra-of-generating-functionals",
+      "number": "2.2",
+      "title": "Algebra of generating functionals.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde psi",
+          "heading": false
+        },
+        {
+          "term": "odprod",
+          "heading": false
+        },
+        {
+          "term": "int gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "generating",
+          "heading": true
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "For any function $\\psi\\in C_0(\\Gamma_0)$ define *generating functional* : $$\\begin{aligned} \\label{GFf} \\widetilde{F}_\\psi(j)&\\;=\\;\\sum_{N=0}^{\\infty}\\frac{1}{N!}\\int_{\\Bbb R^{dN}}(dx)^{N}j(x_1)\\cdots j(x_N)\\psi(x_1,\\ldots, x_N)=\\notag \\\\ &\\;=\\;\\int_{\\Gamma_0}e(j;\\gamma)\\psi(\\gamma)\\lambda_\\sigma(d\\gamma), \\end{aligned}$$ where functional $e(j;\\gamma)$ is defined by the formula $$\\begin{aligned} \\label{I-lam4}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-description-of-the-system-of-interacting-parti",
+      "number": "3",
+      "title": "Description of the system of interacting particles in the canonical ensemble.",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Description of the system of interacting particles in the canon- ical ensemble.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-interaction-between-particles",
+      "number": "3.1",
+      "title": "Interaction between particles",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "configuration gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma phi",
+          "heading": false
+        },
+        {
+          "term": "interaction",
+          "heading": true
+        },
+        {
+          "term": "x-y",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the 2-particle interaction, which is described by the potential $V_2(x,y)=\\phi(|x-y|),\\;\\phi(0)=+\\infty$. For any configuration $\\gamma\\in\\Gamma_0$ an interaction energy is $$\\label{U} U(\\gamma)=U_{\\phi}(\\gamma):=\\sum_{\\{x,y\\}\\subset\\gamma}\\phi(|x-y|),$$ and interaction $W(\\eta; \\gamma)$ between particles of configuration $\\eta\\in\\Gamma_0$ with particles of configuration $\\gamma\\in\\Gamma_0$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-derivation-of-equations-for-correlation-funct",
+      "number": "3.2",
+      "title": "Derivation of equations for correlation functions.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta cup",
+          "heading": false
+        },
+        {
+          "term": "gamma lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda beta",
+          "heading": false
+        },
+        {
+          "term": "lambda sigma",
+          "heading": false
+        },
+        {
+          "term": "lambda int",
+          "heading": false
+        },
+        {
+          "term": "configuration eta",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        }
+      ],
+      "extract": "The correlation functions of the canonical ensemble of the system $N$ of particles in some limited volume $\\Lambda$ in configuration $\\eta=\\{x_1,\\ldots, x_m\\}$ are determined by the sequence $$\\begin{aligned} \\label{corfCA-2} \\rho^{(N)}_{\\Lambda}(\\eta)\\;:=\\;\\begin{cases} & 1,\\;\\;\\text{at}\\; \\eta = \\emptyset,\\\\ & \\varrho=\\frac{N}{V}\\;\\;\\text{at}\\;\\; |\\eta|=1, V=\\sigma(\\Lambda),\\\\ & 0,\\;\\text{at};|\\eta|=m\\;>\\; N,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-construction-of-expansion-for-correlation-func",
+      "number": "4",
+      "title": "Construction of expansion for correlation functions in the density parameter .",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "limeq",
+          "heading": false
+        },
+        {
+          "term": "ratiopf",
+          "heading": false
+        },
+        {
+          "term": "varrho",
+          "heading": false
+        }
+      ],
+      "extract": "Solution of the equation [\\[limeq\\]](#limeq){reference-type=\"eqref\" reference=\"limeq\"} by the iteration method (Ruelle operator method [@Ru69]) or by the Minlos-Poghosyan method [@MP77] (about the connection between these methods see [@Re2021]) leads to the series in the parameter $\\varrho a(\\varrho)$. So, in fact, these equations are nonlinear, because $a(\\varrho)$ depends on all correlation functions (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-41-solution-of-equations-for-correlation-functio",
+      "number": "4.1",
+      "title": "Solution of equations for correlation functions.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ratiopf widetilde",
+          "heading": false
+        },
+        {
+          "term": "ssca rho",
+          "heading": false
+        },
+        {
+          "term": "eta gamma",
+          "heading": false
+        },
+        {
+          "term": "emptyset gamma",
+          "heading": false
+        },
+        {
+          "term": "limeq",
+          "heading": false
+        },
+        {
+          "term": "subseteq gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma psi",
+          "heading": false
+        },
+        {
+          "term": "label ratiopf",
+          "heading": false
+        }
+      ],
+      "extract": "Rewrite the equation [\\[limeq\\]](#limeq){reference-type=\"eqref\" reference=\"limeq\"}, [\\[ratioPF1\\]](#ratioPF1){reference-type=\"eqref\" reference=\"ratioPF1\"} as follows: $$\\label{limeq-1} \\widetilde{Q}(\\rho_j)\\rho_j(\\eta)\\;=\\;\\varrho e^{-\\beta W(x_1; \\eta^{(\\hat{x}_1)})} j(x_1)\\int_{\\Gamma_0}K(x_1;\\xi)\\rho_j(\\eta^{(\\hat{x}_1)}\\cup\\xi)\\lambda_{\\sigma}(d\\xi),$$ $$\\label{ratioPF1-1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-graphic-interpretation-of-solutions",
+      "number": "4.2",
+      "title": "Graphic interpretation of solutions.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho eta",
+          "heading": false
+        },
+        {
+          "term": "eta n-k",
+          "heading": false
+        },
+        {
+          "term": "configuration eta",
+          "heading": false
+        },
+        {
+          "term": "eta gamma",
+          "heading": false
+        },
+        {
+          "term": "ssca",
+          "heading": false
+        },
+        {
+          "term": "forest graphs",
+          "heading": false
+        },
+        {
+          "term": "incon",
+          "heading": false
+        },
+        {
+          "term": "graphs mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "As in the case of the Kirkwood-Salzburg equations for a large canonical ensemble (see details in [@Re2021]) the analytical expression of the kernel $T (\\eta|\\gamma)$ can be given as contributions of forest-graphs. The number $N (m | n), m = |\\eta|, n = |\\gamma|$ all forest graphs can be calculated by solving the following recurrent equation: $$\\label{Numberforests-vir} N(m|n)=\\sum_{k=0}^n {n \\choose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-conclusion-on-the-convergence-of-the-expansio",
+      "number": "4.3",
+      "title": "Conclusion on the convergence of the expansion.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial expansions",
+          "heading": false
+        },
+        {
+          "term": "statistical equilibrium",
+          "heading": false
+        },
+        {
+          "term": "zapiski zhitom",
+          "heading": false
+        },
+        {
+          "term": "cluster expansions",
+          "heading": false
+        },
+        {
+          "term": "statistical mechanics",
+          "heading": false
+        },
+        {
+          "term": "rebenko",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": true
+        },
+        {
+          "term": "khatset",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion on the convergence of the expansion. Existence of a unique solution of the nonlinear equation (3.29) as an oper- ator equation in the Banach space Eξ was proved in [15]. In a recent work of Jansen [5] a generalized version of Groeneveld’s convergence criterion for the virial expansion and generating functionals for weighted 2-connected graphs was proven. In fact, the present paper turned out to be very",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "eta gamma",
+      "heading": false
+    },
+    {
+      "term": "varrho eta",
+      "heading": false
+    },
+    {
+      "term": "gamma int",
+      "heading": false
+    },
+    {
+      "term": "gamma lambda",
+      "heading": false
+    },
+    {
+      "term": "emptyset gamma",
+      "heading": false
+    },
+    {
+      "term": "cup gamma",
+      "heading": false
+    },
+    {
+      "term": "configuration gamma",
+      "heading": false
+    },
+    {
+      "term": "subseteq gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma setminus",
+      "heading": false
+    },
+    {
+      "term": "gamma psi",
+      "heading": false
+    },
+    {
+      "term": "varrho beta",
+      "heading": false
+    },
+    {
+      "term": "int bbb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2205.07095v1"
+  }
+}

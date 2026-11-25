@@ -1,0 +1,519 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "cuspshapes",
+  "blocks": [
+    {
+      "id": "library/cuspshapes/blocks/cor-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "cor-sec-000-03.md",
+      "narrative": null,
+      "content": "For any integer n ≥1, there exist inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. The Berge knots form a class of tunnel number one knots in S3 that admit a lens space Dehn ﬁlling. Thus these knots have at least two exceptional Dehn ﬁllings: the lens space and S3. Baker showed that inﬁnitely many come from Dehn ﬁlling a minimally twisted chain link. It follows from his work that the cusp shapes of these knots limit to a single Euclidean similarity structure; see Proposition 6.1. In sharp contrast, Theorem 1.1 and Corollary 5.1 imply that cusp shape",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "This paper is concerned with two invariants for a 3-manifold with torus boundary.\nThe ﬁrst is geometric.\nIf the interior of the 3-manifold admits a hyperbolic\nstructure, then a tubular neighborhood of the torus boundary inherits a Euclidean\nstructure, and this Euclidean structure is unique up to similarity of the torus. The\nsimilarity class of such a Euclidean structure is called the cusp shape of the 3-manifold.\nManifolds with restricted cusp shapes have restrictions on their Dehn ﬁllings, for\nexample by the 2π-theorem [6] or the 6-Theorem [2, 23]. There are uncountably\nmany similarity classe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "CUSP SHAPE AND TUNNEL NUMBER\nVINH DANG AND JESSICA S. PURCELL\nAbstract. We show that the set of cusp shapes of hyperbolic tunnel number one\nmanifolds is dense in the Teichm¨uller space of the torus. A similar result holds\nfor tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely\nmany hyperbolic tunnel number n manifolds with at most one exceptional Dehn\nﬁlling. This is in contrast to large volume Berge knots, which are tunnel number\none manifolds, but with cusp shapes converging to a single point in Teichm¨uller\nspace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "For any ϵ > 0 and any point [T] in the Teichm¨uller space of the torus, there exists a complete, ﬁnite volume, tunnel number one hyperbolic manifold M with a single cusp whose cusp shape is ϵ-close to [T]. A similar result holds for tunnel number n manifolds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "For any ϵ > 0, any point [T] in the Teichm¨uller space of the torus, and any integer n ≥1, there exists a complete, ﬁnite volume hyperbolic manifold M that admits a tunnel system of n tunnels and has a single cusp, with cusp shape ϵ-close to [T]. Further, assuming recent work of Maher and Schleimer [26], we can ensure M is tunnel number n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic structures on compression bodies",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-hyperbolic-structures-on-compression-bodies.md",
+      "narrative": null,
+      "content": "shape [T], then show these lead to maximally pinched structures with cusp shape\napproaching [T]. By gluing maximally pinched compression bodies to maximally\npinched handlebodies and Dehn ﬁlling, we obtain our main results.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-11-acknowledgements.md",
+      "narrative": null,
+      "content": "and the referee for suggestions to improve the paper.\n2. Hyperbolic structures on compression bodies\nLet S be a closed, orientable (possibly disconnected) surface with genus at least 1,\nand let I denote the interval [0, 1].\nDeﬁnition 2.1. A compression body C is either a handlebody, or the result of\nattaching 1-handles to S × I along S × {1} such that the result is connected. The\nnegative boundary is S ×{0} and is denoted ∂−C; if C is a handlebody then ∂−C = ∅.\nThe positive boundary is ∂C∖∂−C and is denoted ∂+C.\nThe compression bodies that we study here are those for which ∂−C is a torus\nand ∂",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let g ∈PSL(2, C). (1) If H is any horosphere centered at ∞in the upper half space H3, then I(g) is the set of points in H3 equidistant from H and g−1(H). (2) I(g) is mapped isometrically to I(g−1) by g; the half ball B(g) bounded by I(g) is mapped to the exterior of the half ball B(g−1) bounded by I(g−1). Deﬁnition 2.4. A vertical fundamental domain for Γ∞is a fundamental domain for the action of Γ∞cut out by ﬁnitely many vertical geodesics planes in H3. Examples are in order.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let ρ: π1(C) →PSL(2, C) be deﬁned on generators α, β and γ1 of π1(C) by ρ(α) = \u0012 a \u0013 , ρ(β) = \u0012 b \u0013 , ρ(γ1) = \u0012 −1 \u0013 , where a and b are complex numbers which are linearly independent over R with |a| > 4 and |b| > 4. Then ρ gives a hyperbolic structure on C(1; 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Fix an integer n ≥1. Deﬁne ρ(γ1) as in Lemma 2.5. Let A = \u0012 \u0013 . Let ρ(γ2) = Aρ(γ1)A−1, and inductively deﬁne ρ(γi+1) = Aρ(γi)A−1. Finally, let a and b be complex numbers that are linearly independent over R, with |a| > 5 and |b| > 5 chosen suﬃciently large so that the set of isometric spheres {I(ρ(γ±1 j ))} is disjoint from the translates of that set under ρ(α) and ρ(β). Then ρ gives a complete hyperbolic structure on C(1; n + 1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic structures",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-21-hyperbolic-structures.md",
+      "narrative": null,
+      "content": "compression bodies with desired geometric properties.\nLet ρ: π1(C) →PSL(2, C) be a discrete, faithful representation. Let Γ = ρ(π1(C))\ndenote the image of such a representation. Note Γ acts on H3. The representation ρ\ngives a hyperbolic structure on C if H3/Γ is homeomorphic to the interior of C.\nNote Γ = ρ(π1(C)) has a subgroup Γ∞:= ⟨ρ(α), ρ(β)⟩∼= Z × Z, generated by\nparabolics ﬁxing a point at inﬁnity. By conjugating Γ if necessary, we may assume\nΓ∞ﬁxes the point ∞in H3. Let H be any horoball about inﬁnity. Then H/Γ∞is a\nrank-2 cusp of C. Its boundary ∂H/Γ∞is a ﬂat (Euclidean) torus.\nWe will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let [T] be any point in the Teichm¨uller space of the torus. For any n ≥1, there exists a pinched structure ρ on C(1; n + 1) such that ρ gives C(1; n + 1) cusp shape [T].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Let [T] be any point in the Teichm¨uller space of the torus. For any ϵ > 0, there exists a maximally pinched structure ρ′ on C(1; n + 1) such that the cusp shape of ρ′ is ϵ/2-close to [T].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spaces of hyperbolic structures",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-3-spaces-of-hyperbolic-structures.md",
+      "narrative": null,
+      "content": "Deﬁne the representation space of C with parabolic locus T to be the space\nR(C, T) = {representations ρ: π1(C) →PSL(2, C) | g ∈π1(T) ⇒ρ(g) is parabolic}.\nThe space AH(C, T) of hyperbolic structures on C is the set\nAH(C, T) = {ρ ∈R(C, T) | ρ is discrete and faithful}/ ∼\nwhere the equivalence ∼is given by ρ ∼ρ′ if they are conjugate representations.\nThe topology on AH(C, T) is given by algebraic convergence, as follows.\nDeﬁnition 3.1. A sequence of representations {ρn} in AH(C, T) converges alge-\nbraically to a representation ρ if the sequence {ρn(g)} converges to ρ(g) for every\ng ∈π1(C). Here w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "The structures of Deﬁnition 3.5 are typically called maximal cusps in the literature on Kleinian groups, because the boundary of each 3-punctured sphere is a rank-1 cusp (e.g. [27, 10]). Unfortunately, in the case of manifolds with torus boundary components, a maximal cusp refers to something else entirely: a maximally embedded horoball neighborhood of all rank-2 cusps of the manifold. Because our maximally pinched manifolds will also have a maximal horoball neighborhood of the torus boundary component, we rename the type of structures. We decided on pinched because such a structure pinches a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Maximally pinched structures are dense on the boundary ∂MP(C, T) of the space MP(C, T). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let C0 denote the maximally pinched structure on C(1; n + 1) of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "Let P denote the pinched curves on the outer boundary S; note these form a maximal simplex of C(S). (1) There exists a maximally pinched structure H0 on a handlebody H of genus n + 1 such that the pinching is along curves of P ⊂S ∼= ∂H. (2) More generally, assuming results of [26], there exists a maximally pinched structure H0 on a handlebody H of genus n + 1 with pinched curves P ⊂S such that if T is a multitwist on P, and D0 is the disk set of H0, then the distance between disk sets of C0 and of T(D0) is at least 2n + 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pinched handlebodies",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-4-pinched-handlebodies.md",
+      "narrative": null,
+      "content": "We will glue the compression bodies of the previous section to carefully constructed\nhandlebodies, obtaining manifolds with a Heegaard splitting of genus n + 1. To\nensure there is not a Heegaard splitting of lower genus, we will use techniques\nof [8] to bound the Hempel distance of the splitting. In this section we review the\nCUSP SHAPE AND TUNNEL NUMBER\n9\nnecessary background, particularly Hempel distance, and state the relevant results\non a handlebody.\nLet S be a closed, oriented, connected surface, and let C(S) denote the curve\ncomplex of S. Thus C(S) is the simplicial complex with vertices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/cor-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "cor-sec-006-02.md",
+      "narrative": null,
+      "content": "For any integer n ≥1, there exist inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp shapes of tunnel number n manifolds",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-cusp-shapes-of-tunnel-number-n-manifolds.md",
+      "narrative": null,
+      "content": "In this section, we prove the main theorems.\nProof of Theorem 1.2. Let C0 be the compression body with the maximally pinched\nstructure of Lemma 3.9. Let H0 be a maximally pinched structure on a genus\nn + 1 handlebody from Lemma 4.2. The convex cores of C0 and H0 have boundary\nconsisting of embedded, totally geodesic 3-punctured spheres. There is a unique\nCUSP SHAPE AND TUNNEL NUMBER\n11\nhyperbolic structure on such a 3-punctured sphere (see [1]), hence the convex cores\nof C0 and H0 can be glued along their 3-punctured sphere boundaries via isometry.\nSince both C0 and H0 are geometrically ﬁnite,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "we obtain a hyperbolic 3-manifold M with a single tunnel and cusp shape ϵ-close to [T]. Because there is a single tunnel, M has a genus 2 Heegaard splitting. Since there are no hyperbolic manifolds with smaller genus Heegaard splittings, M must have tunnel number one. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Let [T0] denote the Euclidean similarity structure on the torus that includes the 1 × 2 rectangle. Let U denote a neighborhood of [T0]. Then there exists a sequence of hyperbolic Berge knots, all with cusp shape lying in the neighborhood U of [T0]. Moreover, maximal cusps for these Berge knots limit to a 2 × 4 rectangle.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exceptional fillings",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-6-exceptional-fillings.md",
+      "narrative": null,
+      "content": "Recall that Berge knots have tunnel number one. Corollary 5.1 contrasts with the\nfollowing proposition concerning Berge knots, which follows from work of Baker [3].\nProposition 6.1. Let [T0] denote the Euclidean similarity structure on the torus that\nincludes the 1 × 2 rectangle. Let U denote a neighborhood of [T0]. Then there exists\na sequence of hyperbolic Berge knots, all with cusp shape lying in the neighborhood U\nof [T0]. Moreover, maximal cusps for these Berge knots limit to a 2 × 4 rectangle.\nProof. Baker showed that large volume Berge knots are obtained by Dehn ﬁlling the\ncomplement of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cuspshapes/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "As noted by the referee, in the proof of Proposition 6.1, the hyperbolic structure on the augmented, minimally twisted (2n −1)-chain link complement can also be obtained by taking the (2n−1)-fold cover of the Whitehead link, then cutting along the 3-punctured sphere bounded by the augmented component, untwisting, and then regluing. Following this procedure using the geometry of the Whitehead link complement, for example as in [19], leads to the same results on cusp shapes without appealing to belted sums.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/figure-img-p013-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cuspshapes/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[1] Colin C. Adams, Thrice-punctured spheres in hyperbolic 3-manifolds, Trans. Amer. Math. Soc.\n287 (1985), no. 2, 645–656. [11, 12]\n[2] Ian Agol, Bounds on exceptional Dehn ﬁlling, Geom. Topol. 4 (2000), 431–449.\n[1, 2, 12]\n[3] Kenneth L. Baker, Surgery descriptions and volumes of Berge knots. II. Descriptions on the\nminimally twisted ﬁve chain link, J. Knot Theory Ramiﬁcations 17 (2008), no. 9, 1099–1120.\n[1, 12]\n[4]\n, The poincar´e homology sphere, lens space surgeries, and some knots with tunnel number\ntwo, arXiv:1504.06682, 2015, with an appendix by Neil R. Hoﬀman. [2]\n[5] Kenneth L. Bake",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

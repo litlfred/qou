@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/52036/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "kusner.dvi",
+  "contains": [
+    "library/52036/sections/page-001",
+    "library/52036/sections/page-002",
+    "library/52036/sections/page-003",
+    "library/52036/sections/page-004",
+    "library/52036/sections/page-005",
+    "library/52036/sections/page-006",
+    "library/52036/sections/page-007",
+    "library/52036/sections/page-008",
+    "library/52036/sections/page-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Torus Knots Extremizing the Möbius Energy — 9 sections: Page 1; Page 2; Page 3\n\n**Torus Knots Extremizing the Möbius Energy**\n\n*Denise Kim and Rob Kusner*\n\n9 pp, 9 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "52036",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "52036.pdf",
+    "source_sha256": "ab02866e1f7191b73633f6d84afd95a9668ac1eb4be5c6220ae4e14238a00d0c",
+    "pages": 9,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

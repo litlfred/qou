@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/2018sorus020/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The split case",
+  "pageStart": 91,
+  "pageEnd": 96,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-048",
+    "library/2018sorus020/blocks/rem-sec-048-01",
+    "library/2018sorus020/blocks/lem-sec-048-02",
+    "library/2018sorus020/blocks/lem-sec-048-03",
+    "library/2018sorus020/blocks/prop-sec-048-04",
+    "library/2018sorus020/blocks/prop-sec-048-05",
+    "library/2018sorus020/blocks/rem-sec-048-06",
+    "library/2018sorus020/blocks/lem-sec-048-07",
+    "library/2018sorus020/blocks/lem-sec-048-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "provenance": "ingested"
+}

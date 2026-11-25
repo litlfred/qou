@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-integer-stability-consequences",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:integer-stability-consequences",
+  "kind": "remark",
+  "title": "Even-odd selection and beta-decay thresholds",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-integer-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "text": "integer-stability-consequences.md",
+  "provenance": "authored"
+}

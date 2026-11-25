@@ -1,0 +1,433 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-ph-0605041v2",
+  "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": "15",
+      "words": 6951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "penrose trees",
+          "heading": false
+        },
+        {
+          "term": "improved dobrushin",
+          "heading": false
+        },
+        {
+          "term": "dobrushin condition",
+          "heading": false
+        },
+        {
+          "term": "rooted trees",
+          "heading": false
+        },
+        {
+          "term": "planar rooted",
+          "heading": false
+        },
+        {
+          "term": "tree expansions",
+          "heading": false
+        },
+        {
+          "term": "polymer models",
+          "heading": false
+        },
+        {
+          "term": "penrose scheme",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math-ph/0605041v2 16 Oct 2006 Cluster expansion for abstract polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, Avenue de l’Universit´e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem´atica-ICEx, Universidade Federal de Minas Gerais, CP 702, Belo Horizonte MG 30.161-970, Brazil email:",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-ph-0605041v2/blocks/prose-sec-front-matter",
+        "library/arxiv-math-ph-0605041v2/blocks/thm-sec-front-matter-01",
+        "library/arxiv-math-ph-0605041v2/blocks/cor-sec-front-matter-02",
+        "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-03",
+        "library/arxiv-math-ph-0605041v2/blocks/thm-sec-front-matter-04",
+        "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-05",
+        "library/arxiv-math-ph-0605041v2/blocks/rem-sec-front-matter-06",
+        "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-07"
+      ]
+    },
+    {
+      "id": "sec-000-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hospitality during",
+          "heading": false
+        },
+        {
+          "term": "partitionability",
+          "heading": false
+        },
+        {
+          "term": "rouen",
+          "heading": false
+        },
+        {
+          "term": "salem",
+          "heading": false
+        },
+        {
+          "term": "visitor",
+          "heading": false
+        }
+      ],
+      "extract": "We are indebted to the two referees for detailed and constructive criticism that prompted us to a substantial rewriting of the introductory sections and a clearer layout of our proof. We are thankful to Benedetto Scoppola, Roman Kotecký and Alan Sokal for long and fruitful discussions which led us to a number of notions that have enriched our presentation (in particular, partitionability of complexes of edges,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster expansions",
+          "heading": false
+        },
+        {
+          "term": "polymer models",
+          "heading": false
+        },
+        {
+          "term": "ising model",
+          "heading": false
+        },
+        {
+          "term": "statistical mechanics",
+          "heading": false
+        },
+        {
+          "term": "berlin heidelberg",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "dobrushin",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Bovier and M. Zahradnk (2000): A simple inductive approach to the problem of convergence of cluster expansions of polymer models. J. Statist. Phys. 100, 765–78. [2] D. C. Brydges (1984): A short cluster in cluster expansions. In Critical Phenomena, Random Systems, Gauge Theories, Osterwalder, K. and Stora, R. (eds.), Elsevier, 129–83. [3] J. C. Butcher (1987): The Numerical Analysis of Ordinary Diﬀerential",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "improved dobrushin",
+      "heading": false
+    },
+    {
+      "term": "dobrushin condition",
+      "heading": false
+    },
+    {
+      "term": "polymer models",
+      "heading": true
+    },
+    {
+      "term": "penrose trees",
+      "heading": false
+    },
+    {
+      "term": "polymer systems",
+      "heading": false
+    },
+    {
+      "term": "cluster expansions",
+      "heading": false
+    },
+    {
+      "term": "abstract polymer",
+      "heading": false
+    },
+    {
+      "term": "rooted trees",
+      "heading": true
+    },
+    {
+      "term": "convergence criteria",
+      "heading": true
+    },
+    {
+      "term": "tree-graph expansions",
+      "heading": false
+    },
+    {
+      "term": "penrose scheme",
+      "heading": false
+    },
+    {
+      "term": "koteck",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Convergence criteria and lower bounds (R∆) on the radius of convergence when G is a graph with maximal degree ∆. A star indicates that the value is exact for the (∆−1)-regular tree",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Convergence criteria and lower bounds (R) on the radius of convergence obtained with condition (3.2) for some graphs G of ﬁnite degree. A star indicates an exact value",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Convergence conditions for general polymer models. Our condition (3.16) with a(γ) = a |γ| coincides with that by Gruber and Kunz",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Planar rooted trees deﬁned by (a) s0 = s(0,1) = 2 and s(0,2) =",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 3,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 3 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-ph-0605041v2"
+  }
+}

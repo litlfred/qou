@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1706.06168v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization",
+      "dcterms:creator": [
+        "Leake, Jonathan"
+      ],
+      "dcterms:issued": "D:20210808",
+      "dcterms:identifier": "https://arxiv.org/abs/1706.06168",
+      "dcterms:abstract": "In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea-Br¨and´en result to characterize a certain subclass of the linear operators which preserve such polynomials.",
+      "dcterms:source": "library/arxiv-1706.06168v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1706.06168v3"
+    }
+  ]
+}

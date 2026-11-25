@@ -1,0 +1,437 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1508.01627v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"} The classical Murnaghan--Nakayama rule provides an efficient recursive method to compute the values of irreducible characters of symmetric groups. This method can be adapted to the finite general linear and unitary groups, where it then allows to compute values of unipotent characters not on arbitrary but just on regular semisimple elements, see [@LM15 Prop. 3.3]. This adaptation uses the fact that the unipotent characters of general linear groups coincide with Lusztig's so-called almost characters and then applies the Murnaghan--Nakayama rule for the symmetric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1508.01627v4  [math.RT]  25 Oct 2016\nREPRESENTATION THEORY\nAn Electronic Journal of the American Mathematical Society\nVolume 00, Pages 000–000\n(Xxxx XX, XXXX)\nS 1088-4165(XX)0000-0\nA MURNAGHAN–NAKAYAMA RULE FOR VALUES\nOF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS\nFRANK L¨UBECK AND GUNTER MALLE\nAbstract. We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of\nﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of\nLusztig restriction. We use our formula to show that most complex irreducible characters vanish on\nsom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maximal tori in classical groups",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-maximal-tori-in-classical-groups.md",
+      "narrative": null,
+      "content": "[]{#sec:maxtor label=\"sec:maxtor\"}\n\nIn this section we establish the existence of regular semisimple $\\ell$-singular elements in suitable tori of classical groups of Lie type. This will be a main ingredient in the proof of the vanishing Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"}. Moreover, we formulate a criterion for collections of maximal tori of simple algebraic groups not to be contained in a common proper reductive subgroup.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an.md",
+      "narrative": null,
+      "content": "[]{#subsec:WeylBCD label=\"subsec:WeylBCD\"}\n\nFor a prime power $q$ and $K = \\overline{{\\mathbb{F}}_q}$ we consider the natural representation of ${\\mathbf{G}}= {\\operatorname{Sp}}_{2n}(K)$ on $V = K^{2n}$ (case $C_n$) and of ${\\mathbf{G}}= {\\operatorname{SO}}_{2n+1}(K)$ on $V = K^{2n+1}$, and a Steinberg morphism $F$ on ${\\mathbf{G}}$ with fixed point group ${\\mathbf{G}}^F = {\\operatorname{Sp}}_{2n}(q)$, respectively ${\\mathbf{G}}^F = {\\operatorname{SO}}_{2n+1}(q)$. With respect to an appropriate choice of basis of $V$ we can assume (see [@MT Exmp. 6.7]) that the subgroup ${\\mathbf{T}}$ of diag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular semisimple elements",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-regular-semisimple-elements.md",
+      "narrative": null,
+      "content": "[]{#subsec:regss label=\"subsec:regss\"} We need to know that certain maximal tori contain regular elements. As before, let $q$ be a prime power. For a prime $\\ell$ not dividing $q$ we denote by $d_\\ell(q)$ the order of $q$ modulo $\\ell$, that is the smallest $d\\ge1$ with $\\ell \\mid (q^d-1)$. If $d$ is even then we have $\\ell \\mid (q^{d/2}+1)$. With these definitions, $\\ell \\mid (q^k-1)$ if and only if $d \\mid k$, and for even $d$ we have $\\ell \\mid (q^k+1)$ if and only if $k$ is an odd multiple of $d/2$.\n\n::: lem\n[]{#lem:regelts label=\"lem:regelts\"} Let ${\\mathbf{G}}$ be a simple simply-connect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maximal connected reductive subgroups",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-23-maximal-connected-reductive-subgroups.md",
+      "narrative": null,
+      "content": "[]{#subsec:maxred label=\"subsec:maxred\"} The following lemma will allow us to decide if a collection of classes of maximal tori of a classical group has representatives inside the centraliser of a semisimple element:\n\n::: lem\n[]{#lem:maxred label=\"lem:maxred\"} Let ${\\mathbf{G}}$ be a simple algebraic group of classical type $B_n,C_n$ (with $n\\ge2$) or $D_n$ (with $n\\ge4$) with Frobenius endomorphism $F$ such that ${\\mathbf{G}}^F$ is a classical group. Let $\\Lambda$ be a set of pairs of partitions $(\\la,\\mu)\\vdash n$. Assume the following:\n\n1.  there is no $1\\le k\\le n-1$ such that all $(\\la,\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Murnaghan–Nakayama rule",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-3-a-murnaghannakayama-rule.md",
+      "narrative": null,
+      "content": "[]{#sec:MNrule label=\"sec:MNrule\"}\n\nIn this section we derive a Murnaghan--Nakayama type formula for the values of unipotent characters of classical groups of Lie type on regular semisimple elements. It relies on a result of Asai on the decomposition of Lusztig restriction.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lusztig restriction",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-31-lusztig-restriction.md",
+      "narrative": null,
+      "content": "[]{#subsec:*RLG label=\"subsec:*RLG\"} We consider the following setup: ${\\mathbf{G}}$ is a connected reductive algebraic group over an algebraic closure of the finite field ${\\mathbb{F}}_p$, and $F:{\\mathbf{G}}\\rightarrow{\\mathbf{G}}$ is a Steinberg endomorphism of ${\\mathbf{G}}$, with finite group of fixed points ${\\mathbf{G}}^F$. For an $F$-stable Levi subgroup ${\\mathbf{L}}\\le{\\mathbf{G}}$ of ${\\mathbf{G}}$ Lusztig defined, via certain $\\ell$-adic cohomology constructions, induction and restriction functors $${R_{\\mathbf{L}}^{\\mathbf{G}}}:{\\mathbb{Z}}{\\operatorname{Irr}}({\\mathbf{L}}^F)\\righ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symbols",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-32-symbols.md",
+      "narrative": null,
+      "content": "[]{#subsec:symb label=\"subsec:symb\"} We now specialise to simple groups of classical type. By Lusztig's results their unipotent characters are parameterised by so-called *symbols*. Here, a symbol is an unordered pair of finite sets of non-negative integers, usually denoted as $${\\mathcal{S}}=\\binom{X}{Y}=\\begin{pmatrix} \\la_1& \\la_2& \\ldots& \\la_r\\\\\n  \\mu_1& \\mu_2& \\ldots& \\mu_s\\end{pmatrix}$$ with $\\la_1<\\la_2<\\ldots<\\la_r$ and $\\mu_1<\\mu_2<\\ldots<\\mu_s$ where $r,s\\ge0$. Two symbols are said to be *equivalent* if one can be obtained from the other by a sequence of shift operations $${\\mathcal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unipotent characters of symplectic and orthogonal groups",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-33-unipotent-characters-of-symplectic-and-orthog.md",
+      "narrative": null,
+      "content": "[]{#subsec:uniBCD label=\"subsec:uniBCD\"} Now assume that ${\\mathbf{G}}$ is simple of type $B_n$, $C_n$ or $D_n$, and $F$ does not induce the triality automorphism when ${\\mathbf{G}}$ is of type $D_4$ nor the exceptional graph automorphism in type $B_2$ or $C_2$. According to Lusztig [@Lu84] the unipotent characters of $G:={\\mathbf{G}}^F$ are then parameterised by (equivalence classes of) symbols of rank $n$. More precisely, if ${\\mathbf{G}}$ is of type $B_n$ or $C_n$, the unipotent characters of $G$ are parameterised by symbols of rank $n$ and odd defect. Now assume that ${\\mathbf{G}}$ is of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Values of unipotent characters at regular semisimple elements",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-34-values-of-unipotent-characters-at-regular-sem.md",
+      "narrative": null,
+      "content": "[]{#subsec:MN label=\"subsec:MN\"} We first recall the following result of Asai on the decomposition of Lusztig induction as given in [@FS86 (3.1), (3.2)]. We restate it in terms of the restriction functors ${\\,{}^*R_{\\mathbf{L}}^{\\mathbf{G}}}$ instead of the induction functors ${R_{\\mathbf{L}}^{\\mathbf{G}}}$ as in the cited reference. This is a summary of results from [@As1 2.8], [@As2 1.5] and [@As3 2.2.3]. Note that there is a sign missing in the formula [@FS86 (3.2)] in the case $D_n$ as can be seen by considering the trivial character.\n\n::: thm\n[]{#thm:Asai label=\"thm:Asai\"} Let ${\\mathbf{G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vanishing of characters",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-4-vanishing-of-characters.md",
+      "narrative": null,
+      "content": "[]{#sec:vanish label=\"sec:vanish\"} In this section we prove Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"} for quasi-simple groups of classical type. So let ${\\mathbf{G}}$ be a simply-connected simple algebraic group of type $B_n$ with $n \\geq 3$, $C_n$ with $n \\geq 2$ or $D_n$ with $n \\geq 4$, and let $F$ be a Steinberg morphism of ${\\mathbf{G}}$ (we exclude the ${}^3\\!D_4$ case) with $G ={\\mathbf{G}}(q) := {\\mathbf{G}}^F$. We consider the corresponding finite groups $G={\\operatorname{Spin}}_{2n+1}(q)$ only for odd $q$, and ${\\operatorname{Sp}}_{2n}(q)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-unipotent characters",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-41-non-unipotent-characters.md",
+      "narrative": null,
+      "content": "[]{#ssec:nonunipotent label=\"ssec:nonunipotent\"}\n\nWe first deal with non-unipotent characters, and afterwards examine in more detail the unipotent characters.\n\n::: thm\n[]{#thm:non-unip label=\"thm:non-unip\"} Let $G$ be one of the groups ${\\operatorname{Spin}}_{2n+1}(q)$ for odd $q$ and $n \\geq 3$, ${\\operatorname{Sp}}_{2n}(q)$ for any $q$ and $n \\geq 2$, or ${\\operatorname{Spin}}^\\pm_{2n}(q)$ for any $q$ and $n \\geq 4$. Let $2\\ne\\ell{\\not|}q$ be a prime such that the Sylow $\\ell$-subgroups of $G$ are non-cyclic. Then any non-unipotent irreducible complex character of $G$ vanishes on some $\\ell$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unipotent characters",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-42-unipotent-characters.md",
+      "narrative": null,
+      "content": "[]{#ssec:unipotent label=\"ssec:unipotent\"} In the following theorem we use symbols to describe unipotent characters and refer to Section [\\[subsec:symb\\]](#subsec:symb){reference-type=\"ref\" reference=\"subsec:symb\"} for the notation.\n\n::: thm\n[]{#thm:unip label=\"thm:unip\"} Let $G$ be one of the groups ${\\operatorname{Spin}}_{2n+1}(q)$ for odd $q$ and $n \\geq 3$, ${\\operatorname{Sp}}_{2n}(q)$ for any $q$ and $n \\geq 2$, or ${\\operatorname{Spin}}^\\pm_{2n}(q)$ for any $q$ and $n \\geq 4$. Let $2\\ne\\ell{\\not|}q$ be a prime such that the Sylow $\\ell$-subgroups of $G$ are non-cyclic.\n\nLet $\\rho_{\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple endotrivial modules",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-5-simple-endotrivial-modules.md",
+      "narrative": null,
+      "content": "[]{#sec:endotriv label=\"sec:endotriv\"} In this section we prove Theorem 2 on the classification of simple endotrivial modules for finite classical groups. Note that the case of linear and unitary groups has already been treated in [@LM15], so we only need to consider symplectic groups and spin groups as in the previous section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On certain unipotent characters",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-51-on-certain-unipotent-characters.md",
+      "narrative": null,
+      "content": "[]{#subsec:unip label=\"subsec:unip\"}\n\nWe first rule out some candidate characters. Let $\\Phi_d\\in{\\mathbb{Z}}[x]$ denote the $d$th cyclotomic polynomial.\n\n::: prop\n[]{#prop:babbage label=\"prop:babbage\"} Let $\\chi$ be the unipotent character of $G = {\\operatorname{SO}}_{6d-1}(q)$ or ${\\operatorname{Sp}}_{6d-2}(q)$ (respectively of ${\\operatorname{SO}}_{2(3d-1)}^+(q)$, ${\\operatorname{SO}}_{6d}^-(q)$) parameterised by the symbol $$\\binom{d\\ 2d}{0}\\quad \\text{respectively }\\ \\binom{d\\ 2d}{0\\ 1},\\\n  \\binom{d\\ 2d}{},$$ with $d\\ge3$ odd, or the unipotent character of ${\\operatorname{SO}}_{6e}^+(q)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple endotrivial modules in classical type groups",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-52-simple-endotrivial-modules-in-classical-type.md",
+      "narrative": null,
+      "content": "[]{#subsec:endoclass label=\"subsec:endoclass\"}\n\nWe will use the fact shown in [@LMS13 Thm. 1.3] that any endotrivial module is liftable to a characteristic 0 representation. Therefore, we can investigate endotrivial modules by the ordinary character of their lift. These characters have the following properties:\n\n-   they are irreducible modulo $\\ell$,\n\n-   their values on $\\ell$-singular classes are of absolute value $1$,\n\n-   their degree is congruent to $\\pm 1$ modulo $|G|_\\ell$.\n\nTheorem 2 is now a consequence of:\n\n::: thm\n[]{#thm:BC label=\"thm:BC\"} Let $G={\\operatorname{Sp}}_{2n}(q)$ or $G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zeroes of characters of quasi-simple groups",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-016-6-zeroes-of-characters-of-quasi-simple-groups.md",
+      "narrative": null,
+      "content": "[]{#sec:rank3 label=\"sec:rank3\"}\n\nTogether with our previous work [@LM15; @LMS13] with C. Lassueur and E. Schulte our results allow us to guarantee the existence of zeroes of characters of quasi-simple groups on $\\ell$-singular elements once the $\\ell$-rank is at least 3, as claimed in Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"} which we restate:\n\n::: thm\n[]{#thm:zeroes label=\"thm:zeroes\"} Let $\\ell>2$ be a prime and $G$ a finite quasi-simple group of $\\ell$-rank at least 3. Then for any non-trivial character $\\chi\\in{\\operatorname{Irr}}(G)$ there exis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/lem-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "lem-sec-017-02.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and p a prime. Assume that H ≤G is a subgroup such that |G : H| is divisible by p, but |G : H| < |G|p. Then c(p) 11 > 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prop-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "prop-sec-017-03.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite simple group of Lie type in characteristic p. Then c(p) 11 > 2 unless G = L2(p).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An application to small 1-PIMs",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-017-7-an-application-to-small-1-pims.md",
+      "narrative": null,
+      "content": "Our results so far may also be used in order to investigate the ﬁrst Cartan invariant of ﬁnite simple\nclassical groups.\nIn their recent paper [9], Koshitani, K¨ulshammer and Sambale raised the question\nMURNAGHAN–NAKAYAMA RULE FOR UNIPOTENT CHARACTERS\n19\nto understand simple groups with non-cyclic Sylow ℓ-subgroup for which the ﬁrst Cartan invariant c11\nequals 2.\nTheorem 7.1. Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a\nprime for which Sylow ℓ-subgroups of G are non-cyclic. Then the ℓ-modular projective cover of the trivial\ncharacter of G has at least thr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a prime for which Sylow ℓ-subgroups of G are non-cyclic. Then the ℓ-modular projective cover of the trivial character of G has at least three ordinary constituents. In particular c11 ≥3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.01627v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[1] M. Geck, G. Hiss, F. L¨ubeck, G. Malle, G. Pfeiffer, CHEVIE — A system for computing\nand processing generic character tables for ﬁnite groups of Lie type, Weyl groups and Hecke\nalgebras. Appl. Algebra Engrg. Comm. Comput. 7 (1996), 175–210.\n[2] S. Koshitani, B. K¨ulshammer, B. Sambale, On Loewy lengths of blocks. Math. Proc.\nCambridge Philos. Soc. 156 (2014), 555–570.\n[3] C. Lassueur, G. Malle, Simple endotrivial modules for linear, unitary and exceptional\ngroups. Math. Z. 280 (2015), 1047–1074.\n[4] F. L¨ubeck, G. Malle, A Murnaghan-Nakayama rule for values of unipotent characters in\nclass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

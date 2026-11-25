@@ -1,0 +1,398 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0404010v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Yang–Baxter equation and its solutions, the Yang–Baxter operators, ﬁrst ap-\npeared in theoretical physics and statistical mechanics. Later, this equation has emerged\nin other ﬁelds of mathematics such as quantum group theory. Some references on this\ntopic are [5, 7].\nThe Yang–Baxter equation also plays an important role in knot theory. Indeed, Tu-\nraev has described in [12] a general scheme to derive an invariant of oriented links from a\nYang–Baxter operator, provided this one can be “enhanced”. The Jones polynomial [4]\nand its two–variable extensions, namely the Homﬂypt polynomial [2, 10]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0404010v1  [math.QA]  1 Apr 2004\nYANG–BAXTER OPERATORS ARISING FROM ALGEBRA\nSTRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS\nGW´ENA¨EL MASSUYEAU AND FLORIN F. NICHITA\nAbstract. In this paper, we consider the problem of constructing knot invariants\nfrom Yang–Baxter operators associated to algebra structures. We ﬁrst compute the\nenhancements of these operators. Then, we conclude that Turaev’s procedure to derive\nknot invariants from these enhanced operators, as modiﬁed by Murakami, invariably\nproduces the Alexander polynomial of knots.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "D˘asc˘alescu–Nichita [1]",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Let A and A′ be k–algebras of dimension at least 2, and let x, y, x′, y′ be nonzero scalars. Then the YB operators Rx,y and Rx′,y′ associated to A and A′ respectively are isomorphic if, and only if, x = x′, y = y′ and the k–algebras A and A′ are isomorphic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang--Baxter operators arising from algebra structures",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-yang--baxter-operators-arising-from-algebra-st.md",
+      "narrative": null,
+      "content": "In this section, we recall results from [1] and we follow the terminology used there.\nFor a k–vector space V , the ﬂip map T : V ⊗V →V ⊗V is deﬁned by T(v ⊗w) = w⊗v.\nGiven a k–linear map R : V ⊗V →V ⊗V , we will write R12 = R ⊗Id, R23 = Id ⊗R\nand R13 = (Id ⊗T)(R ⊗Id)(Id ⊗T).\nDeﬁnition 2.1. An invertible k–linear map R : V ⊗V →V ⊗V is called a Yang–Baxter\noperator (or simply a YB operator) if it satisﬁes the equation\n(1)\nR12 ◦R23 ◦R12 = R23 ◦R12 ◦R23.\nRemark 2.2. Equation (1) is usually called the braid equation. An operator R satisﬁes\n(1) if and only if R ◦T satisﬁes the quantum Yang–Baxter eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "Equation (1) is usually called the braid equation. An operator R satisﬁes (1) if and only if R ◦T satisﬁes the quantum Yang–Baxter equation R12 ◦R13 ◦R23 = R23 ◦R13 ◦R12. Given a (unitary associative) k–algebra A and scalars x, y, z ∈k, we consider the k–linear map Rx,y,z : A ⊗A →A ⊗A deﬁned by Rx,y,z(a ⊗b) = x · ab ⊗1 + y · 1 ⊗ab −z · a ⊗b for any a, b ∈A. The following theorem determines the situations where this map is a Yang–Baxter operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "In fact, according to the proof of [1, Proposition 3.1], a bijective k–linear map f : A →A′ is such that Rx′,y′ ◦(f ⊗f) = (f ⊗f) ◦Rx,y if and only if x = x′, y = y′ and f is, up to multiplication by a scalar, an isomorphism of k–algebras. (Note that the assumption char(k)̸ = 2 is used here.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "D˘asc˘alescu–Nichita [1]",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Let A be a k–algebra of dimension at least 2 and let x, y, z ∈k be scalars. Then Rx,y,z is a Yang–Baxter operator if and only if one of the following conditions holds: (i) x = z̸ = 0, y̸ = 0, (ii) y = z̸ = 0, x̸ = 0, (iii) x = y = 0, z̸ = 0. If so, its inverse is given by Rx,y,z−1 = Ry−1,x−1,z−1 in cases (i) and (ii), and by R0,0,z−1 = R0,0,z−1 in case (iii). We will be only interested in the non–trivial cases (i) and (ii) (which are equivalent through inversion) and we will denote by Rx,y the operator Rx,y,x. Observe that (2) Rx,y −xy · Rx,y−1 = (y −x) · Id⊗2 and that, in particular, the mini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of oriented links derived from Yang--Baxter operators",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-invariants-of-oriented-links-derived-from-yang.md",
+      "narrative": null,
+      "content": "In this section, we shortly review Turaev’s procedure [12] to derive an invariant of\noriented links from a Yang–Baxter operator, provided one can “enhance” it. We also\nrecall a slight modiﬁcation of this construction, due to Murakami [8], which applies to\nYang–Baxter operators verifying a certain redundancy property.\n3.1. Enhanced Yang–Baxter operators. Let V be a ﬁnite–dimensional k–vector\nspace and let f : V ⊗n →V ⊗n be a k–linear map. We pick a basis e = (e1, . . . , ed) of\nV and, following our convention, we denote f j1···jn−1jn\ni1···in−1in the matrix element of f with\nrespect to the basis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Turaev [12]",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let S be an enhanced YB operator. If two braids b1 and b2 have isotopic closures, then their Markov traces TS(b1) and TS(b2) are equal. So, there is an isotopy invariant XS of oriented links deﬁned by XS \u0010 bb \u0011 = TS(b).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let R : V ⊗V →V ⊗V be a YB operator such that R2 + b · R + c · Id⊗2 = 0 ∈End \u0000V ⊗2\u0001 , where c ∈k∗and b ∈k. Then, for any integer n ≥2, we have that AR,n = AR,n−1 +",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "Let S = (R, µ, α, β) be an enhanced Yang–Baxter operator such that R2 + b · R + c · Id⊗2 = 0 ∈End \u0000V ⊗2\u0001 , where c ∈k∗and b ∈k. Then, S is redundant. In order to prove this proposition, we will need the following lemma. (Compare it with [8, Lemma A.2].)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "If b, c ∈Bn are such that ρR(b) ∈Cn and ρR(c) ∈Cn, then we have that ρR(bc) ∈Cn too. Let us prove that ρR(bc) = ρR(b)ρR(c) belongs to Cn knowing that ρR(b) and ρR(c) do. Since AR,n−1 is a subalgebra of AR,n, we can suppose with no loss of generality that ρR(b) = b1 \u0000Id⊗n−2 ⊗R \u0001 b2 and that ρR(c) = c1 \u0000Id⊗n−2 ⊗R \u0001 c2, where bi, ci are elements of AR,n−1 ⊂AR,n. Since b2c1 belongs to AR,n−1 = Cn−1 (by the induction hypothesis), we have that b2c1 = d + X i ei \u0000Id⊗n−3 ⊗R ⊗Id \u0001 fi where d, ei, fi belong to AR,n−2 ⊂AR,n−1 ⊂AR,n. We deduce that ρR(bc) = b1 \u0000Id⊗n−2 ⊗R \u0001 d \u0000Id⊗n−2 ⊗R \u0001 c2 + X i b1 \u0000Id⊗n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Redundant Yang--Baxter operators",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-32-redundant-yang--baxter-operators.md",
+      "narrative": null,
+      "content": "\u0000V ⊗2\u0001\nis a Yang–Baxter op-\nerator, we deﬁne AR,n to be the subspace of End (V ⊗n) generated by the image ρR(Bn).\nIn particular, AR,n is a subalgebra of End (V ⊗n) and we have AR,1 = ⟨Id⟩⊂End(V ).\nDeﬁnition 3.3. A redundant Yang–Baxter operator is an enhanced YB operator S =\n(R, µ, α, β) such that\n∀x ∈AR,n, Spµ\nn(x) ∈AR,n−1.\nHere, for any x ∈End (V ⊗n), Spµ\nn(x) denotes Spn\n\u0000x ◦\n\u0000Id⊗n−1 ⊗µ\n\u0001\u0001\n.\nLet us observe that, under the assumption that S is redundant, the endomorphism\nof V associated to a braid b ∈Bn by\nSp2 · · · Spn\n\u0000ρR(b) ◦\n\u0000Id ⊗µ⊗n−1\u0001\u0001\n= Spµ\n2 · · · Spµ\nn (ρR(b))\nis a multiple of the i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "If S = (R, µ, α, β) is a redundant Yang–Baxter operator, then we have that XS (L) = Trace(µ) · XS,1(L) for any oriented link L. In particular, if Trace(µ) vanishes, then XS does too: this is the case when it is worth working with modiﬁed Markov traces. Next proposition will be proved thanks to arguments from [8, Appendix A]. There, Murakami shows redundancy of a particular (colored) enhanced Yang–Baxter operator, from which he derives the (multivariable) Alexander polynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Murakami [8]",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Let S be a redundant YB operator. If two braids b1 and b2 have isotopic closures, then their modiﬁed Markov traces TS,1(b1) and TS,1(b2) are equal. So, there is an isotopy invariant XS,1 of oriented links deﬁned by XS,1 \u0010 bb \u0011 = TS,1(b).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/ex-sec-005-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "ex-sec-005-02.md",
+      "narrative": null,
+      "content": "Let us consider the ﬁeld k = Q \u0010 x1/2, y1/2\u0011 of rational fractions in x1/2 and y1/2, and the k–algebra A = k[t] (t2). Then, the automorphism µ of the algebra A deﬁned by µ(t) = −t, the scalars α = x1/2y1/2 and β = x1/2y−1/2 satisfy conditions (8) with c = 1, so that (Rx,y, µ, α, β) is an enhanced YB operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let µ : A →A be a bijective k–linear map and let α, β be nonzero scalars. Then, (Rx,y, µ, α, β) is an enhanced YB operator if, and only if, there exists a scalar c such that c · µ is a k–algebra automorphism and the following conditions are satisﬁed (8)    x = cαβ y−1 = cα−1β Trace (A →A, b 7→aµ(b)) = 0 for all a ∈A. G. MASSUYEAU AND F. F. NICHITA In fact, it is enough to consider a two-dimensional algebra to ﬁnd a solution to (8).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of oriented links derived from algebra structures",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-4-invariants-of-oriented-links-derived-from-alge.md",
+      "narrative": null,
+      "content": "In this section, we consider a (unitary associative) k–algebra A with ﬁnite dimension\nat least 2, as well as nonzero scalars x and y. Let Rx,y : A ⊗A →A ⊗A be the YB\noperator from §2 deﬁned by\nRx,y(a ⊗b) = x · ab ⊗1 + y · 1 ⊗ab −x · a ⊗b.\nWe apply Turaev’s procedure to this Yang–Baxter operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Enhancements of Rx,y",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-41-enhancements-of-rxy.md",
+      "narrative": null,
+      "content": "be nonzero scalars. Let us look for necessary and suﬃcient conditions for (Rx,y, µ, α, β)\nto be an enhanced YB operator in the sense of Deﬁnition 3.1.\nFirstly, condition (E1) means that µ is an automorphism of the YB operator Rx,y (in\nthe sense of Deﬁnition 2.4). Thus, by Remark 2.6, µ has this property if and only if\nthere exists a scalar c such that c · µ is a k–algebra automorphism. Since (Rx,y, µ, α, β)\nis an enhanced Y B operator if and only if (Rx,y, c · µ, α, cβ) is, we can assume presently\nwith no loss of generality that µ is an automorphism of the algebra A.\nSecondly, let us ﬁnd an eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with the Alexander polynomial",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-42-connection-with-the-alexander-polynomial.md",
+      "narrative": null,
+      "content": "is an enhanced YB operator. Lemma 4.1 gives us necessary and suﬃcient conditions\nfor that: in particular, by the third condition of (8), we must have Trace(µ) = 0. That\nenhanced YB operator is redundant since the minimal polynomial of Rx,y has degree\n2 (Proposition 3.6). Thus, by Remark 3.5, the invariant XS associated to S vanishes.\nConsequently, we will consider the invariant XS,1 associated to S by taking modiﬁed\nMarkov traces of braids.\nTheorem 4.3. Let µ : A →A and α, β ∈k be such that S = (Rx,y, µ, α, β) is an\nenhanced YB operator. Then, the invariant of oriented links XS,1 is determined",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "Let µ : A →A and α, β ∈k be such that S = (Rx,y, µ, α, β) is an enhanced YB operator. Then, the invariant of oriented links XS,1 is determined by the Alexander polynomial. Conversely, the Alexander polynomial can be recovered from XS,1 for appropriate ground ﬁelds k. Before proving Theorem 4.3, we recall that the Alexander polynomial of an oriented link L, denoted by ∆(L) ∈Z h t±1/2i , is a classical invariant. Deﬁned from the homology of the maximal abelian covering of the complement of the link (see, for instance, [11]), the Alexander polynomial also satisﬁes the following skein relations: (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0404010v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] S. D˘asc˘alescu, F. F. Nichita, Yang–Baxter operators arising from (co)algebra structures, Comm.\nAlgebra 27 n◦12 (1999), 5833–5845.\n[2] P. Freyd, D. Yetter, J. Hoste, W. B. R. Lickorish, K. Millett, A. Ocneanu, A new polynomial\ninvariant of knots and links, Bull. Amer. Math. Soc. 12 (1985), 239–246.\n[3] M. Jimbo, Quantum R matrix for the generalized Toda system, Lett. Math. Phys. 11 (1986), 247–\n252.\n[4] V. F. R. Jones, A polynomial invariant for knots via von Neumann algebras, Bull. Amer. Math.\nSoc. 12 (1985), 103–111.\n[5] C. Kassel, Quantum Groups, Graduate Texts in Math. 155, Springer V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

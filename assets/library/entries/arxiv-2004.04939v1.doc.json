@@ -1,0 +1,558 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2004.04939v1",
+  "title": "arxiv-2004.04939v1",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Braid group action on the quantum Grothendieck rings",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-braid-group-action-on-the-quantum-grothendieck"
+    },
+    {
+      "level": 1,
+      "title": "The category TN and reflection functors",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-category-tn-and-reflection-functors"
+    },
+    {
+      "level": 1,
+      "title": "Reflections by root modules",
+      "number": "4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-reflections-by-root-modules"
+    },
+    {
+      "level": 1,
+      "title": "Conjectures",
+      "number": "5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-conjectures"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grothendieck ring",
+          "heading": false
+        },
+        {
+          "term": "quantum grothendieck",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "tigate",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2004.04939v1 [math.RT] 10 Apr 2020 BRAID GROUP ACTION ON THE MODULE CATEGORY OF QUANTUM AFFINE ALGEBRAS MASAKI KASHIWARA, MYUNGHO KIM, SE-JIN OH, AND EUIYONG PARK Abstract. Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra. We show that there exists an action of the braid group B(g0) on the quantum Grothendieck ring Kt(g) of Hernandez-Leclerc’s",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2004.04939v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category catc",
+          "heading": false
+        },
+        {
+          "term": "subcategory catc",
+          "heading": false
+        },
+        {
+          "term": "grothendieck ring",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "quantum grothendieck",
+          "heading": false
+        },
+        {
+          "term": "rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "quiver hecke",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "The monoidal category $\\catC_\\g$ of finite-dimensional representations of a quantum affine algebra $\\uqpg$ has been extensively investigated because of its rich structure. Among various approaches, Nakajima (\\cite{Nak04}), Varagnolo-Vasserot (\\cite{VV03}), and Hernandez (\\cite{Her04}) studied $t$-deformations of the Grothendieck ring of $\\catC_\\g$. These $t$-deformations are interesting, because they provide a way",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-braid-group-action-on-the-quantum-grothendieck",
+      "number": "2",
+      "title": "Braid group action on the quantum Grothendieck rings",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 799,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yim yjm",
+          "heading": false
+        },
+        {
+          "term": "eqn yim",
+          "heading": false
+        },
+        {
+          "term": "yim quad",
+          "heading": false
+        },
+        {
+          "term": "aligned brd",
+          "heading": false
+        },
+        {
+          "term": "aligned eneqn",
+          "heading": false
+        },
+        {
+          "term": "catc",
+          "heading": false
+        },
+        {
+          "term": "eneqn end",
+          "heading": false
+        },
+        {
+          "term": "q-data",
+          "heading": false
+        }
+      ],
+      "extract": "\\newcommand{\\modt}{ \\; \\mathrm{mod}\\; 2 } Let $\\g_0$ be a finite-dimensional simple Lie algebra of simply-laced type with a Cartan matrix $\\A=(a_{ij})_{i,j\\in I_0}$, $\\g$ the untwisted affine Kac-Moody algebra associated with $\\g_0$, and $\\uqpg$ the quantum affine algebra associated with $\\g$. We take the algebraic closure of $\\C(q)$ inside $\\bigcup_{m >0}\\C((q^{1/m}))$ as the base field $\\cor$ for $\\uqpg$. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-category-tn-and-reflection-functors",
+      "number": "3",
+      "title": "The category TN and reflection functors",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refl col",
+          "heading": false
+        },
+        {
+          "term": "refl simeq",
+          "heading": false
+        },
+        {
+          "term": "circ refl",
+          "heading": false
+        },
+        {
+          "term": "functors refl",
+          "heading": false
+        },
+        {
+          "term": "item refl",
+          "heading": false
+        },
+        {
+          "term": "cata mathcal",
+          "heading": false
+        },
+        {
+          "term": "cata mathrm",
+          "heading": false
+        },
+        {
+          "term": "category cata",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J$ be the index set of simple roots of the root system $A_\\infty$. One can identify $J$ with $\\Z$ and the root lattice $\\rootl$ is the subspace of $\\soplus_{a\\in \\Z} \\Z\\eps_a$ generated by $\\al_a=\\eps_a-\\eps_{a+1}$ for $a\\in\\Z$. Let $R^{A_\\infty}$ be the symmetric quiver Hecke algebra of type $A_\\infty$ over $\\cor$ with the choice of parameters \\eqn Q_{ij}(u,v)=\\delta(i\\neq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-reflections-by-root-modules",
+      "number": "4",
+      "title": "Reflections by root modules",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "root modules",
+          "heading": true
+        },
+        {
+          "term": "circ hconv",
+          "heading": false
+        },
+        {
+          "term": "col lambda",
+          "heading": false
+        },
+        {
+          "term": "rmat",
+          "heading": false
+        },
+        {
+          "term": "refl",
+          "heading": false
+        },
+        {
+          "term": "called emph",
+          "heading": false
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        },
+        {
+          "term": "conv",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that for each pair of non-zero modules $(X,Y)$ of $\\catA$, there exists a distinguished nonzero morphism $\\rmat{X,Y}\\col t^{\\Lambda(X,Y)}X \\conv Y \\to Y \\conv X$ called the \\emph{r-matrix} (\\cite{KKK18A}). Here, $t$ is the grading shift functor. We have ${\\Omega_N(\\rmat{X,Y}}) \\col t^{\\Lambda_N(X,Y)}X \\star Y \\to Y \\star X$ in $\\T_N$, where $\\Lambda_N(X,Y) = \\Lambda(X,Y)-B(\\wt(X),\\wt(Y)) + B(\\wt(Y),\\wt(X))$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conjectures",
+      "number": "5",
+      "title": "Conjectures",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ refl",
+          "heading": false
+        },
+        {
+          "term": "refl simeq",
+          "heading": false
+        },
+        {
+          "term": "sim iota",
+          "heading": false
+        },
+        {
+          "term": "brd",
+          "heading": false
+        },
+        {
+          "term": "root module",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\uqpg$ be an arbitrary quantum affine algebra. We say that a real simple module $L$ in $\\catC^0_\\g$ is a {\\em root module} if $\\de(\\dual^kM,M)=\\delta(k=\\pm1)$ for any $k$. \\Conj For any root module $L\\in\\catC^0_\\g$, there exists a monoidal autofunctor $\\Refl_L$ of $\\cat$ which satisfies the following conditions: \\bna \\item $\\Refl_L$ satisfies similar properties in Theorem~\\ref{thm:S_i(X)} and Theorem~\\ref{thm:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne algebras",
+          "heading": false
+        },
+        {
+          "term": "dynkin quiver",
+          "heading": false
+        },
+        {
+          "term": "aﬃne schur-weyl",
+          "heading": false
+        },
+        {
+          "term": "quiver hecke",
+          "heading": false
+        },
+        {
+          "term": "quantum aﬃne",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "symmetric quiver",
+          "heading": false
+        },
+        {
+          "term": "kyoto university",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Ryo Fujita, Aﬃne highest weight categories and quantum aﬃne Schur-Weyl duality of Dynkin quiver types, arXiv:1710.11288. [2] , Geometric realization of Dynkin quiver type quantum aﬃne Schur-Weyl duality, arXiv:1803.01538. [3] D. Hernandez, Algebraic approach to q, t-characters , Adv. in Math. 187 (2004) 1–52. [4] D. Hernandez and B. Leclerc, Cluster algebras and quantum aﬃne algebras, Duke Math. J. 154 (2010),",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "refl col",
+      "heading": false
+    },
+    {
+      "term": "circ refl",
+      "heading": false
+    },
+    {
+      "term": "item refl",
+      "heading": false
+    },
+    {
+      "term": "functors refl",
+      "heading": false
+    },
+    {
+      "term": "refl simeq",
+      "heading": false
+    },
+    {
+      "term": "category catc",
+      "heading": false
+    },
+    {
+      "term": "subcategory catc",
+      "heading": false
+    },
+    {
+      "term": "category cata",
+      "heading": false
+    },
+    {
+      "term": "monoidal category",
+      "heading": false
+    },
+    {
+      "term": "eneqn item",
+      "heading": false
+    },
+    {
+      "term": "monoidal autofunctors",
+      "heading": false
+    },
+    {
+      "term": "aligned brd",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2004.04939v1"
+  }
+}

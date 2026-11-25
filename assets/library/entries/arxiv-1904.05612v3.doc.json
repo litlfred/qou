@@ -1,0 +1,694 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1904.05612v3",
+  "title": "arxiv-1904.05612v3",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Pimsner-Popa bases and systems",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-pimsner-popa-bases-and-systems"
+    },
+    {
+      "level": 2,
+      "title": "Pimsner-Popa systems",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-pimsner-popa-systems"
+    },
+    {
+      "level": 2,
+      "title": "Examples of Pimsner-Popa systems",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-examples-of-pimsner-popa-systems"
+    },
+    {
+      "level": 2,
+      "title": "Generalized Weyl group and orthonormal systems",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-generalized-weyl-group-and-orthonormal-system"
+    },
+    {
+      "level": 2,
+      "title": "Some useful properties related to Pimsner-Popa systems",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-some-useful-properties-related-to-pimsner-pop"
+    },
+    {
+      "level": 1,
+      "title": "Regular subfactor and two-sided basis",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-regular-subfactor-and-two-sided-basis"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal systems",
+          "heading": false
+        },
+        {
+          "term": "pragmatic",
+          "heading": false
+        },
+        {
+          "term": "two-sided",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1904.05612v3 [math.OA] 27 Jul 2020 ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS KESHAB CHANDRA BAKSHI AND VED PRAKASH GUPTA Abstract. We prove that a regular subfactor of type II1 with ﬁnite Jones index always admits a two-sided Pimsner-Popa basis. This is preceded by a pragmatic revisit of Popa’s notion of orthogonal systems.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1904.05612v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pimsner-popa basis",
+          "heading": false
+        },
+        {
+          "term": "pimsner-popa system",
+          "heading": false
+        },
+        {
+          "term": "index subfactor",
+          "heading": false
+        },
+        {
+          "term": "right pimsner-popa",
+          "heading": false
+        },
+        {
+          "term": "regular subfactor",
+          "heading": false
+        },
+        {
+          "term": "two-sided orthonormal",
+          "heading": false
+        },
+        {
+          "term": "two-sided bases",
+          "heading": false
+        },
+        {
+          "term": "admits two-sided",
+          "heading": false
+        }
+      ],
+      "extract": "Let N ⊂M be a unital inclusion of von Neumann algebras equipped with a faithful normal conditional expectation E from M onto N. Then, a ﬁnite set B := {λ1, . . . , λn} ⊂ M is called a left Pimsner-Popa basis for M over N via E if every x ∈M can be expressed as x = Pn i=1 E(xλ∗ i )λi - see [14, 17, 16, 9, 20] and the references therein. Similarly, B is called a right Pimsner-Popa basis for M over N via E if every x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-pimsner-popa-bases-and-systems",
+      "number": "2",
+      "title": "Pimsner-Popa bases and systems",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 69,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right orthogonal",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": true
+        },
+        {
+          "term": "conditional",
+          "heading": false
+        }
+      ],
+      "extract": "Recall, from [17], that given a unital inclusion of von Neumann algebras N ⊂M with a faithful normal conditional expectation E from M onto N, a family {mj}j in M is called a right orthogonal system for M over N with respect to E if E(m∗ i mj) = δijfj for some projections {fj}j in N. In this article, we will be dealing only with ﬁnite right orthogonal systems.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-pimsner-popa-systems",
+      "number": "2.1",
+      "title": "Pimsner-Popa systems",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1653,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pimsner-popa",
+          "heading": true
+        },
+        {
+          "term": "pimsner-popa system",
+          "heading": false
+        },
+        {
+          "term": "pimsner-popa basis",
+          "heading": false
+        },
+        {
+          "term": "right pimsner-popa",
+          "heading": false
+        },
+        {
+          "term": "e1λ λje",
+          "heading": false
+        },
+        {
+          "term": "exists pimsner-popa",
+          "heading": false
+        },
+        {
+          "term": "λie1λ",
+          "heading": false
+        },
+        {
+          "term": "orthogonal system",
+          "heading": false
+        }
+      ],
+      "extract": "tems generalizes naturally to the following: Deﬁnition 2.1. Let N ⊂M be a unital inclusion of von Neumann algebras with a faithful normal conditional expectation E from M onto N. A ﬁnite subset {λj : j ∈J} in M will be called a right Pimsner-Popa system for M over N with respect to E if the matrix Q = [qij] with entries qij := E(λ∗ i λj) is a projection in MJ(N). Such a Pimsner-Popa system will be called a right",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-examples-of-pimsner-popa-systems",
+      "number": "2.2",
+      "title": "Examples of Pimsner-Popa systems",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pimsner-popa",
+          "heading": true
+        },
+        {
+          "term": "tracial state",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "dimensional algebras",
+          "heading": false
+        },
+        {
+          "term": "inclusion",
+          "heading": false
+        },
+        {
+          "term": "ending",
+          "heading": false
+        }
+      ],
+      "extract": "2.2.1. Pimsner-Popa bases and intermediate subalgebras. Let N ⊂M be an inclu- sion of ﬁnite von Neumann algebras. Let P be an intermediate von Neumann subalgebra, i.e., N ⊂P ⊂M. Fix a faithful normal tracial state on M and let eP denote the canonical Jones projection for the basic construction P ⊂M ⊂P1. Let {λi} be a ﬁnite set in P. If {λi} is a Pimsner-Popa basis for P/N, then it is easy to see that {λi} is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-generalized-weyl-group-and-orthonormal-system",
+      "number": "2.3",
+      "title": "Generalized Weyl group and orthonormal systems",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized weyl",
+          "heading": true
+        },
+        {
+          "term": "weyl group",
+          "heading": true
+        },
+        {
+          "term": "orthonormal",
+          "heading": true
+        },
+        {
+          "term": "irreducible subfactor",
+          "heading": false
+        },
+        {
+          "term": "index subfactor",
+          "heading": false
+        },
+        {
+          "term": "pimsner-popa basis",
+          "heading": false
+        },
+        {
+          "term": "admits pimsner-popa",
+          "heading": false
+        },
+        {
+          "term": "orthonormal system",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we illustrate an important example of an orthonormal system con- sisting of unitaries, which will attract a good share of limelight of this article. Let N ⊂M be a subfactor of type II1 (which is not necessarily irreducible), let U(N) (resp., U(M)) denote the group of unitaries of N (resp., M) and NM(N) := {u ∈U(M) : uNu∗= N} denote the group of unitary normalizers of N in M. It is straightforward",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-some-useful-properties-related-to-pimsner-pop",
+      "number": "2.4",
+      "title": "Some useful properties related to Pimsner-Popa systems",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pimsner-popa",
+          "heading": true
+        },
+        {
+          "term": "pimsner-popa system",
+          "heading": false
+        },
+        {
+          "term": "pimsner-popa basis",
+          "heading": false
+        },
+        {
+          "term": "obtain λiλ",
+          "heading": false
+        },
+        {
+          "term": "irreducible subfactor",
+          "heading": false
+        },
+        {
+          "term": "trm",
+          "heading": false
+        },
+        {
+          "term": "orthogonal system",
+          "heading": false
+        },
+        {
+          "term": "commuting square",
+          "heading": false
+        }
+      ],
+      "extract": "2.4. Some useful properties related to Pimsner-Popa systems. Let (N, P, Q, M) be a quadruple of II1-factors, i.e., N ⊂P, Q ⊂M, with [M : N] < ∞. Let {λi : i ∈I} and {µj : j ∈J} be (right) Pimsner-Popa bases for P/N and Q/N, respectively. Consider two auxiliary operators p(P, Q) and p(Q, P) (as in [2]) given by p(P, Q) = X i,j λiµje1µ∗ jλ∗ i and p(Q, P) = X i,j µjλie1λ∗ i µ∗ j. By [2, Lemma 2.18], p(P, Q) and p(Q, P)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-regular-subfactor-and-two-sided-basis",
+      "number": "3",
+      "title": "Regular subfactor and two-sided basis",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-sided basis",
+          "heading": true
+        },
+        {
+          "term": "regular subfactor",
+          "heading": true
+        },
+        {
+          "term": "two-sided pimsner-popa",
+          "heading": false
+        },
+        {
+          "term": "two-sided orthonormal",
+          "heading": false
+        },
+        {
+          "term": "admits two-sided",
+          "heading": false
+        },
+        {
+          "term": "two-sided bases",
+          "heading": false
+        },
+        {
+          "term": "index subfactor",
+          "heading": false
+        },
+        {
+          "term": "forms two-sided",
+          "heading": false
+        }
+      ],
+      "extract": "Before we pursue our hunt for a two-sided basis in a regular subfactor, as asserted in the Introduction, we ﬁrst show that every ﬁnite index subfactor with a two-sided basis is extremal, which, most likely, is folklore. Proposition 3.1. Let N ⊂M be a type II1 subfactor with ﬁnite index. If there exists a two-sided basis for M over N, then N ⊂M is extremal. Proof. Given any right basis {λi : 1 ≤i ≤n} for M/N, it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "popa",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "bakshi",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "crossed product",
+          "heading": false
+        },
+        {
+          "term": "ii1-factors",
+          "heading": false
+        },
+        {
+          "term": "chennai",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] Bakshi, K.C.; Gupta, V.P. A note on quadrilaterals of II1-factors. Internat. J. Math. 30 (2019), no. 12, 1950061, 22pp. [2] Bakshi, K.C.; Das, S.; Liu, Z.; Ren, Y. Angle between intermediate subfactors and its rigidity. Trans. Amer. Math. Soc. 371 (2019), no. 8, 5973–5991. [3] Cameron, J.M. Structure results for normalizers of II1-factors. Internat. J. Math 22 (2011), no. 7, 947–979. [4] Choda, M. A",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "two-sided pimsner-popa",
+      "heading": false
+    },
+    {
+      "term": "pimsner-popa system",
+      "heading": false
+    },
+    {
+      "term": "pimsner-popa basis",
+      "heading": false
+    },
+    {
+      "term": "pimsner-popa bases",
+      "heading": true
+    },
+    {
+      "term": "admits pimsner-popa",
+      "heading": false
+    },
+    {
+      "term": "right pimsner-popa",
+      "heading": false
+    },
+    {
+      "term": "exists pimsner-popa",
+      "heading": false
+    },
+    {
+      "term": "left pimsner-popa",
+      "heading": false
+    },
+    {
+      "term": "index subfactor",
+      "heading": false
+    },
+    {
+      "term": "regular subfactor",
+      "heading": true
+    },
+    {
+      "term": "two-sided orthonormal",
+      "heading": false
+    },
+    {
+      "term": "irreducible subfactor",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1904.05612v3"
+  }
+}

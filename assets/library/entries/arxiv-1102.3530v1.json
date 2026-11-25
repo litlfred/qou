@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1102.3530v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $J_N(K;q)$ be the colored Jones polynomial of a knot $K$ in the three-sphere $S^3$ associated with the $N$-dimensional irreducible representation of $\\mathfrak{sl}(2;\\mathbb{C})$. We normalize it so that $J_N(\\text{unknot};q)=1$. Note that $J_2(K;q)$ is the celebrated Jones polynomial [@Jones:BULAM385] after a suitable change of variable.\n\nIn 1995 Kashaev introduced a complex valued knot invariant for each natural number $N$ by using quantum dilogarithm [@Kashaev:MODPLA95] and observed that its asymptotic behavior for large $N$ determines the hyperbolic volume for several hyperbolic knots",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integral formula for the colored Jones polynomial",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-integral-formula-for-the-colored-jones-polynom.md",
+      "narrative": null,
+      "content": "[]{#sec:integral label=\"sec:integral\"} In this section we use the quantum dilogarithm function to express the colored Jones polynomial of the figure-eight knot as an integral. We mainly follow [@Andersen/Hansen:JKNOT2006].\n\nFirst of all we recall the following formula due to Habiro and Le (see for example [@Masbaum:ALGGT12003]). $$\\label{eq:Habiro_Le}\n\\begin{split}\n  J_N(E;q)\n  &=\n  \\sum_{k=0}^{N-1}\n  \\prod_{l=1}^{k}\n  \\left(q^{(N-l)/2}-q^{-(N-l)/2}\\right)\n  \\left(q^{(N+l)/2}-q^{-(N+l)/2}\\right)\n  \\\\\n  &=\n  \\sum_{k=0}^{N-1}\n  q^{-kN}\n  \\prod_{l=1}^{k}\n  \\left(1-q^{N-l}\\right)\n  \\left(1-q^{N+l}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Approximating the integral formula",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-approximating-the-integral-formula.md",
+      "narrative": null,
+      "content": "[]{#sec:approximation label=\"sec:approximation\"} In this section we approximate the integral formula for the colored Jones polynomial obtained in the previous section.\n\nSince $\\tan(N\\pi w)$ is close to $\\sqrt{-1}$ ($-\\sqrt{-1}$, respectively) when $\\operatorname{Im}(w)$ is positive and large (negative and $|\\operatorname{Im}(w)|$ is large, respectively), we can approximate $G_{\\pm}(N,\\varepsilon)$ by the integral of $g_N(w)$ on $C_{\\pm}(\\varepsilon)$. In fact if we write $$G_{\\pm}(N,\\varepsilon)\n  =\n  \\pm\\sqrt{-1}\\int_{C_{\\pm}(\\varepsilon)}g_N(w)\\,dw\n  +\n  \\int_{C_{\\pm}(\\varepsilon)}(\\tan(N\\pi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-41-representation.md",
+      "narrative": null,
+      "content": "Let $x$ and $y$ be the Wirtinger generators of the fundamental group $\\pi_1(S^3\\setminus{E})$ (with a base point above the paper) of the complement of the figure-eight knot $E$ depicted in Figure [1](#fig:fig8_pi1){reference-type=\"ref\" reference=\"fig:fig8_pi1\"}.\n\n![Generators of the fundamental group of the complement of the figure-eight knot](fig8_pi1.eps){#fig:fig8_pi1}\n\nThe group $\\pi_1(S^3\\setminus{E})$ has the following presentation: $$\\pi_1(S^3\\setminus{E})\n  =\n  \\langle\n    x,y\n    \\mid\n    xy^{-1}x^{-1}yx=yxy^{-1}x^{-1}y\n  \\rangle.$$ Due to [@Riley:QUAJM31984] any non-abelian represent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern–Simons invariant",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-43-chernsimons-invariant.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reidemeister torsion",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-42-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "logical Reidemeister torsion T E\nλ (ρu) associated with the longitudeλ twisted by the\nadjoint action of the representation ρu is given by\nT E\nλ (ρu) = 1√\n17 + 4 Tr\n(\nρu(λ)\n) = 1\n2m + 2m−1 − 1\nup to sign, where Tr means the trace. Note that since in [24] Porti u ses homological\nReidemeister torsion, we need to take the inverse.\nFrom [24, Th´ eor` eme 4.1] the Reidemeister torsion T E\nµ (ρu) associated with the\nmeridian µ is given by\nT E\nµ (ρu) = ±∂v\n∂u T E\nλ (ρu).\nSince ℓ(eu) = ev/ 2, we have\n±T E\nµ (ρu) = ∂\n(\n2 logℓ(eu)\n)\n∂u × 1\n2eu + 2e−u − 1 = 2√\n(eu +e−u + 1)(eu +e−u − 3)\n.\nTherefore T (u)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of S",
+      "pageStart": 12,
+      "pageEnd": 34,
+      "target": "../sections/sec-006-5-calculation-of-s.md",
+      "narrative": null,
+      "content": "\\label{sec:S_gamma}\r\nIn this section we first show the analyticity of $S_{\\gamma}$ and then calculate its special values.\r\n\\begin{lem}\\label{lem:analyticity}\r\nIf a complex number $\\gamma$ has the positive real part, then $S_{\\gamma}(z)$ is an analytic function in $\\{z\\in\\C\\mid|\\Re(z)|<\\pi+\\Re(\\gamma)\\}$.\r\n\\end{lem}\r\n\\begin{proof}\r\nPut\r\n\\begin{equation*}\r\n  L_{\\gamma}(t)\r\n  :=\r\n    \\frac{e^{zt}}{t\\sinh(\\pi t)\\sinh(\\gamma t)}.\r\n\\end{equation*}\r\nWe will show that the improper integrals $\\int_{R}^{\\infty}L_{\\gamma}t\\,dt$ and $\\int_{-\\infty}^{R}L_{\\gamma}t\\,dt$ converge.\r\n\\par\r\nPutting $z:=x+\\sqrt{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1102.3530v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surgeries on\nthe ﬁgure 8 knot , J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548. MR MR2221531\n[2] T. Dimofte and S. Gukov, Quantum ﬁeld theory and the volume conjecture , to appear in\nContemporary Mathematics ”Interactions Between Hyperbol ic Geometry, Quantum Topol-\nogy and Number Theory”, arXiv:1003.4808, 2010.\n[3] T. Dimofte, S. Gukov, J. Lenells, and D. Zagier, Exact results for perturbative Chern-Simons\ntheory with complex gauge group , Commun. Number Theory Phys. 3 (2009), no. 2, 363–443.\nMR 2551896 (201",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

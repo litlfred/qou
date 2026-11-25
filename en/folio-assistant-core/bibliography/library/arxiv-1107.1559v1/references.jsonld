@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1107.1559v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quaternion-Octonion SU (3) Flavor Symmetry",
+      "dcterms:creator": [
+        "Pushpa(1)",
+        "Bisht(1, P. S.",
+        "2)",
+        "Li(2), Tianjun",
+        "Negi(1), O. P. S."
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/1107.1559",
+      "dcterms:abstract": "Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states. Extending this formalism to the case of SU(3) group we have considered the theory of octonion variables. Accordingly, the octonion splitting of SU(3) group have been reconsidered and various commutation relations for SU(3) group and its shift operators are also derived and veriﬁed for diﬀerent iso-spin multiplets i.e. I, U and V - spins.",
+      "dcterms:source": "library/arxiv-1107.1559v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1107.1559v1"
+    }
+  ]
+}

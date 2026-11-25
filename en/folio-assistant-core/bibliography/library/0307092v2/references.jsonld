@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/0307092v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Extended Bloch group and the Cheeger–Chern–Simons class",
+      "dcterms:creator": [
+        "Neumann, Walter D"
+      ],
+      "dcterms:issued": "D:20181026",
+      "dcterms:abstract": "We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Simons class on this homology group. It also leads to an independent proof of the analytic relation- ship between volume and Chern–Simons invariant of hyperbolic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective formulae for the Chern–Simons invariant of a hyperbolic 3–manifold.",
+      "dcterms:source": "library/0307092v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/0307092v2"
+    }
+  ]
+}

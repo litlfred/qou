@@ -1,0 +1,621 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2011.13340v1",
+  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions *",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-matrix-valued-poincare-inequality-for-strong-r"
+    },
+    {
+      "level": 1,
+      "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-a-bernstein-inequality-from-matrix-valued-poin"
+    },
+    {
+      "level": 1,
+      "title": "Comparison with KyngSong18",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-comparison-with-kyngsong18"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion and Open Questions",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-conclusion-and-open-questions"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration inequalities",
+          "heading": false
+        },
+        {
+          "term": "poincare inequalities",
+          "heading": false
+        },
+        {
+          "term": "functional inequalities",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "matrix concentration",
+          "heading": false
+        },
+        {
+          "term": "matrix bernstein",
+          "heading": false
+        },
+        {
+          "term": "bernstein inequality",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2011.13340v1 [math.PR] 26 Nov 2020 A Matrix Bernstein Inequality for Strong Rayleigh Distributions* Tarun Kathuria EECS, UC Berkeley tarunkathuria@berkeley.edu Abstract The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional inequalities like Poincare and log-Sobolev inequalities. These inequalities are especially useful for deriving",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2011.13340v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration inequalities",
+          "heading": false
+        },
+        {
+          "term": "log-sobolev inequalities",
+          "heading": false
+        },
+        {
+          "term": "proving concentration",
+          "heading": false
+        },
+        {
+          "term": "poincare inequalities",
+          "heading": false
+        },
+        {
+          "term": "scalar concentration",
+          "heading": false
+        },
+        {
+          "term": "matrix concentration",
+          "heading": false
+        },
+        {
+          "term": "valued poincare",
+          "heading": false
+        },
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        }
+      ],
+      "extract": "Concentration inequalities bound tail probabilities of general functions of random variables. Several methods have been known to prove such inequalities, including martingale methods, information theoretic methods, Talagrand's induction method as well as a variety of problem-specific methods. Ledoux (see \\cite{Led} for a survey) developed a powerful framework known as the \"entropy method\" for proving concentration",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-matrix-valued-poincare-inequality-for-strong-r",
+      "number": "2",
+      "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": "4",
+      "labelEnd": "10",
+      "words": 2171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valued poincare",
+          "heading": true
+        },
+        {
+          "term": "hat mathbf",
+          "heading": false
+        },
+        {
+          "term": "align mathbf",
+          "heading": false
+        },
+        {
+          "term": "poincare inequality",
+          "heading": true
+        },
+        {
+          "term": "kappa mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf var",
+          "heading": false
+        },
+        {
+          "term": "omega kappa",
+          "heading": false
+        },
+        {
+          "term": "generator hat",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove our matrix valued Poincare inequality for measures satisfying the stochastic covering property (SCP). We first need some notation in order to define SCP measures. Let $\\{e_i\\}_{i=1}^{n}$ be the coordinate basis of $\\mathbb{R}^n$. For $x,y \\in \\{ 0,1\\}^n$, we write $x\\triangleright y$ if $x$ can be obtained by $y$ by increasing at most one coordinate from 0 to 1, i.e., \\begin{align*} x=y \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-a-bernstein-inequality-from-matrix-valued-poin",
+      "number": "3",
+      "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 1272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poincare inequality",
+          "heading": true
+        },
+        {
+          "term": "mathbf bigg",
+          "heading": false
+        },
+        {
+          "term": "big mathbf",
+          "heading": false
+        },
+        {
+          "term": "valued poincare",
+          "heading": true
+        },
+        {
+          "term": "align mathbf",
+          "heading": false
+        },
+        {
+          "term": "align mathsf",
+          "heading": false
+        },
+        {
+          "term": "intop mathbf",
+          "heading": false
+        },
+        {
+          "term": "theta mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show how to use Matrix valued Poincare inequalities to obtain matrix Bernstein style inequalities. We will need a well-known monotonicity property of the trace exponential \\cite{TroppIntro15} \\begin{lemma} \\label{lem:trMonotone} For any monotone function $f$, for any Hermitian matrices $\\bf{A}$ and $\\bf{H}$ such that $\\bf{A} \\preceq \\bf{H}$, then $\\Tr\\big[f(\\mathbf{A})\\big] \\leq \\Tr\\big[",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-comparison-with-kyngsong18",
+      "number": "4",
+      "title": "Comparison with KyngSong18",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kyngsong",
+          "heading": true
+        },
+        {
+          "term": "varepsilon leq",
+          "heading": false
+        },
+        {
+          "term": "sqrt varepsilon",
+          "heading": false
+        },
+        {
+          "term": "psd matrices",
+          "heading": false
+        },
+        {
+          "term": "log varepsilon",
+          "heading": false
+        },
+        {
+          "term": "cite kyngsong",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ks} We first state the main result of \\cite{KyngSong18} below. \\begin{theorem}\\label{thm:kyngsong} Suppose $(x_1,\\ldots,x_n)\\in\\{0,1\\}^n$ is a random subset whose distribution is a $k$-homogenous strong Rayleigh distribution. Given a collection of PSD matrices $A_1,\\ldots,A_n\\in\\mathbb{R}^{d\\times d}$ s.t. for all $e \\in [n]$ we have $\\|A_e\\|\\leq 1$ and $\\|\\mathbb{E}[\\sum_e x_e A_e]\\|\\leq\\mu$. Then for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conclusion-and-open-questions",
+      "number": "5",
+      "title": "Conclusion and Open Questions",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modified log-sobolev",
+          "heading": false
+        },
+        {
+          "term": "matrix concentration",
+          "heading": false
+        },
+        {
+          "term": "questions",
+          "heading": true
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we build on the work of \\cite{CT13} to obtain matrix concentration of Lipshitz matrix-valued functions using functional inequalities without any stringent assumptions on the rotational symmetry of the random matrices. Our strategy seems general enough that it should work for proving Matrix concentration for a large class of interesting Markov chains for which scalar spectral gap inequalities are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration inequalities",
+          "heading": false
+        },
+        {
+          "term": "log-sobolev inequalities",
+          "heading": false
+        },
+        {
+          "term": "lester mackey",
+          "heading": false
+        },
+        {
+          "term": "shayan oveis",
+          "heading": false
+        },
+        {
+          "term": "oveis gharan",
+          "heading": false
+        },
+        {
+          "term": "nima anari",
+          "heading": false
+        },
+        {
+          "term": "prasad tetali",
+          "heading": false
+        },
+        {
+          "term": "yuval peres",
+          "heading": false
+        }
+      ],
+      "extract": "[ABY19] Richard Aoun, Marwa Banna, and Pierre Youssef, Matrix poincaré inequalities and concen- tration. [AGR16] Nima Anari, Shayan Oveis Gharan, and Alireza Rezaei, Monte carlo markov chain al- gorithms for sampling strongly rayleigh distributions and determinantal point processes, Pro- ceedings of the 29th Conference on Learning Theory, COLT 2016, New York, USA, June 23-26, 2016, 2016, pp. 103–115. [ALGV19] Nima",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "concentration inequalities",
+      "heading": false
+    },
+    {
+      "term": "align mathbf",
+      "heading": false
+    },
+    {
+      "term": "log-sobolev inequalities",
+      "heading": false
+    },
+    {
+      "term": "poincare inequalities",
+      "heading": true
+    },
+    {
+      "term": "omega mathbf",
+      "heading": false
+    },
+    {
+      "term": "matrix mathbf",
+      "heading": false
+    },
+    {
+      "term": "limits mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathbb",
+      "heading": false
+    },
+    {
+      "term": "valued poincare",
+      "heading": true
+    },
+    {
+      "term": "mathbf bigg",
+      "heading": false
+    },
+    {
+      "term": "mathbf var",
+      "heading": false
+    },
+    {
+      "term": "concentration inequality",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2011.13340v1"
+  }
+}

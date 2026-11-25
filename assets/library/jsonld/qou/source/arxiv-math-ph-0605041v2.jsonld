@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0605041v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+  "contains": [
+    "library/arxiv-math-ph-0605041v2/sections/sec-front-matter",
+    "library/arxiv-math-ph-0605041v2/sections/sec-000",
+    "library/arxiv-math-ph-0605041v2/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cluster expansion for abstract polymer models. New bounds from an old approach — polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo.\n\n**Cluster expansion for abstract polymer models. New bounds from an old approach**\n\n*Roberto Fernández1 and Aldo Procacci1,2*\n\n16 pp, 3 sections.\n\n**Abstract.** polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, Avenue de l’Universit´e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem´atica-ICEx, Universidade Federal de Minas Gerais, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on tree graphs, and estab- lish a new convergence condition that improves those by Koteck´y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach are: (i) a careful consideration of the Penrose identity for truncated functions, and (ii) the use of iterated transformations to bound tree-graph expansions.\n\n**Outline.** Front matter; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0605041&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-ph-0605041v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0605041v2.pdf",
+    "source_sha256": "12cccb408b6810f1808f8ccde3f418f37020a2edd4b4bc5b86217d5ceccb0b3a",
+    "pages": 16,
+    "arxiv": {
+      "id": "math-ph/0605041",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "16 Oct 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

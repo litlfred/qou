@@ -1,0 +1,1214 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1506.06747v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "1 1.1 Cottingham formula, dispersion relations . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "16 6.1 Cottingham formula . . . . . . . . . . . . . . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "arXiv:1506.06747v3 [hep-ph] 30 Mar 2020 INT-PUB-15-027 Cottingham formula and nucleon polarizabilities J.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n. . . . . . . . . . . . . . . . . . . . . . .\n1\n1.1\nCottingham formula, dispersion relations\n. . .\n2\n1.2\nReggeons and ﬁxed poles . . . . . . . . . . . . .\n2\n1.3\nRecent work . . . . . . . . . . . . . . . . . . . .\n3\n1.4\nStructure of the present paper . . . . . . . . . .\n4\n2\nDetermination of the subtraction function . . . . . .\n4\n3\nElastic and inelastic contributions . . . . . . . . . . .\n5\n3.1\nElastic part . . . . . . . . . . . . . . . . . . . . .\n5\n3.2\nInelastic part . . . . . . . . . . . . . . . . . . . .\n5\n3.3\nSubtraction function in terms of cross sections\n6\n3.4\nChiral expansio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1506.06747v3  [hep-ph]  30 Mar 2020\nINT-PUB-15-027\nCottingham formula and nucleon polarizabilities\nJ. Gasser1, M. Hoferichter1,2,3,4, H. Leutwyler1, A. Rusetsky5\n1Albert Einstein Center for Fundamental Physics, Institut f¨ur theoretische Physik, Universit¨at Bern, Sidlerstrasse 5,\nCH–3012 Bern, Switzerland\n2Institut f¨ur Kernphysik, Technische Universit¨at Darmstadt, D–64289 Darmstadt, Germany\n3ExtreMe Matter Institute EMMI, GSI Helmholtzzentrum f¨ur Schwerionenforschung GmbH, D–64291 Darmstadt, Germany\n4Institute for Nuclear Theory, University of Washington, Seattle, WA 98195-1550, USA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cottingham formula, dispersion relations",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-cottingham-formula-dispersion-relations.md",
+      "narrative": null,
+      "content": "The analysis of [4] relies on the Cottingham for-\nmula [12], which invokes dispersion relations to re-\nlate the spin-averaged nucleon matrix elements of\nthe time-ordered product, ⟨p|T jµ(x)jν(y)|p⟩, to those\nof the commutator of the electromagnetic current,\n⟨p|[jµ(x), jν(y)]|p⟩. Lorentz invariance and current con-\nservation determine the Fourier transforms of these\nmatrix elements in terms of two invariant amplitudes,\nwhich only depend on the two variables ν = p · q/m\nand q2, where m is the nucleon mass and q the photon\nmomentum. We stick to the notation used in [4] and\ndenote the invariant am",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reggeons and fixed poles",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-reggeons-and-fixed-poles.md",
+      "narrative": null,
+      "content": "In [4] it is assumed that the asymptotic behaviour is\ndetermined by Reggeon exchange. The contribution of\na Regge pole to a scattering amplitude at large center-\nof-mass energy squared s and small momentum transfer\nt ≤0 has the form (see e.g. [17]):\nT (s, t) = −πβα(t)\nsin πα(t){exp[−iπα(t)] + τ}sα(t) ,\n(4)\nwhere α(t) and β(t) denote the trajectory and the\nresidue, respectively, and τ is the signature. In the con-\ntext of the present paper, we are concerned with t = 0\nand τ = 1. The continuation of the asymptotic for-\nmula (4) to low energies is not unique. For deﬁniteness,\nwe work with the rep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "4 the Cottingham formula has recently been reexam- ined [30–36], but the central issue in this context – the possible occurrence of ﬁxed poles – is not addressed in these papers, either.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "The main prob- lem with the framework set up in [31] is that a direct experimental determination for S1(q2) is not available.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "The overall normalization, S1(0), can in princi- ple be determined from the diﬀerence between the mag- netic polarizabilities of proton and neutron, albeit the experimental value is subject to rather large uncertain- ties [37].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recent work",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-recent-work.md",
+      "narrative": null,
+      "content": "The numerical analysis of [4] was based on the scaling\nlaws proposed by Bjorken [23]. The data available at the\ntime were perfectly consistent with these, but Bjorken\nscaling correctly accounts for the short-distance proper-\nties of QCD only to leading order in the perturbative ex-\npansion in powers of αs. The higher-order contributions\ngenerate speciﬁc violations of Bjorken scaling [24,25]. In\nthe meantime, the implications of the phenomenon and\nthe corresponding modiﬁcation of the short-distance\nproperties of the matrix elements ⟨p|T jµ(x)jν(y)|p⟩\nhave been investigated by Collins [26]. Unfo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "We discuss the renormalization of the Cottingham formula, in particular the role of the sub- traction function in the evaluation of the self-energy and provide a comparison with recent work on the is- sue.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the present paper",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-structure-of-the-present-paper.md",
+      "narrative": null,
+      "content": "The remaining sections are organized as follows. In sec-\ntion 2, we show how the Reggeon dominance hypothe-\nsis (6) ﬁxes the subtraction function S1(q2) from space-\nlike data alone. In section 3, we discuss the splitting\nof the amplitudes Ti into elastic and inelastic contri-\nbutions. We derive sum rules for the nucleon polariz-\nabilities in section 4, while a thorough phenomenologi-\ncal analysis is provided in section 5. In particular, the\nsum rules allow us to predict the diﬀerence between\nthe electric polarizabilities of proton and neutron. In\nview of the fact that the proton polarizabiliti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determination of the subtraction function",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-2-determination-of-the-subtraction-function.md",
+      "narrative": null,
+      "content": "The Regge amplitude obeys a once-subtracted ﬁxed-q2\ndispersion relation:\nT R\n1 (ν, q2) = T R\n1 (0, q2) + 2ν2\nZ ∞\n0\ndν′\nν′\nV R\n1 (ν′, q2)\nν′2 −ν2 −iǫ . (7)\nIn the space-like region and for ν ≥0, the absorptive\npart of the amplitude speciﬁed in (5) is given by\nV R\n1 (ν, q2) =\nX\nα>0\nβα(Q2) θ(s+ −s0) (s+ −s0)α .\n(8)\nThe Reggeon dominance hypothesis (6) implies that\nthe diﬀerence between the full amplitude and the Regge\ncontributions, T 1(ν, q2) ≡T1(ν, q2) −T R\n1 (ν, q2), obeys\nan unsubtracted dispersion relation. In particular, the\nvalue of T 1(0, q2) = S1(q2) −T R\n1 (0, q2) is given by an\nintegra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elastic and inelastic contributions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-3-elastic-and-inelastic-contributions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elastic part",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-31-elastic-part.md",
+      "narrative": null,
+      "content": "The contributions to the structure functions arising\nfrom the elastic reaction e+N →e+N are determined\nby the electromagnetic form factors of the nucleon. In\nthe space-like region, these contributions are restricted\nto the lines q2 = ±2νm and read (i = 1, 2)\nV el\ni (ν, q2) = vel\ni (q2)\n\b\nδ(q2 + 2mν) −δ(q2 −2mν)\n\t\n,\nvel\n1 (q2) =\n2m2\n4m2 −q2\n\b\nG2\nE(q2) −G2\nM(q2)\n\t\n,\nvel\n2 (q2) =\n2m2\n(−q2)(4m2 −q2)\n×\n\b\n4m2G2\nE(q2) −q2G2\nM(q2)\n\t\n,\n(10)\nwhere GE(t) and GM(t) are the Sachs form factors.\nThe elastic contributions to the time-ordered ampli-\ntudes T1, T2 cannot be speciﬁed as easily. In perturba-\ntion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inelastic part",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-32-inelastic-part.md",
+      "narrative": null,
+      "content": "We refer to the remainder as the inelastic part of the\namplitude:\nTi(ν, q2) = T el\ni (ν, q2) + T inel\ni\n(ν, q2) ,\ni = 1, 2 .\n(17)\nIn contrast to the elastic part, which contains the poles\ngenerated by the elastic intermediate states and is sin-\ngular at the origin, the inelastic part is regular there.\nAt high energies, the converse is true: while the elas-\ntic part tends to zero, the inelastic part includes the\ncontributions from the Reggeons, which are singular at\n6\ninﬁnity. In particular, the sum rule for the inelastic part\nof the subtraction function reads:\nSinel\n1\n(q2) = T R\n1 (0, q2)\n+ 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subtraction function in terms of cross sections",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-009-33-subtraction-function-in-terms-of-cross-sectio.md",
+      "narrative": null,
+      "content": "The structure function V1(ν, q2) is a linear combination\nof the transverse and longitudinal cross sections, see\nappendix A:\nV1(ν, q2) = mν\n2αem\nk(ν, Q2)\n\b\n¯σL(ν, Q2) −σT (ν, Q2)\n\t\n,\n¯σL(ν, Q2) ≡ν2\nQ2 σL(ν, Q2) ,\nk(ν, Q2) ≡\n1\n2π2\nν −Q2/2m\nν(ν2 + Q2) .\n(21)\nThe representation of the subtraction function thus in-\nvolves integrals over the transverse and longitudinal\ncross sections. For Sinel\n1\n(q2) and Sinel\n2\n(q2), the follow-\ning integrals are relevant:\nΣT (Q2) =\nZ ∞\nνth\ndν k(ν, Q2) σT (ν, Q2) ,\n(22)\nΣL\n1 (Q2) = αem\nm T R\n1 (0, q2)\n+\nZ ∞\nνth\ndν k(ν, Q2) ∆¯σL(ν, Q2) ,\n(23)\nΣL\n2 (Q2) =\nZ ∞\nνth\ndν",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral expansion",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-34-chiral-expansion.md",
+      "narrative": null,
+      "content": "Chiral perturbation theory (χPT) exploits the fact that\nin the limit mu, md →0 (at ﬁxed ΛQCD, ms, ..., mt)\nQCD acquires an exact chiral symmetry, which strongly\nconstrains the low-energy properties of the amplitudes.\nThe chiral perturbation series provides a representation\nof the quantities of interest in powers of momenta and\nquark masses. In the chiral limit, the pion is a massless\nparticle, but when the quark masses mu, md are turned\non, the pion picks up mass in proportion to the square\nroot thereof, M 2\nπ = (mu + md)B + O(m2\nq log mq).\n7\nIn the context of the present paper, we only need t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "The theorems amount to rather nontrivial statements, because the functions T1(ν, q2), T2(ν, q2) represent the virtual Compton scattering amplitude in the forward direction, while the experimental determination of the polarizabilities relies on real Compton scattering at nonzero scattering angle.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nucleon polarizabilities",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-011-4-nucleon-polarizabilities.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low-energy theorems",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-012-41-low-energy-theorems.md",
+      "narrative": null,
+      "content": "In contrast to the elastic parts, which are singular at the\norigin, the inelastic contributions to T1(ν, q2), T2(ν, q2)\ndo admit a Taylor series expansion in powers of ν and\nq2. Two low-energy theorems relate the leading terms\nin this expansion to the polarizabilities of the nucleon.\nThe theorems amount to rather nontrivial statements,\nbecause the functions T1(ν, q2), T2(ν, q2) represent the\nvirtual Compton scattering amplitude in the forward\ndirection, while the experimental determination of the\npolarizabilities relies on real Compton scattering at\nnonzero scattering angle. A concise derivati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sum rules for the polarizabilities",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-013-42-sum-rules-for-the-polarizabilities.md",
+      "narrative": null,
+      "content": "The left hand side of the low-energy theorem (33) rep-\nresents the inelastic part of the subtraction function at\nq2 = 0:\nβinel\nM\n= −αem\nm Sinel\n1\n(0) .\n(36)\nThe representation for the subtraction function in (18)\nthus amounts to a sum rule for the inelastic part of\nthe magnetic polarizability. Adding the elastic contri-\nbution, the sum rule takes the form\nβM = ΣT (0) −ΣL\n1 (0) −αemκ2\n4m3 .\n(37)\nTo our knowledge, this sum rule is new. It states that,\nin the absence of ﬁxed poles, the magnetic polarizabili-\nties of proton and neutron are determined by the cross\nsections for photo- and electropro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical analysis",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-014-5-numerical-analysis.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experimental information",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-015-51-experimental-information.md",
+      "narrative": null,
+      "content": "We evaluate the cross section integrals on the following\nbasis.6\nW < 1.3. At low energies, the resonance ∆(1232)\ngenerates the most important inelastic contribution. It\ndecays almost exclusively into πN ﬁnal states which\nhave been thoroughly explored. The SAID, MAID,\nDubna–Mainz–Taipei (DMT), and chiral-MAID col-\nlaborations provide pion photo- and electroproduction\ncross sections into these channels [55–63].7 For W < 1.3\nand real photons (Q2 = 0), the transverse cross section\nis well approximated by the sum over these contribu-\ntions. In particular, the representations we are using\nare consis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The cross section integrals are evaluated with the parameterization speciﬁed in subsection 5.1, except for ˜ ΣF1, where the contribution from the region of the Delta is calculated with BC instead of MD. experimental result for αE + βM shows that, at small values of Q2, the leading term of the chiral series dominates.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation of T and 2 for the proton",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-016-52-evaluation-of-t-and-2-for-the-proton.md",
+      "narrative": null,
+      "content": "We start the discussion of the cross section integrals\nwith the one over the transverse cross section, ΣT(Q2),\nwhich is speciﬁed in (22). The value at the origin is\nrelevant for the sum of the electric and magnetic po-\nlarizabilities, ΣT (0) = αE + βM. Since the longitu-\ndinal cross section vanishes at Q2 = 0, the function\nΣ2(Q2) = ΣT (Q2) + ΣL\n2 (Q2) takes the same value\nthere. In fact, ﬁgure 4 shows that Σ2(Q2) is dominated\n8For the representation (41), this property implies βL\nR/βT\nR =\nβL\nP /βT\nP . In the notation of [72], it corresponds to BV /AV =\nBγ/Aγ, for V = ρ, ω, φ.\nby the transverse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "The value obtained at Q2 = 0 is consistent with the experimental result, (αE + βM)p−n = −1.4(6).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "T and 2: proton-neutron difference",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-017-53-t-and-2-proton-neutron-difference.md",
+      "narrative": null,
+      "content": "Figure 5 shows the diﬀerence between the integrals over\nthe proton and neutron cross sections. The picture looks\nvery diﬀerent from ﬁgure 4: while there, the curves start\nat Σ ≃14 and rapidly drop with Q2, those in ﬁgure 5\nstart at Σ ≃0 and stay there. Since the integrals under\nconsideration are rapidly convergent, the behaviour of\nthe cross sections in the resonance region is relevant.\nThe reason why not much is left in the diﬀerence be-\ntween proton and neutron is that, in that region, the\nproton and neutron cross sections are nearly the same.\nIn particular, as mentioned in subsection 5.1, i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pomeron exchange",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-018-54-pomeron-exchange.md",
+      "narrative": null,
+      "content": "The integrals considered in the preceding two subsec-\ntions converge rapidly. Their properties are governed\nby the low-energy behaviour of the cross sections – the\nasymptotic behaviour does not play a signiﬁcant role.\nFor the integral ΣL\n1 (Q2) speciﬁed in (23), the situa-\ntion is very diﬀerent: for this integral to converge, it is\nessential that the asymptotic behaviour of the longitu-\ndinal cross section be known, so that it can properly\nbe accounted for. At high energies, the leading contri-\nbution stems from Pomeron exchange, which generates\na branch point at J = 1 in the angular momentum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "(49) This is consistent with the current experimental value, αp−n E = −0.9(1.6), but signiﬁcantly more precise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-020-02.md",
+      "narrative": null,
+      "content": "(51) Finally, combining the current experimental result for the electric and magnetic polarizabilities of the proton, αp E = 10.65(50) and βp M = 3.15(50), with the numbers for αp−n E and (αE+βM)p−n, we arrive at a prediction for the electric and magnetic polarizabilities of the neutron: αn E = 12.3(7) , βn M = 2.9(0.9) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation of 1L for proton-neutron difference",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-019-55-evaluation-of-1l-for-proton-neutron-differenc.md",
+      "narrative": null,
+      "content": "1 for the proton-neutron diﬀerence\nIn the present subsection, we focus on the diﬀerence\nbetween proton and neutron, where the Pomeron drops\nout: the asymptotic behaviour of σL(ν, Q2)p−n is dom-\ninated by the nonleading terms in (41), which grow less\nrapidly with ν, so that the problems discussed in the\npreceding subsection do not arise. The analysis of the\ndiﬀerence is of interest for two reasons: (1) the sum rule\nis obtained under the same premises (absence of ﬁxed\npoles, Reggeon dominance hypothesis) as the Cotting-\nham formula. Consequently, confronting the result with\nexisting experimental",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prediction for the polarizabilities of the neutron",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-020-56-prediction-for-the-polarizabilities-of-the-ne.md",
+      "narrative": null,
+      "content": "In view of the relation (40), the result (48) amounts\nto a prediction for the diﬀerence between the electric\npolarizabilities of proton and neutron:\nαp−n\nE\n= −1.7(4) .\n(49)\nThis is consistent with the current experimental value,\nαp−n\nE\n= −0.9(1.6), but signiﬁcantly more precise. The\nnumerical result obtained from the Baldin sum rule for\nthe diﬀerence in the value of αE + βM between proton\nand neutron, (αE + βM)p−n = −1.4(6), then implies\nβp−n\nM\n= 0.3(7) .\n(50)\nAccording to (36), this result also determines the value\nof the subtraction function relevant for the self-energy\ndiﬀerence at Q2 = 0:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "The ﬁgure also indicates the value Sinel 1 (0)p−n = 1.0(2.7) obtained from the current experimental result for βp−n M , as well as our prediction in (51).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "In this normalization, the ansatz proposed in [31] (WCM) represents a broad band of nearly constant width, determined by the experimental value of the diﬀerence between the magnetic polarizabilities of proton and neutron.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-022-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "prop-sec-022-02.md",
+      "narrative": null,
+      "content": "The curves are drawn for the current experimental value, which is indicated by the error bar on the left and concerns the value at Q2 = 0, but is displaced to make it visible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Result for the subtraction function",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-021-57-result-for-the-subtraction-function.md",
+      "narrative": null,
+      "content": "According to (26), the inelastic part of the subtrac-\ntion function relevant for the self-energy is determined\nby the diﬀerence between the integrals ΣL\n1 (Q2)p−n and\nΣT (Q2)p−n. The central values of these integrals are\nshown in ﬁgure 6. The narrow band in ﬁgure 7 indi-\ncates the corresponding result for the subtraction func-\ntion. The width of the band is obtained by evaluat-\ning the uncertainties in the contributions arising from\nthe three subintervals, separately for the transverse and\nlongitudinal contributions, and adding the results in\nquadrature. For better visibility, the vertical axi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with previous work",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-022-58-comparison-with-previous-work.md",
+      "narrative": null,
+      "content": "Recently, Walker-Loud, Carlson, and Miller [31] pro-\nposed a simple ansatz for the subtraction function. In\nour notation, their proposal amounts to\nSWCM(q2) = −\n\u0012\nm2\n0\nm2\n0 −q2\n\u00132 mβM\nαem\n+ 1\nq2 {G2\nM(q2) −F 2\nD(q2)} .\n(53)\nThe singularity at q2 = 0 arises from the elastic con-\ntribution in (15). The corresponding expression for the\n0\n0.5\n1\n1.5\n2\n-2\n-1\n0\n1\n2\n3\n4\n5\nQ2\np −n\nWCM\nESTY\nThis work\nNSinel\n1\nPrediction at Q2 = 0\nβp−n\nM\n= −0.5(1.6) exp\nFig. 7 Momentum dependence of the subtraction function\n(GeV units). For better visibility, the vertical axis is stretched\nwith the inverse of the dipole",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "The explicit choice made in [36] for the coeﬃcient c implicitly assumes that the contribution from the subtracted dispersion integral, mdisp γ , stays ﬁnite when the cut-oﬀis removed, so that the logarithmic diver- gence then exclusively arises from the term mS γ , which stems from the subtraction function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self-energy",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-023-6-self-energy.md",
+      "narrative": null,
+      "content": "the corresponding contribution to the self-energy dif-\nference. As discussed in subsection 6.1, the self-energy\ndiﬀerence indeed diverges logarithmically. The diver-\ngence is absorbed in the electromagnetic renormaliza-\ntion of mu and md, which is of order e2mu, e2md. As\npointed out by Erben et al. [36], the logarithmic diver-\ngence generated by the ansatz (53) is not proportional\nto the masses of the two lightest quarks and can thus\nnot be absorbed in their renormalization: the particu-\nlar extrapolation proposed in [31] is not consistent with\nthe short-distance properties of QCD. The variant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cottingham formula",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-024-61-cottingham-formula.md",
+      "narrative": null,
+      "content": "The electromagnetic self-energy of a hadron diverges\nlogarithmically. To ﬁrst order in αem the renormalized\nelectromagnetic Lagrangian requires counter terms pro-\nportional to the operators 1, ¯qq, and OG = Ga\nµνGaµν:\nLem = −e2\n2\nZ\nd4y ˜DΛ(x −y)T jµ(x)jµ(y) + ∆E 1\n+\nX\nq=u,d,...\nδmq ¯qq −δg\n2g3 OG ,\n(56)\nwhere ˜DΛ(x) is the regularized photon propagator in\ncoordinate space. The counter term proportional to the\nunit operator does not contribute to the self-energy.\nThe remainder is determined by the renormalization of\nthe quark masses and of the coupling constant g re-\nquired by the electromagnet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elastic part of the self-energy",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-025-62-elastic-part-of-the-self-energy.md",
+      "narrative": null,
+      "content": "Analogously to the electric and magnetic polarizabili-\nties, the self-energy also consists of an elastic and an\ninelastic part,\nmγ = mel\nγ + minel\nγ\n.\n(59)\nThe contribution from the elastic intermediate\nstates remains ﬁnite when the cut-oﬀis removed. It\nis obtained by replacing T1, T2 with the elastic parts\nT el\n1 , T el\n2 , which are given explicitly in (15), and replac-\ning DΛ(q2) with the full photon propagator, D(q2) =\n(−q2 −iǫ)−1. With a Wick rotation, the expression can\nbe brought to the form\nmel\nγ = αem\n8πm3\nZ ∞\n0\ndQ2Q2{f1 vel\n1 (−Q2) + f2 vel\n2 (−Q2)} ,\nf1 = 3\n\u001ar\n1 + 1\ny −1\n\u001b\n,\nf2 = (1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-026-01.md",
+      "narrative": null,
+      "content": "(63) The term with 3/2y makes the diﬀerence between the unsubtracted and subtracted dispersion integral over V1: it removes the leading term in the behaviour of f1 when Q2 is held ﬁxed and ν tends to ∞, so that the integral over ν converges, despite the growth of V1 gen- erated by Reggeon exchange.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inelastic part of the self-energy",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-026-63-inelastic-part-of-the-self-energy.md",
+      "narrative": null,
+      "content": "The inelastic part receives three distinct contributions:\nminel\nγ\n= mS\nγ + mdisp\nγ\n+ mct\nγ .\n(61)\nThe term mS\nγ arises from the subtraction function\nSinel\n1\n(q2), mdisp\nγ\nis given by a dispersion integral over\nthe structure functions, and mct\nγ accounts for the fact\nthat the electromagnetic interaction renormalizes the\nquark masses as well as the coupling constant of QCD.\nIn the above discussion of the polarizabilities, renormal-\nization did not play any role, because these concern the\nproperties of T1, T2 at low energies. In fact, the inelastic\npart of the magnetic polarizability exclusively",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "As shown in [4], the term mdisp γ is equally sensitive, but the sum of the two contributions is nearly independent of Λ, because the Cottingham formula only contains the very weak logarithmic divergence that is related to the electromagnetic renormalization of the quark masses mu and md.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "prop-sec-027-02.md",
+      "narrative": null,
+      "content": "A corresponding update of the results obtained on the basis of the Cottingham formula would be of high interest, also in view of the progress made in calculating electromagnetic self-energies on the lattice, but this goes beyond the scope of the present paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-028-01.md",
+      "narrative": null,
+      "content": "The same also holds for the Cottingham formula, which represents the elec- tromagnetic self-energy of the nucleon in terms of the spin-averaged forward Compton amplitude.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical evaluation",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-027-64-numerical-evaluation.md",
+      "narrative": null,
+      "content": "6.4 Numerical evaluation\nIn [31], the contribution from the subtraction function\nto the self-energy diﬀerence is evaluated with Λ2 =\n2 GeV2. According to (26), the inelastic part of the\nsubtraction function is given by the diﬀerence between\ntwo cross section integrals. The part which involves the\ntransverse cross sections, ΣT(Q2), generates a conver-\ngent contribution to the formula (62) for the self-energy.\nAs discussed above, our numerical representation of\nΣT (Q2) becomes incoherent at values of Q2 below 0.5,\nbut phase space suppresses that region, so that our es-\ntimate, mS\nγ (ΣT ) ≃−0.14",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and conclusion",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-028-7-summary-and-conclusion.md",
+      "narrative": null,
+      "content": "1. Causality relates the imaginary part of the ampli-\ntude for Compton scattering on the nucleon in the\nforward direction to the cross section of the process\ne + N →e + anything. The relation holds for real\nphotons as well as virtual photons of spacelike mo-\nmentum, q2 ≤0. The spin-averaged forward scat-\ntering amplitude involves two invariants, which we\ndenote by T1(ν, q2) and T2(ν, q2). Their imaginary\nparts are determined by the transverse and longi-\ntudinal cross sections of electron scattering, σT and\nσL.\n2. Regge asymptotics implies that only T2(ν, q2) obeys\nan unsubtracted ﬁxed-q2 dispe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Notation",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-029-a-notation.md",
+      "narrative": null,
+      "content": "The structure functions are related to the Fourier trans-\nform of the spin-averaged matrix element of the current\ncommutator,\nV µν(p, q) = 1\n4π\nZ\nd4xeiq·x⟨p|[jµ(x), jν(0)]|p⟩.\n(A.1)\nThe states are normalized with\n⟨p′, s′|p, s⟩= 2p0(2π)3δ3(p ′ −p)δs′s\n(A.2)\nand ⟨p|O|p⟩\nstands for\n1\n2\nP\ns⟨p, s|O|p, s⟩.\nFor\nthe\nFourier transform of the time-ordered matrix element,\n⟨p|T jµ(x)jν(y)|p⟩, we use the normalization\nT µν(p, q) = i\n2\nZ\nd4xeiq·x⟨p|T jµ(x)jν(0)|p⟩.\n(A.3)\nSince Lorentz invariance, current conservation, and par-\nity only allow two independent tensors of this type,\nKµν\n1\n= qµqν −gµνq2 ,\nKµν\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Compton scattering",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-030-b-compton-scattering.md",
+      "narrative": null,
+      "content": "Virtual Compton scattering in the non-forward direc-\ntion provides the bridge between the two processes\ndiscussed in subsection 4.1: scattering of real photons\nat nonzero scattering angle and scattering of virtual\nphotons in the forward direction. Compton scatter-\ning has been thoroughly explored in the literature, for\nthe case where both of the two photons are on the\nmass shell (real Compton scattering, RCS) as well as\nwhen one of them (VCS) or both (VVCS) are oﬀ-\nshell [15, 16, 40, 53, 89, 96–112]. We normalize the am-\nplitude with\nˆT µν(pf, sf, qf|pi, si, qi) = i\n2\nZ\nd4xei qf ·x\n× ⟨pf, sf|T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Lorentz invariance",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-031-b1-lorentz-invariance.md",
+      "narrative": null,
+      "content": "The spin average is not independent of the Lorentz\nframe used. To see why this is so, consider a Lorentz\ntransformation:\nU(Λ)jµ(x)U −1(Λ) = (Λ−1)µ\nα jα(Λx) .\n(B.15)\nWe denote the pure Lorentz transformation (boost)\nthat takes a particle at rest into one of four-momentum\np by Bp and work in the basis where the state |p, s⟩is\nobtained from the corresponding state at rest, |ˆp, s⟩, by\napplication of the relevant boost: |p, s⟩= U(Bp)|ˆp, s⟩.\nLorentz transformations not only change the momen-\ntum, but also subject the spin direction to a rotation,\nreferred to as Wigner rotation:\nU(Λ)|p, s⟩=\nX\ns′\n|Λ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 Crossing symmetry, parity, and time reversal",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-032-b2-crossing-symmetry-parity-and-time-reversal.md",
+      "narrative": null,
+      "content": "B.2 Crossing symmetry, parity, and time reversal\nThe\nsymmetry\nof\nthe\ntime-ordered\nproduct,\nT jµ(x)jν(y)\n=\nT jν(y)jµ(x),\nimplies\ninvariance\nunder crossing of the photons:10\nT µν(pf, qf|pi, qi) = T νµ(pf, −qi|pi, −qf) .\n(B.19)\nInvariance under space reﬂections amounts to:\nT µν(pf, qf|pi, qi) = πµ\nαπν\nβ T αβ(πpf, πqf|πpi, πqi) ,\n(B.20)\nwhere π\n=\ndiag(1, −1, −1, −1) inverts the sign of\nthe space components but leaves the time compo-\nnents alone. Time reversal not only inverts the momen-\ntum and spin directions, but in addition interchanges\nthe initial and ﬁnal states. Moreover, the amplitudes\nare",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3 Low-energy expansion",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-033-b3-low-energy-expansion.md",
+      "narrative": null,
+      "content": "The elastic intermediate states generate poles in T µν.\nIn the Mandelstam variables the poles are located at\n10If the time-ordered product of the currents is replaced by\nthe retarded current commutator, crossing symmetry instead\nrelates the amplitude to its complex conjugate [15].\ns = m2 and u = m2. We refer to these contributions as\nBorn terms and denote them by T µν\nB ,\nT µν = T µν\nB + ¯T\nµν .\n(B.23)\nThe decomposition is not unique [38, 40, 102]. The es-\nsential property of the Born terms is that they account\nfor the elastic singularities. This ensures that the re-\nmainder, ¯T\nµν, is regular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.4 Spin average",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-034-b4-spin-average.md",
+      "narrative": null,
+      "content": "The Breit frame also oﬀers a convenient decomposition\nof the amplitude into independent tensors. In the fol-\nlowing, we explicitly construct the decomposition for\nthe spin average, which we denote by T µν. Current\nconservation (qf\nµ T µν = qi\nν T µν = 0) implies that the\namplitude is uniquely determined by its space com-\nponents. Furthermore, rotation invariance ensures that\nthe spin average involves ﬁve independent amplitudes\n(a, b = 1, 2, 3):\nT ab = δab I1+qa\ni qb\nf I2+qa\ni qb\ni I3+qa\nfqb\nf I4+qa\nfqb\ni I5 . (B.27)\nSince this decomposition exclusively makes use of rota-\ntion invariance, the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.5 Born terms",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-035-b5-born-terms.md",
+      "narrative": null,
+      "content": "The Born terms contain poles along the lines s = m2\nand u = m2. The residue of the pole in the s-channel\ninvolves a sum over the one-particle matrix elements of\nthe current:\nX\ns\n¯u(pf, sf)Γ µ(−qf)u(pn, s)¯u(pn, s)Γ ν(qi)u(pi, si) .\n(B.33)\nAt the poles, the momentum of the intermediate state\nis on the mass-shell, p2\nn = m2, and the sum over the\nspin directions is given by\nX\ns\nu(pn, s) ¯u(pn, s) = /pn + m .\n(B.34)\nWe specify the residues oﬀthe mass-shell with analytic\ncontinuation, simply replacing pn with the total mo-\nmentum, P = pi + qi = pf + qf, also for P 2̸ = m2:\nˆT µν\nB (pf, sf, qf|pi, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.6 Leading low-energy constants",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-036-b6-leading-low-energy-constants.md",
+      "narrative": null,
+      "content": "Since ω, qi, qf are independent variables and ¯T\nµν\n0\nis in-\ndependent thereof, the constraint qf\nµ ¯T\nµν\n0\n= 0 imme-\ndiately implies ¯T\nµν\n0\n= 0. The term ¯T\nµν\n1\nis a linear\ncombination of the variables ω, qi, qf, but this property\nis inconsistent with current conservation: since invari-\nance under space reﬂections requires the components\n¯T\n00\n1\nand ¯T\nab\n1\nto be even under a reversal of the pho-\nton momenta, they must be independent thereof. The\nconstraint ω2 ¯T\n00\n1 = qa\nfqb\ni ¯T\nab\n1 can then only be obeyed if\n¯T\n00\n1\nand ¯T\nab\n1\nboth vanish, but this is compatible with\ncurrent conservat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.7 Real Compton scattering",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-037-b7-real-compton-scattering.md",
+      "narrative": null,
+      "content": "For real photons, q2\ni = q2\nf = 0, the projection onto\nthe polarization vectors (ǫ0 = 0, ǫ · q = 0) annihi-\nlates the time components as well as the contributions\nfrom I3, I4, I5. At low frequencies, the scattering am-\nplitude is fully determined by the charge of the par-\nticle [115], which we express in units of the proton\ncharge, Qe ≡FD(0). At ﬁrst order in the expansion\nin powers of the photon frequency ω, the anomalous\nmagnetic moment κ = FP (0) also shows up [116, 117],\nand at O(ω2), further contributions, characterized by\nthe two low-energy constants in (B.38), manifest them-\nselves [114",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.8 Low-energy theorems for T1(,q2) and T2(,q2)",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-038-b8-low-energy-theorems-for-t1q2-and-t2q2.md",
+      "narrative": null,
+      "content": "In the forward direction, the spin average is a Lorentz\ninvariant notion and only two of the four invariant vari-\nables are independent: the photon virtualities are the\nsame, q2\ni = q2\nf = q2, and the momentum transfer t van-\nishes. The standard variable ν = (s −u)/4m coincides\nwith the frequency in the Breit frame, ω = ν.\nThe spin average involves the two invariants T1, T2\ndeﬁned in (A.3) and (A.5). In the notation of (B.27)\nthese amplitudes are given by\nT1 = I2 + I3 + I4 + I5 ,\nq2T1 + ν2T2 = I1 .\n(B.44)\n26\nWhile for real Compton scattering only the invariants\nI1, I2 count, the amplitudes rel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Causality",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-039-c-causality.md",
+      "narrative": null,
+      "content": "The structure functions V1(ν, q2), V2(ν, q2) are experi-\nmentally accessible only in the space-like region, q2 ≤0.\nAs discussed in detail in [4, 118], causality – the fact\nthat the current commutator vanishes outside the light-\ncone – very strongly constrains their continuation into\nthe time-like region. General properties of causal func-\ntions are described in [119, 120] and explicit represen-\ntations that manifestly incorporate causality [121–124]\nare available. These have been used, in particular, in\nthe analysis of the structure functions at high ener-\ngies [125]. The further representatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D A new causal representation",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-040-d-a-new-causal-representation.md",
+      "narrative": null,
+      "content": "Consider the product of two retarded propagators\ntret(p, q) =\n1\nµ2\n1 −(q0 + iǫ)2 + q2\n×\n1\nµ2\n2 −(p0 + q0 + iǫ)2 + (p + q)2 .\n(D.50)\nThe Fourier transform of this amplitude,\n˜tret(p, x) =\nZ\nd4qe−ix·qtret(p, q) ,\n(D.51)\nis given by the convolution of the two propagators in\ncoordinate space. Since these vanish outside the for-\nward light-cone, the same is also true of the convo-\nlution: ˜tret(p, x) diﬀers from zero only in the forward\nlight-cone, x2 ≥0, x0 ≥0.\nThis\nreﬂects\nthe\nproperties\nof\nthe\nintegrand\nin (D.51), which contains four poles\ntret(p, q) =\n1\n(q0 −ω1 + iǫ)(q0 + ω1 + iǫ)\n×\n1\n(q0 + p0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-041-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-041-01.md",
+      "narrative": null,
+      "content": "The calculation yet needs to be improved to account for the scaling violations, but we doubt that this will signiﬁcantly aﬀect the numerics – in [4], the contribution from the entire deep inelastic region was found to be small.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-041-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-041-02.md",
+      "narrative": null,
+      "content": "The num- ber quoted in [4] concerns the full contribution of the elastic intermediate states to the Cottingham formula, which includes the elastic contribution to the subtrac- tion function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prop-sec-041-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-041-03.md",
+      "narrative": null,
+      "content": "In [31], the elastic part of the mass-shift is instead identiﬁed with the contribution from the elas- tic states to the subtracted dispersion integral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1506.06747v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E Errata in the literature",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-041-e-errata-in-the-literature.md",
+      "narrative": null,
+      "content": "E Errata in the literature\nIn the present appendix, we rectify a number of incor-\nrect statements made in the literature [30–33] about the\nwork of Gasser and Leutwyler [4]. Unfortunately, some\nof these already propagated [35,36,47].\nThe only deﬁciency of the analysis reported in [4]\nwhich we are aware of concerns the evaluation of the\ncontributions arising from the deep inelastic region: the\nviolations of Bjorken scaling are not accounted for. In\nparticular, if the ratio x = Q2/2mν is kept ﬁxed, the\nlongitudinal structure function FL = F2 −2xF1 is as-\nsumed to tend to zero at high energies, in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

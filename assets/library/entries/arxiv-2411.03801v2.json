@@ -1,0 +1,323 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2411.03801v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "2. Two invariants from the asymptotics of the Kashaev invariant 3\n2.1. The 1-loop invariant 3\n2.2. Essential open diagrams and their potential 5\n2.3. The Ohtsuki–Takata invariant 7\n3. From planar diagrams to ideal triangulations 9\n3.1. Octahedral decomposition 9\n3.2. Collapsing the octahedral decomposition to an ideal triangulation 11\n4. Proof of the main theorem 13\n4.1. Flattening of the collapsed triangulation 14\n4.2. Variable reduction 17\nAppendix A. Further discussion on collapsing 20\nAppendix B. Braid closures 21\nReferences 23\n1. Introduction\nThe celebrated volume conjecture of Kashaev pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 1-loop invariant",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-21-the-1-loop-invariant.md",
+      "narrative": null,
+      "content": "geometric representation of a cusped hyperbolic 3-manifold M (call such triangulations es-\nsential), and it is an element of the invariant trace field of M, well-defined up to a sign.\nMoreover, it is unchanged under 2–3 and 0–2 Pachner moves of essential ideal triangulations\n(see e.g., [DG13, Sec.3] and [PW, Prop.5.1]). Since every cusped hyperbolic 3-manifold has\nan essential ideal triangulation obtained by subdividing the Epstein–Penner ideal cell decom-\nposition, and the set of essential ideal triangulations is connected under 2–3 and 0–2 Pachner\nmoves, as shown by Kalelkar–Schleimer–Segerm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots. Let us comment on this conjecture and our proof for hyperbolic 2-bridge knots. Both the 1-loop invariant and the adjoint Reidemeister torsion are given (up to normalization factors) by the determinant of a matrix with coefficients in the trace field. For the 1-loop, the size of the matrix is the number of tetrahedra of an essential ideal triangulation, and the matrix is obtained by the Neumann–Zagier matrices of the ideal triangulation and their shapes. Alternatively, as was shown by the second author, the 1-loop is esse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two invariants from the asymptotics of the Kashaev invariant",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-2-two-invariants-from-the-asymptotics-of-the-kas.md",
+      "narrative": null,
+      "content": "[]{#sec.prelim label=\"sec.prelim\"}\n\nIn this section we recall the 1-loop and Ohtsuki--Takata invariants, following [@DG1] and [@OT2015]. They are both expected to equal to each other and to be the constant term of the asymptotic expansion of the Kashaev invariant, but their definitions are a bit different. The 1-loop invariant is modeled on Chern--Simons perturbation theory, and is defined using an essential ideal triangulation of a knot complement, whereas the Ohtsuki--Takata invariant depends on a planar projection of a knot and the invariant is obtained by applying stationary phase to a sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Essential open diagrams and their potential",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-essential-open-diagrams-and-their-potential.md",
+      "narrative": null,
+      "content": "[]{#sub.PD label=\"sub.PD\"}\n\nThe domain of the Ohtsuki--Takata invariant discussed below is the set of essential open diagrams of knots. An open diagram is a planar diagram of a $(1,1)$-tangle and is said to be essential if the corresponding collapsed triangulation is essential. We postpone a detailed description of the collapsed ideal triangulation to Section [\\[sec.octa\\]](#sec.octa){reference-type=\"ref\" reference=\"sec.octa\"}. Roughly, this is a story of how to pass from a planar diagram of a knot to an ideal triangulation of its complement and use it to determine the complete hyperbolic stru",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ohtsuki–Takata invariant",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-the-ohtsukitakata-invariant.md",
+      "narrative": null,
+      "content": "[]{#sub.OT label=\"sub.OT\"}\n\nTo define the Ohtsuki--Takata invariant, we consider two more functions associated with $\\mathring{D}$. To define the first one, for each crossing, cup and cap of $\\mathring{D}$, we choose two corners around it and associate a rational function with each of them, shown as in Figure [1](#fig.omega1){reference-type=\"ref\" reference=\"fig.omega1\"}. These functions are well-defined and non-zero for essential corners. The *first normalizing function* $\\Omega_1$ is defined as the product of these rational functions over all essential corners among chosen ones.\n\n<figure id=\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From planar diagrams to ideal triangulations",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-from-planar-diagrams-to-ideal-triangulations.md",
+      "narrative": null,
+      "content": "[]{#sec.octa label=\"sec.octa\"}\n\nIn this section we recall a well-known connection between planar projections of (hyperbolic) knots and their ideal triangulations. The history of the subject predates quantum topology, and the sought algorithm takes as input a planar projection $D$ of a knot $K$, produces as an intermediate stage an octahedral cell decomposition of its complement minus two points, and eventually produces an ideal triangulation of its complement $S^3 \\setminus K$. This algorithm due to Thurston appears in the code of `SnapPy` in the original version due to Weeks [@snappy]. It is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octahedral decomposition",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-31-octahedral-decomposition.md",
+      "narrative": null,
+      "content": "[]{#sec.oc label=\"sec.oc\"}\n\nLet $K$ be a knot in $S^3$ and $D$ be a knot diagram of $K$. Viewing $D$ as an embedded 4-valent graph in $\\mathbbm R^2$, a *segment* refers to an edge of the graph and a *region* refers to a connected component of the complement of the graph. If we add over/under-pass information at every crossing as usual, the graph splits up into intervals, which we call *over-arcs*. Reversing all the over/under-pass information, the graph splits up into different intervals, which we call *under-arcs*.\n\nPlace an ideal octahedron at every crossing as in Figure [1](#fig.octahedrona",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-32-collapsing-the-octahedral-decomposition-to-an.md",
+      "narrative": null,
+      "content": "[]{#sec.collap label=\"sec.collap\"}\n\nIn this section we discuss how to collapse the ideal cell decomposition $\\mathcal O_D$ of $S^3\\setminus (K \\cup \\{p,q\\})$ into an ideal triangulation $\\mathcal T_D$ of $S^3\\setminus K$. The collapsing depends on fixing an alternating segment $s$ of $D$. By alternating we mean that we overpass the diagram at one end of $s$ and underpass at the other end. We denote by $r_1$ and $r_2$ two regions adjacent to $s$, and by $o$ and $u$ the over-arc and under-arc containing $s$, respectively (see Figure [1](#fig.region2){reference-type=\"ref\" reference=\"fig.region2\"}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-4-proof-of-the-main-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec.pf label=\"sec.pf\"}\n\nIn this section we prove Theorem [\\[thm.main2\\]](#thm.main2){reference-type=\"ref\" reference=\"thm.main2\"} below, which combined with the work of Ohtsuki--Takata [@OT2015] implies Theorem [\\[thm.main\\]](#thm.main){reference-type=\"ref\" reference=\"thm.main\"}. We fix an open diagram $\\mathring{D}$ of a hyperbolic 2-bridge knot $K$ as in the following figure, where boxes are twist regions.\n\n<figure id=\"fig.planardiagram\">\n\n<figcaption>An open diagram of a 2-bridge knot.</figcaption>\n</figure>\n\n::: theorem\n[]{#thm.main2 label=\"thm.main2\"} For $\\mathring{D}$ as above, $\\tau",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flattening of the collapsed triangulation",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
+      "narrative": null,
+      "content": "[]{#sec.flat label=\"sec.flat\"}\n\nIn this subsection, we find an explicit flattening ${\\boldsymbol f}=(f,f',f'')$ of $\\mathcal T_{\\mathring{D}}$. Recall from Section [\\[sec.OL\\]](#sec.OL){reference-type=\"ref\" reference=\"sec.OL\"} that ${\\boldsymbol f}$ consists of integer triples ${\\boldsymbol f}_j=(f_j,f'_j,f''_j) \\in \\mathbbm Z^3$, one for each tetrahedron $\\Delta_j$ of $\\mathcal T_{\\mathring{D}}$ and is required to satisfy $f_j + f'_j +f''_j =1$ for each $\\Delta_j$ and $$\\label{eqn.flat}\ne_i : \\quad \\sum_{j} G_{ij} f_j +  G'_{ij} f'_j  + G''_{ij} f''_j  =2$$ for each edge $e_i$. We denote by $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variable reduction",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-42-variable-reduction.md",
+      "narrative": null,
+      "content": "[]{#sec.reduction label=\"sec.reduction\"}\n\nIn this subsection, we reduce the number of shape parameters by solving the gluing equations for the C and R-edges, and the completeness equation. The following lemma will be used repeatedly.\n\n::: lemma\n[]{#lem.red label=\"lem.red\"} Let $f_1,\\ldots,f_k$ be functions in variables $x_1,\\ldots,x_k$ and fix a solution to $$\\exp(f_1) = \\cdots = \\exp(f_k)=1\\,.$$ Suppose that $\\exp(f_k)$ is of the form $g(x_1,\\ldots,x_{k-1}) \\, x_k$ so that we can substitute $x_k$ with $1/g(x_1,\\ldots,x_{k-1})$ by solving $\\exp (f_k)=1$. Then we have $$\\label{eqn.xx}\n  \\det \\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Further discussion on collapsing",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-appendix-a-further-discussion-on-collapsing.md",
+      "narrative": null,
+      "content": "In this section we illustrate the collasping process explained in Section 3.2. For simplicity,\nwe only consider alternating diagrams, but the non-alternating case can be described in a\nsimilar way.\nLet D be an alternating diagram of a knot K⊂S3 and ˚D be an open diagram obtained\nfromD by cutting a segments ofD. Recall from Section 3 thatOD is an ideal triangulation of\nS3\\(K∪{±∞}) with tetrahedra placed at corners ofD and thatT˚D is an ideal triangulation\nobtained from OD by removing some tetrahedra lying around s and changing some face-\npairings.\nChopping off the vertices of the tetrahedra, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "1. Let ei and ej be two edges of T˚D that correspond to adjacent regions. Then there is a triple h = (h,h′,h′′) of vectors such that hj +h′ j +h′′ j = 0 and ⟨f +h,e⟩−⟨ f,e⟩ =    −1 if e =ei 1 if e =ej 0 otherwise In addition, such h can be chosen independently of f.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Braid closures",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-appendix-b-braid-closures.md",
+      "narrative": null,
+      "content": "In this section we explain how to find a flattening of the collapsed triangulation T˚D when\n˚D is given by a closure of a braid, more precisely, when ˚D is an open diagram obtained\n22 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON\nx1\n∞\nx5\nx2\nx3\nx4\n0\n1\n1\n1\n1\nFigure 18. An open diagram of the knot 6 1.\nfrom a braid by taking the closure of all strands except the first one. See Figure 18 for an\nexample.\nThe triplef given in Equation (10) still satisfies Lemma 4.2, but not Lemma 4.3. Precisely,\nif we repeat the proof of Lemma 4.3, we obtain the following: for an R-edge e, we have\n⟨f,e⟩ = 0 if e correspo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "2. Adjacent regions have a segment in common, and the proof of Lemma B.1 works for any pair of corners at one end of the segment. In particular, a choice of h may 1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS 23 ri rj ri rj (1, 0,−1)(−1, 1, 0) (1,−1, 0)(−1, 0, 1) Figure 19. A choice of h. not be not unique. However, regardless of a choice of h, the product ζh is invariant (see",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2411.03801v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[AW] Fathi Ben Aribi and Ka Ho Wong, The Andersen-Kashaev volume conjecture for FAMED geo-\nmetric triangulations, Preprint 2024, arXiv:2410.10776.\n[CDGW] Marc Culler, Nathan Dunfield, Matthias Goerner, and Jeffrey Weeks, SnapPy, a computer\nprogram for studying the geometry and topology of 3-manifolds, Available at http://snappy.\ncomputop.org (version 3.1.1).\n[DG13] Tudor Dimofte and Stavros Garoufalidis, The quantum content of the gluing equations , Geom.\nTopol. 17 (2013), no. 3, 1253–1315.\n24 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON\n[DGLZ09] Tudor Dimofte, Sergei Gukov, Jonatan Lenells, and D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

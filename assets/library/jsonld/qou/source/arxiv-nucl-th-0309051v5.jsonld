@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0309051v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+  "contains": [
+    "library/arxiv-nucl-th-0309051v5/sections/sec-front-matter",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-000",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory — 3 sections: Front matter; Reinterpretation of Faddeev-Niemi ; ACKNOWLEDGEMENT\n\n**Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory**\n\n*Y. M. Cho∗*\n\n4 pp, 3 sections.\n\n**Outline.** Front matter; Reinterpretation of Faddeev-Niemi Knot in Skyr; ACKNOWLEDGEMENT",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0309051&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0309051v5",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0309051v5.pdf",
+    "source_sha256": "f7ede32125662908f6b09a68c0035d68903aa891b41502b61807c7fbd3a090f3",
+    "pages": 4,
+    "arxiv": {
+      "id": "nucl-th/0309051",
+      "version": "5",
+      "primary_class": null,
+      "stamp_date": "24 Sep 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

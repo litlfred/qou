@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/sm10137-eng",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+      "dcterms:creator": [
+        "Sbornik, Matematicheski˘ı"
+      ],
+      "dcterms:issued": "D:20250222",
+      "bibo:doi": "10.4213/sm10137e",
+      "dcterms:identifier": "https://doi.org/10.4213/sm10137e",
+      "dcterms:abstract": "We consider a family of linear operators diagonalized by the Hankel transform. We express explicitly the Fredholm determinants of these operators, as restricted to L2[0, R], so that the rate of their conver- gence as R →∞can be found. We use the link between these determinants and the distribution of additive functionals in a determinantal point process with Bessel kernel and estimate the distance in the Kolmogorov–Smirnov metric between the distribution of these functionals and the Gaussian dis- tribution. Bibliography: 27 titles.",
+      "dcterms:source": "library/sm10137-eng/manifest.jsonld",
+      "dcterms:hasVersion": "library/sm10137-eng"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/besser-dejeu2008.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-11kcs49j1i2.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-11kcs49j1i2","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/besser-dejeu2008.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/besser-dejeu2008.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/besser-dejeu2008.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;besser-dejeu2008&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 366,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf&quot;
+      },
+      &quot;id&quot;: &quot;besser-dejeu2008&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;Describes an algorithm for computing Coleman&#39;s p-adic polylogarithms to a given precision. This is the algorithm a live corpus probe implements, by name and by proposition number: computations/probes/gswz_coleman_li2_full_precision_probe.py opens by naming this article and this exact uploaded filename as &#39;THE previously-missing ingredient, now available&#39; for bean qou-9p9y, and its body implements Prop 4.3 (the recursion g_0(v) = v - 1 - (v-1)^p/(v^p - (v-1)^p), g&#39;_{n+1} = -g_n/(v - v^2), giving Li^{(p)}_n(z) = g_n(1/(1-z))), Prop 4.2 (the telescoped Frobenius formula recovering Li_n(zeta) from Li^{(p)}_n at Teichmueller points) and the coefficient-integrality/precision bound of Prop 6.1, then checks the result against printed data to mod 5^4. I verified all three propositions are present at those numbers in the PDF. Separately, an existing ledger row already treats a different article by one of the same authors as the source for the finite/p-adic polylogarithm bridge at rem:q-dilog-three-contexts; this one is the computational companion. references.ts has no entry for either. A production probe whose stated algorithm has no bibliographic entry is a citation gap on the critical path, not background.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Prop. 4.3&quot;,
+            &quot;statement&quot;: &quot;Li^{(p)}_n(z) = g_n(1/(1-z)) where the g_n are determined by an explicit differential recursion with g_n(0) = 0.&quot;,
+            &quot;useForFolio&quot;: &quot;The series the corpus probe evaluates to 120 terms to obtain full-precision Coleman Li_2 at Teichmueller points; currently implemented against an uncited source.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/gswz_coleman_li2_full_precision_probe.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Prop. 4.2&quot;,
+            &quot;statement&quot;: &quot;For zeta a non-trivial (p^f - 1)-th root of unity, Li_n(zeta) is recovered from the Li^{(p)}_n(zeta^{p^r}) by a telescoped Frobenius sum with factor (p^{nf} - 1)^{-1}.&quot;,
+            &quot;useForFolio&quot;: &quot;The step that converts the computable truncated polylogarithm into the Coleman value at roots of unity, which is what the corpus&#39;s mod-5 dilogarithm cross-check needs.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/gswz_coleman_li2_full_precision_probe.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Prop. 6.1&quot;,
+            &quot;statement&quot;: &quot;The coefficients of the g_n are p-integral with an explicit valuation lower bound, giving a computable precision/truncation estimate.&quot;,
+            &quot;useForFolio&quot;: &quot;The proved premise behind the probe&#39;s truncation choice (N = 120, tail valuation &gt; 20); without it the probe&#39;s precision claim is an assertion.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/gswz_coleman_li2_full_precision_probe.py&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Core and orphan; a live probe names this article as its algorithm source and there is no ref() entry.&quot;,
+            &quot;target&quot;: &quot;computations/probes/gswz_coleman_li2_full_precision_probe.py&quot;,
+            &quot;bean&quot;: &quot;qou-ikze&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;rem:q-dilog-three-contexts asserts a truncated F_p form and convergent Q_p / C_p forms of the q-dilogarithm with no citation; the computational p-adic polylogarithm side belongs there alongside the finite/p-adic bridge already proposed in the ledger for the companion article.&quot;,
+            &quot;target&quot;: &quot;rem:q-dilog-three-contexts&quot;,
+            &quot;bean&quot;: &quot;qou-vux7&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;080b5ac8542f&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

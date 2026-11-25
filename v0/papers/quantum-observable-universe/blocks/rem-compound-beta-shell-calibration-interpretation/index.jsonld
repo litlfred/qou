@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-compound-beta-shell-calibration-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:compound-beta-shell-calibration-interpretation",
+  "kind": "remark",
+  "title": "Magic-shell calibration corollaries and open implementation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+  "tags": [
+    "beta-decay",
+    "compound-decay",
+    "shell-closure",
+    "calibration",
+    "parameter-free"
+  ],
+  "text": "compound-beta-shell-calibration-interpretation.md",
+  "provenance": "authored"
+}

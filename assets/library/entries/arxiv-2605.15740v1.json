@@ -1,0 +1,285 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.15740v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants and modular forms [@lz]. To state their result, let $Z_{\\zeta}(\\mathcal{M})$ denote the Witten-Reshetikhin-Turaev (WRT) invariant of a closed and oriented 3-manifold $\\mathcal{M}$ at the root of unity $\\zeta$. Next let $\\bm{p} = (p_1, p_2, p_3)$ be a triple of pairwise coprime positive integers and $P:=p_1 p_2 p_3$. For any triple $\\bm{\\ell} = (\\ell_1, \\ell_2, \\ell_3) \\in \\mathbb{Z}^3$ satisfying $0 < \\ell_j < p_j$, define the odd periodic function $$\\begin{aligned}\n\\chi_{\\bm{p}}^{\\bm{\\ell}}(n) = \n\\begin{ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED\nWITTEN-RESHETIKHIN-TURAEV INVARIANTS\nJEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER\nAbstract. In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT)\ninvariant of the Poincar´e homology sphere as the limiting value of the Eichler integral of a\nweight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently\nrecast this result as an identity for a q-hypergeometric series at roots of unity. This motivated\nHikami to prove analogous q-series identities involving the unified WRT invariants of certain\nBriesko",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bailey pairs and key identities",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-bailey-pairs-and-key-identities.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and auxiliary results",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-preliminaries-and-auxiliary-results.md",
+      "narrative": null,
+      "content": "Recall that a Bailey pair relative to $a$ is a pair of sequences $(\\alpha_n,\\beta_n)_{n \\geq 0}$ satisfying $$\\begin{aligned}\n\\beta_n &= \\sum_{k=0}^n \\frac{\\alpha_k}{(q)_{n-k}(aq)_{n+k}} \\label{pairdef} \\\\\n&= \\frac{1}{(q)_n(aq)_n} \\sum_{k=0}^n \\frac{(q^{-n})_k}{(aq^{n+1})_k}(-1)^kq^{nk -\\binom{k}{2}} \\alpha_k. \\label{pairdefbis}\n\\end{aligned}$$ The first equation is the original definition [@An1], while the second follows from an application of the identity [@Ga-Ra Appendix I, Eq. (I.10)] $$\\label{qPochn-k}\n(x)_{n-k} = \\frac{(x)_n}{(q^{1-n}/x)_k}(-q/x)^kq^{\\binom{k}{2} - nk}.$$\n\nWe begin by re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An arsenal of Bailey pairs",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-an-arsenal-of-bailey-pairs.md",
+      "narrative": null,
+      "content": "[]{#arseBP label=\"arseBP\"} Here we collect all of the Bailey pairs we will use in the proof of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}. There are eight Bailey pairs that we cite from the literature -- six Bailey pairs relative to $q$ and two Bailey pairs relative to $q^2$. First, we have four Bailey pairs relative to $q$ from Slater's list [@Sl p.463, A(2), A(4), A(6), A(8)]:\n\n$$\\label{BP1}\n    \\alpha_k = \n    \\begin{cases}\n        q^{6r^2 -r} & \\text{if $k=3r-1$}, \\\\\n        q^{6r^2 +r} & \\text{if $k=3r$}, \\\\\n        -q^{6r^2+5r+1} - q^{6r^2+7r+2} &\\text{if $k=3r+1$}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The key results",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-23-the-key-results.md",
+      "narrative": null,
+      "content": "Here we state and prove the key results relating ([\\[h1\\]](#h1){reference-type=\"ref\" reference=\"h1\"}), ([\\[h8\\]](#h8){reference-type=\"ref\" reference=\"h8\"}), ([\\[h2\\]](#h2){reference-type=\"ref\" reference=\"h2\"})--([\\[h7\\]](#h7){reference-type=\"ref\" reference=\"h7\"}), ([\\[h9\\]](#h9){reference-type=\"ref\" reference=\"h9\"}) and ([\\[h10\\]](#h10){reference-type=\"ref\" reference=\"h10\"}) to finite polynomial sums at roots of unity. We have chosen to present these results following the order in which the Bailey pairs in Section [\\[arseBP\\]](#arseBP){reference-type=\"ref\" reference=\"arseBP\"} were introduced.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Incomplete quadratic Gauss sums",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-3-incomplete-quadratic-gauss-sums.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties for incomplete quadratic Gauss sums",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-31-properties-for-incomplete-quadratic-gauss-sum.md",
+      "narrative": null,
+      "content": "We begin with a general result on an incomplete quadratic Gauss sum. For simplicity, we write $\\chi = \\chi_{\\bm{p}}^{\\bm{\\ell}}$. Recall that $P:=p_1 p_2 p_3$.\n\n::: lemma\n[]{#chiprop label=\"chiprop\"} Assume that\n\n1.  $P \\equiv 2 \\pmod{4}$,\\\n\n2.  if $\\chi(n) \\neq 0$, then $n$ is odd\\\n\n3.  $\\chi$ is even modulo $P$, i.e., $\\chi(P-n) = \\chi(n)$.\n\nIf $q$ is a primitive $N$th root of unity, then $$2\\sum_{n=0}^{PN} \\left(1-\\frac{n}{PN}\\right) \\chi(n) q^{\\frac{n^2}{4P}} =  \\sum_{n=0}^{PN} \\chi(n) q^{\\frac{n^2}{4P}}.$$\n:::\n\n::: proof\n*Proof.* We have $$\\begin{aligned}\n2\\sum_{n=0}^{PN}& \\left(1-\\frac{n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "Let p = (2, 3, p3) with (6, p3) = 1 and ℓ= (1, 1, ℓ3) ∈Z3 satisfy 0 < ℓ3 < p3. If M and N are coprime positive integers and q = e 2πiM N , then the following are true: (1) If N ≡0 mod 6, then T+++ = e−πip3M T−−−= e πip3M S+++ = e−2πip3M S−−−, T++−= e−πip3M T−−+ = e−2πip3M S++−= e πip3M S−−+, T+−+ = e πip3M T−+−= e−πip3M S+−+ = e 2πip3M S−+−, T+−−= e πip3M T−++ = e−πip3M S+−−= e 2πip3M S−++. (2) If N ≡1 mod 6, then T+−+ = T+−−, T−−+ = T−−−, T−++ = S+−+ = S++−, T−+−= S+−−= S+++, T+++ = S−−+ = S−+−, T++−= S−−−= S−++. (3) If N ≡2 mod 6, then T+++ = −T−+−, T++−= −T−++, T+−+ = −S+++ = S−−−, T+−−= −S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/cor-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "cor-sec-007-03.md",
+      "narrative": null,
+      "content": "Let p = (2, 3, p3) with (6, p3) = 1 and ℓ= (1, 1, ℓ3) ∈Z3 satisfy 0 < ℓ3 < p3 and write χ = χ(1,1,ℓ3) (2,3,p3). If M and N are coprime positive integers and q = e 2πiM N , then 6p3N X n=0 χ(n)q n2 24p3 = 4 2p3N X n=0 χ(n)q n2 24p3 . (3.26)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Let p = (2, 3, p3) with (6, p3) = 1, ℓ= (1, 1, ℓ3) ∈Z3 satisfy 0 < ℓ3 < p3 and ϵ := (ϵ1, ϵ2, ϵ3), ϵ′ := (ϵ′ 1, ϵ′ 2, ϵ′ 3) ∈{±1}3. If M and N are coprime positive integers and q = e 2πiM N , then the following are true: (i) If ϵ1+ϵ′ ≡N (mod 2), ϵ2+ϵ′ 2 ≡N (mod 3) and ϵ′ 3 = −ϵ3, then m(ϵ)+m(ϵ′) 2P ≡N 6 (mod 1) and Tϵ = e πi(p3N−m(ϵ′))M Tϵ′. (ii) If ϵ1−ϵ′ ≡N (mod 2), ϵ2 −ϵ′ 2 ≡N (mod 3) and ϵ′ 3 = ϵ3, then m(ϵ)−m(ϵ′) 2P ≡N 6 (mod 1) and Sϵ = e πi(p3N+m(ϵ′))M Tϵ′. (iii) If ϵ1+ϵ′ ≡0 (mod 2), ϵ2+ϵ′ 2 ≡2N (mod 3) and ϵ3 = −ϵ′ 3, then m(ϵ)+m(ϵ′) 2P ≡N 3 (mod 1) and Sϵ = e 2πi(2p3N−m(ϵ′))M Tϵ′. (iv)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relations between incomplete quadratic Gauss sums",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-32-relations-between-incomplete-quadratic-gauss.md",
+      "narrative": null,
+      "content": "(p1, p2, p3) of pairwise coprime positive integers and ℓ= (ℓ1, ℓ2, ℓ3) ∈Z3 satisfying 0 < ℓj < pj,\nwe define m(ϵ) ∈{0, . . . , 2P −1} such that\nm(ϵ) ≡P\n\n1 +\n3\nX\nj=1\nϵjℓj\npj\n\n\n(mod 2P).\n(3.2)\nBAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS 15\nNote that m(ϵ)2 (mod 2P) is independent of ϵ ∈{±1}3. We write\nT = T(q) = −\nX\nϵ∈{±1}3\nϵ1ϵ2ϵ3 Tϵ,\nS = S(q) = −\nX\nϵ∈{±1}3\nϵ1ϵ2ϵ3 Sϵ\nwhere\nTϵ = Tϵ(q) :=\nX\nn≡m(ϵ) mod 2P\n0≤n≤2p3N\nq\nn2\n4P ,\nSϵ = Sϵ(q) :=\nX\nn≡m(ϵ) mod 2P\n2p3N<n≤4p3N\nq\nn2\n4P .\nIf we write n = k2P + m(ϵ) for some positive integer k, then\nTϵ =\nj 2p3N−m(ϵ)\n2P\nk\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.2",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-4-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "We are now in a position to prove Theorem 1.2. Again, we follow the order in which the\nBailey pairs were introduced in Section 2.2.\nProof. We begin with the proof of (1.32). By Proposition 3.3, (1.32) is equivalent to\n−1\n2\n6(6p+1)N\nX\nn=0\nχ(n)\n\u0012\n1 −\nn\n6(6p + 1)N\n\u0013\nζ\nM n2−(6p−1)2\n24(6p+1)\nN\n= H(6)\np (ζM\nN )\n(4.1)\nwhere χ = χ(1,1,2p)\n(2,3,6p+1) is the odd periodic function given by\nχ(n) =\n\n\n\n\n\n1\nif n ≡42p + 5, 54p + 7, 54p + 11, 66p + 13\n(mod 72p + 12),\n−1\nif n ≡6p −1, 18p + 1, 18p + 5, 30p + 7\n(mod 72p + 12),\n0\notherwise.\n(4.2)\nBy Theorem 2.7,\nH(6)\np (q) =\nN−1\nX\nk=0\n(−1)kq(k+1\n2 )+(p−1)(k2+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "The second and third authors were partially funded by the Irish Research Council Advanced Laureate Award IRCLA/2023/1934. The second author would like to thank the Okinawa Institute of Science and Technology for their hospitality and support during his visit from August 28 to September 15, 2023 as part of the TSVP Thematic Program \"Exact Asymptotics: From Fluid Dynamics to Quantum Geometry\\\". It was during this visit where Professor Hikami kindly shared conjectures ([\\[h6pconj\\]](#h6pconj){reference-type=\"ref\" reference=\"h6pconj\"}) and ([\\[h7pconj\\]](#h7pconj){reference-type=\"ref\" reference=\"h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.15740v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] A.K. Agarwal, G.E. Andrews and D.M. Bressoud, The Bailey lattice, J. Indian Math. Soc. (N.S.) 51 (1987),\n57–73.\n[2] J. Andersen, W. Misteg˚ard, Resurgence analysis of quantum invariants of Seifert fibered homology spheres,\nJ. Lond. Math. Soc. (2) 105 (2022), no. 2, 709–764.\n[3] J. Andersen, L. Han, Y. Li, W. Misteg˚ard, D. Sauzin and S. Sun, A proof of Witten’s asymptotic expansion\nconjecture for WRT invariants of Seifert fibered homology spheres, preprint available at https://arxiv.\norg/abs/2510.10678\n[4] G.E. Andrews, Multiple series Rogers-Ramanujan type identities, Pacific J. Math. 114",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

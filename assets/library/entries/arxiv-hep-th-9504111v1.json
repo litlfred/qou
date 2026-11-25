@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9504111v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9504111v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9504111v1  21 Apr 1995\nPDMI PREPRINT - 1/1995\nDiscrete Heisenberg-Weyl Group and Modular Group\nL. D. Faddeev\nSt.Petersburg Branch of Steklov Mathematical Institute,\nFontanka 27, St.Petersburg 191011, Russia\nResearch Institute for Theoretical Physics, University of Helsinki,\nSiltavuorenpenger 20C, SF 00014 Helsinki, Finland\nAbstract\nIt is shown that the generators of two discrete Heisenberg-Weyl groups with irra-\ntional rotation numbers θ and −1/θ generate the whole algebra B of bounded operators\non L2(R). The natural action of the modular group in B is implied. Applications to\ndyn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9504111v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] J.Schwinger, Proc. Nat. Acad. Sci. USA, 46, 1950, 1401.\n[2] L.Faddeev, A.Volkov, Phys.Lett. B 315, 1993, 311.\n[3] L.Faddeev, Lectures delivered at the International School of Physics ”Enrico Fermi”\nVarenna, Italy, 1994, hep-th/9408041.\n[4] A.Connes, Non-Commutative Geometry, IHES/H/93/54.\n[5] A. Polyakov, Gauge Fields and Strings, Harwood, 1991.\n[6] L.Faddeev, Lett. ZhETP 21, 1975, 141.\nThis work was partly supported by ISF grant N R2H000 and grant of Finnish Academy.\nIt is a pleasure to acknowledge the constructive discussions with A.Connes, M.Flato, A.Morozov,\nA.Niemi, D.Sternheimer and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

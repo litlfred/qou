@@ -1,0 +1,1610 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1101.3374v1",
+  "title": "Pontryagin invariants and integral formulas for Milnor's triple linking number",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Milnor -invariant",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-milnor--invariant"
+    },
+    {
+      "level": 1,
+      "title": "The Pontryagin -invariant",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-pontryagin--invariant"
+    },
+    {
+      "level": 1,
+      "title": "Explicit formulas for the characteristic map",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-explicit-formulas-for-the-characteristic-map"
+    },
+    {
+      "level": 1,
+      "title": "The Pontryagin -invariant of the characteristic map",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-the-pontryagin--invariant-of-the-characteristi"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Sketch of an algebraic proof of Theorem ??",
+      "number": "7",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-sketch-of-an-algebraic-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??, formulas (1) and (2)",
+      "number": "8",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-proof-of-theorem-formulas-1-and-2"
+    },
+    {
+      "level": 1,
+      "title": "Fourier series and the Proof of Theorem ??, formula (3)",
+      "number": "9",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-fourier-series-and-the-proof-of-theorem-formul"
+    },
+    {
+      "level": 1,
+      "title": "Appendix. Whitehead's integral formula for the Hopf invariant",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix-whiteheads-integral-formula-for-the-hop"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "milnor triple",
+          "heading": false
+        },
+        {
+          "term": "pontryagin invariants",
+          "heading": false
+        },
+        {
+          "term": "characteristic map",
+          "heading": false
+        }
+      ],
+      "extract": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK, PAUL MELVIN, CLAYTON SHONKWILER, AND DAVID SHEA VELA-VICK Abstract. To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1101.3374v1/blocks/prose-sec-front-matter",
+        "library/arxiv-1101.3374v1/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": "1",
+      "labelEnd": "9",
+      "words": 3956,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secref pontryagin",
+          "heading": false
+        },
+        {
+          "term": "secref characteristic",
+          "heading": false
+        },
+        {
+          "term": "secref aprep",
+          "heading": false
+        },
+        {
+          "term": "itb link",
+          "heading": false
+        },
+        {
+          "term": "pontryagin homotopy",
+          "heading": false
+        },
+        {
+          "term": "thmref below",
+          "heading": false
+        },
+        {
+          "term": "pontryagin invariants",
+          "heading": false
+        },
+        {
+          "term": "increases pontryagin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:intro} \\begin{wrapfigure}[10]{l}{35mm} \\begin{center} \\includegraphics[height=100pt]{cremona7.jpg} \\put(-88,-12){\\small\\bf Borromean Rings} \\end{center} \\label{fig:borromean} \\end{wrapfigure} Three-component links in the $3$-sphere $S^3$ were classified up to {\\itb link homotopy} -- a deformation during which each component may cross itself but distinct components must remain disjoint -- by John Milnor in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-milnor--invariant",
+      "number": "2",
+      "title": "The Milnor -invariant",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1093,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "milnor",
+          "heading": true
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "seifert surfaces",
+          "heading": false
+        },
+        {
+          "term": "delta move",
+          "heading": false
+        },
+        {
+          "term": "three-component link",
+          "heading": false
+        },
+        {
+          "term": "link components",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:milnor label=\"sec:milnor\"} Let $L$ be a three-component link in either $\\mathbb R^3$ or $S^3$, with oriented components $X$, $Y$ and $Z$, and pairwise linking numbers $p$, $q$ and $r$. Milnor's original definition of the triple linking number $\\mu(L)$, typically denoted $\\bar\\mu_{123}(L)$, was algebraic. The formulation in his PhD thesis [@Milnor57] is expressed in terms of the lower central series of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-pontryagin--invariant",
+      "number": "3",
+      "title": "The Pontryagin -invariant",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 20,
+      "labelStart": "12",
+      "labelEnd": "20",
+      "words": 4280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pontryagin",
+          "heading": true
+        },
+        {
+          "term": "mathcal pqr",
+          "heading": false
+        },
+        {
+          "term": "pontryagin link",
+          "heading": false
+        },
+        {
+          "term": "vertical winding",
+          "heading": false
+        },
+        {
+          "term": "blackboard framing",
+          "heading": false
+        },
+        {
+          "term": "framed bordism",
+          "heading": false
+        },
+        {
+          "term": "saddle bordism",
+          "heading": false
+        },
+        {
+          "term": "pontryagin label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:pontryagin label=\"sec:pontryagin\"} Heinz Hopf proved in 1931 that homotopy classes of maps from the $3$-sphere to the $2$-sphere are in one-to-one correspondence with the integers via his now famous Hopf invariant. Pontryagin [@Pontryagin41] generalized this to give the homotopy classification for maps from an arbitrary finite $3$-complex to the $2$-sphere. It is convenient for our purposes to restrict to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-explicit-formulas-for-the-characteristic-map",
+      "number": "4",
+      "title": "Explicit formulas for the characteristic map",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 2353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "huge hskip",
+          "heading": false
+        },
+        {
+          "term": "cdot hskip",
+          "heading": false
+        },
+        {
+          "term": "characteristic map",
+          "heading": true
+        },
+        {
+          "term": "lfloor mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm conf",
+          "heading": false
+        },
+        {
+          "term": "rangle bar",
+          "heading": false
+        },
+        {
+          "term": "mathrm mathbb",
+          "heading": false
+        },
+        {
+          "term": "rangle langle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:characteristic label=\"sec:characteristic\"} In this section we give an explicit diffeomorphism from the Grassmann manifold $\\mathrm{G}_2\\mathbb R^4$ of oriented $2$-planes through the origin in $4$-space to a product of two $2$-spheres, and then use it to give a formula for the characteristic map $g_L:T^3\\to S^2$ of a three-component link $L$ in the $3$-sphere. We also describe an alternative form $h_L:T^3\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-pontryagin--invariant-of-the-characteristi",
+      "number": "5",
+      "title": "The Pontryagin -invariant of the characteristic map",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 41,
+      "labelStart": "25",
+      "labelEnd": "41",
+      "words": 6683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pontryagin invariant",
+          "heading": true
+        },
+        {
+          "term": "bicycle mathcal",
+          "heading": false
+        },
+        {
+          "term": "icycles mathcal",
+          "heading": false
+        },
+        {
+          "term": "rightharpoonup textup",
+          "heading": false
+        },
+        {
+          "term": "associated bicycle",
+          "heading": false
+        },
+        {
+          "term": "bicycle arising",
+          "heading": false
+        },
+        {
+          "term": "bicycle theorem",
+          "heading": false
+        },
+        {
+          "term": "long bicycle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Aprep label=\"sec:Aprep\"} Fix a link $L$ in $S^3$ with three components $X$, $Y$ and $Z$ parametrized by $x=x(s)$, $y=y(t)$ and $z=z(u)$. Recalling that $S^3$ is regarded as the group of unit quaternions, the asymmetric characteristic map $h_L:T^3\\to S^2$ is given by $$h_L(s,t,u) \\ = \\ (y_z-x_z)/|y_z-x_z|$$ where $a_z$ is an abbreviation for the vector $\\mathrm{pr}_{-1}(-a\\bar z)$ in pure imaginary quaternion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-proof-of-theorem",
+      "number": "6",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lpqr",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "absolute ν-invariant",
+          "heading": false
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "three-component link",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "milnor triple",
+          "heading": false
+        },
+        {
+          "term": "delta move",
+          "heading": false
+        }
+      ],
+      "extract": "Let L be a three-component link in the 3-sphere with characteristic map gL : T 3 →S2. Theorem A asserts that the degrees of gL on the coordinate 2-tori of T 3 are equal to the pairwise linking numbers p, q and r of the components of L, and that Pontryagin’s absolute ν-invariant of gL is equal to twice Milnor’s triple linking number µ(L) mod 2 gcd(p, q, r). The ﬁrst statement was proved easily at the end of Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-sketch-of-an-algebraic-proof-of-theorem",
+      "number": "7",
+      "title": "Sketch of an algebraic proof of Theorem ??",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fbox parbox",
+          "heading": false
+        },
+        {
+          "term": "three-component string",
+          "heading": false
+        },
+        {
+          "term": "string links",
+          "heading": false
+        },
+        {
+          "term": "link homotopy",
+          "heading": false
+        },
+        {
+          "term": "center lto",
+          "heading": false
+        },
+        {
+          "term": "homotopy classes",
+          "heading": false
+        },
+        {
+          "term": "lto text",
+          "heading": false
+        },
+        {
+          "term": "linewidth begin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:A' label=\"sec:A'\"} In this section we sketch an entirely different proof of the theorem using string links and maps of the $2$-torus to the $2$-sphere. The reader is referred to our paper [@DGKMSV] for more details. The proof is organized around the following key diagram, in which the left half, devoid of algebraic structure, represents the topological problem we are trying to solve, while the right half",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-proof-of-theorem-formulas-1-and-2",
+      "number": "8",
+      "title": "Proof of Theorem ??, formulas (1) and (2)",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rightharpoonup textup",
+          "heading": false
+        },
+        {
+          "term": "huge hskip",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle rightharpoonup",
+          "heading": false
+        },
+        {
+          "term": "omega textup",
+          "heading": false
+        },
+        {
+          "term": "overset scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "times textup",
+          "heading": false
+        },
+        {
+          "term": "cdot hskip",
+          "heading": false
+        },
+        {
+          "term": "varphi overset",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:B label=\"sec:B\"} Theorem [\\[thm:B\\]](#thm:B){reference-type=\"ref\" reference=\"thm:B\"} provides three formulas for Milnor's $\\mu$-invariant of a three-component link $L$ in $S^3$ whose pairwise linking numbers vanish: $(1)$ (differential forms) $\\mu(L) \\ = \\ \\displaystyle{\\frac12\\, \\int_{T^3} \\delta(\\varphi*\\omega_L) \\wedge \\omega_L}$ $(2)$ (vector fields) $\\mu(L) \\ = \\ \\displaystyle{\\frac12\\, \\int_{T^3\\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-fourier-series-and-the-proof-of-theorem-formul",
+      "number": "9",
+      "title": "Fourier series and the Proof of Theorem ??, formula (3)",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 56,
+      "labelStart": "48",
+      "labelEnd": "56",
+      "words": 2407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "huge hskip",
+          "heading": false
+        },
+        {
+          "term": "beta textup",
+          "heading": false
+        },
+        {
+          "term": "alpha textup",
+          "heading": false
+        },
+        {
+          "term": "star textup",
+          "heading": false
+        },
+        {
+          "term": "cdot hskip",
+          "heading": false
+        },
+        {
+          "term": "mathbb textup",
+          "heading": false
+        },
+        {
+          "term": "sum textup",
+          "heading": false
+        },
+        {
+          "term": "times textup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:B' label=\"sec:B'\"} -.2in -.2in In the proofs of formulas (1) and (2) of Theorem [\\[thm:B\\]](#thm:B){reference-type=\"ref\" reference=\"thm:B\"}, we needed to find a 1-form $\\alpha$ on $T^3$ whose exterior derivative is the exact 2-form $\\omega_L$ associated with the three-component link $L$ in $S^3$. We asserted that we can choose $\\alpha=\\delta(\\varphi* \\omega_L)$, where $\\varphi$ is the fundamental solution of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix-whiteheads-integral-formula-for-the-hop",
+      "number": null,
+      "title": "Appendix. Whitehead's integral formula for the Hopf invariant",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "whitehead formula",
+          "heading": true
+        },
+        {
+          "term": "whitehead integral",
+          "heading": true
+        },
+        {
+          "term": "hopf invariant",
+          "heading": true
+        },
+        {
+          "term": "biot savart",
+          "heading": false
+        },
+        {
+          "term": "pyx",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "geodesic",
+          "heading": false
+        }
+      ],
+      "extract": "We take this opportunity to make J. H. C. Whitehead’s integral formula for the Hopf invariant of a map f : S3 →S2 explicit, and have relegated it to an appendix because we do not use the result in this paper. Recall from Section 8 Whitehead’s formula, Hopf(f) = Z S3 α ∧ωf, where ωf = f∗ω is the pullback to S3 of the normalized area form ω on S2, and α is any 1-form on S3 such that dα = ωf. To make this formula",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 60,
+      "labelStart": "57",
+      "labelEnd": "60",
+      "words": 1591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "herman gluck",
+          "heading": false
+        },
+        {
+          "term": "rafal komendarczyk",
+          "heading": false
+        },
+        {
+          "term": "dennis deturck",
+          "heading": false
+        },
+        {
+          "term": "milnor µ-invariants",
+          "heading": false
+        },
+        {
+          "term": "shea vela-vick",
+          "heading": false
+        },
+        {
+          "term": "massey products",
+          "heading": false
+        },
+        {
+          "term": "john milnor",
+          "heading": false
+        },
+        {
+          "term": "jean-baptiste biot",
+          "heading": false
+        }
+      ],
+      "extract": "[1820] Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales de Chimie et de Physique, 2nd ser. 15, 222–223. [1824] Jean-Baptiste Biot, Precise Elementaire de Physique Experimentale, 3rd ed., vol. II, Chez Deterville, Paris. [1833] Carl Friedrich Gauss, Integral formula for linking number, Zur Mathematischen Theorie der Electrodynamische Wirkungen (Collected Works, Vol. 5),",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pontryagin link",
+      "heading": true
+    },
+    {
+      "term": "pontryagin homotopy",
+      "heading": false
+    },
+    {
+      "term": "times textup",
+      "heading": false
+    },
+    {
+      "term": "mathbb textup",
+      "heading": false
+    },
+    {
+      "term": "three-component link",
+      "heading": false
+    },
+    {
+      "term": "omega textup",
+      "heading": false
+    },
+    {
+      "term": "rightharpoonup textup",
+      "heading": false
+    },
+    {
+      "term": "pontryagin invariant",
+      "heading": true
+    },
+    {
+      "term": "huge hskip",
+      "heading": false
+    },
+    {
+      "term": "alpha textup",
+      "heading": false
+    },
+    {
+      "term": "qquad textup",
+      "heading": false
+    },
+    {
+      "term": "textup sign",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Grassmann map (x, y, z) 7→G(x, y, z)",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The link L in S3 We deﬁne the characteristic map gL : T 3 →S2 in terms of the Grassmann map",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The base link Lpqr for p = 5, q = 3, r = −2 Starting at appropriate points on the link components, we can read oﬀthe words wX = yrzq ,",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The delta move L →bL",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A negative triple point appears",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Pontryagin link Lpqr for the base map fpqr",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Toral diagrams of framed links in T 3 It is understood that L should project to D ∪M under the projection T 3 →T 2 sending",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Using saddles to eliminate crossings Each such saddle bordism is achieved by adding a 1-handle, as indicated on the left side of Figure 9, and drawn in full, suppressing one dimension in T 3, on the right side",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The saddle bordism The eﬀect of the saddle bordism on the diagram is easy to describe. If it is used to eliminate a self-crossing of an ni-framed component Di (meaning Di is the projection of a component Li of L) then Di splits into two components whose framings must add up to ni ± 1, depending on t",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Depths of components in the diagram",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Using saddles to transfer twists",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Using saddles to replace vertical winding by vertical circles Since our target is the base link Lpqr (with extra twists), the vertical circles must be gathered together. This is the purpose of our base point ∗, which will serve as a gathering",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Using saddles to gather the vertical circles this process can be thought of as a “migration” to the base point of all the marked points in the diagram",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The deformation retraction Conf3S3 →V Identifying V with V2R4 via (v, −z, z) ↔(z, v), this shows that H is a homotopy equivalence with homotopy inverse I given by I(z, v) = (v, −z, z). The calculation GI(z, v) = ⟨v −z, −2z⟩= ⟨z, v⟩= P(z, v) , shows that GI = P, and so G ≃PH as claimed",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Pure imaginary quaternion 3-space Outline of the procedure for computing ν(hL) First, we will manipulate L by a link homotopy into a favorable position – referred to",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "The standard open book in R3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "A generic link As a consequence, we will show the following: (a) The north pole k ∈S2 is a regular value of the characteristic map hL",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Page vectors Deﬁnition. A bicycle (or “bi-cycle”) in L is a component Pi of P, that is, an oriented cycle of page vectors. Each bicycle is parametrized by a component Di of D, which we call its associated icycle (or “i-cycle”)",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Local pictures of a bicycle and its corresponding icycle For an example of a full bicycle, consider the “clasp” between X and Y pictured in Figure 20(a). This gives rise to the bicycle in Figure 20(b), passing successively through the vectors labeled 1, 2, 3, 4 and then back to 1. The associated icy",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Bicycle arising from a clasp",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "A generic link and its icycles",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "A double crossing change We then say that bL is obtained from L by a double crossing change, and propose to",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "The smoothed link L0 = P ∪Q ∪Z Then we have the following consequence of the Bicycle Theorem: Corollary 5.1. (Double Crossing) If L = X ∪Y ∪Z is transformed into bL by",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "The linking of P = X−+ ∪Y+−and Z For the inductive step of the proof of Theorem A in the next section, we will need to apply this formula for ∆ν under the double crossing change L →bL shown in Figure 25",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "A simple double crossing change Corollary 5.2. If two links L and bL coincide outside a 3-ball, and appear in",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "k is regular",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Orientation of the Pontryagin link Similarly, if sign(y) = −1 then Li points in the direction of decreasing s near (s, t, u)",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "A generic link L representing Lpqr Observe that one need not actually construct a link homotopy carrying Lpqr to L, but need only check that the pairwise and triple linking numbers of Lpqr and L coincide, and then appeal to Milnor’s classiﬁcation. The veriﬁcation that µ(L) = 0 is completely analogou",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "By Corollary 5.2, this double crossing change increases ν(L) by 2, and so ∆ does the same",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "30",
+      "title": "Borromean rings as the closure of a string link",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "Fundamental solution of the scalar Laplacian on S1 × S1",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "Borromean rings Maple gave the (long, ugly) formula for ωL obtained from Proposition 4.1, and we used Matlab to calculate approximations to its Fourier coeﬃcients cn for divisions of the s, t",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-1",
+      "file": "images/img-p050-1.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p060-1",
+      "file": "images/img-p060-1.png",
+      "page": 60,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "32 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p57); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1101.3374v1"
+  }
+}

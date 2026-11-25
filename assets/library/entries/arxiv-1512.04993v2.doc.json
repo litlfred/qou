@@ -1,0 +1,3365 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1512.04993v2",
+  "title": "Complexity, action, and black holes",
+  "variant": "pdf",
+  "pages": 70,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Complexity equals action",
+      "number": "1.1",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-complexity-equals-action"
+    },
+    {
+      "level": 1,
+      "title": "Bounds on information storage and processing",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-bounds-on-information-storage-and-processing"
+    },
+    {
+      "level": 2,
+      "title": "Bounds on information storage",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Bounds on information scrambling or chaos",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-bounds-on-information-scrambling-or-chaos"
+    },
+    {
+      "level": 2,
+      "title": "Bounds on quantum evolution",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-bounds-on-quantum-evolution"
+    },
+    {
+      "level": 2,
+      "title": "Complexity",
+      "number": "2.4",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-complexity"
+    },
+    {
+      "level": 2,
+      "title": "Conjectured complexity growth bound",
+      "number": "2.5",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-conjectured-complexity-growth-bound"
+    },
+    {
+      "level": 2,
+      "title": "Bound on complexity growth with a conserved charge",
+      "number": "2.6",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-26-bound-on-complexity-growth-with-a-conserved-c"
+    },
+    {
+      "level": 1,
+      "title": "Action growth of black holes",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-action-growth-of-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Action of an uncharged black hole",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-action-of-an-uncharged-black-hole"
+    },
+    {
+      "level": 2,
+      "title": "Action of a charged black hole",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-action-of-a-charged-black-hole"
+    },
+    {
+      "level": 2,
+      "title": "Action of a rotating BTZ black hole",
+      "number": "3.3",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-action-of-a-rotating-btz-black-hole"
+    },
+    {
+      "level": 1,
+      "title": "Testing our conjectures with black holes",
+      "number": "4",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-testing-our-conjectures-with-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Neutral static black holes",
+      "number": "4.1",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-neutral-static-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Rotating BTZ black holes",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-42-rotating-btz-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Small charged black holes",
+      "number": "4.3",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-43-small-charged-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Intermediate and large charged black holes",
+      "number": "4.4",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-44-intermediate-and-large-charged-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "Discussion",
+      "number": "4.5",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-45-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Superconducting black holes",
+      "number": "4.6",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-46-superconducting-black-holes"
+    },
+    {
+      "level": 1,
+      "title": "Testing our conjecture with static shells",
+      "number": "5",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-testing-our-conjecture-with-static-shells"
+    },
+    {
+      "level": 1,
+      "title": "Testing our conjecture with shock waves",
+      "number": "6",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-testing-our-conjecture-with-shock-waves"
+    },
+    {
+      "level": 2,
+      "title": "One shock",
+      "number": "6.1",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-one-shock"
+    },
+    {
+      "level": 2,
+      "title": "Finite energy shocks",
+      "number": "6.2",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-finite-energy-shocks"
+    },
+    {
+      "level": 2,
+      "title": "Multiple shocks",
+      "number": "6.3",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-multiple-shocks"
+    },
+    {
+      "level": 2,
+      "title": "Localized shocks",
+      "number": "6.4",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-64-localized-shocks"
+    },
+    {
+      "level": 2,
+      "title": "Comment on transparency",
+      "number": "6.5",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-65-comment-on-transparency"
+    },
+    {
+      "level": 1,
+      "title": "Tensor network model of Einstein-Rosen bridge growth",
+      "number": "7",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-7-tensor-network-model-of-einstein-rosen-bridge"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "8",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-8-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Comparing CA-duality and CV-duality",
+      "number": "8.1",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-81-comparing-ca-duality-and-cv-duality"
+    },
+    {
+      "level": 2,
+      "title": "Open questions",
+      "number": "8.2",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-82-open-questions"
+    },
+    {
+      "level": 3,
+      "title": "The definition of complexity",
+      "number": "8.2.1",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-821-the-definition-of-complexity"
+    },
+    {
+      "level": 3,
+      "title": "CA-duality as a diagnostic tool",
+      "number": "8.2.2",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-822-ca-duality-as-a-diagnostic-tool"
+    },
+    {
+      "level": 3,
+      "title": "Diagnosing transparency of horizons",
+      "number": "8.2.3",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-823-diagnosing-transparency-of-horizons"
+    },
+    {
+      "level": 3,
+      "title": "Weak coupling and stringy corrections",
+      "number": "8.2.4",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-824-weak-coupling-and-stringy-corrections"
+    },
+    {
+      "level": 3,
+      "title": "Regularizing the action",
+      "number": "8.2.5",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-825-regularizing-the-action"
+    },
+    {
+      "level": 3,
+      "title": "Action from near the singularity",
+      "number": "8.2.6",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-826-action-from-near-the-singularity"
+    },
+    {
+      "level": 3,
+      "title": "Boundary terms",
+      "number": "8.2.7",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-827-boundary-terms"
+    },
+    {
+      "level": 3,
+      "title": "Theories without action formulations",
+      "number": "8.2.8",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-828-theories-without-action-formulations"
+    },
+    {
+      "level": 3,
+      "title": "Very early times",
+      "number": "8.2.9",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-829-very-early-times"
+    },
+    {
+      "level": 3,
+      "title": "Very late times",
+      "number": "8.2.10",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-8210-very-late-times"
+    },
+    {
+      "level": 3,
+      "title": "Principle of least computation",
+      "number": "8.2.11",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-8211-principle-of-least-computation"
+    },
+    {
+      "level": 1,
+      "title": "A Further comments on the complexification bound",
+      "number": null,
+      "page": 56,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-a-further-comments-on-the-complexification-bound"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
+      "number": null,
+      "page": 57,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-a1-comments-on-hamiltonian-locality-and-gate-sim"
+    },
+    {
+      "level": 1,
+      "title": "B Spherical shock waves at finite time and energy",
+      "number": null,
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-b-spherical-shock-waves-at-finite-time-and-energ"
+    },
+    {
+      "level": 2,
+      "title": "B.1 Precursor at finite time and energy",
+      "number": null,
+      "page": 62,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-b1-precursor-at-finite-time-and-energy"
+    },
+    {
+      "level": 1,
+      "title": "C The past wedge",
+      "number": null,
+      "page": 64,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-c-the-past-wedge"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "btz black",
+          "heading": false
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "shock waves",
+          "heading": false
+        },
+        {
+          "term": "rotating btz",
+          "heading": false
+        },
+        {
+          "term": "complexity equals",
+          "heading": false
+        },
+        {
+          "term": "information storage",
+          "heading": false
+        }
+      ],
+      "extract": "Complexity, action, and black holes Adam R. Browna, Daniel A. Robertsb, Leonard Susskinda, Brian Swinglea, and Ying Zhaoa aStanford Institute for Theoretical Physics and Department of Physics, Stanford University, Stanford, California 94305, USA bCenter for Theoretical Physics and Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA Abstract Our earlier paper “Complexity",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1512.04993v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "two-sided black",
+          "heading": false
+        },
+        {
+          "term": "one-sided black",
+          "heading": false
+        },
+        {
+          "term": "wheeler-dewitt patch",
+          "heading": false
+        },
+        {
+          "term": "ca-duality passes",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "cite complexityshocks",
+          "heading": false
+        }
+      ],
+      "extract": "According to the holographic principle all physics is encoded at the boundaries of spacetime. A good deal is known in the context of AdS/CFT about this encoding as long as we restrict our attention to the region outside horizons. Very much less is known about the holographic encoding of physics behind black hole horizons. The purpose of this paper is to explore a proposal for how properties of the black hole",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-complexity-equals-action",
+      "number": "1.1",
+      "title": "Complexity equals action",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ket psi",
+          "heading": false
+        },
+        {
+          "term": "alpha ket",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "ca-duality",
+          "heading": false
+        },
+        {
+          "term": "text ads",
+          "heading": false
+        },
+        {
+          "term": "eeq",
+          "heading": false
+        },
+        {
+          "term": "beq",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:CA} Here we define CA-duality within the context of holographic duality. The setup of CA-duality and the relationship between CV-duality and CA-duality is illustrated in Fig.~\\ref{fig:CVduality}. Choosing times $t_L , t_R$ on the left and right AdS boundaries of the eternal AdS-Schwarzschild black hole determines a state $\\ket{\\psi(t_L,t_R)}$, \\beq \\ket{\\psi(t_L,t_R)} = e^{-i (H_L t_L + H_R t_R)} \\TFD,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-bounds-on-information-storage-and-processing",
+      "number": "2",
+      "title": "Bounds on information storage and processing",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "information storage",
+          "heading": true
+        },
+        {
+          "term": "bekenstein bound",
+          "heading": false
+        },
+        {
+          "term": "holographic bound",
+          "heading": false
+        },
+        {
+          "term": "processing",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "scarce",
+          "heading": false
+        },
+        {
+          "term": "total information",
+          "heading": false
+        },
+        {
+          "term": "bound cite",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:infobound} Given limited resources, there are limits on the storage and processing of information. For the purposes of our conjecture we are ultimately interested in information processing, but the bounds on information storage are so much better studied and understood that we will review them first as a model example. \\subsection{Bounds on information storage} When the only scarce resource is spacetime,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-bounds-on-information-scrambling-or-chaos",
+      "number": "2.2",
+      "title": "Bounds on information scrambling or chaos",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scrambling",
+          "heading": true
+        },
+        {
+          "term": "cite fastscramble",
+          "heading": false
+        },
+        {
+          "term": "scrambling time",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "fastest scramblers",
+          "heading": false
+        },
+        {
+          "term": "cite bhmirror",
+          "heading": false
+        },
+        {
+          "term": "waa",
+          "heading": false
+        },
+        {
+          "term": "cite shock",
+          "heading": false
+        }
+      ],
+      "extract": "For a system with $N$ degrees of freedom, the scrambling time $t_*$ is a measure of how long it takes for information about a small $O(1)$ perturbation to spread over $O(N)$ degrees of freedom \\cite{fastscramble}. Another useful definition \\cite{Page:1993df} is that this is the time required for reduced density matrix of any subsystem with fewer than half the degrees of freedom to look approximately",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-bounds-on-quantum-evolution",
+      "number": "2.3",
+      "title": "Bounds on quantum evolution",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "lloyd conjecture",
+          "heading": false
+        },
+        {
+          "term": "lloyd conjectured",
+          "heading": false
+        },
+        {
+          "term": "fast computer",
+          "heading": false
+        },
+        {
+          "term": "fastest computers",
+          "heading": false
+        },
+        {
+          "term": "orthogonality time",
+          "heading": false
+        },
+        {
+          "term": "textrm orthogonality",
+          "heading": false
+        },
+        {
+          "term": "cite lloyd2000ultimate",
+          "heading": false
+        }
+      ],
+      "extract": "As well as being concerned with how much information may be stored, or how fast information may be scrambled, we are interested in how fast the system can change its global state. The time for the system to reach an orthogonal state is perhaps the simplest way to measure the rate of change of the global state. In this direction, there are two proved theorems, the Aharonov-Anandan-Bohm bound and the Margolus-Levitin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-complexity",
+      "number": "2.4",
+      "title": "Complexity",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ket psi",
+          "heading": false
+        },
+        {
+          "term": "state ket",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "gates necessary",
+          "heading": false
+        },
+        {
+          "term": "reference state",
+          "heading": false
+        },
+        {
+          "term": "refined notion",
+          "heading": false
+        },
+        {
+          "term": "minimum number",
+          "heading": false
+        }
+      ],
+      "extract": "Given a state $\\ket{\\psi}$ on $n$ qubits, the state complexity of $\\ket{\\psi}$ is the minimum number of gates necessary to construct $\\ket{\\psi}$. We fix a simple reference state $\\ket{\\psi_0}$ and a universal gate set of elementary unitaries $\\{G_\\alpha\\}$ and define the complexity of $\\ket{\\psi}$ to be the minimum number of gates necessary to produce $\\ket{\\psi}$ from $\\ket{\\psi_0}$. More generally, we require",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-conjectured-complexity-growth-bound",
+      "number": "2.5",
+      "title": "Conjectured complexity growth bound",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "uncharged black",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "ket psi",
+          "heading": false
+        },
+        {
+          "term": "bound",
+          "heading": true
+        },
+        {
+          "term": "growth",
+          "heading": true
+        }
+      ],
+      "extract": "We conjecture that the complexity can be defined such that the growth of complexity is bounded by the energy, \\beq \\label{eq:bound} \\frac{d}{dt} \\CC( e^{-i H t}\\ket{\\psi}) \\leq \\frac{2 E_\\psi}{\\pi \\hbar}, \\eeq where $E_\\psi$ is the average energy of $\\ket{\\psi}$ relative to the ground state. To be precise, we conjecture that this bound holds for suitable semiclassical bulk states and similar field theory states; see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-26-bound-on-complexity-growth-with-a-conserved-c",
+      "number": "2.6",
+      "title": "Bound on complexity growth with a conserved charge",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "textrm tfd",
+          "heading": false
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "chemical potential",
+          "heading": false
+        },
+        {
+          "term": "rotating black",
+          "heading": false
+        },
+        {
+          "term": "tfd state",
+          "heading": false
+        },
+        {
+          "term": "extremal black",
+          "heading": false
+        },
+        {
+          "term": "beq boxed",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:conserved-charge} The bound Eq.~\\ref{C-bound} is general, but if the system carries conserved quantum numbers such as charge $Q$ or angular momentum $J$, a tighter bound might be possible. Intuitively this is because conserved charges provide a barrier to rapid complexification since some energy is tied up in noncomputing degrees of freedom. We first motivate the bound using the charged TFD state and then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-action-growth-of-black-holes",
+      "number": "3",
+      "title": "Action growth of black holes",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "omega frac",
+          "heading": false
+        },
+        {
+          "term": "mathcal sqrt",
+          "heading": false
+        },
+        {
+          "term": "int mathcal",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:bh} In this section, we will calculate the rate of increase of action of a Wheeler-DeWitt patch of the two-sided black hole (which we are conjecturing to be dual to the rate of growth of complexity of the boundary state). We will consider the Einstein-Maxwell theory. The action is (using the conventions of \\cite{Poisson}) \\begin{equation} \\CA = \\frac{1}{16 \\pi G} \\int_{\\mathcal{M}} \\sqrt{|g|} \\left(",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-action-of-an-uncharged-black-hole",
+      "number": "3.1",
+      "title": "Action of an uncharged black hole",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": true
+        },
+        {
+          "term": "wdw patch",
+          "heading": false
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        },
+        {
+          "term": "wheeler-dewitt patch",
+          "heading": false
+        },
+        {
+          "term": "uncharged",
+          "heading": true
+        },
+        {
+          "term": "past horizon",
+          "heading": false
+        },
+        {
+          "term": "ads boundary",
+          "heading": false
+        },
+        {
+          "term": "corner contribution",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:actionuncharged} Fig.~\\ref{fig-incrementaluncharged} shows the Wheeler-DeWitt patch bounded by $t_L$ on the left and $t_R$ on the right for an uncharged ($Q=0$) black hole. As time passes on the left boundary, the patch grows in some places (shown in blue) and shrinks in others (shown in red). The total volume (and total action) of the patch outside the horizon is infinite but independent of time, due to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-action-of-a-charged-black-hole",
+      "number": "3.2",
+      "title": "Action of a charged black hole",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": true
+        },
+        {
+          "term": "charged black",
+          "heading": true
+        },
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "lads sqrt",
+          "heading": false
+        },
+        {
+          "term": "wheeler-dewitt patch",
+          "heading": false
+        },
+        {
+          "term": "lads right",
+          "heading": false
+        },
+        {
+          "term": "inner horizon",
+          "heading": false
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        }
+      ],
+      "extract": "Adding electrical charge to an AdS black hole changes how the Wheeler-DeWitt patch terminates. Rather than terminating when the ingoing lights heets run into the singularity at $r=0$, it now terminates when the light sheets run into each other at $t=0$ (for $t_L = t_R$). Nevertheless, we can use much the same reasoning as before to find the late-time growth of the enclosed action. The entire WDW patch lies outside",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-action-of-a-rotating-btz-black-hole",
+      "number": "3.3",
+      "title": "Action of a rotating BTZ black hole",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "align frac",
+          "heading": false
+        },
+        {
+          "term": "rotating",
+          "heading": true
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "black",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{subsec-rotating} A rotating black hole in $(2+1)$-dimensional AdS space has metric \\begin{equation} ds^2=-f(r)dt^2+\\frac{1}{f(r)}dr^2+r^2\\left(d\\phi-\\frac{8GJ}{2r^2}dt\\right)^2 \\end{equation} \\begin{align} f(r)=\\frac{r^2}{\\lads^2}-8G M+\\frac{(8G J)^2}{4r^2} =\\frac{(r^2-r_+^2)(r^2-r_-^2)}{r^2 \\lads^2}. \\end{align} The inner horizon ($r_-$) and outer horizon ($r_+$) are at \\begin{align} &8G",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-testing-our-conjectures-with-black-holes",
+      "number": "4",
+      "title": "Testing our conjectures with black holes",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "complexification",
+          "heading": false
+        },
+        {
+          "term": "saturated",
+          "heading": false
+        },
+        {
+          "term": "boxed-ca",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:testingwithbh} In this section, we will test our conjectures using the black holes considered in \\S\\ref{sec:bh}. The weak form is to check whether, assuming complexity equals action (Eq.~\\ref{eq:Boxed-CA}), the rate of complexification of black holes satisfies the proposed bound on the rate of complexification (Eq.~\\ref{C-bound}). The strong form will be to check whether the bound is saturated by black",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-41-neutral-static-black-holes",
+      "number": "4.1",
+      "title": "Neutral static black holes",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "neutral black",
+          "heading": true
+        },
+        {
+          "term": "ref c-bound",
+          "heading": false
+        },
+        {
+          "term": "saturate",
+          "heading": false
+        },
+        {
+          "term": "equation frac",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        }
+      ],
+      "extract": "For neutral black holes, we calculated the rate of change of action of the WDW patch as \\begin{equation} \\frac{d \\CA }{dt} = 2 M. \\end{equation} The simplicity of this result underlies the claim that all nonrotating uncharged black holes saturate the bound, Eq.~\\ref{eq:LloydBound}, if the constant is fixed at \\begin{equation} \\textrm{Complexity} = \\frac{1}{\\pi \\hbar} \\textrm{Action}. \\end{equation} With this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-rotating-btz-black-holes",
+      "number": "4.2",
+      "title": "Rotating BTZ black holes",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rotating btz",
+          "heading": true
+        },
+        {
+          "term": "btz black",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "lads sqrt",
+          "heading": false
+        },
+        {
+          "term": "omega frac",
+          "heading": false
+        }
+      ],
+      "extract": "In \\S\\ref{sec:conserved-charge}, we saw that when there is a conserved angular momentum, the complexification bound tightens to \\be \\frac{d \\CC }{dt} \\leq \\frac{2}{\\pi \\hbar} \\left[ (M - \\Omega J) -(M-\\Omega J)_\\textrm{gs} \\right] . \\label{masterform} \\ee Using Eq.~\\ref{eq:BTZformulaforMJ}, the chemical potential for angular momentum is \\begin{equation} \\Omega = \\frac{r_-}{r_+ \\lads}. \\end{equation} Rotating BTZ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-small-charged-black-holes",
+      "number": "4.3",
+      "title": "Small charged black holes",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "charged black",
+          "heading": true
+        },
+        {
+          "term": "masterform",
+          "heading": false
+        },
+        {
+          "term": "r-r",
+          "heading": false
+        },
+        {
+          "term": "eea",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:smallchargedblackholescomplexity} We may also test our conjecture with electric charge. The bound of \\S\\ref{sec:conserved-charge} is now \\be \\frac{d \\CC}{dt} \\leq \\frac{2}{\\pi \\hbar} \\left[ (M - \\mu Q) -(M-\\mu Q)_\\textrm{gs} \\right] . \\label{masterform2} \\ee We will now apply this formula to charged black holes that are much smaller than the AdS radius ($r_+ \\ll \\lads$), for which \\bea f(r) &=& 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-44-intermediate-and-large-charged-black-holes",
+      "number": "4.4",
+      "title": "Intermediate and large charged black holes",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1046,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "charged black",
+          "heading": true
+        },
+        {
+          "term": "extremal black",
+          "heading": false
+        },
+        {
+          "term": "textrm extremal",
+          "heading": false
+        },
+        {
+          "term": "extremal curve",
+          "heading": false
+        },
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "extremal line",
+          "heading": false
+        },
+        {
+          "term": "near extremality",
+          "heading": false
+        }
+      ],
+      "extract": "The situation for intermediate-sized ($r_+ \\sim \\lads $) and large charged black holes ($r_+ \\gg \\lads $) is more complicated and leads to an apparent violation of the complexification bound Eq.~\\ref{C-bound}. Let us consider the phase diagram in Fig.~\\ref{fig-largechargedblackholes}. There are a number of important curves in the $(M,Q)$ diagram. The first represents black holes at extremality. The extremality curve",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-45-discussion",
+      "number": "4.5",
+      "title": "Discussion",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "btz black",
+          "heading": false
+        },
+        {
+          "term": "neutral black",
+          "heading": false
+        },
+        {
+          "term": "charged particles",
+          "heading": false
+        },
+        {
+          "term": "light charged",
+          "heading": false
+        },
+        {
+          "term": "naive calculations",
+          "heading": false
+        },
+        {
+          "term": "complexification rate",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:A Pattern} Of the four classes of black holes we have looked at, three worked perfectly. Neutral black holes (of any size and in any dimension), spinning BTZ black holes, and small charged black holes all had action growths that, when fed into our complexity equals action formula, gave rates of change of complexity that exactly saturate our bound. Large charged black holes did not work. We found that a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-46-superconducting-black-holes",
+      "number": "4.6",
+      "title": "Superconducting black holes",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superconducting black",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "growth bound",
+          "heading": false
+        },
+        {
+          "term": "action growth",
+          "heading": false
+        },
+        {
+          "term": "hair",
+          "heading": false
+        }
+      ],
+      "extract": "In the last subsection we discussed that large charged black holes may be unstable to growing charged hair. In this subsection, we will look at an example in which this happens: holographic superconductors. We may ask how rapidly the thermal state of a superconducting black hole complexifies. The relevant hairy black holes correspond to far from extremal black holes of the type considered in \\S\\ref{sec:bh} with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-testing-our-conjecture-with-static-shells",
+      "number": "5",
+      "title": "Testing our conjecture with static shells",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "static shells",
+          "heading": true
+        },
+        {
+          "term": "bar lads",
+          "heading": false
+        },
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "lads omega",
+          "heading": false
+        },
+        {
+          "term": "lads right",
+          "heading": false
+        },
+        {
+          "term": "hole surrounded",
+          "heading": false
+        },
+        {
+          "term": "isolated black",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:staticshells} So far we have considered the complexification rate of an isolated black hole. We would like to test our proposal by adding controlled complications. One test is an ingoing shell (a shock wave), which will be considered in \\S\\ref{sec:shockwaves}; in this section we will instead consider a static shell (a Dyson sphere), see Fig.~\\ref{fig-sarcophagus}. \\begin{figure}[h] \\centering \\hspace{2cm}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-testing-our-conjecture-with-shock-waves",
+      "number": "6",
+      "title": "Testing our conjecture with shock waves",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock waves",
+          "heading": true
+        },
+        {
+          "term": "cite localshocks",
+          "heading": false
+        },
+        {
+          "term": "eternal black",
+          "heading": false
+        },
+        {
+          "term": "thermal scale",
+          "heading": false
+        },
+        {
+          "term": "multiple-precursors",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "operator smeared",
+          "heading": false
+        },
+        {
+          "term": "hole geometries",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:shockwaves} The original complexity/geometry duality passed a number of nontrivial tests involving the effects of shock waves on the growth of complexity and volume. It is important that the new CA-proposal passes the same tests. In this section we consider the growth of complexity in eternal black hole geometries perturbed by shock waves and verify this. Shock waves are constructed by perturbing the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-61-one-shock",
+      "number": "6.1",
+      "title": "One shock",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 1737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock",
+          "heading": true
+        },
+        {
+          "term": "five-sided region",
+          "heading": false
+        },
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "kruskal coordinates",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "ref kruskal",
+          "heading": false
+        },
+        {
+          "term": "frac lads",
+          "heading": false
+        },
+        {
+          "term": "kruskal diagram",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:one-shock} First, we will consider the time evolved thermofield double state perturbed by a single precursor smeared over the entire boundary sphere \\be e^{-i H_L t_L}\\, e^{-i H_R t_R}\\, W(t_w) \\TFD. \\label{eq:sinlge-precursors} \\ee This state is dual to an eternal black hole geometry with a spherically symmetric shock wave emerging from the boundary at time $t_w$. We will restrict to $t_w < 0$ and $t_L,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-finite-energy-shocks",
+      "number": "6.2",
+      "title": "Finite energy shocks",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finite energy",
+          "heading": true
+        },
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "complexification rate",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "sinlge-precursors",
+          "heading": false
+        },
+        {
+          "term": "left cft",
+          "heading": false
+        },
+        {
+          "term": "perturbation",
+          "heading": false
+        },
+        {
+          "term": "left boundary",
+          "heading": false
+        }
+      ],
+      "extract": "In the limit studied in the last section, the time of the shock $|t_w|$ was taken to infinity, and the asymptotic energy of the shock (as compared to the mass of the black hole) $E/M$ was taken to zero, such that the quantity $h \\sim e^{2\\pi t_w / \\beta} E/M$ was held fixed. This was to ensure that the precursor was a small perturbation and provided a simple relationship between the coordinates when crossing the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-multiple-shocks",
+      "number": "6.3",
+      "title": "Multiple shocks",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shocks",
+          "heading": true
+        },
+        {
+          "term": "time fold",
+          "heading": false
+        },
+        {
+          "term": "shock waves",
+          "heading": false
+        },
+        {
+          "term": "cite complexityshocks",
+          "heading": false
+        },
+        {
+          "term": "switchbacks",
+          "heading": false
+        },
+        {
+          "term": "multiple-precursors",
+          "heading": false
+        },
+        {
+          "term": "five-sided region",
+          "heading": false
+        },
+        {
+          "term": "cite shenker",
+          "heading": false
+        }
+      ],
+      "extract": "Next, let us comment on states perturbed by multiple precursors as in \\eqref{eq:multiple-precursors}. As before, we will consider a compact boundary theory but this time perturbed $n$ spherically symmetric shock waves described by shifts $h_i\\sim e^{ -\\frac{2\\pi}{\\beta}(t_* \\pm t_i )}$, with a ``$+$'' for $i$ odd and a ``$-$'' for $i$ even. We will also assume that all the shocks are strong, $h_i \\gg 1$. One can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-64-localized-shocks",
+      "number": "6.4",
+      "title": "Localized shocks",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite localshocks",
+          "heading": false
+        },
+        {
+          "term": "localized precursor",
+          "heading": false
+        },
+        {
+          "term": "tensor network",
+          "heading": false
+        },
+        {
+          "term": "cite shock",
+          "heading": false
+        },
+        {
+          "term": "ref fig-localized-tensor-network",
+          "heading": false
+        },
+        {
+          "term": "one-shock state",
+          "heading": false
+        },
+        {
+          "term": "transverse coordinate",
+          "heading": false
+        },
+        {
+          "term": "position dependent",
+          "heading": false
+        }
+      ],
+      "extract": "Another generalization is to localize the precursor operators in the transverse space. In the context of scrambling these geometries were introduced in \\cite{shock} and studied extensively in \\cite{localshocks}. The $D=2+1$ case for a single localized precursor was also studied in purely two-dimensional CFT terms in \\cite{Roberts:2014ifa}. Such a state is given by \\be e^{-i H_L t_L}\\, e^{-i H_R t_R}\\, W_x(t_w) \\TFD,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-65-comment-on-transparency",
+      "number": "6.5",
+      "title": "Comment on transparency",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transparency",
+          "heading": true
+        },
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "cite opacity",
+          "heading": false
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "transverse directions",
+          "heading": false
+        },
+        {
+          "term": "opaque",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, let us comment on the transition in complexity growth that occurs at $|t_w| - t_* = t_R$. This transition is precisely the transparent and opaque horizons of \\cite{opacity}. From \\eqref{eq:one-shock-complexity-strong-shock} we see that there is a period during which the complexity decreases on the right side, \\be \\frac{d\\CC}{dt_R} < 0, \\qquad (|t_w| - t_* > t_R). \\ee This corresponds to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-7-tensor-network-model-of-einstein-rosen-bridge",
+      "number": "7",
+      "title": "Tensor network model of Einstein-Rosen bridge growth",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "46",
+      "words": 1575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor network",
+          "heading": true
+        },
+        {
+          "term": "einstein-rosen bridge",
+          "heading": true
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "text tfd",
+          "heading": false
+        },
+        {
+          "term": "scrambling complexity",
+          "heading": false
+        },
+        {
+          "term": "state circuit",
+          "heading": false
+        },
+        {
+          "term": "thermofield double",
+          "heading": false
+        },
+        {
+          "term": "time evolution",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tensornetworks} In this section we will perform a nontrivial test of our conjecture using tensor networks. Tensor networks provide a microscopic account of complexity growth, and we will show that this microscopic account agrees with the results from CA-duality. Further, as the case with shock waves in \\S\\ref{sec:shockwaves}, this derivation highlights that the complexity growth is dual to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-8-discussion",
+      "number": "8",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ca-duality",
+          "heading": false
+        },
+        {
+          "term": "doubt",
+          "heading": false
+        },
+        {
+          "term": "complexity-geometry",
+          "heading": false
+        },
+        {
+          "term": "cv-duality",
+          "heading": false
+        }
+      ],
+      "extract": "Discussion There is no doubt that the interior of a black hole grows with time until some kind of nonperturbative quantum eﬀect saturates the growth, probably at an exponential time. 46 Moreover there is no doubt that the complexity of the dual gauge theory state grows long after it has relaxed to thermal equilibrium. Identifying these growth phenomena is the basis for the complexity-geometry duality. In this paper",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-81-comparing-ca-duality-and-cv-duality",
+      "number": "8.1",
+      "title": "Comparing CA-duality and CV-duality",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cv-duality",
+          "heading": true
+        },
+        {
+          "term": "ca-duality",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "neutral black",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "einstein-rosen bridge",
+          "heading": false
+        },
+        {
+          "term": "frac bigg",
+          "heading": false
+        },
+        {
+          "term": "cite complexityshocks",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:implications} From the perspective of CA-duality, CV-duality \\cite{complexityshocks} can be expressed as follows: \\begin{itemize} \\item[1)] The geometry of an Einstein-Rosen bridge may be identified with maximal (spatial) volume slices. \\item[2)] The rate of complexity increase is bounded by the product of entropy and temperature\\footnote{Reference \\cite{complexityshocks} did not claim that $TS$ was a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-82-open-questions",
+      "number": "8.2",
+      "title": "Open questions",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "48",
+      "labelEnd": "48",
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "A number of open questions remain.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-821-the-definition-of-complexity",
+      "number": "8.2.1",
+      "title": "The definition of complexity",
+      "level": 3,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primitive gates",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "definition",
+          "heading": true
+        },
+        {
+          "term": "c-bound",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we have defined complexity as the number of primitive gates in the minimal quantum circuit that builds our state. This definition is not ideal. For example, in our definition the value of the complexity depends on the choice of the set of primitive gates. One open question is where there is a better definition. In particular, is there a definition that is suitable for continuous Hamiltonian systems and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-822-ca-duality-as-a-diagnostic-tool",
+      "number": "8.2.2",
+      "title": "CA-duality as a diagnostic tool",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "ca-duality",
+          "heading": true
+        },
+        {
+          "term": "uv-complete",
+          "heading": false
+        }
+      ],
+      "extract": "Assuming CA-duality, small Reissner-Nordstrom charged black holes saturate our bound on complexification, and large (compared to the AdS radius) charged black holes violate the naive bound. But in the case of large charged black holes, we understand what goes wrong---the problem is not with our conjecture, the problem is that large charged black holes are not described by the hairless RN solution. The RN truncation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-823-diagnosing-transparency-of-horizons",
+      "number": "8.2.3",
+      "title": "Diagnosing transparency of horizons",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizons",
+          "heading": true
+        },
+        {
+          "term": "transparency",
+          "heading": true
+        },
+        {
+          "term": "cite opacity",
+          "heading": false
+        },
+        {
+          "term": "ca-duality",
+          "heading": false
+        }
+      ],
+      "extract": "One interesting relation between complexity and Einstein-Rosen bridges involves the ``transparency\" or ``opacity\" of the horizon: it has been conjectured that black holes with growing complexity have transparent horizons \\cite{opacity} while those with decreasing complexity have opaque horizons. This result found support in the shock wave analysis, both for CV-duality (see \\cite{opacity}) and, in this paper, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-824-weak-coupling-and-stringy-corrections",
+      "number": "8.2.4",
+      "title": "Weak coupling and stringy corrections",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stringy corrections",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "coupling",
+          "heading": true
+        },
+        {
+          "term": "scrambling",
+          "heading": false
+        },
+        {
+          "term": "einstein gravity",
+          "heading": false
+        },
+        {
+          "term": "string scale",
+          "heading": false
+        },
+        {
+          "term": "fastest",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we have worked exclusively with strongly coupled holographic theories described in the bulk by Einstein gravity. It is natural to ask how our results and conjecture should be affected by including stringy corrections in the bulk. In the case of $\\CN=4$ $U(N)$ SYM in $D-1=4$ where the 't Hooft coupling $\\lambda$ is related to the string scale $\\ell_{s}$ by $\\lambda = (\\lads/\\ell_{s})^4$, the vanishing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-825-regularizing-the-action",
+      "number": "8.2.5",
+      "title": "Regularizing the action",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "wdw patch",
+          "heading": false
+        },
+        {
+          "term": "shock waves",
+          "heading": false
+        },
+        {
+          "term": "regularizing",
+          "heading": true
+        },
+        {
+          "term": "growth",
+          "heading": false
+        },
+        {
+          "term": "wormholes",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "regulator",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:corner} In this paper we have calculated the rate of growth of action of the WDW patch at late times. If we wish to calculate the rate of growth at finite times we must introduce a method of regularizing divergences, for example those that occur at the boundary of AdS. A divergence of this type shows up in the part of the WDW patch that lies behind the past horizon. The corner term at the bottom, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-826-action-from-near-the-singularity",
+      "number": "8.2.6",
+      "title": "Action from near the singularity",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singularity",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "near",
+          "heading": true
+        }
+      ],
+      "extract": "In CV-duality, the maximal slice stayed safely away from the black hole singularity. In CA-duality, for the Schwarzschild-AdS black hole the WDW patch extends all the way to $r=0$. Near the singularity, semiclassical physics breaks down. For the black holes have considered in this paper, this is only a small concern because the action contribution from near the singularity is small: the result is insensitive to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-827-boundary-terms",
+      "number": "8.2.7",
+      "title": "Boundary terms",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary terms",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "charged black",
+          "heading": false
+        },
+        {
+          "term": "electric potential",
+          "heading": false
+        },
+        {
+          "term": "cite braden",
+          "heading": false
+        },
+        {
+          "term": "hawking",
+          "heading": false
+        },
+        {
+          "term": "rightarrow limit",
+          "heading": false
+        },
+        {
+          "term": "vec",
+          "heading": false
+        }
+      ],
+      "extract": "The classical equations of motion do not uniquely define the action. For example, adding an overall constant to the action has no effect. More generally, any function of just the intrinsic properties of the boundary will be ignored by the variational principle and leave the equations of motion unaffected. This ambiguity is particularly relevant to our conjecture, since we assign a meaning to the numerical value of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-828-theories-without-action-formulations",
+      "number": "8.2.8",
+      "title": "Theories without action formulations",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "action formulation",
+          "heading": false
+        },
+        {
+          "term": "bulk theory",
+          "heading": false
+        },
+        {
+          "term": "wasn't",
+          "heading": false
+        }
+      ],
+      "extract": "Our conjecture assigns a physical meaning to the value of the action. It would not be clear what to do if the bulk theory did not have an action formulation, or if the action wasn't a real number, or if the bulk theory had more than one action formulation. These are unlikely to make contributions at leading order in $N$, but it would be interesting to explore these issues further.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-829-very-early-times",
+      "number": "8.2.9",
+      "title": "Very early times",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        },
+        {
+          "term": "light sheets",
+          "heading": false
+        },
+        {
+          "term": "thermofield double",
+          "heading": false
+        },
+        {
+          "term": "time translation",
+          "heading": false
+        },
+        {
+          "term": "action starts",
+          "heading": false
+        },
+        {
+          "term": "double state",
+          "heading": false
+        },
+        {
+          "term": "reference state",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this paper we have generally been considering the rate of complexification at times that are neither too early nor too late. At early times, the rate of the increase of action is slow. For example, for the uncharged black hole in $D > 3$, $d\\CA/dt$ is zero when $t_R = t_L = 0$, and remains zero up until the past light sheets first cross; it then grows, asymptoting to the answer quoted in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-8210-very-late-times",
+      "number": "8.2.10",
+      "title": "Very late times",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "late times",
+          "heading": true
+        },
+        {
+          "term": "semiclassical bulk",
+          "heading": false
+        },
+        {
+          "term": "semiclassical spacetime",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "recurrence time",
+          "heading": false
+        }
+      ],
+      "extract": "At very late times, of order the classical recurrence time $e^S$, the complexity must saturate and stop increasing \\cite{opacity}. It is a nontrivial test of our duality that there is an instanton that invalidates the semiclassical bulk description after a similar time scale. After a time of order $e^S$ it is likely that at some stage the large black hole will have undergone a thermal fluctuation down to the size of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-8211-principle-of-least-computation",
+      "number": "8.2.11",
+      "title": "Principle of least computation",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "douglas stanford",
+          "heading": false
+        },
+        {
+          "term": "principle",
+          "heading": true
+        },
+        {
+          "term": "foundation",
+          "heading": false
+        },
+        {
+          "term": "least",
+          "heading": true
+        },
+        {
+          "term": "bulk",
+          "heading": false
+        },
+        {
+          "term": "john",
+          "heading": false
+        }
+      ],
+      "extract": "From the perspective of tensor networks, the course-grained geometry encodes the minimal quantum circuit that prepares the state. In this paper we have argued that the complexity of the boundary state is given by the action of the bulk. In the bulk, the classical equations of motion are given by the principle of least action. Can gravity be understood via a principle of least computation, and if so what is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-a-further-comments-on-the-complexification-bound",
+      "number": null,
+      "title": "A Further comments on the complexification bound",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "complexiﬁcation bound",
+          "heading": false
+        },
+        {
+          "term": "cat states",
+          "heading": false
+        },
+        {
+          "term": "com plexity",
+          "heading": false
+        },
+        {
+          "term": "iht",
+          "heading": false
+        },
+        {
+          "term": "bad violation",
+          "heading": false
+        },
+        {
+          "term": "average energy",
+          "heading": false
+        },
+        {
+          "term": "superpositions",
+          "heading": false
+        }
+      ],
+      "extract": "Further comments on the complexiﬁcation bound If we want a notion of complexity such that local Hamiltonian evolution leads to com- plexity growth linear in t and the number n of active degrees of freedom, then the Hamiltonian should ﬁrst be normalized so that the energy is extensive in n. The com- plexity can then be preliminarily deﬁned by a limiting procedure where we take the gate set {Gα} to consist of elements",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-a1-comments-on-hamiltonian-locality-and-gate-sim",
+      "number": null,
+      "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 59,
+      "labelStart": "56",
+      "labelEnd": "58",
+      "words": 908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gate",
+          "heading": true
+        },
+        {
+          "term": "hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "locality",
+          "heading": true
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "complexiﬁcation bound",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian time",
+          "heading": false
+        },
+        {
+          "term": "k-local",
+          "heading": false
+        },
+        {
+          "term": "douglas stanford",
+          "heading": false
+        }
+      ],
+      "extract": "Comments on Hamiltonian locality and gate simplicity In the previous section, it was mentioned that the elements of the gate set {Gα} are taken to be close to the identity Gα = I + iδHα, with the Hα taken to be simple Hermitian operators. Here, we will elaborate a bit on what is meant by simple in this context, and whether it is reasonable to have a bound on complexity.18 18We thank Douglas Stanford for questions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-b-spherical-shock-waves-at-finite-time-and-energ",
+      "number": null,
+      "title": "B Spherical shock waves at finite time and energy",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "58",
+      "labelEnd": "61",
+      "words": 990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock",
+          "heading": true
+        },
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "kink across",
+          "heading": false
+        },
+        {
+          "term": "horizon jumps",
+          "heading": false
+        },
+        {
+          "term": "energy",
+          "heading": true
+        },
+        {
+          "term": "u0v",
+          "heading": false
+        },
+        {
+          "term": "rhtw",
+          "heading": false
+        },
+        {
+          "term": "time",
+          "heading": true
+        }
+      ],
+      "extract": "Spherical shock waves at ﬁnite time and energy We will work in D = 2+1 dimensions for simplicity. The shock wave has energy E and the black hole has energy M, so we want to patch together a spacetime with energy E + M (to the left of the shock) and a spacetime with energy M (to the right of the 58 shock). See Fig. 18. We will follow [26, 51] for the matching conditions between the two spacetimes. Let us associate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-b1-precursor-at-finite-time-and-energy",
+      "number": null,
+      "title": "B.1 Precursor at finite time and energy",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 64,
+      "labelStart": "61",
+      "labelEnd": "63",
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "past horizon",
+          "heading": false
+        },
+        {
+          "term": "future horizon",
+          "heading": false
+        },
+        {
+          "term": "rhtw",
+          "heading": false
+        },
+        {
+          "term": "travels along",
+          "heading": false
+        },
+        {
+          "term": "time",
+          "heading": true
+        },
+        {
+          "term": "energy",
+          "heading": true
+        },
+        {
+          "term": "ads",
+          "heading": false
+        }
+      ],
+      "extract": "Precursor at ﬁnite time and energy While the geometry Fig. 18 considered in the last section is a proper solution to Ein- stein’s equations, it is not the correct dual to the state |ψ⟩= W(tw)|TFD⟩, (B.11) where W(tw) = e−iHLtw W eiHLtw and W is an operator smeared over the spatial sphere with energy ϵM, and ϵ is ﬁxed but not necessarily small. This is no longer a small perturbation—its energy scales with N 2—but we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-c-the-past-wedge",
+      "number": null,
+      "title": "C The past wedge",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 70,
+      "labelStart": "63",
+      "labelEnd": "69",
+      "words": 1638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "past wedge",
+          "heading": true
+        },
+        {
+          "term": "holographic complexity",
+          "heading": false
+        },
+        {
+          "term": "wheeler-dewitt patch",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "holographic superconductors",
+          "heading": false
+        },
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "computational complexity",
+          "heading": false
+        },
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "The past wedge The rate of change of action of the Wheeler-DeWitt patch is equal to the rate of change of action of the past wedge. The “past wedge” is deﬁned in Fig. 20. This provides both a calculational tool and an alternative perspective on our prescription. Consider the two shaded patches in Fig. 20. The patch on the left is the standard Wheeler-DeWitt patch. The patch on the right is that part of the bulk that",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "black holes",
+      "heading": true
+    },
+    {
+      "term": "ads black",
+      "heading": true
+    },
+    {
+      "term": "charged black",
+      "heading": true
+    },
+    {
+      "term": "uncharged black",
+      "heading": true
+    },
+    {
+      "term": "rotating black",
+      "heading": true
+    },
+    {
+      "term": "btz black",
+      "heading": true
+    },
+    {
+      "term": "extremal black",
+      "heading": true
+    },
+    {
+      "term": "eternal black",
+      "heading": true
+    },
+    {
+      "term": "neutral black",
+      "heading": true
+    },
+    {
+      "term": "double black",
+      "heading": true
+    },
+    {
+      "term": "static black",
+      "heading": true
+    },
+    {
+      "term": "complexity growth",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Penrose diagrams for two-sided eternal black holes (left) and one-sided black holes that form from collapsing shock waves (right). The two-sided black hole is dual to an entangled state of two CFTs that live on the left and right boundaries; the one-sided black hole is dual to a single CFT. The",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "An uncharged AdS black hole. When tL increases, the Wheeler-DeWitt patch gains a slice (in blue) and loses a slice (in red)",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The WDW patch divided into quadrants. In quadrants III and IV the WDW patch intersects the AdS boundary and causes a divergence in the action",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A charged AdS black hole. When tL increases, the Wheeler-DeWitt patch gains a slice (in blue) and loses a slice (in red). It is useful to consider separately the pieces above and below r = rmeet(tL, tR)",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The phase diagram for charged Reissner-Nordstrom black holes in AdS. Top pane: at ﬁxed M, black holes exist only for small enough Q. For black holes that are small compared to ℓAdS, the extremal line is Q =",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The rate of growth of action, Eq. 3.12, divided by the bound of Eq. 4.16, along the line",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A black hole surrounded by a static sphere. Consider a static sphere at r = ¯r, buttressed against collapse by its compressive strength. Outside the shell the metric is the Schwarzschild metric with mass M + δM, ds2",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Kruskal diagram of one-shock geometries with diﬀerent size shifts",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Left: diamond-shape region bounded on the top by the horizons and on the bottom by edges of W. This region will always have vanishing action. Right:",
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Complexity growth with ﬁnite time perturbation at tw = 0 with ﬁnite energy E. The change in complexity is given by the purple shaded regions. The tL evolution will grow at rate 2(M + E), but tR evolution will grow at rate 2M",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "A time fold with six operator insertions",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Kruskal diagram of a geometry perturbed by four shock waves. The blue lines show the boundary of W, the shocks are drawn with double black lines, and the",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A time fold for the state Eq. 6.20 with tL = tR = 0. The length of the fold is dependent on position. The minimal tensor network for the state is given by ﬁbering the time fold over the transverse space",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "A tensor network for the operator Wx(tw) = eiHLtw Wx e−iHLtw. The red represents the evolution e−iHLtw, the black dot represents the local insertion Wx, and the green represents the reverse evolution eiHLtw. Left: naive tensor network before cancellation. Right: tensor network after cancellations ou",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Step 1: the time evolution acting on the UV degrees of freedom is renormalized into a time evolution acting on the IR degrees of freedom. The orange connection is the Einstein-Rosen bridge, the red region is the RG network, and the blue parts represent time evolution",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Step 2: the IR time evolution is “rotated” from vertical to horizontal and becomes a part of the Einstein-Rosen bridge. The orange connection is the Einstein- Rosen bridge, the red regions are the RG networks, and the blue parts represent time evolution",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "At early times, the action of the WDW patch of a neutral AdS black hole does not change with time. The action starts to increase only after enough time has passed that the light sheets cross. The critical moment at which the action starts to increase is shown on the right",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Kruskal diagram of shock wave at ﬁnite time tw. The white region to the right of the shock has energy M and is covered by coordinates (u, v). The gray region to the left of the shock has energy M + E and is covered by coordinates (˜u, ˜v). The shock is drawn in blue and travels along the surface u0",
+      "page": 61,
+      "pageLabel": "60",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Kruskal diagram of shock wave at ﬁnite time tw",
+      "page": 63,
+      "pageLabel": "62",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Left: the Wheeler-DeWitt patch (shaded). Right: the past wedge (shaded) has the same rate of growth of action as the WDW patch and provides another way to think about where the computation is done",
+      "page": 65,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 47,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 47,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "20 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p64); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 47 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1512.04993v2"
+  }
+}

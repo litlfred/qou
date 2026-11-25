@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/schechtman-varchenko1991-arrangements",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Arrangements of hyperplanes and Lie algebra homology",
+      "dcterms:source": "library/schechtman-varchenko1991-arrangements/manifest.jsonld",
+      "dcterms:hasVersion": "library/schechtman-varchenko1991-arrangements"
+    }
+  ]
+}

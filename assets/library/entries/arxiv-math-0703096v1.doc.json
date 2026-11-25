@@ -1,0 +1,2788 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0703096v1",
+  "title": "arxiv-math-0703096v1",
+  "variant": "pdf",
+  "pages": 53,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "History of Knot Theory",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-history-of-knot-theory"
+    },
+    {
+      "level": 2,
+      "title": "From Heraclas to Dürer",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-from-heraclas-to-dürer"
+    },
+    {
+      "level": 2,
+      "title": "Dawn of Knot Theory",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-dawn-of-knot-theory"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic topology in Knot Theory",
+      "number": null,
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-algebraic-topology-in-knot-theory"
+    },
+    {
+      "level": 2,
+      "title": "Jones revolution",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-jones-revolution"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polish edition",
+          "heading": false
+        },
+        {
+          "term": "chapter iii",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "e-print",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "warsaw",
+          "heading": false
+        },
+        {
+          "term": "book",
+          "heading": false
+        },
+        {
+          "term": "conway",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0703096v1 [math.GT] 3 Mar 2007 KNOTS From combinatorics of knot diagrams to combinatorial topology based on knots Warszawa, November 30, 1984 – Bethesda, March 3, 2007 J´ozef H. Przytycki LIST OF CHAPTERS: Chapter I: Preliminaries Chapter II: History of Knot Theory This e-print. Chapter II starts at page 3 Chapter III: Conway type invariants Chapter IV: Goeritz and Seifert matrices Chapter V: Graphs and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0703096v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-history-of-knot-theory",
+      "number": null,
+      "title": "History of Knot Theory",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot theory",
+          "heading": true
+        },
+        {
+          "term": "cylinder seal",
+          "heading": false
+        },
+        {
+          "term": "history",
+          "heading": true
+        },
+        {
+          "term": "british museum",
+          "heading": false
+        },
+        {
+          "term": "geometria situs",
+          "heading": false
+        },
+        {
+          "term": "lerna",
+          "heading": false
+        },
+        {
+          "term": "modern knot",
+          "heading": false
+        },
+        {
+          "term": "greece",
+          "heading": false
+        }
+      ],
+      "extract": "Abstract. Leibniz wrote in 1679: “I consider that we need yet an- other kind of analysis, . . . which deals directly with position.” He called it “geometry of position”(geometria situs). The ﬁrst convincing example of geometria situs was Euler’s solution to the bridges of K¨onigsberg problem (1735). The ﬁrst mathematical paper which mentions knots was written by A. T. Vandermonde in 1771: “Remarques sur les",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-from-heraclas-to-dürer",
+      "number": null,
+      "title": "From Heraclas to Dürer",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heraclas",
+          "heading": true
+        },
+        {
+          "term": "ancient greek",
+          "heading": false
+        },
+        {
+          "term": "heraklas",
+          "heading": false
+        },
+        {
+          "term": "urer",
+          "heading": false
+        },
+        {
+          "term": "medical collections",
+          "heading": false
+        },
+        {
+          "term": "cord",
+          "heading": false
+        },
+        {
+          "term": "vinci",
+          "heading": false
+        },
+        {
+          "term": "leonardo",
+          "heading": false
+        }
+      ],
+      "extract": "From Heraclas to D¨urer It is tempting to look for the origin of knot theory in Ancient Greek mathe- matics (if not earlier). There is some justiﬁcation to do so: a Greek physician 3On the pages 179-180 they comment: The majority of the pictorial surface is covered with the inter- twined coils of a serpent, forming a lattice pattern. To the right its tail appears below the coils and its head above, with a bird",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-dawn-of-knot-theory",
+      "number": null,
+      "title": "Dawn of Knot Theory",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dawn",
+          "heading": true
+        },
+        {
+          "term": "geometria situs",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": true
+        },
+        {
+          "term": "listing essay",
+          "heading": false
+        },
+        {
+          "term": "tait conjectures",
+          "heading": false
+        },
+        {
+          "term": "vorstudien zur",
+          "heading": false
+        },
+        {
+          "term": "civil eng",
+          "heading": false
+        },
+        {
+          "term": "nugatory crossings",
+          "heading": false
+        }
+      ],
+      "extract": "Dawn of Knot Theory We would argue, that modern knot theory has its roots with Gottfried Wil- helm Leibniz (1646-1716) speculation that aside from calculus and analytical geometry there should exist a “geometry of position” (geometria situs) which deals with relations depending on position alone (ignoring magnitudes). In a letter to Christian Huygens (1629-1695), written in 1679 [Lei], he declared: “I am not content",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-algebraic-topology-in-knot-theory",
+      "number": null,
+      "title": "Algebraic topology in Knot Theory",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 912,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot theory",
+          "heading": true
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "chromatic polynomial",
+          "heading": false
+        },
+        {
+          "term": "handed trefoil",
+          "heading": false
+        },
+        {
+          "term": "algebraic topology",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "birk",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic topology in Knot Theory The fundamental problem in knot theory is to be able to distinguish non- equivalent knots. It was not achieved (even in the simple case of the unknot and the trefoil knot) until Jules Henri Poincar´e (1854-1912) in his “Analy- sis Situs” paper ([Po-1] 1895) laid foundations for algebraic topology. Poul Heegaard (1871-1948) in his Copenhagen Dissertation of 1898 ([Heeg]) con-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-jones-revolution",
+      "number": null,
+      "title": "Jones revolution",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones revolution",
+          "heading": true
+        },
+        {
+          "term": "heegaard dissertation",
+          "heading": false
+        },
+        {
+          "term": "poul heegaard",
+          "heading": false
+        },
+        {
+          "term": "albrecht urer",
+          "heading": false
+        },
+        {
+          "term": "guthrie tait",
+          "heading": false
+        },
+        {
+          "term": "heegaard work",
+          "heading": false
+        },
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "die topologie",
+          "heading": false
+        }
+      ],
+      "extract": "Jones revolution In the spring of 1984, Vaughan Jones discovered his invariant of links, VL(t) [Jo-0, Jo-1, Jo-2]37, and still in May of 1984 he was trying various substi- tutions to the variable t, in particular t = −1. He observed that VL(−1) is equal to the classical knot invariant – determinant of a knot; however, initially he was unable to prove it. Soon he realized that his polynomial satisﬁes the local",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3.1",
+      "figure 3.2",
+      "figure 3.3",
+      "figure 3.4",
+      "figure 3.5",
+      "figure 3.6"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "knot theory",
+      "heading": true
+    },
+    {
+      "term": "geometria situs",
+      "heading": false
+    },
+    {
+      "term": "modern knot",
+      "heading": false
+    },
+    {
+      "term": "crossing knots",
+      "heading": true
+    },
+    {
+      "term": "heegaard dissertation",
+      "heading": false
+    },
+    {
+      "term": "trefoil knot",
+      "heading": false
+    },
+    {
+      "term": "guthrie tait",
+      "heading": false
+    },
+    {
+      "term": "knot polynomial",
+      "heading": false
+    },
+    {
+      "term": "knot diagrams",
+      "heading": false
+    },
+    {
+      "term": "analysis situs",
+      "heading": false
+    },
+    {
+      "term": "through knot",
+      "heading": false
+    },
+    {
+      "term": "listing essay",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "3.7",
+      "title": "Knots and links of William Thomson (Kelvin) from 1867. There is an interesting letter from Maxwell to Tait dated Nov. 13, 1867, which shows that Tait was sharing his ideas of knots with his friend [Kno, Lom]. In one of his rhymes Maxwell wrote (clearly referring to Tait): Clear your coil of kinkings",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.8",
+      "title": "Perko corrected also the Conway’s eleven crossing tables: 4 knots were missed [Per-0, Per-2]",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "tables": [
+    {
+      "label": "Table 1",
+      "caption": "Figure 5.1",
+      "pages": [
+        30
+      ],
+      "columns": [
+        {
+          "titles": "L"
+        },
+        {
+          "titles": ""
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "8"
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-1.csv"
+    },
+    {
+      "label": "Table 2",
+      "caption": "",
+      "pages": [
+        33
+      ],
+      "columns": [
+        {
+          "titles": "[At]"
+        },
+        {
+          "titles": "M. Atiyah, The geometry and physics of knots, Cambridge"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "Univ. Press, 1990, 75 pp."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ba-Wh]",
+          "Bambach [Cappel], Carmen, and Lucy Whitaker. ”The Lost"
+        ],
+        [
+          "",
+          "Knots.” Achademia Leonardi Vinci: Journal of Leonardo"
+        ],
+        [
+          "",
+          "Studies and Bibliography of Vinciana 4 (1991), pp. 107+10,"
+        ],
+        [
+          "",
+          "and unpaginated figures."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ban]",
+          "C. Bankwitz, U¨ber die Torsionszahlen der alternierenden"
+        ],
+        [
+          "",
+          "Knoten, Math. Ann., 103, 1930, 145-161."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[B-L-W]",
+          "N. L. Biggs, E. K. Lloyd, R. J. Wilson, Graph theory 1736-"
+        ],
+        [
+          "",
+          "1936, Clarendon Press, Oxford, 1986."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Birk-1]",
+          "G.D.Birkhoff,Adeterminantformulaforthenumberofways"
+        ],
+        [
+          "",
+          "of coloring a map, Ann. of Math. (2)14, 1912, 42-46."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Birk-2]",
+          "G.D.Birkhoff, Onthepolynomialexpressionsforthenumber"
+        ],
+        [
+          "",
+          "of ways of coloring a map, Annali, Pisa, Scoula Normali Su-"
+        ],
+        [
+          "",
+          "periore, s.2, v.3 (1934), 85-104. Also in George David Birkhoff"
+        ],
+        [
+          "",
+          "Collected Mathematical Papers, Vol.3, AMS (1950), 29-47."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Birk-3]",
+          "G. D. Birkhoff, Fifty years of American Mathematics, Amer."
+        ],
+        [
+          "",
+          "Math. Soc., Semicentennial Addresses, v. 2, 1938, 270-315."
+        ],
+        [
+          "",
+          "Also in George David Birkhoff Collected Mathematical Pa-"
+        ],
+        [
+          "",
+          "pers, Vol.3, AMS (1950), 606-651."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Bi-1]",
+          "J. S. Birman, Braids, links and mapping class group, Ann."
+        ],
+        [
+          "",
+          "Math. Studies 82, Princeton N.J.: Princeton Univ. Press,"
+        ],
+        [
+          "",
+          "1974."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Bl]",
+          "W. Blaschke, Obituary: Hermann Brunn. (German) Jber."
+        ],
+        [
+          "",
+          "Deutsch. Math. Verein. 50, (1940). 163–166."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Boe-1]",
+          "O.Boeddicker,BeitragzurTheoriendesWinkels,Dissertation"
+        ],
+        [
+          "",
+          "Go¨ttingen 1876."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Boe-2]",
+          "O. Boeddicker, Erweiterung der Gausschen Theorie der Ver-"
+        ],
+        [
+          "",
+          "schlingungen, Stuttgart, 1876."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Bog]",
+          "M. Bogn´ar, Fundations of linking theory, Akad´emiai Kiado´,"
+        ],
+        [
+          "",
+          "Budapest 1992."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[B-L-M]",
+          "R. D. Brandt, W. B. R.Lickorish, K. C.Millett, A polynomial"
+        ],
+        [
+          "",
+          "invariant for unoriented knots and links, Invent. Math. 84,"
+        ],
+        [
+          "",
+          "1986, 563-573."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-2.csv"
+    },
+    {
+      "label": "Table 3",
+      "caption": "",
+      "pages": [
+        35
+      ],
+      "columns": [
+        {
+          "titles": "[D-W]"
+        },
+        {
+          "titles": "R.Dedekind,H.Weber,TheoriederalgebraischenFunktionen"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "einerVera¨nderlichen,J.deCrelle,XCII(1882), 181-290.(Also"
+        ],
+        [
+          "",
+          "in R.Dedekind, Ges.Math.Werke,t. I, p. 248-349)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[De-0]",
+          "M. Dehn, Jahresbericht der deutschen Mathematiker–"
+        ],
+        [
+          "",
+          "Vereinigung, Vol.16, 1907, p.573."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[De-1]",
+          "M. Dehn, U¨ber die Topologie des dreidimensionalen Raumes,"
+        ],
+        [
+          "",
+          "Math. Annalen. 69 (1910), 137-168."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[De-2]",
+          "M. Dehn, Die beiden Kleeblattschlingen, Math.Annalen. 75,"
+        ],
+        [
+          "",
+          "1914, 1-12."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[De-3]",
+          "M. Dehn, The mentality of the mathematician. A characteri-"
+        ],
+        [
+          "",
+          "zation, Math. Intelligencer, 5(2), 1983, 18–26."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[De-4]",
+          "M. Dehn, Papers on group theory and topology. (English)"
+        ],
+        [
+          "",
+          "Translated from the German and with introductions and"
+        ],
+        [
+          "",
+          "an appendix by John Stillwell. With an appendix by Otto"
+        ],
+        [
+          "",
+          "Schreier.Springer-Verlag, NewYork-Berlin, 1987.viii+396 pp"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[D-H]",
+          "M. Dehn, P. Heegaard, Analysis situs, Encykl. Math. Wiss.,"
+        ],
+        [
+          "",
+          "vol. III AB3 Leipzig, 1907, 153-220."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Die]",
+          "J. A. Dieudonn´e, A history of algebraic and differential topol-"
+        ],
+        [
+          "",
+          "ogy 1900-1960, Birkh¨auser, Boston, Basel, 1989."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Dil]",
+          "Dilgendey, Topologische Studien, Leipzig, 1890."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[D-T]",
+          "C. H. Dowker, M. B. Thistlethwaite, Classification of knot"
+        ],
+        [
+          "",
+          "projections, Topology and its applications 16, 1983, 19-31."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Dun]",
+          "G. W. Dunnington, Carl Friedrich Gauss, Titan of Science,"
+        ],
+        [
+          "",
+          "Hafner Publishing Co., New York, 1955."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Dur-1]",
+          "AlbrechtDurerMasterPrintmaker, DepartmentofPrintsand"
+        ],
+        [
+          "",
+          "Drawings, Boston Museum of Fine Arts, Hacker Art Books,"
+        ],
+        [
+          "",
+          "New York, 1988."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Dur-2]",
+          "Albrecht Durer, Diary of his Journey to the Netherlands,"
+        ],
+        [
+          "",
+          "1520-1521, translated by P.Trou, edited by J.A.Goris and"
+        ],
+        [
+          "",
+          "G.Marlier, London, Lund Humphries, 1971."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[EIS]",
+          "Encyclopedia of Integer Sequences (on-line),"
+        ],
+        [
+          "",
+          "http://www.research.att.com/ njas/sequences/A002864"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "∼"
+        ],
+        [
+          "[Ep]",
+          "M. Epple, Geometric aspects in the development of knot the-"
+        ],
+        [
+          "",
+          "ory, History of topology (ed. I.M.James) , 301–357, North-"
+        ],
+        [
+          "",
+          "Holland, Amsterdam, 1999."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-3.csv"
+    },
+    {
+      "label": "Table 4",
+      "caption": "",
+      "pages": [
+        36
+      ],
+      "columns": [
+        {
+          "titles": "36"
+        },
+        {
+          "titles": "BIBLIOGRAPHY"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ep-1]",
+          "M. Epple, Die Entstehung der Knotentheorie (Braunschweig,"
+        ],
+        [
+          "",
+          "1999)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Eu]",
+          "L.Euler,Solutioproblematisadgeometriam situspertinentis,"
+        ],
+        [
+          "",
+          "Commentarii Academiae Scientiarum Imperialis Petropoli-"
+        ],
+        [
+          "",
+          "tanae 8, 1736, 128-140."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Falc]",
+          "W. Falconer, A universal dictionary of the marine, London"
+        ],
+        [
+          "",
+          "1769."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[F-1]",
+          "R. H. Fox, A quick trip through knot theory, In: Top. 3-"
+        ],
+        [
+          "",
+          "manifolds, Proc. 1961 Top.Inst.Univ. Georgia (ed. M.K.Fort,"
+        ],
+        [
+          "",
+          "jr), 120-167. Englewood Cliffs. N.J.: Princeton-Hall, 1962."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[FYHLMO]",
+          "P. Freyd, D. Yetter, J. Hoste, W. B. R. Lickorish, K. Millett,"
+        ],
+        [
+          "",
+          "A. Ocneanu, A new polynomial invariant of knots and links,"
+        ],
+        [
+          "",
+          "Bull. Amer. Math. Soc., 12, 1985, 239-249."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ga-1]",
+          "C. F. Gauss, Notebooks, Old library in Go¨ttingen."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ga-2]",
+          "K. F. Gauss, Zur mathematischen Theorie der electrody-"
+        ],
+        [
+          "",
+          "namischenWirkungen, 1833, Werke,Ko¨niglichen Gesellschaft"
+        ],
+        [
+          "",
+          "der Wissinchaften zu Gottingen, 5, 1877, 602-629."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Gor]",
+          "C. McA. Gordon, Some aspects of classical knot theory, In:"
+        ],
+        [
+          "",
+          "Knot theory, L.N.M. 685, 1978, 1-60."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Gor-1]",
+          "C. McA. Gordon, 3-dimensional topology up to 1960. History"
+        ],
+        [
+          "",
+          "of topology (ed. I.M.James), 449–489, North-Holland, Ams-"
+        ],
+        [
+          "",
+          "terdam, 1999."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[G-Lu]",
+          "C. McA. Gordon, J. Luecke, Knots are Determined by their"
+        ],
+        [
+          "",
+          "Complements, Bulletin of the A.M.S, 20, 1989, 83-87."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Grg]",
+          "E.Grgeta,Simonyknots,andcontinuedfractions,SeniorThe-"
+        ],
+        [
+          "",
+          "sis, George Washington University, 1988."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Gr-1]",
+          "P. van de Griend, The history of knot theory, preprint 18,"
+        ],
+        [
+          "",
+          "Aarhus University, April 1992."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Gr-2]",
+          "P. van de Griend, Notes on Knots, ˚Arhus, March 1993."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Gr-3]",
+          "P.vandeGriend,Ahistoryoftopologicalknottheory;History"
+        ],
+        [
+          "",
+          "andscience of knots, 205–260, Ser.KnotsEverything, Vol. 11,"
+        ],
+        [
+          "",
+          "World Sci. Publishing, River Edge, NJ, 1996."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[T-G]",
+          "J. C. Turner, P. van de Griend, Ser.Knots Everything, Vol."
+        ],
+        [
+          "",
+          "11, World Sci. Publishing, River Edge, NJ, 1996."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-4.csv"
+    },
+    {
+      "label": "Table 5",
+      "caption": "",
+      "pages": [
+        38
+      ],
+      "columns": [
+        {
+          "titles": "38"
+        },
+        {
+          "titles": "BIBLIOGRAPHY"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ho]",
+          "C. F. Ho, A new polynomial for knots and links; preliminary"
+        ],
+        [
+          "",
+          "report, Abstracts AMS 6(4), 1985, p. 300."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[H-W]",
+          "⁀ B. Hopkins, R. J. Wilson, The Truth about Konigsberg, The"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "College Mathematics Journal, May 2004, 198-207."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Hos-2]",
+          "J. Hoste, e-mails, 2 and 7 Sept. 1993, and 9 June 1994."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Hos-20]",
+          "J. Hoste, The enumeration and classification of knots and"
+        ],
+        [
+          "",
+          "links, in W. Menasco and M. Thistlethwaite (eds.) Handbook"
+        ],
+        [
+          "",
+          "of Knot Theory; Amsterdam: Elsevier, 2005, 209-232."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[H-T]",
+          "J. Hoste, M. Thistlethwaite, J. Weeks, The First 1701936"
+        ],
+        [
+          "",
+          "Knots, Math. Intell., 20(4), 1998, 33-48"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Hur]",
+          "A. Hurwitz, U¨ber Riemannsche Fl¨achen mit gegebenen"
+        ],
+        [
+          "",
+          "Verzweigung spunkten, Math. Annalen, 39, 1891, 1-61."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Jan]",
+          "A. Januszajtis, Scientists inOldGdansk: 17th and18th Cen-"
+        ],
+        [
+          "",
+          "turies (From the history of science in ancient Gdansk), Task"
+        ],
+        [
+          "",
+          "Quarterly 5(3), 2001, 389-399."
+        ],
+        [
+          "",
+          "http://www.pg.gda.pl/archiwalne/januszajtis/2000/III.PDF"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Jo-0]",
+          "V. F. R. Jones. Letter to J.Birman, May 31, 1984."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Jo-1]",
+          "V. F. R. Jones. A polynomial invariant for knots via Von"
+        ],
+        [
+          "",
+          "Neuman algebras, Bull. Amer. Math. Soc 12 (1985) 103-111."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Jo-2]",
+          "V. F. R. Jones. Hecke algebra representations of braid groups"
+        ],
+        [
+          "",
+          "and link polynomials, Ann. of Math. 126(2), 1987, 335-388."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Jo-6]",
+          "V. F. R. Jones, Knot theory and statistical mechanics, Scien-"
+        ],
+        [
+          "",
+          "tific American, 263, November, 1990, no. 5, 4, 98–103."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[K-3]",
+          "L. H. Kauffman, On Knots, Princeton University Press, 1987."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[K-5]",
+          "L.H.Kauffman,Aninvariantofregularisotopy, Trans. Amer."
+        ],
+        [
+          "",
+          "Math. Soc., 318(2), 1990, 417–471."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[K-6]",
+          "L. H. Kauffman, State models and the Jones polynomial,"
+        ],
+        [
+          "",
+          "Topology 26, 1987, 395-407."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[K-8]",
+          "L. H.Kauffman, Formal knot theory, Mathematical Notes 30,"
+        ],
+        [
+          "",
+          "Princeton University Press, 1983."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ken]",
+          "A.E.Kennelly,Theequivalenceoftrianglesandthree-pointed"
+        ],
+        [
+          "",
+          "stars in conducting networks, Electrical World and Engineer,"
+        ],
+        [
+          "",
+          "34, 1899, 413-414."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-5.csv"
+    },
+    {
+      "label": "Table 6",
+      "caption": "",
+      "pages": [
+        39
+      ],
+      "columns": [
+        {
+          "titles": "[Kir]"
+        },
+        {
+          "titles": "G. R. Kirchhoff, U¨ber die Auflosung der Gleichungen, auf"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "welche man bei der Untersuchung der linearen Vertheilung"
+        ],
+        [
+          "",
+          "galvanischer strome gefu¨hrt wird, Annalen d. Physik und"
+        ],
+        [
+          "",
+          "Chemie 72, 1847, 497-508."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Kirk-1]",
+          "T. P. Kirkman, The enumeration description and construc-"
+        ],
+        [
+          "",
+          "tion of knots with fewer than 10 crossing, Trans. R. Soc. Ed-"
+        ],
+        [
+          "",
+          "inburgh, 32, 1885, 281-309."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Klein]",
+          "F. Klein, Mathematische Annalen, IX, 478."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Kli]",
+          "M. Kline, Mathematical Thought from Ancient to Modern"
+        ],
+        [
+          "",
+          "Times, Oxford University Press, 1972."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Kno]",
+          "C. G. Knott, Life and Scientific work of Peter Guthrie Tait,"
+        ],
+        [
+          "",
+          "Supplementing the two volumes of scientific papers published"
+        ],
+        [
+          "",
+          "in 1898 and 1900, Cambridge University Press, 1911."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Kur]",
+          "ThecompletewoodcutsofAlbrechtDu¨rer,EditedbyDr.Willi"
+        ],
+        [
+          "",
+          "Kurth, Dover publications, Inc. New York, 1983 (translated"
+        ],
+        [
+          "",
+          "from 1927 German edition)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Leh]",
+          "D. M. Lehmer, Obiturary of Charles Newton Little, Science,"
+        ],
+        [
+          "",
+          "Vol. LVIII, No. 1508, October 1923, N.Y. City, the Science"
+        ],
+        [
+          "",
+          "Press."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lei]",
+          "G. W. Leibniz, Math. Schriften, 1 Abt., Vol 2, 1850, 19-20."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lis]",
+          "J. B. Listing, Vorstudien zur Topologie, Go¨ttinger Studien"
+        ],
+        [
+          "",
+          "(Abtheilung 1) 1, 1847, 811-875."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lit-0]",
+          "C. N. Little, On knots, with a census for order 10, Trans."
+        ],
+        [
+          "",
+          "Connecticut Acad. Sci., 18, 1885, 374-378 (also Ph.D. thesis,"
+        ],
+        [
+          "",
+          "1885, Yale University [Com])."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lit-1]",
+          "C. N. Little, Non-Alternate Knots, Trans. Royal."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "±"
+        ],
+        [
+          "",
+          "Soc.Edinburgh, XXXIX (part III(No.30) - for sessions 1898-"
+        ],
+        [
+          "",
+          "99), 1900, 771-778. (Communicated by Professor Tait. (With"
+        ],
+        [
+          "",
+          "three plates). (Read July 3, 1899)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lit-2]",
+          "C. N. Little, Non-Alternate knots of order eight and nine,"
+        ],
+        [
+          "",
+          "(1889), Trans. Royal. Soc.Edinburgh, XXXV 1890,"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lit-3]",
+          "C. N. Little, Alternate Knots of order eleven, (read 21st"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "±"
+        ],
+        [
+          "",
+          "July; revised December 1890), Trans. Royal. Soc.Edinburgh,"
+        ],
+        [
+          "",
+          "XXXVI 1892, 235-255."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-6.csv"
+    },
+    {
+      "label": "Table 7",
+      "caption": "",
+      "pages": [
+        40
+      ],
+      "columns": [
+        {
+          "titles": "40"
+        },
+        {
+          "titles": "BIBLIOGRAPHY"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ],
+        [
+          "[Lom]",
+          "S. L. Lomonaco, The modern legacies of Thomson’s atomic"
+        ],
+        [
+          "",
+          "vortex theory in classical electrodynamics, Proceedings of"
+        ],
+        [
+          "",
+          "Symposia in Applied Mathematics, Vol. 51, 1996, 145-166."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Mac]",
+          "E. MacCurdy, The Notebooks of Leonardo, New York: Reynal"
+        ],
+        [
+          "",
+          "and Hitchcook, 1938, vol.2, p.588."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Mag]",
+          "W. Magnus, Max Dehn. Math. Intelligencer 1 (1978), 132–"
+        ],
+        [
+          "",
+          "143. (Also in: Wilhelm Magnus Collected Paper, Edited by"
+        ],
+        [
+          "",
+          "G.Baumslag and B.Chandler, Springer-Verlag, 1984)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Max]",
+          "J.C.Maxwell,Atreatiseonelectricityandmagnetism,Oxford"
+        ],
+        [
+          "",
+          "2 (1873)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[M-T-1]",
+          "W. M. Menasco, M.B.Thistlethwaite, The Tait Flyping Con-"
+        ],
+        [
+          "",
+          "jecture, Bull. Amer. Math. Soc. 25 (2), 1991 403-412."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[M-T-2]",
+          "W. M. Menasco, M.B.Thistlethwaite, The classification of al-"
+        ],
+        [
+          "",
+          "ternating links, Annals of Math., 138, 1993, 113-171."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Mey]",
+          "Fr.Meyer, Dissertation, Mu¨nchen1878.AlsoEdinb. Proc.,13,"
+        ],
+        [
+          "",
+          "1886."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Mi]",
+          "L.G.Miller, Theearliest(?) descriptionofastringfigure,The"
+        ],
+        [
+          "",
+          "American Anthropologist, XLVII (1945), 461-462."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[M-M]",
+          "E. S. Munkholm, H. J. Munkholm, Poul Heegaard (ed."
+        ],
+        [
+          "",
+          "I.M.James), History of topology, 925–946, North-Holland,"
+        ],
+        [
+          "",
+          "Amsterdam, 1999."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[M-4]",
+          "K. Murasugi, Jones polynomial and classical conjectures in"
+        ],
+        [
+          "",
+          "knot theory, Topology, 26(2), 1987, 187-194."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ol]",
+          "L. Olesko (ed.), Science in Germany, Osiris (2nd series) 5"
+        ],
+        [
+          "",
+          "(1989)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Per-0]",
+          "Perko, Kenneth A., Jr. On the classification of knots, Proc."
+        ],
+        [
+          "",
+          "Amer. Math. Soc., 45 (1974), 262–266."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Per-1]",
+          "K. A. Perko, NAMS 25(6), 1978."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Per-2]",
+          "K.A.Perko, Primality of certain knots, Topology Proceedings,"
+        ],
+        [
+          "",
+          "vol. 7, 1982, 109-118."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Per-3]",
+          "K. A. Perko, Invariants of 11-crossing knots, Publications"
+        ],
+        [
+          "",
+          "Math. d’Orsay, 1980."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Plu]",
+          "Plutarch of Chareonera, The age of Alexander, translated by"
+        ],
+        [
+          "",
+          "I. Scott-Kilvert, Penguin Books, 1982."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-7.csv"
+    },
+    {
+      "label": "Table 8",
+      "caption": "",
+      "pages": [
+        42
+      ],
+      "columns": [
+        {
+          "titles": "42"
+        },
+        {
+          "titles": "BIBLIOGRAPHY"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "October 2004,"
+        ],
+        [
+          "",
+          "e-print:http://front.math.ucdavis.edu/math.GT/0405248"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[P-35]",
+          "J. H. Przytycki, The interrelation of the Development of"
+        ],
+        [
+          "",
+          "Mathematical Topology in Japan, Poland and USA: Notes to"
+        ],
+        [
+          "",
+          "the early history of the Knot theory in Japan, Annals of the"
+        ],
+        [
+          "",
+          "Institute for Comparative Studies of Culture, TWCU, Vol."
+        ],
+        [
+          "",
+          "63, 2002, 61-86;"
+        ],
+        [
+          "",
+          "e-print:http://front.math.ucdavis.edu/math.HO/0108072"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[P-T-1]",
+          "J. H. Przytycki, P. Traczyk, Invariants of links of Conway"
+        ],
+        [
+          "",
+          "type, Kobe J. Math. 4 (1987) 115-139."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ra]",
+          "J. Raeder, Oribassi Collectionum Medicarum Reliquiae, 4 vol-"
+        ],
+        [
+          "",
+          "umes, Leipzig and Berlin, 1928-1933."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Re-2]",
+          "K. Reidemeister, Knotentheorie. Ergebn. Math. Grenzgeb.,"
+        ],
+        [
+          "",
+          "Bd.1; Berlin: Springer-Verlag (1932) (English translation:"
+        ],
+        [
+          "",
+          "Knot theory, BSC Associates, Moscow, Idaho, USA, 1983)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[R-T-2]",
+          "N. Y. Reshetikhin, V.Turaev, Invariants of three manifolds"
+        ],
+        [
+          "",
+          "via link polynomials and quantum groups. Invent. Math. 103"
+        ],
+        [
+          "",
+          "(1991) 547-597."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ro-1]",
+          "D. Rolfsen, Knots and links, Publish or Perish, 1976 (second"
+        ],
+        [
+          "",
+          "edition, 1990)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[SSW]",
+          "H.Sachs,M.Stiebitz,R.J.Wilson,AnHistoricalNote-Euler"
+        ],
+        [
+          "",
+          "Konigsberg Letters, Journal of Graph Theory, 12 (1), 1988,"
+        ],
+        [
+          "",
+          "133-139."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Sar]",
+          "G.Sarton,AncientSciencethroughtheGoldenAgeofGreece,"
+        ],
+        [
+          "",
+          "Dover Pub., 1993 (first edition: Harvard Univ. Press, 1952)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Sar-2]",
+          "G. Sarton, Introduction to the history of science, Baltimore:"
+        ],
+        [
+          "",
+          "Williams and Wilkins, 1927-1948; (quotation from Vol. 1"
+        ],
+        [
+          "",
+          "p.216)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Sha]",
+          "H. I. Sharlin, T.Sharlin, Lord Kelvin, the dynamic Victorian,"
+        ],
+        [
+          "",
+          "Penn. State University Press, 1979."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[She]",
+          "R. B. Sher, Max Dehn and Black Mountain College, Math."
+        ],
+        [
+          "",
+          "Intelligencer 16(1), 1994, 54–55."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Sil]",
+          "R. H. Silliman, William Thomson: smoke rings and"
+        ],
+        [
+          "",
+          "nineteenth-century atomism, Isis, 54, December 1963, 472-."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-8.csv"
+    },
+    {
+      "label": "Table 9",
+      "caption": "",
+      "pages": [
+        43
+      ],
+      "columns": [
+        {
+          "titles": "[Sim]"
+        },
+        {
+          "titles": "O. Simony, U¨ber eine Reihe neuer Thatsachen aus dem Gebi-"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "ete der Topologie, Math. Annalen, 19 (1882), 110-120, and 24"
+        ],
+        [
+          "",
+          "(1884), 253-280."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Stac]",
+          "P. Sta¨ckel, Gyuss als Geometer, in the X’th Volume of Gauss’"
+        ],
+        [
+          "",
+          "Collected Works..D."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Stil]",
+          "J.Stillwell,ClassicalTopologyandCombinatorialGroupThe-"
+        ],
+        [
+          "",
+          "ory, Grad. Texts in Math. 72, Springer-Verlag 1980."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Str]",
+          "D. J. Struik, A concise history of mathematics, Dover Publi-"
+        ],
+        [
+          "",
+          "cations, Inc. New York, 1967."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[SCKSSWW]",
+          "D. W. Sumners (Editor), N. R. Cozzarelli, L. H. Kauffman,"
+        ],
+        [
+          "",
+          "J. Simon, D. W. Sumners, J. H. White, S. G. Whittington,"
+        ],
+        [
+          "",
+          "New Scientific Applications of Geometry and Topology, Pro-"
+        ],
+        [
+          "",
+          "ceedings of Symposia in Applied Mathematics, Vol. 45, AMS"
+        ],
+        [
+          "",
+          "1992."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ta-0]",
+          "P.G.Tait, Someelementary propertiesofclosed planecurves,"
+        ],
+        [
+          "",
+          "Messenger of Mathematics, New Series, No.69, 1877, (com-"
+        ],
+        [
+          "",
+          "municated at the 1876 Meeting of the British Association)."
+        ],
+        [
+          "",
+          "Reprinted in Scientific Papers of P. G. Tait, 270-272."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ta]",
+          "P. G. Tait, On knots I, II, III, Scientific Papers, Cambridge"
+        ],
+        [
+          "",
+          "University Press, 1898-1900. Including: Trans. R. Soc. Edin.,"
+        ],
+        [
+          "",
+          "28, 1877, 35-79. Reprinted by Amphion Press, Washington"
+        ],
+        [
+          "",
+          "D.C., 1993."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ta-1]",
+          "P.G.Tait,JohannBenedictListing,Nature,February1,1883."
+        ],
+        [
+          "",
+          "Reprinted in Scientific Papers of P.G.Tait."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ta-2]",
+          "P. G. Tait, Listing’s Topologie (Introductory address to the"
+        ],
+        [
+          "",
+          "Edinbutgh Mathematical Society, November 9, 1883), Philo-"
+        ],
+        [
+          "",
+          "sophical Magazine, January, 1884. Reprinted in Scientific Pa-"
+        ],
+        [
+          "",
+          "pers of P.G.Tait."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[This-1]",
+          "M. B. Thistlethwaite, Knot tabulations and related topics,"
+        ],
+        [
+          "",
+          "Aspects of topology, LMS Lecture Notes Series, 93 (1985), 1-"
+        ],
+        [
+          "",
+          "76."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[This-3]",
+          "M. B. Thistlethwaite, A spanning tree expansion of the Jones"
+        ],
+        [
+          "",
+          "polynomial, Topology, 26 (1987), 297-309."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Thomp]",
+          "S. P. Thompson, The life of William Thomson: Baron Kelvin"
+        ],
+        [
+          "",
+          "of Largs, 2 vols., London: Macmillan, 1910."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-9.csv"
+    },
+    {
+      "label": "Table 10",
+      "caption": "",
+      "pages": [
+        44
+      ],
+      "columns": [
+        {
+          "titles": "44"
+        },
+        {
+          "titles": "BIBLIOGRAPHY"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ],
+        [
+          "[Thomps]",
+          "D’A. W. Thompson, On Growth and Form, Dover Publica-"
+        ],
+        [
+          "",
+          "tions, 1992 (republication of “A New Edition” by Cambridge"
+        ],
+        [
+          "",
+          "University Press, 1942; “I wrote this book in wartime, and its"
+        ],
+        [
+          "",
+          "revision has employed me during another war”.)"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Thom]",
+          "J. J. Thomson, A treatise on the motion of vortex rings, The"
+        ],
+        [
+          "",
+          "Adams prize in 1882, (published in 1883)."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Thoms]",
+          "W. H. Thomson (Kelvin), On vortex motion, Trans. R. Soc."
+        ],
+        [
+          "",
+          "Edin., 25 (1867), 217-260. See also Proceedings of the Royal"
+        ],
+        [
+          "",
+          "Society of Edinburgh, February 1867."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ti-1]",
+          "H. Tietze, U¨ber die topologischen Invarianten mehrdimen-"
+        ],
+        [
+          "",
+          "sionaler Mannigfaltigkeiten, Monatshefte fu¨r Mathematik and"
+        ],
+        [
+          "",
+          "Physik 19, 1908, 1-118."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Ti-2]",
+          "H. Tietze, U¨ber Simony-Knoten und Simony-Ketten mit"
+        ],
+        [
+          "",
+          "vorgeschriebenen singul¨aren Primzahlen fu¨r die Figur und fu¨r"
+        ],
+        [
+          "",
+          "ihr Spiegelbild, Math. Zeitschrift, 49, 1943, 351-369."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Tu-2]",
+          "V.G.Turaev,TheConwayandKauffmanmodulesofthesolid"
+        ],
+        [
+          "",
+          "torus, Zap. Nauchn. Sem. Lomi 167 (1988), 79-89. English"
+        ],
+        [
+          "",
+          "translation: J. Soviet Math. 52, 1990, 2799-2805."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Tu-Vi]",
+          "V. G. Turaev, O.Y.Viro, State sum invariants of 3-manifolds"
+        ],
+        [
+          "",
+          "and quantum 6j-symbols, Topology, 31 (1992), 865-902."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Tu-We]",
+          "V.G.Turaev,H.Wenzl,Quantuminvariantsof3-manifoldsas-"
+        ],
+        [
+          "",
+          "sociated withclassical simpleLiealgebras, Internat. J. Math.,"
+        ],
+        [
+          "",
+          "4(2), 1993,323-358."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Tut-1]",
+          "W. T. Tutte, A ring in graph theory, Proc. Cambridge Phil."
+        ],
+        [
+          "",
+          "Soc., 43, 1947, 26-40."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Va]",
+          "A. T. Vandermonde, Remarques sur les probl`emes de situ-"
+        ],
+        [
+          "",
+          "ation, M´emoires de l’Acad´emie Royale des Sciences (Paris)"
+        ],
+        [
+          "",
+          "(1771), 566-574."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Weil]",
+          "A. Weil, Riemann, Betti and the birth of topology, Arch. for"
+        ],
+        [
+          "",
+          "Hist. Exact Sci., 16, 1979, 91-96."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Web]",
+          "C. Weber, A stroll through knot theory, New. J. Chem., 17"
+        ],
+        [
+          "",
+          "(1993), 627-644."
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "[Weith]",
+          "H. Weith, Topologische Untersuchung der Kurven-"
+        ],
+        [
+          "",
+          "Verschlingung, Inaugural Dissertation, Zu¨rich 1876."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-10.csv"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "contents from outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 6,
+      "note": "6 kept (6 raster, 0 vector); 13 vector render(s) not yet inspected; 2 caption(s) read off the pages"
+    },
+    {
+      "kind": "tables",
+      "state": "found",
+      "count": 10,
+      "note": "drafts; backend pdfplumber 0.11.10; 20 candidate(s) dropped: under two columns or no row under the header; 22 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)"
+    },
+    {
+      "kind": "references",
+      "state": "found",
+      "count": 209
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 39,
+      "note": "called from the text; also kept: 12 foot-of-page line(s) no mark calls, 18 mark(s) with no note found"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0703096v1"
+  }
+}

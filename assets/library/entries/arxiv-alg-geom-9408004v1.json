@@ -1,0 +1,725 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-alg-geom-9408004v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 1)",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-front-matter-page-1.md",
+      "narrative": null,
+      "content": "arXiv:alg-geom/9408004v1  9 Aug 1994\nCUBICS, INTEGRABLE SYSTEMS, AND\nCALABI-YAU THREEFOLDS\nRon Donagi1\nUniversity of Pennsylvania\nand\nEyal Markman2\nUniversity of Michigan\nTo Professor Hirzebruch, on his 65th birthday\n§0. Introduction\nIn this work we construct an analytically completely integrable Hamil-\ntonian system which is canonically associated to any family of Calabi-Yau\nthreefolds. The base of this system is a moduli space of gauged Calabi-Yaus\nin the family, and the ﬁbers are Deligne cohomology groups (or intermediate\nJacobians) of the threefolds. This system has several interesting pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 2)",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-front-matter-page-2.md",
+      "narrative": null,
+      "content": "The last section is entirely speculative. We muse on the role which the\nCY integrable system might play in the mirror conjecture: we would like to\nseparate the conjecture into a formal part, which deals with a ‘mirror trans-\nform’ for objects consisting of an integrable system together with certain La-\ngrangian multisections and other lists of data, and a geometric, Torelli-like\npart, saying that a CY family can be recovered from its integrable system.\nThe attempt to read oﬀall relevant data (= the partition functions for the\nA and B models) directly from the system leads to some Hodge theoret",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 3)",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-front-matter-page-3.md",
+      "narrative": null,
+      "content": "Hamiltonian vector ﬁelds which are tangent to the Xu and integrate to give\nthe angle variables\n(ϕ1, · · · , ϕn) : Xu\n∼→Rn/(2πZ)n.\nThe latter give the aﬃne structure on the ﬁbers.\nA completely integrable Hamiltonian system (CIHS) on the 2n-dimensional\nsymplectic manifold (X , σ) is an ODE (given, say, by a vector ﬁeld v)\nwhich possesses n independent integrals u1, · · ·, un in involution (i.e. they\nPoisson-commute). This translates immediately to a Lagrangian ﬁbration\nπ : X →Rn (where π = (u1, · · ·, un)), and the ﬂow is linearized on the\nlevel tori Xu, i.e. v is tangent to the ﬁbers, and v|Xu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 4)",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-front-matter-page-4.md",
+      "narrative": null,
+      "content": "plectic form σ induces an isomorphism\n(3)\ni = σ−1 : V∗\n∼→TU.\nWe reﬁne our question by considering pairs consisting of the family π : X →\nU together with the isomorphism i, and asking for the existence of σ which\nis compatible with both. Our ﬁrst answer is:\nTheorem 1. (Inﬁnitesimal cubic condition) Consider a family π :\nX →U of polarized abelian varieties with classifying map q : U →Ag and\nvertical bundle V, together with an isomorphism (3). Then there exists a\nnon-degenerate holomorphic 2-form σ on X for which π is Lagrangian and\nwhich induces the given isomorphism i, if and only if the compos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "(Inﬁnitesimal cubic condition) Consider a family π : X →U of polarized abelian varieties with classifying map q : U →Ag and vertical bundle V, together with an isomorphism (3). Then there exists a non-degenerate holomorphic 2-form σ on X for which π is Lagrangian and which induces the given isomorphism i, if and only if the composition of (2) and (3): dq ◦i ∈Hom(V∗, Sym2V) = Γ(V ⊗Sym2V) comes from a cubic c ∈Γ(Sym3V). In this case, there is a unique σ for which the 0-section of π is Lagrangian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 5)",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-front-matter-page-5.md",
+      "narrative": null,
+      "content": "comes from the diﬀerential of the classifying map q, and β is part of the\n(exact) Koszul complex\n0 →Sym3V\nα→V ⊗Sym2V\nβ→Λ2V ⊗V →· · · .\nWe conclude that the desired 2-vector σ−1 exists locally if and only if\ndq ◦i = (1 ⊗dq)(i) ∈V ⊗Sym2V\ncomes, via α, from a section of Sym3V. The global existence of σ will follow\nby patching local solutions, once we know uniqueness. For this, let σ1, σ2 be\ntwo local solutions. Then σ1 −σ2 induces the 0-map from TU to V∗, hence\nit is the pullback of a 2-form ϕ on U. But restricting to the 0-section of π\nshows ϕ = 0, so σ1 = σ2 as required.\nQ.E.D\nWe view this theo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let π : X →U be a family of abelian varieties with La- grangian structure. The choice of Lagrangian basis γ1, · · ·, γg of the ﬁber homologies determines an aﬃne structure on U. The choice of a mark- ing γ1, · · ·, γ2g (or of a period map p : U →Hg) determines a pair of aﬃne structures. The aﬃne coordinates {ui}, {ti} corresponding to the Lagrangian bases γ1, · · · , γg and γg+1, · · · , γ2g, respectively, are related by: dti = X pij(u)duj. We note that, even with these choices, the angle coordinates ϕi are still multivalued, i.e. they can be deﬁned only locally. Their diﬀerentials dϕi are mor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 6)",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-front-matter-page-6.md",
+      "narrative": null,
+      "content": "Xu gives a symplectic structure on H1(Xu, Z), so the natural thing to do is\nto choose a Lagrangian basis γ1(u), · · ·, γg(u), i.e. a basis of a continuously\nvarying Lagrangian subspace. On the other hand, the choice of a marking\nof the family π, i.e. a lifting of q to a period map p : U →Hg, is equivalent\nto the choice of a dual pair γ1, · · · , γg and γg+1, · · · , γ2g of Lagrangian bases.\nCombining this with (1), we get:\nLemma 1. Let π : X →U be a family of abelian varieties with La-\ngrangian structure. The choice of Lagrangian basis γ1, · · ·, γg of the ﬁber\nhomologies determines an aﬃne st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "(Global Cubic Condition) Consider a family π : X →U of marked abelian varieties, with period map p : U →Hg, where U has an aﬃne structure α : V ∗⊗OU ∼→TU. Then π admits a Lagrangian structure which induces α if and only if the composition dp ◦α ∈Hom(V ∗⊗OU, Sym2V ⊗OU) = Γ(V ⊗Sym2V ⊗OU) comes from a cubic c ∈Γ(Sym3V ⊗OU).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 7)",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-front-matter-page-7.md",
+      "narrative": null,
+      "content": "Proof.\nNote that the trivialization (4) takes α to the isomorphism i of (3), and\ndp goes to dq of (2). The “only if” therefore follows from Theorem 1.\nConversely, we start with the standard symplectic structure on the cotan-\ngent bundle T ∗U. Via the aﬃne structure α and the trivialization (4), we\nget a symplectic structure σ on the vertical bundle V. The projection to U\nis Lagrangian with respect to σ as is the 0-section. We want σ to descend\nto X . Equivalently, σ should be invariant under translation by the section\nsm,n : u 7→m + p(u)n,\nfor any m, n ∈Zg, which happens if and only if the sec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 8)",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-front-matter-page-8.md",
+      "narrative": null,
+      "content": "(3) Much of the above extends to Lagrangian structures on families of\ncomplex tori. The new feature is that p lands in V ⊗V , instead of Sym2V ,\nso we can write p = p+ + p−, with p+ symmetric, p−skew symmetric. The\nresult is that in order to have a Lagrangian structure, p−must be locally\nconstant on U, while p+ satisﬁes a cubic condition as above.\nIn particular, everything goes through with no changes for families of po-\nlarized complex tori, regardless of the positivity of the polarization. In terms\nof the period matrix, we still require symmetry (Riemann’s ﬁrst bilinear re-\nlation) but not p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 9)",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-front-matter-page-9.md",
+      "narrative": null,
+      "content": "of a g-dimensional family of two-forms on the family for which the ﬁbration\nis Lagrangian, locally near each point of the base U. (Only one of these, up\nto homothety, extends to a Lagrangian structure on the entire family.)\nJacobi’s system has been extended to higher rank by Adams, Harnad\nand Hurtubise [AHH] and by Beauville [B]. This system as well as Hitchin’s\n[H] are special cases of the spectral system constructed in [M1] and [Bn]\nin terms of twisted endomorphisms of vector bundles on curves. The Pois-\nson structure on this system has a simple description in terms of the cubic\ncondition, c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 10)",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-front-matter-page-10.md",
+      "narrative": null,
+      "content": "transversality) and an element w ∈Hp,q moves in the direction of Bp(v, w).\nThe Hp,q can be described as spaces of harmonic (p, q)-forms on X (thus\ngiving the inclusion Hp,q֒ →H3(X, C)), or as the sheaf cohomology groups\nHq(X, Ωp\nX). In the case of a CY threefold X, we have:\n(i) H3,0 = H0(ωX) is the one-dimensional complex vector space of holo-\nmorphic gauges.\n(ii) H2,1 = H1(Ω2) is isomorphic to H1(TX). More canonically, each holo-\nmorphic gauge s ∈H3,0, s̸ = 0, determines an isomorphism\n⌋s : H1(TX)\n∼→\nH2,1\nv\n7→\nB3(v, s).\n(iii) H1,2 and H0,3 can be identiﬁed either with the complex conjugates o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 11)",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-front-matter-page-11.md",
+      "narrative": null,
+      "content": "that M is smooth with tangent space H1(TXt) at t. Typically such families\nmight consist of all CYs in some open subset of M, together with some\n“level” structure. We fatten the family by adding the holomorphic gauge: let\nρ : f\nM →M be the C∗-bundle over M underlying the line bundle χ∗ωX/M,\nso a point of f\nM is given by a pair (X, s) with X ∈M and s ∈H0(ωX)\\(0).\nThere is a pullback family eχ : f\nX →\nf\nM, where f\nX := X ×M f\nM. We let\nπ : J →M and ˜π : f\nJ →f\nM denote the relative intermediate Jacobians of\nχ, eχ respectively.\nTheorem 3. π : f\nJ →f\nM is an analytically completely integrable Hamil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "π : f J →f M is an analytically completely integrable Hamil- tonian system.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 12)",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-front-matter-page-12.md",
+      "narrative": null,
+      "content": "Griﬃths’ transversality now says that the derivative, a, is in F 2H3. It clearly\ndepends only on ﬁrst-order data, i.e.\non the tangent vector to\nf\nM along\n(Xt, st) at t = 0. This produces the map\nT(X,s) f\nM →F 2H3(X, C)\nwith the desired properties.\nStep II. We want a non-degenerate 2-form σ on f\nJ making π Lagrangian.\nBy Theorem 1, this is equivalent to ﬁnding a cubic ˜c on T f\nM satisfying\n⌋˜c = d˜p ◦i, where ˜p is the period map for eχ : f\nX →f\nM and i is the inverse\nof (5). Since ˜p factors through the period map p for χ : X →M, it is\nreasonable to look for a cubic c in ρ∗Sym3T ∗M ⊂Sym3T ∗f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "The symplectic form σ on f J is exact.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 13)",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-front-matter-page-13.md",
+      "narrative": null,
+      "content": "that the 1-form ξ on\nf\nM which corresponds to the section\nR\nγ of T ∗f\nM is\nclosed.\nConsider the function g : f\nM →C given by\ng(X, s) :=\nZ\nγ s.\nWe claim ξ = dg.\nIndeed, if a ∈T(X,s) f\nM is the tangent vector to the\n1-parameter family (Xt, st) then we have, as in Step I:\nst = s0 + ta\n(mod t2).\nand therefore\n< dg, a >\n=\n(∂/∂t)|t=0 g(Xt, st)\n=\n(∂/∂t)|t=0\nR\nγ st\n=\nR\nγ a =< ξ, a > .\nQ.E.D\nRemark.\nIn order to obtain the Lagrangian structure, we did not need to specify\nthe “level” of the moduli space M. In order to have an ACIHS, we need\nin addition to the Lagrangian structure also a set of global Ham",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "In order to obtain the Lagrangian structure, we did not need to specify the “level” of the moduli space M. In order to have an ACIHS, we need in addition to the Lagrangian structure also a set of global Hamiltonians, i.e. a set of 1 + h2,1 independent functions on f M. For this, we choose the level structure to include, at least, the choice of a Lagrangian basis for the H3(Xt, Z), say γ0, · · · , γh2,1. As our Hamiltonians we then take ˜ti := Z γi s i = 0, · · · , h2,1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 14)",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-front-matter-page-14.md",
+      "narrative": null,
+      "content": "A ﬁrst guess for an antidiﬀerential τ of σ might be simply ˜τ (pulled back\nby i, but we suppress this), but ˜τ is not invariant under translations: if the\ncycle γ corresponds, as in Step III of the proof of Theorem 3, to a 1-form ξ\non f\nM, then translating by γ changes ˜τ by addition of π∗ξ, where π : V →f\nM\nis the projection. To correct this discrepancy, we consider the tautological\nfunction f ∈Γ(OV) whose value at a point (X, s, v) ∈V (with (X, s) ∈f\nM\nand v ∈F 2H3(X)∗) is given by\n(6)\nf(X, s, v) := v(s).\nNow f is ﬁber-linear, so df is constant on ﬁbers, and therefore translation\nby γ change",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "The Hamiltonians ˜ti = R γi s (cf. remark after Theorem 3) are equal (up to sign) to the action variables for f J , given by (1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 15)",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-front-matter-page-15.md",
+      "narrative": null,
+      "content": "(2) The tautological relative 3-form s on f\nX over\nf\nM induces a relative\n1-form on f\nJ over\nf\nM.\nWe note that our 1-form τ on f\nJ is a lift of this\ntautological relative 1-form.\nLemma 3. The Hamiltonians ˜ti =\nR\nγi s (cf. remark after Theorem 3)\nare equal (up to sign) to the action variables for f\nJ , given by (1).\nProof.\nThe 3-cycle γi in X determines a 1-cycle, say Γi, in J(X). The action\nvariables (1) are given as\nR\nΓi τ. By the proof of Lemma 2, τ pulls back to\n˜τ −df, where f is given by (6), and ˜τ vanishes on ﬁbers of π. Therefore:\nZ\nΓi\nτ = −\nZ\nΓi\ndf = −\nZ\nγi\ns.\nQ.E.D\nLet A be the grou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 16)",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-front-matter-page-16.md",
+      "narrative": null,
+      "content": "where ∇is the Gauss-Manin connection on H3.\nThis condition is inde-\npendent of the choice of ν, by Griﬃths transversality. It is automatically\nsatisﬁed by the Abel-Jacobi image of a family of relative 1-cycles, cf. [G2].\nMore generally, we can consider multivalued 1-cycles and normal func-\ntions: a map B →M gives a pullback family of CYs over B, and we can\nconsider a family of relative, null-homologous 1-cycles in this pullback; this\ndetermines a normal function over B, and we can consider its image (or that\nof an abstract normal function over B) in J . We refer to such subvarieties\n(no longer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "For the symplectic structure on f J constructed in Theorem 3, the image ν(A0( f X/ f M)) is isotropic. In other words, the normal func- tion of any (multivalued) family of null-homologous 1-cycles on Calabi-Yau threefolds gives an isotropic subvariety of f J .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 17)",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-016-front-matter-page-17.md",
+      "narrative": null,
+      "content": "hand, the (Poincar´e dual of) Cb is of type (2, 2) with respect to this complex\nstructure, so the second term vanishes identically. As in the proof of Theo-\nrem 3, we then conclude that dg = ξ, as required.\nQ.E.D\nRemarks.\nThe proof shows that Theorem 4 can be strengthened in two\ndirections:\n(1) Let τ = ˜τ −df be the 1-form on ˜\nJ constructed in Lemma 2, satisfying\ndτ = σ. (The function f is given by formula (6).) Then each normal function\nν gives an integral manifold of τ, i.e.\nν∗τ = 0.\n(This of course implies\nν∗σ = 0.) Indeed, in the notation of the proof we have ν∗˜τ = ξ and ν∗f = g,\nso what",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/cor-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "cor-sec-017-01.md",
+      "narrative": null,
+      "content": "The total space of any family of abelian subvarieties of f J is isotropic. The generalized Hodge conjecture says that ν(B) is actually contained in ν(A0( f X / f M)), but this is not known. At ﬁrst sight it also seems plausible that a maximal ν(B), as well as each component of ν(A0( f X/ f M)), should actually be Lagrangian; there are, however, counterexamples to this. The intermediate Jacobian is the connected component of the origin in a larger group D(X), the Deligne cohomology group of X, cf. [EZ]. This ﬁts in the exact sequence 0 →J(X) →D(X) ϕ→H2,2(X, Z) →0, where H2,2(X, Z) := H2,2(X, C)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 18)",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-front-matter-page-18.md",
+      "narrative": null,
+      "content": "B →S (where S comes with a map i : S →\nf\nM, and the ﬁber Bs is an\nabelian subvariety of the torus J(Xi(s))). We conclude:\nCorollary. The total space of any family of abelian subvarieties of f\nJ is\nisotropic.\nThe generalized Hodge conjecture says that ν(B) is actually contained in\nν(A0( f\nX / f\nM)), but this is not known. At ﬁrst sight it also seems plausible\nthat a maximal ν(B), as well as each component of ν(A0( f\nX/ f\nM)), should\nactually be Lagrangian; there are, however, counterexamples to this.\nThe intermediate Jacobian is the connected component of the origin in a\nlarger group D(X), the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "thm-sec-017-02.md",
+      "narrative": null,
+      "content": "Let D = D(X /M) be the relative Deligne group of a com- plete family of CY threefolds, let eD = D( f X / f M) be the relative Deligne group of the gauged family, and let J , f J be the corresponding relative Jaco- bians. Then there is a natural contact structure κ on D with symplectiﬁcation σ = dτ on eD with the following properties: (a) σ, τ and κ restrict to the previously constructed structures on f J and J . (b) The ﬁbration eD →f M is Lagrangian. (c) All normal functions ν(A( f X / f M)) are integral manifolds for τ (hence isotropic for σ), and normal functions ν(A(X /M)) are integral man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/cor-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "cor-sec-018-01.md",
+      "narrative": null,
+      "content": "On a generic CY, algebraic equivalence of 1-cycles implies AJ-equivalence; in other words, the Abel-Jacobi map is constant on any connected family of 1-cycles.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 19)",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-018-front-matter-page-19.md",
+      "narrative": null,
+      "content": "Proof.\nEach component of D (respectively eD) is locally isomorphic to J (respec-\ntively f\nJ . In order to extend σ, τ, κ we need a collection of local sections of\nD (and eD) with the properties:\n(1) For each t ∈M and each component of D(Xt), there is a local section\ndeﬁned near t and passing through this component.\n(2) The diﬀerence of any two local sections in the same component is an\nintegral manifold for σ, τ, κ.\nIndeed, such a collection of sections determines a collection of local iso-\nmorphisms of components of D (respectively eD) with J (respectively f\nJ ), so\nwe deﬁne σ, τ, κ as pullba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 20)",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-019-front-matter-page-20.md",
+      "narrative": null,
+      "content": "natural quasi-symplectic structures, i.e. closed 2-forms which in general will\nbe degenerate. The ﬁbers of the projections of f\nJ or eD to f\nM are Lagrangian,\ni.e. maximal isotropic with respect to the 2-form (but of dimension greater\nthan dim f\nM, because of the degeneracy). All normal functions, or Abel-\nJacobi images of families of k-cycles, are isotropic. For the details, see [DM].\n§3. Mirrors.\nTo a given family X →M of Calabi-Yaus, there are two ways of asso-\nciating an (N = 2, c = 9) (super) conformal ﬁeld theory (CFT). Physicists\nrefer to these as the A-model and B-model theories. A key",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 21)",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-020-front-matter-page-21.md",
+      "narrative": null,
+      "content": "and s is normalized by the condition\nZ\nγ0\ns0 = 1.\nPhysicists believe [Gep] that either the A-model or B-model construc-\ntions set up bijections between CFTs and CY families. This, together with\nthe existence of an internal symmetry of CFT which interchanges A and B\nvariables, led [Di,LVW] to the mirror conjecture, which says that each CY\nfamily X →M, perhaps with some extra data, determines another family\nX ′ →M′ such that the A-model CFT of the former is isomorphic to the\nB-model CFT of the latter, and vice versa.\nIt is not clear (to us) what the precise mathematical formulation of this\nconje",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 22)",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-021-front-matter-page-22.md",
+      "narrative": null,
+      "content": "part (of either base or ﬁbers), respectively. This suggests that the rela-\ntion between the two ACIHS attached to mirror-symmetric CY families\nmight be expressible directly as some sort of Fourier transform.\n(ii) The mirror map, t of (11), as constructed in [CdOGP], [Mo], etc., is\ngiven by\nti = ˜ti/˜t0,\ni = 1, · · ·, h2,1,\nwhere ˜ti are the action coordinates for the ACIHS, for an appropriate\nchoice of Lagrangian basis γ0, · · ·, γh2,1 in terms of a maximally unipo-\ntent degeneration. (This follows immediately from the construction in\n[Mo] and our Lemma 3.)\n(iii) We also recall from [Mo] that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 23)",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-022-front-matter-page-23.md",
+      "narrative": null,
+      "content": "(i) An analytically completely integrable Hamiltonian system\neD →\nf\nM,\nwhich is an extension of another ACIHS f\nJ →f\nM by a lattice H1,1(Z).\n(ii) An indeﬁnite (“Lorentzian”) polarization on the torus ﬁbers of f\nJ →f\nM\nand a (symmetric, cubic, Z-valued) intersection product on H1,1(Z).\n(iii) A C∗-action on eD lifting an action of C∗on f\nM.\n(iv) A 1-form τ on\neD, homogeneous of weight 1 with respect to the C∗-\naction, satisfying dτ = σ (= the symplectic form on eD).\nSome further pieces of data may also need to be speciﬁed, such as the\nchoice of a maximally unipotent degeneration. The above data",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 24)",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-023-front-matter-page-24.md",
+      "narrative": null,
+      "content": "(i) Which normal functions in eD arise from eﬀective curves?\n(ii) Which of these arise from irreducible curves?\n(iii) Which of these arise from rational curves?\nWe note that a given normal function ν might arise from many diﬀerent\ncurves. The simplest example is that of complete intersection curves: a given\nfamily of such curves is parametrized by a (usually positive dimensional)\nprojective space on each CY in the family, and all such curves have the same\nAbel-Jacobi image since they are rationally equivalent. In fact, the Corollary\nto Theorem 5 says that all curves in any connected family on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 25)",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-024-front-matter-page-25.md",
+      "narrative": null,
+      "content": "such that for each nef class k we have\nwk =\nX\n{ν|ϕ(ν)=k}\nwν,\nor\nNk,g =\nX\n{ν|ϕ(ν)=k}\nNν,g,\nor equivalently:\nF =\nX\nNν,gqϕ(ν)λg−1.\nThe point is that we want a formula for the wν in terms of ν alone, without\nknowledge of the actual curves on X whose Abel-Jacobi image is ν.\nWe do not know whether such a formula exists.\nBut if it does, it is\nlikely to involve only the inﬁnitesimal invariant δν, associated to a normal\nfunction by Griﬃths [G2] and improved by Green [Gr1]. This invariant lives\nin a certain Koszul cohomology group. It vanishes if and only if ν is locally\nconstant, i.e. can be lifted loc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 26)",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-025-front-matter-page-26.md",
+      "narrative": null,
+      "content": "direction, of the Yukawa cubic c ∈Sym3(H2,1)∗. Summarizing, the Koszul\ncomplex in our case can be identiﬁed with the complex\n(H2,1) Y ukawa\n→\n⊗2(H2,1)∗→\n2∧(H2,1)∗.\nWe conclude that δν is in R2, where Rd is the dth graded piece of the Ja-\ncobian ring of c : R• := S•/J •, where S• = Sym•(V ∗) and J • ⊂S• is\nthe Jacobian ideal, generated by the partials of c. The problem of recon-\nstructing the curves on X with given normal function ν from the invariant\nδν may therefore have some resemblance to the variational Torelli problem,\nwhere certain parts of R are given and one needs to recover the underl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[AG]\nV.I. Arnol’d and A.B. Givental’: Symplectic Geometry. In: Arnol’d,\nV.I., Novikov, S.P. (eds.) Dynamical systems IV (EMS, vol. 4),\nSpringer (1988), 1-136.\n[AHH]\nM.R. Adams, J. Harnad, J. Hurtubise: Isospectral Hamiltonian\nﬂows in ﬁnite and inﬁnite dimensions, II. Integration of ﬂows.\nCommun. Math. Phys. 134 (1990), 555-585.\n[B]\nA. Beauville: Jacobiennes des courbes spectrales et syst`emes hamil-\ntoniens compl`etement int´egrables. Acta Math. 164 (1990), 211-235.\n[BCOV] M. Bershadsky, S. Cecotti, H. Ooguri and C. Vafa: Holomorphic\nAnomalies in Topological Field Theories, with an appendix by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tian: Smoothness of the universal deformation space of compact Calabi-Yau manifolds and its Petersson-Weil metric, in Math-",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-027-g-tian-smoothness-of-the-universal-deformation-s.md",
+      "narrative": null,
+      "content": "pact Calabi-Yau manifolds and its Petersson-Weil metric, in Math-\nematical Aspects of String Theory (S.T. Yau, ed.), World Scientiﬁc,\nSingapore (1987), 629-646.\n[To]\nA. Todorov: The Weil-Petersson geometry of the moduli space of\nSU(n ≥3) (Calabi-Yau) manifolds, I, Comm. Math. Phys. 126\n(1989), 325-346.\ne-mail addresses: donagi@math.upenn.edu, markman@math.lsa.umich.edu\n28",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/agt-v12-n2-p04-s",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The twisted Alexander polynomial for finite abelian covers over three manifolds",
+      "dcterms:creator": [
+        "DUBOIS, JÉRÔME"
+      ],
+      "dcterms:issued": "D:20120417",
+      "bibo:doi": "10.2140/agt.2012.12.791",
+      "dcterms:identifier": "https://doi.org/10.2140/agt.2012.12.791",
+      "dcterms:source": "library/agt-v12-n2-p04-s/manifest.jsonld",
+      "dcterms:hasVersion": "library/agt-v12-n2-p04-s"
+    }
+  ]
+}

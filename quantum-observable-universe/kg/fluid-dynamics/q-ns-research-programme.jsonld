@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-ns-research-programme",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-ns-research-programme",
+  "kind": "remark",
+  "title": "The quantum Navier--Stokes programme: from categorical regularity to the Clay problem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-berry-vortex-moduli",
+    "papers/quantum-observable-universe/blocks/rem-vortex-reconnection",
+    "papers/quantum-observable-universe/blocks/prop-acoustic-horizon-conditions"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness",
+  "tags": [
+    "research-programme",
+    "millennium-problem",
+    "navier-stokes",
+    "regularity",
+    "open-problems"
+  ],
+  "text": "q-ns-research-programme.md",
+  "provenance": "authored"
+}

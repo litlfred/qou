@@ -1,0 +1,834 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2508.03145v1",
+  "title": "Theta-Categories and Tannakian duality",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "-Categories",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000--categories"
+    },
+    {
+      "level": 2,
+      "title": "-Categories",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000--categories"
+    },
+    {
+      "level": 2,
+      "title": "-Categories",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001--categories"
+    },
+    {
+      "level": 2,
+      "title": "-Categories of modules",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002--categories-of-modules"
+    },
+    {
+      "level": 1,
+      "title": "Tannaka duality",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-tannaka-duality"
+    },
+    {
+      "level": 2,
+      "title": "-Categories of quasi-coherent and ind-perfect sheaves",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004--categories-of-quasi-coherent-and-ind-perfect-sh"
+    },
+    {
+      "level": 2,
+      "title": "Tannakian -categories and Tannakian gerbes",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-tannakian--categories-and-tannakian-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "The Tannakian duality theorem",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-tannakian-duality-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Positive tor-dimension descent",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-positive-tor-dimension-descent"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 719,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schematic homotopy",
+          "heading": false
+        },
+        {
+          "term": "tannakian duality",
+          "heading": false
+        },
+        {
+          "term": "homotopy types",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "toe",
+          "heading": false
+        },
+        {
+          "term": "tannaka duality",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        }
+      ],
+      "extract": "Θ-Categories and Tannakian duality Joost NUITEN, Bertrand TOEN July 2025 Abstract We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories. We use this notion to prove a Tannakian duality statement, relating Θ-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of Θ-categories. This provides, over a base ring of arbitrary",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2508.03145v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000--categories",
+      "number": null,
+      "title": "-Categories",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1072,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf calg",
+          "heading": false
+        },
+        {
+          "term": "fun mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf lmod",
+          "heading": false
+        },
+        {
+          "term": "mathbf cat",
+          "heading": false
+        },
+        {
+          "term": "text mathsf",
+          "heading": false
+        },
+        {
+          "term": "colon mathsf",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathsf",
+          "heading": false
+        },
+        {
+          "term": "category mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "## $\\mu$-Categories We let $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$ be the $(2,\\infty)$-category of presentable $(1,\\infty)$-categories and right adjoints (i.e. limit preserving accessible $\\infty$-functors). We have the corresponding $(2,\\infty)$-category $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^{R}_{pr})$, of morphisms in $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$. For any object $f \\colon T' \\to T$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001--categories",
+      "number": null,
+      "title": "-Categories",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "11",
+      "words": 1434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf calg",
+          "heading": false
+        },
+        {
+          "term": "fun mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf lmod",
+          "heading": false
+        },
+        {
+          "term": "mathbf cat",
+          "heading": false
+        },
+        {
+          "term": "text mathsf",
+          "heading": false
+        },
+        {
+          "term": "colon mathsf",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathsf",
+          "heading": false
+        },
+        {
+          "term": "category mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "## $\\mu$-Categories We let $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$ be the $(2,\\infty)$-category of presentable $(1,\\infty)$-categories and right adjoints (i.e. limit preserving accessible $\\infty$-functors). We have the corresponding $(2,\\infty)$-category $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^{R}_{pr})$, of morphisms in $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$. For any object $f \\colon T' \\to T$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002--categories-of-modules",
+      "number": null,
+      "title": "-Categories of modules",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf calg",
+          "heading": false
+        },
+        {
+          "term": "text mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf mod",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow mathsf",
+          "heading": false
+        },
+        {
+          "term": "theta text",
+          "heading": false
+        },
+        {
+          "term": "map mathsf",
+          "heading": false
+        },
+        {
+          "term": "theta infty",
+          "heading": false
+        },
+        {
+          "term": "colon theta",
+          "heading": false
+        }
+      ],
+      "extract": "To conclude this part on $\\Theta$-categories, we will define a $\\Theta$-category of left $B$-modules for a given $\\Theta$-algebra $B \\in \\Theta\\text{-}\\mathsf{CAlg}(T^\\Theta)$. To this end, we first consider the underlying commutative algebra $B_0:=U_{E_\\infty}^{\\Theta}(B)$ and the corresponding symmetric monoidal $\\infty$-category $\\mathsf{LMod}_{B_0}(T)$ of left $B_0$-modules in $T$ endowed with its natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-tannaka-duality",
+      "number": null,
+      "title": "Tannaka duality",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we fix a commutative ground ring $k$. We denote by $\\mathbf{St}_k$ the $\\infty$-category of stacks on the big site of affine $k$-schemes endowed with the fpqc topology.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004--categories-of-quasi-coherent-and-ind-perfect-sh",
+      "number": null,
+      "title": "-Categories of quasi-coherent and ind-perfect sheaves",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": "15",
+      "labelEnd": "21",
+      "words": 2000,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf perf",
+          "heading": false
+        },
+        {
+          "term": "mathsf qcoh",
+          "heading": false
+        },
+        {
+          "term": "mathsf calg",
+          "heading": false
+        },
+        {
+          "term": "sca text",
+          "heading": false
+        },
+        {
+          "term": "category sca",
+          "heading": false
+        },
+        {
+          "term": "functor sca",
+          "heading": false
+        },
+        {
+          "term": "lsym theta",
+          "heading": false
+        },
+        {
+          "term": "mathrm lsym",
+          "heading": false
+        }
+      ],
+      "extract": "For a commutative $k$-algebra $A$, we consider $\\mathsf{QCoh}(\\mathbf{Spec}\\, A)$, also denoted by $\\mathsf{QCoh}(A)$, the symmetric monoidal $\\infty$-category of complexes of $A$-modules. When $A$ varies in commutative $k$-algebras this defines an fpqc-stack in presentable symmetric monoidal $\\infty$-categories $$\\mathsf{QCoh}\\colon \\mathbf{Aff}_k^{op} \\longrightarrow \\infty\\text{-}\\mathbf{Cat}_{pr}^\\otimes.$$ We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-tannakian--categories-and-tannakian-gerbes",
+      "number": null,
+      "title": "Tannakian -categories and Tannakian gerbes",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 716,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm lsym",
+          "heading": false
+        },
+        {
+          "term": "lsym colon",
+          "heading": false
+        },
+        {
+          "term": "mathsf qcoh",
+          "heading": false
+        },
+        {
+          "term": "mathsf fib",
+          "heading": false
+        },
+        {
+          "term": "lsym big",
+          "heading": false
+        },
+        {
+          "term": "mathsf perf",
+          "heading": false
+        },
+        {
+          "term": "widehat mathsf",
+          "heading": false
+        },
+        {
+          "term": "simeq mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "For the sake of simplicity we will only deal with the neutral case in the present work. ::: df A *neutralized $k$-linear Tannakian $\\Theta$-category* is a map of $k$-linear $\\Theta$-categories $$\\omega\\colon T^\\Theta \\longrightarrow \\widehat{\\mathsf{Perf}}{}^{\\mathrm{LSym}}(k)\\simeq \\mathsf{QCoh}^{\\mathrm{LSym}}(k)$$ satisfying the following conditions. 1. The underlying presentable symmetric monoidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-tannakian-duality-theorem",
+      "number": null,
+      "title": "The Tannakian duality theorem",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 29,
+      "labelStart": "23",
+      "labelEnd": "29",
+      "words": 1804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf fib",
+          "heading": false
+        },
+        {
+          "term": "mathsf perf",
+          "heading": false
+        },
+        {
+          "term": "mathrm lsym",
+          "heading": false
+        },
+        {
+          "term": "mathsf qcoh",
+          "heading": false
+        },
+        {
+          "term": "stack mathsf",
+          "heading": false
+        },
+        {
+          "term": "simeq mathsf",
+          "heading": false
+        },
+        {
+          "term": "widehat mathsf",
+          "heading": false
+        },
+        {
+          "term": "tannakian duality",
+          "heading": true
+        }
+      ],
+      "extract": "We start by investigating the morphism $\\beta$. ::: thm []{#t1 label=\"t1\"} Let $T^\\Theta$ be a neutralized Tannakian $\\Theta$-category over $k$. Then the following hold. 1. The unit morphism of $\\Theta$-categories $\\beta_{T^\\Theta}\\colon T^\\Theta \\to \\mathsf{QCoh}^{\\mathrm{LSym}}(\\mathsf{Fib}^{\\mathrm{LSym}}_*(T^\\Theta))$ induces an equivalence of symmetric monoidal $\\infty$-categories $$T \\simeq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-positive-tor-dimension-descent",
+      "number": null,
+      "title": "Positive tor-dimension descent",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": null,
+      "words": 869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tor-dimension",
+          "heading": true
+        },
+        {
+          "term": "joost nuiten",
+          "heading": false
+        },
+        {
+          "term": "bertrand toen",
+          "heading": false
+        },
+        {
+          "term": "bertrand toën",
+          "heading": false
+        },
+        {
+          "term": "ludmil katzarkov",
+          "heading": false
+        },
+        {
+          "term": "tony pantev",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial diagram",
+          "heading": false
+        },
+        {
+          "term": "groupe fondamental",
+          "heading": false
+        }
+      ],
+      "extract": "Positive tor-dimension descent Let T be a stable presentable symmetric monoidal ∞-category endowed with a non-degenerate and multiplicative t-structure. For a morphism of commu- tative algebras u: 1 →B in T, we can consider the co-nerve of u, which is a 29 coaugmented cosimplicial object CN(u)∗: ∆+ −→CAlg(T) sending n ≥−1 to B⊗n+1. Tensoring along 1 →CN(u)∗yields a colimit preserving ∞-functor ψ: T = 1-Mod(T) →lim",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathsf calg",
+      "heading": false
+    },
+    {
+      "term": "infty mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathsf qcoh",
+      "heading": false
+    },
+    {
+      "term": "mathsf perf",
+      "heading": false
+    },
+    {
+      "term": "colon mathsf",
+      "heading": false
+    },
+    {
+      "term": "text mathsf",
+      "heading": false
+    },
+    {
+      "term": "categories mathsf",
+      "heading": false
+    },
+    {
+      "term": "category mathsf",
+      "heading": false
+    },
+    {
+      "term": "functor mathsf",
+      "heading": false
+    },
+    {
+      "term": "fun mathsf",
+      "heading": false
+    },
+    {
+      "term": "simeq mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathsf lmod",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2508.03145v1"
+  }
+}

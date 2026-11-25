@@ -1,0 +1,469 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s0273-0979-1985-15304-2",
+  "blocks": [
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/conj-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "conj-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "If L is not amphicheiral, VL~ ^ VL. There is some evidence for this conjecture, but only $10 hangs on it. In this direction we have the following result, where b is in £?n, 6+ is the sum of the positive exponents of 6, and b- is the (unsigned) sum of the negative ones in some expression for b as a word on the usual generators.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-10.md",
+      "narrative": null,
+      "content": "If the greatest common divisor of the exponents ofbE Bn is more than 1, then the braid index of bA is n. More interesting examples can be obtained by using generators and rela- tions for certain finite groups; e.g., the finite simple group of order 25,920 (see [10, 7]). In general, the trace invariant can probably be used to determine the braid index in a great many cases. Note also that the trace invariant detects the kernel of rt.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-12",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-12.md",
+      "narrative": null,
+      "content": "For transcendental £, b G kerrt if and only ifVb*{t) = ( _ ( t + l ) / v / t ) n - l . For transcendental t, rt is very likely to be faithful. There is an alternate way to calculate VL without first converting L into a closed braid. In [6] Conway describes a method for rapidly computing the Alexander polynomials of links inductively. In fact, his first identity suffices in principle—see [11]. This identity is as follows. Let L+,L~', and L be links related as in Figure 2, the rest of the links being identical. Then AL+ - A L- = (y/t - l/y/i)AL. X X L+ r- FlGURE 2 A POLYNOMIAL INVARIANT FOR KNOT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-14",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-14.md",
+      "narrative": null,
+      "content": "For any link L, V L ( - 1 ) = A L ( - 1 ) . That the trace invariant may always be calculated by using Theorem 12 follows from the proof of the same thing for the Alexander polynomial. We urge the reader to try this method on, say, the trefoil knot. The special nature of the algebras An when t is a relevant root of unity can be exploited to give information about VL at these values.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-19",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-19.md",
+      "narrative": null,
+      "content": "A K(-l) = 1 or 5 (mod8). When t — i the algebras An are the complex Clifford algebras. This to- gether with a recent result of J. Lannes [13] allows one to show the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-21",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-21.md",
+      "narrative": null,
+      "content": "A K ( - 1 ) = 1 or 5 (mod8) when the Arf invariant is 0 or 1, respectively. This is an alternate proof of a result in Levine [14]; also see [11, p. 155]. Note also that Corollary 20 allows one to define an Arf invariant for links as V(i). It may be zero and is always plus or minus a power of two otherwise. The values of V at e7™/3 are also of considerable interest, as the algebra An is then related to a kind of cubic Clifford algebra. Also, in this case, rt(Bn) is always a finite group, so one can obtain a rapid method for calculating V (t) without knowing V completely. We have included this v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-24",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-24.md",
+      "narrative": null,
+      "content": "If K is a knot and \\AK{Ï)\\ > 3, then K cannot be represented as a closed 3 braid. Of the 59 knots with 9 crossings or less which are known not to be closed 3 braids, this simple criterion establishes the result for 43 of them, at a glance.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/cor-sec-front-matter-25",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "cor-sec-front-matter-25.md",
+      "narrative": null,
+      "content": "If K is a knot and AK(e27ri/5) > 6.5, then K cannot be represented as a closed 4 braid. For n > 4 there should be no simple relation with the Alexander poly- nomial, since the other direct summands of rt look less and less like Burau representations. In conclusion, we would like to point out that the ç-state Potts model could be solved if one understood enough about the trace invariant for braids resembling certain braids discovered by sailors and known variously as the \"French sinnet\" (sennit) or the \"tresse anglaise\", depending on the nationality of the sailor. See [21, p. 90]. The author wo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/def-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "def-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "If L is a tame oriented classical link, the trace invariant VL(^) is defined by VL(t) = (-(t + l)/Vt)n-1tr(rt(b)) for any (6, n) such that 6A = L. The Hecke algebra approach shows the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/def-sec-front-matter-18",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "def-sec-front-matter-18.md",
+      "narrative": null,
+      "content": "If K is a knot, define WK to be the Laurent polynomial WK(t) = (l-VK(t))/(l-t3)(l-t). Amphicheirality is less obvious for W. In fact, WK~{t) = 1/£ 4WK(1/£). It is amusing that for W the unknot is 0 and the trefoil is 1. The connected sum is also less easy to see in the W picture. For the record the formula is ^ W K 2 = WKl + WK2 - (1 - t)(l - t*)WKlWK2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "BULLETIN (New Series) OF THE \nAMERICAN MATHEMATICAL SOCIETY \nVolume 12, Number 1, January 1985 \nA POLYNOMIAL INVARIANT FOR KNOTS \nVIA VON NEUMANN ALGEBRAS1 \nBY VAUGHAN F. R. JONES2 \nA theorem of J. Alexander [1] asserts that any tame oriented link in 3-space \nmay be represented by a pair (6, n), where b is an element of the n-string braid \ngroup Bn. The link L is obtained by closing 6, i.e., tying the top end of each \nstring to the same position on the bottom of the braid as shown in Figure 1. \nThe closed braid will be denoted bA. \nThus, the trivial link with n components is represented by the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "The number (-(t + l ) / v ^ ) n - 1 tr(rt{b)) for b in Bn depends only on the isotopy class of the closed braid bA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "If the link L has an odd number of components, VL(£) is a Laurent polynomial over the integers. If the number of components is even, VL{t) is \\fi times a Laurent polynomial. The reader may have observed that the von Neumann algebra structure (i.e., the * operation) and condition (VI) are redundant for the definition of Visit). This explains why VL can be extended to all values of t except 0. However, it must be pointed out that for positive t and the relevant roots of unity, the presence of positivity gives a powerful method of proof. The trace invariant depends on the oriented link but not on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "VL~{t) = VL(l/t). Thus, the trace invariant can be used to detect a lack of amphicheirality. It seems to be very good at this. A glance at Table 1 shows that it distin- guishes the trefoil knot from its mirror image and hence, via Theorem 6, it distinguishes the two granny knots and the square knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "Ifb+— 36_ — n-f 1 is positive, then bA is not amphicheiral. For b- = 0, i.e., positive braids, this follows from a recent result of L. Rudolf [21]. Also, if the condition of the theorem holds, we conclude that bA is not the unknot. This is similar in kind to a recent result of D. Bennequin [3]. The connected sum of two links can be handled in the braid group provided one pays proper attention to the components being joined. Let us ignore the subtleties and state the following (where # denotes the connected sum).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "V L I # L 2 =VLlVL2. As evidence for the power of the trace invariant, let us answer two questions posed in [4]. Both proofs are motivated by the fact, shown in [10], that rtiBn) is sometimes finite. V. F. R. JONES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-08.md",
+      "narrative": null,
+      "content": "For every n there are infinitely many words in Bn+\\ which give close braids inequivalent to closed braids coming from elements of the form Us~lVsn, where U and V are in Bn. Explicit examples are easy to find; e.g., all but a finite number of powers of s^1S2Ss will do.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "SEE [4 P. 217, Q. 8]",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-09.md",
+      "narrative": null,
+      "content": "If b is in Bn and there is an integer k greater than 3 for which b G kerrt, t = e2lK%lk, then bA has braid index n. Here the braid index of a link L is the smallest n for which there is a pair (6, n) with bA = L. The kernel of rt is not hard to get into for these values oft.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-11.md",
+      "narrative": null,
+      "content": "For t = e2lx%lk,k = 3,4,5,..., Vb*(t) = (-2cos7r/A:)n-1 if and only ifbE ker rt (for b G Bn).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-13.md",
+      "narrative": null,
+      "content": "l/tVL- -tVL+ = {Vt-l/Vt)VL.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-15.md",
+      "narrative": null,
+      "content": "If K is a knot then VK{e27Tl/s) = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-16",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-16.md",
+      "narrative": null,
+      "content": "VL(1) = (-2) p _ 1, where p is the number of components ofL. A more subtle analysis at t = 1 via the Temperley-Lieb-Pimsner-Popa representation gives the next result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-17",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-17.md",
+      "narrative": null,
+      "content": "If K is a knot then d/dtVK{l) = 0. It is thus sensible to simplify the trace invariant for knots as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-20",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-20.md",
+      "narrative": null,
+      "content": "If K is a knot the Arf invariant is of K is WK{Ï)-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-22",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-22.md",
+      "narrative": null,
+      "content": "Ifbin B% has exponent sum e, and bA is a knot, then Vb, (t) = *e/2(l + te + t + 1/t - t<'2-\\l +1 4-12)AÖA (*)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-23",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-23.md",
+      "narrative": null,
+      "content": "Ifbin B± has exponent sum e, and bA is a knot, then rev{t) + tev{i/t) =(r3/2 + r1'2 + tx>2 + t^2)(te^2 + rc'2) - ( r 2 + r 1 + 2 + t + t2)A(t) (where V = V&A and A = A&A). These formulas have many interesting consequences. They show that, ex- cept in special cases, e is a knot invariant. They also give many obstructions to being closed 3 and 4 braids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0273-0979-1985-15304-2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "- 1 -iyr",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1---1--iyr.md",
+      "narrative": null,
+      "content": "-iyr \ni \n- i \n- 3 \n- 1 \ni{S \n1 \n1 \n11 \n1 \ni i j r \ni - i j ï \ni-i \ni-i \ni-i \n1-ifiT \n11 \n11 \n| 3 \n1-ifF \nlijT \njiJT \no 1 \no 1 \n- 2 | \no 1 \no 1 \n- 4 | \n-1 1 \n- 3 | \no I \no 1 \no 1 \n0 \n0 \n- 6 \n- 3 \n- 6 \n1 \n- 4 \n- 3 \n1 \n- 7 \n1-2 \n1-3 \n| - 4 \n1-2 \n1-7 \n| - 4 \n1-3 \n1-1 \n|o \n1-2 \n| - 4 \n| - 4 \n|o \n1 -1 \n|o \n0 \n1 \n- 1 \n1 1 0 1 \n1 0 1 \n- 1 0 - 1 \n- 1 1 - 1 \n1 - 1 1 \n1 1 1 1 1 0 1 \n1 0 1 0 1 \n1 1 0 2 0 1 \n1 0 2 0 1 \n1 1 0 2 - 1 1 \n1 - 1 2 - 1 \n1 - 2 1 - 1 \n- 1 0 - 1 0 - 1 \n1 - 1 1 - 1 \n- 1 0 - 2 0 - 1 \n- 1 0 - 2 1 - 1 \n1 - 2 1 - 1 \n- 1 1 - 2 1 - 1 \n| 1 - 1 2 - 1 1 \n| 1 - 1 2 - 1 1 \n1 - 1 1 - 2 1 - 1 \n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-universality",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-universality",
+  "kind": "proposition",
+  "title": "Confinement universality: the confinement stage depends only on the flavours",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quark-antiquark-production",
+    "papers/quantum-observable-universe/blocks/def-photon"
+  ],
+  "tags": [
+    "confinement",
+    "universality",
+    "photon",
+    "polarization",
+    "independence",
+    "strong-force"
+  ],
+  "leanRef": "qou:QOU.Confinement.confinementUniversality",
+  "text": "confinement-universality.md",
+  "provenance": "authored"
+}

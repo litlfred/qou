@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-vertex-algebra-jet-relations",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:vertex-algebra-jet-relations",
+  "kind": "proposition",
+  "title": "QU/QUO and cohomological relations on the jet bundle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vertex-algebra-relations",
+    "papers/quantum-observable-universe/blocks/rem-prolongation-categorical"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987",
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "vertex-operator",
+    "jet-prolongation",
+    "brane-tower",
+    "hecke-algebra",
+    "knot-coordinates",
+    "relations"
+  ],
+  "leanRef": "qou:QOU.VertexAlgebra.JetRelations.euler_level_stable",
+  "text": "vertex-algebra-jet-relations.md",
+  "leanSource": "vertex-algebra-jet-relations.lean",
+  "provenance": "authored"
+}

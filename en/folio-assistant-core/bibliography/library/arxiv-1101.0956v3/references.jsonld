@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1101.0956v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES",
+      "dcterms:creator": [
+        "ARCUS¸, CONSTANTIN M."
+      ],
+      "dcterms:issued": "D:20210111",
+      "dcterms:identifier": "https://arxiv.org/abs/1101.0956",
+      "dcterms:abstract": "In this paper we present the category of generalized Lie algebroids. Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.",
+      "dcterms:source": "library/arxiv-1101.0956v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1101.0956v3"
+    }
+  ]
+}

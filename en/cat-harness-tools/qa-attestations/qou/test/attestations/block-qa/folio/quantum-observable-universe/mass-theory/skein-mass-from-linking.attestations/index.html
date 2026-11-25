@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1oah1r3a3vc.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1oah1r3a3vc","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;,
+        &quot;lean&quot;: &quot;49e667d1d6d9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;,
+        &quot;lean&quot;: &quot;49e667d1d6d9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;proof-no-placeholder-stub&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;lean&quot;: &quot;0504751550a0&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-02&quot;,
+        &quot;agent_skill&quot;: &quot;local/lean-proof-vacuity-audit&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-02T17:07:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32&quot;,
+      &quot;notes&quot;: &quot;4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;Statement contains only the bare claim without physical interpretation.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:57:01.145Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;The sibling Lean file folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.lean is missing entirely.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.md:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-fable-5-1&quot;,
+        &quot;agent_date&quot;: &quot;2026-09-03T20:30:57Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/dispatch-agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-09-03T20:30:57Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3&quot;,
+      &quot;notes&quot;: &quot;Statement mixes a Laurent Skein polynomial Q(q) with the real hyperbolic volume Vol(K_i), which is the volume-density shape this mixed chapter carries, and the archimedean side is explicitly flagged by the §7c authorNote in the .ts; prior fail was a non-wall &#39;Lean sibling missing&#39; refusal.&quot;,
+      &quot;evidence&quot;: &quot;REGIME. The chapter is mixed, not substrate: mass-theory.ts:3-22 docstring names &#39;geometric, archimedean, and physical faces&#39; consuming an algebraic core stated upstream, and _folio-chapter-profiles.qou.ts:88-90 admits {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} for mass-theory. The criterion&#39;s enumerated substrate chapters (qa-criteria-registry.ts:383-386: braids-and-knots, quantum-observable-universes, models-of-qous, lifting-and-descent, q-geometric-langlands, brings-surface) do not include mass-theory, so FAIL branch 1 does not fire on chapter grounds. The block sits in section &#39;Algebraic face: transfer matrices, Skein mass, and Markov corrections&#39; &gt; subsection &#39;Transfer matrices and Skein mass&#39; (mass-theory.ts:119-145, block at :143); every adjudicated peer in that subsection passes this criterion (transfer-matrix-operator, beta-decay-transfer-matrix, transfer-matrix-identities, ground-state-ordering, skein-generation). STATEMENT TOKENS (skein-mass-from-linking.md). Archimedean: line 10 &#39;Vol(K_i)&#39; — hyperbolic volume, a real transcendental (the only genuinely R-valued object). Algebraic/generic: line 15 &#39;Q(q) in Z[q^{+-1}]&#39; (Laurent ring), line 16 &#39;hbar_q = 1 - q^{-1}&#39; (needs q a unit only), line 10 division by hbar_q^2 (unit/field, no ordering). Regime-neutral: line 1-2 mass functional m and hadron H (fraktur physical observable, but a functional not a numeric), line 7 m(L_Hopf), lines 13-14 &#39;binding energy&#39;/&#39;constituent mass&#39; are interpretive labels. NOT present anywhere in the .md: Real.sqrt/log/exp/cos, numeric q or q_0, MeV, m_e, CODATA, order hypotheses, limits over R. Outside the statement: none (the .md is the statement alone; the proof is a separate block). ADJUDICATION. The statement mixes a Laurent-ring Skein polynomial with a real volume — exactly the volume-density shape m = Vol(K)*rho/hbar_q^2 that this chapter exists to carry (cf. peers thurston-volume-additivity, volume-tower-decomposition, algebraic-quantum-volume, all pass). The side IS flagged: skein-mass-from-linking.ts:12-23 carries a §7c authorNote (kind &#39;note&#39;, 2026-08-08) stating that Vol_K : N -&gt; R forces the R and that &#39;the block sits on the archimedean side of the §7c wall by construction&#39; — the §4d-sanctioned home for such a banner, so the WARN branch (&#39;mixes both regimes without flagging which side&#39;) is not met. The .md also self-scopes the archimedean term (line 14: &#39;zero for torus-knot constituents&#39;). Not FAIL branch 2 either: the statement is not a purely algebraic identity misplaced in an archimedean chapter. Hence PASS: the statement&#39;s regime matches the chapter&#39;s mixed regime and is explicitly specialised. PRIOR. The 2026-06-28 &#39;fail&#39; (reviewed_sha 6b830a63, field_hash md 8d1b92cd60e8/ts 0c025ddcf791, both since drifted) is grounded solely on &#39;sibling Lean file is MISSING&#39; — not a wall-side matter for a criterion with depends_on [&#39;md&#39;]; it never examined the statement. Side note: the manifest&#39;s lean.ref &#39;qou:QOU.BraidsKnots.skein_mass_from_linking&#39; (ts:5) resolves to the library file folio/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean (candidate-2 resolution per AGENTS.md §0a; no sibling is required and a shadowing stub would be forbidden), so even the prior&#39;s factual premise was misleading; validation is &#39;not_checked&#39; (ts:6). Lean not built, per instructions.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:57:01.817Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;,
+        &quot;lean&quot;: &quot;89033b63fd2e&quot;,
+        &quot;lean_statement&quot;: &quot;ad7ba99e80d6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:claude/sap-bucket-c-2026-09-02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-09-03T04:29:13.166Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6627023d60b295edddabc534ba1f4b262b497600&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;lean/QOU/BraidsKnots/skein_mass_from_linking.lean does not establish the .md claim, and its module docstring asserted the opposite. Before this branch the docstring read \&quot;It does not carry the Skein mass identity as a projected field\&quot; and \&quot;states the real manuscript identity as a theorem ... it is unproved (sorry + manuscript citation)\&quot;. Both were false: SkeinMassFromLinkingContext carried the identity as the field mass_identity, and the theorem body was ctx.mass_identity - a projection, no sorry (AGENTS.md 3b-cond item 5). Only the rename claim_skein_mass_from_linking -&gt; mass_identity had happened; the class docstring recorded that honestly while the module docstring above it did not.&quot;,
+      &quot;notes&quot;: &quot;Repaired to AGENTS.md 1a disposition 3 (name the claim over parameters, assert nothing). A sorry would have been wrong and that is now proved in-file: not_skeinMassDecomposition_of_free_data refutes the decomposition at mass=1, Q=mass_Hopf=0, n=0. Two things make disposition 3 recover real content here, unlike the six-term formula: hbarQ q = 1 - q inverse is a definition rather than a data field with a constraint, so the manuscript relation holds by construction; and skein_mass_torus_constituents is DERIVED from the named Prop as a hypothesis, so the file carries a real implication rather than only a schema. Verdict stays fail: the mass functional, the terminal Skein resolution, and Q being the Skein polynomial (it is a real number here, not a Laurent polynomial) are unencoded. Note the manuscript proof block asserts the decomposition too and derives only the torus case, so the gap is the manuscript version, not this file. Verified lean-direct exit 0, sorry-free. Bean qou-z9ws.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;,
+        &quot;lean&quot;: &quot;89033b63fd2e&quot;,
+        &quot;lean_statement&quot;: &quot;ad7ba99e80d6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:claude/sap-bucket-c-2026-09-02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-09-03T04:29:36.689Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6627023d60b295edddabc534ba1f4b262b497600&quot;,
+      &quot;notes&quot;: &quot;Repaired on this branch. SkeinMassFromLinkingContext is gone; skein_mass_from_linking is a Prop-valued def over parameters and nothing projects a conclusion field. The one theorem that concludes the .md claim (skein_mass_torus_constituents) takes the decomposition as an explicit hypothesis and derives the torus-knot case from it. Verified lean-direct exit 0. Bean qou-z9ws.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-false-claim.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-vacuous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-circular.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-overclaim.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-hidden-dof.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-non-sequitur.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-citation-misuse.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-definitional-ambiguity.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-empirical-fragility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-physical-implausibility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-reproducibility.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;verdict&quot;: &quot;open-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The referenced Lean sibling file is missing, preventing formal verification of the claims.&quot;,
+      &quot;evidence&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8d1b92cd60e8&quot;,
+        &quot;ts&quot;: &quot;0c025ddcf791&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:46.050Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No Lean sibling required; narrative matches the expected configuration.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-06T22:30:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:05:20.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6f08d3eb3ef3c7a554dee082cad3fce24535f718&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.730Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No assert-by-denying constructions.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.776Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;A single statement plus its symbol glosses.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;Zero em-dashes.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.852Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No three-item lists.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.894Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;Ends on the definition of hbar_q.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.934Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No narrated emphasis.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:27.973Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No echo within the block.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:28.012Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:28.053Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;No unqualified maxima.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;356ff2891c22&quot;,
+        &quot;ts&quot;: &quot;a74d0e652bea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:53:28.093Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;0524a58c85a0ef5db1cd3e3d415cf0183225f64b&quot;,
+      &quot;evidence&quot;: &quot;One statement sentence with a displayed formula.&quot;,
+      &quot;notes&quot;: &quot;CHECKED: hbar_q = 1 - q^{-1} is CORRECT per the canonical derivation chain, and the constituent-mass gloss (&#39;zero for torus-knot constituents&#39;) is internally consistent with Vol = 0 on torus knots. TWO NON-TRAP ITEMS. (1) The constituent term Vol(K_i)/hbar_q^2 carries neither the m_e scale nor the per-block density rho(K) of the canonical form m(K) = m_e Vol(K) rho(K)/hbar_q^2, so the two forms do not agree dimensionally; the block does not state a unit convention. Read as an absolute hadron mass, m(H) is also excised as a framework prediction (2026-08-11). (2) The PROOF sibling proves nothing — it re-displays this same formula with underbraces, re-glosses the same two symbols, then specialises to Vol = 0; see the verdict recorded there.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

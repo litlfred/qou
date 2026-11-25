@@ -1,0 +1,420 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.2849v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $(X_n)_{n \\in \\N}$ be a sequence of real-valued random variables. In the series of papers \\cite{JKN11,DKN11,KN10,KN12,FMN13}, we introduced the notion of mod-Gaussian convergence (and more generally of mod-convergence with respect to an infinitely divisible law $\\phi$):\n\n\\begin{definition}\\label{def:mod}\nThe sequence $(X_n)_{n \\in \\N}$ is said to converge in the mod-Gaussian sense with parameters $t_n \\to +\\infty$ and limiting (or residue) function $\\theta$ if, locally uniformly in $\\R$,\n$$\\esper[\\E^{\\I t X_n}]\\,\\E^{\\frac{t_n\\,t^2}{2}} = \\theta(t) \\,(1+o(1)),$$\nwhere $\\theta$ is a continuo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS\nFOR MODELS OF STATISTICAL MECHANICS\nPIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI\nABSTRACT. In this paper we complete our understanding of the role played by the lim-\niting (or residue) function in the context of mod-Gaussian convergence. The question\nabout the probabilistic interpretation of such functions was initially raised by Marc Yor.\nAfter recalling our recent result which interprets the limiting function as a measure of\n\"breaking of symmetry\" in the Gaussian approximation in the framework of general\ncentral limit theorems type results, we introd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex convergence and interpretation of the residue",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-complex-convergence-and-interpretation-of-the.md",
+      "narrative": null,
+      "content": "\\label{subsec:brisesymm}\nWe consider again a sequence of real-valued random variables $(X_n)_{n \\in \\N}$, but this time we assume that their Laplace transforms $\\esper[\\E^{zX_n}]$ are convergent in an open disk of radius $c>0$. In this case, they are automatically well-defined and holomorphic in a band of the complex plane $\\mathcal{B}_c = \\{z \\in \\CC,\\,\\,|\\mathrm{Re}(z)|<c\\}$ (see \\cite[Theorem 6]{LS52}, and \\cite{Ess45} for a general survey of the properties of Laplace and Fourier transforms of probability measures).\\medskip\n\n\\begin{definition}\\label{def:mod2}\nThe sequence $(X_n)_{n \\in \\N}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The method of joint cumulants",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-12-the-method-of-joint-cumulants.md",
+      "narrative": null,
+      "content": "\\label{subsec:methjoint}\nThe appearance of an exponential of a monomial $Kx^{r \\geq 3}$ as the limiting residue in mod-Gaussian convergence is a phenomenon that occurs not only for sums of i.i.d.~random variables, but more generally for sums of possibly non identically distributed and/or dependent random variables. For instance, \\vspace{1mm}\n\\begin{enumerate}\n\\item the number of zeroes of a random Gaussian analytic function $\\sum_{k=0}^\\infty (\\mathcal{N}_{\\CC})_k\\,z^k$ in the disk of radius $1-\\frac{1}{n}$;\\vspace{1mm}\n\\item the number of triangles in a random Erd\\\"os-R\\'enyi graph $G(n,p)$;\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic models",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-13-basic-models.md",
+      "narrative": null,
+      "content": "As mentioned above, the goal of the paper is to study the phenomenon of mod-Gaussian convergence for probabilistic models stemming from statistical mechanics; this extends the already long list of models for which we were able to establish this asymptotic behavior of the Fourier or Laplace transforms (\\cite{JKN11,KN12,FMN13}). More precisely, we shall focus on one-dimensional spin configurations, which already yield an interesting illustration of the theory and technics of mod-Gaussian convergence. Given two parameters $\\alpha \\in \\R$ and $\\beta \\in \\R_+$, we recall that the Curie-Weiss model",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Gaussian convergence for the Ising model: the transfer matrix method",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-2-mod-gaussian-convergence-for-the-ising-model-t.md",
+      "narrative": null,
+      "content": "\\label{sec:ising}\n\nIn this section, $(\\sigma(i))_{i \\in \\lle 1,n\\rre}$ is a random configuration of spins under the Ising measure \\eqref{eq:isingmeasure}, and $M_n=\\sum_{i=1}^n \\sigma(i)$ is its magnetization. The mod-Gaussian convergence of $M_n$ after appropriate rescaling can be obtained by two different methods: the \\emph{transfer matrix method}, which yields an explicit formula for $\\esper[\\E^{zM_n}]$; and the \\emph{cumulant method}, which gives an explicit combinatorial formula for the coefficients of the power series $\\log \\esper[\\E^{zM_n}]$. We use here the transfer matrix method, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Gaussian convergence in L1 and the Curie-Weiss model",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-3-mod-gaussian-convergence-in-l1-and-the-curie-w.md",
+      "narrative": null,
+      "content": "\\label{sec:l1}\n\nIn this Section, $(X_n)_{n \\in \\N}$ is a sequence of random variables with entire moment generating series $\\esper[\\E^{zX_n}]$, and we assume the following:\\vspace{2mm}\n\\begin{enumerate}[(A)]\n\\item One has mod-Gaussian convergence of the Laplace transforms, \\emph{i.e.}, there is a sequence $t_n \\to +\\infty$ and a function $\\psi$ continuous on $\\R$ such that\n$$\\psi_n(t)=\\esper[\\E^{tX_n}]\\,\\E^{-\\frac{t_n\\,t^2}{2}}$$\nconverges locally uniformly on $\\R$ to $\\psi(t)$.\\label{hyp:laplacemod}\\vspace{1mm}\n\\item Each function $\\psi_n$, and their limit $\\psi$ are in $\\mathrm{L}^1(\\R)$.\\la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ellis-Newman lemma and deconvolution of a large Gaussian noise",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-31-ellis-newman-lemma-and-deconvolution-of-a-lar.md",
+      "narrative": null,
+      "content": "Suppose for a moment that  hypothesis \\eqref{hyp:laplacemod} is replaced by the stronger hypotheses of Definition \\ref{def:mod2}, with $c=+\\infty$ and therefore $\\mathcal{B}_c=\\CC$. Fix then $0<a<b$, and consider the partial integral $\\esper[\\E^{(X_n)^2/2t_n}\\,\\mathbbm{1}_{t_na \\leq X_n \\leq t_nb}]$. By integration by parts of Riemann-Stieltjes integrals, one has:\n\\begin{align*}\n\\int_{t_na}^{t_nb}\\E^{\\frac{x^2}{2t_n}}\\,\\proba_n[dx] &= \\left[-\\E^{\\frac{x^2}{2t_n}} \\,\\proba_n[X_n \\geq x]\\right]_{t_na}^{t_nb} + \\int_{t_na}^{t_nb} \\frac{x}{t_n}\\,\\E^{\\frac{x^2}{2t_n}}\\,\\proba_n[X_n \\geq x]\\,dx\\\\\n&=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The residue of mod-Gaussian convergence as a limiting law",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-32-the-residue-of-mod-gaussian-convergence-as-a.md",
+      "narrative": null,
+      "content": "We can now state and prove the main result of this Section. We assume the hypotheses \\eqref{hyp:laplacemod} and \\eqref{hyp:l1mod}, and keep the same notation as before.\n\n\\begin{theorem}\\label{thm:mainl1}\nThe following assertions are equivalent:\\vspace{2mm}\n\\begin{enumerate}[(i)]\n\\item The sequence $(\\frac{Y_n}{t_n})_{n \\in \\N}$ is tight.\\label{l1i}\\vspace{1mm}\n\\item The sequence $(\\frac{Y_n}{t_n})_{n \\in \\N}$ converges in law to a variable with density $\\psi(x)/\\int_{\\R}\\psi(x)\\,dx$.\\label{l1ii}\\vspace{1mm}\n\\item The convergence $\\psi_n \\to \\psi$, which is supposed locally uniform on $\\R$, als",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to the Curie-Weiss model",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-33-application-to-the-curie-weiss-model.md",
+      "narrative": null,
+      "content": "\\label{subsec:curieweiss}\nConsider i.i.d.~Bernoulli random variables $(\\sigma(i))_{i \\geq 1}$ with $\\proba[\\sigma(i)=1]=1-\\proba[\\sigma(i)=-1]=\\frac{\\E^{\\alpha}}{2\\,\\cosh\\alpha}$ for some $\\alpha \\in\\R$. We set $U_n=\\sum_{i=1}^n \\sigma(i)$, so that\n\\begin{align*}\n\\esper[\\E^{zU_n}]&=\\left(\\frac{\\cosh (z+\\alpha)}{\\cosh \\alpha}\\right)^n=\\left(\\cosh z + \\sinh z \\,\\tanh \\alpha\\right)^n \\\\\n\\esper\\!\\left[\\E^{z\\,\\frac{U_n-n\\,\\tanh\\alpha}{n^{1/3}}}\\right]&=\\left(\\frac{\\cosh (zn^{-1/3}) + \\sinh (zn^{-1/3}) \\,\\tanh \\alpha}{\\E^{zn^{-1/3}\\,\\tanh \\alpha}}\\right)^n\\\\\n\\log \\esper\\!\\left[\\E^{z\\,\\frac{U_n-n\\,\\t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mixed Curie-Weiss-Ising model",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-34-mixed-curie-weiss-ising-model.md",
+      "narrative": null,
+      "content": "Consider the one-dimensional Ising model of parameter $\\alpha=0$, and $\\beta$ arbitrary. We have shown in Section \\ref{sec:ising} the complex mod-Gaussian convergence of $(n^{-1/4}\\,M_n)_{n \\in \\N}$ with parameters $n^{1/2}\\,\\E^{2\\beta}$ and limiting function $\\psi(z)=\\exp(-(3\\E^{6\\beta}-\\E^{2\\beta})\\,z^4/24)$. Restricted to $\\R$, this limiting function is integrable, and again one has $\\mathrm{L}^1$-mod-convergence. Indeed, recall that \n$$\\esper[\\E^{t M_n}]=\\frac{Z_n(\\IS,t,\\beta)}{Z_n(\\IS,0,\\beta)}=\\frac{1}{2}\\left(a_+(t,\\beta)\\left(\\frac{\\lambda_+(t,\\beta)}{2\\cosh \\beta}\\right)^{n-1}+a_-(t,\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sub-critical changes of measures",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-35-sub-critical-changes-of-measures.md",
+      "narrative": null,
+      "content": "In the mixed Curie-Weiss-Ising model, one may ask  what happens if instead of $\\beta$ and $\\frac{1}{\\E^{2\\beta}}$ one puts arbitrary coefficients for the local and the global interaction. More generally, given a sequence $(X_n)_{n \\in \\N}$ that converges in the $\\mathrm{L}^{1}$-mod-Gaussian sense with parameters $t_n$ and limiting function $\\psi$, one can look at the change of measure\n$$\\qproba_{n}^{(\\gamma)}[dx]=\\frac{\\E^{\\frac{\\gamma x^2}{2t_n}}}{\\esper\\!\\left[\\E^{\\frac{\\gamma (X_n)^2}{2t_n}}\\right]}\\,\\proba_n[dx]$$\nwith $\\gamma \\in (0,1)$ (for $\\gamma >1$, the change of measure is not neces",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random walks changed in measure",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-011-36-random-walks-changed-in-measure.md",
+      "narrative": null,
+      "content": "\\label{subsec:randomwalkchange}\nIn this section, we shall make a brief excursion in the higher dimensions. Since we do not want to enter details on mod-Gaussian convergence for random vectors (for which we refer the reader to \\cite{KN12} and \\cite{FMN13}), we shall only consider the simple case $X=(X^{(1)},\\ldots,X^{(d)})$ is a random vector with values in $\\R^d$ such that $\\mathbb E[\\exp(z_1 X^{(1)}+\\cdots+z_d X^{(d)})]$ is entire in $\\CC^d$. We shall say that the sequence $(X_n)$ of random vectors converges in the complex  mod-Gaussian sense with parameter $t_n$ and limiting function $\\psi(z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local limit theorem and rate of convergence in the Ellis-Newman limit theorem",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-4-local-limit-theorem-and-rate-of-convergence-in.md",
+      "narrative": null,
+      "content": "\\label{sec:rate}\n\nWe keep the same notation as before and note $I_n=\\int_\\R \\psi_n(x)\\,dx$ and $I_\\infty=\\int_\\R \\psi(x)\\,dx$.\nIn this section we wish to provide a quick approach based on Fourier analysis,\\vspace{2mm}\n\n\\begin{enumerate}\n\\item to compute the Kolmogorov distance between the rescaled magnetization $$Y_n/n^{1/2}=M_n/n^{3/4}$$ in the Curie-Weiss model and the random variable $W_\\infty$ with density $\\psi(x)/I_\\infty$, where $\\psi(x)=\\exp(-x^4/12)$. This problem was recently solved in \\cite{EL10} using Stein's method. As in \\cite{EL10}, our method would cover many more general model",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Speed of convergence",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-41-speed-of-convergence.md",
+      "narrative": null,
+      "content": "\\label{subsec:speedofconv}\nGetting back to our special case of the Curie-Weiss model, we denote $X_n=\\frac{1}{n^{1/4}}\\sum_{i=1}^n B_i$ a scaled sum of $\\pm 1$ independent Bernoulli random variables; $Y_n$ the random variable with modified law \n$$\\qproba_n[dy]=\\frac{\\E^{\\frac{y^2}{2n^{1/2}}}\\,\\proba_n[dy]}{\\esper\\!\\left[\\E^{\\frac{(X_n)^2}{2n^{1/2}}}\\right]};$$\n$G_n$ an independent Gaussian random variable of variance $\\frac{1}{n^{1/2}}$; and $W_n=\\frac{Y_n}{n^{1/2}} + G_n$. It follows from the previous results that the law of $W_n$ has density\n$$\\frac{\\psi_n(x)}{I_n}=\\frac{1}{I_n}\\,\\E^{-\\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local limit theorem",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-42-local-limit-theorem.md",
+      "narrative": null,
+      "content": "Combining Proposition \\ref{prop:sizefourier} with Theorem 5 in \\cite{DKN11} on local limit theorems for mod-$\\phi$ convergence, we obtain the following local limit theorem for the magnetization in the Curie-Weiss model:\n\n\\begin{theorem}\nIn the Curie-Weiss model, if we note $M_n$ for the total magnetization, then we have:\n$$\\lim_{n\\to\\infty} n^{1/2}\\, \\proba[n^{-1/4} M_n\\in B]=\\frac{2}{12^{1/4} \\Gamma(\\frac{1}{4})}\\, m(B),$$\nfor relatively compact sets $B$ with $m(\\partial B)=0$, $m$ denoting the Lebesgue measure.\n\\end{theorem}\n\n\\begin{proof}\nWith the notation of \\S\\ref{subsec:speedofconv}, $Y_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Gaussian convergence for the Ising model: the cumulant method",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-015-5-mod-gaussian-convergence-for-the-ising-model-t.md",
+      "narrative": null,
+      "content": "\\label{sec:cumulantspin}\nIn this appendix, we give another combinatorial proof of the mod-Gaussian convergence of the magnetization in the Ising model, without ever computing the Laplace transform of $M_n$. This serves as an illustration of the cumulant method developed in \\cite{FMN13}.\n\\medskip",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Joint cumulants of the spins",
+      "pageStart": 32,
+      "pageEnd": 41,
+      "target": "../sections/sec-016-51-joint-cumulants-of-the-spins.md",
+      "narrative": null,
+      "content": "When $\\alpha=0$, one can realize the Ising model by choosing $\\sigma(1)$ according to a Bernoulli random variable of parameter $\\frac{1}{2}$, and then each sign $X_i=\\sigma(i)\\sigma(i+1)$ according to independent Bernoulli random variables with $$\\proba[X_i=1]=1-\\proba[X_i=-1]=\\frac{\\E^{\\beta}}{2\\cosh \\beta}.$$ \nIn particular, one recovers immediately the value of the partition function $Z_n(\\IS,0,\\beta)=2^n(\\cosh \\beta)^{n-1}$. We then want to compute the joint cumulants of the magnetization $M_n$; by parity, the odd cumulants and moments vanish. By multilinearity, one can expand\n$$\\kappa^{(2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on the cumulants of the magnetization",
+      "pageStart": 41,
+      "pageEnd": 48,
+      "target": "../sections/sec-017-52-bounds-on-the-cumulants-of-the-magnetization.md",
+      "narrative": null,
+      "content": "As explained in the introduction, we now have to gather the estimates given by Theorem \\ref{thm:jointcumulant} to get the asymptotics of the cumulants $\\kappa^{(2r)}(M_n)$ of the magnetization. \n\n\n\\subsubsection{Reordering of indices and compositions} Since the joint cumulants of spins have been computed for ordered spins $i_1\\leq i_2\\leq\\ldots\\leq i_{2r}$, in the right-hand side of the expansion\n $$\\kappa^{(2r)}(M_n)=\\sum_{i_1,\\ldots,i_{2r}=1}^n\\kappa(\\sigma(i_1),\\ldots,\\sigma(i_{2r})),$$\nwe need to reorder the indices $i_1,\\ldots,i_{2r}$, and take care of the possible identities between thes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2849v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[Bax82]\nR. J. Baxter. Exactly Solved Models in Statistical Mechanics. Academic Press, 1982.\n[DKN11] F. Delbaen, E. Kowalski, and A. Nikeghbali. Mod-φ convergence. arXiv:1107.5657v2\n[math.PR], 2011.\n[EL10]\nP. Eichelsbacher and M. Löwe. Stein’s method for dependent random variables occurring in\nstatistical mechanics. Electronic J. Probab., 15(30):962–988, 2010.\n[EN78]\nR. S. Ellis and C. M. Newman. Limit theorems for sums of dependent random variables oc-\ncurring in statistical mechanics. Z. Wahrsch. Verw. Gebiete, 44(2):117–139, 1978.\n[ENR80] R. S. Ellis, C. M. Newman, and J. S. Rosen. Limit the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

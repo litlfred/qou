@@ -1,0 +1,1335 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1909.06744v1",
+  "title": "arxiv-1909.06744v1",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "§1. Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-contents"
+    },
+    {
+      "level": 1,
+      "title": "§2. Springer correspondence for GLn",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-springer-correspondence-for-gln"
+    },
+    {
+      "level": 1,
+      "title": "§3. Springer correspondence for reductive groups",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-springer-correspondence-for-reductive-groups"
+    },
+    {
+      "level": 1,
+      "title": "§4. The interpretation via perverse sheaves",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-the-interpretation-via-perverse-sheaves"
+    },
+    {
+      "level": 1,
+      "title": "§5. The generalized Springer correspondence",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-generalized-springer-correspondence"
+    },
+    {
+      "level": 1,
+      "title": "§6. Geometric realization of Kostka polynomials",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-geometric-realization-of-kostka-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "§8. Springer correspondence for the enhanced variety",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-springer-correspondence-for-the-enhanced-varie"
+    },
+    {
+      "level": 1,
+      "title": "§9. Double Kostka polynomials",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-9-double-kostka-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "§10. Symmetric spaces in algebraic setting",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-10-symmetric-spaces-in-algebraic-setting"
+    },
+    {
+      "level": 1,
+      "title": "§11. Symmetric spaces associated to classical groups",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-11-symmetric-spaces-associated-to-classical-grou"
+    },
+    {
+      "level": 1,
+      "title": "§13. Exotic symmetric space associated to symplectic groups",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-13-exotic-symmetric-space-associated-to-symplect"
+    },
+    {
+      "level": 1,
+      "title": "§14. Springer correspondence for Gιθ",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-14-springer-correspondence-for-gιθ"
+    },
+    {
+      "level": 1,
+      "title": "§15. Springer correspondence for Gιθ",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-15-springer-correspondence-for-gιθ"
+    },
+    {
+      "level": 1,
+      "title": "§16. Generalized Springer correspondence for Gιθ",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-16-generalized-springer-correspondence-for-gιθ"
+    },
+    {
+      "level": 2,
+      "title": "Kξ is a semisimple perverse sheaf on Gιθ",
+      "number": "P",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-p-kξ-is-a-semisimple-perverse-sheaf-on-gιθ"
+    },
+    {
+      "level": 1,
+      "title": "§17. Exotic symmetric spaces of higher level, the case H = SpN",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-17-exotic-symmetric-spaces-of-higher-level-the-c"
+    },
+    {
+      "level": 1,
+      "title": "§19. Symmetric spaces in characteristic 2",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-19-symmetric-spaces-in-characteristic-2"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer correspondence",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": false
+        },
+        {
+          "term": "shoji",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1909.06744v1 [math.RT] 15 Sep 2019 Springer correspondence for symmetric spaces Toshiaki Shoji Abstract. This is a survey on the Springer correspondence for symmetric spaces. We discuss various generalization of the theory of the Springer correspondence for reductive groups to symmetric spaces and exotic symmetric spaces associated to classical groups.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1909.06744v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": null,
+      "title": "§1. Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer correspondence",
+          "heading": false
+        },
+        {
+          "term": "generalized springer",
+          "heading": false
+        },
+        {
+          "term": "character sheaves",
+          "heading": false
+        },
+        {
+          "term": "shoji",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": false
+        },
+        {
+          "term": "spaces associated",
+          "heading": false
+        },
+        {
+          "term": "gln",
+          "heading": false
+        },
+        {
+          "term": "lusztig",
+          "heading": false
+        }
+      ],
+      "extract": "The Springer correspondence is the canonical correspondence between the unipo- tent classes of a connected reductive group G and irreducible representations of the Weyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2] found a way to reformulate the Springer’s theory by means of the theory of per- verse sheaves. In the same paper, he gave a geometric interpretation of Koskta polynomials in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": false
+        },
+        {
+          "term": "case so2n",
+          "heading": false
+        },
+        {
+          "term": "exotic symmetric",
+          "heading": false
+        }
+      ],
+      "extract": "§1. Introduction §2. Springer correspondene for GLn §3. Springer correspondence for reductive groups §4. The interpretation via perverse sheaves 2 §5. The generalized Springer correspondence §6. Geometric realization of Kostka polynomials §7. The enhanced variety GL(V ) × V §8. Springer correspondence for the enhanced variety §9. Double Kostka polynomials §10. Symmetric spaces in algebraic setting §11. Symmetric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-springer-correspondence-for-gln",
+      "number": null,
+      "title": "§2. Springer correspondence for GLn",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "let guni",
+          "heading": false
+        },
+        {
+          "term": "unipo tent",
+          "heading": false
+        },
+        {
+          "term": "h2dx",
+          "heading": false
+        },
+        {
+          "term": "eguni",
+          "heading": false
+        },
+        {
+          "term": "sn-module",
+          "heading": false
+        },
+        {
+          "term": "gln",
+          "heading": true
+        },
+        {
+          "term": "bijection",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout the paper, we assume that k is an algebraically closed ﬁeld of char- acteristic p ≥0, and we consider ¯Ql-sheaves, where ¯Ql is an algebraic closure of the l-adic number ﬁeld Ql with l̸ = p. Note that if p = 0, one can replace k by the com- plex number ﬁeld C, and ¯Ql-sheaves by ordinary C-sheaves. All the representations of ﬁnite groups are considered over ¯Ql ≃C. For a ﬁnite group Γ, we denote by Γ ∧",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-springer-correspondence-for-reductive-groups",
+      "number": null,
+      "title": "§3. Springer correspondence for reductive groups",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "reductive groups",
+          "heading": true
+        },
+        {
+          "term": "springer resolution",
+          "heading": false
+        },
+        {
+          "term": "guni",
+          "heading": false
+        },
+        {
+          "term": "h2dx",
+          "heading": false
+        },
+        {
+          "term": "w-modules",
+          "heading": false
+        },
+        {
+          "term": "spn",
+          "heading": false
+        },
+        {
+          "term": "gln",
+          "heading": false
+        }
+      ],
+      "extract": "The Springer correspondence for G = GLn gives a bijective correspondence between unipotent classes of G and irreducible representations of the Weyl group W of G. But this does not hold for reductive groups in general, and needs some modiﬁcation. Let G be a connected reductive group. B, T, W, Guni, etc. are deﬁned similarly as in Section 2. The Springer resolution π : eGuni →Guni is deﬁned similarly. (Note in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-the-interpretation-via-perverse-sheaves",
+      "number": null,
+      "title": "§4. The interpretation via perverse sheaves",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim guni",
+          "heading": false
+        },
+        {
+          "term": "g-equivariant simple",
+          "heading": false
+        },
+        {
+          "term": "perverse",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "w-module",
+          "heading": false
+        },
+        {
+          "term": "eguni",
+          "heading": false
+        },
+        {
+          "term": "w-action",
+          "heading": false
+        }
+      ],
+      "extract": "In [L2] Lusztig reconstructed Springer representations of W on Hi(Bx, ¯Ql) in terms of the intersection cohomology. Based on Lusztig’s construction, Borho- MacPherson [BM] reformulated Springer’s theorem (Theorem 3.2) in the framework of the theory of perverse sheaves, which I will explain below. Let NG be the set of pairs (O, E ), where O is a unipotent class in Guni and E is a G-equivariant simple local system on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-the-generalized-springer-correspondence",
+      "number": null,
+      "title": "§5. The generalized Springer correspondence",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "cuspidal pair",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "indg",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "levi subgroup",
+          "heading": false
+        },
+        {
+          "term": "parabolic subgroup",
+          "heading": false
+        },
+        {
+          "term": "spn",
+          "heading": false
+        }
+      ],
+      "extract": "The map W ∧֒ →NG is not necessarily surjective. It is an interesting problem to understand the pair (O, E ) which is not contained in the image of W ∧(for example, the unique missing pair (O, E ) in the case of type G2, F4 or E8 in Remarks 3.3). As an analogue of the Harish-Chandra theory of the representations of reductive groups, Lusztig extended this map to a bijection to NG. His ingredients are as follows; • The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-geometric-realization-of-kostka-polynomials",
+      "number": null,
+      "title": "§6. Geometric realization of Kostka polynomials",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 957,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kostka polynomials",
+          "heading": true
+        },
+        {
+          "term": "geometric realization",
+          "heading": true
+        },
+        {
+          "term": "xuni",
+          "heading": false
+        },
+        {
+          "term": "guni",
+          "heading": false
+        },
+        {
+          "term": "ekλ",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": false
+        },
+        {
+          "term": "dominance order",
+          "heading": false
+        },
+        {
+          "term": "enhanced variety",
+          "heading": false
+        }
+      ],
+      "extract": "§6. Geometric realization of Kostka polynomials In this section, we will discuss the relationship between Kostka polynomials and the theory of the Springer correspondence in the case of GLn. In [L2], Lusztig gave a geometric realization of Kostka polynomials in terms of the intersection cohomology associated to unipotent classes in GLn. First we review the deﬁnition of Kostka polynomials. Consider x = (x1, x2, . . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-springer-correspondence-for-the-enhanced-varie",
+      "number": null,
+      "title": "§8. Springer correspondence for the enhanced variety",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exm",
+          "heading": false
+        },
+        {
+          "term": "enhanced",
+          "heading": true
+        },
+        {
+          "term": "xuni",
+          "heading": false
+        }
+      ],
+      "extract": "We ﬁx a B-stable ﬂag M1 ⊂M2 ⊂· · · ⊂Mn = V , with dim Mi = i. For an integer 0 ≤m ≤n, we deﬁne varieties eXm = {(x, v, gB) ∈Guni × V × B | g−1xg ∈B, g−1v ∈Mm}, (8.1) Xm = [ g∈G g(U × Mm), where U is the unipotent radical of B, and deﬁne a map πm : e Xm →Xm by (x, v, gB) 7→(x, v). Then eXm is smooth, irreducible, and π is proper. For 0 ≤m ≤n, put m = (m, n −m) and Sm = Sm × Sn−m. Then Sm is a Weyl subgroup of Sn. Put",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-double-kostka-polynomials",
+      "number": null,
+      "title": "§9. Double Kostka polynomials",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double kostka",
+          "heading": true
+        },
+        {
+          "term": "kostka polynomials",
+          "heading": true
+        },
+        {
+          "term": "ekλ",
+          "heading": false
+        },
+        {
+          "term": "t2i",
+          "heading": false
+        },
+        {
+          "term": "func tions",
+          "heading": false
+        },
+        {
+          "term": "a-function",
+          "heading": false
+        }
+      ],
+      "extract": "Kostka polynomials Kλ,µ(t) (λ, µ ∈Pn) was generalized to double Kostka poly- nomials Kλ,µ(t) (λ, µ ∈Pn,2). (See [S1, S2], where they are deﬁned for any r- partitions. Here we only consider the special case where r = 2). Recall the dis- cussion in Section 6. Here we prepare two types of variables x′ = (x′ 1, x′ 2, . . . ), x′′ = (x′′ 1, x′′ 2, . . . ) and consider Ξ = L n≥0 Λ(x′)⊗Λ(x′′), the ring of symmetric func-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-symmetric-spaces-in-algebraic-setting",
+      "number": null,
+      "title": "§10. Symmetric spaces in algebraic setting",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": true
+        },
+        {
+          "term": "involutive automorphism",
+          "heading": false
+        },
+        {
+          "term": "gnil",
+          "heading": false
+        },
+        {
+          "term": "algebraic",
+          "heading": true
+        },
+        {
+          "term": "guni",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "nil",
+          "heading": false
+        }
+      ],
+      "extract": "Historically, the symmetric space G/K, where G is a connected Lie group and K is a compact subgroup such that (Gθ)0 ⊂K ⊂Gθ for an involutive automorphism θ of G, has been studied extensively from a point of view of the Riemannian geometry. However, here we are interested in its algebraic structure, namely, we consider G, K as algebraic groups and G/K as an algebraic variety over k of any characteristic. The basis of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-11-symmetric-spaces-associated-to-classical-grou",
+      "number": null,
+      "title": "§11. Symmetric spaces associated to classical groups",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": true
+        },
+        {
+          "term": "spn",
+          "heading": false
+        },
+        {
+          "term": "exotic symmetric",
+          "heading": false
+        },
+        {
+          "term": "single h-orbit",
+          "heading": false
+        },
+        {
+          "term": "unipotent classes",
+          "heading": false
+        },
+        {
+          "term": "son",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": false
+        }
+      ],
+      "extract": "From now on, we concentrate ourselves to the special type of symmetric spaces, namely the symmetric spaces associated to classical groups. Let V be an N-dimensional vector space over k with ch k̸ = 2, and put G = GLN ≃GL(V ). We deﬁne an involutive automorphism θ : G →G by θ(g) = J−1(tg−1)J, where J = J1 or J2, J1 =   1 0 0 0 0 1n 0 1n 0   if N = 2n + 1, J1 = \u0012 0 1n 1n 0 \u0013 if N = 2n, J2 = \u0012 0 1n −1n 0 \u0013 for N =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-13-exotic-symmetric-space-associated-to-symplect",
+      "number": null,
+      "title": "§13. Exotic symmetric space associated to symplectic groups",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "lιθ uni",
+          "heading": false
+        },
+        {
+          "term": "correspondence t2i",
+          "heading": false
+        },
+        {
+          "term": "evλ",
+          "heading": false
+        },
+        {
+          "term": "double kostka",
+          "heading": false
+        },
+        {
+          "term": "gbh",
+          "heading": false
+        },
+        {
+          "term": "kostka polynomials",
+          "heading": false
+        },
+        {
+          "term": "ekλ",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider the case of exotic symmetric space associated to symplectic groups. So assume that H = SpN and X = Gιθ uni × V . The fact that the set of H-orbits in X is parametrized by Pn,2 was ﬁrst proved by Kato [K1]. The following is a reformulation of Kato’s result due to [AH]. Let Mn be the maximal isotropic subspace in V , stable by BH. There exists a θ-stable Levi subgroup L ⊂G such that Lθ ≃GL(Mn). Then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-14-springer-correspondence-for-gιθ",
+      "number": null,
+      "title": "§14. Springer correspondence for Gιθ",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ",
+          "heading": true
+        },
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "dim gιθ",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "spn",
+          "heading": false
+        },
+        {
+          "term": "o2λ",
+          "heading": false
+        },
+        {
+          "term": "ngιθ",
+          "heading": false
+        },
+        {
+          "term": "son",
+          "heading": false
+        }
+      ],
+      "extract": "uni, the case H = SpN As pointed out in Section 11, Gιθ uni for H = SpN does not satisfy the condition explained there, so the Springer correspondence does not hold in the strict sense. However some modiﬁed theory of the Springer correspondence still holds for Gιθ uni, as discussed in Henderson [H], which I will explain below. First we prepare some notation which is common for H = SpN and SON. Assume that H = SpN or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-15-springer-correspondence-for-gιθ",
+      "number": null,
+      "title": "§15. Springer correspondence for Gιθ",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ",
+          "heading": true
+        },
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "dim gιθ",
+          "heading": false
+        },
+        {
+          "term": "p2n",
+          "heading": false
+        },
+        {
+          "term": "so2n",
+          "heading": false
+        },
+        {
+          "term": "ngιθ",
+          "heading": false
+        }
+      ],
+      "extract": "uni, the case H = SO2n+1 We now assume that H = SO2n+1. Then by Proposition 12.3, the set of H-orbits in Gιθ uni is parametrized by P2n+1; (15.1) Oλ = Oλ ∩Gιθ uni ↔λ ∈P2n+1. We deﬁne a map Γ : Pn →P2n+1 by (15.2) Γ : µ = (µ1, . . . , µk) 7→(2µ1 + 1, 2µ2, . . . , 2µk). The following result gives the Springer correspondence for Gιθ uni. It was ﬁrst proved by Chen-Vilonen-Xue [CVX] for g−θ nil with k = C. The group",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-16-generalized-springer-correspondence-for-gιθ",
+      "number": null,
+      "title": "§16. Generalized Springer correspondence for Gιθ",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ",
+          "heading": true
+        },
+        {
+          "term": "lιθ uni",
+          "heading": false
+        },
+        {
+          "term": "θ-stable levi",
+          "heading": false
+        },
+        {
+          "term": "generalized springer",
+          "heading": true
+        },
+        {
+          "term": "springer correspondence",
+          "heading": true
+        },
+        {
+          "term": "cuspidal pair",
+          "heading": false
+        },
+        {
+          "term": "θ-stable parabolic",
+          "heading": false
+        },
+        {
+          "term": "ngιθ",
+          "heading": false
+        }
+      ],
+      "extract": "uni, the case H = SO2n+1 In this section, we consider the generalized Springer correspondence for Gιθ uni with H = SON (N = 2n + 1). 16.1. First we will give a combinatorial description of NGιθ. Let λ = (λ1, . . . , λN) ∈PN be a partition with λN ≥0. We deﬁne a symbol τ = (τ1, . . . , τN) of type λ as follows; (i) τi = ±1, and τi = 1 if λi = 0. (ii) τi = τj if λi = λj. (iii) τk = 1 if λk is the largest odd number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-p-kξ-is-a-semisimple-perverse-sheaf-on-gιθ",
+      "number": "P",
+      "title": "Kξ is a semisimple perverse sheaf on Gιθ",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ngιθ sgιθ",
+          "heading": false
+        },
+        {
+          "term": "gιθ",
+          "heading": true
+        },
+        {
+          "term": "sheaf",
+          "heading": true
+        }
+      ],
+      "extract": "verse sheaf on Gιθ uni, equipped with Sa-action, and is decomposed as indG P Kξ = M µ∈Pa Vµ ⊗IC(O, E )[dim O], where Γξ(µ) ↔(O, E ) under the identiﬁcation ΨN ≃NGιθ (ii) For ξ ∈SGιθ, let N (ξ) Gιθ be the subset of NGιθ corresponding to {Γξ(µ) | µ ∈ Pa} ⊂ΨN. Then we have NGιθ = a ξ∈SGιθ N (ξ) Gιθ . (iii) The correspondence (O, E ) ↔Γξ(µ) ↔Vµ gives a bijection NGιθ ≃ a ξ∈SGιθ S∧ a (generalized Springer correspondence)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-17-exotic-symmetric-spaces-of-higher-level-the-c",
+      "number": null,
+      "title": "§17. Exotic symmetric spaces of higher level, the case H = SpN",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "exotic symmetric",
+          "heading": true
+        },
+        {
+          "term": "evλ",
+          "heading": false
+        },
+        {
+          "term": "lιθ",
+          "heading": false
+        },
+        {
+          "term": "h-orbits",
+          "heading": false
+        },
+        {
+          "term": "isotropic ﬂag",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": true
+        },
+        {
+          "term": "so2n",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we consider the Springer correspondence for the exotic symmetric spaces of higher level associated to symplectic groups. As was remarked in Section 11, the crucial diﬃculty in this case is that the number of H-orbits is not necessarily ﬁnite if r ≥3. Assume H = SpN ≃Sp(V ), and consider Gιθ uni × V r−1 (r ≥1), with diagonal action of H. Let M1 ⊂· · · ⊂Mn ⊂V be the total isotropic ﬂag whose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-19-symmetric-spaces-in-characteristic-2",
+      "number": null,
+      "title": "§19. Symmetric spaces in characteristic 2",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 1211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gιθ uni",
+          "heading": false
+        },
+        {
+          "term": "symmetric spaces",
+          "heading": true
+        },
+        {
+          "term": "springer correspondence",
+          "heading": false
+        },
+        {
+          "term": "exotic symmetric",
+          "heading": false
+        },
+        {
+          "term": "shoji",
+          "heading": false
+        },
+        {
+          "term": "nil",
+          "heading": false
+        },
+        {
+          "term": "nilpotent orbits",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        }
+      ],
+      "extract": "The discussion in Section 11 makes sense even if p = 2, and one can deﬁne a symmetric space Gιθ uni associated to classical groups in characteristic 2. In this case, a diﬀerent phenomenon appears since the fundamental properties given in Section 10 do not hold. However, an analogue of the Springer correspondence still holds for them. The Springer correspondence for Gιθ uni was studied in [DSY], which we brieﬂy",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gιθ uni",
+      "heading": false
+    },
+    {
+      "term": "dim gιθ",
+      "heading": false
+    },
+    {
+      "term": "consider gιθ",
+      "heading": false
+    },
+    {
+      "term": "springer correspondence",
+      "heading": true
+    },
+    {
+      "term": "space gιθ",
+      "heading": false
+    },
+    {
+      "term": "dim guni",
+      "heading": false
+    },
+    {
+      "term": "lιθ uni",
+      "heading": false
+    },
+    {
+      "term": "generalized springer",
+      "heading": true
+    },
+    {
+      "term": "eguni guni",
+      "heading": false
+    },
+    {
+      "term": "springer ﬁbre",
+      "heading": false
+    },
+    {
+      "term": "let guni",
+      "heading": false
+    },
+    {
+      "term": "springer representations",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1909.06744v1"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1903.10084v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+  "contains": [
+    "library/arxiv-1903.10084v2/sections/sec-front-matter",
+    "library/arxiv-1903.10084v2/sections/sec-000",
+    "library/arxiv-1903.10084v2/sections/sec-001",
+    "library/arxiv-1903.10084v2/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions — 4 sections: Front matter; I Introduction; II Azimuthal asymmetries in di-lep\n\n**Probing the linear polarization of photons in ultraperipheral heavy ion collisions**\n\n*Cong Li,1 Jian Zhou,1 and Ya-jin Zhou1*\n\n7 pp, 4 sections.\n\n**Outline.** Front matter; I Introduction; II Azimuthal asymmetries in di-lepton producti; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1903.10084v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1903.10084.pdf",
+    "source_sha256": "cc06a452ee7129a70cd70328183510b6caf44f61b5b056fe501bb7d52c10d506",
+    "pages": 7,
+    "arxiv": {
+      "id": "1903.10084",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "9 Jul 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

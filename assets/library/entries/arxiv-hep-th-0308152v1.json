@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0308152v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0308152v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eichler Integral of the Character",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-eichler-integral-of-the-character.md",
+      "narrative": null,
+      "content": "[]{#sec:character label=\"sec:character\"}\n\nWe study the character of the minimal model $\\mathcal{M}(s,t)$, where $s$ and $t$ are coprime integers. The central charge of the minimal model $\\mathcal{M}(s, t)$ is $$c(s,t) = 1 - \\frac{6 \\, (s-t)^2}{s \\, t} ,$$ and the irreducible highest weight representation of the Virasoro algebra is given for the conformal weight $$\\Delta^{s,t}_{n,m}\n  =\n  \\frac{(n \\, t - m \\, s)^2 - (s-t)^2}{4 \\, s \\, t} ,$$ where integers $m$ and $n$ are $$\\begin{aligned}\n  & 1 \\leq n \\leq s-1,\n  &\n  & 1 \\leq m \\leq t- 1.\n\\end{aligned}$$ The number of distinct fields in the th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

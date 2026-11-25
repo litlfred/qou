@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2206.14086v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "KPZ limit theorems",
+      "dcterms:creator": [
+        "Baik∗, Jinho"
+      ],
+      "dcterms:issued": "D:20220721",
+      "dcterms:identifier": "https://arxiv.org/abs/2206.14086",
+      "dcterms:abstract": "One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in diﬀerent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable diﬀerential equations, and universality.",
+      "dcterms:source": "library/arxiv-2206.14086v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2206.14086v3"
+    }
+  ]
+}

@@ -1,0 +1,2567 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0304010v1",
+  "title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
+  "variant": "pdf",
+  "pages": 49,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grigori olshanski",
+          "heading": false
+        },
+        {
+          "term": "vladimir ivanov",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "gsp",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        },
+        {
+          "term": "moscow",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0304010v1 [math.CO] 1 Apr 2003 KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS Vladimir Ivanov and Grigori Olshanski In memory of Sergei Kerov (1946–2000) Abstract. Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "random functions",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed curve",
+          "heading": false
+        },
+        {
+          "term": "arcsin",
+          "heading": false
+        },
+        {
+          "term": "ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "ωand",
+          "heading": false
+        },
+        {
+          "term": "shape",
+          "heading": false
+        }
+      ],
+      "extract": "§0. Introduction Main result. Let Yn denote the set of partitions of n (n = 1, 2, . . .). We identify partitions and Young diagrams, so that elements of Yn become Young diagrams with n boxes. We view each λ ∈Yn as a plane shape, of area n, inside the ﬁrst quadrant R2 +, with coordinates r, s (the row and column coordinates). In new coordinates x = s −r, y = r + s, the boundary ∂λ of the shape λ ⊂R2 + may be viewed",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kerov",
+          "heading": false
+        },
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "detailed exposition",
+          "heading": false
+        },
+        {
+          "term": "gaussian process",
+          "heading": false
+        },
+        {
+          "term": "vek",
+          "heading": false
+        },
+        {
+          "term": "vershik",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "hora",
+          "heading": false
+        }
+      ],
+      "extract": "This claim, which seems plausible from (0.1) and (0.2) can be substantially reﬁned, see [BDJ], [AD]. The Gaussian process ∆(x) can be deﬁned by a random trigonometric series. Let ξ2, ξ3, . . . be independent standard real Gaussian random variables (each ξk has mean 0 and variance 1), and set x = 2 cos θ, where 0 ≤θ ≤π. Then ∆(x) = ∆(2 cos θ) = 1 π ∞ X k=2 ξk √ k sin(kθ). (0.3) For any smooth test function ϕ on R,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "global ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "coordinate systems",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "probabilistic",
+          "heading": false
+        },
+        {
+          "term": "scaled",
+          "heading": false
+        }
+      ],
+      "extract": "claims stated too brieﬂy, but ﬁnally the picture became clear. However, we cannot be sure that we succeeded to completely fathom Kerov’s intention, and there is no doubt that his own exposition would be quite diﬀerent. Links with random matrices. Recently it was discovered that the limit dis- tribution of a ﬁnitely many (properly scaled) ﬁrst rows of the random Plancherel Young diagram λ ∈Yn, as n →∞, coincides with",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "limit curve",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "highest term",
+          "heading": false
+        },
+        {
+          "term": "limit theorem",
+          "heading": false
+        },
+        {
+          "term": "vek",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        }
+      ],
+      "extract": "essentially need two diﬀerent ﬁltrations. Their purpose is to single out main terms of asymptotics in diﬀerent regimes. One ﬁltration is responsible for the “law of large numbers” while another serves the “central limit theorem”. In §5, we start the study of the Plancherel measures Mn. We introduce the sequence of expectation functionals ⟨· ⟩n on A that corresponds to the sequence {Mn}, and we remark that ⟨· ⟩n",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius coordinates",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "conjugation involution",
+          "heading": false
+        },
+        {
+          "term": "halves",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        },
+        {
+          "term": "vershik",
+          "heading": false
+        }
+      ],
+      "extract": "As in [Ma], we assign to a partition a Young diagram, which is denoted by the same symbol. We identify partitions and Young diagrams, and we denote by Y the set of all Young diagrams. The conjugation involution of Y (transposition of rows and columns of a diagram) is denoted as λ 7→λ′. There is another presentation of Young diagrams, the Frobenius notation. We shall use its modiﬁcation due to Vershik and Kerov",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary segment",
+          "heading": false
+        },
+        {
+          "term": "diagonal meets",
+          "heading": false
+        },
+        {
+          "term": "directed",
+          "heading": false
+        },
+        {
+          "term": "fraction",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        },
+        {
+          "term": "goes",
+          "heading": false
+        },
+        {
+          "term": "numbers",
+          "heading": false
+        }
+      ],
+      "extract": "directed downwards, while the columns are counted along the second coordinate s, directed to the right. Denote by ∂λ the doubly inﬁnite polygonal line which ﬁrst goes upwards along the r-axis, next goes along the boundary line separating λ from its complement in R2 +, and then goes to the right along the s–axis. For any a ∈Z′, the diagonal line s−r = a intersects ∂λ at the midpoint of a certain segment, which is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-007",
+        "library/arxiv-math-0304010v1/blocks/prop-page-007-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-007-02"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton power",
+          "heading": false
+        },
+        {
+          "term": "canonical isomorphism",
+          "heading": false
+        },
+        {
+          "term": "power sums",
+          "heading": false
+        },
+        {
+          "term": "projective limit",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "algebra deﬁned",
+          "heading": false
+        },
+        {
+          "term": "base ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ﬁltered",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. Immediate from Proposition 1.2. □ Thus, A is generated by the functions pk(λ), k = 1, 2, . . .. Recall [Ma] that the algebra of symmetric functions, denoted as Λ, is the graded algebra deﬁned as the projective limit (in the category of graded algebras) lim ←−Λ(n), where Λ(n) denotes the algebra of symmetric polynomials in n variables. As the base ﬁeld we take R. The morphism Λ(n) →Λ(n −1), which is employed",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continual diagrams",
+          "heading": false
+        },
+        {
+          "term": "lipschitz condition",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "shifted",
+          "heading": false
+        },
+        {
+          "term": "involution",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": false
+        }
+      ],
+      "extract": "of a polynomial, and the morphism Λ∗(n) →Λ∗(n −1) is deﬁned as above, i.e., as specializing xn = 0. The graded algebra associated to the ﬁltered algebra Λ∗ is canonically isomorphic to Λ. The algebra Λ∗is generated by the algebraically independent system {p∗ k}k=1,2,..., where p∗ k(x1, x2, . . . ) = ∞ X k=1 [(xi −i + 1 2)k −(−i + 1 2)k], k = 1, 2, . . ., are certain shifted analogs of the Newton power sums. See [OO]",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interlacing sequences",
+          "heading": false
+        },
+        {
+          "term": "local extrema",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "couple",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁne the functions ep1, ep2, . . . on D by setting epk[ω] = −k Z ∞ −∞ xk−1σ′(x)dx (2.2) = Z ∞ −∞ xkσ′′(x)dx, (2.3) where ω ∈D, k = 1, 2, . . .. Proposition 2.2. If ω ∈D0 then ep1[ω] = 0 and epk[ω] = k(k −1) Z ∞ −∞ xk−2σ(x)dx, k = 2, 3, . . . Proof. Recall that σ(x) is ﬁnitely supported when ω ∈D0. This implies the ﬁrst claim. Further, integrating (2.2) by parts gives the second claim. □ Deﬁnition 2.3. Given λ ∈Y,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-010",
+        "library/arxiv-math-0304010v1/blocks/prop-page-010-01"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local extrema",
+          "heading": false
+        },
+        {
+          "term": "piece",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "quarter",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 2.5. Let λ ∈Y, let λ( · ) ∈D0 be the corresponding continual dia- gram, and consider the local extrema (2.4). We have epk[λ( · )] = m+1 X i=1 xk i − m X j=1 yk j , k = 1, 2, . . .. Proof. Let σ be associated with ω = λ( · ), as deﬁned in (2.1). Then we get σ′′(x) = m+1 X i=1 δ(x −xi) − m X j=1 δ(x −yj) −δ(x). Note that R xkδ(x)dx = 0 for any k = 1, 2, . . . and apply (2.3). □ Proposition 2.6. Let λ ∈Y",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-011",
+        "library/arxiv-math-0304010v1/blocks/prop-page-011-01"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizontal piece",
+          "heading": false
+        },
+        {
+          "term": "main diagonal",
+          "heading": false
+        },
+        {
+          "term": "frobenius coordinates",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "sits",
+          "heading": false
+        }
+      ],
+      "extract": "Next, consider a horizontal piece below the main diagonal. Such a piece sits between the diagonal lines s −r = xk and s −r = yk, where 1 ≤k ≤l −1. In this piece, the column Frobenius coordinates make up the sequence −(xk + 1 2), −(xk + 3 2), . . . , −(yk −3 2), −(yk −1 2), whose contribution to the product Qd i=1(z + bi) equals Γ(z −xk + 1 2) Γ(z −yk + 1 2) . Therefore, the contribution of all horizontal pieces",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "kepk",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 2.7. The functions ep2(λ), ep3(λ), . . . belong to the algebra A and are related to the functions p1(λ), p2(λ) by the relations epk = [ k−1 2 ] X j=0 \u0012 k 2j + 1 \u0013 2−2j pk−1−2j , k = 2, 3, . . . . (2.13) Proof. Formula (2.6) implies that ln Φ(z −1 2; λ) −ln Φ(z + 1 2; λ) = ln m Y j=1 \u0010 1 −yj z \u0011 −ln m+1 Y i=1 \u0010 1 −xi z \u0011 . (2.14) By Proposition 1.4, the left–hand side equals ∞ X l=1 pl(λ) l \u0012 1 (z −1 2)l",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "weight grading",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "symbol",
+          "heading": false
+        }
+      ],
+      "extract": "Corollary 2.8. For any k = 2, 3, . . . epk k = pk−1 + ⟨a linear combination of pk−2, . . ., p1⟩. Conversely, for any k = 1, 2, . . . pk = epk+1 k + 1 + ⟨a linear combination of epk, . . ., ep2⟩. □ By Corollary 2.8, the elements ep2, ep3, . . . are algebraically independent genera- tors of the algebra A: A = R[ep2, ep3, . . .]. Deﬁnition 2.9 (cf. [EO]). The weight grading of the algebra A is deﬁned by setting wt(epk)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-014",
+        "library/arxiv-math-0304010v1/blocks/prop-page-014-01"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "equals",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "indexed",
+          "heading": false
+        },
+        {
+          "term": "ters",
+          "heading": false
+        }
+      ],
+      "extract": "§3. The elements p# k Let Sn be the symmetric group of degree n. Recall that both irreducible charac- ters and conjugacy classes of Sn are indexed by the same set, the set of partitions of n or, equivalently, of Young diagrams with n boxes. We denote this set by Yn . For λ, ρ ∈Yn , we denote by χλ the irreducible character of Sn indexed by λ, and by χλ ρ the value of χλ on the conjugacy class indexed by ρ. In",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "deﬁni",
+          "heading": false
+        },
+        {
+          "term": "wassermann",
+          "heading": false
+        }
+      ],
+      "extract": "about z = ∞. In other words, p# k (λ) = −Res z=∞(F(z)dz). After simple transformations we get F(z) = −1 k (z −n)↓k Φ(z −n + 1 2; λ) Φ(z −n + 1 2 −k; λ) . The residue at z = ∞will not change under the shift z 7→z +n −1 2. Consequently, p# k (λ) = −Res z=∞ \u0012 −1 k (z −1 2)↓k Φ(z; λ) Φ(z −k; λ) \u0013 , which completes the proof. □ We shall employ the following notation. Given a formal series A(t), let [tk]{A(t)} = ⟨the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight grading",
+          "heading": false
+        },
+        {
+          "term": "canonical grading",
+          "heading": false
+        },
+        {
+          "term": "epj",
+          "heading": false
+        },
+        {
+          "term": "top homogeneous",
+          "heading": false
+        },
+        {
+          "term": "homogeneous component",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        }
+      ],
+      "extract": "The expression (3.2) can be written in the form p# k = −1 k [tk+1]   (1 + ε0(t)) exp  − ∞ X j=1 kpjtj+1(1 + εj(t))      = −1 k [tk+1]   (1 + ε0(t)) ∞ X m=0 (−1)m m!   ∞ X j=1 kpjtj+1(1 + εj(t))   m  . (3.3) Here each εr(t) is a power series of the form c1t + c2t2 + . . . , where the coeﬃcients c1, c2, . . . do not involve the generators p1, p2, . . .. Using (3.3) we can readily evaluate the top",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-017",
+        "library/arxiv-math-0304010v1/blocks/prop-page-017-01"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eak",
+          "heading": false
+        },
+        {
+          "term": "eaj",
+          "heading": false
+        },
+        {
+          "term": "total weight",
+          "heading": false
+        },
+        {
+          "term": "bjuj",
+          "heading": false
+        },
+        {
+          "term": "beforehand",
+          "heading": false
+        }
+      ],
+      "extract": "As in the situation of Proposition 3.4, we may neglect the epsilon factors, which aﬀect only terms of lower weight. For the same reason, we may replace each pj by epj+1/(j + 1). This leads to (3.4), and (3.5) follows from (3.4). □ In Proposition 3.7 we invert the result of Proposition 3.5. Beforehand we state the following general fact. Proposition 3.6. Let a2, a3, . . . and b2, b3, . . . be two families of elements",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-018"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eak",
+          "heading": false
+        },
+        {
+          "term": "weight homogeneous",
+          "heading": false
+        },
+        {
+          "term": "top weight",
+          "heading": false
+        },
+        {
+          "term": "lower weight",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "proposition",
+          "heading": false
+        }
+      ],
+      "extract": "Then, as is readily seen, 1 k eak = bk + Yk(b2, . . . , bk−1), k = 2, 3, . . ., (3.8) where, likewise, Yk is a polynomial of total weight ≤k, with the convention that wt(bj) = j. Moreover, the top weight homogeneous component of Yk depends only on the top weight homogeneous components of X2, . . ., Xk. Now let us set eak = epk , bk = p# k−1 , k = 2, 3, . . ., eA(t) = ∞ X j=2 eaj j tj, A(t) = exp eA(t), B(u) = 1 + ∞",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical grading",
+          "heading": false
+        },
+        {
+          "term": "weight grading",
+          "heading": false
+        },
+        {
+          "term": "cycle structure",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        },
+        {
+          "term": "permutation",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 4.2. For any partition ρ, the function p# ρ introduced in Deﬁnition 4.1 is an element of A. In the canonical grading, the top degree homogeneous component of p# ρ equals pρ. Proof. Diﬀerent proofs are given in [KO] and [OO]. See also [IK], [LaT], [ORV]. □ Corollary 4.3. The elements p# ρ form a basis in A. Note that this basis is inhomogeneous both in the canonical grading and the weight grading. Given",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-020",
+        "library/arxiv-math-0304010v1/blocks/prop-page-020-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-020-02"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "cycles",
+          "heading": false
+        },
+        {
+          "term": "quadruple",
+          "heading": false
+        },
+        {
+          "term": "fρp",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 4.6. Fix an arbitrary subset J ⊆N, where N = {1, 2, . . .}. For any partition ρ, set |ρ|J = |ρ| + X j∈J mj(ρ). In particular, in the two extreme cases we have |ρ|∅= |ρ|, |ρ|N = |ρ| + ℓ(ρ). Next, following [IK], deﬁne a ﬁltration of the vector space A by setting degJ(p# ρ ) = |ρ|J and, more generally, for any f = P ρ fρp# ρ ∈A, degJ(f) = max ρ: fρ̸=0 |ρ|J . Proposition 4.7. For any J ⊆N, the ﬁltration by",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-021",
+        "library/arxiv-math-0304010v1/blocks/prop-page-021-01"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inequality",
+          "heading": false
+        },
+        {
+          "term": "equality",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        },
+        {
+          "term": "completes",
+          "heading": false
+        }
+      ],
+      "extract": "Therefore, the required inequality |ρ|J ≤|σ|J + |τ|J means |X| + |CJ(s)| ≤|X1| + |CJ(s1)| + |X2| + |CJ(s2)|. By virtue of (4.2) and (4.3) this is equivalent to |X| + |BJ(s)| ≤|X1| + |BJ(s1)| + |X2| + |BJ(s2)|. (4.4) We shall establish a stronger inequality, |X| + |BJ(s)| ≤|X1| + |X2|, (4.5) which is equivalent to |BJ(s)| ≤|X1 ∩X2|. (4.6) To prove the latter inequality, we shall show that each cycle c ∈BJ(s) contains",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-022",
+        "library/arxiv-math-0304010v1/blocks/cor-page-022-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-022-02"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "span epk",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "inclusion follows",
+          "heading": false
+        },
+        {
+          "term": "proposition",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 4.10. The ﬁltration of A deﬁned by degN( · ) coincides with the weight ﬁltration. Proof. For any r = 0, 1, . . ., let A′ r ⊂A denote the rth member of the ﬁrst ﬁltration, and let A′′ r ⊂A has the same meaning for the second ﬁltration. Recall that A′ r = span{p# ρ | |ρ|N = |ρ| + ℓ(ρ) ≤r}, A′′ r = span{epk1 . . . epkl | k1, . . ., kl ≥2, k1 + · · · + kl ≤r}. Clearly, A′ 0 = A′′ 0 = A′ 1 = A′′ 1 = R · 1. We",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-023",
+        "library/arxiv-math-0304010v1/blocks/prop-page-023-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-023-02"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cycle",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "equals",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "possibility",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "inside",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 4.12. For any partition σ and any k ≥2, p# σ p# k = p# σ∪k + ( k · mk(σ) · p# (σ\\k)∪1k + . . . , mk(σ) ≥1, . . ., mk(σ) = 0, (4.8) where the partition σ \\ k is obtained from σ by removing one part equal to k, i.e., mi(σ \\ k) = \u001a mi(σ), i̸ = k, mk(σ) −1, i = k, and dots mean terms of lower degree, i.e., with deg1( · ) < |σ|1 + k. Proof. Assume ﬁrst that τ is an arbitrary partition (not necessarily τ =",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "vek",
+          "heading": false
+        },
+        {
+          "term": "regular character",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "functionals",
+          "heading": false
+        },
+        {
+          "term": "equals",
+          "heading": false
+        },
+        {
+          "term": "common",
+          "heading": false
+        },
+        {
+          "term": "vanishes",
+          "heading": false
+        }
+      ],
+      "extract": "Corollary 4.13 (of the proof). Let σ and τ be two partitions with no common part, i.e., for any i = 1, 2, . . ., at least one of the multiplicities mi(σ), mi(τ) vanishes. Then p# σ p# τ = p# σ∪τ + ⟨terms of lower degree deg1( · )⟩. Proof. Let ρ, X1, X2 be as in the beginning of the proof of Proposition 4.12. Recall the claim stated in the second paragraph of that proof: either X1 ∩X2 = ∅ or X1 ∩X2 entirely consists",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-025"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcsin",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "x2m",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 5.2. For any f ∈A, the expectation ⟨f⟩n is a polynomial in n. The degree of this polynomial is bounded from above by 1 2 deg1(f). Proof. It suﬃces to check this for f = p# ρ . Let r = |ρ|. If ρ̸ = (1r) then ⟨f⟩n ≡0, by virtue of Proposition 5.1. If ρ = (1r) then, by Proposition 5.1, ⟨f⟩n = n↓r. On the other hand, deg1(f) = 2r, which agrees with the claim. □ We deﬁne the function Ω(x) on R by Ω(x) = \u001a 2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-026",
+        "library/arxiv-math-0304010v1/blocks/prop-page-026-01"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "degn",
+          "heading": false
+        },
+        {
+          "term": "virtue",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": false
+        },
+        {
+          "term": "test",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 5.4 (Law of large numbers, 1st form). Let λ range over Yn, and let us view ¯λ( · ) as a random function deﬁned on the probability space (Yn, Mn), where Mn is the Plancherel measure. Let Ωbe as above. Then we have lim n→∞ Z (¯λ(x) −Ω(x))xkdx = 0 in probability, for any k = 0, 1, . . .. (5.2) Proof. Let Mn be the pushforward of Mn under the embedding Yn֒ →D0. Then M n is a probability measure on the space D0.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-027"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "xkdx",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        }
+      ],
+      "extract": "The right–hand side was found in Proposition 5.3, while the left–hand side can be evaluated using Proposition 3.7. The result is the same, which concludes the proof of (5.3). Now let us show that (5.3) implies (5.2). Indeed, (5.2) is equivalent to lim n→∞ Z ¯λ(x) −|x| 2 xkdx = Z Ω(x) −|x| 2 xkdx in probability, for k = 0, 1, . . . . By Proposition 2.2, this is equivalent to lim n→∞epk[¯λ( · )] = epk[Ω] in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-028",
+        "library/arxiv-math-0304010v1/blocks/thm-page-028-01",
+        "library/arxiv-math-0304010v1/blocks/lem-page-028-02"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "weak topology",
+          "heading": false
+        },
+        {
+          "term": "standard gaussian",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "limit theorem",
+          "heading": false
+        },
+        {
+          "term": "neighborhood",
+          "heading": false
+        }
+      ],
+      "extract": "Pick points a = ε1 < · · · < εn = b dividing I into subintervals of length ≤2ε. Then, by the Lipschitz condition, the ball ∥σ∥≤2ε contains the intersections of V (xi, ε)’s. Hence the required claim reduces to the following one: Fix x ∈I and ε > 0. Then V (x, ε) contains a neighborhood of 0 in the weak topology. Let us remark that functions σ ∈Σ are uniformly bounded, ∥σ∥≤(b −a)/2. Hence the weak topology on Σ will",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-029"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aext",
+          "heading": false
+        },
+        {
+          "term": "normal ization",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "polynomials",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": false
+        }
+      ],
+      "extract": "It will be convenient to extend the algebra A: we adjoin to it the square root of the element p# 1 = p1 and then localize over the multiplicative family generated by q p# 1 . Let Aext denote the resulting algebra. As a basis in Aext one can take the elements of the form p# ρ · (p# 1 )m/2 , m1(ρ) = 0, m ∈Z. (6.2) We equip Aext with a ﬁltration by assigning to p# ρ · (p# 1 )m/2 the degree deg1( · ) = |ρ|1 + m. That",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-030",
+        "library/arxiv-math-0304010v1/blocks/prop-page-030-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-030-02"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "respective moments",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "dots mean",
+          "heading": false
+        },
+        {
+          "term": "distribution",
+          "heading": false
+        },
+        {
+          "term": "claim",
+          "heading": false
+        },
+        {
+          "term": "coincides",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 6.3. For any partition ρ, we have ηρ = Y k≥2 Hmk(ρ)(ηk) + . . . (6.6) where dots denote a remainder term with deg1( · ) < 0. In particular, ηρ does not depend, up to terms of negative degree, from the value of m1(ρ). Proof. Examine ﬁrst the particular case ρ = (km), where k = 2, 3, . . . and m = 1, 2, . . . . Then our claim means that η(km) = Hm(ηk) + . . . . Taking σ = (km) in Proposition 4.12 we get p#",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-031",
+        "library/arxiv-math-0304010v1/blocks/cor-page-031-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-031-02"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hmk",
+          "heading": false
+        },
+        {
+          "term": "standard gaussian",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "remainder term",
+          "heading": false
+        },
+        {
+          "term": "gauss",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite collection",
+          "heading": false
+        }
+      ],
+      "extract": "By Proposition 6.4, it suﬃces to check that ⟨ Y k≥2 ηmk k ⟩n →⟨ Y k≥2 ξmk k ⟩Gauss , n →∞, (6.8) for any ﬁnite collection {mk}k≥2 of nonnegative integers, where the brackets ⟨· ⟩Gauss mean expectation with respect to the standard Gaussian measure. The uniqueness hypothesis of Proposition 6.4 is clearly satisﬁed. The limit relations (6.8) are equivalent to the following ones: ⟨ Y k≥2 Hmk(ηk)⟩n → Y k≥2 ⟨Hmk(ξk)⟩Gauss",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-032"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "remainder term",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "polynomials",
+          "heading": false
+        },
+        {
+          "term": "distribution",
+          "heading": false
+        },
+        {
+          "term": "continuous",
+          "heading": false
+        }
+      ],
+      "extract": "where a(n) = {a(n) 1 , a(n) 2 , . . .} are families of random variables depending on n and a = {a1, a2, . . .} is one more family of random variables. Next, assume that f1(x) = f1(x1, x2, . . .), f2(x) = f2(x1, x2, . . .), . . . are continuous functions in real variables x = (x1, x2, . . .), where each function actually depends on ﬁnitely many variables only. Then {f1(a(n)), f2(a(n)), . . .} d −→{f1(a), f2(a), . .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-033"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elements epk",
+          "heading": false
+        },
+        {
+          "term": "aext",
+          "heading": false
+        },
+        {
+          "term": "scaled",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "centered",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 7.1 (Central limit theorem for Young diagrams). According to (7.2), let u(n) k = Z R uk(x)∆(n)(dx), k = 1, 2, . . ., and let, as before, ξ2, ξ3, . . . stand for a system of independent standard Gaussians. We have n u(n) k o k≥1 d −→ \u001a ξk+1 √ k + 1 \u001b k≥1 , n →∞. Recall that “ d −→” means convergence in distribution. Note that u(n) 0 ≡0, which explains why we start with k = 1, not k = 0. The theorem is proved",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-034"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "lower degree",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "degree terms",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        }
+      ],
+      "extract": "By Propositions 2.2 and 5.3, for any k = 0, 1, . . ., √n Z R xk Ω(x) −|x| 2 dx = √n epk+2[Ω] (k + 1)(k + 2) = √n (k + 1)(k + 2) ·    (2m)! m!m! , if k is even, k = 2m −2, where m = 1, 2, . . ., 0, if k is odd. Combining this with the deﬁnition of q1, q2, . . ., we get (7.7). □ In order to apply Theorem 6.1 we need the expression of p# k in terms of q2, q3, . . . within lower degree terms. We obtain this in two",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-035",
+        "library/arxiv-math-0304010v1/blocks/prop-page-035-01"
+      ]
+    },
+    {
+      "id": "page-036",
+      "number": null,
+      "title": "Page 36",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "corresponding monomial",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "antisymmetric",
+          "heading": false
+        },
+        {
+          "term": "maximal value",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        }
+      ],
+      "extract": "We have wt((p# 1 )ν1(p# 2 )ν2 . . .) = ∥ν∥, deg1((p# 1 )ν1(p# 2 )ν2 . . .) ≤∥ν∥′. By Proposition 3.7, we know all coeﬃcients aν with the maximal value of ∥ν∥(it equals k), while we need all coeﬃcients with ∥ν∥′ ≥k −1. By (7.10), ∥ν∥′ does not exceed k, and there are 3 possible cases: • ∥ν∥′ = ∥ν∥= k. Then ν2 = ν3 = · · · = 0, k = 2ν1, so that k is even; write it as 2m. The corresponding monomial is (p# 1 )k/2. •",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-036"
+      ]
+    },
+    {
+      "id": "page-037",
+      "number": null,
+      "title": "Page 37",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "remainder terms",
+          "heading": false
+        },
+        {
+          "term": "inverse relations",
+          "heading": false
+        },
+        {
+          "term": "aﬀect",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        },
+        {
+          "term": "measures",
+          "heading": false
+        }
+      ],
+      "extract": "Set a0 = a1 = 0, ak = qk (k ≥2); b0 = b1 = 0, bk = p# k (p# 1 )k/2 (k ≥2). The relations (7.8) coincide with the ﬁrst system in (7.13), up to remainder terms of negative degree. These terms can be neglected, because they aﬀect only similar remainder terms in the inverse relations. These inverse relations are given then by the second system in (7.13). This leads to (7.12). □ Proof of Theorem 7.1. We rewrite (7.12) as",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-037",
+        "library/arxiv-math-0304010v1/blocks/prop-page-037-01",
+        "library/arxiv-math-0304010v1/blocks/prop-page-037-02"
+      ]
+    },
+    {
+      "id": "page-038",
+      "number": null,
+      "title": "Page 38",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "xkµ",
+          "heading": false
+        },
+        {
+          "term": "µs-c",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "ehk",
+          "heading": false
+        }
+      ],
+      "extract": "range is the set of all (not necessarily compactly supported) probability measures on R. (Note that in [Ke4], the symbol M refers to the latter set.) Formula (8.1) means that the two sequences, \u001a −k Z R xk−1σ′(x)dx \u001b k=1,2,... and \u001aZ R xkµ(dx) \u001b k=1,2,... , are related to each other in exactly the same way as the two systems of generators of the algebra Λ, {pk}k=1,2,... and {hk}k=1,2,.... From now on and up to the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-038",
+        "library/arxiv-math-0304010v1/blocks/prop-page-038-01"
+      ]
+    },
+    {
+      "id": "page-039",
+      "number": null,
+      "title": "Page 39",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random measures",
+          "heading": false
+        },
+        {
+          "term": "µs-c",
+          "heading": false
+        },
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "chebyshev polynomials",
+          "heading": false
+        },
+        {
+          "term": "push forward",
+          "heading": false
+        },
+        {
+          "term": "semi circle",
+          "heading": false
+        },
+        {
+          "term": "random element",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 8.5. Fix n = 1, 2, . . .. To any λ ∈Yn we assign a probability measure bλ ∈M0 as follows: bλ is the transition measure of the scaled diagram ¯λ( · ) ∈D0. Equivalently, bλ is the push–forward of the transition measure (8.2)–(8.3) under the shrinking x 7→n−1/2x of the real axis. Viewing λ as the random element of the probability space (Yn, Mn), we interpret bλ as a random probability measure. The next result",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-039",
+        "library/arxiv-math-0304010v1/blocks/thm-page-039-01"
+      ]
+    },
+    {
+      "id": "page-040",
+      "number": null,
+      "title": "Page 40",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ehk",
+          "heading": false
+        },
+        {
+          "term": "µs-c",
+          "heading": false
+        },
+        {
+          "term": "lower weight",
+          "heading": false
+        },
+        {
+          "term": "weight terms",
+          "heading": false
+        },
+        {
+          "term": "dots mean",
+          "heading": false
+        },
+        {
+          "term": "moment",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 8.7. We have t(n) = t(n) Proof. Recall that for any measure from M0, the ﬁrst moment equals zero. In particular, this holds for bλ and µs-c, which implies t(n) 1 ≡0. Next, the relation h2 = 1 2(p2 1 + p2) in the algebra Λ turns, under the morphism (2.18), into the relation eh2 = ep2/2 = p1 in the algebra A. It follows that eh2[λ( · )] ≡ n = |λ|, which implies eh2[¯λ( · )] ≡1. This in turn means that the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-040"
+      ]
+    },
+    {
+      "id": "page-041",
+      "number": null,
+      "title": "Page 41",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ehk",
+          "heading": false
+        },
+        {
+          "term": "aext",
+          "heading": false
+        },
+        {
+          "term": "dots mean",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        },
+        {
+          "term": "mean terms",
+          "heading": false
+        }
+      ],
+      "extract": "Step 2: Switching to the Kerov ﬁltration. The same argument as that used in the proof of Proposition 7.3 makes it possible to derive from (8.8) the following expression, cf. (7.9). ehk = [ k−3 2 ] X j=0 \u0012k j \u0013 p# k−1−2j(p# 1 )j + \u001a 1 m+1 \u00002m m \u0001 (p# 1 )m , if k = 2m, m = 1, 2, . . ., 0, if k is odd + terms with deg1( · ) < k −1. Deﬁne the elements gk ∈Aext by (cf. (7.6)) gk =            ehk − 1 m+1 \u00002m m",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-041"
+      ]
+    },
+    {
+      "id": "page-042",
+      "number": null,
+      "title": "Page 42",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gaussian process",
+          "heading": false
+        },
+        {
+          "term": "btk",
+          "heading": false
+        },
+        {
+          "term": "generalized gaussian",
+          "heading": false
+        },
+        {
+          "term": "random series",
+          "heading": false
+        },
+        {
+          "term": "aext",
+          "heading": false
+        },
+        {
+          "term": "test function",
+          "heading": false
+        }
+      ],
+      "extract": "Or, equivalently, R[x] ∋v = X i cixi ←→ bv = X i cigi ∈Aext. In particular, for v = tk we get from (8.5) btk = [k/2] X j=0 (−1)j k k −j \u0012k −j j \u0013 gk−2j , k = 3, 4, . . . . Recall also that bt0 = bt1 = bt2 = 0. Comparing this with (8.11) we see that btk = p# k−1 (p# 1 )(k−1)/2 + Rk−1 , Rk−1 ∈Aext, deg1(Rk−1) < 0, k = 3, 4, . . . . Or by the deﬁnition of the elements ηk, see (6.5), btk = √ k −1ηk−1 + Rk−1, k = 3, 4, .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-042"
+      ]
+    },
+    {
+      "id": "page-043",
+      "number": null,
+      "title": "Page 43",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "leb",
+          "heading": false
+        },
+        {
+          "term": "orthogonality relation",
+          "heading": false
+        },
+        {
+          "term": "plancherel diagram",
+          "heading": false
+        }
+      ],
+      "extract": "is a Gaussian random variable. In particular, setting ϕ(x) = uk(x) we get, by the orthogonality relation (7.5), ⟨uk, ∆⟩= ξk+1 √ k + 1 , k = 1, 2, . . . . Informally, the result of Theorem 7.1 can be stated as follows: for the random Plancherel diagram λ ∈Yn , ¯λ(x) ∼Ω(x) + 2 √n ∆(x), n →∞, (9.2) where ¯λ(x) was introduced in Deﬁnition 2.3, and ∆(x) is given by (9.1) Next, consider the random series b∆(x) = ∞ X k=3 √",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-043"
+      ]
+    },
+    {
+      "id": "page-044",
+      "number": null,
+      "title": "Page 44",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "generalized function",
+          "heading": false
+        },
+        {
+          "term": "random",
+          "heading": false
+        },
+        {
+          "term": "gaussian",
+          "heading": false
+        },
+        {
+          "term": "process",
+          "heading": false
+        }
+      ],
+      "extract": "To any matrix X ∈HN we assign a certain probability measure µX on R, which we prefer to view as a generalized function: µX(x) = 1 N (δ(x −x1) + · · · + δ(x −xN)), (9.6) where x1 , . . ., xN are the eigenvalues of X, and δ(x) is the delta function. Dropping X, which we view as the random element of the probability space (HN, GaussN), we regard (9.6) as the random generalized function µ(x). Then we have the following",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-044"
+      ]
+    },
+    {
+      "id": "page-045",
+      "number": null,
+      "title": "Page 45",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free cumulants",
+          "heading": false
+        },
+        {
+          "term": "efk",
+          "heading": false
+        },
+        {
+          "term": "additive functionals",
+          "heading": false
+        },
+        {
+          "term": "vodn",
+          "heading": false
+        },
+        {
+          "term": "semi invariants",
+          "heading": false
+        },
+        {
+          "term": "probability theory",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": false
+        }
+      ],
+      "extract": "be the generating series for the complete homogeneous symmetric functions. We introduce elements f1 , f2 , . . . in Λ as follows: f1 = h1 ; fk = − 1 k −1 [tk] n H−(k−1)(t) o , k = 2, 3, . . . . More explicitly, fk = X m1,m2,···≥0 1·m1+2·m2+···=k (−1) P mj−1 k↑(P mj−1) Y j≥1 hmj j mj! , where x↑m = Γ(x + m) Γ(x) = x(x + 1) . . .(x + m −1). This deﬁnition is inspired by Voiculescu’s free probability theory [Vo],",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-045"
+      ]
+    },
+    {
+      "id": "page-046",
+      "number": null,
+      "title": "Page 46",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "top weight",
+          "heading": false
+        },
+        {
+          "term": "weight component",
+          "heading": false
+        },
+        {
+          "term": "biane",
+          "heading": false
+        },
+        {
+          "term": "ranges",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 10.2 ([Bi1, Th. 1.3]). Fix an arbitrary A > 1. For any partition ρ and any λ ∈Y(A), χλ ρ∪1n−|ρ| dim λ = n−|ρ|−ℓ(ρ) 2 Y j≥1 ef mj(ρ) j+1 [¯λ( · )] + O \u0010 n−|ρ|−ℓ(ρ) 2 −1\u0011 , (10.1) where n = |λ| is assumed to be ≥|ρ|. Here the estimate of the remainder term depends only on A and ρ, and is uniform on λ provided that λ ranges over Y(A). Comments. 1) All terms in (10.1) do not depend on m1(ρ). Indeed, this is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-046",
+        "library/arxiv-math-0304010v1/blocks/thm-page-046-01"
+      ]
+    },
+    {
+      "id": "page-047",
+      "number": null,
+      "title": "Page 47",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "baik",
+          "heading": false
+        },
+        {
+          "term": "applied probability",
+          "heading": false
+        },
+        {
+          "term": "diaconis",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "either symmetric",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        }
+      ],
+      "extract": "Hence, by Proposition 10.1, F (0) ρ = Y j≥1 ef mj(ρ) j+1 . (10.5) By virtue of (2.17), any weight homogeneous element of A is either symmetric or antisymmetric with respect to “inv”, depending on whether its weight is even or odd. It follows from (4.9) that the element p# ρ is either symmetric or antisymmetric, depending on the parity of the number |ρ| + ℓ(ρ). It follows that, in the expansion (10.4), we have F (j)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-047"
+      ]
+    },
+    {
+      "id": "page-048",
+      "number": null,
+      "title": "Page 48",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "48",
+      "labelEnd": "48",
+      "words": 566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nauchnyh seminarov",
+          "heading": false
+        },
+        {
+          "term": "zapiski nauchnyh",
+          "heading": false
+        },
+        {
+          "term": "seminarov pomi",
+          "heading": false
+        },
+        {
+          "term": "english translation",
+          "heading": false
+        },
+        {
+          "term": "petersburg math",
+          "heading": false
+        },
+        {
+          "term": "random permutations",
+          "heading": false
+        },
+        {
+          "term": "rendus acad",
+          "heading": false
+        },
+        {
+          "term": "young tableaux",
+          "heading": false
+        }
+      ],
+      "extract": "[Ha] J. M. Hammersley, A few seedlings of research, In: Proc. 6th Berkeley Symp. Math. Stat. and Prob., Vol. 1, Univ. of Calif. Press, 1972, pp. 345–394. [Ho] A. Hora, Central limit theorem for the adjacency operators on the inﬁnite symmetric group, Comm. Math. Phys. 195 (1998), 405–416. [IK] V. Ivanov and S. Kerov, The algebra of conjugacy classes in symmetric groups, and partial permutations, in Representation",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-048"
+      ]
+    },
+    {
+      "id": "page-049",
+      "number": null,
+      "title": "Page 49",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "english translation",
+          "heading": false
+        },
+        {
+          "term": "vek",
+          "heading": false
+        },
+        {
+          "term": "anal",
+          "heading": false
+        },
+        {
+          "term": "prilozhen",
+          "heading": false
+        }
+      ],
+      "extract": "[VeK2] A. M. Vershik, S. V. Kerov, Asymptotic theory of characters of the symmetric group, Function. Anal. i Prilozhen. 15 (1981), no. 4, 15–27; English translation: Funct. Anal. Appl. 15 (1985), 246–255. [VeK3] A. M. Vershik and S. V. Kerov, Asymptotics of the largest and the typical dimensions of irreducible representations of a symmetric group, Funktsional. Anal. i Prilozhen. 19 (1985), no. 1, 25–36; English",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0304010v1/blocks/prose-page-049"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "random young",
+      "heading": false
+    },
+    {
+      "term": "elements epk",
+      "heading": false
+    },
+    {
+      "term": "random measure",
+      "heading": false
+    },
+    {
+      "term": "gaussian random",
+      "heading": false
+    },
+    {
+      "term": "random plancherel",
+      "heading": false
+    },
+    {
+      "term": "epk through",
+      "heading": false
+    },
+    {
+      "term": "span epk",
+      "heading": false
+    },
+    {
+      "term": "random variables",
+      "heading": false
+    },
+    {
+      "term": "random functions",
+      "heading": false
+    },
+    {
+      "term": "random series",
+      "heading": false
+    },
+    {
+      "term": "kerov ﬁltration",
+      "heading": false
+    },
+    {
+      "term": "young diagrams",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 49,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 49 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0304010v1"
+  }
+}

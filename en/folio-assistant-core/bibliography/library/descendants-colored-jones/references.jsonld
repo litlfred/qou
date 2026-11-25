@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/descendants-colored-jones",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "The descendant colored Jones polynomials",
+      "dcterms:creator": [
+        "Garoufalidis, Stavros",
+        "Kashaev, Rinat"
+      ],
+      "dcterms:issued": "D:20240129",
+      "dcterms:abstract": "We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.",
+      "dcterms:source": "library/descendants-colored-jones/manifest.jsonld",
+      "dcterms:hasVersion": "library/descendants-colored-jones"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "mcmullen-braids-hodge-2013",
+  "blocks": [
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Invent. math, 91, 259-272 (1988) Inventiones\n\nmathematicae\n© Springer-Verlag 1988\n\nBraiding of the attractor and the failure\nof iterative algorithms *\n\nCurt McMullen\nDepartment of Mathematics, Princeton University, Princeton, NJ 08540, USA\n\nIntroduction\n\nThe motion of the attractor in a stable family of rational maps determines\na group of braids on the Riemann sphere. We show the corresponding group\nof mapping classes is either reducible, finite, or fixes one of the attractors. In\nparticular, not every braid can arise. The proof is based on the finiteness of\nthe modular group for a connected c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "260 C. McMullen\n§1. Iterative root-finding algorithms\n\nWe begin with some terminology of Smale’s [Sm].\n\nDefinitions. A purely iterative algorithm is a mapping\nT: Poly,— Rat,\n\nassociating to each degree d complex monic polynomial p(X)ePoly,(=C%) a\ndegree k rational function T,(z)¢Rat,(~P?**'), such that the coefficients of\nT, are themselves rational functions of the coefficients of p. The algorithm is\nsaid to be generally convergent if there is an open dense set of full measure\nUc Poly, x C such that under iteration,\n\nT; (z) > {a root of p}\n\nfor all choices of polynomial and initial guess (p, z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 261\n\nHere we develop a localized criterion for the failure of algorithms. We will\nshow, for example, that every purely iterative algorithm must fail on every neigh-\nborhood of p(X)=X¢ for d=4 or more. As far as robust algorithms are con-\ncerned, when the criterion is satisfied one cannot even continuously assign to\neach polynomial p an expanding map T, such that the attractor of T, is contained\nin the roots of p.\n\nThe criterion is defined in terms of the braiding of the roots of polynomials\nas we move about the Poly,; a good introduction to these ideas is Birman’s\nboo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "262 C. McMullen\n\nthe partition {[1,3], [2,4]}.) If G,, is reducible, an invariant partition can\nbe constructed using the ‘innermost’ simple closed curves, so (2')=>(2).\n\nThe implication (3')=>(3) follows from Nielsen realization: any finite sub-\ngroup of the modular group of a multiply-punctured sphere can be realized\nby a group of Mobius transformations after appropriately relocating the punc-\ntures. (See Zieschang, [Z, 54.3] where the Nielsen problem is solved for surfaces\nwith punctures; the general case was later proved by Kerckhoff [Ker]).\n\nExamples. Assume d is 4 or more. The following s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 263\n\n(4) Although Theorem 1.2 implies 1.1, the techniques we use here do not\nyield the rigidity result for algebraic families which underlies the proof of Theo-\nrem 1.1 in [Mc1]. Similarly, the statement of Theorem 1.1 in [Mc1] is formally\nstronger than that given here: the ‘full measure’ condition is dropped from\nthe definition of general convergence. Here we need that condition to rule out\ninvariant Beltrami differentials supported on the Julia set.\n\n§2. Braiding of the attractor\n\nSince a d-stranded braid is the same as an injective motion of d points on\nthe sphere,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "264 C. McMullen\n\nA good example to keep in mind is that of an expanding map f(z), and\nX the open component of Exp, containing f; Another example is the pair\n(Poly, T,), Where T, is any generally convergent algorithm. (If T, is not a stable\nfamily, then there exist attracting periodic cycles of arbitrarily high order for\ncertain values of p; these persist locally so T, is not generally convergent.)\n\nAs we move about in X, the periodic cycles of f move injectively; in particu-\nlar, the monodromy of the motion of A determines a homomorphism\n\nm1 (X, f) > Mod(A)\n\nwhose image G records the braiding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 265\n§3. Partitions of the sphere\n\nThis section and the next are devoted to the proof of Theorem 2.1.\n\nHere we present a topological criterion for certain partitions of the sphere\nto contain a component K which completely separates the elements of a finite\nset A from one another.\n\nThe next section begins with the definition of the modular group of a rational\nmap and its relation to the monodromy group G in an attractive family. Then\nassuming G is irreducible and fixed-point free, the criterion of this section gives\na component K of the Julia set which separates the poi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "266 C. McMullen\n\nT(K)\n\nAz fa, b,c, d, ef\n\nFig. 3.1 Construction of IK)\n\nSo assume A(K) is either empty or a singleton for all components K; we\nwill deduce a contradiction.\nFirst we simplify the partition to eliminate elements with A(K) empty. Define\n\nfill(K)=€ —U {components of €— K which meet A};\n\nie. fill(K) is obtained from K by filling in the components of its complement\nwhich do not meet A. Using plane topology (e.g. [W]), one may check that\n\nfillpart(J) = {fill(K): K is an element of part(K) with A(K) nonempty}\n\nis again a partition of the Riemann sphere into closed and open sets, and A(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 267\n\n(2) If z is an attracting or superattracting periodic point for f, then so is\n(z) (since these are the only isolated point of JU A).\n\n(3) If zeJ is a critical point (repelling periodic point, indifferent periodic\npoint with multiplier e’®), then the same is true of (2).\n\nIn particular, #(A)=A for any [f] in Mod(J UA, f).\n\nProof of (3). The Julia set is perfect and totally invariant, so points in J are\nmapped locally n-to-1 near z iff z is a critical point of order (n—1) (and the\nformer property is preserved by a topological conjugacy on J.)\n\nTo handle periodic po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "268 C. McMullen\n\nAdopting the notation of the preceding section, we now observe:\n\nProposition 4.2. If Univ(A, f) is irreducible, then part(J) contains a separator\nK.\n\nProof. Let F denote the union of the free homotopy classes IK) over all elements\nK of part(J). Since any two elements of part(J) are disjoint, [ can be represented\nby a finite collection of disjoint simple closed curves on @—A. Every [¢] in\nMod(J, f) maps J to J, so the system of curves I is preserved (up to homotopy)\nby Univ(A, f). (Cf. the Remarks in §3).\n\nIf Univ(A, f) is irreducible, P (and hence each ['(K)) contains only per",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 269\n\nProof. We may assume |A|24 (otherwise Mod(A) itself is finite and there is\nnothing to prove). Propositions 4.2 and 4.3 imply the existence of a separator\nK such that f(K)=K. K is a distinguished component of the Julia set, so the\nmap from Mod(J U A, f) onto Univ(A, f) can be factored:\n\nMod(J U A) > Mod(K UA, f) > Univ(A, f).\n\nBy the definition of an attractive map, K has measure zero. Thus K carries\nno invariant line field and by [Mc2, 3.4], Mod(K, f) is a finite group. (A sketch\nof the argument: one may perform surgery to create a new rational map g\nfor which el",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "270 C. McMullen\n\nleaf through f(x), arranging the critical point and value both to be equal to C3, and of course\nsending x to f(x). Now map the region outside the leaf through f(x) conformally by degree 6\nto the region outside the leaf through f?(x), arranging that co is both the critical point and critical\nvalue for this map. Finally map the annulus Aq between the bouquet and L, smoothly to the\nannulus A,, so that the map fits together with that already defined and creates a branch point\nat x.\n\nFig. A.1. Leaves of the canonical foliation for f(x)\n\nThis defines a smooth branched cover of the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Braiding of the attractor 271\n\nIt is not hard to see ¢ is a homeomorphism commuting with f and quasiconformal except\npossibly on the Julia set. Quasiconformality on the Julia set follows from the expanding property\nof f [Sul2].\n\nBy construction, @ fixes co and cyclically permutes the three finite points in the attractor. The\nmap ¢° fixes the petals, and hence is isotopic to the identity on €—A. 1)\n\nProposition A.5. The monodromy group G contains a half Dehn twist about a simple closed curve\nseparating two points in the attractor from the two others.\n\nProof. Since X is an open subset of Poly,,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mcmullen-braids-hodge-2013/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "272\n\n[Ker]\n[MSS]\n\n[Mct]\n[Mc2]\n[Ss]\n\n[Sm]\n[Sul]\n\n[Sul2]\n(ST]\n\n[Ww]\n[Z]\n\nC. McMullen\n\nKerckhoff, S.: The Nielsen realization problem. Ann. Math. 117, 235-265 (1983)\n\nMane, R., Sad, P., Sullivan, D.: On the dynamics of rational maps. Ann. Sci. Ec. Norm.\nSuper. 16, 193-217 (1983)\n\nMcMullen, C.: Families of rational maps and iterative root-finding algorithms. Ann. Math.\n125, 467-493 (1987)\n\nMcMullen, C.: Automorphisms of rational maps. (To appear, MSRI Geometric Function\nTheory Proceedings)\n\nShub, M., Smale, S.: On the existence of generally convergent algorithms. J. Complex. 2,\n2-11 (1986)\n\nSmale,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,683 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2111.04763v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT\nCONNECTION\nSTAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER\nAbstract. Some years ago, it was conjectured by the first author that the Chern–Simons\nperturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series.\nWe describe completely the resurgent structure of the above series (including the location of\nthe singularities and their Stokes constants) in the case of a hyperbolic knot complement in\nterms of an extended square matrix of (x, q)-series whose rows are indexed by the boundary\nparaboli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "[^1]: A similar phenomenon was observed by Hatsuda--Okuyama [@Hatsuda-Okuyama].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence of Chern–Simons perturbation theory",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-resurgence-of-chernsimons-perturbation-theory.md",
+      "narrative": null,
+      "content": "[]{#sub.intro label=\"sub.intro\"}\n\nQuantum Topology originated by Jones's discovery of the famous polynomial invariant of a knot [@Jones], followed by Witten's 3-dimensional interpretation of the Jones polynomial by means of a gauge theory with a topological (i.e., metric independent) Chern--Simons action [@witten-jones]. The connection between this topological quantum field theory and the Jones polynomial appears both on the level of the exact partition function and its perturbative expansion which both determine, and are determined by, the (colored) Jones polynomial. Indeed, the exact partiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A summary of our results",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-a-summary-of-our-results.md",
+      "narrative": null,
+      "content": "[]{#sub.summary label=\"sub.summary\"}\n\nOur goal is to describe the Stokes constants and the resurgent structure of the missing asymptotic series $\\Phi^{(\\sigma_0)}(h)$ in terms of completing the matrix $\\mathbf J^\\mathrm{red}(x,q)$ to a square matrix with one extra row (namely $(1,0,\\dots,0)^T$) and column, whose distinguished $(\\sigma_0,\\sigma_1)$ entry is conjecturally the Gukov--Manolescu series [@Gukov-Manolescu] (evaluated at $x=1$), and the remaining series in the top row are the descendants of the Gukov-Manolescu series.\n\nAlong the way of solving the resurgence problem for the $\\Phi^{(\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Challenges",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-challenges.md",
+      "narrative": null,
+      "content": "[]{#sub.challenge label=\"sub.challenge\"}\n\nOur solution to the above problems brings a new challenge: namely, the new square matrix is actually a submatrix of a larger matrix $\\mathbf J(x,q)$, one with block triangular form which is a fundamental solution to the linear $q$-difference equation satisfied by the descendants of the colored Jones polynomials [@GK:desc]. Already for the case of the $\\mathbf{5}_2$ knot, one obtains a $6 \\times 6$ matrix instead of the original $3 \\times 3$ matrix $\\mathbf J^\\mathrm{red}(x,q)$, or of the completed $4 \\times 4$ matrix.\n\nA second challenge is to interpre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Illustration with the two simplest hyperbolic knots",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-illustration-with-the-two-simplest-hyperbolic.md",
+      "narrative": null,
+      "content": "[]{#sub.4152 label=\"sub.4152\"}\n\nWe will illustrate our ideas by giving a detailed description of these matrices and of their algebraic, analytic and asymptotic properties for the case of the two simplest hyperbolic knots, the $\\mathbf{4}_1$ and the $\\mathbf{5}_2$ knots. Let us summarise our findings for the $\\mathbf{4}_1$ knot.\n\n-   We complete the $2 \\times 2$ matrix $\\mathbf J^\\mathrm{red}(x,q)$ of $(x,q)$-series to the $3 \\times 3$ matrix $\\mathbf J(x,q)$ by adding the trivial flat connection. Our completed matrix is a fundamental solution of a third order linear $q$-difference equation.\n\n-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-acknowledgements.md",
+      "narrative": null,
+      "content": "Rinat Kashaev, Maxim Kontsevich, Pavel Putrov and Matthias Storzer for enlightening con-\nversations. S.G. wishes to thank the University of Geneva for their hospitality during his\nvisit in the summer of 2021. The work of J.G. has been supported in part by the NCCR\n51NF40-182902 “The Mathematics of Physics” (SwissMAP). The work of M.M. has been\nsupported in part by the ERC-SyG project “Recursive and Exact New Quantum Theory\"\nRESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION\n7\n(ReNewQuantum), which received funding from the European Research Council (ERC) un-\nder the European Unio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 41 knot",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-2-the-41-knot.md",
+      "narrative": null,
+      "content": "2.1. A 2 × 2 matrix of q-series. In this section we recall in detail what is known about\nthe resurgence of the two asymptotic series of the 41 knot, labeled by the geometric and\nthe complex-conjugate flat connections.\nAs explained in the introduction, the answer is\ndetermined by a 2 × 2 matrix of q-series which was discovered in a long story and in several\nstages in a series of papers [GZa, GK17, GGMn21, GGMn]. A detailed description of the\nnumerical discoveries and coincidences is given in [GZa] and will not be repeated here. In\nthat paper, the following pair of q-series G(j)(q) for j = 0, 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "The matrix Jm(q) is a fundamental solution to the linear q-difference equation Jm+1(q) = Jm(q)A(qm, q), A(qm, q) =   −1 2 −qm+1  , (13) has det(Jm(q)) = −1 and satisfies the analytic extension Jm(q−1) =   −1  J−m−1(q)    . (14)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "We have Jm(q)−1 =    L(0) m (q) −L(1) m (q) −G(0) m+1(q) G(1) m+1(q) G(0) m (q) −G(1) m (q)    (15) for the q-series L(j) m (q) (j = 0, 1) defined by L(0) m (q) = G(0) m+1(q)G(2) m (q) −G(0) m (q)G(2) m+1(q) L(1) m (q) = G(1) m+1(q)G(2) m (q) −G(1) m (q)G(2) m+1(q) . (16) The q-series L(j) m (q) are expressed in terms of Appell-Lerch type sums: L(0) m (q) = 2E(0) 1 (q) −1 −m + ∞ X n=1 (−1)nqn(n+1)/2 (q; q)2 n qmn+n 1 −qn L(1) m (q) = −3 8 −2E(0) 1 (q)2 + 2E(0) 1 (q) −E(0) 2 (q) −1 24E2(q) + 2mE(0) 1 (q) −m −m2 + ∞ X n=1 (−1)nqn(n+1)/2 (q)2 n qmn+n 1 −qn \u0012 n + m + 1 2 −2E(n) 1 (q) + 1 −qn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Borel resummation and Stokes constants",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-24-borel-resummation-and-stokes-constants.md",
+      "narrative": null,
+      "content": "[]{#sub.41borel label=\"sub.41borel\"}\n\nIn this section we discuss the asymptotic expansion as $q = {\\rm e}^{2\\pi{\\rm i}\\tau}\\rightarrow 1$ of the vector $G(q)$ of $q$-series and relate it to the vector $\\Phi(\\tau)$ of the asymptotic series, where $$G(q) =\n  \\begin{pmatrix}\n    G^{(2)}(q) \\\\\n    G^{(1)}(q) \\\\\n    G^{(0)}(q)\n  \\end{pmatrix}, \\qquad\n  \\Phi(\\tau) =\n  \\begin{pmatrix}\n    \\Phi^{(\\sigma_0)}(\\tau)\\\\\n    \\Phi^{(\\sigma_1)}(\\tau)\\\\\n    \\Phi^{(\\sigma_2)}(\\tau)\n  \\end{pmatrix}\n  \\label{eq:Gq}$$ with $G^{(0)}(q), G^{(1)}(q)$ given in [\\[G01\\]](#G01){reference-type=\"eqref\" reference=\"G01\"}, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Andersen–Kashaev state-integral",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-25-the-andersenkashaev-state-integral.md",
+      "narrative": null,
+      "content": "[]{#sub.AK41 label=\"sub.AK41\"}\n\nIn this section we briefly recall the properties of the state-integral of Andersen--Kashaev for the $\\mathbf{4}_1$ knot [@AK Sec.11.4], defined by $$\\label{Z410}\n  Z_{\\mathbf{4}_1}(\\tau) = \n  \\int_{\\mathbbm R+{\\rm i}0} \\Phi_\\mathsf{b}(v)^2 \\, {\\rm e}^{-\\pi {\\rm i}v^2} {\\rm d}v, \\qquad (\\tau=\\sqrt{\\mathsf{b}}) \\,.$$ Here, $\\operatorname{\\Phi}_{\\mathsf{b}}(z)$ is Faddeev's quantum dilogarithm [@Faddeev], in the conventions of e.g. [@AK Appendix A]. With this choice of contour, the integrand is exponentially decaying at $\\pm \\infty$ hence the integral is absolutely",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "This inversion between $q$-series and elements of the Habiro ring was observed 10 years ago by the first author in his joint work with Zagier [@GZ:qseries], under the informal name \"upside-down cake\".",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A new state-integral",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-26-a-new-state-integral.md",
+      "narrative": null,
+      "content": "[]{#sub.AK41new label=\"sub.AK41new\"}\n\nIn the previous section, we saw how the matrix $W^\\mathrm{red}(\\tau)$ of products of $q$-series and $\\tilde{q}$-series [\\[Gm01\\]](#Gm01){reference-type=\"eqref\" reference=\"Gm01\"} coincides with a matrix of state-integrals. Having found the $q$-series [\\[G2\\]](#G2){reference-type=\"eqref\" reference=\"G2\"} which complement the series [\\[Gm01\\]](#Gm01){reference-type=\"eqref\" reference=\"Gm01\"}, it is natural to search for a new state-integral which factorises in terms of all three $q$-series $G_{m}^{(j)}(q)$ for $j=0,1,2$ and their $\\tilde{q}$-versions. Upon look",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/cor-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "cor-sec-010-03.md",
+      "narrative": null,
+      "content": "Cm(x, q) = x−1 −x (Am(x, q)LBm(x, q) −Bm(x, q)LAm(x, q)) (105) Cm+1(x, q) = x−1 −x (Am+1(x, q)LBm(x, q) −Bm+1(x, q)LAm(x, q)) . (106)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The x-variable",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-3-the-x-variable.md",
+      "narrative": null,
+      "content": "In this section we discuss an extension of the results of Section 2 adding an x-variable. In\nthe context of the nth colored Jones polynomial, x = qn corresponds to an eigenvalue of the\nmeridian in the asymptotic expansion of the Chern–Simons path integral around an abelian\nrepresentation of a knot complement.\nIn the context of the state-integral of Andersen-\nKashaev [AK14], the x-variable is the monodromy of a peripheral curve. The corresponding\nstate-integral factorises bilinearly into holomorphic blocks, which are functions of (x, q) and\n(˜x, ˜q) [BDP14].\nIn the context of quantum modular fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The matrix Jm(x, q) is a fundamental solution to the linear q-difference equa- tion Jm+1(x, q) = Jm(x, q)A(x, qm, q), A(x, qm, q) =   −1 x−1 + x −qm+1  , (97) has det(Jm(x, q)) = x−1 −x and satisfies the analytic extension Jm(x, q−1) =    J−m−1(x, q)    . (98)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "We have Jm(x, q)−1 = x−1 −x   x−1 −x −LBm(x, q) LAm(x, q) Bm+1(x, q) −Am+1(x, q) −Bm(x, q) Am(x, q)   (100) for the q-series LAm(x, q), LBm(x, q) defined by LAm(x, q) = Am+1(x, q)Cm(x, q) −Am(x, q)Cm+1(x, q) LBm(x, q) = Bm+1(x, q)Cm(x, q) −Bm(x, q)Cm+1(x, q) (101) The q-series LAm(x, q), LBm(x, q) are expressed in terms of Appell-Lerch type sums: LAm(x, q) = ∞ X k=0 (−1)k qk(k+1)/2+km+kxk+m+1 (q; q)k(x2q; q)k(1 −xqk) LBm(x, q) = LAm(x−1, q) . (102)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Borel resummation and Stokes constants",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "../sections/sec-011-33-borel-resummation-and-stokes-constants.md",
+      "narrative": null,
+      "content": "[]{#sub.41borel label=\"sub.41borel\"}\n\nIn this section we discuss the asymptotic expansion as $q = {\\rm e}^{2\\pi{\\rm i}\\tau}\\rightarrow 1$ of the vector $G(q)$ of $q$-series and relate it to the vector $\\Phi(\\tau)$ of the asymptotic series, where $$G(q) =\n  \\begin{pmatrix}\n    G^{(2)}(q) \\\\\n    G^{(1)}(q) \\\\\n    G^{(0)}(q)\n  \\end{pmatrix}, \\qquad\n  \\Phi(\\tau) =\n  \\begin{pmatrix}\n    \\Phi^{(\\sigma_0)}(\\tau)\\\\\n    \\Phi^{(\\sigma_1)}(\\tau)\\\\\n    \\Phi^{(\\sigma_2)}(\\tau)\n  \\end{pmatrix}\n  \\label{eq:Gq}$$ with $G^{(0)}(q), G^{(1)}(q)$ given in [\\[G01\\]](#G01){reference-type=\"eqref\" reference=\"G01\"}, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(u,) state-integrals",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-012-34-u-state-integrals.md",
+      "narrative": null,
+      "content": "[]{#sub.41statex label=\"sub.41statex\"}\n\nIn parallel to the discussion in Sections [\\[sub.AK41new\\]](#sub.AK41new){reference-type=\"ref\" reference=\"sub.AK41new\"} and [\\[sub.3x3state\\]](#sub.3x3state){reference-type=\"ref\" reference=\"sub.3x3state\"}, we now introduce a new state-integral which depends on $\\tau$, but also on a variable $u$. Let us consider the state-integral $$\\mathcal{Z}_\\mathcal B(u,\\tau) = -\\frac{{\\rm i}}{2\\mathsf{b}}\\frac{\\sinh(\\pi \\mathsf{b}^{-1} u)}\n  {\\sinh(\\pi \\mathsf{b}u)}\n  \\int_{\\mathcal B} \\tanh(\\pi\\mathsf{b}^{-1}v)\n  \\frac{\\Phi_\\mathsf{b}(-v+\\frac{{\\rm i}}{2}\\mathsf{b}^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An analytic extension of the colored Jones polynomial",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-013-35-an-analytic-extension-of-the-colored-jones-po.md",
+      "narrative": null,
+      "content": "[]{#sub.CJ41analytic label=\"sub.CJ41analytic\"}\n\nIn this section we discuss a Borel resummation formula for the colored Jones polynomial of the $\\mathbf{4}_1$ knot. The latter is defined by $$J^{\\mathbf{4}_1}_N(q) = \\sum_{k=0}^{N-1}(-1)^k\n  q^{-k(k+1)/2}(q^{1+N};q)_k(q^{1-N};q)_k \\,.$$ Let $u \\sim 0$ be in a small neighborhood of the origin in the complex plane. It is related to $x = q^N$ and $\\tau$ by $$x = {\\rm e}^{u},\\quad \\tau = \\frac{u}{2\\pi{\\rm i}N}+\\frac{1}{N}.\n  \\label{eq:x-n-tau}$$ Then $u$ is near $0$, then $x$ is close to $1$, which is the regime that we studied in Section [\\[sub.41b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 52-knot",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-014-4-the-52-knot.md",
+      "narrative": null,
+      "content": "4.1. A 3 × 3 matrix of q-series. The trace field of the 52 knot is the cubic field of dis-\ncriminant −23, with a distinguished complex embedding σ1 (corresponding to the geometric\nrepresentation of 52), its complex conjugate σ2 and a real embedding σ3. The 52 knot has\nthree boundary parabolic representations whose associated asymptotic series φ(σj)(h) for\nj = 1, 2, 3 correspond to the three embeddings of the trace field. In [GGMn21] these asymp-\ntotic series were discussed, and a 3 × 3 matrix Jred\nm (q) of q-series was constructed to describe\nthe resurgence properties of the asymptotic series.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/conj-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "conj-sec-015-02.md",
+      "narrative": null,
+      "content": "When |q| < 1, the matrix Jnorm(q) has a block form   1 × 1 1 × 3 1 × 2 3 × 3 3 × 2 2 × 2  . (177) Our next task is to identify the 3 × 3 and the 2 × 2 blocks of the matrix Jnorm(q). The first observation is that the 3 × 3 block is related to the 3 × 3 matrix given in [GGMn21]. The second is that the 2 × 2 block is related to modular forms. This is the content of the next conjecture.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/conj-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "conj-sec-015-03.md",
+      "narrative": null,
+      "content": "The 3 × 3 block for |q| < 1 of Jnorm(q) of (175) has the form (q; q)∞Jred −1(q)   −1 −1   (178) RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION (where Jred m (q) is the 3 × 3 matrix of [GGMn21] reviewed in Section 4.1) and the 2 × 2 block has the form (q; q)2 ∞ \u0012 H(q) G(q) ∗ ∗ \u0013 (179) where H(q) = ∞ X k=0 qk2+k (q; q)k and G(q) = ∞ X k=0 qk2 (q; q)k (180) are the famous Rogers-Ramanujan functions. The remaining two entries of the 2×2 block are higher weight vector-valued modular forms associated to the same SL2(Z)-representation as the Rogers-Ramanujan functions, discussed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Habiro polynomials and the descendant Kashaev invariants",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-015-42-the-habiro-polynomials-and-the-descendant-kas.md",
+      "narrative": null,
+      "content": "4.2. The Habiro polynomials and the descendant Kashaev invariants. The addition\nof the asymptotic series φ(σ0)(h) corresponding to the trivial flat connection requires a 4 × 4\nextension of the matrix Jred(q).\nThis is consistent with the fact that the colored Jones\npolynomial of 52 satisfies a third order inhomogenous linear q-difference equation, and hence\na 4th order homogeneous linear q-difference equation. However, the descendant colored Jones\npolynomials of 52 satisfy a 5th order inhomogeneous recursion [GK, Eqn.(14)], hence a 6th\norder homogeneous recursion. In view of this, we will give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "The matrix Jm(q) is a fundamental solution to the linear q-difference equation Jm+1(q) = Jm(q)A(qm, q), A(qm, q) =         −q−2m−10 (1 −qm+1)(1 −qm+2)q−2m−10 (3 + 2q)(1 −qm+1)q−m−8 (qm+4 + 6qm+3 + 3qm+2 −q −4)q−m−7 (−3qm+4 −6qm+3 −qm+2 + 3)q−m−6 (3qm+4 + 2qm+3 −1)q−m−5         . (173) STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER and has det(Jm(q)) = q−20−7m(q; q)9 ∞(q−m−1; q)∞(q−m; q)∞ (|q| < 1), det(Jm(q)) = q−20−7m(q−1; q−1)−9 ∞(q−m−1; q−1)−1 ∞(q−m−2; q−1)−1 ∞ (|q| > 1). (174)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/conj-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "conj-sec-016-01.md",
+      "narrative": null,
+      "content": "For every cone R ⊂C \\ Λ and every τ ∈R, we have Q(2,0) (q) = sR(Φ(σ0))(τ) + τ −3/2 X j=1 MR,j(˜q)sR(Φ(σj))(τ), (203) where MR,j(˜q) (j = 1, 2, 3) are ˜q (resp., ˜q−1)-series if Imτ > 0 (resp., Imτ < 0) with integer coefficients that depend on R. A more elegant way to present MR,j(˜q) is by the row vector MR(˜q) := (MR,1, MR,2, MR,3)(˜q), and it can be expressed in terms of a 3 × 3 matrix M(σ0) R (˜q) MR(˜q) = \u0010 ˜qQ(2,0) (˜q), ˜q2Q(2,0) (˜q), ˜q3Q(2,0) (˜q) \u0011 M (σ0) R (˜q). (204) STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/conj-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "conj-sec-016-02.md",
+      "narrative": null,
+      "content": "Equation (203) holds in the cones R = I, II, III, IV where the ˜q,˜q−1-series MR,j(˜q) are given in terms of M (0) R (˜q) through (235) which are as follows M (σ0) I (˜q) =   −1 −3˜q −1 −1 + 3˜q −˜q  , (205a) M (σ0) II (˜q) =   −1 −3˜q −1 −1 + 3˜q −˜q  , (205b) M (σ0) III (˜q) =   −3˜q −1 −1 + 3˜q −˜q  , (205c) M (σ0) IV (˜q) =   −3˜q −1 −1 + 3˜q −˜q  . (205d) Eqs. (203), together with the reduced Stokes matrices Sred R→R′(˜q) for Φ(σj)(τ) (j = 1, 2, 3), allow us to calculate entries in the first row of SI→II(˜q) and SIII→IV (˜q) by SR→R′(˜q)0,j = MR,j(˜q) − X k=1 MR′,k(˜q)Sred",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Borel resummation and Stokes constants",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "../sections/sec-016-44-borel-resummation-and-stokes-constants.md",
+      "narrative": null,
+      "content": "Φ(σj)(τ) for j = 0, 1, 2, 3 corresponding to the trivial, the geometric, the conjugate, and\nthe real flat connections respectively, denoted respectively by σj for j = 0, 1, 2, 3. Similar\nto the 41 knot, the asymptotic series Φ(σj)(τ) for j = 1, 2, 3 can be defined in terms of a\nperturbation theory of a state-integral [KLV16, AK14] using the standard formal Gaussian\nintegration as explained in [DGLZ09, GGMn21], and they have been computed in [GGMn21]\nwith more than 200 terms. Let ξj (j = 1, 2, 3) be the roots to the algebraic equation\n(1 −ξ)3 = ξ2\n(184)\nwith numerical values\nξ1 = 0.78492 . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(x,q)-series",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-017-45-xq-series.md",
+      "narrative": null,
+      "content": "variable x.\nRecall that the matrix Jred\nm (x, q)7 is a fundamental solution to the linear q-\ndifference equation\nfm(x, q) −(1 + x + x−1)fm+1(x, q) + (1 + x + x−1 −q2+m)fm+2(x, q) −fm+3(x, q) = 0 (214)\nand it is defined by\nJred\nm (x, q) =\n\n\nAm(x, q)\nAm+1(x, q)\nAm+2(x, q)\nBm(x, q)\nBm+1(x, q)\nBm+2(x, q)\nCm(x, q)\nCm+1(x, q)\nCm+2(x, q)\n\n,\n|q|̸ = 1,\n(215)\nwhere the holomorphic blocks are given by\nAm(x, q) = H(x, x−1, qm; q),\n(216a)\nBm(x, q) = θ(−q1/2x; q)−2xmH(x, x2, qmx2; q),\n(216b)\nCm(x, q) = θ(−q−1/2x; q)−2x−mH(x−1, x−2, qmx−2; q),\n(216c)\n7The matrices Jred\nm (x, q) are related to the Wronski",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "x-version of Borel resummation and Stokes constants",
+      "pageStart": 48,
+      "pageEnd": 52,
+      "target": "../sections/sec-018-46-x-version-of-borel-resummation-and-stokes-con.md",
+      "narrative": null,
+      "content": "[]{#sub.52borelx label=\"sub.52borelx\"}\n\nIn this section we discuss the $x$-deformation version of Section [\\[sub.52borel\\]](#sub.52borel){reference-type=\"ref\" reference=\"sub.52borel\"}. The asymptotic series $\\Phi^{(\\sigma_j)}(\\tau)$ for $j=0,1,2,3$ are extended to series $\\Phi^{(\\sigma_j)}(x;\\tau)$ with coefficients in $\\mathbb{Z}(x^{\\pm 1})$. The series $\\Phi^{(\\sigma_j)}(x;\\tau)$ for $j=1,2,3$ are defined in terms of perturbation theory of a deformed state-integral [@AK] and they have been computed with about 200 terms for many values of $x$ in [@GGM:peacock]. Let $\\xi_j$ ($j=1,2,3$) be thre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-019-47-an-analytic-extension-of-the-kashaev-invarian.md",
+      "narrative": null,
+      "content": "In this section we discuss an analytic extension of the Kashaev invariant and of the colored Jones polynomial of the $\\mathbf{5}_2$ knot, illustrating Conjectures [\\[conj.ekashaev\\]](#conj.ekashaev){reference-type=\"ref\" reference=\"conj.ekashaev\"} and [\\[conj.ejones\\]](#conj.ejones){reference-type=\"ref\" reference=\"conj.ejones\"}.\n\nRecall that the colored Jones polynomial of the $\\mathbf{5}_2$ is given by $$J^{\\mathbf{5}_2}_N(q) = \\sum_{k=0}^{N-1}(-1)^k\n  q^{-k(k+1)/2}(q^{1+N};q)_k(q^{1-N};q)_k H_k(q),\\quad\n  q = {\\rm e}^{2\\pi{\\rm i}\\tau},$$ where $$H_k(q) = (-1)^kq^{k(k+3)/2}\\sum_{k=0}^\\ell q^{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A new state-integral for the 52 knot?",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-020-48-a-new-state-integral-for-the-52-knot.md",
+      "narrative": null,
+      "content": "[]{#sec:newstateint label=\"sec:newstateint\"}\n\nIn the case of the figure eight knot, the new state-integral was obtained by first writing down an integral formula for its colored Jones polynomial, in Habiro form, and then changing the integration contour to pick the contribution from the poles in the lower half plane. This led in particular to the \"inverted\" Habiro series $\\mathcal{C}_0(x,q)$ in ([\\[eq:Ixq\\]](#eq:Ixq){reference-type=\"ref\" reference=\"eq:Ixq\"}). Although we do not have a similar complete theory for the ${\\mathbf{5}_2}$ knot, we can however write down an integral formula for its c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/conj-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "conj-sec-021-01.md",
+      "narrative": null,
+      "content": "For m ≥0 we have: fm,p(q) = ∞ X k,i=0 (−1)iqi(i+1)/2+k (q; q)m+k+i (q; q)m(q; q)i(q; q)k hk,p(q), f−1−m,p(q) = m X k=0 m−k X i=0 (−1)iqi(i+1)/2+k (q−1; q−1)m (q−1; q−1)m−i−k(q; q)i(q; q)k hk,p(q) . (268)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. q-series identities",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "../sections/sec-021-appendix-a-q-series-identities.md",
+      "narrative": null,
+      "content": "In this appendix we will sketch the proofs of some q-series identities that appear in Con-\njecture 19. Since this not one of the main themes of the paper, our presentation will be\nrather brief. Our proofs of the q-hypergeometric identities will use the algorithmic approach\nof the Wilf-Zeilberger theory (see [WZ92, PWZ96]) and the computer implementation by\nKoutschan [Kou10]).\nWe outline part of the proof of Conjecture 19 for |q| < 1, namely\nqQ(0,0)\n0\n(q) = (q; q)∞\n∞\nX\nn=0\nqn(n+1)\n(q; q)3\nn\nqQ(0,0)\n1\n(q) = (q; q)∞\n∞\nX\nn=0\n(2 −qn)qn(n+1)\n(q; q)3\nn\nqQ(0,0)\n2\n(q) = (q; q)∞\n∞\nX\nn=0\n\u0000(3 + q−1) −(2 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.04763v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[AH06]\nJorgen Ellegaard Andersen and Soren Kold Hansen, Asymptotics of the quantum invariants for\nsurgeries on the figure 8 knot, J. Knot Theory Ramifications 15 (2006), no. 4, 479–548.\n[AK14]\nJorgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichmüller theory,\nComm. Math. Phys. 330 (2014), no. 3, 887–934.\n[BDP14]\nChristopher Beem, Tudor Dimofte, and Sara Pasquetti, Holomorphic Blocks in Three Dimen-\nsions, JHEP 12 (2014), 177, 1211.1986.\n[BN95]\nDror Bar-Natan, On the Vassiliev knot invariants, Topology 34 (1995), no. 2, 423–472.\n[CG11]\nOvidiu Costin and Stavros Garoufalidis, R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

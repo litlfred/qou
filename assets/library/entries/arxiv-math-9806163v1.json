@@ -1,0 +1,251 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9806163v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9806163v1  [math.CO]  30 Jun 1998\nWeights of Markov Traces on Hecke Algebras∗\nR.C. Orellana\nNovember 16, 2021\nAbstract\nWe compute the weights, i.e. the values at the minimal idempotents, for the Markov\ntrace on the Hecke algebra of type Bn and type Dn. In order to prove the weight\nformula, we deﬁne representations of the Hecke algebra of type B onto a reduced\nHecke Algebra of type A. To compute the weights for type D we use the inclusion of\nthe Hecke algebra of type D into the Hecke algebra of type B.\nIntroduction\nThe Hecke algebra of type Bn, Hn(q, Q), is semisimple whenever Q̸ = −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and Notation",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-preliminaries-and-notation.md",
+      "narrative": null,
+      "content": "Let $F$ be a field of characteristic $0$. The algebra of $n\\times n$ matrices over $F$ is denoted by $M_n(F)=M_n$. Let $A\\subset B$ be an inclusion of semisimple algebras. Then $A=\\bigoplus_{i=1}^m A_i$ and $B=\\bigoplus_{j=1}^lB_j$, with $A_i\\cong M_{a_i}$, $B_j\\cong M_{b_j}$ and $a_i,\\ b_j\\in \\mathbb{N}$. Since a simple $B_j$ module is also an $A$ module, it can be decomposed into a direct sum of simple $A$ modules. Let $g_{ij}$ be the number of simple $A_i$ modules in this decomposition. The matrix $G=(g_{ij})$ is called the inclusion matrix for $A\\subset B$. This matrix can be conveniently",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partitions and Standard Tableaux",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-partitions-and-standard-tableaux.md",
+      "narrative": null,
+      "content": "A *partition* of $n$ is a sequence of positive numbers $\\alpha=(\\alpha_1,\\ldots, \\alpha_k)$ such that $\\alpha_1\\geq \\alpha_2\\geq \\ldots \\geq \\alpha_k \\geq 0$ and $n=|\\alpha|=\\alpha_1+\\alpha_2+\\ldots +\\alpha_k$. The $\\alpha_i$'s are called the *parts* of $\\alpha$, and the number of nonzero parts of $\\alpha$ is called the *length* of $\\alpha$, denoted by $l(\\alpha)$. If we say $l(\\alpha)\\leq r_1$, then we we will mean that there are $s\\leq r_1$ nonzero parts and the remaining $r_1-s$ are equal to zero. We use the notation $\\alpha\\vdash n$ to mean $\\alpha$ is a partition of $n$. A *Young diagram*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur Functions",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-schur-functions.md",
+      "narrative": null,
+      "content": "For details and proofs on the results mentioned in this subsection we refer the reader to [@mc] Ch.I, sec. 3. Suppose $x_1,x_2,\\ldots x_r$ is a finite set of variables. For some partition $\\alpha$ we set $x^{\\alpha}=x_1^{\\alpha_1}\\ldots x_r^{\\alpha_r}$. Let $\\delta=[r-1,r-2,\\ldots,1,0]$. We define the following determinant. $$a_{\\alpha+\\delta}=\\det(x_i^{\\lambda_j+r-j})$$ This determinant is divisible in $\\mathbb{Z}[x_1,\\ldots,x_r]$ by the Vandermonde determinant which is given by $$a_{\\delta}=\\det(x_i^{r-j}).$$ Then the symmetric *Schur function* is defined as follows: $$s_{\\alpha}(x_1,\\ldots,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Braid Group",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-13-the-braid-group.md",
+      "narrative": null,
+      "content": ".1in []{#sec-prelim label=\"sec-prelim\"} The braid group of type $A$, $\\mathcal{B}_n(A)$, can be defined algebraically by generators $\\tilde{\\sigma}_1,\\tilde{\\sigma}_2, \\ldots, \\tilde{\\sigma}_{n-1}$ and relations $$\\tilde{\\sigma}_i\\tilde{\\sigma}_j=\\tilde{\\sigma}_j\\tilde{\\sigma}_i \\ \\ \\ \\ \\mbox{if  $\\  |i-j|>1$}, \\label{eq:BR1}$$ $$\\tilde{\\sigma}_i\\tilde{\\sigma}_{i+1}\\tilde{\\sigma}_i=\\tilde{\\sigma}_{i+1}\\tilde{\\sigma}_i\\tilde{\\sigma}_{i+1} \\ \\ \\ \\mbox{if $\\  1\\leq i\\leq n-2$} \\label{eq:BR2}$$ Similarly we can define the braid group of type $B$, $\\mathcal{B}_n(B)$, by generators $t, \\sigma_1,\\sig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hecke Algebra of type $B_n$",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-2-hecke-algebra-of-type-b-n.md",
+      "narrative": null,
+      "content": "In this context, we will mean by the Hecke algebra $H_n(q,Q)$ of type $B_n$ the free complex algebra with 1 and generators $t, g_1, g_2, \\ldots, g_{n-1}$ and parameters $q,Q \\in \\mathbb{C}$ with defining relations\n\n1.     $g_{i}g_{i+1}g_{i}=g_{i+1}g_{i}g_{i+1}$    for $i=1,2, \\ldots, n-2$;\n\n2.     $g_{i}g_{j}= g_{j}g_{i}$,    whenever $\\mid i-j \\mid \\geq 2$;\n\n3.     $g_i^2 = (q-1)g_i +q$     for $i=1,2, \\ldots, n-1$;\n\n4.     $t^2 = (Q-1)t +Q$;\n\n5.     $tg_1tg_1=g_1tg_1t$;\n\n6.     $tg_i=g_it$      for $i \\geq 2$.\n\nNote that for $q=1$ and $Q=1$, (H3) and (H4) become $g_i^2=1$ and $t^2=1$, respec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations of the Hecke algebra of type $B$ onto a Reduced Hecke Algebra of type $A$",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-representations-of-the-hecke-algebra-of-type-b.md",
+      "narrative": null,
+      "content": "Representations of the Hecke algebra of type B onto",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke Algebra of type $A$",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-31-the-hecke-algebra-of-type-a.md",
+      "narrative": null,
+      "content": "By the Hecke algebra of type $A_{n-1}$, $H_n(q)$, we mean the free complex algebra with generators $\\tilde{g}_1$, ..., $\\tilde{g}_{n-1}$ and 1 with parameter $q\\in \\mathbb{C}$ and defining relations\n\n1.     $\\tilde{g}_{i}\\tilde{g}_{i+1}\\tilde{g}_{i}=\\tilde{g}_{i+1}\\tilde{g}_{i}\\tilde{g}_{i+1}$    for $i=1,2, \\ldots, n-2$;\n\n2.     $\\tilde{g}_{i}\\tilde{g}_{j}= \\tilde{g}_{j}\\tilde{g}_{i}$,    whenever $\\mid i-j \\mid \\geq 2$;\n\n3.     $\\tilde{g}_i^2 = (q-1)\\tilde{g}_i +q$     for $i=1,2, \\ldots, n-1$;\n\n$H_n(q)$ is semisimple whenever $q$ is not a root of unity. If $\\mu \\vdash n$, then $(\\pi_{\\mu},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Homomorphism of $H_n(q,-q^{r_1+m})$ onto a reduced algebra of $H_{n+f}(q)$",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-32-a-homomorphism-of-h-nq-qr-1m-onto-a-reduced-a.md",
+      "narrative": null,
+      "content": "In ([@w1], Cor. 2.3) Wenzl defined a special set of minimal idempotents of $H_f(q)$ indexed by the standard tableaux. The sum of these idempotents is 1. These minimal idempotents are well-defined whenever $H_f(q)$ is semisimple. If $p\\in H_f(q)$ is an idempotent then the *reduced algebra* of $H_f(q)$ is $pH_f(q)p:= \\{pap\\, |\\, a\\in H_f(q)\\}$. Let $\\lambda\\vdash f$ and $t^{\\lambda}$ be a standard tableau of shape $\\lambda$. Then $p_{t^{\\lambda}}$ is the minimal idempotent indexed by $t^{\\lambda}$. Thus, the reduced algebra decomposes as follows: $$p_{t^{\\lambda}}H_{n+f}(q)p_{t^{\\lambda}} \\cong",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov Traces on the Hecke Algebra of type $B$",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-4-markov-traces-on-the-hecke-algebra-of-type-b.md",
+      "narrative": null,
+      "content": "In this section we give the necessary background on Markov traces. We refer the reader to [@gl] or [@g] for the details. A *trace* function on $H_{\\infty}(q,Q)$ is a $\\mathbb{C}(q,Q)$-linear map $\\phi:H_{\\infty}(q,Q)\\longrightarrow \\mathbb{C}(q,Q)$ such that $\\phi (hh')=\\phi (h'h)$ for all $h,h' \\in H_{\\infty}(q,Q)$. This definition is in fact valid for any associative algebra over a commutative ground ring. In the case of the group algebra it is clear that every trace function is constant on the conjugacy classes of the underlying group. Notice that $\\phi(hh')-\\phi(h'h)=0$; this means that $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Weight Formula",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-009-5-the-weight-formula.md",
+      "narrative": null,
+      "content": "In this section we define for every pair of partitions, $(\\alpha, \\beta)$, a rational function in $q$ and $Q$, $W_{(\\alpha,\\beta)}(q,Q)$. We will show that this function is a weight for the Markov trace defined by Geck and Lambropolou [@gl] for the Hecke algebra of type $B$. If we denote the weights by $\\omega_{(\\alpha,\\beta)}$ then the Markov trace, $tr$, can be written as follows: $$tr(x)=\\sum_{(\\alpha,\\beta)\\vdash n}{\\omega_{(\\alpha,\\beta)}\\chi^{(\\alpha,\\beta)}(x)},$$ where $x \\in H_n(q,Q)$ and $\\chi^{(\\alpha,\\beta)}$ is the character (the usual trace) of the irreducible representation of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "The weight formula for the Markov trace on the Hecke algebra of type D with parameters z = qr (1−q) (1−qr) and y = (Qqr2+1)(1−qr1) (1−qr) −1 is given as follows: W D (α,β)(q) = W(α,β)(q, 1) + W(α,β)(q, 1), if α̸ = β and W D (α,α)i(q) = W(α,α)(q, 1), for i = 1, 2 if α = β where W(α,β)(q, 1) denote the weight evaluated at Q = 1 of the Hecke algebra of type B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9806163v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov Trace for the Hecke algebra of type D",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-6-markov-trace-for-the-hecke-algebra-of-type-d.md",
+      "narrative": null,
+      "content": "Markov Trace for the Hecke algebra of type D\nThe easiest way to study Markov traces on the Hecke algebras of type D is by embedding\nthese algebras into those for type B, and then applying the results for type B.\nAs observed by Hoefsmit [H], in order to obtain an embedding of HD\nn (q) into HB\nn (q, Q) we\nhave to set the parameter Q equal to 1. Notice that in this case we have t2 = 1. The Hecke\nalgebra of type D is generated by u = tg1t, g1, . . . , gn−1 satisfying the following relations:\n(D1) gigi+1gi = gi+1gigi+1 for i = 1, . . . n −2;\n(D2) gigj = gjgi whenever |i −j| ≥2;\n(D3) g2\ni = (q −1)gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

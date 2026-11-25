@@ -1,0 +1,323 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2603.25236v1",
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coupled half-edges",
+          "heading": false
+        },
+        {
+          "term": "half-edges coming",
+          "heading": false
+        },
+        {
+          "term": "four half-edges",
+          "heading": false
+        },
+        {
+          "term": "l-th moment",
+          "heading": false
+        },
+        {
+          "term": "plaquettes",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "coupled together",
+          "heading": false
+        },
+        {
+          "term": "asymptotic replacement",
+          "heading": false
+        }
+      ],
+      "extract": "A Concentration of Measure Phenomenon in Lattice Yang-Mills T. Tlas Abstract We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2603.25236v1/blocks/prose-sec-front-matter",
+        "library/arxiv-2603.25236v1/blocks/thm-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beirut",
+          "heading": false
+        },
+        {
+          "term": "tlas",
+          "heading": false
+        },
+        {
+          "term": "weingarten",
+          "heading": false
+        },
+        {
+          "term": "measure phenomenon",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M. Ledoux, “The concentration of measure phenomenon”, Math. Surveys Monogr., 89, American Mathematical Society, Providence, 2001. [2] B. Collins, S. Matsumoto, J. Novak, “The Weingarten Calculus”, Notices Amer. Math. Soc. 69 (2022), no. 5, 734–745. [3] D. Weingarten, “Asymptotic behavior of group integrals in the limit of infinite rank”, J. Mathematical Phys. 19 (1978), no. 5, 999-1001. [4] M. Creutz, “Quarks,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "coupled half-edges",
+      "heading": true
+    },
+    {
+      "term": "half-edges coming",
+      "heading": false
+    },
+    {
+      "term": "four half-edges",
+      "heading": false
+    },
+    {
+      "term": "measure phenomenon",
+      "heading": false
+    },
+    {
+      "term": "haar measure",
+      "heading": false
+    },
+    {
+      "term": "l-th moment",
+      "heading": false
+    },
+    {
+      "term": "plaquettes",
+      "heading": true
+    },
+    {
+      "term": "asymptotic replacement",
+      "heading": false
+    },
+    {
+      "term": "lattice sites",
+      "heading": false
+    },
+    {
+      "term": "lattice yang-mills",
+      "heading": false
+    },
+    {
+      "term": "coupled together",
+      "heading": true
+    },
+    {
+      "term": "tlas",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Summary of a graphical notation used below. Note the order of the product in the sum in the rightmost expression. It is the one consistent with",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A pictorial representation of (3) in the cases n = 2 and n = 4. Graphically, integration over a bundle of edges amounts to cutting them into half-edges, and then linking or coupling the half edges in pairs on one side of the cut with each other, with matching coupling of the half-edges on the other",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A pictorial representation of the argument given in the main text. We perform the integral over the group elements living on the edges. Only one of these integrals is explicitly written out with the rest being represented by the . . . under the integral sign. As represented in Figure 2, after perfor",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "This is a graphical representation of the only way two plaquettes can be coupled together in order to solely produce instances of case (a) from Figure 3. To see this, suppose the half-edges are coupled to produce case (a) for e.g., the bottom left corner. It follows that the other two half-edges com",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2603.25236v1"
+  }
+}

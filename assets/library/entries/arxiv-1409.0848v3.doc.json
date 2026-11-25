@@ -1,0 +1,1607 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.0848v3",
+  "title": "arxiv-1409.0848v3",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Recollections",
+      "number": "1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-recollections"
+    },
+    {
+      "level": 2,
+      "title": "Stratified spaces",
+      "number": "1.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-stratified-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric monoidal `39`42`\"613A``45`47`\"603A-categories",
+      "number": "1.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Factorization",
+      "number": "2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-factorization"
+    },
+    {
+      "level": 2,
+      "title": "Disk algebras",
+      "number": "2.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-21-disk-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Factorization homology",
+      "number": "2.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-factorization-homology"
+    },
+    {
+      "level": 2,
+      "title": "Disks and finite subsets",
+      "number": "2.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-disks-and-finite-subsets"
+    },
+    {
+      "level": 2,
+      "title": "Localizing with respect to isotopy equivalences",
+      "number": "2.4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-localizing-with-respect-to-isotopy-equivalenc"
+    },
+    {
+      "level": 2,
+      "title": "Pushforward",
+      "number": "2.5",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-25-pushforward"
+    },
+    {
+      "level": 2,
+      "title": "Algebras over a closed interval",
+      "number": "2.6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-26-algebras-over-a-closed-interval"
+    },
+    {
+      "level": 2,
+      "title": "Homology theories",
+      "number": "2.7",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-27-homology-theories"
+    },
+    {
+      "level": 1,
+      "title": "Homotopy invariant homology theories",
+      "number": "3",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-homotopy-invariant-homology-theories"
+    },
+    {
+      "level": 2,
+      "title": "Classical homology theories",
+      "number": "3.1",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-classical-homology-theories"
+    },
+    {
+      "level": 2,
+      "title": "1-point compactifications",
+      "number": "3.2",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-1-point-compactifications"
+    },
+    {
+      "level": 2,
+      "title": "Compactly supported cohomology",
+      "number": "3.3",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-33-compactly-supported-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Non-abelian Poincaré duality",
+      "number": "3.4",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-34-non-abelian-poincaré-duality"
+    },
+    {
+      "level": 1,
+      "title": "Examples of factorization homology theories",
+      "number": "4",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-4-examples-of-factorization-homology-theories"
+    },
+    {
+      "level": 2,
+      "title": "Factorization homology of stratified 1-manifolds",
+      "number": "4.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-41-factorization-homology-of-stratified-1-manifo"
+    },
+    {
+      "level": 2,
+      "title": "Intersection homology",
+      "number": "4.2",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-42-intersection-homology"
+    },
+    {
+      "level": 2,
+      "title": "Link homology theories and `39`42`\"613A``45`47`\"603ADisk`39`42`\"613A``45`47`\"603Afrdn-algebras",
+      "number": "4.3",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization homology",
+          "heading": false
+        },
+        {
+          "term": "homology theories",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁed spaces",
+          "heading": false
+        },
+        {
+          "term": "intersection homology",
+          "heading": false
+        },
+        {
+          "term": "chiral homology",
+          "heading": false
+        },
+        {
+          "term": "link homology",
+          "heading": false
+        },
+        {
+          "term": "national science",
+          "heading": false
+        },
+        {
+          "term": "science foundation",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1409.0848v3 [math.AT] 1 Jan 2016 FACTORIZATION HOMOLOGY OF STRATIFIED SPACES DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA Abstract. This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported stratiﬁed mapping",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.0848v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 2505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization homology",
+          "heading": false
+        },
+        {
+          "term": "stratified spaces",
+          "heading": false
+        },
+        {
+          "term": "alg disk",
+          "heading": false
+        },
+        {
+          "term": "bch bigl",
+          "heading": false
+        },
+        {
+          "term": "homology theories",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "cite cobordism",
+          "heading": false
+        },
+        {
+          "term": "lurie cite",
+          "heading": false
+        }
+      ],
+      "extract": "The present work forms an initial step in a formalism for topological quantum field theory using stratified spaces. This larger program proposes to understand locality in topological quantum field theory by a fusion of the algebra of factorization homology and the geometry of stratifications. Before delineating this step and, briefly, this future program, we first review the subject of factorization homology.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-recollections",
+      "number": "1",
+      "title": "Recollections",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 15,
+      "summary": null,
+      "keywords": [],
+      "extract": "This entire work is founded on a predecessor, [AFT], which lays our foundation for structured",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-stratified-spaces",
+      "number": "1.1",
+      "title": "Stratified spaces",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 14,
+      "labelStart": "6",
+      "labelEnd": "14",
+      "words": 4626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fin ast",
+          "heading": false
+        },
+        {
+          "term": "infty operad",
+          "heading": false
+        },
+        {
+          "term": "sifted cocomplete",
+          "heading": false
+        },
+        {
+          "term": "monoidal infty",
+          "heading": false
+        },
+        {
+          "term": "ast bigr",
+          "heading": false
+        },
+        {
+          "term": "infty category",
+          "heading": false
+        },
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "underlying infty",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.stratified-spaces} Before defining \\emph{conically smooth} stratified spaces which occupy this work, we first review the baseline topological notions. We will regard a poset $P$ as a topological space with closed sets $P_{\\leq p}$, for each element $p\\in P$. A {\\it stratified topological space indexed by a poset $P$} is a paracompact Hausdorff topological space $X$ with a continuous map $X\\ra P$. For many",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-factorization",
+      "number": "2",
+      "title": "Factorization",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "bsc",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we define the factorization homology of $\\cB$-manifolds with coefficients in $\\disk(\\cB)$-algebras, and we verify some of the essential properties of this construction. It is a symmetric monoidal functor from $\\cB$-manifolds and embeddings. For this section we fix: \\begin{itemize} \\item a symmetric monoidal $\\infty$-category $\\cV$ that is $\\ot$-sifted cocomplete, \\item an $\\oo$-category of basics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-21-disk-algebras",
+      "number": "2.1",
+      "title": "Disk algebras",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disk",
+          "heading": true
+        },
+        {
+          "term": "alg disk",
+          "heading": false
+        },
+        {
+          "term": "concerning mfld",
+          "heading": false
+        },
+        {
+          "term": "subset mfld",
+          "heading": false
+        },
+        {
+          "term": "subset mfldd",
+          "heading": false
+        },
+        {
+          "term": "simeq disk",
+          "heading": false
+        },
+        {
+          "term": "infty operad",
+          "heading": false
+        },
+        {
+          "term": "qquad disk",
+          "heading": false
+        }
+      ],
+      "extract": "Factorization homology will have a universal property with respect to monoidal and operadic structures on $\\mfld(\\cB)$ and $\\mfld(\\cB)_{/X}$, which we present below in Constructions \\ref{B-monoidals} and \\ref{B-operadics}. \\begin{construction}[The symmetric monoidal structures on $\\mfld(\\cB)$ and $\\disk(\\cB)$]\\label{B-monoidals} Using disjoint union, we endow $\\snglrd$, $\\snglr$, $\\mfldd(\\cB)$, and $\\mfld(\\cB)$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-factorization-homology",
+      "number": "2.2",
+      "title": "Factorization homology",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iota ast",
+          "heading": false
+        },
+        {
+          "term": "factorization homology",
+          "heading": true
+        },
+        {
+          "term": "iota colon",
+          "heading": false
+        },
+        {
+          "term": "bigotimes colon",
+          "heading": false
+        },
+        {
+          "term": "adjoint iota",
+          "heading": false
+        },
+        {
+          "term": "sifted colimits",
+          "heading": false
+        },
+        {
+          "term": "simeq iota",
+          "heading": false
+        },
+        {
+          "term": "iota natural",
+          "heading": false
+        }
+      ],
+      "extract": "The following is the main definition and object of interest in the present paper, that of factorization homology with coefficients in a disk algebra. Recall Notation~\\ref{slice-convention} for the $\\infty$-category of $\\disk_n$-algebras. \\begin{definition}[Factorization homology]\\label{def:fact-hmlgy} Let $\\cV$ be a symmetric monoidal $\\infty$-category, and let $\\cB$ be an $\\oo$-category of basics. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-disks-and-finite-subsets",
+      "number": "2.3",
+      "title": "Disks and finite subsets",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsc ran",
+          "heading": false
+        },
+        {
+          "term": "xra ran",
+          "heading": false
+        },
+        {
+          "term": "ran leq",
+          "heading": false
+        },
+        {
+          "term": "entr bigl",
+          "heading": false
+        },
+        {
+          "term": "coprod underset",
+          "heading": false
+        },
+        {
+          "term": "map ran",
+          "heading": false
+        },
+        {
+          "term": "subset ran",
+          "heading": false
+        },
+        {
+          "term": "ran space",
+          "heading": false
+        }
+      ],
+      "extract": "We pause our development of factorization homology to relate the $\\infty$-category $\\disk(\\bsc)_{/X}$, which appears in the Definition~\\ref{def:fact-hmlgy} of factorization homology, with the enter-path $\\infty$-category of another stratified space associated to $X$: the Ran space of $X$. Let $i$ be a finite cardinality. For $X$ a topological space, the \\emph{bounded Ran space} $\\Ran_{\\leq i}(X)$ is the topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-localizing-with-respect-to-isotopy-equivalenc",
+      "number": "2.4",
+      "title": "Localizing with respect to isotopy equivalences",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsc conf",
+          "heading": false
+        },
+        {
+          "term": "sqcup hookrightarrow",
+          "heading": false
+        },
+        {
+          "term": "snglr bigl",
+          "heading": false
+        },
+        {
+          "term": "simeq underset",
+          "heading": false
+        },
+        {
+          "term": "isotopy equivalences",
+          "heading": true
+        },
+        {
+          "term": "functor underset",
+          "heading": false
+        },
+        {
+          "term": "subset diskd",
+          "heading": false
+        },
+        {
+          "term": "xra simeq",
+          "heading": false
+        }
+      ],
+      "extract": "Here we explain that the $\\infty$-category $\\disk(\\cB)_{/X}$, which appears in the Definition~\\ref{def:fact-hmlgy} of factorization homology, can be witnessed as a localization of its un-topologized version $\\diskd(\\cB)_{/X}$ on the collection of those inclusions of finite disjoint unions of disks $U\\subset V$ in $X$ for which this inclusion is isotopic to an isomorphism. This comparison plays a fundamental role in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-25-pushforward",
+      "number": "2.5",
+      "title": "Pushforward",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": "30",
+      "words": 1605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix diskd",
+          "heading": false
+        },
+        {
+          "term": "colim conf",
+          "heading": false
+        },
+        {
+          "term": "times bsc",
+          "heading": false
+        },
+        {
+          "term": "map mfld",
+          "heading": false
+        },
+        {
+          "term": "xymatrix disk",
+          "heading": false
+        },
+        {
+          "term": "disk nabla",
+          "heading": false
+        },
+        {
+          "term": "colon disk",
+          "heading": false
+        },
+        {
+          "term": "conf bigl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.pushforward} For this subsection, we fix a symmetric monoidal $\\infty$-category $\\cV$ that is $\\ot$-sifted cocomplete. \\begin{lemma}\\label{f-inv-factr} Let $X$ be a $\\cB$-manifold and $Y$ a $\\cB'$-manifold, and let $f\\colon X\\to Y$ be a constructible bundle of the underlying stratified spaces. Taking inverse images defines a functor of $\\oo$-operads \\[f^{-1}: \\disk(\\cB')_{/Y}\\longrightarrow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-26-algebras-over-a-closed-interval",
+      "number": "2.6",
+      "title": "Algebras over a closed interval",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xra simeq",
+          "heading": false
+        },
+        {
+          "term": "env bigl",
+          "heading": false
+        },
+        {
+          "term": "item ass",
+          "heading": false
+        },
+        {
+          "term": "disk partial",
+          "heading": false
+        },
+        {
+          "term": "colon disk",
+          "heading": false
+        },
+        {
+          "term": "infty operads",
+          "heading": false
+        },
+        {
+          "term": "bullet bigl",
+          "heading": false
+        },
+        {
+          "term": "ref tensor-prod",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition}[$\\Ass^{\\sf RL}$]\\label{Assoc} Let $\\Ass^{\\sf RL}$ denote an $\\infty$-operad corepresenting triples $(A;Q,P)$ consisting of an associative algebra together with a unital left and a unital right module. Specifically, it is a unital multi-category whose space of colors is the three-element set $\\{M, R, L\\}$, and with spaces of multi-morphisms given as follows. Let $I\\xra{\\sigma}\\{M,R,L\\}$ be a map",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-27-homology-theories",
+      "number": "2.7",
+      "title": "Homology theories",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 1317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology theories",
+          "heading": true
+        },
+        {
+          "term": "psh bigl",
+          "heading": false
+        },
+        {
+          "term": "colon mfld",
+          "heading": false
+        },
+        {
+          "term": "functor mfld",
+          "heading": false
+        },
+        {
+          "term": "bch bigl",
+          "heading": false
+        },
+        {
+          "term": "subset mfld",
+          "heading": false
+        },
+        {
+          "term": "simeq underset",
+          "heading": false
+        },
+        {
+          "term": "xra simeq",
+          "heading": false
+        }
+      ],
+      "extract": "One an formulate an $\\oo$-categorical analogue of the Eilenberg--Steenrod axioms for a functor from spaces or manifolds to the $\\oo$-category of chain complexes or spectra: the functor should take certain gluing diagrams to pushout squares, and it should preserve sequential colimits. From these conditions, one recovers usual generalized homology theories. These axioms admit a generalization when one replaces chain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-homotopy-invariant-homology-theories",
+      "number": "3",
+      "title": "Homotopy invariant homology theories",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tangent classifier",
+          "heading": false
+        },
+        {
+          "term": "homotopy",
+          "heading": true
+        },
+        {
+          "term": "homotopy type",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give two classes of examples of homology theories. The first class is quite formal, and depends only on the homotopy type of the tangent classifier, ${\\sf Entr}(X)\\xra{\\tau_X} \\cB$, of a $\\cB$-manifold. The second class is not homotopy invariant in general, yet we identify an understood subclass for when these examples only depend on the \\emph{proper} homotopy type of the tangent classifier --",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-31-classical-homology-theories",
+      "number": "3.1",
+      "title": "Classical homology theories",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functor mfld",
+          "heading": false
+        },
+        {
+          "term": "tau psh",
+          "heading": false
+        },
+        {
+          "term": "colon psh",
+          "heading": false
+        },
+        {
+          "term": "theory mfld",
+          "heading": false
+        },
+        {
+          "term": "xra tau",
+          "heading": false
+        },
+        {
+          "term": "fin factors",
+          "heading": false
+        },
+        {
+          "term": "filtered colimits",
+          "heading": false
+        },
+        {
+          "term": "subset psh",
+          "heading": false
+        }
+      ],
+      "extract": "Recall from~\\S\\ref{recollections} the tangent classifier functor $ \\mfld(\\cB) \\xra{\\tau} \\Psh(\\cB), $ which is symmetric monoidal with respect to coproduct of presheaves (see Construction~\\ref{B-monoidals}). To state the next result, for $\\cC$ an $\\infty$-category we denote the full $\\infty$-subcategory $\\cC\\subset\\Psh^{\\sf Ind\\text{-}fin}(\\cC)\\subset \\Psh(\\cC)$ which is the smallest that is closed under the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-1-point-compactifications",
+      "number": "3.2",
+      "title": "1-point compactifications",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 1006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entr bigl",
+          "heading": false
+        },
+        {
+          "term": "xra tau",
+          "heading": false
+        },
+        {
+          "term": "delta xra",
+          "heading": false
+        },
+        {
+          "term": "times snglr",
+          "heading": false
+        },
+        {
+          "term": "xra simeq",
+          "heading": false
+        },
+        {
+          "term": "ast underset",
+          "heading": false
+        },
+        {
+          "term": "kan enriched",
+          "heading": false
+        },
+        {
+          "term": "times partial",
+          "heading": false
+        }
+      ],
+      "extract": "We will make use of the concept of a zero-pointed embedding from \\cite{ZP}. There is a $\\Kan$-enriched functor \\[ {\\sf ZEmb}\\colon \\snglr^{\\op} \\times \\snglr^{\\op} \\longrightarrow \\Kan_\\ast \\] to pointed Kan complexes, given as follows. Its value on $(X,Y)$ is the simplicial set, written as ${\\sf ZEmb}(X_+,Y^+)$, for which a $p$-simplex is a diagram of conically smooth open embeddings among submersions over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-compactly-supported-cohomology",
+      "number": "3.3",
+      "title": "Compactly supported cohomology",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectra xra",
+          "heading": false
+        },
+        {
+          "term": "xra simeq",
+          "heading": false
+        },
+        {
+          "term": "xra omega",
+          "heading": false
+        },
+        {
+          "term": "psh ast",
+          "heading": false
+        },
+        {
+          "term": "xra tau",
+          "heading": false
+        },
+        {
+          "term": "wedge omega",
+          "heading": false
+        },
+        {
+          "term": "colon mfld",
+          "heading": false
+        },
+        {
+          "term": "through spectra",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\cE$ be a spectrum object of $\\Psh_\\ast(\\cB)$, a model for which is as a functor $\\cB^{\\op} \\to \\spectra$. Now, Corollary~1.4.4.5 of~\\cite{HA} grants that a finite limit preserving functor from a stable $\\infty$-category to $\\spaces$ canonically factors through $\\spectra \\xra{\\Omega^\\infty} \\spaces$. In particular, for $\\cS$ a stable $\\infty$-category, the Yoneda functor $\\cS^{\\op}\\times \\cS \\to \\spaces$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-34-non-abelian-poincaré-duality",
+      "number": "3.4",
+      "title": "Non-abelian Poincaré duality",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 1183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connective coefficient",
+          "heading": false
+        },
+        {
+          "term": "colon mfld",
+          "heading": false
+        },
+        {
+          "term": "entr bigl",
+          "heading": false
+        },
+        {
+          "term": "n-k times",
+          "heading": false
+        },
+        {
+          "term": "simeq ast",
+          "heading": false
+        },
+        {
+          "term": "omega smallsetminus",
+          "heading": false
+        },
+        {
+          "term": "spaces ast",
+          "heading": false
+        },
+        {
+          "term": "times gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition}[Coefficient system]\\label{def.coef-sys} A \\emph{coefficient system (for $\\cB$-manifolds)} is a pointed presheaf on $\\cB$. Let $E$ be a coefficient system. The \\emph{compactly supported sections} functor is the composition of the symmetric monoidal functors \\[ \\Gamma_{\\!\\sf c}^E\\colon \\mfld(\\cB)^{\\sf fin} \\xra{\\tau^+} \\Psh^{\\sf fin}_\\ast(\\cB)^{\\op} \\xra{\\Map_{\\Psh_\\ast(\\cB)}(-,E)} \\spaces_\\ast \\]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-4-examples-of-factorization-homology-theories",
+      "number": "4",
+      "title": "Examples of factorization homology theories",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 42,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "stratified",
+          "heading": false
+        },
+        {
+          "term": "homology",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{section:examples} In this section we give examples of factorization homology over stratified spaces. To illustrate the relevance to low-dimensional topology, we show that the free $\\disk_{3,1}^{\\fr}$-algebra can distinguish the homotopy type of link complements, and in particular defines a non-trivial link invariant.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-41-factorization-homology-of-stratified-1-manifo",
+      "number": "4.1",
+      "title": "Factorization homology of stratified 1-manifolds",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorization homology",
+          "heading": true
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "int simeq",
+          "heading": false
+        },
+        {
+          "term": "alg disk",
+          "heading": false
+        },
+        {
+          "term": "framed manifolds",
+          "heading": false
+        },
+        {
+          "term": "underset",
+          "heading": false
+        },
+        {
+          "term": "circle action",
+          "heading": false
+        },
+        {
+          "term": "marked points",
+          "heading": false
+        }
+      ],
+      "extract": "When the target symmetric monoidal $\\oo$-category $\\cV$ is $\\m_\\Bbbk^\\ot$, the category of $\\Bbbk$-modules for some commutative algebra $\\Bbbk$, then factorization homology of closed 1-manifolds gives variants of Hochschild homology. The simplest and most fundamental example is factorization homology for framed 1-manifolds, $\\mfld_1^{\\fr}$. In this case, there is an equivalence between framed 1-disk algebras and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-42-intersection-homology",
+      "number": "4.2",
+      "title": "Intersection homology",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 51,
+      "labelStart": "43",
+      "labelEnd": "51",
+      "words": 4037,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "amalg xra",
+          "heading": false
+        },
+        {
+          "term": "mfld sqcup",
+          "heading": false
+        },
+        {
+          "term": "n-d omega",
+          "heading": false
+        },
+        {
+          "term": "alg disk",
+          "heading": false
+        },
+        {
+          "term": "n-d longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "int n-d",
+          "heading": false
+        },
+        {
+          "term": "n-d times",
+          "heading": false
+        },
+        {
+          "term": "sqcup bigl",
+          "heading": false
+        }
+      ],
+      "extract": "Recall from \\cite{aft1} that the underlying space of a $n$-dimensional stratified space $X\\in \\snglr_n$ has a canonical filtration by the union of its strata $X_0 \\subset X_1 \\subset \\ldots \\subset X_n= X$ where each $X_i\\smallsetminus X_{i-1}$ is a smooth $i$-dimensional manifold. As such, the definition of Goresky \\& MacPherson's intersection homology~\\cite{goreskymacpherson} applies verbatim. Namely, we restrict",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "northwestern university",
+          "heading": false
+        },
+        {
+          "term": "ayala",
+          "heading": false
+        },
+        {
+          "term": "francis",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration spaces",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "mathematical society",
+          "heading": false
+        },
+        {
+          "term": "homotopy invariant",
+          "heading": false
+        },
+        {
+          "term": "american mathematical",
+          "heading": false
+        }
+      ],
+      "extract": "[At] Atiyah, Michael. Thom complexes, Proc. London Math. Soc. (3), no. 11 (1961), 291–310. [AF1] Ayala, David; Francis, John. Factorization homology of topological manifolds. J. Topol. 8 (2015), no. 4, 1045– 1084. [AF2] Ayala, David; Francis, John. Zero-pointed manifolds. Preprint. [AFR] Ayala, David; Francis, John; Rozenblyum, Nick. A stratiﬁed homotopy hypothesis. Preprint. [AFT] Ayala, David; Francis, John;",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "xra mfld",
+      "heading": false
+    },
+    {
+      "term": "xra simeq",
+      "heading": false
+    },
+    {
+      "term": "underset disk",
+      "heading": false
+    },
+    {
+      "term": "functor mfld",
+      "heading": false
+    },
+    {
+      "term": "colon mfld",
+      "heading": false
+    },
+    {
+      "term": "alg mfld",
+      "heading": false
+    },
+    {
+      "term": "fin xra",
+      "heading": false
+    },
+    {
+      "term": "category mfld",
+      "heading": false
+    },
+    {
+      "term": "ast underset",
+      "heading": false
+    },
+    {
+      "term": "map xra",
+      "heading": false
+    },
+    {
+      "term": "mfld sqcup",
+      "heading": false
+    },
+    {
+      "term": "amalg xra",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p51); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.0848v3"
+  }
+}

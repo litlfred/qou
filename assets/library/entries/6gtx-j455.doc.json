@@ -1,0 +1,409 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "6gtx-j455",
+  "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-ultraviolet-completion-of-the-big-bang-in-quadra"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "Data availability",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-data-availability"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-ultraviolet-completion-of-the-big-bang-in-quadra",
+      "number": null,
+      "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 3145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "starobinsky inflation",
+          "heading": false
+        },
+        {
+          "term": "quadratic gravity",
+          "heading": true
+        },
+        {
+          "term": "slow-roll inflation",
+          "heading": false
+        },
+        {
+          "term": "coupling λth",
+          "heading": false
+        },
+        {
+          "term": "pure qqg",
+          "heading": false
+        },
+        {
+          "term": "inflation ends",
+          "heading": false
+        },
+        {
+          "term": "inflationary scenario",
+          "heading": false
+        },
+        {
+          "term": "successful inflationary",
+          "heading": false
+        }
+      ],
+      "extract": "Ruolin Liu ,1,2,3,* Jerome Quintin ,4,5,6,2,3,† and Niayesh Afshordi 1,2,3,‡ 1Department of Physics and Astronomy, University of Waterloo, Waterloo, Ontario N2L 3G1, Canada 2Perimeter Institute for Theoretical Physics, Waterloo, Ontario N2L 2Y5, Canada 3Waterloo Centre for Astrophysics, University of Waterloo, Waterloo, Ontario N2L 3G1, Canada 4École de technologie sup´erieure, Universit´e du Qu´ebec, Montr´eal,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perimeter institute",
+          "heading": false
+        },
+        {
+          "term": "λth",
+          "heading": false
+        },
+        {
+          "term": "qqg",
+          "heading": false
+        },
+        {
+          "term": "canada",
+          "heading": false
+        },
+        {
+          "term": "research",
+          "heading": false
+        },
+        {
+          "term": "constraints",
+          "heading": false
+        }
+      ],
+      "extract": "like to thank Luca Buoninfante, Dražen Glavan, Anamaria Hell, Roberto FIG. 3. Constraints on the QQG parameters λtH and N from the observationals bounds on ns, r, and As combined. The dark and pale green regions amount to 1σ and 2σ confidence intervals, respectively. FIG. 2. Plot of the scalar spectral index ns vs the tensor-to- scalar ratio r for Starobinsky inflation (in black), contrasted with our QQG model in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-data-availability",
+      "number": null,
+      "title": "Data availability",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 1472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy phys",
+          "heading": false
+        },
+        {
+          "term": "cosmological perturbations",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "cosmol",
+          "heading": false
+        },
+        {
+          "term": "donoghue",
+          "heading": false
+        },
+        {
+          "term": "planck collaboration",
+          "heading": false
+        },
+        {
+          "term": "astropart",
+          "heading": false
+        },
+        {
+          "term": "holdom",
+          "heading": false
+        }
+      ],
+      "extract": "this article are not publicly available. The data are available from the authors upon reasonable request. [1] C. P. Burgess, Living Rev. Relativity 7, 5 (2004). [2] We use the mostly positive metric signature. We contract tensor indices with the metric gμν, whose determinant is g and Ricci scalar R. Finally, we use natural units, and MPl denotes the reduced Planck mass. [3] G. ’t Hooft and M. J. G. Veltman, Ann.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "starobinsky inflation",
+      "heading": false
+    },
+    {
+      "term": "slow-roll inflation",
+      "heading": false
+    },
+    {
+      "term": "pure qqg",
+      "heading": false
+    },
+    {
+      "term": "qqg model",
+      "heading": false
+    },
+    {
+      "term": "coupling λth",
+      "heading": false
+    },
+    {
+      "term": "inflation ends",
+      "heading": false
+    },
+    {
+      "term": "cosmological perturbations",
+      "heading": false
+    },
+    {
+      "term": "quadratic gravity",
+      "heading": true
+    },
+    {
+      "term": "inflationary scenario",
+      "heading": false
+    },
+    {
+      "term": "energy phys",
+      "heading": false
+    },
+    {
+      "term": "quantum gravity",
+      "heading": false
+    },
+    {
+      "term": "ricci scalar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The renormalization group (RG) flow of quadratic gravity with N ¼ 10 matter-field content. The two red dashed lines show the separatrices of the RG flow, while the light blue shaded region is tachyon-free [50]. The orange trajectory shows a candidate cosmological evolution: starting from a potential",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Plot of the scalar spectral index ns vs the tensor-to-",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Constraints on the QQG parameters λtH and N from the",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 3,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 3 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/6gtx-j455"
+  }
+}

@@ -1,0 +1,1084 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1108.0687v3",
+  "title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Classical concentration inequalities",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-classical-concentration-inequalities"
+    },
+    {
+      "level": 2,
+      "title": "Generalizations",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-generalizations"
+    },
+    {
+      "level": 1,
+      "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-strong-rayleigh-property-stochastic-covering-p"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-results"
+    },
+    {
+      "level": 1,
+      "title": "Proofs",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-proofs"
+    },
+    {
+      "level": 2,
+      "title": "The classical proofs",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-the-classical-proofs"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorems ?? and ??",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-proof-of-theorems-and"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-43-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-applications"
+    },
+    {
+      "level": 2,
+      "title": "Matroids",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-51-matroids"
+    },
+    {
+      "level": 2,
+      "title": "Exclusion measures",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-52-exclusion-measures"
+    },
+    {
+      "level": 2,
+      "title": "Determinantal measures on a finite Boolean lattice",
+      "number": "5.3",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-53-determinantal-measures-on-a-finite-boolean-la"
+    },
+    {
+      "level": 1,
+      "title": "Determinantal point processes",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-6-determinantal-point-processes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rayleigh measures",
+          "heading": false
+        },
+        {
+          "term": "lipschitz functionals",
+          "heading": false
+        },
+        {
+          "term": "concentration inequality",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "microsoft",
+          "heading": false
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "lipschitz function",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1108.0687v3 [math.PR] 28 Jul 2013 Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures Robin Pemantle1, 2 and Yuval Peres3 Abstract: Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con- dition, we show that f−Ef satisﬁes a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1108.0687v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tree",
+          "heading": false
+        },
+        {
+          "term": "spanning",
+          "heading": false
+        },
+        {
+          "term": "lipschitz",
+          "heading": false
+        },
+        {
+          "term": "intro",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} Our goal in this paper is to prove concentration inequalities for Lipschitz functions of certain collections of negatively dependent binary-valued random variables. To illustrate our general methods we state our main result in a special case that was motivated by a question of E. Mossel (personal communication). ::: thm []{#th:sp tree label=\"th:sp tree\"} Let $G = (V,E)$ be a finite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-classical-concentration-inequalities",
+      "number": "1.1",
+      "title": "Classical concentration inequalities",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chernoff",
+          "heading": false
+        },
+        {
+          "term": "leq exp",
+          "heading": false
+        },
+        {
+          "term": "upper tail",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "hoeffding",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "bound label",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\{ X_n : n \\geq 1 \\}$ be independent Bernoulli random variables with respective means $\\{ p_n \\}$. Let $S_n := \\sum_{k=1}^n X_k$ denote the partial sums, $\\mu_n := {\\mathbb E}S_n = \\sum_{k=1}^n p_k$ denote the means and $V_n := \\sum_{k=1}^n p_k (1-p_k)$ denote the variance of $S_n$. The simple and well known one-sided tail estimate for $S_n$ is the classical Gaussian bound $$\\label{eq:chernoff} {\\mathbb P}(S_n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-generalizations",
+      "number": "1.2",
+      "title": "Generalizations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 801,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "rayleigh property",
+          "heading": false
+        },
+        {
+          "term": "chernoff",
+          "heading": false
+        },
+        {
+          "term": "cyl mathbb",
+          "heading": false
+        },
+        {
+          "term": "cylinder dependence",
+          "heading": false
+        },
+        {
+          "term": "determinantal measures",
+          "heading": false
+        },
+        {
+          "term": "lipschitz functions",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:gen label=\"ss:gen\"} Our aim is to generalize [\\[eq:chernoff\\]](#eq:chernoff){reference-type=\"eqref\" reference=\"eq:chernoff\"} or its Poissonian version [\\[eq:pois\\]](#eq:pois){reference-type=\"eqref\" reference=\"eq:pois\"} in two ways. Instead of $S_n$ we consider arbitrary Lipschitz functions of $X_1 , \\ldots , X_n$, and instead of independent Bernoullis we consider a more general negatively dependent collection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
+      "number": "2",
+      "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stochastic covering",
+          "heading": true
+        },
+        {
+          "term": "rayleigh property",
+          "heading": true
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": true
+        },
+        {
+          "term": "stochastic domination",
+          "heading": false
+        },
+        {
+          "term": "conditional measure",
+          "heading": false
+        },
+        {
+          "term": "measure rho",
+          "heading": false
+        },
+        {
+          "term": "ordinary rayleigh",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:covering label=\"sec:covering\"} Let $[n]$ denote $\\{ 1 , \\ldots , n \\}$ and let ${\\mathcal B}_n := \\{ 0 , 1 \\}^n$ denote the Boolean lattice of rank $n$, with coordinatewise partial order. The function $N : {\\mathcal B}_n \\to \\mathbb{Z}^+$ will be used throughout to denote the counting function defined by $N(\\omega) := \\sum_{j=1}^n \\omega_j$. A measure $\\nu$ on ${\\mathcal B}_n$ is said to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-results",
+      "number": "3",
+      "title": "Results",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "process cal",
+          "heading": false
+        },
+        {
+          "term": "triangleright cal",
+          "heading": false
+        },
+        {
+          "term": "mathbb uparrow",
+          "heading": false
+        },
+        {
+          "term": "exchangeable measure",
+          "heading": false
+        },
+        {
+          "term": "sample counting",
+          "heading": false
+        },
+        {
+          "term": "let cal",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "homogeneous point",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:results label=\"sec:results\"} The chief consequence of the strong Rayleigh property that we use to prove concentration inequalities is the stochastic covering property. Although all of our examples so far of measures with the SCP are in fact strong Rayleigh, we note that this may not be the case in the future, and with this in mind, we state a result that uses only the SCP. ::: thm []{#th:main",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-proofs",
+      "number": "4",
+      "title": "Proofs",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:proofs label=\"sec:proofs\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-41-the-classical-proofs",
+      "number": "4.1",
+      "title": "The classical proofs",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eeλ",
+          "heading": false
+        },
+        {
+          "term": "cylinder dependence",
+          "heading": false
+        },
+        {
+          "term": "tail bounds",
+          "heading": false
+        },
+        {
+          "term": "markov inequality",
+          "heading": false
+        },
+        {
+          "term": "increments",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        },
+        {
+          "term": "martingale",
+          "heading": false
+        },
+        {
+          "term": "classical",
+          "heading": true
+        }
+      ],
+      "extract": "The classical proofs To prove bounds such as (1.1), one obtains an upper bound for EeλSn, and then applies Markov’s inequality, choosing λ optimally. Underlying the bounds on EeλSn are corresponding bounds for compensated increments. Let ∆denote a variable with mean zero. Three classical exponential bounds are as follows. |∆| ≤1 ⇒ Eeλ∆≤eλ2/2 (4.10) ∆∈[r, s] ⇒ Eeλ∆≤eλ2(s−r)2/8 (4.11) ∆∈[r, s] ⇒ Eeλ∆≤exp \u0002 (eλ −1 −λ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-proof-of-theorems-and",
+      "number": "4.2",
+      "title": "Proof of Theorems ?? and ??",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δxi",
+          "heading": false
+        },
+        {
+          "term": "scp",
+          "heading": false
+        },
+        {
+          "term": "point process",
+          "heading": false
+        },
+        {
+          "term": "azuma-hoeﬀding",
+          "heading": false
+        },
+        {
+          "term": "revelation",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 3.1 is a special case of Theorem 3.4. This is because any probability measure µ on Bn may be viewed as the law of a point process on the n element set [n], where the random counting measure 9 Z(ω) is deﬁned by Z(ω)(S) = P j∈S ωj. Informally, the points of the process are the coordinates of the ones in the sample ω. With this interpretation, the SCP on Bn is inherited from the SCP for the point process Z,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-proof-of-theorem",
+      "number": "4.3",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "independent bernoullis",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "conditional law",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "eeλ",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst inequality",
+          "heading": false
+        },
+        {
+          "term": "martingale",
+          "heading": false
+        },
+        {
+          "term": "lipschitz",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we assume P is the law of a strong Rayleigh measure on Bn with ﬁnite mean EN = µ. We also let f denote an arbitrary but ﬁxed Lipschitz-1 function on conﬁgurations and deﬁne a function φ on Z+ by φ(k) := E(f | N = k) . Lemma 4.1. The variable N is distributed as the sum of independent Bernoullis. Proof: In the deﬁnition of the strong Rayleigh property, setting the variables z1, . . . , zn equal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-applications",
+      "number": "5",
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 42,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "venn",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": false
+        },
+        {
+          "term": "hypotheses",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:examples label=\"sec:examples\"} In this section we discuss some classes of measures known to satisfy the hypotheses of our concentration results. The following Venn diagram gives a sense of how these classes intersect each other. ![some classes of strong Rayleigh measures](venn){#fig:venn}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-51-matroids",
+      "number": "5.1",
+      "title": "Matroids",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 860,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matroids",
+          "heading": true
+        },
+        {
+          "term": "balanced matroid",
+          "heading": false
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "random spanning",
+          "heading": false
+        },
+        {
+          "term": "matroid whose",
+          "heading": false
+        },
+        {
+          "term": "matroids label",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "weighted random",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:matroids label=\"ss:matroids\"} A collection ${\\cal C}$ of subsets of a finite set $E$, all of a given cardinality, $k$, is said to be the set of bases of a matroid if it satisfies the base exchange axiom (see, e.g., [@tutte]): if $A$ and $B$ are distinct members of ${\\cal C}$ and $a \\in A \\setminus B$, then there exists $b \\in B \\setminus A$ such that $A \\cup \\{ b \\} \\setminus \\{ a \\} \\in {\\cal C}$. Given a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-exclusion-measures",
+      "number": "5.2",
+      "title": "Exclusion measures",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exclusion",
+          "heading": true
+        },
+        {
+          "term": "exclusion process",
+          "heading": false
+        },
+        {
+          "term": "exclusion dynamics",
+          "heading": false
+        },
+        {
+          "term": "symmetric exclusion",
+          "heading": false
+        },
+        {
+          "term": "exclusion label",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "rayleigh property",
+          "heading": false
+        },
+        {
+          "term": "transposition tau",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:exclusion label=\"ss:exclusion\"} The symmetric group ${\\cal S}_n$ acts on ${\\mathcal B}_n$ by permuting the coordinates. Suppose a nonnegative rate $r(\\tau)$ is given for each transposition $\\tau \\in {\\cal S}_n$. Define a random evolution on ${\\mathcal B}_n$ by letting each pair of coordinates $(i,j)$ transpose independently at rate $r(\\tau_{ij})$. In other words, we have a continuous time chain on ${\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-53-determinantal-measures-on-a-finite-boolean-la",
+      "number": "5.3",
+      "title": "Determinantal measures on a finite Boolean lattice",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "determinantal measures",
+          "heading": true
+        },
+        {
+          "term": "random walks",
+          "heading": false
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "nonintersecting",
+          "heading": false
+        },
+        {
+          "term": "hermitian",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "positions",
+          "heading": false
+        },
+        {
+          "term": "finite",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#ss:finite label=\"ss:finite\"} We say that a probability measure ${\\mathbb P}$ on ${\\mathcal B}_n$ is **determinantal** (in the general sense) if there is an $n \\times n$ real or complex matrix $K$ such that that for every $S \\subseteq \\{ 1 , \\ldots , n \\}$, $$\\label{eq:det} {\\mathbb E}\\prod_{j \\in S} X_j = \\det K_S$$ where $K_S$ is the submatrix of $K$ obtained by choosing only those rows and columns whose index",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-6-determinantal-point-processes",
+      "number": "6",
+      "title": "Determinantal point processes",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 23,
+      "labelStart": "17",
+      "labelEnd": "22",
+      "words": 2170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cont homog",
+          "heading": false
+        },
+        {
+          "term": "cal rho",
+          "heading": false
+        },
+        {
+          "term": "process cal",
+          "heading": false
+        },
+        {
+          "term": "phi concentration",
+          "heading": false
+        },
+        {
+          "term": "ginibre",
+          "heading": false
+        },
+        {
+          "term": "determinantal",
+          "heading": true
+        },
+        {
+          "term": "radius rho",
+          "heading": false
+        },
+        {
+          "term": "leq exp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:continuous label=\"s:continuous\"} We consider here only simple point processes and often assume ${\\mathbb E}N < \\infty$ as well. If $\\rho_k : (\\mathbb{R}^d)^k \\to \\mathbb{R}^+$ are measurable functions, then the simple point process ${\\cal Z}$ is said to have joint intensities $\\{ \\rho_k \\}$ if for any $k$ and any family $D_1 , \\ldots , D_k$ of disjoint Borel subsets of $\\mathbb{R}^d$, $${\\mathbb E}\\left [",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rayleigh measures",
+      "heading": true
+    },
+    {
+      "term": "strong rayleigh",
+      "heading": true
+    },
+    {
+      "term": "rayleigh property",
+      "heading": true
+    },
+    {
+      "term": "measure mathbb",
+      "heading": false
+    },
+    {
+      "term": "determinantal measures",
+      "heading": true
+    },
+    {
+      "term": "leq exp",
+      "heading": false
+    },
+    {
+      "term": "inequality mathbb",
+      "heading": false
+    },
+    {
+      "term": "mathbb geq",
+      "heading": false
+    },
+    {
+      "term": "random spanning",
+      "heading": false
+    },
+    {
+      "term": "lipschitz function",
+      "heading": false
+    },
+    {
+      "term": "random tree",
+      "heading": false
+    },
+    {
+      "term": "ordinary rayleigh",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "relations among negative dependence properties We say that the probability measure ν on Bn stochastically covers another probability measure ρ if there is a measure on B2",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "some classes of strong Rayleigh measures",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1108.0687v3"
+  }
+}

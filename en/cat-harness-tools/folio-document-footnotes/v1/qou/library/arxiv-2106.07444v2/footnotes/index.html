@@ -1,0 +1,5459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2106.07444v2/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2106.07444v2/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2106.07444v2/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2106.07444v2/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2106.07444v2</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p031-1&quot;,
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;(AW) G,m(B0 × B0)op G,m(U0)op&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 30,
+        &quot;context&quot;: &quot;2(A) for thecategory of left A-modules Mequipped with a Z&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2106.07444v2/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p062-1&quot;,
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 61,
+        &quot;context&quot;: &quot;π= σ&quot;
+      },
+      {
+        &quot;page&quot;: 62,
+        &quot;context&quot;: &quot;andw&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2106.07444v2/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p068-1&quot;,
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;πi&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 67,
+        &quot;context&quot;: &quot;Lemma10.6.1.Ifν∈Qisaregularslopeandζ= e&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-2106.07444v2/blocks/prose-sec-010&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p086-1&quot;,
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;(2011), 494-530. [L15] G. Lusztig. Unipotent Character Sheaves as a Categorical Centre. Rep. Theory, 19 (2015), 211-235. [L21] G. Lusztig. Traces on Iwahori–Hecke Algebras and Counting Rational Points. Preprint (2021). arXiv:2105.04061 [LY19] G. Lusztig &amp; Z. Yun. From Conjugacy Classes in the Weyl Group to Representations. Preprint (2019). arXiv:1912.01754 [LY20] G. Lusztig &amp; Z. Yun. Endoscopy for Hecke Categories, Character Sheaves, and Represen- tations. Forum Math. Pi, 8(12) (2020), 1-93.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-2106.07444v2/blocks/prose-sec-014&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;aphy,” which turns an object of the mixed derived category D&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(G0,¯Qℓ)into&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;and2.LetMod&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2(AW )bethecategoryofAW -modulesequippedwith&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;W→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;We will show that HHH∨is the sum of the Λ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Λ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;appearance of Λ&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AH(R(β)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HW= K&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;where C(B0 ×B0) is a certain full,additive subcategory of D&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 ×B&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;WeintroducesimilarsubcategoriesC(G0)⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G0)andC(U&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(G0)andC(U0)⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Section1)thatallowsustodeﬁnerealizationfunctorsρ:K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Section1)thatallowsustodeﬁnerealizationfunctorsρ:Kb(C(B&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;0))→D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;andρ:K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;andρ:Kb(C(U0))→D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(U0).Eventhoughweareunabletoconstruct&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HW= K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HW= Kb(C(B0 × B0)) →D&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;−−−−−−−−−−→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Moreover,intheirwork,theHochschilddegreeofHHHarisesfromgr&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0)⊆C(G&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U0)⊆C(U&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;WtoG-varietiesoverB × B,suchthatO(σ&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;therepresentationringofW.AnyM∈Mod&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;βn= π&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Degφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;§8.1.8].The constants Degφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;blocksofHW (eπiν) = HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0),C(U&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;W(U0),aswellasthefunctorsCH,&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;ngr&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AHi,j(R(β)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(HHHi,i+j,k)∨≃HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(HHHi,i+j,k)∨≃HomW (Λi(V), AH&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;HHH&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHH0,j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHHr,r+j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;W,thereis&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iq&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iqi Sym&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;qareinvariantunder&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;qhasdegree|β| −ras&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;qhasdegree|β| −rasarationalfunctionin&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tr(wF| H&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;tr(wF| H2&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;q|q=q=(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;u|Q&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1−q)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;qat&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;qat q= 1 using Theorem&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;ﬁxedsubspaceV&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Wmapsto&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;qat&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;qatq= 1isatmost&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;qν&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;qνc(φ)Degφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Inthesettingoftheabovetheorem,wewillhaveDegφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Degφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;ν-module.InSection&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2 )&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;diZforsome&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2)A regular slope iﬀWcontains a e&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;aneigenvectorinVwitheigenvaluee&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;(3)Aregularellipticslopeiﬀ,in(2),wecanpickwsothatV&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;diZfor&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;diZforauniqueindex&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whereˆW1⊆ˆWisthesetofelementsofgreatesta-valuewithintheire&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;blocks,amongthee&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;HW ,whichshowsthatwhenνiscuspidal,thevaluesDegφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;∗(X(βπ)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;d+jH&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;d−jH&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−→gr&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withaﬁxedclassinH&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2 t&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2 tigr&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;jH&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;andZ(β).If,inaddition,βmapstoanelementw∈WsuchthatV&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;NotethatforW=Sn,thehypothesisthatwsatsﬁesV&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;oftheΛ&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;oftheΛi(V)-isotypicsofgr&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ν,¯Qℓ)inducesanAW-actionthatextendsto&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;ν-modules,viaanisomorphismthatsendsthe&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ν,upto&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;AW,ǫ≃H!,G×G&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;W→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ν-moduleformedbyAH&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ν-moduleformedbyAH1(R(β))containsLν(1)as&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;overFispro-generatedbytheautomorphisma7→a&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G(X) = D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(X0) = D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ℓtodeﬁne&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2) is a weight-preserving endofunctor of D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ξ: D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(X0) →D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;GandD&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Remark1.2.1.ThecategoriesD&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(X0)andD&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;internalHom.ButforanyK, L∈D&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;withD&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G(X)inplaceofD&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Letpt0=Spec F,andleta:X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K, L ∈D&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(K, L) = H&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n(K, L) is the vector space Hom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n−1(K, L)F→Hom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;foralln[BBD,(5.1.2.5)].ThemorphismHom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;foralln[BBD,(5.1.2.5)].ThemorphismHomn(K, L)→Hom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;throughthemorphismHom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;LetC(X0)⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(X0)be&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X0)beafull,additivesubcategory.WesaythatC(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n̸ = 0=⇒gr&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;wheregr&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n̸ = 0, 1=⇒Hom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;C(X0),soHom&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;(X0)(K, L) = gr&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(X0).Thereis&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;GivenanyadditivecategoryA,wewriteC&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;complexes of objectsof A and K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;lexes of objectsof A and Kb(A) for thehomotopy category of C&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ρ : K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ρ : Kb(C(X0)) →D&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ρ : K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0),viewedasthefullsubcategoryofK&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(1)D = D&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X0)andC = C(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;unctor.We will construct a full and faithful embedding˜ρ : C&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;e will show that ω◦˜ρ factors through the quotient functor C&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;s&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;snC[n]foralln.Weconstructanadditivefunctorα :˜A →C&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;α(K)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and let δ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and let δn: α(K)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and let δn: α(K)n→α(K)&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;δ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;emma1.4.1.ForallK∈˜A,thesequence α(K)isawell-deﬁnedobjectofC&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;i.e.,δ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;i.e.,δn+1◦δ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Lemma1.4.3.Thefunctorα :˜A →C&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;factorsthroughthequotientfunctorC&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;factorsthroughthequotientfunctorCb(C) →K&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;C&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;taketheformD&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Wesay that afull,additive subcategory C(X0) ⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;-pure,thenρ:K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−→gr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HomK&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;forallK, L ∈K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;objects of K&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;case,theright-handsideof(8)becomesgr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;(X0))(K, L⟨n⟩[−n]△) ≃0 ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HomK&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HomK&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K′′→K′[1]inwhichK′, K′′∈K&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;valuedbifunctorsonD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Leta :X&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Leta :X0→pt0andb :Y&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Applyinggr&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(Y&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(Y&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(Y&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(Y&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Proof.After we apply H&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Notethatwewillnotdiscussthe“missing”functorK&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Notethatwewillnotdiscussthe“missing”functorKb(C(G0)) →D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;IC w= jw,!∗¯Qℓ⟨|w| −r −N⟩∈D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Deﬁnition2.3.1.LetC(B0 × B0)⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;TheconvolutiononD&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(−) ⋆(−) : D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B0) × D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B0) →D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;wherepr1,2, pr 1,3, pr2,3: B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0→B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;proper, and it can bechecked that themap of stacks [B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0/G&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0/G0] →[B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0/G&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0/G0]×[B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0/G&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;k2.4.2.Let C(B × B) bethetheessential imageof C(B0 × B0)in D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Prior to[BY],itwasknownthattheconvolution onD&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;The convolution on C(B0 ×B0) induces one on K&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HW= K&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B0) × D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2dim gr&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;jH&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;IfAisanyadditivecategory,thenthereisanisomorphism[K&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;ℓis a ﬁxed square root of&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯Qℓ⊗HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯Qℓ⊗HW |q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;HW |q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−→¯Qℓ⊗HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−→¯Qℓ⊗HW |q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;CH : D&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B0) →D&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;pH&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;charactersheafto be a simple perverse sheaf E∈D&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;unipotentJordanblock.Thus,asimpleperversesheafE∈D&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(G0)is&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Deﬁnition 2.6.1.Let C(G0) ⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;MisthepullbackofapureobjectofD&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Remark2.6.2.TheobjectsξCH(IC w) ∈D&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Thecharacter functorisamonoidaltraceonD&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0 × B&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B0)&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;G,m(B0× B0)2→D&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;CH(−⋆−) := CH ◦((−) ⋆(−)) : D&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;monoidalcenterofD&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G(B × B)with&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;pH&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0) ⊆C(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;objectofD&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0)andthusC(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0)≃C(G&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Deﬁnition2.9.1.Let C(U0) ⊆D&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;andMisthepullbackofapureobjectofD&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;existaG0-orbitjC:C0→U0andapureℓ-adiclocalsystemL∈D&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(C&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;First,ξEisanobjectofD&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;φ!K⟨dim¯Y ⟩.Inthenotationof[L84-2,§6.6],wehavei∗K≃K&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;φ!K⟨dim¯Y ⟩.Inthenotationof[L84-2,§6.6],wehavei∗K≃Ka,whereK&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;0,¯E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1)and¯E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1=i∗¯E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;1=i∗¯E1(andthesubscript&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1=i∗¯E1(andthesubscript0meanstheF-structureonX&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;IC(X&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;!K&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Therefore,i∗E≃φ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Sinceφ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Sinceφaisproper,¯E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;!K&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1beingpureimpliesφ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;constant sheaf [L85-I,§3.1,§4.4].Therefore,¯E&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;1istheconstant sheaf on X&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;dependsondim¯Y&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U0) ⊆C(U&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;objectofD&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;pure objects of weight zero in D&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G0),C(U&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(2)Mod&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;LetthesymmetricalgebraSym(V)beendowedwiththegradingwhereSym&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Mod&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;subcategoryofD&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;G,m(X0)stableunder⟨n⟩forall&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0))op→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0))(−, K⟨j⟩[i −j]△) : K&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HomK&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0))(K, (−)⟨j⟩[i −j]△) : K&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0)) →Mod&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HomK&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(X0)intoK&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;boundedamongthenonzerotermspreciselybecausetheobjectsofK&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i,jgr&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Mod&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;wehaveEnd&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;iHom(S, (−)⟨i⟩)induces&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(U&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;W(U0)) ≃D&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;W(U0)) ≃Db(Mod&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;W→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;K&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;InSection2,wereviewedthe(mixed)SpringersheafS∈D&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(U&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;the(mixed)Grothendieck–SpringersheafG∈D&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(G&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;G,m(G0).InSection&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;G,m(G0).InSection3,wegave&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ω= ωX0/G0:= a! ¯Qℓ∈D&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;−∗(Y )⟨−2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;K≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−∗( ˜Y )forms&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Z0=˜U&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Z0=˜U0 ×U0˜U&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0=˜G&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0=˜G0×G0˜G&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;S≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;G≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w⊆Z′.TocomparetheBorel–MoorehomologiesofZ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;w,whereTis&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0→˜G&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Z,wedecompose Z&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0intostrata.For each&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0→B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0→B0× B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;w,0,werewritethesestratain&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,O&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,OwtotheG-actionson(G × U&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,OwtotheG-actionson(G × Uw)/B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,OwtotheG-actionson(G × Uw)/Bw,(G × B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,OwtotheG-actionson(G × Uw)/Bw,(G × Bw)/B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w,OwtotheG-actionson(G × Uw)/Bw,(G × Bw)/Bw,G/B&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;w,0bethepullbackof&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;w,0bethepullbackofiZ,w:Zw,&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nM&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;nM nis&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nM&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Z&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−∗(Zw)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;w)&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Z&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−∗(Zw)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;w)&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;w)†.Let&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;w)†.Leti&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Y,w,&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Y,w,i&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Lemma4.6.1.Themapi&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(G/T )⟨2N&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(pt)⟨2N&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;!,T(pt)≃H&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;!,T(pt)≃Hi−2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(T )∨≃H&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(T )∨≃Hj+2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;−j(T )by&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−j(T )byq&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−j(T )byqj+2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−i(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−(n+2r)(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;w)&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;0(pt)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−∗(Yw)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Lemma4.6.2.Themapi&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Z&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Y&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;−∗(Yw)⟨−2N&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w)⟨−2N&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;≺w,0bedeﬁnedsimilarly.Themap&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;≺w,0bedeﬁnedsimilarly.ThemapiZ:Z&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n(Z&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Zw)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Z⪯w)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Z≺w)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Since(−)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;w)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;⪯w)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;≺w)&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n(Z&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Zw)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Z⪯w)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;n(Z≺w)⟨2&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Weinductalong⪯.Ifw=1,theni&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Z,≺w=i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Z,≺w= i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Z,wand&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Z,wandi&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Z,≺wareisomorphismsineverydegree.So,bytheﬁvelemma,&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;Z,≺wareisomorphismsineverydegree.So,bytheﬁvelemma,i&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;W,suchthat{σ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;W,suchthat{σs}s∈Sis&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Wto G&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−→O(β′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−→O(β′)0 ×B0O(β′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′β′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′β′′)0 ×B0O(β′′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′)0 ×B0O(β′′β′′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′)0 ×B0O(β′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β′)0 ×B0O(β′′)0 ×B0O(β′′′)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;O(σ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(σw)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;O(σw)0≃O(σ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(σw)0≃O(σs1)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;O(σw)0≃O(σs1)0 ×B0· · · ×B0O(σ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(σw)0≃O(σs1)0 ×B0· · · ×B0O(σsℓ)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(σw)0≃O(σs1)0 ×B0· · · ×B0O(σsℓ)0≃Ow,&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;SinceO1,0and¯Os,0aresmoothandclosedinB&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;sforall&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W,wesaythatZ(β)&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AHi,j(R(β)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AHi,j(R(β−1)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AHi,j(R(β)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;AHi,j(R(β)) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;i(K&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;underasmoothembedding.TheHOMFLYseriesofalinkinS&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HHH : HW→K&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;whereVectddenotesthecategoryofZ&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2 t&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2 t)&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u00121 + a&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;G,m(X&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;G,m(X0) →Mod&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;HHHi,i+j,k≃H&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;HHHi,i+j,k≃Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHHi,i+j,k≃Hk◦Kb(gr&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;G(G, CH(IC&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Example6.2.2.Below,wereviewthecalculationofHHH(IC 1)≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;G(G, G) ≃H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;≃H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(pt,¯Qℓ) ⊗H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(pt)andbyq&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(pt)andbyqionH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;onH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;G(G, G) ≃H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(pt,¯Qℓ) ⊗H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(2)The W-action on the right-hand side induced by H&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;andH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;andHi(T,¯Qℓ) ≃Λ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ofD&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2⊗Λ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2⊗Λ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;(gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;G(G, −))∨≃HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;G(G, −))∨≃HomW (Λi(V), gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;W(G&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(HHHi,i+j,k)∨≃HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(HHHi,i+j,k)∨≃HomW (Λi(V), AH&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ascontravariant functorsonHW= K&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Φ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Ψi,j= HomK&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(G0) →Mod0( ¯Qℓ[W]), resp. K&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;AH&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;AHj+k,j≃Ψ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;AHj+k,j≃Ψj+k,j◦K&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Ψ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Ψj+k,j≃H&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Ψj+k,j≃Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Ψj+k,j≃Hk◦KbΦ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Φ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;0(i∗(−)⟨−r⟩, S⟨j⟩) ≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;HomW (Λi(V), AH&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), H&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), Hk◦Kb(Φ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), H&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃HomW (Λi(V), Hk◦Kb(gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;≃H&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;≃Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;≃Hk◦Kb(HomW (Λ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃Hk◦Kb(HomW (Λi(V), gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;≃H&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;≃Hk◦K&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;≃Hk◦Kb((gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;i+jH&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;HHH&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHH0,j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHHr,r+j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;isthecharacterofΛ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;isthecharacterofΛ0(V),resp.Λ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;HHH&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHH0,j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;HHHr,r+j,k(R(β))∨≃gr&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;qiSym&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2( ¯Qℓ[W])is&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2( ¯Qℓ[W])isa¯Qℓ[W]-moduleequippedwith&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;RecallthatanobjectofMod&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;−→[HW ]△→[Mod&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;−−→Mod&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;2(AW ) →Mod&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;here the second arrow is the forgetful functor.Note that Mod&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;gr&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;2gr&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;{φ, ψ}φq(γw) gr&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The HOMFLYseries of a link λ ⊆R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;proach relies on Alexander’stheorem,statingthatevery linkinR&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(−x)iq&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x)iqj(ψ, Λ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(−x)iqj(ψ, Λi(V) ⊗Sym&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−a&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)i(Λ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −a&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x−1)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x−1)iΛ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−x)iΛ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −x−1)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −x)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Proof.UsetheidentityΛ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Proof.UsetheidentityΛr−i(V) = ε Λ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−a&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(−a2)iq&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)iqj(Λ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(−a2)iqj(Λi(V), εψ · Sym&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −a&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2 )|β|(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−a&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)i(Λ&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qdr)R(W)[q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qdr) (1 + q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qdr) (1 + q0Z[q&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;wherem&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;i(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;W{φ, ψ}φ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(−q)&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(−q)i Λ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;q)Wareindeedrationalfunctionsin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;q7→(−q)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(−1)nH&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;!(X&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯Qℓ⊗HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯Qℓ⊗HW |q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;φq= φq|q&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;φq= φq|q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tr(wF| H&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;tr(wF| H2&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(⟨˜β⟩q· ε[Sym(V)]q)|q&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(⟨˜β⟩q· ε[Sym(V)]q)|q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(⟨˜β⟩q· ε[Sym(V)]q)|q1/2=q1/2=(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;u|Q&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Lemma8.5.4.Wehave[Sym(V)]q=(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;|GF|qNQ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;|GF| = |BF||BF| = qN(q −1)&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;w∈W&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(Qu, ⟨˜β⟩q)W |q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(Qu, ⟨˜β⟩q)W |q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⟨β⟩q(w)|q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⟨β⟩q(w)|q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;Wand&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;g| = tr(˜β × g| R&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Proof.FixB&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Proof.FixB0∈BF.Supposethatβ= σ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Proof.FixB0∈BF.Supposethatβ= σs1 · · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Proof.FixB0∈BF.Supposethatβ= σs1 · · · σsℓ,wheres&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(B1, . . . , Bℓ) ∈(BF)ℓ:B&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;theexpansionof(˜β, g) · 1B0withrespecttothebasis{1B}B∈BFofR&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;u| = tr(˜β × u | R&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;coeﬃcientofa&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;coeﬃcientofa2&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tr(βπ) = coeﬃcientofa&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−a&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;w0|R&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;w0|R1,w(q) = qdim B|BF|R&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;WL,thenwewriteOL(β)&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;WL,thenwewriteOL(β)0fortheanalogueofO(β)withL&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1−q)&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;q(x)|q=q=(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;u|R&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;W′⟨σ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;=(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;qislinearas&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;PFR&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;u|R&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;B= {u ∈UF: (u−1Bu, B) ∈O&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i}ibethesetofGF -orbitsofUF .Foreach&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;B,wepick&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;B,wepickapoint&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;B,wepickapointu&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;i∩(U&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;u|R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;B|R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;B|Rx(u&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;L.Foreach&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;BL,wepick&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;BL,wepickapoint&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;u′|(R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;B|(R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Lemma8.8.2.Forallw∈WL,wehave(U&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;But(U&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(−q)&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i(−q)i Λ&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;wherewistheimageofβinWandr(w) = dim V&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Wmapsto&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(q −1)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;where G is adjoint and wis elliptic, meaning T&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;rankr(w)suchthat¯T˙w/¯T′isdiscrete.Soweget|( ¯T˙w)F|=(q −1)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;(1 −qd1) · · · (1 −qdr)R(W)[q&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;(1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;β&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;βn= π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;forsome&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n∈Q,inwhichcasewesaythat&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n,thenβ=γ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Theorem9.1.1(Lee–Lee).Ifβ∈BrWisperiodicofslope&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;π= γ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Proof.Letdbetheminimalpositiveexponentsuchthatσ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;thatifγisprimitiveandperiodic,thenγisapositiverootofσ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;HW -moduleofφqbythescalarq&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;Inparticular,φq(π) = q&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;φq(β) = qν&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;φq= φq|q&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;φq= φq|q1/2=q&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;ninlowestterms.Bythetheorem,&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ninlowestterms.Bythetheorem,q−m&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;ninlowestterms.Bythetheorem,q−mc(φ)π&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2 ]-moduleofφqbytheidentityoperatorI.Sinceβ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2 ]-moduleofφqbytheidentityoperatorI.Sinceβn=π&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;q−ν&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;•Theactionofq−ν&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Proposition9.3.4(Broué–Michel).Ifw∈Wisregularofordern,thenσ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Wsatisﬁesγ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Wsatisﬁesγn= πforsome&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;qν&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;whereζ= e&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;φq(β) = qν&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;{φ, ψ}φ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;{φ, ψ}φq(β) = qν&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;= qν&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;t⟩= 0isthehyperplaneofVﬁxedby&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;2⊆Misthe&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2⊆Mistheh-eigenspaceofeigenvalue&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;whereM&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;2−ν&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iq&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iqi Sym&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;iqi Symi(V)asinSections&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Deﬁnition10.4.1.Ifν∈Qandζ= e&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Degφ(e&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;φDegφ(q)φ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;s(1q)|q&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;s(1q)|q1/2=ζ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2 )&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;qν&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;q−ν&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;qν&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;n,wherem, n&gt;0.Since&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;nisalso&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;n-regularelementw∈WsuchthatV&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;n-regularelementw∈WsuchthatVw= 0.ByProposition9.3.4,σ&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;ButWisaWeylgroup,sobyTheorem9,theconditionV&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Φn(q)|{i∈I(W) :&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Φn(q)|{i∈I(W) : ndivides&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Φn(q)|{i∈I(W) : ndividesd&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q1/2→ζ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;n.Here,wehaveφ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;n.Here,wehaveφk= Λ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;n) = (−1)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;DegΛ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;above equalstr(w| Λ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;left-handsidealsoequalstr(w| Λ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;β= (σ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;β= (σs1 · · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;β= (σs1 · · · σsn−1)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;aperiodicbraidofslope&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n.Since&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;n.SincenistheCoxeternumberofS&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;n.SincenistheCoxeternumberofSn,itis&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2 )&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−a&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(−a2)i(Λ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;W= ⟨s ∈S: (st)&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;generatedbytheelementsoftheformσ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;W,thenanexpressionforβis&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;W,thenanexpressionforβisasequence(s&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Ssuchthatβ=σ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Ssuchthatβ=σs1 · · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;W→Z≥0,whichextendsuniquelyto&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Ifw∈Wand(s&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Ifw∈Wand(s1, . . . , sℓ)isareducedexpressionforw,thenσ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Ifw∈Wand(s1, . . . , sℓ)isareducedexpressionforw,thenσw=σ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;d(s1, . . . , sℓ)isareducedexpressionforw,thenσw=σs1 · · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;W→Wsuchthat|σ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherewemodifytherelationss&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;HW |q&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Wbywayofthemap&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Wbywayofthemapw7→σ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;qiSym&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w∈Wσ&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w∈Wσw⊗σ&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;s(φq)φ&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;Inparticular,s(1&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;w∈W&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;Degφ(q) =s(1&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;s(φ&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;s(φq)= (1 −q)&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1 −qd&quot;
+  },
+  {
+    &quot;page&quot;: 75,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;numberequals&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;nwith&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nwithmcoprimeto&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;nwithmcoprimeton.Here,theprincipalζ-blockis&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;powersΛ&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;paper [L11], where it is denoted B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and˜B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;w⊆˜G ×GG&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Wbe&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Wbeapositivebraidofwritheℓ.Thuswehaveβ=σ&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Wbeapositivebraidofwritheℓ.Thuswehaveβ=σs&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;Wbeapositivebraidofwritheℓ.Thuswehaveβ=σs1· · · σ&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;O(β) = {(B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;O(β) = {(B0, B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;O(β) = {(B0, B1, . . . , Bℓ) : (B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;O(β) = {(B0, B1, . . . , Bℓ) : (Bi−1, B&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;O(β) = {(B0, B1, . . . , Bℓ) : (Bi−1, Bi) ∈O&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;ShenandD.Wengin[SW]:ItisthespecialcaseoftheirstackConf&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;varietiesX&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;singand X&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;uαs: A&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Foralls ∈S,letfαs: A&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;fβ,B(⃗z) = fα&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;fβ,B(⃗z) = fαs1(z&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;X0(σ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;X0(σ2) = {⃗z∈A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= pt × A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;X0(σ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;X0(σ3) = {⃗z∈A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= G × pt × A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;X0(σ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;X0(σ4) = {⃗z∈A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= (A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= (A1× pt × A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;= (A1× pt × A1) ⊔(G × A&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;stratifyX0(β)intocellsoftheformA&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;stratifyX0(β)intocellsoftheformAa× G&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;W,thereis&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1x&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1x2&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1x2b&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;i−1&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i−1x&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;i−1xi&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i−1xib&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;ℓ−1&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;[bfα&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;[bfαs1(z&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;[bfαs1(z1), fα&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[bfαs1(z1), fαs2 (z&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;Writingx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;Writingxg= g−1xgandB&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;((x1 · · · xℓ)&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;((x1 · · · xℓ)g, B&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;((x1 · · · xℓ)g, Bx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;((x1 · · · xℓ)g, Bx2···xℓ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;((x1 · · · xℓ)g, Bx2···xℓg, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2 )&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;⟨σ&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2 )&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;⟨σ&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1 −q2 ((1 −(−q)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;1 −q2 ((1 −(−q)m+1) + (q + (−q)&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q= (1 + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q= (1 + q2 + · · · + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q= (1 + q2 + · · · + q2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;q= (1 + q2 + · · · + q2k) + (q + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q= (1 + q2 + · · · + q2k) + (q + q3 + · · · + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q= (1 + q2 + · · · + q2k) + (q + q3 + · · · + q2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Forinstance,wehave⟨σ&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Forinstance,wehave⟨σ2&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −q)−1(1 −q + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −q)−1(1 −q + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −q)−1(1 −q + q&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;β= (σsσtσu)&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;q10q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;q10q11q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;q10q11q12q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;q10q11q12q13q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;q10q11q12q13q14q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;q10q11q12q13q14q15q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thelinkclosureˆβ,uptoshiftingbya&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;thelinkclosureˆβ,uptoshiftingbya2&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;qinto&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;u&quot;,
+    &quot;context&quot;: &quot;toaZ[q]-linearcombination of totalSpringer representations Q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q2,2= 1 + qφ + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q2,1,1= 1 + (q + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q2,1,1= 1 + (q + q2)φ + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Q2,1,1= 1 + (q + q2)φ + q2ψ + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q2+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q2+ q4)ψ + (q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q2+ q4)ψ + (q3+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q2+ q4)ψ + (q3+ q4+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;Q1,1,1,1= 1 + (q + q2+ q3)φ + (q2+ q4)ψ + (q3+ q4+ q5)εφ + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;q= q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q= q16Q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q11 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q11 + q12 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q11 + q12 + q13 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q11 + q12 + q13 + q14)Q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;q= q16Q1+ (q10 + q11 + q12 + q13 + q14)Q3,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;+ (q6−q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (q6−q7+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (q6−q7+ q8+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ (q6−q7+ q8+ q10+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+ (q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q5+ 2q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q5+ 2q6+ 2q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q5+ 2q6+ 2q7+ 2q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q5+ 2q6+ 2q7+ 2q8+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (q3+ q4+ q5+ 2q6+ 2q7+ 2q8+ q9+ q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1 + q&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + q2+ q&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

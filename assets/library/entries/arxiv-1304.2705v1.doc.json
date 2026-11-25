@@ -1,0 +1,745 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1304.2705v1",
+  "title": "arxiv-1304.2705v1",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "State-integrals and their q-series",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-state-integrals-and-their-q-series"
+    },
+    {
+      "level": 2,
+      "title": "q-difference equations",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The case of the 41 knot",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-13-the-case-of-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "The case of the 52 knot",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-14-the-case-of-the-52-knot"
+    },
+    {
+      "level": 1,
+      "title": "Proofs",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-proofs"
+    },
+    {
+      "level": 2,
+      "title": "A residue computation",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-a-residue-computation"
+    },
+    {
+      "level": 2,
+      "title": "The Taylor series of m(x) and \"0365n(x)",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The connection with the differential operators l and \"0365l",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Some auxiliary power series",
+      "number": "2.5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-some-auxiliary-power-series"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 2.2",
+      "number": "2.6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-26-proof-of-proposition-22"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma 1.5",
+      "number": "2.7",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-27-proof-of-lemma-15"
+    },
+    {
+      "level": 1,
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "number": "3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-an-application-state-integrals-of-the-41-and-5"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Corollary 1.7",
+      "number": "3.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-proof-of-corollary-17"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Corollary 1.8",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-proof-of-corollary-18"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-state-integrals-and-their-q-series",
+      "number": "1.1",
+      "title": "State-integrals and their q-series",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl cor",
+          "heading": false
+        },
+        {
+          "term": "lbl rem",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "corollary lbl",
+          "heading": false
+        },
+        {
+          "term": "remark lbl",
+          "heading": false
+        },
+        {
+          "term": "frac b-3a",
+          "heading": false
+        },
+        {
+          "term": "state-integrals",
+          "heading": true
+        }
+      ],
+      "extract": "\\lbl{sub.intro} Multi-dimensional state integrals of products of Faddeev's quantum dilogarithm appear in abundance in Quantum Topology, and were studied among others by Hikami~\\cite{Hi}, Dimofte--Gukov--Lennels--Zagier~\\cite{DGLZ}, Andersen--Kashaev~\\cite{AK}, and Kashaev--Luo--Vartanov \\cite{KLV}. It is well-known to the experts that such state-integrals can be written as finite sums of products of pairs of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-13-the-case-of-the-41-knot",
+      "number": "1.3",
+      "title": "The case of the 41 knot",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align lbl",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl cor",
+          "heading": false
+        },
+        {
+          "term": "corollary lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "end subequations",
+          "heading": false
+        },
+        {
+          "term": "cali",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.41} We now specialize Corollary \\ref{cor.1} to the invariant of the $4_1$ and $5_2$ knots is given by \\cite{KLV,AK} $$ \\calI_{1,2}=\\calI_{4_1} \\qquad \\calI_{2,3}=\\calI_{5_2} \\,. $$ In this section, let \\begin{equation} \\lbl{eq.Fqx} F(q,x)=F_{1,2}(q,x)= \\sum_{n=0}^\\infty (-1)^n \\frac{q^{\\frac{1}{2} n(n+1)}}{(q)_n^2} x^n \\,. \\end{equation} \\begin{corollary} \\lbl{cor.41} \\rm{(a)} We have: \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-14-the-case-of-the-52-knot",
+      "number": "1.4",
+      "title": "The case of the 52 knot",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q2x",
+          "heading": false
+        },
+        {
+          "term": "q3x",
+          "heading": false
+        },
+        {
+          "term": "alidis",
+          "heading": false
+        }
+      ],
+      "extract": "F (q, x) = F2,3(q, x) = ∞∑ m=0 tm(q)xm, ~F (q,~x) = F1,3(q,~x) = ∞∑ m=0 Tm(q)~xm where tm(q) = qm(m+1) (q)3 m , T n(q) = ( −1)n q 1 2 n(n+1) (q)3 n = tn(q−1) . Let Rm,n(q, ˜q) = − b2 2 ( 1 + 4m + 4m2 − 6E(m) 1 (q) − 12mE(m) 1 (q) + 9E(m)2 1 (q) − 3E(m) 2 (q) ) − 1 2πi + 1 2 ( 1 + 2m − 3E(m) 1 (q) )( 1 + 2n − 6E(n) 1 (˜q) ) + b−2 2 ( −n − n2 − 6E(0) 2 (˜q) + 3E(n) 1 (˜q) + 6nE(n) 1 (˜q) − 9E(n)2 1 (˜q) + 3E(n) 2 (˜q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-proofs",
+      "number": "2",
+      "title": "Proofs",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-21-a-residue-computation",
+      "number": "2.1",
+      "title": "A residue computation",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl lem",
+          "heading": false
+        },
+        {
+          "term": "align phi",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "lemma lbl",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.residue} To relate the state-integral $\\calI_{A,B}$ to a sum, we will apply the residue theorem on a semicircle $\\gamma_R$ with center $0$ and radius $R$, oriented counterclockwise in the upper half-plane: $$ \\psdraw{gammaR}{1in} $$ Then, we will take the limit $R \\to \\infty$. To compute the residue of the integrand, we need to expand $\\Phi_b(x)$ near the pole $$ x_{m,n}=c_b + i b m + i b^{-1} n $$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-some-auxiliary-power-series",
+      "number": "2.5",
+      "title": "Some auxiliary power series",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl lem",
+          "heading": false
+        },
+        {
+          "term": "leme follows",
+          "heading": false
+        },
+        {
+          "term": "equation lbl",
+          "heading": false
+        },
+        {
+          "term": "lemma lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl sub",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "align log",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.aux} Consider the auxiliary series \\begin{equation} \\lbl{eq.ax} \\frac{1}{a e^x-1}=\\sum_{n=0}^\\infty p_n(a) x^n \\end{equation} where $$ p_n(a)=- \\frac{a}{n! (1-a)^{n+1}} \\sum_{m=0}^{n-1} A_{n,m} a^m \\qquad p_0(a)=-\\frac{1}{1-a} $$ and $A_{n,m}$ are {\\em Euler triangular numbers} (sequence {\\tt A008292} in the online encyclopedia of integer sequences \\cite{OEIS}) that satisfy the recursion $$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-26-proof-of-proposition-22",
+      "number": "2.6",
+      "title": "Proof of Proposition 2.2",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-27-proof-of-lemma-15",
+      "number": "2.7",
+      "title": "Proof of Lemma 1.5",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qjx",
+          "heading": false
+        },
+        {
+          "term": "aqaxt",
+          "heading": false
+        },
+        {
+          "term": "aqa",
+          "heading": false
+        }
+      ],
+      "extract": "~FA,B. Part (b) follows from an application of Zeilberger’s creative telescop ing [ Zei91]. To apply the method, deﬁne t(m, x) = (−1)AmqA m(m+1) 2 (q)B m xm Then, observe that t satisﬁes the recursions with respect to m and x: (1 − qm+1)Bt(m + 1, x) = ( −1)AqA(m+1)t(m, x) t(m, qx) = qmt(m, x) . Now, we eliminate qm from the above equations as follows. The second equation implies tha t t(m + 1, qjx) = qj(m+1)t(m + 1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-an-application-state-integrals-of-the-41-and-5",
+      "number": "3",
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-proof-of-corollary-17",
+      "number": "3.1",
+      "title": "Proof of Corollary 1.7",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 144,
+      "summary": null,
+      "keywords": [],
+      "extract": "1 (b(1 − eb−1w))2 = 1 w2 − b−1 w + O(1) (φm(bw))2 = 1 − 2E(m) 1 (q)bw + O(w2) (~φn(b−1w))2 = 1 + 2~E(n) 1 (˜q)b−1w + O(w2) e 1 4πi w2+w(b(m+1/2)+b−1(n+1/2)) = 1 + ( 1 2 + m ) bw + ( 1 2 + n ) b−1w + O(w2) Combined with ~E(n) 1 (˜q) = −n + E(n) 1 (˜q), it follows that the residue R = Res w=0(F1,2,m,n(w)) is given by R = ( b ( 1 2 + m − 2E(m) 1 (q) ) − b−1 ( 1 2 + n − 2E(n) 1 (˜q) )) The above, together with the fact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-proof-of-corollary-18",
+      "number": "3.2",
+      "title": "Proof of Corollary 1.8",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "lbl",
+          "heading": false
+        },
+        {
+          "term": "right",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.cor52} Assume now that $(A,B)=(2,3)$. Then, \\begin{align*} \\frac{1}{(b(1-e^{b^{-1}w}))^3} &= -\\frac{1}{w^3} +\\frac{3b^{-1}}{2w^2} -\\frac{b^{-2}}{w} +O(1) \\\\ \\left( \\phi_m(b w) \\right)^3 &= 1-3 E^{(m)}_1(q) \\, b w + \\frac{3}{2} \\left(3 E^{(m)2}_1(q) - E^{(m)}_2(q)\\right) \\, b^2 w^2 + O(w^3) \\\\ (\\ti \\phi_n(b^{-1} w))^3 &= 1+3 \\ti E^{(n)}_1(\\tq) \\, b^{-1} w + \\frac{3}{2} \\left(3 \\ti E^{(n)2}_1(\\tq) + \\ti",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 28,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geneva",
+          "heading": false
+        },
+        {
+          "term": "hamsalpha",
+          "heading": false
+        },
+        {
+          "term": "conceived",
+          "heading": false
+        }
+      ],
+      "extract": "The paper was conceived during a visit of the first author in Geneva in the spring of 2013. The first author wishes to thank the University of Geneva for its hospitality, and Don Zagier for encouragement and stimulating conversations. \\bibliographystyle{hamsalpha}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "masha vlasenko",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "rinat",
+          "heading": false
+        },
+        {
+          "term": "nahm conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "[AK] Jørgen E. Andersen and Rinat M. Kashaev, A TQFT from quantum Teichm¨ uller theory , arXiv: 1109.6295, Preprint 2011. [And76] George E. Andrews, The theory of partitions , Addison-Wesley Publishing Co., Reading, Mass.- London-Amsterdam, 1976, Encyclopedia of Mathematics and its Ap plications, Vol. 2. [DGGa] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov, 3-manifolds and 3d indices , arXiv:1112.5179, Preprint",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "align lbl",
+      "heading": false
+    },
+    {
+      "term": "equation lbl",
+      "heading": false
+    },
+    {
+      "term": "lbl sub",
+      "heading": false
+    },
+    {
+      "term": "lbl cor",
+      "heading": false
+    },
+    {
+      "term": "lbl lem",
+      "heading": false
+    },
+    {
+      "term": "corollary lbl",
+      "heading": false
+    },
+    {
+      "term": "align frac",
+      "heading": false
+    },
+    {
+      "term": "lemma lbl",
+      "heading": false
+    },
+    {
+      "term": "remark lbl",
+      "heading": false
+    },
+    {
+      "term": "lbl rem",
+      "heading": false
+    },
+    {
+      "term": "infty frac",
+      "heading": false
+    },
+    {
+      "term": "align begin",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1304.2705v1"
+  }
+}

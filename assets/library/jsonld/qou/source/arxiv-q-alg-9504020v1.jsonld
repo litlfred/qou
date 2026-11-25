@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9504020v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A link invariant from quantum dilogarithm",
+  "contains": [
+    "library/arxiv-q-alg-9504020v1/sections/sec-front-matter",
+    "library/arxiv-q-alg-9504020v1/sections/sec-000",
+    "library/arxiv-q-alg-9504020v1/sections/sec-001",
+    "library/arxiv-q-alg-9504020v1/sections/sec-002",
+    "library/arxiv-q-alg-9504020v1/sections/sec-003",
+    "library/arxiv-q-alg-9504020v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A link invariant from quantum dilogarithm — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of\n\n**A link invariant from quantum dilogarithm**\n\n*R.M. Kashaev∗*\n\n10 pp, 6 sections.\n\n**Abstract.** The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3 introduced in [14]. The obtained invariant, like Alexander-Conway polynomial, vanishes on disjoint union of links. The R-matrix can be considered as the cyclic analog of the universal R-matrix associated with Uq(sl(2)) algebra. ENSLAPP-L-517/95 ∗On leave from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ee `a l’E.N.S. de Lyon, et `a l’Universit`e de Savoie\n\n**Outline.** Front matter; 1 Introduction; 2 The $R$-Matrix; 3 Invariants of Links in Three-Sphere; 4 Three-Dimensional Description; 5 Summary",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:q-alg/9504020&metadataPrefix=arXiv), submitted 1995-04-24, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-q-alg-9504020v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9504020v1.pdf",
+    "source_sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
+    "pages": 10,
+    "arxiv": {
+      "id": "q-alg/9504020",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "24 Apr 1995"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

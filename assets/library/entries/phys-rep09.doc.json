@@ -1,0 +1,5163 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "phys-rep09",
+  "title": "The Magnus expansion and some of its applications",
+  "variant": "pdf",
+  "pages": 88,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "The Magnus expansion and some of its applications",
+      "number": null,
+      "page": 1,
+      "pageLabel": "151",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-the-magnus-expansion-and-some-of-its-application"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "153",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 3,
+      "title": "Motivation, overview and history",
+      "number": null,
+      "page": 3,
+      "pageLabel": "153",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-motivation-overview-and-history"
+    },
+    {
+      "level": 3,
+      "title": "Mathematical preliminaries and notations",
+      "number": null,
+      "page": 6,
+      "pageLabel": "156",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-mathematical-preliminaries-and-notations"
+    },
+    {
+      "level": 2,
+      "title": "The Magnus expansion (ME)",
+      "number": null,
+      "page": 9,
+      "pageLabel": "159",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-magnus-expansion-me"
+    },
+    {
+      "level": 3,
+      "title": "A proof of Magnus' Theorem",
+      "number": null,
+      "page": 9,
+      "pageLabel": "159",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-a-proof-of-magnus-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Formulae for the first terms in Magnus expansion",
+      "number": null,
+      "page": 11,
+      "pageLabel": "161",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-formulae-for-the-first-terms-in-magnus-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Magnus expansion generator",
+      "number": null,
+      "page": 12,
+      "pageLabel": "162",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-magnus-expansion-generator"
+    },
+    {
+      "level": 3,
+      "title": "Magnus expansion and time-dependent perturbation theory",
+      "number": null,
+      "page": 12,
+      "pageLabel": "162",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-magnus-expansion-and-time-dependent-perturbation"
+    },
+    {
+      "level": 3,
+      "title": "Graph theoretical analysis of Magnus expansion",
+      "number": null,
+      "page": 14,
+      "pageLabel": "164",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-graph-theoretical-analysis-of-magnus-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Time-symmetry of the expansion",
+      "number": null,
+      "page": 15,
+      "pageLabel": "165",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-time-symmetry-of-the-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Convergence of the Magnus expansion",
+      "number": null,
+      "page": 16,
+      "pageLabel": "166",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-convergence-of-the-magnus-expansion"
+    },
+    {
+      "level": 4,
+      "title": "On the existence of Ω (t)",
+      "number": null,
+      "page": 16,
+      "pageLabel": "166",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-on-the-existence-of-ω-t"
+    },
+    {
+      "level": 4,
+      "title": "Convergence of the Magnus series",
+      "number": null,
+      "page": 17,
+      "pageLabel": "167",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-convergence-of-the-magnus-series"
+    },
+    {
+      "level": 4,
+      "title": "An improved radius of convergence",
+      "number": null,
+      "page": 18,
+      "pageLabel": "168",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-an-improved-radius-of-convergence"
+    },
+    {
+      "level": 4,
+      "title": "Further discussion",
+      "number": null,
+      "page": 19,
+      "pageLabel": "169",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-further-discussion"
+    },
+    {
+      "level": 3,
+      "title": "Magnus expansion and the BCH formula",
+      "number": null,
+      "page": 21,
+      "pageLabel": "171",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-magnus-expansion-and-the-bch-formula"
+    },
+    {
+      "level": 3,
+      "title": "Preliminary linear transformations",
+      "number": null,
+      "page": 22,
+      "pageLabel": "172",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-preliminary-linear-transformations"
+    },
+    {
+      "level": 3,
+      "title": "Exponential product representations",
+      "number": null,
+      "page": 23,
+      "pageLabel": "173",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-exponential-product-representations"
+    },
+    {
+      "level": 4,
+      "title": "Fer method",
+      "number": null,
+      "page": 23,
+      "pageLabel": "173",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-fer-method"
+    },
+    {
+      "level": 4,
+      "title": "Wilcox method",
+      "number": null,
+      "page": 25,
+      "pageLabel": "175",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-wilcox-method"
+    },
+    {
+      "level": 4,
+      "title": "Wei--Norman factorization",
+      "number": null,
+      "page": 25,
+      "pageLabel": "175",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-wei--norman-factorization"
+    },
+    {
+      "level": 3,
+      "title": "The continuous BCH formula",
+      "number": null,
+      "page": 26,
+      "pageLabel": "176",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-the-continuous-bch-formula"
+    },
+    {
+      "level": 2,
+      "title": "Generalizations of the Magnus expansion",
+      "number": null,
+      "page": 26,
+      "pageLabel": "176",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-generalizations-of-the-magnus-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Voslamber iterative method",
+      "number": null,
+      "page": 27,
+      "pageLabel": "177",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-voslamber-iterative-method"
+    },
+    {
+      "level": 3,
+      "title": "Floquet--Magnus expansion",
+      "number": null,
+      "page": 29,
+      "pageLabel": "179",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-floquet--magnus-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Magnus expansions for nonlinear matrix equations",
+      "number": null,
+      "page": 30,
+      "pageLabel": "180",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-magnus-expansions-for-nonlinear-matrix-equations"
+    },
+    {
+      "level": 3,
+      "title": "Treatment of general nonlinear equations",
+      "number": null,
+      "page": 32,
+      "pageLabel": "182",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-treatment-of-general-nonlinear-equations"
+    },
+    {
+      "level": 4,
+      "title": "Treatment of Hamiltonian systems",
+      "number": null,
+      "page": 35,
+      "pageLabel": "185",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-treatment-of-hamiltonian-systems"
+    },
+    {
+      "level": 3,
+      "title": "Magnus expansion and the Chen--Fliess series",
+      "number": null,
+      "page": 36,
+      "pageLabel": "186",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-magnus-expansion-and-the-chen--fliess-series"
+    },
+    {
+      "level": 2,
+      "title": "Illustrative examples",
+      "number": null,
+      "page": 38,
+      "pageLabel": "188",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-illustrative-examples"
+    },
+    {
+      "level": 3,
+      "title": "ME in the Interaction Picture",
+      "number": null,
+      "page": 38,
+      "pageLabel": "188",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-me-in-the-interaction-picture"
+    },
+    {
+      "level": 4,
+      "title": "Linearly forced harmonic oscillator",
+      "number": null,
+      "page": 38,
+      "pageLabel": "188",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-linearly-forced-harmonic-oscillator"
+    },
+    {
+      "level": 4,
+      "title": "Two-level quantum systems",
+      "number": null,
+      "page": 39,
+      "pageLabel": "189",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-two-level-quantum-systems"
+    },
+    {
+      "level": 3,
+      "title": "ME in the Adiabatic Picture",
+      "number": null,
+      "page": 43,
+      "pageLabel": "193",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-me-in-the-adiabatic-picture"
+    },
+    {
+      "level": 4,
+      "title": "Linearly forced harmonic oscillator",
+      "number": null,
+      "page": 44,
+      "pageLabel": "194",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-linearly-forced-harmonic-oscillator"
+    },
+    {
+      "level": 4,
+      "title": "Rosen--Zener model",
+      "number": null,
+      "page": 44,
+      "pageLabel": "194",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-rosen--zener-model"
+    },
+    {
+      "level": 3,
+      "title": "Fer and Wilcox infinite-product expansions",
+      "number": null,
+      "page": 45,
+      "pageLabel": "195",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-fer-and-wilcox-infinite-product-expansions"
+    },
+    {
+      "level": 4,
+      "title": "Linearly forced harmonic oscillator",
+      "number": null,
+      "page": 45,
+      "pageLabel": "195",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-linearly-forced-harmonic-oscillator"
+    },
+    {
+      "level": 4,
+      "title": "Two-level quantum system: Rectangular step",
+      "number": null,
+      "page": 45,
+      "pageLabel": "195",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-two-level-quantum-system-rectangular-step"
+    },
+    {
+      "level": 3,
+      "title": "Voslamber iterative method",
+      "number": null,
+      "page": 46,
+      "pageLabel": "196",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-voslamber-iterative-method"
+    },
+    {
+      "level": 3,
+      "title": "Linear periodic systems: Floquet--Magnus formalism",
+      "number": null,
+      "page": 47,
+      "pageLabel": "197",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-linear-periodic-systems-floquet--magnus-formalis"
+    },
+    {
+      "level": 2,
+      "title": "Numerical integration methods based on the Magnus expansion",
+      "number": null,
+      "page": 48,
+      "pageLabel": "198",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-numerical-integration-methods-based-on-the-magnu"
+    },
+    {
+      "level": 3,
+      "title": "Introduction",
+      "number": null,
+      "page": 48,
+      "pageLabel": "198",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-introduction"
+    },
+    {
+      "level": 3,
+      "title": "Runge--Kutta methods",
+      "number": null,
+      "page": 50,
+      "pageLabel": "200",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-runge--kutta-methods"
+    },
+    {
+      "level": 3,
+      "title": "Preservation of qualitative properties",
+      "number": null,
+      "page": 52,
+      "pageLabel": "202",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-preservation-of-qualitative-properties"
+    },
+    {
+      "level": 3,
+      "title": "Magnus integrators for linear systems",
+      "number": null,
+      "page": 53,
+      "pageLabel": "203",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-magnus-integrators-for-linear-systems"
+    },
+    {
+      "level": 4,
+      "title": "From Magnus to Fer and Cayley methods",
+      "number": null,
+      "page": 56,
+      "pageLabel": "206",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-from-magnus-to-fer-and-cayley-methods"
+    },
+    {
+      "level": 4,
+      "title": "Fer based methods",
+      "number": null,
+      "page": 56,
+      "pageLabel": "206",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-fer-based-methods"
+    },
+    {
+      "level": 4,
+      "title": "Cayley-transform methods",
+      "number": null,
+      "page": 57,
+      "pageLabel": "207",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-cayley-transform-methods"
+    },
+    {
+      "level": 3,
+      "title": "Numerical illustration: The Rosen--Zener model revisited",
+      "number": null,
+      "page": 58,
+      "pageLabel": "208",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-numerical-illustration-the-rosen--zener-model-re"
+    },
+    {
+      "level": 3,
+      "title": "Computing the exponential of a matrix",
+      "number": null,
+      "page": 60,
+      "pageLabel": "210",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-computing-the-exponential-of-a-matrix"
+    },
+    {
+      "level": 4,
+      "title": "Scaling and squaring with Padé approximation",
+      "number": null,
+      "page": 61,
+      "pageLabel": "211",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-scaling-and-squaring-with-padé-approximation"
+    },
+    {
+      "level": 4,
+      "title": "Chebyshev approximation",
+      "number": null,
+      "page": 62,
+      "pageLabel": "212",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-chebyshev-approximation"
+    },
+    {
+      "level": 4,
+      "title": "Krylov space methods",
+      "number": null,
+      "page": 63,
+      "pageLabel": "213",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-krylov-space-methods"
+    },
+    {
+      "level": 4,
+      "title": "Splitting methods",
+      "number": null,
+      "page": 63,
+      "pageLabel": "213",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-splitting-methods"
+    },
+    {
+      "level": 3,
+      "title": "Additional numerical examples",
+      "number": null,
+      "page": 64,
+      "pageLabel": "214",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-additional-numerical-examples"
+    },
+    {
+      "level": 3,
+      "title": "Modified Magnus integrators",
+      "number": null,
+      "page": 66,
+      "pageLabel": "216",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-modified-magnus-integrators"
+    },
+    {
+      "level": 4,
+      "title": "Variations on the basic algorithm",
+      "number": null,
+      "page": 66,
+      "pageLabel": "216",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-variations-on-the-basic-algorithm"
+    },
+    {
+      "level": 4,
+      "title": "Commutator-free Magnus integrators",
+      "number": null,
+      "page": 67,
+      "pageLabel": "217",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-commutator-free-magnus-integrators"
+    },
+    {
+      "level": 3,
+      "title": "Magnus integrators for nonlinear differential equations",
+      "number": null,
+      "page": 70,
+      "pageLabel": "220",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-magnus-integrators-for-nonlinear-differential-eq"
+    },
+    {
+      "level": 4,
+      "title": "Nonlinear matrix equations in Lie groups",
+      "number": null,
+      "page": 70,
+      "pageLabel": "220",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-nonlinear-matrix-equations-in-lie-groups"
+    },
+    {
+      "level": 4,
+      "title": "The general nonlinear problem",
+      "number": null,
+      "page": 70,
+      "pageLabel": "220",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-the-general-nonlinear-problem"
+    },
+    {
+      "level": 2,
+      "title": "Some applications of the numerical integrators based on ME",
+      "number": null,
+      "page": 71,
+      "pageLabel": "221",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-some-applications-of-the-numerical-integrators-b"
+    },
+    {
+      "level": 3,
+      "title": "Case study: Numerical treatment of the Schrödinger equation",
+      "number": null,
+      "page": 72,
+      "pageLabel": "222",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-case-study-numerical-treatment-of-the-schrödinge"
+    },
+    {
+      "level": 4,
+      "title": "Time-dependent Schrödinger equation",
+      "number": null,
+      "page": 72,
+      "pageLabel": "222",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-time-dependent-schrödinger-equation"
+    },
+    {
+      "level": 4,
+      "title": "Time-independent Schrödinger equation",
+      "number": null,
+      "page": 75,
+      "pageLabel": "225",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-time-independent-schrödinger-equation"
+    },
+    {
+      "level": 3,
+      "title": "Sturm--Liouville problems",
+      "number": null,
+      "page": 75,
+      "pageLabel": "225",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-sturm--liouville-problems"
+    },
+    {
+      "level": 3,
+      "title": "The differential Riccati equation",
+      "number": null,
+      "page": 76,
+      "pageLabel": "226",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-the-differential-riccati-equation"
+    },
+    {
+      "level": 3,
+      "title": "Stochastic differential equations",
+      "number": null,
+      "page": 78,
+      "pageLabel": "228",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-069-stochastic-differential-equations"
+    },
+    {
+      "level": 2,
+      "title": "Physical applications",
+      "number": null,
+      "page": 80,
+      "pageLabel": "230",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-070-physical-applications"
+    },
+    {
+      "level": 3,
+      "title": "Nuclear, atomic and molecular physics",
+      "number": null,
+      "page": 80,
+      "pageLabel": "230",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-071-nuclear-atomic-and-molecular-physics"
+    },
+    {
+      "level": 3,
+      "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
+      "number": null,
+      "page": 80,
+      "pageLabel": "230",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-072-nuclear-magnetic-resonance-average-hamiltonian-t"
+    },
+    {
+      "level": 3,
+      "title": "Quantum field theory and high energy physics",
+      "number": null,
+      "page": 81,
+      "pageLabel": "231",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-073-quantum-field-theory-and-high-energy-physics"
+    },
+    {
+      "level": 3,
+      "title": "Electromagnetism",
+      "number": null,
+      "page": 82,
+      "pageLabel": "232",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-074-electromagnetism"
+    },
+    {
+      "level": 3,
+      "title": "Optics",
+      "number": null,
+      "page": 82,
+      "pageLabel": "232",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-optics"
+    },
+    {
+      "level": 3,
+      "title": "General Relativity",
+      "number": null,
+      "page": 83,
+      "pageLabel": "233",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-076-general-relativity"
+    },
+    {
+      "level": 3,
+      "title": "Search of periodic orbits",
+      "number": null,
+      "page": 83,
+      "pageLabel": "233",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-077-search-of-periodic-orbits"
+    },
+    {
+      "level": 3,
+      "title": "Geometric control of mechanical systems",
+      "number": null,
+      "page": 83,
+      "pageLabel": "233",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-078-geometric-control-of-mechanical-systems"
+    },
+    {
+      "level": 2,
+      "title": "Conclusions",
+      "number": null,
+      "page": 84,
+      "pageLabel": "234",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-079-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 84,
+      "pageLabel": "234",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-080-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 85,
+      "pageLabel": "235",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-081-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "151",
+      "labelEnd": "151",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "Physics Reports 470 (2009) 151-238 Contents lists available at ScienceDirect PHYSICS REPORTS Physics Reports journal homepage: www.elsevier.com/locate/physrep",
+      "extractCut": false,
+      "blocks": [
+        "library/phys-rep09/blocks/prose-sec-front-matter",
+        "library/phys-rep09/blocks/figure-img-p001-1",
+        "library/phys-rep09/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-the-magnus-expansion-and-some-of-its-application",
+      "number": null,
+      "title": "The Magnus expansion and some of its applications",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "151",
+      "labelEnd": "153",
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": true
+        },
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "spain departament",
+          "heading": false
+        },
+        {
+          "term": "numerical integrators",
+          "heading": false
+        },
+        {
+          "term": "voslamber iterative",
+          "heading": false
+        },
+        {
+          "term": "rights reserved",
+          "heading": false
+        },
+        {
+          "term": "harmonic oscillator",
+          "heading": false
+        },
+        {
+          "term": "forced harmonic",
+          "heading": false
+        }
+      ],
+      "extract": "S. Blanes?, F. Casas, J.A. Oteo‘, J. Ros °** * Instituto de Matematica Multidisciplinar, Universidad Politécnica de Valencia, E-46022 Valencia, Spain > Departament de Matematiques, Universitat Jaume I, E-12071 Castell6n, Spain © Departament de Fisica Teorica, Universitat de Valéncia, E-46100 Burjassot, Valencia, Spain 4 IFIC, Centre Mixt Universitat de Valéncia-CSIC, E-46100 Burjassot, Valencia, Spain ARTICLE INFO",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "153",
+      "labelEnd": "153",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-motivation-overview-and-history",
+      "number": null,
+      "title": "Motivation, overview and history",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "153",
+      "labelEnd": "156",
+      "words": 2879,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus proposal",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus paper",
+          "heading": false
+        },
+        {
+          "term": "magnus original",
+          "heading": false
+        },
+        {
+          "term": "isi web",
+          "heading": false
+        },
+        {
+          "term": "citations",
+          "heading": false
+        },
+        {
+          "term": "history",
+          "heading": true
+        },
+        {
+          "term": "exponential solution",
+          "heading": false
+        }
+      ],
+      "extract": "The outstanding mathematician Wilhelm Magnus (1907-1990) made important contributions to a wide variety of fields in mathematics and mathematical physics [1]. Among them, one can mention combinatorial group theory [2] and his collaboration in the Bateman project on higher transcendental functions and integral transforms [3]. In this report we review another of his long-lasting constructions: the so-called Magnus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-mathematical-preliminaries-and-notations",
+      "number": null,
+      "title": "Mathematical preliminaries and notations",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "156",
+      "labelEnd": "159",
+      "words": 1409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "traceless matrices",
+          "heading": false
+        },
+        {
+          "term": "a-o",
+          "heading": false
+        },
+        {
+          "term": "matrix lie",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "real matrices",
+          "heading": false
+        },
+        {
+          "term": "lie bracket",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "symplectic group",
+          "heading": false
+        }
+      ],
+      "extract": "Here we collect, for the reader’s convenience, some mathematical expressions, terminology and notations which appear most frequently in the text. Needless to say, we have made no attempt at being completely rigorous. We just try to facilitate the casual reading of isolated sections. As already mentioned, the natural mathematical habitat for most of the objects we will deal with in this report is a Lie group, or its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-magnus-expansion-me",
+      "number": null,
+      "title": "The Magnus expansion (ME)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "159",
+      "labelEnd": "159",
+      "words": 209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "time-ordering",
+          "heading": false
+        },
+        {
+          "term": "dty",
+          "heading": false
+        },
+        {
+          "term": "ace",
+          "heading": false
+        }
+      ],
+      "extract": "Magnus’ proposal with respect to the linear evolution equation Y(t) = A(H)YO) (30) with initial condition Y (0) = I, was to express the solution as the exponential of a certain function, Y(t) = exp 2(t). (31) This is in contrast to the representation Y(t)h=T (cx [ oc) 0 in terms of the time-ordering operator J introduced by Dyson [13]. It turns out that 2(t) in (31) can be obtained explicitly in a number of ways.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-a-proof-of-magnus-theorem",
+      "number": null,
+      "title": "A proof of Magnus' Theorem",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "159",
+      "labelEnd": "161",
+      "words": 817,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "bernoulli numbers",
+          "heading": false
+        },
+        {
+          "term": "adg",
+          "heading": false
+        },
+        {
+          "term": "matrix exponential",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "derivative",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of this theorem is largely based on the derivative of the matrix exponential map, which we discuss next. Given a scalar function w(t) € R, the derivative of the exponential is given by d exp(w(t))/dt = w'(t) exp(w(t)). One could think of a similar formula for a matrix §2(t). However, this is not the case, since in general [§2, 2’] # 0. Instead, one has the following result. Lemma 2. The derivative of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-formulae-for-the-first-terms-in-magnus-expansion",
+      "number": null,
+      "title": "Formulae for the first terms in Magnus expansion",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "161",
+      "labelEnd": "162",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dts",
+          "heading": false
+        },
+        {
+          "term": "ifr",
+          "heading": false
+        },
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "lamberti",
+          "heading": false
+        },
+        {
+          "term": "prato",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose now that A is of first order in some parameter ¢ and try a solution in the form of a series Q(t) = > A(t), (40) n=1 where £2, is supposed to be of order e\". Equivalently, we replace A by ¢A in (30) and determine the successive terms of ES Q(t) = D> e\"2,(0). (41) n=1 This can be done explicitly, at least for the first terms, by substituting the series (41) in (39) and equating powers of e. Obviously, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-magnus-expansion-generator",
+      "number": null,
+      "title": "Magnus expansion generator",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "162",
+      "labelEnd": "162",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "quit",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "hie",
+          "heading": false
+        }
+      ],
+      "extract": "The above procedure can, indeed, provide a recursive procedure to generate all the terms in the Magnus series (40). Thus, by substituting Q(t) = aa 2, into Eq. (39) and equating terms of the same order, one gets in general Q=A Q= 5 Big n= TS n>2, (47) j=l where SO = IQ, [2 ALM Ge Fe Hie == 1). (48) Notice that, in the last equation, the order in A has been explicitly reckoned, whereas k represents the number of 2's.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-magnus-expansion-and-time-dependent-perturbation",
+      "number": null,
+      "title": "Magnus expansion and time-dependent perturbation theory",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "162",
+      "labelEnd": "164",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "time-ordered products",
+          "heading": false
+        },
+        {
+          "term": "salzman",
+          "heading": false
+        },
+        {
+          "term": "physics reports",
+          "heading": false
+        },
+        {
+          "term": "diy",
+          "heading": false
+        },
+        {
+          "term": "blanes",
+          "heading": false
+        }
+      ],
+      "extract": "It is not difficult to establish a connection between Magnus series and Dyson perturbative series [13]. The latter gives the solution of (30) as Y(t) =1+ D7 Palo), (52) n=1 S. Blanes et al. / Physics Reports 470 (2009) 151-238 163 where P,, are time-ordered products t tn-1 r= [ ay... f dt, AyA2 ... An 0 0 where A; = A(t;). Then Y- Q(t) = log ( + 00) . j=l j=l As stated by Salzman [55], yy\" =P,\" UR, n>2, (53) if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-graph-theoretical-analysis-of-magnus-expansion",
+      "number": null,
+      "title": "Graph theoretical analysis of Magnus expansion",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "164",
+      "labelEnd": "165",
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": true
+        },
+        {
+          "term": "rooted tree",
+          "heading": false
+        },
+        {
+          "term": "tree formalism",
+          "heading": false
+        },
+        {
+          "term": "graph theoretical",
+          "heading": true
+        },
+        {
+          "term": "expansion terms",
+          "heading": false
+        },
+        {
+          "term": "norsett",
+          "heading": false
+        },
+        {
+          "term": "commuted",
+          "heading": false
+        },
+        {
+          "term": "iserles",
+          "heading": false
+        }
+      ],
+      "extract": "The previous recursions allow us, in principle, to express any 2; in the Magnus series in terms of 21, ..., 2,—1. In fact, this procedure has some advantages from a computational point of view. On the other hand, as we have mentioned before, when the recursions are solved explicitly, 82, can be expanded as a linear combination of terms that are composed from integrals and commutators acting iteratively on A. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-time-symmetry-of-the-expansion",
+      "number": null,
+      "title": "Time-symmetry of the expansion",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "165",
+      "labelEnd": "166",
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "time-symmetry",
+          "heading": true
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "qty",
+          "heading": false
+        },
+        {
+          "term": "tia",
+          "heading": false
+        },
+        {
+          "term": "tat",
+          "heading": false
+        }
+      ],
+      "extract": "The map g! : Y(t) —> Y(t) corresponding to the linear differential equation (30) with Y (to) = Yo is time symmetric, gy ‘og! =Id, since integrating (30) from t = to tot = ty for every ty > fo and back to to leads us to the original initial value Y(to) = Yo. Observe that, according to (3), the map gy! can be expressed in terms of the fundamental matrix (or evolution operator) U(t, to) as yf (Yo) = U(ty, to) Yo. Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-convergence-of-the-magnus-expansion",
+      "number": null,
+      "title": "Convergence of the Magnus expansion",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "166",
+      "labelEnd": "166",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": true
+        }
+      ],
+      "extract": "As we pointed out in the introduction, from a mathematical point of view, there are at least two different issues of paramount importance at the very basis of the Magnus expansion: (1) (Existence). For what values of t and for what operators A does Eq. (30) admit an exponential solution in the form Y(t) = exp(Q2(t)) for a certain Q(t)? (2) (Convergence). Given a certain operator A(t), for what values of t does the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-on-the-existence-of-ω-t",
+      "number": null,
+      "title": "On the existence of Ω (t)",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "166",
+      "labelEnd": "167",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "exponential map",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "logarithm",
+          "heading": false
+        },
+        {
+          "term": "banach",
+          "heading": false
+        },
+        {
+          "term": "existence",
+          "heading": true
+        },
+        {
+          "term": "differentiable",
+          "heading": false
+        }
+      ],
+      "extract": "In most cases, one is interested in the case where A belongs to a Lie algebra g under the commutator product. In this general setting, the Magnus theorem can be formulated as four statements concerning the solution of Y’ = A(t)Y, each one more stringent than the preceding [16]. Specifically, (A) The differential equation Y’ = A(t)Y has a solution of the form Y(t) = exp 2(t). (B) The exponent {2(t) lies in the Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-convergence-of-the-magnus-series",
+      "number": null,
+      "title": "Convergence of the Magnus series",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "167",
+      "labelEnd": "168",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus series",
+          "heading": true
+        },
+        {
+          "term": "moan",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": true
+        },
+        {
+          "term": "iag",
+          "heading": false
+        },
+        {
+          "term": "agn",
+          "heading": false
+        },
+        {
+          "term": "real matrices",
+          "heading": false
+        },
+        {
+          "term": "analyzing",
+          "heading": false
+        },
+        {
+          "term": "validity",
+          "heading": false
+        }
+      ],
+      "extract": "For dealing with the validity of statement (D) one has to analyze the convergence of the series rant 92. Magnus also considered the question of when the series terminates at some finite index m, thus giving a globally valid 2 = Q,+---+Q2m. This will happen, for instance, if t [ao f Acsas| =0 0 identically for all values of t, since then 2 = 0 fork > 1. A sufficient (but not necessary) condition for the vanishing of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-an-improved-radius-of-convergence",
+      "number": null,
+      "title": "An improved radius of convergence",
+      "level": 4,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "168",
+      "labelEnd": "169",
+      "words": 1284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": true
+        },
+        {
+          "term": "linear operator",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "hermitian",
+          "heading": false
+        },
+        {
+          "term": "logarithm",
+          "heading": false
+        },
+        {
+          "term": "real",
+          "heading": false
+        }
+      ],
+      "extract": "The previous results on the convergence of the Magnus series have been established for n x n real matrices: if A(t) is a real n x n matrix, then (67) gives a condition for Y(t) to have a real logarithm. In fact, under the same condition, the Magnus series (40) converges precisely to this logarithm, i.e., its sum §2(t) satisfies exp(2(t)) = Y(t) [71]. One should have in mind, however, that the original expansion was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-further-discussion",
+      "number": null,
+      "title": "Further discussion",
+      "level": 4,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "169",
+      "labelEnd": "171",
+      "words": 1043,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "convergence domain",
+          "heading": false
+        },
+        {
+          "term": "series converges",
+          "heading": false
+        },
+        {
+          "term": "lel",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrix",
+          "heading": false
+        },
+        {
+          "term": "mer",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 9 provides sufficient conditions for the convergence of the Magnus series based on an estimate by the norm of the operator A. In particular, it guarantees that the operator 2(t) in Y(t) = exp &2(t) can safely be obtained with the convergent series Mer y(t) for 0 < t < T when the terms §2;(t) are computed with (51). A natural question at this stage is — what is the optimal convergence domain? In other words,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-magnus-expansion-and-the-bch-formula",
+      "number": null,
+      "title": "Magnus expansion and the BCH formula",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "171",
+      "labelEnd": "172",
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": true
+        },
+        {
+          "term": "bch",
+          "heading": true
+        },
+        {
+          "term": "non commuting",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "baker-campbell-hausdorff",
+          "heading": false
+        },
+        {
+          "term": "commutators",
+          "heading": false
+        },
+        {
+          "term": "mechanics",
+          "heading": false
+        },
+        {
+          "term": "converges",
+          "heading": false
+        }
+      ],
+      "extract": "The Magnus expansion can also be used to explicitly obtain the terms of the series Z in Z = log(e™! e%2), X, and X2 being two non commuting indeterminate variables. As it is well known [41], 00 Z =X, +X + D> GAG, X2), (81) n=2 where G,,(X1, X2) is a homogeneous Lie polynomial in X; and X2 of grade n; in other words, G, can be expressed in terms of X; and X2 by addition, multiplication by rational numbers and nested",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-preliminary-linear-transformations",
+      "number": null,
+      "title": "Preliminary linear transformations",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "172",
+      "labelEnd": "173",
+      "words": 797,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "preliminary",
+          "heading": true
+        },
+        {
+          "term": "adiabatic",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "equation satisfied",
+          "heading": false
+        },
+        {
+          "term": "berry",
+          "heading": false
+        },
+        {
+          "term": "transformation",
+          "heading": false
+        }
+      ],
+      "extract": "To improve the accuracy and the bounds on the convergence domain of the Magnus series for a given problem, it is quite common to first consider a linear transformation on the system in such a way that the resulting differential equation can be more easily handled in a certain sense, to be specified for each problem. To illustrate the procedure, let us consider a simple example. Example. Suppose we have the 2 x 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-exponential-product-representations",
+      "number": null,
+      "title": "Exponential product representations",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "173",
+      "labelEnd": "173",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "fer",
+          "heading": false
+        },
+        {
+          "term": "wilcox",
+          "heading": false
+        },
+        {
+          "term": "continuous analogue",
+          "heading": false
+        },
+        {
+          "term": "exponential",
+          "heading": true
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        },
+        {
+          "term": "product",
+          "heading": true
+        },
+        {
+          "term": "alternative",
+          "heading": false
+        }
+      ],
+      "extract": "In contrast to Magnus expansion, much less attention has been paid to solutions of (30) in the form of a product of exponential operators. Both approaches are by no means equivalent, since, in general, the operators 2, do not commute with each other. For instance, for a quantum system as in Eq. (88), the ansatz U = [| exp(®,) (where @, are skew-Hermitian operators to be determined) is an alternative to the Magnus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-fer-method",
+      "number": null,
+      "title": "Fer method",
+      "level": 4,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "173",
+      "labelEnd": "175",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fer",
+          "heading": true
+        },
+        {
+          "term": "fer expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "recursive scheme",
+          "heading": false
+        },
+        {
+          "term": "stable fixed",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "convergence domain",
+          "heading": false
+        },
+        {
+          "term": "physics reports",
+          "heading": false
+        }
+      ],
+      "extract": "An intuitive way to introduce Fer formalism is the following [59]. Given the matrix linear system Y’ = A(t)Y, Y(O) = I, we know that Y(t) = exp(Fi(t)) (95) is the exact solution if A commutes with its time integral F,(t) = Io A(s)ds, and Y(t) evolves in the Lie group @ if A lies in its corresponding Lie algebra g. If the goal is to respect the Lie-group structure in the general case, we need to ‘correct’ (95)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-wilcox-method",
+      "number": null,
+      "title": "Wilcox method",
+      "level": 4,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "175",
+      "labelEnd": "175",
+      "words": 261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilcox",
+          "heading": true
+        },
+        {
+          "term": "infinite product",
+          "heading": false
+        },
+        {
+          "term": "fer",
+          "heading": false
+        },
+        {
+          "term": "explicit expressions",
+          "heading": false
+        },
+        {
+          "term": "magnus",
+          "heading": false
+        },
+        {
+          "term": "successive",
+          "heading": false
+        }
+      ],
+      "extract": "A more tractable form of infinite product expansion has been devised by Wilcox [19] in analogy with the Magnus approach. The idea, as usual, is to treat ¢ in Y'=cA(t)Y, Y(O)=I (105) as an expansion parameter and to determine the successive factors in the product Y(t) =e eM eM3... (106) by assuming that W,, is exactly of order e”. Hence, it is clear from the very beginning that the methods of Fer and Wilcox give rise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-wei--norman-factorization",
+      "number": null,
+      "title": "Wei--Norman factorization",
+      "level": 4,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "175",
+      "labelEnd": "176",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "scalar functions",
+          "heading": false
+        },
+        {
+          "term": "canonical coordinates",
+          "heading": false
+        },
+        {
+          "term": "exponentials",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": false
+        }
+      ],
+      "extract": "Now suppose that A and Y in Eq. (30) are linear operators and that A(t) can be expressed in the form m A(t) = Do uj()X;, m finite, (110) i=1 where the u;(t) are scalar functions of time, and Xj, X2, ... , Xm are time-independent operators. Furthermore, suppose that the Lie algebra g generated by the X; is of finite dimension | (this is obviously true if A and Y are finite dimensional matrix operators). Under these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-the-continuous-bch-formula",
+      "number": null,
+      "title": "The continuous BCH formula",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "176",
+      "labelEnd": "176",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "fom",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        },
+        {
+          "term": "continuous",
+          "heading": true
+        },
+        {
+          "term": "integrals",
+          "heading": false
+        },
+        {
+          "term": "written",
+          "heading": false
+        }
+      ],
+      "extract": "When applied to the equation Y’ = A(t)Y with the matrix A(t) given by (110), the Magnus expansion adopts a particularly simple form. Furthermore, by making use of the structure constants of the Lie algebra, it is relatively easy to get explicit expressions for the canonical coordinates of the first kind fj(t). Let us illustrate the procedure by considering the particular case A(t) = uy(t)X1 + ug(t)X2. Denoting by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-generalizations-of-the-magnus-expansion",
+      "number": null,
+      "title": "Generalizations of the Magnus expansion",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "176",
+      "labelEnd": "177",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus expansion",
+          "heading": true
+        },
+        {
+          "term": "nonlinear differential",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "generalizations",
+          "heading": true
+        },
+        {
+          "term": "treatment",
+          "heading": false
+        },
+        {
+          "term": "procedure",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "In view of the attractive properties of the Magnus expansion as a tool to construct approximate solutions of non- autonomous systems of linear ordinary differential equations, it is hardly surprising that several attempts have been made S. Blanes et al. / Physics Reports 470 (2009) 151-238 177 along the years, either to extend the procedure to a more general setting or to manipulate the series to achieve further",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-voslamber-iterative-method",
+      "number": null,
+      "title": "Voslamber iterative method",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "177",
+      "labelEnd": "179",
+      "words": 839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "voslamber",
+          "heading": true
+        },
+        {
+          "term": "upper triangular",
+          "heading": false
+        },
+        {
+          "term": "triangular matrix",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "iterative",
+          "heading": true
+        },
+        {
+          "term": "approximations",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider Eq. (30) when there is a perturbation parameter ¢ in the (in general, complex) matrix A, i-e., Eq. (105). Theorem 9 guarantees that, for sufficiently small values of t, Y(t; ¢) = exp 2(t; €), where A(tre)= vie\" Qy(t). (115) n=1 The advantages of this representation and the approximations obtained when the series is truncated have been sufficiently recognized in the treatment done in previous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-floquet--magnus-expansion",
+      "number": null,
+      "title": "Floquet--Magnus expansion",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "179",
+      "labelEnd": "180",
+      "words": 1091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conventional magnus",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "floquet-magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "floquet theorem",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": false
+        },
+        {
+          "term": "equating terms",
+          "heading": false
+        },
+        {
+          "term": "t-dependent",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn our attention to a specific case of Eq. (30) with important physical and mathematical applications, namely when the (complex) n x n matrix-valued function A(t) is periodic with period T. Then further information is available on the structure of the exact solution, as is given by the celebrated Floquet theorem, which ensures the factorization of the solution in a periodic part and a purely exponential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-magnus-expansions-for-nonlinear-matrix-equations",
+      "number": null,
+      "title": "Magnus expansions for nonlinear matrix equations",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "180",
+      "labelEnd": "182",
+      "words": 1156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "picard iteration",
+          "heading": false
+        },
+        {
+          "term": "isospectral flow",
+          "heading": false
+        },
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "nonlinear equation",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "yoe",
+          "heading": false
+        }
+      ],
+      "extract": "It is possible to extend the procedure leading to the Magnus expansion for the linear equation (30), and obtain approximate solutions for the nonlinear matrix equation Y'=A(t,Y)Y, YO)=Y% 4%, (139) where ¢ is a matrix Lie group, A : R, x % —~> g and g denotes the corresponding Lie algebra. Eq. (139) appears in relevant physical fields such as rigid body mechanics, in the calculation of Lyapunov exponents (¢ = SO(n))",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-treatment-of-general-nonlinear-equations",
+      "number": null,
+      "title": "Treatment of general nonlinear equations",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": "182",
+      "labelEnd": "185",
+      "words": 1462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formal chronological",
+          "heading": false
+        },
+        {
+          "term": "chronological series",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "formal solution",
+          "heading": false
+        },
+        {
+          "term": "lie derivative",
+          "heading": false
+        },
+        {
+          "term": "lie operator",
+          "heading": false
+        },
+        {
+          "term": "lie bracket",
+          "heading": false
+        }
+      ],
+      "extract": "As a matter of fact, the Magnus expansion can be formally generalized to any nonlinear explicitly time-dependent differential equation. Given the importance of the expansion, it has, indeed, been (re)derived a number of times along the years in different settings. We have to mention, in this respect, the work of Agrachev and Gamkrelidze [106-108], and S. Blanes et al. / Physics Reports 470 (2009) 151-238 183",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-treatment-of-hamiltonian-systems",
+      "number": null,
+      "title": "Treatment of Hamiltonian systems",
+      "level": 4,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "185",
+      "labelEnd": "186",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hamiltonian systems",
+          "heading": true
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "treatment",
+          "heading": true
+        },
+        {
+          "term": "phase space",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": false
+        },
+        {
+          "term": "space variables",
+          "heading": false
+        },
+        {
+          "term": "differential",
+          "heading": false
+        }
+      ],
+      "extract": "We have seen how the algebraic setting we have developed for linear systems of differential equations may be extended formally to nonlinear systems. We will next review how it can be adapted to the important class of Hamiltonian systems. In this context, the role of a Lie bracket of vector fields (156) is played by the classical Poisson bracket [113]. The Lie algebraic presentation of Hamiltonian systems in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-magnus-expansion-and-the-chen--fliess-series",
+      "number": null,
+      "title": "Magnus expansion and the Chen--Fliess series",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "186",
+      "labelEnd": "188",
+      "words": 1002,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus series",
+          "heading": true
+        },
+        {
+          "term": "chen-fliess series",
+          "heading": false
+        },
+        {
+          "term": "nonlinear control",
+          "heading": false
+        },
+        {
+          "term": "nonlinear differential",
+          "heading": false
+        },
+        {
+          "term": "dty",
+          "heading": false
+        },
+        {
+          "term": "non-varying geometry",
+          "heading": false
+        },
+        {
+          "term": "pty",
+          "heading": false
+        },
+        {
+          "term": "lie series",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that f in Eq. (159) has the form f(t, x) = an uj(t)f;(x), ie., we are dealing with the nonlinear differential equation XO) = Do ui(t) f(D), x(0) = p, (171) i=1 where u;(t) are integrable functions of time. Systems of the form (171) appear, for instance, in nonlinear control theory. In that context, the functions u; are the controls and f; are related to the non-varying geometry of the system. Observe that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-illustrative-examples",
+      "number": null,
+      "title": "Illustrative examples",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "188",
+      "labelEnd": "188",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order computations",
+          "heading": false
+        },
+        {
+          "term": "application",
+          "heading": false
+        },
+        {
+          "term": "exponential",
+          "heading": false
+        },
+        {
+          "term": "methods",
+          "heading": false
+        },
+        {
+          "term": "exact",
+          "heading": false
+        }
+      ],
+      "extract": "After having reviewed, in the preceding two sections, the main theoretical aspects of the Magnus expansion and other exponential methods, in this section we gather some examples of their application. All of them are standard problems of Quantum Mechanics where the exact solution for the evolution operator U(t) is well known. Due to their simplicity, higher order computations are possible with a reasonable amount of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-me-in-the-interaction-picture",
+      "number": null,
+      "title": "ME in the Interaction Picture",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "188",
+      "labelEnd": "188",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interaction picture",
+          "heading": true
+        },
+        {
+          "term": "time scale",
+          "heading": false
+        },
+        {
+          "term": "time-dependent",
+          "heading": false
+        }
+      ],
+      "extract": "We illustrate the application of ME in the Interaction Picture (see Section 2.9) by means of two simple time-dependent physical systems frequently encountered in the literature, for which exact solutions are available: the time-dependent forced harmonic oscillator, and a particle of spin 3 in a constant magnetic field. In the first case we fix h = 1 for convenience. As we will see, ME in the Interaction Picture is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-linearly-forced-harmonic-oscillator",
+      "number": null,
+      "title": "Linearly forced harmonic oscillator",
+      "level": 4,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "188",
+      "labelEnd": "189",
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harmonic oscillator",
+          "heading": true
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "evolution operator",
+          "heading": false
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "forced",
+          "heading": true
+        },
+        {
+          "term": "arf",
+          "heading": false
+        },
+        {
+          "term": "interaction picture",
+          "heading": false
+        },
+        {
+          "term": "fay",
+          "heading": false
+        }
+      ],
+      "extract": "The Hamiltonian function describing a linearly driven harmonic oscillator reads (h = 1) = : _ 1 2 2 = V2 H= Hy +V(t), with Hy = Seo(p? + 4°), Vid) = V2F(Oq (179) and f(t) is real. Here q and p stand for the position and momentum operators satisfying [q, p] = iand wo gives the energy level spacing in absence of the perturbation V(t). We introduce the usual operators a, = 34 = ip), so that [a_, a4] = 1. With this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-two-level-quantum-systems",
+      "number": null,
+      "title": "Two-level quantum systems",
+      "level": 4,
+      "pageStart": 39,
+      "pageEnd": 43,
+      "labelStart": "189",
+      "labelEnd": "193",
+      "words": 1728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus pert",
+          "heading": false
+        },
+        {
+          "term": "exact magnus",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "rectangular step",
+          "heading": false
+        },
+        {
+          "term": "interaction picture",
+          "heading": false
+        },
+        {
+          "term": "time-dependent perturbation",
+          "heading": false
+        }
+      ],
+      "extract": "The generic Hamiltonian for a two-level quantum system can be written down in the form no=(2 2) ow where E;(t), E2(t) are real functions and C(t) is, in general, a complex function of t. We define the solvable piece of the Hamiltonian as the diagonal matrix Holt) = (0° Eo) (190) and all the time-dependent interaction described by the function C(t) is considered as a perturbation. In the Interaction Picture, the new",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-me-in-the-adiabatic-picture",
+      "number": null,
+      "title": "ME in the Adiabatic Picture",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "193",
+      "labelEnd": "194",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adiabatic",
+          "heading": true
+        },
+        {
+          "term": "conveys",
+          "heading": false
+        },
+        {
+          "term": "unperturbed",
+          "heading": false
+        }
+      ],
+      "extract": "Here we will illustrate the effect of using the Adiabatic Picture introduced in Section 2.9. The use of this type of preliminary transformation is convenient whenever the time scale of the interaction is much larger than the proper time of the unperturbed system. 194 S. Blanes et al. / Physics Reports 470 (2009) 151-238 Since an adiabatic regime conveys a smooth profile for the perturbation, namely, existence of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-linearly-forced-harmonic-oscillator",
+      "number": null,
+      "title": "Linearly forced harmonic oscillator",
+      "level": 4,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "194",
+      "labelEnd": "194",
+      "words": 28,
+      "summary": null,
+      "keywords": [],
+      "extract": "For the linearly driven harmonic oscillator, the procedure yields the exact solution, as in the preceding Section 4.1.2, albeit the method is a bit more technically involved [120].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-rosen--zener-model",
+      "number": null,
+      "title": "Rosen--Zener model",
+      "level": 4,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "194",
+      "labelEnd": "195",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adiabatic picture",
+          "heading": false
+        },
+        {
+          "term": "adiabatic regime",
+          "heading": false
+        },
+        {
+          "term": "adiabatic interaction",
+          "heading": false
+        },
+        {
+          "term": "rosen-zener model",
+          "heading": false
+        },
+        {
+          "term": "transition probability",
+          "heading": false
+        },
+        {
+          "term": "magnus",
+          "heading": false
+        },
+        {
+          "term": "factorized",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        }
+      ],
+      "extract": "Following [122] we will deal with the Rosen-Zener model (see Section 4.1.2 and [15]) since it allows a clear illustration of the adiabatic regime. The preliminary linear transformation G(s) defined in (94) for the Hamiltonian (202) is given by G(s) = b- o, where the unit vectorb points in the direction b = atk (k = unit vector along the z-axis). Remember that s = t/T is the dimensionless time-variable. The evolution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-fer-and-wilcox-infinite-product-expansions",
+      "number": null,
+      "title": "Fer and Wilcox infinite-product expansions",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "195",
+      "labelEnd": "195",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "Next we illustrate the use of Fer and Wilcox infinite-product expansions by using the same time-dependent systems as before.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-linearly-forced-harmonic-oscillator",
+      "number": null,
+      "title": "Linearly forced harmonic oscillator",
+      "level": 4,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "195",
+      "labelEnd": "195",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "forn",
+          "heading": false
+        },
+        {
+          "term": "wilcox",
+          "heading": false
+        },
+        {
+          "term": "schrodinger",
+          "heading": false
+        }
+      ],
+      "extract": "Since the commutator [a_, a] is ac-number, Fer iterated Hamiltonians H withn > 1 eventually vanish so that F, = 0 forn > 2. The Wilcox operators W, with n > 2 in eq. (106) vanish for the same reason. Thus, in this particular case, the second-order approximation in either method leads to the exact solution of the Schrodinger equation, just as ME did. To sum up, the final result reads U, = e212 — eWieWW2 — efigl2 — eB",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-two-level-quantum-system-rectangular-step",
+      "number": null,
+      "title": "Two-level quantum system: Rectangular step",
+      "level": 4,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "195",
+      "labelEnd": "196",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rectangular step",
+          "heading": true
+        },
+        {
+          "term": "transition probability",
+          "heading": false
+        },
+        {
+          "term": "wilcox",
+          "heading": false
+        },
+        {
+          "term": "fer",
+          "heading": false
+        },
+        {
+          "term": "interaction picture",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "second-order",
+          "heading": false
+        },
+        {
+          "term": "exact",
+          "heading": false
+        }
+      ],
+      "extract": "For the Hamiltonian (194), the first-order Fer and Wilcox operators in the Interaction Picture verify t Fp=W, = 2) = [ dt, F(t), (215) 0 where H(t) is given by (198). The explicit expression is collected in (200) (first equation). Analogously, the second equation there also corresponds to the second-order Wilcox operator W2 = 922. To proceed further with Fer’s method, we must calculate the modified Hamiltonian A® in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-voslamber-iterative-method",
+      "number": null,
+      "title": "Voslamber iterative method",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "196",
+      "labelEnd": "197",
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterative method",
+          "heading": true
+        },
+        {
+          "term": "voslamber",
+          "heading": true
+        },
+        {
+          "term": "magnus approximation",
+          "heading": false
+        },
+        {
+          "term": "transition probability",
+          "heading": false
+        },
+        {
+          "term": "order magnus",
+          "heading": false
+        },
+        {
+          "term": "rectangular step",
+          "heading": false
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "iterate",
+          "heading": false
+        }
+      ],
+      "extract": "Just to keep the same structure as in preceding subsections, we mention that the Voslamber iterative method of Section 3.1 also yields the exact solution for the linearly driven harmonic oscillator after computing the second iteration. Next, for the two-level system with a rectangular step, described by the Hamiltonian (194), we compute the second iterate 2 and compare with second order ME approximation for U;. As a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-linear-periodic-systems-floquet--magnus-formalis",
+      "number": null,
+      "title": "Linear periodic systems: Floquet--Magnus formalism",
+      "level": 3,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "197",
+      "labelEnd": "198",
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floquet operator",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        },
+        {
+          "term": "anion",
+          "heading": false
+        },
+        {
+          "term": "eigenenergies",
+          "heading": false
+        }
+      ],
+      "extract": "Next we deal with a periodically driven harmonic oscillator, where the infinite expansions obtained from Floquet-Magnus recurrences (see Section 3.2), are utterly summed. Comparison with the exact solution illustrates the feasibility of the method. The particular system we consider is described by the Hamiltonian (179) with f(t) = 45 cos wt and wp < w. Once the recurrences of the Floquet-Magnus expansion (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-numerical-integration-methods-based-on-the-magnu",
+      "number": null,
+      "title": "Numerical integration methods based on the Magnus expansion",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "198",
+      "labelEnd": "198",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-043-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 3,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "198",
+      "labelEnd": "200",
+      "words": 990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical integrators",
+          "heading": false
+        },
+        {
+          "term": "numerical approximations",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "runge-kutta methods",
+          "heading": false
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "convergence domain",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        }
+      ],
+      "extract": "The Magnus expansion, as formulated in Section 2, has found extensive use in mathematical physics, quantum chemistry, control theory etc, essentially as a perturbative tool in the treatment of the linear equation Y’=A(t)Y, — Y(to) = Yo. (223) When the recurrence (49)-(50) is applied, one is able to explicitly get the successive terms 2; in the series, defining @ as linear combinations of multivariate integrals",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-runge--kutta-methods",
+      "number": null,
+      "title": "Runge--Kutta methods",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "200",
+      "labelEnd": "202",
+      "words": 1007,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "methods",
+          "heading": true
+        },
+        {
+          "term": "order method",
+          "heading": false
+        },
+        {
+          "term": "minimum number",
+          "heading": false
+        },
+        {
+          "term": "evaluations",
+          "heading": false
+        },
+        {
+          "term": "stages",
+          "heading": false
+        },
+        {
+          "term": "fourth order",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        },
+        {
+          "term": "implicit",
+          "heading": false
+        }
+      ],
+      "extract": "The Runge-Kutta (RK) class of methods are possibly the most frequently used algorithms for numerically solving ODEs. Among them, perhaps the most successful during more than half a century has been the 4th-order method, which, applied to Eq. (224), provides the following numerical approximation for the integration step t, > thy: = th +h: Y; =Xn h Y2 = Xn + hltn, Ys) h h Ys = 1+ 58( t+ 5.¥ (227) h Yq = Xp, + hf | t+",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-preservation-of-qualitative-properties",
+      "number": null,
+      "title": "Preservation of qualitative properties",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "202",
+      "labelEnd": "203",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical integrators",
+          "heading": false
+        },
+        {
+          "term": "qualitative",
+          "heading": true
+        },
+        {
+          "term": "runge-kutta methods",
+          "heading": false
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "geometric numerical",
+          "heading": false
+        },
+        {
+          "term": "lie-group methods",
+          "heading": false
+        },
+        {
+          "term": "long-time integration",
+          "heading": false
+        },
+        {
+          "term": "qualitative features",
+          "heading": false
+        }
+      ],
+      "extract": "Notice that the numerical solution provided by the class of Runge-Kutta schemes, and in general by an integrator of the form (225), is constructed as a sum of vectors in R¢. Let us point out some (undesirable) consequences of this fact. Suppose, for instance, that x is a vector known to evolve on a sphere. One does not expect that x, built as a sum of two vectors as in (225), preserves this feature of the exact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-magnus-integrators-for-linear-systems",
+      "number": null,
+      "title": "Magnus integrators for linear systems",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 56,
+      "labelStart": "203",
+      "labelEnd": "206",
+      "words": 2136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "quadrature rule",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "integration step",
+          "heading": false
+        },
+        {
+          "term": "commutators",
+          "heading": false
+        },
+        {
+          "term": "integration method",
+          "heading": false
+        }
+      ],
+      "extract": "Since the Magnus series only converges locally, as we have pointed out before, when the length of the time-integration interval exceeds the bound provided by Theorem 9, and in the spirit of any numerical integration method, the usual procedure consists of dividing the time interval [to, t;] into N steps such that the Magnus series converges in each subinterval [tr—1. tn],n = 1,...,N, with ty = ty. In this way, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-from-magnus-to-fer-and-cayley-methods",
+      "number": null,
+      "title": "From Magnus to Fer and Cayley methods",
+      "level": 4,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "206",
+      "labelEnd": "206",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fer",
+          "heading": true
+        },
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "cayley",
+          "heading": true
+        },
+        {
+          "term": "methods",
+          "heading": true
+        }
+      ],
+      "extract": "For arbitrary matrix Lie groups, it is feasible to design numerical methods based also on the Fer and Wilcox expansions, whereas for the J-orthogonal group (Eq. (21)) the Cayley transform also maps the Lie algebra onto the Lie group [41] and thus it allows us to build a new class of Lie-group methods. Here we briefly show how these integration methods can be easily constructed from the previous schemes, based on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-fer-based-methods",
+      "number": null,
+      "title": "Fer based methods",
+      "level": 4,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "206",
+      "labelEnd": "207",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fer",
+          "heading": true
+        },
+        {
+          "term": "fer factorization",
+          "heading": false
+        },
+        {
+          "term": "sixth-order",
+          "heading": false
+        },
+        {
+          "term": "bch",
+          "heading": false
+        },
+        {
+          "term": "magnus",
+          "heading": false
+        },
+        {
+          "term": "based",
+          "heading": true
+        }
+      ],
+      "extract": "To obtain integration methods based on the Fer factorization (260) one applies the Baker-Campbell-Hausdorff (BCH) formula after equating to the Magnus expansion (259). More specifically, in the domain of convergence of expansions (259) and (260) we can write 2) = gFill) oa) |. S. Blanes et al. / Physics Reports 470 (2009) 151-238 207 where F; = , is the first term in the Magnus series, F; = O(h*) and F; = O(h’).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-cayley-transform-methods",
+      "number": null,
+      "title": "Cayley-transform methods",
+      "level": 4,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "207",
+      "labelEnd": "208",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix-matrix products",
+          "heading": false
+        },
+        {
+          "term": "cayley transform",
+          "heading": false
+        },
+        {
+          "term": "methods",
+          "heading": true
+        },
+        {
+          "term": "rae",
+          "heading": false
+        },
+        {
+          "term": "j-orthogonal",
+          "heading": false
+        }
+      ],
+      "extract": "We have seen in Section 1.2 that, for the J-orthogonal group O,(n), the Cayley transform (23) provides a useful alternative to the exponential mapping, relating the Lie algebra to the Lie group. This fact is particularly important for numerical methods where the evaluation of the exponential matrix is the most computation-intensive part of the algorithm. If the solution of Eq. (223) is written as 1 7 1 Y(t) = (: -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-numerical-illustration-the-rosen--zener-model-re",
+      "number": null,
+      "title": "Numerical illustration: The Rosen--Zener model revisited",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "208",
+      "labelEnd": "210",
+      "words": 1504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "fourth-order magnus",
+          "heading": false
+        },
+        {
+          "term": "runge-kutta schemes",
+          "heading": false
+        },
+        {
+          "term": "rosen-zener model",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "solid lines",
+          "heading": false
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        }
+      ],
+      "extract": "Next we apply the previous numerical schemes to the integration of the differential equation governing the evolution of a particular quantum two-level system. Our purpose here is to illustrate the main issues involved, and compare the different approximations obtained with both the analytical treatment done in Section 4 and the exact result. Specifically, we consider the Rosen-Zener model in the Interaction Picture",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-computing-the-exponential-of-a-matrix",
+      "number": null,
+      "title": "Computing the exponential of a matrix",
+      "level": 3,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "210",
+      "labelEnd": "211",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix exponential",
+          "heading": true
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "numerical schemes",
+          "heading": false
+        },
+        {
+          "term": "computational cost",
+          "heading": false
+        },
+        {
+          "term": "computing",
+          "heading": true
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "expokit",
+          "heading": false
+        },
+        {
+          "term": "function exp",
+          "heading": false
+        }
+      ],
+      "extract": "We have seen that the numerical schemes based on the Magnus expansion provide excellent results when applied to Eq. (223) with coefficient matrix (272). In fact, they are even more efficient than several Runge-Kutta algorithms. Of course, for this particular example, the number of A(t) evaluations is a good indication of the computational cost required by the numerical schemes, since the evaluation of exp({2) can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-scaling-and-squaring-with-padé-approximation",
+      "number": null,
+      "title": "Scaling and squaring with Padé approximation",
+      "level": 4,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "211",
+      "labelEnd": "212",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "padé",
+          "heading": true
+        },
+        {
+          "term": "padé approximants",
+          "heading": false
+        },
+        {
+          "term": "diagonal padé",
+          "heading": false
+        },
+        {
+          "term": "squaring",
+          "heading": true
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "rational approximation",
+          "heading": false
+        },
+        {
+          "term": "w2m",
+          "heading": false
+        },
+        {
+          "term": "cayley transform",
+          "heading": false
+        }
+      ],
+      "extract": "Among one of the least dubious ways of computing exp(C) is by scaling and squaring in combination with a diagonal Padé approximation [139]. The procedure is based on a fundamental property of the exponential function, namely e& = (eH for any integer j. The idea, then, is to choose j to be a power of two for which exp(C /j) can be reliably and efficiently computed, and then to form the matrix (exp(C/j))! by repeated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-chebyshev-approximation",
+      "number": null,
+      "title": "Chebyshev approximation",
+      "level": 4,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "212",
+      "labelEnd": "213",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chebyshev",
+          "heading": true
+        },
+        {
+          "term": "chebyshev polynomials",
+          "heading": false
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "step size",
+          "heading": false
+        },
+        {
+          "term": "ith",
+          "heading": false
+        },
+        {
+          "term": "accuracy",
+          "heading": false
+        },
+        {
+          "term": "extreme",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "Another valid alternative is to use polynomial approximations to the exponential of C as a whole. Suppose, in particular, that C is a matrix of the form C = —itH, with H Hermitian and t > 0, as is the case in Quantum Mechanics. In the Chebyshev approach, the evolution operator exp(—itH) is expanded in a truncated series of Chebyshev polynomials, in analogy with the approximation of a scalar function [144]. As is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-krylov-space-methods",
+      "number": null,
+      "title": "Krylov space methods",
+      "level": 4,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "213",
+      "labelEnd": "213",
+      "words": 275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "krylov",
+          "heading": true
+        },
+        {
+          "term": "krylov subspace",
+          "heading": false
+        },
+        {
+          "term": "itlm",
+          "heading": false
+        },
+        {
+          "term": "lanczos",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "ith",
+          "heading": false
+        },
+        {
+          "term": "approximations",
+          "heading": false
+        }
+      ],
+      "extract": "As we have already pointed out, very often what is really required, rather than the exponential of the matrix C itself, is the computation of exp(C) applied to a vector. In this situation, evaluating e° is somehow analogous to computing C~! to get the solution of the linear system of equations Cx = b for many different b’s: other procedures are clearly far more desirable. The computation of e“v can be efficiently",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-splitting-methods",
+      "number": null,
+      "title": "Splitting methods",
+      "level": 4,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "213",
+      "labelEnd": "214",
+      "words": 1025,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "splitting methods",
+          "heading": true
+        },
+        {
+          "term": "padé approximants",
+          "heading": false
+        },
+        {
+          "term": "machine accuracy",
+          "heading": false
+        },
+        {
+          "term": "diagonal padé",
+          "heading": false
+        },
+        {
+          "term": "krylov subspace",
+          "heading": false
+        },
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "polar decompositions",
+          "heading": false
+        },
+        {
+          "term": "low-rank",
+          "heading": false
+        }
+      ],
+      "extract": "Frequently, one has to exponentiate a matrix which can be split into several parts which are either solvable or easy to deal with. Let us assume for simplicity that C = A+ B, where the computation e‘ is very expensive, but e“ and e® are cheap and easy to evaluate. In such circumstances, it makes sense to approximate e®¢ with ¢, a small parameter, by the following scheme: ye = etbmBgeamA .., gebiByraA —_ g&(A+8) 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-additional-numerical-examples",
+      "number": null,
+      "title": "Additional numerical examples",
+      "level": 3,
+      "pageStart": 64,
+      "pageEnd": 66,
+      "labelStart": "214",
+      "labelEnd": "216",
+      "words": 819,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie-group solvers",
+          "heading": false
+        },
+        {
+          "term": "runge-kutta methods",
+          "heading": false
+        },
+        {
+          "term": "machine accuracy",
+          "heading": false
+        },
+        {
+          "term": "diagonal padé",
+          "heading": false
+        },
+        {
+          "term": "magnus method",
+          "heading": false
+        },
+        {
+          "term": "exponentials appearing",
+          "heading": false
+        },
+        {
+          "term": "matrix exponentials",
+          "heading": false
+        },
+        {
+          "term": "time step",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of Section 5.5 was to illustrate the main features of the numerical schemes based on the Magnus expansion in comparison with other standard integrators (such as Runge-Kutta schemes) and other Lie-group methods (e.g., Fer and Cayley) on a solvable system. For larger systems the efficiency analysis is more challenging since the (exact or approximate) computation of exponential matrices play an important",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-modified-magnus-integrators",
+      "number": null,
+      "title": "Modified Magnus integrators",
+      "level": 3,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "216",
+      "labelEnd": "216",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-058-variations-on-the-basic-algorithm",
+      "number": null,
+      "title": "Variations on the basic algorithm",
+      "level": 4,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": "216",
+      "labelEnd": "217",
+      "words": 889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "adiabatic picture",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": true
+        },
+        {
+          "term": "carried out",
+          "heading": false
+        },
+        {
+          "term": "time steps",
+          "heading": false
+        },
+        {
+          "term": "series expansion",
+          "heading": false
+        },
+        {
+          "term": "main contribution",
+          "heading": false
+        }
+      ],
+      "extract": "The examples collected in Sections 5.5 and 5.7 show that the numerical methods constructed from the Magnus expansion can be, computationally, very efficient indeed. It is fair to say, however, that this efficiency can be seriously affected when dealing with certain types of problems. Suppose, for instance, that one has to numerically integrate a problem defined in SU(n). Although Magnus integrators are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-commutator-free-magnus-integrators",
+      "number": null,
+      "title": "Commutator-free Magnus integrators",
+      "level": 4,
+      "pageStart": 67,
+      "pageEnd": 70,
+      "labelStart": "217",
+      "labelEnd": "220",
+      "words": 1567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss-legendre quadrature",
+          "heading": false
+        },
+        {
+          "term": "commutator-free",
+          "heading": true
+        },
+        {
+          "term": "integrators",
+          "heading": true
+        },
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "quadrature rule",
+          "heading": false
+        },
+        {
+          "term": "splitting methods",
+          "heading": false
+        },
+        {
+          "term": "efficient methods",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        }
+      ],
+      "extract": "All numerical methods based on the Magnus expansion appearing in the preceding sections require the evaluation of a matrix exponential which contains several nested commutators. As we have repeatedly pointed out, computing the exponential is frequently the most consuming part of the algorithm. There are problems where the matrix A(t) has a sufficiently simple structure which allows one to efficiently approximate the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-magnus-integrators-for-nonlinear-differential-eq",
+      "number": null,
+      "title": "Magnus integrators for nonlinear differential equations",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": "220",
+      "labelEnd": "220",
+      "words": 70,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "magnus",
+          "heading": true
+        },
+        {
+          "term": "integrators",
+          "heading": true
+        }
+      ],
+      "extract": "The success of Magnus methods applied to the numerical integration of linear systems has motivated several attempts to adapt the schemes for solving time dependent nonlinear differential equations. For completeness we present some recently proposed generalizations of Magnus integrators. We consider two different problems: (i) a nonlinear matrix equation defined in a Lie group, and (ii) a general nonlinear equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-nonlinear-matrix-equations-in-lie-groups",
+      "number": null,
+      "title": "Nonlinear matrix equations in Lie groups",
+      "level": 4,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": "220",
+      "labelEnd": "220",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "integrals appearing",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "integrators",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "As we have already mentioned, the strategy adopted by most Lie-group methods for solving the nonlinear matrix differential equation (139), Y=A(L,Y)Y, YO =%E¥Y defined in a Lie group 9, whilst preserving its Lie group structure, is to lift Y(t) from % to the underlying Lie algebra g (usually with the exponential map), then formulate and numerically solve there an associated differential equation, and finally map the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-the-general-nonlinear-problem",
+      "number": null,
+      "title": "The general nonlinear problem",
+      "level": 4,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "220",
+      "labelEnd": "221",
+      "words": 803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "leap-frog",
+          "heading": false
+        },
+        {
+          "term": "time dependent",
+          "heading": false
+        },
+        {
+          "term": "lie transforms",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": false
+        },
+        {
+          "term": "autonomous",
+          "heading": false
+        }
+      ],
+      "extract": "In principle, it is possible to adapt all methods built for linear problems to the general nonlinear non-autonomous equation (159) x’ = f(t, x), or equivalently, the operator differential equation (160), fore ot, = a? 7 fy) Y= Xo. As we pointed out in Section 3.4, there are two problematic aspects when designing practical numerical schemes based on Magnus expansion in the nonlinear case. The first one is how to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-some-applications-of-the-numerical-integrators-b",
+      "number": null,
+      "title": "Some applications of the numerical integrators based on ME",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "221",
+      "labelEnd": "222",
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical integration",
+          "heading": false
+        },
+        {
+          "term": "schrédinger equation",
+          "heading": false
+        },
+        {
+          "term": "integrators",
+          "heading": true
+        },
+        {
+          "term": "fourth order",
+          "heading": false
+        },
+        {
+          "term": "magnus",
+          "heading": false
+        },
+        {
+          "term": "order symplectic",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we collect several examples where the numerical integration methods based on the Magnus expansion have been applied in the recent literature. Special attention is dedicated to the numerical integration of the Schrédinger equation, since the Magnus series expansion has been extensively used in this setting almost since its very formulation. The time-independent Schrédinger equation can be considered",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-case-study-numerical-treatment-of-the-schrödinge",
+      "number": null,
+      "title": "Case study: Numerical treatment of the Schrödinger equation",
+      "level": 3,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": "222",
+      "labelEnd": "222",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "embarking",
+          "heading": false
+        },
+        {
+          "term": "integrators",
+          "heading": false
+        }
+      ],
+      "extract": "Before embarking on the use of numerical methods based on the Magnus expansion in the integration of the Schrodinger equation, let us establish first the theoretical framework which allows one to use numerical integrators in this setting for obtaining approximate solutions in time and space.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-065-time-dependent-schrödinger-equation",
+      "number": null,
+      "title": "Time-dependent Schrödinger equation",
+      "level": 4,
+      "pageStart": 72,
+      "pageEnd": 75,
+      "labelStart": "222",
+      "labelEnd": "225",
+      "words": 1763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "midpoint rule",
+          "heading": false
+        },
+        {
+          "term": "implicit midpoint",
+          "heading": false
+        },
+        {
+          "term": "exponential midpoint",
+          "heading": false
+        },
+        {
+          "term": "time-dependent",
+          "heading": true
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        },
+        {
+          "term": "schrédinger equation",
+          "heading": false
+        },
+        {
+          "term": "space discretization",
+          "heading": false
+        }
+      ],
+      "extract": "To keep the treatment as simple as possible, we commence by considering the one-dimensional time-dependent Schrédinger equation (fi = 1) a) 1 a? i—w(t,x) = Hw(t,x) = —~— W(t, x) + V@)w(e, x), (311) at 2 dx? with initial condition y (0, x) = Wo(x). If we look for a solution of the form y(t, x) = $(t)g(x), itis clear that, by substituting into (311), one gets #(t) = e~, where E is a constant and (x) is the solution of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-time-independent-schrödinger-equation",
+      "number": null,
+      "title": "Time-independent Schrödinger equation",
+      "level": 4,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": "225",
+      "labelEnd": "225",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sixth-order magnus",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "fourth-order method",
+          "heading": false
+        },
+        {
+          "term": "time-independent",
+          "heading": true
+        },
+        {
+          "term": "equation",
+          "heading": true
+        },
+        {
+          "term": "error",
+          "heading": false
+        },
+        {
+          "term": "carrying",
+          "heading": false
+        },
+        {
+          "term": "approximations",
+          "heading": false
+        }
+      ],
+      "extract": "Restricting ourselves to the time-independent Schrédinger equation (312), we next illustrate how Magnus integrators can, in fact, be used to compute the discrete eigenvalues defined by the problem. Although only the Schrodinger equation in a finite domain is considered, Co dx? the procedure can be easily adapted to other types of eigenvalue problems, in which one has to find both A = E and ¢. Here it is assumed that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-067-sturm--liouville-problems",
+      "number": null,
+      "title": "Sturm--Liouville problems",
+      "level": 3,
+      "pageStart": 75,
+      "pageEnd": 76,
+      "labelStart": "225",
+      "labelEnd": "226",
+      "words": 571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "magnus method",
+          "heading": false
+        },
+        {
+          "term": "order sturm-liouville",
+          "heading": false
+        },
+        {
+          "term": "runge-kutta schemes",
+          "heading": false
+        },
+        {
+          "term": "step size",
+          "heading": false
+        },
+        {
+          "term": "x-independent",
+          "heading": false
+        },
+        {
+          "term": "problems",
+          "heading": true
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        }
+      ],
+      "extract": "The system defined by (328) with boundary conditions g(a) = y(b) = Ois just one particular example of a second order Sturm-Liouville problem [186,187]. It is thus quite natural to try to apply Magnus integrators to more general problems within this class. 226 S. Blanes et al. / Physics Reports 470 (2009) 151-238 A second order Sturm-Liouville eigenvalue problem has the form d dy = | p(x) = (x) } + a@)y(x) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-the-differential-riccati-equation",
+      "number": null,
+      "title": "The differential Riccati equation",
+      "level": 3,
+      "pageStart": 76,
+      "pageEnd": 78,
+      "labelStart": "226",
+      "labelEnd": "228",
+      "words": 761,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential riccati",
+          "heading": true
+        },
+        {
+          "term": "riccati equation",
+          "heading": true
+        },
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "two-point boundary",
+          "heading": false
+        },
+        {
+          "term": "approximate solution",
+          "heading": false
+        },
+        {
+          "term": "value problem",
+          "heading": false
+        },
+        {
+          "term": "initial value",
+          "heading": false
+        },
+        {
+          "term": "exact solution",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now consider the two-point boundary value problem in the t variable defined by the linear differential equation »_ (vi A(t) Bit)\\ (yi; = = , O<t<T 334 y (Y cw) Diy) \\y, <ts< (334) with separated boundary conditions (Kir Ki2) (¥:) =n, (K21 K22) (7) =). (335) Y2} (=o Y2) par Here A € C1*4,B € C1*?,C © CP*4, D © CP*?, whereas y;, y2 € C’, y2, v1 € C4 and the matrices Kj have appropriate dimensions. We next",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-stochastic-differential-equations",
+      "number": null,
+      "title": "Stochastic differential equations",
+      "level": 3,
+      "pageStart": 78,
+      "pageEnd": 80,
+      "labelStart": "228",
+      "labelEnd": "230",
+      "words": 1214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stochastic differential",
+          "heading": true
+        },
+        {
+          "term": "stratonovich integrals",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": true
+        },
+        {
+          "term": "wiener process",
+          "heading": false
+        },
+        {
+          "term": "wiener processes",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "numerical approximation",
+          "heading": false
+        },
+        {
+          "term": "burrage",
+          "heading": false
+        }
+      ],
+      "extract": "In recent years, the use of stochastic differential equations (SDEs) has become widespread in the simulation of random phenomena appearing in physics, engineering, economics etc, such as turbulent diffusion, polymer dynamics and investment finance [197]. Although models based on SDEs can offer a more realistic representation of the system than ordinary differential equations, the design of effective numerical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-physical-applications",
+      "number": null,
+      "title": "Physical applications",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 80,
+      "labelStart": "230",
+      "labelEnd": "230",
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "applications",
+          "heading": true
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "pervades",
+          "heading": false
+        },
+        {
+          "term": "ina",
+          "heading": false
+        },
+        {
+          "term": "advent",
+          "heading": false
+        }
+      ],
+      "extract": "From previous sections it should be clear that ME has a strong bearing on both Classical and Quantum Mechanics. As far as Classical Mechanics is concerned, this has been most explicitly shown in Section 3.4. On its turn Quantum Mechanics has been repeatedly invoked as a source of applications, among others, in Sections 2.9 and 4. In this section we present ina very schematic way, and with no aim at completeness,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-nuclear-atomic-and-molecular-physics",
+      "number": null,
+      "title": "Nuclear, atomic and molecular physics",
+      "level": 3,
+      "pageStart": 80,
+      "pageEnd": 80,
+      "labelStart": "230",
+      "labelEnd": "230",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atomic collisions",
+          "heading": false
+        },
+        {
+          "term": "molecular",
+          "heading": true
+        },
+        {
+          "term": "nuclear",
+          "heading": true
+        },
+        {
+          "term": "robinson",
+          "heading": false
+        },
+        {
+          "term": "projectile",
+          "heading": false
+        },
+        {
+          "term": "vibrational",
+          "heading": false
+        },
+        {
+          "term": "heavy-ion",
+          "heading": false
+        },
+        {
+          "term": "excitation",
+          "heading": false
+        }
+      ],
+      "extract": "As far as we know, the first physical application of ME dates back to 1963. Robinson [18] published a brand new formalism to investigate multiple Coulomb excitations of deformed nuclei. As a matter of fact, he states explicitly that only after completion of his work did he discover the ME. His derivation of ME formulas is certainly worth reading. The Coulomb excitation process yields information about the low lying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-072-nuclear-magnetic-resonance-average-hamiltonian-t",
+      "number": null,
+      "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
+      "level": 3,
+      "pageStart": 80,
+      "pageEnd": 81,
+      "labelStart": "230",
+      "labelEnd": "231",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "average hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "nmr",
+          "heading": false
+        },
+        {
+          "term": "nuclear",
+          "heading": true
+        },
+        {
+          "term": "nuclear spin",
+          "heading": false
+        },
+        {
+          "term": "radio-frequency",
+          "heading": false
+        },
+        {
+          "term": "waugh",
+          "heading": false
+        },
+        {
+          "term": "time-dependent",
+          "heading": false
+        },
+        {
+          "term": "magnetic",
+          "heading": true
+        }
+      ],
+      "extract": "This is certainly the field where ME has been most systematically used and so we consider it separately. From elementary quantum mechanics, it is known that a constant magnetic field breaks the degeneracy of the energy levels of an atomic nucleus with spin. If the nuclear spin is s then 2s + 1 sub-levels appear. In a sample, these states are occupied, according to Boltzman distribution, with an exponentially",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-quantum-field-theory-and-high-energy-physics",
+      "number": null,
+      "title": "Quantum field theory and high energy physics",
+      "level": 3,
+      "pageStart": 81,
+      "pageEnd": 82,
+      "labelStart": "231",
+      "labelEnd": "232",
+      "words": 982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "definite flavor",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": true
+        },
+        {
+          "term": "time-dependent perturbation",
+          "heading": false
+        },
+        {
+          "term": "lowest-order time-dependent",
+          "heading": false
+        },
+        {
+          "term": "conventional perturbation",
+          "heading": false
+        },
+        {
+          "term": "neutrinos",
+          "heading": false
+        },
+        {
+          "term": "unitarity bounds",
+          "heading": false
+        }
+      ],
+      "extract": "The starting point of any quantum field theory (QFT) calculation is again Eq. (4) which is conventionally treated by time- dependent perturbation theory. So the first question which arises is the connection between ME and Dyson-type series. This has already been dealt with in Section 2.4. The main advantage of the first one is, as has already been repeatedly pointed out, that the unitary character of the evolution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-electromagnetism",
+      "number": null,
+      "title": "Electromagnetism",
+      "level": 3,
+      "pageStart": 82,
+      "pageEnd": 82,
+      "labelStart": "232",
+      "labelEnd": "232",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "maxwell equations",
+          "heading": false
+        },
+        {
+          "term": "order magnus",
+          "heading": false
+        },
+        {
+          "term": "discretization",
+          "heading": false
+        },
+        {
+          "term": "boundary conditions",
+          "heading": false
+        },
+        {
+          "term": "waves",
+          "heading": false
+        },
+        {
+          "term": "frequency",
+          "heading": false
+        },
+        {
+          "term": "evolution",
+          "heading": false
+        }
+      ],
+      "extract": "The Maxwell equations govern the evolution of electromagnetic waves. The equations are linear in the usual form and, although they have been extensively studied, the complexity of obtaining approximate solutions is rather significant. When reformulating the equations for a given problem, where the geometry, the boundary conditions etc, are considered, and appropriate discretizations are taken into account, it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-075-optics",
+      "number": null,
+      "title": "Optics",
+      "level": 3,
+      "pageStart": 82,
+      "pageEnd": 83,
+      "labelStart": "232",
+      "labelEnd": "233",
+      "words": 599,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helmholtz equation",
+          "heading": false
+        },
+        {
+          "term": "optics",
+          "heading": true
+        },
+        {
+          "term": "refractive index",
+          "heading": false
+        },
+        {
+          "term": "mueller matrix",
+          "heading": false
+        },
+        {
+          "term": "stokes parameters",
+          "heading": false
+        },
+        {
+          "term": "stokes vector",
+          "heading": false
+        },
+        {
+          "term": "polarization state",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        }
+      ],
+      "extract": "In the review paper [228] one can find references to some early applications of ME to Optics. For example, to Hamiltonians involving the generators of SU(2), SU(1, 1) and Heisenberg—Weyl groups, with applications to laser-plasma scattering and pulse propagation in free-electron lasers. Here, as representatives of the more modern interest of ME in Optics, we quote two applications referring to Helmholtz equation, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-076-general-relativity",
+      "number": null,
+      "title": "General Relativity",
+      "level": 3,
+      "pageStart": 83,
+      "pageEnd": 83,
+      "labelStart": "233",
+      "labelEnd": "233",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relativity",
+          "heading": true
+        },
+        {
+          "term": "pervasive",
+          "heading": false
+        },
+        {
+          "term": "elapsed",
+          "heading": false
+        }
+      ],
+      "extract": "To illustrate, once more, the pervasive presence of the linear differential equation (4), let us mention reference [237] in which the aim is to determine the time elapsed between two events when the space-time is treated as in General Relativity. Then it turns out to be necessary to solve a two-point boundary value problem for null geodesics. In so doing, one needs to know a Jacobian whose expression involves a 8 x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-077-search-of-periodic-orbits",
+      "number": null,
+      "title": "Search of periodic orbits",
+      "level": 3,
+      "pageStart": 83,
+      "pageEnd": 83,
+      "labelStart": "233",
+      "labelEnd": "233",
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "periodic orbits",
+          "heading": true
+        },
+        {
+          "term": "autonomous",
+          "heading": false
+        },
+        {
+          "term": "search",
+          "heading": true
+        }
+      ],
+      "extract": "The search of periodic orbits for some non-linear differential autonomous equations, x’ = f(x), x € R¢ is of interest in Celestial Mechanics (periodic orbits of the N-body problem) as well as in the general theory of dynamical systems. Due to the complexity of this process, it is important to have efficient numerical algorithms. The Lindstedt-Poincaré technique is frequently used to calculate periodic orbits. An",
+      "extractCut": true
+    },
+    {
+      "id": "sec-078-geometric-control-of-mechanical-systems",
+      "number": null,
+      "title": "Geometric control of mechanical systems",
+      "level": 3,
+      "pageStart": 83,
+      "pageEnd": 84,
+      "labelStart": "233",
+      "labelEnd": "234",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "control",
+          "heading": true
+        },
+        {
+          "term": "riccati differential",
+          "heading": false
+        },
+        {
+          "term": "control theory",
+          "heading": false
+        },
+        {
+          "term": "drift",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": true
+        },
+        {
+          "term": "controllability",
+          "heading": false
+        },
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "vector fields",
+          "heading": false
+        }
+      ],
+      "extract": "Many mechanical systems studied in control theory can be modeled by an ordinary differential equation of the form [90,239] X() = folx() + D> uit) £iK(0), (361) i=1 234 S. Blanes et al. / Physics Reports 470 (2009) 151-238 initialized at x(0) = p. Here x € R¢ represents all the possible states of the system, fj are (real) analytic vector fields and the function u = (uy, ..., Um) (the controls) is assumed to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-079-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 84,
+      "labelStart": "234",
+      "labelEnd": "234",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "report",
+          "heading": false
+        },
+        {
+          "term": "years",
+          "heading": false
+        },
+        {
+          "term": "expansion",
+          "heading": false
+        },
+        {
+          "term": "problems",
+          "heading": false
+        },
+        {
+          "term": "like",
+          "heading": false
+        },
+        {
+          "term": "applications",
+          "heading": false
+        }
+      ],
+      "extract": "In this report, we have thoroughly reviewed the abiding work on Magnus expansion carried out over more than fifty years, from very different perspectives. As a result of a real interdisciplinary activity, some aspects of the original formulation have been refined. This applies, for example, to the convergence properties of the expansion which have been much sharpened. In other features, much practical progress has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-080-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 85,
+      "labelStart": "234",
+      "labelEnd": "235",
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prof",
+          "heading": false
+        },
+        {
+          "term": "spain",
+          "heading": false
+        },
+        {
+          "term": "iserles",
+          "heading": false
+        },
+        {
+          "term": "acknowledged",
+          "heading": false
+        },
+        {
+          "term": "providing",
+          "heading": false
+        }
+      ],
+      "extract": "One of us (J.A.O) was introduced to the field of Magnus expansion by Prof. Silvio Klarsfeld (Orsay) to whom we also acknowledge his continuous interest in our work. Encouraging comments by Prof. A.J. Dragt (Maryland) in early stages of our involvement with ME are deeply acknowledged. During the last decade, we have benefited from enlightening discussions with, and useful comments by, Prof. Arieh Iserles. We would",
+      "extractCut": true
+    },
+    {
+      "id": "sec-081-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 85,
+      "pageEnd": 88,
+      "labelStart": "235",
+      "labelEnd": "238",
+      "words": 4646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnus integrators",
+          "heading": false
+        },
+        {
+          "term": "acta numer",
+          "heading": false
+        },
+        {
+          "term": "exponential integrators",
+          "heading": false
+        },
+        {
+          "term": "numerical integrators",
+          "heading": false
+        },
+        {
+          "term": "magnus approximation",
+          "heading": false
+        },
+        {
+          "term": "differential riccati",
+          "heading": false
+        },
+        {
+          "term": "magnus expansion",
+          "heading": false
+        },
+        {
+          "term": "magnus series",
+          "heading": false
+        }
+      ],
+      "extract": "[1] W. Abikoff, J.S. Birman, K. Kuiken (Eds.), The Mathematical Legacy of Wilhelm Magnus. Groups, Geometry and Special Functions, American Mathematical Society, 1994. [2] W. Magnus, A. Karrass, D. Solitar, Combinatorial Group Theory, Dover, 2004. [3] A. Erdelyi, W. Magnus, F. Oberhettinger, F.G. Tricomi, Higher Transcendental Functions, Vols. |, II, III, McGraw Hill, 1953. [4] W. Magnus, On the exponential solution",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "magnus integrators",
+      "heading": true
+    },
+    {
+      "term": "magnus expansion",
+      "heading": true
+    },
+    {
+      "term": "magnus methods",
+      "heading": true
+    },
+    {
+      "term": "magnus series",
+      "heading": true
+    },
+    {
+      "term": "magnus approximation",
+      "heading": false
+    },
+    {
+      "term": "order magnus",
+      "heading": false
+    },
+    {
+      "term": "exact magnus",
+      "heading": false
+    },
+    {
+      "term": "nonlinear magnus",
+      "heading": true
+    },
+    {
+      "term": "magnus scheme",
+      "heading": false
+    },
+    {
+      "term": "magnus based",
+      "heading": true
+    },
+    {
+      "term": "fourth-order magnus",
+      "heading": false
+    },
+    {
+      "term": "sixth-order magnus",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "151",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "152",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "153",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "154",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "155",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "156",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "157",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "158",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "159",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "160",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "161",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "162",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "163",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "164",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "165",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "166",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "167",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "168",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "169",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "170",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "171",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "172",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "173",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "174",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "175",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "176",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "177",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "178",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "179",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "180",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "181",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "182",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "183",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "184",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "185",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "186",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "187",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "188",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "189",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "190",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "191",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "192",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "193",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "194",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "195",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "196",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "197",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "198",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "199",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "200",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "201",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "202",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "203",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "204",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "205",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "206",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "207",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "208",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "209",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "210",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "211",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "212",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "213",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "214",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "215",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "216",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "217",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "218",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "219",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "220",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "221",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "222",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "223",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "224",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "225",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "226",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "227",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "228",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "229",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "230",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "231",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "232",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "233",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "234",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "235",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "236",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "237",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "238",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p041-1",
+      "file": "images/img-p041-1.png",
+      "page": 41,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p041-2",
+      "file": "images/img-p041-2.png",
+      "page": 41,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p042-1",
+      "file": "images/img-p042-1.png",
+      "page": 42,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-1",
+      "file": "images/img-p043-1.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-2",
+      "file": "images/img-p043-2.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-1",
+      "file": "images/img-p045-1.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-1",
+      "file": "images/img-p046-1.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-2",
+      "file": "images/img-p046-2.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-1",
+      "file": "images/img-p047-1.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-2",
+      "file": "images/img-p047-2.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p048-1",
+      "file": "images/img-p048-1.png",
+      "page": 48,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p059-1",
+      "file": "images/img-p059-1.png",
+      "page": 59,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p059-2",
+      "file": "images/img-p059-2.png",
+      "page": 59,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p060-1",
+      "file": "images/img-p060-1.png",
+      "page": 60,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p061-1",
+      "file": "images/img-p061-1.png",
+      "page": 61,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-1",
+      "file": "images/img-p065-1.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p066-1",
+      "file": "images/img-p066-1.png",
+      "page": 66,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-1",
+      "file": "images/img-p072-1.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 82,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 83,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 22
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p85); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 83 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/phys-rep09"
+  }
+}

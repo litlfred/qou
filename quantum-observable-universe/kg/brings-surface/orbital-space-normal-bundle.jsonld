@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-orbital-space-normal-bundle",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:orbital-space-normal-bundle",
+  "kind": "conjecture",
+  "title": "The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle",
+  "tags": [
+    "orbital",
+    "normal-bundle",
+    "framing",
+    "laplacian",
+    "eigenmode",
+    "resonance",
+    "trefoil",
+    "seifert-surface"
+  ],
+  "leanRef": "qou:QOU.orbital_space_normal_bundle",
+  "text": "orbital-space-normal-bundle.md",
+  "leanSource": "orbital-space-normal-bundle.lean",
+  "provenance": "authored"
+}

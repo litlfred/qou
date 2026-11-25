@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-ccg-crossed-module-structure",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:ccg-crossed-module-structure",
+  "kind": "lemma",
+  "title": "Crossed-module structure on $(\\mathrm{SU}_{q_n}(2), \\mathcal{O}_M^{\\times})$",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-ccg-crossed-module-structure"
+  ],
+  "cites": [
+    "references/yekutieli2014-descent"
+  ],
+  "tags": [
+    "crossed-module",
+    "central-extension",
+    "peiffer-identity",
+    "gerbe-band"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.ccg_crossed_module_structure",
+  "text": "ccg-crossed-module-structure.md",
+  "leanSource": "ccg-crossed-module-structure.lean",
+  "provenance": "authored"
+}

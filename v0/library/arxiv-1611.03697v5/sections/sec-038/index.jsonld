@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1611.03697v5/sections/sec-038",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quadratic differentials and exact WKB analysis",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-1611.03697v5/blocks/prose-sec-038"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.03697v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.03697v5/manifest.jsonld",
+  "provenance": "ingested"
+}

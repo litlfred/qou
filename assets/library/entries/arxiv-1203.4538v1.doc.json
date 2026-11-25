@@ -1,0 +1,657 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1203.4538v1",
+  "title": "The exponential-logarithmic equivalence classes of surreal numbers",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on surreal numbers.",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries-on-surreal-numbers"
+    },
+    {
+      "level": 2,
+      "title": "Inductive definitions.",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-inductive-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Sign sequences.",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-sign-sequences"
+    },
+    {
+      "level": 2,
+      "title": "Generalized epsilon numbers",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-generalized-epsilon-numbers"
+    },
+    {
+      "level": 1,
+      "title": "The kappa map.",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-the-kappa-map"
+    },
+    {
+      "level": 1,
+      "title": "Sign sequences formulae for the kappa map.",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-sign-sequences-formulae-for-the-kappa-map"
+    },
+    {
+      "level": 1,
+      "title": "Transseries and exp-log series.",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-transseries-and-exp-log-series"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1203.4538v1 [math.AC] 20 Mar 2012 The exponential-logarithmic equivalence classes of surreal numbers. Salma Kuhlmann and Mickaël Matusinski September 19, 2018",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1203.4538v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gonshor surreal",
+          "heading": false
+        },
+        {
+          "term": "surreal numbers",
+          "heading": false
+        },
+        {
+          "term": "subsetneq omega",
+          "heading": false
+        },
+        {
+          "term": "omega textbf",
+          "heading": false
+        },
+        {
+          "term": "kappa-equivel",
+          "heading": false
+        },
+        {
+          "term": "tel",
+          "heading": false
+        },
+        {
+          "term": "exponential equivalence",
+          "heading": false
+        },
+        {
+          "term": "exponential-logarithmic series",
+          "heading": false
+        }
+      ],
+      "extract": "In his monograph [@gonshor_surreal], H. Gonshor showed that Conway's real closed field of surreal numbers carries an exponential and logarithmic map. Subsequently, L. van den Dries and P. Ehrlich showed in [@ehrlich-vdd:surreal-exp] that it is a model of the elementary theory of the field of real numbers with the exponential function. In this paper, we give a complete description of the exponential equivalence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries-on-surreal-numbers",
+      "number": "2",
+      "title": "Preliminaries on surreal numbers.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries on surreal numbers.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-inductive-definitions",
+      "number": "2.1",
+      "title": "Inductive definitions.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gonshor surreal",
+          "heading": false
+        },
+        {
+          "term": "rightarrow textbf",
+          "heading": false
+        },
+        {
+          "term": "surreal numbers",
+          "heading": false
+        },
+        {
+          "term": "conway numb-games",
+          "heading": false
+        },
+        {
+          "term": "lambda omega",
+          "heading": false
+        },
+        {
+          "term": "epsilon numbers",
+          "heading": false
+        },
+        {
+          "term": "displaystyle sum",
+          "heading": false
+        },
+        {
+          "term": "center forall",
+          "heading": false
+        }
+      ],
+      "extract": "This section is dedicated to fix the notations and recall some of the definitions and results obtained in [@conway_numb-games] and [@gonshor_surreal]. We will also use results from [@ehrlich:simpl-hierarc] and [@ehrlich-vdd:surreal-exp]. We denote by $\\textbf{On}$ the proper class of **ordinal numbers**. A **surreal number** is any map $a:\\alpha\\rightarrow \\{\\ominus,\\oplus\\}$ where $\\alpha\\in\\textbf{On}$. Any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-sign-sequences",
+      "number": "2.2",
+      "title": "Sign sequences.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ominus binampersand",
+          "heading": false
+        },
+        {
+          "term": "displaystyle binampersand",
+          "heading": false
+        },
+        {
+          "term": "oplus binampersand",
+          "heading": false
+        },
+        {
+          "term": "binampersand omega",
+          "heading": false
+        },
+        {
+          "term": "binampersand beta",
+          "heading": false
+        },
+        {
+          "term": "binampersand alpha",
+          "heading": false
+        },
+        {
+          "term": "binampersand cdots",
+          "heading": false
+        },
+        {
+          "term": "gonshor surreal",
+          "heading": false
+        }
+      ],
+      "extract": "Gonshor obtains in [@gonshor_surreal] detailed results on the sign sequences of the surreals under the various operations and maps. We will use repeatedly his results. Moreover, we introduce in this section some new operations on the sign sequences. ::: defn - Given two surreal numbers $a,b\\in\\textbf{No}$, we define their **concatenation** $a\\binampersand b$ as the juxtaposition of their sign sequences. We note that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-generalized-epsilon-numbers",
+      "number": "2.3",
+      "title": "Generalized epsilon numbers",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ominus binampersand",
+          "heading": false
+        },
+        {
+          "term": "binampersand beta",
+          "heading": false
+        },
+        {
+          "term": "oplus binampersand",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": true
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        }
+      ],
+      "extract": "We recall [@gonshor_surreal Theorems 9.5 and 9.6]: ::: thm []{#theo:sign-seq-epsilon label=\"theo:sign-seq-epsilon\"} - A surreal number $a=\\alpha_0\\oplus\\binampersand \\beta_0\\ominus\\binampersand \\alpha_1\\oplus\\binampersand \\beta_1\\ominus\\binampersand\\cdots$ is an epsilon number if and only if $\\alpha_0\\neq 0$, all $\\alpha_\\mu$ different from 0 are ordinary epsilon numbers satisfying $\\alpha_\\mu > l.u.b.\\{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-the-kappa-map",
+      "number": "3",
+      "title": "The kappa map.",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 998,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa",
+          "heading": true
+        },
+        {
+          "term": "exp kappa",
+          "heading": false
+        },
+        {
+          "term": "langle kappa",
+          "heading": false
+        },
+        {
+          "term": "sim exp",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "langle omega",
+          "heading": false
+        },
+        {
+          "term": "exp leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "leq exp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:kappa label=\"sect:kappa\"} In this section we define and describe a new map $\\kappa$, which takes naturally place between the Conway-Gonshor maps $\\Omega$ and $\\epsilon$ (see Remark [\\[rem:gonshor\\]](#rem:gonshor){reference-type=\"ref\" reference=\"rem:gonshor\"}). As in [@kuhl:ord-exp Remark 3.20], we introduce the notion of **exponential equivalence relation** for surreal numbers. Set $\\exp^n$ and $\\log^n$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-sign-sequences-formulae-for-the-kappa-map",
+      "number": "4",
+      "title": "Sign sequences formulae for the kappa map.",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binampersand ominus",
+          "heading": false
+        },
+        {
+          "term": "iota binampersand",
+          "heading": false
+        },
+        {
+          "term": "oplus binampersand",
+          "heading": false
+        },
+        {
+          "term": "binampersand omega",
+          "heading": false
+        },
+        {
+          "term": "binampersand epsilon",
+          "heading": false
+        },
+        {
+          "term": "binampersand flat",
+          "heading": false
+        },
+        {
+          "term": "binampersand beta",
+          "heading": false
+        },
+        {
+          "term": "binampersand alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:kappa-sign label=\"sect:kappa-sign\"} For any $a\\in\\textbf{No}$ and $n\\in\\mathbb{N}$, we denote by $\\kappa_{a,n}:=\\log^n(\\kappa_a)$ and $\\kappa_{a,-n}=\\exp^n(\\kappa_a)$, where $\\log^0$ and $\\exp^0$ are equal to the identity map on $\\textbf{No}$. The aim of this section is to show that $\\kappa_{a,n}$ and $\\kappa_{a,-n}$ for any $n$ are elements of $\\omega^{\\omega^{No}}$, and to give their sign sequence. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-transseries-and-exp-log-series",
+      "number": "5",
+      "title": "Transseries and exp-log series.",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exp-log series",
+          "heading": true
+        },
+        {
+          "term": "transseries",
+          "heading": true
+        },
+        {
+          "term": "surreal numbers",
+          "heading": false
+        },
+        {
+          "term": "université paris",
+          "heading": false
+        },
+        {
+          "term": "paris vii",
+          "heading": false
+        },
+        {
+          "term": "den dries",
+          "heading": false
+        },
+        {
+          "term": "vdh",
+          "heading": false
+        },
+        {
+          "term": "series ﬁelds",
+          "heading": false
+        }
+      ],
+      "extract": "Transseries and exp-log series. Fields of Transseries [É92, vdH97, vdH06] or log-exp series [vdDMM97], and ﬁelds of exp-log series [Kuh00, KS05] are important non standard models of the theory of Rexp, which is known to be o-minimal and model complete [Wil96]. Moreover, these ﬁelds can be endowed with derivations that mimic the derivation of germs of real functions in a Hardy ﬁeld [Sch01, vdDMM01, KM11]. We propose",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gonshor surreal",
+      "heading": false
+    },
+    {
+      "term": "binampersand ominus",
+      "heading": false
+    },
+    {
+      "term": "omega textbf",
+      "heading": false
+    },
+    {
+      "term": "surreal exp",
+      "heading": false
+    },
+    {
+      "term": "surreal numbers",
+      "heading": true
+    },
+    {
+      "term": "epsilon textbf",
+      "heading": false
+    },
+    {
+      "term": "kappa textbf",
+      "heading": false
+    },
+    {
+      "term": "surreal theorem",
+      "heading": false
+    },
+    {
+      "term": "displaystyle binampersand",
+      "heading": false
+    },
+    {
+      "term": "oplus binampersand",
+      "heading": false
+    },
+    {
+      "term": "subsetneq textbf",
+      "heading": false
+    },
+    {
+      "term": "binampersand alpha",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1203.4538v1"
+  }
+}

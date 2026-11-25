@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Fork",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Gateway_Fork",
+      "nodeKind": "parallel",
+      "bpmnType": "bpmn:ParallelGateway",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "inLane": "https://litlfred.github.io/qou/process/Process_ComputeQA/lane/Lane_Pipeline",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_1"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_P",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_S",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_L",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_F",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_W"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

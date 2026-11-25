@@ -1,0 +1,668 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1002.4860v2",
+  "title": "arxiv-1002.4860v2",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Semi-normal representations of Hecke algebras",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-semi-normal-representations-of-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Braid group",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-braid-group"
+    },
+    {
+      "level": 2,
+      "title": "Iwahori-Hecke algebra",
+      "number": "2.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-iwahori-hecke-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Seminormal representations",
+      "number": "2.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-seminormal-representations"
+    },
+    {
+      "level": 2,
+      "title": "Sign sequences and hook partitions",
+      "number": "2.5",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-25-sign-sequences-and-hook-partitions"
+    },
+    {
+      "level": 1,
+      "title": "Construction",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-construction"
+    },
+    {
+      "level": 1,
+      "title": "Example",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-example"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "state-sum",
+          "heading": false
+        },
+        {
+          "term": "samson",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1002.4860v2 [math.GT] 3 Jun 2010 A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL SAMSON BLACK Abstract. We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools are the Markov trace formulas for the HOMFLY-PT polynomial and Young’s semi-normal repre- sentations of the Iwahori-Hecke algebras of type A.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1002.4860v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sec s-n",
+          "heading": false
+        },
+        {
+          "term": "sec constr",
+          "heading": false
+        },
+        {
+          "term": "young semi-normal",
+          "heading": false
+        },
+        {
+          "term": "semi-normal form",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "omega lambda",
+          "heading": false
+        },
+        {
+          "term": "main thm",
+          "heading": false
+        }
+      ],
+      "extract": "In [@Jones], Jones gave a construction of the two-variable HOMFLY-PT polynomial invariant using a recursively defined Markov trace on certain representations of the braid group. These representations all factor through the Iwahori-Hecke algebra $\\mathcal{H}_n$ (of type A), which enjoys a character theory [@Geck] deforming that of the symmetric group. The Markov trace can be decomposed as a linear combination of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-semi-normal-representations-of-hecke-algebras",
+      "number": "2",
+      "title": "Semi-normal representations of Hecke algebras",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec s-n label=\"sec s-n\"} Much of the following is standard (see e.g. [@CurtisReiner] or [@KasTur chapters 4 and 5]). We collect some of the definitions here and fix some notation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-braid-group",
+      "number": "2.1",
+      "title": "Braid group",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma bullet",
+          "heading": false
+        },
+        {
+          "term": "bullet twoheadrightarrow",
+          "heading": false
+        },
+        {
+          "term": "sigma text",
+          "heading": false
+        },
+        {
+          "term": "let sigma",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        }
+      ],
+      "extract": "Fix $n \\geq 1$. Let $\\Sigma_n = \\{ \\sigma_1, \\ldots, \\sigma_{n-1} \\}$ be the set of braid generators, and let $\\Sigma_n^\\bullet$ denote the set of words in the symbols $\\Sigma_n \\sqcup \\Sigma_n^{-1}$. Let $B_n$ be the braid group on $n$ strands, that is, the quotient of the free group on $\\Sigma_n$ by the relations $$\\begin{aligned} \\sigma_r \\sigma_{r+1} \\sigma_r &=& \\sigma_{r+1} \\sigma_r \\sigma_{r+1} \\text { for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-iwahori-hecke-algebra",
+      "number": "2.2",
+      "title": "Iwahori-Hecke algebra",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid relations",
+          "heading": false
+        },
+        {
+          "term": "quadratic relations",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke",
+          "heading": true
+        }
+      ],
+      "extract": "Let $\\mathcal{H}_n$ denote the *Iwahori-Hecke algebra* associated to $S_n$. This is the algebra over $\\mathbb{C}(v)$ generated by $H_1, \\ldots, H_{n-1}$, subject to the braid relations $$\\begin{aligned} H_r H_{r+1} H_r &=& H_{r+1} H_r H_{r+1} \\quad \\text { for each } 1 \\le r \\le n-2, \\\\ H_r H_s &=& H_s H_r \\quad \\text { when } |r - s| > 1, \\end{aligned}$$ and also the quadratic relations $$(H_r - v)(H_r + v^{-1}) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-seminormal-representations",
+      "number": "2.3",
+      "title": "Seminormal representations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathtt vcenter",
+          "heading": false
+        },
+        {
+          "term": "qquad mathtt",
+          "heading": false
+        },
+        {
+          "term": "operatorname std",
+          "heading": false
+        },
+        {
+          "term": "operatorname par",
+          "heading": false
+        },
+        {
+          "term": "operatorname tab",
+          "heading": false
+        },
+        {
+          "term": "lambda tableaux",
+          "heading": false
+        },
+        {
+          "term": "lambda boxes",
+          "heading": false
+        },
+        {
+          "term": "endxy qquad",
+          "heading": false
+        }
+      ],
+      "extract": "This exposition follows [@Ram section 3], although the results were originally worked out in [@Hoefsmit]. For a new point of view and substantial generalization, see [@BK section 5]. Let $\\operatorname {Par}(n)$ denote the set of all integer partitions of $n$. To the partition $\\lambda= (\\lambda_1 \\ge \\lambda_2 \\ge \\cdots)$, associate its *Young diagram*, that is, the left-justified diagram with $\\lambda_1$ boxes on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-sign-sequences-and-hook-partitions",
+      "number": "2.5",
+      "title": "Sign sequences and hook partitions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "off-diag coeff",
+          "heading": false
+        },
+        {
+          "term": "sign sequences",
+          "heading": true
+        },
+        {
+          "term": "diag coeff",
+          "heading": false
+        },
+        {
+          "term": "sequence varepsilon",
+          "heading": false
+        },
+        {
+          "term": "sign seq",
+          "heading": false
+        },
+        {
+          "term": "having varepsilon",
+          "heading": false
+        },
+        {
+          "term": "signs s-n",
+          "heading": false
+        },
+        {
+          "term": "signs irrep",
+          "heading": false
+        }
+      ],
+      "extract": "For $0 \\le \\ell \\le n-1$, let $\\lambda_\\ell$ be the hook partition $(n-\\ell, 1^\\ell)$. We refer to $\\ell$ as *leg length*. ::: lemma []{#sign seq label=\"sign seq\"} Standard tableaux of shape $\\lambda_\\ell$ are in bijection with sign sequences $\\varepsilon=(\\varepsilon_1,\\dots,\\varepsilon_n)\\in \\{\\pm\\}^n$ such that $\\varepsilon_1 = +$ and $\\ell$ entries equal $-$. ::: ::: proof *Proof.* Beginning with a standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-construction",
+      "number": "3",
+      "title": "Construction",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "endxy vcenter",
+          "heading": false
+        },
+        {
+          "term": "varepsilon endxy",
+          "heading": false
+        },
+        {
+          "term": "endxy dfrac",
+          "heading": false
+        },
+        {
+          "term": "endxy quad",
+          "heading": false
+        },
+        {
+          "term": "endxy qquad",
+          "heading": false
+        },
+        {
+          "term": "off-diag coeff",
+          "heading": false
+        },
+        {
+          "term": "endxy end",
+          "heading": false
+        },
+        {
+          "term": "s-n signs",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec constr label=\"sec constr\"} Begin with a word $w \\in \\Sigma_n^\\bullet$ in the braid generators $\\sigma_1, \\ldots, \\sigma_{n-1}$ and their inverses, which we picture as a diagram drawn up the page as the word is read from right to left. $$\\sigma_r = \\; \\vcenter{ \\xy 0;/r.10pc/: (0,15)*{}, (0,0);(0,10)**@{-}, (10,5)*{\\cdots}, (20,0);(20,10)**@{-}, (30,0);(40,10)**@{-}, (40,0);(36,4)**@{-}, (34,6);(30,10)**@{-},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-example",
+      "number": "4",
+      "title": "Example",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "hline multirow",
+          "heading": false
+        },
+        {
+          "term": "endxy quad",
+          "heading": false
+        },
+        {
+          "term": "quad vcenter",
+          "heading": false
+        },
+        {
+          "term": "dfrac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec ex label=\"sec ex\"} Let's use the braid presentation $w = \\sigma_2^{-1} \\sigma_1 \\sigma_2^{-1} \\sigma_1$ for the figure-eight knot, pictured below with its six possible states. $$\\vcenter{\\xy 0;/r.15pc/: (0,0);(14,14)**@{-}, (16,16);(20,20)**@{-}, (20,20);(20,30)**@{-}, (20,30);(10,40)**@{-}, (10,0);(6,4)**@{-}, (4,6);(0,10)**@{-}, (0,10);(0,20)**@{-}, (0,20);(14,34)**@{-}, (16,36);(20,40)**@{-},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meinolf geck",
+          "heading": false
+        },
+        {
+          "term": "starkey rule",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "oregon",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite groups",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Samson Black. Representations of Hecke algebras and the Alexander polynomial. PhD in Math- ematics, University of Oregon, 2010. [2] Jonathan Brundan and Alexander Kleshchev. Blocks of cyclotomic Hecke algebras and Khovanov- Lauda algebras. Invent. Math., 178(3):451–484, 2009. [3] Charles W. Curtis and Irving Reiner. Methods of representation theory. Vol. I, II. Pure and Applied Mathematics (New York). John Wiley",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "endxy vcenter",
+      "heading": false
+    },
+    {
+      "term": "varepsilon endxy",
+      "heading": false
+    },
+    {
+      "term": "endxy qquad",
+      "heading": false
+    },
+    {
+      "term": "mathtt vcenter",
+      "heading": false
+    },
+    {
+      "term": "s-n signs",
+      "heading": false
+    },
+    {
+      "term": "endxy dfrac",
+      "heading": false
+    },
+    {
+      "term": "endxy quad",
+      "heading": false
+    },
+    {
+      "term": "off-diag coeff",
+      "heading": false
+    },
+    {
+      "term": "label s-n",
+      "heading": false
+    },
+    {
+      "term": "sec s-n",
+      "heading": false
+    },
+    {
+      "term": "endxy end",
+      "heading": false
+    },
+    {
+      "term": "s-n formula",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The partition λ = (3, 1) ∈Par(4) and standard tableaux T",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1002.4860v2"
+  }
+}

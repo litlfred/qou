@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gravity-spectral-prefactor-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gravity-spectral-prefactor-interpretation",
+  "kind": "remark",
+  "title": "Newton's $G$ as the macroscopic-stratum signature of the mass functional",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gravity-spectral-prefactor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gravity-spectral-prefactor",
+  "tags": [
+    "gravity",
+    "newton-constant",
+    "universal-residue",
+    "plancherel",
+    "macroscopic-stratum",
+    "interpretation"
+  ],
+  "text": "gravity-spectral-prefactor-interpretation.md",
+  "provenance": "authored"
+}

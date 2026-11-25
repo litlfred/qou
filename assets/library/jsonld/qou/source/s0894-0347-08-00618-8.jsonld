@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0894-0347-08-00618-8",
+  "contains": [
+    "library/s0894-0347-08-00618-8/sections/sec-front-matter",
+    "library/s0894-0347-08-00618-8/sections/sec-000",
+    "library/s0894-0347-08-00618-8/sections/sec-001",
+    "library/s0894-0347-08-00618-8/sections/sec-002",
+    "library/s0894-0347-08-00618-8/sections/sec-003",
+    "library/s0894-0347-08-00618-8/sections/sec-004",
+    "library/s0894-0347-08-00618-8/sections/sec-005",
+    "library/s0894-0347-08-00618-8/sections/sec-006",
+    "library/s0894-0347-08-00618-8/sections/sec-007",
+    "library/s0894-0347-08-00618-8/sections/sec-008",
+    "library/s0894-0347-08-00618-8/sections/sec-009",
+    "library/s0894-0347-08-00618-8/sections/sec-010",
+    "library/s0894-0347-08-00618-8/sections/sec-011",
+    "library/s0894-0347-08-00618-8/sections/sec-012",
+    "library/s0894-0347-08-00618-8/sections/sec-013",
+    "library/s0894-0347-08-00618-8/sections/sec-014",
+    "library/s0894-0347-08-00618-8/sections/sec-015",
+    "library/s0894-0347-08-00618-8/sections/sec-016",
+    "library/s0894-0347-08-00618-8/sections/sec-017",
+    "library/s0894-0347-08-00618-8/sections/sec-018",
+    "library/s0894-0347-08-00618-8/sections/sec-019",
+    "library/s0894-0347-08-00618-8/sections/sec-020",
+    "library/s0894-0347-08-00618-8/sections/sec-021",
+    "library/s0894-0347-08-00618-8/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence\n\n**AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8**\n\n*Article electronically published on September 19, 2008*\n\n47 pp, 24 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 A plethora of negative dependence properties; 2.1 Negative dependence concepts; 2.2 Strongly Rayleigh measures; 2.3 Symmetric homogenization; 2.4 Measures on countably infinite sets; 2.5 Towards a theory of negative dependence: P; 3 Negative dependence in mathematics and physi; 3.1 Real stable polynomials and transcendental; 3.2 Hadamard-Fischer inequalities and GKK-matr; 3.3 Determinantal probability measures; 3.4 Graphs, Laplacians, spanning trees and the; 3.5 Interacting particle systems and exclusion; 4 Negative dependence theory for strongly Rayl; 4.1 Symmetric homogenization via Gårding hyper; 4.2 Stability implies negative association; 4.3 Stochastic domination and truncations",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "s0894-0347-08-00618-8",
+    "title_source": "slug",
+    "source_file": "S0894-0347-08-00618-8.pdf",
+    "source_sha256": "7c0b2ca41992b21ca897acfe77482872d71b86252ca061cfa300cb0e0a7975d1",
+    "pages": 47,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

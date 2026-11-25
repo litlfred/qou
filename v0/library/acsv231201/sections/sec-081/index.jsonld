@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-081",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Vector fields and differential forms",
+  "pageStart": 461,
+  "pageEnd": 470,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-081",
+    "library/acsv231201/blocks/ex-sec-081-01",
+    "library/acsv231201/blocks/ex-sec-081-02",
+    "library/acsv231201/blocks/prop-sec-081-03",
+    "library/acsv231201/blocks/ex-sec-081-04",
+    "library/acsv231201/blocks/ex-sec-081-05",
+    "library/acsv231201/blocks/rem-sec-081-06",
+    "library/acsv231201/blocks/ex-sec-081-07",
+    "library/acsv231201/blocks/ex-sec-081-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested"
+}

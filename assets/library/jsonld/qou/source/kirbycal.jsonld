@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
+  "contains": [
+    "library/kirbycal/sections/page-001",
+    "library/kirbycal/sections/page-002",
+    "library/kirbycal/sections/page-003",
+    "library/kirbycal/sections/page-004",
+    "library/kirbycal/sections/page-005",
+    "library/kirbycal/sections/page-006",
+    "library/kirbycal/sections/page-007",
+    "library/kirbycal/sections/page-008",
+    "library/kirbycal/sections/page-009",
+    "library/kirbycal/sections/page-010",
+    "library/kirbycal/sections/page-011",
+    "library/kirbycal/sections/page-012",
+    "library/kirbycal/sections/page-013",
+    "library/kirbycal/sections/page-014",
+    "library/kirbycal/sections/page-015",
+    "library/kirbycal/sections/page-016",
+    "library/kirbycal/sections/page-017",
+    "library/kirbycal/sections/page-018",
+    "library/kirbycal/sections/page-019",
+    "library/kirbycal/sections/page-020",
+    "library/kirbycal/sections/page-021",
+    "library/kirbycal/sections/page-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold.\n\n**A Calculus for Framed Links in S³** — Robion Kirby. Inventiones mathematicae 45, 35–56 (1978).\n\nA framed link L in S³ is a finite disjoint collection of smoothly embedded circles, each with an integer framing. The paper gives the calculus — the moves — under which two framed links yield the same 3-manifold by surgery, so that 3-manifold invariants can be defined by checking invariance under those moves alone.\n\n**Why it may bear here.** Kirby calculus is the move-invariance that every surgery-presented quantum 3-manifold invariant in this library rests on (the Reshetikhin–Turaev, Ohtsuki and WRT material). Foundational rather than directly cited.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kirbycal",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "kirbycal.pdf",
+    "source_sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
+    "pages": 22,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,1247 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0105186v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let $(M^{2n},\\o,\\alpha)$ be a compact symplectic manifold with contact type boundary: $\\alpha$ is a contact one-form on $\\partial M$ which satisfies $d\\alpha = \\o|\\partial M$ and makes $\\partial M$ convex. Assume in addition that $[\\o,\\alpha] \\in H^2(M,\\partial M;\\R)$ is zero, so that $\\alpha$ can be extended to a one-form $\\theta$ on $M$ satisfying $d\\theta = \\o$. After fixing such a $\\theta$ once and for all, one can talk about exact Lagrangian submanifolds in $M$. The Floer cohomology of two such submanifolds is comparatively easy to define, since the corresponding action functional has no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0105186v2  [math.SG]  20 Jul 2002\nA long exact sequence for\nsymplectic Floer cohomology\nPaul Seidel\nRevised version, May 2002",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn twists, and all that",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-dehn-twists-and-all-that.md",
+      "narrative": null,
+      "content": "This chapter takes a look at basic Picard-Lefschetz theory from the symplectic viewpoint. It has been known since Arnold's note [@arnold95] that such a viewpoint makes sense, and it has been used for various purposes, see e.g. [@seidel98b], [@khovanov-seidel98]. Still, the present paper seems to be the most systematic attempt at an exposition so far. The reader may be surprised by the exactness assumptions built into our framework. As far as the elementary theory is concerned, there is no need to make such assumptions. However, they greatly simplify the pseudo-holomorphic theory to be introduc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exact symplectic geometry and fibrations",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-11-exact-symplectic-geometry-and-fibrations.md",
+      "narrative": null,
+      "content": "By an exact symplectic manifold we mean a compact manifold $M$ with boundary, together with a symplectic form $\\o$ and a one-form $\\theta$ satisfying $d\\theta = \\o$, such that $\\theta|\\partial M$ is a contact one-form and makes $\\partial M$ convex. An isomorphism of exact symplectic manifolds is a diffeomorphism $\\phi: M \\rightarrow M'$ which is symplectic, satisfies $\\phi^*\\theta' = \\theta$ in some neighbourhood of $\\partial M$, and such that $[\\phi^*\\theta' - \\theta] \\in H^1(M,\\partial M;\\R)$ is zero. This means that there is a unique function $K_\\phi \\in \\smooth_c(M \\setminus \\partial M,\\R)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let R ∈C∞(R, R) be a function which vanishes for t ≫0 and which satisﬁes R(−t) = R(t) −kt for small |t|, with some k ∈Z. Let (φH t ) be the Hamiltonian ﬂow of H = R(µ), deﬁned on T \\ T (0). Then φH 2π extends smoothly over T (0) to a compactly supported symplectic automorphism φ of T . The function K = 2π (R′(µ)µ −R(µ)) also extends smoothly over T (0), and φ∗θT −θT = dK. (1.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Suppose that τ is δ-wobbly. Let F0 = T (λ)y0, F1 = T (λ)y1 be the ﬁbres of T (λ) →Sn at points y0, y1, whose distance in the standard metric is dist(y0, y1) ≥2πδ. Then τ(F0) intersects F1 transversally and at a single point y, which satisﬁes 2πR′(||y||) = dist(y0, y1). In the special case where y1 = A(y0) one has y = y1; and then the tangent space of T (λ) at y can be identiﬁed symplectically with Cn in such a way that the subspaces tangent to τ(F0), T (0), F1 become respectively, Rn, e2πi/3Rn, and eπi/3Rn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Fix λ > 0 and r > 0, and let ¯D(r) ⊂C be the closed disc of radius r around the origin. There is an exact Lefschetz ﬁbration (E, π) over ¯D(r), together with a diﬀeomorphism φ : Er →T (λ) which respects both the symplectic forms and the exact one-forms, such that the following holds. Denote by ρ ∈Sympe(Er) the symplectic monodromy around ∂¯D(r), in positive sense. Then τ = φ ◦ρ ◦φ−1 ∈Sympe(T (λ)) is a model Dehn twist.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "Any standard ﬁbration (EL, πL) has the following properties. (i) There is a closed subset ΣL ⊂EL such that ΣL z = ΣL ∩EL z = ( is an embedded n-sphere if z̸ = 0, is the unique critical point x0 ∈EL if z = 0. In fact (ΣL)∗= ΣL \\ ΣL 0 is a smooth n-sphere bundle over ¯D(r)\\ {0}, and satisﬁes ΘL | (ΣL)∗= (πL)∗dc(−1 4|z|). (1.20) As in the discussion following (1.12), this implies that each ΣL z ⊂EL z , z̸ = 0, is an exact Lagrangian submanifold, and that symplectic parallel transport within ¯D(r)\\{0} carries these spheres into each other. Moreover, φL(ΣL r ) = L. (ii) There are holomorphic Morse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "prop-sec-003-04.md",
+      "narrative": null,
+      "content": "Let (L, [f]) be a framed exact Lagrangian sphere in M. Fix some r > 0. There is an exact Lefschetz ﬁbration (EL, πL) over ¯D(r) together with an isomorphism φL : EL r →M of exact symplectic manifolds, such that if ρL is the symplectic monodromy around ∂¯D(r), then τL = φL ◦ρL ◦(φL)−1 is a Dehn twist along (L, [f]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The local model",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-12-the-local-model.md",
+      "narrative": null,
+      "content": "The local model\nConsider T = T ∗Sn with its standard forms ωT ∈Ω2(T ), θT ∈Ω1(T ). For\nconcrete computations we use the coordinates T = {(u, v) ∈Rn+1 × Rn+1\n:\n⟨u, v⟩= 0, ||v|| = 1}. For each λ > 0, the subspace T (λ) of cotangent vectors\nof length ≤λ is an exact symplectic manifold. We write similarly T (0) ⊂T for\nthe zero-section. The length function µ : T →R, µ(u, v) = ||u||, generates a\nHamiltonian circle action σ on T \\ T (0) which, after identifying T ∼= T Sn via\nthe standard metric, can be described as the normalized geodesic ﬂow on Sn.\nIn coordinates\nσt(u, v) = (cos(t)u −sin(t)||u||v, c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Bc is an embedded closed (n + 1)-ball, with ∂Bc = Bc ∩Ec(a). The function p = c−1 ◦π : Bc →[a; b] has x0 as its unique critical point, which is a nondegenerate local maximum. Moreover, Ω|Bc = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Vc = ∂Bc is an exact Lagrangian sphere in Ec(a), and comes with a canonical framing.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "Let c be a path satisfying (1.22), and l the loop in S \\ Scrit obtained by “doubling” c, as in Figure 1. Then the monodromy around l is isotopic to the Dehn twist along the vanishing cycle Vc: [ρl] = [τVc] ∈π0(Sympe(Ec(a))). (1.23)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vanishing cycles",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-004-13-vanishing-cycles.md",
+      "narrative": null,
+      "content": "Vanishing cycles\nWe have seen that all Dehn twists can be realized as monodromy maps (of\nstandard ﬁbrations). Conversely, the geometry of any exact Lefschetz ﬁbration\ncan be understood in terms in Dehn twists.\nThis is again well-known on a\ntopological level, and our exposition repeats the classical arguments while paying\nmore attention to symplectic forms. The results will not be used again in this\npaper, but they are important in applications.\nLet (E, π) be an exact Lefschetz ﬁbration over S.\nTake z0 ∈Scrit, and\nthe unique critical point x0 ∈Ez0. Let c : [a; b] →S be a smooth embedded\npath wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "Let J be compatible relative to j. Then for any suﬃciently posi- tive β ∈Ω2(S), Ω+ π∗β tames J. Because of the lack of antisymmetry in (2.1), J will not be compatible with Ω+ π∗β in the ordinary sense of the word, unless Jvh = 0; we will return to this more restricted class of almost complex structures in the next section. Continuing with the analysis of the conditions above, suppose now that x ∈E is suﬃciently close to ∂hE. More precisely, we require that σ(x) is deﬁned and that (iv) applies. There is then a further splitting T Ev x ∼= RN ⊕RR ⊕(ker Θ ∩ker dσ ∩T Ev x), (2.2) where N is the Lio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "For every J ∈J(E, π, j) there is a compact subset K ⊂E \\ ∂hE such that all u ∈MJ satisfy u(S) ⊂K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "MJ is compact in any Cr-topology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-006-04.md",
+      "narrative": null,
+      "content": "Jreg(E, π, Q, j) is C∞-dense in J(E, π, j). In fact the following stronger statement holds: take some nonempty open subset U ⊂S and a J ∈ J(E, π, j). Then there are J′ ∈Jreg(E, π, Q, j) arbitrarily close to J, such that J = J′ outside π−1(U).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-006-05.md",
+      "narrative": null,
+      "content": "Let g be a smooth map from some arbitrary manifold G to Qζ. Then, for any J and U as in the previous lemma, there are J′ ∈Jreg(E, π, Q, j) arbitrarily close to J, with J′ = J outside π−1(U), such that evζ|MJ′ is trans- verse to g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "prop-sec-006-07.md",
+      "narrative": null,
+      "content": "Assume that Jk ∈Jreg(Ek, πk, Qk, jk) for k = 1, 2, and that the evζk|MJk are mutually transverse. Choose a suﬃciently small parameter ρ for the gluing. Then J ∈Jreg(E, π, Q, j), and there is a diﬀeomorphism MJ ∼= MJ1 ×L MJ2, where the right hand side is the ﬁbre product of (evζ1, evζ2). This is an average specimen of the “gluing theorem” type. The closest re- lated argument in the literature would seem to be the gluing theory for pseudo- holomorphic discs from [8, Section 18], which is far more sophisticated than what we need here; as an alternative, one can probably adapt the proof of the mor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudo-holomorphic sections",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-2-pseudo-holomorphic-sections.md",
+      "narrative": null,
+      "content": "Pseudo-holomorphic sections\nBefore, we have considered exact Lefschetz ﬁbrations as geometric objects in\nthe sense of elementary symplectic geometry; now we will apply the theory\nof pseudo-holomorphic curves to them.\nBy today’s standards, the necessary\nanalysis is rather unsophisticated. The basic Gromov-type invariant which will\nbe introduced ﬁrst uses only the most familiar techniques, on the level of the\nbook [15]. Of course ours is a Lagrangian boundary value problem, but the\nonly part of the analysis which speciﬁcally concerns the boundary is bubbling\noﬀof holomorphic discs, which was add",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A simple invariant",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "../sections/sec-006-21-a-simple-invariant.md",
+      "narrative": null,
+      "content": "A simple invariant\nLet (E2n+2, π) be an exact Lefschetz ﬁbration over S. A Lagrangian boundary\ncondition is an (n+1)-dimensional submanifold Q ⊂E|∂S which is disjoint from\n∂hE and such that π|Q : Q →∂S is a submersion, together with κQ ∈Ω1(∂S)\nand KQ ∈C∞(Q, R), satisfying Θ|Q = π∗κQ + dKQ. This implies that each\nQz = Q ∩Ez, z ∈∂S, is an exact Lagrangian submanifold of Ez, with function\nKQ|Qz (one could consider a more general situation in which the condition on\nπ|Q is dropped, so that the Qz could have singularities; but we will not do that).\nFrom Lemma 1.3 one sees that parallel transport alo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/rem-sec-006-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "rem-sec-006-06.md",
+      "narrative": null,
+      "content": "Since the regular spaces MJ are actual manifolds, one can re- ﬁne Φ1(E, π, Q) by regarding it as an element of the unoriented bordism group MO∗(Qζ). But even with this reﬁnement, it is far from capturing all the infor- mation contained in MJ. To get more sophisticated invariants one can use eval- uation at several points, allowing those to move; we will now explain the simplest version of this. Given ζ ∈∂S, choose a positively oriented path c : [0; 1] →∂S, c(0) = c(1) = ζ, parametrizing the boundary component on which ζ lies. Let φt : Qc(t) →Qζ be the diﬀeomorphisms obtained from symplectic pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let (E, π) be an exact Lefschetz ﬁbration over a compact surface S, ∂S̸ = ∅, with a Lagrangian boundary condition Q. Assume that (E, π) has nonnegative curvature, and that the boundary condition satisﬁes R ∂S κQ < 0. Then Φ1(E, π, Q) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Let U ⊂S be a nonempty open subset, such that any partial section u : U →E|U which is horizontal and satisﬁes u(∂S ∩U) ⊂Q is the restriction of some u′ ∈Mh. Then, given some J ∈Jh(E, π, j), there are J′ ∈Jh(E, π, j) arbitrarily close to it and which agree with it outside π−1(U), with the property that any u ∈MJ′ \\ Mh is regular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "Let g be a smooth map from an arbitrary manifold G to Qζ, for some ζ ∈∂S. Let U ⊂S be a nonempty open subset, such that there are no horizontal partial sections u : U →E|U with u(∂S ∩U) ⊂Q. Given J ∈Jh(E, π, j), there are J′ ∈Jreg,h(E, π, Q, j) arbitrarily close to it and which agree with it outside π−1(U), such that evζ|MJ′ is transverse to g. Let TZar(Mh)u be the Zariski tangent space of Mh at some section u. It consists of those X ∈C∞(u∗T Ev) that satisfy ∇uX = 0 and lie in T Bu, meaning that X|∂S ⊂u∗(T Q ∩T Ev). The next result helps to determine when u, considered as a pseudo-holomorphic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "Take J ∈Jh(E, π, j) and u ∈Mh. Then TZar(Mh)u ⊂ker Du,J, and if moreover ∇u is nonnegatively curved, the two spaces are equal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-05.md",
+      "narrative": null,
+      "content": "(and is again just a sample application, in itself without any great importance, but hopefully instructive).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-007-06.md",
+      "narrative": null,
+      "content": "Assume that (E, π) has nonnegative curvature, and that the La- grangian boundary condition Q satisﬁes R ∂S κQ = 0. In addition, assume that Mh is clean and that its dimension agrees at every point with the index of Du,J. Then Φ1(E, π, Q) = [evζ(Mh)].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Horizontality",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "../sections/sec-007-22-horizontality.md",
+      "narrative": null,
+      "content": "Horizontality\nLet (E, π) be an exact Lefschetz ﬁbration. Choose a complex structure j on its\nbase. J ∈J(E, π, j) is called horizontal if Jx(T Eh\nx) = T Eh\nx for all x /∈Ecrit, or\nwhat is equivalent, if Ω(·, J·) is symmetric. In terms of (2.1) these are just the J\nwith Jvh = 0, which shows that they form a contractible subspace Jh(E, π, j) ⊂\nJ(E, π, j). The importance of horizontal almost complex structures is that they\nare sensitive to the geometry of the symplectic connection; the following is a\nparticularly simple instance of this.\nLemma 2.8. Let (E, π) be an exact Lefschetz ﬁbration over a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "For some 0 < r′ ≤r, there is a compact almost complex mani- fold with corners ( bEL, bJ), together with pseudo-holomorphic maps bEL ηL / ˆπL \u000f EL πL \u000f ¯D(r′) × ¯D(1) m / ¯D(r) where m(w, z) = wz is multiplication, such that the following properties are satisﬁed. (i) Away from ZL = (ηL)−1(x0)∩(ˆπL)−1(0, 0), the map ηL identiﬁes ( bEL, ˆπL) with the pullback of (EL, πL) by m. In particular, restricting to any w = s > 0 gives a pseudo-holomorphic diﬀeomorphism bEL,s = (ˆπL)−1({s} × ¯D(1)) −→EL,s. (ii) bEL carries a symplectic form bΩL which tames its almost complex structure, and which is of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "Choose some neighbourhood of the critical point x0 ∈EL. For suﬃciently small s, the image of all u ∈ML,s will lie in that neighbourhood.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "lem-sec-008-04.md",
+      "narrative": null,
+      "content": "Ms consists of maps w(z) = s−1/2az + s1/2¯a, where a ∈Cn+1 satisﬁes q(a) = 0 and ||a||2 = 1/2. All these maps are regular, in the sense that the associated Fredholm operators are surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Φ1(EL, πL, QL) = 0 for all M and L. The ﬁrst part of the proof is a degeneration argument, in which one restricts the base to successively smaller discs. For 0 < s ≤r set QL,s = S z∈∂¯ D(s) ΣL z ; to- gether with κQL,s and KQL,s as before, it is a Lagrangian boundary condition for (EL,s, πL,s) = (EL, πL) | ¯D(s). This constitutes a deformation of (EL, πL, QL) in a suitable sense; which means that if one identiﬁes ΣL r with ΣL s using parallel transport along [s; r], then Φ1(EL, πL, QL) = Φ1(EL,s, πL,s, QL,s) (2.17) for all s. Now ﬁx some J ∈Jh(EL, πL, j), where j is the standard complex struct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A vanishing theorem",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "../sections/sec-008-23-a-vanishing-theorem.md",
+      "narrative": null,
+      "content": "A vanishing theorem\nLet L be a framed exact Lagrangian sphere in an exact symplectic manifold\nM. According to Proposition 1.11 one can associate to it a standard ﬁbration\n(EL, πL) over ¯D(r) for some r > 0.\nEach ﬁbre EL\nz , z̸ = 0, contains a dis-\ntinguished Lagrangian sphere ΣL\nz , described by Lemma 1.12(i); for z = r, the\nisomorphism φL : EL\nr →M takes ΣL\nr to L. Deﬁne the standard Lagrangian\nboundary condition for (EL, πL) to be\nQL = S\nz∈∂¯\nD(r) ΣL\nz ,\nκQL = dc(−1\n4|z|) | ∂¯D(r),\nKQL = 0.\n(2.16)\nThis is indeed a Lagrangian boundary condition, as one can see from (1.20). Our\naim here is to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "For every J ∈J(E, π, j, {Je}) there is a closed subset K ⊂E \\ ∂hE such that π|K : K →S is proper, and which over the ends has the form Γ−1 e (K) = R±×[0; 1]×Ke for some compact Ke ⊂M \\∂M, such that u(S) ⊂K for all u ∈MJ({xe}) and all points {xe}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "lem-sec-009-03.md",
+      "narrative": null,
+      "content": "Jreg(E, π, Q, j, {Je}) is C∞-dense in J(E, π, j, {Je}). More pre- cisely, given some nonempty open subset U ⊂S which is disjoint from the ends, and a J ∈J(E, π, j, {Je}), there are J′ ∈Jreg(E, π, Q, j, {Je}) arbitrarily close to J, such that J = J′ outside π−1(U). The remaining issue is compactness. After taking a symplectic form Ω+π∗β on E as in Lemma 2.1, and the associated metric, one ﬁnds that 1 R W ||Du||2 ≤ A(u) + R W β for any compact subset W ⊂S and u ∈MJ({xe}). Repeating the argument in Lemma 2.3, one derives from this that any sequence (ui) in MJ({xe}) has a subsequence which is Cr-c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "lem-sec-009-04.md",
+      "narrative": null,
+      "content": "If Φ1(E2, π2, Q2) = 0 then Φrel 0 (E, π, Q) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "prop-sec-009-05.md",
+      "narrative": null,
+      "content": "For ﬁxed J1, J2, if one chooses σ to be suﬃciently large, then J is regular. Moreover, denoting again by [0] the zero-dimensional compo- nents, and by I−, I+ the negative and positive ends of S, one has MJ({xe})[0] ∼= [ x∈L0∩L1 MJ1({xe}e∈I−, x)[0] × MJ2(x, {xe}e∈I+)[0] for any {xe}e∈I−∪I+. The method used in the proof of this is the same as when setting up Floer cohomology. A thorough exposition of a closely related result can be found in [24, Section 4.4]. The implication for the relative invariants is clear: CΦrel 0 (E, π, Q, J) = CΦrel 0 (E1, π1, Q1, J1) ◦CΦrel 0 (E2, π2, Q2, J2), (2.30) wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative invariants",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "../sections/sec-009-24-relative-invariants.md",
+      "narrative": null,
+      "content": "Relative invariants\nA surface with strip-like ends is an oriented connected surface S, together with\nﬁnite sets I−, I+ and oriented proper embeddings {γe : R−× [0; 1] →S}e∈I−,\n{γe : R+ × [0; 1] →S}e∈I+, such that γ−1\ne (∂S) = R± × {0; 1}. The images of\nthe γe (the ends of S) should be mutually disjoint, and the complement of the\nunion of all ends should be a relatively compact subset of S. We will always\nassume that there is at least one end.\nDeﬁne an exact Lefschetz ﬁbration trivial over the ends of S to be an exact\nLefschetz ﬁbration (E, π), whose regular ﬁbres are isomorphic to some exact\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 45,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "It is maybe helpful to mention that Floer’s equation (2.22) itself can be made to ﬁt into this framework. Namely, take the surface S = R × [0; 1] and the trivial exact symplectic ﬁbration π : E = S × M →S, with the La- grangian boundary condition Q = (R × {0} × L0) ∪(R × {1} × L1); it is a tautology that this is modelled over the two ends of S on (L0, L1). Take the standard complex structure j on S, the same Je ∈J(M) for both ends e, and deﬁne J ∈J(E, π, j, {Je}) to be the product j × Je,t at a point (s, t, y). Sec- tions u : S →E with u(∂S) ⊂Q are of the form u(s, t) = (s, t, σ(s, t)), where",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "Assume that (E, π) has nonnegative curvature, and choose J ∈ Jh(E, π, j, {Je}). Then MJ({xe}) = ∅for all {xe} with χ({xe}) < −R ∂S κQ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "In the same situation, let α be the minimum of aL0,e,L1,e(x−) − aL0,e,L1,e(x+), taken over all e and all x± ∈L0,e ∩L1,e for which this is > 0. Then the spaces MJ({xe}) is compact, in the Gromov-Floer topology, for all {xe} such that χ({xe}) < − R ∂S κQ + α.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "For (E, π) and J as in Lemma 2.23, suppose that {xe} satisfy χ({xe}) = − R ∂S κQ; then MJ({xe}) = Mh({xe}). To translate these elementary observations into results about relative invari- ants, one needs to address again the question of regularity of horizontal almost complex structures; in other words, what is required are analogues of Lemmas 2.9 and 2.11. For the ﬁrst of these, both the statement and proof as essentially the same as in the original situation; the second needs to be adapted a little.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "Let U ⊂S be a nonempty open subset disjoint from the ends, such that any partial section w : U →E|U which is horizontal and satisﬁes w(∂S ∩U) ⊂Q is the restriction of a u ∈Mh. Then, given some J ∈ Jh(E, π, j, {Je}), there are J′ ∈Jh(E, π, j, {Je}) arbitrarily close to it and which agree with it outside π−1(U), such that for all {xe}, any u ∈MJ({xe}) \\ Mh is regular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-05.md",
+      "narrative": null,
+      "content": "Let (E, π) and J be as in Lemma 2.23. If u ∈Mh is a horizontal section with A(u) = 0, then ker Du,J = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-07.md",
+      "narrative": null,
+      "content": "Take (E, π), Q and κ as in Proposition 2.28, with Je, J as in part (ii). Then the map CΦ0 rel(E, π, Q, J) is of order [−κ; ∞). For a more precise statement, take α > 0 to be the minimum of χ({xe})+κ, ranging over all {xe} where this is positive. Then CΦrel 0 (E, π, Q, J) = φ+(CΦrel 0 (E, π, Q, J)−φ), where the ﬁrst summand is of order {−κ} and the second of order [−κ + α; ∞). Moreover, φ is determined by the horizontal sections: φ( ⊗ e∈I+⟨xe⟩) = X {xe}e∈I− #Mh({xe}e∈I−∪I+)( ⊗ e∈I−⟨xe⟩). There is a version of this for the homotopies between the CΦ0 rel for diﬀerent choices of (j, J). The proof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-08.md",
+      "narrative": null,
+      "content": "Let (E, π), Q and κ be as in Proposition 2.28. Consider two complex structures jk on S, k = 0, 1, and correspondingly two almost complex structures Jk ∈Jreg,h(E, π, Q, j, {Je}); note that the Je are supposed to be the same for both k. Then the maps CΦ0 rel(E, π, Q, Jk) are homotopic by a chain homotopy which is of order (−κ; ∞). It is a familiar idea that when dealing with maps between R-graded vector spaces, the “lowest order term” is usually the most important, and knowing it is often suﬃcient to resolve a question. A particular instance of this is relevant for our purpose.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-09.md",
+      "narrative": null,
+      "content": "Let D be an R-graded vector space with a diﬀerential dD of order [0; ∞). Suppose that D has gap [ǫ; 2ǫ) for some ǫ > 0. One can then write dD = δ + (dD −δ) with δ of order [0; ǫ), satisfying δ2 = 0, and (dD −δ) of order [2ǫ; ∞). Suppose that in addition, H(D, δ) = 0; then H(D, dD) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-010-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "lem-sec-010-10.md",
+      "narrative": null,
+      "content": "Take three R-graded vector spaces C′, C, C′′, each of them with a diﬀerential of order (0; ∞). Suppose that we have diﬀerential maps b : C′ →C, c : C →C′′ and a homotopy h : C′ →C′′ between c ◦b and the zero map, such that that the following conditions are satisﬁed for some ǫ > 0: (i) C′, C′′ have gap (0; 3ǫ), and C has gap (0; 2ǫ). (ii) For all r ∈supp(C′) and s ∈supp(C′′), |r −s| ≥4ǫ. (iii) One can write b = β + (b −β) with β of order [0; ǫ) and (b −β) of order [2ǫ; ∞); and c = γ + (c −γ) with the same properties. The low order parts (which do not need be diﬀerential maps) ﬁt into a short ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "prop-sec-010-06.md",
+      "narrative": null,
+      "content": "Assume that (E, π) has nonnegative curvature, and that any u ∈Mh satisﬁes A(u) = 0 and ind Du,J = 0. Set κ = R ∂S κQ. (i) Let U ⊂S be a nonempty open subset, disjoint from the ends, such that any partial horizontal section w : U →E|U with w(∂S ∩U) ⊂Q extends to a u ∈ Mh. Then for any J ∈Jh(E, π, j, {Je}) there are J′ ∈Jreg,h(E, π, Q, j, {Je}) = Jh(E, π, j, {Je}) ∩Jreg(E, π, Q, j, {Je}) arbitrarily close to J, and which agree with it outside π−1(U). (ii) If Je ∈Jreg(M, L0,e, L1,e) for all e, and J ∈Jreg,h(E, π, Q, j, {Je}), then νJ({xe}) = ( if χ({xe}) < −κ, #Mh({xe}) if χ({xe}) = −κ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Horizontality and relative invariants",
+      "pageStart": 45,
+      "pageEnd": 51,
+      "target": "../sections/sec-010-25-horizontality-and-relative-invariants.md",
+      "narrative": null,
+      "content": "Horizontality and relative invariants\nThe aim of this section is to extend the methods of Section 2.2 to surfaces with\nstrip-like ends. Throughout, (E, π) will be an exact Lefschetz ﬁbration over such\na surface S, trivial on the ends, together with a Lagrangian boundary condition\nQ modelled over the ends on pairs L0,e, L1,e ⊂M of transversally intersecting\nexact Lagrangian submanifolds. For {xe}e∈I−∪I+ with xe ∈L0,e ∩L1,e write\nχ({xe}) =\nX\ne∈I−\naL0,e,L1,e(xe) −\nX\ne∈I+\naL0,e,L1,e(xe).\nBy (2.23) A(u) = χ({xe}) +\nR\n∂S κQ for all u ∈B({xe}). After ﬁxing a complex\nstructure j on S which is standard",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "τL(L0), L1 intersect transversally, and there are injective maps p : (τL(L0) ∩L) × (L ∩L1) −→τL(L0) ∩L1, q : L0 ∩L1 −→τL(L0) ∩L1 such that τL(L0) ∩L1 is the disjoint union of their images. These maps have the following properties: (i) q is the inclusion q(x) = x. It preserves the values of the action functional, aτL(L0),L1(x) = aL0,L1(x). Moreover, for any w ∈τL(L0) ∩L1 and x ∈ L0 ∩L1 with w̸ = q(x) one has aL0,L1(x) −aτL(L0),L1(w) /∈[0; 3ǫ). (ii) Set ˜x = p(˜x0, x1). Then 0 ≤aτL(L0),L1(˜x) −aτL(L0),L(˜x0) −aL,L1(x1) < ǫ. (3.5) Moreover, for any w ∈τL(L0) ∩L1 and (˜x0, x1) ∈(τL(L0) ∩L) × (L ∩L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wrapping it up",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-011-3-wrapping-it-up.md",
+      "narrative": null,
+      "content": "Wrapping it up\nTechnically, the proof of the exact sequence is an application of Lemma 2.32.\nThe spaces C′, C, C′′ which occur in the lemma will be Floer cochain spaces,\nand the maps b, c relative invariants. While the deﬁnition of b is rather straight-\nforward, that of c uses some of the geometry from Chapter 1, speciﬁcally the\nstandard ﬁbrations constructed in Section 1.2. In both cases, the desired prop-\nerties follow from nonnegative curvature, that is to say Proposition 2.28 and\nrelated results. The homotopy h is obtained by comparing two diﬀerent con-\nstructions of a particular exact Lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "../sections/sec-012-31-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries\nThis section sets up the framework for the whole chapter. The data are: M is\nan exact symplectic manifold. L0, L1 ⊂M are exact Lagrangian submanifolds.\nL ⊂M is an exact Lagrangian sphere, which comes with a diﬀeomorphism\nf : Sn →L and a symplectic embedding ι : T (λ) →M for some λ > 0, such\nthat ι|T (0) = f. We use the Dehn twist τL deﬁned using ι and a function R.\nAlso given are small constants ǫ, δ > 0. The following conditions are required\nto hold:\n(I) L ∩L0, L ∩L1, L0 ∩L1 are transverse intersections, and L ∩L0 ∩L1 = ∅.\n(II) The actions aL0,L1(x) of distinct points x ∈L0 ∩L1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "Since we will establish the exact sequence under these conditions, it is necessary to convince ourselves that they do not restrict its validity in any way. Suppose then that we are given arbitrary exact Lagrangian submanifolds L0, L1 and a framed exact Lagrangian sphere (L, [f]) in M. After perturbing the submanifolds slightly, one can assume that (I) holds. Another such perturbation achieves (II) for some ǫ > 0. This is an instance of a general fact: by moving one of two transverse exact Lagrangian submanifolds slightly, the action of the intersection points can be changed independently of ea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "(E, π, Q) and U satisfy the conditions of Proposition 2.28(i).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "lem-sec-013-04.md",
+      "narrative": null,
+      "content": "For any (˜x0, x1) there is a “deformation” such that ˜x1 0 = x1 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "(i) tells us that there is a J ∈J(E, π, j, J(1), J(2), J(3)) which is both horizontal and regular. By part (ii) of the same result, the coeﬃcients νJ(˜x0, x1, x) for ˜x0 ∈τL(L0)∩L, x1 ∈L∩L1, x ∈τL(L0)∩L1, are zero whenever χ(˜x0, x1, x) = aτL(L0),L1(x) −aτL(L0),L(˜x0) −aL,L1(x1) (3.9) is < 0. Lemma 3.2(ii) shows that χ(˜x0, x1, x), if ≥0, must be either in [0; ǫ) or [3ǫ; ∞), and that the ﬁrst case only happens for x = p(˜x0, x1). Hence, if one writes the relative invariant as CΦrel 0 (E, π, Q, J) = φ + (CΦrel 0 (E, π, Q, J) −φ), φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x1, p(˜x0, x1))⟨p(˜x0, x1)⟩ (3.10) then φ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prop-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "prop-sec-013-03.md",
+      "narrative": null,
+      "content": "νJ(˜x0, x1, p(˜x0, x1)) = 1 for all (˜x0, x1). There is one particular case of this which follows from the previous con- siderations. Namely, suppose that there is a pair (˜x0, x1) with ˜x0 = x1 = x ∈τL(L0) ∩L ∩L1. In that case p(x, x) = x and χ(x, x, x) = 0 by Lemma 3.2(iii), and therefore νJ(x, x, x) = #Mh(x, x, x) by Proposition 2.28(ii). Now #Mh(x, x, x) = 1 because, as we saw already when proving Lemma 3.3, the unique element of that space is the constant section u(z) = (z, x). Our strategy will be to reduce the computation of all the νJ(˜x0, x1, p(˜x0, x1)) to this case, by using suitabl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first map",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "../sections/sec-013-32-the-first-map.md",
+      "narrative": null,
+      "content": "The ﬁrst map\nLet S be the surface in Figure 3, which has three boundary components ∂kS\nand three strip-like ends (two positive and a negative one). Take the trivial\nexact symplectic ﬁbration π : E = S × M →S, with Ω∈Ω2(E), Θ ∈Ω1(E)\npulled back from ω, θ.\nEquip this with the Lagrangian boundary condition\nQ = (∂1S × τL(L0)) ∪(∂2S × L) ∪(∂3S × L1); κQ is zero, and KQ(z, x) is equal\nto KτL(L0)(x), KL(x) or KL1(x), for z in the respective component ∂kS. This\ngives rise to a relative invariant\nΦrel\n0 (E, π, Q) : HF(L, L1) ⊗HF(τL(L0), L) →HF(τL(L0), L1).\nThe purpose of this section is to analyse this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/rem-sec-013-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 60,
+      "target": "rem-sec-013-05.md",
+      "narrative": null,
+      "content": "Our relative invariant is the well-known pair-of-pants product, or Donaldson product; in fact, if u(z) = (z, σ(z)) lies in MJ(˜x0, x1, x), then σ : S →M is a “pseudo-holomorphic triangle” whose sides lie on τL(L0), L, L1 and whose vertices are ˜x0, x1, x. Proposition 3.4 asserts that there is an odd number of low-area triangles with certain speciﬁed vertices. In the lowest dimension, n = 1, one can see directly that there is precisely one such triangle (Figure 5). In higher dimensions it is still easy to construct explicitly the analogue of this particular triangle, but proving that there are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 64,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "(E, π, Q) together with U = (−1; 1) × [−1; 1] ⊂S satisﬁes the conditions of Proposition 2.28(i). Moreover, given w ∈τL(L0) ∩L1 and x ∈ L0∩L1, the space Mh(x, w) contains precisely one horizontal section if w = q(x), and is empty otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second map",
+      "pageStart": 60,
+      "pageEnd": 64,
+      "target": "../sections/sec-014-33-the-second-map.md",
+      "narrative": null,
+      "content": "The second map\nFrom this point onwards, we add one more assumption to those in Section 3.1:\n(VI) R is the function Rr which appears in the construction of exact Lefschetz\nﬁbrations in Lemma 1.10, with the given λ and some 0 < r < 1/2 which\nwe are free to choose; see more speciﬁcally (1.19) for this function.\nSince that severely restricts the choice of R, one needs to worry about possible\nconﬂicts with the other conditions, or that it might restrict the ultimate scope\n60\nof the exact sequence. An inspection of Remark 3.1 shows that the only issue\nis whether, using R = Rr, one can satisfy (V) wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "ensures that one can choose a J ∈ J(Ebc, πbc, Qbc, j, J(1), J(2), J(5)) which is both horizontal and regular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-02.md",
+      "narrative": null,
+      "content": "For any such J, CΦrel 0 (Ebc, πbc, Qbc, J) : C′ −→C′′ is homotopic to c ◦b by a chain homotopy which is of order (0; ∞).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-03.md",
+      "narrative": null,
+      "content": "Take the subset U o ⊂So shaded in Figure 11. Then there are no horizontal sections u : U o →Eo with u(∂So ∩U o) ⊂Qo. o,- S S o,+ o,- S o,+ S Figure 11: For the following step, we need the ﬁbration (Ep, πp) over Sp = ¯D(1/2) from Section 3.3, which was deﬁned as pullback of a standard ﬁbration. The stan- dard boundary condition from Section 2.3 pulls back to a Lagrangian boundary condition Qp for it. As it stands κQp = dc(−1 4|z|) is nonzero everywhere, but for us it is better to modify it by some exact one-form, in such a way that it becomes zero near −1/2 ∈∂Sp. This can be compensated by a ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-04.md",
+      "narrative": null,
+      "content": "Let U p ⊂Sp be the complement of a suﬃciently small neighbour- hood of −1/2 ∈∂Sp. Then there are no partial horizontal sections w : U p →Ep satisfying w(∂Sp ∩U p) ⊂Qp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-05.md",
+      "narrative": null,
+      "content": "There is a complex structure j on S, standard over the ends, and a J ∈Jreg,h(E, π, Q, j, J(1), J(2), J(5)), such that CΦrel 0 (E, π, Q, J) : C′ −→C′′ is homotopic to zero by a chain homotopy of order [−2πR(0); ∞).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/lem-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "lem-sec-015-06.md",
+      "narrative": null,
+      "content": "References [1] V. I. Arnol’d. Some remarks on symplectic monodromy of Milnor ﬁbrations. In H. Hofer, C. Taubes, A. Weinstein, and E. Zehnder, editors, The Floer Memorial Volume, volume 133 of Progress in Mathematics, pages 99–104. Birkh¨auser, 1995. [2] P. S. Aspinwall. Some navigation rules for D-brane monodromy. Preprint hep- th/0102198. [3] P. Braam and S. K. Donaldson. Floer’s work on instanton homology, knots and surgery. In H. Hofer, C. Taubes, A. Weinstein, and E. Zehnder, editors, The Floer Memorial Volume, volume 133 of Progress in Mathematics, pages 195–256. Birkh¨auser, 1995. [4] A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0105186v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The homotopy",
+      "pageStart": 64,
+      "pageEnd": 71,
+      "target": "../sections/sec-015-34-the-homotopy.md",
+      "narrative": null,
+      "content": "The homotopy\nAt this point it becomes necessary to change the notation slightly, in order to\navoid conﬂicts. Thus, the ﬁbration used in Section 3.2 to deﬁne the map b will\nbe denoted by (Eb, πb), its base by Sb, and its Lagrangian boundary condition\nby Qb; and correspondingly we write (Ec, πc), Sc, Qc for the objects constructed\nin Section 3.3 to deﬁne c. Over the unique negative end of Sb, Qb is modelled\non (τL(L0), L1), and the same holds for Qc over the positive end of Sc. As\ndescribed in Section 2.4, one can glue these ends together to obtain a new exact\nLefschetz ﬁbration (Ebc, πbc) over",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

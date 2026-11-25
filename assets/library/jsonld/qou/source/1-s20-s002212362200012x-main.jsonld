@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s002212362200012x-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "contains": [
+    "library/1-s20-s002212362200012x-main/sections/sec-front-matter",
+    "library/1-s20-s002212362200012x-main/sections/sec-000",
+    "library/1-s20-s002212362200012x-main/sections/sec-001",
+    "library/1-s20-s002212362200012x-main/sections/sec-002",
+    "library/1-s20-s002212362200012x-main/sections/sec-003",
+    "library/1-s20-s002212362200012x-main/sections/sec-004",
+    "library/1-s20-s002212362200012x-main/sections/sec-005",
+    "library/1-s20-s002212362200012x-main/sections/sec-006",
+    "library/1-s20-s002212362200012x-main/sections/sec-007",
+    "library/1-s20-s002212362200012x-main/sections/sec-008",
+    "library/1-s20-s002212362200012x-main/sections/sec-009",
+    "library/1-s20-s002212362200012x-main/sections/sec-010",
+    "library/1-s20-s002212362200012x-main/sections/sec-011",
+    "library/1-s20-s002212362200012x-main/sections/sec-012",
+    "library/1-s20-s002212362200012x-main/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube — V Article history: Received 17 December 2020 Accepted 13 January 2022 Available online\n\n**Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube**\n\n*Log concavity and concentration of Lipschitz*\n\n22 pp, 15 sections.\n\n**Abstract.** V Article history: Received 17 December 2020 Accepted 13 January 2022 Available online 19 January 2022 Communicated by Pietro Caputo\n\n**Outline.** Front matter; Log concavity and concentration of Lipschitz f; 1 Introduction; 1.1 A lower bound on the entropy; 1.2 An application: concentration of negativel; 1.3 Relation to the works of Anari, Liu, Oveis; 2 Preliminaries and a stochastic construction; 2.1 Some preliminary definitions; 2.2 Stochastic localization; 3 Proof of Theorem 2; 3.1 Estimating the variance in terms of the tr; 3.2 Proof of Proposition 15: the stochastic co; 4 Proof of Fact 4; 5 Proof of Theorem 6; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "1-s20-s002212362200012x-main",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1-s2.0-S002212362200012X-main.pdf",
+    "source_sha256": "6fc7d28c8d40bf423dd361a7a83ce95503ca8e54248b5c67d2bd80b6b9692453",
+    "pages": 22,
+    "arxiv": null,
+    "doi": "10.1016/j.jfa.2022.109392",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

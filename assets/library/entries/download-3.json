@@ -1,0 +1,1170 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "download-3",
+  "blocks": [
+    {
+      "id": "library/download-3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "This paper is the first in a series aimed at providing an algebraic insight to various\nAtiyah-Singer type index theorems.\nIn recent years much research was devoted to finding explicit local proofs of\nAtiyah-Singer and Riemann-Roch theorems. In the works of Bismut, Gillet, Soule,\nGetzler, Witten and Fedosov, the index of an operator (usually Dirac operator) was\nexpressed as the trace of a certain infinite dimensional operator; the asymptotic ex-\npansion of this trace provided a local formula. OΈrian, Toledo and Tong [TT, BTT]\ndeveloped an explicit method of computing a certain cohomology class",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Co_ Math. Phys. 172, 223-262 (1995) \nCommunications IΠ\nMathematical\nPhysics\n© Springer-Verlag 1995\nAlgebraic Index Theorem\nRyszard Nest\n1, Boris Tsygan\n2'*\n1 University of Copenhagen\n2 Department of Mathematics, Eberly College of Science, Pennsylvania State University, 218\nMcAllister Building, University Park, PA 16802, USA\nReceived: 1 April 1993\nAbstract: We prove the Atiyah-Singer index theorem where the algebra of pseudo-\ndifferential operators is replaced by an arbitrary deformation quantization of the\nalgebra of functions on a symplectic manifold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Tr(e - e(oo)) = J(c/z(β0) - tr β0(oo)) td(ω) e~ C}(ω^ 2e° /fi . M For the special deformations this was proved by B. Fedosov [F]. The purpose of this paper is to prove this theorem using the method outlined above. In fact the paper is mainly devoted to constructing the analogue of the fundamental cyclic cocycle Θ. First, in Sect. 2, we construct a Poincare duality map in cyclic homology. Let AQ be an algebra over commutative ring k, g a Lie subalgebra of Der(^o). Let τ: AQ/^AQ —» k be a trace. We construct a map where C* is the standard Lie algebra complex and CC*er is the periodic cyclic coch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "&(A)-^ CCf",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-a--ccf.md",
+      "narrative": null,
+      "content": "τ(A) \nand /D, Lfl: CCΓ(^) -^\nCC^Ί^). Also define the 22-graded differential Lie algebra ((gx4)[ε],<5 + <5ι),\nwhere (5ι(Z) -f α) = αc/(0) and c>ι is (C[ε]-linear.\nIt is not true that this algebra acts on CC*\nQl(A); for example, [/£>>*£•]ΦO. How-\never, it is true that:\nthe differential ^-graded algebra ((QxA)[ε]',δ + 0\\) acts on the ^-graded\ncomplex CC*\nQΐ(A) up to homotopy.\nWe explain what this means and provide all the details in Appendix 1. The fact\nabove is crucial for our approach. We do not need it in full strength for the proof\nof Theorem 1.1.1; it is needed, however, for the future appli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Algebraic Index Theorem",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-1-the-algebraic-index-theorem.md",
+      "narrative": null,
+      "content": "Let M be a C°° manifold with a symplectic structure ω. Let { , } be the Pois-\nson bracket on C°°(M) associated to ω. Let ft be a formal parameter, and let\nC°°(M)[[ft]] be the vector space of formal power series in ft with coefficients in\nA deformation of C°°(M) compatible to ω is by definition ([Ger, BFFLS]) a\n] -bilinear, (ft Radically continuous associative multiplication * on C°°(M)[[ft]]\nsuch that for f,g G C°°(M),\nwhere φ/ (/,£/) £ C°°(M) and φ \\ ( f , g ) - φ \\ ( g , f ) = {/,#}• We assume that\ni) q>j(f,g) \nare bidiflferential operators on C°°(M);\n11) 1 * / = / * ! = / for any / G C°°(M)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tr(/*0)=",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-tr0.md",
+      "narrative": null,
+      "content": "One can easily show that the traces form a one-dimensional vector space over\nl , h ] ] (we prove a stronger statement in Appendix 2). One can obtain the\ncanonical generator of this space as follows. First (cf. [BFFLS] and [G]) M admits\na cover by open sets U such that A\nfl(U) \nis isomorphic to the standard Weyl\ndeformation (we recall the definition in (5.1.1)) A^(50), where £0 C IR\n/? is the\nopen unit ball with the standard symplectic form CUQ. Let gu : A\ntΊ(U) ^ A^(B$) be\nthis isomorphism. For a function / with support inside U put\nThis does not depend on an isomorphism gu because Tr is invar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Under the notation and assumptions above, let e be an idempotent in MN(A%(M)). Then Tr(e - e(oo)) = J(ch(e0) - ch(e0(oo)) td(ω) e~ C](ω)/2 em .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/def-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "def-sec-004-03.md",
+      "narrative": null,
+      "content": "a) CCm(A) = C/n(^)/im(l - /) . b) The cyclic homo logy of A is the homo logy of the complex (CC*(A\\b + <5). It is denoted by HCm(A\\ m ^ 0. c) Put A = A/k\\ for p G Z, put / = /?(mod2) CC% t(A)= Π CC%(A). The homology of the complex (CC^\\A}\\b -f B -f δ) is called the periodic cyclic homology of A. (It is easy to see that the differentials b,B and δ still make sense if one replaces d) Put",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "B 2 = (B + 6) 2 = 6 2 = 0. /V00/ Direct computation. Cf. [LQ, Bu]. D Put Cm(A)= U CW(Λ) p+q=m We let the differential 6 act on C*(yί) by m 6(aQ 0 Θ α w) = ^(-1 ) //A«0 0 (8) ^(«A) 0 Θ αm , (2.1.3) λ=0 where μk = Σ(k +1). /=!",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "(B ± b + δ) 2 = (b + δ) 2 = 0. Proof Direct computation. D It is well known that the differential b preserves the image of 1 — /.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characteristic Map Associated to a Trace",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-2-characteristic-map-associated-to-a-trace.md",
+      "narrative": null,
+      "content": "Section 2. Characteristic Map Associated to a Trace\n2.7. Cyclic (Co)homology and Lie Algebra (Co)homology in the \nDifferential\nGraded Case. Suppose A = @1>QA1 is a differential graded algebra over a commu-\ntative ring k D Q with the differential δ : A, —•> Λ(/_ι; (5\n2 — 0; <5(α6) = δ(«) \n(έ>) +\n( —l)'\nα'α \n<5(&). Here and below, given a homogeneous element a of A, we denote\nby \\a\\ the degree of a.\nLet Cmι(A) = (A ®A®\nm)ι for m, / ^ 0. Define the cyclic permutation /I by\nO / \nΛ> \nK^ \n\\ \n/ \n1 \\ ( | f l / l l l + l )J]m A \n(k, l + l ) \nΛ> \nΛ> \n/^\nA(flQ Qs) \n* Qy β/w ) := (— 1 J\n \n;^/=U\n \nV | \"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/def-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "def-sec-005-01.md",
+      "narrative": null,
+      "content": "Put CC m(A) = CCm(A}' = CC£r(A)= 0 e (A® A* 1) 1; p+q=mj=m(mod 2) the cyclic cohomology, resp. periodic cyclic cohomology, of A is the cohomology",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CCm(A)=",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-ccma.md",
+      "narrative": null,
+      "content": "0 \n(A®\n P+ } /im(l-/),\nHC*(A) = H*(CC*(A); b + δ ) .\nHC*(A) is called reduced cyclic homology.\n232 \nR. Nest, B. Tsygan\nDefinition 2.1.4. Put\nCC\nm(A) = CCm(A}' =\nCC£r(A)= 0 \ne \n(A® A*\n1)\n1;\np+q=mj=m(mod 2)\nthe cyclic cohomology, resp. periodic cyclic cohomology, of A is the cohomology",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/def-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "def-sec-006-03.md",
+      "narrative": null,
+      "content": "Let A be an algebra over k', let A be the algebra A with ad- joined unit. Then CC*(A) = ker(CC*(2) -» CC*(λ)),CC*er(Λ) - ker(CCΓ(2) -> CCΓ(k)} etc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CC*(A\\",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-cca.md",
+      "narrative": null,
+      "content": "dual to b + <5, resp.\nb + BΛ-δ.\nRemark 2.1.5. In the two definitions above, we concentrated upon the versions of\nthe cyclic theory which would be of main use in the sequel. The cyclic homology\nadmits another definition, in the spirit of 2.1.3 c).\nPut\n~CR) /\nC%(A)= \nφ \nA®A*'\n/Ξ/?(mod2); j^p\nc\nc\nm\nv(A)= Θ σ&A).\np -\\-q-m\nThen homology of the complex (Cl\ny(A}\\ b + B + 0) is isomorphic to HC^(A) (recall\nthat we assume Q C k).\nAlso, we can replace A® A \nby A®\n(j+{\"> in all the definitions above. The\n-— — per\n(co)homology stays unchanged. We will denote corresponding complexes by CC* ,\nCCper or Cl\ny.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "In the two definitions above, we concentrated upon the versions of the cyclic theory which would be of main use in the sequel. The cyclic homology admits another definition, in the spirit of 2.1.3 c). Put ~CR) / C%(A)= φ A®A*' /Ξ/?(mod2); j^p c c m v(A)= Θ σ&A). p -\\-q-m Then homology of the complex (Cl y(A}\\ b + B + 0) is isomorphic to HC^(A) (recall that we assume Q C k). Also, we can replace A® A by A® (j+{\"> in all the definitions above. The -— — per (co)homology stays unchanged. We will denote corresponding complexes by CC* , CCper or Cl y. There are obvious morphisms of complexes (shift",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "At one point we will use yet another equivalent definition of cyclic homology. Let b 1 \\ A® m+l -> A® m be same as in formula (2.1.2) but without the last summand. Then b(\\ - /) = (1 - λ)b' and b'N = Nb (this is why the image of 1 — / is invariant under b). Therefore the complex NC*(A)',b') is isomorphic to CC*(A\\",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-006-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-006-04.md",
+      "narrative": null,
+      "content": "In this paper, k will be either (C or <C[[ft]] or C[ft~ ',/!]]. The alge- bra A will be mainly A Λ(M) or Ag(M). Then in definitions above CC*(A\\C*(A} will involve completed tensor products (both in C°° and (ft)-adic topology); also, CC*(y4), C*(^4y, etc. will mean topological duals. Sometimes we will write CC* (A\\ etc. to emphasize that the tensor products are taken over k. Now, let g be a differential graded Lie algebra with the differential δ of degree —1. Algebraic Index Theorem Define Λ(g) = Γ(g)/(A 0D2 - ( We define the grading on Λ(g): +1). / = ! Define a t/(g)-module map δ Ue on C/(g Θ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The following maps are well defined morphisms of complexes: do®--® am ^ EQ\\(CIQ) Λ E\\2(a\\ ) Λ Λ EmQ(am) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ΛA,;)",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-λa.md",
+      "narrative": null,
+      "content": "= Σ(-l)\nσ\"X®D\\ Λ ••• Λ A-i Λ[A,£>/]Λ ••• ΛD, Λ ••• Λ Dn\n/</\n+ Σ(~ ! )\nσ/;ro/ Λ A Λ \nΛ A Λ \nΛ Dm ,\n/=!\nwhere\n<τι, = i + μr| + Σ (IAI +\n/ < A- < /\nExtend 0 to the endomoφhism of £/(g) Θ Λ(g) of degree — 1:\nδ(X (g) Z), Λ - \n- Λ A,,) =c>(^) 0 Di Λ \n- - Λ Dm + f^(-\n/=!\nx X 0 A Λ \n- Λ <5φ7 ) Λ \nΛ Dm .\nOne has δ\nUe \n<5 + (5 ^\nLlc = (c)\nLie)\n2 = δ\n2 = 0. We denote the complex (C/(g) (g) Λ(g),\nc)\nLlc + ^)by ^(g).\nLet I) be a reductive subalgebra of go C g which is annihilated by 0. We assume\nthat ί) acts semisimply on g. Define the right action of I) on Λ*(g):\n(X 0 A Λ \nΛ Dm)h = Xh (g) Di Λ \n- Λ Dm + Σ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "Let k[ε] be a two-dimensional Grassmann algebra: c,\\ = 1, ε 2 = 0. Put g[ε] = g(8)A ^[e]. By the Poincare-Birkhoff-Witt theorem ί/ίgM^C/ίg) 0 Λ(g) as a ^-module; let 4^ be the derivation of degree —1 sending ε to 1 and D to 0, D G g. Also, the differential 0 extends to g[ε] (put ^(ε) = 0). Under the isomor- phism above, these two differentials become — o Lιe and 0. Also, /?*(g, f))— >£/(g[ε]) _ For an associative algebra A, put A{ε} = A *k k[ε]. Then CC*-\\(A)^A{t\\}/ (A + [^{ε},yτ({ε}]). Under this isomorphism, 4^ and 0 become b and 6 from for- mulas (2.1.2, 2.1.3). 2.2. The Characteristic Map.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "Our main examples will be A = A^(M), AQ = A^(M) (or may be matrices over these rings). The ideal AQ is NOT the zero degree part of A. Let g be a Lie subalgebra of Dsr(A) which includes ad (A) and preserves AQ. Suppose, moreover, that τ is a g-invariant trace on AQ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/cor-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "cor-sec-008-03.md",
+      "narrative": null,
+      "content": "The following is a commutative diagram of morphisms of complexes: C.(gχ4) \"",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/def-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "def-sec-008-04.md",
+      "narrative": null,
+      "content": "The induced map χτ : ~HC*^}(A) -» //C*er(^o) is called the Poin- care duality map associated to a trace τ. Recall that there is the long exact sequence > HCn(k) -* HCn(A) -^ ΉCn(A) Λ HCn-λ(k) -+ - - - .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "For any X in g xA, [b,iχ] + ii>x =0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-008-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "lem-sec-008-09.md",
+      "narrative": null,
+      "content": "If in α , then ev is a cycle in C*(α ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "*τ L ι e=£χ τ; χτ δ = bχτ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "prop-sec-008-06.md",
+      "narrative": null,
+      "content": "There exists the product • : HCa(k) 0 HCb(k) -> HCa+b+2(k) R. Nest, B. Tsygan such that: ^ t .(Π+o = (Jn)[l^(2n+\\) for any n ^ o; ii) for α G #cl(Λ), 0 G #C*(5) δ(α (Jβ} = dx dβ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.(gχ4) \"",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-cgχ4.md",
+      "narrative": null,
+      "content": "235\nLet A be another copy of A but with shifted grading: At = A,-\\. Consider the\ndifferential graded Lie algebra g x A,\nΠ x a = 9 +4; [4,4] = 0\n[D,a\\ = [D,a] \nfor D <Ξ g, 0 G A\n<$(£>) = 0, D G g; \n<5(α) - (-l)\nHα</(» .\nFor an element X of §xA define the operator\nby\nlflo \n£>(flι ) 0 fl2 ® ' ' 0\nLemma 2.2.1. For any X in g xA,\n[b,iχ] + ii>x =0.\nProof. Direct computation.\nDefinition 2.2.2. Let χτ be the map\ngiven by\nχτ(Xl Λ\nwhere α G CCΓ'(^o) and sgn(σ) is the sign of the permutation σ of graded ele-\nments X ] , . . . ,Xm determined by\nsgn \ni \n\" \n~ \ni = t — i ϊ\nv κ * ' > ' ' '\nA l^ '\n+ 1^\nProposi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-008-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "rem-sec-008-07.md",
+      "narrative": null,
+      "content": "Formula (2.3.4) i) is equivalent to S([* n) = -l^-D for any n > 0. Proof of 2.3.4. The composition CCa(A[η])®CCb(B[η]) -> C defines a product for which η Un = (n — l)\\η® n. Now, as we have seen above, the boundary map d induces the isomorphisms HCa(A[η]) — » HCa-\\(k\\ etc., and - U(/7+l) _ (2w)[ ι(g;(2/ι+l) Π ' — /?! . i — i",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-008-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "rem-sec-008-08.md",
+      "narrative": null,
+      "content": "It is easy to write the explicit formula for the Poincare duality map χτ. Let jci 0 ®xp G ~CC P-\\(A\\ a0 0 0 ap G CC^o). Let / = (1 2... p) be the cyclic permutation. Then (χτ(x\\ Θ Θ *„),*<) ^ * ' 0 βp) =(-l) M/?\" 1)/2 Σ sgn(/') 2.4. Examples. Let A—A§+A\\ be a Z^ -graded algebra. Let F G A\\ such that F 2 — 1. Let τs : A — > A: be an even supertrace on /I; i.e., τs(ab) = (—l)\\ a\\\\ b\\τ s(ba).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "thm-sec-008-05.md",
+      "narrative": null,
+      "content": "The Poincare duality map χτ factorizes through the boundary map d: 7/C*-ιM) where",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "There exist the morphisms of complexes χτ,χτ such that: i) the diagram below commutes in the derived category: :C*-ι(A Λ)) -£+ CCp-r*(Aj(A/)) Ί ii) //ze composition of χτ, rayλ χτ vwY/z ί/z£ morphism CC*(A n(M)) — > C*(M, CC*(A Λ)) ra/λ CC*(£) -> C*(M,CC*(£)), « e^wα/ to χτ, ras/λ χ defined in Theorem 2.3.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "x[F,a2]...[F,an]e-",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-11-xfa2fane.md",
+      "narrative": null,
+      "content": "x[F,a2]...[F,an]e-\nt\"\nF2)xdtl \n•••&„;\nhere Δ\nn = {(f0,...Λ)IΣ'ι = l t, ^ 0}.\nWe thus recover the formula of Jaffe, Lesniewski and Osterwalder [JLO]. Of\ncourse, if the argument α0? •••,#/? are even, then the components of the periodic\ncyclic cocycle above are zero whenever n is odd.\nSection 3. Globalization and the Fundamental Class\n3.1. The Cech-cyclic Complexes \nand the Characteristic \nMaps. Let, as in\nSect. 1, (M, ω) be a symplectic C°° manifold and let A\nf\\M) \nbe a formal\ndeformation of C°°(M) such that φ\\(f,g)-φ\\(g,f) \n= {f,g} \nis the Poisson\nbracket associated to the symplectic structure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/cor-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "cor-sec-010-01.md",
+      "narrative": null,
+      "content": "There exists a commutative triangle for any m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-1-in-the-same-fashion-we-get-the-morphism-2τ-cm.md",
+      "narrative": null,
+      "content": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*(\ngiven by\n{ct/o...^} \n1 '\" » Σ ^O.^/^-'T)/,^ [ft + B, I \n] x ... x [5 + b, /„ ]) . D\nz/Ov ,Wp\nCorollary 3.1.2. There exists a commutative triangle\nfor any m.\nRemark 3.1.3. Clearly, the cup product defines the //*(M, £)-module structures on\nall three ^-modules above (since CC*el(A\nΛ) and C*(M, CC*er) are quasi-isomorphic),\nand all the morphisms above are in fact morphisms of H*(M, k) modules.\nAlgebraic Index Theorem \n241\nThe same construction may be carried out if one replaces A\nh(U) by A\nfl(U)[h~\n]]\n= A\nh(U) ®<r[[Λ]] Cpi\"\n1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "Clearly, the cup product defines the //*(M, £)-module structures on all three ^-modules above (since CC*el(A Λ) and C*(M, CC*er) are quasi-isomorphic), and all the morphisms above are in fact morphisms of H*(M, k) modules. Algebraic Index Theorem The same construction may be carried out if one replaces A h(U) by A fl(U)[h~ ]] = A h(U) ®<r[[Λ]] Cpi\" 1,^]] and puts k = <C\\h~\\K\\]. We denote the bicomplex by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C^MCC^A^ft-",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-cmccaft.md",
+      "narrative": null,
+      "content": "1])) or ^(M,A\nn[H-\n]]) and its homology by Jf *(M, A*^\"\n1]).\nThe next two subsections are devoted to the proof that \n3#\n>2n-\\(M,A\nfl(U)[h,~\n1])\nis canonically one-dimensional. In 3.2 we show this when M = IR\n2'\n2; in 3.3 we\nprove this for arbitrary M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Computation of^2n~\\-",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-32-local-computation-of2n.md",
+      "narrative": null,
+      "content": "Theorem 3.2.1. SC/(A\nΛ(lR\n2/I)[ft-\n1])~ A: / / / = 1,3,..., 2/7- l ΉC^A^IR\n2'\n7)^-\n1])\n= 0 otherwise.\nProof. It is well known [BFFLS] that any formal deformation of IR\n2\" corresponding\nto the standard symplectic structure is isomorphic to the standard deformation\nwhere α = (αι,...,α w), α, ^ 0. Consider the (ft)-adic filtration of the Hochschild\ncomplex C*(A\nΛ). The corresponding spectral sequence converges because the fil-\ntration is complete. One has E\n] = ////*(C°°(IR\n2'\n7)) = ί2*(R\n2'\n7); the differential in\nZs\n1 acts from Ώ* to Ω*\"\"\n1; if one identifies Ω\n1 with Ώ\n2/7~\n7 via the form ω, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "Clearly, the chain j.(ξ\\ <&x\\) or the homologous chain ^(ζ\\ ®x\\ — x\\ 0Cι)) represents the generator Ω\\ of //Cι(A^(R ] )), and dΩ\\ = 1. Now, put Ωn = Ω^' 1; then Ωn is represented by the chain ^ ^(ξ\\ Λ c;7 Λ Λ c /\\xn) and 3ί2w = l* /? because of Proposition 2.3.4. 3.3. Computation of Jf 2/7-1 ^^^ ^^ Fundamental Class. Consider the spectral sequence associated to the double complex ^-/;,m from 3.1. The first differential is b\\ thanks to Theorem 3.2.1, one has E-p,m =H P(M,k\\ m = 1,3,..., 2/7- 1 E 2_p m — 0 otherwise . In particular, E 2_p 2/7_, = k and E 2_p m = 0, m > 2n — 1. Therefore there is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "SC/(A Λ(lR 2/I)[ft- 1])~ A: / / / = 1,3,..., 2/7- l ΉC^A^IR 2' 7)^- 1]) = 0 otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/cor-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "cor-sec-013-02.md",
+      "narrative": null,
+      "content": "Σk^o s~ kXπ( Ω ' ΓA') = S~ n+lTr, where e 0/*e- c* (ω)/2td(ω) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/cor-sec-013-15",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "cor-sec-013-15.md",
+      "narrative": null,
+      "content": "77ze fundamental class ΩL (resp. Ω) may be represented by a cochain in C*(π,u(«); Ccf }(A f7(lR 2/?))), re 6.5. One-Dimensional Families. Let IR+ = {/ G IR λ > 0}. Let A fα(M x IR+) be the deformation of C°°(M x IR+) given by If U is a coordinate neighborhood in M such that A tl(U) is isomorphic to the Weyl deformation then A fv(£7 x JR+)-^ A /'(^/)(8)C 00(R+). The isomorphism is given by f ( x , ζ ) i—> f(x,λξ). Let M x IR+ be the space of pairs (x,φ), where x is a point of M x IR+ and φ is an oc-jet of an isomoφhism A Λ' / (ί/Λ:)-^A^(R 2)[[/]]. The group GQ of automoφhisms of A Λ(IR 2)[[/]]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/cor-sec-013-17",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "cor-sec-013-17.md",
+      "narrative": null,
+      "content": "For a G HCΓ(JK f^(M x R+)), — Ύ r ( a e~ — ) = 0 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-04.md",
+      "narrative": null,
+      "content": "The morphism μ : //Cf r(A^(M)) -» H*(M) commutes with the ac- tion offf*(M9<C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-06.md",
+      "narrative": null,
+      "content": "The principal bundle M -^ M/Sp(2n) is homotopically equivalent to the principal bundle J^(M) —? M, where jF(M) is the space of symplectic frames on M. 5.2. Lie Algebra Cohomology, Cohomology of M/Sp(2n) and Characteristic Classes. Let g = {φ G A^(lR 2' 7)o/(C[[ft]] l\\φo real} with the bracket [φ,ψ] = j^(φ * ψ — ψ * φ). Clearly, go is the subalgebra of g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-07.md",
+      "narrative": null,
+      "content": "There exists the natural action of g on M which extends the action of go- It induces the isomorphism g ^ T^m^M for any point (m,φ) ofM.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-08.md",
+      "narrative": null,
+      "content": "μ(ck) = ck(ω) E // 2A(M,(C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-10.md",
+      "narrative": null,
+      "content": "The map /S r*[ί) /] l) — » 7/ 2*(g[ε],ί)), P ι— » c />, w αw isomorphism', also, // 2* +l(g[ε],i)) = o. For the readers' convenience let us sketch the proof. Since (g[ε],c>) is con- tractible as a complex, the cohomology of the differential induced by 6 on C*(g[ε],l)) is isomorphic to S*[r/] l). The isomorphism sends Λ pg 0 Λ^gε to zero for p > 0; for p = 0 it sends an element of Λ^εg') 1' = ^(9') l) to i ts restriction to I). Thus, the spectral sequence of the double complex (C*,o Lιe,<5) collapses. D We now have a slight technical difficulty because the action of εg<r does not preserve the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-11.md",
+      "narrative": null,
+      "content": "Γ/iere ex 'ίίί « quasi-isomorphism C*(g« [e],ί);CC,(A:)) ^ C (g Γ[ε],;CC ( l )(A)) (6.2.1) which extends the obvious embedding ) . (6.2.2) Proo/ Consider the spectral sequence of the double complex (3 Llc + δ\\b). One has E 2_M =// /?(g(Γ,ζ;(C)0(ΓCQ/(^) for both complexes in (6.2.1), resp. // /;(g<r,ί); (C) (8)(pCQ(A:) for both complexes in (6.2.2). Moreover, since // odd(g<r[);],ί)) = 0, the spectral sequences for (6.2.1) degenerate at E 2. This implies the statement. D By the same argument as above, one can extend the fundamental class ΩL to the class in H2/?-ι(g<r,ϊ); CC*(A*)[h~ ]]). To prov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-12.md",
+      "narrative": null,
+      "content": "The fundamental class Ω(\\) is represented by the following chain: n ft",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-13.md",
+      "narrative": null,
+      "content": "For any λ £ C and X G bi,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/lem-sec-013-16",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "lem-sec-013-16.md",
+      "narrative": null,
+      "content": "TTze following two cochains of the left-hand side of (6.5.2) are cohomologous: ,r) = 0 ί/ ^ or 7 w in in A*(IR Proof Let ^0 G C°(^,...); η0 =I±dλ, One checks that (<9 Lιe£ + fc)(^o + f?ι ) = ω0 - ω2 . D Consider the C°°(IR+)- valued trace on A^(M x 1R+): If t/ is a coordinate neighborhood in M and we identify A fVl(£7 x IR+) with A fl(^/)0C°°(IR+) then Tr becomes the old trace tensored by /ί/c°°(Rf) We de- duce from Lemma 6.4.1 the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "prop-sec-013-05.md",
+      "narrative": null,
+      "content": "Let g be a continuous <L[[h]]- linear automorphism of the algebra A Λ(R 2π)o. Then there exists an element φ = φ0 + f ί φ ] ^ ---- in A*(IR 2' 7)0 such that: i) φo E {*!,...,*„, cι,...,ς, 7} 2; ii) g ( f ) = ev φ / - e~τ* for any / E A Λ(R 2/7)0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prop-sec-013-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "prop-sec-013-14.md",
+      "narrative": null,
+      "content": "The cochain α β represents the fundamental class ΩL.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic Index Theorem for Formal Deformations",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-4-algebraic-index-theorem-for-formal-deformation.md",
+      "narrative": null,
+      "content": "4.1. Boundary Operator at the Fundamental Class. Recalls that we had defined\nthe generator Ω of J^2n-\\(M,A\nh[h~\n]]) (cf. 3.3) and the boundary operator\nd : JVm-ι(M, A\nh) -> 0 \nH\n2p~\nm(M,K) \n- l*\np\nP^Ί\n(cf. 3.1). The following theorem will be proved in Sects. 5,6.\nTheorem 4.1.1. i) the fundamental class Ω may be represented by a cochain in\nΣl>Q^\n(n+l}C\nl(M,~CC2n-\\+ι)\\ \nmodulo h \nΣ\nh~\n(n+l)C\nl(M9CC2n+l^)9 \nthis cochain\nmay be chosen in\nii) One has\nwhere, by definition,\ntd(ω))~\nλ = Σ(-0*7i>\n \nτk ^ H\n2k(M) .\n4.2. Proof of the Main Theorem. First of all note the following fact which follows\nfrom Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "i) the fundamental class Ω may be represented by a cochain in Σl>Q^ (n+l}C l(M,~CC2n-\\+ι)\\ modulo h Σ h~ (n+l)C l(M9CC2n+l^)9 this cochain may be chosen in ii) One has where, by definition, td(ω))~ λ = Σ(-0*7i>",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "thm-sec-013-03.md",
+      "narrative": null,
+      "content": "Let a be a periodic cyclic cycle of Ag'(M). Then i) {/^(Ω), #} Aίxs no singularity at h = 0, ii) Tr(α e~°^ ) has no singularity at fι = 0, lim Tr(α £?-\" /Λ) = fε(μ(a)) fc/ ? ε/// A(M ) = (-!)*. iii) Lei ύf / β a rκ/e o/CCΓ ϊ(Γ(A Λ(M)) (c/ Remark 3.1.3). Then = Tr [ a en and thus Λ oh",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-013-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 33,
+      "target": "thm-sec-013-09.md",
+      "narrative": null,
+      "content": "i) the fundamental class ΩL may be represented by a co chain in Σ, έ0Λ- ('' +n)C' (g, «(« ); CC2Λ+I_ , (A* )); modulo 7>Σ, ^~ (' +\" )c'(9> «(«); CC2n+,_ , ), this chain may be chosen in ϋ) SΩL = Σ^Ti l'*\" ιr/7έτ<? 7ί e // 2A'(cj,ιι(« ); The proof will occupy the next three subsections. Part ii) will be proved in 6.2-6.3; part i) will be proved in 6.4. 6.2. Computation of dΩ^ Reduction to One- Dimensional Case. First of all, consider the Lie subalgebra g/(w) in g: the matrix (0/y ) is represented by the element ^al/x,ξ/. It is clear that <?l(n)ς is conjugate to u(w)<r in g^ by a matrix from GL(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Application",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-7-an-application.md",
+      "narrative": null,
+      "content": "Section 7. An Application\nIn this section we shall prove a conjecture of B. Feigin.\nLet M be a complex analytic manifold, £^^/-the sheaf of holomorphic differ-\nential operators on M. Consider the double complex C*(M, CC*(^/)). This is a\ncomplex of modules over C*(M, (C). Brylinski proved that\nIn particular, H0 ~ //\n2/7(M,C), where /z = dim^M.\nOn the other hand, one has the obvious cycle",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "G C°(M, CC0(^A/))",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-015-1-g-cm-cc0a.md",
+      "narrative": null,
+      "content": "A\nquestion arises how to identify the image [1] of this cycle under the isomorphism\nabove.\nTheorem 7.1.1. [l] = (td(TM))2n.\nProof. \nWe shall use an analogue of Theorem 4.1.1. Consider the double complex\nC*(M, CC*(SΛ/)). There is the canonical (2/7 - 1 )-dimensional fundamental class Ω\nin cohomology of this double complex. Consider the boundary map\nc : C*(M,CC*(&M)) -» C*(M,C(\nTheorem 7.1.2. oQ = Σtd^ \n1\"\n?+A, where td~\n] £ H\n2k(M,<£} and td~\\TM) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Σ(-\\γtdfr",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-σ-γtdfr.md",
+      "narrative": null,
+      "content": "l.\nProof The proof of Theorem 4.1.1. works word for word. One has to replace A\nfl\nby &M and the Lie algebra g from Sects. 5,6 by the Lie algebra Wn of formal\nvector fields. Π\nNote that the Bott periodicity homomorphism S acts on C*(M, CC*(&M)) and\ncommutes with the action of C*(M,(C). It maps l*(\nA +\n !) to - 1*\nA. Put χ\nn~\nk =\n(-l)\n/ ?~\nA~Ί\n \n( / 7 + A ) for any k. From Theorem 7.1.2 we get that\ny \" _μ V ( — i V f r / \"\n1 \nr\n/?~\nA — 0\n-* \ni Z^ v\n \nA \nί WA \n^ \n— w\nIndeed, the cycle representing the left-hand side is equal to the differential of the\nfundamental class. The operator S acts as mul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "oQ = Σtd^ 1\" ?+A, where td~ ] £ H 2k(M,<£} and td~\\TM) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operations on the Cyclic Complex",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-appendix-1-operations-on-the-cyclic-complex.md",
+      "narrative": null,
+      "content": "Let A be an associative unitary algebra over an associative commutative unitary ring\nk. Let A = A/k \n1;\ndefine the operations\nLD : Cm(A) -+ Cm(A} \nio : Cm(A)\nSD : Cm(A)\nk. Let A = A/k \n1; Cm(A) = A ® A®\nm . For any ^-linear map D : A -» A, D(l) = 0,\nLD(aQ (8) . - . (8) am) = \n(-l)\n/ ?'-\nl D« 0 0 \n0 D(0/) 0 \n0 am ,\n/=o\nwhere ^ = Σ;=o(l\nflyl ~ 0;\nώ(αo 0 \n(8> am) = (- 1 )\n(k/ol + 1 )|D| + l*\no lfl 0 \nD(aλ ) 0 a2 (8) 0 ί/Λ\nx(l Θα, 0 ..\nFor any a G ^4, define the operations\nm+\\ \ni\n/ = ! / = !\nx (1 0α, 0 ... 0αw &α 0® •• 0fl ( /-i)(S)fl(X) ••• 0α/-ι).\nLet g — Der(/4) be the graded Lie algebra of der",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cyclic Homology of Deformations",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-appendix-2-cyclic-homology-of-deformations.md",
+      "narrative": null,
+      "content": "Let A^(M) be as in Sect. 1.\nTheorem A2.1.\n////f(AS(M)) ^ H(\n2\"-\nl(M) 0 CPΓ\n1, ft]]\n260 \nR. Nest, B. Tsygan\nProof. Essentially, this statement is contained in [Bl]. Let C*(AQ(M)[^~\nI]) be\nthe standard Hochschild complex. Consider (ft)-adic filtration on this complex.\nThen £0 = Ω\nl\nc(M)\\ the differential d\\ : E^ -» £/°+1>/_1 is described by Brylinski\nin [Bl]. If we identify Ω\nl\nc with Ω\n2n~\nl using ω\nn, then d\\ becomes de Rham dif-\nferential d. Thus E\\ = H\n2n~\nl(M). We need to show that the spectral sequence\ndegenerates at E\n] . If not, then for some / dim^-i^ /////(A^/i\"\n1]) < b\n2\nc\nn~\nl(M\\\nwhe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download-3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[ACKP] Arbarello, E., de Concini, C., Kac, V., Procesi, C.: Moduli spaces of curves and repre-\nsentation theory. Commun. Math. Phys. 117, 1-36 (1988)\n[B] \nBrylinski, J.-L.: Some examples of cyclic and Hochschild homologies. Lect. Notes Math.,\n1271, 33-72 (1987)\n[Bl] \nBrylinski, J.-L.: A differential complex for Poisson manifold. J. Diff. Geom. 28, 93-114\n(1988)\n[BFFLS] Bayen, F., Flato, M., Fronsdal, C., Lichnerowiscz, A., Sternheimer, D.: Ann. Phys. Ill,\n61-151 (1978)\n[Bu] \nBurghelea, D.: Cyclic homology and algebraic K-theory of topological spaces. Contemp.\nMath. 55, 89-115 (1983)\n[BTT] \nO'B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

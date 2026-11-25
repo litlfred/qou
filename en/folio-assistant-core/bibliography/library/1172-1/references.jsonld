@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/1172-1",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "On a computation method for the colored Jones polynomial of doubled knots",
+      "dcterms:issued": "D:20080313",
+      "dcterms:source": "library/1172-1/manifest.jsonld",
+      "dcterms:hasVersion": "library/1172-1"
+    }
+  ]
+}

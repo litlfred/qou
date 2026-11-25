@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-strand-twist-datum-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strand-twist-datum-remark",
+  "kind": "remark",
+  "title": "Properties of the per-strand framing datum and the hypercharge candidate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-strand-twist-datum",
+    "papers/quantum-observable-universe/blocks/def-gauge-action-groupoid",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+    "papers/quantum-observable-universe/blocks/conj-sm-hypercharge-invariant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-strand-twist-datum",
+  "tags": [
+    "framing",
+    "hypercharge"
+  ],
+  "text": "strand-twist-datum-remark.md",
+  "provenance": "authored"
+}

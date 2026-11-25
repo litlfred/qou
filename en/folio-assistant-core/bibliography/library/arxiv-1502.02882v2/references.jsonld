@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1502.02882v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Fusion categories via string diagrams",
+      "dcterms:creator": [
+        "Bartlett, Bruce"
+      ],
+      "dcterms:issued": "D:20150721",
+      "dcterms:identifier": "https://arxiv.org/abs/1502.02882",
+      "dcterms:abstract": "We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.",
+      "dcterms:source": "library/arxiv-1502.02882v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1502.02882v2"
+    }
+  ]
+}

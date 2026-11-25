@@ -1,0 +1,61 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2308.16266v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2308.16266v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Meissner, “Ab initio calculation of the Hoyle state,” Phys.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2308.16266v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-distilling-the-essential-elements-of-nuclear-bin.md",
+      "narrative": null,
+      "content": "Alex Gnech,1, 2 Bryce Fore,3 and Alessandro Lovato2, 3, 4\n1European Center for Theoretical Studies in Nuclear Physics and Related Areas (ECT*)\nand Fondazione Bruno Kessler Strada delle Tabarelle 286, I-38123 Villazzano (TN), Italy\n2INFN-TIFPA Trento Institute of Fundamental Physics and Applications, 38123 Trento, Italy\n3Physics Division, Argonne National Laboratory, Argonne, IL 60439, USA\n4Computational Science Division, Argonne National Laboratory, Argonne, IL 60439, USA\n(Dated: September 1, 2023)\nIn pursuing the essential elements of nuclear binding, we compute ground-state properties of\nato",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2308.16266v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: Wigner-Eckart",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-appendix-wigner-eckart.md",
+      "narrative": null,
+      "content": "In this Section, we outline the procedure used to com-\npute the magnetic moments of nuclei with J < L + S,\nsuch as 15O and 15N. The starting point are the NQS\nwith with good Lz, which are linear combinations of J,\nJz eigenstates\n|L, Lz; S, Sz⟩=\nX\nJ,Jz\n⟨L, Lz; S, Sz|J, Jz⟩|J, Jz⟩,\n(A.4)\nwhere ⟨L, Lz; S, Sz|J, Jz⟩are the Clebsch-Gordan coef-\nficient [60]. We define the magnetic moments of these\nstates as\nµLz = ⟨L, Lz; S, Sz| ˆµz|L; Lz; S, Sz⟩. .\n(A.5)\nExploiting the Wigner-Eckart theorem, these matrix el-\nements can be expressed in terms of the reduced matrix\nelements ⟨J|| ˆµz||J′⟩as\nµLz =\nX\nJ,J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

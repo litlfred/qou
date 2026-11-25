@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0707.2003v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:introduction label=\"sec:introduction\"}\n\nIn this paper, we consider the Hochschild homology of Soergel bimodules, and construct a geometric interpretation of it. This will allow us to explicitly compute the Hochschild homology of a special class of Soergel bimodules.\n\nSoergel bimodules are bimodules over a polynomial ring, which appear naturally both in the study of perverse sheaves on flag varieties and of the semiring of projective functors on the BGG category $\\O$. Recently interest in them has been rekindled by the appearance of connections with link homology as shown by Khovanov [@",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A geometric model for Hochschild\nhomology of Soergel bimodules\narXiv:0707.2003v2  [math.AG]  7 Aug 2007",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "[]{#sec:acknowledgments label=\"sec:acknowledgments\"}\n\nThe authors would like to thank Catharina Stroppel, Olaf Schnürer, Allen Knutson, Shrawan Kumar, Peter Fiebig, Michel Brion and Tom Baird for their helpful suggestions and Wolfgang Soergel for discussions which greatly enhanced their understanding of the equivariant derived category.\n\nThey would also like to thank the organizers of the conference \"Microlocal and Geometric Methods in Representation Theory\" and the staff of Schloss Reisensburg, where the authors first began their collaboration, as well as Nicolai Reshetikhin, Henning Haar And",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot homology and Soergel bimodules",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-2-knot-homology-and-soergel-bimodules.md",
+      "narrative": null,
+      "content": "[]{#sec:knot-homol-soerg label=\"sec:knot-homol-soerg\"}\n\nWhile Soergel bimodules merit study simply by being connected so much delightful mathematics, we have applications in knot theory in mind, as we will now briefly describe. The interested reader can find more details in the papers of Khovanov [@Kho05], Rasmussen [@Ras06], and Webster [@Web06a].\n\nThe braid group $B_G$ of $G$ is a finitely presented group, with generators $\\si_s$ for each simple reflection $s\\in W$, which is defined by the presentation $$\\begin{aligned}\n \\si_s\\si_t&=\\si_t\\si_s & \\big(\\text{when }(st)^2=e\\big)\\\\\n \\si_s\\si_t\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The equivariant derived category and dg-modules",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-3-the-equivariant-derived-category-and-dg-module.md",
+      "narrative": null,
+      "content": "[]{#sec:equi-derived-cat label=\"sec:equi-derived-cat\"}\n\nSince our readers may be less well-acquainted with the formalism of equivariant derived categories and their connection with dg-modules, as developed by Bernstein and Lunts, in this section, we will provide a brief overview of the necessary background for later sections. This material is discussed in considerably more detail in their monograph [@BL].\n\nSuppose a Lie group $G$ operates on a space $X$. We have maps: $$\\begin{aligned}\nm &\\colon G \\times X \\to X & m(g,x) &= g\\cdot x \\\\\n\\pi &\\colon G \\times X \\to X & \\pi(g,x) &=x\n\\end{aligned}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hochschild homology and dg-algebras",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-4-hochschild-homology-and-dg-algebras.md",
+      "narrative": null,
+      "content": "[]{#sec:hochsch-homol-dg label=\"sec:hochsch-homol-dg\"}\n\nRecall that the Hochschild homology of an $\\HT\\otimes S$-module $R$ can be defined as $$\\HH_*(\\S{})=\\HT \\Lotimes_{\\HT\\otimes \\HT} \\S{}$$ where $\\HT$ has been made into an $\\HT\\otimes\\HT$ algebra by the multiplication map. Since $\\HT\\cong\\A_{B}$ and $\\HT\\otimes\\HT\\cong\\A_{\\BB}$, this map is that induced by the diagonal group homomorphism $B\\hookrightarrow\\BB$. Thus, we expect that the geometric analogue of taking Hochschild homology is restricting from a $\\BB$-action to the diagonal $B$.\n\nHowever, we must be careful about the difference be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometry of Bott-Samelson bimodules",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-5-the-geometry-of-bott-samelson-bimodules.md",
+      "narrative": null,
+      "content": "[]{#sec:geom-soerg-bimod label=\"sec:geom-soerg-bimod\"}\n\nIn this section, we discuss Bott-Samelson bimodules, calculate their $B \\times B$-equivariant cohomology and obtain the formality results needed above.\n\nSince we have already described the geometric realization of indecomposable bimodules, as intersection cohomology of subvarieties of $G$, we know abstractly that the Bott-Samelson bimodule $\\S\\Bi$ must be the hypercohomology of a perverse sheaf obtained by taking a direct sum of $\\IC{}$-sheaves of these subvarieties with appropriate multiplicities.\n\nHowever, this is deeply dissatisfying f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0707.2003v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivariant formality",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-6-equivariant-formality.md",
+      "narrative": null,
+      "content": "[]{#sec:equiv-form label=\"sec:equiv-form\"}\n\nNow, we will carry out some actual computations of $B$-equivariant cohomology, and thus of Hochschild homology.\n\nOf course, the best setting in which to compute equivariant cohomology of a variety is when that variety (or more precisely, the sheaf one intends to compute the hypercohomology of) is equivariantly formal.\n\n::: deth\n[]{#eq-for-def label=\"eq-for-def\"} We call $\\mc F\\in D^b_T(X)$ on a $T$-variety $X$ equivariantly formal if one of the following equivalent conditions holds:\n\n1.  The $S$ module $\\hc_T(X,\\mc F)$ is free.\n\n2.  The differentials",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

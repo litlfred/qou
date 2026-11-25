@@ -1,0 +1,4723 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1608.03227v4",
+  "title": "arxiv-1608.03227v4",
+  "variant": "pdf",
+  "pages": 83,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Main result",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Sheaves on Hilbert schemes",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-sheaves-on-hilbert-schemes"
+    },
+    {
+      "level": 2,
+      "title": "Braids and matrix factorizations",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-braids-and-matrix-factorizations"
+    },
+    {
+      "level": 2,
+      "title": "Structure of the paper",
+      "number": "1.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-structure-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Basic space and Matrix factorizations",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-basic-space-and-matrix-factorizations"
+    },
+    {
+      "level": 2,
+      "title": "Notations, conventions",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-notations-conventions"
+    },
+    {
+      "level": 2,
+      "title": "Matrix factorizations: three lemmas",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-matrix-factorizations-three-lemmas"
+    },
+    {
+      "level": 2,
+      "title": "Koszul matrix factorizations",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-koszul-matrix-factorizations"
+    },
+    {
+      "level": 1,
+      "title": "Equivariant structure of matrix factorizations and their push-forwards",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-equivariant-structure-of-matrix-factorizations"
+    },
+    {
+      "level": 2,
+      "title": "Technical lemmas: non-equivariant version",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-technical-lemmas-non-equivariant-version"
+    },
+    {
+      "level": 2,
+      "title": "Push forward",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-push-forward"
+    },
+    {
+      "level": 2,
+      "title": "Chevalley-Eilenberg complex",
+      "number": "3.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-chevalley-eilenberg-complex"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant matrix factorizations",
+      "number": "3.4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-equivariant-matrix-factorizations"
+    },
+    {
+      "level": 2,
+      "title": "Extension lemmas",
+      "number": "3.5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-35-extension-lemmas"
+    },
+    {
+      "level": 2,
+      "title": "Lifting lemma for morphisms",
+      "number": "3.6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-36-lifting-lemma-for-morphisms"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant push-forward",
+      "number": "3.7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-37-equivariant-push-forward"
+    },
+    {
+      "level": 1,
+      "title": "Convolution algebra: definition",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-4-convolution-algebra-definition"
+    },
+    {
+      "level": 2,
+      "title": "Category of B2-equivariant matrix factorizations",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-41-category-of-b2-equivariant-matrix-factorizati"
+    },
+    {
+      "level": 2,
+      "title": "Potential and main category of matrix factorizations",
+      "number": "4.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-42-potential-and-main-category-of-matrix-factori"
+    },
+    {
+      "level": 2,
+      "title": "Convolution",
+      "number": "4.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-43-convolution"
+    },
+    {
+      "level": 2,
+      "title": "Convolution of the G-slice",
+      "number": "4.4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-44-convolution-of-the-g-slice"
+    },
+    {
+      "level": 1,
+      "title": "Knorrer reduction",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-5-knorrer-reduction"
+    },
+    {
+      "level": 2,
+      "title": "Construction of the Knorrer functor",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-51-construction-of-the-knorrer-functor"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the Knorrer functor",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-52-properties-of-the-knorrer-functor"
+    },
+    {
+      "level": 2,
+      "title": "Convolution on the reduced space",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-53-convolution-on-the-reduced-space"
+    },
+    {
+      "level": 2,
+      "title": "Reduced vs. non-reduced convolution",
+      "number": "5.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-54-reduced-vs-non-reduced-convolution"
+    },
+    {
+      "level": 2,
+      "title": "Row operations for generalized equivariant Koszul matrix factorizations",
+      "number": "5.5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-55-row-operations-for-generalized-equivariant-ko"
+    },
+    {
+      "level": 2,
+      "title": "Proof of proposition 5.4",
+      "number": "5.6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-56-proof-of-proposition-54"
+    },
+    {
+      "level": 1,
+      "title": "Induction functors",
+      "number": "6",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-6-induction-functors"
+    },
+    {
+      "level": 2,
+      "title": "Construction of the induction functor",
+      "number": "6.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-61-construction-of-the-induction-functor"
+    },
+    {
+      "level": 2,
+      "title": "Computational aspects of push-forward",
+      "number": "6.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-62-computational-aspects-of-push-forward"
+    },
+    {
+      "level": 2,
+      "title": "Induction functor in reduced case",
+      "number": "6.3",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-63-induction-functor-in-reduced-case"
+    },
+    {
+      "level": 2,
+      "title": "Proof of proposition 6.1",
+      "number": "6.4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-64-proof-of-proposition-61"
+    },
+    {
+      "level": 2,
+      "title": "Proof of proposition 6.2",
+      "number": "6.5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-65-proof-of-proposition-62"
+    },
+    {
+      "level": 2,
+      "title": "Transitivity of induction",
+      "number": "6.6",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-66-transitivity-of-induction"
+    },
+    {
+      "level": 1,
+      "title": "Inclusion functor and the generators for the braid group",
+      "number": "7",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-7-inclusion-functor-and-the-generators-for-the-b"
+    },
+    {
+      "level": 2,
+      "title": "Unit in convolution algebra",
+      "number": "7.1",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-71-unit-in-convolution-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Inclusion functor",
+      "number": "7.2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-72-inclusion-functor"
+    },
+    {
+      "level": 2,
+      "title": "Generators of the braid group",
+      "number": "7.3",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-73-generators-of-the-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "General properties of convolution algebra",
+      "number": "8",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-8-general-properties-of-convolution-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Auxiliary Lemma",
+      "number": "8.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-81-auxiliary-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Reduced case version of the auxiliary lemma",
+      "number": "8.2",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-82-reduced-case-version-of-the-auxiliary-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Reduced convolution with rank 1 matrix factorizations",
+      "number": "8.3",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-83-reduced-convolution-with-rank-1-matrix-factor"
+    },
+    {
+      "level": 2,
+      "title": "Involution",
+      "number": "8.4",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-84-involution"
+    },
+    {
+      "level": 1,
+      "title": "Two strands",
+      "number": "9",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-9-two-strands"
+    },
+    {
+      "level": 2,
+      "title": "General method of the proof",
+      "number": "9.1",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-91-general-method-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant structure for the generators",
+      "number": "9.2",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-92-equivariant-structure-for-the-generators"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the basic matrix factorizations",
+      "number": "9.3",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-93-properties-of-the-basic-matrix-factorizations"
+    },
+    {
+      "level": 2,
+      "title": "Inversion of the elementary positive braid",
+      "number": "9.4",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-94-inversion-of-the-elementary-positive-braid"
+    },
+    {
+      "level": 2,
+      "title": "Proof of theorem 9.6",
+      "number": "9.5",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-95-proof-of-theorem-96"
+    },
+    {
+      "level": 1,
+      "title": "Three strands and two crossings",
+      "number": "10",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-10-three-strands-and-two-crossings"
+    },
+    {
+      "level": 2,
+      "title": "A geometric interpretation for the matrix factorization",
+      "number": "10.1",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-101-a-geometric-interpretation-for-the-matrix-fa"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma 10.4",
+      "number": "10.2",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-102-proof-of-lemma-104"
+    },
+    {
+      "level": 1,
+      "title": "Three strands three crossings",
+      "number": "11",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-11-three-strands-three-crossings"
+    },
+    {
+      "level": 2,
+      "title": "Involution D and the ideals I121 and I212",
+      "number": "11.1",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-111-involution-d-and-the-ideals-i121-and-i212"
+    },
+    {
+      "level": 2,
+      "title": "Resolution for I121",
+      "number": "11.2",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-112-resolution-for-i121"
+    },
+    {
+      "level": 2,
+      "title": "Convolution",
+      "number": "11.3",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-113-convolution"
+    },
+    {
+      "level": 2,
+      "title": "End of the proof of the theorem 7.6",
+      "number": "11.4",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-114-end-of-the-proof-of-the-theorem-76"
+    },
+    {
+      "level": 1,
+      "title": "Sheaves on the Hilbert scheme",
+      "number": "12",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-12-sheaves-on-the-hilbert-scheme"
+    },
+    {
+      "level": 2,
+      "title": "Nested Hilbert scheme: definitions and notations",
+      "number": "12.1",
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-121-nested-hilbert-scheme-definitions-and-notati"
+    },
+    {
+      "level": 2,
+      "title": "Braid complex",
+      "number": "12.2",
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-122-braid-complex"
+    },
+    {
+      "level": 2,
+      "title": "Geometry of the critical locus",
+      "number": "12.3",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-123-geometry-of-the-critical-locus"
+    },
+    {
+      "level": 2,
+      "title": "Stability conditions on critical locus",
+      "number": "12.4",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-124-stability-conditions-on-critical-locus"
+    },
+    {
+      "level": 2,
+      "title": "Stability conditions for the matrix factorizations.",
+      "number": "12.5",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-125-stability-conditions-for-the-matrix-factoriz"
+    },
+    {
+      "level": 2,
+      "title": "Taking the B quotient",
+      "number": "12.6",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Conjugacy class invariant",
+      "number": "12.7",
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-127-conjugacy-class-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Link invariant",
+      "number": "13",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-13-link-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Geometry of Hilbfree1,n",
+      "number": "13.1",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-131-geometry-of-hilbfree1n"
+    },
+    {
+      "level": 2,
+      "title": "Braid complex on Hilbfree1,n",
+      "number": "13.2",
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-069-132-braid-complex-on-hilbfree1n"
+    },
+    {
+      "level": 2,
+      "title": "Proof of theorem 13.3",
+      "number": "13.3",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-070-133-proof-of-theorem-133"
+    },
+    {
+      "level": 1,
+      "title": "Connections with other knot invariants",
+      "number": "14",
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-071-14-connections-with-other-knot-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Unknot",
+      "number": "14.1",
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-072-141-unknot"
+    },
+    {
+      "level": 2,
+      "title": "HOMFLY-PT polynomial specialization",
+      "number": "14.2",
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-073-142-homfly-pt-polynomial-specialization"
+    },
+    {
+      "level": 2,
+      "title": "gl(m|n)-homology differential",
+      "number": "14.3",
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-074-143-glmn-homology-differential"
+    },
+    {
+      "level": 1,
+      "title": "List of Symbols",
+      "number": null,
+      "page": 81,
+      "pageLabel": "81",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-list-of-symbols"
+    },
+    {
+      "level": 1,
+      "title": "List of Symbols",
+      "number": null,
+      "page": 81,
+      "pageLabel": "81",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-075-list-of-symbols"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 82,
+      "pageLabel": "82",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-076-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": false
+        },
+        {
+          "term": "knorrer functor",
+          "heading": false
+        },
+        {
+          "term": "nested hilbert",
+          "heading": false
+        },
+        {
+          "term": "convolution algebra",
+          "heading": false
+        },
+        {
+          "term": "hilbert scheme",
+          "heading": false
+        },
+        {
+          "term": "hilbfree",
+          "heading": false
+        },
+        {
+          "term": "induction functor",
+          "heading": false
+        },
+        {
+          "term": "koszul matrix",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1608.03227v4 [math.GT] 29 Jan 2018 January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE ALEXEI OBLOMKOV AND LEV ROZANSKY Abstract. For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the non-commutative nested Hilbert scheme Hilbfree 1,n . We show that the triply graded vector space of the hypercohomology H(Sβ ⊗∧•(B))",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1608.03227v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-motivation",
+      "number": "1.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cals beta",
+          "heading": false
+        },
+        {
+          "term": "hilbert schemes",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "knot homology",
+          "heading": false
+        },
+        {
+          "term": "gnr",
+          "heading": false
+        },
+        {
+          "term": "brgrn",
+          "heading": false
+        },
+        {
+          "term": "macdonald polynomials",
+          "heading": false
+        },
+        {
+          "term": "ors",
+          "heading": false
+        }
+      ],
+      "extract": "In recent years there was a lot of interest in establishing a connection between knot homology, Macdonald polynomials and Hilbert schemes of points on a plane [@AS],[@Ch],[@GN],[@GORS],[@ORS]. In particular, there are many conjectural formulas expressing the knot homology of torus knots in terms of Macdonald polynomials or in terms of spaces of sections of special sheaves on the Hilbert schemes of points",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-main-result",
+      "number": "1.2",
+      "title": "Main result",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbolprint calb",
+          "heading": false
+        },
+        {
+          "term": "free symbolprint",
+          "heading": false
+        },
+        {
+          "term": "symbolprint mathcal",
+          "heading": false
+        },
+        {
+          "term": "widetilde hilb",
+          "heading": false
+        },
+        {
+          "term": "calb vee",
+          "heading": false
+        },
+        {
+          "term": "bbs beta",
+          "heading": false
+        },
+        {
+          "term": "frb times",
+          "heading": false
+        },
+        {
+          "term": "aff cover",
+          "heading": false
+        }
+      ],
+      "extract": "We consider a 'non-commutative analog' of the nested Hilbert scheme defined as a quotient $\\SymbolPrint{\\Hilb_{1,n}^{free}}=\\SymbolPrint{\\widetilde{\\Hilb}_{1,n}^{free}}/\\SymbolPrint{B}$, where $$\\widetilde{\\Hilb}_{1,n}^{free} = \\{ (X,Y,v)\\in \\frb\\times\\frn\\times V\\,|\\,\\CC\\langle X,Y\\rangle v=\\SymbolPrint{V} \\}$$ is an open subset of the product $\\frn\\times\\frb\\times V$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-sheaves-on-hilbert-schemes",
+      "number": "1.3",
+      "title": "Sheaves on Hilbert schemes",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calo hilb",
+          "heading": false
+        },
+        {
+          "term": "symbolprint hilb",
+          "heading": false
+        },
+        {
+          "term": "symbolprint cals",
+          "heading": false
+        },
+        {
+          "term": "cals beta",
+          "heading": false
+        },
+        {
+          "term": "widetilde hilb",
+          "heading": false
+        },
+        {
+          "term": "bbs beta",
+          "heading": false
+        },
+        {
+          "term": "wedge calb",
+          "heading": false
+        },
+        {
+          "term": "beta otimes",
+          "heading": false
+        }
+      ],
+      "extract": "The usual nested Hilbert scheme $\\SymbolPrint{\\Hilb^L_{1,n}}$ is a subvariety of $\\Hilb_{1,n}^{free}$ defined by the commutativity constraint on $X,Y$: $$[X,Y]=0.$$ It turns out that the support of the homology of the complex $\\bbS_\\beta$ is contained in $\\Hilb_{1,n}^L$. Hence the sheaf homology of the complex is the sheaf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-braids-and-matrix-factorizations",
+      "number": "1.4",
+      "title": "Braids and matrix factorizations",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "bcalc beta",
+          "heading": false
+        },
+        {
+          "term": "bcalc parallel",
+          "heading": false
+        },
+        {
+          "term": "fun gens",
+          "heading": false
+        },
+        {
+          "term": "calxr",
+          "heading": false
+        },
+        {
+          "term": "homomorphism brgr",
+          "heading": false
+        },
+        {
+          "term": "inc fun",
+          "heading": false
+        },
+        {
+          "term": "bbs beta",
+          "heading": false
+        }
+      ],
+      "extract": "Our construction of the complex of sheaves $\\bbS_\\beta\\in D^{per}_{T_{sc}}(\\Hilb_{1,n}^{free})$ is based on a homomorphism from the braid group $\\Brgr_n$ to the convolution algebra of $T_{sc}$-equivariant and (weakly) $B^2$-equivariant matrix factorizations $\\MF_{B^2}(\\calXr_2(G_n),\\Wr)$ on the space $\\SymbolPrint{\\calXr_2(G_n)}:=\\frb\\times G_n\\times \\frn$ with the potential $$\\SymbolPrint{\\Wr}=\\Tr(X\\Ad_g(Y)),$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-structure-of-the-paper",
+      "number": "1.5",
+      "title": "Structure of the paper",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inc fun",
+          "heading": false
+        },
+        {
+          "term": "fun gens",
+          "heading": false
+        },
+        {
+          "term": "dima arinkin",
+          "heading": false
+        },
+        {
+          "term": "link inv",
+          "heading": false
+        },
+        {
+          "term": "aux sec",
+          "heading": false
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": false
+        },
+        {
+          "term": "eugene gorsky",
+          "heading": false
+        },
+        {
+          "term": "convolution algebra",
+          "heading": false
+        }
+      ],
+      "extract": "In the section [\\[sec:notations\\]](#sec:notations){reference-type=\"ref\" reference=\"sec:notations\"} we collect most of notations used in the paper, we also state and prove some key properties of the matrix factorizations. In section [\\[sec: eq push\\]](#sec: eq push){reference-type=\"ref\" reference=\"sec: eq push\"} we state and prove the results about matrix factorizations that are needed for the main body of the paper.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-basic-space-and-matrix-factorizations",
+      "number": "2",
+      "title": "Basic space and Matrix factorizations",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-notations-conventions",
+      "number": "2.1",
+      "title": "Notations, conventions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot ell",
+          "heading": false
+        },
+        {
+          "term": "space calx",
+          "heading": false
+        },
+        {
+          "term": "symbolprint",
+          "heading": false
+        },
+        {
+          "term": "lower-triangular",
+          "heading": false
+        },
+        {
+          "term": "notations",
+          "heading": true
+        },
+        {
+          "term": "upper-triangular",
+          "heading": false
+        }
+      ],
+      "extract": "### Let us fix the following notations for the groups that appear in our work: $$\\SymbolPrint{G_n}=\\mathrm{GL}_n,\\quad \\SymbolPrint{T_n}\\subset B_n\\subset G_n.$$ We use gothic script for the Lie algebras of the respective groups. Whenever the rank of the group is obvious from the context of the paper we omit the subscripts. Let $U_n=[B_n,B_n]$ and $\\frn_n=\\textup{Lie}(U_n)$. We also denote the Lie algebra of $T_n$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-matrix-factorizations-three-lemmas",
+      "number": "2.2",
+      "title": "Matrix factorizations: three lemmas",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "symbolprint mfs",
+          "heading": false
+        },
+        {
+          "term": "mfs ell",
+          "heading": false
+        },
+        {
+          "term": "oplus yhom",
+          "heading": false
+        },
+        {
+          "term": "complex bullet",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "ext uniq",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we fix notations for matrix factorizations and remind some basic facts about them. In particular we prove three lemmas that we will use in the main body of the paper. These lemmas essentially contain all facts about matrix factorizations that are used here. For more thorough review of the theory of matrix factorization the reader could consult the beautiful original paper [@E] or later surveys in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-koszul-matrix-factorizations",
+      "number": "2.3",
+      "title": "Koszul matrix factorizations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet xxv",
+          "heading": false
+        },
+        {
+          "term": "koszul matrix",
+          "heading": true
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "ext uniq",
+          "heading": false
+        },
+        {
+          "term": "bigwedge bullet",
+          "heading": false
+        },
+        {
+          "term": "tilde bullet",
+          "heading": false
+        },
+        {
+          "term": "lambda bullet",
+          "heading": false
+        },
+        {
+          "term": "basis theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: str eq Kosz label=\"ssec: str eq Kosz\"} In this subsection we set notations for a particular type of matrix factorization that is ubiquitous in our work and in the previous work that relates matrix factorizations to knot invariants [@KR]. We need slightly more general setting than the one from [@KR] because we work with equivariant matrix factorizations. We state some simple properties of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-equivariant-structure-of-matrix-factorizations",
+      "number": "3",
+      "title": "Equivariant structure of matrix factorizations and their push-forwards",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "push forward",
+          "heading": false
+        },
+        {
+          "term": "equivariant",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec: eq push label=\"sec: eq push\"} In this section we discuss the properties of equivariant matrix factorizations and construct the push forward of matrix factorizations along the embedding of affine varieties $j: Spec(R)\\to Spec(S)$. There is a more general, more sophisticated construction for push forward of matrix factorization that could be found in [@DM] but the functor from [@DM] is of different nature",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-technical-lemmas-non-equivariant-version",
+      "number": "3.1",
+      "title": "Technical lemmas: non-equivariant version",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calf bullet",
+          "heading": false
+        },
+        {
+          "term": "ext uniq",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "symbolprint com",
+          "heading": false
+        },
+        {
+          "term": "oplus hom",
+          "heading": false
+        },
+        {
+          "term": "com ell",
+          "heading": false
+        },
+        {
+          "term": "mathbb graded",
+          "heading": false
+        },
+        {
+          "term": "yhom",
+          "heading": false
+        }
+      ],
+      "extract": "We keep notations consistent with the previous section. Let $\\SymbolPrint{\\Mod_{per}}(\\calZ)$ be a category of $\\mathbb{Z} _2$-graded free $\\CC[\\calZ]$ modules with endomorphisms. An object $\\calF\\in \\Mod_{per}(\\calZ)$ is a pair $(M,D)$, $M=M^0\\oplus M^1$, $M^i=\\CC[\\calZ]^{d_i}$ and $D\\in \\Hom_{\\CC[\\calZ]}(M^1,M^0)\\oplus \\Hom_{\\CC[\\calZ]}(M^0,M^1)$. The space of morphisms between two elements of $\\Mod_{per}(\\calZ)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-push-forward",
+      "number": "3.2",
+      "title": "Push forward",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "noneq push",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "lambda bullet",
+          "heading": false
+        },
+        {
+          "term": "mfs",
+          "heading": false
+        },
+        {
+          "term": "uniq",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: noneq push f label=\"ssec: noneq push f\"} Let us assume that $R=S/I$ where $I=(f_1,\\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$. In other words, the Koszul complex $K(I)=(\\Lambda^\\bullet W\\otimes \\CC[\\calZ],d_K)$, $W=\\CC^n$ has homologies only in degree $0$. For $W\\in S$ let $w$ be its image under the quotient map $j\\colon S\\rightarrow R$. For a matrix factorization $\\calF=(M,D)\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-chevalley-eilenberg-complex",
+      "number": "3.3",
+      "title": "Chevalley-Eilenberg complex",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential dce",
+          "heading": false
+        },
+        {
+          "term": "complex ceh",
+          "heading": false
+        },
+        {
+          "term": "deﬁne ceh",
+          "heading": false
+        },
+        {
+          "term": "chevalley-eilenberg",
+          "heading": true
+        }
+      ],
+      "extract": "Suppose that h is a Lie algebra. Chevalley-Eilenberg complex CEh is the complex (V•(h), d) with Vp(h) = U(h) ⊗C Λph and diﬀerential dce = d1 + d2 where: d1(u ⊗x1 ∧· · · ∧xp) = p X i=1 (−1)i+1uxi ⊗x1 ∧· · · ∧ˆxi ∧· · · ∧xp, d2(u ⊗x1 ∧· · · ∧xp) = X i<j (−1)i+ju ⊗[xi, xj] ∧x1 ∧· · · ∧ˆxi ∧· · · ∧ˆxj ∧· · · ∧xp, For h module V we deﬁne CEh(V ) := HomU(h)(CEh, V ). The homology of this complex is called Chevalley-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-equivariant-matrix-factorizations",
+      "number": "3.4",
+      "title": "Equivariant matrix factorizations",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 687,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "dtot",
+          "heading": false
+        },
+        {
+          "term": "mfh",
+          "heading": false
+        },
+        {
+          "term": "h-equivariant matrix",
+          "heading": false
+        }
+      ],
+      "extract": "proof the lemma 2.1 relies on the fact that every map from Hom<0(C+, C+) is homotopically trivial and hence we can construct a homotopy that connects this map to 0. It appears to us that the analog of this statement does not hold in the equivariant setting: the homotopy connecting the map to 0 in general is equivariant up to homotopy. Thus to make our proof of lemma 2.1 work in equivariant setting one would have to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-35-extension-lemmas",
+      "number": "3.5",
+      "title": "Extension lemmas",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frh odel",
+          "heading": false
+        },
+        {
+          "term": "bullet frh",
+          "heading": false
+        },
+        {
+          "term": "mfs frh",
+          "heading": false
+        },
+        {
+          "term": "frh equivariance",
+          "heading": false
+        },
+        {
+          "term": "lambda frh",
+          "heading": false
+        },
+        {
+          "term": "frh equivariant",
+          "heading": false
+        },
+        {
+          "term": "frh otimes",
+          "heading": false
+        },
+        {
+          "term": "odel calf",
+          "heading": false
+        }
+      ],
+      "extract": "We have the following analog of Lemma [\\[lem: ext MF\\]](#lem: ext MF){reference-type=\"ref\" reference=\"lem: ext MF\"} and respective uniqueness result. ::: lemma []{#lem: ext MF eq label=\"lem: ext MF eq\"} Let $(C_\\bullet,d_\\bullet^+)$ be a $\\frh$-equivariant complex $$C_0\\xleftarrow{d_1^+}C_1\\xleftarrow{d_2^+}\\dots\\xleftarrow{d_\\ell^+} C_\\ell$$ of $\\CC[\\calZ]$ modules and $F\\in \\CC[\\calZ]^\\frh$ such that 1. Elements",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-36-lifting-lemma-for-morphisms",
+      "number": "3.6",
+      "title": "Lifting lemma for morphisms",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ tot",
+          "heading": false
+        },
+        {
+          "term": "tilde tot",
+          "heading": false
+        },
+        {
+          "term": "k-m circ",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "tot right",
+          "heading": false
+        },
+        {
+          "term": "hom k-m",
+          "heading": false
+        },
+        {
+          "term": "tilde calf",
+          "heading": false
+        },
+        {
+          "term": "frh odel",
+          "heading": false
+        }
+      ],
+      "extract": "To define equivariant push-forward below we need to state few extra facts about our lifting procedure. ::: lemma []{#lem: ext mor label=\"lem: ext mor\"} Suppose we are are given $(\\calF_\\bullet,d_\\bullet^+)$, $\\calF_i=(M_i,D_i)$ and $(\\tilde{\\calF}_\\bullet,\\tilde{d}_\\bullet^+)$, $\\tilde{\\calF}_i=(\\tilde{M}_i,\\tilde{D}_i)$ be an element of $\\Com^{\\frh,\\ell}_{per}(\\calZ)$ and $F\\in \\CC[\\calZ]^\\frh$ such that they",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-37-equivariant-push-forward",
+      "number": "3.7",
+      "title": "Equivariant push-forward",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mfs frh",
+          "heading": false
+        },
+        {
+          "term": "tilde calf",
+          "heading": false
+        },
+        {
+          "term": "noneq push",
+          "heading": false
+        },
+        {
+          "term": "hom mfs",
+          "heading": false
+        },
+        {
+          "term": "ext mor",
+          "heading": false
+        },
+        {
+          "term": "tilde psi",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "ssec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: eq push f label=\"ssec: eq push f\"} Let $S=\\CC[\\calZ]$ and Lie algebra $\\frh$ acts on $\\calZ$. Let us assume that $R=S/I$ where $I=(f_1,\\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$ and $I$ is $\\frh$-invariant. Let $\\calZ_0=\\mathrm{Spec}(R)$. The Koszul complex $K(I)=(\\Lambda^\\bullet W\\otimes \\CC[\\calZ],d_K)$, $W=\\CC^n$ is $\\frh$-equivariant and has homologies only in degree $0$. Let $w\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-4-convolution-algebra-definition",
+      "number": "4",
+      "title": "Convolution algebra: definition",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "mfs",
+          "heading": false
+        },
+        {
+          "term": "calxr",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:convolution label=\"sec:convolution\"} In this section we define convolution product on categories $\\MFs_{B^2}(\\calX_2,W)$ and $\\MFs_{B^2}(\\calXr_2,\\Wr)$ and explain how these two convolutions are related. Thus we construct the functor $$\\Phi: \\MFs_{B^2}(\\calXr_2,\\Wr)\\to \\MFs_{B^2}(\\calX_2,W)$$ which is an equivariant version of Knorrer periodicity functor [@Kn].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-41-category-of-b2-equivariant-matrix-factorizati",
+      "number": "4.1",
+      "title": "Category of B2-equivariant matrix factorizations",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frh odel",
+          "heading": false
+        },
+        {
+          "term": "bullet frn",
+          "heading": false
+        },
+        {
+          "term": "frn otimes",
+          "heading": false
+        },
+        {
+          "term": "odel tilde",
+          "heading": false
+        },
+        {
+          "term": "mfs ell",
+          "heading": false
+        },
+        {
+          "term": "variety calz",
+          "heading": false
+        },
+        {
+          "term": "otimes partial",
+          "heading": false
+        },
+        {
+          "term": "omega otimes",
+          "heading": false
+        }
+      ],
+      "extract": "The Borel subgroup $B$ is the semi-direct product $B=T\\ltimes U$ where $U$ is the unipotent group with $\\Lie(U)=\\frn$. Suppose we are given a variety $\\calZ$ with $B^2$-action and $F\\in \\CC[\\calZ]^{B^2}$. Then we define $\\MFs_{B^2}(\\calZ,F)$ as a subcategory of $\\MFs_{\\frn^2}(\\calZ,F)$ that has objects and morphisms which are strongly $T^2$-equivariant. In more details, an object $\\calF\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-42-potential-and-main-category-of-matrix-factori",
+      "number": "4.2",
+      "title": "Potential and main category of matrix factorizations",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "symbolprint textup",
+          "heading": false
+        },
+        {
+          "term": "calx",
+          "heading": false
+        },
+        {
+          "term": "mathbf cdot",
+          "heading": false
+        },
+        {
+          "term": "deg tsc",
+          "heading": false
+        },
+        {
+          "term": "gslice",
+          "heading": false
+        },
+        {
+          "term": "link inv",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce an associative convolution operation in the category of matrix factorizations on the space $\\calX_2$. In subsequent sections we construct a homomorphism from the braid group into this convolution algebra. This allows us to associate a particular matrix factorization to a braid and in the section [\\[sec: link inv 2\\]](#sec: link inv 2){reference-type=\"ref\" reference=\"sec: link inv 2\"} we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-43-convolution",
+      "number": "4.3",
+      "title": "Convolution",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "partial tilde",
+          "heading": false
+        },
+        {
+          "term": "frn",
+          "heading": false
+        },
+        {
+          "term": "calx",
+          "heading": false
+        },
+        {
+          "term": "calg",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "odel",
+          "heading": false
+        }
+      ],
+      "extract": "There are three natural projection maps $\\SymbolPrint{\\pi_{12},\\pi_{23},\\pi_{13}}:\\calX_3\\to\\calX_2$ and $\\pi_{12}^*(W)+\\pi_{23}^*(W)=\\pi_{13}^*(W)$. If we extend the action of $G\\times B^2$ on $\\calX_2$ to the action of $G\\times B^3$ by natural projectors $\\pi_{ij}:G\\times B^3\\to G\\times B^2$ then the maps $\\pi_{ij}$ become $G\\times B^3$-equivariant and hence for any $\\calF,\\calG\\in \\MF_{B^2}(\\calX_2,W)$ we can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-44-convolution-of-the-g-slice",
+      "number": "4.4",
+      "title": "Convolution of the G-slice",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "times calx",
+          "heading": false
+        },
+        {
+          "term": "frg times",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "symbolprint",
+          "heading": false
+        },
+        {
+          "term": "gslice",
+          "heading": false
+        },
+        {
+          "term": "mfs",
+          "heading": false
+        },
+        {
+          "term": "calg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: Gslice label=\"ssec: Gslice\"} As we mentioned earlier, $\\MF_{B^2}(\\calX_2,W)^G$ signifies $B^2$-equivariant matrix factorizations from $\\MFs_{B^2}(\\calX_2,W)$ that $G$-invariant. This description becomes simpler when we introduce a smaller space $\\SymbolPrint{\\calX_2^\\circ}:=\\frg\\times G\\times \\frb^2$ and the map $\\SymbolPrint{p_\\circ}: \\calX_2\\to \\calX_2^\\circ$ defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-5-knorrer-reduction",
+      "number": "5",
+      "title": "Knorrer reduction",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-51-construction-of-the-knorrer-functor",
+      "number": "5.1",
+      "title": "Construction of the Knorrer functor",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 879,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knorrer functor",
+          "heading": true
+        },
+        {
+          "term": "widetilde calx",
+          "heading": false
+        },
+        {
+          "term": "symbolprint phi",
+          "heading": false
+        },
+        {
+          "term": "noneq push",
+          "heading": false
+        },
+        {
+          "term": "space calxr",
+          "heading": false
+        },
+        {
+          "term": "times frn",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "frb times",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce a slightly smaller space $\\calXr_2$ which could be used to model our convolution algebra. The advantage of this perspective is that the generators of the braid group have a simpler description. Let $\\calXr_2:=\\frb\\times G\\times \\frn$ and let us define the following potential on it $$\\label{eq: red potential} \\SymbolPrint{\\Wr}(X,g,Y)=\\Tr(X\\Ad_g(Y)).$$ This potential is $B\\times B$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-52-properties-of-the-knorrer-functor",
+      "number": "5.2",
+      "title": "Properties of the Knorrer functor",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde calx",
+          "heading": false
+        },
+        {
+          "term": "tilde partial",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "correction differentials",
+          "heading": false
+        },
+        {
+          "term": "sum theta",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "equivariant structure",
+          "heading": false
+        }
+      ],
+      "extract": "As in the previous proof, $CC$ denotes the correction complex $$CC:= \\begin{bmatrix} (\\tilde{X}_{1--} )& (Y_{1}-\\Ad_{g_{12}}(Y_2)_{++})\\end{bmatrix}$$ Let us explain the equivariant structure of this matrix factorization. Since $B_{(2)}$-action does not change entries of the complex $\\SymbolPrint{CC}$, the $B_{(2)}$ equivariant structure of $B_{(2)}$ is trivial. To describe $B_{(1)}$ equivariant structure, let us",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-53-convolution-on-the-reduced-space",
+      "number": "5.3",
+      "title": "Convolution on the reduced space",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbolprint bar",
+          "heading": false
+        },
+        {
+          "term": "otimes bar",
+          "heading": false
+        },
+        {
+          "term": "calxr",
+          "heading": false
+        },
+        {
+          "term": "calg",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        }
+      ],
+      "extract": "In order to define the convolution on the smaller space $\\calXr_2$, consider the space $\\SymbolPrint{\\calXr_3}:=\\frb\\times G^2\\times\\frn$ with the following $B^3$-action $$(b_1,b_2,b_3)\\cdot (X,g_{12},g_{23},Y)=(\\Ad_{b_1}(X),b_1 g_{12} b_2^{-1}, b_2 g_{23} b_3^{-1}, \\Ad_{b_3}(Y)).$$ There are the following maps $\\SymbolPrint{\\bar{\\pi}_{ij}}:\\calXr_3\\to\\calXr_2$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-54-reduced-vs-non-reduced-convolution",
+      "number": "5.4",
+      "title": "Reduced vs. non-reduced convolution",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat calx",
+          "heading": false
+        },
+        {
+          "term": "widetilde calx",
+          "heading": false
+        },
+        {
+          "term": "widehat calh",
+          "heading": false
+        },
+        {
+          "term": "calx arrow",
+          "heading": false
+        },
+        {
+          "term": "overline calx",
+          "heading": false
+        },
+        {
+          "term": "calf bar",
+          "heading": false
+        },
+        {
+          "term": "calx times",
+          "heading": false
+        },
+        {
+          "term": "calh sharp",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\bar{\\pi}_{con}:\\calX_3\\to \\calXr_3$ be the map defined by $$\\SymbolPrint{\\bar{\\pi}_{con}}(X,g_1,Y_1,g_2,Y_2,g_3,Y_3)=(\\Ad_{g_1}^{-1}(X)_+,g_1^{-1}g_2,g_2^{-1}g_3,Y_3).$$ ::: proposition []{#prop: Knorrer factor label=\"prop: Knorrer factor\"} Suppose $\\calF,\\calG\\in \\MF_{B^2}(\\calXr_2,\\Wr)$ then there is a sequence of row transformations that identifies $\\pi_{12}^*(\\Phi(\\calF))\\otimes_B\\pi_{23}^*(\\Phi(\\calG))$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-55-row-operations-for-generalized-equivariant-ko",
+      "number": "5.5",
+      "title": "Row operations for generalized equivariant Koszul matrix factorizations",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calf sharp",
+          "heading": false
+        },
+        {
+          "term": "partial vec",
+          "heading": false
+        },
+        {
+          "term": "theta vec",
+          "heading": false
+        },
+        {
+          "term": "calf bullet",
+          "heading": false
+        },
+        {
+          "term": "vec phi",
+          "heading": false
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "calg sharp",
+          "heading": false
+        },
+        {
+          "term": "equivariant matrix",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#ssec: row ops label=\"ssec: row ops\"} We use notations of the lemma [\\[lem: ext MF+eq\\]](#lem: ext MF+eq){reference-type=\"ref\" reference=\"lem: ext MF+eq\"} here and we also assume that the complex $(\\calF_\\bullet,d^+)$ is the Koszul complex tensored with matrix factorization $(M,D,\\partial)$: $$\\calF_\\bullet=\\tilde{M} \\otimes \\Lambda^\\bullet V, \\quad d^+=\\sum_{j=1}^n f_i\\theta_i,$$ where $\\theta_i$ form a basis of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-56-proof-of-proposition-54",
+      "number": "5.6",
+      "title": "Proof of proposition 5.4",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adg",
+          "heading": false
+        },
+        {
+          "term": "koszul complex",
+          "heading": false
+        },
+        {
+          "term": "row transformations",
+          "heading": false
+        },
+        {
+          "term": "elimination",
+          "heading": false
+        },
+        {
+          "term": "diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "admissibility",
+          "heading": false
+        },
+        {
+          "term": "eliminate",
+          "heading": false
+        }
+      ],
+      "extract": "sion for π∗ 12(Φ(F)♯) ⊗π∗ 23(Φ(G)♯): (5.18) π∗ 12(¯π∗(F♯) ⊗CC) ⊗π∗ 23(¯π∗(G♯) ⊗CC) = (π12 ◦¯π)∗(F♯) ⊗(π23 ◦¯π)∗(G♯) ⊗π∗ 12(CC) ⊗π∗ 23(CC). The last factor is the Koszul complex î ( ˜X2 −−) (Y2 −Adg23(Y3)++) ó hence we can use row transformations of second type to eliminate variables Y2 from the matrix factorization (5.18). More precisely, use the row transformations of the second type to eliminate Y2 from the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-6-induction-functors",
+      "number": "6",
+      "title": "Induction functors",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "ind homo",
+          "heading": false
+        },
+        {
+          "term": "star calg",
+          "heading": false
+        },
+        {
+          "term": "ind phi",
+          "heading": false
+        },
+        {
+          "term": "n-k",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: inc label=\"sec: inc\"} The main goal of this section is to construct induction functors: $$\\SymbolPrint{\\ind_k}: \\MF_{B_k^2}(\\calX_2^\\circ(G_k),W)\\times \\MF_{B_{n-k}^2}(\\calX^\\circ_2(G_{n-k}),W)\\to \\MF_{B_n^2}(\\calX_2^\\circ(G_n),W),$$ $$\\SymbolPrint{\\indb_k}: \\MF_{B_k^2}(\\calXr_2(G_k),\\Wr)\\times \\MF_{B_{n-k}^2}(\\calXr_2(G_{n-k}),\\Wr)\\to \\MF_{B_n^2}(\\calXr_2 (G_n),\\Wr).$$ and to show that these functors are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-61-construction-of-the-induction-functor",
+      "number": "6.1",
+      "title": "Construction of the induction functor",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "frg n-k",
+          "heading": false
+        },
+        {
+          "term": "times calx",
+          "heading": false
+        },
+        {
+          "term": "frg oplus",
+          "heading": false
+        },
+        {
+          "term": "frn equivariant",
+          "heading": false
+        },
+        {
+          "term": "frp",
+          "heading": false
+        },
+        {
+          "term": "symbolprint",
+          "heading": false
+        },
+        {
+          "term": "times matrices",
+          "heading": false
+        }
+      ],
+      "extract": "Let us set notations for the parabolic subgroups of $G_n$. We denote by $P_k\\subset G_n$ the subgroup with Lie algebra generated by $E_{ij}$, $i\\le j$ and $E_{i+1,i}$, $i\\ne k$. We denote the corresponding Lie algebra as $\\SymbolPrint{\\frp_k}:=\\Lie(P_k)$. There is a natural homomorphism $\\SymbolPrint{i_k}: P_k\\to G_n$. We define $\\calX^\\circ_2(P_k)\\subset\\calX^\\circ_2(G_n)$ as a locus of $(X,g_{12},Y_1,Y_2)$ such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-62-computational-aspects-of-push-forward",
+      "number": "6.2",
+      "title": "Computational aspects of push-forward",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "tilde calf",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        },
+        {
+          "term": "cdot det",
+          "heading": false
+        },
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "mathrm det",
+          "heading": false
+        },
+        {
+          "term": "push forward",
+          "heading": false
+        },
+        {
+          "term": "tilde partial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: comp ins label=\"ssec: comp ins\"} In our general construction of the push forward $i_{k*}(\\calF)$, $\\calF=(M,D,d_l,d_r)$ we make a choice of the extension $\\tilde{D}$ of the differential $D$ from sub-variety $\\calX^\\circ_2(P_k)$ to $\\calX^\\circ_2(G_n)$. However in our case we have a canonical choice of the extension because we could use the projection map $\\Lie(G_n)\\to \\Lie(P_{k})$ to construct such an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-63-induction-functor-in-reduced-case",
+      "number": "6.3",
+      "title": "Induction functor in reduced case",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mfsc",
+          "heading": false
+        },
+        {
+          "term": "pull back",
+          "heading": false
+        },
+        {
+          "term": "k-equivariant",
+          "heading": false
+        },
+        {
+          "term": "projection map",
+          "heading": false
+        },
+        {
+          "term": "natural embedding",
+          "heading": false
+        }
+      ],
+      "extract": "Lie(Pk) × n. We also use notation W for the restriction of the potential W on the subspace X 2(Pk). There is a natural embedding ¯ik : X 2(Pk) →X 2(Gn). The map of the rings ¯ik : C[X 2(Gn)] → C[X 2(Pk)] is the projection map with the kernel (Πk −−(g)) and it is easy to see that these generators form a regular sequence. Thus we have a well-deﬁned functor: ¯ik∗: MFsc B2(X 2(Pk), W) →MFsc B2(X 2(Gn), W). We also have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-64-proof-of-proposition-61",
+      "number": "6.4",
+      "title": "Proof of proposition 6.1",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mfsc",
+          "heading": false
+        },
+        {
+          "term": "b2n",
+          "heading": false
+        },
+        {
+          "term": "dotted arrow",
+          "heading": false
+        },
+        {
+          "term": "commuting diagram",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst functor",
+          "heading": false
+        }
+      ],
+      "extract": "Φn : MFsc B2n(X 2(Gn), W) →MFsc B2n(X ◦ 2 (Gn), W), which is constructed the in same way as our usual functor, the only adjustment being the replacement of the space f X2 by the space f X ◦ 2 and the appropriate adjustment of the maps. The statement of the proposition is equivalent to the isomorphism between two functors relating the following categories: MFsc B2 k(X (Gk), W) × MFsc B2 n−k(X 2(Gn−k), W) −→MFsc B2n(X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-65-proof-of-proposition-62",
+      "number": "6.5",
+      "title": "Proof of proposition 6.2",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 1216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zcon",
+          "heading": false
+        },
+        {
+          "term": "δkw",
+          "heading": false
+        },
+        {
+          "term": "adg",
+          "heading": false
+        },
+        {
+          "term": "functor cen",
+          "heading": false
+        },
+        {
+          "term": "matrix factorization",
+          "heading": false
+        },
+        {
+          "term": "row transformations",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "mfsc",
+          "heading": false
+        }
+      ],
+      "extract": "ik∗◦p∗ k(F) ⋆ik∗◦p∗ k(G) = ik∗◦p∗ k(F ⋆G), where F = F1 ⊠F2, G = G1 ⊠G2 ∈MFsc B2 k(X ◦ 2 (Gk), W) × MFsc B2 n−k(X ◦ 2 (Gn−k), W). The LHS of the later formula is the result of the application of the functor CEn(2) n combined with extraction of T (2) invariant part to the matrix factorization C such that: (6.20) C♯= ˜F ⊗[Πk −−(X), Πk ++(Y1 −Adg12(Y2))] ⊗Kπ∗ 12(δkW2)(Πk −−(g12))⊗ ˜G ⊗[Πk −−(Ad−1 g12(X)), Πk ++(Y2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-66-transitivity-of-induction",
+      "number": "6.6",
+      "title": "Transitivity of induction",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind m-k",
+          "heading": false
+        },
+        {
+          "term": "circ m-k",
+          "heading": false
+        },
+        {
+          "term": "m-k times",
+          "heading": false
+        },
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "mfs circ",
+          "heading": false
+        },
+        {
+          "term": "indb circ",
+          "heading": false
+        },
+        {
+          "term": "circ mathrm",
+          "heading": false
+        },
+        {
+          "term": "ind trans",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove the following ::: proposition []{#prop: ind trans label=\"prop: ind trans\"} The following functors: $$\\MFs_k\\times \\MFs_{m-k}\\times \\MFs_{n-m}\\to \\MFs_{n},$$ $\\MFs_r:=\\MF_{G_r\\times B_r^2}(\\calX_2(G_r),W)$ are isomorphic $$\\ind_k\\circ \\mathrm{Id}\\times \\ind_{m-k}=\\ind_m\\circ \\ind_k\\times \\mathrm{Id}.$$ ::: Before we start the proof let us fix some notations. We denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-7-inclusion-functor-and-the-generators-for-the-b",
+      "number": "7",
+      "title": "Inclusion functor and the generators for the braid group",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fun gens",
+          "heading": false
+        },
+        {
+          "term": "inc fun",
+          "heading": false
+        },
+        {
+          "term": "convolution algebra",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: inc fun gens label=\"sec: inc fun gens\"} This section collects various facts about the matrix factorization convolution algebra, mostly property that do not require intense computations but these properties will be used later. In particular, the relation ([\\[eq: commuting\\]](#eq: commuting){reference-type=\"ref\" reference=\"eq: commuting\"}) implies that matrix factorizations corresponding commuting elementary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-71-unit-in-convolution-algebra",
+      "number": "7.1",
+      "title": "Unit in convolution algebra",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "calx times",
+          "heading": false
+        },
+        {
+          "term": "calf boxtimes",
+          "heading": false
+        },
+        {
+          "term": "calf star",
+          "heading": false
+        },
+        {
+          "term": "times frn",
+          "heading": false
+        },
+        {
+          "term": "bcalc parallel",
+          "heading": false
+        },
+        {
+          "term": "calc parallel",
+          "heading": false
+        },
+        {
+          "term": "boxtimes calo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: unit label=\"sec: unit\"} In this section we describe the unit in the convolution algebra. Let us denote by $I_{--}\\subset\\CC[\\calXr_2]$ the ideal generated by matrix coefficients of $(g)_{--}$ where $(X,g,Y)$ are coordinates on $\\calXr_2$. Since the generators of $I_{--}$ form a regular sequence we can define $\\bcalC_{\\parallel}:=\\mathrm{K}^{\\Wr}(I_{--}).$ A direct computation shows that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-72-inclusion-functor",
+      "number": "7.2",
+      "title": "Inclusion functor",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind dots",
+          "heading": false
+        },
+        {
+          "term": "indb dots",
+          "heading": false
+        },
+        {
+          "term": "symbolprint ind",
+          "heading": false
+        },
+        {
+          "term": "star ind",
+          "heading": false
+        },
+        {
+          "term": "ind trans",
+          "heading": false
+        },
+        {
+          "term": "m-k",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "calg",
+          "heading": false
+        }
+      ],
+      "extract": "In the proof of proposition [\\[prop: ind trans\\]](#prop: ind trans){reference-type=\"ref\" reference=\"prop: ind trans\"} we constructed the functor $\\ind_{k,m}$ and we can use this functor to define the functor: $$\\SymbolPrint{\\Ind_{k\\dots m}}: \\MF_{ B_{m-k+1}^2}(\\calX_2(G_{m-k+1}),W)\\to \\MF_{ B_n^2}(\\calX_2(G_n),W),$$ by $\\SymbolPrint{\\Ind_{k\\dots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-73-generators-of-the-braid-group",
+      "number": "7.3",
+      "title": "Generators of the braid group",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbolprint crx",
+          "heading": false
+        },
+        {
+          "term": "star crx",
+          "heading": false
+        },
+        {
+          "term": "crx parallel",
+          "heading": false
+        },
+        {
+          "term": "sim crx",
+          "heading": false
+        },
+        {
+          "term": "crx bullet",
+          "heading": false
+        },
+        {
+          "term": "bmatrix delta",
+          "heading": false
+        },
+        {
+          "term": "symbolprint chi",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec:gens label=\"ssec:gens\"} When $n=2$ the potential is $\\Wr(X,g,Y)=\\Tr(X\\Ad_g(Y))$ where $$g=\\begin{bmatrix} g_{11}&g_{12}\\\\ g_{21}& g_{22}\\end{bmatrix},\\quad X=\\begin{bmatrix} x_{11}&x_{12}\\\\ 0& x_{22}\\end{bmatrix},\\quad Y=\\begin{bmatrix} 0& y_{12}\\\\0&0\\end{bmatrix}$$ A direct computation shows that it factors: $$\\Wr(X,g,Y)=y_{12}(g_{11}(x_{11}-x_{22})+g_{21}x_{12})g_{21}/\\Delta,\\quad \\Delta=\\det(g).$$ If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-8-general-properties-of-convolution-algebra",
+      "number": "8",
+      "title": "General properties of convolution algebra",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-81-auxiliary-lemma",
+      "number": "8.1",
+      "title": "Auxiliary Lemma",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frn m-k",
+          "heading": false
+        },
+        {
+          "term": "calx circ",
+          "heading": false
+        },
+        {
+          "term": "dots m-k",
+          "heading": false
+        },
+        {
+          "term": "symbolprint calx",
+          "heading": false
+        },
+        {
+          "term": "frb calx",
+          "heading": false
+        },
+        {
+          "term": "m-k times",
+          "heading": false
+        },
+        {
+          "term": "tikzcd calx",
+          "heading": false
+        },
+        {
+          "term": "calx bullet",
+          "heading": false
+        }
+      ],
+      "extract": "In the proof of the braid relations and Markov moves we will use some generalization of the previous corollary which we explain below. The statement that we prove in this section allows us to use smaller intermediate space for computation of the convolution. Let us introduce notation $\\SymbolPrint{Q_{k\\dots m}}\\subset G_n$ for subgroup with Lie algebra $\\SymbolPrint{\\frq_{k\\dots m}}$ spanned by $E_{ij}$, $i\\le j$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-82-reduced-case-version-of-the-auxiliary-lemma",
+      "number": "8.2",
+      "title": "Reduced case version of the auxiliary lemma",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m-k bar",
+          "heading": false
+        },
+        {
+          "term": "frn m-k",
+          "heading": false
+        },
+        {
+          "term": "boxtimes calg",
+          "heading": false
+        },
+        {
+          "term": "calf boxtimes",
+          "heading": false
+        },
+        {
+          "term": "symbolprint calxr",
+          "heading": false
+        },
+        {
+          "term": "m-k times",
+          "heading": false
+        },
+        {
+          "term": "otimes m-k",
+          "heading": false
+        },
+        {
+          "term": "bar dots",
+          "heading": false
+        }
+      ],
+      "extract": "Let us introduce $$\\SymbolPrint{\\calXr^{\\circ}_2(G_{k\\dots m})}=\\frb\\times G_{k\\dots m} \\times \\frn^2,$$ $$\\SymbolPrint{\\calXr_3(G_n,G_{k\\dots m})}:=\\frb_n\\times G_n\\times G_{m-k+1}\\times \\frn_n.$$ Let us also define an embedding $\\SymbolPrint{\\bar{i}_{k\\dots m}}:\\calXr_3(G_n,G_{k\\dots m})\\to \\calXr_3$ by $$\\bar{i}_{k\\dots m}(X,g_{12},g_{23},Y)=(X,g_{12},i_{k\\dots m}(g_{23}),Y).$$ Using the last embedding we define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-83-reduced-convolution-with-rank-1-matrix-factor",
+      "number": "8.3",
+      "title": "Reduced convolution with rank 1 matrix factorizations",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m-k bar",
+          "heading": false
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": true
+        },
+        {
+          "term": "boxtimes calg",
+          "heading": false
+        },
+        {
+          "term": "calf boxtimes",
+          "heading": false
+        },
+        {
+          "term": "times m-k",
+          "heading": false
+        },
+        {
+          "term": "calxr",
+          "heading": false
+        },
+        {
+          "term": "knorrer factor",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: conv rk 1 label=\"ssec: conv rk 1\"} The most important case of these theorems is the case $m=k+1$, that is when one of the matrix factorizations in $\\bar{\\star}$ product is lifted from the space $\\calXr_2(G_2)$, we call such matrix factorization rank $1$ matrix factorization. In this case the pull back functor $(\\bar{\\pi}_{12}\\times_{B_{m-k+1}}\\bar{\\pi}_{23})^*$ could be made very explicit. We do not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-84-involution",
+      "number": "8.4",
+      "title": "Involution",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ mathrm",
+          "heading": false
+        },
+        {
+          "term": "star mathrm",
+          "heading": false
+        },
+        {
+          "term": "star calg",
+          "heading": false
+        },
+        {
+          "term": "quad mathrm",
+          "heading": false
+        },
+        {
+          "term": "circ partial",
+          "heading": false
+        },
+        {
+          "term": "calf",
+          "heading": false
+        },
+        {
+          "term": "calx",
+          "heading": false
+        },
+        {
+          "term": "bar star",
+          "heading": false
+        }
+      ],
+      "extract": "Let $w_0\\in G_n$ be the longest element of the Coxeter group $S_n$: $(w_0)_{i,j}=\\delta_{i+j,n+1}$. The involution $\\SymbolPrint{\\mathrm{D}}: G\\to G$ defined by $\\mathrm{D}(g)=w_0 (g^{-1})^t w_0$ preserves $B$ and the Lie version of involution $\\mathrm{D}(X)=-w_0 X^t w_0$, $X\\in \\frg=\\textup{Lie}(G)$ preserves $\\frb\\subset \\frg$. Moreover, since $Tr(\\mathrm{D}(X))=-Tr(X)$ the have automorphism of category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-9-two-strands",
+      "number": "9",
+      "title": "Two strands",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec: two str label=\"sec: two str\"} In this section we study the properties of the matrix factorizations that generate the braid group on two strands. In particular we show that $\\calC_+$ is the inverse to $\\calC_-$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-047-91-general-method-of-the-proof",
+      "number": "9.1",
+      "title": "General method of the proof",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 50,
+      "labelStart": "47",
+      "labelEnd": "50",
+      "words": 1251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "textup lie",
+          "heading": false
+        },
+        {
+          "term": "chi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle chi",
+          "heading": false
+        },
+        {
+          "term": "check bullet",
+          "heading": false
+        },
+        {
+          "term": "homs",
+          "heading": false
+        },
+        {
+          "term": "gauss elimination",
+          "heading": false
+        },
+        {
+          "term": "frn",
+          "heading": false
+        }
+      ],
+      "extract": "It is easier to discuss the reduced convolution and we focus on this operation. From construction of the reduced convolution $\\bar{\\star}$ we see that the key step of computation of $\\calG\\bar{\\star}\\calF$ is the \\\"computation\\\" of $\\CE_{\\frn^{2}}(\\bar{\\pi}_{12}^*\\otimes_B \\bar{\\pi}_{23}^*)(\\calG\\boxtimes\\calF)$. The latter complex is a matrix factorization with non-trivial potential, we can not compute its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-92-equivariant-structure-for-the-generators",
+      "number": "9.2",
+      "title": "Equivariant structure for the generators",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exato txz",
+          "heading": false
+        },
+        {
+          "term": "exaoo theta",
+          "heading": false
+        },
+        {
+          "term": "bmatrix xmo",
+          "heading": false
+        },
+        {
+          "term": "tsc theta",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "end bmatrix",
+          "heading": false
+        },
+        {
+          "term": "exaot",
+          "heading": false
+        },
+        {
+          "term": "exatt",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we discuss the equivariant structure of the generators of the braid group. We also introduce the matrix factorization $\\calC_\\bullet$ that corresponds to the blob or fat point in the MOY calculus [@MOY]. We use this connection later to relate our homology theory of links to the HOMFLY-PT polynomial. We use the following parameterization of the variety $\\calX^\\circ_2(G)=\\frg\\times G\\times \\frn^2$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-93-properties-of-the-basic-matrix-factorizations",
+      "number": "9.3",
+      "title": "Properties of the basic matrix factorizations",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crxpr brwsh",
+          "heading": false
+        },
+        {
+          "term": "brwsh arrow",
+          "heading": false
+        },
+        {
+          "term": "arrow txz",
+          "heading": false
+        },
+        {
+          "term": "exato arrow",
+          "heading": false
+        },
+        {
+          "term": "rgr arrow",
+          "heading": false
+        },
+        {
+          "term": "crxbl brwsh",
+          "heading": false
+        },
+        {
+          "term": "exaot rgr",
+          "heading": false
+        },
+        {
+          "term": "brwsh bigr",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we collect various facts about the matrix factorizations from the previous subsection. In particular we explain how one can interpret the positive intersection matrix factorization as a cone of the identity matrix factorization and the blob matrix factorization. ::: proposition We have the following homotopy $$\\crXpr\\sim \\crXpr\\brwsh{1}{-1}.$$ ::: ::: proof *Proof.* Let $R=\\CC[\\calXr_2]$ then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-94-inversion-of-the-elementary-positive-braid",
+      "number": "9.4",
+      "title": "Inversion of the elementary positive braid",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theorem 9.6. Inside convolution algebra (MFsc G×B2(G2), ⋆) we have C+ ⋆C−∼C∥ 51",
+      "extractCut": false
+    },
+    {
+      "id": "sec-051-95-proof-of-theorem-96",
+      "number": "9.5",
+      "title": "Proof of theorem 9.6",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 1009,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x1a a21b",
+          "heading": false
+        },
+        {
+          "term": "dashed arrow",
+          "heading": false
+        },
+        {
+          "term": "chevalley-eilenberg diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "red dashed",
+          "heading": false
+        },
+        {
+          "term": "corrections diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "green arrow",
+          "heading": false
+        },
+        {
+          "term": "δ2θ",
+          "heading": false
+        },
+        {
+          "term": "matrix factorization",
+          "heading": false
+        }
+      ],
+      "extract": "g12 = ||aij||, g23 = ||bij|| and g13 = ||cij|| so that δ1a11 = a21, δ1a12 = a22, δ2a12 = −a11, δ2a22 = −a21, (9.31) δ2b11 = b21, δ2b12 = b22, δ3b12 = −b11, δ3b22 = −b21, (9.32) δ1c11 = c21, δ1c12 = c22, δ3c12 = −c11, δ3c22 = −c21. (9.33) We also introduce X′ = Adg−1 12 X: x′ −1 = −2a11a21x0 −a2 21x1 + a2 11x−1 x′ 0 = (a12a21 + a11a22)x0 + a21a22x1 −a11a12x−1, x′ 1 = 2a12a22x0 + a2 22x1 −a2 12x−1. For computation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-10-three-strands-and-two-crossings",
+      "number": "10",
+      "title": "Three strands and two crossings",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star calc",
+          "heading": false
+        },
+        {
+          "term": "calc bar",
+          "heading": false
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: three str 2 label=\"sec: three str 2\"} In this section we compute explicitly the matrix factorizations $\\calC_1\\bar{\\star}\\calC_2$ and $\\calC_2\\bar{\\star}\\calC_1$. Both of these matrix factorizations turn out to be Koszul matrix factorizations and we start with explanations for the equations defining these Koszul factorizations. Then we proceed with computations of the convolution.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-101-a-geometric-interpretation-for-the-matrix-fa",
+      "number": "10.1",
+      "title": "A geometric interpretation for the matrix factorization",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix factorization",
+          "heading": true
+        },
+        {
+          "term": "mfsc",
+          "heading": false
+        },
+        {
+          "term": "regularity",
+          "heading": false
+        },
+        {
+          "term": "regular",
+          "heading": false
+        },
+        {
+          "term": "lhs",
+          "heading": false
+        },
+        {
+          "term": "ideal",
+          "heading": false
+        },
+        {
+          "term": "statement follows",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": false
+        }
+      ],
+      "extract": "X =   x11 x12 x13 0 x22 x23 0 0 x33  , a =   a11 a12 a13 a21 a22 a23 a31 a32 a33   We assume in this section that all group elements have determinant 1. Proposition 10.1. If the the following equations hold a31 = 0 (10.35) (x11 −x22)a11 + x12a21 = 0 (10.36) (a−1)33(x11 −x33) −(a−1)32x23 −(a−1)31x13 = 0. (10.37) then Ad−1 a (X) ∈b. Proof. The ﬁrst two equations (10.35,10.36) imply ((X −x22I3)a)•1 = 0 and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-102-proof-of-lemma-104",
+      "number": "10.2",
+      "title": "Proof of Lemma 10.4",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 59,
+      "labelStart": "56",
+      "labelEnd": "59",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a12a a21a22x",
+          "heading": false
+        },
+        {
+          "term": "a11a a12a",
+          "heading": false
+        },
+        {
+          "term": "a21x a11x",
+          "heading": false
+        },
+        {
+          "term": "adg",
+          "heading": false
+        },
+        {
+          "term": "koszul complex",
+          "heading": false
+        },
+        {
+          "term": "green arrow",
+          "heading": false
+        },
+        {
+          "term": "δ2b",
+          "heading": false
+        },
+        {
+          "term": "b2-equivariant structure",
+          "heading": false
+        }
+      ],
+      "extract": "The second equation is obtained from the ﬁrst by applying the involution D. Since ¯C(2) + = Ind1,2( ¯C+) we can use the proposition 8.4 and the corrections for the B2 equivariant structure from the subsection 8.3 to proceed with our computation of ¯C(1) + ¯⋆¯C(2) + . First we introduce the matrices g12 =   a11 a12 a13 a21 a22 a23 a31 a32 a33  , g23 =   1 0 0 0 b22 b23 0 b23 b33   g13 =   c11 c12 c13",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-11-three-strands-three-crossings",
+      "number": "11",
+      "title": "Three strands three crossings",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "realize",
+          "heading": false
+        },
+        {
+          "term": "ideal",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we complete our proof theorem 7.6 by proving the cubic relation for the braid group generators. We show that two sides of the relations realize the same matrix factorization that has a geometric interpretation: the left hand side is realized by the extension of the complex of the minimal resolution of the ideal I121 and the other side for the ideal I212. First we introduce the ideals and discuss",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-111-involution-d-and-the-ideals-i121-and-i212",
+      "number": "11.1",
+      "title": "Involution D and the ideals I121 and I212",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adc",
+          "heading": false
+        },
+        {
+          "term": "upper triangular",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": true
+        },
+        {
+          "term": "involution",
+          "heading": true
+        }
+      ],
+      "extract": "fi := Adc−1(X −x22 1)2i, hi = (c−1(X −x11 1))3i. f ′ i := Adc−1(X −x22 1)i2, h′ i = ((X −x33 1)c)i1, kij = (Adc−1(X))ij −δijx4−i,4−i. where X = ||xij||, g ∈G provide local coordinates on b × G. Let us introduce the ideals I121 = (f1, f2, h2, h3), I212 = (f ′ 3, f ′ 2, h′ 2, h′ 1) I = (k31, k32, k33, k21, k22, k11). Proposition 11.1. We have (1) D(I121) = I212, (2) D(I) = I, (3) I121 = I. Proof. The ﬁrst two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-112-resolution-for-i121",
+      "number": "11.2",
+      "title": "Resolution for I121",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 61,
+      "labelStart": "59",
+      "labelEnd": "61",
+      "words": 756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resolution",
+          "heading": true
+        },
+        {
+          "term": "x12c",
+          "heading": false
+        },
+        {
+          "term": "adc",
+          "heading": false
+        },
+        {
+          "term": "previous proposition",
+          "heading": false
+        },
+        {
+          "term": "irreducible components",
+          "heading": false
+        },
+        {
+          "term": "proportional",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "codimension",
+          "heading": false
+        }
+      ],
+      "extract": "Let us ﬁx notations: A = h −(Adc−1X)21 , \u0010 Adc−1(X −x22 1) \u0011 22, c−1(X −x11 1)32 i . The direct computation shows that A = − h det B23, det B13, det B12 i , 59 where B =   (x11 −x22)c12 + x12c22 −c32 −((x11 −x22)c11 + x12c21) c31 −(c−1)2i \u0000X −x22 1\u0001 i3 −(c−1)2iδi1  . The Laplace formula for the 3 × 3 matrix made of B and A implies that the following is a complex: (11.41) K = [R2 B −→R3 A −→R] where R = C[b ×",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-113-convolution",
+      "number": "11.3",
+      "title": "Convolution",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 66,
+      "labelStart": "61",
+      "labelEnd": "66",
+      "words": 1516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secondary diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "adg",
+          "heading": false
+        },
+        {
+          "term": "complex cen",
+          "heading": false
+        },
+        {
+          "term": "matrix factorization",
+          "heading": false
+        },
+        {
+          "term": "koszul complex",
+          "heading": false
+        },
+        {
+          "term": "d3b",
+          "heading": false
+        },
+        {
+          "term": "ijaj",
+          "heading": false
+        },
+        {
+          "term": "b2i",
+          "heading": false
+        }
+      ],
+      "extract": "a pull back of the complex C121 along the projection map X 2 →b× G. Since the projection map is ﬂat, the results of the previous subsection imply that the complex C121 satisﬁes the conditions of the Lemmas 2.1,2.2 with F = W. Hence there is a unique (up to homotopy) matrix factorization ¯C(121) ∈MFsc B2(X 2, W) that extends the complex C121. The main result of this section is the proof of the following Lemma 11.5.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-114-end-of-the-proof-of-the-theorem-76",
+      "number": "11.4",
+      "title": "End of the proof of the theorem 7.6",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "66",
+      "labelEnd": "66",
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star bcalc",
+          "heading": false
+        },
+        {
+          "term": "mapsto bcalc",
+          "heading": false
+        },
+        {
+          "term": "circ theta",
+          "heading": false
+        },
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "chi circ",
+          "heading": false
+        },
+        {
+          "term": "bar star",
+          "heading": false
+        },
+        {
+          "term": "ext mor",
+          "heading": false
+        },
+        {
+          "term": "morphism psi",
+          "heading": false
+        }
+      ],
+      "extract": "::: corollary []{#cor: cubic label=\"cor: cubic\"} There is a homotopy realizing relation: $$\\bcalC^{(1)}_+\\bar{\\star}\\bcalC^{(2)}_+\\bar{\\star}\\bcalC^{(1)}_+\\sim\\bcalC_+^{(2)}\\bar{\\star}\\bcalC_+^{(1)}\\bar{\\star}\\bcalC^{(2)}.$$ ::: ::: proof *Proof.* From the previous discussion we see that the complexes $C_{121}$ and $\\mathrm{D}(C_{121})$ are minimal resolutions of the modules $R/I_{121}$ and $R/I_{212}$. The ideals",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-12-sheaves-on-the-hilbert-scheme",
+      "number": "12",
+      "title": "Sheaves on the Hilbert scheme",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": "66",
+      "labelEnd": "67",
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert scheme",
+          "heading": true
+        },
+        {
+          "term": "link inv",
+          "heading": false
+        },
+        {
+          "term": "nested hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: link inv label=\"sec: link inv\"} In this section we explain how for a word $\\beta$ of generators of the braid group $\\Brgr_n$ one can construct a two-periodic complex $C_\\beta$ of quasi-coherent sheaves on the space $\\calX_\\ell$ with the property that its homology is supported on a version of the Steinberg-like variety $\\St_\\ell$ that covers the nested Hilbert Scheme $\\Hilb_{1,n}$ of $n$-points on $\\CC^2$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-121-nested-hilbert-scheme-definitions-and-notati",
+      "number": "12.1",
+      "title": "Nested Hilbert scheme: definitions and notations",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "67",
+      "labelEnd": "67",
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frb times",
+          "heading": false
+        },
+        {
+          "term": "hilb",
+          "heading": false
+        },
+        {
+          "term": "scheme",
+          "heading": true
+        },
+        {
+          "term": "defs",
+          "heading": false
+        },
+        {
+          "term": "ssec",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "quotient",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: NHilb defs label=\"ssec: NHilb defs\"} Direct definition of the scheme $\\Hilb_{1,n}$ is the moduli space of the sequences of the ideals $I_1\\subset\\dots\\subset I_n\\subset \\CC[x,y]$ such that $\\dim \\CC[x,y]/I_k=k$. We are also interested in the subvariety $\\Hilb_{1,n}^L$ which consists of the sequence like above with extra condition $\\supp(I_{k-1}/I_k)$ is a point on the line $L=\\{ y=0\\}$. We can also think",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-122-braid-complex",
+      "number": "12.2",
+      "title": "Braid complex",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx ell",
+          "heading": false
+        },
+        {
+          "term": "ell epsilon",
+          "heading": false
+        },
+        {
+          "term": "icr ell",
+          "heading": false
+        },
+        {
+          "term": "calc sigma",
+          "heading": false
+        },
+        {
+          "term": "epsilon dots",
+          "heading": false
+        },
+        {
+          "term": "beta sigma",
+          "heading": false
+        },
+        {
+          "term": "frg times",
+          "heading": false
+        },
+        {
+          "term": "times frn",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec: Cb label=\"ssec: Cb\"} Now let us recall our construction of the braid group action and relate the construction of the braid group action to the knot invariants. Recall that in the previous sections we discussed various properties of the particular matrix factorization $\\calC_\\epsilon^i\\in \\MF_{G\\times B^2}(\\frg\\times \\left( G\\times \\frn\\right)^2,W),$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-123-geometry-of-the-critical-locus",
+      "number": "12.3",
+      "title": "Geometry of the critical locus",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 69,
+      "labelStart": "68",
+      "labelEnd": "69",
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx crit",
+          "heading": false
+        },
+        {
+          "term": "crit ell",
+          "heading": false
+        },
+        {
+          "term": "flag comm",
+          "heading": false
+        },
+        {
+          "term": "knor",
+          "heading": false
+        },
+        {
+          "term": "frg times",
+          "heading": false
+        },
+        {
+          "term": "ders",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        }
+      ],
+      "extract": "Before we describe the last step of our construction of the knot invariant let us discuss the structure of the scheme $\\SymbolPrint{\\calX^{crit}_\\ell}:=\\Spec(R_\\ell)$. First, we describe a particular set of generators of the ideal $\\Icr_\\ell$. Let us notice that we can rewrite the intermediate potential $W_{i,i+1}$ as follows $$\\label{eq: two forms of crit} \\SymbolPrint{W_{i,i+1}}=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-124-stability-conditions-on-critical-locus",
+      "number": "12.4",
+      "title": "Stability conditions on critical locus",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "69",
+      "labelEnd": "69",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx crit",
+          "heading": false
+        },
+        {
+          "term": "crit ell",
+          "heading": false
+        },
+        {
+          "term": "space calx",
+          "heading": false
+        },
+        {
+          "term": "locus",
+          "heading": true
+        },
+        {
+          "term": "stable locus",
+          "heading": false
+        }
+      ],
+      "extract": "The locally closed locus $\\calX^{crit}_{\\ell,st}$ defined by the condition that there is vector $u\\in V$ such that $$\\label{eq: cyclic} \\CC[\\Ad_{g_i}(Y_i),X]u=\\CC^n.$$ From above discussion we see that the image $\\pi_i(\\calX^{crit}_{\\ell,st})$ is inside $\\mathcal{CV}_B^{st}$ because $u_i=g_i^{-1}(u)$ is cyclic $$\\CC[Y_i,\\tilde{X}_{i,+}]u_i=\\CC^n.$$ We denote intersection of $\\calX^{crit}_\\ell/U^\\ell$ with the stable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-125-stability-conditions-for-the-matrix-factoriz",
+      "number": "12.5",
+      "title": "Stability conditions for the matrix factorizations.",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 71,
+      "labelStart": "69",
+      "labelEnd": "71",
+      "words": 1125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx ell",
+          "heading": false
+        },
+        {
+          "term": "symbolprint calx",
+          "heading": false
+        },
+        {
+          "term": "calx crit",
+          "heading": false
+        },
+        {
+          "term": "subset calx",
+          "heading": false
+        },
+        {
+          "term": "ell frn",
+          "heading": false
+        },
+        {
+          "term": "cap calx",
+          "heading": false
+        },
+        {
+          "term": "rightarrow calx",
+          "heading": false
+        },
+        {
+          "term": "symbolprint forg",
+          "heading": false
+        }
+      ],
+      "extract": "We denote by $$\\SymbolPrint{V^0}\\subset V=\\CC^n$$ the subset of vectors with a non-zero last coordinate. Let us define $\\SymbolPrint{\\calX_{\\ell,fr}}$ as the subvariety of $\\calX_\\ell\\times V$ consisting of collections $(X,g_1,Y_1,,\\dots,g_\\ell,Y_\\ell,u)$ such that $$\\CC \\langle \\Ad_{g_i}^{-1}(X),Y_i\\rangle g^{-1}_i(u)=V,\\quad g^{-1}(u)\\in V^0,\\quad i=1,\\dots,\\ell-1,$$ The map that forgets framing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-127-conjugacy-class-invariant",
+      "number": "12.7",
+      "title": "Conjugacy class invariant",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calx ell",
+          "heading": false
+        },
+        {
+          "term": "cals sigma",
+          "heading": false
+        },
+        {
+          "term": "ell epsilon",
+          "heading": false
+        },
+        {
+          "term": "cals beta",
+          "heading": false
+        },
+        {
+          "term": "calx crit",
+          "heading": false
+        },
+        {
+          "term": "sheaf cals",
+          "heading": false
+        },
+        {
+          "term": "sim cals",
+          "heading": false
+        },
+        {
+          "term": "epsilon cdot",
+          "heading": false
+        }
+      ],
+      "extract": "In section [\\[ssec: Cb\\]](#ssec: Cb){reference-type=\"ref\" reference=\"ssec: Cb\"} we constructed for every word $\\beta=\\sigma_{i_1}^{\\epsilon_1}\\cdot\\dots\\cdot\\sigma_{i_\\ell}^{\\epsilon_\\ell}$ of length $\\ell$ of generators of the braid group $\\Brgr_n$ complexes $C_{\\sigma_{i_1}^{\\epsilon_1},\\dots,\\sigma_{i_\\ell}^{\\epsilon_\\ell}}\\in \\MF_{B^\\ell\\times G}(\\calX_{\\ell,fc},0)$. The group $\\hat{G}$ acts only on the first",
+      "extractCut": true
+    },
+    {
+      "id": "sec-067-13-link-invariant",
+      "number": "13",
+      "title": "Link invariant",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": "72",
+      "labelEnd": "72",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbfree",
+          "heading": false
+        },
+        {
+          "term": "hilbert scheme",
+          "heading": false
+        },
+        {
+          "term": "dper",
+          "heading": false
+        }
+      ],
+      "extract": "The nested Hilbert scheme Hilb1,n is a very singular scheme and it has very complicated geometry, the main source of complexity is the commutativity relation between the matrices. On the other hands, we can deﬁne the free Hilbert scheme Hilbfree 1,n by omitting commutativity condition, this turn out to be relatively simple variety which is an iterated ﬁbration of projective spaces (see proposition 13.1). In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-131-geometry-of-hilbfree1n",
+      "number": "13.1",
+      "title": "Geometry of Hilbfree1,n",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 74,
+      "labelStart": "72",
+      "labelEnd": "74",
+      "words": 869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbfree",
+          "heading": true
+        },
+        {
+          "term": "hilb free",
+          "heading": false
+        },
+        {
+          "term": "kbn",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "vector bundle",
+          "heading": false
+        },
+        {
+          "term": "non-zero entry",
+          "heading": false
+        },
+        {
+          "term": "group exp",
+          "heading": false
+        },
+        {
+          "term": "projective spaces",
+          "heading": false
+        }
+      ],
+      "extract": "1,n . Let us deﬁne by the following open subset of b × n × V : ﬁ Hilb free 1,n := {(X, Y, v)|C⟨X, Y ⟩v = V }. There is an action of B × C∗on ﬁ Hilb free 1,n and we use notation Hilbfree 1,n for the quotient. Deﬁne a map p : Hilbfree 1,n →Hilbfree 1,n−1 as the map induced by the projection map on the vector space of upper-triangular matrices: the map forgets the ﬁrst row of the matrix. Let us also introduce the map χ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-132-braid-complex-on-hilbfree1n",
+      "number": "13.2",
+      "title": "Braid complex on Hilbfree1,n",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 75,
+      "labelStart": "74",
+      "labelEnd": "75",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbfree",
+          "heading": true
+        },
+        {
+          "term": "hilbl",
+          "heading": false
+        },
+        {
+          "term": "fgt",
+          "heading": false
+        },
+        {
+          "term": "dper",
+          "heading": false
+        },
+        {
+          "term": "tsc",
+          "heading": false
+        },
+        {
+          "term": "heven",
+          "heading": false
+        },
+        {
+          "term": "hodd",
+          "heading": false
+        }
+      ],
+      "extract": "1,n . In this subsection we explain how one could construct for every β ∈Brn a periodic complex Sβ ∈Dper Tsc(Hilbfree 1,n ) such that the hypercohomology of the complex is an isotopy invariant of the link L(β). First let us explain a construction of the sheaf. First let us introduce the analogs of the previous constructions for the Kn¨orrer reduced spaces. We deﬁne X 2,fr to be a subvariety of X 2 × V 0 consisting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-133-proof-of-theorem-133",
+      "number": "13.3",
+      "title": "Proof of theorem 13.3",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 78,
+      "labelStart": "75",
+      "labelEnd": "78",
+      "words": 1379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbfree",
+          "heading": false
+        },
+        {
+          "term": "hilb free",
+          "heading": false
+        },
+        {
+          "term": "kbn",
+          "heading": false
+        },
+        {
+          "term": "mfsc",
+          "heading": false
+        },
+        {
+          "term": "cen",
+          "heading": false
+        },
+        {
+          "term": "fgt",
+          "heading": false
+        },
+        {
+          "term": "matrix factorization",
+          "heading": false
+        },
+        {
+          "term": "brn",
+          "heading": false
+        }
+      ],
+      "extract": "β as a product of the elementary braids. Let us explain why Hk(β) actually only depends only conjugacy class of β. First let us notice that because of the equality (13.61) we have a construction for Hk(β) as hyper-cohomology of the complex on X1,fc: Hk(β) = H(ΛkB ⊗Cβ), here B is the vector bundle over X1,fc with ﬁber over (X, g, Y, v) equal V . Thus given a presentation β = σǫ1 i1 · · · · · σǫℓ iℓwe have Hk(β) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-14-connections-with-other-knot-invariants",
+      "number": "14",
+      "title": "Connections with other knot invariants",
+      "level": 1,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-072-141-unknot",
+      "number": "14.1",
+      "title": "Unknot",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frg times",
+          "heading": false
+        },
+        {
+          "term": "unknot",
+          "heading": true
+        },
+        {
+          "term": "bar mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:unknot label=\"sec:unknot\"} Let us evaluate our knot invariant on the unknot $L(1)$, $1\\in \\Brgr_1$. ::: proposition The Poincare polynomial of $L(1)$ is $$\\sum_{i,j,k}\\mathcal{H}^{i,j,k}q^it^j a^i=\\frac{a^{-1}+at}{q^{-1}-q}.$$ ::: ::: proof *Proof.* We have $X=\\calXr_2(G_1)=\\frg_1\\times G_1\\times 0$. Respectively $\\bar{\\mathcal{C}}_1=\\mathcal{O}_X$ and since $\\calX_1(G_1)=\\frg_1\\times 0$, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-142-homfly-pt-polynomial-specialization",
+      "number": "14.2",
+      "title": "HOMFLY-PT polynomial specialization",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 80,
+      "labelStart": "78",
+      "labelEnd": "80",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homfly-pt polynomial",
+          "heading": true
+        },
+        {
+          "term": "calc bullet",
+          "heading": false
+        },
+        {
+          "term": "calc parallel",
+          "heading": false
+        },
+        {
+          "term": "tau sigma",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "widetilde hilb",
+          "heading": false
+        },
+        {
+          "term": "brgr",
+          "heading": false
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        }
+      ],
+      "extract": "The space $\\calH^k(\\beta)$ is doubly-graded with $q,t$ gradings induced by the action of $T_{sc}$ on $\\Hilb^{free}_{1,n}$. We denote by $\\calH^{i,j,k}(\\beta)$ the subspace of $\\calH^k(\\beta)$ of degree $t^iq^j$. Respectively we introduce the super-polynomial: $$\\SymbolPrint{\\calP}(L(\\beta)):= \\sum_{i,j,k} t^iq^j a^k \\calH^{i,j,k}(\\beta),$$ where $\\beta\\in \\Brgr_n$. In this section we explain why our super polynomial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-143-glmn-homology-differential",
+      "number": "14.3",
+      "title": "gl(m|n)-homology differential",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 81,
+      "labelStart": "80",
+      "labelEnd": "81",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet calb",
+          "heading": false
+        },
+        {
+          "term": "calb vee",
+          "heading": false
+        },
+        {
+          "term": "bbs beta",
+          "heading": false
+        },
+        {
+          "term": "lambda bullet",
+          "heading": false
+        },
+        {
+          "term": "differential",
+          "heading": true
+        },
+        {
+          "term": "beta otimes",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the vector bundle $\\calB_n^\\vee$ over $\\widetilde{\\Hilb}^{free}_{1,n}$ is a vector bundle with the fiber $V$ over the point $(X,Y,v)$ where $V=\\CC^n$ and $v$ is the cyclic vector. Define a section $\\varphi_{m|n}$ of $\\calB_n^\\vee$ with the value $X^mY^n v\\in V$ at the fiber at the point $(X,Y,v)$. Contraction with this section $$i_{\\varphi_{m|n}}: \\Lambda^\\bullet \\calB_n\\to \\Lambda^{\\bullet-1}\\calB_n.$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-075-list-of-symbols",
+      "number": null,
+      "title": "List of Symbols",
+      "level": 1,
+      "pageStart": 81,
+      "pageEnd": 82,
+      "labelStart": "81",
+      "labelEnd": "82",
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indk",
+          "heading": false
+        },
+        {
+          "term": "ceh",
+          "heading": false
+        },
+        {
+          "term": "zcon",
+          "heading": false
+        }
+      ],
+      "extract": "K(V ; dl, dr), 11 qktl, 4 c31, 56 x−1, 50 x0, 50 x1, 50 yi, 50 Dtot, 15 ˜˜x0, 50 ˜x0, 50 CVst, 67 MFsc,crit Bℓ , 71 MFsc B2(X2, W), 21 b23, 56 b33, 56 c13, 56 c23, 56 c32, 56 c33, 56 g12, 24 (¯π12 ⊗B ¯π23)∗, 28 (⃗S1,⃗S2), 73 B, 4 CC, 25 Dkn, 25 Dper Tsc(Hilbfree 1,n ), 5 Gn, 6, 8 Pk,m, 37 Qk...m, 42 Rest, 25 Tn, 8 Tsc, 4 T w, 4 V ⊗ ∆ W, 15 V 0, 69 V , 4 Wi,i+1, 68 W, 21 X+, 8 X++, 8 [C•]per, 9 Φ(13), 27 Φ, 23, 25",
+      "extractCut": true
+    },
+    {
+      "id": "sec-076-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 82,
+      "pageEnd": 83,
+      "labelStart": "82",
+      "labelEnd": "83",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "khovanov-rozansky homology",
+          "heading": false
+        },
+        {
+          "term": "rational cherednik",
+          "heading": false
+        },
+        {
+          "term": "chapel hill",
+          "heading": false
+        },
+        {
+          "term": "hilbert schemes",
+          "heading": false
+        },
+        {
+          "term": "oblomkov",
+          "heading": false
+        },
+        {
+          "term": "matrix factorizations",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Arkhipov, Sergey, Kanstrup, Tina, Braid group actions on matrix factorizations, arXiv:1510.07588. [2] Aganagic, Mina, Shakirov, Shamil, Reﬁned Chern-Simons theory and knot homology, Proceedings of Symposia in Pure Mathematics, vol. 85, (2012), 3–31. [3] Berest,Yuri, Etingof, Pavel, Ginzburg, Victor, Finite-dimensional representations of rational Cherednik algebras, Interba- tional Mathematical Research Notes,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 9,
+        "items": [
+          "January 30,",
+          "Introduction",
+          "Motivation",
+          "Main result",
+          "Convolution",
+          "Involution",
+          "A geometric interpretation for the matrix factorization",
+          "Convolution",
+          "Unknot"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "11.4 End of the proof of the theorem 7.6."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "symbolprint calx",
+      "heading": false
+    },
+    {
+      "term": "calf symbolprint",
+      "heading": false
+    },
+    {
+      "term": "calx circ",
+      "heading": false
+    },
+    {
+      "term": "calx bullet",
+      "heading": false
+    },
+    {
+      "term": "factorization calf",
+      "heading": false
+    },
+    {
+      "term": "calx times",
+      "heading": false
+    },
+    {
+      "term": "tilde calf",
+      "heading": false
+    },
+    {
+      "term": "calx ell",
+      "heading": false
+    },
+    {
+      "term": "symbolprint calxr",
+      "heading": false
+    },
+    {
+      "term": "calx frb",
+      "heading": false
+    },
+    {
+      "term": "calf otimes",
+      "heading": false
+    },
+    {
+      "term": "calf bar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 79,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 78,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p82); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 78 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1608.03227v4"
+  }
+}

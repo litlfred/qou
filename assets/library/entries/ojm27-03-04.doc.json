@@ -1,0 +1,695 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ojm27-03-04",
+  "title": "ojm27-03-04",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds with totally geodesic boundary of genus g",
+      "number": "3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-infinitely-many-mutually-non-isometric-hyperbo"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osaka",
+          "heading": false
+        },
+        {
+          "term": "michihiko",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        }
+      ],
+      "extract": "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s) Fujii, Michihiko Citation Osaka Journal of Mathematics. 1990, 27(3), p. 539-553 Version Type VoR URL https://doi.org/10.18910/11468 rights Note The University of Osaka Institutional Knowledge Archive : OUKA https://ir.library.osaka-u.ac.jp/ The University of Osaka Fujii, M. Osaka J. Math. 27 (1990), 539-553 HYPERBOLIC 3-MANIFOLDS WITH TOTALLY",
+      "extractCut": true,
+      "blocks": [
+        "library/ojm27-03-04/blocks/prose-sec-front-matter",
+        "library/ojm27-03-04/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sadayoshi kojima",
+          "heading": false
+        },
+        {
+          "term": "professor sadayoshi",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundaries",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "compact hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic truncated",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we study compact oriented hyperbolic 3-manifolds each of which has a totally geodesic boundary. By a hyperbolic manifold, we mean a Riemannian manifold with constant sectional curvature — 1. A totally geodesic boundary of such a 3-manifold becomes a hyperbolic surface. Let g be an integer greater than or equal to 2 and let Mg be the Riemann moduli space consisting of all isometry classes of closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-preliminaries",
+      "number": "1",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "branched along",
+          "heading": false
+        },
+        {
+          "term": "g-fold",
+          "heading": false
+        },
+        {
+          "term": "fujπ",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "ideal vertex",
+          "heading": false
+        },
+        {
+          "term": "right-angled",
+          "heading": false
+        }
+      ],
+      "extract": "We start with describing a main constituent element of hyperbolic 3- manifolds with boundaries, called a hyperbolic truncated tetrahedron with one ideal vertex which is a polyhedron in the hyperbolic 3-space H 3 bounded by three right-angled pentagons with one ideal vertex, one right-angled hexagon and three triangles (see Fig. 1.3). Before giving the precise definition in Proposition 1.3, we prepare some formulae",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-infinitely-many-mutually-non-isometric-hyperbo",
+      "number": "3",
+      "title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds with totally geodesic boundary of genus g",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesic boundary",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": true
+        },
+        {
+          "term": "genus",
+          "heading": true
+        },
+        {
+          "term": "closed geodesies",
+          "heading": false
+        },
+        {
+          "term": "adjoining closed",
+          "heading": false
+        },
+        {
+          "term": "truncated tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "non-isometric",
+          "heading": true
+        },
+        {
+          "term": "closed surface",
+          "heading": false
+        }
+      ],
+      "extract": "with totally geodesic boundary of genus g In this section we construct infinitely many mutually non-isometric hyper- bolic 3-manifolds with totally geodesic boundary of genus g by using the mani- fold Ml described above. First we give a complete hyperbolic structure to the manifold Ml by realiz- ing the tetrahedra in §2 as the hyperbolic truncated tetrahedra which we give just below. Let g be any integer greater",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tokyo",
+          "heading": false
+        },
+        {
+          "term": "beardon",
+          "heading": false
+        },
+        {
+          "term": "gtm",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A.F. Beardon: The Geometry of Discrete Groups (GTM 91), Springer-Verlag, New York, 1983. [2] W.D. Neumann and D. Zagier: Volumes of hyperbolic three-manifolds, Topology 24 (1985), 307-332. [3] W.P. Thurston: The Geometry and Topology of 3-Manifolds, to be published by Princeton University Press, 1978/79. Department of Mathematics Tokyo Institute of Technology Ohokayama, Meguro-ku, Tokyo 152, Japan",
+      "extractCut": false
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic manifolds",
+      "heading": true
+    },
+    {
+      "term": "geodesic boundary",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic truncated",
+      "heading": false
+    },
+    {
+      "term": "geodesic boundaries",
+      "heading": false
+    },
+    {
+      "term": "closed geodesic",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic surfaces",
+      "heading": false
+    },
+    {
+      "term": "complete hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "compact hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic structure",
+      "heading": false
+    },
+    {
+      "term": "corresponding geodesic",
+      "heading": false
+    },
+    {
+      "term": "truncated tetrahedra",
+      "heading": false
+    },
+    {
+      "term": "oriented hyperbolic",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "Various values indicated above give the lengths of the corresponding geodesies or the angles",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "The boundary consists of three right-angled pentagons with one ideal vertex, one right-angled hexagon and three triangles",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.4",
+      "title": "",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Glue B to M, G to N, E to L and A to / so that",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "Glue B* to M', G' to N* and E' to L* so that arrows are matched (ι'=l, 3, 5, •••)",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Glue B> to M>, G' to JV' and E' to V so that arrows are matched (i=2,4, 6, •••)•",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "Caseg=2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.5",
+      "title": "Case g=3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "Glue # to M' G' to N' and «< to Iλ",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "Glue B t o M ' G ' to N' and B to U",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "15 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ojm27-03-04"
+  }
+}

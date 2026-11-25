@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2301.02038v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Systems of algebraic equations can be encoded geometrically in an algebraic variety. This apparently harmless observation is the starting point for the development of such a successful branch of modern Mathematics as Algebraic Geometry. One of the leading principles behind most of the mathematical work of Alexandre M. Vinogradov is that Partial Differential Equations (PDEs) should be treated in a similar way. Namely, let $x = (x^1, \\ldots, x^n)$ be some independent variables, let $u = (u^1, \\ldots, u^m)$ be some dependent variables, and let \n\n\\begin{equation}\\label{eq:F=0}\n\\mathscr E_0 : F_a (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2301.02038v1  [math.DG]  5 Jan 2023\nContemporary Mathematics\nVinogradov’s Cohomological Geometry\nof Partial Diﬀerential Equations\nFabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano\nto the memory of our teacher and colleague Alexandre Mikhailovich Vinogradov\nAbstract. Secondary Calculus is a formal replacement for diﬀerential cal-\nculus on the space of solutions of a system of possibly non-linear partial dif-\nferential equations and it is essentially due to Alexandre M. Vinogradov and\nhis collaborators. Many coordinate free properties of PDEs ﬁnd their natu-\nral place in Secondary C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry of PDEs",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-geometry-of-pdes.md",
+      "narrative": null,
+      "content": "\\label{Sec:Geom}\n\nIn this section we show that a system of, generically non-linear, PDEs can be encoded into a geometric object: a \\emph{diffiety}. We will work in the rather general setting of a PDEs imposed on submanifolds $N$ of a fixed dimension $n$ in a manifold $P$ (see \\cite{klv86}), in contrast with most of the literature where only PDEs imposed on sections of a fibration (or a fiber bundle) are considered.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "jet spaces",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-11-jet-spaces.md",
+      "narrative": null,
+      "content": "Let $n,m$ be non-negative integers, and let $P$ be a manifold of dimension $n + m$. We begin providing an intrinsic definition of \\emph{derivatives} of an $n$-dimensional submanifold $N \\subseteq P$. In the following, $n$ should be interpreted as the number of \\emph{independent variables}, $m$ as the number of \\emph{dependent variables}, and $P$ as the space parameterizing both independent and dependent variables. In other words, in this theory, dependent and independent variables can be mixed and swapped. Around every point $p \\in N$ there are coordinates $(x^i, u^\\alpha)$ on $P$, $i = 1, \\ld",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the Cartan distribution",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-12-the-cartan-distribution.md",
+      "narrative": null,
+      "content": "\\label{Sec:CD}\nThe main geometric structure on jet spaces is the \\emph{Cartan distribution}. There are several equivalent ways to define it. The one we present here will be also useful in defining the prolongation of a PDE in the next subsection. We begin noticing that a section of the fibration $J^1 (P, n) \\to J^0 (P, n) \\cong P$ can be interpreted as an $n$-dimensional distribution on $P$. Now, for every $1 \\leq k \\leq \\infty$, the $k$-jet space is canonically equipped with a rank $n$ \\emph{distribution along the projection $J^{k} (P, n) \\to J^{k-1}(P, n)$}, i.e.{} a smooth map\n\\[\n\\mathscr C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "diffieties",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-13-diffieties.md",
+      "narrative": null,
+      "content": "We now use jets to define PDEs and present their geometric portraits: diffieties. Let $P$ be a manifold of dimension $n + m$.\n\n\\begin{definition}\\label{def:PDE}\nA \\emph{system of $k$-th order partial differential equations imposed on $n$-dimensional submanifolds of $P$}, or simply a \\emph{PDE}, is a closed submanifold $\\mathscr E_0 \\subseteq J^k (P, n)$ of the $k$-jet space. A \\emph{solution} of a PDE $\\mathscr E_0 \\subseteq J^k (P, n)$ is an $n$-dimensional submanifold $N \\subseteq P$ such that $N^k \\subseteq \\mathscr E_0$.\n\\end{definition}\n\n\\begin{remark}\nAs a minimal regularity condition on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomology of PDEs",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-2-cohomology-of-pdes.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "horizontal cohomology",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-21-horizontal-cohomology.md",
+      "narrative": null,
+      "content": "\\label{Sec:hor_cohom}\nIn this section we attach a cochain complex to every diffiety $(\\mathscr E, \\mathscr C)$. The associated cohomology is called the \\emph{horizontal cohomology} of $\\mathscr E$ and it contains important coordinate free information on $\\mathscr E_0$.\n\nLet $(\\mathscr E, \\mathscr C)$ be a diffiety.  By involutivity, the vector subbundle $\\mathscr C \\to \\mathscr E$ of the tangent bundle $T \\mathscr E$ is actually a Lie algebroid. Accordingly, there is an associated Cartan calculus. There are also associated De Rham cohomologies (with coefficients). Specifically,    denote by\n\\[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "interpreting horizontal cohomologies",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-22-interpreting-horizontal-cohomologies.md",
+      "narrative": null,
+      "content": "Some of the horizontal cohomologies have nice interpretations, sometimes informal, sometimes more precise. In this subsection we illustrate some of them. We begin with horizontal cohomology with trivial coefficients.\n\n\\begin{example}[Constrained Variational Principles]\\label{exmpl:var_prin}\nTop horizontal cohomologies with trivial coefficients $\\overline H{}^n (\\mathscr E)$ can be (informally) interpreted as \\emph{variational principles} constrained by the PDE $\\mathscr E_0$. To see this, consider a cohomology class $[L] \\in \\overline H{}^n (\\mathscr E)$. Locally\n\\[\nL = \\mathscr L (x, \\ldots,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "algebraic structures on horizontal cohomologies",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-23-algebraic-structures-on-horizontal-cohomologi.md",
+      "narrative": null,
+      "content": "\\label{Subsec:LR}\n Examples \\ref{exmpl:var_prin} and \\ref{exmpl:cons_law} suggest that the horizontal cohomology $\\overline H{}^\\bullet (\\mathscr E)$ should be interpreted as ``smooth functions on the space of solutions of the PDE $\\mathscr E_0$''. For this reason we also denote it\n \\[\n \\boldsymbol C^\\infty := \\overline H{}^\\bullet (\\mathscr E)\n \\] \n and call it \\emph{secondary functions} adopting a terminology by Vinogradov. Similarly, the discussion at the end of Example \\ref{exmpl:inf_sym} suggests that $\\overline H{}^\\bullet (\\mathscr E, \\mathscr V)$ should be interpreted as ``vector field",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homotopy of PDEs",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-3-homotopy-of-pdes.md",
+      "narrative": null,
+      "content": "\\label{Sec:Homot}\n\nIn this section we quickly illustrate the latest developments on Vinogradov's ideas about Secondary Calculus. They are not due to Vinogradov himself but they are definitely inspired by his work.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "homotopy algebras",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-31-homotopy-algebras.md",
+      "narrative": null,
+      "content": "In this subsection, we recall the definitions of those homotopy algebras that we will need in the rest of the paper. Roughly, a homotopy algebra of a certain type (associative, Lie, etc.) is a graded vector space equipped with operations satisfying the algebra axioms only up to a coherent system of \\emph{higher homotopies}. Homotopy algebras appear when cohomology and homotopy interact with algebraic structures \\cite{lv12, v14}. We adopt the degree $1$ convention on the operations of a homotopy algebra, and we only work with (graded) vector spaces over a field of zero characteristic.\n\n\\begin{d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the LR-algebra of secondary vector fields",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-32-the-lr-algebra-of-secondary-vector-fields.md",
+      "narrative": null,
+      "content": "Let $(\\mathscr E, \\mathscr C)$ be a diffiety. According to Theorem \\ref{theor:LR} the pair $(\\boldsymbol C^\\infty, \\boldsymbol{\\mathfrak X})$ is a graded Lie-Rinehart algebra. Recall that $\\boldsymbol C^\\infty = \\overline H{}^\\bullet (\\mathscr E) = H^\\bullet (\\overline \\Omega (\\mathscr E), \\overline d)$ and $\\boldsymbol{\\mathfrak X} = \\overline H{}^\\bullet (\\mathscr E, \\mathscr V) = H^\\bullet(\\overline \\Omega(\\mathscr E, \\mathscr V), \\overline d)$. Moreover, the cochains $\\overline \\Omega{}^\\bullet(\\mathscr E, \\mathscr V)$ are naturally a graded module over the cochains $\\overline \\Omega{}^\\bu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the A-algebra of secondary differential operators",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-33-the-a-algebra-of-secondary-differential-opera.md",
+      "narrative": null,
+      "content": "In this final subsection we discuss \\emph{secondary scalar differential operators}. In order to define them we follow the recipe presented at the end of Section \\ref{Sec:Homol}. Let $(\\mathscr E, \\mathscr C)$ be a diffiety. The construction $\\Phi$ for which we want to find a replacement on the space of solutions of $\\mathscr E_0$ is ``\\emph{scalar differential operators}'', i.e.{} linear differential operators from functions to functions (just DOs, for simplicity, in what follows).\n\nFor Step (1) in our recipe, we have to define \\emph{transverse DOs}. Intuitively, they should be DOs taking deri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2301.02038v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[1] K. Behrend, and P. Xu, Diﬀerentiable stacks and gerbes, J. Sympl. Geom. 9 (2011), 285–341;\ne-print: arXiv:math/0605694.\n[2] A. V. Bocharov et al., Symmetries and conservation laws for diﬀerential equations of mathe-\nmatical physics, Transl. Math. Mon. 182, Amer. Math. Soc., Providence, 1999.\n[3] B. Güneysu, and M. J. Pﬂaum, The proﬁnite dimensional manifold structure of formal\nsolution spaces of formally integrable PDEs; SIGMA 13 (2017), 003 (44 pages); e-print:\narXiv:1308.1005.\n[4] M. del Hoyo, Lie Groupoids and Diﬀerentiable Stacks, Port. Math. 70 (2013), 161–209; e-\nprint: arXiv:1212.67",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

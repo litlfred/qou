@@ -1,0 +1,631 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-alg-geom-9705010v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-contents.md",
+      "narrative": null,
+      "content": "Introduction\n§1. Some physics background\nElectromagnetism\nYang-Mills theory\nQuantization\nSupersymmetry\nN = 2 super Yang-Mills\nDuality\nThe Seiberg-Witten solution\nAdding Matter\n§2. Why integrable systems?\nAlgebraically integrable systems\nSeiberg-Witten diﬀerentials\nLinearity: complexiﬁed Duistermaat-Heckman\n§3. Which integrable system?\nMeromorphic Higgs bundles\nThe spectral curves\nElliptic solitons\nTests\nConsistency with Seiberg-Witten\nMass to zero: the N=4 limit\nτ to ∞: the ﬂow to pure N=2\nHiggs to ∞: symmetry breaking\nSingularities\n§4. Other integrable systems\nPure N = 2 SYM\nThe Toda system\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:alg-geom/9705010v1  7 May 1997\nProceedings of Symposia in Pure Mathematics\nVolume 00, 1997\nSeiberg-Witten Integrable Systems\nRon Y. Donagi",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "While many mathematicians are aware of the monopole equations [W] and of\nthe impact they have had in topology, probably not very many are as familiar with\nthe works [SW1, SW2] of Seiberg and Witten on which the monopole equations\nare based. The appearance of these works was a major breakthrough in Quantum\nField Theory (QFT), and has to a large extent revolutionized and transformed the\nsubject. The actual achievement in [SW1] was an exact solution to a problem in\nQFT (pure N=2 supersymmetric Yang-Mills in four dimensions with gauge group\nSU(2)) which could traditionally be solved only approxima",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§1. Some Physics Background Electromagnetism",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-1-some-physics-background-electromagnetism.md",
+      "narrative": null,
+      "content": "Electromagnetism\nThe electric ﬁeld E and the magnetic ﬁeld B in R3 are governed by Maxwell’s\nequations, of T-shirt fame. Think of E and B, respectively, as a 1-form and a 2-form\non R3. Both are time-dependent, so we combine them into the electromagnetic ﬁeld\nF := E∧dt + B, a 2-form on R4. Maxwell’s equations in vacuo are:\ndF = 0\nd ∗F = 0.\nHere ∗is the Hodge star operator on forms on R4, determined by the Minkowski\nmetric g = dx2 + dy2 + dz2 −c2dt2. (The speed of light c is usually set to 1 by\nadjusting units.)\nThe same equations make sense for an unknown 2-form F on any (pseudo)\nRiemannian man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang-Mills theory",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-yang-mills-theory.md",
+      "narrative": null,
+      "content": "Yang-Mills theory is quite familiar to mathematicians. It involves replacing the\nstructure group U(1) by an arbitrary reductive group G. We thus have a connection\nA on some G-bundle V over our fourfold X, the curvature is now the ad(V )-valued\ntwo-form dA + 1\n2[A, A], and the equations are as before,dF = 0, d ∗F = 0, except\nSEIBERG-WITTEN INTEGRABLE SYSTEMS\n5\nthat the covariant derivative d = dA on ad(V ) now replaces the exterior derivative\nd on the trivial bundle ad(L).\nThese equations can be, and usually are, considered as variational equations\nfor the Lagrangian\nL(A) :=\nZ\nX\nTr(F ∧∗F),\nwher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-quantization.md",
+      "narrative": null,
+      "content": "Quantization is an art form which, when applied to classical physical theo-\nries, yields predictions of subatomic behavior which are in spectacular agreement\nwith experiments. The quantization of the classical mechanics of particles leads\nto quantum mechanics, which can be described, in a Hamiltonian approach, via\noperators and rays in Hilbert space, or in a Lagrangian formulation, via path in-\ntegrals. Quantization of continuous ﬁelds leads to QFT: quantum ﬁeld theory. It\nhas a Hamiltonian formulation, where the Hilbert space is replaced by the “larger”\nFock space, as well as a Lagrangian for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supersymmetry",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-supersymmetry.md",
+      "narrative": null,
+      "content": "Supermathematics is the habit of adding the preﬁx “super” to ordinary, com-\nmutative objects, to denote their sign-commutative generalization. Thus, a super\nspace is a locally ringed topological space whose structure sheaf O = O0 ⊕O1 is Z2\ngraded, O0 is central, and multiplication O1 × O1 →O0 is skew symmetric. Aﬃne\nsuper space Rm,n is the topologcal space Rm with the sheaf C∞(Rm) ⊗Λ·(Rn)\nand the Z2 grading coming from the Z-grading of the exterior algebra. An (m, n)-\ndimensional super manifold is a super space which is locally isomorphic to Rm,n\n(The isomorphisms are, of course, isomorphisms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "N=2 Super Yang-Mills",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-n2-super-yang-mills.md",
+      "narrative": null,
+      "content": "The setting for Montonen-Olive duality [MO], for the work of Seiberg-Witten\n[SW1, SW2], and for the development discussed in later sections, is N = 2 super-\nsymmetric Yang-Mills theory (SYM) in four-dimensional space. The Lagrangian\nfor this theory is usually written in terms of super ﬁelds on an aﬃne SUSY space\n[WB], making the super Poincare invariance evident. When written out explicitly\nin terms of its component ﬁelds, the Lagrangian is quite complicated. It starts with\na purely bosonic term analogous to the usual Yang-Mills Lagrangian R Tr(F ∧∗F).\nAdditional terms, involving additional ﬁe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-duality.md",
+      "narrative": null,
+      "content": "The original conjecture of Montonen and Olive [MO] was that the low en-\nergy theory should be invariant under a duality exchanging electric and magnetic\ncharges, and also exchanging the coupling constant g with its inverse. In other\nwords: electric charge in the strongly coupled theory (large g) behaves like mag-\nnetic charge at weak coupling, and vice versa. Seiberg and Witten found that a\nmodiﬁed version of this duality holds in pure N = 2 SYM for SU(2). They applied\nthe super version of the Hodge ∗operator to the Lagrangian Leﬀ, added some vari-\nables (Lagrange multipliers) and integrated o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Seiberg-Witten solution",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-the-seiberg-witten-solution.md",
+      "narrative": null,
+      "content": "The foregoing suggests that what lives intrinsically over a generic u ∈B is not\nthe electric charge a(u) but the unimodular lattice Za(u) + ZaD(u) of all charges\n(electric, magnetic, and “dyonic”, or mixed). As u varies, we get a Z2 local system\nV over B minus some singular locus, together with a homomorphism to (the trivial\nbundle with ﬁber) C. Dually, this homomorphism is equivalent to a holomorphic\nsection\n\u0010\naD\na\n\u0011\nof the vector bundle VC (i.e. of the sheaf V ⊗OB∖sing). The plan\nis to identify the local system (variation of Hodge structure, really) V , and then\nto ﬁx the section\n\u0010\naD\na\n\u0011\n,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adding matter",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-adding-matter.md",
+      "narrative": null,
+      "content": "In a quantum ﬁeld theory, a matter particle is represented by a fermion ﬁeld\nψ which, in the case of a gauge theory, needs to be in some representation of G.\nIt is added (or: coupled) to the theory by adding to the YM Lagrangian a term\ncorresponding to the Lagrangian of the free particle (this includes a parameter, the\nparticle mass m), and another term corresponding to its interaction with the YM\nﬁeld. In SYM the ﬁeld needs to be in a representation ρ of G, tensored with an\nN = 2 multiplet, to preserve the SUSY. (The relevant multiplet, which is built from\nthe fermion ψ, is called a hypermult",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§2. Why integrable systems Algebraically integrable systems",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-2-why-integrable-systems-algebraically-integrabl.md",
+      "narrative": null,
+      "content": "Algebraically integrable systems\nAn algebraically integrable system consists of a complex algebraic manifold\nX, an everywhere non-degenerate, closed holomorphic (2, 0)-form σ on X, and\na morphism π : X →B whose general ﬁber is a (polarized) abelian subvariety\nXb := π−1(b) which is Lagrangian with respect to σ. In practice, the object which\nis naturally given is often an aﬃne open X0 ⊂X, the ﬁbers being aﬃne sub-\nsets of abelian varieties. This is a straightforward algebraic analogue of the (real,\nC∞) notion of integrable system in classical mechanics. As there, any function H\n(“Hamiltonian”) o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seiberg-Witten Diﬀerentials",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-seiberg-witten-diﬀerentials.md",
+      "narrative": null,
+      "content": "In the Seiberg-Witten picture of super Yang-Mills, there are the charges ai and\naD\ni which are described locally as holomorphic functions on the quantum moduli\nspace B. There is less ambiguity in choosing these ai, aD\ni\nthan in the coordinates\nzi, wi on the base of an algebraically integrable system: the group of their linear\ncombinations Σniai + nD\ni aD\ni\n(with integer coeﬃcients ni) should be uniquely de-\ntermined in the pure SYM case, and determined modulo the masses of the added\nparticles in general. A natural way to get functions with precisely such ambiguity\non the base of an integrable",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linearity: complexiﬁed Duistermaat-Heckman",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-linearity-complexiﬁed-duistermaat-heckman.md",
+      "narrative": null,
+      "content": "One feature of the Seiberg-Witten picture which we have not yet discussed is\nthe linear dependence of the symplectic form on the particle masses. From one point\nof view, this linearity follows from existence of the Seiberg-Witten diﬀerential: the\nequation σ = dλ implies that the cohomology class of σ is a ﬁxed linear combination\nof the residues of λ, which are just the masses. On the other hand, linearity can also\nbe interpreted as arising from a complex analogue of the theorem of Duistermaat-\nHeckman [DH].\nLet (X, σ) be a complex symplectic manifold (i.e. the symplectic form σ is\nholomorphic,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§3. Which integrable system",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-3-which-integrable-system.md",
+      "narrative": null,
+      "content": "We have seen that all the structures on the quantum moduli space of N = 2\nSYM predicted by Seiberg and Witten can be realized in terms of algebraically\nintegrable systems. The features of “special geometry” occur in any algebraically\nintegrable system. The distinguished electric and magnetic charges appear as soon\nas we ﬁx a Seiberg-Witten diﬀerential, and perhaps the most natural way to get\nthis is as tautological 1-form on a family of curves contained in the total space of\n22\nRON Y. DONAGI\na line bundle ωE(D) of meromorphic diﬀerentials on some ﬁxed curve E. Since a\nquantum theory with β = 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Meromorphic Higgs bundles",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-meromorphic-higgs-bundles.md",
+      "narrative": null,
+      "content": "Fix a curve E, an eﬀective divisor D on it, and an integer n ≥2. The total space\nof the system is the moduli space X of equivalence classes of pairs (V, ϕ), where\nV is a rank-n vector bundle on E with trivial determinant, ϕ : V →V ⊗ωE(D)\nis a traceless endomorphism with values in ωE(D), and the pairs are subject to an\nappropriate semistability condition. The base is\nB := ⊕n\ni=2H0(E, (ωE(D))⊗i),\nand the map π : X →B sends a pair (V, ϕ) to (the sequence of coeﬃcients of) the\ncharacteristic polynomial\ndet(t · I −ϕ).\n(It is best to think of t as a ﬁber coordinate taking values in ωE(D).)\nThe gener",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The spectral curves",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-the-spectral-curves.md",
+      "narrative": null,
+      "content": "reducible).\nOur system can be described rather explicitly. The moduli space of degree 0,\nrank n vector bundles on E can be identiﬁed with the symmetric product SnE:\neach equivalence class contains a unique decomposable bundle V = ⊕n\ni=1Li, with\nLi = OE(qi −∞) ∈Pic0E. The moduli of SL(n)-bundles is the ﬁber over 0 of the\nAbel-Jacobi map SnE →E. It is a projective space\n{q1 + · · · + qn|\nX\nqi = n∞} = PH0(E, O(n∞)) ≈Pn−1.\nIn terms of the decomposition V = ⊕Li, any Higgs ﬁeld ϕ on V can be written as\na matrix with entries\nϕij ∈Γ(Lj ⊗L−1\ni (∞)).\nLet A := Res∞ϕ. Its diagonal elements are all zeroes,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elliptic solitons",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-elliptic-solitons.md",
+      "narrative": null,
+      "content": "It is curious to note that the same system arises in several rather diﬀerent\ncontexts. Here is a brief outline of one of these, following the work of Treibich and\nVerdier [T], [TV].\nFinite dimensional solutions of the KP hierarchy (= inﬁnite dimensional in-\ntegrable system) are well understood. They are parametrized by Krichever data,\nconsisting of a curve C, a point p ∈C, a line bundle L, and local trivializations.\nSuch data determine a point in the total space of the hierarchy with the property\nthat the inﬁnite collection of commuting KP ﬂows emanating from the point sweep\nout only a ﬁnite d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tests",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-017-tests.md",
+      "narrative": null,
+      "content": "What makes this description of SYM with adjoint matter convincing for a\nphysicist, is that it can be “tested” by working out various limits and special cases,\nand that it yields results consistent with the “predictions” based on the expected\nbehavior of the physical system. We outline some of these tests.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consistency with Seiberg-Witten",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-018-consistency-with-seiberg-witten.md",
+      "narrative": null,
+      "content": "For n = 2, with given E and m, our system produces a 1-parameter family of\ndouble covers Cu →E. Each Cu has genus 2, and the integrable system is the family\nof 1-dimensional Pryms. Write the equation of E as y2 = Π3\ni=1(x−ei) = x3+bx−c,\nwith P ei = 0 as before. The cover Cu is given explicitly in terms of our polynomials\npi as:\n0 = p2 + up0 = t2 −x + u.\nIts Galois group over the P1 with coordinate x is Z2 × Z2, with involutions α : y 7→\n−y, , β : t 7→−t, and αβ. The quotients are a rational curve (with coordinate t);\nthe original E; and another elliptic curve Eu, respectively.\nP\nI 1:(x)\nαβ\n:(x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mass to zero: the N=4 limit",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-mass-to-zero-the-n4-limit.md",
+      "narrative": null,
+      "content": "The limit m →0 of N = 2 SYM with gauge group G and adjoint matter is\nknown to acquire a higher form of supersymmetry: it is the N = 4 SYM theory,\nwith the same gauge group. (A physicist might rather say that two of the four\n28\nRON Y. DONAGI\nsupersymmetries of N = 4 SYM are broken when the theory is perturbed by the\naddition of a mass term to the Lagrangian).\nThe extra symmetry of the N =\n4 theory means that “everything” (i.e.\nthe ingredients of the special geometry\npackage encountered in §2: the quantum moduli space, the Kahler metric, the\nprepotential...) can be computed explicitly. The outco",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higgs to ∞: symmetry breaking",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-higgs-to-symmetry-breaking.md",
+      "narrative": null,
+      "content": "This time we ﬁx both the curve E and the mass m, and instead we ﬂow to\nthe theory whose gauge group is some Levi subgroup G ⊂SU(n). Fix a diagonal\nmatrix ψ, and consider the ﬂow sending a Higgs bundle (V, ϕ) in our system to\n(V, ϕs) where ϕs := ϕ + sψ. (As before we decompose V = ⊕Li and let ψ act\ndiagonally.\nThe ﬂow is well-deﬁned only on the n!-sheeted cover of the system\non which this decomposition exists). The physics predicts that the limit of the\nSU(n) integrable system as s →∞along this ﬂow should be the G-system, where\nG ⊂SU(n) is the centralizer of ψ.\nFor generic ψ, with distinct eige",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Singularities",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-021-singularities.md",
+      "narrative": null,
+      "content": "Much of the eﬀort in [DW] was devoted to analyzing the discriminant, the\nhypersurface D ⊂B over which the spectral curves are singular. Physically, that\nis where all the interesting phenomena occur, and where many predictions can\nbe made. For instance, as τ →∞(“at weak coupling”), the limit of D should\nbe reducible: this is a classical limit, where the mass spectrum can be analyzed\ndirectly from the classical Lagrangian. D is the locus where some mass vanishes.\nThis mass can belong to either of the two types (vector or hyper) of N = 2 SUSY\nmultiplets mentioned in section 1 (“Adding matter”), a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§4. Other integrable systems",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-022-4-other-integrable-systems.md",
+      "narrative": null,
+      "content": "Having studied in some detail the system which solves one particular family of\nSYM theories, we proceed to consider what is known for some of the other families.\nOur discussion will include,\n• The pure N = 2 SYM for arbitrary gauge group G, and its relation to the\nToda systems.\n• The situation when fundamental matter is added to the pure theory.\nSEIBERG-WITTEN INTEGRABLE SYSTEMS\n31\n• The theory with adjoint matter for arbitrary G, and its relation to the\nelliptic Calogero-Moser system.\n• A few words about the integrable systems arising in string theory.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "It was observed in [GKMMM] that the curves obtained in [KLTY], [AF] for the pure G = SU(n) theory are precisely the spectral curves of the periodic Toda system.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure N=2 SYM",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-023-pure-n2-sym.md",
+      "narrative": null,
+      "content": "The solutions by Seiberg and Witten of the pure N = 2 SYM theory [SW1]\nand the theories with fundamental or adjoint matter [SW2] led rapidly to the\ncreation of a whole literature of solutions to speciﬁc SYM theories. The general\npattern was: postulate the general form of a family of curves which builds-in some\nof the expected symmetries of the theory, then adjust coeﬃcients to enforce all\nother available information: further symmetries, limiting theories which were al-\nready known, internal consistencies. All cases which were worked out this way, e.g.\n[KLTY], [AF], [DS], [HO], [APS], [BL], [AS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Toda system",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-024-the-toda-system.md",
+      "narrative": null,
+      "content": "A simple way to describe the Toda system is via the construction of Adler-\nKostant-Symes. Start with a decomposition g = a ⊕b of a Lie algebra g as vector\nspace direct sum of two of its subalgebras a, b. This induces a dual decomposition\ng∗= a∗⊕b∗, an injection i := b∗֒ →g∗, and a projection π : g ։ b. Let Ox ⊂b∗\ndenote the coadjoint orbit of some x ∈b∗. The image i(Ox) ⊂g∗has, in general,\nnothing to do with the coadjoint orbit Oi(x) of i(x) in g∗. So i∗of a G-invariant\nfunction f on g∗can be a complicated, non-constant function on Ox. The AKS claim\nis that any two such, i∗f1 and i∗f2, Poisson",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Periodic Toda",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-025-periodic-toda.md",
+      "narrative": null,
+      "content": "RON Y. DONAGI\nand (after identifying g with g∗, so that b∗becomes the lower triangulars):\nǫ =\n\n\n\n\n\n\n0\n1\n0\n...\n0\n1\n0\n\n\n\n\n\n\n, x =\n\n\n\n\n\n\n0\n1\n0\n...\n0\n1\n0\n\n\n\n\n\n\n.\nThe orbit Ox ⊂b∗consists of all matrices of the form:\n\n\n\n\n\nb1\n0\na1\n...\n...\n0\nan−1bn\n\n\n\n\n\nwith aj̸ = 0 and Σbj = 0. The shifted orbit consists of tridiagonal matrices:\n\n\n\n\n\nb1\n1\n0\na1\n·\n·\n·\n·\n·\n·\n·\n1\n0\nan−1\nbn\n\n\n\n\n.\nThis is a 2(n−1)-dimensional symplectic manifold (X, σ), isomorphic as symplectic\nmanifold to the cotangent bundle of the maximal torus T ≈(C∗)n−1. The restric-\ntion to it of the symme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The spectral curves",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-026-the-spectral-curves.md",
+      "narrative": null,
+      "content": "The spectral curves\nFor the classical groups we can write the equation of the Toda spectral curves\nCF,u for the fundamental representation F as\nw = z + µz−1, xǫw + p = 0\nwhere\np = p(x) = xn+1 + u2xn−1 + · · · + un+1\nfor type An (G = SL(n + 1)), and\np = p(x2) = x2n + u2x2n−2+ . . . + u2n\nfor types Bn, Cn, and Dn, and the uℓare coordinates on the base. Here ǫ = 0\nfor An, Bn, Cn and ǫ = 2 for Dn.\nIn general, degx(p) is the dimension of the\nrepresentation, while the w term modiﬁes the coeﬃcient uhg corresponding to the\ninvariant of highest degree. For An, Bn, Cn, Dn, these Coxeter numbers are n +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fundamental matter",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-027-fundamental-matter.md",
+      "narrative": null,
+      "content": "The spectral curves for SYM with various gauge groups and numbers of par-\nticles (“quarks”) in the fundamental representation have been determined by vari-\nous means. A very incomplete list includes [HO], [APS], [AS], [H], [MN], [KP],\n[DKP1],[DKP2]. Each of these solutions is supported by substantial evidence, and\nyet the total picture seems far from complete. No really clear unifying principle is\nknown, and there is no analogue of the Toda integrable system which is responsible\nfor the various curves. There is also a certain level of disagreement among compa-\nrable solutions, see the discussi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjoint matter",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-028-adjoint-matter.md",
+      "narrative": null,
+      "content": "As soon as [MW] and [DW] appeared, each with a class of integrable systems\nwhich solves its respective version of SYM, the question arose whether there was\na common generalization: an integrable system for SYM with adjoint matter and\narbitrary gauge group G, going to the periodic Toda system in the limit as m and\nτ go together to ∞.\nIn [Mc], Martinec suggested that the elliptic Calogero-Moser system (cf. [OP])\nmay provide this common generalization. There is such a system for each semisim-\nple G, and the case G = SU(n) agrees exactly with the system in [DW]. There is\nalso a direct computation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stringy integrable systems?",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-029-stringy-integrable-systems.md",
+      "narrative": null,
+      "content": "Quantum ﬁeld theory is a limit of string theory compactiﬁed on a Calabi-\nYau threefold, and the SW duality can be realized as the limiting form of various\nstring dualities. A series of recent papers, such as [MW2], [KLMVW], [GHL1],\n[GHL2], [LW], suggest that much of the QFT structure studied in this paper - the\nspectral curves, integrable systems, SW diﬀerentials and so on - arises as limit of\ncorresponding stringy structures. A possible framework for studying the transition\nfrom stringy integrable systems to the SW systems is proposed in [F], where SW-\ntype integrable systems are shown to ari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-030-references.md",
+      "narrative": null,
+      "content": "[AAG]\nM. R. Abolhasani, M. Alishahiha, A. M. Ghezelbash, hep-th 9606043.\n[AHH]\nM. Adams, J. Harnad, J. Hurtubise, Isospectral Hamiltonian ﬂows in ﬁnite and inﬁ-\nnite dimensions II: Integration of ﬂows, Commun. Math. Phys. (1990), 555-585.\n[AM]\nM. Adler, P. van Moerbeke, Completely integrable systems, Euclidean Lie algebras,\nand curves, Advances in Math. 38 (1980), 267-379.\n[AF]\nP. C. Argyres, A. Faraggi, The vacuum Structure and Spectrum of N = 2 Supersym-\nmetric SU(N) Gauge Theory, Phys. Rev. Lett. 74 (1995), hep-th 9411057.\n[APS]\nP. C. Argyres, R. Plesser, A. D. Shapere,, The Coulomb phase o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

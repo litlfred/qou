@@ -1,0 +1,479 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2403.00360v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "CAUSAL FERMION SYSTEMS AND OCTONIONS\nFELIX FINSTER, NIELS G. GRESNIGT, JOS´E M. ISIDRO, ANTONINO MARCIAN`O,\nCLAUDIO F. PAGANINI, AND TEJINDER P. SINGH\nMARCH 2024\nAbstract. We compare the structures and methods in the theory of causal fermion\nsystems with approaches to fundamental physics based on division algebras, in par-\nticular the octonions. We find that octonions and, more generally, tensor products\nof division algebras come up naturally to describe the symmetries of the vacuum\nconfiguration of a causal fermion system. This is achieved by associating the real\nand imaginary octonion basis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#secintro label=\"secintro\"} This article is part of a series of papers comparing the structures and ideas of different approaches to fundamental physics that was started with [@eth-cfs; @mmt-cfs] and will be continued in [@cfstdqg; @tracedynamics]. Each of these papers contains an introduction to the theories under consideration including an overview of their accomplishments. These overviews serve as a starting point for a reader familiar with one of the approaches to engage with the other approach. The papers proceed with a detailed comparison of these two theories. Ultimately, the goal is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Division Algebras and the Standard Model",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-division-algebras-and-the-standard-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-motivation.md",
+      "narrative": null,
+      "content": "The standard model of particle physics is a gauge theory based on the group ${\\rm{SU}}(3)\\times {\\rm{SU}}(2)\\times {\\rm{U}}(1)$ with particle multiplets falling into irreducible representations of these Lie groups. Despite its undeniable success, the standard model has some striking theoretical and conceptual puzzles that remain unanswered. For example:\n\n-   What is the origin of the standard model gauge group, and why do the gauge groups, as well as the spacetime symmetries appear as separate factors?\n\n-   Why do elementary fermions fall into the observed multiplets (irreducible representatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical Overview",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-historical-overview.md",
+      "narrative": null,
+      "content": "[]{#historical label=\"historical\"}\n\nThe octonions first appeared in relation to quantum theory in the classification of Jordan algebras by Jordan et. al. [@jordan1993algebraic]. In this context, the Jordan algebras represent algebras of observables, because unlike the usual matrix product, the commutative but non-associative Jordan product of two Hermitian operators is again Hermitian. In particular, the classification of Jordan algebras identified the single exceptional Jordan algebra $J_3(\\mathbb{O})$, consisting of $3\\times 3$-matrices with (off-diagonal) entries in $\\mathbb{O}$.\n\nNot long",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Normed Division Algebras",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-23-the-normed-division-algebras.md",
+      "narrative": null,
+      "content": "A division algebra is an algebra over a field where division is always well-defined, except by zero. A normed division algebra has the additional property that it is also a normed vector space, with the norm defined in terms of a conjugate. A well-known result by Hurwitz [@hurwitz1898ueber] states that there exist only four normed division algebras (over the field of real numbers): $\\mathbb{R}$, $\\mathbb{C}$, $\\mathbb{H}$, $\\mathbb{O}$, being of dimensions one, two, four and eight, respectively. In going to higher-dimensional algebras, successive algebraic properties are lost: $\\mathbb{R}$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Associative Multiplication Algebras of O",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-24-the-associative-multiplication-algebras-of-o.md",
+      "narrative": null,
+      "content": "The non-associativity of $\\mathbb{O}$ means that the algebra is not representable as a matrix algebra (with the standard matrix product). The algebra generated from the composition of left (and/or right) actions of $\\mathbb{O}$ on itself, however, is associative, since each such left (right) action corresponds to a linear operator (endomorphism). Suppose that $a,x$ are elements of some algebra $\\mathbb{A}$, and define: $$L_a[x]:=ax,\\quad R_a[x]:=xa,\\quad \\forall a,x\\in  \\mathbb{A} \\:.$$ It is clear that $L_a$ and $R_a$ denote linear operator corresponding to left and right multiplication of $x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to the Standard Model",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-25-connection-to-the-standard-model.md",
+      "narrative": null,
+      "content": "[]{#sec:octsm label=\"sec:octsm\"} In order to highlight the connection of the octonions to the standard mode, we now provide an explicit example of how the associative left multiplication algebra $\\mathbb{C}\\ell(6)$ generated from the adjoint actions of $\\mathbb{C}\\otimes\\mathbb{O}$ can be used to represent one generation of standard model fermions with ${\\rm{SU}}(3)\\times {\\rm{U}}(1)$ unbroken gauge symmetries.\n\n### One Generation of Electrocolor States from $\\mathbb{C}\\otimes\\mathbb{O}$ {#Furey}\n\nLet $L_{e_1},...,L_{e_6}$ be a generating basis (over $\\mathbb{C}$) for $\\mathbb{C}\\ell(6)$ assoc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Causal Fermion Systems",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-3-causal-fermion-systems.md",
+      "narrative": null,
+      "content": "[]{#seccfsintro label=\"seccfsintro\"} We now give a self-contained introduction to the basic structures of a causal fermion system. We keep the explanations short, noting that detailed and elementary introductions to the physical and mathematical concepts can be found in the review papers [@dice2014; @review] and the comparison paper [@mmt-cfs Section 2.1]. We also refer the interested reader to the textbooks [@cfs; @intro] and the website [@cfsweblink].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-31-causal-fermion-systems-and-the-reduced-causal.md",
+      "narrative": null,
+      "content": "We begin with the general definition of a causal fermion system.\n\n::: Def\n[]{#defcfs label=\"defcfs\"} (causal fermion systems) * Given a separable complex Hilbert space $\\mathscr{H}$ with scalar product $\\langle.|. \\rangle_\\mathscr{H}$ and a parameter $n \\in \\mathbb{N}$ (the *\"spin dimension\"*), we let ${\\mathscr{F}}\\subset \\text{\\rm{L}}(\\mathscr{H})$ be the set of all symmetric operators on $\\mathscr{H}$ of finite rank, which (counting multiplicities) have at most $n$ positive and at most $n$ negative eigenvalues. On ${\\mathscr{F}}$ we are given a positive measure $\\rho$ (defined on a $\\sigma$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spacetime Structures",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-32-spacetime-structures.md",
+      "narrative": null,
+      "content": "A causal fermion system describes a spacetime together with all structures therein. The structures are the causal and metric structures, spinors and interacting fields (for details see [@cfs Chapter 1]). All these spacetime structures are *inherent* in the sense that they use information already encoded in the causal fermion system. We now give a brief outline of the spacetime structures, with a focus on those structures which will be needed later on.\n\nLet $\\rho$ be a *minimizing* measure. *Spacetime* is defined as the support of this measure, $$M := \\mathop{\\mathrm{supp}}\\rho \\;\\subset\\; {\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dynamical Equations in Spacetime",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-33-dynamical-equations-in-spacetime.md",
+      "narrative": null,
+      "content": "ciple satisfies the following Euler-Lagrange (EL) equations. For a suitable value of the\nparameter s > 0, the function ℓ: F →R+\n0 defined by\nℓ(x) :=\nZ\nM\nLκ(x, y) dρ(y) −s\n(3.8)\nis minimal and vanishes on spacetime M := supp ρ,\nℓ|M ≡inf\nF ℓ= 0 .\n(3.9)\nHere the parameter s ≥0 in (3.8) is the Lagrange parameter corresponding to the\nvolume constraint. For the derivation and further details we refer to [54, Section 2]\nor [52, Chapter 7].\nThe EL equations (3.9) describe the dynamics of the causal fermion systems. This\ncan be done abstractly on the linearized level by working with the so-called linea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to the Standard Model",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-34-connection-to-the-standard-model.md",
+      "narrative": null,
+      "content": "a specific limiting case, referred to as the continuum limit, the causal action principle\ngives rise to the interactions of the standard model and general relativity (GR) in terms\nof an interaction of Dirac particles and anti-particles with classical bosonic fields (the\nconnection to bosonic quantum fields will be made in Section 3.5 below). The analysis\nof the continuum limit is a systematic procedure for evaluating the EL equations for\ncausal fermion systems constructed in Minkowski space on the level of classical bosonic\nfields coupled to second-quantized fermionic fields.\nCAUSAL FERMION SY",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to Quantum Field Theory",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-35-connection-to-quantum-field-theory.md",
+      "narrative": null,
+      "content": "[]{#secqft label=\"secqft\"} Going beyond the continuum limit, the interaction described by the causal action principle can also be described by bosonic and fermionic quantum fields. So far, these constructions have been carried out only for causal fermion systems describing Minkowski space. More precisely, in [@fockbosonic; @fockfermionic] it was shown that an interacting causal fermion system at a given time can be described by a *quantum state* $\\omega$, a positive linear functional on the $*$-algebra of observables $\\myscr A$, i.e. $$\\omega^t \\::\\: \\myscr A\\rightarrow \\mathbb{C}\\quad \\text{c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to Quantum Geometry and Quantum Gravity",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-36-connection-to-quantum-geometry-and-quantum-gr.md",
+      "narrative": null,
+      "content": "[]{#secqg label=\"secqg\"} The kernel of the fermionic projector [\\[Pxyabs\\]](#Pxyabs){reference-type=\"eqref\" reference=\"Pxyabs\"} encodes geometric structures giving rise to a mathematically concise setting of a Lorentzian quantum geometry [@lqg]. One important structure is the *spin connection* $D_{x,y}$, being a unitary mapping (with respect to the spin inner product [\\[ssp\\]](#ssp){reference-type=\"eqref\" reference=\"ssp\"}) between the spin spaces, $$\\label{Dxy}\nD_{x,y} \\::\\: S_y \\rightarrow S_x \\qquad \\text{unitary}.$$ A first idea for construction $D_{x,y}$ is to take a polar decomposition of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-4-comparison.md",
+      "narrative": null,
+      "content": "[]{#sec:comparison label=\"sec:comparison\"} In this section we will highlight and compare the mathematical structures and the conceptional ideas behind causal fermion systems and octonionic approaches to fundamental physics, and we will demonstrate a first simple example of how octonions can be integrated in causal fermion systems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Foundations of the Approaches",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-41-foundations-of-the-approaches.md",
+      "narrative": null,
+      "content": "[]{#sec:foundations label=\"sec:foundations\"} We begin with a discussion of the basic ideas and the mathematical structures of the theories.\n\n### Octonionic Approaches\n\nOctonionic (division algebraic) approaches to the standard model remain an active research program, with different approaches considered in the literature. The underlying goal of these approaches is to find the correct algebraic structures, often in the form of tensor products of the division algebras, from which the gauge groups and particle content of the standard model may be derived, as well as the Lorentz group for the grav",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to the Gauge Group of the Standard Model",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-42-connection-to-the-gauge-group-of-the-standard.md",
+      "narrative": null,
+      "content": "[]{#sec:gaugegroup label=\"sec:gaugegroup\"} Obtaining the gauge group of the standard model is a key objective for any fundamental physical theory. Here we summarize the current status of this quest in both approaches and discuss what we can learn from a comparison.\n\n### Octonionic Approaches\n\nAlgebraic approaches based on the octonions (or more generally the division algebras) attempt to recover the standard model gauge groups as those groups that preserve certain subspaces of the underlying algebraic structure. These subspaces are identified by means of projectors, as discussed in [\\[historic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Describing the Three Generations in the Standard Model",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-43-describing-the-three-generations-in-the-stand.md",
+      "narrative": null,
+      "content": "[]{#secthreegen label=\"secthreegen\"} We now explain and compare how the three generations of elementary particles (like $e$, $\\mu$ and $\\tau$) come up in the different approaches.\n\n### Octonionic Approaches\n\nAlthough existing division algebraic approaches provide an elegant construction of the internal space of a single generation of leptons and quarks, a comprehensive algebraic explanation for the existence of three generations remains to be found[^1].\n\nIn [@manogue1999dimensional] three generations of leptons are described in terms of the three $\\mathbb{H}$ subalgebras of $\\mathbb{O}$ that c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook and Directions of Future Research",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-018-5-outlook-and-directions-of-future-research.md",
+      "narrative": null,
+      "content": "[]{#secoutlook label=\"secoutlook\"} In this section, we given an outlook and explain directions of future research.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-51-connection-with-the-exceptional-lie-groups-an.md",
+      "narrative": null,
+      "content": "[]{#sece68 label=\"sece68\"} In Section [\\[secthreegen\\]](#secthreegen){reference-type=\"ref\" reference=\"secthreegen\"} we saw that describing the interactions of the standard model in the setting of causal fermion systems naturally leads to the exceptional Jordan algebra. Moreover, it brings with it the exceptional Lie groups which have a direct connection with the octonions. We now outline these connections, also pointing towards directions of future research. There are five exceptional groups, labeled $G_2, F_4, E_6, E_7$ and $E_8$. The smallest of these five groups is the $14$-dimensional $G_2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral Symmetry Breaking",
+      "pageStart": 22,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-52-chiral-symmetry-breaking.md",
+      "narrative": null,
+      "content": "[]{#secchiralsymm label=\"secchiralsymm\"} As explained in Section [\\[seccfssm\\]](#seccfssm){reference-type=\"ref\" reference=\"seccfssm\"}, in the causal fermion system description of the standard model, the chiral symmetry is broken by hand via the ansatz [\\[asymmetry\\]](#asymmetry){reference-type=\"eqref\" reference=\"asymmetry\"}. This procedure is not quite satisfying. Instead, within the context of causal fermion systems, it would be desirable to explain the chiral symmetry breaking from the interactions as described by the causal action principle. This should be achieved in a manner consistent wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-appendix-a-description-of-majorana-spinors-in-ca.md",
+      "narrative": null,
+      "content": "Systems\nIn some applications of octonions to the standard model, it is essential or helpful\nto describe the neutrinos by Majorana spinors (see for example [96, 5]). In order to\nfacilitate the comparison of the different approaches, we here explain how Majorana\nspinors can be described in the setting of causal fermion systems.\nIn the setting of causal fermion systems, one cannot work with two-component Weyl\nspinors. The reason is that, in order to obtain the spinor bundle from a causal fermion\nsystem, it is crucial that the isometry group of the spin spaces (with respect to the\nspin inner produ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2403.00360v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[1] Link to web platform on causal fermion systems: www.causal-fermion-system.com.\n[2] R. Ab lamowicz, Construction of spinors via Witt decomposition and primitive idempotents: A\nreview, Clifford Algebras and Spinor Structures: A special volume dedicated to the memory of\nAlbert Crumeyrolle (1919–1992) (1995), 113–123.\n[3] A. Adazzi and A. Marcian`o, Gravitational waves from dark first order phase transitions and dark\nphoton, arXiv:1703.03248 [hep-ph], Chin. Phys. C 42 (2018), no. 2, 023107.\n[4]\n,\nLimiting\nmajoron\nself-interactions\nfrom\ngravitational\nwave\nexperiments,\narXiv:1705.08346 [hep-ph],",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

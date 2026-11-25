@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.6483v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1011.6483v3",
+  "contains": [
+    "library/arxiv-1011.6483v3/sections/sec-front-matter",
+    "library/arxiv-1011.6483v3/sections/sec-000",
+    "library/arxiv-1011.6483v3/sections/sec-001",
+    "library/arxiv-1011.6483v3/sections/sec-002",
+    "library/arxiv-1011.6483v3/sections/sec-003",
+    "library/arxiv-1011.6483v3/sections/sec-004",
+    "library/arxiv-1011.6483v3/sections/sec-005",
+    "library/arxiv-1011.6483v3/sections/sec-006",
+    "library/arxiv-1011.6483v3/sections/sec-007",
+    "library/arxiv-1011.6483v3/sections/sec-008",
+    "library/arxiv-1011.6483v3/sections/sec-009",
+    "library/arxiv-1011.6483v3/sections/sec-010",
+    "library/arxiv-1011.6483v3/sections/sec-011",
+    "library/arxiv-1011.6483v3/sections/sec-012",
+    "library/arxiv-1011.6483v3/sections/sec-013",
+    "library/arxiv-1011.6483v3/sections/sec-014",
+    "library/arxiv-1011.6483v3/sections/sec-015",
+    "library/arxiv-1011.6483v3/sections/sec-016",
+    "library/arxiv-1011.6483v3/sections/sec-017",
+    "library/arxiv-1011.6483v3/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with\n\n**DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS**\n\n*GRÉGORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN*\n\n60 pp, 20 sections.\n\n**Abstract.** We study the higher Hochschild chain functor, factorization alge- bras and their relationship with topological chiral homology. To this end, we emphasize that the higher Hochschild complex is a (∞, 1)-functor sSet∞× CDGA∞where sSet∞and CDGA∞are the (∞, 1)-categories of simplicial sets and commutative diﬀerential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce several properties and computational tools for this functor. We study the relationship between the higher Hochschild functor and factorization algebras by showing that, in good cases, the Hochschild functor determines a constant commutative factoriza- tion algebra. Conversely, every constant commutative factorization algebra is naturally equivalent to a Hochschild chain factorization algebra.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminary definitions and notation; 2.1 Simplicial sets; 2.2 Commutative Differential Graded Algebras; 2.3 Dwyer-Kan localization and (,1)-categories; 3 Derived higher Hochschild functor; 3.1 Naive axiomatic approach to higher Hochsch; 3.2 Higher Hochschild as an (, 1)-functor; 3.3 Pointed simplicial sets and modules; 4 Factorization algebras and derived Hochschil; 4.2 (Pre)Factorization algebras; 4.3 Locally constant factorization algebras an; 5 Relationship with topological chiral homolog; 5.1 Review of topological chiral homology à la; 5.2 Locality axiom and the equivalence of topo; 5.3 Relation with the Blob complex; 5.4 Topological chiral homology as a factoriza",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1011.6483&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1011.6483v3",
+    "title_source": "slug",
+    "source_file": "1011.6483v3.pdf",
+    "source_sha256": "7a425e51860c37a43daf1d19b07152ab2602948c242ce3343aa9da49c118dc8c",
+    "pages": 60,
+    "arxiv": {
+      "id": "1011.6483",
+      "version": "3",
+      "primary_class": "math.QA",
+      "stamp_date": "31 May 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

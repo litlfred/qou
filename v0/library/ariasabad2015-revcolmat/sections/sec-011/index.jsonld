@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/ariasabad2015-revcolmat/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Lawrence-Krammer-Bigelow Representation",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "contains": [
+    "library/ariasabad2015-revcolmat/blocks/prose-sec-011",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-011-01",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-011-02",
+    "library/ariasabad2015-revcolmat/blocks/thm-sec-011-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "provenance": "ingested"
+}

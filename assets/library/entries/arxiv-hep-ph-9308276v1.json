@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9308276v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9308276v1  14 Aug 1993\nThe Electroweak Chiral Lagrangian for the\nStandard Model with a heavy Higgs\nMaria J. Herrero∗and Ester Ruiz Morales†\nDepartamento de F´ısica Te´orica\nUniversidad Aut´onoma de Madrid\nCantoblanco\n28049 – Madrid Spain\nAbstract\nThe most general chiral Lagrangian for electroweak interactions with\nthe complete set of SU(2)L × U(1)Y invariant operators up to dimen-\nsion four is considered. The two-point and three-point functions with\nexternal gauge ﬁelds are derived from this eﬀective chiral Lagrangian to\none-loop order in a generic Rξ-gauge. The same set of Green’",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Chiral Lagrangians have been extensively used to describe the phenomenon of spontaneous symmetry breaking both in strong and electroweak interactions. The basis of this approach was formulated by Weinberg [@W] to characterize the most general S-matrix elements for soft pion interactions; and later on it was greatly developed by Gasser and Leutwyler [@GL] in a well defined framework called chiral perturbation theory describing low energy aspects of strong interactions [@D]. The use of chiral Lagrangians as low energy effective theories for electroweak interactions has received much attention in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The electroweak chiral Lagrangian",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-electroweak-chiral-lagrangian.md",
+      "narrative": null,
+      "content": "We start by writing down the electroweak chiral Lagrangian that is $\\gs$ invariant and contains the whole set of CP-invariant operators up to dimension four. We will use the notation of ref. [@F] that is closely related to Longhitano's notation, and will restrict our study to the bosonic sector of electroweak theory. The basic building blocks that are used in the construction of the Lagrangian are the following: $$\\begin{aligned}\nT & \\equiv & U \\tau^3 U^\\dagger \\nonumber\\\\[2mm] V_\\mu & \\equiv &\n(D_\\mu U) U^\\dagger \\nonumber\\\\[2mm] D_\\mu U & \\equiv & \\partial_\\mu\nU - g \\wh_\\mu U + g' U \\bh_\\mu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective Lagrangian parameters for a heavy Higgs",
+      "pageStart": 8,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
+      "narrative": null,
+      "content": "As we have already said, the fundamental theory that we want to represent by the electroweak chiral Lagrangian is the standard model with a heavy Higgs particle. We start with the standard model Lagrangian $$\\cl_{\\rm SM} = (D_\\mu \\Phi)^\\dagger (D^\\mu \\Phi) + \\mu^2 \\Phi^\\dagger \\Phi -\n\\lambda (\\Phi^\\dagger \\Phi)^2 + \\frac{1}{2} Tr \\left( \\wtd \\wtu + \\btd \\btu\n\\right)\n+ \\cl_{\\rm GF} + \\cl_{\\rm FP} ,$$ where $$\\Phi  = \\frac{1}{\\sqrt 2}\\left( \\begin{array}{c}\\phi_1 - i \\phi_2 \\\\\n     \\sigma + i \\chi \\end{array}\\right), \\;\\;\\;\\;\\;\n(\\pi_1,\\pi_2,\\pi_3)  \\equiv  (-\\phi_2,\\phi_1,-\\chi) ,\\;\\;\\;\\;\\;\n v=\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some physical consequences",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-4-some-physical-consequences.md",
+      "narrative": null,
+      "content": "We would like to add in this section some remarks and comments on the results for the EChL parameters presented in eq.([\\[aMH\\]](#aMH){reference-type=\"ref\" reference=\"aMH\"}). These finite values represent the non-decopling effects of a heavy Higgs particle in the SM to one-loop order. They contain valuable information since they serve as reference values to be compared with the corresponding predictions from other possible alternatives for the symmetry breaking sector. Thus, for instance, in Technicolor Models, the values for the $a_i$ parameters are known to be quite different [@AW]. The opti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-5-conclusions.md",
+      "narrative": null,
+      "content": "In this paper, we have considered the electroweak chiral Lagrangian that parametrizes electroweak interactions in the case of a heavy Higgs boson. This Lagrangian has been obtained as the low energy effective theory of the standard model when the Higgs particle is integrated out to one--loop order. In particular, we have analyzed the subset of effective operators that contribute to the two-- and three--point Green's functions for gauge bosons. The leading contributions of a heavy Higgs to these operators, including logarithms of the Higgs mass plus finite (non-logarithmic) terms, have been exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Aknowledgments",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-aknowledgments.md",
+      "narrative": null,
+      "content": "We would like to thank A.Dobado and D.Espriu for reading the manuscript and for useful discussions. A special thank goes to C.P.Martı́n for many stimulating discussions, his interesting comments on the manuscript and for his valuable help and patience in explaining us the large-m techniques developed in [@CAR; @O]. We are also indebted to C.Quimbay who participated in the very early stages of this work. M.J.H. aknowledges partial finantial support from the Ministerio de Educacion y Ciencia (Spain) (CICYT AEN90-272). E.R.M. aknowledges support from Dpto. de Matemáticas at UAM and thanks the SLA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-appendix-a.md",
+      "narrative": null,
+      "content": "The complete expression for $\\fpnl$ containing terms up to $O(c c \\pi \\pi )$ is: $$\\begin{aligned}\n\\fpnl & = & c_0^{\\dagger} \\left[-\\nabla^2 -g'\\left( \\frac{g' v \\xi_B}{2}\n\\right)\n\\left[\\frac{v}{2}-\\frac{1}{6 v}(\\pi_1^2 + \\pi_2^2) + ...\\right] \\right]\nc_0 \\nonumber\\\\\n& & +\\sum_{i\\ne j \\ne k = 1}^3 c_i^{\\dagger} \\left[-\\nabla^2 -g\\left(\n\\frac{g\n v \\xi_W}{2} \\right)\n\\left[\\frac{v}{2}-\\frac{1}{6 v}(\\pi_j^2 + \\pi_k^2) + ...\\right] \\right]\nc_i \\nonumber\\\\\n& & + ( g'\\xi_B c^{\\dagger}_0 c_1 + g\\xi_W c^{\\dagger}_1 c_0)\n\\left(\\frac{\\sqrt{g g'} v}\n{2} \\right) \\left[ \\frac{- \\pi_2}{2} + \\frac{1}{6 v} \\pi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-appendix-b.md",
+      "narrative": null,
+      "content": "In this appendix, we give the different contributions to the one loop Green's functions appearing in the matching equations ([\\[PM\\]](#PM){reference-type=\"ref\" reference=\"PM\"},[\\[VM\\]](#VM){reference-type=\"ref\" reference=\"VM\"}). In these formulas, we have not written explicitely the counterterm in the bare $a_i$ coefficients for brevity; therefore the replacement $a_i \\rightarrow a_i^{\\msb}(\\mu)\n+ \\delta a_i^{\\msb}$ has to be understood. The rest of fields and parameters are renormalized quantities.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two point functions",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-two-point-functions.md",
+      "narrative": null,
+      "content": "The differences in the tree level plus counterterm contributions to the two point functions from the SM and the EChL are given by:\n\n$$\\begin{aligned}\n-i \\Pi^{WW}_{(0+{\\rm C}) \\mu\\nu}+i \\widehat{\\Pi}^{WW}_{(0+{\\rm C})\n\\mu\\nu}&=&\ni g_{\\mu\\nu} \\frac{g^2 v^2}{4}\n\\left[\n\\Delta Z_\\pi -\n2 \\frac{\\Delta g}{g} - 2 \\frac{\\Delta v}{v} \\right]\n\\nonumber \\\\[2mm]\n& & -i \\left( g_{\\mu\\nu} q^2 - q_\\mu q_\\nu \\right) \\Delta Z_W\n+ i q_\\mu q_\\nu \\left[\\frac{1}{\\xi_W} (\\Delta\\xi_W-\\Delta Z_W )\n+ g^2 a_{11}\\right] \\nonumber \\\\[4mm]\n\n-i \\Pi^{ZZ}_{(0+{\\rm C}) \\mu\\nu} +i \\widehat{\\Pi}^{ZZ}_{(0+{\\rm C})\n\\mu\\nu}&=&\ni g_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three point functions",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-three-point-functions.md",
+      "narrative": null,
+      "content": "Three point functions\nThe diﬀerences in the tree level plus counterterm contributions to the γWW and ZWW 1PI\nGreen’s functions from the SM and the EChL are given by:\n−iV γW W\n(0+C)λµν + i bV γW W\n(0+C)λµν\n=\n−igswT γ\nλµν\n\"\n∆ZW −∆g\ng\n#\n−ig3sw (p1µgλν −p1νgλµ)\n\u0014\na1 −a2 + a3 −a8 + a9\n\u0015\n−ig3sw (p2µgλν −p3νgλµ) a11\n−iV ZW W\n(0+C)λµν + i bV ZW W\n(0+C)λµν\n=\n−igcwT Z\nλµν\n\"\n∆ZW −∆g\ng + g2\nc2\nw\na3\n#\n−igcw (p1µgλν −p1νgλµ)\n\u0014\ng′2(a2 −a1 −a3 −a13)\n+g2(a9 −a8 −a13)\n\u0015\n−igcw (p2µgλν −p3νgλµ)\n\"\n−g′2a11 + g2\nc2\nw\na12\n#\nwhere ∆ZW and ∆g are deﬁned as in the two point functions case. The convention for momenta\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

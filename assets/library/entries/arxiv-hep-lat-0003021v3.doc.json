@@ -1,0 +1,810 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-lat-0003021v3",
+  "title": "arxiv-hep-lat-0003021v3",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quenched QCD at high temperature",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-quenched-qcd-at-high-temperature"
+    },
+    {
+      "level": 1,
+      "title": "QCD with four dynamical fermions at high temperature",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe"
+    },
+    {
+      "level": 1,
+      "title": "Random Matrix Theory",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-random-matrix-theory"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperature phase",
+          "heading": false
+        },
+        {
+          "term": "phase transition",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "tail",
+          "heading": false
+        },
+        {
+          "term": "hep-lat",
+          "heading": false
+        },
+        {
+          "term": "low-lying",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-lat/0003021v3 19 May 2000 Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature P.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d aThe Niels Bohr Institute and cNORDITA Blegdamsvej 17 DK-2100 Copenhagen, Denmark bCSIT Florida State University Tallahassee, FL 32306-4130, USA dHelsinki Institute of Physics, P.O.Box 9, 00014 University of Helsinki, Finland October 29, 2018",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "staggered dirac",
+          "heading": false
+        },
+        {
+          "term": "staggered fermions",
+          "heading": false
+        },
+        {
+          "term": "low-lying dirac",
+          "heading": false
+        },
+        {
+          "term": "qcd dirac",
+          "heading": false
+        },
+        {
+          "term": "cite ehkn",
+          "heading": false
+        },
+        {
+          "term": "temperature phase",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue spectrum",
+          "heading": false
+        }
+      ],
+      "extract": "The correlations of Dirac operator eigenvalues in QCD and related theories have been shown to have a fascinating relation to Random Matrix Theory. There are two very different domains of interest here. One is the so-called ``bulk'' of the eigenvalue spectrum of the Dirac operator, far from both the infrared and the ultraviolet ends. The other is the so-called ``hard edge'' at $\\lambda \\sim 0, ~i.e.$ the infrared end",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quenched-qcd-at-high-temperature",
+      "number": "2",
+      "title": "Quenched QCD at high temperature",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": "3",
+      "labelEnd": "8",
+      "words": 1449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quenched",
+          "heading": true
+        },
+        {
+          "term": "deconfinement phase",
+          "heading": false
+        },
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "phase transition",
+          "heading": false
+        },
+        {
+          "term": "ritz",
+          "heading": false
+        },
+        {
+          "term": "ensemb",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "gauge coupling",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{quenched} For our quenched finite temperature Monte Carlo simulations we have used lattices with temporal extent $N_t=4$ and up to three spatial volumes: $8^3$, $12^3$ and $16^3$. For $N_t=4$ the deconfinement phase transition for SU(3) pure gauge theory with Wilson action has been very accurately determined, occurring at lattice gauge coupling $\\beta_c=5.6925(2)$~\\cite{T_c}. It has for long been assumed that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe",
+      "number": "3",
+      "title": "QCD with four dynamical fermions at high temperature",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dynamical fermions",
+          "heading": true
+        },
+        {
+          "term": "textwidth epsffile",
+          "heading": false
+        },
+        {
+          "term": "center epsfxsize",
+          "heading": false
+        },
+        {
+          "term": "quenched spectrum",
+          "heading": false
+        },
+        {
+          "term": "quenched simulations",
+          "heading": false
+        },
+        {
+          "term": "temperature",
+          "heading": true
+        },
+        {
+          "term": "figure noi",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue spectrum",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{dynamical} For our dynamical simulations we chose to work with $n_f=4$ flavors. Four is the ``natural'' number of flavors for staggered fermions in the continuum limit, and an efficient exact simulation algorithm can be used, the Hybrid Monte Carlo algorithm. In addition, the four flavor theory is known to have a rather strong first order finite temperature phase transition~\\cite{Brown}. Therefore, tunnelings",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-random-matrix-theory",
+      "number": "4",
+      "title": "Random Matrix Theory",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": "13",
+      "labelEnd": "18",
+      "words": 1896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diff macroscopic",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": true
+        },
+        {
+          "term": "epsffile diff",
+          "heading": false
+        },
+        {
+          "term": "macroscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "diff microscopic",
+          "heading": false
+        },
+        {
+          "term": "beq rho",
+          "heading": false
+        },
+        {
+          "term": "textwidth epsffile",
+          "heading": false
+        },
+        {
+          "term": "microscopic behavior",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{RMT} We have just shown our lattice gauge theory data for the spectrum of the Dirac operator below, around, and above $T_c$, and compared it with some of the analytical formulas of Random Matrix Theory in the limit where the size of these matrices $N$ goes to infinity. It is of interest to see how a simple {\\em model} of a chiral phase transition in Random Matrix Theory behaves at finite $N$, as some external",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conclusions",
+      "number": "5",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1052,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "staggered fermions",
+          "heading": false
+        },
+        {
+          "term": "quenched theory",
+          "heading": false
+        },
+        {
+          "term": "overlap fermions",
+          "heading": false
+        },
+        {
+          "term": "deconfinement phase",
+          "heading": false
+        },
+        {
+          "term": "quenched case",
+          "heading": false
+        },
+        {
+          "term": "phase transition",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue distribution",
+          "heading": false
+        },
+        {
+          "term": "operator eigenvalues",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this study has been to find the extent to which Random Matrix Theory may be able to describe low-lying eigenvalue distributions and correlations between low-lying eigenvalues of the staggered Dirac operator at finite temperature. We have also been interested in testing the quenched theory with staggered fermions in the light of recent results with overlap fermions \\cite{EHKN_fT}, which indicated that",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quenched spectrum",
+      "heading": true
+    },
+    {
+      "term": "staggered dirac",
+      "heading": false
+    },
+    {
+      "term": "quenched simulations",
+      "heading": false
+    },
+    {
+      "term": "temperature phase",
+      "heading": true
+    },
+    {
+      "term": "transition temperature",
+      "heading": false
+    },
+    {
+      "term": "quenched theory",
+      "heading": false
+    },
+    {
+      "term": "staggered fermions",
+      "heading": false
+    },
+    {
+      "term": "quenched finite",
+      "heading": false
+    },
+    {
+      "term": "dirac eigenvalue",
+      "heading": true
+    },
+    {
+      "term": "low-lying eigenvalues",
+      "heading": false
+    },
+    {
+      "term": "quenched qcd",
+      "heading": true
+    },
+    {
+      "term": "operator eigenvalues",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Details of our quenched ensembles",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The measured distribution of the 50 lowest eigenvalues in quenched QCD at ﬁnite tempera-",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The density of the smallest eigenvalues in the high temperature phase of quenched QCD, at",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Distributions of the unfolded level spacings between the ﬁrst few eigenvalues for β = 5.75",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The lowest eigenvalue, averaged over 5 conﬁgurations, on an 83 ×4 lattice with amq = 0.025 as a function of β. One sees a clear change in behavior around β ∼5.02, indicating the restoration of chiral symmetry around this temperature. Just this ﬁrst Dirac operator eigenvalue can thus serve as an exce",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Details of our ensembles with dynamical fermions",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Quenched spectrum of β = 5.9 and a dynamical spectrum at β = 5.4 with amq = 0.025,",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "The dependence of the ﬁtted power on the λ where the small-λ tail is cut oﬀ. The data are",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The density of the 50 smallest eigenvalues in the high temperature phase, β = 5.2 and",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The density of the 50 smallest eigenvalues at β",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Power ﬁt to the spectral density for β = 5.2 with amq = 0.025 on an 83 × 4 lattice with cut at 0.1 (see Table 3). Also included is the distribution of the ﬁrst eigenvalue. The distribution of this smallest eigenvalue is very diﬀerent from that demanded by the Airy-function behavior (see below)",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Comparison of the spectral density for β = 5.2, amq = 0.025 on a 83 × 4 lattice, with the Random Matrix Theory prediction for a soft edge, as in eq. (5)",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Distributions of the unfolded level spacings between the ﬁrst few eigenvalues in the dynamical case, compared to the Wigner surmise. As in the quenched case, we ﬁnd a small disagreement for the ﬁrst eigenvalues. But in contrast to the quenched case the agreement sets in after almost just the 2nd eig",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Full spectra of 200 × 200 matrices at T = 0, 0.5, 0.75, 1.0, 1.2, 2.0. In this simple model a gap indeed develops around λ = 0 at T = 1",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "A blowup of the graphs in Fig. 11. The microscopic spectrum changes smoothly from Bessel-type behavior to Airy-type behavior, going through an intermediate “critical” distribution at",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A blowup of a T = 3 spectrum compared with the Airy-prediction. There is nice agreement near the edge",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-lat-0003021v3"
+  }
+}

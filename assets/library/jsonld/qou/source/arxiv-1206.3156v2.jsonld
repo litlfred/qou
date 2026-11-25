@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.3156v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Isospin breaking in octet baryon mass splittings",
+  "contains": [
+    "library/arxiv-1206.3156v2/sections/sec-front-matter",
+    "library/arxiv-1206.3156v2/sections/sec-000",
+    "library/arxiv-1206.3156v2/sections/sec-001",
+    "library/arxiv-1206.3156v2/sections/sec-002",
+    "library/arxiv-1206.3156v2/sections/sec-003",
+    "library/arxiv-1206.3156v2/sections/sec-004",
+    "library/arxiv-1206.3156v2/sections/sec-005",
+    "library/arxiv-1206.3156v2/sections/sec-006",
+    "library/arxiv-1206.3156v2/sections/sec-007",
+    "library/arxiv-1206.3156v2/sections/sec-008",
+    "library/arxiv-1206.3156v2/sections/sec-009",
+    "library/arxiv-1206.3156v2/sections/sec-010",
+    "library/arxiv-1206.3156v2/sections/sec-011",
+    "library/arxiv-1206.3156v2/sections/sec-012",
+    "library/arxiv-1206.3156v2/sections/sec-013",
+    "library/arxiv-1206.3156v2/sections/sec-014",
+    "library/arxiv-1206.3156v2/sections/sec-015",
+    "library/arxiv-1206.3156v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Isospin breaking in octet baryon mass splittings — Using an SU(3) ﬂavour symmetry breaking expansion in the quark mass, we determine the QCD component of the nucleon, Sigma and Xi mass splittings of\n\n**Isospin breaking in octet baryon mass splittings**\n\n*December 20, 2012*\n\n31 pp, 18 sections.\n\n**Abstract.** Using an SU(3) ﬂavour symmetry breaking expansion in the quark mass, we determine the QCD component of the nucleon, Sigma and Xi mass splittings of the baryon octet due to up-down (and strange) quark mass diﬀerences in terms of the kaon mass splitting. Provided the average quark mass is kept constant, the expansion coeﬃcients in our procedure can be determined from computationally cheaper simulations with mass degen- erate sea quarks and partially quenched valence quarks. Both the linear and quadratic terms in the SU(3) ﬂavour symmetry breaking expansion are considered; it is found that the quadratic terms only change the result by a few percent, indicating that the expansion is highly convergent.\n\n**Outline.** Front matter; 1 Introduction; 2 Octet Baryons; 3 Determining the expansion coefficients; 3.1 Partially quenched octet baryons; 3.2 Numerical results; 4 Octet pseudoscalar mesons; 4.1 PQ pseudoscalar meson flavour expansions; 4.2 Determination of the coefficients; 4.3 Pseudoscalar meson isospin splittings; 5 Physical values of the quark masses; 6 Comparison with `fan' plots; 7 Results and discussion; 7.1 Baryon octet mass splittings; 7.2 Physical values of the mass splittings; 7.3 Conclusions; A Systematic errors; B Tables\n\n**Extracted claims (proposals, not verified).**\n- Proposition: (30)3, X∗ π = 0.4116 GeV, (47) (of course this is very close to the experimental value of Xexp π = 0.4126 GeV).\n- Proposition: (58) This is to be compared with the experimental result given in eq.\n- Proposition: Despite the fact that QED eﬀects are treated slightly diﬀerently in each work, good agreement amongst the various determinations and with the experimental result is found.\n- Proposition: The vertical dashed line is the experimental result given in eq.\n- Proposition: Acknowledgements The numerical conﬁguration generation was performed using the BQCD lattice QCD program [25] on the IBM BlueGeneL at EPCC (Edinburgh, UK), the Blue- GeneL and P at\n- Proposition: SFB/TR 55 (Hadron Physics from Lattice QCD) and by the EU Grants No.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1206.3156v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Isospin breaking in octet baryon mass splittings",
+      "basis": "Printed title on page 1 (Horsley et al., QCDSF-UKQCD Collaboration); the extracted title was the preprint report numbers",
+      "extracted_title": "DESY 12-094 Edinburgh 2012/07 Liverpool LTH 946",
+      "corrected_on": "2026-11-18",
+      "extracted": "Isospin breaking in octet baryon mass splittings"
+    },
+    "source_file": "1206.3156v2.pdf",
+    "source_sha256": "384b83fa69f21305a5b1a7b841d98b4006e729ac0b172bc67daec51b43f3c050",
+    "pages": 31,
+    "arxiv": {
+      "id": "1206.3156",
+      "version": "2",
+      "primary_class": "hep-lat",
+      "stamp_date": "21 Dec 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

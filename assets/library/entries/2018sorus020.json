@@ -1,0 +1,3595 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "2018sorus020",
+  "blocks": [
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HAL Id: tel-02108892\nhttps://theses.hal.science/tel-02108892v1\nSubmitted on 24 Apr 2019\nHAL is a multi-disciplinary open access archive\nfor the deposit and dissemination of scientific re-\nsearch documents, whether they are published or not.\nThe documents may come from teaching and research\ninstitutions in France or abroad, or from public or pri-\nvate research centers.\nL’archive ouverte pluridisciplinaire HAL, est des-\ntinée au dépôt et à la diffusion de documents scien-\ntifiques de niveau recherche, publiés ou non, émanant\ndes établissements d’enseignement et de recherche\nfrançais ou étrangers",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/cor-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "cor-sec-000-07.md",
+      "narrative": null,
+      "content": "Let M be a hyperbolic manifold and X be a geometric component of its SL2(C) character variety. Assume that an ideal point of X detects an incom- pressible surface which is connected or union of parallel free copies, and such that the eigenvalue of its boundary curve is 1. Then the torsion function is not constant on the component X. Here again, the hypothesis that the complement of any connected component of Σ is union of handlebodies is automatically satisﬁed if the manifold M is small. The hypothesis on the eigenvalue of the boundary curve is automatically satisﬁed for Σ a Seifert surface, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-000-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "ex-sec-000-03.md",
+      "narrative": null,
+      "content": "We know from [HT85] that the knot 5.2 has two incompressible surfaces in its complement : Σ1 whose Euler characteristic is −4, and Σ2 whose Euler characteristic is −2 (see ﬁgure 1). The (geometric component of the) character variety has 3 ideal points, two of them corresponding to Σ2, and the third to Σ1. The torsion vanishes at order 1 on the Σ2’s ideal points, and at order 3 at the other. Hence on the augmented variety Y , one obtains −χ(Y ) = 4 × 1 + 2 × 3 = 10. The covering map Y →X(M) ramiﬁes on six points, hence −χ(X) = 1 2(−χ(Y ) −6) = 2, and the genus of X is 2, as it can be computed d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "The Reidemeister torsion has been introduced as a topological invariant of homo-\nlogical complexes in 1935 by both Reidemeister (in [Rei35]) and Franz (in [Fra35])\nindependently. It also appears in a more algebraic context in the seminal work of\nCayley (see [GKZ94, Appendix B]) in 1848.\nThe Reidemeister torsion is a generalization of the notion of determinant : consider\nan endomorphism d of a ﬁnite dimensional vector space V over a ﬁeld k. Any choice\nof bases e = {e1, e2, . . . , en} and f = {f1, f2, . . . , fn} allows us to compute the\ndeterminant of the linear map d in those bases, namely, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem |2.0.1",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let v be a finite point of Y, then tor(M, Adop) has no",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem|2.0.2",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let v be an ideal point of Y and X be an incompressible non-Seifert surface associated to v. We suppose that & is a union of parallel connec- ted copies ©, U...Xn and that both components of M \\ d; are handlebodies. Let us also assume that Y contains the character of a representation whose restriction to X is irreducible. Then the torsion tor(M, Adop) has vanishing order at v bounded by —n(x(%) +1) if the ideal point does not correspond to the character of an abelian representation of 7(X), and by —nx(X) — m else, where m depends only on the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "cannot apply since the fundamental group of an annulus have no non abelian representations, one can compute directly that the torsion has a pole of order one at those points. Further work could concern reducible characters that are limits of irreducible cha- racters, such as in Theorem 2.0.1, item 2. It is most likely that one could eventually weaken the hypothesis of this theorem. But this requires a better understanding of the relation between the ﬁrst twisted cohomology group and the tangent space at this point. This complex problem is partially answered in [FK91, HPSP01]. The standard tors",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.0.1",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "Let X be a geometric component of the character variety X(M) of a hyperbolic manifold M. Then tor(M, ρ) is a regular function on X, that vanishes at a character χ if and only if the vector space H1(M, ¯ρ) is non trivial, where ¯ρ is a representation ¯ρ : π1(M) →SL2(C) whose character is χ. The fact that the torsion has no poles on X was expected. Yet, to our knowledge, there has been no such formal statement to date, and it is interesting in and by itself. The characterization in terms of jump of dimension of the vector space H1(M, ¯ρ) is also notalbe, because it relates the torsion with the d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.0.2",
+      "pageStart": 6,
+      "pageEnd": 16,
+      "target": "thm-sec-000-06.md",
+      "narrative": null,
+      "content": "Let x ∈ˆX be an ideal point in the smooth projective model of X, and assume that an associated incompressible surface Σ is a union of parallel homeomorphic copies Σi such that M \\ Σi is a (union of) handlebodie(s). If the curve γ = ∂Σ ∈π1(M) has trivial eigenvalues, then the torsion function tor(M, ρ) has a pole at x. We deduce the following corollary :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "ex-sec-002-01.md",
+      "narrative": null,
+      "content": "Let Γ = Z. The representation variety R(Z) is isomorphic to SL2(k) via ρ 7→ρ(1). The one-parameter subgroup \b Mt = \u0000 t t−1 \u0001 t∈k∗acts on R(Γ) by conjugation, in particular Mt ( 1 1 0 1 ) M −1 t = \u00001 t2 \u0001 , hence the whole family given by \b ρt : 1 7→ \u00001 t2 0 1 \u0001 t∈k∗lies in the same SL2(k)-orbit. In particular ρ0 : 1 7→ ( 1 0 0 1 ) ∈SL2(k) · ρ1, despite ρ0 and ρ1 are obviously not conjugated. This shows that the topological quotient R(Z)/ SL2(k) is not Hausdorﬀin this example. The following section shows how to solve this issue.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Character varieties and Reidemeister torsion",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-1-character-varieties-and-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "torsion\nIn this ﬁrst chapter we introduce the main objects that will be studied in this thesis.\nThe ﬁrst section deals with the theory of character varieties, the second section is\na review about twisted cohomology, the third section is a short overview of the so-\ncalled Culler-Shalen theory, and provides the tools that will be used in the upcoming\nchapters, the fourth section gives an insight on the Alexander module theory and\nits relation with the character varieties, and we the ﬁfth section is an introduction\nto the Reidemeister torsion.\n1.1\nCharacter varieties\nIn this section we give the d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation variety",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-111-representation-variety.md",
+      "narrative": null,
+      "content": "Representation variety\nLet Γ be a ﬁnitely generated group, with S = {γ1, . . . , γn} a system of generators of\nΓ, and k be an algebraically closed ﬁeld of characteristic zero.\nDeﬁnition 1.1.1. A representation is a group homomorphism ρ : Γ →SL2(k). We\ndeﬁne the representation variety R(Γ) = Hom(Γ, SL2(k)) = {ρ : Γ →SL2(k)}. It\n15\nis an aﬃne algebraic variety deﬁned over k (and even over Q). For any choice of S\nthere is an embedding :\nιS : R(Γ) →SL2(k)n ,→k4n\nρ 7→(ρ(γ1), . . . , ρ(γn))\nthat does not depend on S in the following way : for any other S′ = {γ′\n1, . . . , γ′\nm},\nthere is a group iso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "Back to Γ = Z, recall that the SL2(k)-orbit of ρ1 : 1 7→( 1 1 0 1 ) contains the trivial representation ρ0 in its closure. We are going to see how the theory of algebraic quotients solves this problem. Since the variety R(Z) is isomorphic to SL2(k), what we want is to compute the subalgebra of invariant of the algebra k[SL2] = k[X1,1,X1,2,X2,1,X2,2]/(X1,1X2,2−X1,2X2,1−1). Assume f ∈k[SL2] is an invariant. Then for any diagonalizable A ∈SL2(k), there is some λ ∈k∗and g ∈SL2(k) such that A = g \u0000 λ λ−1 \u0001 g−1 hence f(A) = p(λ) for some polynomial p ∈k[t, t−1] that does not depend on A. Moreover, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebro-geometric quotient",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-112-algebro-geometric-quotient.md",
+      "narrative": null,
+      "content": "Algebro-geometric quotient\nThe action of the group SL2(k) on R(Γ) induces a natural action on its algebra\nof functions k[R(Γ)] by pre-composition. The sub-algebra of invariant functions\nk[R(Γ)]SL2 is known to be ﬁnitely generated, although this is a delicate problem\nﬁrst answered by Hilbert in the late nineteenth century. There is an amount of good\nreferences on the topic, let us just mention [MFK93] and [KP96].\n16\nRecall that any ﬁnitely generated k-algebra A is the quotient of an algebra of poly-\nnomials, in other words there is an exact sequence 0 →I →k[X1, . . . , Xn] →A →0.\nBy Hilbert’s b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "In general, the use of the term variety is reserved to irreducible and reduced algebraic sets. An irreducible set is a set which is not a reunion of two proper closed subsets. An irreducible component is a maximal irreducible subset. Given a ring R, Spec(R) is said to be reduced if R does not contain any nilpotent element. In particular, by mean of an irreducible component we will assume it to be reduced. We will call many algebraic objects varieties despite they have no reason to be irreducible, nor reduced. Deﬁnition 1.1.4. We deﬁne the character variety X(Γ) = R(Γ)// SL2(k) as the spectrum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "For any γ, δ ∈Γ, the identity tγtδ = tγδ + tγδ−1 holds on R(Γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "[CS83] Let Γ be a ﬁnitely generated group, then the algebra B[Γ] is ﬁnitely generated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "If M is a 3-manifold, and Γ = π1(M), then the morphism of k-algebras B[Γ] ≃SA(M) ⊗k[A,A−1] k[A,A−1]/(A+1) that maps Yγ to −[γ] is an isomor- phism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces and skein algebra",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-004-113-traces-and-skein-algebra.md",
+      "narrative": null,
+      "content": "Traces and skein algebra\nDeﬁnition 1.1.6. For any γ ∈Γ, we deﬁne the trace function tγ : R(Γ) →k by\ntγ(ρ) = Tr(ρ(γ)). Those functions are invariant under the action of SL2, thus they\ndeﬁne functions on the quotient X(Γ), that we still denote by tγ.\nThe following lemma is straightforward, but crucial :\nLemma 1.1.7. For any γ, δ ∈Γ, the identity tγtδ = tγδ + tγδ−1 holds on R(Γ).\nProof. For any A ∈SL2(k), the Cayley-Hamilton theorem gives A2 −Tr A·A+Id =\n0. After right-multiplying by A−1B and taking the trace, one obtains Tr(AB) −\nTr(A) Tr(B) + Tr(A−1) Tr(B) = 0, and the result follows.\nTheorem 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[Pro87]",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "The algebra given by B[Γ] = k[Yγ, γ ∈Γ]/(Ye −2, YγYδ − Yγδ −Yγδ−1, γ, δ ∈Γ) is isomorphic to the algebra of invariants k[X(Γ)].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "Let k ⊂K be a ﬁeld extension (we take K to be either k, either a transcendental extension of k). A representation ρ : Γ →SL2(K) is absolutely irreducible (irreducible in an algebraic closure) iﬀthere exists α, β ∈Γ such that Tr(ρ(αβα−1β−1))̸ = 2. δ γ γ δ = − − γ δ γ δ = − −Yγδ −YγYδ Yγδ−1 YγYδ Yγδ−1 Yγδ γ γ δ δ − Figure 1.2 –",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characters, reducibility and irreducibility",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-114-characters-reducibility-and-irreducibility.md",
+      "narrative": null,
+      "content": "Characters, reducibility and irreducibility\nFrom the previous deﬁnition of the character variety through trace functions, we\nhave the following deﬁnition of points of the character variety, which enlightens on\nthe terminology.\nDeﬁnition 1.1.12. A k-character is a k-point of the character variety in the sense\nof algebraic geometry, that means a morphism χ : B[Γ] →k. Any representation\nρ : Γ →SL2(k) induces a character χρ : B[Γ] →k that sends Yγ to Tr(ρ(γ)).\nRemark 1.1.13. This deﬁnition generalizes to R-characters for any k-algebra R.\nDeﬁnition 1.1.14. A representation ρ : Γ →SL2(k) is reducibl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "This deﬁnition generalizes to R-characters for any k-algebra R. Deﬁnition 1.1.14. A representation ρ : Γ →SL2(k) is reducible if there exists an invariant line in k2, and irreducible if not. The following standard lemma tells us that this notion can be deﬁned at the level of characters. For any elements α, β ∈Γ, we will denote the commutator αβα−1β−1 by [α, β].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p022-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "Let K be either an algebraically closed ﬁeld or a degree one ex- tension of an algebraically closed ﬁeld . Then the K-irreducible characters correspond bijectively to GL2-conjugacy classes of irreducible representations ρ : Γ →SL2(K). Idea of the proof. Given an irreducible character χ : B[Γ] →K, we ﬁx α, β ∈Γ such that χ(∆α,β) is invertible and in order to use Saito’s Theorem, we produce A = \u0000 χ(Yα) 1 −1 \u0001 and B = \u0010 −1 u u χ(Yβ) \u0011 for some u in an at most quadratic extension ˆK of K such that u + u−1 = χ(Yαβ). Then we obtain a representation ρ : Γ →SL2(ˆK) whose character is χ, and general co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Saito’s Theorem and some consequences",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-115-saitos-theorem-and-some-consequences.md",
+      "narrative": null,
+      "content": "Saito’s Theorem and some consequences\nFrom the equivalence of the two deﬁnitions of the character variety, we know that\nany character χ ∈X(Γ) is the character of a representation ρ : Γ →SL2(k).\nThe following theorem of Kyoji Saito [Sai94] generalizes this fact and has crucial\napplications for us. We detail the proof in Appendix A, because it is not available\nin the literature.\nTheorem 1.1.17. Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume\nthat χ(∆α,β)is invertible for some α, β ∈Γ, and let A, B ∈SL2(R) such that Tr A =\nχ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a uniq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-006-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "rem-sec-006-03.md",
+      "narrative": null,
+      "content": "This proposition enlightens about the quotient map π : R(Γ) → X(Γ). It says that given an irreducible k-character χ ∈X(Γ), all representations in its ﬁber are pairwise conjugated, hence the ﬁber is isomorphic to the whole group PSL2(k). It is often summarized saying that on the irreducible open subset of the character variety, the algebraic quotient is a principal PSL2(k) bundle. On the other hand, both statement are false outside of the irreducible locus of X(Γ) : in Example 1.1.5, we have seen that the ﬁber of a central character contains non trivial repre- sentations, and it easy to see, fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume that χ(∆α,β)is invertible for some α, β ∈Γ, and let A, B ∈SL2(R) such that Tr A = χ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a unique representation ρ : Γ →SL2(R) whose character is χ and such that ρ(α) = A and ρ(β) = B. As a application of this theorem, one can deduce the following proposition, see [Mar15].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-007-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "The character variety X(∂M",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "ex-sec-007-01.md",
+      "narrative": null,
+      "content": "= X(Z2)). Let χ ∈X(∂M) be a k-character, it is the character of a semi-simple representation ρ : Z2 →SL2(k). Since Z2 is abelian, it can be written ρ(γ) = \u0010 λ(γ) λ−1(γ) \u0011 , and χ(Yγ) = λ(γ)+λ−1(γ) for some λ ∈H1(∂M, k∗). Moreover, there is an involution σ of H1(∂M, k∗) that sends λ to λ−1, and clearly what we have just described is a morphism X(∂M) → H1(∂M, k∗)/σ ≃(k∗)2/σ that turns out to be an isomorphism. On the functions algebra side, there is a map from B[Z2] into the algebra C[Z2] = k[Zγ, γ ∈Z2]/(ZγZδ −Zγδ), the latter being isomorphic to k[X, X−1, Y, Y −1], that sends Yγ 7→Zγ+Zγ−1. Its",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The augmented variety",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-007-116-the-augmented-variety.md",
+      "narrative": null,
+      "content": "The augmented variety\nIn this subsection we deﬁne a two-fold cover of the character variety when Γ is the\nfundamental group of a 3-manifold with boundary a single torus, which has been\npreviously considered by several authors, see for instance [DG16]. Both the deﬁnition\nand the motivation arise from the following example. This augmented variety will\nbe used in Chapter 2.\nExample 1.1.20 (The character variety X(∂M) = X(Z2)). Let χ ∈X(∂M) be\na k-character, it is the character of a semi-simple representation ρ : Z2 →SL2(k).\nSince Z2 is abelian, it can be written ρ(γ) =\n\u0010\nλ(γ)\n0\n0\nλ−1(γ)\n\u0011\n, and χ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Let X be a one-dimensional component of irreducible type of X(M). Then there is a representation ρX : Γ →SL2(k(X)), called the tautological representation, deﬁned up to conjugation, whose character is χX.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tautological representation",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-117-the-tautological-representation.md",
+      "narrative": null,
+      "content": "The tautological representation\nLet X be an irreducible component of X(M) of irreducible type (in the sense of\nDeﬁnition 1.1.16).\nThe component X corresponds to a minimal prime ideal p of B[Γ] such that k[X] =\nB[Γ]/p is the function algebra of X. Denote by k(X) the fraction ﬁeld of k[X], and by\nχX the composition B[Γ] →k[X] →k(X), it is irreducible as a k(X)-character. The\nfollowing is an immediate consequence of Proposition 1.1.18, since one-dimensional\nvarieties over k have a function ﬁeld which has transcendance degree 1 over k.\nProposition 1.1.23. Let X be a one-dimensional component of ir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-009-118-examples.md",
+      "narrative": null,
+      "content": "Examples\nThe character variety of Γ = Z\nWe already computed the character variety X(Z) ≃k with parameter t = Tr ρ(1),\nit has a double cover similar to the augmented variety which is k∗with parameter\nu, where u + u−1 = t. The tautological representation is ρ : Z →SL2(k(u)) deﬁned\nby ρ(1) =\n\u0000 u\n0\n0\nu−1\n\u0001\n. Remark that, as predicted by Proposition 1.1.18, the tautolo-\ngical exists in SL2(k(t)) too, one can see it by sending 1 to ( t\n1\n−1 0 ), but this is less\nconvenient for computations.\nThe free group with two generators Γ = ⟨α, β⟩\nUsing the trace formula, it is clear that the algebra B[Γ] is ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "The whole paragraph above can be rephrased in terms of the aug- mented character variety, with ¯X a one-dimensional component of irreducible type of ¯X(M) and ρ ¯ X : Γ →SL2(k( ¯X)) the tautological representation. The component ¯X is said of irreducible type if it projects on a component of irreducible type of X(M). The striking point of the augmented construction is that the restricted tautological representation ρ∂: π1(∂M) →π1(M) →SL2(k( ¯X)) is now diagonalizable.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted cohomology",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-12-twisted-cohomology.md",
+      "narrative": null,
+      "content": "Twisted cohomology\nIn this section we recall the basics of twisted cohomology that we will use in the\nsequel of the manuscript. Given a group Γ, we will denote by Z[Γ] the group ring of\nΓ, whose elements are formal sums P\nγ∈Γ nγeγ, nγ ∈Z with multiplication eγeδ = eγδ\nextended by linearity.\nWe ﬁx an abelian group A together with a left-action Γ × A →A, (γ, a) 7→γ · a. It\ninduces a right-action by a · γ = γ−1 · a. It turns A into a Z[Γ]-module.\nDeﬁnition 1.2.1 (Group homology and cohomology). Let EΓ be the full simplex\nset over Γ, that is, the vertices of EΓ are in bijection with Γ, and any ﬁni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "rem-sec-010-01.md",
+      "narrative": null,
+      "content": "When A = Z and Γ acts trivially, then what we deﬁned is the homology (resp cohomology) of the space BΓ. We will generalize this observation later.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "The generalization of Remark 1.2.2 is that the homology (resp. cohomology) H∗(Γ, A) of the group Γ is the twisted homology (resp. cohomology) H∗(BΓ, A) of the space BΓ. A classical fact, that is a consequence of this remark, is the following theorem, see for instance [Bro82].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "If ˜ M is contractible, then we have the natural isomorphisms Hk(M, A) ≃Hk(Γ, A) and Hk(M, A) ≃Hk(Γ, A) Moreover, without hypothesis on M, the following is proved in [Por97, Lemma 0.6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-13-culler-shalen-theory-group-acting-on-trees-an.md",
+      "narrative": null,
+      "content": "Culler-Shalen theory, group acting on trees and\nincompressible surfaces\nIn this section we partially describe the so-called Culler-Shalen theory. In seminal\narticles [CS83, CS84], Marc Culler and Peter Shalen managed to use both tree-\ntheoretical techniques introduced by Hyman Bass and Jean-Pierre Serre in [SB77]\nand character varieties to study the topology of 3-manifolds. In Subsections 1,2,3\nwe describe the Bass-Serre tree together with its natural SL2 action, in Subsection\n4 we explain how to use this theory in the context of character varieties.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tree",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-131-the-tree.md",
+      "narrative": null,
+      "content": "The tree\nLet K be an extension of k, we deﬁne a k-discrete valuation as a surjective map\nv : K →Z ∪{∞} such that\n— v(0) = +∞\n— v(x + y) ≥min(v(x), v(y))\n— v(xy) = v(x) + v(y)\n— ∀z ∈k, v(z) = 0 and k is maximal for this property.\nWe call Ov = {x ∈K : v(x) ≥0} the valuation ring, and we pick t ∈Ov an element of\nvaluation 1, that we call a uniformizing parameter. The group of invertible elements\nO∗\nv is the group of elements whose valuation is zero, (t) is the unique maximal ideal\nof Ov, Ov/(t) ≃k is the residual ﬁeld. Remark that every ideal is of the form (tn),\nfor some n ∈N. The main exemple t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "For any g ∈GL2(K), [L] ∈T, ﬁx a basis {e, f} of L ∈[L], and n, m ∈Z such that {tne, tmf} is a basis of g · L. Then v(det(g)) = n + m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "An element g ∈SL(V ) stabilizes a vertex [L] iﬀfor any representa- tive g · L = L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-014-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-014-05.md",
+      "narrative": null,
+      "content": "Let G be a subgroup of SL(V ) acting on the Bass-Serre tree T. If every element g ∈G ﬁxes a vertex of T, then the whole group has a ﬁxed vertex, that is the action is trivial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "prop-sec-014-03.md",
+      "narrative": null,
+      "content": "The stabilizer in SL2(K) of any vertex of the tree T is a GL2- conjugate of SL2(Ov).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Link of a vertex and ends of the tree",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-132-link-of-a-vertex-and-ends-of-the-tree.md",
+      "narrative": null,
+      "content": "Link of a vertex and ends of the tree\nGiven a vertex [L] ∈T, one can describe the set of vertices at distance 1 of [L] as\nfollows : for each such [L′] there is a basis of V such that O2\nv is a representative of\n[L] and that there is an unique representative L′ of [L′] isomorphic to Ov ⊕tOv in\nthis basis. Since tL ⊂L′ ⊂L, it deﬁnes a map {[L′] : d([L], [L′]) = 1} →kP1 that\nsends L′ to the line L′/tL in L/tL ≃k2, which turns out to be a bijection.\nIn general, there is a bijection between the set of vertices at distance n of [L] and the\nlines in (Ov/(tn))2, that is the points in the projective pl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The SL2 action : stabilizers of vertices, ﬁxed points and trans- lation length",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-133-the-sl2-action-stabilizers-of-vertices-ﬁxed.md",
+      "narrative": null,
+      "content": "The SL2 action : stabilizers of vertices, ﬁxed points and\ntranslation length\nThere is a natural isometric and transitive action of GL(V ) on T, induced by the\naction of GL(V ) on V .\nDeﬁnition 1.3.1. The action of a subgroup G ⊂GL(V ) on T will be said trivial if\na vertex is ﬁxed by the whole group.\nLemma 1.3.2. For any g ∈GL2(K), [L] ∈T, ﬁx a basis {e, f} of L ∈[L], and\nn, m ∈Z such that {tne, tmf} is a basis of g · L. Then v(det(g)) = n + m.\nProof. In this basis, L ≃O2\nv, and g can be written as the matrix A ( tn\n0\n0 tm ) B with\nA, B ∈GL2(Ov). The result follows.\nNow we restrict to the SL(V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-014-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "rem-sec-014-04.md",
+      "narrative": null,
+      "content": "Since for any g ∈SL(V ), v(det(g)) = 0, we know that the distance d([L], g · [L]) = |n −m| is even, in particular SL(V ) acts without inversion on T, that is it can not ﬁx an edge and exchange its end points. Deﬁnition 1.3.6. Given g ∈SL(V ), we deﬁne the translation lenght of g to be equal to l(g) = min [L]∈T d([L], g · [L]). There are two ways for g ∈SL(V ) acting on the tree :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-015-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "ex-sec-015-02.md",
+      "narrative": null,
+      "content": "Let X be the plane curve {x2−y3 = 0} in C2. It is a singular aﬃne curve, with function ring C[X] = C[U, V ]/(U 2 −V 3). The map C[X] →C[T] that maps U to T 3 and V to T 2 induces an isomorphism between of ﬁelds Frac(C[X]) ≃ C(T). Moreover, it deﬁnes a birational map ν : CP1 →X ⊂C2 by t 7→(t3, t2). Hence the smooth projective model of X is isomorphic to CP1 (remark that the singular point (0, 0) is \"smoothed\" through ν), and the ideal point is ∞. As a map CP1 →CP2, ν sends ∞to [1 : 0 : 0], the curve X ∪{∞} ⊂CP2 is a (non smooth) compactiﬁcation of X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curves and valuations",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-134-curves-and-valuations.md",
+      "narrative": null,
+      "content": "Curves and valuations\nExamples of ﬁeld extensions of k together with k-valuations are given by algebraic\nvarieties deﬁned over k. In particular, pick X ⊂X(Γ) an irreducible component of\nthe character variety, its function ring k[X] is a domain, and we denote by k(X) =\nFrac(k[X]) its quotient ﬁeld, called the function ﬁeld of X. It is a general fact\nthat this ﬁeld is a k-valuated ﬁeld, with valuations corresponding to hypersurfaces\nW ⊂X. We will be interested in the case where X is one dimensional, and we\nrefer to [Ful08] for details on what follows : there exists an unique curve ˆX, which is\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "When the context will be clear, a curve X being given, we will often denote by v a point in the smooth projective model ˆX. Deﬁnition 1.3.9. Let v ∈ˆX be a point in the projective model of X. We will call it an ideal point if ν is not deﬁned at v, equivalently the function ring k[X] is not a subring of Ov. Otherwise we will call v a ﬁnite point.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "lem-sec-016-02.md",
+      "narrative": null,
+      "content": "Finite points and residual representations If v is a ﬁnite point, Proposition 1.3.11 implies that the tautological representation can be chosen, up to conjugation, to be of the form ρ : Γ →SL2(Ov), such a repre- sentation will be said convergent. Given a convergent representation ρ, we denote by ¯ρ : Γ →SL2(Ov) mod t −−−→SL2(k) the residual representation. If v corresponds to the character χ ∈X, then the representation ¯ρ is a lift of χ. Ideal points and incompressible surfaces Here M is a 3-manifold with ∂M = S1 × S1, and Γ = π1(M). We pick an ideal point v ∈ˆX, and we know from Proposition 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The action of Γ on Tv is trivial if and only if v ∈ˆX is a ﬁnite point.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group acting on a tree and splitting",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-016-135-group-acting-on-a-tree-and-splitting.md",
+      "narrative": null,
+      "content": "Group acting on a tree and splitting\nLet X be an irreducible component of irreducible type of X(Γ), which is reduced\nand one dimensional, and let ρ : Γ →SL2(k(X)) be the tautological representation.\nLet v ∈ˆX a point in the smooth projective model of X, the pair (k(X), v) is a\nk-valuated ﬁeld, and we denote by Tv the Bass-Serre tree described above. The\ngroup Γ acts simplicially on Tv as a subgroup of SL2(k(X)) through the tautological\nrepresentation ρ. Although the representation ρ is deﬁned up to conjugation, the\naction on the Bass-Serre tree is well-deﬁned.\nProposition 1.3.11. The action of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-016-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "rem-sec-016-03.md",
+      "narrative": null,
+      "content": "There is some kind of converse construction, which maybe explains the use of the term \"dual\". Given S an oriented surface in M, and ˜S the preimage of S in the universal cover ˜ M, one can construct a tree TS as follows : vertices are in bijection with the connected components on ˜ M \\ ˜S, and they are joined with an edge when the corresponding components are separated by a component of ˜S. Because the surface ˜S is π1(M)-invariant, this tree TS comes with a simplicial action of the fundamental group π1(M). Moreover, the stabilizers of vertices are the fundamental groups of the corresponding c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-016-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "rem-sec-016-04.md",
+      "narrative": null,
+      "content": "A compression disk D ⊂M is an embedded disk in M such that ∂D lies in S and is not homotopically trivial in S. The second condition above is equivalent to saying that there is no compression disk in M. If S is a surface dual to a π1 action on a tree T, there is a way to modify the equivariant map f in order to avoid compression disks, spherical and boundary parallel components, and hence to obtain a new surface Σ that is incompressible. We refer the reader to the references given above, where a proof of this fact will be found.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "One can chose a conjugate of the tautological representation ρ : Γ →SL2(k(X)) that restricts to representations ρ1 and ρ2 from π1(M1), π1(M2) to SL2(k(X)) respectively ; such that ρ1 is convergent and that ρΣ, its restriction to π1(Σ), is residually reducible. Moreover, there is a convergent representation ρ′ 2 : π1(M2) →SL2(Ov) such that ρ2 = Unρ′ 2U −1 n , with Un = ( tn 0 0 1 ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The split case",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-136-the-split-case.md",
+      "narrative": null,
+      "content": "The split case.\nLet Σ be an incompressible surface associated to an ideal point v ∈ˆX. In this section\nwe suppose that Σ is a union of n parallel copies Σi, i = 1, . . . , n and that each copy\n35\nsplits M into two handlebodies M = M1 ∪Σi M2. Consider V (Σ) a neighborhood of\nΣ homeomorphic to Σ1 × [0, 1], and we consider the splitting M = M1 ∪V (Σ) M2. We\nﬁx a basepoint p ∈Σ1, and we will denote by π1(Σ) the fundamental group of Σ1\nbased in p. We identify π1(V (Σ)) to π1(Σ), and the Seifert-Van Kampen Theorem\nprovides the amalgamated product π1(M) = π1(M1)∗π1(Σ)π1(M2). A sketchy picture\nis draf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "One can chose a conjugate of the tautological representation ρ : π1(M) →SL2(k(X)) such that the restrictions ρH : π1(H) →SL2(k(X)) and ρ1 : π1(S1) →SL2(k(X)) are convergent. Moreover, ρ(v) = Vn with Vn = \u0010 tn/2 −t−n/2 \u0011 , in particular n is an even integer, and the restriction ρn : π1(Sn) →SL2(k(X)) is equal to Vnρ1V −1 n . Finally, the residual restricted representation ¯ρ1 is reducible, with Tr(¯ρ1(∂Si)) = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-split case",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-137-the-non-split-case.md",
+      "narrative": null,
+      "content": "The non-split case\nLet S be an incompressible surface associated to an ideal point v ∈ˆX which is,\nagain, union of n parallel copies S = S1 ∪. . . ∪Sn, and we assume now that M \\ Si\nis connected. Hence [Si] = 0 ∈H2(M; ∂M), and in particular ∂Si is a homological\nlongitude. We say that Si is a Seifert surface in M. Let V (Si) be a neighborhood of\n36\nSi in M, and E(Si) = M \\ V (Si). It is a classical fact (see [Oza01, Proposition 2])\nthat E(Si) is a handlebody if and only if π1(E(Si)) is free. In this case we say that\nthe surface Si is free. It is the case, for instance, as soon as M is small (do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "Let χ ∈X a reducible character, v ∈ˆX the associated va- luation, and ρ : Γ →SL2(Ov) a choice of convergent tautological representation. Then the character χ¯ρ is not central, and in particular the representation ρ is not residually central. Moreover, one can choose the tautological representation ρ such that it is not residually abelian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alexander module and character varieties",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-14-alexander-module-and-character-varieties.md",
+      "narrative": null,
+      "content": "Alexander module and character varieties\nIn this section we prove a theorem due independently to Burde and DeRham ([Bur67,\ndeR67]), that relies the so-called Alexander module of a 3-manifold M, and in parti-\ncular roots of its Alexander polynomial, with some particular point in the character\nvarieties X(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reducible character in components of irreducible type of the character variety",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-020-141-reducible-character-in-components-of-irreduc.md",
+      "narrative": null,
+      "content": "Reducible character in components of irreducible type\nof the character variety\nDeﬁnition 1.4.1. Let X be a one dimensional component of irreducible type of\nthe character variety X(M), v ∈ˆX a ﬁnite point in the smooth projective model\nof X, and ρ : π1(M) →SL2(Ov) a convergent representative of the tautological re-\npresentation. We will say the representation ρ is residually reducible (resp. residualy\nabelian, irreducible, central) if the residual representation ¯ρ : π1(M) →SL2(k) is\nreducible (resp. abelian, irreducible, central). Recall in addition that a character χ\nis said central if χ(Yγ)2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-021-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "ex-sec-021-05.md",
+      "narrative": null,
+      "content": "1. For the trefoil knot, we recall that the tautological repre- sentation is ρ : a 7→ \u0000t −(t2+1) −t \u0001 , b 7→ \u0010 −j 0 −j2 \u0011 . It is residually reducible when t2 = −1. The curve ab−1 ∈Γ is a meridian (that is its abelianization is 1), and at the reducible characters ρ(ab−1) has eigenvalue λ = ±ij2, thus λ2 = −j, which is a root of the Alexander polynomial ∆M(t) = t2 −t + 1. 2. For the ﬁgure-eight knot, the component of irreducible type and the com- ponent of reducible type intersect when the trace of the meridian is ± √ 5. Thus the square of the eigenvalues are 3± √ , the roots of the Alexander p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "The Λ-modules Hi( ¯ M) are trivial for i ≥2, H0( ¯ M) ≃Z[t±1]/(t− 1) and the Alexander module is a torsion Λ-module.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-021-03.md",
+      "narrative": null,
+      "content": "[BZH14] The Alexander polynomial has the following proper- ties : ∆M(t) = ∆M(t−1) and ∆M(1) = 1 The following theorem is due to Burde and DeRham [Bur67, deR67], see [HPSP01] for a more recent treatment and improvement of the result. We give a proof of this well-known fact because we did not ﬁnd it in those terms in the literature, and we will use some similar techniques along this manuscript.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alexander module",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-142-alexander-module.md",
+      "narrative": null,
+      "content": "Alexander module\nHere we recall the basic theory of Alexander module. We assume for simplicity that\nM’s ﬁrst Betti number b1(M) is equal to 1, despite the theory can be extended to\nhigher cases. We refer to [Rol76, BZH14] for proofs and details on this theory.\nWe call abelianization an epimorphism ϕ : π1(M) →Z. As b1(M) = 1, there are\ntwo possible choices for the homomorphism ϕ, but nothing we will state here will\ndepend on this choice. Moreover, we abuse of the term abelianization because we\nomit the possibly non trivial torsion part of the abelianization of the fundamental\ngroup.\nWe call the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "It follows from the fact that A has maximal rank that none of those polynomials are zero. A proof that they only depend on M and are in fact topological invariants can be found in [BZH14]. Note that they are deﬁned up to a power of t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-021-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-021-04.md",
+      "narrative": null,
+      "content": "Let χ ∈X be a reducible character. Then there is λ ∈k∗such that ∆(λ2) = 0 and for all γ ∈π1(M), χ(Yγ) = λϕ(γ) + λ−ϕ(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Reidemeister torsion",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-15-the-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "The Reidemeister torsion\nIn this section we give various deﬁnitions used for the Redemeister torsion. Refe-\nrences are [Mil66], [GKZ94, Appendix A], [Por97, Chapitre 0]. We stress out the fact\nthat we use a convention (namely, how we take the alternating sum in the deﬁnition\nof the determinant of a complex) that corresponds to [GKZ94], but not to [Mil66].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First deﬁnition",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-023-151-first-deﬁnition.md",
+      "narrative": null,
+      "content": "First deﬁnition\nGiven a ﬁnite complex C∗of k-vector spaces\nC0\nd0\n−→C1\nd1\n−→...\ndn−1\n−−−→Cn\nﬁx {ci}i=0...n and {hi}i=0...n families of basis of the Ci’s and the Hi’s, one can deﬁne\nthe torsion of the based complex tor(C∗, {ci}, {hi}) to be the alternating product\nof the determinants of the base change induced by this choices. More precisely, we\nhave the exact sequences\n0 →Zi →Ci →Bi+1 →0\n0 →Bi →Zi →Hi →0\n42\nthat deﬁne Bi, Zi and Hi. Pick a system of basis {bi} of the Bi’s, ﬁrst one obtains\na basis of Zi for any i, given by a section Hi →Zi, and then a section Bi+1 →Ci\nprovides a basis of Ci : b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "For an exact sequence of vector spaces 0 →A →B →C →0 one has an isomorphism det(A) ⊗det(C) ≃det(B) given, for any choice of basis {a1, ...am} of A, {c1, ..., cn} of C and of a section C →B, ci 7→¯ci, by (a1 ∧... ∧am) ⊗(c1 ∧... ∧cn) 7→a1 ∧... ∧am ∧¯c1 ∧... ∧¯cn Deﬁnition 1.5.3. Given a complex C∗, and a system of basis {ci} of the Ci’s, ci = {ci 1, ..., ci ni}, then V ci = ci 1 ∧... ∧ci ni is a basis of det(Ci), and then we denote by c = N i(V ci)⊗(−1)i the induced basis of det(C∗). Then the torsion of the based complex is deﬁned by tor(C∗, {ci}) = Eu(c) ∈det(H∗(C∗))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second deﬁnition : the Euler isomorphism",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-152-second-deﬁnition-the-euler-isomorphism.md",
+      "narrative": null,
+      "content": "Second deﬁnition : the Euler isomorphism\nRecall that the determinant of a n-dimensional vector space V is det(V ) = ΛnV . One\ndeﬁne the determinant of a complex det(C∗) = N\ni det(Ci)⊗(−1)i. The cohomology of\nthis complex is naturally graded by the degree, and we have the following theorem.\nTheorem 1.5.1. There is a natural isomorphism\nEu : det(C∗)\n∼−→det(H∗(C∗))\nProof. Again, we write the two exact sequences\n0 →Zi →Ci →Bi+1 →0\n0 →Bi →Zi →Hi →0\nThen the proof reduces to the particular case of a short exact sequence :\nLemma 1.5.2. For an exact sequence of vector spaces\n0 →A →B →C →0\none has an i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-024-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "rem-sec-024-03.md",
+      "narrative": null,
+      "content": "The two deﬁnitions coincide in the following sense : tor(C∗, {ci}, {hi}) = tor(Ci, {ci}) ⊗i (∧hi)⊗(−1)i",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "thm-sec-024-01.md",
+      "narrative": null,
+      "content": "There is a natural isomorphism Eu : det(C∗) ∼−→det(H∗(C∗))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Third deﬁnition : torsion of an exact complex (Cayley formula)",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-025-153-third-deﬁnition-torsion-of-an-exact-complex.md",
+      "narrative": null,
+      "content": "Third deﬁnition : torsion of an exact complex (Cayley\nformula)\nIf the complex is exact, one has the following alternative description : pick a system\nof basis {ci} of the Ci’s that induces, for each i, a splitting Ci = ker di ⊕Ki, where\nKi is a supplementary of ker di in Ci. Then each di restricts to an isomorphism\nd|Ki : Ki →ker di+1, and we deﬁne\ntor(C∗, {ci}) =\nY\ni\ndet(d|Ki)(−1)i+1\nAgain, it’s deﬁned up to sign since we haven’t ﬁxed an order for the basis.\n44\nChapitre 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/cor-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "cor-sec-026-03.md",
+      "narrative": null,
+      "content": "Assume that X(M) holds a one-dimensional component X such that every irreducible characters χ ∈X are smooth points, and that for each ideal point y in its smooth projective model of the augmented variety Y one can produce an incompressible surface Σy with ny connected components and which veriﬁes the hypothesis of Theorem 2.0.2. Futhermore, assume that the Alexander polynomial of M has simple roots. Then −χ(Y ) ≤ X y −nyχ(Σy) −my where my is deﬁned as in Theorem 2.0.2. The two ﬁrst sections of this chapter are devoted to the deﬁnition of the adjoint torsion as a diﬀerential form on the augment",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The adjoint torsion",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-026-2-the-adjoint-torsion.md",
+      "narrative": null,
+      "content": "Let ¯X be a component of irreducible type of the augmented character variety ¯X(M)\nand k( ¯X) its function ﬁeld. In this chapter we will study the action of the funda-\nmental group π1(M) on the Lie algebra sl2(k( ¯X)), and the Reidemeister torsion of\nthe twisted complex C∗(M, Ad ◦ρ) for this action. It is what we will call the adjoint\ntorsion. First we will deﬁne it as a rational diﬀerential form over Y , the smooth\nprojective model of ¯X, and then we will study its poles and zeros, in particular we\nwill observe that the torsion is regular on the aﬃne part ¯X of the Riemann surface\nY . We will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "thm-sec-026-01.md",
+      "narrative": null,
+      "content": "Let ¯X be a component of irreducible type of the augmented cha- racter variety, and let x be a point in ¯X, with corresponding valuation v. Then the adjoint torsion tor(M, Ad ◦ρ) vanishes at v with order given by the length of the torsion part of the Ov-module H1(M, Ad ◦ρ)v. In particular tor(M, Ad ◦ρ) is regular on ¯X, and does not vanish if v projects onto a smooth point of X(M). The striking point of this theorem, and the more simple to state, is that the torsion deﬁnes a regular diﬀerential form on ¯X, which was not expected from the deﬁnition. On the other hand, its zeros are included in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "thm-sec-026-02.md",
+      "narrative": null,
+      "content": "Let y ∈Y be an ideal point of the smooth projective model of a component of irreducible type ¯X of the augmented character variety, and let v be the corresponding valuation on k(Y ). Assume that y detects an incompressible surface Σ ⊂M, such that Σ is connected or is the union of n parallel homeomorphic copies, that the restriction ρΣ is not abelian and that the complement of any connected component of Σ in M is the disjoint union of two handlebodies. Then we have the following bound on the order of tor(M, Ad ◦ρ) at y : v(tor(M, Ad ◦ρ)) ≤−nχ(Σ) −m where m = n whence ρΣ is not residually abelia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-028-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "prop-sec-028-02.md",
+      "narrative": null,
+      "content": "Let ¯X be a component of irreducible type, with function ring k[ ¯X] ≃¯B[Γ]/p. Let ρ : Γ →SL2(k( ¯X)) the tautological representation, and H∗(M, Ad ◦ρ) the twisted homology with adjoint action on sl2(k( ¯X)) coeﬃcients. Then there are isomorphisms Ω¯B[Γ]/k ⊗¯B[Γ] k( ¯X) ≃H1(M, Ad ◦ρ) ≃Ωk( ¯ X)/k",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The twisted complex with adjoint action",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-027-21-the-twisted-complex-with-adjoint-action.md",
+      "narrative": null,
+      "content": "The twisted complex with adjoint action\nIn this section we study the complex of twisted cohomology of M in the adjoint\nrepresentation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tangent space, diﬀerential forms and twisted cohomology",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-028-211-tangent-space-diﬀerential-forms-and-twisted.md",
+      "narrative": null,
+      "content": "Tangent space, diﬀerential forms and twisted cohomo-\nlogy\nThe results of this section can be found in [Mar15]. It’s a well-known result [LM85,\nWei64] that the tangent space of the character variety at an irreducible character is\nisomorphic to the ﬁrst group of twisted cohomology with the adjoint action. Saito’s\nTheorem allows us to prove it in the skein context. This results can serve as a\nmotivation to study the adjoint-twisted complex, which appears to be related with\nthe geometry of the character variety.\nDeﬁnition 2.1.1. Let ρ : Γ →SL2(k) be a representation. The action by conjuga-\ntion of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "thm-sec-028-01.md",
+      "narrative": null,
+      "content": "Let χ be an irreducible character, and ρ : π1(M) →SL2(k) a re- presentation which lifts χ. Then we have an isomorphism TχX(M) ≃H1(M, Ad ◦ρ), where the cohomology coeﬃcient is sl2(k) with the adjoint action.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "Let ρ : π1(M) →SL2(k( ¯X)) be the tautological representation, then H0(M, Ad ◦ρ) = Hi(M, Ad ◦ρ) = 0 for i ≥3 ; H1(M, Ad ◦ρ) is one dimensional and H2(M, Ad ◦ρ) ≃k( ¯X), via the homomorphism η 7→Tr((r∗η)H).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of the twisted cohomology",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-029-212-computation-of-the-twisted-cohomology.md",
+      "narrative": null,
+      "content": "Computation of the twisted cohomology\nIn this section we assume that ¯X is a one dimensional component of ¯X(M), of\nirreducible type. We denote by H the matrix ( 1\n0\n0 −1 ), and by r∗: Hi(M, Ad ◦ρ) →\nHi(∂M, Ad ◦ρ) the morphism induced by the inclusion ∂M ⊂M.\nProposition 2.1.5. Let ρ : π1(M) →SL2(k( ¯X)) be the tautological representation,\nthen H0(M, Ad ◦ρ) = Hi(M, Ad ◦ρ) = 0 for i ≥3 ; H1(M, Ad ◦ρ) is one dimensional\nand H2(M, Ad ◦ρ) ≃k( ¯X), via the homomorphism η 7→Tr((r∗η)H).\nProof. Pick a cellular complex with only 0, 1 and 2-cells, that has the same homotopy\ntype than M, then Hi(M, Ad ◦ρ)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The adjoint torsion as a diﬀerential form",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-030-22-the-adjoint-torsion-as-a-diﬀerential-form.md",
+      "narrative": null,
+      "content": "The adjoint torsion as a diﬀerential form\nIn this section we deﬁne the torsion of the adjoint complex as a rational diﬀerential\nform on the augmented character variety. We give an explicit relation with previous\nwork of Joan Porti, Jerome Dubois and others.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The torsion of an Ad ◦ρ-twisted cellular complex",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-031-221-the-torsion-of-an-ad-ρ-twisted-cellular-comp.md",
+      "narrative": null,
+      "content": "The torsion of an Ad ◦ρ-twisted cellular complex\nHere we consider the case of the torsion of the cellular complex C∗(M, Ad ◦ρ) with\ncoeﬃcients in sl2(k( ¯X)) twisted by a representation ρ : π1(M) →SL2(k( ¯X)). We\n49\npick the basis of sl2(k( ¯X)) given by the vectors\nE =\n \n0\n1\n0\n0\n!\n, F =\n \n0\n0\n1\n0\n!\n, H =\n \n1\n0\n0\n−1\n!\nAny cellular decomposition of M provides a Z[π1(M)]-basis of Ci( ˜\nM) for any i,\ndenoted by {˜e1\ni , ...˜eni\ni }. We will denote by f i\n1,E ∈Ci(M, Ad ◦ρ) the map that sends\n˜e1\ni on E and extend it in an Ad ◦ρ-equivariant way, and similarly we obtain a basis\nf i = {f i\nk,E, f i\nk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-031-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "rem-sec-031-01.md",
+      "narrative": null,
+      "content": "It does not depend on a choice of the lifts of the cells ek i in the universal cover of M (because the Adjoint map is unimodular) nor of the basis {E, F, H} (because the Euler characteristic χ(M) vanishes) ; neither it depends on the conjugacy class of ρ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-033-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "The trefoil knot",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "ex-sec-033-04.md",
+      "narrative": null,
+      "content": "Recall that the tautological representation of the component of irreducible type X ⊂X(M) is given by the formulae : ρ(a) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-033-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "The ﬁgure-eight knot",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "ex-sec-033-05.md",
+      "narrative": null,
+      "content": "Here we take µ to be the longitude of M, denote its trace by Yµ = x4 −5x2 + 2, then τµ(x, y) = 5 −2x2 and one obtains tor(M, Ad ◦ρ) = dZµ (5−2x2)Zµ. A careful examination shows that it has no poles, and zeros only at inﬁnity : take x = 1/t a local coordinate, dZµ Zµ = dYµ √ Y 2 µ −4 ≃dt t , hence each of the four ideal points contribute as a zero of order 1. The divisor’s degree of the torsion is 4, that conﬁrms the fact that the Riemann surface Y has genus 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-033-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "The knot 52",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "ex-sec-033-06.md",
+      "narrative": null,
+      "content": "This example arises from [DHY09]. The fundamental group is isomorphic to π1(M) = ⟨u, v| vw = wu⟩where w = u−1v−1uvu−1v−1. The component of irreducible type of the character variety is described by the Riley polynomial φ(S, U). In our setting, with x = Tr u = Tr v and y = Tr uv, then x = S 2 + S−1 2 and y = S + S−1 −U, we obtain X = Xirr(M) = \b (x, y) ∈k2| −x2(y −1)(y −2) + y3 −y2 −2y + 1 = 0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/ex-sec-033-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "The knot 61",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "ex-sec-033-07.md",
+      "narrative": null,
+      "content": "This example arises from [DHY09] too. The funda- mental group is π1(M) = ⟨u, v| vw = wu⟩where w = (vu−1v−1u)2. The irreducible type part of the character variety is X = {(x, y) ∈C2 |x4(y −2)2 −x2(y + 1)(y −2)(2y −3) + (y3 −3y −1)(y −1) = 0} The two ideal points are non ordinary double points : 1. When y →2, x →∞, we have a double point of type ”y2−x6”, its δ-invariant is 3. 2. When y, x →∞, we have a double point of type ”y2 −x8”, its δ-invariant is 4. Hence g( ˆX) = (d −1)(d −2)/2 −P δi = 10 −3 −4 = 3. The covering map Y →ˆX given by α + α−1 = x ramiﬁes in eight ﬁnite points, thus χ(Y ) = −16",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see also Corollary 4.2 of [Por97]",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "Given a ﬁnite point x in a component of irreducible type ¯X of the augmented character variety, and v a valuation corresponding to x, we ﬁx µ a class in π1(∂M). Then the following holds : tor(M, Ad ◦ρ)(v) = τµ(M, Ad ◦¯ρ) p (Tr ¯ρ(µ))2 −4 dYµ where τµ(M, Ad ◦¯ρ) is the torsion in the sense of Porti-Dubois at the point v, rela- tively to the curve µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Reidemeister torsion form",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-032-222-the-reidemeister-torsion-form.md",
+      "narrative": null,
+      "content": "The Reidemeister torsion form\nAgain we pick ¯X to be a component of irreducible type of the augmented cha-\nracter variety ¯X(M), and we ﬁx ρ : π1(M) →SL2(k( ¯X)) a tautological repre-\nsentation. Since H0(M, Ad ◦ρ) is trivial and H2(M, Ad ◦ρ) is canonically isomor-\nphic to k( ¯X) from Proposition 2.1.5, the torsion of the adjoint complex is an\nelement of det(H∗(M, Ad ◦ρ)) ≃det(H1(M, Ad ◦ρ))∗. But det(H1(M, Ad ◦ρ))∗≃\nH1(M, Ad ◦ρ)∗≃H1(M, Ad ◦ρ) ≃Ωk( ¯\nX)/k, the ﬁrst isomorphism comes again from\nProposition 2.1.5, the second from the Universal Coeﬃcients Theorem and the third\nfrom Proposition 2.1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and computations",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "../sections/sec-033-223-examples-and-computations.md",
+      "narrative": null,
+      "content": "Examples and computations\nWe give a relation between the torsion form as we deﬁned it above and the previous\nwork of J.Porti and then J.Dubois in [Por97, Dub06, DHY09]. As Dubois computed\n50\nexplicit formulae in many cases, this will permit us to perform direct computations\nin several examples.\nProposition 2.2.4 (see also Corollary 4.2 of [Por97]). Given a ﬁnite point x in\na component of irreducible type ¯X of the augmented character variety, and v a\nvaluation corresponding to x, we ﬁx µ a class in π1(∂M). Then the following holds :\ntor(M, Ad ◦ρ)(v) =\n1\nτµ(M, Ad ◦¯ρ)\n2\np\n(Tr ¯ρ(µ))2 −4\ndYµ\nwhe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-033-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-033-02.md",
+      "narrative": null,
+      "content": "Here we use the convention of [Por97], that corresponds to ours. In [Dub06] for instance, the torsion deﬁned is the inverse of the latter.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-033-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-033-03.md",
+      "narrative": null,
+      "content": "Notice that τµ makes sense only when v is not a critical point of Yµ. If we pull-back this formula on the augmented variety by setting Yµ = Zµ + Z−1 µ then the formula becomes rational : tor(M, Ad ◦ρ) = τµ dZµ Zµ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The torsion at a ﬁnite point",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-034-23-the-torsion-at-a-ﬁnite-point.md",
+      "narrative": null,
+      "content": "The torsion at a ﬁnite point\nRecall that X is a one-dimensional component of the character variety X(M) of\na 3-manifold M with boundary a torus, and the same homology as a circle. The\ncurve Y is the smooth projective model of a double covering of X, namely the\naugmented character variety. Throughout this section v ∈Y is a ﬁnite point, and\nρ : Γ →SL2(Ov) is a convergent tautological representation (see Proposition 1.3.11\nand what follows). We prove the following :\n53\nTheorem (Theorem 2.0.1). The diﬀerential form tor(M, Ad ◦ρ) vanishes at v with\norder the length of the torsion part in the Ov-mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 2.0.1",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "thm-sec-034-01.md",
+      "narrative": null,
+      "content": "The diﬀerential form tor(M, Ad ◦ρ) vanishes at v with order the length of the torsion part in the Ov-module H1(M, Ad ◦ρ)v. In particular tor(M, Ad ◦ρ) has no poles nor zeros if v projects on a smooth point of X(M). Deﬁnition 2.3.1. Let M be a torsion Ov-module, then M = L i Ov/(tn i ) and we deﬁne its length to be equal to P i ni.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-02.md",
+      "narrative": null,
+      "content": "The Ov-module ΩOv/k is free of rank one, with dt as a generator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-04.md",
+      "narrative": null,
+      "content": "The torsion of the complex Cone(φ) ⊗k(Y ) is 1 f ∈k(Y )",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-05.md",
+      "narrative": null,
+      "content": "The morphism α is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-06.md",
+      "narrative": null,
+      "content": "The morphism α is injective, hence H0(Cone(φ)) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-07.md",
+      "narrative": null,
+      "content": "Denote by T the torsion part of the module H1(M, Ad ◦ρ)v. The Ov-module H1(Cone(φ)) is isomorphic to the torsion module T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-035-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-035-08.md",
+      "narrative": null,
+      "content": "The map H2(M, Ad ◦ρ)v →H0(∂M, Ad ◦ρ)v is surjective, hence H2(Cone(φ)) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-035-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "prop-sec-035-03.md",
+      "narrative": null,
+      "content": "The maps α and β induce a morphism of complexes of Ov- modules φ : C∗(M, Ad ◦ρ)v →D∗that is rationally a quasi-isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Main Theorem 1",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "../sections/sec-035-231-proof-of-main-theorem-1.md",
+      "narrative": null,
+      "content": "Proof of Main Theorem 1\nDeﬁnition 2.3.2. We will say that a complex of Ov-modules C∗is rationally exact\nif C∗⊗k(Y ) is an exact sequence.\nThe following theorem is the key argument in the proof of Main Theorem 1. We\nexplain the statement in the simple case of a rationally acyclic complex On\nv\nA−→\nOm\nv . Since the complex is generically acyclic, we deduce that n = m and that the\nmorphism A in injective. Now the torsion of the rational complex is (det A)−1, hence\nits valuation is given by −v(det A) = −length(On\nv / im A).\nTheorem 2.3.3. [GKZ94, Appendix A, theorem 30] Let v be a valuation on k(Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "thm-sec-035-01.md",
+      "narrative": null,
+      "content": "[GKZ94, Appendix A, theorem 30] Let v be a valuation on k(Y ), and C∗a rationally exact based complex of free Ov-modules, with basis {ci}i. Then the following holds : v(tor(C∗⊗k(Y ), {ci}i)) = X k (−1)k length(Hk(C∗)) We will denote by t an uniformizing parameter of Ov, that is an element t ∈k(Y ) with v(t) = 1. Hence the one-dimensional vector-space Ωk(Y )/k is generated by dt. In the sequel we denote by f ∈k(Y ) the function such that tor(M, Ad ◦ρ) = fdt (more precisely, tor(M, Ad ◦ρ) = fdt⊗H∗). The strategy is to construct a rationally exact based complex of Ov modules C∗with tor(C∗) = f, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-01.md",
+      "narrative": null,
+      "content": "The Ov-module H0(M, Ad ◦ρ)v is trivial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-02.md",
+      "narrative": null,
+      "content": "The ﬁrst order deformation ξ of ρ is a cocycle, and B(ξ) = 0 ∈ H2(M, Ad ◦¯ρ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-05.md",
+      "narrative": null,
+      "content": "The connexion operator in the sequence (2.5) is the map B : H1(M, Ad ◦¯ρ) →H2(M, Ad ◦¯ρ), ζ 7→[ξ ∪ζ].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-07.md",
+      "narrative": null,
+      "content": "The morphism δ : H1(M, k) →H2(M, λ2) is the map ϕ 7→2u ∪ϕ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-08.md",
+      "narrative": null,
+      "content": "The sequence above induces the following long exact sequence : 0 →H1(M, λ2) →H1(M, k[t±1]ϕ) →H1(M, k[t±1]ϕ) →H2(M, λ2) →0 (2.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-09.md",
+      "narrative": null,
+      "content": "θ(z) = λ−2ϕ∪z, in particular 2λ2θ(u) = δ(ϕ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-036-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "lem-sec-036-10.md",
+      "narrative": null,
+      "content": "If dim(H1(M, λ2)) = r, then the map θ is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-036-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "prop-sec-036-06.md",
+      "narrative": null,
+      "content": "If dim H1(M, λ2) = r, then the morphism δ : H1(M, k) → H2(M, λ2) is injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpretation of the Theorem : singularities and Alexander module",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "../sections/sec-036-232-interpretation-of-the-theorem-singularities.md",
+      "narrative": null,
+      "content": "Interpretation of the Theorem : singularities and Alexan-\nder module\nThe aim of this section is to provide a geometric signiﬁcation to the length of the\nmodule H1(M, Ad ◦ρ)v that appears in the statement of the Main Theorem 1.\nNotice that if v corresponds to an irreducible character, H1(M, Ad ◦ρ)v ≃Ω¯B[Γ]/k ⊗\nOv. If ν(v) is a smooth point, the latter is isomorphic to the localization of the\nmodule of diﬀerentials at v : H1(M, Ad ◦ρ)v ≃ΩOv/k, and this is simply Ov. Hence we\nare interessed by the cases when ν(v) is not a smooth point of Y , or does correspond\nto a reducible character. This case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-036-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "rem-sec-036-04.md",
+      "narrative": null,
+      "content": "In the generic case when λ2 is a simple root, then the technical assumption is automatically satisﬁed and the theorem always holds : thus in this case tor(M, Ad ◦ρ) does not vanish at v.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-036-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 65,
+      "target": "thm-sec-036-03.md",
+      "narrative": null,
+      "content": "Let v ∈Y a ﬁnite point, assume that the tautological repre- sentation ρ : Γ →SL2(Ov) is residually reducible with residual representation ¯ρ(γ) = \u0010 λϕ(γ) λ−ϕ(γ)u(γ) λ−ϕ(γ) \u0011 and denote by r ≥1 the order of λ2 as a root of the Alexan- der poynomial ∆M. Assume moreover that the morphism B has maximal rank, i.e. ker B = k⟨ξ⟩. Then the torsion form’s vanishing order at v is bounded by 2r −2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The torsion at an ideal point",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-037-24-the-torsion-at-an-ideal-point.md",
+      "narrative": null,
+      "content": "The torsion at an ideal point\nIn this section we consider v ∈Y an ideal point. We denote by t an uniforming\nparameter of the valuation ring Ov.\nWe mentioned in Section 1.3 the construction of Marc Culler and Peter Shalen : such\nan ideal point induces an action of π1(M) on a simplicial tree Tv. In [Sha02], Shalen\nexplains how one can produce a so-called dual surface Σ to the action of π1(M) on\nTv. Moreover, this surface can be chosen to be incompressible in the manifold M,\nthat is such that the inclusion map π1(Σ) →π1(M) is injective.\nDeﬁnition 2.4.1. We say that Σ ⊂M is free is its complement",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-037-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "rem-sec-037-02.md",
+      "narrative": null,
+      "content": "1. Notice that since H2(M, ∂M) = Z generated by the incom- pressible Seifert surface, any incompressible non-Seifert surface with boun- dary is homologically trivial, hence is separating. 2. Moreover, it is a consequence from [Prz83, Proposition 4.3] that as soon as M is irreducible and small, any incompressible surface Σ is free. 3. Finally, the hypothesis that the irreducible tautological representation ρ : π1(M) →SL2(k(Y )) remains irreducible (or at least does not become abelian) is generic, in the sense that it is Zariski-open in the character variety of Σ. Moreover, if X contains the cha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 2.0.2",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "thm-sec-037-01.md",
+      "narrative": null,
+      "content": "Let M be a 3-manifold with boundary a torus and ra- tional homology of a circle ; and let v ∈Y an ideal point in the smooth projective model of a one dimensional component of irreducible type of the augmented charac- ter variety. Assume that an incompressible surface Σ associated to v is connected or is the union of n parallel homeomorphic copies, is free, is not the Seifert surface, and assume that the restricted tautological representation ρΣ : π1(Σ) →SL2(Ov) is not abelian. Then the following inequality holds : v(tor(M, Ad ◦ρ)) ≤−nχ(Σ) −m where m = n if ρΣ is not residually abelian, and m i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An example : a direct computation of the torsion of the trefoil knot using its incompressible non-Seifert surface",
+      "pageStart": 66,
+      "pageEnd": 73,
+      "target": "../sections/sec-038-241-an-example-a-direct-computation-of-the-torsi.md",
+      "narrative": null,
+      "content": "An example : a direct computation of the torsion of the\ntrefoil knot using its incompressible non-Seifert surface\nThe trefoil complement M carries an unique incompressible, non Seifert surface,\nwhich is an annulus. It is depicted on Figure 2.1.\nThe complement of this incompressible annulus A is the disjoint union of two solid\ntorii, M1 is the \"interior\" of T, and M2 its \"exterior\".\nRecall the following presentation of the fundamental group π1(M) = ⟨a, b| a2 = b3⟩,\nwhere a is the generator of the inﬁnite cyclic fundamental group of M1, b is the\ngenerator of the inﬁnite cyclic fundamental group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-19",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-19.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-28",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-28.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-29",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-29.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-38",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-38.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-47",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-47.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-56",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-56.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-65",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-65.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p071-74",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../images/img-p071-74.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-14",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-14.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-22",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-22.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-26",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-26.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-30",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-30.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-34",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-34.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-38",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-38.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-42",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-42.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-46",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-46.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-50",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-50.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-54",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-54.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-58",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-58.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-62",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-62.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/figure-img-p072-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-04.md",
+      "narrative": null,
+      "content": "The sequence of k(Y )-vector spaces 0 →k(Y ) d1 −→H1(M1, Ad ◦ρ1) ⊕H1(M2, Ad ◦ρ′ 2) d2 −→H1(Σ, Ad ◦ρΣ) δ−→k(Y ) →0 is exact, where the morphisms are given by d1 : 1 7→ \u0000( d dtρ1)ρ−1 1 , ( d dtρ′ 2)ρ′ −1\u0001 , d2 : (ζ1, ζ2) 7→ζ1 −Unζ2U −1 n = ζ1 − \u0010 x2 tny2 t−nz2 −x2 \u0011 and δ : λ 7→Tr(λ([∂Σ])H).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-05.md",
+      "narrative": null,
+      "content": "tor(Ht) = det ∆2 c, with c ∈O∗ v",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-06.md",
+      "narrative": null,
+      "content": "Let A : On v →On v a morphism such that det A̸ = 0. Working in the completion ˆOv if necessary, we deﬁne A≥0 = A, A≥i+1 = d dtA≥i restricted to H0(A≥i(0)) ⊗k[[t]] followed by the projection k[[t]]n−Pi k=0 rk →H1(A≥i(0)) ⊗k[[t]], and ri = dim ker A≥i(0). Then det(A) = t P ric, with c ∈k∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-07.md",
+      "narrative": null,
+      "content": "The residual representations have the form ¯ρ1,Σ =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-08.md",
+      "narrative": null,
+      "content": "The space ker j is one dimensional, more precisely, it is generated by the image of H0(Σ, k) in H1(Σ, Ad ◦¯ρ1,Σ), that is by ∂1,ΣH = −2u1F.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-039-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "lem-sec-039-09.md",
+      "narrative": null,
+      "content": "The map j ◦p◦i : H1(M2, Ad ◦¯ρ2) →H1(Σ, Ad ◦¯ρ1,Σ) has a kernel of dimension at least −χ(Σ)/2 + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-039-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "prop-sec-039-02.md",
+      "narrative": null,
+      "content": "The terms tor(M1), tor(M2) and tor(Σ) lie in O∗ v",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of theorem 2.0.2, the case when ρΣ is not residually abelian",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "../sections/sec-039-242-proof-of-theorem-202-the-case-when-ρς-is-not.md",
+      "narrative": null,
+      "content": "Proof of theorem 2.0.2, the case when ρΣ is not resi-\ndually abelian\nIn this section we prove Theorem 2.0.2 in the case where ρΣ is not residually abelian.\nThis case is the generic case, nevertheless computational evidences suggest that there\nare many examples where it is not the case, hence we will treat the residually abelian\ncase in the next section.\nRecall from Section 1.3.6 that there the splitting M = M1 ∪Σ M2 provides represen-\ntations ρi : π1(Mi) →SL2(k(Y )) with ρ1 convergent, and ρ2 = Unρ′\n2U −1\nn , where the\nmatrix Un is ( tn 0\n0 1 ).\nit induces the following Mayer-Vietoris exact se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-039-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "rem-sec-039-03.md",
+      "narrative": null,
+      "content": "1. As we wish to compute the valuation of the torsion, it would be better to study a complex of Ov-modules, having in mind Theorem 2.3.3. That will be the ﬁrst step of the proof. 2. Notice that we have isomorphisms : k(Y ) ∼−→H1(M, Ad ◦ρ), 1 7→( d dtρ)ρ−1 and H2(M, Ad ◦ρ) ∼−→k(Y ), λ 7→Tr(λ(∂M)H). 3. Since ρΣ is residually non abelian and so are ρ1, ρ′ 2, the only cohomology groups that are non trivial as Ov-modules for them are H1(M1, Ad ◦ρ1)v, H1(M2, Ad ◦ρ′ 2)v and H1(Σ, Ad ◦ρΣ)v. Moreover it comes from Universal Co- eﬃcients Theorem that they are free modules because the following k-vector",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "thm-sec-039-01.md",
+      "narrative": null,
+      "content": "tor(M, Ad ◦ρ) = tor(M1) tor(M2) tor(Σ) tor(H) ∈Ωk(Y )/k This equality (and the left-hand side term) does not depend on the choice of bases we made.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "lem-sec-040-01.md",
+      "narrative": null,
+      "content": "The Ov-module H1(Σ, Ad ◦ρΣ)v is isomorphic to O−3χ(Σ) v ⊕Ov/(tm) for some positive integer m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-040-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Lemma 2.4.7",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "lem-sec-040-04.md",
+      "narrative": null,
+      "content": "Let ∆2 be the restriction of td2 as above Lemma",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-040-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "lem-sec-040-05.md",
+      "narrative": null,
+      "content": "The dimension of the kernel of the induced map H1(M2, Ad ◦¯ρ2) →H1(Σ, Ad ◦¯ρΣ) ζ2 =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-040-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "lem-sec-040-06.md",
+      "narrative": null,
+      "content": "The valuation of the torsion v(Ht) is smaller than n(2χ(Σ) + 1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-040-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "lem-sec-040-07.md",
+      "narrative": null,
+      "content": "The valuation of the sequence H is v(tor(H)) ≤−nχ(Σ)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-040-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "prop-sec-040-02.md",
+      "narrative": null,
+      "content": "The terms tor(M1) and tor(M2) lie in O∗ v, but tor(Σ) has valuation m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-040-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "prop-sec-040-03.md",
+      "narrative": null,
+      "content": "Recall that Σ has the same homotopy type that a wedge of −χ(Σ)+1 circles, hence the complex C∗(Σ, Ad ◦ρΣ) looks like sl2(k(Y )) →sl2(k(Y ))−χ(Σ)+1 and to compute its torsion it is enough to compute the determinant of the co- restricted isomorphism k(Y )3 →k(Y )3. But this map induces a morphism of Ov- modules O3 v →O3 v whose co-kernel is isomorphic to Ov/(tm), hence the result. Again, we need to focus on the term tor(H), where the exact sequence H is : 0 →H1(M, Ad ◦ρ) →H1(M1, Ad ◦ρ1) ⊕H1(M2, Ad ◦ρ2) →H1(Σ, Ad ◦ρΣ) →H2(M, Ad ◦ρ) →0 We consider rather the sequence Ht : 0 →k(Y ) d1 −→H1(M1, Ad ◦",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case when ρΣ is residually abelian",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "../sections/sec-040-243-the-case-when-ρς-is-residually-abelian.md",
+      "narrative": null,
+      "content": "The case when ρΣ is residually abelian\nIn this section we treat the case when the residual reducible representation ¯ρΣ is\nabelian. This case is motivated by the example of the ﬁgure-eight knot complement,\nsee Remark 3.3.1. In fact, if Σ is two holed torus, as soon as the boundary curve\nwill be mapped to ± Id by ¯ρΣ, then the representation ¯ρΣ will be residually abelian.\nComputational evidences suggest that it is always the case. Remark that in this\ncase, the eigenvalues of ¯ρΣ(∂Σ) are necessarily ±1 because they are roots of unity\nwith order that divides the number of boundary components of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Back to Examples",
+      "pageStart": 82,
+      "pageEnd": 84,
+      "target": "../sections/sec-041-244-back-to-examples.md",
+      "narrative": null,
+      "content": "Back to Examples\n1. The trefoil knot.\nThe incompressible surface Σ is an annulus, hence ρΣ : Z →SL2(k(t)) is\nabelian, and the theorem cannot apply. Nevertheless the torsion has a pole of\norder one at ideal points corresponding to Σ, hence the equality of theorem\nremains true.\n2. The ﬁgure-eight knot.\nThere are two incompressible surfaces Σ1 and Σ2 that are two-holed tori,\nand the torsion vanishes at order 1 at each ideal point. Again the equality\n1 = −χ(Σi) −1 holds for m = n = 1\n3. The knot 5.2.\nThere are two incompressible surfaces Σ1 and Σ2 (see Figure 1 in the intro-\nduction), and we have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/cor-sec-042-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 84,
+      "pageEnd": 86,
+      "target": "cor-sec-042-03.md",
+      "narrative": null,
+      "content": "Let M be a hyperbolic manifold and X be a geometric component of its SL2(C) character variety. Assume that an ideal point of X detects an incom- pressible surface which is connected or union of parallel free copies, and such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The standard torsion",
+      "pageStart": 84,
+      "pageEnd": 86,
+      "target": "../sections/sec-042-3-the-standard-torsion.md",
+      "narrative": null,
+      "content": "Here M is a compact connected orientable 3-manifold, whose boundary is a torus.\nIn this chapter we pick X a one-dimensional component of irreducible type of the\ncharacter variety X(M), and denote by k(X) its function ﬁeld. Here we consider the\naction of the fundamental group π1(M) on the 2-dimensional vector space k(X)2\nthrough the tautological representation ρ : π1(M) →SL2(k(X)), and the correspon-\nding cohomological complex C∗(M, ρ). When this complex is acyclic (for instance\nwhen X is a component of the character variety of a hyperbolic manifold that carries\nthe holonomy character, say a ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-042-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 84,
+      "pageEnd": 86,
+      "target": "thm-sec-042-01.md",
+      "narrative": null,
+      "content": "Let X be a one dimensional component of the character variety X(M) and ρ : π1(M) →SL2(k(X)) the tautological representation. Assume that the complex C∗(M, ρ) is acyclic. Then tor(M, ρ) is a regular function on X. Moreover its order at a point χ ∈X is given by the length of the torsion module H2(M, ρ)v, where v is the valuation associated to χ on the function ﬁeld k(X). In particular it vanishes if and only if H1(M, ¯ρ) is non trivial, where ¯ρ is the residual representation ¯ρ : π1(M) ρ−→SL2(Ov) mod t −−−→SL2(k) whose character is χ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-042-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 84,
+      "pageEnd": 86,
+      "target": "thm-sec-042-02.md",
+      "narrative": null,
+      "content": "Let x ∈ˆX be an ideal point in the smooth projective model of X, and assume that an associated incompressible surface Σ is a union of parallel homeomorphic copies Σi such that M \\ Si is a (union of) handlebodie(s). If the curve γ = ∂Σ ∈π1(M) has trivial eigenvalues, then the torsion function tor(M, ρ) has a pole at x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-043-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 87,
+      "target": "prop-sec-043-01.md",
+      "narrative": null,
+      "content": "If the complex C∗(M, ρ) is acyclic, then the Reidemeister func- tion tor(M, ρ) ∈k(X)∗deﬁnes a rational function on the curve X. In particular, it is the case as soon as X is a geometric component.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The torsion function",
+      "pageStart": 86,
+      "pageEnd": 87,
+      "target": "../sections/sec-043-31-the-torsion-function.md",
+      "narrative": null,
+      "content": "on the component X.\nThe relation with twisted Alexander polynomial suggests an other interpretation of\nthe vanishing locus of the torsion : given an irreducible representation ρ : π1(M) →\nSL2(k), one can construct a semi-simple representation ˜ρ : π1(M) →SL3(k) by\ndeﬁning ˜ρ =\n\u0000 ρ 0\n0 1\n\u0001\n. A classical dimensional argument (see [HP15, Section 5] for\ninstance), shows that if ˜ρ is deformable into irreducible representations in the cha-\nracter variety X(M, SL3(k)) then it necessarily exists a reducible, non semi-simple\nrepresentation ˜ρ′ with the same character, namely ˜ρ′ = ( ρ z\n0 1 ) where z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-043-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 87,
+      "target": "rem-sec-043-02.md",
+      "narrative": null,
+      "content": "As soon as there exists a character χ ∈X such that H1(M, ¯ρ) is trivial, the proposition applies and the torsion deﬁnes a well-deﬁned function on the curve X. If follows from the semi-continuity of the dimension of H1(M, ¯ρ) on X that in this case, H1(M, ¯ρ) is trivial for all but a ﬁnite numbers χ ∈X. It has been the way to deﬁne almost everywhere the torsion function on X, the novelty here is that it is deﬁned a priori even at characters χ with non trivial ﬁrst cohomology groups. Indeed, we will show in the next section that the torsion vanishes exactly in those points.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of a ﬁnite character",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../sections/sec-044-32-the-case-of-a-ﬁnite-character.md",
+      "narrative": null,
+      "content": "The case of a ﬁnite character",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3.0.1",
+      "pageStart": 87,
+      "pageEnd": 88,
+      "target": "../sections/sec-045-321-proof-of-theorem-301.md",
+      "narrative": null,
+      "content": "Proof of Theorem 3.0.1\nIn this section we give a proof of the following theorem :\nTheorem (Theorem 3.0.1). Let X be a one dimensional component of the character\nvariety X(M) and ρ : π1(M) →SL2(k(X)) the tautological representation. Assume\n86\nthat the complex C∗(M, ρ) is acyclic. Then tor(M, ρ) is a regular function on X.\nMoreover its vanishing order at a point χ ∈X is given by the length of the torsion\nmodule H2(M, ρ)v, where v is the valuation associated to x on the function ﬁeld\nk(X). In particular it vanishes if and only if H1(M, ¯ρ) is non trivial, where ¯ρ is the\nresidual representation ¯",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-045-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.0.1",
+      "pageStart": 87,
+      "pageEnd": 88,
+      "target": "thm-sec-045-01.md",
+      "narrative": null,
+      "content": "Let X be a one dimensional component of the character variety X(M) and ρ : π1(M) →SL2(k(X)) the tautological representation. Assume that the complex C∗(M, ρ) is acyclic. Then tor(M, ρ) is a regular function on X. Moreover its vanishing order at a point χ ∈X is given by the length of the torsion module H2(M, ρ)v, where v is the valuation associated to x on the function ﬁeld k(X). In particular it vanishes if and only if H1(M, ¯ρ) is non trivial, where ¯ρ is the residual representation ¯ρ : π1(M) ρ−→SL2(Ov) mod t −−−→SL2(k). The main tool of the proof is the following theorem already used in Sec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-045-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 88,
+      "target": "thm-sec-045-02.md",
+      "narrative": null,
+      "content": "[GKZ94, Theorem 30] Let χ ∈X a character, and v a valuation on k(X) associated to χ. If C∗is a rationally exact based complex of Ov-modules with basis {ci}, then v(tor(C∗⊗k(X), {ci})) = X k (−1)k length(Hk(C∗))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some computations and examples",
+      "pageStart": 88,
+      "pageEnd": 91,
+      "target": "../sections/sec-046-322-some-computations-and-examples.md",
+      "narrative": null,
+      "content": "Some computations and examples\nWe compute the torsion function on a series of examples of twist knots, and deter-\nmine its zeros on the character variety. A presentation of the fundamental group of\n87\na\nb\nλ\nµ\nFigure 3.1 – A diagram of the Whitehead link. a, b and λ are depicted generators\nof the fundamental group, and µ is a counter-clockwise oriented longitude of the\ncircle component.\nthe Whitehead link can be computed to be\nπ1(L52\n1) = ⟨a, b, λ| b = λaλ−1, [λ−1, a−1][λ−1, a][λ, a][λ, a−1] = 1⟩\nThe J(2, 2n)-twists knots, n ∈Z, are obtained as\n1\nn Dehn ﬁlling along the circle\ncomponent. The ad",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-046-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 88,
+      "pageEnd": 91,
+      "target": "rem-sec-046-01.md",
+      "narrative": null,
+      "content": "We observe that each time we have found a zero for the torsion, it had multiplicity 2 and {tor(M, ρ) = 0} ⊂X ∩{x = y}. We have checked that this inclusion is strict. We have no precise interpretation of those phenomenon, we think that it comes from the computation of the torsion on the character variety of the Whitehead link .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-048-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "lem-sec-048-02.md",
+      "narrative": null,
+      "content": "One has the following isomorphism of k(X)-vector spaces : d : H1(M1, ρ1) ⊕H1(M2, ρ2) ∼−→H1(Σ, ρΣ)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-048-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "lem-sec-048-03.md",
+      "narrative": null,
+      "content": "The Ov-modules H1(M1, ρ1)v, H1(M2, ρ′ 2)v, H1(Σ, ρΣ)v are free of rank −χ(Σ1), −χ(Σ1) and −2χ(Σ1) respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-048-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "lem-sec-048-07.md",
+      "narrative": null,
+      "content": "The torsion has a pole at x iﬀ¯θ is not an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-048-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "lem-sec-048-08.md",
+      "narrative": null,
+      "content": "The composition map F : H1(M2, ¯ρ2) i∂M2 −−−→H1(∂M2, ¯ρ2,∂M2) iΣ −→ H1(Σ, ¯ρ2,Σ) p2 −→H1(Σ, λ−1) is not an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-048-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "prop-sec-048-04.md",
+      "narrative": null,
+      "content": "The torsion of the complex C∗(M, ρ) can be expressed as tor(M, ρ) = tor(M1, h1) tor(M2, h2) tor(Σ, hΣ) tor(H, h1, h2, hΣ) ∈k(X)∗ where H is the Mayer-Vietoris sequence of Lemma 3.3.2. The following is identical to Proposition 2.4.4, hence we refer to it for a proof.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-048-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "prop-sec-048-05.md",
+      "narrative": null,
+      "content": "The terms tor(M1), tor(M2) and tor(Σ) lie in O∗ v",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The torsion at ideal points",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../sections/sec-047-33-the-torsion-at-ideal-points.md",
+      "narrative": null,
+      "content": "The torsion at ideal points",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The split case",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "../sections/sec-048-331-the-split-case.md",
+      "narrative": null,
+      "content": "The split case\nIn this section we give a proof of the following theorem :\n90\nTheorem (Theorem 3.0.2, the split case). Let x ∈ˆX be an ideal point in the smooth\nprojective model of X, and assume that an associated incompressible surface Σ is\na union of n parallel copies Σ1 ∪. . . ∪Σn and that each copy splits M into two\nhandlebodies. If the curve γ = ∂Σ ∈π1(M) has trivial eigenvalues at x, then the\ntorsion function tor(M, ρ) has a pole at x. In particular in this case the torsion\nfunction is non-constant.\nRecall from Section 1.3 that from an ideal point x ∈ˆX one can produce an incom-\npressible",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-048-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "rem-sec-048-01.md",
+      "narrative": null,
+      "content": "This assumptions are motivated by the fact that it is the way it appears in simple examples we can produce : for instance consider the ﬁgure-eight knot’s classical diagram in Figure 3.3, and the non-orientable surface ˇΣ obtained by a \"checkerboard\" coloring. The boundary of its neighborhood is an orientable surface Σ, which turns out to be incompressible. It is detected by the point {x = ∞, y = 2} of the component of irreducible type of the character variety of the ﬁgure-eight knot. It easy to see on the picture that its complement is the union of two genus 2 handlebodies, and a computation s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-048-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 96,
+      "target": "rem-sec-048-06.md",
+      "narrative": null,
+      "content": "As a consequence of this proposition, it is enough to compute the term tor(H, h1 1, h1 2, h1 Σ), which is just the inverse of the determinant of the following map (see Section 1.5.3) : θ : H1(M1, ρ1) ⊕H1(M2, ρ′ 2) ∼−→H1(Σ, ρΣ) (Z1, Z2) 7→(Z1 −UnZ2)|Σ that is θ is the composition of d with φ. We compute now det(θ). For this purpose we observe that the relation ∀γ ∈π1(Σ), ρ1(γ) = Unρ′ 2(γ)U −1 n implies that the corresponding residual representations have the following form, when restricted to π1(Σ) : ¯ρ1(γ) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-049-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 96,
+      "pageEnd": 100,
+      "target": "lem-sec-049-02.md",
+      "narrative": null,
+      "content": "The kernel of the map ψ : H1(H, ¯ρH) →H1(S, ¯ρS) z1 7→",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prop-sec-049-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 96,
+      "pageEnd": 100,
+      "target": "prop-sec-049-01.md",
+      "narrative": null,
+      "content": "The vanishing order of the torsion at the ideal point x ∈¯X is given by computing −v(det θ), where the isomorphism θ is given by θ : H1(H, ρH) ⊕H1(S, ρ1) →H1(S, ρ1) ⊕H1(S, ρ1) (Z1, Z2) 7→((Z1 −Z2)|S, Un ( 0 1 −1 0 ) (Z1 −Z2)|S) Since we want to show that v(det θ) > 0, we focus on the residual map ; it is of the form ¯θ : H1(H, ¯ρH) ⊕H1(S, ¯ρS) →H1(S, ¯ρS) ⊕H1(S, ¯ρS) (z1, z2) 7→(z1|S −z2|S, −",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-split case",
+      "pageStart": 96,
+      "pageEnd": 100,
+      "target": "../sections/sec-049-332-the-non-split-case.md",
+      "narrative": null,
+      "content": "The non-split case\nIn this section we prove the following theorem :\n95\nTheorem (Theorem 3.0.2, the non-split case). Let x ∈ˆX be an ideal point in the\nsmooth projective model of a component X of the character variety, that produces\nan incompressible surface S in M which is a union of parallel copies S1 ∪. . . ∪Sn of\na Seifert surface. Then the torsion function tor(M, ρ) has a pole at x, in particular\nit is non-constant.\nIn this section we assume that the incompressible surface associated to x is a union\nof parallel Seifert surfaces. Recall from Section 1.3.7 that we ﬁx a base-point p ∈\nS1, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-050-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 110,
+      "target": "lem-sec-050-03.md",
+      "narrative": null,
+      "content": "0.5. Let h be a homogeneous form, with h(α) = h(β) = h(αβ) = 0. Then for any γ ∈Γ, φ(∆α,β)h(γ) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/lem-sec-050-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 110,
+      "target": "lem-sec-050-04.md",
+      "narrative": null,
+      "content": "0.6. Assume that φ(∆α,β) ∈R×, then for any γ, δ ∈Γ, φ(γδ) = TγM −1T t δ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Proof of Saito’s theorem",
+      "pageStart": 100,
+      "pageEnd": 110,
+      "target": "../sections/sec-050-a-proof-of-saitos-theorem.md",
+      "narrative": null,
+      "content": "Proof of Saito’s theorem\nLet us recall the statement of the theorem. The proof we present here is adapted\nfrom an unpublished version of [Sai94].\nTheorem A.0.1. Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume\nthat χ is irreducible, that is χ(∆α,β) ∈R× for some α, β ∈Γ, and let A, B ∈SL2(R)\nsuch that Tr A = χ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a unique\nrepresentation ρ : Γ →SL2(R) whose character is χ and such that ρ(α) = A,\nρ(β) = B.\nIn the sequel we will denote by φ : Γ →R the map φ(γ) = χ(Yγ).We ﬁrst introduce\nthe following deﬁnition :\nDeﬁnition A.0.2. An R-val",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/2018sorus020/blocks/rem-sec-050-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 110,
+      "target": "rem-sec-050-02.md",
+      "narrative": null,
+      "content": "0.3. By the trace formula, the map φ is a (non-homogeneous) form. If h is a homogeneous form, then clearly h(γ) + h(γ−1) = 0, hence h(γδ) + h(δγ) = φ(γ)h(δ) + φ(δ)h(γ) (A.1)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/2018sorus020/blocks/thm-sec-050-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 110,
+      "target": "thm-sec-050-01.md",
+      "narrative": null,
+      "content": "0.1. Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume that χ is irreducible, that is χ(∆α,β) ∈R× for some α, β ∈Γ, and let A, B ∈SL2(R) such that Tr A = χ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a unique representation ρ : Γ →SL2(R) whose character is χ and such that ρ(α) = A, ρ(β) = B. In the sequel we will denote by φ : Γ →R the map φ(γ) = χ(Yγ).We ﬁrst introduce the following deﬁnition : Deﬁnition A.0.2. An R-valued form is a map h : Γ →R such that ∀γ, δ ∈ Γ, h(γδ) + h(γδ−1) = φ(γ)h(δ). A form will be called homogeneous if h(e) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

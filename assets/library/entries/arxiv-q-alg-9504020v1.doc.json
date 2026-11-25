@@ -1,0 +1,511 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9504020v1",
+  "title": "A link invariant from quantum dilogarithm",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The $R$-Matrix",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-r-matrix"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of Links in Three-Sphere",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-invariants-of-links-in-three-sphere"
+    },
+    {
+      "level": 1,
+      "title": "Three-Dimensional Description",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-three-dimensional-description"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-summary"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enslapp",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9504020v1 24 Apr 1995 A Link Invariant from Quantum Dilogarithm R.M. Kashaev∗ Laboratoire de Physique Th´eorique enslapp† ENSLyon, 46 All´ee d’Italie, 69007 Lyon, FRANCE E-mail: rkashaev@enslapp.ens-lyon.fr April 1995 Abstract The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9504020v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ybe",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        },
+        {
+          "term": "solvable",
+          "heading": false
+        }
+      ],
+      "extract": "Solutions to the Yang-Baxter equation (YBE) [@Y; @B1] play important role both in the theory of solvable two-dimensional models of statistical mechanics and field theory (for a review see [@B2; @F]), and in the theory of braid groups and links [@Jo1]. Algebraically YBE is deeply related with quantum groups [@D1]. Recently, Rogers' dilogarithm identity [@R] attracted much attention in connection with solvable models",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-r-matrix",
+      "number": "2",
+      "title": "The $R$-Matrix",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ambient isotopy",
+          "heading": false
+        },
+        {
+          "term": "place indices",
+          "heading": false
+        },
+        {
+          "term": "label symmetry",
+          "heading": false
+        },
+        {
+          "term": "periodicity",
+          "heading": false
+        },
+        {
+          "term": "symmetry group",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "matrix notations",
+          "heading": false
+        },
+        {
+          "term": "ybe",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec1 label=\"sec1\"} First introduce the necessary notations. Let $\\omega$ be some primitive $N$-th root of unity for some $N\\ge 2$. For any non-negative integer $n<N$ define the symbol: $$(\\omega)_n=\\cases{1, &if $n=0$;\\cr \\prod_{j=1}^n(1-\\omega^j), &$0<n<N$,\\cr}$$ Under complex conjugation we have the following properties: $$(\\omega)_n^*=(\\omega^*)_n,\\quad \\omega^*\\omega=1.$$ It will be convenient to use the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-invariants-of-links-in-three-sphere",
+      "number": "3",
+      "title": "Invariants of Links in Three-Sphere",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "face index",
+          "heading": false
+        },
+        {
+          "term": "tangle",
+          "heading": false
+        },
+        {
+          "term": "three-sphere",
+          "heading": true
+        },
+        {
+          "term": "links",
+          "heading": true
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec2 label=\"sec2\"} Let link $L$ in $S^3$ is given by a two-strand tangle. Consider some non-singular (i.e. with only simple intersection points) planar projection of this tangle. Denote by $V,E,F$ the sets of vertices, edges, and faces, respectively, in the planar graph. We will write $v\\in f$, for some vertex $v$ and face $f$ if $v$ lies in the boundary of $f$. There are two distinguished elements $e_1$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-three-dimensional-description",
+      "number": "4",
+      "title": "Three-Dimensional Description",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangulated tangle",
+          "heading": false
+        },
+        {
+          "term": "partial tot",
+          "heading": false
+        },
+        {
+          "term": "partfun",
+          "heading": false
+        },
+        {
+          "term": "partial colon",
+          "heading": false
+        },
+        {
+          "term": "colon lambda",
+          "heading": false
+        },
+        {
+          "term": "partial alpha",
+          "heading": false
+        },
+        {
+          "term": "quad partial",
+          "heading": false
+        },
+        {
+          "term": "triangulated three-ball",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec3 label=\"sec3\"} In this section we establish the connection of the link invariant constructed in Sect. [\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"} with the invariant of triangulated links of [@K], related in turn to cyclic quantum dilogarithm [@FK]. First, remind the necessary formulas from [@K] in slightly different notations. We will assume that the integer $N$ is odd, and the square root of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-summary",
+      "number": "5",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partfun",
+          "heading": false
+        },
+        {
+          "term": "octahed",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": false
+        },
+        {
+          "term": "triangulated",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        }
+      ],
+      "extract": "According to [@K], cyclic quantum dilogarithm leads to invariants of triangulated links in triangulated three-manifolds. It was conjectured that these invariants are independent of triangulations used. The $R$-matrix derivation, presented in this paper (Sect.[\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"}), proves the conjecture for the case of three-sphere. The essential part of the proof is the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "triangulated tangle",
+      "heading": false
+    },
+    {
+      "term": "triangulated links",
+      "heading": false
+    },
+    {
+      "term": "triangulated three-ball",
+      "heading": false
+    },
+    {
+      "term": "quad colon",
+      "heading": false
+    },
+    {
+      "term": "quantum dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "r-matrix",
+      "heading": false
+    },
+    {
+      "term": "partfun",
+      "heading": false
+    },
+    {
+      "term": "sec label",
+      "heading": false
+    },
+    {
+      "term": "two-strand tangle",
+      "heading": false
+    },
+    {
+      "term": "singular triangulated",
+      "heading": false
+    },
+    {
+      "term": "ybe",
+      "heading": false
+    },
+    {
+      "term": "langle rangle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9504020v1"
+  }
+}

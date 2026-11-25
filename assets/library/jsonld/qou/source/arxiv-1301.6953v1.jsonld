@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.6953v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "temp.ps",
+  "contains": [
+    "library/arxiv-1301.6953v1/sections/sec-front-matter",
+    "library/arxiv-1301.6953v1/sections/sec-000",
+    "library/arxiv-1301.6953v1/sections/sec-001",
+    "library/arxiv-1301.6953v1/sections/sec-002",
+    "library/arxiv-1301.6953v1/sections/sec-003",
+    "library/arxiv-1301.6953v1/sections/sec-004",
+    "library/arxiv-1301.6953v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral Perturbation Theory and Mesons — 7 sections: Front matter; Chiral Perturbation Theory; Introduction\n\n**Chiral Perturbation Theory and Mesons**\n\n*Chiral Perturbation Theory and Mesons*\n\n13 pp, 7 sections.\n\n**Outline.** Front matter; 2 Chiral Perturbation Theory; 1 Introduction; 3 Determining low-energy-constants in the cont; 4 Hard pion ChPT; 5 Beyond QCD; 6 Leading logarithms",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1301.6953&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1301.6953v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1301.6953v1.pdf",
+    "source_sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
+    "pages": 13,
+    "arxiv": {
+      "id": "1301.6953",
+      "version": "1",
+      "primary_class": "hep-ph",
+      "stamp_date": "29 Jan 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

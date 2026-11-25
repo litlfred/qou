@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/aif-2000-50-4-1021-0",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie",
+      "dcterms:creator": [
+        "SAULOY, JACQUES"
+      ],
+      "dcterms:issued": "D:20210205",
+      "dcterms:source": "library/aif-2000-50-4-1021-0/manifest.jsonld",
+      "dcterms:hasVersion": "library/aif-2000-50-4-1021-0"
+    }
+  ]
+}

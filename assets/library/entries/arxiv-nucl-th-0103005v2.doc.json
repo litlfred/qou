@@ -1,0 +1,1392 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-nucl-th-0103005v2",
+  "title": "arxiv-nucl-th-0103005v2",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "HAMILTONIAN AND CURRENTS",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-hamiltonian-and-currents"
+    },
+    {
+      "level": 1,
+      "title": "VARIATIONAL MONTE CARLO",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-variational-monte-carlo"
+    },
+    {
+      "level": 1,
+      "title": "GREEN'S FUNCTION MONTE CARLO",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-greens-function-monte-carlo"
+    },
+    {
+      "level": 1,
+      "title": "ENERGY RESULTS",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-energy-results"
+    },
+    {
+      "level": 1,
+      "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-density-and-momentum-distributions"
+    },
+    {
+      "level": 1,
+      "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+      "number": "7",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-low-energy-nucleon-nucleus-scattering"
+    },
+    {
+      "level": 1,
+      "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-astrophysical-electroweak-reactions"
+    },
+    {
+      "level": 1,
+      "title": "NEUTRON DROPS",
+      "number": "9",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-9-neutron-drops"
+    },
+    {
+      "level": 1,
+      "title": "CONCLUSIONS AND OUTLOOK",
+      "number": "10",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-10-conclusions-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 500,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "annual review",
+          "heading": false
+        },
+        {
+          "term": "carlo calculations",
+          "heading": false
+        },
+        {
+          "term": "quantum monte",
+          "heading": false
+        },
+        {
+          "term": "particle science",
+          "heading": false
+        },
+        {
+          "term": "momentum distributions",
+          "heading": false
+        },
+        {
+          "term": "gov",
+          "heading": false
+        },
+        {
+          "term": "reactions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:nucl-th/0103005v2 6 Mar 2001 1 Quantum Monte Carlo Calculations of Light Nuclei Steven C. Pieper and R. B. Wiringa Physics Division, Argonne National Laboratory, Argonne, IL 60439; email: spieper@anl.gov, wiringa@anl.gov KEYWORDS: Nuclear many-body theory, structure, reactions, potentials ABSTRACT: Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "gfmc methods",
+          "heading": false
+        },
+        {
+          "term": "leq nuclei",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "light p-shell",
+          "heading": false
+        },
+        {
+          "term": "scattering states",
+          "heading": false
+        },
+        {
+          "term": "capture reactions",
+          "heading": false
+        }
+      ],
+      "extract": "A major goal of nuclear physics is to understand the stability, structure, and reactions of nuclei as a consequence of the interactions between individual nucleons. This is an extremely challenging many-body problem, exacerbated by the fact that we do not know in detail what the interactions are. Quantum chromodynamics, the fundamental theory for strong interactions, is so difficult to solve in the nonperturbative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-hamiltonian-and-currents",
+      "number": "2",
+      "title": "HAMILTONIAN AND CURRENTS",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "s-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "delta ijk",
+          "heading": false
+        },
+        {
+          "term": "ijk sum",
+          "heading": false
+        },
+        {
+          "term": "two-pion p-wave",
+          "heading": false
+        },
+        {
+          "term": "light nuclei",
+          "heading": false
+        },
+        {
+          "term": "illinois models",
+          "heading": false
+        },
+        {
+          "term": "nuclei studied",
+          "heading": false
+        }
+      ],
+      "extract": "The Hamiltonian used in this review use includes nonrelativistic kinetic energy, the AV18 $N\\!N$ potential [@WSS95] and either the Urbana IX [@PPCW95] or one of the new Illinois series of $N\\!N\\!$ potential [@PPWC01]: $$H = \\sum_{i} K_{i} + \\sum_{i<j} v_{ij} + \\sum_{i<j<k} V_{ijk} \\ . \\label{eq:H}$$ The kinetic energy operator has charge-independent (CI) and charge-symmetry-breaking (CSB) components, the latter due",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-variational-monte-carlo",
+      "number": "3",
+      "title": "VARIATIONAL MONTE CARLO",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 15,
+      "labelStart": "8",
+      "labelEnd": "15",
+      "words": 2737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": true
+        },
+        {
+          "term": "tni ijk",
+          "heading": false
+        },
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "jastrow wave",
+          "heading": false
+        },
+        {
+          "term": "s-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "prod ijk",
+          "heading": false
+        },
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "tilde tni",
+          "heading": false
+        }
+      ],
+      "extract": "The variational method can be used to obtain approximate solutions to the many-body Schr\\\"{o}dinger equation, $H\\Psi = E\\Psi$, for a wide range of nuclear systems, including few-body nuclei, light closed-shell nuclei, nuclear matter, and neutron stars~\\cite{W93}. A suitably parameterized wave function, $\\Psi_V$, is used to calculate an upper bound to the exact ground-state energy, \\begin{equation} E_V =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-greens-function-monte-carlo",
+      "number": "4",
+      "title": "GREEN'S FUNCTION MONTE CARLO",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 2075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gfmc algorithm",
+          "heading": false
+        },
+        {
+          "term": "triangle tau",
+          "heading": false
+        },
+        {
+          "term": "psitgfmc",
+          "heading": false
+        },
+        {
+          "term": "tau values",
+          "heading": false
+        },
+        {
+          "term": "node hours",
+          "heading": false
+        },
+        {
+          "term": "tau rightarrow",
+          "heading": false
+        },
+        {
+          "term": "order psi",
+          "heading": false
+        },
+        {
+          "term": "short-time propagator",
+          "heading": false
+        }
+      ],
+      "extract": "The GFMC method [@C87; @C88] projects out the exact lowest-energy state, $\\Psi_{0}$, for a given set of quantum numbers, using $\\Psi_0 = \\lim_{\\tau \\rightarrow \\infty} \\exp [ - ( H - E_0) \\tau ] \\Psi_T$, where $\\Psi_{T}$ is an initial trial function. If the maximum $\\tau$ actually used is large enough, the eigenvalue $E_{0}$ is calculated exactly while other expectation values are generally calculated neglecting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-energy-results",
+      "number": "5",
+      "title": "ENERGY RESULTS",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 27,
+      "labelStart": "20",
+      "labelEnd": "27",
+      "words": 2526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gfmc energies",
+          "heading": false
+        },
+        {
+          "term": "uix hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "gfmc calculations",
+          "heading": false
+        },
+        {
+          "term": "s-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "experimental energies",
+          "heading": false
+        },
+        {
+          "term": "hyperspherical harmonics",
+          "heading": false
+        }
+      ],
+      "extract": "There are a number of accurate many-body methods for evaluating the binding energy of the s-shell nuclei, $^3$H, $^3$He, and $^4$He, using realistic nuclear forces. These include Faddeev in configuration space [@FPSS93] (FadR), Faddeev and Faddeev-Yakubovsky in momentum space [@NKG00] (FadQ), and hyperspherical harmonics [@HH] (HH), correlated hyperspherical harmonics [@VKR95] (CHH) and pair-correlated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-density-and-momentum-distributions",
+      "number": "6",
+      "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 35,
+      "labelStart": "27",
+      "labelEnd": "35",
+      "words": 2743,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gfmc expt",
+          "heading": false
+        },
+        {
+          "term": "vmc wave",
+          "heading": false
+        },
+        {
+          "term": "momentum distributions",
+          "heading": true
+        },
+        {
+          "term": "quadrupole moments",
+          "heading": false
+        },
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "isovector moments",
+          "heading": false
+        },
+        {
+          "term": "impulse approximation",
+          "heading": false
+        },
+        {
+          "term": "vmc calculations",
+          "heading": false
+        }
+      ],
+      "extract": "The one- and two-nucleon distributions of light $p$-shell nuclei are interesting in a variety of experimental settings. For example, the Borromean $^6$He and $^8$He nuclei are popular candidates for study as 'halo' nuclei whose last neutrons are weakly bound. In addition, the polarization densities of $^6$Li and $^7$Li are important because of possible applications in polarized targets. ::: {#tab:radii} --------",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-low-energy-nucleon-nucleus-scattering",
+      "number": "7",
+      "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vmc calculations",
+          "heading": false
+        },
+        {
+          "term": "gfmc calculations",
+          "heading": false
+        },
+        {
+          "term": "gfmc propagation",
+          "heading": false
+        },
+        {
+          "term": "be-e",
+          "heading": false
+        },
+        {
+          "term": "trial function",
+          "heading": false
+        },
+        {
+          "term": "csk",
+          "heading": false
+        },
+        {
+          "term": "statistical errors",
+          "heading": false
+        },
+        {
+          "term": "phase shift",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:scat label=\"sec:scat\"} The calculations presented so far have treated resonant nuclear states as if they were particle stable; that is the VMC trial wave functions decay exponentially at large distances and the GFMC propagation does not impose a scattering-state boundary condition. As was shown in Fig. [\\[fig:8be-e_of_tau\\]](#fig:8be-e_of_tau){reference-type=\"ref\" reference=\"fig:8be-e_of_tau\"}, this GFMC",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-astrophysical-electroweak-reactions",
+      "number": "8",
+      "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 938,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "capture reactions",
+          "heading": false
+        },
+        {
+          "term": "radiative capture",
+          "heading": false
+        },
+        {
+          "term": "alpha tau",
+          "heading": false
+        },
+        {
+          "term": "psi tau",
+          "heading": false
+        },
+        {
+          "term": "cluster-cluster scattering",
+          "heading": false
+        },
+        {
+          "term": "phi alpha",
+          "heading": false
+        },
+        {
+          "term": "vmc calculation",
+          "heading": false
+        },
+        {
+          "term": "optical potentials",
+          "heading": false
+        }
+      ],
+      "extract": "Most of the key nuclear reactions in primordial nucleosynthesis [@NB00] and solar neutrino production [@A+98] involve only the $A \\leq 8$ nuclei. Many of these are electroweak capture reactions that are difficult or impossible to measure in the laboratory. With the high-precision few-body methods, such as PHH and Faddeev, or new effective field theory treatments, the reactions to s-shell final states have been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-neutron-drops",
+      "number": "9",
+      "title": "NEUTRON DROPS",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutron drops",
+          "heading": true
+        },
+        {
+          "term": "eight neutrons",
+          "heading": false
+        },
+        {
+          "term": "spin-orbit splitting",
+          "heading": false
+        },
+        {
+          "term": "neutron-rich systems",
+          "heading": false
+        },
+        {
+          "term": "tab",
+          "heading": false
+        },
+        {
+          "term": "gfmc",
+          "heading": false
+        },
+        {
+          "term": "uix",
+          "heading": false
+        },
+        {
+          "term": "skyrme",
+          "heading": false
+        }
+      ],
+      "extract": "Neutron-rich nuclei are interesting both because of their importance in various astrophysical contexts, such as the r-process or neutron-star crusts, and the current interest in experiments with radioactive beams. These nuclei are often studied within the framework of mean-field models using Skyrme or other potential models. The parameters of these models are fit to experimentally known binding energies, that is for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-conclusions-and-outlook",
+      "number": "10",
+      "title": "CONCLUSIONS AND OUTLOOK",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "s-shell nuclei",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "diffusion monte",
+          "heading": false
+        },
+        {
+          "term": "capture reactions",
+          "heading": false
+        },
+        {
+          "term": "scattering states",
+          "heading": false
+        },
+        {
+          "term": "carlo methods",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Monte Carlo methods can now be used to obtain accurate (within 2%) energies for light p-shell nuclei up to $A$ = 8. Initial calculations of $A$=9,10 nuclei have been made by the authors, and studies of $A$=11,12 nuclei should be feasible in the next few years by variational and Green's function Monte Carlo methods. This progress in the nuclear many-body problem is due both to the rapid growth of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 1158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "data nucl",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "wiringa",
+          "heading": false
+        },
+        {
+          "term": "schiavilla",
+          "heading": false
+        },
+        {
+          "term": "pandharipande",
+          "heading": false
+        },
+        {
+          "term": "few-body syst",
+          "heading": false
+        },
+        {
+          "term": "carlson",
+          "heading": false
+        }
+      ],
+      "extract": "The authors thank J. Carlson, A. Kievsky, V. R. Pandharipande, R. Schiavilla, J. P. Schiﬀer and K. E. Schmidt for useful communications and discussions. This Exact Calculations of Light Nuclei 41 work was supported by the U.S. Department of Energy, Nuclear Physics Division, under contract No. W-31-109-ENG-38. Literature Cited 1. Stoks VGJ, Klomp RAM, Rentmeester MCM, de Swart JJ. Phys. Rev. C 48:792 (1993) 2. Chen",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "p-shell nuclei",
+      "heading": false
+    },
+    {
+      "term": "gfmc wave",
+      "heading": false
+    },
+    {
+      "term": "gfmc calculations",
+      "heading": true
+    },
+    {
+      "term": "gfmc energy",
+      "heading": true
+    },
+    {
+      "term": "s-shell nuclei",
+      "heading": true
+    },
+    {
+      "term": "gfmc energies",
+      "heading": true
+    },
+    {
+      "term": "vmc wave",
+      "heading": true
+    },
+    {
+      "term": "gfmc methods",
+      "heading": true
+    },
+    {
+      "term": "light nuclei",
+      "heading": true
+    },
+    {
+      "term": "gfmc expt",
+      "heading": false
+    },
+    {
+      "term": "p-shell nucleons",
+      "heading": false
+    },
+    {
+      "term": "gfmc values",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Three-body force Feynman diagrams: a is the Fujita-Miyazawa or twopion P-wave, b is two-pion S-wave, c and d are three-pion rings with one ∆in intermediate states",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Correlation functions in light nuclei: the central pair correlation, fc, and tensor-isospin correlation, utτ, for s-shell nuclei are shown with solid lines",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Permutation symmetry terms for LS-coupling in A = 6 −8 nuclei and corresponding spin states",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Approximate scaling of VMC and GFMC calculations with system size. The number of pairs is P, the state-vector size is the product of the number of spin states and number of isospin states, I(A, T); as is discussed in the text, these numbers may be halved for even-A nuclei. The last column is the rel",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "GFMC E(τ) using AV18/UIX for various states of 8Be. Averages with their standard errors are shown by the solid and dashed lines",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Energies of 3H and 4He in MeV, computed by VMC and GFMC compared to momentum-space Faddeev (48), conﬁguration-space Faddeev (47) and various hyperspherical harmonics methods (52). The HH column values are PHH for 3H; HH for 4He, AV18; and CHH for 4He, AV18/UIX Hamiltonian",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "VMC and GFMC energies using AV18/UIX compared to experiment. Black dashed lines show the indicated breakup thresholds for each method. The Monte Carlo statistical errors are shown by the light blue and yellow bands",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "GFMC energies using AV18 and AV18/IL2 compared to experiment",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "GFMC and experimental energies of A=3–8 ground states in MeV. Energies of artiﬁcially conﬁned 7and 8-neutron drops are also shown. The experimental values are from Refs. (53,54,55)",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "GFMC and experimental (55,57) splittings of states with the same L and S but diﬀerent J, in MeV",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Kinetic, K, and potential energy contributions in MeV. Shown are the",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "GFMC isovector and isotensor energy coeﬃcients, an(A, T), [Eq. (52)] computed using AV18/IL2, in keV. The contributions shown are kinetic energy, KCSB; Coulomb potential, vC1(pp); other electromagnetic, vγ,R; and nuclear po-",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "VMC isospin-mixing matrix elements for 8Be in keV computed using AV18/UIX. Experimental values are from Ref. (60) Jπ",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "GFMC values for point proton rms radii (in fm) and quadrupole moments (in fm2) in impulse approximation, computed with AV18/IL2. Experimental values are from Refs. (61,62,57,63) ⟨r2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "GFMC values for isoscalar and isovector magnetic moments (in µN) in impulse approximation using AV18/IL2. Experimental values are from Refs. (53, 54,55,63) T Isoscalar",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Proton and matter densities in 4He, 6He, and 8He. Analyses of 6,8Heproton scattering are shown by the dashed (Ref. (66)) and dot-dashed (Ref. (67)) curves",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Proton-proton distribution functions in helium isotopes",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Calculated and experimental elastic and transition form factors in 6Li. Experimental data are from Refs. (69,70,71,72,73,74,75)",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Diﬀerential cross sections for 7Li(π, π′) scattering at Eπ = 164 MeV. Data are from Ref. (77)",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Experimental (13) momentum distributions for the transitions to the ground state (circles) and ﬁrst excited state (squares) in the reaction 7Li(e, e′p)6He, compared to CDWIA calculations with the VMC wave functions (solid lines) for AV18/UIX",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Calculated density contours of 8Be in the lab frame (left) and the intrinsic frame (right), labeled with densities in fm−3",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The total S-factor for α+d radiative capture calculated for two different optical potentials with the AV18/UIX nuclear wave functions, compared to experimental data (91,92,93)",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "12 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "10 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-nucl-th-0103005v2"
+  }
+}

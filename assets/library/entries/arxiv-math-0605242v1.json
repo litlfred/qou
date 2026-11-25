@@ -1,0 +1,209 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0605242v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The integer programming problem is the following discrete\noptimization problem, where $\\N$ denotes the set of nonnegative\nintegers, $A$ is an integer matrix and $b,c$ are integer vectors of\nsuitable dimensions:\n$$\n\\min\\, \\{cx:\\ Ax=b,\\ x\\in\\N^q\\}.\n$$\nIt is well known to be generally NP-hard but polynomial time\nsolvable in fixed dimension $q$, see \\cite{Sch}.\n\nIn this article, motivated by applications to high-dimensional\ntransportation problems and contingency tables and by the recently\ndiscovered striking universality theorem for rational polytopes\n\\cite{DO2} (see Section \\ref{Applications}),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0605242v1  [math.OC]  9 May 2006\nN-Fold Integer Programming\nJes´us A. De Loera ∗\nRaymond Hemmecke †\nShmuel Onn ‡\nRobert Weismantel §\nAbstract\nIn this article we study a broad class of integer programming problems in variable dimension.\nWe show that these so-termed n-fold integer programming problems are polynomial time solvable.\nOur proof involves two heavy ingredients discovered recently: the equivalence of linear optimization\nand so-called directed augmentation, and the stabilization of certain Graver bases.\nWe discuss several applications of our algorithm to multiway transportati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-applications.md",
+      "narrative": null,
+      "content": "transportation problems and to some packing problems, as follows. In 2.1 we obtain the aforementioned\nCorollary 2.2 which provides a polynomial time solution to 3-way integer transportation problems for\nlong tables, contrasting the recent universality theorem of [6] for slim tables. We also extend this\nresult to d-way transportation problems for long tables of any dimension (Corollary 2.4). In 2.2 we\ndescribe applications to a certain shipment problem (Corollary 2.5) and to the classical cutting stock\nproblem (Corollary 2.6). In Sections 3 – 4 we develop the necessary ingredients for our n-fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "High dimensional transportation problems",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-high-dimensional-transportation-problems.md",
+      "narrative": null,
+      "content": "\\label{Applications1}\n\nA {\\em $d$-way transportation polytope} is the set of all\n$m_1\\times\\cdots\\times m_d$ nonnegative arrays $x=(x_{i_1,\\dots,i_d})$\nsuch that the sums of the entries over some of their lower dimensional\nsubarrays ({\\em margins}) are specified. For simplicity of exposition, we shall\nconcentrate here only on $d$-way {\\em line-sum polytopes}, of the form\n$$T =  \\left\\{\\,x\\in\\R_+^{m_1\\times\\cdots \\times m_d}\n\\, : \\, \\sum_{i_1} x_{i_1,\\dots,i_d}=u_{i_2,\\dots, i_d}\\,,\n\\ \\sum_{i_2} x_{i_1,\\dots,i_d}=u_{i_1,i_3,\\dots, i_d}\\,,\n\\ \\dots\\,,\\ \\sum_{i_d} x_{i_1,\\dots,i_d}=u_{i_1,\\dots,i_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some packing problems",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-some-packing-problems.md",
+      "narrative": null,
+      "content": "\\label{Applications2}\n\n\\vskip.5cm\\noindent{\\sc Minimum cost shipment}\n\n\\vskip.2cm\\noindent\nThe minimum cost shipment problem concerns the shipment of a large stock\nof items of several types, using various vessels, with minimum possible cost.\nMore precisely, the data is as follows. There are $t$ types of items.\nThe weight of each item of type $j$ is $w_j$ and there are $n_j$ items\nof type $j$ to be shipped. There are $v$ available vessels, where vessel\n$k$ has maximum weight capacity $u_k$. The cost of shipping one item of\ntype $j$ on vessel $k$ is $p_{j,k}$. We now formulate this as an n-fold",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graver bases and directed augmentation",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-graver-bases-and-directed-augmentation.md",
+      "narrative": null,
+      "content": "Consider the following family $\\IP_A$ of integer programs in\nstandard form, with arbitrary demand vector $b\\in\\Z^m$ and\narbitrary objective vector $c\\in\\Z^n$, sharing the same constraint\nmatrix $A\\in\\Z^{m\\times n}$,\n\\[\n\\IP_A(b,c):\\quad \\min\\{cx:\\ Ax=b,\\ x\\in\\N^n\\}.\n\\]\nA {\\em universal test set} for the family $\\IP_A$ is a {\\em finite} subset\n$G$ of the lattice $\\L(A):=\\{x\\in\\Z^n:\\ Ax=0\\}$ of dependencies on $A$\nsuch that whenever $x$ is\nfeasible but not optimal for $\\IP_A(b,c)$ (where $b:=Ax$), there is an\n{\\em improving direction} $g\\in G$, namely such that $x-g$ is feasible\nand better, that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graver bases of n-fold matrices",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-graver-bases-of-n-fold-matrices.md",
+      "narrative": null,
+      "content": "Fix any pair of integer matrices $A$ and $B$ with the same number of columns,\nof dimensions $r\\times q$ and $s\\times q$, respectively. The {\\em n-fold\nmatrix of the ordered pair $A,B$} is the following $(s+nr)\\times nq$ matrix,\n\\[\n[A,B]^{(n)} \\quad:=\\quad ({\\bf 1}_n\\otimes B)\\oplus (I_n\\otimes A)\\quad=\\quad\n\\left(\n\\begin{array}{ccccc}\n  B & B & B & \\cdots & B      \\\\\n  A & 0 & 0 & \\cdots & 0      \\\\\n  0 & A & 0 & \\cdots & 0      \\\\\n  \\vdots & \\vdots & \\ddots & \\vdots & \\vdots \\\\\n  0  & 0 & 0      & \\cdots & A      \\\\\n\\end{array}\n\\right)\\quad .\n\\]\nWith this, the generalized n-fold integer progr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "Fix any pair of integer matrices A ∈Zr×q and B ∈Zs×q. Then there is a polynomial time algorithm that, given n, objective vector c ∈Nnq, and nonnegative integer vector x ∈Nnq, solves the generalized n-fold integer programming problem in which x is feasible, i.e. the one with b := [A, B](n)x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "Fix any pair of integer matrices A ∈Zr×q and B ∈Zs×q. Then there is a polynomial time algorithm that, given n and demand vector b ∈Ns+nr, either ﬁnds a feasible solution x ∈Nnq to the generalized n-fold integer programming problem (2), or asserts that no feasible solution exists.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The polynomial time algorithm for n-fold integer programming",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-the-polynomial-time-algorithm-for-n-fold-integer.md",
+      "narrative": null,
+      "content": "The polynomial time algorithm for n-fold integer programming\nWe now provide the polynomial time algorithm for the generalized n-fold integer programming problem\nmin{cx : [A, B](n)x = b, x ∈Nnq}\n.\n(2)\nFirst, combining the results of the previous two sections, we get a polynomial time procedure for\nconverting any feasible solution to an optimal one. We record this result in the following lemma.\nLemma 5.1 Fix any pair of integer matrices A ∈Zr×q and B ∈Zs×q. Then there is a polynomial time\nalgorithm that, given n, objective vector c ∈Nnq, and nonnegative integer vector x ∈Nnq, solves the\ngenerali",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0605242v1/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "Fix any pair of integer matrices A, B of compatible sizes. Then there is a polynomial time algorithm that solves the generalized n-fold integer programming problem on any input n, b, c. Clearly, Theorem 1.1 is deduced from Theorem 1.2 in the special case B = Iq. We emphasize again that, by solving the generalized n-fold integer programming problem, we mean in the complete sense that the algorithm concludes with precisely one of the following: it either asserts that there is no feasible solution, or asserts that the objective function is unbounded, or returns an optimal solution. References [1]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

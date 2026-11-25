@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1172-4",
+  "blocks": [
+    {
+      "id": "library/1172-4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nSince the discovery of the Jones polynomial [15], the quantum\n$\\mathrm{g}\\mathrm{r}o$up has\n$\\dot{\\mathrm{b}}\\mathrm{e}\\mathrm{e}\\mathrm{n}$ used to\nconstruct the invariants of knots and links, and many knot invariants such as HOM-\nFLY polynomial [9], colored Jones polynomial [4], Kauﬀman\n$\\mathrm{p}o$lynomial [22], have been\n$\\mathrm{p}\\mathrm{r}o$posed. Recently Kashaev constructed a knot invariant by use of the cyclic quantum\ndilogarithm function [17, 19, 21].\nIt was shown in Ref. 28 that Kashaev’s invariant\nexactly coincides with the colored Jones polynomial at N-th root of un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Notes on Construction of the Knot Invariant from\n$\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function\n東京大学大学院裡掌野研究科物裡学專攻\n樋上和弘\nKazuhiro HIKAMI\n\\dagger",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-5-representation.md",
+      "narrative": null,
+      "content": "Representation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Momentum Space",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-51-momentum-space.md",
+      "narrative": null,
+      "content": "Momentum Space\nWe consider a matrix representation of the $R$-matrix given above. Kashaev constructed a\nﬁnite-dimensional representation for the R-operator (4.11) by taking\n$q$ as the N-th root\nof unity [17], though in this section we rather consider the R-operator on the inﬁnite\ndimensional space.\nWe consider the Hilbert space of the quantum canonical operators\n$\\hat{p}$ and\n$\\hat{q}(4.7)$ . We\ncall the momentum space and the\n$\\mathrm{c}oo$rdinate space, which are spanned by\n$|p\\rangle$ and\n$|q\\rangle$\nwith\n$p,$\n$q\\in \\mathbb{R}$ respectively. They are eigenstates,\n$\\hat{p}|p\\rangle$\n$=p|p\\ra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid",
+      "pageStart": 13,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-61-braid.md",
+      "narrative": null,
+      "content": "Braid\n$G$roup\nThe knot invariant can be constructed by use of solutions of the Yang-Baxter equa-\ntion $[30, 37]$ . We suppose that we have the enhanced Yang-Baxter operators\n$(\\mathrm{R}, \\mu, \\alpha, \\beta)$\n$\\mathrm{s}\\mathrm{a}\\mathrm{t}\\mathrm{i}S\\varphi \\mathrm{i}\\mathrm{n}\\mathrm{g}$\n$(\\mathrm{R}\\otimes 1)(1\\otimes \\mathrm{R})(\\mathrm{R}\\otimes 1)=(1\\otimes \\mathrm{R})(\\mathrm{R}\\otimes 1)(1\\otimes \\mathrm{R})$ ,\n(6.1a)\n$(\\mu\\otimes\\mu)\\mathrm{R}=\\mathrm{R}(\\mu\\otimes\\mu)$,\n(6.1b)\n$\\mathrm{T}\\mathrm{r}_{2}(\\mathrm{R}^{\\pm 1}(1\\otimes\\mu))=\\alpha^{\\pm 1}\\beta$ .\n(6.1c)\nThe ﬁrst one is cal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple Examples",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-004-7-simple-examples.md",
+      "narrative": null,
+      "content": "Simple Examples\n7.1\nFigure-Eight Knot\nThe ﬁgure-eight knot is;\nThis knot is represented as\n$\\sigma_{12^{-}12}\\sigma\\sigma\\sigma^{-1}1$ by use of the braid generators. We then asso-\nciate the tetrahedra for each\n$\\mathrm{c}\\mathrm{r}o$ssing as\nIn regions\n$D_{1},$\n$\\cdots$ ,\n$D_{4}$ , the three tetrahedra are glued, and due to the pentagon iden-\ntity (6.7) they reduce to two tetrahedra. By glueing th\n$e\\mathrm{s}\\mathrm{e}$ tetrahedra with suspensions\nwhich follow from the regions\n$D_{5}$ and\n$D_{6}$ , we ﬁnally obtain the 2 tetrahedra;\nSee that every triangle face corresponds to a surface\n$D_{1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-acknowledgement.md",
+      "narrative": null,
+      "content": "The author\n$\\mathrm{w}o$uld like to thank Hitoshi Murakami for useful discussions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] A. Antonov: Universal\n$R$-matrix and quantum Volterra model, Theor. Math. Phys.\n113, 1520-1529 (1997).\n[2] V V Bazhanov and N. Reshetikhin: Remarks On the quantum dilogarithm, J. Phys.\nA: Math. Gen. 28, 2217-2226 (1995).\n. [3] L. Chekhov and V V Fock:\n$\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Teichm\\\"uller space, Theor. Math. Phys. 120,\n1245-1259 (1999).\n[4]\n$\\mathrm{T}$ Deguchi and\n$\\mathrm{Y}$ Akutsu: Graded solutions of the Yang-Baxter relation and link\npolynomials, J. Phys.\n$\\mathrm{A}$: Math. Gen. 23, 1861-1875 (1990).\n[5] L. D. Faddeev: Current-lik",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

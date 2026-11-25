@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9301212v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9301212v1",
+  "contains": [
+    "library/arxiv-math-9301212v1/sections/page-001",
+    "library/arxiv-math-9301212v1/sections/page-002",
+    "library/arxiv-math-9301212v1/sections/page-003",
+    "library/arxiv-math-9301212v1/sections/page-004",
+    "library/arxiv-math-9301212v1/sections/page-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993 — A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations.\n\n**arXiv:math/9301212v1 [math.GT] 1 Jan 1993**\n\n*AMERICAN MATHEMATICAL SOCIETY*\n\n5 pp, 5 sections.\n\n**Abstract.** A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations. This leads to the rapid resolution of several open problems: round circles are precisely the absolute minima for energy; there is a minimum energy threshold below which knotting cannot occur; minimizers within prime knot types exist and are regular. Finally, the number of knot types with energy less than any constant M is estimated. Consider a rectiﬁable curve γ(u) in the Euclidean 3-space R3, where u belongs to R1 or S1. Deﬁne its energy by E(γ) = ZZ \u001a 1 |γ(u) −γ(v)|2 − 1 D(γ(u), γ(v))2 \u001b |˙γ(u)||˙γ(v)| du dv, where D(γ(u), γ(v)) is the shortest arc distance betweenγ(u) and γ(v) on the curve. The second term of the integrand is called a regularization (see [O1–O3, FH]).\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9301212&metadataPrefix=arXiv), submitted 1993-01-01, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9301212v1",
+    "title_source": "slug",
+    "source_file": "9301212v1.pdf",
+    "source_sha256": "029787800ddf73e564ca6ad432065a5b807b660e394c5624d951be82153f8c45",
+    "pages": 5,
+    "arxiv": {
+      "id": "math/9301212",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "1 Jan 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

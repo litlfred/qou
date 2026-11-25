@@ -1,0 +1,1454 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9504015v2",
+  "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-front-matter-page-1",
+      "number": null,
+      "title": "Front matter (page 1)",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki invariants",
+          "heading": false
+        },
+        {
+          "term": "miami",
+          "heading": false
+        },
+        {
+          "term": "connection contribution",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "witten invariant",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9504015v2 24 Apr 1995 UMTG-183-95 q-alg/9504015 Witten’s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution. L. Rozansky1 Physics Department, University of Miami P. O. Box 248046, Coral Gables, FL 33124, U.S.A. E-mail address: rozansky@phyvax.ir.miami.edu Abstract We establish a relation between the coeﬃcients of asymptotic expansion of the trivial connection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-front-matter-page-2",
+      "number": null,
+      "title": "Front matter (page 2)",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scs",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "kirby",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Witten’s invariant of 3d manifolds deﬁned in [1] by a path integral over the SU(2) connections Aµ on a 3d manifold M Z(M; k) = Z [DAµ]e ik 2π SCS[Aµ], (1.1) SCS = 1 2 Tr ǫµνρ Z M d3x \u0012 Aµ∂νAρ + 2 3AµAνAρ \u0013 (1.2) (k ∈ZZ, Tr is the trace taken in the fundamental representation of SU(2)) can also be calculated combinatorially with the help of the surgery formula. Let M be a 3d manifold constructed by (pj,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-front-matter-page-3",
+      "number": null,
+      "title": "Front matter (page 3)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "rakami",
+          "heading": false
+        },
+        {
+          "term": "periodicity",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "rhs",
+          "heading": false
+        }
+      ],
+      "extract": "Z(M; 1): Z(M; k) Z(S3; k) = Z′(M; k) ×      Z(M;1) Z(S3;1), if K = −1 (mod 4) Z(M;1) Z(S3;1), if K = 1 (mod 4), (1.5) If M is a rational homology sphere (ZZHS ), then Z(M; 1) = Z(S3; 1) so that Z′(M; k) = Z(M;k) Z(S3;k). The new invariant Z′(M; k) can be calculated by the following surgery formula Z′(M; k) = K−N 2 exp  −πi 4 \u0012 3 + κ −6 K \u0013 N X j=1 sign (pj)   (1.6) × X′ −K≤αj ≤K αj∈2ZZ+1 (1≤j≤N)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-front-matter-page-4",
+      "number": null,
+      "title": "Front matter (page 4)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zzk",
+          "heading": false
+        },
+        {
+          "term": "deﬁned modulo",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "reexpressed",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki",
+          "heading": false
+        }
+      ],
+      "extract": "We need more notations in order to present the results of Ohtsuki’s papers [7], [8]. We introduce a new variable x = q −1. (1.9) A polynomial from ZZ[ˇq] can be reexpressed as a polynomial in x with integer coeﬃcients. It is deﬁned modulo the polynomial (1 + x)K −1 x = K−1 X n=0 K(K −1) · · ·(K −n) (n + 1)! xn, (1.10) which is identically equal to zero for x = e 2πi K −1. All the coeﬃcients of this polynomial except",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-front-matter-page-5",
+      "number": null,
+      "title": "Front matter (page 5)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λcw",
+          "heading": false
+        },
+        {
+          "term": "rhs",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki",
+          "heading": false
+        },
+        {
+          "term": "loop",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "topological",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 1.2 (T. Ohtsuki [7], [8]) For any RHS M there exists a sequence of rational numbers λn(M) ∈ZZ h 1 2, 1 3, . . . , 1 2n, 1 |H1(M,ZZ)| i ⊂Q, n ≥0 so that for any prime number K such that |H1(M, ZZ)|̸ = 0 (mod K) \" |H1(M, ZZ)| |H1(M, ZZ)| K ! Z′(M; k) #⋄ = \" ∞ X n=0 λn(M)xn #∨ , (1.14) here \u0010 · K \u0011 is the Legendre symbol. We have slightly modiﬁed the theorem of [8]: Ohtsuki required that K > |H1(M, ZZ)|, he",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-front-matter-page-6",
+      "number": null,
+      "title": "Front matter (page 6)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surgery formula",
+          "heading": false
+        },
+        {
+          "term": "link surgery",
+          "heading": false
+        },
+        {
+          "term": "connection contribution",
+          "heading": false
+        },
+        {
+          "term": "trivial connection",
+          "heading": false
+        },
+        {
+          "term": "knot formula",
+          "heading": false
+        },
+        {
+          "term": "carried out",
+          "heading": false
+        },
+        {
+          "term": "quantum ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "the asymptotic properties of the surgery formula (1.3) for lens spaces and Seifert manifolds to the quantum ﬁeld theory predictions of eqs. (1.16), (1.17) was initiated by D. Freed and R. Gompf [9] and carried out further by L. Jeﬀrey [10], S. Garoufalidis [4] and also in the papers [11, 12]. A complete agreement between the surgery formula and 1-loop predictions was observed. If the manifold M is a RHS , then the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-front-matter-page-7",
+      "number": null,
+      "title": "Front matter (page 7)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mnα2m",
+          "heading": false
+        },
+        {
+          "term": "α2mn",
+          "heading": false
+        },
+        {
+          "term": "dαn",
+          "heading": false
+        },
+        {
+          "term": "surg",
+          "heading": false
+        }
+      ],
+      "extract": "or iπ K = 1 2 log(1 + x) = x 2 ∞ X n=0 (−1)n xn n + 1. (1.22) In other words, we will show that \" |H1(M, ZZ)| |H1(M, ZZ)| K ! Z′(M; k) #⋄ = \" |H1(M, ZZ)| 3 2 Z(tr)(M; k) Z(S3; k) #∨ . (1.23) In process of doing this we will rederive the results of [5]-[8] maybe in a somewhat more explicit way. Our proof of the Proposition 1.1 will be based on the following two propositions derived in [19] and [18] by using some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-front-matter-page-8",
+      "number": null,
+      "title": "Front matter (page 8)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "α2α2m",
+          "heading": false
+        },
+        {
+          "term": "ˇqα",
+          "heading": false
+        },
+        {
+          "term": "gaussian integrals",
+          "heading": false
+        },
+        {
+          "term": "surgery formula",
+          "heading": false
+        },
+        {
+          "term": "similarities",
+          "heading": false
+        },
+        {
+          "term": "calculated",
+          "heading": false
+        }
+      ],
+      "extract": "The symbol +∞ R −∞ [αj=0] means that the integral has to be calculated in the following way: ﬁrst, an expansion (1.24) has to be substituted and then the gaussian integrals over αj have to be calculated for each polynomial \u0010QN j=1 \u0010 αj + 1 pj \u0011\u0011 Dm,n \u0010 α1 + 1 p1, . . . , αN + 1 pN \u0011 separately (for more details see [18]). The Proposition 1.2 is essential for all our calculations. The Proposition 1.4 is needed only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-front-matter-page-9",
+      "number": null,
+      "title": "Front matter (page 9)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pjα jjα",
+          "heading": false
+        },
+        {
+          "term": "µjαj",
+          "heading": false
+        },
+        {
+          "term": "ine",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        }
+      ],
+      "extract": "Also since 1 2(αj ± sign (pj)) ∈ZZ, sin \u0012 π K αj \u0013 = i 2 X µj=±1 µje−iπ K µjαj = i 2 X µj=±1 µjˇq−2∗µjαj ˇq(2∗−1 2) sign(pj). (2.2) The Jones polynomial Jα1,...,αN(L; k) is odd and e iπ 2K pjα2 j is even as a function of αj. Therefore we can drop the factor 1 2 and put µj = 1 in eq. (2.2) upon substituting it into eq. (1.6): Z′(M; k) = K−N 2 iNe−iπ 4 (3+κ)PN j=1 sign(pj)ˇq( 1 4+2∗)PN j=1 sign(pj)ˇq−4∗PN j=1 pj (2.3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-front-matter-page-10",
+      "number": null,
+      "title": "Front matter (page 10)",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mnα2m",
+          "heading": false
+        },
+        {
+          "term": "α2mn",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "mnpm",
+          "heading": false
+        }
+      ],
+      "extract": "Since the values of the Jones polynomial Jα1,...,αN(L; k) belong to the cyclotomic ring ZZ[ˇq] when all the indices αj are odd, we can apply to it a combination of Proposition 1.2 and Lemma 2.3 of [5]: Proposition 2.1 For odd values of its indices αj, the unframed colored Jones polynomial of an N-component ASL L in S3 can be presented as the following sum: Jα1,...,αN(L; k) =   N Y j=1 αj   (N+1) K−1 2 X n=0 X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-front-matter-page-11",
+      "number": null,
+      "title": "Front matter (page 11)",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˇqα",
+          "heading": false
+        },
+        {
+          "term": "degree monomial",
+          "heading": false
+        },
+        {
+          "term": "highest degree",
+          "heading": false
+        },
+        {
+          "term": "canceled",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 2.2 There is an upper bound on the indices of the coeﬃcients C(n) m1,...,mN of eq. (2.12): \u0014mj 2 \u0015 ≤n − N X i=1 \u0014mi 2 \u0015 , (2.14) here h m 2 i denotes the integer part of m 2 . The proof is completely similar to that of the Proposition 3.4 of [18]. Suppose that there is a coeﬃcient C(n) m1,...,mN for which (2.14) is not true, say, for m1. If all indices mj of C(n) m1,...,mN are odd, then the highest",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-front-matter-page-12",
+      "number": null,
+      "title": "Front matter (page 12)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pjα jjα",
+          "heading": false
+        },
+        {
+          "term": "front",
+          "heading": true
+        },
+        {
+          "term": "p2m",
+          "heading": false
+        },
+        {
+          "term": "xmax",
+          "heading": false
+        }
+      ],
+      "extract": "Substituting this expression into eq. (2.8) we ﬁnd that Z′(M; k) = e iπ 4 (κ−1)PN j=1(sign(pj)−1)   N Y j=1 sign (pj)  ˇq4∗PN j=1(3 sign(pj)−pj−p∗ j) × uN xN K−1 2 X′ −K≤αj ≤K αj∈2ZZ+1 (1≤j≤N) ˇq4∗PN j=1 pjα2 jJα1+p∗ 1,...,αN+p∗ N(L; k). (2.21) Since 1 4(κ −1)(sign (pj) −1) ∈ZZ, we conclude that to prove Theorem 1.1 it is enough to show that X′ −K≤αj ≤K αj ∈2ZZ+1 (1≤j≤N) ˇq4∗PN j=1 pjα2 jJα1+p∗ 1,...,αN+p∗ N(L;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-front-matter-page-13",
+      "number": null,
+      "title": "Front matter (page 13)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obviates",
+          "heading": false
+        },
+        {
+          "term": "denominator",
+          "heading": false
+        },
+        {
+          "term": "divisible",
+          "heading": false
+        },
+        {
+          "term": "p2m",
+          "heading": false
+        }
+      ],
+      "extract": "here α(α −1) · · ·(α −n + 1) = X m′≤n Cn,m′αm′, Cn,m′ ∈ZZ. (2.26) It is well known in number theory that X′ −K≤α≤K α∈2ZZ+1 α2m = 0 (mod K) for 0 ≤m < K −2. (2.27) Therefore the numerator of the contribution of a term Cn,m′ n! p2m′α2(m+m′)xn will be divisible by K for all m + m′ < K−1 2 ≤K −2, that is, for all n < K−1 2 −m. The denominator n! is harmless, because since n < K, it is not divisible by K and can not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-front-matter-page-14",
+      "number": null,
+      "title": "Front matter (page 14)",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˇqpq",
+          "heading": false
+        },
+        {
+          "term": "α2α2m",
+          "heading": false
+        },
+        {
+          "term": "ˇq2nα",
+          "heading": false
+        },
+        {
+          "term": "gaussian",
+          "heading": false
+        }
+      ],
+      "extract": "Since ¯m(n) ≤3 4n ≤n, this estimate is enough to prove eq. (2.22) and also the Theorem 1.1. Note that the proof required only a weaker bound m ≤n for ˜Dm,n rather than a stronger bound m ≤3 4n of [18]. However the bound m ≤3 4n is necessary to prove that only a ﬁnite number of polynomials ˜Dm,n contribute to the coeﬃcients of xn′, n′ ≤K−1 2 in the expansion of [Z′(M; k)]⋄. Indeed, since ¯m(n) ≤3 4n, then n −¯m(n) ≥1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-front-matter-page-15",
+      "number": null,
+      "title": "Front matter (page 15)",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˇqpq",
+          "heading": false
+        },
+        {
+          "term": "zzk",
+          "heading": false
+        },
+        {
+          "term": "ˇq2nα",
+          "heading": false
+        }
+      ],
+      "extract": "Since (for p∗∈ZZ) X′ −K≤α≤K α∈2ZZ+1 ˇqpq∗(α+np∗q)2 = X′ −K≤α≤K α∈2ZZ+1 ˇqpq∗α2 = X 3−K 2 <˜α≤K−1 2 ˇqpq∗(2˜α+1)2 = X 3−K 2 <˜α≤K−1 2 ˇq4pq∗(˜α+2∗)2 = √ Kei π 4 (1−κ) \u0012pq∗ K \u0013 , (3.4) we ﬁnd that ei π 4 (κ−1) √ K X′ −K≤α≤K α∈2ZZ+1 ˇqpq∗α2 ˇq2nα = \u0012pq∗ K \u0013 ˇq−p∗qn2. (3.5) We substitute ˇq = 1 + x in ˇq2nα and ˇq−p∗qn2. After going from ZZ[ˇq] to the factor-ring ZZ′ K[x] = ZZK[x]/x K+1 2 ZZK[x] and using the “checked",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-front-matter-page-16",
+      "number": null,
+      "title": "Front matter (page 16)",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˇq2nα",
+          "heading": false
+        },
+        {
+          "term": "n2l",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "ln2l",
+          "heading": false
+        }
+      ],
+      "extract": "The proof follows from the fact that the K × K Van-der-Monde determinant in ZZK is non-zero. Each gaussian sum G(p, q; l) appears in the l.h.s. of eq. (3.7) with its own power of n: n2l. Therefore the coeﬃcients Gm′(p, q; l) of eq. (3.8) can be calculated by “dividing” the polynomial (−1)l(p∗q)l P K−1 m=l (m!)∗Cm,lxm appearing at n2l in the r.h.s. of eq. (3.7) by the polynomial PK−1 m=2l Cm,2l4lxm−l appearing in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-front-matter-page-17",
+      "number": null,
+      "title": "Front matter (page 17)",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest",
+          "heading": false
+        },
+        {
+          "term": "substitute",
+          "heading": false
+        },
+        {
+          "term": "monomial",
+          "heading": false
+        },
+        {
+          "term": "substitutions",
+          "heading": false
+        },
+        {
+          "term": "multiplicativity",
+          "heading": false
+        }
+      ],
+      "extract": "After substituting eqs. (3.9), (3.10) we ﬁnd that Z +∞ −∞dα ˇq p q α2α2mxm = ei π 4 sign( p q) \u0012K 2 \u0013 1 2 q p 1 2 (−1)m(2m)! 4mm! x log(1 + x) !m (3.15) Eq. (3.2) follows from comparing eq. (3.15) to eq. (3.13). The formula (3.2) can be generalized to the type of summands that appear in eq. (2.8) after the substitutions (2.9) and (2.12). Proposition 3.2 For p̸ = 0 (mod K), 0 ≤m ≤K   ei π 4 (κ−1) √ K X′ −K≤α≤K",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-front-matter-page-18",
+      "number": null,
+      "title": "Front matter (page 18)",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pjα",
+          "heading": false
+        },
+        {
+          "term": "pmj",
+          "heading": false
+        },
+        {
+          "term": "mnx",
+          "heading": false
+        }
+      ],
+      "extract": "which is determined with the help of eq. (3.13). Consider now the r.h.s. of eq. (3.16). Again we substitute the even polynomial P (ev) K (α) = 1 2  PK  α −1 + 1 p 2  + PK  −α −1 + 1 p 2    . (3.19) Some of its denominators may have K as a divisor, but according to eq. (3.16) we are interested only in the contribution of the highest power of α: 1 p −K 2K (K −1)!α K−1 2 . (3.20) Comparing it to monomial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-front-matter-page-19",
+      "number": null,
+      "title": "Front matter (page 19)",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pjα",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "retain",
+          "heading": false
+        }
+      ],
+      "extract": "starts at xn−PN j=1[ mj 2 ]. Hence we may assume that n − N X j=1 \u0014mj 2 \u0015 ≤K −1 2 , (3.23) otherwise the contribution of the polynomial xn−PN j=1[ mj 2 ]C(n) m1,...,mNx[ m1 2 ]Pm1 \u0012α1 −1 2 \u0013 · · ·x[ mN 2 ]PmN \u0012αN −1 2 \u0013 . (3.24) is annihilated by the homomorphism ⋄. The inequalities (2.14) and (3.23) mean that mj ≤K−1 2 , so we can apply the Proposi- tion 3.2 to every polynomial x[ mj 2 ]Pmj \u0010 αj−1 2 \u0011 . The terms x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-front-matter-page-20",
+      "number": null,
+      "title": "Front matter (page 20)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "jjα",
+          "heading": false
+        },
+        {
+          "term": "dαn",
+          "heading": false
+        },
+        {
+          "term": "surgeries",
+          "heading": false
+        }
+      ],
+      "extract": "Here we used an identity \u0014 ˇq4∗PN j=1(3 sign(pj)−pj−p∗ j) \u0015⋄ = \u0014 ˇq 1 4 PN j=1(3 sign(pj)−pj−p∗ j) \u0015∨ . (3.27) We can extend the sum over n in the r.h.s. of eq. (3.27) to all n ≥0 because the contribution of ˜Dm,nxn with n > 2(K −1) starts above x K−1 2 . As a result, we obtain the full Jones polynomial. Now using the identities ei π 4 (κ−1)(sign(p)−1) \u0012 p K \u0013 = |p| K ! , (3.28) N Y j=1 pj = |H1(M, ZZ)| (3.29) sign",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-front-matter-page-21",
+      "number": null,
+      "title": "Front matter (page 21)",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surgeries",
+          "heading": false
+        },
+        {
+          "term": "self-linking",
+          "heading": false
+        },
+        {
+          "term": "n-component",
+          "heading": false
+        }
+      ],
+      "extract": "Z′(M; k) of a manifold constructed by general rational surgeries (pj, qj) on the components of an N-component link L in S3. The formula for Witten’s invariant Z(M; k) was derived by L. Jeﬀrey [10] Z(M; k) = Z(S3; k) exp  iπ 4 K −2 K   N X j=1 Φ(U(pj,qj) −3 sign (L)     (4.1) × X 1≤α1,...,αN≤K−1 Jα1,...,αN(L; k) N Y j=1 ˜U (pj,qj) αj1 , here L is the linking matrix of L, pj qj being the self-linking numbers.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-front-matter-page-22",
+      "number": null,
+      "title": "Front matter (page 22)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surgery formula",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "µjαj",
+          "heading": false
+        },
+        {
+          "term": "ˇsαβ",
+          "heading": false
+        }
+      ],
+      "extract": "We denote this chain (including Lj itself) as ˜Lj and all the chains of L as ˜L. For 1 ≤t ≤¯t(j) we set U(p(j) t ,q(j) t ) = T m(j) t S · · · T m(j) 1 S, (4.7) so that p(j) ¯t(j) = pj, q(j) ¯t(j) = qj. From now on we assume for simplicity that none of the numbers q(j) t is divisible by K. Then we are going to prove the following: Proposition 4.1 Let M be a manifold constructed by (pj, qj) surgeries on an N-component",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-front-matter-page-23",
+      "number": null,
+      "title": "Front matter (page 23)",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "µ1µ",
+          "heading": false
+        },
+        {
+          "term": "ˇsαβ",
+          "heading": false
+        },
+        {
+          "term": "ˇtαβ",
+          "heading": false
+        }
+      ],
+      "extract": "The following lemma presents an explicit expression for ˇU(p,q) αβ , which is similar to that of eq. (4.4): Lemma 4.1 ˇU(p,p) αβ = |q| K ! sign (q) √ K e−i π 4 Φ(U(p,q)) e −i π 4 κP¯t−1 t=0 sign \u0010 pt qt \u0011 (4.12) ×ˇq( 1 4 −4∗)P¯t t=1 mt +(2∗−1 2)P¯t t=1 sign \u0010 pt qt \u0011 ˇq4∗q∗(pα2+sβ2) i 2 X µ=±1 µ ˇq−2∗q∗µαβ. To prove the lemma we slightly change eq. (4.11): ˇTαβ = e−i π 4 ˇq 1 4 −4∗ˇq4∗α2 δαβ, ˇSαβ = 1 √ K i 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-front-matter-page-24",
+      "number": null,
+      "title": "Front matter (page 24)",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "unknot",
+          "heading": false
+        },
+        {
+          "term": "eqs",
+          "heading": false
+        },
+        {
+          "term": "rearrange",
+          "heading": false
+        }
+      ],
+      "extract": "the latter relation follows from ps −qr = 1. To complete the veriﬁcation of eq. (4.12) we recall the following identities: Φ(SU(p,q)) = Φ(U(p,q)) −3 sign p q ! , (4.18) i sign (q) = ei π 2 sign( p q) sign (p) , (4.19) ei π 4 (κ−1) |q| K ! \u0012pq∗ K \u0013 = ei π 4 (κ−1) sign( p q) |p| K ! . (4.20) This ends the proof of the lemma. To ﬁnish the proof of Proposition 4.1 we rearrange some phase factors of eqs. (4.9) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-front-matter-page-25",
+      "number": null,
+      "title": "Front matter (page 25)",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kβαj",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "sinn",
+          "heading": false
+        },
+        {
+          "term": "seifert",
+          "heading": false
+        }
+      ],
+      "extract": "we can say that Lp,q is constructed by a chain surgery U(−q,−p) = SU(−p,q) applied to an empty knot, times a factor √ K sin( π K). Then we can read the result directly from eq. (4.8) by setting there N = 1, sign (L) = 0, α = 1 and U(−q,−p) =  −q s −p r   (4.25) instead of U(p,q): Z′(Lp,q) = |p| K ! sign (p) ˇq4∗(p∗(q−r)−Φ(U(−q,−p))) ˇq2∗ˇq2∗p∗−ˇq−2∗p∗ ˇq −1 = |p| K ! sign (p) ˇq3s∨(q,p) ˇq2∗ˇq2∗p∗−ˇq−2∗p∗ ˇq −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-front-matter-page-26",
+      "number": null,
+      "title": "Front matter (page 26)",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "kβαj",
+          "heading": false
+        }
+      ],
+      "extract": "here β is the color of L0 and αj are the colors of Lj. The signature of L is equal to sign (L) = −sign \u0012H P \u0013 + N X j=1 sign qj pj ! (4.29) Here we introduced notations P = N Y j=1 pj, H = P N X j=1 qj pj , (4.30) so that H1 X p1 q1 , . . . , pn qn !! = |H|. (4.31) The Proposition 4.1 provides the following expression for the invariant of the Seifert manifold X \u0010 p1 q1 , . . . , pn qn \u0011 : Z′(X; k) = i 2 √ K ei π 4 κ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-front-matter-page-27",
+      "number": null,
+      "title": "Front matter (page 27)",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preexponential",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "jqj",
+          "heading": false
+        }
+      ],
+      "extract": "The calculation of invariants Z′ β(L−pj,qj; k) runs similar to that of Z′(Lp,q; k) of eq. (4.26). The only diﬀerence is that by taking a sum over αj we go from ˜U (pj,qj) αj1 to ˜U (−qj,pj) β1 rather than to ˜U (−qj,pj) 11 . As a result, Z′ β(L−pj,qj; k) = |pj| K ! sign (pj) ˇq4∗p∗ jqj−3s∨(qj,pj)ˇq−4∗p∗ jqjβ2 ˇq−2∗p∗ jβ −ˇq2∗p∗ j β ˇq−2∗−ˇq2∗ (4.37) and Z′(X; k) = i 2 √ K ei π 4 κ sign( H P )eiπ 3 4 K−2 K sign( H P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-front-matter-page-28",
+      "number": null,
+      "title": "Front matter (page 28)",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "limǫ",
+          "heading": false
+        },
+        {
+          "term": "preexponential",
+          "heading": false
+        }
+      ],
+      "extract": "= 2 ˇq−2∗−ˇq2∗ X n∈Λ Cn X′ −K≤β≤K β∈2ZZ+1 ˇq−4∗P ∗Hβ2(ˇq−2∗(n+1)β −ˇq−2∗(n−1)β) = 2 √ K \u0012P ∗H K \u0013 ei π 4 (κ−1) X n∈Λ Cn ˇq4∗P H∗(n+1)2 −ˇq4∗P H∗(n−1)2 ˇq−2∗−ˇq2∗ = 2 √ K \u0012P ∗H K \u0013 ei π 4 (κ−1) X n∈Λ Cnˇq4∗P H∗(n2+1) ˇq2∗P H∗n −ˇq−2∗P H∗n ˇq−2∗−ˇq2∗ . Combining eqs. (4.38) and (4.42) we ﬁnd the formula Z′(X; k) = |H| K ! sign (H) ˇq4∗P ∗H−3·4∗sign( H P )−3PN j=1 s∨(qj,pj) (4.43) × X n∈Λ Cnq4∗P H∗(n2+1) ˇq−2∗P H∗n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-front-matter-page-29",
+      "number": null,
+      "title": "Front matter (page 29)",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinn",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "witten invariant",
+          "heading": false
+        },
+        {
+          "term": "legitimization",
+          "heading": false
+        },
+        {
+          "term": "chances",
+          "heading": false
+        }
+      ],
+      "extract": "gaussian exponential ˇq− β2 4P H∗. This procedure leads to the following relation: [I(ˇq)]⋄=   1 ˇq2∗−ˇq−2∗ ei π 4 sign( H P ) 2 √ 2K s H P +∞ Z −∞ [β=0] dβ ˇq−1 4 H P β2 QN j=1 \u0012 ˇq −β 2pj −ˇq β 2pj \u0013 \u0010 ˇq−β 2 −ˇq β 2 \u0011N−2   ∨ (4.49) =   1 q 2 K sin \u0010 π K \u0011 sign \u0010 H P \u0011 K ei 3 4π sign( H P ) s H P +∞ Z −∞ [β=0] dβ e−iπ 2K H P β2 QN j=1 sin \u0010 π K β pj \u0011 sinN−2 \u0010 π Kβ \u0011   ∨ . Since \u0014 ˇq4∗P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-front-matter-page-30",
+      "number": null,
+      "title": "Front matter (page 30)",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki order",
+          "heading": false
+        },
+        {
+          "term": "nλn",
+          "heading": false
+        },
+        {
+          "term": "nmn",
+          "heading": false
+        },
+        {
+          "term": "smn",
+          "heading": false
+        },
+        {
+          "term": "rhs",
+          "heading": false
+        }
+      ],
+      "extract": "tion 1.2 gives us enough information in order to derive eq. (1.23) in the form \" |H1(M, ZZ)| |H1(M, ZZ)| K ! Z′(M; k) #⋄ (5.1) = \u0014 |H1(M, ZZ)| 3 2 exp \u0012 (Sn(M) −Sn(S3)) \u0012iπ K \u0013n\u0013\u0015∨ . This also proves Ohtsuki’s Theorem 1.2, since we can deﬁne the invariants λn(M) by eq. (1.20). According to the comments of [7], [8], we may also conclude that Sn(M), as deﬁned by the surgery formula (1.27), are indeed invariants of M.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-front-matter-page-31",
+      "number": null,
+      "title": "Front matter (page 31)",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki order",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "trivial connection",
+          "heading": false
+        },
+        {
+          "term": "alternating",
+          "heading": false
+        },
+        {
+          "term": "non-zero",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        }
+      ],
+      "extract": "with only trivalent vertices. Then according to [18], for any Sn′(M), n′ < n the alternating sums are equal to zero X L′′⊂L′ (−1)#L′′Sn′(χL′′(M)) = 0, (5.6) if L′ ⊂L and #L′ ≥n′. Therefore an invariant Sn′(M) is of Ohtsuki order less than n′ with respect to L and its subdiagrams (of course, there exist other links for which the l.h.s. of eq. (5.6) is non-zero if #L′ = n′). As a result, only the term C0,...,0,1Sn(M)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-front-matter-page-32",
+      "number": null,
+      "title": "Front matter (page 32)",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phil",
+          "heading": false
+        },
+        {
+          "term": "thankful",
+          "heading": false
+        },
+        {
+          "term": "walker",
+          "heading": false
+        },
+        {
+          "term": "freed",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "camb",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements I am very thankful to J. Roberts for many stimulating discussions and for attracting my attention to the results of [5] and [6]. I also appreciate the numerous conversations with D. Freed, P. Freund, C. Gordon, L. Kauﬀman, N. Reshetikhin, A. Vaintrob, O. Viro, K. Walker and their comments. I am especially thankful to O. Alvarez, L. Mezincescu and R. Nepomechie for their constant encouragement and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preprint umtg",
+          "heading": false
+        },
+        {
+          "term": "preprint utms",
+          "heading": false
+        },
+        {
+          "term": "witten invariant",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "rozansky",
+          "heading": false
+        },
+        {
+          "term": "seifert manifolds",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "commun",
+          "heading": false
+        }
+      ],
+      "extract": "I am very thankful to J. Roberts for many stimulating discussions and for attracting my attention to the results of [5] and [6]. I also appreciate the numerous conversations with D. Freed, P. Freund, C. Gordon, L. Kauﬀman, N. Reshetikhin, A. Vaintrob, O. Viro, K. Walker and their comments. I am especially thankful to O. Alvarez, L. Mezincescu and R. Nepomechie for their constant encouragement and friendly support.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sign",
+      "heading": false
+    },
+    {
+      "term": "pjα jjα",
+      "heading": false
+    },
+    {
+      "term": "rational surgery",
+      "heading": false
+    },
+    {
+      "term": "surgery formula",
+      "heading": false
+    },
+    {
+      "term": "ohtsuki invariants",
+      "heading": false
+    },
+    {
+      "term": "polynomial invariant",
+      "heading": false
+    },
+    {
+      "term": "witten invariant",
+      "heading": false
+    },
+    {
+      "term": "link surgery",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "connection contribution",
+      "heading": false
+    },
+    {
+      "term": "ohtsuki order",
+      "heading": false
+    },
+    {
+      "term": "gaussian sum",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 33,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 33 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9504015v2"
+  }
+}

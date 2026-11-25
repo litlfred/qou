@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0703096v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "KNOTS From combinatorics of knot diagrams to combinatorial topology based on knots",
+      "dcterms:creator": [
+        "Warszawa",
+        "30, November",
+        "Bethesda, 1984 –",
+        "3, March",
+        "2007"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0703096",
+      "dcterms:source": "library/arxiv-math-0703096v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0703096v1"
+    }
+  ]
+}

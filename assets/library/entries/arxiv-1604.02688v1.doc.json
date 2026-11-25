@@ -1,0 +1,2713 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1604.02688v1",
+  "title": "arxiv-1604.02688v1",
+  "variant": "pdf",
+  "pages": 57,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "The tetrahedral index",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-tetrahedral-index"
+    },
+    {
+      "level": 1,
+      "title": "Notation and conventions for triangulated 3-manifolds",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-notation-and-conventions-for-triangulated-3-ma"
+    },
+    {
+      "level": 2,
+      "title": "Gluing equations",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-31-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Generalised angle structures",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-32-generalised-angle-structures"
+    },
+    {
+      "level": 1,
+      "title": "The 3D-index of an ideal triangulation",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-the-3d-index-of-an-ideal-triangulation"
+    },
+    {
+      "level": 1,
+      "title": "Dependence on the choice of triangulation",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-dependence-on-the-choice-of-triangulation"
+    },
+    {
+      "level": 1,
+      "title": "Some Q-normal surface theory",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-6-some-q-normal-surface-theory"
+    },
+    {
+      "level": 2,
+      "title": "Construction of spun normal surfaces",
+      "number": "6.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-61-construction-of-spun-normal-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Geometric generators for Q-normal classes",
+      "number": "6.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-62-geometric-generators-for-q-normal-classes"
+    },
+    {
+      "level": 1,
+      "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-7-combinatorics-of-ideal-triangulations-and-inte"
+    },
+    {
+      "level": 2,
+      "title": "Geometric generators for integer Q-normal classes",
+      "number": "7.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-71-geometric-generators-for-integer-q-normal-cla"
+    },
+    {
+      "level": 1,
+      "title": "The 3D-index via normal surfaces",
+      "number": "8",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-8-the-3d-index-via-normal-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of the index sum",
+      "number": "8.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-81-convergence-of-the-index-sum"
+    },
+    {
+      "level": 2,
+      "title": "Non 1-efficient ideal triangulations",
+      "number": "8.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-82-non-1-efficient-ideal-triangulations"
+    },
+    {
+      "level": 1,
+      "title": "Invariance under 2-3 and 0-2 moves",
+      "number": "9",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-9-invariance-under-2-3-and-0-2-moves"
+    },
+    {
+      "level": 1,
+      "title": "Generalised normal surfaces",
+      "number": "10",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-10-generalised-normal-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Generalised normal and spun normal surfaces",
+      "number": "10.1",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-101-generalised-normal-and-spun-normal-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Degrees of index terms",
+      "number": "10.2",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-102-degrees-of-index-terms"
+    },
+    {
+      "level": 2,
+      "title": "Normalisation and barriers",
+      "number": "10.3",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-103-normalisation-and-barriers"
+    },
+    {
+      "level": 1,
+      "title": "Some examples",
+      "number": "11",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-11-some-examples"
+    },
+    {
+      "level": 2,
+      "title": "Solid torus",
+      "number": "11.1",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-111-solid-torus"
+    },
+    {
+      "level": 2,
+      "title": "Trefoil complement",
+      "number": "11.2",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-112-trefoil-complement"
+    },
+    {
+      "level": 2,
+      "title": "T2 I",
+      "number": "11.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A toroidal example",
+      "number": "11.4",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-114-a-toroidal-example"
+    },
+    {
+      "level": 2,
+      "title": "m009",
+      "number": "11.5",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-115-m009"
+    },
+    {
+      "level": 1,
+      "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+      "number": "12",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-12-notes-on-connectedness-of-the-1-efficient-pac"
+    },
+    {
+      "level": 2,
+      "title": "A census of ideal triangulations",
+      "number": "12.1",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-121-a-census-of-ideal-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Two tetrahedron ideal triangulations",
+      "number": "12.2",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-122-two-tetrahedron-ideal-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Angle Structures, 1-efficiency and Pachner moves",
+      "number": "12.3",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-123-angle-structures-1-efficiency-and-pachner-mo"
+    },
+    {
+      "level": 2,
+      "title": "Connected components of normal surfaces",
+      "number": "12.4",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-124-connected-components-of-normal-surfaces"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-appendix-a-generalised-angle-structures-and-the"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Euler characteristic from generalised angle structures",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-a1-euler-characteristic-from-generalised-angle-s"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised normal",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "generalised angle",
+          "heading": false
+        },
+        {
+          "term": "q-normal classes",
+          "heading": false
+        },
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "d-index",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        }
+      ],
+      "extract": "THE 3D-INDEX AND NORMAL SURFACES STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN, AND J. HYAM RUBINSTEIN Abstract. Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series in q1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1604.02688v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "efficient triangulations",
+          "heading": false
+        },
+        {
+          "term": "d-index",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "dgg",
+          "heading": false
+        },
+        {
+          "term": "moves",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "Recently, the physicists Dimofte, Gaiotto and Gukov \\cite{DGG1,DGG2} introduced a powerful new invariant for a compact orientable 3-manifold $M$ with non-empty boundary $\\bd M$ consisting of tori, called the \\emph{3D-index}. This invariant arises from a gauge theory with $N=2$ supersymmetry under a low energy limit, and seems to contain a great deal of information about the geometry and topology of the manifold. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "australian",
+          "heading": false
+        },
+        {
+          "term": "grant",
+          "heading": false
+        },
+        {
+          "term": "tudor",
+          "heading": false
+        }
+      ],
+      "extract": "The first author is partially supported by National Science Foundation Grant DMS-14-06419. The last three authors are partially supported by Australian Research Council Discovery Grant DP130103694. The authors wish to thank Tudor Dimofte and Henry Segerman for useful discussions related to this paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-2-the-tetrahedral-index",
+      "number": "2",
+      "title": "The tetrahedral index",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedral index",
+          "heading": true
+        },
+        {
+          "term": "plus tets",
+          "heading": false
+        },
+        {
+          "term": "cite gar",
+          "heading": false
+        },
+        {
+          "term": "c-m",
+          "heading": false
+        },
+        {
+          "term": "b-m",
+          "heading": false
+        },
+        {
+          "term": "c-a",
+          "heading": false
+        },
+        {
+          "term": "a-m",
+          "heading": false
+        },
+        {
+          "term": "b-c",
+          "heading": false
+        }
+      ],
+      "extract": "The index for a triangulation is built up from the \\emph{tetrahedron index} $\\ID \\colon \\mathbb{Z}^2\\rightarrow \\mathbb{Z}[[q^\\frac{1}{2}]]$, defined for $m,e \\in \\Z$ by \\be \\ID(m,e)(q)=\\sum^{\\infty}_{n=\\max\\{0,-e\\}}(-1)^n \\frac{q^{\\frac{1}{2}n(n+1)-(n+\\frac{1}{2}e)m}}{(q)_n(q)_{n+e}} \\label{ID_def} \\ee where $(q)_n=\\Pi_{i=1}^{n}(1-q^i)$ is the $q$-Pochhammer symbol (by convention $(q)_0=1$). The index coincides",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-notation-and-conventions-for-triangulated-3-ma",
+      "number": "3",
+      "title": "Notation and conventions for triangulated 3-manifolds",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conventions",
+          "heading": true
+        },
+        {
+          "term": "tri",
+          "heading": false
+        },
+        {
+          "term": "tetrahedra",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we will observe the following conventions and notation. Let $M$ be a compact orientable 3-manifold with boundary consisting of $r$ tori. Let $\\tri$ be an ideal triangulation of $\\text{int} M$ with $n$ ideal tetrahedra $\\sigma_j$, (i.e. tetrahedra with their vertices removed). Then there are also $n$ edge classes, since $\\chi(M)=0$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-31-gluing-equations",
+      "number": "3.1",
+      "title": "Gluing equations",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "cusp equations",
+          "heading": false
+        },
+        {
+          "term": "eqns sum",
+          "heading": false
+        },
+        {
+          "term": "thurston gluing",
+          "heading": false
+        },
+        {
+          "term": "edges opposite",
+          "heading": false
+        },
+        {
+          "term": "label log",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral parameters",
+          "heading": false
+        },
+        {
+          "term": "edgesandquad",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gluing_eqn_sect} We now briefly describe how to encode the combinatorics of a triangulation contained in Thurston's gluing equations (compare \\cite[Chapter 4]{Th}), while also including notation for normal disks in a tetrahedron. First, in each tetrahedron there are three pairs of opposite edges, which are disjoint from the three quadrilateral disks from normal surface theory. We label these quadrilaterals by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-generalised-angle-structures",
+      "number": "3.2",
+      "title": "Generalised angle structures",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised angle",
+          "heading": true
+        },
+        {
+          "term": "ang struct",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "quads",
+          "heading": false
+        },
+        {
+          "term": "label ang",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{angle_struct_sect} Considering the imaginary parts of above gluing equations allows us to define an angle structure on the triangulation. If we define $\\quads$ to be the set of quad types in a triangulation $\\T$, then a \\emph{generalised angle structure} on $\\T$ is a function $\\alpha : \\quads \\to \\R$ which assigns an ``angle'' $\\alpha(q) \\in \\R$ to the pair of edges opposite a quad $q$ and satisfies the set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-the-3d-index-of-an-ideal-triangulation",
+      "number": "4",
+      "title": "The 3D-index of an ideal triangulation",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal triangulation",
+          "heading": true
+        },
+        {
+          "term": "d-index",
+          "heading": true
+        },
+        {
+          "term": "hline edge",
+          "heading": false
+        },
+        {
+          "term": "n-r sum",
+          "heading": false
+        },
+        {
+          "term": "q-q ldots",
+          "heading": false
+        },
+        {
+          "term": "triangulation tri",
+          "heading": false
+        },
+        {
+          "term": "emph d-index",
+          "heading": false
+        },
+        {
+          "term": "n-r subset",
+          "heading": false
+        }
+      ],
+      "extract": "Using the notation from the previous section, we now give a definition of the 3D-index of an ideal triangulation $\\tri$ as formulated in \\cite[section 4.7]{GHRS}. Given $\\kk =(k_1, \\ldots, k_n)\\in \\Z^n$, we can assign an integer weight $k_i$ to the $i$th edge class. Effectively, this also gives a weight on each edge of each tetrahedron $\\sigma_j$ in $\\CT$. Let $a_j(\\kk), b_j(\\kk), c_j(\\kk)$ be the sums of weights",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-dependence-on-the-choice-of-triangulation",
+      "number": "5",
+      "title": "Dependence on the choice of triangulation",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "efficient triangulations",
+          "heading": false
+        },
+        {
+          "term": "triangulation tri",
+          "heading": false
+        },
+        {
+          "term": "embedded normal",
+          "heading": false
+        },
+        {
+          "term": "define tri",
+          "heading": false
+        },
+        {
+          "term": "normal disk",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "figures moves",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "Physics predicts that the 3D-index as defined above should give a {\\em topological invariant} of the underlying manifold $M$, but this is not known in general. The first difficulty is that the summation in (\\ref{JD_index_eq}) need not even converge (as a formal power series) for all ideal triangulations $\\tri$. But the good triangulations can be characterised using normal surface theory. Given a triangulation $\\tri$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-some-q-normal-surface-theory",
+      "number": "6",
+      "title": "Some Q-normal surface theory",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        },
+        {
+          "term": "quad coordinates",
+          "heading": false
+        },
+        {
+          "term": "quad types",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "matching equations",
+          "heading": false
+        },
+        {
+          "term": "cale",
+          "heading": false
+        },
+        {
+          "term": "general position",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we discuss surfaces in general position with respect to an ideal triangulation. This discussion is similar to the one of Haken who studied and encoded normal surfaces in general position with respect to a triangulation of a closed 3-manifold. A major difference is that amongst surfaces in general position with respect to an ideal triangulation is the class of embedded spun normal surfaces (a concept",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-61-construction-of-spun-normal-surfaces",
+      "number": "6.1",
+      "title": "Construction of spun normal surfaces",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spun normal",
+          "heading": true
+        },
+        {
+          "term": "figures shear",
+          "heading": false
+        },
+        {
+          "term": "shearing tet",
+          "heading": false
+        },
+        {
+          "term": "shear parameters",
+          "heading": false
+        },
+        {
+          "term": "normal arcs",
+          "heading": false
+        },
+        {
+          "term": "arc patterns",
+          "heading": false
+        },
+        {
+          "term": "cite duga",
+          "heading": false
+        },
+        {
+          "term": "q-matching equations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{spun_normal_construction} Next we give a brief exposition of the construction of a spun normal surface from solutions to the Q-matching equations following \\cite{DuGa} and \\cite{Ti}. (This approach goes back to lectures of W. Thurston and was used by J. Weeks in SnapPea.) For a spun normal surface, there is a fixed pattern of normal arcs in each ideal triangle, consisting of three infinite families of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-62-geometric-generators-for-q-normal-classes",
+      "number": "6.2",
+      "title": "Geometric generators for Q-normal classes",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "peripheral solutions",
+          "heading": false
+        },
+        {
+          "term": "begin vmatrix",
+          "heading": false
+        },
+        {
+          "term": "end vmatrix",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        },
+        {
+          "term": "n-r edge",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron solutions",
+          "heading": false
+        },
+        {
+          "term": "normal surface",
+          "heading": false
+        }
+      ],
+      "extract": "The work of Kang-Rubinstein \\cite[Theorem 2.1]{KR1} (also see Luo-Tillmann \\cite[\\sect2]{LT}) shows that the space $\\tilde N(\\T;\\R) \\subset \\R^{7n}$ of all {\\em closed normal classes} satisfying Haken's matching equations (including, for example, the boundary tori) has a basis given by {\\em edge solutions} $\\tilde E_i$ and {\\em tetrahedron solutions} $\\tilde T_j$ where $1\\le i ,j \\le n$. These project to {\\em edge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-7-combinatorics-of-ideal-triangulations-and-inte",
+      "number": "7",
+      "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal surface",
+          "heading": true
+        },
+        {
+          "term": "quads cong",
+          "heading": false
+        },
+        {
+          "term": "subset quads",
+          "heading": false
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "overline quads",
+          "heading": false
+        },
+        {
+          "term": "twisted octagon",
+          "heading": false
+        },
+        {
+          "term": "quads denote",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ZNST} The work of Kang-Rubinstein and Luo-Tillmann, described above, shows that the edge solutions and tetrahedral solutions span the real vector space $N(\\T;\\R) \\subset \\R^{3n}$ of closed normal classes, and that these together with the peripheral curve solutions span the real vector space $Q(\\T;\\R) \\subset \\R^{3n}$ of all $Q$-normal classes. However, over the integers the situation is more subtle --- the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-71-geometric-generators-for-integer-q-normal-cla",
+      "number": "7.1",
+      "title": "Geometric generators for integer Q-normal classes",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal class",
+          "heading": false
+        },
+        {
+          "term": "normal arc",
+          "heading": false
+        },
+        {
+          "term": "normal classes",
+          "heading": false
+        },
+        {
+          "term": "closed normal",
+          "heading": false
+        },
+        {
+          "term": "begin rmk",
+          "heading": false
+        },
+        {
+          "term": "normal surface",
+          "heading": false
+        },
+        {
+          "term": "end rmk",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsect:gen_q_normal} Next we describe explicit generators for $N(\\T;\\Z)$. First, recall that $Q_0(\\T;\\Z) = \\EE +\\TT$ is generated by the edge solutions and tetrahedral solutions described by Kang-Rubinstein \\cite{KR1}. It follows from Theorem \\ref{ZQNT_struct_thm} and the previous remark that $$ N(\\T;\\Z)/Q_0(\\T;\\Z) \\cong \\Im H_0 \\cong H^1(\\hat M; \\Z/2\\Z). $$ Given a mod 2 class $a \\in \\Im H_0 = \\Im (",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-8-the-3d-index-via-normal-surfaces",
+      "number": "8",
+      "title": "The 3D-index via normal surfaces",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal surfaces",
+          "heading": true
+        },
+        {
+          "term": "cite ghrs",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        },
+        {
+          "term": "d-index",
+          "heading": true
+        },
+        {
+          "term": "n-r",
+          "heading": false
+        },
+        {
+          "term": "textstyle sum",
+          "heading": false
+        },
+        {
+          "term": "begin rmk",
+          "heading": false
+        },
+        {
+          "term": "end rmk",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:index_via_normal_surfaces} We first extend the tetrahedral index $J_\\Delta$ to a function $J: \\Z^{3n} \\to \\Z((q^{1/2}))$ by defining \\be J(a_1, b_1, c_1, a_2, b_2, c_2, \\ldots , a_n, b_n, c_n) = \\prod_{j=1}^n \\JD(a_j,b_j,c_j), \\ee and for each $Q$-normal class $S \\in Q(\\T;\\Z)$ we define \\be I(S)= (-q^{1/2})^{-\\chi(S)} J(S), \\ee where $\\chi$ is the formal Euler characteristic. Then $I(S)$ is unchanged by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-81-convergence-of-the-index-sum",
+      "number": "8.1",
+      "title": "Convergence of the index sum",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index sum",
+          "heading": true
+        },
+        {
+          "term": "spun efficient",
+          "heading": false
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "klein bottle",
+          "heading": false
+        },
+        {
+          "term": "embedded spun",
+          "heading": false
+        },
+        {
+          "term": "index cgce",
+          "heading": false
+        },
+        {
+          "term": "solid klein",
+          "heading": false
+        },
+        {
+          "term": "efficient ideal",
+          "heading": false
+        }
+      ],
+      "extract": "To understand the convergence of the index sum (as a formal Laurent series) we need to examine the lowest degree of the terms in this sum. Given any coset $[S]=S+ \\TT$, we can choose its ``minimal non-negative coset representative'' $S^*$. Explicitly, given $$ S=(a_1, b_1, c_1, a_2, b_2, c_2, \\ldots , a_n, b_n, c_n) \\in Q(\\T;\\Z) $$ we have $$ S^*=(a^*_1, b^*_1, c^*_1, a^*_2, b^*_2, c^*_2, \\ldots , a^*_n, b^*_n,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-82-non-1-efficient-ideal-triangulations",
+      "number": "8.2",
+      "title": "Non 1-efficient ideal triangulations",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-normal class",
+          "heading": false
+        },
+        {
+          "term": "cgce",
+          "heading": false
+        },
+        {
+          "term": "contain q-normal",
+          "heading": false
+        },
+        {
+          "term": "normal surface",
+          "heading": false
+        },
+        {
+          "term": "index sum",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "efficient",
+          "heading": true
+        }
+      ],
+      "extract": "When the triangulation $\\T$ is not 1-efficient, it turns out that the series $I_\\T^a(b)$ may converge for some $b \\ne {\\bf 0}$ even when the series $I_\\T^0(0)$ diverges. See Example \\ref{toroidal_ex} below. The following result gives an obstruction to convergence. \\begin{lemma} Assume that an ideal triangulation $\\T$ contains a Q-normal class $S \\in Q(\\T;\\Z_+)$ with $[S]_2=a$ and $\\bd S$ satisfying $[\\bd S]=b$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-9-invariance-under-2-3-and-0-2-moves",
+      "number": "9",
+      "title": "Invariance under 2-3 and 0-2 moves",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ghrs",
+          "heading": false
+        },
+        {
+          "term": "normal arcs",
+          "heading": false
+        },
+        {
+          "term": "tilde omega",
+          "heading": false
+        },
+        {
+          "term": "class tilde",
+          "heading": false
+        },
+        {
+          "term": "oriented normal",
+          "heading": false
+        },
+        {
+          "term": "let tilde",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral solutions",
+          "heading": false
+        },
+        {
+          "term": "combination omega",
+          "heading": false
+        }
+      ],
+      "extract": "The arguments of \\cite{GHRS} extend easily to prove the following. \\begin{thm} Let $\\CT$ be an ideal triangulation of $M$ and let $\\tilde \\CT$ be obtained from $\\CT$ by a 2-3 move. Then for all $a,b$ as above, $I_{\\CT}^a(b)=I_{\\tilde\\CT}^a(b)$ provided both sides are defined. \\end{thm} \\begin{proof} We follow the argument from \\cite[Theorem A.1]{GHRS}, indicating the main changes needed in the current setting.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-10-generalised-normal-surfaces",
+      "number": "10",
+      "title": "Generalised normal surfaces",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal surfaces",
+          "heading": true
+        },
+        {
+          "term": "generalised normal",
+          "heading": true
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "surface theory",
+          "heading": false
+        },
+        {
+          "term": "haken",
+          "heading": false
+        },
+        {
+          "term": "disks",
+          "heading": false
+        },
+        {
+          "term": "tails",
+          "heading": false
+        },
+        {
+          "term": "immersed",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gen_normal_surfaces} {\\em Embedded normal surfaces} were introduced by Kneser \\cite{Kn} in 1929. In the 1950s and 1960s, Haken \\cite{Ha1,Ha2,Ha3} extensively developed the theory of normal surfaces (via handle decompositions and also via triangulations) and applied this to basic algorithmic questions in topology. The solutions to Haken's matching equations include {\\em branched} and {\\em immersed} normal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-101-generalised-normal-and-spun-normal-surfaces",
+      "number": "10.1",
+      "title": "Generalised normal and spun normal surfaces",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 1167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised normal",
+          "heading": true
+        },
+        {
+          "term": "generalised spun",
+          "heading": true
+        },
+        {
+          "term": "normal surfaces",
+          "heading": true
+        },
+        {
+          "term": "quadrilateral normal",
+          "heading": false
+        },
+        {
+          "term": "normal disks",
+          "heading": false
+        },
+        {
+          "term": "embedded generalised",
+          "heading": false
+        },
+        {
+          "term": "quadrilateral curves",
+          "heading": false
+        },
+        {
+          "term": "triangular normal",
+          "heading": false
+        }
+      ],
+      "extract": "Firstly, we discuss normal curve theory (with real coefficients) on the 2-sphere equipped with its four simplex triangulation as the boundary of a tetrahedron $\\Delta^3$. We just recall the key points (see \\cite[Section 3.2]{Ma2} for a detailed exposition). \\begin{itemize} \\item There are $12$ normal arc types in $\\partial \\Delta^3$ and so normal curves are defined by non-negative integer vectors in $\\R^{12}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-102-degrees-of-index-terms",
+      "number": "10.2",
+      "title": "Degrees of index terms",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin rmk",
+          "heading": false
+        },
+        {
+          "term": "end rmk",
+          "heading": false
+        },
+        {
+          "term": "generalised normal",
+          "heading": false
+        },
+        {
+          "term": "ith tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "formal euler",
+          "heading": false
+        },
+        {
+          "term": "embedded generalised",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "gcd",
+          "heading": false
+        }
+      ],
+      "extract": "Recall, from equation (\\ref{index_deg_surface}), that the $q^{1/2}$-degree of a term $I([S])$ in the $q$-series for the 3D-index is given by the expression $$ d(S)=d(S^*) =-\\chi(S^*) +\\delta(S^*), $$ where $S^*$ is the minimal positive coset representative for $[S]=S+\\TT$. Then $S^*$ is a normal class with at most two quadrilateral types in each tetrahedron, and $$ d(S^*)=-\\chi(S^*) +\\sum_i p_iq_i, $$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-103-normalisation-and-barriers",
+      "number": "10.3",
+      "title": "Normalisation and barriers",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 35,
+      "labelStart": "30",
+      "labelEnd": "35",
+      "words": 2407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised normal",
+          "heading": false
+        },
+        {
+          "term": "non-peripheral normal",
+          "heading": false
+        },
+        {
+          "term": "embedded generalised",
+          "heading": false
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "torus tilde",
+          "heading": false
+        },
+        {
+          "term": "surface tilde",
+          "heading": false
+        },
+        {
+          "term": "norm surf",
+          "heading": false
+        },
+        {
+          "term": "normal sphere",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{barriers} There is a well-known procedure going back to Kneser \\cite{Kn} for `normalisation' of an embedded closed surface $S$ in a triangulation $\\T$ of a manifold $M$. We can assume initially that the surface $S$ is transverse to the triangulation.There are five basic moves: \\begin{enumerate} \\item Compress $S$ along an embedded disk $D$ in the interior of a tetrahedron $\\D$, which meets $S$ in $C=\\partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-11-some-examples",
+      "number": "11",
+      "title": "Some examples",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we give some examples of index computations for ideal triangulations with 2 tetrahedra, taken from the census of triangulations described in Section \\ref{PachnerGraph} below.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-111-solid-torus",
+      "number": "11.1",
+      "title": "Solid torus",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solid torus",
+          "heading": true
+        },
+        {
+          "term": "d-index",
+          "heading": false
+        },
+        {
+          "term": "bmatrix",
+          "heading": false
+        },
+        {
+          "term": "cmcabbgds",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{solid_torus_ex} The (open) solid torus has a 1-efficient triangulation $\\T$ by 2 tetrahedra with isomorphism signature `cMcabbgds', and gluing equation/holonomy coefficient matrix (from SnapPy) given by: $$\\begin{bmatrix} 2 & 1 & 2 & 2 & 2 & 2 \\\\ 0 & 1 & 0 & 0&0&0\\\\ 0 & 1 & 0 & 0 & -1 & 0\\\\ 0 & 1 & 0 & 0 & 0& 2 \\end{bmatrix}$$ (Here the peripheral curves $\\mu,\\lambda$ correspond to the meridian and longitude",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-112-trefoil-complement",
+      "number": "11.2",
+      "title": "Trefoil complement",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum ell",
+          "heading": false
+        },
+        {
+          "term": "trefoil",
+          "heading": true
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "bmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{trefoil_ex} The right-handed trefoil complement (`L103001' in SnapPy) has a 2-tetrahedron triangulation $\\T$ with gluing equation/holonomy coefficients given by: $$ \\begin{bmatrix} 1 & 2 & 2 & 2 & 1 & 2 \\\\ 1 & 0 & 0 & 0&1&0\\\\ 0 & 0 & -1 & 1 & 0 & 0\\\\ 1 & 0 & -4 & 4 & -1 & 0 \\end{bmatrix} $$ Hence, summing over edge 2, the 3D-index is \\begin{align*} I_\\T(x \\mu + y \\lambda) &= \\sum_{k \\in \\Z}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-114-a-toroidal-example",
+      "number": "11.4",
+      "title": "A toroidal example",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar lambda",
+          "heading": false
+        },
+        {
+          "term": "sfs",
+          "heading": false
+        },
+        {
+          "term": "toroidal",
+          "heading": true
+        },
+        {
+          "term": "bmatrix",
+          "heading": false
+        },
+        {
+          "term": "cpcbbbdei",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{toroidal_ex} The 2-tetrahedron ideal triangulation $\\T$ with isomorphism signature `cPcbbbdei' is not 1-efficient. In fact it gives a manifold containing an incompressible torus which splits the manifold in two Seifert fibres pieces $SFS[D^2(2,1)(3,1)]$ and $SFS[A^2(2,1)]$. The gluing equation/holonomy coefficients (from SnapPy) are given by: $$ \\begin{bmatrix} 1 & 1 & 0 & 1 & 0 & 1 \\\\ 1 & 1 & 2 & 1&2&1\\\\ 0 &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-115-m009",
+      "number": "11.5",
+      "title": "m009",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "item frac",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "cong times",
+          "heading": false
+        },
+        {
+          "term": "edge coefficients",
+          "heading": false
+        },
+        {
+          "term": "giving begin",
+          "heading": false
+        },
+        {
+          "term": "chi",
+          "heading": false
+        }
+      ],
+      "extract": "The manifold $X=m009$ is the first orientable cusped manifold in the SnapPea census with non-peripheral $\\Z/2\\Z$ homology. It has a triangulation using 3 tetrahedra with gluing equation/holonomy coefficients $E_0,E_1,E_2,M,L$ (from SnapPy) given by: $$ \\begin{bmatrix} 2 & 0 & 0 & 2 & 1 & 0 & 2 & 1 & 0\\\\ 0 & 2 & 0 & 0 & 0 & 2 & 0 & 0 & 2\\\\ 0 & 0 & 2 & 0 & 1 & 0 & 0 & 1 & 0\\\\ 0 & -1& 1 & 0 & 1 & -1& 0 & 0 & -1\\\\ -1 &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-12-notes-on-connectedness-of-the-1-efficient-pac",
+      "number": "12",
+      "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 1173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "efficient pachner",
+          "heading": true
+        },
+        {
+          "term": "pachner graph",
+          "heading": true
+        },
+        {
+          "term": "taut angle",
+          "heading": false
+        },
+        {
+          "term": "efficient triangulations",
+          "heading": false
+        },
+        {
+          "term": "taut ideal",
+          "heading": false
+        },
+        {
+          "term": "seifert fibre",
+          "heading": false
+        },
+        {
+          "term": "admit taut",
+          "heading": false
+        },
+        {
+          "term": "seifert fibred",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{PachnerGraph} In this section we study the \\emph{Pachner graph} for a compact orientable 3-manifold $M$ with non-empty boundary consisting of tori. This is a graph where each vertex corresponds to an ideal triangulation (up to the equivalence of relabelling) of the manifold $M$, with an edge connecting two vertices if their corresponding triangulations can be obtained from one another via 2-3 or 3-2 Pachner",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-121-a-census-of-ideal-triangulations",
+      "number": "12.1",
+      "title": "A census of ideal triangulations",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal triangulations",
+          "heading": true
+        },
+        {
+          "term": "taut records",
+          "heading": false
+        },
+        {
+          "term": "efficient hline",
+          "heading": false
+        },
+        {
+          "term": "tabular hline",
+          "heading": false
+        },
+        {
+          "term": "admitting taut",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "seifert fibred",
+          "heading": false
+        },
+        {
+          "term": "times fillings",
+          "heading": false
+        }
+      ],
+      "extract": "These examples were obtained by first compiling a list of all ideal triangulations with at most six tetrahedra using Regina's {\\tt tricensus} function. Then it was determined if these triangulations were solid tori. Of the remaining triangulations, we then (i) determined their irreducibility and (ii) checked for incompressible tori and Klein bottles. The first condition was checked using a light adaptation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-122-two-tetrahedron-ideal-triangulations",
+      "number": "12.2",
+      "title": "Two tetrahedron ideal triangulations",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "44",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yes hline",
+          "heading": false
+        },
+        {
+          "term": "tabular hline",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": true
+        },
+        {
+          "term": "hline cmcabbgds",
+          "heading": false
+        },
+        {
+          "term": "move hline",
+          "heading": false
+        },
+        {
+          "term": "end hline",
+          "heading": false
+        },
+        {
+          "term": "efficient path",
+          "heading": false
+        },
+        {
+          "term": "pachner path",
+          "heading": false
+        }
+      ],
+      "extract": "Up to relabelling, there are 10 triangulations of orientable cusped 3-manifolds that decompose into two tetrahedra, and these 10 triangulations correspond to seven manifolds up to homeomorphism. The relevant data are presented in Table \\ref{tab:twoTetCensus}. \\begin{table}[ht] \\begin{tabular}{|c|c|c|} \\hline signature & name & 1-efficient\\\\ \\hline \\hline cMcabbgds & {\\bf $S^1\\times D^2$} & Yes\\\\ \\hline cMcabbgij",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-123-angle-structures-1-efficiency-and-pachner-mo",
+      "number": "12.3",
+      "title": "Angle Structures, 1-efficiency and Pachner moves",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pachner moves",
+          "heading": true
+        },
+        {
+          "term": "angle",
+          "heading": true
+        },
+        {
+          "term": "strict angle",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "efficiency",
+          "heading": true
+        },
+        {
+          "term": "belt",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        }
+      ],
+      "extract": "A natural question is how are various properties of triangulations related by Pachner moves. Throughout this section, $\\T_n$ will be a triangulation with $n$ tetrahedra, $f$ will be a face in this triangulation that identifies two distinct tetrahedra $t_{f,1}$ and $t_{f,2}$, and $\\T_{n+1,f}$ will be the result of performing a 2-3 move along the face $f$. If we call the pairs of edges incident to $f$ in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-124-connected-components-of-normal-surfaces",
+      "number": "12.4",
+      "title": "Connected components of normal surfaces",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 50,
+      "labelStart": "45",
+      "labelEnd": "50",
+      "words": 1764,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal surfaces",
+          "heading": true
+        },
+        {
+          "term": "normal discs",
+          "heading": false
+        },
+        {
+          "term": "embedded normal",
+          "heading": false
+        },
+        {
+          "term": "immersed normal",
+          "heading": false
+        },
+        {
+          "term": "normal disk",
+          "heading": false
+        },
+        {
+          "term": "surface pieces",
+          "heading": false
+        },
+        {
+          "term": "normal arc",
+          "heading": false
+        },
+        {
+          "term": "efficient triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "In Figure \\ref{fig:twoThreeBipyramid}, there are two bipyramids related by a 2-3 move, one with two tetrahedra which we call $\\BTwo$ and one with three tetrahedra which we call $\\BThree$. We will also think of these as subsets of two triangulations related by a 2-3 move, $\\T_n$ and $\\T_{n+1,f}$ where $f$ is face identified in $\\BTwo$. In this discussion, we assume that the exterior faces of $\\BTwo$ are not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-appendix-a-generalised-angle-structures-and-the",
+      "number": null,
+      "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised angle",
+          "heading": true
+        },
+        {
+          "term": "angle structures",
+          "heading": true
+        },
+        {
+          "term": "xiei yjtj",
+          "heading": false
+        },
+        {
+          "term": "peripheral rotational",
+          "heading": false
+        },
+        {
+          "term": "rotational holonomy",
+          "heading": false
+        },
+        {
+          "term": "vanishing peripheral",
+          "heading": false
+        },
+        {
+          "term": "peripheral curve",
+          "heading": false
+        },
+        {
+          "term": "thurston logarithmic",
+          "heading": false
+        }
+      ],
+      "extract": "The relationship between angle structures and geometric structures is often described by saying that a generalised angle structure is a solution to the “linear part” of Thurston’s gluing equations (see [Thu77, §4]). However, often this simpliﬁcation involves only considering the edge equations, as in [LT08]. For the discussion below, we will pay special attention to the completeness conditions coming from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-a1-euler-characteristic-from-generalised-angle-s",
+      "number": null,
+      "title": "A.1. Euler characteristic from generalised angle structures",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 55,
+      "labelStart": "51",
+      "labelEnd": "55",
+      "words": 1618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised angle",
+          "heading": true
+        },
+        {
+          "term": "euler characteristic",
+          "heading": true
+        },
+        {
+          "term": "angle structures",
+          "heading": true
+        },
+        {
+          "term": "spun normal",
+          "heading": false
+        },
+        {
+          "term": "peripheral rotational",
+          "heading": false
+        },
+        {
+          "term": "pkmk qklk",
+          "heading": false
+        },
+        {
+          "term": "embedded spun",
+          "heading": false
+        },
+        {
+          "term": "atz",
+          "heading": false
+        }
+      ],
+      "extract": "shows how to compute the Euler characteristic of an embedded spun normal surface using 52 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN, AND J. HYAM RUBINSTEIN any generalised angle structure. This result is well-known for closed normal surfaces; see for example [LT08, Lemma 15]. Proposition A.3. Let T be an ideal triangulation of a cusped 3-manifold M, and let α : □→R be a generalised angle structure on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 57,
+      "labelStart": "55",
+      "labelEnd": "57",
+      "words": 885,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        },
+        {
+          "term": "ensil kang",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "eﬃcient triangulations",
+          "heading": false
+        },
+        {
+          "term": "stephan tillmann",
+          "heading": false
+        },
+        {
+          "term": "bruno martelli",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        }
+      ],
+      "extract": "[Bac] David Bachman, Normalizing topologically minimal surfaces ii: Disks, arXiv:1210.4574, Preprint 2012. [Ber91] John Berge, The knots in D2 × S1 which have nontrivial Dehn surgeries that yield D2 × S1, Topology Appl. 38 (1991), no. 1, 1–19. [BP97] Riccardo Benedetti and Carlo Petronio, Branched standard spines of 3-manifolds, Lecture Notes in Mathematics, vol. 1653, Springer-Verlag, Berlin, 1997. [Bur] Benjamin",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Solid torus",
+          "A toroidal example"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "spun normal",
+      "heading": true
+    },
+    {
+      "term": "generalised normal",
+      "heading": true
+    },
+    {
+      "term": "normal surface",
+      "heading": true
+    },
+    {
+      "term": "embedded normal",
+      "heading": false
+    },
+    {
+      "term": "peripheral normal",
+      "heading": false
+    },
+    {
+      "term": "normal class",
+      "heading": false
+    },
+    {
+      "term": "efficient triangulation",
+      "heading": false
+    },
+    {
+      "term": "normal disks",
+      "heading": false
+    },
+    {
+      "term": "normal torus",
+      "heading": false
+    },
+    {
+      "term": "quadrilateral normal",
+      "heading": false
+    },
+    {
+      "term": "closed normal",
+      "heading": false
+    },
+    {
+      "term": "normal classes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The labelling of the 3 quadrilateral disk types of tetrahedron A. Left: qA = qA:01:23, centre: q′",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A labelled triangulation of the cusp of the ﬁgure 8 knot complement",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The four types of triangular disks (left) and one of the three types of quadrilateral disks (right)",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Moves on (topological) triangulations. Theorem 5.4. [GHRS15, Theorem 5.1] If T and T′ are ideal triangulations related by a 0-2 move and both are 1-eﬃcient, then IT = IT′",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The hexagon H has three arcs which are normal arcs and three arcs (labelled by double lines) that are not normal arcs and represent the \"middle\" intervals",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A shift of -3 from Hr to Hl. (In general, shearing parameters measure the oﬀset from right to left as viewed from outside the tetrahedron.)",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "With two quads at the bottom edge of the left hexagon and top edge of the right hexagon, we have a shear of +2 along the edge between. The right ﬁgure gives all of the shearing coordinates on the tetrahedron",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Each quad can be replaced by a twisted square or twisted octagon. Kang-Rubinstein [KR04] observed that for each edge class in T, the sum of all quad types",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A (3, 2) normal curve on the square pillowcase, with edge weights 3, 2 and 5 along the tetrahedron edges",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "(left) A schematic diagram of the 12-gon determined by coordinates (2, 1, 0). (right) An embedding of this 12-gon. The region R faces the",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "A 2-3 move on labelled tetrahedra. As the black square indicates, edges A12 and B13 are identiﬁed with C23",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The eﬀect of the 2-3 move on the boundary triangles",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "This table provides information on the various types of (orientable) ideal triangulations that can be built from n = 2, 3, 4, 5, 6 tetrahedra. Total is",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "This table provides data on the ideal triangulations of hyperbolic manifolds in the census. Hyp. gives the total number of hyperbolic manifolds",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "The complete census of ideal triangulations with two tetrahedra",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Some 1-eﬃcient paths for triangulations of the solid torus",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A shortest Pachner path between minimal triangulations of the trefoil (green) and a longer 1-eﬃcient path (red). Note, the 1-eﬃcient path is a shortest path through 1-eﬃcient triangulations using 2-3/3-2 moves. If 0- 2/2-0, moves are allowed then the red and green paths shorten to {Ts, O6, Tf} (blue",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "A shortest Pachner path between the two minimal triangulations of the trefoil complement",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "A shortest one-eﬃcient Pachner path between the two minimal triangulations of the trefoil complement",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The eﬀect of a 2-3 move on a normal disk comprised of a triangle and quad",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The eﬀect of a 2-3 move on a normal disk comprised of two quads",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "An example of a normal surface piece of B3",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "A second example of a normal surface piece of B3",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 35,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 35,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "17 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p55); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 35 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1604.02688v1"
+  }
+}

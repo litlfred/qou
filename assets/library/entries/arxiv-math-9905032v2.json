@@ -1,0 +1,868 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9905032v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "From a diﬀerent point of view, the connection with random matrices was observed in [2, 3], and also in the earlier papers [14, 25, 26].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plancherel measures",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-11-plancherel-measures.md",
+      "narrative": null,
+      "content": "arXiv:math/9905032v2  [math.CO]  11 Sep 1999\nOur approach is based on an exact determinantal formula for\nthe correlation functions of the poissonized Plancherel measures in\nterms of a new kernel involving Bessel functions. Our asymptotic\nanalysis relies on the classical asymptotic formulas for the Bessel\nfunctions and depoissonization techniques.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "SYMMETRIC GROUPS\nALEXEI BORODIN, ANDREI OKOUNKOV, AND GRIGORI OLSHANSKI\nAbstract. We consider the asymptotics of the Plancherel mea-\nsures on partitions of n as n goes to inﬁnity. We prove that the\nlocal structure of a Plancherel typical partition in the middle of\nthe limit shape converges to a determinantal point process with\nthe discrete sine kernel.\nOn the edges of the limit shape, we prove that the joint distri-\nbution of suitably scaled 1st, 2nd, and so on rows of a Plancherel\ntypical diagram converges to the corresponding distribution for\neigenvalues of random Hermitian matrices (given b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poissonization and correlation functions",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-poissonization-and-correlation-functions.md",
+      "narrative": null,
+      "content": "[]{#s12 label=\"s12\"}\n\nFor $\\theta>0$, consider the *poissonization* $M^\\theta$ of the measures $M_n$\n\n$$M^\\theta(\\lambda) = e^{-\\theta}\\sum_n \\frac{\\theta^n}{n!}\\, M_n(\\lambda) =\ne^{-\\theta} \\theta^{|\\lambda|} \\,\n\\left(\\frac{\\dim\\lambda}{|\\lambda|!}\n\\right)^2 \\,.$$\n\nThis is a probability measure on the set of all partitions. Our first result is the computation of the correlation functions of the measures $M^\\theta$.\n\nBy correlation functions we mean the following. By definition, set $$\\mathcal{D}(\\lambda)=\\{\\lambda_i-i\\}\\subset\\mathbb{Z}\\,.$$ Also, following [@VK3], define the *modified Froben",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics in the bulk of the spectrum",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-13-asymptotics-in-the-bulk-of-the-spectrum.md",
+      "narrative": null,
+      "content": "[]{#s13 label=\"s13\"}\n\nGiven a sequence of subsets\n\n$$X(n)=\\left\\{x_1(n)<\\dots<x_s(n)\\right\\}\\subset\\mathbb{Z}\\,,$$\n\nwhere $s=|X(n)|$ is some fixed integer, we call this sequence *regular* if the following limits\n\n$$\\begin{aligned}\na_i &= \\lim_{n\\to\\infty} \\frac{x_i(n)}{\\sqrt{n}}\\,, \\label{e14}\\\\\nd_{ij}&=\\lim_{n\\to\\infty}\\left(x_i(n)-x_j(n)\\right)\\,, \\label{e15}\n\\end{aligned}$$\n\nexist, finite or infinite. Here $i,j=1,\\dots,s$. Observe that if $d_{ij}$ is finite then $d_{ij}=x_i(n)-x_j(n)$ for $n\\gg 0$.\n\nIn the case when $X(n)$ can be represented as $X(n)=X'(n)\\cup X''(n)$ and the distance betwe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Behavior near the edge of the spectrum and the Airy ensemble",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-14-behavior-near-the-edge-of-the-spectrum-and-th.md",
+      "narrative": null,
+      "content": "[]{#s14 label=\"s14\"}\n\nThe discrete sine kernel $\\mathsf{S}(k,a)$ vanishes if $a\\ge 2$. Therefore, it follows from Theorem [\\[t2\\]](#t2){reference-type=\"ref\" reference=\"t2\"} that the limit correlations $\\lim\\boldsymbol{\\varrho}(n,X(n))$ vanish if $a_i\\ge 2$ for some $i$. However, as will be shown below in Proposition [\\[p41\\]](#p41){reference-type=\"ref\" reference=\"p41\"}, after a suitable scaling near the edge $u=2$, the correlation functions $\\boldsymbol{\\varrho}^\\theta$ converge to the correlation functions given by the Airy kernel [@F; @TW]\n\n$$\\mathsf{A}(x,y)=\\frac{A(x)A'(y)-A'(x)A(y)}{x-y}\\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poissonization and depoissonization",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-15-poissonization-and-depoissonization.md",
+      "narrative": null,
+      "content": "[]{#s15 label=\"s15\"}\n\nWe obtain Theorems [\\[t2\\]](#t2){reference-type=\"ref\" reference=\"t2\"} and [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} from Theorem [\\[t1\\]](#t1){reference-type=\"ref\" reference=\"t1\"} using the so-called depoissonization techniques. We recall that the fundamental idea of depoissonization is the following.\n\nGiven a sequence $b_1,b_2,b_3,\\dots$ its *poissonization* is, by definition, the function\n\n$$\\label{e18}\nB(\\theta)=e^{-\\theta} \\sum_{k=1}^\\infty \\frac{\\theta^k}{k!}\\, b_k \\,.$$\n\nProvided the $b_k$'s grow not too rapidly this is an entire function of $\\theta$. In co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "det(1 + L) = eθ. This follows from the fact that Mθ is a probability measure. This is explained in Propositions A.1 and A.4 in the Appendix. Note that, in general, one needs to check that L is a trace class operator. However, because of the special form of L, it suﬃces to check a weaker claim – that L is a Hilbert–Schmidt operator, which is immediate.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "K = L (1 + L)−1. We shall need three following identities for Bessel functions which are degeneration of the identities (3.13–15) in [6] for the hypergeometric function. The ﬁrst identity is due to Lommel (see [39], Section 3.2 or [12], 7.2.(60)) Jν(2z) J1−ν(2z) + J−ν(2z) Jν−1(2z) = sin πν π z . (2.4) The other two identities are the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization of the paper",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-16-organization-of-the-paper.md",
+      "narrative": null,
+      "content": "Section [\\[s2\\]](#s2){reference-type=\"ref\" reference=\"s2\"} contains the proof of Theorems [\\[t1\\]](#t1){reference-type=\"ref\" reference=\"t1\"} and [\\[t1b\\]](#t1b){reference-type=\"ref\" reference=\"t1b\"} and also various formulas for the kernels $\\mathsf{K}$ and $\\mathsf{J}$. We also discuss a difference operator which commutes with $\\mathsf{J}$ and its possible applications.\n\nSection [\\[s3\\]](#s3){reference-type=\"ref\" reference=\"s3\"} deals with the behavior of the Plancherel measure in the bulk of the spectrum; there we prove Theorem [\\[t2\\]](#t2){reference-type=\"ref\" reference=\"t2\"}. Theorem [\\[t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-17-acknowledgements.md",
+      "narrative": null,
+      "content": "In many different ways, our work was inspired by the work of J. Baik, P. Deift, and K. Johansson, on the one hand, and by the work of A. Vershik and S. Kerov, on the other. It is our great pleasure to thank them for this inspiration and for many fruitful discussions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlation functions of the measures $M^\\theta$",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-2-correlation-functions-of-the-measures-mtheta.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-21-proof-of-theorem.md",
+      "narrative": null,
+      "content": "case of Theorem 3.3 of [6]. That theorem concerns a family {M(n)\nzz′ } of\nprobability measures on partitions of n, where z, z′ are certain parame-\nters. When the parameters go to inﬁnity, M(n)\nzz′ tends to the Plancherel\n12\nA. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI\nmeasure Mn. Theorem 3.3 in [6] gives a determinantal formula for the\ncorrelation functions of the measure\nMξ\nzz′ = (1 −ξ)t\n∞\nX\nn=1\n(t)n\nn! ξn M(n)\nzz′\n(2.1)\nin terms of a certain hypergeometric kernel. Here t = zz′ > 0 and\nξ ∈(0, 1) is an additional parameter. As z, z′ →∞and ξ = θ\nt →0,\nthe negative binomial distribution in (2.1) te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "now follows from general properties of determinantal point processes (see Proposition A.6 in the Appendix) and the fol- lowing",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "K△(x, y) = ε(x) ε(y) J(x −1 2, y −1 2) It is clear that since the ε-factors cancel out of all determinantal formulas, this lemma and Proposition A.8 establish the equivalence of Theorems 1 and 2. Proof of lemma. Using the relation J−n = (−1)nJn and the deﬁnition of K one computes K(x, y) = sgn(x) ε(x) ε(y) J(x −1 2, y −1 2) , x̸ = y . (2.12) Clearly, the relation (2.12) remains valid for x = y > 0. It remains to consider the case x = y < 0. In this case we have to show that 1 −K(x, x) = J(x −1 2, y −1 2) , x ∈Z≤0 −1 2 . Rewrite it as 1 −J(k, k) = J(−k −1, −k −1) , k = −x −1 2 ∈Z≥0 . (2.13) By",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "8 we substitute X = Z + 1 2 , Z = Z≤0 −1 2 , K = K . By deﬁnition, set ε(x) = sgn(x)x+1/2 , x ∈Z + 1 2 . We have the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "J(x, y; θ) = ∞ X m=0 (−1)m (x + y + m + 2)m Γ(x + m + 2)Γ(y + m + 2) θ x+y 2 +m+1 m! . (2.14)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-010-04.md",
+      "narrative": null,
+      "content": "Suppose x + y > −2. Then J(x, y; θ) = 1 Z 2 √ θ (Jx(z) Jy+1(z) + Jx+1(z) Jy(z)) dz",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-010-06.md",
+      "narrative": null,
+      "content": "J(x, y; θ) = ∞ X s=1 Jx+s Jy+s , Jx = Jx(2 √ θ). (2.15)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-22-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Fr(λ) =\n\u0000D(λ) + 1\n2\n\u0001\n△\n\u0000Z≤0 −1\n2\n\u0001\n.\nLet us check that this and Proposition A.8 implies Theorem 2.\nIn\nProposition A.8 we substitute\nX = Z + 1\n2 ,\nZ = Z≤0 −1\n2 ,\nK = K .\nBy deﬁnition, set\nε(x) = sgn(x)x+1/2 ,\nx ∈Z + 1\n2 .\nWe have the following\nLemma 2.5. K△(x, y) = ε(x) ε(y) J(x −1\n2, y −1\n2)\nIt is clear that since the ε-factors cancel out of all determinantal\nformulas, this lemma and Proposition A.8 establish the equivalence of\nTheorems 1 and 2.\nProof of lemma. Using the relation\nJ−n = (−1)nJn\nand the deﬁnition of K one computes\nK(x, y) = sgn(x) ε(x) ε(y) J(x −1\n2, y −1\n2) ,\nx̸ = y .\n(2.12)\nC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-010-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "rem-sec-010-05.md",
+      "narrative": null,
+      "content": "Observe that by Proposition 2.7 the operator ∂J ∂θ is a sum of two operators of rank 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-010-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "rem-sec-010-07.md",
+      "narrative": null,
+      "content": "The kernel J resembles a Christoﬀel–Darboux kernel and, in fact, the operator in ℓ2(Z) deﬁned by the kernel J is an Her- mitian projection operator. Recall that K = L(1 + L)−1, where L is of the form L = \u0014 A −A∗ \u0015 On can prove that this together with Lemma 2.5 implies that J is an Hermitian projection kernel. However, in contrast to a Christoﬀel– Darboux kernel, it projects to an inﬁnite–dimensional subspace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commuting difference operator",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-24-commuting-difference-operator.md",
+      "narrative": null,
+      "content": "Consider the difference operators $\\Delta$ and $\\nabla$ on the lattice $\\mathbb{Z}$, $$(\\Delta f)(k)=f(k+1)-f(k)\\,, \\qquad (\\nabla f)(k)=f(k)-f(k-1)\\,.$$ Note that $\\nabla=-\\Delta^*$ as operators on $\\ell^2(\\mathbb{Z})$. Consider the following second order difference Sturm--Liouville operator\n\n$$\\label{e0002}\nD=\\Delta\\circ\\alpha\\circ\\nabla +\\beta\\,,$$\n\nwhere $\\alpha$ and $\\beta$ are operators of multiplication by certain functions $\\alpha(k)$, $\\beta(k)$. The operator [\\[e0002\\]](#e0002){reference-type=\"eqref\" reference=\"e0002\"} is self--adjoint in $\\ell^2(\\mathbb{Z})$. A straightforward compu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/lem-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 24,
+      "target": "lem-sec-013-03.md",
+      "narrative": null,
+      "content": "Suppose that a sequence X ⊂C is as above and, ad- ditionally, suppose that ℑxn, ℑyn are bounded and d̸ = 0. Then the sequence {J(xn, yn; z)} satisﬁes (3.2) with f∞= S(d, a) and certain γ. ASYMPTOTICS OF PLANCHEREL MEASURES Proof of Lemma. We shall use Debye’s asymptotic formulas for Bessel functions of complex order and large complex argument, see, for exam- ple, Section 8.6 in [39]. Introduce the following function F(x, z) = z1/4 Jx(2√z) . The formula (1.9) can be rewritten as follows J(x, y; z) = F(x, z) F(y + 1, z) −F(x + 1, z) F(y, z) x −y . (3.3) The asymptotic formulas for Bessel functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 24,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "If X = {xn, yn} ⊂Z is regular then {J(xn, yn; z)} ∈F , Lim ({J(xn, yn; z)}) = S(d, a) . In the proof of this proposition it will be convenient to allow X ⊂C. For complex sequences X we shall require a ∈R; the number d ∈C may be arbitrary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlation functions in the bulk of the spectrum",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-3-correlation-functions-in-the-bulk-of-the-spect.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 18,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-31-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Introduction for the deﬁnition of a regular sequence X(n) ⊂Z and the\nstatement of Theorem 3. Also, in this section, we shall be working in\nthe bulk of the spectrum, that is, we shall assume that all numbers ai\nASYMPTOTICS OF PLANCHEREL MEASURES\n19\ndeﬁned in (1.10) lie inside (−2, 2). The edges ±2 of the spectrum and\nits exterior will be treated in the next section.\nIn our proof, we shall follow the strategy explained in Section 1.5.\nNamely, in order to compute the limit of̺\n(n, X(n)) we shall use the\ncontour integral̺\n(n, X(n)) = n!\n2πi\nZ\n|θ|=n̺\nθ(X(n)) eθ\nθn+1 dθ ,\ncompute the asymptotics of̺",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-013-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 24,
+      "target": "rem-sec-013-01.md",
+      "narrative": null,
+      "content": "Note that we do not require fn(z) to be entire. Indeed, the kernel J may have a square root branching, see the formula (2.14). By Theorem 2, the correlation functions̺ θ belong to the algebra generated by sequences of the form {fn(z)} = {J(xn, yn; z)} , where the sequence X = X(n) = {xn, yn} ⊂Z is regular which, we recall, means that the limits a = lim n→∞ xn √n , d = lim n→∞(xn −yn) exist, ﬁnite or inﬁnite. Therefore, we ﬁrst consider such sequences.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-013-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 24,
+      "target": "rem-sec-013-04.md",
+      "narrative": null,
+      "content": "Below we shall need this lemma for a variable sequence X = {xn, yn}. Therefore, let us spell out explicitly under what con- ditions on X the estimates in Lemma 3.5 remain uniform. We need the sequences xn √n and yn √n to converge uniformly; then, in particular, the ratios xn √n and yn √n are uniformly bounded away from ±2. Also, we need ℑxn and ℑyn to be uniformly bounded. Finally, we need |d| to be uniformly bounded from below. Proof of Proposition. First, we check the condition (3.2). In the case d̸ = 0 this was done in the previous lemma. Suppose, therefore, that {xn} is a regular sequence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Edge of the spectrum: convergence to the Airy ensemble",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e.md",
+      "narrative": null,
+      "content": "ensemble",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results and strategy of proof",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-41-results-and-strategy-of-proof.md",
+      "narrative": null,
+      "content": "[]{#s41 label=\"s41\"}\n\nIn this section we prove Theorem [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} which was stated in Section [\\[s14\\]](#s14){reference-type=\"ref\" reference=\"s14\"} of the Introduction. We refer the reader to Section [\\[s14\\]](#s14){reference-type=\"ref\" reference=\"s14\"} for a discussion of the relation between Theorem [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} and the results obtained in [@BDJ1; @BDJ2; @O].\n\nRecall that the Airy kernel was defined as follows\n\n$$\\mathsf{A}(x,y)=\\frac{A(x)A'(y)-A'(x)A(y)}{x-y}.$$\n\nwhere $A(x)$ is the Airy function [\\[e17\\]](#e17){r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 26,
+      "pageEnd": 33,
+      "target": "../sections/sec-016-42-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#s42 label=\"s42\"}\n\nSuppose we have a point process on $\\mathbb{R}$ with determinantal correlation functions\n\n$$\\rho_k(x_1,\\dots,x_k)=\\det[K(x_i,x_j)]_{1\\le i,j \\le k}\\,,$$\n\nfor some kernel $K(x,y)$. Let $I$ be a possibly infinite interval $I\\subset\\mathbb{R}$. By $[K]_I$ we denote the operator in $L^2(I,dx)$ obtained by restricting the kernel on $I\\times I$. Assume $[K]_I$ is a trace class operator. Then the intersection of the random configuration $X$ with $I$ is finite almost surely and\n\n$$\\operatorname{Prob}\\{|X\\cap I|=N\\}=\\left.\\frac{d^N}{dz^N}\\det\\Big(1-z[K]_I\\Big)\\right|_{z=1}\\,.$$\n\nI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Depoissonization and proof of Theorem",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-017-43-depoissonization-and-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#s43 label=\"s43\"}\n\nFix some $m=1,2,\\dots$ and denote by $F_n$ the distribution function of $\\lambda_1,\\dots,\\lambda_m$ under the Plancherel measure $M_n$\n\n$$F_n(x_1,\\dots,x_m)=M_n\\left(\\left\\{\\lambda\\,\\left|\\,\n\\lambda_i< x_i\\,, \\  1\\le i\\le \nm\\right.\\right\\}\\right) \\,.$$\n\nAlso, set\n\n$$F(\\theta,x)=e^{-\\theta} \\sum_{k=0}^\\infty\\frac {\\theta^k}{k!}\\, F_k(x).$$\n\nThis is the distribution function corresponding to the measure $M^\\theta$.\n\nThe measures $M_n$ can be obtained as distribution at time $n$ of a certain random growth process of a Young diagram, see e.g. [@VK2]. This implies that\n\n$$F_{n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General properties of determinantal point processes",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-018-a-general-properties-of-determinantal-point-proc.md",
+      "narrative": null,
+      "content": "processes\nIn this Appendix, we collected some necessary facts about determi-\nnantal point processes, their correlation functions, Fredholm determi-\nnants, and convergence of trace class operators.\nLet X be a countable set, let Conf(X) = 2X be the set of subsets of\nX and denote by Conf(X)0 ⊂Conf(X) the set of ﬁnite subsets of X.\nWe call elements of Conf(X) conﬁgurations. Let L be a kernel on X,\nthat is, a function on X × X also viewed as a matrix of an operator in\nH = ℓ2(X).\nBy a determinantal point process on X (in [10] such processes are\ncalled fermion point processes) we mean a probability m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/cor-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "cor-sec-019-02.md",
+      "narrative": null,
+      "content": "2. If {Pn} is an ascending sequence of projection opera- tors in H such that Pn →1 strongly, then det(1 + A) = lim n→∞det(1 + PnAPn).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/cor-sec-019-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "cor-sec-019-03.md",
+      "narrative": null,
+      "content": "3. If A, B ∈L1|2(H) then det(1 + A) det(1 + B) = det((1 + A)(1 + B)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "1. The function A 7→det(1 + A) admits a unique ex- tension to L1|2(H), which is continuous in the topology of that algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-019-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "prop-sec-019-04.md",
+      "narrative": null,
+      "content": "4. If L ∈L1|2(H) then X X det LX = det(1 + L), (A.2) where summation is taken over all ﬁnite subsets X ⊂X including the empty set with understanding that det L∅= 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-019-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "prop-sec-019-06.md",
+      "narrative": null,
+      "content": "4, we can deﬁne a probability measure on ﬁnite subsets X of X by Prob(X) = det LX det(1 + L) , X ∈Conf(X)0 . A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fredholm determinants and determinantal processes",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-019-a1-fredholm-determinants-and-determinantal-proce.md",
+      "narrative": null,
+      "content": "H be a complex Hilbert space, L(H) be the algebra of bounded opera-\ntors in H, and L1(H), L2(H) be the ideals of trace class and Hilbert–\nSchmidt operators, respectively.\nAssume we are given a splitting H = H+ ⊕H−. According to this\nsplitting, write operators A ∈L(H) in block form A =\n\u0014\nA++\nA+−\nA−+\nA−−\n\u0015\n,\nwhere\nA++ : H+ →H+,\nA+−: H−→H+,\nA−+ : H+ →H−,\nA−−: H−→H−.\nThe algebra L(H) is equipped with a natural Z2-grading. Speciﬁcally,\ngiven A, its even part Aeven and odd part Aodd are deﬁned as follows\nAeven =\n\u0014\nA++\n0\n0\nA−−\n\u0015\n,\nAodd =\n\u0014\n0\nA+−\nA−+\n0\n\u0015\n.\nDenote by L1|2(H) the set of operators A ∈L(H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-019-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "rem-sec-019-05.md",
+      "narrative": null,
+      "content": "5. Suppose that L = \u0014 A −A∗ \u0015 , where A is of Hilbert– Schmidt class. Then L ∈L1|2(H). It is readily seen that det LX ≥0 for all X, and it is worth noting that det LX = 0 unless |X+| = |X−|. By",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "6. Let L be as above and set K = L(1 + L)−1. Then ρ(X) = det KX.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlation functions of determinantal processes",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-020-a2-correlation-functions-of-determinantal-proces.md",
+      "narrative": null,
+      "content": "X ∈Conf(X)0, let ρ(X) be the probability that a random conﬁguration\ncontains X, that is,\nρ(X) = Prob ({Y ∈Conf(X)0, X ⊂Y }) .\nWe call ρ(X) the correlation functions. The fundamental fact about\ndeterminantal point processes is that their correlation functions have\nagain a determinantal form.\nProposition A.6. Let L be as above and set K = L(1 + L)−1. Then\nρ(X) = det KX.\nProof. We follow the argument in [10], Exercise 5.4.7. Let f(x) be an\narbitrary function on X such that f(x) = 1 for all but a ﬁnite number\nof x’s. Form the probability generating functional:\nΦ(f) =\nX\nX\nY\nx∈X\nf(x) · Prob(X).\nThen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/rem-sec-020-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "rem-sec-020-02.md",
+      "narrative": null,
+      "content": "7. If L = \u0014 A −A∗ \u0015 then K = \u0014 AA∗(1 + AA∗)−1 (1 + AA∗)−1A −(1 + A∗A)−1A∗ A∗A(1 + A∗A)−1 \u0015 . ASYMPTOTICS OF PLANCHEREL MEASURES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "8. ρ△(X) = det h K△(xi, xj) i xi∈X .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complementation principle",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-021-a3-complementation-principle.md",
+      "narrative": null,
+      "content": "A.3. Complementation principle. In this section we discuss a sim-\nple but useful observation which was communicated to us by S. Kerov.\nConsider an arbitrary probability measure on Conf(X) such that its\ncorrelation functions\nρ(X) = Prob ({Y ∈Conf(X), X ⊂Y }) ,\nX ∈Conf(X)0 ,\nhave a determinantal form\nρ(X) = det\nh\nK(xi, xj)\ni\nxi∈X\nfor some kernel K.\nLet Z ⊂X be an arbitrary subset of X. Consider the symmetric\ndiﬀerence mapping\n△Z : Conf(X) →Conf(X) ,\nY 7→Y △Z ,\nwhich is an involution in Conf(X). Let Prob△= (△Z)∗Prob be the\nimage of our probability measure under △Z and let ρ△(X) be the\ncorrelation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "9. The following conditions are equivalent: (i) ∥Kn −K∥1 →0; (ii) tr Kn →tr K and Kn →K in the weak operator topology. First, prove a lemma:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9905032v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of trace class operators",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-a4-convergence-of-trace-class-operators.md",
+      "narrative": null,
+      "content": "be Hermitian nonnegative operators in L1(H). The following proposi-\ntion is a special case of Theorem 2.20 in the book [31] (we are grateful\nto P. Deift for this reference). For the reader’s convenience we give a\nproof here.\nProposition A.9. The following conditions are equivalent:\n(i) ∥Kn −K∥1 →0;\n(ii) tr Kn →tr K and Kn →K in the weak operator topology.\nFirst, prove a lemma:\nLemma A.10. Let X =\n\u0014\nA\nB\nB∗\nD\n\u0015\nbe a nonnegative operator 2 × 2\nmatrix. Then ∥B∥1 ≤\n√\ntr A · tr D.\nProof of Lemma. Without loss of generality one can assume that the\nblock B is a nonnegative diagonal matrix, B = diag(b1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

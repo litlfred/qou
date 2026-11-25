@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Galois theory of q-difference equations",
+  "contains": [
+    "library/afst-2007-6-16-3-665-0/sections/sec-front-matter",
+    "library/afst-2007-6-16-3-665-0/sections/sec-000",
+    "library/afst-2007-6-16-3-665-0/sections/sec-001",
+    "library/afst-2007-6-16-3-665-0/sections/sec-002",
+    "library/afst-2007-6-16-3-665-0/sections/sec-003",
+    "library/afst-2007-6-16-3-665-0/sections/sec-004",
+    "library/afst-2007-6-16-3-665-0/sections/sec-005",
+    "library/afst-2007-6-16-3-665-0/sections/sec-006",
+    "library/afst-2007-6-16-3-665-0/sections/sec-007",
+    "library/afst-2007-6-16-3-665-0/sections/sec-008",
+    "library/afst-2007-6-16-3-665-0/sections/sec-009",
+    "library/afst-2007-6-16-3-665-0/sections/sec-010",
+    "library/afst-2007-6-16-3-665-0/sections/sec-011",
+    "library/afst-2007-6-16-3-665-0/sections/sec-012",
+    "library/afst-2007-6-16-3-665-0/sections/sec-013",
+    "library/afst-2007-6-16-3-665-0/sections/sec-014",
+    "library/afst-2007-6-16-3-665-0/sections/sec-015",
+    "library/afst-2007-6-16-3-665-0/sections/sec-016",
+    "library/afst-2007-6-16-3-665-0/sections/sec-017",
+    "library/afst-2007-6-16-3-665-0/sections/sec-018",
+    "library/afst-2007-6-16-3-665-0/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations.\n\n**Galois theory of q-difference equations** — Marius van der Put and Marc Reversat. Annales de la Faculté des Sciences de Toulouse, Tome XVI, no 3 (2007), 665–718.\n\nA Galois-theoretic treatment of q-difference equations: the difference-Galois group, its Tannakian formulation, and the classification of q-difference modules.\n\n**Why it may bear here.** q-difference equations are the ambient formalism for the Habiro-ring and q-holonomic material this corpus works in, and `library/equations-aux-q-differences/` (Di Vizio–Ramis–Sauloy–Zhang) is the companion survey already held. This is the Galois-theoretic side of that pair. A prior for attention, not a claim that a result here is used.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "afst-2007-6-16-3-665-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "AFST_2007_6_16_3_665_0.pdf",
+    "source_sha256": "402b61574e561f861d1d2a5437da11d1f9327b0979317d5b25ca23101be95430",
+    "pages": 55,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

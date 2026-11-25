@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-period-involution-statistic",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-period-involution-statistic",
+  "kind": "proposition",
+  "title": "The balanced dimension sum is the involution generating function for $2\\,\\mathrm{maj} + \\mathrm{content} \\circ \\mathrm{RSK}$",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-binding-period-involution-statistic"
+  ],
+  "leanRef": "qou:QOU.Mass.BindingInvolutionStatistic.binding_period_involution_statistic_four",
+  "text": "binding-period-involution-statistic.md",
+  "leanSource": "binding-period-involution-statistic.lean",
+  "provenance": "authored"
+}

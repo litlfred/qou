@@ -1,0 +1,1671 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1412.4711v1",
+  "title": "arxiv-1412.4711v1",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Representation spaces",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-representation-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Representation variety and character variety",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-representation-variety-and-character-variety"
+    },
+    {
+      "level": 2,
+      "title": "Decorated versions",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-decorated-versions"
+    },
+    {
+      "level": 2,
+      "title": "Peripheral representations: choosing a meridian and a longitude",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-peripheral-representations-choosing-a-meridia"
+    },
+    {
+      "level": 2,
+      "title": "Deformation variety",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-14-deformation-variety"
+    },
+    {
+      "level": 2,
+      "title": "A diagram",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-15-a-diagram"
+    },
+    {
+      "level": 2,
+      "title": "The A-variety",
+      "number": "1.6",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-16-the-a-variety"
+    },
+    {
+      "level": 1,
+      "title": "The figure eight knot complement",
+      "number": "2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-2-the-figure-eight-knot-complement"
+    },
+    {
+      "level": 2,
+      "title": "Triangulation",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-21-triangulation"
+    },
+    {
+      "level": 2,
+      "title": "Presentations",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-22-presentations"
+    },
+    {
+      "level": 1,
+      "title": "The deformation variety for the figure eight knot complement",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-the-deformation-variety-for-the-figure-eight-k"
+    },
+    {
+      "level": 2,
+      "title": "Computational tools",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-computational-tools"
+    },
+    {
+      "level": 2,
+      "title": "An algebraic representation of Defor ( M, T )",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-an-algebraic-representation-of-defor-m-t"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the computations.",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-33-overview-of-the-computations"
+    },
+    {
+      "level": 2,
+      "title": "Explicit computations for the Figure Eight Knot complement.",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-34-explicit-computations-for-the-figure-eight-kn"
+    },
+    {
+      "level": 2,
+      "title": "Details on algorithm []",
+      "number": "3.5",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Eigenvalues of peripheral representations",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-4-eigenvalues-of-peripheral-representations"
+    },
+    {
+      "level": 2,
+      "title": "A-variety",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-41-a-variety"
+    },
+    {
+      "level": 2,
+      "title": "Where are some already known representations ?",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-42-where-are-some-already-known-representations"
+    },
+    {
+      "level": 1,
+      "title": "Deforming representations: another way to parametrize the components",
+      "number": "5",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-deforming-representations-another-way-to-param"
+    },
+    {
+      "level": 2,
+      "title": "The first component, R1",
+      "number": "5.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-the-first-component-r1"
+    },
+    {
+      "level": 2,
+      "title": "The other two components, R2 and R3",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-the-other-two-components-r2-and-r3"
+    },
+    {
+      "level": 2,
+      "title": "A focus on the PU(2,1) case",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-53-a-focus-on-the-pu21-case"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 69,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "koseleff",
+          "heading": false
+        },
+        {
+          "term": "guilloux",
+          "heading": false
+        }
+      ],
+      "extract": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT. E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE Abstract. We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3, C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1412.4711v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite bfg",
+          "heading": false
+        },
+        {
+          "term": "deformation variety",
+          "heading": false
+        },
+        {
+          "term": "representation variety",
+          "heading": false
+        },
+        {
+          "term": "cite thurston",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "irreducible components",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": false
+        },
+        {
+          "term": "figure eight",
+          "heading": false
+        }
+      ],
+      "extract": "Representation varieties of finitely presented groups into Lie groups has been studied since a long time. A recent by Sikora paper with many references is \\cite{Sikora}. In this paper we concentrate on the representations of 3-manifold groups in $\\PGL(3,\\bC)$ or $\\SL(3,\\bC)$. The case of surface groups have been studied more extensively and their representation varieties into $\\SL(3,\\bC)$ are treated by Lawton in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-representation-spaces",
+      "number": "1",
+      "title": "Representation spaces",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spaces",
+          "heading": true
+        },
+        {
+          "term": "lenghty",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a review of the different spaces classically considered as representation spaces. As we will consider several variations of the same space, we try to use explicit -- but sometimes lenghty -- names for these spaces. Let $\\Gamma$ be a finitely presented group and $G$ the group of points over $\\bC$ of a linear algebraic group. In the following, we will mainly consider $G=\\PGL(3,\\bC)$ or $\\SL(3,\\bC)$, but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-11-representation-variety-and-character-variety",
+      "number": "1.1",
+      "title": "Representation variety and character variety",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character variety",
+          "heading": true
+        },
+        {
+          "term": "representation variety",
+          "heading": true
+        },
+        {
+          "term": "mathrm mon",
+          "heading": false
+        },
+        {
+          "term": "monodromy variety",
+          "heading": false
+        },
+        {
+          "term": "algebraic variety",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        },
+        {
+          "term": "end defn",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by the most classical representation variety and character variety. \\newcommand{\\Mon}{\\mathrm{Mon}} \\begin{defn} We denote by $\\Hom(\\Gamma, G)$ the set of all morphisms from $\\Gamma$ to $G$. This space is called the \\emph{representation variety}. The \\emph{monodromy variety}\\footnote{Neither the name nor the notation is classical. The name has been so choosen because a geometric structure on a variety gives",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-decorated-versions",
+      "number": "1.2",
+      "title": "Decorated versions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dechom",
+          "heading": false
+        },
+        {
+          "term": "decorated",
+          "heading": true
+        },
+        {
+          "term": "emph decoration",
+          "heading": false
+        },
+        {
+          "term": "gamma acts",
+          "heading": false
+        },
+        {
+          "term": "decmon",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        },
+        {
+          "term": "cite bfg",
+          "heading": false
+        },
+        {
+          "term": "end defn",
+          "heading": false
+        }
+      ],
+      "extract": "From now on, we assume $G=\\PGL(n,\\bC)$. A key point to study the previous defined spaces is to add a geometric structure on it, as usual in the study of moduli spaces. Such a structure is called a \\emph{decoration} and will be most easily defined with additional assumption: from now on $\\Gamma$ is the fundamental group of a $1$-cusped hyperbolic $3$-variety $M$ (as the figure eight knot complement)\\footnote{This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
+      "number": "1.3",
+      "title": "Peripheral representations: choosing a meridian and a longitude",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "peripheral representations",
+          "heading": true
+        },
+        {
+          "term": "hol periph",
+          "heading": false
+        },
+        {
+          "term": "dec rho",
+          "heading": false
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        },
+        {
+          "term": "emph peripheral",
+          "heading": false
+        },
+        {
+          "term": "mathrm para",
+          "heading": false
+        },
+        {
+          "term": "decorated representation",
+          "heading": false
+        },
+        {
+          "term": "chi dec",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss:lm} \\newcommand{\\Hol}{\\mathrm{Hol}}\\newcommand{\\periph}{\\mathrm{periph}} By considering decorated versions of the representations, we also grant an easy parametrization for the \\emph{peripheral representation}, that is the restriction of the representation to the fundamental group of the peripheral torus. This is more carefully studied in \\cite[Section 1]{G}. Recall that $M$ is a $1$-cusped hyperbolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-deformation-variety",
+      "number": "1.4",
+      "title": "Deformation variety",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 886,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm defor",
+          "heading": false
+        },
+        {
+          "term": "mathrm geom",
+          "heading": false
+        },
+        {
+          "term": "rightarrow decx",
+          "heading": false
+        },
+        {
+          "term": "cite bfg",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": false
+        },
+        {
+          "term": "face ijk",
+          "heading": false
+        },
+        {
+          "term": "rho mathrm",
+          "heading": false
+        },
+        {
+          "term": "deformation variety",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{ss:deformationvariety} Thurston \\cite{Thurston} defined coordinates on $$\\DecX(\\Gamma,\\PGL(2,\\bC)) $$ by defining the \\emph{deformation variety} with the \\emph{gluing equations}. We use in this paper an analog og this space for the group $\\PGL(3,\\bC)$. From now on, we will always assume that $n=3$. This space is defined by further assuming that $M$ is ideally triangulated: $M$ is homeomorphic to a gluing of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-15-a-diagram",
+      "number": "1.5",
+      "title": "A diagram",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hol periph",
+          "heading": false
+        },
+        {
+          "term": "decx mathbb",
+          "heading": false
+        },
+        {
+          "term": "diagram",
+          "heading": true
+        },
+        {
+          "term": "dechom",
+          "heading": false
+        },
+        {
+          "term": "decmon",
+          "heading": false
+        }
+      ],
+      "extract": "At this point, one may write a commutative diagram: see figure \\ref{fig:diagram}. Note that, between algebraic varieties, the maps are algebraic. Moreover, the vertical maps are just the forgetful maps. The non-algebraic maps are denoted by dashed lines. For the sake of readability, we drop the mentions of $\\Gamma$ and $G$. Moreover, we denote by $\\DecX_{\\mathbb T}$ and $X_{\\mathbb T}$ the (decorated) character",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-16-the-a-variety",
+      "number": "1.6",
+      "title": "The A-variety",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decx",
+          "heading": false
+        },
+        {
+          "term": "boundary torus",
+          "heading": false
+        },
+        {
+          "term": "hol",
+          "heading": false
+        },
+        {
+          "term": "dechom",
+          "heading": false
+        },
+        {
+          "term": "decmon",
+          "heading": false
+        }
+      ],
+      "extract": "values in SL(3, C). As before M is a 3-manifold with boundary a torus where 9 Defor Hol \" (up to choices) Hol + Holperiph $ DecMon ' \u000f DecHom \u000f 6 / DecX \u000f Holperiph / DecXT \u000f Hom / ( X restr / XT Mon 7 Figure 2. The diﬀerent representation varieties we ﬁx a basis of the homology group given by a choice of a longitude and a meridian. One can identify DecX(Z2, G) to the diagonal representations of Z2. As before, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-the-figure-eight-knot-complement",
+      "number": "2",
+      "title": "The figure eight knot complement",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "We present here the geometric and combinatorial facts on the ﬁgure eight",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-21-triangulation",
+      "number": "2.1",
+      "title": "Triangulation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dir",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        },
+        {
+          "term": "arrow",
+          "heading": false
+        },
+        {
+          "term": "position",
+          "heading": false
+        },
+        {
+          "term": "figure eight",
+          "heading": false
+        },
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "asy",
+          "heading": false
+        }
+      ],
+      "extract": "It is a well-known fact, due to Riley and used by Thurston \\cite{Thurston}, that the figure eight knot complement may be triangulated by two tetrahedra, with the combinatorics of face gluings displayed in figure \\ref{fig:triang8}. In order to simplify the notations, we denote by $u_{ij}$ and $v_{ij}$ be the coordinates associated to the edge $ij$ of the two tetrahedra as shown in Figure \\ref{fig:triang8}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-presentations",
+      "number": "2.2",
+      "title": "Presentations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "presentations",
+          "heading": true
+        },
+        {
+          "term": "snappea",
+          "heading": false
+        },
+        {
+          "term": "uppercase",
+          "heading": false
+        }
+      ],
+      "extract": "Depending on the situations we will use two different presentations of the figure eight knot complement fundamental group $\\Gamma_8$. We first use the presentation (with generators as in \\cite{FKR14}) $$ \\langle\\ g_1, g_2, g_3\\ |\\ g_2^{-1}g_1g_3^{-1}g_1^{-1}g_3,\\ g_3^{-1}g_2g_1g_2^{-1}\\ \\rangle. $$ Observe then that $$ g_2 = [g_1,g_3^{-1}] \\quad \\textrm{and}\\quad g_3 = g_2g_1g_2^{-1}. $$ This presentation is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
+      "number": "3",
+      "title": "The deformation variety for the figure eight knot complement",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tmop defor",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": true
+        },
+        {
+          "term": "figure eight",
+          "heading": true
+        },
+        {
+          "term": "knot complement",
+          "heading": true
+        },
+        {
+          "term": "ldots neq",
+          "heading": false
+        },
+        {
+          "term": "cap ldots",
+          "heading": false
+        },
+        {
+          "term": "neq emptyset",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{computations} We fix the usual ideal $2$-tetrahedra triangulation of the figure eight knot complement (which we refer as the standard triangulation). In this section we prove the following theorem. \\begin{theorem}\\label{3components} Given the standard triangulation of the figure eight knot complement, the deformation variety $\\tmop{Defor} ( M, \\mathcal{T} )$ is the union of 3 distinct smooth affine",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-31-computational-tools",
+      "number": "3.1",
+      "title": "Computational tools",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "computing gröbner",
+          "heading": false
+        },
+        {
+          "term": "elimination ordering",
+          "heading": false
+        },
+        {
+          "term": "gröbner basis",
+          "heading": false
+        },
+        {
+          "term": "obner basis",
+          "heading": false
+        },
+        {
+          "term": "clo",
+          "heading": false
+        },
+        {
+          "term": "saturating",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "The main computational tool for computing these objects is Gr\\\"obner basis. We recall briefly that a Gr\\\"obner basis of an ideal $\\mathcal I$ in $\\mathbb Q[X_1,\\ldots,X_n]$ is a set of generators of $\\mathcal I$ such that, for any polynomial $P$, there is a unique preferred polynomial, denoted by $P\\,\\; \\mathrm{mod}\\, \\;\\mathcal I$, congruent to $P$ modulo $\\mathcal I$. This polynomial is called the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-an-algebraic-representation-of-defor-m-t",
+      "number": "3.2",
+      "title": "An algebraic representation of Defor ( M, T )",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tmop defor",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "internal relations",
+          "heading": false
+        },
+        {
+          "term": "cross-ratio relations",
+          "heading": false
+        },
+        {
+          "term": "begin center",
+          "heading": false
+        },
+        {
+          "term": "center left",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss:equations} Given $M$ and $\\mathcal{T}$ a triangulation of $M$ with $n$ tetrahedra, the deformation variety $\\tmop{Defor} (M, \\mathcal{T} )$ is defined in $\\mathbb{C}^{16n}$ by a system of internal relations for each tetrahedron and gluing equations for adjacent tetrahedra. Moreover, using the internal relations, we may directly express the face parameters in terms of the edge parameters. From now on, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-overview-of-the-computations",
+      "number": "3.3",
+      "title": "Overview of the computations.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tmop defor",
+          "heading": false
+        },
+        {
+          "term": "forbidden points",
+          "heading": false
+        },
+        {
+          "term": "mathrm defor",
+          "heading": false
+        },
+        {
+          "term": "prime decomposition",
+          "heading": false
+        },
+        {
+          "term": "cup ldots",
+          "heading": false
+        },
+        {
+          "term": "ideal ldots",
+          "heading": false
+        },
+        {
+          "term": "prime factors",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        }
+      ],
+      "extract": "Theoretically, the theorem could be proven using a prime decomposition of the ideal $$I_D=\\langle L_{e} \\cup L_{f}\\cup L_{c} \\rangle.$$ Indeed, as $\\mathrm{Defor}(M, \\mathcal T)$ is the zeroes set of this ideal, a prime decomposition would give the three components and we would be able to check their properties. However, our system depends on $12n$ variables (24 variables in the case of the figure eight knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-34-explicit-computations-for-the-figure-eight-kn",
+      "number": "3.4",
+      "title": "Explicit computations for the Figure Eight Knot complement.",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "prime ideals",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "mathbb irreducible",
+          "heading": false
+        },
+        {
+          "term": "suitable alpha",
+          "heading": false
+        },
+        {
+          "term": "worksheet",
+          "heading": false
+        },
+        {
+          "term": "computations",
+          "heading": true
+        },
+        {
+          "term": "begin itemize",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{results} We now review the different steps in the case of the figure eight knot complement. We indicate the choices that can be done to ensure the completion of our method. Beware that the feasibility of the computations depends on these choices. For example, there are choices of the eliminated variables in Step A that lead to unfeasible computations. Let us mention that the reader may find the Maple",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-4-eigenvalues-of-peripheral-representations",
+      "number": "4",
+      "title": "Eigenvalues of peripheral representations",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ast frac",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:A-var} Given the triangulated structure associated with the figure eight knot complement, the meridian and the longitude are computed from the Snappea triangulation. The corresponding diagonal entries of the holonomy matrices are \\cite{FKR14}: \\[ g_{m} = \\left[ \\begin{array}{ccc} \\frac{u_{12} u_{21}}{u_{34} w_{24}} & \\ast & \\ast \\\\ 0 & 1 & \\ast \\\\ 0 & 0 & \\frac{v_{42}}{u_{34}} \\end{array} \\right] \\]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-41-a-variety",
+      "number": "4.1",
+      "title": "A-variety",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star rangle",
+          "heading": false
+        },
+        {
+          "term": "cap mathbb",
+          "heading": false
+        },
+        {
+          "term": "defor",
+          "heading": false
+        },
+        {
+          "term": "langle",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": false
+        },
+        {
+          "term": "eqnarray",
+          "heading": false
+        },
+        {
+          "term": "ast",
+          "heading": false
+        }
+      ],
+      "extract": "The study of these eigenvalues on each component of $\\mathrm{Defor}(M,\\mathcal T)$ can then be done by adding the following set $L_{\\{l,m\\}}$ of equations to the generators of, respectively, $I_{Y_{1}} ,I_{Y_{2}}$ and $I_{Y_{3}}$: \\begin{eqnarray*} L_{\\{ l,m \\}} &= &\\left\\{ u_{34} v_{24} L-u_{12} u_{21} , \\quad v_{31} u_{42} v_{42} u_{24} M-u_{13} u_{31} v_{14} v_{23} ,\\right. \\\\ &&\\left. u_{34} L^{\\ast} -v_{42} ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-42-where-are-some-already-known-representations",
+      "number": "4.2",
+      "title": "Where are some already known representations ?",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm defor",
+          "heading": false
+        },
+        {
+          "term": "group tmop",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "mathrm pgl",
+          "heading": false
+        },
+        {
+          "term": "ast frac",
+          "heading": false
+        },
+        {
+          "term": "cite fkr",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic solutions",
+          "heading": false
+        },
+        {
+          "term": "points belong",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:example-unipotent}Some representations are already known, more precisely the boundary-unipotent ones, i.e. those for which the images of $l$ and $m$ are unipotent. These representations were found in {\\cite{FKR14}}. Algebraically, we add the conditions $L=L^{\\ast} =M=M^{\\ast} =1$. Once a point in $\\mathrm{Defor}(M,\\mathcal T)$ is known, it is an easy task to decide whether it belongs to $D_1$, $D_2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-deforming-representations-another-way-to-param",
+      "number": "5",
+      "title": "Deforming representations: another way to parametrize the components",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 797,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical approximations",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "field mathcal",
+          "heading": false
+        },
+        {
+          "term": "matrices alpha",
+          "heading": false
+        },
+        {
+          "term": "explicit parametrisation",
+          "heading": false
+        },
+        {
+          "term": "guesswork",
+          "heading": false
+        },
+        {
+          "term": "algebraic numbers",
+          "heading": false
+        },
+        {
+          "term": "lll",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{deformation} Having found a specific representation $\\rho: \\Gamma_8 \\to \\mathrm{SL(3,\\mathbb C)}$ by algebraic means, there is a complementary method we can often use to determine the component $\\mathcal{V}$ of the variety containing $\\rho$. We apply this procedure to a representation in each of the three components found in the previous section. As a product, we get an explicit parametrisation of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-the-first-component-r1",
+      "number": "5.1",
+      "title": "The first component, R1",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccc frac",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic representations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss:R1} We use the presentation \\[ \\Gamma_8 \\h=\\h \\langle a \\bc b \\;|\\; a\\,b\\,b\\,b\\,a\\,B\\,A\\,A\\,B \\rangle \\h,\\] where uppercase denotes inverse (see section \\ref{section:intro-eight}). The group $\\Gamma_8$ is generated by meridians $a\\,b \\bc a\\,b\\,b$, and we may take \\[ m = a\\,b \\h,\\h \\ell = a\\,b\\,A\\,B\\,a\\,B\\,A\\,b \\] as commuting (meridian, longitude) pair. Our choice of parameters for the variety is \\[ u =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-the-other-two-components-r2-and-r3",
+      "number": "5.2",
+      "title": "The other two components, R2 and R3",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot group",
+          "heading": false
+        },
+        {
+          "term": "αβγ",
+          "heading": false
+        },
+        {
+          "term": "non-inner",
+          "heading": false
+        },
+        {
+          "term": "precomposition",
+          "heading": false
+        },
+        {
+          "term": "u2v",
+          "heading": false
+        }
+      ],
+      "extract": "we choose the standard “parabolic” presentation Γ8 = ⟨a , b | A b a B a b A B a B⟩, and parameters u = tr(A) = tr(B) , v = tr(a) = tr(b) . Some matrix entries lie in a quadratic extension of Q(u, v), namely the ﬁeld generated by √ ∆, where ∆= 4u3 + 4v3 −u2v2 −16uv + 16 . Either choice of square root of ∆yields a valid representation. We shall see shortly that these varieties are related via precomposition with an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-53-a-focus-on-the-pu21-case",
+      "number": "5.3",
+      "title": "A focus on the PU(2,1) case",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hermitian forms",
+          "heading": false
+        },
+        {
+          "term": "representations lie",
+          "heading": false
+        },
+        {
+          "term": "unipotent representation",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "complementary",
+          "heading": false
+        },
+        {
+          "term": "associated form",
+          "heading": false
+        },
+        {
+          "term": "variety",
+          "heading": false
+        },
+        {
+          "term": "traces",
+          "heading": false
+        }
+      ],
+      "extract": "tions with image inside the real group PU(2, 1) may carry interesting geo- metric properties. So we seek representations preserving Hermitian forms. In the case of the ﬁrst component R1, the following condition on traces holds: tr(A) = tr(a) , tr(B) = tr(b) . In particular, we note that since tr(B) = tr(b) = v, the parameter v is forced to be real for such representations. Then, from tr(A) = tr(a), we obtain (−1 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "falbel",
+          "heading": false
+        },
+        {
+          "term": "koseleﬀ",
+          "heading": false
+        },
+        {
+          "term": "guilloux",
+          "heading": false
+        },
+        {
+          "term": "rouillier",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "phd thesis",
+          "heading": false
+        }
+      ],
+      "extract": "[1] N. Bergeron, E. Falbel, and A. Guilloux. Tetrahedra of ﬂags, volume and homology of SL(3). arXiv:1101.2742., 2011. To appear in Geom. Top. 29 [2] N. Bergeron, E. Falbel, A. Guilloux, P. V. Koseleﬀ, and F. Rouillier. Local rigidity for SL(3, C) representations of 3-manifold groups. Exp. Math., 22(4):410–420, 2013. [3] U. Brehm. The shape invariant of triangles and trigonometry in two-point homoge- neous spaces.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tmop defor",
+      "heading": false
+    },
+    {
+      "term": "mathrm defor",
+      "heading": false
+    },
+    {
+      "term": "mathrm pgl",
+      "heading": false
+    },
+    {
+      "term": "variety tmop",
+      "heading": false
+    },
+    {
+      "term": "decx mathbb",
+      "heading": false
+    },
+    {
+      "term": "gamma mathrm",
+      "heading": false
+    },
+    {
+      "term": "representation variety",
+      "heading": true
+    },
+    {
+      "term": "mathrm dechom",
+      "heading": false
+    },
+    {
+      "term": "algebraic variety",
+      "heading": false
+    },
+    {
+      "term": "group pgl",
+      "heading": false
+    },
+    {
+      "term": "begin itemize",
+      "heading": false
+    },
+    {
+      "term": "itemize item",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Coordinates for a tetrahedron of ﬂags Given M and a triangulation T with n tetrahedra, we consider the space of solutions of these equations and denote it by Defor(M, T ) ⊂C16n",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The diﬀerent representation varieties",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The ﬁgure eight knot represented by two tetrahedra",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "SU(3) and SU(2, 1) representations in R2",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 25,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p28); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 25 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1412.4711v1"
+  }
+}

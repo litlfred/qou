@@ -1,0 +1,462 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0405249v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Cyclic homology and cohomology were independently discovered by Alain Connes [@connes0] and Boris Tsygan [@tsygan] in the early 1980's, and should be thought of as extensions of de Rham (co)homology to various categories of noncommutative algebras. Quantum groups also appeared in the same period, with the first example of a \"compact quantum group\" in the C\\*-algebraic setting being Woronowicz's \"quantum $SU(2)$\" [@wo_suq2].\n\nThe noncommutative differential geometry (in the sense of Connes) of quantum $SU(2)$ was thoroughly investigated by Masuda, Nakagami and Watanabe [@mnw]. They calculated t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0405249v5  [math.QA]  27 Jun 2005\nTwisted homology of quantum SL(2)\nTom Hadﬁeld∗1, Ulrich Kr¨ahmer2\nSeptember 14, 2018\n1 School of Mathematical Sciences,\nQueen Mary, University of London\n327 Mile End Road, London E1 4NS, England\nt.hadﬁeld@qmul.ac.uk\n2 Humboldt Universit¨at zu Berlin,\nInstitut f¨ur Mathematik\nUnter den Linden 6\nSitz: Rudower Chaussee 25\nD-10099 Berlin, Germany\nkraehmer@mathematik.hu-berlin.de\nMSC (2000): 58B34, 19D55, 81R50, 46L\nAbstract\nWe calculate the twisted Hochschild and cyclic homology (in the sense\nof Kustermans, Murphy and Tuset) of the coordinate algebra of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted cyclic homology",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-twisted-cyclic-homology.md",
+      "narrative": null,
+      "content": "Twisted cyclic homology",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "motivation",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-motivation.md",
+      "narrative": null,
+      "content": "Twisted cyclic (co)homology arose from the study of covariant differential calculi over quantum groups [@kmt].\n\nLet $\\mathcal{A}$ be an algebra over $\\mathbb{C}$. Given a differential calculus $(\\Omega, d)$ over $\\mathcal{A}$, with $\\Omega = \\oplus_{n=0}^N \\; \\Omega_n$, Connes [@connes1] considered linear functionals $\\int : \\Omega_N \\rightarrow\\mathbb{C}$, which are closed and graded traces on $\\Omega$, meaning $$\\int \\; d \\omega = 0 \\quad \\forall \\; \\omega \\in \\Omega_{N-1}$$ $$\\label{closed}\n\\label{graded_trace}\n\\int \\; \\omega_m \\omega_n = (-1)^{mn} \\int \\; \\omega_n \\omega_m \\quad \\forall \\;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "twisted hochschild and cyclic homology",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-twisted-hochschild-and-cyclic-homology.md",
+      "narrative": null,
+      "content": "[]{#section:cyclic_module label=\"section:cyclic_module\"}\n\nLet $\\mathcal{A}$ be a unital, associative algebra over a field $k$ (assumed to be of characteristic zero) and $\\sigma$ an automorphism. We define the cyclic object [@connes2], [@loday] underlying twisted cyclic homology $HC_\\ast^\\sigma(\\mathcal{A})$ of $\\mathcal{A}$ relative to $\\sigma$. Set $C_n:=\\mathcal{A}^{\\otimes (n+1)}$. For clarity, we will denote $a_0 \\otimes a_1 \\otimes \\cdots \\otimes a_n \\in C_n$ by $(a_0, a_1, \\ldots , a_n)$. Define $$d_{n,i} (a_0, a_1, \\ldots , a_n) = (a_0, \\ldots , a_i a_{i+1} , \\ldots ,\na_n) \\quad 0 \\leq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "hochschild homology of hopf algebras",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-hochschild-homology-of-hopf-algebras.md",
+      "narrative": null,
+      "content": "For arbitrary algebras, the Hochschild homologies are derived functors in the category of $\\mathcal{A}\\otimes \\mathcal{A}^\\mathrm{op}$-modules, and working with explicit resolutions usually involves lengthy calculations. But if $\\mathcal{A}$ is a Hopf algebra then we can describe $H_\\ast(\\mathcal{A},\\mathcal{M})$ for an arbitrary $\\mathcal{A}$-bimodule $\\mathcal{M}$ as a derived functor in the category of $\\mathcal{A}$-modules. Define a right $\\mathcal{A}$-module $\\mathcal{M}'$ which is $\\mathcal{M}$ as a vector space with right action given by $$\\label{act}\n    m \\blacktriangleleft a :=  \\sum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "noncommutative koszul resolutions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-noncommutative-koszul-resolutions.md",
+      "narrative": null,
+      "content": "[]{#koszull label=\"koszull\"}\n\nPropositions [\\[tatata\\]](#tatata){reference-type=\"ref\" reference=\"tatata\"} and [\\[tor\\]](#tor){reference-type=\"ref\" reference=\"tor\"} allow us to compute $HH_\\ast^\\sigma(\\mathcal{A})$ for Hopf algebras $\\mathcal{A}$ and diagonalizable $\\sigma$ from a resolution of the trivial $\\mathcal{A}$-module $k$. In the commutative case, such a resolution can be constructed in form of a Koszul complex associated to a minimal set of generators of $\\mathrm{ker}\\, \\varepsilon$. We will see that one can proceed in the same way for quantum $SL(2)$. The general scheme of the constr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum SL(2)",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-quantum-sl2.md",
+      "narrative": null,
+      "content": "Quantum SL(2)\nIn this section, we introduce the main facts on the standard quantized\ncoordinate ring A = A(SLq(2)) that will be used below.\n3.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the hopf algebra A(SLq (2))",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-the-hopf-algebra-aslq-2.md",
+      "narrative": null,
+      "content": "Let k be a ﬁeld of characteristic zero, and q ∈k some nonzero parameter,\nwhich we assume is not a root of unity.\nThe coordinate algebra A =\nA(SLq(2)) of the quantum group SLq(2) over k is the k-algebra generated\nby symbols a, b, c, d with relations\nab = qba,\nac = qca,\nbd = qdb,\ncd = qdc,\nbc = cb\nad −qbc = 1,\nda −q−1bc = 1\n(21)\nThere is a unique Hopf algebra structure on A such that\n∆(a) = a ⊗a + b ⊗c,\n∆(b) = a ⊗b + b ⊗d,\n∆(c) = c ⊗a + d ⊗c,\n∆(d) = c ⊗b + d ⊗d,\nε(a) = ε(d) = 1,\nε(b) = ε(c) = 0,\nS(a) = d,\nS(b) = −q−1b,\nS(c) = −qc,\nS(d) = a.\n(22)\nA vector space basis of A is given by the monomial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the haar functional",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-the-haar-functional.md",
+      "narrative": null,
+      "content": "The Hopf algebra $\\mathcal{A}$ is cosemisimple [@KS1], that is, there is a unique linear functional $h : \\mathcal{A}\\rightarrow k$ satisfying $h(1)=1$ and $$(h \\otimes \\mathrm{id}) \\Delta (x) = h(x) 1 = ( \\mathrm{id}\\otimes h ) \\Delta(x) \n    \\quad \\forall \\; x \\in \\mathcal{A}$$ If $k=\\mathbb{C}$ and $q \\in \\mathbb{R}$, then $\\mathcal{A}$ can be made into a Hopf $\\ast$-algebra whose C\\*-algebraic completion is Woronowicz's quantum $SU(2)$ group [@wo_suq2]. The functional $h$ extends to the Haar state of this compact quantum group. Hence (with slight abuse of terminology) we also in the general",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "the automorphism group of A( SLq (2))",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-the-automorphism-group-of-a-slq-2.md",
+      "narrative": null,
+      "content": "For $\\lambda,\\mu \\in k^\\times$ there are unique automorphisms $\\sigma_{\\lambda, \\mu},\\tau_{\\lambda, \\mu}$ of $\\mathcal{A}$ with $$\\sigma_{\\lambda, \\mu}(a)=\\lambda a,\\quad\n    \\sigma_{\\lambda, \\mu}(b)=\\mu b,\\quad\n    \\sigma_{\\lambda, \\mu}(c)=\\mu^{-1} c,\\quad\n    \\sigma_{\\lambda, \\mu}(d)=\\lambda^{-1} d,$$ $$\\label{defn_lambda_tau}\n \\tau_{\\lambda, \\mu}(a)=\\lambda a,\\quad\n    \\tau_{\\lambda, \\mu}(b)=\\mu^{-1} c,\\quad\n    \\tau_{\\lambda, \\mu}(c)=\\mu b,\\quad\n    \\tau_{\\lambda, \\mu}(d)=\\lambda^{-1} d.$$ It is easy to check that this list is complete, although we do not know a reference where this was po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Hochschild homology of A( SLq (2))",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-twisted-hochschild-homology-of-a-slq-2.md",
+      "narrative": null,
+      "content": "4.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "a koszul resolution of A/ ker",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-a-koszul-resolution-of-a-ker.md",
+      "narrative": null,
+      "content": "Using the above facts it is easy to see that ker ε is generated as both a\nleft and right A-module by x1,1 := a −1, x1,2 := b, x1,3 := c. For these\nelements there exists a Koszul complex (K∗, k), Kn := Kn(xi,j, A), in the\nsense of section 2.4 with the xi,j given by\n\n\na −1\nb\nc\nq−1a −1\nb\nc\nq−2a −1\nb\nc\n\n.\n(30)\nWe check by explicit calculation that this Koszul complex is acyclic:\nproposition 4.1 The left A-module A/ker ε possesses a resolution (K∗, k)\nof the form\n0 →A →k3 A3 →k2 A3 →k1 A →A/ker ε →0.\nThe augmentation map K0 = A →k = A/ker ε is given by the counit ε.\nThe left A-module morphisms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of HHn(A), n 3",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-computation-of-hhna-n-3.md",
+      "narrative": null,
+      "content": "n(A), n ≤3\nAll automorphisms arising from ﬁnite-dimensional calculi are of the form\nσ = σλ,µ, and from now on we will only consider automorphisms of this\ntype.\nIn fact, they are of the form σ(x) = σ−1\nmod(f ∗x), where f is a\nfunctional in the dual Hopf algebra A◦acting on x by f∗x = P f(x(2))x(1)\n(see Theorems 4.1, 4.3 and 4.8 in [12]). It is clear that such automorphisms\ndo not exchange b and c. By Corollary 3.2 we have HHσ\nn(A) ∼= Hn(A, σA),\nand the homologies H∗(A, σA) can be calculated via our noncommutative\nKoszul resolution.\nSo let λ, µ ∈k× and σ = σλ,µ. We apply σA′ ⊗A · to our resoluti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted cocycles defined by derivations",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-twisted-cocycles-defined-by-derivations.md",
+      "narrative": null,
+      "content": "Before proceeding with $HH_1^\\sigma(\\mathcal{A})$, we present a general construction of $\\sigma$-twisted Hochschild $n$-cocycles. It is essentially a variant of the characteristic map of [@como; @cup].\n\nLet $\\mathcal{A}$ be a $k$-algebra and $\\sigma$ be an automorphism. A $\\sigma$-derivation of $\\mathcal{A}$ is a $k$-linear map $\\partial: \\mathcal{A}\\rightarrow\\mathcal{A}$, such that $\\partial( a_0 a_1 ) = a_0 \\partial(a_1 ) + \\partial( a_0 ) \\sigma(a_1)$. The following is straightforward:\n\n::: prop\n[]{#hoch_n_cocycle label=\"hoch_n_cocycle\"} If $h$ is a $\\sigma_1$-twisted 0-cocycle, $\\partial_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted cyclic homology of A( SLq (2))",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-twisted-cyclic-homology-of-a-slq-2.md",
+      "narrative": null,
+      "content": "[]{#section_tc_slq2 label=\"section_tc_slq2\"}\n\nWe calculate the twisted cyclic homology of $\\mathcal{A}(SL_q (2) )$ as the total homology of Connes' mixed $(b,B)$-bicomplex ([\\[mixed_b_B_bicomplex\\]](#mixed_b_B_bicomplex){reference-type=\"ref\" reference=\"mixed_b_B_bicomplex\"}) coming from the underlying cyclic object, as in section [\\[section:cyclic_module\\]](#section:cyclic_module){reference-type=\"ref\" reference=\"section:cyclic_module\"}. Having found the twisted Hochschild homology, we can now complete the spectral sequence calculation. We remind the reader that throughout we are working with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case 1",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-case-1.md",
+      "narrative": null,
+      "content": "::: prop\nIn case 1, $\\mu = 1$, $\\lambda\\notin \\{ q^{-(N+2)} \\}_{N \\geq 0}$, and $\\mu \\neq 1$, $\\lambda=1$, $HC_0^\\sigma(\\mathcal{A})$ is infinite-dimensional, $HC_{2n+1}^\\sigma(\\mathcal{A}) = k[ \\omega_1]$, and $HC_{2n+2}^\\sigma(\\mathcal{A}) = k[1]$, where $[\\omega_1]$ is the distinguished generator of $HH_1^\\sigma(\\mathcal{A})$.\n:::\n\n::: pf\nBy definition, $HC_0^\\sigma(\\mathcal{A}) = HH_0^\\sigma(\\mathcal{A})$, generated by $[1]$, together with $[x^{r+1}]$ ($r \\geq 0$), for those $x \\in \\{a,b,c,d\\}$ with $\\sigma(x) = x$, while $HH_1^\\sigma(\\mathcal{A})$ is generated by $[(x^r, x)]$, $(r \\geq 0$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case 2",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-016-case-2.md",
+      "narrative": null,
+      "content": "::: prop\n[]{#HC_case_2 label=\"HC_case_2\"} In case 2, $\\mu =1$, $\\lambda= q^{-(N+2)}$, $N \\geq 0$, we have $HC_0^\\sigma(\\mathcal{A})$ infinite dimensional, while $$HC_1^\\sigma(\\mathcal{A}) \\cong   \n    \\left\\{\n    \\begin{array}{ll}\n     k^{N+1} &: N \\; \\mathrm{even}\\\\\n     k^{N+2} &: N \\; \\mathrm{odd}\n    \\end{array}\\right., \\quad HC_2^\\sigma(\\mathcal{A}) \\cong k^{N+2}, \\quad N \\; \\mathrm{odd}$$\n:::\n\n::: pf\nRecall from ([\\[HH_0_case_2\\]](#HH_0_case_2){reference-type=\"ref\" reference=\"HH_0_case_2\"}) that $$HH_0^\\sigma(\\mathcal{A}) = \n( \\sum_{s \\in S}^\\oplus  \\; k[ b^s ] ) \\oplus \n( \\sum_{t \\in S}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cases 3, 4 and 5",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-017-cases-3-4-and-5.md",
+      "narrative": null,
+      "content": "::: prop\n[]{#cyclic_case_3 label=\"cyclic_case_3\"} For case 3, $\\mu = q^{M+1}$, $\\lambda=q^{-(N+1)}$, $M$, $N \\geq 0$,\n\n1.   $HC_0^\\sigma(\\mathcal{A}) \\cong k^2$, with generators $[ d^{M+1} c^{N+1} ]$, $[ a^{M+1} b^{N+1} ]$.\n\n2.   $HC_1^\\sigma(\\mathcal{A}) \\cong k^2$, with generators $[ ( a^{M+1} b^N ,b)]$, $[ ( d^{M+1} c^N ,c)]$,\\\n    equivalently $[ ( d^M c^{N+1} ,d)]$, $[ ( a^M b^{N+1} ,a)]$.\n\n3.   $HC_n^\\sigma(\\mathcal{A}) =0, \\quad n \\geq 2$\n:::\n\n::: pf\nRecall that $HH_0^\\sigma(\\mathcal{A}) \\cong k^2$, generated by $[ d^{M+1} c^{N+1} ]$, $[ a^{M+1} b^{N+1} ]$, $HH_1^\\sigma(\\mathcal{A}) \\co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Covariant differential calculi",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-018-covariant-differential-calculi.md",
+      "narrative": null,
+      "content": "[]{#section_diff_calc_suq2 label=\"section_diff_calc_suq2\"}\n\nIn this section we identify the classes in twisted cyclic cohomology of $\\mathcal{A}(SL_q(2))$ of the twisted cyclic cocycles arising from the three and four dimensional covariant differential calculi originally discovered for quantum $SU(2)$ by Woronowicz.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "three dimensional left-covariant calculus",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-three-dimensional-left-covariant-calculus.md",
+      "narrative": null,
+      "content": "[]{#section:3dcalculus label=\"section:3dcalculus\"}\n\nThe automorphism of $\\mathcal{A}(SL_q (2))$ corresponding to Woronowicz's three-dimensional left-covariant calculus over quantum $SU(2)$ is $$\\label{3dcalc_aut}\n\\sigma(a) = q^{-2} a, \\quad\n\\sigma(b) = q^4 b, \\quad\n\\sigma(c) = q^{-4} c,\\quad\n\\sigma(d) = q^2 d$$ The twisted cyclic 3-cocycle over $\\mathcal{A}(SL_q (2))$ arising from this calculus was written down in [@sw1] section 3 (denoted by $\\tau_{\\omega,h}$) and [@kmt] section 5 (corresponding to the linear functional $\\int$).\n\n::: thm\n[]{#3dcalc_cocycle_is_trivial label=\"3dcalc_cocycle_is_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "four dimensional bicovariant calculi",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-four-dimensional-bicovariant-calculi.md",
+      "narrative": null,
+      "content": "[]{#section:4dcalculus label=\"section:4dcalculus\"}\n\nIt is well-known (see [@sw1] for example) that the twisted cyclic 4-cocycles on $\\mathcal{A}(SL_q (2))$ coming from both Woronowicz's four-dimensional bicovariant calculi over quantum $SU(2)$ are both simply $S^2 h$, the promotion of the twisted 0-cocycle given by the Haar functional $h$ to a 4-cocycle via the periodicity operator $S$. Explicitly (up to a normalising constant), $$(S^2 h) (a_0 ,a_1 , a_2 ,a_3 , a_4) = h (a_0 a_1 a_2 a_3 a_4 )$$ On basis elements, $h$ is given by $$h( a^{i+1} b^j c^k ) = 0 = h( d^{i+1} b^j c^k )$$ $$\\label{haar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-021-conclusions.md",
+      "narrative": null,
+      "content": "[]{#conclusions label=\"conclusions\"}\n\nThe original motivation for this work was the belief that calculating twisted cyclic cohomology would give new insight into existing classification results [@istvan; @hs] for covariant differential calculi over quantum $SL(2)$ and quantum $SU(2)$. However, we see from the Woronowicz four-dimensional calculi that nonisomorphic calculi can give rise to cohomologous cocycles, and as Theorem [\\[3dcalc_cocycle_is_trivial\\]](#3dcalc_cocycle_is_trivial){reference-type=\"ref\" reference=\"3dcalc_cocycle_is_trivial\"} shows, interesting differential calculi can corresp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405249v5/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-022-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nTH: I would like to thank Gerard Murphy for originally suggesting this\nproblem to me, and for his help and support throughout my time in\nCork. I gratefully acknowledge the support of the EU Quantum Spaces -\nNoncommutative Geometry network (INP-RTN-002) and of the\nEPSRC. I am also very grateful for the hospitality of the IH´ES and of the\nGraduiertenkolleg Quantenfeldtheorie of the Universit¨at Leipzig.\nUK: I would like to thank M. Khalkhali, S. Kolb, A. Thom, C. Voigt and\nespecially A. Sitarz for discussions, explanations and comments.\nReferences\n[1] A. Connes, Spectral sequenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,999 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "maximal-hoermander-q-var-revised-v03",
+  "blocks": [
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HAL Id: hal-04526930\nhttps://hal.science/hal-04526930v1\nSubmitted on 29 Mar 2024\nHAL is a multi-disciplinary open access archive\nfor the deposit and dissemination of scientific re-\nsearch documents, whether they are published or not.\nThe documents may come from teaching and research\ninstitutions in France or abroad, or from public or pri-\nvate research centers.\nL’archive ouverte pluridisciplinaire HAL, est des-\ntinée au dépôt et à la diffusion de documents scien-\ntifiques de niveau recherche, publiés ou non, émanant\ndes établissements d’enseignement et de recherche\nfrançais ou étrangers, des l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "see Corollary 6.8",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "cor-sec-000-06.md",
+      "narrative": null,
+      "content": "Let 0 < a < 2, d ∈N and s > 2a. Let A = (−∆)a/2 and f ∈Hs(Rd). Then for a.e. x ∈Rd, R →C, t 7→exp(itA)f(x) is a continuous function. In particular, exp(itA)f(x) →f(x) as t →0 for a.e. x ∈Rd. See also the end of Section 6 for other applications on Carleson’s continuity problem, with A being a Fourier multiplier or an operator acting on an open domain Ω⊆Rd. We end this introduction with an overview of the article. In Section 2 we introduce the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThis article is a follow-up of our work [DK] concerning maximal estimates for Hörmander\nspectral multipliers on Lp spaces and UMD lattices. Let us recall the setting in the context\nof the euclidean Laplacian which provides in fact the leading example for what follows. The\noperator −∆(deﬁned e.g. as Fourier multiplier with symbol |ξ|2) is a self-adjoint operator on\nL2(Rd). As such, it has a functional calculus allowing to insert it into a bounded Borel function\nm : R+ →C and to obtain a bounded operator m(−∆) on L2(Rd). Then one can ask for\nwhich functions, the operator m(−∆) is bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[DK]",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let Y = Y (Ω′) be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A be a 0-sectorial operator on Lp(Y ). Assume that A has a Hα 2 calculus on Lp(Y ) for some α > 2. Let m ∈W c 2(R) be a spectral multiplier with m(0) = 0 and c > α + max \u0010 2, type Lp(Y ) − cotype Lp(Y ) \u0011 + 1 such that (1.4) X n∈Z ∥m(2n·)ϕ0∥W c 2 (R) < ∞ for some ϕ0 ∈C∞ c (0, ∞) with ϕ0(t) = 1 for t ∈(1, 2). Then for a.e. (x, ω) ∈Ω× Ω′, t 7→m(tA)f(x, ω) belongs to C0(R+) and (1.5) ∥sup t>0 |m(tA)f| ∥Lp(Y ) ≲ X n∈Z ∥m(2n·)ϕ0∥W c 2 (R)∥f∥Lp(Y ). In this article, we extend the above maximal estimate in two ways. Fir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "See Theorem 3.3",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Assume that A and m satisfy the hypotheses of Theorem 1.1 above. Let q > 2. Then ∥∥t 7→m(tA)f∥V q∥Lp(Y ) ≲∥f∥Lp(Y ). This theorem provides an abstract framework for results for the euclidean Laplacian and Laplace type operators, and shows a q-variational estimate only out of Hörmander calculus. This seems to the best of our knowledge to be the ﬁrst result on q-variation of general spectral multipliers, even in the case A = −∆. We refer to Theorem 3.3 for the more general statement allowing for m(0)̸ = 0. We hereby generalise recent results of [LMX] (in case that A = A0 generates a positive con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "see Theorem 4.2",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Let 1 < p < ∞and 2 < q < ∞. There exists a minimal dimension d0 ∈N depending on p and the geometry of Y such that for any d > d0, there is Cp,q,d,Y < ∞such that for any f ∈S(Rd) ⊗Y , we have (1.6) ∥∥t 7→Atf∥V q∥Lp(Rd,Y ) ⩽Cp,q,d,Y ∥f∥Lp(Rd,Y ). Note that a certain minimal dimension in (1.6) is known to be necessary even in the scalar case [JSW, Theorem 1.4(i)]. Then by the method of rotation, we partly recover also a very recent estimate from [HHL, Theorem 1.1], namely (1.7) ∥∥t 7→Mtf∥V q∥Lp(Rd,Y ) ⩽Cp,q,Y ∥f∥Lp(Rd,Y ) for the usual euclidean ball mean Mtf(x) = |Bd| R Bd f(x −ty)dy and from th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "see Theorem 5.1",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let β ⩾0. Let A be a 0-sectorial operator on Lp(Y ). Assume that A has a Hα 2 calculus on Lp(Y ) for some α > 1 2. Let m be a spectral multiplier with m(0) = 0 such that P n∈Z ∥m(2n·)ϕ0∥W c 1 (R) < ∞, with c > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 1 + β. Then for ft ∈Lp(Y (Λβ 2,2(R+))), we have ∥t 7→m(tA)ft∥Lp(Y (C0(R+))) ⩽C′∥t 7→m(tA)ft∥Lp(Y (Λβ 2,2(R+))) (1.8) ⩽C X n∈Z ∥m(2n·)ϕ0∥W c 1 (R)∥t 7→ft∥Lp(Y (Λβ 2,2(R+))). This seems to the best of our knowledge to be the ﬁrst maximal estimate when the element f = ft is its",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "see Theorem 6.1",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A = A0 ⊗IdY have a Hα 2 calculus on Lp(Y ) for some α > 2, and A0 generate a lattice positive and contractive semigroup on Lp(Ω). Pick δ > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 3 2. Then for any f ∈D(Aδ), for a.e. (x, ω) ∈Ω× Ω′, the function ( (0, ∞) 7−→C t 7−→exp(itA)f(x, ω) is continuous. Similarly, for a.e. x ∈Ω, the function ( (0, ∞) 7−→Y t 7−→exp(itA)f(x, ·) is continuous. See also Corollary 6.5 for a version where continuity on the real line (in particular in t = 0) in place of on (0, ∞) is obtained. Note th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-boundedness",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-r-boundedness.md",
+      "narrative": null,
+      "content": "as type and cotype. Moreover, we introduce the (restricted) necessary notions of Hörmander\nfunctional calculus and the class Λβ\n2,2(R+) that appears in the results above. Then in Section 3,\nwe state and prove our main result on ﬁnite q-variation of t 7→m(tA)f(x, ω). Our method also\nallows under the same assumptions to show square function estimates of a family m1, . . . , mn of\nspectral multipliers satisfying uniformly the needed estimates (see Remark 3.4) and to deduce\njump estimates as an easy consequence (Corollary 3.5). In the subsequent Section 4, we apply\nthe q-variation result to the pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries\nIn this section, we recall the notions on Banach space geometry and functional calculus that we\nneed in this paper. For the Hörmander functional calculus, we only need few facts that we will\nuse as an abstract blackbox in the remainder of the article.\n2.1\nR-boundedness\nDeﬁnition 2.1 Let X, Y be Banach spaces. We recall that a family τ ⊆B(X, Y ) is called\nR-bounded, if for a sequence (εk)k of independent Rademacher random variables, taking the\nvalue 1 and −1 with equal probability 1\n2, a constant C > 0, any n ∈N, any x1, . . . , xn ∈X and\nany T1, . . . , Tn ∈τ, we have\nE\n\nn\nX\nk=1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "Clearly, R({T}) = ∥T∥B(X,Y ) if τ = {T} is a singleton. In general, we have R(τ) ⩾supT ∈τ ∥T∥B(X,Y ) above. If X and Y are (isomorphic to) Hilbert spaces, then a family τ ⊂B(X, Y ) is R-bounded if and only if τ is bounded, the latter meaning that supT ∈τ ∥T∥B(X,Y ) < ∞. Deﬁnition 2.3 Let X be a Banach space and (εn)n be a sequence of independent Rademacher variables. 1. We say that X has Pisier’s property (α) if there are constants c1, c2 > 0 such that for any array (xn,k)N n,k=1 in X,(ε′ k)k a second sequence of independent Rademacher variables independent of (εn)n, and (ε′′ n,k)n,k a doubly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "In the rest of the paper, Y = Y (Ω′) will always be a UMD space which is also a Köthe function space, unless otherwise stated. Deﬁnition 2.6 We deﬁne Λβ := Λβ 2,2 := Λβ 2,2(R+) := {f : R+ →C : f ◦exp belongs to W β 2 (R)}, where W β 2 (R) denotes the usual Sobolev space deﬁned e.g. via the Fourier transform. We equip the space with the obvious norm ∥f∥Λβ 2,2 := ∥f ◦exp ∥W β 2 (R). The space Λβ 2,2(R+) is a Hilbert space and imbeds into the (non-UMD) lattice C0(R+) for β > 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice. Then it has the σ-Levi property: any increasing and norm-bounded sequence (xn)n in Y has a supremum in Y . It also has the Fatou-property and hence the σ-Fatou property. Note that if 1 < p < ∞and (Ω, µ) is a σ-ﬁnite measure space, then Lp(Ω, Y ) is again a UMD lattice, so has the above σ-Levi and σ-Fatou properties.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let Y = Y (Ω′) be a UMD lattice and (ϵk)k an i.i.d. Rademacher sequence. Then we have the norm equivalence (2.1) E",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice and p ∈(1, ∞). Then Lp(Ω, Y ) has Pisier’s property (α).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "UMD lattices",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-umd-lattices.md",
+      "narrative": null,
+      "content": "UMD lattices\nIn this article, UMD lattices, i.e.\nBanach lattices which enjoy the UMD property, play a\nprevalent role. For a general treatment of Banach lattices and their geometric properties, we\nrefer the reader to [LTz, Chapter 1]. We recall now deﬁnitions and some useful properties. A\nBanach space Y is called UMD space if the Hilbert transform\nH : Lp(R) →Lp(R), Hf(x) = lim\nϵ→0\nZ\n|x−y|⩾ϵ\n1\nx −y f(y) dy\nextends to a bounded operator on Lp(R, Y ), for some (equivalently for all) 1 < p < ∞[HvNVW,\nTheorem 5.1].\nThe importance of the UMD property in harmonic analysis was recognized\nfor the ﬁrst t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "The Λβ norm is dilation and inversion invariant, that is, for any f ∈Λβ and t > 0, ∥f(t·)∥Λβ = ∥f∥Λβ and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Let A be a 0-sectorial operator with Hα 2 calculus. Let (ϕn)n∈Z be a dyadic par- tition of R+. Then for any x ∈R(A) (e.g. x = m(A)y for some y ∈X and m ∈Hα 2 with m(0) = 0), we have x = P n∈Z ϕn(A)x (convergence in X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let A be a 0-sectorial operator having a Hα 2 calculus. Let m ∈W α 2 (R) with compact support in R+. Then for any x belonging to the calculus core DA, we have m(A)x = 1 2π Z R ˆm(s) exp(isA)xds, where the integral is a Bochner integral in X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Let A be a 0-sectorial operator with Hα 2 calculus for some α > 1 2. Let (ϕn)n∈Z be a dyadic partition of R+. Then we have the following so-called Paley-Littlewood decomposition for x ∈R(A): ∥x∥X ∼= E",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Let A be a 0-sectorial operator on a Banach space X with property (α). If A has a bounded Hα 2 calculus, then it has an R-bounded Hγ 2 calculus for any parameter γ > α + type X − cotype X such that γ ⩾α + 1 2. If X is a Hilbert space and A has a bounded Hα calclus, then A has an R-bounded Hα 2 calculus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract Hörmander functional calculus",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-abstract-hörmander-functional-calculus.md",
+      "narrative": null,
+      "content": "Abstract Hörmander functional calculus\nWe recall the necessary background on functional calculus that we will treat in this article.\nLet −A be a generator of an analytic semigroup (Tz)z∈Σδ on some Banach space X, that is,\nδ ∈(0, π\n2 ], Σδ = {z ∈C\\{0} : | arg z| < δ}, the mapping z 7→Tz from Σδ to B(X) is analytic,\nTz+w = TzTw for any z, w ∈Σδ, and limz∈Σδ′, |z|→0 Tzx = x for any x ∈X and any strict\nsubsector Σδ′ of Σδ. We assume that (Tz)z∈Σδ is a bounded analytic semigroup, which means\nsupz∈Σδ′ ∥Tz∥< ∞for any δ′ < δ.\nIt is well-known [EN, Theorem 4.6, p. 101] that this is equivalent to A bein",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "Let the assumptions of Theorem 3.3 hold. Then for 2 < q < ∞and any spectral multiplier m as in that proposition, if the function under the norm of the left hand side below is measurable, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let q ∈[2, ∞) and β > 1 2. Then Λβ 2,2(R+) ,→V q, where we take for the equiva- lence class of an element a ∈Λβ 2,2(R+) the (unique) continuous representative. Proof : It can be seen directly from Deﬁnition 3.1 that V q ,→V r if q ⩽r (same proof as the fact that ℓq ,→ℓr for q ⩽r), so that it suﬃces to pick the smallest considered exponent q = 2. According to [BLCS, Theorem 5] with p = 2 there (see also [Pee]), we have B 2,1(R) ,→ ˙B 2,1(R) ,→BV2(R). The latter space BV2(R) is deﬁned in [BLCS, p. 461] and it can be seen from that source that a ∈V 2 iﬀae = a ◦exp ∈BV2(R). So we have for a ∈Λβ 2,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "2] with β > 1 2, ∥a∥V 2 ∼= ∥ae∥BV2(R) ≲∥ae∥ B 2,1(R) ≲∥ae∥Bβ 2,2(R) ∼= ∥ae∥W β 2 (R) = ∥a∥Λβ 2,2(R+). We have the following variant of [DK, Proposition 3.9], which yields ﬁnite q-variation spectral multipliers, thus extending [LMX, (1.3)] resp. [HoMa2, (1.3) arXiv version] from the semigroup on scalar resp. UMD lattice valued Lp spaces to more general spectral multipliers in case that A has a Hörmander calculus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-variational inequalities",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-q-variational-inequalities.md",
+      "narrative": null,
+      "content": "q-variational inequalities\nIn this section, we consider q-variational inequalities for Hörmander spectral multipliers. The\nproofs are based on [DK, Section 3]. We refer to the recent papers [LMX], [HoMa2] for q-\nvariational inequalities for the particular spectral multiplier exp(−tA) for contractive regular\nanalytic semigroups.\nDeﬁnition 3.1 Let q ∈[2, ∞). For a function a : R+ →C, we deﬁne the q-variation\n∥a∥V q = sup\n\n\n\n \n|at0|q +\n∞\nX\nk=1\n|atk −atk−1|q\n! 1\nq \n\n,\nwhere the supremum runs over all increasing sequences (tk)k∈N in R+.\nThen the space V q\nconsisting of all functions with ﬁnit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-005-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "rem-sec-005-04.md",
+      "narrative": null,
+      "content": "Under the assumptions of Theorem 3.3 above, we can also formulate a square function estimate for a family of spectral multipliers (mk(tA))k. We then obtain with c as in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "Let Y = Y (Ω′) be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A be a 0-sectorial operator on Lp(Ω, Y ) having a Hα 2 calculus. Let c > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 1. Let m be a spectral multiplier such that 1. m ∈W c 2(R) and supp(m) ∈[ 1 2, 2] or, more generally, 2. m(0) = 0, m(2n·)ϕ0 ∈W c 2(R) for all n ∈Z and P n∈Z ∥m(2n·)ϕ0∥W c 2 (R) < ∞, where (ϕn)n∈Z is a partition of unity of R+ or, 3. assume that A is of the form A = A0 ⊗IdY , where A0 is 0-sectorial on Lp(Ω) and that the semigroup exp(−tA0) generated by −A0 is lattice positive and contractive on L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice. Let 2 < q < ∞, 1 < p < ∞and d > d0 from (4.6). Then there exists a constant Cp,q,Y such that for any f ∈S(Rd) ⊗Y , we have ∥t 7→Mtf∥Lp(Rd,Y (V q)) ⩽Cp,q,Y ∥f∥Lp(Rd,Y ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-variation for spherical and euclidean ball means in Rd",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-q-variation-for-spherical-and-euclidean-ball-mea.md",
+      "narrative": null,
+      "content": "q-variation for spherical and euclidean ball means in Rd\nIn this section, we consider for t > 0, d ∈N, 1 < p < ∞and f ∈S(Rd) a Schwartz function,\nAtf(x) =\n1\n|Sd|\nZ\nSd\nf(x −ty)dσ(y),\n(4.1)\nMtf(x) =\n1\n|Bd|\nZ\nBd\nf(x −ty)dy =\n1\n|B(x, t)|\nZ\nB(x,t)\nf(y)dy,\n(4.2)\nwhere Sd (resp. Bd) denotes the unit sphere (resp. the unit euclidean ball) ⊆Rd, |Sd| (resp.\n|Bd|) denotes the surface measure of Sd (resp. the Lebesgue measure of Bd) and dσ(y) (resp.\ndy) denotes surface measure (resp. euclidean measure). The deﬁnitions (4.1) and (4.2) extend\nliterally to f ∈S(Rd) ⊗Y when Y is a UMD lattice. They moreover e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "Theorem 4.2 immediately extends to the same result for the ball means Mt from (4.2) in place of the spherical means At, with the same constraint on the minimal dimension d0. That is, for d > d0 with d0 from (4.6), we have for any f ∈S(Rd) ⊗Y with a constant Cp,q,d,Y independent of f that ∥t 7→Mtf∥Lp(Rd(Y (V q))) ⩽Cp,q,d,Y ∥f∥Lp(Rd,Y ). Indeed, by Fubini we can write Mtf(x, ω) = d td R t 0 rd−1Arf(x, ω)dr. Thus, for (x, ω) ∈Rd × Ω′ ﬁxed, we have ∥t 7→Mtf(x, ω)∥V q = d",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "Let 2 < q < ∞, 1 < p < ∞, Y be a UMD lattice and (4.6) d > d0 := 2 + max \u0010 2, type Lp(Y ) − cotype Lp(Y ) \u0011 2 −max \u0010",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "cor-sec-007-03.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A be a 0-sectorial operator on Lp(Y ). Assume that A has a Hα 2 calculus on Lp(Y ) for some α > 1 2. In this corollary, we assume that A is of the form A = A0 ⊗IdY and that exp(−tA0) is lattice positive and contractive on Lp(Ω). Let δ > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 3 2. Let ψ0 ∈C∞ c (R+), i.e. with support included in a compact interval ⊆(0, ∞). Then, with implied constants depending on ψ0 and its support, we have ∥sup t>0 |ψ0(t) exp(itA)f| ∥Lp(Y ) ≲",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let β > 1 2. Let A be a 0-sectorial operator on Lp(Y ). Assume that A has a Hα 2 calculus on Lp(Y ) for some α > 1 2. In this Proposition, we assume that A is of the form A = A0 ⊗IdY and that exp(−tA0) is lattice positive and contractive on Lp(Ω). Let m be a spectral multiplier such that m|[0,1] ∈C1[0, 1], ∥m′χ0∥Hc−1 < ∞, X n⩾0 ∥m(2n·)ϕ0∥W c 1 (R) < ∞, where c > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 1 + β. Then for ft ∈Lp(Y (Λβ 2,2(R+))), we have ∥t 7→m(tA)ft∥Lp(Y (L∞(R+))) ⩽ (5.10) C  |m(0)| + ∥m′χ0∥Hc−1 + X n⩾0 ∥m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schrödinger and wave maximal estimates",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "../sections/sec-007-schrödinger-and-wave-maximal-estimates.md",
+      "narrative": null,
+      "content": "Schrödinger and wave maximal estimates\nIn the next two sections, we will prove maximal estimates for the operator exp(itA), where A\nis as before a semigroup generator acting on Lp(Y ) with a Hörmander functional calculus. As\nan application, we shall obtain pointwise continuity of the function t 7→exp(itA)f(x, ω) with\nf belonging to the domain of a fractional power of A inside Lp(Y ). The guiding example is\nCarleson’s problem [Car, Theorem p.24] on the pointwise convergence of the solution of the free\nSchrödinger equation to the initial data,\nexp(it∆)f(x) →f(x) as t →0, a.e. x ∈Rd.\nCarleson ask",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let β ⩾0. Let A be a 0-sectorial operator on Lp(Y ). Assume that A has a Hα 2 calculus on Lp(Y ) for some α > 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "cor-sec-008-06.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A = A0 ⊗IdY have a Hα 2 calculus on Lp(Y ) for some α > 1 2, and A0 generate a lattice positive and contractive semigroup on Lp(Ω). Pick δ > 2α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 3 2. Then for any f ∈D(Aδ), for a.e. (x, ω) ∈Ω× Ω′, the function ( R 7−→C t 7−→exp(itA)f(x, ω) is continuous. Similarly, for a.e. x ∈Ω, the function ( R 7−→Y t 7−→exp(itA)f(x, ·) is continuous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-008-09",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "cor-sec-008-09.md",
+      "narrative": null,
+      "content": "Let 0 < a < 2, d ∈N and s > 2a. Let A = (−∆)a/2. Then exp(itA)f(x) → f(x) as t →0 for a.e. x ∈Rd if f ∈Hs(Rd). Proof : Note that we can apply Proposition 6.6. Indeed, A generates a positive contraction semigroup on L2(Rd) (as it is subordinated to the heat semigroup) and is self-adjoint. Our proposition applies for f ∈D(Aδ) = D((−∆)aδ/2) = Haδ(Rd) with δ > 2 so with aδ > 2a. In another direction, in [LW, Theorem 1.4], a.e. convergence of exp(itA)f(x) is proved with A = P(D), where P : Rd →R is a real valued function, and P(D) is the selfadjoint Fourier multiplier with symbol P(ξ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-008-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "cor-sec-008-11.md",
+      "narrative": null,
+      "content": "Let P : Rd →R+ be a measurable function taking positive values and P(D) the associated positive self-adjoint Fourier multiplier. Assume that e−tP (D) is lattice positive (more generally, |e−tP (D)f| ⩽St|f| for some positive contraction semigroup St : L2(Rd) →L2(Rd)). Let f ∈D(P(D)δ) with δ > 2 (e.g. if |P(ξ)| ∼= |ξ|a, then f ∈Hs(Rd) with s > 2a suﬃces). Then eitP (D)f(x) →f(x) a.e. x ∈Rd as t →0+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-008-13",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "cor-sec-008-13.md",
+      "narrative": null,
+      "content": "Let Ω⊆Rd be open non-empty equipped with Lebesgue measure. Let A be the unbounded selfadjoint operator on L2(Ω) associated to the form a : H1 0(Ω) × H1 0(Ω) →C a(u, v) = Z Ω d X j,k=1 akj∂ku∂jvdx, where akj = ajk : Ω→R are bounded measurable such that the principal part is elliptic. That is, there exists a constant η > 0 such that d X j,k=1 akj(x)ξjξk ⩾η|ξ|2 (ξ ∈Cn, a.e. x ∈Ω). Let δ > 2. Then for any f ∈D(Aδ), exp(itA)f(x) →f(x) as t →0+ for a.e. x ∈Ω.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "Assume that the assumptions of Theorem 6.1 hold. The calculus kernel DA is contained in D(Aδ) and is dense in it with respect to the norm",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "Assume that the assumptions of Theorem 6.1 hold. Let f ∈DA belong to the calculus kernel. Then for a.e. (x, ω) ∈Ω× Ω′, the mapping R+ →C, t 7→exp(itA)f(x, ω) extends to an entire holomorphic function on C. In particular, it is a continuous function. Similarly, for a.e. x ∈Ωthe mapping R+ →Y, t 7→exp(itA)f(x, ·) extends to an entire function, thus continuous on R+. Finally, C × Ω× Ω′ →C, (z, x, ω) 7→exp(izA)f(x, ω) is a measurable function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "lem-sec-008-05.md",
+      "narrative": null,
+      "content": "Then according to the proof of Theorem 6.1 as it stands, ∥t 7→exp(itA)(fn −fm)∥Lp(Y (C[a,b])) ≲∥fn −fm∥H , so that (exp(itA)fn)n is a Cauchy sequence in Lp(Y (C[a, b])), and possesses a limit X ∈ Lp(Y (C[a, b])). Moreover, for ﬁxed t ∈[a, b], exp(itA)fn = \u0002 (1 + A)−δ exp(itA) \u0003 (1 + A)δfn →exp(itA)f, since (1+A)−δ exp(itA) is a bounded operator thanks to Hörmander calculus and (1+A)δfn → (1 + A)δf in Lp(Y ), as f ∈D(Aδ). By unicity of limit, this implies that for all t > 0 and a.e. (x, ω) ∈Ω× Ω′: exp(itA)f(x, ω) = X(t, x, ω). Then we choose for each ﬁxed t > 0 the representative of exp(itA)f s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-008-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "prop-sec-008-07.md",
+      "narrative": null,
+      "content": "Let (Ω, µ) be a σ-ﬁnite measure space. Let A be a self-adjoint positive oper- ator on L2(Ω) such that e−tA is positivity preserving for all t ⩾0 (more generally, such that |e−tAf| ⩽St|f| where St : L2(Ω) →L2(Ω) is a positive contraction semigroup). Let δ > 2. Then for any f ∈D(Aδ), for a.e. x ∈Ω, the function ( R 7−→C t 7−→exp(itA)f(x) is continuous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-008-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Zh, Theorem 1.2",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "prop-sec-008-08.md",
+      "narrative": null,
+      "content": "Let a > 0, d ∈N and s > d min(1, a)/4. Let A = (−∆)a/2. Then exp(itA)f(x) →f(x) as t →0 for a.e. x ∈Rd if f ∈Hs(Rd). An application of Proposition 6.6 yields the following improvement in case of high dimension (e.g. d > 8 if a ∈(0, 1)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-008-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "LW, Theorem 1.4",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "prop-sec-008-10.md",
+      "narrative": null,
+      "content": "Let m, s0 > 0 and d ∈N. Let P : Rd →R be continuous such that |P(ξ)| ≲|ξ|m as |ξ| →∞. Assume that for each s > s0 the following maximal inequality holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prop-sec-008-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Zhe, Corollary 1.2",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "prop-sec-008-12.md",
+      "narrative": null,
+      "content": "Let Ωbe the right half plane {(x, y) ∈R2 : x > 0}. Let ∆D = ∂2 x + (1 + x)∂2 y together with Dirichlet boundary conditions on ∂Ω. Let s > and f ∈Hs D(Ω), where the latter space is the completion of C∞ c (Ω) with respect to the norm ∥f∥2 Hs D(Ω) = ∥f∥2 L2(Ω) +",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "../sections/sec-008-pointwise-continuity-of-time-paths-for-abstract.md",
+      "narrative": null,
+      "content": "Pointwise continuity of time paths for abstract Schrödinger\nand wave equations\nThe goal of this section is to provide an application of Corollary 5.3 to the continuity in time\nt ∈R 7→u(t, x, ω) = exp(itA)f(x, ω) of the solution of the abstract Schrödinger equation\n(\n−i ∂\n∂tu(t, x, ω)\n= Axu(t, x, ω)\nu(0, x, ω)\n= f(x, ω).\nThis requires naturally the inital data f to be suﬃciently smooth, i.e. belonging to a fractional\ndomain space D(Aδ) of A. Note that when A = −∆on L2(Rd) (classical Schrödinger equation),\nthen Carleson [Car, Theorem p.24] asked for the optimal parameter δ such that f ∈Hδ(Rd) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "In the situation of Theorem 6.1, one might wonder whether for general f ∈ D(Aδ), Ω× Ω′ →C[a, b], (x, ω) 7→(t 7→exp(itA)f(x, ω)) is a priori mesurable, in particular whether the scalar function (x, ω) 7→supt∈[a,b] | exp(itA)f(x, ω)| is measurable. To this end, note ﬁrst that if f belongs to DA, then according to Lemma 6.3, (t, x, ω) 7→ exp(itA)f(x, ω) is measurable and also t 7→sup t∈[a,b] | exp(itA)f(x, ω)| = sup t∈[a,b], t∈Q | exp(itA)f(x, ω)| is measurable, where equality follows from continuity in t. So, exp(itA)f then belongs indeed to Lp(Y (C[a, b])). Then for general f ∈D(Aδ), we let fn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 35,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let Y be a UMD lattice, 1 < p < ∞and (Ω, µ) a σ-ﬁnite measure space. Let A = A0 ⊗IdY have a Hα 2 calculus on Lp(Y ) for some α > 1 2, and A0 generate a lattice positive and contractive semigroup on Lp(Ω). Pick δ > α + max \u00121 2, type Lp(Y ) − cotype Lp(Y ) \u0013 + 3 2. Then for any f ∈D(Aδ), for a.e. (x, ω) ∈Ω× Ω′, the function ( (0, ∞) 7−→C t 7−→exp(itA)f(x, ω) is continuous. Similarly, for a.e. x ∈Ω, the function ( (0, ∞) 7−→Y t 7−→exp(itA)f(x, ·) is continuous. The proof is divised in several steps which we address in the following lemmas. Recall the calculus kernel DA = {φ(A)f : f ∈Lp(Y ), φ ∈C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "Let 1 < q1, q2 < ∞. Let Ω′ be a σ-ﬁnite measure space. 1. Then Y = Lq1(Ω′) ∩Lq2(Ω′) equipped with the norm ∥f∥Y = max{∥f∥q1 , ∥f∥q2} and obvious partial order is a UMD lattice. 2. Then Y = Lq1(Ω′)+Lq2(Ω′) equipped with the norm ∥f∥Y = inf{∥g∥q1 +∥h∥q2 : f = g+h} and obvious partial order is also a UMD lattice. For a simple proof, we refer to [DK, Lemma 4.9]. Concluding remarks Already for classical (i.e. without q-variation or supremum in t > 0) Hörmander multiplier theorems, a nice description of the exact norm ∥m(A)∥Lp→Lp in terms of a function norm ∥m∥of the spectral multiplier is not known",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and concluding remarks",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-009-examples-and-concluding-remarks.md",
+      "narrative": null,
+      "content": "Examples and concluding remarks\nIn this section, we shortly discuss examples of 0-sectorial operators A and of UMD lattices Y ,\nto illustrate our main results from Sections 3 and 5. We will then end with some concluding\nremarks and open questions related to the present article.\nHörmander calculus for (generalised) Gaussian estimates\nFor the ﬁrst result below,\nwe refer to [DK, Deﬁnitions 4.2 and 4.3] for the deﬁnition of a semigroup with Gaussian and\ngeneralised Gaussian estimates. We recall the main theorem on Hörmander functional calculus\non Lp(Y ) for Gaussian estimates from [DKK].\nDeﬁnition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "DKK, Theorem 4.10",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "Let (Ω, dist, µ) be a space of homogeneous type with a dimension d. Let A be a self-adjoint operator on L2(Ω) generating the semigroup (Tt)t⩾0. Let p0 ∈[1, 2) and m ∈[2, ∞). Assume that (Tt)t⩾0 satisﬁes Gaussian (resp. generalised Gaussian) estimates with parameter m (resp. p0, m). Let Y be a UMD lattice which is pY -convex and qY - concave for some pY ∈(1, 2] (resp. pY ∈(p0, 2]) and qY ∈[2, ∞) (resp. qY ∈[2, p′ 0)). Assume that the convexiﬁcations Y pY and (Y ′)q′ Y are also UMD lattices. For example, if Y = Ls(Ω′) for some s ∈(1, ∞), then any pY ∈(p0, s) and any qY ∈(s, p′ 0) are admissible.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 36,
+      "pageEnd": 43,
+      "target": "../sections/sec-010-acknowledgments.md",
+      "narrative": null,
+      "content": "Acknowledgments\nThe authors acknowledge ﬁnancial support through the research program ANR-18-CE40-0021\n(project HASCON). They also respectively acknowledge ﬁnancial support through the research\nprogram ANR-18-CE40-0035 (project REPKA) and ANR-17-CE40-0021 (project FRONT).\n35\nReferences\n[Al79]\nD. Aldous. Unconditional bases and martingales in Lp(F). Math. Proc. Cambridge\nPhilos. Soc. 85 (1979), no. 1, 117–123. 8\n[Alex]\nG. Alexopoulos. Spectral multipliers on Lie groups of polynomial growth. Proc.\nAmer. Math. Soc. 120 (1994), no. 3, 973–979. 2\n[AAR]\nG. Andrews, R. Askey and R. Roy. Special funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

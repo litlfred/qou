@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203160v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0203160v3",
+  "contains": [
+    "library/arxiv-math-0203160v3/sections/sec-front-matter",
+    "library/arxiv-math-0203160v3/sections/sec-000",
+    "library/arxiv-math-0203160v3/sections/sec-001",
+    "library/arxiv-math-0203160v3/sections/sec-002",
+    "library/arxiv-math-0203160v3/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on\n\n**arXiv:math/0203160v3 [math.QA] 28 Oct 2002**\n\n*Momar Dieng*\n\n13 pp, 5 sections.\n\n**Abstract.** We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-functions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind thoroughly analyzed as a basic example.\n\n**Outline.** Front matter; 1 Introduction; 2 Projective modules and their tensor products; 3 Connections and complex structures.; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0203160&metadataPrefix=arXiv), submitted 2002-10-28, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0203160v3",
+    "title_source": "slug",
+    "source_file": "0203160v3.pdf",
+    "source_sha256": "a84f478d72d40af25ad556602a5d27cd81e14931527abe71f4ab931597d0297d",
+    "pages": 13,
+    "arxiv": {
+      "id": "math/0203160",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "28 Oct 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

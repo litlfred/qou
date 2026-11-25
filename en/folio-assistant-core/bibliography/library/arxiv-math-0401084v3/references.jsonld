@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0401084v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Some limits of the colored Jones polynomials of the figure-eight knot",
+      "dcterms:creator": [
+        "KNOT, FIGURE-EIGHT",
+        "SPACES, ITS DEHN SURGERY"
+      ],
+      "dcterms:issued": "D:20220524",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0401084",
+      "dcterms:abstract": "We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries along it.",
+      "dcterms:source": "library/arxiv-math-0401084v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0401084v3"
+    }
+  ]
+}

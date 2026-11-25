@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1704.02352v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS",
+      "dcterms:creator": [
+        "˛EGA, MACIEJ DOŁ",
+        "ŚNIADY, PIOTR"
+      ],
+      "dcterms:issued": "D:20181109",
+      "dcterms:identifier": "https://arxiv.org/abs/1704.02352",
+      "dcterms:abstract": "We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal Young diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Young diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussian.",
+      "dcterms:source": "library/arxiv-1704.02352v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1704.02352v2"
+    }
+  ]
+}

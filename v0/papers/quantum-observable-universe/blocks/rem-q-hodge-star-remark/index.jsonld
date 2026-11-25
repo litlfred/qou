@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-hodge-star-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-hodge-star-remark",
+  "kind": "remark",
+  "title": "The factor $q$ in the $q$-Hodge star",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-hodge-star"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-hodge-star",
+  "tags": [
+    "hodge-star",
+    "deformation"
+  ],
+  "text": "q-hodge-star-remark.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,990 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s20-s002212362200012x-main",
+  "title": "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-log-concavity-and-concentration-of-lipschitz-fun"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 3,
+      "title": "A lower bound on the entropy",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-a-lower-bound-on-the-entropy"
+    },
+    {
+      "level": 3,
+      "title": "An application: concentration of negatively dependent random variables",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-an-application-concentration-of-negatively-de"
+    },
+    {
+      "level": 3,
+      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible extensions to spectral gap",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-relation-to-the-works-of-anari-liu-oveis-ghar"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries and a stochastic construction",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-preliminaries-and-a-stochastic-construction"
+    },
+    {
+      "level": 3,
+      "title": "Some preliminary definitions",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-some-preliminary-definitions"
+    },
+    {
+      "level": 3,
+      "title": "Stochastic localization",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-stochastic-localization"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-proof-of-theorem-2"
+    },
+    {
+      "level": 3,
+      "title": "Estimating the variance in terms of the transportation distance between tilts",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-estimating-the-variance-in-terms-of-the-trans"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Proposition 15: the stochastic coupling",
+      "number": "3.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-proof-of-proposition-15-the-stochastic-coupli"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Fact 4",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-proof-of-fact-4"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 6",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-proof-of-theorem-6"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "Journal of Functional Analysis 282 (2022) 109392 Contents lists available at ScienceDirect FUNCTIONAL Journal of Functional Analysis Ana www.elsevier.com /locate/jfa",
+      "extractCut": false,
+      "blocks": [
+        "library/1-s20-s002212362200012x-main/blocks/prose-sec-front-matter",
+        "library/1-s20-s002212362200012x-main/blocks/figure-img-p001-1",
+        "library/1-s20-s002212362200012x-main/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-log-concavity-and-concentration-of-lipschitz-fun",
+      "number": null,
+      "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boolean hypercube",
+          "heading": true
+        },
+        {
+          "term": "concentration",
+          "heading": true
+        },
+        {
+          "term": "rights reserved",
+          "heading": false
+        },
+        {
+          "term": "nontrivial concentration",
+          "heading": false
+        },
+        {
+          "term": "concentration bound",
+          "heading": false
+        },
+        {
+          "term": "elsevier inc",
+          "heading": false
+        },
+        {
+          "term": "eldan",
+          "heading": false
+        },
+        {
+          "term": "research council",
+          "heading": false
+        }
+      ],
+      "extract": "functions on the Boolean hypercube pst Ronen Eldan *!, Omer Shamir ? Weizmann Institute of Science, Israel ARTICLE INFO ABSTRACT -V Article history: Received 17 December 2020 Accepted 13 January 2022 Available online 19 January 2022 Communicated by Pietro Caputo Keywords: Boolean hypercube Log concave measures Concentration inequalities Rayleigh distributions It is well-known that measures whose density is the form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log-concave measures",
+          "heading": false
+        },
+        {
+          "term": "multi-linear extension",
+          "heading": false
+        },
+        {
+          "term": "continuous hypercube",
+          "heading": false
+        },
+        {
+          "term": "nontrivial concentration",
+          "heading": false
+        },
+        {
+          "term": "concentration inequalities",
+          "heading": false
+        },
+        {
+          "term": "varν",
+          "heading": false
+        },
+        {
+          "term": "lipschitz function",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        }
+      ],
+      "extract": "In the Euclidean space Rn, log-concave measures, namely measures whose density is of the form e−U with U being a convex potential are known to satisfy several concentration inequalities. For instance, if a probability measure ν is absolutely continuous with respect to the standard Gaussian measure γ on Rn, with a corresponding density dν = eV dγ where the potential V : Rn →R satisﬁes the condition ∇2V ⪯(1 −δ)In, (1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-11-a-lower-bound-on-the-entropy",
+      "number": "1.1",
+      "title": "A lower bound on the entropy",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entropy",
+          "heading": true
+        },
+        {
+          "term": "log-concavity-type",
+          "heading": false
+        },
+        {
+          "term": "βdiag",
+          "heading": false
+        },
+        {
+          "term": "oveis",
+          "heading": false
+        }
+      ],
+      "extract": "Our second result addresses the question of ﬁnding conditions under which the entropy of the measure ν is close to that of the corresponding product measure, having the same marginals as ν. This result is inspired by a corresponding bound due to Anari, Oveis- Gharan and Vinzant [3, Theorem 5.2], see the discussion below. Given a measure ν on Cn, we deﬁne the entropy of ν by H(ν) := \u0003 Cn log 1 ν({y})dν(y), the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-an-application-concentration-of-negatively-de",
+      "number": "1.2",
+      "title": "An application: concentration of negatively dependent random variables",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration",
+          "heading": true
+        },
+        {
+          "term": "sub-gaussian concentration",
+          "heading": false
+        },
+        {
+          "term": "rayleigh property",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "lipschitz functions",
+          "heading": false
+        },
+        {
+          "term": "vondrak",
+          "heading": false
+        },
+        {
+          "term": "eldan",
+          "heading": false
+        },
+        {
+          "term": "variables",
+          "heading": true
+        }
+      ],
+      "extract": "For a sequence of Bernoulli variables X1, ..., Xn, there are several notions of negative- dependence between those variables (see e.g., [4,17,16,5]), some of which are known or R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 5 conjectured to imply concentration of Lipschitz functions. Some notable ﬁrst steps to- wards a theory unifying those notions appear in the work of Pemantle [13], to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-relation-to-the-works-of-anari-liu-oveis-ghar",
+      "number": "1.3",
+      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible extensions to spectral gap",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral gap",
+          "heading": true
+        },
+        {
+          "term": "anari",
+          "heading": true
+        },
+        {
+          "term": "glauber dynamics",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "oveis-gharan",
+          "heading": true
+        },
+        {
+          "term": "log-concavity",
+          "heading": false
+        },
+        {
+          "term": "vinzant",
+          "heading": true
+        },
+        {
+          "term": "log-concave",
+          "heading": false
+        }
+      ],
+      "extract": "extensions to spectral gap A somewhat related notion of log-concavity of measures on the discrete hypercube was given in a series of works by Anari, Liu, Oveis-Gharan and Vinzant in [2,3,1]. Given {−1, 1}-Bernoulli random variables X1, . . . , Xn distributed according to a law ν, which can be identiﬁed with a random subset A ⊂[n] by Xi = 21i∈A −1, the work [2] considers the generating polynomial pν(z1, ..., zn) = E",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-preliminaries-and-a-stochastic-construction",
+      "number": "2",
+      "title": "Preliminaries and a stochastic construction",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "Throughout this section, we ﬁx a probability measure ν on Cn and a Lipschitz test function ϕ : Cn →R.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-some-preliminary-definitions",
+      "number": "2.1",
+      "title": "Some preliminary definitions",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilt",
+          "heading": false
+        },
+        {
+          "term": "cumulant-generating",
+          "heading": false
+        },
+        {
+          "term": "βin",
+          "heading": false
+        }
+      ],
+      "extract": "For a vector w ∈Rn, deﬁne the tilt of the measure ν as dτwν(x) dν(x) := Zν(w)−1e⟨w,x⟩ where Zν(w) := \u0003 Cn e⟨w,x⟩dν. In other words, τwν is the measure obtained by adding an external ﬁeld, w, to the measure ν. Also deﬁne the functions aν(w) := \u0003 Cn xdτwν(x), Aν(w) := \u0003 Cn (x −aν(w))⊗2 dτwν(x) = Cov(τwν), the center of mass and the covariance matrix of the tilt τwν. A well-known calculation gives, aν(w) = ∇L[ν](w),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-stochastic-localization",
+      "number": "2.2",
+      "title": "Stochastic localization",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "itô process",
+          "heading": false
+        },
+        {
+          "term": "dbt",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "stochastic",
+          "heading": true
+        },
+        {
+          "term": "process deﬁned",
+          "heading": false
+        },
+        {
+          "term": "dirac measure",
+          "heading": false
+        },
+        {
+          "term": "martingale",
+          "heading": false
+        },
+        {
+          "term": "brownian motion",
+          "heading": false
+        }
+      ],
+      "extract": "We construct a stochastic process driven by a Brownian motion, which we refer to as stochastic localization. A somewhat similar process was originally used in [6] to establish concentration properties for log-concave measures on Rn. Here we use a discrete version, similar to the construction which appears in [7,8]. In this section we occasionally allow ourselves to omit some of the details of the proofs, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-proof-of-theorem-2",
+      "number": "3",
+      "title": "Proof of Theorem 2",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-31-estimating-the-variance-in-terms-of-the-trans",
+      "number": "3.1",
+      "title": "Estimating the variance in terms of the transportation distance between tilts",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 798,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sup limsupε",
+          "heading": false
+        },
+        {
+          "term": "transportation distance",
+          "heading": true
+        },
+        {
+          "term": "ϕdνt",
+          "heading": false
+        },
+        {
+          "term": "dνt",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        },
+        {
+          "term": "varν",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "qtdqt",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a test function ϕ : Cn →R. Deﬁne Mt = ϕdνt. Observe that by part 2 of Proposition 10, Mt is a martingale. We ﬁrst claim that Varν[ϕ] = E[M]t + EVarνt[ϕ], (16) where [M]t denotes the quadratic variation of Mt. Indeed, by part 3 of Proposition 10, we have that M∞:= limt→∞Mt exists almost surely and has the law ϕ⋆ν. Consequently, Varν[ϕ|Ft] = Var[M∞|Ft] almost surely, for all t. By Itô’s isometry, we have Varν[ϕ] =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-proof-of-proposition-15-the-stochastic-coupli",
+      "number": "3.2",
+      "title": "Proof of Proposition 15: the stochastic coupling",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "τvν",
+          "heading": false
+        },
+        {
+          "term": "εθν",
+          "heading": false
+        },
+        {
+          "term": "ntr",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "βsds",
+          "heading": false
+        },
+        {
+          "term": "dbt",
+          "heading": false
+        },
+        {
+          "term": "coupling",
+          "heading": true
+        },
+        {
+          "term": "super-martingale",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 15 will be proven via a coupling argument laid out below, which is a variant of the standard reﬂection coupling of Brownian motions. Let v ∈Rn and consider the process w0 = v, dwt = dBt + aν(wt)dt. (21) According to Proposition 11, we have that limt→∞aν(wt) ∼τvν. This gives rise to the following coupling. Let Ut be a process adapted to Ft such that for all t, Ut is an orthogonal matrix. Let ε > 0 and θ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-proof-of-fact-4",
+      "number": "4",
+      "title": "Proof of Fact 4",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "τxν",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "Let ρ : [−1, 1]n →R be the harmonic extension of dν dμ and write g(x) := log ρ(tanh(x)) where, throughout this section, for x ∈[−1, 1]n, tanh(x) := (tanh(x1), ..., tanh(xn)). A calculation gives g(x) = log \u0003 Cn \u0005 i∈[n] (1 + tanh(xi)yi) dν(y) = − \u0004 i∈[n] log cosh(xi) + L[ν](x). Therefore, 20 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 Cov(τxν) = ∇2L[ν](x) = ∇2g(x) + diag \u001f 1 cosh2(x) . On",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-proof-of-theorem-6",
+      "number": "5",
+      "title": "Proof of Theorem 6",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cov",
+          "heading": false
+        },
+        {
+          "term": "shamir journal",
+          "heading": false
+        },
+        {
+          "term": "itô formula",
+          "heading": false
+        },
+        {
+          "term": "diag",
+          "heading": false
+        },
+        {
+          "term": "dat",
+          "heading": false
+        },
+        {
+          "term": "eldan",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a measure ν on Cn. Consider the process νt constructed in Section 2.2. The following lemma provides expressions for H(ν) and ˜H(ν) in terms of the process νt. Lemma 17. One has, H(ν) = 1 2E ⎡ ⎣ ∞ \u0003 0 Tr (Cov(νt)) dt ⎤ ⎦, (30) and ˜H(ν) = 1 2E ⎡ ⎣ ∞ \u0003 0 Tr \u0012 Cov(νt) (diag (Cov(νt)))−1 Cov(νt) \u0013 dt ⎤ ⎦. (31) Proof. Formula (30) is exactly the statement of [7, Lemma 8] (and follows by a direct calculation of dH(νt)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shayan oveis",
+          "heading": false
+        },
+        {
+          "term": "oveis gharan",
+          "heading": false
+        },
+        {
+          "term": "ronen eldan",
+          "heading": false
+        },
+        {
+          "term": "nima anari",
+          "heading": false
+        },
+        {
+          "term": "cynthia vinzant",
+          "heading": false
+        },
+        {
+          "term": "yuval peres",
+          "heading": false
+        },
+        {
+          "term": "kuikui liu",
+          "heading": false
+        },
+        {
+          "term": "robin pemantle",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, Spectral independence in high-dimensional ex- panders and applications to the hardcore model, arXiv preprint, arXiv :2001 .00303, 2020. [2] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, Cynthia Vinzant, Log-concave polynomials II: high- dimensional walks and an FPRAS for counting bases of a matroid, in: STOC’19—Proceedings of the 51st Annual ACM SIGACT Symposium on",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "shamir journal",
+      "heading": false
+    },
+    {
+      "term": "ronen eldan",
+      "heading": false
+    },
+    {
+      "term": "log-concave measures",
+      "heading": false
+    },
+    {
+      "term": "concentration bound",
+      "heading": false
+    },
+    {
+      "term": "functional analysis",
+      "heading": false
+    },
+    {
+      "term": "rayleigh measures",
+      "heading": false
+    },
+    {
+      "term": "strong concentration",
+      "heading": false
+    },
+    {
+      "term": "nontrivial concentration",
+      "heading": false
+    },
+    {
+      "term": "concentration inequalities",
+      "heading": false
+    },
+    {
+      "term": "sub-gaussian concentration",
+      "heading": false
+    },
+    {
+      "term": "dwt dbt",
+      "heading": false
+    },
+    {
+      "term": "itô process",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s20-s002212362200012x-main"
+  }
+}

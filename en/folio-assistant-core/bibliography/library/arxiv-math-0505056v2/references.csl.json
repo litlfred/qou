@@ -1,0 +1,23 @@
+[
+  {
+    "id": "arxiv-math-0505056v2",
+    "type": "article-journal",
+    "title": "Matrix factorizations and link homology II",
+    "author": [
+      {
+        "family": "Khovanov",
+        "given": "Mikhail"
+      },
+      {
+        "family": "Rozansky",
+        "given": "Lev"
+      }
+    ],
+    "issued": {
+      "raw": "D:20181022"
+    },
+    "URL": "https://arxiv.org/abs/math/0505056",
+    "abstract": "To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces. The Euler characteristic of this complex (and of its triply-graded cohomology groups) is the HOMFLYPT polynomial of the link. We show that the dimension of each cohomology group is a link invariant. 1 Matrix factorizations with a parameter In the paper [KR] we constructed, for each n > 0, a bigraded cohomology theory of links in R3 whose Euler characteristic is a certain one-variable specialization (qn, q) of the HOMFLYPT polynomial [HOMFLY], [PT]. The n = 0 specialization is the Alexander polynomial, equal to the Euler char- acteristic of the knot homology theory discovered by Ozsv´ath, Rasmussen and Szab´o [OS], [R1]. The approach in [KR] fails for n = 0, assigning trivial groups to any link. In this sequel to [KR] we assume that the reader is familiar with that paper. Recall that our construction of link cohomology was based on matrix factorizations with potentials being sums and diﬀerences of xn+1, for various x. When n = 0, the category of matrix factorizations (up to chain homo- topies) with the potential P ±xi is trivial. Looking for a remedy, let us add a formal variable a and change the potential from x to ax. Take an oriented arc c as in ﬁgure 1, label its ends x1 and x2, and assign the potential ax1 −ax2 to the arc. Let R = Q[a, x1, x2] and deﬁne Cc as the factorization R a −→R x1−x2 −−−→R. We have d2 = ax1 −ax2 and view Cc as an object of the homotopy category of matrix factorizations with the potential a(x1 −x2). 1",
+    "note": "arXiv:math/0505056"
+  }
+]

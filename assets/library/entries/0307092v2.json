@@ -1,0 +1,1049 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0307092v2",
+  "blocks": [
+    {
+      "id": "library/0307092v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ISSN 1364-0380 (on line) 1465-3060 (printed)\n413\nGeometry & Topology\nG\nG\nG\nGG\nGGG G GGGG\nG\nG\nT TTTT\nT\nT\nT\nT\nT\nT\nT\nT\nTT\nVolume 8 (2004) 413–474\nPublished: 14 February 2004\nExtended Bloch group and the\nCheeger–Chern–Simons class\nWalter D Neumann\nDepartment of Mathematics, Barnard College\nColumbia University, New York, NY 10027, USA\nEmail: neumann@math.columbia.edu\nAbstract\nWe deﬁne an extended Bloch group and show it is naturally isomorphic to\nH3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex-\nact simplicial formula for the universal Cheeger–Chern–Simons class on this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThere are several variations of the deﬁnition of the Bloch group in the litera-\nture; by [7] they diﬀer at most by torsion and they agree with each other for\nalgebraically closed ﬁelds. In this paper we shall use the following.\nDeﬁnition 1.1 Let k be a ﬁeld. The pre-Bloch group P(k) is the quotient of\nthe free Z–module Z(k −{0, 1}) by all instances of the following relation:\n[x] −[y] + [y\nx] −[1 −x−1\n1 −y−1 ] + [1 −x\n1 −y ] = 0,\n(1)\nThis relation is usually called the ﬁve term relation. The Bloch group B(k) is\nthe kernel of the map\nP(k) →k∗∧Z k∗,\n[z] 7→2\n\u0000z ∧(1 −z)\n\u0001\n.\n(In [15] th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The extended Bloch group",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-extended-bloch-group.md",
+      "narrative": null,
+      "content": "by an idea of Jun Yang, to whom I am grateful also for many useful conversa-\ntions. I’m grateful to Benedetti and Baseilhac, whose use in [1] of the prelimi-\nnary preprint [17] and subsequent correspondence led me to ﬁnish writing this\npaper. This research was supported by the Australian Research Council and\nby the NSF.\n2\nThe extended Bloch group\nWe shall need a Z × Z cover bC of C −{0, 1} which can be constructed as\nfollows. Let P be C −{0, 1} split along the rays (−∞, 0) and (1, ∞). Thus\neach real number r outside the interval [0, 1] occurs twice in P , once in the\nupper half plane of C and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "There exists an isomorphism λ: H3(PSL(2, C); Z) →bB(C) such that the composition λ ◦R: H3(PSL(2, C); Z) →C/π2Z is the charac- teristic class given by i(vol +i cs). To describe the map λ we must give a geometric interpretation of bC.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parameters for ideal hyperbolic simplices",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-parameters-for-ideal-hyperbolic-simplices.md",
+      "narrative": null,
+      "content": "Parameters for ideal hyperbolic simplices\nIn this section we shall interpret bC as a space of parameters for what we call\n“combinatorial ﬂattenings” of ideal hyperbolic simplices. We need this to deﬁne\nthe above map λ. It also gives a geometric interpretation of the lifted ﬁve term\nrelation.\nWe shall denote the standard compactiﬁcation of H3 by H\n3 = H3 ∪CP 1. An\nideal simplex ∆with vertices z0, z1, z2, z3 ∈CP 1 is determined up to congru-\nence by the cross-ratio\nz = [z0 : z1 : z2 : z3] = (z2 −z1)(z3 −z0)\n(z2 −z0)(z3 −z1).\nPermuting the vertices by an even (ie, orientation preserving) permutat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-4-definition-of.md",
+      "narrative": null,
+      "content": "Deﬁnition of λ\nLet G = PSL(2, C) (with the discrete topology). In this section we describe\nthe map λ: H3(G; Z) →bP(C).\nWe ﬁrst describe the combinatorial representation of elements of H3(G; Z) that\nwe will use.\nAs we will describe, a special case is to give a closed oriented\ntriangulated 3–manifold with a ﬂat G–bundle on it. Any element of H3(G; Z)\ncan be represented this way, but we do not want to restrict to this type of\nrepresentation.\nWe need to clarify our terminology for simplicial complexes.\nDeﬁnition 4.1 We use the usual concept of simplicial complex K except that\nwe do not require tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representing elements of Hn(G;Z)",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-41-representing-elements-of-hngz.md",
+      "narrative": null,
+      "content": "Representing elements of Hn(G; Z)\nDeﬁnition 4.2 An ordered n–cycle will be a compact n–dimensional simpli-\ncial complex K such that the complement |K|−|K(n−3)| of its (n−3)–skeleton\nis an oriented n–manifold, together with an ordering of the vertices of each n–\nsimplex of K so that these orderings agree on common faces. The ordering\norients each n–simplex ∆i of K, and this orientation may or may not agree\nwith the orientation of |K| −|K(n−3)|. Let ǫi = +1 or −1 accordingly. Then\nthe n–cycle P\ni ǫi∆i represents a homology class [K] ∈Hn(|K|; Z) called the\nfundamental class.\nWe will also require",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic description",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-411-algebraic-description.md",
+      "narrative": null,
+      "content": "Algebraic description\nWe recall a standard chain complex for homology of G = PSL(2, C), the chain\ncomplex of “homogeneous simplices for G.” We will, however, diverge from\nthe standard by using only non-degenerate simplices, ie, simplices with distinct\nvertices — we may do this because G is inﬁnite.\nLet Cn(G) denote the free Z–module on all ordered (n+1)–tuples ⟨g0, . . . , gn⟩\nof distinct elements of G. Deﬁne δ : Cn →Cn−1 by\nδ⟨g0, . . . , gn⟩=\nn\nX\ni=0\n(−1)i⟨g0, . . . , ˆgi, . . . , gn⟩.\nThen each Cn is a free ZG–module under left-multiplication by G. Since G is\ninﬁnite the sequence\n· · · →C2 →",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological description",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-412-topological-description.md",
+      "narrative": null,
+      "content": "Topological description\nGiven a space X , any element α ∈Hn(X; Z) can be represented as f∗[K]\nfor some map f : |K| →X of an ordered n–cycle to X . If X = BG is a\nclassifying space for G then this map is determined up to homotopy by the ﬂat\nG–bundle f ∗EG over |K|, so this ﬂat bundle determines the homology class\nα ∈Hn(BG; Z) = Hn(G; Z)\nFlat G–bundles over |K| are determined by G–valued 1–cocycles on K up to\nthe coboundary action of G–valued 0–cochains (the 1–cocycle is the obstruction\nto extending over |K(1)| a chosen section of the ﬂat bundle over K(0)). We recall\nthe basic deﬁnitions.\nLet Sq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "For each choice of z as in the above deﬁnition, a strong ﬂat- tening of K exists. Recall that our G–labelled ordered 3–cycle K was chosen to represent an ele- ment α ∈H3(G; Z) (G = PSL(2, C)). The following theorem ﬁnally gives the deﬁnition of the map λ: H3(G; Z) →bB(C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "For any ﬂattening of K the element P i ǫi[xi; pi, qi] ∈bP(C) only depends on the homology class α ∈H3(PSL(2, C); Z). We denote it λ(α). Moreover, λ(α) ∈bB(C) and λ: H3(PSL(2, C); Z) →bB(C) is a homomorphism. Geometry & Topology, Volume 8 (2004) Walter D Neumann In Remark 10.5 we point out that instead of choosing a single z in the deﬁnition of ﬂattening, we may choose a diﬀerent z for each vertex of K, and Theorem 4.6 remains true. This is useful in practice (Section 14).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "eventually applies to ﬂattenings that are not necessarily strong, and also to quasi-simplicial complexes for which the vertex orderings of the simplices need not be globally induced. Section 11 completes the proof of Theorem 4.6. First it is shown that the singu- larities of |K| can be “resolved” to make |K| into a manifold. Since H3(G; Z) Geometry & Topology, Volume 8 (2004) Extended Bloch group and the Cheeger–Chern–Simons class can be represented as the bordism group of 3–manifolds with ﬂat G–bundles, the proof is completed by showing that the element of bB(C) is unchanged by ele- mentary b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/cor-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "cor-sec-007-04.md",
+      "narrative": null,
+      "content": "For a normal path in the star of a vertex, if the ﬂattening condition for log-parameters is satisﬁed, then so is the parity condition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "Notation as in Deﬁnition 4.4. If we use ﬂattenings ℓ(xi; 0, 0) for the simplices of K then the log parameter along any normal path in the star of a 0–simplex is a multiple of 2πi.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "Notation as in Deﬁnition 4.4. If we use ﬂattenings ℓ(xi; 0, 0) for the simplices of K then the parity along any normal path in K is zero. Proof As we follow a normal path the contribution to the parity as we pass an edge of a simplex is 0 if the edge is the 01, 03, 12, or 23 edge of the simplex and the contribution is ±1 if it is the 02 or 13 edge. Consider the orientations of the triangular faces we cross as we follow the path, where the orientation is the one induced by the ordering of its vertices. As we pass a 02 or 13 edge this orientation changes while for the other edges it does not. Si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Developing map",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-007-5-developing-map.md",
+      "narrative": null,
+      "content": "Developing map\nSuppose we have a G–labeled 3–cycle K. Choose a generic point z ∈∂H\n3 as\nin the deﬁnition of ﬂattenings (Deﬁnition 4.4). Then each simplex ∆i of K\ncorresponds to a non-degenerate ideal simplex ⟨g(i)\n0 z, g(i)\n1 z, g(i)\n2 z, g(i)\n3 z⟩in H\n3.\nThis simplex is determined up to isometry, since (g(i)\n0 , . . . , g(i)\n3 ) is well deﬁned\nup to left multiplication by elements of G = PSL(2, C) = Isom+(H3). This\nassociates a geometry as an ideal simplex to each simplex of K, and hence, by\nlifting, also to each simplex of the universal cover ˜K.\nWe would like to use this geometry to constru",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "That theorem says a strong ﬂattening of K exists. Since changing ﬂattenings changes log parameters by multiples of πi, it must be true that if we make an arbitrary choice of ﬂattenings of the individual ideal simplices then the sum of log parameters along any normal path in the star of a 0–simplex is a multiple of πi. We will show, in fact:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Cycle relation about E",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "With the above notation, n X j=1 ǫj[wj] = n X j=1 ǫj[w′ j] ∈bP(C), where we are using [w] as a shorthand for [ℓ−1w] (ie, [w] means [z; p, q] where ℓ(z; p, q) = w; see Lemma 3.2). Proof Each of the 3–simplices ∆i has an associated ideal hyperbolic struc- ture compatible with the combinatorial ﬂattenings wj . This ideal hyperbolic structure is also compatible with the ﬂattening w′ j. Choose a realization of ∆1 Geometry & Topology, Volume 8 (2004) Extended Bloch group and the Cheeger–Chern–Simons class as an ideal simplex in H 3. We think of this as a mapping of ∆1 to H",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cycle relation",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-6-the-cycle-relation.md",
+      "narrative": null,
+      "content": "The cycle relation\nIn this section we prove a general relation called the “cycle relation,” that holds\nin bP(C). We will use it repeatedly later. It is, in fact, a consequence of the\nﬁve-term relation (2) alone and does not involve the transfer relation (3).\nLet K be a simplicial complex obtained by gluing 3–simplices ∆1, . . . , ∆n to-\ngether in sequence around a common 1–simplex E. Thus, for each index j\nmodulo n, ∆j is glued to each of ∆j−1 and ∆j+1 along one of the two faces of\n∆j incident to E. Suppose, moreover, that the vertices of each ∆j are ordered\nsuch that orderings agree on the co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "For any [x; p, q] ∈bP(C) one has [x; p, q] + [1 −x; −q, −p] = 2[1/2; 0, 0]. Proof Assume ﬁrst that 0 < y < x < 1. Then, as remarked in the proof of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "If bP′(C) and bB′(C) are deﬁned like bP(C) and bB(C) but without the transfer relation, then in bP′(C) the element κ := [x; 1, 1]+[x; 0, 0]− [x; 1, 0] −[x; 0, 1] is independent of x and has order 2. Moreover, bP′(C) = bP(C) × C2 and bB′(C) = bB(C) × C2, where C2 is the cyclic group of order 2 generated by κ. Proof If we subtract equation (7) with p0 = p1 = q0 = q1 = q2 = 1 from the same equation with p0 = p1 = 0, q0 = q1 = q2 = 1 we obtain [x; 1, 1]−[y; 1, 1]− [x; 0, 1] + [y; 0, 1] = [x; 1, 0] −[y; 1, 0] −[x; 0, 0] + [y; 0, 0], which rearranges to show that κ is independent of x. The last of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "The following sequence is exact: 0 →C∗ χ −→bP(C) →P(C) →0 where bP(C) →P(C) is the natural map and χ(z) := [z; 0, 1] −[z; 0, 0] for z ∈C∗. Proof Denote {z, p} := [z; p, q] −[z; p, q −1] which is independent of q by the ﬁrst equation of (8). By Lemma 7.3 we have [z; p, q]−[z; p−1, q] = −{1−z, −q}. It follows that elements of the form {z, p} generate Ker \u0000 bP(C) →P(C) \u0001 . Com- puting {z, p} using Lemma 7.1 and the transfer relation, one ﬁnds {z, p} = {z, 0} which only depends on z. Thus the elements {z, 0} = χ(z) generate Ker \u0000 bP(C) →P(C) \u0001 . If we take equation (7) with even pi and subtract th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of B\"0362B(C)",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-009-7-computation-of-b0362bc.md",
+      "narrative": null,
+      "content": "In this section we work out the relationship of the extended Bloch group with\nthe usual one. The result is Theorem 7.5.\nWe consider the case n = 3 of the cycle relation (Lemma 6.1). Denote the\nﬁve vertices involved v0 . . . , v4 and assume the three 3–simplices meet along\nthe edge E = v3v4. If we order v0, . . . , v4 in this order and give the simplices\nthe inherited vertex orders then the cycle relation can be written (with the\nappropriate relationship among p0, p1, p2):\n[x; p0, q0] −[y; p1, q1] + [y/x; p2, q2] =\n[x; p0, q0 −1] −[y; p1, q1 −1] + [y/x; p2, q2 −1].\n(7)\nThis is true for any choi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "thm-sec-009-04.md",
+      "narrative": null,
+      "content": "There is a commutative diagram with exact rows and columns y y y 0 −−−−→ µ∗ −−−−→ C∗ −−−−→ C∗/µ∗ −−−−→ χ|µ∗ y χ y β y y 0 −−−−→bB(C) −−−−→bP(C) ν −−−−→ C ∧C −−−−→K2(C) −−−−→0 y y ǫ y = y 0 −−−−→B(C) −−−−→P(C) ν′ −−−−→C∗∧C∗−−−−→K2(C) −−−−→0 y y y y Here µ∗is the group of roots of unity and the labeled maps deﬁned as follows: χ(z) = [z; 0, 1] −[z; 0, 0] ∈bP(C); ν[z; p, q] = (log z + pπi) ∧(−log(1 −z) + qπi); ν′[z] = 2 \u0000z ∧(1 −z) \u0001 ; β[z] = log z ∧πi; ǫ(w1 ∧w2) = −2(ew1 ∧ew2); and the unlabeled maps are the obvious ones. Proof The top horizontal sequence is trivially",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/cor-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "cor-sec-010-03.md",
+      "narrative": null,
+      "content": "We have a commutative diagram with exact rows and columns: y y Z/2 = −−−−→ Z/2 y y 0 −−−−→C∗ ˆχ −−−−→EP(C) −−−−→P(C) −−−−→0 yz7→z2 y y= 0 −−−−→C∗ χ −−−−→ bP(C) −−−−→P(C) −−−−→0 y y and analogously for the Bloch group: y y Z/2 = −−−−→ Z/2 y y 0 −−−−→ µ∗ ˆχ −−−−→EB(C) −−−−→B(C) −−−−→0 yz7→z2 y y= 0 −−−−→ µ∗ χ −−−−→ bB(C) −−−−→B(C) −−−−→0 y y Question Is EB(C) related to H3(SL(2, C); Z)? Do SL(2, C)–labeled ordered 3–cycles have ﬂattenings using only X00? Geometry & Topology, Volume 8 (2004) Walter D Neumann",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "The function R(z; 2p, 2q) := R(z)+πi(p log(1−z)+q log z)− π2 gives a well deﬁned map X00 →C/2π2Z and induces a homomorphism R: EP(C) →C/2π2Z. We can repeat the computations in Section 6 word-for-word, replacing any- thing of the form [x; p, q] by [x; 2p, 2q], to show that Ker \u0000EP(C) →P(C) \u0001 is generated by elements of the form ˆχ(z) := [z; 0, 2] −[z; 0, 0]. We thus get:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "The following sequence is exact: 0 →C∗ ˆχ −→EP(C) →P(C) →0 where bP(C) →P(C) is the natural map and ˆχ(z) := [z; 0, 2] −[z; 0, 0] for z ∈C∗. Geometry & Topology, Volume 8 (2004) Extended Bloch group and the Cheeger–Chern–Simons class Proof The only thing to prove is the injectivity of ˆχ which follows by noting that R \u0000ˆχ(z) \u0001 = πi log z ∈C/2π2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The more extended Bloch group",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-010-8-the-more-extended-bloch-group.md",
+      "narrative": null,
+      "content": "The more extended Bloch group\nThis section is a digression. We describe a slightly more natural looking variant\nof the extended Bloch group, based on the universal abelian cover X00 of C −\n{0, 1}. It turns out to be a Z/2 extension of bB(C). We are not sure of its\nsigniﬁcance, so we describe it brieﬂy.\nRecall that bC consists of four components X00, X01, X10, and X11, of which\nX00 is naturally the universal abelian cover of C −{0, 1}.\nLet c\nFT00 be c\nFT ∩(X00)5, so c\nFT00 = c\nFT0 + 2V in the notation of Deﬁnition\n2.2. As mentioned earlier, c\nFT00 is, in fact, equal to c\nFT0, but we do not need",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[13], Theorem 5.1",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "The sequence 0 →H3(J ) (γ′,γ′ 2) −−−−→H1(∂K0; Z) ⊕H1(K0; Z/2) r−i∗ −−−→H1(∂K0; Z/2) →0 is exact, where r: H1(∂K0; Z) →H1(∂K0; Z/2) is the coeﬃcient map and the map i∗: H1(K0; Z/2) →H1(∂K0; Z/2) is induced by the inclusion ∂K0 → K0. Returning to the choice of δ above, assume we have made a choice so that the resulting ﬂattenings wi do not lead to zero log-parameters and parities for normal paths. Taking πi times the log-parameters of normal paths leads as above to an element c ∈H1(∂K0; Z). Similarly, parities of normal paths leads to an element of c2 ∈H1(K0; Z/2). These elements satisfy r(c) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-011-9-proof-of-theorem.md",
+      "narrative": null,
+      "content": "In this section we will prove Theorem 4.5, which says that a strong ﬂattening\nof any G–labeled ordered 3–cycle K exists.\nThis proof, and the ﬁrst two lemmas in the next section, depend heavily on [13].\nWe must ﬁrst therefore recall some notation and results from there. (The results\nof [13] do not require as strong conditions on K as we have here: there, the\nordering is not needed and K is only required to be a quasi-simplicial complex.)\nRecall that K is an ordered 3–cycle: the vertices of each 3–simplex are ordered\nwith orderings agreeing on common faces.\nThe underlying space |K| is an\noriente",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[13], Theorem 4.2",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "The sequence J : 0 −→C0 α −→C1 β −→J β∗ −→C1 α∗ −→C0 −→0 is a chain complex. Its homology groups Hi(J ) (indexing the non-zero groups of J from left to right with indices 5, 4, 3, 2, 1) are H5(J ) = 0, H4(J ) = Z/2, H1(J ) = Z/2, H3(J ) = H ⊕H1(K; Z/2), H2(J ) = H1(K; Z/2), where H = Ker(H1(∂K0; Z) →H1(K0; Z/2)). Moreover, the isomorphism H2(J ) →H1(K; Z/2) results by interpreting an element of Ker(α∗) ⊂C1 as an unoriented 1-cycle in K. Geometry & Topology, Volume 8 (2004) Walter D Neumann",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "The choice of strong ﬂattening of K does not aﬀect the resulting element P i ǫi[xi; pi, qi] ∈bP(C). Proof If we have a diﬀerent choice of ﬂattenings wi satisfying the parity and log-parameter conditions for a strong ﬂattening of K then Lemma 9.3 implies that the diﬀerence between the corresponding elements δ represents 0 in H3(J ). It is thus in the image of β. For E ∈C2 the eﬀect of changing δ by β(E) is to change the element P i ǫi[xi; pi, qi] ∈bP(C) by the cycle relation about E of Lemma 6.1. Since this is a consequence of the lifted ﬁve term relations, the element in bP(C) is unchanged. Ul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "Given a ﬂattening of K, the element P i ǫi[xi; pi, qi] ∈bP(C) lies in bB(C). Proof For any Q–vector-space V , the skew-symmetric bilinear form ⟨⟩on J induces a symmetric bilinear map B : (J ⊗V ) ⊗(J ⊗V ) →V ∧V , (a ⊗v) ⊗(b ⊗w) 7→⟨a, b⟩v ∧w .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "Changing the choice of the point z ∈∂H 3 in the deﬁnition of strong ﬂattening (Deﬁnition 4.4) does not change the element P i ǫi[xi; pi, qi] ∈ bB(C). Proof This is a special case of the following lemma, since if we change the 1–cocycle corresponding to a G–labeling by the coboundary of the constant 0– cochain with value g, the eﬀect is the same as replacing z by gz (see subsection 4.1.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-04.md",
+      "narrative": null,
+      "content": "If we change the G–labeling of K by changing the corresponding 1–cocycle by a coboundary (subsection 4.1.2) then the element P i ǫi[xi; pi, qi] ∈ bB(C) does not change. Proof The corresponding result is known for the element in B(C), so the change is in Ker( bB(C) →B(C)) = Q/Z. Thus, if we knew that the cobound- ary action of 0–cochains was continuous using the standard topology of G = PSL(2, C) the Lemma would follow. This continuity seems “self-evident” but we do not know an easier proof than what follows, which directly proves the local constancy of the element of bB(C) under this action. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-06.md",
+      "narrative": null,
+      "content": "Changing the ordering of the 0–simplices of K does not change the element P i ǫi[xi; pi, qi] ∈bB(C). Proof The full permutation group on K(0) is generated by transpositions on adjacent elements with respect to the ordering, so we need only consider such transpositions. If the two 0–simplices are not joined by a 1–simplex then the the transposition has no eﬀect on the vertex-ordering of any 3–simplex so there is nothing to prove. Assume therefore that v and w are two 0–simplices that are adjacent in the ordering of K(0) and are joined by a 1–simplex. Only the 3– simplices that have ⟨v, w⟩as an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-012-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "lem-sec-012-07.md",
+      "narrative": null,
+      "content": "A change of triangulation of K by Pachner moves does not change the represented element P i ǫi[xi; pi, qi] ∈bB(C). Proof We want to leave unchanged the ﬂattenings on the unaltered simplices of K and put ﬂattenings on the new simplices to get a ﬂattening of the new complex K′. We can do this if and only if the ﬂattenings of the changed simplices (the ones in K that have been replaced and the ones they have been replaced by) give a ﬂattening of the boundary of the 4–simplex (in the sense that log and parity parameters around edges are zero). In particular, the change in the element of bB(C) is t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Start of the proof of Theorem ??",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "../sections/sec-012-10-start-of-the-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Lemma 10.1 The choice of strong ﬂattening of K does not aﬀect the resulting\nelement P\ni ǫi[xi; pi, qi] ∈bP(C).\nProof If we have a diﬀerent choice of ﬂattenings wi satisfying the parity\nand log-parameter conditions for a strong ﬂattening of K then Lemma 9.3\nimplies that the diﬀerence between the corresponding elements δ represents 0\nin H3(J ). It is thus in the image of β. For E ∈C2 the eﬀect of changing δ\nby β(E) is to change the element P\ni ǫi[xi; pi, qi] ∈bP(C) by the cycle relation\nabout E of Lemma 6.1.\nSince this is a consequence of the lifted ﬁve term\nrelations, the element in bP(C) is un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/rem-sec-012-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "rem-sec-012-05.md",
+      "narrative": null,
+      "content": "The above lemma can be interpreted to say that, instead of choosing a single z ∈∂H3 in Deﬁnition 4.4 to obtain the ideal simplex shapes for the simplices of K, we can choose a diﬀerent z for each 0–simplex of K, and the element of bB(C) is unaﬀected. This will be important when discussing the applications to 3–manifolds in Section 14. We have been assuming that K is a simplicial rather than quasi-simplicial complex, but so far we have not really used this. We will initially prove Theorem 4.6 under the following assumption, which we will eliminate again in Proposition 11.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 47,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "If K is just ﬂattened (rather than strongly ﬂattened) then we can blow up to make |K| into a 3–manifold without changing the represented element in bBC. In particular, Theorem 4.6 holds for ﬂattenings if it holds for strong ﬂattenings. Proof To apply the above argument to to blow up and simplify the link of a vertex we need a separating curve C in the link so that the log-parameter along a parallel normal curve in the link Lv is zero. Suppose the log-parameter ﬂattening conditions are satisﬁed around edges, but not necessarily along nor- mal curves. Log-parameters along normal curves then give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/lem-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 47,
+      "target": "lem-sec-013-03.md",
+      "narrative": null,
+      "content": "If we represent an element α ∈H3(G; Z) as in Theorem 4.6 but without requiring the condition on parity then the resulting element diﬀers from λ(α) at worst by the element of order 2 in bB(C). Proof Suppose the log-parameter condition is satisﬁed but the parity condi- tion is not satisﬁed for the ﬂattening of K and let µ be the resulting element in bB(C). Parity along paths determines an element of H1(|K|−K(0); Z/2) and hence a 2–fold cover of K (possibly branched at some 0–simplices). The lift of the ﬂattening to this cover will satisfy the parity condition and hence represent λ(2α) = 2λ(α). B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 47,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "Any quasi-simplicial ordered 3–cycle K is related by Pach- ner moves that respect vertex-orderings of 3–simplices to a simplicial 3–cycle K′ whose vertex-orderings are induced by a global ordering of the 0–simplices of K′. Proof We will start with an arbitrary ordering of the 0–simplices of K. At ﬁrst this ordering will not induce the given vertex-orderings of simplices. We will perform various Pachner moves on K. Each time we perform a 1 →4 move we will add the new 0–simplex as a new maximal element both in our ordering of 0–simplices and also in the vertex-orderings of the new 3–simplices cr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Completion of proof of Theorem ??",
+      "pageStart": 41,
+      "pageEnd": 47,
+      "target": "../sections/sec-013-11-completion-of-proof-of-theorem.md",
+      "narrative": null,
+      "content": "In this section we show that we can always resolve the singularities of |K|\nto replace it by a triangulated 3–manifold and then discuss surgery on this\n3–manifold to complete the proof of Theorem 4.6.\nThe underlying space of K is a 3–manifold except at 0–simplices, where it\nmay look locally like the cone on a closed surface of genus ≥1. Suppose this\noccurs at some 0–simplex v. Choose a non-separating simple closed simplicial\ncurve C in the link Lv. This curve is determined by an open disk D in the\nstar of v. We slice |K| open along D and splice in a complex as in Figure 6,\ngluing the top and t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "prop-sec-014-02.md",
+      "narrative": null,
+      "content": "One can give an explicit computation of R ◦λ on the torsion of H3(G; Z) (see also [8]). By [7], the torsion subgroup Q/Z ⊂H3(G; Z) is given by the image of µ/{±1} →G, where µ is the group of roots of unity mapping to diagonal matrices in G. Thus the torsion is generated by the images of gen- erators of H3(Z/n; Z) ∼= Z/n in H3(G; Z). We can represent a generator of this Z/n ⊂H3(G; Z) by the lens space L(n, 1) with the ﬂat G–bundle Geometry & Topology, Volume 8 (2004) Extended Bloch group and the Cheeger–Chern–Simons class given by mapping a generator of π2(L(n, 1)) = Z/n to the 2π/n–rotation in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cheeger--Chern--Simons class",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-014-12-cheeger--chern--simons-class.md",
+      "narrative": null,
+      "content": "The following is simply a restatement of Theorem 2.6.\nTheorem 12.1 The homomorphism λ: H3(G; Z) →bB(C) is an isomorphism\nand it ﬁts in a commutative square:\nH3(G; Z)\nλ\n−−−−→\nbB(C)\nc\ny\nR\ny\nC/π2Z\n−−−−→C/π2Z\nHere G is, as usual, PSL(2, C) with discrete topology, c is the Cheeger–Chern–\nSimons class, and R is the Rogers dilogarithm map of Proposition 2.5.\nGeometry & Topology, Volume 8 (2004)\n460\nWalter D Neumann\nProof We ﬁrst prove commutativity of the diagram. The imaginary part of\nboth c and R gives volume (this was proved for R in slightly diﬀerent language\nin [13]; see also [5]) so the onl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "The homomorphism λ: H3(G; Z) →bB(C) is an isomorphism and it ﬁts in a commutative square: H3(G; Z) λ −−−−→ bB(C) c y R y C/π2Z −−−−→C/π2Z Here G is, as usual, PSL(2, C) with discrete topology, c is the Cheeger–Chern– Simons class, and R is the Rogers dilogarithm map of Proposition 2.5. Geometry & Topology, Volume 8 (2004) Walter D Neumann Proof We ﬁrst prove commutativity of the diagram. The imaginary part of both c and R gives volume (this was proved for R in slightly diﬀerent language in [13]; see also [5]) so the only issue is the real part. As pointed out in [5], to prove that the real",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/cor-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "cor-sec-015-02.md",
+      "narrative": null,
+      "content": "If we deﬁne groups analogous to bP(C) and bB(C) using ﬂat- tened simplices modulo the lifted ﬁve term relation, but ignoring orderings of vertices, we obtain the quotients bP(C)/C6 and bB(C)/C6, where C6 is the unique cyclic subgroup of order 6. Geometry & Topology, Volume 8 (2004) Walter D Neumann",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "If z is in the upper half plane then, with χ as in Proposition 7.4 and Theorem 7.5 [z; p, q] −[1/(1 −z); q, −1 −p −q] = χ(eπi/3+qπi) [z; p, q] −[1 −1/z; −1 −p −q, p] = χ(e−πi/3+pπi) [z; p, q] + [1/z; −p, 1 + p + q] = χ(epπi) [z; p, q] + [1 −z; −q, −p] = χ(eπi/3) [z; p, q] + [z/(z −1); 1 + p + q, −q] = χ(e2πi/3+qπi) Proof The last three of the above equations correspond to permutations which exchange two vertices. Since two of these involutions, together with the Klein four-group (which leaves ﬂattenings unchanged) generate the full symmetric group, it suﬃces to prove the third and fourth equat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unordered simplices",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-015-13-unordered-simplices.md",
+      "narrative": null,
+      "content": "Unordered simplices\nAs we have shown in Proposition 11.2, our complexes can be quasi-simplicial\n(closed simplices not required to embed). The triangulations that arise in prac-\ntice (eg, ideal triangulations of complete ﬁnite volume 3–manifolds, see section\n14) are often not simplicial. However, a quasi-simplicial triangulation does not\nalways admit vertex-orderings of its 3–simplices that agree on common faces.\nThus, to use such a triangulation one may either have to subdivide, or do\nwithout vertex-orderings.\nIn this section we describe how the theory changes if we discard the orderings of\nve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/cor-sec-016-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "cor-sec-016-06.md",
+      "narrative": null,
+      "content": "For any oriented complete ﬁnite volume hyperbolic 3–mani- fold M i(vol +i cs)(M) = R(ˆβ(M)) ∈C/π2Z, where cs(M) is Meyerhoﬀ’s extension of the Chern–Simons invariant if M is non-compact. Geometry & Topology, Volume 8 (2004) Walter D Neumann The “correction term” −Ph j=1 χ(eλj) in Theorem 14.5 arises because the sum of ﬂattening parameters corresponding to a meridian of the a solid torus added at a cusp by Dehn ﬁlling is 2πi rather than zero. The proof of the theorem shows that ﬂattening parameters can be chosen so that this sum is zero, and then the correction term is not there. This gives an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/ex-sec-016-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "ex-sec-016-04.md",
+      "narrative": null,
+      "content": "Figure 8 gives a well-known ideal triangulation for the com- plete hyperbolic structure on the ﬁgure eight knot complement (see, eg, [23, 16]). Geometry & Topology, Volume 8 (2004) Extended Bloch group and the Cheeger–Chern–Simons class This manifold is denoted m004 in the Callahan-Hildebrand-Weeks cusped cen- sus (see [2, 22, 10]). Both simplices are regular ideal simplices but the vertex- order of the second simplex is opposite to its orientation. The cross-ratio parameters are therefore ω := eπi/3 and ω−1 respectively, and ˆβ(m004) = [ω; p, q]−[ω−1; r, s] for suitable p, q, r, s. In the nex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prop-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "prop-sec-016-03.md",
+      "narrative": null,
+      "content": "There is a natural splitting ρ: Hi(BG, BP; Z) →Hi(BG; Z) of the above sequence for i > 1. Proof Denote P2 := \u001a\u00122k b 2−k \u0013 | k ∈Z, b ∈C \u001b . One computes that Hi(BP2; Z) = 0 for i > 0. Thus the diagram 0 −−−−→Hi(BG; Z) −−−−→Hi(BG, BP; Z) −−−−→Hi−1(BP; Z) −−−−→0 y",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of 3--manifolds",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "../sections/sec-016-14-invariants-of-3--manifolds.md",
+      "narrative": null,
+      "content": "Suppose we have a compact oriented hyperbolic 3–manifold M , or, more gen-\nerally, a compact oriented manifold 3–manifold with a ﬂat G–bundle (equiv-\nalently, a homomorphism π1(M) →G; as usual G denotes PSL(2, C)). Then\nTheorems 4.6 and 2.6 give a computation of the corresponding homology class\nin H3(G; Z) and its Cheeger–Chern–Simons class from a triangulation of M .\nIn this section we extend this to the case that M is an oriented hyperbolic\nmanifold which is complete of ﬁnite volume but not necessarily compact. We\nwill also extend to the sort of ideal triangulations that the programs Snap\n[1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/rem-sec-016-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "rem-sec-016-01.md",
+      "narrative": null,
+      "content": "We can also describe this is terms of a G–valued 1–cocycle “relative to the cusps.” We choose a lift ˜pi ∈H3 for each pi and denote by Pi the parabolic subgroup of G that ﬁxes ˜pi. The G–valued 1–cocycle relative to the cusps is a 1–cocycle in the usual sense except that its value on an edge that ends (resp. starts) in an ideal vertex pi is only well deﬁned modulo right (resp. left) multiplication by elements of Pi. This 1–cocycle is well deﬁned up to the usual action of 0–cocycles, but only 0–cocycles that take value 1 ∈G on ideal vertices are permitted. The 1–cocycle depends on the choice of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "thm-sec-016-02.md",
+      "narrative": null,
+      "content": "There exists a strong ﬂattening of K as in Theorem 4.5. The resulting element P i ǫi[xi; pi, qi] ∈bP(C) is in bB(C) and only depends on the hyperbolic manifold M . We denote it ˆβ(M). Since bB(C) ∼= H3(G; Z), this gives a “fundamental class” in H3(G; Z) for any oriented complete ﬁnite volume hyperbolic 3–manifold (as usual, G = PSL(2, C) with discrete topology). Geometry & Topology, Volume 8 (2004) Walter D Neumann We pointed out in the Introduction that this class is easy to deﬁne algebraically if M is compact. I am grateful to the referee for a comment that led me to a similar elementary des",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-016-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "thm-sec-016-05.md",
+      "narrative": null,
+      "content": "With the above notation, the element in bB(C) represented by the Dehn ﬁlled manifold M′ is ˆβ(M′) = − h X j=1 χ(eλj) + X i ǫi[x′ i; p′ i, q′ i] with χ as in Theorem 7.5. Moreover, (vol +i cs)(M′) = −π h X j=1 λj −i X i ǫiR(x′ i; p′ i, q′ i) The second formula of this theorem was proved up to a constant (depending on K but independent of the Dehn ﬁlling) in [13]. The constant was conjectured to be a multiple of iπ2/6. Since [13] used unordered simplices, the constant in that version is indeed a multiple of iπ2/6. Versions prior to 1.10.2 of the program Snap [10, 4] use this formula but ignores",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/thm-sec-016-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "thm-sec-016-07.md",
+      "narrative": null,
+      "content": "Consider the degree one triangulation of M′ of Theorem 14.5. Then there exists ﬂattenings [x′ i; p′′ i , q′′ i ] of the ideal simplices which satisfy the conditions • parity along normal paths is zero; • log-parameter about each edge is zero; • log-parameter along any normal path in the neighborhood of a 0–simplex that represents an unﬁlled cusp is zero; • log-parameter along a normal path in the neighborhood of a 0–simplex that represents a ﬁlled cusp is zero if the path is null-homotopic in the added solid torus. For any such choice of ﬂattenings we have ˆβ(M′) = X i [x′ i; p′′ i , q′′ i ] ∈",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-017-15-example.md",
+      "narrative": null,
+      "content": "Example\nWe return to the ﬁgure 8 knot complement m004 of Example 14.4 to illustrate\nthe above formulae. Denote the cross-ratio parameters of the two simplices in\nFigure 8 by z and y, and choose ﬂattenings [z; p, q] and [y, r, s]. The consis-\ntency condition about each edge can be read oﬀfrom the ﬁgure. The condition\nfor the edge labeled with a single arrow is:\n2 log z + log z′ −log y′ −2 log y′′ = 2πi\n(18)\nand the condition for the other edge turns out to be equivalent to this. The\nlog-parameters for the ﬂattenings are\n(log z + pπi, log z′ + qπi, log z′′ + (−1 −p −q)πi),\n(log y + rπi, log y′ +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0307092v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other fields",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "../sections/sec-018-16-other-fields.md",
+      "narrative": null,
+      "content": "Other ﬁelds\nAlthough we have worked over C in this paper, most of what we have done\nworks for a subﬁeld K ⊂C if we replace G = PSL(2, C) = PGL(2, C) by G =\nPGL(2, K). In Theorem 7.5 we must replace the group µ of roots of unity by the\ngroup µK of roots of unity in K. The homomorphism λ: H3(PGL(2, K)) →\nbB(K) is still deﬁned. For a hyperbolic 3–manifold H3/Γ with Γ ⊂PGL(2, K)\nGeometry & Topology, Volume 8 (2004)\nExtended Bloch group and the Cheeger–Chern–Simons class\n473\nthe element ˆβ(M) naturally lies in bB(K), but we have numerical evidence that\nit lies in bB(k), where k is the invariant tra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

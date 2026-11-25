@@ -1,0 +1,611 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9805023v1",
+  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Solutions to a symmetric operator.",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-solutions-to-a-symmetric-operator"
+    },
+    {
+      "level": 1,
+      "title": "Spectral resolution.",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-spectral-resolution"
+    },
+    {
+      "level": 1,
+      "title": "Basis for L2-space.",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-basis-for-l2-space"
+    },
+    {
+      "level": 1,
+      "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-direct-proof-of-the-orthogonality-relations-of"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the dual orthogonality relations.",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-proof-of-the-dual-orthogonality-relations"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "big q-bessel",
+          "heading": false
+        },
+        {
+          "term": "orthogonal system",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9805023v1 [math.CA] 6 May 1998 q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS Nicola Ciccoli, Erik Koelink and Tom H. Koornwinder April 24, 1998 Abstract. The q-Laguerre polynomials correspond to an indetermined moment problem. For explicit discrete non-N-extremal measures corresponding to Ramanujan’s 1ψ1-summation we complement the orthogonal q-Laguerre polynomials",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9805023v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "big q-bessel",
+          "heading": false
+        },
+        {
+          "term": "little q-bessel",
+          "heading": false
+        },
+        {
+          "term": "big q-jacobi",
+          "heading": false
+        },
+        {
+          "term": "q-jacobi polynomials",
+          "heading": false
+        },
+        {
+          "term": "q-bessel functions",
+          "heading": false
+        },
+        {
+          "term": "q-laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "type q-bessel",
+          "heading": false
+        },
+        {
+          "term": "orthogonality measures",
+          "heading": false
+        }
+      ],
+      "extract": "This paper answers two seemingly diﬀerent questions, which both originated from quantum groups. First, consider the system of Moak’s [21] q-Laguerre polynomials with respect to their familiar discrete orthogonality measure, and extend this in an explicit way to a complete orthogonal system of eigenfunctions of a doubly inﬁnite Jacobi matrix originating from analysis on SUq(1, 1), the quantum SU(1, 1) group. Second,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-solutions-to-a-symmetric-operator",
+      "number": "2",
+      "title": "Solutions to a symmetric operator.",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solutions",
+          "heading": true
+        },
+        {
+          "term": "moment problem",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": true
+        },
+        {
+          "term": "indetermined",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the unbounded operator L acting on ℓ2(Z) by (2.1) \u0000Lu \u0001 k = ak uk+1 + bk uk + ak−1 uk−1, u = (uk)k∈Z, ak = q−1 2 (k+1)p 1 + c−1q−k, bk = √ c−1(t + t−1)q−k, where c > 0 and t ∈R\\{0} are ﬁxed constants, so that ak > 0 and bk ∈R. The operator is densely deﬁned and symmetric. Split the operator L into two Jacobi matrices J+ and J−, see [19]. The coeﬃcients ak are bounded as k →−∞, so that the moment problem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-spectral-resolution",
+      "number": "3",
+      "title": "Spectral resolution.",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cqk",
+          "heading": false
+        },
+        {
+          "term": "resx",
+          "heading": false
+        },
+        {
+          "term": "moak",
+          "heading": false
+        },
+        {
+          "term": "cqp",
+          "heading": false
+        },
+        {
+          "term": "resolution",
+          "heading": true
+        }
+      ],
+      "extract": "In case |t| > q 1 2 we see V t−1(x) is ℓ2 for k →∞by Lemma 2.2(ii). From now on we assume that |t| > q 1 2 . In case |t| ≥q−1 2 we moreover have that L is self-adjoint. The domain of L is given by {u ∈ℓ2(Z) | Lu ∈ℓ2(Z)}. In case, q 1 2 < |t| < q−1 2 , t̸ = ±1, the deﬁciency indices of L are (1, 1), so that all extensions of L to a self-adjoint operator are parametrised by U(1) = T. In this case, we ﬁx the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-basis-for-l2-space",
+      "number": "4",
+      "title": "Basis for L2-space.",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cqk",
+          "heading": false
+        },
+        {
+          "term": "cqα",
+          "heading": false
+        },
+        {
+          "term": "q-laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "hansen-lommel orthogonality",
+          "heading": false
+        },
+        {
+          "term": "orthogonality relations",
+          "heading": false
+        },
+        {
+          "term": "jackson q-bessel",
+          "heading": false
+        },
+        {
+          "term": "dual orthogonality",
+          "heading": false
+        },
+        {
+          "term": "cql",
+          "heading": false
+        }
+      ],
+      "extract": "By L2(µ(α;c)) we denote the space of square integrable functions on the set {cqk | k ∈ Z}, c > 0, with positive weight qk(α+1)/(−cqk; q)∞at cqk, k ∈Z, i.e. f ∈L2(µ(α;c)) if L(|f|2) := ∞ X k=−∞ qk(α+1) (−cqk; q)∞ |f(cqk)|2 < ∞. Here we take α > −1. Recall the q-Laguerre polynomials introduced by Moak [21], see also [7], (4.1) L(α) n (x; q) := (qα+1; q)n (q; q)n 1ϕ1 \u0012 q−n qα+1 ; q, −xqn+α+1 \u0013 . We also deﬁne the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-direct-proof-of-the-orthogonality-relations-of",
+      "number": "5",
+      "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonality relations",
+          "heading": true
+        },
+        {
+          "term": "cqα",
+          "heading": false
+        },
+        {
+          "term": "cqk",
+          "heading": false
+        },
+        {
+          "term": "generating functions",
+          "heading": false
+        },
+        {
+          "term": "aqm",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we present a direct analytic proof using summation and transformation formulas of the orthogonality relations of Theorem 4.1, but not of the completeness. The ﬁrst statement of the orthogonality relations is well known, see Moak [21], so we concentrate on the last two. The method is based on manipulating generating functions, cf. [18], [13]. We start with the following lemma giving generating",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-proof-of-the-dual-orthogonality-relations",
+      "number": "6",
+      "title": "Proof of the dual orthogonality relations.",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": "13",
+      "labelEnd": "20",
+      "words": 2424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonality relations",
+          "heading": true
+        },
+        {
+          "term": "dual orthogonality",
+          "heading": true
+        },
+        {
+          "term": "cqp",
+          "heading": false
+        },
+        {
+          "term": "big q-jacobi",
+          "heading": false
+        },
+        {
+          "term": "q-jacobi polynomials",
+          "heading": false
+        },
+        {
+          "term": "lim epr",
+          "heading": false
+        },
+        {
+          "term": "big q-bessel",
+          "heading": false
+        },
+        {
+          "term": "q-bessel functions",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove the dual orthogonality relations of Corollary 4.3 by using a rigorous limit transition from the big q-Jacobi polynomials to the q-Bessel functions under consideration, which we will call now big q-Bessel functions. The orthogonality relations for the big q-Jacobi polynomials tend to the dual orthogonality relations given in Corollary 4.3. This then gives, together with the analytic proofs of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "q-laguerre polynomials",
+      "heading": false
+    },
+    {
+      "term": "orthogonality relations",
+      "heading": true
+    },
+    {
+      "term": "big q-bessel",
+      "heading": false
+    },
+    {
+      "term": "q-jacobi polynomials",
+      "heading": false
+    },
+    {
+      "term": "q-bessel functions",
+      "heading": false
+    },
+    {
+      "term": "orthogonality measures",
+      "heading": false
+    },
+    {
+      "term": "dual orthogonality",
+      "heading": true
+    },
+    {
+      "term": "discrete orthogonality",
+      "heading": false
+    },
+    {
+      "term": "jackson q-bessel",
+      "heading": false
+    },
+    {
+      "term": "hansen-lommel orthogonality",
+      "heading": false
+    },
+    {
+      "term": "little q-bessel",
+      "heading": false
+    },
+    {
+      "term": "orthogonal polynomials",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9805023v1"
+  }
+}

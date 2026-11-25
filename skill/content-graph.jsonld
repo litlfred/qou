@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/content-graph.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/content-graph",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "content-graph",
+      "title": "Content & Lean Subgraph Graph — Editorial & KG Organisation Skill",
+      "description": "Editorial & Lean Knowledge-Graph organisation skill — analyses (1) the prose/content block graph (`uses[]`, `interprets`, `proofs`, `examples`), (2) the chapter/section reading-order graph (`H1..H7`), and (3) the Lean 4 module & Two-Tier Reservoir `lean_lib` import DAG (`L1..L6` via `scripts/lean-kg-detangler.py` and `scripts/lean-best-practices-lint.py`). Produces actionable reorganisation suggestions and implements approved moves.",
+      "instructionsPath": "skills/local/content-graph.md",
+      "instructionLines": 479,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

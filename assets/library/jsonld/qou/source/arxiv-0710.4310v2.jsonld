@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4310v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On Two-Dimensional Holonomy",
+  "contains": [
+    "library/arxiv-0710.4310v2/sections/sec-front-matter",
+    "library/arxiv-0710.4310v2/sections/sec-000",
+    "library/arxiv-0710.4310v2/sections/sec-001",
+    "library/arxiv-0710.4310v2/sections/sec-002",
+    "library/arxiv-0710.4310v2/sections/sec-003",
+    "library/arxiv-0710.4310v2/sections/sec-004",
+    "library/arxiv-0710.4310v2/sections/sec-005",
+    "library/arxiv-0710.4310v2/sections/sec-006",
+    "library/arxiv-0710.4310v2/sections/sec-007",
+    "library/arxiv-0710.4310v2/sections/sec-008",
+    "library/arxiv-0710.4310v2/sections/sec-009",
+    "library/arxiv-0710.4310v2/sections/sec-010",
+    "library/arxiv-0710.4310v2/sections/sec-011",
+    "library/arxiv-0710.4310v2/sections/sec-012",
+    "library/arxiv-0710.4310v2/sections/sec-013",
+    "library/arxiv-0710.4310v2/sections/sec-014",
+    "library/arxiv-0710.4310v2/sections/sec-015",
+    "library/arxiv-0710.4310v2/sections/sec-016",
+    "library/arxiv-0710.4310v2/sections/sec-017",
+    "library/arxiv-0710.4310v2/sections/sec-018",
+    "library/arxiv-0710.4310v2/sections/sec-019",
+    "library/arxiv-0710.4310v2/sections/sec-020",
+    "library/arxiv-0710.4310v2/sections/sec-021",
+    "library/arxiv-0710.4310v2/sections/sec-022",
+    "library/arxiv-0710.4310v2/sections/sec-023",
+    "library/arxiv-0710.4310v2/sections/sec-024",
+    "library/arxiv-0710.4310v2/sections/sec-025",
+    "library/arxiv-0710.4310v2/sections/sec-026",
+    "library/arxiv-0710.4310v2/sections/sec-027",
+    "library/arxiv-0710.4310v2/sections/sec-028",
+    "library/arxiv-0710.4310v2/sections/sec-029",
+    "library/arxiv-0710.4310v2/sections/sec-030",
+    "library/arxiv-0710.4310v2/sections/sec-031",
+    "library/arxiv-0710.4310v2/sections/sec-032",
+    "library/arxiv-0710.4310v2/sections/sec-033",
+    "library/arxiv-0710.4310v2/sections/sec-034",
+    "library/arxiv-0710.4310v2/sections/sec-035",
+    "library/arxiv-0710.4310v2/sections/sec-036"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based\n\n**On Two-Dimensional Holonomy**\n\n*João Faria Martins*\n\n46 pp, 38 sections.\n\n**Abstract.** We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based loops on M, and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M. Here two maps are rank-n homotopic, when the rank of the diﬀerential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (∂: E →G, ⊲). We construct categorical holonomies, deﬁned to be smooth morphisms P2(M, ∗) →C(G), by using a notion of categorical connections, being a pair (ω, m), where ω is a con- nection 1-form on P, a principal G bundle over M, and m is a 2-form on P with values in the Lie algebra of E, with the pair (ω, m) satisfying suit- able conditions. As a further result, we are able to deﬁne Wilson spheres in this context.\n\n**Outline.** Front matter; Preliminaries; Resumé of results and notation from the theory; Connections on principal fibre bundles; Curvature; Parallel transport; The dependence of the parallel transport on a ; Crossed modules; Crossed modules and categorical groups; The thin fundamental categorical group of a ma; 1-Tracks; 2-Tracks; Horizontal and vertical compositions of 2-trac; Definition of the thin fundamental categorical; The thin fundamental crossed module of a smoot; Two exact sequences; Two-dimensional holonomies; Categorical connections",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0710.4310&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0710.4310v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0710.4310v2.pdf",
+    "source_sha256": "9a7757f998b7f6808f05324c7f3e26e9270a6c32a40846f450fe7c357f84b1ed",
+    "pages": 46,
+    "arxiv": {
+      "id": "0710.4310",
+      "version": "2",
+      "primary_class": "math.DG",
+      "stamp_date": "20 Jul 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

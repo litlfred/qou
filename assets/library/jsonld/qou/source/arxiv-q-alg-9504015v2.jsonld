@@ -1,0 +1,88 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9504015v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
+  "contains": [
+    "library/arxiv-q-alg-9504015v2/sections/sec-000",
+    "library/arxiv-q-alg-9504015v2/sections/sec-001",
+    "library/arxiv-q-alg-9504015v2/sections/sec-002",
+    "library/arxiv-q-alg-9504015v2/sections/sec-003",
+    "library/arxiv-q-alg-9504015v2/sections/sec-004",
+    "library/arxiv-q-alg-9504015v2/sections/sec-005",
+    "library/arxiv-q-alg-9504015v2/sections/sec-006",
+    "library/arxiv-q-alg-9504015v2/sections/sec-007",
+    "library/arxiv-q-alg-9504015v2/sections/sec-008",
+    "library/arxiv-q-alg-9504015v2/sections/sec-009",
+    "library/arxiv-q-alg-9504015v2/sections/sec-010",
+    "library/arxiv-q-alg-9504015v2/sections/sec-011",
+    "library/arxiv-q-alg-9504015v2/sections/sec-012",
+    "library/arxiv-q-alg-9504015v2/sections/sec-013",
+    "library/arxiv-q-alg-9504015v2/sections/sec-014",
+    "library/arxiv-q-alg-9504015v2/sections/sec-015",
+    "library/arxiv-q-alg-9504015v2/sections/sec-016",
+    "library/arxiv-q-alg-9504015v2/sections/sec-017",
+    "library/arxiv-q-alg-9504015v2/sections/sec-018",
+    "library/arxiv-q-alg-9504015v2/sections/sec-019",
+    "library/arxiv-q-alg-9504015v2/sections/sec-020",
+    "library/arxiv-q-alg-9504015v2/sections/sec-021",
+    "library/arxiv-q-alg-9504015v2/sections/sec-022",
+    "library/arxiv-q-alg-9504015v2/sections/sec-023",
+    "library/arxiv-q-alg-9504015v2/sections/sec-024",
+    "library/arxiv-q-alg-9504015v2/sections/sec-025",
+    "library/arxiv-q-alg-9504015v2/sections/sec-026",
+    "library/arxiv-q-alg-9504015v2/sections/sec-027",
+    "library/arxiv-q-alg-9504015v2/sections/sec-028",
+    "library/arxiv-q-alg-9504015v2/sections/sec-029",
+    "library/arxiv-q-alg-9504015v2/sections/sec-030",
+    "library/arxiv-q-alg-9504015v2/sections/sec-031",
+    "library/arxiv-q-alg-9504015v2/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution — We establish a relation between the coeﬃcients of asymptotic expansion of the trivial\n\n**Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution**\n\n*L. Rozansky1*\n\n33 pp, 33 sections.\n\n**Abstract.** We establish a relation between the coeﬃcients of asymptotic expansion of the trivial connection contribution to Witten’s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witten’s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bounds on Taylor series expansion of the Jones polynomial of algebraically split links, studied in our previous paper. These bounds are enough to prove that Ohtsuki’s invariants are of ﬁnite type. The relation between Ohtsuki’s invariants and trivial connection contribution is veriﬁed explicitly for lens spaces and Seifert manifolds. 1Work supported by the National Science Foundation under Grant No. PHY-92 09978.\n\n**Outline.** Front matter (page 1); Front matter (page 2); Front matter (page 3); Front matter (page 4); Front matter (page 5); Front matter (page 6); Front matter (page 7); Front matter (page 8); Front matter (page 9); Front matter (page 10); Front matter (page 11); Front matter (page 12); Front matter (page 13); Front matter (page 14); Front matter (page 15); Front matter (page 16); Front matter (page 17); Front matter (page 18)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:q-alg/9504015&metadataPrefix=arXiv), submitted 1995-04-24, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-q-alg-9504015v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9504015v2.pdf",
+    "source_sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
+    "pages": 33,
+    "arxiv": {
+      "id": "q-alg/9504015",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "24 Apr 1995"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

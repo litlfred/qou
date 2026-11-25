@@ -1,0 +1,743 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1905.06064v1",
+  "title": "arxiv-1905.06064v1",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A new energy E",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-new-energy-e"
+    },
+    {
+      "level": 1,
+      "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-regularity-theory-for-e-critical-maps-proof-of"
+    },
+    {
+      "level": 1,
+      "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. A new norm for W(s,p)",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-appendix-a-a-new-norm-for-wsp"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Computations",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-appendix-b-computations"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        },
+        {
+          "term": "regularity theory",
+          "heading": false
+        },
+        {
+          "term": "critical knots",
+          "heading": false
+        }
+      ],
+      "extract": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA Abstract. We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991. This class contains as a special case the M¨obius energy. For the M¨obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1905.06064v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1890,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal sol",
+          "heading": false
+        },
+        {
+          "term": "knots sol",
+          "heading": false
+        },
+        {
+          "term": "frac sol",
+          "heading": false
+        },
+        {
+          "term": "o'hara energies",
+          "heading": false
+        },
+        {
+          "term": "o'hara energy",
+          "heading": false
+        },
+        {
+          "term": "lambda sol",
+          "heading": false
+        },
+        {
+          "term": "sol mapsto",
+          "heading": false
+        },
+        {
+          "term": "o'hara cite",
+          "heading": false
+        }
+      ],
+      "extract": "For $\\alpha p \\geq 4$, $p \\geq 2$, the O'hara knot energies\\footnote{In this paper we divert from the usual notation of the literature by writing $\\frac{p}{2}$ instead of $p$ for the simple reason that the case $p=2$ (in the knot literature: $p=1$) corresponds to the Hilbert-space case of an $L^2$-energy.} $\\mathcal{O}^{\\alpha,p}$ named after their inventor J.~O'hara \\cite{OH91,OH92} are defined for closed Lipschitz",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-new-energy-e",
+      "number": "2",
+      "title": "A new energy E",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solu sol",
+          "heading": false
+        },
+        {
+          "term": "migo solu",
+          "heading": false
+        },
+        {
+          "term": "solu eps",
+          "heading": false
+        },
+        {
+          "term": "dmv solu",
+          "heading": false
+        },
+        {
+          "term": "frac solu",
+          "heading": false
+        },
+        {
+          "term": "mathcal sol",
+          "heading": false
+        },
+        {
+          "term": "map solu",
+          "heading": false
+        },
+        {
+          "term": "brac dmv",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we find a new energy $\\mathcal{E}^{\\alpha,p}(\\solu)$ applied to maps $\\solu: \\R/\\Z \\to \\S^2$ so that any critical knot (parametrized by arc-length) induces a critical $\\S^2$-valued map $\\solu$ and vice versa. The main result in this section is the following equivalence between an energy $\\mathcal{E}^{\\alpha,p}$ which will be defined below and the O'hara energy $\\mathcal{O}^{\\alpha,p}$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-regularity-theory-for-e-critical-maps-proof-of",
+      "number": "3",
+      "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dmv solu",
+          "heading": false
+        },
+        {
+          "term": "brac solu",
+          "heading": false
+        },
+        {
+          "term": "llbracket solu",
+          "heading": false
+        },
+        {
+          "term": "solu rrbracket",
+          "heading": false
+        },
+        {
+          "term": "solu frac",
+          "heading": false
+        },
+        {
+          "term": "solu wedge",
+          "heading": false
+        },
+        {
+          "term": "solu cdot",
+          "heading": false
+        },
+        {
+          "term": "dmv psi",
+          "heading": false
+        }
+      ],
+      "extract": "In view of Theorem~\\ref{th:criticalpointchar} the claim of Theorem~\\ref{th:regularity} is a consequence of the following theorem. \\begin{theorem}\\label{th:eregularity} For $\\alpha p = 4$, $p \\geq 2$ consider $\\mathcal{E}^{\\alpha,p}$ from \\eqref{eq:E}. Let $\\solu$ is a critical map for $\\mathcal{E}^{\\alpha,p}$ in the class of maps $\\solv: \\R/\\Z \\to \\S^2$ with finite energy $\\mathcal{E}^{\\alpha,p}$, that is for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv",
+      "number": "4",
+      "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brac rho",
+          "heading": false
+        },
+        {
+          "term": "rho solu",
+          "heading": false
+        },
+        {
+          "term": "x-y abs",
+          "heading": false
+        },
+        {
+          "term": "brac int",
+          "heading": false
+        },
+        {
+          "term": "aleq llbracket",
+          "heading": false
+        },
+        {
+          "term": "frac brac",
+          "heading": false
+        },
+        {
+          "term": "abs mathcal",
+          "heading": false
+        },
+        {
+          "term": "abs log",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:distortion} The following definition goes back to Gromov~\\cite{G83}, see also O'hara~\\cite{OH92}. \\begin{definition}[distortion] For any curve $\\g\\in C^{0}\\rzd$ let \\[ \\distor\\g := \\sup_{\\substack{x,y\\in\\R/\\Z\\\\x\\ne y}} \\frac{\\mathcal{D}_{\\g}(x,y)}{\\abs{\\g(x)-\\g(y)}} \\] if $\\g$ is injective and $\\distor\\g :=\\infty$ else. \\end{definition} \\begin{lemma} Let $\\g\\in C^{0,1}\\rzd$ be parametrized by arc-length.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-appendix-a-a-new-norm-for-wsp",
+      "number": null,
+      "title": "Appendix A. A new norm for W(s,p)",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b2lρ",
+          "heading": false
+        },
+        {
+          "term": "armin schikorra",
+          "heading": false
+        },
+        {
+          "term": "philipp reiter",
+          "heading": false
+        },
+        {
+          "term": "simon blatt",
+          "heading": false
+        },
+        {
+          "term": "compact interval",
+          "heading": false
+        },
+        {
+          "term": "sidelength",
+          "heading": false
+        }
+      ],
+      "extract": "Let ⟨δu, δv⟩(x, y) := 1 Z 0 1 Z 0 \u0000u(x + s(y −x)) −u(x + t(y −x))\u0001 · \u0000v(x + s(y −x)) −v(x + t(y −x))\u0001 ds dt =ρ(x, y)−2 y Z x y Z x \u0000u(s) −u\u0001 · \u0000v(s) −v(t)\u0001 ds dt We set ⟦u⟧Wβ,p(S ) :=  Z B Z B (⟨δu, δu⟩(x, y)) p 2 ρ(x, y)1+βp dx dy  1 p . The semi-norm ⟦u⟧Wβ,p(S ) is equivalent to the usual Wβ,p-seminorm for β large enough – note that in particular for our situation where p = 1 s this equivalence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-appendix-b-computations",
+      "number": null,
+      "title": "Appendix B. Computations",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b2l",
+          "heading": false
+        },
+        {
+          "term": "b2lρ",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma B.1. For ϕ ∈C∞ c (Bρ), L ∈N, k ∈N, we have the estimate  Z B2Lρ Z B2L+kρ\\B2L+k−1 1 ρ(x, y)2 ρ(x, y)−2 y Z x y Z x |u(s) −u(t)||ϕ(s)v(s) −ϕ(t)v(t)| ds dt  p 2 dx dy  2 p ≾2−s(L+k) ∥v∥∞[u]W 1p ,p(B2L+kρ) ∥|∇| 1 p ϕ∥Lp . Proof. W.l.o.g. Bρ is centered around 0. Note that the support of ϕ tells us that whenever x, y > ρ or x, y < −ρ, 1 ρ(x, y)2 ρ(x, y)−2 y Z",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "armin schikorra",
+          "heading": false
+        },
+        {
+          "term": "philipp reiter",
+          "heading": false
+        },
+        {
+          "term": "hara energies",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "simon blatt",
+          "heading": false
+        },
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "der mosel",
+          "heading": false
+        },
+        {
+          "term": "critical knots",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Abrams, J. Cantarella, J. H. Fu, M. Ghomi, and R. Howard. Circles minimize most knot energies. Topol- ogy, 42(2):381 – 394, 2003. [2] D. R. Adams. A note on Riesz potentials. Duke Math. J., 42(4):765–778, 1975. O’HARA KNOT ENERGIES I 27 [3] P. Auscher, S. Bortz, M. Egert, and O. Saari. Nonlocal self-improving properties: a functional analytic approach. Tunis. J. Math., 1(2):151–183, 2019. [4] J. R. Banavar,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "solu sol",
+      "heading": false
+    },
+    {
+      "term": "brac solu",
+      "heading": false
+    },
+    {
+      "term": "dmv solu",
+      "heading": false
+    },
+    {
+      "term": "solu eps",
+      "heading": false
+    },
+    {
+      "term": "frac solu",
+      "heading": false
+    },
+    {
+      "term": "rho solu",
+      "heading": false
+    },
+    {
+      "term": "int solu",
+      "heading": false
+    },
+    {
+      "term": "migo solu",
+      "heading": false
+    },
+    {
+      "term": "llbracket solu",
+      "heading": false
+    },
+    {
+      "term": "solu rrbracket",
+      "heading": false
+    },
+    {
+      "term": "maps solu",
+      "heading": false
+    },
+    {
+      "term": "solu cdot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The square Q (left) and a station curve σ (right) inverted on",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Plot of α 7→1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1905.06064v1"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2103.00651v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+      "dcterms:creator": [
+        "Katselis, Dimitrios"
+      ],
+      "dcterms:issued": "D:20210301",
+      "dcterms:identifier": "https://arxiv.org/abs/2103.00651",
+      "dcterms:abstract": "We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random variables from its expected value. The resulting upper bounds can be tighter than bounds obtained by a direct application of a classical theorem due to Bobkov and G¨otze.",
+      "dcterms:source": "library/arxiv-2103.00651v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2103.00651v1"
+    }
+  ]
+}

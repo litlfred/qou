@@ -1,0 +1,5935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/0510388v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/0510388v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/0510388v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/0510388v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>0510388v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  75
+]</pre></dd>
+<dt>body_size</dt><dd>14</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In either  S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In either  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;etic field, and for the vector-valued Green&#39;s operator in  S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;d, and for the vector-valued Green&#39;s operator in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In part C, we prove these formulas on  S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In part D, we prove them in  H&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1. Linking integrals in  R&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1. Linking integrals in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1. Linking integrals in  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;either Euclidean 3-space  R&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;either Euclidean 3-space  R3 ,  the unit 3-sphere  S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;space  R3 ,  the unit 3-sphere  S3  or hyperbolic 3-space  H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 1.  LINKING INTEGRALS  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 1.  LINKING INTEGRALS  in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;—  1/(4π2) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/(4π2) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(3)  On  H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;π)∫K&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π)∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ed point, is the fundamental solution of the Laplacian in  R&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In formula (1), the function  ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;solution of the Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆ϕ0  =  δ—  1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Since the volume of  S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Since the volume of  S3  is  2π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In formula (2), the function  ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;solution of a shifted Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;of a shifted Laplacian on  H&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Note on typesetting.  In fractions such as  1/4π ,  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;pesetting.  In fractions such as  1/4π ,  (—1/4π2)  or  1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the  π  and the  π&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K1×K2  dx/ds ∙ dy/dt  ds dt  =  (∫K&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K2  dx/ds ∙ dy/dt  ds dt  =  (∫K1  dx/ds  ds) ∙ (∫K&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; no difference that parallel transport from  x  to  y  on  S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;SO(4)  of all orientation-preserving isometries of  S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  The fact that formula (1) on  S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  The fact that formula (1) on  S3  has no counterpart in  H&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; group  SO(1, 3)  of orientation-preserving isometries of  H&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3-sphere  S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3  because the set of ordered pairs of distinct points in  S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ts to a 3-sphere rather than to a 2-sphere, as it does in  R&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;electrodynamics on  S&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;electrodynamics on  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;of electrodynamics on  S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3. Magnetic fields in  R&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3. Magnetic fields in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;3. Magnetic fields in  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In Euclidean 3-space  R&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫R3  V(x) ×∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;—1/(4πα)  is the fundamental solution of the Laplacian in  R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× BS(V)(y)  =  V(y)  +  ∇y∫R3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ere  ϕ0   is the fundamental solution of the Laplacian in  R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫R3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫R3  V(x) ∙∇xϕ0(x, y)  dx  =  —∫R3(∇x ∙V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× BS(V)(y)  =  V(y)  —∇y∫R3(∇x ∙V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;—∇y∫R3(∇x ∙V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;t operator would be divergence-free and curl-free.  Since  R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;operator, since there are no nonzero vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  H&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;at infinity is not quite enough.  And in  H&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;at infinity is not quite enough.  And in  H3 ,  unlike  R&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;in general of class L&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 2.  BIOT-SAVART INTEGRALS  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 2.  BIOT-SAVART INTEGRALS  in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Biot-Savart operators exist in  S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Biot-Savart operators exist in  S3and  H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫S3  Lyx—1 V(x) ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— 1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;— 1/(4π2) ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  2 ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 ∇y∫S3  Lyx—1 V(x) ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α    and    ϕ1(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(3)  On  H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;In formula (1), the function  ϕ1(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆ϕ1  =  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆ϕ1  =  ϕ0—  [ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where  [ϕ0]  denotes the average value of  ϕ0  over  S&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where  α  is the distance from  y  to a fixed point in  H&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;4. Left-invariant vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Left-invariant vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for the Biot-Savart operator.  A vector field  V  on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Lyx—1 V(x)  =  V(y)         for all  x, y ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Left-invariant and right-invariant vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Hopf fibrations of  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PROPOSITION 1.Left- and right-invariant vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;To apply this to left-invariant vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; one another by an orientation-preserving rigid motion of  S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;rigid motions of  S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Choose the point  x  =  1 ,  where  V(x)  =  i .  Orient  S&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π— sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2π— sin2α  dϕ  =  — 2π sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— sin&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— sin2α / (1 — cos α)  =  — (1 — cos&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ier, this implies that  ∇× V  =  — 2 V  at every point of  S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;taneously divergence-free and curl-free, and hence, since  S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  VF(S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;et  VF(S3)  denote the set of all smooth vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;infinite-dimensional vector space with the L&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5. Scalar-valued Green&#39;s operators in  R&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5. Scalar-valued Green&#39;s operators in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;5. Scalar-valued Green&#39;s operators in  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Suppose that  f  is a smooth real-valued function on  R&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;uppose that  f  is a smooth real-valued function on  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hat  f  is a smooth real-valued function on  R3 ,  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆f  =  ————(α&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f  =  ————(α2——)                                       in  R&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆f  =  ——————(sin&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∆f  =  ——————(sin2α——)on  S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆f  =  ———————(sinh&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∆f  =  ———————(sinh2α——)                          in  H&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sinh&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; be a smooth real-valued function with compact support on  R&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;smooth real-valued function with compact support on  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;eal-valued function with compact support on  R3 ,  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Gr(f)(y)  =  ∫  f(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; —1/(4πα)                                              in  R&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π2) (π—α) cot α                         on  S&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;α)  =  (—1/4π) (coth α  —  1)                          in  H&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;On  S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where  [f]  denotes the average value of  f  over  S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  S&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  H&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;6. Vector-valued Green&#39;s operators in  R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;6. Vector-valued Green&#39;s operators in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;6. Vector-valued Green&#39;s operators in  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The vector Laplacian in  R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The vector Laplacian in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The vector Laplacian in  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;If  V  is a smooth compactly supported vector field in  R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =  ∫R3  V(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R3 ,  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;the vector Laplacian  ∆: VF(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;the vector Laplacian  ∆: VF(S3)  →  VF(S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∙  In  H&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  S&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 3.  GREEN&#39;S OPERATORS  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 3.  GREEN&#39;S OPERATORS  in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Vector-valued Green&#39;s operators exist in  S&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Vector-valued Green&#39;s operators exist in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  Lyx—1 V(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 ∫S3  Lyx—1 V(x) ×∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  4 ∇y∫S3  Lyx—1 V(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ1(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/192π&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2)  On  S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π2) (π—α) csc α  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π2) (π—α) csc α  +  (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ3(α)  =  (—1/24) (π—α) cot α—  (1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;π((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin2α))  +  ((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(3)  On  H&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α2 / 2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ3(α)  =  (1/4π) α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;polylog(s, x)  =  Lis(x)  =  ∑n≥1  x&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;polylog(s, x)  =  Lis(x)  =  ∑n≥1  xn / n&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;7. Classical electrodynamics and Maxwell&#39;s equations on  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;sical electrodynamics and Maxwell&#39;s equations on  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;xwell&#39;s equations, so familiar to us in Euclidean 3-space  R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to hold on  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to hold on  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;On  R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;On  R3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and  H3 ,  we ask that  ρ  have compact support, while on  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;E(ρ)(y)  =  ∇y∫ρ(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;independent) current distribution.  On  R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;independent) current distribution.  On  R3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;support, while on  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 4.  MAXWELL&#39;S EQUATIONS  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;THEOREM 4.  MAXWELL&#39;S EQUATIONS  in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S3and in  H&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S3and in  H3 ,  just as they do in  R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Additionally, as in  R&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;B.  PROOFS ON  S&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;When working on  S&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;It is natural to hope, by analogy with  R&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;A(V, ϕ0)(y)  =  ∫S3  Lyx—1 V(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;will be the Green&#39;s operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;rls, divergences and Laplacians of convolutions, first in  R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and then on  S&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PROPOSITION 2.  OnS&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;serve as a reminder that in Euclidean space  R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In particular, in  R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  to be a fundamental solution of the scalar Laplacian in  R&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;we get  ∆A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;we get  ∆A(V, ϕ0)  =  A(V, ∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for the Green&#39;s operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;9. The calculus of vector convolutions in  R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;y|  denote the distance between the points  x  and  y  in  R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  V  be a smooth vector field defined on  R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A(V, ϕ)(y)  =  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;B(V, ϕ)(y)  =  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;g(V, ϕ)(y)  =  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;G(V, ϕ)(y)  =  ∇y g(V, ϕ)(y)  =  ∇y ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;leave to the reader, are the same in  R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;leave to the reader, are the same in  R3  and  S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× A(V, ϕ)(y)  =  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  —∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;as claimed,  since  ∇y× V(x)  =  0 .  When we move to  S&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y∙ B(V, ϕ)(y)  =  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;we move to  S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇× B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇× B(V, ϕ0)  =  A(V, ∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇× B(V, ϕ0)  =  A(V, ∆ϕ0)  —  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;10. The calculus of vector convolutions in  S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We turn now to the calculus of vector convolutions in  S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  V  be a smooth vector field defined on  S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We now continue as in  R&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;corresponding formulas in  R&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;which are new in  S&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;which looks like the corresponding formula in  R&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  R&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;In  S&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We intend to show that on  S&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  Lyx—1 V(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 ∫S3  Lyx—1 V(x) ×∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  4 ∇y∫S3  Lyx—1 V(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ1(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/192π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[ϕ0]  =  —1/(8π&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[ϕ0]  =  —1/(8π2)     and     [ϕ1]  =  —1/(32π&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Note that  [δ]  =  1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Note that  [δ]  =  1/2π2 ,  and  [ϕ0]  =  —1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  V  be a smooth vector field on  S&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  +  ∇y∫S3  V(x) ∙∇x ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0  is the fundamental solution of the scalar Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;act, mentioned in section 6, that the Green&#39;s operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  —∇× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  —∇× A(V, ϕ0)  —  2 ∇× B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  —∇× A(V, ϕ0)  —  2 ∇× B(V, ϕ1)  —  4 ∇× G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  B(V, ϕ0)  — (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  Lyx—1 V(x) ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— 1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 ∇y∫S3  Lyx—1 V(x) ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;C.  PROOFS ON  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;13. Parallel transport in  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;vector fields on  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;nslation format takes advantage of the group structure on  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; we start with a tangent vector  V  at a single point  x ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to each possible point  y ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;variant, and tangent to the fibres of a Hopf fibration of  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;n, in the study of the calculus of vector convolutions in  S&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;format, however attractive and convenient, is specific to  S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Consider the following features of parallel transport on  S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; we start with a tangent vector  V  at a single point  x ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;transport it to each possible point  y ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;which is defined for all  y ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;14.  Geodesics in  S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;If  x , y  ∊  R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;in  R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S3  =  { x ∊ R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;We will freely identify points in  R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ill also identify the tangent spaces at various points in  R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;usual way, so that we can say  v  ∊  T&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;usual way, so that we can say  v  ∊  Tx S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;them as belonging to  R&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;product on  Tx S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Suppose  x ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to  S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;is a geodesic in  S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  cos t ,  we have that for any pair of points  x , y  ∊  S&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; &lt; x , y &gt;  is equal to the cosine of the distance (along  S&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; and  y  be any pair of distinct, non-antipodal points in  S&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;the distance in  S&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;15. The vector triple product in  R&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;be the standard orthonormal basis for  R&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;andard orthonormal basis for  R4 .  Then, for  x, v, w  ∊  R&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;[x, v, w]  =  det                               ∊  R&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;while the last row consists of vectors in  R&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;For  y  ∊  R&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;16. Explicit formula for parallel transport in  S&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; and  y  be any pair of distinct, non-antipodal points in  S&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; y  be any pair of distinct, non-antipodal points in  S3⊂  R&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;alently, any pair of linearly independent unit vectors in  R&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;two-dimensional subspace of  R&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;x  and  y .  For  v ∊ R&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;If  v  ∊  T&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;If  v  ∊  TxS&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;17. The method of moving frames in  S&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;mputations which lead to the various integral formulas on  S&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tangent space  TxS&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tangent space  TxS3  to  S&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y0 , y1 , y2 , y3)  ≠— x  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;orthonormal basis for  TxS&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for  TyS&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Next, let  θ1 ,  θ2 ,  θ3  denote the 1-forms on  S&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where we understand the right hand sides as restricted to  S&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2  =  1   on  S&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ1∧θ2—  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ1∧θ2—  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ1∧θ2—  y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ1  =  y2/(1 + y0)  θ1∧θ2—  y3/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ2∧θ3—  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ2∧θ3—  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ2∧θ3—  y1/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ2  =  y3/(1 + y0)  θ2∧θ3—  y1/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ3∧θ1—  y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ3∧θ1—  y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ3∧θ1—  y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ3  =  y1/(1 + y0)  θ3∧θ1—  y2/(1 + y0)  θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;If  x  is a fixed point on  S&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  is a fixed point on  S3  and  V  is a tangent vector to  S&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;viewed as a vector field on  S&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;For example,  ↓E&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;For example,  ↓Ei  =  θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;For example,  ↓Ei  =  θi   and  ↑θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;For example,  ↓Ei  =  θi   and  ↑θi  =  E&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot; =  θi   and  ↑θi  =  Ei   for  i  =  1, 2, 3.  Likewise  ⇓E&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;  and  ↑θi  =  Ei   for  i  =  1, 2, 3.  Likewise  ⇓E1  =  θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;nd  ↑θi  =  Ei   for  i  =  1, 2, 3.  Likewise  ⇓E1  =  θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⇓E&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;⇓E2  =  θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⇓E2  =  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;⇓E2  =  θ3∧θ1   and   ⇓E&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;⇓E2  =  θ3∧θ1   and   ⇓E3  =  θ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⇓E2  =  θ3∧θ1   and   ⇓E3  =  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E1  =  ⇑ d ↓ E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E1  =  ⇑ d ↓ E1  =  ⇑ d θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ1∧θ2—  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ1∧θ2—  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ1∧θ2—  y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ⇑ (y2/(1 + y0)  θ1∧θ2—  y3/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y3/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y3/(1 + y0)  E1—  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y3/(1 + y0)  E1—  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  y3/(1 + y0)  E1—  y1/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y1/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y1/(1 + y0)  E2—  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y1/(1 + y0)  E2—  y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  y1/(1 + y0)  E2—  y2/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Dividing through by  1  +  &lt; x, y &gt;  =  1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;y  1  +  &lt; x, y &gt;  =  1  +  y0  gives the formula for  ∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;an orientation preserving isometry of  S&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇∙ E&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E1  =  * d (θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E1  =  * d (θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (dθ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ3—θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ3—θ2∧ dθ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  * (—2 y&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  * (—2 y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  * (—2 y1/(1 + y0)) θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (—2 y1/(1 + y0)) θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (—2 y1/(1 + y0)) θ1∧θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and Green&#39;s operators on  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;defined on all of  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ed on all of  S3 ,  or just on a bounded subdomain  Ω  of  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;a smooth closed curve  K  in  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;As usual,  α  is the distance on  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;fundamental solution of the operator  ϕ→∆ϕ—ϕ   on  S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;magnetic field at the location  y .  When integrated over  S&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;rotation of  S&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;normal basis  E1 ,  E2  and  E3  for  TyS&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y1 X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y1 X1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X2  +  y3 X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y1 X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y1 X1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sin α) (y1 X1  +  y2 X2  +  y3 X&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sin α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;×  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;{PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  — dy&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y3 dθ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y3 dθ2  +  dy&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y3 dθ2  +  dy2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y3 dθ2  +  dy2∧θ3  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  — dy3∧θ2—  y3 dθ2  +  dy2∧θ3  +  y2 dθ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ3  +  2 (y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ3  +  2 (y1y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ3  +  2 (y1y2 / (1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ3  +  2 (y1y2 / (1 + y0)) θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0)) θ2∧θ3  +  2 (y1y2 / (1 + y0)) θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 (y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  2 (y1y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;+  2 (y1y3 / (1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 (y1y3 / (1 + y0)) θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  2 (y1y3 / (1 + y0)) θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× W  =  ⇑ d ↓ W  =  2 (y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× W  =  ⇑ d ↓ W  =  2 (y0  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sin α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sin α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sin α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0))  +  (ϕ\&quot;/sin&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0))  +  (ϕ\&quot;/sin2α—ϕ&#39; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ&#39;/sin α) 2 y1y2/(1 + y0)     +      (ϕ\&quot;/sin&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(ϕ&#39;/sin α) 2 y1y2/(1 + y0)     +      (ϕ\&quot;/sin2α—ϕ&#39; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ&#39;/sin α) 2 y1y3/(1 + y0)     +      (ϕ\&quot;/sin&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(ϕ&#39;/sin α) 2 y1y3/(1 + y0)     +      (ϕ\&quot;/sin2α—ϕ&#39; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;f the orthonormal basis vectors  E1 ,  E2  and  E3  for  TyS&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V(x) ∙∇x (cos αϕ)  =  (cos αϕ)&#39;  (—1/sin α) y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;—∇y {V(x) ∙∇x (cos αϕ)}  =  ∇y {(ϕ&#39; cos α/sin α  —  ϕ)} y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y1 E&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y1 E1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y1 E1  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y1 E1  +  y2 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇yα  =  (1/sin α) (y1 E1  +  y2 E2  +  y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y1θ&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y1θ1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y1θ1  +  y2θ&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; y1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y1θ1  +  y2θ2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1  =  ↑ dy1  =  ↑ {θ1—  (y1/(1 + y0)) (y1θ1  +  y2θ2  +  y3θ&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  { (ϕ\&quot; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  { (ϕ\&quot; cos α/sin2α—ϕ&#39;(1/sin α  +  1/sin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cos α/sin2α—ϕ&#39;(1/sin α  +  1/sin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cos α/sin&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cos α/sin2α—ϕ&#39;(1/sin α  +  1/sin&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;  V(x)  =  (0, 1, 0, 0)  can be viewed as the gradient in  R&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;projection of this onto the tangent plane  TyS&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;projection of this onto the tangent plane  TyS3  to  S&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;gradient on  S&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;V(x)  —  &lt; V(x) , y &gt; y  =  ∇y y&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;23. Maxwell&#39;s equation on  S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;er, is a fundamental solution of the shifted Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(cos α) ϕ(α)  =  ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;which is the fundamental solution of the Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆ϕ0  =  δ—  1/(2π&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Then we integrate the Key Lemma over  S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫S3∇y×{PyxV(x) ×∇yϕ} dx   —∫S3∇y{V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;since  V(y) is a tangent vector to  S&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;nt vector to  S3  at  y ,  and hence orthogonal to  y  in  R&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y×∫S3  PyxV(x) ×∇yϕ(x, y)  dx   —∇y∫S3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× BS(V)(y)  =  V(y)  +  ∇y∫S3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  V  be a smooth vector field on  S&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where  ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× BS(V)(y)  =  V(y)  +  ∇y∫S3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y∙ BS(V)(y)  =  ∇y∙∫S&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;25. The Green&#39;s operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;y)  =   ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π2) (π—α) csc α  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ2(α)  =  (—1/4π2) (π—α) csc α  +  (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ3(α)  =  (—1/24) (π—α) cot α—  (1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;π((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin2α))  +  ((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for the fundamental solution of the Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—1/4π2) (π—α) cot α                         ∆ϕ0  =  δ—  1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ1(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A(V, ϕ)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;B(V, ϕ)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;g(V, ϕ)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;G(V, ϕ)(y)  =  ∇y g(V, ϕ)(y)  =  ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ2)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3∇x∙ V(x)  ϕ0(x, y)  dx   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;w,  V  is a single tangent vector at the single point  x ∊ S&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PyxV  ×∇y ϕ  =  (ϕ&#39;(α) / sin α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;PyxV  ×∇y ϕ  =  (ϕ&#39;(α) / sin α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;PyxV  ×∇y ϕ  =  (ϕ&#39;(α) / sin α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PyxV  ×∇y ϕ  =  (ϕ&#39;(α) / sin α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;e see from formula (1) that  PyxV  lies in the 3-plane in  R&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× A(V, ϕ)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  B(V, ϕ1)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ)(y)  =  — BS(V)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  [(1 + cos α) ϕ1]&#39;  —  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;since  ϕ1(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 + cos α) ϕ  =  (1 + cos α) ϕ1  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 + cos α) ϕ  =  (1 + cos α) ϕ1  +  (1/8π2) (π — α)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ(α)  =  ϕ1(α)  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ(α)  =  ϕ1(α)  +  (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=   (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=   (—1/4π2) (π—α) csc α  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=   (—1/4π2) (π—α) csc α  +  (1/8π2) (π — α)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ2)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3(∇x∙ V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫S&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫S3(∇x∙ V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫S3(∇x∙ V(x))ϕ0(x, y)  dx  =  —∫S&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫S3(∇x∙ V(x))ϕ0(x, y)  dx  =  —∫S3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ2)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫S3∇x∙ V(x)  ϕ0(x, y)  dx   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —  G(V, ϕ0)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Clearly the next step is to compute  ∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ2)(y)  =  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ2)(y)  =  ∫S3∇y∙ {PyxV(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   +  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   +  ∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫S3  {∇y∙ PyxV(x)} ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   =   ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   =   ∫S3——————————ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 63,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  [— 2 sin α / (1 + cos α)] [(—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  [— 2 sin α / (1 + cos α)] [(—1/4π2) (π—α) csc α  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n α / (1 + cos α)] [(—1/4π2) (π—α) csc α  +  (1/8π2) (π — α)&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/2π2) (π—α) / (1 + cos α)  —  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/2π2) (π—α) / (1 + cos α)  —  (1/4π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;) (π—α) / (1 + cos α)  —  (1/4π2) (π—α)2 sin α / (1 + cos α)&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψ(α)  =  (—1/4π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   +  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  {∇y∙ PyxV(x)} ϕ2(x, y)  dx   +  ∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y (∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 64,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y (∇y∙ A(V, ϕ2)(y))  =  G(V, ψ)(y)  +  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  V(y)  —  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  V(y)  —  G(V, ϕ0)(y)   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0—ϕ2—ψ  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/4π2) (π—α) csc α—  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/4π2) (π—α) csc α—  (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1/4π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π2) (π—α) (1 — cos α) / sin α   +   (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π2) (π—α) (1 — cos α) / sin α   +   (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π2) (π—α) (1 — cos α) / sin α   +   (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π2) (π—α) (1 — cos α) / sin α   +   (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;over  S&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫S3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫S3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 66,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;be the fundamental solution of the Laplacian on  S&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆ϕ0  =  δ—  1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The average value of  ϕ0  over  S&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;The average value of  ϕ0  over  S3  is  [ϕ0]  =  —1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Φ0(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ1(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;be the kernel function for the Biot-Savart operator on  S&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;format.  The average value of ϕ1  over  S&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;rmat.  The average value of ϕ1  over  S3  is  [ϕ1]  =  —1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Φ1(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψ(α)  =  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ψ(α)  =  (1/8π2) (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The average value of  ψ  over  S&quot;
+  },
+  {
+    &quot;page&quot;: 68,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;[ψ]  =  —1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆F(α)  =  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψ  =  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆F  =  F\&quot;  + 2 F&#39; cot α  =  (1/sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆F  =  F\&quot;  + 2 F&#39; cot α  =  (1/sin2α) (sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;which tells us that  sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(sin2α F&#39;)&#39;  =  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(sin2α F&#39;)&#39;  =  (π—α)2 sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(sin2α F&#39;)&#39;  =  (π—α)2 sin2α / (1  +  cos α)  =  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;sin2α F&#39;  =  —(π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin2α F&#39;  =  —(π—α)3/3  —  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;of integration.  Dividing through by  sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)3 / 3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)3 / 3 sin2α—  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; sin2α—  (π—α)2 / sin α  +  (2(π—α) cos α  +  2 sin α) / sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2(π—α) cos α  +  2 sin α) / sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ω(α)  =  —(π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ω(α)  =  —(π—α)3 / 3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ω(α)  =  —(π—α)3 / 3 sin2α—  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)3 / 3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;F&#39;  =  —(π—α)3 / 3 sin2α—  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; sin2α—  (π—α)2 / sin α  +  (2(π—α) cos α  +  2 sin α) / sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ω(α)  +  (2(π—α) cos α  +  2 sin α) / sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆F(α)  =  (π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψ(α)  =  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψ(α)  =  (1/8π2) F(α)  —  (—1/2π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/8π2) (Ω(α)  —  2 (π—α) / sin α)  +  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (—1/16π2) α (2π—α)  +  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/8π2) (Ω(α)  —  2 (π—α) / sin α)  +  (1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (—1/24) (π—α) cot α—  (1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (—1/24) (π—α) cot α—  (1/16π2) α (2π—α)  +  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (—1/24) (π—α) cot α—  (1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;π((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;π((π—α)3 / (3 sin2α))  +  ((π—α)&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  (1/8π&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;D. PROOFS IN  H&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot; ,  we considered the standard Euclidean inner product in  R&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;S3  =  { x ∊ R&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;We now replace  R&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;H3  =  { x ∊ R1,3 :  &lt; x , x &gt;  =  1   and   x&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for  S&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;for  S3  and  R&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and Green&#39;s operators in  H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;proofs already given for  S&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;nce the inner product  &lt; x , x &gt;  is positive for all  x ∊ H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to  H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;to  H3  are \&quot;timelike\&quot;.  Moreover, if  x , y ∊ H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;usual way, so that we can say  v  ∊  T&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;usual way, so that we can say  v  ∊  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;necessarily have  &lt; v , v &gt;  &lt;  0  for all nonzero  v ∊ T&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;necessarily have  &lt; v , v &gt;  &lt;  0  for all nonzero  v ∊ TxH&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tangent vectors to  H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hem as belonging to  R1,3 .  If  v  and  w  both lie in  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Because the tangent vectors to  H&quot;
+  },
+  {
+    &quot;page&quot;: 73,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;inner product on each tangent space  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;34. Isometries of  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;particular it takes the \&quot;upper\&quot; sheet  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Riemannian metric on  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Riemannian metric on  H3 ,  so is an isometry of  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;One example of an isometry of  R1,3  which preserves  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;family of examples of isometries of  R1,3  which preserve  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;take  H&quot;
+  },
+  {
+    &quot;page&quot;: 74,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;elf, and in particular provide all possible isometries of  H&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;37. Explicit formula for parallel transport in  H&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  x  and  y  be any pair of distinct points in  H&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;If  v  ∊  T&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;If  v  ∊  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;case of  S&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;case of  S3⊂  R&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;38. The method of moving frames in  H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;mputations which lead to the various integral formulas in  H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ort from a single orthonormal frame, just as they were on  S&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  x  =  (1, 0, 0, 0)  in  H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;orthonormal basis for the tangent space  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;orthonormal basis for the tangent space  TxH3  to  H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y0 , y&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y0 , y1 , y&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y0 , y1 , y2 , y&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;For each point  y  =  (y0 , y1 , y2 , y3)  ∊ H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;basis for  TxH&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for  TyH&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Next, let  θ1 ,  θ2 ,  θ3  denote the 1-forms on  H&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;in the sense that  θ&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;in the sense that  θi(V)  =  E&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;in the sense that  θi(V)  =  Ei∙V  =  — &lt; E&quot;
+  },
+  {
+    &quot;page&quot;: 78,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;where we understand the right hand sides as restricted to  H&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2  =  1   on  H&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ1∧θ2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ1  =  — y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ2∧θ3  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ2∧θ3  +  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ2∧θ3  +  y1/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ2  =  — y3/(1 + y0)  θ2∧θ3  +  y1/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ3∧θ1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ3∧θ1  +  y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ3∧θ1  +  y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 79,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dθ3  =  — y1/(1 + y0)  θ3∧θ1  +  y2/(1 + y0)  θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;If  x  is a fixed point on  H&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  is a fixed point on  H3  and  V  is a tangent vector to  H&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ort  PyxV  of  V  to the point  y  is defined for all  y ∊ H&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;as a vector field on  H&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We use the same definitions as on  S&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E1  =  ⇑ d ↓ E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E1  =  ⇑ d ↓ E1  =  ⇑ d θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ1∧θ2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y0)  θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ⇑— (y2/(1 + y0)  θ1∧θ2  +  y3/(1 + y0)  θ3∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y3/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y3/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y3/(1 + y0)  E1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y3/(1 + y0)  E1  +  y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E2  =  — y3/(1 + y0)  E1  +  y1/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y1/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y1/(1 + y0)  E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y1/(1 + y0)  E2  +  y2/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× E3  =  — y1/(1 + y0)  E2  +  y2/(1 + y0)  E&quot;
+  },
+  {
+    &quot;page&quot;: 80,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; these formulas are the negatives of the ones obtained on  S&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Dividing through by  1  +  &lt; x, y &gt;  =  1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;y  1  +  &lt; x, y &gt;  =  1  +  y0  gives the formula for  ∇y× E&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;case of  S&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇∙ E&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E1  =  * d (θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇∙ E1  =  * d ⇓ E1  =  * d (θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (dθ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ3—θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (dθ2∧θ3—θ2∧ dθ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  * (2 y&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  * (2 y1/(1 + y&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  * (2 y1/(1 + y0)) θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  * (2 y1/(1 + y0)) θ1∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  * (2 y1/(1 + y0)) θ1∧θ2∧θ&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and Green&#39;s operators on  H&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;As usual,  α  is the distance on  H&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;solution of the operator  ϕ→∆ϕ  +  ϕ   on  S&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Then, just as on  S&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The plan is the same as it was for  S&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; as it was for  S3 .  Applying an appropriate isometry of  H&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; 1, 0, 0) .  At each point  y  =  (y0 , y1 , y2 , y3)  of  H&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and  E3  for  TyH&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y1 X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y1 X1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  =  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;  ϕ&#39;(α) ∇x α  =  (—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X2  +  y3 X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y1 X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y1 X1  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— V(x) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;) ×∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇x ϕ  =  (—X1)  ×(—ϕ&#39;(α) / sinh α) (y1 X1  +  y2 X2  +  y3 X&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;  {PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PyxV(x)  ×∇y ϕ}  =  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× W  =  2 (y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y× W  =  2 (y0—  y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Now to compute  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;y×  {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; {PyxV(x)  ×∇y ϕ}=  ∇y×  {(ϕ&#39;(α) / sinh α) ( —y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0))  +  (ϕ\&quot;/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2/(1 + y0))  +  (ϕ\&quot;/sinh2α—ϕ&#39; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (—2ϕ&#39;/sinh α) y1y2/(1 + y0)   +      (ϕ\&quot;/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2ϕ&#39;/sinh α) y1y2/(1 + y0)   +      (ϕ\&quot;/sinh2α—ϕ&#39; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (—2ϕ&#39;/sinh α) y1y3/(1 + y0)   +      (ϕ\&quot;/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2ϕ&#39;/sinh α) y1y3/(1 + y0)   +      (ϕ\&quot;/sinh2α—ϕ&#39; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;vectors  E1 ,  E2  and  E3  for  TyH&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We follow the procedure used on  S&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  { (ϕ\&quot; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  { (ϕ\&quot; cosh α/sinh2α  +  ϕ&#39;(1/sinh α—  1/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cosh α/sinh2α  +  ϕ&#39;(1/sinh α—  1/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cosh α/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+  { (ϕ\&quot; cosh α/sinh2α  +  ϕ&#39;(1/sinh α—  1/sinh&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We follow the procedure used on  S&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;44. Maxwell&#39;s equation in  H&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  H&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;er, is a fundamental solution of the shifted Laplacian on  H&quot;
+  },
+  {
+    &quot;page&quot;: 87,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;differs from the fundamental solution of the Laplacian on  H&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Then we integrate the Key Lemma over  H&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫H3∇y×{PyxV(x) ×∇yϕ} dx   —∫H3∇y{V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We process this just as we did on  S&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y× BS(V)(y)  =  V(y)  +∇y∫H3  V(x) ∙∇x ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;As in  R&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;As in  R3  and on  S&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  V  be a smooth compactly supported vector field in  H&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;But the argument for this in  H&quot;
+  },
+  {
+    &quot;page&quot;: 88,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;But the argument for this in  H3  is identical to that in  S&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;46. The Green&#39;s operator on  H&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Green&#39;s operator on  H&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫H3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Gr(V)(y)  =   ∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;y)  =   ∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α2 / 2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϕ3(α)  =  (1/4π) α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for the fundamental solution of the Laplacian on  H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A(V, ϕ)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;B(V, ϕ)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;g(V, ϕ)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;G(V, ϕ)(y)  =  ∇y g(V, ϕ)(y)  =  ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ2)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3∇x∙ V(x)  ϕ0(x, y)  dx   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;w,  V  is a single tangent vector at the single point  x ∊ H&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PyxV ×∇y ϕ  =  (ϕ&#39;(α) / sinh α) (—y&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;PyxV ×∇y ϕ  =  (ϕ&#39;(α) / sinh α) (—y3 E&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;PyxV ×∇y ϕ  =  (ϕ&#39;(α) / sinh α) (—y3 E2  +  y&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;PyxV ×∇y ϕ  =  (ϕ&#39;(α) / sinh α) (—y3 E2  +  y2 E&quot;
+  },
+  {
+    &quot;page&quot;: 91,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;for  S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y× A(V, ϕ)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  B(V, ϕ1)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ)(y)  =  — BS(V)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∇y×  A(V, ϕ2)(y)  =  — B(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3(∇x∙ V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫H&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫H3(∇x∙ V(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫H3(∇x∙ V(x))ϕ0(x, y)  dx  =  —∫H&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∫H3(∇x∙ V(x))ϕ0(x, y)  dx  =  —∫H3  V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  —∇y×∇y× A(V, ϕ2)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3∇x∙ V(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —∇y∫H3∇x∙ V(x)  ϕ0(x, y)  dx   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  V(y)  —  G(V, ϕ0)(y)  +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Just as on  S&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Just as on  S3 ,  the next step is to compute  ∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ2)(y)  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ2)(y)  =  ∫H3∇y∙(PyxV(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ2(x, y)  dx   +  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ2(x, y)  dx   +  ∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;we follow the pattern set in section 29 for  S&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫H3(∇y∙ PyxV(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∫H3(∇y∙ PyxV(x))ϕ2(x, y)  dx  =  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; (—1/2π) / (1 + cosh α)   +   (1/2π) α sinh α / (1 + cosh α)&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ2(x, y)  dx   +  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3(∇y∙ PyxV(x))ϕ2(x, y)  dx   +  ∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y (∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 94,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y (∇y∙ A(V, ϕ2)(y))  =  G(V, ψ)(y)  +  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 95,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 95,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  V(y)  —  G(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 95,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆y A(V, ϕ2)(y)  =  V(y)  —  G(V, ϕ0)(y)   +  ∇y(∇y∙ A(V, ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;operator in  H&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψ1(α)  =  (1/4π) α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Following the procedure used on  S&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α2 / 2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψ&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π) α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α2 / 2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;α((α / sinh α)  —  (α2 / 2 sinh&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  (1/4π) α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;oof of Theorem 3, formula (3) for the Green&#39;s operator in  H&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;52.  Non-uniqueness of the Green&#39;s operator in  H&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;eking a formula for the vector-valued Green&#39;s operator in  H&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=∫H&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=∫H3  PyxV(x)  ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=∫H3  PyxV(x)  ϕ2(x, y)  dx   +   ∇y∫H3  PyxV(x) ∙∇yϕ&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∇y ×A(V, φ&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ3&#39;(α)  =  (sinh α—α) / sinh&quot;
+  },
+  {
+    &quot;page&quot;: 98,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;φ3(α)  =  2α / (e&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;two competing vector-valued Green&#39;s operators in  H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  φ&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  φ2(x, y)  dx   +   ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H3  PyxV(x)  φ2(x, y)  dx   +   ∇y∫H3  PyxV(x) ∙∇yφ&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;=  ∫H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+   ∇y∫H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+   ∇y∫H3  PyxV(x)  ∙((sinh α—α) / sinh&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;definition of  δGr(V)  is curl-free.  Since  H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;harmonic function on  H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;urther computation reveals that this harmonic function on  H&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Green&#39;s operator in  H&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;GAUSS LINKING INTEGRAL ON  S&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;GAUSS LINKING INTEGRAL ON  S3  AND  H&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S3  and in  H&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;hold on  S3  and in  H3 ,  just as they do in  R&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;∇y∙ E(ρ)(y)  =  ∇y∙∇y∫ρ(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ∆y∫ρ(x) ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S3  in left-translation format in section 12, on  S&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;sections 23 and 24, and in  H&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The same line of reasoning in  S&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The same line of reasoning in  S3  and  H&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; is a smooth, compactly supported current distribution on  R&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;smooth, compactly supported current distribution on  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;or  H&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in the present case is either  R&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in the present case is either  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in the present case is either  R3 ,  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;nowhere vanishing curvature in Euclidean 3-space  R&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where  0  ≤  s  ≤  L  and  0  ≤  u&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where  0  ≤  s  ≤  L  and  0  ≤  u2  +  v&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2 .  In  R&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;distance  (u&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;distance  (u2  +  v&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;s easy to further rescale and concentrate the flow  V  in  N&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Let  K  =  {x(s)}  be a smooth simple closed curve in  R&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;t  K  =  {x(s)}  be a smooth simple closed curve in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; {x(s)}  be a smooth simple closed curve in  R3 ,  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  R&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  R3 ,  S&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in  R3 ,  S3  or  H&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;in the unit 3-sphere  S&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/(4π2) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/(4π&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;—  1/(4π2) ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/(4π2) ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫K1  Lyx—1 V(x) ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— 1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+  2 ∇y∫K1  Lyx—1 V(x) ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where    ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;re    ϕ0(α)  =  (—1/4π2) (π—α) cot α    andϕ1(α)  =  (—1/16π&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lyx—1 V(x) ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lyx—1 V(x) ∙∇y ϕ1(x, y)  =  — V(x) ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  — dx/ds ∙∇xϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;BS(V)(y)  =  ∫K1  Lyx—1 V(x) ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;— 1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=∫K2(∫K1  Lyx—1 V(x) ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=∫K2(∫K1  Lyx—1 V(x) ×∇y ϕ0(x, y)  ds  — 1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  ∫K1×K2  Lyx—1dx/ds ×∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  —∫K1×K2  Lyx—1dx/ds × dy/dt  ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where we still have  ϕ0(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;=  1/4π2∫K1×K2  Lyx—1dx/ds × dy/dt  ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1 , K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1 , K2)  =  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Lk(K1 , K2)  =  1/4π2∫K1×K2  Lyx—1dx/ds × dy/dt  ∙∇y ϕ&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;∫K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;—  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on  S&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;We start on  S&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π2∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π2∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where  ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ∫K2(∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  ∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  ∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  —∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  —∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;where we still have   ϕ(α)  =  (—1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;=  1/4π2∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;=  1/4π2∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π2∫K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Lk(K1, K2)  =  1/4π2∫K1×K&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;formula (2) for the Gauss linking integral on  S&quot;
+  },
+  {
+    &quot;page&quot;: 106,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; Theorem 1, formula (3) for the Gauss linking integral on  H&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

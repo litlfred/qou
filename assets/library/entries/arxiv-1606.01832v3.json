@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1606.01832v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "In this paper we continue investigating the interaction between flatness \nand adic completion for infinitely generated modules over a commutative \nring, that we had started in \\cite{Ye1}. \n\nLet $A$ be a commutative ring, and let $\\a$ be an ideal in it. For each $k \\in \n\\N$ we define the quotient ring\n$A_k := A / \\a^{k + 1}$. \nThe collection of rings $\\{ A_k \\}_{k \\in \\N}$ is an inverse system,\nand the $\\a$-adic completion of $A$ is the commutative ring \n$\\what{A} := \\lim_{\\leftarrow k} \\, A_k$. \nThere is a canonical ring homomorphism $A \\to \\what{A}$. \n\nAn {\\em $\\a$-adic system} of $A$-modules",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FLATNESS AND COMPLETION REVISITED\nAMNON YEKUTIELI\nAbstract. We continue investigating the interaction between ﬂatness and a-\nadic completion for inﬁnitely generated A-modules. Here A is a commutative\nring and a is a ﬁnitely generated ideal in it.\nWe introduce the concept of\na-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness\nis preserved under completion when the ideal a is weakly proregular. We also\nprove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for\ncomplete modules). An example is worked out of a non-noetherian ring A,\nwith a weakly proregular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "a-Adic Systems",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-1-a-adic-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:adic-sys}\n\nThroughout the paper $A$ is a commutative ring, and $\\a$ is an ideal in it. \nRecall the inverse system of rings \n$\\{ A_k \\}_{k \\in \\N}$, where $A_k = A / \\a^{k + 1}$. \n\n\\begin{dfn} \\label{dfn:15}\nAn {\\em $\\a$-adic system of $A$-modules} is data \n\\[ \\bsym{M} = \\bigl( \\{ M_k \\}_{k \\in \\N}, \\, \\{ \\nu_{k} \\}_{k \\in \\N} \\bigr) , \n\\]\nwhere $M_k$ is an $A_k$-module, and \n$\\nu_{k} : M_{k + 1} \\to M_k$\nis an $A$-module homomorphism, called the {\\em $k$-th transition}.\nThe condition is that for every $k$, the homomorphism \n\\[ A_k \\ot_{A_{k + 1}} M_{k + 1} \\to M_k  \\]\ninduced by the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free Resolutions of a-Adic Systems",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-2-free-resolutions-of-a-adic-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:res-adic-sys}\n\nAs before, $A$ is a commutative ring and $\\a$ is an ideal in it. \n\nLet us recall some definitions \nfrom our paper \\cite{Ye1}. Let $Z$ be a set and let $N$ be an \n$A$-module. The set of all functions $f : Z \\to N$ is denoted by \n$\\opn{F}(Z, N)$. \nIt is an $A$-module in the obvious way. The {\\em support} of a  function \n$f : Z \\to N$ is the set \n$\\{ z \\in Z \\mid f(z) \\neq 0 \\}$.  \nWe denote by \n$\\opn{F}_{\\mrm{fin}}(Z, N)$ \nthe submodule of $\\opn{F}(Z, N)$ consisting of finite support functions.\nFor $N = A$, the $A$-module \n$\\opn{F}_{\\mrm{fin}}(Z, A)$\nis free, with basis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "a-Adic Flatness",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-3-a-adic-flatness.md",
+      "narrative": null,
+      "content": "\\label{sec:adic-flatness} \n\nIn this section we prove Theorem \\ref{thm:168}, that \ncharacterizes adically flat modules.\nAs before, $A$ is a commutative ring and $\\a$ is an ideal in it. \nWe denote by $\\cat{D}(A) = \\cat{D}(\\cat{Mod} A)$ the unbounded derived category \nof $A$. \n\nLet us first recall the notion of $\\a$-torsion. An element $m$ in an $A$-module \n$M$ is called an {\\em $\\a$-torsion element} if $m$ is annihilated by some power \nof the ideal $\\a$. The {\\em $\\a$-torsion submodule} $\\Ga_{\\a}(M)$ of $M$ is the \nsubmodule consisting of all $\\a$-torsion elements. Thus \n\\begin{equation} \\label{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weakly Proregular Ideals",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-4-weakly-proregular-ideals.md",
+      "narrative": null,
+      "content": "\\label{sec:WPR} \n\nWe begin this section by recalling some facts about {\\em weak proregularity}, \ncopied from \\cite{PSY1}. (Partial results were obtained earlier in \\cite{LC}, \n\\cite{AJL} and \\cite{Scz}.)  \nSuppose $\\bsym{a} = (a_1, \\ldots, a_n)$ is a finite sequence of elements in a \ncommutative ring $A$. For each $k \\geq 1$ we have the sequence of elements \n$\\bsym{a}^k := (a_1^k, \\ldots, a_n^k)$, \nand the corresponding Koszul complex $\\opn{K}(A; \\bsym{a}^k)$.\nRecall that $\\opn{K}(A; \\bsym{a}^k)$ is a complex of finite rank free \n$A$-modules, concentrated in degrees $-n, \\ldots, 0$. The Koszul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modules of Decaying Functions",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-5-modules-of-decaying-functions.md",
+      "narrative": null,
+      "content": "\\label{sec:decay}\n\nIn this section we prove Theorems \\ref{thm:290} and \\ref{thm:295}, that \ntogether constitute Theorem \\ref{thm:262} from the Introduction. \nWe assume that $A$ is a commutative ring, and $\\a$ is a finitely generated \nideal in it. As before, for each $k$ we write $A_k := A / \\a^{k + 1}$. \n\nLet $M$ be an $\\a$-adically complete $A$-module. Following \\cite{Ye1}, a\nfunction $f : Z \\to M$ is called an {\\em $\\a$-adically decaying function} if \nfor every $k \\in \\N$ the set \n\\[ \\{ z \\in Z \\mid f(z) \\notin \\a^{k + 1} \\cd M \\} \\]\nis finite. In terms of the canonical surjections\n$\\tau_{M,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Non-Noetherian Example",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-6-the-non-noetherian-example.md",
+      "narrative": null,
+      "content": "\\label{sec:example}\n\nIn this section we prove Theorem \\ref{thm:205}, that provides an example \nof an  $\\a$-adically complete $\\a$-adically flat $A$-module which is not flat. \nThe necessary facts on K\\\"ahler differentials can be found in \n\\cite[Section 26]{Ma}.\n\n\\begin{lem} \\label{lem:300}\nLet $\\K$ be a field of characteristic $0$, and let $B := \\K[[t]]$, the ring \nof power series in a variable $t$. Then the module of K\\\"ahler $1$-forms \n$\\Om^1_{B / \\K}$ is not finitely generated as a $B$-module. \n\\end{lem}\n\n\\begin{proof}\nLet $L := \\K((t))$ be the field of Laurent series, which is the field of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1606.01832v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[AJL]\nL. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann.\nSci. ENS 30 (1997), 1-39. Correction, availabe online at http://www.math.purdue.edu/\n˜lipman/papers/homologyfix.pdf\n[AM]\nM.F. Atiyah and I.G. Macdonald, “Introduction to Commutative Algebra”, Addison-\nWesley, 1969.\n[BS]\nJaap Bartijn and Jan R. Strooker, Modiﬁcations monomiales, in “S´emin. Dubreil-\nMalliavin 1982”, Lect. Notes Math. 1029, Springer, 1983, pp. 192-217.\n[CA]\nBourbaki, “Commutative Algebra”, Chapters 1-7, Springer, 1989.\n[En]\nEdgar E. Enochs, Complete Flat Modules, Comm. Algebra 13 (1995), 4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

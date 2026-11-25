@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1707.00196v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Yang-Baxter representations of the inﬁnite symmetric group",
+      "dcterms:creator": [
+        "Lechner, Gandalf",
+        "Pennig, Ulrich",
+        "Wood, Simon"
+      ],
+      "dcterms:issued": "D:20190805",
+      "dcterms:identifier": "https://arxiv.org/abs/1707.00196",
+      "dcterms:abstract": "Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the inﬁnite sym- metric group S∞. We give a complete classiﬁcation of all such Yang-Baxter characters and determine which extremal characters of S∞are of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same character and the same dimension, we show that equivalence classes can be parameterized by pairs of Young diagrams, and construct an explicit normal form R-matrix for each class. Using operator-algebraic techniques (subfactors), we prove that two R-matrices are equivalent if and only if they have similar partial traces. Furthermore, we describe the algebraic structure of the set of equivalence classes of all involutive R-matrices, and discuss several families of examples. These include unitary Yang-Baxter representations of the Temperley-Lieb alge- bra at loop parameter δ = 2, which can be completely classiﬁed in terms of their trace and dimension. The Yang-Baxter equation is an algebraic equation that plays a striking role in a remarkable number of seemingly disparate ﬁelds: Statistical mechanics [3], quantum mechanics [4], braid groups, knot theory [5, 6], integrable quantum ﬁeld theory [7], quasitriangular Hopf algebras [8], and von Neumann algebras [9], to name but a few. In its most basic form, the (quantum) Yang-Baxter equation is an equation for an endomorphism R ∈End(V ⊗V ) on the tensor square of a vector space V , namely (R ⊗idV )(idV ⊗R)(R ⊗idV ) = (idV ⊗R)(R ⊗idV )(idV ⊗R) (1.1) as an equation in End(V ⊗V ⊗V ). Several variations of this equation exist (see, for example, [8, 10, 11]), but we shall only consider the form (1.1). As a nonlinear system of (dim V )6 equations for (dim V )4 unknowns, the Yang- Baxter equation is notoriously hard to solve in general. One rich source of solutions to (1.1) is the theory of quantum groups, pioneered by Drinfeld [12] and Jimbo [13], which connects",
+      "dcterms:source": "library/arxiv-1707.00196v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1707.00196v3"
+    }
+  ]
+}

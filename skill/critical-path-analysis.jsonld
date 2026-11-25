@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/critical-path-analysis.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/critical-path-analysis",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "critical-path-analysis",
+      "title": "Critical Path Analysis & Context Review",
+      "description": "Analyse the critical path of the paper's argument chain, audit statement and proof contexts (e.g. archimedean vs categorical), identify blocks that need rewriting, and propose cleanups.  Also covers \"statement and proof context review\" — classifying each result by whether its statement, proof, or both require specialisation assumptions.",
+      "instructionsPath": "skills/local/critical-path-analysis.md",
+      "instructionLines": 264,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

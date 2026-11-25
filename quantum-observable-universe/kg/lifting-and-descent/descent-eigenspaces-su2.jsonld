@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-descent-eigenspaces-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:descent-eigenspaces-su2",
+  "kind": "example",
+  "title": "Descent eigenspaces for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+    "papers/quantum-observable-universe/blocks/ex-descent-involution-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+  "tags": [
+    "su2",
+    "descent",
+    "eigenspaces",
+    "involution"
+  ],
+  "text": "descent-eigenspaces-su2.md",
+  "provenance": "authored"
+}

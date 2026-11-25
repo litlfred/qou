@@ -1,0 +1,457 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "chinta-2025-j-phys-a-math-theor-58-035203",
+  "blocks": [
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Physics A:\nMathematical and\nTheoretical\n     \nPAPER • OPEN ACCESS\nThe discrete analogue of the Gaussian\nTo cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203\n \nView the article online for updates and enhancements.\nYou may also like\nUnitary branching rules for the general\nlinear Lie superalgebra\nMark D Gould and Yang Zhang\n-\nPhysics with non-unital algebras? An\ninvitation to the Okubo algebra\nAlessio Marrani, Daniele Corradetti and\nFrancesco Zucconi\n-\nIntegrable systems on multiplicative quiver\nvarieties from cyclic quivers\nMaxime Fairon\n-\nThis content was",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The discrete analogue of the Gaussian",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-the-discrete-analogue-of-the-gaussian.md",
+      "narrative": null,
+      "content": "Gautam Chinta1,5,6, Jay Jorgenson1,6,\nAnders Karlsson2,3,7,∗and Lejla Smajlovi´c4\n1 Department of Mathematics The City College of New York Convent Avenue at\n138th Street, New York, NY 10031 United States of America\n2 Section de mathématiques Université de Genève, Case Postale 64, 1211 Genève 4,\nSwitzerland\n3 Matematiska institutionen Uppsala universitet Box 256, 751 05 Uppsala, Sweden\n4 Department of Mathematics and Computer Science University of Sarajevo Zmaja\nod Bosne 35, 71 000 Sarajevo, Bosnia and Herzegovina\nE-mail: anders.karlsson@unige.ch, gchinta@ccny.cuny.edu,\njjorgenson@mindsprin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Let {αn} be any sequence of integers indexed by n ∈Z+ such that αn/n →x ∈R as n →∞. Then lim n→∞nKZ \u0000n2t,αn \u0001 = lim n→∞ne−2n2tIαn \u00002n2t \u0001 = √ 4πt e−x2/4t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "The Gaussian density function, or simply Gaussian, is the two-variable function defined by\nKR (t,x) :=\n1\n√\n4πt\ne−x2/4t for x ∈R and t ∈R+.\n(1)\nIn common language the Gaussian is sometimes referred to as the bell-shaped curve. In prob-\nability theory, (1) is the density function of a normal random variable. The universality of the\nGaussian is evident from the classical central limit theorem, the theory of Brownian motion,\nand that (1) serves as the fundamental solution to the heat equation on the real line\n\u0012\n−∂2\n∂x2 + ∂\n∂t\n\u0013\nf(t,x) = 0.\n(2)\nIn (2) t is positive time variable while in (1) we hav",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Let {Xk}∞ k=1 be a sequence of independent, identically distributed integer-valued random variables with finite mean µ and finite variance σ2, and assume that σ2 > |µ|. Assume further there is no infinite subprogression a + ℓZ of Z with ℓ> 1 such that X1 takes values in a + ℓZ almost surely. Let Sn := Pn k=1 Xk. Then sup m∈Z √n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "For any q ⩾1, let ζTq+1(s) be the spectral zeta function associated to Tq+1. Then ζTq+1(0) = 1 and ζTq+1(−1) = q + 1. Furthermore, for any integer m > 1, we have that ζTq+1 (−m) = m X k=0 \u0012m k \u00132 qm−k −(q −1) ⌊m/2⌋ X j=1 m−2j X k=0 \u0012m k \u0013\u0012 m 2j + k \u0013 qm−2j−k. (9) Moreover, det′∆Tq+1 := exp \u0010 −ζ ′ Tq+1 (0) \u0011 = ( \u00001 −q−2\u0001(1−q)/2 , when q > 1 1, when q = 1. To close this introduction we highlight some key features of the discrete Gaussian (3) which we explore more thoroughly below. • (Section 2) The discrete Gaussian is not just the heat kernel on Z, but in fact it serves as the building block fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The building block of heat kernels of graphs",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-the-building-block-of-heat-kernels-of-graphs.md",
+      "narrative": null,
+      "content": "Let X = (VX,EX) be a countable graph of bounded degree, where VX and EX denote the sets\nof vertices and edges, respectively. The Laplacian is an operator on L2(VX,C) defined by\n(∆Xf)(x) =\nX\ny∼x\n(f(x) −f(y)),\n(10)\nwhere the sum is taken over all vertices adjacent to x in X.\nA graph is called (q + 1)-regular or regular if every vertex has degree q + 1. The reason for\nthe normalization of ‘q + 1’ comes form number theory, and we adopt it here as well, because\nvarious formulas become slightly more compact when using this convention. Chung and Yau\nobserved in [CY99] that the heat kernel on a regula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "CJK15",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "The heat kernel on any (q + 1)-regular graph X is KX (t,x) = e−(q+1)t ∞ X m=0 bm (x)q−m/2Im (2√qt), where bm(x) = cm(x) −(q −1)(cm−2(x) + cm−4(x) + ...) and cm(x) is the number of geodesics from the origin to x of length m ⩾0. J. Phys. A: Math. Theor. 58 (2025) 035203 G Chinta et al It is interesting to compare theorem 4 with known results in the setting of Riemannian geo- metry, where the heat kernel KM(t,x,y) on an n-dimensional smooth manifold M with smooth metric has an asymptotic expansion of the form KM (t,x,y) = e−d2 M(x,y)/4t (4πt)n/2   k X j=0 uj (x,y)tj + O \u0000tk+1\u0001  as t →0 for an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/cor-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "cor-sec-003-02.md",
+      "narrative": null,
+      "content": "In addition to the assumptions as stated in theorem 5, assume that µ = 0. Then sup m∈Z √n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete local limit theorem",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-3-discrete-local-limit-theorem.md",
+      "narrative": null,
+      "content": "Let us continue with the setting of the last paragraph with p,q > 0 and p + q = 1. Then the heat\nkernel Kp,q(2t,x) with x ∈Z can be viewed as the probability distribution of the continuous-\ntime random walk on Z which steps one unit to the left (resp. right) with probability p (resp.\nq = 1 −p.) Further, the time interval between steps has an exponential distribution with density\n2e−2t, see [Fe66] or [Fe70, chapter 7]. In the special case when p = q = 1/2, then the function\nK1/2,1/2(2t,x) = e−2tIx(2t) is the heat kernel on Z.\n7\nJ. Phys. A: Math. Theor. 58 (2025) 035203\nG Chinta et al\nLet us den",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Let {Xk}∞ k=1 be a sequence of independent, identically distributed integer-valued random variables with finite mean µ and finite variance σ2, and assume that σ2 > |µ|. Assume further there is no infinite subprogression a + ℓZ of Z with ℓ> 1 such that X1 takes values in a + ℓZ almost surely. Let Sn := Pn k=1 Xk. Then sup m∈Z √n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 1: Bessel identities",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-4-application-1-bessel-identities.md",
+      "narrative": null,
+      "content": "Bessel functions are ubiquitous in mathematical physics, perhaps first appearing as a solution\nto Bessel’s differential equations arising from the Laplace equation with cylindrical symmetry.\nA classic text on Bessel functions is Watson’s book [Wa44]. The fact that the I-Bessel func-\ntion is essentially a heat kernel makes many of the classical identities immediate from physical\nprinciples. Note that we continue to view Ix(t) as a function in two variables, where the vari-\nable t is continuous and where the variable x is discrete. We will now illustrate how to obtain\n10\nJ. Phys. A: Math. Theor.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 2: finite trigonometric sums",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-5-application-2-finite-trigonometric-sums.md",
+      "narrative": null,
+      "content": "Finite sums of powers of trigonometric functions of multiple angles, such as\nm−1\nX\nj=1\ne2π irj/m\nsinn (jπ/m) form ∈N and r ∈{0,1,...,m −1}\nappear in many contexts, including Verlinde formulas, chiral Potts models, expressions for\nresistance in electrical network, and modeling angles in proteins and circular genomes; see\n[Do92, JKS23] for references. Let us now describe the methodology developed in [JKS23] to\nevaluate these sums, which is based on analysis of the resolvent kernel as derived from the\nheat kernel on the discrete torus.\nFor r and m as above and β ∈R \\ Z, define\nCm,r (β,n) = 1\nm\nm−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "([JKS23]) For sufficiently small complex s, ∞ X n=0 Cm,r (β,n + 1)sn = 2e−2π iβr/m Um−r−1 (1 −2s) + e2π iβUr−1 (1 −2s) Tm (1 −2s) −cos2πβ , where Tn and Un denote the Chebyshev polynomials of the first and second kind, with the convention that U−1(1 −2s) ≡0. The right-hand-side of the identity in theorem 6 is a rational function in s with well-known coefficients. Therefore, one can obtain an evaluation for each of the coefficients in the right- hand-side. For example, as shown in [JKS23], for any k > 0 we have that 3k−1 X j=1 sin4 (jπ/3k) cos(2πj/3) = −1 \u000039k4 + 30k2 + 11 \u0001 , which, as far as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 3: asymptotics by passing from the discrete to the continuous",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-6-application-3-asymptotics-by-passing-from-the.md",
+      "narrative": null,
+      "content": "Consider a discrete tori in d dimensions, or equivalently, a rectangular box in the standard\nlattice Zd equipped with periodic boundary conditions, see figure 2. The question is how does\nthe determinant of the (finite) graph Laplacian grows as the rectangular box becomes larger.\nThis invariant counts the number of rooted spanning trees. (We note that arbitrary tori can also\nbe treated; see [CJK12].) In thermodynamics one speaks of the infinite volume limit and the\ncontinuum limit. These are both visible in our asymptotics which extends what was known in\ndimension 2 by work of Kasteleyn, Barber",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "([CJK10, CJK12]) Let An be a sequence of integral d × d matrices with detAn → ∞and An/(detAn)1/d →A ∈SL(d,R). As n →∞, logdet∆Zd/AnZd = logdet∆Zd detAn + 2 d logdetAn + logdet∆Rd/AZd + o(1). J. Phys. A: Math. Theor. 58 (2025) 035203 G Chinta et al Figure 2. Spectral asymptotics of a discretized torus as the mesh goes to zero. In the above theorem, ∆Zd/AnZd is the Laplacian on the discrete torus; ∆Zd is the Laplacian on the lattice Zd and ∆Rd/AZd is the Laplacian on the (continuous) torus Rd/AZd. The determinant of the Laplacian on the discrete torus is a finite determinant, in the sense of lin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral zeta functions",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-7-spectral-zeta-functions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral zeta function of Z",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-71-spectral-zeta-function-of-z.md",
+      "narrative": null,
+      "content": "The zeta function regularization method in physics started in the 1970 s with papers by\nDowker-Critchley and by Hawking. For a survey of applications to mathematical physics of\nthis procedure, see [V03, El12, DEK12]. The zeta function in question is defined by a integral\ntransform, specifically the Mellin transform, of the heat kernel. The case of the circle essen-\ntially gives rise to the Riemann zeta function. It is much less standard is to take the Mellin\nintegral transform of e−2tIn(2t), such as\nζZ (s) =\n1\nΓ(s)\nˆ ∞\n0\ne−2tI0 (2t)ts dt\nt ,\n15\nJ. Phys. A: Math. Theor. 58 (2025) 035203\nG Chint",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-72-application-4-spectral-zeta-function-of-regul.md",
+      "narrative": null,
+      "content": "The spectral zeta function ζTq+1 on the (q + 1)-regular tree Tq+1 was computed in [FK17,\ntheorem 1.4] by representing it as an integral over the spectral measure on Tq+1. Note that the\ncase q = 1 was discussed in the previous subsection. It was proved that for q > 1 one has that\nζTq+1 (s) =\nq(q + 1)\n(q −1)2 \u0000√q −1\n\u00012s F1\n \n3\n2,s + 1,1,3;−\n4√q\n\u0000√q −1\n\u00012 ,\n4√q\n\u0000√q + 1\n\u00012\n!\n.\n(27)\n16\nJ. Phys. A: Math. Theor. 58 (2025) 035203\nG Chinta et al\nOn a different front, the spectral zeta function can be expressed in terms of a Mellin trans-\nform of the heat kernel on Tq+1. Namely, for 0 < Re(s) < 1/2 we h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "For any q ⩾1, we have that ζTq+1 (0) = 1 and ζ ′ Tq+1 (0) = \u001a q−1 2 log \u00001 −q−2\u0001 , when q > 1 0, when q = 1. Also, ζTq+1(−1) = 1 + q. Furthermore, for integers m ⩾2, we have that ζTq+1 (−m) = m X k=0 \u0012m k \u00132 qm−k −(q −1) ⌊m/2⌋ X j=1 m−2j X k=0 \u0012m k \u0013\u0012 m 2j + k \u0013 qm−2j−k. (29) J. Phys. A: Math. Theor. 58 (2025) 035203 G Chinta et al Before we proceed with the proof, let us note an interesting curiosity. It is immediate from (29) that the values of ζTq+1 at negative integers −m and are degree m polynomials in q. This is reminiscent of the property of the Hurwitz zeta function ζH (z,q) := ∞ X n=0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Potential applications to differential privacy",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-8-potential-applications-to-differential-privacy.md",
+      "narrative": null,
+      "content": "Differential privacy is a mathematically rigorous criterion by which an algorithm that acts on\na dataset can be assessed. We refer to the article [CKS22] and references therein for an excel-\nlent presentation. In practice, as described in [CKS22], one alters the output of a Z-valued\nalgorithm M which produces results from a given dataset D by adding a random amount. The\nmain results of [CKS22] are that one can use a discretized Gaussian random (6) (using our ter-\nminology) to create algorithms which satisfy differential privacy, and that one can effectively\nand efficiently sample from a discre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "[AGMP24] Abadías L, Gonzalez-Camus J, Miana P and Pozo J 2021 Large time behaviour for the heat\nequation on Z, moments and decay rates J. Math. Anal. Appl. 500 125137\n[AR24] Aggarwal D and Regev O A note on discrete Gaussian combinations of lattice vectors\n(arXiv:1308.2405)\n[AA19] Agostini D and Amendola C 2019 Discrete Gaussian distributions via theta functions SIAM\nJ. Appl. Algebra Geom. 3 1–30\n[Am74] Amos D E 1974 Computation of modified Bessel functions and their ratios Math. Comp.\n28 239–51\n[An58] Anderson P W 1958 Absence of diffusion in certain random lattices Phys. Rev.\n109 1492–505\n[A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

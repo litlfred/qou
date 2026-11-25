@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1204.5807v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES",
+      "dcterms:creator": [
+        "ANDRUSKIEWITSCH, N.",
+        "ANGIONO, I.",
+        "IGLESIAS, A. GARCÍA"
+      ],
+      "dcterms:issued": "D:20180521",
+      "dcterms:identifier": "https://arxiv.org/abs/1204.5807",
+      "dcterms:abstract": "This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect examples. We discuss tilting modules as a mean to obtain a fusion subcategory of the non-degenerate quotient of the category of representations of a suitable Hopf algebra.",
+      "dcterms:source": "library/arxiv-1204.5807v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1204.5807v1"
+    }
+  ]
+}

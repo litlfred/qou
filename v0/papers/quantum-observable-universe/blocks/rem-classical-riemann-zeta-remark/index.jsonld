@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-riemann-zeta-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-riemann-zeta-remark",
+  "kind": "remark",
+  "title": "Local factors and the zeros of the classical zeta function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-riemann-zeta"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-riemann-zeta",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "classical-riemann-zeta-remark.md",
+  "provenance": "authored"
+}

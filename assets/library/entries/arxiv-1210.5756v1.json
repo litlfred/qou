@@ -1,0 +1,493 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1210.5756v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nLet Ed denote d-dimensional Euclidean space. Then the contact graph of an arbitrary ﬁnite packing of unit\nballs (i.e., of an arbitrary ﬁnite family of non-overlapping balls having unit radii) in Ed is the (simple) graph\nwhose vertices correspond to the packing elements and whose two vertices are connected by an edge if and\nonly if the corresponding two packing elements touch each other. One of the most basic questions on contact\ngraphs is to ﬁnd the maximum number of edges that a contact graph of a packing of n unit balls can have in\nEd. In 1974 Harborth [7] proved the following o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Contact Graphs of Unit Sphere Packings Revisited ∗\nK´aroly Bezdek†and Samuel Reid‡\nMay 8, 2018\nAbstract\nThe contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple)\ngraph whose vertices correspond to the packing elements and whose two vertices are connected by an\nedge if the corresponding two packing elements touch each other. One of the most basic questions on\ncontact graphs is to ﬁnd the maximum number of edges that a contact graph of a packing of n unit balls\ncan have. In this paper, improving earlier estimates, we prove that the number of touching pair",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "(i) The number of touching triplets (resp., quadruples) in an arbitrary packing of n ≥3 (resp., n ≥4) unit balls in E3 is at most 25 3 n (resp., 11 4 n). (ii) The number of touching triplets (resp., quadruples) in an arbitrary lattice packing of n ≥2 unit balls in E3 is at most 8n (resp., 2n). (iii) For all n = 2k3+k , k ≥2, there are packings of n unit balls (with their centers lying on a face-centered cubic lattice) in E3 such that the number of touching triplets (resp., quadruples) is 3(k −1)k(4k −5) > 8n −12 \u00123 2n \u00132/3 + 4n1/3 (resp., 4 3(k −2)(k −1)k > 2n −4(3 2n)2/3 + 2n1/3) . Part (iii)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "The number of touching pairs (resp., triplets) in an arbitrary packing of spherical caps of angular radius π/6 on S2 is at most 25 (resp., 11). In connection with Theorem 3 we put forward the following question. Problem 2. Prove or disprove that the number of touching pairs (resp., triplets) in an arbitrary packing of spherical caps of angular radius π/6 on S2 is at most 24 (resp., 10). We note that a positive answer to Problem 2 implies the following improvement on the estimates in (i) of Theorem 2: the number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Sections 5 and 6 present our elementary and somewhat computational proof of Theorem 3. Finally, Section 7 gives a proof of (iii) in Theorem 2 as well as shows that if Problem 2 has a positive answer, then its estimates are tight.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/cor-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "cor-sec-001-04.md",
+      "narrative": null,
+      "content": "15.159805n 3 < 15.15980554...n 3 = 4π (0.7547) 3 n 3 < svol2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/cor-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "cor-sec-001-05.md",
+      "narrative": null,
+      "content": "svol2 (bd (Sn i=1 (ci + ˆrB))) < 24.53902 (n −m −k) + 24.53902k .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "36πvol2 n [ i=1 (ci + ˆrB) ! ≤svol3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of (i) in Theorem 1",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-proof-of-i-in-theorem-1.md",
+      "narrative": null,
+      "content": "Proof of (i) in Theorem 1\nThe proof presented in this section follows the ideas of the proof of (i) of Theorem 1.1 in [2] with some\nproper modiﬁcations based on the recent breakthrough results of Hales [6]. The details are as follows.\nLet B denote the (closed) unit ball centered at the origin o of E3 and let P := {c1+B, c2+B, . . . , cn+B}\ndenote the packing of n unit balls with centers c1, c2, . . . , cn in E3 having the largest number C(n) of touching\npairs among all packings of n unit balls in E3. (P might not be uniquely determined up to congruence in\nwhich case P stands for any of those e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "nvol3(B) vol3 (Sn i=1 (ci + ˆrB)) < 0.7547, where vol3(·) refers to the 3-dimensional volume of the corresponding set.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Let F be an arbitrary (ﬁnite or inﬁnite) family of non-overlapping unit balls in E3 with the unit ball B centered at the origin o of E3 belonging to F. Let P stand for the Voronoi cell of the packing F assigned to B. Let Q denote a regular dodecahedron circumscribed B (having circumradius √ 3 tan π 5 = 1.2584...). Finally, let r := √ 2 = 1.4142... and let rB denote the ball of radius r centered at the origin o of E3. Then vol3(B) vol3(P) ≤ vol3(B) vol3(P ∩rB) ≤vol3(B) vol3(Q) < 0.7547. This ﬁnishes the proof of Theorem 6. The well-known isoperimetric inequality [11] applied to Sn i=1 (ci + ˆrB",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds for Lattice Packings",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-upper-bounds-for-lattice-packings.md",
+      "narrative": null,
+      "content": "Upper bounds for Lattice Packings",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of (ii) in Theorem 1",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-31-proof-of-ii-in-theorem-1.md",
+      "narrative": null,
+      "content": "Proof of (ii) in Theorem 1\nLet us imagine that we generate packings of n unit balls in E3 in such a special way that each and every\ncenter of the n unit balls chosen, is a lattice point of some ﬁxed lattice Λ (resp., of the face-centered cubic\nlattice Λfcc) with shortest non-zero lattice vector of length 2. (Here, a lattice means a (discrete) set of points\nhaving position vectors that are integer linear combinations of three ﬁxed linearly independent vectors of\nE3.) Then let CΛ(n) (resp., Cfcc(n)) denote the largest possible number of touching pairs for all packings\nof n unit balls obtained in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "The number of regular triangles (resp., regular tetrahedra) of edge length 2 sharing a vertex in G(P) is at most 25 (resp., 11). Figure 4: Projecting a spherical cap between two unit balls.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of (ii) in Theorem 2",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-32-proof-of-ii-in-theorem-2.md",
+      "narrative": null,
+      "content": "Proof of (ii) in Theorem 2\nBased on the previous subsection, it is suﬃcient to prove the estimate in question on the touching triplets\n(resp., quadruples) when the packing P of n unit balls in E3 is given in such a special way that each center\nis a lattice point of the face-centered cubic lattice Λfcc with shortest non-zero lattice vector of length 2.\nThen we take the contact graph G(P) of P with vertices identical to the center points of the unit balls in\nP and with edges between two vertices if the corresponding two unit balls of P touch each other. Clearly,\na touching triplet (resp., quadru",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of (i) in Theorem 2 using Theorem 3",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-4-proof-of-i-in-theorem-2-using-theorem-3.md",
+      "narrative": null,
+      "content": "Proof of (i) in Theorem 2 using Theorem 3\nLet P be an arbitrary packing of n unit balls in E3. Let B stand for the unit ball centered at the origin of\nE3 and let P = {c1 +B, ..., cn +B}. Then, we take the contact graph G(P) of P whose vertices are c1, ..., cn\nwith an edge connected between two vertices if ci + B and cj + B touch each other, i.e., dist(ci, cj) = 2.\nEvery touching triplet ci + B, cj + B, and ck + B (resp. touching quadruple ci + B, cj + B, ck + B, and\ncl + B) of P corresponds to a regular triangle spanned by ci, cj, and ck (resp. regular tetrahedron spanned\nby ci, cj, ck, and cl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "(Quadrilateral Lemma) Let α and β denote the internal angles of C4 subtended at adjacent vertices of C4 as shown in Figure 6. If α ∈{2π −k arccos(1/3) | k = 1, 2, 3}, then C4 cannot exist in DX and if α = 2π −4 arccos(1/3), then β /∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "(Pentagon Lemma) Let α and β denote the non-adjacent internal angles of C5 subtended at the vertices of the type I triangles of C5, and let ω denote the interior angle of the type II triangle of C5 opposite to the only side of the type II triangle with length π/3, as shown in Figure 7. If α, β ∈{2π −k arccos(1/3) | k = 3, 4}, then α′ + β′ + ω /∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}, where α′ and β′ are the internal angles of the two type I irregular triangles not equal to α and β, respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "(Hexagon Lemma) Let α, β, α′, β′, γ, and ω denote the internal angles of C6 as shown in Figure 8. If α, β, γ ∈{2π − k arccos(1/3) | k = 3, 4}, then α′ + β′ + ω /∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}. Let α, β, θ, β′, γ′, and ω denote the internal angles of C′ 6 as shown in Figure 9. If α, β ∈{2π − k arccos(1/3) | k = 3, 4} and θ ∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}, then β′ + γ′ + ω /∈{2π − k arccos(1/3) | k = 1, 2, 3, 4}. Let α, β, θ, γ′, and ω denote the internal angles of C′′ 6 as shown in Figure 10. If α, β ∈{2π−k arccos(1/3) | k = 3, 4} and θ ∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}, then ω",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Polygon Lemmas on S2 for Theorem 3",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3.md",
+      "narrative": null,
+      "content": "The Polygon Lemmas on S2 for Theorem 3\nOn S2, we take a point set X = {x1, ..., xN} with minimum spherical distance π/3 between any two points in\nX. The solution to the Newton-Gregory problem (of determining the maximum number of non-overlapping\nunit balls which can touch a ﬁxed unit ball) by Sch¨utte and van der Waerden [14] implies that N ≤12.\nTaking the Delaunay triangulation DX of X on S2, we notice that we can classify the triangles based on\nhow many times a side length of greater than π/3 occurs. (For many of the basic properties of Delaunay\ntriangulations we refer the interested reader",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-6-proof-of-theorem-3.md",
+      "narrative": null,
+      "content": "Proof of Theorem 3\nWe ﬁrst mention a rather straightforward but important fact which will be used throughout the following\ntwo sub-sections.\nRemark 1. Let X be a point set on S2 with minimum spherical distance π/3. Then a point in X cannot be\nentirely surrounded by regular Delaunay triangles of side length π/3 since\n2π\narccos(1/3) /∈N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An upper bound on touching triplets on S2",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-61-an-upper-bound-on-touching-triplets-on-s2.md",
+      "narrative": null,
+      "content": "Our main goal is to show that the number of touching triplets in an arbitrary packing of spherical caps of angular radius $\\pi/6$ on $\\mathbb{S}^2$ is at most 11.\n\nLet $X=\\{\\mathbf{x}_{1},...,\\mathbf{x}_{N}\\}$ be a point set on $\\mathbb{S}^2$ with $N \\leq 12$ and minimum spherical distance $\\pi/3$ between any two points in $X$. Taking the Delaunay triangulation $\\mathcal{D}_{X}$ of $X$ on $\\mathbb{S}^2$, we let $f$ be the number of faces, $e$ be the number of edges, and $N$ be the number of vertices. Since $\\mathcal{D}_{X}$ is a triangulation of $X$ on $\\mathbb{S}^2$, every face is a triangle,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let X be a point set on S2 with minimum spherical distance π/3. Then a point in X cannot be entirely surrounded by regular Delaunay triangles of side length π/3 since 2π arccos(1/3) /∈N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An upper bound on touching pairs on S2",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-62-an-upper-bound-on-touching-pairs-on-s2.md",
+      "narrative": null,
+      "content": "Our goal is to show that the number of touching pairs in an arbitrary packing of spherical caps of angular radius $\\pi/6$ on $\\mathbb{S}^2$ is at most $25$. The proof presented here is indirect and it is based on the previous section. The details are as follows.\n\nLet $X=\\{\\mathbf{x}_{1},...,\\mathbf{x}_{N}\\}$ be a point set on $\\mathbb{S}^2$ with $N \\leq 12$ and minimum spherical distance $\\pi/3$ between any two points in $X$. Taking the Delaunay triangulation $\\mathcal{D}_{X}$ of $X$ on $\\mathbb{S}^2$, we let $f$ be the number of faces, $e$ be the number of edges, and $N$ be the number of vert",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Constructions",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-7-explicit-constructions.md",
+      "narrative": null,
+      "content": "Explicit Constructions",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Octahedral Construction",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-71-the-octahedral-construction.md",
+      "narrative": null,
+      "content": "We now consider an explicit construction of a unit sphere packing placed over the face-centered cubic lattice for which we obtain a high number of touching triplets and quadruples of unit balls in $\\mathbb{E}^3$. For any positive integer $k \\geq 2$, place $n(k)=\\frac{2k^{3}+k}{3}$ lattice points of the face-centered cubic lattice such that their convex hull is a regular octahedron $\\mathbf{K} \\subset \\mathbb{E}^3$ of edge length $2(k-1)$ having exactly $k$ lattice points along each of its edges (see Figure [1](#fig:OctahedralConstruction){reference-type=\"ref\" reference=\"fig:OctahedralConstruct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1210.5756v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tightness of the estimates in Problem 2",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-72-tightness-of-the-estimates-in-problem-2.md",
+      "narrative": null,
+      "content": "Tightness of the estimates in Problem 2\nWe need to construct the corresponding polar coordinates for 12 points on S2 with minimum spherical\ndistance π/3 spanning 10 regular triangles of side length π/3. By taking the points with the following polar\ncoordinates, we can construct such a point set P as seen in Figure 13:\nTable 6. Polar coordinates of the points in P\nPolar Coordinates\nv1\n\u0010\n1, 0, 0\n\u0011\nv2\n\u0010\n1, π/3, 0\n\u0011\nv3\n\u0010\n1, π/3, arccos(1/3)\n\u0011\nv4\n\u0010\n1, π/3, 2 arccos(1/3)\n\u0011\nv5\n\u0010\n1, π/3, 3 arccos(1/3)\n\u0011\nv6\n\u0010\n1, π/3, 4 arccos(1/3)\n\u0011\nv7\n\u0010\n1, arccos(−7/18), −arctan(2\n√\n2/5)\n\u0011\nv8\n\u0010\n1, 2 arctan(\n√\n2), arcc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ariasabad2015-revcolmat",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Introduction to representations of braid groups",
+      "dcterms:creator": [
+        "Matemáticas, Revista Colombiana de"
+      ],
+      "dcterms:issued": "D:20150630",
+      "dcterms:abstract": "These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held in Curitiba, Brazil in March 2013. The purpose of the course is to provide an introduction to the study of representations of braid groups. Three general classes of representations of braid groups are considered: homological representations via mapping class groups, monodromy representations via the Knizhnik-Zamolodchikov connection, and solutions of the Yang-Baxter equa- tion via quasi-triangular bialgebras. Some of the remarkable relations between these three diﬀerent constructions are described.",
+      "dcterms:source": "library/ariasabad2015-revcolmat/manifest.jsonld",
+      "dcterms:hasVersion": "library/ariasabad2015-revcolmat"
+    }
+  ]
+}

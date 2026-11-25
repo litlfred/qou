@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6041v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+  "contains": [
+    "library/arxiv-1203.6041v2/sections/sec-front-matter",
+    "library/arxiv-1203.6041v2/sections/sec-000",
+    "library/arxiv-1203.6041v2/sections/sec-001",
+    "library/arxiv-1203.6041v2/sections/sec-002",
+    "library/arxiv-1203.6041v2/sections/sec-003",
+    "library/arxiv-1203.6041v2/sections/sec-004",
+    "library/arxiv-1203.6041v2/sections/sec-005",
+    "library/arxiv-1203.6041v2/sections/sec-006",
+    "library/arxiv-1203.6041v2/sections/sec-007",
+    "library/arxiv-1203.6041v2/sections/sec-008",
+    "library/arxiv-1203.6041v2/sections/sec-009",
+    "library/arxiv-1203.6041v2/sections/sec-010",
+    "library/arxiv-1203.6041v2/sections/sec-011",
+    "library/arxiv-1203.6041v2/sections/sec-012",
+    "library/arxiv-1203.6041v2/sections/sec-013",
+    "library/arxiv-1203.6041v2/sections/sec-014",
+    "library/arxiv-1203.6041v2/sections/sec-015",
+    "library/arxiv-1203.6041v2/sections/sec-016",
+    "library/arxiv-1203.6041v2/sections/sec-017",
+    "library/arxiv-1203.6041v2/sections/sec-018",
+    "library/arxiv-1203.6041v2/sections/sec-019",
+    "library/arxiv-1203.6041v2/sections/sec-020",
+    "library/arxiv-1203.6041v2/sections/sec-021",
+    "library/arxiv-1203.6041v2/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD — 24 sections: Front matter; S and D-wave phase shifts in isosp; I Introduction\n\n**S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD**\n\n*S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD*\n\n33 pp, 24 sections.\n\n**Outline.** Front matter; S and D-wave phase shifts in isospin-2 scatter; I Introduction; II Operator construction; A Single-hadron operators; B Multi-hadron operators; III Distillation and correlator construction; IV Optimised pion operators; V Pion mass and dispersion relation; VI Effects of finite temporal extent; A Finite-T effects for correlators at rest; B Finite-T effects for correlators in-flight; VII Finite-volume spectrum; A Example of =[0,0,1], = A1; B Volume dependence of spectra; VIII Phase-shifts from finite-volume spectra; A A toy model of scattering; B Lattice QCD data\n\n**Extracted claims (proposals, not verified).**\n- Proposition: Direct access to the matrix elements related to decays is missing in the Euclidean formulations of lattice QCD.\n- Proposition: The price to be paid is that the relevant symmetry group in the lattice calculation is signiﬁcantly reduced.\n- Proposition: Other studies of ππ I = 2 scattering in lattice QCD ([23–25]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by\n- Proposition: In order to demonstrate the formalism, we will brieﬂy break away from analysis of lattice QCD obtained ﬁnite- volume spectra to consider a simple toy-model of ππ scat- tering in\n- Proposition: The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the ﬁnite-volume spectrum determined through analysis of correlation\n- Proposition: We do not present this trivial result here, but we will return to this “global ﬁtting” method in the next section when we consider the ﬁnite-volume spectrum obtained from lattice",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1203.6041v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+      "basis": "Printed title on page 1 (Dudek, Edwards and Thomas); the extracted title was the preprint report code",
+      "extracted_title": "TCDMATH 12-03",
+      "corrected_on": "2026-11-18",
+      "extracted": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD"
+    },
+    "source_file": "1203.6041v2.pdf",
+    "source_sha256": "1113e87534ffd6e0c2c36d1f2a01ca1eef8ba6c0ad199c199394d2c1eb3fa7d0",
+    "pages": 33,
+    "arxiv": {
+      "id": "1203.6041",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "19 Sep 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

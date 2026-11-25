@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/revmodphys97025002pdf",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CODATA recommended values of the fundamental physical constants: 2022*",
+      "dcterms:creator": [
+        "Mohr, Peter J.",
+        "Newell, † David B.",
+        "‡",
+        "Taylor, Barry N."
+      ],
+      "dcterms:issued": "D:20250430",
+      "bibo:doi": "10.1103/RevModPhys.97.025002",
+      "dcterms:identifier": "https://doi.org/10.1103/RevModPhys.97.025002",
+      "dcterms:source": "library/revmodphys97025002pdf/manifest.jsonld",
+      "dcterms:hasVersion": "library/revmodphys97025002pdf"
+    }
+  ]
+}

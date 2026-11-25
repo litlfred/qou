@@ -1,0 +1,652 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0203003v2",
+  "title": "arxiv-math-0203003v2",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-representations-of-quantum-dynamical-r-matrice"
+    },
+    {
+      "level": 1,
+      "title": "Exchange Representations",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-exchange-representations"
+    },
+    {
+      "level": 1,
+      "title": "Gauge Transformations",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-gauge-transformations"
+    },
+    {
+      "level": 1,
+      "title": "Evaluation Representations",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-evaluation-representations"
+    },
+    {
+      "level": 1,
+      "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-comparison-of-mathcal-f-with-the-classical-kaz"
+    },
+    {
+      "level": 1,
+      "title": "Appendix : Meromorphicity of the R-matrix",
+      "number": "A",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-a-appendix-meromorphicity-of-the-r-matrix"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br March/2002",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0203003v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 779,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elliptic quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum affine",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig functor",
+          "heading": false
+        },
+        {
+          "term": "widehat mathfrak",
+          "heading": false
+        },
+        {
+          "term": "affine algebra",
+          "heading": false
+        },
+        {
+          "term": "tava",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "evaluation representations",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most exciting developments in representation theory in the recent years was the discovery of the Kazhdan-Lusztig functor [@KaLu93a; @KaLu93b; @KaLu94a; @KaLu94b], which is a tensor functor from the fusion category of representations of an affine Lie algebra to the category of representations of the corresponding quantum group, and is often an equivalence of categories. Informally speaking, this functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
+      "number": "1",
+      "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dynamical",
+          "heading": true
+        },
+        {
+          "term": "lambda gamma",
+          "heading": false
+        },
+        {
+          "term": "dimensional mathfrak",
+          "heading": false
+        },
+        {
+          "term": "times mathfrak",
+          "heading": false
+        },
+        {
+          "term": "end mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak module",
+          "heading": false
+        },
+        {
+          "term": "frac vartheta",
+          "heading": false
+        },
+        {
+          "term": "dynamical r-matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\\mathfrak{a}$-module, and $\\gamma \\in \\text{$\\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\\gamma$ is $$\\begin{aligned} \\notag R^{12}(u_1-u_2,\\lambda-\\gamma h^{(3)}) R^{13}(u_1-u_3,\\lambda) R^{23}(u_2-u_3,\\lambda-\\gamma h^{(1)})\\\\ \\label{eq:qdybs} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-exchange-representations",
+      "number": "2",
+      "title": "Exchange Representations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 2068,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat lambda",
+          "heading": false
+        },
+        {
+          "term": "widehat mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathbf lambda",
+          "heading": false
+        },
+        {
+          "term": "otimes text",
+          "heading": false
+        },
+        {
+          "term": "phi hat",
+          "heading": false
+        },
+        {
+          "term": "rep text",
+          "heading": false
+        },
+        {
+          "term": "text mathcal",
+          "heading": false
+        },
+        {
+          "term": "widetilde text",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathfrak{g}$ be a finite dimensional simple Lie algebra, and $\\widehat{\\mathfrak{g}}$ the corresponding affine Lie algebra. Let $q\\in {\\mathbb C}^*,|q|\\ne 1$, and let $U_q(\\widehat{\\mathfrak{g}})$ be the associated quantum affine algebra (we will use the definition given in [@EFK98]). Let $\\text{\\bf Rep}_{\\text{f}}(U_q(\\widehat{\\mathfrak{g}}))$ be the category of finite dimensional (type 1) representations of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-gauge-transformations",
+      "number": "3",
+      "title": "Gauge Transformations",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge transformations",
+          "heading": true
+        },
+        {
+          "term": "gamma varphi",
+          "heading": false
+        },
+        {
+          "term": "lambda gamma",
+          "heading": false
+        },
+        {
+          "term": "rep text",
+          "heading": false
+        },
+        {
+          "term": "varphi mathbf",
+          "heading": false
+        },
+        {
+          "term": "gamma big",
+          "heading": false
+        },
+        {
+          "term": "widehat mathfrak",
+          "heading": false
+        },
+        {
+          "term": "dynamical r-matrix",
+          "heading": false
+        }
+      ],
+      "extract": "To prove the theorem stated in the introduction, it remains to identify the category $\\text{\\bf Rep}_{\\text{f}}(R_V)$ for $V$ being the vector representation of $U_q({\\widehat{\\mathfrak{s}}l}_n)$ with the category of representations of Felder's elliptic quantum group. To construct such an identification is the goal of this section. It is achieved by using the fact that the corresponding dynamical R-matrices are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-evaluation-representations",
+      "number": "4",
+      "title": "Evaluation Representations",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "widehat mathfrak",
+          "heading": false
+        },
+        {
+          "term": "text mathcal",
+          "heading": false
+        },
+        {
+          "term": "evaluation",
+          "heading": true
+        },
+        {
+          "term": "functor text",
+          "heading": false
+        },
+        {
+          "term": "elliptic quantum",
+          "heading": false
+        },
+        {
+          "term": "rep text",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we would like to study the action of the functor $\\text{$\\mathcal{F}$}$ on evaluation representations of $U_q(\\widehat{\\mathfrak{s}}l_n)$. Let $W_\\nu(z)$ be the evaluation representation of $U_q({\\widehat{\\mathfrak{s}}l}_n)$ with dominant integral highest weight $\\nu$, evaluated at $z\\in \\text{$\\mathbb{C}$}^*$. ::: prop The representation ${\\text{$\\mathcal{F}$}}(W_\\nu(z))$ is isomorphic to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-comparison-of-mathcal-f-with-the-classical-kaz",
+      "number": "5",
+      "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig functor",
+          "heading": true
+        },
+        {
+          "term": "gamma tau",
+          "heading": false
+        },
+        {
+          "term": "widehat mathfrak",
+          "heading": false
+        },
+        {
+          "term": "tau frac",
+          "heading": false
+        },
+        {
+          "term": "functor text",
+          "heading": false
+        },
+        {
+          "term": "group tau",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": true
+        },
+        {
+          "term": "exchange dynamical",
+          "heading": false
+        }
+      ],
+      "extract": "The sense in which the functor $\\text{$\\mathcal{F}$}$ is a q-analog of the Kazhdan-Lusztig functor is not straightforward, and needs to be explained. Indeed, the Kazhdan-Lusztig functor is a functor from the fusion category of representations of an affine Kac-Moody algebra $\\widehat{\\mathfrak{g}}$ at some level $k$ to the category of representations of the quantum group $U_v(\\mathfrak{g})$, where $v=e^{\\frac{\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-a-appendix-meromorphicity-of-the-r-matrix",
+      "number": "A",
+      "title": "Appendix : Meromorphicity of the R-matrix",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 868,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meromorphicity",
+          "heading": true
+        },
+        {
+          "term": "quantum aﬃne",
+          "heading": false
+        },
+        {
+          "term": "elliptic quantum",
+          "heading": false
+        },
+        {
+          "term": "dynamical yang-baxter",
+          "heading": false
+        },
+        {
+          "term": "aﬃne algebras",
+          "heading": false
+        },
+        {
+          "term": "aﬃne lie",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "varchenko",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix : Meromorphicity of the R-matrix In this appendix we give a new proof of Theorem 2.1. Let U be a neighborhood of zero in Cn, and G : U →Cn be an analytic mapping, such that G(0) = 0. Let p ∈C, |p| > 1. Lemma A.1. Let f ∈zCn[[z]] be a formal solution to the diﬀerence equation f(pz) = G(f(z)) Then f converges to an analytic function in some neighborhood of zero. Proof. Let f(z) = P n≥1 fnzn, and G(y) = P n≥1",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "widehat mathfrak",
+      "heading": false
+    },
+    {
+      "term": "dimensional mathfrak",
+      "heading": false
+    },
+    {
+      "term": "rep text",
+      "heading": false
+    },
+    {
+      "term": "functor text",
+      "heading": false
+    },
+    {
+      "term": "mathcal text",
+      "heading": false
+    },
+    {
+      "term": "felder elliptic",
+      "heading": false
+    },
+    {
+      "term": "otimes text",
+      "heading": false
+    },
+    {
+      "term": "let mathfrak",
+      "heading": false
+    },
+    {
+      "term": "dynamical r-matrix",
+      "heading": false
+    },
+    {
+      "term": "dynamical quantum",
+      "heading": true
+    },
+    {
+      "term": "mathfrak module",
+      "heading": false
+    },
+    {
+      "term": "end mathfrak",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0203003v2"
+  }
+}

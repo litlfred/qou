@@ -1,0 +1,307 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "kohno1987-aif",
+  "blocks": [
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ANNALES DE L’INSTITUT FOURIER\nTOSHITAKE KOHNO\nMonodromy representations of braid groups\nand Yang-Baxter equations\nAnnales de l’institut Fourier, tome 37, no 4 (1987), p. 139-160\n<http://www.numdam.org/item?id=AIF_1987__37_4_139_0>\n© Annales de l’institut Fourier, 1987, tous droits réservés.\nL’accès aux archives de la revue « Annales de l’institut Fourier »\n(http://annalif.ujf-grenoble.fr/) implique l’accord avec les conditions gé-\nnérales d’utilisation (http://www.numdam.org/conditions). Toute utilisa-\ntion commerciale ou impression systématique est constitutive d’une in-\nfraction pénale. Tout",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-monodromy-representations-of-braid-groups-and-ya.md",
+      "narrative": null,
+      "content": "OF BRAID GROUPS\nAND YANG-BAXTER EQUATIONS\nby Toshitake KOHNO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "The purpose of this paper is to give a description of the monodromy\nof integrable connections over the configuration space arising from\nclassical Yang-Baxter equations. These monodromy representations define\na series of linear representations of the braid groups 9 : B,, -> End (W®\")\nwith one parameter, associated to any finite dimensional complex simple\nLie algebra 9 and its finite dimensional irreducible representations\np : 9 -» End (W). By means of trigonometric solutions of the quantum\nYang-Baxter equations due to Jimbo ([10] and [11]), we give an explicit\nform of of these representations i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "- We put 'k= -OT^/^T)\"1 \\ogq, -n^Im \\ogq<n. The matrix T(q)2 has an expansion with respect to \\ of the form J(q)2 = 1 4- 27c^:~^M(P®P)(0-2v.l} + ^(X2). Here p 15 the vector representation as in Sect. 1.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "— If \\\\\\ is sufficiently small, there exists a matrix PW e End (W0\") with lim P(X) = 1 such that ?.-»o P(^-lM,p(^P(^= ^p.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "- ((') We have an isomorphism of complete Hopf algebras C[PJ ^ A such that the following diagram is commutative. ^ C[Pn] ^ ^n (U) The universal expression of the monodromy Q : P,, -> A is injective. The assertion (i) has been discussed by several authors in a more general situation (see [I], [8] and [16]). The primitive part of A is the Malcev Lie algebra of P^, which is the dual of the Sullivan's 1-minimal model of X^ (see [21], [19] and [16]). The assertion (ii) is proved in [17] by the induction with respect to n by using the fibration 7i:X,,+i -> X,,. The essential points are that the mono",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-1-monodromy-of-integrable-connections-arising-fr.md",
+      "narrative": null,
+      "content": "FROM CLASSICAL YANG-BAXTER EQUATIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of connections.",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-11-construction-of-connections.md",
+      "narrative": null,
+      "content": "Let Q be a simple finite dimensional complex Lie algebra and let\n{I^,} be an orthonormal basis of 9 with respect to the Cartan-Killing\nform. We put\nt = £,I, ® I,\nwhich may also be expressed as\n( = ^(AQ-0(8)1-1®Q).\nHere Q is the Casimir operator I^Ip.Ip in the universal enveloping\nalgebra U(Q) and A : U((0 -^ U(g) ® U(g) stands for the comultiplication\nas a Hopf algebra.\nAssociated with a simple Lie algebra 9 and its finite dimensional\nirreducible representations pa: c\\ -> End (WJ, 1 < a ^ n, we consider\nthe total differential equations with a parameter X\n(I.I.I) \n^<D = Z^^p^^/log(z,-Zp).(D, \n?",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "— For a complex number ^ e C , the above proof implies that the correspondence described in Theorem 1.2.8 holds true ^ ^(Yfc)? 2 < k ^ n, are diagonalizable. This condition is satisfied if (p is completely reducible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "— Lei 9 be a non-exceptional complex simple Lie algebra and let p: 9 -> End (W) be its vector representation. As the monodromy of the associated connection co = Ei^<p^^p.</log(z^-zp) we get a linear representation Q: B^ -> End (W0\") 00 C{X} given by O(CT,) = ^{Kg)..-®!®^)®!®...®!}, 1 < i ^ n - 1. Here q = exp (~u^/~ 1^-) and T(q) is situated on the i-th and (i-^-\\)-st factors. Moreover this representation commutes with the diagonal action ofU^(Q) on W®\". The action of LT(cO is defined by the multi-diagonal map in the sense of [9] and [12]. In the case 9 = sl(m,C), the monodromy TOSHITAKE KOHNO",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[17]",
+      "pageStart": 4,
+      "pageEnd": 13,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "- Let Yap, 1 < a < P ^ n, be a system of generators of P,, given by (1.3.5) y^p = a^-n .. . <7p-iajiap-\\ ... a,\"1. If Q: P,,-^GL(w,C) is a linear representation such that ||9(yap)—l|| is sufficiently small for each 1 ^ a < P < n, then there exist constant matrices M^p, 1 ^ a < P ^ n, close to 0, satisfying the infinitesimal pure braid relations, such that the monodromy of the connection co = Si^<p^,M,,p //log(Za-zJ is equivalent to 6. To deduce Theorem 1.3.4 from Propositon 1.3.3 we used an argument due to Hain [8]. Now let us go back to the situation of Theorem 1.2.8. TOSHITAKE KOHNO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/cor-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "cor-sec-004-04.md",
+      "narrative": null,
+      "content": "- Let <p: B^ -^ End (V®^) ® C{\\} be the Pimsner-Popa-Temperley-Lieb representation defined by (p(o,) = 1 ® ... ® T(^) ® . • • ® 1 (see 1.2.9.). Then the composition (p o i: B^ -> End (V07\"\") ® C{^} ^0^5 invariant the subplace (V®\") and ^e monodromy representation Q is given by 9(0,.) = ^\"^\"^(pot^,), 1 ^ i ^ n - 1 . It turns out that our monodromy representation is the same as that studied by Murakami [20] up to a scalar representation. BRAID GROUPS (57",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-2-monodromy-of-i-point-functions-in-two-dimensio.md",
+      "narrative": null,
+      "content": "IN TWO DIMENSIONAL CONFORMAL FIELD THEORY\n2.1. Review of A(^) model due to Tsuchiya and Kanie.\nIn this section we recall briefly the operator formalism of the two\ndimensional conformal field theory on P1 with gauge symmetry of type\nA^ following a recent work of Tsuchiya and Kanie [22].\nIntegrable highest weight modules. — Let 9 = $I(2,C) and let g be\nthe affine Lie algebra of type A^ which is defined by the canonical\ncentral extension of the loop algebra 9®C[(,r~ 1] (see [15]). Putting\n9J(± = I.^i^® t±fl. ^ ls decomposed into\n13 = Wl, © 9 © Cc © W-.\nwhere c is the central element. For a positi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[22] Th. 2.2.",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "- (i) A non trivial vertex operator °f ^P^ v exists if and only if the following conditions are satisfied : (2.1.11) |7i -j^\\ ^ j ^ 71 + j^, ji -h j + 72 eZ (Clehsch-Gordan condition) (2.1.12) ;, + 7 +7, ^ (ii) Under the above conditions, a vertex operator of type v is unique up to scalar and is determined by its initial form. BRAID GROUPS Differential equation of n-point functions. - For an operator A on ^f, we denote by < A > its vacuum expectation defined by <vac|A|vac> = <(V|A K0>. Our purpose is to give a description of n-point functions <(|)i(«i^i) . • . <M^,z,,)> for primary fields ((),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Knizhnik and Zamolodchikov [18]",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "- The n-point function <D = <())i(zi) ... 4>n(ZJ> satisfies the total differential equation ^0 = Ii^<p^ Q^log (z^-Zp).(D. Here <^y is a primary field of spin jy, and QapG End (Vj ® • • • ®V,) 15 determined by 1.1.2 yia spin jy, representations o/sl(2,C). Proo/'. — Let <t)(M,z) be a primary field. By the expression of Lo given in 2.1.5 and the identities 2.1.17 and 18 we have (^2)j-^(u,z) = [£,!,[-l]I,[0](|)](u,z). The RHS turns out to be the constant term of the operator product expansion of 2:^(0((>[I^,zj. This implies that (^^(K^z) = lim [WQW,u,z] -———^u,z]] 07. ^-»2 C, Z where Q denotes the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "— As the monodromy of the connection associated with the spin j = m/2 representation o/5l(2,C), we get a one parameter family of linear representations 9 : B^ -> End (W®\") ® C;^-} wi'^/i W = Vy defined by G(G.) == ^-^{l®--.®^^)®...®!}, 1 < ^ n -1, w/ier^ <:y = exp (-TI^/'^TX) and ^(q) is on the i-th and (i-^-\\)-st factors. Let i: B^ -> B^ be a homomorphism defined by (2.2.5) t(a,) = ((j^+^a^+^-i • • •a^+i).(<j^^+ia^^ • • • 0^2) • • • • • • ( aa+2w-l aa+2w-2 • • • aa+m) with a = = ( f — l ) m . This «parallel» embedding is illustrated in the following picture : CT, m m Fig. 2. By means of this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kohno1987-aif/blocks/thm-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "thm-sec-004-05.md",
+      "narrative": null,
+      "content": "— For any positive half integer j, the monodromy of n-point functions 6 : B^ -> End (W^,) is unitarizable. Outline of Proof. — Let us first recall the differential equation satisfied by the n-point functions (Th. 2.1.21). Let i: B^ -> B^ be the homomorphism defined by 2.2.5 with m = 2j. Let 9o: B^ -> End (Wi^) be the monodromy of 2/n-point functions with spin 1/2. It follows, from [22] Th. 5.2 that 60 is unitarizable. In particular, the matrices (9o0t)(ai ...Ofc-i)', 1 ^ k ^ n, are diagonalizable. Hence we may apply an argument of the proof of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

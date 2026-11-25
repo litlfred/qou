@@ -1,0 +1,500 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2406.05311v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The is a method for computing values of the irreducible characters of symmetric groups [@Mu37; @Na41a; @Na41b]. Under the identification of the character ring with the ring of symmetric functions, it translates into a rule for the multiplication of a Schur symmetric function by a Newton power sum. As explained in [@MorrisonSottile Sect. 2], in the cohomology ring of a Grassmannian, the Murnaghan--Nakayama formula is a formula for the intersection product of a Schubert variety with a component of the Chern character of the tautological bundle (a tautological class), as these tautological classe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2406.05311v1  [math.CO]  8 Jun 2024\nDraft of June 11, 2024\nA QUANTUM MURNAGHAN–NAKAYAMA RULE\nFOR THE FLAG MANIFOLD\nC. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE\nAbstract. In this paper, we give a rule for the multiplication of a Schubert class by a\ntautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter-\nmediate step, we establish a formula for the multiplication of a Schubert class by a quantum\nSchur polynomial indexed by a hook partition. This entails a detailed analysis of chains and\nintervals in the quantum Bruhat order. This",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-a-murnaghannakayama-rule-for-classic-cohomolog.md",
+      "narrative": null,
+      "content": "[]{#sec:classic-mn-rule label=\"sec:classic-mn-rule\"}\n\nWe review combinatorial models for the cohomology ring of the flag manifold. We omit the precise definitions of the flag manifold and its cohomology as the combinatorial models will suffice for our purposes; the interested reader can consult [@Fu97].\n\nThen we deduce a formula for the product of a Schubert polynomial and a hook Schur function from which we deduce the Murnaghan--Nakayama rule in the cohomology of the flag manifold, resulting in a different proof than that given by Morrison and Sottile [@MorrisonSottile]. Our proof of the Murn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomology of the flag manifold",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-cohomology-of-the-flag-manifold.md",
+      "narrative": null,
+      "content": "[]{#cohomology-ring-of-the-flag-manifold label=\"cohomology-ring-of-the-flag-manifold\"}\n\nLet $n\\in{\\mathbb N}$ be a positive integer and write ${\\mathbb F}\\ell_n$ for the manifold of complete flags in ${\\mathbb C}^n$. We let $H^*{\\mathbb F}\\ell_n$ denote its cohomology ring with coefficients in ${\\mathbb Z}$. This is a free ${\\mathbb Z}$-module with a distinguished basis $\\{{\\mathfrak S}_w\\}_{w \\in S_n}$ of which are indexed by elements of the symmetric group $S_n$. Borel [@Borel] described the ring structure of $H^*{\\mathbb F}\\ell_n$ as a quotient of a polynomial ring,\n\n$$\\label{borel-presenta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "k-Bruhat order",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-k-bruhat-order.md",
+      "narrative": null,
+      "content": "The terms appearing in Monk's Formula [\\[classical-Monk-formula\\]](#classical-Monk-formula){reference-type=\"eqref\" reference=\"classical-Monk-formula\"} define a partial order on $S_n$ graded by $\\ell(u)$. Define the by the covering relation $${{\\color{RoyalBlue}u\\lessdot_k u (i,j)}}\n    \\qquad\\text{if}\\quad\n    1 \\leq i\\leq k<j \\leq n\n    \\quad\\text{and}\\quad\n    \\ell(u)+1=\\ell(u(i,j))\\,.$$ That is, $u\\lessdot_k u (i,j)$ if and only if ${\\mathfrak S}_{u(i,j)}(x)$ appears in the product ${\\mathfrak S}_{u}(x) \\cdot {\\mathfrak S}_{(k,k+1)}(x)$. Since $\\ell(u)+1=\\ell(u (i,j))$ if and only if $u(i)<",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grassmannian–Bruhat order",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-23-grassmannianbruhat-order.md",
+      "narrative": null,
+      "content": "[]{#SS:GBO label=\"SS:GBO\"}\n\nWe will make use of a second partial order on $S_n$ that is defined using the $k$-Bruhat order. Define the on $S_n$ by\n\n$${\\color{RoyalBlue}\\eta\\preceq\\zeta}\n    \\qquad\\text{if}\\quad\n    \\begin{array}{c}\n        \\text{there exists $u \\in S_n$ and $1\\leq k < n$ with $u\\leq_k \\eta u\\leq_k\\zeta u$.}\n    \\end{array}$$ This is a graded partial order on $S_n$ with minimal element the identity permutation $e$. Its rank function is ${\\color{RoyalBlue}{\\mathcal L}(\\zeta)}\\vcentcolon=\\ell(\\zeta u)-\\ell(u)$ for any $u \\in S_n$ and $k \\in {\\mathbb N}$ with $u\\leq_k\\zeta u$. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal permutations",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-24-minimal-permutations.md",
+      "narrative": null,
+      "content": "[]{#minimal-permutations label=\"minimal-permutations\"}\n\nA permutation $\\zeta$ is if ${\\mathcal L}(\\zeta) = \\#\\mathop{\\mathrm{supp}}(\\zeta) - s(\\zeta)$, where ${\\color{RoyalBlue}s(\\zeta)}$ is the number of (nontrivial) cycles in the factorization of $\\zeta$ into disjoint cycles. Minimality is a central concept in this paper. This terminology (introduced in [@BS-Bruhat]) arises from the inequality ${\\mathcal L}(\\zeta) \\geq \\#\\mathop{\\mathrm{supp}}(\\zeta) - s(\\zeta)$, so that a minimal permutation has the minimal possible rank given its cycle structure. For example, $\\zeta_1 = (2,3,5,7,4)$ is min",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Murnaghan–Nakayama rule for H*Fn",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-25-a-murnaghannakayama-rule-for-hfn.md",
+      "narrative": null,
+      "content": "We recall the following special case of Formula [\\[eq:classical-coeffs\\]](#eq:classical-coeffs){reference-type=\"eqref\" reference=\"eq:classical-coeffs\"}, which is [@So96 Cor. 9].\n\n::: proposition\n[]{#pieri-formulas-version-2 label=\"pieri-formulas-version-2\"} Let $u \\in S_n$, $a\\leq k$, and $b\\leq n{-}k$. Then $$\\label{eq:schubert-times-hook-via-peakless-chains}\n        {\\mathfrak S}_u(x)\\cdot s_{(b,1^{a-1})}(x_1,\\dotsc,x_k)\\ =\\ \\sum_\\gamma {\\mathfrak S}_{\\mathop{\\mathrm{end}}(\\gamma)}(x)\\,,$$ the sum over all peakless chains starting at $u$ of height $a$ and length $a{+}b{-}1$ in the $k$-Bruhat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Murnaghan–Nakayama rule for quantum cohomology",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-3-a-murnaghannakayama-rule-for-quantum-cohomolog.md",
+      "narrative": null,
+      "content": "[]{#S:qCoh label=\"S:qCoh\"}\n\nThe (small) quantum cohomology ring $qH^*{\\mathbb F}\\ell_n$ of the flag manifold is a deformation of the ordinary cohomology ring $H^*{\\mathbb F}\\ell_n$ whose product encodes the three-point Gromov--Witten invariants of ${\\mathbb F}\\ell_n$. We describe this ring and extend the main objects from Section [\\[sec:classic-mn-rule\\]](#sec:classic-mn-rule){reference-type=\"ref\" reference=\"sec:classic-mn-rule\"} to the quantum setting.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum cohomology ring of the flag manifold",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-31-quantum-cohomology-ring-of-the-flag-manifold.md",
+      "narrative": null,
+      "content": "As a ${\\mathbb Z}$-module, we have\n\n$$qH^*{\\mathbb F}\\ell_n\\ =\\  {\\mathbb Z}[q_1,\\dotsc,q_{n-1}] \\otimes_{\\mathbb Z}H^*{\\mathbb F}\\ell_n\\,,$$\n\nwhere $q_1,\\dotsc,q_{n-1}$ are indeterminates. To simplify notation, write ${\\mathbb Z}[q]$ for ${\\mathbb Z}[q_1,\\dotsc,q_{n-1}]$, and use multiindex notation, for $\\alpha\\in{\\mathbb N}^{n-1}$, we have ${\\color{RoyalBlue}q^\\alpha}\\vcentcolon= q_1^{\\alpha_1}\\dotsb q_{n-1}^{\\alpha_{n-1}}$. The Schubert classes $\\{{\\mathfrak S}_w\\}_{w \\in S_n}$ in $H^*{\\mathbb F}\\ell_n$ form a ${\\mathbb Z}[q]$-basis of $qH^*{\\mathbb F}\\ell_n$. We write ${\\color{RoyalBlue}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum k-Bruhat order",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-32-quantum-k-bruhat-order.md",
+      "narrative": null,
+      "content": "[]{#quantum-k-bruhat-order label=\"quantum-k-bruhat-order\"}\n\nThe terms appearing in the quantum Monk formula [\\[quantum-Monk-formula\\]](#quantum-Monk-formula){reference-type=\"eqref\" reference=\"quantum-Monk-formula\"} define a ranked partial order on the (infinite) set\n\n$${\\color{RoyalBlue}S_n[q]}\\  \\vcentcolon=\\  \\big\\{ q^\\alpha u \\mid u\\in S_n \\text{ and } \\alpha\\in{\\mathbb N}^{n-1}\\big\\}\\,.$$\n\nThe on $S_n[q]$ is defined by the following cover relations:\n\n1.  ${\\color{RoyalBlue}u\\lessdot_k^q u (i,j)}$ if $i\\leq k<j$ and $\\ell(u)+1=\\ell(u (i,j))$, so that $u\\lessdot_k u (i,j)$;\n\n2.  ${\\color{Roy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal intervals",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-33-minimal-intervals.md",
+      "narrative": null,
+      "content": "[]{#sec:Qminim label=\"sec:Qminim\"}\n\nAs far as we know, there is no analog of the Grassmannian--Bruhat order related to the quantum $k$-Bruhat order, and so rather than speak of minimal permutations (as we did in the classical case; see Section [\\[minimal-permutations\\]](#minimal-permutations){reference-type=\"ref\" reference=\"minimal-permutations\"}), we work instead with certain intervals in the quantum $k$-Bruhat order. This lack of an analog of the Grassmannian--Bruhat order necessitates the significant work we do in Section [\\[left-operators\\]](#left-operators){reference-type=\"ref\" reference=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Murnaghan–Nakayama rule for qH*Fn",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-34-the-murnaghannakayama-rule-for-qhfn.md",
+      "narrative": null,
+      "content": "As for Corollary [\\[C:classical-schubert-times-powersum\\]](#C:classical-schubert-times-powersum){reference-type=\"ref\" reference=\"C:classical-schubert-times-powersum\"}, we derive the quantum Murnaghan--Nakayama formula from an intermediate result describing the quantum product of a Schubert class ${\\mathfrak S}_u$ by a quantum hook Schur polynomial $s_{(b, 1^{a-1})}^q(x_1,\\dotsc,x_k)$.\n\n::: theorem\n[]{#thm:q_hook_product label=\"thm:q_hook_product\"} Let $u \\in S_n$ , $a \\leq k$ and $b \\leq n-k$. Then $${\\mathfrak S}_u\n        \\ast\n        s^q_{(b,1^{a-1})} (x_1, \\dots, x_k)\n        = \\sum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum equals classical",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-4-quantum-equals-classical.md",
+      "narrative": null,
+      "content": "[]{#quantum-equals-classical label=\"quantum-equals-classical\"}\n\nA recurring theme in quantum Schubert calculus is that oftentimes the numerical part ${\\color{RoyalBlue}N^{w,\\alpha}_{u,v}}\\vcentcolon=q^{-\\alpha}C^{q^\\alpha w}_{u,v}(\\in{\\mathbb N})$ of a quantum Littlewood--Richardson number (a Gromov--Witten invariant) is naturally identified with a related classical Littlewood--Richardson number $c^{w'}_{u',v'}$. This is seen in the quantum Monk formula [\\[quantum-Monk-formula\\]](#quantum-Monk-formula){reference-type=\"eqref\" reference=\"quantum-Monk-formula\"} in which these numerical parts are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Left operators",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-5-left-operators.md",
+      "narrative": null,
+      "content": "[]{#left-operators label=\"left-operators\"}\n\nWe will prove the following quantum analog of the first part of Proposition [\\[P:peaklessChains\\]](#P:peaklessChains){reference-type=\"ref\" reference=\"P:peaklessChains\"}.\n\n::: theorem\n[]{#Th:nonZero label=\"Th:nonZero\"} Let $u,w\\in S_n$ and $q^\\alpha w\\in S_n[q]$ be such that $[u,q^\\alpha w]^q_k$ is a minimal interval. Then there is a hook partition $\\lambda$ with $|\\lambda|=\\ell(q^\\alpha w)-\\ell(u)$ such that $C^{q^\\alpha w}_{u,v(\\lambda,k)}$ is nonzero.\n:::\n\nOur proof of Theorem [\\[Th:nonZero\\]](#Th:nonZero){reference-type=\"ref\" reference=\"Th:nonZero",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the left operators",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-51-definition-of-the-left-operators.md",
+      "narrative": null,
+      "content": "[]{#SS:monoid label=\"SS:monoid\"}\n\nWe first recall the results of [@BS-Monoid] concerning saturated chains in the classical $k$-Bruhat order and then extend part of its approach to the quantum $k$-Bruhat order.\n\n### Classical left operators {#SS:classical-left-operators}\n\nLet ${\\mathcal F}_n$ be the free monoid generated by the $\\binom{n}{2}$ symbols $\\{{\\color{RoyalBlue}{\\mathbf v}_{a,b}} \\mid a<b \\mbox{ with }a,b\\in[n]\\}$. Let $S_n\\cup\\{{\\mathbf 0}\\}$ be the symmetric group $S_n$ with an absorbing element ${\\mathbf 0}$ adjoined. We often omit the comma between indices, thus ${\\mathbf v}_{ab}=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatic notation",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-53-diagrammatic-notation.md",
+      "narrative": null,
+      "content": "[]{#SS:diagrammatic-notation label=\"SS:diagrammatic-notation\"} We introduce a diagrammatic notation for compositions of operators ${\\mathbf v}_{ab}$, which will facilitate our study of relations among them. Figure [1](#fig:classical-relations){reference-type=\"ref\" reference=\"fig:classical-relations\"} depicts the relations among classical operators in [\\[Eq:monoid-relations\\]](#Eq:monoid-relations){reference-type=\"eqref\" reference=\"Eq:monoid-relations\"} using this notation. Depict a classical operator ${\\mathbf v}_{ab}$ with $a<b$ by a green line segment $[a,b]$ and a quantum operator ${\\mathbf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries of the quantum k-Bruhat order",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-54-symmetries-of-the-quantum-k-bruhat-order.md",
+      "narrative": null,
+      "content": "[]{#sec:actions-on-left-operators label=\"sec:actions-on-left-operators\"}\n\nOperations that preserve the $k$-Bruhat order (its symmetries) played a role in many results in [@BS-Bruhat]. We identify three operations preserving the quantum $k$-Bruhat order, which are symmetries of that order. These induce three operations on the operators ${\\mathbf v}_{ab}$ that preserve equivalence to ${\\mathbf 0}$ and $(u,k)$-equivalence, and which are fundamental to our proof of Theorem [\\[Th:nonZero\\]](#Th:nonZero){reference-type=\"ref\" reference=\"Th:nonZero\"}. We first define these operations and state the mai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degree two relations",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-017-55-degree-two-relations.md",
+      "narrative": null,
+      "content": "[]{#S:degreeTwo label=\"S:degreeTwo\"}\n\nGiven a composition ${\\mathbf v}$ involving quantum operators, in Section [\\[SS:monoid\\]](#SS:monoid){reference-type=\"ref\" reference=\"SS:monoid\"} we developed the notions of equivalence to zero (${\\mathbf v}\\equiv{\\mathbf 0}$), of ${\\mathbf v}$ being nonzero (${\\mathbf v}\\not\\equiv{\\mathbf 0}$), and the notion of $(u,k)$-equivalence for nonzero compositions ${\\mathbf v}$. We do not however have a notion of equivalence of operators similar to the stronger one of [@BS-Monoid] for classical operators.\n\nBy Theorem [\\[Th:shape-equivalence\\]](#Th:shape-equivalen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crossing products",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-018-56-crossing-products.md",
+      "narrative": null,
+      "content": "[]{#crossing-products label=\"crossing-products\"} For a composition ${\\mathbf v}={\\mathbf v}_{a_rb_r}\\cdots {\\mathbf v}_{a_1b_1}$, let $\\min({\\mathbf v})$ and $\\max({\\mathbf v})$ be the minimum and maximum elements of its support, $\\{a_r,b_r,\\dots, a_1,b_1\\}$.\n\nA composition ${\\mathbf v}$ defines a (multi)graph whose vertices are its support. It has one edge between $a$ and $b$ for each operator ${\\mathbf v}_{ab}$ appearing in ${\\mathbf v}$. We say that ${\\mathbf v}$ is if its graph is connected, that ${\\mathbf v}$ is a if its graph is a path with $a_1$ or $b_1$ as an endpoint and $\\#(\\{a_i,b_i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Paths",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-57-paths.md",
+      "narrative": null,
+      "content": "[]{#ss:Paths label=\"ss:Paths\"} We turn our attention to nonzero paths and simply call them paths from now on. Thus a composition ${\\mathbf v}={\\mathbf v}_{a_r b_r}\\dotsb{\\mathbf v}_{a_1 b_1}$ is a if it is nonzero, its graph is a path with $a_1$ or $b_1$ an endpoint, and $\\#(\\{a_i,b_i\\}\\cap\\{a_{i+1},b_{i+1}\\})=1$ for all $i$.\n\n::: remark\n[]{#rem:yellow label=\"rem:yellow\"} As in Figure [1](#fig:paths){reference-type=\"ref\" reference=\"fig:paths\"}, a yellow (shaded) area in the diagrammatic rendering of operators highlights an open segment that is contained in all quantum operator(s) and no classi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Products of trees",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-58-products-of-trees.md",
+      "narrative": null,
+      "content": "[]{#SS:trees label=\"SS:trees\"} A nonzero composition ${\\mathbf v}=\\mathbf{T}_k \\cdots \\mathbf{T}_2 \\mathbf{T}_1$ is a if each $\\mathbf{T}_i$ is a tree and each pair of trees has noncrossing supports. A forest is minimal, so that each pair of trees commute, and commuting them gives an equivalent operator.\n\n::: theorem\n[]{#main-theorem label=\"main-theorem\"} Suppose that ${\\mathbf v}$ is a forest. Let $u\\in S_n$ and $k<n$ be such that ${\\mathbf v}\\mathop{\\mathrm{{\\scriptstyle \\bullet}}}_{k}u\\neq{\\mathbf 0}$. Then ${\\mathbf v}$ is $(u,k)$-equivalent to a composition $\\mathbf{R}\\mathbf{C}$ of a row",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-example.md",
+      "narrative": null,
+      "content": "We illustrate Proposition [\\[BS2002\\]](#BS2002){reference-type=\"ref\" reference=\"BS2002\"} with a sequence of equivalences on a classical tree.\n\n$$\\begin{array}{c}\n        \\valuediagram[scale=1, padding=1]{{3, 4}, {1, 3}, {5, 6}, {3, 5}, {5, 7}, {2, 5}}\n    \\end{array}\n    \\equiv\n    \\begin{array}{c}\n        \\valuediagram[scale=1, xmax=7, padding=1]{{5, 6},{3, 4},{2, 3},{1, 2},{2, 7},{3, 5}}\n    \\end{array}\n    \\equiv\n    \\begin{array}{c}\n        \\valuediagram[scale=1, xmax=7, padding=1]{{2,7},{3,5}} \\\\\n        \\valuediagram[scale=1, xmax=7, padding=1]{{5,6},{3,4},{2,3},{1,2}}\n    \\end{array}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 5.1",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-022-59-proof-of-theorem-51.md",
+      "narrative": null,
+      "content": "k be a minimal interval, and consider a composition\nv corresponding to some saturated chain in [u, qαw]q\nk. Then v •k u = qαw. As explained in\nSection 3.3, as [u, qαw]q\nk is a minimal interval, ℓ(qαw)−ℓ(u) = # supp(wu−1)−s(wu−1). This\nimplies that the graph of v contains no cycles, and is therefore a forest. As v is nonzero, it\nis a forest.\nQUANTUM MURNAGHAN–NAKAYAMA RULE\n32\nBy Theorem 5.23, v is (u, k)-equivalent to a composition of operators of the form RC\nwhere R is a row and C is a column, and there exists a suitable cycle shift or such that\napplying it to [u, qαw]q\nk gives a classical int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-023-acknowledgments.md",
+      "narrative": null,
+      "content": "The authors want to thank the Algebraic Combinatorics Working Seminar at the Fields Institute where this project started in 2016. Benedetti thanks Grant FAPA of the Faculty of Science of Universidad de Los Andes. Bergeron is partially supported by NSERC and the York Research Chair in Applied Algebra. Colmenarejo was partially supported by the AMS-Simons Travel grant. Saliola is partially supported by NSERC. Sottile is partially supported by the Simons Foundation and the National Science Foundation through grant DMS-2201005.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.05311v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "1. Sami H. Assaf and Peter McNamara, A Pieri rule for skew shapes, JCTA 118 (2011), no. 1, 277–290.\n2. Jason Bandlow, Anne Schilling, and Mike Zabrocki, The Murnaghan–Nakayama rule for k-Schur func-\ntions, J. Combin. Theory Ser. A 118 (2011), no. 5, 1588–1607.\n3. C. Benedetti, N. Bergeron, L. Colmenarejo, F. Saliola, and F. Sottile, A Murnaghan-Nakayama rule for\nquantum cohomology of the ﬂag manifold, S´em. Lothar. Combin. 89B (2023), Art. 37, 12.\n4. Carolina Benedetti and Nantel Bergeron, Fomin-Greene monoids and Pieri operations, Algebraic\nmonoids, group embeddings, and algebraic combinatori",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

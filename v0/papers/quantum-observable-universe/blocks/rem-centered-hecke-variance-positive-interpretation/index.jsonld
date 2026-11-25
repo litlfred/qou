@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-centered-hecke-variance-positive-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:centered-hecke-variance-positive-interpretation",
+  "kind": "remark",
+  "title": "Non-degeneracy of the q-CLT limit from positive centred variance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-centered-hecke-variance-positive"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-centered-hecke-variance-positive",
+  "tags": [
+    "q-clt",
+    "variance",
+    "non-degeneracy",
+    "interpretation"
+  ],
+  "text": "centered-hecke-variance-positive-interpretation.md",
+  "provenance": "authored"
+}

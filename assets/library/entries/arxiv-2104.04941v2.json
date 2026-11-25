@@ -1,0 +1,705 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2104.04941v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2104.04941v2  [math.GT]  21 Jan 2022\nFOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS\nS. GILLES\nAbstract. Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi-\nnates on varieties of surface representations into Lie groups, as well as a complete construction for groups\nof type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using diﬀering methods,\nhow to apply this framework for other Lie group types. Zickert also showed that this framework applies\nto triangulated 3-manifolds. We present a complete, general construction, b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-acknowledgements.md",
+      "narrative": null,
+      "content": "I owe thanks to far too many people to list them all by name. My\n  professors have shared their time and expertise with me, my\n  office-mates have put up with me for multiple semesters, and my\n  employers have given me flexibility to complete my research. I am\n  grateful to them all.\n\n  My advisor, Professor Zickert, has provided me with expert guidance\n  and mentoring over the years. He has helped me to achieve the goal for\n  which I began my study, and words cannot express my appreciation.\n\n  Finally, I would like to thank S. Kane, who taught me the meaning of\n  work, and whom I am unable to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "The program of Fock--Goncharov, starting with\n  \\cite{fockgoncharov2006}, aims to describe representation spaces of\n  hyperbolic surfaces into Lie groups by moduli spaces defined by\n  polynomial equations. These moduli spaces carry a positive structure\n  (see \\cref{def:positive-structure}), and in the case of the Lie group\n  $\\PSL_2(\\mathbb{R})$, the associated positive spaces can be identified\n  with Teichmüller space and decorated Teichmüller space. For more\n  complicated Lie groups, these positive spaces give (decorated) higher\n  Teichmüller spaces.\n\n  Our result regards an additional struc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical Teichmüller space",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-11-classical-teichmüller-space.md",
+      "narrative": null,
+      "content": "We start by describing the Fock--Goncharov program for the case of Lie\n  groups of type $A_1$. Let $\\Sigma$ be a surface that admits ideal\n  triangulation, for example the once-punctured torus $\\Sigma =\n  \\Sigma_{1,1}$. The Fock--Goncharov moduli spaces will describe\n  (decorated) Teichmüller space, so fix a hyperbolic structure on\n  $\\Sigma$. This can be described by an embedding of $\\Sigma$'s\n  fundamental domain in $\\mathbb{H}^2$, as in\n  \\cref{fig:rho-by-fundamental-domain}.\n\n  We now describe the two moduli spaces with seven key points.\n\n  \\begin{quote}\n    \\emph{1. The structure is deter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cluster ensemble structures",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-12-cluster-ensemble-structures.md",
+      "narrative": null,
+      "content": "In the above program, the retriangulation identity was given by\n  Ptolemy's Theorem. Another structure that encodes the identity is a\n  \\defined{cluster ensemble}. We defer a detailed description to\n  \\cref{sec:cluster-ensembles}, but for now we only need that a cluster\n  ensemble consists of a \\defined{quiver} (a directed graph with a\n  skew-symmetrizable adjacency matrix) and a pair of coordinate\n  structures ($\\mathcal{A}$- and $\\mathcal{X}$-coordinates), and that\n  the shape of the quiver dictates how the coordinates change under\n  \\defined{mutation} (a certain local alteration of the quiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher Teichmüller spaces",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-13-higher-teichmüller-spaces.md",
+      "narrative": null,
+      "content": "We view higher Teichmüller spaces as collections of representations \\[\n    \\Set{ \\rho : \\pi_1(\\Sigma) \\to G \\text{ discrete and faithful}} / G,\n  \\] where the standard Teichmüller space case is given by $G =\n  \\Isom^{+}(\\mathbb{H}^2) = \\PSL_2(\\mathbb{R})$. In order to apply the\n  Fock--Goncharov program, we need the following conditions.\n  \\begin{itemize}\n  \\item\n    The surface $\\Sigma$ must admit an ideal triangulation, so we demand\n    that it be hyperbolic with $n \\ge 1$ punctures.\n  \\item\n    The group $G$ must be a split semisimple algebraic group over\n    $\\mathbb{Q}$; for technical rea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-14-results.md",
+      "narrative": null,
+      "content": "Our main result is an explicit construction for cluster ensembles\n  described above for all semisimple $G$, including the rotation and the\n  flip. In other words, we present a constructive result of the\n  following theorem.\n\n  \\begin{theorem}\n    \\label{thm:intro-main-result}\n    For a split semisimple simply-connected (or centerless) algebraic\n    group $G$ over $\\mathbb{Q}$, there exists a quiver $Q$, quiver\n    mutations $\\murot$ and $\\muflip$, and a coordinate map\n    $\\conftoquiv$.\n\n    The map $\\conftoquiv$ associates coordinates of a flag configuration\n    to the coordinates on the clus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical context",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-15-historical-context.md",
+      "narrative": null,
+      "content": "\\label{sec:historical-context}\n\n  Fock and Goncharov introduced cluster ensembles in\n  \\cite{fockgoncharov2006} and \\cite{fockgoncharov2003}, employing the\n  cluster algebra work of Fomin--Zelevinsky \\cite{fominzelevinsky2002},\n  \\cite{fominzelevinsky2003}, \\cite{fominzelevinsky2005} as well as\n  Lusztig's study of positivity \\cite{lusztig1994}, \\cite{lusztig1997}.\n  The application was laid out for a split semisimple simply-connected\n  Lie group over $\\mathbb{R}$, but explicit constructions were only\n  known for type $A_n$. Since then, there has been ongoing work.\n\n  \\begin{itemize}\n  \\item",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ingredients",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-2-ingredients.md",
+      "narrative": null,
+      "content": "\\label{sec:ingredients}\n\n  Here we review some key components of our construction. These include\n  generalized minors (see \\cref{sec:generalized-minors}), quivers (see\n  \\cref{sec:quivers}), and cluster ensembles (see\n  \\cref{sec:cluster-ensembles}).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Root spaces and Weyl groups",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-21-root-spaces-and-weyl-groups.md",
+      "narrative": null,
+      "content": "\\label{sec:lie-groups}\n\n  We begin with some fundamentals of Lie groups, referring to e.g.\n  \\cite[Chapter~II]{knapp1996} or \\cite{bourbaki2002_46} for more\n  detail. We use the language of Lie groups over $\\mathbb{C}$, with\n  straightforward generalization to algebraic groups over other fields.\n\n  \\begin{definition}\n    For $\\mathfrak{g}$ a semisimple Lie algebra over $\\mathbb{C}$, fix a\n    Cartan subalgebra $\\mathfrak{h}$. A \\defined{root} is some\n    simultaneous eigenvalue $\\alpha \\in \\mathfrak{h}^{\\ast}$ of all\n    $\\ad_H : X \\mapsto [H, X]$ for $H \\in \\mathfrak{h}$. That is, there\n    i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unipotent subgroups",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-22-unipotent-subgroups.md",
+      "narrative": null,
+      "content": "\\begin{definition}\n    \\label{def:root-space-decomposition}\n    For a Lie group $G$ (the Lie algebra of which is $\\mathfrak{g}$), a\n    Cartan subalgebra $\\mathfrak{h}$ and a root system $\\roots$ with a\n    choice of positive roots $\\posroots$, there is a \\defined{root space\n      decomposition} defining $\\mathfrak{n}_{\\pm}$ by \\[ \\mathfrak{g} =\n      \\overbrace{\\bigoplus_{\\alpha \\in \\posroots}\n        \\mathfrak{g}_{-\\alpha}}^{\\mathfrak{n}_{-}} {}\\oplus{}\n      \\mathfrak{h} \\oplus \\overbrace{\\bigoplus_{\\alpha \\in \\posroots}\n        \\mathfrak{g}_{\\alpha}}^{\\mathfrak{n}_{+}}. \\]\n\n    The Lie sub",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coxeter elements",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-23-coxeter-elements.md",
+      "narrative": null,
+      "content": "\\begin{definition}\n    For a root system generated by simple roots $\\roots =\n    \\gen{\\set{\\alpha_1, \\alpha_2, \\dotsc, \\alpha_r}}$, any element $c =\n    s_{\\alpha_1} s_{\\alpha_2} \\dotsb s_{\\alpha_r}$ is a \\defined{Coxeter\n      element}. The ordering of the roots is irrelevant: any such\n    product of all simple roots is a Coxeter element. All Coxeter\n    elements have the same order, which is the \\defined{Coxeter number},\n    denoted $h$.\n  \\end{definition}\n\n  \\begin{fact}\n    \\label{fac:w0-construction}\n    For a Weyl group $W$ with Coxeter element $c$ and even Coxeter\n    number $h$, $c^{h/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized minors",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-24-generalized-minors.md",
+      "narrative": null,
+      "content": "\\label{sec:generalized-minors}\n\n  We review generalized minors. These are the extension of flag minors\n  on $\\GL_n$ of \\cite{fominzelevinsky1996},\n  \\cite{berensteinzelevinsky1997} to arbitrary semisimple algebraic\n  groups. This generalization is described fully in\n  \\cite{fominzelevinsky1999}, to which we refer for more details.\n\n  \\begin{definition}\n    \\label{def:gaussian-decomposition}\n    For $G$ a Lie group over $\\mathbb{C}$ admiting $H$ and $N_{\\pm}$,\n    $G_0 = N_{-} H N_{+}$. For $x \\in G_0$, the \\defined{Gaussian\n      decomposition} of $x$ into these components is $x = [x]_{-}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization coordinates",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-25-factorization-coordinates.md",
+      "narrative": null,
+      "content": "\\label{sec:factorization-coordinates}\n\n  We also review factorization coordinates, referring again to\n  \\cite{fominzelevinsky1999} for details. In brief, they will give\n  coordinates on $\\Conf_3^{\\ast}(G/N_{+})$ (of \\cref{def:Conf_k_star})\n  which are governed by a word $\\word{i}$ in the Weyl group of $G$.\n\n  \\begin{definition}\n    \\label{def:factorization-coords-xi}\n    For $G$ a Lie group of rank $r$ over $\\mathbb{C}$ admitting $H$,\n    $N_{\\pm}$, $x_i$, and $y_i$, with Weyl group $W$, $\\word{i} = (i_1,\n    \\dotsc, i_k)$ a reduced word in $W$, and $t \\in\n    (\\mathbb{C}^{\\ast})^k$, we define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quivers",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-26-quivers.md",
+      "narrative": null,
+      "content": "\\label{sec:quivers}\n\n  We review quivers. These are graphical encodings of cluster algebras\n  (specifically, those of geometric type), studied in\n  \\cite{fominzelevinsky2002}, \\cite{fominzelevinsky2003}, and\n  \\cite{fominzelevinsky2005}. The quiver interpretation, first discussed\n  in \\cite{marshreinekezelevinsky2003}, is given a complete introduction\n  in \\cite{marsh2013}, which we follow. The only departure we need from\n  Marsh's definition is to allow some edge weights to be in $\\frac{1}{2}\n  \\mathbb{Z}$ instead of $\\mathbb{Z}$. We also give a name to the\n  symmetrized edge weights $\\sigma(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cluster ensembles",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-014-27-cluster-ensembles.md",
+      "narrative": null,
+      "content": "\\label{sec:cluster-ensembles}\n\n  We now define cluster ensemble structures following\n  \\cite{fockgoncharov2003}. Also useful is \\cite{ishibashi2018}.\n\n  \\begin{definition}\n    \\label{def:cluster-ensemble}\n    For a quiver $Q$ with vertices $V$, let $\\Lambda_V$ be the free\n    abelian group generated by $V$, with dual $\\Lambda_V^{\\ast} =\n    \\Hom(\\Lambda_V, \\mathbb{Z})$. Let $\\set{e_v : v \\in V}$ be a basis\n    for $\\Lambda_V$, and $\\set{f_v = d_v^{-1} e_v^{\\ast}}$ a basis for\n    $\\Lambda_V^{\\ast}$. Let $\\Lambda^{\\circ}$ be the $\\mathbb{Q}$-span\n    of $\\set{f_v}$ inside $\\Lambda^{\\ast} \\otime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Key identities",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-015-3-key-identities.md",
+      "narrative": null,
+      "content": "\\label{sec:external-results}\n\n  Here we reproduce two external results of particular significance to\n  our constructions and proofs, from \\cite{yangzelevinsky2008} and\n  \\cite{fominzelevinsky1999}. We refer to their respective origins for\n  more details. These identities allow us to perform a program we call\n  ``adjusting a minor coordinate''. Depending on the surrounding\n  conditions, these will allow us to conclude that the action of\n  mutation on $\\seedAtorus_Q$ is to replace \\[ \\genminoryz{u}{v}{i}(g)\n    \\qquad \\text{with} \\qquad \\genminoryz{u'}{v'}{i}(q) \\] for some $u,\n  v, u', v'$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grid exchange relations",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-016-32-grid-exchange-relations.md",
+      "narrative": null,
+      "content": "\\label{sec:thm-1.17}\n\n  Here we give an overview of the identity\n  \\cite[Theorem~1.17]{fominzelevinsky1999} used to justify the exchange\n  relations of $\\murottwist$ and $\\muflipcore$, and to prove\n  \\cref{lem:fgcs-exists-rot-works-trivial,lem:fgcs-exists-flip-works}:\n\n  \\begin{theorem}[{\\cite[Theorem~1.17]{fominzelevinsky1999}}]\n    \\label{thm:local-1.17}\n    For $u, v$ two words in the Weyl group $W$ such that $\\length(u s_i)\n    = \\length(u) + 1$ and $\\length(v s_i) = \\length(v) + 1$, and $A$ the\n    Cartan matrix, \\[ \\genminoryz{u}{v}{i} \\genminoryz{u s_i}{v s_i}{i}\n      = \\genminoryz{u s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coordinates on generically-decorated representations",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-017-4-coordinates-on-generically-decorated-represent.md",
+      "narrative": null,
+      "content": "\\label{sec:reps-from-conf3star}\n\n  Here we review \\defined{decorations} of representations and define\n  \\defined{Fock--Goncharov coordinate structures}. For a representation\n  $\\rho$ and a chosen triangulation, a decoration of $\\rho$ is a\n  collection of flags for each simplex in the triangulation. These flags\n  can recreate $\\rho$, and have a canonical form that admits generalized\n  minor coordinates. Fock--Goncharov coordinate structures will describe\n  coordinates on these decorations.\n\n  These decorations apply to surfaces, but also to $3$-manifolds with\n  fixed ideal triangulations. We fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Configurations and gluings",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-41-configurations-and-gluings.md",
+      "narrative": null,
+      "content": "\\label{sec:configurations-and-gluings}\n\n  \\begin{definition}\n    \\label{def:Conf_k_star}\n    Let $G$ be a Lie group over $\\mathbb{C}$, with sufficient choices to\n    define $G_0$ as in \\cref{def:gaussian-decomposition}. Let $K$ be a\n    subgroup of $G$ (we will ultimately use $N_{+}$). A tuple of cosets\n    $(g_0K, g_1K, \\dotsc, g_{m}K)$ is \\defined{sufficiently generic} if\n    each $g_i^{-1} g_j \\in \\lifttoG{w_0}G_0$.\n\n    Such a tuple corresponds to a labeling of edges in an oriented\n    $m$-simplex by elements of $\\lifttoG{w_0}G_0$, as in\n    \\cref{fig:labeled-sufficiently-generic-simplex},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangular quivers and Fock–Goncharov coordinate structures",
+      "pageStart": 17,
+      "pageEnd": 21,
+      "target": "../sections/sec-019-42-triangular-quivers-and-fockgoncharov-coordina.md",
+      "narrative": null,
+      "content": "We want a variety that is independent of the choice of triangulation.\n  Therefore, we will need coordinate change maps corresponding to\n  changes in triangulation (the rotation of individual triangles, or the\n  quadrilateral flip).\n\n  Here we define the outputs of the algorithm of \\cref{sec:main-result}.\n  These are \\defined{triangular quivers} (see\n  \\cref{def:triangular-quiver}), which have vertices on edges and in the\n  interior. If, moreover, these quivers admit a rotation and a flip as\n  quiver mutations, they have \\defined{triangulation-compatible\n    symmetry} (see \\cref{def:tcs}). And",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From coordinates to representations",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-43-from-coordinates-to-representations.md",
+      "narrative": null,
+      "content": "\\label{sec:coords-to-representations}\n\n  The Fock--Goncharov program for defining $\\mathcal{A}_{G,\\Sigma}$ and\n  $\\mathcal{X}_{G,\\Sigma}$ works for any compact, oriented $\\Sigma$ with\n  boundary components. In the case that the boundary consists of\n  punctures, we can describe reconstructing a representation from a\n  point in the moduli space. We start with the $\\mathcal{A}$-coordinate\n  version due to complications in technicalities, referring to\n  \\cite[Section~8]{fockgoncharov2006}, \\cite[Section~6]{zickert2016} for\n  more details.\n\n  We start with an ideal triangulation $\\triang$ of $\\Sigm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regarding 3-manifolds",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-021-44-regarding-3-manifolds.md",
+      "narrative": null,
+      "content": "The process described can be applied to $3$-manifolds as well as\n  surfaces. We omit all details. An element of $\\Conf_4^{\\ast}(G/K)$ is\n  attached to each tetrahedron, and the coordinates for these flag\n  varieties are encoded on a quiver for each face of the tetrahedron.\n\n  As in \\cref{def:gluing-configurations}, only two copies of\n  $\\Conf_3^{\\ast}(G/K)$ are necessary to define an element in\n  $\\Conf_4^{\\ast}(G/K)$, so any two copies of $Q$ should determine all\n  the coordinates of the tetrahedron. Therefore, the coordinates on any\n  pair of faces determine the coordinates on the other pair",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Result: Fock–Goncharov coordinate structures for non-A_n",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-022-5-main-result-fockgoncharov-coordinate-structure.md",
+      "narrative": null,
+      "content": "\\label{sec:main-result}\n\n  We now present an algorithm for constructing Fock--Goncharov\n  coordinate structures for a simple Lie group $G$ over $\\mathbb{C}$,\n  thus satisfying most of \\cref{thm:fgcs-exists}. We delay all proofs\n  until \\cref{sec:proof}.\n\n  We make one slight demand: the ability to present $w_0$ via\n  \\cref{fac:w0-construction}. Luckily, this demand is satisfied as long\n  as the Coxeter number $h$ is even, equivalently $G \\ne A_{2n}$. This\n  is acceptable, since the $A_n$ case has a particularly nice form which\n  has been the subject of considerable study, as in\n  \\cite{fockgon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-023-51-overview.md",
+      "narrative": null,
+      "content": "Here we loosely describe the algorithm for constructing $Q$, $\\murot$,\n  $\\muflip$, and $\\conftoquiv$.\n\n  The quiver $Q$ will be divided into an interior and three edges.\n  Coordinates at each vertex will be assigned generalized minors of\n  elements in the canonical form $(h_1, h_2, h_3, u)$ of an element of\n  $\\Conf_3^{\\ast}$. Each edge should contain information for some $h_i$,\n  and the interior should contain information for $u$.\n\n  One minor for each simple root determines an element of $H$; the\n  coordinates on an edge will be of the form $\\genminor{}{j}(h_i)$.\n  Accordingly, the edges o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Building the rectangle Q0",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-024-52-building-the-rectangle-q0.md",
+      "narrative": null,
+      "content": "\\label{sec:Q0-construction}\n\n  We desire to construct a quiver that holds coordinates for most of\n  $H^3 \\times_H N_{-}$. Conveniently, $H \\times N_{-} = B_{-}$ is the\n  \\defined{double Bruhat cell} $G^{w_0,e} = B_{+} w_0 B_{+} \\cap B_{-} e\n  B_{-}$. We will not need any more information about double Bruhat\n  cells, except to note that \\cite[Section~2]{fominzelevinsky2005}\n  describes an algorithm which accepts $u, v$ and creates a quiver whose\n  cluster coordinates are coordinates on $G^{u,v}$. Therefore, we will\n  follow this algorithm (with slight modifications) in the special case\n  $u = w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The map M",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-025-56-the-map-m.md",
+      "narrative": null,
+      "content": "We now have $Q$ and the mutations, at least graphically. What remains\n  is to finalize the association to the Lie group $G$. More\n  specifically, the vertices of $Q$ should be associated to coordinates\n  on $\\Conf_3^{\\ast}(G/N_{+})$.\n\n  Recall that $\\Conf_3^{\\ast}(G/N_{+}) \\cong H^3 \\times_{H} (N_{-} \\cap\n  \\lifttoG{w_0}G_0)$ by \\cref{lem:canonical-form-for-conf_3_star}. So\n  let $\\alpha \\in \\Conf_3^{\\ast}(G/N_{+})$ be given by $\\alpha = (h_1,\n  h_2, h_3, u)$. By abuse of notation, we denote the coordinate in\n  $\\seedAtorus_Q$ by the name of the vertex to which it is associated,\n  and regard \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The significance of the ``twisting'' mutations",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-026-57-the-significance-of-the-twisting-mutations.md",
+      "narrative": null,
+      "content": "\\label{sec:what-does-the-twist-do}\n\n  The quiver mutations $\\murot$ and $\\muflip$ are intended to compose\n  easily without requiring renaming the vertices of the quiver. For\n  example, $\\murot^2(Q)$ should be identical to $\\murot^{-1}(Q)$.\n\n  Unfortunately, quiver mutations that yield equivalent seeds do not\n  necessarily preserve the positions of those seeds. For example,\n  consider the classic ``pentagon recurrence'', which happens to be\n  equivalent to $\\murowperm$ on a row which is of Dynkin type $A_2$. The\n  switching of positions is exactly the the action of $\\sigma_{A_2}$ on\n  the Dynki",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prop-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "prop-sec-027-02.md",
+      "narrative": null,
+      "content": "For G of type An, Theorem 4.19 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction for A_n",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-027-6-construction-for-a-n.md",
+      "narrative": null,
+      "content": "The An case was studied in detail in [GTZ15]. We merely restate the conclusions in language consistent\nwith the above.\nRemark 6.1. That the algorithm of Section 5 does not work for A2n can be seen in a few diﬀerent ways,\nwhich are interconnected.\n• There is no general formula for a Coxeter element c that yields a longest-word presentation w0 =\ncc · · · c.\n• The Coxeter number for A2n is odd.\n• The action of σG for A2n preserves no simple roots, therefore there can be no tree partitioning with\na unique root node.\nProposition 6.2. For G of type An, Theorem 4.19 holds.\nProof. For the construction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/rem-sec-027-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "rem-sec-027-01.md",
+      "narrative": null,
+      "content": "That the algorithm of Section 5 does not work for A2n can be seen in a few diﬀerent ways, which are interconnected. • There is no general formula for a Coxeter element c that yields a longest-word presentation w0 = cc · · · c. • The Coxeter number for A2n is odd. • The action of σG for A2n preserves no simple roots, therefore there can be no tree partitioning with a unique root node.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-028-71-overview.md",
+      "narrative": null,
+      "content": "products are handled by Section 8. We need to show that, for a ﬁxed G, the results Q, µrot, µﬂip, and M\nsatisfy all the requirements of Deﬁnitions 4.15 and 4.16.\nProof of Theorem 4.19. If G is not simple, then we may appeal to Lemma 8.1 and recurse, so assume G is\nsimple. For G of type An, Proposition 6.2 is suﬃcient, so assume G is not of type An.\nThe algorithm of Section 5 produces Q, µrot, µﬂip, and M. We must show these satisfy Deﬁnition 4.16.\n• Item 1 (triangularity) is handled last. As described in Section 5.4, we need to know that µrot is of\norder 3 on the A-coordinates before concludin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ordering mutations",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-029-72-ordering-mutations.md",
+      "narrative": null,
+      "content": "The ends of both $\\murot$ and $\\muflip$ are sequences of $\\murowperm$\n  and $\\mucolperm$. We must show that these permute Dynkin sub-quivers\n  of $Q$ by switching certain vertices without changing the cluster\n  seed, as in \\cref{rem:sigma_G-action-on-Dynkin-diagram}. These are\n  used in \\cref{lem:fgcs-exists-rot-works-trivial,lem:fgcs-exists-rot-works-nontrivial,lem:fgcs-exists-flip-works}\n  to justify the $\\muint{Oi}$ parts.\n\n  \\begin{lemma}\n    \\label{lem:colsigmaG-does-sigmaG}\n    The permutation $\\mucolperm$ of\n    \\cref{def:murot-components,def:muflip-components} acts on quivers\n    (and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rotation mutations",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-030-73-rotation-mutations.md",
+      "narrative": null,
+      "content": "\\label{sec:proof-of-rot}\n\n  We now turn to verifying the longer mutations, starting with $\\murot$.\n  First, we recall work of Zickert to describe the effect of\n  $\\operatorname{rot}$ in terms of canonical forms, taking $(h_1, h_2,\n  h_3, u)$ to $(h_3, h_1, h_2, \\widetilde{u})$. We show, using an\n  identity of Fomin--Zelevinsky, that when all $h_i$ are trivial,\n  $\\murottwistind$ takes coordinates of $u$ to those of $\\widetilde{u}$.\n  Then we show that the monomial map $\\monomialmap$ of $\\conftoquiv$ is\n  exactly what is necessary to extend to the general case. The final\n  pieces $\\muint{O1}$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flip mutations",
+      "pageStart": 40,
+      "pageEnd": 44,
+      "target": "../sections/sec-031-74-flip-mutations.md",
+      "narrative": null,
+      "content": "We now verify the longest flip mutation: the flip. The idea of the\n  proof is similar to that of $\\murot$. First, we put the coordinates of\n  $\\Qdv$ into a rectangular pattern, then apply mutations that respect\n  \\cite[Theorem~1.17]{fominzelevinsky1999}, showing that the resulting\n  coordinates are of $\\Qdh$. The most significant difficulty is to\n  construct the element of $G$ holding the appropriate generalized\n  minors, which we obtain by a result of Zickert.\n\n  \\begin{lemma}\n    \\label{lem:fgcs-exists-flip-works}\n    \\Cref{def:fgcs-flip-works} of \\cref{def:fgcs} holds.\n  \\end{lemma}\n  \\begi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 44,
+      "pageEnd": 53,
+      "target": "../sections/sec-032-9-examples.md",
+      "narrative": null,
+      "content": "\\label{sec:examples}\n\n  Here we provide examples, in consistent notation, of $Q$, $\\murot$,\n  $\\muflip$, and $\\conftoquiv$ for various types (for $F_4$ see the\n  examples of \\cref{sec:main-result}). Our notation is intended to agree\n  with that of \\cite{zickert2016}, with the caveat that the mutations we\n  present are longer but do not require vertex renaming (see\n  \\cref{sec:what-does-the-twist-do}). All Dynkin diagrams are taken from\n  \\cite[Figure~2.4]{knapp1996}, equivalently\n  \\cite[Plates~II--IX]{bourbaki2002_46} (ignoring the extending nodes).\n  In each example, $\\alpha = (h_1, h_2, h_3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.04941v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-033-references.md",
+      "narrative": null,
+      "content": "[BFZ05]\nArkady Berenstein, Sergey Fomin, and Andrei Zelevinsky. “Cluster algebras. III. Upper bounds\nand double Bruhat cells”. In: Duke Math. J. 126.1 (2005), pp. 1–52. issn: 0012-7094. arXiv:\nmath/0305434.\n[BFZ96]\nArkady Berenstein, Sergey Fomin, and Andrei Zelevinsky. “Parametrizations of canonical bases\nand totally positive matrices”. English. In: Adv. Math. 122.1 (1996), pp. 49–149. issn: 0001-8708.\ndoi: 10.1006/aima.1996.0057.\n53\n[Bon96]\nFrancis Bonahon. “Shearing hyperbolic surfaces, bending pleated surfaces and Thurston’s sym-\nplectic form”. en. In: Annales de la Faculté des sciences de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

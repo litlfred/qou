@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-planck-encodability-vs-scattering",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-planck-encodability-vs-scattering",
+  "kind": "remark",
+  "title": "Encodability versus scattering onset",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-particle-spectrum",
+    "papers/quantum-observable-universe/blocks/rem-virtual-particles-exceptional-divisor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "tags": [
+    "jet-bundle",
+    "planck-time",
+    "scattering",
+    "encodability",
+    "crossing-number",
+    "virtual-particles",
+    "information-theory"
+  ],
+  "text": "jet-planck-encodability-vs-scattering.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1765 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1103.4815v3",
+  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "variant": "pdf",
+  "pages": 65,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Lie Groupoids and Groupoid Actions on Manifolds",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol"
+    },
+    {
+      "level": 2,
+      "title": "Principal Groupoid Bundles",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-principal-groupoid-bundles"
+    },
+    {
+      "level": 2,
+      "title": "Anafunctors",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-anafunctors"
+    },
+    {
+      "level": 2,
+      "title": "Lie 2-Groups and crossed Modules",
+      "number": "2.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-lie-2-groups-and-crossed-modules"
+    },
+    {
+      "level": 1,
+      "title": "Version I: Groupoid-valued Cohomology",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-version-i-groupoid-valued-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Version II: Classifying Maps",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-version-ii-classifying-maps"
+    },
+    {
+      "level": 1,
+      "title": "Version III: Groupoid Bundle Gerbes",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-version-iii-groupoid-bundle-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "Definition via the Plus Construction",
+      "number": "5.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-definition-via-the-plus-construction"
+    },
+    {
+      "level": 2,
+      "title": "Properties of Groupoid Bundle Gerbes",
+      "number": "5.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-52-properties-of-groupoid-bundle-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "Classification by Cech Cohomology",
+      "number": "5.3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-53-classification-by-cech-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Version IV: Principal 2-Bundles",
+      "number": "6",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-version-iv-principal-2-bundles"
+    },
+    {
+      "level": 2,
+      "title": "Definition of Principal 2-Bundles",
+      "number": "6.1",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-61-definition-of-principal-2-bundles"
+    },
+    {
+      "level": 2,
+      "title": "Properties of Principal 2-Bundles",
+      "number": "6.2",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-62-properties-of-principal-2-bundles"
+    },
+    {
+      "level": 1,
+      "title": "Equivalence between Bundle Gerbes and 2-Bundles",
+      "number": "7",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-7-equivalence-between-bundle-gerbes-and-2-bundle"
+    },
+    {
+      "level": 2,
+      "title": "From Principal 2-Bundles to Bundle Gerbes",
+      "number": "7.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-71-from-principal-2-bundles-to-bundle-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "From Bundle Gerbes to Principal 2-Bundles",
+      "number": "7.2",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-72-from-bundle-gerbes-to-principal-2-bundles"
+    },
+    {
+      "level": 1,
+      "title": "A Equivariant Anafunctors and Group Actions",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-a-equivariant-anafunctors-and-group-actions"
+    },
+    {
+      "level": 1,
+      "title": "B Constructing Equivalences between 2-Stacks",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-b-constructing-equivalences-between-2-stacks"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle gerbes",
+          "heading": false
+        },
+        {
+          "term": "non-abelian gerbes",
+          "heading": false
+        },
+        {
+          "term": "principal bundles",
+          "heading": false
+        },
+        {
+          "term": "groupoid bundle",
+          "heading": false
+        },
+        {
+          "term": "regensburg",
+          "heading": false
+        },
+        {
+          "term": "anafunctors",
+          "heading": false
+        },
+        {
+          "term": "classifying maps",
+          "heading": false
+        },
+        {
+          "term": "mathematik",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1103.4815v3 [math.DG] 17 Jul 2013 Four Equivalent Versions of Non-Abelian Gerbes Thomas Nikolaus a and Konrad Waldorf b a Fachbereich Mathematik, Bereich Algebra und Zahlentheorie Bundesstraße 55, 20146 Hamburg, Germany b Fakult¨at f¨ur Mathematik, Universit¨at Regensburg Universit¨atsstraße 31, 93053 Regensburg, Germany Abstract We recall and partially improve four versions of smooth, non-abelian gerbes:",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1103.4815v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma gerbes",
+          "heading": false
+        },
+        {
+          "term": "non-abelian gerbes",
+          "heading": false
+        },
+        {
+          "term": "cech gamma",
+          "heading": false
+        },
+        {
+          "term": "bundle gerbes",
+          "heading": false
+        },
+        {
+          "term": "principal bundles",
+          "heading": false
+        },
+        {
+          "term": "emph principal",
+          "heading": false
+        },
+        {
+          "term": "cech cohomology",
+          "heading": false
+        },
+        {
+          "term": "valued cech",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{intro} Let $G$ be a Lie group and $M$ be a smooth manifold. There are (among others) the following four ways to say what a {\\em smooth $G$-bundle} over $M$ is: \\begin{enumerate}[(1)] \\item \\emph{\\v Cech 1-Cocycles}: an open cover $\\left \\lbrace U_i \\right \\rbrace$ of $M$, and for each non-empty intersection $U_i \\cap U_j$ a smooth map $g_{ij}:U_i \\cap U_j \\to G$ satisfying the cocycle condition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heinloth",
+          "heading": false
+        },
+        {
+          "term": "metzler",
+          "heading": false
+        },
+        {
+          "term": "lerman",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{preliminaries} There is no claim of originality in this section. Our sources are Lerman \\cite{lerman1}, Metzler \\cite{metzler}, Heinloth \\cite{heinloth} and Moerdijk-Mr\\v{c}un \\cite{moerdijk}. A slightly different but equivalent approach is developed in \\cite{murray5}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol",
+      "number": "2.1",
+      "title": "Lie Groupoids and Groupoid Actions on Manifolds",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie groupoid",
+          "heading": true
+        },
+        {
+          "term": "groupoid gamma",
+          "heading": false
+        },
+        {
+          "term": "groupoid act",
+          "heading": false
+        },
+        {
+          "term": "emph lie",
+          "heading": false
+        },
+        {
+          "term": "groupoids erf",
+          "heading": false
+        },
+        {
+          "term": "groupoid denoted",
+          "heading": false
+        },
+        {
+          "term": "equation rho",
+          "heading": false
+        },
+        {
+          "term": "smooth left",
+          "heading": false
+        }
+      ],
+      "extract": "We assume that the reader is familiar with the notions of Lie groupoids, smooth functors and smooth natural transformations. \\begin{comment} \\textsf{}A \\emph{Lie category} is a small category $\\mathcal{C}$ whose sets $\\mathcal{C}_0$ of objects and $\\mathcal{C}_{1}$ morphisms are smooth manifolds, its target and source maps $t,s: \\mathcal{C}_1 \\to \\mathcal{C}_0$ are surjective submersions, the identity map $\\id:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-principal-groupoid-bundles",
+      "number": "2.2",
+      "title": "Principal Groupoid Bundles",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal bundles",
+          "heading": true
+        },
+        {
+          "term": "bundle trivlin",
+          "heading": false
+        },
+        {
+          "term": "bun gamma",
+          "heading": false
+        },
+        {
+          "term": "principal idmorph",
+          "heading": false
+        },
+        {
+          "term": "hom trivlin",
+          "heading": false
+        },
+        {
+          "term": "lli alpha",
+          "heading": false
+        },
+        {
+          "term": "equation bun",
+          "heading": false
+        },
+        {
+          "term": "category bun",
+          "heading": false
+        }
+      ],
+      "extract": "We give the definition of a principal bundle in exactly the same way as we are going to define principal \\emph{2-}bundles in Section \\ref{sec:2bundle}. \\begin{definition} \\label{def:pgb} Let $M$ be a smooth manifold, and let $\\Gamma$ be a Lie groupoid. \\begin{enumerate} \\item A \\emph{principal $\\Gamma$-bundle over $M$} is a smooth manifold $P$ with a surjective submersion $\\pi: P \\to M$ and a right $\\Gamma$-action",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-anafunctors",
+      "number": "2.3",
+      "title": "Anafunctors",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lli circ",
+          "heading": false
+        },
+        {
+          "term": "gamma lli",
+          "heading": false
+        },
+        {
+          "term": "mathcal lli",
+          "heading": false
+        },
+        {
+          "term": "lli alpha",
+          "heading": false
+        },
+        {
+          "term": "anafunctor bar",
+          "heading": false
+        },
+        {
+          "term": "chi circ",
+          "heading": false
+        },
+        {
+          "term": "lli times",
+          "heading": false
+        },
+        {
+          "term": "circ varphi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ana} An anafunctor is a generalization of a smooth functor between Lie groupoids, similar to a Morita equivalence, and also known as a Hilsum-Skandalis morphism. The idea goes back to Benabou \\cite{benabou1}, also see \\cite{johnstone1}. The references for the following definitions are \\cite{lerman1,metzler}. \\begin{definition} Let $\\mathcal{X}$ and $\\mathcal{Y}$ be Lie groupoids. \\begin{enumerate} \\item",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-lie-2-groups-and-crossed-modules",
+      "number": "2.4",
+      "title": "Lie 2-Groups and crossed Modules",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bun gamma",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": true
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "groupoid gamma",
+          "heading": false
+        },
+        {
+          "term": "crossed",
+          "heading": true
+        },
+        {
+          "term": "principal gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma bundles",
+          "heading": false
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        }
+      ],
+      "extract": "A (strict) \\emph{Lie 2-group} is a Lie groupoid $\\Gamma$ whose objects and morphisms are Lie groups, and all of whose structure maps are Lie group homomorphisms. One can conveniently bundle the multiplications and the inversions into smooth functors \\begin{equation*} m: \\Gamma \\times \\Gamma \\to \\Gamma \\quad\\text{ and }\\quad i: \\Gamma \\to \\Gamma\\text{.} \\end{equation*} \\begin{example} For $A$ an abelian Lie group,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-version-i-groupoid-valued-cohomology",
+      "number": "3",
+      "title": "Version I: Groupoid-valued Cohomology",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 813,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "varinjlim mathscr",
+          "heading": false
+        },
+        {
+          "term": "beta bullet",
+          "heading": false
+        },
+        {
+          "term": "beta cap",
+          "heading": false
+        },
+        {
+          "term": "mathscr big",
+          "heading": false
+        },
+        {
+          "term": "beta circ",
+          "heading": false
+        },
+        {
+          "term": "gamma cocycles",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{versionI} We have already mentioned group valued \\v Cech 1-cocycles in the introduction. They consist of an open cover $\\mathscr{U} = \\{U_i\\}_{i\\in I}$ of $M$ and smooth functions $g_{ij}: U_i \\cap U_j \\to G$ satisfying the cocycle condition $ g_{ij} \\cdot g_{jk} = g_{ik}$. Segal realized \\cite{segal3} that this is the same as a smooth functor $$g: \\vC (\\mathscr{U}) \\to \\mathcal{B}G $$ where $\\mathcal{B} G $",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-version-ii-classifying-maps",
+      "number": "4",
+      "title": "Version II: Classifying Maps",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1043,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smooth gamma",
+          "heading": false
+        },
+        {
+          "term": "charted gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma big",
+          "heading": false
+        },
+        {
+          "term": "mathcal gamma",
+          "heading": false
+        },
+        {
+          "term": "mathfrak gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma gerbes",
+          "heading": false
+        },
+        {
+          "term": "idmorph",
+          "heading": false
+        },
+        {
+          "term": "continuous cech-cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{versionII} It is well known that for a Lie group $G$ the \\emph{smooth} \\v Cech-cohomology $ \\h^1(M,G)$ and the \\emph{continuous} \\v Cech-cohomology $ \\h_c^1(M,G)$ agree if $M$ is a smooth manifold (in particular paracompact). This can e.g. be shown by locally approximating continuous cocycles by smooth ones without changing the cohomology class -- see \\cite{wockel2} (even for $G$ infinite-dimensional). Below",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
+      "number": "5",
+      "title": "Version III: Groupoid Bundle Gerbes",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle gerbes",
+          "heading": true
+        },
+        {
+          "term": "non-abelian bundle",
+          "heading": false
+        },
+        {
+          "term": "versioniii",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{versionIII} Several definitions of non-abelian bundle gerbes have appeared in literature so far \\cite{aschieri,jurco1,murray5}. The approach we give here not only shows a conceptually clear way to define non-abelian bundle gerbes, but also produces systematically a whole bicategory. Moreover, these bicategories form a 2-stack over smooth manifolds (with the Grothendieck topology of surjective submersions).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-51-definition-via-the-plus-construction",
+      "number": "5.1",
+      "title": "Definition via the Plus Construction",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 27,
+      "labelStart": "21",
+      "labelEnd": "27",
+      "words": 2120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pre-2-stack grb",
+          "heading": false
+        },
+        {
+          "term": "bundle gerbe",
+          "heading": false
+        },
+        {
+          "term": "grb gamma",
+          "heading": false
+        },
+        {
+          "term": "bicategory grb",
+          "heading": false
+        },
+        {
+          "term": "gerbe mathcal",
+          "heading": false
+        },
+        {
+          "term": "otimes varphi",
+          "heading": false
+        },
+        {
+          "term": "idmorph bundle",
+          "heading": false
+        },
+        {
+          "term": "equation grb",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the stack $\\bun\\Gamma-$ of principal $\\Gamma$-bundles is monoidal if $\\Gamma$ is a Lie 2-group (Proposition \\ref{prop:monoidalstack}). Associated to the monoidal stack $\\bun\\Gamma-$ we have a pre-2-stack \\begin{equation*} \\triv\\grb \\Gamma - := \\mathcal{B}(\\bun\\Gamma-) \\end{equation*} of \\emph{trivial $\\Gamma$-gerbes}. Explicitly, there is one trivial $\\Gamma$-gerbe $\\mathcal{I}$ over every smooth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-52-properties-of-groupoid-bundle-gerbes",
+      "number": "5.2",
+      "title": "Properties of Groupoid Bundle Gerbes",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": "27",
+      "labelEnd": "31",
+      "words": 1865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle gerbes",
+          "heading": true
+        },
+        {
+          "term": "grb gamma",
+          "heading": false
+        },
+        {
+          "term": "otimes varphi",
+          "heading": false
+        },
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes vee",
+          "heading": false
+        },
+        {
+          "term": "grb omega",
+          "heading": false
+        },
+        {
+          "term": "varphi mathcal",
+          "heading": false
+        },
+        {
+          "term": "triv grb",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:gerbeprop} We recall that a homomorphism $\\Lambda: \\Gamma \\to \\Omega$ between Lie 2-groups is an anafunctor together with a transformation \\erf{eq:lie2grouphom} describing its compatibility with the multiplications. We recall further from Proposition \\ref{extensionstackmorphism} that extension along $\\Lambda$ is a 1-morphism \\begin{equation*} \\Lambda: \\bun{\\Gamma}- \\to \\bun\\Omega- \\end{equation*} between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-53-classification-by-cech-cohomology",
+      "number": "5.3",
+      "title": "Classification by Cech Cohomology",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cover mathscr",
+          "heading": false
+        },
+        {
+          "term": "bundle gerbe",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathscr",
+          "heading": false
+        },
+        {
+          "term": "gamma bundle",
+          "heading": false
+        },
+        {
+          "term": "trivlin",
+          "heading": false
+        },
+        {
+          "term": "mathscr left",
+          "heading": false
+        },
+        {
+          "term": "gamma cocycles",
+          "heading": false
+        },
+        {
+          "term": "ijk",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove that Versions I (\\v Cech $\\Gamma$-1-cocycles) and III ($\\Gamma$-bundle gerbes) are equivalent. For this purpose, we extract a \\v Cech cocycle from a $\\Gamma$-bundle gerbe $\\mathcal{G}$ over $M$, and prove that this procedure defines a bijection on the level of equivalence classes (Theorem \\ref{th:gerbesclass}). First we have to ensure the existence of appropriate open covers. \\begin{lemma}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-version-iv-principal-2-bundles",
+      "number": "6",
+      "title": "Version IV: Principal 2-Bundles",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal bundles",
+          "heading": true
+        },
+        {
+          "term": "pries",
+          "heading": false
+        },
+        {
+          "term": "emph",
+          "heading": false
+        },
+        {
+          "term": "anafunctors",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:2bundle} The basic idea of a smooth 2-bundle is that it gives for every point $x$ in the base manifold $M$ a Lie groupoid $\\mathcal{P}_x$ varying smoothly with $x$. Numerous different versions have appeared so far in the literature, e.g \\cite{bartels,baez2,wockel1,pries2}. The main objective of \\emph{our} version of principal $2$-bundles is to make the definition of the objects (i.e. the 2-bundles)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-61-definition-of-principal-2-bundles",
+      "number": "6.1",
+      "title": "Definition of Principal 2-Bundles",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1046,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal bundles",
+          "heading": true
+        },
+        {
+          "term": "equivariant anafunctor",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "gamma times",
+          "heading": false
+        },
+        {
+          "term": "emph gamma",
+          "heading": false
+        },
+        {
+          "term": "equation alxydim",
+          "heading": false
+        },
+        {
+          "term": "surjective submersion",
+          "heading": false
+        },
+        {
+          "term": "submersion functor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:definitionzwoabundle} As an important prerequisite for principal 2-bundles we have to discuss actions of Lie 2-groups on Lie groupoids, and equivariant anafunctors. \\begin{definition} \\label{def:rightaction} Let $\\mathcal{P}$ be a Lie groupoid, and let $\\Gamma$ be a Lie 2-group. A \\emph{smooth right action of $\\Gamma$ on $\\mathcal{P}$} is a smooth functor $R: \\mathcal{P} \\times \\Gamma \\to \\mathcal{P}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-62-properties-of-principal-2-bundles",
+      "number": "6.2",
+      "title": "Properties of Principal 2-Bundles",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal bundles",
+          "heading": true
+        },
+        {
+          "term": "zwoabun gamma",
+          "heading": false
+        },
+        {
+          "term": "zwoabun omega",
+          "heading": false
+        },
+        {
+          "term": "cong zwoabun",
+          "heading": false
+        },
+        {
+          "term": "grb gamma",
+          "heading": false
+        },
+        {
+          "term": "idmorph times",
+          "heading": false
+        },
+        {
+          "term": "equivalence grb",
+          "heading": false
+        },
+        {
+          "term": "bundle mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "Principal $\\Gamma$-2-bundles over $M$ form a bicategory denoted $\\zwoabun\\Gamma M$. There is an evident pullback 2-functor \\begin{equation*} f^{*}: \\zwoabun\\Gamma N \\to \\zwoabun\\Gamma M \\end{equation*} associated to smooth maps $f:M \\to N$, and these make $\\zwoabun\\Gamma -$ a pre-2-stack over smooth manifolds. We deduce the following important two theorems about this pre-2-stack. The first asserts that it actually",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-7-equivalence-between-bundle-gerbes-and-2-bundle",
+      "number": "7",
+      "title": "Equivalence between Bundle Gerbes and 2-Bundles",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zwoabun gamma",
+          "heading": false
+        },
+        {
+          "term": "grb gamma",
+          "heading": false
+        },
+        {
+          "term": "functors mathscr",
+          "heading": false
+        },
+        {
+          "term": "cong zwoabun",
+          "heading": false
+        },
+        {
+          "term": "equation grb",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": true
+        },
+        {
+          "term": "mathscr form",
+          "heading": false
+        },
+        {
+          "term": "bicategories",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:equivalences} In this section we show that Versions III and IV of smooth $\\Gamma$-gerbes are equivalent in the strongest possible sense: \\begin{theorem} \\label{th:equivalence} For $M$ a smooth manifold and $\\Gamma$ a Lie 2-group, there is an equivalence of bicategories \\begin{equation*} \\grb\\Gamma M \\cong \\zwoabun \\Gamma M \\end{equation*} between the bicategories of $\\Gamma$-bundle gerbes and principal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-71-from-principal-2-bundles-to-bundle-gerbes",
+      "number": "7.1",
+      "title": "From Principal 2-Bundles to Bundle Gerbes",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 48,
+      "labelStart": "39",
+      "labelEnd": "48",
+      "words": 4071,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ mathscr",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        },
+        {
+          "term": "circ tilde",
+          "heading": false
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        },
+        {
+          "term": "bundle gerbes",
+          "heading": true
+        },
+        {
+          "term": "tensorproduct erf",
+          "heading": false
+        },
+        {
+          "term": "erf defmu",
+          "heading": false
+        },
+        {
+          "term": "mathcal circ",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:extraction} In this section we define the 2-functor $\\mathscr{E}_M: \\zwoabun \\Gamma M \\to \\grb\\Gamma M$. \\subsubsection{Definition of $\\mathscr{E}_M$ on objects} Let $\\mathcal{P}$ be a principal $\\Gamma$-2-bundle over $M$, with projection $\\pi: \\mathcal{P} \\to M$ and right action $R$ of $\\Gamma$ on $\\mathcal{P}$. The first ingredient of the $\\Gamma$-bundle gerbe $\\mathscr{E}_M(\\mathcal{P})$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-72-from-bundle-gerbes-to-principal-2-bundles",
+      "number": "7.2",
+      "title": "From Bundle Gerbes to Principal 2-Bundles",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 57,
+      "labelStart": "48",
+      "labelEnd": "57",
+      "words": 3104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "principal bundle",
+          "heading": true
+        },
+        {
+          "term": "bundle gerbes",
+          "heading": true
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "circ alpha",
+          "heading": false
+        },
+        {
+          "term": "circ chi",
+          "heading": false
+        },
+        {
+          "term": "text erf",
+          "heading": false
+        },
+        {
+          "term": "lli alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:reconstruction} We now provide the data we will feed into Lemma \\ref{lem:equivalence} in order to produce a 2-functor $\\mathscr{R}_M\\maps \\grb \\Gamma M \\to \\zwoabun \\Gamma M$ that is inverse to the 2-functor $\\mathscr{E}_M$ constructed in the previous section. These data are: \\begin{enumerate} \\item A principal $\\Gamma$-2-bundle $\\mathscr{R}_\\mathcal{G}$ for each $\\Gamma$-bundle gerbe $\\mathcal{G}$ over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-a-equivariant-anafunctors-and-group-actions",
+      "number": null,
+      "title": "A Equivariant Anafunctors and Group Actions",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 59,
+      "labelStart": "57",
+      "labelEnd": "59",
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equivariant anafunctors",
+          "heading": true
+        },
+        {
+          "term": "lli circ",
+          "heading": false
+        },
+        {
+          "term": "lli alpha",
+          "heading": false
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        },
+        {
+          "term": "lli times",
+          "heading": false
+        },
+        {
+          "term": "circ eta",
+          "heading": false
+        },
+        {
+          "term": "chi circ",
+          "heading": false
+        },
+        {
+          "term": "circ mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:equivariantanafunctorsandgroupactions} In this section we are concerned with a Lie 2-group $\\Gamma$ and Lie groupoids $\\mathcal{X}$ and $\\mathcal{Y}$ with actions $R_1: \\mathcal{X} \\times \\Gamma \\to \\mathcal{X}$ and $R_2: \\mathcal{Y} \\times \\Gamma \\to \\mathcal{Y}$. \\begin{definition} \\label{def:actionanafunctor} An \\emph{action} of the 2-group $\\Gamma$ on an anafunctor $F:\\mathcal{X} \\to \\mathcal{Y}$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-b-constructing-equivalences-between-2-stacks",
+      "number": null,
+      "title": "B Constructing Equivalences between 2-Stacks",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 1141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ psi",
+          "heading": false
+        },
+        {
+          "term": "circ varphi",
+          "heading": false
+        },
+        {
+          "term": "circ eta",
+          "heading": false
+        },
+        {
+          "term": "circ bar",
+          "heading": false
+        },
+        {
+          "term": "tilde circ",
+          "heading": false
+        },
+        {
+          "term": "chi circ",
+          "heading": false
+        },
+        {
+          "term": "widetilde circ",
+          "heading": false
+        },
+        {
+          "term": "circ rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{app:bicategories} Let $\\mathcal{C}$ be a bicategory (we assume that associators and unifiers are \\emph{invertible} 2-morphisms). We fix the following terminology: a 1-\\emph{iso}morphism $f: X_1 \\to X_2$ in $\\mathcal{C}$ always includes the data of an inverse 1-morphism $\\bar f\\maps X_2 \\to X_1$ and of 2-isomorphisms $i: \\bar f \\circ f \\Rightarrow \\id$ and $j: \\id \\Rightarrow f \\circ \\bar f$ satisfying the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 65,
+      "labelStart": "62",
+      "labelEnd": null,
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle gerbes",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "stevenson",
+          "heading": false
+        },
+        {
+          "term": "principal bundles",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "waldorf",
+          "heading": false
+        },
+        {
+          "term": "stacks",
+          "heading": false
+        },
+        {
+          "term": "classifying spaces",
+          "heading": false
+        }
+      ],
+      "extract": "[ACJ05] P. Aschieri, L. Cantini, and B. Jurco, “Nonabelian bundle gerbes, their diﬀerential geometry and gauge theory”. Commun. Math. Phys., 254:367–400, 2005. [arxiv:hep-th/0312154] [AN09] E. Aldrovandi and B. Noohi, “Butterﬂies I: Morphisms of 2-group stacks”. Adv. Math., 221(3):687–773, 2009. [arxiv:0808.3627] – 62 – [Bar04] T. Bartels, 2-bundles and higher gauge theory. PhD thesis, University of California,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "1 An",
+          "1 Its total space is"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "circ gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma mathcal",
+      "heading": false
+    },
+    {
+      "term": "gamma bundle",
+      "heading": false
+    },
+    {
+      "term": "smooth gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma idmorph",
+      "heading": false
+    },
+    {
+      "term": "principal gamma",
+      "heading": false
+    },
+    {
+      "term": "alpha gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma gerbes",
+      "heading": false
+    },
+    {
+      "term": "groupoid gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma lli",
+      "heading": false
+    },
+    {
+      "term": "gamma text",
+      "heading": false
+    },
+    {
+      "term": "gamma end",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p62); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1103.4815v3"
+  }
+}

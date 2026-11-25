@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2409.09372v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Markov traces on degenerate cyclotomic Hecke algebras",
+  "contains": [
+    "library/arxiv-2409.09372v4/sections/sec-front-matter",
+    "library/arxiv-2409.09372v4/sections/sec-000",
+    "library/arxiv-2409.09372v4/sections/sec-001",
+    "library/arxiv-2409.09372v4/sections/sec-002",
+    "library/arxiv-2409.09372v4/sections/sec-003",
+    "library/arxiv-2409.09372v4/sections/sec-004",
+    "library/arxiv-2409.09372v4/sections/sec-005",
+    "library/arxiv-2409.09372v4/sections/sec-006",
+    "library/arxiv-2409.09372v4/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}.\n\n**Markov traces on degenerate cyclotomic Hecke algebras**\n\n*DEKE ZHAO*\n\n16 pp, 9 sections.\n\n**Abstract.** Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}. The paper aims to define and construct the (non-)normalized Markov traces on the sequence {Hn(u)}∞ n=1. This allows us to provide the Brou´e–Malle–Michel symmetrizing trace on Hn(u) and show that the Brundan–Kleshchev trace is a specialization of the non-normalized Markov traces on Hn(u).\n\n**Outline.** Front matter; 1 Introduction; 2 Inductive basis; 3 Normalized Markov traces; 4 Non-normalized Markov traces; 5 Specializations; Acknowledgements; Declaration; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2409.09372&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2409.09372v4",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2409.09372v4.pdf",
+    "source_sha256": "b7eed67ec102ab3d4abc33b53e619c314300d978f73ad3f71059ee4181943cb2",
+    "pages": 16,
+    "arxiv": {
+      "id": "2409.09372",
+      "version": "4",
+      "primary_class": "math.RT",
+      "stamp_date": "8 Jul 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

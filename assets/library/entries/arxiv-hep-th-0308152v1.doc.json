@@ -1,0 +1,204 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0308152v1",
+  "title": "arxiv-hep-th-0308152v1",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Eichler Integral of the Character",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-eichler-integral-of-the-character"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Knot Invariant for Torus Knot",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Concluding Remarks",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-eichler-integral-of-the-character",
+      "number": null,
+      "title": "Eichler Integral of the Character",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eichler integral",
+          "heading": true
+        },
+        {
+          "term": "variant eichler",
+          "heading": false
+        },
+        {
+          "term": "mathrm tau",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "label eichler",
+          "heading": false
+        },
+        {
+          "term": "widetilde phi",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "pmatrix mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:character label=\"sec:character\"} We study the character of the minimal model $\\mathcal{M}(s,t)$, where $s$ and $t$ are coprime integers. The central charge of the minimal model $\\mathcal{M}(s, t)$ is $$c(s,t) = 1 - \\frac{6 \\, (s-t)^2}{s \\, t} ,$$ and the irreducible highest weight representation of the Virasoro algebra is given for the conformal weight $$\\Delta^{s,t}_{n,m} = \\frac{(n \\, t - m \\, s)^2 -",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "variant eichler",
+      "heading": false
+    },
+    {
+      "term": "eichler integral",
+      "heading": true
+    },
+    {
+      "term": "mathrm tau",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "label eichler",
+      "heading": false
+    },
+    {
+      "term": "widetilde phi",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "pmatrix mathrm",
+      "heading": false
+    },
+    {
+      "term": "modular phi",
+      "heading": false
+    },
+    {
+      "term": "prime mathbf",
+      "heading": false
+    },
+    {
+      "term": "bmatrix sum",
+      "heading": false
+    },
+    {
+      "term": "bmatrix right",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 1,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 1 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0308152v1"
+  }
+}

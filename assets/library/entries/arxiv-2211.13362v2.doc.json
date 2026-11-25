@@ -1,0 +1,539 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2211.13362v2",
+  "title": "Double-slit experiment revisited",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Bohmian account of the DSE",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-bohmian-account-of-the-dse"
+    },
+    {
+      "level": 2,
+      "title": "Trajectories for the DSE",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-trajectories-for-the-dse"
+    },
+    {
+      "level": 2,
+      "title": "First-passage distribution",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-first-passage-distribution"
+    },
+    {
+      "level": 2,
+      "title": "Numerical DSE",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-numerical-dse"
+    },
+    {
+      "level": 2,
+      "title": "Dynamic DSE",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-dynamic-dse"
+    },
+    {
+      "level": 1,
+      "title": "Comparison to the KPM experiment",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-comparison-to-the-kpm-experiment"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-concluding-remarks"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dse detections",
+          "heading": false
+        },
+        {
+          "term": "detection screen",
+          "heading": false
+        },
+        {
+          "term": "kurtsiefer hist",
+          "heading": false
+        },
+        {
+          "term": "bohmian trajectories",
+          "heading": false
+        },
+        {
+          "term": "longitudinal spread",
+          "heading": false
+        },
+        {
+          "term": "smash sigma",
+          "heading": false
+        },
+        {
+          "term": "first-passage distribution",
+          "heading": false
+        },
+        {
+          "term": "triple hist",
+          "heading": false
+        }
+      ],
+      "extract": "Diffraction and interference phenomena occupy a prominent place in the phenomenology of quantum physics, Young's double-slit experiment (DSE) being an archetypal example which, according to Feynman \"has in it the heart of quantum mechanics\" [@Feynman]. Quantum physicists have discussed the DSE and augments thereof, e.g., the which-way [@Zurek; @WWM], or the delayed-choice DSE [@Wheeler], with varying degrees of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-bohmian-account-of-the-dse",
+      "number": null,
+      "title": "Bohmian account of the DSE",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-trajectories-for-the-dse",
+      "number": null,
+      "title": "Trajectories for the DSE",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 774,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dse trajectories",
+          "heading": true
+        },
+        {
+          "term": "bohmian trajectories",
+          "heading": false
+        },
+        {
+          "term": "sigma kern",
+          "heading": false
+        },
+        {
+          "term": "bohmian mechanics",
+          "heading": false
+        },
+        {
+          "term": "potential barrier",
+          "heading": false
+        },
+        {
+          "term": "interference pattern",
+          "heading": false
+        },
+        {
+          "term": "psi big",
+          "heading": false
+        },
+        {
+          "term": "frac sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Bohmian mechanics (also called the de Broglie-Bohm theory or pilot-wave theory) is a theory describing point particles moving along trajectories that grounds the formalism and predictions of standard quantum mechanics [@BohmHiley; @HollandBook; @DurrTeufel; @DGZOperators]. For a single-particle with position $\\vb{R}$ and mass $m$, the dynamics is given by the guidance equation $$\\label{eq:guide}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-first-passage-distribution",
+      "number": null,
+      "title": "First-passage distribution",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fpt distribution",
+          "heading": false
+        },
+        {
+          "term": "detection events",
+          "heading": false
+        },
+        {
+          "term": "𝑡𝑓",
+          "heading": false
+        },
+        {
+          "term": "first-passage",
+          "heading": true
+        },
+        {
+          "term": "bohmian",
+          "heading": false
+        },
+        {
+          "term": "povm",
+          "heading": false
+        },
+        {
+          "term": "surfaced",
+          "heading": false
+        },
+        {
+          "term": "trajectories",
+          "heading": false
+        }
+      ],
+      "extract": "The preceding discussion suggests that it is natural to take, as an approximation to the ToF on a specified surfaceD (such as the plane𝑧=𝑑), the first-passage time (FPT) of a Bohmian trajectory5: 𝑡𝑓(r0)= inf \b 𝑡 : R(𝑡)∈D and R(0)= r0 , (4) R(𝑡𝑓) being the concomitant crossing position onD,6 as a function of the random initial condition r0—quantities that have no respective counterparts in standard quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-dynamic-dse",
+      "number": null,
+      "title": "Dynamic DSE",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tof distribution",
+          "heading": false
+        },
+        {
+          "term": "fpt",
+          "heading": false
+        },
+        {
+          "term": "considered here",
+          "heading": false
+        },
+        {
+          "term": "agree",
+          "heading": false
+        },
+        {
+          "term": "because",
+          "heading": false
+        }
+      ],
+      "extract": "5One considers the FPT because in general a trajectory might cross the surfaceD more than once [40, 41]. However, this does not happen in the present setting. 6The infimum in (4) ensures that the FPT of trajectories not intercepting D, e.g., those back-scattered at the plane containing the slits giving rise to non-detection events, is infinity, since inf∅ :=∞. 7In one-dimensional settings there is an explicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-numerical-dse",
+      "number": null,
+      "title": "Numerical DSE",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smash sigma",
+          "heading": false
+        },
+        {
+          "term": "wave packet",
+          "heading": false
+        },
+        {
+          "term": "dynamict",
+          "heading": false
+        },
+        {
+          "term": "pot",
+          "heading": false
+        },
+        {
+          "term": "triple hist",
+          "heading": false
+        },
+        {
+          "term": "kern",
+          "heading": false
+        },
+        {
+          "term": "slits",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        }
+      ],
+      "extract": "<figure id=\"bohmianplots\"> <figure id=\"fig:triple_hist\"> <embed src=\"Figures/triple_hist.pdf\" /> <figcaption>Joint distributions of ToFs and <span class=\"math inline\"><em>x</em></span>-screen coordinates for different slit-screen separations, generated from Bohmian trajectory impacts.</figcaption> </figure> <figure id=\"fig:triple_curr\"> <embed src=\"Figures/triple_curr.pdf\" /> <figcaption>The flux density across the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-comparison-to-the-kpm-experiment",
+      "number": null,
+      "title": "Comparison to the KPM experiment",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 970,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpm experiment",
+          "heading": true
+        },
+        {
+          "term": "kurtsiefer hist",
+          "heading": false
+        },
+        {
+          "term": "temporal spread",
+          "heading": false
+        },
+        {
+          "term": "longitudinal spread",
+          "heading": false
+        },
+        {
+          "term": "detection screen",
+          "heading": false
+        },
+        {
+          "term": "longitudinal width",
+          "heading": false
+        },
+        {
+          "term": "longitudinal velocities",
+          "heading": false
+        },
+        {
+          "term": "triple hist",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:KPM label=\"sec:KPM\"} As mentioned in the introduction, there have been many realizations of the double-slit experiment. One experiment of particular interest is that of KPM [@Pfau], which recorded not only the detected positions, but also the flight times. The resulting joint position and time distribution is displayed in Fig. [1](#eq:kurtsiefer_hist){reference-type=\"ref\" reference=\"eq:kurtsiefer_hist\"}, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-concluding-remarks",
+      "number": null,
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arrival time",
+          "heading": false
+        },
+        {
+          "term": "bohmian mechanics",
+          "heading": false
+        },
+        {
+          "term": "bohmian trajectories",
+          "heading": false
+        },
+        {
+          "term": "bohmian approach",
+          "heading": false
+        },
+        {
+          "term": "double-slit experiment",
+          "heading": false
+        },
+        {
+          "term": "tunnelling time",
+          "heading": false
+        },
+        {
+          "term": "leavens",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        }
+      ],
+      "extract": "The computation of the probability distribution of ToFs of quantum particles is one of the last areas where experts disagree about what quantum mechanics should predict. While a cornucopia of different ToF distributions exists in the literature, one rarely finds a discussion of the joint distribution of impact positions and ToFs studied in this work. In this paper, we have considered a Bohmian approach to this",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bohmian trajectories",
+      "heading": false
+    },
+    {
+      "term": "dse trajectories",
+      "heading": true
+    },
+    {
+      "term": "bohmian mechanics",
+      "heading": false
+    },
+    {
+      "term": "detection screen",
+      "heading": false
+    },
+    {
+      "term": "bohmian trajectory",
+      "heading": false
+    },
+    {
+      "term": "bohmian approach",
+      "heading": false
+    },
+    {
+      "term": "tof distribution",
+      "heading": false
+    },
+    {
+      "term": "dynamic dse",
+      "heading": true
+    },
+    {
+      "term": "smash sigma",
+      "heading": false
+    },
+    {
+      "term": "kurtsiefer hist",
+      "heading": false
+    },
+    {
+      "term": "double-slit experiment",
+      "heading": false
+    },
+    {
+      "term": "detection time",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2211.13362v2"
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2504.18825v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE\nALGEBRA AND APPLICATIONS\nNAIHUAN JING AND NING LIU\nAbstract. We establish a Murnaghan–Nakayama rule for the irreducible characters of\nthe cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with\nShoji’s determinacy result, our formula provides a direct combinatorial route to the full\nirreducible character table of Hm,n(q, u). Our construction is based on our recent multi-\nparameter Murnaghan–Nakayama rule for Macdonald polynomials and specializes uni-\nformly to several previously known formulas, including those for the com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\subsection{Background}\\label{ss:Backgroud}\nThe Murnaghan--Nakayama rule \\cite{Mur,Nak1,Nak2} serves as a combinatorial algorithm for calculating the irreducible characters of symmetric groups $\\mathfrak{S}_n$. The Iwahori--Hecke algebra $\\mathscr{H}_{n}(q)$ in type $A$, which is the $q$-deformation of $\\mathfrak{S}_n$, is a unital associative algebra over the field of rational functions $\\mathbb{C}(q)$. Ram \\cite{Ram} used the quantum Schur--Weyl duality \\cite{Jim} to establish a Frobenius-type character formula for $\\mathscr{H}_{n}(q)$, linking it to one-row Hall-Littlewood functions and Sch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "\\subsection{Multipartitions and corresponding symmetric functions}\nThe terminologies and notations about classical {\\it partitions}, such as {\\it length, weight, diagram}, etc, can be found in \\cite[Chapter I]{Mac}. Now we introduce the corresponding notions and definitions in the context of {\\em multipartitions}. A $m$-multipartition (resp. $m$-multicomposition) of $n$ is an ordered tuple $\\bm{\\la}=(\\la^{(1)},\\la^{(2)},\\cdots,\\la^{(m)})$ of partitions (resp. compositions) $\\la^{(i)}$ such that $|\\bm{\\la}|=\\sum_{i=1}^{m}|\\la^{(i)}|=n$. We denote by $\\mathcal{P}_{n,m}$ the set of all $m$-multip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "../sections/sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck.md",
+      "narrative": null,
+      "content": "\\label{s:M-N}\nIn this section, we will present our Murnaghan--Nakayama rule for the cyclotomic Hecke algebra.\n\n\n\\subsection{Murnaghan--Nakayama rule}\nA skew diagram $\\lambda/\\mu$ is a {\\it vertical} (resp. {\\it horizontal}) {\\it strip} if each row (resp. column) contains at most one box. We say a skew diagram of $\\la/\\mu$ is a {\\it ribbon} (also known as {\\it border strip} or {\\it rim hook}) if it is connected and contains no $2\\times 2$ blocks \\begin{tikzpicture}\n  \\draw[step=0.2cm, color=black] (-0.2,-0.2) grid (0.2,0.2); \n\\end{tikzpicture}. The {\\it height} (denoted by $ht(\\la/\\mu)$) of a r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special cases of the Murnaghan–Nakayama rule",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-4-special-cases-of-the-murnaghannakayama-rule.md",
+      "narrative": null,
+      "content": "\\label{s:special}\nIn this section, we will explain how our Murnaghan--Nakayama rule recovers the existing formulae as special cases. Three special cases of Corollary \\ref{t:m-n2} will be considered case by case, which correspond to the complex reflection group of type $G(m, 1, n)$, the Iwahori--Hecke algebra in type $A$ and type $B$ respectively.\n\n\\subsection{Complex reflection group of type $G(m, 1, n)$}\nAs pointed out in the introduction, when we take the specialization $\\bm{u}=\\bm{\\zeta}=(1,\\zeta,\\zeta^2,\\cdots,\\zeta^{m-1})$ and $q=1$, where $\\zeta$ is the primitive\n$m$-th root of unity, $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A dual Murnaghan–Nakayama rule via vertex operators",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera.md",
+      "narrative": null,
+      "content": "\\label{s:OV}\nIn the previous section, we establish a Murnaghan--Nakayama rule, which can be regarded as an iterative formula on the lower multipartitions of the irreducible characters. In this section, as duality, an iteration of the characters on the upper multipartitions will be derived with the help of the vertex operator realization of Schur functions.\n\n\n\\subsection{Vertex operator realization of Schur functions}\nLet $\\mathfrak{h}$ be the infinite dimensional Heisenberg algebra over $\\mathbb{C}$ with generators $h_n$, $n\\in\\mathbb{Z}\\setminus\\{0\\}$ and the central element $c$ subject to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application I: Regev-type formula",
+      "pageStart": 25,
+      "pageEnd": 34,
+      "target": "../sections/sec-005-6-application-i-regev-type-formula.md",
+      "narrative": null,
+      "content": "\\label{s:Regev}\nIn this section, as the first application of our Murnaghan--Nakayama rule, we are devoted to giving the Regev formula for the cyclotomic Hecke algebra $\\mathscr{H}_{m,n}(q,\\bm{u})$. Once the Murnaghan--Nakayama rule is set up right,\n the proof of the Regev formula, which is based on the classical deep work on symmetric groups and Hecke algebras in type $A$, is remarkably natural. To proceed with it, we initially, in accordance with \\cite{Zhao1}, review the permutation super representation of the cyclotomic Hecke algebra $\\mathscr{H}_{m,n}(q,\\bm{u})$, as well as the Schur–Sergee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
+      "pageStart": 34,
+      "pageEnd": 43,
+      "target": "../sections/sec-006-7-application-ii-lübeckprasadadinroichman-type-f.md",
+      "narrative": null,
+      "content": "\\label{s:LPAR}\nIn this section, as the second application of our Murnaghan--Nakayama rule, we will establish a  L\\\"ubeck--Prasad--Adin--Roichman formula for the cyclotomic Hecke algebra $\\mathscr{H}_{m,n}(q,\\bm{u})$. To proceed with this, We will present an algorithm for $\\chi^{(\\la^{(1)},\\la^{(2)},\\cdots,\\la^{(m)})}_{\\bmu}$ using the corresponding single partition $\\la$ with empty $m$-core and $(\\la^{(1)},\\la^{(2)},\\cdots,\\la^{(m)})$ as its $m$-quotient. Finally, we will explain how our formula recovers the Adin-Roichman formula for the complex reflection group $\\mathscr{W}_{m,n}$ \\cite{AR},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiple bitrace for the irreducible characters",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "target": "../sections/sec-007-8-multiple-bitrace-for-the-irreducible-character.md",
+      "narrative": null,
+      "content": "\\label{s:mbtr}\nIn this section, we firstly introduce multiple bitrace for the irreducible characters of the cyclotomic Hecke algebra. Subsequently, a combinatorial formula for it will be given. Finally, we will consider the special case for $\\mathscr{W}_{m,n}$, which gives the second orthogonality relation for the irreducible\ncharacters of $\\mathscr{W}_{m,n}$. For this reason, the multiple bitrace can be also viewed as the second orthogonality relation for $\\chi^{\\bla}_{\\bmu}$.\n\nTo proceed with this, let us recall the basis of this algebra. Consider the subalgebra $\\mathscr{W}^{0}_{m,n}$ of $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "1. Let ψλ be the irreducible character of the Hecke algebra in type A indexed by λ. Suppose λ, µ are two multipartitions of n. Then we have χλ µ = X M uM(q −q−1)#M−l(µ) m Y i=1 ψλ(i) − →c i(M), (A.1) summed over all m-multimatrices M such that the j-th row sum of M (r) equals µ(r) j and |ci(M)| = |λ(i)|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke algebra in type A states that X λ⊢|µ| λ hook ψλ µ = 2l(µ)−1 l(µ) Y i=1 [µi]−q−2. (A.2) Now we are ready to provide an alternative proof of Corollary 6.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. An alternative proof of Corollary 6.3",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
+      "narrative": null,
+      "content": "In this appendix, we present an alternative proof of Corollary 6.3 based on the Regev\nformula for the Hecke algebra of type A. To proceed with this, we elaborate on the associ-\nation between the irreducible characters of the cyclotomic Hecke algebra and those of the\nHecke algebra of type A.\nFor a m-multimatrix M ∈Mm(µ), recall that\nci(M) := (m(1)\n1,i , · · · , m(1)\nl(µ(1)),i, m(2)\n1,i , · · · , m(2)\nl(µ(2)),i, · · · , m(m)\n1,i , · · · , m(m)\nl(µ(m)),i).\nand −→c i(M) is the partition obtained by rearranging ci(M).\nLemma A.1. Let ψλ be the irreducible character of the Hecke algebra in type A ind",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "../sections/sec-009-appendix-b-sagemath-implementation-of-the-murnag.md",
+      "narrative": null,
+      "content": "This appendix provides a SageMath script for computing the irreducible character values\nχλ\nµ = χλ(g(µ)) via our Murnaghan–Nakayama rule (cf. Corollary 3.4).\nUsage. After setting m and n in the script, one obtains the full character table\n\u0000χλ\nµ\n\u0001\nλ,µ∈Pn,m\nby calling character table(m,n). Individual values are returned by chi(lam mp, mu mp);\nfor instance, λ = ((2, 2), (4)) and µ = ((2, 1), (3, 2)) are entered as ((2,2),(4)) and\n((2,1),(3,2)). The choice of (r, j) in (3.6) is fixed by a deterministic rule in the function\npick part to remove, which may be modified without affecting correctness.\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2504.18825v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "References\n[AR22]\nR. Adin, Y. Roichman, On characters of wreath products, Comb. Theory 2 (2022), no. 2, Paper\nNo. 17, 12 pp. 3, 34, 36, 37, 40, 41, 43\n[AK94]\nS. Ariki, K. Koike, A Hecke algebra of (Z/rZ) ≀Sn and construction of its irreducible represen-\ntations, Adv. Math. 106 (1994), 216–243. 9, 18, 44\n[BKK00] G. Benkart, S. Kang, M. Kashiwara, Crystal bases for the quantum superalgebra Uq(gl(m, n)),\nJ. Amer. Math. Soc. 13 (2000), 293–331. 27\n[BR87]\nA. Berele, A. Regev, Hook Young diagrams with applications to combinatorics and to represen-\ntations of Lie superalgebras, Adv. Math. 64 (1987),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1501.04614v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For a knot $K \\subset S^3$, let $n(K)$ denote a tubular neighborhood of\n$K$ and let $M_K:=\\overline{ S^3\\setminus n(K)}$ denote the exterior of\n$K$. Let $\\langle \\mu, \\lambda \\rangle$ be the canonical\nmeridian--longitude basis of $H_1 (\\bdy n(K))$.  An element $a/b \\in\n{\\QQ}\\cup \\{ 1/0\\}$ is called a \\emph{boundary slope} of $K$ if there\nis a properly embedded essential surface $(S, \\bdy S) \\subset (M_K,\n\\bdy n(K))$, such that  $\\bdy S$ represents $a \\mu + b \\lambda \\in\nH_1 (\\bdy n(K))$.  Hatcher showed that every knot $K \\subset S^3$\nhas finitely many boundary slopes \\cite{hatcher}.\nWe will u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1501.04614v1  [math.GT]  19 Jan 2015\nKNOT CABLING AND THE DEGREE OF THE COLORED JONES\nPOLYNOMIAL II\nEFSTRATIA KALFAGIANNI AND ANH T. TRAN\nAbstract. We continue our study of the degree of the colored Jones polynomial under\nknot cabling started in [8]. Under certain hypothesis on this degree, we determine how\nthe Jones slopes and the linear term behave under cabling. As an application we verify\nGaroufalidis’ Slope Conjecture and a conjecture of [8] for cables of a two-parameter\nfamily of closed 3-braids called 2-fusion knots.\n2010 Mathematics Classiﬁcation: Primary 57N10. Secondary 57M25.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jones slopes of cable knots",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-jones-slopes-of-cable-knots.md",
+      "narrative": null,
+      "content": "Let $K_{p,q}$ be the $(p,q)$-cable of a knot $K$, where $q > 1$. For $n>0$, let $\\CS_n$ be the set of all $k$ such that \n $$\n |k| \\le (n-1)/2 \\quad \\text{and} \\quad k \\in \\begin{cases} \\BZ &\\mbox{if } n \\text{ is odd}, \\\\ \n \\BZ+\\frac{1}{2} & \\mbox{if } n \\text{ is even}. \\end{cases}\n $$\nBy \\cite{Ve}, for $n>0$ we have\n\\begin{equation}\n\\label{cables11}\nJ_{K_{p,q}}(n)= v^{pq(n^2-1)/4} \\sum_{k \\in \\CS_n} v^{-pk(qk+1)} J_K(2qk+1),\n\\end{equation} \nwhere it is understood that $J_K(-m)=-J_K(m)$.\n\n\\begin{proposition}\n\\label{quasi-constant}\nLet $K$ be a knot such that for $n \\gg 0$ we have\n$$\nd_+[J_K(n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-fusion knots",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-two-fusion-knots.md",
+      "narrative": null,
+      "content": "The family of 2-fusion knots is a two-parameter family  of closed 3-braids denoted\nby\n$$\\{ K(m_1, m_2)  \\mid  m_1, m_2\\in \\ZZ\\}.$$\nFor the precise definition and description see \\cite {GV, DG}. \n\nNote that $K(m_1, m_2)$ is a torus knot if $m_2 \\in \\{-1,0\\}$. In fact, $K(m_1, 0) = T(2, 2m_1 + 1)$ and $K(m_1, -1) = T(2, 2m_1 -3)$. It is known that $K(m_1, m_2)$ is hyperbolic if $m_1 \\notin \\{0, 1\\}$, $m_2 \\notin \\{-1,0\\}$ and $(m_1, m_2) \\not= (-1,1)$. See \\cite{GV}. Note that $K(-1,1) = T(2,5)$.\n\nFrom now on we consider $m_2 \\notin \\{-1,0\\}$ only. Let \n\\begin{eqnarray*}\nI_1 &=& \\{(m_1, m_2) : m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The highest degree and the Jones slope.",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-31-the-highest-degree-and-the-jones-slope.md",
+      "narrative": null,
+      "content": "The quantity  $Q(n,k_1,k_2)$ is closely related\nto $\\delta_K(n)$. According to \\cite{GV}  for the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1, 0\\}$, we have the following possibilities:\n\\vskip 0.04in\n\n\n\\textbf{Case A.} $m_1, m_2 \\ge 1$. Then\n$$\\delta_K(n) = Q(n,k_1,-k_1),$$\n\n\\noindent where $$c_1=\\frac{1 - m_1 + m_2 + m_2 n}{2 (-1 + m_1 + m_2)},$$ \nand  $k_1$ is of the integers closest to $c_1$ satisfying $k_1 \\le n/2$. \n\n\\vskip 0.04in\n\n\\textbf{Case B.} $m_1 \\le 0, m_2 \\ge 1$. There are 2 subcases.\n\n\\textbf{(B-1)} ($1 + m_1 + m_2 \\le 0$) or ($1 + m_1 + m_2 > 0$ and $1 + 2m_1 + m_2 < 0$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculating the linear term",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-32-calculating-the-linear-term.md",
+      "narrative": null,
+      "content": "\\begin{theorem}\n\n\\label{prop:b}\n\nFor the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1,0\\}$, we have\n$$\nb_K(n) = \\begin{cases} \\frac{m_2(1-m_1)}{2(-1+m_1+m_2)} &\\mbox{if } (m_1, m_2) \\in I_1 \\cup I_2, \n\\smallskip\n\\\\ 1 + m_1  & \\mbox{if } (m_1, m_2) \\in I_3, \n\\smallskip\n\\\\ \\frac{m_1(m_2-1)}{2(1+m_1+m_2)}   & \\mbox{if } (m_1, m_2) \\in I_4, \n\\medskip\n\\\\ 5/2 + m_1 + 3 m_2  & \\mbox{if } (m_1, m_2) \\in I_5, \n\\smallskip\n\\\\ \\frac {(-5 + 2m_1)(1 + m_2)} {2 (-1 + 2 m_1 + 2 m_2)} & \\mbox{if } (m_1, m_2) \\in I_6 \\mbox{ and } \\frac {-1+(1 + m_2)(n-1)} {-1 + 2 m_1 + 2 m_2} \\notin  \\BZ,\n\\medskip\n\\\\ \\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1501.04614v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] Nathan M. Dunﬁeld and Stavros Garoufalidis, Incompressibility criteria for spun-normal surfaces,\nTrans. Amer. Math. Soc. 364 (2012), no. 11, 6109–6137.\n[2] David Futer, Efstratia Kalfagianni, and Jessica S. Purcell, Slopes and colored Jones polynomials of\nadequate knots, Proc. Amer. Math. Soc. 139 (2011), 1889–1896.\n[3] Stavros Garoufalidis, The degree of a q-holonomic sequence is a quadratic quasi-polynomial, Electron.\nJ. Combin. 18 (2011), no. 2, Paper 4, 23.\n[4]\n, The Jones slopes of a knot, Quantum Topol. 2 (2011), no. 1, 43–69.\n[5] Stavros Garoufalidis and Roland Van der Veen, Quadrat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

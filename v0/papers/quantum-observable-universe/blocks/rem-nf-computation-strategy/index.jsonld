@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nf-computation-strategy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nf-computation-strategy",
+  "kind": "remark",
+  "title": "Computational strategy for the Gröbner--Shirshov normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kummer-shell-closure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form",
+  "tags": [
+    "groebner-basis",
+    "normal-form",
+    "computational-complexity",
+    "optimization",
+    "quotient-ideal",
+    "hecke-algebra"
+  ],
+  "text": "nf-computation-strategy.md",
+  "provenance": "authored"
+}

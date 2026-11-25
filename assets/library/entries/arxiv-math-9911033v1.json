@@ -1,0 +1,603 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9911033v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introductions 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introductions-1.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A lower bound estimate 4",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-2-a-lower-bound-estimate-4.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A counterexample 11",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-002-3-a-counterexample-11.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial uniform estimates 17",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-003-4-partial-uniform-estimates-17.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The uniform corona problem 24",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-5-the-uniform-corona-problem-24.md",
+      "narrative": null,
+      "content": "References 34\n1. Introductions\nSuppose M is an n-dimensional K¨ ahler manifold andL is an ample line\nbundle over M . Let the K¨ ahler form of M be ω g and the Hermitian metric\nofL be H. We assume that ω g is the curvature of H, that is, ω g =Ric(H).\nThe K¨ ahler metric ofω g is called a polarized K¨ ahler metric on M .\nUsing H and ω g, for any positive integer m, H 0(M,L m) becomes a Her-\nmitian inner product space. We use the following notations: suppose that\nS,T ∈H 0(M,L m). Let <S,T > H m be the pointwise inner product and\n(S,T ) =\n∫\nM\n<S,T > H m\nω n\ng\nn!\nbe the inner product of H 0(M,L m).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Let M be a Riemann surface of the genus g ≥ 2. Let KM be the canonical line bundle of M endowed with a Hermitian metric H. Let the curvature ω g of H be positive. ω g gives a K¨ ahler metric of M . Let the curvatureK of ω g satisfy −K1 ≤K ≤K2 for nonnegative constants K1,K 2 ≥ 0 and let δ′ be the injective radius of M . Let δ = min(δ′, 1√K1 +K2 ). Then there is an absolute constant C >0 such that for m ≥ 2, d(m)∑ i=1 ||Si||2 ≥e− Cg3 δ 6 , where {S1, · · ·,S d(m)} is an orthnormal basis of H 0(M,K m M ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "For any ε >0 and m ≥ 2, there is a Riemann surface M of genus g ≥ 2 with the constant Gauss curvature (−1) such that inf x∈M d(m)∑ i=1 ||Si||2 ≤ε. The theorem disproves the conjecture that the absolute lowe r bound ex- ists. When the injective radius of M goes to zero, the ﬁrst eigenvalue and the Sobolev constant will also go to zero. In this case, Theorem 1 .1 gives no information. In the following theorem, we proved that (1.1) has a lower bound which depends only on the local information and is inde pendent to the injective radius of M . For this reason, we call the result partial uniform es",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "Let M be a Riemann surface of genus g ≥ 2 and constant curvature (−1). Then there are absolute constants m0 > 0 and D >0 such that for any m > m0 and any x0 ∈ M , there is a section S ∈ H 0(M,K m M ) with ||S||L2 = 1 such that ||S||(x0) ≥ √ m D(1 + 1√mδ2x0 e π δx0 ) ,(1.2) whereδx0 is the injective radius of δx0. On the coordinate ring ⊕∞ j=0H 0(M,K j M ), we have the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/thm-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-004-04.md",
+      "narrative": null,
+      "content": "Let M be a Riemann surface as above. Then there is an m0 > 0 such that for any m > m0 and S ∈H 0(M,K m M ), there is a decom- position S = d∑ i=1 Si of Si ∈H 0(M,K m M )(i = 1, · · ·,d ) such that ||Si||L2 ≤C(m,m 0,g )||S||L2 ||Si||L∞ ≤C(m,m 0,g )||S||L∞ (1.3) for i = 1, · · ·d, and Si =TiUi for a basis U1, · · ·,U d of H 0(M,K m0 M ) and T1, · · ·,T d ∈H 0(M,K m−m0 M ). Acknowledgment. The author thanks Professor Tian for suggesting me this problem and his help during the preparing of this paper. He also thanks Professor Phong for the support and some suggestions of the w ork.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A lower bound estimate",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-2-a-lower-bound-estimate.md",
+      "narrative": null,
+      "content": "Suppose that $M$ is a Riemann surface of genus $g\\geq 2$.\nLet $K_M$ be the canonical line  bundle over $M$ with the Hermitian\nmetric $H$. We assume that the curvature $\\omega_g$ of $H$ is positive\nand $\\omega_g$ defines a K\\\"ahler metric of $M$.\n\n Let $K$ be\nthe Gauss curvature of the metric $\\omega_g$. Let $K_1$ and $K_2$ be two\nnonnegative\nconstants such that\n\\begin{equation}\\label{kbd}\n-K_1\\leq K\\leq K_2.\n\\end{equation}\nLet $\\delta'$ be the injective radius of $M$ with  and\n\\begin{equation}\\label{delta}\n\\delta=\\min(\\delta',\\frac{1}{\\sqrt{K_1+K_2}}).\n\\end{equation}\n Let $x_0\\in M$ be a\nfixed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "There is a constant C5 such that |a| ≤ C5g3 δ6 , whereg is the genus of the Riemann surface M .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "There is a constant C6 such that ϕ ≤ C6g3 δ6 , and for |z| ≤ δ1, ϕ ≥ −C6g3 δ6 + 2 log |z|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Suppose that (M,g ) is a complete K¨ ahler manifold of complex dimension n, L is a line bundle on M with the Hermitian metric h,and ϕ is a function on M , which can be approximated by a decreasing sequence of smooth functions {ϕ l}1≤l<+∞. If <∂ ∂ϕ l + 2π√−1 (Ric(h) +Ric(g)),v ∧v> g≥C||v||2 g for any tangent vector v of type (1, 0) at any point of M and for each l, where C > 0 is a constant independent of l, and < ·, · >g is the inner product induced by g, then for any C ∞ L-valued (0, 1)-form u1 on M with ∂u 1 = 0 and ∫ M ||u1||2e−ϕdVg ﬁnite, there exists a C ∞ L-valued function u on M such th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(−δx(y) + 1",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-4-δxy-1.md",
+      "narrative": null,
+      "content": "vol(M ) ),∫\nMG(x,y )dx = 0,\nwhere ∆ x is the (complex) Laplacian with respect to x andδx(·) is the Dirac\nfunction. Let b be the function on M such that{\n∆ b =K/ 4 + 1/ 2,∫\nMb = 0.\nSince the K¨ ahler metric ω g ∈ −c1(M ), the above equation has a unique\nsolution.\nLet the function a :M → R deﬁned by\na =G(x,x 0) + 1\n2π (r − 1\nvol(M )\n∫\nM\nr) +b,(2.15)\nwhere x0 is the ﬁxed point of M and r is deﬁned in (2.13). Then a is a\nsmooth function on M . We have{ ∆ a = 1\n4vol(M ) + 1\n2πψ +K/ 4 + 1/ 2,∫\nMa = 0.(2.16)\n7\nLemma 2.4. There is a constant C5 such that\n|a| ≤ C5g3\nδ6 ,\nwhereg is the genus of the Riem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A counterexample",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-3-a-counterexample.md",
+      "narrative": null,
+      "content": "\\label{sec3}\n\nIn the last section, we give a lower bound estimate of~\\eqref{quan}\nin terms of the injective radius of $M$.\nIn this section, we  give a counterexample that the \nuniform estimate is not true. More precisely, we are going to\ndisapprove the following:\n\n{\\bf Conjecture.} Let $K_M$ be the canonical line bundle of  a Riemann\nsurface $M$ of genus $g\\geq 2$ and constant Gauss curvature $(-1)$. Then\nfor $m$ sufficiently large, there is a number $C(m,g)>0$,\ndepending only on $m$ and  $g$,\n such that for\nany\northonormal basis $S_1,\\cdots,S_d$ of $H^0(M,K_M^m)$, we have\n\\[\n\\inf \\sum_{i=1}^d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "With the notations as above, g1,g 2,g 3 are holomorphic func- tions on C. Furthermore f =g1 +g2 +g3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "(ρ,θ ) is the local coordinate system of M as long as sinhρ ·δ ≤ε1 = 8 √ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "Either z =x +iy or z =x −iy is holomorphic on M .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Then f is a",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-c-then-f-is-a.md",
+      "narrative": null,
+      "content": "period function on [ −R,R ] × R, satisfying\nf (ρ,θ ±δ) = f (ρ,θ ).\nLet the Fourier expansion of f (−R,θ ) and f (R,θ ) be\nf (−R,θ ) =\n+∞∑\nk=−∞\nAke\n2πi\nδ kθ;\nf (R,θ ) =\n+∞∑\nk=−∞\nBke\n2πi\nδ kθ.\n12\nDeﬁne\ng1 =\n∞∑\nk=1\nAke− 4π\nδ k( π\n4 −arctan e− R)wk,\ng2 =B0,\ng3 =\n−1∑\nk=−∞\nBke− 4π\nδ k( π\n4 −arctan eR)wk,\n(3.4)\nwhere w is in (3.2). We have the following lemma:\nLemma 3.1. With the notations as above, g1,g 2,g 3 are holomorphic func-\ntions on C. Furthermore\nf =g1 +g2 +g3.\nProof. g2 is a constant. So it is automatically holomorphic. By equa-\ntion (3.2), we have\n|w| ≤ e− 4π\nδ (arctan eρ − π\n4 ).\nThus we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "With the notations as above, let x0 = (ρ0, 0). Then lim δ→0 ||Si||2(x0) ||Si||2 L2(C) = 0 for i = 1, 2, 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let S ∈H 0(M,K m",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-2-let-s-h-0mk-m.md",
+      "narrative": null,
+      "content": "M ). We choose an x0 ∈M as follows: let ρ0< 0 be the\nnumber such that\nδ(coshρ0)2 =ε1.\n14\nThen ρ0 → −∞, ρ0 +R → +∞ as δ → 0.\nBy (3.3), we see that ( dz)m ∈H 0(C,K m\nM ). Furthermore (dz)m ⁄= 0 on C.\nThus for any S ∈H 0(M,K m\nM ), there is a holomorphic function f onC such\nthat\nS|C =f (dz)m.\nLet\nf =g1 +g2 +g3,\nwhere g1,g 2,g 3 are deﬁned in Lemma 3.1. Let\nSi =gi(dz)m, i = 1, 2, 3.(3.7)\nLemma 3.4. With the notations as above, let x0 = (ρ0, 0). Then\nlim\nδ→0\n||Si||2(x0)\n||Si||2\nL2(C)\n= 0\nfor i = 1, 2, 3.\nProof. By (3.2), we have\nw(x0) = e− 4π\nδ (arctan eρ 0 − π\n4 ).\nThus\n||S1||2(x0) = 1\n(coshρ0)2m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial uniform estimates",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-4-partial-uniform-estimates.md",
+      "narrative": null,
+      "content": "Let\n$M$ be a Riemann surface of genus $g$ and constant\n curvature $(-1)$.\nIn this section, we\nprove that there is a (positive) lower bound of ~\\eqref{quan} depending\nonly\non the injective radius of the point. More precisely,\nfor $m$ large \nenough, for any $x\\in M$, there is a section $S\\in H^0(M,K_M^m)$\nsuch that $||S||_{L^2}=1$ and $||S||(x)\\geq C(\\delta_x)$\nwhere $C(\\delta_x)$ is a positive constant\ndepending only on $\\delta_x$\n and $\\delta_x$ is the\ninjective radius  at $x$.\n\nNote that in the result the lower bound \ndoesn't depend on the injective radius of $M$, which will go to zero as \n$M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In a neighborhood Ux of x, ϕ can be written as",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-1-in-a-neighborhood-ux-of-x-ϕ-can-be-written-as.md",
+      "narrative": null,
+      "content": "ϕ = 2 logd(x) +ψ,\nwhereψ is a smooth function on Ux. Consequently,\n∫\nUx\ne−ϕ = +∞.(4.28)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a constant C13 such that",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-2-there-is-a-constant-c13-such-that.md",
+      "narrative": null,
+      "content": "√−1\n2π ∂∂ϕ ≥ −C13ω g(4.29)\non M \\{x}, where ω g is the K¨ ahler form ofM ;\n22\n3. ϕ satisﬁes\nϕ ≤C13(4.30)\non M and\nϕ ≥ 2 logd(x) − 2π\nδx0\n−C13(4.31)\nfor d(x) ≤δx0.\nProof. Letγ1, · · ·,γ s be the closed geodesics such that length(γi)< 1\n1000 .\nLetCγi be the corresponding collars. Let\nCγi(Ri − 4) = {x|dist(x,γ i) ≤Ri − 4} i = 1, · · ·s.\nFor any x0 ∈ M , if x0 ∈ Cγi(Ri − 4) for some i, then let Cδ = Cγi and\ndeﬁne ϕ =ϕ x0 :M → R as follows\nϕ =\n\n\n\n2η(ρ − (R − 3))ϕ 3 ρ ≥ 0 and x ∈Cδ,\n2η(−ρ − (R − 3))ϕ 3 ρ< 0 and x ∈Cδ,\n0 otherwise,\n(4.32)\nwhere the function η is deﬁned in (2.10). By Lemma 4.1, Lem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "Let M be a Riemann surface of genus g ≥ 2 and constant curvature (−1). Then there are absolute constants m0 > 0 and D >0 such that for any m > m0 and any x0 ∈ M , there is a section S ∈ H 0(M,K m M ) with ||S||L2 = 1 such that ||S||(x0) ≥ √m D(1 + 1√mδ2x0 e π δx0 ) .(4.34)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The uniform corona problem",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-013-5-the-uniform-corona-problem.md",
+      "narrative": null,
+      "content": "Let $M$ be a Riemann surface of genus $g\\geq 2$. It is well known \nthat the coordinate ring $\\oplus_{m=0}^\\infty H^0(M,K_M^m)$\nis finitely generated. That is, there is an $m_0>0$ such that for any\n$m>0$ and $S\\in H^0(M,K_M^m)$, $S$ can be represented by\n\\begin{equation}\\label{corona}\nS=\\sum_{i=1}^{d} U_iT_i,\n\\end{equation}\nwhere $U_i\\in H^0(M,K_M^{m_0})$ and $T_i\\in H^0(M,K_M^{m-m_0})$\nfor $i=1,\\cdots, d=\\dim H^0(M,K_M^{m_0})$.\nFinding a suitable set of $\\{T_i\\}_{i=1,\\cdots,d}$ is called the \ncorona problem(cf. ~\\cite{JBG}).\n\n\n\nWe need to consider the case where\n$M$ approaches to the boundary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There are decompositions U ′",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-014-2-there-are-decompositions-u.md",
+      "narrative": null,
+      "content": "i|Cδi (Ri) =α iv1i +v2i with\nv1i = 1√δi\nηi(dzi)m0, 1 ≤i ≤s(5.23)\nand\n(v1i,v 2i)Cδi (Ri) = 0, 1 ≤i ≤s,\nwhere α i(i = 1, · · ·,s ) are a constant such that for 1 ≤i ≤s,\n1 ≤∼α i ≤∼ 1;(5.24)\n28",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "With the notations as above, there are holomorphic sections U1, · · ·,U s ∈H 0(M,K m0 M ) such that 1. ||Ui|| ≥∼ 1√ δi e−m0|ρi| on Cδi(Ri);",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "If x /∈ ∪ s j=1Cδj (Rj − 2), then d∑ i=1 ||Ui||2 ≥∼ 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prop-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "prop-sec-016-02.md",
+      "narrative": null,
+      "content": "LetU1, · · ·,U d be sections ofH 0(M,K m0 M ) as above. Then ||Ui|| + ||∇Ui|| ≤∼ 1 x /∈ ∪ s j=1Cδj (Rj − 2),(5.35) ||Ui|| + ||∇Ui|| ≤∼ e−(m0+1)(Rj −|ρj|) x ∈Cδj (Rj − 2), 1 ≤j ≤s,(5.36) for i>s and ||Ui|| + ||∇Ui|| ≤∼ δim0− 1 2 x /∈ ∪ s j=1Cδj (Rj − 2),(5.37) ||Ui|| + ||∇Ui|| ≤∼ 1 √ δiem0|ρi| x ∈Cδi(Ri − 2),(5.38) ||Ui|| + ||∇Ui|| ≤∼ δ m0− 1 i e−(m0+1)(Rj −|ρj|) x ∈Cδj (Rj − 2),j ⁄=i.(5.39) for 1 ≤i ≤s. Furthermore, d∑ k=1 ||Ui||2 ≥∼ 1(5.40) for x /∈ ∪ s i=1Cδi(Ri − 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "By (5.4) and (5.5),",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-3-by-54-and-55.md",
+      "narrative": null,
+      "content": "∫\nM \\Cδi(Ri)\n||U ′\ni||2 ≤∼δ2m0−1\ni(5.25)\nfor i = 1, · · ·,s .\nWe have the following lemma:\nLemma 5.3. With the notations as above, there are holomorphic sections\nU1, · · ·,U s ∈H 0(M,K m0\nM ) such that\n1. ||Ui|| ≥∼ 1√\nδi\ne−m0|ρi| on Cδi(Ri);",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-2-uicδj-rj-v-1jcδj-rj-0-for-i-j-1-ij-s.md",
+      "narrative": null,
+      "content": "3.\n∫\nM \\Cδi (Ri) ||Ui||2 ≤∼δ2m0−1\ni .\nProof. Let\nβij = (U ′\ni,v 1j)Cδj (Rj ), 1 ≤i,j ≤s.\nThen if i ⁄=j we have\n|βij| ≤∼ δ\nm0− 1\n2\ni(5.26)\nby (5.25) and the deﬁnition of v1j, (j = 1, · · ·,s ) in (5.23). We also have\n1 ≥∼βii ≥∼ 1(5.27)\nby (5.24).\nLetB = (βij)s×s be the matrix of (βij) for 1 ≤i,j ≤s. Then by (5.26), (5.27),\nB is an invertible matrix, when max δi is small enough. Let A = B−1 be\nthe inverse matrix and let A = (α ij)s×s. Deﬁne\nUi =\ns∑\nj=1\nα ijU ′\nj, 1 ≤i ≤s.\nThenUi(i = 1, · · ·,s ) satisﬁes all the requirements in the lemma by the fact\nthat\n|α ij| ≤∼ δ\nm0− 1\n2\ni i ⁄=j,\n1 ≥∼α ij ≥∼",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9911033v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[1] L. Carleson. Interpolations by bounded analytic functi ons and the corona problem.\nAnn. of Math. (2) , 76:547–559, 1962.\n[2] D. Catlin. The Bergman kernel and a theorem of Tian. In Analysis and geometry in\nseveral complex variables , Trends Math., pages 1–23. Birkh¨ user, 1997.\n[3] J. Cheeger and D. Ebin. Comparison theorems in Riemannian geometry . North-\nHolland Publishing Company, 1975.\n[4] J. Garnett. Bounded analytic functions . Pure and applied mathematics. Academic\nPress, 1981.\n[5] Y. Kawamata. Kodaira dimension of algebraic ﬁber spaces over curves. Invent. Math. ,\n66(1):57–71, 1982",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

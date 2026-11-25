@@ -1,0 +1,363 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1211.1812v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1211.1812v5  [math-ph]  11 Aug 2014\nPresheaves of superselection structures in curved spacetimes\nEzio Vasselli\nezio.vasselli@gmail.com\nOctober 17, 2018\nAbstract\nWe show that superselection structures on curved spacetimes, that are expected to describe\nquantum charges aﬀected by the underlying geometry, are categories of sections of presheaves of\nsymmetric tensor categories. When an embedding functor is given, the superselection structure\nis a Tannaka-type dual of a locally constant group bundle, which hence becomes a natural\ncandidate for the role of gauge group. Indeed, we show that any",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#intro label=\"intro\"}\n\nIn the ordinary approach to the theory of particle physics quantum fields are fundamental objects, but do not necessarily yield quantum observables because the property of gauge invariance with respect to a symmetry group must be imposed.\n\nIn algebraic quantum field theory this point of view is subverted: at a first stage only quantum observables are considered, in the spirit that these contain all the physical informations of the system under consideration.\n\nThus one could ask whether the observable quantities determine the quantum fields and the gauge group, and the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mathematical background.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-mathematical-background.md",
+      "narrative": null,
+      "content": "[]{#sec.back label=\"sec.back\"}\n\nIn the present section we recall some mathematical tools that shall be used in the sequel. In the following lines we start by defining some notations.\n\nGiven a Hilbert space $H$, we write $UH$ for the unitary group and $BH$ for the *C\\**-algebra of bounded operators on $H$.\n\nIn the sequel, families of Hilbert spaces $H = \\{ H_o \\}_{o \\in I}$ will be considered and we shall write $BH = \\{ BH_o \\}_{o \\in I}$ for the corresponding families of *C\\**-algebras; no confusion should arise with the case of a single Hilbert space, since it should be clear from the context",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry of posets.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-geometry-of-posets.md",
+      "narrative": null,
+      "content": "[]{#sec.back.posets label=\"sec.back.posets\"}\n\nLet $M$ be a connected manifold. We say that a base $\\Delta$ for the topology of $M$ is *good* whenever any $a \\in \\Delta$ has compact closure and is arcwise and simply connected. For example, we have the Minkowski spacetime, that has a good base given by the set of double cones, or, more generally, a globally hyperbolic spacetime, that has a good base base given by the set of diamonds ([@GLRV01; @BR08]). In the present paper we shall always consider good bases.\n\nNow, $\\Delta$ becomes a *poset* (partially ordered set) when endowed with the order re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nets of C*-algebras.",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-22-nets-of-c-algebras.md",
+      "narrative": null,
+      "content": "[]{#sec.back.nets label=\"sec.back.nets\"}\n\nA *net*\n\n[^1]\n\nof *C\\**-algebras over $\\Delta$ is given by a family $A = \\{ A_a \\}_{a \\in \\Delta}$ of unital *C\\**-algebras, and unital \\*-monomorphisms (called *the net structure*)\n\n$$\\jmath_{a'a} : A_a \\to A_{a'}\n\\ \\ : \\ \\\n\\jmath_{a''a'} \\circ \\jmath_{a'a} = \\jmath_{a''a}\n\\ \\ , \\ \\\n\\forall a \\subseteq a' \\subseteq a''\n\\ .$$\n\nWe shall use the notation $\\EuFrak{A}= (A,\\jmath)_\\Delta$. Morphisms\n\n$\\nu : \\EuFrak{A}\\to \\EuFrak{A}'$\n\nof nets of *C\\**-algebras are defined by families of \\*-morphisms\n\n$$\\nu_a : A_a \\to A'_a\n\\ \\ : \\ \\\n\\nu_{a'} \\circ \\jmath_{a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nets and presheaves of tensor categories.",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-23-nets-and-presheaves-of-tensor-categories.md",
+      "narrative": null,
+      "content": "[]{#sec.back.presheaves label=\"sec.back.presheaves\"}\n\nIn the present section we recall some properties of nets and presheaves of tensor categories, that constitute one of the main objects of study in the present paper. More detailed references on this topic are [@Rob; @Vas12].\n\n#### DR-categories.\n\nA *C\\**-*category* is a category $C$ whose spaces of arrows are Banach spaces endowed with an antilinear involution\n\n$* : (\\rho,\\sigma) \\to (\\sigma,\\rho)$, $\\forall \\rho,\\sigma \\in {\\bf obj \\ }C$,\n\nsuch that\n\n$(t \\circ t')^* = t'^* \\circ t^*$, $\\| t^* \\circ t \\| = \\| t \\|^2$\n\nfor any pair of composa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Presheaves in quantum field theory.",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-3-presheaves-in-quantum-field-theory.md",
+      "narrative": null,
+      "content": "[]{#sec.qft label=\"sec.qft\"}\n\nIn the present section we give the main result of the present paper, showing that the superselection structures over globally hyperbolic spacetimes introduced by Brunetti and Ruzzi ([@BR08]) can be interpreted as section categories of simple, symmetric tensor presheaves.\n\nActually, the fact that a superselection structure defines a *net* $\\EuFrak{T}$ of tensor *C\\**-categories was recognized in [@GLRV01 §3], [@Rob §27] (see Ex.[\\[ex.Rob\\]](#ex.Rob){reference-type=\"ref\" reference=\"ex.Rob\"}). Nevertheless $\\EuFrak{T}$ does not suffice to characterize the superselect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Charge structure.",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-31-charge-structure.md",
+      "narrative": null,
+      "content": "To introduce the charge structure we follow the standard way and, given $a \\in \\Delta$, define the set\n\n${\\bf loc}R_a \\subseteq {\\bf end}R_a$\n\nwhose elements are \\*-endomorphims\n\n$$\\label{eq.C0}\n\\rho \\in {\\bf end}R_a  \\ \\ | \\ \\  \\exists e < a \n\\ \\ {\\mathrm{fulfilling}} \\ \\\n\\left\\{\n\\begin{array}{ll}\n\\rho(R_o) \\subseteq R_o \\ , \\ \\forall o \\supseteq e ,  o < a ,\n\\\\\n\\rho = id_{R_o} \\ , \\ \\forall o \\perp e ,  o < a \\ .\n\\end{array}\n\\right.$$\n\nIn the sequel we shall keep in evidence the *localization region* $e \\in \\Delta^a$ by writing $\\rho_e \\equiv \\rho$. Note that\n\n$\\tau_e := \\rho_e \\circ \\sigma_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry.",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-32-symmetry.md",
+      "narrative": null,
+      "content": "[]{#sec.sym label=\"sec.sym\"} As a final step we consider the symmetry structure. This is an essential ingredient at the level of duality theory ([@DR89 §1]) and, at the same time, encodes the Fermi-Bose statistics (see [@Dop11] for a friendly introduction). We introduce the family of unitary operators\n\n$$\\label{eq.sym.z1}\n\\epsilon(z_\\rho,w_\\sigma)_e := w_\\sigma(p_{oe})^* \\sigma_o(z_\\rho(p_{o'e}))^* \\cdot\n                            z_\\rho(p_{o'e}) \\rho_e(w_\\sigma(p_{oe}))\n\\ \\ , \\ \\\n\\forall  e < a\n\\ ,$$\n\nwhere\n\n$p_{oe} : e \\to o$, $p_{o'e} : e \\to o'$ are paths in $\\Delta^a$ such that $o \\perp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main result.",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-33-the-main-result.md",
+      "narrative": null,
+      "content": "We now define a presheaf structure on the family\n\n$Z^1_c(\\EuFrak{R})_< := \\{ Z^1_c(\\EuFrak{R})_{<a} \\}_{a \\in \\Delta}$,\n\nby means of the restriction functors\n\n$$r_{aa'} : Z^1_c(\\EuFrak{R})_{<a'} \\to Z^1_c(\\EuFrak{R})_{<a}\n\\ \\ , \\ \\\n( \\ r_{aa'}z := z|_{\\Sigma_1(\\Delta^a)}\n\\ , \\\nr_{aa'}\\rho := \\{ \\rho_e \\}_{e \\in \\Delta^a} \\ )\n\\ \\ , \\ \\\nr_{aa'}t := \\{ t_e \\}_{e \\in \\Delta^a}\n\\ ,$$\n\nwhich obviously fulfill the presheaf relations\n\n$r_{aa''} = r_{aa'} \\circ r_{a'a''}$, $\\forall a \\subseteq a' \\leq a''$.\n\n::: lem\n[]{#lem.br1 label=\"lem.br1\"} The pair $\\EuFrak{Z}_\\otimes := (Z^1_c(\\EuFrak{R})_<,r)^\\D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group bundles as global gauge symmetries.",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-4-group-bundles-as-global-gauge-symmetries.md",
+      "narrative": null,
+      "content": "[]{#sec.gauge label=\"sec.gauge\"}\n\nIn the previous section we proved that the superselection structure $Z^{1,\\bullet}(\\EuFrak{R})$ can be described by a presheaf and, as a consequence of [@Vas12], as the dual of a group (net) bundle $\\EuFrak{G}$ when an embedding is given. To illustrate the way in which $\\EuFrak{G}$ should behave like a gauge group, we give a class of examples in which an action of the type ([\\[eq.GA00\\]](#eq.GA00){reference-type=\"ref\" reference=\"eq.GA00\"}) is implemented and representations of the type defined in §[\\[sec.back.nets\\]](#sec.back.nets){reference-type=\"ref\" refere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted field nets.",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-41-twisted-field-nets.md",
+      "narrative": null,
+      "content": "Let $\\EuFrak{F}= (F,\\jmath)_\\Delta$ be a net of $C^*$-algebras. We say that $\\EuFrak{F}$ is ${\\mathbb Z}_2$-*graded* whenever there is a period $2$ automorphism\n\n$$\\beta_a : F_a \\to F_a\n\\ \\ : \\ \\\n\\beta_{a'} \\circ \\jmath_{a'a} = \\jmath_{a'a} \\circ \\beta_a\n\\ \\ , \\ \\\n\\beta_a^2 = id_{F_a}\n\\ \\ , \\ \\\n\\forall a \\subseteq a' \\in \\Delta \\ .$$\n\nIn this case we set\n\n$$F^\\pm_a \\ := \\ \\{ t \\in F_a : \\beta_a(t) = \\pm t  \\}\n\\ \\ , \\ \\\n\\forall a \\in \\Delta\n\\ ,$$\n\nso we have the usual projections\n\n$$F_a \\to F^\\pm_a\n\\ , \\\nt \\mapsto t^\\pm := 1/2 (t \\pm \\beta_a(t))\n\\ \\ , \\ \\\n\\forall a \\in \\Delta \\ .$$\n\nThe followi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted nets and background potentials.",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-42-twisted-nets-and-background-potentials.md",
+      "narrative": null,
+      "content": "[]{#rem.qed label=\"rem.qed\"}\n\nWe show how a class of twists arises when a quantum field interacts with a *classical* background potential. We start by assuming that $M$ is a globally hyperbolic spin manifold and consider the free Dirac field $\\psi_*$ interacting with a (classical) closed 1--form $A \\in Z^1_{deRham}(M)$.\n\nTo this end we extract some informations from $A$. A first point is that, since $A$ is closed, for any loop $\\ell : [0,1] \\to M$ the integral\n\n$\\int_\\ell A$\n\nis independent of the choice of $\\ell$ in its homotopy class, thus we obtain the character\n\n$$\\label{eq,A0}\n\\zeta_A : \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Current algebras on S1.",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-43-current-algebras-on-s1.md",
+      "narrative": null,
+      "content": "[]{#sec.BMT label=\"sec.BMT\"}\n\nWe now apply Lemma [\\[lem.gauge1\\]](#lem.gauge1){reference-type=\"ref\" reference=\"lem.gauge1\"} to current algebras on $S^1$ defined as in the approach of Buchholz-Mach-Todorov ([@BMT1; @BMT2]); here, at a first stage, fields fulfilling braided commutation relations appear, anyway after a \\\"bosonization\\\" procedure a causal field net is constructed. For a complete discussion of the model we refer the reader to the above-cited references; here we limit ourselves to give the basic definitions, needed to see how Lemma [\\[lem.gauge1\\]](#lem.gauge1){reference-type=\"ref\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of field nets with a given gauge symmetry.",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-013-44-existence-of-field-nets-with-a-given-gauge-sy.md",
+      "narrative": null,
+      "content": "[]{#sec.free label=\"sec.free\"} The following construction is on the line [@DP02], where similar results are proven for the Minkowski spacetime. We prove that for every suitable compact group $G_0$, globally hyperbolic spacetime $M$ and flat bundle $\\mathcal G\\to M$ with suitable structure group, there is a twisted field net over which $\\mathcal G$ acts as a group of internal symmetries. The \\\"untwisted\\\" net from which we start is defined by means of generalized free fields and yields a large class of toy models where the analysis of topologically trivial superselection sectors of [@GLRV01; @R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and the gerbe perspective.",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-014-5-conclusions-and-the-gerbe-perspective.md",
+      "narrative": null,
+      "content": "[]{#sec.concl label=\"sec.concl\"}\n\nIn the present paper we proved that superselection structures in curved spacetimes are section categories of presheaves of symmetric tensor *C\\**-categories.\n\nAs a consequence, several new invariants are assigned to a sector: a holonomy with values in a compact Lie group, characteristic classes, a 1--cochain defining a non-abelian cocycle. As a further novelty, when an embedding is given a Tannaka duality describes the superselection structure in terms of equivariant Hilbert net bundles (or equivariant flat Hermitian bundles, see [@RRV08; @Vas12]), and this in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 37,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "1. For any a ∈∆, cocycle zρ ∈obj Z1 c (R)<a and paths p, p′ : e →o in ∆a , we have z(p) = z(p′).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/lem-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 37,
+      "target": "lem-sec-015-02.md",
+      "narrative": null,
+      "content": "2. The symmetry operator (3.9) is independent of the choice of poe, po′e , o and o′ , for any e < a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1211.1812v5/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+      "pageStart": 30,
+      "pageEnd": 37,
+      "target": "../sections/sec-015-a-symmetry-and-fields-in-globally-hyperbolic-man.md",
+      "narrative": null,
+      "content": "Symmetry and ﬁelds in globally hyperbolic manifolds.\nThe proof of the symmetry relations (3.10).\nBefore to make the necessary computations we\nneed two Lemmata:\nLemma A.1. For any a ∈∆, cocycle zρ ∈obj Z1\nc (R)<a and paths p, p′ : e →o in ∆a , we have\nz(p) = z(p′).\n30\nProof. Let p′ : o →e denote the opposite path. Then p ∗p′ : o →o is a loop in ∆a and, since\nπ1(∆) = π1(a) = 0, we have that p ∗p′ is homotopic to the trivial loop bo : o →o, bo := (o, o; o).\nBy [35, Lemma 2.6-7] we conclude that z(p)z(p′)∗= z(p ∗p′) = z(bo) = 1.\nThe independence of p allows us to write zoe := z(p), p : e →o; note",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

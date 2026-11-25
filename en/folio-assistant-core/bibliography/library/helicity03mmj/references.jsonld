@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/helicity03mmj",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Geometry of higher helicities",
+      "dcterms:creator": [
+        "KHESIN, BORIS A."
+      ],
+      "dcterms:issued": "D:20040302",
+      "dcterms:abstract": "We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem. We also survey various results related to Arnold’s the- orem on the asymptotic Hopf invariant on three-dimensional manifolds and recent work on linking of a vector ﬁeld with a foliation, the asymp- totic crossing number, short path systems, and relations with the Calabi invariant. 2000 Math. Subj. Class. 37A15, 55Q25, 76W05.",
+      "dcterms:source": "library/helicity03mmj/manifest.jsonld",
+      "dcterms:hasVersion": "library/helicity03mmj"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2501.08619v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+      "dcterms:creator": [
+        "Schar, T.",
+        "Schierholz, 1 G.",
+        "Stüben, 4 H.",
+        "Young, 5 R. D.",
+        "1",
+        "Zanotti1, J. M."
+      ],
+      "dcterms:issued": "D:20250522",
+      "dcterms:identifier": "https://arxiv.org/abs/2501.08619",
+      "dcterms:source": "library/arxiv-2501.08619v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2501.08619v2"
+    }
+  ]
+}

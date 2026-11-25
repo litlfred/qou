@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-cemetery-group-emergence",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:cemetery-group-emergence",
+  "kind": "conjecture",
+  "title": "Cemetery group as the kernel of the observation functor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-cemetery-group",
+    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization",
+    "papers/quantum-observable-universe/blocks/conj-gs-spectral-sum-finite"
+  ],
+  "cites": [
+    "references/khovanovlauda2009",
+    "references/brundankleshchev2009"
+  ],
+  "tags": [
+    "tier:S",
+    "cemetery-group",
+    "decoupling",
+    "homological-filter",
+    "kill-switch",
+    "computational-shortcut"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.CemeteryGroupEmergence",
+  "text": "cemetery-group-emergence.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/bujack2022.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-125r95t2jxo.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-125r95t2jxo","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/bujack2022.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/bujack2022.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/bujack2022.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;bujack2022&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 124,
+    &quot;entry&quot;: {
+      &quot;id&quot;: &quot;bujack2022&quot;,
+      &quot;status&quot;: &quot;verified-clean&quot;,
+      &quot;verified_at&quot;: &quot;2026-05-19T18:18:00Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-4-7&quot;
+      },
+      &quot;fixes_applied&quot;: 0,
+      &quot;fix_commit&quot;: &quot;(this commit)&quot;,
+      &quot;note&quot;: &quot;PDF is Bujack et al. &#39;The non-Riemannian nature of perceptual color space&#39; (PNAS 2022) — exact match.&quot;,
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf&quot;
+      },
+      &quot;local_pdf&quot;: &quot;library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;JOIN CONFIRMED against the document&#39;s own front matter and against the registered entry&#39;s volume/issue/article-number. Citation is heavily load-bearing in `rem:schrodinger-color-falsifiability` — and TWO of the claims made there are NOT supported by the source. (1) MISCITED — FABRICATED CROSSOVER. `schrodinger-color-falsifiability.md:41` writes: &#39;Bujack et al. found the diminishing-returns effect barely significant at Δd = 5 (β=0.048, p=0.010) and strongly significant at Δd = 10 (β=0.119, p&lt;0.001). The perceptual crossover empirically lies in [5,10], bracketing the predicted d* ≈ 9.6.&#39; Both numbers are quoted correctly from Table 1 (p. 5) — but they are the regression coefficients on the Δd INDICATOR LEVELS, i.e. how much larger a Δd=10 stimulus pair is judged than the baseline. They rise with Δd under ANY monotone metric, including a purely Riemannian one, so they carry no information about a Riemannian→logarithmic crossover. The source&#39;s diminishing-returns coefficient is the SEPARATE β_d̄ = −0.005, a single number that is not a function of Δd. The source reports NO crossover scale anywhere. The &#39;empirical crossover in [5,10] bracketing d* ≈ 9.6&#39; is therefore an artifact of misreading the regression — and it is the only numerical corroboration the block offers for η. (2) OVERSTATED — &#39;proved&#39;. Line 5 of the block says the source &#39;proved that perceived color differences violate Riemannian additivity&#39;. The source explicitly hedges the very coefficient at issue (p. 5): the β_d̄ result &#39;relies on the L* axis being nearly perceptually uniform. This assumption may not be appropriate, so we interpret the negativity of the β_d̄ as WEAKLY SUPPORTING our claim of nonadditivity and as motivation to carry out further analysis.&#39; (3) STATUS INFLATION in the Table 3 data block: the second-order Weber–Fechner row is marked &#39;✓&#39; under &#39;Empirical status&#39;, but the source calls it a conjecture — &#39;Our findings HINT at the potential existence of a second-order Weber–Fechner law… More research must go into the validation of this conjecture&#39; (p. 8). WHAT IS CORRECT: every Table-1 figure is quoted exactly (β₀=0.161/t=8.894; β_{Δd=5}=0.048/t=2.815/p=0.010; β_{Δd=10}=0.119/t=6.632; β_d̄=−0.005/t(60)=−5.566; R²=0.556, F(3,60)=25.00); the sub-additivity direction ΔE(A,C) &lt; ΔE(A,B)+ΔE(B,C) matches the source&#39;s diminishing-returns finding; the ~0.5 power-law exponent attribution to prior suprathreshold work matches p. 3. Verdict is `supporting` not `core`: the source genuinely supplies the qualitative non-Riemannian / sub-additive fact the block needs, and supplies none of the quantitative agreement the block claims from it. Separate minor item: the block evaluates at q₀ ≈ 1.109978595554181, which matches NEITHER documented pin (proton 1.1099785827513808, muon 1.10997859555733471) — it diverges from the muon value at the 11th decimal.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Table 1, p. 5&quot;,
+            &quot;statement&quot;: &quot;Regression coefficients: β₀=0.161 (t(60)=8.894), β_{Δd=5}=0.048 (t=2.815, P=0.010), β_{Δd=10}=0.119 (t=6.632, P&lt;0.001), β_d̄=−0.005 (t(60)=−5.566, P&lt;0.001); R²=0.556, F(3,60)=25.00.&quot;,
+            &quot;useForFolio&quot;: &quot;β_d̄ is the ONLY diminishing-returns coefficient; the Δd-level coefficients must be removed from the crossover argument in the falsifiability remark.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:schrodinger-color-falsifiability&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;p. 5, interpretation of β_d̄&quot;,
+            &quot;statement&quot;: &quot;The authors interpret the negativity of β_d̄ as WEAKLY supporting nonadditivity, conditional on the L* axis being nearly perceptually uniform — an assumption they say &#39;may not be appropriate&#39;.&quot;,
+            &quot;useForFolio&quot;: &quot;Downgrades the block&#39;s &#39;proved&#39; to &#39;reported evidence for&#39;.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:schrodinger-color-falsifiability&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;p. 8, Discussion&quot;,
+            &quot;statement&quot;: &quot;The second-order Weber–Fechner law is stated as a conjecture requiring further validation, not as a finding.&quot;,
+            &quot;useForFolio&quot;: &quot;The Table 3 &#39;✓&#39; in the Empirical status column must become &#39;conjectured by&#39; / &#39;consistent with&#39;.&quot;,
+            &quot;targets&quot;: [
+              &quot;tbl:schrodinger-color-falsifiability-table3-data&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Withdraw the crossover-bracketing sentence: the β_{Δd=5} vs β_{Δd=10} contrast is not a crossover measurement and the source reports no crossover scale. Record the correction and the resulting fact that the framework&#39;s η prediction currently has NO empirical corroboration in this source. Scope-(a): as read, this document supplies no crossover datum — it does not refute η either.&quot;,
+            &quot;target&quot;: &quot;rem:schrodinger-color-falsifiability&quot;,
+            &quot;bean&quot;: &quot;qou-w34d&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Soften &#39;proved&#39; to match the source&#39;s own hedge (p. 5), and re-mark the Table 3 Weber–Fechner row as the source&#39;s conjecture rather than a confirmation (p. 8).&quot;,
+            &quot;target&quot;: &quot;tbl:schrodinger-color-falsifiability-table3-data&quot;,
+            &quot;bean&quot;: &quot;qou-x3be&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;q₀ ≈ 1.109978595554181 in the block matches neither documented pin; per the 2026-08-07 owner directive new/touched compute defaults to the proton pin. Recompute η and d* at q_parameter.Q and state the pin used.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/predicted-spectra/schrodinger-color-falsifiability.md&quot;,
+            &quot;bean&quot;: &quot;qou-fls0&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;2bc66a26d390&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-cond-mat-0112325v6",
+  "blocks": [
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Topological objects (monopoles, vortices, skyrmions, etc.) \nhave played an increasingly important role\nin physics \\cite{dirac,abri}. In particular finite energy topological\nobjects have been widely studied in theoretical physics\n\\cite{skyrme,thooft}. A recent addition to this family of finite\nenergy solitons has been the knots \\cite{fadd1,prl01}.\nThe interest on these topological objects,\nhowever, has been confined mainly to theoretical physics, \nbecause most of them (exept the vortices) exist in\n``hypothetical'' worlds which are very difficult to\ncreate in laboratories. The only\ntopological o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot in Skyrme theory",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-knot-in-skyrme-theory.md",
+      "narrative": null,
+      "content": "The Skyrme theory has a rich topological structure.\nIt has skyrmion and baby skyrmion \\cite{skyrme,piet}.\nBut recently it has been shown that the theory allows\na knotted soliton identical to\nthe Faddeev-Niemi knot in Skyrme-Faddeev\nnon-linear sigma model, which can be identified as a twisted \nvortex ring made of helical baby skyrmion \\cite{prl01,plb04}. \nTo see this, we review the knot in Skyrme theory first. \n\nLet $\\omega$ and $\\hn$ be the scalar field and \nthe non-linear sigma field in Skyrme theory. With\n\\bea\n&U = \\exp (\\omega \\dfrac{\\vec \\sigma}{2i} \\cdot \\hat n)\n= \\cos \\dfrac{\\omega}{2} -",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:cond-mat/0112325v6  19 Jul 2006\nKnots in Condensed Matters\nY. M. Cho∗\nCenter for Theoretical Physics and School of Physics\nCollege of Natural Sciences,\nSeoul National University, Seoul 151-742, Korea\nWe propose two types of topologically stable knot solitons in condensed matters, one in two-\ncomponent Bose-Einstein condensates and one in two-gap superconductors. We identify the knot in\nBose-Einstein condensates as a twisted vorticity ﬂux ring and the knot in two-gap superconductors\nas a twisted magnetic ﬂux ring. In both cases we show that there is a remarkable interplay between\ntopology",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot in Two-component Bose-Einstein Condensates",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-knot-in-two-component-bose-einstein-condensate.md",
+      "narrative": null,
+      "content": "The recent advent of multi-component BEC (in particular\nthe spin-1/2 condensate of $^{87}{\\rm Rb}$ atoms)\nhas widely opened a new opportunity for\nus to study novel topological objects which can not be\nrealized in ordinary (one-component) BEC \\cite{bec,ruo}.\nThis is because the multi-component BEC naturally allows\na non-Abelian structure which accommodates a non-trivial\ntopological objects, in particular a topolgical knot which is\nvery similar to the knot in Skyrme theory \\cite{bec1,bec5}.\n \nThere are two competing theories of two-component BEC,\nthe popular Gross-Pitaevskii theory \\cite{ruo} an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot in Two-gap Superconductors",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-4-knot-in-two-gap-superconductors.md",
+      "narrative": null,
+      "content": "In the above gauge theory of spin-1/2   \ncondensates the gauge interaction was a  \nself-induced interaction. But when the doublet is charged,\nthe gauge interaction can be treated as independent.\nIn this case the theory can describe a two-gap superconductor.\nBut even in this case the knot topology and thus the knot itself\nshould survive. This implies that two-gap \nsuperconductor should also have\na topological knot.\n\nThe knot in two-gap superconductor could be either relativistic\nor non-relativistic, and appear in both Abelian and non-Abelian\nsetting \\cite{cm2}. In this paper we will discuss the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-5-discussion.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\includegraphics[scale=0.7]{2schv.eps}\n\\caption{The regular helical magnetic vortex with $m=n=1$ in\ntwo-gap superconductor. Here we have put $g=1,~\\lambda=2$,\n$k=0.12 \\rho_0$, $A_2(0)=0.5$, and $\\varrho$ is in the unit of $1/\\rho_0$.\nNotice that the solution is completely regular.}\n\\label{2schv}\n\\end{figure}\n\nIn this paper we have presented a compelling argument\nfor the existence of topological\nknots in two-component BEC and two-gap superconductor. \nSimilar knots have popped out almost everywhere,\nin particular in high energy physics in QCD \\cite{plb05} and \nWeinberg and Sala",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

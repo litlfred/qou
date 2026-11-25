@@ -1,0 +1,1252 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s00526-018-1443-6",
+  "title": "On the analyticity of critical points of the Möbius energy",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "On the analyticity of critical points of the Möbius energy",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-on-the-analyticity-of-critical-points-of-the-möb"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 3,
+      "title": "Exposé of the present work",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-exposé-of-the-present-work"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-preliminaries"
+    },
+    {
+      "level": 3,
+      "title": "Fractional Sobolev spaces",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-fractional-sobolev-spaces"
+    },
+    {
+      "level": 3,
+      "title": "Properties of analytic functions",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-properties-of-analytic-functions"
+    },
+    {
+      "level": 3,
+      "title": "Faà di Bruno's formula",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-faà-di-brunos-formula"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition of the first variation of mathcalE",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-decomposition-of-the-first-variation-of-mathca"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of the main term Q",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-estimate-of-the-main-term-q"
+    },
+    {
+      "level": 2,
+      "title": "Form of PT Qγ and the bilinear Hilbert transform",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-5-form-of-pt-qγ-and-the-bilinear-hilbert-transfo"
+    },
+    {
+      "level": 2,
+      "title": "Form of the remaining parts",
+      "number": "6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-6-form-of-the-remaining-parts"
+    },
+    {
+      "level": 3,
+      "title": "Form of Pperp R2εγ",
+      "number": "6.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Form of Pperp R1εγ",
+      "number": "6.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of the main theorem by Cauchy's method of majorants",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-7-proof-of-the-main-theorem-by-cauchys-method-of"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-acknowledgements"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Calc. Var. (2019) 58:16 https://doi.org/10.1007/s00526-018-1443-6 Calculus of Variations",
+      "extractCut": false,
+      "blocks": [
+        "library/s00526-018-1443-6/blocks/prose-sec-front-matter",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-1",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-2",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-3",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-4",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-5",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-6",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-7",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-8",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-9",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-10",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-11",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-12",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-13",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-14",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-15",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-16",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-17",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-18",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-19",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-20",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-21",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-22",
+        "library/s00526-018-1443-6/blocks/figure-img-p001-23"
+      ]
+    },
+    {
+      "id": "sec-000-on-the-analyticity-of-critical-points-of-the-möb",
+      "number": null,
+      "title": "On the analyticity of critical points of the Möbius energy",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "Simon Blatt1 · Nicole Vorderobermeier1 Received: 16 May 2018 / Accepted: 26 October 2018 / Published online: 7 December 2018 © The Author(s) 2018",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blatt",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "vorderobermeier",
+          "heading": false
+        },
+        {
+          "term": "sbg",
+          "heading": false
+        },
+        {
+          "term": "salzburg",
+          "heading": false
+        },
+        {
+          "term": "math soc",
+          "heading": false
+        }
+      ],
+      "extract": "We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite möbius",
+          "heading": false
+        },
+        {
+          "term": "nonlinear elliptic",
+          "heading": false
+        },
+        {
+          "term": "analytic nonlinear",
+          "heading": false
+        },
+        {
+          "term": "arc-length parametrized",
+          "heading": false
+        },
+        {
+          "term": "knot energy",
+          "heading": false
+        },
+        {
+          "term": "parametrized curve",
+          "heading": false
+        },
+        {
+          "term": "elliptic systems",
+          "heading": false
+        }
+      ],
+      "extract": "Knots are part of our everyday life, while tying our shoes, in art works or on a ﬁsherwoman’s boat. They have always played an important role in craft and trades, culture and arts. During the last two centuries, knot theory has arisen to a research topic of great interest and it has had a sustainable impact on mathematics, especially on the development of topology in the nineteenth century [41]. Currently, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-exposé-of-the-present-work",
+      "number": null,
+      "title": "Exposé of the present work",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal projection",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst variation",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": false
+        },
+        {
+          "term": "analytic functions",
+          "heading": false
+        },
+        {
+          "term": "derivatives",
+          "heading": false
+        }
+      ],
+      "extract": "The main goal of this article is not only to give a rigorous proof of Theorem 1.2 but also to give a proof which is as elementary as possible. In Sect. 2 we recall some basic deﬁni- tions and properties of fractional Sobolev spaces and Fourier series. We also characterize analytic functions and state an ordinary differential equation (ODE)-version of the theorem of Cauchy–Kovalevskaya. We close the Preliminaries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-21-fractional-sobolev-spaces",
+      "number": "2.1",
+      "title": "Fractional Sobolev spaces",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fractional sobolev",
+          "heading": true
+        },
+        {
+          "term": "sobolev spaces",
+          "heading": true
+        },
+        {
+          "term": "euclidean norm",
+          "heading": false
+        },
+        {
+          "term": "fourier series",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": false
+        },
+        {
+          "term": "curves",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall certain properties of fractional Sobolev spaces that are useful throughout the whole article. We assume some familiarity with the theory of weak derivatives and Fourier analysis. For a detailed introduction to Sobolev spaces we may refer to [1,9,40]. Let n ∈N. We denote by | · | the real Euclidean norm |x| := √⟨x, x⟩Rn on Rn and by | · |Cn the Euclidean norm |z|Cn := √⟨z, z⟩Cn on Cn. In the sequel we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-properties-of-analytic-functions",
+      "number": "2.2",
+      "title": "Properties of analytic functions",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic functions",
+          "heading": true
+        },
+        {
+          "term": "analytic around",
+          "heading": false
+        },
+        {
+          "term": "real analytic",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall some elementary facts about analytic functions. More on the topic can be found for example in [9, Chapter 6.4] and [11, Chapter 1, D]. Let n, m ∈N and ⊆Rm be an open set throughout this section. We will use the following well-known characterization of analytic functions, which can be deduced from [24, Proposition 2.2.10] by a standard covering argument. Theorem 2.2 Let f ∈C∞( , Rn). Then f is analytic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-faà-di-brunos-formula",
+      "number": "2.3",
+      "title": "Faà di Bruno's formula",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bruno formula",
+          "heading": true
+        },
+        {
+          "term": "faà",
+          "heading": true
+        },
+        {
+          "term": "multivariate case",
+          "heading": false
+        }
+      ],
+      "extract": "For two functions f , g ∈Ck(R, R) Faà di Bruno’s formula tells us that \u0003 d dt \u0004k g( f (t)) = m1+2m2+···kmk=k, m1,...,mk∈N0 k! m1!1!m1m2!2!m2 . . . mk!k!mk g(m1+···+mk)( f (t)) k j=1 ( f ( j)(t))m j . Mishkov [27] generalized this formula to the multivariate case. Lemma 2.6 Let U ⊆R be a neighborhood of 0 and f ∈Ck(U, Rn), n ∈N. Moreover, let V ⊆Rn be a neighborhood of f (0) such that f (U) ⊆V and g ∈Ck(V , R). Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-decomposition-of-the-first-variation-of-mathca",
+      "number": "3",
+      "title": "Decomposition of the first variation of mathcalE",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "variation",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst variation",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "qεγ",
+          "heading": false
+        },
+        {
+          "term": "r1γ",
+          "heading": false
+        },
+        {
+          "term": "r2γ",
+          "heading": false
+        },
+        {
+          "term": "reiter",
+          "heading": false
+        }
+      ],
+      "extract": "In 1994, Freedman, He and Wang stated the Gâteaux differentiability of the Möbius energy E and additionally a formula of the ﬁrst variation of E [10, Lemma 6.1, Lemma 6.4.]. Reiter could prove that E is Fréchet differentiable and he computed its ﬁrst variation at an injective regular curve η ∈H2 in direction h ∈H2 [38, Chapter 2]. In order to work with the Möbius energy in a sophisticated way, He and Reiter used a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-estimate-of-the-main-term-q",
+      "number": "4",
+      "title": "Estimate of the main term Q",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourier coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "vorderobermeier",
+          "heading": false
+        },
+        {
+          "term": "blatt",
+          "heading": false
+        }
+      ],
+      "extract": "Let λn := 2 3 \u0002 nπ 0 1 t \u0003 1 −t nπ \u00043 sin(t)dt. The following theorem is an immediate consequence of [17, Lemma 2.3]. Theorem 4.1 For every f ∈C∞(R/Z, Rn) the expression Q f is a C∞function whose Fourier coefﬁcients are given by \u0002 Q f (k) = π3λk|k|3 ˆf (k) ∀k ∈Z. The constants λk satisfy 0 ≤λk = π 3 + O( 1 k ) as k →∞. Proof Using Taylor’s expansion up to third order we get Q f (x) = lim ε↓0 2 \u0002 |w|∈ \u0011 ε, 1 2 \u0012 \u0005 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-form-of-pt-qγ-and-the-bilinear-hilbert-transfo",
+      "number": "5",
+      "title": "Form of PT Qγ and the bilinear Hilbert transform",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 16,
+      "labelStart": "10",
+      "labelEnd": "16",
+      "words": 2267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bilinear hilbert",
+          "heading": true
+        },
+        {
+          "term": "hilbert transform",
+          "heading": true
+        },
+        {
+          "term": "s2w",
+          "heading": false
+        },
+        {
+          "term": "s1w",
+          "heading": false
+        },
+        {
+          "term": "πikx",
+          "heading": false
+        },
+        {
+          "term": "fourier coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "truncated bilinear",
+          "heading": false
+        },
+        {
+          "term": "k-th fourier",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that in the ﬁrst variation of the Möbius energy E there appears the functional H given by Hγ = P⊥ ˙γ ( \u0015 Hγ ) where \u0015 Hγ = Qγ + R1γ + R2γ for every closed, simple, and by arc-length parametrized curve γ ∈C∞(R/Z, Rn). In this section we will see that a type of bilinear Hilbert transform can help to estimate the tangential part of Qγ , i.e. (PT ˙γ Qγ )(x) :=PT ˙γ (x)(Qγ (x)) = ⟨Qγ (x), ˙γ (x)⟩Rn ˙γ (x) = lim",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-6-form-of-the-remaining-parts",
+      "number": "6",
+      "title": "Form of the remaining parts",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s2w",
+          "heading": false
+        },
+        {
+          "term": "r2w",
+          "heading": false
+        },
+        {
+          "term": "r3n",
+          "heading": false
+        },
+        {
+          "term": "analytic away",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "analytic again",
+          "heading": false
+        },
+        {
+          "term": "multiple integral",
+          "heading": false
+        },
+        {
+          "term": "remaining",
+          "heading": true
+        }
+      ],
+      "extract": "We aim to transform the truncated remaining parts Rε 1 and Rε 2 of the decomposition of the Möbius energy E in Sect. 3 into multiple integrals of analytic functions of several variables. This helps us to estimate the derivatives of the orthogonal projections of Rε 1 and Rε 2 later. Let 1 2 ≥ε > 0 and x ∈[0, 1]. We start by recalling the deﬁnition of the ﬁrst remaining part (R1γ )(x) = lim ε↓0(Rε 1γ )(x) where (Rε 1γ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-7-proof-of-the-main-theorem-by-cauchys-method-of",
+      "number": "7",
+      "title": "Proof of the main theorem by Cauchy's method of majorants",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 27,
+      "labelStart": "20",
+      "labelEnd": "27",
+      "words": 2654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r1γ r2γ",
+          "heading": false
+        },
+        {
+          "term": "r4n",
+          "heading": false
+        },
+        {
+          "term": "fεk",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "arc-length parametrized",
+          "heading": false
+        },
+        {
+          "term": "uniform norm",
+          "heading": false
+        },
+        {
+          "term": "majorants",
+          "heading": true
+        },
+        {
+          "term": "h1-norm",
+          "heading": false
+        }
+      ],
+      "extract": "In order to prove the main result, Theorem 1.2, we deduce a recursive estimate for ∥∂lγ ∥H1 by putting together the results of the previous sections. We then apply Cauchy’s method of majorants to the recursive formula to achieve the analyticity of γ . Let m := 1 > 1 2 and γ : R/Z →Rn, γ = (γ1, . . . , γn), be a simple, closed, and by arc-length parametrized curve with γ ∈C∞(R/Z, Rn) and γ a critical point of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "creative commons",
+          "heading": false
+        },
+        {
+          "term": "license",
+          "heading": false
+        },
+        {
+          "term": "credit",
+          "heading": false
+        }
+      ],
+      "extract": "Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0 International License(http://creativecommons.org/licenses/by/4.0/),whichpermitsunrestricteduse,distribution,andrepro- duction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": null,
+      "words": 912,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "des équations",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "dérivées partielles",
+          "heading": false
+        },
+        {
+          "term": "des solutions",
+          "heading": false
+        },
+        {
+          "term": "analytique des",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        },
+        {
+          "term": "équations aux",
+          "heading": false
+        }
+      ],
+      "extract": "1. Adams, R.A., Fournier, J.J.F.: Sobolev Spaces. Pure and Applied Mathematics, vol. 140, 2nd edn. Elsevier, Amsterdam (2003) 2. Auckly, D., Sadun, L.: A family of Möbius invariant 2-knot energies. In: Geometric Topology (Athens, GA, 1993), Volume 2 of AMS/IP Studies in Advanced Mathematics, pp. 235–258. Amer. Math. Soc., Providence (1997) 3. Bernstein, S.: Sur la nature analytique des solutions des équations aux",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "Received: 16 May 2018 / Accepted: 26 October 2018 / Published online: 7 December 2018 © The Author(s)",
+          "Form of P⊥ ˙γ Rε 2γ",
+          "Form of P⊥ ˙γ Rε 1γ"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "2 (R/Z, Rn). If γ is a critical point of the Möbius energy E, then γ is analytic."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "möbius energy",
+      "heading": true
+    },
+    {
+      "term": "möbius invariant",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite möbius",
+      "heading": false
+    },
+    {
+      "term": "ﬁrst analyticity",
+      "heading": false
+    },
+    {
+      "term": "r1γ r2γ",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": false
+    },
+    {
+      "term": "blatt",
+      "heading": false
+    },
+    {
+      "term": "sobolev norm",
+      "heading": false
+    },
+    {
+      "term": "critical points",
+      "heading": true
+    },
+    {
+      "term": "energy functionals",
+      "heading": false
+    },
+    {
+      "term": "fractional sobolev",
+      "heading": true
+    },
+    {
+      "term": "analytic functions",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-4",
+      "file": "images/img-p001-4.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-5",
+      "file": "images/img-p001-5.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-6",
+      "file": "images/img-p001-6.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-7",
+      "file": "images/img-p001-7.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-8",
+      "file": "images/img-p001-8.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-9",
+      "file": "images/img-p001-9.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-10",
+      "file": "images/img-p001-10.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-11",
+      "file": "images/img-p001-11.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-12",
+      "file": "images/img-p001-12.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-13",
+      "file": "images/img-p001-13.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-14",
+      "file": "images/img-p001-14.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-15",
+      "file": "images/img-p001-15.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-16",
+      "file": "images/img-p001-16.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-17",
+      "file": "images/img-p001-17.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-18",
+      "file": "images/img-p001-18.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-19",
+      "file": "images/img-p001-19.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-20",
+      "file": "images/img-p001-20.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-21",
+      "file": "images/img-p001-21.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-22",
+      "file": "images/img-p001-22.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-23",
+      "file": "images/img-p001-23.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 23
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s00526-018-1443-6"
+  }
+}

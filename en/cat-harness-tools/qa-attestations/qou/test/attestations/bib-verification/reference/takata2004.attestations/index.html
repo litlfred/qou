@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/takata2004.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1x8c9fmu8q1.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1x8c9fmu8q1","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/takata2004.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/takata2004.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/takata2004.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;takata2004&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 159,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-math-0401068v1/0401068v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;takata2004&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;Relevant but partly superseded inside the corpus already, and I want to be exact about that. QOU&#39;s prop:phi-q-aj-machinery-identification carries the AJ conjecture as a conditional-class input; references.ts already holds le2006 (&#39;The colored Jones polynomial and the A-polynomial of knots&#39;), whose note records that it PROVES AJ for a large class of two-bridge knots including all twist knots — strictly stronger than Takata&#39;s result, which the abstract itself describes only as &#39;supports the AJ conjecture&#39;. (le2006 is itself a bib orphan: it exists in references.ts and is cited by no block.) So the AJ-backing value of this paper is low. Its distinctive, non-duplicated value is computational: it writes Masbaum&#39;s twist-knot colored-Jones formula in a rearranged normalisation with the three explicit summand ratios f_0, f_1, f_2, and gives the root-of-unity evaluation. computations/aj_masbaum_crosscheck.py cross-checks the QOU 4_1 (= K_{-1}) and trefoil (= K_1) towers against Masbaum, and its own docstring records a prior mis-attribution in that area — an independent second published transcription of the same coefficients is exactly what such a script wants.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;eqs. (1)-(2) and (3)-(5)&quot;,
+            &quot;statement&quot;: &quot;Masbaum&#39;s colored Jones formula for the twist knot K_p, J_{K_p}(n) = sum_k C_{K_p}(k) {n-k}...{n+k}/{n} with C_{K_p}(k) explicit, rearranged so that the summand F(n,k,l) has closed-form ratios f_0 = F(n+1,k,l)/F(n,k,l), f_1 = F(n,k+1,l)/F(n,k,l), f_2 = F(n,k,l+1)/F(n,k,l).&quot;,
+            &quot;useForFolio&quot;: &quot;An independently published transcription of the same twist-knot coefficients that computations/aj_masbaum_crosscheck.py checks the QOU 4_1 and trefoil towers against, in a different normalisation — so agreement is a genuine second witness against transcription error, which that script&#39;s docstring shows is a real failure mode here.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/aj_masbaum_crosscheck.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm 2.2 and §4&quot;,
+            &quot;statement&quot;: &quot;Setting q = 1 in the summand recurrences and solving f_0 = l, f_1 = f_2 = 1 recovers a polynomial B_{K_p}(l,m) equal to the A-polynomial A_{K_p}(l,m); §4 additionally derives the A-polynomials of 5_2 and 6_1 from explicit colored-Jones recursions.&quot;,
+            &quot;useForFolio&quot;: &quot;Concrete worked instances of the classical limit of the AJ machinery that prop:phi-q-aj-machinery-identification describes abstractly. Weaker than le2006, so the honest action is to cite le2006 at that block and keep this as the explicit-computation companion.&quot;,
+            &quot;targets&quot;: [
+              &quot;prop:phi-q-aj-machinery-identification&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;eq. (16), §4&quot;,
+            &quot;statement&quot;: &quot;Explicit evaluation hat-J_{K_p}(n) of the twist-knot colored Jones at q = exp(2 pi i / n), stated for the volume conjecture 2 pi lim (log|hat-J_K(n)|/n) = Vol(M_K).&quot;,
+            &quot;useForFolio&quot;: &quot;A directly runnable formula for the Kashaev/volume-conjecture asymptotic on 4_1 = K_{-1}, whose Vol(4_1) = 2*Cl_2(pi/3) is the CAL-2 numerical anchor. A finite-n numeric cross-check of Vol(4_1) from this formula is a falsifiable compute-check; it must NOT be used to adopt or re-derive the anchor value.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/aj_masbaum_crosscheck.py&quot;,
+              &quot;computations/aj_figure_eight_certificate.py&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan (references.ts has Ohtsuki-Takata 2015 only, a different paper). Low priority: its AJ content is superseded by the already-present le2006; register it for the explicit twist-knot recurrences.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-770a&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;Cross-check the QOU 4_1 / trefoil colored-Jones towers against Takata&#39;s rearranged Masbaum normalisation (eqs. 1-5) as an independent second transcription; the script&#39;s docstring documents a prior mis-attribution in exactly this area.&quot;,
+            &quot;target&quot;: &quot;computations/aj_masbaum_crosscheck.py&quot;,
+            &quot;bean&quot;: &quot;qou-7q3s&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Separate finding surfaced by this read: le2006 already exists in references.ts, proves AJ for all twist knots, and is cited by NO block — while prop:phi-q-aj-machinery-identification carries AJ as an unsourced conditional-class input. The right fix is to cite le2006 there.&quot;,
+            &quot;target&quot;: &quot;prop:phi-q-aj-machinery-identification&quot;,
+            &quot;bean&quot;: &quot;qou-dvqx&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;8168d7e7f606&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 160,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-math-0401068v1/0401068v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;takata2004&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;Same subject area as the corpus&#39;s AJ machinery (prop:phi-q-aj-machinery-identification, QOU/Machinery/StrongAJFigureEight.lean, QOU/BraidKnot/AJFigureEight*.lean) and its twist-knot cyclotomic work (masbaum2003, bean xcyc). Its AJ-support claim is weaker than what the corpus already has: le2006 (math/0407521, already registered) PROVES the AJ conjecture for a large class of two-bridge knots including all twist knots, whereas Takata only shows the A-polynomial is recoverable from recursions of the SUMMAND of Masbaum&#39;s formula. What is genuinely usable is the explicit Hoste-Shanahan A-polynomial data it reproduces (Thm 3.1), including the closed A_{4_1} and A_{trefoil}, which the corpus currently reads off the CCGLS A-polynomial by hand in qbeta_nz_even_series_fourone_probe.py. Not load-bearing; a cross-check source.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Thm 3.1 (quoting Hoste-Shanahan), eqs. after (6)&quot;,
+            &quot;statement&quot;: &quot;A_{K_p}(l,m) obeys the two-term recursion A_{K_p} = c A_{K_{p-1}} - d A_{K_{p-2}} with c = -l + l^2 + 2lm^2 + m^4 + 2lm^4 + l^2 m^4 + 2lm^6 + m^8 - lm^8, d = m^4 (l+m^2)^4, and explicit seeds A_{K_1} = l + m^6 (trefoil), A_{K_{-1}} = -l + lm^2 + m^4 + 2lm^4 + l^2 m^4 + lm^6 - lm^8 (figure-eight).&quot;,
+            &quot;useForFolio&quot;: &quot;Independent published source for the 4_1 A-polynomial that qbeta_nz_even_series_fourone_probe.py uses to recognise the leading longitude coefficient tau = (0, -+1, 1); lets the probe cite a value instead of asserting it, and supplies the whole twist-knot family if the tau extraction is ever run past 4_1.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/qbeta_nz_even_series_fourone_probe.py&quot;,
+              &quot;prop:phi-q-aj-machinery-identification&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm 2.2&quot;,
+            &quot;statement&quot;: &quot;For the twist knot K_p, B_{K_p}(l,m) built from the recursion h_p(m,x) of the summand of Masbaum&#39;s colored-Jones formula equals A_{K_p}(l,m).&quot;,
+            &quot;useForFolio&quot;: &quot;Concrete worked route from a cyclotomic-summand recursion to the A-polynomial, the same shape as the corpus&#39;s qZeilberger-telescope annihilation arguments in QOU/BraidKnot/AJFigureEightAnnihilation.lean; usable as a citable precedent for the summand-level (rather than sum-level) recursion technique.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.BraidKnot.AJFigureEightAnnihilation&quot;,
+              &quot;prop:phi-q-aj-machinery-identification&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry; the folio has an AJ/twist-knot cluster (garoufalidis2004, le2006, masbaum2003, hikami2004) this belongs in, and the A-polynomial seeds are worth a citable home.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts (new id, e.g. takata2004)&quot;,
+            &quot;bean&quot;: &quot;qou-vhe7&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;The probe&#39;s tau extraction currently reads the CCGLS A-polynomial without a cited value; check the probe&#39;s A_{4_1} against Takata&#39;s A_{K_{-1}} seed coefficient-by-coefficient.&quot;,
+            &quot;target&quot;: &quot;computations/probes/qbeta_nz_even_series_fourone_probe.py&quot;,
+            &quot;bean&quot;: &quot;qou-e1me&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;8168d7e7f606&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

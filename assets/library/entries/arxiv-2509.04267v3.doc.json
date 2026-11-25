@@ -1,0 +1,1209 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2509.04267v3",
+  "title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Knot invariants from closed braids and traces",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-21-knot-invariants-from-closed-braids-and-traces"
+    },
+    {
+      "level": 2,
+      "title": "Knot invariants using maxima/minima",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-22-knot-invariants-using-maximaminima"
+    },
+    {
+      "level": 1,
+      "title": "Yang-Baxter cohomology",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-yang-baxter-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "YB cohomology in low dimensions",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-31-yb-cohomology-in-low-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "YB cohomology in higher dimensions",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-32-yb-cohomology-in-higher-dimensions"
+    },
+    {
+      "level": 1,
+      "title": "Quantum cocycle invariants via traces",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-quantum-cocycle-invariants-via-traces"
+    },
+    {
+      "level": 1,
+      "title": "Examples via traces",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-examples-via-traces"
+    },
+    {
+      "level": 2,
+      "title": "Invariants from deformations of the transposition",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-51-invariants-from-deformations-of-the-transposi"
+    },
+    {
+      "level": 2,
+      "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+      "number": "5.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-52-invariants-from-the-tensor-version-of-quandle"
+    },
+    {
+      "level": 1,
+      "title": "Quantum cocycle invariants via maxima/minima",
+      "number": "6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-quantum-cocycle-invariants-via-maximaminima"
+    },
+    {
+      "level": 1,
+      "title": "Examples via maxima/minima",
+      "number": "7",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-7-examples-via-maximaminima"
+    },
+    {
+      "level": 1,
+      "title": "Higher order invariants",
+      "number": "8",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-8-higher-order-invariants"
+    },
+    {
+      "level": 1,
+      "title": "The Jones and Alexander polynomials as higher order invariants",
+      "number": "9",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-9-the-jones-and-alexander-polynomials-as-higher"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quandle cocycle",
+          "heading": false
+        },
+        {
+          "term": "quandle cohomology",
+          "heading": false
+        },
+        {
+          "term": "quandle homology",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter cohomology",
+          "heading": false
+        },
+        {
+          "term": "cocycle invariants",
+          "heading": false
+        },
+        {
+          "term": "maxima minima",
+          "heading": false
+        },
+        {
+          "term": "cocycle knot",
+          "heading": false
+        },
+        {
+          "term": "ybos",
+          "heading": false
+        }
+      ],
+      "extract": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY MASAHICO SAITO AND EMANUELE ZAPPALA Abstract. Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2509.04267v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ybe",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "left-hand side",
+          "heading": false
+        },
+        {
+          "term": "prelim",
+          "heading": false
+        },
+        {
+          "term": "figure reference-type",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        },
+        {
+          "term": "invertible",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:prelim label=\"sec:prelim\"} In this section we review two approaches for defining quantum knot invariants, one via traces and the other via height functions and maxima/minima. We follow these two approaches to construct quantum cocycle invariants in later sections. Unless otherwise specified, we use the notation $\\mathbb k$ for a unital ring, and $V$ for a module over $\\mathbb k$. Recall that for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-knot-invariants-from-closed-braids-and-traces",
+      "number": "2.1",
+      "title": "Knot invariants from closed braids and traces",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "maxima minima",
+          "heading": false
+        },
+        {
+          "term": "eybo",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "braid form",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "There are two main constructions of quantum knot invariants from YBOs: one is through braid group representations and their trace maps that are invariant under Markov moves, and the other is by fixing a height function on the plane of projection and incorporate maps corresponding to maxima/minima of knot diagrams. Although these two approaches are closely related, we examine these approaches separately to take",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-knot-invariants-using-maximaminima",
+      "number": "2.2",
+      "title": "Knot invariants using maxima/minima",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maxima",
+          "heading": true
+        },
+        {
+          "term": "minima",
+          "heading": true
+        },
+        {
+          "term": "passcup",
+          "heading": false
+        }
+      ],
+      "extract": "invariants using maxima/minima of knot diagrams with a fixed height function (see, for example, [13]). This approach is used for unoriented knots and their diagrams. A pairing ∪: V ⊗V →k and a copairing ∩: k →V ⊗V in a module V over a unital ring k are said to have (or satisfy) the switchback property if they satisfy the equalities (∪⊗1)(1 ⊗∩) = 1 = (1 ⊗∪)(∩⊗1). Let R be a YBO. A pairing ∪is said to satisfy (or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-yang-baxter-cohomology",
+      "number": "3",
+      "title": "Yang-Baxter cohomology",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "passcap",
+          "heading": false
+        },
+        {
+          "term": "passcup",
+          "heading": false
+        },
+        {
+          "term": "reidemeister move",
+          "heading": false
+        },
+        {
+          "term": "regular isotopy",
+          "heading": false
+        },
+        {
+          "term": "copairing",
+          "heading": false
+        },
+        {
+          "term": "switchback",
+          "heading": false
+        }
+      ],
+      "extract": "5 Similarly a copairing ∩is said to satisfy (or have) the passcap property with respect to R if it satisfies (R ⊗1)(1 ⊗∩) = (1 ⊗R−1)(∩⊗1), (R−1 ⊗1)(1 ⊗∩) = (1 ⊗R)(∩⊗1). In Figure 2, the switchback, passcup and passcap moves are depicted from left to right, respectively. Figure 2 A k-module V with a YBO and a pairing and copairing that satisfy switchback, passcup, and passcap properties provide a knot invariant up to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-yb-cohomology-in-low-dimensions",
+      "number": "3.1",
+      "title": "YB cohomology in low dimensions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "tilde hbar",
+          "heading": false
+        },
+        {
+          "term": "ybo",
+          "heading": false
+        },
+        {
+          "term": "yb2tor",
+          "heading": false
+        },
+        {
+          "term": "ybe",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we review YB cohomology theory from [@SZ-YBH] in low dimensions, as it is used in the several sections that follow. The cochain groups are defined by $C^0_{\\rm YB}(V,V)=0$ and $C^n_{\\rm YB}(V,V)={\\rm Hom} (V^{\\otimes n},V^{\\otimes n})$ for $n>0$. We define the differentials for $f \\in C^1_{\\rm YB}(V,V)$ and $\\phi \\in C^2_{\\rm YB}(V,V)$ by $$\\begin{aligned} \\delta^1_{\\rm YB} (f) &=& R ( f \\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-yb-cohomology-in-higher-dimensions",
+      "number": "3.2",
+      "title": "YB cohomology in higher dimensions",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 682,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coh def",
+          "heading": false
+        },
+        {
+          "term": "partial differentials",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        },
+        {
+          "term": "eis",
+          "heading": false
+        },
+        {
+          "term": "otimes longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "sz-ybh",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we review definitions of YB cohomology theory from [@SZ-YBH], see also [@SZ-BC]. We set $\\sigma_{n,i} = \\mathbb 1^{\\otimes (i-1)}\\otimes R \\otimes \\mathbb 1^{\\otimes(n-i-1)}$. Then, for $\\phi \\in {\\rm Hom}(V^{\\otimes n}, V^{\\otimes n})$, the partial differentials for YB cohomology are defined as $$\\begin{aligned} d_{{\\rm YB},i}^n(\\phi) &=&",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-quantum-cocycle-invariants-via-traces",
+      "number": "4",
+      "title": "Quantum cocycle invariants via traces",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 2142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cob eybo",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "psi phi",
+          "heading": false
+        },
+        {
+          "term": "inf partial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:inf_def label=\"sec:inf_def\"} Let $S = (R, \\alpha, \\beta, \\mu)$ be an EYBO. Suppose that there is an infinitesimal deformation $$\\tilde R=\\phi_0 + \\hbar \\phi_1=R + \\hbar \\phi \\quad {\\rm on} \\quad \\tilde V={\\mathbb k} [[ \\hbar ]] / (\\hbar^2 ) \\otimes V .$$ Suppose further that there is $\\tilde \\mu = \\mu + \\hbar \\mu_1 : \\tilde V \\rightarrow \\tilde V$ such that $\\tilde S = (\\tilde R, \\alpha, \\beta, \\tilde \\mu )$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-examples-via-traces",
+      "number": "5",
+      "title": "Examples via traces",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:traces label=\"sec:traces\"} In this section we provide examples that yield nontrivial values of the quantum cocycle invariant defined in the preceding section via traces.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-51-invariants-from-deformations-of-the-transposi",
+      "number": "5.1",
+      "title": "Invariants from deformations of the transposition",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cocy tau",
+          "heading": false
+        },
+        {
+          "term": "phi tau",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "tau k-i",
+          "heading": false
+        },
+        {
+          "term": "inf partial",
+          "heading": false
+        },
+        {
+          "term": "tau hbar",
+          "heading": false
+        },
+        {
+          "term": "ell phi",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider a finite dimensional vector space $V$ along with the transposition map $R=\\tau : V\\otimes V \\rightarrow V\\otimes V$, which is a YBO on $V$. ::: lemma For $R=\\tau$, we have $H^2_{\\rm YB}(V, V) = C^2_{\\rm YB}(V, V) = {\\rm Hom} (V^{\\otimes 2}, V^{\\otimes 2})$. ::: ::: proof *Proof.* For a $2$-cochain $\\phi$, we use the structure constants $\\phi(e_i\\otimes e_j) = \\phi_{ij}^{k\\ell}e_k\\otimes e_\\ell$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-52-invariants-from-the-tensor-version-of-quandle",
+      "number": "5.2",
+      "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 2357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quandle cocycle",
+          "heading": true
+        },
+        {
+          "term": "cocycle invariants",
+          "heading": true
+        },
+        {
+          "term": "hbar psi",
+          "heading": false
+        },
+        {
+          "term": "otimes hbar",
+          "heading": false
+        },
+        {
+          "term": "quandle quantum",
+          "heading": false
+        },
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "tilde hbar",
+          "heading": false
+        },
+        {
+          "term": "ell hbar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Q label=\"subsec:Q\"} We now discuss a class of example of importance, which motivates the name of quantum cocycle invariants. A *quandle* $(Q, *)$ is a set $Q$ with an idempotent operation $*$ such that the right translation $R_y: x \\mapsto x*y$, $x\\in Q$, is a $*$-automorphism for all $y$. A group with the conjugation operation is a typical example of a quandle. A quandle homology theory was developed in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-quantum-cocycle-invariants-via-maximaminima",
+      "number": "6",
+      "title": "Quantum cocycle invariants via maxima/minima",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cob eybo",
+          "heading": false
+        },
+        {
+          "term": "tilde cap",
+          "heading": false
+        },
+        {
+          "term": "tilde cup",
+          "heading": false
+        },
+        {
+          "term": "cap hbar",
+          "heading": false
+        },
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "label passcap",
+          "heading": false
+        },
+        {
+          "term": "tilde phi",
+          "heading": false
+        },
+        {
+          "term": "passcap properties",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cupcap label=\"sec:cupcap\"} In this section we describe a construction of quantum cocycle invariants by deforming maxima and minima for knot diagrams with a height function specified. Throughout this section, a height function is fixed on the plane where knot diagrams lie, and diagrams are in general position, so that they have isolated maxima, minima, and double crossings. Diagrams are unoriented. Let $R$ be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-7-examples-via-maximaminima",
+      "number": "7",
+      "title": "Examples via maxima/minima",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 26,
+      "labelStart": "21",
+      "labelEnd": "26",
+      "words": 1874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "sqrt hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar hat",
+          "heading": false
+        },
+        {
+          "term": "tilde cap",
+          "heading": false
+        },
+        {
+          "term": "tilde cup",
+          "heading": false
+        },
+        {
+          "term": "bar cap",
+          "heading": false
+        },
+        {
+          "term": "modulo hbar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:bracket label=\"sec:bracket\"} The Kauffman bracket polynomial [@K&P] for knots up to regular isotopy is defined by the skein relation in Figure [1](#skeinbracket){reference-type=\"ref\" reference=\"skeinbracket\"}. The bracket value for the unknot diagram with no crossing is set to be $1$. In this section we examine invariants defined from YB $2$-cocycles and the bracket following the definition in Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-8-higher-order-invariants",
+      "number": "8",
+      "title": "Higher order invariants",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "tilde phi",
+          "heading": false
+        },
+        {
+          "term": "hat phi",
+          "heading": false
+        },
+        {
+          "term": "higher order",
+          "heading": true
+        },
+        {
+          "term": "higher deform",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "cdots phi",
+          "heading": false
+        },
+        {
+          "term": "aligned phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:higher_def label=\"sec:higher_def\"} We consider now higher order deformations of YBOs, where the condition of being enhanced is preserved for the trace approach. It is known that YBOs can be nontrivially deformed to higher order, as seen explicitly in [@EZ_perturbative]. Our objective in this section is to characterize when higher order deformations define EYBOs, and how to use such deformed EYBOs to define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-9-the-jones-and-alexander-polynomials-as-higher",
+      "number": "9",
+      "title": "The Jones and Alexander polynomials as higher order invariants",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 2138,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmatrix hbar",
+          "heading": false
+        },
+        {
+          "term": "hat hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar phi",
+          "heading": false
+        },
+        {
+          "term": "bmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "sum hbar",
+          "heading": false
+        },
+        {
+          "term": "hat delta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Jones_Alex label=\"sec:Jones_Alex\"} In this section we discuss how to interpret the Jones and Alexander polynomials as quantum cocycle invariants. We need a slight generalization of the framework considered up to now, before proceeding with the main results of the section. Note that YB cohomology used in this article does not depend on the invertibility of the YBO, as opposed to that used in [@Eis; @Eis1],",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "1 Then there exists an infinitesimal deformation ˜R = ϕ0 + ℏϕ1 = R + ℏϕ and ˜µ = µ + ℏµ1 on ˜V = k[[ℏ]]/(ℏ2) ⊗V such"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "otimes hbar",
+      "heading": false
+    },
+    {
+      "term": "tilde hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar phi",
+      "heading": false
+    },
+    {
+      "term": "mathbb hbar",
+      "heading": false
+    },
+    {
+      "term": "ybo tilde",
+      "heading": false
+    },
+    {
+      "term": "eybo tilde",
+      "heading": false
+    },
+    {
+      "term": "hat hbar",
+      "heading": false
+    },
+    {
+      "term": "aligned hbar",
+      "heading": false
+    },
+    {
+      "term": "cocycle phi",
+      "heading": false
+    },
+    {
+      "term": "hbar psi",
+      "heading": false
+    },
+    {
+      "term": "hbar delta",
+      "heading": false
+    },
+    {
+      "term": "hbar end",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2509.04267v3"
+  }
+}

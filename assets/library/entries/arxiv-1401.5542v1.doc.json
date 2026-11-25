@@ -1,0 +1,1743 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1401.5542v1",
+  "title": "arxiv-1401.5542v1",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The Ptolemy coordinates",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-ptolemy-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Decorated SL(2,C)-representations",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-decorated-sl2c-representations"
+    },
+    {
+      "level": 2,
+      "title": "Obstruction classes and PSL(2,C)-representations",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-obstruction-classes-and-psl2c-representations"
+    },
+    {
+      "level": 2,
+      "title": "Our results",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-our-results"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-notation"
+    },
+    {
+      "level": 2,
+      "title": "Triangulations",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Miscellaneous",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-miscellaneous"
+    },
+    {
+      "level": 1,
+      "title": "The Ptolemy varieties",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-the-ptolemy-varieties"
+    },
+    {
+      "level": 2,
+      "title": "The SL(2,C)-Ptolemy variety",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-the-sl2c-ptolemy-variety"
+    },
+    {
+      "level": 2,
+      "title": "Obstruction classes",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-obstruction-classes"
+    },
+    {
+      "level": 1,
+      "title": "The diagonal action",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-the-diagonal-action"
+    },
+    {
+      "level": 2,
+      "title": "The reduced Ptolemy varieties",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-41-the-reduced-ptolemy-varieties"
+    },
+    {
+      "level": 2,
+      "title": "Shapes and gluing equations",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-42-shapes-and-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Proof that * is basic",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The Ptolemy field and the trace field",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-the-ptolemy-field-and-the-trace-field"
+    },
+    {
+      "level": 2,
+      "title": "Explicit description of the Ptolemy field",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-explicit-description-of-the-ptolemy-field"
+    },
+    {
+      "level": 2,
+      "title": "The setup of the proof",
+      "number": "5.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-the-setup-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Proof for one cusp",
+      "number": "5.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-proof-for-one-cusp"
+    },
+    {
+      "level": 2,
+      "title": "The general case",
+      "number": "5.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-54-the-general-case"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 1.9",
+      "number": "5.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-55-proof-of-proposition-19"
+    },
+    {
+      "level": 1,
+      "title": "Ptolemy varieties for n>2",
+      "number": "6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-ptolemy-varieties-for-n2"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the Ptolemy variety",
+      "number": "6.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-61-definition-of-the-ptolemy-variety"
+    },
+    {
+      "level": 2,
+      "title": "The diagonal action",
+      "number": "6.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-62-the-diagonal-action"
+    },
+    {
+      "level": 2,
+      "title": "Representations",
+      "number": "6.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-representations"
+    },
+    {
+      "level": 2,
+      "title": "Proof that * is basic",
+      "number": "6.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ptolemy varieties",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "matthias goerner",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        }
+      ],
+      "extract": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT Abstract. The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we deﬁne the Ptolemy ﬁeld of a (generic) PSL(2, C)-representation and prove",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1401.5542v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-ptolemy-coordinates",
+      "number": "1.1",
+      "title": "The Ptolemy coordinates",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": true
+        },
+        {
+          "term": "emph ptolemy",
+          "heading": false
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        },
+        {
+          "term": "boundary-unipotent",
+          "heading": false
+        },
+        {
+          "term": "garoufalidis--thurston--zickert",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.ge} The Ptolemy coordinates for boundary-unipotent representations of a 3-manifold group in $\\SL(n,\\C)$ were introduced in Garoufalidis--Thurston--Zickert~\\cite{GaroufalidisThurstonZickert} inspired by the $\\mathcal A$-coordinates on higher Teichm\\\"{u}ller space due to Fock and Goncharov \\cite{FockGoncharov}. In this paper we will focus primarily on representations in $\\SL(2,\\C)$ and $\\PSL(2,\\C)$. Given a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-decorated-sl2c-representations",
+      "number": "1.2",
+      "title": "Decorated SL(2,C)-representations",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "minipage hspace",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "minipage hfill",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.decorated} The precise relationship between Ptolemy assignments and representations is given by \\begin{equation}\\label{eq:summaryof1to1} \\xymatrix{\\left\\{\\txt{Points in\\\\$P_2(\\T)$}\\right\\}\\ar@{<->}[r]^-{1-1}&\\left\\{\\txt{Natural $(\\SL(2,\\C),P)$-\\\\cocycles on $M$}\\right\\}\\ar@{<->}[r]^-{1-1}&\\left\\{\\txt{Generically decorated\\\\ $(\\SL(2,\\C),P)$-representations}\\right\\}.} \\end{equation} The concepts are briefly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-obstruction-classes-and-psl2c-representations",
+      "number": "1.3",
+      "title": "Obstruction classes and PSL(2,C)-representations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obstruction",
+          "heading": true
+        },
+        {
+          "term": "psl",
+          "heading": true
+        },
+        {
+          "term": "cocycle sigma",
+          "heading": false
+        },
+        {
+          "term": "obstruction class",
+          "heading": false
+        },
+        {
+          "term": "left txt",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "sigma right",
+          "heading": false
+        },
+        {
+          "term": "natural cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "There is a subtle distinction between representations in $\\SL(2,\\C)$ versus $\\PSL(2,\\C)$. The geometric representation of a hyperbolic manifold always lifts to an $\\SL(2,\\C)$-representation, but for a one-cusped manifold, no lift is boundary-parabolic (any lift will take a longitude to an element of trace $-2$~\\cite{Calegari}). The obstruction to lifting a boundary-parabolic $\\PSL(2,\\C)$-representation to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-our-results",
+      "number": "1.4",
+      "title": "Our results",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 868,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic boundary-non-trivial",
+          "heading": false
+        },
+        {
+          "term": "boundary-non-trivial representation",
+          "heading": false
+        },
+        {
+          "term": "ptolemy field",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "ptolemy varieties",
+          "heading": false
+        },
+        {
+          "term": "reduced ptolemy",
+          "heading": false
+        },
+        {
+          "term": "variety sigma",
+          "heading": false
+        },
+        {
+          "term": "genericboundarynontrivial",
+          "heading": false
+        }
+      ],
+      "extract": "We view the Ptolemy varieties $P^\\sigma_2(\\T)$ as subsets of an ambient space $\\C^e$, with coordinates indexed by the $1$-cells of $\\T$. Let $T=(\\C^*)^v$, with the coordinates indexed by the boundary components of $M$. \\begin{definition} The \\emph{diagonal action} is the action of $T$ on $P^\\sigma_2(\\T)$ where $(x_1,\\dots,x_v)\\in T$ acts on a Ptolemy assignment by replacing the Ptolemy coordinate $c$ of an edge $e$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-notation",
+      "number": "2",
+      "title": "Notation",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-triangulations",
+      "number": "2.1",
+      "title": "Triangulations",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "texttt",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": true
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "begin definition",
+          "heading": false
+        },
+        {
+          "term": "end definition",
+          "heading": false
+        },
+        {
+          "term": "begin remark",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a compact oriented $3$-manifold with (possibly empty) boundary. We refer to the boundary components as \\emph{cusps} (although they may not be tori). Let $\\widehat M$ be the space obtained from $M$ by collapsing each boundary component to a point. \\begin{definition} A (concrete) \\emph{triangulation} of $M$ is an identification of $\\widehat M$ with a space obtained from a collection of simplices by gluing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-miscellaneous",
+      "number": "2.2",
+      "title": "Miscellaneous",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallmatrix right",
+          "heading": false
+        },
+        {
+          "term": "begin smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "end smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "higher rank",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{itemize} \\item The number of vertices, edges, faces, and simplices, of a triangulation $\\T$ are denoted by $v$, $e$, $f$, and $s$, respectively. \\item The standard basic vectors in $\\Z^k$ are denoted by $e_1,\\dots,e_{k}$. \\item The (oriented) edge of simplex $k$ from vertex $i$ to $j$ is denoted by $\\varepsilon_{ij,k}$. \\item The matrix groups",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-the-ptolemy-varieties",
+      "number": "3",
+      "title": "The Ptolemy varieties",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "We deﬁne the Ptolemy variety for n = 2 following Garoufalidis–Thurston–Zickert [7] (see also Garoufalidis–Goerner–Zickert [5]).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-31-the-sl2c-ptolemy-variety",
+      "number": "3.1",
+      "title": "The SL(2,C)-Ptolemy variety",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy variety",
+          "heading": true
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "cij",
+          "heading": false
+        },
+        {
+          "term": "identiﬁcation relations",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure knot",
+          "heading": false
+        },
+        {
+          "term": "edge orientation",
+          "heading": false
+        }
+      ],
+      "extract": "coordinate cij,k. Consider the aﬃne algebraic set A deﬁned by the Ptolemy relations (3.1) c03,kc12,k + c01,kc23,k = c02,kc13,k, k = 1, 2, . . . , t, the identiﬁcation relations (3.2) cij,k = ci′j′,k′ when εij,k ∼εi′j′,k′, and the edge orientation relations cij,k = −cji,k. By only considering i < j, we shall always eliminate the edge orientation relations. Deﬁnition 3.1. The Ptolemy variety P2(T ) is the Zariski open",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-obstruction-classes",
+      "number": "3.2",
+      "title": "Obstruction classes",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "obstruction",
+          "heading": true
+        },
+        {
+          "term": "obstruction class",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "valued cocycle",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "qquad frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ObstructionClasses} Each class in $H^2(\\widehat M;\\Z/2\\Z)$ can be represented by a $\\Z/2\\Z$-valued $2$-cocycle on $\\widehat M$, i.e.~an assignment of a sign to each face of $\\T$. \\begin{definition} Let $\\sigma$ be a $\\Z/2\\Z$-valued $2$-cocycle on $\\widehat M$. The \\emph{Ptolemy variety} for $\\sigma$ is defined as in Definition~\\ref{def:PtolemyVariety}, but with the Ptolemy relation replaced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-the-diagonal-action",
+      "number": "4",
+      "title": "The diagonal action",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "action",
+          "heading": true
+        },
+        {
+          "term": "decoration",
+          "heading": false
+        },
+        {
+          "term": "cusps",
+          "heading": false
+        },
+        {
+          "term": "dectoptolemy",
+          "heading": false
+        },
+        {
+          "term": "intrinsicdiagonalaction",
+          "heading": false
+        }
+      ],
+      "extract": "Fix an ordering of the $1$-cells of $\\T$ and of the cusps of $M$. As mentioned in Remark~\\ref{rm:PickRepresentative} the Ptolemy variety can be regarded as a subset of the ambient space $\\C^e$. Let $T=(\\C^*)^v$ be a torus whose coordinates are indexed by the cusps of $M$. There is a natural action of $T$ on $P^{\\sigma}_2(\\T)$ defined as follows: For $x=(x_1,\\dots,x_v)\\in T$ and $c=(c_1,\\dots c_e)\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-41-the-reduced-ptolemy-varieties",
+      "number": "4.1",
+      "title": "The reduced Ptolemy varieties",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "reduced ptolemy",
+          "heading": true
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition} The \\emph{reduced Ptolemy variety} $P^\\sigma_2(\\T)_\\rd$ is the quotient $P^\\sigma_2(\\T)\\big/T$. \\end{definition} Let $\\mathcal O$ be the coordinate ring of $P^\\sigma_2(\\T)$, and let $\\mathcal O^T$ be the ring of invariants. By geometric invariant theory, the reduced Ptolemy variety is a variety whose coordinate ring is isomorphic to $\\mathcal O^T$. For $i=0,1$, let $C_i$ denote the free abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-42-shapes-and-gluing-equations",
+      "number": "4.2",
+      "title": "Shapes and gluing equations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        },
+        {
+          "term": "edges varepsilon",
+          "heading": false
+        }
+      ],
+      "extract": "One can assign to each simplex a \\emph{shape} \\begin{equation} z=\\sigma_3\\sigma_2\\frac{c_{03}c_{12}}{c_{02}c_{13}}\\in\\C\\setminus\\{0,1\\}, \\end{equation} and one can show (see \\cite{GaroufalidisThurstonZickert,GaroufalidisGoernerZickert}) that these satisfy Thurston's gluing equations. For the geometric representation of a cusped hyperbolic manifold, the shape field (field generated by the shapes) is equal to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-the-ptolemy-field-and-the-trace-field",
+      "number": "5",
+      "title": "The Ptolemy field and the trace field",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-51-explicit-description-of-the-ptolemy-field",
+      "number": "5.1",
+      "title": "Explicit description of the Ptolemy field",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy field",
+          "heading": true
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        },
+        {
+          "term": "big",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "By Proposition~\\ref{prop:ReducedPtolemyVariety} any $c\\in P^\\sigma_2(\\T)$ is equivalent to a Ptolemy assignment $c^\\prime$ whose coordinates for a set of basic generators $\\varepsilon_{i_1},\\dots,\\varepsilon_{i_v}$ is $1$. In particular, it follows that the Ptolemy field (see Definition~\\ref{def:PtolemyField}) of $c\\in P^\\sigma_2(\\T)$ is given by \\begin{equation}\\label{eq:kc}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-the-setup-of-the-proof",
+      "number": "5.2",
+      "title": "The setup of the proof",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "ptolemy field",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        },
+        {
+          "term": "edge path",
+          "heading": false
+        },
+        {
+          "term": "natural cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "Since the natural cocycle is given in terms of the Ptolemy coordinates, it follows that $\\rho$ is defined over the Ptolemy field. Hence, the trace field is a subfield of the Ptolemy field. Fix a maximal tree $G$ with $1$ or $3$-cycle as in Figures~\\ref{fig:TreeWithCycle} or \\ref{fig:TreeWithThreeCycle}. As explained in Section~\\ref{sec:AlphaStarBasic} the edges of $G$ are basic generators of $\\alpha^*$. We may thus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-proof-for-one-cusp",
+      "number": "5.3",
+      "title": "Proof for one cusp",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "minipage hspace",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        }
+      ],
+      "extract": "We first prove Theorem~\\ref{thm:PtolemyEqTrace} in the case where there is only one cusp. In this case, all edges are self edges, and $T$ consists of a single edge $\\varepsilon_1$. \\begin{lemma}\\label{lemma:BootStrapEdgeOneCusp} For any self edge $\\varepsilon$, we have $m_1c_\\varepsilon\\in k_\\rho$. \\end{lemma} \\begin{proof} Let $X_1$ be a peripheral path such that $X_1\\varepsilon$ is a loop (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-54-the-general-case",
+      "number": "5.4",
+      "title": "The general case",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        },
+        {
+          "term": "rotatebox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:ProofOfMainThm}The general case follows the same strategy, but is more complicated since it involves edge paths between multiple cusps. \\begin{lemma}\\label{lemma:BootStrapEdge} If $\\varepsilon$ is a self edge from cusp $i$ to itself, $m_ic_\\varepsilon\\in k_\\rho$ \\end{lemma} \\begin{proof} The proof is identical to that of Lemma~\\ref{lemma:BootStrapEdgeOneCusp}. \\end{proof}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-55-proof-of-proposition-19",
+      "number": "5.5",
+      "title": "Proof of Proposition 1.9",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary-non-trivial",
+          "heading": false
+        },
+        {
+          "term": "stab",
+          "heading": false
+        },
+        {
+          "term": "decoration",
+          "heading": false
+        },
+        {
+          "term": "diagonal action",
+          "heading": false
+        }
+      ],
+      "extract": "diagonal action only changes the decoration (by diagonal elements, c.f. Remark 4.1), not the representation. Since the preimage of the right map in (1.4) is parametrized by choices of lifts, i.e. elements in Z1(c M; Z/2Z), all that remains is to show that the only freedom in the choice of decoration of a boundary-non-trivial representation is the diagonal action. This follows from results in [7]: A decoration is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-62-the-diagonal-action",
+      "number": "6.2",
+      "title": "The diagonal action",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-6-ptolemy-varieties-for-n2",
+      "number": "6",
+      "title": "Ptolemy varieties for n>2",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "coprod",
+          "heading": false
+        },
+        {
+          "term": "higherptolemy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:HigherPtolemy} Many of our results generalize in a straightforward way to the higher rank Ptolemy varieties $P_n(\\T)$. We recall the definition of these below, and refer to~\\cite{GaroufalidisThurstonZickert,GaroufalidisGoernerZickert} for details. We identify all simplices of $\\T$ with a standard simplex \\begin{equation} \\Delta^3_n = \\left\\{(x_0,x_1,x_2,x_3) \\in \\R^4\\bigm\\vert 0\\leq x_i \\leq n,\\enspace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-61-definition-of-the-ptolemy-variety",
+      "number": "6.1",
+      "title": "Definition of the Ptolemy variety",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "identiﬁcation relations",
+          "heading": false
+        },
+        {
+          "term": "diagonal action",
+          "heading": false
+        },
+        {
+          "term": "coor",
+          "heading": false
+        },
+        {
+          "term": "dinate",
+          "heading": false
+        }
+      ],
+      "extract": "n,k(Z) a Ptolemy coor- dinate ct,k. For each simplex k, we have |∆n−2(Z)| = \u0000n+1 3 \u0001 Ptolemy relations (6.2) cα+1001,kcα+0110,k + cα+1100,kcα+0011,k = cα+1010,kcα+0101,k, α ∈∆n−2(Z) as well as identiﬁcation relations, (6.3) ct,k = ±ct′,k′, when (t, k) ∼(t′, k′). Remark 6.1. The signs in 6.3 depend in a non-trivial way on the face pairings (see [5]). For ordered triangulations the signs are always positive. As in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-representations",
+      "number": "6.3",
+      "title": "Representations",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "definecolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "minipage definecolor",
+          "heading": false
+        },
+        {
+          "term": "textcolor inkcol",
+          "heading": false
+        },
+        {
+          "term": "inkcol rgb",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "strut begin",
+          "heading": false
+        },
+        {
+          "term": "rotatebox",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition}\\label{def:BoundaryNonDeg} Let $\\rho$ be an $(\\SL(n,\\C),N)$-representation, and let $I_i$ denote the image of the peripheral subgroup corresponding to cusp $i$. We say that $\\rho$ is \\emph{boundary-non-degenerate} if each $I_i$ has an element whose Jordan canonical form has a single (maximal) Jordan block. \\end{definition} \\begin{proposition} The map \\begin{equation} \\mathcal R\\colon P_n(\\T)_\\rd\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "matthias goerner",
+          "heading": false
+        },
+        {
+          "term": "college park",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "zickert",
+          "heading": false
+        },
+        {
+          "term": "christian",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "maryland",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language. J. Symbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993). [2] Danny Calegari. Real places and torus bundles. Geom. Dedicata, 118:209–227, 2006. [3] Marc Culler, Nathan M. Dunﬁeld, and Jeﬀery R. Weeks. SnapPy, a computer program for studying the geometry and topology of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Our results"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 3",
+      "figure 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "minipage definecolor",
+      "heading": false
+    },
+    {
+      "term": "definecolor inkcol",
+      "heading": false
+    },
+    {
+      "term": "textcolor inkcol",
+      "heading": false
+    },
+    {
+      "term": "inkcol rgb",
+      "heading": false
+    },
+    {
+      "term": "begin minipage",
+      "heading": false
+    },
+    {
+      "term": "end minipage",
+      "heading": false
+    },
+    {
+      "term": "strut begin",
+      "heading": false
+    },
+    {
+      "term": "emph ptolemy",
+      "heading": false
+    },
+    {
+      "term": "ptolemy variety",
+      "heading": true
+    },
+    {
+      "term": "minipage hspace",
+      "heading": false
+    },
+    {
+      "term": "minipage hfill",
+      "heading": false
+    },
+    {
+      "term": "ptolemy coordinates",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Ptolemy assignment; the Ptolemy relation (1.1) holds",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Natural cocycle; α is counter-diagonal, β ∈P",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Decoration; equivariant assignment of cosets",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Ordered triangulation of the ﬁgure 8 knot. The signs indicate the non-trivial obstruction class",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Oriented triangulation of the ﬁgure 8 knot sister. The signs indicate the non-trivial obstruction class",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Ptolemy assignment",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The diagonal action of (x1, x2)",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Tree G with 1-cycle; G \\ ε1 is a maximal tree",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Tree G with 3-cycle; G \\ ε1 is a maximal tree",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Self edge",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Edge between cusps",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "3-cycle case",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Arbitrary edge ε",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Basic generators, n = 2k + 1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Basic generators, n = 2k",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Basic generators, tree with 1-cycle",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Basic generators, tree with 3-cycle",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "17 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1401.5542v1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-q-beta-cos-resummation-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:q-beta-cos-resummation-table-data",
+  "kind": "table",
+  "title": "Data table from prop:q-beta-cos-resummation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-cos-resummation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "q-beta-cos-resummation-table-data.md",
+  "provenance": "authored"
+}

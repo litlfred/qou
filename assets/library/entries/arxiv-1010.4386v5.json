@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1010.4386v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "Let $A$ be a commutative ring, and let $\\a$ be an ideal in it. \n(We do not assume that $A$ is noetherian or $\\a$-adically complete.)\nThere are two operations associated to this data: the {\\em $\\a$-adic\ncompletion} and the {\\em $\\a$-torsion}. \nFor an $A$-module $M$ its $\\a$-adic completion is the $A$-module\n\\[ \\Lambda_{\\a} (M) = \\what{M} := \\lim_{\\leftarrow i} \\,\nM / \\a^i M . \\]\nAn element $m \\in M$ is called an $\\a$-torsion element if\n $\\a^i m = 0$ for $i \\gg 0$. The $\\a$-torsion elements form \nthe $\\a$-torsion submodule $\\Gamma_{\\a} (M)$ of $M$.\n\nLet us denote by $\\cat{Mod} A$ the category of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1010.4386v5  [math.AC]  16 Oct 2012\nON THE HOMOLOGY OF COMPLETION AND TORSION\nMARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI\nAbstract. Let A be a commutative ring, and a a weakly proregular ideal\nin A.\nThis includes the noetherian case: if A is noetherian then any ideal\nin it is weakly proregular; but there are other interesting examples. In this\npaper we prove the MGM equivalence, which is an equivalence between the\ncategory of cohomologically a-adically complete complexes and the category of\ncohomologically a-torsion complexes. These are triangulated subcategories of\nthe derived category",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on Homological Algebra",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-1-preliminaries-on-homological-algebra.md",
+      "narrative": null,
+      "content": "\\label{sec:prelim}\n\nThis paper relies on delicate work with derived functors. Therefore we begin\nwith a review of some facts on homological algebra. There are also a few\nnew results. By default all rings considered in the paper are commutative. \n\nLet $\\cat{M}$ be an abelian category. \nAs in \\cite{RD} we denote by $\\cat{C}(\\cat{M})$ the category of complexes of\nobjects of $\\cat{M}$, by $\\cat{K}(\\cat{M})$ its homotopy category, \nand by $\\cat{D}(\\cat{M})$ the derived category.\nThere are full subcategories  $\\cat{D}^-(\\cat{M})$, $\\cat{D}^+(\\cat{M})$ and \n$\\cat{D}^{\\mrm{b}}(\\cat{M})$ of $\\cat{D}(\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Derived Completion and Torsion Functors",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-the-derived-completion-and-torsion-functors.md",
+      "narrative": null,
+      "content": "\\label{sec:comp}\n\nIn this section $A$ is a commutative ring, and $\\a$ is an ideal in\nit. We do not assume that $\\a$ is finitely generated or that $A$ is \n$\\a$-adically complete. \n\nFor any $i \\in \\N$ let\n$A_i := A / \\a^{i+1}$.\nThe collection of rings $\\{ A_i \\}_{i \\in \\N}$ forms an inverse system. \nFollowing \\cite{GM, AJL1}, for an $A$-module $M$ we write\n\\begin{equation}\n\\Lambda_{\\a} (M) := \\lim_{\\leftarrow i}\\, (A_i \\otimes_A M) \n\\end{equation}\nfor the $\\a$-adic completion of $M$, although we sometimes use the more\nconventional (yet possibly ambiguous) notation $\\what{M}$. \nWe get an additive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Koszul Complexes and Weak Proregularity",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-3-koszul-complexes-and-weak-proregularity.md",
+      "narrative": null,
+      "content": "\\label{sec:kosz}\n\nIn this section we define {\\em weakly proregular sequences}. We also set up\nnotation to be used later. \nThe definitions and most of the results in this section are  contained in\n\\cite{AJL1} and \\cite{Sc}. We have included our own short proofs, for the\nbenefit of the reader. We also give a new motivating example at the end.\n\nLet $A$ be a commutative ring (not necessarily noetherian). \nRecall that for an element $a \\in A$ the {\\em Koszul complex} \n$\\opn{K}(A; a)$ is the complex \n\\begin{equation}\n\\mrm{K}(A; a) :=  \\bigl( \\cdots \\to 0 \\to A \\xar{a \\cdot} A \\to 0 \\to\n\\cdots \\bigr)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Telescope Complex",
+      "pageStart": 16,
+      "pageEnd": 22,
+      "target": "../sections/sec-004-4-the-telescope-complex.md",
+      "narrative": null,
+      "content": "\\label{sec:tel}\n\nThe purpose of this section is to prove Theorem \\ref{thm:250}. \n\nLet $A$ be a commutative ring (not necessarily noetherian). For a set $X$ and an\n$A$-module $M$ we denote by\n$\\opn{F}(X, M)$ the set of all functions $f : X \\to M$.\nThis is an $A$-module in the obvious way. We denote by \n$\\opn{F}_{\\mrm{fin}}(X, M)$ the submodule of $\\opn{F}(X, M)$ consisting of\nfunctions with finite support. Note that \n$\\opn{F}_{\\mrm{fin}}(X, A)$ is a free\n$A$-module with basis the delta functions $\\delta_x : X \\to A$.\n(This notation comes from \\cite{Ye2}.)\n\n\\begin{dfn} \\label{dfn:5} \n\\begin{enum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Permanence of Weak Proregularity",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-005-5-permanence-of-weak-proregularity.md",
+      "narrative": null,
+      "content": "\\label{sec:permanence}\n\nIn this section we show that derived completion and derived torsion are\nindependent of the ring, when the the ideal is weakly proregular (Theorem \n\\ref{thm:6.2}). \n\n\\begin{thm} \\label{thm:290}\nLet $A$ be a ring, let $\\bsym{a}$ and $\\bsym{b}$ be finite sequences of elements\nof $A$, and let $\\a := (\\bsym{a})$ and $\\b := (\\bsym{b})$, the ideals generated\nby these sequences. Assume that $\\sqrt{\\a} = \\sqrt{\\b}$. \nThen the complexes $\\opn{Tel}(A; \\bsym{a})$ and $\\opn{Tel}(A; \\bsym{b})$\nare homotopy equivalent.\n\\end{thm}\n\nNote that these sequences are not assumed to be weakly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MGM Equivalence",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-006-6-mgm-equivalence.md",
+      "narrative": null,
+      "content": "\\label{sec:MGM}\n\nIn this section $A$ is a commutative ring. We do not assume\nthat $A$ is noetherian or complete.\nWeak proregularity was defined in Definition \\ref{dfn:250}.\nRecall that any finite sequence in a noetherian ring is weakly proregular, and\nany ideal in a noetherian ring is weakly proregular (Theorem \\ref{thm:253}).\n\n\\begin{lem} \\label{lem:4.1}\nLet $\\bsym{a}$ be a finite sequence in $A$, let $\\a$ be the ideal generated \nby $\\bsym{a}$, and let $M$ be\nan $A$-module. Then the homomorphism \n\\[ \\Lambda_{\\a}(e_{\\bsym{a}, \\infty}^{\\vee} \\ot 1_M) :\n\\Lambda_{\\a} \\bigl( \\opn{K}^{\\vee}_{\\infty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derived Localization",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-007-7-derived-localization.md",
+      "narrative": null,
+      "content": "\\label{sec:der-loc}\n\nIn this final section we give an alternative characterization of\ncohomologically complete complexes (Theorem \\ref{thm:263}). This result \nis inspired by the paper \\cite{KS2}. See Remark \\ref{rem:derloc.1} for a\ncomparison. \n\nWe make this assumption throughout the section:  \n$\\bsym{a} = (a_1, \\ldots, a_n)$ is a weakly proregular sequence in the ring $A$,\nand $\\a$ is the ideal generated by $\\bsym{a}$.\nWe do not assume that $A$ is noetherian or $\\a$-adically complete.\n\nThere is an additive functor \n\\[ \\Gamma_{0 / \\a} : \\cat{Mod} A \\to \\cat{Mod} A \\ , \\ \n\\Gamma_{0 / \\a} (M) :=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.4386v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[AJL1]\nL. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes,\nAnn. Sci. ENS 30 (1997), 1-39. Correction, availabe online at\nhttp://www.math.purdue.edu/~lipman/papers/homologyfix.pdf\n[AJL2]\nL. Alonso, A. Jeremias and J. Lipman, Duality and ﬂat base change on formal schemes. in:\n“Studies in duality on Noetherian formal schemes and non-Noetherian ordinary schemes”,\nContemporary Mathematics, 244 pp. 3-90. AMS, 1999. Correction: Proc. AMS 131, No.\n2 (2003), pp. 351-357\n[Bo]\nN. Bourbaki, “Commutative Algebra”, Chapters 1-7, Springer, 1989.\n[DG]\nW. G. Dwyer and J. P. C. Green",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

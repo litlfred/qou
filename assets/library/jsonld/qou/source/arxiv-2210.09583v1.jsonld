@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2210.09583v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2210.09583v1",
+  "contains": [
+    "library/arxiv-2210.09583v1/sections/sec-front-matter",
+    "library/arxiv-2210.09583v1/sections/sec-000",
+    "library/arxiv-2210.09583v1/sections/sec-001",
+    "library/arxiv-2210.09583v1/sections/sec-002",
+    "library/arxiv-2210.09583v1/sections/sec-003",
+    "library/arxiv-2210.09583v1/sections/sec-004",
+    "library/arxiv-2210.09583v1/sections/sec-005",
+    "library/arxiv-2210.09583v1/sections/sec-006",
+    "library/arxiv-2210.09583v1/sections/sec-007",
+    "library/arxiv-2210.09583v1/sections/sec-008",
+    "library/arxiv-2210.09583v1/sections/sec-009",
+    "library/arxiv-2210.09583v1/sections/sec-010",
+    "library/arxiv-2210.09583v1/sections/sec-011",
+    "library/arxiv-2210.09583v1/sections/sec-012",
+    "library/arxiv-2210.09583v1/sections/sec-013",
+    "library/arxiv-2210.09583v1/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by\n\n**A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 16 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by Clark [10] and Blumen [4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = −1. We deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π(sl2), but using diﬀerent methods from Clark. We show that our invariant is easily categoriﬁed by a slightly modiﬁed version of Khovanov homology equipped with an extra Z4-grading. We also construct a similarly modiﬁed version of Putyra’s covering Khovanov homology [28]. This suggests that the similarity between the two invariants holds at the categoriﬁed level as well.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.1 Parameters; 3.2 Quantum covering group; 3.5 Representation theoretic definiton of J\"03; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.2.2 Categorification of J\"0362J; 4.3 e-graded Covering Khovanov Homology; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2210.09583&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2210.09583v1",
+    "title_source": "slug",
+    "source_file": "2210.09583v1.pdf",
+    "source_sha256": "38fc6fa465a06a7bc25954bfd34baccc888bd93a4e20522c26eae7d1c04af841",
+    "pages": 17,
+    "arxiv": {
+      "id": "2210.09583",
+      "version": "1",
+      "primary_class": "math.QA",
+      "stamp_date": "18 Oct 2022"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,782 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "90-1-219",
+  "title": "90-1-219",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 2,
+      "title": "Quaternionic formulation of the Dirac theory",
+      "number": null,
+      "page": 3,
+      "pageLabel": "221",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-quaternionic-formulation-of-the-dirac-theory"
+    },
+    {
+      "level": 2,
+      "title": "TST-",
+      "number": null,
+      "page": 5,
+      "pageLabel": "223",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-tst"
+    },
+    {
+      "level": 3,
+      "title": "Bosonic sector",
+      "number": null,
+      "page": 7,
+      "pageLabel": "225",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-bosonic-sector"
+    },
+    {
+      "level": 3,
+      "title": "XX8(dX')",
+      "number": null,
+      "page": 9,
+      "pageLabel": "227",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-xx8dx"
+    },
+    {
+      "level": 4,
+      "title": "§ 4. Bosonic sector of Weinberg-Salam theory",
+      "number": null,
+      "page": 12,
+      "pageLabel": "230",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-bosonic-sector-of-weinberg-salam-theory"
+    },
+    {
+      "level": 1,
+      "title": "Bw=1/4.",
+      "number": "2",
+      "page": 15,
+      "pageLabel": "233",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-bw14"
+    },
+    {
+      "level": 2,
+      "title": "Discussion",
+      "number": null,
+      "page": 15,
+      "pageLabel": "233",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 16,
+      "pageLabel": "234",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgements"
+    },
+    {
+      "level": 2,
+      "title": "Appendix",
+      "number": null,
+      "page": 16,
+      "pageLabel": "234",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-appendix"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "219",
+      "labelEnd": "221",
+      "words": 1341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs boson",
+          "heading": false
+        },
+        {
+          "term": "quaternionic formulation",
+          "heading": false
+        },
+        {
+          "term": "dirac spinor",
+          "heading": false
+        },
+        {
+          "term": "dirac theory",
+          "heading": false
+        },
+        {
+          "term": "generalized one-form",
+          "heading": false
+        },
+        {
+          "term": "chiral fermions",
+          "heading": false
+        },
+        {
+          "term": "yang-mills-higgs theory",
+          "heading": false
+        },
+        {
+          "term": "gauge boson",
+          "heading": false
+        }
+      ],
+      "extract": "219 Progress of Theoretical Physics, Vol. 90, No.1, July 1993 Quaternions and Non-Commutative Geometry Katsusada MORITA Department of Physics, Nagoya University, Nagoya 464-01 (Received March 22, 1993) It is shown that the Dirac operator becomes 2 x 2 matrix acting on the space of chiral fermions in the previously·proposed quaternionic formulation of the Dirac theory. The interaction part of thus· obtained Dirac",
+      "extractCut": true,
+      "blocks": [
+        "library/90-1-219/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-quaternionic-formulation-of-the-dirac-theory",
+      "number": null,
+      "title": "Quaternionic formulation of the Dirac theory",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "221",
+      "labelEnd": "223",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic formulation",
+          "heading": true
+        },
+        {
+          "term": "dirac",
+          "heading": true
+        },
+        {
+          "term": "peh",
+          "heading": false
+        },
+        {
+          "term": "dirac equation",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "lqi",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "guest",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we describe coupling of gauge and Higgs fields to fermions in the quaternionic formulation9),lO) of the Dirac theory. The new result is Eqs. (11)~(14b). To begin with we briefly recall the basic property of quaternions. A real quaternion qEH is decomposed as q=qo+ iql + jq2+ kqa, where qo, ql, q2,qaE R, and Hamilton's imaginary units i, j and k satisfy the equations i2=l=k2=-1 and ij=-ji=k, cyclic.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-tst",
+      "number": null,
+      "title": "TST-",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "223",
+      "labelEnd": "225",
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ljf",
+          "heading": false
+        },
+        {
+          "term": "obi",
+          "heading": false
+        },
+        {
+          "term": "dirac lagrangian",
+          "heading": false
+        },
+        {
+          "term": "hermitian conjugation",
+          "heading": false
+        },
+        {
+          "term": "minus sign",
+          "heading": false
+        },
+        {
+          "term": "biquaternions",
+          "heading": false
+        },
+        {
+          "term": "total divergence",
+          "heading": false
+        },
+        {
+          "term": "left translation",
+          "heading": false
+        }
+      ],
+      "extract": "1=( ~ ;*),. TT;T- 1=( -obi _obJ, Ti'iT- 1=( -obi _obi)' (8) where U=q-j-1P=biUi, U*=q+j-1P with U[J=[JU=l and {bo=l, bl=j-1i, bz=j -lj, b3=j -lk} are the basis of the biquaternions Q, while bo=bo, ba= - ba(a =1,2,3). For any biquaternion q= biqiE Q, qiE C we keep the previous definition of the conjugation, the real part*) and the norm so that q= biqi, Req= ~ (q+ q)=qO, N(q)=qq= qq= _ 7Jijqiqj • We still have qp= p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-bosonic-sector",
+      "number": null,
+      "title": "Bosonic sector",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "225",
+      "labelEnd": "227",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "basis one-forms",
+          "heading": false
+        },
+        {
+          "term": "mass dimension",
+          "heading": false
+        },
+        {
+          "term": "sector",
+          "heading": true
+        },
+        {
+          "term": "guest",
+          "heading": false
+        },
+        {
+          "term": "grade",
+          "heading": false
+        },
+        {
+          "term": "matrix multiplication",
+          "heading": false
+        },
+        {
+          "term": "bosonic",
+          "heading": true
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        }
+      ],
+      "extract": "-- Matrix formulation vs quaternionic one-- If the fermion mass m is generated via Higgs mechanism, ¢=m+rp*J defines the shifted Higgs field rp with vanishing vacuum expectation value. In order to construct the bosonic sector of the lagrangian, we make the following translation: *J Yukawa coupling constant is absorbed into the definition of ¢. Downloaded from https://academic.oup.com/ptp/article/90/1/219/1824731 by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-xx8dx",
+      "number": null,
+      "title": "XX8(dX')",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "227",
+      "labelEnd": "230",
+      "words": 1388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pauli rep",
+          "heading": false
+        },
+        {
+          "term": "yang-mills-higgs theory",
+          "heading": false
+        },
+        {
+          "term": "quaternion algebra",
+          "heading": false
+        },
+        {
+          "term": "jlq",
+          "heading": false
+        },
+        {
+          "term": "ojlq",
+          "heading": false
+        },
+        {
+          "term": "coquereaux",
+          "heading": false
+        },
+        {
+          "term": "exterior derivative",
+          "heading": false
+        },
+        {
+          "term": "aqe",
+          "heading": false
+        }
+      ],
+      "extract": "(19) a a a is still valid. Suppose now that Jl of Eq. (15) belongs to the algebra above and define the generalized 2-form through :F=dJl+Jl8Jl. a In order to be able to identify :F with the field strength we need only Eqs. (17) and (19) together with d2=0. Explicit evaluation of it and making the trace tr(:F t , :F) where ( ., .) denotes the inner product of forms with the algebra (16),*) which is gauge invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-bosonic-sector-of-weinberg-salam-theory",
+      "number": null,
+      "title": "§ 4. Bosonic sector of Weinberg-Salam theory",
+      "level": 4,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "230",
+      "labelEnd": "233",
+      "words": 1230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rpo rpt",
+          "heading": false
+        },
+        {
+          "term": "weinberg-salam theory",
+          "heading": true
+        },
+        {
+          "term": "gauge boson",
+          "heading": false
+        },
+        {
+          "term": "gauge fields",
+          "heading": false
+        },
+        {
+          "term": "higgs-fields matrices",
+          "heading": false
+        },
+        {
+          "term": "gauge coupling",
+          "heading": false
+        },
+        {
+          "term": "gauge invariance",
+          "heading": false
+        },
+        {
+          "term": "gauge transformation",
+          "heading": false
+        }
+      ],
+      "extract": "We now apply the quaternionic formalism in the previous section to discuss the bosonic sector of Weinberg-Salam theory.7) Just as the authors in Ref. 3) generalize entries in Jl of Eq. (15) as 2 x 2 matrices we also generalize Eq. (23) to (32) where V=ieOP-e3Z and (/J=eO(/Jl-e3(/J2. The bold-faced letters denote the follow- ing 2 X 2 matrices: P+Z=d£i(P+Z)i= rzO'·W+ 16o-oWo , P_Z=d£i(P_Z)i= !G (o-O+o-3)Wo, .m .\"\" \"\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-bw14",
+      "number": "2",
+      "title": "Bw=1/4.",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "233",
+      "labelEnd": "233",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "§ 5.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-discussion",
+      "number": null,
+      "title": "Discussion",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "233",
+      "labelEnd": "234",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs-fields matrices",
+          "heading": false
+        },
+        {
+          "term": "weinberg-salam theory",
+          "heading": false
+        },
+        {
+          "term": "j2mw",
+          "heading": false
+        },
+        {
+          "term": "coquereaux",
+          "heading": false
+        },
+        {
+          "term": "higgs mass",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "weinberg angle",
+          "heading": false
+        },
+        {
+          "term": "convention regarding",
+          "heading": false
+        }
+      ],
+      "extract": "We have reformulated the bosonic sector of Weinberg-Salam theory in terms of quaternions. It predicts mH=j2mw and sin2 Bw=1/4 at the classical level. The renormalization effects are not considered in this paper. The present experimentsl3) indicate that mHo>48 GeV, mw=80 GeV and sin 2Bw=0.23, 10 % down from 0.25. If the relation mH=j2mw is correct within ±10 % corrections, the Higgs mass would be in the range 100 ~",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "234",
+      "labelEnd": "234",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "professor",
+          "heading": false
+        },
+        {
+          "term": "okumura",
+          "heading": false
+        },
+        {
+          "term": "informing",
+          "heading": false
+        }
+      ],
+      "extract": "The author would like to express his sincere thanks to Professor J. IIzuka for invaluable discussions and useful suggestion on the noncommutative geometry. He is also grateful to Professor H. Kase, Professor Y. Okumura and Professor M. Tanaka for helpful discussions. Thanks are also due to Dr. K. Ikemori for informing him of Ref. 3) and explaining some details on it and Mr. S. Tanimura for beautiful lectures on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "234",
+      "labelEnd": "236",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "scheck",
+          "heading": false
+        },
+        {
+          "term": "coquereaux",
+          "heading": false
+        },
+        {
+          "term": "guest",
+          "heading": false
+        },
+        {
+          "term": "bioi",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "ihi",
+          "heading": false
+        },
+        {
+          "term": "prog",
+          "heading": false
+        }
+      ],
+      "extract": "-- Dirac Operator in the Quaternionic Formulation and 4 x 4 Matrix Formalism of Coquereaux et al. -- In this appendix we shall present an alternative derivation of the lagrangian (38) and the gauge transformation law (40) without invoking the translation (15). Put (A·l) where Pi, Zi, (]) and (])t are defined by Eq. (33). Equation (A' 1) is the Weinberg- Salam version of (the interaction part of) the Dirac operator",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quaternionic formulation",
+      "heading": true
+    },
+    {
+      "term": "higgs mass",
+      "heading": false
+    },
+    {
+      "term": "guest",
+      "heading": false
+    },
+    {
+      "term": "higgs boson",
+      "heading": false
+    },
+    {
+      "term": "higgs fields",
+      "heading": false
+    },
+    {
+      "term": "quaternions",
+      "heading": false
+    },
+    {
+      "term": "quaternionic conjugation",
+      "heading": false
+    },
+    {
+      "term": "gauge coupling",
+      "heading": false
+    },
+    {
+      "term": "dirac lagrangian",
+      "heading": false
+    },
+    {
+      "term": "quaternionic formalism",
+      "heading": false
+    },
+    {
+      "term": "gauge transformation",
+      "heading": false
+    },
+    {
+      "term": "dirac spinor",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "219",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "220",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "221",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "222",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "223",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "224",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "225",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "226",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "227",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "228",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "229",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "230",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "231",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "232",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "233",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "234",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "235",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "236",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/90-1-219"
+  }
+}

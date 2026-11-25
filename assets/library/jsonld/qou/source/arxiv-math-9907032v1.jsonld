@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Combinatorial optimization in geometry",
+  "contains": [
+    "library/arxiv-math-9907032v1/sections/sec-front-matter",
+    "library/arxiv-math-9907032v1/sections/sec-000",
+    "library/arxiv-math-9907032v1/sections/sec-001",
+    "library/arxiv-math-9907032v1/sections/sec-002",
+    "library/arxiv-math-9907032v1/sections/sec-003",
+    "library/arxiv-math-9907032v1/sections/sec-004",
+    "library/arxiv-math-9907032v1/sections/sec-005",
+    "library/arxiv-math-9907032v1/sections/sec-006",
+    "library/arxiv-math-9907032v1/sections/sec-007",
+    "library/arxiv-math-9907032v1/sections/sec-008",
+    "library/arxiv-math-9907032v1/sections/sec-009",
+    "library/arxiv-math-9907032v1/sections/sec-010",
+    "library/arxiv-math-9907032v1/sections/sec-011",
+    "library/arxiv-math-9907032v1/sections/sec-012",
+    "library/arxiv-math-9907032v1/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities.\n\n**Combinatorial optimization in geometry 1** — Igor Rivin. arXiv:math/9907032v1 [math.GT], 6 Jul 1999.\n\nExtends and unifies earlier results, generalising the framework of ideal polyhedra in H³ to that of singular Euclidean structures on surfaces, possibly with an infinite number of singularities. The method is variational: geometric structures are characterised as optima of a combinatorial/convex problem.\n\n**Why it may bear here.** A variational characterisation of ideal hyperbolic structures is the same shape as the LP/SDP optimisation this corpus uses for operator selection, and the ideal-polyhedron setting is where hyperbolic volume comes from. Structural resemblance, not an established connection.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9907032&metadataPrefix=arXiv), submitted 1999-07-06, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9907032v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9907032v1.pdf",
+    "source_sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
+    "pages": 27,
+    "arxiv": {
+      "id": "math/9907032",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "6 Jul 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

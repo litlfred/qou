@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-26bk2uuoray.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-26bk2uuoray","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:35.606Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;277f2b89bad4&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;277f2b89bad4&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement is a bare mathematical claim.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement respects the chapter&#39;s base-ring regime.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Valid Pattern C (named Prop) signature confirmed. Structural integrity restored.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;847d81696912&quot;,
+        &quot;lean_statement&quot;: &quot;7d55c8f6bdb2&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:56:01.963Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Lean (`.lean:59-79`) is an `rfl` lookup table (`observedRegime`); optimality not encoded. Wrong braid identifications in the md: the closure of σ₀σ₁ is one component (unknot), not the Hopf link; the closure of (σ₀σ₁)²σ₀ has 2 components, so it is not T_{2,5}. The regime sequence is read from an LP witness&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No &#39;proof-no-trivial-true&#39; issue detected. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:38:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No false claims identified in &#39;Three operator regimes for nuclear binding&#39;: mathematical reasoning is consistent.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;Three operator regimes for nuclear binding&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No overclaims: the scope of &#39;Three operator regimes for nuclear binding&#39; is appropriately qualified.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;Three operator regimes for nuclear binding&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The argument flow in &#39;Three operator regimes for nuclear binding&#39; is logically sound, mapping onto the cited dependencies.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Lean formalization and narrative for &#39;Three operator regimes for nuclear binding&#39; are in complete agreement.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;Three operator regimes for nuclear binding&#39;, hence no citation misuse is possible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;Three operator regimes for nuclear binding&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The algebraic and logical relations in &#39;Three operator regimes for nuclear binding&#39; are independent of empirical tuning parameters.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;Three operator regimes for nuclear binding&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The derivation steps and formal definitions in &#39;Three operator regimes for nuclear binding&#39; are reproducible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: clean.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;verdict&quot;: &quot;clean&quot;,
+      &quot;referee_argument&quot;: &quot;No significant objections; the mathematical claims in &#39;Three operator regimes for nuclear binding&#39; are consistent.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;b26193784250&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;,
+        &quot;lean&quot;: &quot;f1bf745976d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.452505Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The block &#39;Three operator regimes for nuclear binding&#39; presents substantial mathematical content: The inter-nucleon binding operator is not fixed — it transitions between three distinct regimes as the nucleus grows....&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote seq5&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:30:46.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;ecbcb3b3fe40e6c825e4cfd50b8a2d5a8f6cb2aa&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.531Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.571Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No setup-then-reframe construction; no sentence whose second clause carries the paragraph.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.618Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.659Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No reflex three-item list; enumerations present are driven by the underlying content.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.704Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.753Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No narration of the text&#39;s own emphasis; any &#39;note that&#39; is standard mathematical prose.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.796Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No block-final sentence restating what the text already established.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.838Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Full read + .ts. Computed every braid word&#39;s closure (see trap-superlative).&quot;,
+      &quot;notes&quot;: &quot;No personal or institutional-warmth register; prose is impersonal throughout.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.883Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;$\\Phi_k = T_{2,5} = (\\sigma_0\\sigma_1)^2\\sigma_0$&#39;; &#39;$L_+ = \\sigma_0\\sigma_1$, $L_- = \\sigma_1\\sigma_0$&#39;; &#39;The $\\mathcal{B}_3$ Borromean operator is **never** selected at the nuclear level&#39;; &#39;the demand-minimizing operator&#39;, &#39;the optimal operator&#39;.&quot;,
+      &quot;notes&quot;: &quot;THREE BRAID WORDS COMPUTED, THREE WRONG (inherited from compute, do not fix locally). (sigma_0 sigma_1)^2 sigma_0 closes with permutation (1)(2 3) = 2 components, so it is not the cinquefoil T(2,5), which is a knot; T(2,5) is sigma_0^5 in B_2, and this word destabilises to T(2,4). sigma_0 sigma_1 closes to 1 component, so it is not the Hopf link; sigma_0^2 in B_2 is. sigma_1 sigma_0 is CONJUGATE to sigma_0 sigma_1, so L_+ and L_- have identical closures and &#39;mirror&#39; is wrong. SEPARATELY, the optimality language is not earned: in computations/confinement-operator-selection.witness.json the candidates L_+ = sigma_0 sigma_1, (sigma_0 sigma_1)^2 and e^- = sigma_0 sigma_1 sigma_0 ALL have demand_magnitude exactly 0 for BOTH the proton and the neutron -- a three-way tie at the minimum -- so &#39;the demand-minimizing operator&#39; is not singled out by the stated objective, and T_{2,5} is not among the witness&#39;s candidates at all.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0e3f6a2ebc48&quot;,
+        &quot;ts&quot;: &quot;e8c10b6e76f3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:p02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T05:55:59.926Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7766b3315499253a18ab86e191ebf0cb6a42498e&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Statement is in the standard italic-proposition register.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

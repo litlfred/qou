@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Hecke algebras, generalisations and representation theory",
+  "contains": [
+    "library/hdr/sections/sec-front-matter",
+    "library/hdr/sections/sec-000",
+    "library/hdr/sections/sec-001",
+    "library/hdr/sections/sec-002",
+    "library/hdr/sections/sec-003",
+    "library/hdr/sections/sec-004",
+    "library/hdr/sections/sec-005",
+    "library/hdr/sections/sec-006",
+    "library/hdr/sections/sec-007",
+    "library/hdr/sections/sec-008",
+    "library/hdr/sections/sec-009",
+    "library/hdr/sections/sec-010",
+    "library/hdr/sections/sec-011",
+    "library/hdr/sections/sec-012",
+    "library/hdr/sections/sec-013",
+    "library/hdr/sections/sec-014",
+    "library/hdr/sections/sec-015",
+    "library/hdr/sections/sec-016",
+    "library/hdr/sections/sec-017",
+    "library/hdr/sections/sec-018",
+    "library/hdr/sections/sec-019",
+    "library/hdr/sections/sec-020",
+    "library/hdr/sections/sec-021",
+    "library/hdr/sections/sec-022",
+    "library/hdr/sections/sec-023",
+    "library/hdr/sections/sec-024",
+    "library/hdr/sections/sec-025",
+    "library/hdr/sections/sec-026",
+    "library/hdr/sections/sec-027",
+    "library/hdr/sections/sec-028",
+    "library/hdr/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hecke algebras, generalisations and representation theory — 31 sections: Front matter; Algebras of Finite Type; Blocks\n\n**Hecke algebras, generalisations and representation theory**\n\n*The documents may come from teaching and research*\n\n75 pp, 31 sections.\n\n**Outline.** Front matter; Algebras of Finite Type; Blocks; Symmetrising forms and Schur elements; Decomposition maps; Iwahori–Hecke Algebras; Kazhdan–Lusztig cells; Schur elements and the a-function; Families of characters and Rouquier families; Decomposition maps and canonical basic sets; Cyclotomic Hecke Algebras; Hecke algebras for complex reflection groups; Schur elements and the a-function; Families of characters and Rouquier families; Decomposition maps and canonical basic sets; Ariki–Koike Algebras; Combinatorics of partitions and multipartition; Schur elements and the a-function",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "hdr",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "HDR.pdf",
+    "source_sha256": "35c190fd2d2a393c8cdfc7083bd44d308c4e37611e0f09fce9929668ec1a91d6",
+    "pages": 75,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

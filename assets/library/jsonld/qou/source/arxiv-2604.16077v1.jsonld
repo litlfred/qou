@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.16077v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement",
+  "contains": [
+    "library/arxiv-2604.16077v1/sections/sec-front-matter",
+    "library/arxiv-2604.16077v1/sections/sec-000",
+    "library/arxiv-2604.16077v1/sections/sec-001",
+    "library/arxiv-2604.16077v1/sections/sec-002",
+    "library/arxiv-2604.16077v1/sections/sec-003",
+    "library/arxiv-2604.16077v1/sections/sec-004",
+    "library/arxiv-2604.16077v1/sections/sec-005",
+    "library/arxiv-2604.16077v1/sections/sec-006",
+    "library/arxiv-2604.16077v1/sections/sec-007",
+    "library/arxiv-2604.16077v1/sections/sec-008",
+    "library/arxiv-2604.16077v1/sections/sec-009",
+    "library/arxiv-2604.16077v1/sections/sec-010",
+    "library/arxiv-2604.16077v1/sections/sec-011",
+    "library/arxiv-2604.16077v1/sections/sec-012",
+    "library/arxiv-2604.16077v1/sections/sec-013",
+    "library/arxiv-2604.16077v1/sections/sec-014",
+    "library/arxiv-2604.16077v1/sections/sec-015",
+    "library/arxiv-2604.16077v1/sections/sec-016",
+    "library/arxiv-2604.16077v1/sections/sec-017",
+    "library/arxiv-2604.16077v1/sections/sec-018",
+    "library/arxiv-2604.16077v1/sections/sec-019",
+    "library/arxiv-2604.16077v1/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of\n\n**VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT**\n\n*STÉPHANE BASEILHAC, FATHI BEN ARIBI*\n\n66 pp, 78 sections.\n\n**Abstract.** We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of the ﬁgure-eight knot comple ment M . We show that it is rigid, in the sense that it does not depend on the choice of holonomy r epresentation of M , and it is either 0 or equal to the hyperbolic volume of M divided by 2 π, depending on a parity condition satisﬁed by logarithms of the holonomy eigenvalu es on the canonical longitude, where the logarithms are parameters of the QHI of M . Along the way we also survey some relevant general features of the QHI.\n\n**Outline.** 1 Introduction; 2 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 1.1 Main result. In this paper we compute the ; 4 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 1.2 T riangulation-version of Theorem 1.1. Aga; 6 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 1.3 Structure of the proof of Theorem 1.1. Let; 2 Hred; 8 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 2 Vol(M ) and; 2 Geometric setup; 2.1 The quantum gluing varieties. These form t; 2.1.1 Quantum 3-simplices. (see [7], Section 3; 10 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 2.1.2 Gluing varieties and the holonomy map. I; 12 ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2; 2.2 By means of the formula (6) relating di; 2.2 W eights. The structure of the set of syst\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For every character ρ ∈Xhyp(M ) and charge weight kc, the following holds:\n- Theorem 1.1: seemingly reﬂects that the QHI could detect lift s to SL(2, C) of PSL (2, C)-\n- Theorem 1.2: Let (uN )N and (vN )N be sequences\n- Theorem 2.6: Let w ∈ G(T,b ). For any classes h2 ∈ H 1(M ; Z/2Z) and lκ ∈ H 1(∂ ¯M ; C)\n- Theorem 2.7: The map πN has degree Nn+p.\n- Theorem 8.44: ]). We call Xhyp(M ) the geometric component of X(M ).",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2604.16077&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2604.16077v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2604.16077v1.pdf",
+    "source_sha256": "2f1140b9d5fee38af86010b89acae5cc7b8054b208a1daff89d1d981142b2bf9",
+    "pages": 66,
+    "arxiv": {
+      "id": "2604.16077",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "17 Apr 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

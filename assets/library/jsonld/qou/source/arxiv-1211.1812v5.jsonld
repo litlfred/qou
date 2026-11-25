@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1211.1812v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Presheaves of superselection structures in curved spacetimes",
+  "contains": [
+    "library/arxiv-1211.1812v5/sections/sec-front-matter",
+    "library/arxiv-1211.1812v5/sections/sec-000",
+    "library/arxiv-1211.1812v5/sections/sec-001",
+    "library/arxiv-1211.1812v5/sections/sec-002",
+    "library/arxiv-1211.1812v5/sections/sec-003",
+    "library/arxiv-1211.1812v5/sections/sec-004",
+    "library/arxiv-1211.1812v5/sections/sec-005",
+    "library/arxiv-1211.1812v5/sections/sec-006",
+    "library/arxiv-1211.1812v5/sections/sec-007",
+    "library/arxiv-1211.1812v5/sections/sec-008",
+    "library/arxiv-1211.1812v5/sections/sec-009",
+    "library/arxiv-1211.1812v5/sections/sec-010",
+    "library/arxiv-1211.1812v5/sections/sec-011",
+    "library/arxiv-1211.1812v5/sections/sec-012",
+    "library/arxiv-1211.1812v5/sections/sec-013",
+    "library/arxiv-1211.1812v5/sections/sec-014",
+    "library/arxiv-1211.1812v5/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying\n\n**Presheaves of superselection structures in curved spacetimes**\n\n*Ezio Vasselli*\n\n37 pp, 17 sections.\n\n**Abstract.** We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying geometry, are categories of sections of presheaves of symmetric tensor categories. When an embedding functor is given, the superselection structure is a Tannaka-type dual of a locally constant group bundle, which hence becomes a natural candidate for the role of gauge group. Indeed, we show that any locally constant group bundle (with suitable structure group) acts on a net of C*-algebras fulﬁlling normal commutation relations on an arbitrary spacetime. We also give examples of gerbes of C*-algebras, deﬁned by Wightman ﬁelds and constructed using projective representations of the fundamental group of the spacetime, that we propose as solutions for the problem that existence and uniqueness of the embedding functor are not guaranteed.\n\n**Outline.** Front matter; 1 Introduction.; 2 Mathematical background.; 2.1 Geometry of posets.; 2.2 Nets of C*-algebras.; 2.3 Nets and presheaves of tensor categories.; 3 Presheaves in quantum field theory.; 3.1 Charge structure.; 3.2 Symmetry.; 3.3 The main result.; 4 Group bundles as global gauge symmetries.; 4.1 Twisted field nets.; 4.2 Twisted nets and background potentials.; 4.3 Current algebras on S1.; 4.4 Existence of field nets with a given gauge; 5 Conclusions and the gerbe perspective.; A Symmetry and fields in globally hyperbolic m",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1211.1812&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1211.1812v5",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1211.1812v5.pdf",
+    "source_sha256": "211667ea1312d47f6df85b5e096aa3ae57afbe714805d5d5c38c4d02cb56c988",
+    "pages": 37,
+    "arxiv": {
+      "id": "1211.1812",
+      "version": "5",
+      "primary_class": "math-ph",
+      "stamp_date": "11 Aug 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

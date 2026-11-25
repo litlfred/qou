@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-nuclear-chamber-groebner-basis",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:nuclear-chamber-groebner-basis",
+  "kind": "proposition",
+  "title": "Physical cluster chamber, drip-line monomer reduction, and the Hoyle triple-alpha bottleneck",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp",
+    "papers/quantum-observable-universe/blocks/def-lp-confined"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-nuclear-chamber-groebner-basis"
+  ],
+  "cites": [
+    "references/graver1975",
+    "references/conti-traverso1991",
+    "references/sturmfels-thomas1997"
+  ],
+  "tags": [
+    "nuclear-binding",
+    "toric-ideal",
+    "groebner-fan",
+    "graver-basis",
+    "drip-line",
+    "hoyle-state"
+  ],
+  "leanRef": "qou:ToricConicOpt.NuclearChamberGS.gPhys_strict_cost_decrease_of_chamber",
+  "text": "nuclear-chamber-groebner-basis.md",
+  "provenance": "authored"
+}

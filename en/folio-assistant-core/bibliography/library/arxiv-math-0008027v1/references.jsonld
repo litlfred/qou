@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0008027v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:math/0008027v1 [math.GT] 3 Aug 2000",
+      "dcterms:creator": [
+        "YOKOTA, HYPERBOLIC KNOT AFTER Y."
+      ],
+      "dcterms:issued": "D:20181030",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0008027",
+      "dcterms:abstract": "I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compare it with the asymptotic behavior of Kashaev’s link invariant using the ﬁgure-eight knot as an example.",
+      "dcterms:source": "library/arxiv-math-0008027v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0008027v1"
+    }
+  ]
+}

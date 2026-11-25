@@ -1,0 +1,4472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-2006.02042v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-2006.02042v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-2006.02042v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-2006.02042v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-2006.02042v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1.1.ThecoloredJonespolynomialandrecurrenceideal.ForaknotKinS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;normalization,i.e.the one for whichJunknot(n) = [n] := (t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;normalization,i.e.the one for whichJunknot(n) = [n] := (t2&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;malization,i.e.the one for whichJunknot(n) = [n] := (t2n−t−2&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;zation,i.e.the one for whichJunknot(n) = [n] := (t2n−t−2n)(t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cting on suchfunctions by (Lf)(n) := f(n+1) and (Mf)(n) := t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ting on suchfunctions by (Lf)(n) := f(n+1) and (Mf)(n) := t2&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;that LM= t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ringwithpresentationT:= R⟨L±1, M±1⟩/(LM−t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ai(M)L&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;anddeﬁnetheproductin˜Tbya(M)L&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;anddeﬁnetheproductin˜Tbya(M)Lk· b(M)L&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;anddeﬁnetheproductin˜Tbya(M)Lk· b(M)Ll:= a(M) b(t&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;anddeﬁnetheproductin˜Tbya(M)Lk· b(M)Ll:= a(M) b(t2&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;anddeﬁnetheproductin˜Tbya(M)Lk· b(M)Ll:= a(M) b(t2kM)L&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;αK(t, M, L)=P&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=0αK,i(t, M) L&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;i=0αK,i(t, M) Li,where&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Conjecture1.(AJconjecture)ForeveryknotKinS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;varietyofG,see[CS].SupposeG = Z&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;phism between χ(G) and (C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;phism between χ(G) and (C∗)2/τ, where (C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;denotetheringofregularfunctionsonV .Forexample,C[(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;subspaceoft := C[M±1, L±1],whereσ(M&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;subspaceoft := C[M±1, L±1],whereσ(MkL&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetKbeaknotinS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetKbeaknotinS3andX:=S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofχ(π1(∂X))and(C∗)&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;TheinvolutionσactsonthequantumtorusTalsobyσ(M&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;TheinvolutionσactsonthequantumtorusTalsobyσ(MkL&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Conjecture 2.(Strong AJ conjecture) Suppose Kis a knot in S&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;K)inthering&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;K⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;K)2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;suchthatε(P) =M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;suchthatε(P) =MkL&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;E= L + L−1 −M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E= L + L−1 −M4 −M−4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;K)2&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;K)2mforsomeintegersk, l, m.Then&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;andε(P) = M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;andε(P) = MkL&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;σ(R) = R,ε(R) = (L + L−1−2)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;LetQ =R&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;LetQ =RmP&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;LetQ =RmPr∈R[M±1, L±1].ThenQJK=0,σ(Q)=Qandε(Q)=ε(R)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;LetQ =RmPr∈R[M±1, L±1].ThenQJK=0,σ(Q)=Qandε(Q)=ε(R)mε(P)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;K)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;K)2mr.Hence,by[Tr4,Lemma3.2]weobtain&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)2= ˜a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)2= ˜a2(M)L&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;E)2= ˜a2(M)L2 + ˜a−2(M)L−2 + ˜a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;E)2= ˜a2(M)L2 + ˜a−2(M)L−2 + ˜a1(M)L + ˜a−1(M)L−1 + ˜a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;˜a−1(M) = −2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;˜a−1(M) = −2M4−2M−4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M8+ M−8−2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M8+ M−8−2M6−2M−6−3M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M8+ M−8−2M6−2M−6−3M4−3M−4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;E(t, M, L) = a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;E(t, M, L) = a1(t, M)L + a−1(t, M)L−1 + a&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M2−t&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t2M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(M2−M−2)(−M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(M2−M−2)(−M4−M−4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(M2−M−2)(−M4−M−4+ M2+ M−2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(t, M, L) = p2(t, M)L&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b1(t, M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M)a1(t, M) + b1(t, M)a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M)a0(t, M) + b−1(t, M)a1(t, t−2M) + b1(t, M)a−1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;a1(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, M)b0(t, M) +a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;a−1(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;a0(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a−1(t, t−2M)+a−1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t2M)&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t2M)p&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−a1(t, M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a0(t, M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−a1(t, M)a1(t, t−2M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−a1(t, M)a1(t, t−2M)a1(t, t2M) + a0(t, M)a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−a1(t, M)a−1(t, t−2M)a−1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;t8M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;t8M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;t8M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M8)(t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M8)(t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M8)(t4+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M8)(t4+ M8t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14(−1 + M8)(t4+ M8t4−M4(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t2(t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t2(t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t2(t4+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t2(t4+ M8t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10(−1 + M8)t2(t4+ M8t4−M4(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M2t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;×(M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;×(M4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M8+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M8+ 2M10+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M8+ 2M10+ 3M12+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M8+ 2M10+ 3M12+ M14+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;×(M4+ M6+ M8+ 2M10+ 3M12+ M14+ 2M16−t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t2(−M+ t)(M+ t)(−1 + Mt)(1 + Mt)(M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t2(−M+ t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t2(−M+ t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t2(−M+ t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M2t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;×(−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;×(−M4−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;×(−M4−M6−M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;×(−M4−M6−M8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;×(−M4−M6−M8+ M14+ M&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;×(−M4−M6−M8+ M14+ M16+ t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (1 −2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (1 −2M2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (1 −2M2+ M4−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (1 −2M2+ M4−2M6+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (1 −2M2+ M4−2M6+ 2M8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ M12−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M4t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M4t4+ M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M4t4+ M6t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M12−M14−M4t4+ M6t4+ M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M4(M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M10+ t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M10+ t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M10+ t4−M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M10+ t4−M2t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M4(M6+ M10+ t4−M2t4−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M10t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M10t4+ M12t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M10t4+ M12t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−(−1 + M4)(1 −M2−M6−M8−M6t4−M10t4+ M12t4−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t2(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t2(−1 + M8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t2(−1 + M8−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (−4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (−4 + M2−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (−4 + M2−2M4+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (−4 + M2−2M4+ 3M6−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;(−1 + M4)t2× (−4 + M2−2M4+ 3M6−2M8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M4t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M4t4+ M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M4t4+ M6t4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M12+ 3M4t4+ M6t4+ 2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M4t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M4t4−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M4t4−M6t4−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M2+ M4+ 2M6+ 3M8+ M10+ 2M12−3M4t4−M6t4−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2 −M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M4t4+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M4t4+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M4t4+ M8t4+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2 −M2−M4+ 2M8+ M10−M2t4−M4t4+ M8t4+ 2M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M14t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M14t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M6t8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M6t8+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M6t8+ M8t8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M14t4−M4t8−M6t8+ M8t8+ M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−(1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−(1 + M2)t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−(1 + M2)t2(1 −M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(1 + M2)t2(1 −M8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−(1 + M2)t2(1 −M8+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t4−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t4−2M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t4−2M6t4−4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t4−2M6t4−4t8−6M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(3 + M2+ 2M4+ t4−M2t4−M4t4−2M6t4−4t8−6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−7M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−7M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M2t12−6M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M2t12−6M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M2t12−6M4t12−7M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−7M4t8−7M6t8−4M8t8−4M10t8−5t12−7M2t12−6M4t12−7M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t16−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t16−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t16−M8t16−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t16−M8t16−2M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M8t12−4t16−6M2t16−3M4t16−5M6t16−M8t16−2M10t16−t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M6t24+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M6t24+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M6t24+ M8t24+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;−2M2t20−2M4t20−3M6t20−2M8t20+ M4t24+ M6t24+ M8t24+ 2M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M2t8+ 4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M2t8+ 4t12+ 7M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M2t8+ 4t12+ 7M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−M−4t−8(−1 −M2+ 4t4+ 8M2t4+ 4t8+ 6M2t8+ 4t12+ 7M2t12−t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M4t8−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M4t8−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M4t8−M6t8−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−4t−10(−1 + M2+ M6+ M2t4−M8t4−2t8−M4t8−M6t8−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t12−3M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t12−3M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t12−3M8t12−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t12−3M8t12−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−M10t8−2M12t8−2t12−M4t12−M6t12−3M8t12−M10t12−2t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M4t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M8t20−M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M8t20−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M8t20−M10t20+ M&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;−2M4t16−2M8t16−M12t16−M8t20−M10t20+ M12t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2M−4t−4(1 −t + t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2M−4t−4(1 −t + t2)(1 + t + t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−2M−4t−4(1 −t + t2)(1 + t + t2)(1 −t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−2M−4t−4(1 −t + t2)(1 + t + t2)(1 −t2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;˜p0(t, M) −f(t, M)B&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;˜p1(t, M) +f(t, M)A&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14t2 + t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14t2 + t6 −M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14t2 + t6 −M2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M4t10(−M4t2 −M6t2 −M8t2 + 2M12t2 + M14t2 + t6 −M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 14M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M12t6−6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M12t6−6M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M12t6−6M14t6−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 14M4t6+ 5M6t6−2M8t6+ 3M10t6−10M12t6−6M14t6−M16t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M18t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M6t10+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M6t10+ 6M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M6t10+ 6M8t10−12M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−M18t6−12t10+ 6M2t10+ 18M4t10+ 17M6t10+ 6M8t10−12M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−14M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−14M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t10+ 8M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t10+ 8M18t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t10+ 8M18t10−13t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t10+ 8M18t10−13t14+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−14M12t10−19M14t10+ 4M16t10+ 8M18t10−13t14+ 6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 35M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M10t14−26M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M10t14−26M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M10t14−26M12t14−25M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 35M4t14+ 23M6t14+ 2M8t14−10M10t14−26M12t14−25M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 4M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 4M16t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M4t18+ 17M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M4t18+ 17M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M4t18+ 17M6t18+ 3M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ 4M16t14+ 6M18t14−12t18+ 6M2t18+ 20M4t18+ 17M6t18+ 3M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−12M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M16t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M16t18+ 7M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M16t18+ 7M18t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M16t18+ 7M18t18−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;−12M10t18−15M12t18−18M14t18+ 4M16t18+ 7M18t18−M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 13M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;+ 13M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M14t22+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M14t22+ 2M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M14t22+ 2M4t26−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;+ 13M4t22+ 7M6t22−3M8t22−10M12t22−6M14t22+ 2M4t26−M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M16t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M16t26−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M16t26−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M16t26−2M8t30+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;−2M8t26−M10t26+ 2M12t26+ 2M14t26−2M16t26−2M8t30+ 2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M14&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M14t4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M14t4 + M6&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t10(−1 + M2t4 + M8t4 + M10t4 + 2M12t4 + M14t4 + M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M4t12+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M4t12+ 6M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M4t12+ 6M6t12−M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−14M8t8−7M10t8−12M12t8−8M14t8+ 13M4t12+ 6M6t12−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 2M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M4t16+ 7M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M4t16+ 7M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M4t16+ 7M6t16−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 2M10t12−10M12t12−6M14t12+ 13M4t16+ 7M6t16−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−11M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−11M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M6t20+ 10M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M6t20+ 10M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M6t20+ 10M8t20+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−11M12t16−7M14t16+ 12M4t20+ 6M6t20+ 10M8t20+ 6M10t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;+ M6t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ M6t24+ 2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;+ M6t24+ 2M12t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6t24+ 2M12t24−2M&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;+ M6t24+ 2M12t24−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t2M)&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −a0(t, t2M) −a1(t, t2M)p&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, M)a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;(M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(M8t14−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;(M8t14−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(M8t14−M4t10)p1(t, M) −(M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;(M8t14−M4t10)p1(t, M) −(M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(M8t14−M4t10)p1(t, M) −(M8t10−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;(M8t14−M4t10)p1(t, M) −(M8t10−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 + M12−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M4t8−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M4t8−M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M4t8−M8t8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;1 + M12−M2t4−M4t4−M8t4−M10t4−M4t8−M8t8+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t20+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t20+ M10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t20+ M10t20−t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t20+ M10t20−t24−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;+ M8t16+ M2t20+ M4t20+ M8t20+ M10t20−t24−M12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Byreplacingp1(t, M) =˜p1(t, M) +f(t,M)A&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gcd(A&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;gcd(A2,B&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M14t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M14t8f(t, M) + M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M14t8f(t, M) + M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−1 −2M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M4−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M4−M6−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M4−M6−M10−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M4−M6−M10−M12−2M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−1 −2M2−M4−M6−M10−M12−2M14−M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M10t4+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M10t4+ 6M12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M10t4+ 6M12t4+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8t4+ 12M2t4+ 6M4t4+ 12M6t4−2M8t4+ 12M10t4+ 6M12t4+ 12M14t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 8M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8M16t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M10t8+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M10t8+ 6M12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M10t8+ 6M12t8+ 10M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot; 8M16t4+ 6t8+ 10M2t8+ 6M4t8+ 13M6t8+ 13M10t8+ 6M12t8+ 10M14t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ 6M16t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M6t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M6t12+ 12M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M6t12+ 12M10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M6t12+ 12M10t12+ 6M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 6M16t8+ 7t12+ 11M2t12+ 6M4t12+ 12M6t12+ 12M10t12+ 6M12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 11M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 11M14t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M12t16−2M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M12t16−2M2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M12t16−2M2t20−2M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;+ 11M14t12+ 7M16t12+ M4t16+ M12t16−2M2t20−2M14t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(1, M)=M−8−M−6+ 35M−4+ 18M−2+ 29 + 20M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(t, M) = M−8−M−6+ 35M−4+ 18M−2+ 29 + 20M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(t, M) = M−8−M−6+ 35M−4+ 18M−2+ 29 + 20M2+ (t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;Withthechangeofvariableh(t, M) = t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t2−11t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t2−11t4−11t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t2−11t4−11t6+ 12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t2−11t4−11t6+ 12t8+ 12t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2t4+ 2t6+ (1 + t2−11t4−11t6+ 12t8+ 12t10)(M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t12+ t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t12+ t14)(M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t16−2t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t16−2t18)(M&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t8+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t8+ 7t10)(M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t2−11t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t2−11t4−11t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t2−11t4−11t6+ 12t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t2−11t4−11t6+ 12t8+ 12t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t4+ t6+ (1 + t2−11t4−11t6+ 12t8+ 12t10)M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t12+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−5t4−5t6+ 7t8+ 7t10+ t12+ t14)M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t16−2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (2 + 2t2−10t4−10t6+ 9t8+ 9t10−2t12−2t14−2t16−2t18)M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t8+ 7t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (1 + t2−7t4−7t6+ 7t8+ 7t10)M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M8&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;b0(t, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M8t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;, M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M8t4 −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot; M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M8t4 −M4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M) = −(−1 + M)(1 + M)(1 + M2)t4(−M2 −M4 −M6 + t4 + M8t4 −M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M2(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M2(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M2(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M2(M−t)(M+ t)(−1 + Mt)(1 + Mt)(M2+ t2)(1 + M2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(t, M, L) = L&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;a1(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, M)b0(t, M) +a0(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;a−1(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;a0(t, M)b0(t, M) +a&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a−1(t, t−2M)+a−1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a1(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−1 −t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M6(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M6(t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M6(t8+ t16) −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M6(t8+ t16) −M8(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;−1 −t16+ M4t8(1 + t4)2+ M2(t4+ t12) + M6(t8+ t16) −M8(t12+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t4+ t12) −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t4+ t12) −M8(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t4+ t12) −M8(1 + t16) + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M4t8(1 + t4)2−t12(1 + t8) + M6(t4+ t12) −M8(1 + t16) + M2(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;8(1 + t4)2−t12(1 + t8) + M6(t4+ t12) −M8(1 + t16) + M2(t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;t8+ M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t8+ M16t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M12t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M12t8(2 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M12t8(2 + t4) −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M12t8(2 + t4) −M2(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t8+ M16t8−M4t8(2 + t4) −M12t8(2 + t4) −M2(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M8t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;+ M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M6(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t4+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t4+ t8) + 2M&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t4+ t8) + 2M8(1 + t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t4+ t8) + 2M8(1 + t4+ 2t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;+ M6(t4+ t8) + M10(t4+ t8) −M14(t4+ t8) + 2M8(1 + t4+ 2t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E)&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(t4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(t4n+ t−4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(t4n+ t−4n−t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;(t4n+ t−4n−t4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;(t4n+ t−4n−t4l−t−4&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;P(t, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;P(t, t2&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;P(t, t2n, t&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;P(t, t2n, t4&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M−4−t−2M−2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M−6−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−6−t12M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;M−2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M−2+ t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t16M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;t16M6−t−8M−6−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t16M6−t−8M−6−t12M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t12+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t12+ t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t−2M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M4−t−2M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M4−t−2M2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M−2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M−2−t2M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t−12M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;M6−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+ (t−4+ 1)M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;+ (t−4+ 1)M2+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+ (t−4+ 1)M2+ t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t16M−6−t−8M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;t16M−6−t−8M6−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t16M−6−t−8M6−t12M−4+ t−4M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;t12+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t12+ t8+ t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t−2M−4−t−2M−2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t6M2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M2)⟨1⟩+ (t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M2)⟨1⟩+ (t6M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M2)⟨1⟩+ (t6M4−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M2)⟨1⟩+ (t6M4−t2M&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(t−2M−2−t2M2)⟨1⟩+ (t6M4−t2M2−t&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Byadirectcalculation,usingthefactthatL&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;obtaintheformulaforL&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(L&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;Koutschan, Irreducibilityofq-diﬀerence operatorsandthe knot7&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

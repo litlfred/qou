@@ -1,0 +1,895 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0008027v1",
+  "title": "arxiv-math-0008027v1",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Algebra",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Geometry",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-geometry"
+    },
+    {
+      "level": 2,
+      "title": "Ideal tetrahedron decomposition of $S^3\\setminus({K\\cup\\text{two points}})$",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-ideal-tetrahedron-decomposition-of-s3setminus"
+    },
+    {
+      "level": 2,
+      "title": "Ideal tetrahedron decomposition of $S^3\\setminus{K}$",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolicity condition",
+      "number": "3.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-33-hyperbolicity-condition"
+    },
+    {
+      "level": 1,
+      "title": "Analysis, and Harmony",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-analysis-and-harmony"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "yokota",
+          "heading": false
+        },
+        {
+          "term": "kashaev",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0008027v1 [math.GT] 3 Aug 2000 KASHAEV’S INVARIANT AND THE VOLUME OF A HYPERBOLIC KNOT AFTER Y. YOKOTA HITOSHI MURAKAMI Abstract. I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compare it with the asymptotic behavior of Kashaev’s link invariant using the ﬁgure-eight knot as an example.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0008027v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "takata yokota",
+          "heading": false
+        },
+        {
+          "term": "murakami okamoto",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron decomposition",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behavior",
+          "heading": false
+        },
+        {
+          "term": "operatorname vol",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:introduction label=\"sec:introduction\"} In [@Kashaev:MODPLA95] R. Kashaev introduced a link invariant by using the quantum dilogarithm and after some concrete calculations for the knots $4_1$, $5_2$, and $6_1$, he conjectured in [@Kashaev:LETMP97] the asymptotic behavior of his invariant determines the hyperbolic volume for hyperbolic links. More precisely his conjecture is as follows. For an integer $N\\ge2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-algebra",
+      "number": "2",
+      "title": "Algebra",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 910,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallmatrix right",
+          "heading": false
+        },
+        {
+          "term": "begin smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "end smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "makebox",
+          "heading": false
+        },
+        {
+          "term": "m-l",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        },
+        {
+          "term": "otimes right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:algebra label=\"sec:algebra\"} In this section I describe Kashaev's link invariant [@Kashaev:MODPLA95] following Yokota. We fix an integer $N\\ge2$ and put $q=\\exp\\left(2\\pi\\sqrt{-1}/N\\right)$. Put $(x)_n=\\prod_{k=1}^{n}(1-x^k)$ for $n\\ge 0$. For integers $0{\\le}k,l,m,n{\\le}N-1$ we put $$\\theta\\!\\left(\\begin{smallmatrix} k & n \\\\ l & m \\end{smallmatrix}\\right) = \\begin{cases} 1\\;&\\text{if ${l}\\ne{m}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-geometry",
+      "number": "3",
+      "title": "Geometry",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geometry",
+          "heading": true
+        },
+        {
+          "term": "tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "setminus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geometry label=\"sec:geometry\"} In this section I will describe how to decompose a knot complement $S^3\\setminus{K}$ into ideal topological tetrahedra and how these define hyperbolic structure when $K$ is the figure-eight knot. Here 'ideal' means that each vertex is at the cusp (the infinite point corresponding to $K$). (That is, all vertices of the tetrahedra meet at a point, and the complement of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-ideal-tetrahedron-decomposition-of-s3setminus",
+      "number": "3.1",
+      "title": "Ideal tetrahedron decomposition of $S^3\\setminus({K\\cup\\text{two points}})$",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nbd octa",
+          "heading": false
+        },
+        {
+          "term": "collapsed octa",
+          "heading": false
+        },
+        {
+          "term": "fig octa",
+          "heading": false
+        },
+        {
+          "term": "twisted octa",
+          "heading": false
+        },
+        {
+          "term": "octa plus",
+          "heading": false
+        },
+        {
+          "term": "nbd minus",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedron",
+          "heading": true
+        },
+        {
+          "term": "tetrahedron decomposition",
+          "heading": true
+        }
+      ],
+      "extract": "We will decompose $S^3\\setminus({K\\cup\\text{two points}})$ into tetrahedra so that all the vertices are either on $K$ or on the two points outside $K$. First we put an octahedron ${\\rm E}_i$-${\\rm A}_i{\\rm B}_i{\\rm C}_i{\\rm D}_i$-${\\rm F}_i$ at the $i$th crossing of the knot diagram so that ${\\rm E}_i{\\rm F}_i$ is perpendicular to the plane, that ${\\rm E}_i$ and ${\\rm F}_i$ touch the over-crossing point and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-33-hyperbolicity-condition",
+      "number": "3.3",
+      "title": "Hyperbolicity condition",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron decomposition",
+          "heading": false
+        },
+        {
+          "term": "cusp condition",
+          "heading": false
+        },
+        {
+          "term": "consistency condition",
+          "heading": false
+        },
+        {
+          "term": "half planes",
+          "heading": false
+        }
+      ],
+      "extract": "Now we have a *topological* ideal tetrahedron decomposition of $S^3\\setminus{K}$. To introduce a complete hyperbolic structure, we regard each tetrahedron as an ideal hyperbolic tetrahedron parameterized by a complex number with positive imaginary part. This complex parameter $z$ is chosen as follows. First recall that an ideal hyperbolic tetrahedron can be characterized by a Euclidean triangle. (If we consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-analysis-and-harmony",
+      "number": "4",
+      "title": "Analysis, and Harmony",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "twisted octahedron",
+          "heading": false
+        },
+        {
+          "term": "fourth octahedron",
+          "heading": false
+        },
+        {
+          "term": "twisted octahedra",
+          "heading": false
+        },
+        {
+          "term": "wavy lines",
+          "heading": false
+        },
+        {
+          "term": "regular neighborhood",
+          "heading": false
+        },
+        {
+          "term": "shaded regions",
+          "heading": false
+        },
+        {
+          "term": "kashaev conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "4. Analysis, and Harmony In §2 we know that if we calculate the Kashaev invariant of the ﬁgure-eight knot only the parameter j contributes. Due to Kashaev [2], the asymptotic behavior of ⟨41⟩N for large N is Z exp \u0014 N 2π√−1 \b −Li2(z) + Li2(z−1) \u0015 dz, where Li2(z) = −R z 0 log(1 −u)/u du is the dilogarithm function. Note that z corresponds to qj and that −Li2(z) and Li2(z−1) corresponds to (q)j and (q−1)j",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3.10"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "collapsed octa",
+      "heading": false
+    },
+    {
+      "term": "collapsed cusp",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic tetrahedron",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    },
+    {
+      "term": "kashaev invariant",
+      "heading": true
+    },
+    {
+      "term": "nbd octa",
+      "heading": false
+    },
+    {
+      "term": "hitoshi murakami",
+      "heading": false
+    },
+    {
+      "term": "figure-eight knot",
+      "heading": true
+    },
+    {
+      "term": "ideal tetrahedron",
+      "heading": true
+    },
+    {
+      "term": "tetrahedron decomposition",
+      "heading": true
+    },
+    {
+      "term": "murakami okamoto",
+      "heading": false
+    },
+    {
+      "term": "takata yokota",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Figure-eight knot with a labeling. the Kashaev invariant ⟨41⟩N is",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "Put octahedra at crossings",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "Decompose an octahedron into four tetrahedra",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "Pull the pairs of vertices to ±∞. C1B1, which is contained in Leaf β1. Therefore the fourth octahedron is collapsed to the tetrahedron F4E4D4A4 as in Figure 3.12. Here the tetrahedron F4E4B4C4 is collapsed to the triangle F4E4B4, which is identiﬁed with the triangle F4E4B4. Then the tetrahedron F4E4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "Twisted tetrahedra",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "A twisted octahedron and its four leaves",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "A twisted octahedron and a crossing",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.7",
+      "title": "Figure-eight knot with twisted octahedra",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.8",
+      "title": "Boundary of the regular neighborhood of G. (The wavy lines, the dotted lines, and the sidelines are identiﬁed respectively.)",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.9",
+      "title": "Boundaries of the regular neighborhoods of A1 = C1, A2 = C2, B3 = D3, and B4 = D4 together with knot diagram before thickening the twisted octahedra viewed from the top (left)",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.11",
+      "title": "The ﬁrst octahedron is collapsed to the triangle F1E1D1. (The shaded triangles and the wavy lines are collapsed.)",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.12",
+      "title": "The fourth octahedron is collapsed to the tetrahedron F4E4D4A4. (The wavy lines are collapsed.)",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.13",
+      "title": "The regular neighborhood of Leaf β1 (= Leaf δ3) in the ﬁrst octahedron",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.14",
+      "title": "The regular neighborhood of Leaf β1 (= Leaf δ3) in the fourth octahedron",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.15",
+      "title": "The intersections of the regular neighborhood of Leaf β1 and the boundary of the bigger regular neighborhoods of G and ±∞are indicated by the shaded regions",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.16",
+      "title": "Remove the shaded regions in Figure 3.15 and deform the resulting pictures",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.17",
+      "title": "The boundary of the regular neighborhood of β1",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.18",
+      "title": "The boundary of the regular neighborhood of β1 after it is collapsed to a point. The edges with same numbers are identiﬁed and the shaded regions will survive",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.19",
+      "title": "The cusp torus of S3 \\ K with the latitude λ and",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.20",
+      "title": "Similar triangles parameterized by diﬀerent complex numbers",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "20 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0008027v1"
+  }
+}

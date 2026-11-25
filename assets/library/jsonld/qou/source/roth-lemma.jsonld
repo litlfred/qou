@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/roth-lemma/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "roth-lemma",
+  "contains": [
+    "library/roth-lemma/sections/sec-front-matter",
+    "library/roth-lemma/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ROTH'S LEMMA — 2 sections: Front matter; JL^..+JaL\n\n**ROTH'S LEMMA**\n\n21 pp, 2 sections.\n\n**Outline.** Front matter; JL^..+JaL",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "roth-lemma",
+    "title_source": "slug",
+    "source_file": "roth_lemma.pdf",
+    "source_sha256": "c2f2b49f25f359198ca2d549af9a94117bc0de4f8398c85b2352004c5d967c4b",
+    "pages": 21,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

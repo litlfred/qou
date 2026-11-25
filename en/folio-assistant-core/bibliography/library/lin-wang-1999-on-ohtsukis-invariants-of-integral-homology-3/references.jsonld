@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "On Ohtsuki's invariants of integral homology 3-spheres",
+      "dcterms:creator": [
+        "Mathematica, Acta"
+      ],
+      "dcterms:issued": "D:20070423",
+      "dcterms:abstract": "We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.",
+      "dcterms:source": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+      "dcterms:hasVersion": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3"
+    }
+  ]
+}

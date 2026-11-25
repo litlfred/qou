@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-lepton-tower-h-n-plus-1-branching",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:lepton-tower-h-n-plus-1-branching",
+  "kind": "conjecture",
+  "title": "Canonical lepton-mass-tower factor $\\xi_m = [2m-1]_q \\cdot [m]_q / [2m]_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn",
+    "papers/quantum-observable-universe/blocks/prop-three-halves-structural-factor"
+  ],
+  "tags": [
+    "tier:E",
+    "lepton",
+    "mass-tower",
+    "ksi-factor",
+    "h-n-branching",
+    "categorical-interpretation",
+    "phase-3",
+    "open-conjecture"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.LeptonTowerHnPlus1.lepton_xi",
+  "text": "conj-lepton-tower-h-n-plus-1-branching.md",
+  "leanSource": "conj-lepton-tower-h-n-plus-1-branching.lean",
+  "provenance": "authored"
+}

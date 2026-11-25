@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1903.10084v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+      "dcterms:creator": [
+        "Cong Li, 1 Jian Zhou,1",
+        "Zhou1, Ya-jin"
+      ],
+      "dcterms:issued": "D:20211116",
+      "dcterms:identifier": "https://arxiv.org/abs/1903.10084",
+      "dcterms:source": "library/arxiv-1903.10084v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1903.10084v2"
+    }
+  ]
+}

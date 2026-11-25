@@ -1,0 +1,960 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1108.1048v3",
+  "title": "arxiv-1108.1048v3",
+  "variant": "pdf",
+  "pages": 45,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Crystals",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-crystals"
+    },
+    {
+      "level": 2,
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "number": "1.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-khovanov-lauda-rouquier-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Construction of irreducible R-modules",
+      "number": "1.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-construction-of-irreducible-r-modules"
+    },
+    {
+      "level": 1,
+      "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+      "number": "2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-description-of-nkv-for-finite-type-via-adapted"
+    },
+    {
+      "level": 1,
+      "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+      "number": "3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-explicit-construction-of-irreducible-modules-f"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "4",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crystal",
+          "heading": false
+        },
+        {
+          "term": "head",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "euiyong",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1108.1048v3 [math.RT] 9 Oct 2012 CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS OF FINITE CLASSICAL TYPE GEORGIA BENKART, SEOK-JIN KANG1,2, SE-JIN OH3,4, AND EUIYONG PARK In Memory of Professor Hyo Chul Myung Abstract. We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1108.1048v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf ind",
+          "heading": false
+        },
+        {
+          "term": "mathsf vee",
+          "heading": false
+        },
+        {
+          "term": "type mathsf",
+          "heading": false
+        },
+        {
+          "term": "ind delta",
+          "heading": false
+        },
+        {
+          "term": "boxtimes delta",
+          "heading": false
+        },
+        {
+          "term": "symmetrizable cartan",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "crystal iso",
+          "heading": false
+        }
+      ],
+      "extract": "The *Khovanov-Lauda-Rouquier algebras* (*KLR algebras*) were introduced independently by Khovanov-Lauda [@KL09; @KL11] and Rouquier [@R08] to give a categorification of quantum groups. Let $U_q(\\mathfrak{g})$ be the quantum group associated with a symmetrizable Cartan datum, and let $R$ be the corresponding KLR algebra. For a dominant integral weight $\\lambda$ of $U_q(\\mathfrak{g})$, the algebra $R$ has a special",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-crystals",
+      "number": "1.1",
+      "title": "Crystals",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crystal isomorphisms",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite classical",
+          "heading": false
+        },
+        {
+          "term": "classical types",
+          "heading": false
+        },
+        {
+          "term": "kashiwara-nakashima",
+          "heading": false
+        }
+      ],
+      "extract": "(resp. a ∈Sλ) as an outer tensor product of modules ∆(a,b) in (3.5). We then construct the maps Ψ : B(∞) −→B(∞) and Ψλ : B(λ) −→B(λ) by taking the head of Ind∆(a(v)) for v ∈B(∞) (resp. v ∈B(λ)). We illustrate this construction by presenting an example for type B3 using the Kashiwara-Nakashima tableaux in [18] to realize the crystal B(λ). We prove in Proposition 3.4 for any ﬁnite classical type and any v ∈B(λ) that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras",
+      "number": "1",
+      "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eib",
+          "heading": false
+        },
+        {
+          "term": "crystal basis",
+          "heading": false
+        },
+        {
+          "term": "fib",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "cartan datum",
+          "heading": false
+        },
+        {
+          "term": "weight lattice",
+          "heading": false
+        },
+        {
+          "term": "symmetrizable generalized",
+          "heading": false
+        }
+      ],
+      "extract": "1.1. Crystals. Let I be a ﬁnite index set. A square matrix A = (aij)i,j∈I is a symmetrizable generalized Cartan matrix if it satisﬁes (i) aii = 2 for i ∈I, (ii) aij ∈Z≤0 for i̸ = j, (iii) aij = 0 if aji = 0 for i, j ∈I, (iv) there is a diagonal matrix D = diag(δi ∈Z>0 | i ∈I) such that DA is symmetric. A Cartan datum (A, P, Π, P∨, Π∨) consists of (1) a symmetrizable generalized Cartan matrix A, REPRESENTATIONS OVER",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-khovanov-lauda-rouquier-algebras",
+      "number": "1.2",
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf fmod",
+          "heading": false
+        },
+        {
+          "term": "alpha mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf infl",
+          "heading": false
+        },
+        {
+          "term": "mathsf ind",
+          "heading": false
+        },
+        {
+          "term": "text mathsf",
+          "heading": false
+        },
+        {
+          "term": "aligned mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf hom",
+          "heading": false
+        },
+        {
+          "term": "mathsf res",
+          "heading": false
+        }
+      ],
+      "extract": "For $\\alpha \\in \\mathsf{Q}^+$ with $|\\alpha|=m$, we define $I^\\alpha = \\{ {\\bf i}=(i_1,\\ldots,i_m) \\in I^{m} \\mid \\sum_{k=1}^{m} \\alpha_{i_k}=\\alpha \\}.$ Given $\\mathbf{i}=(i_1,\\ldots,i_m) \\in I^\\alpha$ and $\\mathbf{j}=(j_1,\\ldots,j_{m'}) \\in I^\\beta$, let ${\\bf i}*{\\bf j}$ denote the concatenation of ${\\bf i}$ and ${\\bf j}$: ${\\bf i}*{\\bf j}=(i_1,\\ldots,i_m,j_1,\\ldots,j_{m'}) \\in I^{\\alpha+\\beta}.$ Let $S_m$ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-construction-of-irreducible-r-modules",
+      "number": "1.3",
+      "title": "Construction of irreducible R-modules",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underset boxtimes",
+          "heading": false
+        },
+        {
+          "term": "mathsf ind",
+          "heading": false
+        },
+        {
+          "term": "overset underset",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf fmod",
+          "heading": false
+        },
+        {
+          "term": "boxtimes cdots",
+          "heading": false
+        },
+        {
+          "term": "boxtimes big",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we give a construction of irreducible graded $R$-modules as the irreducible heads of certain induced modules, which is compatible with the Kashiwara operators. More precisely, set $I_{(n+1)} = I$ and let $I_{(k)} \\subset I\\ (k=1, \\ldots,n)$ be subsets of $I$ such that $I_{(k)} \\subseteq I_{(k+1)}$ and $|I_{(k)}| = k$. Let $\\mathfrak{B}_k$ be the crystal obtained from $B(\\infty)$ by forgetting the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-description-of-nkv-for-finite-type-via-adapted",
+      "number": "2",
+      "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adapted strings",
+          "heading": true
+        },
+        {
+          "term": "mid mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf vee",
+          "heading": false
+        },
+        {
+          "term": "text mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf min",
+          "heading": false
+        },
+        {
+          "term": "mathsf max",
+          "heading": false
+        },
+        {
+          "term": "type mathsf",
+          "heading": false
+        },
+        {
+          "term": "ldots mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec: Description Nk label=\"Sec: Description Nk\"} In this section, we give an explicit description of the modules $\\mathcal{N}_k(v)$ for finite type. To that end, we choose a particular reduced expression of the longest element $w_0$ of the Weyl group $W$. Using the notion of adapted strings for crystals given in [@Lit98] with respect to these specially chosen expressions, we describe $\\mathcal{N}_k(v)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-explicit-construction-of-irreducible-modules-f",
+      "number": "3",
+      "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3910,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes vartheta",
+          "heading": false
+        },
+        {
+          "term": "mathsf ind",
+          "heading": false
+        },
+        {
+          "term": "underset boxtimes",
+          "heading": false
+        },
+        {
+          "term": "boxtimes hbox",
+          "heading": false
+        },
+        {
+          "term": "boxtimes lceil",
+          "heading": false
+        },
+        {
+          "term": "rceil boxtimes",
+          "heading": false
+        },
+        {
+          "term": "twoheadrightarrow mathsf",
+          "heading": false
+        },
+        {
+          "term": "succ succeq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec: construction for classical type label=\"Sec: construction for classical type\"} In Sections [\\[Sec: construction for classical type\\]](#Sec: construction for classical type){reference-type=\"ref\" reference=\"Sec: construction for classical type\"} and [\\[Sec: final\\]](#Sec: final){reference-type=\"ref\" reference=\"Sec: final\"}, we assume that $\\mathfrak{A}$ is of finite classical type. We maintain the notation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-proof-of-theorem",
+      "number": "4",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seok-jin kang",
+          "heading": false
+        },
+        {
+          "term": "euiyong park",
+          "heading": false
+        },
+        {
+          "term": "georgia benkart",
+          "heading": false
+        },
+        {
+          "term": "chl contains",
+          "heading": false
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "klr algebras",
+          "heading": false
+        },
+        {
+          "term": "se-jin",
+          "heading": false
+        },
+        {
+          "term": "crystal embedding",
+          "heading": false
+        }
+      ],
+      "extract": "This section is devoted to a proof of Theorem 3.2. We ﬁrst give a suﬃcient condition for Ind \u0000∆(a,b) ⊠∆(c,d) \u0001 ≃Ind \u0000∆(c,d) ⊠∆(a,b) \u0001 to hold (Lemma 4.1). Then we extend the result in [15, Lem. 4.3] for type An to the other ﬁnite classical types in Lemma 4.2 below, and prove Lemma 4.3 which yields Nn(v) = hd Ind∆(a(v); n) for v ∈B(∞). From that we can deduce Nk(v) = hd Ind∆(a(v); k) for all k. Using Lemma 1.8,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov-lauda-rouquier algebras",
+          "heading": false
+        },
+        {
+          "term": "crystal bases",
+          "heading": false
+        },
+        {
+          "term": "seoul national",
+          "heading": false
+        },
+        {
+          "term": "kac-moody algebras",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "generalized kac-moody",
+          "heading": false
+        },
+        {
+          "term": "snu",
+          "heading": false
+        }
+      ],
+      "extract": "1. J. Brundan and A. Kleshchev, Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras, Invent. Math. 178 (2009), no. 3, 451–484. 2. J. Brundan and A. Kleshchev, Graded decomposition numbers for cyclotomic Hecke algebras, Adv. Math. 222 (2009), no. 6, 1883–1942. 3. J. Brundan, A. Kleshchev, and W. Wang, Graded Specht modules, J. Reine. Angew. Math. 655 (2011), 61–87. 4. J. Brundan and C. Stroppel, Highest",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathsf ind",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathsf",
+      "heading": false
+    },
+    {
+      "term": "crystal mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathsf fmod",
+      "heading": false
+    },
+    {
+      "term": "cdots mathsf",
+      "heading": false
+    },
+    {
+      "term": "lambda mathsf",
+      "heading": false
+    },
+    {
+      "term": "tilde mathsf",
+      "heading": false
+    },
+    {
+      "term": "type mathsf",
+      "heading": false
+    },
+    {
+      "term": "module mathsf",
+      "heading": false
+    },
+    {
+      "term": "twoheadrightarrow mathsf",
+      "heading": false
+    },
+    {
+      "term": "aligned mathsf",
+      "heading": false
+    },
+    {
+      "term": "text mathsf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Dynkin diagrams",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1108.1048v3"
+  }
+}

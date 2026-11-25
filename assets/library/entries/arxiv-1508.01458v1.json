@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1508.01458v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1508.01458v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1508.01458v1  [hep-ph]  6 Aug 2015\nKnotty inﬂation and the dimensionality of spacetime\nArjun Berera,1, ∗Roman V. Buniy,2, † Thomas W. Kephart,3, ‡ Heinrich P¨as,4, § and Jo˜ao G. Rosa5, ¶\n1Tait Institute, School of Physics and Astronomy, University of Edinburgh, Edinburgh, EH9 3JZ, United Kingdom\n2Schmid College of Science, Chapman University, Orange, CA 92866, USA\n3Department of Physics and Astronomy, Vanderbilt University, Nashville, TN 37235, USA\n4Fakult¨at f¨ur Physik, Technische Universit¨at Dortmund, 44221 Dortmund, Germany\n5Departamento de F´ısica da Universidade de Aveiro and CID",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.01458v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-acknowledgments.md",
+      "narrative": null,
+      "content": "AB is supported by STFC. The work of TWK\nwas\nsupported\nby\nUS\nDOE\ngrant\nde-sc0010504.\nHP\nacknowledges kind\nhospitality\nand\nsupport\nat\nVanderbilt\nUniversity\nand\nby\nthe\nAlexander\nvon\nHumboldt-Foundation. JGR is supported by the FCT\ngrant SFRH/BPD/85969/2012 and partially by the\ngrant PTDC/FIS/116625/2010, the CIDMA strategic\nproject UID/MAT/04106/2013 and the Marie Curie ac-\ntion NRHEP-295189-FP7-PEOPLE-2011-IRSES. Some\nof this work was developed at the Isaac Newton Insti-\ntute and we thank them for their kind hospitality.\n∗ab@ph.ed.ac.uk\n† buniy@chapman.edu\n‡ thomas.w.kephart@vanderbilt.edu\n§ he",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

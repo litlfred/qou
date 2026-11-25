@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0409593v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0409593v1",
+  "contains": [
+    "library/arxiv-math-0409593v1/sections/sec-front-matter",
+    "library/arxiv-math-0409593v1/sections/sec-000",
+    "library/arxiv-math-0409593v1/sections/sec-001",
+    "library/arxiv-math-0409593v1/sections/sec-002",
+    "library/arxiv-math-0409593v1/sections/sec-003",
+    "library/arxiv-math-0409593v1/sections/sec-004",
+    "library/arxiv-math-0409593v1/sections/sec-005",
+    "library/arxiv-math-0409593v1/sections/sec-006",
+    "library/arxiv-math-0409593v1/sections/sec-007",
+    "library/arxiv-math-0409593v1/sections/sec-008",
+    "library/arxiv-math-0409593v1/sections/sec-009",
+    "library/arxiv-math-0409593v1/sections/sec-010",
+    "library/arxiv-math-0409593v1/sections/sec-011",
+    "library/arxiv-math-0409593v1/sections/sec-012",
+    "library/arxiv-math-0409593v1/sections/sec-013",
+    "library/arxiv-math-0409593v1/sections/sec-014",
+    "library/arxiv-math-0409593v1/sections/sec-015",
+    "library/arxiv-math-0409593v1/sections/sec-016",
+    "library/arxiv-math-0409593v1/sections/sec-017",
+    "library/arxiv-math-0409593v1/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Categorification of sl_2 and braid groups — 20 sections: Front matter; Introduction; Self-equivalences\n\n**Categorification of sl_2 and braid groups**\n\n*RAPHAËL ROUQUIER*\n\n22 pp, 20 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Self-equivalences; 2.1 A general construction; 2.2 Applications; 3 The 2-braid group; 3.1 Coxeter group action; 3.2 Braid group action; 3.3 Rigidification; 4 Principal block of a semi-simple complex Lie; 4.1 Review of category O; 4.2 Link with bimodules; 5 Flag varieties; 5.1 Classical results; 5.3 Link with bimodules; 5.2 Genuine braid group action; 6.1 Classical isomorphisms; 6 Appendix : associativity of kernel transform",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0409593&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0409593v1",
+    "title_source": "slug",
+    "source_file": "0409593v1.pdf",
+    "source_sha256": "ad965f5c808388245c348adfee28f47127cacf09c057110082bb8723d79050cb",
+    "pages": 22,
+    "arxiv": {
+      "id": "math/0409593",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "30 Sep 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

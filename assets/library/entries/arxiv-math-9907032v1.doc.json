@@ -1,0 +1,1166 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9907032v1",
+  "title": "Combinatorial optimization in geometry",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Background",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-background"
+    },
+    {
+      "level": 2,
+      "title": "Singular similarity structures.",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-singular-similarity-structures"
+    },
+    {
+      "level": 1,
+      "title": "Necessary conditions on dihedral angles",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-necessary-conditions-on-dihedral-angles"
+    },
+    {
+      "level": 1,
+      "title": "Sufficiency of conditions 2.1 and 2.2",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-sufficiency-of-conditions-21-and-22"
+    },
+    {
+      "level": 1,
+      "title": "Dihedral angles of Delaunay triangulations",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-dihedral-angles-of-delaunay-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Some corollaries and refinements",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-41-some-corollaries-and-refinements"
+    },
+    {
+      "level": 1,
+      "title": "A network flow approach",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-a-network-flow-approach"
+    },
+    {
+      "level": 1,
+      "title": "Delaunay triangulations of infinite sets of points",
+      "number": "6",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-6-delaunay-triangulations-of-infinite-sets-of-po"
+    },
+    {
+      "level": 2,
+      "title": "Remarks and Corollaries",
+      "number": "6.1",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-61-remarks-and-corollaries"
+    },
+    {
+      "level": 1,
+      "title": "Delaunay cells in moduli space",
+      "number": "7",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-7-delaunay-cells-in-moduli-space"
+    },
+    {
+      "level": 1,
+      "title": "Computational complexity",
+      "number": "8",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-8-computational-complexity"
+    },
+    {
+      "level": 1,
+      "title": "Some applications to combinatorial geometry",
+      "number": "9",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-9-some-applications-to-combinatorial-geometry"
+    },
+    {
+      "level": 1,
+      "title": "Linear hyperbolic structures on $3$-manifolds",
+      "number": "10",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-10-linear-hyperbolic-structures-on-3-manifolds"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delaunay triangulations",
+          "heading": false
+        },
+        {
+          "term": "euclidean structures",
+          "heading": false
+        },
+        {
+          "term": "network ﬂow",
+          "heading": false
+        },
+        {
+          "term": "combinatorial optimization",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "institute",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9907032v1 [math.GT] 6 Jul 1999 Combinatorial optimization in geometry1 Igor Rivin Mathematics Institute, Warwick University Coventry, The United Kingdom and Mathematics Department, California Institute of Technology Pasadena, CA 91125 current address: Institut des Hautes ´Etudes Scientiﬁques, 35 Route de Chartres, 91440, Bures-sur-Yvette, France In this paper we extend and unify the results of [20] and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9907032v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delaunay tessellation",
+          "heading": false
+        },
+        {
+          "term": "delaunay triangulations",
+          "heading": false
+        },
+        {
+          "term": "top-dimensional cells",
+          "heading": false
+        },
+        {
+          "term": "andreevthm",
+          "heading": false
+        },
+        {
+          "term": "rvol",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "dihsec",
+          "heading": false
+        },
+        {
+          "term": "ideal polyhedra",
+          "heading": false
+        }
+      ],
+      "extract": "In the paper [@steiner] we gave the following description of the angles of ideal polyhedra in $\\mathbf{H}^3$: let $P$ be a combinatorial polyhedron, and let $A: E(P) \\rightarrow [0, \\pi)$ be a function. Then, there exists an ideal polyhedron combinatorially equivalent to $P$, such that the exterior angle at every edge $e$ is given by $A(e)$ if and only if the sum of $A(e)$ over all edges adjacent to a vertex of $P$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-background",
+      "number": "1",
+      "title": "Background",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-singular-similarity-structures",
+      "number": "1.1",
+      "title": "Singular similarity structures.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "similarity",
+          "heading": true
+        },
+        {
+          "term": "cone angles",
+          "heading": false
+        },
+        {
+          "term": "prescribed dihedral",
+          "heading": false
+        },
+        {
+          "term": "angle delta",
+          "heading": false
+        },
+        {
+          "term": "boundary angle",
+          "heading": false
+        },
+        {
+          "term": "exterior dihedral",
+          "heading": false
+        },
+        {
+          "term": "mbox cone",
+          "heading": false
+        }
+      ],
+      "extract": "Consider an oriented surface $S$, possibly with boundary, and with a number of distinguished points $\\{p_1, \\ldots, p_n\\}$. A *similarity structure* on $S$ is given by an atlas for $S \\backslash \\{p_1, \\ldots, p_n\\}$, such that the transition maps are Euclidean similarities. A similarity structure induces a holonomy representation $H_s$ of $\\Gamma = \\pi_1(S \\backslash \\{p_1, \\ldots, p_n\\})$ into the similarity",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-necessary-conditions-on-dihedral-angles",
+      "number": "2",
+      "title": "Necessary conditions on dihedral angles",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": true
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "sumdih",
+          "heading": false
+        },
+        {
+          "term": "subcomplex mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal sum",
+          "heading": false
+        },
+        {
+          "term": "partial mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal cup",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#necessary label=\"necessary\"} In order for the linear program $L$ to have any chance of having a solution, the dihedral angles $\\Delta$ must satisfy some constraints. Indeed, suppose $L$ has a solution. ::: condition []{#dihpos label=\"dihpos\"} All of the dihedral angles must be positive. ::: Furthermore, the sum of all of the dihedral angles of all of the edges of $T$ must be equal to the sum of all of the angles",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-sufficiency-of-conditions-21-and-22",
+      "number": "3",
+      "title": "Sufficiency of conditions 2.1 and 2.2",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihpos",
+          "heading": false
+        },
+        {
+          "term": "objective function",
+          "heading": false
+        },
+        {
+          "term": "mathbf perp",
+          "heading": false
+        },
+        {
+          "term": "feasible region",
+          "heading": false
+        },
+        {
+          "term": "sumdih",
+          "heading": false
+        },
+        {
+          "term": "dual program",
+          "heading": false
+        },
+        {
+          "term": "linear program",
+          "heading": false
+        },
+        {
+          "term": "maindual",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#suff label=\"suff\"} Somewhat surprisingly, the trivial conditions [\\[dihpos\\]](#dihpos){reference-type=\"ref\" reference=\"dihpos\"} and [\\[sumdih\\]](#sumdih){reference-type=\"ref\" reference=\"sumdih\"} guarantees that the linear program $L$ has a solution: ::: theorem []{#mainthm label=\"mainthm\"} Let $T$ be a semi-simplicial triangulation of a surface $S$, possibly with boundary, let $\\Delta:E(T)\\rightarrow (0, \\pi]$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-dihedral-angles-of-delaunay-triangulations",
+      "number": "4",
+      "title": "Dihedral angles of Delaunay triangulations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": true
+        },
+        {
+          "term": "sumdih",
+          "heading": false
+        },
+        {
+          "term": "subcomplex mathcal",
+          "heading": false
+        },
+        {
+          "term": "delta prime",
+          "heading": false
+        },
+        {
+          "term": "kappaineq",
+          "heading": false
+        },
+        {
+          "term": "dihpos",
+          "heading": false
+        },
+        {
+          "term": "oldstuff",
+          "heading": false
+        },
+        {
+          "term": "mbox incident",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#dihsec label=\"dihsec\"} In the preceding section it was shown that in order for the linear program $L$ to have a solution, it is necessary and sufficient that the putative dihedral angles $\\delta(e)$ satisfy the inequalities [\\[dihpos\\]](#dihpos){reference-type=\"ref\" reference=\"dihpos\"} and [\\[sumdih\\]](#sumdih){reference-type=\"ref\" reference=\"sumdih\"}. Below, we use these to derive another set of necessary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-some-corollaries-and-refinements",
+      "number": "4.1",
+      "title": "Some corollaries and refinements",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cutset mathcal",
+          "heading": false
+        },
+        {
+          "term": "kappaineq",
+          "heading": false
+        },
+        {
+          "term": "minimal cutset",
+          "heading": false
+        },
+        {
+          "term": "mathcal prime",
+          "heading": false
+        },
+        {
+          "term": "subcomplex mathcal",
+          "heading": false
+        },
+        {
+          "term": "cutset corresponds",
+          "heading": false
+        },
+        {
+          "term": "cutset corresponding",
+          "heading": false
+        },
+        {
+          "term": "versimple",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#corref label=\"corref\"} Here are some easy consequences of Theorem [\\[kappaineq\\]](#kappaineq){reference-type=\"ref\" reference=\"kappaineq\"}: Special case 1 : $\\mathcal{F} = T$. Then, since $E^\\prime(\\mathcal{F}) = \\emptyset$, we just get the Gauss-Bonnet theorem (with curvature defined in terms of the dihedral angles). Special case 2 : The complement of $\\mathcal{F}$ is an annulus containing no vertices of $T$ --",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-a-network-flow-approach",
+      "number": "5",
+      "title": "A network flow approach",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "network flow",
+          "heading": true
+        },
+        {
+          "term": "psi epsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon partial",
+          "heading": false
+        },
+        {
+          "term": "maindual",
+          "heading": false
+        },
+        {
+          "term": "sumdih",
+          "heading": false
+        },
+        {
+          "term": "capacity",
+          "heading": false
+        },
+        {
+          "term": "maximal flow",
+          "heading": false
+        },
+        {
+          "term": "geq psi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#nflow label=\"nflow\"} There is an alternative way to prove Theorem [\\[maindual\\]](#maindual){reference-type=\"ref\" reference=\"maindual\"} which uses the Max Flow-Min Cut theorem of network flow instead of the duality theorem of linear programming. It should be noted that the difference between the two arguments is largely superficial, since the proof of Theorem [\\[maindual\\]](#maindual){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-delaunay-triangulations-of-infinite-sets-of-po",
+      "number": "6",
+      "title": "Delaunay triangulations of infinite sets of points",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subcomplex mathcal",
+          "heading": false
+        },
+        {
+          "term": "triangle abc",
+          "heading": false
+        },
+        {
+          "term": "program prime",
+          "heading": false
+        },
+        {
+          "term": "suff",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "delaunay",
+          "heading": true
+        },
+        {
+          "term": "dual program",
+          "heading": false
+        },
+        {
+          "term": "finite subcomplex",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ideal label=\"ideal\"} In this section we will show that theorem [\\[mainthm\\]](#mainthm){reference-type=\"ref\" reference=\"mainthm\"} for singular Euclidean structures can be extended without change to infinite locally finite complexes: ::: theorem []{#infmain label=\"infmain\"} Let $T$ be an infinite but locally finite complex, and let $\\Delta: E(T) \\rightarrow (0, \\pi]$. Then there exists a singular euclidean",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-61-remarks-and-corollaries",
+      "number": "6.1",
+      "title": "Remarks and Corollaries",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infmain",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "simply-connected domain",
+          "heading": false
+        },
+        {
+          "term": "andreevthm",
+          "heading": false
+        },
+        {
+          "term": "cona",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "euclidean plane",
+          "heading": false
+        },
+        {
+          "term": "sumintcyc",
+          "heading": false
+        }
+      ],
+      "extract": "Let us assume that the complex $T$ has no boundary, and that the function $\\Delta$ is such that all of the cone angles (computed using Lemma [\\[cona\\]](#cona){reference-type=\"ref\" reference=\"cona\"}) are equal to $2\\pi$, so that any realization is Euclidean (and hence can be developed into the plane). Then, we can combine theorems [\\[infmain\\]](#infmain){reference-type=\"ref\" reference=\"infmain\"} and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-delaunay-cells-in-moduli-space",
+      "number": "7",
+      "title": "Delaunay cells in moduli space",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 648,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delaunay",
+          "heading": true
+        },
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "pinching off",
+          "heading": false
+        },
+        {
+          "term": "delaunay triangulation",
+          "heading": false
+        },
+        {
+          "term": "kappaineq",
+          "heading": false
+        },
+        {
+          "term": "euclidean structures",
+          "heading": false
+        },
+        {
+          "term": "quadrilateral abcd",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#moduli label=\"moduli\"} In the Introduction we alluded to the cell decomposition of the moduli space $\\mathcal{M}$ of Euclidean structures, where the cells are given by Euclidean structures where the Delaunay triangulation has a fixed combinatorial type $T$. Each cell is a convex polytope $\\mathcal{P}(T)$, and the results above can be used to describe the combinatorial and geometric structure of $\\mathcal{P}(T)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-8-computational-complexity",
+      "number": "8",
+      "title": "Computational complexity",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "cone angles",
+          "heading": false
+        },
+        {
+          "term": "nflow",
+          "heading": false
+        },
+        {
+          "term": "delaunay triangulation",
+          "heading": false
+        },
+        {
+          "term": "prescribed cone",
+          "heading": false
+        },
+        {
+          "term": "oldstuff",
+          "heading": false
+        },
+        {
+          "term": "rational multiples",
+          "heading": false
+        },
+        {
+          "term": "complexsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#complexsec label=\"complexsec\"} Consider the following two decision problems: Problem 1 : Let $\\mathcal{T}$ be a simplicial complex, homeomorphic to a surface $S$ (possibly with boundary), and let $\\alpha: V(\\mathcal{T}) \\rightarrow {\\bf R}^+$ be an assignment of cone angles to the vertices of $\\mathcal{T}$. Does there exist a Euclidean structure $E$ on $S$ with the prescribed cone angles, such that the Delaunay",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-9-some-applications-to-combinatorial-geometry",
+      "number": "9",
+      "title": "Some applications to combinatorial geometry",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delaunay triangulation",
+          "heading": false
+        },
+        {
+          "term": "old vertex",
+          "heading": false
+        },
+        {
+          "term": "mbox old",
+          "heading": false
+        },
+        {
+          "term": "old vertices",
+          "heading": false
+        },
+        {
+          "term": "cone angle",
+          "heading": false
+        },
+        {
+          "term": "cona",
+          "heading": false
+        },
+        {
+          "term": "euclidean metric",
+          "heading": false
+        },
+        {
+          "term": "average cone",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#someapps label=\"someapps\"} A well-known theorem of Steinitz says that every three-connected planar graph can be realized as the $1$-skeleton of a convex polyhedron in $R^{3}$, while a famous theorem of Aleksandrov states that every Euclidean metric on $S^{2}$ with positively curved cone-points can be realized as the induced metric on the surface of a convex polyhedron in $R^{3}$. Below, we show a negative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-10-linear-hyperbolic-structures-on-3-manifolds",
+      "number": "10",
+      "title": "Linear hyperbolic structures on $3$-manifolds",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2072,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        },
+        {
+          "term": "linear program",
+          "heading": false
+        },
+        {
+          "term": "suff",
+          "heading": false
+        },
+        {
+          "term": "old constraints",
+          "heading": false
+        },
+        {
+          "term": "surface mathcal",
+          "heading": false
+        },
+        {
+          "term": "dual program",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#lhyp label=\"lhyp\"} As explained in [@rvol], the study of Euclidean triangulations on surfaces is essentially equivalent to the study of hyperbolic ideally triangulated complexes, which are combinatorially just cones over the triangulated surface. Hence, the contents of this section are closely related to the subject-matter of much of the rest of the paper, in more than just the linear programming approach.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dihedral angles",
+      "heading": true
+    },
+    {
+      "term": "angles delta",
+      "heading": false
+    },
+    {
+      "term": "cone angles",
+      "heading": false
+    },
+    {
+      "term": "face angles",
+      "heading": false
+    },
+    {
+      "term": "triangulation mathcal",
+      "heading": false
+    },
+    {
+      "term": "delaunay triangulation",
+      "heading": false
+    },
+    {
+      "term": "mathcal sum",
+      "heading": false
+    },
+    {
+      "term": "subcomplex mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal prime",
+      "heading": false
+    },
+    {
+      "term": "edge dihedral",
+      "heading": false
+    },
+    {
+      "term": "cutset mathcal",
+      "heading": false
+    },
+    {
+      "term": "surface mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9907032v1"
+  }
+}

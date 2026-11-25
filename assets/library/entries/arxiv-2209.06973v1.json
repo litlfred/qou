@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2209.06973v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "This article is the result of a long-going effort to understand a state-sum formula of Garoufalidis and Loebl for the colored Jones polynomial of a knot. This formula was proven in [@GL] from the state-sum formula for the classical Jones polynomial and a cabling formula, which had been observed in [@Li]. From the proof given in [@GL] it is not obvious to us that the resulting state model is the *same* as the one defined directly from the $R$-matrix of $U_q(\\textrm{sl}(2,\\mathbb{C}))$-representations, i. e. from the corresponding ribbon functor [@RT],[@KM], [@G] (Definition 2.2 will explain wha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On the geometry of two state models for the colored Jones\npolynomial\nSeptember 16, 2022\nUwe Kaiser, Boise State University, ukaiser@boisestate.edu\nRama Mishra, IISER Pune,r.mishra@iiserpune.ac\nAbstract\nUsing the ﬂow property of the R-matrix deﬁning the colored Jones\npolynomial, we establish a natural bijection between the set of states\non the part arc-graph of a link projection and the set of states on\na corresponding bichromatic digraph, called arc-graph, as deﬁned by\nGaroufalidis and Loebl [7]. We use this to give a new and essentially\nelementary proof for the knot state-sum formula in [7].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State models",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-state-models.md",
+      "narrative": null,
+      "content": "We will consider *vertex models* as defined in [@J], see also [@T].\n\n::: defn\nLet $\\mathfrak{G}$ be a set of (possibly in some way decorated) finite graphs and let $\\mathcal{R}$ be an integral domain (usually $\\mathcal{R}=\\mathbb{Z}[t^{\\pm \\frac{1}{D}}]$ for some natural number $D$). A *state model* on $\\mathfrak{G}$ assigns to each graph $G=(V,E)\\in \\mathfrak{G}$ ($V$ is the vertex set, $E$ is the edge set) a *state-sum* $$Z(G)=\\sum_{f\\in \\textrm{St}(G)}Z(f)=\\sum_{f\\in \\textrm{st}(G)}Z(f)\\in \\mathcal{R}$$ with $Z(f)=\\Delta \\cdot \\beta (f)\\in \\mathcal{R}$. The factor $\\Delta \\neq 0$ is a *glob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+      "pageStart": 5,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-3-graphs-and-colorings-for-state-sums-of-the-col.md",
+      "narrative": null,
+      "content": "We will first consider *part arc-graphs* and *arc-graphs* following [@GL], which are defined from Morse projections $\\mathcal{K}$. We will also introduce a third type of graph representation (and the corresponding colorings), which we call chord graphs, closely related to the chord diagrams in Vassiliev theory.\n\nIn the following sections we will restrict to closed braid diagrams.\n\nA *Morse projection* $\\mathcal{K}$ is a smooth regular embedding of an oriented link in $\\mathbb{R}^2\\times [0,1]$, which projects to a smooth immersion in the plane $\\mathbb{R}^2$, and such that the composition with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The flow lemma",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-4-the-flow-lemma.md",
+      "narrative": null,
+      "content": "::: lem\n[]{#lem: flow lemma label=\"lem: flow lemma\"} Let $\\mathcal{K}$ be the Morse projection of a link. Then there is a natural bijection $\\phi_{\\pm }$ from the set of $\\mathbb{Z}$-flows on $G_{\\pm}\\mathcal{K}$ to the set of $\\mathbb{Z}$-flows of $P\\mathcal{K}$. For $(+)$ it assigns the color of a blue edge of $G\\mathcal{K}$ to the color of the part arc of $P\\mathcal{K}$ following the transition, and assigns the red edge colors to the changes in the colors of the two incoming part arcs at the crossing corresponding to the transition. This map restricts for each $n\\geq 1$ and $\\pm$ to bijecti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The R-matrix state model",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-5-the-r-matrix-state-model.md",
+      "narrative": null,
+      "content": "We review and reformulate the state model for the framed colored Jones polynomial $J_n$ as defined in [@G]. Recall that $n$ labels the $(n+1)$-dimensional standard irreducible representation of $\\textrm{sl}(2,\\mathbb{C})$, or the corresponding type **1** $U_q(\\textrm{sl}(2,\\mathbb{C})$-module, see [@J], 5.2. Our normalization will coincide with [@GL] so that $n=1$ corresponds to the trivial $2$-dimensional representation and the classical Jones polynomial. Link components will all be colored by the same representation. We will use the word *coloring* for the edge-colorings of the projection gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proving the Garoufalidis-Loebl state-sum",
+      "pageStart": 23,
+      "pageEnd": 38,
+      "target": "../sections/sec-005-6-proving-the-garoufalidis-loebl-state-sum.md",
+      "narrative": null,
+      "content": "We will now rewrite the usual state-sum contributions as described in [@G] into the Garoufalidis Loebl state-sum contributions using the above identities and the flow Lemma. There two important steps: The first will be to transform the formulas in the last section into formulas for the $(+)$-model (increasing colors on overcrossing arcs at overcrossings). The second is to rewrite the two functions $f_{\\pm }$ into a single vertex contribution formula, depending on the crossing sign.\n\nOur convention at crossings will be:\n\n::: center\n![image](Figure10.pdf){width=\"80%\"}\n:::\n\n*Figure 10*\n\nNote that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+      "pageStart": 38,
+      "pageEnd": 47,
+      "target": "../sections/sec-006-7-evaluation-of-the-garoufalidis-loebl-state-sum.md",
+      "narrative": null,
+      "content": "Note that the arc-graphs are *abstract* enhanced graphs representing the data necessary to calculate the state-sum [\\[eq=main formula\\]](#eq=main formula){reference-type=\"eqref\" reference=\"eq=main formula\"}. For explicit computations it will be helpful to present the data in non-geometritc way so that it can easily be implemented as an algorithm.\n\nSuppose that $G\\mathcal{K}$ is defined from a Morse projection $\\mathcal{K}$ without overcrossing circles. The case including overcrossing circles can easily be described but requires to consider vertices corresponding to the circles separately. For",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Working with cyclic ordering",
+      "pageStart": 47,
+      "pageEnd": 51,
+      "target": "../sections/sec-007-8-working-with-cyclic-ordering.md",
+      "narrative": null,
+      "content": "In the following we assume that our projection $\\mathcal{K}$ is based and we consider the cyclic ordering with respect to the basing. This defines a bijection $V\\leftrightarrow \\underline{\\mathfrak{c}-1}$ with $\\mathfrak{c}$ denoting the number of crossings. The base vertex on the first component is labelled $0$ by the order because it is deleted in reduced graphs. We will usually identify vertices with their order labeling. The parametrization of the set of states is now given by integer valued vectors $\\mathbf{j}=(j_0,\\ldots ,j_{\\mathfrak{c}-1})$, possibly with components removed, or just se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weaving links",
+      "pageStart": 51,
+      "pageEnd": 58,
+      "target": "../sections/sec-008-9-weaving-links.md",
+      "narrative": null,
+      "content": "Recall our notation for $a$ a positive integer, $\\underline{a}:=\\{0,1,\\ldots ,a-1\\}$.\n\nIn this section we consider only braids with zero writhe and three strands. In this case the framed and unframed colored Jones polynomial coincide. The colored Jones polynomial will take values in $\\mathbb{Z}[t^{\\pm 1/2}]$, in fact in $\\mathbb{Z}[t^{\\pm 1}]$ in the case of knots or $n$ even. For $\\mathfrak{s}=3$ we have: $$\\delta (\\mathcal{K},n)=\\delta '(\\mathcal{K},n)=n.$$ and vertex contributions for states as in equation [\\[eq=vertex contribution\\]](#eq=vertex contribution){reference-type=\"eqref\" referenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vertex ordering by braids",
+      "pageStart": 58,
+      "pageEnd": 64,
+      "target": "../sections/sec-009-10-vertex-ordering-by-braids.md",
+      "narrative": null,
+      "content": "In the previous section we used symmetry and did appeal to the geometry of the projections in order to find the formulas for the jump map (and thereby colored Jones polynomial).\n\n::: defn\nA *braid word* for an $m$-braid is a *reduced word*: $$\\beta =\\sigma_{\\eta_1}^{\\epsilon_1}\\sigma_{\\eta_2}^{\\epsilon_2}\\cdots \\sigma_{\\eta_{\\mathfrak{b} }}^{\\epsilon_{\\mathfrak{b}}}$$ representing an element in the free group generated generated by the braid generators in the braid generators $\\sigma_1,\\ldots ,\\sigma_{m-1}$.\n:::\n\nA braid word from left to right corresponds to a projection with generators place",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2209.06973v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Questions and projects",
+      "pageStart": 64,
+      "pageEnd": 66,
+      "target": "../sections/sec-010-11-questions-and-projects.md",
+      "narrative": null,
+      "content": "Questions and projects\n(1) The colored Jones polynomials of alternating links has been studied in\n[5] using so called centered states. It should be interesting to translate this\nwork into the state model considered here.\n(2) Use the ﬂow lemma to derive state-sum formulas for sl(n, C)-invariants,\nand for colored Jones polynomials of links with components colored by dis-\ntinct representations.\n(3) Translate the state models for general g-quantum invariants based on\nthe R-matrix into state models on arc graphs.\n(4) Show that the noncommutative state models in [7] and [10] are equiv-\nalent, and do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

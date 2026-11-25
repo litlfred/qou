@@ -1,0 +1,1357 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1508.01627v4",
+  "title": "arxiv-1508.01627v4",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Maximal tori in classical groups",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-maximal-tori-in-classical-groups"
+    },
+    {
+      "level": 2,
+      "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an"
+    },
+    {
+      "level": 2,
+      "title": "Regular semisimple elements",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-regular-semisimple-elements"
+    },
+    {
+      "level": 2,
+      "title": "Maximal connected reductive subgroups",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-maximal-connected-reductive-subgroups"
+    },
+    {
+      "level": 1,
+      "title": "A Murnaghan–Nakayama rule",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-a-murnaghannakayama-rule"
+    },
+    {
+      "level": 2,
+      "title": "Lusztig restriction",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-lusztig-restriction"
+    },
+    {
+      "level": 2,
+      "title": "Symbols",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-symbols"
+    },
+    {
+      "level": 2,
+      "title": "Unipotent characters of symplectic and orthogonal groups",
+      "number": "3.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-unipotent-characters-of-symplectic-and-orthog"
+    },
+    {
+      "level": 2,
+      "title": "Values of unipotent characters at regular semisimple elements",
+      "number": "3.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-values-of-unipotent-characters-at-regular-sem"
+    },
+    {
+      "level": 1,
+      "title": "Vanishing of characters",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-vanishing-of-characters"
+    },
+    {
+      "level": 2,
+      "title": "Non-unipotent characters",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-non-unipotent-characters"
+    },
+    {
+      "level": 2,
+      "title": "Unipotent characters",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-unipotent-characters"
+    },
+    {
+      "level": 1,
+      "title": "Simple endotrivial modules",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-simple-endotrivial-modules"
+    },
+    {
+      "level": 2,
+      "title": "On certain unipotent characters",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-on-certain-unipotent-characters"
+    },
+    {
+      "level": 2,
+      "title": "Simple endotrivial modules in classical type groups",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-simple-endotrivial-modules-in-classical-type"
+    },
+    {
+      "level": 1,
+      "title": "Zeroes of characters of quasi-simple groups",
+      "number": "6",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-6-zeroes-of-characters-of-quasi-simple-groups"
+    },
+    {
+      "level": 1,
+      "title": "An application to small 1-PIMs",
+      "number": "7",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-7-an-application-to-small-1-pims"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "unipotent characters",
+          "heading": false
+        },
+        {
+          "term": "xxxx",
+          "heading": false
+        },
+        {
+          "term": "classical groups",
+          "heading": false
+        },
+        {
+          "term": "ℓ-singular",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1508.01627v4 [math.RT] 25 Oct 2016 REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society Volume 00, Pages 000–000 (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS FRANK L¨UBECK AND GUNTER MALLE Abstract. We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1508.01627v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thma",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "sylow ell",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama formula",
+          "heading": false
+        },
+        {
+          "term": "ell singular",
+          "heading": false
+        },
+        {
+          "term": "unipotent characters",
+          "heading": false
+        },
+        {
+          "term": "simple endotrivial",
+          "heading": false
+        },
+        {
+          "term": "endotrivial modules",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The classical Murnaghan--Nakayama rule provides an efficient recursive method to compute the values of irreducible characters of symmetric groups. This method can be adapted to the finite general linear and unitary groups, where it then allows to compute values of unipotent characters not on arbitrary but just on regular semisimple elements, see [@LM15 Prop. 3.3]. This adaptation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-maximal-tori-in-classical-groups",
+      "number": "2",
+      "title": "Maximal tori in classical groups",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thma",
+          "heading": false
+        },
+        {
+          "term": "maxtor",
+          "heading": false
+        },
+        {
+          "term": "tori",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:maxtor label=\"sec:maxtor\"} In this section we establish the existence of regular semisimple $\\ell$-singular elements in suitable tori of classical groups of Lie type. This will be a main ingredient in the proof of the vanishing Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"}. Moreover, we formulate a criterion for collections of maximal tori of simple algebraic groups",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+      "number": "2.1",
+      "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf operatorname",
+          "heading": false
+        },
+        {
+          "term": "maximal tori",
+          "heading": true
+        },
+        {
+          "term": "tilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "group mathbf",
+          "heading": false
+        },
+        {
+          "term": "operatorname diag",
+          "heading": false
+        },
+        {
+          "term": "steinberg morphism",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "diagonal entries",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:WeylBCD label=\"subsec:WeylBCD\"} For a prime power $q$ and $K = \\overline{{\\mathbb{F}}_q}$ we consider the natural representation of ${\\mathbf{G}}= {\\operatorname{Sp}}_{2n}(K)$ on $V = K^{2n}$ (case $C_n$) and of ${\\mathbf{G}}= {\\operatorname{SO}}_{2n+1}(K)$ on $V = K^{2n+1}$, and a Steinberg morphism $F$ on ${\\mathbf{G}}$ with fixed point group ${\\mathbf{G}}^F = {\\operatorname{Sp}}_{2n}(q)$, respectively",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-regular-semisimple-elements",
+      "number": "2.2",
+      "title": "Regular semisimple elements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ell mid",
+          "heading": false
+        },
+        {
+          "term": "regular elements",
+          "heading": true
+        },
+        {
+          "term": "mathbf contains",
+          "heading": false
+        },
+        {
+          "term": "order ell",
+          "heading": false
+        },
+        {
+          "term": "let mathbf",
+          "heading": false
+        },
+        {
+          "term": "steinberg morphism",
+          "heading": false
+        },
+        {
+          "term": "regss",
+          "heading": false
+        },
+        {
+          "term": "regelts",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:regss label=\"subsec:regss\"} We need to know that certain maximal tori contain regular elements. As before, let $q$ be a prime power. For a prime $\\ell$ not dividing $q$ we denote by $d_\\ell(q)$ the order of $q$ modulo $\\ell$, that is the smallest $d\\ge1$ with $\\ell \\mid (q^d-1)$. If $d$ is even then we have $\\ell \\mid (q^{d/2}+1)$. With these definitions, $\\ell \\mid (q^k-1)$ if and only if $d \\mid k$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-maximal-connected-reductive-subgroups",
+      "number": "2.3",
+      "title": "Maximal connected reductive subgroups",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maxred label",
+          "heading": false
+        },
+        {
+          "term": "maximal tori",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "stable maximal",
+          "heading": false
+        },
+        {
+          "term": "non-central",
+          "heading": false
+        },
+        {
+          "term": "eigenspaces",
+          "heading": false
+        },
+        {
+          "term": "classical group",
+          "heading": false
+        },
+        {
+          "term": "semisimple element",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:maxred label=\"subsec:maxred\"} The following lemma will allow us to decide if a collection of classes of maximal tori of a classical group has representatives inside the centraliser of a semisimple element: ::: lem []{#lem:maxred label=\"lem:maxred\"} Let ${\\mathbf{G}}$ be a simple algebraic group of classical type $B_n,C_n$ (with $n\\ge2$) or $D_n$ (with $n\\ge4$) with Frobenius endomorphism $F$ such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-a-murnaghannakayama-rule",
+      "number": "3",
+      "title": "A Murnaghan–Nakayama rule",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mnrule",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama",
+          "heading": false
+        },
+        {
+          "term": "asai",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:MNrule label=\"sec:MNrule\"} In this section we derive a Murnaghan--Nakayama type formula for the values of unipotent characters of classical groups of Lie type on regular semisimple elements. It relies on a result of Asai on the decomposition of Lusztig restriction.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-lusztig-restriction",
+      "number": "3.1",
+      "title": "Lusztig restriction",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf circ",
+          "heading": false
+        },
+        {
+          "term": "operatorname irr",
+          "heading": false
+        },
+        {
+          "term": "mathbb operatorname",
+          "heading": false
+        },
+        {
+          "term": "stable levi",
+          "heading": false
+        },
+        {
+          "term": "levi subgroup",
+          "heading": false
+        },
+        {
+          "term": "lusztig",
+          "heading": true
+        },
+        {
+          "term": "rlg",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:*RLG label=\"subsec:*RLG\"} We consider the following setup: ${\\mathbf{G}}$ is a connected reductive algebraic group over an algebraic closure of the finite field ${\\mathbb{F}}_p$, and $F:{\\mathbf{G}}\\rightarrow{\\mathbf{G}}$ is a Steinberg endomorphism of ${\\mathbf{G}}$, with finite group of fixed points ${\\mathbf{G}}^F$. For an $F$-stable Levi subgroup ${\\mathbf{L}}\\le{\\mathbf{G}}$ of ${\\mathbf{G}}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-symbols",
+      "number": "3.2",
+      "title": "Symbols",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mid x-d",
+          "heading": false
+        },
+        {
+          "term": "cup x-d",
+          "heading": false
+        },
+        {
+          "term": "x-d notin",
+          "heading": false
+        },
+        {
+          "term": "symbol mathcal",
+          "heading": false
+        },
+        {
+          "term": "cohook",
+          "heading": false
+        },
+        {
+          "term": "underline setminus",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:symb label=\"subsec:symb\"} We now specialise to simple groups of classical type. By Lusztig's results their unipotent characters are parameterised by so-called *symbols*. Here, a symbol is an unordered pair of finite sets of non-negative integers, usually denoted as $${\\mathcal{S}}=\\binom{X}{Y}=\\begin{pmatrix} \\la_1& \\la_2& \\ldots& \\la_r\\\\ \\mu_1& \\mu_2& \\ldots& \\mu_s\\end{pmatrix}$$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-unipotent-characters-of-symplectic-and-orthog",
+      "number": "3.3",
+      "title": "Unipotent characters of symplectic and orthogonal groups",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unipotent characters",
+          "heading": true
+        },
+        {
+          "term": "defect operatorname",
+          "heading": false
+        },
+        {
+          "term": "symbols mathcal",
+          "heading": false
+        },
+        {
+          "term": "parameterised",
+          "heading": false
+        },
+        {
+          "term": "rho vee",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:uniBCD label=\"subsec:uniBCD\"} Now assume that ${\\mathbf{G}}$ is simple of type $B_n$, $C_n$ or $D_n$, and $F$ does not induce the triality automorphism when ${\\mathbf{G}}$ is of type $D_4$ nor the exceptional graph automorphism in type $B_2$ or $C_2$. According to Lusztig [@Lu84] the unipotent characters of $G:={\\mathbf{G}}^F$ are then parameterised by (equivalence classes of) symbols of rank $n$. More",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-values-of-unipotent-characters-at-regular-sem",
+      "number": "3.4",
+      "title": "Values of unipotent characters at regular semisimple elements",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 967,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unipotent characters",
+          "heading": true
+        },
+        {
+          "term": "regular semisimple",
+          "heading": true
+        },
+        {
+          "term": "subtorus mathbf",
+          "heading": false
+        },
+        {
+          "term": "torus mathbf",
+          "heading": false
+        },
+        {
+          "term": "rho mathcal",
+          "heading": false
+        },
+        {
+          "term": "cohook eps",
+          "heading": false
+        },
+        {
+          "term": "semisimple elements",
+          "heading": true
+        },
+        {
+          "term": "let mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:MN label=\"subsec:MN\"} We first recall the following result of Asai on the decomposition of Lusztig induction as given in [@FS86 (3.1), (3.2)]. We restate it in terms of the restriction functors ${\\,{}^*R_{\\mathbf{L}}^{\\mathbf{G}}}$ instead of the induction functors ${R_{\\mathbf{L}}^{\\mathbf{G}}}$ as in the cited reference. This is a summary of results from [@As1 2.8], [@As2 1.5] and [@As3 2.2.3]. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-vanishing-of-characters",
+      "number": "4",
+      "title": "Vanishing of characters",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regss",
+          "heading": false
+        },
+        {
+          "term": "operatorname spin",
+          "heading": false
+        },
+        {
+          "term": "thma",
+          "heading": false
+        },
+        {
+          "term": "zeroes",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:vanish label=\"sec:vanish\"} In this section we prove Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"} for quasi-simple groups of classical type. So let ${\\mathbf{G}}$ be a simply-connected simple algebraic group of type $B_n$ with $n \\geq 3$, $C_n$ with $n \\geq 2$ or $D_n$ with $n \\geq 4$, and let $F$ be a Steinberg morphism of ${\\mathbf{G}}$ (we exclude the ${}^3\\!D_4$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-non-unipotent-characters",
+      "number": "4.1",
+      "title": "Non-unipotent characters",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-unipotent characters",
+          "heading": true
+        },
+        {
+          "term": "n-e",
+          "heading": false
+        },
+        {
+          "term": "deligne--lusztig characters",
+          "heading": false
+        },
+        {
+          "term": "maxred",
+          "heading": false
+        },
+        {
+          "term": "ell singular",
+          "heading": false
+        },
+        {
+          "term": "non-unip",
+          "heading": false
+        },
+        {
+          "term": "n-r",
+          "heading": false
+        },
+        {
+          "term": "maximal tori",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec:nonunipotent label=\"ssec:nonunipotent\"} We first deal with non-unipotent characters, and afterwards examine in more detail the unipotent characters. ::: thm []{#thm:non-unip label=\"thm:non-unip\"} Let $G$ be one of the groups ${\\operatorname{Spin}}_{2n+1}(q)$ for odd $q$ and $n \\geq 3$, ${\\operatorname{Sp}}_{2n}(q)$ for any $q$ and $n \\geq 2$, or ${\\operatorname{Spin}}^\\pm_{2n}(q)$ for any $q$ and $n \\geq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-unipotent-characters",
+      "number": "4.2",
+      "title": "Unipotent characters",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-d cup",
+          "heading": false
+        },
+        {
+          "term": "operation n-d",
+          "heading": false
+        },
+        {
+          "term": "n-e",
+          "heading": false
+        },
+        {
+          "term": "unipotent characters",
+          "heading": true
+        },
+        {
+          "term": "n-d times",
+          "heading": false
+        },
+        {
+          "term": "sys underline",
+          "heading": false
+        },
+        {
+          "term": "array underline",
+          "heading": false
+        },
+        {
+          "term": "mathcal ensuremath",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec:unipotent label=\"ssec:unipotent\"} In the following theorem we use symbols to describe unipotent characters and refer to Section [\\[subsec:symb\\]](#subsec:symb){reference-type=\"ref\" reference=\"subsec:symb\"} for the notation. ::: thm []{#thm:unip label=\"thm:unip\"} Let $G$ be one of the groups ${\\operatorname{Spin}}_{2n+1}(q)$ for odd $q$ and $n \\geq 3$, ${\\operatorname{Sp}}_{2n}(q)$ for any $q$ and $n \\geq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-simple-endotrivial-modules",
+      "number": "5",
+      "title": "Simple endotrivial modules",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "endotrivial",
+          "heading": true
+        },
+        {
+          "term": "endotriv",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:endotriv label=\"sec:endotriv\"} In this section we prove Theorem 2 on the classification of simple endotrivial modules for finite classical groups. Note that the case of linear and unitary groups has already been treated in [@LM15], so we only need to consider symplectic groups and spin groups as in the previous section.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-51-on-certain-unipotent-characters",
+      "number": "5.1",
+      "title": "On certain unipotent characters",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reducible modulo",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "modulo ell",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "column hook",
+          "heading": false
+        },
+        {
+          "term": "modulo phi",
+          "heading": false
+        },
+        {
+          "term": "hook lengths",
+          "heading": false
+        },
+        {
+          "term": "e-r",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:unip label=\"subsec:unip\"} We first rule out some candidate characters. Let $\\Phi_d\\in{\\mathbb{Z}}[x]$ denote the $d$th cyclotomic polynomial. ::: prop []{#prop:babbage label=\"prop:babbage\"} Let $\\chi$ be the unipotent character of $G = {\\operatorname{SO}}_{6d-1}(q)$ or ${\\operatorname{Sp}}_{6d-2}(q)$ (respectively of ${\\operatorname{SO}}_{2(3d-1)}^+(q)$, ${\\operatorname{SO}}_{6d}^-(q)$) parameterised by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-simple-endotrivial-modules-in-classical-type",
+      "number": "5.2",
+      "title": "Simple endotrivial modules in classical type groups",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "endotrivial modules",
+          "heading": true
+        },
+        {
+          "term": "simple endotrivial",
+          "heading": true
+        },
+        {
+          "term": "unip",
+          "heading": false
+        },
+        {
+          "term": "hecked",
+          "heading": false
+        },
+        {
+          "term": "babbage",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "modulo ell",
+          "heading": false
+        },
+        {
+          "term": "alvis--curtis dual",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:endoclass label=\"subsec:endoclass\"} We will use the fact shown in [@LMS13 Thm. 1.3] that any endotrivial module is liftable to a characteristic 0 representation. Therefore, we can investigate endotrivial modules by the ordinary character of their lift. These characters have the following properties: - they are irreducible modulo $\\ell$, - their values on $\\ell$-singular classes are of absolute value $1$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-6-zeroes-of-characters-of-quasi-simple-groups",
+      "number": "6",
+      "title": "Zeroes of characters of quasi-simple groups",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 816,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-simple groups",
+          "heading": true
+        },
+        {
+          "term": "zeroes",
+          "heading": true
+        },
+        {
+          "term": "unipotent characters",
+          "heading": false
+        },
+        {
+          "term": "ell singular",
+          "heading": false
+        },
+        {
+          "term": "characters chi",
+          "heading": false
+        },
+        {
+          "term": "ell rank",
+          "heading": false
+        },
+        {
+          "term": "ell element",
+          "heading": false
+        },
+        {
+          "term": "characteristic ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:rank3 label=\"sec:rank3\"} Together with our previous work [@LM15; @LMS13] with C. Lassueur and E. Schulte our results allow us to guarantee the existence of zeroes of characters of quasi-simple groups on $\\ell$-singular elements once the $\\ell$-rank is at least 3, as claimed in Theorem [\\[thmA:zeroes\\]](#thmA:zeroes){reference-type=\"ref\" reference=\"thmA:zeroes\"} which we restate: ::: thm []{#thm:zeroes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-7-an-application-to-small-1-pims",
+      "number": "7",
+      "title": "An application to small 1-PIMs",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1881,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gunter malle",
+          "heading": false
+        },
+        {
+          "term": "unipotent characters",
+          "heading": false
+        },
+        {
+          "term": "sylow ℓ-subgroups",
+          "heading": false
+        },
+        {
+          "term": "ℓ-singular element",
+          "heading": false
+        },
+        {
+          "term": "ℓ-singular regular",
+          "heading": false
+        },
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "sylow p-subgroups",
+          "heading": false
+        },
+        {
+          "term": "frank ubeck",
+          "heading": false
+        }
+      ],
+      "extract": "Our results so far may also be used in order to investigate the ﬁrst Cartan invariant of ﬁnite simple classical groups. In their recent paper [9], Koshitani, K¨ulshammer and Sambale raised the question MURNAGHAN–NAKAYAMA RULE FOR UNIPOTENT CHARACTERS 19 to understand simple groups with non-cyclic Sylow ℓ-subgroup for which the ﬁrst Cartan invariant c11 equals 2. Theorem 7.1. Let G be a ﬁnite simple group of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "malle",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "ubeck",
+          "heading": false
+        },
+        {
+          "term": "kaiserslautern",
+          "heading": false
+        },
+        {
+          "term": "aachen",
+          "heading": false
+        },
+        {
+          "term": "finite groups",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M. Geck, G. Hiss, F. L¨ubeck, G. Malle, G. Pfeiffer, CHEVIE — A system for computing and processing generic character tables for ﬁnite groups of Lie type, Weyl groups and Hecke algebras. Appl. Algebra Engrg. Comm. Comput. 7 (1996), 175–210. [2] S. Koshitani, B. K¨ulshammer, B. Sambale, On Loewy lengths of blocks. Math. Proc. Cambridge Philos. Soc. 156 (2014), 555–570. [3] C. Lassueur, G. Malle, Simple",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "unipotent characters",
+      "heading": true
+    },
+    {
+      "term": "mathbf operatorname",
+      "heading": false
+    },
+    {
+      "term": "groups operatorname",
+      "heading": false
+    },
+    {
+      "term": "semisimple ell",
+      "heading": false
+    },
+    {
+      "term": "unipotent elements",
+      "heading": true
+    },
+    {
+      "term": "regular ell",
+      "heading": false
+    },
+    {
+      "term": "defect operatorname",
+      "heading": false
+    },
+    {
+      "term": "ell singular",
+      "heading": false
+    },
+    {
+      "term": "sylow ell",
+      "heading": false
+    },
+    {
+      "term": "characters chi",
+      "heading": false
+    },
+    {
+      "term": "non-trivial unipotent",
+      "heading": false
+    },
+    {
+      "term": "characters vanish",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Tori needed in the proof of Theorem 4.1 type",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1508.01627v4"
+  }
+}

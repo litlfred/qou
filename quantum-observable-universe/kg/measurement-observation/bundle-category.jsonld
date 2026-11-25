@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bundle-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bundle-category",
+  "kind": "remark",
+  "title": "The category of finite bundles over $\\mathbb{P}(V)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-torsion-knot-flow"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-bundle-initial-conditions",
+  "tags": [
+    "bundle",
+    "category",
+    "knot",
+    "categorical"
+  ],
+  "text": "bundle-category.md",
+  "provenance": "authored"
+}

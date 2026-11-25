@@ -1,0 +1,1006 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1105.0091v1",
+  "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
+  "variant": "pdf",
+  "pages": 70,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Representation theory of the infinite symmetric group",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-representation-theory-of-the-infinite-symmetri"
+    },
+    {
+      "level": 1,
+      "title": "Quasi-symmetric functions and a link with random permutations",
+      "number": "2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-quasi-symmetric-functions-and-a-link-with-rand"
+    },
+    {
+      "level": 1,
+      "title": "Observables of Young diagrams and their cumulants",
+      "number": "3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-observables-of-young-diagrams-and-their-cumula"
+    },
+    {
+      "level": 1,
+      "title": "Kerov-Vershik law of large numbers",
+      "number": "4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-kerov-vershik-law-of-large-numbers"
+    },
+    {
+      "level": 1,
+      "title": "Central limit theorems for characters and for partitions",
+      "number": "5",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-central-limit-theorems-for-characters-and-for"
+    },
+    {
+      "level": 1,
+      "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
+      "number": "6",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-pitman-operators-and-a-link-with-conditioned-r"
+    },
+    {
+      "level": 1,
+      "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
+      "number": "7",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1057,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pierre-loïc méliot",
+          "heading": false
+        },
+        {
+          "term": "random walks",
+          "heading": false
+        },
+        {
+          "term": "thoma simplex",
+          "heading": false
+        },
+        {
+          "term": "random partitions",
+          "heading": false
+        },
+        {
+          "term": "weyl chamber",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite symmetric",
+          "heading": false
+        },
+        {
+          "term": "quasi-symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        }
+      ],
+      "extract": "E-mail: meliot@phare.normalesup.org Abstract In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters of S∞always satisfy a central limit theorem. Hence, for any point of the Thoma simplex, the corresponding measures on the levels Yn of the Young graph have a property of gaussian concentration. By using",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1105.0091v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-representation-theory-of-the-infinite-symmetri",
+      "number": "1",
+      "title": "Representation theory of the infinite symmetric group",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 12,
+      "labelStart": "4",
+      "labelEnd": "12",
+      "words": 3173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak infty",
+          "heading": false
+        },
+        {
+          "term": "lambda vphantom",
+          "heading": false
+        },
+        {
+          "term": "lambda nearrow",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathfrak",
+          "heading": false
+        },
+        {
+          "term": "infinite symmetric",
+          "heading": true
+        },
+        {
+          "term": "forall lambda",
+          "heading": false
+        },
+        {
+          "term": "mathfrak bigsqcup",
+          "heading": false
+        }
+      ],
+      "extract": "In this first paragraph, we recall the representation theory of the infinite symmetric group, and a basic tool that we will use throughout the paper, namely, the Hopf algebra of symmetric functions (later, we shall also need the algebras of quasi-symmetric and free quasi-symmetric functions). ## Representation theory of the symmetric groups $\\mathfrak{S}_{n}$ To begin with, let us recall the representation theory of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quasi-symmetric-functions-and-a-link-with-rand",
+      "number": "2",
+      "title": "Quasi-symmetric functions and a link with random permutations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 22,
+      "labelStart": "12",
+      "labelEnd": "22",
+      "words": 3850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf fqsym",
+          "heading": false
+        },
+        {
+          "term": "circ otimes",
+          "heading": false
+        },
+        {
+          "term": "sigma vphantom",
+          "heading": false
+        },
+        {
+          "term": "circ big",
+          "heading": false
+        },
+        {
+          "term": "mathbf qsym",
+          "heading": false
+        },
+        {
+          "term": "a-b gamma",
+          "heading": false
+        },
+        {
+          "term": "circ infty",
+          "heading": false
+        },
+        {
+          "term": "sigma omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#randompermutation label=\"randompermutation\"} In this section, we shall explain how the coherent systems of measures on $\\mathfrak{Y}$ are related to models of random permutations that can be defined by using generalized riffle shuffles in the sense of [@Stan01; @Ful02]. ## The Hopf algebras $\\mathbf{QSym}$ and $\\mathbf{FQSym}$ {#fqsym} To begin with, we have to present two new combinatorial Hopf algebras,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-observables-of-young-diagrams-and-their-cumula",
+      "number": "3",
+      "title": "Observables of Young diagrams and their cumulants",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 31,
+      "labelStart": "22",
+      "labelEnd": "31",
+      "words": 3248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet varsigma",
+          "heading": false
+        },
+        {
+          "term": "deg varsigma",
+          "heading": false
+        },
+        {
+          "term": "infty varsigma",
+          "heading": false
+        },
+        {
+          "term": "varsigma right",
+          "heading": false
+        },
+        {
+          "term": "varsigma frac",
+          "heading": false
+        },
+        {
+          "term": "symbols varsigma",
+          "heading": false
+        },
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "product varsigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#obs label=\"obs\"} For the asymptotic analysis of Young diagrams, we are basically going to use a method of moments, but we have to define precisely what we mean by the moments of a partition. We shall essentially follow [@IO02], and [@Sni06b; @FM10] for the combinatorics of cumulants. ## Polynomial functions on Young diagrams {#polfunc} If $\\lambda$ is a partition, we associate to it two finite alphabets",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-kerov-vershik-law-of-large-numbers",
+      "number": "4",
+      "title": "Kerov-Vershik law of large numbers",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 36,
+      "labelStart": "31",
+      "labelEnd": "36",
+      "words": 2050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kerov-vershik law",
+          "heading": true
+        },
+        {
+          "term": "omega shuffle",
+          "heading": false
+        },
+        {
+          "term": "alpha varepsilon",
+          "heading": false
+        },
+        {
+          "term": "chi omega",
+          "heading": false
+        },
+        {
+          "term": "geq varepsilon",
+          "heading": false
+        },
+        {
+          "term": "omega mathbb",
+          "heading": false
+        },
+        {
+          "term": "frac varsigma",
+          "heading": false
+        },
+        {
+          "term": "alpha cdots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#largenumbers label=\"largenumbers\"} In this section, we recall the results of Kerov and Vershik; although nothing is new here, we shall introduce the important concept of a (random) probability measure associated to a (random) diagram, that will later prove useful for the analysis of the fluctuations of the rows and columns, see §[\\[gaussrow\\]](#gaussrow){reference-type=\"ref\" reference=\"gaussrow\"}. ## Law of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-central-limit-theorems-for-characters-and-for",
+      "number": "5",
+      "title": "Central limit theorems for characters and for partitions",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": "36",
+      "labelEnd": "42",
+      "words": 1709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac varsigma",
+          "heading": false
+        },
+        {
+          "term": "nabla infty",
+          "heading": false
+        },
+        {
+          "term": "omega left",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "chi omega",
+          "heading": false
+        },
+        {
+          "term": "centered gaussian",
+          "heading": false
+        },
+        {
+          "term": "lambda cdots",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#clt label=\"clt\"} In the previous paragraph, it was shown that all the coherent systems of measures $(\\mathbb{P}_{n,\\omega})_{n \\in \\mathbb{N}}$ have a property of concentration, that can be seen at the level of characters or directly for the geometry of the random partitions. In this section, we shall prove that the concentration is always gaussian, which is quite a striking fact. However, the geometric version",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-pitman-operators-and-a-link-with-conditioned-r",
+      "number": "6",
+      "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 57,
+      "labelStart": "42",
+      "labelEnd": "57",
+      "words": 5966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random walks",
+          "heading": true
+        },
+        {
+          "term": "cdots yup",
+          "heading": false
+        },
+        {
+          "term": "pitman operators",
+          "heading": true
+        },
+        {
+          "term": "bullet star",
+          "heading": false
+        },
+        {
+          "term": "brownian",
+          "heading": true
+        },
+        {
+          "term": "omega shuffles",
+          "heading": false
+        },
+        {
+          "term": "brownian motion",
+          "heading": false
+        },
+        {
+          "term": "mathrm bes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#oconnell label=\"oconnell\"} In the previous paragraphs, we have shown that the rows and columns of a partition $\\lambda$ of law $\\mathbb{P}_{n,\\omega}$ have limit frequencies $\\alpha_{i}$ and $\\beta_{j}$, and gaussian fluctuations when gathered for equal coordinates of the point $\\omega$ of the Thoma simplex. To treat the case of equal parameters, we shall use O'Connell's theory ([@OC03]) that relates the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
+      "number": "7",
+      "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 70,
+      "labelStart": "57",
+      "labelEnd": "70",
+      "words": 5001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measures",
+          "heading": true
+        },
+        {
+          "term": "jones-ocneanu traces",
+          "heading": true
+        },
+        {
+          "term": "mathfrak lambda",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "mathbb mathfrak",
+          "heading": false
+        },
+        {
+          "term": "prod oblong",
+          "heading": false
+        },
+        {
+          "term": "mathbb n-i",
+          "heading": false
+        },
+        {
+          "term": "sigma omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#qtplancherel label=\"qtplancherel\"} In this last section, we return to the \"algebraic\" study of the probability measures $\\mathbb{P}_{n,\\omega}$, and we introduce new observables in $\\mathscr{O}$ related to the representation theory of the Hecke algebras $\\mathscr{H}(\\mathfrak{S}_{n})$, that are deformations of the symmetric group algebras $\\mathbb{C}\\mathfrak{S}_{n}$. We then determine their asymptotic behaviour",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathfrak lambda",
+      "heading": false
+    },
+    {
+      "term": "sigma omega",
+      "heading": false
+    },
+    {
+      "term": "omega mathbb",
+      "heading": false
+    },
+    {
+      "term": "cdots lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda vphantom",
+      "heading": false
+    },
+    {
+      "term": "omega alpha",
+      "heading": false
+    },
+    {
+      "term": "omega left",
+      "heading": false
+    },
+    {
+      "term": "omega shuffles",
+      "heading": false
+    },
+    {
+      "term": "chi omega",
+      "heading": false
+    },
+    {
+      "term": "omega mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathfrak infty",
+      "heading": false
+    },
+    {
+      "term": "infty varsigma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 14
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1105.0091v1"
+  }
+}

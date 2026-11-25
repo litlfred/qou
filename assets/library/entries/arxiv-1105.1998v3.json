@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1105.1998v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we show a connection formula of the Hahn--Exton $q$-Bessel function $J_\\nu^{(3)}(x;q)$. At first, we review the Bessel function and $q$-analogues of the Bessel function. The Bessel equation $$\\begin{gathered}\n\\frac{d^2u}{dz^2}+\\frac{1}{z}\\frac{du}{dz}+\\left(1-\\frac{\\nu^2}{z^2}\\right)u=0\n\\end{gathered}$$ has a solution $u(z)=J_\\nu (z)$, $J_{-\\nu}(z)$. Here, the Bessel function $J_\\nu (z)$ is $$J_\\nu (z)=\\frac{1}{\\Gamma (\\nu +1)}\\left(\\frac{z}{2}\\right)^\\nu{}_0F_1\\left(-,\\nu +1, -\\frac{z^2}{4}\\right).$$ The degenerated confluent hypergeometric function ${}_0F_1(-,\\alpha , z)$ is d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1105.1998v3  [math.CA]  16 Dec 2011\nSymmetry, Integrability and Geometry: Methods and Applications\nSIGMA 7 (2011), 115, 11 pages\nA Connection Formula\nof the Hahn–Exton q-Bessel Function\nTakeshi MORITA\nGraduate School of Information Science and Technology, Osaka University,\n1-1 Machikaneyama-machi, Toyonaka, 560-0043, Japan\nE-mail: t-morita@cr.math.sci.osaka-u.ac.jp\nReceived May 11, 2011, in final form December 14, 2011; Published online December 16, 2011\nhttp://dx.doi.org/10.3842/SIGMA.2011.115\nAbstract.\nWe show a connection formula of the Hahn–Exton q-Bessel function around\nthe origin a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection formula",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-the-connection-formula.md",
+      "narrative": null,
+      "content": "ν (x; q) is obtained by (3) and (2). But it is not known the con-\nnection formula of the Hahn–Exton q-Bessel function.\nThe Hahn–Exton q-Bessel equations (1) has two analytic solutions u(x) = J(3)\nν (x), J(3)\n−ν(xp−ν)\naround x = 0 and has one analytic solution z (1/x) =\n1\nθp(−pν+2/x)\nP\nn≥0\nanx−n, a0 = 1. We show\na connection formula of J(3)\nν (x; q) in Section 2 as follows:\nTheorem 1. For any x ∈C∗\\ [pν+2; p],\nz\n\u00121\nx\n\u0013\n=\n1\n(p−2ν, p; p)∞\nθp\n\u0010\n−p2ν+2\nx\n\u0011\nθp\n\u0010\n−pν+2\nx\n\u0011\n1ϕ1\n\u00000, p1+2ν; p, x\n\u0001\n+\n1\n(p2ν, p; p)∞\nθp\n\u0010\n−p2\nx\n\u0011\nθp\n\u0010\n−pν+2\nx\n\u0011 1ϕ1\n\u00000, p1−2ν; p, p−2νx\n\u0001\n.\n(4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The theta function of Jacobi",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-the-theta-function-of-jacobi.md",
+      "narrative": null,
+      "content": "q-Borel transformation and the q-Laplace transformation which is defined by C. Zhang in [8].\nIn Section 3, we consider the limit p →1−of the connection formula. If we take a suitable\nlimit p →1−of (4), we obtain\nH(2)\nν\n\u0000√z\n\u0001\n= −ieνπi\nsin νπ\n\b\nJν\n\u0000√z\n\u0001\n−e−νπiJ−ν\n\u0000√z\n\u0001\t\n.\nHere, H(2)\nν (z) is the Hankel function of the second kind. Thus we obtain a connection formula\nof the Bessel function as a limit p →1−of (4).\n2\nThe connection formula\nIn this section, we give a connection formula of the Hahn–Exton q-Bessel function. We introduce\nthe p-Borel transformation and the p-Laplace transformation to ob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "For any x ∈C∗\\ [pν+2; p], z \u00121 x \u0013 = (p−2ν, p; p)∞ θp \u0010 −p2ν+2 x \u0011 θp \u0010 −pν+2 x \u0011 1ϕ1 \u00000, p1+2ν; p, x \u0001 + (p2ν, p; p)∞ θp \u0010 −p2 x \u0011 θp \u0010 −pν+2 x \u0011 1ϕ1 \u00000, p1−2ν; p, p−2νx \u0001 . (4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hahn-Exton q-Bessel function",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-the-hahn-exton-q-bessel-function.md",
+      "narrative": null,
+      "content": "[]{#section2.2 label=\"section2.2\"}\n\nThe Hahn--Exton $q$-Bessel function is defined by $$J_\\nu^{(3)}(x;q):=\\frac{(q^{\\nu +1};q)_\\infty}{(q;q)_\\infty}x^\\nu\\sum_{n\\ge 0}\\frac{(-1)^nq^{\\frac{n(n-1)}{2}}}{(q^{\\nu +1},q;q)_n}\\left(qx^2\\right)^n.$$ The function $J_\\nu^{(3)}(x;q)$ satisfies the $q$-difference equation $$\\begin{gathered}\n\\label{heqb}\n\\left[\\sigma_p^2- \\left\\{(p^\\nu +p^{-\\nu })-x^2p^{2-\\nu}\\right\\}\\sigma_p +1\\right]y(x)=0.\n\\end{gathered}$$ If we replace $\\nu$ by $-\\nu$ and $x$ by $xp^{-\\nu}$, we obtain $J_{-\\nu}^{(3)}(xp^{-\\nu};q)$ which is another solution of ([\\[heqb\\]](#heqb){referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The p-Borel transformation and the p-Laplace transformation",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-the-p-borel-transformation-and-the-p-laplace.md",
+      "narrative": null,
+      "content": "[]{#section2.3 label=\"section2.3\"}\n\nWe define the $p$-Borel transformation and the $p$-Laplace transformation to solve the equation ([\\[b4\\]](#b4){reference-type=\"ref\" reference=\"b4\"}), following Zhang [@Z1].\n\n::: definition\nFor $f(t)=\\sum\\limits_{n\\ge 0}a_nt^n$, the $p$-Borel transformation is defined by $$g(\\tau )=\\left(\\mathcal{B}_pf\\right)(\\tau ):=\\sum_{n\\ge 0}a_np^{-\\frac{n(n-1)}{2}}\\tau^n,$$ and the $p$-Laplace transformation is given by $$\\left(\\mathcal{L}_pg\\right)(t):=\\frac{1}{2\\pi i}\\int_{|\\tau |=r}g(\\tau )\\theta_p\\left(\\frac{t}{\\tau}\\right)\\frac{d\\tau}{\\tau }.$$ Here, $r_0>0$ is eno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The limit of the connection formula",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-3-the-limit-of-the-connection-formula.md",
+      "narrative": null,
+      "content": "[]{#section3 label=\"section3\"}\n\nIn this section, we show that the limit $p\\to 1^-$ of the connection formula gives a connection formula of the Bessel function. At first, we assume that $0<p<1$ and $0<\\sqrt{p}<1$. For the Bessel function, we set the Hankel function of the first and the second kind $H_\\nu^{(1)}(z)$ and $H_\\nu^{(2)}(z)$.\n\n::: definition\nThe Hankel function of the first kind is given by $$H_\\nu^{(1)}(z):=\\frac{\\Gamma \\left(\\frac{1}{2}-\\nu\\right)}{\\pi i\\sqrt{\\pi}}\\left(\\frac{z}{2}\\right)^\\nu\\int_{1+\\infty i}^{(1+)}e^{izt}\\left(t^2-1\\right)^{\\nu -\\frac{1}{2}}dt,\\qquad -\\pi <\\arg z<2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limit of the connection formula",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-31-limit-of-the-connection-formula.md",
+      "narrative": null,
+      "content": "[]{#section3.1 label=\"section3.1\"}\n\nWe rewrite the connection formula in Theorem [\\[theorem1\\]](#theorem1){reference-type=\"ref\" reference=\"theorem1\"} in order to take a limit $p\\to 1^-$. We set new functions $h_\\nu (t;p)$ and $J_\\nu^{\\pm}(x;p)$. We set $h_\\nu (t;p):=(p^{1/2},p^{1/2};p)_\\infty z(t)$. For any $x\\in\\mathbb{C}^*\\setminus [-\\lambda ;p]$ and $\\lambda\\in\\mathbb{C}^*$, $J_{\\nu ,\\lambda}^{+}(x;p)$ is $$J_{\\nu ,\\lambda}^{+}(x;p):=\\frac{(p^{\\nu +1};p)_\\infty}{(p;p)_\\infty}\\frac{\\theta_p\\left(\\frac{\\lambda p^{\\nu}}{x}\\right)}{\\theta_p\\left(\\frac{\\lambda}{x}\\right)}{}_1\\varphi_1\\left(0;p^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.1998v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] Birkhoff G.D., The generalized Riemann problem for linear differential equations and the allied problems\nfor linear difference and q-difference equations, Proc. Amer. Acad. 49 (1913), 521–568.\n[2] Gasper G., Rahman M., Basic hypergeometric series, 2nd ed., Encyclopedia of Mathematics and its Appli-\ncations, Vol. 96, Cambridge University Press, Cambridge, 2004.\n[3] Hahn W., Beitr¨age zur Theorie der Heineschen Reihen. Die 24 Integrale der Hypergeometrischen q-\nDifferenzengleichung. Das q-Analogon der Laplace-Transformation, Math. Nachr. 2 (1949), 340–379.\n[4] Olver F.W.J., Asymptotics and s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

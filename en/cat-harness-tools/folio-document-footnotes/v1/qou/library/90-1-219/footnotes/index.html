@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/90-1-219/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/90-1-219/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/90-1-219/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/90-1-219/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>90-1-219</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>10.7</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p009-4&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;&lt;0 we change the sign of the inner product for one-forms, while keeping the same sign for 0-&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;In view of Eq. (2) leaving a&quot;
+      },
+      {
+        &quot;page&quot;: 9,
+        &quot;context&quot;: &quot;shown that, in addition to d&quot;
+      },
+      {
+        &quot;page&quot;: 9,
+        &quot;context&quot;: &quot;together with d&quot;
+      },
+      {
+        &quot;page&quot;: 9,
+        &quot;context&quot;: &quot;a&quot;
+      },
+      {
+        &quot;page&quot;: 9,
+        &quot;context&quot;: &quot;gauge) theory. For a&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-3&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;)[(o&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;leading to d/Q=-M&quot;
+      },
+      {
+        &quot;page&quot;: 13,
+        &quot;context&quot;: &quot;leading to d/Q=-M2Q+QM&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-004&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;In our calculation below, the ratio is unity. The difference comes from the inner product (dx&#39; /\\dxi , dxk /\\dxl)=(r/kr/l-r/lr/k) (except for dimensions), an extra factor 1/2 appearing on the right-hand side in Ref. 3).&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-1&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;The associative algebra is generated by eo, e\&quot; e2, e3 with eo· ea= ea· eo= ea(a=l, 2, 3), eo· eo= eo, e,· e,&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p002-2&quot;,
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;See the footnote on page 219.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;In general the determinant of GL(Z, H) matrix 5=(~ ~), q, P, r, sEH, is given by det5=(lqI2_lpI2)(lsI2-lrI2)+kr _PSI2 , which satisfies the composition law det(5,52)=det5,det52, 5\&quot; 52EGL(Z, H).&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-2&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;When y matrices appear, if always denotes 4·component Dirac spinor.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;We omit bo from the right-hand side of Re[··-]&#39;&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-2&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;We still use the small letters q, p to denote elements of Q.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;The present notations are different from those in Ref. 9) where a takes the values 0 and 1 and Land R are exchanged so that T/a--&gt; [a and t;a--&gt; &#39;if a. The minus sign of the rightmost·hand side of vi was missing in Ref. 9).&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-2&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;The last expression Re[ VaV*J of Eq. (22d) in Ref. 12) should read Re[ VaVp].&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p007-1&quot;,
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;J Yukawa coupling constant is absorbed into the definition of ¢.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;l Hamilton&#39;s gradiene) defined by o=-b&#39;o, and its conjugation correspond to the derivative d=d£&#39;o\&quot; having mass dimension one, in the exterior differential method. The basis b&#39; in the spinor·quatemion cannot of course be replaced by d£&#39; in any sense.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-1&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;The inner product of one-forms a=aid£i and {J={Jid£i is given by (a, (3)=-r/jad3;, while that of two-forms a=(1/2)a;Jd£i 1\\ d£j and {J=(1/2){Jijd£i 1\\ d£j equals (a, {J)=(1/2)r;ikr/&#39;aij{Jk\&quot; the factor 1/2 being replaced by 1/4 in Ref. 3). They are defined through the exterior product a 1\\ * a,where * a denotes Hodge dual of p-form a. Similarly, in the present case (:It,:I) is defined through :I t 8a*:I.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-2&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;The gauge transformation property of the field strength is given by 8:I =€8a:I - :I8a€.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-3&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;***&quot;,
+    &quot;text&quot;: &quot;For a&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;In this paper we do not claim that f.l equals m in the previous section. The latter may contain unknown term except Higgs one. We leave the problem of fermion masses open.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;The gauge transformation law of the field strength is ij&#39;J q =E0&#39;J q -&#39;J q0E.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;It can be shown that ddq+dqd=O also in the generalized case for any M.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-2&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;**&quot;,
+    &quot;text&quot;: &quot;As in the Abelian case the phase factor e±re, is absorbed into the redefinition of Higgs fields.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-4&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;text&quot;: &quot;W)2+a2(oX Wo)2] with (ox W)2=17ik17J&#39;(OiU&#39;;-oJWi)(okW,-o,Wk). ****) After rescaling ¢=cp+v//2 with v=2f.1./g.&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;*&quot;,
+    &quot;text&quot;: &quot;Neglecting the gauge noninvariance stated in the footnote on p.230 with the choice of Higgs-fields matrices as in Ref. 3) and adopting the convention regarding the inner product of two forms in this paper we have mH=2mw instead of mH=j2mw as in Ref. 3).&quot;,
+    &quot;block&quot;: &quot;library/90-1-219/blocks/prose-sec-004&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ue without recourse to SU(2l1) and predicts mH=,fimw and sin&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;Recently several people&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;h some sort of discrete structure. This approach is expected&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;concrete realization of the ideas in the electro-weak sector&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tryl) and on which we focus in this paper, Coquereaux et al.&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;algebra 5U(211) necessitates 3 X 3&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;algebra 5U(211) necessitates 3 X 33),8) or 4 X 4&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;relations. Almost a decade ago we presented&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;Q. It is naturally derived&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;quaternionic formulation&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i2=l=k&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;defined by 5F;ST = AjiIj obeys the relations 7}ijA&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;defined by 5F;ST = AjiIj obeys the relations 7}ijAikA&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;where U=q-j-1P=biU&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;on ¢-,&gt; U¢ under the Lorentz transformation x=bixi-,&gt;X&#39;= UxU&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;A=(A&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;A=(Aap)=((6i)apU&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;tion above implies that all cross terms involving, say, lJfI&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;with 0= -bioi and rd&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;=-(i/2)(¢r&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;o&quot;,
+    &quot;context&quot;: &quot;=-(i/2)(¢rioi&lt;f;-(Oi¢)\&quot;/&lt;f;)-im¢&lt;f;, ¢=&lt;f;t r&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;r -r =(-bi(iP&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;sponding to -b&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;bi/\\ bj=(bib&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;bi/\\ bj=(bibj-b&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;h d2=0. Explicit evaluation of it and making the trace tr(:F&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;-2&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;with the unbroken gauge group remain the same even if a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;It should also be noted that, as far as a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the usual matrix multiplication a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(a2=0) or Yang-Mills-Higgs theory with the relations (22) (a&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the basis of H, which satisfy eo&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; may use 2x2 matrices in the Pauli rep with the constraint a&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;QOQ&#39;=(eaQa)O(epQ&#39;p)=(eaep)( -1)8Q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;0 QO* /\\ QO&#39; + el[ QO /\\ Qe, + ( _1)8Q&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;the algebra of quaternions in that dq(eaep)=(dqea)ep+( -1)8e&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Jlq-&#39;&gt;Jl~=Jlq+oJlq, oJlq=-dc+c8Jlq-Jlq8c if c=c&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;P=(a/3Wo+ Ws)/2, Z=/3((a/j3)Wo- Ws)/2, W=(~+iTifi2)//2 and W&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;=EQgq-gqQE where E=E&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;quaternions. It predicts mH=j2mw and sin&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the value of Weinberg angle sin&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;idea to answer this question but our previous speculation&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;valued entries in the matrices being defined through bi /\\ h&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Fl1 = ~ (f!j+ f3)b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Fl1 = ~ (f!j+ f3)bib&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;F12= ie-i7b&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Fzl=iei7b&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

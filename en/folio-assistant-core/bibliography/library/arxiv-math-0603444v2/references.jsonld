@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0603444v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY",
+      "dcterms:creator": [
+        "GRANGER, MICHEL",
+        "SCHULZE, MATHIAS"
+      ],
+      "dcterms:issued": "D:20210614",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0603444",
+      "dcterms:abstract": "We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by the ﬁrst diﬀerential of the logarithmic diﬀerential complex in the top local cohomology supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆(Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m and f ∈m2 a reduced deﬁning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1, . . . , xn on Cn, O = C{x1, . . . , xn} is the ring of convergent power series and m = ⟨x1, . . . , xn⟩. We abbreviate by fi = ∂f ∂xi , i = 1, . . . , n, the partial derivatives of f. Let Ω• = Ω• Cn,0 be the complex of holomorphic diﬀerential forms at the origin and denote by Ω•(⋆D) = Ω•[f −1] the complex of meromorphic diﬀerential forms with poles along D. K. Saito [Sai80, §1] introduced the subcomplex of logarithmic diﬀerential forms Ω•(log D) ⊆Ω•(⋆D) along D. It is the maximal subcomplex consisting of forms with at most a simple pole along D. Let Der = DerC O be the module of C-linear derivations of O. It is a free O-module of rank n with a basis formed by the partial derivatives ∂1, . . . , ∂n with respect to x1, . . . , xn. The module of logarithmic vector ﬁelds Der(−log D)) ⊆Der consists of all vector ﬁelds tangent to the smooth part of D. Under the natural inner product, Der(−log D)) and Ω1(log D) are mutually O-dual. Our object of interest in this article is the natural map Hn 0 (O) d1 / Hn 0 (Ω1(log D)) induced by the ﬁrst diﬀerential of Ω•(log D) in the top local cohomology supported at the origin. We shall show that its injectivity is equivalent to the quasihomogene- ity of the singularity. Theorem 1. D is quasihomogeneous if and only if d1 is injective. For non–isolated singularities, at least one implication fails: The divisor D ⊆C3 deﬁned by f = xy(x + y)(x + yz) is not quasihomogeneous b",
+      "dcterms:source": "library/arxiv-math-0603444v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0603444v2"
+    }
+  ]
+}

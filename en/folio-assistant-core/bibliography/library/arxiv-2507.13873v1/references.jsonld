@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2507.13873v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Probing the singularity at the holographic screen via q-holography",
+      "dcterms:creator": [
+        "Department of Physics",
+        "Astronomy"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2507.13873",
+      "dcterms:abstract": "We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the global symmetry of a q-deformed CFT. More precisely, we consider the 2d sinh dilaton gravity model, whose classical metric solutions exhibit a curvature singularity at the holographic boundary. Our aim is to probe this UV near-boundary regime by injecting a small probe into the bulk, and identifying the geometrical features it observes. At the level of the two- point correlator, we see the emergence of q-deformed hyperbolic disk isometries. By formulating DSSYK in terms of the analogous sine dilaton gravity model, we expect this q-deformed holographic duality to persist. July 21, 2025 ∗andreas.belaey@ugent.be †thomas.mertens@ugent.be ‡jacopo.papalini@ugent.be arXiv:2507.13873v1 [hep-th] 18 Jul 2025",
+      "dcterms:source": "library/arxiv-2507.13873v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2507.13873v1"
+    }
+  ]
+}

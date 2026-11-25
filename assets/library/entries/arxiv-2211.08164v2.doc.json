@@ -1,0 +1,727 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2211.08164v2",
+  "title": "arxiv-2211.08164v2",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and statement of the result",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-statement-of-the-result"
+    },
+    {
+      "level": 1,
+      "title": "A family of Riemann surfaces",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-family-of-riemann-surfaces"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the main theorem",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof-of-the-main-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Simple Weierstrass points",
+      "number": "4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-simple-weierstrass-points"
+    },
+    {
+      "level": 1,
+      "title": "Future directions and final comments",
+      "number": "5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-future-directions-and-final-comments"
+    },
+    {
+      "level": 2,
+      "title": "The action on C3",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-action-on-c3"
+    },
+    {
+      "level": 2,
+      "title": "The Jacobian variety",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-jacobian-variety"
+    },
+    {
+      "level": 2,
+      "title": "New examples",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-new-examples"
+    },
+    {
+      "level": 2,
+      "title": "The case of positive characteristic",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-case-of-positive-characteristic"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "speziali",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2211.08164v2 [math.AG] 16 Apr 2024 INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS SEBASTI´AN REYES-CAROCCA AND PIETRO SPEZIALI Abstract. In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorphism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Riemann sur- faces",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2211.08164v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-statement-of-the-result",
+      "number": "1",
+      "title": "Introduction and statement of the result",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-hyperelliptic riemann",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "cite laings",
+          "heading": false
+        },
+        {
+          "term": "compact riemann",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "group acting",
+          "heading": false
+        },
+        {
+          "term": "singerman",
+          "heading": false
+        }
+      ],
+      "extract": "Weierstrass point theory is one of the main tools in the study of the geometry of compact Riemann surfaces. Since its inception in Hurwitz's foundational paper \\cite{Hu}, this theory has tremendously evolved due to tools from different areas, such as projective geometry, complex analysis and numerical semigroup theory. \\s In this note, we address the general problem of deciding whether the automorphism group of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-family-of-riemann-surfaces",
+      "number": "2",
+      "title": "A family of Riemann surfaces",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "surfaces",
+          "heading": true
+        },
+        {
+          "term": "kuribayashi",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "quartic",
+          "heading": false
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that the moduli space $\\mathscr{M}_3$ of compact Riemann surfaces of genus $g=3$ is a complex analytic space of dimension six and that its singular locus agrees with the points representing surfaces admitting non-trivial automorphisms, with the exception of the hyperelliptic surfaces having automorphism group of order two; see \\cite{Oort13}. Let $$\\mathscr{K}_3 \\subset \\mbox{Sing}(\\mathscr{M}_3)$$be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof-of-the-main-theorem",
+      "number": "3",
+      "title": "Proof of the main theorem",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite laings",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "fermat quartic",
+          "heading": false
+        },
+        {
+          "term": "fixed points",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "stabiliser subgroup",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "involution conjugate",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of the main theorem will be a consequence of the following four facts. \\s \\begin{customfact}{1} Let $\\cX$ be a non-hyperelliptic compact Riemann surface of genus $g=3$. If the automorphism group of $\\cX$ acts transitively on the Weierstrass points then $\\cX \\in \\mathscr{K}_3.$ \\end{customfact} \\begin{proof} Assume that the automorphism group $G$ of $X$ acts transitively on the Weierstrass points. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-simple-weierstrass-points",
+      "number": "4",
+      "title": "Simple Weierstrass points",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weierstrass points",
+          "heading": true
+        },
+        {
+          "term": "fermat quartic",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "transitive action",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "laing",
+          "heading": false
+        },
+        {
+          "term": "points form",
+          "heading": false
+        },
+        {
+          "term": "singerman",
+          "heading": false
+        }
+      ],
+      "extract": "Laing and Singerman in [24] searched for all Riemann surfaces of genus g > 2 admitting a transitive action on the Weierstrass points, but under the additional assumption that such points are simple (namely, of weight 1). They succeeded in giving a partial answer to this problem by taking advantage of the geometric richness in the case of platonic Riemann surfaces, leaving the case of S4 acting on genus g = 3 with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-future-directions-and-final-comments",
+      "number": "5",
+      "title": "Future directions and final comments",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "We end this note with some remarks.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-the-action-on-c3",
+      "number": null,
+      "title": "The action on C3",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "dichotomy",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        }
+      ],
+      "extract": "It is worth recalling that the family $\\mathscr{K}_3$ is equisymmetric, namely, it is a closed irreducible algebraic subvariety of $\\mathscr{M}_3$ and the action of $\\mathbf{S}_4$ on its members is the same, in the sense of topological actions (see \\cite{b22} for a precise definition of topological action). Then it naturally arises the problem of understanding the dichotomy between $\\mathscr{C}_3$ (with double \\we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-jacobian-variety",
+      "number": null,
+      "title": "The Jacobian variety",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "cite ref",
+          "heading": false
+        },
+        {
+          "term": "kamel",
+          "heading": false
+        }
+      ],
+      "extract": "Let $j: X \\hookrightarrow JX$ denote the Abel-Jacobi map of $X$ and let $\\mathscr{W}_X$ be the group generated by the images under $j$ of Weierstrass points of $X$. If $X$ is hyperelliptic then it is well-known that $\\mathscr{W}_X$ agrees with the $2$-torsion points of $JX$. By contrast, for non-hyperelliptic surfaces of genus 3 the structure of $\\mathscr{W}_X$ have been determined only for some special cases: for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-new-examples",
+      "number": null,
+      "title": "New examples",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "genera",
+          "heading": false
+        },
+        {
+          "term": "non-hyperelliptic",
+          "heading": false
+        }
+      ],
+      "extract": "Since all the known examples of non-hyperelliptic Riemann surfaces with transitive action on the \\we points turn out to have genus at most seven, it would be interesting to search for new examples (and infinite collection of examples) in higher genera, if they exist. If such Riemann surfaces do not exist for arbitrary genus, it would be interesting to find an upper bound for their genera.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-the-case-of-positive-characteristic",
+      "number": null,
+      "title": "The case of positive characteristic",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hurwitz bound",
+          "heading": false
+        },
+        {
+          "term": "characteristic",
+          "heading": true
+        },
+        {
+          "term": "non-classical",
+          "heading": false
+        },
+        {
+          "term": "gap sequence",
+          "heading": false
+        },
+        {
+          "term": "closed field",
+          "heading": false
+        },
+        {
+          "term": "non-hyperelliptic",
+          "heading": false
+        },
+        {
+          "term": "non-singular",
+          "heading": false
+        },
+        {
+          "term": "irreducible algebraic",
+          "heading": false
+        }
+      ],
+      "extract": "Transitive actions on \\we points can be also studied for (projective, non-singular, absolutely irreducible) algebraic curves defined over algebraically closed fields of positive characteristic. However, in this context the relationship between \\we point and automorphisms becomes much more involved than in the complex case. In fact, the following two problems may arise: \\begin{enumerate} \\item the curve might be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "ments and suggestions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 817,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "hiroshima math",
+          "heading": false
+        },
+        {
+          "term": "genus curves",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "klein curve",
+          "heading": false
+        },
+        {
+          "term": "kuribayashi",
+          "heading": false
+        },
+        {
+          "term": "theorie der",
+          "heading": false
+        }
+      ],
+      "extract": "[1] F. Bars, Automorphisms groups of genus 3 curves, Number The- ory Seminar UAB-UB-UPC on Genus 3 curves, available at: https://mat.uab.cat/{$\\sim$}francesc/mates/autgen3.pdf [2] H. W. Braden and L. Disney-Hogg, Bring’s curve: old and new, arXiv:2208.13692 (2022). [3] S. A. Broughton, Classifying ﬁnite groups actions on surfaces of low genus, J. Pure Appl. Algebra 69 (1990), no. 3, 233–270. [4] S. A. Broughton, The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "weierstrass points",
+      "heading": true
+    },
+    {
+      "term": "non-hyperelliptic riemann",
+      "heading": false
+    },
+    {
+      "term": "fermat quartic",
+      "heading": false
+    },
+    {
+      "term": "riemann surfaces",
+      "heading": true
+    },
+    {
+      "term": "simple weierstrass",
+      "heading": true
+    },
+    {
+      "term": "non-hyperelliptic compact",
+      "heading": false
+    },
+    {
+      "term": "klein quartic",
+      "heading": false
+    },
+    {
+      "term": "fermat curves",
+      "heading": false
+    },
+    {
+      "term": "genus curves",
+      "heading": false
+    },
+    {
+      "term": "transitive action",
+      "heading": false
+    },
+    {
+      "term": "platonic riemann",
+      "heading": false
+    },
+    {
+      "term": "cite laings",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2211.08164v2"
+  }
+}

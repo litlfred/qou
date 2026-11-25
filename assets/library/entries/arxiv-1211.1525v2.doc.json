@@ -1,0 +1,1344 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1211.1525v2",
+  "title": "arxiv-1211.1525v2",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Free probability, noncrossing partitions and permutations",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-free-probability-noncrossing-partitions-and-p"
+    },
+    {
+      "level": 2,
+      "title": "Meanders",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-meanders"
+    },
+    {
+      "level": 2,
+      "title": "Our model",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-our-model"
+    },
+    {
+      "level": 2,
+      "title": "Moments of",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-moments-of"
+    },
+    {
+      "level": 1,
+      "title": "The case when dimensions of environment and both system parts are large",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-the-case-when-dimensions-of-environment-and-bo"
+    },
+    {
+      "level": 2,
+      "title": "Limiting eigenvalues",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-limiting-eigenvalues"
+    },
+    {
+      "level": 2,
+      "title": "Behavior of extreme eigenvalues",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-behavior-of-extreme-eigenvalues"
+    },
+    {
+      "level": 1,
+      "title": "The case when the environment space is fixed and its connection to Meanders",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-the-case-when-the-environment-space-is-fixed-a"
+    },
+    {
+      "level": 2,
+      "title": "Our model",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-our-model"
+    },
+    {
+      "level": 2,
+      "title": "Random pure states",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-random-pure-states"
+    },
+    {
+      "level": 2,
+      "title": "Meander polynomials with our model",
+      "number": "4.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-meander-polynomials-with-our-model"
+    },
+    {
+      "level": 1,
+      "title": "The case when one of the system parts is fixed",
+      "number": "5",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-the-case-when-one-of-the-system-parts-is-fixed"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remark",
+      "number": "6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-6-concluding-remark"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Lemmas for Section ??",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-a-lemmas-for-section"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Measure concentration",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-b-measure-concentration"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semicircular distribution",
+          "heading": false
+        },
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "wishart",
+          "heading": false
+        },
+        {
+          "term": "random quantum",
+          "heading": false
+        },
+        {
+          "term": "meanders",
+          "heading": false
+        }
+      ],
+      "extract": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS MOTOHISA FUKUDA AND PIOTR ´SNIADY ABSTRACT. We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1211.1525v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "wishart matrix",
+          "heading": false
+        },
+        {
+          "term": "semideﬁnite hermitian",
+          "heading": false
+        },
+        {
+          "term": "bipartite system",
+          "heading": false
+        },
+        {
+          "term": "random quantum",
+          "heading": false
+        },
+        {
+          "term": "aub",
+          "heading": false
+        },
+        {
+          "term": "meander polynomials",
+          "heading": false
+        },
+        {
+          "term": "quantum states",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we investigate asymptotic behavior of the empirical eigen- values distribution of the partial transpose of the random quantum state (positive semideﬁnite Hermitian matrix of trace one). This problem origi- nated from the ﬁeld of quantum information theory in relation to detecting entanglement in a bipartite system. Non-entangled states, called separable states, are necessarily positive semideﬁnite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-free-probability-noncrossing-partitions-and-p",
+      "number": "2.1",
+      "title": "Free probability, noncrossing partitions and permutations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncrossing partitions",
+          "heading": true
+        },
+        {
+          "term": "free probability",
+          "heading": true
+        },
+        {
+          "term": "free cumulants",
+          "heading": false
+        },
+        {
+          "term": "motohisa fukuda",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "semicircular distribution",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": true
+        },
+        {
+          "term": "piotr sniady",
+          "heading": false
+        }
+      ],
+      "extract": "paper we will use some basic notions from free probability theory. A good treatment of this topic is given in the book [NS06]. We will recall brieﬂy the most important notions. 2.1.1. Noncrossing partitions. A noncrossing partition τ is a partition of the set [p] := {1, . . . , p} with a property that if a < b < c < d ∈[p] are such that a, c belong to the same block of τ and b, d belong to the same block of τ then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-meanders",
+      "number": "2.2",
+      "title": "Meanders",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meanders",
+          "heading": true
+        },
+        {
+          "term": "noncrossing pair-partitions",
+          "heading": false
+        },
+        {
+          "term": "come back",
+          "heading": false
+        },
+        {
+          "term": "bridge",
+          "heading": false
+        },
+        {
+          "term": "river",
+          "heading": false
+        }
+      ],
+      "extract": "Then, a meander (of order p) is a collection of closed self-avoiding and noncrossing roads passing through all of the bridges; in other words, a me- ander of order p consists of a number of loops crossing a straight line at 2p points, see Figure 3. Another formulation of this object is via noncrossing pair-partitions. If one crosses a bridge then next this person must cross an- other bridge in order to come back to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-our-model",
+      "number": "2.3",
+      "title": "Our model",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random mixed",
+          "heading": false
+        },
+        {
+          "term": "transpose",
+          "heading": false
+        },
+        {
+          "term": "µmnργ",
+          "heading": false
+        },
+        {
+          "term": "mnργ",
+          "heading": false
+        }
+      ],
+      "extract": "and Cn with l, m, n ∈N and take the uniformly random unit vector |v⟩in the product space Cl ⊗Cm ⊗Cn. Then, the corresponding random pure state |v⟩⟨v| on Cl ⊗Cm ⊗Cn induces a random mixed state ρ = V V ∗on Cm ⊗Cn by tracing out the space Cl. Here, we use the usual isomorphism |v⟩7→V between Cl ⊗Cm ⊗Cn and Mmn,l(C). This model of random mixed quantum states was investigated in [˙ZS01, B˙Z06]. Then, we study the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-moments-of",
+      "number": "2.4",
+      "title": "Moments of",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lmn",
+          "heading": false
+        },
+        {
+          "term": "gxy",
+          "heading": false
+        },
+        {
+          "term": "mnργ",
+          "heading": false
+        },
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "interact",
+          "heading": false
+        },
+        {
+          "term": "entries",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2.2. Let τ ∈Sp be a permutation; we denote by θ1, . . . , θℓthe lengths of the cycles of τ (in particular, θ1 + · · · + θℓ= p). Then E Y i Tr h\u0000mnρΓ\u0001θii! = F(lmn, p) X α∈Sp l−|α| mp−|τα| np−|τ −1α|, where (2.5) F(D, p) := p−1 Y i=0 D D + i = 1 + O \u0000D−1\u0001 . Proof. Let G be a (mn, l) matrix with independent, complex N(0, 1) en- tries (i.e. the real and the imaginary part of each entry are independent, real N \u00000,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-the-case-when-dimensions-of-environment-and-bo",
+      "number": "3",
+      "title": "The case when dimensions of environment and both system parts are large",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "environment",
+          "heading": true
+        },
+        {
+          "term": "mnργ",
+          "heading": false
+        },
+        {
+          "term": "system",
+          "heading": true
+        },
+        {
+          "term": "aubrun",
+          "heading": false
+        }
+      ],
+      "extract": "SYSTEM PARTS ARE LARGE In this section we investigate the regime where l, m, n →∞. Aubrun [Aub12] investigated the case where l ∝d2 and m, n ∝d as d →∞ via Wishart random matrices model and showed the results which corre- spond to Theorem 3.1 and Theorem 3.2. We will show the following re- sults. Theorem 3.1 shows that mnρΓ has the limiting distribution as long as the dimension mn of the quantum system Cm ⊗Cn is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-limiting-eigenvalues",
+      "number": "3.1",
+      "title": "Limiting eigenvalues",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semicircle distribution",
+          "heading": false
+        },
+        {
+          "term": "mnργ",
+          "heading": false
+        },
+        {
+          "term": "limiting",
+          "heading": true
+        },
+        {
+          "term": "convergence",
+          "heading": false
+        },
+        {
+          "term": "empirical",
+          "heading": false
+        },
+        {
+          "term": "converges",
+          "heading": false
+        },
+        {
+          "term": "almost",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Limiting eigenvalues. We analyze the limit of the empirical eigen- values distribution of mnρΓ when l ∝mn where l, m, n →∞. In the following, we assume without loss of generality that m ≥n. Theorem 3.1. Suppose mn l →a with 0 ≤a < ∞and m ≥n. Then, as n →∞, the empirical measure of mnρΓ converges weakly almost surely to the semicircle distribution SC1,√a. Here, we think of m = mn and l = ln as sequences which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-behavior-of-extreme-eigenvalues",
+      "number": "3.2",
+      "title": "Behavior of extreme eigenvalues",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1651,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "median λmin",
+          "heading": false
+        },
+        {
+          "term": "extreme eigenvalues",
+          "heading": true
+        },
+        {
+          "term": "mnργ",
+          "heading": false
+        },
+        {
+          "term": "maximum eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "mnp",
+          "heading": false
+        },
+        {
+          "term": "ppt",
+          "heading": false
+        },
+        {
+          "term": "aub",
+          "heading": false
+        }
+      ],
+      "extract": "havior of minimum and maximum eigenvalues. Theorem 3.2 below shows that in the regime of Theorem 3.1 the minimum and the maximum eigenval- ues of mnρΓ actually converge respectively to 1 −2√a and 1 + 2√a under an additional condition on growth of m and n. 3.2.1. Convergence of extreme eigenvalues. converge to 1 ± 2√a almost surely. Proof. The difﬁcult part of the theorem is to show that lim sup holds almost surely.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-the-case-when-the-environment-space-is-fixed-a",
+      "number": "4",
+      "title": "The case when the environment space is fixed and its connection to Meanders",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "CONNECTION TO MEANDERS",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-41-our-model",
+      "number": "4.1",
+      "title": "Our model",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "model",
+          "heading": true
+        },
+        {
+          "term": "regime",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        },
+        {
+          "term": "investigate",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed",
+          "heading": false
+        }
+      ],
+      "extract": "environment space Cl is ﬁxed. Unlike the previous regime, we do not have double-geodesics any more. However, interestingly, this regime gives a simple matrix model for the meander polynomials, which is the main result in this section. A special case of the other result of this section (Theorem 4.1) has been already proved by Aubrun [Aub12, Proposition 9.1], and one should be able to prove Theorem 4.1 itself based on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-random-pure-states",
+      "number": "4.2",
+      "title": "Random pure states",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random pure",
+          "heading": true
+        },
+        {
+          "term": "poisson distribution",
+          "heading": false
+        },
+        {
+          "term": "free poisson",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "x1x",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": true
+        },
+        {
+          "term": "atom",
+          "heading": false
+        }
+      ],
+      "extract": "the latter shows a connection to the meander polynomials. 4.2. Random pure states. We start with the case l = 1 of trivial environ- ment space Cl; this corresponds to ρ being a random pure state. Theorem 4.1. Let l = 1. Then the empirical eigenvalues distribution (4.1) converges almost surely as n →∞to (4.3) \u0012 1 −1 c \u0013 δ0 + 1 cµB√X1X2 in the weak topology of probability measures. Here, µB√X1X2 is the distri- bution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-meander-polynomials-with-our-model",
+      "number": "4.3",
+      "title": "Meander polynomials with our model",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meander",
+          "heading": true
+        },
+        {
+          "term": "meander polynomial",
+          "heading": false
+        },
+        {
+          "term": "noncrossing partition",
+          "heading": false
+        },
+        {
+          "term": "graphical representation",
+          "heading": false
+        },
+        {
+          "term": "axy",
+          "heading": false
+        },
+        {
+          "term": "upper line",
+          "heading": false
+        },
+        {
+          "term": "lower line",
+          "heading": false
+        },
+        {
+          "term": "random quantum",
+          "heading": false
+        }
+      ],
+      "extract": "where c = 1, where our model gives the meander polynomials. Theorem 4.2. If m n →c = 1 and q ∈N then the 2q-th moment of µlmρΓ converges as n →∞to the meander polynomial Mq(l). 20 MOTOHISA FUKUDA AND PIOTR ´SNIADY (A) (B) FIGURE 4. (a) graphical representation of a noncrossing partition \b {1, 3, 4}{2} ∈NC(4), (b) the corresponding noncrossing pair-partition from NC2(8). FIGURE 5. Graphical representation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-the-case-when-one-of-the-system-parts-is-fixed",
+      "number": "5",
+      "title": "The case when one of the system parts is fixed",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free poisson",
+          "heading": false
+        },
+        {
+          "term": "bn12a",
+          "heading": false
+        },
+        {
+          "term": "limiting distribution",
+          "heading": false
+        },
+        {
+          "term": "bn12b",
+          "heading": false
+        },
+        {
+          "term": "free difference",
+          "heading": false
+        },
+        {
+          "term": "nechita",
+          "heading": false
+        },
+        {
+          "term": "lmn",
+          "heading": false
+        },
+        {
+          "term": "banica",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the case where one of the spaces Cm or Cn is ﬁxed. Without loss of generality we may assume that Cm is ﬁxed. This case was investigated by Banica and Nechita in [BN12a, BN12b] via approxima- tion by the complex Wishart matrix and they proved that the limiting mea- sure is the free difference of two free Poisson distributions. We will present a new proof of this result. 22 MOTOHISA FUKUDA",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-6-concluding-remark",
+      "number": "6",
+      "title": "Concluding remark",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regimes",
+          "heading": false
+        },
+        {
+          "term": "meander",
+          "heading": false
+        },
+        {
+          "term": "semicircular",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we investigated asymptotic behavior of eigenvalues of par- tial transpose of random quantum states on bipartite systems. We naturally picked up three regimes depending on how the concerned spaces grow and showed their connections to the semicircular distribution, the free Poisson distribution and the meander polynomials. Other regimes may show other interesting behaviors.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-appendix-a-lemmas-for-section",
+      "number": null,
+      "title": "Appendix A. Lemmas for Section ??",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motohisa fukuda",
+          "heading": false
+        },
+        {
+          "term": "piotr sniady",
+          "heading": false
+        },
+        {
+          "term": "forward difference",
+          "heading": false
+        },
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "fac tors",
+          "heading": false
+        },
+        {
+          "term": "difference operator",
+          "heading": false
+        },
+        {
+          "term": "upper-bounded",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed points",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma A.1. For arbitrary integers p, t ≥0 and D ≥2 the following bound holds true: (A.1) X k≥0 \u0012p k \u0013\u0012k t \u0013 (−1)p−k F(D, k) ≤ \u0012p t \u0013 \u0012 p √ D \u0013p−t , where F is given by (2.5). Proof. We denote by S the shift operator on functions of a single variable, i.e. S : g(·) 7→g(· + 1) or alternatively (Sg)(x) = g(x + 1). Then, writing F(k) := F(D, k), the left-hand side of (A.1) becomes X k≥0 \u0012p k \u0013\u0012k t \u0013 (−1)p−kF(k) = X k≥0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-appendix-b-measure-concentration",
+      "number": null,
+      "title": "Appendix B. Measure concentration",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration",
+          "heading": true
+        },
+        {
+          "term": "measure",
+          "heading": true
+        },
+        {
+          "term": "lév",
+          "heading": false
+        },
+        {
+          "term": "lmn",
+          "heading": false
+        }
+      ],
+      "extract": "APPENDIX B. MEASURE CONCENTRATION In this section we collect some results from asymptotic geometric analy- sis and random matrix theory, which we use in this paper. The following theorem states that continuous functions on high-dimensional unit spheres have almost constant value except for sets of small measure: Lemma B.1 (Levy’s lemma [Lév51]). Let f : Sk →R be a function with Lipschitz constant L, then there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cqc",
+          "heading": false
+        },
+        {
+          "term": "weingarten",
+          "heading": false
+        },
+        {
+          "term": "bmbf",
+          "heading": false
+        }
+      ],
+      "extract": "We thank the anonymous referee who not only suggested use Wick for- mula (instead of Weingarten calculus which was used in the preliminary version of the current paper) but also gave other useful comments. The research of M.F. was ﬁnancially supported by the CHIST-ERA/BMBF project CQC. In the initial phase of research, P.´S. was a holder of a fellowship of Alexander von Humboldt-Stiftung. P.´S.’s research has been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ion nechita",
+          "heading": false
+        },
+        {
+          "term": "karol zyczkowski",
+          "heading": false
+        },
+        {
+          "term": "guillaume aubrun",
+          "heading": false
+        },
+        {
+          "term": "wishart matrices",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "horodecki",
+          "heading": false
+        },
+        {
+          "term": "cam bridge",
+          "heading": false
+        },
+        {
+          "term": "density matrices",
+          "heading": false
+        }
+      ],
+      "extract": "[ASW11] Guillaume Aubrun, Stanisław Szarek, and Elisabeth Werner. Hastings’s additivity counterexample via Dvoretzky’s theorem. Comm. Math. Phys., 305(1):85–97, 2011. [Aub12] Guillaume Aubrun. Partial transposition of random states and non-centered semicircular distributions. Random Matrices: Theory and Applications, 01(02):1250001, 2012. Preprint arXiv:1011.0275v3. [Bia97] Philippe Biane. Some properties of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "motohisa fukuda",
+      "heading": false
+    },
+    {
+      "term": "partial transpose",
+      "heading": false
+    },
+    {
+      "term": "piotr sniady",
+      "heading": false
+    },
+    {
+      "term": "wishart random",
+      "heading": false
+    },
+    {
+      "term": "random quantum",
+      "heading": false
+    },
+    {
+      "term": "eigenvalues distribution",
+      "heading": false
+    },
+    {
+      "term": "empirical distribution",
+      "heading": false
+    },
+    {
+      "term": "semicircular distribution",
+      "heading": false
+    },
+    {
+      "term": "random matrix",
+      "heading": false
+    },
+    {
+      "term": "limiting distribution",
+      "heading": false
+    },
+    {
+      "term": "poisson distribution",
+      "heading": false
+    },
+    {
+      "term": "random matrices",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A graphical representation of a noncrossing par-",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(a) Graphical representation of the permutation",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(a) graphical representation of a noncrossing",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Graphical representation of noncrossing parti-",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1211.1525v2"
+  }
+}

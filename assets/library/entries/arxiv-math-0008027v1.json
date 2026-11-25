@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0008027v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:introduction label=\"sec:introduction\"} In [@Kashaev:MODPLA95] R. Kashaev introduced a link invariant by using the quantum dilogarithm and after some concrete calculations for the knots $4_1$, $5_2$, and $6_1$, he conjectured in [@Kashaev:LETMP97] the asymptotic behavior of his invariant determines the hyperbolic volume for hyperbolic links. More precisely his conjecture is as follows. For an integer $N\\ge2$ let $\\langle{L}\\rangle_N$ be the Kashaev invariant of a link $L$.\n\n::: conj\nIf $L$ is hyperbolic, i.e. $S^3\\setminus{L}$ has a complete hyperbolic structure, then $$2\\pi\\lim_{N\\to\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0008027v1  [math.GT]  3 Aug 2000\nKASHAEV’S INVARIANT AND THE VOLUME OF A\nHYPERBOLIC KNOT AFTER Y. YOKOTA\nHITOSHI MURAKAMI\nAbstract. I follow Y. Yokota to explain how to obtain a tetrahedron de-\ncomposition of the complement of a hyperbolic knot and compare it with the\nasymptotic behavior of Kashaev’s link invariant using the ﬁgure-eight knot as\nan example.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-algebra.md",
+      "narrative": null,
+      "content": "[]{#sec:algebra label=\"sec:algebra\"} In this section I describe Kashaev's link invariant [@Kashaev:MODPLA95] following Yokota. We fix an integer $N\\ge2$ and put $q=\\exp\\left(2\\pi\\sqrt{-1}/N\\right)$. Put $(x)_n=\\prod_{k=1}^{n}(1-x^k)$ for $n\\ge 0$. For integers $0{\\le}k,l,m,n{\\le}N-1$ we put $$\\theta\\!\\left(\\begin{smallmatrix} k & n \\\\ l & m \\end{smallmatrix}\\right)\n  =\n  \\begin{cases}\n    1\\;&\\text{if ${l}\\ne{m}$ and $q^{k},q^{l},q^{m},q^{n}$ are on the unit\n    circle counterclockwise}\n    \\\\\n    &\\hfill\\text{(other pairs may be the same)},\n    \\\\\n    0\\;&\\text{otherwise}.\n  \\end{cases}$$ Not",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-geometry.md",
+      "narrative": null,
+      "content": "[]{#sec:geometry label=\"sec:geometry\"} In this section I will describe how to decompose a knot complement $S^3\\setminus{K}$ into ideal topological tetrahedra and how these define hyperbolic structure when $K$ is the figure-eight knot. Here 'ideal' means that each vertex is at the cusp (the infinite point corresponding to $K$). (That is, all vertices of the tetrahedra meet at a point, and the complement of the regular neighborhood of the point is $S^3\\setminus{K}$.)\n\nFix a knot diagram throughout.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal tetrahedron decomposition of $S^3\\setminus({K\\cup\\text{two points}})$",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-31-ideal-tetrahedron-decomposition-of-s3setminus.md",
+      "narrative": null,
+      "content": "We will decompose $S^3\\setminus({K\\cup\\text{two points}})$ into tetrahedra so that all the vertices are either on $K$ or on the two points outside $K$.\n\nFirst we put an octahedron ${\\rm E}_i$-${\\rm A}_i{\\rm B}_i{\\rm C}_i{\\rm D}_i$-${\\rm F}_i$ at the $i$th crossing of the knot diagram so that ${\\rm E}_i{\\rm F}_i$ is perpendicular to the plane, that ${\\rm E}_i$ and ${\\rm F}_i$ touch the over-crossing point and the under-crossing point respectively, and that ${\\rm A}_i$, ${\\rm B}_i$, ${\\rm C}_i$, and ${\\rm D}_i$ are to the northeast, northwest, southwest, and southeast, respectively. (see Figures",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolicity condition",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-33-hyperbolicity-condition.md",
+      "narrative": null,
+      "content": "Now we have a *topological* ideal tetrahedron decomposition of $S^3\\setminus{K}$. To introduce a complete hyperbolic structure, we regard each tetrahedron as an ideal hyperbolic tetrahedron parameterized by a complex number with positive imaginary part. This complex parameter $z$ is chosen as follows. First recall that an ideal hyperbolic tetrahedron can be characterized by a Euclidean triangle. (If we consider the upper half space model of the hyperbolic space, then an ideal hyperbolic tetrahedron can be located so that one ideal vertex is at the infinity and the other three are on the $xy$-p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0008027v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analysis, and Harmony",
+      "pageStart": 9,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-4-analysis-and-harmony.md",
+      "narrative": null,
+      "content": "4. Analysis, and Harmony\nIn §2 we know that if we calculate the Kashaev invariant of the ﬁgure-eight knot\nonly the parameter j contributes. Due to Kashaev [2], the asymptotic behavior of\n⟨41⟩N for large N is\nZ\nexp\n\u0014\nN\n2π√−1\n\b\n−Li2(z) + Li2(z−1)\n\t\u0015\ndz,\nwhere Li2(z) = −R z\n0 log(1 −u)/u du is the dilogarithm function.\nNote that z\ncorresponds to qj and that −Li2(z) and Li2(z−1) corresponds to (q)j and (q−1)j\nrespectively. We can apply the saddle point method to this integral and know that\nfor large N it is approximated by the value\nexp\n\u0014N V (z0)\n2π√−1\n\u0015\nwith V (z) := −Li2(z) + Li2(z−1) and z0 sat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

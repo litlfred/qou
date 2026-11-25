@@ -1,0 +1,549 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "angled-survey",
+  "blocks": [
+    {
+      "id": "library/angled-survey/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Around 1980, William Thurston showed that “almost every” 3–manifold M,\nwhether closed or bounded, admits a complete hyperbolic metric [31]. When the\nboundary of M consists of tori, this metric is unique up to isometry [20, 24].\nThurston introduced a method for ﬁnding this unique metric. The idea was to\nsubdivide the interior of M into ideal tetrahedra (tetrahedra whose vertices are\nremoved), and then give those tetrahedra hyperbolic shapes that glue up coherently\nin M. The shape of a hyperbolic ideal tetrahedron can be completely described by\na single complex number, namely the cross–ratio of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Contemporary Mathematics\nFrom angled triangulations to hyperbolic structures\nDavid Futer and Fran¸cois Gu´eritaud\nAbstract. This survey paper contains an elementary exposition of Casson\nand Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifold M with\ntoroidal boundary. We also survey a number of applications of this technique.\nThe method involves subdividing M into ideal tetrahedra and solving a\nsystem of gluing equations to ﬁnd hyperbolic shapes for the tetrahedra. The\ngluing equations decompose into a linear and non-linear part. The solutions to\nthe linear equations form a conve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let M be an orientable 3–manifold with boundary consisting of tori, and let τ be an ideal triangulation of M. If A(τ)̸ = ∅, then M admits a complete hyperbolic metric. In other words, the existence of an angle structure implies the existence of a hyperbolic structure. Finding this hyperbolic structure requires solving the non- linear part of the gluing equations. To do this, Casson and Rivin introduced a volume functional V : A(τ) →R, which assigns to every angle structure on τ the sum of the hyperbolic volumes of the tetrahedra in this structure. See Deﬁnition 5.2 for a precise deﬁnition. As",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let M be an orientable 3–manifold with boundary consisting of tori, and let τ be an ideal triangulation of M. Then a point p ∈A(τ) corresponds to a complete hyperbolic metric on the interior of M if and only if p is a critical point of the functional V : A(τ) →R. All told, the Casson–Rivin program can be summarized as follows. Solving the linear part of Thurston’s gluing equations produces the convex polytope A(τ). Solving this linear system is straightforward and algorithmic; by Theorem 1.1, the existence of a solution implies that a hyperbolic structure also exists. By",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/def-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "def-sec-001-01.md",
+      "narrative": null,
+      "content": "A hyperbolic ideal tetrahedron T is the convex hull in H3 of four distinct points on ∂H3. The four points on ∂H3 are called ideal vertices of T, and are not part of the tetrahedron. The tetrahedron T is called degenerate if it lies in a single plane, and non-degenerate otherwise. Recall that an isometry of H3 is completely determined by its action on three points on ∂H3. Thus we may assume, for concreteness, that three vertices of T lie at 0, 1, ∞in the upper half-space model. If T is non-degenerate, we may also Licensed to Temple Univ. Prepared on Tue Jul 30 15:53:49 EDT 2019for download from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "Let C be an oriented surface with a speciﬁed triangulation (for example, a boundary torus of M with the tessellation by boundary triangles). A segment in C is an embedded arc in one triangle, which is disjoint from the vertices of C, and whose endpoints lie in distinct edges of C. A normal closed curve σ ⊂C is an immersed closed curve that is transverse to the edges of C, such that the intersection between σ and a triangle is a union of segments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/def-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "def-sec-001-03.md",
+      "narrative": null,
+      "content": "Let τ be an ideal triangulation of M, and let C be one torus component of ∂M. Then τ induces a tessellation of C by boundary triangles. If each tetrahedron of τ is assigned a hyperbolic shape, then every corner of each boundary triangle can be labeled with the corresponding shape parameter. Let σ be an oriented normal closed curve in C. Then every segment of σ in a triangle of C cuts oﬀa single vertex of a triangle, labeled with a single shape Licensed to Temple Univ. Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to red",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "Let τ be an ideal triangulation of M. Suppose that each ideal tetrahedron of τ is assigned a non-degenerate hyperbolic shape with positive imaginary part, as above. If the shape parameters of the tetrahedra satisfy the edge gluing equations, these metric tetrahedra can be glued together to obtain a (possibly incomplete) hyperbolic metric on M∖∂M. This metric will be complete if and only if the completeness equations are satisﬁed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing equations",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-gluing-equations.md",
+      "narrative": null,
+      "content": "discussion of Sections 3 and 4, but skip the proofs in those sections entirely. Then,\nproceed directly to Section 5, where the computation of Proposition 5.4 is par-\nticularly important.\nThis computation almost immediately implies the forward\ndirection of Theorem 1.2. On the other hand, the linear–algebra results in Sections\n3 and 4 involve completely diﬀerent ideas compared to the rest of the paper, and\nare only needed for the reverse direction of Theorem 1.2 (complete metric implies\ncritical point of V) and for various applications in Section 6.\nFor a practical example of the method, the rea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/def-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "def-sec-002-01.md",
+      "narrative": null,
+      "content": "An angle structure on an ideal triangulation τ is an assign- ment of an (internal) dihedral angle to each edge of each tetrahedron, such that opposite edges carry the same dihedral angle, and such that (1) all angles lie in the range (0, π), (2) around each ideal vertex of a tetrahedron, the dihedral angles sum to π, (3) around each edge of M, the dihedral angles sum to 2π. The set of all angle structures on τ is denoted A(τ). Conditions (1) and (2) in the deﬁnition above are precisely what is needed to specify a non-degenerate hyperbolic ideal tetrahedron up to isometry. For con- creteness, i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "rank(A) = 2n −|∂M|. This result is due to Neumann [21]. Our proof is adapted from Choi [2, Theo- rem 3.7].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Let τ be an ideal triangulation of M, containing n tetrahe- dra. The set of all ways to assign a real number to each pair of opposite edges of each tetrahedron is naturally identiﬁed with R3n. Then A(τ) is a convex, ﬁnite–sided, bounded polytope in R3n. If A(τ)̸ = ∅, its dimension is dim A(τ) = |τ| + |∂M|, where |τ| = n is the number of tetrahedra and |∂M| is the number of boundary tori in M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "For every cusp c, rc A = 0. Licensed to Temple Univ. Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms FROM ANGLED TRIANGULATIONS TO HYPERBOLIC STRUCTURES Let vj be a column of A, and recall that vj corresponds to one pair of opposite edges in one tetrahedron. Then the dot product rc · vj counts minus the number of times that one of these edges has an endpoint at c, plus the number of times that one of these edges is identiﬁed to an edge of M that has an e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prop-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-002-05.md",
+      "narrative": null,
+      "content": "The collection of vectors rc is linearly independent. Suppose that \u0004 λcrc = 0, and let ei be the ith edge in M. The ith entry of rc will be 0, except when c is one of the endpoints of ei. Thus, if the edge ei has endpoints at cusps a and b, and the ith entry of \u0004 λcrc is 0, we must have λa + λb = 0. Now, let Δ be an ideal triangle of τ, whose ideal vertices are at cusps a, b, and c. The argument above, applied to the three edges of Δ, gives λa + λb = 0, λa + λc = 0, λb + λc = 0. The only way that these three equalities can hold simultaneously is if λa = λb = λc = 0. Thus all coeﬃcients λc must",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The polytope of angle structures",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-the-polytope-of-angle-structures.md",
+      "narrative": null,
+      "content": "As we have seen in the last section, the shape of a hyperbolic ideal tetrahedron\nis completely determined by its dihedral angles. The notion of an angle structure\nis that these dihedral angles should ﬁt together coherently.\nDefinition 3.1. An angle structure on an ideal triangulation τ is an assign-\nment of an (internal) dihedral angle to each edge of each tetrahedron, such that\nopposite edges carry the same dihedral angle, and such that\n(1) all angles lie in the range (0, π),\n(2) around each ideal vertex of a tetrahedron, the dihedral angles sum to π,\n(3) around each edge of M, the dihedral a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "Let τ be an ideal triangulation of M, and let ρ, σ be oriented normal closed curves on ∂M that intersect transversely (if at all). Deﬁne the signed intersection number ι(ρ, σ) to be the number of times that σ crosses ρ from right to Licensed to Temple Univ. Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms DAVID FUTER AND FRANC¸ OIS GU´ERITAUD σ σ σ′ σ′ σ′′ σ′′ ⇒ ⇒ ⇒ Figure 5. Decomposing σ into smaller curves. Left: when two segments of σ pass through the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/ex-sec-003-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "ex-sec-003-01.md",
+      "narrative": null,
+      "content": "Let e be an edge of M, and suppose for simplicity that all tetrahedra adjacent to e are distinct. Let σ be a simple closed curve on ∂M, running counterclockwise about one endpoint of e. The boundary triangles intersected by σ have angles αi, βi, γi, labeled clockwise with αi inside σ. Then the leading–trailing deformation w(σ) adds 1 to every βi and subtracts 1 from every γi, keeping the angle sum in each tetrahedron equal to π. In addition, the dihedral angle marked βi is adjacent to the same edge of M as the dihedral angle marked γi+1. Thus the angle sum at each edge is unchanged. (See Figur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Let ρ, σ be oriented normal closed curves on ∂M that intersect transversely, if at all. Then ∂ ∂w(σ)Im(H(ρ)) = 2 ι(ρ, σ). Recall that Im(H(ρ)) is the linear, angled part of the holonomy in Deﬁnition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let p ∈A(τ) be an angle structure, and let σ be an oriented normal curve on a cusp of M. Then the vector w(σ) is tangent to A(τ). In other words, for all suﬃciently small ε > 0, p + εw(σ) ∈A(τ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leading–trailing deformations",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-4-leadingtrailing-deformations.md",
+      "narrative": null,
+      "content": "Given a point p of the angle polytope A(τ), let TpA(τ) be the tangent space\nto A(τ) at the point p. There is a particularly convenient choice of spanning vec-\ntors for TpA(τ). These leading–trailing deformations, which were probably folklore\nknowledge to experts for several years, are the main innovation in our direct proof\nof Theorem 1.2. In a certain sense, they serve as a more concrete reformulation of\nNeumann and Zagier’s symplectic pairing [22]. To the best of the authors’ knowl-\nedge, this is the ﬁrst place where they are described in print.\nDefinition 4.1. Let C be a cusp torus of M, wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "The Lobachevsky function L(x) is well deﬁned and continuous on R (even though the deﬁning integral is improper), and periodic with period π. Furthermore, if T is a hyperbolic ideal tetrahedron with dihedral angles α, β, γ, its volume satisﬁes vol(T) = L(α) + L(β) + L(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Let C be a cusp torus of M, with a tessellation by boundary triangles coming from τ. Let σ ⊂C be an oriented normal closed curve. Recall the holonomy H(σ) from Deﬁnition 2.3 and the tangent vector w(σ) ∈TpA(τ) from Deﬁnition 4.1. Then for every point p ∈A(τ), we have ∂V ∂w(σ) = Re(H(σ)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume maximization",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-5-volume-maximization.md",
+      "narrative": null,
+      "content": "In this section, we show how volume considerations give a way to turn an angle\nstructure into a genuine hyperbolic metric on M. To compute the volume of an\nideal hyperbolic tetrahedron, recall the Lobachevsky function L : R →R.\nIts\ndeﬁnition is\n(5.1)\nL(x) = −\n\u0005 x\n0\nlog |2 sin t| dt.\nLemma 5.1. The Lobachevsky function L(x) is well deﬁned and continuous\non R (even though the deﬁning integral is improper), and periodic with period π.\nFurthermore, if T is a hyperbolic ideal tetrahedron with dihedral angles α, β, γ, its\nvolume satisﬁes\nvol(T) = L(α) + L(β) + L(γ).\nProof. See, for example, Milnor [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "Let M be an orientable 3–manifold with boundary consisting of tori, and let τ be an ideal triangulation of M. Then a point p ∈A(τ) corresponds to a complete hyperbolic metric on the interior of M if and only if p is a critical point of the functional V : A(τ) →R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extensions, applications, generalizations",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-6-extensions-applications-generalizations.md",
+      "narrative": null,
+      "content": "This ﬁnal section of the paper surveys several ways in which the Casson–Rivin\nprogram has been generalized and extended, as well as several inﬁnite families of\nmanifolds to which the program has been successfully applied.\nTheorem 1.2 concerns manifolds with non-empty boundary that consists of tori.\nIt is natural to ask whether similar methods can be applied to treat manifolds with\nmore general boundary, or closed manifolds that have no boundary at all. Indeed,\nthere has been considerable progress in these areas.\n6.1. Closed manifolds via Dehn ﬁlling. The most straightforward way to\nextend Theo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "concerns manifolds with non-empty boundary that consists of tori. It is natural to ask whether similar methods can be applied to treat manifolds with more general boundary, or closed manifolds that have no boundary at all. Indeed, there has been considerable progress in these areas. 6.1. Closed manifolds via Dehn ﬁlling. The most straightforward way to extend Theorem 1.2 to closed manifolds is via Dehn surgery. If C is a boundary torus of M, and μ, λ are simple closed normal curves that form a basis for H1(C), then M(p/q) is the manifold obtained by attaching a solid torus to C, such that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "Let M be a manifold with boundary a single torus C, and let τ be an ideal triangulation of M. Choose a pair (p, q) of relatively prime integers, and let Ap/q(τ) ⊂A(τ) be the set of all angle structures that satisfy the imaginary Licensed to Temple Univ. Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms DAVID FUTER AND FRANC¸ OIS GU´ERITAUD part of equation (6.1). Then a critical point of the volume functional V on Ap/q(τ) yields a complete hyperbolic struc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "Let N be a 3–manifold with polyhedral boundary and prescribed (convex) dihedral angles along every edge of ∂N. Suppose that N is irreducible and atoroidal, and furthermore that N is a 3–ball, or a solid torus, or has incompressible boundary. Then N carries a complete hyperbolic metric realizing the prescribed angles if and only if condition (∗) holds. Furthermore, any hyperbolic realization is unique up to isometry. The case when N is a polyhedron is due to Rivin [27, 28]; the case of solid tori, to Gu´eritaud [8]. In both cases, the argument works by ﬁrst proving that N has an ideal triangula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "Let M be an orientable 3–manifold with boundary consisting of tori, and let τ be an ideal triangulation of M. Suppose that V : A(τ) →R has a critical point at p ∈A(τ). Then, for any point q ∈A(τ), V(q) ≤vol(M), with equality iﬀq = p (i.e., iﬀq gives the complete hyperbolic metric on M). In fact, the analogous statement also holds in the settings of Section 6.1 (Dehn ﬁlling) or Section 6.2 (polyhedral boundary). The uniqueness of a critical point of V turns out to be the key idea in Rivin’s proof of the uniqueness statement of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "Let M be a 3–manifold with boundary consisting of tori. Then any complete hyperbolic metric on the interior of M is locally rigid: there is no local deformation of the metric through other complete hyperbolic metrics. We thank Marc Culler and Feng Luo for a fruitful discussion that produced the following extremely short proof.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/angled-survey/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] Ken Chan, Constructing hyperbolic 3-manifolds, Undergraduate thesis with Craig Hodgson,\nUniversity of Melbourne, 2002.\n[2] Young-Eun Choi, Positively oriented ideal triangulations on hyperbolic three-manifolds,\nTopology 43 (2004), no. 6, 1345–1371.\n[3] Yves Colin de Verdi`ere, Un principe variationnel pour les empilements de cercles, Invent.\nMath. 104 (1991), no. 3, 655–669.\n[4] David B. A. Epstein and Robert C. Penner, Euclidean decompositions of noncompact hyper-\nbolic manifolds, J. Diﬀerential Geom. 27 (1988), no. 1, 67–80.\n[5] David Futer and Fran¸cois Gu´eritaud, Angled decompositions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

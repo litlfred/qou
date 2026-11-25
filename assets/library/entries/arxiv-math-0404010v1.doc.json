@@ -1,0 +1,669 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0404010v1",
+  "title": "arxiv-math-0404010v1",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Yang--Baxter operators arising from algebra structures",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-yang--baxter-operators-arising-from-algebra-st"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of oriented links derived from Yang--Baxter operators",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-invariants-of-oriented-links-derived-from-yang"
+    },
+    {
+      "level": 2,
+      "title": "Enhanced Yang--Baxter operators",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Redundant Yang--Baxter operators",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-32-redundant-yang--baxter-operators"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of oriented links derived from algebra structures",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-invariants-of-oriented-links-derived-from-alge"
+    },
+    {
+      "level": 2,
+      "title": "Enhancements of Rx,y",
+      "number": "4.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-41-enhancements-of-rxy"
+    },
+    {
+      "level": 2,
+      "title": "Connection with the Alexander polynomial",
+      "number": "4.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-42-connection-with-the-alexander-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "baxter operators",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0404010v1 [math.QA] 1 Apr 2004 YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS GW´ENA¨EL MASSUYEAU AND FLORIN F. NICHITA Abstract. In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0404010v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "baxter operators",
+          "heading": false
+        },
+        {
+          "term": "baxter equation",
+          "heading": false
+        },
+        {
+          "term": "homﬂypt polynomial",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "enhancements",
+          "heading": false
+        },
+        {
+          "term": "operators associated",
+          "heading": false
+        },
+        {
+          "term": "nichita",
+          "heading": false
+        }
+      ],
+      "extract": "The Yang–Baxter equation and its solutions, the Yang–Baxter operators, ﬁrst ap- peared in theoretical physics and statistical mechanics. Later, this equation has emerged in other ﬁelds of mathematics such as quantum group theory. Some references on this topic are [5, 7]. The Yang–Baxter equation also plays an important role in knot theory. Indeed, Tu- raev has described in [12] a general scheme to derive an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-yang--baxter-operators-arising-from-algebra-st",
+      "number": "2",
+      "title": "Yang--Baxter operators arising from algebra structures",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "alescu nichita",
+          "heading": false
+        },
+        {
+          "term": "asc alescu",
+          "heading": false
+        },
+        {
+          "term": "baxter operator",
+          "heading": false
+        },
+        {
+          "term": "linear map",
+          "heading": false
+        },
+        {
+          "term": "invertible linear",
+          "heading": false
+        },
+        {
+          "term": "scalars",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we recall results from [1] and we follow the terminology used there. For a k–vector space V , the ﬂip map T : V ⊗V →V ⊗V is deﬁned by T(v ⊗w) = w⊗v. Given a k–linear map R : V ⊗V →V ⊗V , we will write R12 = R ⊗Id, R23 = Id ⊗R and R13 = (Id ⊗T)(R ⊗Id)(Id ⊗T). Deﬁnition 2.1. An invertible k–linear map R : V ⊗V →V ⊗V is called a Yang–Baxter operator (or simply a YB operator) if it satisﬁes the equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-invariants-of-oriented-links-derived-from-yang",
+      "number": "3",
+      "title": "Invariants of oriented links derived from Yang--Baxter operators",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "oriented links",
+          "heading": true
+        },
+        {
+          "term": "enhanced yang",
+          "heading": false
+        },
+        {
+          "term": "baxter operator",
+          "heading": false
+        },
+        {
+          "term": "isotopic closures",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "spn",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we shortly review Turaev’s procedure [12] to derive an invariant of oriented links from a Yang–Baxter operator, provided one can “enhance” it. We also recall a slight modiﬁcation of this construction, due to Murakami [8], which applies to Yang–Baxter operators verifying a certain redundancy property. 3.1. Enhanced Yang–Baxter operators. Let V be a ﬁnite–dimensional k–vector space and let f : V ⊗n →V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-32-redundant-yang--baxter-operators",
+      "number": "3.2",
+      "title": "Redundant Yang--Baxter operators",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 960,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "redundant",
+          "heading": true
+        },
+        {
+          "term": "redundant yang",
+          "heading": false
+        },
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "spn",
+          "heading": false
+        },
+        {
+          "term": "baxter operator",
+          "heading": false
+        },
+        {
+          "term": "enhanced yang",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed markov",
+          "heading": false
+        },
+        {
+          "term": "fic",
+          "heading": false
+        }
+      ],
+      "extract": "\u0000V ⊗2\u0001 is a Yang–Baxter op- erator, we deﬁne AR,n to be the subspace of End (V ⊗n) generated by the image ρR(Bn). In particular, AR,n is a subalgebra of End (V ⊗n) and we have AR,1 = ⟨Id⟩⊂End(V ). Deﬁnition 3.3. A redundant Yang–Baxter operator is an enhanced YB operator S = (R, µ, α, β) such that ∀x ∈AR,n, Spµ n(x) ∈AR,n−1. Here, for any x ∈End (V ⊗n), Spµ n(x) denotes Spn \u0000x ◦ \u0000Id⊗n−1 ⊗µ \u0001\u0001 . Let us observe that,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-invariants-of-oriented-links-derived-from-alge",
+      "number": "4",
+      "title": "Invariants of oriented links derived from algebra structures",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baxter",
+          "heading": false
+        },
+        {
+          "term": "yang",
+          "heading": false
+        },
+        {
+          "term": "scalars",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we consider a (unitary associative) k–algebra A with ﬁnite dimension at least 2, as well as nonzero scalars x and y. Let Rx,y : A ⊗A →A ⊗A be the YB operator from §2 deﬁned by Rx,y(a ⊗b) = x · ab ⊗1 + y · 1 ⊗ab −x · a ⊗b. We apply Turaev’s procedure to this Yang–Baxter operator.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-41-enhancements-of-rxy",
+      "number": "4.1",
+      "title": "Enhancements of Rx,y",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 752,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiµ",
+          "heading": false
+        },
+        {
+          "term": "nonzero scalars",
+          "heading": false
+        },
+        {
+          "term": "algebra automorphism",
+          "heading": false
+        },
+        {
+          "term": "enhanced",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        },
+        {
+          "term": "exists scalar",
+          "heading": false
+        },
+        {
+          "term": "deduce",
+          "heading": false
+        },
+        {
+          "term": "ﬁnd",
+          "heading": false
+        }
+      ],
+      "extract": "be nonzero scalars. Let us look for necessary and suﬃcient conditions for (Rx,y, µ, α, β) to be an enhanced YB operator in the sense of Deﬁnition 3.1. Firstly, condition (E1) means that µ is an automorphism of the YB operator Rx,y (in the sense of Deﬁnition 2.4). Thus, by Remark 2.6, µ has this property if and only if there exists a scalar c such that c · µ is a k–algebra automorphism. Since (Rx,y, µ, α, β) is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-42-connection-with-the-alexander-polynomial",
+      "number": "4.2",
+      "title": "Connection with the Alexander polynomial",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomial",
+          "heading": true
+        },
+        {
+          "term": "oriented link",
+          "heading": false
+        },
+        {
+          "term": "enhanced",
+          "heading": false
+        },
+        {
+          "term": "fellowship",
+          "heading": false
+        },
+        {
+          "term": "ground",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        },
+        {
+          "term": "instance",
+          "heading": false
+        },
+        {
+          "term": "author",
+          "heading": false
+        }
+      ],
+      "extract": "is an enhanced YB operator. Lemma 4.1 gives us necessary and suﬃcient conditions for that: in particular, by the third condition of (8), we must have Trace(µ) = 0. That enhanced YB operator is redundant since the minimal polynomial of Rx,y has degree 2 (Proposition 3.6). Thus, by Remark 3.5, the invariant XS associated to S vanishes. Consequently, we will consider the invariant XS,1 associated to S by taking modiﬁed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang baxter",
+          "heading": false
+        },
+        {
+          "term": "romanian academy",
+          "heading": false
+        },
+        {
+          "term": "nichita",
+          "heading": false
+        },
+        {
+          "term": "baxter operators",
+          "heading": false
+        },
+        {
+          "term": "baxter equation",
+          "heading": false
+        },
+        {
+          "term": "swansea",
+          "heading": false
+        },
+        {
+          "term": "bucharest",
+          "heading": false
+        },
+        {
+          "term": "romania",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S. D˘asc˘alescu, F. F. Nichita, Yang–Baxter operators arising from (co)algebra structures, Comm. Algebra 27 n◦12 (1999), 5833–5845. [2] P. Freyd, D. Yetter, J. Hoste, W. B. R. Lickorish, K. Millett, A. Ocneanu, A new polynomial invariant of knots and links, Bull. Amer. Math. Soc. 12 (1985), 239–246. [3] M. Jimbo, Quantum R matrix for the generalized Toda system, Lett. Math. Phys. 11 (1986), 247– 252. [4] V. F.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "yang baxter",
+      "heading": false
+    },
+    {
+      "term": "baxter operator",
+      "heading": false
+    },
+    {
+      "term": "enhanced yang",
+      "heading": false
+    },
+    {
+      "term": "baxter equation",
+      "heading": false
+    },
+    {
+      "term": "redundant yang",
+      "heading": false
+    },
+    {
+      "term": "alescu nichita",
+      "heading": false
+    },
+    {
+      "term": "quantum yang",
+      "heading": false
+    },
+    {
+      "term": "operator trace",
+      "heading": false
+    },
+    {
+      "term": "alexander polynomial",
+      "heading": true
+    },
+    {
+      "term": "operator satisﬁes",
+      "heading": false
+    },
+    {
+      "term": "asc alescu",
+      "heading": false
+    },
+    {
+      "term": "markov trace",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0404010v1"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1702.00039v1",
+  "contains": [
+    "library/arxiv-1702.00039v1/sections/sec-000",
+    "library/arxiv-1702.00039v1/sections/sec-001",
+    "library/arxiv-1702.00039v1/sections/sec-002",
+    "library/arxiv-1702.00039v1/sections/sec-003",
+    "library/arxiv-1702.00039v1/sections/sec-004",
+    "library/arxiv-1702.00039v1/sections/sec-005",
+    "library/arxiv-1702.00039v1/sections/sec-006",
+    "library/arxiv-1702.00039v1/sections/sec-007",
+    "library/arxiv-1702.00039v1/sections/sec-008",
+    "library/arxiv-1702.00039v1/sections/sec-009",
+    "library/arxiv-1702.00039v1/sections/sec-010",
+    "library/arxiv-1702.00039v1/sections/sec-011",
+    "library/arxiv-1702.00039v1/sections/sec-012",
+    "library/arxiv-1702.00039v1/sections/sec-013",
+    "library/arxiv-1702.00039v1/sections/sec-014",
+    "library/arxiv-1702.00039v1/sections/sec-015",
+    "library/arxiv-1702.00039v1/sections/sec-016",
+    "library/arxiv-1702.00039v1/sections/sec-017",
+    "library/arxiv-1702.00039v1/sections/sec-018",
+    "library/arxiv-1702.00039v1/sections/sec-019",
+    "library/arxiv-1702.00039v1/sections/sec-020",
+    "library/arxiv-1702.00039v1/sections/sec-021",
+    "library/arxiv-1702.00039v1/sections/sec-022",
+    "library/arxiv-1702.00039v1/sections/sec-023",
+    "library/arxiv-1702.00039v1/sections/sec-024",
+    "library/arxiv-1702.00039v1/sections/sec-025",
+    "library/arxiv-1702.00039v1/sections/sec-026",
+    "library/arxiv-1702.00039v1/sections/sec-027",
+    "library/arxiv-1702.00039v1/sections/sec-028",
+    "library/arxiv-1702.00039v1/sections/sec-029",
+    "library/arxiv-1702.00039v1/sections/sec-030",
+    "library/arxiv-1702.00039v1/sections/sec-031",
+    "library/arxiv-1702.00039v1/sections/sec-032",
+    "library/arxiv-1702.00039v1/sections/sec-033",
+    "library/arxiv-1702.00039v1/sections/sec-034",
+    "library/arxiv-1702.00039v1/sections/sec-035",
+    "library/arxiv-1702.00039v1/sections/sec-036",
+    "library/arxiv-1702.00039v1/sections/sec-037",
+    "library/arxiv-1702.00039v1/sections/sec-038",
+    "library/arxiv-1702.00039v1/sections/sec-039",
+    "library/arxiv-1702.00039v1/sections/sec-040",
+    "library/arxiv-1702.00039v1/sections/sec-041",
+    "library/arxiv-1702.00039v1/sections/sec-042",
+    "library/arxiv-1702.00039v1/sections/sec-043",
+    "library/arxiv-1702.00039v1/sections/sec-044",
+    "library/arxiv-1702.00039v1/sections/sec-045",
+    "library/arxiv-1702.00039v1/sections/sec-046",
+    "library/arxiv-1702.00039v1/sections/sec-047",
+    "library/arxiv-1702.00039v1/sections/sec-048",
+    "library/arxiv-1702.00039v1/sections/sec-049"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules.\n\n**Gentle introduction to Soergel bimodules I: The basics**\n\n*NICOLAS LIBEDINSKY*\n\n47 pp, 50 sections.\n\n**Abstract.** This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.\n\n**Outline.** 1 Introduction; 1.1 Declaration of intent; 1.2 ...Bum! Explosion of the field; 1.3 Acknowledgements; 2 Classical level: Coxeter systems; 2.1 Some definitions; 2.2 Baby examples; 2.3 Generalizing the baby examples: (infinite); 2.4 Generalizing the baby examples: tesselatio; 2.4.1 Tesselations of the Euclidean plane; 2.4.2 Tesselations of the hyperbolic plane; 2.5 Generalizing the baby examples: more dimen; 2.6 More examples; 2.7 Bruhat order and an important property; 3 Quantum level: Hecke algebras; 3.1 Kazhdan-Lusztig's theory; 3.2 Calculations of KL bases in examples; 3.2.1 Baby example A",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1702.00039&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1702.00039v1",
+    "title_source": "slug",
+    "source_file": "1702.00039v1.pdf",
+    "source_sha256": "b47ca7d1cf7b44be8ddad2be40c75dc8299d50c112dbedb64078d8f5cbb4341e",
+    "pages": 47,
+    "arxiv": {
+      "id": "1702.00039",
+      "version": "1",
+      "primary_class": "math.RT",
+      "stamp_date": "31 Jan 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

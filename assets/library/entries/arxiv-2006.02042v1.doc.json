@@ -1,0 +1,864 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2006.02042v1",
+  "title": "arxiv-2006.02042v1",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The colored Jones polynomial and recurrence ideal",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-the-colored-jones-polynomial-and-recurrence-i"
+    },
+    {
+      "level": 2,
+      "title": "The AJ conjecture",
+      "number": "1.2",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-12-the-aj-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Main result",
+      "number": "1.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-main-result"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Step 1: Applying symmetric conditions",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-step-1-applying-symmetric-conditions"
+    },
+    {
+      "level": 2,
+      "title": "Step 2: Applying polynomial conditions",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-step-2-applying-polynomial-conditions"
+    },
+    {
+      "level": 2,
+      "title": "Step 3: Checking if equation (??) has a solution",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Step 4: Finding solutions of equation (??)",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-step-4-finding-solutions-of-equation"
+    },
+    {
+      "level": 2,
+      "title": "Step 5: Imposing condition (??) on solutions",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-25-step-5-imposing-condition-on-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Step 6: Applying initial conditions",
+      "number": "2.6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-26-step-6-applying-initial-conditions"
+    },
+    {
+      "level": 2,
+      "title": "Step 7: Explicit solution",
+      "number": "2.7",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-27-step-7-explicit-solution"
+    },
+    {
+      "level": 2,
+      "title": "Double-checking the recurrence relation",
+      "number": "2.8",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-28-double-checking-the-recurrence-relation"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:2006.02042v1 [math.GT] 3 Jun 2020 THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT HOANG-AN NGUYEN AND ANH T. TRAN Abstract. Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2006.02042v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-12-the-aj-conjecture",
+      "number": "1.2",
+      "title": "The AJ conjecture",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "a-ideal",
+          "heading": false
+        },
+        {
+          "term": "sikora",
+          "heading": false
+        }
+      ],
+      "extract": "of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture has been veriﬁed for all torus knots and most of their cables. In this paper, we verify the strong AJ conjecture for the ﬁgure eight knot.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-the-colored-jones-polynomial-and-recurrence-i",
+      "number": "1.1",
+      "title": "The colored Jones polynomial and recurrence ideal",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recurrence polynomial",
+          "heading": true
+        },
+        {
+          "term": "recurrence ideal",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "principal left-ideal",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "left-ideal domain",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        }
+      ],
+      "extract": "and a positive integer n, let JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of K with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned by Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible sl2(C)-module Vn of dimension n. Here we use the functorial normalization, i.e. the one for which Junknot(n) = [n] := (t2n −t−2n)(t2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-main-result",
+      "number": "1.3",
+      "title": "Main result",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-homogeneous recurrence",
+          "heading": false
+        },
+        {
+          "term": "sqrt varepsilon",
+          "heading": false
+        },
+        {
+          "term": "mathcal sigma",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "ref plem",
+          "heading": false
+        },
+        {
+          "term": "recurrence ideal",
+          "heading": false
+        },
+        {
+          "term": "ref mtheorem",
+          "heading": false
+        }
+      ],
+      "extract": "For a finitely generated group $G$, let $\\chi(G)$ denote the $SL_2(\\BC)$-character variety of $G$, see \\cite{CS}. Suppose $G=\\BZ^2$. Every pair of generators $\\mu, \\lambda$ defines an isomorphism between $\\chi(G)$ and $(\\BC^*)^2/\\tau$, where $(\\BC^*)^2$ is the set of non-zero complex pairs $(M,L)$ and $\\tau$ is the involution $\\tau(M,L):=(M^{-1},L^{-1})$. For an algebraic set $V$ (over $\\BC$), let $\\BC[V]$ denote",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-proof-of-theorem",
+      "number": "2",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t2m",
+          "heading": false
+        },
+        {
+          "term": "non-homogeneous recurrence",
+          "heading": false
+        },
+        {
+          "term": "pjk",
+          "heading": false
+        },
+        {
+          "term": "recurrence polynomial",
+          "heading": false
+        },
+        {
+          "term": "eje",
+          "heading": false
+        },
+        {
+          "term": "conditions",
+          "heading": false
+        }
+      ],
+      "extract": "For the ﬁgure eight knot E, it is known that the AJ conjecture holds true [Ga] and the A-polynomial A′ E = L + L−1 −M4 −M−4 + M2 + M−2 + 2 does not have any nontrivial nontrivial factors depending on M only. Hence, by [Tr4, Lemma 3.1], p ε(Aσ E) ⊂pE. For the converse p ε(Aσ E) ⊂pE we will apply the following. Lemma 2.1. Suppose there exists P ∈R[M±1, L±1] such that PJK ∈R[M±1], σ(P) = P and ε(P) = MkLl(A′ K)2m for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-step-1-applying-symmetric-conditions",
+      "number": "2.1",
+      "title": "Step 1: Applying symmetric conditions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "We first choose the leading coefficients $p_2$ and $p_{-2}$ to be the same as those of the A-polynomial squared. Namely we let $$p_2(t,M)= \\tilde{a}_2(M)=1 \\hspace{4mm}\\text{and}\\hspace{4mm} p_{-2}(t,M)=\\tilde{a}_{-2}(M)=1.$$ We see that this takes care of equation \\eqref{eq: e2}. Then $$ b_1(t,M) = \\frac{1}{a_1(t,t^2 M)} \\hspace{4mm}\\text{and}\\hspace{4mm} b_{-1}(t,M) = \\frac{1}{a_{-1}(t,t^{-2} M)}. $$ This implies",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-step-2-applying-polynomial-conditions",
+      "number": "2.2",
+      "title": "Step 2: Applying polynomial conditions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groebner basis",
+          "heading": false
+        },
+        {
+          "term": "mathrm mat",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "ideal membership",
+          "heading": false
+        },
+        {
+          "term": "membership problem",
+          "heading": false
+        },
+        {
+          "term": "dio",
+          "heading": false
+        },
+        {
+          "term": "qquad quad",
+          "heading": false
+        }
+      ],
+      "extract": "We now use the fact that $p_i$'s must be Laurent polynomials. This imposes additional conditions on $b_0$, but it is hard to work with rational equations in terms of $b_0$. So we will work with equations in terms of $p_i$'s directly. To do this, we first express $b_0$ in terms of $p_i$'s. By solving for $b_0$ from equation \\eqref{eq:q1} we have $$b_0(t,M)=-\\frac{a_0(t,t^2 M)-a_1(t,t^2 M) p_1(t,M)}{a_1(t,M)a_1(t,t^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-step-4-finding-solutions-of-equation",
+      "number": "2.4",
+      "title": "Step 4: Finding solutions of equation (??)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqnarray tilde",
+          "heading": false
+        },
+        {
+          "term": "frac gcd",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "groebner basis",
+          "heading": false
+        }
+      ],
+      "extract": "We see that equation \\eqref{eq:Dio1} is reminiscent of a Diophantine equation. Recall for $a,b,c,x,y\\in \\BZ$, the equation $$ax+by=c$$ has the following solutions $$ x = x_0 + \\frac{b}{\\gcd(a,b)}k, \\qquad y=y_0 - \\frac{a}{\\gcd(a,b)}k, $$ where $(x_0,y_0)$ is a particular solution of the equation, $k\\in \\BZ$, and $\\gcd(a,b)$ is the greatest common divisor of $a,b$. We will apply the same idea to our problem, except",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-25-step-5-imposing-condition-on-solutions",
+      "number": "2.5",
+      "title": "Step 5: Imposing condition (??) on solutions",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "nonumber",
+          "heading": false
+        }
+      ],
+      "extract": "We now implement the condition $b_0(t,M^{-1})=-b_0(t,M)$. Since $$b_0(t,M)=-\\frac{a_0(t,t^2 M)-a_1(t,t^2 M) p_1(t,M)}{a_1(t,M)a_1(t,t^2 M)},$$ we see that $b_0(t,M^{-1})=-b_0(t,M)$ is equivalent to \\begin{eqnarray*} && (M^8 t^{14} - M^4 t^{10}) p_1(t, M) - (M^8 t^{10} - M^4 t^{14}) p_1(t, M^{-1}) \\\\ &=& 1 + M^{12} - M^2 t^4 - M^4 t^4 - M^8 t^4 - M^{10} t^4 - M^4 t^8 - M^8 t^8 + M^4 t^{16} \\\\ && + \\, M^8 t^{16} + M^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-26-step-6-applying-initial-conditions",
+      "number": "2.6",
+      "title": "Step 6: Applying initial conditions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial conditions",
+          "heading": true
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        }
+      ],
+      "extract": "Now we take into account the initial conditions \\eqref{eq: 2}--\\eqref{eq}. Firstly, we note that equations \\eqref{eq: 2} and \\eqref{eq: -2} hold true since we chose $p_2(t,M)= p_{-2}(t,M)=1.$ Secondly, by taking $t=1$ in $p_1(t,M) = p_{-1}(t,M^{-1})$ we have $p_1(1,M) = p_{-1}(1,M^{-1})$. This implies that $p_1(1,M) = \\tilde{a}_{1}(M)$ if and only if $p_{-1}(1,M)= \\tilde{a}_{-1}(M)$. Meaning equations \\eqref{eq: 1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-27-step-7-explicit-solution",
+      "number": "2.7",
+      "title": "Step 7: Explicit solution",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "plem",
+          "heading": false
+        }
+      ],
+      "extract": "The polynomial we are constructing is $$P(t, M, L)=L^2+L^{-2}+p_1(t,M)L+p_{-1}(t,M)L^{-1}+p_{0}(t,M)$$ where \\begin{eqnarray*} p_1(t,M) &=& a_1(t, M) b_0(t, M) + \\frac{a_0(t, t^2 M)}{a_1(t, t^2 M)}, \\\\ p_{-1}(t,M) &=& a_{-1}(t, M) b_0(t, M) + \\frac{a_0(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)}, \\\\ p_0(t,M) &=& a_0(t, M) b_0(t, M) + \\frac{a_1(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)} + \\frac{a_{-1}(t, t^2 M)}{a_1(t,t^2 M)}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-28-double-checking-the-recurrence-relation",
+      "number": "2.8",
+      "title": "Double-checking the recurrence relation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "rangle left",
+          "heading": false
+        },
+        {
+          "term": "langle right",
+          "heading": false
+        },
+        {
+          "term": "rangle equiv",
+          "heading": false
+        },
+        {
+          "term": "big left",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "qquad",
+          "heading": false
+        }
+      ],
+      "extract": "Following \\cite{CM}, for $Q\\in \\BC[t,M,x]$ we define $\\left\\langle Q\\right\\rangle: \\BZ \\rightarrow \\mathcal{R}=\\BC[t^{\\pm 1}]$ by $$\\left\\langle Q \\right\\rangle(n):= [n]\\sum^{n-1}_{k=0}P(t,t^{2n},t^{4k})\\prod^{k}_{l=1}(t^{4n}+t^{-4n}-t^{4l}-t^{-4l})$$ for $n\\geq 1$, and $\\left\\langle Q \\right\\rangle(-n)=-\\left\\langle Q \\right\\rangle(n)$ for $n\\leq 0$. It is known that the colored Jones polynomial of the figure eight",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "The second author has been supported by a grant from the Simons Foundation (\\#354595).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabled knots",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "tran",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "iowa",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "[CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character varieties of 3-manifolds, Invent. Math. 118 (1994), pp. 47–84. [CM] L. Charles and J. Marche, Knot state asymptotics I: AJ conjecture and Abelian representations, Publ. Math. Inst. Hautes Etudes Sci. 121 (2015), 279–322. [CS] M. Culler and P. Shalen, Varieties of group representations and splittings of 3-manifolds,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "eqnarray tilde",
+      "heading": false
+    },
+    {
+      "term": "begin eqnarray",
+      "heading": false
+    },
+    {
+      "term": "end eqnarray",
+      "heading": false
+    },
+    {
+      "term": "eqnarray label",
+      "heading": false
+    },
+    {
+      "term": "tilde frac",
+      "heading": false
+    },
+    {
+      "term": "recurrence polynomial",
+      "heading": true
+    },
+    {
+      "term": "eight knot",
+      "heading": false
+    },
+    {
+      "term": "non-homogeneous recurrence",
+      "heading": false
+    },
+    {
+      "term": "recurrence ideal",
+      "heading": true
+    },
+    {
+      "term": "ﬁgure eight",
+      "heading": false
+    },
+    {
+      "term": "polynomial conditions",
+      "heading": true
+    },
+    {
+      "term": "frac gcd",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2006.02042v1"
+  }
+}

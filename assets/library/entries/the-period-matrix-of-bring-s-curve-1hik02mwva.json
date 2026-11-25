@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "the-period-matrix-of-bring-s-curve-1hik02mwva",
+  "blocks": [
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "PACIFIC JOURNAL OF MATHEMATICS\nVol.  154, No. 1, 1992\nTHE PERIOD MATRIX  OF BRING'S CURVE\nGONZALO  RlERA  AND  RUBI  E.  RODRIGUEZ\nIn  genus  four  there  is  only  one  Riemann  surface  admitting  the\nsymmetric group of order five as group of automorphisms:  we compute\nits  Riemann  matrix.  On the other hand,  we show that there is a one\ncomplex parameter  family  of Jacobians admitting  the same group  of\nautomorphisms  and  using  the Schottky  relation we give a  non- trivial\nequation vanishing  exactly on the matrix of the surface.\n1. Introduction.  When  studying the general equation o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hι(B",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-hιb.md",
+      "narrative": null,
+      "content": "Hι(B\n- 1\n0\n- 1\n0\n- 1\n0\n- 1\n0\n0\n0\n1\n0\n0\n0\n1  -\n0\n0\n0\n0\n0\n0\n0\n1\n0\n,Z)\n0\\\n- 1\n0\n- 1\n0\n- 1\n0\n- 1 /\nc\n(\n(\n(\nc\nc\nc\nvia the matrices\n)\\\n)\n)\n)\n)\n)\n)\n•\nWe  have  C  =   - C, \ndetC  =   + 1 , A'CA  =   C,  B'CB  =   C  and\nA\n5  =   / ,  B\n2  =   / ,  {AB)\n4  =   / ,  so that  they  give  an  integer  valued\nrepresentation of the group  <9$. (We do not know why these matrices\nhave only  0,  1, — 1 as entries as it happens  in all known examples.)\nWhat we need at this point is a change of basis by a unimodular trans-\nformation  so that the new basis is canonical and so that  A,  B  trans-\nform into manage",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "This means that under an integral change of basis Ω",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-this-means-that-under-an-integral-change-of-basi.md",
+      "narrative": null,
+      "content": ", for instance,\nΩ\n =\n/   2\n1\n2\n0\n1\n1\n1\n1\n- 1\n- 1\n- 2\n- 1\n- 1\n0\n- 2\n0\n- 2\n- 1\n- 1\n1\n0\n1\n- 1\n1 \n2\n- 1 \n1\n1 \n1\n1  - 1\n2 \n1\n0 \n0\n0 \n0\n- 1 \n- 1\n0\n- 1\n- 2\n- 2\n- 1\n0\n- 1\n- 1\n- 1\n- 1\n0\n1\n1\n0\n- 1\n0\\\n- 1\n1\n0\n1\n- 1\n- 1\n- 2/\nTHE PERIOD MATRIX  OF BRING'S CURVE \n183\nthe matriceszyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\n  A,  B,  C  transform into\nHere\nc =\n(\n \n4\n1\n- 1\n^  1\n1\n4\n1\n- 1\n- 1\n1\n4\n1\n\\\\\n- 1\n1\n4)\nwith c\n  ι  =  4-\n/  2  - 1 \n1  - 1\\\n- 1 \n2 - 1 \n1\n1 - 1 \n2 - 1\n5\n\\ - l \n1  - 1 \n2/\nis  actually  the only  matrix  invariant  under the required  actions of\na,  b.  The new change of coordinates",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "cac~",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-0-cac.md",
+      "narrative": null,
+      "content": "cac~\nι\n0\\ \nfcbc-\n1  0\\ \n(  0 \nI\\\na)> \n{  0 \nb ) '  {- I  θj\nNotice that Ω Λ is unimodular (with integer entries), and that cac~\nι\n= (a')~\nι  and cbc~\nι =  {b')-\nχ.\nIn order to study the action of  S% on SiegeΓs space, we embed <5%\nin  Sp(8, Z) by sending  a  and  β  respectively  to\n-  \ni,\nand  denote the  image  group  by  SpJ?s;  we  also  embed  Γo(5)  in\nSp(8, Z) by sending\n/ m  π \\  \n/ m /  \nnc\nw \n\\p \nq) \n\\pc~\nι \nqi\nand denote the image group by  Sp ΓΌ(5). With this notation, we prove\nLEMMA  1. If  M  is symplectic and commutes with S p ^ , then\n%, \n(  ml \nnc\\  \nΊ \n(m \nn\\  \no τ  / Λ \n^\nM",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B does not admit more automorphisms, we obtain",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-b-does-not-admit-more-automorphisms-we-obtain.md",
+      "narrative": null,
+      "content": "where  λ: <9$ - > <9$ is an automorphism  of  <5% . Since every automor-\nphism  of  J?5  is interior,  there is  some  h  in  ^ \nsuch that  Ah- \\ M\ncommutes with  all matrices  Ag \nthen it follows  from  Lemma  1 that\nM  =  Ahγ  with  γ e  S pΓ0(5).\n3. The Riemann matrix.  We now compute the values of the complex\nnumber  τ so that the matrix  τ- c is the period matrix of Bring's curve;\nit is the only value modulo  ΓQ(5)  that comes from a Riemann surface.\nLet us identify  the automorphisms  α , β  with their classes (12345)\nand (12) in  <?$. Then  βa,  that is (2345), is represented in homolog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thus if dw is the differential in H projects to a differential on the elliptic curve with modulus µ, its periods are",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-thus-if-dw-is-the-differential-in-h-projects-to.md",
+      "narrative": null,
+      "content": "ι>°(B,  C)  invariant by  βa  that\nprojects  to  a  differential  on  the  elliptic  curve  with  modulus  µ,  its\nperiods are\n1,  1, 1, 1, µ, µ, µ, µ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We may now complete dw to a basis of differentials on B us-",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-we-may-now-complete-dw-to-a-basis-of-differentia.md",
+      "narrative": null,
+      "content": "ing  a* dw  ,  a\n2* dw  ,  a\n3* dw  , and  since we  know  the  action  of  a\non homology via  cac~\nι  and  α, we  can compute  the period  matrix\nZ  =  (µ / 5).c.\nBut there is among all possible quotients of  B  another interesting\nelliptic  curve,  namely  5/ ((24)(35),  (25)(34))  =  E2. \nStarting  from\nthe same marked  sphere with four tori,  E2  is obtained by  identifying\npairs  of  opposite handles, that is, if  a canonical pair of  curves on a\nhandle projects to a canonical basis for  E2  then the corresponding pair\non the adjacent  handle projects to the same curves but with opposite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "'- 1 + /VΓΓ",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "../sections/sec-006---1-vγγ.md",
+      "narrative": null,
+      "content": "187\n- •  \no\n \n!\nFIGURE  2\nThe toruszyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\n  E\\  is then obtained from  this last  equation by the iden-\ntification  (z, w)  <- + (- z,  - w),  while the torus  Eι  is obtained by the\nother identification  (z,  w)  <- + (—z,  w).\nThe first torus is therefore given by\n145\nΛ\nu -   f 5 x\n421\n;(5τ 0)  =   - 29\n3x5\n2\n5\nand the second torus by\n100w -   [A x2940\nv \nλ \n25\nj(τ 0)  =  \n~γ.\nFinally we have to establish  the fact that these values  of  j(5τo)  and\n7*(τo)  determine a  unique  class  of  TQ modulo  Γo(5).  To  do  so  we\nshall locate  TQ in a fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We then set",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-we-then-set.md",
+      "narrative": null,
+      "content": "= d [j]\nTHE PERIOD MATRIX OF BRING'S CURVE \n195",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "so that we can write oi Λ r o r roi . Λ r o r . Λ r o i r o n",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-195-so-that-we-can-write-oi-λ-r-o-r-roi-λ-r-o-r.md",
+      "narrative": null,
+      "content": "oi Λ r o r roi . Λ r o r . Λ r o i r o n\ni\\  \n1/2\noi\n3 roi \nj i i\n3 \nr n \nΛ roi\n3 roi\\\n2\nWe  examine now the behaviour  of  the differential  form  of  4th  de-\ngreezyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\n  f(τ)(dτ)\n4 \nunder the generators of  Γ o(5).  These generators are\nW \n«>zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFE\n \nm \n+ ι\nso that we may present this group by\nSince  f(τ)  has an expansion with only even powers of  q,  the differ-\nential form is invariant under  γ.  We define then a group epimorphism\nfrom  Γo(5)  to\nZ 2  Θ Z 2  =   (u,  v \nu\n2  =  υ\n2  =   (uv)\n2  =   1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "so that \\ 2niq",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-5-so-that-2niq.md",
+      "narrative": null,
+      "content": "\\ 2niq\n40\nproving that the differential  form has a simple pole there.\nAt  -  j  we use the transformation  β(τ) =  τ/ (- 5τ +  1) so that\n= VΪ^- 5τϋ 0\n[?] H)\n(5τ),\nand similar formulas for # [}]»»/ [}]•  The expansion\nA(τ) =   ϋ\n0\n0\n0\n0\nϋ\n0\n0\n0\n0\n1/2\n1/2\ngives, using the local parameter p = q\n2 = e\n=  q\n2  =   e\n2πiτ\nproving that it has a pole of order 2 there.\nAt  - 5 , - 3 , - 3  similar  expansions  show  that  there are poles of\norders 4, 2, 4 so that in all we have\n= 13  poles.\nTHE PERIOD MATRIX OF BRING'S CURVE \n199\nTo determine its zeros we recall the proof of Theorem 2 where the\nellip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

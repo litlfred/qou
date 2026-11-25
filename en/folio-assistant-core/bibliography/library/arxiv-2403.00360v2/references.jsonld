@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2403.00360v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
+      "dcterms:creator": [
+        "FINSTER, FELIX",
+        "GRESNIGT, NIELS G.",
+        "ISIDRO, JOSÉ M.",
+        "MARCIANÒ, ANTONINO"
+      ],
+      "dcterms:issued": "D:20240917",
+      "dcterms:identifier": "https://arxiv.org/abs/2403.00360",
+      "dcterms:abstract": "We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.",
+      "dcterms:source": "library/arxiv-2403.00360v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2403.00360v2"
+    }
+  ]
+}

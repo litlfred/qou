@@ -1,0 +1,429 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2505.00799v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and statement of results",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction-and-statement-of-results.md",
+      "narrative": null,
+      "content": "In a seminal 2010 paper [@zagier-quantum], Zagier defined a new type of modular object which he called a quantum modular form. This new notion was meant to capture the behavior of a collection of examples from the literature. As Zagier remarked, these objects are reminiscent of calculations in perturbative quantum field theory and quantum topology. In the past few years, quantum modular forms have appeared prominently in connection to exciting new invariants in low-dimensional topology and knot theory (e.g. [@gppv; @g-z-24; @ajk]).\n\nIn this paper, we utilize tools popularized by quantum field",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2505.00799v2  [math.NT]  29 May 2025\nQUANTUM MODULAR FORMS AND RESURGENCE\nELEANOR MCSPIRIT AND LARRY ROLEN\nAbstract. In 2010, Zagier described a new phenomenon which he called quantum mod-\nularity. This connected various examples coming from disparate fields which exhibit near-\nmodular behavior. In the fifteen years since, Zagier’s philosophy has informed new devel-\nopments in areas such as knot theory, 3-dimensional topology, combinatorics, and physics.\nMore recently, the concept of holomorphic quantum modularity has emerged, pointing to a\nclearer structure for Zagier’s original example",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of Main Results",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-11-statement-of-main-results.md",
+      "narrative": null,
+      "content": "Before we give the general statement of Theorem [\\[thm: Main\\]](#thm: Main){reference-type=\"ref\" reference=\"thm: Main\"}, we highlight corollaries in some key special cases which correspond to families of quantum modular forms generalizing Zagier's original examples. We note for the reader that the definitions of various terms from the theory of resurgence are deferred until Section 2.1 for ease of exposition.\n\nThe first example we consider originally appeared in work of Lawrence and Zagier [@lawrence-zagier] and was subsequently named Example 4 in [@zagier-quantum]. This example was born out o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/cor-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "cor-sec-002-01.md",
+      "narrative": null,
+      "content": "The asymptotic series of Eichler integrals of half-integral weight cusp forms, periodic functions of Maass waveforms with s = 1/2, and the periodic function of the real- analytic Eisenstein series with s = 1/2 are modular resurgent series. Moreover, the median resummation of each of these series recovers the original function, which is a holomorphic quantum modular form. The paper is organized as follows. In Section 2, we develop the necessary background on resurgence, as well as holomorphic modular and Maass forms. In Section 3, we collect a variety of intermediate results in service of our m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "We say that a formal power series φ(z) is Gevrey-1 if there exist A, B > 0 such that |an| ≤ABnΓ(n + 1), (n ≥0), where Γ is the gamma function. Here, we note that Γ(n + 1) equals n! since n ∈N. We choose to use the gamma function throughout the paper, even when the factorial suffices, since it will allow for a uniform treatment of all of our cases. In order to build the theory of resurgence, we will first need to define the Borel and Laplace transforms. Here, we introduce shifted versions of these transforms which will more readily suit our needs.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/def-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "def-sec-004-02.md",
+      "narrative": null,
+      "content": "The (formal) Borel transform with shift κ ∈C is defined on formal power series by Bκ ∞ X n=0 anzn ! := ∞ X n=0 an Γ(n + κ)un. When κ = 1, we simply call this the Borel transform, dropping the subscript. The subsequent lemma can be readily proven from these definitions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/def-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "def-sec-004-04.md",
+      "narrative": null,
+      "content": "Suppose ψ(u) is analytic on a half-strip {u ∈C: dist(u, eiθR+) < ε} with exponential type less than some α ∈R. Then the Laplace transform with shift κ in direction θ, when it exists, is defined by Lθ κ(ψ)(z) := z−κ Z eiθ∞ e−u/zψ(u)uκ−1 du. With the given conditions on ψ, the function Lθ 1(ψ)(z) is defined and analytic in the right half-plane {ℜ(ze−iθ) > max(α, 0)}, and is locally analytic as one varies θ, as long as the directions remain in the sector where ψ is analytic. As with the Borel transform, we drop the subscript when κ = 1. We note that instead of defining the κ-shifted Borel and Lap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/def-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "def-sec-004-05.md",
+      "narrative": null,
+      "content": "The composition Lθ κBκ is called the Borel-Laplace sum with shift κ in direc- tion θ, which we will denote by Sθ κ. If the Borel-Laplace sum converges for a formal power series φ, we say that φ is 1-summable in direction θ. The Borel and Laplace transforms are formally inverses on monomials zn with ℜ(n+κ) > 0, and if φ is a series which converges in a neighborhood of 0, then φ = Lθ κBκ(φ) for all θ and for all κ such that ℜ(κ) > 0. Despite the fact that in general φ̸ = Lθ κBκ(φ), the Borel–Laplace sum of a Gevrey-1 divergent series is of interest to us since φ appears as the asymptotic expansi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "If φ(z) is a Gevrey-1 formal power series, its Borel transform is analytic in a neighborhood of u = 0. We also require the Laplace transform. We will consider integral transforms of functions ψ(u) that are analytic on a half-strip {u ∈C: dist(u, eiθR+) < ε} with exponential type less than some α ∈R, i.e. there exists an M such that |ψ(reiθ)| ≤Meαr as r tends to infinity. QUANTUM MODULAR FORMS AND RESURGENCE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "Let φ(z) be a Gevrey-1 formal power series. Suppose κ, κ′ ∈1 2Z and θ ∈R are such that Sθ κ(φ) and Sθ κ′(φ) are analytic for {ℜ(ze−iθ) > 0}. Then we have Sθ κ(φ) = Sθ κ′(φ). Thus, we drop the subscript κ when appropriate. We will also use the fact that taking Borel-Laplace sums is linear (Theorem 2, Section 3.3 of [5]). Returning to Gevrey-1 formal power series, we will be interested in when Borel trans- forms of such series admit an analytic continuation beyond their original neighborhood of convergence. The functions which will be the subject of later sections will primarily have ELEANOR MCS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-resurgence.md",
+      "narrative": null,
+      "content": "7\nWe note that the quantum modularity of these functions is not new, but the quantum\nmodularity of half-integral weight Eichler integrals has been strengthened to holomorphic\nquantum modularity, and the relationship of Borel resummation to their quantum modularity\nacross all cases was previously conjectured but unproven.\nTheorem 1.5 and its proof additionally give evidence towards some conjectures of Fantini\nand Rella [15]:\nCorollary 1.6. The asymptotic series of Eichler integrals of half-integral weight cusp forms,\nperiodic functions of Maass waveforms with s = 1/2, and the periodic function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-acknowledgements.md",
+      "narrative": null,
+      "content": "EM acknowledges the support of an AMS-Simons Travel Grant. LR was supported by a grant from the Simons Foundation (853830, LR).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-2-preliminaries.md",
+      "narrative": null,
+      "content": "2.1. Resurgence. Resurgence is a theory of divergent series developed by ´Ecalle in the\n1980s, building on work dating back to Borel. It begins with classical Borel resummation, but\nleverages how exponentially small corrections to Borel-Laplace sums “resurge” by expanding\naround different singularities of the Borel transform. For a more thorough recollection of\nBorel resummation and resurgence, see [5,12,27].\n8\nELEANOR MCSPIRIT AND LARRY ROLEN\nThe initial objects of interest in the theory of resurgence are formal power series\nφ(z) =\n∞\nX\nn=0\nanzn ∈C[[z]].\nA rich source of such series are asympt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an.md",
+      "narrative": null,
+      "content": "[]{#subsec: modular label=\"subsec: modular\"}\n\nWe begin with a brief recollection of the required definitions and properties of modular forms.\n\nTo start, for functions $f \\colon \\mathbb{H} \\to \\mathbb{C}$, we recall the action of the Petersson slash operator of weight $k \\in \\frac{1}{2}\\mathbb{Z}$ associated to $\\gamma = \\begin{psmallmatrix} a & b \\\\ c& d \\end{psmallmatrix} \\in \\Gamma_0(N)$ (where $4 \\mid N$ if $k \\in \\frac{1}{2} + \\mathbb{Z}$): $$\\label{eqn: slash}\nf|_k\\gamma(z):= \\begin{cases} (cz+d)^{-k}f\\left(\\frac{az+b}{cz+d}\\right) & \\text{for } k \\in \\mathbb{Z},\\\\\n \\varepsilon_d^{2k}\\lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maass Waveforms",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-23-maass-waveforms.md",
+      "narrative": null,
+      "content": "[]{#subsec: maass label=\"subsec: maass\"}\n\nWe now recall the basic definitions and properties of Maass waveforms for $\\text{SL}_2(\\mathbb{Z})$. We also refer the reader to [@bump; @iwaniec] for a more thorough introduction to the theory.\n\nWe begin with a smooth function $u \\colon \\mathbb{H} \\to \\mathbb{C}$ satisfying the following.\n\n1.  For all $\\gamma = \\begin{psmallmatrix} a & b \\\\ c& d \\end{psmallmatrix} \\in \\Gamma_0(N)$ and for all $z \\in \\mathbb{H}$, we have $u(\\gamma z)=u(z)$;\n\n2.  If $\\Delta := -y^2\\left( \\frac{\\partial^2}{\\partial x^2}+\\frac{\\partial^2}{\\partial y^2}\\right)$ is the hype",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intermediate results",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-3-intermediate-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-31-asymptotics.md",
+      "narrative": null,
+      "content": "[]{#subsec: asymptotics label=\"subsec: asymptotics\"}\n\nThroughout this paper, we will regularly leverage the relationship between the coefficients of an asymptotic expansion of an exponential series and the analytic continuation of an associated Dirichlet series. For a more thorough discussion, we direct the reader to [@zagier-appendix], but for most of our applications, the following result will suffice:\n\n::: prop\nLet $L(\\rho)$ be a Dirichlet series convergent in some right half-plane $$L(\\rho) = \\sum_{m=1}^\\infty \\frac{a_m}{m^\\rho}, \\quad \\quad \\Re(\\rho) \\gg 0.$$ Suppose that the function $\\p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Median Resummation",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-32-median-resummation.md",
+      "narrative": null,
+      "content": "[]{#subsec: median resum label=\"subsec: median resum\"}\n\nIn this section, for our functions $g$ of interest, suppose that $g(z) \\sim \\varphi_{-d/c}(z)$ as $z$ approaches $-d/c \\in \\mathbb{Q}$. For appropriate $-d/c$, we will prove decompositions of the form $$\\label{eqn: decomp integral}\ng(z)\n=  \\mathcal{S}^{\\pi/2}_{med}(\\varphi_{-d/c})(z) \n+  \\int_{\\Gamma}e^{-u/(z+d/c)}\\widehat{g}_{-d/c}^{odd}(u)\\frac{du}{\\sqrt{u}},$$ where $\\widehat{g}_{-d/c}^{odd}(u)$ is a function related to $g$ and the contour $\\Gamma$ is displayed in Figure [1](#fig: contours){reference-type=\"ref\" reference=\"fig: contours",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discontinuity Calculations",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-33-discontinuity-calculations.md",
+      "narrative": null,
+      "content": "[]{#subsec: discontinuity label=\"subsec: discontinuity\"} Here we compute the discontinuities of the Borel-Laplace sums of the functions of *Types 4* and *5* along the ray of angle $\\pi/2$.\n\n::: prop\n[]{#prop: eichler discont label=\"prop: eichler discont\"} If $g$ is of Type 4 with $2-k= \\kappa$ or of Type 5 with $s = \\kappa/2$, then for $\\gamma = \\begin{psmallmatrix} a & b \\\\ c & d \\end{psmallmatrix} \\in \\Gamma_0(N)$, we have that $2g|_{\\kappa}\\gamma(z) = \\emph{disc}_\\kappa^{\\pi/2}(\\mathcal{B}_\\kappa(\\varphi_{-d/c}(z))$.\n:::\n\n::: proof\n*Proof.* We begin with $g$ of *Type 4* and $\\widehat{\\varph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.5",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-4-proof-of-theorem-15.md",
+      "narrative": null,
+      "content": "We now prove our main theorem. We proceed by analyzing each case in order. For g of\nType 1 or 2, by Section 3.1, we know that the Borel–Laplace sum\n1\np\nz + d/c\nZ ∞\n0\ne−u/(z+d/c)B1/2(φ−d/c(z)) du\n√πu\nequals zero. Since in these cases g is modular, this equals their obstruction to modularity.\nMoreover, we have that\ng(z) =\n1\n2\np\nz + d/c\nZ\nΓ\ne−u/(z+d/c)ˆg−d/c(u) du\n√u =\n1\n2\np\nz + d/c\nZ\nΓ\ne−u/(z+d/c)ˆgodd\n−d/c(u) du\n√u.\nLastly, by Proposition 3.8, we have that\ng|κγ(z) =\n1\n2\np\nz + d/c\nZ\nΓ\ne−u/(z+d/c)ˆgodd\n−d/c(u) du\n√u.\nThus we have that g(z) = g|κγ(z).\nWhen g is of Type 3, the argument is essential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Corollaries",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-5-proofs-of-corollaries.md",
+      "narrative": null,
+      "content": "[]{#sec: corollaries label=\"sec: corollaries\"}\n\nHere we show that the presentations that are more familiar for these modular obstructions are readily obtained from the Borel-Laplace sum representation. We first show that the modular obstruction in Corollary [\\[cor: eichler\\]](#cor: eichler){reference-type=\"ref\" reference=\"cor: eichler\"} has the stated form. This is all that is left to prove after proving Theorem [\\[thm: Main\\]](#thm: Main){reference-type=\"ref\" reference=\"thm: Main\"}.\n\n::: prop\n[]{#prop: obstruction label=\"prop: obstruction\"} Suppose $c>0$ and $\\tilde{f}$ is of Type 4. Then we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizations and Open Questions",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-6-generalizations-and-open-questions.md",
+      "narrative": null,
+      "content": "[]{#sec: questions label=\"sec: questions\"} We conclude with a selection of follow-up questions of interest to the authors.\n\n1.  In the cases where $g$ is of *Type 5* or *6*, we expect the natural extensions of Theorem [\\[thm: Main\\]](#thm: Main){reference-type=\"ref\" reference=\"thm: Main\"} to hold for general level and spectral parameter. However, the computations become more tedious when these extra considerations are introduced.\n\n2.  We remark that our methods also extend to vector-valued settings. This allows for new proofs of related results, such as Theorem 1.5 in [@bringmann-nazaroglu].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2505.00799v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[1] Rostislav Akhmechet, Peter K Johnson, and Vyacheslav Krushkal. Lattice cohomology and q-\nseries invariants of 3-manifolds. Journal f¨ur die reine und angewandte Mathematik (Crelles Journal),\n2023(796):269–299, 2023.\n[2] Jørgen Ellegaard Andersen and William Elbæk Misteg˚ard. Resurgence analysis of quantum invariants\nof seifert fibered homology spheres. Journal of the London Mathematical Society, 105(2):709–764, 2022.\n[3] George E Andrews. Questions and conjectures in partition theory. The American mathematical monthly,\n93(9):708–711, 1986.\n[4] George E Andrews, Freeman J Dyson, and Dean Hi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

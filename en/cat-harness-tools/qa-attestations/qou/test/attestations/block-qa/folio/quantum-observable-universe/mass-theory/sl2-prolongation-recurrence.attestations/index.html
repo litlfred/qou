@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-2g9ze0ozx7c.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-2g9ze0ozx7c","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bbaa187b1ae4&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bbaa187b1ae4&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:56:55.283Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement is a bare mathematical claim.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:56:55.677Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:56:56.099Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement respects the chapter&#39;s base-ring regime.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:56:56.412Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:54:12.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2d27509d46140959fa502e6297efcd396d4c2290&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;903680f596df&quot;,
+        &quot;ts&quot;: &quot;ba4dc4efd0d3&quot;,
+        &quot;lean&quot;: &quot;ea4f0f48f77f&quot;,
+        &quot;lean_statement&quot;: &quot;7c29064a5037&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:36.049Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.lean:33 &#39;(hCH : B ^ 2 = τ • B - 1)&#39; taken as hypothesis&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;28b50d73666b&quot;,
+        &quot;ts&quot;: &quot;6312a2813953&quot;,
+        &quot;lean&quot;: &quot;ea4f0f48f77f&quot;,
+        &quot;lean_statement&quot;: &quot;7c29064a5037&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T08:18:08.013Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b0af11457ef9bb444f5b04ca38c5e93b52e59fdd&quot;,
+      &quot;evidence&quot;: &quot;[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: cross-reference labels replaced by titles, a sentence pointing at the downstream block reworded, &#39;in the Lean sibling&#39; dropped; the Lean still takes the Cayley-Hamilton relation as the hypothesis hCH. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: sl2-prolongation-recurrence.lean:33 &#39;(hCH : B ^ 2 = τ • B - 1)&#39; taken as hypothesis&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.553Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No false claims identified in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39;: the formalization compiles successfully without errors.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.559Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.565Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.571Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No overclaims: the scope of &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; is appropriately qualified.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.577Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.584Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The argument flow in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; is logically sound, mapping onto the cited dependencies.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.589Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Lean sibling corresponds directly to the narrative claim in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.595Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39;, hence no citation misuse is possible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.601Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.608Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The algebraic and logical relations in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; are independent of empirical tuning parameters.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.614Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;sl2-prolongation-recurrence.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.620Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Lean file compiles successfully, confirming reproducibility.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;291fa29288dc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:40.626Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: clean.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;verdict&quot;: &quot;clean&quot;,
+      &quot;referee_argument&quot;: &quot;No significant objections; the mathematical claims in &#39;Symplectic prolongation (det B = 1) gives a one-parameter recurrence&#39; are consistent.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed: the bare \&quot;keystone\&quot; referent no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.704Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;&#39;The non-hyperbolic torus sector confirms the form&#39; is a positive corroboration; no assert-by-denying.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.746Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;Depth claim, polarisation argument, boxed conclusion, recurrence, then the open parameter; linear.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.787Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;One dash, appositive: &#39;preserves the principal polarisation of the curve - the cup-product symplectic form on H^1&#39;.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.827Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;No reflex triples.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.867Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;Ends on the open parameter and how it would be pinned, not a flourish.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.908Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;No narrated emphasis.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.949Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;The closing sentence reduces the kernel to tau, which is new information.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:03.990Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:04.032Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;pinning theta is THE LAST OPEN NUMBER of the depth correspondence, and is solvable from three residue weights via tau = (a_D^(2) + a_D^(4))/a_D^(3)&#39; — superseded by the block&#39;s own downstream consumer.&quot;,
+      &quot;notes&quot;: &quot;prop:sl2-period-conserved-quantity, which USES this block, shows the true prolonged period grows factorially so H_n -&gt; infinity, hence it &#39;satisfies NO depth-2 recurrence&#39;, and that this very fitted tau &#39;is an effective germ matching n &lt;= 4, not the period recurrence&#39;, the genuine kernel being a q-Bessel-class q-difference operator. So the last open number is not the last open number, and the quoted formula does not solve the stated problem. The correction exists downstream but this block carries no pointer to it. PROPOSED: re-scope to &#39;the last open number OF THE DEPTH-2 GERM&#39; and cross-reference the fork. ALL THE ALGEBRA HERE IS CORRECT and I verified it: Cayley-Hamilton B^2 = tr(B)B - det(B)1 for 2x2; R = x^2 - tr(B)x + det(B); det B = 1 giving R = x^2 - tau x + 1 and a^(n+2) = tau a^(n+1) - a^(n); Sp(2) = SL_2; the torus-sector check x^2 - 2cosh(2 eta_0)x + 1; and tau = (a^(2) + a^(4))/a^(3) as the inversion of a_4 = tau a_3 - a_2.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;903680f596df&quot;,
+        &quot;ts&quot;: &quot;ba4dc4efd0d3&quot;,
+        &quot;lean&quot;: &quot;318393fd269b&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-29T09:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8126d7c37f8ee9aaf21e63812372c85c13f00b64&quot;,
+      &quot;severity&quot;: &quot;none&quot;,
+      &quot;evidence&quot;: &quot;The flagged sentence is removed. The block no longer contains &#39;the last open number&#39; or the tau = (a_D^(2) + a_D^(4))/a_D^(3) claim as a determination.&quot;,
+      &quot;notes&quot;: &quot;RESOLVED by the scoping edit. The prior verdict&#39;s PROPOSED fix was &#39;re-scope to the last open number OF THE DEPTH-2 GERM and cross-reference the fork&#39;; both are done, and the re-scope goes further than proposed. The prior verdict said the superlative was superseded downstream; measured, the premise is stronger than that: a_D^(n) = S(n)/n is a closed form for EVERY n, so there was no open number at the depth correspondence to be last. The block now carries the n&lt;=4 germ scoping, the measured n=5..8 deviations (-0.38%, -14.31%, -32.17%, -52.21% at the proton pin), an explicit statement that the n=4 agreement is true by construction rather than a test, a cross-reference to prop:sl2-period-conserved-quantity (the downstream consumer the prior verdict named), and uses[] entries for it and prop:sw-period-residue-sum. The withdrawal itself is recorded in .ts authorNotes rather than prose, per the one-voice rule. The prior verdict&#39;s own algebra check stands and is untouched: det B = 1, Sp(2) = SL_2, Cayley-Hamilton, and the torus-sector form are all still asserted.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;40fe40950bcc&quot;,
+        &quot;ts&quot;: &quot;29b7acbbed51&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:58:04.079Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0&quot;,
+      &quot;evidence&quot;: &quot;Long sentences but each has a clear main clause and the displays carry the technical weight.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

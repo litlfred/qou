@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cosmological-cone-visualization",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cosmological-cone-visualization",
+  "kind": "remark",
+  "title": "Cosmological-cone visualization of the $q$-parameter axis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-bigbang-heatdeath",
+    "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/def-color-sector-coords",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-bigbang-heatdeath",
+  "tags": [
+    "visualization",
+    "cosmological-cone",
+    "big-bang",
+    "heat-death",
+    "exceptional-divisor",
+    "reeb-bundle",
+    "color-sectors",
+    "schematic"
+  ],
+  "text": "cosmological-cone-visualization.md",
+  "provenance": "authored"
+}

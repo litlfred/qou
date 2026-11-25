@@ -1,0 +1,453 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0810.1064v1",
+  "title": "Multiple polylogarithm values at roots of unity",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The motivic setup",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-motivic-setup"
+    },
+    {
+      "level": 1,
+      "title": "Standard relations in MPV(w,4)",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-standard-relations-in-mpvw4"
+    },
+    {
+      "level": 1,
+      "title": "Octahedral symmetry of ¶1-({0,}bold0mu mumu 4)",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Level p and p2 cases (p5 a prime)",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-level-p-and-p2-cases-p5-a-prime"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eckerd",
+          "heading": false
+        },
+        {
+          "term": "jianqiang",
+          "heading": false
+        },
+        {
+          "term": "racinet",
+          "heading": false
+        },
+        {
+          "term": "q-linear",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0810.1064v1 [math.NT] 6 Oct 2008 Multiple polylogarithm values at roots of unity Jianqiang Zhao Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA Abstract. For any positive integer N let µN be the group of the Nth roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at µN. We show that the standard relations considered by",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0810.1064v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup mmu",
+          "heading": false
+        },
+        {
+          "term": "shuffle relations",
+          "heading": false
+        },
+        {
+          "term": "label equ",
+          "heading": false
+        },
+        {
+          "term": "zeta cdots",
+          "heading": false
+        },
+        {
+          "term": "standard relations",
+          "heading": false
+        },
+        {
+          "term": "double shuffle",
+          "heading": false
+        },
+        {
+          "term": "linear relations",
+          "heading": false
+        },
+        {
+          "term": "mpv",
+          "heading": false
+        }
+      ],
+      "extract": "Double shuffle relations have played significant roles in the study of multiple zeta values in recent years. These relations can be easily generalized to the special values of multiple polylogarithms at roots of unity (MPV for short): $$\\label{equ:seriesdefn} Li_{s_1,\\dots,s_n}(\\zeta_1,\\dots,\\zeta_n):=\\sum_{k_1>\\dots>k_n>0} \\frac{\\zeta_1^{k_1} \\cdots \\zeta_n^{k_n}}{k_1^{s_1}\\cdots k_n^{s_n}},\\quad(s_1,\\zeta_1)\\ne",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-motivic-setup",
+      "number": null,
+      "title": "The motivic setup",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic",
+          "heading": true
+        },
+        {
+          "term": "nth root",
+          "heading": false
+        },
+        {
+          "term": "dch",
+          "heading": false
+        },
+        {
+          "term": "group-like",
+          "heading": false
+        },
+        {
+          "term": "setup",
+          "heading": true
+        },
+        {
+          "term": "paths",
+          "heading": false
+        },
+        {
+          "term": "ker",
+          "heading": false
+        }
+      ],
+      "extract": "The motivic setup Let us review some constructions from [4]. Fix a positive integer N. Let k be the ﬁeld over Q generated by a primitive Nth root of unity and O its ring of integers. Let Γ be the Q-vector subspace of O[1/N]∗⊗ Q generated by 1 −ζ for ζ an Nth root of unity other than 1. We refer to [4] for the deﬁnition of the tannakian category of mixed Tate motives MT(k)Γ, the deﬁnition of the ﬁbre functor ω(M) :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-standard-relations-in-mpvw4",
+      "number": null,
+      "title": "Standard relations in MPV(w,4)",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 1022,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mpv",
+          "heading": true
+        },
+        {
+          "term": "standard relations",
+          "heading": true
+        },
+        {
+          "term": "weight mpvs",
+          "heading": false
+        },
+        {
+          "term": "mpvs expressing",
+          "heading": false
+        },
+        {
+          "term": "octahedral symmetry",
+          "heading": false
+        },
+        {
+          "term": "dch",
+          "heading": false
+        },
+        {
+          "term": "octahedral group",
+          "heading": false
+        },
+        {
+          "term": "straight path",
+          "heading": false
+        }
+      ],
+      "extract": "Fix N = 4 throughout this section. In what follows we shall describe a process suggested by Deligne to verify that the standard relations cannot produce all possible Q-linear relations in MPV(w, 4). Observe that the vector space freely generated by basis vectors corresponding to regularized MPVs of weight 3 and level 4 is dual to the degree 3 part of the free associative algebra Q⟨⟨e0, eζ⟩⟩ζ∈µ4. One expects that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-level-p-and-p2-cases-p5-a-prime",
+      "number": null,
+      "title": "Level p and p2 cases (p5 a prime)",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "9",
+      "words": 2246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calg bullet",
+          "heading": false
+        },
+        {
+          "term": "dim calg",
+          "heading": false
+        },
+        {
+          "term": "mmu",
+          "heading": false
+        },
+        {
+          "term": "sum big",
+          "heading": false
+        },
+        {
+          "term": "label equ",
+          "heading": false
+        },
+        {
+          "term": "algebra calg",
+          "heading": false
+        },
+        {
+          "term": "p-1-l",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:pp label=\"sec:pp\"} Let $p\\ge 5$ be prime throughout this section. From Prop. [\\[prop:DG\\]](#prop:DG){reference-type=\"ref\" reference=\"prop:DG\"} we see that $d(2,p)\\le (p+1)^2/4$. We will improve this bound in Theorem [\\[thm:p\\]](#thm:p){reference-type=\"ref\" reference=\"thm:p\"}. Recall that $\\calG=\\iota(\\mathop{\\mathrm{{Lie}}}U_\\om)$. By [@DG 6.13] one may safely replace $\\calG_N^{(\\ell)}$ by $\\calG$ throughout",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "space mpv",
+      "heading": false
+    },
+    {
+      "term": "mathrm dch",
+      "heading": false
+    },
+    {
+      "term": "weight mpvs",
+      "heading": false
+    },
+    {
+      "term": "standard relations",
+      "heading": true
+    },
+    {
+      "term": "cup mmu",
+      "heading": false
+    },
+    {
+      "term": "missing relations",
+      "heading": false
+    },
+    {
+      "term": "label equ",
+      "heading": false
+    },
+    {
+      "term": "octahedral symmetry",
+      "heading": true
+    },
+    {
+      "term": "non-standard relations",
+      "heading": false
+    },
+    {
+      "term": "octahedral group",
+      "heading": false
+    },
+    {
+      "term": "q-linear relations",
+      "heading": false
+    },
+    {
+      "term": "shuffle relations",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0810.1064v1"
+  }
+}

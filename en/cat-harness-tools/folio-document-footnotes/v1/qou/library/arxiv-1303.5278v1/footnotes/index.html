@@ -1,0 +1,3283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1303.5278v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1303.5278v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1303.5278v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1303.5278v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1303.5278v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Here and below we will use the notation Mfor both a cusped hyperbolic 3-manifold and the corresponding compact manifold with boundary ∂M consisting of a disjoint union of tori; the intended meaning should be clear from the context.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 2,
+        &quot;context&quot;: &quot;iangulation T(a remarkable collection of Laurent series in q&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;I: {idealtriangulations} −→Z((q&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;I: {idealtriangulations} −→Z((q1/2))H&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;T7→IT([ϖ]) ∈Z((q&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;for[ϖ]∈H1(∂M; Z).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;Unlikeforthe2–3move,itispossibletomakesenseofthe0–2movewhenthetwotrianglesarenot distinct. However, we will not make use of this variant in this paper.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;ofdistincttriangularfacesofTthatshareanedgee&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p035-1&quot;,
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Notethatthisdeﬁnitionhasnorelationtothedeﬁnitionofaregularidealhyperbolictetrahedron,in the sense of a tetrahedron with all dihedral angles being π/3.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;situationcanbemadeviatheKleinmodelofH&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;as straight lines in Euclidean space, E&quot;
+      },
+      {
+        &quot;page&quot;: 35,
+        &quot;context&quot;: &quot;regular.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-1&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I∆(0, 0)I∆(0, 1)I∆(1, 0)I∆(1, 1) + qI∆(−2, 0)I∆(0, 2)2I∆(2, −2) + I∆(−2, 0)I∆(0, 0)I∆(1, −1)I∆(1, 1) −q −q−1&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;(−1)k&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;2(k1−2k&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;(k1,k2)∈Z&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;I∆(−k1, k1 −k2)&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;(k1,k2)∈Z&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;(−1)k&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;2(k1−2k&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;(k1,k2)∈Z&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;contributetoI61(0) + O(q)4= 1 −4q + q&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;I∆(−2, 0)&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;2 I∆(−1, −1)I∆(−1, 0)I∆(0, −1)I∆(0, 0) + I∆(−1, 0)&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;+ I∆(−2, 0)I∆(0, −1)&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;2 I∆(−1, 0)I∆(0, 1)&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;2 I∆(−1, 1)I∆(0, −1)&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;∆(−2, 1)I∆(0, 1)I∆(1, −1)I∆(1, 0) + I∆(0, 0)I∆(0, 1)I∆(1, 0)&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-6&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;−4q + q2 + 18q3 + 22q4 + q5 −78q6 −178q7 −254q8 −188q9 + 167q10 + 855q11 + 1864q12 + 2892q13 + 3426q14 + 2583q15 −&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;2(k&quot;
+      },
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;2(k&quot;
+      },
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;2(−k&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-1&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;−4q + q2 + 16q3 + 20q4 + q5 −72q6 −156q7 −206q8 −98q9 + 275q10 + 924q11 + 1740q12 + 2370q13 + 2227q14 + 495q15 − 3485q16 −10168q17 −19045q18 −28467q19 −34899q20 −33157q21 −16460q22 + 22305q23 + 89035q24 + 185478q25 + 306146q26 + 434575q27+539981q28+575717q29+479148q30+176483q31−408854q32−1340316q33−2648389q34−4301970q35−6179555q36− 8036073q37 −9477453q38 −9942897q39 −8710346q40 −4925980q41 + 2323715q42 + 13897628q43 + 30430263q44 + 52111135q45 + 78414600q46 + 107796294q47 + 137380650q48 + 162674912q49 + 177363801q50&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 50,
+        &quot;context&quot;: &quot;(−1)k&quot;
+      },
+      {
+        &quot;page&quot;: 50,
+        &quot;context&quot;: &quot;2(k&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-029&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p049-2&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I∆(−2, 0)I∆(−1, −1)I∆(−1, 0)I∆(2, −1) −q−1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-3&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I∆(−1, 0)I∆(−1, 1)I∆(0, −1)I∆(2, −1) −q−1&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-4&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I∆(−3, 0)I∆(0, 3)2I∆(3, −3)&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-5&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;I∆(−1, 2)I∆(0, 0)I∆(1, −1)I∆(2, −1)) −q&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-7&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;488&quot;,
+    &quot;text&quot;: &quot;q16 −6698q17 −16273q18 −28550q19 −41189q20 −49943q21 −48554q22 −28899q23 + 17621q24 + 98726q25 + 217819q26 + 371551q27 + 544496q28 + 707360q29 + 811832q30 + 792301q31 + 565550q32 + 40436q33 −872995q34 −2241496q35 −4087180q36 − 6354321q37 −8877834q38 −11348143q39 −13283739q40 −14014789q41 −12685231q42 −8288627q43 +266720q44 +14032731q45 + 33862808q46 + 60173861q47 + 92687285q48 + 130092845q49 + 169735693q50&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-028&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-1&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;1112/jtopol/jts022. [Jon87] Vaughan F. R. Jones, Hecke algebra representations of braid groups and link polynomials, Ann. of Math. (2) 126 (1987), no. 2, 335–388. [JR03] William Jaco and J. Hyam Rubinstein, 0-eﬃcient triangulations of 3-manifolds, J. Diﬀerential Geom. 65 (2003), no. 1, 61–168. [Kas97] R. M. Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-032&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p058-2&quot;,
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;text&quot;: &quot;(1997), no. 3, 269–275. [KLV12] Rinat M. Kashaev, Feng Luo, and Grigory Vartanov, A TQFT of Turaev-Viro type on shaped triangulations, 2012, arXiv:1210.8393, Preprint. [KR04] Ensil Kang and J. Hyam Rubinstein, Ideal triangulations of 3-manifolds. I. Spun normal surface theory, Proceedings of the Casson Fest, Geom. Topol. Monogr., vol. 7, Geom. Topol. Publ., Coventry, 2004, arXiv:math.GT/0410541, pp. 235–265.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1303.5278v1/blocks/prose-sec-032&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;the cells are convex ideal polyhedra in H&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;anov-ZelevinskythatanytworegulartriangulationsofapolytopeinR&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;quenceofgeometricbistellarﬂips;[GKZ94].UsingtheKleinmodelofH&quot;
+  },
+  {
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Mofidealtriangulationsof&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;•extendthedomainofthe3DindexIT([ϖ])to[ϖ]∈H1(∂M;&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;WhenM=S&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;sistsofapairwisedisjointunionofstandardEuclidean3–simplices,&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;k=1&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;withacollectionΦofEuclideanisometriesbetweenthe2–simplicesin&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;solutionspaceC(M; T)isavectorsubspaceofR&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;solutionspaceC(M; T)isavectorsubspaceofR7&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;Thecoordinatesofx∈R&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Thecoordinatesofx∈R7&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;AvectorinR&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;AvectorinR7&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(1)Ifσ&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; structures is denoted by GA(T) and is an aﬃne subspace of R&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;jare the quads type in the&quot;
+  },
+  {
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;jinthe&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ontheliftedtriangulation&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;ontheliftedtriangulationeT,foranycoveringspace&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;orus Tin Mwhich is not a covering of the peripheral torus.If&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;liftstoanormaltorus&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;liftstoanormaltoruseTsothattheinclusionmapinducesanontomapπ&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;anormaltoruseTsothattheinclusionmapinducesanontomapπ1(eT) →π&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;We can now use&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;space&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;R7&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;an-annular)thenforanyﬁnitesheetedcoveringspace&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the3&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;I∆(m, e)(q) ∈Z[[q&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2e)&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;(−1)n&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and(q)&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;and(q)n=Q&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1(1 −q&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;I∆(m, e + 1) + (q&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;qe&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;I∆(m, e)I∆(m, e + c)q&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Theregionsofpolynomialityofδ(m, e)giveafaninR&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i),asZ&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iat each tetrahedron using the relation Z&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;denotethevectorinZ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;¯b&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;¯c&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯c&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯b&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¯b&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¯c&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯c&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯b&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;The term ¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tetrahedron.TheentryinthevectoraϖforthistetrahedronisP&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;l=0¯a&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;j= π,thenweobtainthevectorinZ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;jusingZ&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Similarly,wecandeﬁne“turningnumber”vectors(aϖ|bϖ|cϖ) ∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wecandeﬁne“turningnumber”vectors(aϖ|bϖ|cϖ) ∈Z3Nand(aϖ|bϖ) ∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;IT: H1(∂M; Z) −→Z((q&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;knotinS&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;entriesis2ineachcolumnofC.LetE(ei)=Ei⊂Z&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;⊂Z&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;coeﬃcientsEi∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;J∆(a, b, c)J∆(a + x, b, c) q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(−q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(−q1/2)−bI∆(b −c, a −b) (−q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;(−q1/2)−bI∆(b −c, a −b) (−q1/2)−bI∆(b −c, a −b + x) q&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;I∆(m, e)I∆(m, e + x) q&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2)&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;2)−¯b&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofintegerbasisfortheintegerrowspaceΛ ⊂R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Toseethis,considerthelinearmapψ:RN→R&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Toseethis,considerthelinearmapψ:RN→R2Ndeﬁnedbyψ(k&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ikiE&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iE&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;iEiwhere&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;N) ∈RNthen&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;N) ∈RNthen k′= k+c where&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ikiE&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= k&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= ki+ schifor&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i= ki+ schifor i = 1, . . . , Nand&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;i= ki+ schifor i = 1, . . . , Nand s ∈R.Then the term&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;ismultipliedbyqsn&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯a&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯aj(k, ϖ),¯b&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯c&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))by&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))byafactor(−q&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))byafactor(−q1/2)−2sn&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;thevector(¯aϖ|¯bϖ|¯cϖ).Thesebacktracksonlyalterthepowerof(−q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;eithermultiplyingtheexpressionby(−q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;orby(−q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;looparoundavertexofthetriangulationproducesapowerof(−q&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;looparoundavertexofthetriangulationproducesapowerof(−q1/2)&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;LetMbeacusped3-manifoldandconsiderthe0–2moveonapairTand&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Theorem5.1.Suppose that Tand&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;admitanindexstructure.Then,forany[ϖ] ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Weusethelabellingofthetwobigonsandtriangleson&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;elabellingofthetwobigonsandtrianglesoneTshowninFigure14.LetT&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;in&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ineT.NotethattheedgeeinTsplitsintotwoedgese′, e′′in&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;edgee in&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;edgesinTand&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;edgesinTandeT.Wedenotethesease&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Let&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Letek ∈ZN+2be a weight function on the edges of&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Letek ∈ZN+2be a weight function on the edges ofeTand write&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;e a weight function on the edges ofeTand writeek = (k′, k′′,&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;eight function on the edges ofeTand writeek = (k′, k′′,ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;wherek′, k′′,&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;wherek′, k′′,ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;wherek′, k′′,ek, kiarethevaluesof&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;wherek′, k′′,ek, kiarethevaluesofekone′, e′′, eande&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;edgee ontetrahedronT&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;edgee ontetrahedronTjforj= 1, 2;thenthelocationoflabels¯b&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;gee ontetrahedronTjforj= 1, 2;thenthelocationoflabels¯bj, ¯c&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;spectto&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;specttoeT∂andrepresentsthesamehomologyclass[ϖ]∈H&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;cttoeT∂andrepresentsthesamehomologyclass[ϖ]∈H1(∂M; Z).LetJ(T&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;letJ(T&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;letJ(Tj,&quot;
+  },
+  {
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;letJ(Tj,ek,eϖ)becontributionwithweightfunction&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;wecancomputeI&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;wecancomputeIeTbyomittingthesameedgeset&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;computeI&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;computeIeTbyomittingtheedgeset&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;qk′+k′′+e&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i=1&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1k&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i=1kiJ(T&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i=1kiJ(T1, ek,eϖ)J(T&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;I&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;J(T&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(Tj,&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ek = (k′, k′′, ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ek = (k′, k′′, ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;NowwelookatthecontributiontoIeTcomingfromthetetrahedraT&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;NowwelookatthecontributiontoIeTcomingfromthetetrahedraT1, T&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;overtheweight&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ekJ(T&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ekJ(T1; ek,eϖ)J(T&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;J(T&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T1;&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k4 + ¯c&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k4 + ¯c eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J(T&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T2;&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;k,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k3 + ¯c&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k3 + ¯c eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;curve, we can calculate I&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;withrespectto&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Figure15.ChangesinperipheralcurvefromϖinT∂toeϖin&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯b eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯b eϖ,1= ¯c eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯b eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯b eϖ,2= ¯c eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;¯a eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;¯a eϖ,1= ¯a eϖ,&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k2 + k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k2 + k3 + x, k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k2 + k3 + x, k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;ekJ∆(k′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;k, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k2 + k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot; k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k2 + k3 + x) = q−k′ δ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot; means that in the sum (30) we can remove the summation over&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;HenceJ(T&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;HenceJ(Tj,&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;HenceJ(Tj,ek,eϖ) = J(T&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i=1&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1k&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;I&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;convexidealpolyhedroninhyperbolic3-spaceH&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;oftriangulationsofconvexpolytopesinR&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;onnecting them.Rather, the vertices are concrete points in R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;linesegmentsinR&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;lation of a polytope in R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;inR&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Deﬁnition6.7.Anaﬃnecombinationofasetofpoints(p&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Deﬁnition6.7.Anaﬃnecombinationofasetofpoints(pj)&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Deﬁnition6.7.Anaﬃnecombinationofasetofpoints(pj)j∈CinR&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j∈Cλ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;j∈Cλj&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j∈Cλjp&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j∈Cλ&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;8.A point conﬁgurationis a ﬁnite set of labelled points in R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;oftheaﬃnespanofC.TheconvexhullofCinAistheconvexhullinR&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Deﬁnition6.9.Withtheabovenotation,ifψ∈(R&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;b∈C(ψ(p&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;ω:A →Risanymap.TheliftedpointconﬁgurationinR&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j)j∈J:= (p&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j)j∈J:= (pj, ω(p&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;j)j∈J:= (pj, ω(pj))&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Mhas&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;InR&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Mandanorientedmulti-curveϖon∂M.TheindexIT(ϖ)(q)∈Z((q&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;s(onepertetrahedronofT)oflinearformsink=(k1, . . . , kn−1)∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;mumdegreewithrespecttoq)isapiecewisequadraticfunctiononR&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;apiecewisequadraticfunctiononR&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;isequadraticfunctiononRm,wemeanthatthereexistsapartitionFofR&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;deﬁned on a partition FTof R&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;directlyfromT.Apriori,FTneednotbeafaninR&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;words, the degree of the summand is a proper function on Z&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;half-integerN,theset{k∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;I∆(k, k)(q)&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;δ(k) = 2δ(k, k) = 2k&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;I∆(k, k)(q)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2k)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;(−1)n&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−4k+8k&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−2q−3q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q13−141q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q13−141q14+ 14q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;309q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;309q16+714q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q18+1824q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q18+1824q19+2401q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q18+1824q19+2401q20+2794q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q18+1824q19+2401q20+2794q21+2898q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;309q16+714q17+1249q18+1824q19+2401q20+2794q21+2898q22+2434q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;714q17+1249q18+1824q19+2401q20+2794q21+2898q22+2434q23+1256q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;1249q18+1824q19+2401q20+2794q21+2898q22+2434q23+1256q24−918q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;1824q19+2401q20+2794q21+2898q22+2434q23+1256q24−918q25−4186q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;context&quot;: &quot;2401q20+2794q21+2898q22+2434q23+1256q24−918q25−4186q26−8712q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;14394q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q29−28184q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q29−28184q30−35094q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q29−28184q30−35094q31−40740q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q29−28184q30−35094q31−40740q32−43732q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;14394q28−21046q29−28184q30−35094q31−40740q32−43732q33−42508q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;21046q29−28184q30−35094q31−40740q32−43732q33−42508q34−35068q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;28184q30−35094q31−40740q32−43732q33−42508q34−35068q35−19524q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;35094q31−40740q32−43732q33−42508q34−35068q35−19524q36+ 6288q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;0740q32−43732q33−42508q34−35068q35−19524q36+ 6288q37+ 43942q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;95026q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;95026q39+ 159698q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;95026q39+ 159698q40+ 237774q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;95026q39+ 159698q40+ 237774q41+ 326680q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;95026q39+ 159698q40+ 237774q41+ 326680q42+ 422880q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;5026q39+ 159698q40+ 237774q41+ 326680q42+ 422880q43+ 519595q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;9698q40+ 237774q41+ 326680q42+ 422880q43+ 519595q44+ 608636q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;7774q41+ 326680q42+ 422880q43+ 519595q44+ 608636q45+ 677761q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;context&quot;: &quot;6680q42+ 422880q43+ 519595q44+ 608636q45+ 677761q46+ 713352q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;context&quot;: &quot;2880q43+ 519595q44+ 608636q45+ 677761q46+ 713352q47+ 697625q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;context&quot;: &quot;611956q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;context&quot;: &quot;611956q49+434572q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;51&quot;,
+    &quot;context&quot;: &quot;611956q49+434572q50+144616q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;52&quot;,
+    &quot;context&quot;: &quot;611956q49+434572q50+144616q51−279773q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;53&quot;,
+    &quot;context&quot;: &quot;611956q49+434572q50+144616q51−279773q52−856288q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;54&quot;,
+    &quot;context&quot;: &quot;611956q49+434572q50+144616q51−279773q52−856288q53−1599627q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;55&quot;,
+    &quot;context&quot;: &quot;+434572q50+144616q51−279773q52−856288q53−1599627q54−2515906q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;56&quot;,
+    &quot;context&quot;: &quot;144616q51−279773q52−856288q53−1599627q54−2515906q55−3602521q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;57&quot;,
+    &quot;context&quot;: &quot;79773q52−856288q53−1599627q54−2515906q55−3602521q56−4842516q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;context&quot;: &quot;6288q53−1599627q54−2515906q55−3602521q56−4842516q57−6203552q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;59&quot;,
+    &quot;context&quot;: &quot;7632646q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;60&quot;,
+    &quot;context&quot;: &quot;7632646q59−9054429q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;61&quot;,
+    &quot;context&quot;: &quot;7632646q59−9054429q60−10367858q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;62&quot;,
+    &quot;context&quot;: &quot;7632646q59−9054429q60−10367858q61−11443874q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;63&quot;,
+    &quot;context&quot;: &quot;7632646q59−9054429q60−10367858q61−11443874q62−12125534q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;64&quot;,
+    &quot;context&quot;: &quot;q59−9054429q60−10367858q61−11443874q62−12125534q63−12226286q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;65&quot;,
+    &quot;context&quot;: &quot;60−10367858q61−11443874q62−12125534q63−12226286q64−11535062q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;66&quot;,
+    &quot;context&quot;: &quot;q61−11443874q62−12125534q63−12226286q64−11535062q65−9815935q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;67&quot;,
+    &quot;context&quot;: &quot;4q62−12125534q63−12226286q64−11535062q65−9815935q66−6820480q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;68&quot;,
+    &quot;context&quot;: &quot;2289703q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;69&quot;,
+    &quot;context&quot;: &quot;2289703q68+4024698q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;70&quot;,
+    &quot;context&quot;: &quot;2289703q68+4024698q69+12355340q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;71&quot;,
+    &quot;context&quot;: &quot;2289703q68+4024698q69+12355340q70+22887604q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;72&quot;,
+    &quot;context&quot;: &quot;2289703q68+4024698q69+12355340q70+22887604q71+35751602q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;73&quot;,
+    &quot;context&quot;: &quot;q68+4024698q69+12355340q70+22887604q71+35751602q72+50979996q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;74&quot;,
+    &quot;context&quot;: &quot;69+12355340q70+22887604q71+35751602q72+50979996q73+68497913q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;75&quot;,
+    &quot;context&quot;: &quot;70+22887604q71+35751602q72+50979996q73+68497913q74+88071340q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;76&quot;,
+    &quot;context&quot;: &quot;1+35751602q72+50979996q73+68497913q74+88071340q75+109297633q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;77&quot;,
+    &quot;context&quot;: &quot;131547294q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;78&quot;,
+    &quot;context&quot;: &quot;131547294q77+153959928q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;79&quot;,
+    &quot;context&quot;: &quot;131547294q77+153959928q78+175385202q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;80&quot;,
+    &quot;context&quot;: &quot;131547294q77+153959928q78+175385202q79+194390216q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;81&quot;,
+    &quot;context&quot;: &quot;1547294q77+153959928q78+175385202q79+194390216q80+209208210q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;82&quot;,
+    &quot;context&quot;: &quot;3959928q78+175385202q79+194390216q80+209208210q81+217767013q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;83&quot;,
+    &quot;context&quot;: &quot;5385202q79+194390216q80+209208210q81+217767013q82+217655122q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;84&quot;,
+    &quot;context&quot;: &quot;4390216q80+209208210q81+217767013q82+217655122q83+206182023q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;85&quot;,
+    &quot;context&quot;: &quot;180375446q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;86&quot;,
+    &quot;context&quot;: &quot;180375446q85+ 137083864q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;87&quot;,
+    &quot;context&quot;: &quot;180375446q85+ 137083864q86+ 73018494q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;88&quot;,
+    &quot;context&quot;: &quot;180375446q85+ 137083864q86+ 73018494q87−15089960q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;89&quot;,
+    &quot;context&quot;: &quot;0375446q85+ 137083864q86+ 73018494q87−15089960q88−130393760q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;90&quot;,
+    &quot;context&quot;: &quot;37083864q86+ 73018494q87−15089960q88−130393760q89−275708923q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;91&quot;,
+    &quot;context&quot;: &quot;73018494q87−15089960q88−130393760q89−275708923q90−453351590q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;92&quot;,
+    &quot;context&quot;: &quot;5089960q88−130393760q89−275708923q90−453351590q91−664856517q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;93&quot;,
+    &quot;context&quot;: &quot;910744842q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;94&quot;,
+    &quot;context&quot;: &quot;910744842q93−1190185170q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;95&quot;,
+    &quot;context&quot;: &quot;910744842q93−1190185170q94−1500703210q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;96&quot;,
+    &quot;context&quot;: &quot;910744842q93−1190185170q94−1500703210q95−1837805659q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;97&quot;,
+    &quot;context&quot;: &quot;842q93−1190185170q94−1500703210q95−1837805659q96−2194650672q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;98&quot;,
+    &quot;context&quot;: &quot;170q94−1500703210q95−1837805659q96−2194650672q97−2561673782q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;99&quot;,
+    &quot;context&quot;: &quot;210q95−1837805659q96−2194650672q97−2561673782q98−2926258326q&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;100&quot;,
+    &quot;context&quot;: &quot;659q96−2194650672q97−2561673782q98−2926258326q99−3272416148q&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;I∆(−k1, k1 −k2)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(k1,k2)∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2−k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+ k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2+ k2 + k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1+ k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1+ k2−2&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1+ k2−2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1+ k2−2k1&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1+ k2−2k1k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1+ k2−2k1k2+ k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−k1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−2&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1−k2−2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−2k1&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k2−2k1k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−2k1k2+ 2&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k2−2k1k2+ 2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;k1 + 2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−4&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1−k2−4k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−4k1&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k2−4k1k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1−k2−4k1k2+ 2&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−k2−4k1k2+ 2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2k&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2k1(1 + k&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1−4q−q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q6−122q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q11+778q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q11+778q12+1757q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;q5−34q6−122q7−239q8−312q9−221q10+102q11+778q12+1757q13+2930q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;3825q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q16+2560q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q16+2560q17−1183q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q16+2560q17−1183q18−8033q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q16+2560q17−1183q18−8033q19−18087q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;context&quot;: &quot;3825q15+4003q16+2560q17−1183q18−8033q19−18087q20−30864q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;q15+4003q16+2560q17−1183q18−8033q19−18087q20−30864q21−44625q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;16+2560q17−1183q18−8033q19−18087q20−30864q21−44625q22−56225q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;7−1183q18−8033q19−18087q20−30864q21−44625q22−56225q23−60913q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;context&quot;: &quot;−8033q19−18087q20−30864q21−44625q22−56225q23−60913q24−52342q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;context&quot;: &quot;23373q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;context&quot;: &quot;23373q26+ 33675q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;context&quot;: &quot;23373q26+ 33675q27+ 124356q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;context&quot;: &quot;23373q26+ 33675q27+ 124356q28+ 251997q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;23373q26+ 33675q27+ 124356q28+ 251997q29+ 412837q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;23373q26+ 33675q27+ 124356q28+ 251997q29+ 412837q30+ 596153q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;3675q27+ 124356q28+ 251997q29+ 412837q30+ 596153q31+ 778487q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;4356q28+ 251997q29+ 412837q30+ 596153q31+ 778487q32+ 925195q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;1997q29+ 412837q30+ 596153q31+ 778487q32+ 925195q33+ 984860q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;2837q30+ 596153q31+ 778487q32+ 925195q33+ 984860q34+ 895092q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;579789q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;579789q36−39418q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;579789q36−39418q37−1039055q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;context&quot;: &quot;579789q36−39418q37−1039055q38−2474979q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;context&quot;: &quot;579789q36−39418q37−1039055q38−2474979q39−4370844q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;context&quot;: &quot;579789q36−39418q37−1039055q38−2474979q39−4370844q40−6691737q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;context&quot;: &quot;9418q37−1039055q38−2474979q39−4370844q40−6691737q41−9326308q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;context&quot;: &quot;055q38−2474979q39−4370844q40−6691737q41−9326308q42−12059462q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;context&quot;: &quot;79q39−4370844q40−6691737q41−9326308q42−12059462q43−14553043q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;16329323q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;context&quot;: &quot;16329323q45−16762776q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;context&quot;: &quot;16329323q45−16762776q46−15091256q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;context&quot;: &quot;16329323q45−16762776q46−15091256q47−10436174q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;49&quot;,
+    &quot;context&quot;: &quot;16329323q45−16762776q46−15091256q47−10436174q48−1863234q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;50&quot;,
+    &quot;context&quot;: &quot;q45−16762776q46−15091256q47−10436174q48−1863234q49+11551967q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;51&quot;,
+    &quot;context&quot;: &quot;q46−15091256q47−10436174q48−1863234q49+11551967q50+30594044q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;52&quot;,
+    &quot;context&quot;: &quot;q47−10436174q48−1863234q49+11551967q50+30594044q51+55785006q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;53&quot;,
+    &quot;context&quot;: &quot;q48−1863234q49+11551967q50+30594044q51+55785006q52+87178516q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;54&quot;,
+    &quot;context&quot;: &quot;124185931q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;55&quot;,
+    &quot;context&quot;: &quot;124185931q54+165312079q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;56&quot;,
+    &quot;context&quot;: &quot;124185931q54+165312079q55+207965719q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;57&quot;,
+    &quot;context&quot;: &quot;124185931q54+165312079q55+207965719q56+248191454q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;58&quot;,
+    &quot;context&quot;: &quot;4185931q54+165312079q55+207965719q56+248191454q57+280543349q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;59&quot;,
+    &quot;context&quot;: &quot;5312079q55+207965719q56+248191454q57+280543349q58+297911617q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;60&quot;,
+    &quot;context&quot;: &quot;7965719q56+248191454q57+280543349q58+297911617q59+291580973q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;61&quot;,
+    &quot;context&quot;: &quot;8191454q57+280543349q58+297911617q59+291580973q60+251299184q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;62&quot;,
+    &quot;context&quot;: &quot;165675668q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;63&quot;,
+    &quot;context&quot;: &quot;165675668q62+22662435q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;64&quot;,
+    &quot;context&quot;: &quot;165675668q62+22662435q63−189540512q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;65&quot;,
+    &quot;context&quot;: &quot;165675668q62+22662435q63−189540512q64−481437576q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;66&quot;,
+    &quot;context&quot;: &quot;65675668q62+22662435q63−189540512q64−481437576q65−860708203q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;67&quot;,
+    &quot;context&quot;: &quot;662435q63−189540512q64−481437576q65−860708203q66−1330509280q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;68&quot;,
+    &quot;context&quot;: &quot;40512q64−481437576q65−860708203q66−1330509280q67−1887333621q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;69&quot;,
+    &quot;context&quot;: &quot;7576q65−860708203q66−1330509280q67−1887333621q68−2518748267q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;70&quot;,
+    &quot;context&quot;: &quot;3200856694q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;71&quot;,
+    &quot;context&quot;: &quot;3200856694q70−3895826567q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;72&quot;,
+    &quot;context&quot;: &quot;3200856694q70−3895826567q71−4549488766q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;73&quot;,
+    &quot;context&quot;: &quot;3200856694q70−3895826567q71−4549488766q72−5089337005q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;74&quot;,
+    &quot;context&quot;: &quot;694q70−3895826567q71−4549488766q72−5089337005q73−5423179738q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;75&quot;,
+    &quot;context&quot;: &quot;567q71−4549488766q72−5089337005q73−5423179738q74−5438686309q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;76&quot;,
+    &quot;context&quot;: &quot;766q72−5089337005q73−5423179738q74−5438686309q75−5004368747q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;77&quot;,
+    &quot;context&quot;: &quot;005q73−5423179738q74−5438686309q75−5004368747q76−3972096155q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;78&quot;,
+    &quot;context&quot;: &quot;2181963773q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;79&quot;,
+    &quot;context&quot;: &quot;2181963773q78+530655834q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;80&quot;,
+    &quot;context&quot;: &quot;2181963773q78+530655834q79+4324768774q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;81&quot;,
+    &quot;context&quot;: &quot;2181963773q78+530655834q79+4324768774q80+9340768927q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;82&quot;,
+    &quot;context&quot;: &quot;773q78+530655834q79+4324768774q80+9340768927q81+15683465230q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;83&quot;,
+    &quot;context&quot;: &quot;4q79+4324768774q80+9340768927q81+15683465230q82+23402429365q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;84&quot;,
+    &quot;context&quot;: &quot;q80+9340768927q81+15683465230q82+23402429365q83+32468254286q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;85&quot;,
+    &quot;context&quot;: &quot;42746925974q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;86&quot;,
+    &quot;context&quot;: &quot;42746925974q85+53970937518q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;87&quot;,
+    &quot;context&quot;: &quot;42746925974q85+53970937518q86+65710530396q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;88&quot;,
+    &quot;context&quot;: &quot;42746925974q85+53970937518q86+65710530396q87+77343886238q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;89&quot;,
+    &quot;context&quot;: &quot;85+53970937518q86+65710530396q87+77343886238q88+88031000047q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;90&quot;,
+    &quot;context&quot;: &quot;86+65710530396q87+77343886238q88+88031000047q89+96690414035q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;91&quot;,
+    &quot;context&quot;: &quot;7+77343886238q88+88031000047q89+96690414035q90+101984965333q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;92&quot;,
+    &quot;context&quot;: &quot;102316085357q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;93&quot;,
+    &quot;context&quot;: &quot;102316085357q92+95834146866q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;94&quot;,
+    &quot;context&quot;: &quot;102316085357q92+95834146866q93+80464612248q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;95&quot;,
+    &quot;context&quot;: &quot;102316085357q92+95834146866q93+80464612248q94+53958404128q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;96&quot;,
+    &quot;context&quot;: &quot;92+95834146866q93+80464612248q94+53958404128q95+13966121550q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;97&quot;,
+    &quot;context&quot;: &quot;93+80464612248q94+53958404128q95+13966121550q96−41855327561q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;98&quot;,
+    &quot;context&quot;: &quot;4+53958404128q95+13966121550q96−41855327561q97−115704867879q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;99&quot;,
+    &quot;context&quot;: &quot;209460627592q&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;100&quot;,
+    &quot;context&quot;: &quot;209460627592q99−324467541887q&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2(k1−2&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2(k1−2&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2(−k1+k&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(k1,k2,k3)∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;FTinR&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;contributetoI61(0) + O(q)&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;contributetoI61(0) + O(q)4= 1 −4q + q2+ 18q&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;contributetoI61(0) + O(q)4= 1 −4q + q2+ 18q3+ O(q)&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;0)I∆(0, −1)I∆(0, 0) + I∆(−1, 0)2I∆(0, −1)I∆(0, 0) + I∆(0, 0)&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(−1)k1+k&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(−1)k1+k2−k&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2(k1+k&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2(k1+k2−k&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(k1,k2,k3)∈Z&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;FTinR&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;anorientedmulti-curveon∂M.ConsidertwoidealtriangulationsTand&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;TheoremA.1.SupposethatTand&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;bothadmitanindexstructure.Then,forany[ϖ] ∈H&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ik&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ThetriangulationsTand&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Letk=(k&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Letk=(k1, . . . , kN)beaweightfunctionontheedgesofT,andlet&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;k=(k1, . . . , kN)beaweightfunctionontheedgesofT,andletek=(k&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;extensionofktoaweightfunctionontheedgesof&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;extensionofktoaweightfunctionontheedgesofeTwherek&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;qk&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖk,andtheϖ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖk,andtheϖe&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖk,andtheϖekwhere&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖk,andtheϖekwhereek=(k&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;givenk,weconsiderϖk,andtheϖekwhereek=(k0, k)andk&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;handsideof(36)usingtheϖe&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Theinducedtriangulationsof∂M,T∂and&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;determinedbyTand&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Nowϖe&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;eT∂,andsimilarlyϖ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;turningnumbersofϖrelativeto&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ϖ&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ϖkrelativetoT,weobtaintheturningnumbersofϖ(0,&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ϖkrelativetoT,weobtaintheturningnumbersofϖ(0,k)relativeto&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;hedronjlabelled¯a&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;hedronjlabelled¯aj,andsimilarlyfor¯b&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;hedronjlabelled¯aj,andsimilarlyfor¯bj(k, ϖ),¯c&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;lled¯aj,andsimilarlyfor¯bj(k, ϖ),¯cj(k, ϖ).Thus,replacingkby&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;aj,andsimilarlyfor¯bj(k, ϖ),¯cj(k, ϖ).Thus,replacingkbyek=(k&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;doesnotchange¯a&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;doesnotchange¯aj(k, ϖ)or¯c&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;doesnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯b&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;doesnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯bj(ek, ϖ) = ¯b&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;esnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯bj(ek, ϖ) = ¯bj + k&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i¯B&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;i=1¯ai −P&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i=1¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;context&quot;: &quot;i=1¯ciiszerofromFigure&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i=1¯ciiszerofromFigure24,whileattheequatorialvertices&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i=1¯ciiszerofromFigure24,whileattheequatorialvertices1,&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;i=1¯ciiszerofromFigure24,whileattheequatorialvertices1, 2,&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;qe&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;= q−x&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)−¯c1−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯c1−¯c2−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯c1−¯c2−¯a3q−x&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2)−¯b&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2)−¯b0−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2)−¯c1−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2)−¯c1−¯c2−¯a&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;2)−¯b&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2)−¯c&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;qk&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

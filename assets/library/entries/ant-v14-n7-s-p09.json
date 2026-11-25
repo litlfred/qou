@@ -1,0 +1,717 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p09",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/conj-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "conj-sec-000-02.md",
+      "narrative": null,
+      "content": "Let p ∈{2, 3}. Let G be a ﬁnite group and let B be a p-block of G with nontrivial defect group D. Then |Irr0(B)σ1| = p if, and only if, D is cyclic, where Irr0(B)σ1 is the set of height zero irreducible characters in the block B that are ﬁxed under the action of σ1. We prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture. In this sense,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "One of the most prevalent questions in the representation theory of ﬁnite groups is to determine what\nrelationships hold between the set Irr(G) of irreducible complex characters of a ﬁnite group G and its\nlocal structure, such as the structure of a Sylow p-subgroup P of G. There is, of course, the more\nsophisticated question of relating the set Irr(B) of irreducible characters belonging to a given Brauer\np-block B of G with the structure of a defect group D of B.\nG. Navarro and P. H. Tiep [2019] conjecture that for a prime p, one can determine the exponent of the\nabelianization of P in terms o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1953\nGalois action on the principal block\nand cyclic Sylow subgroups\nNoelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo\nWe characterize ﬁnite groups G having a cyclic Sylow p-subgroup in terms of the action of a speciﬁc\nGalois automorphism on the principal p-block of G, for p = 2, 3. We show that the analog statement for\nblocks with arbitrary defect group would follow from the blockwise McKay–Navarro conjecture.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group of order divisible by p, where p ∈{2, 3}. Let P ∈Sylp(G) and let B0 be the principal p-block of G. Then |Irrp′(B0)σ1| = p if, and only if, P is cyclic, where Irrp′(B0)σ1 is the set of irreducible characters in B0 with degree relatively prime to p that are ﬁxed under the action of σ1. With the deﬁnition above, σ1 is an element of the subgroup H ≤G consisting of all σ ∈G for which there exists some integer f such that σ(ξ) = ξ p f whenever ξ is a root of unity of order not divisible by p. Navarro predicted [2004, Conjecture A] the existence of bijections for the McKay conj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/conj-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Alperin–McKay–Navarro conjecture",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "conj-sec-001-01.md",
+      "narrative": null,
+      "content": "Let B ∈Bl(G | D) and let b ∈Bl(NG(D) | D) be its Brauer ﬁrst main correspondent. If σ ∈H, then |Irr0(B)σ| = |Irr0(b)σ|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "Let G be a finite group and let p be a prime. Suppose that B is a block of G with normal defect group D. Let b be a root of B with canonical character 0. Write A = (0) < Gal(Q(é\\g))/Q). Ifa is a linear character of D, then let Gga = {g € G | (0,)8 = (0,)% for some a € A}. With this definition",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with a normal defect group D. Let b be a root of B with canonical character θ. Then Irr0(B)σ1 = [ λ∈Irr(D/8(D)) Irr(G | θλ), where 8(D) is the Frattini subgroup of D. Moreover, if c ∈Bl(Gb | D) is the Fong–Reynolds correspon- dent of B, then |Irr0(B)σ1| = |Irr0(c)σ1|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and let B be a block of G with cyclic defect group D. Then 1 ≤|Irr0(B)σ1| ≤p. The set Irr0(B)σ1 has minimal size 1 if, and only if, D is trivial. Furthermore, if p ∈{2, 3} and D is nontrivial, then |Irr0(B)σ1| = p. Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "lem-sec-001-05.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group, let p ∈{2, 3}, and let B be a block of G with nontrivial defect group D. Then p divides |Irr0(B)σ1|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "lem-sec-001-07.md",
+      "narrative": null,
+      "content": "By [Sambale 2014, Proposition 15.2], if p = 3 then |Irr(B)| = p implies |D| = p and the proof is ﬁnished. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Blocks with normal defect group",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-1-blocks-with-normal-defect-group.md",
+      "narrative": null,
+      "content": "The aim of this section is to prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture,\nstated below.\nFor a ﬁxed prime p, consider the set Bl(G) of Brauer (p-)blocks of G as in [Navarro 1998], so that\nBl(G) is a partition of Irr(G)∪IBr(G) (recall that p-Brauer characters are deﬁned on p-regular elements\nof G). Write Irr(B) = B ∩Irr(G) and IBr(B) = B ∩IBr(G) for any B ∈Bl(G). Every block B has\nassociated a uniquely deﬁned conjugacy class of p-subgroups of G, namely its defect groups. Given a\nblock B of G with defect group D, we write B ∈Bl(G | D) and we let b ∈Bl(NG(D) | D) den",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "thm-sec-001-06.md",
+      "narrative": null,
+      "content": "Let p ∈{2, 3}. Let G be a ﬁnite group and let B be a p-block of G with a nontrivial normal defect group D. Then |Irr0(B)σ1| = p if, and only if, D is cyclic. In particular, Conjecture B follows from the Alperin–McKay–Navarro conjecture.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and let P be a Sylow p-subgroup of G. (a) If P is normal in G, then Irrp′(B0(G))σ1 = Irr(G/Op′(G)8(P)). (b) If P is cyclic, then 1 ≤|Irrp′(B0(G))σ1| ≤p. (c) If P is nontrivial and p ∈{2, 3}, then |Irrp′(B0(G))σ1|̸ = 0 is divisible by p. Galois action on the principal block and cyclic Sylow subgroups",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "Suppose that G is a ﬁnite group, P ∈Sylp(G) and PCG(P) ≤H ≤G. If θ ∈Irrp′(B0(H))σ1, then there exists a some χ ∈Irrp′(B0(G))σ1 lying over θ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and let N ◁G be a direct product of t copies of a simple nonabelian group S transitively permuted by G. Let P ∈Sylp(G). If some 1S̸ = φ ∈Irrp′(B0(S))σ1 is X-invariant, where X ∈Sylp(Aut(S)), then there exists some P-invariant 1N̸ = θ ∈Irrp′(B0(N))σ1. In particular, if N is a minimal normal subgroup of G, then θ extends to a σ1-invariant irreducible character of PN.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reducing to simple groups",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-2-reducing-to-simple-groups.md",
+      "narrative": null,
+      "content": "The aim of this section is to reduce the statement of Theorem A to a problem on simple groups that we\nwill solve in Section 3.\n2A. Preliminaries. We start these preliminaries with results concerning the action of Galois automor-\nphisms on characters belonging to principal blocks. Recall that χ ∈Irr(B0(G)) if, and only if,\nX\nx∈G0\nχ(x)̸ = 0,\nwhere G0 is the subset of elements of G of order not divisible by p. Some properties of characters in the\nprincipal block are listed below.\nLemma 2.1. Let G be a ﬁnite group, and let N ◁G.\n(a) We have that Irr(B0(G/N)) ⊆Irr(B0(G)), with equality whenever N i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "Suppose that N is a normal subgroup of G and G/N is a p′-group. Let P ∈Sylp(G) and assume that G = NCG(P). Then restriction of characters deﬁnes a bijection Irr(B0(G)) →Irr(B0(N)). In particular, |Irrp′(B0(G))σ1| = |Irrp′(B0(N))σ1|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-002-05.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group of order divisible by p where p ∈{2, 3}. Let P ∈Sylp(G). Then |Irrp′(B0(G))σ1| = p if, and only if, P is cyclic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-002-06.md",
+      "narrative": null,
+      "content": "Step 1. We may assume Op′(G) = 1. This follows by Lemma 2.1(a) and induction. Step 2. We may assume that O p′(G) = G. Otherwise, let M ◁G with |G/M| not divisible by p and G/M > 1 simple. Then P ⊆M and by the Frattini argument M NG(P) = G. Hence MCG(P) ◁G and therefore G = CG(P)M or CG(P) ⊆M. Suppose G = MCG(P), then restriction deﬁnes a bijection Irrp′(B0(G))σ1 →Irrp′(B0(M))σ1 by Theorem 2.3. In this case we are done by induction. Therefore we may assume that CG(P) ⊆M. We claim that B0(G) is the only block of G covering B0(M). Indeed, let B be a block of G covering B0(M). By [Navarro 1998, Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-002-07.md",
+      "narrative": null,
+      "content": "there exist 1S̸ = φ ∈Irrp′(B0(S))σ1 X-invariant for some X ∈Sylp(Aut(S)). By Lemma 2.5, there is some 1N̸ = θ ∈Irrp′(B0(N))σ1 that extends to a σ1-invariant character χ ∈Irr(G). Since B0(G) is the only block covering B0(N) by [Navarro 1998, Corollary 9.6], we have that χ ∈Irrp′(B0(G))σ1 contradicting Step 3. Final Step. Since NP < G by Step 5, if |Irrp′(B0(NP))σ1| = p, then we are done by induction. Hence we may assume that |Irrp′(B0(NP))σ1| > p by Lemma 1.4. By Step 3, we have that PN/N is cyclic, and hence |Irrp′(B0(PN/N))σ1| = p. Therefore there exists some θ ∈Irrp′(B0(NP))σ1 such that N ⊈k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let p be a prime and let s ∈G∗be a semisimple element. Let f and b be integers and let σ ∈H be such that σ(ξ) = ξ p f for all p′-roots of unity ξ and σ(ζ) = ζ b for all p-power roots of unity ζ. If χ ∈E(G, s), then χσ ∈E(G, s p f p′ sb p). The characters in the series E(G, 1) are called unipotent characters, and there is a bijection E(G, s) → E(CG∗(s), 1). Hence, characters of Irr(G) may be indexed by pairs (s, ψ), where s ∈G∗is a semisimple element, up to G∗-conjugacy, and ψ ∈Irr(CG∗(s)) is a unipotent character of CG∗(s). We remark that CG∗(s) may fail to be connected, in which case unipoten",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Navarro, Sambale and Tiep",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group. If χ ∈Irr2′(G) is real-valued, then χ belongs to B0(G). In particular, note that an odd character degree of G with multiplicity one must necessarily come from a character ﬁxed by all automorphisms and G, which is therefore an X-invariant member of Irr2′(B0(G))σ1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Let S be a simple sporadic group, alternating group An with n ≥5, or one of the simple groups PSL2(4), PSL3(2), PSL3(4), PSU4(2), PSU4(3), PSLϵ 6(2), 2B2(8), B3(2), B3(3), D4(2), F4(2), 2F4(2)′, E6(2), 2E6(2), G2(2)′, G2(3), or G2(4). Then Theorem C holds for S and the prime p = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-04.md",
+      "narrative": null,
+      "content": "Let S be a simple group of Lie type deﬁned over Fq with q a power of an odd prime ℓ. Then Theorem C holds for S and the prime p = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "Let S be a simple group of Lie type deﬁned in characteristic 2. Then Theorem C holds for S for the prime p = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-06.md",
+      "narrative": null,
+      "content": "Let S be a ﬁnite nonabelian simple group with order divisible by 3. Then S has a cyclic Sylow 3-subgroup if and only if S is one of: the alternating group A5; the sporadic simple group J1; PSL2(q) for 3∤q; or PSLϵ 3(q) for 3 | (q + ϵ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-08.md",
+      "narrative": null,
+      "content": "Theorem 3.7 holds for the sporadic simple groups, G2(3), 2F4(2)′, B3(3), G2(2)′ = PSU3(3), PSU4(3), and the alternating groups An with n ≥5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-09.md",
+      "narrative": null,
+      "content": "Let S be a simple group of Lie type deﬁned over Fq with 3∤q and assume S is not one of the groups PSLϵ n(q) with n ≤3. Then there exist three nontrivial characters χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 such that χ1 and χ2 extend to Aut(S). Further, if S is not PSLϵ 4(q) nor PSp4(2a) with a odd, then χ1, χ2, and χ3 may be chosen to extend to Aut(S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-10.md",
+      "narrative": null,
+      "content": "occurs when S = PSL2(q) for 3∤q and when S = PSLϵ 3(q) for 3 | (q + ϵ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-11.md",
+      "narrative": null,
+      "content": "Let S = PSL2(q) with 3∤q or PSLϵ 3(q) with 3 | (q + ϵ). Then there exist nontrivial χ1, χ2 ∈Irr3′(B0(S))σ1 such that χ1 extends to Aut(S). Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo Conditions on q, n Symbol χ(1)q′ \u0000possibly excluding factors of 1 \u0001 3 | (q −1) or 3 | (q + 1); n even; 3∤(n −1) or \u0000 0 1 n \u0001 (qn−1+1)(qn+1) q+1 3 | (q + 1); n odd; 3∤n 3 | (q −1); 3∤n \u0000 0 2 n−1 \u0001 (q2n−1)(qn−3+1)(qn−1+1) q4−1 3 | (q −1); 3∤(n −1) or \u0000 1 n \u0001 (qn−1−1)(qn+1) q−1 3 | (q + 1); n even 3 | (n −1) \u0000 1 n−1 \u0001 (q2n−1)(q2(n−2)−1) (q2−1)2 3 | (q + 1); n odd or \u0000 0 n \u0001 (qn−1+1)(qn−1) q−1 3 | (q −1); 3∤n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-12.md",
+      "narrative": null,
+      "content": "Let S = PSLϵ 3(q) with 3 | (q −ϵ). Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 such that χ1 and χ2 extend to Aut(S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-13",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-13.md",
+      "narrative": null,
+      "content": "Let S = G2(q), 3D4(q), 2G2(q), E± 6 (q), E7(q), F4(q) or E8(q) be simple with q a power of 3. Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 that are pairwise not Aut(S)-conjugate and such that χ1 is Aut(S)-invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-14.md",
+      "narrative": null,
+      "content": "Let S = PSLϵ n(q) be simple with q a power of 3 and n ≥2 and let X ≤Aut(S) such that X/S is a Sylow 3-subgroup of Aut(S)/S. Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 that are pairwise not Aut(S)-conjugate and such that χ1 is X-invariant. Further, if n ≥3, then χ1 may be chosen to be Aut(S)-invariant, and if n ≥5, then χ1, χ2, χ3 may all be chosen to be Aut(S)-invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-15.md",
+      "narrative": null,
+      "content": "Recall that the conjugacy classes of semisimple elements in ˜G∗= GLϵ n(q) are determined by their eigenvalues and that Z( ˜G∗) is comprised of scalar matrices. If n = 2, then | ˜S/S| = 2 and Aut(S)/ ˜S is generated by a ﬁeld automorphism. The semisimple elements s1, s2, and s3 with eigenvalues {δ, δ−1}, {ζ1, ζ −1 1 }, and {ξ1, ξ −1 1 } with ζ1 ∈F× q and ξ1 ∈F× q2 \\ F× q and |ξ|̸ = 4̸ = |ζ| satisfy properties (1), (2), and (4). Now, since ˜χs1 is ﬁxed by ﬁeld automorphisms, and hence by X, and since | ˜S/S| is relatively prime to 3, we see that the irreducible constituents of the restriction (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prop-sec-003-16",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "prop-sec-003-16.md",
+      "narrative": null,
+      "content": "Let q be a power of 3. Let S = PSp2n(q), P2n+1(q), or P± 2n(q) be simple with n ≥2, 3, 4 respectively. Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 that are pairwise not Aut(S)-conjugate and such that χ1 is invariant under Aut(S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple groups",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "../sections/sec-003-3-simple-groups.md",
+      "narrative": null,
+      "content": "In this Section we prove Theorem C, which will complete the proof of Theorem A.\n3A. Some generalities on groups of Lie type. Since the groups of Lie type play a large role in what\nfollows, we begin by recalling some essentials about their blocks and characters.\nLet q be a power of a prime. When G = GF is the group of ﬁxed points of a connected reductive\nalgebraic group G deﬁned over Fq under a Steinberg map F, the set of irreducible characters Irr(G) can be\nwritten as a disjoint union F E(G, s) of so-called rational Lusztig series corresponding to G∗-conjugacy\nclasses of semisimple elements s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "thm-sec-003-07.md",
+      "narrative": null,
+      "content": "Let S be a nonabelian simple group with order divisible by 3. (i) If S has a cyclic Sylow 3-subgroup, then there exist 1S̸ = χ1, χ2 ∈Irr3′(B0(S))σ1 such that χ1 extends to Aut(S). (ii) If S does not have a cyclic Sylow 3-subgroup and is not a group of Lie type deﬁned in characteristic 3, then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 such that χ1 and χ2 extend to Aut(S). In this case, if S is further not one of A6, A7, 2F4(2)′, PSLn(q) with n ≤4, or PSp4(22m+1), then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 such that χi each extend to Aut(S). (iii) If S is a group of Lie type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-003-17",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "thm-sec-003-17.md",
+      "narrative": null,
+      "content": "(a)] and ˜G∗= K.Z( ˜G∗). Notice that for s, s′ ∈K (not necessarily distinct), we have s is ˜G∗-conjugate to s′z for z ∈Z( ˜G∗) if and only if z ∈Z(K) and the conjugating element can be chosen in K. By [Gorenstein et al. 2002, Theorem 1.12.4] and [Cabanes and Enguehard 2004, 15.1], K is isomorphic as an abstract group to the simply connected simple algebraic group ( ˜G∗)sc associated to ˜G∗, and the Chevalley relations and generators of ( ˜G∗)sc and K may be identiﬁed. We will make this identiﬁcation. In particular, choosing s1, s2, and s3 in K, the properties (1)–(3) may be veriﬁed by computat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/thm-sec-003-18",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 25,
+      "target": "thm-sec-003-18.md",
+      "narrative": null,
+      "content": "now follows from Propositions 3.8–3.14, completing the proof of Theorem A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Gabriel Navarro for an inspiring conversation on Galois action and\ngenerating properties of Sylow subgroups during the Workshop on Representations of Finite Groups at\nthe MFO in March 2019, and for further discussion on the topic. They would also like to thank the MSRI\nin Berkeley, CA, and its generous staff for providing a collaborative and productive work environment\nduring their residency in the summer of 2019. In addition, they thank Gunter Malle for his thorough\nreading of an early draft of this manuscript and for his helpful comments. Part of this work was",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p09/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[Alperin 1976] J. L. Alperin, “Isomorphic blocks”, J. Algebra 43:2 (1976), 694–698. MR Zbl\n[Bonnafé 2005] C. Bonnafé, “Quasi-isolated elements in reductive groups”, Comm. Algebra 33:7 (2005), 2315–2337. MR Zbl\n[Broué and Michel 1989] M. Broué and J. Michel, “Blocs et séries de Lusztig dans un groupe réductif ﬁni”, J. Reine Angew.\nMath. 395 (1989), 56–67. MR Zbl\n[Cabanes and Enguehard 2004] M. Cabanes and M. Enguehard, Representation theory of ﬁnite reductive groups, New Math.\nMonogr. 1, Cambridge Univ. Press, 2004. MR Zbl\n[Carter 1985] R. W. Carter, Finite groups of Lie type: conjugacy classes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

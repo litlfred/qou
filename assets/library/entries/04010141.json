@@ -1,0 +1,676 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "04010141",
+  "blocks": [
+    {
+      "id": "library/04010141/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "We discuss a circle of ideas for addressing problems in representa-\ntion theory using the philosophy of cellular algebras, applied to algebras \ndescribed in terms of diagrams. Cellular algebras are often generically \nsemisimple, and have non-semisimple specialisations whose representa-\ntion theory may be discussed by solving problems in linear algebra, which \nare formulated in the semisimple context, and are therefore tractable in \nReceived April 1, 2002. \nRevised November 6, 2002. \nBoth authors thank the Australian Research Council for support. \n142 \nJ.J. Graham and G.l. Lehrer \nsome signific",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Advanced Studies in Pure Mathematics 40, 2004 \nRepresentation Theory of Algebraic Groups and Quantum Groups \npp. 141-173 \nCellular algebras and diagram algebras m \nrepresentation theory \nJ.J. Graham and G.I. Lehrer \nAbstract. \nWe discuss a circle of ideas for addressing problems in repre-\nsentation theory using the philosophy of cellular algebras, applied to \nalgebras described in terms of diagrams. Cellular algebras are of-\nten generically semisimple, and have non-semisimple specialisations \nwhose representation theory may be discussed by solving problems \nin linear algebra, which are formula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/cor-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "cor-sec-001-04.md",
+      "narrative": null,
+      "content": "Lett E Z, 0 ~ ltl ~ n, n + t E 2Z and suppose t ~ 0. There is a filtration of Wt(n) by R-submodules W(i), i = n, n- 1, n- 2, ... , 1 as in 2.12 below. (2.12) Wt(n) ::::> Wt-I(n -1) ::::> • • • ::::> Wo(n- t) ::::> W-1(n- t -1) ::::> Wo(n- t- 2) ::::> W-1(n- t- 3) ::::> • • • ::::> Wo(2) ::::> W_l(1). Thus (2.13) . {Wt-n+i(i) ifn- t ~ i ~ n W(i) ~ W 0(i) ifi is even andO ~ i ~ n- t W_l(i) ifi is odd andO ~ i ~ n- t. For each i = 1, 2, 3, ... , n, W(i) is a TLBi(q, Q)-submodule of Wt(n). To illustrate the construction in 2.11, we note that the diagram Et = Et n below lies in each of the submodul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[15]",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Maintain the above notation, and in ad- dition assume that R is a field. Let T 0 be the set of t E T such that L(t) -=/- 0 {or equivalently cf>t-=/- 0}. Then (i) The modules L(t) {t E ro} are absolutely irreducible and form a complete set of representatives of the distinct isomorphism classes of irreducible A-modules. (ii) For s E T, t E ro let dst be the multiplicity of L(t) in W(s). Then the decomposition matrix D = (dst) is upper unitriangular. In particular Hom(W(tl), W(t2 )) = 0 unless t1 ;?: t 2 . (iii) For s1, s2 E T 0 , let C81 ,82 be the multiplicity if the irreducible module L(s2) in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [18, 5.8]",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "(i) The Temperley-Lieb algebra TLBn(q,Q) is generated as R-algebra by {c0,c1, ... ,cn-d subject to the relations (2.7) c6 = 8QCo c; = 8qci for 1 :::; i :::; n - 1 CiCiH Ci = e;, for 1 :::; i :::; n- 2 CiCi-1 Ci = C;, for 2 :::; i :::; n- 1 C;,Cj = CjC;, ifli- Jl > 1, Q:::; i,j:::; n -1 where K = !J + ~ and 8x = -(x + x- 1 ) for x E Rx. (ii) The elements c1, ... ,cn-1 generate a subalgebra ofTLBn(q,Q) isomorphic to the usual Temperley-Lieb algebra TLn(q) of type An_ 1 . Cellular algebras and diagmm algebras The stated relations are easily seen to hold by 2.5. The fact that all relations are con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Let t E Z, 0 ~ ltl ~ n, n + t E 2Z. Assume 8q =1- 0. (i) If t ~ 0, we have a short exact sequence (ii) If t < 0, we have a short exact sequence Here we adopt the convention that W;(k) = 0 if Iii > k. Repeated application of 2.8 yields",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cellular algebras and Temperley-Lieb algebras",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-cellular-algebras-and-temperley-lieb-algebras.md",
+      "narrative": null,
+      "content": "Cellular algebras were first defined in [15] in terms of the existence \nof a basis with specified multiplicative properties. Subsequently, there \nhas been a significant literature (cf. [25], [26], [27], [28] and [13]) in \nwhich structural definitions have been given, in terms of the existence \nof certain filtrations, and in which cellular algebras have been compared \nwith quasi-hereditary algebras; in particular much is now known about \ntheir characterisation in terms of global dimension, Cartan matrix and \nrepresentation type. The main point of a cellular structure is that it \nis preserved un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let Aa(n)+ be the set",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-let-aan-be-the-set.md",
+      "narrative": null,
+      "content": "(3.4) \nAa(n)+ = {(t,z) It E Z~o, 0::::; t::::; n, n-t E 2Z; z E Rx}. \nDefine Aa(n) by \n(3.5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Define the equivalence relation ~ on A a ( n) + as that which identifies",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-define-the-equivalence-relation-on-a-a-n-as-that.md",
+      "narrative": null,
+      "content": "(0, z) and (0, z- 1) for all z E Rx, and write \n(3.6) \nAa(n)0 = Aa(n)/ ~ \nAa(n)O+ = Aa(n)+ / ~ \nIf (t1, zl), (t2, z2) E Aa(n)+, then Wt1,z1 (n) ~ Wt 2 ,z2 (n) if (tb z1) ~ \n(t2 , z2). Thus Aa(n)0+ plays the role ofT in §2. We write Radcf>t,z for \n152 \nJ.J. Graham and G.I. Lehrer \nthe submodule {x E Wt,z(n) I l/Jt,z(x, y) = 0 for ally E Wt,z-1 (n)} of \nWt,z(n). \nTheorem 3. 7 ([16, (2.8)]). \nLet R be an algebraically closed field \nand maintain the above notation. \n(i) For (t, z) E Aa(n)+, Lt,z(n) := Wt,z(n)/Radl/Jt,z is either an \n{absolutely) irreducible T:;(q) module or zero, and Lt,z(n) =1- 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "7 ([16, (2.8)]). Let R be an algebraically closed field and maintain the above notation. (i) For (t, z) E Aa(n)+, Lt,z(n) := Wt,z(n)/Radl/Jt,z is either an {absolutely) irreducible T:;(q) module or zero, and Lt,z(n) =1- 0 if and only if (t, z) E Aa(n). (ii) All irreducible T:;(q) modules are realised thus, and if (t1, zi) -::f. (t2,z2), then Lt,,z1(n) '1- Lt2 ,z2 (n). (iii) The cell module Wt,z ( n) is irreducible if and only if for any (t',z') E Aa(n)0 , (t',z') =1- (t,z) we have Equivalently, the form l/Jt,z is a perfect pairing. It follows that the distinct irreducible T:;(q)-modules are pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Let R be a field of characteristic 0 or p > 0, where pe > n and e is the multiplicative order of q2 • Then (i) We have (3.12) . {1if(t,z)j(s,y) dlmHomT\"(q)(Ws,y(n), Wt,z(n)) = . n 0 otherwzse (ii) In the Grothendieck group r(T;(q)), we have for any (t, z) E A0 (n)0+, (3.13) Wt,z(n) = (s,y)EA\"(n)O (t,z)j(s,y) Thus the matrix expressing the cell modules in terms of the irre- ducibles in r(T;(q)) is upper unitriangular, and has entries 0 or 1. Now if (t,z) is confined to A0 (n)0 , the relation 3.13 can clearly be inverted. The result is (cf. [17, Theorem (4.5)])",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "In the notation above, if(t,z) E A0 (n)0 , (3.15) Lt,z(n) = (s,y)EA\"(n)O (t,z)j(s,y) where nts,y = 0 or ±1. ,z §4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "(i) We have ra;t~! = oi41 for each i, where",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interrelationships among various Heeke and Temperley- Lieb algebras",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-interrelationships-among-various-heeke-and-tempe.md",
+      "narrative": null,
+      "content": "Lieb algebras \nOur purpose in this section is to give a concise statement of the var-\nious connections among several Heeke algebras and Temperley-Lieb al-\ngebras. Behind these connections are facts concerning generalised Artin \ngroups and their interpretation in terms of braids and ribbons. The topo-\nlogical background may be found in [7] and [39], and a more leisurely \nexposition may be found in [18, §2]. \n4.1. \nSome generalised Artin braid groups \nThe generalised Artin group r n of type Bn is well known to be the \nfundamental group of the space of unordered n-tuples of distinct points \nin C.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/def-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "def-sec-005-01.md",
+      "narrative": null,
+      "content": "Let 5; be the element S; = (oi — q)(oi +.q7') of RI, (i =1,2,...,n). The affine Hecke algebra He(q) of GL, over R is defined by _",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "(i) The elements T1 , ... , Tn generate a subalge- bra H~(q) of ~(q), which has R-basis {Tw I wE wa ~ Symn ~zn- 1 }, where, if w = Sil ... Sit is a reduced expression for w E wa' T w = ~.Tit· We refer to this as the \"unextended\" Heeke algebra of type",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Heeke algebras",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-42-some-heeke-algebras.md",
+      "narrative": null,
+      "content": "Let R be a commutative ring as in §2, and fix elements g,Q € R*.\nThe various Hecke algebras with which we are concerned all emanate\nfrom the group ring RI’, where I, is the Artin braid group of type B,,\nas above.\n\nDefinition 4.3. Let 5; be the element S; = (oi — q)(oi +.q7') of\nRI, (i =1,2,...,n). The affine Hecke algebra He(q) of GL, over R is\ndefined by _\n\nHa(q) = RV /(S1)-\n\nNote that since S;,...,S, are all conjugate in RI’, the ideal (81)\nis equal to (S;,...,5,). Let 7: REPn —> H2(q) be the natural map. We\nthen write\n\n(4.4)\n\nCellular algebras and diagmm algebms \n155 \nNote that since T = 6a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/def-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "def-sec-006-02.md",
+      "narrative": null,
+      "content": "fi{(q) are defined by {4.11) The affine Temperley-Lieb algebms TL~(q) and TL~(q) = H~(q)/I fi{(q) = ~(q)/f Cellular algebras and diagram algebras It is known (cf. [16], [17]) that if Ci = -(Ti + q-1) E H~(q) (i = 1, ... , n), then in H~(q), CiCi+l Ci- Ci = Ci+1 CiCi+l- Ci+l = -q3 Ei, where the indices are taken mod n. If we abuse notation by writing Ci E TL~(q) for the image of Ci E H~(q) under the natural map, it follows easily that TL~(q) is generated by {01, ... , Cn} subject to the relations ( 4.12) C'f = 8qCi cici±1ci = ci cicj = cjci if li- jl ~ 2 and {i,j} =I= {1, n}, Just as in the cas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let TJQ : ~(q) ------+ HBn(q, Q) be the natuml map. Write Ti E HBn(q, Q) for the image of Ti E ~(q) under TJQ (i = 1, ... , n- 1} (relying on the context to distinguish between them), and write To = TJq(X1)· Then HBn(q, Q) has R-basis {Tw I w E W Bn}, where, if w = Si1 ••• Sil is a reduced expression for w E W Bn, Tw = Ti1 · · ·Tit· As a special case of 4.7, if w is the Coxeter element s0s1 ... Sn-1 of WBn, the corresponding basis element Tw of HBn(q, Q) is written V(= ToT1 ... Tn_l). Another algebra which is often considered in this context is the ----- affine Heeke algebra ofSLn, which is de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "(i) We have ( 4.15) TL';;,(q) ~ R(V) 0 TL~(q), where V E ~(q) (identified with the image of V E H!(;,(q)) permutes the ci cyclically. (ii) The elements {C1, ... , Cn-1} generate a subalgebra of ~(q) which is isomorphic to TLn(q). It may be mapped monomorphically into T;:(q) via ci f---> fi {i = 1, ... 'n- 1}. (iii) There is a family of surjections cf>o: : ~(q) ---> T;:(q) (a E Rx ), defined by cf>o:(Ci) = fi and cf>o:(V) = aTn· Each cf>o: restricts to the same monomorphism TL~(q)--> T;:(q). (iv) The kernel of cf>o: is generated by the element llo: = a-2V2Cn_1 - C1C2 ... Cn-1 {= a-2C1 V2 - C1C2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An-1·",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-an-1.md",
+      "narrative": null,
+      "content": "(ii) The elements Tt, ... , Tn- 1 generate a subalgebra Hn(q) of ~(q) \nwhich has (finite) R-basis {Tw I wE W ~ Symn}. \n(iii) We have ~(q) ~ RZ®H~(q) ~ R(V)®H~(q), where the tensor \nproduct is twisted, using the action of V on H~(q): VTiv- 1 = Ti+l, \nwhere the subscript is taken mod n. \n(iv) (Bernstein} We have ~(q) ~ Hn(q) ® R[Xf'l, ... , x,;1] as R-\nmodule, and the multiplication is given by the \"Bernstein relations\": for \ni E { 1, ... , n - 1}, write si for the corresponding simple reflection in W \nand s, f for the image off E R[Xf1 , ... , x.;1] under the natural action \nof W ~ Symn. Then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[18], §5",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "There is a surjective homomorphism of associative R-algebras HBn(q, Q) ~ TLBn(q, Q), defined on the genemtors Ci by 714(Ci) = Ci {i = 0, 1, ... , n- 1). The kernel of 714 is genemted by E1 and C1CoC1- r;,C1 E HBn(q, Q), where r;, = ij + ~ as in 2.7. Define ti E TLBn(q, Q) by 714(Ti) = ti fori= 0, 1, ... , n- 1. Then we have to= -(eo+ Q-1) and ti = -(Ci +q-1 ) fori= 1,2, . .. ,n -1. The ti are all invertible. Because of its special role, we denote by v the element 714(V) of TLBn(q, Q) (see immediately following 4.7). Then TLBn(q, Q) is clearly generated by {v, c1. ... , Cn-d, and VCiV- 1 = Ci+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "HBn(q,Q) ~",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-hbnqq.md",
+      "narrative": null,
+      "content": "J.J. Graham and G.l. Lehrer \nof ~(q). Since vn is in the centre of TL';,(q) (cf. 4.2(vi)), it follows \nthat vn acts as a scalar, say A E RX in p. Hence p factors through \n~(q)j(Vn- .X.1), which is isomorphic (cf. 4.13) via a map which is \n-----\nthe identity on TL~(q), to TL';,(q). But by [17, Theorem (2.8)], every \n-----\nirreducible representation ofT L';, ( q) is the inflation via a homomorphism \nlike ¢a of an irreducible representation of T_;:(q). \n0 \nWe shall need an algebraic description of the Temperley-Lieb algebra \nof type Bn which we have met in §2 as an algebra with a basis of marked",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TLBn(q,Q)",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-tlbnqq.md",
+      "narrative": null,
+      "content": "Cellular algebras and diagram algebras \n159 \nWe complete this section with a result which is instrumental in ap-\nplying our results on T~(q) to the representation theory of f&(q). \nTheorem 4.18 ([18], (5.11)). \nLet f3 E R satisfy (32 = -qn-2 • \nThen there is a unique surjective homomorphism gf3 : \nT~(q) ~ \nTLBn(q, Q) such that g(3(/i) = Ci fori= 1, 2, ... , n-1, and g(3(T) = f3v. \nIf a, J-L satisfy a- 11-L = (3, then the following diagram commutes, \nf&(q) \n'f/3 \n'fi{(q) \nc/>o \nT~(q) \n----> \n----> \n(4.19) \n1 \n\"'Q,,. \n1 \nIQ,,. \n1g~ \nHBn(q,Q) \n'f/4 \nTLBn(q,Q) \nid \nTLBn(q,Q) \n----> \n----> \nwhere '",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "Fix q E Rx and assume R is a field. Then ev- ery irreducible T::_(q)-module is the inflation via g{j of an irreducible TLBn(q, Q)-module for some Q E Rx. To see this, one need only observe that given t, (3, q and z E Rx, the equation zt = z (see 5.2) has the solution Q = ( -1)t(3z-1q-!Cn+t-2). Our objective is to study the inflations of T::_(q)-modules to ~(q), and to apply our knowledge of decomposition numbers for T::_( q) (see 3.11) to the representations of ~(q). For this purpose we focus on the part of the diagram 4.19 below. (5.4) ~(q) ~Q,,. TLBn(q,Q) ~ TLBn(q,Q) where 1/Jo. =<Po. o 1\"/3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/cor-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "cor-sec-009-06.md",
+      "narrative": null,
+      "content": "(i) The standard modules Ms,N ((s, N) E P) are multiplicity free. (ii) If q is not a root of unity, the standard modules have at most 2 composition factors. (iii) In all cases, Ms,N has composition length bounded by [ ¥ ]. (iv) The maximum composition length of Ms,N is [¥], and therefore is unbounded as n--> oo. §7. Connection with representation varieties of quivers In this section we continue to consider the representations of .iif:_(q), where the underlying ring is C. In this case, we explain an interpreta- tion of6.7,6.9 in terms of the intersection cohomology of certain varieties. Cellula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/cor-sec-009-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "cor-sec-009-11.md",
+      "narrative": null,
+      "content": "13. Let ( >., l) and ( >.', l') be two I -partitions with the same dimension vector such that ( >.', l') ~ ( >., l) in the sense above, and suppose that (>., l) is aperiodic. Define (7.14) - ~ . 2k k K(>.,l),(>.',l')(t) = L...J dzm Yr(y,l')(IC(O(>.,l)))t . j~O Then (7.15) If(>., l) and (>.', l') do not have the same dimension vector, [M(>.,l) : L(>.',l')] =0. Our result (6.9) pertains to /-partitions with at most 2 parts (rows).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[18], 9.12",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "Let P be the set equivalence classes of pairs (s, N) E P where N E (!5 is two-step nilpotent, i.e. N\"' Nk for some k with 0 ~ 2k ~ n. Let fi be the set of triples (t, a, z) (t E Z, 0 ~ t ~ n, n-t E 2Z; a, z E C x) and let n be the set of equivalence classes of triples in n under the equivalence generated by the relations (t, a, z) \"' (t,-a,-z), (n,a,z)\"' (n,y- 1za,y) and(O,a,z)\"' (O,a,z-1). Then (with the obvious abuse of notation} we have well defined ~(q)-modules Ms,N, ( s, N) E P and 0~ Wt,z( n), ( t, a, z) E n, and there is a bijection f: P-+ 0 such that if(s,N) E P corresponds to (t,a,z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "The module Ls(a,b),Nk is zero if and only if {6.3) q2 = -1, n is even, k = ~' a= a, b =-a, for some a E Cx. We therefore denote by Po the set of (equivalence classes of) pairs in P which do not satisfy the condition 6.3. By Theorem 3.7{i), Po parametrises the irreducible ~(q)-modules which factor through f[{(q). The partial order ~ on Aa(n)0+ induces one on P using the corre- spondence 6.1. Specifically we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "prop-sec-009-04.md",
+      "narrative": null,
+      "content": "Suppose that under the correspondence 6.1 above, the triples (h,a,zl), (t2,a,z2) correspond to the pairs (s(al.bl),NkJ, (s(a2, b2), Nk2 ) respectively. Then (t1, z1) -< (t2, z2) if and only if there J.J. Graham and G.l. Lehrer exists f > 0 and E = ±1 such that if we write 2ki = n- ti fori = 1, 2, then (6.5) k2 =kl- f ~ 0 a1 b!l =qtt +•t2 (a2,b2) =(al>bl) ifE= 1 (b1,a1) ifE = -1 Now Theorems 3.11 and 3.14 yield immediately",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-009-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "prop-sec-009-08.md",
+      "narrative": null,
+      "content": "(i) The standard module Ms,N is Grothendieck equivalent to the induced module (7.7) where Ms,,N, is the standard module of Jiff: (q), >. = (kt, · · · , kr) and <2fi=l Ms,,N, is the lift from ®Jif. (q) to \"Jif. (q) of ®\";=1 Ms,,N,. (ii} If Pi is a composition factor of Ms,,N, (i = 1, · · · , r ), then Ind!!.E_(q) ~p· is irreducible. H):(q) •=1 ' (iii} The standard module Ms,N is multiplicity free if and only if each component Ms,,N, is multiplicity free. Thus the decomposition of Ms,N may be discussed in terms of that of the Ms,,N,i in this way one reduces to the case where all the eigenvalues",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prop-sec-009-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "prop-sec-009-09.md",
+      "narrative": null,
+      "content": "(i) There is a bijection between GLn(C)- conjugacy classes of pairs ( s, N) such that the eigenvalues of s are powers of q and s · N = q2 N, and isomorphism classes of nilpotent representa- tions (V, E) of the quiver Qe, with total dimension n. J.J. Graham and G.l. Lehrer {ii) If (s, N) and (V, E) correspond under this bijection (recall that V comes with its grading), the variety ON above is isomorphic to the Gv-orbit of E in Nv. We next give a parametrisation of the Gv-orbits on Nv. By (7.9)(i), as the pair (V, E) varies, v being an [-grading of en and E E Nv, these orbits will index the stan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifting representations from finite to infinite dimensional algebras",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-lifting-representations-from-finite-to-infinite.md",
+      "narrative": null,
+      "content": "algebras \n5.1. \nCommutative diagrams and lifting representations \nLet A and B be R-algebras and 'ljJ : A -+ B be an R-algebra homo-\nmorphism. If p: B-+ EndR(M) is a representation of B (where M is a \nfree R-module) one may lift p to a representation 'lj;* p of A by composing \nwith 'lj;. This is called the inflation of p via 'ljJ We shall discuss in this \nsection the lifting of representations in the diagram 4.19. Note that by \n4.14(v), if R is an algebraically closed field of characteristic not dividing \nn, then every finite dimensional irreducible representation of 'fi{(q) is \nthe lift via ¢a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/04010141/blocks/rem-sec-009-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "rem-sec-009-10.md",
+      "narrative": null,
+      "content": "The distinct /-partitions of n parametrise the nilpo- tent representations of Qe of total dimension n, with two /-partitions deemed to be the same if one is obtained from the other by permuting rows (necessarily of the same length). We denote an /-labelling of>. by a symbol(>., l), where l refers to the labelling. In view of (7.9)(i), corre- sponding to each /-partition(>., l), we have a standard module for ~(q), which we denote by M(>.,z), which is uniquely defined up to isomorphism; similarly for the top quotient L(>.,l) mentioned above. Further, in view of (7.9)(ii), we also have associated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "thm-sec-009-05.md",
+      "narrative": null,
+      "content": "Let P and Po be the sets of semisimple-nilpotent pairs defined above, and let ::::5 be the partial order on P generated by the relation 6.5. Then in the Grothendieck group of finite-dimensional H!(;(q)-modules, (6.7) [Ms,N]= (s' ,N')E'Po (s,N):5(s',N') [Ls',N'] for any pair (s,N) E P, and for (s, N) E Po, (6.8) s' N' where ns,N = 0 or ±1. (s' ,N')E'P (s,N)~(s' ,N') We conclude this section by giving some applications to the structure of the standard modules which are easy consequences of Theorem 6.6",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-009-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Ginzburg [5], 8.6.23",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "thm-sec-009-07.md",
+      "narrative": null,
+      "content": "(see also [1] and [11]). We have the following multiplicity formula for the standard modules Ms,N. Assume Ls,N =/= 0. Then (7.4) (M,',N' 'L,,N] ~ { 0 unless s' rvc s kN,N'(1) ifs = s' and ON':<:; ON 0 ifs = s' and ON' 1:. ON Here rvc denotes conjugacy in G = GLn(C). Let V = en, on which both G = GLn(C) and 0 act via matrix multiplication. For any linear transformation A of V and element~ E C, write V(A, ~) for the ~-eigenspace of A in V. For any pair (s, N) as above, write V = V1 EB V2 EB · · · EB Vk for the s-eigenspace decomposition J.J. Graham and G.l. Lehrer of V, where Vi = V(s, ~i) and t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/thm-sec-009-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 31,
+      "target": "thm-sec-009-12.md",
+      "narrative": null,
+      "content": "Let d be a fixed dimension vector and suppose that (.X,l), (.X',l') E p9(d), and (.x',l') ~ (.X,l). Then (7.17) k(> .. ,l),(>..',l')(t) = 1. For (.X, l) E Ptf2(d), (7.16) follows immediately from (6.9) and (7.17), because K(>..,I),(N,1')(1) = 1 implies that K(>..,l),(>..',l')(t) = 1, since K(>..,l),(>..',l')(t) E Z~o[t]. But if (.X, l) is not aperiodic, then as observed above .X= (m, m) for some m, and so (.X, l) is minimal in 'P~2 (d), whence (.X, l) = (A', l') and (7.17) holds trivially. This means that the variety O(>..,l) is rationally smooth (but not generally smooth) at the points of O(>",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/04010141/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "References \n[ 1) S. Ariki, \"On the decomposition numbers of the Heeke algebra of \nG(m, 1, n)\", J. Math. Kyoto Univ. 36 (1996), 789-808. \n[ 2) S. Ariki and A. Mathas, \"The number of simple modules of the Heeke \nalgebras of type G(r, 1, n)\", Math. Zeitschrift, to appear. \n[ 3) D. J. Benson, \"Representations and cohomology. I. Basic representation \ntheory of finite groups and associative algebras. Second edition.\" Cam-\nbridge Studies in Advanced Mathematics, 30, Cambridge University \nPress Cambridge, (1998). \n[ 4) LN. Bernstein and A.V. Zelevinsky, \"Induced representations of reductive \np-adic gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

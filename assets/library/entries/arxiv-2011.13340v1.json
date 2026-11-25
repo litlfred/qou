@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2011.13340v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Concentration inequalities bound tail probabilities of general functions of random variables. Several methods have been known to prove such inequalities, including martingale methods, information theoretic methods, Talagrand's induction method as well as a variety of problem-specific methods. Ledoux (see \\cite{Led} for a survey) developed a powerful framework known as the \"entropy method\" for proving concentration inequalities. This framework is concerned with proving functional inequalities (like Poincare and log-Sobolev inequalities) which bound some global divergence of any function whose c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2011.13340v1  [math.PR]  26 Nov 2020\nA Matrix Bernstein Inequality for Strong Rayleigh\nDistributions*\nTarun Kathuria\nEECS, UC Berkeley\ntarunkathuria@berkeley.edu\nAbstract\nThe Entropy method provides a powerful framework for proving scalar concentration in-\nequalities by establishing functional inequalities like Poincare and log-Sobolev inequalities.\nThese inequalities are especially useful for deriving concentration for dependent distributions\ncoming from stationary distributions of Markov chains. In contrast to the scalar case, the study\nof matrix concentration inequalities is fairly re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-2-matrix-valued-poincare-inequality-for-strong-r.md",
+      "narrative": null,
+      "content": "In this section, we prove our matrix valued Poincare inequality for measures satisfying the stochastic covering property (SCP). We first need some notation in order to define SCP measures. Let $\\{e_i\\}_{i=1}^{n}$ be the coordinate basis of $\\mathbb{R}^n$. For $x,y \\in \\{ 0,1\\}^n$, we write $x\\triangleright y$ if $x$ can be obtained by $y$ by increasing at most one coordinate from 0 to 1, i.e.,\n\\begin{align*}\n  x=y \\ \\text{ or } \\ \\exists i \\in [n], \\ x=y+e_i\n\\end{align*}\nThis \\textit{covering} relation can be lifted to measures on $\\{ 0,1\\}^n$ by writing $\\pi \\triangleright \\pi'$ whenever ther",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-a-bernstein-inequality-from-matrix-valued-poin.md",
+      "narrative": null,
+      "content": "In this section we show how to use Matrix valued Poincare inequalities to obtain matrix Bernstein style inequalities.\n\nWe will need a well-known monotonicity property of the trace exponential \\cite{TroppIntro15}\n\\begin{lemma}\n  \\label{lem:trMonotone}\n  For any monotone function $f$, for any Hermitian matrices $\\bf{A}$ and $\\bf{H}$ such that $\\bf{A} \\preceq \\bf{H}$, then $\\Tr\\big[f(\\mathbf{A})\\big] \\leq \\Tr\\big[ f(\\mathbf{H})\\big]$\n\\end{lemma}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe next lemma characterizes Jensen's inequality for matrices. The first statement about operator Jensen's inequality for matrices can be f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with KyngSong18",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-4-comparison-with-kyngsong18.md",
+      "narrative": null,
+      "content": "\\label{sec:ks}\nWe first state the main result of \\cite{KyngSong18} below.\n\\begin{theorem}\\label{thm:kyngsong} Suppose $(x_1,\\ldots,x_n)\\in\\{0,1\\}^n$ is a random subset whose distribution is a $k$-homogenous strong Rayleigh distribution. Given a collection of PSD matrices $A_1,\\ldots,A_n\\in\\mathbb{R}^{d\\times d}$ s.t. for all $e \\in [n]$ we have $\\|A_e\\|\\leq 1$ and $\\|\\mathbb{E}[\\sum_e x_e A_e]\\|\\leq\\mu$. Then for any $\\varepsilon > 0$,\n  \\begin{align*}\n    \\mathsf{Pr}[\\|\\sum_e x_e A_e - \\mathbb{E}[\\sum_e x_e A_e]\\|\\geq \\varepsilon \\mu]\\leq de^{-\\varepsilon^2\\mu/(\\log k + \\varepsilon) \\Theta(1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and Open Questions",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-5-conclusion-and-open-questions.md",
+      "narrative": null,
+      "content": "In this paper, we build on the work of \\cite{CT13} to obtain matrix concentration of Lipshitz matrix-valued functions using functional inequalities without any stringent assumptions on the rotational symmetry of the random matrices. Our strategy seems general enough that it should work for proving Matrix concentration for a large class of interesting Markov chains for which scalar spectral gap inequalities are proved using the chain decomposition idea of \\cite{JSTV04}. We also believe our techniques should be extendible to prove similar concentration for strong log-concave polynomials \\cite{AL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.13340v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[ABY19]\nRichard Aoun, Marwa Banna, and Pierre Youssef, Matrix poincaré inequalities and concen-\ntration.\n[AGR16]\nNima Anari, Shayan Oveis Gharan, and Alireza Rezaei, Monte carlo markov chain al-\ngorithms for sampling strongly rayleigh distributions and determinantal point processes, Pro-\nceedings of the 29th Conference on Learning Theory, COLT 2016, New York, USA, June\n23-26, 2016, 2016, pp. 103–115.\n[ALGV19] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, and Cynthia Vinzant, Log-concave poly-\nnomials II: high-dimensional walks and an FPRAS for counting bases of a matroid, Proceedings\nof the 51s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

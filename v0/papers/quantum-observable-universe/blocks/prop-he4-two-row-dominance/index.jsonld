@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-he4-two-row-dominance",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:he4-two-row-dominance",
+  "kind": "proposition",
+  "title": "Two-row stratum carries $\\ge 80\\%$ of $\\mathrm{tr}_M(\\beta_{^4\\mathrm{He}})$ at $q_0$ (exactly $1$ empirically)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum"
+  ],
+  "tags": [
+    "he4",
+    "doubly-magic",
+    "wedderburn-decomposition",
+    "two-row",
+    "magic-shell",
+    "su2-schur-weyl",
+    "f1-fingerprint",
+    "verified-empirically"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.He4TwoRowDominance.HasHe4TwoRowDominance",
+  "text": "he4-two-row-dominance.md",
+  "leanSource": "he4-two-row-dominance.lean",
+  "provenance": "authored"
+}

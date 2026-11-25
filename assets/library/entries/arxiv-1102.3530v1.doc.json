@@ -1,0 +1,587 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1102.3530v1",
+  "title": "arxiv-1102.3530v1",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Integral formula for the colored Jones polynomial",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-integral-formula-for-the-colored-jones-polynom"
+    },
+    {
+      "level": 1,
+      "title": "Approximating the integral formula",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-approximating-the-integral-formula"
+    },
+    {
+      "level": 1,
+      "title": "Topological interpretations of S(u) and T(u)",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Representation",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-41-representation"
+    },
+    {
+      "level": 2,
+      "title": "Reidemeister torsion",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Chern–Simons invariant",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-43-chernsimons-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Calculation of S",
+      "number": "5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-calculation-of-s"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Proposition ??",
+      "number": "6",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Proof of Proposition ??",
+      "number": "7",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Proof of Lemma ??",
+      "number": "8",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murakami yokota",
+          "heading": false
+        },
+        {
+          "term": "andersen hansen",
+          "heading": false
+        },
+        {
+          "term": "sqrt operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "operatorname vol",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J_N(K;q)$ be the colored Jones polynomial of a knot $K$ in the three-sphere $S^3$ associated with the $N$-dimensional irreducible representation of $\\mathfrak{sl}(2;\\mathbb{C})$. We normalize it so that $J_N(\\text{unknot};q)=1$. Note that $J_2(K;q)$ is the celebrated Jones polynomial [@Jones:BULAM385] after a suitable change of variable. In 1995 Kashaev introduced a complex valued knot invariant for each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-integral-formula-for-the-colored-jones-polynom",
+      "number": "2",
+      "title": "Integral formula for the colored Jones polynomial",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "u-2l gamma",
+          "heading": false
+        },
+        {
+          "term": "sqrt u-2l",
+          "heading": false
+        },
+        {
+          "term": "varepsilon sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "sqrt exp",
+          "heading": false
+        },
+        {
+          "term": "connects varepsilon",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm gamma",
+          "heading": false
+        },
+        {
+          "term": "prod bigl",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:integral label=\"sec:integral\"} In this section we use the quantum dilogarithm function to express the colored Jones polynomial of the figure-eight knot as an integral. We mainly follow [@Andersen/Hansen:JKNOT2006]. First of all we recall the following formula due to Habiro and Le (see for example [@Masbaum:ALGGT12003]). $$\\label{eq:Habiro_Le} \\begin{split} J_N(E;q) &= \\sum_{k=0}^{N-1} \\prod_{l=1}^{k}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-approximating-the-integral-formula",
+      "number": "3",
+      "title": "Approximating the integral formula",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi saddle",
+          "heading": false
+        },
+        {
+          "term": "sqrt gamma",
+          "heading": false
+        },
+        {
+          "term": "sqrt int",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "split bigl",
+          "heading": false
+        },
+        {
+          "term": "exp bigl",
+          "heading": false
+        },
+        {
+          "term": "andersen hansen",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:approximation label=\"sec:approximation\"} In this section we approximate the integral formula for the colored Jones polynomial obtained in the previous section. Since $\\tan(N\\pi w)$ is close to $\\sqrt{-1}$ ($-\\sqrt{-1}$, respectively) when $\\operatorname{Im}(w)$ is positive and large (negative and $|\\operatorname{Im}(w)|$ is large, respectively), we can approximate $G_{\\pm}(N,\\varepsilon)$ by the integral of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-41-representation",
+      "number": "4.1",
+      "title": "Representation",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cone angle",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "log bigl",
+          "heading": false
+        },
+        {
+          "term": "yxy",
+          "heading": false
+        },
+        {
+          "term": "sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "Let $x$ and $y$ be the Wirtinger generators of the fundamental group $\\pi_1(S^3\\setminus{E})$ (with a base point above the paper) of the complement of the figure-eight knot $E$ depicted in Figure [1](#fig:fig8_pi1){reference-type=\"ref\" reference=\"fig:fig8_pi1\"}. ![Generators of the fundamental group of the complement of the figure-eight knot](fig8_pi1.eps){#fig:fig8_pi1} The group $\\pi_1(S^3\\setminus{E})$ has the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-43-chernsimons-invariant",
+      "number": "4.3",
+      "title": "Chern–Simons invariant",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-42-reidemeister-torsion",
+      "number": "4.2",
+      "title": "Reidemeister torsion",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "csu",
+          "heading": false
+        },
+        {
+          "term": "simons invariant",
+          "heading": false
+        },
+        {
+          "term": "three-manifold",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "logical Reidemeister torsion T E λ (ρu) associated with the longitudeλ twisted by the adjoint action of the representation ρu is given by T E λ (ρu) = 1√ 17 + 4 Tr ( ρu(λ) ) = 1 2m + 2m−1 − 1 up to sign, where Tr means the trace. Note that since in [24] Porti u ses homological Reidemeister torsion, we need to take the inverse. From [24, Th´ eor` eme 4.1] the Reidemeister torsion T E µ (ρu) associated with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-calculation-of-s",
+      "number": "5",
+      "title": "Calculation of S",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7857,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varepsilon searrow",
+          "heading": false
+        },
+        {
+          "term": "varepsilon bigr",
+          "heading": false
+        },
+        {
+          "term": "varepsilon right",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "sqrt gamma",
+          "heading": false
+        },
+        {
+          "term": "bigl kappa",
+          "heading": false
+        },
+        {
+          "term": "varepsilon end",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:S_gamma} In this section we first show the analyticity of $S_{\\gamma}$ and then calculate its special values. \\begin{lem}\\label{lem:analyticity} If a complex number $\\gamma$ has the positive real part, then $S_{\\gamma}(z)$ is an analytic function in $\\{z\\in\\C\\mid|\\Re(z)|<\\pi+\\Re(\\gamma)\\}$. \\end{lem} \\begin{proof} Put \\begin{equation*} L_{\\gamma}(t) := \\frac{e^{zt}}{t\\sinh(\\pi t)\\sinh(\\gamma t)}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surgeries on the ﬁgure 8 knot , J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548. MR MR2221531 [2] T. Dimofte and S. Gukov, Quantum ﬁeld theory and the volume conjecture , to appear in Contemporary Mathematics ”Interactions Between Hyperbol ic Geometry, Quantum Topol- ogy and Number Theory”, arXiv:1003.4808, 2010. [3] T. Dimofte, S.",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "varepsilon sqrt",
+      "heading": false
+    },
+    {
+      "term": "sqrt gamma",
+      "heading": false
+    },
+    {
+      "term": "frac sqrt",
+      "heading": false
+    },
+    {
+      "term": "sqrt exp",
+      "heading": false
+    },
+    {
+      "term": "varepsilon bigr",
+      "heading": false
+    },
+    {
+      "term": "sqrt operatorname",
+      "heading": false
+    },
+    {
+      "term": "sqrt right",
+      "heading": false
+    },
+    {
+      "term": "exp bigl",
+      "heading": false
+    },
+    {
+      "term": "int sqrt",
+      "heading": false
+    },
+    {
+      "term": "split bigl",
+      "heading": false
+    },
+    {
+      "term": "andersen hansen",
+      "heading": false
+    },
+    {
+      "term": "phi bigl",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1102.3530v1"
+  }
+}

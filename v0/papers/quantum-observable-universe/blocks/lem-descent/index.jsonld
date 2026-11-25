@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-descent",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:descent",
+  "kind": "lemma",
+  "title": "Descent along the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-descent"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-descent-lemma-su2"
+  ],
+  "tags": [
+    "descent",
+    "frobenius-hopf",
+    "star-homomorphism"
+  ],
+  "defines": [
+    "descent"
+  ],
+  "leanRef": "qou:QOU.descentHom_surjective",
+  "text": "descent-lemma.md",
+  "leanSource": "descent-lemma.lean",
+  "provenance": "authored"
+}

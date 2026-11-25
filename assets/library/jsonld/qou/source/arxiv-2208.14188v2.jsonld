@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.14188v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Resurgence in complex Chern-Simons theory at generic levels",
+  "contains": [
+    "library/arxiv-2208.14188v2/sections/sec-front-matter",
+    "library/arxiv-2208.14188v2/sections/sec-000",
+    "library/arxiv-2208.14188v2/sections/sec-001",
+    "library/arxiv-2208.14188v2/sections/sec-002",
+    "library/arxiv-2208.14188v2/sections/sec-003",
+    "library/arxiv-2208.14188v2/sections/sec-004",
+    "library/arxiv-2208.14188v2/sections/sec-005",
+    "library/arxiv-2208.14188v2/sections/sec-006",
+    "library/arxiv-2208.14188v2/sections/sec-007",
+    "library/arxiv-2208.14188v2/sections/sec-008",
+    "library/arxiv-2208.14188v2/sections/sec-009",
+    "library/arxiv-2208.14188v2/sections/sec-010",
+    "library/arxiv-2208.14188v2/sections/sec-011",
+    "library/arxiv-2208.14188v2/sections/sec-012",
+    "library/arxiv-2208.14188v2/sections/sec-013",
+    "library/arxiv-2208.14188v2/sections/sec-014",
+    "library/arxiv-2208.14188v2/sections/sec-015",
+    "library/arxiv-2208.14188v2/sections/sec-016",
+    "library/arxiv-2208.14188v2/sections/sec-017",
+    "library/arxiv-2208.14188v2/sections/sec-018",
+    "library/arxiv-2208.14188v2/sections/sec-019",
+    "library/arxiv-2208.14188v2/sections/sec-020",
+    "library/arxiv-2208.14188v2/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic\n\n**Resurgence in complex Chern-Simons theory at generic levels**\n\n*Zhihao Duana Jie Gub*\n\n46 pp, 23 sections.\n\n**Abstract.** In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic discrete level k ≥1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.\n\n**Outline.** Front matter; 1 Introduction; 2 Resurgent structure of complex Chern-Simons ; 2.1 Perturbative complex Chern-Simons theory a; 2.2 Resurgent structure of complex Chern-Simon; 2.3 Stokes constants and BPS invariants; 3 Figure eight; 3.1 Asymptotic series; 3.2 Holomorphic blocks; 3.3 Resurgent structure; 4 Three twists; 4.1 Asymptotic series; 4.2 Holomorphic blocks; 4.3 Resurgent structure; 5 Conclusion and discussion; A Tetrahedron partition function at level k; A.1 Fundamental properties; A.2 Zeros and poles",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2208.14188&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2208.14188v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2208.14188v2.pdf",
+    "source_sha256": "92a7651c81b799b393123a235a0275531f55b77881894a33d8d5e43e28b24780",
+    "pages": 46,
+    "arxiv": {
+      "id": "2208.14188",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "8 Feb 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

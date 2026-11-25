@@ -1,0 +1,92 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1701.06567v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "BPS spectra and 3-manifold invariants",
+  "contains": [
+    "library/arxiv-1701.06567v2/sections/sec-front-matter",
+    "library/arxiv-1701.06567v2/sections/sec-000",
+    "library/arxiv-1701.06567v2/sections/sec-001",
+    "library/arxiv-1701.06567v2/sections/sec-002",
+    "library/arxiv-1701.06567v2/sections/sec-003",
+    "library/arxiv-1701.06567v2/sections/sec-004",
+    "library/arxiv-1701.06567v2/sections/sec-005",
+    "library/arxiv-1701.06567v2/sections/sec-006",
+    "library/arxiv-1701.06567v2/sections/sec-007",
+    "library/arxiv-1701.06567v2/sections/sec-008",
+    "library/arxiv-1701.06567v2/sections/sec-009",
+    "library/arxiv-1701.06567v2/sections/sec-010",
+    "library/arxiv-1701.06567v2/sections/sec-011",
+    "library/arxiv-1701.06567v2/sections/sec-012",
+    "library/arxiv-1701.06567v2/sections/sec-013",
+    "library/arxiv-1701.06567v2/sections/sec-014",
+    "library/arxiv-1701.06567v2/sections/sec-015",
+    "library/arxiv-1701.06567v2/sections/sec-016",
+    "library/arxiv-1701.06567v2/sections/sec-017",
+    "library/arxiv-1701.06567v2/sections/sec-018",
+    "library/arxiv-1701.06567v2/sections/sec-019",
+    "library/arxiv-1701.06567v2/sections/sec-020",
+    "library/arxiv-1701.06567v2/sections/sec-021",
+    "library/arxiv-1701.06567v2/sections/sec-022",
+    "library/arxiv-1701.06567v2/sections/sec-023",
+    "library/arxiv-1701.06567v2/sections/sec-024",
+    "library/arxiv-1701.06567v2/sections/sec-025",
+    "library/arxiv-1701.06567v2/sections/sec-026",
+    "library/arxiv-1701.06567v2/sections/sec-027",
+    "library/arxiv-1701.06567v2/sections/sec-028",
+    "library/arxiv-1701.06567v2/sections/sec-029",
+    "library/arxiv-1701.06567v2/sections/sec-030",
+    "library/arxiv-1701.06567v2/sections/sec-031",
+    "library/arxiv-1701.06567v2/sections/sec-032",
+    "library/arxiv-1701.06567v2/sections/sec-033",
+    "library/arxiv-1701.06567v2/sections/sec-034",
+    "library/arxiv-1701.06567v2/sections/sec-035"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections.\n\n**BPS spectra and 3-manifold invariants**\n\n*Sergei Gukov1, Du Pei1,2, Pavel Putrov3, Cumrun Vafa4*\n\n81 pp, 37 sections.\n\n**Abstract.** We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections. The physical system in question involves a 6d ﬁvebrane theory on M3 times a 2-disk, D2, whose Hilbert space of BPS states plays the role of a basic building block in categoriﬁcation of various partition functions of 3d N = 2 theory T[M3]: D2 × S1 half-index, S2 × S1 superconformal index, and S2 × S1 topologically twisted index. The ﬁrst partition function is labeled by a choice of boundary condition and provides a reﬁnement of Chern-Simons (WRT) invariant. A linear combination of them in the unreﬁned limit gives the analytically continued WRT invariant of M3. The last two can be factorized into the product of half-indices.\n\n**Outline.** Front matter; 1 Introduction; 2 Fivebranes on 3-manifolds and categorificati; 2.1 Preliminaries; 2.2 $D^2\\times S^1$ partition function of $T[M; Categorification of WRT invaraiant; Physics behind the proposal; Resurgence in 3d ${\\mathcal N}=2$ theories; 2.3 Realization in terms of counting solutions; 2.4 Surgeries, triangulations, and Atiyah-Floe; 2.5 Superconformal index of $T[M_3]$ and its f; 2.6 Further refinement; 2.7 Topologically twisted index of $T[M_3]$; 2.8 Generalization to $U(N)$; 2.9 Relation to open GW invariants on $T^*M_3$; 2.10 Langlands duality and flat connections; 3 Examples; 3.1.1 Categorifying the index",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1701.06567&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1701.06567v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1701.06567v2.pdf",
+    "source_sha256": "c1610b50f5a7e22c4d5bc359cd5b8f6a7e8c121b3eae079bd2a1e41a2956c8da",
+    "pages": 81,
+    "arxiv": {
+      "id": "1701.06567",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "24 May 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

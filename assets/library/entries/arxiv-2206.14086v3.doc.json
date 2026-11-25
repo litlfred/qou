@@ -1,0 +1,1672 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2206.14086v3",
+  "title": "KPZ limit theorems",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "TASEP, corner growth model, and exponential DLPP",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp"
+    },
+    {
+      "level": 2,
+      "title": "TASEP",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-21-tasep"
+    },
+    {
+      "level": 2,
+      "title": "Corner growth model",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-corner-growth-model"
+    },
+    {
+      "level": 2,
+      "title": "Exponential DLPP",
+      "number": "2.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-exponential-dlpp"
+    },
+    {
+      "level": 2,
+      "title": "Hydrodynamic limit and KPZ limit",
+      "number": "2.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-hydrodynamic-limit-and-kpz-limit"
+    },
+    {
+      "level": 1,
+      "title": "One-point distribution",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-one-point-distribution"
+    },
+    {
+      "level": 2,
+      "title": "Poisson DLPP",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-poisson-dlpp"
+    },
+    {
+      "level": 2,
+      "title": "Longest increasing subsequence",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-longest-increasing-subsequence"
+    },
+    {
+      "level": 2,
+      "title": "Exponential DLPP",
+      "number": "3.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-exponential-dlpp"
+    },
+    {
+      "level": 2,
+      "title": "Integrable method",
+      "number": "3.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-integrable-method"
+    },
+    {
+      "level": 1,
+      "title": "Multi-point distributions",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-multi-point-distributions"
+    },
+    {
+      "level": 1,
+      "title": "Half-infinite space",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-half-infinite-space"
+    },
+    {
+      "level": 1,
+      "title": "Ring domain",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-6-ring-domain"
+    },
+    {
+      "level": 1,
+      "title": "Formula of multi-point distribution functions",
+      "number": "7",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-7-formula-of-multi-point-distribution-functions"
+    },
+    {
+      "level": 2,
+      "title": "Formula for KPZ fixed point",
+      "number": "7.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-71-formula-for-kpz-fixed-point"
+    },
+    {
+      "level": 2,
+      "title": "Periodic case",
+      "number": "7.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-72-periodic-case"
+    },
+    {
+      "level": 2,
+      "title": "Transition probabilities",
+      "number": "7.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-73-transition-probabilities"
+    },
+    {
+      "level": 1,
+      "title": "Integrable differential equations",
+      "number": "8",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-8-integrable-differential-equations"
+    },
+    {
+      "level": 1,
+      "title": "Comments on universality",
+      "number": "9",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-9-comments-on-universality"
+    },
+    {
+      "level": 2,
+      "title": "Thin DLPP",
+      "number": "9.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-91-thin-dlpp"
+    },
+    {
+      "level": 2,
+      "title": "Interacting particle systems",
+      "number": "9.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-92-interacting-particle-systems"
+    },
+    {
+      "level": 2,
+      "title": "TASEP, Coulomb gas, and random matrices",
+      "number": "9.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-93-tasep-coulomb-gas-and-random-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Universality in many directions",
+      "number": "9.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-94-universality-in-many-directions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz",
+          "heading": false
+        },
+        {
+          "term": "limit theorems",
+          "heading": false
+        },
+        {
+          "term": "rected",
+          "heading": false
+        },
+        {
+          "term": "jinho",
+          "heading": false
+        }
+      ],
+      "extract": "KPZ limit theorems Jinho Baik∗ July 21, 2022 Abstract One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2206.14086v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz universality",
+          "heading": false
+        },
+        {
+          "term": "scaled height",
+          "heading": false
+        },
+        {
+          "term": "directed polymer",
+          "heading": false
+        },
+        {
+          "term": "height function",
+          "heading": false
+        },
+        {
+          "term": "random growth",
+          "heading": false
+        },
+        {
+          "term": "interacting particle",
+          "heading": false
+        },
+        {
+          "term": "function converges",
+          "heading": false
+        },
+        {
+          "term": "particle systems",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction The KPZ universality is concerned with, among others, one-dimensional interacting particle systems, 1+1 random growth, and two-dimensional directed polymers. These models deﬁne height functions h(x, t), two- dimensional random ﬁelds, where x represents the one-dimensional spatial position and t the time. A height function encodes the integrated current for interacting particle systems, the height for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-tasep",
+      "number": "2.1",
+      "title": "TASEP",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz universality",
+          "heading": false
+        },
+        {
+          "term": "kpz limit",
+          "heading": false
+        },
+        {
+          "term": "limit theorems",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": false
+        },
+        {
+          "term": "decades",
+          "heading": false
+        },
+        {
+          "term": "distributions",
+          "heading": false
+        },
+        {
+          "term": "article",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "random matrix theory was completely unexpected at that time. Soon after, Johansson [53] proved a similar result for another model, giving yet another example of a KPZ limit theorem. Exciting developments on KPZ limit theorems followed these results during the next two decades. For example, one-point limit theorems were extended to equal-time, multi-position distributions, multi-time distributions, and even to the 2d",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
+      "number": "2",
+      "title": "TASEP, corner growth model, and exponential DLPP",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tasep",
+          "heading": true
+        },
+        {
+          "term": "waiting time",
+          "heading": false
+        },
+        {
+          "term": "interacting particle",
+          "heading": false
+        },
+        {
+          "term": "step initial",
+          "heading": false
+        },
+        {
+          "term": "dlpp",
+          "heading": true
+        },
+        {
+          "term": "particle systems",
+          "heading": false
+        },
+        {
+          "term": "growth",
+          "heading": true
+        }
+      ],
+      "extract": "TASEP, corner growth model, and exponential DLPP This section discusses one of the most well-studied examples of one-dimensional interacting particle systems, 1+1 random growth, and two-dimensional directed polymers. 2.1 TASEP The totally asymmetric simple exclusion process (TASEP), introduced by Spitzer [82] in 1970, is a continuous- time Markov process on Z. At any given time, each integer site of Z is occupied by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-corner-growth-model",
+      "number": "2.2",
+      "title": "Corner growth model",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "(1, 1) (m, n)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-23-exponential-dlpp",
+      "number": "2.3",
+      "title": "Exponential DLPP",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential dlpp",
+          "heading": true
+        },
+        {
+          "term": "directed",
+          "heading": false
+        },
+        {
+          "term": "initial condition",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "normalized free",
+          "heading": false
+        },
+        {
+          "term": "corner",
+          "heading": false
+        },
+        {
+          "term": "free energy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:DLPP label=\"sec:DLPP\"} Consider the two-dimensional lattice $\\mathbb{Z}_+^2$. Let $(m,n)\\in \\mathbb{Z}_+^2$. An up/right (i.e., directed) path from $(1,1)$ to $(m,n)$ is a sequence $p=(p_i)_{i=1}^{m+n-1}$, where $p_i\\in \\mathbb{Z}_+^2$, $p_1=(1,1)$, $p_{m+n-1}=(m,n)$, and $p_{i+1}-p_i\\in \\{(1,0), (0,1)\\}$. The thick lines in Figure [\\[fig:ExpDLPP\\]](#fig:ExpDLPP){reference-type=\"ref\" reference=\"fig:ExpDLPP\"}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-hydrodynamic-limit-and-kpz-limit",
+      "number": "2.4",
+      "title": "Hydrodynamic limit and KPZ limit",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz",
+          "heading": true
+        },
+        {
+          "term": "hydrodynamic limit",
+          "heading": true
+        },
+        {
+          "term": "kpz universality",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "kpz fixed",
+          "heading": false
+        },
+        {
+          "term": "frac mathbf",
+          "heading": false
+        },
+        {
+          "term": "passage percolation",
+          "heading": false
+        },
+        {
+          "term": "random growth",
+          "heading": false
+        }
+      ],
+      "extract": "The hydrodynamic limit of TASEP is about $\\mathbf{h}(x,t)$ when $x$ and $t$ are proportional. For the step initial condition, $\\mathbf{h}(x,0)=|x|$, Rost [@Rost81] showed in 1981 that $$\\frac{\\mathbf{h}(xT, tT)}{T} \\to \\bar{\\mathbf{h}}(x,t)$$ almost surely as $T\\to \\infty$, where $\\bar{\\mathbf{h}}(x,t) = \\frac{t^2+x^2}{2t}$ for $|x|\\le t$ and $\\bar{\\mathbf{h}}(x,t) = |x|$ for $|x|\\ge t$. See Figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-poisson-dlpp",
+      "number": "3.1",
+      "title": "Poisson DLPP",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-3-one-point-distribution",
+      "number": "3",
+      "title": "One-point distribution",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-point",
+          "heading": true
+        },
+        {
+          "term": "kpz ﬁxed",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom distribution",
+          "heading": false
+        },
+        {
+          "term": "poisson points",
+          "heading": false
+        },
+        {
+          "term": "ftw",
+          "heading": false
+        },
+        {
+          "term": "dlpp",
+          "heading": false
+        },
+        {
+          "term": "main theorem",
+          "heading": false
+        }
+      ],
+      "extract": "One-point distribution We discuss one-point KPZ limit theorems from [6] and [53] mentioned in the introduction, and extensions to other models. 3.1 Poisson DLPP Poisson directed last passage percolation is a variation of the exponential DLPP. Consider a realization of a 2d Poisson process in R2 +. An up/right path p this time is deﬁned as the graph of a continuous piecewise linear function of positive slopes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-longest-increasing-subsequence",
+      "number": "3.2",
+      "title": "Longest increasing subsequence",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "increasing subsequence",
+          "heading": true
+        },
+        {
+          "term": "longest increasing",
+          "heading": true
+        },
+        {
+          "term": "exponential dlpp",
+          "heading": false
+        },
+        {
+          "term": "ell sqrt",
+          "heading": false
+        },
+        {
+          "term": "poisson",
+          "heading": false
+        },
+        {
+          "term": "mathsf",
+          "heading": false
+        },
+        {
+          "term": "johansson",
+          "heading": false
+        },
+        {
+          "term": "hammersley",
+          "heading": false
+        }
+      ],
+      "extract": "The Poisson DLPP is particularly interesting due to its connection to longest increasing subsequences of random permutations. Note that finitely many points in a rectangle with distinct $x$ and $y$ coordinates can be associated with a permutation by considering the relative orderings of the coordinates. For example, the points in Figure [\\[fig:PoissonDLPP\\]](#fig:PoissonDLPP){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-exponential-dlpp",
+      "number": "3.3",
+      "title": "Exponential DLPP",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential dlpp",
+          "heading": true
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "α2γ",
+          "heading": false
+        }
+      ],
+      "extract": "Exponential DLPP Soon after Theorem 3.1 was proved, Johansson showed that the exponential DLPP model also satisﬁes a similar limit theorem [53]. We state the result in terms of the height function of the TASEP. Theorem 3.2 ( [53]). Assume the step initial condition for the TASEP. Then, for every (τ, γ, h) ∈R+ × R × R, lim T →∞P \u0012h(γT 2/3, 2τT) −τT −T 1/3 ≤h \u0013 = FTW \u0012 h τ 1/3 + γ2 4τ 4/3 \u0013 . Note from either side of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-integrable-method",
+      "number": "3.4",
+      "title": "Integrable method",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finite-time distribution",
+          "heading": false
+        },
+        {
+          "term": "integrable models",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "integrablemethod",
+          "heading": false
+        },
+        {
+          "term": "schur measure",
+          "heading": false
+        },
+        {
+          "term": "asep",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:integrablemethod label=\"sec:integrablemethod\"} The above theorems were obtained by explicitly computing the finite-time distribution function and then taking the large limit of the formula. In particular, for the TASEP, the finite-time formula is given by the Fredholm determinant of an operator. After suitable scaling and conjugation, the operator converges to the so-called Airy operator, the Fredholm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-multi-point-distributions",
+      "number": "4",
+      "title": "Multi-point distributions",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-point distributions",
+          "heading": true
+        },
+        {
+          "term": "multi-position distributions",
+          "heading": false
+        },
+        {
+          "term": "kpz fixed",
+          "heading": false
+        },
+        {
+          "term": "johansson",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "initial conditions",
+          "heading": false
+        },
+        {
+          "term": "multitime",
+          "heading": false
+        },
+        {
+          "term": "sasamoto",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:multitime label=\"sec:multitime\"} Prähofer and Spohn [@Prahofer-Spohn02], and Johansson [@Johansson03] extended the one-point distribution results of Theorem [\\[thm:Poisson\\]](#thm:Poisson){reference-type=\"ref\" reference=\"thm:Poisson\"} and [\\[thm:Johansson\\]](#thm:Johansson){reference-type=\"ref\" reference=\"thm:Johansson\"} to equal-time, multi-position distributions for the Poisson DLPP and the TASEP with step",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-half-infinite-space",
+      "number": "5",
+      "title": "Half-infinite space",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-point distribution",
+          "heading": false
+        },
+        {
+          "term": "injection rate",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "poisson png",
+          "heading": false
+        },
+        {
+          "term": "half-infinite",
+          "heading": true
+        },
+        {
+          "term": "injected",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "height",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:half label=\"sec:half\"} We discussed so far models on infinite spaces. For example, the TASEP was defined on $\\mathbb{Z}$. In this and the following sections, we consider different domains and their effects on the limit. Consider the TASEP on the half-infinite space $\\mathbb{Z}_+\\cup\\{0\\}$. We introduce a parameter $\\alpha>0$ representing the injection rate at site $0$: if the origin is empty, a new particle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-6-ring-domain",
+      "number": "6",
+      "title": "Ring domain",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "periodic tasep",
+          "heading": false
+        },
+        {
+          "term": "mathrm pkpz",
+          "heading": false
+        },
+        {
+          "term": "periodic kpz",
+          "heading": false
+        },
+        {
+          "term": "mathsf epsilon",
+          "heading": false
+        },
+        {
+          "term": "kpz fixed",
+          "heading": false
+        },
+        {
+          "term": "tau epsilon",
+          "heading": false
+        },
+        {
+          "term": "kpz limit",
+          "heading": false
+        },
+        {
+          "term": "gamma epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ring label=\"sec:ring\"} Consider the TASEP on the integer ring $\\mathbb{Z}_L=\\mathbb{Z}/L\\mathbb{Z}=\\{0, 1, \\cdots, L-1\\}$ where we identify sites $L$ and $0$. An equivalent model is the TASEP on $\\mathbb{Z}$ that is spatially periodic, which we may call the periodic TASEP. We call $L$ the size of the ring or the period of the periodic TASEP. <figure id=\"fig:Ringmaro\"> <figcaption>Hydrodynamic limits of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-7-formula-of-multi-point-distribution-functions",
+      "number": "7",
+      "title": "Formula of multi-point distribution functions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Formula of multi-point distribution functions",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-71-formula-for-kpz-fixed-point",
+      "number": "7.1",
+      "title": "Formula for KPZ fixed point",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz fixed",
+          "heading": true
+        },
+        {
+          "term": "mathsf zeta",
+          "heading": false
+        },
+        {
+          "term": "gamma mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathrm zeta",
+          "heading": false
+        },
+        {
+          "term": "fixed point",
+          "heading": true
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "rescale",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        }
+      ],
+      "extract": "Let $F_m$ be the $m$-point distribution of the KPZ fixed point with the narrow wedge initial condition. The result of [@Liu19] implies that $$\\label{eq:KPZformula} F_m(\\mathsf{h}; \\gamma, \\tau) = \\frac1{(2\\pi \\mathrm{i})^{m-1}} \\oint \\cdots \\oint \\frac{\\det( \\mathsf{1}- \\mathsf{K}_\\zeta)}{\\zeta_1(1-\\zeta_1) \\cdots \\zeta_{m-1} (1-\\zeta_{m-1})} \\mathrm{d}\\zeta_1 \\cdots \\mathrm{d}\\zeta_{m-1}$$ where $\\zeta=(\\zeta_1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-72-periodic-case",
+      "number": "7.2",
+      "title": "Periodic case",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf zeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm zeta",
+          "heading": false
+        },
+        {
+          "term": "kpzkkernel",
+          "heading": false
+        },
+        {
+          "term": "oint",
+          "heading": false
+        },
+        {
+          "term": "pkpz",
+          "heading": false
+        }
+      ],
+      "extract": "The formula of [@Baik-Liu19] is $$\\label{eq:PKPZformula} F^{\\mathrm{pKPZ}}_m(\\mathsf{h}; \\gamma, \\tau) = \\oint \\cdots \\oint C(\\zeta) \\det(\\mathsf{1}-\\mathsf{K}_\\zeta) \\mathrm{d}\\zeta_1 \\cdots \\mathrm{d}\\zeta_{m},$$ where this time there are $m$ integrals and $C(\\zeta)$ is an explicit function expressed in terms of polylog functions. The kernel of the operator $\\mathsf{K}_\\zeta$ is of the same form as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-73-transition-probabilities",
+      "number": "7.3",
+      "title": "Transition probabilities",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition probabilities",
+          "heading": true
+        },
+        {
+          "term": "betheeqlimit",
+          "heading": false
+        },
+        {
+          "term": "bethe roots",
+          "heading": false
+        },
+        {
+          "term": "integrablemethod",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        },
+        {
+          "term": "eqref",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Bethe label=\"sec:Bethe\"} We mentioned in Subsection [\\[sec:integrablemethod\\]](#sec:integrablemethod){reference-type=\"ref\" reference=\"sec:integrablemethod\"} that one way of proving a KPZ limit theorem for the TASEP is to compute the transition probabilities explicitly and then take an appropriate sum to find the finite-time distribution functions. The summation part is often more technical, but here we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-8-integrable-differential-equations",
+      "number": "8",
+      "title": "Integrable differential equations",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kpz ﬁxed",
+          "heading": false
+        },
+        {
+          "term": "integrable diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "prt",
+          "heading": false
+        },
+        {
+          "term": "rpt",
+          "heading": false
+        }
+      ],
+      "extract": "Integrable diﬀerential equations Distribution functions of the KPZ ﬁxed point have connections to deterministic integrable diﬀerential equa- tions. As proved in 1994 [86], the Tracy-Widom distribution is expressible in terms of the Painlev´e II equation, one of a family of six special nonlinear ordinary diﬀerential equations [43]. The papers [2,20,73,87,92] also found diﬀerential equations for equal-time,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-91-thin-dlpp",
+      "number": "9.1",
+      "title": "Thin DLPP",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integrable diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "vector-valued nonlinear",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "nls",
+          "heading": false
+        },
+        {
+          "term": "kadomtsev-petviashvili",
+          "heading": false
+        }
+      ],
+      "extract": "of vector-valued nonlinear forward and backward heat equations. They become vector-valued nonlinear Sch¨odinger (NLS) equations if we change yi 7→iyi. NLS and mKdV equations are two of the most famous integrable partial diﬀerential equations [1]. The above two systems of equations can be combined to the Kadomtsev-Petviashvili (KP) equation, another integrable diﬀerential equation in three variables. Theorem 8.1 was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-9-comments-on-universality",
+      "number": "9",
+      "title": "Comments on universality",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "universality",
+          "heading": true
+        },
+        {
+          "term": "ftw",
+          "heading": false
+        },
+        {
+          "term": "passage time",
+          "heading": false
+        },
+        {
+          "term": "dlpp",
+          "heading": false
+        },
+        {
+          "term": "rectangles",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "brownian",
+          "heading": false
+        }
+      ],
+      "extract": "Comments on universality KPZ limit theorems are proved for many isolated examples of integrable models. In this ﬁnal section, we discuss a few instances that universality is proved. 9.1 Thin DLPP The universality should hold for the last passage time L(n, k) as n, k →∞. It is easy to prove it for thin rectangles. Recall from Subsection 2.3 that ws denotes the random variable at site s ∈Z, representing the passage",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-92-interacting-particle-systems",
+      "number": "9.2",
+      "title": "Interacting particle systems",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finite-range exclusion",
+          "heading": false
+        },
+        {
+          "term": "tasep",
+          "heading": false
+        },
+        {
+          "term": "site",
+          "heading": false
+        }
+      ],
+      "extract": "The particles in the TASEP move only one site to the right. Consider a more general finite-range exclusion process in which a particle at site $0$ can potentially move to site $v$ at rate $p(v)$. Assume that $\\{v: p(v)>0\\}$ is a finite set generating $\\mathbb{Z}$ additively, and $\\sum_v v p(v)\\neq 0$. In a recent paper [@Quastel-Sakar20], Quastel and Sakar proved a KPZ limit theorem for finite-range exclusion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-93-tasep-coulomb-gas-and-random-matrices",
+      "number": "9.3",
+      "title": "TASEP, Coulomb gas, and random matrices",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coulomb gas",
+          "heading": true
+        },
+        {
+          "term": "random matrices",
+          "heading": true
+        },
+        {
+          "term": "coulomb gases",
+          "heading": false
+        },
+        {
+          "term": "exponential dlpp",
+          "heading": false
+        },
+        {
+          "term": "wishart matrix",
+          "heading": false
+        },
+        {
+          "term": "johansson",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "complex wishart",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:TASEPRM label=\"sec:TASEPRM\"} In proving Theorem [\\[thm:Johansson\\]](#thm:Johansson){reference-type=\"ref\" reference=\"thm:Johansson\"}, Johansson also proved an unexpected connection of TASEP to Coulomb gas and random matrices [@Johansson00]. Consider the probability density function on $\\mathbb{R}_+^n$ given by $$\\label{eq:Coulomb} p(x_1, \\cdots, x_n) = c_{n, m} e^{2\\sum_{1\\le i<j\\le n} \\log |x_j-x_i|-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-94-universality-in-many-directions",
+      "number": "9.4",
+      "title": "Universality in many directions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": "13",
+      "labelEnd": "19",
+      "words": 2377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "directed percolation",
+          "heading": false
+        },
+        {
+          "term": "periodic tasep",
+          "heading": false
+        },
+        {
+          "term": "universality",
+          "heading": true
+        },
+        {
+          "term": "asymmetric exclusion",
+          "heading": false
+        },
+        {
+          "term": "exclusion processes",
+          "heading": false
+        },
+        {
+          "term": "airy process",
+          "heading": false
+        },
+        {
+          "term": "corwin",
+          "heading": false
+        },
+        {
+          "term": "random growth",
+          "heading": false
+        }
+      ],
+      "extract": "Universality in many directions We discussed that the TASEP with the step initial condition is connected to several areas: • interacting particle system • 1+1 random growth process • two-dimensional directed last passage percolation and directed polymer • Coulomb gas 13 • random matrix The TASEP also has interpretations as a random tiling model, and non-intersecting paths [47, 54]. We expect universality results to",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "kpz universality",
+      "heading": false
+    },
+    {
+      "term": "kpz limit",
+      "heading": true
+    },
+    {
+      "term": "one-point kpz",
+      "heading": false
+    },
+    {
+      "term": "periodic kpz",
+      "heading": true
+    },
+    {
+      "term": "kpz equation",
+      "heading": false
+    },
+    {
+      "term": "periodic tasep",
+      "heading": false
+    },
+    {
+      "term": "kpz fixed",
+      "heading": true
+    },
+    {
+      "term": "kpz ﬁxed",
+      "heading": true
+    },
+    {
+      "term": "discrete-time tasep",
+      "heading": false
+    },
+    {
+      "term": "continuous-time tasep",
+      "heading": false
+    },
+    {
+      "term": "tasep becomes",
+      "heading": false
+    },
+    {
+      "term": "usual tasep",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "TASEP",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Corner growth model",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Exponential DLPP",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "An example of Gt",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Simulation of the corner growth model",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "y = ¯h(x, t) for a few values of t",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Poisson DLPP",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Step initial condition on an integer ring",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Hydrodynamic limits of periodic height function when t = O(t)",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The space Σ for KPZ ﬁxed point when m = 3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The space S for periodic KPZ ﬁxed when m = 3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Bethe roots when L = 24 and N = 8 for three values of z",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Thin DLPP",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 24,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 25,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 25 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2206.14086v3"
+  }
+}

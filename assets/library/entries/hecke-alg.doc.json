@@ -1,0 +1,3734 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "hecke-alg",
+  "title": "hecke-alg",
+  "variant": "pdf",
+  "pages": 78,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 28,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sydney",
+          "heading": false
+        },
+        {
+          "term": "mathas",
+          "heading": false
+        },
+        {
+          "term": "usyd",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras and Schur algebras of the symmetric group Andrew Mathas Author address: Scnoot oF MatTuematics FO7, UNIVERSITY OF SYDNEY, SYDNEY NSW 2006. AUSTRALIA E-mail address: mathas@maths .usyd.edu.au",
+      "extractCut": false,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sonderforschungsbereich",
+          "heading": false
+        },
+        {
+          "term": "bielefeld",
+          "heading": false
+        },
+        {
+          "term": "modu",
+          "heading": false
+        }
+      ],
+      "extract": "1991 Mathematics Subject Classification. Primary 20030, 16G99; Secondary 20G05, 20C20. The author gratefully acknowledges the support of the Sonderforschungsbereich 343 at the Universitat Bielefeld. ABSTRACT. These notes give a fully self-contained introduction to the (modu- lar) representation theory of the Iwahori-Hecke algebras and the q—Schur alge- bras of the symmetric groups. The central aim of this work is to",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specht modules",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "Contents Introduction Chapter 1. The Iwahori—Hecke algebra of the Symmetric Group 1. The Symmetric group 2. The Iwahori—Hecke algebra 3. The 0-Hecke algebra Notes on Chapter 1 Chapter 2. Cellular algebras 1. Cellular bases 2. Simple modules in a cellular algebra Notes on Chapter 2 Chapter 3. The Modular representation theory of .# 1. The combinatorics of tableaux 2. The Murphy basis 3. Specht modules and",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-schur algebras",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "q-schur algebras",
+          "heading": false
+        },
+        {
+          "term": "schur algebras",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "weyl modules",
+          "heading": false
+        }
+      ],
+      "extract": "Keep it simple; as simple as possible, but no simpler. Albert Einstein Introduction Twahori-Hecke algebras first appeared in the work of Iwahori [34] and now have applications in subjects ranging from the ordinary and modular representation theory of Coxeter groups and the groups of Lie type, to knot theory, quantum groups and statistical mechanics (sce [52] and the references there). Schur algebras were introduced",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "schur algebras",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "steffen",
+          "heading": false
+        },
+        {
+          "term": "brundan",
+          "heading": false
+        },
+        {
+          "term": "notes",
+          "heading": false
+        },
+        {
+          "term": "dipper",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "INTRODUCTION v in disguise because everything generalises to this more general context. Chapter 2 develops Graham and Lehrer’s theory of cellular algebras, culminating with the construction of the simple modules in this setting. In Chapter 3 these notes begin in earnest. The combinatorics of tableaux are introduced and Murphy’s basis theorem is proved in the first two sections. Using Chapter 2 this yields the simple",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "tsn",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "alls",
+          "heading": false
+        }
+      ],
+      "extract": "CHAPTER 1 The Iwahori—Hecke algebra of the Symmetric Group In this chapter we begin by proving some fundamental results about the sym- metric group and then define the associated Iwahori—Hecke algebra. Everything in this chapter, including the proofs, generalises to the case of arbitrary Coxeter groups and Iwahori—Hecke algebras. 1. The Symmetric group Throughout these notes we fix an integer n > 1. 1.1 Let G, be",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-006",
+        "library/hecke-alg/blocks/lem-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange condition",
+          "heading": false
+        },
+        {
+          "term": "strong exchange",
+          "heading": false
+        },
+        {
+          "term": "reduced expression",
+          "heading": false
+        },
+        {
+          "term": "unes",
+          "heading": false
+        }
+      ],
+      "extract": "2 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP as required. Oo For convenience let T = {(#,7) € Gn} = Unes, wSw-!. Then T is the set of reflections in G,, (considering G, as a Coxeter group), and N(w) C T. 1.3 Proposition Suppose that w € G,. Then (i) &(w) = |N(w)|; and, (ii) N(w) = {te T | (tw) < &(w) }- Proof. Suppose that s;, ...s;, isa reduced expression for w and, fora = 1,...,k, let tg = $i,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-007",
+        "library/hecke-alg/blocks/prop-page-007-01",
+        "library/hecke-alg/blocks/cor-page-007-02",
+        "library/hecke-alg/blocks/prop-page-007-03",
+        "library/hecke-alg/blocks/prop-page-007-04",
+        "library/hecke-alg/blocks/cor-page-007-05"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced expressions",
+          "heading": false
+        },
+        {
+          "term": "braid relation",
+          "heading": false
+        },
+        {
+          "term": "induction",
+          "heading": false
+        },
+        {
+          "term": "length",
+          "heading": false
+        },
+        {
+          "term": "less",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE IWAHORI-HECKE ALGEBRA 3 sw = 8),...5;,...5;,. Therefore, w = 88), ...5;, ... 8; reduced. The converse is clear. , and this expression is oO 1.7 Corollary (The Deletion Condition) Suppose that w € G,, &(w) < k and that w = 8;,...8;, for some s;, ES. (i) There erist integers 1<a<b<k such that w = 5), ...5;,.. 035, Sty. (ii) A reduced expression for w can be obtained by deleting an even number of the 8;, from",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-008",
+        "library/hecke-alg/blocks/cor-page-008-01"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "greatest common",
+          "heading": false
+        },
+        {
+          "term": "common divisor",
+          "heading": false
+        },
+        {
+          "term": "zjq",
+          "heading": false
+        }
+      ],
+      "extract": "4 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP associative R-algebra with generators T),7>,...,T,-1 which are subject to the relations (G-g)(Ht+1=09, for? =1,2,...,n—1, TT; = T;Ti, forl<i<j-l<n—-2, BTN = Tats, fori =1,2,...,n—2. Notice that when q = 1 the first relation reduces to T? = 1; thus, by (1.1), # is isomorphic to the group ring RG, of the symmetric group in this case. When q # 1 this may seem a",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-009",
+        "library/hecke-alg/blocks/thm-page-009-01"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-linear maps",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "specialization",
+          "heading": false
+        },
+        {
+          "term": "associative",
+          "heading": false
+        },
+        {
+          "term": "corollary",
+          "heading": false
+        },
+        {
+          "term": "induction",
+          "heading": false
+        },
+        {
+          "term": "analogue",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE IWAHORI-HECKE ALGEBRA 5 tensor product of the Corollary we consider R as an R-module with # € R acting on Ras ¢(?).) 1.12 Corollary Suppose that ¢g: RGR is a ring homomorphism with (q) = 4q for some gE R. Then ARq(Gn) and Hp g(Gn) @p R are canonically isomorphic algebras. In the situation of Corollary 1.12, we say that .%p4(G,) is a specialization of Hp (Gn): the tensor product map Hy 4(Gn) — Hy j(Gn) is",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-010",
+        "library/hecke-alg/blocks/cor-page-010-01",
+        "library/hecke-alg/blocks/cor-page-010-02",
+        "library/hecke-alg/blocks/prop-page-010-03"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonality relations",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "semisimple",
+          "heading": false
+        },
+        {
+          "term": "nilpotent",
+          "heading": false
+        },
+        {
+          "term": "corollary",
+          "heading": false
+        },
+        {
+          "term": "rational",
+          "heading": false
+        }
+      ],
+      "extract": "6 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP representation lj of #. Nonetheless, there is an analogue of the orthogonality relations when # is semisimple, Let Wn(9) = owes, gi be the Poincaré polynomial of G,,; this polynomial arises naturally in the invariant theory of the symmetric group (see, for example, [33, §3.15]). Because {1, 8,1, 8,—18n—2,.--,8n—1-.-S1} is a set of right coset representatives for",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-011",
+        "library/hecke-alg/blocks/cor-page-011-01",
+        "library/hecke-alg/blocks/thm-page-011-02"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "dyer",
+          "heading": false
+        },
+        {
+          "term": "r-module",
+          "heading": false
+        },
+        {
+          "term": "principal series",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": false
+        },
+        {
+          "term": "series representations",
+          "heading": false
+        },
+        {
+          "term": "idempotent",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "NOTES ON CHAPTER 1 7 Proof. Fix a total ordering w; > we > ++: > Wa: = 1 on G, such that wy > wy, whenever (wa) > (wy). Define H to the R-module with basis { Ty, | <a} and let 44 =0. Thn0= GCM CHC: CH= #. Now, if w € Gp, and s € S then because g = 0 TT = Tws, if (ws) > E(w), ws) Te, if E(ws) < Lw), by Theorem 1.11. Consequently, for each a > 1 the R-module % is a right H—-module (in fact it is an ideal). Therefore,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sce",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke",
+          "heading": false
+        }
+      ],
+      "extract": "8 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP 7. Even though the characters of #% are not class functions, there is a well be- haved notion of character table which is defined by the values of the irreducible characters on minimal length conjugacy class representatives. These characters were first calculated by Ram [59]; sce also [24].",
+      "extractCut": false,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        },
+        {
+          "term": "finite",
+          "heading": false
+        },
+        {
+          "term": "let",
+          "heading": false
+        },
+        {
+          "term": "theory",
+          "heading": false
+        },
+        {
+          "term": "simple",
+          "heading": false
+        }
+      ],
+      "extract": "CHAPTER 2 Cellular algebras Cellular algebras were introduced by Graham and Lehrer in [25,26]. Although it is possible to give a basis-free approach to the theory of cellular algebras [50], our perspective is that a cellular algebra is an algebra which has a basis which is particularly well-adapted to its representation theory. This Chapter describes the simple modules and blocks of a cellular algebra; in Chapters 3",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "vet",
+          "heading": false
+        },
+        {
+          "term": "cell module",
+          "heading": false
+        },
+        {
+          "term": "r-module",
+          "heading": false
+        },
+        {
+          "term": "a-module",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": false
+        }
+      ],
+      "extract": "10 2, CELLULAR ALGEBRAS T(3) = {s}, T(2, 1) = {t,u} and 7(18) = {v}. Then cS LAT AT AT Ts + ToT) $I ee = (+N) Ge) = BIL+T) 2) = GET) ch = BAtN)r oh) =. is a cellular basis of # (check!). Note that u = ts. and (21) = cD Ty, We generalize this example in the next chapter. Throughout this Chapter we assume that @ = {c’,} is a fixed cellular basis of the algebra A. We begin our study of cellular algebras by noting four",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-015",
+        "library/hecke-alg/blocks/cor-page-015-01"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jacobson radical",
+          "heading": false
+        },
+        {
+          "term": "rad",
+          "heading": false
+        },
+        {
+          "term": "proper submodule",
+          "heading": false
+        },
+        {
+          "term": "ety",
+          "heading": false
+        },
+        {
+          "term": "proposition suppose",
+          "heading": false
+        },
+        {
+          "term": "a-module",
+          "heading": false
+        },
+        {
+          "term": "proving",
+          "heading": false
+        },
+        {
+          "term": "iii",
+          "heading": false
+        }
+      ],
+      "extract": "1. CELLULAR BASES 1 2.7 Proposition Suppose that \\ € A and let x,y €C*. Then (i) (aw, y) = (y, 2). (ii) (wa, y) = (a, ya*) for alla € A. (iii) aed, = (a, ed)ed for all u,v € TO). Proof. Because (, ) is bilinear it is sufficient to consider the case where x = ¢2 and y = ch for some s,t € T(A). Let u and bv be any elements of 7(A). Then, by definition, (el )ety = dette = (Crecau)” = (Cet eg )eeu)” = (et ed)ety mod A,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-016",
+        "library/hecke-alg/blocks/prop-page-016-01",
+        "library/hecke-alg/blocks/prop-page-016-02",
+        "library/hecke-alg/blocks/prop-page-016-03"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible composition",
+          "heading": false
+        },
+        {
+          "term": "composition factor",
+          "heading": false
+        },
+        {
+          "term": "rad",
+          "heading": false
+        },
+        {
+          "term": "every irreducible",
+          "heading": false
+        },
+        {
+          "term": "minimal element",
+          "heading": false
+        },
+        {
+          "term": "a-module",
+          "heading": false
+        },
+        {
+          "term": "now suppose",
+          "heading": false
+        },
+        {
+          "term": "cellular",
+          "heading": false
+        }
+      ],
+      "extract": "12 2, CELLULAR ALGEBRAS Now suppose that ys = A. Then by Proposition 2.7(iii) we find that (et) =M +aey= M+ > reagce, = M + ch (ae,y). s€T() Hence, @ is just the natural projection C*® > C*/M composed with multiplication by (ae, y)- o 2.11 Corollary Suppose that R is a field and let X and yt be elements of A such that DX #0 and DX =D\". Then = ps. Proof. By assumption there exists a non-zero homomorphism 6:C* —+ D#;",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-017",
+        "library/hecke-alg/blocks/cor-page-017-01",
+        "library/hecke-alg/blocks/lem-page-017-02",
+        "library/hecke-alg/blocks/thm-page-017-03"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poset ideal",
+          "heading": false
+        },
+        {
+          "term": "composition multiplicity",
+          "heading": false
+        },
+        {
+          "term": "dimg",
+          "heading": false
+        },
+        {
+          "term": "exists submodule",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "isa",
+          "heading": false
+        },
+        {
+          "term": "lemma suppose",
+          "heading": false
+        },
+        {
+          "term": "projective",
+          "heading": false
+        }
+      ],
+      "extract": "2. SIMPLE MODULES IN A CELLULAR ALGEBRA 13 induction, if A > v then every irreducible composition factor of C” is isomorphic to D¥ for some yt € A. This completes the proof. oO Let At = {eE€ A| D4 40}. Then p» € At if and only if the bilinear form (, ) on C¥ is non-degenerate. In principle, Theorem 2.13 classifies the simple A-modules; however, in practice, it is often difficult to determine the set At. If x € At",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-018",
+        "library/hecke-alg/blocks/cor-page-018-01",
+        "library/hecke-alg/blocks/lem-page-018-02",
+        "library/hecke-alg/blocks/lem-page-018-03"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "d'd",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": false
+        },
+        {
+          "term": "dimp",
+          "heading": false
+        },
+        {
+          "term": "ved",
+          "heading": false
+        },
+        {
+          "term": "cell module",
+          "heading": false
+        },
+        {
+          "term": "dima",
+          "heading": false
+        },
+        {
+          "term": "non-zero modules",
+          "heading": false
+        }
+      ],
+      "extract": "14 2, CELLULAR ALGEBRAS Consequently, P @4 A(T U {ut})/P @4 A(T) = P 4 (C™* ORC). Now suppose that @ =T,y CT, C--- C Ty =T is a maximal chain of ideals in A. Then, fori = 1,2,...,&, we have T; = T;_,U fy; } for some yt; € T. Therefore, 0= A(To) OG A(T1) G--- G A(T) = Ais a filtration of A. Tensoring with P gives a filtration of P with composition factors, by the last paragraph, precisely the non-zero modules P @4",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-019",
+        "library/hecke-alg/blocks/thm-page-019-01",
+        "library/hecke-alg/blocks/cor-page-019-02"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "same block",
+          "heading": false
+        },
+        {
+          "term": "cellular algebra",
+          "heading": false
+        },
+        {
+          "term": "quasi-hereditary",
+          "heading": false
+        },
+        {
+          "term": "indecomposable",
+          "heading": false
+        },
+        {
+          "term": "ideals",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "2. SIMPLE MODULES IN A CELLULAR ALGEBRA 15 as we do not need any results from their theory, we refer the interested reader to [8] for the definition. 2.19 Corollary Suppose that R is a field. Then the following are equivalent. (i) A= At. (ii) The decomposition matriz D is a square unitriangular matrix. Moreover, if either of these conditions is satisfied then A is quasi-hereditary. Proof. That (i) and (ii) are",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-020",
+        "library/hecke-alg/blocks/cor-page-020-01",
+        "library/hecke-alg/blocks/lem-page-020-02",
+        "library/hecke-alg/blocks/thm-page-020-03"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "same block",
+          "heading": false
+        },
+        {
+          "term": "graham",
+          "heading": false
+        },
+        {
+          "term": "linked",
+          "heading": false
+        },
+        {
+          "term": "composition factor",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "16 2, CELLULAR ALGEBRAS Suppose first that \\ and p are in A+ and that D> is a composition factor of P“. Then, as in the proof of Lemma 2.15, Hom,(P?, P“) 4 0. Consequently P* and P* must be contained in the same block since Hom 4(B;, B;) = 0 if # j. Hence, if \\ and yt in A are linked then C® and C™ are in the same block. Conversely, suppose that there exists an integer 7, with | <i<k, and \\ and p in At such that C*",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "y-tableaux",
+          "heading": false
+        },
+        {
+          "term": "p-tableau",
+          "heading": false
+        },
+        {
+          "term": "tableaux",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "murphy",
+          "heading": false
+        },
+        {
+          "term": "composition",
+          "heading": false
+        },
+        {
+          "term": "cellular",
+          "heading": false
+        }
+      ],
+      "extract": "CHAPTER 3 The Modular representation theory of # In this chapter we construct Murphy’s basis of the Iwahori—Hecke algebra #. Murphy’s papers [55, 56]appeared before the theory of cellular algebras: neverthe- less, his basis is cellular. For the rest of these notes we assume that q is an invertible element of R. In particular, this implies that 7; is invertible with T7! = g71(T —q +1) for i= 1,2,...,n—1. Consequently",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coset representatives",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "smg",
+          "heading": false
+        },
+        {
+          "term": "tht",
+          "heading": false
+        }
+      ],
+      "extract": "18 3. THE MODULAR REPRESENTATION THEORY OF # and .#(G,,) is isomorphic to #(6,,) x ++: x 3@(G,,), the Iwahori-Hecke of 6,,. It follows that G, is gencrated by SMG, and that #(G,) is generated by {T;|se€596,}. Finally, we let m, = >> Ty and define M\" to be the tight ideal m, 3. 3.1 Example Let p = (2,3). Then t\" = » Gy = Ge x G3 = (81,53, 84) and my, = (1+) + 73 + Ty + T3Ty + Tr T3 + 1377s). 3.2 Lemma Suppose that pt",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-023",
+        "library/hecke-alg/blocks/ex-page-023-01",
+        "library/hecke-alg/blocks/lem-page-023-02",
+        "library/hecke-alg/blocks/prop-page-023-03"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "vty",
+          "heading": false
+        },
+        {
+          "term": "reduced expression",
+          "heading": false
+        },
+        {
+          "term": "subexpression",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE COMBINATORICS OF TABLEAUX 19 3.4 Corollary Let yt be a composition of n. Then M\" is a free R-module with basis { myTyy | t a row standard y-tableau}. Moreover, if t is row standard and s = ts;, for some 1 <i<n, then gmyT ay, if s is not row standard, myTayTi=¥ MpTas) ifs is row standard and €(d(s)) > &(d()), amy Tas) + (9 — my Tay, if 8 is row standard and E(d(s)) < &(d(t)). Proof. That M* is a free R-module",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-024",
+        "library/hecke-alg/blocks/cor-page-024-01",
+        "library/hecke-alg/blocks/thm-page-024-02",
+        "library/hecke-alg/blocks/ex-page-024-03"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "proper subexpression",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        },
+        {
+          "term": "basis indexed",
+          "heading": false
+        },
+        {
+          "term": "same shape",
+          "heading": false
+        },
+        {
+          "term": "smallest number",
+          "heading": false
+        },
+        {
+          "term": "partial order",
+          "heading": false
+        },
+        {
+          "term": "composition",
+          "heading": false
+        }
+      ],
+      "extract": "20 3. THE MODULAR REPRESENTATION THEORY OF # reflections t;,...,t, € T such that w = vt),...t, and ¢(vt, ...t;) = &(v) +7 for j =1,2,....k.) In particular, this shows that > is a partial order on Gy. The partial order & on G,, is the ubiquitous Bruhat—Chevalley order. Perhaps surprisingly, it agrees with the dominance ordering on row standard p-tableaux (when restricted to B,). 3.7 Proposition (Dipper—James) Let js",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-025",
+        "library/hecke-alg/blocks/prop-page-025-01",
+        "library/hecke-alg/blocks/cor-page-025-02",
+        "library/hecke-alg/blocks/lem-page-025-03"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "along row",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "pee",
+          "heading": false
+        },
+        {
+          "term": "positions",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE MURPHY BASIS 21 Mg, ts an R-linear combination of terms of the form my, where u and v are row standard \\-tableauz. Proof. Choose an element d € G, such that G, = d6,d7! and such that ¢*d and t#d-! are both row standard (d and d~! permute the rows of t* and t respectively; see Example 3.10). Then G,d = dG,, d€ A and d-! € F,; 80 my Ty = Tam, by Proposition 3.3. Consequently, my = Ty!mT, can be written as a",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-026",
+        "library/hecke-alg/blocks/prop-page-026-01",
+        "library/hecke-alg/blocks/ex-page-026-02",
+        "library/hecke-alg/blocks/ex-page-026-03"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "garnir tableau",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "tis",
+          "heading": false
+        },
+        {
+          "term": "lemma let",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "exists",
+          "heading": false
+        },
+        {
+          "term": "suppose",
+          "heading": false
+        }
+      ],
+      "extract": "22 3. THE MODULAR REPRESENTATION THEORY OF # 3.12 Lemma Let \\ be a partition of n and suppose that g is a Garnir tableau. Then there exists a partition pt of n such that ft > and Mpag=h — y Mp, resta(r) 7Dg where h is a linear combination of terms My, such that u and o are row standard p-tableaur. Proof. Write A = (Aj,..., Ax) and suppose that g = gj; is the (7,j)th Garnir tableau. Set v= (Ay,... ,Ai-1, 9 — 1, Ae +",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-027",
+        "library/hecke-alg/blocks/lem-page-027-01",
+        "library/hecke-alg/blocks/lem-page-027-02",
+        "library/hecke-alg/blocks/lem-page-027-03",
+        "library/hecke-alg/blocks/lem-page-027-04"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "tableaux",
+          "heading": false
+        },
+        {
+          "term": "required form",
+          "heading": false
+        },
+        {
+          "term": "ordered",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE MURPHY BASIS 23 for some ry € R and where the last equality uses Corollary 3.8. By Corollary 3.4 and induction on A, Tis)? Tw can be written in the required form. Furthermore, by induction on t, the terms mys, can be written as a linear combination of terms Muy: where u and pb’ are y-tableaux such that yp & » and u is row standard and pv! is standard. Since my = mi, we can repeat the argument to replace the",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-028",
+        "library/hecke-alg/blocks/cor-page-028-01",
+        "library/hecke-alg/blocks/prop-page-028-02"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard p-tableaux",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "myy",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "muy",
+          "heading": false
+        },
+        {
+          "term": "mwy",
+          "heading": false
+        },
+        {
+          "term": "same column",
+          "heading": false
+        },
+        {
+          "term": "basis element",
+          "heading": false
+        }
+      ],
+      "extract": "24 3. THE MODULAR REPRESENTATION THEORY OF # Suppose that 7 and 7+ 1 are in the same column of u. Then, by Corollary 3.15 and our choice of (u, 0), The= (h*T)* = —TuvMay + Se asemst for some as, € R such that whenever u & s and vb & t then ag, = 0. However, Tim, = qm, by Lemma 3.2, so Tjh = gh and this forces ry» = 0, a contradiction. Consequently, i and i+ 1 do not belong to the same column of u. Next let wo",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-029",
+        "library/hecke-alg/blocks/cor-page-029-01"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specht module",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "vestd",
+          "heading": false
+        },
+        {
+          "term": "r-module",
+          "heading": false
+        },
+        {
+          "term": "cellular",
+          "heading": false
+        },
+        {
+          "term": "cell",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE MURPHY BASIS 25 3.18 The Murphy Basis Theorem (Murphy) The Hecke algebra # is a free R-module with basis M={ mo 8,t€ Std() for some partition X of n }. Moreover, (i) mf, =m, for all X € A and all s,t € Std(A). (ii) Suppose that h € # and that t € Std(A). Then there exist ro € R such that for all s € Std(\\) Mgh = > PypMsp mod KH, veStd(d) Consequently, (M, A) is a cellular basis of @. Proof. We have already",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-030",
+        "library/hecke-alg/blocks/cor-page-030-01",
+        "library/hecke-alg/blocks/prop-page-030-02"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jucys-murphy elements",
+          "heading": false
+        },
+        {
+          "term": "specht modules",
+          "heading": false
+        },
+        {
+          "term": "rad",
+          "heading": false
+        },
+        {
+          "term": "non-isomorphic",
+          "heading": false
+        },
+        {
+          "term": "murphy",
+          "heading": false
+        },
+        {
+          "term": "corollary",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "26 3. THE MODULAR REPRESENTATION THEORY OF # We call the basis of Proposition 3.20 the Murphy basis of S*. Translating the notation from (2.6), the bilinear form ( , ) on S$ is the unique R-bilinear map from S* x $® into R such that (ms,m)m, = Mea,mya mod H*. for all standard \\-tableaux s and t. By Proposition 2.7, this form is associative and symmetric so rad S*? = {2 €S* | (x,y) =0 for ally € S$} is an #-submodule",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-031",
+        "library/hecke-alg/blocks/thm-page-031-01",
+        "library/hecke-alg/blocks/cor-page-031-02",
+        "library/hecke-alg/blocks/ex-page-031-03",
+        "library/hecke-alg/blocks/prop-page-031-04",
+        "library/hecke-alg/blocks/cor-page-031-05"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vestd",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "fork",
+          "heading": false
+        },
+        {
+          "term": "obs",
+          "heading": false
+        },
+        {
+          "term": "specht",
+          "heading": false
+        },
+        {
+          "term": "lemma let",
+          "heading": false
+        }
+      ],
+      "extract": "3. SPECHT MODULES AND JUCYS-MURPHY ELEMENTS 27 to distinguish between the blocks and irreducible representations of #, much like the Cartan subalgebra of a Lie algebra. In the Lemma below we write $} to indicate that the Specht module is defined over R. Recall that K = C(q) and Z = Z[q, qq\"). 3.26 Lemma Let \\ be a partition of n. Then there exists a € R such that m(L,+++-+ Dn) = am for all standard -tableau t.",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-032",
+        "library/hecke-alg/blocks/lem-page-032-01",
+        "library/hecke-alg/blocks/cor-page-032-02",
+        "library/hecke-alg/blocks/cor-page-032-03",
+        "library/hecke-alg/blocks/lem-page-032-04"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ifm",
+          "heading": false
+        },
+        {
+          "term": "e-residue",
+          "heading": false
+        },
+        {
+          "term": "a-tableau",
+          "heading": false
+        },
+        {
+          "term": "eth",
+          "heading": false
+        }
+      ],
+      "extract": "28 3. THE MODULAR REPRESENTATION THEORY OF # The case k = 7 is similar. Oo Given an integer m let [mg = 1+ q+ +--+ q™7! ifm > 0 and [-m], = —q ™[m]q otherwise; then [m]g = at when q # 1. If m > 0 we also define [m], = [1], [2],...[m],. These are the so-called quantum integers and quantum factorials respectively; this is because [m]; = m and [m], = m! for all m € Z. 3.28 Define e to be the smallest positive integer",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-033",
+        "library/hecke-alg/blocks/ex-page-033-01",
+        "library/hecke-alg/blocks/thm-page-033-02"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resi",
+          "heading": false
+        },
+        {
+          "term": "ress",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "spt",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "nodes",
+          "heading": false
+        }
+      ],
+      "extract": "3. SPECHT MODULES AND JUCYS-MURPHY ELEMENTS 29 Let i be the first number in row r of * and let ¢ be the standard \\-tableau Psn_1.. .Si¢1. Then the second last row of ¢ contains the numbers 7,7 + 2,.... n and the last row of t consists of the single entry 7+ 1. So far we have shown that mp Ly = [resp (k)]gmpa for 1 < k <n. We also know that mp (L1+---+L,) = amy for some a € R by Lemma 3.26; consequently, MpLy = rpm",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-034",
+        "library/hecke-alg/blocks/lem-page-034-01"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "resi",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "andi",
+          "heading": false
+        },
+        {
+          "term": "ift",
+          "heading": false
+        },
+        {
+          "term": "ifs",
+          "heading": false
+        },
+        {
+          "term": "ress",
+          "heading": false
+        }
+      ],
+      "extract": "30 3. THE MODULAR REPRESENTATION THEORY OF # 3.33 Proposition Suppose that R is a field and that e > n. Suppose that X is a partition of n and let t be a standard \\-tableau. (i) There erist a, € R such that fy = m_+ Soagmy. sbt (ii) Ifs > t thenm,F, =0. (ili) Fork=1,....n, file = [resilk)] gfe. (iv) Ifs €Std(r) then fiFs = daft. Proof. Let N = |Std(A)| and for any s € Std(A) let ff = msFN. We will first prove",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-035",
+        "library/hecke-alg/blocks/prop-page-035-01",
+        "library/hecke-alg/blocks/thm-page-035-02"
+      ]
+    },
+    {
+      "id": "page-036",
+      "number": null,
+      "title": "Page 36",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ress",
+          "heading": false
+        },
+        {
+          "term": "fst",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "irreducible modules",
+          "heading": false
+        },
+        {
+          "term": "semisimple",
+          "heading": false
+        },
+        {
+          "term": "standard",
+          "heading": false
+        },
+        {
+          "term": "proposition",
+          "heading": false
+        },
+        {
+          "term": "basis",
+          "heading": false
+        }
+      ],
+      "extract": "4, THE IRREDUCIBLE #-MODULES 31 Proof. (i) By Proposition 3.33(i) the transition matrix between the standard basis of S* and { f, | t € Std()) } is unitriangular so this set is a basis of S*. Moreover, ifs and ¢ are standard \\-tableaux then (fs, fo) = (foFs: fd) = (fa: fPS) = (fas fs) = Sac( fs, fs) by Proposition 2.7(ii) and Proposition 3.33(iv). Thus, { fi | €€ Std(A) } is an or- thogonal basis of S*. (ii) By part",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-036",
+        "library/hecke-alg/blocks/prop-page-036-01",
+        "library/hecke-alg/blocks/prop-page-036-02"
+      ]
+    },
+    {
+      "id": "page-037",
+      "number": null,
+      "title": "Page 37",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-restricted",
+          "heading": false
+        },
+        {
+          "term": "ladder number",
+          "heading": false
+        },
+        {
+          "term": "composition factor",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "resi",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "32 3. THE MODULAR REPRESENTATION THEORY OF # Suppose that A = (Ay, Ae,...). Then A is e-restricted if A; — Aizi < € for all a> 1. In addition, we say that a standard \\-tableau g is e-restricted if whenever Ab wand t € Std(y) then [res,(k)], # [rese(k)], for some k. Let Std.(A) be the set of e-restricted tableaux. We will show that A is e-restricted if and only if there exists an e-restricted A- tableau. The next two",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-037",
+        "library/hecke-alg/blocks/lem-page-037-01",
+        "library/hecke-alg/blocks/lem-page-037-02"
+      ]
+    },
+    {
+      "id": "page-038",
+      "number": null,
+      "title": "Page 38",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard a-tableau",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "e-restricted",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "notation",
+          "heading": false
+        }
+      ],
+      "extract": "4, THE IRREDUCIBLE #-MODULES 33 so v & Shape(t | (n — 1)) since (7, j) is the lowest node with e-residue [res (n)]q which may be added to [v] to give the diagram of a partition. By induction on n the tableau [¥ is e-restricted, so this forces t | (n — 1) = &. However, if t(k,l) =n then k > i because 1 & pt. Therefore, (k,1) = (i,j), t= R and = p; hence, 2 is e-testricted as required. Oo Combining the last two",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-038",
+        "library/hecke-alg/blocks/lem-page-038-01",
+        "library/hecke-alg/blocks/thm-page-038-02"
+      ]
+    },
+    {
+      "id": "page-039",
+      "number": null,
+      "title": "Page 39",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-restricted partition",
+          "heading": false
+        },
+        {
+          "term": "specht modules",
+          "heading": false
+        },
+        {
+          "term": "dipper",
+          "heading": false
+        },
+        {
+          "term": "lel",
+          "heading": false
+        },
+        {
+          "term": "irreducible modules",
+          "heading": false
+        },
+        {
+          "term": "james",
+          "heading": false
+        },
+        {
+          "term": "classified",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        }
+      ],
+      "extract": "34 3. THE MODULAR REPRESENTATION THEORY OF # and r, 4 0 only if the tableaux » and t® agree on the first 7 rows. Taking i = k proves the Lemma. oO Let dyy = [S? : D#] be the composition multiplicity of D4 in S*. We can now prove the following key result of Dipper and James. 3.39 Theorem (Dipper—James) Suppose that R is a field. (i) { D |X an e-restricted partition of n} is a complete set of non-isomorphic",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-039",
+        "library/hecke-alg/blocks/thm-page-039-01",
+        "library/hecke-alg/blocks/cor-page-039-02",
+        "library/hecke-alg/blocks/cor-page-039-03",
+        "library/hecke-alg/blocks/thm-page-039-04",
+        "library/hecke-alg/blocks/cor-page-039-05"
+      ]
+    },
+    {
+      "id": "page-040",
+      "number": null,
+      "title": "Page 40",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "e-regular",
+          "heading": false
+        },
+        {
+          "term": "resg",
+          "heading": false
+        },
+        {
+          "term": "tpa",
+          "heading": false
+        }
+      ],
+      "extract": "NOTES ON CHAPTER 3 35 in Theorem 3.39 are indexed by e-restricted partitions rather than e—regular partitions (a partition is e-regular if its conjugate is e—restricted). _ If d is a partition let ny = Dyes, (—9)7Te and for s,t € Std(A) define Ns = Tis) T ay: Then NM = {ns | 8.t € Std(A) for some partition \\ of n} is a basis of .#. It is easy to check that mé = q*n, for some integer a; since the automorphisms + and",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-040"
+      ]
+    },
+    {
+      "id": "page-041",
+      "number": null,
+      "title": "Page 41",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard tableaux",
+          "heading": false
+        },
+        {
+          "term": "semistandard p-tableaux",
+          "heading": false
+        },
+        {
+          "term": "row semistandard",
+          "heading": false
+        },
+        {
+          "term": "g-schur algebra",
+          "heading": false
+        },
+        {
+          "term": "q-schur algebra",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": false
+        },
+        {
+          "term": "case letters",
+          "heading": false
+        }
+      ],
+      "extract": "CHAPTER 4 The q-Schur Algebra The g-Schur algebra was introduced by Dipper and James [15] who showed that this algebra completely determines the decomposition matrices of the finite general linear groups in non-defining characteristic. The g-Schur algebras also have applications to the representation theory of the general linear groups over other fields. We do not explore these connections here. Instead, in this",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-041"
+      ]
+    },
+    {
+      "id": "page-042",
+      "number": null,
+      "title": "Page 42",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row semistandard",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "standard p-tableau",
+          "heading": false
+        },
+        {
+          "term": "double cosets",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "same row",
+          "heading": false
+        },
+        {
+          "term": "coset representatives",
+          "heading": false
+        },
+        {
+          "term": "dng",
+          "heading": false
+        }
+      ],
+      "extract": "1. SEMISTANDARD TABLEAUX 37 type v obtained from ¢ by replacing each entry 7 in t by r if i appears in row r of ”. 4.4 Examples (i) If t is a row standard p-tableau then v(t) is row semistandard. and let vy = (3,2,1). Then vy = Ee so we have (ii) Suppose that t ey Le] (iii) If ye is a composition then TH = p(t\"). Let ys and v be compositions and suppose d € Y,. Then td is row standard and the subgroup d-'G,d is just",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-042",
+        "library/hecke-alg/blocks/prop-page-042-01",
+        "library/hecke-alg/blocks/prop-page-042-02"
+      ]
+    },
+    {
+      "id": "page-043",
+      "number": null,
+      "title": "Page 43",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row semistandard",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "unique row",
+          "heading": false
+        },
+        {
+          "term": "minimal length",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "compositions",
+          "heading": false
+        },
+        {
+          "term": "whenever",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "38 4, THE q-SCHUR ALGEBRA Let T be a row semistandard j-tableau of type v and define first(T) to be the unique row standard p-tableau such that v(first(T)) = T and first(T) & t whenever ¢ is a row standard tableau such that v(t) =T. It is also easy to see that there exists a unique row standard tableau last(T) such that v(last(T)) = T and tD last(T) whenever t is another row standard tableau such that v(t) = T. 4.6",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-043",
+        "library/hecke-alg/blocks/ex-page-043-01",
+        "library/hecke-alg/blocks/thm-page-043-02",
+        "library/hecke-alg/blocks/cor-page-043-03"
+      ]
+    },
+    {
+      "id": "page-044",
+      "number": null,
+      "title": "Page 44",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row semistandard",
+          "heading": false
+        },
+        {
+          "term": "semistandard tableaux",
+          "heading": false
+        },
+        {
+          "term": "mst",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "specht series",
+          "heading": false
+        },
+        {
+          "term": "homy",
+          "heading": false
+        },
+        {
+          "term": "std",
+          "heading": false
+        },
+        {
+          "term": "murphy",
+          "heading": false
+        }
+      ],
+      "extract": "2. A SPECHT SERIES FOR M” 39 Proof. Every homomorphism yg in Homy (M/”, M“) is determined by g(m,) and, moreover, y(m,) € M\" 7 M”* by Theorem 4.8. Conversely, very element of M\" M’* determines a homomorphism in Hom j(M”,M\"). Consequently, the map Hom (M”’,M\") + M# 9 M”’* given by y +> y(m,) is an isomorphism of R- modules. Oo There are two points worth noting from Theorem 4.8. First, by Proposition 4.5 we could haye",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-044",
+        "library/hecke-alg/blocks/thm-page-044-01"
+      ]
+    },
+    {
+      "id": "page-045",
+      "number": null,
+      "title": "Page 45",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "specht",
+          "heading": false
+        },
+        {
+          "term": "toi",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": false
+        },
+        {
+          "term": "tableaur",
+          "heading": false
+        }
+      ],
+      "extract": "AO 4, THE q-SCHUR ALGEBRA form. Oo This allows us to give a Specht series for M™\"; that is, a filtration of M\" with each composition factor isomorphic to a Specht module. 4.11 Corollary Let pp be a composition of n. Then, as an #/-module, M\" has a filtration M¥ = M, > Mo > --- > Mi41 = 0 such that fori = 1,2,...,k there exists a partition \\; of n with M;/Mj4; = S**. Moreover, for each partition » the number of \\;",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-045",
+        "library/hecke-alg/blocks/cor-page-045-01",
+        "library/hecke-alg/blocks/cor-page-045-02"
+      ]
+    },
+    {
+      "id": "page-046",
+      "number": null,
+      "title": "Page 46",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard basis",
+          "heading": false
+        },
+        {
+          "term": "ryy",
+          "heading": false
+        },
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "myy",
+          "heading": false
+        },
+        {
+          "term": "anti-isomorphism",
+          "heading": false
+        },
+        {
+          "term": "r-submodule",
+          "heading": false
+        },
+        {
+          "term": "basis theorem",
+          "heading": false
+        },
+        {
+          "term": "r-module",
+          "heading": false
+        }
+      ],
+      "extract": "3. THE SEMISTANDARD BASIS THEOREM Al S € Jo(A, 4) and T € Jy(A,v). By Corollary 4.12, mgr € M1 M”* so we can define ¥sr to be the element of %(d,n) given by 413 ¥st(Meh) = daymsrh for all a € A(d,n) andh €.#. For any partition A € A*(d.n) let To(A) = Uneatany To(A:#) and define S*(d,n) to be the R-submodule of (d,n) spanned by the homomorphisms ¢sr where $,T € Jo(a) for some a € A*(d,n) such that a > A. Similarly,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-046"
+      ]
+    },
+    {
+      "id": "page-047",
+      "number": null,
+      "title": "Page 47",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard tableau",
+          "heading": false
+        },
+        {
+          "term": "homy",
+          "heading": false
+        },
+        {
+          "term": "weyl module",
+          "heading": false
+        },
+        {
+          "term": "rad",
+          "heading": false
+        },
+        {
+          "term": "r-module",
+          "heading": false
+        },
+        {
+          "term": "homomorphism",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "AQ 4, THE q-SCHUR ALGEBRA Let A € At+(d,n) be a partition and recall that T = d(t*) is the unique semistandard A-tableau of type A. From the definitions one sees that (gyaqa restricts to the identity map on M>. The Weyl module is the right S(d,n)-module (A> (d,n) + yqaqa)-F(d, n). Thus, W? is a submodule of .(d,n)/.¥*(d,n) and which, as an R-module, is free with basis {.*(d,n) + yz | T € To) }- There is another",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-047",
+        "library/hecke-alg/blocks/prop-page-047-01",
+        "library/hecke-alg/blocks/thm-page-047-02"
+      ]
+    },
+    {
+      "id": "page-048",
+      "number": null,
+      "title": "Page 48",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-restricted",
+          "heading": false
+        },
+        {
+          "term": "right modules",
+          "heading": false
+        },
+        {
+          "term": "homy",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        },
+        {
+          "term": "multiplicity",
+          "heading": false
+        },
+        {
+          "term": "schur",
+          "heading": false
+        },
+        {
+          "term": "functor",
+          "heading": false
+        }
+      ],
+      "extract": "3. THE SEMISTANDARD BASIS THEOREM AB Proof. We have already remarked that gqaqa is the identity map on M>. There- fore, we compute that (ep. $P)Prp = Ppryrpp =¥Ypp mod Sd, n); so (@.,.¢.) = 1. In particular, L* # 0. Parts (i) and (ii) now follow from Theorem 2.13. Oo 4.17 Corollary (Parshall-Wang) Suppose that R is a field) Then Y(d,n) is quasi-hereditary. Proof. This is immediate from Theorem 4.16(ii) and Corollary",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-048",
+        "library/hecke-alg/blocks/cor-page-048-01",
+        "library/hecke-alg/blocks/cor-page-048-02",
+        "library/hecke-alg/blocks/prop-page-048-03"
+      ]
+    },
+    {
+      "id": "page-049",
+      "number": null,
+      "title": "Page 49",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-schur algebra",
+          "heading": false
+        },
+        {
+          "term": "q-schur algebra",
+          "heading": false
+        },
+        {
+          "term": "nea",
+          "heading": false
+        },
+        {
+          "term": "dipper",
+          "heading": false
+        },
+        {
+          "term": "hea",
+          "heading": false
+        },
+        {
+          "term": "donkin",
+          "heading": false
+        },
+        {
+          "term": "linear groups",
+          "heading": false
+        },
+        {
+          "term": "general linear",
+          "heading": false
+        }
+      ],
+      "extract": "AA 4, THE q-SCHUR ALGEBRA that Wigquqe = Wit opeqe we obtain a composition series for S* which has the required multiplicities. This proves (iii). Oo Finally, let M = Buea(an) M#\". Then M is naturally a left (d,n)-module with action g-m = ¢(m) for all g € .(d,n) and all m € M. Of course, M is also aright #—-module and it is clear that the actions of .Y(d.n) and # commute. 4.20 Theorem (The double centralizer",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-049",
+        "library/hecke-alg/blocks/thm-page-049-01"
+      ]
+    },
+    {
+      "id": "page-050",
+      "number": null,
+      "title": "Page 50",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard basis",
+          "heading": false
+        },
+        {
+          "term": "quasi frobenius",
+          "heading": false
+        },
+        {
+          "term": "schur algebra",
+          "heading": false
+        },
+        {
+          "term": "g-schur",
+          "heading": false
+        },
+        {
+          "term": "donkin",
+          "heading": false
+        },
+        {
+          "term": "green",
+          "heading": false
+        }
+      ],
+      "extract": "NOTES ON CHAPTER 4 AB . In a different guise, the semistandard basis of the Schur algebra (i.e. the case q = 1), first appeared as J. A. Green’s [28] codeterminant basis; shortly after- wards, Woodcock [62] gave a more direct proof. Richard Green [29] generalized Woodcocks argument to give a g-analogue of the codeterminant basis; it turns out that this basis is the semistandard basis of Theorem 4.14. The",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-050"
+      ]
+    },
+    {
+      "id": "page-051",
+      "number": null,
+      "title": "Page 51",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gram determinant",
+          "heading": false
+        },
+        {
+          "term": "ress",
+          "heading": false
+        },
+        {
+          "term": "resr",
+          "heading": false
+        },
+        {
+          "term": "jantzen",
+          "heading": false
+        },
+        {
+          "term": "resq",
+          "heading": false
+        }
+      ],
+      "extract": "CHAPTER 5 The Jantzen—Schaper theorem In this chapter we prove an analogue of the Jantzen sum formula for the g— Schur algebra. This is a strong result describing the structure of Weyl modules; however, its proof follows from the calculation of Gram determinants. As our main application of this result we classify the blocks of #. 1. The Gram determinant of W* Throughout this section we fix a partition A € At+(d,n)",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-051",
+        "library/hecke-alg/blocks/ex-page-051-01",
+        "library/hecke-alg/blocks/thm-page-051-02"
+      ]
+    },
+    {
+      "id": "page-052",
+      "number": null,
+      "title": "Page 52",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard tableau",
+          "heading": false
+        },
+        {
+          "term": "resr",
+          "heading": false
+        },
+        {
+          "term": "ress",
+          "heading": false
+        },
+        {
+          "term": "gram determinant",
+          "heading": false
+        },
+        {
+          "term": "bss",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE GRAM DETERMINANT OF WW AT Proof. Let t = last(T); then mp = m+ Dap es where the sum is over those standard A-tableaux such that p(s) = T. Therefore, by Theorem 3.30, gr Ly (my) = mr(Ly + +++ + Ly) = {ne neh Ea t+ Dy) sb tu(s)=T = [resp(A)]gme + bss, sbt for some b, € R. However, gprqLi (my) € M9 M\"* so by Corollary 4.12 there exist bs € R such that gr Li(m,) = [rest(k)]qmr + > isms. SDT Hence, gr Zi, =",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-052",
+        "library/hecke-alg/blocks/lem-page-052-01",
+        "library/hecke-alg/blocks/cor-page-052-02"
+      ]
+    },
+    {
+      "id": "page-053",
+      "number": null,
+      "title": "Page 53",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "resi",
+          "heading": false
+        },
+        {
+          "term": "ress",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "ere",
+          "heading": false
+        },
+        {
+          "term": "now suppose",
+          "heading": false
+        }
+      ],
+      "extract": "AB 5. THE JANTZEN-SCHAPER THEOREM and let jo-itk-l4l wo- T Y Seas (i F)EDI (k DETa(i,5) 4 Most of the time we omit the g and simply write 47. Suppose that is t is a standard \\-tableau and let # = (7,7) and y = (k,1). Then res;(x) —res;(y) = 7 —i+1—k is the “axial distance” from z to y in the diagram of A. 5.7 Example Suppose that \\ = (3,2) and let t= BRET, s= and T= ERE. Then n= Phe Pla Pe, 4 — Palle gna y= Shab Ne",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-053",
+        "library/hecke-alg/blocks/ex-page-053-01",
+        "library/hecke-alg/blocks/lem-page-053-02",
+        "library/hecke-alg/blocks/lem-page-053-03",
+        "library/hecke-alg/blocks/prop-page-053-04"
+      ]
+    },
+    {
+      "id": "page-054",
+      "number": null,
+      "title": "Page 54",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard a-tableau",
+          "heading": false
+        },
+        {
+          "term": "gram determinant",
+          "heading": false
+        },
+        {
+          "term": "avs",
+          "heading": false
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE GRAM DETERMINANT OF WW AQ where a~! = [res,(i) — res;(i)]g. Therefore, yy = vsT; + avs since (1) = fp for all v € Std(\\); consequently, (uv) = si + avs, eT + obs) = (WsTi. eT) + 20(bsTi, Ws) +07 (Ws, Vs) = (Ue? Wa) + 20 (vi, Ho) + 07(Us, He) = (2a + 9-1) (WsTi. bs) + (Qt a) (bs, vs) = (Qatq— 1) — ats. vs) + (9+ a”) (tbs, vs) = (q+ a) — a)vs. ds), where for the last equality we have used Corollary 5.6.",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-054",
+        "library/hecke-alg/blocks/cor-page-054-01",
+        "library/hecke-alg/blocks/ex-page-054-02",
+        "library/hecke-alg/blocks/lem-page-054-03"
+      ]
+    },
+    {
+      "id": "page-055",
+      "number": null,
+      "title": "Page 55",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 545,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "lemma suppose",
+          "heading": false
+        },
+        {
+          "term": "nodes",
+          "heading": false
+        },
+        {
+          "term": "row",
+          "heading": false
+        },
+        {
+          "term": "definitions",
+          "heading": false
+        },
+        {
+          "term": "exist",
+          "heading": false
+        },
+        {
+          "term": "entries",
+          "heading": false
+        }
+      ],
+      "extract": "50 5. THE JANTZEN-SCHAPER THEOREM Consequently, a/! = Tier [ris + No = Tea Tear tere (tq where cy1.(f) is equal to the number of entries in row 7 of T which are equal to k. However, the parts of v are precisely the numbers ¢,,(t) as r and k vary (cf. Example 4.6), so this proves part (i). Part (ii) follows by comparing the definitions of 7 and zt’. ia) 5.14 Lemma Suppose that t is a standard \\-tableau, T = p(t) and",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-055",
+        "library/hecke-alg/blocks/lem-page-055-01",
+        "library/hecke-alg/blocks/lem-page-055-02",
+        "library/hecke-alg/blocks/lem-page-055-03",
+        "library/hecke-alg/blocks/lem-page-055-04"
+      ]
+    },
+    {
+      "id": "page-056",
+      "number": null,
+      "title": "Page 56",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qta",
+          "heading": false
+        },
+        {
+          "term": "spt",
+          "heading": false
+        },
+        {
+          "term": "sdt",
+          "heading": false
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "a-tableau",
+          "heading": false
+        },
+        {
+          "term": "equality coming",
+          "heading": false
+        },
+        {
+          "term": "exist",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE GRAM DETERMINANT OF WW 51 However, #eerute Lt € wp and {ys | S$ € Jo, 4) } is a basis of wp by Corol- lary 5.6; so it follows that there exist r, € R such that ¢ygreqe = ry from Proposition 5.5(iv). It remains to show that ry = a/' for all t. Suppose that t = first(T). Then gr = af yuerere by Lemma 5.13(i) and Lemma 5.14(i). Furthermore, by Proposition 5.5(i), there exist a; € R such that de = ¥t+ Vop Ass.",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-056",
+        "library/hecke-alg/blocks/prop-page-056-01",
+        "library/hecke-alg/blocks/lem-page-056-02",
+        "library/hecke-alg/blocks/prop-page-056-03",
+        "library/hecke-alg/blocks/lem-page-056-04",
+        "library/hecke-alg/blocks/thm-page-056-05"
+      ]
+    },
+    {
+      "id": "page-057",
+      "number": null,
+      "title": "Page 57",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "ifb",
+          "heading": false
+        },
+        {
+          "term": "some partition",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "integral domain",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        },
+        {
+          "term": "columns",
+          "heading": false
+        }
+      ],
+      "extract": "52 5. THE JANTZEN-SCHAPER THEOREM 5.19 Corollary Suppose that R is an integral domain and let X € At(d,n) and we A(d,n), Then Gh = agp, considering g> as an element of R. Proof. Suppose first that R = Q(q) where g is an indeterminant over Q. By Proposition 5.5(i) the transition matrix between the semistandard basis of we and its orthogonal basis is unitriangular so by Theorem 5.18 Giga JT] nM =a na. TET (A) However,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-057",
+        "library/hecke-alg/blocks/cor-page-057-01",
+        "library/hecke-alg/blocks/prop-page-057-02",
+        "library/hecke-alg/blocks/ex-page-057-03"
+      ]
+    },
+    {
+      "id": "page-058",
+      "number": null,
+      "title": "Page 58",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccn",
+          "heading": false
+        },
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "teto",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "eph",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE GRAM DETERMINANT OF WW 53 where C = {¢e1,..., c.}. Let A® be the partition of n — z whose sequence of beta numbers is @©. Then T© is a semistandard \\©-tableau of type 7 where P= (ta... fiz—1,0). Consequently, by the conventions of (5.21), CC{1,2,....n} |Cl=z More generally, for any sequence a = (a1,..., a») of integers we have 5.22 dy(a) = dz(a%), CC{1,2,....n} |Cl=2 where the sequence a© is defined in",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-058"
+      ]
+    },
+    {
+      "id": "page-059",
+      "number": null,
+      "title": "Page 59",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bo-h",
+          "heading": false
+        },
+        {
+          "term": "eph",
+          "heading": false
+        },
+        {
+          "term": "sae",
+          "heading": false
+        }
+      ],
+      "extract": "54 5. THE JANTZEN-SCHAPER THEOREM j-i+k-—l. Hence, i-t+h-14 1], [% — ft in(9°) MoT sae Ca ray TETAA 2) (i, FED] (A.D EPH CG CCn ‘ b<e 1i,j)=2 |c]=2 ige Il yn Bina Bb Bega Bens Be Boyar Bn) q bEC,ceC _ -T] Ul Bo Betl=h d- . . c BS istoce TD a? BS Bony Bo Bei Bony Bo VB oya BS) \\cl=2 bEC,ceC Bo-Bo=h Il jy mre Be BEB BEL BS BE BL) q beg _ Ul Ul By —82 +1=h iS ca Il (nj, Be BOMBS Boy BS BE BL) |C|=z-1 begc By — Be =h Il",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-059",
+        "library/hecke-alg/blocks/lem-page-059-01"
+      ]
+    },
+    {
+      "id": "page-060",
+      "number": null,
+      "title": "Page 60",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccn bee",
+          "heading": false
+        },
+        {
+          "term": "ayy",
+          "heading": false
+        },
+        {
+          "term": "tol",
+          "heading": false
+        },
+        {
+          "term": "bei",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "1. THE GRAM DETERMINANT OF WW 55 have z elements and =TIT ll Il II [mje BE BEM BEY h>l C€Cn e¢C ben\\C lel=s a8 >BO-h _ Il Il Il Il [ayy BEI BER Bn) h>l C€Cn c¢C bec |C|=z-1 BS >BS-1+h @®-TT TTD I [nj; BE I BE Be Ba) h>l CCn c¢e bee |C|=2-1 Be ae ge and G4= Il Il Il I [nyse BO +I-h,... 6o-h=1, AS), h>l €Cn c¢C _b¢C |C|=2-2 BE Fe Let By and Bg be as in Lemma 5.23. Then BoGo = Il Il Il Il [jy ee BEB BEI ae h>l CCn c¢C",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-060",
+        "library/hecke-alg/blocks/ex-page-060-01"
+      ]
+    },
+    {
+      "id": "page-061",
+      "number": null,
+      "title": "Page 61",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rim hook",
+          "heading": false
+        },
+        {
+          "term": "unwrapping",
+          "heading": false
+        },
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "cen",
+          "heading": false
+        },
+        {
+          "term": "exists composition",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        },
+        {
+          "term": "column",
+          "heading": false
+        }
+      ],
+      "extract": "56 5. THE JANTZEN-SCHAPER THEOREM Similarly, the (a, b)th rim hook R, is the collection of nodes along the rim of [A] from row a to column 6. This is best illustrated by an example; let A = (6,4, 3) then n rE IEE 5 ed AY, = CRC and Rtg = xr x xb Thus, there is a one-to-one correspondence between hooks and rim hooks and |R2,| = hd,. Importantly, if A is a partition of n then [A] \\ R24, is the diagram of a partition",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-061",
+        "library/hecke-alg/blocks/lem-page-061-01",
+        "library/hecke-alg/blocks/thm-page-061-02"
+      ]
+    },
+    {
+      "id": "page-062",
+      "number": null,
+      "title": "Page 62",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jantzen",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "f-module",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE JANTZEN SUM FORMULA 57 to zero unless (a,c) € [A] since 9, — h>, = 8. — hr, if (a,c) € [A]. On the hand, if e¢ <b then (a,c) € [A]. Combining these facts proves the Theorem. Oo By Lemma 5.26 the exponent d,(%1,...,S + Rd... Be — WAL, ... Bn) has a combinatorial interpretation which makes Theorem 5.27 easy to apply. Namely, suppose that the partition v is obtained by unwrapping the (a,c)th rim hook RA, from",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-062",
+        "library/hecke-alg/blocks/ex-page-062-01",
+        "library/hecke-alg/blocks/lem-page-062-02"
+      ]
+    },
+    {
+      "id": "page-063",
+      "number": null,
+      "title": "Page 63",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "veat",
+          "heading": false
+        },
+        {
+          "term": "exist integers",
+          "heading": false
+        },
+        {
+          "term": "virtual",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        },
+        {
+          "term": "basis",
+          "heading": false
+        }
+      ],
+      "extract": "58 5. THE JANTZEN-SCHAPER THEOREM Proof. Because R is a principal ideal domain, we can find a basis {f1,... , fa} of M such that there exist r; € R¥ with (e;, f;) = d;;7; for 1 < i,j < d. Furthermore, the Gram determinant G = []j_, (ei. fi) = Tl, Pi, 80 Uy(G) = a Vp (Pi). Now, m = 3°; ai fi, for a; € R, is an element of M(k) if and only if ajr; is an element of p*R fori =1..... d; that is, vp(ajr;) > k for all i.",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-063",
+        "library/hecke-alg/blocks/lem-page-063-01"
+      ]
+    },
+    {
+      "id": "page-064",
+      "number": null,
+      "title": "Page 64",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jantzen sum",
+          "heading": false
+        },
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "hja",
+          "heading": false
+        },
+        {
+          "term": "behr",
+          "heading": false
+        }
+      ],
+      "extract": "2. THE JANTZEN SUM FORMULA 59 Se = (-1) 54 a virtual % ,-module. If 7 is not the sequence of beta numbers for any partition in At+(d.n) we set We = 0 and St = 0. 5.31 The Jantzen Sum Formula ( [1,39]) Suppose that [n]; #0 in R and let r be a partition in At+(d,n). Then u 4,0 Bothd,,... Behr... Bn Wei »~ (v( [hala ) = vp({hJa)) we Bot hays Bek ges An) i>0 (anenl (a,c)elA] bee Proof. Let p € At(d,n) and consider the",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-064",
+        "library/hecke-alg/blocks/cor-page-064-01",
+        "library/hecke-alg/blocks/ex-page-064-02"
+      ]
+    },
+    {
+      "id": "page-065",
+      "number": null,
+      "title": "Page 65",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rim hook",
+          "heading": false
+        },
+        {
+          "term": "unwrapping",
+          "heading": false
+        },
+        {
+          "term": "e-core",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "classify",
+          "heading": false
+        },
+        {
+          "term": "sum formula",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": false
+        },
+        {
+          "term": "specht",
+          "heading": false
+        }
+      ],
+      "extract": "60 5. THE JANTZEN-SCHAPER THEOREM Next assume that p = 1+ 49; then F = C and gq = —1, soe = 2. Therefore, Vp ([2]q) = vp([4]q) = 1 and vp([3]q) = 0. Consequently, 2) 24) 5) So WE) Re WER 4 WR? — WL. i>d Further applications of the sum formula shows that wh = re), we Ye re » 2 2) 5 , . 2) and we yey ret _ rt ) +12. The composition factors of we * are completely determined here because the multiplicities given by the",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-065"
+      ]
+    },
+    {
+      "id": "page-066",
+      "number": null,
+      "title": "Page 66",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rim hooks",
+          "heading": false
+        },
+        {
+          "term": "e-core",
+          "heading": false
+        },
+        {
+          "term": "abacus",
+          "heading": false
+        },
+        {
+          "term": "unwrapping",
+          "heading": false
+        },
+        {
+          "term": "same block",
+          "heading": false
+        },
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "lower down",
+          "heading": false
+        },
+        {
+          "term": "bead",
+          "heading": false
+        }
+      ],
+      "extract": "3. THE BLOCKS OF -¥(d,n) AND # 61 For example, if A = (4,3,2,1) then one sequence of partitions leading to the 3-core of \\ is the following. xT] so the 3-core of A is the partition (1). It is not at all clear that the e-core does not depend upon the order in which the rim hooks are removed. The next Lemma shows that this is not the case. 5.34 Lemma The e-core of a partition is well defined. Proof. Let 8 = (1,...,8n)",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-066",
+        "library/hecke-alg/blocks/lem-page-066-01",
+        "library/hecke-alg/blocks/lem-page-066-02",
+        "library/hecke-alg/blocks/thm-page-066-03"
+      ]
+    },
+    {
+      "id": "page-067",
+      "number": null,
+      "title": "Page 67",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "same e-core",
+          "heading": false
+        },
+        {
+          "term": "rim hook",
+          "heading": false
+        },
+        {
+          "term": "block ideals",
+          "heading": false
+        },
+        {
+          "term": "weyl modules",
+          "heading": false
+        },
+        {
+          "term": "endg",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "james",
+          "heading": false
+        },
+        {
+          "term": "row",
+          "heading": false
+        }
+      ],
+      "extract": "62 5. THE JANTZEN-SCHAPER THEOREM at least one of A>, and h2.. If eh. then pt is obtained from A by moving a number of e-hooks and so yt and \\ have the same e-core. If e does not divide h>, then e divides h2, and it is easy to see that ye can be obtained from » by “sliding” the (a,b)-rim hook; thus again, \\ and yz have the same e-core. Consequently, if We and W#' are in the same block then A and ys have the same",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-067",
+        "library/hecke-alg/blocks/cor-page-067-01",
+        "library/hecke-alg/blocks/prop-page-067-02"
+      ]
+    },
+    {
+      "id": "page-068",
+      "number": null,
+      "title": "Page 68",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible specht",
+          "heading": false
+        },
+        {
+          "term": "specht modules",
+          "heading": false
+        },
+        {
+          "term": "e-restricted",
+          "heading": false
+        },
+        {
+          "term": "composition factor",
+          "heading": false
+        },
+        {
+          "term": "nodes",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "4, IRREDUCIBLE SPECHT MODULES AND WEYL MODULES 63 whose e-core is p. Furthermore, if jp # X* is a partition of n then dy ye = Oy yeti fork =1,...,e-1. Proof. The enumeration of the weight 1 partitions is easy (for example, think of the abaci of Lemma 5.34). Hence, for k = 1,2,...,¢ DWE) Ce ag #>0 j>k by the Jantzen sum formula (5.31). In particular, Wwe = Ix is reducible. If 1 < k <e it now follows easily by",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-068",
+        "library/hecke-alg/blocks/thm-page-068-01",
+        "library/hecke-alg/blocks/thm-page-068-02"
+      ]
+    },
+    {
+      "id": "page-069",
+      "number": null,
+      "title": "Page 69",
+      "level": 1,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hea",
+          "heading": false
+        },
+        {
+          "term": "ulp",
+          "heading": false
+        },
+        {
+          "term": "genv",
+          "heading": false
+        }
+      ],
+      "extract": "64 5. THE JANTZEN-SCHAPER THEOREM for some N € N. Suppose that d > n. Then A € At(d,n) and the .%p,4(d,n)- module W} is irreducible if and only if its Gram matrix G is non-zero. By Theorem 5.27 again, @- Tome TT ( dy (Bay Bothy. Bo—hdy Bn) rt) HEA(d.n) HEA(dn) ( eet (a.cjela] b<e for some M €N. Moreover, d,(ay,... , Q@,) is non-zero only if d,(a1,...,n) F 0 for any partition yz. Therefore, if S$? = D2? then W is",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-069",
+        "library/hecke-alg/blocks/thm-page-069-01",
+        "library/hecke-alg/blocks/lem-page-069-02"
+      ]
+    },
+    {
+      "id": "page-070",
+      "number": null,
+      "title": "Page 70",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circled",
+          "heading": false
+        },
+        {
+          "term": "hook lengths",
+          "heading": false
+        },
+        {
+          "term": "lengths divisible",
+          "heading": false
+        },
+        {
+          "term": "nodes",
+          "heading": false
+        },
+        {
+          "term": "e-core",
+          "heading": false
+        },
+        {
+          "term": "alli",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": false
+        },
+        {
+          "term": "james",
+          "heading": false
+        }
+      ],
+      "extract": "NOTES ON CHAPTER 5 65 vg? — 1p) > vp(G? — 1p). Therefore, Yp(La]q) = vp(LBla) <> vp(a) = vp(b), completing the proof of the Lemma. Oo Given partitions ¢ = (a1, 09,...) and r = (71, 7,...) andm EN, we define + r to be the partition (¢;+7,,¢2+79,...) and mr to be the partition (m7,mr7a,...). Recall that \\’ is the partition which is conjugate to X. 5.42 Theorem (James—Mathas) Suppose that F is a field of characteristic",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-070",
+        "library/hecke-alg/blocks/thm-page-070-01",
+        "library/hecke-alg/blocks/ex-page-070-02"
+      ]
+    },
+    {
+      "id": "page-071",
+      "number": null,
+      "title": "Page 71",
+      "level": 1,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weyl modules",
+          "heading": false
+        },
+        {
+          "term": "schaper",
+          "heading": false
+        },
+        {
+          "term": "jantzen",
+          "heading": false
+        },
+        {
+          "term": "schur algebras",
+          "heading": false
+        },
+        {
+          "term": "james",
+          "heading": false
+        },
+        {
+          "term": "q-schur",
+          "heading": false
+        },
+        {
+          "term": "sum formula",
+          "heading": false
+        },
+        {
+          "term": "linear groups",
+          "heading": false
+        }
+      ],
+      "extract": "66 5. THE JANTZEN-SCHAPER THEOREM 2. The combinatorics underpinning the proof of Theorem 5.27 were introduced by James and Murphy [42] (see also [54]); they consider the corresponding result in the representation theory of the symmetric group (ie. when g = 1 and p = w). The extension of this argument to the q-Schur algebras is due to James and Mathas [39]: we have basically followed their argument adding some",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-071"
+      ]
+    },
+    {
+      "id": "page-072",
+      "number": null,
+      "title": "Page 72",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "cellular basis",
+          "heading": false
+        },
+        {
+          "term": "cell module",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Notational Index Chapter 1. 11 Gy The symmetric group on {1,2,...,n} 5; The simple transposition (7,7 + 1) Ss The set {s1,..., 8n—1} of Coxeter generators for Gn &(w) The length of w € Gy, é The sign representation of G, T The set of reflections in G, 1.2 #= Hp g(Gn) The Iwahori—Hecke algebra of Gp TT; The generators T,,...,T,~1 of # Tw A standard basis element of #, w € Gy Z Z[4.q-‘], where q is an indeterminate",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-072"
+      ]
+    },
+    {
+      "id": "page-073",
+      "number": null,
+      "title": "Page 73",
+      "level": 1,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specht module",
+          "heading": false
+        },
+        {
+          "term": "standard p-tableau",
+          "heading": false
+        },
+        {
+          "term": "coset representatives",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "basis element",
+          "heading": false
+        }
+      ],
+      "extract": "68 3.2 3.4 dy, = [S*: D¥] a8 zsV—> Chapter 4. 4 A(d,n) F(d,n) ST... To(H.V) Te v(t) pdtv Du first (T) NOTATIONAL INDEX The Iwahori—Hecke algebra of 6, Dwew, Ta The “permutation module” m,.# The distinguished coset representatives of G, in Gn The element of G, such that t = t“d(t) The dominance order on the set of compositions The subtableau of t containing the entries 1,2,...,m The R-linear antiautomorphism of #",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-073"
+      ]
+    },
+    {
+      "id": "page-074",
+      "number": null,
+      "title": "Page 74",
+      "level": 1,
+      "pageStart": 74,
+      "pageEnd": 74,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gsr",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        },
+        {
+          "term": "beta numbers",
+          "heading": false
+        },
+        {
+          "term": "weyl module",
+          "heading": false
+        }
+      ],
+      "extract": "4.2 met 43 At(d,n) in dy Chapter 5. 5.1 Wp NOTATIONAL INDEX See page 38 2, Ms Where ju(s) = $ Dig.cMst Where p(s) = S and v(t) =T The set of partitions in A(d,n) The map in Homyy (M”, M*) given by gsr(m,) = Msr Unea(an) To(A, #1) The ideal of .Y(d.n) with basis the gsr where S,T € To(a) where a > The ideal of -Y(d.n) with basis the gsr where $,T€ 7o(a) where ab The automorphism of .W(d,n) determined by Ps = ¥1s The",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-074"
+      ]
+    },
+    {
+      "id": "page-075",
+      "number": null,
+      "title": "Page 75",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "70 SF wei) NOTATIONAL INDEX (virtual) Specht module corresponding to the se- quence a of beta numbers The ith module in the Jantzen filtration of We",
+      "extractCut": false,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-075"
+      ]
+    },
+    {
+      "id": "page-076",
+      "number": null,
+      "title": "Page 76",
+      "level": 1,
+      "pageStart": 76,
+      "pageEnd": 76,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-schur algebras",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "anp",
+          "heading": false
+        },
+        {
+          "term": "phd thesis",
+          "heading": false
+        },
+        {
+          "term": "john wiley",
+          "heading": false
+        },
+        {
+          "term": "schur algebra",
+          "heading": false
+        },
+        {
+          "term": "dyer",
+          "heading": false
+        }
+      ],
+      "extract": "Bibliography [1] H. ANDERSEN, P. Poo, anp K. WEN, Representations of quantum algebras, Invent. Math., 104 (1991), 1-59. [2] S. ARIKkI, On the decomposition numbers of the Hecke algebra of G(m,1,n), J. Math. Kyoto Univ., 36 (1996). [3] A. Beminson, G. Lusztig, aND R. MACPHERSON, A geometric setting for the quantum deformation of GLn., Duke Matj. J., 61 (1990), 655-677. [4] J. BRUNDAN, Modular branching rules for",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-076"
+      ]
+    },
+    {
+      "id": "page-077",
+      "number": null,
+      "title": "Page 77",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coreter groups",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "jantzen-schaper theorem",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "proc",
+          "heading": false
+        },
+        {
+          "term": "james",
+          "heading": false
+        }
+      ],
+      "extract": "72 [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] BIBLIOGRAPHY P.N. Honrsmrt, Representations of Hecke algebras of finite groups with BN-pairs of classical type, PhD thesis, University of British Columbia, 1979. J. E. HUMPHREYS, Reflection Groups and Coreter Groups, Cambridge University Press, Cam- bridge,",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-077"
+      ]
+    },
+    {
+      "id": "page-078",
+      "number": null,
+      "title": "Page 78",
+      "level": 1,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specht module",
+          "heading": false
+        },
+        {
+          "term": "murphy basis",
+          "heading": false
+        },
+        {
+          "term": "cell module",
+          "heading": false
+        },
+        {
+          "term": "dominance order",
+          "heading": false
+        },
+        {
+          "term": "row standard",
+          "heading": false
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        }
+      ],
+      "extract": "beta numbers, 52, 54 blocks, 15, 61, 62 braid relations, 1 Bruhat-Chevalley order, 20 dominance order, 20 Cartan matrix, 13 cell module, 10 cellular algebra, 9 cellular basis, 9 character, 5, 8 composition, 17 core, 60 decomposition matrix, 13, 34, 43, 59 diagram, 17 distinguished coset representatives, 18 double, 37 dominance order Bruhat—Chevalley order, 20 partitions, 19 tableau, 19, 46 exchange condition, 2",
+      "extractCut": true,
+      "blocks": [
+        "library/hecke-alg/blocks/prose-page-078"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "semistandard tableau",
+      "heading": false
+    },
+    {
+      "term": "row semistandard",
+      "heading": false
+    },
+    {
+      "term": "semistandard basis",
+      "heading": false
+    },
+    {
+      "term": "semistandard tableaux",
+      "heading": false
+    },
+    {
+      "term": "standard tableau",
+      "heading": false
+    },
+    {
+      "term": "cellular basis",
+      "heading": false
+    },
+    {
+      "term": "corollary suppose",
+      "heading": false
+    },
+    {
+      "term": "partition let",
+      "heading": false
+    },
+    {
+      "term": "lemma suppose",
+      "heading": false
+    },
+    {
+      "term": "cellular algebra",
+      "heading": false
+    },
+    {
+      "term": "murphy basis",
+      "heading": false
+    },
+    {
+      "term": "theorem suppose",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 78,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p3); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 78 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/hecke-alg"
+  }
+}

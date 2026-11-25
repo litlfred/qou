@@ -1,0 +1,1044 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s0002-9947-96-01660-1",
+  "blocks": [
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "TRANSACTIONS OF THE\nAMERICAN MATHEMATICAL SOCIETY\nVolume 348, Number 10, October 1996\nINVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nAbstract. This paper presents an algebraic framework for constructing in-\nvariants of closed oriented 3-manifolds by taking a state sum model on a tri-\nangulation.\nThis algebraic framework consists of a tensor category with a\ncondition on the duals which we have called a spherical category. A signiﬁcant\nfeature is that the tensor category is not required to be braided. The main\nexamples are constructed from the categories of repr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "3998\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nAnother feature of this paper is that we prove invariance from a ﬁnite list of\nmoves on triangulations. The idea of working directly with triangulations dates\nfrom the earlier work of [16] and [14] on the recoupling theory of Lie groups. The\nmoves on triangulations replace the Matveev moves on special spines which are used\nin [25] and [28]. This approach shows that the invariants are deﬁned for 3-manifolds\nwhich may have point singularities of a prescribed type. The two formalisms are\nhowever essentially equivalent.\nFinally, it is worth noting the cas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n3999\nOur notation for the orientation of a simplex is ﬁxed as follows. The standard\n(n + 1)-simplex (012 . . .n) with vertices {0, 1, 2, . . .n} has a standard orientation\n(+). The opposite orientation is indicated with a minus (−). The standard (ori-\nented) tetrahedron +(0123) has boundary\n(123) −(023) + (013) −(012).\nThe signs indicate the induced orientation of the boundary of +(0123). The tetra-\nhedron −(0123) has the opposite orientation for the boundary,\n−(123) + (023) −(013) + (012).\nIn an oriented closed manifold, each triangle is in the bound",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4000\nJOHN W. BARRETT AND BRUCE W. WESTBURY\norientation.\nThere is a unique standard linear map V π(M) →V (M) given by\niterating the standard twist P : x ⊗y 7→y ⊗x. This deﬁnes a linear map V (M) →\nV (M), and the element Z(M) is deﬁned to be the trace of this linear map.\nNote that if A: X →Y and B : Y →X are linear maps, then\ntrX⊗Y (P(A ⊗B)) = trX(AB) = trY (BA).\nThis also introduces the notation, used throughout the paper, that the map X\ncomposed with map Y is written XY (not Y ◦X).\nA state sum invariant of a closed manifold is obtained by a weighted sum of\nthese elements Z(M) over a class of l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-page-005-01.md",
+      "narrative": null,
+      "content": "In any pivotal category, for any morphism f : a →b the following composite is ˆf: ˆb = ˆb ⊗e 1⊗ϵ(a) −−−−→ˆb ⊗(a ⊗ˆa) 1⊗(f⊗1) −−−−−→ˆb ⊗(b ⊗ˆa) = \\ (ˆb ⊗ˆˆb) ⊗ˆa ˆϵ(ˆb)⊗1 −−−−→ˆe ⊗ˆa = ˆa.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4001\n1. For all morphisms, f : a →b, the following diagram commutes:\ne\nϵ(a)\n−−−−→a ⊗ˆa\nϵ(b)\ny\nyf⊗1\nb ⊗ˆb −−−−→\n1⊗ˆf\nb ⊗ˆa\n2. For all objects a, the following composite is the identity map of ˆa:\nˆa = e ⊗ˆa\nϵ(ˆa)⊗1\n−−−−→(ˆa ⊗ˆˆa) ⊗ˆa = ˆa ⊗(a ⊗ˆa)b\n1⊗ˆϵ(a)\n−−−−→ˆa ⊗ˆe = ˆa.\n3. For all objects a and b the following composite is required to be ϵ(a ⊗b):\ne\nϵ(a)\n−−→a ⊗ˆa = a ⊗(e ⊗ˆa)\n1⊗(ϵ(b)⊗1)\n−−−−−−−→a ⊗((b ⊗ˆb) ⊗ˆa) = (a ⊗b) ⊗(a ⊗b)b .\nThe functor b and the maps ϵ are not independent. The maps ϵ determine b .\nLemma 2.3. In any pivotal category, for a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/ex-page-006-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "ex-page-006-01.md",
+      "narrative": null,
+      "content": "An example of a spherical category which cannot be regarded as a category whose objects are ﬁnite dimensional vector spaces is given by taking the free Z[δ, z]-linear category on the category of oriented framed tangles and then taking the quotient by the well-known skein relation for the HOMFLY polynomial. This is a spherical category, and for each pair of objects X and Y , Hom(X, Y ) is a ﬁnitely generated free module. This example satisﬁes all the conditions for an additive spherical category except that F is not a ﬁeld. However the objects cannot be taken to be ﬁnitely generated modules unl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "4002\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nsome further conditions. These are that F is a ﬁeld and that each set of morphisms\nis a ﬁnite dimensional vector space over F.\nIn this paper an additive spherical\ncategory means a spherical category in which these conditions are satisﬁed.\nThe main examples of additive spherical categories arise as the category of rep-\nresentations of a Hopf algebra with some additional structure. This is discussed in\nsection 6.\nExample 2.6. An example of a spherical category which cannot be regarded as\na category whose objects are ﬁnite dimensional vector spaces is gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-02.md",
+      "narrative": null,
+      "content": "Every simple object is isomorphic to a unique element of J, and every element of J is simple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4003\n=\nM\nM\nFigure 1\nTheorem 2.9. Let C be an additive spherical category. Deﬁne the additive subcat-\negory J to have the same set of objects and morphisms deﬁned by\nHomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)}.\nThen C/J is a non-degenerate additive spherical category.\nProof. It is clear that J is closed under composition on either side by arbitrary\nmorphisms in C. Hence the quotient is an additive category. It is also clear that\nˆf ∈J if and only if f ∈J , and so the functor b is well-deﬁned on the quotient.\nThe functor ⊗is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "Let C be an additive spherical category. Deﬁne the additive subcat- egory J to have the same set of objects and morphisms deﬁned by HomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)}. Then C/J is a non-degenerate additive spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-01.md",
+      "narrative": null,
+      "content": "For each pair of objects (a, b) in a semisimple spherical category, dimq(a) dimq(b) = X c∈J dimq(c) dim Hom(c, a ⊗b).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "4004\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nProof. In the formula\nM\na∈J\nHom(x, a) ⊗Hom(a, x) ∼= End(x)\nﬁrst consider x to be an element of J. Then by counting dimensions, one has that\nEnd(x) ∼= F.\nNow consider the same formula with x any simple object. Again by counting di-\nmensions, only one of the terms on the left is non-zero. For this a ∈J, Hom(x, a) ∼=\nHom(a, x) ∼= F. Thus there are elements f ∈Hom(x, a), g ∈Hom(a, x) such that\nfg = idx. From this it follows that gf ∈End(a) is an idempotent and is not zero.\nBut End(a) ∼= F, and so gf = ida. This shows that x is isomorphic to a ∈J.\nDeﬁnitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4005\nb\n2\n0\nc\na\n1\nFigure 2\nb\nd\nc\nf\na\ne\nFigure 3\nusing the non-degenerate pairings\nHom∗(d ⊗c, e) ∼= Hom(e, d ⊗c)\nand\nHom∗(e ⊗a, f) ∼= Hom(f, e ⊗a).\nFor the partition function of −A labelled in the same way, the linear functional\non\nHom(e, d ⊗c) ⊗Hom(d ⊗b, f) ⊗Hom(f, e ⊗a) ⊗Hom(c ⊗a, b)\ndeﬁned by\nα ⊗β ⊗γ ⊗δ 7→trL(γ(α ⊗1)(1 ⊗δ)β).\nlikewise determines a unique linear map\n\u001a\na\nb\nc\nd\ne\nf\n\u001b\n−\n: Hom(e, d ⊗c) ⊗Hom(f, e ⊗a) →Hom(f, d ⊗b) ⊗Hom(b, c ⊗a)\nDeﬁnition 3.1. Given isomorphisms φa : a →a′, φb : b →b′ and φc : c →c′, there\nis an induced isomorphism\nHom(b, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/def-page-010-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "def-page-010-03.md",
+      "narrative": null,
+      "content": "Let f: M@ — N be a combinatorial isomorphism of simplicial complexes. Let e be any edge of M, labelled by a, and let b be the label of edge f(e) in N. Then f is compatible with these labellings if b = a in the case that f preserves the orientation of the edge, and b = @ in the case that f reverses the orientation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-01.md",
+      "narrative": null,
+      "content": "Given any ordered 6-tuple of elements of I, (a,b,c,d,e, f), and an ordered 6-tuple of isomorphisms, (a,b, Gc, Od, be, bf), where da: a—a’,...,of: f — f', then the following diagram commutes:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-02.md",
+      "narrative": null,
+      "content": "Let M be a closed simplicial manifold. Let l, and lz be two labellings such that the two labels associated to any edge are isomorphic. Then,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "4006 JOHN W. BARRETT AND BRUCE W. WESTBURY\n\nLemma 3.2. Given any ordered 6-tuple of elements of I, (a,b,c,d,e, f), and an\nordered 6-tuple of isomorphisms, (a,b, Gc, Od, be, bf), where da: a—a’,...,of: f\n— f', then the following diagram commutes:\n\nHom(f,d ® b) ® Hom(b,c ® a) ——— Hom(f’,d’ ® b’) ®@ Hom(b’,c’ @ a’)\n\nabe adypeed\noid Ke ah\nHom(e,d @ c) ® Hom(f,e ® a) ——— Hom(e’,d’ @ c’) ® Hom(f\",e’ @ a’)\n\nAlso, the diagram for the opposite orientation commutes:\nHom(f,d ® b) ® Hom(b,c ® a) ——— Hom(f’,d’ @ b') ®@ Hom(b’,c’ @ a’)\n\nabe adypeed\n(< e i} I Ne e aa\nHom(e,d @ c) ® Hom(f,e ® a) ——— Hom(e’,d’",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4007\nb\na\nc\nFigure 4\nNote that, given f and a labelling of M, there is a unique compatible labelling\nof N.\nNow the properties of the state space of a triangle under combinatorial isomor-\nphisms are described. The combinatorial isomorphisms are just permutations in\nS3. For the standard triangle T(a,ˆb, c), labelled by ∂0T 7→a, ∂1T 7→ˆb, ∂2T 7→c,\nthe labelling is permuted by (a, b, c) 7→σ+(a, b, c) for an even permutation σ+,\nand (a, b, c) 7→σ−(ˆa,ˆb, ˆc) for an odd permutation σ−. For this reason, it is more\nconvenient to use the notation V (a, b, c)=H(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-page-012-01.md",
+      "narrative": null,
+      "content": "For all even permutations σ+ 1 , σ+ 2 , odd permutations σ−, labels a, b and c and all v1 ∈V (a, b, c) and v2 ∈V σ−(ˆa,ˆb, ˆc) : θ(σ+ 1 σ+ 2 ) = θ(σ+ 1 )θ(σ+ 2 ), ⟨v1, v2⟩σ−=",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "4008\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nb\na\nc\nFigure 5\nLemma 3.6. For all even permutations σ+\n1 , σ+\n2 , odd permutations σ−, labels a, b\nand c and all v1 ∈V (a, b, c) and v2 ∈V σ−(ˆa,ˆb, ˆc) :\nθ(σ+\n1 σ+\n2 ) = θ(σ+\n1 )θ(σ+\n2 ),\n⟨v1, v2⟩σ−=\n\nv1, θ(σ+)v2\n\u000b\nσ−σ+ ,\n⟨v1, v2⟩σ−= ⟨v2, v1⟩σ−.\nAlso, the pairings are non-degenerate bilinear forms.\nProof. The ﬁrst two relations follow from the fact that the following composite is\nthe identity map:\nV (a, b, c) →V (b, c, a) →V (c, a, b) →V (a, b, c).\nThis condition is the relation shown in Figure 6, which is satisﬁed in any pivotal\ncategory, by Lemma 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "lem-page-013-01.md",
+      "narrative": null,
+      "content": "These linear maps determine an action of the group S3 on this vector bundle, or, in other words, this is an S3-equivariant vector bundle. Furthermore, the action of any permutation on elements of V ∗(a, b, c) is the adjoint of the inverse of the action on V (a, b, c).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4009\nb\na\nc\n=\na\nb\nc\nFigure 6\nDeﬁnition 3.7. For each triple of labels, (a, b, c), and each permutation σ+ or σ−\nthere are linear isomorphisms\nV (a, b, c)\nθ(σ+)\n−−−→V σ+(a, b, c),\nV ∗(a, b, c)\nθ∗−1(σ+)\n−−−−−−→V ∗σ+(a, b, c),\nif σ+ is even, and\nV (a, b, c)\nθ(σ−)\n−−−−→V ∗σ−(ˆa,ˆb, ˆc),\nV ∗(a, b, c)\nθ∗−1(σ−)\n−−−−−−→V σ−(ˆa,ˆb, ˆc),\nif σ−is odd. The maps θ(σ−) are deﬁned using the pairings.\nLemma 3.8. These linear maps determine an action of the group S3 on this vector\nbundle, or, in other words, this is an S3-equivariant vector bundle. Furthermore,\nthe act",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-013-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "thm-page-013-02.md",
+      "narrative": null,
+      "content": "Let f : M →N be a combinatorial isomorphism of labelled mani- folds. Then the simplicial invariants are equal, Z(M) = Z(N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "lem-page-014-01.md",
+      "narrative": null,
+      "content": "The partition function of the standard labelled tetrahedra A and −A are elements of the state spaces of their boundary. Let Σ ∈S4 be an even permutation. The element Σ determines combinatorial maps A →A′ and −A → −A′, where A′ is labelled by a compatible labelling {e′ ij}. Under the linear map of state spaces, \u001a e01 e02 e12 e23 e13 e03 \u001b + 7→ \u001a e′ e′ e′ e′ e′ e′ \u001b + and \u001ae01 e02 e12 e23 e13 e03 \u001b − 7→ \u001ae′ e′ e′ e′ e′ e′ \u001b − .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "4010\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nThere is a map\nV (M) ⊗V ∗(M) →V (N) ⊗V ∗(N)\nwhich is deﬁned by taking the tensor product over the set of triangles of the maps\nθ(σ) ⊗θ∗−1(σ)\nfor each triangle, followed by an iteration of the standard twist P which rearranges\nthe factors in the range of this map to coincide with V (N)⊗V ∗(N), as in Deﬁnition\n1.6. Since the action of σ on V ∗(e1, e2, e3) is the inverse of the adjoint of the action\non V (e1, e2, e3), it follows that the diagram\nV (M) ⊗V ∗(M) −−−−→V (N) ⊗V ∗(N)\ny\ny\nF\nF\nin which the vertical maps are the canonical pairings, commutes.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4011\nIf Σ is an odd permutation, then\n\u001ae01\ne02\ne12\ne23\ne13\ne03\n\u001b\n+\n7→\n\u001ae′\n01\ne′\n02\ne′\n12\ne′\n23\ne′\n13\ne′\n03\n\u001b\n−\nand\n\u001a\ne01\ne02\ne12\ne23\ne13\ne03\n\u001b\n−\n7→\n\u001a\ne′\n01\ne′\n02\ne′\n12\ne′\n23\ne′\n13\ne′\n03\n\u001b\n+\n.\nProof. The ﬁrst statement follows from the isomorphism Hom(X, Y ) ∼= X∗⊗Y for\nvector spaces X, Y .\nIn the deﬁnition of the partition function of the tetrahedron, each factor\nHom(ˆb, a⊗c) in the tensor product is identiﬁed with Hom∗(a⊗c,ˆb), using the non-\ndegenerate symmetric pairing (α, β) 7→trL(αβ) in the spherical category. Using\nthese isomorphisms, the action",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/ex-page-016-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "ex-page-016-01.md",
+      "narrative": null,
+      "content": "Figure 7 shows a bistellar move of order 2 in a 3-manifold. On the left-hand side there are two tetrahedra with a common horizontal face. On the right there are three tetrahedra with a common vertical edge. The bistellar move of order 3 is drawn in Figure 8.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "4012\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nThe linear map of state spaces is\nx ⊗y ⊗z ⊗t 7→θ∗−1(σ−1)t ⊗θ∗−1(τ)y ⊗θ(τ)z ⊗θ(σ)x,\nwhere σ is the permutation (0, 1, 2) 7→(1, 2, 0), and τ is the permutation (0, 1, 2) 7→\n(2, 1, 0). As a map of linear functionals, this is the adjoint of the map\nα ⊗β ⊗γ ⊗δ 7→θ(σ)δ ⊗ˆβ ⊗ˆγ ⊗\\\nθ(σ)ˆα.\nThe symmetry property is equivalent to the identity\ntrL\n\u0010\nˆγ\n\u0000θ(σ)δ ⊗1\n\u0001\u00001 ⊗\\\nθ(σ)ˆα\n\u0001ˆβ\n\u0011\n= trL\n\u0000β\n\u00001 ⊗δ\n\u0001\u0000α ⊗1\n\u0001\nγ\n\u0001\n,\nwhich holds in any spherical category.\n4. Piecewise-linear manifolds\nThe aim of this section is to describe a ﬁnite set of moves on the triangulations\nof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-016-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "thm-page-016-02.md",
+      "narrative": null,
+      "content": "Two closed piecewise-linear n-manifolds are equivalent if and only if they are related by a ﬁnite sequence of bistellar moves. A slight extension of Pachner’s result is possible, allowing closed 3-manifolds with singularities at vertices. Deﬁnition 4.4. A singular manifold is a complex with simplexes of dimension at most three, such that the link of every edge is a circle and the link of every face is two points. It follows from the conditions that the link of a vertex in a singular manifold is a surface. The additional condition for a singular manifold to be a closed manifold is that the link",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4013\nFigure 7\nFigure 8\nThe result is based on the reduction of Alexander’s stellar moves to bistellar\nmoves.\nThe theorem for stellar moves is given in [8, Chapter II, §D, Theorem\nII.17].\nTheorem 4.5. Two ﬁnite simplicial complexes are piecewise-linear homeomorphic\nif and only if they are related by a ﬁnite sequence of stellar moves.\nOur generalisation of Pachner’s result is the following theorem.\nTheorem 4.6. Two triangulated singular 3-manifolds are piecewise-linearly home-\nomorphic if and only if they are related by a ﬁnite sequence of bistellar mov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "thm-page-017-01.md",
+      "narrative": null,
+      "content": "Two ﬁnite simplicial complexes are piecewise-linear homeomorphic if and only if they are related by a ﬁnite sequence of stellar moves. Our generalisation of Pachner’s result is the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-017-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "thm-page-017-02.md",
+      "narrative": null,
+      "content": "Two triangulated singular 3-manifolds are piecewise-linearly home- omorphic if and only if they are related by a ﬁnite sequence of bistellar moves.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "4014\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nThis results in a triangulation of the 3-ball with 2p + 1 tetrahedra. Finally do a\nbistellar move of order 2 on the 3 tetrahedra ONSEn, ONSE1 and NSE1En,\nreplacing them by the two tetrahedra ONE1En and OSE1En.\n5. Invariants of manifolds\nThe following is the main theorem in this paper.\nTheorem 5.1. A ﬁnite semisimple spherical category of non-zero dimension de-\ntermines an invariant of oriented singular 3-manifolds.\nSince closed (3-)manifolds are examples of singular 3-manifolds, this determines\nan invariant of closed manifolds. Throughout this section",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "thm-page-018-01.md",
+      "narrative": null,
+      "content": "A ﬁnite semisimple spherical category of non-zero dimension de- termines an invariant of oriented singular 3-manifolds. Since closed (3-)manifolds are examples of singular 3-manifolds, this determines an invariant of closed manifolds. Throughout this section, the proof refers to closed manifolds, which, as is the general convention in this paper, are taken to be oriented. However every statement is also true for oriented singular manifolds. Let M be a closed simplicial manifold, J a choice of one simple object from each isomorphism class, and K the dimension of the spherical category. The nota",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Orthogonality",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "prop-page-019-01.md",
+      "narrative": null,
+      "content": "The map dimq(e02) X e13∈J Z(0123)Z(−0123) dimq(e13) is equal to the identity map on H(e23, e03, e02) ⊗H(e12, e02, e01). (Biedenharn-Elliot). The equality \u0000Z(0234) ⊗1 \u0001\u00001 ⊗Z(0124) \u0001 = X e13∈J dimq(e13) \u00001 ⊗Z(0123) \u0001\u0000P ⊗1 \u0001\u00001 ⊗Z(0134) \u0001\u0000P ⊗1 \u0001\u0000Z(1234) ⊗1 \u0001 holds. These equalities hold for all choices of labels {eij} not explicitly summed over.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4015\nLet (ij) 7→eij, for 0 ≤i < j ≤4 be a labelling of the standard 4-simplex (01234).\nThis determines partition functions for each tetrahedron in the boundary,\nZ(±(1234)) =\n\u001ae12\ne13\ne23\ne34\ne24\ne14\n\u001b\n±\n,\nZ(±(0234)) =\n\u001ae02\ne03\ne23\ne34\ne24\ne04\n\u001b\n±\n,\nZ(±(0134)) =\n\u001ae01\ne03\ne13\ne34\ne14\ne04\n\u001b\n±\n,\nZ(±(0124)) =\n\u001ae01\ne02\ne12\ne24\ne14\ne04\n\u001b\n±\n,\nZ(±(0123)) =\n\u001a\ne01\ne02\ne12\ne23\ne13\ne03\n\u001b\n±\n.\nThe invariance of C(M) under bistellar moves follows from the next proposition.\nLet P be the map x ⊗y 7→y ⊗x.\nProposition 5.2 (Orthogonality). The map\ndimq(e02)\nX\ne13∈J\nZ(0123",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-019-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "thm-page-019-02.md",
+      "narrative": null,
+      "content": "5.1 will follow once it has been established that C(M) is invariant under bistellar moves of orders 2 and 3. The bistellar moves of order 1 and 0 are the inverses of these moves. The simplicial invariant can be decomposed as Z(M, lM) = tr(Z(X), Z(D1)) and Z(N, lN) = tr(Z(X), Z(D2)), where D1 and D2 are the simplicial disks in the bistellar moves, D1 ∪D2 = ∂(01234), M = X ∪D1, N = X ∪D2, and X ∪(01234) is labelled with restriction lM to M and lN to N. The linear map Z(X) is deﬁned to be the partial trace over the state spaces of all triangles not in the boundary of X of the tensor product of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "lem-page-020-01.md",
+      "narrative": null,
+      "content": "Z(0234) = K−1 X e01,e12, e13,e14∈J \u0012 tr3 \u0000\u00001 ⊗Z(0123) \u0001\u0000P ⊗1 \u0001\u00001 ⊗Z(0134) \u0001\u0000P ⊗1 \u0001 · \u0000Z(1234) ⊗1 \u0001\u00001 ⊗Z(−0124) \u0001\u0001 Y n=0,2,3,4 dimq(e1n) \u0013 , in which tr3 is the partial trace over the third factor: (α ⊗β ⊗γ) 7→α ⊗β tr(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/lem-page-020-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Crossing",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "lem-page-020-02.md",
+      "narrative": null,
+      "content": "The following diagram is commutative: M e02∈J H(e23, e03, e02) ⊗H(e12, e02, e01) Φ −−−−→ M e13∈J H(e23, e13, e12) ⊗H(e13, e03, e01) α⊗β7→α(1⊗β) y α⊗β7→β(α⊗1) y Hom(e03, e23 ⊗(e12 ⊗e01)) Hom(e03, (e23 ⊗e12) ⊗e01)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "4016\nJOHN W. BARRETT AND BRUCE W. WESTBURY\nLemma 5.3.\nZ(0234) = K−1\nX\ne01,e12,\ne13,e14∈J\n\u0012\ntr3\n\u0000\u00001 ⊗Z(0123)\n\u0001\u0000P ⊗1\n\u0001\u00001 ⊗Z(0134)\n\u0001\u0000P ⊗1\n\u0001\n·\n\u0000Z(1234) ⊗1\n\u0001\u00001 ⊗Z(−0124)\n\u0001\u0001\nY\nn=0,2,3,4\ndimq(e1n)\n\u0013\n,\nin which tr3 is the partial trace over the third factor:\n(α ⊗β ⊗γ) 7→α ⊗β tr(γ).\nProof. Follow the linear maps on each side of the Biedenharn-Elliot relation with\nthe linear map\nK−1 dimq (e01) dimq (e12) dimq (e14) (1 ⊗Z(−0124)),\ntake the partial trace on the third factor and sum over e01 ∈J, e12 ∈J, and e14 ∈J.\nThe right-hand side of the Biedenharn-Elliot identity becomes the right-hand side\nof the equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4017\nwhere the linear map\nΦ =\nM\ne02∈J\ne13∈J\ndimq(e13)\n\u001a\ne01\ne02\ne12\ne23\ne13\ne03\n\u001b\n+\n.\nAlso, the linear map\nΨ =\nM\ne02∈J\ne13∈J\ndimq(e02)\n\u001ae01\ne02\ne12\ne23\ne13\ne03\n\u001b\n−\nis the inverse of Φ.\nProof. The semisimple condition implies that the vertical arrows are isomorphisms.\nConsider an element α ⊗β in the top left-hand space. Taking the trace of the two\nimages of this element in the bottom right-hand space with (γ ⊗1)δ for arbitrary\nγ ∈Hom(e23 ⊗e12, e13) and δ ∈Hom(e13 ⊗e01, e03) yields two elements of F which\nare equal. This shows that the diagram commutes.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/def-page-022-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "def-page-022-01.md",
+      "narrative": null,
+      "content": "A spherical Hopf algebra over a field k consists of a finite dimen- sional vector space A together with the following data:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/ex-page-022-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "ex-page-022-02.md",
+      "narrative": null,
+      "content": "Examples of Hopf algebras which are spherical are:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "4018 JOHN W. BARRETT AND BRUCE W. WESTBURY\n\nrespect to these inner products. This condition implies that the invariant is defined\nfor unoriented manifolds.\n\nThe second condition is that each self-dual simple object in the category is\northogonal and not symplectic. If a is a self-dual simple object, then there is an\nisomorphism ¢: a > @. This object is called orthogonal if ¢ = @, or symplectic if\no= —¢. These are the only possibilities, as ~ is an involution. This classification\ndoes not depend on the choice of isomorphism ¢, as Hom(a, @) & F and ~ is linear.\n\nThis condition is necessary for th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/rem-page-022-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "rem-page-022-03.md",
+      "narrative": null,
+      "content": "A Hopf algebra with an clement w that satisfies the first two conditions of Definition 6.1 is spherical if either w? = 1, or all modules are isomorphic to their dual.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/ex-page-023-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "ex-page-023-02.md",
+      "narrative": null,
+      "content": "This is an example of a ﬁnite dimensional Hopf algebra which sat- isﬁes all the conditions for a spherical Hopf algebra except that the left and right traces are distinct. This example is the quantised enveloping algebra of the Borel subalgebra of sl2(C). Let s be a primitive 2r-th root of unity with r > 1. Let B be the unital algebra generated by elements X and K subject to the deﬁning relations KX = sXK, K4r = 1, Xr = 0. Then B is a ﬁnite dimensional algebra and also has a Hopf algebra structure deﬁned by: 1. The coproduct, ∆, is deﬁned by ∆(K) = K⊗K and ∆(X) = X⊗K+K−1⊗X, 2. The augmentation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/ex-page-023-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "ex-page-023-03.md",
+      "narrative": null,
+      "content": "Not all spherical Hopf algebras are modular Hopf algebras in the sense of [17]. For example, the group algebra of a ﬁnite group over a ﬁeld of characteristic 0, or more generally, any cocommutative, involutory, semisimple Hopf algebra, is spherical and not modular. Also, not all spherical Hopf algebras are ribbon Hopf algebras. The dual of the group algebra of a non-commutative ﬁnite group can be made a spherical Hopf algebra. However, the representation ring is non-commutative, and so the Hopf algebra cannot be quasi-triangular. The next proposition gives the application of spherical Hopf alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-023-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "prop-page-023-04.md",
+      "narrative": null,
+      "content": "The category of representations of a spherical Hopf algebra, A, is equivalent to a canonical strict spherical category. In this category, the objects are lists of left A-modules and the morphisms A- linear maps of the modules formed by tensor product over the list. The trace",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4019\nRemark 6.4. If A is a Hopf algebra, there may exist more than one element w such\nthat (A, w) is a spherical Hopf algebra. However, if w1 is one such element, then\nw2 = gw1 is another such element if and only if g satisﬁes the conditions:\n1. g is central,\n2. g is group-like,\n3. g is an involution.\nExample 6.5. This is an example of a ﬁnite dimensional Hopf algebra which sat-\nisﬁes all the conditions for a spherical Hopf algebra except that the left and right\ntraces are distinct. This example is the quantised enveloping algebra of the Borel\nsubalge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/rem-page-023-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "rem-page-023-01.md",
+      "narrative": null,
+      "content": "If A is a Hopf algebra, there may exist more than one element w such that (A, w) is a spherical Hopf algebra. However, if w1 is one such element, then w2 = gw1 is another such element if and only if g satisﬁes the conditions: 1. g is central, 2. g is group-like, 3. g is an involution.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-024-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "prop-page-024-01.md",
+      "narrative": null,
+      "content": "Let A be a ﬁnite dimensional involutory Hopf algebra over an algebraically closed ﬁeld of characteristic 0. Then A determines a 3-manifold in- variant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-024-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "prop-page-024-02.md",
+      "narrative": null,
+      "content": "Let A be a spherical Hopf algebra over an algebraically closed ﬁeld. Then the non-degenerate quotient of the spherical category of ﬁnitely generated left A-modules is semisimple. A corollary to the proof of this proposition is that the nondegenerate quotient of any spherical subcategory of the category of left A-modules which is closed under taking direct summands is a semisimple spherical category. Thus, in order to con- struct a manifold invariant, it is suﬃcient to construct such spherical subcategories which are ﬁnite and have non-zero dimension. Let A be a ﬁnite dimensional spherical Hopf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prop-page-024-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "prop-page-024-03.md",
+      "narrative": null,
+      "content": "Let A be a ﬁnite dimensional pivotal Hopf algebra which is not semisimple. Then every projective A-module has zero quantum dimension.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "4020\nJOHN W. BARRETT AND BRUCE W. WESTBURY\ntrL of an endomorphism θ of a left A-module is the matrix trace of θw. The full\nconstruction is given in [3].\nSome extra conditions are required to give invariants of manifolds. The ﬁrst way\nthis can be achieved uses the same data as the construction of invariants given in\n[11].\nProposition 6.8. Let A be a ﬁnite dimensional involutory Hopf algebra over an\nalgebraically closed ﬁeld of characteristic 0. Then A determines a 3-manifold in-\nvariant.\nProof. The Hopf algebra A gives a spherical Hopf algebra by taking w = 1. In this\ncase the quantum trace is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS\n4021\nProof. If A is any Hopf algebra, then the linear functional\na 7→tr(x 7→γ−2(xa))\nis a right co-integral. If A is not a semisimple algebra this is identically zero [12,\nProposition 2.4]; and so if A satisﬁes the hypotheses of the proposition then, for\nall a ∈A, tr(x 7→w−1xaw) = 0. Now choose a primitive idempotent π and put\na = πω−1. This gives\n0 = tr(x 7→w−1xπ) = dimq(Aπ),\nwhich shows that every indecomposable projective A-module has zero quantum\ndimension.\nExamples of spherical Hopf algebras which are not semisimple are quantised\nenveloping algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/thm-page-025-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "thm-page-025-01.md",
+      "narrative": null,
+      "content": "Let A be a quantised enveloping algebra of a ﬁnite dimensional semisimple Lie algebra at a root of unity. Assume that the order, k, of the quantum parameter q is at least the Coxeter number of the Lie algebra. Then the category of tilting modules is spherical and the non-degenerate quotient is ﬁnite with non-zero dimension, satisfying the hypotheses of Theorem 5.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0002-9947-96-01660-1/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "4022\nJOHN W. BARRETT AND BRUCE W. WESTBURY\n[7]\nP. Freyd and D. N. Yetter, Coherence theorems via knot theory, J. Pure Appl. Algebra 78\n(1992), 49–76. MR 93d:18013\n[8]\nL. C. Glaser, Geometrical Combinatorial Topology I, Van Nostrand Reinhold Mathematical\nStudies 27 (1970).\n[9]\nA. Joyal and R. Street, The geometry of tensor calculus, I, Adv. in Math. 88 (1991), 55–112.\nMR 92d:18011\n[10] G. M. Kelly and M. I. Laplaza, Coherence for compact closed categories, J. Pure Appl.\nAlgebra 19 (1980), 193–213. MR 81m:18008\n[11] G. Kuperberg, Involutory Hopf algebras and 3-manifold invariants, International",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

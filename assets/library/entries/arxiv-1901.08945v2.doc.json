@@ -1,0 +1,741 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1901.08945v2",
+  "title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Torsion pairs and decompositions of derived categories",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-torsion-pairs-and-decompositions-of-derived-ca"
+    },
+    {
+      "level": 1,
+      "title": "Gerbes",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-gerbes"
+    },
+    {
+      "level": 1,
+      "title": "Twisted sheaves",
+      "number": "4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-twisted-sheaves"
+    },
+    {
+      "level": 1,
+      "title": "The derived category of a gerbe",
+      "number": "5",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-the-derived-category-of-a-gerbe"
+    },
+    {
+      "level": 1,
+      "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
+      "number": "6",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-semi-orthogonal-decompositions-for-brauersever"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 138,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semi-orthogonal decomposition",
+          "heading": false
+        },
+        {
+          "term": "derived category",
+          "heading": false
+        },
+        {
+          "term": "gerbes",
+          "heading": false
+        },
+        {
+          "term": "quasi-coherent",
+          "heading": false
+        },
+        {
+          "term": "brauer",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1901.08945v2 [math.AG] 19 Feb 2019 DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES AND OF FAMILIES OF BRAUER–SEVERI VARIETIES DANIEL BERGH AND OLAF M. SCHN¨URER Abstract. It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes according to the char- acters of the group. We establish the corresponding decomposition of the unbounded derived category of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1901.08945v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname fppf",
+          "heading": false
+        },
+        {
+          "term": "operatorname qcoh",
+          "heading": false
+        },
+        {
+          "term": "operatorname lis",
+          "heading": false
+        },
+        {
+          "term": "tau operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathcal operatorname",
+          "heading": false
+        },
+        {
+          "term": "colon ensuremath",
+          "heading": false
+        },
+        {
+          "term": "lis acute",
+          "heading": false
+        }
+      ],
+      "extract": "The concept of a *twisted sheaf* goes back to Giraud and his formal treatment of the Brauer group in terms of *gerbes* [@giraud1971 Section V.4]. During the last two decades, twisted sheaves and their derived categories have gained a renewed interest, starting with the thesis of Căldăraru [@caldararu2000], who studied moduli problems for semi-stable sheaves on varieties, and the work by de Jong [@dejong2004] and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-torsion-pairs-and-decompositions-of-derived-ca",
+      "number": "2",
+      "title": "Torsion pairs and decompositions of derived categories",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4027,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm holim",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal operatorname",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathop",
+          "heading": false
+        },
+        {
+          "term": "torsion pairs",
+          "heading": true
+        },
+        {
+          "term": "sigma mathop",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathop",
+          "heading": false
+        },
+        {
+          "term": "sim mathop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:torsion-pairs-decomp label=\"sec:torsion-pairs-decomp\"} We give criteria ensuring that a torsion pair in an abelian category gives rise to a semi-orthogonal decomposition on the level of derived categories. Our main assumption on the torsion pair is that its two components are abelian subcategories of the ambient abelian category. For bounded derived categories this is straightforward (see Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-gerbes",
+      "number": "3",
+      "title": "Gerbes",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname fppf",
+          "heading": false
+        },
+        {
+          "term": "gerbe mathop",
+          "heading": false
+        },
+        {
+          "term": "gerbe banded",
+          "heading": false
+        },
+        {
+          "term": "delta gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe alpha",
+          "heading": false
+        },
+        {
+          "term": "abelian gerbe",
+          "heading": false
+        },
+        {
+          "term": "stack mathop",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gerbes-and-twisted label=\"sec:gerbes-and-twisted\"} In this section, we collect some results from the theory on gerbes, bandings by abelian groups and the relation to cohomology. Throughout the section, $S$ will be an arbitrary algebraic stack. By a *stack* we mean a, not necessarily algebraic, stack in groupoids over the big *fppf* site of schemes over $S$. The symbol $\\Delta$ will always denote an abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-twisted-sheaves",
+      "number": "4",
+      "title": "Twisted sheaves",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1932,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname qcoh",
+          "heading": false
+        },
+        {
+          "term": "colon ensuremath",
+          "heading": false
+        },
+        {
+          "term": "qcoh chi",
+          "heading": false
+        },
+        {
+          "term": "operatorname fppf",
+          "heading": false
+        },
+        {
+          "term": "operatorname gerbe",
+          "heading": false
+        },
+        {
+          "term": "cong ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:quasi-coher-sheav label=\"sec:quasi-coher-sheav\"} In this section, $\\Delta$ will denote a diagonalizable group scheme (over $\\mathop{\\mathrm{Spec}}\\mathbb{Z}$) with character group $A := \\mathop{\\mathrm{Hom}}_{\\mathop{\\mathrm{Spec}}\\mathbb{Z}}(\\Delta, {\\ensuremath{\\mathbb{G}_{\\operatorname{m}}}})$. Recall that $A$ is a finitely generated abelian group. We will usually use multiplicative notation for $A$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-derived-category-of-a-gerbe",
+      "number": "5",
+      "title": "The derived category of a gerbe",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname qcoh",
+          "heading": false
+        },
+        {
+          "term": "colon ensuremath",
+          "heading": false
+        },
+        {
+          "term": "qcoh chi",
+          "heading": false
+        },
+        {
+          "term": "operatorname lis",
+          "heading": false
+        },
+        {
+          "term": "delta ensuremath",
+          "heading": false
+        },
+        {
+          "term": "rho operatorname",
+          "heading": false
+        },
+        {
+          "term": "eq-equiv-qcoh",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:decomp-deriv-categ label=\"sec:decomp-deriv-categ\"} In this section we generalize some of the results by Căldăraru [@caldararu2000 Chapter 2] and Lieblich [@lieblich2004 Section 2.2.4] on the basic structure of derived categories of gerbes and twisted sheaves. Throughout the section, we let $\\alpha\\colon X \\to S$ be a gerbe banded by a diagonalizable group $\\Delta$ with character group $A$. ::: definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-semi-orthogonal-decompositions-for-brauersever",
+      "number": "6",
+      "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semi-orthogonal decompositions",
+          "heading": true
+        },
+        {
+          "term": "ensuremath operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname fppf",
+          "heading": false
+        },
+        {
+          "term": "colon operatorname",
+          "heading": false
+        },
+        {
+          "term": "brauer--severi scheme",
+          "heading": false
+        },
+        {
+          "term": "phi operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathbb operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname coh",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:brau-severi-vari label=\"sec:brau-severi-vari\"} In this section, we demonstrate how to use the theory of gerbes developed by Giraud to obtain a simple and conceptually appealing proof for the existence of the semi-orthogonal decomposition of the derived category of a Brauer--Severi scheme given by Bernardara [@bernardara-BS-schemes Theorem 4.1]. We start by recalling some basic facts on Brauer--Severi schemes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "martin olsson",
+          "heading": false
+        },
+        {
+          "term": "artin stacks",
+          "heading": false
+        },
+        {
+          "term": "tame stacks",
+          "heading": false
+        },
+        {
+          "term": "schn urer",
+          "heading": false
+        },
+        {
+          "term": "algebraic stacks",
+          "heading": false
+        },
+        {
+          "term": "stacks project",
+          "heading": false
+        },
+        {
+          "term": "amnon neeman",
+          "heading": false
+        },
+        {
+          "term": "daniel bergh",
+          "heading": false
+        }
+      ],
+      "extract": "[AOV08] Dan Abramovich, Martin Olsson, and Angelo Vistoli. Tame stacks in positive charac- teristic. Ann. Inst. Fourier (Grenoble), 58(4):1057–1091, 2008. [Beh03] Kai A. Behrend. Derived l-adic categories for algebraic stacks. Mem. Amer. Math. Soc., 163(774):viii+93, 2003. [Ber09] Marcello Bernardara. A semiorthogonal decomposition for Brauer-Severi schemes. Math. Nachr., 282(10):1406–1413, 2009. [Ber17] Daniel",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ensuremath operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname fppf",
+      "heading": false
+    },
+    {
+      "term": "operatorname gerbe",
+      "heading": false
+    },
+    {
+      "term": "colon operatorname",
+      "heading": false
+    },
+    {
+      "term": "mathcal operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname qcoh",
+      "heading": false
+    },
+    {
+      "term": "mathrm ensuremath",
+      "heading": false
+    },
+    {
+      "term": "gerbe mathop",
+      "heading": false
+    },
+    {
+      "term": "mathbb operatorname",
+      "heading": false
+    },
+    {
+      "term": "category operatorname",
+      "heading": false
+    },
+    {
+      "term": "rho operatorname",
+      "heading": false
+    },
+    {
+      "term": "decomposition operatorname",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1901.08945v2"
+  }
+}

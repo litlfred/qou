@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-cond-mat-9811142v1",
+  "contains": [
+    "library/arxiv-cond-mat-9811142v1/sections/sec-front-matter",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-000",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-001",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-002",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-003",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-004",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-005",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-006",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-007",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-008",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-009",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-010",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-011",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-012",
+    "library/arxiv-cond-mat-9811142v1/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges — For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the\n\n**Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges**\n\n*P.J. Forrester†, T. Nagao∗and G. Honner†*\n\n37 pp, 9 sections.\n\n**Abstract.** For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the general parameter dependent distribution between two sets of eigenvalues with two diﬀerent parameter values can be expressed as a quaternion determinant. For the parameter dependent Gaussian and Laguerre ensembles the matrix elements of the deter- minant are expressed in terms of corresponding skew-orthogonal polynomials, and their limiting value for inﬁnite matrix dimension are computed in the vicinity of the soft and hard edges respectively. A connection formula relating the distributions at the hard and soft edge is obtained, and a universal asymptotic behaviour of the two point correlation is identiﬁed.\n\n**Outline.** Abstract; Introduction; 2 (x, y; τx, τy) :=; 2 (x(1); 0 Ja; 0 Ja(; Discussion; 0 (4XY ) ρT hard; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/9811142&metadataPrefix=arXiv), submitted 1998-11-10, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-cond-mat-9811142v1",
+    "title_source": "slug",
+    "source_file": "9811142v1.pdf",
+    "source_sha256": "8666ebc040336b1483daf0079e215a56de1ff314f5cdee51c52da543366ec96d",
+    "pages": 37,
+    "arxiv": {
+      "id": "cond-mat/9811142",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "10 Nov 1998"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

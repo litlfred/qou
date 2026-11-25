@@ -1,0 +1,445 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "9-81",
+  "blocks": [
+    {
+      "id": "library/9-81/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Singular Euclidean Structures on a Simplicial Complex\nwith Weighted Edges\nKAMEI Satoshi\nGraduate School of Mathematical Sciences, The University of Tokyo,\n3-8-1 Komaba Meguro-ku, Tokyo 153-8914, Japan\nE-mail: kamei@poisson.ms.u-tokyo.ac.jp\nReceived July 1, 2002; ﬁnal version accepted January 31, 2003\nIn this paper, we consider geometric structures on a simplicial complex. Rivin considered geometric structures\non a 2-simplicial complex which is homeomorphic to an orientable surface when some values are assigned to the\nedges of the simplicial complex and the assigned values are distributed to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "thm-page-001-01.md",
+      "narrative": null,
+      "content": "Let S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes Interdisciplinary Information Sciences, Vol. 9, No. 1, pp. 81–87 (2003)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "lem-page-002-03.md",
+      "narrative": null,
+      "content": "Let F0 \u000f FðSÞ, and let E0 be the set of all edges contained in F0. If S admits a locally Euclidean structure, then X e2E0 wðeÞ \u0001jF0j ð1Þ with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Fig. 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "X\ne2E0\nwðeÞ \n \u0001jF0j\nwith equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits a unique singular Euclidean structure coming from w.\nFurthermore we will prove the following theorem.\nTheorem 4.2.\nLet C be a compact connected pure 3-simplicial complex which is homeomorphic to a 3-manifold and\nw be a weight of C . Let S be the 2-skeleton of C . Let F0 be a subset of FðSÞ and E0 be the set of all edges contained in an\nelement of F0. Suppose that each F0 satisﬁes\nX\ne2E0\nwðeÞ \n \u0001jF0j\nwith equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then C admits a singular Euclidean structure coming from w.\nIn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/rem-page-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "rem-page-002-02.md",
+      "narrative": null,
+      "content": "(1) The proof of Theorem 4.1 can be proceeded almost parallel to [3] and [5]. But we will give precise proofs because the deﬁnition of a weight is diﬀerent from the ‘‘dihedral angle’’ stated in [3] and [5]. (2) In [3] and [5], Rivin considered only the case where a surface is orientable. But the orientability is not an essential restriction. In fact, we can prove the same statements in the nonorientable cases (Compare Deﬁnition 3.5 and Deﬁnition 6.4 in [3]). In this paper, we will consider both cases implicitly. 2. Locally Euclidean Structures In this section, we consider a necessary and suﬃci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "Let C be a compact connected pure 3-simplicial complex which is homeomorphic to a 3-manifold and w be a weight of C . Let S be the 2-skeleton of C . Let F0 be a subset of FðSÞ and E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes X e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then C admits a singular Euclidean structure coming from w.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "lem-page-003-02.md",
+      "narrative": null,
+      "content": "If the condition of Lemma 2.1 is satisﬁed, then the objective function Fðu; vÞ of the dual program of P is nonpositive, and it is equal to 0 if and only if there exists a value u such that ut ¼ \u0006ve ¼ u for all t 2 FðSÞ and all e 2 EðSÞ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Proof.\nThe assertion follows immediately from the deﬁnition of a weight.\n\u0001\nNext we will see that the necessary condition above turns out to be a suﬃcient condition, that is, if w satisﬁes the\ncondition of Lemma 2.1, then S always admits locally Euclidean structures. To see that, we regard the set of the locally\nEuclidean structures on S coming from w as the feasible region of a linear program. Furthermore we use the following\ntheorem, which is known as Duality Theorem of linear programming. See [1] for the proof of Duality Theorem. Also\nsee [1] or [5] for basic notations of linear programming.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Duality Theorem",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "Let P be a linear program of the form: minimize cxT; subject to the constraints AxT ¼ aT and x 0: Then the dual program P\u0010 is the following form: maximize a\u0006T; subject to the constraints \u0006A \u0011 cT: The feasible region of P is empty if and only if the objective function of P\u0010 is not bounded. Conversely, the feasible region of P\u0010 is empty if and only if the objective function of P is not bounded. If neither feasible region is empty, then the values of the objective functions of P and P\u0010 are equal. Now we set a linear program corresponding to the locally Euclidean structures on S coming from w. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-01.md",
+      "narrative": null,
+      "content": "The optimal value of the objective function of the dual program of P0 is strictly negative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-02.md",
+      "narrative": null,
+      "content": "Let F0 \u000f FðSÞ, and let E0 be the set of all edges contained in F0. Assume that w satisﬁes the following condition: X e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits locally Euclidean structures coming from w. We denote the set of all locally Euclidean structures on S coming from w by AðS; wÞ. It is a subset of R3l whose coordinates are the angles of the 2-faces of S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "uð1Þ\nt\n> 0 for each t 2 Fð1Þ and uð1Þ ¼ mint2Fð1Þðuð1Þ\nt Þ. Let lð1Þ ¼ jFð1Þj. Let uð2Þ\nt\n¼ uð1Þ\nt\n¼ 0 if t =2 Fð1Þ and otherwise\nuð2Þ\nt\n¼ uð1Þ\nt\n\u0006 uð1Þ. Also let vð2Þ\ne\n¼ vð1Þ\ne\nif e is not contained in some element of Fð1Þ and otherwise vð2Þ\ne\n¼ vð1Þ\ne þ uð1Þ. The\nvector ðuð2Þ; vð2ÞÞ still satisﬁes the constraints of the dual program. Furthermore\nFðuð2Þ; vð2ÞÞ \u0006 Fðuð1Þ; vð1ÞÞ ¼ \u0006u lð1Þ\u0001 \u0006\nX\ne incident to Fð1Þ\nwðeÞ\n \n!\n> 0\nfrom Lemma 2.1, so that Fðuð2Þ; vð2ÞÞ > Fðuð1Þ; vð1ÞÞ. We take the new nonzero set Fð2Þ as a proper subset of Fð1Þ, and we\nrepeat this process. At the end, we will wind up",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[3, Theorem 2.1]",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-page-005-02.md",
+      "narrative": null,
+      "content": "V is convex on fð\u0007; \b; Þ 2 R3j\u0007 > 0; \b > 0; > 0; \u0007 þ \b þ ¼ \u0001g. Deﬁnition. A volume V ðA Þ of a locally Euclidean structure A 2 AðS; wÞ is the sum of the volumes of the ideal simplices of which dihedral angles are equal to the angles of the 2-faces which are assigned from A .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-page-005-03.md",
+      "narrative": null,
+      "content": "If AðS; wÞ is not empty, then V has only one critical point on AðS; wÞ which gives the maximum value.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "3.\nSingular Euclidean Structures\nIn this section, we consider when S admits a singular Euclidean structure. To discuss that, we will use some results of\nhyperbolic geometry. At ﬁrst, we prepare some elementary notations.\nConsider the upper half-space model of H3 and an ideal simplex in it. Let A, B, C, 1 be the vertices of the ideal\nsimplex, and \u0007, \b, \t be the dihedral angles at the edges 1A, 1B, 1C respectively. Notice that \u0007, \b, \t are equal to the\nangles of the triangle ABC on xy-plane which is seen as a Euclidean triangle. According to the Milnor’s formula (see [2]\nor [6]), the volume of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/rem-page-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-01.md",
+      "narrative": null,
+      "content": "Usually the integrand of (3) is denoted by log j2 sin j. But we will only consider the case where each angle is less than \u0001. Then we adopt the deﬁnition above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "Let \u0007, \b, be the angles of a triangle t ¼ ABC respectively. Then Dðt; AÞ ¼ log sin \b \u0006 log sin . Deﬁnition. Let vi ¼ ti\u00061 \\ ti \\ tiþ1. The value Hðc\u0010; A Þ ¼ Pk\u00061 i¼1 Dðti; viÞ is called the holonomy of c\u0010.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-02.md",
+      "narrative": null,
+      "content": "There exists a singular Euclidean structure on S if and only if the holonomies of all dual cycles of S are equal to 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-03.md",
+      "narrative": null,
+      "content": "The holonomies of all dual cycles of S are equal to 0 at the critical point of V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/lem-page-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-04.md",
+      "narrative": null,
+      "content": "There exists at most one singular Euclidean structure in all locally Euclidean structures on S coming from w.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "The next lemma follows immediately.\nLemma 3.4.\nLet \u0007, \b, \t be the angles of a triangle t ¼ ABC respectively. Then Dðt; AÞ ¼ log sin \b \u0006 log sin \t.\nDeﬁnition.\nLet vi ¼ ti\u00061 \\ ti \\ tiþ1. The value Hðc\u0010; A Þ ¼ Pk\u00061\ni¼1 Dðti; viÞ is called the holonomy of c\u0010.\nLemma 3.5.\nThere exists a singular Euclidean structure on S if and only if the holonomies of all dual cycles of S are\nequal to 0.\nProof.\nFirst we assume that the holonomies of all dual cycles of S are equal to 0. Take some base 2-face t1. For any\nother 2-face t, take a chain of 2-faces a\u0010 ¼ ft1; . . . ; tk ¼ tg such that ti and tiþ1 share the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-05.md",
+      "narrative": null,
+      "content": "If AðS; wÞ is not empty, then there is a unique singular Euclidean structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Theorem 4.1.\nLet S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of\nall edges contained in an element of F0. Suppose that each F0 satisﬁes\nX\ne2E0\nwðeÞ \n \u0001jF0j\nwith equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits a unique singular Euclidean structure coming from w.\nFor 3-simplicial complexes, we can prove the following theorem.\nTheorem 4.2.\nLet C be a compact connected pure 3-simplicial complex which is homeomorphic to a 3-manifold and\nw be a weight of C . Let S be the 2-skeleton of C . Let F0 be a subset of FðSÞ and E0 be the set of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "Let S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes X e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits a unique singular Euclidean structure coming from w. For 3-simplicial complexes, we can prove the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/9-81/blocks/thm-page-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-02.md",
+      "narrative": null,
+      "content": "Let C be a compact connected pure 3-simplicial complex which is homeomorphic to a 3-manifold and w be a weight of C . Let S be the 2-skeleton of C . Let F0 be a subset of FðSÞ and E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁesX e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then C admits a singular Euclidean structure coming from w.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

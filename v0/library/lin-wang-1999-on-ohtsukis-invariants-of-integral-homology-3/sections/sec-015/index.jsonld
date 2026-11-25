@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "provenance": "ingested"
+}

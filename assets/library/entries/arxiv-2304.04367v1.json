@@ -1,0 +1,317 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2304.04367v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-angle-dependent-pair-production-in-the-polarized.md",
+      "narrative": null,
+      "content": "Qian Zhao,1 Yan-Xi Wu,1, 2 Mamutjan Ababekri,1 Zhong-Peng Li,1 Liang Tang,3, ∗and Jian-Xing Li1, †\n1Ministry of Education Key Laboratory for Nonequilibrium Synthesis and Modulation of Condensed Matter,\nShaanxi Province Key Laboratory of Quantum Information and Quantum Optoelectronic Devices,\nSchool of Physics, Xi’an Jiaotong University, Xi’an 710049, China\n2Department of Physics, Northwest University, Xi’an 710069, China\n3College of Physics and Hebei Key Laboratory of Photophysics Research and Application,\nHebei Normal University, Shijiazhuang 050024, China\n(Dated: April 11, 2023)\nThe advent o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-i-introduction.md",
+      "narrative": null,
+      "content": "The quantum electrodynamics (QED) theory predicts the\ninteraction between photons, wherein the collision of two real\nγ photons can produce the e+e−pair, known as the linear Breit-\nWheeler (LBW) process. The LBW process is the second-order\nprocess in QED [1], and its validation in terrestrial laborato-\nries requires an ultrahigh-brilliance γ-ray beam with a peak\ncross-section of ∼1.6 × 10−29 m2 [2]. To date, the only veri-\nﬁed interaction of real photons in experiments is multiphoton\nBreit-Wheeler pair production [3]. However, the production\nof LBW pairs via virtual photons has been demonstrate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Methods of theory and numerical simulation",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-ii-methods-of-theory-and-numerical-simulation.md",
+      "narrative": null,
+      "content": "SIMULATION\nThe LBW process’s polarized scattering amplitude, with\narbitrary initial photon polarization and ﬁnal positron (elec-\ntron) spins, can generally be described through the photon and\nlepton density matrixes. Stokes parameters and mean spin\nvectors can be utilized to describe the arbitrary polarization\nstates of the photon and e± in the cross section. To establish\na connection between theoretical predictions and experimen-\ntal procedures, a numerical simulation method was developed\nusing MC sampling, which permits the consideration of beam\neﬀects stemming from the energy spread and ini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Calculation of completely spin-dependent LBW cross section",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-a-calculation-of-completely-spin-dependent-lbw-c.md",
+      "narrative": null,
+      "content": "section\nIn the calculation of the completely spin-dependent cross\nsection of the LBW process, we use the Lorentz invariant\ndensity matrix to describe the arbitrary polarization. The Man-\ndelstam invariants in the LBW process are deﬁned as\ns = (k1 + k2)2/m2\ne = (p+ + p−)2/m2\ne,\n(1a)\nt = (k1 −p+)2/m2\ne = (p−−k2)2/m2\ne,\n(1b)\nu = (k1 −p−)2/m2\ne = (p+ −k2)2/m2\ne,\n(1c)\nwhere me is the mass of electron, k1,2 the 4-momenta of γ(1,2)\nand p± the 4-momenta of e±. The LBW cross section is formu-\nlated in the center of mass (c.m.) frame as (relativistic units\nwith ℏ= c = 1 are used throughout)\ndσγγ\ndΩ= r2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Constructing polarized LBW process with MC sampling",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-b-constructing-polarized-lbw-process-with-mc-sam.md",
+      "narrative": null,
+      "content": "Firstly, a clariﬁcation of the coordinate system of the LBW\nprocess in the c.m. frame is presented in Fig. 1. In this frame,\nthe polar and azimuthal directions of a pair are deﬁned with\nrespect to the photon momentum k. Speciﬁcally, the polar\ndirection is given by the scattering angle θs in the scattering\nplane, while the azimuthal angle ϕ is determined by p⊥in the\nazimuthal plane ˆθ −ˆφ. The scattering process is thus described\nin the coordinate system ( ˆo1, ˆo2, ˆo3).\nUpon Lorentz boost along the c.m. frame velocity βcm =\n(k1 + k2)/(ω1 + ω2), the colliding photons are transformed\ninto the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Theoretical and numerical analysis of polarization effects in LBW process",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-iii-theoretical-and-numerical-analysis-of-polari.md",
+      "narrative": null,
+      "content": "POLARIZATION EFFECTS IN LBW PROCESS\nA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-a-analytical-calculation-of-pair-polarization-fr.md",
+      "narrative": null,
+      "content": "angle-dependent cross section\nThe dependence of the spin-summarized cross section\nd ¯σγγ/dtdϕ on energy and angle is resolved by diﬀerent con-\nﬁgurations of photon polarization, as illustrated in Figure\n2.\nThe expression of d ¯σγγ/dtdϕ, given by Eq.\n(A2), re-\nveals that d ¯σγγ/dtdϕ is independent of ϕ for the CP photons\nFIG 2. (a) and (b) Distributions of d ¯σγγ/dtdϕ with γ(1)\nR γ(2)\nR and γ(1)\nR γ(2)\nL\ncollisions, respectively. (c)-(e) Distributions of d ¯σγγ/dtdϕ with ξ(1)\n3\n=\nξ(2)\n3\n= 1 corresponding to diﬀerent azimuthal angles ϕ. (f) The total\ncross section σγγ of the LBW process with non",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/figure-img-p006-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Angle dependence of LBW pairs induced by linear polarization of photon from numerical simulation",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-b-angle-dependence-of-lbw-pairs-induced-by-linea.md",
+      "narrative": null,
+      "content": "polarization of photon from numerical simulation\nTo retrieve the azimuthal and polar dependence of e+e−\npairs independently, we perform a MC numerical simulation.\nWe initialize approximately 1011 photons into a bi-gaussian\nbeam with uniform energy distribution between 0.1 MeV-2\nFIG 5. (a) and (b) Distributions of produced number density Npair of\nLBW pairs for collision scenarios with relatively parallel (ξ(1)\n3 ξ(2)\n3\n= 1)\nand perpendicular (ξ(1)\n3 ξ(2)\n3\n= −1) directions of transverse polarization\nvectors of photons, respectively. (c) and (d) Statistical variations\nof produced pair number wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI ACKNOWLEDGEMENT",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-vi-acknowledgement.md",
+      "narrative": null,
+      "content": "The work is supported by the National Natural Science Foun-\ndation of China (Grants Nos. 11874295, 12022506, U2267204,\n12105217), the Open Fund of the State Key Laboratory of High\nField Laser Physics (Shanghai Institute of Optics and Fine Me-\nchanics), and the foundation of science and technology on\nplasma physics laboratory (no. JCKYS2021212008).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The expressions of the total cross section and spin-summarized differential cross section",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-a-the-expressions-of-the-total-cross-section-and.md",
+      "narrative": null,
+      "content": "spin-summarized diﬀerential cross section\nThe coeﬃcients f1, f2, f3 and f4 in Eq. (8) are\nf1 =\n−x −y + 2\np\n(x + y −4)(x + y)\n,\n(A1a)\nf2 =\n2\np\n(x + y −4)(x + y)\n,\n(A1b)\nf3 = −\n2 √xy −x −y\np\nx + y −4(x + y)\n,\n(A1c)\nf4 =\ny −x\n2\np\nx + y −4 √xy −x −y\n.\n(A1d)\nwith the normalized variants x = 1 −t and y = 1 −u.\nThe expressions of the spin-summarized diﬀerential cross\nsection is\nd2 ¯σγγ\ndtdϕ = r2\nem2\ne\n64ε4 (F0 + F1)\n(A2)\nwhere\nF0 =\n4\n\u0010\nx3y + 4x2y −4x2 + xy3 + 4xy2 −8xy −4y2\u0011\nx2y2\n,\n(A3a)\nF1 =\n4\nx2y2 ×\nh\n2(x(−y) + x + y)2cos(4ϕ)(ξ(1)\n1 ξ(2)\n1 −ξ(1)\n3 ξ(2)\n3 )) −2ξ(1)\n1 ξ(2)\n1 x2 −4ξ(1)\n1 ξ(2)\n1 xy −2ξ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.04367v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B The expressions of the coefficients in Eq. (10)",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-b-the-expressions-of-the-coefficients-in-eq-10.md",
+      "narrative": null,
+      "content": "The ﬁnal-state-spin irrelevant term of Eq. (10) is\nF = −8(x(−y)+2x+2y)\nxy\nξ(1)\n1 ξ(2)\n1 −\n4(x(−y)+2x+2y)(x2+y2)\nx2y2\nξ(1)\n2 ξ(2)\n2 −\n8(x2y2−2x2y+2x2−2xy2+4xy+2y2)\nx2y2\nξ(1)\n3 ξ(2)\n3\n+ 16(x+y)(x(−y)+x+y)\nx2y2\n(ξ(1)\n3 + ξ(2)\n3 )\n(B1)\nThe coeﬃcients of electron spin ζ−,i in Eq. (10) are\nG−\n1 = −8(x + y)\np\nx2y −x2 + xy2 −2xy −y2\nx2y2\n\u0010\nξ(1)\n1 ξ(2)\n2 x −ξ(2)\n1 ξ(1)\n2 y\n\u0011\n,\n(B2a)\nG−\n2 = 4(x + y)\np\nx2 + 2xy −4x + y2 −4y\nx2y2(x + y −4)\n×\n\u0010\nξ(1)\n2 x2y + 4ξ(1)\n2 ξ(2)\n3 x −4ξ(1)\n2 ξ(2)\n3 xy + 4ξ(1)\n2 ξ(2)\n3 y −4ξ(1)\n2 x −4ξ(2)\n2 ξ(1)\n3 x −ξ(1)\n2 xy2 + 2ξ(1)\n2 xy + 4ξ(2)\n2 ξ(1)\n3 xy + 2ξ(1)\n2 y2 −4ξ(1)\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

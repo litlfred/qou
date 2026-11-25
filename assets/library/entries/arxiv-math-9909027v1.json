@@ -1,0 +1,1419 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9909027v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Then the invariance of the solution space under the action of planar tangles was observed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "At ﬁrst glance there is nothing planar about a subfactor. A factor M is a\nunital ∗-algebra of bounded linear operators on a Hilbert space, with trivial\ncentre and closed in the topology of pointwise convergence. The factor M is\nof type II1 if it admits a (normalized) trace, a linear function tr: M →C with\ntr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N]\nfor II1 factors N ⊂M. The most surprising result of [J1] was that [M : N]\nis “quantized” — to be precise, if [M : N] < 4 there is an integer n ≥3\nwith [M : N] = 4 cos2 π/n. This led to a surge of interest in subfacto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9909027v1  [math.QA]  4 Sep 1999\nPlanar Algebras, I\nV. F. R. Jones ∗\nDepartment of Mathematics\nUniversity of California\nBerkeley, California 94720–3840\nAbstract\nWe introduce a notion of planar algebra, the simplest example of\nwhich is a vector space of tensors, closed under planar contractions.\nA planar algebra with suitable positivity properties produces a ﬁnite\nindex subfactor of a II1 factor, and vice versa.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "cor-sec-001-10.md",
+      "narrative": null,
+      "content": "A nondegenerate planar algebra is semisimple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Let P be a general planar algebra presented on L by Φ. For each k let Sk be a set and α : Sk →Pk be a function. Put S = ` k Sk. Then there is a unique ﬁltered algebra homomorphism ΘS : P(S) →P with ker ΘS invariant under A(S), intertwining the A(∅) actions and such that ΘS( R ) = α(R) for R ∈S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Let P be a general planar algebra, and let Cn ⊆Pn be unital subalgebras invariant under A(∅) (i.e., πA(Cj) ⊆Ck for A ∈Aj,k(∅)). Then C = ∪Cn is a planar subalgebra of P.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "If Γα : P 1 →P 2 is an isomorphism of planar algebras, so is (Γα)−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-05.md",
+      "narrative": null,
+      "content": "Let P be a planar algebra with partition function Z. If T is a labelled tangle containing a planar network N as a connected component, then Φ(T) = Z(N )Φ(T ′) where T ′ is the tangle T from which N has been removed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-06.md",
+      "narrative": null,
+      "content": "(i) Jk is a 2-sided ideal of Pk(L) and Jk+1 ∩Pk(L) = Jk. (ii) Let Pk = Pk(L)/Jk and let Φ be the quotient map. Then P = ∪Pk becomes a planar algebra presented by Φ with partition function ZΦ = Z′. (iii) If x ∈Pk then x = 0 iﬀZΦ(A(x))=0 ∀A ∈Ak,0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-001-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "prop-sec-001-08.md",
+      "narrative": null,
+      "content": "A spherical planar algebra is nondegenerate iﬀTr deﬁnes a nondegenerate bilinear form on Pk for each k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Formalism",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "../sections/sec-001-1-the-formalism.md",
+      "narrative": null,
+      "content": "Deﬁnition 1.1. If k is a non-negative integer, the standard k-box, Bk,\nis {(x, y) ∈R2 | 0 ≤x ≤k+1, 0 ≤y ≤1}, together with the 2k marked\npoints, 1=(1, 1), 2=(2, 1), 3 = (3, 1), . . ., k = (k, 1), k + 1 = (k, 0), k + 2 =\n(k −1, 0), . . ., 2k = (1, 0).\nDeﬁnition 1.2. A planar network N will be a subset of R2 consisting\nof the union of a ﬁnite set of disjoint images of Bk’s (with k varying) under\nsmooth orientation-preserving diﬀeomorphisms of R2, and a ﬁnite number\nof oriented disjoint curves, smoothly embedded, which may be closed (i.e.\nisotopic to circles), but if not their endpoints coincide",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "By shrinking each k-box to a point as in Fig. 1.6 one obtains from a planar network a system of immersed curves with transversal multiple point singularities. Figure 1.6 Cusps can also be handled by labelled 1-boxes. To reverse the procedure requires a choice of incoming curve at each multiple point but we see that our object is similar to that of Arnold in [A]. In particular, in what follows we will construct a huge supply of invariants for systems of immersed curves. It remains to be seen whether these invariants are of interest in singularity theory, and whether Arnold’s invariants may be u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/rem-sec-001-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "rem-sec-001-07.md",
+      "narrative": null,
+      "content": "If one tried to make the construction of 1.24 for an invariant that was not multiplicative, one would rapidly conclude that the resulting algebras all have dimension zero. Deﬁnition 1.25. A planar algebra satisfying condition (iii) of 1.24 will be called non-degenerate. The second construction procedure is by generators and relations. Given a label set L and a subset R ⊆P(L), let Jj(R) be the linear span of [ T ∈R T ∈Pk(L) Ak,j(L)(T). It is immediate that Jj+1(R)∩Pj(L) = Jj(R) (just apply an element of A(∅) to kill oﬀthe last string), and Jj(R) is invariant under A(L) by construction. Deﬁnitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/rem-sec-001-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 25,
+      "target": "rem-sec-001-09.md",
+      "narrative": null,
+      "content": "One of the signiﬁcant consequences of 1.29 is that, for nondegenerate P, if one can ﬁnd a ﬁnite set of tangles which linearly span Pk, the calculation of dim Pk is reduced to the ﬁnite problem of calculating the rank of the bilinear form deﬁned on Pk by Tr. Of course this may not be easy!",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "cor-sec-002-02.md",
+      "narrative": null,
+      "content": "If P is a non-degenerate ﬁnite-dimensional planar ∗-algebra with positive partition function then Pk is semisimple for all k, so there is a unique norm ∥∥on Pk making it into a C∗-algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Let P be a planar ∗-algebra with positive partition func- tion Z. The following are equivalent: (i) P is non-degenerate (Def. 1.24). (ii) trR(x∗x) > 0 for x̸ = 0. (iii) trL(x∗x) > 0 for x̸ = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positivity",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-002-positivity.md",
+      "narrative": null,
+      "content": "For the rest of this section suppose the ﬁeld is R or C.\nSuppose we are given an involution R →R∗on the set of labels L. Then\nP(L) becomes a ∗-algebra as follows. If T is a tangle in Tk(L) we reﬂect the\nunderlying unlabelled tangle in the line y = 1\n2 and reverse all the orientations\nof the strings. The ﬁrst boundary point for a box in the reﬂected unlabelled\ntangle is the one that was the last boundary point for that box in the original\nunlabelled tangle.The new tangle T ∗is then obtained by assigning the label\nR∗to a box that was labelled R. This operation is extended sesquilinearly\nto all o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/conj-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "conj-sec-003-08.md",
+      "narrative": null,
+      "content": "Let (P, Φ) be a planar algebra with labelling set L = L3, #(L3) = 1. Suppose dim Pn ≤n! for n ≤4. Let V be the subspace of P4(L) spanned by tangles with at most two labeled 3-boxes, and let R = V ∩ker Φ be relations. Then dim \u0012Pn(L) Jn(R) \u0013 ≤n! forall n. There is some evidence for the conjecture. It would imply in particular the n = 0 case which implies the following result, proved by D. Thurston about hexagons: “Consider all graphs with hexagonal faces that may be drawn on S2 with non-intersecting edges. Let M be the move of Figure 2.5.8 on the set of all such graphs (where the 8 external ver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "cor-sec-003-07.md",
+      "narrative": null,
+      "content": "The planar algebra P H is generated by the single 3-box .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "cor-sec-003-12.md",
+      "narrative": null,
+      "content": "The calculation of the dimension of a planar subalgebra of P ⊗is undecidable. Since there are groups which are ﬁnitely generated but not ﬁnitely pre- sented we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-003-13",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "cor-sec-003-13.md",
+      "narrative": null,
+      "content": "There are ﬁnite dimensional planar ∗-algebras which are not ﬁnitely generated as planar algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/ex-sec-003-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "ex-sec-003-01.md",
+      "narrative": null,
+      "content": "Temperley-Lieb algebra. If δ1 and δ2 are two non-zero scalars, one deﬁnes TL(n, δ1, δ2) as being the subspace of Pn(∅) spanned by the tangles with no closed loops. Deﬁning multiplication on TL(n, δ1, δ2) by multiplication as in Pn(∅) except that one multiplies by a factor δ1 for each loop and δ2 for each loop , then discarding the loop. Clearly the map from Pn(∅) to TL(n, δ1, δ2) given by multiplying by δ1’s or δ2’s then discarding loops, gives a Φ exhibiting TL(n, δ1, δ2) as a planar algebra. For general values of δ1 and δ2, TL(n) is not non-degenerate. An extreme case is δ1 = δ2 = 1 where Z(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "Planar algebras on 1-boxes. If A is an associative algebra with identity and a trace functional tr: A →K, tr(ab) = tr(ba), tr(1) = δ, we may form a kind of “wreath product” of A with TL(n, δ). In terms of generators and relations, we put L = L1 = A and a, b ∈A − λa + b λ ∈K a + b λ b a −ba R = ∪ a, b ∈A a − ∪ ∪ −tr(a) One may give a direct construction of this planar algebra using a basis as follows. Choose a basis {ai | i ∈I} of A with aiaj = P ck ijak for scalars ck ij. (Assume 1 ∈{ai} for convenience.) Let P A n be the vector space whose basis is the set of all Temperley-Lieb basis n-tangle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/ex-sec-003-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "ex-sec-003-03.md",
+      "narrative": null,
+      "content": "The BMW algebra. Let L = Lz = {R,Q} and define the planar algebra BMW on L by the relations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/ex-sec-003-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "ex-sec-003-05.md",
+      "narrative": null,
+      "content": "a Hecke-algebra related example. The homfly poly- nomial of [F+] is highly sensitive to the orientation of a link and we may not proceed to use it to deﬁne a planar algebra as in Example 2.4. In particular, a crossing in the homfly theory is necessarily oriented as . Thus it does not yield a 2-box in our planar algebra context. Nevertheless it is possible to use the homfly skein theory to deﬁne a planar algebra. We let P H k be the usual homfly skein algebra of linear combinations of (3-dimensional) iso- topy classes of oriented tangles in the product of the k-box with an interval, with orient",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/ex-sec-003-16",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "ex-sec-003-16.md",
+      "narrative": null,
+      "content": "Finite groups A special case of the subalgebra of P σ of Example 2.8 where a group acts on a set S is where S = G itself, the action being left multiplication. The algebra P2 is then the group algebra CG, linearly spanned by elements g for g in G, which are by deﬁnition the matrices ga b = δag,b. They have the properties h = = , , g gh h g g g g δg,h gh h which can be used to present P as a planar algebra (see [La]). In particular P1,3 = ℓ∞(G) and P2 = M|G|(C). It is obvious that G can be recovered from the abstract planar algebra P by using the minimal idempotents of P1,3. A noncommutative, ﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "lem-sec-003-10.md",
+      "narrative": null,
+      "content": "G is the subgroup ⟨˜∆˜∆−1⟩of Γ generated by ˜∆˜∆−1, and if e ∈∆, G = G′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "prop-sec-003-09.md",
+      "narrative": null,
+      "content": "P Γ,∆is a planar ∗-subalgebra of P ⊗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-003-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "prop-sec-003-14.md",
+      "narrative": null,
+      "content": "The map Φσ : P(L) →P σ, Φ(T) = f(T)Φ0(T) (linearly extended) presents P σ as a general planar algebra, Φ|P(φ) presents TL with δ1 = δ2 = √Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-003-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "prop-sec-003-15.md",
+      "narrative": null,
+      "content": "A planar subalgebra P of P σ is spherical.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-003-17",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "prop-sec-003-17.md",
+      "narrative": null,
+      "content": "If P is a general planar algebra and S is a set of invertible elements of P1, set P S k = {x ∈Pk | u⊗kx = xu⊗k ∀u ∈S} . Then P S is a general planar subalgebra of P (planar if P is) and a ∗-planar algebra if P is, and S = S∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "../sections/sec-003-2-examples.md",
+      "narrative": null,
+      "content": "Example 2.1: Temperley-Lieb algebra. If δ1 and δ2 are two non-zero\nscalars, one deﬁnes TL(n, δ1, δ2) as being the subspace of Pn(∅) spanned by\n27\nthe tangles with no closed loops. Deﬁning multiplication on TL(n, δ1, δ2)\nby multiplication as in Pn(∅) except that one multiplies by a factor δ1 for\neach loop\nand δ2 for each loop\n, then discarding the loop. Clearly the\nmap from Pn(∅) to TL(n, δ1, δ2) given by multiplying by δ1’s or δ2’s then\ndiscarding loops, gives a Φ exhibiting TL(n, δ1, δ2) as a planar algebra. For\ngeneral values of δ1 and δ2, TL(n) is not non-degenerate. An extreme case\nis δ1 =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "Had we presented BMW on the single 2-box R, the Reide- meister type III move (number (iv) above) would have been R = R R R R R + pictures with at most two R ’s This leads us to consider the general planar algebra Bn with the following three conditions: (1) Bn is planar on one 2-box. (2) dim B2 = 3. (3) dim B3 ≤15. If one lists 16 tangles in B3 then generically any one of them will have to be a linear combination of the other 15. Looking at the 15th and 16th tangles in a listing according to the number of 2-boxes occuring in the tangle, we will generically obtain a type III Reidemeister move, o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "thm-sec-003-06.md",
+      "narrative": null,
+      "content": "Any tangle in the knot-theoretic sense with alternating in and out boundary orientations is isotopic to a tangle with a diagram where all crossings occur in disjoint discs which contain the pattern with some non-alternating choice of crossings.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 54,
+      "target": "thm-sec-003-11.md",
+      "narrative": null,
+      "content": "The set H is a subgroup of F(∆\\{e}) equal to the normal closure N of {ri} in F(∆\\{e}). Moreover, P G,∆= R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "The Reidemeister type II moves are satisﬁed, i.e., , = = where either of the two curves is distinguished and its global orientation is arbitrary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "An x in Pk is in P u k iﬀthere is a y in P u k with = q points q points p points p points x y where p + q = 2k, where the pictures may be isotoped in any way so that the annular region becomes the standard annular region (with ∗anywhere allowed by the orientations).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "The map σu is a unital endomorphism of the ﬁltered algebra P (a ∗-endomorphism if u is unitary) and P u k = {x | σu(x) ∈P1,k+1}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "Suppose P is a general planar algebra. If x ∈P u with σu(x) = y . Then and y = δ2 x y = x 1 δ1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "prop-sec-004-08.md",
+      "narrative": null,
+      "content": "If u is a generalized Hadamard matrix, P u is planar, hence a spherical C∗-planar algebra. Moreover, dim P u 1 = 1, and P u 2 and P u 1,3 are abelian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "prop-sec-004-10.md",
+      "narrative": null,
+      "content": "Suppose Q−1 is prime and let u be a Q×Q generalized Hadamard matrix with the following two properties (the ﬁrst of which is always true up to gauge equivalence): (i) There is an index ∗with ua ∗= u∗ a = 1 for all a. (ii) The group Z/(Q −1)Z acts transitively on the spins other than ∗, and uga gb = ua b for all g ∈Z/(Q −1)Z. Then dim(P u 2 ) = 2 or u is gauge equivalent to a standard matrix.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Binunitaries",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "../sections/sec-004-211-binunitaries.md",
+      "narrative": null,
+      "content": "Commuting squares have been used to construct subfactors (see [GHJ],[Ha])\nand the general theory of calculating the subfactor planar algebra of §4.2 from\na commuting square will be dealt with in a future paper. The treatment uses\nthe language of statistical mechanical models with some attention paid to\ncritical points as in chapter 4 of [JS]. Here we give a diﬀerent approach\nwhich seems more natural from a planar point of view and will allow us to\ncapture, as special cases, spin model commuting squares and some vertex\nmodel ones with no extension of the planar algebra formalism. The main\nconce",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/rem-sec-004-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "rem-sec-004-07.md",
+      "narrative": null,
+      "content": "We did not use the full force of the hypotheses. The result will hold in a ﬁnite-dimensional general C∗-planar algebra provided isolated circles can be removed with a multiplicative factor δ, that the tangle formula for orthogonal projection onto P1,k+1 is correct, and dim P1 = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "If P is a general planar algebra and u is bi-invertible, let P u k be {x ∈Pk s.t. = x y for some y∈Pk}. Then P u is a general planar subalgebra, P u is a (general) planar ∗-subalgebra if P is a planar ∗-algebra and u is bi-unitary. The properties of being planar, C∗and spherical are inherited from P.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "thm-sec-004-06.md",
+      "narrative": null,
+      "content": "Let P be a spherical ﬁnite-dimensional C∗-planar algebra and u ∈P2 be bi-unitary. Then x ∈P u iﬀ x x = δ2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 67,
+      "target": "thm-sec-004-09.md",
+      "narrative": null,
+      "content": "If u is a Q × Q generalized Hadamard matrix thought of as a biunitary for the spin model P σ, then the minimal projections of the abelian C∗-algebra P u 2 are in bijection with the connected components of the graph Γu. Moreover the (normalized) trace of such a projection is n/Q2 where n is the size of the connected component, which is necessarily a multiple of Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 74,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "The principal graphs alone do not determine the planar alge- bra — for instance the algebras (P σ)Z/4Z and (P σ)Z/2Z⊕Z/2Z of 2.8 have the same principal graph but are readily distinguished by counting ﬁxed points under the rotation. (2) In fact, the assumption of nondegeneracy on P in 3.1.1 and 3.1.3 could be replaced by the hypothesis Pk/Ik semisimple. Then conditions (i)– (iv) could be used to inductively guarantee nondegeneracy. (3) If P had been a C∗-planar algebra, we would have a theorem (3.1.3)∗ with all tr(p) positive, all p’s projections, and the obvious adjoint ∗ on random walks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Structure Theory",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-005-3-general-structure-theory.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra structure, Markov trace",
+      "pageStart": 67,
+      "pageEnd": 74,
+      "target": "../sections/sec-006-31-algebra-structure-markov-trace.md",
+      "narrative": null,
+      "content": "The proof of Theorem 3.1.3 below is routine for those conversant with [J1]\nor [GHJ]. We include it since, as stated, it can be useful in determining prin-\ncipal graphs. Recall that in a planar algebra P, ek denotes the idempotent\nin Pk equal to 1\nδ(|| . . .\n).\nLemma 3.1.1 Let P be a ﬁnite-dimensional spherical nondegenerate pla-\nnar algebra over an algebraically closed ﬁeld. Then for each k, Pk−1ek−1Pk−1\n67\nis a 2-sided ideal, denoted Ik, in Pk and if Mk is a set of minimal idempotents\nin Pk generating all the distinct minimal ideals in Pk/Ik, we have\n(i) pPkek−1 = 0 for p in Mk\n(ii) pPkq = 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 74,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "As an algebra, Pk is isomorphic to the algebra whose basis is random walks of length 2k on ΓP beginning and ending at ∗with multipli- cation rule w1w2 = w3 if the ﬁrst half of the walk w2 is equal to the second half of w1, and w3 is the ﬁrst half of w1 followed by the second half of w2; 0 otherwise. Moreover, if⃗t is the function from the vertices of ΓP to K,⃗ tp = δdptr(p),⃗t is an eigenvector for the adjacency matrix of Γ, eigenvalue δ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 74,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "With notation as above, suppose τpδ = 2 cos π/(λ(p)+2) (τpδ ≥2 if λ(p) = ∞). Then P (A,TR) is a (spherical) C∗-planar algebra with principal and dual principal graphs equal to ['4,.. The (normalized) trace of the minimal projection in PAT) corresponding to the word w=",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 77,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "If P is a planar algebra, πA deﬁnes a linear isomorphism between Pk and λ1(P)k, for each k > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 77,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "The subset S of the planar algebra generates P as a planar algebra iﬀπA(S) generates λ1(P) as a planar algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 77,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Let P = ∪kPk be a planar algebra with parameters δ1 = Z( ) and δ2 = Z( ). Assume P is presented on itself by Φ. Then λ1(P) is a planar algebra with parameters δ2, δ1, presented on itself by λ1(Φ) where λ1(Φ) is deﬁned by λ1(Φ)(T) = δ−pΦ( ˜T), p being the number of internal boxes in T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 74,
+      "pageEnd": 77,
+      "target": "../sections/sec-007-32-duality.md",
+      "narrative": null,
+      "content": "If P = ∪kPk is a planar algebra, the ﬁltered algebras λn(P), where\nλn(P)k = Pn,n+k, for ﬁxed n, have natural planar algebra structures. For\nn even, this is rather obvious — just add n straight vertical lines to the left\nof a tangle. But if n is odd one must be more careful because of orientations.\nIn fact λ1(P) and P are not isomorphic in general, even as ﬁltered algebras,\nas one can see from example 2.9. We begin by describing the planar algebra\nstructure on λ1(P).\nIf T is an unlabelled k-tangle we deﬁne the unlabelled (k + 1)-tangle ˜T\nto be the tangle consisting of a vertical straight line",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction and cabling",
+      "pageStart": 77,
+      "pageEnd": 79,
+      "target": "../sections/sec-008-33-reduction-and-cabling.md",
+      "narrative": null,
+      "content": "We give two ways to produce new planar algebras from a given one.\nThe ﬁrst is a reduction process which makes “irreducible” planar algebras\n— those with dim P1 = 1 — the focus of study. A planar algebra is not\nreconstructible in any simple way from its irreducible reductions, though, as\ncan be seen from example 2 where the irreducible reductions would be trivial.\nGiven a general planar algebra P presented on itself by Φ, and an idem-\npotent p ∈P1, we deﬁne the reduced general planar algebra pPp (by p) as\n77\nfollows: for each k we let pz be the element\n\nof P, (illustrated when k is odd) and we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor product",
+      "pageStart": 79,
+      "pageEnd": 80,
+      "target": "../sections/sec-009-34-tensor-product.md",
+      "narrative": null,
+      "content": "Let P 1 = ∪kP 1\nk and P 2 = ∪kP 2\nk be general planar algebras. We will\nendow the ﬁltered algebra P 1 ⊗P 2 = ∪kP 1\nk ⊗P 2\nk with a general planar\nalgebra structure on the labelling set L = `\ni≥1 P 1\ni × P 2\ni . Consider P 1 and\nP 2 presented on themselves by Φ1 and Φ2 respectively. First deﬁne a linear\nmap L : P(L) →P(P1) ⊗P(P2) by L(T) = T1 ⊗T2 where T is a tangle\nlabelled by f : Boxes(T) →P1 × P2, Ti have the same unlabelled tangle as\nT and they are labelled by f composed with the projection P1 × P2 →Pi,\ni = 1, 2. This L is well deﬁned since the isotopy classes of labelled tangles\nare a basi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free product",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-010-35-free-product.md",
+      "narrative": null,
+      "content": "The notion of free product of planar algebras was developed in collabora-\ntion with D. Bisch and will be presented in a future paper. The free product\nP 1 × P 2 of two planar algebras P 1 and P 2 is by deﬁnition the subalgebra\nof the tensor product linearly spanned by (images of) T1 consisting of a pair\nT1 ∈P 1\nk , T2 ∈P 2\nk which can be drawn in a single 2k −1-box, with bound-\nary points in pairs, alternately corresponding to P 1 and P 2, so that the two\ntangles T1 and T2 are disjoint. An example is given by Figure 3.5.1 where we\n80\nhave used the “colours” to indicate boundary points belongin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "cor-sec-013-01.md",
+      "narrative": null,
+      "content": "The centralizer N′ ∩Mk is isomorphic under θ to the vector space Vk+1 of central vectors in the N −N bimodule Nk+1 N M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "cor-sec-013-03.md",
+      "narrative": null,
+      "content": "If x ∈N and ξ ∈L2(Mk), ρ(xξ −ξx) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "lem-sec-013-05.md",
+      "narrative": null,
+      "content": "If c ∈Vk and d ∈Vk′, then (i) αd,j+kαc,i = αc,iαd,j for i ≤j. (ii) For i < j, aj−1ai = aiaj, µj−1µi = µiµj. For i ≤j, ηj+1ηi = ηiηj, κj+1κi = κiκj. (iii) For i ≤j, aj+kαc,i = αc,iaj aj−1αc,j = αc,j−1ai−1 µj+k+1αc,i = αc,iµj+1 µi−1αc,j = αc,j−1µi−1 ηj+kαc,i = αc,iηj ηi−1αc,j−1 = αc,jηi−1 κj+kαc,i = αc,iκj κi−1αc,j = αc,j+1κi−1 (iv) For i < j, µjai = aiµj+1 µiaj = aj−1µi ηj−1ai = aiηj ηi+1aj = aj+1ηi+1 κj−1ai = aiκj κiaj = aj+1κi ηj−1µi = µiηj ηiµj = µj+1ηi κj−2µi = µiκj−1 κiµj = µj+1κi κjηi = ηiκj−1 κiηj = ηj+1κi (v) aiκi = id µiηi = id ai+1κi = id µi+1ηi = id (vi) ajηj = δid µj+1κj = δid. (The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-013-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "lem-sec-013-06.md",
+      "narrative": null,
+      "content": "If x ∈⊗k NM, then (i) θ−1EMk−2θ(x) = δ−1am+1(x) if k is odd, k = 2m + 1. (ii) θ−1EMk−2θ(x) = δ−1µm+1(x) if k is even, k = 2m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-013-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "lem-sec-013-07.md",
+      "narrative": null,
+      "content": "If y ∈⊗k NM and x, z ∈M, then xv∗ kθ(y)vk+1z = θ(x ⊗y ⊗z)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "ρ(Mk) ⊆N′ ∩Mk and if B is a basis, ρ coincides on N′ ∩Mk with r : Mk →Mk, r(x) = EMk(vk+1 P b∈B bxvk+1b∗).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion algebra",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../sections/sec-011-36-fusion-algebra.md",
+      "narrative": null,
+      "content": "The reduced subalgebras of the cables on a planar algebra form a “fusion\nalgebra” along the lines of [Bi]. This is to be thought of as part of the graded\nalgebra structure given by a planar algebra and will be treated in detail in a\nfuture paper with D. Bisch.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Planar algebras and subfactors",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../sections/sec-012-4-planar-algebras-and-subfactors.md",
+      "narrative": null,
+      "content": "In this section we show that the centralizer tower for an extremal finite\nindex type I, subfactor admits the structure of a spherical C*-planar algebra,\nand vice versa. We need several results from subfactors, some of which are\nwell known.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some facts about subfactors",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "../sections/sec-013-41-some-facts-about-subfactors.md",
+      "narrative": null,
+      "content": "Let N C M be I], factors with 7~! = [M : N] < co. We adopt standard\nnotation so that M;, i = 0,1,2,... is the tower of [J1] with Mj) =M, M, =\n(M,en), Misi = (Mj, e:+1) where e; : L?(M;_1) > L?(M;_2) is orthogonal\n\n81\nprojection, eN = e1. Let B = {b} be a ﬁnite subset of M (called a basis)\nwith\n(4.1.1)\nX\nb∈B\nbe1b∗= 1 .\nThen by [PP] and [Bi],\n(4.1.2)\nx(\nX\nb\nbe1b∗) = (\nX\nb\nbe1b∗)x = x\nfor x ∈M.\n(4.1.3)\nX\nb\nbb∗= τ −1\n(4.1.4)\nX\nb\nbEN(b∗x) = x =\nX\nb\nEN(xb)b∗\nfor x ∈M.\n(4.1.5)\nFor x ∈N′ (on L2(M)),\nτ\nX\nb\nbxb∗= EM′(x) .\n4.1.6 Recall that the subfactor is called extremal if the normalized traces on\nN′",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 92,
+      "target": "thm-sec-013-04.md",
+      "narrative": null,
+      "content": "If N ⊂M is extremal, ρk+1 = id on N′ ∩Mk.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-01.md",
+      "narrative": null,
+      "content": "If N ⊂M is an extremal subfactor of index δ−2 > 4, each N′ ∩Mk−1 is a Hilbert space carrying a ∗-representation of AT(2k, δ). And dim(Fi(N′ ∩Mk−1)) = dim(N′ ∩Mk−2) = dim(M′ ∩Mk−1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-03.md",
+      "narrative": null,
+      "content": "Suppose the principal graph of the subfactor N ⊂M, [M : N] > 4, has an initial segment equal to the Coxeter-Dynkin diagram Dn+2 with ∗as shown: n · · · ∗ Then there are at least two edges of the principal graph connecting the two points at distance n + 1 from ∗to points of distance n + 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-05.md",
+      "narrative": null,
+      "content": "If N ⊂M is an extremal II1 subfactor then, with the notation of §3.2, λ1(P N⊂M) = P M⊂M1, as planar algebras. (Note that P M⊂M1 k = M′ ∩Mk which is a subset of P N⊂M k+1 . We are saying that the identity map is an isomorphism of planar algebras.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-06.md",
+      "narrative": null,
+      "content": "If N ⊂M is an extremal II1 subfactor, the cabled planar algebra Cn(P N⊂M) of §3.3 is isomorphic to P N⊂Mn−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-07.md",
+      "narrative": null,
+      "content": "Let N ⊂M be an extremal II1 subfactor and p a projec- tion in N′∩M. The planar algebra p(P N⊂M)p of §3.3 is naturally isomorphic to the planar algebra of the reduced subfactor pN ⊂pMp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-014-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "cor-sec-014-08.md",
+      "narrative": null,
+      "content": "If N1 ⊂M1 and N2 ⊂M2 are extremal ﬁnite index subfactors, then P N1⊗N2⊂M1⊗M2 is naturally isomorphic to the tensor product P N1⊂M1 ⊗P N2⊂M2 of §3.4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "If H carries an irreducible ∗-representation of AT(n, δ) for δ > 2, n > 4, and dim(FiH) = ∞, then dim H = \\ (remember n is even).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subfactors give planar algebras",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "../sections/sec-014-42-subfactors-give-planar-algebras.md",
+      "narrative": null,
+      "content": "We keep the notation of §4.1. The next theorem legitimizes the use of\npictures to prove subfactor results.\nTheorem 4.2.1 Let N ⊂M be an extremal type II1 subfactor with [M :\nN]\n1\n2 = δ < ∞. For each k let P N⊂M\nk\n= N′ ∩Mk−1 (isomorphic via θ to Vk,\ni.e. N-central vectors in Nk\nN M). Then P N⊂M = S\nk P N⊂M\nk\nhas a spherical\nC∗-planar algebra structure (with labelling set P N⊂M) for which Φ( x ) = x\nand, suppressing the presenting map Φ,\n(i) For i = 1, 2, . . .k −1,\ni\ni+1\n= Ei\n(ii)\nx\n= δEM′(x) ,\nx\n= δEMk−2(x)\n(iii)\nx\n=\nx\n(where on the right, x is considered as an\nelement of Mk+1)\n(iv) Z( x\n) = δ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 115,
+      "target": "thm-sec-014-04.md",
+      "narrative": null,
+      "content": "If P is a C∗-planar algebra with δ < 2 then the principal graph can be neither Dn with n odd nor E7. If the principal graph is D2n the chirality is −1, if it is E6 the chirality is e±2πi/3 and if it is E8 the chirality is e±2πi/5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/cor-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 115,
+      "pageEnd": 118,
+      "target": "cor-sec-015-02.md",
+      "narrative": null,
+      "content": "If (P, Φ) is as before, the Poincar´e series P∞ n=0 dim(Pn)zn has radius of convergence ≥ δ2 . This result could be proved without the full strength of Theorem 4.3.1 (as pointed out by D.Bisch), using the principal graph and the trace. The Poincar´e series of planar subfactors enjoy many special properties as we shall explore in future papers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Planar algebras give subfactors",
+      "pageStart": 115,
+      "pageEnd": 118,
+      "target": "../sections/sec-015-43-planar-algebras-give-subfactors.md",
+      "narrative": null,
+      "content": "The following theorem relies heavily on a result of Popa [Po2].\nTheorem 4.3.1 Let (P, Φ) be a spherical C∗-planar algebra with invariant\nZ and trace tr. Then there is a subfactor N ⊆M and isomorphisms Ω:\nN′ ∩Mi →Pi with\n(i) Ωis compatible with inclusions\n(ii) tr(Ω(x)) = tr(x)\n(iii) Ω(M′ ∩Mi) = P1,i (linear span of tangles with vertical ﬁrst\nstring)\n(iv) Ω(ei) = 1\nδ(Φ(\n))\n115\n(v) [M : N] = δ2. If x ∈N′ ∩Mi, choose T ∈P with Φ(T) =\nΩ(x).\n(vi) Ω(EM′(x)) = 1\nδΦ(\nT )\n(vii) Ω(EMi−1(x)) = 1\nδΦ( T\n)\nProof. By theorem 3.1 of [Po2], the pair N ⊆M exists given a system\n(Aij), 0 ≤i < j < ∞of ﬁnite dimensi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 115,
+      "pageEnd": 118,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Let (P, Φ) be a spherical C∗-planar algebra with invariant Z and trace tr. Then there is a subfactor N ⊆M and isomorphisms Ω: N′ ∩Mi →Pi with (i) Ωis compatible with inclusions (ii) tr(Ω(x)) = tr(x) (iii) Ω(M′ ∩Mi) = P1,i (linear span of tangles with vertical ﬁrst string) (iv) Ω(ei) = 1 δ(Φ( )) (v) [M : N] = δ2. If x ∈N′ ∩Mi, choose T ∈P with Φ(T) = Ω(x). (vi) Ω(EM′(x)) = 1 δΦ( T ) (vii) Ω(EMi−1(x)) = 1 δΦ( T )",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9909027v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 118,
+      "pageEnd": 122,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "[A] V. Arnold, Remarks on the enumeration of plane curves.\nAmer. Math. Soc. Transl. 173(1996), 17–32.\n[Bi] D.Bisch, Bimodules, higher relative commutants and the fu-\nsion algebra associated to a subfactor, The Fields Institute\nfor Research in Mathematical Sciences Communications Se-\nries 13 (1997), 13–63.\n[BW] J.Barrett and B.Westbury, “Spherical Categories”, hep-\nth/9310164.\n[BiW] J.Birman and H.Wenzl, Braids, link polynomials and a new\nalgebra. Trans. Amer. Math. Soc. 163 (1989), 249–273.\n[Ba] R. Baxter, Exactly Solved Models in Statistical Mechanics,\nAcademic Press, New York, 1982.\n[Ban] T.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

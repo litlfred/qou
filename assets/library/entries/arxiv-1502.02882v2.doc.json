@@ -1,0 +1,1593 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1502.02882v2",
+  "title": "Fusion categories via string diagrams",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "String diagrams",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-string-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Conventions for general monoidal categories",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-conventions-for-general-monoidal-categories"
+    },
+    {
+      "level": 2,
+      "title": "Conventions for fusion categories",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-conventions-for-fusion-categories"
+    },
+    {
+      "level": 1,
+      "title": "The pivotal operators on a fusion category",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-the-pivotal-operators-on-a-fusion-category"
+    },
+    {
+      "level": 2,
+      "title": "Fusion and Frobenius-Peron dimensions",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-fusion-and-frobenius-peron-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "The pairing convention",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-the-pairing-convention"
+    },
+    {
+      "level": 3,
+      "title": "Further graphical conventions",
+      "number": "3.2.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-321-further-graphical-conventions"
+    },
+    {
+      "level": 2,
+      "title": "The pivotal operators",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-the-pivotal-operators"
+    },
+    {
+      "level": 2,
+      "title": "Positivity of paired dimensions",
+      "number": "3.4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-positivity-of-paired-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "The pivotal operators as a monoidal functor",
+      "number": "3.5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-35-the-pivotal-operators-as-a-monoidal-functor"
+    },
+    {
+      "level": 2,
+      "title": "The pivotal operators are the double dual functor",
+      "number": "3.6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-36-the-pivotal-operators-are-the-double-dual-fun"
+    },
+    {
+      "level": 1,
+      "title": "Explicit formula for the pivotal operators",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-explicit-formula-for-the-pivotal-operators"
+    },
+    {
+      "level": 2,
+      "title": "Monodromy interpretation of the pivotal operators",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-monodromy-interpretation-of-the-pivotal-opera"
+    },
+    {
+      "level": 2,
+      "title": "The pivotal indicators",
+      "number": "4.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-42-the-pivotal-indicators"
+    },
+    {
+      "level": 2,
+      "title": "Formula for the pivotal operators",
+      "number": "4.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-43-formula-for-the-pivotal-operators"
+    },
+    {
+      "level": 1,
+      "title": "Pivotal structures",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-5-pivotal-structures"
+    },
+    {
+      "level": 2,
+      "title": "Explicit equations for pivotal structures",
+      "number": "5.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-51-explicit-equations-for-pivotal-structures"
+    },
+    {
+      "level": 2,
+      "title": "Fusion homomorphisms",
+      "number": "5.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-52-fusion-homomorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Sphericalization of a fusion category",
+      "number": "5.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-53-sphericalization-of-a-fusion-category"
+    },
+    {
+      "level": 1,
+      "title": "Ocneanu rigidity",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-ocneanu-rigidity"
+    },
+    {
+      "level": 2,
+      "title": "The tangent complex",
+      "number": "6.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-the-tangent-complex"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing of cohomology",
+      "number": "6.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-vanishing-of-cohomology"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "pivotal",
+          "heading": false
+        },
+        {
+          "term": "graphical",
+          "heading": false
+        },
+        {
+          "term": "bartlett",
+          "heading": false
+        }
+      ],
+      "extract": "Fusion categories via string diagrams Bruce Bartlett Abstract We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1502.02882v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "pivotal operators",
+          "heading": false
+        },
+        {
+          "term": "pivotal structure",
+          "heading": false
+        },
+        {
+          "term": "admits pivotal",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "every fusion",
+          "heading": false
+        },
+        {
+          "term": "graphical calculus",
+          "heading": false
+        },
+        {
+          "term": "fusion dimension",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction In this paper we ﬁx our ground ﬁeld to be C. A fusion category is a rigid semisimple linear monoidal category with ﬁnitely many isomorphism classes of simple objects and whose unit object is simple. A basic example of a fusion category is the category of representations of a ﬁnite group; in this way the study of fusion categories can be regarded as a common generalization of group theory and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-string-diagrams",
+      "number": "2",
+      "title": "String diagrams",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{string_sec} In this section we explain our conventions regarding the string diagram calculus.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-conventions-for-general-monoidal-categories",
+      "number": "2.1",
+      "title": "Conventions for general monoidal categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal categories",
+          "heading": true
+        },
+        {
+          "term": "snake eqns",
+          "heading": false
+        },
+        {
+          "term": "otimes rightarrow",
+          "heading": false
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "parenthesis scheme",
+          "heading": false
+        },
+        {
+          "term": "right rigid",
+          "heading": false
+        },
+        {
+          "term": "eqref snake",
+          "heading": false
+        },
+        {
+          "term": "left rigid",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{string_conventions} The string diagram calculus for a monoidal category $\\cat{C}$ is well-known (see \\cite{s11-sgc} or \\cite[Chap. 4]{BBthesis} for an overview). Each diagram refers to a certain morphism in $\\cat{C}$. Our diagrams go from top to bottom, so that a morphism $f : A \\rightarrow B \\otimes C$ is drawn as \\[ \\ig{d60.pdf} \\, . \\] In these pictures there is no explicit parenthesis scheme on the input",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-conventions-for-fusion-categories",
+      "number": "2.2",
+      "title": "Conventions for fusion categories",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdf frac",
+          "heading": false
+        },
+        {
+          "term": "pdf right",
+          "heading": false
+        },
+        {
+          "term": "pdf end",
+          "heading": false
+        },
+        {
+          "term": "otimes stackrel",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow otimes",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "trivalent basis",
+          "heading": false
+        },
+        {
+          "term": "hat beta",
+          "heading": false
+        }
+      ],
+      "extract": "A fusion category is a rigid semisimple linear monoidal category with finitely many isomorphism classes of simple objects and whose unit object is simple \\cite{e06-2vect}. In a fusion category, the associators feature explicitly in the graphical calculus as follows. Suppose we fix a representative set of simple objects $X_i$, $i \\in I$, and choose trivalent bases \\begin{equation} \\label{basis_choice} e_\\alpha : X_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-the-pivotal-operators-on-a-fusion-category",
+      "number": "3",
+      "title": "The pivotal operators on a fusion category",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal operators",
+          "heading": true
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "apex",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we define the pairing convention and the pivotal operators on a fusion category. We prove that the paired dimensions are positive, and we compute the pivotal operators in terms of the apex associator monodromy and the pivotal indicators. We show that the pivotal operators are monoidal and identify them with the double dual functor.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-fusion-and-frobenius-peron-dimensions",
+      "number": "3.1",
+      "title": "Fusion and Frobenius-Peron dimensions",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion dimensions",
+          "heading": true
+        },
+        {
+          "term": "paired dimensions",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimensions",
+          "heading": false
+        },
+        {
+          "term": "unit-counit pair",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "cat sum",
+          "heading": false
+        },
+        {
+          "term": "pairing convention",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{fusion_frobenius} We recall the following from \\cite{eno02-ofc}. In a fusion category $\\cat{C}$ over $\\mathbb{C}$, every simple object $X_i$ has two canonical dimensions, which are positive real numbers: its {\\em Frobenius-Perron} dimension $d^+_i$ and its {\\em fusion} dimension $d_i$. \\begin{defn}[see \\cite{eno02-ofc}] The {\\em Frobenius-Perron dimensions} $d^+_j$ of the simple objects $X_j$ are the unique",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-the-pairing-convention",
+      "number": "3.2",
+      "title": "The pairing convention",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairing convention",
+          "heading": true
+        },
+        {
+          "term": "unit-counit pair",
+          "heading": false
+        },
+        {
+          "term": "unit counit",
+          "heading": false
+        },
+        {
+          "term": "pair expressing",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "root choice",
+          "heading": false
+        },
+        {
+          "term": "right dual",
+          "heading": false
+        },
+        {
+          "term": "left dual",
+          "heading": false
+        }
+      ],
+      "extract": "The pairing convention Deﬁnition 3.5. A root choice on a fusion category is a symmetric choice {di} of square roots of the paired dimensions; that is, one which satisﬁes d2 i = d{i,i∗} and di = di∗for all i ∈I. 1The notion of a paired dimension is due to M¨uger [18, Prop 2.4], where it is written as d2(X), but not named explicitly. The terminology and notation is our own. 8 The utility of a root choice is that it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-321-further-graphical-conventions",
+      "number": "3.2.1",
+      "title": "Further graphical conventions",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "scalar langle",
+          "heading": false
+        },
+        {
+          "term": "pdf",
+          "heading": false
+        },
+        {
+          "term": "rightarrow otimes",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a root choice $\\{d_i\\}$, $i \\in I$. We introduce the following notation. For an endomorphism of a simple object $f : X_i \\rightarrow X_i$, we will write $\\langle f \\rangle \\in \\mathbb{C}$ for the scalar satisfying $f = \\langle f \\rangle \\, \\id_{X_i}$. In string diagrams, \\begin{equation} \\label{extract_scalar} \\ba \\ig{h1.pdf} \\ea \\, = \\, \\langle f \\rangle \\, \\ba \\ig{h2.pdf} \\ea \\, . \\end{equation} We can extract",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-the-pivotal-operators",
+      "number": "3.3",
+      "title": "The pivotal operators",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal operators",
+          "heading": true
+        },
+        {
+          "term": "defn piv",
+          "heading": false
+        },
+        {
+          "term": "pivotal basis",
+          "heading": false
+        },
+        {
+          "term": "pivotal symbols",
+          "heading": false
+        },
+        {
+          "term": "flip lem",
+          "heading": false
+        },
+        {
+          "term": "label piv",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        },
+        {
+          "term": "pdf",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{piv_op_sec} Using the pairing convention, we can diagrammatically define involutions on the fusion vector spaces. \\begin{defn} Let $\\{d_i\\}$ be a root choice on $\\cat{C}$. The {\\em pivotal operators} \\[ T^i_{jk} \\colon \\Hom(X_i, X_j \\otimes X_k) \\rightarrow \\Hom(X_i, X_j \\otimes X_k) \\] are defined by \\begin{equation} \\label{defn_piv_operator} \\ba \\ig{e290.pdf} \\ea \\mapsto \\ba \\ig{e291.pdf} \\ea.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-positivity-of-paired-dimensions",
+      "number": "3.4",
+      "title": "Positivity of paired dimensions",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 648,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "paired dimensions",
+          "heading": true
+        },
+        {
+          "term": "alpha epsilon",
+          "heading": false
+        },
+        {
+          "term": "frobenius-perron dimensions",
+          "heading": false
+        },
+        {
+          "term": "mathbf sum",
+          "heading": false
+        },
+        {
+          "term": "pseudo cor",
+          "heading": false
+        },
+        {
+          "term": "alpha colon",
+          "heading": false
+        },
+        {
+          "term": "char pseudo",
+          "heading": false
+        },
+        {
+          "term": "eqref fpeqn",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we show that the paired dimensions $d_{\\{i,i^*\\}}$ are positive real numbers. The first step is to show that a root choice gives rise to a `twisted' homomorphism from the Grothendieck ring to $\\mathbb{C}$, which is to be compared with \\eqref{FPeqn}. \\begin{prop}[{cf. \\cite[pg. 593]{eno02-ofc}}]\\label{homprop} In any root choice $\\{d_i\\}$, we have \\[ d_j d_k = \\displaystyle \\sum_i \\Tr (T^i_{jk})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-the-pivotal-operators-as-a-monoidal-functor",
+      "number": "3.5",
+      "title": "The pivotal operators as a monoidal functor",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal operators",
+          "heading": true
+        },
+        {
+          "term": "monoidal",
+          "heading": true
+        },
+        {
+          "term": "label piv",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "endofunctor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{piv_monoidal} We want to precisely relate the pivotal operators with the more traditional notion of the `double dual functor'. We first need to show that the pivotal operators can be viewed as equipping the identity functor with coherence isomorphisms making it into a monoidal functor. \\begin{lem} \\label{extend}Suppose $F,G : \\cat{D} \\rightarrow \\cat{D}'$ are linear functors between semisimple categories. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-36-the-pivotal-operators-are-the-double-dual-fun",
+      "number": "3.6",
+      "title": "The pivotal operators are the double dual functor",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat rightarrow",
+          "heading": false
+        },
+        {
+          "term": "beta otimes",
+          "heading": false
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "defn beta",
+          "heading": false
+        },
+        {
+          "term": "right duals",
+          "heading": false
+        },
+        {
+          "term": "double dual",
+          "heading": true
+        },
+        {
+          "term": "defn omega",
+          "heading": false
+        },
+        {
+          "term": "monoidal endofunctor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{pivops} Our approach to the `double dual functor' on a fusion category $\\cat{C}$ been to encode it in a canonical monoidal endofunctor $\\mathcal{T} : \\cat{C} \\rightarrow \\cat{C}$, whose underlying functor is simply the identity. The advantage of our approach is that it is canonical, not requiring arbitrary choices of duals for objects. Such fixed initial choices of duals tend to complicate calculations, as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-explicit-formula-for-the-pivotal-operators",
+      "number": "4",
+      "title": "Explicit formula for the pivotal operators",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "apex-associator monodromy",
+          "heading": false
+        },
+        {
+          "term": "pivotal indicators",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{explicit_sec} In this section we express the pivotal operators $T^i_{jk}$ directly in terms of the associators of the fusion category. More precisely, we introduce the {\\em apex-associator monodromy} and the {\\em pivotal indicators}, and in Theorem \\ref{formula_piv} we express $T^i_{jk}$ as the product of the pivotal indicators with the conjugate of the apex-associator monodromy.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-41-monodromy-interpretation-of-the-pivotal-opera",
+      "number": "4.1",
+      "title": "Monodromy interpretation of the pivotal operators",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal operators",
+          "heading": true
+        },
+        {
+          "term": "frobenius-schur indicator",
+          "heading": false
+        },
+        {
+          "term": "vijk",
+          "heading": false
+        },
+        {
+          "term": "ciii",
+          "heading": false
+        },
+        {
+          "term": "pivotal structure",
+          "heading": false
+        },
+        {
+          "term": "cyclic operators",
+          "heading": false
+        },
+        {
+          "term": "tijk",
+          "heading": false
+        },
+        {
+          "term": "cijk",
+          "heading": false
+        }
+      ],
+      "extract": "Monodromy interpretation of the pivotal operators We can write the pivotal operators T i jk as the conjugate of a product of cyclic operators, deﬁned as follows. Write Vijk = Hom(1, Xi ⊗(Xj ⊗Xk)). Deﬁnition 4.1. In a fusion category, the cyclic operators Cijk : Vijk →Vkij are deﬁned as follows, using the pairing convention: 7→ The monodromy of the cyclic operators is the operator Tijk on Vijk given as the composite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-the-pivotal-indicators",
+      "number": "4.2",
+      "title": "The pivotal indicators",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal indicators",
+          "heading": true
+        },
+        {
+          "term": "read oﬀfrom",
+          "heading": false
+        },
+        {
+          "term": "self-dual simple",
+          "heading": false
+        },
+        {
+          "term": "yang-lee category",
+          "heading": false
+        },
+        {
+          "term": "pivotal structure",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "paired dimensions",
+          "heading": false
+        },
+        {
+          "term": "associator expansion",
+          "heading": false
+        }
+      ],
+      "extract": "The pivotal indicators In this subsection we compute the paired dimensions explicitly and deﬁne the pivotal indicators. 21 Let C be a fusion category, with representative simple objects Xi, i ∈I. The right duality induces a map ∗: I →I with ∗∗= id. Choose for each i ∈I a nonzero map ηi : 1 →Xi∗⊗Xi: Deﬁne ˆηi : Xi∗⊗Xi →1 as the linear dual of ηi, so that = 1 for all i ∈I. Deﬁne the complex numbers ai as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-formula-for-the-pivotal-operators",
+      "number": "4.3",
+      "title": "Formula for the pivotal operators",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal operators",
+          "heading": true
+        },
+        {
+          "term": "apex associator",
+          "heading": false
+        },
+        {
+          "term": "associator monodromy",
+          "heading": false
+        },
+        {
+          "term": "piv ops",
+          "heading": false
+        },
+        {
+          "term": "pivotal indicators",
+          "heading": false
+        },
+        {
+          "term": "ijk",
+          "heading": false
+        },
+        {
+          "term": "fair basis",
+          "heading": false
+        },
+        {
+          "term": "associator matrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Form_piv_op} We now show how to compute the pivotal operators directly in terms of the associator matrix elements. More precisely, we express them in terms of the {\\em apex associator monodromy}. \\begin{defn} The {\\em apex associators} are the associator matrix elements where the top strand is the identity\\footnote{Thus they form a sharp angle diagrammatically, hence the name.}: \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-pivotal-structures",
+      "number": "5",
+      "title": "Pivotal structures",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 35,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "sphericalization",
+          "heading": false
+        },
+        {
+          "term": "piv",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{piv_struc_sec} In this section we characterize pivotal structures as solutions of an explicit set of equations over the complex numbers. We also define fusion homomorphisms, and discuss the sphericalization of a fusion category.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-51-explicit-equations-for-pivotal-structures",
+      "number": "5.1",
+      "title": "Explicit equations for pivotal structures",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 629,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "pivotal endofunctor",
+          "heading": false
+        },
+        {
+          "term": "pivotal structure",
+          "heading": false
+        },
+        {
+          "term": "pivotal operators",
+          "heading": false
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "dim gamma",
+          "heading": false
+        },
+        {
+          "term": "cat rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Explicit_equations} In Section \\ref{piv_monoidal} we showed that, by using the pairing convention, every fusion category over $\\mathbb{C}$ comes equipped with a canonical monoidal endofunctor $T : \\cat{C} \\rightarrow \\cat{C}$, the pivotal endofunctor, whose underlying functor is simply the identity, with the pivotal operators $T^i_{jk}$ supplying the coherence isomorphisms. On the other hand, a {\\em pivotal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-52-fusion-homomorphisms",
+      "number": "5.2",
+      "title": "Fusion homomorphisms",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion homomorphisms",
+          "heading": true
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "text pivotal",
+          "heading": false
+        },
+        {
+          "term": "pivotal structures",
+          "heading": false
+        },
+        {
+          "term": "dim gamma",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathbb",
+          "heading": false
+        },
+        {
+          "term": "rep",
+          "heading": false
+        }
+      ],
+      "extract": "We write $[\\cat{C}]$ for the Grothendieck ring of a fusion category. The following property of quantum dimensions is well-known. \\begin{lem} Given a pivotal structure $\\gamma$ on a fusion category $\\cat{C}$, the quantum dimension map $\\dim_{\\gamma} \\colon [\\cat{C}] \\rightarrow \\mathbb{C}$ which sends $[V] \\mapsto \\dim_\\gamma (V)$ satisfies the following: \\begin{itemize} \\item It is a ring homomorphism, \\item",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-53-sphericalization-of-a-fusion-category",
+      "number": "5.3",
+      "title": "Sphericalization of a fusion category",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion category",
+          "heading": true
+        },
+        {
+          "term": "sphericalization",
+          "heading": true
+        },
+        {
+          "term": "xsi",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "fusion dimensions",
+          "heading": false
+        },
+        {
+          "term": "monoidal action",
+          "heading": false
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        },
+        {
+          "term": "pivotal symbols",
+          "heading": false
+        }
+      ],
+      "extract": "Sphericalization of a fusion category We have seen in Corollary 3.28 that every fusion category C over C comes equipped with a canonical monoidal action of Z/2Z. The ‘equivariantization’ with respect to this action deﬁnes a new fusion category admitting a canonical spherical structure. Recall (see eg. [24]) that a monoidal action of a group G on a monoidal category C is a monoidal functor F : BG →Aut⊗(C), where BG",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-ocneanu-rigidity",
+      "number": "6",
+      "title": "Ocneanu rigidity",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ocneanu",
+          "heading": true
+        },
+        {
+          "term": "kitaev",
+          "heading": false
+        },
+        {
+          "term": "davydov1997-twisting",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ocneanu_sec} In \\cite[Appendix E6]{k05-aes} Kitaev gave a diagrammatic proof that the Davydov-Yetter cohomology \\cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting} of a unitary fusion category vanishes in positive degrees. In this section we show that the pairing convention enables us to extend Kitaev's graphical proof to all fusion categories.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-61-the-tangent-complex",
+      "number": "6.1",
+      "title": "The tangent complex",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 538,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdf sum",
+          "heading": false
+        },
+        {
+          "term": "tangent complex",
+          "heading": true
+        },
+        {
+          "term": "category cat",
+          "heading": false
+        },
+        {
+          "term": "classifies first-order",
+          "heading": false
+        },
+        {
+          "term": "chain eqn",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "gamma delta",
+          "heading": false
+        },
+        {
+          "term": "first-order deformations",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we recall the definition of the Yetter-Davydov cohomology of a fusion category $\\cat{C}$ \\cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting}. Define the functor \\[ T_n : \\underbrace{\\cat{C} \\boxtimes \\cdots \\boxtimes \\cat{C}}_{n \\text{ times}} \\rightarrow \\cat{C} \\] by $T_n(A_1, \\ldots, A_n) = A_1 \\otimes \\cdots \\otimes A_n$, parenthesized from left-to-right for definiteness, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-vanishing-of-cohomology",
+      "number": "6.2",
+      "title": "Vanishing of cohomology",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "36",
+      "words": 1022,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "michael uger",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "dmitri nikshych",
+          "heading": false
+        },
+        {
+          "term": "seung-moon hong",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "ross street",
+          "heading": false
+        },
+        {
+          "term": "andr joyal",
+          "heading": false
+        }
+      ],
+      "extract": "Vanishing of cohomology We will need the following ‘handleslide’ identity. 32 Lemma 6.5. In the pairing convention for the graphical calculus associated to a fusion category, we have X α,p dp = X k dk where dp are the fusion dimensions, X is an arbitrary object, and f : Xk ⊗X → Xk ⊗X is an arbitrary morphism. Proof. LHS = X p,α dp = dk X p,α (44) where in the ﬁrst equality the pairing convention is being used, and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "fusion category",
+      "heading": true
+    },
+    {
+      "term": "pivotal indicators",
+      "heading": true
+    },
+    {
+      "term": "pivotal operators",
+      "heading": true
+    },
+    {
+      "term": "pivotal basis",
+      "heading": false
+    },
+    {
+      "term": "fusion dimensions",
+      "heading": true
+    },
+    {
+      "term": "category cat",
+      "heading": false
+    },
+    {
+      "term": "canonical pivotal",
+      "heading": false
+    },
+    {
+      "term": "text pivotal",
+      "heading": false
+    },
+    {
+      "term": "pivotal endofunctor",
+      "heading": false
+    },
+    {
+      "term": "label fusion",
+      "heading": false
+    },
+    {
+      "term": "pivotal structure",
+      "heading": false
+    },
+    {
+      "term": "fusion categories",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1502.02882v2"
+  }
+}

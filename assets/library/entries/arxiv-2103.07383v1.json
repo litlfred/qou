@@ -1,0 +1,325 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2103.07383v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "An easy way to produce a knot is to tie a piece of string and glue the ends together. This motivates the mathematical definition of a knot as a continuous embedding of a circle into three-dimensional Euclidean space. Depending on the initial knotting, different knot types arise. We say that two knots are of the same knot class if there exists an ambient isotopy \\cite[p.~4f.]{Cromwell:2004} that deforms one knot to the other avoiding any sort of self-intersections or ``cutting and glueing'' phenomena. \nIn the following we aim to investigate the regularity of optimal shapes for knots within thei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On the Analyticity of Critical Points of the Generalized\nIntegral Menger Curvature in the Hilbert Case\nDaniel Steenebrügge\nRWTH Aachen University, Institut für Mathematik\nTemplergraben 55, 52062 Aachen, Germany.\nsteenebruegge@instmath.rwth-aachen.de\nwww.instmath.rwth-aachen.de/~steenebruegge/home\nNicole Vorderobermeier\nUniversität Salzburg, Fachbereich Mathematik\nHellbrunner Strasse 34, 5020 Salzburg, Austria.\nnicole.vorderobermeier@sbg.ac.at\nuni-salzburg.at/index.php?id=209722\nNovember 23, 2021\nAbstract\nWe prove the analyticity of smooth critical points for generalized integral Menger cur-\nva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition of the first variation",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-decomposition-of-the-first-variation.md",
+      "narrative": null,
+      "content": "\\label{sec:Decomposition}\n\nHermes was the first to derive Gateaux differentiability and a formula for the first variation of the integral Menger curvature $\\mathcal{M}_p =  2^p \\textnormal{intM}^{(p,p)} $ for $p\\geq 2$ in his PhD thesis \\cite[Theorem\\,2.33, Remark\\,2.35]{Hermes:2012:Menger}. In \\cite[Theorem\\,3]{BlattReiter:2015:Menger}, Blatt and Reiter extended this result to the generalized integral Menger curvature $\\textnormal{intM}^{(p,q)}$ for the sub-critical range $p\\in (\\tfrac 23 q+1, q+\\tfrac 23)$ and $q>1$. However, they approached the problem differently to Hermes by taking advant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of the main term Q(p)",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-estimate-of-the-main-term-qp.md",
+      "narrative": null,
+      "content": "\\label{sec:EstimateMainTerm}\n\nNext we investigate the order of the main term $Q^{(p)}$, for which we need to examine its $L^2$-representation first.\n\n\\begin{lemma}\n    \\label{lemma:L2MainTermViaFourier}\n    Let $p \\in (\\tfrac 7 3,\\tfrac 8 3)$, $s \\ge 0$ and $\\gamma \\in H^{3p-4+s}(\\R/\\Z,\\R^n)$ be parametrized by arc-length.\n    Then, there is $\\Qpt(\\gamma) \\in H^s(\\R/\\Z,\\R^n)$ such that for all $h \\in H^{\\frac 3 2 p -2}(\\R/\\Z,\\R^n)$,\n    \\[\n        \\Qp(\\gamma,h) = \\int_{\\R/\\Z} \\left<\\Qpt(\\gamma)(u), h(u)\\right> \\d u.\n    \\]\n    In particular, $\\Qpt$ maps $C^\\infty(\\R/\\Z,\\R^n)$ into itself.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The remainder term R(p)",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-the-remainder-term-rp.md",
+      "narrative": null,
+      "content": "\\label{sec:RemainderTermNonCritical}\n\nNow we aim to estimate the remainder term $R^{(p)}$, which appears in the first variation of the generalized integral Menger curvature for $q=2$ and $p\\in (\\tfrac 73, \\tfrac 83)$, and its derivatives. We observe that it is indeed of lower order in comparison to the main term $Q^{(p)}$, which has been studied in the previous section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation of the remainder term R(p)",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-41-representation-of-the-remainder-term-rp.md",
+      "narrative": null,
+      "content": "In this subsection we are concerned with an alternative representation of the remainder term $R^{(p)}$ and its derivatives.\nLet us first recall the following result.\n\n\\begin{lemma}[Regularity of the remainder integrand, \\protecting{\\cite[Lemma 4.4]{BlattReiter:2015:Menger}}]\n    \\label{lemma:regularityIntegrandRemainder}\\ \\\\\n    Let $\\g\\in W^{(3p-4)/2+\\s,2}(\\R/\\Z,\\R^n)$ be a simple curve parametrized by arc-length.\n    \\begin{itemize}\n        \\item If $\\s=0$, then $\\gp\\in L^{1}(\\R/\\Z\\times D,\\R^{n})$ and\n        \\item if $\\s>0$, then $((v,w) \\mapsto \\gp(\\cdot,v,w;\\dots))\\in L^{1}(D,\\W[\\tilde\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A fractional Leibniz rule",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-42-a-fractional-leibniz-rule.md",
+      "narrative": null,
+      "content": "\\label{subsec:FractionalLeibnizRule}\n\nThe remainder term $R^{(p)}$ contains amongst others the factor $\\Gamma$, which is basically given as a product of two functions multiplied with a singular weight. By applying a Bessel potential space norm, we obtain a sort of fractional Leibniz rule which will subsequently be discussed for $\\Gamma$ and its derivatives. \n\n\nWe observe that the $l$-th derivative of $R^{(p)}$ leads to $k$-th derivatives of $\\Gamma$, where $k\\leq l+1$. Applying the generalized Leibniz rule to the $ k$-th derivative of $\\Gamma$ in the next step, we obtain\n\\[\n\\begin{split}\n& \\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of the remainder term R(p)",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-43-estimate-of-the-remainder-term-rp.md",
+      "narrative": null,
+      "content": "We may find an estimate for of $\\partial^l \\Rpt(\\gamma)$ with respect to a fractional Sobolev norm.\n\\begin{lemma}\n    \\label{lemma:estimateRemainder}\n    Let $\\gamma \\in C^\\infty(\\R/\\Z,\\R^n)$ be parametrized by arc-length and $m > \\tfrac 12$.\n    Then there exist constants $C=C(\\gamma,m,n,p)>0$ and\n     $r= r(\\gamma,m,n,p)>0$  such that\n    \\begin{align*}\n    \t& \\norm[H^m]{\\partial^l \\Rpt(\\gamma)} \\\\\n    \t& \\leq C \\sum_{j_1 + \\ldots + j_{K-1} = l+1} \\binom{l+1}{j_1, \\ldots, j_{K-1}} \\ p^{(3n)}_{j_1} \\left( \\left\\{\\frac{(|\\alpha|+1)!}{r^{|\\alpha|+1}} \\right\\}_{|\\alpha|\\leq j_1}, \\{ \\| \\gamma^{(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main statement",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-5-proof-of-the-main-statement.md",
+      "narrative": null,
+      "content": "\\label{sec:MainProof}\n\nWe are finally in the position to derive the key ingredient, an iterated recursive estimate for critical points $\\gamma$ of the generalized integral Menger curvature $\\Mpz$ with respect to a Sobolev norm. Based on that, we prove the main result of this paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recursive estimate and iteration",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-51-recursive-estimate-and-iteration.md",
+      "narrative": null,
+      "content": "Recursive estimate and iteration\nIn order to show analyticity of a curve, we need to bound its higher derivatives. One possible\napproach is to bound derivatives by the lower order ones and iterate this procedure inductively.\nIn the following we show how such recursive estimates can be obtained from the Euler-Lagrange\nequations.\n18\nLet γ ∈C∞(R/Z, Rn) be a critical point of intM(p,2) with respect to ﬁxed length and p ∈\n( 7\n3, 8\n3). By the Lagrange multiplier theorem (see e.g. [Lue98, §9.3 Theorem 1]), we have the\nexistence of λ ∈R such that\n0 = δ intM(p,2)(γ, h) + λδL(γ, h).\nSeeing as by integra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-52-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.2\nNow we are ready to proof the main statement of this paper by the method of majorants.\nProof of Theorem 1.2. Recall we have given a simple closed curve\nγ = (γ1, . . . , γn) ∈C∞(R/Z, Rn)\nparametrized by arc-length which is a critical point of integral Menger curvature intM(p,2) +λL,\nsubject to a ﬁxed length constraint, where p ∈( 7\n3, 8\n3) and λ ∈R. We deﬁne\nal := ∥γ(l)∥H\n5\n2\nfor all integers l ≥0 by using the smoothness of the curve γ. Our aim is show that there exist\npositive constants Cγ and rγ such that we have for any integer l ≥0\nal ≤Cγ\nl!\nrlγ\n;\nfrom which the analyti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A few simple consequences concerning critical knots",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-6-a-few-simple-consequences-concerning-critical.md",
+      "narrative": null,
+      "content": "\\label{sec:Consequences}\n\nThe main result of the paper states that critical points of the generalized integral Menger curvature $\\Mpz$ are not only smooth, which was known before, cf. \\cite[Theorem\\,4]{BlattReiter:2015:Menger}, but also analytic. Recalling and employing special properties for analytic functions, we hence decude a few simple corollaries for critical knots of $\\Mpz$ and some other knot energies.\n\nThe following statements hold for any functional $\\EL: C^0(\\R/\\Z,\\R^3) \\rightarrow (0,\\infty]$ whose (arc-length parametrized) critical points with respect to fixed length are analytic.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "1. Let f ∈C∞(R/Z, Rn) and s > 0. Then the function f is analytic on R/Z if there are positive constants r and C such that ∥f (k)∥H1+s ≤C k! rk holds for all integers k ≥0. This can be seen by using [KP02, Proposition 1.2.12] together with a standard covering argument, Morrey’s inequality (see e.g. [AF03, Paragraph 4.16]), the equivalence of the W 1,2- and the H1-norm on R/Z (cf. [Rei12, Lem. 1.2] or [AF03, 7.62]) as well as the embedding Hs ⊆Ht for any t < s (cf. [Tay96, Chapter 4, Proposition 3.4]). In addition, we need a special case of the Cauchy-Kovalevsky theorem, which can be derived for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Properties of analytic functions",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-a-properties-of-analytic-functions.md",
+      "narrative": null,
+      "content": "Properties of analytic functions\nIn this section we aim to recall some statements related to analytic functions, which are used\nin the paper. For further information on analytic functions we refer the reader for instance to\n[KP02]. First we note that analytic functions can be characterized as follows, cf. for example\n[Vor20, Corollary 3.2].\nProposition A.1. Let f ∈C∞(R/Z, Rn) and s > 0. Then the function f is analytic on R/Z if\nthere are positive constants r and C such that\n∥f (k)∥H1+s ≤C k!\nrk\nholds for all integers k ≥0.\nThis can be seen by using [KP02, Proposition 1.2.12] together with a st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Faà di Bruno's formula",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-b-faà-di-brunos-formula.md",
+      "narrative": null,
+      "content": "Faà di Bruno’s formula generalizes the chain rule to higher derivatives. In particular, the k-th\nderivative of the composition of two functions f, g ∈Ck(R, R) can be written as\n\u0000 d\ndt\n\u0001k g(f(t)) =\nX\nm1+2m2+···kmk=k,\nm1,...,mk∈N0\nk!\nm1!1!m1m2!2!m2 . . . mk!k!mk g(m1+···+mk)(f(t))\nk\nY\nj=1\n(f (j)(t))mj.\nR. Mishkov generalized Faà di Bruno’s formula to the multivariate case [Mis00]. The following\nlemma and notation via the universal polynomial are taken directly from [BV19, Section 2.3].\nLemma B.1. Let U ⊆R be a neighborhood of 0 and f ∈Ck(U, Rn), n ∈N0. Moreover, let\nV ⊆Rn be a neighborhood of f(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "1. Let m > 1 and f ∈Hm(R/Z, Rn) with R 1 0 f(x) dx = 0. Then, 2π ∥f ′∥Hm−1 ≤∥f∥Hm ≤ √ 2π ∥f ′∥Hm−1 ≤∥f ′∥Hm−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2103.07383v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C An inequality for Sobolev Norms",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-c-an-inequality-for-sobolev-norms.md",
+      "narrative": null,
+      "content": "An inequality for Sobolev Norms\nLemma C.1. Let m > 1 and f ∈Hm(R/Z, Rn) with\nR 1\n0 f(x) dx = 0. Then,\n1\n2π ∥f ′∥Hm−1 ≤∥f∥Hm ≤\n1\n√\n2π ∥f ′∥Hm−1 ≤∥f ′∥Hm−1.\n27\nProof. By [Gra14, Proposition 3.1.2 (10)], we have bf ′(k) = 2πik ˆf(k) for all k ∈Z and thus for\nk̸ = 0,\n| ˆf(k)|2 =\n1\n(2πk)2 | bf ′(k)|2.\nNote that\nˆf(0) =\n1\nZ\n0\nf(x)e−2π·0·x dx =\n1\nZ\n0\nf(x) dx = 0\nwith the same holding for bf ′(0) as f is periodic and continuous. Keeping the estimates k2 ≤\n1 + k2 ≤2k2 in mind, we obtain\n1\n(2π)2 ∥f ′∥2\nHm−1 =\nX\nk∈Z\\{0}\n1\n(2π)2 (1 + k2)m−1| bf ′(k)|2 =\nX\nk∈Z\\{0}\n(1 + k2)m−1k2| ˆf(k)|2\n≤\nX\nk∈Z\\{0}\n(1 + k2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

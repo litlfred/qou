@@ -1,0 +1,710 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "download",
+  "blocks": [
+    {
+      "id": "library/download/blocks/ex-sec-000-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "ex-sec-000-03.md",
+      "narrative": null,
+      "content": "Let Xi be independent and uniformly distributed in the intervals (i −1,i), i = 1,...,n. Their joint distribution is a product measure, satisfying (1.1) and (1.2) with some ab- solute constant σ. Clearly, F is the uniform distribution in (0,n) so M = 1 n and β is of order 1 n. As is easy to see, E∥Fn −F∥is also of order 1 n, that is, the bound (1.6) is sharp up to a log1/3 n term. Also, since A is of order n, both sides of (1.3) are of order 1. In particular, this shows that the quantity A cannot be removed from (1.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/ex-sec-000-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "ex-sec-000-04.md",
+      "narrative": null,
+      "content": "Let all Xi = ξ, where ξ is uniformly distributed in [−1,1]. Note that all random variables are identically distributed with EXi = 0. The joint distribution μ represents a uniform distribution on the main diagonal of the cube [−1,1]n, so it satisﬁes (1.1) and (1.2) with σ = c√n, where c is absolute. In this case, F is a uniform distribution on [−1,1], so M = 1/2 and β is of order 1. Hence, both sides of (1.6) are of order 1. Next, we restrict the above statements to the empirical spectral measures Fn of the n eigen- values X1 ≤··· ≤Xn of a random symmetric matrix ( 1 √nξjk), 1 ≤j,k ≤n, with ind",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let (X1,...,Xn) be a random vector in Rn with distribution μ. We study rates of approximation\nof the average marginal distribution function\nF(x) = EFn(x) = 1\nn\nn\n\u0002\ni=1\nP{Xi ≤x}\nby the empirical distribution function\nFn(x) = 1\nn card{i ≤n:Xi ≤x},\nx ∈R.\nWe shall measure the distance between F and Fn by means of the (uniform) Kolmogorov metric\n∥Fn −F∥= supx |Fn(x) −F(x)|, as well as by means of the L1-metric\nW1(Fn,F) =\n\u0003 +∞\n−∞\n|Fn(x) −F(x)|dx.\nThe latter, also called the Kantorovich–Rubinstein distance, may be interpreted as the minimal\ncost needed to transport the empirical measure Fn to F with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Bernoulli 16(4), 2010, 1385–1414\nDOI: 10.3150/10-BEJ254\nConcentration of empirical distribution\nfunctions with applications\nto non-i.i.d. models\nS.G. BOBKOV1 and F. GÖTZE2\n1School of Mathematics, University of Minnesota, 127 Vincent Hall, 206 Church St. S.E., Minneapolis,\nMN 55455, USA. E-mail: bobkov@math.umn.edu\n2Fakultät für Mathematik, Universität Bielefeld, Postfach 100131, 33501 Bielefeld, Germany.\nE-mail: goetze@mathematik.uni-bielefeld.de\nThe concentration of empirical measures is studied for dependent data, whose joint distribution satisﬁes\nPoincaré-type or logarithmic Sobolev inequal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Under PI(σ 2) on Rn (n ≥2), E \u0003 +∞ −∞ |Fn(x) −F(x)|dx ≤Cσ \u0005A + logn n \u00061/3 , (1.3) where A = 1 σ maxi,j |EXi −EXj| and C is an absolute constant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Assume that F has a density, bounded by a number M. Under LSI(σ 2), for any r > 0, P{∥Fn −F∥≥r} ≤4 r e−c(r/β)3. (1.5) In particular, E∥Fn −F∥≤Cβ log1/3 \u0005 1 + 1 β \u0006 , (1.6) where c and C are positive absolute constants. In both cases, the stated bounds are of order n−1/3 up to a logn term with respect to the dimension n. Thus, they are not as sharp as in the classical i.i.d. case. Indeed, our assumptions are much weaker and may naturally lead to weaker conclusions. Let us look at two examples illustrating the bounds obtained in the cases that essentially differ from the i.i.d. case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "If the distributions of the ξjk’s satisfy the Poincaré-type inequality PI(σ 2) on the real line, then E \u0003 +∞ −∞ |Fn(x) −F(x)|dx ≤Cσ n2/3 , (1.7) where C is an absolute constant. Moreover, under LSI(σ 2), E∥Fn −G∥≤C \u0005σ n \u00062/3 log1/3 n + ∥F −G∥. (1.8) By the convexity of the distance, we always have E∥Fn −G∥≥∥F −G∥. In some random matrix models, the Kolmogorov distance ∥F −G∥is known to tend to zero at rate at most n−2/3+ε. For instance, it is true when the distributions of the ξj,k’s have a non-trivial Gaussian component (see [22]). Hence, if, additionally, LSI(σ 2) is satisﬁed, then we get tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/cor-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "cor-sec-001-04.md",
+      "narrative": null,
+      "content": "Under PI(σ 2), whenever a < b, we have E \u0007\u0007\u0007\u0007 \u0003 b a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "Under PI(σ 2), any Lipschitz function g on Rn has a ﬁnite exponential moment: if \u0004 g dμ = 0 and ∥g∥Lip ≤1, then \u0003 etg/σ dμ ≤2 + t 2 −t , 0 < t < 2. (2.4) Moreover, for any locally Lipschitz g on Rn with μ-mean zero, ∥g∥p ≤σp∥∇g∥p, p ≥2. (2.5) More precisely, if |∇g| is in Lp(μ), then so is g and (2.5) holds true with the standard notation ∥g∥p = ( \u0004 |g|p dμ)1/p and ∥∇g∥p = ( \u0004 |∇g|p dμ)1/p for Lp(μ)-norms. The property of being locally Lipschitz means that the function g has a ﬁnite Lipschitz seminorm on every compact subset of Rn. In the concentration context, a variant of the ﬁrst part of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Under PI(σ 2), for any smooth F -integrable function f on R such that f ′ belongs to L2(R,dF), we have E \u0007\u0007\u0007\u0007 \u0003 f dFn − \u0003 f dF \u0007\u0007\u0007\u0007 ≤σ 2 n \u0003 f ′2 dF. (2.3) Recall that F = EFn denotes the mean of the empirical measures. The inequality continues to hold for all locally Lipschitz functions with the modulus of the derivative, understood in the gen- eralized sense, that is, |f ′(x)| = limsupy→x |f (x)−f (y)| |x−y| . As long as \u0004 f ′2 dF is ﬁnite, \u0004 f 2 dF is also ﬁnite and (2.3) holds. The latter may be extended to all Lp-spaces by applying the following general lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Under PI(σ 2), for any smooth function f on R such that f ′ belongs to Lp(R,dF), p ≥2, E \u0007\u0007\u0007\u0007 \u0003 f dFn − \u0003 f dF \u0007\u0007\u0007\u0007 p ≤(σp)p np/2 \u0003 |f ′|p dF. In addition, if |f ′| ≤1, for all h > 0, μ \b\u0007\u0007\u0007\u0007 \u0003 f dFn − \u0003 f dF \u0007\u0007\u0007\u0007 ≥h",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Empirical Poincaré inequalities",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-empirical-poincaré-inequalities.md",
+      "narrative": null,
+      "content": "We assume that the random variables X1,...,Xn have a joint distribution μ on Rn, satisfying\nthe Poincaré-type inequality (1.1). For a bounded smooth function f on the real line, we apply it\nto\ng(x1,...,xn) = f (x1) + ··· + f (xn)\nn\n=\n\u0003\nf dFn,\n(2.1)\nwhere Fn is the empirical measure, deﬁned for the ‘observations’ X1 = x1,...,Xn = xn. Since\n|∇g(x1,...,xn)|2 = f ′(x1)2 + ··· + f ′(xn)2\nn2\n= 1\nn\n\u0003\nf ′2 dFn,\n(2.2)\nwe obtain an integro-differential inequality, which may viewed as an empirical Poincaré-type\ninequality for the measure μ.\nProposition 2.1. Under PI(σ 2), for any smooth F -integrable fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/cor-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "cor-sec-002-03.md",
+      "narrative": null,
+      "content": "Under PI(σ 2), for all a < b, E \u0003 b a |Fn(x) −F(x)|dx ≤σ √n \u000e 1 + 3 \u0005 b −a σ/√n \u00061/3\u000f . The next step is to extend the above inequality to the whole real line. Here, we shall use the exponential integrability of the measure F .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Given distribution functions F and G, for all real a < b and a natural number N, \u0003 b a |F(x) −G(x)|dx ≤ N \u0002 k=1 \u0007\u0007\u0007\u0007 \u0003 ak ak−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-proof-of-theorem-11.md",
+      "narrative": null,
+      "content": "We shall now study the concentration properties of empirical measures Fn around their mean F\nbased on Poincaré-type inequalities. In particular, we shall prove Theorem 1.1, which provides a\nbound on the mean of the Kantorovich–Rubinstein distance\nW1(Fn,F) =\n\u0003 +∞\n−∞\n|Fn(x) −F(x)|dx.\nNote that it is homogeneous of order 1 with respect to the random vector (X1,...,Xn).\nWe ﬁrst need a general observation.\nLemma 3.1. Given distribution functions F and G, for all real a < b and a natural number N,\n\u0003 b\na\n|F(x) −G(x)|dx ≤\nN\n\u0002\nk=1\n\u0007\u0007\u0007\u0007\n\u0003 ak\nak−1\n\nF(x) −G(x)\n\ndx\n\u0007\u0007\u0007\u0007 + 2(b −a)\nN\n,\nwhere ak = a + (b −a)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "As the proof shows, the lemma may be extended to an arbitrary partition a = a0 < a1 < ··· < aN = b, as follows: \u0003 b a |F(x) −G(x)|dx ≤ N \u0002 k=1 \u0007\u0007\u0007\u0007 \u0003 ak ak−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "If maxi,j≤n |EXi −EXj| = O(logn), then W1(Fn,F) = O( logn n )1/3 with proba- bility 1. Note, however, that in the scheme of sequences such as in Corollary 4.3, the mean distribution function F = EFn might also depend on n. By a similar contraction argument, the upper bound (4.4) may be sharpened, when the distribu- tion of (X1,...,Xn) satisﬁes a logarithmic Sobolev inequality. We turn to this type of (stronger) hypothesis in the next section. Remarks. Let be a metric space and let d = d(u,u′) be a non-negative continuous function on the product space × . Given Borel probability measures G and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "For all points x = (x1,...,xn), x′ = (x′ 1,...,x′ n) in Rn, we have W1(Fn,F ′ n) ≤1 √n∥x −x′∥, where Fn = δx1+···+δxn n , F ′ n = δx′ 1+···+δx′n n . In other words, the canonical map T from Rn to the space of all probability measures on the line, which assigns to each point an associated empirical measure, has a Lipschitz seminorm ≤1 √n with respect to the Kantorovich–Rubinstein distance. As usual, the Euclidean space Rn is equipped with the Euclidean metric ∥x −x′∥= \u0010 |x1 −x′ 1|2 + ··· + |xn −x′n|2. Denote by Z1 the collection of all (Borel) probability measures on the real line with ﬁnite ﬁr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "If a random vector (X1,...,Xn) in Rn, n ≥2, has distribution satisfying a Poincaré-type inequality with constant σ 2, then, for all h > 0, P \b W1(Fn,F) ≥Cσ \u0005A + logn n \u00061/3 + h",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large deviations above the mean",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-large-deviations-above-the-mean.md",
+      "narrative": null,
+      "content": "In addition to the upper bound on the mean of the Kantorovich–Rubinstein distance W1(Fn,F),\none may wonder how to bound large deviations of W1(Fn,F) above the mean. To this end, the\nfollowing general observation may be helpful.\nLemma 4.1. For all points x = (x1,...,xn), x′ = (x′\n1,...,x′\nn) in Rn, we have\nW1(Fn,F ′\nn) ≤1\n√n∥x −x′∥,\nwhere Fn =\nδx1+···+δxn\nn\n, F ′\nn =\nδx′\n1+···+δx′n\nn\n.\nIn other words, the canonical map T from Rn to the space of all probability measures on the\nline, which assigns to each point an associated empirical measure, has a Lipschitz seminorm\n≤1\n√n with respect to the Ka",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let jz be a probability measure on R\" satisfying LS\\(o7). For any 1-integrable Borel-measurable function g on R\", we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for any bounded, smooth function f on R, Entμ \u000e\u0005\u0003 f dFn \u00062\u000f ≤2σ 2 n \u0003 f ′2 dF. In analogy with Poincaré-type inequalities, one may also develop reﬁned applications to the rate of growth of moments and to large deviations of various functionals of empirical measures. In particular, we have the following proposition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for any smooth function f on R such that f ′ belongs to Lp(R,dF), p ≥2, E \u0007\u0007\u0007\u0007 \u0003 f dFn − \u0003 f dF \u0007\u0007\u0007\u0007 p ≤(σ√p)p np/2 \u0003 |f ′|p dF. (5.1) In addition, if |f ′| ≤1, then, for all h > 0, μ \b\u0007\u0007\u0007\u0007 \u0003 f dFn − \u0003 f dF \u0007\u0007\u0007\u0007 ≥h",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for any F -integrable Borel-measurable function f on R and for any t > 0, logEet( \u0004 f dFn− \u0004 f dF) ≤t \u0003 [Ptσ 2/nf −f ]dF, (5.5) logEet( \u0004 f dF− \u0004 f dFn) ≤t \u0003 [f −Qtσ 2/nf ]dF. (5.6) Note that the second inequality may be derived from the ﬁrst by changing f to −f .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Empirical log-Sobolev inequalities",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-empirical-log-sobolev-inequalities.md",
+      "narrative": null,
+      "content": "As before, let (X1,...,Xn) be a random vector in Rn with joint distribution μ. Similarly to\nProposition 2.1, now using a log-Sobolev inequality for μ, we arrive at the following ‘empirical’\nlog-Sobolev inequality.\nProposition 5.1. Under LSI(σ 2), for any bounded, smooth function f on R,\nEntμ\n\u000e\u0005\u0003\nf dFn\n\u00062\u000f\n≤2σ 2\nn\n\u0003\nf ′2 dF.\nIn analogy with Poincaré-type inequalities, one may also develop reﬁned applications to the\nrate of growth of moments and to large deviations of various functionals of empirical measures.\nIn particular, we have the following proposition.\nProposition 5.2. Under LSI(σ 2), for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/cor-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "cor-sec-005-02.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for all a < b, E \u0003 b a |Fn(x) −F(x)|dx ≤4 \u0005σ 2(b −a) n \u00061/3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "Let G be a distribution function with density g(x) bounded by a number M. Under LSI(σ 2), for any δ > 0 and any interval I of length |I| ≥4∥F −G∥/δ, P \b\u0007\u0007\u0007\u0007NI −n \u0003 I g(x)dx \u0007\u0007\u0007\u0007 ≥nδ|I|",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for any x ∈R and t > 0, with h = \u0010 2σ 2t n , logEet(Fn(x)−F(x)) ≤t",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "Assume that F has a density, bounded by a number M. Under LSI(σ 2), for any x ∈R and r > 0, P{|Fn(x) −F(x)| ≥βr} ≤2e−2r3/27. (6.3) In particular, with some absolute constant C, we have E|Fn(x) −F(x)| ≤Cβ. (6.4) Note that (6.4) is consistent with the estimate of Theorem 1.1. To derive similar bounds on the uniform (Kolmogorov) distance ∥Fn −F∥= supx |Fn(x) −F(x)| (which we discuss in the next section), it is better to split the bound (6.3) into the two parts, P{Fn(x) −F(x) ≥βr} ≤e−2r3/27, (6.5) P{F(x) −Fn(x) ≥βr} ≤e−2r3/27, (6.6) which were obtained in the last step of the proof of (6.3). Howev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "Under LSI(σ 2), for any distribution function G with ﬁnite Lipschitz seminorm M = ∥G∥Lip, for any x ∈R and r > 0, P{|Fn(x) −G(x)| ≥βr + ∥F −G∥} ≤2e−2r3/27, where β = (Mσ)2/3n−1/3. In particular, up to some absolute constant C, E|Fn(x) −G(x)| ≤Cβ + ∥F −G∥. (6.7) Let us stress that in all of these applications of Proposition 5.4, only the indicator functions f = 1(−∞,x] were used. One may therefore try to get more information about deviations of the empirical distributions Fn from the mean F by applying the basic bounds (5.5) and (5.6) with different (non-smooth) functions f . For example, of co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local behavior of empirical distributions",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-local-behavior-of-empirical-distributions.md",
+      "narrative": null,
+      "content": "In this section, we develop a few direct applications of Proposition 5.4 to the behavior of em-\npirical distribution functions Fn(x) at a ﬁxed point. Such functionals are linear, that is, of the\nform\n\u0004\nf dFn, corresponding to the indicator function of the half-axis f = (−∞,x]. When f\nis smooth, Proposition 5.2 tells us that the deviations of Lnf =\n\u0004\nf dFn −\n\u0004\nf dF are of order\nσ/√n. In the general non-smooth case, the inﬁmum- and supremum-convolution operators Ptf\nand Qtf behave differently for small values of t and this results in a different rate of ﬂuctuation\nfor Lnf .\nTo see this, let f =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-bounds-on-the-kolmogorov-distance-proof-of-theor.md",
+      "narrative": null,
+      "content": "As before, let Fn denote the empirical measure associated with observations x1,...,xn and F =\nEFn their mean with respect to a given probability measure μ on Rn. In this section, we derive\nuniform bounds on Fn(x) −F(x), based on Proposition 6.3, and thus prove Theorem 1.2. For\napplications to the matrix scheme, we shall also replace F, which may be difﬁcult to determine,\nby the well-behaving limit law G (with the argument relying on Proposition 6.4).\nLet the random variables X1,...,Xn have joint distribution μ, satisfying LSI(σ 2), and assume\nthat F has a ﬁnite Lipschitz seminorm M = ∥F∥Lip. D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "If Mσ in Theorem 1.2 were of order 1, then E∥Fn −F∥would be of order at most ( logn n )1/3. Note, however, that under PI(σ 2), and if all EXi = 0, the quantity Mσ is separated from zero and, more precisely, Mσ ≥ √ 12. Indeed, by Hensley’s theorem in dimension 1 [1,26], in the class of all probability densi- ties p(x) on the line, the expression ( \u0004 x2p(x)dx)1/2 esssupx p(x) is minimized for the uni- form distribution on symmetric intervals and is therefore bounded from below by 1/ √ 12. Since F is Lipschitz, it has a density p with M = esssupx p(x). On the other hand, it fol- lows from the Poi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "Assume that X1,...,Xn have a distribution on Rn satisfying LSI(σ 2). Let G be a distribution function with ﬁnite Lipschitz seminorm M. Then, for all r > 0, P{∥Fn −G∥≥r + ∥F −G∥} ≤4 r exp \b −2 \u0005 r β \u00063 , where β = (Mσ)2/3n−1/3. In particular, E∥Fn −G∥≤5β log1/3 \u0005 1 + 1 β \u0006 + ∥F −G∥. Remarks. It remains unclear whether or not one can involve the i.i.d. case in the scheme of Poincaré or logarithmic Sobolev inequalities to recover the rate 1/√n for E∥Fn −F∥, even if some further natural assumptions are imposed (which are necessary, as we know from Exam- ples 1 and 2). In particular, one may assume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "G(x + h) −G(x −h) ≤2g(x)h + 4 3πh3/2 for all x ∈R and h > 0. Since G is concentrated on the interval [−2,2], for |x| ≥2, we have a simple bound G(x + h) −G(x −h) ≤4 3πh3/2. As a result, one may derive from (8.2) an improved variant of (8.3). In particular, if |x| ≥2, then E|Fn(x) −G(x)| ≤∥F −G∥+ C \u0005σ n \u00066/7 . The more general statement for all x ∈R is given by the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "High-dimensional random matrices",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-high-dimensional-random-matrices.md",
+      "narrative": null,
+      "content": "We shall now apply the bounds obtained in Theorems 1.1 and 7.1, to the case of the spectral\nempirical distributions. Let {ξjk}1≤j≤k≤n be a family of independent random variables on some\nprobability space with mean Eξjk = 0 and variance Var(ξjk) = 1. Put ξjk = ξkj for 1 ≤k < j ≤n\nand introduce a symmetric n × n random matrix,\n\u0011 = 1\n√n\n⎛\n⎜⎜⎝\nξ11\nξ12\n···\nξ1n\nξ21\nξ22\n···\nξ2n\n...\n...\n...\n...\nξn1\nξn2\n···\nξnn\n⎞\n⎟⎟⎠.\nArrange its (real random) eigenvalues in increasing order: X1 ≤··· ≤Xn. As before, we asso-\nciate with particular values X1 = x1,...,Xn = xn an empirical (spectral) measure Fn with mean\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "Let ξjk (1 ≤j ≤k ≤n) be independent and satisfy a logarithmic Sobolev in- equality with constant σ 2, with Eξjk = 0 and Var(ξjk) = 1. For all x ∈R, E|Fn(x) −G(x)| ≤∥F −G∥+ C \u000e\u0005σ n \u00066/7 + g(x)2/3 \u0005σ n \u00062/3\u000f , (8.4) where C is an absolute constant. A similar uniform bound may also be shown to hold for Esupy≤x |Fn(y) −G(y)| (x ≤0) and Esupy≥x |Fn(y) −G(y)| (x ≥0). Note that in comparison with (8.3), there is an improvement for the points x at distance not more than ( σ n )4/7 from ±2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/download/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-008-appendix.md",
+      "narrative": null,
+      "content": "Here we recall some facts about Poincaré-type and log-Sobolev inequalities. While Lemmas 2.2\nand 5.3 list some of their consequences, one might wonder which measures actually satisfy these\nanalytic inequalities. Many interesting examples can be constructed with the help of the following\nelementary proposition.\nProposition A1. Let μ1,...,μN be probability measures on R satisfying PI(σ 2) (resp.,\nLSI(σ 2)). The image μ of the product measure μ1 ⊗··· ⊗μN under any map T :RN →Rn\nwith ﬁnite Lipschitz seminorm satisﬁes PI(σ 2∥T ∥2\nLip) (resp., LSI(σ 2∥T ∥2\nLip)).\nOn the real line, disregarding the p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "This research was supported by NSF Grants DMS-07-06866 and SFB 701.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/download/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] Ball, K. (1988). Logarithmically concave functions and sections of convex sets in Rn. Studia Math.\n88 69–84. MR0932007\n[2] Bhatria, R. (1997). Matrix Analysis. Graduate Texts in Mathematics 169. New York: Springer.\nMR1477662\n[3] Bobkov, S.G. (1999). Remarks on the Gromov–Milman inequality. Vestn. Syktyvkar. Univ. Ser. 1 Mat.\nMekh. Inform. 3 15–22. MR1716649\n[4] Bobkov, S.G. (1999). Isoperimetric and analytic inequalities for log-concave probability measures.\nAnn. Probab. 27 1903–1921. MR1742893\n[5] Bobkov, S.G., Gentil, I. and Ledoux, M. (2001). Hypercontractivity of Hamilton–Jacobi equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "block-qa attestation: block folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof",
+      "description": "The block-qa judgements recorded for block folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof (folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof), each pinned to the hash it attested.",
+      "sourceKind": "block-qa",
+      "sourcePath": "test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

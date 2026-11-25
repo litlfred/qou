@@ -1,0 +1,732 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1806.09450v1",
+  "title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Exceptional finite quantum geometry",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-exceptional-finite-quantum-geometry"
+    },
+    {
+      "level": 1,
+      "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-lie-algebra-of-derivations-of-j-and-its-ex"
+    },
+    {
+      "level": 2,
+      "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-the-automorphism-group-f4-of-the-exceptional"
+    },
+    {
+      "level": 2,
+      "title": "The magic square",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-the-magic-square"
+    },
+    {
+      "level": 2,
+      "title": "The exceptional Lie groups E6 and E7",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-the-exceptional-lie-groups-e6-and-e7"
+    },
+    {
+      "level": 1,
+      "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-borel-de-siebenthal-theory-and-intersections-o"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "bˆat",
+          "heading": false
+        },
+        {
+          "term": "tsarigradsko",
+          "heading": false
+        }
+      ],
+      "extract": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ Ivan Todorov1, Michel Dubois-Violette2, 1Institut des Hautes ´Etudes Scientiﬁques, 35 route de Chartres, F-91440 Bures-sur-Yvette – France Institute for Nuclear Research and Nuclear Energy, Bulgarian Academy of Sciences, Tsarigradsko Chaussee 72, BG-1784 Soﬁa – Bulgaria (permanent address) 2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1806.09450v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times hermitian",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "exceptional lie",
+          "heading": false
+        },
+        {
+          "term": "vert",
+          "heading": false
+        },
+        {
+          "term": "dot",
+          "heading": false
+        },
+        {
+          "term": "hermitian matrices",
+          "heading": false
+        },
+        {
+          "term": "maximal rank",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec1 label=\"sec1\"} The exceptional Jordan algebra $J = J_3^8 = H_3 ({\\mathbb O})$ -- the algebra of $3 \\times 3$ hermitian matrices with octonionic entries (reviewed in [@McC; @J68; @B; @Be; @BS; @G; @Y]) -- appears to be tailor made for the description of three families of quarks and leptons (like $\\begin{pmatrix} u &c &t \\\\ \\nu_e &\\nu_{\\mu} &\\nu_{\\tau} \\end{pmatrix}$ or $\\begin{pmatrix} d &s &b \\\\ e &\\mu &\\tau",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-exceptional-finite-quantum-geometry",
+      "number": "2",
+      "title": "Exceptional finite quantum geometry",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 928,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "product langle",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan condition",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec2 label=\"sec2\"} In the approach of almost commutative geometry \\[DKM, D, CL, C, CC, CCS, BF\\] to the standard model, space-time is viewed as the tensor product of a standard (commutative) 4-dimensional spin manifold with a finite noncommutative space. In the almost classical quantum geometry approach one is led to identify the finite quantum space with the exceptional Jordan algebra.\\ To begin with, it was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-lie-algebra-of-derivations-of-j-and-its-ex",
+      "number": "3",
+      "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperamental",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "baez",
+          "heading": false
+        },
+        {
+          "term": "survey",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec3 label=\"sec3\"} There are excellent detailed expositions of the material of this section. We share the opinion of John Baez [@B] that to survey the early developments of this subject \"one still cannot do better than to read Freudenthal's classic 1964 paper [@F] on Lie groups and foundations of geometry\". Later work including the 1966 Vinberg's and the 1976 Ramond's (triality) constructions is given a self",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-the-automorphism-group-f4-of-the-exceptional",
+      "number": "3.1",
+      "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional lie",
+          "heading": true
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "jordan",
+          "heading": true
+        },
+        {
+          "term": "mathfrak cong",
+          "heading": false
+        },
+        {
+          "term": "moufang",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "About the same time Pascual Jordan introduced his algebras Ruth Moufang studied her non-Desarguian (octonionic) projective plane $P{\\mathbb O}_2$. Sixteen years later, in 1949, Jordan noticed that the points of $P{\\mathbb O}_2$ are given by the one-dimensional (trace-one) idempotents of the exceptional Jordan algebra $J$ which are also the pure states of $J$.\\ A glimpse on the automorphism group $F_4 = \\{ g : J \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-the-magic-square",
+      "number": "3.2",
+      "title": "The magic square",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magic square",
+          "heading": true
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "mathfrak mathbb",
+          "heading": false
+        },
+        {
+          "term": "algebras mathbb",
+          "heading": false
+        },
+        {
+          "term": "mkern-4mu",
+          "heading": false
+        },
+        {
+          "term": "tits",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "der",
+          "heading": false
+        }
+      ],
+      "extract": "Equivalent constructions of the Lie algebras ${\\mathfrak e}_n$ with $n = 6,7,8$ have been proposed by Freudenthal and Tits around 1958, with improved formulations published later. In the summary below we follow [@BS], as well as [@B] where more references to the early work can be found. Let ${\\mathbb K}$ be a real composition algebra and $J$ a real Jordan algebra with unit ${\\rm 1\\mkern-4mu I}$ and with an inner",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-the-exceptional-lie-groups-e6-and-e7",
+      "number": "3.3",
+      "title": "The exceptional Lie groups E6 and E7",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "mbox signature",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "non-compact form",
+          "heading": false
+        },
+        {
+          "term": "mkern-4mu",
+          "heading": false
+        },
+        {
+          "term": "tits construction",
+          "heading": false
+        },
+        {
+          "term": "str",
+          "heading": false
+        }
+      ],
+      "extract": "A non-compact real form of the simply connected Lie group $E_6$, the (reduced) *structure group* of the exceptional Jordan algebra $J=H_3 ({\\mathbb O})$, can be defined as the group of determinant preserving linear transformations of $J$ where, for $X$ given by ([\\[eq26\\]](#eq26){reference-type=\"ref\" reference=\"eq26\"}), $$\\begin{aligned} \\det X &= &\\frac13 \\, {\\rm tr} (X^3) - \\frac12 \\, {\\rm tr} X^2 \\, {\\rm tr} X +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-borel-de-siebenthal-theory-and-intersections-o",
+      "number": "4",
+      "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "siebenthal",
+          "heading": true
+        },
+        {
+          "term": "mathbb nonumber",
+          "heading": false
+        },
+        {
+          "term": "mathbb cap",
+          "heading": false
+        },
+        {
+          "term": "subgroups",
+          "heading": true
+        },
+        {
+          "term": "cap frac",
+          "heading": false
+        },
+        {
+          "term": "maximal",
+          "heading": true
+        },
+        {
+          "term": "exceptional",
+          "heading": true
+        },
+        {
+          "term": "eqno",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec4 label=\"sec4\"} Borel and de Siebenthal [@BdS] described the maximal maximal-rank subgroups of simple compact connected Lie groups noticing that each such subgroup appears as the identity component of the centralizer of its center. This yields the following explicit classification of the maximal subalgebras of the simple compact Lie algebras: $$\\begin{aligned} \\label{eq41} su (n+1) &: &su(p+1) \\times su(n-p)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathfrak mathbb",
+      "heading": false
+    },
+    {
+      "term": "mathbb oplus",
+      "heading": false
+    },
+    {
+      "term": "exceptional jordan",
+      "heading": true
+    },
+    {
+      "term": "jordan algebra",
+      "heading": true
+    },
+    {
+      "term": "exceptional lie",
+      "heading": true
+    },
+    {
+      "term": "mathbb otimes",
+      "heading": false
+    },
+    {
+      "term": "mathbb nonumber",
+      "heading": false
+    },
+    {
+      "term": "mkern-4mu rangle",
+      "heading": false
+    },
+    {
+      "term": "widetilde mathbb",
+      "heading": false
+    },
+    {
+      "term": "mathbb cap",
+      "heading": false
+    },
+    {
+      "term": "jordan product",
+      "heading": false
+    },
+    {
+      "term": "rangle langle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Magic square of Lie algebras L(K, K′) (sp (6) being the rank 3 unitary symplectic Lie algebra)",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Projective plane in Z3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-2",
+      "file": "images/img-p014-2.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-3",
+      "file": "images/img-p014-3.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-4",
+      "file": "images/img-p014-4.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-5",
+      "file": "images/img-p014-5.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-6",
+      "file": "images/img-p014-6.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-7",
+      "file": "images/img-p014-7.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1806.09450v1"
+  }
+}

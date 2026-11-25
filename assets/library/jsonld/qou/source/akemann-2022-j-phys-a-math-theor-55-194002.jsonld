@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+  "contains": [
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-front-matter",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-000",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-001",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-002",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-003",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-004",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-005",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-006",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-007",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-008",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-009",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-010",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-011",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-012",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-013",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-014",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-015",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-016",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-017",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk — 20 sections: Front matter; Consecutive level spacings in the ; Introduction\n\n**Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk**\n\n35 pp, 20 sections.\n\n**Outline.** Front matter; Consecutive level spacings in the chiral Gauss; 1 Introduction; 2 Transition from Bessel- and Airy- to the sin; 3 Gap probabilities and level spacing distribu; 4 Analysis at finite matrix dimension; 4.1 Orthogonal polynomials and partition funct; 4.2 Partition function of shifted masses; 4.3 Hard edge kth spacing distribution at fini; 5 Asymptotic analysis at the hard edge; 5.1 The large- limit at fixed and; 5.2 Comparison to the bulk spacing distributio; 5.3 Asymptotics to the Airy statistics; 6 Comparison to data from lattice QCD; 7 Conclusion; Acknowledgments; Data availability statement; Appendix A. The spacing distribution in the bu",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf",
+    "source_sha256": "3753499c4b23f18946ced7e3f79366f0e62f9d9d106abea5eb58386cbaa368fc",
+    "pages": 35,
+    "arxiv": null,
+    "doi": "10.1088/1751-8121/ac5f16",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

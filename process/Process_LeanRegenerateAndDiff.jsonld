@@ -1,0 +1,74 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Process",
+      "name": "Is the generated Lean in sync with its generators?",
+      "summary": "Check that the Lean text a script in this repository writes is still exactly what that script writes.",
+      "description": "Check that the Lean text a script in this repository writes is still exactly what that script writes. Two files carry such text: every knot block of `QOU/Knot/GeneratedGluing.lean` (from `scripts/gen-gluing-lean.py`) and the depth-3 corner column `BokutShiaoCornerDepth3` in `UGB/GrobnerShirshov/HeckeCompletion.lean` (from `scripts/gen-hecke-corner-column.py 3`).\n\nWHY IT IS STRICT. These are proofs. If a generator and its output part company, a Lean file that compiles is carrying certificates nothing in the repository produces, and the next regeneration silently changes a proof. The check is cheap (about nine seconds) and writes nothing, so strictness costs nothing.\n\nTHREE OUTCOMES, NOT TWO. A generator that cannot run, most often because SnapPy is not installed, is UNKNOWN and never reported as in sync. That is the parity rule the witness-parity Tool already follows.\n\nWHAT IS NOT CHECKED, AND WHY. The depth-2 column `BokutShiaoCorner` (section 4ad) was written by hand first; the generator was checked against it by re-deriving the same words and rules, not the same text. Measured 2026-10-05, the two differ on 964 lines while proving the same thing, so a textual diff there would report drift that is not drift. The module header of GeneratedGluing.lean and its closing `end` line are hand-written too, and are excluded from the comparison for the same reason.\n\nDRIFT IS A DECISION, NOT A FIX. When the regenerated text differs, either the generator changed (and the Lean should be regenerated) or the Lean was edited by hand (and the generator should learn the edit, or the edit should go). Which one is right is a judgement about a proof, so it goes to the author; the agent does not overwrite either side.",
+      "enforcement": "strict",
+      "sourcePath": "processes/content/lean-regenerate-and-diff.bpmn",
+      "sourceUrl": "https://github.com/litlfred/qou/blob/main/processes/content/lean-regenerate-and-diff.bpmn",
+      "startNode": [
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/StartEvent_Changed"
+      ],
+      "nodeCount": 7,
+      "flowCount": 6,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_1",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/StartEvent_Changed",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Check",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Check",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_InSync",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "identical (exit 0)",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/EndEvent_InSync",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_Drift",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "drift (exit 1)",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Decide",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_Unknown",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "unknown (exit 2)",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/EndEvent_Unknown",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_3",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "from": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Task_Decide",
+      "to": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/EndEvent_DriftDecided",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

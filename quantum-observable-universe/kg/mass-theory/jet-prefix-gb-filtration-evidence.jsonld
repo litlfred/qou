@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-prefix-gb-filtration-evidence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-prefix-gb-filtration-evidence",
+  "kind": "remark",
+  "title": "Failed prefix conventions and structural-reformulation evidence for the GB-filtration prefix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-jet-prefix-gb-filtration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-jet-prefix-gb-filtration",
+  "tags": [
+    "jet-level",
+    "prefix-formula",
+    "negative-result",
+    "term-6",
+    "open-problem"
+  ],
+  "text": "jet-prefix-gb-filtration-evidence.md",
+  "provenance": "authored"
+}

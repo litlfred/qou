@@ -1,0 +1,818 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2010.12445v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Classical (non-neutral) Tannaka's duality over a field $k$ establishes a correspondence between $k$-Tannakian categories and affine gerbes over $k$. More precisely given a $k$-Tannakian category $\\shC$ we can define a fibered category $\\Pi_{\\shC}\\colon\\mathop{\\mathrm{\\textup{Aff}}}/k\\to(\\text{groupoids)}$ by $$\\Pi_{\\shC}(A)=\\{k\\text{-linear, strong monoidal and exact functors \\ensuremath{\\shC}\\ensuremath{\\ensuremath{\\to\\mathop{\\mathrm{\\textup{Vect}}}}(A)\\}}}$$ where $\\mathop{\\mathrm{\\textup{Aff}}}/k$ is the category of affine schemes over $k$ and $\\mathop{\\mathrm{\\textup{Vect}}}(A)=\\mathop{\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2010.12445v1  [math.AG]  22 Oct 2020\nSTACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION\nFABIO TONINI\nAbstract. Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat-\negory C of its category of locally free sheaves Vect(X), we are going to introduce the stack of\nﬁber functors FibX,C with source C, which comes equipped with a map PC : X →FibX,C and\na functor G : C →Vect(FibX,C).\nIf C generates QCoh(X) and X is an fpqc stack with quasi-aﬃne diagonal, we show that\nPC : X →FibX,C is an equivalence, as it happens by Tannaka’s reconstruction when X is\nan aﬃne gerbe over",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-notation.md",
+      "narrative": null,
+      "content": "In this paper we work over a base commutative, associative ring $R$ with unity. If not stated otherwise a fiber category will be a category fibered in groupoids over $\\mathop{\\mathrm{\\textup{Aff}}}/R$, the category of affine schemes over $\\mathop{\\mathrm{\\textup{Spec}}}R$, or, equivalently, the opposite of the category of $R$-algebras. An fpqc stack will be a stack for the fpqc topology.\n\nA map $f\\colon\\stX'\\arr\\stX$ of fibered categories is called representable if for all maps $T\\arr\\stX$ from an affine scheme (or an algebraic space) the fiber product $T\\times_{\\stX}\\stX'$ is (equivalent to)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-acknowledgments.md",
+      "narrative": null,
+      "content": "I would like to thank Jarod Alper, Daniel Sch�ppi, Mattia Talpo and Angelo Vistoli for the useful conversations I had with them and all the suggestions they gave me. Moreover I would like to thank David Rydh for sharing many useful references and explaining me how the non-neutral form of Tannaka's reconstruction proved in this paper fits in the vast literature about Tannaka's duality.\n\n# []{#sec:Preliminaries label=\"sec:Preliminaries\"}Preliminaries\n\nWe recall some basic definitions and set up some notations. We fix a base ring $R$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-1-preliminaries.md",
+      "narrative": null,
+      "content": "We recall some basic deﬁnitions and set up some notations. We ﬁx a base ring R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal functors and their sheafification",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-11-monoidal-functors-and-their-sheafification.md",
+      "narrative": null,
+      "content": "Deﬁnition 1.1. Let C and D be R-linear symmetric monoidal categories. A (contravariant)\npseudo-monoidal functor Ω: C →D is an R-linear (and contravariant) functor together with a\nnatural transformation\nιΩ\nV,W : ΩV ⊗ΩW →ΩV ⊗W for V, W ∈C\nA (contravariant) pseudo-monoidal functor Ω: C →D is\n1)\nsymmetric or commutative if for all V, W ∈C the following diagram is commutative\nΩV ⊗ΩW\nΩV ⊗W\nΩW ⊗ΩV\nΩW⊗V\nιΩ\nV,W\nιΩ\nW,V\nwhere the vertical arrows are the obvious isomorphisms;\nSTACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION\n5\n2)\nassociative if for all V, W, Z ∈C the following diagram is commutative\nΩ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "The deﬁnition of test sequence and therefore of the categories LexR(D, A) and MLexR(D, A) it is not completely equivalent to the one in [Ton20, Def 4.3]. As discussed in the proof of the next Theorem the two notions agree when D generates QCoh(X): functors left exact in the sense of [Ton20] are automatically left exact in our sense. In [Ton20] we were looking for a minimal collection of test sequences which make results like the one below true under the assumption that D generates QCoh(X). In this paper instead we will deal with more general subcategories D and therefore this notion of test se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "If X is a quasi-compact ﬁbered category over R and C ⊆Vect(X) is a full (monoidal) subcategory there always exists a full (monoidal) subcategory ˜C ⊆C such that eC is small, that is the class ob( ˜C) is a set, and eC →C is an equivalence. In particular in this case the restriction along eC →C induces an equivalence for all the categories of linear (monoidal) functors we have considered. Thus, when X is a quasi-compact ﬁbered category over R, we will tacitly assume that the category C is small. To see how to ﬁnd eC we use the following argument. The category C is essentially small because X is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category over R and D ⊆Vect(X) be a full subcategory that generates QCoh(X). Then Ω∗: QCoh XA →LR(D, A) is fully faithful with essential image LexR(D, A) and it has an exact left adjoint F∗,D : LR(D, A) →QCoh XA. In particular Ω∗and (F∗,D)| LexR(D,A) are quasi-inverses of each other. Assume that D is a monoidal subcategory of Vect(X). Then the functor Ω∗and F∗,D extends to adjoint functors Ω∗: QAlg XA →MLR(D, A) and A∗,C : MLR(D, A) →QAlg XA. Moreover Ω∗: QAlg(XA) →MLexR(D, A) is an equivalence and (A∗,C)| MLexR(D,A) is a quasi-inverse.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "Let K∗: I →P(N) be a map and ni ∈Ki for all i. Then the map Spec R → D(K∗) given by the constant function (ni)i : Spec R →Q i∈I Ki is a closed immersion and representable by localizations of aﬃne schemes. In particular if E∗: I →Vect(X) is a collection of vector bundles then the locus X ′ →X where the sheaves Ei have rank ni enjoys the same property.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "lem-sec-005-05.md",
+      "narrative": null,
+      "content": "Let E ∈Vect(X). Then there is a Cartesian diagram Fr(E) D(E) X BD(E)(GL(Q(E))) STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION where X →BD(E) GL(Q(E)) is induced by E as in 1.12. In particular Fr(E) →X is a torsor under the aﬃne group scheme GL(Q(E)) →D(E) and it is aﬃne, smooth and surjective. Let E∗: I →Vect(X) be a collection of sheaves and consider G = Q i GL(Q(Ei)) →Q i D(Q(Ei)) = D(E∗). Then there is a Cartesian diagram Fr(E∗) D(E∗) X BD(E∗)(G) where X →BD(E∗) G is induced by the (Ei)i as in 1.12. In particular Fr(E∗) →X is aﬃne and faithfully ﬂat as well.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "lem-sec-005-06.md",
+      "narrative": null,
+      "content": "Let E be a vector bundle on a ﬁbered category X over R then: 1) the sheaf det E is a quotient of a direct sum of the E⊗m for m ∈N; 2) if X is deﬁned over Q then (Symq E)∨is a quotient of (E∨)⊗q. 3) the sheaf Symq(E ⊗M)∨, for a locally free R-module M, is a quotient of a direct sum of ﬁnite tensor products of the Syma(E)∨for a ∈N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "lem-sec-005-07.md",
+      "narrative": null,
+      "content": "Let I be a set and E∗: I →Vect(R) be any map. Set GL(E∗) = Y i∈I GL(Ei) →Spec R and Fi for the locally free sheaf on B GL(E∗) coming from the universal one on B GL(Ei), that is the R-module Ei with the natural action of GL(Ei). Consider the following sets: R1 = {det Fi, (Symm Fi)∨}i∈I,m∈N, R2 = {Fi, (Symm Fi)∨}i∈I,m∈N, R3 = {Fi, F∨ i }i∈I Then the subcategory of Vect(B GL(E∗)) consisting of all tensor products of sheaves in R1 (resp. R2) generates QCoh(B GL(E∗)). If R is a Q-algebra then we can replace (Symm Fi)∨by F∨ i in the statement above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "Let K ⊆N. The stack BD(K) GL(Q(K)) →D(K) is equivalent to the stack over D(K) whose ﬁber over a Spec B →D(K), given by h: Spec B →K, is the groupoid of locally free sheaves on Spec B that have rank n on h−1(n) for all n ∈K. Let K∗: I →P(N) and G = Y i GL(Q(Ki)) = Y i (GL(Q(Ki)) ×D(Ki) D(K∗)) →D(K∗) where the products are taken over R and D(K∗) respectively. Then G →D(K∗) is an aﬃne and faithfully ﬂat relative group scheme and the stack BD(K∗) G →D(K∗) is equivalent to the stack over D(K∗) whose ﬁber over a Spec B →D(K∗), given by hi : Spec B →Ki, is the groupoid of (Gi)i where Gi is a locally",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized frame bundles",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-12-generalized-frame-bundles.md",
+      "narrative": null,
+      "content": "Generalized frame bundles. In this section we study frame bundles of general vector\nbundles. We ﬁx a category X ﬁbered in groupoids over R.\nDeﬁnition 1.8. Given a subset K ⊆N we set\nD(K) =\nG\nn∈K\nSpec R\nand denote by Q(K) the vector bundle on D(K) which is free of rank n over the copy of Spec R\ncorresponding to n ∈K. More generally given a collection K∗: I →P(N), where P(N) is the\nset of subsets of N, we set D(K∗) = Q\ni D(Ki) as a sheaf over R.\nLet E ∈Vect(X) be a locally free sheaf on X. We set\nranks(E) = {n ∈N | ∃s: Spec L →X with rk s∗E = n}, D(E) = D(ranks(E)), Q(E) = Q(ranks(E))\nThere is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "The scheme D(K), thought of as a sheaf, is the constant sheaf associated with K. Instead D(K∗) as sheaf Aﬀ/R →(Sets) is D(K∗)(U) = {s: U → Y i∈I Ki with locally constant factors U →Ki} The map X →D(E∗) maps ξ : U →X to the map Q i rk(ξ∗Ei): U →Q i∈I ranks(Ei).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "The scheme D(K) is aﬃne if and only if K is ﬁnite. If K∗: I →P(N) is a collection such that all the Ki are ﬁnite, then D(K∗) →Spec R is also aﬃne and faithfully ﬂat. This is the case, for instance, if X is quasi-compact and K∗= ranks(E∗). Otherwise D(K∗) is just thought of as a sheaf over R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudo-affine stacks",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-2-pseudo-affine-stacks.md",
+      "narrative": null,
+      "content": "One of the key points in the proof of Theorem [\\[thma\\]](#thma){reference-type=\"ref\" reference=\"thma\"} is a characterization of the following stacks.\n\n::: defn\nA *pseudo-affine* stack is a quasi-compact fpqc stack with quasi-affine diagonal such that all quasi-coherent sheaves on it are generated by global sections. In other words a pseudo-affine stack is a quasi-compact fpqc stack $\\stX$ such that $\\{\\odi{\\stX}\\}$ generates $\\mathop{\\mathrm{\\textup{QCoh}}}(\\stX)$.\n\nA map $f\\colon\\stY'\\arr\\stY$ of fibered categories is called *pseudo-affine* if for all maps $T\\arr\\stY$ from an affine scheme th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tannaka Reconstruction",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-3-tannaka-reconstruction.md",
+      "narrative": null,
+      "content": "The goal of this section is to introduce the stack of fiber functors and prove Theorem [\\[thma\\]](#thma){reference-type=\"ref\" reference=\"thma\"}. We will work over a base ring $R$ and denote by $A$ a general $R$-algebra.\n\n::: defn\n[]{#def:definition of Fib stacks label=\"def:definition of Fib stacks\"} Let $\\stX$ be a quasi-compact fiber category over $R$, $\\shC\\subseteq\\mathop{\\mathrm{\\textup{Loc}}}\\stX$ a monoidal subcategory and $A$ an $R$-algebra. We define $\\mathop{\\mathrm{\\textup{SMex}}}_{R}(\\shC,A)$ as the category of contravariant, $R$-linear and *strong* monoidal functors $\\Gamma\\colon\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudo-Affine sheaves revisited",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-4-pseudo-affine-sheaves-revisited.md",
+      "narrative": null,
+      "content": "In this section we give an alternative characterization of pseudo-affine sheaves, which will be used when studying the fiber category $\\Fib_{\\stX,\\shC}$.\n\n::: lem\n[]{#lem:locus of exactness label=\"lem:locus of exactness\"} Let $\\pi\\colon\\stX\\to\\mathop{\\mathrm{\\textup{Aff}}}/R$ be a fibered category over $R$, $\\shT_{*}$ be a bounded above complex of locally free sheaves on $\\stX$ and denote by $\\stU_{l}$, for $l\\in\\Z$, the locus in $\\stX$ where $\\shT_{*}$ is exact in degrees greater than $l$, that is $$\\stU_{l}(A)=\\{\\xi\\colon\\mathop{\\mathrm{\\textup{Spec}}}A\\to\\stX\\st\\xi^{*}\\shT_{*}\\text{ is exac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The stack of fiber functors",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-5-the-stack-of-fiber-functors.md",
+      "narrative": null,
+      "content": "The last statement of Theorem 3.2 admits an almost converse. Let X be a ﬁbered category\nover R and C ⊆Vect X be a full monoidal subcategory. We deﬁne\nG∗: C →Hom(FibX ,C, VectR)\nwhere VectR is the stack of locally free sheaves over R, mapping a sheaf E ∈C to\nGE(Γ ∈FibX ,C(A)) = ΓE ∈Vect(A) for all R-algebras A\nSTACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION\n19\nIn particular the composition X →FibX ,C\nGE\n−−→VectR is just E ∈C. Notice that, a priori, FibX ,C\nis not necessarily ﬁbered in groupoids and therefore the notion of a locally free sheaf on it is not\ndeﬁned (although one can easily g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "It is not clear if Fibf X ,C is algebraic even if X is a projective scheme and we choose a C that does not generate QCoh(X). The statement of 5.1, 5) is not really satisfactory for two reasons. The ﬁrst condition requires C to be not too big, for example C = Vect(X) in general will not have this property. The second problem is that it is not clear when the second condition is satisﬁed. STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category over R and C ⊆Vect X be a full monoidal subcategory with duals. If R is not a Q-algebra assume moreover that Symn E ∈C for all E ∈C and n ∈N. Set also I = {f : C →N | ∃ξ : Spec L →X with f(E) = rk(ξ∗E) for all E ∈C} Then FibX ,C is an fpqc stack in groupoids and: 1) Fibf X ,C̸ = ∅if and only if f ∈I. 2) Using notation from Section 1.2, we have D(E) = D(GE) and Q(E) = Q(GE) for E ∈C, so that D(C) = D(C →Vect(X)) = D(G∗: C →Vect(FibX ,C)) is an aﬃne scheme. If we think GL(Q(E)) as a group scheme over D(C) and set G = Q E GL(E) →D(C) then the map (see 1.13",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "The category DJ generates QCoh(BJ) and, in particular, PBJ : BJ →FibBJ,DJ is an equivalence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "The stack FibX ,C is ﬁbered in groupoids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "Let t be any of the following operations of sheaves t = −∨, Symm, Λm and E ∈C be such that t(E) ∈C. Then Gt(E) ≃t(GE) on FibX ,C. In particular for any Γ ∈FibX ,C(A) we get an isomorphism Γt(E) ≃t(ΓE) by testing the previous isomorphism in Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-05.md",
+      "narrative": null,
+      "content": "With notations from 1.2 we have that D(E) = D(GE) and Q(E) = Q(GE). In particular D(G∗: C →Vect(FibX ,C)) = D(C →Vect(X)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-06.md",
+      "narrative": null,
+      "content": "The functor Ωis an aﬃne scheme and Fr(G∗: C →Vect(FibX ,C)) is the locus in Ωof functors Γ which are right exact, that is Γ ∈FibX ,C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-07.md",
+      "narrative": null,
+      "content": "The functor FibX ,C →B G is pseudo-aﬃne and, in particular, Fr(G∗: C → Vect(FibX ,C)) is pseudo-aﬃne. If moreover the hypothesis of 5.1, 5) are met then the previ- ous map and space are quasi-aﬃne.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-08.md",
+      "narrative": null,
+      "content": "We have ω∗C′ ⊆D and, in particular, D generates QCoh(FibX ,C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/lem-sec-010-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-010-10.md",
+      "narrative": null,
+      "content": "The map U →U ′ has a section and, in particular, U ′ is a closed subscheme of U, hence quasi-aﬃne.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-010-04.md",
+      "narrative": null,
+      "content": "We have Fibf X ,C̸ = ∅if and only if f ∈I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-010-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-010-09.md",
+      "narrative": null,
+      "content": "Claims in Theorem 5.1, 4) hold. It remains to show Theorem 5.1, 5). So we assume its hypothesis. We have already shown that U = Fr(G∗: C →Vect(FibX ,C)) is quasi-aﬃne in 5.9. For T ⊆C set GT = Q E∈T GL(Q(E)) → D(C). In particular G = GC = GJ × GC−J and B G = B GJ × B GC−J. Consider the Cartesian diagram U D(C) U ′ B GC−J D(C) FibX ,C B G B GJ α",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 5.1",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-51-proof-of-theorem-51.md",
+      "narrative": null,
+      "content": "5.1. Proof of Theorem 5.1. The entire section is dedicated to the proof of Theorem 5.1. In\nparticular we assume the hypothesis and notation in its statement.\nIt is easy to see that FibX ,C is a stack (not necessarily in groupoids) for the fpqc topology on\nAﬀ/R. To avoid problems with disjoint unions we can assume that X is a Zariski stack.\nGiven a ﬁnite subset J of C denote by IJ the set of f : J →N extending to a function of I. In\nother words a function f : J →N belongs to IJ if and only if there exists a point s: Spec L →X\nsuch that f(E) = rk s∗E for all E ∈J. Given f : J →N we denote by Xf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/conj-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "conj-sec-011-02.md",
+      "narrative": null,
+      "content": "Let X and C be as in 5.1. Then the equivalent conditions of Proposition 5.14 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/conj-sec-011-05",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "conj-sec-011-05.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category over R. The morphism X →FibX ,C is universal among maps from X to quasi-compact fpqc stacks with quasi-aﬃne diagonal and with the resolution property, that is (5.1) Hom(FibX ,Vect(X ), Y) →Hom(X, Y) is an equivalence for all such stacks Y.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "Let X and C be as in 5.1. The following conditions are equivalent: 1) (if X is quasi-separated (see [Ton20, Def 1.4])) the morphism OFibX,C →PC∗OX is an isomorphism; 2) the functor Vect(FibX ,C) →Vect(X) is fully faithful; 3) the functor G∗: C →Vect(FibX ,C) is fully faithful. 4) the functor G∗(C) →Vect(X) is faithful",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-011-04.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category over R and Y a quasi-compact fpqc stack with quasi-aﬃne diagonal and with the resolution property. Then any map f : X →Y has a canonical factorization X →FibX ,Vect(X ) →Y.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-011-06.md",
+      "narrative": null,
+      "content": "Conjecture 5.18 holds if and only if Vect(FibX ,Vect(X )) →Vect(X) is faithful. In this case the above map is an equivalence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing vector bundles",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-52-comparing-vector-bundles.md",
+      "narrative": null,
+      "content": "the vector bundles on X and on FibX ,C.\nProposition 5.14. Let X and C be as in 5.1. The following conditions are equivalent:\n1) (if X is quasi-separated (see [Ton20, Def 1.4])) the morphism OFibX,C →PC∗OX is an\nisomorphism;\n2) the functor Vect(FibX ,C) →Vect(X) is fully faithful;\n3) the functor G∗: C →Vect(FibX ,C) is fully faithful.\n4) the functor G∗(C) →Vect(X) is faithful\nProof. 1.\n⇐⇒\n2. We assume X quasi-compact and quasi-separated. Since FibX ,C is quasi-\ncompact and quasi-separated by 5.1, the functor PC : X →FibX ,C is quasi-compact and quasi-\nseparated as well, so that pushing forward",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/rem-sec-011-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "rem-sec-011-03.md",
+      "narrative": null,
+      "content": "Conjecture 5.15 holds in two special cases. The ﬁrst one is when X is quasi- compact with quasi-aﬃne diagonal and C generates QCoh(X): by 3.2 the map X →FibX ,C is actually an equivalence. The second is when X is quasi-compact and quasi-separated and C = {OX }, the simplest category: the Conjecture is veriﬁed thanks to 5.20, that we are going to prove.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/ex-sec-012-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "ex-sec-012-03.md",
+      "narrative": null,
+      "content": "We show an example of an integral scheme X of ﬁnite type over a ﬁeld k such that • the stack FibX,{OX} is not algebraic. • the map X →FibX,{OX} is not surjective, which shows that not all ﬁber functors (locally) comes from a section of X. By 5.21, the idea is to look for an X such that the image of X →Spec H0(OX ) is not open. Let A = k[x, y, z] and B = k[x/y, y, z/y] and notice that A ⊆B ⊆Ay ⊆Axy = Bx We deﬁne X as the scheme obtained by gluing Spec Ax and Spec B along Spec Axy. By con- struction there are maps Spec A −V (x, y) = Spec Ax ∪Spec Ay →X f−→Spec A As the ﬁrst map is dominant becau",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category over R. Then FibX ,{OX} is the intersection of all quasi-compact open subsets of Spec H0(OX ) containing the image of X → Spec H0(OX ). If X is quasi-compact and quasi-separated then Vect(FibX ,{OX }) →Vect(X) is fully faithful, or, equivalently, OFibX,{OX } →P{OX }∗OX is an isomorphism. Moreover X →FibX ,{OX } is universal among maps from X to pseudo-aﬃne sheaves. STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prop-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "prop-sec-012-02.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact ﬁbered category. If X →Spec H0(OX ) has open image then FibX ,{OX} coincides with this image. Conversely if FibX ,{OX} is an algebraic stack, X →Spec R is a ﬁnitely presented algebraic stack and H0(OX ) is a Noetherian Jacobson ring then X →Spec H0(OX ) has open image.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case C={OX}",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-53-the-case-cox.md",
+      "narrative": null,
+      "content": "Symn OX ≃OX so the hypothesis of 5.1 are satisﬁed.\nProposition 5.20. Let X be a quasi-compact ﬁbered category over R. Then FibX ,{OX} is the\nintersection of all quasi-compact open subsets of Spec H0(OX ) containing the image of X →\nSpec H0(OX ).\nIf X is quasi-compact and quasi-separated then Vect(FibX ,{OX }) →Vect(X) is fully faithful,\nor, equivalently, OFibX,{OX } →P{OX }∗OX is an isomorphism.\nMoreover X →FibX ,{OX } is\nuniversal among maps from X to pseudo-aﬃne sheaves.\nSTACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION\n26\nProof. We can assume R = H0(OX ). Set C = {OX }. If A is an R-alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2010.12445v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[Aut19]\nThe Stacks Project Authors, The stacks project.\n[BC14]\nMartin Brandenburg and Alexandru Chirvasitu, Tensor functors between categories of quasi-coherent\nsheaves, Journal of Algebra 399 (2014), 675–692.\n[Bha16]\nBhargav Bhatt, Algebraization and Tannaka duality, Cambridge Journal of Mathematics 4 (2016), no. 4,\n403–461.\n[Bra14]\nMartin Brandenburg, Tensor categorical foundations of algebraic geometry, Ph.D. thesis, 2014, p. 251.\n[Bro13]\nMichael Broshi, G-torsors over a Dedekind scheme, Journal of Pure and Applied Algebra 217 (2013),\nno. 1, 11–19.\n[Del90]\nPierre Deligne, Catégories tannaki",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

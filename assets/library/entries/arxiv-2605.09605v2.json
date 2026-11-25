@@ -1,0 +1,154 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.09605v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Symmetry-protected topological (SPT) phases provide a unifying framework for a broad class of quantum spin systems in which global symmetries protect robust edge modes, quantized topological invariants, and nontrivial entanglement structures, even in one-dimensional settings [@H83; @Pollmann2010; @Pollmann2012]. Within this picture, the Haldane phase of spin‑1 chains and its paradigmatic representative, the AKLT model, furnish canonical examples of bosonic SPT phases protected by spin-rotation and related symmetries [@H83; @AKLT1987; @Affleck1988]. Building on the index-theoretic and group‑coh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Cocycle Actions on Hidden Quantum Markov Models:\nSymmetry Protection and Topological Order\nAbdessatar Souissi\n1 Department of Management Information Systems, College of Business and Economics\nQassim University, Buraydah 51452, Saudi Arabia\n2 Institut Pr´eparatoire aux Etudes des Ing´enieurs de Monastir, Tunisia. a.souaissi@qu.edu.sa\nAbdessatar Barhoumi\nDepartment of Mathematics and Statistics, College of Science\nKing Faisal University, Al-Ahsa PO.Box: 400, 31982, Saudi Arabia\nabarhoumi@kfu.edu.sa\nAbstract\nWe develop a symmetry action framework for hidden quantum Markov models (HQMMs)\ntailored",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-cocycle-actions-and-symmetry-protection-in-hqmms.md",
+      "narrative": null,
+      "content": "[]{#Sect_main label=\"Sect_main\"} Let $G$ be a locally compact group. In quantum systems, symmetry actions are typically implemented by unitary representations. However, within the framework ofHQMMs, the hidden sector may carry a *projective* representation, reflecting the anomalous nature of the symmetry in the corresponding symmetry-protected topological (SPT) phase. This projective character is encoded in a $2$-cocycle, which defines an element of the second cohomology group $H^2(G, \\mathrm{U}(1))$. Throughout the remainder of the paper, the notation associated with the HQMM formalism is int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to AKLT's Symmetry-Protected Topological Order",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-application-to-aklts-symmetry-protected-topologi.md",
+      "narrative": null,
+      "content": "[]{#Sect_AKLT label=\"Sect_AKLT\"} The AKLT state [@AKLT1987] stands as a paradigmatic example of a SPT phase in 1D. Its topological protection originates from a projective representation of the symmetry group on the virtual degrees of freedom---a structure that aligns naturally with the HQMM framework developed in the preceding sections. This projective character is encoded in a nontrivial $2$-cocycle $[\\omega] \\in H^2(\\mathrm{SO}(3), \\mathrm{U}(1)) \\cong \\mathbb{Z}_2$, which obstructs the lifting of the symmetry action on the hidden space to a linear representation. Within the HQMM formalism,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and Outlook",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-discussion-and-outlook.md",
+      "narrative": null,
+      "content": "[]{#Sect_Discussion label=\"Sect_Discussion\"}\n\nThe framework developed in this paper establishes a rigorous algebraic foundation for studying symmetry actions onHQMMs. By formulating the symmetry conditions [\\[eq:initial_invariance\\]](#eq:initial_invariance){reference-type=\"eqref\" reference=\"eq:initial_invariance\"}, [\\[eq:Eh_equivariance\\]](#eq:Eh_equivariance){reference-type=\"eqref\" reference=\"eq:Eh_equivariance\"}, and [\\[eq:EOH_covariance\\]](#eq:EOH_covariance){reference-type=\"eqref\" reference=\"eq:EOH_covariance\"}, we have shown that the projective nature of the hidden representation $\\pi: G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "1 (Projective Limit State). If {φn}n∈N0 satisfies the Kolmogorov compatibility condi- tion, then there exists a unique state φ on AN0 such that φ|A[0,n] = φn for all n. Moreover, for any A ∈AN0, φ(A) = limn→∞φn(An) whenever An ∈A[0,n] converges to A in norm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appedix: Hidden Quantum Markov Models",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-appedix-hidden-quantum-markov-models.md",
+      "narrative": null,
+      "content": "Appedix: Hidden Quantum Markov Models\nLet H and K be separable Hilbert spaces, representing the hidden and observable degrees of\nfreedom at a single lattice site, respectively. The corresponding single-site algebras are defined as\nthe C∗-algebras of bounded linear operators: AH := B(H) and AO := B(K), each equipped with\nthe operator norm and containing the identity operator. For each site n ∈Z, the full single-site\nalgebra is the spatial C∗-tensor product\nA{n} := AH ⊗AO ∼= B(H ⊗K),\nwhere the isomorphism holds by separability of H and K.\nFor a finite subset Λ ⊂Z, the finite-volume composite alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.09605v2/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "2 (Global HQMM State). Let T : AH ⊗AH ⊗AO →AH be a CPU map and ϕ0 a state on AH. For each n ∈N0, the functional φn defined above extends uniquely to a state on A[0,n]. The sequence {φn}n∈N0 satisfies the Kolmogorov compatibility condition, and thus there exists a unique state φ on AN0 such that φ|A[0,n] = φn for all n. This φ is called the global HQMM state generated by (ϕ0, T ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

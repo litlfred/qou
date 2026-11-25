@@ -1,0 +1,507 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1111.6782v2",
+  "title": "Stationary Points of O’Hara’s Knot Energies",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Continuous differentiability",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-continuous-differentiability"
+    },
+    {
+      "level": 1,
+      "title": "Regularity of stationary points",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-regularity-of-stationary-points"
+    },
+    {
+      "level": 1,
+      "title": "A Results on fractional Sobolev spaces",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-results-on-fractional-sobolev-spaces"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stationary points",
+          "heading": false
+        },
+        {
+          "term": "hara",
+          "heading": false
+        },
+        {
+          "term": "regularity",
+          "heading": false
+        },
+        {
+          "term": "philipp",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1111.6782v2 [math.AP] 18 Jan 2012 Stationary Points of O’Hara’s Knot Energies Simon Blatt∗ Philipp Reiter∗∗ November 11, 2017 Abstract In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3). In a ﬁrst step we prove that E(α) is C1 on the set of all regular embedded curves belonging to H(α+1)/2,2(R/Z, Rn) and calculate",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1111.6782v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite oha",
+          "heading": false
+        },
+        {
+          "term": "frac abs",
+          "heading": false
+        },
+        {
+          "term": "cite fhw",
+          "heading": false
+        },
+        {
+          "term": "o'hara cite",
+          "heading": false
+        },
+        {
+          "term": "rzd",
+          "heading": false
+        },
+        {
+          "term": "local minimizers",
+          "heading": false
+        },
+        {
+          "term": "cite reiter",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        }
+      ],
+      "extract": "The motion of a knotted charged fiber within a viscous liquid served as model for the definition of so-called \\emph{knot energies} introduced by Fukuhara~\\cite{fete}. One hopes that it will reach a stationary point minimizing its electrostatic energy and that the resulting shape will help to determine its knot type. The general idea is that this procedure leads to a ``nicer shape'' for a given knot in the same knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-continuous-differentiability",
+      "number": "2",
+      "title": "Continuous differentiability",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 13,
+      "labelStart": "4",
+      "labelEnd": "13",
+      "words": 2855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abs dgt",
+          "heading": false
+        },
+        {
+          "term": "theta abs",
+          "heading": false
+        },
+        {
+          "term": "int dgt",
+          "heading": false
+        },
+        {
+          "term": "abs alpha",
+          "heading": false
+        },
+        {
+          "term": "rangle abs",
+          "heading": false
+        },
+        {
+          "term": "iint varepsilon",
+          "heading": false
+        },
+        {
+          "term": "abs frac",
+          "heading": false
+        },
+        {
+          "term": "eps bigg",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:differentiability} In this section, we want to prove the following proposition from which Theorem~\\ref{thm:FrechetDifferential} will follow quite easily. Recall that $U_\\varepsilon = (\\mathbb R / \\mathbb Z )\\times ([-1/2, - \\varepsilon] \\cup [\\varepsilon, 1/2])$. \\newcommand{\\gt} {\\gamma + \\tau h} \\begin{proposition}\\label{prop:formula} For $\\alpha \\in (2,3)$ the energies $\\E$ are continuously",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-regularity-of-stationary-points",
+      "number": "3",
+      "title": "Regularity of stationary points",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iint eps",
+          "heading": false
+        },
+        {
+          "term": "abs alpha",
+          "heading": false
+        },
+        {
+          "term": "cdot tau",
+          "heading": false
+        },
+        {
+          "term": "eps searrow",
+          "heading": false
+        },
+        {
+          "term": "abs frac",
+          "heading": false
+        },
+        {
+          "term": "eps hat",
+          "heading": false
+        },
+        {
+          "term": "beta cdot",
+          "heading": false
+        },
+        {
+          "term": "tau int",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:bootstrap} In this section we prove Theorem~\\ref{thm:rsp} so we are looking at embedded curves $\\gamma \\in \\W[(1+\\alpha)/2]$ parametrized by arc-length that satisfy \\begin{equation}\\label{eq:ele} \\delta\\E(\\gamma;h) + \\lambda \\int_{\\mathbb R / \\mathbb Z} \\sp{\\gamma',h'} =0 \\quad \\forall h \\in \\W[(1+\\alpha)/2] (\\mathbb R / \\mathbb Z, \\mathbb R^n) \\end{equation} where $\\lambda>0$ and \\begin{align*}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-results-on-fractional-sobolev-spaces",
+      "number": null,
+      "title": "A Results on fractional Sobolev spaces",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 687,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "der mosel",
+          "heading": false
+        },
+        {
+          "term": "sobolev spaces",
+          "heading": true
+        },
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "szuma nska",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "von der",
+          "heading": false
+        },
+        {
+          "term": "menger curvature",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        }
+      ],
+      "extract": "Results on fractional Sobolev spaces Let us gather two results we used in the article: The product and chain rule which go back to Coifman and Meyer [9] and Christ and Weinstein [8]. Lemma A.1 (Leibniz Rule, cf. [9]). Let pi, qi, r ∈(1, ∞), be such that 1 pi + 1 qi = 1 r , for i = 1, 2 and s > 0. Then ∥f · g∥Hs,r ≤C (∥f∥Lp1 ∥g∥Hs,q1 + ∥f∥Hs,p2 ∥g∥Lq2 ) . 17 We also refer to Runst and Sickel [20, Lem. 5.3.7/1 (i)]. —",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "abs dgt",
+      "heading": false
+    },
+    {
+      "term": "abs int",
+      "heading": false
+    },
+    {
+      "term": "abs frac",
+      "heading": false
+    },
+    {
+      "term": "abs alpha",
+      "heading": false
+    },
+    {
+      "term": "theta abs",
+      "heading": false
+    },
+    {
+      "term": "rangle abs",
+      "heading": false
+    },
+    {
+      "term": "iint eps",
+      "heading": false
+    },
+    {
+      "term": "gamma tau",
+      "heading": false
+    },
+    {
+      "term": "iint varepsilon",
+      "heading": false
+    },
+    {
+      "term": "tfrac tau",
+      "heading": false
+    },
+    {
+      "term": "equation gamma",
+      "heading": false
+    },
+    {
+      "term": "eps bigg",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1111.6782v2"
+  }
+}

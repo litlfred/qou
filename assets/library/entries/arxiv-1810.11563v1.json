@@ -1,0 +1,1689 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1810.11563v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Three Lectures on Complexity and Black Holes\nLeonard Susskind\nStanford Institute for Theoretical Physics and Department of Physics,\nStanford University, Stanford, CA 94305-4060, USA\nAbstract\nThis is the written version of three lectures on complexity and black holes given at\nPiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture\ndescribes the meaning of quantum complexity, the analogy between entropy and\ncomplexity, and the second law of complexity.\nLecture two reviews the connection between the second law of complexity and the\ninterior of black holes. I discuss how ﬁre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Lecture I: Hilbert Space is Huge",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-i-lecture-i-hilbert-space-is-huge.md",
+      "narrative": null,
+      "content": "Lecture I: Hilbert Space is Huge",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preface",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-1-preface.md",
+      "narrative": null,
+      "content": "These lectures are a tale of two metrics on the same space---the space of states of a quantum system of $K$ qubits. One metric is familiar to you and the other probably very unfamiliar. They are extremely different measures of the distance between quantum states and they have different purposes.\n\nThe two metrics are totally dissimilar. One, the inner product metric, is small in the sense that no two points are more distant that $\\pi/2.$ The other, relative complexity, is huge; almost all points are separated by a distance exponential in $K$. The inner product metric is positively curved like a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How Huge?",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-2-how-huge.md",
+      "narrative": null,
+      "content": "Let's consider the space of states of $K$ qubits and make a simple estimate of its size. By size I don't mean the dimensionality of the space defined by the number of mutually orthogonal vectors. I mean something more like the total number of unit vectors. It's of course infinite but we can regulate it.\n\nThe dimension of the Hilbert space is $2^K$ and a general vector has the form,\n\n$$|\\Psi\\ra  = \\sum_1^{2^K} \\alpha_i |i\\ra$$\n\nThe $\\alpha$ are arbitrary complex numbers. At the moment we won't worry about normalizing $|\\Psi\\ra$ or dividing out the overall phase. Now let's regulate the infinitie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of CP(N)",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-volume-of-cpn.md",
+      "narrative": null,
+      "content": "To do any kind of rigorous counting of points in a continuous space  we have to coarse-grain the space. An example is counting states in classical statistical mechanics where we coarse grain, replacing points by little balls of radius $\\epsilon.$ This allows us to count states, for example to define entropy,\n\\be\nS=\\log{(\\#states)}\n\\label{entropy}\n\\ee\n at the cost an additive term, $\\Delta\\log{\\epsilon}$, $\\Delta$ being the dimension of the phase space. In order to count states in $CP(2^K-1)$ or unitary operators in $\\suk$ we have to do something similar. \n\n\n\n\n The space of normalized states wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative Complexity",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-4-relative-complexity.md",
+      "narrative": null,
+      "content": "The enormity of the space of states of quantum systems begs the question of how to measure the distance between states. Are some states close to each other and others enormously far? The usual metric in state space (by which I mean $CP(N)$) is the inner-product metric. It's also called the Fubini-Study (FS) metric. The FS distance between two vectors $|A\\ra$ and $|B\\ra$ is,\n\\be \nd_{fs}(A,B) = \\arccos{|\\la A |B\\ra|}.\n\\ee\nIt varies from $d_{fs}=0$ when $|A\\ra = |B\\ra$ to $\\pi/2$ when $|A\\ra$ and $ |B\\ra$ are orthogonal. The space with the FS metric is ``small\" in the sense that the furthest dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dual Role of Unitaries",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-5-dual-role-of-unitaries.md",
+      "narrative": null,
+      "content": "Dual Role of Unitaries\nComplexity can be deﬁned for states2, but in many ways it is more natural to start with\nthe complexity of operations that you can do to a system. That means the complexity\nof unitary operators. Unitary matrices have a dual role in quantum information theory.\nFirst of all they are the matrix representation of unitary operators,\nU =\nX\nUij|i⟩⟨j|\n(5.9)\n1There are still details associated with how precisely a product of gates must approximate a target\nstate.\n2We continue to work with systems of K qubits. The space of states is 2K dimensional.\n8\nSecondly they can be used to re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of SU(2K)",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-6-volume-of-su2k.md",
+      "narrative": null,
+      "content": "Volume of SU(2K)\nLet’s make a more reﬁned calculation of the number of operators in SU(N) by dividing\nits volume by the volume of an epsilon ball of the same dimensionality (the dimension of\nSU(N) is N 2−1.). The volume of SU(N) is https://arxiv.org/abs/math-ph/0210033\nV [SU(N)] =\n2π\n(N+2)(N−1)\n2\n1!2!3!....(N −1)!\n(6.12)\n3The bar in ¯J indicates time reversal or in relativistic quantum ﬁeld theory the CPT operation.\n4In the case of maximally entangled systems I mean a restricted form of complexity in which gates\nare only permitted to act on each side of the entangled system separately, thus pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exploring SU(2K)",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-7-exploring-su2k.md",
+      "narrative": null,
+      "content": "Exploring SU(2K)\nWe’ve seen that the space of unitary operators is gigantic. Now I want to discuss how\nto move through it. I’ve already hinted that we don’t make big complexity jumps, but\ninstead move in little steps called gates. A sequence of gates is called a circuit although it\nhas nothing to do with periodicity. It’s just a name.\nDeﬁnition:\nA k-local gate is a nontrivial k-qubit unitary operator chosen from some allowed uni-\nversal gate set. We assume that if g is in allowed set, so is g†.\nFigure 1 is a schematic representation of a 2-qubit gate.\n10\nFigure 1: Time ﬂows from left to right.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p012-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p012-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative Complexity of Unitaries",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-71-relative-complexity-of-unitaries.md",
+      "narrative": null,
+      "content": "The standard inner product metric for unitaries is similar to the inner product metric for states. In fact if we think of unitaries as the wave functions of maximally entangled systems then it is the inner product for such states. The inner product distance between $U$ and $V$ is,\n\\be \nd(UV) = \\arccos \\   |\\Tr U^{\\dag}V|\n\\ee\nwhere $\\Tr$ means the normalized trace defined so that $\\Tr I =1.$\nFor the same reasons that I discussed earlier, the inner product distance is not a useful measure of how difficult it is to go from $U$ to $V$ by small steps. A much better measure is relative complexity.\\\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity is Discontinuous",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-72-complexity-is-discontinuous.md",
+      "narrative": null,
+      "content": "\\bn\nIn describing relative complexity  I've  suppressed issues having to do with coarse-graining by epsilon balls. For example in \\ref{uggggv}, \\ref{U=ggggV2},  \\ref{U=ggggV3}, and \\ref{U=ggggV4}\nI  ignored the phrase, \\it to within a tolerance epsilon.\\rm \\ In fact as epsilon becomes small it takes an ever increasing number of gates to achieve that tolerance. The increase is only logarithmic in $\\frac{1}{\\epsilon}$ but nevertheless, with the present definition there is not a formal limit of relative complexity, or of the geometry of relative complexity.  One can only define a sequence of geom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graph Theory Perspective",
+      "pageStart": 17,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-8-graph-theory-perspective.md",
+      "narrative": null,
+      "content": "Circuits can be usefully described using graph theory\\footnote{See also Henry Lin, ``Caley Graphs and Complexity Geometry\",  \\url{https://arxiv.org/pdf/1808.06620.pdf}.}. I'll call a graph  describing a circuit a \\it circuit graph.\\rm \n\n\n\n\nLet's begin at the identity and act with a circuit of depth one, in other words a circuit of a single step with $K/2$ gates. For simplicity let's assume the allowed gate set is a single non-symmetric two-qubit gate. A choice must be made of how the $K$ qubits are paired. Each pairing will lead to a different unitary. I'll call the number of possible choices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Collisions and Loops",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-81-collisions-and-loops.md",
+      "narrative": null,
+      "content": "Each vertex of the tree represents a unitary operator and for that reason we can think of the tree as being embedded in $SU(2^K).$ \nSuppose a collision does occur. This means that two leaves of the tree are located at the same point is $\\suk.$ We can represent this by drawing the two leaves as a single leaf as in figure \\ref{collision}. \n\\begin{figure}[H]\n\\begin{center}\n\\includegraphics[scale=.4]{collision.pdf}\n\\caption{Two paths collide on the same epsilon-ball.}\n\\label{collision}\n\\end{center}\n\\end{figure}\n\nThe figure illustrates the fact that collisions induce loops in the graph. This allows",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Second Law of Quantum Complexity",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-9-the-second-law-of-quantum-complexity.md",
+      "narrative": null,
+      "content": "I'm not sure why complexity theorists never remarked on the similarity of quantum complexity and classical entropy, or the existence of a second law of complexity\\footnote{There is a very interesting paper by Zurek  in which he argues that that the classical entopy of a system is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek,  Phys.\\ Rev.\\ A {\\bf 40}, 4731 (1989)] The idea is very similar to the connection between quantum-computational-complexity and entropy described by Brown et.al in  \\url{https://arxiv.org/pdf/1701.0110.pdf}}. \n Just to be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p029-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p029-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hamiltonian Evolution",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-91-hamiltonian-evolution.md",
+      "narrative": null,
+      "content": "In the live lectures at PiTP I ran out of time before I had a chance to discuss how complexity evolves when a system's dynamics is governed by a time independent \\kl \\ Hamiltonian. In that case the constraint of energy conservation restricts the motion of $U(t)$ to lie on a relatively low dimensional subspace of \\Suk. Let's write $U(t)$ in the form,\n\\bea\nU(t) \\eq e^{\\-iHt}  \\cr \\cr\n\\eq \\sum_{i=1}^{2^K} |E_i\\ra \\la E_i| e^{-iE_i t}\n\\eea\nFor a given Hamiltonian the motion is restricted to a torus defined by the set of $2^K$ phases,\n\\be \ne^{i\\theta_i} = e^{-iE_i t}.\n\\ee\nIn other words $U(t)$ move",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Lecture II: Black Holes and the Second Law of Complexity",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-ii-lecture-ii-black-holes-and-the-second-law-of.md",
+      "narrative": null,
+      "content": "Lecture II: Black Holes and the\nSecond Law of Complexity",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preface",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-015-10-preface.md",
+      "narrative": null,
+      "content": "Preface\nWhen a star collapses a horizon forms and its area grows until it reaches its ﬁnal value.\nThis is visible from outside the horizon and is known to be a manifestation of a statisitcal\nlaw, the second law of thermodynamics: Entropy increases until thermal equilibrium is\nreached.\nThere is another similar but less well-known phenomenon: the growth of the spatial\nvolume behind the horizon of the black hole. At ﬁrst sight this could be another example\nof the increase of entropy, but more careful thought shows that this is not so. The growth\nof the interior continues long past the time when t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Black Hole-Quantum Circuit Correspondence",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-016-11-the-black-hole-quantum-circuit-correspondence.md",
+      "narrative": null,
+      "content": "Complexity is mostly studied in computer science departments.  The language is that of \\it bits,  qubits, \\rm  and logical \\it gates\\rm, not Hamiltonians and quantum fields.\nAt the present time there is no completely consistent framework in which a black hole can be represented as a finite collection of qubits, the kind of system for which complexity is a reasonably well formulated concept.\nI will not try to fill the gap in this lecture. What we will do is to to exhibit a \\it pattern of similarities \\rm between black hole phenomena and corresponding phenomena that occur in \\kl \\ all-to-all qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two Problems",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-017-111-two-problems.md",
+      "narrative": null,
+      "content": "Let us consider two problems:\n\n\\begin{enumerate}\n\\item \nOne evening before going to sleep Alice decided to record a single bit $x$ in  her quantum computer, so she put the computer into the state $|\\Psi_0\\ra = |x00...000\\ra$ with $x$ either equal to $0$ or $1.$ Her intention was to come back the next morning and to retrieve $x$. But unfortunately she accidentally left the \n computer running  all night, gate by gate executing some useless computation. By morning, because of the strong tendency for complexity to increase, the quantum computer had arrived at a  fairly  complex state $|\\Psi \\ra.$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circuits and Black Holes",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-018-112-circuits-and-black-holes.md",
+      "narrative": null,
+      "content": "The properties of black holes suggest that a description in terms of qubits should have a particular form. First, how many qubits do we need? To fully and exactly describe the black hole and the infinite AdS-like space surrounding it we need an infinite number, but that's like saying that in order to exactly describe the solar system we need all of the degrees of freedom out to the cosmic horizon. Clearly that is overkill. \n\nOn the other hand there is a minimum number needed to describe a system with entropy $S$. The maximum entropy of a system of $K$ qubits is $K.$ Therefore we need at least",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Growth of Wormholes",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-12-the-growth-of-wormholes.md",
+      "narrative": null,
+      "content": "Wormholes or Einstein-Rosen bridges grow with time.\nTo illustrate this fact we  examine the Penrose diagram \\ref{Foliated-BTZ2} of an AdS ``eternal\" black hole, or what is really two entangled black holes connected by an Einstein-Rosen bridge.\n \n\\begin{figure}[H]\n\\begin{center}\n\\includegraphics[scale=.3]{Foliated-BTZ2.pdf}\n\\caption{Penrose diagram for an AdS eternal black hole. The diagram is foliated by maximal slices. The darker blue portions of the slices represent the wormhole behind the horizons.\nThe volume of the slices ``bounces,\" decreasing in the lower part of the diagram, and increas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p036-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../images/img-p036-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p038-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p039-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../images/img-p039-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of Growth",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-020-121-properties-of-growth.md",
+      "narrative": null,
+      "content": "Let's review some facts about  the growth of wormhole volume that follow from the black hole geometry. First of all, except for an early transient, lasting about a thermal time, the growth  is linear with time. In the two-sided case the rate of growth of the volume satisfies,\n\\be \n\\frac{dV(t)}{dt} \\sim l_{ads}A T \n\\label{Vdot}\n\\ee\nwhere $t$ is the anchoring time, $A$ is the horizon area, $T$ is the black hole temperature, and $\\l$ is the AdS length scale. This is not hard to show using the AdS black hole metric but an easier argument is just dimensional analysis. \nIn the one-sided case the asy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p041-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rindler Time and CV",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-122-rindler-time-and-cv.md",
+      "narrative": null,
+      "content": "The standard architecture for quantum circuits (explained in Lecture I) is illustrated in figure \\ref{cirkuit}.\n \n\\begin{figure}[H]\n\\begin{center}\n\\includegraphics[scale=.4]{cirkuit.pdf}\n\\caption{}\n\\label{cirkuit}\n\\end{center}\n\\end{figure}\nWe assume that the circuit comes equipped with a clock, and in each time-step $K/2$ gates act. For sub-exponential time the number of gates in a circuit corresponds to the complexity\\footnote{This is the no-collisions assumption discussed at length in Lecture I. It is expected to be correct for sub-exponential time.} $\\CC$ of the unitary operator prepared by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exponential Time Breakdown of GR",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-022-13-exponential-time-breakdown-of-gr.md",
+      "narrative": null,
+      "content": "\\label{expTbreakdown}\nAccording to classical general relativity an Einstein-Rosen bridge (ERB), or  a one-sided bridge-to-nowhere, grows forever. It is interesting that this growth is bounded by quantum mechanics. To see why we  consider a diagnostic of the length of the wormhole, namely the equal time correlation between CFT fields outside the black hole horizons. If the two fields are on the same side then the correlation will be time-independent because the density matrix on each side is thermal, and therefore stationary. But if we consider correlations between opposite sides it is well kno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C=V",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-023-131-cv.md",
+      "narrative": null,
+      "content": "Let's come back now to the  puzzle:  what grows long after thermal equilibrium is attained? \n I only know one thing that has all the right features: quantum complexity. As I explained in Lecture I, quantum complexity has many of the characteristics of entropy but on a grand exponential time scale. It may be thought of as the entropy of the classical auxiliary system $\\CA$ that I defined in Lecture I.\n \n \n To relate complexity to the spatial volume of the wormhole or Bridge-to-Nowhere we go back to equation \\ref{CV},\n$$\\CC=\\frac{V}{Gl_{ads}}.$$\nThis is the complexity=volume duality proposal.  T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Precursors",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-14-precursors.md",
+      "narrative": null,
+      "content": "Precursors",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Epidemic Model",
+      "pageStart": 45,
+      "pageEnd": 49,
+      "target": "../sections/sec-025-141-the-epidemic-model.md",
+      "narrative": null,
+      "content": "The best source of confirmation of the $\\CC=V$ hypothesis is to perturb the evolution of the black hole, and see if the correspondence  between GR and quantum circuits  continues to hold. For example we may allow some time-dependent perturbations to the CFT Hamiltonian and calculate the effect on the black hole geometry.  At the same time we may study the effects of time-dependent perturbations on the complexity of a quantum circuit. By comparing the two we can confirm the complexity-volume  correspondence. In this context so-called precursor operators are a useful tool.\n\n Let us consider an o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p046-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../images/img-p046-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p047-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p047-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lyapunov and Rindler",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-026-142-lyapunov-and-rindler.md",
+      "narrative": null,
+      "content": "\\label{Sec: Lyap and Rind}\n\nLet's come back to the relation between circuit clock time and Rindler time. You may think that the arguments were not very compelling  but equations \\ref{difference equ} through \\ref{expgro} provide a quantitative basis for the identification.\nThe exponential growth in \\ref{expgro} is expected and should  be compared with the OTOC theory of scrambling, especially as applied to black holes.\nThere it is well known from the work of Kitaev and Maldacena, Shenker, and Stanford,  that in black hole physics size grows according to,\n\\be \ns(t) \\approx e^{\\frac{2\\pi}{\\beta}t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p050-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../images/img-p050-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p050-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../images/img-p050-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Precursors and Black Holes",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "../sections/sec-027-15-precursors-and-black-holes.md",
+      "narrative": null,
+      "content": "In defining precursor operators in AdS/CFT it is tempting to identify the single qubit operator $W$ with a local low-dimension CFT field. However, local fields when they act inject infinite energy into the CFT system and this is not what we want. The remedy is to smear the field over a time interval. We would like the energy of the field to be such that it would increase the entropy of the black hole by one thermal unit. This means that the energy should be equal to the temperature. We therefore assume that $W_L$ is an operator that adds a thermal quantum to the left-side black hole. \n\nNow let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p052-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../images/img-p052-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p053-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../images/img-p053-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Instability of White Holes",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-028-151-instability-of-white-holes.md",
+      "narrative": null,
+      "content": "Earlier I talked about the meaning of the bounce in figure \\ref{Foliated-BTZ2} . It resembles the entropy bounce of a confined gas if one constrains the gas to be in a very low entropy state at $t=0$. Let me give names to the various regions of the Penrose diagram. The left and right shaded regions are the left and right black hole exteriors. The upper un-shaded region is the black hole interior in which the complexity evolves in a manner consistent with the second law of complexity (complexity increases). The lower un-shaded region is the counter-intuitive region where complexity decreases. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity and Firewalls",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "../sections/sec-029-16-complexity-and-firewalls.md",
+      "narrative": null,
+      "content": "Let me\ncome now to the subject of firewalls. A firewall is supposed to be an extremely intense high energy shock wave propagating on or just behind the horizon. \nThere are two paradoxes, both of which were claimed to be solved by firewalls. One is connected with entanglement and the other with ``typicality.\" The paradox of multiple entanglements is solved by the ER=EPR principle and I will not discuss it further. The ``Typical State Paradox\" (D. Marolf and J. Polchinski, \\url{https://arxiv.org/pdf/1307.4706.pdf}) \nis the one whose resolution has to do with complexity \n\\url{https://arxiv.org/pd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p056-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../images/img-p056-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p056-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../images/img-p056-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p058-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../images/img-p058-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p059-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../images/img-p059-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Firewalls are Fragile",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "../sections/sec-030-161-firewalls-are-fragile.md",
+      "narrative": null,
+      "content": "\\label{Sec: fragile FW}\n\n\\begin{figure}[H]\n\\begin{center}\n\\includegraphics[scale=.4]{kick.pdf}\n\\caption{An intially super-Planckian shockwave will be ``kicked\" into the singularity by a single thermal quantum. The green region is the  Plankian region.}\n\\label{kick}\n\\end{center}\n\\end{figure}\n\nThe photon and the shock wave will undergo a high energy collision. On can think about the collision from the point of view of a frame in which the photon is high energy and the shock wave is low energy. In other words we can exchange the role of the photon and the shock wave. In that frame the infalling p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What Happens After Exponential Time?",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "../sections/sec-031-162-what-happens-after-exponential-time.md",
+      "narrative": null,
+      "content": "Let's suppose that it is true that once complexity equilibrium is established, there is a high probability for a firewall. How stable is that firewall? The naive answer is that equilibrium is  stable and not likely to be significantly disturbed by butterflies. That is true for ordinary thermal equilibrium but complexity equilibrium is different.\n\n\n\n\nRecall from Lecture I that the transition from growing complexity to equilibrium occurs abruptly when the complexity reaches its maximum $e^S$. Now suppose a thermal photon is  thrown in. It will increase the entropy by only one unit which seems ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p062-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fragility of Complexity Equilibrium",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-032-163-the-fragility-of-complexity-equilibrium.md",
+      "narrative": null,
+      "content": "Let's  take the default position: If there is no reason to believe that  firewalls don't occur when the complexity stops increasing, then they probably do occur.\n How stable would such a firewall be? The naive answer is that equilibrium is  stable and not likely to be significantly disturbed by butterflies. \n That is true for ordinary thermal equilibrium, say of a gas of $N$ classical molecules. \n \n Thermal equilibrium is a state of maximum entropy in which the entropy is proportional to the number of molecules,\n \\be \n S_{max}\\sim N.\n \\ee\nNow lets perturb the state by adding a single molecule.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Do Typical States have Firewalls?",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-033-17-do-typical-states-have-firewalls.md",
+      "narrative": null,
+      "content": "Does a typical state of  black hole entangled with a second \\it purifying \\rm system have a firewall? The answer is subtle and depends on what we mean by typical. There are a number of different situations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AdS Black Holes",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-034-171-ads-black-holes.md",
+      "narrative": null,
+      "content": "First of all for black holes in AdS which cannot evaporate, but which are entangled through wormholes to other AdS black holes:\n\n\n\n\\bi \n\\item\nAlmost all states of the entangled system are maximally complex. If we accept the default position---without an argument against a firewall, a given maximally complex state has a high likelihood of having a firewall---then almost all states are likely to have firewalls. To be firewall-free the state of the system much be exceptional and out of complexity equilibrium.\n\n\n\n\n\\item \nExceptional states are ones with complexity much less than maximum.  For thes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaporating Black Holes",
+      "pageStart": 65,
+      "pageEnd": 67,
+      "target": "../sections/sec-035-172-evaporating-black-holes.md",
+      "narrative": null,
+      "content": "Evaporating Black Holes\nFinally there are black holes in asymptotically ﬂat space that can evaporate. Such black\nholes may start out in low complexity pure states. As they evaporate and shrink they\nbecome entangled with their own evaporation products, so that by the Page time the en-\ntanglement is close to maximal. One might think that as the black hole becomes small the\ncomplexity must decrease, leading to a ﬁrewall. This is not correct; complexity increases\nthroughout the entire evaporation process.\nIn the two-sided eternal AdS black hole, chaotic interactions at both ends increase the\ncompl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Lecture III: The Thermodynamics of Complexity",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-036-iii-lecture-iii-the-thermodynamics-of-complexity.md",
+      "narrative": null,
+      "content": "Lecture III: The Thermodynamics of\nComplexity",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preface",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-037-18-preface.md",
+      "narrative": null,
+      "content": "Preface\nThis lecture is about the thermodynamics of complexity—thermodynamics as nineteenth\ncentury steam engineers would have understood the term. The question of that day was:\nHow do you quantify the amount of mechanical work that can be extracted from a given\namount of energy? Entropy was of course the key concept. Entropy, or more properly, the\nlack of entropy is a resource for doing work.\nWhat exactly is a resource? There is whole subject called resource theory (Coecke,\nFritz, Spekkens, https://arxiv.org/pdf/1409.5531.pdf that we won’t have time to\nget into, but I’ll give a quick deﬁnitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p068-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p068-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negentropy",
+      "pageStart": 68,
+      "pageEnd": 69,
+      "target": "../sections/sec-038-19-negentropy.md",
+      "narrative": null,
+      "content": "\\bn\n\n\nLet's begin with some examples of negentropy. Consider a box of gas composed of $n$ classical particles. The microstate of the box is defined by $n$ points in the phase space of a single particle. The macrostate can be described thermodynamically in terms of a much smaller number of thermodynamic variables including entropy.\nIf the entropy is maximal (subject to some constraint) then the gas is in equilibrium and the negentropy is zero. No work can be extracted. \n\n\n\\bn\n\nNow suppose we have two thermodynamically identical boxes of gas, where each box is in  thermal equilibrium.  Let's als",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uncomplexity",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../sections/sec-039-20-uncomplexity.md",
+      "narrative": null,
+      "content": "Uncomplexity",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Auxiliary System",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-040-201-the-auxiliary-system.md",
+      "narrative": null,
+      "content": "Instead of using operator complexity I'm going to work with state complexity for the rest of this lecture. State complexity is the number of gates that it takes to go from a simple unentangled state of $K$ qubits to the state in question. \n\nPhysical states can be described as normalized vectors in the Hilbert space of $K$ qubits with the phase modded out. In other words they are points on $CP(2^K - 1).$ The evolution of a state is represented by an ``auxilliary system\" \\url{https://arxiv.org/pdf/1701.01107.pdf}---a fictitious classical system moving  on $CP(2^K - 1).$  \n\n\nOne way of representi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combining Auxiliary Systems",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-041-202-combining-auxiliary-systems.md",
+      "narrative": null,
+      "content": "In thermodynamics it is important to understand how systems combine, as for example, when we combined two boxes of gas.  The question arises: What does it mean to combine two auxiliary systems? For example suppose $\\CA$ is the auxiliary system corresponding to some quantum system $\\CQ$. Is there a quantum system whose auxiliary is two copies of $\\CA$? The first thing that comes to mind is to simply double the quantum system from $\\CQ$ to two copies $\\CQ \\cup \\CQ.$\nHowever the number of coordinates describing the Auxiliary system for $\\CQ \\cup \\CQ$ is not twice the number describing the origina",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uncomplexity as a Resource",
+      "pageStart": 72,
+      "pageEnd": 73,
+      "target": "../sections/sec-042-21-uncomplexity-as-a-resource.md",
+      "narrative": null,
+      "content": "In discussing computational work it is helpful to separate what can be done by reversible (unitary) operations from what can be done by applying measurements. Starting with a maximally complex state, or any other state, the complexity can be eliminated by  measuring  all Pauli $Z$ operators. The outcome will be a unentangled product state which can be brought to the state $|000...0\\ra$ by applying no more than $K$ single qubit gates. This would have the effect of restoring the uncomplexity to its maximal value\\footnote{Notice that we did the same thing by adding a single clean qubit.}.\n\n\n\nBut",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Power of One Clean Qubit",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../sections/sec-043-22-the-power-of-one-clean-qubit.md",
+      "narrative": null,
+      "content": "That a resource analogous to negentropy can be vastly increased by merely adding a single qubit seems very counterintuitive. If I told you that by adding a single molecule to a gas of $10^{30}$ molecules in thermal equilibrium, it  would allow you to extract a large amount of useful work you would probably dismiss the claim as nonsense. You would of course be right. When I first thought about the fact that a single qubit can restore an exponential amount of uncomplexity I was skeptical about its meaning. So as I always do when I am confused about quantum information I went to Patrick Hayden. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Protocol",
+      "pageStart": 73,
+      "pageEnd": 75,
+      "target": "../sections/sec-044-221-the-protocol.md",
+      "narrative": null,
+      "content": "Here is the circuit that accomplishes the task:\n \n\\begin{figure}[H]\n\\begin{center}\n\\includegraphics[scale=.2]{clean1.pdf}\n\\caption{}\n\\label{Clean1}\n\\end{center}\n\\end{figure}\n\nLet me explain figure \\ref{Clean1}. The initial state is,\n\\be \n|\\Psi\\ra  = |max\\ra \\otimes |0\\ra\n\\ee\nThe single-qubit gates $H$ are Hadamard gates, which have the following action,\n\\bea\nH |0\\ra &=& \\frac{1}{\\sqrt 2} \\big{(}|0\\ra + |1\\ra\\big{)} \\cr\nH |1\\ra &=& \\frac{1}{\\sqrt 2} \\big{(}|0\\ra - |1\\ra\\big{)}\n\\eea\nThe protocol begins with a Hadamard acting on the clean qubit to transform it to $\\big{(}|0\\ra + |1\\ra\\big{)}$.\n\nN",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p074-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 74,
+      "target": "../images/img-p074-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p075-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../images/img-p075-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expending Uncomplexity and Negentropy",
+      "pageStart": 75,
+      "pageEnd": 76,
+      "target": "../sections/sec-045-222-expending-uncomplexity-and-negentropy.md",
+      "narrative": null,
+      "content": "Expending Uncomplexity and Negentropy\nThe uncomplexity of |max⟩is zero but by adding the clean qubit we bought ourselves an\nuncomplexity 2K. But the action of the circuit will inevitably increase the complexity by\nroughly the number of applied gates. Assuming that 22.89 is the minimal description of G\nthen we can expect the increase of complexity to be of order n which is also the complexity\n74",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CA",
+      "pageStart": 76,
+      "pageEnd": 76,
+      "target": "../sections/sec-046-231-ca.md",
+      "narrative": null,
+      "content": "2K to\n\u00002K −C(G)\n\u0001\n. In other words the computational work in computing TrG expends\nan uncomplexity equal to the complexity of G.\nIn this example uncomplexity is not the only resource we made use of. A maximally\ncomplex state is also a state of maximum entropy which in this case is S = K log 2. The\naddition of the clean qubit does not change the entropy, but after the circuit has acted\nthe clean qubit is no longer clean. This implies that the entropy increases but only by an\namount less than or equal to one bit. Thus we have also expended Negentropy, but no\nmore than one bit.\nOne bit of negentr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spacetime and Uncomplexity",
+      "pageStart": 76,
+      "pageEnd": 77,
+      "target": "../sections/sec-047-23-spacetime-and-uncomplexity.md",
+      "narrative": null,
+      "content": "Spacetime and Uncomplexity\nNow I want to return to the gravitational aspects of complexity, or more to the point, the\ngravitational aspects of uncomplexity.\n23.1\nCA\nIn these lectures I haven’t spoken yet about the the complexity-action correspondence (D.\nCarmi, R. C. Myers and P. Rath, https://arxiv.org/pdf/1612.00433.pdf\nA. Brown,\nD. A. Roberts, L. Susskind, B. Swingle and Y. Zhao, https://arxiv.org/pdf/1509.\n07876.pdf . That’s a whole subject of its own but it’s fairly well known. I will limit the\ndiscussion here to the basic facts that I’ll need to make contact with uncomplexity.\nLet’s begi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p077-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../images/img-p077-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric Interpretation of Uncomplexity",
+      "pageStart": 77,
+      "pageEnd": 80,
+      "target": "../sections/sec-048-232-geometric-interpretation-of-uncomplexity.md",
+      "narrative": null,
+      "content": "Geometric Interpretation of Uncomplexity\nFigure 39 illustrates a one-sided AdS black hole formed by the collapse of some matter. In\nthe upper right corner the small slash-mark indicates the exponential time at which the\ncomplexity becomes maximal. In Lecture II I explained the reasons for thinking that a\n76\nbreakdown of classical GR and possibly the occurrence of ﬁrewalls might take place at this\ntime. The ﬁgure also shows Alice at time t who is contemplating a jump into the black\nhole. She would like to know how much spacetime volume is available to her to explore.\nFinally the ﬁgure also show",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p078-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 78,
+      "pageEnd": 78,
+      "target": "../images/img-p078-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p079-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../images/img-p079-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p080-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 80,
+      "pageEnd": 80,
+      "target": "../images/img-p080-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV Conclusion",
+      "pageStart": 80,
+      "pageEnd": 84,
+      "target": "../sections/sec-049-iv-conclusion.md",
+      "narrative": null,
+      "content": "Conclusion\nTo me, the idea that computational complexity might govern the interior geometries of\nblack holes was startling. Complexity, especially quantum complexity, is such a subtle and\n79\nﬁnespun quantity that ordinarily it is impossible to measure or even to compute. What\nmakes complexity so tenuous is that it is deﬁned as a global minimum, whereas in most\nphysical contexts local minima are the relevant things. This is especially concerning when\nwe consider the very long time behavior of a black hole.\nAlthough I have not stressed it in these lectures, relative complexity can be thought of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1810.11563v1/blocks/figure-img-p082-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../images/img-p082-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

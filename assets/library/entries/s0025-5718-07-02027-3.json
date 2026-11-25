@@ -1,0 +1,912 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s0025-5718-07-02027-3",
+  "blocks": [
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "It is well known that, for a number ﬁeld k with ring of integers Ok, there is a\nrelation between the regulator of the group of units of Ok, O∗\nk, and the residue of\nζk(s) at s = 1. In terms of K-theory, O∗\nk ∼= K1(Ok), and Borel in [6] showed that\nthis relation generalizes, for n = 2, 3, . . . , to a similar relation between a suitably\ndeﬁned regulator of the higher K-group K2n−1(Ok) and the value of ζk(s) at s = n.\nHowever, it is far more diﬃcult to ﬁnd explicit non-trivial elements in those\nhigher K-groups than in O∗\nk.\nBut K2n−1(Ok) ∼= K2n−1(k) for n ≥2 and Za-\ngier in [17] gave a conjectur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MATHEMATICS OF COMPUTATION\nVolume 77, Number 262, April 2008, Pages 1105–1134\nS 0025-5718(07)02027-3\nArticle electronically published on November 5, 2007\nLi(p)-SERVICE? AN ALGORITHM FOR COMPUTING\np-ADIC POLYLOGARITHMS\nAMNON BESSER AND ROB DE JEU\nAbstract. We describe an algorithm for computing Coleman’s p-adic poly-\nlogarithms up to a given precision.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The p-adic polylogarithm",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-the-p-adic-polylogarithm.md",
+      "narrative": null,
+      "content": "The p-adic polylogarithm is an analogue of its complex cousin. It was deﬁned\nby Coleman [7] using the technique now referred to as Coleman integration. On\nthe open unit disc in Cp, the so called ﬁeld of p-adic complex numbers, it is again\ndeﬁned by the power series (1.1). To extend it to a function deﬁned on Cp \\ {1}\nColeman uses a technique he called “analytic continuation along Frobenius”, which\nis rather involved. As a consequence, it is not so easy to compute the functions\ndeﬁned in this way. To our knowledge there has been only one attempt to compute\nColeman integrals in the literature [8",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-acknowledgments.md",
+      "narrative": null,
+      "content": "tute for a productive stay during the autumn of 2002, during which this paper\ngerminated and a ﬁrst version of an implementation of the algorithm was written.\nHe would also like to thank the University of Alberta and the Tata Institute of\nFundamental Research for very productive visits, and the EC network Arithmetic\nAlgebraic Geometry for travel support. He is grateful to Nils Bruin for sharing his\nmagic in order to overcome some aspects of programming in MAGMA and to Karim\nBelabas for his comments on the last section of the paper and the implementation\nof the algorithm. Finally, both authors",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Method of computation on U0 and U",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-3-method-of-computation-on-u0-and-u.md",
+      "narrative": null,
+      "content": "On U0 we can use the standard expansion in (1.1),\n(3.1)\nLin(t) =\n∞\n\u0001\nk=1\ntk\nkn ,\nwhich we shall denote by Fn,0(t).\nRemark 3.2. As an immediate consequence of the power series expansion of Lin(z)\non U0 and the deﬁnition of Li(p)\nn (z) in (2.5) we see that on U0\n(3.3)\nLi(p)\nn (z) =\n\u0001\nk≥1\n′ zk\nkn ,\nwhere the prime indicates that we only sum over those k for which p̸| k. We can\ncollect terms zk/kn in Lin(z) = \u0002\nk≥1\nzk\nkn for which vp(k) = m and ﬁnd that\n(3.4)\nLin(z) =\n\u0001\nm≥0\nLi(p)\nn (zpm)\npmn\nas well.\n1110\nAMNON BESSER AND ROB DE JEU\nFor the disc U∞we use that\nLin(z) + (−1)nLin(1/z) = −1\nn! logn(z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "As an immediate consequence of the power series expansion of Lin(z) on U0 and the deﬁnition of Li(p) n (z) in (2.5) we see that on U0 (3.3) Li(p) n (z) = \u0001 k≥1 ′ zk kn , where the prime indicates that we only sum over those k for which p̸| k. We can collect terms zk/kn in Lin(z) = \u0002 k≥1 zk kn for which vp(k) = m and ﬁnd that (3.4) Lin(z) = \u0001 m≥0 Li(p) n (zpm) pmn as well. AMNON BESSER AND ROB DE JEU For the disc U∞we use that Lin(z) + (−1)nLin(1/z) = −1 n! logn(z) as in part (2) of Proposition 2.10. This reduces the calculation of Lin(z) to that of Lin(1/z), with 1/z in U0, and that of log(z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/cor-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "cor-sec-004-07.md",
+      "narrative": null,
+      "content": "If ζ is a root of unity of order pkm with m > 1 not divisible by p, then |Lin(ζ)| ≤p(k−1)n. n (ζ) and |Li(p)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Every residue disc other than U0 and U∞is Uζ for a unique root of unity ζ of order dividing pf −1 for some f > 0, known as the Teichm¨uller representative of this residue disc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Suppose that ζ̸ = 1 is a (pf −1)-th root of unity. Then Lin(ζ) = \u0003 pnf −1 \u0004−1 \u0005 pnfLi(p) n (ζ) + pn(f−1)Li(p) n (ζp) + · · · + pnLi(p) n (ζpf−1) \u0006 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "We have Li(p) n (z) = gn(1/(1 −z)) for a power series gn(v) in Q[[v]], convergent for v in Cp with |v| < p1/(p−1). It is determined inductively by g0(v) = v −1 − (v −1)p vp −(v −1)p , g′ n+1(v) = −gn(v) v −v2 = −gn(v) v (1 + v + v2 + · · · ) (n ≥0) , and gn(0) = 0 (n ≥1) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "Let ζ̸ = 1 be a (pf −1)-th root of unity. For z in Uζ we have that Lin(z) = Fn,ζ(z −ζ) for a power series Fn,ζ(t) with coeﬃcients in Qp(ζ). It converges for |t| < 1 and can be found inductively by the formulae F0,ζ(t) = ζ + t (1 −ζ) −t = (1 −ζ)−1 \u0007 ζ + t 1 −ζ + t2 (1 −ζ)2 + · · · \b (4.5) and, for n ≥0, F ′ n+1,ζ(t) = Fn,ζ(t) ζ + t = ζ−1Fn,ζ(t)(1 −ζ−1t + ζ−2t2 −· · · ) (4.6) as well as Fn+1,ζ(0) = Lin+1(ζ) . (4.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "Li(p) n (ζ) is in Qp(ζ) the same holds for Lin(ζ) by Proposition 4.2. The claim about the coeﬃcients is then clear from the inductive formulae. □ For use in some of the estimates in the following sections we also prove a few results about the absolute values of Li(p) n (z) and Lin(z) (cf. [3]). Note that if |z| < 1, then |Li(p) n (z)| = |z| by (3.3). AMNON BESSER AND ROB DE JEU",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "If z in Cp satisﬁes |z −1| = 1, then |Li(p) Li(p) n (z) = Z∗ where µz is the measure on Zp such that µz(a + pkZp) = za",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Method of computation in the generic case",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-4-method-of-computation-in-the-generic-case.md",
+      "narrative": null,
+      "content": "In this section we explain how to compute Lin(z) on all residue discs except U0,\nU1 and U∞. The residue discs U0 and U∞were discussed in the previous section,\nand U1 will be dealt with in Section 5.\nWe begin with a well known observation.\nProposition 4.1. Every residue disc other than U0 and U∞is Uζ for a unique\nroot of unity ζ of order dividing pf −1 for some f > 0, known as the Teichm¨uller\nrepresentative of this residue disc.\nProof. For the residue disc Ub the reduction ¯b satisﬁes ¯bpf −1 = 1 for some f > 0\nbecause Ub̸ = U0 or U∞. Since Cp is complete we can apply Hensel’s lemma to lift\n¯b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "[3, Corollary 2.2]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "If ζ̸ = 1 is a root of unity of order prime to p, then Lin(ζ) is in pnZp[ζ]. n (ζ) is in Qp(ζ) by Proposition 4.3, and by Proposition 4.8 we have |Li(p) n (ζ) is in Zp[ζ]. The result is now immediate from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[7, Proposition 7.1]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "For n ≥2 the function (5.2) En(z) = Lin(z) − n −1 log(z)Lin−1(z) extends to a rigid analytic function on U1. (5.3) En(zm) = mn−1 \u0001 for m ≥1 and z in C∗ p. In particular (5.4) En(z2) = 2n−1(En(z) + En(−z)) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "On U1 the functions En(z) are independent of the branch of the logarithm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "We have, for z̸ = 1 in U1 and n ≥2, Lin(z) = (n −1)! logn−1(z)Li1(z) + n \u0001 j=2 (j −1)! (n −1)! logn−j(z)Ej(z) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-005-06.md",
+      "narrative": null,
+      "content": "For n ≥1 set Gn(t) = logn(1 + t)/n!, and for n ≥2 let Hn(t) = n \u0001 j=2 (j −1)! (n −1)! logn−j(1 + t)Ej(1 + t) . Then Gn(t) and Hn(t) for |t| < 1 are given by power series in Qp[[t]], with Hn(t) satisfying H′ 2(t) = 1 −t/2 + t2/3 −· · · , (5.9) H′ n(t) = Hn−1(t) 1 + t + Gn−1(t) t (n ≥3) (5.10) as well as Hn(0) = 2n−1Lin(−1)/(1 −2n−1) . AMNON BESSER AND ROB DE JEU If p = 2, then also Hn(0) = 2n−1 1 −2n (Hn(−2) −Hn(0)) . (5.11)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Method of computation on U1",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-5-method-of-computation-on-u1.md",
+      "narrative": null,
+      "content": "To compute Lin(z) for z̸ = 1 in U1 we use the following result.\nProposition 5.1 ([7, Proposition 7.1]). For n ≥2 the function\n(5.2)\nEn(z) = Lin(z) −\n1\nn −1 log(z)Lin−1(z)\nextends to a rigid analytic function on U1.\n(5.3)\nEn(zm) = mn−1 \u0001\nfor m ≥1 and z in C∗\np. In particular\n(5.4)\nEn(z2) = 2n−1(En(z) + En(−z)) .\nProposition 5.5. On U1 the functions En(z) are independent of the branch of the\nlogarithm.\nProof. It is easy to check that for n ≥3 we have (n −1)E′\nn (z)| ≤1.\nProof. This is a slight generalization of [3, Proposition 2.1], with the same proof.\nWe use a formula found by Coleman [7, Lemm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-005-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-005-05.md",
+      "narrative": null,
+      "content": "Because log(z) and En(z) are rigid analytic on U1 the second summand of Lin(z) in Proposition 5.6 is rigid analytic there. But Li1(z) = −log(1 −z) is not rigid analytic around 1, hence neither are the ﬁrst summand and Lin(z) itself. However, for n ≥2 we can extend Lin(z) to the whole of Cp by putting Lin(1) = En(1) (which is independent of the branch of the logarithm by Proposition 5.5). If F ⊂Cp is any ﬁeld that is ﬁnitely ramiﬁed over Qp, then log(z) is bounded on F ∗by the formulae in Remark 2.2 (see Remark 8.1), so by Proposition 5.6 this extended Lin(z) is continuous on F. It follows from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-005-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-005-07.md",
+      "narrative": null,
+      "content": "(1) It follows from the deﬁnition of Em(z) and Proposition 2.10(2) that En(z) + (−1)nEn(1/z) = logn(z)/(n! (n −1)). Therefore En(1), En(−1), Lin(1), Lin(−1) and Hn(0) are all 0 when n ≥2 is even. (2) For p̸ = 2 Proposition 4.2 with ζ = −1 simpliﬁes to Lin(−1) = pn pn−1Li(p) n (−1) so that Hn(0) = 2n−1pn (1−2n−1)(pn−1)Li(p) n (−1). Li(p)-SERVICE? AN ALGORITHM FOR p-ADIC POLYLOGARITHMS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/lem-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-006-05.md",
+      "narrative": null,
+      "content": "For n ≥1 write Gn(t) = an,1t + an,2t2 + an,3t3 + · · · . Then vp(an,k) ≥−n logp(k) for all k ≥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "For n ≥1 let c(n, p) = p p −1 −n −1 ln(p) + (n −1) logp \u0007n(p −1) ln(p) \b + logp \u00072p(p −1)n ln(p) \b . If gn(v) = an,1v + an,2v2 + · · · , then vp(an,k) ≥max \u0007 0, k p −1 −logp(k) −c(n, p) \b .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Let ζ̸ = 1 be a (pf −1)-th root of unity and write Fn,ζ(t) = an,0 + an,1t + an,2t2 + · · · in Qp(ζ)[[t]]. Then an,0 is in pnZp[ζ], and for k ≥1 we have vp(an,k) ≥−n logp(k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "prop-sec-006-06.md",
+      "narrative": null,
+      "content": "For n ≥2 write Hn(t) = bn,0 + bn,1t + bn,2t2 + · · · in Qp[[t]]. Then vp(bn,0) ≥n −vp(n −1) −ϵp, where ϵp = 2 for p = 2 and ϵp = 1 otherwise. Moreover, vp(bn,k) ≥−n logp(k) for all k ≥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimates",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-6-estimates.md",
+      "narrative": null,
+      "content": "In this section we provide estimates for the valuations of the coeﬃcients in the\npower series gn(v) of Proposition 4.3, Fn,ζ(t) of Proposition 4.4 and Hn(t) of Propo-\nsition 5.8. We shall use these in Section 7 to know how many terms of those power\nseries we have to calculate in order to compute Lin(z) up to a speciﬁed precision\nfor a given z̸ = 1 in Cp.\nMany expressions in Sections 6 through 8 contain the real logarithm with base\np, denoted logp, which should not be confused with the chosen branch of the p-adic\nlogarithm, denoted log. In order to avoid another possible confusion we denote the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "Proposition 6.1 implies that gn(v) converges for |v| < p1/(p−1), as stated in Theorem 2.7(3) and Proposition 4.3. The bound seems to have the right behaviour, and only the constant c(n, p) may possibly be improved.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-006-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "rem-sec-006-04.md",
+      "narrative": null,
+      "content": "The proof of Proposition 6.7 actually shows that we have the slightly better estimate vp(ak) ≥−logp \u0005 k! max(0,k−n)! \u0006 for all k ≥0. Finally, we consider the series Hn(t) for n ≥2 that were introduced in Proposi- tion 5.8. For this we need a lemma concerning the Gn(t) = logn(1+t)/n! introduced in the same proposition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/lem-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "lem-sec-007-08.md",
+      "narrative": null,
+      "content": "For p prime and C, c > 0, mink≥1{Ck −c logp(k)} > c logp(C/c). If C ln(p) ≥c, then this minimum equals C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/lem-sec-007-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "lem-sec-007-10.md",
+      "narrative": null,
+      "content": "If y in Cp satisﬁes |y| ≤p−V and is known up to precision N ′ ≥V , then yn for n ≥1 is known up to precision N ′ + (n −1)V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/lem-sec-007-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "lem-sec-007-11.md",
+      "narrative": null,
+      "content": "If we know z in C∗ p up to precision N ′ > vp(z), then we can calculate log(z) up to precision minm≥0{(N ′ −vp(z))pm −m}. If 1 ≤(N ′ −vp(z)) ln(p), then we can calculate log(z) up to precision N ′ −vp(z). AMNON BESSER AND ROB DE JEU",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "the coeﬃcients of Fn,ζ(t) are in Qp(ζ) ⊆F so that Lin(z) lies in F. Since the statements of Propositions 4.2, 4.3 and 4.4 do not depend on the branch of the logarithm, neither does Lin(z) for such z. For z̸ = 1 in U1 it is clear that Li1(z) = −log(1 −z) is in F if log(p) is, and the dependence on the branch of the logarithm is clear as well. For n ≥2, we use Propositions 5.6 and 5.8 to write Lin(z) = Hn(z −1)−logn−1(z) log(1−z)/(n−1)!. From its deﬁnition and Proposition 5.5 we have that Hn(z −1) is independent of the branch of the logarithm. Moreover, from Proposition 5.8 we see that it is in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-007-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "prop-sec-007-12.md",
+      "narrative": null,
+      "content": "If, for z in C∗ p, | log(z)| ≤p−V and we know z up to precision N ′ > vp(z) satisfying max{V, N + vp(n!) −(n −1)V } ≤min m≥0{(N ′ −vp(z))pm −m} , then we can compute logn(z)/n! up to precision N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-007-13",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "prop-sec-007-13.md",
+      "narrative": null,
+      "content": "Let gn(v) be as in Proposition 4.3, and let c(n, k) be as in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prop-sec-007-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "prop-sec-007-14.md",
+      "narrative": null,
+      "content": "To compute gn(α) up to precision N ′ > 0 when vp(α) = 0 it suﬃces to know α up to precision N ′ and to evaluate the sum of the terms in gn(v) of degree less than gsl′ on the approximation of α, where gsl′ is such that k p−1 −logp(k)−c(n, p) > N ′ for all k ≥gsl′. In fact, it suﬃces to use approximations up to precision N ′ for the coeﬃcients of the terms of degree less than gsl′. Similarly, in order to know Li(p) n (ζ) up to precision N ′ > 0 for a root of unity ζ̸ = 1 of order not divisible by p, it suﬃces to know ζ and the coeﬃcients of the terms of gn(v) of degree less than gsl′ up to preci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The algorithm",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-7-the-algorithm.md",
+      "narrative": null,
+      "content": "In this section we use the material from the previous sections in order to give\nan algorithm for computing Lin(z) for n ≥2 and z̸ = 1 up to a given precision and\nanalyze its eﬃciency.\nFirst of all we formalize the notion of “up to a given precision”.\nDeﬁnition 7.1. (1) For any number α in Cp we say that we know α up to precision\nN if we have β in Cp such that vp(α −β) > N.\n(2) We say that we know α̸ = 0 in Cp up to relative precision N if we have β in\nCp such that vp(β/α −1) > N.\nRemark 7.2. (1) Note that those notions are absolute; even if α is in a ﬁnite\nextension of Qp they do not take the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "(1) Note that those notions are absolute; even if α is in a ﬁnite extension of Qp they do not take the ramiﬁcation of this extension into account. (2) For α and β as in the ﬁrst part of the deﬁnition we shall refer to β as an approximation of α up to precision N. (3) If we know α̸ = 0 up to precision N, then we know α up to relative precision N −vp(α), and conversely. (4) If z̸ = 0 is known up to relative precision N ≥0, then so is 1/z. In particular, if we know z̸ = 0 up to precision N > vp(z), then we know z and 1/z up to relative precision N −vp(z), and 1/z up to precision N −2vp(z). We ass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "For the algorithm it is not necessary to assume that F is a ﬁnite extension of Qp, but with that assumption it is possible to give universal estimates (see Remark 8.1) and to quantify its eﬃciency (see Theorem 8.2). If we want to know Lin(z) up to precision N for arbitrary z in Cp, then from the algorithm we can determine N ′ such that for an approximation ˜z of z up to precision N ′, Lin(˜z) is an approximation of Lin(z) up to precision N. By taking this ˜z in Qp we reduce to calculations in Qp(˜z), a ﬁnite extension of Qp and a complete ﬁeld.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "We shall now show that Lin(z) is in F because F is complete, and clarify how Lin(z) depends on the branch of the logarithm (see Deﬁnition 2.1 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-05.md",
+      "narrative": null,
+      "content": "Note that we can know z in Cp up to precision N ′ > vp(z) only when z̸ = 0, which we shall assume in Algorithm 7.10 below. However, clearly Lin(0) = 0, and if we know that |z| < p−N′ ≤1, then |Lin(z)| < maxm≥0{pmn−N′pm} by (3.4) because |Li(p) n (z)| = |z| when |z| < 1. If n ≤N ′ ln(p), then this maximum is attained for m = 0 and equals p−N′, but if n > N ′ ln(p), then it may be much bigger. For z = 1 the problem is of a diﬀerent nature. Although we deﬁned Lin(1) for n ≥2 in Remark 5.7, in order to be able to bound Lin(z) −Lin(1) if z = 1 up to its precision, we assume that F has ﬁnite ramiﬁca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-06.md",
+      "narrative": null,
+      "content": "(1) For n ≥2 we have Lin(1) = 2n−1Lin(−1)/(1 −2n−1) (see Re- mark 5.7 and Proposition 2.10(1)), which we can compute up to any desired preci- sion using Algorithm 7.10 below. Of course, if n is even, then this value is zero by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-07.md",
+      "narrative": null,
+      "content": "(1). AMNON BESSER AND ROB DE JEU (2) If |z −1| < p−N′ ≤1, z is in a subﬁeld of Cp of ﬁnite ramiﬁcation index e, and n ≥2, then Lin(z) = Lin(1) up to precision min{n logp(N ′/n), (n−1) logp(N ′)−vp((n−1)!)−vp(e)+min{vp(log(p)), −logp(e)}}. If N ′ ln(p) ≥n, then this holds up to precision min{N ′, (n −1)N ′ −vp((n −1)!) −vp(e) + min{vp(log(p)), −logp(e)}} . Namely, combining Propositions 5.6 and 5.8 we have, for z̸ = 1 in U1, (7.7) Lin(z) = Hn(z −1) −logn−1(z) log(1 −z) (n −1)! , and in Remark 5.7 we put Lin(1) = En(1) = Hn(0) . Thus we are really interested in a lower bound for the p-adic valua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-09.md",
+      "narrative": null,
+      "content": "The conditions on tslm, tsl, gsl and hsl in (1), (3)(a), (3)(b), (4)(a) and (4)(b) of the algorithm are of the form c1k −c2 ln(k) > c3 for all k ≥tslm, etc., with positive c1 and c2. Since the left-hand side is increasing for k > c2/c1 it is very easy to ﬁnd the minimum values for tslm, etc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-15",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 24,
+      "target": "rem-sec-007-15.md",
+      "narrative": null,
+      "content": "Computing the coeﬃcients of gn(v) as rational numbers is very in- eﬃcient so, instead, we use coeﬃcients in Qp with ﬁnite precision. If gn(v) = an,1v + an,2v2 + · · · , then kan+1,k = −(an,1 + an,2 + · · · + an,k) by Proposition 4.3. Hence, if we know an,k for 1 ≤k ≤gsl′ −1 up to precision",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/ex-sec-008-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "ex-sec-008-03.md",
+      "narrative": null,
+      "content": "Tables 1 through 4 give the cpu times (in seconds) taken by the calculation of Lin(z) up to precision N using Algorithm 7.10, for various F, N, n, p and z. In all cases we used F = Qp(ζ, π) with ζ̸ = 1 a primitive (pf −1)-th root of unity and π a root of the Eisenstein polynomial q(x). So F unr = Qp(ζ) is the unramiﬁed extension of Qp of degree f, F = F unr(π) is totally ramiﬁed of degree e = deg(q(x)) over F unr and vp(π) = 1/e. We used the branch of the logarithm for which log(p) = 0 (see Remark 2.2), which, as mentioned in Remark 7.4, only makes a diﬀerence in (2) and (4), corre- sponding t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-008-8-concluding-remarks.md",
+      "narrative": null,
+      "content": "In this section we describe how to make the estimates in it uniform for all ele-\nments in a ﬁxed ﬁnite extension of Qp, analyze the corresponding asymptotic time\nand make a remark about an alternative approach for computing the constant term\nof the Fn,ζ(t).\nRemark 8.1. In case one wants to compute Lin(z) for several z in a ﬁeld F with\nﬁnite ramiﬁcation index e over Qp it is probably more eﬃcient to compute the\n(approximations of the truncated) power series in Algorithm 7.10 as they are needed\nusing universal estimates and to remember them.\nNamely, if z lies in the residue disc Ua with a̸ = ∞,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "(1) The estimates in Theorem 8.2 are based on computing the value at z from scratch. As mentioned in Remark 8.1, if we want to compute Lin(z) for several z in the same residue disc Uζ, then it is more eﬃcient to compute the approximation of the truncation of Fn,ζ(t) and remember it, since then only (g) will have to be performed again. (2) The time estimates in Theorem 8.2 are worst case estimates. If z is closer to the root of unity ζ the complexities of (f) and (g) are reduced, since one needs fewer terms in the power series expansion around ζ to achieve the required precision.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "In (5.11) (where p = 2) we calculate the constant term of Hn(t) without ever using gn(v). We can do this also for Fn,ζ(t) if p is any prime and ζ is any root of unity of order dividing pf −1, at the cost of possibly having to adjoin the pf-th roots of unity to the ﬁeld. Namely, by Proposition 2.10(1) we have that Lin(ζpf ) = pf(n−1) \u0001 ηpf =1 Lin(ηζ), and since ζpf = ζ this determines the constant of integration in (4.6) just as in the proof of (5.11) because all ηζ lie in Uζ. However, since this involves pf evaluations as in Algorithm 7.10(3)(g) in a ﬁeld of degree pf −pf−1 over Qp(ζ), this, i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Suppose that z satisﬁes |z| = |z −1| = 1 and belongs to a ﬁxed ﬁnite extension F of Qp with ramiﬁcation index e and residue extension degree f. Then Algorithm 7.10 computes Lin(z) up to precision N with O∼(N 2f(fnp+ne ln(p)+e2 ln(p))) additions and multiplications and O∼(p) divisions, provided that 2n logp(N) < N, 2n logp(2e) < N and 2p logp(N) < N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s0025-5718-07-02027-3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] A. A. Beilinson. Higher regulators and values of L-functions. J. Sov. Math., 30:2036–2070,\n1985. MR760999 (86h:11103)\n[2] A. Besser. Syntomic regulators and p-adic integration I: rigid syntomic regulators. Israel\nJournal of Math., 120:291–334, 2000. MR1809626 (2002c:14035)\n[3] A. Besser. Finite and p-adic polylogarithms. Compositio Math., 130(2):215–223, 2002.\nMR1883819 (2002m:11058)\n[4] A. Besser, P. Buckingham, R. de Jeu, and X.-F. Roblot. On the p-adic Beilinson conjecture\nfor number ﬁelds. To appear in the special volume of the Pure and Applied Mathematics\nQuarterly in honour of the ei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

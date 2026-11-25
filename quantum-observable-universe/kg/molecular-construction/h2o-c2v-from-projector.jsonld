@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-h2o-c2v-from-projector",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:h2o-c2v-from-projector",
+  "kind": "remark",
+  "title": "$C_{2v}$ as the stabiliser of the H₂O assembly projector",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+  "tags": [
+    "water",
+    "H2O",
+    "c2v",
+    "assembly-projector",
+    "molecular-symmetry"
+  ],
+  "text": "h2o-c2v-from-projector.md",
+  "provenance": "authored"
+}

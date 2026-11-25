@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1502.06472v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1502.06472v1",
+  "contains": [
+    "library/arxiv-1502.06472v1/sections/sec-front-matter",
+    "library/arxiv-1502.06472v1/sections/sec-000",
+    "library/arxiv-1502.06472v1/sections/sec-001",
+    "library/arxiv-1502.06472v1/sections/sec-002",
+    "library/arxiv-1502.06472v1/sections/sec-003",
+    "library/arxiv-1502.06472v1/sections/sec-004",
+    "library/arxiv-1502.06472v1/sections/sec-005",
+    "library/arxiv-1502.06472v1/sections/sec-006",
+    "library/arxiv-1502.06472v1/sections/sec-007",
+    "library/arxiv-1502.06472v1/sections/sec-008",
+    "library/arxiv-1502.06472v1/sections/sec-009",
+    "library/arxiv-1502.06472v1/sections/sec-010",
+    "library/arxiv-1502.06472v1/sections/sec-011",
+    "library/arxiv-1502.06472v1/sections/sec-012",
+    "library/arxiv-1502.06472v1/sections/sec-013",
+    "library/arxiv-1502.06472v1/sections/sec-014",
+    "library/arxiv-1502.06472v1/sections/sec-015",
+    "library/arxiv-1502.06472v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and\n\n**Gröbner-Shirshov bases and PBW theorems**\n\n*School of Mathematical Sciences, South China Normal University*\n\n13 pp, 18 sections.\n\n**Abstract.** We review some applications of Gr¨obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and semigroups, extensions of groups and algebras, embedding of algebras.\n\n**Outline.** Front matter; 1 Introduction; 2 Gröbner-Shirshov bases for associative algeb; 2.1 Composition-Diamond lemma for associative ; 2.2 Composition-Diamond lemma for Lie algebras; 3 PBW theorems; 3.1 Lie algebras–associative algebras (Shirsho; 3.2 Lie algebras–pre-Lie algebras (Segal); 3.3 Leibniz algebras–dialgebras (Aymon, Grivel; 3.4 Akivis algebras–non-associative algebras (; 3.5 Sabinin algebras–modules (Perez-Izquierdo); 3.6 Dendriform algebras–Rota-Baxter algebras (; 3.7 Shirshov's, Cartier's, Cohn's counter exam; 3.8 ``1/2 PBW theorem\" (Bokut-Fong-Ke); 4 Linear bases of free universal algebras; 5 Normal forms for groups and semigroups; 6 Schreier extensions of groups and algebras; 7 Embedding of algebras",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1502.06472&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1502.06472v1",
+    "title_source": "slug",
+    "source_file": "1502.06472v1.pdf",
+    "source_sha256": "381cd869fcc06f084feb8ceecefc2f389526978d5094c131331dcfbe9744c492",
+    "pages": 13,
+    "arxiv": {
+      "id": "1502.06472",
+      "version": "1",
+      "primary_class": "math.RA",
+      "stamp_date": "8 Nov 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

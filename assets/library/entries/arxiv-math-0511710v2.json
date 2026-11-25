@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0511710v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{section: Introduction}\n\nOrdinary gauge theory describes how 0-dimensional particles\ntransform as we move them along 1-dimensional\npaths.  It is natural to assign a group element to \neach path:\n\\[\n\\xymatrix{\n   \\bullet \\ar@/^1pc/[rr]^{g}\n&& \\bullet\n}\n\\]\nThe reason is that composition of paths then corresponds to\nmultiplication in the group:\n\\[\n\\xymatrix{\n   \\bullet \\ar@/^1pc/[rr]^{g}\n&& \\bullet \\ar@/^1pc/[rr]^{g'}\n&& \\bullet\n}\n\\]\nwhile reversing the direction of a path corresponds to taking\ninverses:\n\\[\n\\xymatrix{\n   \\bullet\n&& \\bullet \\ar@/_1pc/[ll]_{g^{-1}}\n}\n\\]\nand the associative law",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0511710v2  [math.DG]  28 Jun 2006\nHigher Gauge Theory\nJohn Baez\nDepartment of Mathematics\nUniversity of California\nRiverside, CA 92521, USA\nUrs Schreiber\nFachbereich Mathematik\nUniversit¨at Hamburg\nHamburg, 20146, Germany\nemail: baez@math.ucr.edu, urs.schreiber@math.uni-hamburg.de\nHamburg Preprint ZMP-HH/05-25\nNovember 28, 2005\nAbstract\nJust as gauge theory describes the parallel transport of point particles\nusing connections on bundles, higher gauge theory describes the parallel\ntransport of 1-dimensional objects (e.g. strings) using 2-connections on\n2-bundles. A 2-bundle is a cate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Internalization",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-2-internalization.md",
+      "narrative": null,
+      "content": "\\label{section: Internalization}\n\nThe idea of internalization is simple: given a mathematical concept $X$ \ndefined solely in terms of sets, functions and commutative diagrams \ninvolving these, and given some category $K$, one obtains the concept of \nan `$X$ in $K$' by replacing all these sets, functions and commutative\ndiagrams by corresponding objects, morphisms, and commutative diagrams\nin $K$.  \n\nThe case we need here is when $X$ is the concept of `category':\n\n\\begin{definition} \\et \nLet $K$ be a category.  \nAn {\\bf internal category in} $K$, or simply\n{\\bf category in} $K$, say $C$, consis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Bundles",
+      "pageStart": 13,
+      "pageEnd": 19,
+      "target": "../sections/sec-002-3-2-bundles.md",
+      "narrative": null,
+      "content": "\\label{section: 2-Bundles}\n\nIn differential geometry an\nordinary bundle consists of two smooth spaces, the {\\bf total space}\n$E$ and the {\\bf base space} $B$, together with a {\\bf projection map} \n\\[\n  E \\stackto{p} B\n  \\,.\n\\]\nTo categorify the theory of bundles, we start by replacing smooth spaces by \nsmooth 2-spaces:\n\n\\begin{definition} \\et\n  \\label{2-bundle}\n  A {\\bf 2-bundle} consists of\n  \\begin{itemize}\n    \\item\n      a smooth 2-space $E$ (the {\\bf total 2-space}),\n    \\item\n      a smooth 2-space $B$ (the {\\bf base 2-space}),\n    \\item\n      a smooth map $p \\maps E \\to B$ \n      (the {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Connections",
+      "pageStart": 19,
+      "pageEnd": 27,
+      "target": "../sections/sec-003-4-2-connections.md",
+      "narrative": null,
+      "content": "\\label{section: 2-Connections}\n\nFor a trivial bundle, \nthe holonomy of a connection assigns elements of the structure\ngroup to paths in space.  Similarly, a 2-connection\nassigns objects and morphisms of the structure 2-group to \npaths and surfaces in space.  To make this precise we need \nthe notion of a `path 2-groupoid'.  \n\nWe described the path groupoid of a smooth space $M$\nin Example \\ref{2space.3}.  This has points of $M$ as\nobjects:\n\\[    \\bullet \\, {\\textstyle{\\small{\\textit{x}}}}  \\]\nand thin homotopy classes of paths in $M$ as morphisms:\n\\[\n\\xymatrix{\n {\\textstyle{\\small{\\textit{x}}}}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0511710v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-acknowledgements.md",
+      "narrative": null,
+      "content": "We are grateful to Orlando Alvarez, Paolo Aschieri, Toby Bartels, Larry Breen,\nDan Christensen, James Dolan, Jens Fjelstad, Ezra Getzler, Branislav Jurˇco,\nMikhail Kapranov, Anders Kock, Amitabha Lahiri, Thomas Larsson, Hendryk\nPfeiﬀer, and Danny Stevenson for comments and helpful discussion. The ﬁrst\nauthor thanks the Streetfest organizers for inviting him to speak on higher gauge\ntheory along with Alissa Crans and Danny Stevenson [41]. The second author\nwas supported by SFB/TR 12.\nReferences\n[1] B. Eckmann and P. Hilton, Group-like structures in categories, Math. Ann. 145\n(1962) 227–255.\n[2]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

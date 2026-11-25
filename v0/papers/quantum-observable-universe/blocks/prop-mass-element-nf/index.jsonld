@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-mass-element-nf",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mass-element-nf",
+  "kind": "proposition",
+  "title": "Normal form of the Hecke mass element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism",
+    "papers/quantum-observable-universe/blocks/def-hecke-mass-element"
+  ],
+  "tags": [
+    "mass",
+    "hecke-algebra",
+    "normal-form",
+    "degree-filtration",
+    "brane-tower",
+    "photon-massless"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.HeckeMassNF",
+  "text": "mass-element-nf.md",
+  "leanSource": "mass-element-nf.lean",
+  "provenance": "authored"
+}

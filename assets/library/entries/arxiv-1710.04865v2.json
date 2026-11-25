@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1710.04865v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $K$ be a knot and $J_{N}(K; q)$ be the usual $N$th colored Jones polynomial, normalized to be $1$ for the unknot. It is often useful to determine a $q$-hypergeometric expression for $J_{N}(K; q)$, and such expressions have been computed for a variety of knots (e.g., [@habiro; @hikami1; @hikami2; @thang; @masbaum; @walsh]). These have applications to the AJ conjecture [@hikami1], the generalized Volume conjecture [@gukov; @hikami3], the computation of WRT invariants [@bhl; @hikami4] and quantum modular and mock modular forms [@folsom; @go; @hl1; @hl2; @zagier].\n\nConsider the family of doubl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "We begin by recalling the setup from [@takata]. Let $l$ and $t$ be coprime odd integers with $l > t \\geq 1$ and $p^{\\prime} := \\frac{l-1}{2}$. For $1 \\leq j \\leq p^{\\prime}$, define integers $r(j)$ such that $r(j) \\equiv (2j-1)t \\pmod{2l}$ and $-l < r(j) < l$. We put $\\sigma_j := (-1)^{\\lfloor \\frac{(2j-1)t}{l}\\rfloor}$, $r^{\\prime}(j) := \\frac{\\mid r(j) \\mid + 1}{2}$ and $i_{r^{\\prime}(j)}=j$ (and thus $i_k = j$ if and only if $r^{\\prime}(j)=k$). For an integer $i$, sgn($i$) denotes the sign of $i$. Let $\\underline{n} = (n_1, \\dotsc, n_{p^{\\prime}})$ and $n_s=0$ for $s \\leq 0$. Finally, defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Theorems 1.1 and 1.2",
+      "pageStart": 12,
+      "pageEnd": 22,
+      "target": "../sections/sec-002-3-proofs-of-theorems-11-and-12.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.1. As (1.7) reduces to (1.8) when m = 1 and this case was proven in [28],\nwe assume m ≥ 2. Using Lemmas 2.2 and 2.3, one can check that for l = 4mp− 1 and\nt = 4mp− 2p− 1\na(n) =\n2p−1∑\nj=1\n(−1)jnmj− 1 (3.1)\nand b1(n) +b2(n) equals\n1 +n2mp−1 +\np∑\nj=1\n(m−1∑\ni=1\nn2mj−2m+i−\n2m−1∑\ni=m\nn2mj−2m+i\n)\n+\np∑\nj=1\nj∑\nj′=1\nm−1∑\nk=1\nk∑\nk′=1\n(n2mj−k−n2mj−k−1)(n2mj′−2m+k−k′+1−n2mj′−2m+k−k′)\n−\np∑\nj=1\nj∑\nj′=1\nm∑\nk=1\nm−k+1∑\nk′=1\n(n2mj−m−k+1−n2mj−m−k)(n2mj′−2m−k′+1−n2mj′−2m−k′)\n+\nm−1∑\ns=1\np∑\nj=1\n(j−1∑\nj′=1\n(n2mj′−s−n2mj′−2m+s) +\np∑\nj′=j\n(n2mj′−s−n2mj′−2m+s−1)\n)\nn2mj−2m+s−1\nTHE COLORED JONES POLYNOM",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks and questions",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-4-concluding-remarks-and-questions.md",
+      "narrative": null,
+      "content": "The work in this paper may be compared with that of Hikami and the first author in [@hikami1; @hikami2; @hl1], where one finds generalized Kontsevich-Zagier functions $F_t(q)$ and generalized $U$-functions $U_t(x;q)$ for torus knots $T_{(2,2t+1)}$. In the context of this family of torus knots, we have $$\\label{Ft}\nF_t(q) := \n  q^{t}\n  \\sum_{k_t \\geq \\dots \\geq k_1 \\geq 0}^\\infty\n  (q)_{k_t} \\, \n  \\prod_{i=1}^{t-1} q^{k_i(k_i+1)} \n  \\begin{bmatrix}\n    k_{i+1} \\\\\n    k_i\n  \\end{bmatrix}$$ and $$\\label{Ut}\nU_t(x;q) :=\n  q^{-t}\n  \\sum_{k_t  \\geq \\cdots \\geq k_1 \\geq 1}\n  (-xq)_{k_t-1}(-x^{-1}q)_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank the Mathematisches Forschungsinstitut Oberwolfach for their support as this work began during their stay from March 13-26, 2016 as part of the Research in Pairs program. The second author would like to thank Kazihuro Hikami, Thang Lê, Kate Petersen and Anh Tran for their helpful comments and suggestions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1710.04865v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] S. Ahlgren, B. Kim, Dissections of a “strange” function, Int. J. Number Theory 11 (2015), no. 5, 1557–1562.\n[2] G. E. Andrews, J. Sellers, Congruences for the Fishburn numbers , J. Number Theory 161 (2016), 298–310.\n[3] K. Bringmann, K. Hikami and J. Lovejoy, The modularity of the uniﬁed WRT invariants of certain Seifert\nmanifolds, Adv. in Appl. Math. 46 (2011), no. 1-4, 86–93.\n[4] J. Bryson, K. Ono, S. Pitman and R. Rhoades, Unimodal sequences and quantum and mock modular forms ,\nProc. Natl. Acad. Sci. USA 109 (2012), no. 40, 16063–16067.\n[5] G. Burde, H. Zieschang, Knots, De Gruyter Stud",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2372 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "hdr",
+  "title": "Hecke algebras, generalisations and representation theory",
+  "variant": "pdf",
+  "pages": 75,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Algebras of Finite Type",
+      "number": null,
+      "page": 16,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-algebras-of-finite-type"
+    },
+    {
+      "level": 2,
+      "title": "Blocks",
+      "number": null,
+      "page": 16,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Symmetrising forms and Schur elements",
+      "number": null,
+      "page": 16,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-symmetrising-forms-and-schur-elements"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition maps",
+      "number": null,
+      "page": 17,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-decomposition-maps"
+    },
+    {
+      "level": 1,
+      "title": "Iwahori–Hecke Algebras",
+      "number": null,
+      "page": 20,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-iwahorihecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Kazhdan–Lusztig cells",
+      "number": null,
+      "page": 20,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-kazhdanlusztig-cells"
+    },
+    {
+      "level": 2,
+      "title": "Schur elements and the a-function",
+      "number": null,
+      "page": 21,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-schur-elements-and-the-a-function"
+    },
+    {
+      "level": 2,
+      "title": "Families of characters and Rouquier families",
+      "number": null,
+      "page": 23,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-families-of-characters-and-rouquier-families"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition maps and canonical basic sets",
+      "number": null,
+      "page": 24,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-decomposition-maps-and-canonical-basic-sets"
+    },
+    {
+      "level": 1,
+      "title": "Cyclotomic Hecke Algebras",
+      "number": null,
+      "page": 26,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-cyclotomic-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Hecke algebras for complex reflection groups",
+      "number": null,
+      "page": 26,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-hecke-algebras-for-complex-reflection-groups"
+    },
+    {
+      "level": 2,
+      "title": "Schur elements and the a-function",
+      "number": null,
+      "page": 28,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-schur-elements-and-the-a-function"
+    },
+    {
+      "level": 2,
+      "title": "Families of characters and Rouquier families",
+      "number": null,
+      "page": 29,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-families-of-characters-and-rouquier-families"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition maps and canonical basic sets",
+      "number": null,
+      "page": 30,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-decomposition-maps-and-canonical-basic-sets"
+    },
+    {
+      "level": 1,
+      "title": "Ariki–Koike Algebras",
+      "number": null,
+      "page": 32,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-arikikoike-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Combinatorics of partitions and multipartitions",
+      "number": null,
+      "page": 32,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-combinatorics-of-partitions-and-multipartitions"
+    },
+    {
+      "level": 2,
+      "title": "Schur elements and the a-function",
+      "number": null,
+      "page": 34,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-schur-elements-and-the-a-function"
+    },
+    {
+      "level": 2,
+      "title": "Families of characters and Rouquier families",
+      "number": null,
+      "page": 35,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-families-of-characters-and-rouquier-families"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition maps and canonical basic sets",
+      "number": null,
+      "page": 36,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-decomposition-maps-and-canonical-basic-sets"
+    },
+    {
+      "level": 1,
+      "title": "Rational Cherednik Algebras",
+      "number": null,
+      "page": 38,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-rational-cherednik-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Rational Cherednik Algebras at t =1",
+      "number": null,
+      "page": 39,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-rational-cherednik-algebras-at-t-1"
+    },
+    {
+      "level": 2,
+      "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+      "number": null,
+      "page": 41,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-canonical-basic-sets-for-hecke-algebras-from-rat"
+    },
+    {
+      "level": 2,
+      "title": "Rational Cherednik Algebras at t = 0",
+      "number": null,
+      "page": 44,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-rational-cherednik-algebras-at-t-0"
+    },
+    {
+      "level": 2,
+      "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
+      "number": null,
+      "page": 45,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-families-of-characters-for-hecke-algebras-from-r"
+    },
+    {
+      "level": 1,
+      "title": "Yokonuma–Hecke Algebras",
+      "number": null,
+      "page": 48,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-yokonumahecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Representation theory of Yokonuma–Hecke algebras",
+      "number": null,
+      "page": 49,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-representation-theory-of-yokonumahecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+      "number": null,
+      "page": 51,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-affine-and-cyclotomic-yokonumahecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+      "number": null,
+      "page": 54,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-temperleylieb-quotients-of-yokonumahecke-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Knot invariants",
+      "number": null,
+      "page": 57,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-knot-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 68,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": "13",
+      "words": 7653,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alg ebres",
+          "heading": false
+        },
+        {
+          "term": "yokonuma temperley",
+          "heading": false
+        },
+        {
+          "term": "yokonuma hecke",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic yokonuma",
+          "heading": false
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "eor ebres",
+          "heading": false
+        },
+        {
+          "term": "lieb ebre",
+          "heading": false
+        },
+        {
+          "term": "alg des",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: tel-01411063 https://hal.science/tel-01411063v1 Submitted on 6 Dec 2016 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive ouverte pluridisciplinaire HAL, est des- tinée",
+      "extractCut": true,
+      "blocks": [
+        "library/hdr/blocks/prose-sec-front-matter",
+        "library/hdr/blocks/figure-img-p001-1",
+        "library/hdr/blocks/figure-img-p001-2",
+        "library/hdr/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-algebras-of-finite-type",
+      "number": null,
+      "title": "Algebras of Finite Type",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integral domain",
+          "heading": false
+        },
+        {
+          "term": "commutative integral",
+          "heading": false
+        },
+        {
+          "term": "r-algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let R be a commutative integral domain and let A be an R-algebra, free and ﬁnitely generated as an R-module. If R′ is a commutative integral domain containing R, we will write R′A for R′ ⊗R A and we will denote by Irr(R′A) the set of irreducible representations of R′A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-blocks",
+      "number": null,
+      "title": "Blocks",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": true
+        },
+        {
+          "term": "aeb",
+          "heading": false
+        }
+      ],
+      "extract": "Blocks We deﬁne the block-idempotents of A to be the primitive idempotents of the centre Z(A) of A. Let K be a ﬁeld containing R such that the algebra KA is semisimple. Then KA is isomorphic to a direct product of simple algebras, KA ∼= Y V ∈Irr(KA) MV , where MV is a simple K-algebra. For all V ∈Irr(KA), we denote by πV : KA ↠MV the projection onto the V -factor and by eV the element of KA such that πV ′(eV ) = \u001a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-symmetrising-forms-and-schur-elements",
+      "number": null,
+      "title": "Symmetrising forms and Schur elements",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrising",
+          "heading": true
+        },
+        {
+          "term": "symmetrising form",
+          "heading": false
+        },
+        {
+          "term": "canonical symmetrising",
+          "heading": false
+        },
+        {
+          "term": "schur elements",
+          "heading": true
+        },
+        {
+          "term": "exists symmetrising",
+          "heading": false
+        },
+        {
+          "term": "gepf",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "split semisimple",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetrising forms and Schur elements A symmetrising form on the algebra A is a linear map τ : A →R such that (a) τ(ab) = τ(ba) for all a, b ∈A, that is, τ is a trace function, and (b) the map bτ : A →HomR(A, R), a 7→(x 7→τ(ax)) is an isomorphism of A-bimodules. If there exists a symmetrising form on A, we say that A is a symmetric algebra. Example 1.2 Let G be a ﬁnite group. The linear map τ : Z[G] →Z deﬁned by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-decomposition-maps",
+      "number": null,
+      "title": "Decomposition maps",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 642,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tits deformation",
+          "heading": false
+        },
+        {
+          "term": "valuation ring",
+          "heading": false
+        },
+        {
+          "term": "gepf",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "decomposition map",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "modular reduction",
+          "heading": false
+        }
+      ],
+      "extract": "Decomposition maps Let K be a ﬁeld containing R. Let R0(KA) be the Grothendieck group of ﬁnite-dimensional KA-modules. The group R0(KA) is generated by expressions [V ], one for each KA-module V (up to isomorphism), with relations [V ] = [V ′] + [V ′′] for each exact sequence 0 →V ′ →V →V ′′ →0 of KA-modules. Two KA- modules V, V ′ give rise to the same element in R0(KA), if V and V ′ have the same composition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-iwahorihecke-algebras",
+      "number": null,
+      "title": "Iwahori–Hecke Algebras",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mst",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite coxeter",
+          "heading": false
+        },
+        {
+          "term": "weight function",
+          "heading": false
+        },
+        {
+          "term": "sir",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": true
+        }
+      ],
+      "extract": "In this chapter we will focus on real reﬂection groups, while in the next chapter we will see what happens in the complex case. Let (W, S) be a ﬁnite Coxeter system. By deﬁnition, the ﬁnite Coxeter group W has a presentation of the form W = ⟨S | (st)mst = 1 ∀s, t ∈S ⟩ with mss = 1 and mst ⩾2 for s̸ = t. We have a length function ℓ: W →Z⩾0 deﬁned by ℓ(w) := min { r | w = si1 . . . sir with sij ∈S } for all w ∈W. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-kazhdanlusztig-cells",
+      "number": null,
+      "title": "Kazhdan–Lusztig cells",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan lusztig",
+          "heading": true
+        },
+        {
+          "term": "cells",
+          "heading": true
+        },
+        {
+          "term": "two-sided cells",
+          "heading": false
+        },
+        {
+          "term": "left cells",
+          "heading": false
+        },
+        {
+          "term": "right cells",
+          "heading": false
+        },
+        {
+          "term": "non-zero coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "sts",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        }
+      ],
+      "extract": "Kazhdan–Lusztig cells Let ι be the algebra involution on Hq(W, L) given by ι(q) = q−1 and ι(Ts) = T −1 s for s ∈S (as a consequence, ι(Tw) = T −1 w−1 for all w ∈W). By [KaLu1, Theorem 1.1] (see [Lu3, Proposition 2] for the unequal parameter case), for each w ∈W, there exists an element Cw ∈Hq(W, L) uniquely determined by the conditions ι(Cw) = Cw and ι(Cw) = Tw + X x∈W, x<w Px,w Tx , 17 where < stands for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-schur-elements-and-the-a-function",
+      "number": null,
+      "title": "Schur elements and the a-function",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur elements",
+          "heading": true
+        },
+        {
+          "term": "q2l",
+          "heading": false
+        },
+        {
+          "term": "canonical symmetrising",
+          "heading": false
+        },
+        {
+          "term": "symmetrising form",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "a-function",
+          "heading": true
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "Schur elements and the a-function From now on, set R := Z[q, q−1] and let K ⊆C be a ﬁeld such that he algebra K(q)Hq(W, L) is split semisimple. Using the standard basis of the Iwahori–Hecke algebra, we deﬁne the linear map τ : Hq(W, L) →R by setting τ(Tw) := \u001a 1 if w = 1, 0 otherwise. 18 The map τ is a symmetrising form on Hq(W, L), and the elements (Tw−1)w∈W form a basis of Hq(W, L) dual to the standard basis with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-families-of-characters-and-rouquier-families",
+      "number": null,
+      "title": "Families of characters and Rouquier families",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 959,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rouquier families",
+          "heading": true
+        },
+        {
+          "term": "lusztig families",
+          "heading": false
+        },
+        {
+          "term": "kazhdan lusztig",
+          "heading": false
+        },
+        {
+          "term": "lusztig cells",
+          "heading": false
+        },
+        {
+          "term": "lusztig conjectures",
+          "heading": false
+        },
+        {
+          "term": "two-sided cells",
+          "heading": false
+        },
+        {
+          "term": "let irr",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite coxeter",
+          "heading": false
+        }
+      ],
+      "extract": "Families of characters and Rouquier families The families of characters are a special partition of the set of irreducible representations of W. In the case where W is a Weyl group, these families play an essential role in the deﬁnition of the families of unipotent characters for the corresponding ﬁnite reductive groups. Their original deﬁnition is due to Lusztig [Lu4, 4.2] and uses the a-function. Let I ⊆S and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-decomposition-maps-and-canonical-basic-sets",
+      "number": null,
+      "title": "Decomposition maps and canonical basic sets",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical basic",
+          "heading": true
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "specialisation yields",
+          "heading": false
+        },
+        {
+          "term": "e-regular",
+          "heading": false
+        },
+        {
+          "term": "yields bijection",
+          "heading": false
+        },
+        {
+          "term": "decomposition",
+          "heading": true
+        },
+        {
+          "term": "semisimple",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "Decomposition maps and canonical basic sets As we saw in Section 2.2, the specialisation q 7→1 yields a bijection between the set of irreducible representations of K(q)Hq(W, L) and Irr(W). What happens though when q specialises to a complex number? The resulting Iwahori–Hecke algebra is not necessarily semisimple and the ﬁrst questions that need to be answered are the following: What are the simple modules for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-cyclotomic-hecke-algebras",
+      "number": null,
+      "title": "Cyclotomic Hecke Algebras",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "complex reﬂection",
+          "heading": false
+        },
+        {
+          "term": "reﬂection group",
+          "heading": false
+        },
+        {
+          "term": "idh",
+          "heading": false
+        },
+        {
+          "term": "irreducible complex",
+          "heading": false
+        },
+        {
+          "term": "non-zero entries",
+          "heading": false
+        },
+        {
+          "term": "hyperplane",
+          "heading": false
+        }
+      ],
+      "extract": "Cyclotomic Hecke algebras generalise the notion of Iwahori–Hecke algebras to the case of complex reﬂec- tion groups. For any positive integer e we will write ζe for exp(2πi/e) ∈C. Let h be a ﬁnite dimensional complex vector space. A pseudo-reﬂection is a non-trivial element s ∈GL(h) that ﬁxes a hyperplane pointwise, that is, dimCKer(s −idh) = dimCh −1. The hyperplane Ker(s −idh) is the reﬂecting hyperplane of s. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-hecke-algebras-for-complex-reflection-groups",
+      "number": null,
+      "title": "Hecke algebras for complex reflection groups",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic specialisation",
+          "heading": false
+        },
+        {
+          "term": "algebra hϕm",
+          "heading": false
+        },
+        {
+          "term": "spetsial cyclotomic",
+          "heading": false
+        },
+        {
+          "term": "freeness conjecture",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "hreg",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke algebras for complex reﬂection groups Let A be the set of reﬂecting hyperplanes of W. Let hreg := h \\ S H∈A H and BW := π1(hreg/W, x0), where x0 is some ﬁxed basepoint. The group BW is the braid group of W. For every orbit C of the action of W on A, we set eC the common order of the subgroups WH, where H is any element of C and WH is the pointwise stabiliser of H. Note that WH is cyclic, for all H ∈A. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-schur-elements-and-the-a-function",
+      "number": null,
+      "title": "Schur elements and the a-function",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur elements",
+          "heading": true
+        },
+        {
+          "term": "a-function",
+          "heading": true
+        },
+        {
+          "term": "canonical symmetrising",
+          "heading": false
+        },
+        {
+          "term": "symmetrising form",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        },
+        {
+          "term": "complex reﬂection",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "mal",
+          "heading": false
+        }
+      ],
+      "extract": "Schur elements and the a-function The canonical symmetrising form τ on H(W) (see Assumptions 3.4) can be extended to K(v)H(W) by extension of scalars, and can be used to deﬁne Schur elements (sE)E∈Irr(W ) for H(W), as in the real case. The Schur elements of H(W) have been explicitly calculated for all complex reﬂection groups: • for ﬁnite Coxeter groups see §2.2; • for complex reﬂection groups of type G(l, 1, n) by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-families-of-characters-and-rouquier-families",
+      "number": null,
+      "title": "Families of characters and Rouquier families",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 1154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rouquier families",
+          "heading": true
+        },
+        {
+          "term": "essential hyperplane",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic specialisation",
+          "heading": false
+        },
+        {
+          "term": "called rouquier",
+          "heading": false
+        },
+        {
+          "term": "spetsial cyclotomic",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        },
+        {
+          "term": "complex reﬂection",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic hecke",
+          "heading": false
+        }
+      ],
+      "extract": "Families of characters and Rouquier families Let ϕm : vC,j 7→qmC,j be a cyclotomic specialisation and let Hϕm(W) be the corresponding cyclotomic Hecke algebra associated with W. How can we deﬁne families of characters for Hϕm(W)? We cannot apply Lusztig’s original deﬁnition, because parabolic subgroups of complex reﬂection groups1 do not have a nice presentation as in the real case, and certainly not a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-decomposition-maps-and-canonical-basic-sets",
+      "number": null,
+      "title": "Decomposition maps and canonical basic sets",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical basic",
+          "heading": true
+        },
+        {
+          "term": "specialised ariki",
+          "heading": false
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "koike algebra",
+          "heading": false
+        },
+        {
+          "term": "geja",
+          "heading": false
+        }
+      ],
+      "extract": "Decomposition maps and canonical basic sets Given a cyclotomic Hecke algebra Hϕm(W) and a ring homomorphism θ : q 7→η ∈C \\ {0}, we obtain a semisimplicity criterion and a decomposition map exactly as in §2.4. A canonical basic set with respect to θ is also deﬁned in the same way. In [ChJa1], we showed the existence of canonical basic sets with respect to any θ for all cyclotomic Hecke algebras associated with ﬁnite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-arikikoike-algebras",
+      "number": null,
+      "title": "Ariki–Koike Algebras",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ariki",
+          "heading": true
+        },
+        {
+          "term": "ariki-koike algebras",
+          "heading": false
+        },
+        {
+          "term": "koike",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "canonical basic",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "We will see more on canonical basic sets for type G(l, 1, n) in the next chapter. In [ChJa2], building on work by Genet and Jacon [GenJa], we generalised the above result to obtain canonical basic sets for all groups of type G(l, p, n) with n > 2, or n = 2 and p odd. Finally, for the exceptional complex reﬂection groups of rank 2 (G4,. . . ,G22), we have shown the existence of canonical basic sets for the cyclotomic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-combinatorics-of-partitions-and-multipartitions",
+      "number": null,
+      "title": "Combinatorics of partitions and multipartitions",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 1018,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partitions",
+          "heading": true
+        },
+        {
+          "term": "hook length",
+          "heading": false
+        },
+        {
+          "term": "contcλ",
+          "heading": false
+        },
+        {
+          "term": "multipartitions",
+          "heading": true
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "i-th row",
+          "heading": false
+        },
+        {
+          "term": "l-partition",
+          "heading": false
+        },
+        {
+          "term": "multiset",
+          "heading": false
+        }
+      ],
+      "extract": "Let | and n be positive integers. 4.1.1 Partitions A partition X = (Aq,..., ,An) is a family of positive integers such that A; > A2 >... > An S 1. We call h the length or height of the partition A. We write |A| := ye , A; and we say that » is a partition of n 29 if n = |λ|. We denote by P(n) the set of partitions of n. To each partition λ we associate its β-number, βλ = (β1, β2, . . . , βh), deﬁned by β1 := h + λ1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-schur-elements-and-the-a-function",
+      "number": null,
+      "title": "Schur elements and the a-function",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 770,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur elements",
+          "heading": true
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic ariki",
+          "heading": false
+        },
+        {
+          "term": "generic ariki",
+          "heading": false
+        },
+        {
+          "term": "koike algebra",
+          "heading": false
+        },
+        {
+          "term": "a-value",
+          "heading": false
+        },
+        {
+          "term": "cancellation-free formula",
+          "heading": false
+        },
+        {
+          "term": "a-function",
+          "heading": true
+        }
+      ],
+      "extract": "Schur elements and the a-function Let τ : Hq n →R be the linear map deﬁned by τ(Xa1 1 Xa2 2 . . . Xan n tw) = \u001a 1 if a1 = a2 = · · · = an = 0 and w = 1, 0 otherwise, where w ∈Sn and 0 ⩽am ⩽l −1 for all m = 1, 2, . . . , n. The function τ was introduced by Bremke and Malle [BreMa] who showed that τ is a trace form and that τ is essentially independent of the choice of basis of Hq n. It is not obvious from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-families-of-characters-and-rouquier-families",
+      "number": null,
+      "title": "Families of characters and Rouquier families",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rouquier families",
+          "heading": true
+        },
+        {
+          "term": "brki",
+          "heading": false
+        },
+        {
+          "term": "brou",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic",
+          "heading": false
+        }
+      ],
+      "extract": "Families of characters and Rouquier families The Rouquier families for cyclotomic Hecke algebras associated with the complex reﬂection group G(l, 1, n), that is, cyclotomic Ariki–Koike algebras, have been ﬁrst determined by Brou´e and Kim [BrKi], but it turned out that their results were only true in the case where l is a power of a prime number. In [Ch3], we gave the correct families for any l, using the property",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-decomposition-maps-and-canonical-basic-sets",
+      "number": null,
+      "title": "Decomposition maps and canonical basic sets",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 833,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "specialised ariki",
+          "heading": false
+        },
+        {
+          "term": "canonical basic",
+          "heading": true
+        },
+        {
+          "term": "koike algebras",
+          "heading": false
+        },
+        {
+          "term": "ariki theorem",
+          "heading": false
+        },
+        {
+          "term": "uglov l-partitions",
+          "heading": false
+        },
+        {
+          "term": "graded decomposition",
+          "heading": false
+        },
+        {
+          "term": "graded analogue",
+          "heading": false
+        }
+      ],
+      "extract": "Decomposition maps and canonical basic sets A few of the results in this section have been brieﬂy discussed in §3.4. They are repeated here for reasons of completeness. 4.4.1 Classical setting We now consider the specialised Ariki–Koike algebra with relations (s −ζs0 e )(s −ζs1 e ) · · · (s −ζsl−1 e ) = 0, (ti −ζe)(ti + 1) = 0 for i = 1, . . . , n −1, (4.4) where (s0, . . . , sl−1) ∈Zl and e ∈Z>0. Geck and Jacon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-rational-cherednik-algebras",
+      "number": null,
+      "title": "Rational Cherednik Algebras",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sij",
+          "heading": false
+        },
+        {
+          "term": "αij",
+          "heading": false
+        },
+        {
+          "term": "cherednik",
+          "heading": true
+        },
+        {
+          "term": "grf",
+          "heading": false
+        },
+        {
+          "term": "idv",
+          "heading": false
+        },
+        {
+          "term": "dual space",
+          "heading": false
+        }
+      ],
+      "extract": "Let W ⊂GL(h) be a complex reﬂection group. There is a natural pairing ( , ) : h × h∗→C given by (y, x) := x(y). Let S be the set of all pseudo-reﬂections in W and let c : S →C be a conjugacy invariant function, that is, a map such that c(wsw−1) = c(s) ∀s ∈S, w ∈W. Let V := h ⊕h∗and let TV ∗denote the tensor algebra on the dual space of V . For s ∈S, ﬁx αs ∈h∗ to be a basis of the one-dimensional vector space Im(s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-rational-cherednik-algebras-at-t-1",
+      "number": null,
+      "title": "Rational Cherednik Algebras at t =1",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 1287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rational cherednik",
+          "heading": true
+        },
+        {
+          "term": "ggor",
+          "heading": false
+        },
+        {
+          "term": "cherednik algebra",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "pairwise non-isomorphic",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "generic hecke",
+          "heading": false
+        }
+      ],
+      "extract": "The PBW Theorem implies that the rational Cherednik algebra H1,c(W), as a vector space, has a “triangular decomposition” H1,c(W) ∼= C[h] ⊗C[W] ⊗C[h∗]. Another famous example of a triangular decomposition is the one of the enveloping algebra U(g) of a ﬁnite dimensional semisimple complex Lie algebra g (into the enveloping algebras of the Cartan subalgebra, the nilpotent radical of the Borel subalgebra and its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-canonical-basic-sets-for-hecke-algebras-from-rat",
+      "number": null,
+      "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 2159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical basic",
+          "heading": true
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "specialised ariki",
+          "heading": false
+        },
+        {
+          "term": "koike algebras",
+          "heading": false
+        },
+        {
+          "term": "modules killed",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite coxeter",
+          "heading": false
+        },
+        {
+          "term": "kz-functor",
+          "heading": false
+        }
+      ],
+      "extract": "Canonical basic sets for Hecke algebras from rational Chered- nik algebras Let Θ and Hk(W) be deﬁned as above. We have a decomposition matrix Dk for the specialised Hecke algebra Hk(W) with respect to the specialisation Θ. The rows of Dk are indexed by Irr(W) and its columns by Irr(Hk(W)). Following Proposition 5.9, Dk can be obtained from the decomposition matrix D of the category O by removing the columns that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-rational-cherednik-algebras-at-t-0",
+      "number": null,
+      "title": "Rational Cherednik Algebras at t = 0",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rational cherednik",
+          "heading": true
+        },
+        {
+          "term": "cow acts",
+          "heading": false
+        },
+        {
+          "term": "baby verma",
+          "heading": false
+        },
+        {
+          "term": "cherednik algebra",
+          "heading": false
+        },
+        {
+          "term": "verma module",
+          "heading": false
+        }
+      ],
+      "extract": "Rational Cherednik Algebras at t = 0 Let us now consider the rational Cherednik algebra H0,c(W). Set A := C[h]W ⊗C[h∗]W . We deﬁne the restricted rational Cherednik algebra to be H0,c(W) := H0,c(W)/A+H0,c(W), where A+ denotes the ideal of A consisting of elements with zero constant term. This algebra was originally introduced, and extensively studied, in [Go]. The PBW Theorem implies that, as a vector space, H0,c(W)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-families-of-characters-for-hecke-algebras-from-r",
+      "number": null,
+      "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calogero moser",
+          "heading": false
+        },
+        {
+          "term": "moser cells",
+          "heading": false
+        },
+        {
+          "term": "rouquier families",
+          "heading": false
+        },
+        {
+          "term": "moser partition",
+          "heading": false
+        },
+        {
+          "term": "martino conjecture",
+          "heading": false
+        },
+        {
+          "term": "kazhdan lusztig",
+          "heading": false
+        },
+        {
+          "term": "same rouquier",
+          "heading": false
+        },
+        {
+          "term": "reﬂection groups",
+          "heading": false
+        }
+      ],
+      "extract": "Families of characters for Hecke algebras from rational Chered- nik algebras Since the algebra H0,c is ﬁnite dimensional, we can deﬁne its blocks in the usual way. Let E, E′ ∈Irr(W). Following [GoMa], we deﬁne the Calogero–Moser partition of Irr(W) to be the set of equivalence classes of Irr(W) under the equivalence relation: E ∼CM E′ if and only if L(E) and L(E′) belong to the same block of H0,c. We will simply",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-yokonumahecke-algebras",
+      "number": null,
+      "title": "Yokonuma–Hecke Algebras",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yokonuma hecke",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "centraliser algebra",
+          "heading": false
+        },
+        {
+          "term": "egi",
+          "heading": false
+        },
+        {
+          "term": "chpda",
+          "heading": false
+        },
+        {
+          "term": "unipotent subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "Yokonuma–Hecke algebras were introduced by Yokonuma [Yo] for the same reason that Ariki–Koike alge- bras were introduced by Ariki and Koike: as generalisations of Iwahori–Hecke algebras. More precisely, the Iwahori–Hecke algebra associated to a ﬁnite reductive group G is the centraliser algebra associated to the permutation representation of G with respect to a Borel subgroup of G. The Yokonuma–Hecke algebra is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-representation-theory-of-yokonumahecke-algebras",
+      "number": null,
+      "title": "Representation theory of Yokonuma–Hecke algebras",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 1216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yokonuma hecke",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "d-tableau",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "chpda",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": true
+        },
+        {
+          "term": "semisimplicity criterion",
+          "heading": false
+        },
+        {
+          "term": "canonical symmetrising",
+          "heading": false
+        }
+      ],
+      "extract": "Representation theory of Yokonuma–Hecke algebras The representation theory of Yokonuma–Hecke algebras has been ﬁrst studied by Thiem [Th1, Th2, Th3] in the general context of unipotent Hecke algebras. The generality of his results and the new presentation for Yd,n(q) has led us to develop a combinatorial approach to the representation theory of the Yokonuma– Hecke algebra of type A in [ChPdA1]. In this section, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-affine-and-cyclotomic-yokonumahecke-algebras",
+      "number": null,
+      "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 54,
+      "labelStart": "48",
+      "labelEnd": "51",
+      "words": 2038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yokonuma hecke",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic yokonuma",
+          "heading": true
+        },
+        {
+          "term": "affine yokonuma",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "aﬃne yokonuma",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "chpda",
+          "heading": false
+        }
+      ],
+      "extract": "Aﬃne and Cyclotomic Yokonuma–Hecke algebras We have now seen two families of algebras that are deformations of the groups algebra of the complex reﬂection group G(d, 1, n): the Ariki–Koike algebras and the Yokonuma–Hecke algebras of type A. Both families include the Iwahori–Hecke algebras of type A. The former preserve the “good” quadratic relations of the Iwahori–Hecke algebras, while the latter preserve the wreath",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-temperleylieb-quotients-of-yokonumahecke-algebra",
+      "number": null,
+      "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 57,
+      "labelStart": "51",
+      "labelEnd": "54",
+      "words": 2060,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley lieb",
+          "heading": true
+        },
+        {
+          "term": "yokonuma temperley",
+          "heading": true
+        },
+        {
+          "term": "yokonuma hecke",
+          "heading": true
+        },
+        {
+          "term": "lieb quotients",
+          "heading": true
+        },
+        {
+          "term": "reﬂection temperley",
+          "heading": false
+        },
+        {
+          "term": "lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "ytld",
+          "heading": false
+        },
+        {
+          "term": "ftld",
+          "heading": false
+        }
+      ],
+      "extract": "Temperley–Lieb quotients of Yokonuma–Hecke algebras The Temperley–Lieb algebra was introduced by Temperley and Lieb in [TeLi] for its applications in statistical mechanics. Jones [Jo1, Jo2, Jo3] later showed that it can be obtained as a quotient of the Iwahori–Hecke algebra Hn(q) of type A by a two-sided ideal, and used it for the construction of the knot invariant known as the Jones polynomial. Since Yokonuma–Hecke",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-knot-invariants",
+      "number": null,
+      "title": "Knot invariants",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 68,
+      "labelStart": "54",
+      "labelEnd": "65",
+      "words": 5709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace trd",
+          "heading": false
+        },
+        {
+          "term": "trd passes",
+          "heading": false
+        },
+        {
+          "term": "through trd",
+          "heading": false
+        },
+        {
+          "term": "yokonuma temperley",
+          "heading": false
+        },
+        {
+          "term": "homﬂypt polynomial",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "yokonuma hecke",
+          "heading": false
+        },
+        {
+          "term": "knot invariants",
+          "heading": true
+        }
+      ],
+      "extract": "Knot invariants One of the reasons that the interest in Yokonuma–Hecke algebras was rekindled in the past years was that Juyumaya and Lambropoulou used the Markov trace on them deﬁned by the former [Ju2] in order to construct isotopy invariants for framed [JuLa1, JuLa2], classical [JuLa3] and singular [JuLa4] knots and links. Their method is the same as the one applied by Jones, who used the Ocneanu trace on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 75,
+      "labelStart": "65",
+      "labelEnd": "72",
+      "words": 3217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calogero moser",
+          "heading": false
+        },
+        {
+          "term": "pro-p-iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "vign eras",
+          "heading": false
+        },
+        {
+          "term": "ariki koike",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "unipotent hecke",
+          "heading": false
+        },
+        {
+          "term": "alg ebres",
+          "heading": false
+        },
+        {
+          "term": "bonnaf",
+          "heading": false
+        }
+      ],
+      "extract": "[Ai] F. Aicardi, Private communication. [Al] D. Alvis, The left cells of the Coxeter group of type H4, J. Algebra 107 (1987) 160–168. [AlLu] D. Alvis, G. Lusztig, The representations and generic degrees of the Hecke algebra of type H4, J. Reine Angew. Math. 336 (1982), 201–202. [Ar1] S. Ariki, On the semi-simplicity of the Hecke algebra of (Z/rZ)≀Sn, J. Algebra 169 (1994) 216–225. [Ar2] S. Ariki, On the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "1 For a disjoint union L of k knots, with k ⩾1, it holds that:",
+          "2 On crossings involving diﬀerent components the following skein relation holds:"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "yokonuma hecke",
+      "heading": true
+    },
+    {
+      "term": "ariki koike",
+      "heading": true
+    },
+    {
+      "term": "hecke algebra",
+      "heading": false
+    },
+    {
+      "term": "iwahori hecke",
+      "heading": true
+    },
+    {
+      "term": "cyclotomic hecke",
+      "heading": true
+    },
+    {
+      "term": "specialised hecke",
+      "heading": false
+    },
+    {
+      "term": "reﬂection algebras",
+      "heading": false
+    },
+    {
+      "term": "let irr",
+      "heading": false
+    },
+    {
+      "term": "reﬂection groups",
+      "heading": false
+    },
+    {
+      "term": "ariki theorem",
+      "heading": false
+    },
+    {
+      "term": "yokonuma temperley",
+      "heading": true
+    },
+    {
+      "term": "complex reﬂection",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "-1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 18,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "17",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 24,
+      "label": "21",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 27,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 29,
+      "label": "26",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "27",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "32",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 36,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "35",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 42,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "41",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 45,
+      "label": "42",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 46,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "45",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 49,
+      "label": "46",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 50,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "48",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 52,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "51",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 55,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "54",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 58,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "65",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 69,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 74,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "6.1",
+      "title": "The framed links in the skein relation in open braid form",
+      "page": 60,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "The links in the special skein relation in open braid form",
+      "page": 63,
+      "pageLabel": "60",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6.1",
+      "title": "Six P-equivalent pairs of 3-component links which are not Θd-equivalent. Further, in [CJKL, Theorem 7.3], we have proved diagrammatically that the invariants Θd, for d > 1,",
+      "page": 63,
+      "pageLabel": "60",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 31,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p68); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 31 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/hdr"
+  }
+}

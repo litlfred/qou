@@ -1,0 +1,2805 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9804005v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-2-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Abstract. A ring with an Auslander dualizing complex is a generalizati on\nof an Auslander-Gorenstein ring. W e show that many results w hich hold for\nAuslander-Gorenstein rings also hold in the more general se tting. On the\nother hand we give criteria for existence of Auslander duali zing complexes\nwhich show these occur quite frequently.\nThe most powerful tool we use is the Local Duality Theorem for connected\ngraded algebras over a ﬁeld. Filtrations allow the transfer of results to non-\ngraded algebras.\nW e also prove some results of a categorical nature, most nota bly the func-\ntoriality of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Assume A is a normally separated ﬁltered k-algebra such that grA is a noetherian connected graded k-algebra with enough normal elements. Then SpecA is catenary. This is proved after Corollary 6.22. We generalize some results in [ASZ], two of which are:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Assume A is a noetherian k-algebra with an Auslander dualizing complex. Then there is a step duality between the category ModfA of ﬁnitely gener- ated left A-modules and the category ModfA◦ of ﬁnitely generated right A-modules. Actually we prove a more general result involving two algebras – see T heorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "It follows that if the algebra A has an Auslander dualizing complex then the",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-215-it-follows-that-if-the-algebra-a-has-an-ausl.md",
+      "narrative": null,
+      "content": "left and right Krull dimensions of A are ﬁnite.\nTheorem 0.3. Let A be an Auslander-Gorenstein noetherian k-algebra. Assume\nA has a ﬁltration such that grA is an AS-Gorenstein noetherian connected graded\nk-algebra (e.g. if A is connected graded). Then A has an artinian self-injective ring\nof fractions.\nFor more details see Theorem 6.23.\nThe notion of characteristic variety Ch M of a module M was introduced in D-\nmodule theory (cf. [Co] p. 98). The next theorem generalizes a res ult of Gabber by\ndropping the Gorenstein condition. The possibility of making this gene ralization\nwas suggested by Va",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let A be an Auslander-Gorenstein noetherian k-algebra. Assume A has a ﬁltration such that grA is an AS-Gorenstein noetherian connected graded k-algebra (e.g. if A is connected graded). Then A has an artinian self-injective ring of fractions. For more details see Theorem 6.23. The notion of characteristic variety Ch M of a module M was introduced in D- module theory (cf. [Co] p. 98). The next theorem generalizes a res ult of Gabber by dropping the Gorenstein condition. The possibility of making this gene ralization was suggested by Van den Bergh.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "cor-sec-002-02.md",
+      "narrative": null,
+      "content": "A homomorphism A →B of algebras is called ﬁnite ifB is a ﬁnitely generated left and right A-module.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dualizing complexes",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-1-dualizing-complexes.md",
+      "narrative": null,
+      "content": "Theorem 0.4 (Purity of Characteristic Variety) . AssumeA is a ﬁltered k-algebra\nsuch that grA is a commutative connected graded aﬃne k-algebra. If M is a ﬁnitely\ngenerated GKdim-pure left A-module, then the characteristic variety ChM is pure.\nGiven an algebra A there might exist non-isomorphic Auslander dualizing com-\nplexes over it (see Example 2.3(c)). For various reasons (like funct oriality) it is\ndesirable to ﬁnd dualizing complexes which are canonical in some sense . In the\ngraded case, the balanced dualizing complex (Deﬁnition 4.2), introduced by the ﬁrst\nauthor in [Ye1], is a natural c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Purity of Characteristic Variety",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "AssumeA is a ﬁltered k-algebra such that grA is a commutative connected graded aﬃne k-algebra. If M is a ﬁnitely generated GKdim-pure left A-module, then the characteristic variety ChM is pure. Given an algebra A there might exist non-isomorphic Auslander dualizing com- plexes over it (see Example 2.3(c)). For various reasons (like funct oriality) it is desirable to ﬁnd dualizing complexes which are canonical in some sense . In the graded case, the balanced dualizing complex (Deﬁnition 4.2), introduced by the ﬁrst author in [Ye1], is a natural choice. In the ungraded case, one shou ld consider",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "Let A be a noetherian k-algebra. A rigid dualizing complex RA over A is unique up to a unique isomorphism. If A →B is a ﬁnite homomorphism and RA,RB are rigid dualizing complexes over A,B respectively, then there is at most one morphism TrB/A :RB →RA compatible with the rigidity. The existence of a dualizing complex is not automatic. A very eﬀective criterion for existence of balanced complexes is given in [VdB] Theorem 6.3 (whic h is Theo- rem 4.6 here). Van den Bergh’s idea was to ﬁrst prove the Local Dua lity Theorem, and then to show this duality is represented by a balanced dualizing co m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Assume A is a noetherian connected graded k-algebra which has a balanced dualizing complex R and satisﬁes the similar submodule condition (e.g. A is FBN or has enough normal elements ). Then the balanced dualizing complex R is graded Auslander. Next, Theorem 6.2 says:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-05.md",
+      "narrative": null,
+      "content": "SupposeA is a ﬁltered k-algebra such that the associated graded al- gebra grA is noetherian. If grA has a graded Auslander balanced dualizing complex, then A has an Auslander rigid dualizing complex. By results of Grothendieck, a commutative aﬃne connected grade d k-algebra has a graded Auslander balanced dualizing complex (this also follows fr om Theo- rem 0.6). Since factor rings of universal enveloping algebras of ﬁnit e dimensional Lie algebras are ﬁltered, and their associated graded algebras are commutative,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-06.md",
+      "narrative": null,
+      "content": "tells us that these algebras have Auslander rigid dualizing complexes. In the same way we may use Theorems 0.7 and 0.6 to show that many qu antum algebras and their factor algebras have Auslander rigid dualizing com plexes. A key step in the proof of Theorem 0.7 is the following theorem (see Theore m 5.1 for full details and proof).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-005-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-005-01.md",
+      "narrative": null,
+      "content": "Suppose A is commutative and R is a dualizing complex in the sense of [RD]. If we consider R as a complex of bimodules, by identifying A =A◦, then R is a dualizing complex in the sense of the deﬁnition above. According to [Ye3], if SpecA is connected, then any dualizing complex R′ overA is isomorphic to R ⊗AP [n], where P is an invertible bimodule (not necessarily central!) and n ∈ Z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "LetA be a noetherian locally ﬁnite N-gradedk-algebra. If A is graded FBN, or A has enough normal elements, then GKdimM = Kdim M ∈ N for every ﬁnitely generated left or right graded A-moduleM . Here are some other results we prove: 1. Gabber’s Maximality Principle (Theorem 2.19). 2. Existence of double-Ext spectral sequence (Proposition 1.7).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-4-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Theorem 0.8. Let A be a noetherian connected graded k-algebra. Suppose t ∈ A\nis a nonzero homogeneous normal element of positive degree. Then A has a graded\nAuslander balanced dualizing complex if and only if so does A/(t).\nAs noted on [Zh] p. 399, the proof of [SZ] Lemma 6.1(ii) has a gap, and an\nalternative proof of the result (under extra hypotheses) is given in [Zh] Theorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We now give a complete proof of [SZ] Lemma 6.1(ii) using Auslander d ualizing",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-31-we-now-give-a-complete-proof-of-sz-lemma-61ii.md",
+      "narrative": null,
+      "content": "complexes (the proof is at end of Section 5).\nProposition 0.9. LetA be a noetherian locally ﬁnite N-gradedk-algebra. If A is\ngraded FBN, or A has enough normal elements, then GKdimM = Kdim M ∈ N\nfor every ﬁnitely generated left or right graded A-moduleM .\nHere are some other results we prove:\n1. Gabber’s Maximality Principle (Theorem 2.19).\n2. Existence of double-Ext spectral sequence (Proposition 1.7).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The existence of an Auslander rigid dualizing complex is transferre d to related",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-3-the-existence-of-an-auslander-rigid-dualizing.md",
+      "narrative": null,
+      "content": "algebras (Propositions 4.18 and 4.20, Corollaries 4.17, 5.10 and 5.11).\nThe canonical dimension, denoted by Cdim, is deﬁned when A has an Auslan-\nder dualizing complex (Deﬁnition 2.9). It is an exact ﬁnitely partitive dim ension\nfunction (Theorem 2.10). Local duality implies that the canonical dim ension is\nsymmetric in the graded case (Proposition 4.13). Therefore if A is a connected\ngraded algebra with an Auslander balanced dualizing complex, the can onical di-\nmension Cdim is exact, ﬁnitely partitive, and symmetric on graded mod ules. Note\nthat the Krull dimension, denoted by Kdim, is exact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Let A be a noetherian connected graded k-algebra. Suppose t ∈ A is a nonzero homogeneous normal element of positive degree. Then A has a graded Auslander balanced dualizing complex if and only if so does A/(t). As noted on [Zh] p. 399, the proof of [SZ] Lemma 6.1(ii) has a gap, and an alternative proof of the result (under extra hypotheses) is given in [Zh] Theorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "lem-sec-008-05.md",
+      "narrative": null,
+      "content": "Let R ∈ D(Mod(A ⊗B◦)) be a dualizing complex, and let I be the minimal injective resolution of R in Db(ModA). Let Zi := Ker(Ii →Ii+1) and let M be a ﬁnitely generated left A-module. Then there exist f1,... ,f n ∈ Hom(M,Zi) such that for every N ⊂⋂ j Ker(fj) the natural map Exti A(M,R ) → Exti A(N,R ) is zero; or equivalently, the natural map Exti A(M/N,R ) → Exti A(M,R ) is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "LetR ∈ D(Mod(A ⊗B◦)) be a dualizing complex. 1. For any M ∈ Df (ModA) one has DM ∈ Df (ModB◦) and M ∼=D◦DM .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "prop-sec-008-04.md",
+      "narrative": null,
+      "content": "Let R ∈ D(Mod(A ⊗B◦)) be a dualizing complex. Then there are convergent double-Ext spectral sequences Ep,q 2 := Extp B◦ (Ext−q A (M,R ),R ) ⇒M(1.8) RINGS WITH AUSLANDER DUALIZING COMPLEXES 7 for all M ∈ ModfA, and Ep,q 2 := Extp A(Ext−q B◦ (N,R ),R ) ⇒N(1.9) for all N ∈ ModfB◦.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-6-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Some easy examples of dualizing complexes over noncommutative ring s are given\nin Example 2.3.\nThe next proposition oﬀers an explanation of the name “dualizing com plex.”\nThe duality functors associated to R are the contravariant functors\nD := R HomA(−,R ) : D(ModA) → D(ModB◦)\nD◦ := R HomB◦ (−,R ) : D(ModB◦) → D(ModA).\nProposition 1.3. LetR ∈ D(Mod(A ⊗B◦)) be a dualizing complex.\n1. For any M ∈ Df (ModA) one has DM ∈ Df (ModB◦) and M ∼=D◦DM .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The functors D and D◦ determine a duality, i.e., an anti-equivalence, of",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-2-the-functors-d-and-d-determine-a-duality-ie-an.md",
+      "narrative": null,
+      "content": "triangulated categories between Df (ModA) and Df (ModB◦), restricting to a\nduality between Db\nf (ModA) and Db\nf (ModB◦).\nProof. 1. This is slightly stronger than [Ye1] Lemma 3.5. By adjunction we get\na functorial morphism M → D◦DM . Since the functor D◦D is way out in both\ndirections andD◦DA ∼=A by assumption, the claim follows from the reversed forms\nof [RD] Propositions I.7.1 and I.7.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Immediate from part 1, together with the fact that M ∈ Db(ModA) implies",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-2-immediate-from-part-1-together-with-the-fact-t.md",
+      "narrative": null,
+      "content": "DM ∈ Db(ModB◦).\nRemark 1.4. The noetherian hypothesis can be relaxed – dualizing complexes can\nbe deﬁned over any coherent algebra A (see [Ye1] or [Mi1]). The category of ﬁnitely\ngenerated A-modules is then replaced by the category of coherent modules. Ma ny\ndeﬁnitions and results in our paper hold for coherent algebras, as c an be easily\nchecked.\nPerhaps one can even work over an arbitrary algebra, using the ca tegory of\ncoherent complexes, as deﬁned by Illusie (see [SGA6] Expos´ e I).\nAnother direction to extend the theory is to allow k to be any commutative ring.\nIn this case the derived ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-008-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-008-01.md",
+      "narrative": null,
+      "content": "The noetherian hypothesis can be relaxed – dualizing complexes can be deﬁned over any coherent algebra A (see [Ye1] or [Mi1]). The category of ﬁnitely generated A-modules is then replaced by the category of coherent modules. Ma ny deﬁnitions and results in our paper hold for coherent algebras, as c an be easily checked. Perhaps one can even work over an arbitrary algebra, using the ca tegory of coherent complexes, as deﬁned by Illusie (see [SGA6] Expos´ e I). Another direction to extend the theory is to allow k to be any commutative ring. In this case the derived category of bimodules should b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "Miyachi proved a converse to Proposition 1.3(2): if there are con- travariant triangle functors D(ModA) → D(ModB◦) and D(ModB◦) → D(ModA) which send⨁ to∏ , preserve Db and induce duality on Db f , then there is a dualizing complex in D(Mod(A ⊗B◦)) (see [Mi2] Theorem 3.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "There are examples of algebras A and B where there is a dualizing complexR ∈ D(Mod(A ⊗B◦)), but there is no dualizing complex in D(ModAe); cf. [WZ]. The algebras A and B are necessarily not derived Morita equivalent, since given a tilting complex T ∈ D(Mod(B ⊗A◦)), the complex R ⊗L B T ∈ D(ModAe) would be dualizing (cf. [Ye3]). There are Grothendieck spectral sequences for the isomorphism of functors 1Db f (ModA) ∼=D◦D and 1Db f (ModB◦) ∼=DD◦. For modules they take this form:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-008-06.md",
+      "narrative": null,
+      "content": "Let R ∈ D(Mod(A ⊗B◦)) be a dualizing complex, let I be the minimal injective resolution of R in Db(ModA), and let Zi := Ker(Ii → Ii+1). Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[RD] Proposition V.7.3",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "SupposeA is a commutative noether- ian ring and R ∈ Db f (ModA) is a (central) dualizing complex. Let I be the minimal injective resolution of R in ModA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "For every nonzero A-module M there is a nonzero submodule N ⊂M which",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-1-for-every-nonzero-a-module-m-there-is-a-nonzer.md",
+      "narrative": null,
+      "content": "embeds in some Zi.\n2. Every indecomposable injective A-module appears in I.\nWe conclude this section with a discussion of dualizing complexes in D(Mod(A ⊗\nB◦)) when A is commutative. For a prime ideal p ⊂ A let JA(p) be an injective\nhull of A/p. Let us recall a result of Grothendieck.\nProposition 1.12 ([RD] Proposition V.7.3) . SupposeA is a commutative noether-\nian ring and R ∈ Db\nf (ModA) is a (central) dualizing complex. Let I be the minimal\ninjective resolution of R in ModA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a function d : SpecA → Z such that",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-1-there-is-a-function-d-speca-z-such-that.md",
+      "narrative": null,
+      "content": "Iq ∼=\n⨁\nd(p)=q\nJA(p).\n2. If p ⊂ q are primes and q/p ⊂A/p has height 1, then d(p) = d(q) − 1.\nThe function d is called a codimension function in [RD]. In our case we get:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "Assume in addition that A is local. Then there is an integer d such that Extq A(M,R ) = 0 and Extq B◦ (N,R ) = 0 for all q ⁄=d, all ﬁnite length A-modules M and all ﬁnite length B◦-modulesN .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-011-8-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Theorem 1.13. Suppose A is a commutative noetherian k-algebra, B is a right\nnoetherian k-algebra, and R ∈ D(Mod(A ⊗B◦)) is a dualizing complex. Let I be\nthe minimal injective resolution of R in ModA. Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There are functions d,r : SpecA → Z, with r ≥ 1 and constant on connected",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-012-1-there-are-functions-dr-speca-z-with-r-1-and-co.md",
+      "narrative": null,
+      "content": "components of SpecA, s.t.\nIq ∼=\n⨁\nd(p)=q\nJA(p)r(p).\n2. If p ⊂ q are primes of A and q/p ⊂A/p has height 1, then d(p) = d(q) − 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A is catenary, and (if A ⁄= 0) its Krull dimension is",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-013-3-a-is-catenary-and-if-a-0-its-krull-dimension-i.md",
+      "narrative": null,
+      "content": "KdimA ≤ max{d(p)} − min{d(p)}< ∞.\n4. B is an Azumaya A-algebra.\nThe proof of the theorem is after the next lemma.\nLemma 1.14. Assume in addition that A is local. Then there is an integer d such\nthat Extq\nA(M,R ) = 0 and Extq\nB◦ (N,R ) = 0 for all q ⁄=d, all ﬁnite length A-modules\nM and all ﬁnite length B◦-modulesN .\nProof. According to [Ye3] Proposition 5.4 (which works even when A ⁄=B; cf. ibid.\nProposition 2.5), left and right multiplications on R induce ring isomorphisms A ∼=\nEndD(Mod(A⊗B◦))(R) ∼= Z(B). Moreover since A is noetherian and B◦ ∼= Ext0\nA(R,R )\nwe see that B is a ﬁnite A-algebra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Suppose A is a commutative noetherian k-algebra, B is a right noetherian k-algebra, and R ∈ D(Mod(A ⊗B◦)) is a dualizing complex. Let I be the minimal injective resolution of R in ModA. Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-016-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "ex-sec-016-02.md",
+      "narrative": null,
+      "content": "Let A be a noetherian commutative regular ring of inﬁnite Krull dimension – see Nagata’s example [Na] Appendix, p. 203 Example 1. The complex R =A is a pointwise dualizing complex (see [RD] Section V.8), and R Hom A(−,A ) : Df (ModA) → Df (ModA) is a duality. However by Theorem 1.13, there is no dualizing complex in Db(Mod(A ⊗B◦)) for any right noetherian k-algebra B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Auslander Dualizing Complexes",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-014-2-auslander-dualizing-complexes.md",
+      "narrative": null,
+      "content": "then Extq\nB◦p\n(N,R p) ∼= Extq\nB◦(N ′,R ) ⊗AAp. Likewise for the injective dimension\noverAp. So indeed Rp is dualizing.\nSince the multiplicity of the indecomposable injective JA(p) in I is measured by\nExtq\nAp(k(p),R p), where k(p) is the residue ﬁeld, the lemma says that JA(p) occurs\nin the complex I in only one degree, say d(p). The fact that the multiplicity r(p)\nis locally constant will be proved in part 4 below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Choose a ∈ q − p, so in the exact sequence",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-015-2-choose-a-q-p-so-in-the-exact-sequence.md",
+      "narrative": null,
+      "content": "0 → (A/p)q\na\n− →(A/p)q →M → 0\nthe Aq-module M has ﬁnite length. Applying Ext q\nA(−,R ) to this sequence we\nobtain an exact sequence of ﬁnitely generated Aq-modules\nExtq\nA((A/p)q,R )\na\n− →Extq\nA((A/p)q,R ) → Extq+1\nA (M,R )\nfor each q. By Nakayama’s Lemma and part 1 we ﬁnd that Ext q\nA((A/p)q,R ) = 0\nunless q + 1 = d(q). Hence d(p) = d(q) − 1 as claimed.\n3. This follows trivially from 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pick a prime ideal p ⊂A. Since Rp is a dualizing complex in D(Mod(Ap ⊗B◦",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-016-4-pick-a-prime-ideal-p-a-since-rp-is-a-dualizing.md",
+      "narrative": null,
+      "content": "p)),\nthe lemma tells us that that the functors Ext d(p)\nAp (−,R p) and Ext d(p)\nB◦p\n(−,R p) are a\nduality between the categories of ﬁnite length modules over Ap and B◦\np. Further-\nmore since this duality is Ap-linear, it restricts to a duality between ModfAp/pn\np and\nModf (Bp/pn\npBp)◦ for every n ≥ 1. Since ModfAp/pn\np has an auto-duality, namely\nHomAp(−,JA(p)), it follows that there is an equivalence between ModfAp/pn\np and\nModfBp/pn\npBp. Morita Theory says there is an isomorphism φn : Bp/pn\npBp\n≃\n→\nMr(n)(Ap/pn\np ) for some number r(n).\nSince the isomorphisms φn all arise from the same equiva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-016-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "rem-sec-016-01.md",
+      "narrative": null,
+      "content": "A complex such as I in Theorem 1.12 is called a residual complex. It actually depends functorially on R: I = ER, where E is the Cousin functor. Noncommutative variants of the Cousin functor are studied in [Ye2] and [YZ2]. In particular one can show that the complex I can be made into a complex of bimodules, where on the right it is the minimal injective resolution of R in ModB◦. It follows that R is an Auslander dualizing complex, as deﬁned in Section 2. In [YZ2] we show that a more complicated version of Theorem 1.13 holds w henA =B is a PI algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-017-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "ex-sec-017-01.md",
+      "narrative": null,
+      "content": "Let A be the non-catenary noetherian commutative local ring of [Na] Appendix, p. 203 Example 2. Then again there is no dualizing comple x in Db(Mod(A ⊗B◦)) for any right noetherian k-algebra B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-017-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "ex-sec-017-02.md",
+      "narrative": null,
+      "content": "Let A be a commutative k-algebra and R a central dualizing com- plex over it. From Proposition 1.12 it is clear that R is Auslander. For a prime ideal p one has jR;A(A/p) = d(p).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-017-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "ex-sec-017-03.md",
+      "narrative": null,
+      "content": "(a) If A is Gorenstein, i.e. the bimodule A has ﬁnite injective di- mension on both sides, then R = A is a dualizing complex over A. If A is an Auslander-Gorenstein ring in the sense of [Bj], then R =A is an Auslander dualiz- ing complex. (b) IfA is a ﬁnite k-algebra, i.e. rankkA< ∞, then the bimodule A∗ := Homk(A,k ) is injective on both sides, and R = A∗ is an Auslander dualizing complex over A. Clearly jR;A(M ) = 0 for all M . (c) Let A be the matrix algebra ( k V 0 k ) where V is a ﬁnite rank k-module. Since A is hereditary it is also Gorenstein, so both A and A∗ are dualizing complexes, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "lem-sec-017-04.md",
+      "narrative": null,
+      "content": "A function dim deﬁned on ModfA and satisfying axioms (i)-(ii) (resp. axioms (i)-(iii)) extends uniquely to a function on ModA, satisfying axioms (i)-(ii) ( resp. axioms (i)-(iii)) and the axiom (iv) dim M = sup{dimM ′ |M ′ ⊂M ﬁnitely generated }.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-017-10-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Example 1.17. Let A be the non-catenary noetherian commutative local ring of\n[Na] Appendix, p. 203 Example 2. Then again there is no dualizing comple x in\nDb(Mod(A ⊗B◦)) for any right noetherian k-algebra B.\n2. Auslander Dualizing Complexes\nThe basic ideas in this section already appear in [Ye2] Section 1 (which t reats\ngraded algebras).\nAssume R ∈ Db(Mod(A ⊗B◦)) is a dualizing complex. Let M be a ﬁnitely\ngenerated A-module. The grade of M with respect to R is\njR;A(M ) := inf {q | Extq\nA(M,R ) ⁄= 0} ∈ Z ∪ {∞}.\nSimilarly deﬁne jR;B◦ for a B◦-module.\nWe are ready to deﬁne the notion appearing in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A module M is called dim -essentially pure if M contains an essential sub-",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-018-2-a-module-m-is-called-dim--essentially-pure-if.md",
+      "narrative": null,
+      "content": "module which is pure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A module M is called dim -critical if M ⁄= 0, and dim M/M ′ < dimM for",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-019-3-a-module-m-is-called-dim--critical-if-m-0-and.md",
+      "narrative": null,
+      "content": "every 0 ⁄=M ′ ⫋ M .\nDeﬁnition 2.8. 1. Let Mq(dim) be the full subcategory of ModA consisting of\nmodules M with dimM ≤q, and let Mq,f (dim) := Mq(dim) ∩ ModfA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Given a module M let Γ Mq(dim)M ⊂ M be the largest submodule M ′ ⊂ M",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-020-2-given-a-module-m-let-γ-mqdimm-m-be-the-largest.md",
+      "narrative": null,
+      "content": "such that dim M ′ ≤q.\nSince Mq(dim) is a localizing subcategory of ModA the submodule Γ Mq(dim)M is\nwell deﬁned (and in fact Γ Mq(dim) is a left exact idempotent functor). The corre-\nsponding subcategories of ModB◦ shall be denoted by M◦\nq(dim) and M◦\nq,f (dim).\nDeﬁnition 2.9. LetM be a ﬁnitely generated A-module. The canonical dimension\nof M with respect to R is\nCdimR;AM := −jR;A(M ) ∈ Z ∪ {−∞}.\nLikewise deﬁne Cdim R;B◦ .\nThe canonical dimension will not be an exact dimension function in gene ral.\nHowever we have the following theorem, which generalizes results of Bj¨ ork and\nLevasseur (the g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "IfR is an Auslander dualizing complex then CdimR;A is a ﬁnitely partitive exact dimension function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "Let 0 →M ′ →M ′ →M ′′ → 0 be a short exact sequence of ﬁnitely generatedA-modules. Then jR;A(M ) = inf {jR;A(M ′),jR;A(M ′′)}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-021-12-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "✲\np\n✻q\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅\n❅❅\np = −q\nq = −j(M )\np =d\nq q q q q q q q q q\nq q q q q q q q q\nq q q q q q q q\nq q q q q q q\nq q q q q q\nq q q q q\nq q q q\nq q q\nq q\nq\n❍❍❍ ❥\n❍❍❍ ❥\nFigure 1. The E2 term of the spectral sequence (2.12) in the ( p,q ) plane\nLemma 2.11. Let 0 →M ′ →M ′ →M ′′ → 0 be a short exact sequence of ﬁnitely\ngeneratedA-modules. Then\njR;A(M ) = inf {jR;A(M ′),jR;A(M ′′)}.\nProof. The proof goes along the lines of the proofs in [Bj] and [Lev]. By Propo sition\n1.7 we have a convergent spectral sequence\nEp,q\n2 := Extp\nB◦ (Ext−q\nA (M,R ),R ) ⇒M,(2.12)\nso there is a corresp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(cf. [Bj] Theorem 1.3 and [Lev] The-",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-022-2-cf-bj-theorem-13-and-lev-the.md",
+      "narrative": null,
+      "content": "orem 2.2).\nBy the Auslander property it then follows that jR;A(FpM/Fp+1M ) ≥ p for all\nM and p. Just as in [Bj] Proposition 1.6, one uses descending induction on p,\nstarting at p =d + 1, to prove that jR;A(FpM ) ≥p for all p. This implies that\njR;B◦ (ExtjR;A(M)(M,R )) = jR;A(M ).\nNow continue exactly like in [Bj] Proposition 1.8.\nWe conclude that Cdim R;A veriﬁes axiom (ii). Axiom (i) holds trivially. By\nsymmetry CdimR;B◦ also veriﬁes axioms (i)-(ii).\nRINGS WITH AUSLANDER DUALIZING COMPLEXES 13\nTheorem 2.14. SupposeR ∈ D(Mod(A ⊗B◦)) is an Auslander dualizing complex.\nLetM ∈ ModfA be nonzero an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "SupposeR ∈ D(Mod(A ⊗B◦)) is an Auslander dualizing complex. LetM ∈ ModfA be nonzero and CdimRM =n. Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "cor-sec-026-02.md",
+      "narrative": null,
+      "content": "For each q the category Mq,f/Mq−1,f is artinian, i.e. every object has ﬁnite length.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ext −n",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-023-1-ext-n.md",
+      "narrative": null,
+      "content": "A (M,R ) is CdimR-pure of dimension n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "For each p, Ext−p",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-024-2-for-each-p-extp.md",
+      "narrative": null,
+      "content": "B◦(Ext−p\nA (M,R ),R ) is CdimR-pure of dimension p, or is 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "For each p there is an exact sequence",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-025-3-for-each-p-there-is-an-exact-sequence.md",
+      "narrative": null,
+      "content": "0 → Γ Mp−1M → Γ MpM → Ext−p\nB◦ (Ext−p\nA (M,R ),R ) →Qp → 0,\nfunctorial in M , where CdimRQp ≤p − 2 and Mp = Mp(CdimR).\nProof. 1. Because the line q = −jR;A(M ) is on the boundary of the region of\nsupport of the spectral sequence (2.12), and the coboundary o perator of Er has\nbidegree (r, 1 −r), r ≥ 2, we see that for this value of q there is a bounded ﬁl-\ntration Ep,q\n2 ⊃ Ep,q\n3 ⊃ · · · , with Ep,q\nr /Ep,q\nr+1 a subquotient of Ep+r,q+(1−r)\nr . Now\nthe abutment of the spectral sequence is concentrated on the lin e p = −q of the\n(p,q )-plane, so Ep,q\nr = 0 for p> −q and r ≫ 0. By Lemma 2.11 we c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Take N := Ext −p",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-026-2-take-n-ext-p.md",
+      "narrative": null,
+      "content": "A (M,R ). Then Cdim R;B◦N ≤p and part 1 applies.\n3. By part 2, the sequence (2.13) and induction on p we see that Γ MpM =F −pM .\nFor an integer q let Mq := Mq(CdimR) ⊂ ModA be the localizing subcategory\nfrom Deﬁnition 2.8. The ﬁltration by dimension of support {Mq} of ModA is\ncalled the niveau ﬁltration in commutative algebraic geometry. For each q the\nquotient category Mq/Mq−1 is a locally noetherian abelian category, and the full\nsubcategory Mq,f/Mq−1,f is noetherian (see [ASZ] Lemma 1.1). By symmetry we\nhave corresponding localizing subcategories M◦\nq,f ⊂ M◦\nq ⊂ ModB◦.\nRecall from [ASZ] Sec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "thm-sec-026-01.md",
+      "narrative": null,
+      "content": "SupposeR ∈ D(Mod(A ⊗B◦)) is an Auslander dualizing complex. Then ModfA and ModfB◦ are in step duality. More precisely, for every q the func- tors Extq A(−,R ) and Extq B◦ (−,R ) induce a duality between the quotient categories Mq,f/Mq−1,f and M◦ q,f/M◦ q−1,f .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-027-01.md",
+      "narrative": null,
+      "content": "Every ﬁnitely generated A-module has a CdimR-critical compo- sition series.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-027-02.md",
+      "narrative": null,
+      "content": "SupposeR ∈ D(Mod(A⊗B◦)) is an Auslander dualizing complex. Then KdimM ≤ CdimRM −d0 for all ﬁnitely generated A-modules M . In particular if CdimRM =d0 then M is artinian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-027-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "lem-sec-027-04.md",
+      "narrative": null,
+      "content": "Let dim be a weakly symmetric exact dimension function. RINGS WITH AUSLANDER DUALIZING COMPLEXES 15",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-027-14-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Proof. By [ASZ] Lemma 1.1 the categories Mq,f/Mq−1,f and M◦\nq,f/M◦\nq−1,f are noe-\ntherian, hence by Theorem 2.15 they are also artinian.\nAt last here is:\nProof of Theorem 2.10. We already veriﬁed axioms (i) and (ii). The fact that\nCdimR is ﬁnitely partitive is immediate from Corollary 2.16, and this in turn easily\nimplies axiom (iii) – cf. [MR] Corollary 8.3.6.\nCorollary 2.17. Every ﬁnitely generated A-module has a CdimR-critical compo-\nsition series.\nProof. By Theorem 2.10 and [MR] Proposition 6.2.20.\nLet\nd0 := inf {CdimRM |M ∈ ModA,M ⁄= 0}\nd1 := CdimRA = sup{CdimRM |M ∈ ModA}.\nCorollary 2.18",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-027-03.md",
+      "narrative": null,
+      "content": "(Gabber’s Maximality Principle) LetA andB bek-algebras, with A left noetherian and B right noetherian, and let R ∈ D(Mod(A ⊗B◦)) be an Aus- lander dualizing complex. Suppose N is a CdimR-pureA-module with CdimRN = n, and M is a ﬁnitely generated submodule. Then there is a unique maxi mal module ˜M such that M ⊂ ˜M ⊂N , ˜M is ﬁnitely generated, and CdimR ˜M/M ≤n − 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-029-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "ex-sec-029-04.md",
+      "narrative": null,
+      "content": "IfA is a commutative aﬃne k-algebra and R is any central dual- izing complex over A, then R is Auslander and GKdim-Macaulay. In this case we also have Kdim M = GKdimM for all ﬁnitely generated A-modules M .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "lem-sec-029-02.md",
+      "narrative": null,
+      "content": "instead of [Len] Lemmas 2 and 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LetM be a ﬁnitely generated dim-pureA-module, and let I := AnnA(M ). If",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-028-1-letm-be-a-ﬁnitely-generated-dim-purea-module-a.md",
+      "narrative": null,
+      "content": "dimM = dimA/I then A/I is dim-pure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LetI be an ideal of A such that A/I is dim-pure and let q be a prime ideal of",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-029-2-leti-be-an-ideal-of-a-such-that-ai-is-dim-pure.md",
+      "narrative": null,
+      "content": "A that is minimal over I. Then dimA/q = dimA/I.\nProof. This is completely analogous to [KL] 9.6 and 9.5.\nRecall from [GL] that Spec A is said to have normal separation provided that\nfor any pair prime ideals p ⫋ q, the factor q/p contains a nonzero normal element\nof A/p. Under the assumptions of the lemma we say that Tauvel’s height formula\nholds in A provided\nheight p + dimA/p = dimA\nfor all primes p.\nTheorem 2.22. Suppose that A is a noetherian k-algebra,R is an Auslander du-\nalizing complex over A and CdimR is weakly symmetric. Let p ⫋ q be prime ideals\nofA with height q/p = 1. If there exi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "thm-sec-029-01.md",
+      "narrative": null,
+      "content": "Suppose that A is a noetherian k-algebra,R is an Auslander du- alizing complex over A and CdimR is weakly symmetric. Let p ⫋ q be prime ideals ofA with height q/p = 1. If there exists an element a ∈ q − p that is normal modulo p, then CdimRA/p = CdimRA/q + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "thm-sec-029-03.md",
+      "narrative": null,
+      "content": "Suppose that A is a noetherian k-algebra,R is an Auslander du- alizing complex over A and CdimR is weakly symmetric. If SpecA is normally separated, then A is catenary. If in addition A is prime, then Tauvel’s height for- mula holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-030-16-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid Dualizing Complexes",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-031-3-rigid-dualizing-complexes.md",
+      "narrative": null,
+      "content": "In this section we consider dualizing complexes which satisfy a special condition discovered by Van den Bergh [@VdB]. Rigid dualizing complexes are unique and even functorial. Furthermore if $R$ is an Auslander rigid dualizing complex then the canonical dimension $\\operatorname{Cdim}_{R}$ is particularly well behaved (as examples indicate; see Question [\\[a4.15\\]](#a4.15){reference-type=\"ref\" reference=\"a4.15\"}). By default $A$ and $B$ denote noetherian $k$-algebras.\n\nFirst we shall need some more notation for bimodules. Suppose $A$ and $B$ are $k$-algebras. For an element $a \\in A$ we denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-032-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "cor-sec-032-02.md",
+      "narrative": null,
+      "content": "If R is a rigid dualizing complex over A then for any q the coho- mology bimodule HqR is central over Z(A). Deﬁnition 3.7. Let A →B be a ﬁnite homomorphism of k-algebras. Assume the rigid dualizing complexes ( RA,φA) and ( RB,φB) exist. If there is a morphism ψ satisfying the conditions of Theorem 3.2 then we call it the trace morphism and denote it by Tr B/A. The next corollary is obvious.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-032-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "cor-sec-032-03.md",
+      "narrative": null,
+      "content": "Let A →B and B → C be ﬁnite k-algebra homomorphisms. As- sume the rigid dualizing complexes (RA,φA), (RB,φB) and (RC,φC ) and the trace morphisms TrB/A and TrC/B exist. Then TrC/A exists too, and TrC/A = TrB/A TrC/B. The existence of the trace morphism allows to transfer good prope rties of RA to RB.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-033-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "ex-sec-033-01.md",
+      "narrative": null,
+      "content": "Suppose A is an aﬃne k-algebra and ﬁnite over its center. Then we can ﬁnd a smooth integral commutative k-algebraC (e.g. a polynomial algebra), and a ﬁnite homomorphism C → Z(A). Say Kdim C =n. Since Ω n C/k[n] is a rigid dualizing complex over C, it follows from [Ye3] Proposition 5.9 that R := R HomC(A, Ωn C/k [n]) is a rigid dualizing complex over A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-033-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "ex-sec-033-02.md",
+      "narrative": null,
+      "content": "Let A be the algebra ( k V 0 k ) where V is a ﬁnite rank k-module. The rigid dualizing complex is A∗ := Hom k(A,k ). Now A is hereditary, hence Gorenstein, so the bimodule A is a dualizing complex. When V ⁄= 0 the dualizing complexes A and A∗ are not isomorphic, so A is not rigid then.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-033-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "ex-sec-033-03.md",
+      "narrative": null,
+      "content": "Let t1,t 2,... be a countable sequence of commuting indetermi- nates and let C := k(t1,t 2,... ) be the ﬁeld of rational functions. We claim that as k-algebra, C has no rigid dualizing complex. Since any dualizing complex over C has to be of the form R = Cσ[n] for an automorphism σ and an integer n (by [Ye3] Corollary 4.6 and Propositions 3.4 and 3.5), it suﬃces to prov e that Exti C e (C,C e) = 0 for all i. This follows from the next lemma with n = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-033-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-033-04.md",
+      "narrative": null,
+      "content": "Let Dn := Ce/I where I is the ideal generated by the elements fj :=xj ⊗ 1 − 1 ⊗xj for j = 1,... ,n . Then Exti C e(C,Dn) = 0 for all i,n ≥ 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "prop-sec-032-01.md",
+      "narrative": null,
+      "content": "Let (R,φ ) be a rigid dualizing complex over A. Then the two k-algebra homomorphisms λ,ρ : Z(A) → EndD(ModAe)(R) from the center of A, namely left and right multiplication, are both isomorphis ms, and are equal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-032-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "prop-sec-032-04.md",
+      "narrative": null,
+      "content": "LetA →B be a ﬁnite homomorphism of k-algebras, and assume the rigid dualizing complexes RA and RB and the trace morphism TrB/A exist.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-032-18-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "The isomorphism\nψ := (a1 ⊗ 1)ψ′ = (1 ⊗a◦\n2)ψ′\nwill satisfy condition (ii).\nThus we may speak of the rigid dualizing complex of A (if it exists).\nLemma 3.3 can be sharpened when A =B.\nProposition 3.5. Let (R,φ ) be a rigid dualizing complex over A. Then the two\nk-algebra homomorphisms\nλ,ρ : Z(A) → EndD(ModAe)(R)\nfrom the center of A, namely left and right multiplication, are both isomorphis ms,\nand are equal.\nProof. By Lemma 3.3 with A = B and ψ = 1, we see that λ and ρ are isomor-\nphisms. Take a ∈ Z(A), and let a′ :=ρ−1λ(a) ∈ Z(A). Using the deﬁnition of the\nmixed action on R ⊗R and the rigidi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LetC be any k-algebra. Then for M ∈ D(Mod(B ⊗C◦)) there is a functorial",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-033-1-letc-be-any-k-algebra-then-for-m-dmodb-c-there.md",
+      "narrative": null,
+      "content": "isomorphism\nR HomB(M,RB) ∼= R HomA(M,RA)\nin D(Mod(C ⊗A◦)).\n2. If RA is Auslander then so is RB.\n3. For any B-moduleM , CdimRA;AM = CdimRB ;BM .\n4. If RA is GKdim-Macaulay, then so is RB.\n5. SupposeA →B is surjective. If RA is Kdim-Macaulay then so is RB.\nRINGS WITH AUSLANDER DUALIZING COMPLEXES 19\nProof. 1. We can assume RA and RB are complexes of injectives over Ae and Be\nrespectively, and TrB/A is a homomorphism of complexes. Then we get a functorial\nmorphism R HomB(M,RB) → R HomA(M,RA) in D(Mod(C ⊗A◦)). To prove it’s\nan isomorphism we can forget the C-module structure. Because the two funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-034-20-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "We end the section with a basic question.\nQuestion 3.15. LetR be a rigid dualizing complex and M anA-bimodule ﬁnitely\ngenerated on both sides. Is there a functorial isomorphism R Hom A(M,R ) ∼=\nR HomA◦(M,R )? Or, at least, is Cdim R;AM = CdimR;A◦M ?\nFor a partial answer turn to Section 6, where the presence of aux iliary ﬁltrations\nallows us to take advantage of results in Sections 4-5 on graded alge bras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dualizing Complexes over Graded Algebras",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-035-4-dualizing-complexes-over-graded-algebras.md",
+      "narrative": null,
+      "content": "In this section we consider connected $\\mathbb{Z}$-graded $k$-algebras, namely algebras $A = \\bigoplus_{n \\geq 0} A_{n}$ with $A_{0} \\cong k$ and $A_{n}$ a finitely generated $k$-module.\n\nFor such an algebra $A$ let $\\operatorname{\\mathsf{GrMod}} A$ be the category of $\\mathbb{Z}$-graded left modules, with degree $0$ homomorphisms. For $M, N \\in \\operatorname{\\mathsf{GrMod}} A$ we write $M(n)$ for the shifted module with $M(n)_{i} = M_{n + i}$, and $$\\operatorname{Hom}_{A}^{\\mathrm{gr}}(M, N) := \\bigoplus_{n \\in \\mathbb{Z}}\n\\operatorname{Hom}_{\\operatorname{\\mathsf{GrMod}} A}^{\\mathrm{gr}}(M,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-036-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "cor-sec-036-04.md",
+      "narrative": null,
+      "content": "Let R be a balanced dualizing complex over A. Then there is a functorial isomorphism R HomA(M,R ) ∼= R HomA◦ (M,R ) for M ∈ D(GrModAe) with ﬁnitely generated cohomology modules on both sides. We shall write Cdim A instead of Cdim R;A when R is the balanced dualizing complex, and when we are working in GrModA. Since a balanced dualizing complex is rigid in the ungraded sense (by Corollary 6.7), this is consistent with Deﬁnition 3.10. Deﬁnition 4.12. If A has a graded Auslander balanced dualizing complex R we say A is graded Auslander . Furthermore if dim is an exact dimension function on graded",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-036-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "cor-sec-036-05.md",
+      "narrative": null,
+      "content": "Suppose A is graded Auslander. Then Cdim is symmetric on graded modules. That is to say, if M is a graded A-bimodule, ﬁnitely generated on both sides, then CdimAM = CdimA◦M. RINGS WITH AUSLANDER DUALIZING COMPLEXES 23 IfA is graded Auslander we have a bound on Krull dimension of graded mod ules:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-036-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "lem-sec-036-07.md",
+      "narrative": null,
+      "content": "Let A → B be a ﬁnite homomorphism of noetherian connected gradedk-algebras, with augmentation ideals mA, mB. Assume A satisﬁes condition",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-036-22-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Theorem 4.7 (Local Duality) . LetR be a balanced dualizing complex over a noe-\ntherian connected graded k-algebra A. Then for any graded k-algebra B and any\nM ∈ D(GrMod(A ⊗B◦)) there is a functorial isomorphism\nR Homgr\nA (M,R ) ∼= (RΓ mM )∗.\nThis is proved by combining [VdB] Theorems 5.1 and 6.3. The theorem wa s ﬁrst\nproved in [Ye1], but only for M ∈ Db\nf (GrModA).\nProposition 4.8 ([VdB] Proposition 8.2(2)) . A balanced dualizing complex R is\nrigid in the graded sense.\nRemark 4.9. According to an exercise in [VdB] (whose only proof we know is\nquite involved), if I is a graded-injective A-modu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-036-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "rem-sec-036-02.md",
+      "narrative": null,
+      "content": "According to an exercise in [VdB] (whose only proof we know is quite involved), if I is a graded-injective A-module, then I has injective dimension ≤ 1 in ModA. An immediate consequence of this fact is that a graded dualizing complex R over A is also an ungraded dualizing complex. The special case we need, namely that a balanced dualizing complex R is rigid in the ungraded sense, is proved by other means in Corollary 6.7. Here is another result from [VdB]. Let us write mAe for the augmentation ideal of Ae, so mAe = m ⊗A◦ +A ⊗ m◦.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-036-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Local Duality",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "thm-sec-036-01.md",
+      "narrative": null,
+      "content": "LetR be a balanced dualizing complex over a noe- therian connected graded k-algebra A. Then for any graded k-algebra B and any M ∈ D(GrMod(A ⊗B◦)) there is a functorial isomorphism R Homgr A (M,R ) ∼= (RΓ mM )∗. This is proved by combining [VdB] Theorems 5.1 and 6.3. The theorem wa s ﬁrst proved in [Ye1], but only for M ∈ Db f (GrModA).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-036-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[VdB] Corollary 4.8",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "thm-sec-036-03.md",
+      "narrative": null,
+      "content": "AssumeA has a balanced dualizing complex R. Let M ∈ D(GrModAe) have ﬁnitely generated cohomology modules on both sides. Then there is a functorial isomorphism RΓ mM ∼= RΓ mAeM ∼= RΓ m◦M. We obtain the following interesting result:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-036-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "thm-sec-036-06.md",
+      "narrative": null,
+      "content": "SupposeA is graded Auslander. Then KdimM ≤ CdimM = sup{q | HqRΓ mM ⁄= 0}< ∞ for all ﬁnitely generated graded A-modulesM .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a functorial isomorphism",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-037-1-there-is-a-functorial-isomorphism.md",
+      "narrative": null,
+      "content": "RΓ mBM ∼= RΓ mAM\nfor M ∈ D+(GrModB).\nProof. For any homomorphism A → B of graded algebras there is a functorial\nmorphism RΓ mBM → RΓ mAM in D(GrModA). By [AZ] Lemma 8.2, the extra\nassumptions guarantee that H pRΓ mBM → HpRΓ mAM is bijective for all p.\nThe following theorem is a generalization of [Jo1] Theorem 3.3.\nTheorem 4.16. Let A → B be a ﬁnite homomorphism of graded k-algebras and\nlet RA be a balanced dualizing complex over A. Then:\n1. B has a balanced dualizing complex RB.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a morphism TrB/A : RB → RA in D(GrModAe), which satisﬁes",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-038-2-there-is-a-morphism-trba-rb-ra-in-dgrmodae-whi.md",
+      "narrative": null,
+      "content": "conditions (i) and (ii) of Theorem 3.2.\nProof. From [VdB] Theorem 6.3 we know that A and A◦ satisfy χ, and Γ mA and\nΓ m◦\nA = Γ mA◦ have ﬁnite cohomological dimensions. So by Lemma 4.15 the same is\ntrue for B. Thus B has a balanced dualizing complex RB ∼= (RΓ mBB)∗.\nThe morphism A → B in D(GrModAe) induces a morphism (RΓ mAB)∗ →\n(RΓ mAA)∗, also in D(GrModAe). But (RΓ mAB)∗ ∼= (RΓ mBB)∗ and we get TrB/A :\nRB → RA. The isomorphism of functors RΓ mA\n∼= RΓ m◦\nA of [VdB] Corollary 4.8\nshows that TrB/A is the same when calculated on the right, i.e., using RΓ m◦\nA.\nCondition (i) of Theorem 3.2 is a co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "thm-sec-037-01.md",
+      "narrative": null,
+      "content": "Let A → B be a ﬁnite homomorphism of graded k-algebras and let RA be a balanced dualizing complex over A. Then: 1. B has a balanced dualizing complex RB.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "cor-sec-039-01.md",
+      "narrative": null,
+      "content": "LetA and B be as in Theorem 4.16.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "prop-sec-040-01.md",
+      "narrative": null,
+      "content": "Suppose A has a balanced dualizing complex. Let dim stand for either Kdim or GKdim.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-044-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "prop-sec-044-01.md",
+      "narrative": null,
+      "content": "Let A → B be a ﬁnite homomorphism of connected graded algebras, and assume B ∼= A ⊕L as graded A-bimodules. If B has a balanced dualizing complex then so does A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-044-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "prop-sec-044-02.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group of order prime to chark, acting on B by graded k-algebra automorphisms, and let A := BG be the ﬁxed ring. If B is graded Auslander then so is A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-039-24-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Corollary 4.17. LetA and B be as in Theorem 4.16.\n1. There is a functorial isomorphism\nR Homgr\nB (M,RB) ∼= R Homgr\nA (M,RA)\nfor all M ∈ D(GrModB).\n2. If A is graded Auslander then so is B.\n3. Cdim AM = CdimBM for M ∈ GrModB.\n4. If A is graded Auslander GKdim-Macaulay then so is B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SupposeA →B is surjective. If A is graded Auslander Kdim-Macaulay, then",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-040-5-supposea-b-is-surjective-if-a-is-graded-auslan.md",
+      "narrative": null,
+      "content": "so is B.\nThe next three propositions show that the graded Auslander prop erty can be\ntransferred from one algebra to a related algebra.\nProposition 4.18. Suppose A has a balanced dualizing complex. Let dim stand\nfor either Kdim or GKdim.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let a, b be graded ideals. If the quotient algebras A/a and A/b are graded",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-041-1-let-a-b-be-graded-ideals-if-the-quotient-algeb.md",
+      "narrative": null,
+      "content": "Auslander (resp. and graded dim-Macaulay), then so is A/ab.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let a be a nilpotent graded ideal of A. If A/a is graded Auslander (resp. and",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-042-2-let-a-be-a-nilpotent-graded-ideal-of-a-if-aa-i.md",
+      "narrative": null,
+      "content": "graded dim-Macaulay) then so is A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "If for every minimal graded prime ideal p the quotient algebra A/p is graded",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-043-3-if-for-every-minimal-graded-prime-ideal-p-the.md",
+      "narrative": null,
+      "content": "Auslander (resp. and graded dim-Macaulay), then so is A.\nProof. 1. As usual we write D := R Homgr\nA (−,R ) where R is the balanced dualizing\ncomplex. We may assume ab = 0. Given a ﬁnitely generated graded module\nM consider the exact sequence 0 → bM → M → M/bM → 0, and note that\nbM is an A/a-module. For any i there is an exact sequence H iD(M/bM ) →\nHiDM → HiD(bM ). Since A/a and A/b have the graded Auslander property, the\nsubquotients of H iD(M/bM ) and H iD(bM ) have Cdim no more than i. Observe\nthat here we are using Corollary 4.17. Hence by the long exact seque nce of duality,\nsubmodules of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let p1,... , pm be the minimal prime ideals of A. Then ( ∏",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-044-3-let-p1-pm-be-the-minimal-prime-ideals-of-a-the.md",
+      "narrative": null,
+      "content": "i pi)n = 0 for some\nn, and we can use parts 1 and 2.\nProposition 4.19. Let A → B be a ﬁnite homomorphism of connected graded\nalgebras, and assume B ∼= A ⊕L as graded A-bimodules. If B has a balanced\ndualizing complex then so does A.\nProof. Let M be a ﬁnitely generated graded A-module. Then by Lemma 4.15 we\nget\nRΓ mB (B ⊗AM ) ∼= RΓ mA(B ⊗AM ) ∼= RΓ mAM ⊕ RΓ mA(L ⊗AM ).\nBy Theorem 4.5 and Lemma 4.4 applied to B, we see that the graded B-module\nHiRΓ mB (B ⊗AM ) is right bounded, and vanishes for large i. Hence the same is\ntrue for the A-module HiRΓ mAM . Now apply Theorem 4.6.\nWe do not know if t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-045-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "prop-sec-045-02.md",
+      "narrative": null,
+      "content": "we can assume A is prime, hence t is a regular element. The same proposition tells us that A/(tn) is graded Auslander for all n ≥ 1.(5.2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graded Algebras with Some Commutativity Hypothesis",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-045-5-graded-algebras-with-some-commutativity-hypoth.md",
+      "narrative": null,
+      "content": "In this section we continue the discussion of balanced dualizing comple xes over\nconnected graded noetherian k-algebras, but now we look at algebras which have\nsome commutativity hypothesis, like PI, FBN, or enough normal elem ents. The\nmain result here is:\nTheorem 5.1. Let A be a noetherian connected graded k-algebra. Suppose t ∈ A\nis a homogeneous normal element of positive degree, and let B :=A/(t).\n1. If B has a balanced dualizing complex, then so does A.\n2. If in addition B is graded Auslander, then so is A.\n3. If in addition B is graded Kdim-(resp. GKdim)-Macaulay, then so is A.\nThe “cla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-045-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "thm-sec-045-01.md",
+      "narrative": null,
+      "content": "Let A be a noetherian connected graded k-algebra. Suppose t ∈ A is a homogeneous normal element of positive degree, and let B :=A/(t). 1. If B has a balanced dualizing complex, then so does A. 2. If in addition B is graded Auslander, then so is A. 3. If in addition B is graded Kdim-(resp. GKdim)-Macaulay, then so is A. The “classical” case of this theorem, i.e. when B is Gorenstein and t is a regular element (i.e. a non-zero-divisor), is [Lev] Theorem 3.6. Part 1 of the theorem is a trivial consequence of Theorems 4.5 and 4.6, and [AZ] Theorem 8.8.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-046-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "lem-sec-046-01.md",
+      "narrative": null,
+      "content": "If M is t-torsion-free then CdimM = Cdim M/tM + 1 . If d = CdimM then H−dDM is t-torsion-free.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-046-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "lem-sec-046-02.md",
+      "narrative": null,
+      "content": "LetN be the t-torsion submodule of M . Then CdimM = max{CdimN, CdimM/N }.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-046-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "lem-sec-046-03.md",
+      "narrative": null,
+      "content": "CdimM = max{CdimL, CdimM/L} for every L ⊂M .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-046-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "lem-sec-046-04.md",
+      "narrative": null,
+      "content": "Supposetn kills the t-torsion submodule of M . Then CdimM ≤ CdimM/tnM + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-046-26-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "We denote by D the duality functor R Hom A(−,R ), where R is the balanced dual-\nizing complex of A. Recall that according to Theorem 4.7, H −iDM ∼= (RiΓ mM )∗.\nBy deﬁnition Cdim M = sup{i | H−iDM ⁄= 0}, so trivially\nCdimM ≤ max{CdimM ′, CdimM/M ′}(5.3)\nfor all M ′ ⊂M .\nLemma 5.4. If M is t-torsion-free then CdimM = Cdim M/tM + 1 . If d =\nCdimM then H−dDM is t-torsion-free.\nProof. Let σ be the automorphism of A such that t ·a = σ(a) ·t, and let σM be\nthe corresponding twisted module. Then we have an exact sequenc e\n0 → σ−1\nM (−l)\nt·\n− →M →M/tM → 0\nwhere l is the degree of t. It is easy to see t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-048-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "cor-sec-048-02.md",
+      "narrative": null,
+      "content": "Let A be a connected graded k-algebra with a balanced dualizing complex. Suppose that every graded prime quotient A/p satisﬁes one of the following conditions: (i) A/p is graded Auslander (resp. and graded Kdim-(or GKdim)-Macaulay); or (ii) A/p has a normal element of positive degree. Then A is graded Auslander (resp. and graded Kdim-(or GKdim-)Macaulay)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-048-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "cor-sec-048-03.md",
+      "narrative": null,
+      "content": "LetA andB be noetherian connected graded k-algebras. Assume A has a balanced dualizing complex and is graded Auslander (resp. and graded Kdim(or GKdim)-Macaulay), and B has enough normal elements. Then A ⊗B is a noetherian connected graded k-algebra with a balanced dualizing complex, and it is graded Auslander (resp. and graded Kdim(or GKdim)-Macaulay).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-048-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "ex-sec-048-01.md",
+      "narrative": null,
+      "content": "Let us consider a simple case of Theorem 7.1. Let A =B[t] where t is a central variable of degree 1. Let RB be the balanced dualizing complex of B. Then the balanced dualizing complex of A is nothing but RA =RB ⊗k[t] Ω 1 k[t]/k[1] ∼=RB[t](−1)[1] where Ω 1 k[t]/k = k[t] · dt ∼= k[t](−1) as graded k[t]-modules. This follows from [VdB] Theorem 7.1, which states that if B,C are noetherian connected graded k- algebras with balanced dualizing complexes RB andRC respectively, and ifB ⊗C is noetherian, then RB ⊗RC is a balanced dualizing complex over B ⊗C. By Theorem 5.1,A is graded Auslander and Kdim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-047-28-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "gives rise to a long exact sequence\n· · · → (H−iDM )σn\n(−nl)\ntn·\n− − →H−iDM →P = (H−i+1D(M/tnM ))σn\n(−nl) → · · · .\nSinceM/tnM ist-torsion,P is alsot-torsion, and every submodule of P has Cdim ≤\ni − 1. So according to Lemma 5.8, Cdim H −iDM ≤ (i − 1) + 1 = i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Assume B is graded GKdim-Macaulay. Since A/(tn) is graded GKdim-Macaulay",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-048-3-assume-b-is-graded-gkdim-macaulay-since-atn-is.md",
+      "narrative": null,
+      "content": "for n ≥ 1 (by Proposition 4.18), it suﬃces to show that Cdim M = GKdimM for\nt-torsion-free modules. We know that in this case GKdim M = GKdimM/tM + 1,\nand by Lemma 5.4 this is true also for Cdim M .\nFinally assume B is graded Kdim-Macaulay. Again we need only consider M\nwhich is t-torsion-free. It is clear that Kdim M ≥ KdimM/tM + 1. Hence it\nfollows from Lemmas 5.4 and 5.7 that Kdim M ≥ CdimM . But by Theorem 4.14,\nKdimM ≤ CdimM .\nExample 5.9. Let us consider a simple case of Theorem 7.1. Let A =B[t] where\nt is a central variable of degree 1. Let RB be the balanced dualizing complex of B.\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We say two graded A-modulesM andN are similar if there are isomorphisms",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-049-1-we-say-two-graded-a-modulesm-andn-are-similar.md",
+      "narrative": null,
+      "content": "M ∼=N and R Hom gr\nA (M,R ) ∼= R Homgr\nA (N,R ) in D(GrModk).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The algebra A satisﬁes the similar submodule condition if every nonzero, m-",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-050-2-the-algebra-a-satisﬁes-the-similar-submodule-c.md",
+      "narrative": null,
+      "content": "torsion-free, ﬁnitely generated, graded A-module M has graded submodules\nN ′ ⫋ N ⊂M with N ′ similar to N (−l) for some l> 0.\nWe remark that two complexes M,N ∈ Db\nf (GrModA) are isomorphic in\nD(GrModk) if and only if they have equal Hilbert functions, namely rank k(HiM )j =\nrankk(HiN )j for alli,j ∈ Z. This deﬁnition of similar submodule condition is equiv-\nalent to the deﬁnition given in [Zh] Section 2 when A is AS-Gorenstein, which is\nthe case considered there. Also, as mentioned in [Zh] Section 2, the re are algebras\nwhich do not satisfy the similar submodule condition.\nTheorem 5.13. Assum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A is graded Kdim- and GKdim-Macaulay. More precisely",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-051-2-a-is-graded-kdim--and-gkdim-macaulay-more-prec.md",
+      "narrative": null,
+      "content": "CdimRM = KdimM = GKdimM\nfor every ﬁnitely generated graded left or right A-moduleM .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-050-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "thm-sec-050-01.md",
+      "narrative": null,
+      "content": "AssumeA is a noetherian connected gradedk-algebra and satisﬁes one of the following: (i) A is a PI algebra. (ii) A is graded-FBN. (iii) A has enough normal elements. Then A has a balanced dualizing complex, and the similar submodule condition holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-050-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "thm-sec-050-02.md",
+      "narrative": null,
+      "content": "Let A be a noetherian connected graded k-algebra which has a balanced dualizing complex R and satisﬁes the similar submodule condition. Then 1. A is graded Auslander.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-052-30-amnon-yekutieli-and-james-j-zhang.md",
+      "narrative": null,
+      "content": "Proof. First we observe that [Zh] Lemma 2.2 holds (same proof), and hence KdimM\n≥ GKdimM and GKdimM <∞ for every ﬁnitely generated graded A-module M .\nTherefore, replacing Ext i(−,A ) with Ext i\nA(−,R ), the proof of [Zh] Theorem 3.1\ncan be copied verbatim. Let us just mention the key point of the pro of. We prove\nby induction on GKdim M that for every ﬁnitely generated graded A-module (resp.\nA◦-module) M :\n(a) jR(M ) = − GKdimM .\n(b) GKdim Ext j\nA(M,R ) = GKdim M , where j =jR(M ).\n(c) For every jR(M ) ≤i ≤ 0 one has GKdim Ext i\nA(M,R ) ≤ −i.\nThis implies that A is graded Auslander and graded",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Noetherian Connected Filtrations",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-053-6-noetherian-connected-filtrations.md",
+      "narrative": null,
+      "content": "In this section we use ﬁltrations to transfer results of Sections 4- 5 on connected\ngraded algebras to non-graded algebras. Throughout the sectio n A denotes a noe-\ntherian k-algebra.\nRINGS WITH AUSLANDER DUALIZING COMPLEXES 31\nSuppose a k-module M is given an increasing ﬁltration F = {FnM }n∈Z with⋂\nnFnM = 0 and ⋃\nnFnM =M . The Rees module is the graded k[t]-module\nReesFM :=\n⨁\nn∈Z\nFnM ·tn ⊂M [t,t −1]\nwhere t is a central indeterminate. It is easy to check that\n(ReesFM )/(t − 1) · (ReesFM ) ∼=M\nand\n(ReesFM )/t · (ReesFM ) ∼= grFM =\n⨁\nn∈Z\nFnM/Fn−1M.\nNow let F = {FnA}n∈Z be a ﬁltration of A such",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-053-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "thm-sec-053-01.md",
+      "narrative": null,
+      "content": "Let F be a noetherian connected ﬁltration on A and let ˜A := ReesFA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-055-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "lem-sec-055-01.md",
+      "narrative": null,
+      "content": "1. The functor π is exact. 2. If ˜I ∈ GrMod ˜A is injective then π ˜I ∈ ModA is injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "If ˜A has a balanced dualizing complex ˜R then",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-054-1-if-a-has-a-balanced-dualizing-complex-r-then.md",
+      "narrative": null,
+      "content": "R := (A ⊗ ˜A ˜R ⊗ ˜AA)[−1]\nis a rigid dualizing complex over A.\n2. If ˜R is graded Auslander then R is Auslander.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Suppose ˜R is graded Auslander. If ˜R is graded GKdim-Macaulay then R is",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-055-3-suppose-r-is-graded-auslander-if-r-is-graded-g.md",
+      "narrative": null,
+      "content": "GKdim-Macaulay.\nThe proof comes after this lemma.\nConsider the functor π : GrModk[t] → Modk, ˜M ↦→ ˜M/ (t − 1) ˜M . Write ˜At :=\nA[t,t −1].\nLemma 6.3. 1. The functor π is exact.\n2. If ˜I ∈ GrMod ˜A is injective then π ˜I ∈ ModA is injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a functorial isomorphism",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-056-3-there-is-a-functorial-isomorphism.md",
+      "narrative": null,
+      "content": "R HomA(π ˜M,π ˜N ) ∼=πR Homgr\n˜A ( ˜M, ˜N )\nfor ˜M, ˜N ∈ Db\nf (GrMod ˜A).\n32 AMNON YEKUTIELI AND JAMES J. ZHANG\nProof. 1, 2. π is a composition of the functors “localization by t” (−)t : GrMod ˜A →\nGrMod ˜At and “taking degree 0 component” ( −)0 : GrMod ˜At → ModA, both of\nwhich are exact. The second is even an equivalence, so injectives go to injectives.\nSince ˜At is noetherian a standard argument shows that the ˜At-module ˜It is injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "There is a functorial morphism ψ : πR Homgr",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-057-2-there-is-a-functorial-morphism-ψ-πr-homgr.md",
+      "narrative": null,
+      "content": "˜A ( ˜M, ˜N ) → R HomA(π ˜M,π ˜N ).\nFixing ˜N these are way-out right contravariant functors of ˜M . By [RD] Proposition\nI.7.1(iv) – reversed – it’s enough to check that ψ is an isomorphism when ˜M = ˜A,\nand then it’s trivial.\nProof of Theorem 6.2. 1. By Proposition 4.8 and the graded version of Corollary\n3.6 each cohomology module H q ˜R is k[t]-central (cf. Remark 6.6 below). Deﬁne\n˜Rt := ˜At ⊗ ˜A ˜R ⊗ ˜A ˜At ∈ D(GrMod( ˜At)e).\nWe see that the homomorphisms ˜At ⊗ ˜A ˜R → ˜Rt and ˜R ⊗ ˜A ˜At → ˜Rt are quasi-\nisomorphisms.\nBecause ˜A →A =π ˜A is ﬂat we also have\nA ⊗ ˜A ˜R[−1] ∼= ˜R[−1] ⊗ ˜AA ∼",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Let ˜M be a t-torsion-free ﬁnitely generated graded ˜A-module. We claim that",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-058-2-let-m-be-a-t-torsion-free-ﬁnitely-generated-gr.md",
+      "narrative": null,
+      "content": "jR;A(π ˜M ) = j ˜R; ˜A ˜M + 1.(6.4)\nRINGS WITH AUSLANDER DUALIZING COMPLEXES 33\nFirst by Lemma 6.3 we get for any q:\nExt−q+1\nA (π ˜M,R ) ∼=π Ext−q\n˜A ( ˜M, ˜R),(6.5)\nso jR;A(π ˜M ) ≥j ˜R; ˜A ˜M + 1. Now take q := −j ˜R; ˜A ˜M and write ˜N := Ext −q\n˜A ( ˜M, ˜R).\nIfπ ˜N = 0 then tl ˜N = 0 for some l> 0. But in the Ext spectral sequence converging\nto ˜M (see proof of Theorem 2.10) the dominant term is Ext −q\n˜A◦ ( ˜N, ˜R) which is killed\nbytl. We get Cdim ˜Rtl ˜M <Cdim ˜R ˜M =q, which is absurd since tl ˜M ∼= ˜M (−l).\nGiven ﬁnitely generated A-modules M ⊂ N , take any good ﬁltration {FnM },\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-059-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "cor-sec-059-02.md",
+      "narrative": null,
+      "content": "SupposeA is connected graded and R is a balanced dualizing com- plex over A. Then R is a rigid dualizing complex over A in the ungraded sense.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-059-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "cor-sec-059-03.md",
+      "narrative": null,
+      "content": "Suppose A has a noetherian connected ﬁltration F , and let ¯A := grFA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-060-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "cor-sec-060-01.md",
+      "narrative": null,
+      "content": "SupposeA has a noetherian connected ﬁltration F , and ¯A := grFA satisﬁes either of the following: (i) ¯A is a PI algebra. (ii) ¯A is graded-FBN. (iii) ¯A has enough normal elements. Then A has an Auslander, GKdim-Macaulay, rigid dualizing complex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-060-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "ex-sec-060-02.md",
+      "narrative": null,
+      "content": "IfA is a noetherian connected graded algebra, then the ﬁltration FnA =⨁ i≤nAi is a noetherian connected ﬁltration.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-060-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "ex-sec-060-03.md",
+      "narrative": null,
+      "content": "Suppose A is generated by elements x1,... ,x n, and for every i ⁄=j there is some relation xjxi =qi,jxixj +ai,jxi +bi,jxj +ci,j(6.12) with qi,j,ai,j,bi,j,ci,j ∈ k. Let V := k +∑ k ·xi ⊂ A and deﬁne a ﬁltration FnA :=Vn. Then grFA is a quotient of the skew polynomial algebra kq[x1,... ,x n], so F is a noetherian connected ﬁltration. Furthermore gr FA has enough normal elements (namely the xi); so Corollary 6.9 holds. It is easy to check that the relations (6.11) are satisﬁed in the following classes of algebras: (i) Commutative aﬃne algebras. (ii) Weyl algebras, enveloping algebras of ﬁnite dim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-060-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "ex-sec-060-05.md",
+      "narrative": null,
+      "content": "IfA is an aﬃne k-algebra ﬁnite over its center, then there is a ﬁ- nite centralizing homomorphism k[t1,... ,t n] →A from a commutative polynomial algebra. By the lemma and Example 6.10, A has a noetherian connected ﬁltration. ThusA satisﬁes the assumptions of Corollary 6.9. RINGS WITH AUSLANDER DUALIZING COMPLEXES 35",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-060-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "ex-sec-060-06.md",
+      "narrative": null,
+      "content": "Here is an example of a prime PI algebra A which is not ﬁnite over its center yet has a noetherian connected ﬁltration (Schelte r’s Example, [Ro] p. 492 Exercise 27). Let t,λ 1,λ 2 be commuting indeterminates of degree 1. Deﬁne ˜C := Q[ √ 2, √ 3,λ 1,λ 2,t ] ˜C1 := Q[ √ 6,t √ 2 +λ1,λ 2,λ 2 √ 2,t ] ˜C2 := Q[ √ 6,t √ 3 +λ1,λ 2,λ 2 √ 2,t ] ˜M := ˜C1λ2 + ˜C1λ2 √ 2 ⊂ ˜C ˜A := [ ˜C1 ˜M ˜M ˜C2 ] . Then ˜A is a noetherian graded algebra and ˜A0 is ﬁnite over k := Q. The quotient A := ˜A/(t − 1) acquires a ﬁltration {FnA}, and if we modify it by setting F0A := Q this becomes a connected ﬁltration. But A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/lem-sec-060-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "lem-sec-060-04.md",
+      "narrative": null,
+      "content": "Suppose f : A → B is a ﬁnite centralizing homomorphism and F is a noetherian connected ﬁltration on A. Then there is a noetherian connected ﬁltration F on B such that f preserves the ﬁltrations and ReesF (f ) : Rees FA → ReesFB is ﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-060-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "prop-sec-060-08.md",
+      "narrative": null,
+      "content": "Suppose A has a noetherian connected ﬁltration F and grFA is AS-Gorenstein (resp. AS-regular ). Then the following statements hold. 1. A is a Gorenstein (resp. regular ) algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "By the proof of part 2, given a ﬁnitely generated A-moduleM one has CdimR;AM",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-059-3-by-the-proof-of-part-2-given-a-ﬁnitely-generat.md",
+      "narrative": null,
+      "content": "+1 = Cdim ˜R; ˜A ˜M where ˜M := ReesFM w.r.t. any good ﬁltration {FnM }. But\nbecause ˜Mt ∼=M ⊗k[t,t −1] we also have\nGKdimAM + 1 = GKdim ˜At\n˜Mt = GKdim ˜A ˜M.\nRemark 6.6. It is not too hard to show that R could be chosen to be a k[t]-central\ncomplex of graded A-bimodules.\nObserve that the rigid dualizing complex R has HqR = 0 for q >0, since H 0 ˜R is\nt-torsion and Hq ˜R = 0 for q >0.\nCorollary 6.7. SupposeA is connected graded and R is a balanced dualizing com-\nplex over A. Then R is a rigid dualizing complex over A in the ungraded sense.\nProof. First let us note that for any graded A-module",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "If ¯A has a balanced dualizing complex ¯R, then A has a rigid dualizing complex",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-060-1-if-a-has-a-balanced-dualizing-complex-r-then-a.md",
+      "narrative": null,
+      "content": "R.\n2. If ¯R is graded Auslander then R is Auslander.\n3. If ¯R is also graded GKdim-Macaulay, then R is GKdim-Macaulay.\nProof. According to Theorem 5.1, the Rees algebra ˜A = ReesFA inherits these\nproperties from ¯A. And by Theorem 6.2 they pass to A.\n34 AMNON YEKUTIELI AND JAMES J. ZHANG\nCorollary 6.9. SupposeA has a noetherian connected ﬁltration F , and ¯A := grFA\nsatisﬁes either of the following:\n(i) ¯A is a PI algebra.\n(ii) ¯A is graded-FBN.\n(iii) ¯A has enough normal elements.\nThen A has an Auslander, GKdim-Macaulay, rigid dualizing complex.\nProof. Combine Corollary 6.8 and Theorems 5.13",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/rem-sec-059-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "rem-sec-059-01.md",
+      "narrative": null,
+      "content": "It is not too hard to show that R could be chosen to be a k[t]-central complex of graded A-bimodules. Observe that the rigid dualizing complex R has HqR = 0 for q >0, since H 0 ˜R is t-torsion and Hq ˜R = 0 for q >0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-060-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "thm-sec-060-07.md",
+      "narrative": null,
+      "content": "Let A → B be a ﬁnite centralizing homomorphism. Suppose A has a noetherian connected ﬁltration F and grFA has a balanced dualizing complex. ThenA andB have rigid dualizing complexes RA andRB respectively, and the trace morphism TrB/A :RB →RA of Deﬁnition 3.7 exists.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The rigid dualizing complex of A is R =Aσ[n] wheren is an integer and σ is",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-061-2-the-rigid-dualizing-complex-of-a-is-r-aσn-wher.md",
+      "narrative": null,
+      "content": "some k-algebra automorphism of A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "If grFA is graded Auslander (resp. and graded GKdim-Macaulay), then A is",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-062-3-if-grfa-is-graded-auslander-resp-and-graded-gk.md",
+      "narrative": null,
+      "content": "Auslander-Gorenstein (resp. and Cohen-Macaulay ) in the sense of [Bj].\n4. Let B = A/a be any quotient algebra, M any B-module and q an integer.\nThen the twisted module Extq\nA(M,A )σ is a B◦-module.\nProof. 1, 2. Let n be the injective dimension of gr FA, and let ˜A := ReesFA. By\n[Lev] Theorem 3.6 the injective dimension of ˜A is n + 1. Since ˜A satisﬁes χ it is\nAS-Gorenstein. So the balanced dualizing complex of ˜A is ˜R = ˜A˜σ(d)[n + 1] for\n36 AMNON YEKUTIELI AND JAMES J. ZHANG\nsome graded automorphism ˜σ and for some integer d. By Theorem 6.2 the rigid\ndualizing complex of A is R =π ˜A˜σ[n].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/cor-sec-063-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "cor-sec-063-05.md",
+      "narrative": null,
+      "content": "Assume A has an Auslander rigid dualizing complex, and a noe- therian connected ﬁltration such that grA has a balanced dualizing complex. Then Cdim is weakly symmetric. RINGS WITH AUSLANDER DUALIZING COMPLEXES 37",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-063-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "ex-sec-063-01.md",
+      "narrative": null,
+      "content": "Let A be the quantum plane kq[x,y ] := k⟨x,y ⟩/(yx −qxy) for q ∈ k× with q2 ⁄= 1. The automorphism σ in Proposition 6.18(4) is σ(x) = qx, σ(y) = q−1y (cf. [Ye1] Examples 6.21 and 7.14). Consider the ideal I =A·f ·A where f :=x−y, which is not normal. An easy computation shows that B ∼=k[ǫ] withǫ2 = 0, and ǫ ≡x ≡y (modI). Now consider the graded Ae-module N := Ext 2 A(B,A ). One has Nσ(−2) ∼= B∗ as Ae-modules, so N is killed by qx −q−1y = σ(f ) ∈ A◦, and hence N can not be a B◦-module.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/ex-sec-063-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "ex-sec-063-02.md",
+      "narrative": null,
+      "content": "LetA be the Weyl algebrak⟨x,y ⟩/(xy−yx−1). Take the standard ﬁltration FnA = (k +kx +ky)n. Then the Rees algebra ˜A is generated by x,y,t with t central and xy −yx = t2. ˜A is an Artin-Schelter regular algebra of global dimension 3, so its balanced dualizing complex is ˜A˜σ(−3)[3] for some automorphism ˜σ. Let ˜B := ˜A/(t2), which is a commutative AS-Gorenstein algebra. As in [Ye1]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prop-sec-063-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "prop-sec-063-04.md",
+      "narrative": null,
+      "content": "AssumeA has a noetherian connected ﬁltration and grA has a balanced dualizing complex. Let R be the rigid dualizing complex of A. If a bimodule M has a two-sided good ﬁltration then R HomA(M,R ) ∼= R HomA◦ (M,R ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "It follows from Theorem 6.17 and Proposition 3.9(1) that",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-063-4-it-follows-from-theorem-617-and-proposition-39.md",
+      "narrative": null,
+      "content": "Extq\nA(M,A )σ ∼= Extq−n\nA (M,Aσ[n]) ∼= Extq−n\nA (M,R ) ∼= Extq−n\nB (M,RB)\nwhere RB is the rigid dualizing complex of B.\nExample 2.3 shows that Proposition 6.18(2,3) might fail even if A is Gorenstein.\nThe next example shows that σ could be nontrivial.\nExample 6.19. Let A be the quantum plane kq[x,y ] := k⟨x,y ⟩/(yx −qxy) for\nq ∈ k× with q2 ⁄= 1. The automorphism σ in Proposition 6.18(4) is σ(x) = qx,\nσ(y) = q−1y (cf. [Ye1] Examples 6.21 and 7.14). Consider the ideal I =A·f ·A where\nf :=x−y, which is not normal. An easy computation shows that B ∼=k[ǫ] withǫ2 =\n0, and ǫ ≡x ≡y (modI). Now conside",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-063-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "thm-sec-063-03.md",
+      "narrative": null,
+      "content": "we ﬁnd that ˜ σ = 1. Therefore the rigid dualizing complex of A is A[2]. Observe that Cdim A = 2 = GKdim A. In [Ye4] we prove the more general statement that if C is any smooth integral commutative k-algebra of dimension n, char k = 0 and A := D(C) is the ring of diﬀerential operators, then the rigid dualizing complex of A is A[2n]. SupposeA has a noetherian connected ﬁltration F . A two-sided good ﬁltration on a bimodule M is a ﬁltration {FnM } such thatFnA·FmM ⊂Fn+mM ,FnM ·FmA ⊂ Fn+mM and ReesFM is a ﬁnitely generated (Rees FA)-module on both sides.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-063-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "thm-sec-063-06.md",
+      "narrative": null,
+      "content": "LetA be an Auslander-Gorenstein noetherian k-algebra of injec- tive dimension n. Assume A has a ﬁltration such that grA is an AS-Gorenstein noetherian connected graded k-algebra. Then 1. The prime radical n is weakly invariant. 2. If p is a minimal prime then CdimA/p =n. 3. A has a quasi-Frobenius ring of fractions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/thm-sec-063-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "thm-sec-063-07.md",
+      "narrative": null,
+      "content": "Let A be a ﬁltered k-algebra such that grA is a noetherian con- nected gradedk-algebra with graded Auslander balanced dualizing complex . Given a Cdim-pureA-moduleM , there is a good ﬁltration {FnM } on it such that grFM is Cdim-pure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9804005v3/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-064-references.md",
+      "narrative": null,
+      "content": "[AF] F.W. Anderson and K.R. Fuller, “Rings and Categories of Modules,” Second edition,\nGraduate Texts in Mathematics 13, Springer-Verlag, New York, 1992.\n[ATV] M. Artin, J. Tate and M. Van den Bergh, Some algebras ass ociated to automorphisms of\nelliptic curves, “The Grothendieck Festschrift,” Vol. I, e d. P. Cartier et al., Birkh¨ auser\nBoston 1990, 33-85.\n[AZ] M. Artin and J.J. Zhang, Noncommutative projective sch emes, Adv. Math. 109 (1994),\n228-287.\n[ASZ] K. Ajitabh, S.P. Smith and J.J. Zhang, Auslander-Gore nstein rings, Comm. Algebra 26\n(1998), 2159-2180.\n[Bj] J.E. Bj¨ ork, The Auslander",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

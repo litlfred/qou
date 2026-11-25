@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1ws8k79c4cx.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1ws8k79c4cx","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:35.606Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;16587c84c54e&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;,
+        &quot;lean&quot;: &quot;121d7f7441c4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;16587c84c54e&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;,
+        &quot;lean&quot;: &quot;121d7f7441c4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly assessing explicit theoretical candidates transparently against difficult empirical limits.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:20:08.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;76e0d78aa208c9cff9f9aff782f94ad22c28f0ed&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.305Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;&#39;What follows is **infrastructure, not closure**&#39;; &#39;They are not closures.&#39;; &#39;do NOT match empirical c_5&#39;; &#39;rather than as a direct scalar multiple of a single Jones value&#39;.&quot;,
+      &quot;notes&quot;: &quot;All are honest scope/status statements (documented false-positive class, cf. &#39;, not yet carried out&#39;) plus one substantive mathematical contrast. The block&#39;s value is precisely that it labels itself non-closure.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;No setup-then-reframe construction; the two sections state a candidate table then quantify its failure.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.395Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;One spaced em-dash, in the bold lead line (&#39;Multi-link Jones values at q=1 — Lean infrastructure for the c_5/c_6 candidate investigation&#39;). Zero in body prose.&quot;,
+      &quot;notes&quot;: &quot;Density far below threshold.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.437Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;&#39;Three new Link constructors&#39; (verified: trefoil, borromean, doubleHopf = 3), &#39;Three new jonesAtOne cases&#39; (3), &#39;Two combination values&#39; (2), &#39;three structural hypotheses&#39; (3 distinct). Nested triple inside hypothesis 3: &#39;higher-rank irrep coupling, Mostow rigidity gap correction, non-trivial Habiro residue&#39;.&quot;,
+      &quot;notes&quot;: &quot;Outer counts are verified artifact counts, not reflex lists. The nested speculative triple is borderline but the three items name genuinely different mechanisms; recorded as pass with the observation.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.484Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;Final sentence is a concrete work item: &#39;This requires extending the Wenzl-bridge y_lambda infrastructure to eps^10, eps^12 evaluations of the tr_M expansion on V_(2,1), V_(3), V_(1,1,1) separately.&#39;&quot;,
+      &quot;notes&quot;: &quot;Math-bearing directive, not a quotable closer.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.529Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;&#39;What follows is infrastructure, not closure&#39;; &#39;We posit three structural hypotheses&#39;; &#39;We must test whether...&#39;&quot;,
+      &quot;notes&quot;: &quot;Signposting of epistemic status and statement of hypotheses, not narration of the author&#39;s own emphasis. Plain register throughout.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.574Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;Block ends on a forward research requirement, not a recapitulation.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.616Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;None.&quot;,
+      &quot;notes&quot;: &quot;n/a&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.661Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;&#39;closest simple multi-link Jones candidate&#39; is the only superlative and it is scoped (&#39;simple multi-link&#39;) and immediately quantified (&#39;50x off in scale and sign&#39;, &#39;3000x off&#39;). BUT checking the claim it points at (per the audit brief) found the underlying arithmetic wrong -- see notes.&quot;,
+      &quot;notes&quot;: &quot;Language is measured, so PASS on the trap. Recomputed findings recorded for the coordinating session, NOT fixed inline (math): (i) J_L(q=1) = (-2)^(c-1) for any c-component link (skein at t=1 makes V crossing-change invariant); so Borromean (c=3) is +4, NOT -8, and doubleHopf = Hopf u Hopf (c=4) is -8, NOT +4 -- the two values are swapped w.r.t. the normalised convention the same table uses for trefoil (+1) and Hopf (-2). Confirmed independently by summing V(L6a4) = -t^-3+3t^-2-2t^-1+4-2t+3t^2-t^3 at t=1 = 4. -8 is the UNREDUCED value (delta*V, delta(1) = -2), i.e. the block splices two conventions. (ii) &#39;disjoint-union multiplicativity&#39; is false for the normalised Jones: V(L1 u L2) = delta*V(L1)*V(L2). (iii) &#39;closest candidate -J_Borromean = +8, 50x off in scale AND SIGN&#39; -- with the correct +4 the candidate is -4, which has the SAME sign as c_5 = -395.4 and is ~99x off, so the stated sign mismatch evaporates. Same values appear in QOU/BraidKnot/BraidLinkTypes.lean:132-140 and multi-link-jones-q1-extension.lean.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;c6a04bafb569&quot;,
+        &quot;ts&quot;: &quot;818ebc5eb6d4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:k00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:50:26.708Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f0b674c64eedf56d42cf3b7a08102d4ee01c4990&quot;,
+      &quot;evidence&quot;: &quot;Heaviest constructions are the bold run-in list labels (&#39;Precision-ladder normalisation revision&#39;, &#39;Sum-over-Wedderburn-blocks&#39;, &#39;New categorical input at k &gt;= 5&#39;) and &#39;the mixed Kashiwara-plus-Hopf-half b^2 + 1/2&#39;.&quot;,
+      &quot;notes&quot;: &quot;Run-in headers are a normal list device; the sentences under them parse aloud. No fix.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

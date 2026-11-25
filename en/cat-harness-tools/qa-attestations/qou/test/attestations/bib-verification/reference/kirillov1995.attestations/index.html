@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/kirillov1995.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-8m06a1mvxv.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-8m06a1mvxv","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/kirillov1995.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/kirillov1995.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/kirillov1995.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;kirillov1995&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 334,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-hep-th-9408113v2/9408113v2.pdf&quot;
+      },
+      &quot;id&quot;: &quot;kirillov1995&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;NOT AN ORPHAN -- the slice was seeded as orphan and that is wrong. This is the preprint of an entry that already exists in references.ts under the id kirillov1995 (same title, same author, published version in a 1995 supplement), and it is already cited four times by Lean -- Ref: markers in QOU/BraidKnot/Li2qUniqueness.lean. Checking those citations against the document surfaces a concrete defect. The paper&#39;s sectioning is 1.1-1.6 then 2.1 &#39;Dilogarithm and partitions&#39;, 2.2 characters of affine Kac--Moody algebras, 2.3 dilogarithm identities and algebraic K-theory, 2.4 connection with crystal basis, 2.5 quantum dilogarithm; its numbered results are Propositions A-H plus Proposition 1 and Proposition 2. There is NO Proposition 2.1 and NO Proposition 2.3, yet the Lean file cites &#39;[kirillov1995] Proposition 2.1&#39; for the Briggs--Klein integral identity and &#39;[kirillov1995] Proposition 2.3&#39; for antiderivative uniqueness from the fundamental theorem of calculus. Separately, the Lean file&#39;s definition of the truncated symmetric q-dilogarithm sum z^n/(n [n]_q) carries &#39;-- Ref: [kirillov1995] Sec. 2.1&#39;, but Sec. 2.1 is about partitions; the q-dilogarithm is Definition 9 in Sec. 2.5, and it is the ASYMMETRIC form sum x^n/(n(1-q^n)), a different normalisation from the corpus&#39;s symmetric [n]_q version. Three of the four citations therefore point at content that is not where they say it is, and one of them attributes a standard calculus fact to a named proposition. Beyond the defect, two sections are directly on-target and entirely unexploited: Sec. 2.3 relates dilogarithm identities to torsion in K_3(R), which is exactly the subject of conj:borromean-bloch-group-element and prop:borel-partial-resolution, and Sec. 2.5 Proposition 2 with Corollary 11 gives the functional equations and the five-term relation for the quantum dilogarithm with ab = qba -- literally the identity displayed in def:quantum-bloch-group, a block whose .ts carries no cites field at all.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Sec. 2.5, Definition 9, Proposition 2 and Corollary 11&quot;,
+            &quot;statement&quot;: &quot;The quantum dilogarithm Li_2(x;q) = sum x^n/(n(1-q^n)) satisfies functional equations under ab = qba and a five-term relation in the form H(Li_2(a;q), Li_2(b;q)) = H(Li_2(b;q), H(Li_2(-ba;q), Li_2(a;q))).&quot;,
+            &quot;useForFolio&quot;: &quot;The direct source for the pentagon/five-term identity that def:quantum-bloch-group displays with no citation, and the correct locator for the corpus&#39;s q-dilogarithm reference (currently pointed at Sec. 2.1, which is about partitions).&quot;,
+            &quot;targets&quot;: [
+              &quot;def:quantum-bloch-group&quot;,
+              &quot;qou:QOU.BraidKnot.Li2qUniqueness&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec. 2.3, &#39;Dilogarithm identities and algebraic K-theory&#39;&quot;,
+            &quot;statement&quot;: &quot;Dilogarithm identities of the form sum L(x_i) = c pi^2/6 with algebraic x_i and rational c are related to torsion in K_3 of the relevant ring, and the paper argues that essentially all such identities are consequences of the five-term relation alone.&quot;,
+            &quot;useForFolio&quot;: &quot;A structural prune in the sense of the formalize-first discipline: a candidate closed form built from Rogers-dilogarithm values at algebraic points must live in this classified family, which narrows the search space before any wide numerical scan is run.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:borromean-bloch-group-element&quot;,
+              &quot;prop:borel-partial-resolution&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;def:quantum-bloch-group displays the Phi_q pentagon identity and its .ts has no cites field whatsoever, while Sec. 2.5 Prop. 2 / Cor. 11 of an already-registered reference is the source for exactly that identity.&quot;,
+            &quot;target&quot;: &quot;def:quantum-bloch-group&quot;,
+            &quot;bean&quot;: &quot;qou-tcgv&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Sec. 2.3 relates dilogarithm identities to K_3 torsion, which is the subject of the Borromean Bloch-group conjecture and of the Borel-rank proposition; neither cites this already-registered reference.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;,
+            &quot;bean&quot;: &quot;qou-ir19&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Three of the four Lean -- Ref: locators in Li2qUniqueness.lean point at content that is not at the cited place (Propositions 2.1 and 2.3 do not exist under this paper&#39;s numbering; the q-dilogarithm is Definition 9 of Sec. 2.5, not Sec. 2.1, and in the asymmetric normalisation). The locators need correcting and the symmetric-versus-asymmetric normalisation difference needs stating. Deliberately NOT filed as aid-proof: the Sec. 2.3 classification looks like it could prune candidate dilogarithm closed forms, but I have not checked that the corpus&#39;s candidates satisfy its algebraicity and rationality hypotheses, so no claim is made that any gap closes.&quot;,
+            &quot;target&quot;: &quot;qou:QOU.BraidKnot.Li2qUniqueness&quot;,
+            &quot;bean&quot;: &quot;qou-6say&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;dadd96e1155e&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

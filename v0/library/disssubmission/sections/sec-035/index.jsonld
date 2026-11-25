@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/disssubmission/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The upper bound W(E6)",
+  "pageStart": 123,
+  "pageEnd": 127,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-035",
+    "library/disssubmission/blocks/prop-sec-035-01",
+    "library/disssubmission/blocks/lem-sec-035-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested"
+}

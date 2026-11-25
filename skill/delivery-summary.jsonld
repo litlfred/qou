@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/delivery-summary.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/delivery-summary",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "delivery-summary",
+      "title": "Delivery Summary",
+      "description": "Post-delivery summary with server restart command and viewer links",
+      "instructionsPath": "skills/local/delivery-summary.md",
+      "instructionLines": 180,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

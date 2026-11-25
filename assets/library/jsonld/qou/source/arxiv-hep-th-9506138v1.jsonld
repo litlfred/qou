@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9506138v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Black Hole Complementarity vs. Locality",
+  "contains": [
+    "library/arxiv-hep-th-9506138v1/sections/sec-front-matter",
+    "library/arxiv-hep-th-9506138v1/sections/sec-000",
+    "library/arxiv-hep-th-9506138v1/sections/sec-001",
+    "library/arxiv-hep-th-9506138v1/sections/sec-002",
+    "library/arxiv-hep-th-9506138v1/sections/sec-003",
+    "library/arxiv-hep-th-9506138v1/sections/sec-004",
+    "library/arxiv-hep-th-9506138v1/sections/sec-005",
+    "library/arxiv-hep-th-9506138v1/sections/sec-006",
+    "library/arxiv-hep-th-9506138v1/sections/sec-007",
+    "library/arxiv-hep-th-9506138v1/sections/sec-008",
+    "library/arxiv-hep-th-9506138v1/sections/sec-009",
+    "library/arxiv-hep-th-9506138v1/sections/sec-010",
+    "library/arxiv-hep-th-9506138v1/sections/sec-011",
+    "library/arxiv-hep-th-9506138v1/sections/sec-012",
+    "library/arxiv-hep-th-9506138v1/sections/sec-013",
+    "library/arxiv-hep-th-9506138v1/sections/sec-014",
+    "library/arxiv-hep-th-9506138v1/sections/sec-015",
+    "library/arxiv-hep-th-9506138v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument\n\n**Black Hole Complementarity vs. Locality**\n\n*Lárus Thorlacius,b and John Uglumc*\n\n28 pp, 18 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The Nice-Slice Argument; 3 The Nice Slice and String Field Theory; 4 Discussion and Conclusions; 4.1 Comparing Commutators; 4.2 The Structure of the Nice Slice Theory; Appendix A The Commutator of Open Bosonic Stri; A.1 Calculation of the Commutator; A.2 Correspondence with Low Energy Minkowski F; A.3 The Tachyon Commutator on a Nice Slice; Appendix B The Magnitude of the Commutator; B.1 A Four Point Amplitude Involving Commutato; B.2 The Behavior of the Commutator of Nice Sli; B.3 Extension to Closed Bosonic Strings and Su; B.4 A Limiting Case; References; D A. Lowe, The Planckian Conspiracy: String Th",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9506138&metadataPrefix=arXiv), submitted 1995-06-21, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9506138v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9506138v1.pdf",
+    "source_sha256": "bb85afba0530402c2759a2bcfbc86fae96a3976253ca8df58fc199040f76c32f",
+    "pages": 28,
+    "arxiv": {
+      "id": "hep-th/9506138",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "21 Jun 1995"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

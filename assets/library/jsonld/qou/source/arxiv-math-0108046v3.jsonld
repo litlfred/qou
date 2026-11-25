@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108046v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Presenting Schur algebras",
+  "contains": [
+    "library/arxiv-math-0108046v3/sections/page-001",
+    "library/arxiv-math-0108046v3/sections/page-002",
+    "library/arxiv-math-0108046v3/sections/page-003",
+    "library/arxiv-math-0108046v3/sections/page-004",
+    "library/arxiv-math-0108046v3/sections/page-005",
+    "library/arxiv-math-0108046v3/sections/page-006",
+    "library/arxiv-math-0108046v3/sections/page-007",
+    "library/arxiv-math-0108046v3/sections/page-008",
+    "library/arxiv-math-0108046v3/sections/page-009",
+    "library/arxiv-math-0108046v3/sections/page-010",
+    "library/arxiv-math-0108046v3/sections/page-011",
+    "library/arxiv-math-0108046v3/sections/page-012",
+    "library/arxiv-math-0108046v3/sections/page-013",
+    "library/arxiv-math-0108046v3/sections/page-014",
+    "library/arxiv-math-0108046v3/sections/page-015",
+    "library/arxiv-math-0108046v3/sections/page-016",
+    "library/arxiv-math-0108046v3/sections/page-017",
+    "library/arxiv-math-0108046v3/sections/page-018",
+    "library/arxiv-math-0108046v3/sections/page-019",
+    "library/arxiv-math-0108046v3/sections/page-020",
+    "library/arxiv-math-0108046v3/sections/page-021",
+    "library/arxiv-math-0108046v3/sections/page-022",
+    "library/arxiv-math-0108046v3/sections/page-023",
+    "library/arxiv-math-0108046v3/sections/page-024",
+    "library/arxiv-math-0108046v3/sections/page-025",
+    "library/arxiv-math-0108046v3/sections/page-026",
+    "library/arxiv-math-0108046v3/sections/page-027",
+    "library/arxiv-math-0108046v3/sections/page-028",
+    "library/arxiv-math-0108046v3/sections/page-029",
+    "library/arxiv-math-0108046v3/sections/page-030",
+    "library/arxiv-math-0108046v3/sections/page-031",
+    "library/arxiv-math-0108046v3/sections/page-032",
+    "library/arxiv-math-0108046v3/sections/page-033",
+    "library/arxiv-math-0108046v3/sections/page-034",
+    "library/arxiv-math-0108046v3/sections/page-035",
+    "library/arxiv-math-0108046v3/sections/page-036",
+    "library/arxiv-math-0108046v3/sections/page-037",
+    "library/arxiv-math-0108046v3/sections/page-038"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Presenting Schur algebras — Motivated by work of R.M. Green, we obtain a pre- sentation of Schur algebras (both the classical and quantized ver- sions) in terms of generators and relations.\n\n**Presenting Schur algebras**\n\n*STEPHEN DOTY AND ANTHONY GIAQUINTO*\n\n38 pp, 38 sections.\n\n**Abstract.** Motivated by work of R.M. Green, we obtain a pre- sentation of Schur algebras (both the classical and quantized ver- sions) in terms of generators and relations. The presentation is compatible with the usual presentation of the (quantized or classi- cal) enveloping algebra of gln. As a result, we obtain a new “inte- gral” basis for Schur algebras which is a subset of Kostant’s basis of the integral form of the enveloping algebra (or its q-analogue). Projection onto an appropriate component gives a new “integral” basis and a presentation for the Hecke algebra, compatible with the basis and presentation for the Schur algebra. Finally, we ﬁnd a second presentation of Schur algebras which is similar to Luzstig’s modiﬁed form of the quantized enveloping algebra.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0108046v3",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Presenting Schur algebras",
+      "basis": "Printed title on page 1 (Doty and Giaquinto); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0108046v3 [math.RT] 3 May 2002",
+      "corrected_on": "2026-11-15",
+      "extracted": "Presenting Schur algebras"
+    },
+    "source_file": "0108046v3.pdf",
+    "source_sha256": "f47c1bd39c671cf3bb7171ecca838bce93e09ce3d462c3f8589d4fb2327e6218",
+    "pages": 38,
+    "arxiv": {
+      "id": "math/0108046",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "3 May 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

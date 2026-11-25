@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Standard Model Symmetry and Qubit Entanglement",
+  "contains": [
+    "library/5s032x/sections/sec-000",
+    "library/5s032x/sections/sec-001",
+    "library/5s032x/sections/sec-002",
+    "library/5s032x/sections/sec-003",
+    "library/5s032x/sections/sec-004",
+    "library/5s032x/sections/sec-005",
+    "library/5s032x/sections/sec-006",
+    "library/5s032x/sections/sec-007",
+    "library/5s032x/sections/sec-008",
+    "library/5s032x/sections/sec-009",
+    "library/5s032x/sections/sec-010",
+    "library/5s032x/sections/sec-011",
+    "library/5s032x/sections/sec-012",
+    "library/5s032x/sections/sec-013",
+    "library/5s032x/sections/sec-014",
+    "library/5s032x/sections/sec-015",
+    "library/5s032x/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Standard Model Symmetry and Qubit Entanglement — quantum description.\n\n**The Standard Model Symmetry and Qubit Entanglement**\n\n*Jochen Szangolies∗*\n\n20 pp, 17 sections.\n\n**Abstract.** quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER = EPR, the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11].\n\n**Outline.** The Standard Model Symmetry and Qubit Entangle; Introduction: The `Quantum First'-Program; Abstract; The Complex Case: Single Qubits; SL(2,C) and 3+1-Dimensional Spacetime; The Bloch Sphere and the Complex Hopf Fibratio; Spin(3) and the Complex Hopf Fibration; The Quaternionic Case: Two Qubits; SL(2,H) and 5+1-Dimensional Spacetime; Two Qubits and the Quaternionic Hopf Fibration; Spin(5) and SU(2)U(1)/Z2; The Octonionic Case: Three Qubits; `SL(2,O)' and 9+1-Dimensional Spacetime; Three Qubits and the Octonionic Hopf Fibration; Spin(9) and SU(3)SU(2)U(1)/Z6; Entanglement and Massive Particles; Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "5s032x",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "5S032X.pdf",
+    "source_sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
+    "pages": 20,
+    "arxiv": null,
+    "doi": "10.32388/5S032X",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

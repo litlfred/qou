@@ -1,0 +1,1320 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ki6c",
+  "blocks": [
+    {
+      "id": "library/ki6c/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nIn [12, 13] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · ·\nby using the quantum dilogarithm. In [14] he conjectured that, for any hyperbolic link L,\n2π\nN log ⟨L ⟩N goes to the hyperbolic volume of S3−L as N →∞, and veriﬁed the conjecture\nfor some simple knots, by formal calculations. In 1999, H. Murakami and J. Murakami\n[18] proved that the Kashaev invariant ⟨L ⟩N of any link L is equal to the N-colored\nJones polynomial JN(L; e2π√−1/N) of L evaluated at e2π√−1/N, where JN(L; q) denotes the\ninvariant obtained as the quantum invariant of links associat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On the asymptotic expansions of\nthe Kashaev invariant of the knots with 6 crossings\nTomotada Ohtsuki\nand\nYoshiyuki Yokota\nAbstract\nWe give presentations of the asymptotic expansions of the Kashaev invariant of the knots with\n6 crossings.\nIn particular, we show the volume conjecture for these knots, which states that the\nleading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of\nthe complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of\ninvariants of these knots.\nA non-trivial part of the proof is to apply the saddle poin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "The asymptotic expansions of the Kashaev invariant ⟨K ⟩N of the knots K with 6 crossings are presented by the form (2) for any d, where ω(K) and κi(K)’s are some constants depending on K. The knots with 6 crossings are the 61, 62 and 63 knots, and all of them are hyperbolic. Their ς(K) are presented by ς(61) = ς(61) = 0.5035603... + √−1 · 1.08078... , ς(62) = 0.700414... −√−1 · 0.934648... , ς(63) = 0.906072... . We note that their ω(K) and κi(K)’s are also their invariants; in particular, we will show that their ω(K) are presented by ω(61) = ω(61) = −0.52139... −√−1 · 0.071732... , ω(62) = −0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "See [20]",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "We ﬁx any suﬃciently small δ > 0 and any M > 0. Let d be any non-negative integer. Then, in the domain { t ∈C",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries\nIn this section, we review deﬁnitions and basic properties of the notation used in this\npaper.\n2.1\nIntegral presentation of (q)n\nIn this section, we review the integral expression of q-factorials (q)n and their basic prop-\nerties.\nLet N be an integer ≥2. We put q = exp(2π√−1/N), and put\n(x)n = (1 −x)(1 −x2) · · · (1 −xn)\nfor n ≥0. It is known [18] (see also [20]) that for any n, m with n ≤m,\n(q)n(q)N−n−1 = N,\n(4)\n∑\nn≤k≤m\n1\n(q)m−k(q)k−n\n= 1.\n(5)\nFollowing Faddeev [5], we deﬁne a holomorphic function φ(t) on {t ∈C | 0 < Re t < 1}\nby\nφ(t) =\n∫∞\n−∞\ne(2t−1)xdx\n4x sinh x sinh(x/N) ,\nnot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let t be a real number with 0 < t < 1. Then, there exists C > 0 such that ({ if X ≥0 2π ( t −1 ) X if X < 0 ) −C < Re ( 2π√−1 Li2 ( e2π√−1 (t+X√−1))) < ({ if X ≥0 2π ( t −1 ) X if X < 0 ) + C for any X ∈R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some behaviors of the dilogarithm function",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-22-some-behaviors-of-the-dilogarithm-function.md",
+      "narrative": null,
+      "content": "Some behaviors of the dilogarithm function\nIn this section, we show some behaviors of the dilogarithm function.\nWe put\nΛ(t) = Re\n(\n1\n2π√−1 Li2(e2π√−1 t)\n)\n.\nSince\nΛ′(t) = −log 2 sin πt,\nΛ′′(t) = −π cot πt,\nthe behavior of Λ(t) is as follows.\nt\n0\n· · ·\n1\n6\n· · ·\n1\n2\n· · ·\n5\n6\n· · ·\n1\nΛ(t)\n0\n→\nΛ(1\n6)\n→\n0\n→\n−Λ(1\n6)\n→\n0\nΛ′(t)\n+\n0\n−\n−\n−\n0\n+\nΛ′′(t)\n−\n−\n−\n0\n+\n+\n+\nHere, Λ( 1\n6) = 0.161533... . For the graph of Λ(t), see Figure 1.\n0.6\n0.2\n0.4\n0.8\n−\n−\n−\n0.05\n0.05\n0.10\n0.10\n0.15\n0.15\n1.0\nFigure 1: The graph of Λ(t) for 0 ≤t ≤1\nFurther, the behavior of Li2\n(\ne2π√−1 (t+X√−1))\nﬁxing t is presented by the fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deﬁnition of the Kashaev invariant",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-23-deﬁnition-of-the-kashaev-invariant.md",
+      "narrative": null,
+      "content": "In this section, we review the definition of the Kashaev invariant of oriented knots.\n\nFollowing Yokota [333],? we review the definition of the Kashaev invariant. We put\nN = {0,1,:+-,N— 1}.\nFor i,j,k, EN, we put\nNgai - Nght\n\nRi = = ——, R= = — ,\nMl (De-aDy—9(Q) pe (@) eg © @p-a(Dp—a(De-wr—- Diea\n\nwhere [m] € NV denotes the residue of m modulo N, and we put\n\ngi 1 if fQ-g]) + -Y+l[l-k-14+[k-dy=N-1,\n0 otherwise.\n\nLet K be an oriented knot. We consider a 1-tangle whose closure is isotopic to kK such\nthat its string is oriented downward at its end points. Let D be a diagram of the 1-tangle.\nWe prese",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see [20]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "For (c1, c2, c3) ∈C3 and an oriented 3-ball D′ in R3, we put Λ = {( i N + c1, j N + c2, k N + c3 ) ∈C3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Poisson summation formula",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-24-the-poisson-summation-formula.md",
+      "narrative": null,
+      "content": "The Poisson summation formula\nIn this section, we review the Poisson summation formula and a proposition obtained\nfrom it.\nRecall (see e.g. [23]) that the Poisson summation formula states that\n∑\nm ∈Zn\nf(m) =\n∑\nm ∈Zn\nˆf(m)\n(13)\nfor a continuous integrable function f on Rn which satisﬁes that\n|f(z)| ≤C\n(\n1 + |z|\n)−n−δ,\n| ˆf(z)| ≤C\n(\n1 + |z|\n)−n−δ\n(14)\nfor some C, δ > 0, where ˆf is the Fourier transform of f deﬁned by\nˆf(w) =\n∫\nRn f(z) e−2π√−1 wT zdz.\nThe following proposition is obtained from the Poisson summation formula.\nProposition 2.3 (see [20]). For (c1, c2, c3) ∈C3 and an oriented 3-ball",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "By modifying the proof of Proposition 2.3, we can show that, instead of the domains (15)–(20), we can use the domains (17)–(20) and { (t + δ√−1, s −δ√−1, u) ∈C3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "Similarly as in [20, Remark 4.8], Proposition 2.3 can naturally be extended to the case where the holomorphic function ψ(t, s, u) depends on N, if ψ(t, s, u) uniformly converges to ψ0(t, s, u) as N →∞, and ψ0(t, s, u) satisﬁes the assumption of the proposi- tion, and |Ψ(t, s, u)| is bounded by a constant which is independent of N. We note that we can choose ε of the proposition independently of N in this case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see [20]",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Let A be a non-singular symmetric complex 3×3 matrix, and let ψ(z1, z2, z3) and r(z1, z2, z3) be holomorphic functions of the forms, ψ(z1, z2, z3) = zTA z + r(z1, z2, z3), r(z1, z2, z3) = ∑ i,j,k bijkzizjzk + ∑ i,j,k,l cijklzizjzkzl + · · · , (26) deﬁned in a neighborhood of 0 ∈C3. The restriction of the domain { (z1, z2, z3) ∈C3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The saddle point method",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-25-the-saddle-point-method.md",
+      "narrative": null,
+      "content": "The saddle point method\nIn this section, we review a proposition obtained from the saddle point method.\nProposition 2.6 (see [20]). Let A be a non-singular symmetric complex 3×3 matrix, and\nlet ψ(z1, z2, z3) and r(z1, z2, z3) be holomorphic functions of the forms,\nψ(z1, z2, z3) = zTA z + r(z1, z2, z3),\nr(z1, z2, z3) = ∑\ni,j,k bijkzizjzk + ∑\ni,j,k,l cijklzizjzkzl + · · · ,\n(26)\ndeﬁned in a neighborhood of 0 ∈C3. The restriction of the domain\n{\n(z1, z2, z3) ∈C3 \n\n Re ψ(z1, z2, z3) < 0\n}\n(27)\nto a neighborhood of 0 ∈C3 is homotopy equivalent to S2. Let D be an oriented 3-ball\nembedded in C3 such",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "As mentioned in [20, Remark 3.6], we can extend Proposition 2.6 to the case where ψ(z1, z2, z3) depends on N in such a way that ψ(z1, z2, z3) is of the form ψ(z1, z2, z3) = ψ0(z1, z2, z3) + ψ1(z1, z2, z3) 1 N + ψ2(z1, z2, z3) 1 N 2 + · · · + ψm(z1, z2, z3) 1 N m + rm(z1, z2, z3) N m+1 , where ψi(z1, z2, z3)’s are holomorphic functions independent of N, and we assume that ψ0(z1, z2, z3) satisﬁes the assumption of the proposition and |rm(z1, z2, z3)| is bounded by a constant which is independent of N. The 61 knot In this section, we show Theorem 1.1 for the 61 knot. We give a proof of the theore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "Since we will know later that the sum of the problem is of the order O(eNςR), we can ignore the sum of the problem restricted in the above domain, and hence, we can remove this domain from ∆; see Appendix D for concrete procedure of this argument. Therefore, we can choose a new domain ∆′ in the interior of ∆such that ∆−∆′ ⊂(30); more concretely, we can choose ∆′ as ∆′ = { (t, s, u) ∈∆",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1 for the 61 knot",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-31-proof-of-theorem-11-for-the-61-knot.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.1 for the 61 knot\nIn this section, we show a proof of Theorem 1.1 for the 61 knot.\nSince the Kashaev invariant of the mirror image of a knot is equal to the complex\nconjugate of the Kashaev invariant of the original knot, it is suﬃcient to show the theorem\nfor the mirror image 61 of the 61 knot. The 61 knot is the closure of the following tangle.\n0\n0\n0\nN −1\nn\ni\nj\n0\n1\nk\nk−1\n0\n0\nl\n0\n1\n0\n(28)\n12\nAs shown in [33], we can put the labelings of edges adjacent to the unbounded regions as\nshown above. Hence, from the deﬁnition of the Kashaev invariant, the Kashaev invariant\nof the 61",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "2). We calculate the maximal value (t+s+u)max of t+s+u. We consider the plane t+s+u = c for a constant c. The range of t+s+u is given as the range of c such that this plane and the domain (34) has non-empty intersection. Since the domain (34) is a compact convex domain whose boundary is a smooth closed surface, the maximal and minimal values are given by the planes tangent to this domain. Putting w = t+s+u, the tangent points of such planes are given by solutions of the following equations,          2 Λ(w −s −u) + Λ(s) + Λ(u) = ςR , ∂ ∂s ( 2 Λ(w −s −u) + Λ(s) + Λ(u) ) = 0, ∂ ∂u ( 2 Λ(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of the range of ∆′",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-32-estimate-of-the-range-of.md",
+      "narrative": null,
+      "content": "Estimate of the range of ∆′\nIn this section, we calculate the concrete values of the bounds of the inequalities in (31)\nso that they satisfy that ∆−∆′ ⊂(30).\nPutting Λ as in Section 2.2, we have that\nRe ˆV (t, s, u) = 2 Λ(t) + Λ(s) + Λ(u).\nWe consider the domain\n{\n(t, s, u) ∈∆\n\n 2 Λ(t) + Λ(s) + Λ(u) ≥ςR\n}\n,\n(34)\nwhere we put ςR = 0.5035603... as in (41). We note that this domain is symmetric with\nrespect to the exchange of s and u. The aim of this section is to show that this domain\nis included in the interior of the domain ∆′ of (31). For this purpose, we estimate ranges\nof t, s, u and t+s+u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "To be precise, the above argument is not partially rigorous, since we do not estimate the error terms of the numerical solutions of Newton’s method, though the above argument is practically useful, since we can guess that such error terms would be suﬃciently small for the above purpose. In order to complete the above argument, we give a rigorous proof of estimates of solutions of (35) in Lemma A.1. We calculate the minimal value smin and the maximal value smax of s. Since Λ( · ) ≤ Λ(1 6), Λ(s) ≥ςR −3 Λ (1 ) = 0.0189614... . The minimal and maximal values of s are solutions of the following equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "To be precise, the above argument is not partially rigorous, since we do not estimate the error term of the numerical solution of Newton’s method, though the above argument is practically useful, since we can guess that such an error term would be suﬃciently small for the above purpose. In order to complete the above argument, we give a rigorous proof of an estimate of a solution of (36) in Lemma A.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is the projection to the real parts of the entries.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the critical value",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-33-calculation-of-the-critical-value.md",
+      "narrative": null,
+      "content": "Calculation of the critical value\nIn this section, we calculate the concrete values of a critical point and the Hesse matrix\nof ˆV .\nThe diﬀerentials of ˆV are presented by\n∂\n∂t\nˆV (t, s, u) = −2 log(1 −x) + 2π\n√\n−1\n(\n3t + 2s + u −3\n2\n)\n,\n(37)\n∂\n∂s\nˆV (t, s, u) = −log(1 −y) + 2π\n√\n−1 (2t + 2s + u −1),\n(38)\n∂\n∂u\nˆV (t, s, u) = −log(1 −z) + 2π\n√\n−1\n(\nt + s + u −1\n2\n)\n,\n(39)\nwhere x = e2π√−1 t, y = e2π√−1 s and z = e2π√−1 u.\nLemma 3.3. ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is\nthe projection to the real parts of the entries.\nProof. Any critical point of ˆV is gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "ˆV (t, s, u) −ςR satisﬁes the assumption of Proposition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-34-verifying-the-assumption-of-the-poisson-summa.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the Poisson summation formula\nIn this section, we verify the assumption of the Poisson summation formula in Lemma 3.4,\nwhich is used in the proof of Theorem 1.1 for the 61 knot in Section 3.1. As we mentioned\nin Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5.\nRe ˆV (t, s, u) has a unique maximal point in ∆′ at\nx0 = y0 = y0 = eπ√−1/3,\nt0 = s0 = u0 = 1\n6,\nand its maximal value is 0.646131... . Hence,\nRe ˆV (t, s, u) −ςR ≤0.142571...\n(43)\nfor a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[34]",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "Fixing X and Y , we regard f as a function of Z. (1) If t + s + u ≥1 2, then f is monotonically decreasing. (2) If t + s + u < 1 2, then f has a unique minimal point at Z = g3(t, s, u), where g3(t, s, u) = 2π log sin 2π(t + s) sin 2π(1 2 −t −s −u) . In particular, g3(t, s, u) goes to ∞as t + s + u →1 2 −0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[34]",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "Fixing X and Z, we regard f as a function of Y . (1) If 2t + 2s + u ≥1, then f is monotonically decreasing. (2) If 2t + 2s + u < 1 and 2t + s + u > 2, then f has a unique minimal point at Y = g2(t, s, u), where g2(t, s, u) = 2π log sin 2π(2t + s + u −1 2) sin 2π(1 −2t −2s −u) . In particular, g2(t, s, u) goes to ∞as 2t+2s+u →1−0, and goes to −∞as 2t+s+u → 2 + 0. (3) If 2t + s + u ≤1 2, then f is monotonically increasing.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[34]",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "Fixing Y and Z, we regard f as a function of X. (1) If 3t + 2s + u ≥3 2, then f is monotonically decreasing. (2) If 3t + 2s + u < 2 and t + 2s + u > 2, then f has a unique minimal point at X = g1(t, s, u), where g1(t, s, u) = 2π log sin 2π(t + 2s + u −1 2) sin 2π(3 2 −3t −2s −u) . In particular, g1(t, s, u) goes to ∞as 3t+2s+u →3 2 −0, and goes to −∞as t+2s+u → 2 + 0. (3) If t + 2s + u ≤1 2, then f is monotonically increasing.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[34]",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "For each (t, s, u) ∈∆′ satisfying that 2t + 2s + u < 1, t + s + u < 1 2, t + 2s + u > 1 2 and 2t + s + u > 1 2, f has a unique minimal point and no other critical points.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[34]",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-010-05.md",
+      "narrative": null,
+      "content": "When we apply Proposition 2.6 to (33), the assumption of Proposition 2.6 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the saddle point method",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-010-35-verifying-the-assumption-of-the-saddle-point.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the saddle point method\nIn this section, we verify the assumption of the saddle point method in Lemma 3.9. In\norder to show this lemma, we show Lemmas 3.5–3.8 in advance. As we mentioned in\nRemark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7.\nIn the proof of Lemma 3.9, by (43), it is suﬃcient to decrease Re ˆV (t, s, u) by 0.142571...\nby pushing t, s, u into the imaginary directions.\nIn order to calculate this concretely,\nputting\nf(X, Y, Z) = Re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1 for the 62 knot",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-41-proof-of-theorem-11-for-the-62-knot.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.1 for the 62 knot\nIn this section, we show a proof of Theorem 1.1 for the 62 knot.\n26\nThe 62 knot is the closure of the following tangle.\n0\n0\n0\ni\nn\n0\nj\n0\n1\nN −1\nk\n0\nl\n0\n0\nAs shown in [33], we can put the labelings of edges adjacent to the unbounded regions as\nshown above. Hence, from the deﬁnition of the Kashaev invariant, the Kashaev invariant\nof the 62 knot is presented by\n⟨62 ⟩N =\n∑\nN q−1\n2\n(q)N−n(q)n−1\n×\nN q\n1\n2 −i\n(q)N−i(q)i−j−1(q)j\n×\nN q−1\n2 +i\n(q)i−n(q)n−1(q)N−i\n×\nN q\n1\n2\n(q)j(q)N−k−1(q)k−j\n×\nN q\n1\n2\n(q)k(q)N−l−1(q)l−k\n×\nN q\n1\n2\n(q)l(q)N−l−1\n=\n∑\n0≤j<i≤N\nj≤k<N\nN 4 q\n(q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "1), there are exactly two such tangent points, and the above system of equations has exactly two solutions tmin and tmax. By calculating a solution by Newton’s method from (t, s) = (0.6, 0.25), we obtain tmin = 0.619717... , and from (t, s) = (0.85, 0.25), we obtain tmax = 0.857766... . Therefore, we obtain an estimate of t in ∆′ as 0.6 ≤t ≤0.86. To be precise (see Remark 3.2), we can rigorously verify the above estimate of the solutions of the above system of equations in a similar way as in Section A.2. We obtain an estimate of s in ∆′ from the above formula by using the symmetry exchanging",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of the range of ∆′",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-012-42-estimate-of-the-range-of.md",
+      "narrative": null,
+      "content": "Estimate of the range of ∆′\nIn this section, we calculate the concrete values of the bounds of the inequalities in (53)\nso that they satisfy that ∆−∆′ ⊂(52).\nPutting Λ as in Section 2.2, we have that\nRe ˆV (t, s, u) = −2 Λ(t) + Λ(t −s) + 2 Λ(s) + Λ(u).\nWe consider the domain\n{\n(t, s, u) ∈∆\n\n −2 Λ(t) + Λ(t −s) + 2 Λ(s) + Λ(u) ≥ςR\n}\n.\n(56)\nWe note that this domain is symmetric with respect to the exchange of (t, s, u) and\n(1−s, 1−t, u). The aim of this section is to show that this domain is included in the\ninterior of the domain ∆′ of (53).\nIn order to estimate t and s, we consider the area of (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "To be precise, the above argument is not partially rigorous, since we do not estimate the error term of the numerical solution of Newton’s method, though the above argument is practically useful, since we can guess that such an error term would be suﬃciently small for the above purpose. In order to complete the above argument, we give a rigorous proof of an estimate of a solution of (58) in Lemma A.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is the projection to the real parts of the entries.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the critical value",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-013-43-calculation-of-the-critical-value.md",
+      "narrative": null,
+      "content": "Calculation of the critical value\nIn this section, we calculate the concrete values of a critical point and the Hesse matrix\nof ˆV .\nThe diﬀerentials of ˆV are presented by\n∂\n∂t\nˆV (t, s, u) = 2 log(1 −x) −log\n(\n1 −y\nx\n)\n−2π\n√\n−1\n(\nt −1\n2\n)\n,\n(59)\n∂\n∂s\nˆV (t, s, u) = −2 log(1 −y) + log\n(\n1 −y\nx\n)\n+ 2π\n√\n−1\n(\n2s + u −1\n)\n,\n(60)\n∂\n∂u\nˆV (t, s, u) = −log(1 −z) + 2π\n√\n−1\n(\ns + u −1\n2\n)\n,\n(61)\nwhere x = e2π√−1 t, y = e2π√−1 s and z = e2π√−1 u.\nLemma 4.2. ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is\nthe projection to the real parts of the entries.\n33\nProof. Any critic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "ˆV (t, s, u) −ςR satisﬁes the assumption of Proposition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-014-44-verifying-the-assumption-of-the-poisson-summa.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the Poisson summation formula\nIn this section, we verify the assumption of the Poisson summation formula in Lemma 4.3,\nwhich is used in the proof of Theorem 1.1 for the 62 knot in Section 4.1. As we mentioned\nin Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5.\nBy computer calculation, we can see that the maximal value of Re ˆV −ςR is about\n0.06. Therefore, in the proof of Lemma 4.3, it is suﬃcient to decrease, say, Re ˆV (t, s, u +\nδ√−1) −2πδ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "Fixing X and Y , we regard f as a function of Z. (1) If s + u ≥1 2, then f is monotonically decreasing. (2) If s + u < 1 2, then f has a unique minimal point at Z = g3(t, s, u), where g3(t, s, u) = 2π log sin 2πs sin 2π ( 1 2 −s −u ) . In particular, this minimal point goes to ∞as s + u →1 2 −0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-02.md",
+      "narrative": null,
+      "content": "For each (t, s, u) ∈∆′ satisfying that t−1 2 < s+u < 1 2, ˇf has a unique minimal point and no other critical points.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-03.md",
+      "narrative": null,
+      "content": "Let ˇf be as deﬁned in (68). If s < t−1 2 < s+u < 1 2, then any critical point of ˇf is in the following domain, { (X, Y ) ∈R2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-04.md",
+      "narrative": null,
+      "content": "For each (t, s, u) ∈∆′ satisfying that t −1 2 < s + u, ˇf(X, Y ) →∞as X2 + Y 2 →∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-05.md",
+      "narrative": null,
+      "content": "Suppose that t−1 2 ≥s+u, and consider the ﬂow from (X, Y ) = (0, 0) along the vector ﬁeld ( −∂ˇf ∂X , −∂ˇf ∂Y ) . Then, Y →−∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "lem-sec-015-06.md",
+      "narrative": null,
+      "content": "When we apply Proposition 2.6 to (55), the assumption of Proposition 2.6 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the saddle point method",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "../sections/sec-015-45-verifying-the-assumption-of-the-saddle-point.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the saddle point method\nIn this section, we verify the assumption of the saddle point method in Lemma 4.9. In\norder to show this lemma, we show Lemmas 4.4–4.8 in advance. As we mentioned in\nRemark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7.\n−\n−\n0\n0\n5\n5\n−5\n5\n10\n10\n−10\n10\nFigure 3: Contour lines of Re ˆV (0.8 + X√−1, 0.18 + Y √−1, 0.1) −ςR\nIn the proof of Lemma 4.9, as mentioned at the beginning of Section 4.4, it is suﬃcient\nto decrease Re ˆV (t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1 for the 63 knot",
+      "pageStart": 44,
+      "pageEnd": 48,
+      "target": "../sections/sec-016-51-proof-of-theorem-11-for-the-63-knot.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.1 for the 63 knot\nIn this section, we show a proof of Theorem 1.1 for the 63 knot.\n44\nThe 63 knot is the closure of the following tangle.\n0\n0\nn\n0\ni\n0\n0\nN −1\nj\n0\nk\n1\nl\n0\n0\nAs shown in [33], we can put the labelings of edges adjacent to the unbounded regions as\nshown above. Hence, from the deﬁnition of the Kashaev invariant, the Kashaev invariant\nof the 63 knot is presented by\n⟨63 ⟩N =\n∑\nN q\n1\n2 −n\n(q)N−n(q)n−1\n×\nN q\n1\n2 +n−i\n(q)N−n(q)n−i(q)i−1\n×\nN q−1\n2 −k\n(q)N−j(q)j−k−1(q)k\n×\nN q\n1\n2 +i−1\n(q)j−i(q)i−1(q)N−j\n×\nN q−1\n2 +k−l\n(q)k(q)N−l−1(q)l−k\n× N q−1\n2 +l+1\n(q)l(q)N−l−1\n=\n∑\n0<",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of the range of ∆′",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-017-52-estimate-of-the-range-of.md",
+      "narrative": null,
+      "content": "Estimate of the range of ∆′\nIn this section, we calculate the concrete values of the bounds of the inequalities in (79)\nso that they satisfy that ∆−∆′ ⊂(78).\nPutting Λ as in Section 2.2, we have that\nRe ˆV (t, s, u) = 2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u).\nWe consider the domain\n{\n(t, s, u) ∈∆\n\n 2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u) ≥ς\n}\n,\n(82)\nwhere we put ς = 0.906072... as in (86). We note that this domain is symmetric with\nrespect to the exchange of t and u. The aim of this section is to show that this domain\nis included in the interior of the domain ∆′ of (79). We graphically",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is the projection to the real parts of the entries.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the critical value",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-018-53-calculation-of-the-critical-value.md",
+      "narrative": null,
+      "content": "Calculation of the critical value\nIn this section, we calculate the concrete values of a critical point and the Hesse matrix\nof ˆV .\nThe diﬀerentials of ˆV are presented by\n∂\n∂t\nˆV (t, s, u) = −2 log(1 −x) + log\n(\n1 −x\ny\n)\n+ 2π\n√\n−1\n(\nt −1\n2\n)\n,\n(83)\n∂\n∂s\nˆV (t, s, u) = 2 log(1 −y) −log\n(\n1 −x\ny\n)\n−log\n(\n1 −y\nz\n)\n−2π\n√\n−1\n(\ns −1\n2\n)\n,\n(84)\n∂\n∂u\nˆV (t, s, u) = −2 log(1 −z) + log\n(\n1 −y\nz\n)\n+ 2π\n√\n−1\n(\nu −1\n2\n)\n,\n(85)\nwhere x = e2π√−1 t, y = e2π√−1 s and z = e2π√−1 u.\nLemma 5.1. ˆV has a unique critical point (t0, s0, u0) in P −1(∆′), where P : C3 →R3 is\nthe projection to the real parts of the e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "ˆV (t, s, u) −ς satisﬁes the assumption of Proposition 2.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-019-54-verifying-the-assumption-of-the-poisson-summa.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the Poisson summation formula\nIn this section, we verify the assumption of the Poisson summation formula in Lemma 5.2,\nwhich is used in the proof of Theorem 1.1 for the 63 knot in Section 5.1. As we mentioned\nin Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5.\nBy computer calculation, we can see that the maximal value of Re ˆV −ς is about\n0.02. Therefore, in the proof of Lemma 5.2, it is suﬃcient to decrease, say, Re ˆV (t, s, u +\nδ√−1) −2πδ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "For each (t, s, u) ∈∆′, f has a unique minimal point and no other critical points.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "lem-sec-020-02.md",
+      "narrative": null,
+      "content": "For each (t, s, u) ∈∆′, f(X, Y, Z) →∞as X2 + Y 2 + Z2 →∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "lem-sec-020-03.md",
+      "narrative": null,
+      "content": "When we apply Proposition 2.6 to (81), the assumption of Proposition 2.6 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifying the assumption of the saddle point method",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-020-55-verifying-the-assumption-of-the-saddle-point.md",
+      "narrative": null,
+      "content": "Verifying the assumption of the saddle point method\nIn this section, we verify the assumption of the saddle point method in Lemma 5.5. In\norder to show this lemma, we show Lemmas 5.3 and 5.4 in advance. As we mentioned in\nRemark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)\nconverges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7.\nIn the proof of Lemma 5.5, as mentioned at the beginning of Section 5.4, it is suﬃcient\nto decrease Re ˆV (t, s, u) by 0.02, by pushing t, s, u into the imaginary directions. In order\nto calculate this c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Estimate of solutions of systems of equations",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-021-a-estimate-of-solutions-of-systems-of-equations.md",
+      "narrative": null,
+      "content": "Estimate of solutions of systems of equations\nIn Sections 3.2, 4.2 and 5.2, we estimate solutions of some systems of equations by using\nnumerical solutions obtained by Newton’s method. As mentioned in Remarks 3.1, 3.2 and\n55\n4.1, this argument is not partially rigorous, since we do not estimate the error terms of\nsuch solutions. In order to complete their proofs, we show how to estimate such solutions\nrigorously in this appendix. We explain 1-, 2-, 3-variable cases in Sections A.1, A.2, A.3\nrespectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "lem-sec-022-01.md",
+      "narrative": null,
+      "content": "1. 0.03 ≤tmin and tmax ≤0.4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of solutions of (35)",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-022-estimate-of-solutions-of-35.md",
+      "narrative": null,
+      "content": "Estimate of solutions of (35)\nIn this section, we explain how to estimate solutions in 1-variable case. We explain it for\nsolutions of (35); we can estimate solutions in other 1-variable cases in similar ways.\nAs mentioned in Section 3.2, there are exactly two solutions of (35) in 0 < t < 0.5. We\nput them to be tmin and tmax (such that tmin < tmax). As we mentioned in Remark 3.1,\nwe give a rigorous proof of estimates of them in the following lemma.\nLemma A.1. 0.03 ≤tmin\nand\ntmax ≤0.4.\nProof. We put\nP(t) = 2 Λ(t) −ςR + 2 Λ\n(1\n6\n)\n.\nThen, (35) is rewritten as P(t) = 0. Since\nP(0.03) = −0.020344.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of a solution of (36)",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-023-estimate-of-a-solution-of-36.md",
+      "narrative": null,
+      "content": "Estimate of a solution of (36)\nIn this section, we explain how to estimate a solution in 2-variable case. We explain it\nfor a solution of (36); we can estimate solutions in other 2-variable cases in similar ways.\nAs mentioned in Section 3.2, there are exactly two solutions of (36). We put wmax to\nbe w of the solution whose w is the larger one. As we mentioned in Remark 3.2, we give\na rigorous proof of an estimate of wmax in the following lemma.\nLemma A.2. wmax ≤0.94.\nProof. The system of equations (36) is rewritten\n{\nΛ(w −2s) + Λ(s) −1\n2ςR = 0,\n2 Λ′(w −2s) = Λ′(s).\nSince Λ′(t) = −log 2 sin πt,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimate of a solution of (58)",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-024-estimate-of-a-solution-of-58.md",
+      "narrative": null,
+      "content": "Estimate of a solution of (58)\nIn this section, we explain how to estimate a solution in 3-variable case. We explain it\nfor a solution of (58); we can estimate solutions in other 3-variable cases in similar ways.\nAs mentioned in Section 4.2, there are exactly two solutions of (58). These solutions\ngive the maximal and minimal values of 2s+u. We put the solution for the maximal value\nto be (t1, s1, u1). Then, the maximal value of 2s + u is given by (2s + u)max = 2s1 + u1.\nAs we mentioned in Remark 4.1, we give a rigorous proof of an estimate of (2s + u)max in\nthe following lemma.\nLemma A.3. (2s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-01.md",
+      "narrative": null,
+      "content": "1. Let F(x, z) be a smooth concave function whose maximal value is positive and Hesse matrix is negative deﬁnite. Then, the domain (95) is a convex domain and its boundary is a smooth curve whose curvature is non-zero everywhere.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-02.md",
+      "narrative": null,
+      "content": "2. Let F(x, y, z) be a smooth concave function whose maximal value is positive and Hesse matrix is negative deﬁnite. Then, the domain (96) is a convex domain and its boundary is a smooth surface whose Gaussian curvature is positive everywhere.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-03.md",
+      "narrative": null,
+      "content": "1. ˆ∆is a compact convex domain in the interior of ∆, and the boundary of ˆ∆is a smooth closed surface whose Gaussian curvature is positive everywhere. We show a proof of the lemma later in this section. Before showing it, we show some lemmas.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-04.md",
+      "narrative": null,
+      "content": "2. The boundary of ∆is included in the complement of ˆ∆in ∆. That is, ˆ∆ is included in the interior of ∆.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-05.md",
+      "narrative": null,
+      "content": "3. Let (t, s, u) ∈ˆ∆. Then, s > 0.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-06.md",
+      "narrative": null,
+      "content": "4. Let (t, s, u) ∈ˆ∆. Then, t < 0.5 or u < 0.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-07.md",
+      "narrative": null,
+      "content": "5. Let (t, s, u) ∈ˆ∆. Then, t < 0.5 and u < 0.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-08.md",
+      "narrative": null,
+      "content": "6. Let αi and βi be real numbers. If ( α1 α2 α2 α3 ) and ( β3 β2 β2 β1 ) are positive deﬁnite, then   α1 α2 α2 α3+β3 β2 β2 β1   is positive deﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-09.md",
+      "narrative": null,
+      "content": "7. Let a, b and c be positive real numbers. Then, the following matrices are positive deﬁnite, (2a −ab−1 a+b ab−1 a+b ab−1 a+b b −ab−1 a+b ) , (b −bc−1 b+c bc−1 b+c bc−1 b+c 2c −bc−1 b+c ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-10.md",
+      "narrative": null,
+      "content": "1. There exist C1, C2 > 0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/lem-sec-025-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "lem-sec-025-11.md",
+      "narrative": null,
+      "content": "2. There exists C > 0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curvature of the boundary of a convex domain in a plane",
+      "pageStart": 59,
+      "pageEnd": 70,
+      "target": "../sections/sec-025-curvature-of-the-boundary-of-a-convex-domain-in.md",
+      "narrative": null,
+      "content": "Curvature of the boundary of a convex domain in a plane\nIn this section, we consider 2-variable case.\nLet F(x, z) be a smooth concave function whose maximal value is positive. Then, the\ndomain\n{\n(x, z) ∈R2 \n\n F(x, z) ≥0\n}\n(95)\nis a convex domain and its boundary is a smooth curve. The aim of this section is to\nshow the following lemma.\n5We use this fact, when we show that the system of equations presenting such tangent points has exactly two solutions\nin Sections 3.2, 4.2, 5.2 and Appendix A.\n59\nLemma B.1. Let F(x, z) be a smooth concave function whose maximal value is positive\nand Hesse matri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ki6c/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the ﬁgure 8\nknot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548.\n[2] Dimofte T.D., Garoufalidis, S., The quantum content of the gluing equations, Geom. Topol. 17 (2013)\n1253–1315.\n[3] Dimofte, T., Gukov, S., Lenells, J., Zagier, D., Exact results for perturbative Chern-Simons theory\nwith complex gauge group, Commun. Number Theory Phys. 3 (2009) 363–443.\n[4] Dubois, J., Kashaev, R., On the asymptotic expansion of the colored Jones polynomial for torus\nknots, Math. Ann. 339 (2007) 757–782.\n[5] Faddeev, L.D.,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407052v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Black hole entropy in loop quantum gravity",
+  "contains": [
+    "library/arxiv-gr-qc-0407052v1/sections/sec-front-matter",
+    "library/arxiv-gr-qc-0407052v1/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Black hole entropy in loop quantum gravity — We calculate the black hole entropy in Loop Quantum Gravity as a function of the horizon area and provide the exact formula for the leading and\n\n**Black hole entropy in loop quantum gravity**\n\n*Institute of Theoretical Physics, Warsaw University*\n\n10 pp, 2 sections.\n\n**Abstract.** We calculate the black hole entropy in Loop Quantum Gravity as a function of the horizon area and provide the exact formula for the leading and sub-leading terms. By comparison with the Bekenstein– Hawking formula we uniquely ﬁx the value of the ’quantum of area’ in the theory. The Bekenstein–Hawking formula gives the leading term in the entropy of the black hole in the form S = 1 4 A l2 P (1) where lP is the Planck length and A is the black hole horizon area. According to the common belief, the entropy is always connected with the logarithm of the number of microscopic states realizing a given macroscopic state. The fact that the entropy in (1) is proportional to the area (and not as is usual to the volume) has led to the formulation of the so called holographic principle. It was however diﬃcult to ﬁnd the microscopic states that could account for such an entropy.\n\n**Outline.** Front matter; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:gr-qc/0407052&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-gr-qc-0407052v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0407052v1.pdf",
+    "source_sha256": "4624ea2fb4d318ad118e333446e66a3af77c744d7192cbffe0742915ad33d4ff",
+    "pages": 10,
+    "arxiv": {
+      "id": "gr-qc/0407052",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "14 Jul 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

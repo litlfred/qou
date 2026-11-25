@@ -1,0 +1,834 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1712.04212v4",
+  "title": "1. Introduction",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Invariants",
+      "number": "3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Dirichlet eigenvalues",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-dirichlet-eigenvalues"
+    },
+    {
+      "level": 1,
+      "title": "Finite dimensional comparisons",
+      "number": "5",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-finite-dimensional-comparisons"
+    },
+    {
+      "level": 1,
+      "title": "Infinite dimensional comparisons",
+      "number": "6",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-infinite-dimensional-comparisons"
+    },
+    {
+      "level": 1,
+      "title": "Boundary concentration phenomena",
+      "number": "7",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-boundary-concentration-phenomena"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1712.04212v4 [math.MG] 16 Aug 2018",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1712.04212v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textit inscribed",
+          "heading": false
+        },
+        {
+          "term": "dirichlet levy",
+          "heading": false
+        },
+        {
+          "term": "observable inscribed",
+          "heading": false
+        },
+        {
+          "term": "partial inscribed",
+          "heading": false
+        },
+        {
+          "term": "concentration phenomena",
+          "heading": false
+        },
+        {
+          "term": "inscribed radius",
+          "heading": false
+        },
+        {
+          "term": "dirichlet boundary",
+          "heading": false
+        },
+        {
+          "term": "inscribed radii",
+          "heading": false
+        }
+      ],
+      "extract": "In the present paper, we consider a concentration of measure problem on manifolds with boundary. We study concentration phenomena of non-negative $1$-Lipschitz functions with Dirichlet boundary condition. \\subsection{Motivations} Let us recall the following well-known fact: The normalized volume measure on the $n$-dimensional unit sphere concentrates around the equator when $n$ is large. One can rephrase this fact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ric geq",
+          "heading": false
+        },
+        {
+          "term": "ric hess",
+          "heading": false
+        },
+        {
+          "term": "ric infty",
+          "heading": false
+        },
+        {
+          "term": "leq ric",
+          "heading": false
+        },
+        {
+          "term": "condition ric",
+          "heading": false
+        },
+        {
+          "term": "assume ric",
+          "heading": false
+        },
+        {
+          "term": "perp geq",
+          "heading": false
+        },
+        {
+          "term": "buser ledoux",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Preliminaries} Throughout this section, let $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\\ref{eq:weighted volume measure}). \\subsection{Curvatures}\\label{sec:Curvatures} We denote by $\\ric_{g}$ the Ricci curvature on $M$ determined by the Riemannian metric $g$, and by $\\ric_{M}$ the infimum of $\\ric_{g}$ on the unit tangent bundle over $M$. For $N\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-invariants",
+      "number": "3",
+      "title": "Invariants",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial inscribed",
+          "heading": false
+        },
+        {
+          "term": "inscribed radius",
+          "heading": false
+        },
+        {
+          "term": "observable inscribed",
+          "heading": false
+        },
+        {
+          "term": "eta alpha",
+          "heading": false
+        },
+        {
+          "term": "distance monotonicity",
+          "heading": false
+        },
+        {
+          "term": "geq eta",
+          "heading": false
+        },
+        {
+          "term": "omega alpha",
+          "heading": false
+        },
+        {
+          "term": "dirichlet separation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Invariants} \\subsection{Isomophisms} We first introduce the following notion: \\begin{defi}\\label{defi:dominance} For $i=1,2$, let $X_{i}=(X_{i},d_{X_{i}},\\mu_{X_{i}})$ be metric measure spaces with boundary. We say that \\textit{$X_{1}$ dominates $X_{2}$} if there exists a $1$-Lipschitz map $\\Phi:X_{1}\\to X_{2}$ such that \\begin{equation}\\label{eq:dominance} \\Phi_{\\#}\\mu_{X_{1}}=\\mu_{X_{2}},\\quad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-dirichlet-eigenvalues",
+      "number": "4",
+      "title": "Dirichlet eigenvalues",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirichlet eigenvalues",
+          "heading": true
+        },
+        {
+          "term": "dirichlet levy",
+          "heading": false
+        },
+        {
+          "term": "observable inscribed",
+          "heading": false
+        },
+        {
+          "term": "dirichlet separation",
+          "heading": false
+        },
+        {
+          "term": "inscribed radius",
+          "heading": false
+        },
+        {
+          "term": "logarithmic dirichlet",
+          "heading": false
+        },
+        {
+          "term": "order dirichlet",
+          "heading": false
+        },
+        {
+          "term": "ric infty",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dirichlet eigenvalues} In what follows, let $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\\ref{eq:weighted volume measure}) such that $m_{M,f}$ is a Borel probability measure. We study the metric measure space with boundary $(M,f)$ defined as (\\ref{eq:weighted Riemannian manifold}). \\subsection{Boundary separation distances and Dirichlet eigenvalues}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-finite-dimensional-comparisons",
+      "number": "5",
+      "title": "Finite dimensional comparisons",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa vert",
+          "heading": false
+        },
+        {
+          "term": "eta leq",
+          "heading": false
+        },
+        {
+          "term": "item kappa",
+          "heading": false
+        },
+        {
+          "term": "equation eta",
+          "heading": false
+        },
+        {
+          "term": "geq eta",
+          "heading": false
+        },
+        {
+          "term": "frac eta",
+          "heading": false
+        },
+        {
+          "term": "eta right",
+          "heading": false
+        },
+        {
+          "term": "ball model",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Comparisons} \\subsection{Estimates} To prove Theorem \\ref{thm:main theorem}, we begin with the following: \\begin{lem}\\label{lem:key lemma} Let $\\bm$ be compact. For $N\\in [n,\\infty)$, let us assume $\\ric^{N}_{f,\\bm^{\\perp}}\\geq (N-1)\\kappa$ and $H_{f,\\bm} \\geq (N-1)\\lambda$. Suppose additionally that $\\IR M\\leq D$ for some $D>0$. For $\\eta \\in (0,1)$, let $\\Omega \\subset M$ be a Borel subset with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-infinite-dimensional-comparisons",
+      "number": "6",
+      "title": "Infinite dimensional comparisons",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinite dimensional",
+          "heading": true
+        },
+        {
+          "term": "kappa vert",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "sqrt kappa",
+          "heading": false
+        },
+        {
+          "term": "partial kappa",
+          "heading": false
+        },
+        {
+          "term": "dfrac lambda",
+          "heading": false
+        },
+        {
+          "term": "geq lambda",
+          "heading": false
+        },
+        {
+          "term": "kappa right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Infinite dimensional comparisons} \\subsection{Relative volume comparisons}\\label{sec:Relative volume comparisons} In order to prove Theorem \\ref{thm:infinite dimensional main theorem}, we develop comparison geometry of manifolds with boundary under the curvature condition (\\ref{eq:infinite dimensional curvature bound}). We notice that in our comparison theorems in this subsection, $m_{M,f}$ need not be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-boundary-concentration-phenomena",
+      "number": "7",
+      "title": "Boundary concentration phenomena",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary concentration",
+          "heading": true
+        },
+        {
+          "term": "kappa vert",
+          "heading": false
+        },
+        {
+          "term": "sequence kappa",
+          "heading": false
+        },
+        {
+          "term": "ric widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "eta frac",
+          "heading": false
+        },
+        {
+          "term": "let kappa",
+          "heading": false
+        },
+        {
+          "term": "theta widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Boundary concentration phenomena} \\subsection{Critical scale orders}\\label{sec:Sequences of model spaces} We first state the following assertion concerning the critical scale order of sequences of hemispheres (cf. Proposition \\ref{prop:ball distribution laws}, Subsection 1.1 in \\cite{GM}, Corollary 2.22 in \\cite{Sh}, Theorem 8.1.1 and Corollary 8.5.7 in \\cite{Sh1}): \\begin{thm}\\label{thm:sequence of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isoperimetric inequalities",
+          "heading": false
+        },
+        {
+          "term": "ricci curvature",
+          "heading": false
+        },
+        {
+          "term": "weighted ricci",
+          "heading": false
+        },
+        {
+          "term": "isoperimetric inequality",
+          "heading": false
+        },
+        {
+          "term": "concentration inequalities",
+          "heading": false
+        },
+        {
+          "term": "preprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "riemannian manifolds",
+          "heading": false
+        },
+        {
+          "term": "displacement convexity",
+          "heading": false
+        }
+      ],
+      "extract": "[1] D. Bakry and M. ´Emery, Diﬀusions hypercontractives, S´eminaire de proba- bilit´es, XIX, 1983/84, 177–206, Lecture Notes in Math., 1123, Springer, Berlin, 1985. [2] D. Bakry and M. Ledoux, L´evy-Gromov’s isoperimetric inequality for an inﬁnite-dimensional diﬀusion generator, Invent. Math. 123 (1996), no. 2, 259– 281. [3] V. Bayle, Propri´et´es de concavit´e du proﬁl isop´erim´etrique et applications, PhD Thesis,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "eta geq",
+      "heading": false
+    },
+    {
+      "term": "inscribed radius",
+      "heading": false
+    },
+    {
+      "term": "observable inscribed",
+      "heading": false
+    },
+    {
+      "term": "eta leq",
+      "heading": false
+    },
+    {
+      "term": "kappa leq",
+      "heading": false
+    },
+    {
+      "term": "equation eta",
+      "heading": false
+    },
+    {
+      "term": "ric geq",
+      "heading": false
+    },
+    {
+      "term": "kappa vert",
+      "heading": false
+    },
+    {
+      "term": "partial inscribed",
+      "heading": false
+    },
+    {
+      "term": "eta begin",
+      "heading": false
+    },
+    {
+      "term": "eta frac",
+      "heading": false
+    },
+    {
+      "term": "textit inscribed",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1712.04212v4"
+  }
+}

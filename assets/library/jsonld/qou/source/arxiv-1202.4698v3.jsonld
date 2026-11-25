@@ -1,0 +1,89 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
+  "contains": [
+    "library/arxiv-1202.4698v3/sections/sec-front-matter",
+    "library/arxiv-1202.4698v3/sections/sec-000",
+    "library/arxiv-1202.4698v3/sections/sec-001",
+    "library/arxiv-1202.4698v3/sections/sec-002",
+    "library/arxiv-1202.4698v3/sections/sec-003",
+    "library/arxiv-1202.4698v3/sections/sec-004",
+    "library/arxiv-1202.4698v3/sections/sec-005",
+    "library/arxiv-1202.4698v3/sections/sec-006",
+    "library/arxiv-1202.4698v3/sections/sec-007",
+    "library/arxiv-1202.4698v3/sections/sec-008",
+    "library/arxiv-1202.4698v3/sections/sec-009",
+    "library/arxiv-1202.4698v3/sections/sec-010",
+    "library/arxiv-1202.4698v3/sections/sec-011",
+    "library/arxiv-1202.4698v3/sections/sec-012",
+    "library/arxiv-1202.4698v3/sections/sec-013",
+    "library/arxiv-1202.4698v3/sections/sec-014",
+    "library/arxiv-1202.4698v3/sections/sec-015",
+    "library/arxiv-1202.4698v3/sections/sec-016",
+    "library/arxiv-1202.4698v3/sections/sec-017",
+    "library/arxiv-1202.4698v3/sections/sec-018",
+    "library/arxiv-1202.4698v3/sections/sec-019",
+    "library/arxiv-1202.4698v3/sections/sec-020",
+    "library/arxiv-1202.4698v3/sections/sec-021",
+    "library/arxiv-1202.4698v3/sections/sec-022",
+    "library/arxiv-1202.4698v3/sections/sec-023",
+    "library/arxiv-1202.4698v3/sections/sec-024",
+    "library/arxiv-1202.4698v3/sections/sec-025",
+    "library/arxiv-1202.4698v3/sections/sec-026",
+    "library/arxiv-1202.4698v3/sections/sec-027",
+    "library/arxiv-1202.4698v3/sections/sec-028",
+    "library/arxiv-1202.4698v3/sections/sec-029",
+    "library/arxiv-1202.4698v3/sections/sec-030",
+    "library/arxiv-1202.4698v3/sections/sec-031",
+    "library/arxiv-1202.4698v3/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as\n\n**6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories**\n\n*J. Teschner and G. S. Vartanov*\n\n32 pp, 34 sections.\n\n**Abstract.** We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as b-6j symbols. Our new results are (i) the identiﬁcation of particularly natural normal- ization conditions, and (ii) new integral representations for this object. This is used to brieﬂy discuss possible applications to quantum hyperbolic geometry, and to the study of certain supersymmetric gauge theories. We show, in particular, that the b-6j symbol has leading semiclassical asymptotics given by the volume of a non-ideal tetrahedron. We furthermore observe a close relation with the problem to quantize natural Darboux coordinates for moduli spaces of ﬂat connections on Riemann surfaces related to the Fenchel-Nielsen coordinates.\n\n**Outline.** Front matter; 1 Introduction; 2 Racah-Wigner 6j symbols for the modular doub; 2.1 Self-dual representations of Uq(sl(2,R)) a; 2.2 Normalized Clebsch-Gordan coefficients for; 2.3 Normalized b-6j symbols for the modular do; 2.4 3j symbols for the modular double; 2.5 A new integral formula for the b-6j symbol; 3 Relations to three-dimensional hyperbolic ge; 3.1 Volumes of non-ideal tetrahedra; 3.2 Semiclassical limit; 4 Relation to Liouville theory and the represe; 4.1 Fusion kernel; 4.2 Unitary normalization; 4.3 6j symbols of Diff(S1); 5 Application to two-dimensional quantum hyper; 5.1 Classical Teichmüller theory of the four-h; 5.2 The quantization problem",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1202.4698&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1202.4698v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1202.4698.pdf",
+    "source_sha256": "54171c652161ca5b3bfd107ccf3504d24fa91944ca3ed60b71945f6cb9f61e62",
+    "pages": 32,
+    "arxiv": {
+      "id": "1202.4698",
+      "version": "3",
+      "primary_class": "hep-th",
+      "stamp_date": "30 Apr 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

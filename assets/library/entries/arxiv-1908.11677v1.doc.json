@@ -1,0 +1,595 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1908.11677v1",
+  "title": "Variational formulae and estimates of O’Hara’s knot energies",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Variational formulae",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-variational-formulae"
+    },
+    {
+      "level": 1,
+      "title": "Estimates of the first and second variational formulae",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-estimates-of-the-first-and-second-variational"
+    },
+    {
+      "level": 2,
+      "title": "Strategy",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-strategy"
+    },
+    {
+      "level": 2,
+      "title": "Estimates and continuity of the quantities in (??)",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-estimates-and-continuity-of-the-quantities-in"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-proof-of-theorem"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara energies",
+          "heading": false
+        },
+        {
+          "term": "variational formulae",
+          "heading": false
+        },
+        {
+          "term": "conﬁgured",
+          "heading": false
+        },
+        {
+          "term": "nagasawa",
+          "heading": false
+        },
+        {
+          "term": "minimizers",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1908.11677v1 [math.AP] 30 Aug 2019 Variational formulae and estimates of O’Hara’s knot energies Shoya Kawakami Takeyuki Nagasawa September 2, 2019 Abstract O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type, and were conﬁgured so that the less the energy value of a knot is, the “better” its shape is. The existence and regularity",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1908.11677v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 1487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecf prime",
+          "heading": false
+        },
+        {
+          "term": "delta vecf",
+          "heading": false
+        },
+        {
+          "term": "frac vecf",
+          "heading": false
+        },
+        {
+          "term": "vecphi prime",
+          "heading": false
+        },
+        {
+          "term": "leq vecphi",
+          "heading": false
+        },
+        {
+          "term": "vecpsi prime",
+          "heading": false
+        },
+        {
+          "term": "scrd",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        }
+      ],
+      "extract": "In his papers \\cite{O91,O92}, O'Hara proposed several energies for knots to determine the {\\it canonical shape} of a knot in a given knot class. In order to describe these energies, let $\\vecf : \\R/\\calL\\Z \\ni s \\mapsto \\vecf(s)$ be an arclength parametrization of a knot, or more generally, of a closed curve in $\\R^n$ without self-intersections. For positive constants $\\alpha$ and $p$, the O'Hara $(\\alpha ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-variational-formulae",
+      "number": "2",
+      "title": "Variational formulae",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 11,
+      "labelStart": "5",
+      "labelEnd": "11",
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecu vecphi",
+          "heading": false
+        },
+        {
+          "term": "vecu vectau",
+          "heading": false
+        },
+        {
+          "term": "vecphi prime",
+          "heading": false
+        },
+        {
+          "term": "vecpsi prime",
+          "heading": false
+        },
+        {
+          "term": "cdot vecphi",
+          "heading": false
+        },
+        {
+          "term": "delta vecphi",
+          "heading": false
+        },
+        {
+          "term": "vecf cdot",
+          "heading": false
+        },
+        {
+          "term": "vecf alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sect. variational formulae} We begin by recalling the definition of the function $\\scrN$. For functions $\\vecu$, $\\vecv : \\R/\\calL\\Z \\to \\R^d$, where $d=1$ or $n$, we set \\[ \\scrN(\\vecu,\\vecv) = \\frac 1 { 2 \\| \\Delta \\vecf \\|_{\\R^n}^2 } \\int_{s_2}^{s_1} \\int_{s_2}^{s_1} \\Delta_4^3 \\vecu \\cdot \\Delta_4^3 \\vecv ds_3ds_4. \\] We use $\\scrN(\\vecu)$ instead of $\\scrN(\\vecu,\\vecu)$ for simplicity. Setting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-estimates-of-the-first-and-second-variational",
+      "number": "3",
+      "title": "Estimates of the first and second variational formulae",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Estimates of the ﬁrst and second variational formulae",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-strategy",
+      "number": "3.1",
+      "title": "Strategy",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecphi prime",
+          "heading": false
+        },
+        {
+          "term": "vecf alpha",
+          "heading": false
+        },
+        {
+          "term": "delta vecf",
+          "heading": false
+        },
+        {
+          "term": "vecpsi prime",
+          "heading": false
+        },
+        {
+          "term": "infty vecpsi",
+          "heading": false
+        },
+        {
+          "term": "vecf right",
+          "heading": false
+        },
+        {
+          "term": "scrm alpha",
+          "heading": false
+        },
+        {
+          "term": "leq scrm",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\vecf$, $\\vecphi$, $\\vecpsi \\in W^{1+\\sigma , 2p}(\\R/\\calL\\Z , \\R^n) \\cap W^{1,\\infty}(\\R/\\calL\\Z , \\R^n)$, and assume that $\\vecf$ is bi-Lipschitz. By \\cite{B12}, we already know the estimate \\begin{equation}\\label{Malpha Lp} \\| \\scrM_\\alpha(\\vecf) \\|_{L^p} \\leq C. \\end{equation} Combining Theorem \\ref{variation} and H\\\"{o}lder's inequality, if $p>1$, we have \\begin{align*} \\| \\scrG_1(\\vecf)[\\vecphi] \\|_{L^1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-estimates-and-continuity-of-the-quantities-in",
+      "number": "3.2",
+      "title": "Estimates and continuity of the quantities in (??)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vecphi prime",
+          "heading": false
+        },
+        {
+          "term": "vecv prime",
+          "heading": false
+        },
+        {
+          "term": "vecu prime",
+          "heading": false
+        },
+        {
+          "term": "vecpsi prime",
+          "heading": false
+        },
+        {
+          "term": "vecf alpha",
+          "heading": false
+        },
+        {
+          "term": "delta vecf",
+          "heading": false
+        },
+        {
+          "term": "cdot vecphi",
+          "heading": false
+        },
+        {
+          "term": "vectau cdot",
+          "heading": false
+        }
+      ],
+      "extract": "As we can see from Lemma \\ref{variation N}, $\\delta \\scrN(\\vectau)[\\vecphi]$ and $\\delta \\scrN(\\vectau)[\\vecphi,\\vecpsi]$ may be expressed in terms of $\\scrN(\\vecu,\\vecv)$ and $\\scrK(\\vecu,\\vecv)$. First, we discuss $\\scrN(\\vecu,\\vecv)$. \\begin{lemma}\\label{estimates N} Assume that $\\vecf$ is bi-Lipschitz. Then, the following properties hold. \\begin{enumerate}\\renewcommand{\\labelenumi}{\\upshape\\textrm{\\theenumi.}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-proof-of-theorem",
+      "number": "3.3",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 999,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        },
+        {
+          "term": "energy functionals",
+          "heading": false
+        },
+        {
+          "term": "gradient ﬂow",
+          "heading": false
+        },
+        {
+          "term": "variational formulae",
+          "heading": false
+        },
+        {
+          "term": "blatt",
+          "heading": false
+        },
+        {
+          "term": "ishizeki",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we complete the proof of Theorem 1.1 combining the facts in previous subsection. First, we show the L1-estimates of the ﬁrst and second variational formulae for M(α,p)(f). Using the expression of the ﬁrst and second 15 variational formulae for N (τ) in Lemma 2.4, it follows that R1(f)[φ] ∥∆f∥α Rn Lp ≤C∥φ′∥L∞, R2(f)[φ] ∥∆f∥α Rn Lp ≤C[φ′]W σ,2p, S1(f)[φ, ψ] ∥∆f∥α Rn Lp ≤C∥φ′∥L∞∥ψ′∥L∞, S2(f)[φ, ψ]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vecu vecphi",
+      "heading": false
+    },
+    {
+      "term": "vecf prime",
+      "heading": false
+    },
+    {
+      "term": "vecf alpha",
+      "heading": false
+    },
+    {
+      "term": "delta vecf",
+      "heading": false
+    },
+    {
+      "term": "vecpsi prime",
+      "heading": false
+    },
+    {
+      "term": "frac vecf",
+      "heading": false
+    },
+    {
+      "term": "vecu vectau",
+      "heading": false
+    },
+    {
+      "term": "vecf cdot",
+      "heading": false
+    },
+    {
+      "term": "vecf int",
+      "heading": false
+    },
+    {
+      "term": "vecf right",
+      "heading": false
+    },
+    {
+      "term": "leq vecphi",
+      "heading": false
+    },
+    {
+      "term": "let vecf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1908.11677v1"
+  }
+}

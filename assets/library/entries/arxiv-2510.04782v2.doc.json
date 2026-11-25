@@ -1,0 +1,2084 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2510.04782v2",
+  "title": "$q$-Hodge complexes over the Habiro ring",
+  "variant": "pdf",
+  "pages": 82,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Habiro cohomology",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-habiro-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "q-Hodge filtrations and Habiro descent",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-q-hodge-filtrations-and-habiro-descent"
+    },
+    {
+      "level": 2,
+      "title": "Existence results for q-Hodge filtrations",
+      "number": "1.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-existence-results-for-q-hodge-filtrations"
+    },
+    {
+      "level": 2,
+      "title": "Organisation of this paper",
+      "number": "1.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-organisation-of-this-paper"
+    },
+    {
+      "level": 1,
+      "title": "Habiro rings of étale extensions",
+      "number": "2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-habiro-rings-of-étale-extensions"
+    },
+    {
+      "level": 2,
+      "title": "A general descent principle",
+      "number": "2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-a-general-descent-principle"
+    },
+    {
+      "level": 2,
+      "title": "Habiro rings of étale extensions",
+      "number": "2.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-habiro-rings-of-étale-extensions"
+    },
+    {
+      "level": 1,
+      "title": "Habiro descent for q-Hodge complexes",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-habiro-descent-for-q-hodge-complexes"
+    },
+    {
+      "level": 2,
+      "title": "q-Hodge filtrations and the q-Hodge complex",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-q-hodge-filtrations-and-the-q-hodge-complex"
+    },
+    {
+      "level": 2,
+      "title": "The main result",
+      "number": "3.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Deformations of q-de Rham–Witt complexes",
+      "number": "3.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-deformations-of-q-de-rhamwitt-complexes"
+    },
+    {
+      "level": 2,
+      "title": "The Nygaard filtration on q-de Rham–Witt complexes",
+      "number": "3.4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-34-the-nygaard-filtration-on-q-de-rhamwitt-compl"
+    },
+    {
+      "level": 2,
+      "title": "The twisted q-Hodge filtration",
+      "number": "3.5",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-35-the-twisted-q-hodge-filtration"
+    },
+    {
+      "level": 2,
+      "title": "Habiro descent for q-Hodge complexes",
+      "number": "3.6",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-36-habiro-descent-for-q-hodge-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Habiro descent for q-de Rham complexes",
+      "number": "3.7",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-37-habiro-descent-for-q-de-rham-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Habiro descent in derived commutative algebras",
+      "number": "3.8",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-38-habiro-descent-in-derived-commutative-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Functorial q-Hodge filtrations",
+      "number": "4",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-4-functorial-q-hodge-filtrations"
+    },
+    {
+      "level": 2,
+      "title": "Functorial q-Hodge filtrations away from small primes",
+      "number": "4.1",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-41-functorial-q-hodge-filtrations-away-from-smal"
+    },
+    {
+      "level": 2,
+      "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
+      "number": "4.2",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-functorial-q-hodge-filtrations-for-certain-qu"
+    },
+    {
+      "level": 1,
+      "title": "A The q-de Rham complex",
+      "number": null,
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-a-the-q-de-rham-complex"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Rationalised q-crystalline cohomology",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-a1-rationalised-q-crystalline-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "A.2 The global q-de Rham complex",
+      "number": null,
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a2-the-global-q-de-rham-complex"
+    },
+    {
+      "level": 1,
+      "title": "B Habiro-completion",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-b-habiro-completion"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 81,
+      "pageLabel": "81",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 779,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-hodge filtrations",
+          "heading": false
+        },
+        {
+          "term": "q-hodge complexes",
+          "heading": false
+        },
+        {
+          "term": "q-de rham",
+          "heading": false
+        },
+        {
+          "term": "functorial q-hodge",
+          "heading": false
+        },
+        {
+          "term": "q-hodge complex",
+          "heading": false
+        },
+        {
+          "term": "canonical q-hodge",
+          "heading": false
+        },
+        {
+          "term": "habiro descent",
+          "heading": false
+        },
+        {
+          "term": "rham witt",
+          "heading": false
+        }
+      ],
+      "extract": "q-Hodge complexes over the Habiro ring Ferdinand Wagner October 9, 2025 Abstract. — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever the q-de Rham complex can be equipped with a q-Hodge",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2510.04782v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 31,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "we'll work",
+          "heading": false
+        },
+        {
+          "term": "par",
+          "heading": false
+        },
+        {
+          "term": "intro",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Intro label=\"sec:Intro\"} Throughout the introduction, we'll work over $\\IZ$ for simplicity. In the main body, we'll work instead relative to a $\\Lambda$-ring $A$ which is *perfectly covered* in the sense of [\\[par:Notations\\]](#par:Notations){reference-type=\"ref\" reference=\"par:Notations\"} below.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-habiro-cohomology",
+      "number": "1.1",
+      "title": "Habiro cohomology",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 916,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro cohomology",
+          "heading": true
+        },
+        {
+          "term": "habiro stack",
+          "heading": false
+        },
+        {
+          "term": "rham stack",
+          "heading": false
+        },
+        {
+          "term": "stacky approach",
+          "heading": false
+        },
+        {
+          "term": "prismatic cohomology",
+          "heading": false
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "analytic habiro",
+          "heading": false
+        },
+        {
+          "term": "qst",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we'll investigate the following question, which was raised by Peter Scholze: ::: numpar []{#qst:Habiro label=\"qst:Habiro\"} *Is there a version of $q$-de Rham cohomology with coefficients not in the power series ring $\\IZ\\qpower$, but in the Habiro ring $$\\Hh\\coloneqq \\limit_{m\\in\\IN}\\IZ[q]_{(q^m-1)}^\\complete\\,?$$* ::: A cohomology theory that provides a positive answer to Question",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-q-hodge-filtrations-and-habiro-descent",
+      "number": "1.2",
+      "title": "q-Hodge filtrations and Habiro descent",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "qhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "qhodge star",
+          "heading": false
+        },
+        {
+          "term": "qiw derham",
+          "heading": false
+        },
+        {
+          "term": "qhodge rightarrow",
+          "heading": false
+        },
+        {
+          "term": "filtration fil",
+          "heading": false
+        },
+        {
+          "term": "complex qhodge",
+          "heading": false
+        },
+        {
+          "term": "qpower bigr",
+          "heading": false
+        }
+      ],
+      "extract": "Having justified that Question [\\[qst:Habiro\\]](#qst:Habiro){reference-type=\"ref\" reference=\"qst:Habiro\"} is relevant, let us now summarise the contributions of this paper. As it turns out, Question [\\[qst:Habiro\\]](#qst:Habiro){reference-type=\"ref\" reference=\"qst:Habiro\"} is closely related to the following much less esoteric question: ::: numpar []{#qst:qHodgeFiltration label=\"qst:qHodgeFiltration\"} *Is it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-existence-results-for-q-hodge-filtrations",
+      "number": "1.3",
+      "title": "Existence results for q-Hodge filtrations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "qhodge qomega",
+          "heading": false
+        },
+        {
+          "term": "qhodge star",
+          "heading": false
+        },
+        {
+          "term": "fil hodge",
+          "heading": false
+        },
+        {
+          "term": "filtration fil",
+          "heading": false
+        },
+        {
+          "term": "cat anialg",
+          "heading": false
+        },
+        {
+          "term": "qhodge rightarrow",
+          "heading": false
+        },
+        {
+          "term": "primes leqslant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:FunctorialqHodgeIntro label=\"subsec:FunctorialqHodgeIntro\"} Even though $\\cat{AniAlg}_\\IZ^{\\qHodge}\\rightarrow \\cat{AniAlg}_\\IZ$ has no section, the $\\infty$-category $\\cat{AniAlg}_\\IZ^{\\qHodge}$ still has many interesting objects. One large class of examples can be construced from topological Hochschild homology over $\\ku$; this will be the content of the companion paper [@qdeRhamku]. In this paper, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-organisation-of-this-paper",
+      "number": "1.4",
+      "title": "Organisation of this paper",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil star",
+          "heading": false
+        },
+        {
+          "term": "fil leftarrow",
+          "heading": false
+        },
+        {
+          "term": "fil rightarrow",
+          "heading": false
+        },
+        {
+          "term": "fil hodge",
+          "heading": false
+        },
+        {
+          "term": "infty fil",
+          "heading": false
+        },
+        {
+          "term": "denoted fil",
+          "heading": false
+        },
+        {
+          "term": "coloneqq cofib",
+          "heading": false
+        },
+        {
+          "term": "leftarrow dotsb",
+          "heading": false
+        }
+      ],
+      "extract": "In [\\[sec:HabiroRingsEtale\\]](#sec:HabiroRingsEtale){reference-type=\"ref\" reference=\"sec:HabiroRingsEtale\"}, we'll recall and generalise the construction of *Habiro rings of étale extensions* from [@HabiroRingOfNumberField], and we'll relate them to the rings of *$q$-Witt vectors* from [@qWitt]. This is a special case of our more general results in [\\[sec:HabiroDescent\\]](#sec:HabiroDescent){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-habiro-rings-of-étale-extensions",
+      "number": "2",
+      "title": "Habiro rings of étale extensions",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "étale",
+          "heading": true
+        },
+        {
+          "term": "habirodescent",
+          "heading": false
+        },
+        {
+          "term": "habiroringsetale",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:HabiroRingsEtale label=\"sec:HabiroRingsEtale\"} Fix a perfectly covered $\\Lambda$-ring $A$. The goal of this section is to construct a *relative Habiro ring* $\\Hh_{R/A}$ for any étale algebra $R$ over $A$, and to relate this construction to the theory of $q$-Witt vectors. In the case where $A=\\IZ$, our construction $\\Hh_{R/\\IZ}$ recovers the ring $\\Hh_R$ from [@HabiroRingOfNumberField Definition ]. As we'll",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-21-a-general-descent-principle",
+      "number": "2.1",
+      "title": "A general descent principle",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descent principle",
+          "heading": true
+        },
+        {
+          "term": "bds",
+          "heading": false
+        },
+        {
+          "term": "prl",
+          "heading": false
+        },
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "lims",
+          "heading": false
+        },
+        {
+          "term": "calg",
+          "heading": false
+        },
+        {
+          "term": "presentable stable",
+          "heading": false
+        },
+        {
+          "term": "non-empty subsets",
+          "heading": false
+        }
+      ],
+      "extract": "To construct HR/A, we’ll first construct the completions (HR/A)∧ Φm(q) for all m ∈N and then “glue them together” using a very general descent principle that we’ll explain in this subsection. It will probably seem a little overkill for now, but we’ll use the same descent principle again in §3.3 to construct the twisted q-de Rham complexes q9dR(m) R/A. 2.1. Setup. — Let I be a site whose underlying category is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-habiro-rings-of-étale-extensions",
+      "number": "2.2",
+      "title": "Habiro rings of étale extensions",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 1773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζpm",
+          "heading": false
+        },
+        {
+          "term": "brp",
+          "heading": false
+        },
+        {
+          "term": "étale",
+          "heading": true
+        },
+        {
+          "term": "habiro",
+          "heading": true
+        },
+        {
+          "term": "derived equaliser",
+          "heading": false
+        },
+        {
+          "term": "covered λ-ring",
+          "heading": false
+        },
+        {
+          "term": "q-witt vectors",
+          "heading": false
+        },
+        {
+          "term": "ghost maps",
+          "heading": false
+        }
+      ],
+      "extract": "In the following, we fix a perfectly covered Λ-ring A as before. 2.7. Relative Habiro rings. — Let R be an étale A-algebra. For all primes p, the pth Adams operation ψp : A ! A can be uniquely extended to a Frobenius lift ϕp : bRp ! bRp. Let us denote by ϕp/A : \u0000 bRp ⊗A,ψp A \u0001∧ p ≃ −! bRp the linearised Frobenius. It is an equivalence as indicated. Indeed, this can be checked modulo p, where it becomes classical;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-habiro-descent-for-q-hodge-complexes",
+      "number": "3",
+      "title": "Habiro descent for q-Hodge complexes",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil star",
+          "heading": false
+        },
+        {
+          "term": "filtered",
+          "heading": false
+        },
+        {
+          "term": "quotientconvention",
+          "heading": false
+        },
+        {
+          "term": "habirodescent",
+          "heading": false
+        },
+        {
+          "term": "filtration degree",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:HabiroDescent label=\"sec:HabiroDescent\"} In this section, we'll show that in those situations where a well-behaved derived $q$-Hodge complex can be defined, it descends automatically to the Habiro ring, and furthermore a derived analogue of the comparison with $q$-de Rham--Witt complexes holds true. Throughout this section, we fix a perfectly covered $\\Lambda$-ring $A$. ::: numpar []{#conv:QuotientConvention",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-q-hodge-filtrations-and-the-q-hodge-complex",
+      "number": "3.1",
+      "title": "q-Hodge filtrations and the q-Hodge complex",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 2190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "anialg qhodge",
+          "heading": false
+        },
+        {
+          "term": "qderham lotimes",
+          "heading": false
+        },
+        {
+          "term": "qhodge star",
+          "heading": false
+        },
+        {
+          "term": "fil hodge",
+          "heading": false
+        },
+        {
+          "term": "filtration fil",
+          "heading": false
+        },
+        {
+          "term": "derham lotimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:qHodgeFiltrations label=\"subsec:qHodgeFiltrations\"} Let us start by introducing an appropriate $\\infty$-category of $A$-algebras equipped with a well-behaved $q$-deformation of the Hodge filtration. Since [\\[def:qHodgeFiltration\\]](#def:qHodgeFiltration){reference-type=\"ref\" reference=\"def:qHodgeFiltration\"} below is a bit of a mess, let us informally summarise the key points first: In addition to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-the-main-result",
+      "number": "3.2",
+      "title": "The main result",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhhodge",
+          "heading": false
+        },
+        {
+          "term": "qhhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "qiw derham",
+          "heading": false
+        },
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "qhhodge star",
+          "heading": false
+        },
+        {
+          "term": "hhodge qiw",
+          "heading": false
+        },
+        {
+          "term": "simeq qiw",
+          "heading": false
+        },
+        {
+          "term": "anialg qhodge",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:MainResult label=\"subsec:MainResult\"} We can now state the general Habiro descent result. We let $\\qIW_m\\Omega_{-/A}^*$ denote the $m$-truncated $q$-de Rham Witt complex from [@qWitt Definition ] and $\\qIW_m\\deRham_{-/A}\\colon \\cat{AniAlg}_A\\rightarrow \\Dd(A[q])$ its non-abelian derived functor. ::: thm []{#thm:HabiroDescent label=\"thm:HabiroDescent\"} Let $A$ be a perfectly covered $\\Lambda$-ring and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-deformations-of-q-de-rhamwitt-complexes",
+      "number": "3.3",
+      "title": "Deformations of q-de Rham–Witt complexes",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qomega lotimes",
+          "heading": false
+        },
+        {
+          "term": "tikzcd qomega",
+          "heading": false
+        },
+        {
+          "term": "rightarrow qomega",
+          "heading": false
+        },
+        {
+          "term": "algebras qomega",
+          "heading": false
+        },
+        {
+          "term": "rham complexes",
+          "heading": true
+        },
+        {
+          "term": "omega lotimes",
+          "heading": false
+        },
+        {
+          "term": "colon qiw",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow qiw",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:TwistedqDeRham label=\"subsec:TwistedqDeRham\"} We fix a perfectly covered $\\Lambda$-ring $A$ as before. We let $\\psi^m$ denote its Adams operations, which we extend to a map $\\psi^m\\colon A[q]\\rightarrow A[q]$ via $\\psi^m(q)\\coloneqq q^m$. We'll also frequently use the Berthelot--Ogus décalage functor $\\L\\eta_{[m]_q}$ (see [@BMS1 §] or [@Stacks]). In this subsection, we'll study *twisted $q$-de Rham",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-the-nygaard-filtration-on-q-de-rhamwitt-compl",
+      "number": "3.4",
+      "title": "The Nygaard filtration on q-de Rham–Witt complexes",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 40,
+      "labelStart": "32",
+      "labelEnd": "40",
+      "words": 3885,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nygaard filtration",
+          "heading": true
+        },
+        {
+          "term": "qomega fil",
+          "heading": false
+        },
+        {
+          "term": "derham lotimes",
+          "heading": false
+        },
+        {
+          "term": "qiw alpha",
+          "heading": false
+        },
+        {
+          "term": "dar fil",
+          "heading": false
+        },
+        {
+          "term": "qiw star",
+          "heading": false
+        },
+        {
+          "term": "qiw omega",
+          "heading": false
+        },
+        {
+          "term": "derham bigr",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Nygaard label=\"subsec:Nygaard\"} In this subsection, we'll study an auxiliary filtration on $q$-de Rham--Witt complexes. Throughout [\\[subsec:Nygaard\\]](#subsec:Nygaard){reference-type=\"ref\" reference=\"subsec:Nygaard\"}, we fix a prime $p$. We'll also write $\\phi$ instead of $\\psi^p$ for the $p$^th^ Adams operation of the $\\Lambda$-ring $A$. We extend $\\phi$ to $A[q]$ via $\\phi(q)\\coloneqq q^p$. Let's first",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-35-the-twisted-q-hodge-filtration",
+      "number": "3.5",
+      "title": "The twisted q-Hodge filtration",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 45,
+      "labelStart": "40",
+      "labelEnd": "45",
+      "words": 2176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "fil qhhodge",
+          "heading": false
+        },
+        {
+          "term": "fil hhodge",
+          "heading": false
+        },
+        {
+          "term": "qderham lotimes",
+          "heading": false
+        },
+        {
+          "term": "qiw derham",
+          "heading": false
+        },
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "star qderham",
+          "heading": false
+        },
+        {
+          "term": "tikzcd fil",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:TwistedqHodgeFiltration label=\"subsec:TwistedqHodgeFiltration\"} For smooth $A$-algebras $S$, let $\\fil_{\\Hhodge_m}^\\star \\qIW_m\\Omega_{S/A}^*$ denote the stupid filtration given by $\\qIW_m\\Omega_{S/A}^{\\smash{\\geqslant} n,*}$ in degree $n$. In general, let $$\\fil_{\\Hhodge_m}^\\star \\qIW_m\\deRham_{-/A}\\colon \\cat{AniAlg}_A\\longrightarrow \\CAlg\\Bigl( \\Fil\\Dd\\bigl(A[q]/(q^{m}-1)\\bigr)\\Bigr)$$ be the animation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-36-habiro-descent-for-q-hodge-complexes",
+      "number": "3.6",
+      "title": "Habiro descent for q-Hodge complexes",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro descent",
+          "heading": true
+        },
+        {
+          "term": "colim fil",
+          "heading": false
+        },
+        {
+          "term": "q-hodge complexes",
+          "heading": true
+        },
+        {
+          "term": "q9dr",
+          "heading": false
+        },
+        {
+          "term": "fili",
+          "heading": false
+        },
+        {
+          "term": "lax symmetric",
+          "heading": false
+        },
+        {
+          "term": "nygaard filtration",
+          "heading": false
+        },
+        {
+          "term": "q9drr",
+          "heading": false
+        }
+      ],
+      "extract": "where d | n. For the factors from 3.38(c), we first project to those where dp | np and then we use the maps from 3.35, base changed along ψdp : A[q] ! A[q]. It’s clear from the construction that these maps fil⋆ q9Hdgm q9dR(m) R/A ! fil⋆ q9Hdgn q9dR(n) R/A assemble canonically into a symmetric monoidal transformation of lax symmetric monoidal functors. With some more effort, one can also make these transformations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-37-habiro-descent-for-q-de-rham-complexes",
+      "number": "3.7",
+      "title": "Habiro descent for q-de Rham complexes",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "50",
+      "words": 982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "qhodge qhatderham",
+          "heading": false
+        },
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "qomega lotimes",
+          "heading": false
+        },
+        {
+          "term": "qhodge lar",
+          "heading": false
+        },
+        {
+          "term": "qhodge star",
+          "heading": false
+        },
+        {
+          "term": "habiro descent",
+          "heading": true
+        },
+        {
+          "term": "qhatderham dar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:qdeRhamHabiroDescent label=\"subsec:qdeRhamHabiroDescent\"} In this short subsection, we discuss to what extent the $q$-de Rham complex $\\qdeRham_{R/A}$ can or cannot be descended to the Habiro ring. Let's start with the case that works. ::: prop []{#prop:Letaq-1 label=\"prop:Letaq-1\"} Let $(S, \\fil_{\\qHodge}^\\star\\qdeRham_{S/A})\\in \\cat{AniAlg}_A^{\\qHodge}$ be an object such that $S$ is a smooth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-38-habiro-descent-in-derived-commutative-algebra",
+      "number": "3.8",
+      "title": "Habiro descent in derived commutative algebras",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 53,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 1336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhhodge",
+          "heading": false
+        },
+        {
+          "term": "hhodge qiw",
+          "heading": false
+        },
+        {
+          "term": "qhhodge star",
+          "heading": false
+        },
+        {
+          "term": "qiw derham",
+          "heading": false
+        },
+        {
+          "term": "qhhodge lotimes",
+          "heading": false
+        },
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "derived commutative",
+          "heading": true
+        },
+        {
+          "term": "filtration fil",
+          "heading": false
+        }
+      ],
+      "extract": "Raksit [@RaksitFilteredCircle] has introduced $\\infty$-categories of *derived commutative algebras*, along with filtered, graded, and differential-graded variants. The filtrations $\\fil_{\\Hhodge_m}^\\star \\qIW_m\\deRham_{R/A}$ admit canonical filtered derived commutative $A[q]/(q^m-1)$-algebra structures (if $R$ is a polynomial $A$-algebra, these structures can be constructed on the level of complexes, then one can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-functorial-q-hodge-filtrations",
+      "number": "4",
+      "title": "Functorial q-Hodge filtrations",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nofunctorialqhodgefiltration",
+          "heading": false
+        },
+        {
+          "term": "functorial hodge",
+          "heading": false
+        },
+        {
+          "term": "functorialqhodge",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:FunctorialqHodge label=\"sec:FunctorialqHodge\"} Fix a perfectly covered $\\Lambda$-ring $A$. We've seen in [\\[lem:NoFunctorialqHodgeFiltration\\]](#lem:NoFunctorialqHodgeFiltration){reference-type=\"ref\" reference=\"lem:NoFunctorialqHodgeFiltration\"} that it's impossible to get a functorial $q$-Hodge filtration for all animated $A$-algebras, or even just for smooth $A$-algebras. Despite this general no-go result,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-41-functorial-q-hodge-filtrations-away-from-smal",
+      "number": "4.1",
+      "title": "Functorial q-Hodge filtrations away from small primes",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 60,
+      "labelStart": "53",
+      "labelEnd": "60",
+      "words": 3536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "fil star",
+          "heading": false
+        },
+        {
+          "term": "leqslant qomega",
+          "heading": false
+        },
+        {
+          "term": "fil geqslant",
+          "heading": false
+        },
+        {
+          "term": "fil hodge",
+          "heading": false
+        },
+        {
+          "term": "filtration fil",
+          "heading": false
+        },
+        {
+          "term": "qomega lotimes",
+          "heading": false
+        },
+        {
+          "term": "star qpower",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:CanonicalqHodgeSmooth label=\"subsec:CanonicalqHodgeSmooth\"} In this subsection, we'll give an elementary construction of a functorial $q$-Hodge filtration on certain smooth $A$-algebras. In the introduction (see [\\[par:qHodgeForCurves\\]](#par:qHodgeForCurves){reference-type=\"ref\" reference=\"par:qHodgeForCurves\"}), we've already explained the idea in the case of relative dimension $\\leqslant1$. The general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-functorial-q-hodge-filtrations-for-certain-qu",
+      "number": "4.2",
+      "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 69,
+      "labelStart": "60",
+      "labelEnd": "69",
+      "words": 4058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fil qhodge",
+          "heading": false
+        },
+        {
+          "term": "qhodge qderham",
+          "heading": false
+        },
+        {
+          "term": "qreg qhodge",
+          "heading": false
+        },
+        {
+          "term": "derham qpower",
+          "heading": false
+        },
+        {
+          "term": "derham lotimes",
+          "heading": false
+        },
+        {
+          "term": "derham smash",
+          "heading": false
+        },
+        {
+          "term": "hodge derham",
+          "heading": false
+        },
+        {
+          "term": "qhodge star",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:CanonicalqHodgeQuasiregular label=\"subsec:CanonicalqHodgeQuasiregular\"} In this subsection, we'll explain another elementary construction of functorial $q$-Hodge filtrations. To this end, let us first fix a prime $p$ and work in a $p$-complete setting (at the end of this subsection, we'll get back to the global case). Throughout this subsection, all ($q$-)de Rham complexes or cotangent complexes relative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-a-the-q-de-rham-complex",
+      "number": null,
+      "title": "A The q-de Rham complex",
+      "level": 1,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-de rham",
+          "heading": true
+        },
+        {
+          "term": "rham complex",
+          "heading": true
+        },
+        {
+          "term": "functor q9ω",
+          "heading": false
+        },
+        {
+          "term": "global q-de",
+          "heading": false
+        },
+        {
+          "term": "ajq",
+          "heading": false
+        },
+        {
+          "term": "p-torsion free",
+          "heading": false
+        },
+        {
+          "term": "dalgajq",
+          "heading": false
+        },
+        {
+          "term": "q9ωs",
+          "heading": false
+        }
+      ],
+      "extract": "Let p be a prime. In [BS19, §16], Bhatt and Scholze construct a functorial (p, q −1)-complete q-de Rham complex relative to any q-PD pair (D, I). This verifies Scholze’s conjecture [Sch17, Conjecture 3.1] after p-completion, but leaves open the global case. There are (at least) two strategies to tackle the global case: (a) One can glue the global q-de Rham complex from its p-completions and its rationalisation using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a1-rationalised-q-crystalline-cohomology",
+      "number": null,
+      "title": "A.1 Rationalised q-crystalline cohomology",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 74,
+      "labelStart": "70",
+      "labelEnd": "74",
+      "words": 2381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rationalised q-crystalline",
+          "heading": true
+        },
+        {
+          "term": "q-crystalline cohomology",
+          "heading": true
+        },
+        {
+          "term": "let q9d",
+          "heading": false
+        },
+        {
+          "term": "q-de rham",
+          "heading": false
+        },
+        {
+          "term": "q-divided powers",
+          "heading": false
+        },
+        {
+          "term": "admits q-divided",
+          "heading": false
+        },
+        {
+          "term": "rham complexes",
+          "heading": false
+        },
+        {
+          "term": "bap",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a prime p. Then ( bApJq −1K, (q −1)) is a q-PD pair as in [BS19, Definition 16.1] and so we can use q-crystalline cohomology to construct a functorial (p, q −1)-complete q-de Rham complex q9ΩS/ b Ap for every p-completely smooth bAp-algebra S. We let q9dR−/ b Ap denote its non-abelian derived functor (or animation), which is now defined for all p-complete animated bAp-algebras. Observe that animation leaves the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-a2-the-global-q-de-rham-complex",
+      "number": null,
+      "title": "A.2 The global q-de Rham complex",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 77,
+      "labelStart": "74",
+      "labelEnd": "77",
+      "words": 958,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-de rham",
+          "heading": true
+        },
+        {
+          "term": "global q-de",
+          "heading": true
+        },
+        {
+          "term": "q9dr brp",
+          "heading": false
+        },
+        {
+          "term": "rham complex",
+          "heading": true
+        },
+        {
+          "term": "ajq k-algebras",
+          "heading": false
+        },
+        {
+          "term": "commutative ajq",
+          "heading": false
+        },
+        {
+          "term": "derived q-de",
+          "heading": false
+        },
+        {
+          "term": "q9ω",
+          "heading": false
+        }
+      ],
+      "extract": "From now on, we no longer work in a p-complete setting, but we keep Convention A.3. A.11. Doing §A.1 for all primes at once. — Fix n and put Nn := Q ℓ⩽n ℓ2(ℓn−1+···+ℓ+1), where the product is taken over all primes ℓ⩽n. Now fix an arbitrary prime p and let P, D, 74 §A.2. The global q-de Rham complex and q9D be as in §A.1. We’ve verified that the map P ! q9D ! q9D/(q −1)n ⊗Z Q admits a unique continuous extension P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-b-habiro-completion",
+      "number": null,
+      "title": "B Habiro-completion",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 81,
+      "labelStart": "77",
+      "labelEnd": "81",
+      "words": 1675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro-complete solid",
+          "heading": false
+        },
+        {
+          "term": "habiro-complete spectra",
+          "heading": false
+        },
+        {
+          "term": "habiro-complete spectrum",
+          "heading": false
+        },
+        {
+          "term": "habiro-complete objects",
+          "heading": false
+        },
+        {
+          "term": "solid condensed",
+          "heading": false
+        },
+        {
+          "term": "habiro-completion",
+          "heading": true
+        },
+        {
+          "term": "discrete condensed",
+          "heading": false
+        },
+        {
+          "term": "solid tensor",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we’ll study the Habiro completion functor (−)∧ H := limm∈N(−)∧ (qm−1) and show that it behaves for all practical purposes like completion at a finitely generated ideal. We’ll also study Habiro completion in the setting of solid condensed mathematics. In the following, we’ll use the notion of killing an idempotent algebra, which is nicely reviewed in [CS24, Lecture 13]. B.1. Habiro-complete spectra.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 81,
+      "pageEnd": 82,
+      "labelStart": "81",
+      "labelEnd": null,
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bhargav bhatt",
+          "heading": false
+        },
+        {
+          "term": "p-adic hodge",
+          "heading": false
+        },
+        {
+          "term": "peter scholze",
+          "heading": false
+        },
+        {
+          "term": "prismatic cohomology",
+          "heading": false
+        },
+        {
+          "term": "recordings available",
+          "heading": false
+        },
+        {
+          "term": "q-de rham",
+          "heading": false
+        },
+        {
+          "term": "ferdinand wagner",
+          "heading": false
+        },
+        {
+          "term": "q-hodge complexes",
+          "heading": false
+        }
+      ],
+      "extract": "References [AHL22] Johannes Anschütz, Ben Heuer, and Arthur-César Le Bras, v-vector bundles on p-adic fields and Sen theory via the Hodge-Tate stack, 2022. arXiv: 2211.08470 [math.NT]. [AHL23] , The small p-adic Simpson correspondence in terms of moduli spaces, 2023. arXiv: 2312.07554 [math.AG]. [AHL25] , Hodge-Tate stacks and non-abelian p-adic Hodge theory of v-perfect complexes on rigid spaces, J. Reine Angew.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "October 9,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "fil qhodge",
+      "heading": false
+    },
+    {
+      "term": "filtration fil",
+      "heading": false
+    },
+    {
+      "term": "qomega fil",
+      "heading": false
+    },
+    {
+      "term": "fil hodge",
+      "heading": false
+    },
+    {
+      "term": "fil star",
+      "heading": false
+    },
+    {
+      "term": "qhodge qderham",
+      "heading": false
+    },
+    {
+      "term": "qpower fil",
+      "heading": false
+    },
+    {
+      "term": "rar fil",
+      "heading": false
+    },
+    {
+      "term": "dar fil",
+      "heading": false
+    },
+    {
+      "term": "tikzcd fil",
+      "heading": false
+    },
+    {
+      "term": "fil qhhodge",
+      "heading": false
+    },
+    {
+      "term": "simeq fil",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p81); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2510.04782v2"
+  }
+}

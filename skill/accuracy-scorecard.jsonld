@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/accuracy-scorecard.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/accuracy-scorecard",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "accuracy-scorecard",
+      "title": "accuracy-scorecard",
+      "description": "Redisplay, regenerate, HTML-stage, or QA-gate QOU's 80-dps observational accuracy scorecard (`ACCURACY.md`) across all 5 empirical categories and the `1 ppQ` precision floor.",
+      "instructionsPath": "skills/local/accuracy-scorecard.md",
+      "instructionLines": 61,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

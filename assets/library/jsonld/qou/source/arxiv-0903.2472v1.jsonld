@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+  "contains": [
+    "library/arxiv-0903.2472v1/sections/sec-front-matter",
+    "library/arxiv-0903.2472v1/sections/sec-000",
+    "library/arxiv-0903.2472v1/sections/sec-001",
+    "library/arxiv-0903.2472v1/sections/sec-002",
+    "library/arxiv-0903.2472v1/sections/sec-003",
+    "library/arxiv-0903.2472v1/sections/sec-004",
+    "library/arxiv-0903.2472v1/sections/sec-005",
+    "library/arxiv-0903.2472v1/sections/sec-006",
+    "library/arxiv-0903.2472v1/sections/sec-007",
+    "library/arxiv-0903.2472v1/sections/sec-008",
+    "library/arxiv-0903.2472v1/sections/sec-009",
+    "library/arxiv-0903.2472v1/sections/sec-010",
+    "library/arxiv-0903.2472v1/sections/sec-011",
+    "library/arxiv-0903.2472v1/sections/sec-012",
+    "library/arxiv-0903.2472v1/sections/sec-013",
+    "library/arxiv-0903.2472v1/sections/sec-014",
+    "library/arxiv-0903.2472v1/sections/sec-015",
+    "library/arxiv-0903.2472v1/sections/sec-016",
+    "library/arxiv-0903.2472v1/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with\n\n**Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group**\n\n*Tudor Dimofte,1 Sergei Gukov,1,2 Jonatan Lenells,3 and Don Zagier4,5*\n\n61 pp, 19 sections.\n\n**Abstract.** We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716\n\n**Outline.** Front matter; 2 Perturbation theory around a non-trivial fla; 2.1 Feynman diagrams and arithmetic TQFT; 2.2.1 Analytic continuation; 2.2.2 A hierarchy of differential equations; 2.3 Classical and quantum symmetries; 2.4 Brane quantization; 3 A state integral model for perturbative $SL(; 3.1 Ideal triangulations of hyperbolic 3-manif; 3.2 Hikami's invariant; 3.3 Quantum dilogarithm; 4 Examples and computations; 4.1 Numerical verification of the arithmeticit; 4.2 Perturbative $SL(2,{\\mathbb{C}})$ invarian; 4.2.1 Quantization; Geometric branch; Conjugate branch; Abelian branch",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0903.2472&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0903.2472v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0903.2472v1.pdf",
+    "source_sha256": "637cfd1d4d833c029b7c05ca0da874c71320e19c4c695425163beabb83d14f7d",
+    "pages": 61,
+    "arxiv": {
+      "id": "0903.2472",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "13 Mar 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

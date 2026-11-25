@@ -1,0 +1,873 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2507.12454v1",
+  "title": "Cohomology rings of character varieties",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Classical motivation",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-classical-motivation"
+    },
+    {
+      "level": 1,
+      "title": "Fricke-Klein example",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-fricke-klein-example"
+    },
+    {
+      "level": 1,
+      "title": "Setup",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-setup"
+    },
+    {
+      "level": 1,
+      "title": "What is known?",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-what-is-known"
+    },
+    {
+      "level": 1,
+      "title": "COHAs/Coulomb branches",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-cohascoulomb-branches"
+    },
+    {
+      "level": 1,
+      "title": "Main example",
+      "number": "6",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-main-example"
+    },
+    {
+      "level": 1,
+      "title": "Poisson geometry of Coulomb branches",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-poisson-geometry-of-coulomb-branches"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomology rings",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "hilbert scheme",
+          "heading": false
+        }
+      ],
+      "extract": "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT Abstract. In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces, such as the proof of the P = W conjecture and the computation of the zero-dimensional COHA. In the case of punctured sphere I present an explicit description relating the cohomology rings to the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2507.12454v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-classical-motivation",
+      "number": "1",
+      "title": "Classical motivation",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local monodromy",
+          "heading": false
+        },
+        {
+          "term": "ode",
+          "heading": false
+        },
+        {
+          "term": "global monodromy",
+          "heading": false
+        },
+        {
+          "term": "monodromy representation",
+          "heading": false
+        },
+        {
+          "term": "monodromy computation",
+          "heading": false
+        },
+        {
+          "term": "vec varphi",
+          "heading": false
+        },
+        {
+          "term": "local monodromies",
+          "heading": false
+        },
+        {
+          "term": "presentation",
+          "heading": false
+        }
+      ],
+      "extract": "One way character varieties naturally arise is as follows. Suppose we have a linear ODE $$\\label{eq:ODE} \\frac\\partial{\\partial t} \\vec{\\varphi}(t) = A(t) \\vec{\\varphi}(t)\\quad(t\\in \\mathbb{C}).$$ Here $A(t)$ is an $n\\times n$ matrix-valued meromorphic function of one complex variable $t$, and we are looking for vector-valued solutions $\\vec{\\varphi}(t)$. Let $t_1,\\ldots, t_k$ be the poles of $A(t)$ (including",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-fricke-klein-example",
+      "number": "2",
+      "title": "Fricke-Klein example",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "8",
+      "words": 2159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixed hodge",
+          "heading": false
+        },
+        {
+          "term": "markov cubic",
+          "heading": false
+        },
+        {
+          "term": "mathbb setminus",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb sqcup",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "dim mathbb",
+          "heading": false
+        },
+        {
+          "term": "cong mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "## Equations This example was essentially worked out in [@fricke1965vorlesungen]. Let $k=4$, $n=2$. Let $a_1,\\ldots,a_4\\in\\mathbb C\\setminus\\{-2,2\\}$. Let us try to parameterize all $4$-tuples of $2\\times 2$ matrices $M_1, M_2, M_3, M_4\\in \\mathrm{GL}_2(\\mathbb{C})$, up to conjugation, satisfying $$\\prod_{i=1}^4 M_i = I_2, \\quad \\det M_i = 1, \\quad \\mathop{\\mathrm{tr}}M_i=a_i.$$ Let $x=\\mathop{\\mathrm{tr}}(M_1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-setup",
+      "number": "3",
+      "title": "Setup",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm char",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "prod det",
+          "heading": false
+        },
+        {
+          "term": "cohomology ring",
+          "heading": false
+        },
+        {
+          "term": "setup",
+          "heading": true
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        }
+      ],
+      "extract": "After reviewing in detail the basic example, we turn to the general setup and precise definitions. There is no reason to consider only genus $0$ surfaces, and the classical motivation directly extends to the more general case, for instance ODEs can be studied on complex curves of arbitrary genus. ::: definition Fix $g\\geq 0$, $n, k\\geq 1$ and Jordan forms $J_1, J_2, \\ldots, J_k \\in\\mathrm{GL}_n$. The associated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-what-is-known",
+      "number": "4",
+      "title": "What is known?",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "15",
+      "words": 1917,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixed hodge",
+          "heading": false
+        },
+        {
+          "term": "mathbf boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "hodge polynomials",
+          "heading": false
+        },
+        {
+          "term": "higgs bundles",
+          "heading": false
+        },
+        {
+          "term": "non-abelian hodge",
+          "heading": false
+        },
+        {
+          "term": "hodge correspondence",
+          "heading": false
+        },
+        {
+          "term": "tautological bundle",
+          "heading": false
+        }
+      ],
+      "extract": "Having defined our basic object of study, we explain some important structural results. ## Non-abelian Hodge correspondence The non-abelian Hodge correspondence, pioneered by Hitchin [@hitchin1987self] and developed by Simpson [@simpson1990harmonic; @simpson1991nonabelian; @simpson1992higgs], is a construction of a remarkable bijection between local systems and stable Higgs bundles, which induces a diffeomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-cohascoulomb-branches",
+      "number": "5",
+      "title": "COHAs/Coulomb branches",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm hilb",
+          "heading": false
+        },
+        {
+          "term": "geometric engineering",
+          "heading": false
+        },
+        {
+          "term": "coulomb",
+          "heading": true
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathscr otimes",
+          "heading": false
+        },
+        {
+          "term": "coulomb branch",
+          "heading": false
+        },
+        {
+          "term": "higgs moduli",
+          "heading": false
+        },
+        {
+          "term": "higgs bundles",
+          "heading": false
+        }
+      ],
+      "extract": "In order to explain our approach we need to introduce some ideas. ## Cohomological Hall Algebra (COHA) Denote by $\\mathscr{H}_2$ the Lie algebra of Poisson vector fields on $\\mathbb{C}^2$. Explicitly, it is the Lie algebra with basis elements $T_{r,s}$ for each pair $r,s\\geq 0$, corresponding to the vector field with Hamiltonian $x^r y^s$. It is convenient not to impose $T_{0,0}=0$, although the corresponding vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-main-example",
+      "number": "6",
+      "title": "Main example",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm hilb",
+          "heading": false
+        },
+        {
+          "term": "higgs field",
+          "heading": false
+        },
+        {
+          "term": "haiman",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "hilbert scheme",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        },
+        {
+          "term": "bigraded",
+          "heading": false
+        }
+      ],
+      "extract": "A special case can be worked out in full detail. We take $g=0$, i.e. $C=\\mathbb P^1$, and consider the $k+1$-twisted Higgs bundles, so that the Higgs field is a morphism $\\mathcal E\\to \\mathcal E(k-1)$. Equivalently, we may consider $k+1$ marked points without any parabolic structures and conditions on the residue of the Higgs field. The corresponding specialization of the partition function is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
+      "number": "7",
+      "title": "Poisson geometry of Coulomb branches",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iso rings",
+          "heading": false
+        },
+        {
+          "term": "iso vector",
+          "heading": false
+        },
+        {
+          "term": "mathrm lie",
+          "heading": false
+        },
+        {
+          "term": "geometric engineering",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        },
+        {
+          "term": "fold tensor",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to conclude by explaining a curious formalism which hints at how Conjectures [\\[conj:iso vector spaces\\]](#conj:iso vector spaces){reference-type=\"ref\" reference=\"conj:iso vector spaces\"}--[\\[conj:iso rings\\]](#conj:iso rings){reference-type=\"ref\" reference=\"conj:iso rings\"} can be extended to surfaces of higher genus. First, observe that, in view of [\\[eq:geometric engineering\\]](#eq:geometric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "This research is supported by the Consolidator Grant No. 101001159 \"Refined invariants in combinatorics, low-dimensional topology and geometry of moduli spaces\" of the European Research Council.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anton mellit",
+          "heading": false
+        },
+        {
+          "term": "olivier schiffmann",
+          "heading": false
+        },
+        {
+          "term": "higgs bundles",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "luca migliorini",
+          "heading": false
+        },
+        {
+          "term": "erik carlsson",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        }
+      ],
+      "extract": "[BFN18] Alexander Braverman, Michael Finkelberg, and Hiraku Nakajima, Towards a mathematical definition of Coulomb branches of 3-dimensional N = 4 gauge theories, II, Adv. Theor. Math. Phys. 22 (2018), no. 5, 1071–1147. MR 3952347 [BFN21] , Line bundles on Coulomb branches, Adv. Theor. Math. Phys. 25 (2021), no. 4, 957– 993. MR 4407969 [CDDP15] Wu-yen Chuang, Duiliu-Emanuel Diaconescu, Ron Donagi, and Tony Pantev,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm hilb",
+      "heading": false
+    },
+    {
+      "term": "otimes mathrm",
+      "heading": false
+    },
+    {
+      "term": "higgs bundles",
+      "heading": false
+    },
+    {
+      "term": "cohomology ring",
+      "heading": false
+    },
+    {
+      "term": "mathbb times",
+      "heading": false
+    },
+    {
+      "term": "mathrm pure",
+      "heading": false
+    },
+    {
+      "term": "mathbb subset",
+      "heading": false
+    },
+    {
+      "term": "mathrm lie",
+      "heading": false
+    },
+    {
+      "term": "mathrm exp",
+      "heading": false
+    },
+    {
+      "term": "mathbb setminus",
+      "heading": false
+    },
+    {
+      "term": "mathrm log",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Fundamental group of a k-punctured sphere",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Markov’s cubic as the complement of a triangle in the projective plane blown up at six points",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Cohomology of the Markov cubic",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Non-abelian Hodge correspondence",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Comet-shaped quiver with k legs and g loops",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2507.12454v1"
+  }
+}

@@ -1,0 +1,4622 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1204.4824v2",
+  "title": "Spectral networks",
+  "variant": "pdf",
+  "pages": 87,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and summary",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-summary"
+    },
+    {
+      "level": 1,
+      "title": "A brief review of theories of class S",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-brief-review-of-theories-of-class-s"
+    },
+    {
+      "level": 1,
+      "title": "Geometric description of BPS states",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-geometric-description-of-bps-states"
+    },
+    {
+      "level": 2,
+      "title": "4d BPS states",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-4d-bps-states"
+    },
+    {
+      "level": 2,
+      "title": "Solitons",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-solitons"
+    },
+    {
+      "level": 2,
+      "title": "Framed 2d-4d BPS states",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-framed-2d-4d-bps-states"
+    },
+    {
+      "level": 2,
+      "title": "Enhanced degeneracies",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-34-enhanced-degeneracies"
+    },
+    {
+      "level": 2,
+      "title": "A problem of signs",
+      "number": "3.5",
+      "page": 17,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-35-a-problem-of-signs"
+    },
+    {
+      "level": 1,
+      "title": "Basics of framed 2d-4d indices",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-basics-of-framed-2d-4d-indices"
+    },
+    {
+      "level": 2,
+      "title": "Generating functions of framed 2d-4d indices",
+      "number": "4.1",
+      "page": 19,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-generating-functions-of-framed-2d-4d-indices"
+    },
+    {
+      "level": 2,
+      "title": "Formal products and composition",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-formal-products-and-composition"
+    },
+    {
+      "level": 2,
+      "title": "The spectral network W",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-43-the-spectral-network-w"
+    },
+    {
+      "level": 2,
+      "title": "Computing F(,)",
+      "number": "4.4",
+      "page": 21,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The spectral network W at fixed",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-the-spectral-network-w-at-fixed"
+    },
+    {
+      "level": 2,
+      "title": "Walls as trajectories",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-walls-as-trajectories"
+    },
+    {
+      "level": 2,
+      "title": "Joints and wall-crossing for",
+      "number": "5.2",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-joints-and-wall-crossing-for"
+    },
+    {
+      "level": 2,
+      "title": "The mass filtration; W[] and [] for small",
+      "number": "5.3",
+      "page": 25,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-53-the-mass-filtration-w-and-for-small"
+    },
+    {
+      "level": 2,
+      "title": "W[] and [] for general",
+      "number": "5.4",
+      "page": 27,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-54-w-and-for-general"
+    },
+    {
+      "level": 2,
+      "title": "W near full defects",
+      "number": "5.5",
+      "page": 29,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-55-w-near-full-defects"
+    },
+    {
+      "level": 2,
+      "title": "Homotopy invariance",
+      "number": "5.6",
+      "page": 30,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-56-homotopy-invariance"
+    },
+    {
+      "level": 2,
+      "title": "K=2 theories and ideal triangulations",
+      "number": "5.7",
+      "page": 32,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-57-k2-theories-and-ideal-triangulations"
+    },
+    {
+      "level": 1,
+      "title": "Varying",
+      "number": "6",
+      "page": 34,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-varying"
+    },
+    {
+      "level": 2,
+      "title": "Endpoints crossing S-walls",
+      "number": "6.1",
+      "page": 34,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-endpoints-crossing-s-walls"
+    },
+    {
+      "level": 2,
+      "title": "K-walls and the degenerate spectral networks Wc",
+      "number": "6.2",
+      "page": 34,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-k-walls-and-the-degenerate-spectral-networks"
+    },
+    {
+      "level": 2,
+      "title": "The jump of F(, ) at a K-wall",
+      "number": "6.3",
+      "page": 36,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-the-jump-of-f-at-a-k-wall"
+    },
+    {
+      "level": 2,
+      "title": "4d BPS degeneracies",
+      "number": "6.4",
+      "page": 38,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-64-4d-bps-degeneracies"
+    },
+    {
+      "level": 2,
+      "title": "Wall-crossing formula",
+      "number": "6.5",
+      "page": 38,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-65-wall-crossing-formula"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the K-wall formula",
+      "number": "6.6",
+      "page": 40,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-66-proof-of-the-k-wall-formula"
+    },
+    {
+      "level": 1,
+      "title": "Examples of K-walls",
+      "number": "7",
+      "page": 42,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-7-examples-of-k-walls"
+    },
+    {
+      "level": 2,
+      "title": "Saddle connections",
+      "number": "7.1",
+      "page": 42,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-71-saddle-connections"
+    },
+    {
+      "level": 2,
+      "title": "Closed loops",
+      "number": "7.2",
+      "page": 43,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-72-closed-loops"
+    },
+    {
+      "level": 2,
+      "title": "Three-string webs",
+      "number": "7.3",
+      "page": 45,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-73-three-string-webs"
+    },
+    {
+      "level": 2,
+      "title": "The setting sun",
+      "number": "7.4",
+      "page": 46,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-74-the-setting-sun"
+    },
+    {
+      "level": 1,
+      "title": "Some BPS spectra",
+      "number": "8",
+      "page": 48,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-8-some-bps-spectra"
+    },
+    {
+      "level": 2,
+      "title": "The pentagon theory revisited",
+      "number": "8.1",
+      "page": 48,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-81-the-pentagon-theory-revisited"
+    },
+    {
+      "level": 2,
+      "title": "The pure SU(3) theory at strong coupling",
+      "number": "8.2",
+      "page": 51,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-82-the-pure-su3-theory-at-strong-coupling"
+    },
+    {
+      "level": 2,
+      "title": "The theory of 9 free hypermultiplets",
+      "number": "8.3",
+      "page": 52,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-83-the-theory-of-9-free-hypermultiplets"
+    },
+    {
+      "level": 1,
+      "title": "General spectral networks and path lifting",
+      "number": "9",
+      "page": 54,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-9-general-spectral-networks-and-path-lifting"
+    },
+    {
+      "level": 2,
+      "title": "General spectral networks",
+      "number": "9.1",
+      "page": 55,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-91-general-spectral-networks"
+    },
+    {
+      "level": 2,
+      "title": "Canonical examples: the W",
+      "number": "9.2",
+      "page": 56,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-92-canonical-examples-the-w"
+    },
+    {
+      "level": 2,
+      "title": "Soliton content",
+      "number": "9.3",
+      "page": 56,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-93-soliton-content"
+    },
+    {
+      "level": 2,
+      "title": "Path lifting",
+      "number": "9.4",
+      "page": 59,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-94-path-lifting"
+    },
+    {
+      "level": 1,
+      "title": "Coordinates for moduli of flat connections",
+      "number": "10",
+      "page": 61,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-10-coordinates-for-moduli-of-flat-connections"
+    },
+    {
+      "level": 2,
+      "title": "Nonabelianization",
+      "number": "10.1",
+      "page": 62,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-101-nonabelianization"
+    },
+    {
+      "level": 2,
+      "title": "Singularities and flags",
+      "number": "10.2",
+      "page": 64,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-102-singularities-and-flags"
+    },
+    {
+      "level": 2,
+      "title": "The nonabelianization map",
+      "number": "10.3",
+      "page": 65,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-103-the-nonabelianization-map"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic symplectic structures",
+      "number": "10.4",
+      "page": 66,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-104-holomorphic-symplectic-structures"
+    },
+    {
+      "level": 2,
+      "title": "Dimension counts",
+      "number": "10.5",
+      "page": 67,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-105-dimension-counts"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence of spectral networks",
+      "number": "10.6",
+      "page": 68,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-106-equivalence-of-spectral-networks"
+    },
+    {
+      "level": 2,
+      "title": "A picture of the set of all spectral networks",
+      "number": "10.7",
+      "page": 70,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-107-a-picture-of-the-set-of-all-spectral-network"
+    },
+    {
+      "level": 2,
+      "title": "Coordinate systems and a cluster conjecture",
+      "number": "10.8",
+      "page": 71,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-108-coordinate-systems-and-a-cluster-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "WKB asymptotics",
+      "number": "10.9",
+      "page": 72,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-109-wkb-asymptotics"
+    },
+    {
+      "level": 1,
+      "title": "A Joint rules for two-way streets",
+      "number": null,
+      "page": 74,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-a-joint-rules-for-two-way-streets"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Rules for soliton degeneracies",
+      "number": null,
+      "page": 74,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-a1-rules-for-soliton-degeneracies"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Joint rules for soliton sets",
+      "number": null,
+      "page": 76,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-a2-joint-rules-for-soliton-sets"
+    },
+    {
+      "level": 1,
+      "title": "B A categorical approach",
+      "number": null,
+      "page": 78,
+      "pageLabel": "76",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-b-a-categorical-approach"
+    },
+    {
+      "level": 2,
+      "title": "B.1 The ring of a category",
+      "number": null,
+      "page": 78,
+      "pageLabel": "76",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-b1-the-ring-of-a-category"
+    },
+    {
+      "level": 2,
+      "title": "B.2 Categories of paths",
+      "number": null,
+      "page": 79,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-b2-categories-of-paths"
+    },
+    {
+      "level": 2,
+      "title": "B.3 The winding ideal",
+      "number": null,
+      "page": 79,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-b3-the-winding-ideal"
+    },
+    {
+      "level": 2,
+      "title": "B.4 Formal parallel transport for the path groupoid",
+      "number": null,
+      "page": 80,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-b4-formal-parallel-transport-for-the-path-groupo"
+    },
+    {
+      "level": 2,
+      "title": "B.5 Cocycles",
+      "number": null,
+      "page": 80,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-b5-cocycles"
+    },
+    {
+      "level": 1,
+      "title": "C Convention convention",
+      "number": null,
+      "page": 82,
+      "pageLabel": "80",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-c-convention-convention"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral networks",
+          "heading": false
+        },
+        {
+          "term": "bps degeneracies",
+          "heading": false
+        },
+        {
+          "term": "framed d-4d",
+          "heading": false
+        },
+        {
+          "term": "d-4d indices",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "general spectral",
+          "heading": false
+        },
+        {
+          "term": "joint rules",
+          "heading": false
+        },
+        {
+          "term": "path lifting",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP Spectral networks Davide Gaiotto,1 Gregory W. Moore2 and Andrew Neitzke3 1School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA 2NHETC and Department of Physics and Astronomy, Rutgers University, Piscataway, NJ 08855–0849, USA 3Department of Mathematics, University of Texas at Austin, Austin, TX 78712, USA E-mail: dgaiotto@ias.edu,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1204.4824v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-summary",
+      "number": "1",
+      "title": "Introduction and summary",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 11,
+      "labelStart": "2",
+      "labelEnd": "9",
+      "words": 3820,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "networks wnet",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "bps degeneracies",
+          "heading": false
+        },
+        {
+          "term": "phases vartheta",
+          "heading": false
+        },
+        {
+          "term": "spectral networks",
+          "heading": false
+        },
+        {
+          "term": "parameter vartheta",
+          "heading": false
+        },
+        {
+          "term": "bps spectrum",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Introduction} In this paper we study objects which we call \\ti{spectral networks}. A spectral network $\\wnet$ is made up of \\ti{walls} drawn on a punctured real surface $C$. Here is a picture of one: \\insfigscaled{sample-network}{0.6}{A spectral network, drawn on the stereographic projection of $C = S^2$, with a single puncture at infinity. All of the walls eventually asymptote to this puncture. The walls",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
+      "number": "2",
+      "title": "A brief review of theories of class S",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surface defect",
+          "heading": false
+        },
+        {
+          "term": "cite gaiotto",
+          "heading": false
+        },
+        {
+          "term": "full defect",
+          "heading": false
+        },
+        {
+          "term": "theories",
+          "heading": true
+        },
+        {
+          "term": "half-bps",
+          "heading": false
+        },
+        {
+          "term": "sw-curve",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "class",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:review-S} In \\cite{Witten:1997sc, Gaiotto:2009we, Gaiotto:2009hg} a large and interesting class of $\\CN=2$, $d=4$ theories was studied. These theories, which we call ``theories of class S,'' can be constructed by compactification and twisting of $\\CN=(2,0)$, $d=6$ theories. Here we quickly review the basic features of this construction. Fix a compact Riemann surface $C$, with $s$ punctures at points",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-geometric-description-of-bps-states",
+      "number": "3",
+      "title": "Geometric description of BPS states",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Geometric description of BPS states",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-4d-bps-states",
+      "number": "3.1",
+      "title": "4d BPS states",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps states",
+          "heading": true
+        },
+        {
+          "term": "bps string",
+          "heading": false
+        },
+        {
+          "term": "phase vartheta",
+          "heading": false
+        },
+        {
+          "term": "finite webs",
+          "heading": false
+        },
+        {
+          "term": "finite web",
+          "heading": false
+        },
+        {
+          "term": "covering sigma",
+          "heading": false
+        },
+        {
+          "term": "stretched along",
+          "heading": false
+        },
+        {
+          "term": "branch point",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:4d-BPS-States} Now we recall the geometric description of BPS states in $S[\\fg, C, D]$. All such BPS states arise from BPS strings of the six-dimensional $S[\\fg]$, which are extended along $C$ and hence look like point particles in the remaining 3+1 dimensions. Roughly there are $\\binom{K}{2}$ distinct kinds of BPS string, but the topological twisting and compactification makes the story slightly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-solitons",
+      "number": "3.2",
+      "title": "Solitons",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps solitons",
+          "heading": false
+        },
+        {
+          "term": "bps strings",
+          "heading": false
+        },
+        {
+          "term": "d-4d bps",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "charge bar",
+          "heading": false
+        },
+        {
+          "term": "open webs",
+          "heading": false
+        },
+        {
+          "term": "open web",
+          "heading": false
+        },
+        {
+          "term": "surface defect",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:2d4d-bps-states} In the presence of the canonical surface defect $\\bS_z$, there is a second kind of BPS state in the story: we can consider BPS particles which are bound to the defect and interpolate between distinct vacua. We call these particles \\ti{solitons}. As described in \\cite{Gaiotto:2011tf}, BPS solitons are also realized geometrically in terms of finite webs of strings. The main difference is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-framed-2d-4d-bps-states",
+      "number": "3.3",
+      "title": "Framed 2d-4d BPS states",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-4d bps",
+          "heading": true
+        },
+        {
+          "term": "d-4d framed",
+          "heading": true
+        },
+        {
+          "term": "bps states",
+          "heading": true
+        },
+        {
+          "term": "unframed d-4d",
+          "heading": false
+        },
+        {
+          "term": "parameter vartheta",
+          "heading": false
+        },
+        {
+          "term": "cite gaiotto",
+          "heading": false
+        },
+        {
+          "term": "charge bar",
+          "heading": false
+        },
+        {
+          "term": "surface defects",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:framed-bps} Our approach to the BPS spectrum will involve an auxiliary device, the \\ti{framed} BPS states. These were introduced in the pure 4d context in \\cite{Gaiotto:2010be}, and in the 2d-4d context in \\cite{Gaiotto:2011tf}. Our interest in this paper is in the 2d-4d version. Consider a pair of points $z_1$, $z_2$ in $C$, and a path $\\wp$ in $C$ from $z_1$ to $z_2$. Also fix a parameter $\\vartheta \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-enhanced-degeneracies",
+      "number": "3.4",
+      "title": "Enhanced degeneracies",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite gaiotto",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        },
+        {
+          "term": "andriyash",
+          "heading": false
+        },
+        {
+          "term": "surface defect",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "inprod",
+          "heading": false
+        },
+        {
+          "term": "degeneracies",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:enh-4d} In the presence of a surface defect $\\bS_z$ there is an important enhancement to the 4d BPS degeneracies $\\Omega(\\gamma)$ \\cite{Gaiotto:2011tf}: they are replaced by numbers $\\omega(\\gamma, \\bar a) \\in \\Z$ for any $\\gamma \\in \\Gamma$ and $\\bar a \\in \\Gamma(z_1,z_2)$. $\\omega$ is ``linear'' in its second argument, i.e. it obeys \\begin{equation} \\omega(\\gamma, \\bar a + \\bar b) = \\omega(\\gamma, \\bar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-35-a-problem-of-signs",
+      "number": "3.5",
+      "title": "A problem of signs",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 1051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "bps webs",
+          "heading": false
+        },
+        {
+          "term": "path tilde",
+          "heading": false
+        },
+        {
+          "term": "d-4d bps",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "fro",
+          "heading": false
+        },
+        {
+          "term": "bps degeneracies",
+          "heading": false
+        },
+        {
+          "term": "vartheta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tricky-sign} We must now confront a pesky but important detail. There is an ambiguity in \\eqref{eq:2d-4d-motindx}: the generators $F$ and $\\CJ$ are well defined only up to $c$-number shifts. As a result, the index $\\fro'(L_{\\wp,\\vartheta}, \\bar a)$ suffers from some potential ambiguity (which even depends on $\\wp$). We can partially fix this ambiguity by requiring that $\\fro'(L_{\\wp,\\vartheta}, \\bar a)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-basics-of-framed-2d-4d-indices",
+      "number": "4",
+      "title": "Basics of framed 2d-4d indices",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-4d",
+          "heading": true
+        },
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "indices",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:F-basics} In this section we study the basic properties of the indices $\\fro'(L_{\\wp,\\vartheta}, a)$ counting framed 2d-4d BPS states. We will organize these indices into a natural generating function $F(\\wp, \\vartheta)$ which is the main player in this paper. Throughout this section we assume $(\\wp,\\vartheta)$ is generic, in the sense explained in \\S\\ref{sec:framed-bps}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
+      "number": "4.1",
+      "title": "Generating functions of framed 2d-4d indices",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "winding-rule",
+          "heading": false
+        },
+        {
+          "term": "sum bar",
+          "heading": false
+        },
+        {
+          "term": "fro",
+          "heading": false
+        },
+        {
+          "term": "tgamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:gen-func} The fundamental properties of $\\fro'(L_{\\wp,\\vartheta}, a)$ are most elegantly expressed in terms of a formal generating function $F(\\wp,\\vartheta)$. The idea is to introduce a formal variable $X_{\\bar a}$ for each charge $\\bar a \\in \\Gamma(z_1, z_2)$, and then define $ F(\\wp,\\vartheta) = \\sum_{\\bar a \\in \\Gamma(z_1,z_2)} \\fro'( L_{\\wp,\\vartheta},\\bar a) X_{\\bar a}$. As we have noted in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-formal-products-and-composition",
+      "number": "4.2",
+      "title": "Formal products and composition",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "framed bps",
+          "heading": false
+        },
+        {
+          "term": "interfaces",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "composition",
+          "heading": true
+        },
+        {
+          "term": "surface defects",
+          "heading": false
+        },
+        {
+          "term": "relative homology",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose $a$ and $b$ are the relative homology classes of two open paths on $\\tilde\\Sigma$. If the end of $a$ coincides with the start of $b$, we let $a+b$ denote the relative homology class of the concatenation of $a$ and $b$. Then we introduce a product law on our formal variables: \\begin{equation} \\label{eq:X-product-law} X_a X_b = \\begin{cases} X_{a+b} & \\text{if the end of $a$ is the start of $b$}, \\\\ 0 &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-43-the-spectral-network-w",
+      "number": "4.3",
+      "title": "The spectral network W",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "crosses wnet",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": true
+        },
+        {
+          "term": "wall supporting",
+          "heading": false
+        },
+        {
+          "term": "cross wnet",
+          "heading": false
+        },
+        {
+          "term": "supporting bar",
+          "heading": false
+        },
+        {
+          "term": "charge bar",
+          "heading": false
+        },
+        {
+          "term": "lifting bar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:spectral-network} Our next aim is to explain how $F(\\wp,\\vartheta)$ can actually be computed. As it turns out, the answer depends crucially on how $\\wp$ meets a certain codimension-1 locus $\\wnet_\\vartheta \\subset C$, which we call a \\ti{spectral network}. We say that a point $z \\in C$ \\ti{supports} those charges $\\bar a \\in \\Gamma(z,z)$ for which $Z_{\\bar a}(z) / e^{\\I \\vartheta} \\in \\R_-$. Define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-the-spectral-network-w-at-fixed",
+      "number": "5",
+      "title": "The spectral network W at fixed",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "recipe",
+          "heading": false
+        },
+        {
+          "term": "network",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:wnet} In \\S\\ref{sec:F-basics} we have given a recipe for computing the generating functions $F(\\wp, \\vartheta)$. The recipe depends on the data of the spectral network $\\wnet_\\vartheta$ and the framed 2d-4d BPS degeneracies $\\mu(\\cdot, p)$ along each wall $p$ of $\\wnet_\\vartheta$. To make this recipe explicit, then, we need to be able to determine $\\wnet_\\vartheta$ and $\\mu$. In this section we explain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-51-walls-as-trajectories",
+      "number": "5.1",
+      "title": "Walls as trajectories",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartheta bar",
+          "heading": false
+        },
+        {
+          "term": "charge bar",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": true
+        },
+        {
+          "term": "bps",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose the $\\cS$-wall $p$ supports the charge $\\bar a \\in \\Gamma_{ij}$ (by which we mean more precisely that every point $z \\in p$ supports a charge $\\bar a(z) \\in \\Gamma_{ij}(z,z)$). Then $e^{- \\I \\vartheta} Z_{\\bar a}$ is real everywhere along $p$. In particular, since $\\de Z_{\\bar a} = \\frac{1}{\\pi}(\\lambda^{(j)} - \\lambda^{(i)})$, this means that $p$ is an $ij$-trajectory with phase $\\vartheta$, in the sense of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-joints-and-wall-crossing-for",
+      "number": "5.2",
+      "title": "Joints and wall-crossing for",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "walls meet",
+          "heading": false
+        },
+        {
+          "term": "wall dies",
+          "heading": false
+        },
+        {
+          "term": "joint supports",
+          "heading": false
+        },
+        {
+          "term": "tilde runs",
+          "heading": false
+        },
+        {
+          "term": "charges bar",
+          "heading": false
+        },
+        {
+          "term": "cv-wcf",
+          "heading": false
+        },
+        {
+          "term": "ijkl-collisions",
+          "heading": false
+        },
+        {
+          "term": "insfig",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:wnet-basics} Define a \\ti{joint} to be a point $z \\in C$ where at least two $\\cS$-walls intersect. A joint thus supports at least two charges, say $\\bar a \\in \\Gamma_{ij}(z,z)$ and $\\bar b \\in \\Gamma_{kl}(z,z)$. \\insfig{trajectories-meeting-commuting}{The local picture around a joint where exactly two $\\cS$-walls meet. We also show two paths $\\wp$, $\\wp'$ on $C$ which are related to one another by regular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-53-the-mass-filtration-w-and-for-small",
+      "number": "5.3",
+      "title": "The mass filtration; W[] and [] for small",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "abs bar",
+          "heading": false
+        },
+        {
+          "term": "bps soliton",
+          "heading": false
+        },
+        {
+          "term": "bar lambda",
+          "heading": false
+        },
+        {
+          "term": "d-4d bps",
+          "heading": false
+        },
+        {
+          "term": "equation wnet",
+          "heading": false
+        },
+        {
+          "term": "charge bar",
+          "heading": false
+        },
+        {
+          "term": "walls emerging",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:determining-wnet} We begin with the observation that $\\wnet_\\vartheta$ carries a useful filtration. Namely, for any $\\Lambda > 0$ (with dimensions of mass), we can define a new object $\\wnet_\\vartheta[\\Lambda]$ by truncating all the $\\cS$-walls: for a wall $w$ supporting a charge $\\bar a$, $\\wnet_\\vartheta[\\Lambda]$ includes only the portion of $w$ with $\\abs{Z_{\\bar a}} < \\Lambda$. So \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-54-w-and-for-general",
+      "number": "5.4",
+      "title": "W[] and [] for general",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "vartheta arg",
+          "heading": false
+        },
+        {
+          "term": "sample wnet",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "some vartheta",
+          "heading": false
+        },
+        {
+          "term": "soliton degeneracies",
+          "heading": false
+        },
+        {
+          "term": "abs bar",
+          "heading": false
+        },
+        {
+          "term": "wall supporting",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:constructing-w} We have determined $\\wnet_\\vartheta[\\Lambda]$ and $\\mu[\\Lambda]$ for small $\\Lambda$. Now we can ask how $\\wnet_\\vartheta[\\Lambda]$ and $\\mu[\\Lambda]$ evolve as $\\Lambda$ increases. Using the properties of $\\wnet_\\vartheta$ and $\\mu$ we have already determined, it is straightforward to deduce the answer. The three $\\cS$-walls emerging from each branch point $\\fb$ flow according to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-55-w-near-full-defects",
+      "number": "5.5",
+      "title": "W near full defects",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "full defect",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "network-growth",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:falling-down-holes} On a close look at Figure \\ref{fig:network-growth}, one notices that as $\\Lambda \\to \\infty$, all of the $\\cS$-walls in $\\wnet[\\Lambda]$ asymptotically approach the full defects $D_n$. To understand this concretely, let us consider the general behavior of $ij$-trajectories around a full defect. In a local coordinate $z$ where the defect is at $z=0$, we have \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-56-homotopy-invariance",
+      "number": "5.6",
+      "title": "Homotopy invariance",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homotopy invariance",
+          "heading": true
+        },
+        {
+          "term": "homotopy across",
+          "heading": false
+        },
+        {
+          "term": "twisted homotopy",
+          "heading": false
+        },
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "regular homotopy",
+          "heading": false
+        },
+        {
+          "term": "invariance requires",
+          "heading": false
+        },
+        {
+          "term": "homotopy invariant",
+          "heading": false
+        },
+        {
+          "term": "across branch",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:homotopy-invariance} Now let us consider a key consistency check of our story so far. We have claimed on general physical grounds that $F(\\wp, \\vartheta)$ should be a homotopy invariant of $\\wp$, or more precisely a twisted homotopy invariant as described in \\S\\ref{sec:tricky-sign}. On the other hand, we have also given a recipe which completely determines $F(\\wp, \\vartheta)$. So we can ask whether this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-57-k2-theories-and-ideal-triangulations",
+      "number": "5.7",
+      "title": "K=2 theories and ideal triangulations",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": false
+        },
+        {
+          "term": "branch point",
+          "heading": false
+        },
+        {
+          "term": "asymptotes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:k2-examples} \\insfigscaled{triangulation-vs-network}{0.28}{A portion of a spectral network $\\wnet_\\vartheta$ with $K=2$, and one face in the corresponding ideal triangulation $T(\\wnet_\\vartheta)$ up to isotopy (green dashed lines). Each wall of $\\wnet_\\vartheta$ begins on a branch point (orange cross) and asymptotes to a defect (blue dot); these defects are also the vertices of $T(\\wnet_\\vartheta)$. Each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-varying",
+      "number": "6",
+      "title": "Varying",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "values vartheta",
+          "heading": false
+        },
+        {
+          "term": "delta vartheta",
+          "heading": false
+        },
+        {
+          "term": "f-lim",
+          "heading": false
+        },
+        {
+          "term": "special values",
+          "heading": false
+        },
+        {
+          "term": "limit eqref",
+          "heading": false
+        },
+        {
+          "term": "abs",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:varying-theta} In \\S\\ref{sec:wnet} above, we held $\\vartheta$ fixed and studied the generating functions $F(\\wp,\\vartheta)$. In this section we consider what happens when $\\vartheta$ is allowed to vary. In so doing we will uncover new phenomena, associated with the 4d BPS states in the theory $S[\\fg,C,D]$. $F(\\wp,\\vartheta)$ is piecewise constant as a function of $\\vartheta \\in \\R$: if the pair",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-61-endpoints-crossing-s-walls",
+      "number": "6.1",
+      "title": "Endpoints crossing S-walls",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartheta varepsilon",
+          "heading": false
+        },
+        {
+          "term": "cite gaiotto",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        },
+        {
+          "term": "jumps",
+          "heading": false
+        },
+        {
+          "term": "wall",
+          "heading": false
+        }
+      ],
+      "extract": "First, there are ``simple'' jumps which occur when an $\\cS$-wall moves across one of the endpoints of $\\wp$. Namely: $F(\\wp,\\vartheta)$ jumps whenever there is some $\\bar a \\in \\Gamma(z_1,z_1)$ or $\\bar a \\in \\Gamma(z_2,z_2)$ with $e^{-\\I \\vartheta_c} Z_{\\bar a} \\in \\R_-$ and $\\mu(\\bar a) \\neq 0$. If $\\bar a \\in \\Gamma(z_1,z_1)$ and $\\wp$ intersects the $\\cS$-wall for $\\vartheta_c + \\varepsilon$ then the jump is of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-k-walls-and-the-degenerate-spectral-networks",
+      "number": "6.2",
+      "title": "K-walls and the degenerate spectral networks Wc",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "two-way street",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "two-way-crossing",
+          "heading": false
+        },
+        {
+          "term": "limiting network",
+          "heading": false
+        },
+        {
+          "term": "wnet-jump",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:K-walls} There is also a second, more interesting kind of jump which can occur at a critical phase $\\vartheta = \\vartheta_c$. In contrast to the previous case, these jumps do not arise because of a change in the interaction between $\\wnet_\\vartheta$ and $\\wp$. Rather, they arise because of a topology change in $\\wnet_\\vartheta$ itself. \\insfigscaled{near-branch-point}{0.18}{The behavior of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-the-jump-of-f-at-a-k-wall",
+      "number": "6.3",
+      "title": "The jump of F(, ) at a K-wall",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "34",
+      "labelEnd": "36",
+      "words": 766,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vartheta gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma tilde",
+          "heading": false
+        },
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "inprod bar",
+          "heading": false
+        },
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "variables tilde",
+          "heading": false
+        },
+        {
+          "term": "lift tilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:f-jump} The jump of $F(\\wp, \\vartheta)$ at $\\vartheta_c$ is given by a certain universal substitution $\\cK$ acting on the formal variables $X_a$: \\begin{equation} \\label{eq:k-jump} F(\\wp, \\vartheta_c^+) = \\cK\\left(F(\\wp, \\vartheta_c^-)\\right). \\end{equation} $\\cK$ is determined by the degenerate spectral network $\\wnet_{\\vartheta_c}$. In this section we describe what $\\cK$ is, deferring the proof of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-64-4d-bps-degeneracies",
+      "number": "6.4",
+      "title": "4d BPS degeneracies",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps degeneracies",
+          "heading": true
+        },
+        {
+          "term": "d-4d",
+          "heading": false
+        },
+        {
+          "term": "sit",
+          "heading": false
+        },
+        {
+          "term": "defects",
+          "heading": false
+        }
+      ],
+      "extract": "4d BPS degeneracies According to the analysis of [5, 21], the jump K of the framed 2d-4d degeneracies captures the degeneracies of 4d BPS particles.25 Since we have now given a formula for K, it follows that we can use it to determine the 4d BPS degeneracies. Comparing our formula (6.13) to those of [5, 21], we ﬁnd that the enhanced BPS degeneracies reviewed in §3.4 are here given by26 ω(γ, ¯a) = ⟨L(γ), ¯a⟩. (6.14)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-65-wall-crossing-formula",
+      "number": "6.5",
+      "title": "Wall-crossing formula",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wall-crossing formula",
+          "heading": true
+        },
+        {
+          "term": "d-4d wall-crossing",
+          "heading": false
+        },
+        {
+          "term": "d4d-wcf",
+          "heading": false
+        },
+        {
+          "term": "cite gaiotto",
+          "heading": false
+        },
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "j-f",
+          "heading": false
+        },
+        {
+          "term": "surface defects",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:2d4d-wcf} In \\S2.3 of \\cite{Gaiotto:2011tf}, we wrote a \\ti{2d-4d wall-crossing formula} which should be obeyed by the degeneracies $\\mu$ and $\\omega$ in any coupled 2d-4d system. We have given an explicit description of $\\mu$ and $\\omega$ in the theories we are now considering. So it is natural to ask whether one can show directly that the $\\mu$ and $\\omega$ defined here indeed obey this formula. In a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-66-proof-of-the-k-wall-formula",
+      "number": "6.6",
+      "title": "Proof of the K-wall formula",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 1029,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "two-way streets",
+          "heading": false
+        },
+        {
+          "term": "one-way streets",
+          "heading": false
+        },
+        {
+          "term": "crosses wnet",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "inprod",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:k-proof} Here we provide the proofs omitted in \\S\\ref{sec:f-jump}. First let us explain why $L(\\gamma)$ as defined in \\eqref{eq:def-L} is indeed a 1-cycle, i.e. has no boundary. For any two-way street $p$, the boundary of $p_\\Sigma$ lies over the boundary of $p$. More precisely, a boundary point of $p$ may be either a branch point or a joint; $p_\\Sigma$ has no boundary over a branch point, but does have a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-7-examples-of-k-walls",
+      "number": "7",
+      "title": "Examples of K-walls",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we illustrate the general discussion of \\S\\ref{sec:varying-theta} with some examples.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-71-saddle-connections",
+      "number": "7.1",
+      "title": "Saddle connections",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-way street",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "saddle",
+          "heading": true
+        },
+        {
+          "term": "saddle connection",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:saddle-connection} The simplest possibility has already appeared in Figure \\ref{fig:wnet-jump} above. It involves two $\\cS$-walls, colliding along a two-way street $p$ running between two branch points. We call such a two-way street a ``saddle connection,'' following the standard terminology for trajectories of quadratic differentials (which is literally what we are considering here in the case $K=2$).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-72-closed-loops",
+      "number": "7.2",
+      "title": "Closed loops",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phases vartheta",
+          "heading": false
+        },
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "two-way streets",
+          "heading": false
+        },
+        {
+          "term": "closed trajectories",
+          "heading": false
+        },
+        {
+          "term": "closed-trajectories",
+          "heading": false
+        },
+        {
+          "term": "critical phases",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:closed-loops} \\insfigscaled{closed-trajectories}{0.45}{A more complicated way in which $\\cS$-walls can collide head-on. At $\\vartheta < \\vartheta_c$, the $\\cS$-wall supporting charge $a$ winds once clockwise around the cylinder and then disappears toward the bottom, while the $\\cS$-wall supporting charge $b$ winds many times counterclockwise around the cylinder and eventually disappears toward the top. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-73-three-string-webs",
+      "number": "7.3",
+      "title": "Three-string webs",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "walls born",
+          "heading": false
+        },
+        {
+          "term": "two-way streets",
+          "heading": false
+        },
+        {
+          "term": "supporting bar",
+          "heading": false
+        },
+        {
+          "term": "three-string",
+          "heading": true
+        },
+        {
+          "term": "phase vartheta",
+          "heading": false
+        },
+        {
+          "term": "supporting charges",
+          "heading": false
+        },
+        {
+          "term": "d-4d charges",
+          "heading": false
+        },
+        {
+          "term": "finite web",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:three-string} \\insfigscaled{three-pronged-network}{0.52}{A new way in which $\\cS$-walls can collide, which appears only in theories with $K > 2$. The picture shows a patch of $C$ containing three branch points. $\\wnet_\\vartheta$ involves both ``primary'' $\\cS$-walls born from the branch points (supporting charges $a$, $b$, $c$) and ``secondary'' $\\cS$-walls born from intersections between primary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-74-the-setting-sun",
+      "number": "7.4",
+      "title": "The setting sun",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-string web",
+          "heading": false
+        },
+        {
+          "term": "two-way streets",
+          "heading": false
+        },
+        {
+          "term": "finite webs",
+          "heading": false
+        },
+        {
+          "term": "bps strings",
+          "heading": false
+        },
+        {
+          "term": "degenerate network",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "vartheta",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:setting-sun} Next we briefly consider a more complicated example, in which several overlapping finite webs appear simultaneously. Unlike the previous examples, we just draw the degenerate network of interest, and not the nondegenerate ones at nearby phases (which would be terribly cluttered in this example). See Figure \\ref{fig:setting-sun}. \\insfig{setting-sun}{The ``setting sun'': a picture which could",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-8-some-bps-spectra",
+      "number": "8",
+      "title": "Some BPS spectra",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "networks wnet",
+          "heading": false
+        },
+        {
+          "term": "spectral networks",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Examples} In this section we finally show how the spectral networks $\\wnet_\\vartheta$ can be used to determine the 4d BPS spectrum in some simple examples of theories $S[\\fg = A_{K-1}, C, D]$. A first comment is that all of the examples described in Section 9 of \\cite{Gaiotto:2009hg} are also examples of the structures considered here: more precisely they are examples of the case $K=2$, where (as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-81-the-pentagon-theory-revisited",
+      "number": "8.1",
+      "title": "The pentagon theory revisited",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 51,
+      "labelStart": "46",
+      "labelEnd": "49",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "phases vartheta",
+          "heading": false
+        },
+        {
+          "term": "vartheta jumps",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "critical phases",
+          "heading": false
+        },
+        {
+          "term": "bps degeneracies",
+          "heading": false
+        },
+        {
+          "term": "saddle connections",
+          "heading": false
+        },
+        {
+          "term": "charges gamma",
+          "heading": false
+        }
+      ],
+      "extract": "The first new example we consider is obtained by taking $K=3$ and $C = \\IC\\IP^1$, with a single defect at $z = \\infty$, imposing the boundary conditions that $\\phi_2$ has a pole of order 4 and $\\phi_3$ one of order 8. These conditions imply that after rescaling and shifting the coordinate $z$, one can put $\\phi_2$ and $\\phi_3$ in the form \\begin{equation} \\phi_2 = 3 \\Lambda^2 \\, \\de z^{2}, \\qquad \\phi_3 = (z^2 + u)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-82-the-pure-su3-theory-at-strong-coupling",
+      "number": "8.2",
+      "title": "The pure SU(3) theory at strong coupling",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "vartheta varies",
+          "heading": false
+        },
+        {
+          "term": "phases vartheta",
+          "heading": false
+        },
+        {
+          "term": "vartheta frac",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "points coalesce",
+          "heading": false
+        },
+        {
+          "term": "bps hypermultiplet",
+          "heading": false
+        },
+        {
+          "term": "branch points",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:su3-strong} For our next example we take again $K=3$ and $C = \\IC\\IP^1$, but this time with defects both at $z = 0$ and $z = \\infty$, with each defect imposing the boundary conditions that $\\phi_2$ has a pole of order at most 2 and $\\phi_3$ one of order 4. These conditions imply that after rescaling the coordinate $z$, one can put $\\phi_2$ and $\\phi_3$ in the form \\begin{equation} \\phi_2 = -3 u_2 \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-83-the-theory-of-9-free-hypermultiplets",
+      "number": "8.3",
+      "title": "The theory of 9 free hypermultiplets",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "50",
+      "labelEnd": "52",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps multiplets",
+          "heading": false
+        },
+        {
+          "term": "particles carrying",
+          "heading": false
+        },
+        {
+          "term": "central charges",
+          "heading": false
+        },
+        {
+          "term": "nine-hypers",
+          "heading": false
+        },
+        {
+          "term": "charge gamma",
+          "heading": false
+        },
+        {
+          "term": "flavor symmetry",
+          "heading": false
+        },
+        {
+          "term": "full punctures",
+          "heading": false
+        },
+        {
+          "term": "abs",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:nine-hypers} Next let us consider $K=3$ and $C = \\IC\\IP^1$, with three defects, two ``full'' (at $z = \\pm 1$) and one ``simple'' (at $z = 0$). This means that at $z = \\pm 1$ we impose the condition that $\\phi_2$ has a pole of order $2$ and $\\phi_3$ one of order $3$, while at $z = 0$ we require that the discriminant $\\Delta = 27 \\phi_3^2 - 4 \\phi_2^3$ has a pole of order $4$. Concretely this means we take",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-9-general-spectral-networks-and-path-lifting",
+      "number": "9",
+      "title": "General spectral networks and path lifting",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "walls",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "form lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:spectral-networks} As we have remarked in \\S\\ref{sec:k2-examples}, in the theories $S[A_1, C, D]$, each spectral network $\\wnet_\\vartheta$ corresponds naturally to an ideal triangulation of $C$. Ideal triangulations are rather flexible objects and one might study them without regard for whether they arise from any $\\wnet_\\vartheta$. In an analogous way, we now generalize the $\\wnet_\\vartheta$ we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-91-general-spectral-networks",
+      "number": "9.1",
+      "title": "General spectral networks",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet looks",
+          "heading": false
+        },
+        {
+          "term": "point mathfrak",
+          "heading": false
+        },
+        {
+          "term": "branch points",
+          "heading": false
+        },
+        {
+          "term": "singular points",
+          "heading": false
+        },
+        {
+          "term": "marked points",
+          "heading": false
+        },
+        {
+          "term": "streets",
+          "heading": false
+        },
+        {
+          "term": "networks",
+          "heading": true
+        },
+        {
+          "term": "sheets",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:GenSpecNet} Let $C$ be an oriented real surface with a (perhaps empty) boundary. Each connected component of the boundary is a copy of $S^1$; on each such component fix a (nonempty) set of marked points. Also fix a (perhaps empty) set of marked points in the interior of $C$. We refer to the interior marked points as \\emph{punctures} and we refer to all the marked points as \\ti{singular points}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-92-canonical-examples-the-w",
+      "number": "9.2",
+      "title": "Canonical examples: the W",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "spectral networks",
+          "heading": false
+        },
+        {
+          "term": "wall",
+          "heading": false
+        },
+        {
+          "term": "previous sections",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "enumerate",
+          "heading": false
+        },
+        {
+          "term": "neq",
+          "heading": false
+        }
+      ],
+      "extract": "The $\\wnet_{\\vartheta}$ discussed in previous sections, which arose naturally from the physics of theories of class $S$, are essentially examples of spectral networks. The data D2 and D3 above appeared in \\S\\ref{sec:wnet}. The datum D1 is determined by the behavior of the $\\lambda^{(i)}$ near $\\fs_n$. We will not describe it explicitly here, except in the basic case where $\\fs_n$ is a full defect: in that case",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-93-soliton-content",
+      "number": "9.3",
+      "title": "Soliton content",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 59,
+      "labelStart": "54",
+      "labelEnd": "57",
+      "words": 1237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soliton content",
+          "heading": true
+        },
+        {
+          "term": "british traffic",
+          "heading": false
+        },
+        {
+          "term": "outgoing soliton",
+          "heading": false
+        },
+        {
+          "term": "solitonic traffic",
+          "heading": false
+        },
+        {
+          "term": "traffic rules",
+          "heading": false
+        },
+        {
+          "term": "incoming solitons",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:Soliton-content} To a spectral network we can associate some additional data having to do with \\ti{solitons}, which we now define. A \\emph{soliton} $s(z)$, where $z\\in p_c$, is an immersion of $[0,1]$ into $\\Sigma$, which begins and ends on preimages of $z$, and such that its projection to $C$ lies in the spectral network $\\wnet$ (or more precisely in a very small neighborhood of $\\wnet$; this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-94-path-lifting",
+      "number": "9.4",
+      "title": "Path lifting",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 61,
+      "labelStart": "57",
+      "labelEnd": "59",
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "path twp",
+          "heading": false
+        },
+        {
+          "term": "tilde wnet",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "tilde whose",
+          "heading": false
+        },
+        {
+          "term": "d-4d bps",
+          "heading": false
+        },
+        {
+          "term": "composition-bold",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:Path-Lifting} In \\S\\S\\ref{sec:F-basics}-\\ref{sec:wnet} we studied at great length the generating functions $F(\\wp, \\vartheta)$ of framed 2d-4d BPS degeneracies. Let us set aside the physical meaning of these functions for a moment and just think of them as some interesting mathematical objects. We found in \\S\\ref{subsec:Compute-FP} that $F(\\wp, \\vartheta)$ could be completely constructed from the datum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-10-coordinates-for-moduli-of-flat-connections",
+      "number": "10",
+      "title": "Coordinates for moduli of flat connections",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "59",
+      "labelEnd": "60",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "connections nabla",
+          "heading": false
+        },
+        {
+          "term": "cluster coordinates",
+          "heading": false
+        },
+        {
+          "term": "flat",
+          "heading": true
+        },
+        {
+          "term": "bar sigma",
+          "heading": false
+        },
+        {
+          "term": "moduli",
+          "heading": true
+        },
+        {
+          "term": "coordinate system",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:moduli} In this last section we discuss a mathematical application of spectral networks. Given a spectral network $\\wnet$ subordinate to a $K$-fold covering $\\Sigma \\to C$, we will construct a map \\begin{equation} \\Psi_\\wnet: \\CM(\\Sigma, GL(1); \\fm) \\to \\CM_F(C, GL(K); \\fm) \\end{equation} where $\\CM(\\Sigma, GL(1); \\fm)$ is a moduli space of twisted flat $GL(1)$-connections $\\nabla^\\ab$ on $\\Sigma$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-101-nonabelianization",
+      "number": "10.1",
+      "title": "Nonabelianization",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 64,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 1054,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde wnet",
+          "heading": false
+        },
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        },
+        {
+          "term": "path tilde",
+          "heading": false
+        },
+        {
+          "term": "twisted flat",
+          "heading": false
+        },
+        {
+          "term": "flat rank",
+          "heading": false
+        },
+        {
+          "term": "cap tilde",
+          "heading": false
+        },
+        {
+          "term": "nabla",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:PushAbelian} We now explain how, given a nondegenerate spectral network $\\wnet$ subordinate to a covering $\\Sigma \\to C$, and given also a twisted flat rank 1 connection over $\\Sigma$, we construct a corresponding twisted flat rank $K$ connection over $C$. By a \\ti{twisted flat rank $K$ connection} over a real surface $S$ we mean a pair of a complex rank $K$ vector bundle on $\\tilde S$ and a flat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-102-singularities-and-flags",
+      "number": "10.2",
+      "title": "Singularities and flags",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nabla invariant",
+          "heading": false
+        },
+        {
+          "term": "subbundles",
+          "heading": false
+        },
+        {
+          "term": "extra structure",
+          "heading": false
+        },
+        {
+          "term": "hat",
+          "heading": false
+        },
+        {
+          "term": "flags",
+          "heading": true
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:flags} The twisted flat connection $({\\hat E}, \\nabla)$ produced by our nonabelianization construction carries a bit of extra structure which will be important in what follows. In this section we briefly describe it. Let us consider $({\\hat E}, \\nabla)$ in a neighborhood $\\CU \\subset \\tilde C$ of one of the singular points $\\mathfrak{s}_n$. On $\\CU$ we can trivialize the covering $\\tilde\\Sigma \\to \\tilde",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-103-the-nonabelianization-map",
+      "number": "10.3",
+      "title": "The nonabelianization map",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "63",
+      "labelEnd": "64",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonabelianization",
+          "heading": true
+        },
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "connections nabla",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "twisted flat",
+          "heading": false
+        },
+        {
+          "term": "nabla around",
+          "heading": false
+        }
+      ],
+      "extract": "Given a nondegenerate spectral network $\\wnet$ subordinate to a covering $\\Sigma \\to C$, we have defined a nonabelianization operation which takes a twisted flat rank $1$ connection over $\\Sigma$ to a twisted flat rank $K$ connection over $C$ with flag data. In this section we discuss the corresponding map $\\Psi_{\\wnet}$ between \\ti{moduli spaces} of twisted flat connections. For simplicity we take the case where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-104-holomorphic-symplectic-structures",
+      "number": "10.4",
+      "title": "Holomorphic symplectic structures",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holomorphic symplectic",
+          "heading": true
+        },
+        {
+          "term": "varpi sigma",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "delta alpha",
+          "heading": false
+        },
+        {
+          "term": "variations delta",
+          "heading": false
+        },
+        {
+          "term": "wedge delta",
+          "heading": false
+        },
+        {
+          "term": "untwisted connections",
+          "heading": false
+        },
+        {
+          "term": "symplectic quotient",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:hol-symp} In this section we explain one of the important properties of $\\Psi_\\wnet$: both its domain and codomain are holomorphic symplectic, and $\\Psi_\\wnet$ is a holomorphic symplectic map, \\begin{equation}\\label{eq:preserve-sf} \\Psi_{\\wnet}^*(\\varpi_C) = \\varpi_{\\Sigma}. \\end{equation} We begin with $\\CM(\\Sigma, GL(1); \\mathfrak{m})$. The easiest way to understand its holomorphic symplectic form is to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-105-dimension-counts",
+      "number": "10.5",
+      "title": "Dimension counts",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "65",
+      "labelEnd": "66",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "hat tilde",
+          "heading": false
+        },
+        {
+          "term": "branch-bound",
+          "heading": false
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "equation dim",
+          "heading": false
+        },
+        {
+          "term": "universal bundle",
+          "heading": false
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dimensions} Now let us compare the dimensions of the moduli spaces related by $\\Psi_\\wnet$. First we consider $\\CM(C, GL(K);\\mathfrak{m})$. This space can be represented as the space of $GL(K,\\IC)$ matrices $A_1, \\dots, A_{g_C}$, $B_1, \\dots, B_{g_C}$, $C_1, \\dots, C_s$, subject to some relations: first, the eigenvalues of the $C_n$ are fixed; second, we impose \\begin{equation} \\label{eq:fund-rel} \\prod_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-106-equivalence-of-spectral-networks",
+      "number": "10.6",
+      "title": "Equivalence of spectral networks",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "66",
+      "labelEnd": "68",
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral networks",
+          "heading": true
+        },
+        {
+          "term": "networks wnet",
+          "heading": false
+        },
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "non-isotopic spectral",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate spectral",
+          "heading": false
+        },
+        {
+          "term": "implements move",
+          "heading": false
+        },
+        {
+          "term": "coverings sigma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsec:EqivalentGSN} Given a nondegenerate spectral network $\\wnet$ we have constructed a corresponding nonabelianization map $\\Psi_\\wnet$. It is natural to ask how this map depends on $\\wnet$. We can get some intuition by remembering previous results about the case $K=2$. In that case, as already mentioned in \\S\\ref{sec:k2-examples}, $\\wnet$ determines an ideal triangulation $T(\\wnet)$ of $C$ up to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-107-a-picture-of-the-set-of-all-spectral-network",
+      "number": "10.7",
+      "title": "A picture of the set of all spectral networks",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "68",
+      "labelEnd": "69",
+      "words": 171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral networks",
+          "heading": true
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "picturesn",
+          "heading": false
+        },
+        {
+          "term": "eqivalentgsn",
+          "heading": false
+        },
+        {
+          "term": "varying-theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:PictureSN} Fix a curve $C$ and singularities $\\fs_n$ and orderings $o(\\fs_n)$. Exploration of some examples leads to a rough conjecture about the set $X = X(C, \\fs_n,o(\\fs_n))$ of all spectral networks with these data fixed. There should be a natural topology on $X$, such that $X$ is decomposed into connected cells, separated by codimension-1 loci where the spectral networks become degenerate. (Ideally",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-108-coordinate-systems-and-a-cluster-conjecture",
+      "number": "10.8",
+      "title": "Coordinate systems and a cluster conjecture",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 684,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma wnet",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "coordinate systems",
+          "heading": true
+        },
+        {
+          "term": "cluster",
+          "heading": true
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "inprod gamma",
+          "heading": false
+        },
+        {
+          "term": "cluster atlas",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:Coord-System} Let us consider a spectral network $\\wnet$ for which \\eqref{eq:Branch-bound} is saturated. In this case, as we have noted, $\\Psi_\\wnet$ is at least locally one-to-one. Thus the holonomies $\\tilde\\CY_{\\tilde\\gamma}$ of $\\nabla^\\ab = \\Psi_\\wnet^{-1}(\\nabla)$, where $\\tilde\\gamma$ runs over a basis of $H_1(\\tilde\\Sigma;\\IZ)$, provide \\ti{local coordinates} on $\\CM_F(C, GL(K);\\mathfrak{m})$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-109-wkb-asymptotics",
+      "number": "10.9",
+      "title": "WKB asymptotics",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 74,
+      "labelStart": "70",
+      "labelEnd": "72",
+      "words": 1207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wnet vartheta",
+          "heading": false
+        },
+        {
+          "term": "zeta vartheta",
+          "heading": false
+        },
+        {
+          "term": "varphi zeta",
+          "heading": false
+        },
+        {
+          "term": "network wnet",
+          "heading": false
+        },
+        {
+          "term": "zeta bar",
+          "heading": false
+        },
+        {
+          "term": "tilde wnet",
+          "heading": false
+        },
+        {
+          "term": "vartheta arg",
+          "heading": false
+        },
+        {
+          "term": "psi wnet",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:WKB-Asymptotics} So far in this section we have been considering the map $\\Psi_\\wnet$ associated to an arbitrary spectral network $\\wnet$. These maps have especially interesting asymptotic properties if we choose $\\wnet$ to be the particular network $\\wnet_\\vartheta$ which we studied in the rest of the paper. In this section we briefly explain this point. (We will gloss over the role of the twisting in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-a-joint-rules-for-two-way-streets",
+      "number": null,
+      "title": "A Joint rules for two-way streets",
+      "level": 1,
+      "pageStart": 74,
+      "pageEnd": 74,
+      "labelStart": "72",
+      "labelEnd": "72",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joint",
+          "heading": true
+        },
+        {
+          "term": "rules",
+          "heading": true
+        },
+        {
+          "term": "streets",
+          "heading": true
+        }
+      ],
+      "extract": "Joint rules for two-way streets In this appendix we describe the rules governing the behavior of the solitons near a rather general kind of joint, where we have solitons oriented into the joint on up to six distinct trajectories. This kind of joint does not occur in a nondegenerate spectral network, but it can occur for a degenerate one. In the language of §5 this means that this kind of joint does not occur in Wϑ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-a1-rules-for-soliton-degeneracies",
+      "number": null,
+      "title": "A.1 Rules for soliton degeneracies",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 76,
+      "labelStart": "72",
+      "labelEnd": "74",
+      "words": 663,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soliton degeneracies",
+          "heading": true
+        },
+        {
+          "term": "two-way streets",
+          "heading": false
+        },
+        {
+          "term": "ν6ν",
+          "heading": false
+        },
+        {
+          "term": "charges supported",
+          "heading": false
+        },
+        {
+          "term": "branch point",
+          "heading": false
+        },
+        {
+          "term": "rules",
+          "heading": true
+        },
+        {
+          "term": "ν5ν3ν",
+          "heading": false
+        },
+        {
+          "term": "ν6ν2ν",
+          "heading": false
+        }
+      ],
+      "extract": "Rules for soliton degeneracies We consider six two-way streets pn entering a joint as in Figure 46. It is convenient to sum- marize the soliton spectrum by deﬁning generating functions for the soliton degeneracies on these six streets: νn = X ¯a µ(a, pn)Xa, τn = X ¯b µ(b, pn+3)Xb, (A.1) – 72 – ij ik jk ij ik jk kj kj ji ki ki ji Figure 46. The British resolution of a joint with two-way streets. Incoming soliton",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-a2-joint-rules-for-soliton-sets",
+      "number": null,
+      "title": "A.2 Joint rules for soliton sets",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 78,
+      "labelStart": "74",
+      "labelEnd": "76",
+      "words": 673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soliton",
+          "heading": true
+        },
+        {
+          "term": "soliton degeneracies",
+          "heading": false
+        },
+        {
+          "term": "joint",
+          "heading": true
+        },
+        {
+          "term": "rules",
+          "heading": true
+        },
+        {
+          "term": "spectral network",
+          "heading": false
+        },
+        {
+          "term": "supports charges",
+          "heading": false
+        },
+        {
+          "term": "highway",
+          "heading": false
+        },
+        {
+          "term": "ν6ν",
+          "heading": false
+        }
+      ],
+      "extract": "Joint rules for soliton sets In the last subsection we discussed the rules for the soliton degeneracies µ at a joint. These rules can be determined by the constraint of homotopy invariance. However, the strange- looking series (A.3) seems to be crying out for some more geometric interpretation. Here we provide one. As a bonus, this interpretation also motivates a natural set of rules for soliton sets (not only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-b-a-categorical-approach",
+      "number": null,
+      "title": "B A categorical approach",
+      "level": 1,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "76",
+      "labelEnd": "76",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical",
+          "heading": true
+        },
+        {
+          "term": "rize",
+          "heading": false
+        },
+        {
+          "term": "path-lifting",
+          "heading": false
+        }
+      ],
+      "extract": "A categorical approach In this appendix we introduce some categorical constructions which allow us to summa- rize some of the main results of the paper in a language which, we hope, some of our mathematically inclined readers will ﬁnd congenial. We begin in §§B.1 to B.3 with a number of deﬁnitions. Then in §B.4 we state a theorem regarding the “formal parallel transport,” or “path-lifting,” and its homotopy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-b1-the-ring-of-a-category",
+      "number": null,
+      "title": "B.1 The ring of a category",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 79,
+      "labelStart": "76",
+      "labelEnd": "77",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ring",
+          "heading": true
+        },
+        {
+          "term": "composable",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": true
+        }
+      ],
+      "extract": "The ring of a category To any category C we may associate a ring R(C). As an abelian group, R(C) is the free group on the space of morphisms: R(C) = M f∈Mor(C) Z · ℓf. (B.1) The ring structure in R(C) is deﬁned by ℓf1 · ℓf2 := ( 0 if f1 and f2 are not composable, ℓf1f2 if f1 and f2 are composable. (B.2) Any functor F : C →D induces a canonical ring homomorphism F : R(C) →R(D). More generally, we could deﬁne a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-b2-categories-of-paths",
+      "number": null,
+      "title": "B.2 Categories of paths",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fundamental groupoid",
+          "heading": false
+        },
+        {
+          "term": "groupoid whose",
+          "heading": false
+        },
+        {
+          "term": "paths",
+          "heading": true
+        },
+        {
+          "term": "morphism spaces",
+          "heading": false
+        },
+        {
+          "term": "torsor",
+          "heading": false
+        }
+      ],
+      "extract": "Categories of paths Let X be any topological space. By a path in X we mean a continuous map ℘: [T1, T2] →X for some interval [T1, T2] ⊂R. We deﬁne the path groupoid P(X) as follows: the objects of P(X) are points of X, and the morphism space P(X)(x1, x2) is the set of all paths from x1 to x2, with the obvious composition. By taking a quotient on the morphism spaces in P(X) we can reduce to the fundamental groupoid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-b3-the-winding-ideal",
+      "number": null,
+      "title": "B.3 The winding ideal",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 80,
+      "labelStart": "77",
+      "labelEnd": "78",
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "winding ideal",
+          "heading": true
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "z2-valued",
+          "heading": false
+        }
+      ],
+      "extract": "The winding ideal Let π : ˜X →X be a circle bundle. There is an exact sequence π1(S1) ι→π1( ˜X) π∗ →π1(X) →π0(S1). (B.5) Choosing the standard generator L of π1(S1), let W be the group generated by ι(L). Then (B.5) induces an exact sequence 1 →W →π1( ˜X) π∗ →π1(X) →1. (B.6) So any class [℘] ∈π1( ˜X) with π∗([℘]) = 1 has a natural W-valued “winding” w([℘]). In the case where X = S is a surface and ˜X = ˜S is its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-b4-formal-parallel-transport-for-the-path-groupo",
+      "number": null,
+      "title": "B.4 Formal parallel transport for the path groupoid",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 80,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel transport",
+          "heading": true
+        },
+        {
+          "term": "formal parallel",
+          "heading": true
+        },
+        {
+          "term": "homotopy class",
+          "heading": false
+        },
+        {
+          "term": "path",
+          "heading": true
+        },
+        {
+          "term": "codomain",
+          "heading": false
+        },
+        {
+          "term": "groupoid",
+          "heading": true
+        },
+        {
+          "term": "homomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Formal parallel transport for the path groupoid Now let Σ →C be a K-fold branched cover of an oriented surface with at least one puncture, and let W be a spectral network subordinate to that cover, as deﬁned in §9.1. The construction of §9.4 deﬁnes a notion of formal parallel transport, or path lifting, along paths in C′′, where C′′ is C with all joints of W and branch points of Σ →C removed. The formal parallel",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-b5-cocycles",
+      "number": null,
+      "title": "B.5 Cocycles",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 82,
+      "labelStart": "78",
+      "labelEnd": "80",
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-4d degeneracies",
+          "heading": false
+        },
+        {
+          "term": "framed d-4d",
+          "heading": false
+        },
+        {
+          "term": "regular homotopy",
+          "heading": false
+        },
+        {
+          "term": "homotopy classes",
+          "heading": false
+        },
+        {
+          "term": "homotopy class",
+          "heading": false
+        },
+        {
+          "term": "immersions",
+          "heading": false
+        },
+        {
+          "term": "σir",
+          "heading": false
+        },
+        {
+          "term": "get homomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Cocycles We would now like to relate the formalism of this paper to the formalism using the Xγij′ used in our previous paper [5]. The essential problem here is one of signs. In this section we explain how one can construct a twisted ring, which allows us to work directly with paths on C and Σ, at the cost of introducing some subtle cocycles in the multiplication rules. The precise statement is equation (B.18) below.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-c-convention-convention",
+      "number": null,
+      "title": "C Convention convention",
+      "level": 1,
+      "pageStart": 82,
+      "pageEnd": 87,
+      "labelStart": "80",
+      "labelEnd": "85",
+      "words": 2161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charge γij",
+          "heading": false
+        },
+        {
+          "term": "bps quivers",
+          "heading": false
+        },
+        {
+          "term": "wall crossing",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "neitzke",
+          "heading": false
+        },
+        {
+          "term": "cecotti",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "grant phy",
+          "heading": false
+        }
+      ],
+      "extract": "Convention convention We summarize here some conventions used in this and our preceding papers. 1. Homology classes on the IR (Seiberg-Witten) curve Σ are denoted in this paper by ¯a ∈Γij′(z, z′). In our previous paper [5] they were denoted by γij′. They are represented by paths oriented from z(i) to z′(j′). Thus ∂γij′ = z′(j′) −z(i). The sum γij′ + γj′k′′ ∈Γik′′ is thus oriented from z(i) to z′′(k′′). Note that the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vartheta wnet",
+      "heading": false
+    },
+    {
+      "term": "vartheta bar",
+      "heading": false
+    },
+    {
+      "term": "vartheta gamma",
+      "heading": false
+    },
+    {
+      "term": "network wnet",
+      "heading": false
+    },
+    {
+      "term": "equation wnet",
+      "heading": false
+    },
+    {
+      "term": "tilde wnet",
+      "heading": false
+    },
+    {
+      "term": "vartheta jumps",
+      "heading": false
+    },
+    {
+      "term": "some vartheta",
+      "heading": false
+    },
+    {
+      "term": "generic vartheta",
+      "heading": false
+    },
+    {
+      "term": "vartheta indeed",
+      "heading": false
+    },
+    {
+      "term": "phases vartheta",
+      "heading": false
+    },
+    {
+      "term": "vary vartheta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "i",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "2",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 13,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "12",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 18,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "17",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 20,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "21",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 24,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 28,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "27",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "32",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "34",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 41,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "40",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 43,
+      "label": "41",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 44,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "43",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 46,
+      "label": "44",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 47,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "46",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 49,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "49",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 52,
+      "label": "50",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 53,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "52",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 55,
+      "label": "53",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 56,
+      "label": "54",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 57,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "57",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 60,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "59",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 62,
+      "label": "60",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 63,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "62",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 65,
+      "label": "63",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 66,
+      "label": "64",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 67,
+      "label": "65",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 68,
+      "label": "66",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 69,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "68",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 71,
+      "label": "69",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 72,
+      "label": "70",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 73,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 74,
+      "label": "72",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 75,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 76,
+      "label": "74",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 77,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "76",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 79,
+      "label": "77",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 80,
+      "label": "78",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 81,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "80",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 83,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 84,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 85,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 86,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 87,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A spectral network, drawn on the stereographic projection of C = S2, with a single puncture at inﬁnity. All of the walls eventually asymptote to this puncture. The walls are labeled by pairs ij, where i, j are sheets of a 3-fold covering Σ →C. The branch points of the covering are shown as orange cr",
+      "page": 4,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Some possible topologies for ﬁnite webs of BPS strings. An orange cross with label (ij) denotes an (ij)-branch point. Wherever a string with label ij appears, it could equally well have been represented by a string with label ji and the opposite orientation",
+      "page": 13,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Some possible topologies for ﬁnite open webs of BPS strings, representing BPS solitons on the surface defect Sz. Each ﬁnite open web includes one string that ends on the point z ∈C",
+      "page": 14,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Two surface defects connected by an interface",
+      "page": 15,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Two tangent directions at z determined by a ﬁnite web N: ˜z1 points “into” the ﬁnite web while ˜z2 points “away.”",
+      "page": 17,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Two open ﬁnite BPS webs N on the same patch of C, drawn displaced from one another for clarity. These two webs carry the same charge [NΣ] but have diﬀerent lifts [N˜Σ]. Informally, one can say that the lifts of these two webs “diﬀer by one unit of winding.”",
+      "page": 18,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Three surface defects connected by two interfaces. (This picture lives in the threedimensional space where the ﬁeld theory S[g, C, D] is deﬁned; we have factored out the time direction.)",
+      "page": 20,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A path ℘crossing an S-wall is locally divided into two pieces ℘±. We deform ℘± slightly to paths ℘′",
+      "page": 22,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The local picture around a joint where exactly two S-walls meet. We also show two",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The local picture around a generic collision between three S-walls",
+      "page": 24,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "A collision between S-walls, at which a new S-wall is born",
+      "page": 25,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "A collision between S-walls, at which an S-wall dies",
+      "page": 25,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "",
+      "page": 26,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "A ﬁnite open web N(z) consisting of a single short ij-trajectory, with one end on the (ij)-branch point b and one end on z. This ﬁnite open web represents a light BPS soliton on the surface defect Sz",
+      "page": 27,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Sample Wϑ[Λ] in the theory S[A2, CP1, D] where the Dn are 3 full defects (blue dots at z = −1, 0, 1). We choose ϑ = π/4, φ2 =",
+      "page": 28,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "A portion of a sample Wϑ, exhibiting an intersection between three S-walls, marked by a yellow dot",
+      "page": 29,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "S-walls falling into a full defect, shown in the covering coordinate w = log z. There is a single ij wall and a single jk wall. We have i < j < k in the ordering described in the text",
+      "page": 30,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "A pair of paths that are homotopic but diﬀer by a unit of winding",
+      "page": 31,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "The constraint of twisted homotopy invariance says",
+      "page": 31,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Two paths which diﬀer by homotopy across a branch point",
+      "page": 32,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "The explicit sums of paths which occur in (5.24). In the equations shown in the ﬁgure, we represent the formal variable Xa by an explicit picture of a smooth path on Σ, whose canonical",
+      "page": 33,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "A portion of a spectral network Wϑ with K = 2, and one face in the corresponding ideal triangulation T(Wϑ) up to isotopy (green dashed lines). Each wall of Wϑ begins on a branch point (orange cross) and asymptotes to a defect (blue dot); these defects are also the vertices of T(Wϑ). Each branch poin",
+      "page": 33,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "The behavior of ij-trajectories approaching a branch point of type (ij)",
+      "page": 35,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "The simplest way in which Wϑ can jump at a K-wall. As ϑ →ϑc, two S-walls merge into a single two-way street running between two branch points. The two-way street supports two distinct charges ¯a, ¯b",
+      "page": 35,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "A path ℘crossing a pair of nearly coincident S-walls, which coalesce into a two-way street at ϑ = ϑc",
+      "page": 36,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "A joint where two-way streets meet. Each two-way street is shown slightly “resolved”, as explained at the end of §6.2. The resolution here is the “American resolution,” as appropriate since we are considering the limit ϑ →ϑ−",
+      "page": 40,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "A more complicated way in which S-walls can collide head-on. At ϑ < ϑc, the Swall supporting charge a winds once clockwise around the cylinder and then disappears toward the bottom, while the S-wall supporting charge b winds many times counterclockwise around the cylinder and eventually disappears t",
+      "page": 44,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "Another picture of the S-walls on the cylinder for ϑ near the critical phase ϑc. Here we do not truncate the walls, and we distinguish diﬀerent walls by giving them diﬀerent colors",
+      "page": 45,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "A new way in which S-walls can collide, which appears only in theories with K > 2. The picture shows a patch of C containing three branch points. Wϑ involves both “primary” Swalls born from the branch points (supporting charges a, b, c) and “secondary” S-walls born from intersections between primary",
+      "page": 46,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "30",
+      "title": "The “setting sun”: a picture which could occur as part of a degenerate spectral network at some ϑ = ϑc. We show the two-way streets slightly resolved, with the “American resolution”, which would occur in the limit ϑ →ϑ−",
+      "page": 47,
+      "pageLabel": "45",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "Three ﬁnite webs, belonging to a 1-parameter family of ﬁnite webs parameterized by an interval: as we move along the interval, the “bubble” in the middle of the web expands from zero size (left) to a ﬁnite maximum size (right)",
+      "page": 48,
+      "pageLabel": "46",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "The network Wϑ when u = 0, at the phases ϑ = πn/10, with 1 ≤n ≤10; the ﬁrst row begins with n = 1 and the second with n = 6. We indicate the labelings of the S-walls in the n = 1 ﬁgure: all walls in each indicated group carry the same label (e.g. there are three walls carrying the label 13 exiting t",
+      "page": 49,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "33",
+      "title": "The two saddle connections which appear at the critical phases, when u = 0. They could equally well have been represented by segments with the opposite orientation and the labels ij transposed",
+      "page": 49,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "34",
+      "title": "The network Wϑ when u = 4 and Λ = 1, at the phases ϑ = πn/200, with (reading from left to right and top to bottom) n = 1, 23, 45, 68, 82, 90, 97, 103, 110, 118, 132, 155, 177, 199",
+      "page": 50,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "35",
+      "title": "The two saddle connections and one more complicated ﬁnite web which appear at the critical phases, when u = 4 and Λ = 1. Each segment could equally well be replaced by one with the opposite orientation and the labels ij transposed",
+      "page": 50,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "36",
+      "title": "Left: the spectral network Wϑ in a neighborhood of a pair of nearby branch points of types (ij) and (jk); right: the limit where the branch points coalesce to form a branch point of type (ijk). This situation occurs in the pure SU(3) theory as u2 →0",
+      "page": 52,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "37",
+      "title": "The evolution of Wϑ from ϑ = π",
+      "page": 53,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "38",
+      "title": "The cutoﬀspectral networks Wϑ[Λ] where Λeiϑ runs over the 9 values 1",
+      "page": 54,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "39",
+      "title": "The American (left) and British (right) resolutions of a street",
+      "page": 57,
+      "pageLabel": "55",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "40",
+      "title": "A spectral network in the vicinity of a branch point",
+      "page": 57,
+      "pageLabel": "55",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "41",
+      "title": "The rule for constructing outgoing solitons from a six-way junction, with the British resolution. We show six allowed types of junction, one in each “Weyl chamber” around the joint",
+      "page": 58,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "42",
+      "title": "Some examples of diagrams representing outgoing solitons",
+      "page": 58,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "43",
+      "title": "Crossing at a defect: an equivalence which relates two non-isotopic spectral networks",
+      "page": 69,
+      "pageLabel": "67",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "44",
+      "title": "Bubble: an equivalence which relates two non-isotopic spectral networks",
+      "page": 70,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "45",
+      "title": "Branch point traversal: an equivalence which relates two non-isotopic spectral networks",
+      "page": 70,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "46",
+      "title": "The British resolution of a joint with two-way streets. Incoming soliton degeneracies are described by generating functions νn, n = 1, . . . , 6. Outgoing soliton degeneracies are described by generating functions τn, n = 1, . . . , 6",
+      "page": 75,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "47",
+      "title": "Three two-way streets around a branch point",
+      "page": 76,
+      "pageLabel": "74",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "48",
+      "title": "The further resolution of the joint of Figure 46, replacing each two-way street by inﬁnitely many parallel one-way ones. (For clarity we only indicate ﬁve one-way streets in each direction.) Note that there is a vertical “highway divider” separating the kj and jk walls, and similarly for the other t",
+      "page": 77,
+      "pageLabel": "75",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 62,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 62,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "48 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p82); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 37
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 62 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1204.4824v2"
+  }
+}

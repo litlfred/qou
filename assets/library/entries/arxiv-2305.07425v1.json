@@ -1,0 +1,308 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2305.07425v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "A fixed group $G$ will admit many different cobounded actions on different hyperbolic metric spaces. Abbott, Balasubramanya, and Osin in [@ABO19] show that the set of equivalence classes of cobounded hyperbolic actions of a group $G$ carries a natural partial order; see Section [\\[sec:prelim\\]](#sec:prelim){reference-type=\"ref\" reference=\"sec:prelim\"}. The resulting poset is called the *poset of hyperbolic structures* on $G$, denoted $\\mathcal{H}(G)$. Roughly speaking, one action is larger than another if the smaller space can be formed by equivariantly collapsing some subspaces of the larger.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2305.07425v1  [math.GT]  12 May 2023\nLARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS\nCAROLYN ABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN\nAbstract. The set of equivalence classes of cobounded actions of a group G on diﬀerent\nhyperbolic metric spaces carries a natural partial order. Following Abbott–Balasubramanya–\nOsin, the group G is H–accessible if the resulting poset has a largest element. In this paper, we\nprove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental\ngroup and give conditions under which the fundamental group of the original ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-acknowledgments.md",
+      "narrative": null,
+      "content": "Abbott was partially supported by NSF grants DMS-1803368 and DMS-2106906. Nguyen was partially supported by Project ICRTM04_2021.07 of the International Centre for Research and Postgraduate Training in Mathematics, VietNam. Rasmussen was partially supported by NSF grants DMS-1840190 and DMS-2202986.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-preliminaries.md",
+      "narrative": null,
+      "content": "2. Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H–accessibility",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-21-haccessibility.md",
+      "narrative": null,
+      "content": "[]{#sec:prelim label=\"sec:prelim\"}\n\nIn this section, we review the partial order on cobounded group actions introduced in [@ABO19]. Fix a group $G$. If $G$ acts coboundedly on two metric spaces $X$ and $Y$, we say $G\\curvearrowright X$ *is dominated by* $G\\curvearrowright Y$, written $G\\curvearrowright X \\preceq G\\curvearrowright Y$, if there exists a coarsely $G$--equivariant coarsely Lipschitz map $Y\\to X$. The preorder $\\preceq$ induces an equivalence relation $G\\curvearrowright X\\sim G\\curvearrowright Y$ if and only if $G\\curvearrowright X \\preceq G\\curvearrowright Y$ and $G\\curvearrowrigh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projection axioms",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-22-projection-axioms.md",
+      "narrative": null,
+      "content": "[]{#sec:projaxioms label=\"sec:projaxioms\"} We will use the Bestvina--Bromberg--Fujiwara projection complex machinery developed in [@BBF15] to obtain actions on quasi-trees. In this section, we review this machinery.\n\n::: defn\n[]{#defn:Projectionaxioms label=\"defn:Projectionaxioms\"}\n\nLet $\\mathbb{Y}$ be a collection of geodesic spaces equipped with projection maps $$\\{\\pi_{Y}\\colon  \\mathbb Y\\setminus \\{Y\\}\\to Y\\}_{Y\\in \\mathbb Y}.$$ Let $d_{Y}(X,Z) = \\operatorname{diam} (\\pi_{Y}(X) \\cup \\pi_{Y}(Z))$ for $X\\ne Y\\ne Z \\in \\mathbb{Y}$. The pair $(\\mathbb{Y}, \\{\\pi_{Y}\\}_{Y\\in\\mathbb Y})$ satisfie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Croke-Kleiner admissible groups",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-23-croke-kleiner-admissible-groups.md",
+      "narrative": null,
+      "content": "In this section, we review Croke-Kleiner admissible groups [@CK02] and the associated Bass-Serre space, a notion defined in [@HRSS22].\n\n::: defn\nA *graph of groups* $\\mathcal{G} = (\\Gamma, \\{G_{\\mu}\\}, \\{G_{\\alpha} \\}, \\{\\tau_{\\alpha} \\})$ is a connected graph $\\Gamma$ together with a group ${G}_{\\sigma}$ for each $\\sigma \\in  V(\\Gamma) \\cup E(\\Gamma)$ (here $V(\\Gamma)$ and $E(\\Gamma)$ denote vertices and edges), and an injective homomorphism $\\tau_{\\alpha} \\colon {G}_{\\alpha} \\to {G}_{\\mu}$ for each oriented edge $\\alpha$, where $\\mu$ denotes the terminal vertex of $\\alpha$.\n:::\n\n::: defn\n[]{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Croke-Kleiner admissible groups and H–inaccessibility",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-3-croke-kleiner-admissible-groups-and-hinaccessi.md",
+      "narrative": null,
+      "content": "[]{#CKA:finiteindex label=\"CKA:finiteindex\"}\n\nIn this section, we prove Theorem [\\[thm1\\]](#thm1){reference-type=\"ref\" reference=\"thm1\"}: every Croke--Kleiner admissible group has a finite index subgroup that is $\\mathcal{H}$--inaccessible.\n\nFix a Croke--Kleiner admissible group $\\mathcal{G} = (\\Gamma, \\{G_{\\mu}\\}, \\{G_{\\alpha} \\}, \\{\\tau_{\\alpha} \\})$. We partition the vertex set $T^0$ of the Bass-Serre tree into two disjoint collections of vertices $\\mathcal{V}_1$ and $\\mathcal{V}_2$ such that if $v$ and $v'$ are in $\\mathcal{V}_i$ then $d_{T}(v, v')$ is even. Since any automorphism of $T$ e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of group actions",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-31-construction-of-group-actions.md",
+      "narrative": null,
+      "content": "For notational simplicity, we replace $G$ by its index $\\leq 2$ subgroup $G'$. For each vertex $v$ in the Bass-Serre tree $T$, let $L_v$ be the quasi-line from Definition [\\[defn:quasilineL_v\\]](#defn:quasilineL_v){reference-type=\"ref\" reference=\"defn:quasilineL_v\"}. Recall that $gL_v = L_{gv}$ for any group element $g$ in $G$.\n\nLet $\\mathbb{L}_1$ be the collection of quasi-lines $\\{ L_v \\}_{v \\in \\mathcal{V}_1}$ and $\\mathbb{L}_2$ be the collection of quasi-lines $\\{ L_v \\}_{v \\in \\mathcal{V}_2}$. We define a projection of $L_v$ to $L_{v'}$ in $\\mathbb L_i$ as follows.\n\n::: defn\n[]{#defn:proj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H–accessibility of 3-manifold groups",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-4-haccessibility-of-3-manifold-groups.md",
+      "narrative": null,
+      "content": "[]{#sec:NPC label=\"sec:NPC\"}\n\nThe goal of this section is to prove Theorem [\\[thm:NPCmld\\]](#thm:NPCmld){reference-type=\"ref\" reference=\"thm:NPCmld\"}, which gives conditions under which the fundamental group of a non-geometric 3--manifold is $\\mathcal H$--inaccessible.\n\nWe begin by recalling some definitions and facts about 3-manifolds. Let $M$ be a compact, connected, orientable, irreducible 3-manifold with empty or toroidal boundary. By the geometrization theorem for 3-manifolds of Perelman ([@Perel1], [@Perel2], [@Perel3]) and Thurston, either\n\n1.  the manifold $M$ is *geometric*, in the se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seifert fibered manifolds",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-41-seifert-fibered-manifolds.md",
+      "narrative": null,
+      "content": "[]{#subsec:SF label=\"subsec:SF\"}\n\nIn this section, we analyze Seifert fibered pieces.\n\n::: lem\n[]{#lem:centralextension label=\"lem:centralextension\"} Let $1 \\to \\mathbb{Z} \\xrightarrow{i} G \\xrightarrow{\\pi} H \\to 1$ be a short exact sequence where $\\mathbb{Z}$ is central in $G$ and $H$ is a non-elementary hyperbolic group. Then $G$ is $\\mathcal{H}$--inaccessible.\n:::\n\n::: proof\n*Proof.* Choose a finite generating set $J$ of $H$ and consider the hyperbolic action $G \\curvearrowright \\mathop{\\mathrm{Cay}}(H, J)$. Let $a$ be a generator of the group $\\mathbb{Z}$, and let $b$ be an element of $G$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H–accessibility of non-elementary graph manifolds",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-42-haccessibility-of-non-elementary-graph-manifo.md",
+      "narrative": null,
+      "content": "[]{#sec:NPCgraph label=\"sec:NPCgraph\"} Let $M$ be a 3-dimensional non-elementary graph manifold with Seifert fibered pieces $M_1,\\ldots,M_k$ in its torus decomposition. There is an induced graph-of-groups structure $\\mathcal{G}$ on $\\pi_1(M)$ with underlying graph $\\Gamma$ as follows. There is a vertex of $\\Gamma$ for each $M_i$, with vertex group $\\pi_1(M_{i})$. Each edge group is $\\mathbb{Z}^2$, the fundamental group of a torus in the decomposition. The edge monomorphisms come from the two different gluings of the torus into the two adjacent Seifert fibered components. With this graph of gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theorem 1.1",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-43-theorem-11.md",
+      "narrative": null,
+      "content": "whose statement we recall for the convenience of the reader.\nTheorem 1.1. Let M be a non-geometric 3-manifold with empty or toroidal boundary. If the\ntorus decomposition of M contains any of the following, then π1(M) is H–inaccessible:\n(1) a hyperbolic piece which contains a boundary torus of M;\n(2) two hyperbolic pieces glued along a torus;\n(3) an isolated non-elementary Seifert ﬁbered piece; or\n(4) a non-elementary maximal graph manifold component.\nLARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS\n17\nProof. Let M1, . . . , Mk be the maximal graph manifold components and isolated Seifert ﬁbered",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Let M be a non-geometric 3-manifold with empty or toroidal boundary. If the torus decomposition of M contains any of the following, then π1(M) is H–inaccessible: (1) a hyperbolic piece which contains a boundary torus of M; (2) two hyperbolic pieces glued along a torus; (3) an isolated non-elementary Seifert ﬁbered piece; or (4) a non-elementary maximal graph manifold component. LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H–accessibility of finitely generated 3-manifold groups",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-44-haccessibility-of-finitely-generated-3-manifo.md",
+      "narrative": null,
+      "content": "[]{#sec:Boundary label=\"sec:Boundary\"} In this section, we explain how one might reduce the study of $\\mathcal{H}$--accessibility of all finitely generated 3--manifold groups to the case of compact, orientable, irreducible, $\\partial$--irreducible 3--manifold groups. In particular, we show that for any hyperbolic 3-manifold $M$ without rank-1 cusps, if $\\pi_1(M)$ is finitely generated then it is $\\mathcal H$-accessible.\n\nLet $M$ be an orientable 3-manifold with finitely generated fundamental group. It follows from Scott's Core Theorem that $M$ contains a compact codimension zero submanifold wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2305.07425v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[AFW15] M. Aschenbrenner, S. Friedl, H. Wilton, 3-manifold groups; EMS Series of Lectures in Mathematics,\nEuropean Mathematical Society (EMS), Zurich, 2015.\n[Agol04] I. Agol, Tameness of hyperbolic 3-manifolds, arXiv:math/0405568.\n[ABO19] C. Abbott, S. Balasubramanya, D. Osin, Hyperbolic structures on groups, Algebra. Geom. Topol,\n19(4):1747-1835, 2019.\n[AHO] C. Abbott, D. Hume, D. Osin, Extending group actions on metric spaces, J. Topol. Anal., 12(3):\n625–665, 2020.\nLARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS\n19\n[AR19] C. Abbott, A.J. Rasmussen, Largest hyperbolic actions and quasi-parabo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

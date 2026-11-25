@@ -1,0 +1,1111 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0110009v3",
+  "title": "arxiv-math-0110009v3",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-contents"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Lattices, Fourier transforms, and Poisson summation",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-lattices-fourier-transforms-and-poisson-summat"
+    },
+    {
+      "level": 1,
+      "title": "Principal theorems",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-principal-theorems"
+    },
+    {
+      "level": 1,
+      "title": "Homogeneous spaces",
+      "number": "4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-homogeneous-spaces"
+    },
+    {
+      "level": 1,
+      "title": "Conditions for a sharp bound",
+      "number": "5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-conditions-for-a-sharp-bound"
+    },
+    {
+      "level": 1,
+      "title": "Stationary points",
+      "number": "6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-stationary-points"
+    },
+    {
+      "level": 1,
+      "title": "Numerical results",
+      "number": "7",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-7-numerical-results"
+    },
+    {
+      "level": 1,
+      "title": "Uniqueness",
+      "number": "8",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-8-uniqueness"
+    },
+    {
+      "level": 1,
+      "title": "Technicalities about density",
+      "number": "Appendix A",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-appendix-a-technicalities-about-density"
+    },
+    {
+      "level": 1,
+      "title": "Other convex bodies",
+      "number": "Appendix B",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-appendix-b-other-convex-bodies"
+    },
+    {
+      "level": 1,
+      "title": "Numerical data",
+      "number": "Appendix C",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-appendix-c-numerical-data"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 Annals of Mathematics, 157 (2003), 689–714 New upper bounds on sphere packings I By Henry Cohn and Noam Elkies*",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0110009v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sphere packing",
+          "heading": false
+        },
+        {
+          "term": "mensions",
+          "heading": false
+        },
+        {
+          "term": "error-correcting",
+          "heading": false
+        }
+      ],
+      "extract": "We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known at least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice packing",
+          "heading": false
+        },
+        {
+          "term": "sphere packing",
+          "heading": false
+        },
+        {
+          "term": "packing density",
+          "heading": false
+        },
+        {
+          "term": "packing problem",
+          "heading": false
+        },
+        {
+          "term": "periodic packings",
+          "heading": false
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "leech lattice",
+          "heading": false
+        },
+        {
+          "term": "unimodular lattice",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2. Lattices, Fourier transforms, and Poisson summation 3. Principal theorems 4. Homogeneous spaces 5. Conditions for a sharp bound 6. Stationary points 7. Numerical results 8. Uniqueness Appendix A. Technicalities about density Appendix B. Other convex bodies Appendix C. Numerical data Acknowledgements References 1. Introduction The sphere packing problem asks for the densest packing of spheres into",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-lattices-fourier-transforms-and-poisson-summat",
+      "number": "2",
+      "title": "Lattices, Fourier transforms, and Poisson summation",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "fourier",
+          "heading": true
+        },
+        {
+          "term": "admissibility",
+          "heading": false
+        },
+        {
+          "term": "summation formula",
+          "heading": false
+        },
+        {
+          "term": "fourier series",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        }
+      ],
+      "extract": "Given a lattice Λ ⊂Rn, the dual lattice Λ∗is deﬁned by Λ∗= {y | ⟨x, y⟩∈Z for all x ∈Λ}; it is easily seen to be the lattice with basis given by the dual basis to any basis of Λ. The covolume |Λ| = vol(Rn/Λ) of a lattice Λ is the volume of any fundamental parallelotope. It satisﬁes |Λ||Λ∗| = 1. Given any lattice Λ with NEW UPPER BOUNDS ON SPHERE PACKINGS I 693 shortest nonzero vectors of length r, the density of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-principal-theorems",
+      "number": "3",
+      "title": "Principal theorems",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice packings",
+          "heading": false
+        },
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "periodic packings",
+          "heading": false
+        },
+        {
+          "term": "covolume",
+          "heading": false
+        },
+        {
+          "term": "center density",
+          "heading": false
+        },
+        {
+          "term": "poisson summation",
+          "heading": false
+        },
+        {
+          "term": "every lattice",
+          "heading": false
+        },
+        {
+          "term": "nonzero vector",
+          "heading": false
+        }
+      ],
+      "extract": "Our principal result is the following theorem. It is similar in spirit to work of Siegel [S], but is capable of giving much better bounds. Gorbachev [Go] has independently discovered essentially the same result, with a slightly diﬀerent proof. (He concentrates on deriving Levenshtein’s bound using functions f for which bf has fairly small support, but mentions that one could let the size of the support go to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-homogeneous-spaces",
+      "number": "4",
+      "title": "Homogeneous spaces",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 735,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homogeneous spaces",
+          "heading": true
+        },
+        {
+          "term": "zonal spherical",
+          "heading": false
+        },
+        {
+          "term": "compact homogeneous",
+          "heading": false
+        },
+        {
+          "term": "spherical functions",
+          "heading": false
+        },
+        {
+          "term": "point homogeneous",
+          "heading": false
+        },
+        {
+          "term": "fourier transforms",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite kernel",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        }
+      ],
+      "extract": "The space Rn is a 2-point homogeneous space; i.e., its isometry group acts transitively on ordered pairs of points a given distance apart. By studying packing problems in homogeneous spaces, one can put Theorem 3.1 into a broader context, in which it can be seen to be analogous to previously known theorems about compact homogeneous spaces. NEW UPPER BOUNDS ON SPHERE PACKINGS I 697 We start by reviewing the theory of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-conditions-for-a-sharp-bound",
+      "number": "5",
+      "title": "Conditions for a sharp bound",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 876,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sharp bound",
+          "heading": true
+        },
+        {
+          "term": "leech lattice",
+          "heading": false
+        },
+        {
+          "term": "sphere packing",
+          "heading": false
+        },
+        {
+          "term": "isodual",
+          "heading": false
+        },
+        {
+          "term": "packing problem",
+          "heading": false
+        },
+        {
+          "term": "radial function",
+          "heading": false
+        },
+        {
+          "term": "root lattice",
+          "heading": false
+        },
+        {
+          "term": "compact support",
+          "heading": false
+        }
+      ],
+      "extract": "In one dimension, we have already seen how to use Theorem 3.1 to solve the (admittedly trivial) sphere packing problem. Based on numerical evidence and analogy with the kissing problem, we conjecture that it can also be used to get sharp bounds in dimensions 2, 8, and 24. For reasons to be explained shortly, it is more convenient to work with Theorem 3.2 instead of Theorem 3.1, so we shall do so; we can convert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-stationary-points",
+      "number": "6",
+      "title": "Stationary points",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonnegative everywhere",
+          "heading": false
+        },
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "packing bound",
+          "heading": false
+        },
+        {
+          "term": "levenshtein",
+          "heading": false
+        },
+        {
+          "term": "sharp bounds",
+          "heading": false
+        },
+        {
+          "term": "stationary",
+          "heading": true
+        },
+        {
+          "term": "spherical codes",
+          "heading": false
+        },
+        {
+          "term": "upper bounds",
+          "heading": false
+        }
+      ],
+      "extract": "We do not know how to use Theorem 3.1 to match the best density bound known in high dimensions, that of Kabatiansky and Levenshtein [KL]. How- ever, it provides a new proof of the second-best bound known, due to Leven- shtein [Lev]: A< Ina ~ (n/2)!24\"\" where j; is the smallest positive zero of the Bessel function Jj. (For more information about the asymptotics of this bound and how it compares with other bounds, see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-numerical-results",
+      "number": "7",
+      "title": "Numerical results",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isodual lattices",
+          "heading": false
+        },
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "forced double",
+          "heading": false
+        },
+        {
+          "term": "bounds obtainable",
+          "heading": false
+        },
+        {
+          "term": "noam elkies",
+          "heading": false
+        },
+        {
+          "term": "double roots",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "henry cohn",
+          "heading": false
+        }
+      ],
+      "extract": "It is possible to get numerical results by using linear programming to ﬁnd functions for use in Theorem 3.1, as was done for the kissing problem by Odlyzko and Sloane in [OS]. The idea is to ﬁx one of f(0) and bf(0), and view extremizing the other as an inﬁnite-dimensional linear programming problem. One can try to approximate it with a ﬁnite-dimensional problem, and solve it on a computer. Although we obtained some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-8-uniqueness",
+      "number": "8",
+      "title": "Uniqueness",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 994,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "periodic packing",
+          "heading": false
+        },
+        {
+          "term": "lattice packing",
+          "heading": false
+        },
+        {
+          "term": "sphere packing",
+          "heading": false
+        },
+        {
+          "term": "hexagonal lattice",
+          "heading": false
+        },
+        {
+          "term": "leech lattice",
+          "heading": false
+        },
+        {
+          "term": "unimodular lattice",
+          "heading": false
+        },
+        {
+          "term": "root lattice",
+          "heading": false
+        },
+        {
+          "term": "integral lattice",
+          "heading": false
+        }
+      ],
+      "extract": "It is natural to ask whether the densest sphere packing in Rn is unique. Of course, it is trivially not unique, since for example removing a single sphere does not change the global density. However, it is conjectured that E8 and the Leech lattice are unique among periodic packings. By contrast, in R3 there are inﬁnitely many distinct periodic packings of maximal density. Our techniques can be used to prove this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-a-technicalities-about-density",
+      "number": "Appendix A",
+      "title": "Technicalities about density",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dense packing",
+          "heading": false
+        },
+        {
+          "term": "periodic packing",
+          "heading": false
+        },
+        {
+          "term": "every packing",
+          "heading": false
+        },
+        {
+          "term": "density",
+          "heading": true
+        },
+        {
+          "term": "lim vol",
+          "heading": false
+        },
+        {
+          "term": "spheres",
+          "heading": false
+        },
+        {
+          "term": "limit exists",
+          "heading": false
+        },
+        {
+          "term": "sup",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we provide precise statements and references for what it means for a packing to have a density and whether there is a maximally dense packing. Much of our discussion closely follows Section I of [K]. Let P be any sphere packing in Rn. We say that P has density ∆if for all p ∈Rn, we have ∆= lim r→∞ vol(B(p, r) ∩P) vol B(p, r) , where B(p, r) is the ball of radius r centered at p, and B(p, r) ∩P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-b-other-convex-bodies",
+      "number": "Appendix B",
+      "title": "Other convex bodies",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convex",
+          "heading": true
+        },
+        {
+          "term": "packings",
+          "heading": false
+        },
+        {
+          "term": "body",
+          "heading": false
+        },
+        {
+          "term": "translates",
+          "heading": false
+        }
+      ],
+      "extract": "Our methods are not limited to studying sphere packings, but instead apply to packings with translates of any convex, symmetrical body. In fact, it is straightforward to prove the following generalization of our main theorem: Theorem B.1. Let C be a convex body in Rn, symmetric with respect to the origin. Suppose f : Rn →R is an admissible function, is not identically zero, and satisﬁes the following two conditions:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-c-numerical-data",
+      "number": "Appendix C",
+      "title": "Numerical data",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "noam elkies",
+          "heading": false
+        },
+        {
+          "term": "henry cohn",
+          "heading": false
+        },
+        {
+          "term": "upper bounds",
+          "heading": false
+        },
+        {
+          "term": "microsoft",
+          "heading": false
+        },
+        {
+          "term": "optimal density",
+          "heading": false
+        },
+        {
+          "term": "levenshtein",
+          "heading": false
+        },
+        {
+          "term": "sloane",
+          "heading": false
+        }
+      ],
+      "extract": "Table 3 compares the best packings known, the previous best upper bound known, and our bound. The packings and previous bounds are from [CS] (see in particular Tables I.1(a) and I.1(b) on pages xix and xx). Table 4 lists the choices of forced double roots that lead to our new bounds. Acknowledgements. We thank Richard Askey, Tom Brennan, Harold Di- amond, Pavel Etingof, George Gasper, David Jerison, Greg Kuperberg,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sphere packings",
+      "heading": false
+    },
+    {
+      "term": "lattice packings",
+      "heading": false
+    },
+    {
+      "term": "packing density",
+      "heading": false
+    },
+    {
+      "term": "packing bound",
+      "heading": false
+    },
+    {
+      "term": "periodic packings",
+      "heading": false
+    },
+    {
+      "term": "densest packing",
+      "heading": false
+    },
+    {
+      "term": "packings known",
+      "heading": false
+    },
+    {
+      "term": "packing problem",
+      "heading": false
+    },
+    {
+      "term": "every packing",
+      "heading": false
+    },
+    {
+      "term": "greatest packing",
+      "heading": false
+    },
+    {
+      "term": "dense packing",
+      "heading": false
+    },
+    {
+      "term": "noam elkies",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Plot of log2 δ + n(24 −n)/96 vs. dimension n. 8 and 24 dimensions. (The solutions in dimensions 8 and 24 are obtained from the minimal nonzero vectors in the E8 and Leech lattices.) Because we know a priori that the answer must be an integer, any upper bound within less than 1 of the truth would suﬃ",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Forced double roots for m = 11, n = 8",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Forced double roots for m = 11, n = 24. Our numerical results lead us to the following conjectures",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Lower and upper bounds on center density, using m = 6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Values of 2πr2 and 2πz2",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0110009v3"
+  }
+}

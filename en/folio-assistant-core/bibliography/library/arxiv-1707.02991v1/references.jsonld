@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1707.02991v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "BPS states, knots and quivers",
+      "dcterms:creator": [
+        "Piotr Kucharski1, Markus Reineke2, Marko Stoˇsić3,4",
+        "Piotr Su lkowski1, 5"
+      ],
+      "dcterms:issued": "D:20170712",
+      "dcterms:identifier": "https://arxiv.org/abs/1707.02991",
+      "dcterms:source": "library/arxiv-1707.02991v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1707.02991v1"
+    }
+  ]
+}

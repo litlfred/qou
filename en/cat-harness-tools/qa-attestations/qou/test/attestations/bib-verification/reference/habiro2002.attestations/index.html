@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/habiro2002.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-c0szskykgl.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-c0szskykgl","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/habiro2002.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/habiro2002.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/habiro2002.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;habiro2002&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 58,
+    &quot;entry&quot;: {
+      &quot;id&quot;: &quot;habiro2002&quot;,
+      &quot;status&quot;: &quot;verified-clean&quot;,
+      &quot;verified_at&quot;: &quot;2026-05-19T18:01:00Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-4-7&quot;
+      },
+      &quot;fixes_applied&quot;: 4,
+      &quot;fix_commit&quot;: &quot;(this commit)&quot;,
+      &quot;note&quot;: &quot;4 bare-URL Refs upgraded with title+publisher form. | PDF verified: Habiro, \&quot;Bottom tangles and universal invariants,\&quot; Algebr. Geom. Topol. 6 (2006) (arXiv:math/0505219). Note: bib `issued` says 2008 but PDF says 2006; same paper, journal published in 2006. | UPDATE 2026-05-19 18:01: year fixed 2008 → 2006 (published Algebr. Geom. Topol. 6) per validate-bib year-mismatch.&quot;,
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;uploads/habiro2002.pdf&quot;
+      },
+      &quot;local_pdf&quot;: &quot;uploads/habiro2002.pdf&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit 720a96221d). Recovered from git history. Identity confirmed from the document&#39;s own header (Algebraic &amp; Geometric Topology 6 (2006) 1113-1214, bottom tangles and universal invariants, single author) and matches the seeded key&#39;s title. THREE of the FOUR citation sites are miscitations of this key, and the corpus already knows why: folio/schema/references.ts:2138 records that key habiro2004cyclotomic was added on 2026-06-07 precisely to &#39;untangle the overloaded [habiro2002] key: most QOU citers intended this ring-definition paper, not Bottom tangles (habiro2002) or colored Jones of simple links (habiro2000)&#39; — but the citation sites were never migrated. Evidence from full-text grep of the recovered PDF: &#39;colored Jones&#39; 0 hits; &#39;cyclotomic&#39; 1 hit, and that hit is in the BIBLIOGRAPHY (entry [24], pointing at the separate cyclotomic-completions paper). So this document contains no colored-Jones content and no cyclotomic-completion theorem. Site-by-site: (1) folio/quantum-observable-universe/mass-theory/residue-at-root-proof.md:20 cites [habiro2002] for &#39;the Habiro ring&#39;s cyclotomic projection pi_n is a Z-algebra map for each n&#39;, and :28 for &#39;the Habiro-completion theorem&#39; — both belong to habiro2004cyclotomic; this is a LOAD-BEARING miscitation inside a proof block. (2) folio/quantum-observable-universe/lean/QOU/MassTheory/HabiroMagnitudeA3.lean:61 writes `-- Ref: [habiro2002] K. Habiro, On the colored Jones polynomials of some simple links, Surikaisekikenkyusho Kokyuroku 1172 (2000) 34-43` — the key/gloss mismatch is explicit in the line itself; that gloss is the registered key habiro2000 (references.ts:6922). (3) folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroNewtonLadder.lean:59 cites [habiro2002] for the Habiro-Le double-Pochhammer colored-Jones formula &#39;which the literature proves&#39; — again not this document; note the same file already cites habiro2004cyclotomic CORRECTLY at line 18, so the two Ref lines in one file disagree. (4) folio/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean:166 is the only CORRECT site. Verdict supporting: the bottom-tangle/universal-invariant machinery is real background for the folio&#39;s braid-closure picture, but only one corpus site actually uses it.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;abstract / §intro&quot;,
+            &quot;statement&quot;: &quot;A finite generating set for the subcategory B of framed oriented tangles acting on bottom tangles, and a braided functor J from B to Mod_H for a ribbon Hopf algebra H, giving an algebraic handle on the range of quantum link invariants.&quot;,
+            &quot;useForFolio&quot;: &quot;This is what BraidLinkTypes.lean:166 legitimately leans on (braid/tangle closure types); it is the only claim in the corpus this document actually supports.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.BraidKnot.BraidLinkTypes&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;residue-at-root-proof.md:20 and :28 attribute the cyclotomic projection pi_n and the Habiro-completion theorem to this document, which contains neither; the registered key for those statements is habiro2004cyclotomic (references.ts:2127). This is the load-bearing one — it sits inside a proof block.&quot;,
+            &quot;target&quot;: &quot;prop:residue-at-root&quot;,
+            &quot;bean&quot;: &quot;qou-jps5&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;HabiroNewtonLadder.lean:59 cites [habiro2002] for the Habiro-Le colored-Jones double-Pochhammer formula; the same file already cites habiro2004cyclotomic correctly at line 18. Align line 59 with line 18.&quot;,
+            &quot;target&quot;: &quot;QOU.BraidKnot.HabiroNewtonLadder&quot;,
+            &quot;bean&quot;: &quot;qou-qc8k&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;HabiroMagnitudeA3.lean:61 uses key [habiro2002] while its own gloss names the colored-Jones-of-simple-links work, which is registered as habiro2000 (references.ts:6922). Dangling key variant — the gloss and the key denote different items.&quot;,
+            &quot;target&quot;: &quot;QOU.MassTheory.HabiroMagnitudeA3&quot;,
+            &quot;bean&quot;: &quot;qou-poym&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;ed52afc409ae&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,4632 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "poincare-proof-outline",
+  "title": "Formalization of the Poincare disc model of hyperbolic geometry",
+  "variant": "pdf",
+  "pages": 175,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Background theories",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-background-theories"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic Functions",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-hyperbolic-functions"
+    },
+    {
+      "level": 1,
+      "title": "Tarski axioms",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-tarski-axioms"
+    },
+    {
+      "level": 1,
+      "title": "H-lines in the Poincaré model",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-h-lines-in-the-poincaré-model"
+    },
+    {
+      "level": 2,
+      "title": "Definition and basic properties of h-lines",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-definition-and-basic-properties-of-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Collinear points",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-collinear-points"
+    },
+    {
+      "level": 3,
+      "title": "H-lines and inversion",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-h-lines-and-inversion"
+    },
+    {
+      "level": 3,
+      "title": "Classification of h-lines into Euclidean segments and circles",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-classification-of-h-lines-into-euclidean-segment"
+    },
+    {
+      "level": 3,
+      "title": "Points on h-line",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-points-on-h-line"
+    },
+    {
+      "level": 3,
+      "title": "H-line uniqueness",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-h-line-uniqueness"
+    },
+    {
+      "level": 3,
+      "title": "H-isometries preserve h-lines",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-h-isometries-preserve-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Mapping h-lines to x-axis",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-mapping-h-lines-to-x-axis"
+    },
+    {
+      "level": 2,
+      "title": "Construction of the h-line between the two given points",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-construction-of-the-h-line-between-the-two-given"
+    },
+    {
+      "level": 3,
+      "title": "Correctness of the construction",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-correctness-of-the-construction"
+    },
+    {
+      "level": 3,
+      "title": "Existence of h-lines",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-existence-of-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Uniqueness of h-lines",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-uniqueness-of-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Some consequences of line uniqueness",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-some-consequences-of-line-uniqueness"
+    },
+    {
+      "level": 3,
+      "title": "Transformations of constructed lines",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-transformations-of-constructed-lines"
+    },
+    {
+      "level": 3,
+      "title": "Collinear points and h-lines",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-collinear-points-and-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Points collinear with 42 1000 63 1000 33 1000 58 1000 59 1000 44 1000 0h",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ideal points of h-lines",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-ideal-points-of-h-lines"
+    },
+    {
+      "level": 3,
+      "title": "Calculation of ideal points",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-calculation-of-ideal-points"
+    },
+    {
+      "level": 3,
+      "title": "Ideal points",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-ideal-points"
+    },
+    {
+      "level": 1,
+      "title": "H-distance in the Poincaré model",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-h-distance-in-the-poincaré-model"
+    },
+    {
+      "level": 2,
+      "title": "Distance explicit formula",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-distance-explicit-formula"
+    },
+    {
+      "level": 2,
+      "title": "Existence and uniqueness of points with a given distance",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-existence-and-uniqueness-of-points-with-a-given"
+    },
+    {
+      "level": 2,
+      "title": "Triangle inequality",
+      "number": null,
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-triangle-inequality"
+    },
+    {
+      "level": 1,
+      "title": "H-circles in the Poincaré model",
+      "number": null,
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-h-circles-in-the-poincaré-model"
+    },
+    {
+      "level": 2,
+      "title": "Intersection of circles in special positions",
+      "number": null,
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-intersection-of-circles-in-special-positions"
+    },
+    {
+      "level": 2,
+      "title": "Congruent triangles",
+      "number": null,
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-congruent-triangles"
+    },
+    {
+      "level": 1,
+      "title": "H-betweenness in the Poincaré model",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-h-betweenness-in-the-poincaré-model"
+    },
+    {
+      "level": 2,
+      "title": "H-betwenness expressed by a cross-ratio",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-h-betwenness-expressed-by-a-cross-ratio"
+    },
+    {
+      "level": 3,
+      "title": "H-betwenness is preserved by h-isometries",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-h-betwenness-is-preserved-by-h-isometries"
+    },
+    {
+      "level": 3,
+      "title": "Some elementary properties of h-betwenness",
+      "number": null,
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-some-elementary-properties-of-h-betwenness"
+    },
+    {
+      "level": 3,
+      "title": "H-betwenness and h-collinearity",
+      "number": null,
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-h-betwenness-and-h-collinearity"
+    },
+    {
+      "level": 3,
+      "title": "H-betweeness on Euclidean segments",
+      "number": null,
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-h-betweeness-on-euclidean-segments"
+    },
+    {
+      "level": 3,
+      "title": "H-betweenness and h-collinearity",
+      "number": null,
+      "page": 86,
+      "pageLabel": "86",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-h-betweenness-and-h-collinearity"
+    },
+    {
+      "level": 2,
+      "title": "Some properties of betweenness",
+      "number": null,
+      "page": 87,
+      "pageLabel": "87",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-some-properties-of-betweenness"
+    },
+    {
+      "level": 2,
+      "title": "Poincare between - sum distances",
+      "number": null,
+      "page": 89,
+      "pageLabel": "89",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-poincare-between---sum-distances"
+    },
+    {
+      "level": 2,
+      "title": "Some more properties of h-betweenness.",
+      "number": null,
+      "page": 94,
+      "pageLabel": "94",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-some-more-properties-of-h-betweenness"
+    },
+    {
+      "level": 1,
+      "title": "Intersection of h-lines with the x-axis in the Poincaré model",
+      "number": null,
+      "page": 96,
+      "pageLabel": "96",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-intersection-of-h-lines-with-the-x-axis-in-the-p"
+    },
+    {
+      "level": 2,
+      "title": "Betweeness of x-axis intersection",
+      "number": null,
+      "page": 96,
+      "pageLabel": "96",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-betweeness-of-x-axis-intersection"
+    },
+    {
+      "level": 2,
+      "title": "Check if an h-line intersects the x-axis",
+      "number": null,
+      "page": 97,
+      "pageLabel": "97",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-check-if-an-h-line-intersects-the-x-axis"
+    },
+    {
+      "level": 2,
+      "title": "Check if a Poincaré line intersects the y-axis",
+      "number": null,
+      "page": 100,
+      "pageLabel": "100",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-check-if-a-poincaré-line-intersects-the-y-axis"
+    },
+    {
+      "level": 2,
+      "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
+      "number": null,
+      "page": 101,
+      "pageLabel": "101",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-intersection-point-of-a-poincaré-line-with-the-x"
+    },
+    {
+      "level": 2,
+      "title": "Check if an h-line intersects the positive part of the x-axis",
+      "number": null,
+      "page": 105,
+      "pageLabel": "105",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-check-if-an-h-line-intersects-the-positive-part"
+    },
+    {
+      "level": 2,
+      "title": "Check if an h-line intersects the positive part of the y-axis",
+      "number": null,
+      "page": 108,
+      "pageLabel": "108",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-check-if-an-h-line-intersects-the-positive-part"
+    },
+    {
+      "level": 2,
+      "title": "Position of the intersection point in the unit disc",
+      "number": null,
+      "page": 110,
+      "pageLabel": "110",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-position-of-the-intersection-point-in-the-unit-d"
+    },
+    {
+      "level": 2,
+      "title": "Ideal points and x-axis intersection",
+      "number": null,
+      "page": 112,
+      "pageLabel": "112",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-ideal-points-and-x-axis-intersection"
+    },
+    {
+      "level": 1,
+      "title": "H-perpendicular h-lines in the Poincaré model",
+      "number": null,
+      "page": 114,
+      "pageLabel": "114",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-h-perpendicular-h-lines-in-the-poincaré-model"
+    },
+    {
+      "level": 1,
+      "title": "Poincaré disc model types",
+      "number": null,
+      "page": 124,
+      "pageLabel": "124",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-poincaré-disc-model-types"
+    },
+    {
+      "level": 2,
+      "title": "H-points",
+      "number": null,
+      "page": 124,
+      "pageLabel": "124",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-h-points"
+    },
+    {
+      "level": 2,
+      "title": "H-lines",
+      "number": null,
+      "page": 124,
+      "pageLabel": "124",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-h-lines"
+    },
+    {
+      "level": 2,
+      "title": "H-collinearity",
+      "number": null,
+      "page": 125,
+      "pageLabel": "125",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-h-collinearity"
+    },
+    {
+      "level": 2,
+      "title": "H-isometries",
+      "number": null,
+      "page": 125,
+      "pageLabel": "125",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-h-isometries"
+    },
+    {
+      "level": 2,
+      "title": "H-distance and h-congruence",
+      "number": null,
+      "page": 126,
+      "pageLabel": "126",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-h-distance-and-h-congruence"
+    },
+    {
+      "level": 2,
+      "title": "H-betweennes",
+      "number": null,
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-h-betweennes"
+    },
+    {
+      "level": 1,
+      "title": "Poincaré model satisfies Tarski axioms",
+      "number": null,
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-poincaré-model-satisfies-tarski-axioms"
+    },
+    {
+      "level": 2,
+      "title": "Pasch axiom",
+      "number": null,
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-pasch-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Segment construction axiom",
+      "number": null,
+      "page": 138,
+      "pageLabel": "138",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-segment-construction-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Five segment axiom",
+      "number": null,
+      "page": 140,
+      "pageLabel": "140",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-five-segment-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Upper dimension axiom",
+      "number": null,
+      "page": 141,
+      "pageLabel": "141",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-upper-dimension-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Lower dimension axiom",
+      "number": null,
+      "page": 143,
+      "pageLabel": "143",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-lower-dimension-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Negated Euclidean axiom",
+      "number": null,
+      "page": 143,
+      "pageLabel": "143",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-negated-euclidean-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Continuity axiom",
+      "number": null,
+      "page": 150,
+      "pageLabel": "150",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-continuity-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Limiting parallels axiom",
+      "number": null,
+      "page": 157,
+      "pageLabel": "157",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-limiting-parallels-axiom"
+    },
+    {
+      "level": 2,
+      "title": "Interpretation of locales",
+      "number": null,
+      "page": 170,
+      "pageLabel": "170",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-interpretation-of-locales"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h-lines",
+          "heading": false
+        },
+        {
+          "term": "poincaré disc",
+          "heading": false
+        },
+        {
+          "term": "x-axis intersection",
+          "heading": false
+        },
+        {
+          "term": "poincaré model",
+          "heading": false
+        },
+        {
+          "term": "h-line intersects",
+          "heading": false
+        },
+        {
+          "term": "parallels axiom",
+          "heading": false
+        },
+        {
+          "term": "poincaré line",
+          "heading": false
+        },
+        {
+          "term": "tarski axioms",
+          "heading": false
+        }
+      ],
+      "extract": "Poincaré Disc Model Danijela Simié Filip Marié Pierre Boutry February 6, 2026 Abstract We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is defined within the extended complex plane (one dimensional complex projective space CP’), formalized in the AFP entry “Complex Geometry” [6]. Points, lines, congruence of pairs of points, betweenness of",
+      "extractCut": true,
+      "blocks": [
+        "library/poincare-proof-outline/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euclid axiom",
+          "heading": false
+        },
+        {
+          "term": "tarski axioms",
+          "heading": false
+        },
+        {
+          "term": "poincaré disc",
+          "heading": false
+        },
+        {
+          "term": "non-euclidean geometry",
+          "heading": false
+        },
+        {
+          "term": "disc model",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic geometry",
+          "heading": false
+        },
+        {
+          "term": "formalization",
+          "heading": false
+        }
+      ],
+      "extract": "Poincaré disc is a model of hyperbolic geometry. That fact has been a mathematical folklore for more than 100 years. However, up to the best of our knowledge, fully precise, formal proofs of this fact are lacking. In this paper we present a formalization of the Poincaré disc model in Isabelle/HOL, introduce its basic notions (h-points, h-lines, h-congruence, h-isometries, h-betweenness) and prove that it models",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-background-theories",
+      "number": null,
+      "title": "Background theories",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-hyperbolic-functions",
+      "number": null,
+      "title": "Hyperbolic Functions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "arcosh",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        },
+        {
+          "term": "real assumes",
+          "heading": false
+        },
+        {
+          "term": "smt",
+          "heading": false
+        },
+        {
+          "term": "verit",
+          "heading": false
+        },
+        {
+          "term": "power-mult-distrib",
+          "heading": false
+        },
+        {
+          "term": "arcosh-mono",
+          "heading": false
+        }
+      ],
+      "extract": "In this section hyperbolic cosine and hyperbolic sine functions are introduced and some of their properties needed for further development are proved. theory Hyperbolic-Functions imports Complez-Main Complex-Geometry. More-Complex begin lemma arcosh-eq-iff: fixes x y::real assumes z > 1 y > 1 shows arcosh x = arcosh y+— «= y by (smt (verit, best) arcosh-less-iff-real arcosh-real-strict-mono assms) lemma cosh-gt-1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-tarski-axioms",
+      "number": null,
+      "title": "Tarski axioms",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tarski",
+          "heading": true
+        },
+        {
+          "term": "ray-meets-line",
+          "heading": false
+        },
+        {
+          "term": "continuity axiom",
+          "heading": false
+        },
+        {
+          "term": "betw",
+          "heading": false
+        },
+        {
+          "term": "assumes",
+          "heading": false
+        },
+        {
+          "term": "locale",
+          "heading": false
+        },
+        {
+          "term": "on-line",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce axioms of Tarski [7] trough a series of locales. theory Tarski imports Main begin The first locale assumes all Tarski axioms except for the Euclid’s axiom and the continuity axiom and corresponds to absolute geometry. locale TarskiAbsolute = fixes cong :: 'p => 'p => 'p = 'p => bool fixes betw :: '‘p => 'p => ‘p => bool assumes cong-reflexive: cong © y y & assumes cong-transitive: cong «",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-h-lines-in-the-poincaré-model",
+      "number": null,
+      "title": "H-lines in the Poincaré model",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "theory Poincare-Lines imports Complex-Geometry. Unit-Circle-Preserving-Moebius Complex-Geometry. Circlines-Angle begin",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-definition-and-basic-properties-of-h-lines",
+      "number": null,
+      "title": "Definition and basic properties of h-lines",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "h-lines",
+          "heading": true
+        },
+        {
+          "term": "hermitean matrices",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line-cmat",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "poincaré model",
+          "heading": false
+        }
+      ],
+      "extract": "H-lines in the Poincaré model are either line segments passing trough the origin or segments (within the unit disc) of circles that are perpendicular to the unit circle. Algebraically these are circlines that are represented by Hermitean matrices of the form A B (G4): on for A € R, and B € C, and |B|? > A?, where the circline equation is the usual one: z* Hz = 0, for homogenous coordinates z. definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-collinear-points",
+      "number": null,
+      "title": "Collinear points",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "Points are collinear if they all belong to an h-line. definition poincare-collinear :: complez-homo set = bool where poincare-collinear S <—+ (A p. is-poincare-line p \\ S C circline-set p)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-h-lines-and-inversion",
+      "number": null,
+      "title": "H-lines and inversion",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inversion circline-set",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "assumes is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "is-real",
+          "heading": false
+        },
+        {
+          "term": "auto",
+          "heading": false
+        },
+        {
+          "term": "every h-line",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line-iff",
+          "heading": false
+        }
+      ],
+      "extract": "Every h-line in the Poincaré model contains the inverse (wrt. the unit circle) of each of its points (note that at most one of them belongs to the unit disc). lemma is-poincare-line-inverse-point: assumes is-poincare-line H u € circline-set H shows inversion u € circline-set H using assms unfolding is-poincare-line-iff circline-set-def perpendicular-def inversion-def apply simp proof (transfer, transfer) fix u H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-classification-of-h-lines-into-euclidean-segment",
+      "number": null,
+      "title": "Classification of h-lines into Euclidean segments and circles",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "assumes is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "circline-set",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line-trough-zero-trough-infty",
+          "heading": false
+        }
+      ],
+      "extract": "If an h-line contains zero, than it also contains infinity (the inverse point of zero) and is by definition an Euclidean line. lemma is-poincare-line-trough-zero-trough-infty [simp]: assumes is-poincare-line | and 0), € circline-set | shows cop, € circline-set | using is-poincare-line-inverse-point|OF assms| by simp lemma is-poincare-line-trough-zero-is-line: assumes is-poincare-line | and 0), € circline-set | shows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-points-on-h-line",
+      "number": null,
+      "title": "Points on h-line",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": "11",
+      "words": 1101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circline-set unit-circle-set",
+          "heading": false
+        },
+        {
+          "term": "circline-set unit-disc",
+          "heading": false
+        },
+        {
+          "term": "inversion circline-set",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "auto hence",
+          "heading": false
+        },
+        {
+          "term": "blast",
+          "heading": false
+        },
+        {
+          "term": "four-points-on-circline-iff-cross-ratio-reallof",
+          "heading": false
+        },
+        {
+          "term": "h-line",
+          "heading": true
+        }
+      ],
+      "extract": "Each h-line in the Poincaré model contains at least two different points within the unit disc. First we prove an auxiliary lemma. lemma ex-is-poincare-line-points’: assumes 112: il € circline-set H unit-circle-set i2 € circline-set H M unit-circle-set il # i2 assumes a: a € circline-set H a ¢ unit-circle-set shows 3 b.b 4 i1 ADA i2 Ab fad bF inversion a A b € circline-set H proof— have inversion a ¢ unit-circle-set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-h-line-uniqueness",
+      "number": null,
+      "title": "H-line uniqueness",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "on-circline-cmat-cvec unit-circle-cmat",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "assumes on-l",
+          "heading": false
+        },
+        {
+          "term": "assumes is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "h-line",
+          "heading": true
+        },
+        {
+          "term": "subst complex-mult-cnj",
+          "heading": false
+        },
+        {
+          "term": "vec-cnj-def mult",
+          "heading": false
+        }
+      ],
+      "extract": "There is no more than one h-line that contains two different h-points (in the disc). lemma unique-is-poincare-line: assumes in-disc: u € unit-disc v € unit-disc u # v assumes pl: is-poincare-line l1 is-poincare-line 12 assumes on-l: {u, v} C circline-set l1 M circline-set 12 shows I] = 12 11 proof— have u # inversion uv # inversion u using in-disc using inversion-noteg-unit-disc[of u v] using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-h-isometries-preserve-h-lines",
+      "number": null,
+      "title": "H-isometries preserve h-lines",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h-lines",
+          "heading": true
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp del",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "unfolding perpendicular-def",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-circle-fix",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        }
+      ],
+      "extract": "H-isometries are defined as homographies (actions of Mébius transformations) and antihomographies (compo- sitions of actions of Mébius transformations with conjugation) that fix the unit disc (map it onto itself). They also map h-lines onto h-lines We prove a bit more general lemma that states that all Mébius transformations that fix the unit circle (not necessary the unit disc) map h-lines onto h-lines 14 lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-mapping-h-lines-to-x-axis",
+      "number": null,
+      "title": "Mapping h-lines to x-axis",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-axis",
+          "heading": true
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "h-lines",
+          "heading": true
+        },
+        {
+          "term": "moebius-circline",
+          "heading": false
+        },
+        {
+          "term": "auto moreover",
+          "heading": false
+        }
+      ],
+      "extract": "Each h-line in the Poincaré model can be mapped onto the x-axis (by a unit-disc preserving Mobius transfor- mation). lemma ez-unit-disc-fix-is-poincare-line-to-x-avis: assumes is-poincare-line | shows 3 M. unit-disc-fix M A moebius-circline M | = z-axis proof— from assms obtain u v where u # v u € unit-disc v € unit-disc and {u, v} C circline-set | using ez-is-poincare-line-points by blast then obtain M where «:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-construction-of-the-h-line-between-the-two-given",
+      "number": null,
+      "title": "Construction of the h-line between the two given points",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wal cnj",
+          "heading": false
+        },
+        {
+          "term": "whl cnj",
+          "heading": false
+        },
+        {
+          "term": "wlxcnj cnj",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "simp del",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "h-line",
+          "heading": true
+        },
+        {
+          "term": "mk-poincare-line-cmat-def mat-zero-def",
+          "heading": false
+        }
+      ],
+      "extract": "Next we show how to construct the (unique) h-line between the two given points in the Poincaré model Geometrically, h-line can be constructed by finding the inverse point of one of the two points and by constructing the circle (or line) trough it and the two given points. Algebraically, for two given points u and v in C, the h-line matrix coefficients can be A = i- (uv — vu) and B=i- (v(\\ul? +1) — u(\\v|? + 1)). We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-correctness-of-the-construction",
+      "number": null,
+      "title": "Correctness of the construction",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 28,
+      "labelStart": "20",
+      "labelEnd": "28",
+      "words": 2258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "unfolding circline-set-def",
+          "heading": false
+        },
+        {
+          "term": "poincare-line",
+          "heading": false
+        },
+        {
+          "term": "cnj",
+          "heading": false
+        },
+        {
+          "term": "on-circline",
+          "heading": false
+        }
+      ],
+      "extract": "For finite points, our definition matches the classic algebraic definition for points in C (given in ordinary, not homogenous coordinates). lemma poincare-line-non-homogenous: assumes u # Oop, v # On UF VU F inversion Vv shows let u’ = to-compler u; vu’ = to-complex v; A =i x (u’ * enj vu! — vu’ * enj u’); B=i x (v0! * ((emod u')? + 1) — u! * ((emod v')? + 1)) 20 in poincare-line uv = mk-circline A B (cnj B) A using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-existence-of-h-lines",
+      "number": null,
+      "title": "Existence of h-lines",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rule-tac poincare-line",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line circline-set",
+          "heading": false
+        },
+        {
+          "term": "h-line trough",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp",
+          "heading": false
+        }
+      ],
+      "extract": "There is an h-line trough every point in the Poincaré model lemma ex-poincare-line-one-point: shows 4 I. is-poincare-line | A z € circline-set | proof (cases z = 0n) case True thus ?thesis by (rule-tac c=2-avis in exI) simp next case False thus ?thesis by (rule-tac «=poincare-line 0; z in exl) auto qed lemma poincare-collinear-singleton [simp]: assumes u € unit-disc shows poincare-collinear {u} using assms using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-uniqueness-of-h-lines",
+      "number": null,
+      "title": "Uniqueness of h-lines",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circline-set is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "unfolding circline-set-def",
+          "heading": false
+        },
+        {
+          "term": "circline-set proof",
+          "heading": false
+        },
+        {
+          "term": "assumes on-l",
+          "heading": false
+        },
+        {
+          "term": "assumes in-disc",
+          "heading": false
+        },
+        {
+          "term": "let poincare-line",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        }
+      ],
+      "extract": "The only h-line between two points is the one obtained by the line-construction. First we show this only for two different points inside the disc. lemma unique-poincare-line: assumes in-disc: u # vu € unit-disc v € unit-disc assumes on-l: u € circline-set lv € circline-set | is-poincare-line | shows | = poincare-line u v using assms using unique-is-poincare-line[of u v | poincare-line u v] unfolding circline-set-def",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-some-consequences-of-line-uniqueness",
+      "number": null,
+      "title": "Some consequences of line uniqueness",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circline-set x-axis",
+          "heading": false
+        },
+        {
+          "term": "x-axis y-axis",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-line",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        },
+        {
+          "term": "auto lemma",
+          "heading": false
+        },
+        {
+          "term": "h-line",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        }
+      ],
+      "extract": "H-line uv is the same as the h-line vu. lemma poincare-line-sym: assumes u € unit-disc v € unit-disc u # v shows poincare-line u v = poincare-line v u using assms using unique-poincare-line|of u v poincare-line v ul by simp lemma poincare-line-sym-general: assumes u # v u # inversion v shows poincare-line u v = poincare-line v u using assms using unique-poincare-line-generallof u v poincare-line v u] by simp Each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-transformations-of-constructed-lines",
+      "number": null,
+      "title": "Transformations of constructed lines",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 240,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moebius-pt unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-line",
+          "heading": false
+        },
+        {
+          "term": "simp",
+          "heading": false
+        },
+        {
+          "term": "h-line construction",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        }
+      ],
+      "extract": "Unit dics preserving Mobius transformations preserve the h-line construction lemma unit-disc-fit-preserve-poincare-line |simp|: assumes unit-disc-fix M u € unit-disc v € unit-disc u # v shows poincare-line (moebius-pt M u) (moebius-pt M v) = moebius-circline M (poincare-line u v) proof (rule unique-poincare-line[symmetric]) show moebius-pt M u 4 moebius-pt Mv using <u 4 v) by auto next show moebius-pt M u €",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-collinear-points-and-h-lines",
+      "number": null,
+      "title": "Collinear points and h-lines",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rule-tac poincare-line",
+          "heading": false
+        },
+        {
+          "term": "of-complex unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-collinear-def unfolding",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "unfolding circline-set-def",
+          "heading": false
+        },
+        {
+          "term": "hence cis",
+          "heading": false
+        },
+        {
+          "term": "assumes poincare-collinear",
+          "heading": false
+        }
+      ],
+      "extract": "lemma poincare-collinear3-poincare-line-general: assumes poincare-collinear {a, a1, a2} al # a2 al F inversion a2 shows a € circline-set (poincare-line al a2) using assms using poincare-collinear-def unique-poincare-line-general by auto lemma poincare-line-poincare-collinear3-general: assumes a € circline-set (poincare-line al a2) al # a2 shows poincare-collinear {a, a1, a2} using assms unfolding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-ideal-points-of-h-lines",
+      "number": null,
+      "title": "Ideal points of h-lines",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "Ideal points of an h-line are points where the h-line intersects the unit disc.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-calculation-of-ideal-points",
+      "number": null,
+      "title": "Calculation of ideal points",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 39,
+      "labelStart": "34",
+      "labelEnd": "39",
+      "words": 1865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power2-eq-square field-simps",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "cnj proof",
+          "heading": false
+        },
+        {
+          "term": "power2-eq-square norm-mult",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assms eq-cnj-iff-real",
+          "heading": false
+        },
+        {
+          "term": "simp del",
+          "heading": false
+        }
+      ],
+      "extract": "We decided to define ideal points constructively, i.e., we calculate the coordinates of ideal points for a given h-line explicitly. Namely, if the h-line is determined by A and B, the two intersection points are ee (-A+i- ViBP - a) . definition calc-ideal-point1-cvec :: complex = complex = complez-vec where [simp]: calc-ideal-point1-cvec A B = (let diser = Re ((emod B)? — (Re A)*) in (Bx(—A — ixsqrt(discr)), (emod",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-ideal-points",
+      "number": null,
+      "title": "Ideal points",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 44,
+      "labelStart": "39",
+      "labelEnd": "44",
+      "words": 1456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal-points calc-ideal-points",
+          "heading": false
+        },
+        {
+          "term": "is-poincare-line ideal-points",
+          "heading": false
+        },
+        {
+          "term": "assumes ideal-points",
+          "heading": false
+        },
+        {
+          "term": "circline-set unit-circle",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "ideal points",
+          "heading": true
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        }
+      ],
+      "extract": "lemma calc-ideal-points-cvec-different [simp]: assumes (cmod B)? > (cmod A)? is-real A shows 7— (calc-ideal-point1-cvec A B %, calc-ideal-point2-cvec A B) using assms by (auto) (auto simp add: cmod-def) lemma calc-ideal-points-different: assumes is-poincare-line H shows 3 il € (calc-ideal-points H). 4 i2 € (calc-ideal-points H). i1 # i2 using assms proof (transfer, transfer) fix H assume hh: hermitean H \\ H #",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-h-distance-in-the-poincaré-model",
+      "number": null,
+      "title": "H-distance in the Poincaré model",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 48,
+      "labelStart": "44",
+      "labelEnd": "48",
+      "words": 1512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moebius-pt unit-disc",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "h-distance",
+          "heading": true
+        },
+        {
+          "term": "complex-homo real",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        },
+        {
+          "term": "let to-complex",
+          "heading": false
+        }
+      ],
+      "extract": "Informally, the h-distance between the two h-points is defined as the absolute value of the logarithm of the cross ratio between those two points and the two ideal points. abbreviation Re-cross-ratio where Re-cross-ratio z uv w = Re (to-complez (cross-ratio z u v w)) definition calc-poincare-distance :: complex-homo = complex-homo => complex-homo = complez-homo => real where [simp]: calc-poincare-distance u il v i2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-distance-explicit-formula",
+      "number": null,
+      "title": "Distance explicit formula",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 54,
+      "labelStart": "48",
+      "labelEnd": "54",
+      "words": 2292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "rhs cmod",
+          "heading": false
+        },
+        {
+          "term": "definition poincare-distance-formula",
+          "heading": false
+        },
+        {
+          "term": "conjugate unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp-all add",
+          "heading": false
+        }
+      ],
+      "extract": "Instead of the h-distance itself, very frequently its hyperbolic cosine is analyzed. abbreviation cosh-dist uv = cosh (poincare-distance wu v) lemma cosh-poincare-distance-cross-ratio-average: assumes wu € unit-disc v € unit-disc u # v ideal-points (poincare-line uv) = {i1, i2} shows cosh-dist uv = ((Re-cross-ratio u il v i2) + (Re-cross-ratio v il u i2)) / 2 proof— let ?cr = cross-ratio u il v i2 let ?crRe = Re",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-existence-and-uniqueness-of-points-with-a-given",
+      "number": null,
+      "title": "Existence and uniqueness of points with a given distance",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 65,
+      "labelStart": "54",
+      "labelEnd": "65",
+      "words": 3568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "rez of-complex",
+          "heading": false
+        },
+        {
+          "term": "is-realz rez",
+          "heading": false
+        },
+        {
+          "term": "of-complex unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "field-simps power2-eq-square",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "of-complex circline-set",
+          "heading": false
+        }
+      ],
+      "extract": "lemma ez-2-azis-poincare-distance-negative’: fixes d :: real assumes d > 0 shows let z = (1 — exp d) / (1 + exp d) in is-realz \\ Rez< 0A Rez>-1A of-complex z € unit-disc \\ of-complex z € circline-set x-axis A poincare-distance 0, (of-complex z) = d proof— have exp d > 1 using assms using one-le-exp-iff [of d, symmetric] by blast hence / + erp d 4 0 by linarith let ?z = (1 — exp d) / (1 + exp d) have ?z < 0 using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-triangle-inequality",
+      "number": null,
+      "title": "Triangle inequality",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 67,
+      "labelStart": "65",
+      "labelEnd": "67",
+      "words": 828,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "arcosh",
+          "heading": false
+        },
+        {
+          "term": "subst",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        },
+        {
+          "term": "cmod",
+          "heading": false
+        }
+      ],
+      "extract": "lemma poincare-distance-formula-zero-sum: assumes u € unit-disc and v € unit-disc shows poincare-distance u 0; + poincare-distance 0, v = (let u’ = cmod (to-complex u); v' = cmod (to-complez v) in arcosh (((1 + uw?) * (1 + 0?) + 4 «ul v’) / ((1 — wu?) * (1 — v”)))) proof— obtain wu’ v’ where wu: u’ = to-complex u v' = to-complex v by auto have uv’: u = of-complex u' v = of-complex v' using wv assms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-h-circles-in-the-poincaré-model",
+      "number": null,
+      "title": "H-circles in the Poincaré model",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 71,
+      "labelStart": "67",
+      "labelEnd": "71",
+      "words": 1655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "of-complex poincare-circle",
+          "heading": false
+        },
+        {
+          "term": "hence cmod",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "simp moreover",
+          "heading": false
+        },
+        {
+          "term": "poincare-circle-euclidean",
+          "heading": false
+        },
+        {
+          "term": "auto hence",
+          "heading": false
+        },
+        {
+          "term": "euclidean circle",
+          "heading": false
+        },
+        {
+          "term": "hence sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "Circles consist of points that are at the same distance from the center. definition poincare-circle :: compler-homo = real = complex-homo set where poincare-circle zr = {z’. z' € unit-disc A poincare-distance z z' = r} Each h-circle in the Poincaré model is represented by an Euclidean circle in the model — the center and radius of that euclidean circle are determined by the following formulas. definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-intersection-of-circles-in-special-positions",
+      "number": null,
+      "title": "Intersection of circles in special positions",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 74,
+      "labelStart": "71",
+      "labelEnd": "74",
+      "words": 1148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cnj z2e",
+          "heading": false
+        },
+        {
+          "term": "zel rel",
+          "heading": false
+        },
+        {
+          "term": "enj z2e",
+          "heading": false
+        },
+        {
+          "term": "zel cor",
+          "heading": false
+        },
+        {
+          "term": "cnj distrib-left",
+          "heading": false
+        },
+        {
+          "term": "of-complex unit-disc",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        }
+      ],
+      "extract": "Two h-circles centered at the x-axis intersect at mutually conjugate points lemma intersect-poincare-circles-x-axis: 71 assumes 2: is-real z1 and is-real z2 and rl > 0 and r2 > 0 and —1 < Re zl and Re z1 < 1 and —1 < Re 22 and Re z2 < 1 and zl # 22 assumes 21: r1 € poincare-circle (of-complex z1) r1 M poincare-circle (of-complex 22) r2 and x2: x2 € poincare-circle (of-complez z1) r1 M poincare-circle (of-complez z2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-congruent-triangles",
+      "number": null,
+      "title": "Congruent triangles",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 77,
+      "labelStart": "74",
+      "labelEnd": "77",
+      "words": 814,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "in-disc poincare-distance-ge",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        },
+        {
+          "term": "unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance-eq-0-iff",
+          "heading": false
+        },
+        {
+          "term": "poincare-circle",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance-eq-ex-moebius",
+          "heading": false
+        }
+      ],
+      "extract": "For every pair of triangles such that its three pairs of sides are pairwise equal there is an h-isometry (a unit disc preserving Mobius transform, eventually composed with a conjugation) that maps one triangle onto the other. lemma unit-disc-fiz-f-congruent-triangles: assumes in-disc: u € unit-disc v € unit-disc w € unit-disc and in-disc’: u' € unit-disc v' € unit-disc w’ € unit-disc and d: poincare-distance uv =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-h-betweenness-in-the-poincaré-model",
+      "number": null,
+      "title": "H-betweenness in the Poincaré model",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-h-betwenness-expressed-by-a-cross-ratio",
+      "number": null,
+      "title": "H-betwenness expressed by a cross-ratio",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cross-ratio",
+          "heading": true
+        },
+        {
+          "term": "complex-homo",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        }
+      ],
+      "extract": "The point v is h-between u and w if the cross-ratio between the pairs u and w and v and inverse of v is real and negative. definition poincare-between :: complex-homo = complez-homo = complex-homo = bool where poincare-between uv w +<— u=vVv=wVv (let cr = cross-ratio uv w (inversion v) in is-real (to-complex cr) A Re (to-complex cr) < 0)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-h-betwenness-is-preserved-by-h-isometries",
+      "number": null,
+      "title": "H-betwenness is preserved by h-isometries",
+      "level": 3,
+      "pageStart": 77,
+      "pageEnd": 78,
+      "labelStart": "77",
+      "labelEnd": "78",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding poincare-between-def",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "inversion-noteq-unit-disc",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "h-isometries",
+          "heading": true
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        }
+      ],
+      "extract": "Since they preserve cross-ratio and inversion, h-isometries (unit disc preserving Mobius transformations and conjugation) preserve h-betweeness. lemma unit-disc-fiz-moebius-preserve-poincare-between [simp]: assumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc shows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <> poincare-between uv w proof (cases u =v V v= w) case True",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-some-elementary-properties-of-h-betwenness",
+      "number": null,
+      "title": "Some elementary properties of h-betwenness",
+      "level": 3,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "78",
+      "labelEnd": "78",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-between-def",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        },
+        {
+          "term": "inversion-noteg-unit-disc",
+          "heading": false
+        }
+      ],
+      "extract": "lemma poincare-between-nonstrict [simp]: shows poincare-between u u v and poincare-between u vv by (simp-all add: poincare-between-def) lemma poincare-between-sandwich: assumes u € unit-disc and v € unit-disc assumes poincare-between uv u shows u = v proof (rule ccontr) assume 7— thesis thus False using assms using inversion-noteg-unit-disc[of v u] using cross-ratio-1[{of v u inversion v] unfolding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-h-betwenness-and-h-collinearity",
+      "number": null,
+      "title": "H-betwenness and h-collinearity",
+      "level": 3,
+      "pageStart": 78,
+      "pageEnd": 79,
+      "labelStart": "78",
+      "labelEnd": "79",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding poincare-collinear-def",
+          "heading": false
+        },
+        {
+          "term": "unit-disc",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        },
+        {
+          "term": "poincare-line",
+          "heading": false
+        },
+        {
+          "term": "poincare-between-poincare-collinear",
+          "heading": false
+        },
+        {
+          "term": "auto",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        }
+      ],
+      "extract": "Three points can be in an h-between relation only when they are h-collinear. lemma poincare-between-poincare-collinear [simp]: assumes in-disc: u € unit-disc v € unit-disc w € unit-disc assumes betw: poincare-between uv w shows poincare-collinear {u, v, w} proof (cases u =v V v= w) case True thus ?thesis using assms by auto next case False hence distinct: distinct [u, v, w, inversion v| using in-disc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-h-betweeness-on-euclidean-segments",
+      "number": null,
+      "title": "H-betweeness on Euclidean segments",
+      "level": 3,
+      "pageStart": 79,
+      "pageEnd": 86,
+      "labelStart": "79",
+      "labelEnd": "86",
+      "words": 2284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-between-def",
+          "heading": false
+        },
+        {
+          "term": "unfolding inversion-def",
+          "heading": false
+        },
+        {
+          "term": "poincare-between-def let-def",
+          "heading": false
+        },
+        {
+          "term": "assume unit-disc",
+          "heading": false
+        }
+      ],
+      "extract": "If the three points lie on an h-line that is a Euclidean line (e.g., if it contains zero), h-betweenness can be characterized much simpler than in the definition. lemma poincare-between-x-axis-u0v: assumes is-real u’ and u’ # 0 and uv’ 4 0 shows poincare-between (of-complez u') On (of-complex v') <—+ is-real v' \\ Re u' * Re v' < 0 proof— have Re u' 4 0 using <is-real uy «u' 4 0» using complex-eq-if-Re-eq by auto",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-h-betweenness-and-h-collinearity",
+      "number": null,
+      "title": "H-betweenness and h-collinearity",
+      "level": 3,
+      "pageStart": 86,
+      "pageEnd": 87,
+      "labelStart": "86",
+      "labelEnd": "87",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "poincare-collinear",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        },
+        {
+          "term": "auto",
+          "heading": false
+        }
+      ],
+      "extract": "For three h-collinear points at least one of the three possible h-betweeness relations must hold. lemma poincare-collinear3-between: assumes u € unit-disc and v € unit-disc and w € unit-disc assumes poincare-collinear {u, v, w} shows poincare-between uv w V poincare-between u wv V poincare-between v uw (is ?P’ uv w) proof (cases u=v) case True thus ?thesis using assms by auto next case False have V w. w € unit-dise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-some-properties-of-betweenness",
+      "number": null,
+      "title": "Some properties of betweenness",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 89,
+      "labelStart": "87",
+      "labelEnd": "89",
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc poincare-between",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        },
+        {
+          "term": "safe fix",
+          "heading": false
+        },
+        {
+          "term": "case false",
+          "heading": false
+        },
+        {
+          "term": "assms",
+          "heading": false
+        },
+        {
+          "term": "simp",
+          "heading": false
+        },
+        {
+          "term": "proof safe",
+          "heading": false
+        }
+      ],
+      "extract": "lemma poincare-between-transitivity: assumes a € unit-disc and z € unit-disc and b € unit-disc and y € unit-disc and poincare-between a x b and poincare-between a b y shows poincare-between x b y proof (cases a = b) case True thus ?thesis using assms using poincare-between-sandwich by blast next case False 87 have V z. V y. poincare-between a x b \\ poincare-between a b y \\ x € unit-disc A y € unit-dise —+",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-poincare-between---sum-distances",
+      "number": null,
+      "title": "Poincare between - sum distances",
+      "level": 2,
+      "pageStart": 89,
+      "pageEnd": 94,
+      "labelStart": "89",
+      "labelEnd": "94",
+      "words": 1500,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "of-complex unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "of-complez unit-disc",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "assumes is-real",
+          "heading": false
+        },
+        {
+          "term": "power2-eq-square field-simps",
+          "heading": false
+        },
+        {
+          "term": "simp hence",
+          "heading": false
+        },
+        {
+          "term": "smt zero-le-mult-iff",
+          "heading": false
+        }
+      ],
+      "extract": "Another possible definition of the h-betweenness relation is given in terms of h-distances between pairs of points. We prove it as a characterization equivalent to our cross-ratio based definition. lemma poincare-between-sum-distances-x-axis-u0v: assumes of-complez u' € unit-disc of-complex v' € unit-disc assumes is-real u’ u’ 4 0 v' 4 0 shows poincare-distance (of-complex u') 0; + poincare-distance 0; (of-complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-some-more-properties-of-h-betweenness",
+      "number": null,
+      "title": "Some more properties of h-betweenness.",
+      "level": 2,
+      "pageStart": 94,
+      "pageEnd": 96,
+      "labelStart": "94",
+      "labelEnd": "96",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poincare-distance poincare-between",
+          "heading": false
+        },
+        {
+          "term": "unit-disc poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "cmod",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "poincare-between-sum-distances",
+          "heading": false
+        },
+        {
+          "term": "arg-0-iff",
+          "heading": false
+        }
+      ],
+      "extract": "Some lemmas proved earlier are proved almost directly using the sum of distances characterization. lemma unit-disc-fix-moebius-preserve-poincare-between’: assumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc shows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <> poincare-between uv w using assms using poincare-between-sum-distances by simp lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-intersection-of-h-lines-with-the-x-axis-in-the-p",
+      "number": null,
+      "title": "Intersection of h-lines with the x-axis in the Poincaré model",
+      "level": 1,
+      "pageStart": 96,
+      "pageEnd": 96,
+      "labelStart": "96",
+      "labelEnd": "96",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-041-betweeness-of-x-axis-intersection",
+      "number": null,
+      "title": "Betweeness of x-axis intersection",
+      "level": 2,
+      "pageStart": 96,
+      "pageEnd": 97,
+      "labelStart": "96",
+      "labelEnd": "97",
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "assumes circline-set",
+          "heading": false
+        },
+        {
+          "term": "subst",
+          "heading": false
+        },
+        {
+          "term": "sgn-mult",
+          "heading": false
+        },
+        {
+          "term": "x-axis",
+          "heading": true
+        },
+        {
+          "term": "to-complex",
+          "heading": false
+        },
+        {
+          "term": "asm",
+          "heading": false
+        }
+      ],
+      "extract": "The intersection point of the h-line determined by points u and v and the x-axis is between u and v, then u and v are in the opposite half-planes (one must be in the upper, and the other one in the lower half-plane). lemma poincare-between-x-axis-intersection: assumes wu € unit-disc and v € unit-disc and z € unit-disc and u # v assumes u ¢ circline-set x-azis and v ¢ circline-set t-axis assumes 2z € circline-set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-check-if-an-h-line-intersects-the-x-axis",
+      "number": null,
+      "title": "Check if an h-line intersects the x-axis",
+      "level": 2,
+      "pageStart": 97,
+      "pageEnd": 100,
+      "labelStart": "97",
+      "labelEnd": "100",
+      "words": 898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "circline-set x-axis",
+          "heading": false
+        },
+        {
+          "term": "of-complex circline-set",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "auto hence",
+          "heading": false
+        },
+        {
+          "term": "rex",
+          "heading": false
+        },
+        {
+          "term": "cnj",
+          "heading": false
+        }
+      ],
+      "extract": "lemma z-azis-intersection-equation: assumes H = mk-circline A B C D and (A, B, C, D) € hermitean-nonzero shows of-complex z € circline-set x-axis M circline-set H <—+ Axz? + 2xRe Bez + D = 0 A is-real z (is ?lhs <> ?rhs) proof— have ?lhs <> Axz* + (B+ cnj B)xzx + D=0 A z= cnjz using assms using circline-equation-x-axis| of z] using circline-cquation|of H A B C D z| using hermitean-elems by (auto simp add:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-check-if-a-poincaré-line-intersects-the-y-axis",
+      "number": null,
+      "title": "Check if a Poincaré line intersects the y-axis",
+      "level": 2,
+      "pageStart": 100,
+      "pageEnd": 101,
+      "labelStart": "100",
+      "labelEnd": "101",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc circline-set",
+          "heading": false
+        },
+        {
+          "term": "circline-set y-axis",
+          "heading": false
+        },
+        {
+          "term": "circline-set z-axis",
+          "heading": false
+        },
+        {
+          "term": "int-iff circline-set-moebius-circline-e",
+          "heading": false
+        },
+        {
+          "term": "metis int-iff",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "auto",
+          "heading": false
+        },
+        {
+          "term": "simp",
+          "heading": false
+        }
+      ],
+      "extract": "definition intersects-y-axis-cmat :: compler-mat = bool where [simp]: intersects-y-azis-cmat H = (let (A, B, C, D) = H in A= 0 V (Im B)? > (Re A)?) lift-definition intersects-y-azis-clmat :: circline-mat = bool is intersects-y-axis-cmat done lift-definition intersects-y-azis :: circline = bool is intersects-y-axis-clmat proof (transfer) fix H1 H2 assume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \\ H2 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-intersection-point-of-a-poincaré-line-with-the-x",
+      "number": null,
+      "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
+      "level": 2,
+      "pageStart": 101,
+      "pageEnd": 105,
+      "labelStart": "101",
+      "labelEnd": "105",
+      "words": 1330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "assms unfolding",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "auto assume",
+          "heading": false
+        },
+        {
+          "term": "unit-disc-def disc-def",
+          "heading": false
+        },
+        {
+          "term": "assumes is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "unfolding circline-set-def",
+          "heading": false
+        }
+      ],
+      "extract": "definition calc-z-axis-intersection-cvec :: complex = complex = compler-vec where [simp]: calc-x-axis-intersection-cvec A B = (let diser = (Re B)? — (Re A)? in (—Re(B) + sgn (Re B) * sqrt(discr), A)) definition calc-x-azis-intersection-cmat-cvec :: complex-mat = complex-vec where [simp]: calc-z-axis-intersection-cmat-cvec H = (let (A, B, C, D) = H in if A # 0 then calc-x-axis-intersection-cvec A B else (0, 1) )",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-check-if-an-h-line-intersects-the-positive-part",
+      "number": null,
+      "title": "Check if an h-line intersects the positive part of the x-axis",
+      "level": 2,
+      "pageStart": 105,
+      "pageEnd": 108,
+      "labelStart": "105",
+      "labelEnd": "108",
+      "words": 1036,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "sgn sqrt",
+          "heading": false
+        },
+        {
+          "term": "unfolding positive-x-azis-def",
+          "heading": false
+        },
+        {
+          "term": "auto hence",
+          "heading": false
+        },
+        {
+          "term": "circline-set x-axis",
+          "heading": false
+        },
+        {
+          "term": "assms proof",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        }
+      ],
+      "extract": "definition intersects-x-axis-positive-cmat :: complez-mat => bool where [simp]: intersects-x-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A#0 A Re B/ Re A< -1) lift-definition intersects-2-axis-positive-clmat :: circline-mat = bool is intersects-x-axis-positive-cmat done lift-definition intersects-x-axis-positive :: circline = bool is intersects-x-axis-positive-clmat proof (transfer) fix H1 H2 assume hh:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-check-if-an-h-line-intersects-the-positive-part",
+      "number": null,
+      "title": "Check if an h-line intersects the positive part of the y-axis",
+      "level": 2,
+      "pageStart": 108,
+      "pageEnd": 110,
+      "labelStart": "108",
+      "labelEnd": "110",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circline-set positive-y-axis",
+          "heading": false
+        },
+        {
+          "term": "unit-disc circline-set",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "simp",
+          "heading": false
+        },
+        {
+          "term": "intersects-y-axis-positive",
+          "heading": false
+        },
+        {
+          "term": "moebius-circline",
+          "heading": false
+        },
+        {
+          "term": "moebius-rotation",
+          "heading": false
+        }
+      ],
+      "extract": "definition intersects-y-axis-positive-cmat :: complex-mat = bool where [simp]: intersects-y-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A# 0A ImB/ Re A < -1) lift-definition intersects-y-azis-positive-clmat :: circline-mat = bool is intersects-y-axis-positive-cmat done lift-definition intersects-y-azis-positive :: circline = bool is intersects-y-axis-positive-clmat proof (transfer) fix H1 H2 assume hh:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-position-of-the-intersection-point-in-the-unit-d",
+      "number": null,
+      "title": "Position of the intersection point in the unit disc",
+      "level": 2,
+      "pageStart": 110,
+      "pageEnd": 112,
+      "labelStart": "110",
+      "labelEnd": "112",
+      "words": 985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "case-tac circline-mat",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "real-sqrt-divide field-simps",
+          "heading": false
+        },
+        {
+          "term": "sgn sqrt",
+          "heading": false
+        },
+        {
+          "term": "assms proof",
+          "heading": false
+        },
+        {
+          "term": "hermitean mat-zero",
+          "heading": false
+        },
+        {
+          "term": "intersection point",
+          "heading": true
+        },
+        {
+          "term": "auto",
+          "heading": false
+        }
+      ],
+      "extract": "Check if the intersection point of one h-line with the x-axis is located more outward the edge of the disc than the intersection point of another h-line. definition outward-cmat :: compler-mat = complez-mat = bool where [simp]: outward-cmat H1 H2 = (let (Al, B1, C1, D1) = H1; (A2, B2, C2, D2) = H2 in —Re B1/Re Al < —Re B2/Re A2) lift-definition outward-clmat :: circline-mat = circline-mat = bool is outward-cmat done",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-ideal-points-and-x-axis-intersection",
+      "number": null,
+      "title": "Ideal points and x-axis intersection",
+      "level": 2,
+      "pageStart": 112,
+      "pageEnd": 114,
+      "labelStart": "112",
+      "labelEnd": "114",
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto",
+          "heading": false
+        },
+        {
+          "term": "den",
+          "heading": false
+        },
+        {
+          "term": "cmod",
+          "heading": false
+        }
+      ],
+      "extract": "lemma ideal-points-intersects-x-azis: assumes is-poincare-line H and ideal-points H = {i1, i2} and H # z-axis shows intersects-t-axis H <—> Im (to-complex i1) « Im (to-complez i2) < 0 using assms proof— have il # i2 using assms(1) assms(2) ex-poincare-line-points ideal-points-different(1) by blast 112 have calc-ideal-points H = {i1, i2} using assms using ideal-points-unique by auto have V il € calc-ideal-points H. V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-h-perpendicular-h-lines-in-the-poincaré-model",
+      "number": null,
+      "title": "H-perpendicular h-lines in the Poincaré model",
+      "level": 1,
+      "pageStart": 114,
+      "pageEnd": 124,
+      "labelStart": "114",
+      "labelEnd": "124",
+      "words": 3119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc circline-set",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "unit-disc-fiz unit-disc",
+          "heading": false
+        },
+        {
+          "term": "perpendicular circline-set",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assumes is-poincare-line",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "subst cmod-square",
+          "heading": false
+        }
+      ],
+      "extract": "definition perpendicular-to-a-axis-cmat :: complea-mat = bool where [simp]: perpendicular-to-z-axis-cmat H +—+ (let (A, B, C, D) = H in is-real B) lift-definition perpendicular-to-x-axis-clmat :: circline-mat = bool is perpendicular-to-a-axis-cmat done lift-definition perpendicular-to-z-axis :: circline = bool is perpendicular-to-x-axis-clmat by transfer auto lemma perpendicular-to-x-axis: assumes is-poincare-line H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-poincaré-disc-model-types",
+      "number": null,
+      "title": "Poincaré disc model types",
+      "level": 1,
+      "pageStart": 124,
+      "pageEnd": 124,
+      "labelStart": "124",
+      "labelEnd": "124",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we introduce datatypes that represent objects in the Poincaré disc model. The types are defined",
+      "extractCut": false
+    },
+    {
+      "id": "sec-051-h-points",
+      "number": null,
+      "title": "H-points",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 124,
+      "labelStart": "124",
+      "labelEnd": "124",
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h-points",
+          "heading": true
+        },
+        {
+          "term": "p-point",
+          "heading": false
+        },
+        {
+          "term": "zero-in-unit-disc",
+          "heading": false
+        }
+      ],
+      "extract": "those types are defined by lifting the functions defined on the carrier type (e.g., h-distance is defined by lifting the distance function defined for elements of CP). theory Poincare imports Poincare-Lines Poincare-Between Poincare-Distance Poincare-Circles begin 10.1 H-points typedef p-point = {z. z € unit-disc} using zero-in-unit-disc by (rule-tac c=0;, in el, simp) setup-lifting type-definition-p-point Point",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-h-lines",
+      "number": null,
+      "title": "H-lines",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 125,
+      "labelStart": "124",
+      "labelEnd": "125",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-line p-point",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "unique h-line",
+          "heading": false
+        },
+        {
+          "term": "h-points",
+          "heading": false
+        },
+        {
+          "term": "lift-definition",
+          "heading": false
+        },
+        {
+          "term": "x-axis",
+          "heading": false
+        },
+        {
+          "term": "p-zero",
+          "heading": false
+        }
+      ],
+      "extract": "typedef p-line = {H. is-poincare-line H} by (rule-tac r=2-azis in exI, simp) setup-lifting type-definition-p-line lift-definition p-incident :: p-line = p-point = bool is on-circline done Set of h-points on an h-line definition p-points :: p-line = p-point set where p-points | = {p. p-incident | p} 124 x-axis is an example of an h-line lift-definition p-z-azis :: p-line is x-axis by simp Constructing the unique",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-h-collinearity",
+      "number": null,
+      "title": "H-collinearity",
+      "level": 2,
+      "pageStart": 125,
+      "pageEnd": 125,
+      "labelStart": "125",
+      "labelEnd": "125",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "lift-definition p-collinear :: p-point set = bool is poincare-collinear done",
+      "extractCut": false
+    },
+    {
+      "id": "sec-054-h-isometries",
+      "number": null,
+      "title": "H-isometries",
+      "level": 2,
+      "pageStart": 125,
+      "pageEnd": 126,
+      "labelStart": "125",
+      "labelEnd": "126",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "unit-disc-fix-f-def",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "h-isometries",
+          "heading": true
+        }
+      ],
+      "extract": "H-isometries are functions that map the unit disc onto itself typedef p-isometry = {f. unit-disc-fix-f f} 125 by (rule-tac c=id in exI, simp add: unit-disc-fix-f-def, rule-tac x=id-moebius in exl, simp) setup-lifting type-definition-p-isometry Action of an h-isometry on an h-point lift-definition p-isometry-pt :: p-isometry = p-point = p-point is X f p. f p using unit-disc-fir-f-unit-disc by auto Action of an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-h-distance-and-h-congruence",
+      "number": null,
+      "title": "H-distance and h-congruence",
+      "level": 2,
+      "pageStart": 126,
+      "pageEnd": 127,
+      "labelStart": "126",
+      "labelEnd": "127",
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-point",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "p-congruent",
+          "heading": false
+        }
+      ],
+      "extract": "lift-definition p-dist :: p-point => p-point = real is poincare-distance done definition p-congruent :: p-point = p-point => p-point > p-point = bool where [simp]: p-congruent u vu! v' <—+ p-dist uv = p-dist u’ v’ lemma assumes p-dist uv = p-dist u’ v’ assumes p-dist v w = p-dist v' w’ assumes p-dist u w = p-dist u’ w’ shows i f. p-isometry-pt fu = u' \\ p-isometry-pt fv = v' A p-isometry-pt fw = w' using assms apply",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-h-betweennes",
+      "number": null,
+      "title": "H-betweennes",
+      "level": 2,
+      "pageStart": 127,
+      "pageEnd": 127,
+      "labelStart": "127",
+      "labelEnd": "127",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "lift-definition p-between :: p-point => p-point => p-point => bool is poincare-between done end",
+      "extractCut": false
+    },
+    {
+      "id": "sec-057-poincaré-model-satisfies-tarski-axioms",
+      "number": null,
+      "title": "Poincaré model satisfies Tarski axioms",
+      "level": 1,
+      "pageStart": 127,
+      "pageEnd": 127,
+      "labelStart": "127",
+      "labelEnd": "127",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "theory Poincare-Tarski imports Poincare Poincare-Lines-Avzis-Intersections Tarski begin",
+      "extractCut": false
+    },
+    {
+      "id": "sec-058-pasch-axiom",
+      "number": null,
+      "title": "Pasch axiom",
+      "level": 2,
+      "pageStart": 127,
+      "pageEnd": 138,
+      "labelStart": "127",
+      "labelEnd": "138",
+      "words": 3935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc poincare-between",
+          "heading": false
+        },
+        {
+          "term": "cis cnj",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "assumes poincare-between",
+          "heading": false
+        },
+        {
+          "term": "assms poincare-collinear",
+          "heading": false
+        },
+        {
+          "term": "corr cis",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        }
+      ],
+      "extract": "lemma Pasch-fun-mono: fixes rl r2 :: real assumes (0 < rl and rl < r2 and r2 < 1 shows rl + 1/r1 > r2 + 1/r2 proof (cases rl = r2) case True thus ?thesis by simp next case False hence r2 — rl > 0 using assms by simp have rl * r2 < 1 using assms by (smt mult-le-cancel-left1) hence 1 / (ri * r2) > 1 using assms by simp hence (r2 — rl) / (ri « r2) > (r2 — rl) using (r2 — rl > 0» using mult-less-cancel-left-pos[of r2 —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-segment-construction-axiom",
+      "number": null,
+      "title": "Segment construction axiom",
+      "level": 2,
+      "pageStart": 138,
+      "pageEnd": 140,
+      "labelStart": "138",
+      "labelEnd": "140",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "unit-disc poincare-between",
+          "heading": false
+        },
+        {
+          "term": "assumes unit-disc",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance proof",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-between-def",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "of-complex",
+          "heading": false
+        }
+      ],
+      "extract": "lemma segment-construction: assumes «x € unit-disc and y € unit-disc assumes a € unit-disc and b € unit-disc shows J z. z € unit-disc A poincare-between x y z poincare-distance y z = poincare-distance a b proof— obtain d where d: d = poincare-distance a b by auto have d > 0 using assms 138 by (simp add: d poincare-distance-ge0) have 4 z. z € unit-disc \\ poincare-between x y z /\\ poincare-distance y z = d (is ?P x y)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-five-segment-axiom",
+      "number": null,
+      "title": "Five segment axiom",
+      "level": 2,
+      "pageStart": 140,
+      "pageEnd": 141,
+      "labelStart": "140",
+      "labelEnd": "141",
+      "words": 238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "in-disc unfolding",
+          "heading": false
+        },
+        {
+          "term": "unfolding unit-disc-fix-f-def",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "unit-disc",
+          "heading": false
+        },
+        {
+          "term": "betw",
+          "heading": false
+        }
+      ],
+      "extract": "lemma five-segment-axiom: assumes in-disc: € unit-disc y € unit-disc z € unit-disc u € unit-disc and in-disc': x' € unit-disc y’ € unit-dise z' € unit-disc u’ € unit-disc and x #yand betw: poincare-between x y z poincare-between x’ y' z' and xy: poincare-distance x y = poincare-distance x' y’ and xu: poincare-distance x u = poincare-distance x’ u' and yu: poincare-distance y u = poincare-distance y’ u’ and yz:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-upper-dimension-axiom",
+      "number": null,
+      "title": "Upper dimension axiom",
+      "level": 2,
+      "pageStart": 141,
+      "pageEnd": 143,
+      "labelStart": "141",
+      "labelEnd": "143",
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "in-disc cong",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-collinear-def",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "unit-disc",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance-eq-0-iff",
+          "heading": false
+        },
+        {
+          "term": "poincare-distance",
+          "heading": false
+        }
+      ],
+      "extract": "lemma upper-dimension-axiom: assumes in-disc: x € unit-disc y € unit-disc z € unit-disc u € unit-disc v € unit-disc assumes poincare-distance x u = poincare-distance x v poincare-distance y u = poincare-distance y v poincare-distance z u = poincare-distance z v uZxu shows poincare-between x y z V poincare-between y z x V poincare-between z x y proof (cases z= yVy=zV 4= 2) case True thus ?thesis using in-disc by auto",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-lower-dimension-axiom",
+      "number": null,
+      "title": "Lower dimension axiom",
+      "level": 2,
+      "pageStart": 143,
+      "pageEnd": 143,
+      "labelStart": "143",
+      "labelEnd": "143",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc",
+          "heading": false
+        },
+        {
+          "term": "rule ccontr",
+          "heading": false
+        },
+        {
+          "term": "poincare-between-poincare-collinear",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        }
+      ],
+      "extract": "lemma lower-dimension-axiom: shows J a € unit-disc. 4 b € unit-disc. J c € unit-disc. 7 poincare-between a b c A 7 poincare-between b c a A — poincare-between c a b proof— let ?u = of-compler (1/2) and ?v = of-complex (i/2) have 1: 0; € unit-disc and 2: ?u € unit-disc and 3: ?v € unit-disc by simp-all have *: — poincare-collinear {On, ?u, ?v} proof (rule ccontr) assume — ?thesis then obtain p where is-poincare-line",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-negated-euclidean-axiom",
+      "number": null,
+      "title": "Negated Euclidean axiom",
+      "level": 2,
+      "pageStart": 143,
+      "pageEnd": 150,
+      "labelStart": "143",
+      "labelEnd": "150",
+      "words": 2304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unit-disc poincare-between",
+          "heading": false
+        },
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-distance-formula",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        },
+        {
+          "term": "simp hence",
+          "heading": false
+        },
+        {
+          "term": "metis to-complex-of-complex",
+          "heading": false
+        },
+        {
+          "term": "rule ccontr",
+          "heading": false
+        }
+      ],
+      "extract": "lemma negated-euclidean-axiom-auz: assumes on-circline H (of-complex (1/2 + i/2)) and is-poincare-line H assumes intersects-z-axis-positive H shows -— intersects-y-axis-positive H using assms proof (transfer, transfer) fix H assume hh: hermitean H \\ H # mat-zero is-poincare-line-cmat H obtain A B C D where H = (A, B, C, D) by (cases H, auto) hence «: is-real A H = (A, B, enj B, A) (cmod B)? > (emod A)? using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-continuity-axiom",
+      "number": null,
+      "title": "Continuity axiom",
+      "level": 2,
+      "pageStart": 150,
+      "pageEnd": 157,
+      "labelStart": "150",
+      "labelEnd": "157",
+      "words": 2217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hence unit-disc",
+          "heading": false
+        },
+        {
+          "term": "complex-of-real-re is-real",
+          "heading": false
+        },
+        {
+          "term": "assume unit-disc",
+          "heading": false
+        },
+        {
+          "term": "cases unit-disc",
+          "heading": false
+        },
+        {
+          "term": "auto qed",
+          "heading": false
+        },
+        {
+          "term": "metis inf-notin-unit-disc",
+          "heading": false
+        },
+        {
+          "term": "hence poincare-between",
+          "heading": false
+        },
+        {
+          "term": "auto moreover",
+          "heading": false
+        }
+      ],
+      "extract": "The set ¢ is on the left of the set abbreviation set-order where set-order A p W =V x€ unit-disc. V ye unit-disc. y x A wy y —> poincare-between A x y The point B is between the sets ¢@ and w abbreviation point-between-sets where point-between-sets p Bw = ae€ unit-disc. V ye unit-disc. yp x \\ wy y —>+ poincare-between x By lemma _ continuity: assumes J A € unit-disc. set-order A yp w shows 4d B € unit-disc.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-limiting-parallels-axiom",
+      "number": null,
+      "title": "Limiting parallels axiom",
+      "level": 2,
+      "pageStart": 157,
+      "pageEnd": 170,
+      "labelStart": "157",
+      "labelEnd": "170",
+      "words": 4281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auto simp",
+          "heading": false
+        },
+        {
+          "term": "unit-circle-set moebius-pt",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-collinear-def",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-ray-meets-line-def",
+          "heading": false
+        },
+        {
+          "term": "circline-set x-axis",
+          "heading": false
+        },
+        {
+          "term": "simp qed",
+          "heading": false
+        },
+        {
+          "term": "poincare-ray-meets-line-def poincare-on-line-def",
+          "heading": false
+        },
+        {
+          "term": "inversion-noteg-unit-disc zero-in-unit-disc",
+          "heading": false
+        }
+      ],
+      "extract": "Auxiliary definitions definition poincare-on-line where poincare-on-line p a b <—+ poincare-collinear {p, a, b} definition poincare-on-ray where poincare-on-ray p a b +—> poincare-between a p b V poincare-between a b p definition poincare-in-angle where poincare-in-angle pa bc+<—+ bAaNbACA PF DbHA (A TE unit-disc. poincare-between azc\\«#aA\\ «cA poincare-on-ray p b zx) definition poincare-ray-meets-line where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-interpretation-of-locales",
+      "number": null,
+      "title": "Interpretation of locales",
+      "level": 2,
+      "pageStart": 170,
+      "pageEnd": 175,
+      "labelStart": "170",
+      "labelEnd": "175",
+      "words": 1137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding tarskiabsolute",
+          "heading": false
+        },
+        {
+          "term": "poincare tarskiabsolute",
+          "heading": false
+        },
+        {
+          "term": "unfolding poincare-on-line-def",
+          "heading": false
+        },
+        {
+          "term": "cong p-congruent",
+          "heading": false
+        },
+        {
+          "term": "poincare-on-line-def poincare-ray-meets-line-def",
+          "heading": false
+        },
+        {
+          "term": "poincare-between",
+          "heading": false
+        },
+        {
+          "term": "poincare-ray-meets-line-def poincare-on-ray-def",
+          "heading": false
+        },
+        {
+          "term": "simp add",
+          "heading": false
+        }
+      ],
+      "extract": "global-interpretation PoincareTarskiAbsolute: TarskiAbsolute where cong = p-congruent and betw = p-between defines p-on-line = Poincare TarskiAbsolute.on-line and p-on-ray = Poincare TarskiAbsolute.on-ray and p-in-angle = PoincareTarskiAbsolute.in-angle and p-ray-meets-line = Poincare TarskiAbsolute.ray-meets-line proof— show TarskiAbsolute p-congruent p-between proof 1. Reflexivity of congruence fix ry show",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "auto simp",
+      "heading": false
+    },
+    {
+      "term": "simp qed",
+      "heading": false
+    },
+    {
+      "term": "simp add",
+      "heading": false
+    },
+    {
+      "term": "assumes unit-disc",
+      "heading": false
+    },
+    {
+      "term": "circline-set unit-disc",
+      "heading": false
+    },
+    {
+      "term": "of-complex unit-disc",
+      "heading": false
+    },
+    {
+      "term": "unit-disc poincare-between",
+      "heading": false
+    },
+    {
+      "term": "unit-disc is-real",
+      "heading": false
+    },
+    {
+      "term": "moebius-pt unit-disc",
+      "heading": false
+    },
+    {
+      "term": "auto blast",
+      "heading": false
+    },
+    {
+      "term": "unit-disc poincare-distance",
+      "heading": false
+    },
+    {
+      "term": "simp lemma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "93",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 94,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "95",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 96,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 101,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 104,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 108,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 109,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 110,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 111,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 112,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 113,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 114,
+      "label": "114",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 115,
+      "label": "115",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 116,
+      "label": "116",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 117,
+      "label": "117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 118,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 119,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 120,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 121,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 122,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 123,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 124,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 125,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 126,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 127,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 128,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 129,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 130,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 131,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 132,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 133,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 134,
+      "label": "134",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 135,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 136,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 137,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 138,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 139,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 140,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 141,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 142,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 143,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 144,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 145,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 146,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 147,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 148,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 149,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 150,
+      "label": "150",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 151,
+      "label": "151",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 152,
+      "label": "152",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 153,
+      "label": "153",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 154,
+      "label": "154",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 155,
+      "label": "155",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 156,
+      "label": "156",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 157,
+      "label": "157",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 158,
+      "label": "158",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 159,
+      "label": "159",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 160,
+      "label": "160",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 161,
+      "label": "161",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 162,
+      "label": "162",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 163,
+      "label": "163",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 164,
+      "label": "164",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 165,
+      "label": "165",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 166,
+      "label": "166",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 167,
+      "label": "167",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 168,
+      "label": "168",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 169,
+      "label": "169",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 170,
+      "label": "170",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 171,
+      "label": "171",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 172,
+      "label": "172",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 173,
+      "label": "173",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 174,
+      "label": "174",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 175,
+      "label": "175",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 68,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 68,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p170); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 68 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/poincare-proof-outline"
+  }
+}

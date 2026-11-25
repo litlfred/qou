@@ -1,0 +1,146 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1202.5547v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/lem-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "lem-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "There is an isomorphism of Rn x,y-modules Θb ≃Θ′ b ⊗C C[xn], where Θ′ b is some Rn−1 x,y -module, yn acts on C[xn] by multiplication by xn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "The map ⟨·⟩V has the following properties: • ⟨1⟩V = 1 (Normalizing property) • ⟨ab⟩V = ⟨ba⟩V for any a, b ∈C(q)BW (Trace property) • For any a ∈C(q)BW and s ∈S we have ⟨aσs⟩V = q",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/prop-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "Let A, B be some C-algebras, K• some complex of A ⊗C B-modules and L• a complex of A- modules. Then there is the obvious isomorphism of complexes K• ⊗A L• ≃K• ⊗A⊗B (L• ⊗C B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1202.5547v1  [math.RT]  24 Feb 2012\nMarkov property and Khovanov-Rozansky homology: Coxeter\nCase.\nTraﬁm LASY\nJuly 8, 2018\nAbstract\nIn [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link\ninvariant, taking the Hochschild homology of the terms in Rouquier complexes. Its bigraded Euler\ncharacteristic provides the Markov trace of type An, which, in its turn, induces the well-known\nHOMFLY polynomial. Gomi [1, (3.3)] has extended the deﬁnition of Markov trace on a Hecke algebra\nto all Coxeter groups. One can see that Khovanov’s and Rouquier’s constructions can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/rem-sec-front-matter-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "rem-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "Rapha¨el Rouquier told me in private communication that he has a ”categoriﬁed” version of theorem 3 which will be published later.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Khovanov",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "The triple-graded dimension of Khovanov-Rozansky homology is an invariant of oriented links. Its bigraded Euler characteristic provides the HOMFLY 2-variable polynomial. Let HW := C(q)BW / ⟨(σs −q)(σs + 1)⟩be the Hecke algebra of W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/thm-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "The trace τkr is a Markov trace with the parameter z = tq(q−1) tq+1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5547v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] Y. Gomi. ”The Markov traces and the Fourier transforms”, J. Algebra, 303(2):566-591, 2006.\n[2] M. Khovanov, ”Triply-graded link homology and Hochschild homology of Soergel bimodules”. Inter-\nnat. J. Math., 18(8):869-885, 2007.\n[3] T. Lasy, ”Special Markov traces and Gomi’s formula for reﬂection groups”, PhD thesis, University\nDenis Diderot, 2012. http://www.institut.math.jussieu.fr/theses/2012/lasy/These LASY.pdf\n[4] R. Rouquier, Categoriﬁcation of sl2 and braid groups, in ”Trends in representation theory of algebras\nand related topics”, Amer. Math. Soc.,137-167, 2006\n4",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

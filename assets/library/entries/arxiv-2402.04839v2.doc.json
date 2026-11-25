@@ -1,0 +1,1645 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2402.04839v2",
+  "title": "On a volume invariant of 3-manifolds",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Properties, examples and questions",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-properties-examples-and-questions"
+    },
+    {
+      "level": 2,
+      "title": "Definition of topological volume and its spectrum",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-definition-of-topological-volume-and-its-spectru"
+    },
+    {
+      "level": 2,
+      "title": "Refinements of topological volume",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-refinements-of-topological-volume"
+    },
+    {
+      "level": 2,
+      "title": "A finiteness result",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-a-finiteness-result"
+    },
+    {
+      "level": 2,
+      "title": "Covers and branched covers",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-covers-and-branched-covers"
+    },
+    {
+      "level": 2,
+      "title": "Constructions of unbounded topological volume",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-constructions-of-unbounded-topological-volume"
+    },
+    {
+      "level": 1,
+      "title": "Bounds on topological volume",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-bounds-on-topological-volume"
+    },
+    {
+      "level": 2,
+      "title": "Upper bounds from surgery descriptions or triangulations",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-upper-bounds-from-surgery-descriptions-or-triang"
+    },
+    {
+      "level": 2,
+      "title": "Lower bounds",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-lower-bounds"
+    },
+    {
+      "level": 1,
+      "title": "The minimal topological volume manifolds",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-the-minimal-topological-volume-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "A census",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-a-census"
+    },
+    {
+      "level": 2,
+      "title": "Parenthood",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-parenthood"
+    },
+    {
+      "level": 2,
+      "title": "Homology classes of minimisers",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-homology-classes-of-minimisers"
+    },
+    {
+      "level": 2,
+      "title": "Connected sums",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-connected-sums"
+    },
+    {
+      "level": 1,
+      "title": "Examples obtained from the Whitehead link and its sister",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-examples-obtained-from-the-whitehead-link-and-it"
+    },
+    {
+      "level": 2,
+      "title": "Volume functions on Dehn surgery space",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-volume-functions-on-dehn-surgery-space"
+    },
+    {
+      "level": 2,
+      "title": "The topological volume of all but finitely many lens spaces",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-the-topological-volume-of-all-but-finitely-many"
+    },
+    {
+      "level": 2,
+      "title": "Determining the minimiser",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-determining-the-minimiser"
+    },
+    {
+      "level": 1,
+      "title": "Using tetrahedron shapes to prove equivalence of volumes",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence of volumes: m006 and m007",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-equivalence-of-volumes-m006-and-m007"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence of volumes: m015, m016 and m017",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-equivalence-of-volumes-m015-m016-and-m017"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 138,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological volume",
+          "heading": false
+        },
+        {
+          "term": "kegel",
+          "heading": false
+        },
+        {
+          "term": "arunima",
+          "heading": false
+        },
+        {
+          "term": "spreer",
+          "heading": false
+        }
+      ],
+      "extract": "On a volume invariant of 3–manifolds Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson and Stephan Tillmann Abstract This paper investigates a real-valued topological invariant of 3–manifolds called topological volume. For a given 3–manifold M , the topological volume volt(M) is defined as the smallest volume of the complement of a (possibly empty) hyperbolic link in M . Various refinements of this invariant are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2402.04839v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cref ssec",
+          "heading": false
+        },
+        {
+          "term": "guzman shalen",
+          "heading": false
+        },
+        {
+          "term": "matveev complexity",
+          "heading": false
+        },
+        {
+          "term": "volt",
+          "heading": false
+        },
+        {
+          "term": "cref sec",
+          "heading": false
+        },
+        {
+          "term": "complexity census",
+          "heading": false
+        },
+        {
+          "term": "culler shalen",
+          "heading": false
+        },
+        {
+          "term": "cite matveev",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a closed 3--manifold. A topological invariant $\\volt(M)$\\footnote{The reader may interpret this as a quantification of how much potential the manifold has. We read this as \\emph{topological volume} or \\emph{volume topologique}. The name was coined with permission of Michel Boileau and Joan Porti.} is defined in~\\cite{BBBMP} in an account of a complete proof of Thurston's Geometrisation Conjecture. Roughly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-properties-examples-and-questions",
+      "number": null,
+      "title": "Properties, examples and questions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 38,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological volume",
+          "heading": false
+        },
+        {
+          "term": "questions",
+          "heading": true
+        },
+        {
+          "term": "properties",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:Properties} We first define the notion of topological volume and refinements thereof. We then establish general properties of the topological volume, give examples and state questions that arise from our census in \\Cref{sec:computations}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-definition-of-topological-volume-and-its-spectru",
+      "number": null,
+      "title": "Definition of topological volume and its spectrum",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "realising volt",
+          "heading": false
+        },
+        {
+          "term": "topological volume",
+          "heading": true
+        },
+        {
+          "term": "volume minimiser",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "orientable manifold",
+          "heading": false
+        },
+        {
+          "term": "links realising",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:definition} Let $M$ be a closed, orientable 3--manifold. A \\textbf{link} in $M$ is a (possibly empty, possibly disconnected) closed 1--submanifold $L$ of $M.$ We consider links up to (not necessarily orientation preserving) diffeomorphisms of their complement $M\\setminus L$. This is motivated by the fact that none of the invariants we consider in this article differ on non-isotopic links with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-refinements-of-topological-volume",
+      "number": null,
+      "title": "Refinements of topological volume",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation volt",
+          "heading": false
+        },
+        {
+          "term": "inf big",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic link",
+          "heading": false
+        },
+        {
+          "term": "cref sec",
+          "heading": false
+        },
+        {
+          "term": "refinements",
+          "heading": true
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "homology classes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ssec:refinements} Let $M$ be a closed, orientable $3$--manifold. For each integer $n\\ge 0,$ we define the invariant \\begin{equation} \\volt_n(M) = \\inf \\big\\{ \\; \\volh(M\\setminus K) \\;\\mid \\; K \\subset M \\text{ is a hyperbolic $n$--component link } \\; \\big\\}. \\end{equation} For all $n\\ge 1$ and all closed, orientable 3--manifolds $M$, we have $\\volt(M)\\le \\volt_n(M)$. In particular, $\\volt(M)=\\volt_0(M)<",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-a-finiteness-result",
+      "number": null,
+      "title": "A finiteness result",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite thurston-notes",
+          "heading": false
+        },
+        {
+          "term": "non-hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "minimiser",
+          "heading": false
+        },
+        {
+          "term": "topological volume",
+          "heading": false
+        },
+        {
+          "term": "finiteness",
+          "heading": true
+        },
+        {
+          "term": "filling",
+          "heading": false
+        },
+        {
+          "term": "cusp",
+          "heading": false
+        }
+      ],
+      "extract": "According to J\\o{}rgensen--Thurston theory \\cite{thurston-notes,Gro81, Mai10}, for each positive real number $v$, there are at most finitely many hyperbolic 3--manifolds of volume $v.$ We show that the analogous result holds for topological volume. \\begin{proposition}\\label{pro:finiteness} For each positive real number $v$, there are at most finitely many closed, orientable 3--manifolds of topological volume $v.$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-covers-and-branched-covers",
+      "number": null,
+      "title": "Covers and branched covers",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 616,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volt",
+          "heading": false
+        },
+        {
+          "term": "covers",
+          "heading": true
+        },
+        {
+          "term": "branched",
+          "heading": true
+        },
+        {
+          "term": "k4a",
+          "heading": false
+        },
+        {
+          "term": "hlm",
+          "heading": false
+        },
+        {
+          "term": "cref",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:covers} It is straightforward to see that hyperbolic volume is multiplicative under finite-sheeted covers. The following example shows that the analogous fact is not true for topological volume in general. \\begin{example} We show in \\cref{sec:computations} that $m009$ (Snappy notation) is the unique minimiser of $\\R P^3,$ and hence $\\volt(\\R P^3)=\\volh(m009)\\approx 2.66674$. One sees this by noting that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-constructions-of-unbounded-topological-volume",
+      "number": null,
+      "title": "Constructions of unbounded topological volume",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unbounded",
+          "heading": true
+        },
+        {
+          "term": "orientable manifolds",
+          "heading": false
+        },
+        {
+          "term": "volt",
+          "heading": false
+        },
+        {
+          "term": "cref prop",
+          "heading": false
+        },
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "exceptional fibres",
+          "heading": false
+        },
+        {
+          "term": "seifert fibered",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ssec:unbounded} The main observation used in this section is that, following J\\o{}rgensen--Thurston theory \\cite{thurston-notes,Gro81, Mai10}, all hyperbolic 3--manifolds of volume bounded from above by a constant are obtained by Dehn surgery on a finite set of cusped hyperbolic 3--manifolds. In particular, every infinite sequence of hyperbolic manifolds of bounded volume must have a subsequence with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-bounds-on-topological-volume",
+      "number": null,
+      "title": "Bounds on topological volume",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 40,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "topological",
+          "heading": true
+        },
+        {
+          "term": "covers",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:bounds} Bounds on the topological volume of manifolds in terms of covers and branched covers were determined in \\Cref{sec:covers}. We now give upper and lower bounds arising from topological or algebraic properties of a non-hyperbolic 3--manifold.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
+      "number": null,
+      "title": "Upper bounds from surgery descriptions or triangulations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oct tet",
+          "heading": false
+        },
+        {
+          "term": "adams augmented",
+          "heading": false
+        },
+        {
+          "term": "non-split alternating",
+          "heading": false
+        },
+        {
+          "term": "equation volt",
+          "heading": false
+        },
+        {
+          "term": "link bar",
+          "heading": false
+        },
+        {
+          "term": "leq volh",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": true
+        },
+        {
+          "term": "alternating diagram",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ssec:upperlower} Suppose the $3$--manifold $M$ is given by surgery on a hyperbolic link $L \\subset S^3.$ By definition of the surgery diagram, there is a link $L^* \\subset M$ such that $S^3 \\setminus L = M\\setminus L^*.$ We thus have $\\volh (S^3 \\setminus L) = \\volh (M \\setminus L^*) \\geq \\volt (M)$. \\begin{example} The 3--torus $T^3$ is given by $0$-surgery on all components of the Borromean rings $B$ (a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-lower-bounds",
+      "number": null,
+      "title": "Lower bounds",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lower bounds",
+          "heading": true
+        },
+        {
+          "term": "guzman shalen",
+          "heading": false
+        },
+        {
+          "term": "culler shalen",
+          "heading": false
+        },
+        {
+          "term": "cref cor",
+          "heading": false
+        },
+        {
+          "term": "sfs",
+          "heading": false
+        },
+        {
+          "term": "reptheorem",
+          "heading": false
+        },
+        {
+          "term": "operatorname",
+          "heading": false
+        },
+        {
+          "term": "volt",
+          "heading": false
+        }
+      ],
+      "extract": "In \\Cref{cor:topinv} (2) we have shown that a sequence of manifolds with unbounded rank of first homology has unbounded topological volume. In the next theorem, we develop a lower bound which quantifies this. \\begin{reptheorem}{thm:lower_bounds} Let $M$ be a closed, orientable 3--manifold and $p$ be a prime. Then \\begin{equation*} \\frac{\\operatorname{rk}(H_1(M;\\Z_p))}{168.602}< \\volt(M). \\end{equation*} Moreover, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-the-minimal-topological-volume-manifolds",
+      "number": null,
+      "title": "The minimal topological volume manifolds",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 37,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "minimising",
+          "heading": false
+        },
+        {
+          "term": "classifies",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:computations} This section classifies all non-hyperbolic $3$--manifolds with topological volume less than $3.07$, giving their volumes and their volume minimising hyperbolic links. A number of observations from this census are subsequently made.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-a-census",
+      "number": null,
+      "title": "A census",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sfs",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "census",
+          "heading": true
+        },
+        {
+          "term": "exceptional fillings",
+          "heading": false
+        },
+        {
+          "term": "non-hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "volume realisations",
+          "heading": false
+        },
+        {
+          "term": "once-punctured torus",
+          "heading": false
+        },
+        {
+          "term": "cref tab",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:census} \\begin{proposition}\\label{prop:census} The complete list of non-hyperbolic closed 3--manifolds of topological volumes at most $3.07$, their explicit volumes and their minimisers are given in \\Cref{tab:complete}. In particular, each of these manifolds contains a unique volume minimiser. In all cases the volume minimiser is a knot. \\end{proposition} \\begin{proof} From Theorem 1.5 of~\\cite{GHMTY21},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-parenthood",
+      "number": null,
+      "title": "Parenthood",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cref tab",
+          "heading": false
+        },
+        {
+          "term": "none",
+          "heading": false
+        },
+        {
+          "term": "cusped manifolds",
+          "heading": false
+        },
+        {
+          "term": "label tab",
+          "heading": false
+        },
+        {
+          "term": "parent",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "filling",
+          "heading": false
+        }
+      ],
+      "extract": "Next, we describe all ways in which the fourteen $1$-cusped manifolds in $\\mathcal{V}$ of volumes at most $3.07$ can arise as fillings of the two $2$-cusped manifolds of minimal volume~\\cite{agol-2cusped}. These are the Whitehead link complement $m129$ and the Whitehead link sister $m125$; compare~\\Cref{sec:WandP}. \\begin{proposition} \\label{prop:isometry} Every manifold in $\\mathcal{V}$ can be obtained by filling",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-homology-classes-of-minimisers",
+      "number": null,
+      "title": "Homology classes of minimisers",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimisers",
+          "heading": true
+        },
+        {
+          "term": "cref tab",
+          "heading": false
+        },
+        {
+          "term": "sfs",
+          "heading": false
+        },
+        {
+          "term": "homology classes",
+          "heading": true
+        },
+        {
+          "term": "non minimizers",
+          "heading": false
+        },
+        {
+          "term": "label tab",
+          "heading": false
+        },
+        {
+          "term": "begin tabular",
+          "heading": false
+        },
+        {
+          "term": "end tabular",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Homology classes of minimisers} \\begin{example} A minimiser does not need to be nullhomologous. Indeed, the unique minimiser for $L(10,3)$ is given by $m003$; see \\Cref{tab:complete}. Since $m003(1,0)$ is diffeomorphic to $L(10,3)$, the minimiser $m003$ represents the complement of a knot $K$ in $L(10,3)$. We claim that $K$ is not nullhomologous. For that we observe that the first homology of $m003$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-connected-sums",
+      "number": null,
+      "title": "Connected sums",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volt",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "begin question",
+          "heading": false
+        },
+        {
+          "term": "end question",
+          "heading": false
+        },
+        {
+          "term": "cref",
+          "heading": false
+        },
+        {
+          "term": "topological volume",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:connected_sum} One natural question to ask is how topological volume behaves under connected sum. There is only one connected sum for which we can compute the topological volume exactly in \\Cref{tab:complete}. Namely, we determine the topological volume for $L(2,1) \\# L(3,1)$ to be realised by $m010(-1, 1)$. Note that \\begin{align*} \\volt(\\; L(2,1) \\# L(3,1) \\; ) = \\volh(m010) =& \\volh(m009) \\\\ <&",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
+      "number": null,
+      "title": "Examples obtained from the Whitehead link and its sister",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sister link",
+          "heading": true
+        },
+        {
+          "term": "whitehead link",
+          "heading": true
+        },
+        {
+          "term": "minimiser filling",
+          "heading": false
+        },
+        {
+          "term": "sister manifold",
+          "heading": false
+        },
+        {
+          "term": "seifert framing",
+          "heading": false
+        },
+        {
+          "term": "lens spaces",
+          "heading": false
+        },
+        {
+          "term": "l13n",
+          "heading": false
+        },
+        {
+          "term": "centering includegraphics",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:WandP} Let $W$ denote the complement of the right-handed Whitehead link with Seifert framing. This is $m129$ and $L5a1$ in the census, where the latter denotes the left-handed Whitehead link. We also let $P$ denote the $(-2,3,8)$ pretzel link complement, again, with Seifert framing. This is often called the \\emph{sister manifold} of $W$ and appears as $m125$ and L13n5885 in the census of manifolds and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-volume-functions-on-dehn-surgery-space",
+      "number": null,
+      "title": "Volume functions on Dehn surgery space",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hodgson masai",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "align delta",
+          "heading": false
+        },
+        {
+          "term": "delta vol",
+          "heading": false
+        },
+        {
+          "term": "seifert framing",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": true
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dehnsurgeryspace} Hodgson and Masai~\\cite[\\S 2]{Hodgson_Masai} give an excellent exposition of results of Neumann and Zagier~\\cite{Neumann-volumes-1985} relating the decrease in volume during hyperbolic Dehn filling to the length of the surgery slope. Moreover, they analyse the corresponding functions for $P$ and $W$ in ~\\cite[\\S 4-5]{Hodgson_Masai}. We only state the main results required here and refer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
+      "number": null,
+      "title": "The topological volume of all but finitely many lens spaces",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 1166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lens spaces",
+          "heading": true
+        },
+        {
+          "term": "volume minimiser",
+          "heading": false
+        },
+        {
+          "term": "filling slopes",
+          "heading": false
+        },
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "cref tab",
+          "heading": false
+        },
+        {
+          "term": "cref prop",
+          "heading": false
+        },
+        {
+          "term": "volh",
+          "heading": false
+        },
+        {
+          "term": "volume minimising",
+          "heading": false
+        }
+      ],
+      "extract": "Agol~\\cite{agol-2cusped} showed that $W$ and $P$ are the minimal volume orientable hyperbolic 3-manifolds with two cusps. This property is key for the following: \\begin{reptheorem}{prop:lens-space-limit} For all but finitely many homeomorphism types of lens spaces $L(p,q)$ ($p>q\\geq 1$ coprime), the volume minimising link in $L(p,q)$ has complement one of $W(\\frac{p'}{q'}, \\infty)$ or $P(\\frac{p''}{q''}, \\infty)$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-determining-the-minimiser",
+      "number": null,
+      "title": "Determining the minimiser",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 26,
+      "labelStart": "21",
+      "labelEnd": "26",
+      "words": 2240,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimiser",
+          "heading": true
+        },
+        {
+          "term": "nsw australia",
+          "heading": false
+        },
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "berge knots",
+          "heading": false
+        },
+        {
+          "term": "princeton university",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "volume hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "topology appl",
+          "heading": false
+        }
+      ],
+      "extract": "Determining the minimiser We are interested in an answer to the following question. Question 5.7 Suppose p and q sufficiently large, and suppose L(p, q) is known to have min- imiser a Dehn filling of P or W. Can we decide which of the two it is? Proposition 5.7 is hardest to answer when ∆volW (p, q) −∆volP (p, q) ≈0 for at least one (possibly minimising) filling slope from (the proof of) Proposition 1.3, yielding a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",
+      "number": null,
+      "title": "Using tetrahedron shapes to prove equivalence of volumes",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volumes",
+          "heading": true
+        },
+        {
+          "term": "shapes",
+          "heading": true
+        },
+        {
+          "term": "hypothesised",
+          "heading": false
+        }
+      ],
+      "extract": "Using tetrahedron shapes to prove equivalence of volumes In this appendix we verify our assertions regarding the equality of volumes of certain 3–manifolds, as claimed in the proof of Proposition 4.1. SnapPy [CDGW21] gives gluing information for tri- angulations of each manifold that determine the unique shapes of tetrahedra corresponding to the complete hyperbolic structure. In each of the two cases below, we show",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-equivalence-of-volumes-m006-and-m007",
+      "number": null,
+      "title": "Equivalence of volumes: m006 and m007",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "form rect",
+          "heading": false
+        },
+        {
+          "term": "obner basis",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "dzb",
+          "heading": false
+        },
+        {
+          "term": "groebner",
+          "heading": false
+        }
+      ],
+      "extract": "Equivalence of volumes: m006 and m007 SnapPy gives the following output for A=Manifold(‘m006’) and B=Manifold(‘m007’): In: A.gluing_equations(form=‘rect’) Out: [([-1, 1, 1], [2, -2, -2], 1), ([0, -1, -1], [-2, 1, 1], 1), ([1, 0, 0], [0, 1, 1], 1), ([-1, 0, 0], [0, -2, 0], 1), ([0, 1, -1], [0, 0, 0], 1)] In: B.gluing_equations(form=‘rect’) Out: [([1, 2, 1], [0, 0, 0], 1), ([-1, -2, -1], [-1, 1, -1], 1), ([0, 0, 0],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-equivalence-of-volumes-m015-m016-and-m017",
+      "number": null,
+      "title": "Equivalence of volumes: m015, m016 and m017",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "form rect",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "groebner",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": true
+        }
+      ],
+      "extract": "Equivalence of volumes: m015, m016 and m017 SnapPy gives the following output for C=Manifold(‘m015’), D=Manifold(‘m016’) and E=Manifold(‘m017’): In: C.gluing_equations(form=‘rect’) Out: [([1, 1, 1], [-1, 1, -1], -1), ([0, 0, 0], [1, -2, 1], 1), ([-1, -1, -1], [0, 1, 0], -1), ([0, 0, 0], [-1, 1, 0], 1), ([3, 1, -1], [0, -1, 0], -1)] In: D.gluing_equations(form=‘rect’) Out: [([1, 0, 1], [-1, 1, 0], -1), ([-1, -1, 0],",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "volume minimiser",
+      "heading": true
+    },
+    {
+      "term": "minimiser filling",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic volume",
+      "heading": true
+    },
+    {
+      "term": "align volt",
+      "heading": false
+    },
+    {
+      "term": "cref tab",
+      "heading": false
+    },
+    {
+      "term": "equation volt",
+      "heading": false
+    },
+    {
+      "term": "manifold volume",
+      "heading": true
+    },
+    {
+      "term": "cref sec",
+      "heading": false
+    },
+    {
+      "term": "invariant volt",
+      "heading": false
+    },
+    {
+      "term": "volume orientable",
+      "heading": false
+    },
+    {
+      "term": "cref ssec",
+      "heading": false
+    },
+    {
+      "term": "cref prop",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Left: The standard surgery diagram of a Seifert fibered space with genus g and N exceptional fibres. The surgery link is a connected sum of g copies of the Borromean rings and N copies of the Hopf link. Right: A hyperbolic link that contains the standard surgery diagram of a Seifert fibered space as",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The complete list of non-hyperbolic manifolds of volume less than 3.07 ordered by their volumes. Here the column Manifold contains the Regina name [BBP] as used by Dunfield [Dun20], where S2 T, A, and D describe the case that the base surface is the 2-sphere, the 2-torus, the annulus, and the 2-disk",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "The parenthood diagram of the low volume 1-cusped manifolds",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The surgery on the red unknot yields L(10, 3). We can use SnapPy to verify that the complement of the blue knot is isometric to m003 and thus represents the minimiser of L(10, 3)",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "All other hyperbolic knots in non-hyperbolic manifolds that have volume less than 3.07. None of these knots is a minimiser since a knot of smaller volume is already presented in Table 1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The manifold m010 seen as a knot in L(2, 1)#L(3, 1) minimises the volume",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Homologies of the minimisers compared with the homologies of the knots from Table 3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Whitehead link L5a1 (left) and its sister link L13n5885 (right). The unknotted blue component is the first cusp (which we fill)",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A surgery diagram of m034",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 4,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2402.04839v2"
+  }
+}

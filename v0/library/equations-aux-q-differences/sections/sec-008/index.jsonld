@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/equations-aux-q-differences/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Sommabilit´e des solutions formelles d’´equations aux q-diﬀ´erences et classiﬁcation locale des syst`emes irr´eguliers",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/equations-aux-q-differences/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1015 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1208.3475v2",
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Simulation details",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-simulation-details"
+    },
+    {
+      "level": 1,
+      "title": "Anderson transition in the Dirac spectrum",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-anderson-transition-in-the-dirac-spectrum"
+    },
+    {
+      "level": 2,
+      "title": "Analogy with the Anderson transition",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-analogy-with-the-anderson-transition"
+    },
+    {
+      "level": 2,
+      "title": "Second moment of the unfolded level spacing distribution",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-second-moment-of-the-unfolded-level-spacing-d"
+    },
+    {
+      "level": 2,
+      "title": "Eigenvector statistics",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-33-eigenvector-statistics"
+    },
+    {
+      "level": 1,
+      "title": "Continuum limit and renormalization",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-continuum-limit-and-renormalization"
+    },
+    {
+      "level": 2,
+      "title": "Localization length",
+      "number": "4.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-41-localization-length"
+    },
+    {
+      "level": 2,
+      "title": "Renormalization and temperature dependence of $\\lambda_c$",
+      "number": "4.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-42-renormalization-and-temperature-dependence-of"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delocalized modes",
+          "heading": false
+        },
+        {
+          "term": "qcd dirac",
+          "heading": false
+        },
+        {
+          "term": "ecs",
+          "heading": false
+        },
+        {
+          "term": "temperature",
+          "heading": false
+        },
+        {
+          "term": "hungary",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1208.3475v2 [hep-lat] 12 Sep 2012 Poisson - Random Matrix transition in the QCD Dirac spectrum Tam´as G. Kov´acs Institute for Nuclear Research of the Hungarian Academy of Sciences H-4026 Debrecen, Bem t´er 18/c, Hungary Ferenc Pittler Department of Physics, University of P´ecs, H-7624 P´ecs, Ifj´us´ag ´utja 6, Hungary At zero temperature the lowest part of the spectrum of the QCD Dirac operator is known to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1208.3475v2/blocks/prose-sec-front-matter",
+        "library/arxiv-1208.3475v2/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 1090,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delocalized modes",
+          "heading": false
+        },
+        {
+          "term": "localized modes",
+          "heading": false
+        },
+        {
+          "term": "dirac modes",
+          "heading": false
+        },
+        {
+          "term": "rmt statistics",
+          "heading": false
+        },
+        {
+          "term": "dirac spectrum",
+          "heading": false
+        },
+        {
+          "term": "anderson transition",
+          "heading": false
+        },
+        {
+          "term": "poisson statistics",
+          "heading": false
+        },
+        {
+          "term": "localized states",
+          "heading": false
+        }
+      ],
+      "extract": "The spectrum of the QCD quark Dirac operator is a quantity not directly accessible by experiments but it contains essential physical information concerning the behavior of strongly interacting systems. The most well-known example of that is the Banks-Casher relation implying that a non-vanishing Dirac spectral density at zero indicates the spontaneous breaking of chiral symmetry [@Banks:1979yr]. Another prominent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-simulation-details",
+      "number": "2",
+      "title": "Simulation details",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath mbox",
+          "heading": false
+        },
+        {
+          "term": "mbox scriptsize",
+          "heading": false
+        },
+        {
+          "term": "finest lattice",
+          "heading": false
+        },
+        {
+          "term": "lattice simulations",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "bare parameters",
+          "heading": false
+        },
+        {
+          "term": "ten trajectories",
+          "heading": false
+        },
+        {
+          "term": "physical temperature",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#se:Sd label=\"se:Sd\"} At first we summarize the details of our lattice simulations. We use the Symanzik improved gauge and and the two level stout smeared staggered fermion action of Ref. [@Aoki:2005vt] with $N\\ensuremath _{\\mbox{\\scriptsize f}}=2+1$ flavors. We take the simulation parameters from the work of the Budapest-Wuppertal collaboration who determined the lattice spacing from the kaon decay constant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-anderson-transition-in-the-dirac-spectrum",
+      "number": "3",
+      "title": "Anderson transition in the Dirac spectrum",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delocalized modes",
+          "heading": false
+        },
+        {
+          "term": "localized modes",
+          "heading": false
+        },
+        {
+          "term": "rmt statistics",
+          "heading": false
+        },
+        {
+          "term": "poisson statistics",
+          "heading": false
+        },
+        {
+          "term": "spectrum",
+          "heading": true
+        },
+        {
+          "term": "dirac modes",
+          "heading": false
+        },
+        {
+          "term": "transition",
+          "heading": true
+        },
+        {
+          "term": "ulsd",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#se:AtitDs label=\"se:AtitDs\"} Previously it was seen that in the high temperature deconfining phase of $SU(2)$ Yang-Mills theory there is a transition in the staggered Dirac spectrum from localized low modes to delocalized modes higher up in the spectrum [@Kovacs:2010wx]. The question we ask here is whether such a transition also occurs in real QCD with light dynamical quarks. This is a non-trivial question since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-analogy-with-the-anderson-transition",
+      "number": "3.1",
+      "title": "Analogy with the Anderson transition",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anderson transition",
+          "heading": true
+        },
+        {
+          "term": "mobility edge",
+          "heading": false
+        },
+        {
+          "term": "delocalized states",
+          "heading": false
+        },
+        {
+          "term": "band edge",
+          "heading": false
+        },
+        {
+          "term": "localized states",
+          "heading": false
+        },
+        {
+          "term": "band center",
+          "heading": false
+        },
+        {
+          "term": "condensed matter",
+          "heading": false
+        },
+        {
+          "term": "become localized",
+          "heading": false
+        }
+      ],
+      "extract": "The transition in the spectrum from localized to delocalized modes is reminiscent of the Anderson metal-insulator transition occurring in conducting crystalline solids when impurities are introduced [@Anderson:1958vr]. In that case in the presence of impurities single electron Bloch states along the band edge turn into localized states. In three dimensions if the impurity concentration is not too high states at the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-second-moment-of-the-unfolded-level-spacing-d",
+      "number": "3.2",
+      "title": "Second moment of the unfolded level spacing distribution",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolded level",
+          "heading": true
+        },
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "inflection point",
+          "heading": false
+        },
+        {
+          "term": "sharp transition",
+          "heading": false
+        },
+        {
+          "term": "delocalized regime",
+          "heading": false
+        },
+        {
+          "term": "wigner chu",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mbox",
+          "heading": false
+        },
+        {
+          "term": "mbox scriptsize",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec:smulsd label=\"ssec:smulsd\"} As can be seen in Fig. [\\[fig:ulsd\\]](#fig:ulsd){reference-type=\"ref\" reference=\"fig:ulsd\"} the unfolded level spacing distribution changes in the spectrum from the exponential to the Wigner surmise in a continuous fashion. There does not appear to be a sharp mobility edge, $\\lambda_c$, separating localized and delocalized states. Even in the case of Anderson transitions,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-eigenvector-statistics",
+      "number": "3.3",
+      "title": "Eigenvector statistics",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox ipr",
+          "heading": false
+        },
+        {
+          "term": "participation ratio",
+          "heading": false
+        },
+        {
+          "term": "delocalized modes",
+          "heading": false
+        },
+        {
+          "term": "vert psi",
+          "heading": false
+        },
+        {
+          "term": "thermodynamic limit",
+          "heading": false
+        },
+        {
+          "term": "volume occupied",
+          "heading": false
+        },
+        {
+          "term": "eigenmodes",
+          "heading": false
+        },
+        {
+          "term": "sum vert",
+          "heading": false
+        }
+      ],
+      "extract": "Besides the spectrum the spatial profile of the corresponding eigenvectors also contains important information concerning their localization properties. A quantity that is widely used in this context is the inverse participation ratio (IPR) defined as [@wegner] $$P_\\psi = \\sum_x \\vert \\psi(x) \\vert^{4}, \\label{eq:IPR}$$ where $\\psi$ is an eigenvector normalized as $$\\sum_x \\vert \\psi(x) \\vert^2 = 1.$$ The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-continuum-limit-and-renormalization",
+      "number": "4",
+      "title": "Continuum limit and renormalization",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lowest eigenmodes",
+          "heading": false
+        },
+        {
+          "term": "distance scale",
+          "heading": false
+        },
+        {
+          "term": "clar",
+          "heading": false
+        },
+        {
+          "term": "localized",
+          "heading": false
+        },
+        {
+          "term": "continuum",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#se:Clar label=\"se:Clar\"} We saw that on all the ensembles that we considered there is a critical point (\"mobility edge\"), $\\lambda_c$, in the Dirac spectrum that separates localized and delocalized eigenmodes. If the lowest part of the spectrum becomes localized that can have a dramatic effect on long distance correlators of quark operators and the masses associated with them. This happens because in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-localization-length",
+      "number": "4.1",
+      "title": "Localization length",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "localization length",
+          "heading": true
+        },
+        {
+          "term": "localized modes",
+          "heading": false
+        },
+        {
+          "term": "localization scale",
+          "heading": false
+        },
+        {
+          "term": "inverse temperature",
+          "heading": false
+        },
+        {
+          "term": "physical temperature",
+          "heading": false
+        },
+        {
+          "term": "ipr",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "eigenmodes",
+          "heading": false
+        }
+      ],
+      "extract": "To get a rough estimate of the localization scale we can consider the inverse participation ratio (IPR) defined by Eq. [\\[eq:IPR\\]](#eq:IPR){reference-type=\"ref\" reference=\"eq:IPR\"}. Since the IPR scales like the inverse four-volume of the region where the given mode is spread out a good measure of the localization scale is provided by the quantity $$l = a \\cdot \\langle \\mbox{IPR}^{-\\frac{1}{4}} \\rangle,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-renormalization-and-temperature-dependence-of",
+      "number": "4.2",
+      "title": "Renormalization and temperature dependence of $\\lambda_c$",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 1107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptsize ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mbox",
+          "heading": false
+        },
+        {
+          "term": "temperature dependence",
+          "heading": true
+        },
+        {
+          "term": "lambda ensuremath",
+          "heading": false
+        },
+        {
+          "term": "localized modes",
+          "heading": false
+        },
+        {
+          "term": "spacing statistics",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        }
+      ],
+      "extract": "We have seen that the lowest eigenmodes spread out only to a distance scale below the inverse temperature. Therefore these modes cannot contribute to quark propagation on length scales larger than that. As far as hadronic correlators are considered above that distance scale the system behaves as if it had a gap of order $\\lambda_c$. The influence of this effective gap on the physics depends on how $\\lambda_c$, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-conclusions",
+      "number": "5",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 538,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "localized modes",
+          "heading": false
+        },
+        {
+          "term": "dirac modes",
+          "heading": false
+        },
+        {
+          "term": "mobility edge",
+          "heading": false
+        },
+        {
+          "term": "lowest dirac",
+          "heading": false
+        },
+        {
+          "term": "finite temperature",
+          "heading": false
+        },
+        {
+          "term": "spectral statistics",
+          "heading": false
+        },
+        {
+          "term": "lcpmvst",
+          "heading": false
+        },
+        {
+          "term": "lvst",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#se:C label=\"se:C\"} In the present paper we argued that in QCD above the finite temperature cross-over the lowest eigenmodes of the quark Dirac operator are localized. The spatial localization length is set by the inverse temperature (see Fig. [\\[fig:lvsT\\]](#fig:lvsT){reference-type=\"ref\" reference=\"fig:lvsT\"}) with eigenmodes becoming more \"squeezed\" at higher temperature. At the same time when the temperature",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-lat",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "del debbio",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "hep lat",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "kovacs",
+          "heading": false
+        },
+        {
+          "term": "garcia-garcia",
+          "heading": false
+        }
+      ],
+      "extract": "TGK is supported by the Hungarian Academy of Sci- ences under “Lend¨ulet” grant No. LP2011-011. Both authors acknowledge partial support by the EU Grant (FP7/2007-2013)/ERC No. 208740. We thank the Budapest-Wuppertal group for allowing us to use their computer code for generating the lattice conﬁgurations. Finally we also thank S. D. Katz and D. N´ogr´adi for dis- cussions. [1] T. Banks and A. Casher, Nucl. Phys. B",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "delocalized modes",
+      "heading": false
+    },
+    {
+      "term": "localized eigenmodes",
+      "heading": true
+    },
+    {
+      "term": "dirac modes",
+      "heading": false
+    },
+    {
+      "term": "dirac spectrum",
+      "heading": true
+    },
+    {
+      "term": "delocalized states",
+      "heading": false
+    },
+    {
+      "term": "lowest eigenmodes",
+      "heading": false
+    },
+    {
+      "term": "delocalized regime",
+      "heading": true
+    },
+    {
+      "term": "separating localized",
+      "heading": false
+    },
+    {
+      "term": "physical temperature",
+      "heading": true
+    },
+    {
+      "term": "become localized",
+      "heading": false
+    },
+    {
+      "term": "scriptsize ensuremath",
+      "heading": false
+    },
+    {
+      "term": "quark modes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The unfolded level spacing distribution in diﬀerent regions of the spectrum of ensemble C3. The ﬁgures correspond to the spectral regions 0.15 ≤λa ≤0.19 (a), 0.29 ≤λa ≤0.32 (b), 0.34 ≤λa ≤0.35 (c) and 0.375 ≤λa ≤0.385 (d)",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Variance of the unfolded level spacing distribution across the transition in the spectrum for ensembles C1, C2 and C3 that diﬀer only in their spatial volume. The dashed horizontal lines at 1 and 0.178 indicate the expected limits in the localized (Poisson) and delocalized (RMT) regime",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The same as Fig. 1 but zooming in on the transitions region. The dotted, dashed and the continuous curve indicate the ﬁts of the form Eq. (4) to the Ns = 16, 24 and 32 data respectively",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Average PR of the eigenvectors for lattices with the same temperature and lattice spacing but with four diﬀerent aspect ratios.Nt = 4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The localization length (Eq. 7) of eigenmodes along the spectrum for ensembles D1 and D2 diﬀering only in their spatial volumes. Both l and the location in the spectrum, λ are given in lattice units. Statistical errors are not shown as they are smaller than the size of the symbols",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The localization length of the localized modes as a function of the lattice spacing. The three points correspond to the same physical temperature of about 400MeV (ensembles C, D and E)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The localization length in units of the inverse temperature as a function of the physical temperature. The diﬀerent symbols represent data obtained at diﬀerent values of the lattice spacing",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The temperature dependence of the renormalized critical point",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The number of localized (below λc) eigenmodes per cubic Fermi as a function of the temperature. Diﬀerent symbols refer to simulations at diﬀerent values of the lattice spacing",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "9 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1208.3475v2"
+  }
+}

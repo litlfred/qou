@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-n-equals-1-vacuous-magic-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:n-equals-1-vacuous-magic-context",
+  "kind": "remark",
+  "title": "Base case, empirical magic numbers, and archimedean scope of vacuous primality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-n-equals-1-vacuous-magic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-n-equals-1-vacuous-magic",
+  "tags": [
+    "primality",
+    "magic-numbers",
+    "recursion-base-case"
+  ],
+  "text": "n-equals-1-vacuous-magic-context.md",
+  "provenance": "authored"
+}

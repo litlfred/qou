@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution-scope.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution-scope",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "block-qa attestation: block folio/quantum-observable-universe/mass-theory/terminal-resolution-scope",
+      "description": "The block-qa judgements recorded for block folio/quantum-observable-universe/mass-theory/terminal-resolution-scope (folio/quantum-observable-universe/mass-theory/terminal-resolution-scope), each pinned to the hash it attested.",
+      "sourceKind": "block-qa",
+      "sourcePath": "test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution-scope.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

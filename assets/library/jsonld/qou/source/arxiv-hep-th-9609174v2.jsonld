@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9609174v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9609174v2",
+  "contains": [
+    "library/arxiv-hep-th-9609174v2/sections/sec-front-matter",
+    "library/arxiv-hep-th-9609174v2/sections/sec-000",
+    "library/arxiv-hep-th-9609174v2/sections/sec-001",
+    "library/arxiv-hep-th-9609174v2/sections/sec-002",
+    "library/arxiv-hep-th-9609174v2/sections/sec-003",
+    "library/arxiv-hep-th-9609174v2/sections/sec-004",
+    "library/arxiv-hep-th-9609174v2/sections/sec-005",
+    "library/arxiv-hep-th-9609174v2/sections/sec-006",
+    "library/arxiv-hep-th-9609174v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit.\n\n**arXiv:hep-th/9609174v2 23 Sep 1996**\n\n*G. Akemann∗, P. H. Damgaard†, U. Magnea‡ and S. Nishigaki§*\n\n18 pp, 9 sections.\n\n**Abstract.** We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit. The essence of the proof consists in reducing the three-term recursion relation for the relevant orthogonal polynomials into a Bessel equation governing the local asymptotics around the origin. The possible physical interpretation as the universality of soft spectrum of the Dirac operator is brieﬂy discussed. PACS: 05.45.+b, 11.15.Pg, 11.30.Rd e-mail addresses: ∗akemann@itp.uni-hannover.de, † phdamg, ‡ umagnea, § shinsuke@alf.nbi.dk\n\n**Outline.** Front matter; 1 Introduction; 2 Chiral unitary ensembles; 2.1 Asymptotics of orthogonal polynomials; 2.2 Universal correlations; 3 Unitary ensembles; 3.1 Asymptotics of orthogonal polynomials; 3.2 Universal correlations; 4 Conclusion and speculation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9609174&metadataPrefix=arXiv), submitted 1996-09-23, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9609174v2",
+    "title_source": "slug",
+    "source_file": "9609174v2.pdf",
+    "source_sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
+    "pages": 18,
+    "arxiv": {
+      "id": "hep-th/9609174",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "23 Sep 1996"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

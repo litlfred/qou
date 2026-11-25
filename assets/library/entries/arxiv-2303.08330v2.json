@@ -1,0 +1,504 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2303.08330v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Categorification of link invariants has been a fruitful program that has deepened and broadened our understanding of link invariants. Beginning with the advent of the Khovanov homology that categorifies the (colored) Jones polynomials of links [@Kh]([@Kh2]), there has been a series of constructions of other link invariants such as categorification of $sl(N)$ polynomial by $sl(N)$ Khovanov-Rozannsky homology [@KR] and the HOMFLY homology [@KR2] that categorifies the HOMFLY polynomial. Some homological theories have more than one approaches for their computations. For example, in addition to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/conj-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "conj-sec-001-01.md",
+      "narrative": null,
+      "content": "For a (2w+1, 2)-cabling of 41 (w > 3) in ZHS 3, nonzero initial data { fm(q)∈ Z[q± 1] } ={ f + i (q)| all coeﬃcients are positive }⨆ { f − j (q)| all coeﬃcients are negative } for (5) are determined by the coeﬃcient functions {hs(q)} of F41(x, q ) as follows. f + 2w+3(q) = 2 h1(q) qn (h1(q) = 1) f + 2w+7(q) = 2 h3(q) qn+1 (h3(q) = 2) f + 2w+11(q) = 2 h5(q) qn+2 ... f + 10w+7(q) = 2 ( h4w+3(q) qn+2w+1 + h1(q) qn+2w+1+∆) f + 10w+11(q) = 2 ( h4w+5(q) qn+2w+2 + h3(q) qn+2w+6+∆) f + 10w+15(q) = 2 ( h4w+7(q) qn+2w+3 + h5(q) qn+2w+11+∆) ... f + 18w+11(q) = 2 ( h8w+5(q) qn+4w+2 + h4w+3(q) qn+12w+6+∆ +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/conj-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "conj-sec-001-07.md",
+      "narrative": null,
+      "content": "For the above family of knots, the power n∈ Z in Conjecture 2.1 is given by w + 1. Since the above fm(q) are polynomials rather than series, we have the following c onsequence for the mirror knot m(K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/conj-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "conj-sec-001-09.md",
+      "narrative": null,
+      "content": "For the family of the cable knots Kw = C(2w+1,2)(41) in ZHS 3 for w > 3, all of their coeﬃcient functions f ± m(q)∈ Z[q± 1] of FKw (x, q ) can be expressed as linear combinations of the coeﬃcient functions {hs(q)} of F41(x, q ) following the pattern in Conjecture 2.1. We next verify Conjecture 2.1 and 2.4 for some examples.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/cor-sec-001-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "cor-sec-001-08.md",
+      "narrative": null,
+      "content": "For a (2w + 1, 2)-cabling of 41 where w <−3, its nonzero initial data {fm(q)} ={ f + i (q) }⨆ { f − j (q) } for a recursion relation are given by q←→ q− 1 in Conjecture 2.1. We state that the patterns in Conjecture 2.1 holds for all non zero fm(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-examples.md",
+      "narrative": null,
+      "content": "the initial conditions. This provides a strong evidence tha t we can obtain FC(r, 2)(41)(x, q ) to any\ndesired order in x± 1/2 eﬃciently without resorting to the laborious recursion met hod.\nWe state the nonzero initial conditions needed for (5) in the case of r = 2w + 1, w > 3, which\ncovers the most of the positive subspace of the cabling param eter space (see below for the negative\ncase).\nConjecture 2.1. For a (2w+1, 2)-cabling of 41 (w > 3) in ZHS 3, nonzero initial data\n{\nfm(q)∈ Z[q± 1]\n}\n={\nf +\ni (q)| all coeﬃcients are positive\n}⨆ {\nf −\nj (q)| all coeﬃcients are negative\n}\nfor (5) are de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "Since the order of the {fm(q)} is ﬁnite, the above sequence terminates for a ﬁxed w.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "n can be found straightforwardly from the ℏ series of FC(r, 2)(41)(x, q ). We propose a formula for n below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "A power of each q-monomial increases by multiples for a positive integer fro m f ± m to f ± m+4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/rem-sec-001-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-05.md",
+      "narrative": null,
+      "content": "Coeﬃcient functions {fd(q)} that do not ﬁt into the above pattern vanish.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/rem-sec-001-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-06.md",
+      "narrative": null,
+      "content": "h1(q)qs is added when h4w+3 appears in f ± b (q) for any b.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example 1",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-example-1.md",
+      "narrative": null,
+      "content": "We first analyze $K=C_{(9,2)}(\\bm{4_1})$. Applying Conjecture 2.1 to $w=4$, its predictions agree with the initial data listed in Section 7 of [@C][^1].\n\n[^1]: There is an overall factor of $2$ difference due to a different convention of $f_m (q)$ in $F_K$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example 2",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-example-2.md",
+      "narrative": null,
+      "content": "The next simplest case is $K=C_{(11,2)}(\\bm{4_1})$.\n\n::: prop\nThe $\\hbar$ expansion of the $J_{K,n}(q)$ is given by $$\\begin{aligned}     \n    J_{K,n}(e^{\\hbar}) & = 1 + \\left(11 - 11 n^2 \\right)\\hbar^2 + \\left(-88 + 88 n^2 \\right)\\hbar^3 + \\left(\\frac{11891}{12} - 1137 n^2 + \\frac{1753}{12} n^4 \\right)\\hbar^4\\\\\n    & + \\left(- 12826 + \\frac{47036}{3} n^2 - \\frac{8558}{3} n^4 \\right)\\hbar^5 + \\left(\\frac{69672971}{360} - \\frac{991683}{4} n^2 + \\frac{224545}{4} n^4 - \\frac{630551}{360} n^6 \\right)\\hbar^6 + \\cdots\n\\end{aligned}$$\n:::\n\nAt each $\\hbar$ order, the degree of the polynomial in $n$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn surgery and",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-dehn-surgery-and.md",
+      "narrative": null,
+      "content": "In [@GPPV], it was conjectured that the $sl(2)$ WRT invariant of a rational homology 3-sphere $Y\\, (b_1(Y)=0)$ decomposes into a linear combination of power series $\\hat{Z}(q)$, which converges in $|q|<1$ and itself is an invariant of $Y$. Specifically, $$WRT[Y;k]= \\frac{1}{i\\sqrt{2k}} \\sum_{a,b \\in Spin^c (Y)} c^{WRT}_{ab}\\, \\hat{Z}_{b}(q) \\Big\\vert_{q \\rightarrow e^{\\frac{i2\\pi}{k}}},$$ where $$\\hat{Z}_{b}(Y;q) \\in \\frac{1}{2^c}q^{\\Delta_{b}} \\mathbb{Z}[[q]], \\qquad |q|<1,\\qquad \\Delta_{b} \\in \\mathbb{Q},\\quad c \\in \\mathbb{Z}_{\\geq 0}.$$ Performing a Dehn surgery on a complement of a knot $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example 3",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-example-3.md",
+      "narrative": null,
+      "content": "We next consider $K=C_{(13,2)}(\\bm{4_1})$.\n\n::: prop\nThe $\\hbar$ expansion of the $J_{K,n}(q)$ is given by $$\\begin{aligned}     \n    J_{K,n}(e^{\\hbar}) & = 1 + \\left(17 - 17 n^2 \\right)\\hbar^2 + \\left(-156 + 156 n^2 \\right)\\hbar^3 + \\left(\\frac{24749}{12} - 2365 n^2 + \\frac{3631}{12} n^4 \\right)\\hbar^4\\\\\n    & + \\left(- 31629 + 38662 n^2 - 7033 n^4 \\right)\\hbar^5 + \\Big(  \\frac{203413517}{360} - \\frac{8687953}{12} n^2 + \\frac{1969367}{12} n^4 \\\\\n    & - \\frac{1855937}{360} n^6 \\Big) \\hbar^6 + \\cdots\n\\end{aligned}$$\n:::\n\nThis confirms that the MMR condition is satisfied by $K$.\n\n::: lemma\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "The Alexander polynomial of C(13,3)(41) is given by ∆ C(13, 3)(41)(x) = ∆ 41(x3)∆ T(3, 13)(x) =−t15− 1 t15 + t14 + 1 t14 + 2t12 + 2 t12− 2t11− 2 t11 + t9 + 1 t9− t8− 1 t8 + t6 + 1 t6 − t5− 1 t5 + t3 + 1 t3− 2t2− 2 t2 + t + 1 t + 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The ℏ expansion of the JK,n(q) is given by JK,n(eℏ) = 1 + ( 47− 47n2) ℏ2 + ( −624 + 624n2) ℏ3 + (151919 12 − 14605n2 + 23341 12 n4 ) ℏ4 + ( −294528 + 361088n2− 66560n4) ℏ5 + (2864712407 360 − 122607733 12 n2 + 28027787 12 n4 − 27314027 360 n6 ) ℏ6 +···",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "The symmetric expansion of the inverse of the Alexander polyn omial of K in the limit of ℏ→ 0 is given by lim q→ 1 2FK (x, q ) = 2 s.e. ( x1/2− x− 1/2 ∆ K(x) ) = 2x29/2− 2 x29/2 + 4x35/2− 4 x35/2 + 10x41/2− 10 x41/2 + 26x47/2− 26 x47/2 + 68x53/2 − 68 x53/2− 2x55/2 + 2 x55/2 + 178x59/2− 178 x59/2− 4x61/2 + 4 x61/2 + 466x65/2 − 466 x65/2− 10x67/2 + 10 x67/2 + 1220x71/2− 1220 x71/2 +···∈ Z [[ x± 1/2 ]] In this case, the coeﬃcients of x55/2, x 61/2, x 67/2 and so forth are negative, which are reﬂected as negative coeﬃcient elements in the initial data.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "The initial data for the recursion relation of K consists of I = { fj(q)∈ Z[q± 1]|j = 1,··· , 353 } . The nonzero elements in I are obtained by setting w = 4 and hence n = 14 in Conjecture 4.1. We extrapolate Conjecture 4.1 beyond I. f − 355(q) =−2 ( h101 q228 + h75 q492 + h49 q678 + h23 q786) f357(q) = 0 f − 355 indeed agree with that of the recursion result and the vanish ing of f357 is consistent with the recursion method as well. We conﬁrm that several subsequent fm(q)’s match with the results of the recursion. For example, f + 359(q) = 2 ( h111 q124 + h85 q418 + h59 q634 + h33 q772 + h7 q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-examples.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example 1",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-example-1.md",
+      "narrative": null,
+      "content": "We begin with the simplest example K = C(13,3)(41).\nProposition 5.1. The ℏ expansion of the JK,n(q) is given by\nJK,n(eℏ) = 1 +\n(\n47− 47n2)\nℏ2 +\n(\n−624 + 624n2)\nℏ3 +\n(151919\n12 − 14605n2 + 23341\n12 n4\n)\nℏ4\n+\n(\n−294528 + 361088n2− 66560n4)\nℏ5 +\n(2864712407\n360 − 122607733\n12 n2 + 28027787\n12 n4\n− 27314027\n360 n6\n)\nℏ6 +···\nLemma 5.2. The Alexander polynomial of C(13,3)(41) is given by\n∆ C(13, 3)(41)(x) = ∆ 41(x3)∆ T(3, 13)(x)\n=−t15− 1\nt15 + t14 + 1\nt14 + 2t12 + 2\nt12− 2t11− 2\nt11 + t9 + 1\nt9− t8− 1\nt8 + t6 + 1\nt6\n− t5− 1\nt5 + t3 + 1\nt3− 2t2− 2\nt2 + t + 1\nt + 1\nProposition 5.3. The symmetric expan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "The Alexander polynomial of C(16,3)(41) is given by ∆ C(16, 3)(41)(x) = t21− 1 t21 + t20 + 1 t20 + 2t18 + 2 t18− 2t17− 2 t17 + t15 + 1 t15− t14− 1 t14 + t12 + 1 t12− t11− 1 t11 + t9 + 1 t9− t8− 1 t8 + t6 + 1 t6− t5− 1 t5 + t3 + 1 t3− 2t2− 2 t2 + t + 1 t + 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "The ℏ expansion of the JK,n(q) is given by JK,n(eℏ) = 1 + ( 111− 111n2) ℏ2 + ( −2128 + 2128n2) ℏ3 + (253477 4 − 73197n2 + 39311 4 n4 ) ℏ4 + ( −2159616 + 7947776 3 n2− 1468928 3 n4 ) ℏ5 +···",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-008-03.md",
+      "narrative": null,
+      "content": "The symmetric expansion of the inverse of the Alexander polyn omial of K in the limit of ℏ→ 0 is given by lim q→ 1 2FK (x, q ) = 2 s.e. ( x1/2− x− 1/2 ∆ K(x) ) = 2x35/2− 2 x35/2 + 4x41/2− 4 x41/2 + 10x47/2− 10 x47/2 + 26x53/2− 26 x53/2 + 68x59/2 − 68 x59/2 + 178x65/2− 178 x65/2− 2x67/2 + 2 x67/2 + 466x71/2− 466 x71/2− 4x73/2 + 4 x73/2 + 1220x77/2− 1220 x77/2− 10x79/2 + 10 x79/2 + 3194x83/2− 3194 x83/2 +···∈ Z [[ x± 1/2 ]] In this case, the coeﬃcients of x67/2, x 73/2, x 79/2 etc are negative, which coincide with the negative coeﬃcient elements in the initial data in Conjecture 4.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prop-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-008-04.md",
+      "narrative": null,
+      "content": "The initial data for the recursion relation of K consists of I = { fj(q)∈ Z[q± 1]|j = 1,··· , 387 } . The nonzero elements in I are obtained by setting w = 5 and thus n = 17 in Conjecture 4.1. We veriﬁed that f389 and f391 obtained from the recursion match with those from the applic ations of Conjecture 4.4. Furthermore, vanishing of f393 is consistent with Conjecture 4.4. Acknowledgments. I would like to thank the referee for helpful suggestions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example 2",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-example-2.md",
+      "narrative": null,
+      "content": "We move onto K = C(16,3)(41).\nProposition 5.5. The ℏ expansion of the JK,n(q) is given by\nJK,n(eℏ) = 1 +\n(\n111− 111n2)\nℏ2 +\n(\n−2128 + 2128n2)\nℏ3 +\n(253477\n4 − 73197n2 + 39311\n4 n4\n)\nℏ4\n+\n(\n−2159616 + 7947776\n3 n2− 1468928\n3 n4\n)\nℏ5 +···\n13\nLemma 5.6. The Alexander polynomial of C(16,3)(41) is given by\n∆ C(16, 3)(41)(x) = t21− 1\nt21 + t20 + 1\nt20 + 2t18 + 2\nt18− 2t17− 2\nt17 + t15 + 1\nt15− t14− 1\nt14 + t12\n+ 1\nt12− t11− 1\nt11 + t9 + 1\nt9− t8− 1\nt8 + t6 + 1\nt6− t5− 1\nt5 + t3 + 1\nt3− 2t2− 2\nt2\n+ t + 1\nt + 1\nProposition 5.7. The symmetric expansion of the inverse of the Alexander polyn omial of K i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-appendix.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2303.08330v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial of a cable knot",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-the-colored-jones-polynomial-of-a-cable-knot.md",
+      "narrative": null,
+      "content": "For (r,2)-cabling of a knot K in S3, its unnormalized sl2(C) colored Jones polynomial of is [22]\n˜JC(r, 2)(K),n(t) = t− rs(n2− 1)\nn− 1\n2∑\nw=− n− 1\n2\nt4rw(sw+1) ˜JK,(2sw+1)(t), t 4 = q\nThe 0-framed unknot U normalization is\n˜JU,n(t) = t2n− t− 2n\nt2− t− 2 .\n14\nB The recursion relation for the ﬁgure eight knot\nWe record the recursion relation and its initial data for the ﬁgure eight knot found in [6]. We\nnote that a closed form formula was found in [16].\nh1(q) = 1\nh3(q) = 2\nh5(q) = 1\nq + 3 + q\nh7(q) = 2\nq2 + 2\nq + 5 + 2q + 2q2\nh9(q) = 1\nq4 + 3\nq3 + 4\nq2 + 5\nq + 8 + 5q + 4q2 + 3q3 + q4\nh11(q) = 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

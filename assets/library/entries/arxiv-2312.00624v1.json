@@ -1,0 +1,424 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2312.00624v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On the structure of wave functions in\ncomplex Chern–Simons theory\nMarcos Mari˜no and Claudia Rella\nD´epartement de Physique Th´eorique and Section de Math´ematiques\nUniversit´e de Gen`eve, CH-1211 Gen`eve, Switzerland\nE-mail: marcos.marino@unige.ch, claudia.rella@unige.ch\nAbstract: We study the structure of wave functions in complex Chern–Simons theory on the\ncomplement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral\ntheory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks\nand show that this structure guarantees",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1\n2\nComplex Chern–Simons theory and the A-polynomial\n3\n2.1\nClassical and quantum A-polynomials\n3\n2.2\nThe case of SL(2, C) gauge group\n5\n3\nThe structure of the wave function\n8\n3.1\nGeneral conjectures\n8\n3.2\nCancellation of singularities\n11\n3.3\nThe wave function in the rational case, I\n13\n3.4\nThe wave function in the rational case, II\n16\n3.4.1\nSolving a second-order q-difference equation\n16\n3.4.2\nSolving a third-order q-difference equation\n19\n4\nExamples\n22\n4.1\nThe figure-eight knot\n22\n4.2\nThe three-twist knot\n25\n5\nThe wave function from the state integral\n28\n5.1\nEvaluation at rationa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex Chern–Simons theory and the A-polynomial",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-complex-chernsimons-theory-and-the-a-polynomial.md",
+      "narrative": null,
+      "content": "Complex Chern–Simons theory and the A-polynomial\nIn this section, we review the fundamental aspects of complex CS theory on a closed three-manifold",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical and quantum A-polynomials",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-classical-and-quantum-a-polynomials.md",
+      "narrative": null,
+      "content": "[]{#sec: Apoly label=\"sec: Apoly\"} The classical action of CS theory with complex gauge group $G_{{\\mathbb C}}$ can be written as [@witten91]\n\n$$S = \\frac{t}{8 \\pi} \\int_M {\\rm Tr}\\left({\\cal A}\\wedge d{\\cal A}+ \\frac{2}{3} {\\cal A}\\wedge {\\cal A}\\wedge {\\cal A}\\right) +  \\frac{t'}{8 \\pi} \\int_M {\\rm Tr}\\left(\\bar{{\\cal A}} \\wedge d\\bar{{\\cal A}} + \\frac{2}{3} \\bar{{\\cal A}} \\wedge \\bar{{\\cal A}} \\wedge \\bar{{\\cal A}} \\right) \\, ,$$\n\nwhere $M$ is the underlying closed three-manifold, whose boundary is the closed Riemann surface $\\Sigma = \\partial M$, ${\\cal A}$ is the complex gauge field, whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of SL(2,C) gauge group",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-the-case-of-sl2c-gauge-group.md",
+      "narrative": null,
+      "content": "[]{#sec: sl2c label=\"sec: sl2c\"} In this work, we take $G_{{\\mathbb C}} = \\text{SL}(2,{\\mathbb C})$. Therefore, we have simply $r=1$, and $$A_{{\\cal K}}(P,X)=A_{{\\cal K}, 1}(P_1,X_1)$$ is the classical $A$-polynomial of the knot [@Cooper:1994aa]. The operators $\\hat{P}, \\hat{X}$ act on $u$-states as $$\\hat{P} |u\\rangle = |u+ {\\rm i}{\\mathsf{b}}\\rangle \\, , \\quad \\hat{X} |u\\rangle = X |u\\rangle \\, .$$ Equivalently, $\\hat{P}$ is the operator that shifts $X$ into $q X$, and $\\hat{X}$ is the ordinary multiplication. Building on previous results [@hikami01; @hikami07; @dglz], the exact, non-perturb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The structure of the wave function",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-the-structure-of-the-wave-function.md",
+      "narrative": null,
+      "content": "[]{#sec: main label=\"sec: main\"}\n\nIn this section, we study the non-perturbative wave function $\\chi_{{\\cal K}}(u;\\hbar)$ introduced in Section [\\[sec: theory\\]](#sec: theory){reference-type=\"ref\" reference=\"sec: theory\"} by exploiting ideas from topological string theory. In particular, we propose various new conjectures on the structure of this wave function, which are motivated by similar results in the open version of the TS/ST correspondence [@kpamir; @mz-wv; @mz-wv2; @szabolcs] and by our detailed analysis of the examples presented in Section [\\[sec: examples\\]](#sec: examples){reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General conjectures",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-general-conjectures.md",
+      "narrative": null,
+      "content": "[]{#sec: conjectures label=\"sec: conjectures\"} Our *first claim* is that the WKB expansion in Eq. [\\[WKB\\]](#WKB){reference-type=\"eqref\" reference=\"WKB\"} can be resummed at all orders in $\\hbar$ and order by order in $X={\\rm e}^{2 \\pi {\\mathsf{b}}u}$. Explicitly, for a fixed choice of $\\alpha$, we have that\n\n$$\\label{WKB-conj}\n\\chi^{(\\alpha), \\rm{WKB}} (u; \\hbar)=\\exp \\left(  {{\\rm i}\\over \\hbar} s^{(\\alpha)}_0(x) + s^{(\\alpha)}_1(x) + \\phi^{(\\alpha), \\rm{WKB}}(X;q) \\right) \\, ,$$\n\nwhere $s^{(\\alpha)}_{0,1}(x)$ are ${\\mathbb R}$-polynomials in the variable[^1] $x= \\log X$ and $$\\label{phi-stru",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cancellation of singularities",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-cancellation-of-singularities.md",
+      "narrative": null,
+      "content": "[]{#sec: cancellation label=\"sec: cancellation\"} Again, we hide the explicit dependence on the classical solution $\\alpha$ to simplify the notation. Here and in the rest of this work, we will only re-introduce it when necessary.\n\nRecall that the exact wave function $\\chi(u;\\hbar)$ is well-defined for $\\hbar>0$. In particular, it is well-defined for\n\n$$\\label{rathbar}\n\\hbar = 2 \\pi {P \\over Q} \\, ,$$\n\nwhere $P, Q$ are coprime positive integers. We will refer to values of $\\hbar$ of the form in Eq. [\\[rathbar\\]](#rathbar){reference-type=\"eqref\" reference=\"rathbar\"} as *rational values*. On the o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The wave function in the rational case, I",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-the-wave-function-in-the-rational-case-i.md",
+      "narrative": null,
+      "content": "[]{#sec: rational1 label=\"sec: rational1\"} We will now apply the results obtained in Section [\\[sec: cancellation\\]](#sec: cancellation){reference-type=\"ref\" reference=\"sec: cancellation\"} to derive explicitly the exact wave function $\\chi(u;\\hbar)$ in Eq. [\\[exactconj\\]](#exactconj){reference-type=\"eqref\" reference=\"exactconj\"} as a power series in $X, X^{-1}$ for rational values of $\\hbar$. Let us start from the holomorphic components $\\phi^{(\\alpha), {\\rm WKB}} (X; q)$ and fix $\\hbar$ as in Eq. [\\[rathbar\\]](#rathbar){reference-type=\"eqref\" reference=\"rathbar\"}, that is, $$q={\\rm e}^{{\\rm i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The wave function in the rational case, II",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-the-wave-function-in-the-rational-case-ii.md",
+      "narrative": null,
+      "content": "[]{#sec: rational3 label=\"sec: rational3\"} In Section [\\[sec: rational1\\]](#sec: rational1){reference-type=\"ref\" reference=\"sec: rational1\"}, we showed that the exact wave function $\\chi(u; \\hbar)$ in Eq. [\\[exactconj\\]](#exactconj){reference-type=\"eqref\" reference=\"exactconj\"} at rational values of $\\hbar$ is determined by the functions $\\Upsilon^{(\\alpha)} (X)$, defined in Eq. [\\[upsilon\\]](#upsilon){reference-type=\"eqref\" reference=\"upsilon\"}, and their derivatives with respect to $q$, up to the constants $\\mathsf{C}_\\alpha$ and the exponential prefactors containing $s^{(\\alpha)}_{0,1}(x)$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving a second-order q-difference equation",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-solving-a-second-order-q-difference-equation.md",
+      "narrative": null,
+      "content": "[]{#sec: 2nd-order label=\"sec: 2nd-order\"} Recall that, for each choice of $\\alpha$, the resummed perturbative wave function $\\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar)$ is given in Eq. [\\[WKB-conj\\]](#WKB-conj){reference-type=\"eqref\" reference=\"WKB-conj\"}. Equivalently, we write $$\\label{chi-matrix-2}\n\\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar) = {\\rm e}^{\\frac{{\\rm i}}{\\hbar} s^{(\\alpha)}_0(x) +  s^{(\\alpha)}_1(x)} \\Psi^{(\\alpha), \\rm{WKB}}(X;q) \\, ,$$ where we have introduced the notation $$\\label{Psi}\n\\Psi^{(\\alpha), \\rm{WKB}}(X;q) = \\exp\\left( \\phi^{(\\alpha), \\rm{WKB}}(X;q)\\right) \\, ,$$ which will be u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving a third-order q-difference equation",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-solving-a-third-order-q-difference-equation.md",
+      "narrative": null,
+      "content": "[]{#sec: 3rd-order label=\"sec: 3rd-order\"} We will show how the matrix formalism of Section [\\[sec: 2nd-order\\]](#sec: 2nd-order){reference-type=\"ref\" reference=\"sec: 2nd-order\"} can be applied to solve a third-order $q$-difference equation in closed form. In particular, let us return to the quantum $A$-polynomial equation satisfied by the resummed perturbative wave function $\\chi^{(\\alpha), \\rm{WKB}}(u; \\hbar)$ in Eq. [\\[Aeq-matrix\\]](#Aeq-matrix){reference-type=\"eqref\" reference=\"Aeq-matrix\"} and assume it is of order three. As before, after appropriately accounting for the correction due to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-examples.md",
+      "narrative": null,
+      "content": "[]{#sec: examples label=\"sec: examples\"} In this section, we will illustrate how the conjectures and calculation methods of Section [\\[sec: main\\]](#sec: main){reference-type=\"ref\" reference=\"sec: main\"} apply to the two simplest hyperbolic knots, *i.e.*, the figure-eight and the three-twist knots. We will first verify the integrality structure of Eq. [\\[multi-conj\\]](#multi-conj){reference-type=\"eqref\" reference=\"multi-conj\"} starting from the known decomposition into holomorphic and antiholomorphic blocks. We will then determine the wave function at rational values of $\\hbar$ following the m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The figure-eight knot",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "[]{#sec: 41 label=\"sec: 41\"} The state integral of the figure-eight knot $\\chi_{{\\bf{4}}_1}(u;\\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2]\n\n$$\\label{chi41}\n \\begin{aligned}\n \\chi_{{\\bf{4}}_1}(u;\\hbar)={\\rm e}^{-\\frac{\\pi{\\rm i}}{12}-\\frac{2\\pi{\\rm i}}{3}c_{\\mathsf{b}}^2} \\Big(\n    &{\\rm e}^{\\pi{\\rm i}(-2u^2-4c_{\\mathsf{b}}u)}\n     {\\cal J}({\\rm e}^{4\\pi{\\mathsf{b}}u},{\\rm e}^{2\\pi{\\mathsf{b}}u};q)\n     {\\cal J}({\\rm e}^{4\\pi{\\mathsf{b}}^{-1}u},{\\rm e}^{2\\pi{\\mathsf{b}}^{-1} u};{\\tilde{q}}^{-1})\\\\\n     +&{\\rm e}^{\\pi{\\rm i}(u^2-2c_{\\mathsf{b}}u)}\n     {\\cal J}({\\rm e}^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The three-twist knot",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-013-the-three-twist-knot.md",
+      "narrative": null,
+      "content": "[]{#sec: 52 label=\"sec: 52\"} The state integral of the three-twist knot $\\chi_{{\\bf{5}}_2}(u;\\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2]\n\n$$\\label{chi52}\n \\begin{aligned}\n \\chi_{{\\bf{5}}_2}(u;\\hbar)=&{\\rm e}^{-\\frac{\\pi{\\rm i}}{12}-\\frac{5\\pi{\\rm i}}{3}c_{\\mathsf{b}}^2}\\Big(\n    {\\rm e}^{\\pi{\\rm i}(-2u^2-4c_{\\mathsf{b}}u)}\n     {\\cal H}({\\rm e}^{2 \\pi {\\mathsf{b}}u},{\\rm e}^{4 \\pi {\\mathsf{b}}u},{\\rm e}^{4 \\pi {\\mathsf{b}}u}, ;q)\n     {\\cal H}({\\rm e}^{2 \\pi {\\mathsf{b}}^{-1} u},{\\rm e}^{4 \\pi {\\mathsf{b}}^{-1} u},{\\rm e}^{4 \\pi {\\mathsf{b}}^{-1} u};{\\tilde{q}}^{-1})\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The wave function from the state integral",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-014-the-wave-function-from-the-state-integral.md",
+      "narrative": null,
+      "content": "[]{#sec: stateintegral label=\"sec: stateintegral\"} In this section, we consider the Andersen--Kashaev invariant [@ak; @ak2; @dimofte-rev] $\\chi_{{\\cal K}}(u;\\hbar)$ in its original form as a finite-dimensional state integral, whose integrand is a product of Faddeev's quantum dilogarithm functions [@faddeev]. We evaluate it directly at rational values of $\\hbar$ by applying the techniques of [@garou-kas], thus providing a third method for the computation of the exact wave function. For simplicity, we focus on the case of the figure-eight knot and show that this third approach agrees with the tw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation at rational points",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-evaluation-at-rational-points.md",
+      "narrative": null,
+      "content": "Following the conventions of [@ak], the state integral for the $\\bm{4}_1$-knot takes the form $$\\label{41ak}\n\\chi_{\\bm{4}_1}(u;\\hbar) = \\frac{1}{2 \\pi {\\mathsf{b}}} {\\rm e}^{-\\frac{x}{2}-\\frac{x}{2 {\\mathsf{b}}^2}-\\frac{{\\rm i}x^2}{2 \\pi {\\mathsf{b}}^2}} \\int_{{\\mathbb R}+ {\\rm i}0} \\frac{\\Phi_{{\\mathsf{b}}}\\left(\\frac{x-y}{2 \\pi {\\mathsf{b}}} \\right)}{\\Phi_{{\\mathsf{b}}}\\left(\\frac{y}{2 \\pi {\\mathsf{b}}} \\right)} {\\rm e}^{\\frac{{\\rm i}x y}{\\pi {\\mathsf{b}}^2}} dy \\, ,$$ where $x = 2 \\pi {\\mathsf{b}}u$ and $\\hbar = 2 \\pi {\\mathsf{b}}^2$, as before, while $\\Phi_{{\\mathsf{b}}}(z)$ denotes the Fa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization and two special subcases",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-016-factorization-and-two-special-subcases.md",
+      "narrative": null,
+      "content": "Factorization and two special subcases\nLet us apply the explicit formula for the Faddeev’s quantum dilogarithm at the rational point\nb2 = P/Q, P, Q ∈Z>0 coprime, in Eq. (C.11) to the expression for Fk(y(x)), 0 ≤k ≤PQ−1, which\nis given in Eq. (5.17). After appropriately rearranging the terms, we find the factorization\neFk(y(x)) = eF0(y(x))f0,k(y(x))f1,k(y(x))f2,k(y(x)) ,\n(5.24)\nwhere we have introduced the functions\nf0,k(y(x)) =\nh\u0010\n1 −eQ(x−y(x))+πi(P+Q)\u0011 \u0010\n1 −eQy(x)+πi(P+Q)\u0011i\nk\nP Q ,\n(5.25a)\nf1,k(y(x)) =\nQ−1\nY\nj=1\n\n\n\u0010\n1 + ex−y(x)+ πiP\nQ (2j+1)\u0011 \u0010\n1 + ey(x)+ πiP\nQ (2j+1+2k/P)\u0011\n\u0010\n1 + ex−y(x)+ π",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-conclusions.md",
+      "narrative": null,
+      "content": "Conclusions\nIn this paper, we have made various observations on the structure of the wave functions in CS theory\nwith gauge group SL(2, C) on the complement of a hyperbolic knot in the three-sphere. We have first\nconjectured explicit integrality properties for the resummed WKB expansion of the wave function,\nwhich can be tested directly using the decomposition into holomorphic/anti-holomorphic blocks.\nOur integrality conjecture guarantees that the singularities appearing in the holomorphic blocks\nat rational values of ℏget canceled against those occurring in the corresponding anti-holomorphic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computing the -expansions",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-018-computing-the--expansions.md",
+      "narrative": null,
+      "content": "For completeness, we include here the details of the computations performed in Section 3.2. We\nobserve that, as a consequence of Eqs. (3.3), (3.7), the coefficient functions ˆa±n(q) satisfy the relation\nˆa±n(q)q−σ±n =\nX\nk|n\nkD±k\n\u0010\nq\nn\nk\n\u0011\nq−n\nk σ±k\nk−1\nX\nj=0\nq\nn\nk j ,\nn ∈Z>0 ,\n(A.1)\nand we write the Z-polynomials D±k(q) explicitly as\nD±k(q) =\ndeg D±k\nX\nℓ=0\nD±k,ℓqℓ,\nk ∈Z>0 ,\n(A.2)\nwhere D±k,ℓis an integer and deg D±k denotes the degree of the polynomial. Let us now take\nq = e2πi P\nQ ,\nP, Q ∈Z>0 coprime ,\n(A.3)\nwhile we introduce\nqϵ = eiℏϵ ,\nℏϵ = 2π P\nQ + ϵ ,\n0 < ϵ ≪1 ,\n(A.4)\nand consider the li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An alternative way of obtaining the integer sequences",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-an-alternative-way-of-obtaining-the-integer-sequ.md",
+      "narrative": null,
+      "content": "An alternative way of obtaining the integer sequences\nWe present an alternative, simple way of computing the integer sequences {c±s}, s ∈Z>0, defined\nin Eqs. (3.27), (3.28), using the results on the exact wave function at rational values obtained in\nSection 3.3. Let us denote by ϕWKB\n(±) (X; q) the contributions to the holomorphic block ϕWKB(X; q)\nfrom the positive and negative powers of X, respectively, so that Eq. (3.2) assumes the form\nϕWKB(X; q) = ϕWKB\n(+) (X; q) + ϕWKB\n(−) (X; q) ,\n(B.1)\nand analogously for the antiholomorphic block ϕWKB(XD; qD). We fix ℏas in Eq. (3.15) and consider\nthe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2312.00624v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Faddeev's quantum dilogarithm and other special functions",
+      "pageStart": 39,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-faddeevs-quantum-dilogarithm-and-other-special-f.md",
+      "narrative": null,
+      "content": "The quantum dilogarithm is the function of two variables defined by the series [43, 44]\n(zqα; q)∞=\n∞\nY\nn=0\n(1 −zqα+n) ,\nα ∈R ,\n(C.1)\nwhich is analytic in z, q ∈C with |z|, |q| < 1, and it has asymptotic expansions around q a root of\nunity. Furthermore, we denote by\n(z; q)m =\nm−1\nY\nn=0\n(1 −zqn) =\n(z; q)∞\n(zqm; q)∞\n,\nm ∈Z ,\n(C.2)\nwith (z; q)0 = 1, the q-shifted factorials, also known as q-Pochhammer symbols. Faddeev’s quantum\ndilogarithm Φb(z) is defined in the strip |ℑ(z)| < |ℑ(cb)| as [14, 43]\nΦb(z) = exp\n\u0012Z\nR+iϵ\ne−2izy\n4 sinh(yb) sinh(yb−1)\ndy\ny\n\u0013\n,\n(C.3)\n– 38 –\nwhich can be analytically cont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

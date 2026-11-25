@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/invariant-eigendistributions-2",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+      "dcterms:creator": [
+        "ROSSMANN1, W."
+      ],
+      "dcterms:issued": "D:20030713",
+      "dcterms:source": "library/invariant-eigendistributions-2/manifest.jsonld",
+      "dcterms:hasVersion": "library/invariant-eigendistributions-2"
+    }
+  ]
+}

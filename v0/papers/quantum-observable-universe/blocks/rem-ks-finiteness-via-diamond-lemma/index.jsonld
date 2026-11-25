@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ks-finiteness-via-diamond-lemma",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ks-finiteness-via-diamond-lemma",
+  "kind": "remark",
+  "title": "Algebraic shortcut: Kontsevich--Soibelman's ind-constructibility from the Diamond Lemma",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-curvature-rank-gb-stratification",
+    "papers/unital-groebner-bases/blocks/cor-pbw"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-curvature-rank-gb-stratification",
+  "cites": [
+    "references/kontsevich-soibelman-2008",
+    "references/bergman1978",
+    "references/bokut2005"
+  ],
+  "text": "ks-finiteness-via-diamond-lemma.md",
+  "provenance": "authored"
+}

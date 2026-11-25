@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0707.3799v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Equivariant Satake category and Kostant-Whittaker reduction",
+      "dcterms:creator": [
+        "REDUCTION, KOSTANT-WHITTAKER"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/0707.3799",
+      "dcterms:source": "library/arxiv-0707.3799v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0707.3799v3"
+    }
+  ]
+}

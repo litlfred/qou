@@ -1,0 +1,2015 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2111.04763v2",
+  "title": "Resurgence of Chern-Simons theory at the trivial flat connection",
+  "variant": "pdf",
+  "pages": 59,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Resurgence of Chern–Simons perturbation theory",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-resurgence-of-chernsimons-perturbation-theory"
+    },
+    {
+      "level": 2,
+      "title": "A summary of our results",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-a-summary-of-our-results"
+    },
+    {
+      "level": 2,
+      "title": "Challenges",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-challenges"
+    },
+    {
+      "level": 2,
+      "title": "Illustration with the two simplest hyperbolic knots",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-illustration-with-the-two-simplest-hyperbolic"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "The 41 knot",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "A 2 2 matrix of q-series",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A 3 3 matrix of q-series",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The (0)() asymptotic series",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Borel resummation and Stokes constants",
+      "number": "2.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-borel-resummation-and-stokes-constants"
+    },
+    {
+      "level": 2,
+      "title": "The Andersen–Kashaev state-integral",
+      "number": "2.5",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-25-the-andersenkashaev-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "A new state-integral",
+      "number": "2.6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-26-a-new-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "A 3 3 matrix of state-integrals",
+      "number": "2.7",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The x-variable",
+      "number": "3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-the-x-variable"
+    },
+    {
+      "level": 2,
+      "title": "The (0)(x,) series",
+      "number": "3.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A 33 matrix of (x,q)-series",
+      "number": "3.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Borel resummation and Stokes constants",
+      "number": "3.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-borel-resummation-and-stokes-constants"
+    },
+    {
+      "level": 2,
+      "title": "(u,) state-integrals",
+      "number": "3.4",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-34-u-state-integrals"
+    },
+    {
+      "level": 2,
+      "title": "An analytic extension of the colored Jones polynomial",
+      "number": "3.5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-35-an-analytic-extension-of-the-colored-jones-po"
+    },
+    {
+      "level": 1,
+      "title": "The 52-knot",
+      "number": "4",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-the-52-knot"
+    },
+    {
+      "level": 2,
+      "title": "A 3 3 matrix of q-series",
+      "number": "4.1",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The Habiro polynomials and the descendant Kashaev invariants",
+      "number": "4.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-42-the-habiro-polynomials-and-the-descendant-kas"
+    },
+    {
+      "level": 2,
+      "title": "A 6 6 matrix of q-series",
+      "number": "4.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Borel resummation and Stokes constants",
+      "number": "4.4",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-44-borel-resummation-and-stokes-constants"
+    },
+    {
+      "level": 2,
+      "title": "(x,q)-series",
+      "number": "4.5",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-45-xq-series"
+    },
+    {
+      "level": 2,
+      "title": "x-version of Borel resummation and Stokes constants",
+      "number": "4.6",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-46-x-version-of-borel-resummation-and-stokes-con"
+    },
+    {
+      "level": 2,
+      "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+      "number": "4.7",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-47-an-analytic-extension-of-the-kashaev-invarian"
+    },
+    {
+      "level": 2,
+      "title": "A new state-integral for the 52 knot?",
+      "number": "4.8",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-48-a-new-state-integral-for-the-52-knot"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. q-series identities",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-appendix-a-q-series-identities"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        },
+        {
+          "term": "simons perturbation",
+          "heading": false
+        }
+      ],
+      "extract": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER Abstract. Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2111.04763v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
+      "number": "1.1",
+      "title": "Resurgence of Chern–Simons perturbation theory",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1010,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm red",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": true
+        },
+        {
+          "term": "matrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "stokes phenomenon",
+          "heading": false
+        },
+        {
+          "term": "mathbbm setminus",
+          "heading": false
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        },
+        {
+          "term": "peacock pattern",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.intro label=\"sub.intro\"} Quantum Topology originated by Jones's discovery of the famous polynomial invariant of a knot [@Jones], followed by Witten's 3-dimensional interpretation of the Jones polynomial by means of a gauge theory with a topological (i.e., metric independent) Chern--Simons action [@witten-jones]. The connection between this topological quantum field theory and the Jones polynomial appears",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-a-summary-of-our-results",
+      "number": "1.2",
+      "title": "A summary of our results",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf sigma",
+          "heading": false
+        },
+        {
+          "term": "ekashaev",
+          "heading": false
+        },
+        {
+          "term": "delta sigma",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "matrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf knots",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "neq sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.summary label=\"sub.summary\"} Our goal is to describe the Stokes constants and the resurgent structure of the missing asymptotic series $\\Phi^{(\\sigma_0)}(h)$ in terms of completing the matrix $\\mathbf J^\\mathrm{red}(x,q)$ to a square matrix with one extra row (namely $(1,0,\\dots,0)^T$) and column, whose distinguished $(\\sigma_0,\\sigma_1)$ entry is conjecturally the Gukov--Manolescu series [@Gukov-Manolescu]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-challenges",
+      "number": "1.3",
+      "title": "Challenges",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "matrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "challenge",
+          "heading": false
+        },
+        {
+          "term": "times matrix",
+          "heading": false
+        },
+        {
+          "term": "ggm",
+          "heading": false
+        },
+        {
+          "term": "resurgent",
+          "heading": false
+        },
+        {
+          "term": "sub",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.challenge label=\"sub.challenge\"} Our solution to the above problems brings a new challenge: namely, the new square matrix is actually a submatrix of a larger matrix $\\mathbf J(x,q)$, one with block triangular form which is a fundamental solution to the linear $q$-difference equation satisfied by the descendants of the colored Jones polynomials [@GK:desc]. Already for the case of the $\\mathbf{5}_2$ knot, one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
+      "number": "1.4",
+      "title": "Illustration with the two simplest hyperbolic knots",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 452,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf knot",
+          "heading": false
+        },
+        {
+          "term": "matrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "descendant colored",
+          "heading": false
+        },
+        {
+          "term": "times matrix",
+          "heading": false
+        },
+        {
+          "term": "mathrm red",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.4152 label=\"sub.4152\"} We will illustrate our ideas by giving a detailed description of these matrices and of their algebraic, analytic and asymptotic properties for the case of the two simplest hyperbolic knots, the $\\mathbf{4}_1$ and the $\\mathbf{5}_2$ knots. Let us summarise our findings for the $\\mathbf{4}_1$ knot. - We complete the $2 \\times 2$ matrix $\\mathbf J^\\mathrm{red}(x,q)$ of $(x,q)$-series to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "max-planck-gesellschaft",
+          "heading": false
+        },
+        {
+          "term": "european",
+          "heading": false
+        },
+        {
+          "term": "erc-syg",
+          "heading": false
+        },
+        {
+          "term": "nccr",
+          "heading": false
+        }
+      ],
+      "extract": "Rinat Kashaev, Maxim Kontsevich, Pavel Putrov and Matthias Storzer for enlightening con- versations. S.G. wishes to thank the University of Geneva for their hospitality during his visit in the summer of 2021. The work of J.G. has been supported in part by the NCCR 51NF40-182902 “The Mathematics of Physics” (SwissMAP). The work of M.M. has been supported in part by the ERC-SyG project “Recursive and Exact New Quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-the-41-knot",
+      "number": "2",
+      "title": "The 41 knot",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 2272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qmn",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "nqn",
+          "heading": false
+        },
+        {
+          "term": "ggmn",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        },
+        {
+          "term": "inhomogenous equation",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. A 2 × 2 matrix of q-series. In this section we recall in detail what is known about the resurgence of the two asymptotic series of the 41 knot, labeled by the geometric and the complex-conjugate flat connections. As explained in the introduction, the answer is determined by a 2 × 2 matrix of q-series which was discovered in a long story and in several stages in a series of papers [GZa, GK17, GGMn21, GGMn]. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-borel-resummation-and-stokes-constants",
+      "number": "2.4",
+      "title": "Borel resummation and Stokes constants",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 18,
+      "labelStart": "12",
+      "labelEnd": "18",
+      "words": 1919,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "mathfrak iota",
+          "heading": false
+        },
+        {
+          "term": "stokes",
+          "heading": true
+        },
+        {
+          "term": "mathfrak theta",
+          "heading": false
+        },
+        {
+          "term": "arg iota",
+          "heading": false
+        },
+        {
+          "term": "stokes discontinuity",
+          "heading": false
+        },
+        {
+          "term": "quad mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rho theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.41borel label=\"sub.41borel\"} In this section we discuss the asymptotic expansion as $q = {\\rm e}^{2\\pi{\\rm i}\\tau}\\rightarrow 1$ of the vector $G(q)$ of $q$-series and relate it to the vector $\\Phi(\\tau)$ of the asymptotic series, where $$G(q) = \\begin{pmatrix} G^{(2)}(q) \\\\ G^{(1)}(q) \\\\ G^{(0)}(q) \\end{pmatrix}, \\qquad \\Phi(\\tau) = \\begin{pmatrix} \\Phi^{(\\sigma_0)}(\\tau)\\\\ \\Phi^{(\\sigma_1)}(\\tau)\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-25-the-andersenkashaev-state-integral",
+      "number": "2.5",
+      "title": "The Andersen–Kashaev state-integral",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathrm red",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathbbm setminus",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde right",
+          "heading": false
+        },
+        {
+          "term": "zlmu",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.AK41 label=\"sub.AK41\"} In this section we briefly recall the properties of the state-integral of Andersen--Kashaev for the $\\mathbf{4}_1$ knot [@AK Sec.11.4], defined by $$\\label{Z410} Z_{\\mathbf{4}_1}(\\tau) = \\int_{\\mathbbm R+{\\rm i}0} \\Phi_\\mathsf{b}(v)^2 \\, {\\rm e}^{-\\pi {\\rm i}v^2} {\\rm d}v, \\qquad (\\tau=\\sqrt{\\mathsf{b}}) \\,.$$ Here, $\\operatorname{\\Phi}_{\\mathsf{b}}(z)$ is Faddeev's quantum dilogarithm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-26-a-new-state-integral",
+      "number": "2.6",
+      "title": "A new state-integral",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 1644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau mathsf",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": true
+        },
+        {
+          "term": "mathsf int",
+          "heading": false
+        },
+        {
+          "term": "state-integrals mathcal",
+          "heading": false
+        },
+        {
+          "term": "contour mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.AK41new label=\"sub.AK41new\"} In the previous section, we saw how the matrix $W^\\mathrm{red}(\\tau)$ of products of $q$-series and $\\tilde{q}$-series [\\[Gm01\\]](#Gm01){reference-type=\"eqref\" reference=\"Gm01\"} coincides with a matrix of state-integrals. Having found the $q$-series [\\[G2\\]](#G2){reference-type=\"eqref\" reference=\"G2\"} which complement the series [\\[Gm01\\]](#Gm01){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-the-x-variable",
+      "number": "3",
+      "title": "The x-variable",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-series lam",
+          "heading": false
+        },
+        {
+          "term": "lbm",
+          "heading": false
+        },
+        {
+          "term": "x-variable",
+          "heading": true
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "πiτ",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we discuss an extension of the results of Section 2 adding an x-variable. In the context of the nth colored Jones polynomial, x = qn corresponds to an eigenvalue of the meridian in the asymptotic expansion of the Chern–Simons path integral around an abelian representation of a knot complement. In the context of the state-integral of Andersen- Kashaev [AK14], the x-variable is the monodromy of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-borel-resummation-and-stokes-constants",
+      "number": "3.3",
+      "title": "Borel resummation and Stokes constants",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 33,
+      "labelStart": "27",
+      "labelEnd": "33",
+      "words": 2039,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "mathfrak iota",
+          "heading": false
+        },
+        {
+          "term": "stokes",
+          "heading": true
+        },
+        {
+          "term": "mathfrak theta",
+          "heading": false
+        },
+        {
+          "term": "arg iota",
+          "heading": false
+        },
+        {
+          "term": "stokes discontinuity",
+          "heading": false
+        },
+        {
+          "term": "quad mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rho theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.41borel label=\"sub.41borel\"} In this section we discuss the asymptotic expansion as $q = {\\rm e}^{2\\pi{\\rm i}\\tau}\\rightarrow 1$ of the vector $G(q)$ of $q$-series and relate it to the vector $\\Phi(\\tau)$ of the asymptotic series, where $$G(q) = \\begin{pmatrix} G^{(2)}(q) \\\\ G^{(1)}(q) \\\\ G^{(0)}(q) \\end{pmatrix}, \\qquad \\Phi(\\tau) = \\begin{pmatrix} \\Phi^{(\\sigma_0)}(\\tau)\\\\ \\Phi^{(\\sigma_1)}(\\tau)\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-u-state-integrals",
+      "number": "3.4",
+      "title": "(u,) state-integrals",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf frac",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "lambda mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "contour mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal tanh",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.41statex label=\"sub.41statex\"} In parallel to the discussion in Sections [\\[sub.AK41new\\]](#sub.AK41new){reference-type=\"ref\" reference=\"sub.AK41new\"} and [\\[sub.3x3state\\]](#sub.3x3state){reference-type=\"ref\" reference=\"sub.3x3state\"}, we now introduce a new state-integral which depends on $\\tau$, but also on a variable $u$. Let us consider the state-integral $$\\mathcal{Z}_\\mathcal B(u,\\tau) = -\\frac{{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-35-an-analytic-extension-of-the-colored-jones-po",
+      "number": "3.5",
+      "title": "An analytic extension of the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jn-s",
+          "heading": false
+        },
+        {
+          "term": "tilde tau",
+          "heading": false
+        },
+        {
+          "term": "tau frac",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "tau text",
+          "heading": false
+        },
+        {
+          "term": "mathbf knot",
+          "heading": false
+        },
+        {
+          "term": "quad tau",
+          "heading": false
+        },
+        {
+          "term": "mathrm red",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.CJ41analytic label=\"sub.CJ41analytic\"} In this section we discuss a Borel resummation formula for the colored Jones polynomial of the $\\mathbf{4}_1$ knot. The latter is defined by $$J^{\\mathbf{4}_1}_N(q) = \\sum_{k=0}^{N-1}(-1)^k q^{-k(k+1)/2}(q^{1+N};q)_k(q^{1-N};q)_k \\,.$$ Let $u \\sim 0$ be in a small neighborhood of the origin in the complex plane. It is related to $x = q^N$ and $\\tau$ by $$x = {\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-the-52-knot",
+      "number": "4",
+      "title": "The 52-knot",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix jred",
+          "heading": false
+        },
+        {
+          "term": "ggmn",
+          "heading": false
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        }
+      ],
+      "extract": "4.1. A 3 × 3 matrix of q-series. The trace field of the 52 knot is the cubic field of dis- criminant −23, with a distinguished complex embedding σ1 (corresponding to the geometric representation of 52), its complex conjugate σ2 and a real embedding σ3. The 52 knot has three boundary parabolic representations whose associated asymptotic series φ(σj)(h) for j = 1, 2, 3 correspond to the three embeddings of the trace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-the-habiro-polynomials-and-the-descendant-kas",
+      "number": "4.2",
+      "title": "The Habiro polynomials and the descendant Kashaev invariants",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 42,
+      "labelStart": "37",
+      "labelEnd": "42",
+      "words": 2395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro polynomials",
+          "heading": true
+        },
+        {
+          "term": "q-difference equation",
+          "heading": false
+        },
+        {
+          "term": "descendant",
+          "heading": true
+        },
+        {
+          "term": "linear q-difference",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariants",
+          "heading": true
+        },
+        {
+          "term": "e5i",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "block decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "4.2. The Habiro polynomials and the descendant Kashaev invariants. The addition of the asymptotic series φ(σ0)(h) corresponding to the trivial flat connection requires a 4 × 4 extension of the matrix Jred(q). This is consistent with the fact that the colored Jones polynomial of 52 satisfies a third order inhomogenous linear q-difference equation, and hence a 4th order homogeneous linear q-difference equation.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-44-borel-resummation-and-stokes-constants",
+      "number": "4.4",
+      "title": "Borel resummation and Stokes constants",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "47",
+      "words": 1949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes constants",
+          "heading": true
+        },
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "stokes automorphism",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "ggmn",
+          "heading": false
+        },
+        {
+          "term": "siii",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        }
+      ],
+      "extract": "Φ(σj)(τ) for j = 0, 1, 2, 3 corresponding to the trivial, the geometric, the conjugate, and the real flat connections respectively, denoted respectively by σj for j = 0, 1, 2, 3. Similar to the 41 knot, the asymptotic series Φ(σj)(τ) for j = 1, 2, 3 can be defined in terms of a perturbation theory of a state-integral [KLV16, AK14] using the standard formal Gaussian integration as explained in [DGLZ09, GGMn21], and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-45-xq-series",
+      "number": "4.5",
+      "title": "(x,q)-series",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jred",
+          "heading": false
+        },
+        {
+          "term": "qmx",
+          "heading": false
+        },
+        {
+          "term": "ggmn",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": true
+        },
+        {
+          "term": "kqn",
+          "heading": false
+        }
+      ],
+      "extract": "variable x. Recall that the matrix Jred m (x, q)7 is a fundamental solution to the linear q- difference equation fm(x, q) −(1 + x + x−1)fm+1(x, q) + (1 + x + x−1 −q2+m)fm+2(x, q) −fm+3(x, q) = 0 (214) and it is defined by Jred m (x, q) =   Am(x, q) Am+1(x, q) Am+2(x, q) Bm(x, q) Bm+1(x, q) Bm+2(x, q) Cm(x, q) Cm+1(x, q) Cm+2(x, q)  , |q|̸ = 1, (215) where the holomorphic blocks are given by Am(x, q) = H(x, x−1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-46-x-version-of-borel-resummation-and-stokes-con",
+      "number": "4.6",
+      "title": "x-version of Borel resummation and Stokes constants",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 52,
+      "labelStart": "48",
+      "labelEnd": "52",
+      "words": 1281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes constants",
+          "heading": true
+        },
+        {
+          "term": "pmatrix tilde",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde series",
+          "heading": false
+        },
+        {
+          "term": "tilde end",
+          "heading": false
+        },
+        {
+          "term": "tau frac",
+          "heading": false
+        },
+        {
+          "term": "mathfrak rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.52borelx label=\"sub.52borelx\"} In this section we discuss the $x$-deformation version of Section [\\[sub.52borel\\]](#sub.52borel){reference-type=\"ref\" reference=\"sub.52borel\"}. The asymptotic series $\\Phi^{(\\sigma_j)}(\\tau)$ for $j=0,1,2,3$ are extended to series $\\Phi^{(\\sigma_j)}(x;\\tau)$ with coefficients in $\\mathbb{Z}(x^{\\pm 1})$. The series $\\Phi^{(\\sigma_j)}(x;\\tau)$ for $j=1,2,3$ are defined in terms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-47-an-analytic-extension-of-the-kashaev-invarian",
+      "number": "4.7",
+      "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jn-s",
+          "heading": false
+        },
+        {
+          "term": "ejones",
+          "heading": false
+        },
+        {
+          "term": "tau frac",
+          "heading": false
+        },
+        {
+          "term": "text med",
+          "heading": false
+        },
+        {
+          "term": "tilde big",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "ekashaev",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we discuss an analytic extension of the Kashaev invariant and of the colored Jones polynomial of the $\\mathbf{5}_2$ knot, illustrating Conjectures [\\[conj.ekashaev\\]](#conj.ekashaev){reference-type=\"ref\" reference=\"conj.ekashaev\"} and [\\[conj.ejones\\]](#conj.ejones){reference-type=\"ref\" reference=\"conj.ejones\"}. Recall that the colored Jones polynomial of the $\\mathbf{5}_2$ is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-48-a-new-state-integral-for-the-52-knot",
+      "number": "4.8",
+      "title": "A new state-integral for the 52 knot?",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "inverted habiro",
+          "heading": false
+        },
+        {
+          "term": "ixq",
+          "heading": false
+        },
+        {
+          "term": "ckp",
+          "heading": false
+        },
+        {
+          "term": "tanh left",
+          "heading": false
+        },
+        {
+          "term": "operatorname phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:newstateint label=\"sec:newstateint\"} In the case of the figure eight knot, the new state-integral was obtained by first writing down an integral formula for its colored Jones polynomial, in Habiro form, and then changing the integration contour to pick the contribution from the poles in the lower half plane. This led in particular to the \"inverted\" Habiro series $\\mathcal{C}_0(x,q)$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-appendix-a-q-series-identities",
+      "number": null,
+      "title": "Appendix A. q-series identities",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "identities",
+          "heading": true
+        },
+        {
+          "term": "annihilator ideal",
+          "heading": false
+        },
+        {
+          "term": "iqi",
+          "heading": false
+        },
+        {
+          "term": "kqn",
+          "heading": false
+        },
+        {
+          "term": "kou",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "q-holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we will sketch the proofs of some q-series identities that appear in Con- jecture 19. Since this not one of the main themes of the paper, our presentation will be rather brief. Our proofs of the q-hypergeometric identities will use the algorithmic approach of the Wilf-Zeilberger theory (see [WZ92, PWZ96]) and the computer implementation by Koutschan [Kou10]). We outline part of the proof of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 59,
+      "labelStart": "56",
+      "labelEnd": "59",
+      "words": 1306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "yasuyuki hatsuda",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "physique théorique",
+          "heading": false
+        }
+      ],
+      "extract": "[AH06] Jorgen Ellegaard Andersen and Soren Kold Hansen, Asymptotics of the quantum invariants for surgeries on the figure 8 knot, J. Knot Theory Ramifications 15 (2006), no. 4, 479–548. [AK14] Jorgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichmüller theory, Comm. Math. Phys. 330 (2014), no. 3, 887–934. [BDP14] Christopher Beem, Tudor Dimofte, and Sara Pasquetti, Holomorphic Blocks in Three Dimen-",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "A summary of our results",
+          "Challenges"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "4.7 An analytic extension of the Kashaev invariant and the colored Jones poly-"
+        ]
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "A new state-integral: listed p19, found p33"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tilde tau",
+      "heading": false
+    },
+    {
+      "term": "tau mathsf",
+      "heading": false
+    },
+    {
+      "term": "tilde series",
+      "heading": false
+    },
+    {
+      "term": "series phi",
+      "heading": false
+    },
+    {
+      "term": "mathbf sigma",
+      "heading": false
+    },
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "habiro series",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathrm",
+      "heading": false
+    },
+    {
+      "term": "asymptotic series",
+      "heading": true
+    },
+    {
+      "term": "matrix mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf knot",
+      "heading": false
+    },
+    {
+      "term": "tau mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Singularities of the Borel transforms of φ(σj)(τ) for j = 0, 1, 2 of the knot 41",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Stokes rays and cones in the τ-plane for the 3-vector Φ(τ) of asymptotic series of the knot 41",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The contour AN appears in the integral formula (69) for the",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Singularities of the Borel transforms of φ(σj)(x, τ) for j = 0, 1, 2 of the knot 41",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Stokes rays and cones in the τ-plane for the 3-vector Φ(x, τ) of asymptotic series of the knot 41",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Singularities of Borel transforms of φ(σj)(τ) for j = 0, 1, 2, 3 of the knot 52",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Stokes rays and cones in the τ-plane for the 4-vector Φ(τ) of asymptotic series of the knot 52",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Singularities of Borel transforms of φ(σj)(x, τ) for j = 0, 1, 2, 3 of the knot 52",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 31,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p56); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2111.04763v2"
+  }
+}

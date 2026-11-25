@@ -1,0 +1,1588 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0610241v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "From these relations one can extract predictions at low energy, giving in particular a Higgs mass around 170 GeV and a top mass compatible with present experimental value.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0610241v1  23 Oct 2006\nGRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING\nALI H. CHAMSEDDINE, ALAIN CONNES, AND MATILDE MARCOLLI\nAbstract. We present an eﬀective uniﬁed theory based on noncommutative geometry for\nthe standard model with neutrino mixing, minimally coupled to gravity. The uniﬁcation is\nbased on the symplectic unitary group in Hilbert space and on the spectral action. It yields\nall the detailed structure of the standard model with several predictions at uniﬁcation scale.\nBesides the familiar predictions for the gauge couplings as for GUT theories, it predicts the\nHi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "(1.5) After applying the renormalization group to the Yukawa couplings, assuming that the Yukawa coupling for the ντ is comparable to the one for the top quark, one obtains good agreement with the measured value.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction\nIn this paper we present a model based on noncommutative geometry for the standard model\nwith massive neutrinos, minimally coupled to gravity. The model can be thought of as a form\nof uniﬁcation, based on the symplectic unitary group in Hilbert space, rather than on ﬁnite\ndimensional Lie groups. In particular, the parameters of the model are set at uniﬁcation scale\nand one obtains physical predictions by running them down through the renormalization\ngroup using the Wilsonian approach. For the renormalizability of the gravity part of our\nmodel one can follow the renormalization",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "An odd bimodule M is a representation of the reduction B = (ALR ⊗R A0 LR)p of ALR ⊗R A0 LR by the projection p = 1 2 (1 −s ⊗s0). This subalgebra is an algebra over C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "The algebra B = (ALR ⊗R A0 LR)p is the direct sum of 4 copies of the algebra M2(C) ⊕M6(C). The sum of irreducible representations of B has dimension 32 and is given by 2L ⊗10 ⊕2R ⊗10 ⊕2L ⊗30 ⊕2R ⊗30 ⊕1 ⊗20 L ⊕1 ⊗20 R ⊕3 ⊗20 L ⊕3 ⊗20 R (2.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Let MF be the direct sum of all inequivalent irreducible odd ALR-bimodules. • The dimension of the complex vector space MF is 32. • The ALR-bimodule MF = E ⊕E0 is the direct sum of the bimodule E = 2L ⊗10 ⊕2R ⊗10 ⊕2L ⊗30 ⊕2R ⊗30 (2.4) with its contragredient E0. • The ALR-bimodule MF is isomorphic to the contragredient bimodule M0 F by the anti- linear isometry JF given by JF (ξ, ¯η) = (η, ¯ξ) , ∀ξ , η ∈E (2.5) • One has J2 = 1 , ξ b = Jb∗J ξ , ∀ξ ∈MF , b ∈ALR (2.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ﬁnite geometry",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-the-ﬁnite-geometry.md",
+      "narrative": null,
+      "content": "the above approach will be whether a ﬁne tuning of the ﬁnite geometry can incorporate addi-\ntional experimental data at higher energies. The present paper shows that the modiﬁcation\nof the standard model required by the phenomenon of neutrino mixing in fact resulted in sev-\neral improvements on the previous descriptions of the standard model via noncommutative\ngeometry.\nIn summary we have shown that the intricate Lagrangian of the standard model coupled with\ngravity can be obtained from a very simple modiﬁcation of space-time geometry provided one\nuses the formalism of noncommutative geometry.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The left-right symmetric algebra",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-the-left-right-symmetric-algebra.md",
+      "narrative": null,
+      "content": "The main input for the model we are going to describe is the choice of a ﬁnite dimensional\ninvolutive algebra of the form\nALR = C ⊕HL ⊕HR ⊕M3(C).\n(2.1)\nThis is the direct sum of the matrix algebras MN(C) for N = 1, 3 with two copies of the\nalgebra H of quaternions, where the indices L, R are just for book-keeping. We refer to (2.1)\nas the “left-right symmetric algebra” [10].\nBy construction ALR is an involutive algebra, with involution\n(λ, qL, qR, m)∗= (¯λ, ¯qL, ¯qR, m∗),\n(2.2)\nwhere q 7→¯q denotes the involution of the algebra of quaternions. The algebra ALR admits\na natural subalgebra C ⊕M3(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Real spectral triples",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-23-real-spectral-triples.md",
+      "narrative": null,
+      "content": "2.3. Real spectral triples.\nA noncommutative geometry is given by a representation theoretic datum of spectral nature.\nMore precisely, we have the following notion.\nDeﬁnition 2.6. A spectral triple (A, H, D) is given by an involutive unital algebra A repre-\nsented as operators in a Hilbert space H and a self-adjoint operator D with compact resolvent\nsuch that all commutators [D, a] are bounded for a ∈A.\nA spectral triple is even if the Hilbert space H is endowed with a Z/2- grading γ which\ncommutes with any a ∈A and anticommutes with D.\nThe notion of real structure (cf. [15]) on a spectral tri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let A ⊂ALR be an involutive unital subalgebra of ALR. Then the following properties hold. 1. If the restriction of π and π′ to A are disjoint, then there is no oﬀdiagonal Dirac operator for A. 2. If there exists an oﬀdiagonal Dirac for A, then there exists a pair e, e′ of minimal projections in the commutants of π(ALR) and π′(ALR) and an operator T such that e′Te = T̸ = 0 and A ⊂A(T).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Up to an automorphism of ALR, there exists a unique subalgebra AF ⊂ ALR of maximal dimension admitting an oﬀdiagonal Dirac operators, namely operators that intertwine the subspaces Hf and H ¯f of HF. The subalgebra is given by AF = {(λ, qL, λ, m) | λ ∈C , qL ∈H , m ∈M3(C)} ∼C ⊕H ⊕M3(C). (2.22) GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The subalgebra and the order one condition",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-24-the-subalgebra-and-the-order-one-condition.md",
+      "narrative": null,
+      "content": "We let HF be the sum of N = 3 copies of the ALR-bimodule MF of Proposition 2.4, that is,\nHF = M⊕3\nF .\n(2.17)\nRemark 2.10. The multiplicity N = 3 here is an input, and it corresponds to the number\nof particle generations in the standard model. The number of generations is not predicted by\nour model in its present form and has to be taken as an input datum.\nWe deﬁne the Z/2-grading γF by\nγF = c −JF c JF ,\nc = (0, 1, −1, 0) ∈ALR.\n(2.18)\nOne then checks that\nJ2\nF = 1 ,\nJF γF = −γF JF .\n(2.19)\nThe relation (2.19), together with the commutation of JF with the Dirac operators, is char-\nacteristic of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "The multiplicity N = 3 here is an input, and it corresponds to the number of particle generations in the standard model. The number of generations is not predicted by our model in its present form and has to be taken as an input datum. We deﬁne the Z/2-grading γF by γF = c −JF c JF , c = (0, 1, −1, 0) ∈ALR. (2.18) One then checks that J2 F = 1 , JF γF = −γF JF . (2.19) The relation (2.19), together with the commutation of JF with the Dirac operators, is char- acteristic of KO-dimension equal to 6 modulo 8 (cf. Deﬁnition 2.7). By Proposition 2.4 one can write HF as the direct sum HF = Hf ⊕H ¯f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "1. Up to a ﬁnite abelian group, the group SU(AF) is of the form SU(AF) ∼U(1) × SU(2) × SU(3). (2.26) 2. The adjoint action of the U(1) factor is given by multiplication of the basis vectors in Hf by the following powers of λ ∈U(1): ↑⊗10 ↓⊗10 ↑⊗30 ↓⊗30 2L −1 −1 2R −2 −2 (2.27)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unimodularity and hypercharges",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-25-unimodularity-and-hypercharges.md",
+      "narrative": null,
+      "content": "The unitary group of an involutive algebra A is given by\nU(A) = {u ∈A | uu∗= u∗u = 1}\nIn our context we deﬁne the special unitary group SU(A) ⊂U(A) as follows.\nDeﬁnition 2.13. We let SU(AF ) be the subgroup of U(AF ) deﬁned by\nSU(AF) = {u ∈U(AF ) : det(u) = 1}\nwhere det(u) is the determinant of the action of u in HF.\nWe now describe the group SU(AF) and its adjoint action.\nAs before, we denote by 2 the 2-dimensional irreducible representation of H of the form\n\u0012\nα\nβ\n−¯β\n¯α\n\u0013\n,\n(2.25)\nwith α, β ∈C.\nDeﬁnition 2.14. We let | ↑⟩and | ↓⟩be the basis of the irreducible representation 2 of H of\n(2.25)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "The notation ↑and ↓is meant to be suggestive of “up” and “down” as in the ﬁrst generation of quarks, rather than refer to spin states. In fact, we will see in Remark 2.18 below that the basis of HF can be naturally identiﬁed with the fermions of the standard model, with the result of the following proposition giving the corresponding hypercharges.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "Notice how the finite groups 13 and 112 in the exact sequence (2.29) are of different nature from the physical viewpoint, the first arising from the center of the color U(3), while the latter depends upon the presence of three generations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-005-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-005-04.md",
+      "narrative": null,
+      "content": "The result of Proposition 2.16 shows that we can identify the basis elements ffs, b ffs, R and fs, y and ffs, g Of the linear basis of Hr with the quarks, where & is the flavor index. Thus, after suppressing the chirality index L, R for simplicity, we identify Sis: FP: £3 with the up, charm, and top quarks and f 3 Sf? 3, SP3 are the down, strange, and bottom quarks. Similarly, the basis elements fh and f f , are identified with the leptons. Thus, thas fas i , are identified with the neutrinos »., v,, and v,; and the f La ff. Db fy are identified with the charged leptons e, , 7. The identificat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "Let P = \u0014 P11 P12 P21 P22 \u0015 be an operator in HF = Hf ⊕H ¯f. Then P ∈A′ F iﬀthe following holds • P11 is block diagonal with three blocks in M12(C), M12(C), and 12 ⊗M12(C) correspond- ing to the subspaces where the action of (λ, q, m) is by λ, ¯λ and q. • P12 has support in 1 ⊗20 L ⊕1 ⊗20 R and range in ↑R ⊗10⊕↑R ⊗30. • P21 has support in ↑R ⊗10⊕↑R ⊗30 and range in 1 ⊗20 L ⊕1 ⊗20 R. • P22 is of the form P22 = T1 ⊕(T2 ⊗13) (2.35)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classiﬁcation of Dirac operators",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-26-the-classiﬁcation-of-dirac-operators.md",
+      "narrative": null,
+      "content": "We now characterize all operators DF which qualify as Dirac operators and moreover com-\nmute with the subalgebra\nCF ⊂AF ,\nCF = {(λ, λ, 0) , λ ∈C}\n(2.30)\nRemark 2.19. The physical meaning of the commutation relation of the Dirac operator\nwith the subalgebra of (2.30) is to ensure that the photon will remain massless.\nWe have the following general notion of Dirac operator for the ﬁnite noncommutative geom-\netry with algebra AF and Hilbert space HF.\nDeﬁnition 2.20. A Dirac operator is a self-adjoint operator D in HF commuting with JF ,\nCF, anticommuting with γF and fulﬁlling the order one conditi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "The physical meaning of the commutation relation of the Dirac operator with the subalgebra of (2.30) is to ensure that the photon will remain massless. We have the following general notion of Dirac operator for the ﬁnite noncommutative geom- etry with algebra AF and Hilbert space HF. Deﬁnition 2.20. A Dirac operator is a self-adjoint operator D in HF commuting with JF , CF, anticommuting with γF and fulﬁlling the order one condition [[D, a], b0] = 0 for any a, b ∈AF. In order to state the classiﬁcation of such Dirac operators we introduce the following notation. Let Y(↓1), Y(↑1), Y(↓3), Y(↑3)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-006-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "rem-sec-006-04.md",
+      "narrative": null,
+      "content": "It is a consequence of the classiﬁcation of Dirac operators obtained in this section that color is unbroken in our model, as is physically expected. In fact, this follows from the fact that Dirac operators are of the form (2.31), with the S term of the form (2.32).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "1. Let D be a Dirac operator. There exist 3 × 3 matrices Y(↓1), Y(↑1), Y(↓3), Y(↑3) and YR, with YR symmetric, such that D = D(Y ). 2. All operators D(Y ) (with YR symmetric) are Dirac operators. GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING 3. The operators D(Y ) and D(Y ′) are conjugate by a unitary operator commuting with AF, γF and JF iﬀthere exists unitary matrices Vj and Wj such that Y ′ (↓1) = V1 Y(↓1)V ∗ 3 , Y ′ (↑1) = V2 Y(↑1) V ∗ 3 , Y ′ (↓3) = W1 Y(↓3) W ∗ 3 , Y ′ (↑3) = W2 Y(↑3) W ∗ 3 , Y ′ R = V2 YR ¯V ∗",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "Suppose given diagonal matrices δ↑and δ↓with positive and distinct eigen- values. Two pairs of the form (δ↑, C δ↓C∗) are equivalent iﬀthere exists diagonal unitary matrices A, B ∈N such that A C = C′ B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "The moduli space C1 is given by the quotient C1 ∼= (U(3) × U(3))\\(GL3(C) × GL3(C) × S)/U(3), (2.45) where S is the space of symmetric complex 3 × 3 matrices and • The action of U(3)×U(3) on the left is given by left multiplication on GL3(C)×GL3(C) and by (2.44) on S. • The action of U(3) on the right is trivial on S and by diagonal right multiplication on GL3(C) × GL3(C). It is of real dimension 21 and ﬁbers over C3, with generic ﬁber the quotient of symmetric complex 3 × 3 matrices by U(1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The moduli space C3 is the double coset space C3 ∼= (U(3) × U(3))\\(GL3(C) × GL3(C))/U(3) (2.40) of real dimension 10.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The moduli space of Dirac operators and the Yukawa parameters",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-27-the-moduli-space-of-dirac-operators-and-the-y.md",
+      "narrative": null,
+      "content": "Let us start by considering the moduli space C3 of pairs of invertible 3×3 matrices (Y(↓3), Y(↑3))\nmodulo the equivalence relation\nY ′\n(↓3) = W1 Y(↓3) W ∗\n3 , Y ′\n(↑3) = W2 Y(↑3) W ∗\n3 ,\n(2.39)\nwhere the Wj are unitary matrices.\n16\nCHAMSEDDINE, CONNES, AND MARCOLLI\nProposition 2.24. The moduli space C3 is the double coset space\nC3 ∼= (U(3) × U(3))\\(GL3(C) × GL3(C))/U(3)\n(2.40)\nof real dimension 10.\nProof. This follows from the explicit form of the equivalence relation (2.39). The group U(3)\nacts diagonally on the right.\nRemark 2.25. Notice that the 3 in C3 corresponds to the color charge for q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "Notice that the 3 in C3 corresponds to the color charge for quarks (like the 1 in C1 below will correspond to leptons), while in the right hand side of (2.40) the 3 of GL3(C) and U(3) corresponds to the number of generations. Each equivalence class under (2.39) contains a pair (Y(↓3), Y(↑3)) where Y(↑3) is diagonal (in the given basis) and with positive entries, while Y(↓3) is positive. Indeed, the freedom to chose W2 and W3 makes it possible to take Y(↑3) positive and diagonal and the freedom in W1 then makes it possible to take Y(↓3) positive. The eigenvalues are the characteristic values (i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-007-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-007-05.md",
+      "narrative": null,
+      "content": "The 31 real parameters of (2.46) correspond to the Yukawa parameters in the standard model with neutrino mixing and Majorana mass terms. In fact, the parameters in C3 correspond to the masses of the quarks and the quark mixing angles of the CKM matrix, while the additional parameters of C1 give the lepton masses, the angles of the PMNS mixing matrix and the Majorana mass terms. CHAMSEDDINE, CONNES, AND MARCOLLI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/cor-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "cor-sec-008-03.md",
+      "narrative": null,
+      "content": "The pairing K0(AF ) ⊕K0(AF ) →R ⊕R given by ⟨·, ·⟩HF := ⟨·, ·⟩|H(1) F ⊕⟨·, ·⟩|H(3) F (2.51) is non-degenerate.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "The expression ⟨e, f ⟩= Tr(γ e JfJ−1) (2.47) deﬁnes an antisymmetric bilinear pairing on K0 × K0. The group K0(AF ) is the free abelian group generated by the classes of e1 = (1, 0, 0), e2 = (0, 1, 0) and f3 = (0, 0, f), where f ∈M3(C) a minimal idempotent.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "1. The representation of the algebra generated by (AF , DF , JF , γF ) in HF splits as a direct sum of two subrepresentations HF = H(1) F ⊕H(3) F . 2. In the generic case (i.e. when the matrices in DF have distinct eigenvalues) each of these subrepresentations is irreducible. 3. In the basis (e1, e2, f3) the pairing (2.47) is (up to an overall multiplicity three corre- sponding to the number of generations) given by ⟨·, ·⟩|H(1) F =   −2   ⟨·, ·⟩|H(3) F =   −2 −2   (2.48)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimension, KO-theory, and Poincar´e duality",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-28-dimension-ko-theory-and-poincare-duality.md",
+      "narrative": null,
+      "content": "In [14] Chapter 6, §4, the notion of manifold in noncommutative geometry was discussed in\nterms of Poincar´e duality in KO-homology. In [16] this Poincar´e duality was shown to hold\nrationally for the ﬁnite noncommutative geometry used there. We now investigate how the\nnew ﬁnite noncommutative geometry F considered here behaves with respect to this duality.\nWe ﬁrst notice that now, the dimension being equal to 6 modulo 8, the intersection pairing\nis skew symmetric. It is given explicitly as follows.\nProposition 2.29. The expression\n⟨e, f ⟩= Tr(γ e JfJ−1)\n(2.47)\ndeﬁnes an antisymmetric bilinear",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "The result of Corollary 2.31 can be reinterpreted as the fact that in our case KO-homology is not singly generated as a module over K0, but it is generated by two elements. CHAMSEDDINE, CONNES, AND MARCOLLI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "Let F be the ﬁnite noncommutative geometry: • The real part of AF is R = {(λ, λ, λ) , λ ∈R} ⊂AF . • The real part of C∞(M, AF ) for the product geometry M × F is C∞(M, R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "Let (A, H, D) be a real spectral triple in the sense of Deﬁnition 2.7. Then the following holds. 1. The equality AJ = {x ∈A ; x J = J x} deﬁnes an involutive commutative real subalge- bra of the center of A. 2. (AJ, H, D) is a real spectral triple. 3. Any a ∈AJ commutes with the algebra generated by the sums P ai[D, bi] for ai, bi in A. GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The spectral action and the standard model",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-3-the-spectral-action-and-the-standard-model.md",
+      "narrative": null,
+      "content": "In this section and in the one that follows we show that the full Lagrangian of the standard\nmodel with neutrino mixing and Majorana mass terms, minimally coupled to gravity, is\nobtained as the asymptotic expansion of the spectral action for the product of the ﬁnite\ngeometry (AF , HF , DF ) described above and a spectral triple associated to 4-dimensional\nspacetime.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riemannian geometry and spectral triples",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-31-riemannian-geometry-and-spectral-triples.md",
+      "narrative": null,
+      "content": "A spin Riemannian manifold M gives rise in a canonical manner to a spectral triple. The\nHilbert space H is the Hilbert space L2(M, S) of square integrable spinors on M and the\nalgebra A = C∞(M) of smooth functions on M acts in H by multiplication operators:\n(f ξ)(x) = f(x) ξ(x) ,\n∀x ∈M.\n(3.1)\nThe operator D is the Dirac operator\n∂/M =\n√\n−1 γµ ∇s\nµ\n(3.2)\nwhere ∇s is the spin connection which we express in a vierbein e so that\nγµ = γaeµ\na,\n∇s\nµ = ∂µ + 1\n4ω ab\nµ (e) γab.\n(3.3)\nThe grading γ is given by the chirality operator which we denote by γ5 in the 4-dimensional\ncase. The operator J is the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The product geometry",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-32-the-product-geometry.md",
+      "narrative": null,
+      "content": "We now consider a 4-dimensional smooth compact Riemannian manifold M with a ﬁxed spin\nstructure. We consider its product with the ﬁnite geometry (AF, HF , DF ) described above.\nWith (Aj, Hj, γj) of KO-dimensions 4 for j = 1 and 6 for j = 2, the product geometry is\ngiven by the rules\nA = A1 ⊗A2 , H = H1 ⊗H2 , D = D1 ⊗1 + γ1 ⊗D2 , γ = γ1 ⊗γ2 , J = J1 ⊗J2.\nNotice that it matters here that J1 commutes with γ1, in order to check that J commutes\nwith D. One checks that the order one condition is fulﬁlled by D if it is fulﬁlled by the Dj.\nFor the product of the manifold M by the ﬁnite geometry F we t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The real part of the product geometry",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-33-the-real-part-of-the-product-geometry.md",
+      "narrative": null,
+      "content": "The next proposition shows that a noncommutative geometry automatically gives rise to a\ncommutative one playing in essence the role of its center (cf. Remark 3.3 below).\nProposition 3.1. Let (A, H, D) be a real spectral triple in the sense of Deﬁnition 2.7. Then\nthe following holds.\n1. The equality AJ = {x ∈A ; x J = J x} deﬁnes an involutive commutative real subalge-\nbra of the center of A.\n2. (AJ, H, D) is a real spectral triple.\n3. Any a ∈AJ commutes with the algebra generated by the sums P ai[D, bi] for ai, bi in\nA.\nGRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING\n21\nProof. 1) By constr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-012-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "rem-sec-012-03.md",
+      "narrative": null,
+      "content": "The notion of real part AJ can be thought of as a reﬁnement of the center of the algebra in this geometric context. For instance, even though the center of AF is non- trivial, this geometry can still be regarded as “central” in this perspecive, since the real part of AF is reduced to just the scalars R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "Let (A, H, D) be the real spectral triple associated to M × F. • Let U be a unitary in H commuting with γ and J and such that U A U∗= A. Then there exists a unique diﬀeomorphism ϕ ∈Diﬀ(M) such that U f U∗= f ◦ϕ , ∀f ∈AJ. (3.4) • Let U be as above and such that ϕ = id. Then, possibly after passing to a ﬁnite abelian cover of M, there exists a unitary u ∈C∞(M, SU(AF)) such that U Ad(u)∗∈C, where C is the commutant of the algebra of operators in H generated by A and JAJ−1. We refer to [35] for ﬁner points concerning the lifting of diﬀeomorphisms preserving the given spin structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The adjoint representation and the gauge symmetries",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-34-the-adjoint-representation-and-the-gauge-symm.md",
+      "narrative": null,
+      "content": "In this section we display the role of the gauge group C∞(M, SU(AF)) of smooth maps from\nthe manifold M to the group SU(AF).\nProposition 3.4. Let (A, H, D) be the real spectral triple associated to M × F.\n• Let U be a unitary in H commuting with γ and J and such that U A U∗= A. Then\nthere exists a unique diﬀeomorphism ϕ ∈Diﬀ(M) such that\nU f U∗= f ◦ϕ ,\n∀f ∈AJ.\n(3.4)\n• Let U be as above and such that ϕ = id. Then, possibly after passing to a ﬁnite abelian\ncover of M, there exists a unitary u ∈C∞(M, SU(AF)) such that U Ad(u)∗∈C, where\nC is the commutant of the algebra of operators in H generated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "1) On H(3) F ⊂HF one has Tr((D(0,1) )2) = 12 |1 + H|2 Tr(Y ∗ (↑3)Y(↑3) + Y ∗ (↓3)Y(↓3)) (3.12) Tr((D(0,1) )4) = 12 |1 + H|4 Tr((Y ∗ (↑3)Y(↑3))2 + (Y ∗ (↓3)Y(↓3))2) 2) On H(1) F ⊂HF one has Tr((D(0,1) )2) = 4 |1 + H|2 Tr(Y ∗ (↑1)Y(↑1) + Y ∗ (↓1)Y(↓1)) + 2 Tr(Y ∗ RYR) (3.13) Tr((D(0,1) )4) = 4 |1 + H|4 Tr((Y ∗ (↑1)Y(↑1))2 + (Y ∗ (↓1)Y(↓1))2) + 2 Tr((Y ∗ RYR)2) + 8 |1 + H|2 Tr(Y ∗ RYRY ∗ (↑1)Y(↑1))",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "1) The discrete part A(0,1) of the inner ﬂuctuations of the metric is pa- rameterized by an arbitrary quaternion valued function H ∈C∞(M, H) , H = ϕ1 + ϕ2 j , ϕj ∈C∞(M, C) 2) The role of H in the coupling of the ↑-part is related to its role in the coupling of the ↓-part by the replacement H 7→˜H = j H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "prop-sec-014-04.md",
+      "narrative": null,
+      "content": "1. The unimodular gauge potentials are parameterized by a U(1) gauge ﬁeld B, an SU(2) gauge ﬁeld W and an SU(3) gauge ﬁeld V . 2. The adjoint action A + J A J−1 on Hf is obtained by replacing ∂µ by ∂µ + Aµ where Aµ = (Aq µ ⊕Aℓ µ) ⊗13 (where the 13 is for the three generations), and Aq µ =   −2i 3 g1Bµ ⊗13 i 3g1Bµ ⊗13 (−i 2g2W α µ σα −i 6g1Bµ ⊗12) ⊗13   + 14 ⊗ \u0012 −i 2g3V i µλi \u0013 , Aℓ µ =   i g1Bµ (−i 2g2W α µ σα + i 2g1Bµ ⊗12)  . Here the σα are the Pauli matrices (3.22) and λi are the Gell-mann matrices λ1 =    , λ2 =   i −i  , λ3 =   −1  , λ4 =     (3.25) λ5 =   −i i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-014-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "prop-sec-014-06.md",
+      "narrative": null,
+      "content": "The unimodular inner ﬂuctuations of the metric are parameterized by independent ﬁelds ϕ1, ϕ2, B, W, V , as in Propositions 3.5 and 3.9.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inner ﬂuctuations and bosons",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "../sections/sec-014-35-inner-ﬂuctuations-and-bosons.md",
+      "narrative": null,
+      "content": "Let us show that the inner ﬂuctuations of the metric give rise to the gauge bosons of\nthe standard model with their correct quantum numbers. We ﬁrst have to compute A =\nΣ ai[D, a′\ni]\nai, a′\ni ∈A. Since D = ∂/M ⊗1 + γ5 ⊗DF decomposes as a sum of two terms, so\ndoes A and we ﬁrst consider the discrete part A(0,1) coming from commutators with γ5 ⊗DF .\n3.5.1. The discrete part A(0,1) of the inner ﬂuctuations.\nLet x ∈M and let ai(x) = (λi, qi, mi), a′\ni(x) = (λ′\ni, q′\ni, m′\ni), the computation of P ai[γ5 ⊗\nDF , a′\ni] at x on the subspace corresponding to Hf ⊂HF gives γ5 tensored by the matrices\nA(0,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-014-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "rem-sec-014-03.md",
+      "narrative": null,
+      "content": "The coeﬃcients in (3.16) appear in the physics literature in the renormal- ization group equation for the Yukawa parameters. For instance, one can recognize the coeﬃcients a and b respectively as the Y2(S) and H(S) of [1]. 3.5.2. The vector part A(1,0) of inner ﬂuctuations. Let us now determine the other part A(1,0) of A, i.e. A(1,0) = X ai[(∂/M ⊗1), a′ i] . (3.17) We let ai = (λi, qi, mi), a′ i = (λ′ i, q′ i, m′ i) be elements of A = C∞(M, AF ). We obtain the following. 1. A U(1) gauge ﬁeld Λ = X λi dλ′ i (3.18) 2. An SU(2) gauge ﬁeld Q = X qi dq′ i (3.19) 3. A U(3) gauge ﬁeld V ′ = X mi dm′",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-014-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "rem-sec-014-05.md",
+      "narrative": null,
+      "content": "Thus, we have obtained exactly the gauge bosons of the standard model, coupled with the correct hypercharges YL, YR. They are such that the electromagnetic charge Qem is determined by 2 Qem = YR for right handed particles. One also has 2 Qem = YL +2 I3, where I3 is the third generator of the weak isospin group SU(2). For Qem one gets the same answer for the left and right components of each particle and 2 3, −1 3 for the u, d quarks, respectively, and 0 and −1 for the ν and the e leptons, respectively. 3.5.3. Independence. It remains to explain why the ﬁelds H = ϕ1 + j ϕ2 of Proposition 3.5 an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "The square of DA is given by D2 A = ∇∗∇−E, (3.33) where ∇∗∇is the connection Laplacian for the connection ∇= ∇s + A (3.34) and the endomorphism E is given, with s = −R the scalar curvature, by −E = 1 4 s ⊗id + X µ<ν γµγν ⊗Fµν −i γ5 γµ ⊗M(Dµ ϕ) + 14 ⊗(D0,1)2 (3.35) CHAMSEDDINE, CONNES, AND MARCOLLI with H = ϕ1 + ϕ2j as above, and ϕ = (ϕ1, ϕ2). Here Fµν is the curvature of the connection A and ϕ = (ϕ1, ϕ2) is a row vector. The term Dµϕ in (3.35) is of the form Dµ ϕ = ∂µ ϕ + i 2 g2 W α µ ϕ σα −i 2 g1 Bµ ϕ . (3.36)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dirac operator and its square",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-36-the-dirac-operator-and-its-square.md",
+      "narrative": null,
+      "content": "The Dirac operator DA that takes the inner ﬂuctuations into account is given by the sum of\ntwo terms\nDA = D(1,0) + γ5 ⊗D(0,1),\n(3.28)\nwhere D(0,1) is given by (3.11) and D(1,0) is of the form\nD(1,0) =\n√\n−1 γµ(∇s\nµ + Aµ),\n(3.29)\nwhere ∇s is the spin connection (cf. (3.2)).\nThe gauge potential Aµ splits as a direct sum in the decomposition associated to HF =\nHf ⊕H ¯f and its restriction to Hf is given by Proposition 3.9.\nIn order to state the next step, i.e. the computation of the square of DA, we introduce the\nnotations\nT(M1, M2, ϕ) =\n\n\n0\n0\nM∗\n1 ϕ1\nM∗\n1 ϕ2\n0\n0\n−M∗\n2 ¯ϕ2\nM∗\n2 ¯ϕ1\nM1 ¯ϕ1\n−M2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "lem-sec-016-02.md",
+      "narrative": null,
+      "content": "The term Σ in (3.43) is given by Σ = 4 f2 π2 Λ2 R −f2 2 π2 Λ2 Tr((D0,1)2) + f0 8 π2 Tr(M(Dµ ϕ)2) (3.44) + f0 8 π2 Tr(( R 12 −(D0,1)2)2) + f0 16 π2 Tr(FµνFµν).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The spectral action and the asymptotic expansion",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-37-the-spectral-action-and-the-asymptotic-expans.md",
+      "narrative": null,
+      "content": "In this section we compute the spectral action for the inner ﬂuctuations of the product\ngeometry M × F.\nGRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING\n31\nTheorem 3.13. The spectral action is given by\nS\n=\n1\nπ2 (48 f4 Λ4 −f2 Λ2 c + f0\n4 d)\nZ √g d4x\n(3.41)\n+\n96 f2 Λ2 −f0 c\n24π2\nZ\nR √g d4x\n+\nf0\n10 π2\nZ\n(11\n6 R∗R∗−3 Cµνρσ Cµνρσ) √g d4x\n+\n(−2 a f2 Λ2 + e f0)\nπ2\nZ\n|ϕ|2 √g d4x\n+\nf0\n2 π2\nZ\na |Dµϕ|2 √g d4x\n−\nf0\n12 π2\nZ\na R |ϕ|2 √g d4x\n+\nf0\n2 π2\nZ\n(g2\n3 Gi\nµν Gµνi + g2\n2 F α\nµν F µνα + 5\n3 g2\n1 Bµν Bµν) √g d4x\n+\nf0\n2 π2\nZ\nb |ϕ|4 √g d4x\nwhere\nR∗R∗= 1\n4ǫµνρσǫαβγδRαβ\nµν Rγδ\nρσ\nis the topological term t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "The spectral action is given by S = π2 (48 f4 Λ4 −f2 Λ2 c + f0 4 d) Z √g d4x (3.41) + 96 f2 Λ2 −f0 c 24π2 Z R √g d4x + f0 10 π2 Z (11 6 R∗R∗−3 Cµνρσ Cµνρσ) √g d4x + (−2 a f2 Λ2 + e f0) π2 Z |ϕ|2 √g d4x + f0 2 π2 Z a |Dµϕ|2 √g d4x − f0 12 π2 Z a R |ϕ|2 √g d4x + f0 2 π2 Z (g2 3 Gi µν Gµνi + g2 2 F α µν F µνα + 5 3 g2 1 Bµν Bµν) √g d4x + f0 2 π2 Z b |ϕ|4 √g d4x where R∗R∗= 1 4ǫµνρσǫαβγδRαβ µν Rγδ ρσ is the topological term that integrates to the Euler characteristic. The coeﬃcients (a, b, c, d, e) are deﬁned in (3.16) and Dµϕ is deﬁned in (3.36).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "On a real spectral triple of KO-dimension 2 ∈Z/8, the expression AD(ξ′, ξ) = ⟨J ξ′, D ξ⟩, ∀ξ, ξ′ ∈H+ (4.3) deﬁnes an antisymmetric bilinear form on H+ = {ξ ∈H , γ ξ = ξ}. The trilinear pairing (4.3) between D, ξ and ξ′ is gauge invariant under the adjoint action of the unitary group of A, namely AD(ξ′, ξ) = ADu(Ad(u)ξ′, Ad(u)ξ) , Du = Ad(u) D Ad(u∗). (4.4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Lagrangian",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-017-4-the-lagrangian.md",
+      "narrative": null,
+      "content": "The KO-dimension of the ﬁnite space F is 6 ∈Z/8, hence the KO-dimension of the product\ngeometry M × F (for M a spin 4-manifold) is now 2 ∈Z/8. In other words, according to\nDeﬁnition 2.7, the commutation rules are\nJ2 = −1,\nJD = DJ,\nand Jγ = −γJ .\n(4.1)\nLet us now explain how these rules deﬁne a natural antisymmetric bilinear form on the even\npart\nH+ = {ξ ∈H , γ ξ = ξ}\n(4.2)\nof H.\nProposition 4.1. On a real spectral triple of KO-dimension 2 ∈Z/8, the expression\nAD(ξ′, ξ) = ⟨J ξ′, D ξ⟩,\n∀ξ, ξ′ ∈H+\n(4.3)\ndeﬁnes an antisymmetric bilinear form on H+ = {ξ ∈H , γ ξ = ξ}. The trilinear pairing\n(4.3) be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "It is the use of the Pfaﬃan as a square root of the determinant that makes it possible to solve the Fermion doubling puzzle which was pointed out in [36]. We discuss this in §4.4.1 below. The solution obtained by a better choice of the KO-dimension of the space F and hence of M × F is not unrelated to the point made in [27].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-017-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "rem-sec-017-04.md",
+      "narrative": null,
+      "content": "Notice that the action functional (4.8) involves all the data of the spectral triple, including the grading γ and the real structure J.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/thm-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "thm-sec-017-03.md",
+      "narrative": null,
+      "content": "Let M be a Riemannian spin 4-manifold and F the ﬁnite noncommutative geometry of KO-dimension 6 described above. Let M ×F be endowed with the product metric. 1. The unimodular subgroup of the unitary group acting by the adjoint representation Ad(u) in H is the group of gauge transformations of SM. 2. The unimodular inner ﬂuctuations of the metric give the gauge bosons of SM. 3. The full standard model (with neutrino mixing and seesaw mechanism) minimally cou- pled to Einstein gravity is given in Euclidean form by the action functional S = Tr(f(DA/Λ)) + 1 2 ⟨J ˜ξ, DA ˜ξ⟩, ˜ξ ∈H+ cl, (4.8) where",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation for the standard model",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-018-41-notation-for-the-standard-model.md",
+      "narrative": null,
+      "content": "The spectral action naturally gives a Lagrangian for matter minimally coupled with gravity, so\nthat we would obtain the standard model Lagrangian on a curved spacetime. By covariance,\nit is in fact suﬃcient to check that we obtain the standard model Lagrangian in ﬂat spacetime.\nThis can only be done by a direct calculation, which occupies the remaining of this section.\nIn ﬂat space and in Lorentzian signature the Lagrangian of the standard model with neutrino\nmixing and Majorana mass terms, written using the Feynman gauge ﬁxing, is of the form\nLSM = −1\n2∂νga\nµ∂νga\nµ −gsf abc∂µga\nνgb\nµgc\nν −1\n4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-018-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "rem-sec-018-01.md",
+      "narrative": null,
+      "content": "Notice that, for simplicity, we use for leptons the same convention usually adopted for quarks, namely to have the up particles in diagonal form (in this case the neu- trinos) and the mixing matrix for the down particles (here the charged leptons). This is diﬀerent from the convention usually adopted in neutrino physics (cf. e.g. [37] §11.3), but it is convenient here, in order to write the Majorana mass matrix in a simpler form. Our goal is to compare this Lagrangian with the one we get from the spectral action, when dealing with ﬂat space and Euclidean signature. All the results immediately",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotic formula for the spectral action",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-42-the-asymptotic-formula-for-the-spectral-actio.md",
+      "narrative": null,
+      "content": "The change of variables from the standard model to the spectral model is summarized in\nTable 1.\nWe ﬁrst perform a trivial rescaling of the Higgs ﬁeld ϕ so that kinetic terms are normalized.\nTo normalize the Higgs ﬁelds kinetic energy we have to rescale ϕ to:\nH =\n√a f0\nπ\nϕ ,\n(4.9)\nso that the kinetic term becomes\nZ\n1\n2|DµH|2 √g d4x\nThe normalization of the kinetic terms, as in Lemma 4.10 below, imposes a relation between\nthe coupling constants g1, g2, g3 and the coeﬃcient f0, of the form\ng2\n3 f0\n2π2 = 1\n4,\ng2\n3 = g2\n2 = 5\n3 g2\n1 .\n(4.10)\nThe bosonic action (3.41) then takes the form\nS =\nR \u0012\n1\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "The mass matrices of (4.15) satisfy the constraint X σ (mσ ν)2 + (mσ e )2 + 3 (mσ u)2 + 3 (mσ d)2 = 8 M2. (4.16)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The mass relation",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-020-43-the-mass-relation.md",
+      "narrative": null,
+      "content": "The relation between the mass matrices comes from the equality of the Yukawa coupling\nterms LHf. For the standard model these terms are given by Lemma 4.7 below. For the\nspectral action they are given by γ5 M(ϕ) with the notations of (3.28) and (3.31).\nAfter Wick rotation to Euclidean and the chiral transformation U = ei π\n4 γ5 ⊗1 they are the\nsame (cf. Lemma 4.9 below) provided the following equalities hold\n(k(↑3))σκ\n=\ng\n2M mσ\nu δκ\nσ\n(4.15)\n(k(↓3))σκ\n=\ng\n2M mµ\nd Cσµδρ\nµC†\nρκ\n(k(↑1))σκ\n=\ng\n2M mσ\nν δκ\nσ\n(k(↓1))σκ\n=\ng\n2M mµ\ne Ulepσµδρ\nµUlep†\nρκ\nHere the symbol δj\ni is the Kronecker delta (not to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "Let the fermions f be obtained from the quarks and leptons by performing the change of basis (4.20) on the down quarks. Then the following holds. GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "The neutrino masses and mixing are obtained in two additional steps. The ﬁrst is the replacement T(0, Ke, ϕ) 7→T(Kν, K′ e, ϕ), where the Ke of (4.25) is replaced by (Ke)λκ = g 2M mµ eUlepλµδρ µUlep† ρκ, (4.38) while Kν is the neutrino Dirac mass matrix (Kν)λκ = g 2M mλ νδκ λ. (4.39) The second step is the addition of the Majorana mass term Lmass = −1 4 ¯νλ (MR)λκ (1 −γ5)ˆνκ −1 ¯ˆνλ ¯(MR)λκ (1 + γ5)νκ. (4.40)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "The unitary operator U = ei π 4 γ5 ⊗1 commutes with A and γ. One has JU = U∗J and U DA U = D(1,0) + i ⊗D(0,1). (4.45)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coupling of fermions",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "../sections/sec-021-44-the-coupling-of-fermions.md",
+      "narrative": null,
+      "content": "Let us isolate the Yukawa coupling part of the standard model Lagrangian, ignoring first the\nright handed neutrinos (i.e. using the minimal standard model as in [4G]). We consider the\nadditional terms later in Lemma 48. In the minimal case, one has\n\n(4.18) Luys =\n\nd— Bmdah + tet (9+ AL = Pe) +.6- (+299) -\n\ngma (H(ee%) + ip (7) ))+ ane (-my(a) Cy, (1 — 7) d*) + mi (a Crx(h + a\") +\nz 5 ‘ m> = m\n\nane (my@cl. +7 >)ur) - m(A\\C4,. (1 —7°)u *) - Sar (u}ur) - gt H (da) +\n\nig m> -\\_5 m\ngue $9 (up yu}) _ ig 49D °d})\n\naA A eA — WA wr\nser me eC — U5 mm, U\n\nThe matrix Cy, is the mixing matrix. It does ente",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "lem-sec-022-01.md",
+      "narrative": null,
+      "content": "One has Lg = −M2W + µ W − µ − 2c2w M2Z0 µZ0 µ −1 4 F a µν F µν a −1 X a ( X µ ∂µGa µ)2 (4.54)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The self interaction of the gauge bosons",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-022-45-the-self-interaction-of-the-gauge-bosons.md",
+      "narrative": null,
+      "content": "The self-interaction terms for the gauge ﬁelds have the form\nLg =\n(4.53)\n−1\n2∂νga\nµ∂νga\nµ −gsf abc∂µga\nνgb\nµgc\nν −1\n4g2\nsf abcf adegb\nµgc\nνgd\nµge\nν −∂νW +\nµ ∂νW −\nµ −M2W +\nµ W −\nµ −\n1\n2∂νZ0\nµ∂νZ0\nµ −\n1\n2c2w M2Z0\nµZ0\nµ −1\n2∂µAν∂µAν −igcw(∂νZ0\nµ(W +\nµ W −\nν −W +\nν W −\nµ ) −\nZ0\nν(W +\nµ ∂νW −\nµ −W −\nµ ∂νW +\nµ ) + Z0\nµ(W +\nν ∂νW −\nµ −W −\nν ∂νW +\nµ )) −igsw(∂νAµ(W +\nµ W −\nν −\nW +\nν W −\nµ ) −Aν(W +\nµ ∂νW −\nµ −W −\nµ ∂νW +\nµ ) + Aµ(W +\nν ∂νW −\nµ −W −\nν ∂νW +\nµ )) −\n1\n2g2W +\nµ W −\nµ W +\nν W −\nν + 1\n2g2W +\nµ W −\nν W +\nµ W −\nν + g2c2\nw(Z0\nµW +\nµ Z0\nνW −\nν −Z0\nµZ0\nµW +\nν W −\nν ) +\ng2s2\nw(AµW +\nµ AνW −\nν −A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "lem-sec-023-01.md",
+      "narrative": null,
+      "content": "With the notation (4.22) of Lemma 4.7, the minimal coupling terms (4.57) are given by LHg = −1 2 |Dµ ϕ|2 (4.58) with Dµϕ given by (3.36), with g2 = g, g1 = g′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The minimal coupling of the Higgs ﬁeld",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-023-46-the-minimal-coupling-of-the-higgs-ﬁeld.md",
+      "narrative": null,
+      "content": "4.6. The minimal coupling of the Higgs ﬁeld.\nWe add the mass terms (4.54) to the minimal coupling terms of the Higgs ﬁelds with the\ngauge ﬁelds which is of the form\nLHg =\n(4.57)\n−1\n2∂µH∂µH −∂µφ+∂µφ−−1\n2∂µφ0∂µφ0 −gMW +\nµ W −\nµ H −1\n2g M\nc2w Z0\nµZ0\nµH −\n1\n2ig\n\u0000W +\nµ (φ0∂µφ−−φ−∂µφ0) −W −\nµ (φ0∂µφ+ −φ+∂µφ0)\n\u0001\n+\n1\n2g\n\u0000W +\nµ (H∂µφ−−φ−∂µH) + W −\nµ (H∂µφ+ −φ+∂µH)\n\u0001\n+ 1\n2g 1\ncw (Z0\nµ(H∂µφ0 −φ0∂µH) −\nig s2\nw\ncw MZ0\nµ(W +\nµ φ−−W −\nµ φ+) + igswMAµ(W +\nµ φ−−W −\nµ φ+) −ig 1−2c2\nw\n2cw Z0\nµ(φ+∂µφ−−\nφ−∂µφ+) + igswAµ(φ+∂µφ−−φ−∂µφ+) −1\n4g2W +\nµ W −\nµ\n\u0000H2 + (φ0)2 + 2φ+φ−\u0001\n−\n1\n8g2 1\nc2w Z0\nµZ0\nµ\n\u0000H2 + (φ0)2 + 2(2s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "Let ϕ be given by (4.34) and assume that αh = m2 h 4 M2 . (4.61) Then one has LH = −1 8g2αh |ϕ|4 + (αh M2 −βh 2 ) |ϕ|2. (4.62)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-04.md",
+      "narrative": null,
+      "content": "Assume that the matrix MR is a multiple of a ﬁxed matrix kR, i.e. is of the form MR = x kR. In ﬂat space, and assuming that the Higgs vacuum expectation value is negligible with respect to uniﬁcation scale, the equations of motion of the spectral action ﬁx x to be either x = 0 (unstable) or satisfying x2 = 2 f2 Λ2 Tr(k∗ RkR) f0 Tr((k∗ RkR)2) . (5.17)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-06.md",
+      "narrative": null,
+      "content": "Under the hypothesis of Lemma 5.2, the cosmological term gives π2 \u0012 48f4 −Tr(k∗ RkR)2 Tr((k∗ RkR)2) f 2 f0 \u0013 Λ4. (5.38)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-07.md",
+      "narrative": null,
+      "content": "Under the hypothesis of Lemma 5.2, the coeﬃcient of the Higgs quadratic term −µ2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-08.md",
+      "narrative": null,
+      "content": "The range of variation of the largest eigenvalue, ρ(kR) = ||k∗ RkR Tr(k∗ RkR) Tr((k∗ RkR)2) || for kR ∈MN(C), is the interval [1, 1 2(1 + √ N)]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "lem-sec-024-13.md",
+      "narrative": null,
+      "content": "• A non-zero term aα with α < 0 gives a pole of ζD at −2α with Ress=−2α ζD(s) = 2 aα Γ(−α) (6.22) • The absence of log t terms gives regularity at 0 for ζD with ζD(0) = a0 . (6.23) CHAMSEDDINE, CONNES, AND MARCOLLI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-024-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "prop-sec-024-09.md",
+      "narrative": null,
+      "content": "Let N be the number of generations. 1. If N = 1, or if kR is a scalar multiple of a partial isometry, the quadratic term (5.44) is positive and its size of the order of f2 Λ2 f0 . 2. If N ≥2, the quadratic term (5.44) can vanish and have arbitrary sign, provided one chooses kR, kν appropriately.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prop-sec-024-15",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "prop-sec-024-15.md",
+      "narrative": null,
+      "content": "Thus if we take for Λ the energy scale of the meeting point of the electroweak and strong couplings, namely Λ ∼1.1 × 1017 GeV, we get κ−1 0 ∼1.1 × 1017 p f 2 GeV On the other hand using the usual form of the gravitational action S(g) = 1 16πG Z M R dv , (5.35) and the experimental value of Newton’s constant at ordinary scales one gets the coupling constant κ0(MZ) = √ 8πG , κ−1 0 ∼1.221 1019/ √ 8π ∼2.43 × 1018 GeV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Higgs ﬁeld self interaction",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "../sections/sec-024-47-the-higgs-ﬁeld-self-interaction.md",
+      "narrative": null,
+      "content": "4.7. The Higgs ﬁeld self interaction.\nThe Higgs self coupling terms of the standard model are of the form\nLH =\n(4.60)\n−1\n2m2\nhH2 −βh\n\u0010\n2M2\ng2 + 2M\ng H + 1\n2(H2 + φ0φ0 + 2φ+φ−)\n\u0011\n+ 2M4\ng2 αh −\ngαhM\n\u0000H3 + Hφ0φ0 + 2Hφ+φ−\u0001\n−\n1\n8g2αh\n\u0000H4 + (φ0)4 + 4(φ+φ−)2 + 4(φ0)2φ+φ−+ 4H2φ+φ−+ 2(φ0)2H2\u0001\n.\nLemma 4.12. Let ϕ be given by (4.34) and assume that\nαh = m2\nh\n4 M2 .\n(4.61)\nThen one has\nLH = −1\n8g2αh |ϕ|4 + (αh M2 −βh\n2 ) |ϕ|2.\n(4.62)\nProof. The expression (4.60) can be simpliﬁed in terms of the ﬁeld ψ. The quartic term is\nsimply given by\n−1\n8g2αh\n\u0000H4 + (φ0)4 + 4(φ+φ−)2 + 4(φ0)2φ+φ−+ 4H2φ+φ−+ 2(φ0)2H2\u0001\n= −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-024-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "rem-sec-024-02.md",
+      "narrative": null,
+      "content": "The tadpole term (4.67) is understandable, since in renormalizing the terms one has to maintain the vanishing of the term in H. The assumption (4.61) is a standard relation giving the Higgs mass (cf. [46]). 4.8. The coupling with gravity. By construction the spectral action delivers the standard model minimally coupled with Einstein gravity. Thus the Lagrangian of the standard model of §4.1 is now written using the Riemannian metric gµν and the corresponding Dirac operator ∂/M in curved space-time. We shall check below that the Einstein term (the scalar curvature) admits the correct physical s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-024-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "rem-sec-024-03.md",
+      "narrative": null,
+      "content": "The estimate of equation (5.10) is obtained under the assumption that the Yukawa coupling for the top quark is the dominant term and the others are negligible. How- ever, due to the see-saw mechanism discussed in §5.3 below, one should expect that the Yukawa coupling for the tau neutrino is also large and of the same order as the one for the top quark. Thus, the factor of 4/3 in (5.10) should be corrected to 1 as in (5.29) below. One CHAMSEDDINE, CONNES, AND MARCOLLI can check by direct calculation that this does not aﬀect substantially the estimate we obtain for the Higgs mass which is then a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-024-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "rem-sec-024-05.md",
+      "narrative": null,
+      "content": "This is compatible with the scenario proposed by Fukigita and Yanagida (cf. [37]) following the ideas of Sakharov and t’Hooft, to explain the asymmetry between matter and antimatter in the universe. Typical estimates for the large masses of the right handed neutrinos i.e. the eigenvalues of MR are given (cf. [37]) by (mR)1 ≥107GeV , (mR)2 ≥1012GeV , (mR)3 ≥1016GeV . (5.22) 5.4. The fermion–boson mass relation. There are two diﬀerent normalizations for the Higgs ﬁeld in the literature. 1. In Veltman [46] the kinetic term has a factor of 1 2. In Mohapatra–Pal it has a factor of 1 (cf. [37] equat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-024-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "rem-sec-024-11.md",
+      "narrative": null,
+      "content": "Notice that E only appears through the terms Tr \u0012 −R 6 id + E \u0013 , Tr \u0012 (−R 6 id + E)2 \u0013 (6.11) and the boundary term Tr(E;µ µ). Here R;µ µ = ∇µ∇µR and similarly E;µ µ = ∇µ∇µE. 6.1. The generalized Lichnerowicz formula. Let M be a compact Riemannian spin manifold of dimension m, S the spinor bundle with the canonical riemannian connection ∇S. Let V be a hermitian vector bundle over M with a compatible connection ∇V . One lets ∂/V be the Dirac operator on S ⊗V endowed with the tensor product connection ([34] Proposition 5.10) ∇(ξ ⊗v) = (∇S ξ) ⊗v + ξ ⊗(∇V v) (6.12) Let then RV be the bundle endom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/rem-sec-024-14",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "rem-sec-024-14.md",
+      "narrative": null,
+      "content": "The relations (6.22) and (6.23) in particular show that our coeﬃcients f0, f2 and f4 are related to the coeﬃcients of the asymptotic expansion of the spectral action as written in [8] in the following way. Our f0 is the f4 of [8]. Our f2 is 1/2 of the f2 of [8]. Our f4 is 1/2 of the f0 of [8]. In fact our f(u) = χ(u2), for χ as in (2.14) of [8]. References [1] H.Arason, D.J. Castano, B. Kesthlyi, E.J.Piard, P.Ramond, B.D.Wright, Renormalization-group study of the standard model and its extensions: the standard model, Phys. Rev. D, 46 (1992) N.9, 3945–3965. [2] M.F. Atiyah. K-Theory. Benjamin,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/thm-sec-024-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "thm-sec-024-10.md",
+      "narrative": null,
+      "content": "[26] One has : a0(x, P) = (4π)−m/2Tr(id) (6.8) a2(x, P) = (4π)−m/2Tr \u0012 −R 6 id + E \u0013 (6.9) a4(x, P) = (4π)−m/2 1 360Tr(−12R;µ µ + 5R2 −2Rµν Rµν (6.10) + 2Rµνρσ Rµνρσ −60 R E + 180 E2 + 60 E;µ µ + 30 Ωµν Ωµν)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0610241v1/blocks/thm-sec-024-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 71,
+      "target": "thm-sec-024-12.md",
+      "narrative": null,
+      "content": "let s = −R be the scalar curvature of M, then the Dirac operator ∂/V satisﬁes ∂/2 V = ∇∗∇+ 1 4 s + RV (6.14) where ∇∗∇is the connection Laplacian of S ⊗V . GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING Notice that all three terms of the right hand side of (6.14) are self-adjoint operators by construction. In particular RV is self-adjoint. One can write RV in the following form where the terms in the sum are pairwise orthogonal for the natural inner product on the Cliﬀord algebra (induced by the Hilbert-Schmidt inner product ⟨A, B⟩= Tr(A∗B) in the spin representation) RV = X j<k γjγk ⊗R(V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

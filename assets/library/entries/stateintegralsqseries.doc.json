@@ -1,0 +1,940 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "stateintegralsqseries",
+  "title": "stateintegralsqseries",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "State-integrals and their q-series",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-state-integrals-and-their-q-series"
+    },
+    {
+      "level": 2,
+      "title": "q-difference equations",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-q-difference-equations"
+    },
+    {
+      "level": 2,
+      "title": "The case of the 41 knot",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-case-of-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "The case of the 52 knot",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-case-of-the-52-knot"
+    },
+    {
+      "level": 1,
+      "title": "Proofs",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-proofs"
+    },
+    {
+      "level": 2,
+      "title": "A residue computation",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-a-residue-computation"
+    },
+    {
+      "level": 2,
+      "title": "The Taylor series of m(x) and \"0365n(x)",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The connection with the differential operators l and \"0365l",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-the-connection-with-the-differential-operator"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-24-proof-of-theorem-11"
+    },
+    {
+      "level": 2,
+      "title": "Some auxiliary power series",
+      "number": "2.5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-25-some-auxiliary-power-series"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 2.2",
+      "number": "2.6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-26-proof-of-proposition-22"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma 1.5",
+      "number": "2.7",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-27-proof-of-lemma-15"
+    },
+    {
+      "level": 1,
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-3-an-application-state-integrals-of-the-41-and-5"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Corollary 1.7",
+      "number": "3.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-31-proof-of-corollary-17"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Corollary 1.8",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-32-proof-of-corollary-18"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integrals",
+          "heading": false
+        },
+        {
+          "term": "ucts",
+          "heading": false
+        },
+        {
+          "term": "e2πiτ",
+          "heading": false
+        }
+      ],
+      "extract": "FROM STATE INTEGRALS TO q-SERIES STAVROS GAROUFALIDIS AND RINAT KASHAEV Abstract. It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e−2πi/τ. We illustrate this fact by giving a detailed proof for a family of one-dimensional",
+      "extractCut": true,
+      "blocks": [
+        "library/stateintegralsqseries/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-state-integrals-and-their-q-series",
+      "number": "1.1",
+      "title": "State-integrals and their q-series",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 911,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integrals",
+          "heading": true
+        },
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "inb",
+          "heading": false
+        },
+        {
+          "term": "faddeev quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "eδl",
+          "heading": false
+        }
+      ],
+      "extract": "State-integrals and their q-series 2 1.2. q-diﬀerence equations 4 1.3. The case of the 41 knot 4 1.4. The case of the 52 knot 5 2. Proofs 6 2.1. A residue computation 6 2.2. The Taylor series of φm(x) and eφn(x) 8 2.3. The connection with the diﬀerential operators δl and eδl 8 2.4. Proof of Theorem 1.1 10 2.5. Some auxiliary power series 10 2.6. Proof of Proposition 2.2 12 2.7. Proof of Lemma 1.5 13 3. An",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-q-difference-equations",
+      "number": "1.2",
+      "title": "q-difference equations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm equation",
+          "heading": false
+        },
+        {
+          "term": "ˆxf",
+          "heading": false
+        },
+        {
+          "term": "qjx",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the operators ˆx and ˆE which act on f(x) ∈Q(q)[[x]] by: ( ˆEf)(x) = f(qx), (ˆxf)(x) = xf(x) . Observe that ˆEˆx = qˆx ˆE. Lemma 1.5. (a) We have: (10) FA,B(q−1, x) = eFA,B(q, x) . (b) FA,B satisﬁes the linear q-diﬀerence equation (11) \u0010 (1 −ˆE)B −(−1)AqAx ˆEA\u0011 FA,B(q, x) = 0 . Corollary 1.6. (a) If we deﬁne ω(q, x) = FA,B(q, qx)/FA,B(q, x) and ω(q, x)n = Qn j=1 ω(q, qjx), then ω satisﬁes the nonlinear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-case-of-the-41-knot",
+      "number": "1.3",
+      "title": "The case of the 41 knot",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "experimental facts",
+          "heading": false
+        },
+        {
+          "term": "detailed discussion",
+          "heading": false
+        },
+        {
+          "term": "dgg",
+          "heading": false
+        }
+      ],
+      "extract": "and 52 knots is given by [KLV16, AK] I1,2 = I41 I2,3 = I52 . In this section, let (13) F(q, x) = F1,2(q, x) = ∞ X n=0 (−1)nq 1 2 n(n+1) (q)2 n xn . Corollary 1.7. (a) We have: (14) I41(b) = −i 2 \u0012q ˜q \u0013 1 24 \u0000b G(q)g(˜q) −b−1G(˜q)g(q) \u0001 where g(q) = ∞ X n=0 (−1)nq 1 2 n(n+1) (q)2 n (15a) G(q) = ∞ X m=0 1 + 2m −4 ∞ X s=1 qs(m+1) 1 −qs ! (−1)mq 1 2 m(m+1) (q)2 m (15b) FROM STATE INTEGRALS TO q-SERIES 5 (b) The series",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-case-of-the-52-knot",
+      "number": "1.4",
+      "title": "The case of the 52 knot",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q2x",
+          "heading": false
+        },
+        {
+          "term": "q3x",
+          "heading": false
+        },
+        {
+          "term": "exm",
+          "heading": false
+        }
+      ],
+      "extract": "F(q, x) = F2,3(q, x) = ∞ X m=0 tm(q)xm, eF(q, ex) = F1,3(q, ex) = ∞ X m=0 Tm(q)exm where tm(q) = qm(m+1) (q)3 m , Tn(q) = (−1)nq 1 2 n(n+1) (q)3 n = tn(q−1) . Let Rm,n(q, ˜q) = −b2 2 \u0010 1 + 4m + 4m2 −6E(m) 1 (q) −12mE(m) 1 (q) + 9E(m)2 1 (q) −3E(m) 2 (q) \u0011 − 1 2πi + 1 2 \u0010 1 + 2m −3E(m) 1 (q) \u0011 \u0010 1 + 2n −6E(n) 1 (˜q) \u0011 + b−2 2 \u0010 −n −n2 −6E(0) 2 (˜q) + 3E(n) 1 (˜q) + 6nE(n) 1 (˜q) −9E(n)2 1 (˜q) + 3E(n) 2 (˜q) \u0011 ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-proofs",
+      "number": "2",
+      "title": "Proofs",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-a-residue-computation",
+      "number": "2.1",
+      "title": "A residue computation",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πb",
+          "heading": false
+        },
+        {
+          "term": "eφn",
+          "heading": false
+        },
+        {
+          "term": "qe2πbx",
+          "heading": false
+        },
+        {
+          "term": "qe2πb",
+          "heading": false
+        },
+        {
+          "term": "residue",
+          "heading": true
+        },
+        {
+          "term": "taylor series",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        }
+      ],
+      "extract": "residue theorem on a semicircle γR with center 0 and radius R, oriented counterclockwise in the upper half-plane: Then, we will take the limit R →∞. To compute the residue of the integrand, we need to expand Φb(x) near the pole xm,n = cb + ibm + ib−1n for natural numbers m and n. Let φm(x) = (qm+1ex; q)∞ (qm+1; q)∞ (23) eφn(x) = (˜q; ˜q)∞ (˜qex; ˜q)∞ (˜q−1; ˜q−1)n (˜q−1ex; ˜q−1)n (24) Lemma 2.1. We have: (25) Φb(x +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-the-connection-with-the-differential-operator",
+      "number": "2.3",
+      "title": "The connection with the differential operators l and \"0365l",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eδl",
+          "heading": false
+        },
+        {
+          "term": "exm",
+          "heading": false
+        },
+        {
+          "term": "rinat",
+          "heading": false
+        }
+      ],
+      "extract": "connect the series E(m) l (q) and eE(m) l (˜q) with the action of the diﬀerential operators δl and eδl on a series F(x) and eF(ex) respectively. Consider formal power series F(x) = ∞ X m=0 t(m)xm eF(ex) = ∞ X m=0 et(m)exm . FROM STATE INTEGRALS TO q-SERIES 9 Lemma 2.3. We have: ∞ X m=0 rY j=1 E(m) lj (q) ! t(m) = ⟨ rY j=1 δljF⟩ (32) ∞ X m=0 mrt(m) = ⟨δrF⟩ (33) and ∞ X n=0 rY j=1 eE(n) lj (˜q) ! et(n) = ⟨ rY j=1 eδlj",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-proof-of-theorem-11",
+      "number": "2.4",
+      "title": "Proof of Theorem 1.1",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eδl",
+          "heading": false
+        },
+        {
+          "term": "amqa",
+          "heading": false
+        },
+        {
+          "term": "convert",
+          "heading": false
+        }
+      ],
+      "extract": "t(m) = (−1)AmqA m(m+1) 2 (q)B m , F(q, x) = ∞ X m=0 t(m)xm and et(n) = (−1)(B−A)n˜q(B−A) n(n+1) 2 (˜q)B n , eF(˜q, ex) = ∞ X n=0 et(n)xn . Use Equations (27) and (28) and Proposition 2.2 to expand FA,B,m,n(w) as a power series with coeﬃcients polynomials in the variables m, E(m) l (q) and n, eE(n) l (˜q) and b±1 and (2πi)−1. Now apply Lemma 2.3 to convert the variables m, E(m) l (q), n, eE(n) l (˜q) in terms of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-25-some-auxiliary-power-series",
+      "number": "2.5",
+      "title": "Some auxiliary power series",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "aex",
+          "heading": false
+        },
+        {
+          "term": "sxs",
+          "heading": false
+        },
+        {
+          "term": "rxr",
+          "heading": false
+        }
+      ],
+      "extract": "(36) 1 aex −1 = ∞ X n=0 pn(a)xn where pn(a) = − a n!(1 −a)n+1 n−1 X m=0 An,mam p0(a) = − 1 1 −a and An,m are Euler triangular numbers (sequence A008292 in the online encyclopedia of integer sequences [Slo]) that satisfy the recursion An,m = (n −m)An−1,m−1 + (m + 1)An−1,m and also given by the sum An,m = m X k=0 (−1)k \u0012n + 1 k \u0013 (m + 1 −k)n . For a detailed discussion on this subject, see [FS70]. A table of the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-26-proof-of-proposition-22",
+      "number": "2.6",
+      "title": "Proof of Proposition 2.2",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qkr",
+          "heading": false
+        },
+        {
+          "term": "eφn",
+          "heading": false
+        },
+        {
+          "term": "qex",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2.6. For part (b), we will use the series E[m] l (q) = ∞ X s=1 sk−1qs(m+1) 1 −qs Using log(eφn(x)) = log \u0012 (˜q; ˜q)∞ (˜qex; ˜q)∞ \u0013 + log \u0012 (˜q−1; ˜q−1)n (˜q−1ex; ˜q−1)n \u0013 and the proof of part (a) of Proposition 2.2, it follows that log(eφn(x)) = log \u0012 (˜q; ˜q)∞ (˜qex; ˜q)∞ \u0013 + log \u0012 (˜q−1; ˜q−1)n (˜q−1ex; ˜q−1)n \u0013 = ∞ X l=1 1 l! l−1 X r=0 Al−1,rE(0) l,r+1(˜q)xl + ∞ X l=1 1 l! l−1 X r=0 Al−1,rE[n]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-27-proof-of-lemma-15",
+      "number": "2.7",
+      "title": "Proof of Lemma 1.5",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qjx",
+          "heading": false
+        },
+        {
+          "term": "aqaxt",
+          "heading": false
+        },
+        {
+          "term": "aqa",
+          "heading": false
+        }
+      ],
+      "extract": "eFA,B. Part (b) follows from an application of Zeilberger’s creative telescoping [Zei91]. To apply the method, deﬁne t(m, x) = (−1)AmqA m(m+1) 2 (q)B m xm Then, observe that t satisﬁes the recursions with respect to m and x: (1 −qm+1)Bt(m + 1, x) = (−1)AqA(m+1)t(m, x) t(m, qx) = qmt(m, x) . Now, we eliminate qm from the above equations as follows. The second equation implies that t(m + 1, qjx) = qj(m+1)t(m + 1, x).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-an-application-state-integrals-of-the-41-and-5",
+      "number": "3",
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-31-proof-of-corollary-17",
+      "number": "3.1",
+      "title": "Proof of Corollary 1.7",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 126,
+      "summary": null,
+      "keywords": [],
+      "extract": "1 (b(1 −eb−1w))2 = 1 w2 −b−1 w + O(1) (φm(bw))2 = 1 −2E(m) 1 (q)bw + O(w2) (eφn(b−1w))2 = 1 + 2 eE(n) 1 (˜q)b−1w + O(w2) e 1 4πiw2+w(b(m+1/2)+b−1(n+1/2)) = 1 + \u00121 2 + m \u0013 bw + \u00121 2 + n \u0013 b−1w + O(w2) Combined with eE(n) 1 (˜q) = −n + E(n) 1 (˜q), it follows that the residue R = Resw=0(F1,2,m,n(w)) is given by R = \u0012 b \u00121 2 + m −2E(m) 1 (q) \u0013 −b−1 \u00121 2 + n −2E(n) 1 (˜q) \u0013\u0013 The above, together with the fact that tn(q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-32-proof-of-corollary-18",
+      "number": "3.2",
+      "title": "Proof of Corollary 1.8",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b2m",
+          "heading": false
+        },
+        {
+          "term": "b2w",
+          "heading": false
+        },
+        {
+          "term": "resw",
+          "heading": false
+        }
+      ],
+      "extract": "1 (b(1 −eb−1w))3 = −1 w3 + 3b−1 2w2 −b−2 w + O(1) (φm(bw))3 = 1 −3E(m) 1 (q) bw + 3 2 \u0010 3E(m)2 1 (q) −E(m) 2 (q) \u0011 b2w2 + O(w3) (eφn(b−1w))3 = 1 + 3 eE(n) 1 (˜q) b−1w + 3 2 \u0010 3 eE(n)2 1 (˜q) + eE(n) 2 (˜q) \u0011 b−2w2 + O(w3) e 2 4πiw2+2w(b(m+1/2)+b−1(n+1/2)) = 1 + \u0000(1 + 2m)b + (1 + 2n)b−1\u0001 w+ \u0012 1 + b2 + b−2 2 + 1 2πi + 2b2m2 + 2b−2n2 + 4mn +2(1 + b2)m + 2(1 + b−2)n \u0001 w2 + O(w3) If R = Resw=0(F2,3,m,n(w)), then Rm,n =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "in the spring of 2013. The ﬁrst author wishes to thank the University of Geneva for its hospitality, and Don Zagier for encouragement and stimulating conversations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "masha vlasenko",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "sander zwegers",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        }
+      ],
+      "extract": "[AK] Jørgen E. Andersen and Rinat M. Kashaev, A TQFT from quantum Teichm¨uller theory, arXiv: 1109.6295, Preprint 2011. [And76] George E. Andrews, The theory of partitions, Addison-Wesley Publishing Co., Reading, Mass.- London-Amsterdam, 1976, Encyclopedia of Mathematics and its Applications, Vol. 2. [BDP14] Christopher Beem, Tudor Dimofte, and Sara Pasquetti, Holomorphic blocks in three dimensions, J. High Energy",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "Introduction",
+          "A residue computation",
+          "Proof of Corollary 1.8 14 Acknowledgments"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rinat kashaev",
+      "heading": false
+    },
+    {
+      "term": "stavros garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "nahm equation",
+      "heading": false
+    },
+    {
+      "term": "q-series",
+      "heading": true
+    },
+    {
+      "term": "state integrals",
+      "heading": false
+    },
+    {
+      "term": "eφn",
+      "heading": false
+    },
+    {
+      "term": "q-diﬀerence equation",
+      "heading": false
+    },
+    {
+      "term": "multi-dimensional state",
+      "heading": false
+    },
+    {
+      "term": "power series",
+      "heading": true
+    },
+    {
+      "term": "taylor series",
+      "heading": true
+    },
+    {
+      "term": "e2πb",
+      "heading": false
+    },
+    {
+      "term": "nahm conjecture",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/stateintegralsqseries"
+  }
+}

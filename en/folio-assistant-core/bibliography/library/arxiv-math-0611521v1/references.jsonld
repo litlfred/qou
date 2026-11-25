@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0611521v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The q-analogue of the wild fundamental group",
+      "dcterms:creator": [
+        "Ramis∗, J.-P.",
+        "†, J. Sauloy"
+      ],
+      "dcterms:issued": "D:20211020",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0611521",
+      "dcterms:abstract": "We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.",
+      "dcterms:source": "library/arxiv-math-0611521v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0611521v1"
+    }
+  ]
+}

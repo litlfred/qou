@@ -1,0 +1,2700 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1801.05145v1",
+  "title": "arxiv-1801.05145v1",
+  "variant": "pdf",
+  "pages": 91,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quantum groups and global bases",
+      "number": "1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-quantum-groups-and-global-bases"
+    },
+    {
+      "level": 2,
+      "title": "Quantum groups",
+      "number": "1.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Integrable representations",
+      "number": "1.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-integrable-representations"
+    },
+    {
+      "level": 2,
+      "title": "Crystal bases and global bases",
+      "number": "1.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-crystal-bases-and-global-bases"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices for",
+      "number": "2.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-22-r-matrices-for"
+    },
+    {
+      "level": 1,
+      "title": "Simplicity of heads and socles of convolution products",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-simplicity-of-heads-and-socles-of-convolution"
+    },
+    {
+      "level": 2,
+      "title": "Homogeneous degrees of R-matrices",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-homogeneous-degrees-of-r-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Properties of $\\tL(M,N)$ and $\\de(M,N)$",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-properties-of-tlmn-and-demn"
+    },
+    {
+      "level": 1,
+      "title": "Leclerc's conjecture",
+      "number": "4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-leclercs-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Leclerc's conjecture",
+      "number": "4.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-leclercs-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Geometric results",
+      "number": "4.2",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-42-geometric-results"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "4.3",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-43-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Quantum cluster algebras",
+      "number": "5",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-5-quantum-cluster-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Quantum seeds",
+      "number": "5.1",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-51-quantum-seeds"
+    },
+    {
+      "level": 2,
+      "title": "Mutation",
+      "number": "5.2",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-52-mutation"
+    },
+    {
+      "level": 1,
+      "title": "Monoidal categorification of cluster algebras",
+      "number": "6",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-6-monoidal-categorification-of-cluster-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Ungraded cases",
+      "number": "6.1",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-61-ungraded-cases"
+    },
+    {
+      "level": 2,
+      "title": "Graded cases",
+      "number": "6.2",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-62-graded-cases"
+    },
+    {
+      "level": 1,
+      "title": "Monoidal categorification via modules over KLR algebras",
+      "number": "7",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-7-monoidal-categorification-via-modules-over-klr"
+    },
+    {
+      "level": 2,
+      "title": "Admissible pair",
+      "number": "7.1",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-71-admissible-pair"
+    },
+    {
+      "level": 1,
+      "title": "Quantum coordinate rings and modified quantized enveloping algebras",
+      "number": "8",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-8-quantum-coordinate-rings-and-modified-quantize"
+    },
+    {
+      "level": 2,
+      "title": "Quantum coordinate ring",
+      "number": "8.1",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Unipotent quantum coordinate ring",
+      "number": "8.2",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-82-unipotent-quantum-coordinate-ring"
+    },
+    {
+      "level": 2,
+      "title": "Modified quantum enveloping algebra",
+      "number": "8.3",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-83-modified-quantum-enveloping-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Relationship of $\\Ag$ and $\\tU$",
+      "number": "8.4",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Relationship of $\\Ag$ and $\\An$",
+      "number": "8.5",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Global basis of $\\widetilde{U}_q(\\mathfrak{g})$ and tensor products of $U_q(\\mathfrak{g})$-modules in $\\mathcal{O}_{{\\rm int}}(\\mathfrak{g})$",
+      "number": "8.6",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Quantum minors and T-systems",
+      "number": "9",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-9-quantum-minors-and-t-systems"
+    },
+    {
+      "level": 2,
+      "title": "Quantum minors",
+      "number": "9.1",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "T-system",
+      "number": "9.2",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-92-t-system"
+    },
+    {
+      "level": 2,
+      "title": "Revisit of crystal bases and global bases",
+      "number": "9.3",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-93-revisit-of-crystal-bases-and-global-bases"
+    },
+    {
+      "level": 2,
+      "title": "Generalized T-system",
+      "number": "9.4",
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-94-generalized-t-system"
+    },
+    {
+      "level": 1,
+      "title": "KLR algebras and their modules",
+      "number": "10",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-10-klr-algebras-and-their-modules"
+    },
+    {
+      "level": 2,
+      "title": "Chevalley and Kashiwara operators",
+      "number": "10.1",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-101-chevalley-and-kashiwara-operators"
+    },
+    {
+      "level": 2,
+      "title": "Determinantial modules and T-system",
+      "number": "10.2",
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-102-determinantial-modules-and-t-system"
+    },
+    {
+      "level": 2,
+      "title": "Generalized T-system on determinantial module",
+      "number": "10.3",
+      "page": 81,
+      "pageLabel": "81",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-103-generalized-t-system-on-determinantial-modul"
+    },
+    {
+      "level": 1,
+      "title": "Monoidal categorification of $A_q(\\mathfrak{n}(w))$",
+      "number": "11",
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-11-monoidal-categorification-of-a-qmathfraknw"
+    },
+    {
+      "level": 2,
+      "title": "Quantum cluster algebra structure on $A_q(\\mathfrak{n}(w))$",
+      "number": "11.1",
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-031-111-quantum-cluster-algebra-structure-on-a-qmath"
+    },
+    {
+      "level": 2,
+      "title": "Admissible seeds in the monoidal category $\\shc_w$",
+      "number": "11.2",
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-032-112-admissible-seeds-in-the-monoidal-category-sh"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal categoriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "cluster algebras",
+          "heading": false
+        },
+        {
+          "term": "klr algebras",
+          "heading": false
+        },
+        {
+          "term": "monoidal seed",
+          "heading": false
+        },
+        {
+          "term": "quantum cluster",
+          "heading": false
+        },
+        {
+          "term": "generalized t-system",
+          "heading": false
+        },
+        {
+          "term": "monoidal categorification",
+          "heading": false
+        },
+        {
+          "term": "global bases",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1801.05145v1 [math.RT] 16 Jan 2018 MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS SEOK-JIN KANG, MASAKI KASHIWARA1, MYUNGHO KIM2 AND SE-JIN OH3 Abstract. We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categoriﬁcation via the representa- tions of symmetric",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1801.05145v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": "3",
+      "labelEnd": "9",
+      "words": 3080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal seed",
+          "heading": false
+        },
+        {
+          "term": "cite gls",
+          "heading": false
+        },
+        {
+          "term": "skew-symmetric cluster",
+          "heading": false
+        },
+        {
+          "term": "seed mathscr",
+          "heading": false
+        },
+        {
+          "term": "quantum seed",
+          "heading": false
+        },
+        {
+          "term": "category shc",
+          "heading": false
+        },
+        {
+          "term": "monoidal categorification",
+          "heading": false
+        },
+        {
+          "term": "cluster algebras",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this paper is to provide a monoidal categorification of the quantum cluster algebra structure on the unipotent quantum coordinate ring $A_q(\\n(w))$, which is associated with a symmetric Kac-Moody algebra $\\g$ and a Weyl group element $w$. The notion of cluster algebras was introduced by Fomin and Zelevinsky in \\cite{FZ02} for studying total positivity and upper global bases. Since their introduction,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-quantum-groups-and-global-bases",
+      "number": "1",
+      "title": "Quantum groups and global bases",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha ran",
+          "heading": false
+        },
+        {
+          "term": "rootl sum",
+          "heading": false
+        },
+        {
+          "term": "subset rootl",
+          "heading": false
+        },
+        {
+          "term": "quad varphi",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "quad overline",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        },
+        {
+          "term": "lan",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we briefly recall the quantum groups and the crystal and global bases theory for $U_q(\\g)$. We refer to \\cite{Kash91,Kas93,Kas95} for materials in this subsection. \\subsection{Quantum groups} \\label{subsec:qgroups} Let $I$ be an index set. A \\emph{Cartan datum} is a quintuple $(A,\\wl, \\Pi,\\wl^{\\vee},\\Pi^{\\vee})$ consisting of \\begin{enumerate}[(i)] \\item an integer-valued matrix $A=(a_{ij})_{i,j \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-integrable-representations",
+      "number": "1.2",
+      "title": "Integrable representations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "comultiplications comp",
+          "heading": false
+        },
+        {
+          "term": "tens",
+          "heading": false
+        },
+        {
+          "term": "quad comp",
+          "heading": false
+        },
+        {
+          "term": "vph",
+          "heading": false
+        },
+        {
+          "term": "quad comm",
+          "heading": false
+        },
+        {
+          "term": "bigoplus eta",
+          "heading": false
+        },
+        {
+          "term": "oint",
+          "heading": false
+        },
+        {
+          "term": "integrable",
+          "heading": true
+        }
+      ],
+      "extract": "A $U_q(\\g)$-module $M$ is called {\\em integrable} if $M= \\bigoplus_{\\eta \\in \\wl} M_\\eta$ where $M_\\eta \\seteq \\{ m \\in M \\ | \\ q^hm=q^{\\lan h,\\eta \\ra} m \\}$, $\\dim M_\\eta < \\infty$, and the actions of $e_i$ and $f_i$ on $M$ are locally nilpotent for all $i \\in I$. We denote by $\\Oint(\\g)$ the category of integrable left $U_q(\\g)$-modules $M$ satisfying that there exist finitely many weights $\\la_1$, \\ldots,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-crystal-bases-and-global-bases",
+      "number": "1.3",
+      "title": "Crystal bases and global bases",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 18,
+      "labelStart": "12",
+      "labelEnd": "18",
+      "words": 2174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tens isoto",
+          "heading": false
+        },
+        {
+          "term": "vee seteq",
+          "heading": false
+        },
+        {
+          "term": "crystal",
+          "heading": true
+        },
+        {
+          "term": "soplus beta",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "tens mapsto",
+          "heading": false
+        },
+        {
+          "term": "upper crystal",
+          "heading": false
+        },
+        {
+          "term": "crystal lattice",
+          "heading": false
+        }
+      ],
+      "extract": "For a subring $A$ of $\\Q(q)$, we say that $L$ is an $A$-{\\em lattice} of a $\\Q(q)$-vector space $V$ if $L$ is a free $A$-submodule of $V$ such that $V=\\Q(q)\\tens_AL$. Let us denote by $\\QA_0$ (resp.\\ $\\QA_\\infty$) the ring of rational functions in $\\Q(q)$ which are regular at $q=0$ (resp.\\ $q=\\infty$). Set $\\QA\\seteq \\Q[q^{\\pm1}]$ . \\medskip Let $M$ be a $\\U$-module in $\\Oint(\\g)$. Then, for each $i \\in I$, any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-r-matrices-for",
+      "number": "2.2",
+      "title": "R-matrices for",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "col conv",
+          "heading": false
+        },
+        {
+          "term": "conv subset",
+          "heading": false
+        },
+        {
+          "term": "cite kkko",
+          "heading": false
+        },
+        {
+          "term": "tens",
+          "heading": false
+        },
+        {
+          "term": "rmat",
+          "heading": false
+        },
+        {
+          "term": "smod",
+          "heading": false
+        },
+        {
+          "term": "let beta",
+          "heading": false
+        },
+        {
+          "term": "vphi",
+          "heading": false
+        }
+      ],
+      "extract": "\\hfill For $|\\beta|=n$ and $1\\le a<n$, we define $\\vphi_a\\in R( \\beta)$ by \\eqn&&\\ba{l} \\vphi_a e(\\nu)= \\begin{cases} \\bl\\tau_ax_a-x_{a}\\tau_a\\br e(\\nu) & \\text{if $\\nu_a=\\nu_{a+1}$,} \\\\[2ex] \\tau_ae(\\nu)& \\text{otherwise.} \\end{cases} \\ea \\eneqn They are called the {\\em intertwiners}. Since $\\{\\vphi_a\\}_{1\\le a<n}$ satisfies the braid relation, $\\vphi_w\\seteq\\vphi_{i_1}\\cdots\\vphi_{i_\\ell}$ does not depend on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-simplicity-of-heads-and-socles-of-convolution",
+      "number": "3",
+      "title": "Simplicity of heads and socles of convolution products",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "col",
+          "heading": false
+        },
+        {
+          "term": "rtl",
+          "heading": false
+        },
+        {
+          "term": "gmod",
+          "heading": false
+        }
+      ],
+      "extract": "{\\em In this section, we assume that $R(\\beta)$ is symmetric} for any $\\beta\\in\\rtl^+$, i.e., $Q_{ij}(u,v)$ is a function in $u-v$ for any $i,j\\in I$. We also work always in the category of graded modules. For the sake of simplicity, {\\em we simply say that $M$ is an $R$-module instead of saying that $M$ is a graded $R(\\beta)$-module for $\\beta\\in\\rtl^+$.} We also sometimes ignore grading shifts if there is no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-homogeneous-degrees-of-r-matrices",
+      "number": "3.1",
+      "title": "Homogeneous degrees of R-matrices",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": null,
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conv rmat",
+          "heading": false
+        },
+        {
+          "term": "conv eneqn",
+          "heading": false
+        },
+        {
+          "term": "conv epito",
+          "heading": false
+        },
+        {
+          "term": "conv subset",
+          "heading": false
+        },
+        {
+          "term": "ker vphi",
+          "heading": false
+        },
+        {
+          "term": "inp beta",
+          "heading": false
+        },
+        {
+          "term": "eneqn coincides",
+          "heading": false
+        },
+        {
+          "term": "eqn lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\Def For non-zero $M,N \\in R \\gmod$, we denote by $\\Lambda(M,N)$ the homogeneous degree of the R-matrix $\\rmat{M,N}$. \\edf Hence \\eqn &&\\Rm_{M_z,N}:M_z \\conv N \\to q^{-\\Lambda(M,N)} N \\conv M_z \\quad \\text{and}\\\\ &&\\rmat{M,N}:M\\conv N \\to q^{-\\Lambda(M,N)} N \\conv M \\eneqn are morphisms in $R\\gMod$ and in $R \\gmod$, respectively. \\Lemma \\label{lem:tLa even} For non-zero $R$-modules $M$ and $N$, we have \\eqn",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-properties-of-tlmn-and-demn",
+      "number": "3.2",
+      "title": "Properties of $\\tL(M,N)$ and $\\de(M,N)$",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": "31",
+      "words": 3141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conv eneqn",
+          "heading": false
+        },
+        {
+          "term": "conv simeq",
+          "heading": false
+        },
+        {
+          "term": "item conv",
+          "heading": false
+        },
+        {
+          "term": "cdots conv",
+          "heading": false
+        },
+        {
+          "term": "conv soc",
+          "heading": false
+        },
+        {
+          "term": "conv subset",
+          "heading": false
+        },
+        {
+          "term": "conv commutes",
+          "heading": false
+        },
+        {
+          "term": "circ rmat",
+          "heading": false
+        }
+      ],
+      "extract": "\\Lemma \\label{lem:even} Let $M$ and $N$ be simple $R$-modules. Then we have \\bnum \\item $\\Lambda(M,N)+\\Lambda(N,M) \\in 2 \\Z_{\\ge 0}.$ \\item If $\\Lambda(M,N)+\\Lambda(N,M) =2m$ for some $m \\in \\Z_{\\ge 0}$, then \\eqn \\Rm_{M_z,N} \\circ \\Rm_{N,M_z}=z^m \\id_{N \\conv M_z} \\quad \\text{and} \\quad \\Rm_{N,M_z} \\circ \\Rm_{M_z,N}=z^m \\id_{M_z \\conv N} \\eneqn up to constant multiples. \\end{enumerate} \\enlemma \\Proof By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-leclercs-conjecture",
+      "number": "4",
+      "title": "Leclerc's conjecture",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 35,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 969,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leclerc conjecture",
+          "heading": true
+        },
+        {
+          "term": "sends conv",
+          "heading": false
+        },
+        {
+          "term": "eqn phi",
+          "heading": false
+        },
+        {
+          "term": "eqn seteq",
+          "heading": false
+        },
+        {
+          "term": "circ vert",
+          "heading": false
+        },
+        {
+          "term": "eneqn",
+          "heading": false
+        },
+        {
+          "term": "eqn sum",
+          "heading": false
+        },
+        {
+          "term": "hconv",
+          "heading": false
+        }
+      ],
+      "extract": "{\\em In this section, $R$ is assumed to be a symmetric KLR algebra over a base field $\\cor$.} \\subsection{Leclerc's conjecture} The following theorem is a part of Leclerc's conjecture stated in the introduction. \\Th\\label{th:leclerc} Let $M$ and $N$ be simple modules. We assume that $M$ is real. Then we have the equalities in the Grothendieck group $K(R\\gmod)${\\rm:} \\bnum \\item $[M\\conv N]=[M\\hconv",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-geometric-results",
+      "number": "4.2",
+      "title": "Geometric results",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": null,
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "self-dual simple",
+          "heading": false
+        },
+        {
+          "term": "r-gmod",
+          "heading": false
+        },
+        {
+          "term": "base ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "leclerc",
+          "heading": false
+        },
+        {
+          "term": "assume further",
+          "heading": false
+        },
+        {
+          "term": "characteristic",
+          "heading": false
+        },
+        {
+          "term": "corollary",
+          "heading": false
+        }
+      ],
+      "extract": "to us by Peter McNamara. It will be used in the proof of the crucial result Theorem 10.3.1. In this subsection, we assume further that the base ﬁeld k is of characteristic 0. Theorem 4.2.1 ([34, Lemma 7.5]). Assume that the base ﬁeld k is of characteristic 0. Assume that M ∈R-gmod has a head qcH with a self-dual simple module H and c ∈Z. Then we have the equality in the Grothendieck group K(R-gmod) [M] = qc[H] + X k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-proof-of-theorem",
+      "number": "4.3",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": "37",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graded",
+          "heading": false
+        },
+        {
+          "term": "isomorphism classes",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "sheaves",
+          "heading": false
+        },
+        {
+          "term": "equivariant",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "geometrically realized as follows ([40]). There exist a reductive group G and a G- equivariant projective morphism f : X →Y from a smooth algebraic G-variety X to an aﬃne G-variety Y deﬁned over the complex number ﬁeld C such that R(β) ≃eEndDb G(kY )(Rf∗(kX[dim X])) as a graded k-algebra. Here, Db G(kY ) denotes the G- equivariant derived category of the G-variety Y with coeﬃcient k, and eEndDb G(kY )(K) = eHomDb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-quantum-cluster-algebras",
+      "number": "5",
+      "title": "Quantum cluster algebras",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we recall the definition of skew-symmetric quantum cluster algebras following \\cite{BZ05}, \\cite[\\S 8]{GLS}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-51-quantum-seeds",
+      "number": "5.1",
+      "title": "Quantum seeds",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times kex",
+          "heading": false
+        },
+        {
+          "term": "kex matrix",
+          "heading": false
+        },
+        {
+          "term": "frozen vertices",
+          "heading": false
+        },
+        {
+          "term": "kfr",
+          "heading": false
+        },
+        {
+          "term": "integer-valued times",
+          "heading": false
+        },
+        {
+          "term": "cluster variables",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "seed",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a finite index set $\\K=\\Kex\\sqcup\\Kfr$ with the decomposition into the set $\\Kex$ of exchangeable indices and the set $\\Kfr$ of frozen indices. Let $L=(\\lambda_{ij})_{i,j\\in \\K}$ be a skew-symmetric integer-valued $\\K\\times \\K$-matrix. \\Def We define $\\mathscr P(L)$ as the $\\Z[q^{\\pm 1/2}]$-algebra generated by a family of elements $\\{X_i\\}_{i\\in \\K}$ with the defining relations \\eqn &&X_iX_j=q^{\\lambda_{ij}}X_j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-52-mutation",
+      "number": "5.2",
+      "title": "Mutation",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": "40",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum seed",
+          "heading": false
+        },
+        {
+          "term": "let seed",
+          "heading": false
+        },
+        {
+          "term": "mutation",
+          "heading": true
+        },
+        {
+          "term": "cases eneqn",
+          "heading": false
+        },
+        {
+          "term": "cases eneq",
+          "heading": false
+        },
+        {
+          "term": "cases text",
+          "heading": false
+        },
+        {
+          "term": "kex",
+          "heading": false
+        },
+        {
+          "term": "seteq",
+          "heading": false
+        }
+      ],
+      "extract": "For $k\\in\\Kex$, we define a $\\K\\times \\K$-matrix $E=(e_{ij})_{i,j\\in\\K}$ and a $\\Kex\\times \\Kex$-matrix $F=(f_{ij})_{i,j\\in\\Kex}$ as follows: \\eqn e_{ij}= \\begin{cases} \\delta_{ij} & \\text{if} \\ j \\neq k, \\\\ -1 & \\text{if} \\ i= j = k, \\\\ \\max(0, -b_{ik}) & \\text{if} \\ i \\neq j = k, \\end{cases} \\hs{10ex} f_{ij}= \\begin{cases} \\delta_{ij} & \\text{if} \\ i \\neq k, \\\\ -1 & \\text{if} \\ i= j = k, \\\\ \\max(0, b_{kj}) &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-6-monoidal-categorification-of-cluster-algebras",
+      "number": "6",
+      "title": "Monoidal categorification of cluster algebras",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coro linear",
+          "heading": false
+        },
+        {
+          "term": "shc",
+          "heading": false
+        },
+        {
+          "term": "monoidal",
+          "heading": true
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this section, fix $\\K=\\Kex\\sqcup\\Kfr$ and a base field $\\coro$. Let $\\shc$ be a $\\coro$-linear abelian monoidal category. For the definition of monoidal category, see, for example, \\cite[Appendix A.1]{K^3}. Note that in \\cite{K^3}, it was called the \\emph{tensor category}. A $\\coro$-linear abelian monoidal category is a $\\coro$-linear monoidal category such that it is abelian and the tensor functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-61-ungraded-cases",
+      "number": "6.1",
+      "title": "Ungraded cases",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal seed",
+          "heading": false
+        },
+        {
+          "term": "initial seed",
+          "heading": false
+        },
+        {
+          "term": "shc",
+          "heading": false
+        },
+        {
+          "term": "times kex",
+          "heading": false
+        },
+        {
+          "term": "bni item",
+          "heading": false
+        },
+        {
+          "term": "monoidal categorification",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition} Let $\\seed = (\\{ M_i\\}_{i\\in \\K },\\widetilde B)$ be a pair of a family $\\{ M_i\\}_{i\\in\\K}$ of simple objects in $\\shc$ and an integer-valued $\\K\\times\\Kex$-matrix $\\widetilde B = (b_{ij})_{(i,j)\\in\\K\\times\\Kex}$ whose principal part is skew-symmetric. We call $\\seed$ a \\emph{monoidal seed in $\\shc$} if \\bnum \\item $M_i \\otimes M_j \\simeq M_j \\otimes M_i$ for any $i,j\\in\\K$, \\item",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-62-graded-cases",
+      "number": "6.2",
+      "title": "Graded cases",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "45",
+      "words": 1297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shc beta",
+          "heading": false
+        },
+        {
+          "term": "monoidal seed",
+          "heading": false
+        },
+        {
+          "term": "shc gamma",
+          "heading": false
+        },
+        {
+          "term": "category shc",
+          "heading": false
+        },
+        {
+          "term": "shc satisfying",
+          "heading": false
+        },
+        {
+          "term": "quantum seed",
+          "heading": false
+        },
+        {
+          "term": "let seed",
+          "heading": false
+        },
+        {
+          "term": "sodot ell",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\rootl$ be a free abelian group equipped with a symmetric bilinear form \\eqn ( \\ , \\ ) : \\rootl \\times \\rootl \\to \\Z \\quad \\text{such that} \\ (\\beta,\\beta) \\in 2\\Z \\ \\text{for all} \\ \\beta \\in \\rootl. \\eneqn We consider a $\\coro$-linear abelian monoidal category $\\shc$ satisfying \\eqref{cond:monoidal category} and the following conditions: \\eq &&\\hs{-2ex}\\left\\{\\parbox{67ex}{ \\bnum \\item We have a direct sum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-7-monoidal-categorification-via-modules-over-klr",
+      "number": "7",
+      "title": "Monoidal categorification via modules over KLR algebras",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-71-admissible-pair",
+      "number": "7.1",
+      "title": "Admissible pair",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 54,
+      "labelStart": "45",
+      "labelEnd": "54",
+      "words": 2785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nconv sodot",
+          "heading": false
+        },
+        {
+          "term": "hconv conv",
+          "heading": false
+        },
+        {
+          "term": "seteq sodot",
+          "heading": false
+        },
+        {
+          "term": "eqn tla",
+          "heading": false
+        },
+        {
+          "term": "conv simeq",
+          "heading": false
+        },
+        {
+          "term": "conv quad",
+          "heading": false
+        },
+        {
+          "term": "sodot substack",
+          "heading": false
+        },
+        {
+          "term": "circ rmat",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we assume that \\emph{$R$ is a symmetric KLR algebra over a base field $\\coro$}. From now on, we focus on the case when $\\shc$ is a full subcategory of $R \\gmod$ stable under taking convolution products, subquotients, extensions and grading shift. In particular, we have \\eqn \\shc = \\soplus_{\\beta \\in \\rootl^-} \\shc_\\beta, \\quad \\text{where} \\ \\shc_\\beta \\seteq\\shc\\cap R(-\\beta) \\gmod, \\eneqn and we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-8-quantum-coordinate-rings-and-modified-quantize",
+      "number": "8",
+      "title": "Quantum coordinate rings and modified quantized enveloping algebras",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 58,
+      "labelStart": "54",
+      "labelEnd": "58",
+      "words": 909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tens vphi",
+          "heading": false
+        },
+        {
+          "term": "lan vphi",
+          "heading": false
+        },
+        {
+          "term": "vphi psi",
+          "heading": false
+        },
+        {
+          "term": "vphi theta",
+          "heading": false
+        },
+        {
+          "term": "ran lan",
+          "heading": false
+        },
+        {
+          "term": "circ vphi",
+          "heading": false
+        },
+        {
+          "term": "tens lambda",
+          "heading": false
+        },
+        {
+          "term": "cmp ran",
+          "heading": false
+        }
+      ],
+      "extract": "\\subsection{Quantum coordinate ring} Let $U_q(\\g)^*$ be $\\Hom_{\\Q(q)}(U_q(\\g),\\Q(q))$. Then the comultiplication $\\comp$ (see \\eqref{eq: comp}) induces the multiplication $\\mu$ on $U_q(\\g)^*$ as follows: \\begin{align*} \\mu \\cl & U_q(\\g)^* \\tens U_q(\\g)^* \\to (\\U\\tens\\U)^*\\To[\\;(\\comp)^*\\;] U_q(\\g)^* . \\end{align*} Later on, it will be convenient to use Sweedler's notation $\\comp(x)=x_{(1)} \\tens x_{(2)}$. With this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-82-unipotent-quantum-coordinate-ring",
+      "number": "8.2",
+      "title": "Unipotent quantum coordinate ring",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "58",
+      "labelEnd": "60",
+      "words": 605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lan tens",
+          "heading": false
+        },
+        {
+          "term": "psi tens",
+          "heading": false
+        },
+        {
+          "term": "tens theta",
+          "heading": false
+        },
+        {
+          "term": "psi cdot",
+          "heading": false
+        },
+        {
+          "term": "langle iota",
+          "heading": false
+        },
+        {
+          "term": "map iota",
+          "heading": false
+        },
+        {
+          "term": "cdot phi",
+          "heading": false
+        },
+        {
+          "term": "rangle theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:unipotent} Let us endow $U_q^+(\\g) \\tens U_q^+(\\g)$ with the algebra structure defined by $$(x_1 \\tens x_2) \\cdot (y_1 \\tens y_2) = q^{-(\\wt(x_2),\\wt(y_1))}(x_1y_1 \\tens x_2y_2).$$ Let $\\Delta_\\n$ be the algebra homomorphism $U_q^+(\\g) \\to U_q^+(\\g) \\tens U_q^+(\\g)$ given by $$ \\Delta_\\n(e_i) = e_i \\tens 1 + 1 \\tens e_i.$$ Set $$ A_q(\\n) = \\soplus_{\\beta \\in \\rl^-} A_q(\\n)_\\beta \\quad \\text{ where }",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-83-modified-quantum-enveloping-algebra",
+      "number": "8.3",
+      "title": "Modified quantum enveloping algebra",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 66,
+      "labelStart": "60",
+      "labelEnd": "66",
+      "words": 1802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tuqg lambda",
+          "heading": false
+        },
+        {
+          "term": "eta tens",
+          "heading": false
+        },
+        {
+          "term": "lambda tensm",
+          "heading": false
+        },
+        {
+          "term": "uqg eta",
+          "heading": false
+        },
+        {
+          "term": "tens zeta",
+          "heading": false
+        },
+        {
+          "term": "infty tens",
+          "heading": false
+        },
+        {
+          "term": "tilde tens",
+          "heading": false
+        },
+        {
+          "term": "alpha tens",
+          "heading": false
+        }
+      ],
+      "extract": "For the materials in this subsection we refer the reader to \\cite{Lusz92, Kash94}. We denote by ${\\rm Mod}(\\g,\\wl)$ the category of left $U_q(\\g)$-modules with the weight space decomposition. Let $({\\rm forget})$ be the functor from ${\\rm Mod}(\\g,\\wl)$ to the category of vector spaces over $\\Q(q)$, forgetting the $U_q(\\g)$-module structure. Let us denote by $\\mathscr{R}$ the endomorphism ring of $({\\rm forget})$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-9-quantum-minors-and-t-systems",
+      "number": "9",
+      "title": "Quantum minors and T-systems",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 70,
+      "labelStart": "66",
+      "labelEnd": "70",
+      "words": 1289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preceq zeta",
+          "heading": false
+        },
+        {
+          "term": "seteq lan",
+          "heading": false
+        },
+        {
+          "term": "infty tens",
+          "heading": false
+        },
+        {
+          "term": "zeta ran",
+          "heading": false
+        },
+        {
+          "term": "zeta lambda",
+          "heading": false
+        },
+        {
+          "term": "align lan",
+          "heading": false
+        },
+        {
+          "term": "quantum minors",
+          "heading": true
+        },
+        {
+          "term": "ran delta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Quantum minors and T-systems} \\subsection{Quantum minors} Using the isomorphism $\\Phi$ in \\eqref{eq: Phi}, for each $\\lambda \\in \\wl^+$ and $\\mu, \\zeta \\in W \\lambda$, we define the elements $$ \\Delta(\\mu,\\zeta)\\seteq \\Phi(u_\\mu\\tens u_\\zeta^\\ri) \\in A_q(\\g)$$ and $$\\D(\\mu,\\zeta)\\seteq p_\\n(\\Delta(\\mu,\\zeta)) \\in A_q(\\n).$$ The element $\\Delta(\\mu,\\zeta)$ is called a {\\em {\\rm (}generalized{\\rm )} quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-92-t-system",
+      "number": "9.2",
+      "title": "T-system",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": "70",
+      "labelEnd": "70",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-us varpi",
+          "heading": false
+        },
+        {
+          "term": "i-u varpi",
+          "heading": false
+        },
+        {
+          "term": "allowdisplaybreaks hspace",
+          "heading": false
+        },
+        {
+          "term": "t-system",
+          "heading": true
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsec: T-system} In this subsection, we recall the {\\em $T$-system} among the (unipotent) quantum minors for later use (see \\cite{KNS11} for $T$-system). \\begin{prop} [{\\cite[Proposition 3.2]{GLS}}] \\label{prop: the ses} Assume that the Kac-Moody algebra $\\g$ is of symmetric type. Assume that $u,v \\in W$ and $i \\in I$ satisfy $u < us_i$ and $v < vs_i$. Then \\begin{align*} &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-93-revisit-of-crystal-bases-and-global-bases",
+      "number": "9.3",
+      "title": "Revisit of crystal bases and global bases",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 74,
+      "labelStart": "70",
+      "labelEnd": "74",
+      "words": 983,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ran lan",
+          "heading": false
+        },
+        {
+          "term": "tens infty",
+          "heading": false
+        },
+        {
+          "term": "crystal",
+          "heading": true
+        },
+        {
+          "term": "soplus lambda",
+          "heading": false
+        },
+        {
+          "term": "tensp",
+          "heading": false
+        },
+        {
+          "term": "lambda vee",
+          "heading": false
+        },
+        {
+          "term": "crystal lattice",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        }
+      ],
+      "extract": "In order to prove Theorem~\\ref{thm: DDD} below, we first investigate the upper crystal lattice of $\\Dv V$ induced by an upper crystal lattice of $V\\in\\Oint(\\g)$. Let $V$ be a $U_q(\\g)$-module in $\\Oint (\\g)$. Let $L^\\up$ be an upper crystal lattice of $V$. Then we have (see Lemma~\\ref{lem:lowup}) $$ \\soplus_{\\xi \\in \\wl} q^{(\\xi,\\xi)/2}(L^\\up)_\\xi \\text{ is a lower crystal lattice of $V$.}$$ Recall that, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-94-generalized-t-system",
+      "number": "9.4",
+      "title": "Generalized T-system",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 75,
+      "labelStart": "74",
+      "labelEnd": "75",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes varpi",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes infty",
+          "heading": false
+        },
+        {
+          "term": "t-system",
+          "heading": true
+        },
+        {
+          "term": "align left",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "iota lambda",
+          "heading": false
+        }
+      ],
+      "extract": "The $T$-system in \\S \\ref{subsubsec: T-system} can be interpreted as a system of equations among the three products of elements in $\\B^\\up(A_q(\\g))$ or $\\B^\\up(A_q(\\n))$. In this subsection, we introduce another among the three products of elements in $\\B^\\up(A_q(\\g))$, called {\\em a generalized $T$-system}. \\begin{prop} \\label{prop: g T-system D} Let $\\mu \\in W \\varpi_i$ and set $b = \\oi_{\\varpi_i}(u_\\mu) \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-10-klr-algebras-and-their-modules",
+      "number": "10",
+      "title": "KLR algebras and their modules",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": "75",
+      "labelEnd": "75",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-101-chevalley-and-kashiwara-operators",
+      "number": "10.1",
+      "title": "Chevalley and Kashiwara operators",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 80,
+      "labelStart": "75",
+      "labelEnd": "80",
+      "words": 1523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "allowdisplaybreaks tau",
+          "heading": false
+        },
+        {
+          "term": "allowdisplaybreaks hspace",
+          "heading": false
+        },
+        {
+          "term": "tens longmapsto",
+          "heading": false
+        },
+        {
+          "term": "allowdisplaybreaks widetilde",
+          "heading": false
+        },
+        {
+          "term": "cdots tau",
+          "heading": false
+        },
+        {
+          "term": "tau big",
+          "heading": false
+        },
+        {
+          "term": "align tau",
+          "heading": false
+        },
+        {
+          "term": "conv lto",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall the definition of several functors on modules over \\KLRs \\ which are used to categorify $\\Um_{\\Z[q^\\pm 1]}^\\vee$. \\begin{definition} Let $\\beta\\in\\rtl^+$. \\bnum \\item For $i \\in I$ and $1 \\le a \\le |\\beta|$, set $$ e_a(i)=\\sum_{\\nu \\in I^\\beta,\\nu_a=i}e(\\nu)\\in R(\\beta).$$ \\item We take conventions: \\begin{align*} &E_iM=e_1(i)M, \\allowdisplaybreaks\\\\ &E^*_iM=e_{|\\beta|}(i)M, \\end{align*} which are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-102-determinantial-modules-and-t-system",
+      "number": "10.2",
+      "title": "Determinantial modules and T-system",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 81,
+      "labelStart": "80",
+      "labelEnd": "81",
+      "words": 544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-u varpi",
+          "heading": false
+        },
+        {
+          "term": "i-us varpi",
+          "heading": false
+        },
+        {
+          "term": "preceq zeta",
+          "heading": false
+        },
+        {
+          "term": "t't mu-s",
+          "heading": false
+        },
+        {
+          "term": "aligned lto",
+          "heading": false
+        },
+        {
+          "term": "seteq lan",
+          "heading": false
+        },
+        {
+          "term": "determinantial",
+          "heading": true
+        },
+        {
+          "term": "seq begin",
+          "heading": false
+        }
+      ],
+      "extract": "We will use the materials in \\S\\,\\ref{sec:Quantum minors and T-systems} to obtain properties on the determinantial modules. In the rest of this paper, we assume that {\\em $R$ is symmetric and the base field $\\ko$ is of characteristic $0$.} Under this condition, the family of self-dual simple $R$-modules corresponds to the upper global basis of $\\An$ by Theorem \\ref{thm:categorification 2}. Let $\\ch$ be the map from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-103-generalized-t-system-on-determinantial-modul",
+      "number": "10.3",
+      "title": "Generalized T-system on determinantial module",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 84,
+      "labelStart": "81",
+      "labelEnd": "84",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preceq vpi",
+          "heading": false
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        },
+        {
+          "term": "canonical surjection",
+          "heading": false
+        },
+        {
+          "term": "end prop",
+          "heading": false
+        },
+        {
+          "term": "ref prop",
+          "heading": false
+        },
+        {
+          "term": "prop begin",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "lan",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{theorem} \\label{thm: canonical surjection} Let $\\lambda \\in \\wl^+$ and $\\mu_1,\\mu_2,\\mu_3 \\in W \\lambda$ such that $\\mu_1 \\preceq \\mu_2 \\preceq \\mu_3$. Then there exists a canonical epimorphism $$ \\M(\\mu_1,\\mu_2) \\conv \\M(\\mu_2,\\mu_3) \\twoheadrightarrow \\M(\\mu_1,\\mu_3),$$ which is equivalent to saying that $\\M(\\mu_1,\\mu_2) \\hconv \\M(\\mu_2,\\mu_3) \\simeq \\M(\\mu_1,\\mu_3)$. In particular, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-11-monoidal-categorification-of-a-qmathfraknw",
+      "number": "11",
+      "title": "Monoidal categorification of $A_q(\\mathfrak{n}(w))$",
+      "level": 1,
+      "pageStart": 84,
+      "pageEnd": 84,
+      "labelStart": "84",
+      "labelEnd": "84",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-111-quantum-cluster-algebra-structure-on-a-qmath",
+      "number": "11.1",
+      "title": "Quantum cluster algebra structure on $A_q(\\mathfrak{n}(w))$",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 85,
+      "labelStart": "84",
+      "labelEnd": "85",
+      "words": 594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum cluster",
+          "heading": true
+        },
+        {
+          "term": "cluster algebra",
+          "heading": true
+        },
+        {
+          "term": "cite gls",
+          "heading": false
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        },
+        {
+          "term": "seteq",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsubsec: Q cluster Anw} In this subsection, we shall consider the Kac-Moody algebra $\\g$ associated with a symmetric Cartan matrix $\\cmA=(a_{i,j})_{i,j\\in I}$. We shall recall briefly the definition of the subalgebra $A_q(\\n(w))$ of $A_q(\\g)$ and its quantum cluster algebra structure by using the results of \\cite{GLS} and \\cite{Kimu12}. Remark that we bring the results in \\cite{GLS} through the isomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-112-admissible-seeds-in-the-monoidal-category-sh",
+      "number": "11.2",
+      "title": "Admissible seeds in the monoidal category $\\shc_w$",
+      "level": 2,
+      "pageStart": 85,
+      "pageEnd": 91,
+      "labelStart": "85",
+      "labelEnd": null,
+      "words": 2026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster algebras",
+          "heading": false
+        },
+        {
+          "term": "quantum cluster",
+          "heading": false
+        },
+        {
+          "term": "cluster monomials",
+          "heading": false
+        },
+        {
+          "term": "semicanonical bases",
+          "heading": false
+        },
+        {
+          "term": "crystal bases",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "monoidal categoriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "canonical bases",
+          "heading": false
+        }
+      ],
+      "extract": "M(s, t) = M(λs, λt). It is a real simple module with ch(M(s, t)) = D(s, t). Deﬁnition 11.2.1. For w ∈W, let Cw be the smallest monoidal abelian full subcategory of R-gmod satisfying the following properties: (i) Cw is stable under the subquotients, extensions and grading shifts, (ii) Cw contains M(s, s−) for all 1 ≤s ≤ℓ(w). Then by [11], M ∈R-gmod belongs to Cw if and only if ch(M) belongs to Aq(n(w)). Hence we have",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Mutation",
+          "T-system"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "conv eneqn",
+      "heading": false
+    },
+    {
+      "term": "lan tens",
+      "heading": false
+    },
+    {
+      "term": "lambda tens",
+      "heading": false
+    },
+    {
+      "term": "seteq lan",
+      "heading": false
+    },
+    {
+      "term": "eqn seteq",
+      "heading": false
+    },
+    {
+      "term": "tens vphi",
+      "heading": false
+    },
+    {
+      "term": "beta seteq",
+      "heading": false
+    },
+    {
+      "term": "hconv conv",
+      "heading": false
+    },
+    {
+      "term": "quad seteq",
+      "heading": false
+    },
+    {
+      "term": "eneqn end",
+      "heading": false
+    },
+    {
+      "term": "psi tens",
+      "heading": false
+    },
+    {
+      "term": "tens zeta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 40,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 34,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 34 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1801.05145v1"
+  }
+}

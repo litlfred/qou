@@ -1,0 +1,2734 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1006.1099v3",
+  "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+  "variant": "pdf",
+  "pages": 70,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Two contexts",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-two-contexts"
+    },
+    {
+      "level": 2,
+      "title": "The theorem",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Entropy",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-entropy"
+    },
+    {
+      "level": 2,
+      "title": "Representation varieties",
+      "number": "1.4",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-representation-varieties"
+    },
+    {
+      "level": 2,
+      "title": "Instanton Floer homology",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-instanton-floer-homology"
+    },
+    {
+      "level": 2,
+      "title": "Witten's conjecture",
+      "number": "1.6",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Homological Mirror Symmetry",
+      "number": "1.7",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-17-homological-mirror-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "Another birational motivation",
+      "number": "1.8",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-18-another-birational-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Outline of proof",
+      "number": "1.9",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-19-outline-of-proof"
+    },
+    {
+      "level": 1,
+      "title": "The representation variety",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-2-the-representation-variety"
+    },
+    {
+      "level": 2,
+      "title": "Topology",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-21-topology"
+    },
+    {
+      "level": 2,
+      "title": "Monodromy and degenerations",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-22-monodromy-and-degenerations"
+    },
+    {
+      "level": 2,
+      "title": "Fibred 3-manifolds",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-23-fibred-3-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Faithfulness",
+      "number": "2.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-24-faithfulness"
+    },
+    {
+      "level": 2,
+      "title": "A fixed point theorem",
+      "number": "2.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-25-a-fixed-point-theorem"
+    },
+    {
+      "level": 1,
+      "title": "The Fukaya category",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-3-the-fukaya-category"
+    },
+    {
+      "level": 2,
+      "title": "Floer and quantum cohomology",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-31-floer-and-quantum-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Higher order products",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-32-higher-order-products"
+    },
+    {
+      "level": 2,
+      "title": "Twisting and generation",
+      "number": "3.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-33-twisting-and-generation"
+    },
+    {
+      "level": 2,
+      "title": "Functors from quilts",
+      "number": "3.4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-34-functors-from-quilts"
+    },
+    {
+      "level": 2,
+      "title": "Grading and deformations",
+      "number": "3.5",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-35-grading-and-deformations"
+    },
+    {
+      "level": 2,
+      "title": "Formality",
+      "number": "3.6",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-36-formality"
+    },
+    {
+      "level": 2,
+      "title": "The Fukaya category of a curve",
+      "number": "3.7",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-37-the-fukaya-category-of-a-curve"
+    },
+    {
+      "level": 1,
+      "title": "From the base locus to the relative quadric",
+      "number": "4",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-4-from-the-base-locus-to-the-relative-quadric"
+    },
+    {
+      "level": 2,
+      "title": "The Fukaya category of a quadric",
+      "number": "4.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-41-the-fukaya-category-of-a-quadric"
+    },
+    {
+      "level": 2,
+      "title": "Hyperelliptic curves and quadrics",
+      "number": "4.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-42-hyperelliptic-curves-and-quadrics"
+    },
+    {
+      "level": 2,
+      "title": "Idempotents for functors",
+      "number": "4.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-43-idempotents-for-functors"
+    },
+    {
+      "level": 2,
+      "title": "An illustrative example",
+      "number": "4.4",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-44-an-illustrative-example"
+    },
+    {
+      "level": 2,
+      "title": "Idempotents and blow-ups",
+      "number": "4.5",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-45-idempotents-and-blow-ups"
+    },
+    {
+      "level": 2,
+      "title": "Spinning",
+      "number": "4.6",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-46-spinning"
+    },
+    {
+      "level": 1,
+      "title": "From the curve to the relative quadric",
+      "number": "5",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-5-from-the-curve-to-the-relative-quadric"
+    },
+    {
+      "level": 2,
+      "title": "Matching Spheres",
+      "number": "5.1",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-51-matching-spheres"
+    },
+    {
+      "level": 2,
+      "title": "Thimbles",
+      "number": "5.2",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-52-thimbles"
+    },
+    {
+      "level": 2,
+      "title": "Exterior Algebra",
+      "number": "5.3",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-53-exterior-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The cubic term",
+      "number": "5.4",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-54-the-cubic-term"
+    },
+    {
+      "level": 2,
+      "title": "Finite determinacy",
+      "number": "5.5",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-55-finite-determinacy"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 67,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative quadric",
+          "heading": false
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "ivan smith",
+          "heading": false
+        },
+        {
+          "term": "floer",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1006.1099v3 [math.SG] 13 Oct 2011 FLOER COHOMOLOGY AND PENCILS OF QUADRICS IVAN SMITH Abstract. There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces. We investigate symplectic aspects of this relationship, with a view to applications in low-dimensional topology. Contents 1. Introduction 2 1.1. Two contexts 2 1.2. The theorem 2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1006.1099v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-two-contexts",
+      "number": "1.1",
+      "title": "Two contexts",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "embed",
+          "heading": false
+        },
+        {
+          "term": "contexts",
+          "heading": true
+        },
+        {
+          "term": "derived categories",
+          "heading": false
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        },
+        {
+          "term": "quadric",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "donaldson",
+          "heading": false
+        }
+      ],
+      "extract": "The main result of this paper, Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"}, belongs to categorical symplectic topology in the sense of Donaldson, Fukaya and Kontsevich. It relates the derived Fukaya categories of a genus $g$ surface $\\Sigma_g$ and of the complete intersection $Q_0 \\cap Q_1$ of two smooth quadric hypersurfaces in ${\\mathbb P}^{2g+1}$. The result is of interest in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-theorem",
+      "number": "1.2",
+      "title": "The theorem",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category euscript",
+          "heading": false
+        },
+        {
+          "term": "gamma hyp",
+          "heading": false
+        },
+        {
+          "term": "hyp rightarrow",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic mapping",
+          "heading": false
+        },
+        {
+          "term": "intersection cap",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathbb",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic curve",
+          "heading": false
+        },
+        {
+          "term": "embed",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\Sigma_g$ be a closed surface of genus $g\\geq 2$, equipped with a symplectic form. This has a well-defined balanced Fukaya category $\\EuScript{F}(\\Sigma_g)$, linear over ${\\mathbb C}$. Let $\\{Q^{2g}_t\\}_{t\\in {\\mathbb P}^1} \\subset {\\mathbb P}^{2g+1}$ denote a pencil of smooth $2g$-dimensional quadric hypersurfaces in ${\\mathbb P}^{2g+1}$, with smooth base locus $Q^{2g}_0 \\cap Q^{2g}_1$. By Moser's theorem, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-entropy",
+      "number": "1.3",
+      "title": "Entropy",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer-theoretic entropy",
+          "heading": false
+        },
+        {
+          "term": "periodic entropy",
+          "heading": false
+        },
+        {
+          "term": "pseudo-anosov component",
+          "heading": false
+        },
+        {
+          "term": "mapping class",
+          "heading": false
+        },
+        {
+          "term": "symplectic manifold",
+          "heading": false
+        },
+        {
+          "term": "robust",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "Corollary [\\[Cor:Faithful2\\]](#Cor:Faithful2){reference-type=\"ref\" reference=\"Cor:Faithful2\"} is essentially equivalent to a related dynamical statement. For a symplectic manifold $X$ the (conjugation-invariant) *Floer-theoretic entropy* of a mapping class $\\phi \\in \\operatorname{Symp}(X)/\\operatorname{Ham}(X)$ is $$h_{Floer}(\\phi) \\ = \\ \\limsup \\frac{1}{n} \\log \\operatorname{rk}\\, HF(\\phi^n).$$ This is a kind of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-representation-varieties",
+      "number": "1.4",
+      "title": "Representation varieties",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symp euscript",
+          "heading": false
+        },
+        {
+          "term": "operatorname symp",
+          "heading": false
+        },
+        {
+          "term": "hat rho",
+          "heading": false
+        },
+        {
+          "term": "widehat gamma",
+          "heading": false
+        },
+        {
+          "term": "fixpoint",
+          "heading": false
+        },
+        {
+          "term": "allsummands",
+          "heading": false
+        },
+        {
+          "term": "symplectic group",
+          "heading": false
+        },
+        {
+          "term": "torelli group",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec:RepVar label=\"Sec:RepVar\"} Fix a point $p\\in \\Sigma_g$ and denote by $\\EuScript{M}(\\Sigma_g)$ the moduli space of rank two, fixed odd determinant stable bundles on a complex curve of genus $g$, equivalently the space of conjugacy classes of $SU(2)$-representations of $\\pi_1(\\Sigma\\backslash\\{p\\})$ which have holonomy $-I$ at the puncture. $\\EuScript{M}(\\Sigma_g)$ admits a natural symplectic structure; the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-instanton-floer-homology",
+      "number": "1.5",
+      "title": "Instanton Floer homology",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 905,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "instanton floer",
+          "heading": true
+        },
+        {
+          "term": "floer homology",
+          "heading": true
+        },
+        {
+          "term": "euscript",
+          "heading": false
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "fixpoint",
+          "heading": false
+        },
+        {
+          "term": "sigma times",
+          "heading": false
+        },
+        {
+          "term": "projective bundle",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec:InstFloer label=\"Sec:InstFloer\"} Let $f: Y_h \\rightarrow S^1$ be a fibred 3-manifold with a distinguished section, defined by a monodromy map $h \\in \\Gamma(\\Sigma_{g,1})$ in the mapping class group of a once-marked surface $f^{-1}(pt)$. Up to isomorphism there is a unique non-trivial $SO(3)$-bundle $E\\rightarrow f^{-1}(pt)$, with $\\langle w_2(E), f^{-1}(pt)\\rangle \\neq 0$; the section of $Y_h \\rightarrow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-17-homological-mirror-symmetry",
+      "number": "1.7",
+      "title": "Homological Mirror Symmetry",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological mirror",
+          "heading": true
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": true
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "semi-orthogonal decompositions",
+          "heading": false
+        },
+        {
+          "term": "embed",
+          "heading": false
+        },
+        {
+          "term": "derived category",
+          "heading": false
+        },
+        {
+          "term": "euscript",
+          "heading": false
+        },
+        {
+          "term": "hms",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec:HMS label=\"Sec:HMS\"} The proof of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"} involves establishing Fukaya category analogues of three well-known results concerning derived categories of sheaves. - (Bondal-Orlov) The derived category of sheaves on the intersection of two even-dimensional quadrics has a semi-orthogonal decomposition in which one factor is the derived",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-18-another-birational-motivation",
+      "number": "1.8",
+      "title": "Another birational motivation",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euscript",
+          "heading": false
+        },
+        {
+          "term": "blow-up rightarrow",
+          "heading": false
+        },
+        {
+          "term": "embed",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        },
+        {
+          "term": "whilst",
+          "heading": false
+        },
+        {
+          "term": "oplus mathcal",
+          "heading": false
+        },
+        {
+          "term": "semisimple summands",
+          "heading": false
+        },
+        {
+          "term": "thaddeus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sec:BirModel label=\"Sec:BirModel\"} There is another description of $\\EuScript{M}(\\Sigma_2) = Q_0 \\cap Q_1 \\subset {\\mathbb P}^5$ which, whilst not used in this paper, is undoubtedly related to the $g=2$ case of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"}, and provided motivation for the result. Let's say that a line $l \\subset Q_0\\cap Q_1$ is *generic* if its normal bundle is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-19-outline-of-proof",
+      "number": "1.9",
+      "title": "Outline of proof",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 731,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fukaya categories",
+          "heading": false
+        },
+        {
+          "term": "euscript",
+          "heading": false
+        },
+        {
+          "term": "embed",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibrations",
+          "heading": false
+        },
+        {
+          "term": "seidel",
+          "heading": false
+        },
+        {
+          "term": "instfloer",
+          "heading": false
+        },
+        {
+          "term": "repvar",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned previously, our proof of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"} constructs equivalences with quasi-isomorphic images $$D^{\\pi}\\EuScript{F}(\\Sigma) \\ \\hookrightarrow \\ D^{\\pi}\\EuScript{F}(Z) \\ \\hookleftarrow \\ D^{\\pi}\\EuScript{F}(Q_0\\cap Q_1;0).$$ Both $\\EuScript{F}(\\Sigma_g)$ and $\\EuScript{F}(Q_0 \\cap Q_1)$ are naturally ${\\mathbb Z}_{4g-4}$-graded, but only the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-2-the-representation-variety",
+      "number": "2",
+      "title": "The representation variety",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "2. The representation variety",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-21-topology",
+      "number": "2.1",
+      "title": "Topology",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised eigenspaces",
+          "heading": false
+        },
+        {
+          "term": "symplectic group",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        },
+        {
+          "term": "mapping class",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "symplectic structure",
+          "heading": false
+        },
+        {
+          "term": "µ-map",
+          "heading": false
+        },
+        {
+          "term": "stable bundles",
+          "heading": false
+        }
+      ],
+      "extract": "mental group of a punctured surface Σg\\{p}: M(Σg) = ( (A1, B1, . . . , Ag, Bg) ∈SU(2)2g Y i [Ai, Bi] = −I ) . SO(3) (2.1) where SO(3) = SU(2)/{±I} acts diagonally by conjugation. There are no reducible representa- tions (since an abelian representation couldn’t have holonomy −I around the puncture), and the moduli space is a smooth compact manifold of real dimension 6g −6. It has a natural symplectic structure,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-22-monodromy-and-degenerations",
+      "number": "2.2",
+      "title": "Monodromy and degenerations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "co-isotropic submanifold",
+          "heading": false
+        },
+        {
+          "term": "dehn twist",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connexion",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        },
+        {
+          "term": "rank ﬁbred",
+          "heading": false
+        },
+        {
+          "term": "lagrangian correspondence",
+          "heading": false
+        },
+        {
+          "term": "nodal surface",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes ﬂat",
+          "heading": false
+        }
+      ],
+      "extract": "homology computations on Σ2 and on M(Σ2) which helped to motivate Theorem 1.1. Let γ ⊂Σ denote a homologically essential simple closed curve. Taking the subspace of representations trivial along γ deﬁnes a co-isotropic submanifold Vγ ⊂M(Σ) which is an SU(2)-bundle over M(Σg−1), where the lower genus surface is essentially the normalisation of the nodal surface Σ/{γ}. When g = 2, M(Σg−1) is a single point, and Vγ ∼=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-23-fibred-3-manifolds",
+      "number": "2.3",
+      "title": "Fibred 3-manifolds",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "mapping torus",
+          "heading": false
+        },
+        {
+          "term": "connexions",
+          "heading": false
+        },
+        {
+          "term": "non-abelian",
+          "heading": false
+        },
+        {
+          "term": "chern-simons functional",
+          "heading": false
+        },
+        {
+          "term": "covers",
+          "heading": false
+        },
+        {
+          "term": "ﬁbre",
+          "heading": false
+        },
+        {
+          "term": "bundle",
+          "heading": false
+        }
+      ],
+      "extract": "determined up to isomorphism by its second Stiefel-Whitney class w2(E) ∈H2(Y ; Z2). Let f : Y →S1 be a 3-manifold which ﬁbres smoothly over the circle. The ﬁbre f −1(pt) is nec- essarily homologically essential and primitive, and we ﬁx an SO(3)-bundle E over Y for which ⟨w2(E), [f −1(pt)]⟩̸ = 0. Indeed, we take E to be the mapping torus of a lift of the monodromy of Y to the unique non-trivial SO(3)-bundle over a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-24-faithfulness",
+      "number": "2.4",
+      "title": "Faithfulness",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer-theoretic entropy",
+          "heading": false
+        },
+        {
+          "term": "pseudo-anosov component",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "separating curve",
+          "heading": false
+        },
+        {
+          "term": "floer group",
+          "heading": false
+        },
+        {
+          "term": "dehn twists",
+          "heading": false
+        },
+        {
+          "term": "separating simple",
+          "heading": false
+        },
+        {
+          "term": "another separating",
+          "heading": false
+        }
+      ],
+      "extract": "entropy of a mapping class φ ∈Symp(X)/ Ham(X) hF loer(φ) = lim sup 1 n log rkK HF(φn). As mentioned in the Introduction, for area-preserving diﬀeomorphisms of a surface Σ the Floer- theoretic entropy (of the action on Σ itself) co-incides with the topological entropy which in turn co-incides with the periodic entropy, or rather their minimal values on the isotopy class [21, 31, 33]. Thus hF loer(φ) > 0 ⇔φ has a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-25-a-fixed-point-theorem",
+      "number": "2.5",
+      "title": "A fixed point theorem",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 1395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn twists",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "instanton floer",
+          "heading": false
+        },
+        {
+          "term": "generalised eigenspaces",
+          "heading": false
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "quantum cup-product",
+          "heading": false
+        },
+        {
+          "term": "minimal maslov",
+          "heading": false
+        },
+        {
+          "term": "lagrangian correspondence",
+          "heading": false
+        }
+      ],
+      "extract": "2.5. A ﬁxed point theorem. Since there are periodic, ﬁxed-point free surface diﬀeomorphisms, even when g = 2 Theorem 1.1 does not imply that HF(ˆρ(φ))̸ = 0 for an arbitrary mapping class φ. In fact, such a non-vanishing result does hold in any genus; the proof relies on concentrating not on the summand of the Fukaya category corresponding to the underlying curve but on a “semi-simple” summand. The moduli space M(Σg)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-3-the-fukaya-category",
+      "number": "3",
+      "title": "The Fukaya category",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "novikov",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "speciﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "Notation. Fix a coeﬃcient ﬁeld K which is algebraically closed and of characteristic zero; unless otherwise speciﬁed we assume K = C, but for much of the paper one could work with the Novikov ﬁeld ΛC of formal series P i∈Z aitqi with ai ∈C, qi ∈R and qi →∞.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-31-floer-and-quantum-cohomology",
+      "number": "3.1",
+      "title": "Floer and quantum cohomology",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 1273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer cohomology",
+          "heading": true
+        },
+        {
+          "term": "quantum cohomology",
+          "heading": true
+        },
+        {
+          "term": "maslov index",
+          "heading": false
+        },
+        {
+          "term": "interior marked",
+          "heading": false
+        },
+        {
+          "term": "minimal maslov",
+          "heading": false
+        },
+        {
+          "term": "boundary marked",
+          "heading": false
+        },
+        {
+          "term": "maslov number",
+          "heading": false
+        },
+        {
+          "term": "holomorphic disks",
+          "heading": false
+        }
+      ],
+      "extract": "plectic manifold, meaning that the homomorphisms π2(M) →R deﬁned by the symplectic form and the ﬁrst Chern class are positively proportional. Recall that a Lagrangian submanifold L is monotone if the symplectic area and Maslov index homomorphisms π2(M, L) →R are positively proportional. If M is spherically monotone and π1(L) = 0 then L is automatically monotone, with minimal Maslov index given by twice the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-32-higher-order-products",
+      "number": "3.2",
+      "title": "Higher order products",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 992,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "holomorphic polygons",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "open-closed string",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian perturbations",
+          "heading": false
+        },
+        {
+          "term": "counting holomorphic",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "higher order",
+          "heading": true
+        }
+      ],
+      "extract": "linear over C. By deﬁnition, F(M) has: • objects being monotone oriented Lagrangian submanifolds equipped with Spin structures and additional perturbation data1; • morphisms given by Floer cochain complexes CF(L, L′); and • higher order composition operations from counting pseudoholomorphic polygons. The higher order operations of the A∞-structure comprise a collection of maps µd F of degree d (mod 2), for d ≥1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-33-twisting-and-generation",
+      "number": "3.3",
+      "title": "Twisting and generation",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 1232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "split-generate dπf",
+          "heading": false
+        },
+        {
+          "term": "nu-fun",
+          "heading": false
+        },
+        {
+          "term": "cycle class",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        },
+        {
+          "term": "mod-a",
+          "heading": false
+        },
+        {
+          "term": "twist functor",
+          "heading": false
+        },
+        {
+          "term": "τvj",
+          "heading": false
+        }
+      ],
+      "extract": "gebraic operation which formally enlarges A to yield a more computable object: ﬁrst, passing to twisted complexes to give T w A; second, idempotent-completing to give Π(T w A) = T wπA. Twisted complexes themselves form the objects of a non-unital A∞-category T w(A), which has the property that all morphisms can be completed with cones to sit in exact triangles. Idempotent completion, or split-closure, includes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-34-functors-from-quilts",
+      "number": "3.4",
+      "title": "Functors from quilts",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quilted discs",
+          "heading": false
+        },
+        {
+          "term": "stable quilted",
+          "heading": false
+        },
+        {
+          "term": "mau-wehrheim-woodward functor",
+          "heading": false
+        },
+        {
+          "term": "quilts",
+          "heading": true
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "lagrangian correspondences",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "from counts of quilted holomorphic surfaces, using the theory developed by Mau, Wehrheim and Woodward [104, 105, 65, 64]. They begin by deﬁning an extended category F#(M) which comes with a fully faithful embedding F(M)֒ →F#(M); objects of the extended category are generalised Lagrangian submanifolds, which comprise an integer k ≥1 and a sequence of symplectic manifolds and Lagrangian correspondences ({pt} = M0, M1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-35-grading-and-deformations",
+      "number": "3.5",
+      "title": "Grading and deformations",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anticanonical divisor",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "pseudoholomorphic",
+          "heading": false
+        },
+        {
+          "term": "homa",
+          "heading": false
+        },
+        {
+          "term": "boundary conditions",
+          "heading": false
+        },
+        {
+          "term": "morse",
+          "heading": false
+        },
+        {
+          "term": "deformations",
+          "heading": true
+        },
+        {
+          "term": "floer",
+          "heading": false
+        }
+      ],
+      "extract": "category Aq over K[[q]], with µd Aq = µd A + O(q), i.e. µd Aq = µd A + qµd Aq,1 + q2µd Aq,2 + · · · (3.9) with each µd Aq,j comprising K-linear maps homA(Xd1, Xd) ⊗· · · ⊗homA(X1, X2) →homA(X1, Xd)[2 −d] for any (X1, . . . , Xd) ∈(Ob A)d. The operations µd Aq should be q-adically convergent (for us they will always vanish for q ≫0). In applications, such deformations of Fukaya categories will arise from (partial)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-36-formality",
+      "number": "3.6",
+      "title": "Formality",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maurer-cartan equation",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan solutions",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan elements",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "formality",
+          "heading": true
+        },
+        {
+          "term": "diﬀerential dcc",
+          "heading": false
+        },
+        {
+          "term": "schouten bracket",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "the A∞-structure on an algebra A = ⊕i,jHF(Li, Lj), where the {Li} are some ﬁnite collection of Lagrangians distinguished by the geometry in some fashion. In general this is a rather in- tractable problem, but in the case when A is smooth and commutative, A∞-structures up to gauge equivalence correspond to classical Poisson structures, by Kontsevich’s formality theorem. The particular case of this that pertains to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-37-the-fukaya-category-of-a-curve",
+      "number": "3.7",
+      "title": "The Fukaya category of a curve",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fukaya category",
+          "heading": true
+        },
+        {
+          "term": "balanced fukaya",
+          "heading": false
+        },
+        {
+          "term": "balanced representative",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite determinacy",
+          "heading": false
+        },
+        {
+          "term": "pentagram",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": true
+        },
+        {
+          "term": "ﬂat line",
+          "heading": false
+        },
+        {
+          "term": "line bundles",
+          "heading": false
+        }
+      ],
+      "extract": "p→P1 to be the unique curve branched over the points {0, ξj, 1 ≤j ≤2g + 1}, where ξ is a primitive (2g + 1)-st root of unity. We can exhibit embedded circles in C via matching arcs amongst these points, i.e. the projections of Z2-invariant curves to P1. For instance, when g = 2, 5 Lagrangian submanifolds {Lj} of C are determined by the arcs of the pentagram on the left of Figure 1 (the vertices are the 5th roots of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-4-from-the-base-locus-to-the-relative-quadric",
+      "number": "4",
+      "title": "From the base locus to the relative quadric",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-41-the-fukaya-category-of-a-quadric",
+      "number": "4.1",
+      "title": "The Fukaya category of a quadric",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": "30",
+      "labelEnd": "33",
+      "words": 1629,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadric",
+          "heading": true
+        },
+        {
+          "term": "even-dimensional quadric",
+          "heading": false
+        },
+        {
+          "term": "odd-dimensional quadric",
+          "heading": false
+        },
+        {
+          "term": "quadric hypersurface",
+          "heading": false
+        },
+        {
+          "term": "minimal maslov",
+          "heading": false
+        },
+        {
+          "term": "singular ﬁbres",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "lagrangian sphere",
+          "heading": false
+        }
+      ],
+      "extract": "categorically, a pair of points S0 and a smooth even-dimensional quadric Q. For completeness, we discuss quadrics of both even and odd dimension. FLOER COHOMOLOGY AND PENCILS OF QUADRICS 31 Lemma 4.1. A quadric hypersurface Q ⊂Pn+1contains a distinguished isotopy class of La- grangian sphere L, which is the unique sphere arising as the vanishing cycle of an algebraic degeneration. If n > 1, this sphere lies in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-42-hyperelliptic-curves-and-quadrics",
+      "number": "4.2",
+      "title": "Hyperelliptic curves and quadrics",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperelliptic curves",
+          "heading": true
+        },
+        {
+          "term": "z2g",
+          "heading": false
+        },
+        {
+          "term": "p2g",
+          "heading": false
+        },
+        {
+          "term": "pencil",
+          "heading": false
+        },
+        {
+          "term": "γhyp",
+          "heading": false
+        },
+        {
+          "term": "ivan smith",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        },
+        {
+          "term": "singular ﬁbres",
+          "heading": false
+        }
+      ],
+      "extract": "a hyperelliptic curve branched over the (distinct) points {λ1, . . . , λ2g+2} ⊂C ⊂P1, there is an associated pencil of quadric hypersurfaces {sQ0 + tQ1}[s:t]∈P1, where Q0 = nX z2 j = 0 o ⊂P2g+1; Q1 = nX λjz2 j = 0 o ⊂P2g+1. (4.3) Remark 4.11. The fundamental group of the universal family of hyperelliptic curves is a central extension 1 →Z2 −→Γhyp g −→π1 Conf2g+2(CP1) →1 with the ﬁrst factor generated by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-43-idempotents-for-functors",
+      "number": "4.3",
+      "title": "Idempotents for functors",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maps homc",
+          "heading": false
+        },
+        {
+          "term": "maps homb",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": true
+        },
+        {
+          "term": "homh",
+          "heading": false
+        },
+        {
+          "term": "nu-fun",
+          "heading": false
+        },
+        {
+          "term": "functors",
+          "heading": true
+        },
+        {
+          "term": "split-closure",
+          "heading": false
+        },
+        {
+          "term": "homotopy",
+          "heading": false
+        }
+      ],
+      "extract": "categories. We begin by recalling the construction of a split-closure. An idempotent up to homotopy for an object Y ∈A is an A∞-functor from K to A taking the unit of the ﬁeld to Y . Explicitly, this amounts to giving a collection of elements ℘d ∈hom1−d A (Y, Y ); d ≥1 satisfying the equations X r X s1,...,sr µr A(℘s1, . . . , ℘sr) = ( ℘d−1 if d is even, 0 if d is odd (4.4) summing over partitions s1+· · ·+sr = d.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-44-an-illustrative-example",
+      "number": "4.4",
+      "title": "An illustrative example",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 41,
+      "labelStart": "37",
+      "labelEnd": "41",
+      "words": 2151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian disks",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifold",
+          "heading": false
+        },
+        {
+          "term": "lagrangian torus",
+          "heading": false
+        },
+        {
+          "term": "lagrangian tube",
+          "heading": false
+        },
+        {
+          "term": "lefschetz thimble",
+          "heading": false
+        },
+        {
+          "term": "lagrangian graph",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        }
+      ],
+      "extract": "the origin. We equip this with a symplectic form giving the exceptional divisor area c > 0. Let Clk denote the Cliﬀord algebra associated to a non-degenerate quadratic form on Ck, of total dimension 2k. Lemma 4.19. X contains a Lagrangian torus T which, equipped with the Spin structure which is non-trivial on both factors, has HF(T, T ) ∼= Cl2̸ = 0. Proof. There is a natural Hamiltonian torus action on C2, which is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-45-idempotents-and-blow-ups",
+      "number": "4.5",
+      "title": "Idempotents and blow-ups",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 49,
+      "labelStart": "41",
+      "labelEnd": "49",
+      "words": 4879,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maslov disks",
+          "heading": false
+        },
+        {
+          "term": "monotone lagrangian",
+          "heading": false
+        },
+        {
+          "term": "maslov index",
+          "heading": false
+        },
+        {
+          "term": "disk bundle",
+          "heading": false
+        },
+        {
+          "term": "symplectic disk",
+          "heading": false
+        },
+        {
+          "term": "monotone torus",
+          "heading": false
+        },
+        {
+          "term": "holomorphic disks",
+          "heading": false
+        },
+        {
+          "term": "embedded monotone",
+          "heading": false
+        }
+      ],
+      "extract": "pencil of hypersurface sections with smooth base locus B = H0 ∩H1 ⊂X. For simplicity, we suppose π1(B) = 0. We also ﬁx an additional “reference” hyperplane section Href linearly equivalent to the Hi but not in the pencil deﬁning B, so there is an associated net of hyperplanes ⟨H0, H1, Href⟩. We denote by b : Y →X the blow-up Y = BlB(X) along the base locus, and by E ⊂Y the exceptional divisor; note that E ∼= B × P1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-46-spinning",
+      "number": "4.6",
+      "title": "Spinning",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": "49",
+      "labelEnd": "52",
+      "words": 2091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz pencil",
+          "heading": false
+        },
+        {
+          "term": "ˆvγ",
+          "heading": false
+        },
+        {
+          "term": "lagrangian spheres",
+          "heading": false
+        },
+        {
+          "term": "lagrangian disk",
+          "heading": false
+        },
+        {
+          "term": "lefschetz thimbles",
+          "heading": false
+        },
+        {
+          "term": "a2g chain",
+          "heading": false
+        },
+        {
+          "term": "lagrangian tube",
+          "heading": false
+        },
+        {
+          "term": "circle bundle",
+          "heading": false
+        }
+      ],
+      "extract": "for proving Addendum 1.2. Let ν →H be a real rank 2 symplectic vector bundle over a symplectic manifold (H, ωH), and equip ν with a Hermitian metric. Suppose the ﬁrst Chern class c1(ν) = t[ωH] ∈H2(H) is positively proportional to the symplectic form. The symplectic form on the total space of the disk bundle of ν of radius < 1/ √ t is Ων = π∗ωH + 1 2d(r2α) where r is the radial co-ordinate and α is a connection form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-5-from-the-curve-to-the-relative-quadric",
+      "number": "5",
+      "title": "From the curve to the relative quadric",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 38,
+      "summary": null,
+      "keywords": [],
+      "extract": "Notation. For a space M equipped with a map p : M →P1, write M̸=t for the complement of the ﬁbre p−1(t) ⊂M; similarly M̸=T denotes the complement of the union of the ﬁbres for t ∈T .",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-51-matching-spheres",
+      "number": "5.1",
+      "title": "Matching Spheres",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 1151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matching spheres",
+          "heading": true
+        },
+        {
+          "term": "matching cycle",
+          "heading": false
+        },
+        {
+          "term": "matching path",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "vanishing cycle",
+          "heading": false
+        },
+        {
+          "term": "lefschetz pencil",
+          "heading": false
+        },
+        {
+          "term": "p2g",
+          "heading": false
+        },
+        {
+          "term": "algebraic lefschetz",
+          "heading": false
+        }
+      ],
+      "extract": "matching cycle is by deﬁnition a path χ : [−1, 1] →P1 in the base of a Lefschetz ﬁbration which ends at distinct critical values (and is otherwise disjoint from the set of critical values) and for which the associated vanishing cycles are Hamiltonian isotopic in the ﬁbre over χ(0). Any path between critical points for Z →P1 is a matching path, by Lemma 4.1. Lemma 5.1. Any matching path χ : [−1, 1] →P1 for Z →P1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-52-thimbles",
+      "number": "5.2",
+      "title": "Thimbles",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 1289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thimbles",
+          "heading": true
+        },
+        {
+          "term": "lefschetz thimbles",
+          "heading": false
+        },
+        {
+          "term": "pentagram spheres",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "matching spheres",
+          "heading": false
+        },
+        {
+          "term": "matching path",
+          "heading": false
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        }
+      ],
+      "extract": "by V(π) the Fukaya category of the Lefschetz ﬁbration in the sense of [92, Section 18]; we refer to op. cit. for foundational material on such categories. V(π) has objects either closed Lagrangian submanifolds or Lefschetz thimbles, equipped with the usual brane and perturbation data; we recall that one can achieve transversality for curves without components contained in ﬁbres within the class of almost complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-53-exterior-algebra",
+      "number": "5.3",
+      "title": "Exterior Algebra",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 59,
+      "labelStart": "56",
+      "labelEnd": "59",
+      "words": 1601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exterior algebra",
+          "heading": true
+        },
+        {
+          "term": "pentagram spheres",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "z2g orbits",
+          "heading": false
+        },
+        {
+          "term": "floer products",
+          "heading": false
+        },
+        {
+          "term": "holomorphic triangle",
+          "heading": false
+        },
+        {
+          "term": "rigid holomorphic",
+          "heading": false
+        },
+        {
+          "term": "clean intersection",
+          "heading": false
+        }
+      ],
+      "extract": "pentagram spheres of Figure 1. We orient the spheres equivariantly for the cyclic symmetry group which permutes them. Any two pentagram spheres are either disjoint, meet transversely in a point, or meet cleanly in a copy of S2g. The two generators of the Floer complex in the last case have degrees of the same parity, so there is no diﬀerential. Therefore as Z2-graded groups, HF(Li, Lj) can be computed equivalently",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-54-the-cubic-term",
+      "number": "5.4",
+      "title": "The cubic term",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 1619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cubic term",
+          "heading": true
+        },
+        {
+          "term": "holomorphic polygons",
+          "heading": false
+        },
+        {
+          "term": "absolute gradings",
+          "heading": false
+        },
+        {
+          "term": "floer generators",
+          "heading": false
+        },
+        {
+          "term": "hyperplane p2g",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "pentagram",
+          "heading": false
+        },
+        {
+          "term": "z2g",
+          "heading": false
+        }
+      ],
+      "extract": "only Z2-graded, as in Section 3.5 one can impose a Z-grading by considering the ﬁltrations on Floer complexes coming from intersections of holomorphic polygons with the polar divisor ∆of a meromorphic 1-form. We will choose the divisor ∆disjoint from the pentagram Lagrangians, at which point one can achieve transversality with perturbations of the almost complex structure and Floer equation supported away from ∆.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-55-finite-determinacy",
+      "number": "5.5",
+      "title": "Finite determinacy",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 67,
+      "labelStart": "62",
+      "labelEnd": "67",
+      "words": 3145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z2g action",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "dπf",
+          "heading": false
+        },
+        {
+          "term": "x1x2x",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan pair",
+          "heading": false
+        },
+        {
+          "term": "ιdw",
+          "heading": false
+        },
+        {
+          "term": "quantum cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "exterior algebra A = Λ∗(V ). Suppose now V ∼= C3 is 3-dimensional, so A has graded summands A0 = C ⊕Λ2(V ); A1 = V ⊕Λ3(V ). According to [93, Theorem 3.3], the L∞-quasi-isomorphism Φ of Theorem 3.18 has linear term Φ1 which is given by restricting elements of Hom(Λ(V )⊗i, Λ(V )) to the subspace of symmetric elements of Hom(V ⊗i, Λ(V )) (this is the Hochschild-Kostant-Rosenberg map). Since V is in odd degree, αi(v1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 70,
+      "labelStart": "67",
+      "labelEnd": "70",
+      "words": 1782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quilted floer",
+          "heading": false
+        },
+        {
+          "term": "symplectic floer",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "homological mirror",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "floer theory",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        }
+      ],
+      "extract": "1. M. Abouzaid. A geometric criterion for generating the Fukaya category. Publ. Math. Inst. Hautes Etudes Sci. 112: 191-240, (2010). 2. M. Abouzaid and I. Smith. Homological mirror symmetry for the four-torus. Duke Math. J. 152:373-440, (2010). 3. M. Abouzaid, D. Auroux and L. Katzarkov. In preparation. 4. P. Albers. On the extrinsic topology of Lagrangian submanifolds. Int. Math. Res. Not. 38:2341-2371, (2005). 5.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 7,
+        "items": [
+          "The theorem",
+          "Entropy",
+          "Topology",
+          "A ﬁxed point theorem",
+          "Formality",
+          "Spinning",
+          "Thimbles"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "floer cohomology",
+      "heading": true
+    },
+    {
+      "term": "symplectic floer",
+      "heading": false
+    },
+    {
+      "term": "monotone fukaya",
+      "heading": false
+    },
+    {
+      "term": "fukaya category",
+      "heading": true
+    },
+    {
+      "term": "floer product",
+      "heading": false
+    },
+    {
+      "term": "floer group",
+      "heading": false
+    },
+    {
+      "term": "floer homology",
+      "heading": true
+    },
+    {
+      "term": "quilted floer",
+      "heading": false
+    },
+    {
+      "term": "floer complex",
+      "heading": false
+    },
+    {
+      "term": "floer chain",
+      "heading": false
+    },
+    {
+      "term": "monotone lagrangian",
+      "heading": true
+    },
+    {
+      "term": "floer gradings",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Lagrangian spheres from the g = 2 pentagram and its g = 3 cousin; on the left one radial path and one basic path are also dotted",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Dehn twists for the genus 2 pencil on K3",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A Lagrangian torus in O(−1) All the holomorphic disks with boundaries on the ﬁbres of the moment map can be computed explicitly, cf. [19, 7]; in this case the torus bounds 3 families of Maslov index 2 disks, all having the same area, so T is in fact monotone. The three dotted lines emanating from th",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The symplectic cut of a Lagrangian tube in Blp∐q(C2) (the dotted balls are collapsed in performing the blow-up)",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The moment polytope for F1 and associated divisors",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Possible holomorphic triangles",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Lagrange surgery at a vertex",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 38,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 38,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p67); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 12
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 38 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1006.1099v3"
+  }
+}

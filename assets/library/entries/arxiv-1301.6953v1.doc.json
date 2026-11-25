@@ -1,0 +1,670 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1301.6953v1",
+  "title": "temp.ps",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Chiral Perturbation Theory",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-2-chiral-perturbation-theory"
+    },
+    {
+      "level": 1,
+      "title": "Determining low-energy-constants in the continuum",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-determining-low-energy-constants-in-the-contin"
+    },
+    {
+      "level": 1,
+      "title": "Hard pion ChPT",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-hard-pion-chpt"
+    },
+    {
+      "level": 1,
+      "title": "Beyond QCD",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-beyond-qcd"
+    },
+    {
+      "level": 1,
+      "title": "Leading logarithms",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-leading-logarithms"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "lund",
+          "heading": false
+        },
+        {
+          "term": "bijnens",
+          "heading": false
+        },
+        {
+          "term": "perturbation theory",
+          "heading": false
+        },
+        {
+          "term": "low-energy-constants",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1301.6953v1 [hep-ph] 29 Jan 2013 LU TP 13-03 Januray 2013 Chiral Perturbation Theory and Mesons Johan Bijnens∗ Department of Astronomy and Theoretical Physics, Lund University Sölvegatan 14A, SE 22362 Lund, Sweden E-mail: bijnens@thep.lu.se The talk contains a short introduction to mesonic Chiral Perturbation Theory (ChPT). In addition four disparate areas where some progress has been made in recent years are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1301.6953v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-2-chiral-perturbation-theory",
+      "number": "2",
+      "title": "Chiral Perturbation Theory",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Johan Bijnens",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mesonic chpt",
+          "heading": false
+        },
+        {
+          "term": "two-ﬂavour chpt",
+          "heading": false
+        },
+        {
+          "term": "johan bijnens",
+          "heading": false
+        },
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "chiral logarithms",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "physical masses",
+          "heading": false
+        }
+      ],
+      "extract": "This talk is dedicated to my friend and collaborator Ximo Prades who died since the previous Chiral Dynamics in Berne in 2009. For those of you who like to know more I recommend looking up the slides from my talk at the symposium in Granada in his memory [1]. We have been very frequent collaborators for a long time. I will not attempt to give an overview of Chiral Perturbation Theory (ChPT) for mesons in this talk.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
+      "number": "3",
+      "title": "Determining low-energy-constants in the continuum",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flavour chpt",
+          "heading": false
+        },
+        {
+          "term": "old fit",
+          "heading": false
+        },
+        {
+          "term": "nonumber bar",
+          "heading": false
+        },
+        {
+          "term": "order lecs",
+          "heading": false
+        },
+        {
+          "term": "framebox",
+          "heading": false
+        },
+        {
+          "term": "cite relations",
+          "heading": false
+        },
+        {
+          "term": "ref tab",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice QCD has now reached the stage where they can start determining the ChPT LECs. A review is the FLAG collaboration \\cite{FLAG} and talks at this conference that had results on LECS are \\cite{Lellouch,Stolz, Deuzeman,Bernard}. For the two-flavour constants the status has not really changed much since the previous chiral dynamics. The constants $\\bar l_1$ to $\\bar l_4$ are determined from ChPT at order $p^6$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-hard-pion-chpt",
+      "number": "4",
+      "title": "Hard pion ChPT",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 707,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion chpt",
+          "heading": true
+        },
+        {
+          "term": "hard pion",
+          "heading": true
+        },
+        {
+          "term": "cite cleo",
+          "heading": false
+        },
+        {
+          "term": "cite procura",
+          "heading": false
+        },
+        {
+          "term": "soft lines",
+          "heading": false
+        },
+        {
+          "term": "meson chpt",
+          "heading": false
+        },
+        {
+          "term": "cite weinberg",
+          "heading": false
+        },
+        {
+          "term": "textwidth includegraphics",
+          "heading": false
+        }
+      ],
+      "extract": "The usual formulation of the powercounting in mesonic ChPT \\cite{Weinberg0} assumes that all the momenta in all diagrams are soft and this allows the powercounting to work as simple dimensional counting. In baryon and heavy meson ChPT one takes a step further. There is a line with a heavy mass running through all diagrams but in a way all spatial momenta can still be considered small. In vector meson ChPT it has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-beyond-qcd",
+      "number": "5",
+      "title": "Beyond QCD",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac overline",
+          "heading": false
+        },
+        {
+          "term": "overline rangle",
+          "heading": false
+        },
+        {
+          "term": "langle overline",
+          "heading": false
+        },
+        {
+          "term": "rangle mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "nonumber langle",
+          "heading": false
+        },
+        {
+          "term": "nlo langle",
+          "heading": false
+        }
+      ],
+      "extract": "The methods of effective field theory and in particular ChPT can also be used for extensions. A simple extension is to take QCD with $N$ light flavours but one can also envisage using $N$ fermions in different representations of the gauge group. The representations can be complex, real or pseudo-real so we have in general three generic cases to study for the spontaneous breaking of the global symmetries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-leading-logarithms",
+      "number": "6",
+      "title": "Leading logarithms",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leading logarithms",
+          "heading": true
+        },
+        {
+          "term": "cite polyakov",
+          "heading": false
+        },
+        {
+          "term": "kampf",
+          "heading": false
+        },
+        {
+          "term": "massive case",
+          "heading": false
+        },
+        {
+          "term": "field theories",
+          "heading": false
+        },
+        {
+          "term": "effective field",
+          "heading": false
+        },
+        {
+          "term": "massless case",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        }
+      ],
+      "extract": "The last part on which I want to report is some recent progress in calculating leading logarithms in effective field theories. Some of this is also mentioned in the talk by Kampf \\cite{Kampf}. The underlying argument goes something like: Take a quantity with a single scale: $F(M)$. The dependence on the scale in field theory is typically logarithmic, so with $L=\\log\\left(\\mu/M\\right)$we get \\begin{equation} F= F_0 +",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mesonic chpt",
+      "heading": true
+    },
+    {
+      "term": "flavour chpt",
+      "heading": false
+    },
+    {
+      "term": "pion chpt",
+      "heading": true
+    },
+    {
+      "term": "meson chpt",
+      "heading": false
+    },
+    {
+      "term": "two-ﬂavour chpt",
+      "heading": false
+    },
+    {
+      "term": "chiral logarithms",
+      "heading": false
+    },
+    {
+      "term": "cite weinberg",
+      "heading": false
+    },
+    {
+      "term": "cite relations",
+      "heading": false
+    },
+    {
+      "term": "cite cleo",
+      "heading": false
+    },
+    {
+      "term": "cite procura",
+      "heading": false
+    },
+    {
+      "term": "cite polyakov",
+      "heading": false
+    },
+    {
+      "term": "effective lagrangian",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "We need to pick",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "An example of the power-counting, on the left the rules for",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The number of terms at LO [19], NLO [14, 15]and NNLO [17] for standard mesonic ChPT",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The quality of the relations found in [31]. Shown are the NLO and NNLO predictions for",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "The main new ﬁt of the Lr",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The left plot shows the form-factor f+ in D →πeν and D →Keν decays from CLEO [46]. In the",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "The coefﬁcients appearing the corrections to the vacuum-expectation-value for the three generic",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1301.6953v1"
+  }
+}

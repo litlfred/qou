@@ -1,0 +1,340 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-astro-ph-0203462v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:astro-ph/0203462v1  26 Mar 2002\n1\nAstronomy & Astrophysics manuscript no.\n(will be inserted by hand later)\nThe extreme r-element rich, iron-poor halo giant CS 31082-001\nImplications for the r-process site(s) and radioactive cosmochronology ⋆\nV. Hill1, B. Plez2, R. Cayrel3, T. C. Beers4, B. Nordstr¨om5,6, J. Andersen6, M. Spite1, F. Spite1, B.\nBarbuy7, P. Bonifacio8, E. Depagne1, P. Fran¸cois3, and F. Primas9\n1 Observatoire de Paris-Meudon, GEPI, 2 pl. Jules Janssen, F-92195 Meudon Cedex, France\ne-mail: Vanessa.Hill@obspm.fr\n2 GRAAL, Universit´e de Montpellier II, F-34095 Montpellier Cede",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "During this program, the bright (V = 11.7), very metal-poor halo giant CS 31082-001 , discovered during medium-resolution spectroscopic follow-up of candidate metal-poor stars from the HK survey of Beers and colleagues (Beers, Preston, & Shectman [@beers92]; Beers [@beers99]; Beers et al. [@beers02b]) was found to be strongly enhanced in heavy neutron-capture elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "As a consequence of this new analysis we have revised our measured value of the abundance ratio U/Th in CS 31082-001 , and simultaneously reduced its uncertainty, from derived observational errors on the order of 0.15 dex to 0.11 dex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#introduction label=\"introduction\"}\n\nThe detailed chemical abundances of the most metal-poor halo stars contain unique information on the earliest epochs of star formation and nucleosynthesis in our own and other galaxies. Previous studies of these extreme halo stars (Bessell & Norris [@bessell84]; Norris et al. [@norris01]; see other references in Table 2 of Cayrel [@cayrel96]) have revealed abundance patterns that are very unlike those found in the disk and in halo stars with metallicities above \\[Fe/H\\] $\\sim -2.5$ (e.g., Pagel & Tautvais̆iene [@pagel97]), both as regards their systemati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observations and reductions",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-observations-and-reductions.md",
+      "narrative": null,
+      "content": "[]{#observations label=\"observations\"}\n\nCS 31082-001 was first observed at high dispersion (R$>$<!-- -->45,000) with the new ESO-VLT spectrograph UVES (Dekker et al. [@dekker00]) in August 2000, and was immediately found to display outstandingly strong europium and thorium lines. The star was promptly re-observed at the highest possible resolution ($R=75,000$ in the blue arm of the spectrograph) during a subsequent night, and again in October 2000. Most of the spectra were obtained simultaneously in both the blue and red arms of UVES, using a dichroic mirror, as summarized in Table [\\[T-log\\]]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abundance analysis, and derived abundances of the lighter elements",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-abundance-analysis-and-derived-abundances-of-t.md",
+      "narrative": null,
+      "content": "the lighter elements",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Model atmosphere and stellar parameters",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-31-model-atmosphere-and-stellar-parameters.md",
+      "narrative": null,
+      "content": "The adopted model atmospheres (OSMARCS) were computed with the latest version of the MARCS code, initially developed by Gustafsson et al. ([@gben75]) and subsequently updated by Plez et al. ([@pbn92]), Edvardsson et al. ([@edvardsson]), and Asplund et al. ([@agke97]). The current version includes up-to-date continuum and line opacities for atomic and molecular species, treated in opacity sampling with more than 10$^5$ sampling points between 910Å and 20$\\mu$m. Models for CS 31082-001 were computed for a metallicity 1/1000th Solar, with the $\\alpha$-elements boosted by 0.4 dex relative to iron.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abundances of light and iron-peak elements",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-32-abundances-of-light-and-iron-peak-elements.md",
+      "narrative": null,
+      "content": "[]{#light label=\"light\"}\n\nMost of the abundances for the light and the iron-group elements were determined via equivalent width measurement of a selection of unblended lines. Exceptions are Li, C, N, and O, for which synthesis spectra were directly compared to the observed spectrum. The linelist used for all light and iron-peak elements will be published together with the analysis of the complete sample of our Large Program. For the compilation of this linelist, we used the VALD2 compilation of Kupka et al. [@vald2].\n\nTable [1](#T-elements){reference-type=\"ref\" reference=\"T-elements\"} lists th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Lines from 28 neutron-capture elements were observed in CS 31082-001 , mainly concentrated in the blue and UV parts of the spectrum.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Neutron-capture elements",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-4-neutron-capture-elements.md",
+      "narrative": null,
+      "content": "[]{#neutron capture label=\"neutron capture\"}\n\n<figure id=\"F-HfEu\">\n<p><span><embed src=\"M2317f11.ps\" style=\"width:4.2cm\" /> <embed src=\"M2317f12.ps\" style=\"width:4.2cm\" /></span></p>\n<figcaption>The observed Eu 4129 and Hf II 3999 Å line in CS 31082-001 . Symbols as in Fig. <a href=\"#F-C\" data-reference-type=\"ref\" data-reference=\"F-C\">[F-C]</a>.</figcaption>\n</figure>\n\nIn this section we discuss our adopted linelist, and examine the possible sources of error affecting the abundance determination of neutron-capture elements. We then explore the abundance patterns of elements in the three r-proc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linelists and physical data",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-41-linelists-and-physical-data.md",
+      "narrative": null,
+      "content": "Lines from 28 neutron-capture elements were observed in CS 31082-001 , mainly concentrated in the blue and UV parts of the spectrum. The full linelist for heavy elements is provided in an Appendix to this paper, which also lists the references for our adopted oscillator strengths. When available from the paper of Sneden et al. [@sneden96], the same oscillator strengths were adopted in order to make the comparison to the star CS 22892-052   easier. However, more lines were measured here, hence we had to supplement this compilation with additional information. In particular, we note that new res",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Error budget",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-42-error-budget.md",
+      "narrative": null,
+      "content": "[]{#errors label=\"errors\"}\n\nTable [\\[T-error\\]](#T-error){reference-type=\"ref\" reference=\"T-error\"} summarizes the various sources of uncertainties affecting the derived neutron-capture-element abundances in CS 31082-001 . Stochastic errors ($\\Delta$(obs) listed in column 6) arise from random uncertainties in the oscillator strengths (gf values) and in the measured equivalent widths. The magnitude of this error is estimated as $\\sigma$/$\\sqrt{N-1}$ (where $\\sigma$ is the rms around the mean abundance) when N$\\geq$<!-- -->2 lines of a given element are observed, otherwise as the quadratic sum o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "In contrast, the only other metal-poor stars (4 halo stars with $-2.15\\leq$\\[Fe/H\\]$\\leq -1.3$ dex) in which it was observed so far (Crawford et al. [@crawford98]) demonstrated a mild \\[Ag/Fe\\] enhancement, in agreement with the mild enhancement of the second r-process peak elements in these stars.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-43-the-lighter-elements-38leqzleq48.md",
+      "narrative": null,
+      "content": "This group includes the classically observed elements Sr, Y, and Zr, but also the less well-studied species Nb, Ru, Rh, Pd, and Ag, whose lines are weak and lie in the near-UV part of the spectrum, hampering their detection in normal metal-poor halo giants. The only metal-poor star in which all these elements have been previously detected is CS 22892-052 (Sneden et al. [@sneden00]), thanks to its large enhancement of neutron-capture elements. In CS 31082-001 we detected even more lines of these elements (due to the slightly larger metallicity, reduced blending by CH, CN and NH molecules, and b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-44-the-second-peak-elements-56leqzleq72.md",
+      "narrative": null,
+      "content": "[]{#second-peak label=\"second-peak\"}\n\nThe group of elements between barium and hafnium is the best studied mass-range of the neutron-capture elements, thanks to the relatively strong lines in the visible region of elements such as Ba, Eu, and La. In CS 31082-001 we were able to detect lines from *all* stable elements between Z=56 and Z=72. However, three of them cannot be used for abundance determinations because of poorly known atomic physics -- Ho and Lu have very strong hyperfine structure which is not well quantified; and while three lines of Yb were detected, two are severely blended (328",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-45-the-third-peak-elements-and-the-actinides-76l.md",
+      "narrative": null,
+      "content": "\\label{actinides}\n\nThe third r-process peak (near the magic number N=126) is sampled in\n\\cs by Os and Ir. The two heaviest species detected are the radioactive\nactinides Th and U, the use of which as chronometers we discuss in \nsection \\ref{age}.\n\n   \\begin{figure}\n   \\centering\n   {\\includegraphics[angle=0,width=4.2cm]{M2317f18.ps}\n   \\includegraphics[angle=0,width=4.2cm]{M2317f19.ps}\n   \\includegraphics[angle=0,width=4.2cm]{M2317f20.ps}\n   \\includegraphics[angle=0,,width=4.2cm]{M2317f21.ps}}\n      \\caption{The observed Th II 3351 \\AA, 3434\\AA, 4019\\AA\\, and 4086\\AA\\  \n      lines in \\cs. {\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Is the r-process universal ?",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-5-is-the-r-process-universal.md",
+      "narrative": null,
+      "content": "[]{#r universal label=\"r universal\"}\n\n<figure id=\"F-r-sun\">\n<p><span><embed src=\"M2317f24.ps\" style=\"width:8.5cm\" /> <embed src=\"M2317f25.ps\" style=\"width:8.5cm\" /> <embed src=\"M2317f26.ps\" style=\"width:8.5cm\" /></span></p>\n<figcaption><span><em>Top:</em></span> Neutron-capture-element abundances of CS 31082-001 compared to the Solar System r-process scaled to match the 56<span class=\"math inline\">≤</span>Z<span class=\"math inline\">≤</span>69 elemental abundances of CS 31082-001 . Two sources are plotted for the Solar r-process: Burris et al. <span class=\"citation\" data-cites=\"burris00\"></span",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and future work",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-7-conclusions-and-future-work.md",
+      "narrative": null,
+      "content": "The apparent brightness, very low [Fe/H], and enormous\nr-process enhancement, in combination with the lack of\nmolecular blanketing, makes CS 31082-001a uniquely fa-\nvorable object for study of the r-process nucleosynthesis\nhistory in the early Galaxy. The most conspicuous result of\nthese characteristics is the breakthrough in the measure-\nment of the abundance of uranium in this very old star,\nfacilitated by our excellent VLT/UVES spectra, which en-\nable the determination of accurate abundances for 41 (plus\n2 upper limits -N and Pb- and 3 detections which could not\nbe translated into accurate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

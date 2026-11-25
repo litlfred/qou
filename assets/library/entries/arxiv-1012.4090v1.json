@@ -1,0 +1,356 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1012.4090v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In the basic SU(2) Skyrme model, the solution with the lowest energy-per-charge $E_N$ is the triply-periodic skyrme crystal [@MS04]. For a given value of the topological charge (winding number, or baryon number) $N$, there are in general many isolated $N$-skyrmion solutions, *i.e.* local minima of the energy; but the belief is that for $N\\gg1$, the lowest-energy solution will resemble a chunk of the skyrme crystal.\n\nHowever, in the Skyrme-Faddeev system, where the field takes values in $S^2$ and the topological charge $N$ is the Hopf number, the situation is less clear. If there were a triply-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Generalized Skyrme System",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-the-generalized-skyrme-system.md",
+      "narrative": null,
+      "content": "In this section, we give some details of the one-parameter interpolating family of Skyrme systems. The field is denoted $\\Phi_{\\beta}=(\\Phi_1,\\Phi_2,\\Phi_3,\\Phi_4)$, where each component $\\Phi_{\\beta}$ is a function of the spatial coordinates $x^j=(x^1,x^2,x^3)=(x,y,z)$, and the constraint $\\Phi_{\\beta}\\Phi_{\\beta}=1$ is imposed. The energy density for the system, parametrized by $\\alpha\\in[0,1]$, is\n\n$$\\label{Enden}\n  {\\cal E}=\\lambda_2[(\\partial_j\\Phi_{\\beta})(\\partial_j\\Phi_{\\beta})-\\alpha P_jP_j]\n  +\\lambda_4[2(1-\\alpha)F^j_{\\beta\\gamma}F^j_{\\beta\\gamma}+\\alpha Q^jQ^j],$$\n\nwhere\n\n$$\\begin{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Generalized Skyrme Crystals\nJ. Silva Loboa,∗, R. S. Warda\naDepartment of Mathematical Sciences, Durham University, South Road, Durham, DH1 3LE, United Kingdom\nAbstract\nThis letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes\nvalues in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme-\nFaddeev case (maximal squashing).\nIn the round case, the lowest-energy crystal is the well-known cubic lattice of\nhalf-skyrmions; but in the squashed case the minimal-energy crystal structures turn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystals in the Generalized Skyrme Family",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-crystals-in-the-generalized-skyrme-family.md",
+      "narrative": null,
+      "content": "In this section, we investigate various triply-periodic solutions in the family of generalized Skyrme systems para- metrized by $\\alpha$. There are many of these, corresponding to different local minima of the energy, and we shall describe only some of them.\n\nThe results that follow are obtained by numerical minimization of the energy functional $E[\\Phi]$. More specifically, the expression for the energy is replaced by a second-order finite-difference approximation on a rectangular lattice with periodic boundary conditions, and the minima are found by conjugate-gradient relaxation. Testing wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p003-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p003-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-11",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-11.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/figure-img-p004-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1012.4090v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-4-conclusions.md",
+      "narrative": null,
+      "content": "We have studied triply-periodic stable solutions (local minima of the energy) in a family of Skyrme-type systems parametrized by $\\alpha\\in[0,1]$, which interpolates between the standard Skyrme model (at $\\alpha=0$) and the Skyrme-Faddeev system (at $\\alpha=1$). At $\\alpha=0$, the lowest-energy crystal resembles a cubic lattice of half-skyrmion particles, and this picture persists near $\\alpha=0$, as one would expect. But for larger values of $\\alpha$, various other configurations are preferred (that is, have lower energy-per-charge): for example, vortex-antivortex arrays and multi-sheet struc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

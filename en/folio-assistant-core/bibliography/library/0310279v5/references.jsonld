@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/0310279v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Stabilization in the braid groups I: MTWS",
+      "dcterms:creator": [
+        "BIRMAN, JOAN S"
+      ],
+      "dcterms:issued": "D:20241126",
+      "bibo:doi": "10.2140/gt.2006.10.413",
+      "dcterms:identifier": "https://doi.org/10.2140/gt.2006.10.413",
+      "dcterms:source": "library/0310279v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/0310279v5"
+    }
+  ]
+}

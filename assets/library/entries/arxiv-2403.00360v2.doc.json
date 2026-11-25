@@ -1,0 +1,1627 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2403.00360v2",
+  "title": "arxiv-2403.00360v2",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Division Algebras and the Standard Model",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-division-algebras-and-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Historical Overview",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-historical-overview"
+    },
+    {
+      "level": 2,
+      "title": "The Normed Division Algebras",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-normed-division-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The Associative Multiplication Algebras of O",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-the-associative-multiplication-algebras-of-o"
+    },
+    {
+      "level": 2,
+      "title": "Connection to the Standard Model",
+      "number": "2.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-connection-to-the-standard-model"
+    },
+    {
+      "level": 1,
+      "title": "Causal Fermion Systems",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-causal-fermion-systems"
+    },
+    {
+      "level": 2,
+      "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-causal-fermion-systems-and-the-reduced-causal"
+    },
+    {
+      "level": 2,
+      "title": "Spacetime Structures",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-spacetime-structures"
+    },
+    {
+      "level": 2,
+      "title": "Dynamical Equations in Spacetime",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-33-dynamical-equations-in-spacetime"
+    },
+    {
+      "level": 2,
+      "title": "Connection to the Standard Model",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-34-connection-to-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Connection to Quantum Field Theory",
+      "number": "3.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-35-connection-to-quantum-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Connection to Quantum Geometry and Quantum Gravity",
+      "number": "3.6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr"
+    },
+    {
+      "level": 1,
+      "title": "Comparison",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-comparison"
+    },
+    {
+      "level": 2,
+      "title": "Foundations of the Approaches",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-foundations-of-the-approaches"
+    },
+    {
+      "level": 2,
+      "title": "Connection to the Gauge Group of the Standard Model",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-connection-to-the-gauge-group-of-the-standard"
+    },
+    {
+      "level": 2,
+      "title": "Describing the Three Generations in the Standard Model",
+      "number": "4.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-43-describing-the-three-generations-in-the-stand"
+    },
+    {
+      "level": 1,
+      "title": "Outlook and Directions of Future Research",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-outlook-and-directions-of-future-research"
+    },
+    {
+      "level": 2,
+      "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+      "number": "5.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-51-connection-with-the-exceptional-lie-groups-an"
+    },
+    {
+      "level": 2,
+      "title": "Chiral Symmetry Breaking",
+      "number": "5.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-52-chiral-symmetry-breaking"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-appendix-a-description-of-majorana-spinors-in-ca"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 311,
+      "summary": null,
+      "keywords": [],
+      "extract": "CAUSAL FERMION SYSTEMS AND OCTONIONS FELIX FINSTER, NIELS G. GRESNIGT, JOS´E M. ISIDRO, ANTONINO MARCIAN`O, CLAUDIO F. PAGANINI, AND TEJINDER P. SINGH MARCH 2024 Abstract. We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2403.00360v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "causal action",
+          "heading": false
+        },
+        {
+          "term": "fermion systems",
+          "heading": false
+        },
+        {
+          "term": "octonionic theories",
+          "heading": false
+        },
+        {
+          "term": "seccfsintro",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "vacuum configuration",
+          "heading": false
+        },
+        {
+          "term": "minkowski vacuum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secintro label=\"secintro\"} This article is part of a series of papers comparing the structures and ideas of different approaches to fundamental physics that was started with [@eth-cfs; @mmt-cfs] and will be continued in [@cfstdqg; @tracedynamics]. Each of these papers contains an introduction to the theories under consideration including an overview of their accomplishments. These overviews serve as a starting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-division-algebras-and-the-standard-model",
+      "number": "2",
+      "title": "Division Algebras and the Standard Model",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-motivation",
+      "number": "2.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normed division",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "particle multiplets",
+          "heading": false
+        },
+        {
+          "term": "gauge groups",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "numbers mathbb",
+          "heading": false
+        },
+        {
+          "term": "particle physics",
+          "heading": false
+        }
+      ],
+      "extract": "The standard model of particle physics is a gauge theory based on the group ${\\rm{SU}}(3)\\times {\\rm{SU}}(2)\\times {\\rm{U}}(1)$ with particle multiplets falling into irreducible representations of these Lie groups. Despite its undeniable success, the standard model has some striking theoretical and conceptual puzzles that remain unanswered. For example: - What is the origin of the standard model gauge group, and why",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-historical-overview",
+      "number": "2.2",
+      "title": "Historical Overview",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spinor mathbb",
+          "heading": false
+        },
+        {
+          "term": "dirac spinors",
+          "heading": false
+        },
+        {
+          "term": "jordan algebras",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "spinor space",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "clifford algebra",
+          "heading": false
+        },
+        {
+          "term": "associative multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#historical label=\"historical\"} The octonions first appeared in relation to quantum theory in the classification of Jordan algebras by Jordan et. al. [@jordan1993algebraic]. In this context, the Jordan algebras represent algebras of observables, because unlike the usual matrix product, the commutative but non-associative Jordan product of two Hermitian operators is again Hermitian. In particular, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-normed-division-algebras",
+      "number": "2.3",
+      "title": "The Normed Division Algebras",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normed division",
+          "heading": true
+        },
+        {
+          "term": "division algebras",
+          "heading": true
+        },
+        {
+          "term": "octonions mathbb",
+          "heading": false
+        },
+        {
+          "term": "octonion multiplication",
+          "heading": false
+        },
+        {
+          "term": "imaginary octonion",
+          "heading": false
+        },
+        {
+          "term": "octonion basis",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "split octonions",
+          "heading": false
+        }
+      ],
+      "extract": "A division algebra is an algebra over a field where division is always well-defined, except by zero. A normed division algebra has the additional property that it is also a normed vector space, with the norm defined in terms of a conjugate. A well-known result by Hurwitz [@hurwitz1898ueber] states that there exist only four normed division algebras (over the field of real numbers): $\\mathbb{R}$, $\\mathbb{C}$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-the-associative-multiplication-algebras-of-o",
+      "number": "2.4",
+      "title": "The Associative Multiplication Algebras of O",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associative multiplication",
+          "heading": true
+        },
+        {
+          "term": "algebra mathbb",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "mathbb means",
+          "heading": false
+        },
+        {
+          "term": "clifford algebra",
+          "heading": false
+        },
+        {
+          "term": "quad forall",
+          "heading": false
+        },
+        {
+          "term": "neq quad",
+          "heading": false
+        },
+        {
+          "term": "linear maps",
+          "heading": false
+        }
+      ],
+      "extract": "The non-associativity of $\\mathbb{O}$ means that the algebra is not representable as a matrix algebra (with the standard matrix product). The algebra generated from the composition of left (and/or right) actions of $\\mathbb{O}$ on itself, however, is associative, since each such left (right) action corresponds to a linear operator (endomorphism). Suppose that $a,x$ are elements of some algebra $\\mathbb{A}$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-connection-to-the-standard-model",
+      "number": "2.5",
+      "title": "Connection to the Standard Model",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger omega",
+          "heading": false
+        },
+        {
+          "term": "chi dagger",
+          "heading": false
+        },
+        {
+          "term": "dagger overline",
+          "heading": false
+        },
+        {
+          "term": "alpha notag",
+          "heading": false
+        },
+        {
+          "term": "notag hspace",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "bigwedge chi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:octsm label=\"sec:octsm\"} In order to highlight the connection of the octonions to the standard mode, we now provide an explicit example of how the associative left multiplication algebra $\\mathbb{C}\\ell(6)$ generated from the adjoint actions of $\\mathbb{C}\\otimes\\mathbb{O}$ can be used to represent one generation of standard model fermions with ${\\rm{SU}}(3)\\times {\\rm{U}}(1)$ unbroken gauge symmetries. ###",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-causal-fermion-systems",
+      "number": "3",
+      "title": "Causal Fermion Systems",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seccfsintro",
+          "heading": false
+        },
+        {
+          "term": "causal",
+          "heading": true
+        },
+        {
+          "term": "cfsweblink",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#seccfsintro label=\"seccfsintro\"} We now give a self-contained introduction to the basic structures of a causal fermion system. We keep the explanations short, noting that detailed and elementary introductions to the physical and mathematical concepts can be found in the review papers [@dice2014; @review] and the comparison paper [@mmt-cfs Section 2.1]. We also refer the interested reader to the textbooks [@cfs;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
+      "number": "3.1",
+      "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": true
+        },
+        {
+          "term": "causal action",
+          "heading": true
+        },
+        {
+          "term": "reduced causal",
+          "heading": true
+        },
+        {
+          "term": "fermion systems",
+          "heading": true
+        },
+        {
+          "term": "action principle",
+          "heading": true
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "big lambda",
+          "heading": false
+        },
+        {
+          "term": "measure rho",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with the general definition of a causal fermion system. ::: Def []{#defcfs label=\"defcfs\"} (causal fermion systems) * Given a separable complex Hilbert space $\\mathscr{H}$ with scalar product $\\langle.|. \\rangle_\\mathscr{H}$ and a parameter $n \\in \\mathbb{N}$ (the *\"spin dimension\"*), we let ${\\mathscr{F}}\\subset \\text{\\rm{L}}(\\mathscr{H})$ be the set of all symmetric operators on $\\mathscr{H}$ of finite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-spacetime-structures",
+      "number": "3.2",
+      "title": "Spacetime Structures",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacetime structures",
+          "heading": true
+        },
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "mathclose succ",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathscr",
+          "heading": false
+        },
+        {
+          "term": "causal action",
+          "heading": false
+        },
+        {
+          "term": "mathscr qquad",
+          "heading": false
+        },
+        {
+          "term": "mathopen prec",
+          "heading": false
+        },
+        {
+          "term": "spacelike separated",
+          "heading": false
+        }
+      ],
+      "extract": "A causal fermion system describes a spacetime together with all structures therein. The structures are the causal and metric structures, spinors and interacting fields (for details see [@cfs Chapter 1]). All these spacetime structures are *inherent* in the sense that they use information already encoded in the causal fermion system. We now give a brief outline of the spacetime structures, with a focus on those",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-dynamical-equations-in-spacetime",
+      "number": "3.3",
+      "title": "Dynamical Equations in Spacetime",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linearized field",
+          "heading": false
+        },
+        {
+          "term": "equations",
+          "heading": true
+        },
+        {
+          "term": "causal",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": true
+        },
+        {
+          "term": "propagation",
+          "heading": false
+        }
+      ],
+      "extract": "ciple satisfies the following Euler-Lagrange (EL) equations. For a suitable value of the parameter s > 0, the function ℓ: F →R+ 0 defined by ℓ(x) := Z M Lκ(x, y) dρ(y) −s (3.8) is minimal and vanishes on spacetime M := supp ρ, ℓ|M ≡inf F ℓ= 0 . (3.9) Here the parameter s ≥0 in (3.8) is the Lagrange parameter corresponding to the volume constraint. For the derivation and further details we refer to [54, Section 2] or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-34-connection-to-the-standard-model",
+      "number": "3.4",
+      "title": "Connection to the Standard Model",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermionic projector",
+          "heading": false
+        },
+        {
+          "term": "bosonic potentials",
+          "heading": false
+        },
+        {
+          "term": "vacuum fermionic",
+          "heading": false
+        },
+        {
+          "term": "dirac sea",
+          "heading": false
+        },
+        {
+          "term": "dirac seas",
+          "heading": false
+        },
+        {
+          "term": "bosonic fields",
+          "heading": false
+        },
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "auxiliary fermionic",
+          "heading": false
+        }
+      ],
+      "extract": "a specific limiting case, referred to as the continuum limit, the causal action principle gives rise to the interactions of the standard model and general relativity (GR) in terms of an interaction of Dirac particles and anti-particles with classical bosonic fields (the connection to bosonic quantum fields will be made in Section 3.5 below). The analysis of the continuum limit is a systematic procedure for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-35-connection-to-quantum-field-theory",
+      "number": "3.5",
+      "title": "Connection to Quantum Field Theory",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "secqft",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "expectation value",
+          "heading": false
+        },
+        {
+          "term": "quantum state",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secqft label=\"secqft\"} Going beyond the continuum limit, the interaction described by the causal action principle can also be described by bosonic and fermionic quantum fields. So far, these constructions have been carried out only for causal fermion systems describing Minkowski space. More precisely, in [@fockbosonic; @fockfermionic] it was shown that an interacting causal fermion system at a given time can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
+      "number": "3.6",
+      "title": "Connection to Quantum Geometry and Quantum Gravity",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum gravity",
+          "heading": true
+        },
+        {
+          "term": "quantum geometry",
+          "heading": true
+        },
+        {
+          "term": "dxy",
+          "heading": false
+        },
+        {
+          "term": "spin connection",
+          "heading": false
+        },
+        {
+          "term": "pxyabs",
+          "heading": false
+        },
+        {
+          "term": "ssp",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "secqg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secqg label=\"secqg\"} The kernel of the fermionic projector [\\[Pxyabs\\]](#Pxyabs){reference-type=\"eqref\" reference=\"Pxyabs\"} encodes geometric structures giving rise to a mathematically concise setting of a Lorentzian quantum geometry [@lqg]. One important structure is the *spin connection* $D_{x,y}$, being a unitary mapping (with respect to the spin inner product [\\[ssp\\]](#ssp){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-comparison",
+      "number": "4",
+      "title": "Comparison",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "fermion systems",
+          "heading": false
+        },
+        {
+          "term": "comparison",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:comparison label=\"sec:comparison\"} In this section we will highlight and compare the mathematical structures and the conceptional ideas behind causal fermion systems and octonionic approaches to fundamental physics, and we will demonstrate a first simple example of how octonions can be integrated in causal fermion systems.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-41-foundations-of-the-approaches",
+      "number": "4.1",
+      "title": "Foundations of the Approaches",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "pvac",
+          "heading": false
+        },
+        {
+          "term": "causal action",
+          "heading": false
+        },
+        {
+          "term": "pvaco",
+          "heading": false
+        },
+        {
+          "term": "octonionic structures",
+          "heading": false
+        },
+        {
+          "term": "fermion systems",
+          "heading": false
+        },
+        {
+          "term": "classical spacetime",
+          "heading": false
+        },
+        {
+          "term": "fermionic projector",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:foundations label=\"sec:foundations\"} We begin with a discussion of the basic ideas and the mathematical structures of the theories. ### Octonionic Approaches Octonionic (division algebraic) approaches to the standard model remain an active research program, with different approaches considered in the literature. The underlying goal of these approaches is to find the correct algebraic structures, often in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
+      "number": "4.2",
+      "title": "Connection to the Gauge Group of the Standard Model",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermionic projector",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": true
+        },
+        {
+          "term": "algebra mathbb",
+          "heading": false
+        },
+        {
+          "term": "associative multiplication",
+          "heading": false
+        },
+        {
+          "term": "left associative",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gaugegroup label=\"sec:gaugegroup\"} Obtaining the gauge group of the standard model is a key objective for any fundamental physical theory. Here we summarize the current status of this quest in both approaches and discuss what we can learn from a comparison. ### Octonionic Approaches Algebraic approaches based on the octonions (or more generally the division algebras) attempt to recover the standard model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-describing-the-three-generations-in-the-stand",
+      "number": "4.3",
+      "title": "Describing the Three Generations in the Standard Model",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 1078,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm spin",
+          "heading": false
+        },
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "octonionic approaches",
+          "heading": false
+        },
+        {
+          "term": "generate mathbb",
+          "heading": false
+        },
+        {
+          "term": "sea text",
+          "heading": false
+        },
+        {
+          "term": "algebra mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secthreegen label=\"secthreegen\"} We now explain and compare how the three generations of elementary particles (like $e$, $\\mu$ and $\\tau$) come up in the different approaches. ### Octonionic Approaches Although existing division algebraic approaches provide an elegant construction of the internal space of a single generation of leptons and quarks, a comprehensive algebraic explanation for the existence of three",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-outlook-and-directions-of-future-research",
+      "number": "5",
+      "title": "Outlook and Directions of Future Research",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#secoutlook label=\"secoutlook\"} In this section, we given an outlook and explain directions of future research.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
+      "number": "5.1",
+      "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional jordan",
+          "heading": true
+        },
+        {
+          "term": "exceptional groups",
+          "heading": true
+        },
+        {
+          "term": "exceptional lie",
+          "heading": true
+        },
+        {
+          "term": "fermion generations",
+          "heading": false
+        },
+        {
+          "term": "secthreegen",
+          "heading": false
+        },
+        {
+          "term": "octonionic entries",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sece68 label=\"sece68\"} In Section [\\[secthreegen\\]](#secthreegen){reference-type=\"ref\" reference=\"secthreegen\"} we saw that describing the interactions of the standard model in the setting of causal fermion systems naturally leads to the exceptional Jordan algebra. Moreover, it brings with it the exceptional Lie groups which have a direct connection with the octonions. We now outline these connections, also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-chiral-symmetry-breaking",
+      "number": "5.2",
+      "title": "Chiral Symmetry Breaking",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 30,
+      "labelStart": "22",
+      "labelEnd": "30",
+      "words": 3480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a'b wedge",
+          "heading": false
+        },
+        {
+          "term": "a'b frac",
+          "heading": false
+        },
+        {
+          "term": "a'b epsilon",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "a'b right",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": true
+        },
+        {
+          "term": "njl bar",
+          "heading": false
+        },
+        {
+          "term": "dagger phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secchiralsymm label=\"secchiralsymm\"} As explained in Section [\\[seccfssm\\]](#seccfssm){reference-type=\"ref\" reference=\"seccfssm\"}, in the causal fermion system description of the standard model, the chiral symmetry is broken by hand via the ansatz [\\[asymmetry\\]](#asymmetry){reference-type=\"eqref\" reference=\"asymmetry\"}. This procedure is not quite satisfying. Instead, within the context of causal fermion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-appendix-a-description-of-majorana-spinors-in-ca",
+      "number": null,
+      "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana spinors",
+          "heading": true
+        },
+        {
+          "term": "causal fermion",
+          "heading": true
+        },
+        {
+          "term": "fermion systems",
+          "heading": true
+        },
+        {
+          "term": "dirac spinors",
+          "heading": false
+        },
+        {
+          "term": "four-component dirac",
+          "heading": false
+        },
+        {
+          "term": "weyl spinors",
+          "heading": false
+        },
+        {
+          "term": "dirac sea",
+          "heading": false
+        },
+        {
+          "term": "causal action",
+          "heading": false
+        }
+      ],
+      "extract": "Systems In some applications of octonions to the standard model, it is essential or helpful to describe the neutrinos by Majorana spinors (see for example [96, 5]). In order to facilitate the comparison of the different approaches, we here explain how Majorana spinors can be described in the setting of causal fermion systems. In the setting of causal fermion systems, one cannot work with two-component Weyl spinors.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 36,
+      "labelStart": "31",
+      "labelEnd": null,
+      "words": 2466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal fermion",
+          "heading": false
+        },
+        {
+          "term": "finster",
+          "heading": false
+        },
+        {
+          "term": "causal variational",
+          "heading": false
+        },
+        {
+          "term": "fermion systems",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "mirror universe",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "paganini",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Link to web platform on causal fermion systems: www.causal-fermion-system.com. [2] R. Ab lamowicz, Construction of spinors via Witt decomposition and primitive idempotents: A review, Clifford Algebras and Spinor Structures: A special volume dedicated to the memory of Albert Crumeyrolle (1919–1992) (1995), 113–123. [3] A. Adazzi and A. Marcian`o, Gravitational waves from dark first order phase transitions and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Motivation"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "causal fermion",
+      "heading": true
+    },
+    {
+      "term": "causal action",
+      "heading": true
+    },
+    {
+      "term": "causal structure",
+      "heading": false
+    },
+    {
+      "term": "causal variational",
+      "heading": false
+    },
+    {
+      "term": "interacting causal",
+      "heading": false
+    },
+    {
+      "term": "reduced causal",
+      "heading": true
+    },
+    {
+      "term": "octonions mathbb",
+      "heading": false
+    },
+    {
+      "term": "fermion systems",
+      "heading": true
+    },
+    {
+      "term": "fermion generations",
+      "heading": false
+    },
+    {
+      "term": "algebra mathbb",
+      "heading": false
+    },
+    {
+      "term": "complex octonions",
+      "heading": false
+    },
+    {
+      "term": "spinor mathbb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Fano plane, encoding the multiplicative structure of our octonions, where a ≡ea, a = 1, ..., 7. Note that each line is cyclic, representing a quaternionic triple",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2403.00360v2"
+  }
+}

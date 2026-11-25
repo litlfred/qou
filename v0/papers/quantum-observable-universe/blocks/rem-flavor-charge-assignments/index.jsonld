@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:flavor-charge-assignments",
+  "kind": "remark",
+  "title": "Flavor charge assignments and the hypercharge gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+    "papers/quantum-observable-universe/blocks/conj-sm-hypercharge-invariant",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+  "cites": [
+    "references/bilson-thompson2005",
+    "references/bilsonthompson2007",
+    "references/baez-huerta2010"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit.antiUp_down_same_weakSign_yet_distinct_charge",
+  "text": "flavor-charge-assignments.md",
+  "provenance": "authored"
+}

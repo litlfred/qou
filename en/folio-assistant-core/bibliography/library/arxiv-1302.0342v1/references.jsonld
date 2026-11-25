@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1302.0342v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Tying knots in light ﬁelds",
+      "dcterms:creator": [
+        "Hridesh Kedia, 1, ∗Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3",
+        "Irvine1, William T.M."
+      ],
+      "dcterms:issued": "D:20241127",
+      "dcterms:identifier": "https://arxiv.org/abs/1302.0342",
+      "dcterms:source": "library/arxiv-1302.0342v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1302.0342v1"
+    }
+  ]
+}

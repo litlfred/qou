@@ -1,0 +1,586 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "invariant-eigendistributions-2",
+  "blocks": [
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-contents.md",
+      "narrative": null,
+      "content": "1. Introduction\n2. Construction of Weyl group representations\n3. Specialization\n4. Springer theory\n5. Coherent families of eigendistributions\n6. Character contours and characteristic cycles\n7. Asymptotics at zero\n8. Harmonic polynomials\n9. Univalence\n10. Nilpotent orbital integrals\n11. A conjecture of Joseph\n12 Appendix: comparison with the Kazhdan-Lusztig construction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "This second part contains applications of the Integral Formula, as promised in the introduction to the\nﬁrst part. The main results I consider to be Theorems (5.1) and (7.1) , even though neither is hard to\nprove. Apart of being of some interest in themselves, they imply a number of results which are generally\nconsidered hard, if I am not mistaken, and certainly occupy considerable space in the literature. Among\nthe results that follow from these theorems one might mention a formula for the global character of a\n(go, Ko)-module with regular integral inﬁnitesismal character as an integral over t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "REPRESENTATIONS OF WEYL GROUPS\n1\nInvariant eigendistributions on a semisimple Lie algebra\nand homology classes on the conormal variety II:\nrepresentations of Weyl groups\nW. ROSSMANN1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of Weyl group representations",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-construction-of-weyl-group-representations.md",
+      "narrative": null,
+      "content": "We keep the notation introduced in part I, except that (until further notice) g can be any complex,\nsemisimple Lie algebra (not necessarily ≈go × go), b1 any Borel subalgebra of g containing the Cartan\nsubalgebra h. For any (not necessarily regular) λ ∈h∗we set\nΩλ = {ξ ∈g∗: p(ξ) = p(λ) for all G-invariant polynomials p on g∗}.\nThe map\npλ = pb1,λ : B∗→Ωλ, u · (b1, ν) →u · (λ + ν).\nwith u ∈U (compact form of G), ν ∈b1\n⊥is then well-deﬁned and surjective for all λ ∈h∗.\nAssume now λ regular. Then pλ is bijective and for any w ∈W we may deﬁne a transformation\naλ(w) = ab1,λ(w) of B∗by\naλ(w) = pwλ−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "In top dimension the W-map H2e(ν)(Bν)A(ν) →H2e(ν)(B), e(ν) = dimCBν, is an isomorphism onto its image.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "The inclusion Bν →B induces a W-map H∗(Bν) →H∗(B). This map factors through the projection H∗(Bν) →H∗(Bν)A(ν) onto the A(ν)-invariants. REPRESENTATIONS OF WEYL GROUPS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specialization",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-3-specialization.md",
+      "narrative": null,
+      "content": "In the above construction, choose V = {ν}, a single point. Then\nB∗(ν) = {(b, ν)|ν ∈b⊥},\nwhich may be identiﬁed with\nBν = {b ∈B|ν ∈b⊥}.\nThis is the ﬁxed point set of (the one parameter group generated by) ν, when g∗is identiﬁed with g. We\nthus have a representation of W in H∗(Bν).\nThe component group A(ν) of the stabilizer of ν in G acts on H∗(Bν). This action commutes with\nthe action of W, because the elements of A(ν) have representatives in U (the compact form of G) and the\noperators aλ(w) = pwλ−1 ◦pλ commute with the action of U on B∗, the pλ being U-equivariant.\nThe Weyl group W acts on the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lemma.",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-31-lemma.md",
+      "narrative": null,
+      "content": "Lemma.\nThe inclusion Bν →B induces a W-map H∗(Bν) →H∗(B). This map factors\nthrough the projection H∗(Bν) →H∗(Bν)A(ν) onto the A(ν)-invariants.\nREPRESENTATIONS OF WEYL GROUPS\n5\nProof.\nIt suﬃces to show that the homotopy equivalence of Bν constuct above has a representative\nBν →Bν, denoted aν(w), so that the inclusion i : Bν →B satisﬁes\ni ◦aν(w) ∼a(w) ◦i.\nChoose a neighbourhood V of Bν for which the inclusion k : Bν →V has a homotopy inverse q : V →Bν:\nq ◦k ∼1 on Bν,\nk ◦q ∼1 on V.\nLet U = {(b, ν′) : b ∈V, |ν′| ≤R} for some ﬁxed R > |ν|. Deﬁne maps\nj : Bν →U, j(b) = (k(b), ν) = (b, ν),\np : V →Bν,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Springer Theory",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-4-springer-theory.md",
+      "narrative": null,
+      "content": "We shall now apply the above construction with Go replaced by G ≈Go × Go. B will again denote the\nﬂag manifold of g, Bo that of Go, so that B = Bo × Bo. N = No × No is the nilpotent cone in g∗, No that\nin g∗\no. We again set z1 = bo × bo and zw = w−1z1. For V we now take\nN ∩k⊥= {(ν, −ν)|ν ∈No} ≈No.\nThen B∗(V ) becomes\nZ = {(b, b′; ν, −ν)|ν ∈b⊥∩b′⊥}\nthe conormal variety of the K-orbits on B. Our construction therefore gives a representation of W ≈\nWo × Wo on H∗(Z, Z).\nWe may identify No with the subset N ∩k⊥of N. For a subset V of No we write Z(V ) for B∗(V ).\nWhen V is a closed subvariety of N,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coherent families of eigendistributions.",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-5-coherent-families-of-eigendistributions.md",
+      "narrative": null,
+      "content": "To bring in the Integral Formula we need to pass from the conormal variety Z of the K-action to the\nconormal variety S of the Go-action by means of the involution ι : (x, y) →(x, ¯y) of g = go × go which\ninterchanges go = {(x, ¯x)} and k = {(x, x)}. Use this automorphism ι to transfer the represention of W on\nH∗(Z) constructed above from Z to S. It is still induced by the transformations aλ(w) = pwλ(w)−1 ◦pλ\nwith pλ : B∗→Ωλ, u · (b1, ν) →u · (λ + ν), except that for S we need to take b1 = s1 = bo × ¯bo as\nbase-point in the deﬁnition of pλ (because ιab1,λ(w)ι = aιb1,ιλ(w) ∼aιb1,λ(w)).\nREPRESENT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "The map H2n(S, Z) →CH(go, Z), Γ →θΓ , given by the Integral Formula is a W −isomorphism. More precisely, the homology classes w·S1, w∈W/Wo, form a basis for H2n(S, Z). They correspond to the basis (−1)noϕw, w ∈W/Wo, of CH(go, Z) under the bijection Γ →θΓ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/cor-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "cor-sec-007-01.md",
+      "narrative": null,
+      "content": "Sw = \u0001 y∈W/Wo (−1)l(w)−l(y)Euy(Sw)y · S1. or equivalently Zw = \u0001 y∈W/Wo (−1)l(w)−l(y)Euy(Zw)y · Z1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Corollary.",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-52-corollary.md",
+      "narrative": null,
+      "content": "5.2 Corollary.\nSw =\n\u0001\ny∈W/Wo\n(−1)l(w)−l(y)Euy(Sw)y · S1.\nor equivalently\nZw =\n\u0001\ny∈W/Wo\n(−1)l(w)−l(y)Euy(Zw)y · Z1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characters and characteristic cycles.",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-6-characters-and-characteristic-cycles.md",
+      "narrative": null,
+      "content": "As a ﬁrst and immediate application of Theorem 5.1 we derive a formula for the global character of a\n(g, K)-module as a contour integral over the characteristic cycle of the corresponding (D, K)-module.\nWe start with some general remarks about global characters. A (g, K)-module M with inﬁnitesimal\ncharacter λ ∈h is the Harish-Chandra module of an admissible representation of Go, whose global\ncharacter is an invariant eigendistribution Θ = ch(M) on Go. It follows from results of Harish-Chandra\n[1965] that one has an identity of distributions in a neighbourhood of 0 in go :\nΘ(exp x) = j(x)−1θ(x)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "The character contour C(M) of a (g, K)-module M and the characteristic variety Ch(M) of the corresponding D-module M are related by: Ch(M) = wι · ιC(M). (6) In this equation ι denotes the map from the conormal variety of K-action of B to the conormal variety of the Go-action induced by the involutionι of g which interchanges k and go and induces the W-isomorphism of the homology groups of the conormal varieties. It is further understood that the data (z1, −ρ) entering into the Beilinson-Bernstein correspondence and the data (s1, −σ) entering into the deﬁnition of character REPRESENTATIONS OF W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "The 2-forms τλ + σQ and σλ agree on B∗(Q). Proof of the lemma. Because of U-invariance it suﬃces to show that the forms agree at a point (s1, ν) with ν ⊂s1⊥∩Q. Let u(t) · (s1, v(t) · ν) (17) be a smooth curve on B∗(Q) with u(t) ∈U, v(t) ∈G, v(t) · ν ∈s1⊥, u(0) = 1, v(0) = 1. Its tangent vector at t = 0 is (u′ · s1, (u′ + v′) · ν) (18) REPRESENTATIONS OF WEYL GROUPS u′, v′ ∈g being the tangent vectors of u(t) and v(t) at t = 0. The 2-form τλ + σQ assigns to two such tangent vectors at (s1, ν) the value ⟨λ, [u′, u′′]⟩+ ⟨ν, [u′, u′′]⟩+ ⟨ν, [u′, v′′]⟩+ ⟨ν, [v′, u′′]⟩+ ⟨ν, [v′, v′′]⟩. (19) The curv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics at zero",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-7-asymptotics-at-zero.md",
+      "narrative": null,
+      "content": "Recall the W-ﬁltration of Z by the inverse images Z(O) of nilpotent K-orbits O on N ∩k⊥, which gave\nrise to the decomposition (4.1) of grH∗(Z). Passing from Z to S, the analogous ﬁltration of S by the\ninverse images S(O) of Go-orbits on N ∩igo∗gives a ﬁltration of H2n(S) by the subgroups H2n(S( ¯O))\naccording to the closure relation among the O’s leading to the decomposition\ngrH2n(S) ≈\n\u0001\nO\nH2n(S(O)).\n(1)\nAs in (4.2),\nH2n(S(O)) ≈H2e(ν)(Bν)Ao(ν)\n(2)\nand the inclusion Bν ⊂\n→B induces a W-injection\nH2e(ν)(Bν)A(ν) ⊂\n→H2e(ν)(B)\n(3)\n(Note that there is Ao(ν) in (2), A(ν) = Ao(ν) × Ao(ν) in (3).) We c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/rem-sec-009-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "rem-sec-009-03.md",
+      "narrative": null,
+      "content": "The fact that b⊥∩Q is Lagrangian on Q is mentioned in [Ginsburg 1986, Proposition 4.3]. The proof indicated there uses general facts from symplectic geometry. [NB(2003). These facts (moment maps preserving Poisson brackets) imply also that the form σQ is the canonical 2-form on B∗over the open orbit Q, where B∗→{N is regular.] We return to the proof of the theorem. Apply the above lemma to the G-orbit Q containing the Go-orbit O. The ﬁbration Bν ⊂ →B∗(Q) →Q (21) restricts to Bν ⊂ →S(O) →O. (22) For Γ it suﬃces to take a component of S(O). As explained for Z(O) in connection with (4.2), a compo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "For any nilpotent Go-orbit O in igo∗and any 2n-cycle Γ ∈H2n(S( ¯O)) over ¯O, (2πi)n \u0002 pλΓ exλ−σλ = cΓ (λ) (2πi)d \u0002 O exO−σO + o(|λ|e) (11) Explanation and remarks. d = d(O) = dimCO, e = e(O) = dimCBν(ν ∈O); xO is x considered as a function on O; σO is the canonical 2-form on O: σO(x · ν, y · ν) = ⟨ν, [x, y]⟩. The equation (11) is understood as an identity of distributions on go, as usual. It will be abbreviated to θΓ (λ) = cΓ (λ)θO + o(|λ|e). (12) with θΓ (λ) = (2πi)n \u0002 pλΓ exλ−σλ , θO = (2πi)d \u0002 O exO−σO . The equation (11) can also be written as an asymptotic relation as x →0 in go in the se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "The Wo-representation of type χO occurs with multiplicity one in degree eo = eo(O) in C[ho ∗] and not at all in lower degree. To make use of the formula (22) for pO one needs to know when cO(λ)̸ = 0. This happens exactly when the linear functional Ce[h∗] →C, c →c(λ) has a nonzero value on the Wo-invariant therein. That functional is the restriction of the natural pairing of polynomials on h∗with the formal power series eλ on h. Hence : cO(λ)̸ = 0 iﬀλe has a non-zero component along the Wo-invariant in Ce[h∗]. A simple suﬃcient condition is: cO(λ)̸ = 0 whenever λ is regular in h∗. To see this ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harmonic polynomials",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-8-harmonic-polynomials.md",
+      "narrative": null,
+      "content": "We study in some more detail the harmonic polynomials cΓ ∈He(h∗) associated to a 2n-cycle Γ ∈\nH2n(S( ¯O)) over ¯O by the relation\nθΓ (λ) = cΓ (λ)θO + o(|λ|e).\n(1)\nThese polynomials, or variants thereof, have a history. When θΓ represents a coherent family of virtual\ncharacters of Harish-Chandra modules, then cΓ is the character polynomial studied by King [1979] using\nresults of Joseph [1980], except that in King’s deﬁnition the polynomials are not canonically normalized:\nthere they are deﬁned up to a constant factor which depends on an arbitrary regular element in the\nREPRESENTATIONS OF WEYL G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "Let Γ ∈H2n(S( ¯O)) be a 2n −cycle Γ over ¯O on the conormal variety S of the Go-orbits on B, cΓ ∈He(h∗) the associated harmonic polynomial on h∗: θΓ (λ) = cΓ (λ)θO + o(|λ|e). If Γ = \u0007 y∈W/Wo myy·S1, then cΓ = pO(x) \u0007 y∈W myy·xe. Here pO is the (up to a constant factor) unique Wo-invariant, harmonic polynomial on h which transforms under W by χO ⊗χO; χO is the (irreducible) character of Wo on H2e(Boν)Ao(ν); x ∈h is arbitary subject to pO(x)̸ = 0, which is the case whenever x is regular. The Wo-representation of type χO occurs with multiplicity one in degree eo = eo(O) in C[ho ∗] and not at all",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "The map Cσ[Wo] →Cσ eo,eo [ho ∗× ho], a →fa, is a Wo × Wo −isomorphism. One has ϕa(λ, x) = fa(λ, x) + o(|λ|eo, |x|eo) REPRESENTATIONS OF WEYL GROUPS with o(|λ|eo, |x|eo) indicating a power series in λ and x whose terms are of degree > eo both in λ and in x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Univalence",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-9-univalence.md",
+      "narrative": null,
+      "content": "If one uses explicitly the identiﬁcation h = ho × ho and ho\n∗= ho one can get a formula for cΓ (λ) which\ndoes not involve the arbitrary regular x ∈h and an analogous formula for pO. To see this we can place\nourselves momentarily in the following general situation envisaged by Lusztig and Spaltenstein [1979].\nUntil further notice, let ho denote any ﬁnite dimensional complex vector space, Wo any ﬁnite group\nof linear transformations of ho. C[ho] denotes the complex polynomial functions on ho, C[Wo] the group\nalgebra of Wo. We shall assume that ho\n∗≈ho as Wo-module so that we can identify the two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lemma.",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-92-lemma.md",
+      "narrative": null,
+      "content": "Φa(λ, x) = Fa(λ, x) + o(|λ|e, |x|e).\nFurthermore,\nFa(λ, x) = fa(λ1, λ2)fσ(x1, x2)\nwhere λ = (λ1, λ2),\nx = (x1, x2) and ho\n∗is identiﬁed with ho; fa is deﬁned as in (2) :\nfa(λ1, λ2) = 1\neo!\n\u0001\ny∈Wo\na(y)⟨λ1, y · λ2⟩eo\nand fσ is deﬁned by\nfσ(x1, x2) = 1\neo!\n\u0001\ny∈Wo\nχσ(y)⟨x1, y · x2⟩eo\n(5)\nProof. A typical term in the expansion of Φa(λ, x) looks like\n1\nk1!k2!\n\u0001\ny∈W\na(y)⟨λ1, y1 · x1⟩k1⟨λ2, y2 · x2⟩k2\nwhere y = (y1, y2). By univalence, this = 0 if either k1 or k2 < eo. For the same reason\nFa(λ, x) =\n1\neo!eo!\n\u0001\ny∈W\na(y)⟨λ1, y1 · x1⟩eo⟨λ2, y2 · x2⟩eo\n(6)\nREPRESENTATIONS OF WEYL GROUPS\n23\nThe assumption",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nilpotent orbital integrals",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-10-nilpotent-orbital-integrals.md",
+      "narrative": null,
+      "content": "For each Go-orbit O in igo∗let µO be the distribution on go∗deﬁned by\n⟨µO, f⟩=\n1\n(2πi)d\n\u0002\nO\nfe−σO\n(1)\nwith d = dimCO. µO is a tempered distribution on igo∗. (Of course, we use igo∗rather than go∗or go\nonly to conform with the deﬁnition of the distributions θΓ , which will simplify the notation.) We denote\nby \bµO the Fourier transform of µO, a tempered distribution on go, given by a locally integrable function.\nIn this sense :\n\bµO(ξ) =\n1\n(2πi)d\n\u0002\nOλ\nexO−σO.\nFor regular λ ∈ih∗we set Oλ = Go · λ and µλ = µOλ. Since Go · λ = K · (λ + ibo\n⊥) = pλS1 for such λ\nwe ﬁnd that its Fourier transform is\n\bµ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "Let O be a nilpotent Go-orbit in igo∗. Then µO = e!|Wo| lim λ →0 ∂O,λµλ (7) and \bµO(x) = const.(λ, O)  π \u0001 y∈W χO(y)⟨λ, y · x⟩e (8) = const.(O)  π \u0001 y∈Wo χσ(y)⟨x, y · x⟩eo (9) The formula (7) has some history. For O = {0}, χO = sign representation of Wo, pO = const.π, and (7) becomes Harish-Chandra’s Limit Formula µO = const. lim λ →0 ∂π,λµλ(x). For special orbits Formula (7) was proved by Barbasch-Vogan [1982, 1983] by case by case computations and conjectured to hold in general. This conjecture was then proved by Hotta-Kashiwara [1984] (using the theory of holonomic systems).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjecture of Joseph",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-11-a-conjecture-of-joseph.md",
+      "narrative": null,
+      "content": "The asymptotic relation\nθΓ (λ) = cΓ (λ)θO + o(|λ|e)\n(1)\nmay be used to prove a conjecture of Joseph [1984, Conjecture 9.8]. The conjecture may be explained as\nfollows. Let\nT = {(b, ν)|b ∈Bo, ν ∈b⊥∩bo\n⊥}.\n(2)\nThis is the conormal variety of the action of the ﬁxed Borel subgroup Bo of Go on the ﬂag manifold Bo\nof Go. (The complexiﬁcation of Go does not enter into the picture here.) T is also the inverse image\nBo\n∗(bo\n⊥) of bo\n⊥under the Springer map Bo\n∗→No. Its dimension is no = dimCBo\n∗and our general\nconstruction gives a representation of Wo on H∗(T ). In top degree, H2no(T ) has as basis the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "we know that the relation Zw = \u0001 y∈Wo A(w, (y, 1))(y, 1) · Z1 (4) implies that θSw = (−1)n π \u0001 y∈Wo A(w, (y, 1))e(y−1,1)λ. (8) Of course, we also know that A(w, y) = (−1)l(w)−l(y)Euy(Zw), (9) REPRESENTATIONS OF WEYL GROUPS but this will not even be needed. Rather, we use the formula (9.8) to write cw(λ) = kO \u0001 y∈Wo A(w, (y, 1))⟨λ1, y · λ2⟩eo. (10) On the other hand, the polynomial cw represents the fundamental cycle of the component Bν w of Bν in H2e(B) ≈H(h). Since Bν = Boν × Boν that component must factor Bν w = Cw × C′ w as a product of a pair of components of Boν depending on w. These two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-015-12-appendix-comparison-with-the-kazhdan-lusztig.md",
+      "narrative": null,
+      "content": "For every simple reﬂection s of go, ho (“simple” with respect to the ﬁxed Borel bo of go) Kazhdan and\nLusztig [1980] deﬁne a proper homotopy equivalence αs of the conormal variety Z of the K-action on\nB = Bo × Bo:\nZ = {(b, b′, ν, ν′)|b, b′ ∈Bo, ν′ = −ν ∈b⊥∩b′⊥}.\nTheir procedure is equivalent to the following. Choose a neighbourhood U of Z in Bo × Bo × No × No\nso that the inclusion i : Z →U has a proper homotopy inverse p : U →Z. Choose a complex valued\ncontinuous function µ on bo\n⊥so that (k exp (tν) s·bo, k′ ·bo, k·ν, k′ ·ν′) ∈U for (k·bo, k·bo, k·ν, k′ ·ν′) ∈Z\nand |t| > |µ(ν)|. Here k, k′ ∈K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/invariant-eigendistributions-2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "P. Alexandroﬀand H. Hopf, Topologie. Chelsea, New York 1965. Original edition: Berlin 1935.\nD. Barbasch and D. Vogan, Jr., The local structure of characters. J. Functional Analysis 37, 27–55\n(1980).\nD. Barbasch and D. Vogan, Jr., Primitive ideals and orbital integrals in complex classical groups. Math.\nAnn. 259, 153–199 (1982).\nD. Barbaschand D. Vogan, Jr., Primitive ideals and orbital integrals in complex exceptional groups. J.\nof Algebra 80, 350–382 (1983).\nA. Beilinson and J. Bernstein, Localization de g-modules, C. R. Acad. Sci. Paris 292, 15–18 (1981).\nA. Borel, Sur la cohomologie des esp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

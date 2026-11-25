@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4711v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1412.4711v1",
+  "contains": [
+    "library/arxiv-1412.4711v1/sections/sec-front-matter",
+    "library/arxiv-1412.4711v1/sections/sec-000",
+    "library/arxiv-1412.4711v1/sections/sec-001",
+    "library/arxiv-1412.4711v1/sections/sec-002",
+    "library/arxiv-1412.4711v1/sections/sec-003",
+    "library/arxiv-1412.4711v1/sections/sec-004",
+    "library/arxiv-1412.4711v1/sections/sec-005",
+    "library/arxiv-1412.4711v1/sections/sec-006",
+    "library/arxiv-1412.4711v1/sections/sec-007",
+    "library/arxiv-1412.4711v1/sections/sec-008",
+    "library/arxiv-1412.4711v1/sections/sec-009",
+    "library/arxiv-1412.4711v1/sections/sec-010",
+    "library/arxiv-1412.4711v1/sections/sec-011",
+    "library/arxiv-1412.4711v1/sections/sec-012",
+    "library/arxiv-1412.4711v1/sections/sec-013",
+    "library/arxiv-1412.4711v1/sections/sec-014",
+    "library/arxiv-1412.4711v1/sections/sec-015",
+    "library/arxiv-1412.4711v1/sections/sec-016",
+    "library/arxiv-1412.4711v1/sections/sec-017",
+    "library/arxiv-1412.4711v1/sections/sec-018",
+    "library/arxiv-1412.4711v1/sections/sec-019",
+    "library/arxiv-1412.4711v1/sections/sec-020",
+    "library/arxiv-1412.4711v1/sections/sec-021",
+    "library/arxiv-1412.4711v1/sections/sec-022",
+    "library/arxiv-1412.4711v1/sections/sec-023"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or\n\n**CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT**\n\n*E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF*\n\n29 pp, 25 sections.\n\n**Abstract.** We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3, C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).\n\n**Outline.** Front matter; Introduction; 1 Representation spaces; 1.1 Representation variety and character varie; 1.2 Decorated versions; 1.3 Peripheral representations: choosing a mer; 1.4 Deformation variety; 1.5 A diagram; 1.6 The A-variety; 2 The figure eight knot complement; 2.1 Triangulation; 2.2 Presentations; 3 The deformation variety for the figure eight; 3.1 Computational tools; 3.2 An algebraic representation of Defor ( M, ; 3.3 Overview of the computations.; 3.4 Explicit computations for the Figure Eight; 4 Eigenvalues of peripheral representations",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1412.4711&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1412.4711v1",
+    "title_source": "slug",
+    "source_file": "1412.4711v1.pdf",
+    "source_sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
+    "pages": 29,
+    "arxiv": {
+      "id": "1412.4711",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "15 Dec 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1-s20-s0166864101002632-main",
+  "blocks": [
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount\nof “rope” needed to make the knot. This is the energy introduced in [25] and studied\nextensively in [15,18]. We follow an overall approach suggested by G. Buck for showing\nthat any inverse-square knot energy should be bounded by the 4/3 power of the ropelength.\nWe and other researchers have deﬁned a number of different energy functions for\n(smooth or polygonal) knots [3–6,11,15,16,18,22,25–28,32–34] based on the idea of\ninverse-square repelling energy (so these would correspond to inverse-cube “forces”).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Topology and its Applications 125 (2002) 97–109\nMöbius energy of thick knots\nEric J. Rawdon a,1, Jonathan Simon b,∗\na Department of Mathematics and Computer Science, Duquesne University, Pittsburgh, PA 15282, USA\nb Department of Mathematics, University of Iowa, Iowa City, IA 52242, USA\nReceived 18 August 2000\nAbstract\nThe Möbius energy of a knot is an energy functional for smooth curves based on an idea of self-\nrepelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be\nlow. In this paper, we give explicit bounds for energy in terms of the ropelength of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Let K be a C2 smooth curve in R3 whose curvature everywhere is ⩽some number k. Let C be a circle of curvature k, i.e., of radius r = 1 k . Let x,y ∈K and s,t ∈C be any points such that arc(x,y) = arc(s,t) ⩽πr. Then the chord distances satisfy |x −y| ⩾|s −t|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "The thickness of a smooth knot is bounded by the minimum radius of curvature and half the critical self-distance. In fact, R(K) = min \u0002 MinRad(K), 1 2 critical self-distance(K) \u0003 . The next lemma is a consequence of Lemmas 1 and 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "Suppose K is a smooth knot of thickness R(K) = r. For any x,y ∈K, such that arc(x,y) ⩾πr, we must have |x −y| ⩾2r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "For a ﬁxed point s on a circle C of radius R, \u0001 t∈C |s −t|2 − arc(s,t)2 = 2 πR .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-05.md",
+      "narrative": null,
+      "content": "If K is a smooth knot in R3, then \u0001 x∈K \u0001 arc(x,y)⩽πR(K) |x −y|2 − arc(x,y)2 ⩽2 π EL(K). E.J. Rawdon, J. Simon / Topology and its Applications 125 (2002) 97–109",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-06.md",
+      "narrative": null,
+      "content": "Suppose W is a measurable subset of K and m1,m2 > 0 are numbers with m1 + m2 = µ(W). Then we can partition W into measurable sets W1,W2, with µ(Wj) = mj, j = 1,2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/lem-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "lem-sec-001-07.md",
+      "narrative": null,
+      "content": "Suppose K is a smooth knot with R(K) = 1. Fix x ∈K and let Y be the subset of K consisting of all points y with arc(x,y) ⩾π. Let ν1,ν2,...,νm > 0 be numbers such that ν1 + ν2 + ··· + νm = L −2π (i.e., µ(Y)). Then there exists a sequence of radii 2 ⩽ρ1 ⩽ρ2 ⩽··· ⩽ρm E.J. Rawdon, J. Simon / Topology and its Applications 125 (2002) 97–109 and a partition of Y into measurable sets W1,W2,...,Wm such that (a) for each j, µ(Wj) = νj, and (b) W1 ⊆Y ∩S[2,ρ1] and for each j > 1, Wj ⊆Y ∩S[ρj−1,ρj].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The lemmas",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-the-lemmas.md",
+      "narrative": null,
+      "content": "The ﬁrst lemma is a version of a theorem of Schur. This is taken from [10], with the slight\nadjustment that we do not need to consider general planar convex curves as the reference\ncurves, just circles.\nLemma 1. Let K be a C2 smooth curve in R3 whose curvature everywhere is ⩽some\nnumber k. Let C be a circle of curvature k, i.e., of radius r = 1\nk . Let x,y ∈K and s,t ∈C\nbe any points such that arc(x,y) = arc(s,t) ⩽πr. Then the chord distances satisfy\n|x −y| ⩾|s −t|.\nProof. See Schur’s Theorem in [10].\n✷\nWe also will use results on thickness of knots developed in [21]. Let K be a smooth\nknot in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thick knots have bounded energy",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-3-thick-knots-have-bounded-energy.md",
+      "narrative": null,
+      "content": "In this section, we prove that the Möbius energy of a knot is bounded by the ropelength.\nOur goal is partly the theorem itself and partly the paradigm: any “energy” deﬁned in terms\nof inverse-square distances should have an analogous bound, with the proof following this\nmodel.\nTheorem 8. If K is a smooth knot in R3 then\nEO4(K) < 4.57EL(K)4/3.\n(3)\nTheorem 9. If K is a smooth knot in R3 then\nEO4(K) ⩽1\n4EL(K)2.\n(4)\nRemark. For short knots, the quadratic bound is better than the 4/3 power bound.\nComparing (3) to (4), we see that one needs ropelengths over 79 before the advantage\nof the lower expon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "For short knots, the quadratic bound is better than the 4/3 power bound. Comparing (3) to (4), we see that one needs ropelengths over 79 before the advantage of the lower exponent is evident. If one uses the actual bound (12) we obtain in the proof, which is a complicated expression dominated by a 4/3 power term, then that bound is lower than (4) for ropelengths > 41. Computer simulations suggest [23,35] the only knots that can be realized with a ropelength ⩽41 are the unknot and the trefoil. Proof of Theorems 8 and 9. We will obtain the quadratic bound en route to the 4/3 power bound. We foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "If K is a smooth knot in R3 then EO4(K) < 4.57EL(K)4/3. (3)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "If K is a smooth knot in R3 then EO4(K) ⩽1 4EL(K)2. (4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] G. Buck, Four-thirds power law for knots and links, Nature 392 (1998) 238–239.\n[2] G. Buck, Most smooth closed space curves contain approximate solutions of the n-body\nproblem, Nature 395 (1998) 51–53.\n[3] G. Buck, J. Orloff, A simple energy function for knots, Topology Appl. 61 (3) (1995) 205–214.\n[4] G. Buck, J. Simon, Knots as dynamical systems, Topology Appl. 51 (3) (1993) 229–246.\n[5] G. Buck, J. Simon, Energy and length of knots, in: Lectures at KNOTS ’96 (Tokyo), World\nScientiﬁc, River Edge, NJ, 1997, pp. 219–234.\n[6] G. Buck, J. Simon, Thickness and crossing number of knots, Topolo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

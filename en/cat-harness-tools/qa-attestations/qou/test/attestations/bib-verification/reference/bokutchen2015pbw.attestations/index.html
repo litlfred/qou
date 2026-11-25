@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/bokutchen2015pbw.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-srp5u5udf8.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-srp5u5udf8","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/bokutchen2015pbw.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/bokutchen2015pbw.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/bokutchen2015pbw.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;bokutchen2015pbw&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 425,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1502.06472v1/1502.06472v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;bokutchen2015pbw&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;A 13-page survey of Groebner-Shirshov / Composition-Diamond machinery organised around eight PBW theorems; it proves nothing new, and a full-text keyword scan returns zero hits for Hecke, Temperley, Iwahori, Catalan, Young and quantum group, so it bears on NONE of the branch&#39;s five live fronts. Its bearing is on the other chapter, unital-groebner-bases, and it is specific. Sec. 3.7 (p. 6, read and verified in the PDF) collects the counterexamples to PBW for Lie algebras over a commutative algebra: Shirshov 1953 and Cartier 1958 unconditionally, plus Cohn&#39;s 1963 family L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0], proved for p = 2, 3, 5 by Bokut-Chen-Chen. Both folio copies of the PBW corollary -- cor:pbw and cor:ugb-pbw -- state Ug isomorphic to Sg as an R-module for a Lie algebra over an arbitrary commutative ring with unity and carry NO freeness hypothesis, while both proofs open by choosing a well-ordered basis for g (verified in the working tree: pbw-corollary.md and pbw-corollary-proof.md in unital-groebner-bases-chapter, and pbw-corollary.md in buchberger-and-pbw). Every neighbouring block in that chapter states &#39;free as an R-module&#39; explicitly, so the omission reads as a drafting slip. Cohn&#39;s K is a commutative ring with unity and L_p is not K-free, so the counterexample family sits inside the corollary&#39;s stated hypotheses, and a module isomorphism compatible with the canonical map would force g -&gt; Ug injective. Graded supporting rather than core because the document is a secondary source: it reports the counterexamples in one paragraph and proves none of them, so the primary citations belong to Cartier 1958 / Shirshov 1953 / Bokut-Chen-Chen 2011, none of which is in references.ts or has been read. It supplies nothing toward the one open sorry in the PBW Lean files (normal_form_exists, the termination half), so no aid-proof is proposed.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Sec. 3.7, p. 6&quot;,
+            &quot;statement&quot;: &quot;Shirshov (1953) and Cartier (1958) give counterexamples to PBW for Lie algebras over a commutative algebra; Cohn (1963) conjectures that L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0] does not embed into its universal enveloping associative algebra, and Bokut-Chen-Chen prove the conjecture for p = 2, 3, 5.&quot;,
+            &quot;useForFolio&quot;: &quot;Names the counterexamples showing the missing &#39;free as an R-module&#39; hypothesis in cor:pbw / cor:ugb-pbw cannot simply be dropped, and supplies the citation for both the hypothesis fix and a sharpness remark.&quot;,
+            &quot;targets&quot;: [
+              &quot;cor:pbw&quot;,
+              &quot;cor:ugb-pbw&quot;,
+              &quot;prf:pbw&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec. 3.1, p. 4&quot;,
+            &quot;statement&quot;: &quot;For L = Lie_k(X|S) with U(L) = k&lt;X | S^(-)&gt;: S is a Lie GS basis iff S is an associative GS basis, and in that case U(L) has linear basis {u_1 ... u_t : u_1 &lt;= ... &lt;= u_t, u_i in Irr(S) intersect ALSW(X)}.&quot;,
+            &quot;useForFolio&quot;: &quot;prf:pbw asserts &#39;the argument that G is a Groebner-Shirshov basis is exactly as in the classical setting&#39; and cites nothing at all (pbw-corollary-proof.ts has no cites field). This is the classical field-case statement that sentence defers to.&quot;,
+            &quot;targets&quot;: [
+              &quot;prf:pbw&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec. 1, pp. 2-3&quot;,
+            &quot;statement&quot;: &quot;Over a commutative algebra K one works in the double-free algebra M_{k[Y]}(X) with lcm(u_Y u_X, v_Y v_X) = lcm(u_Y,v_Y) lcm(u_X,v_X); a composition relative to a trivial lcm(u_X,v_X) is automatically trivial over a field but NOT over a commutative algebra when lcm(u_Y,v_Y) != u_Y v_Y, so a given pair generally has infinitely many compositions.&quot;,
+            &quot;useForFolio&quot;: &quot;Candidate one-line remark on why the commutative ground ring costs this chapter nothing -- the folio requires unit leading coefficients (LC in R^x, lambda in R^*) plus a monomial basis, so coefficients never entangle with the word monoid. GATED: it must first be checked that those unit conditions genuinely exclude the non-trivial trivial-lcm compositions rather than merely making them unreachable in the worked examples.&quot;,
+            &quot;targets&quot;: [
+              &quot;thm:buchberger&quot;,
+              &quot;thm:ugb-buchberger&quot;,
+              &quot;def:s-polynomial&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;cor:pbw states the isomorphism over an arbitrary commutative ring with unity with no hypothesis on g, but its proof begins &#39;Choose a well-ordered basis {x_i | i in I} for g&#39;. Add &#39;which is free as an R-module&#39; to the statement, matching the wording every other block in the chapter uses, and cite Sec. 3.7 for why it cannot be dropped. The joined bean covers both copies plus the Lean docstrings.&quot;,
+            &quot;target&quot;: &quot;cor:pbw&quot;,
+            &quot;bean&quot;: &quot;qou-pwd4&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Same defect in the second copy: buchberger-and-pbw/pbw-corollary.md states the corollary with no freeness hypothesis and then proves it by &#39;Choosing a well-ordered basis {x_i | i in I} for g&#39;. Fix both copies in one change so they do not drift apart.&quot;,
+            &quot;target&quot;: &quot;cor:ugb-pbw&quot;,
+            &quot;bean&quot;: &quot;qou-pwd4&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;A sharpness remark recording that the freeness hypothesis is not cosmetic: over a commutative ring PBW genuinely fails, and Cohn&#39;s family is the standard witness. Must be phrased as reported-by-survey unless the primaries are read first; none of Cohn, Cartier, Shirshov or Bokut-Chen-Chen is in references.ts.&quot;,
+            &quot;target&quot;: &quot;cor:pbw&quot;,
+            &quot;bean&quot;: &quot;qou-tvsp&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;One-line remark on why the commutative ground ring costs nothing here, gated on the check named in the third keyResult. Drop the remark if the check fails -- in which case thm:buchberger has a defect and needs its own item.&quot;,
+            &quot;target&quot;: &quot;thm:buchberger&quot;,
+            &quot;bean&quot;: &quot;qou-bzj5&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T19:30:00Z&quot;,
+        &quot;source_sha&quot;: &quot;381cd869fcc0&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

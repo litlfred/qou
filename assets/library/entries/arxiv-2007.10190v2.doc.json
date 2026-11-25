@@ -1,0 +1,1553 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2007.10190v2",
+  "title": "arxiv-2007.10190v2",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic expansions in perturbative quantum field theory",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-asymptotic-expansions-in-perturbative-quantum"
+    },
+    {
+      "level": 2,
+      "title": "Resurgence in complex Chern-Simons theory",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-resurgence-in-complex-chern-simons-theory"
+    },
+    {
+      "level": 1,
+      "title": "The equation (1-x)(1-x-1)=1 and the 41 knot",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-the-equation-1-x1-x-11-and-the-41-knot"
+    },
+    {
+      "level": 1,
+      "title": "The equation x-2(1-x)3=1 and the 52 knot",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-the-equation-x-21-x31-and-the-52-knot"
+    },
+    {
+      "level": 1,
+      "title": "Descendants",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-descendants"
+    },
+    {
+      "level": 2,
+      "title": "The Kashaev invariant and its descendants",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-the-kashaev-invariant-and-its-descendants"
+    },
+    {
+      "level": 2,
+      "title": "The q-series (G00,G10) and their descendants",
+      "number": "4.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-the-q-series-g00g10-and-their-descendants"
+    },
+    {
+      "level": 2,
+      "title": "The state integral and its descendants",
+      "number": "4.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-43-the-state-integral-and-its-descendants"
+    },
+    {
+      "level": 1,
+      "title": "Computations",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-computations"
+    },
+    {
+      "level": 2,
+      "title": "Resurgent analysis",
+      "number": "5.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-51-resurgent-analysis"
+    },
+    {
+      "level": 2,
+      "title": "The 41 knot",
+      "number": "5.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-52-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "The 52 knot",
+      "number": "5.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-53-the-52-knot"
+    },
+    {
+      "level": 1,
+      "title": "Open questions",
+      "number": "6",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-6-open-questions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. q-series associated with the 52 knot",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-a-q-series-associated-with-the-52-knot"
+    },
+    {
+      "level": 2,
+      "title": "A.1. The state integral of the 52 knot",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-a1-the-state-integral-of-the-52-knot"
+    },
+    {
+      "level": 2,
+      "title": "A.2. The symmetry q q-1",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot invariants",
+          "heading": false
+        },
+        {
+          "term": "quantum knot",
+          "heading": false
+        },
+        {
+          "term": "resurgent",
+          "heading": false
+        },
+        {
+          "term": "tinguished",
+          "heading": false
+        }
+      ],
+      "extract": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI˜NO Abstract. The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series. We conjecture that these series are resurgent functions whose Stokes automorphism is given by a pair of matrices of q-series with integer coeﬃcients, which are",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2007.10190v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-asymptotic-expansions-in-perturbative-quantum",
+      "number": "1.1",
+      "title": "Asymptotic expansions in perturbative quantum field theory",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbative expansions",
+          "heading": true
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": false
+        },
+        {
+          "term": "vertical lines",
+          "heading": false
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "Perturbative expansions in quantum field theories are often mathematically defined but typically lead to factorially divergent formal power series. Important examples are the perturbative expansions of the partition function of 3-dimensional manifolds (with, or without boundary) in complex Chern-Simons theory with arbitrary gauge group. For instance, in~\\cite{GLM} it was shown that the LMO invariant of a 3-manifold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-resurgence-in-complex-chern-simons-theory",
+      "number": "1.2",
+      "title": "Resurgence in complex Chern-Simons theory",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 999,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": true
+        },
+        {
+          "term": "cdot tau",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "eqref ssym",
+          "heading": false
+        }
+      ],
+      "extract": "In what follows, we will identify the partition function of complex Chern-Simons theory with the state integral of Andersen-Kashaev in~\\cite{AK}, following the ideas of Hikami, Dimofte et al~\\cite{Hikami,DGLZ}. Although this identification has not been derived from first principles, it turns out to have a number of startling consequences. We will focus on manifolds of the form $M= \\mathbb{S}^3 \\backslash",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-the-equation-1-x1-x-11-and-the-41-knot",
+      "number": "2",
+      "title": "The equation (1-x)(1-x-1)=1 and the 41 knot",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series φσj",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "nqn",
+          "heading": false
+        },
+        {
+          "term": "fundamental solution",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        }
+      ],
+      "extract": "The state integral of the 41 knot is given by Equation (39) below with (A, B) = (1, 2) and µ = λ = 0. The critical points of the integrand are solutions of the algebraic equation (1 −x)(1 −x−1) = 1. (7) The latter has two solutions ξ1 = e2πi/6 and ξ2 = e−2πi/6 which lie in the number ﬁeld Q(√−3), the trace ﬁeld of the 41 knot. The corresponding series Φσj(τ) satisfy the relation Φσ2(τ) = iΦσ1(−τ) and the ﬁrst few",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-the-equation-x-21-x31-and-the-52-knot",
+      "number": "3",
+      "title": "The equation x-2(1-x)3=1 and the 52 knot",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 611,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series φσj",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": true
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "above equation",
+          "heading": false
+        },
+        {
+          "term": "iφσ",
+          "heading": false
+        }
+      ],
+      "extract": "The state integral of the 52 knot is given by Equation (39) below with (A, B) = (2, 3) and µ = λ = 0. The critical points of the integrand are solutions of the algebraic equation x−2(1 −x)3 = 1 . (19) 6 STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI˜NO The above equation (which deﬁnes a cubic ﬁeld of discriminant −23, the trace ﬁeld of the 52 knot) has three solutions ξ1 = 0.78492 + 1.30714 . . . i, ξ2 = 0.78492",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-descendants",
+      "number": "4",
+      "title": "Descendants",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendants",
+          "heading": true
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "ancestors",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.d} A key aspect of our study of asymptotic series are linear $q$-difference equations which are satisfied for their descendants. This elementary idea leads to descendants of the Kashaev invariant (studied extensively in~\\cite{GZ:kashaev}), of asymptotic series (ibid), of $q$-series as well as of state integrals. In this section we review in detail the story of descendants (or ancestors, as the case may",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-the-kashaev-invariant-and-its-descendants",
+      "number": "4.1",
+      "title": "The Kashaev invariant and its descendants",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        },
+        {
+          "term": "descendants",
+          "heading": true
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "subequations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.k41} The series $\\Phi_{\\s_1} (\\tau)$ appearing in the saddle-point expansion of the state integral appeared originally in the asymptotic expansion of the Kashaev invariant \\cite{K95}. In the case of the $4_1$ knot, the Kashaev invariant is given by \\begin{equation} \\label{J41} \\J^{(4_1)}(q) = \\sum_{n=0}^\\infty (q;q)_n (q^{-1};q^{-1})_n \\,. \\end{equation} The above expression can be evaluated when $q$ is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-the-q-series-g00g10-and-their-descendants",
+      "number": "4.2",
+      "title": "The q-series (G00,G10) and their descendants",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qseries",
+          "heading": false
+        },
+        {
+          "term": "sqrt tau",
+          "heading": false
+        },
+        {
+          "term": "series phi",
+          "heading": false
+        },
+        {
+          "term": "radial asymptotics",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "upper half-plane",
+          "heading": false
+        },
+        {
+          "term": "descendants",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sub.gG41} We now discuss an appearance of the formal power series $\\Phi(\\tau)$ in the radial asymptotics of some $q$-series, following~\\cite{GZ:qseries}. By $q$-series we mean formal Laurent series in a variable $q$ with integer coefficients, i.e., elements of $\\BZ((q))$. All the $q$-series below will define holomorphic functions in the punctured unit disk with (perhaps) a pole at the origin. We now recall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-the-state-integral-and-its-descendants",
+      "number": "4.3",
+      "title": "The state integral and its descendants",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 764,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integral",
+          "heading": true
+        },
+        {
+          "term": "integral cali",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "tau lambda",
+          "heading": false
+        },
+        {
+          "term": "delta lambda",
+          "heading": false
+        },
+        {
+          "term": "frac b-3a",
+          "heading": false
+        },
+        {
+          "term": "tilde phi",
+          "heading": false
+        },
+        {
+          "term": "delta bullet",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.state} In this section we recall the definition of state integrals and some of their basic properties. State integrals are multidimensional integrals whose integrand is a product of Faddeev's quantum dilogarithm function $\\Phi_{\\bb}$ (whose definition we will not need and may be found in~\\cite{Faddeev,FK-QDL}) times an exponential of a quadratic and linear form. Here $\\tau=\\bb^2 \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-computations",
+      "number": "5",
+      "title": "Computations",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-51-resurgent-analysis",
+      "number": "5.1",
+      "title": "Resurgent analysis",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 817,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes rays",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphism",
+          "heading": false
+        },
+        {
+          "term": "stokes ray",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "transseries",
+          "heading": false
+        }
+      ],
+      "extract": "gent analysis. A detailed exposition may be found for example in [ABS19, MS16]. Given a Gevrey-1 series ϕ(τ) = X n≥0 anτ n, an = O(Cnn!), (55) its Borel transform is deﬁned by bϕ(ζ) = X k≥0 ak k! ζk. (56) It is a holomorphic function in a neighborhood of the origin. In favorable cases, this function can be extended to the complex ζ-plane (also called Borel plane), but it will have singularities. Assuming that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-the-41-knot",
+      "number": "5.2",
+      "title": "The 41 knot",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 937,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes rays",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "sii iii",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "borel resummations",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "siii",
+          "heading": false
+        },
+        {
+          "term": "marcos mari",
+          "heading": false
+        }
+      ],
+      "extract": "series ϕ1,2(τ) of the 41 knot is shown in Fig. 1. Points in each vertical line are 2πi apart, and the two points in the real axis correspond to ι± = ± \u0012V (σ1) 2π −V (σ2) 2π \u0013 = ±V π , (69) where V is deﬁned in (9). Since each singularity in the Borel plane leads to a discontinuity in the Borel resummation, one has the structure of Stokes rays shown in Fig. 2 (where we took into account both series). Note that there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-53-the-52-knot",
+      "number": "5.3",
+      "title": "The 52 knot",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iii siv",
+          "heading": false
+        },
+        {
+          "term": "sii iii",
+          "heading": false
+        },
+        {
+          "term": "siii",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "series ϕσj",
+          "heading": false
+        },
+        {
+          "term": "ιij",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        }
+      ],
+      "extract": "series ϕσj(τ) (j = 1, 2, 3) of the 52 knot is shown in Fig. 3. Points in each vertical line are 2πi are apart, while the six points ιij surrounding the origin are given by ιij = V (σi) 2π −V (σj) 2π , 1 ≤i̸ = j ≤3 , (81) where V (σi) are given in (21). The structure of Stokes rays is shown in Fig. 4. There is also an inﬁnite dense set of rays accumulating towards the imaginary axis. s21 s31 ϕσ1(τ) s12 s32 ϕσ2(τ) s23",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-6-open-questions",
+      "number": "6",
+      "title": "Open questions",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "knot cite",
+          "heading": false
+        },
+        {
+          "term": "widehat polynomial",
+          "heading": false
+        },
+        {
+          "term": "topological string",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "difference equations",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        },
+        {
+          "term": "linear difference",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.open} In this paper we have formulated conjectures on the full resurgent structure of quantum knot invariants of hyperbolic knots, and we have presented detailed evidence for the first non-trivial cases, namely the knots $4_1$ and $5_2$. Although we used complex Chern-Simons theory as a way to motivate our results, and state integrals and asymptotic series as a way to present them, it is clear that a key",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subsidy",
+          "heading": false
+        },
+        {
+          "term": "synergy",
+          "heading": false
+        },
+        {
+          "term": "jorgen",
+          "heading": false
+        }
+      ],
+      "extract": "S.G. wishes to thank the Max Planck Institute for their hospitality and especially Don Zagier. The authors would like to thank Jorgen Andersen, Bertrand Eynard, Rinat Kashaev and Maxim Kontsevich for enlightening conversations. The work of J.G. and M.M. is partially supported by the Fonds National Suisse, subsidy 200020-175539, by the NCCR 51NF40-182902 ``The Mathematics of Physics'' (SwissMAP), and by the ERC",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-appendix-a-q-series-associated-with-the-52-knot",
+      "number": null,
+      "title": "Appendix A. q-series associated with the 52 knot",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Appendix A. q-series associated with the 52 knot",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-a1-the-state-integral-of-the-52-knot",
+      "number": null,
+      "title": "A.1. The state integral of the 52 knot",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integral",
+          "heading": true
+        },
+        {
+          "term": "cmz",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        },
+        {
+          "term": "mari",
+          "heading": false
+        },
+        {
+          "term": "marcos",
+          "heading": false
+        }
+      ],
+      "extract": "the state integral I2,3,λ,µ(b). The data we need to present our result are F2,3,λ(q, x) = ∞ X n=0 qn(n+1)+nλ (q; q)3 n xn, (103) eF2,3,µ(˜q, ˜x) = ∞ X n=0 (−1)n ˜q 1 2 n(n+1)+nµ (˜q; ˜q)3 n ˜xn, (104) as well as the operator P2,3,λ,µ = −1 2πi + (1 + 2δ −3δ1 + λ)(1 2 + ˜δ −3˜δ1 + µ) (105) −b2 2 ((1 + 2δ −3δ1 + λ)2 −3δ2) (106) −b−2 2 ((1 2 + ˜δ −3˜δ1 + µ)2 −1 4 −3˜δ2 + 6 E(0) 2 (˜q)). (107) Using the observation that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 952,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marcos mari",
+          "heading": false
+        },
+        {
+          "term": "ricardo schiappa",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "energy phys",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        }
+      ],
+      "extract": "[ABS19] Inˆes Aniceto, G¨ok¸ce Ba¸sar, and Ricardo Schiappa, A primer on resurgent transseries and their asymptotics, Phys. Rep. 809 (2019), 1–135. [AK14] Jorgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014), no. 3, 887–934. [BC13] Sandro Bettin and Brian Conrey, Period functions and cotangent sums, Algebra Number The- ory 7 (2013), no. 1, 215–242. 24",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 4,
+        "items": [
+          "Introduction",
+          "Asymptotic expansions in perturbative quantum ﬁeld theory",
+          "The 41 knot",
+          "The 52 knot"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "marcos mari",
+      "heading": false
+    },
+    {
+      "term": "series phi",
+      "heading": false
+    },
+    {
+      "term": "series φσj",
+      "heading": false
+    },
+    {
+      "term": "knot cite",
+      "heading": false
+    },
+    {
+      "term": "asymptotic series",
+      "heading": false
+    },
+    {
+      "term": "stokes rays",
+      "heading": true
+    },
+    {
+      "term": "stokes constants",
+      "heading": false
+    },
+    {
+      "term": "perturbative series",
+      "heading": false
+    },
+    {
+      "term": "stokes matrices",
+      "heading": false
+    },
+    {
+      "term": "resurgent structure",
+      "heading": false
+    },
+    {
+      "term": "quantum knot",
+      "heading": false
+    },
+    {
+      "term": "resurgent functions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The singularities in the Borel plane for the series ϕσ1,2(τ). 5.2. The 41 knot. The structure of singularities in the Borel plane for the formal power series ϕ1,2(τ) of the 41 knot is shown in Fig. 1. Points in each vertical line are 2πi apart, and the two points in the real axis correspond to ι± =",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Stokes rays in the τ-plane for Φ(τ)",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The singularities in the Borel plane for the series ϕσj(τ) of the 52 knot for j = 1, 2, 3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Stokes rays in the τ-plane for Φσj(τ) of the 52 knot for j = 1, 2, 3. Note that the points s23, s31 happen to have the same real part, and so do s13, s32. The dots are not shown in scale for aesthetic purpose",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-23",
+      "file": "images/img-p013-23.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-45",
+      "file": "images/img-p013-45.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-67",
+      "file": "images/img-p013-67.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-89",
+      "file": "images/img-p013-89.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-111",
+      "file": "images/img-p013-111.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-133",
+      "file": "images/img-p013-133.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-155",
+      "file": "images/img-p013-155.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-177",
+      "file": "images/img-p013-177.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-199",
+      "file": "images/img-p013-199.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-221",
+      "file": "images/img-p013-221.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-243",
+      "file": "images/img-p013-243.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-265",
+      "file": "images/img-p013-265.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-287",
+      "file": "images/img-p013-287.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-309",
+      "file": "images/img-p013-309.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-331",
+      "file": "images/img-p013-331.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-353",
+      "file": "images/img-p013-353.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-375",
+      "file": "images/img-p013-375.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-397",
+      "file": "images/img-p013-397.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-419",
+      "file": "images/img-p013-419.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-441",
+      "file": "images/img-p013-441.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-463",
+      "file": "images/img-p013-463.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-18",
+      "file": "images/img-p014-18.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-35",
+      "file": "images/img-p014-35.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-52",
+      "file": "images/img-p014-52.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-69",
+      "file": "images/img-p014-69.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-86",
+      "file": "images/img-p014-86.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-103",
+      "file": "images/img-p014-103.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-120",
+      "file": "images/img-p014-120.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-137",
+      "file": "images/img-p014-137.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-154",
+      "file": "images/img-p014-154.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-171",
+      "file": "images/img-p014-171.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-188",
+      "file": "images/img-p014-188.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-205",
+      "file": "images/img-p014-205.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-222",
+      "file": "images/img-p014-222.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-239",
+      "file": "images/img-p014-239.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-256",
+      "file": "images/img-p014-256.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-273",
+      "file": "images/img-p014-273.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 39
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2007.10190v2"
+  }
+}

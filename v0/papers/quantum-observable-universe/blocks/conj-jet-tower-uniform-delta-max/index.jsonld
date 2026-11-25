@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-jet-tower-uniform-delta-max",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:jet-tower-uniform-delta-max",
+  "kind": "conjecture",
+  "title": "Uniform per-level binding bound $|\\Delta^{(n)}(\\varrho)| \\le \\Delta_{\\max}(\\varrho)$ for the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-tower-convergence",
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+    "papers/quantum-observable-universe/blocks/lem-tower-pair-equality-fixed-level"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "tier:S",
+    "jet-tower",
+    "uniform-bound",
+    "convergence",
+    "open-problem",
+    "empirically-supported"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.JetTowerUniformDeltaMax",
+  "text": "jet-tower-uniform-delta-max.md",
+  "leanSource": "jet-tower-uniform-delta-max.lean",
+  "provenance": "authored"
+}

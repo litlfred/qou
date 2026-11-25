@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-descartes-knot-eigenbasis",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:descartes-knot-eigenbasis",
+  "kind": "corollary",
+  "title": "Knot eigenbasis completeness for a Descartes universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-descartes-braid-structure",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "tags": [
+    "archimedean-universe",
+    "knot-invariant",
+    "hecke-algebra",
+    "schur-weyl"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.descartes_knot_eigenbasis",
+  "text": "descartes-knot-eigenbasis.md",
+  "leanSource": "descartes-knot-eigenbasis.lean",
+  "provenance": "authored"
+}

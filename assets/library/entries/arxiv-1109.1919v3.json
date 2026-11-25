@@ -1,0 +1,169 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1109.1919v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "Let G be a cosimplicial crossed groupoid. The gauge transfor- mations form an equivalence relation on the set Desc(G). We call this relation gauge equivalence. Actually Desc(G) has a lot more struc- ture; see Remark 3.5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorial Descent Data",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-combinatorial-descent-data.md",
+      "narrative": null,
+      "content": "AMNON YEKUTIELI\nAbstract. We consider descent data in cosimplicial crossed groupoids. This\nis a combinatorial abstraction of the descent data for gerbes in algebraic geom-\netry. The main result is this: a weak equivalence between cosimplicial crossed\ngroupoids induces a bijection on gauge equivalence classes of descent data.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-0-introduction.md",
+      "narrative": null,
+      "content": "For a cosimplicial crossed groupoid G = {Gp}p∈N we denote by Desc(G) the set\nof gauge equivalence classes of descent data. The purpose of this note is to prove:\nTheorem 0.1 (Equivalence). Let Φ : G →H be a weak equivalence between cosim-\nplicial crossed groupoids. Then the function\nDesc(Φ) : Desc(G) →Desc(H)\nis bijective.\nThe various notions involved are recalled or deﬁned in Section 1. The theorem\nis repeated as Theorem 2.4 in Section 2, and proved there. Connections with other\npapers, and several remarks, are in Section 3.\nTheorem 0.1 plays a crucial role in the new version of our paper [Ye1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "A crossed groupoid is better known as a strict 2-groupoid, or a crossed module over a groupoid, or a 2-truncated crossed complex; see [Bw]. When Ob(G) is a singleton then G is just a crossed module (or a crossed group). More on this in Remark 3.3. Deﬁnition 1.4. Suppose H = (H1, H2, AdH1↷H2, D) is another crossed groupoid. A morphism of crossed groupoids Φ : G →H is a pair of morphisms of groupoids Φi : Gi →Hi, i = 1, 2, that are equal on objects, and respect the twistings and the feedbacks. We denote by CrGrpd the category consisting of crossed groupoids and morphisms between them. COMBINATOR",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Equivalence",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let Φ : G →H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(Φ) : Desc(G) →Desc(H) is bijective. The various notions involved are recalled or deﬁned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "plays a crucial role in the new version of our paper [Ye1] on twisted deformation quantization of algebraic varieties. This is explained in Remark 3.2. Acknowledgments. I wish to thank Matan Prezma, Ronald Brown, Sharon Hol- lander, Vladimir Hinich, Behrang Noohi and Lawrence Breen for useful discussions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Main Theorem",
+      "pageStart": 5,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-the-main-theorem.md",
+      "narrative": null,
+      "content": "\\label{sec:equiv-cosim}\n\nRecall that for a groupoid $G$, the set of isomorphism classes of objects\nis denoted by $\\bsym{\\bsym{\\pi}}_0(G)$.\n\n\\begin{dfn} \\label{dfn:equiv-cosim.101}\nLet \n$G = \n( G_1, G_2, \n\\opn{Ad}_{G_1 \\crvar G_{2}}, \\opn{D} )$\nbe a crossed groupoid. \nWe define the homotopy set\n\\[ \\bsym{\\bsym{\\pi}}_0(G) := \\bsym{\\bsym{\\pi}}_0(G_1) , \\]\nand the homotopy groups\n\\[ \\bsym{\\bsym{\\pi}}_1(G, x) := \n\\opn{Coker} \\bigl( \\opn{D} : G_2(x) \\to G_1(x) \\bigr) \\]\nand\n\\[ \\bsym{\\bsym{\\pi}}_2(G, x) := \n\\opn{Ker} \\bigl( \\opn{D} : G_2(x) \\to G_1(x) \\bigr) \\]\nfor $x \\in \\opn{Ob}(G)$.\n\\end{dfn}\n\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Remarks",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-3-some-remarks.md",
+      "narrative": null,
+      "content": "\\label{sec:remarks}\n\nTo finish the note, here are a few remarks and clarifications, to help place\nour work in context. \n\n\\begin{rem} \\label{rem:10}\nCosimplicial crossed groupoids arise naturally in the geometry of gerbes. \nThis is well-known -- see \\cite{Gi, Br1, Br2, BGNT1}. \nLet us quickly indicate how this occurs. Let $\\mcal{G}$ be a sheaf of groups on\na topological space $X$, and let $\\mcal{A}ut(\\mcal{G})$ be its sheaf of\nautomorphism groups. There is an obvious sheaf of crossed\ngroups (i.e.\\ crossed modules)\n\\[ \\gerbe{G} = \\big( \\opn{D} : \\mcal{G} \\to \\mcal{A}ut(\\mcal{G}) \\big)  \\] \non $X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.1919v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "[BGNT1] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformation quantization of\ngerbes, Adv. Math. 214, Issue 1 (2007), 230-266.\n[BGNT2] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for algebroids I: Nerves\nof two-groupoids, eprint arXiv:1211.6603.\n[Br1]\nL. Breen, Classiﬁcation of 2-gerbes and 2-stacks, Astérisque 225 (1994), Soc. Math.\nFrance.\n[Br2]\nL. Breen, Notes on 1- and 2-gerbes, in “Towards Higher Categories”, J.C. Baez and\nJ.P. May (edit.), The IMA Volumes in Mathematics and its Applications 152, 193-235,\nSpringer (2009). Eprint arXiv:math/0611317.\n[Bw]\nR. Brow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

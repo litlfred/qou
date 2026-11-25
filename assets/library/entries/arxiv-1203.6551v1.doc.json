@@ -1,0 +1,1098 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1203.6551v1",
+  "title": "On the number of hyperbolic 3-manifolds of a given volume",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Hyperbolic Dehn fillings determined by their volumes",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v"
+    },
+    {
+      "level": 1,
+      "title": "Dehn filling on the figure eight knot complement and its sister",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme"
+    },
+    {
+      "level": 1,
+      "title": "Dehn filling on the Whitehead link complement and its sister",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-dehn-filling-on-the-whitehead-link-complement"
+    },
+    {
+      "level": 1,
+      "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp"
+    },
+    {
+      "level": 1,
+      "title": "Hyperbolic graphs with parabolic meridians",
+      "number": "6",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-hyperbolic-graphs-with-parabolic-meridians"
+    },
+    {
+      "level": 1,
+      "title": "Associated circle packings and cusp moduli",
+      "number": "7",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-associated-circle-packings-and-cusp-moduli"
+    },
+    {
+      "level": 1,
+      "title": "Construction of different manifolds sharing the same volume",
+      "number": "8",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-construction-of-different-manifolds-sharing-th"
+    },
+    {
+      "level": 1,
+      "title": "Some Open Questions",
+      "number": "9",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-some-open-questions"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "orientable hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite sequence",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1203.6551v1 [math.GT] 29 Mar 2012 On the number of hyperbolic 3-manifolds of a given volume Craig Hodgson and Hidetoshi Masai Abstract. The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic 3-manifolds with any given volume v. We show that there is an inﬁnite sequence of closed orientable hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1203.6551v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusped vols",
+          "heading": false
+        },
+        {
+          "term": "orientable cusped",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "closed cusped",
+          "heading": false
+        },
+        {
+          "term": "cusped unique",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "volume orientable",
+          "heading": false
+        },
+        {
+          "term": "thrice punctured",
+          "heading": false
+        }
+      ],
+      "extract": "Thurston and Jørgensen (see [@Th]) showed that the set of volumes of finite volume orientable complete hyperbolic $3$-manifolds is a closed, non-discrete, well ordered subset of $\\mathbb{R}_{>0}$ of order type $\\omega^\\omega$. Further, the number $N(v)$ of complete orientable hyperbolic $3$-manifolds of volume $v$ is finite for all $v\\in \\mathbb{R}_{>0}$. In this paper we study how $N(v)$ varies with $v$. There has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v",
+      "number": "2",
+      "title": "Hyperbolic Dehn fillings determined by their volumes",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn fillings",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": true
+        },
+        {
+          "term": "mathbb tau",
+          "heading": false
+        },
+        {
+          "term": "horospherical torus",
+          "heading": false
+        },
+        {
+          "term": "bar tau",
+          "heading": false
+        },
+        {
+          "term": "text vol",
+          "heading": false
+        },
+        {
+          "term": "cusped hyp",
+          "heading": false
+        },
+        {
+          "term": "cusp param",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#cusped_hyp label=\"cusped_hyp\"} Let $M$ be a cusped hyperbolic 3-manifold and let $T$ be a horospherical torus cross section of one of the cusps of $M$. Choose an oriented basis for $H_1(T;\\mathbb{Z}) \\cong \\mathbb{Z}^2$, called the \"meridian\" and \"longitude\" for $T$, and let $M(a,b)$ be the result of Dehn filling along the simple closed curve with homology class $(a,b) \\in H_1(T;\\mathbb{Z}) \\cong \\mathbb{Z}^2$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme",
+      "number": "3",
+      "title": "Dehn filling on the figure eight knot complement and its sister",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn filling",
+          "heading": true
+        },
+        {
+          "term": "big gap",
+          "heading": false
+        },
+        {
+          "term": "equiv bmod",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": true
+        },
+        {
+          "term": "figure eight",
+          "heading": true
+        },
+        {
+          "term": "knot complement",
+          "heading": true
+        },
+        {
+          "term": "volume omega",
+          "heading": false
+        },
+        {
+          "term": "bar omega",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we study the closed hyperbolic manifolds obtained by Dehn filling on the figure eight knot complement and its sister, denoted $m004$ and $m003$ respectively in SnapPea notation. We will use the ideas described in the previous section to prove the following. ::: thm []{#closed_unique label=\"closed_unique\"} There is an infinite sequence of hyperbolic Dehn fillings $M(a_i,b_i)$ on the figure eight knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-dehn-filling-on-the-whitehead-link-complement",
+      "number": "4",
+      "title": "Dehn filling on the Whitehead link complement and its sister",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn filling",
+          "heading": true
+        },
+        {
+          "term": "amongst dehn",
+          "heading": false
+        },
+        {
+          "term": "link complement",
+          "heading": true
+        },
+        {
+          "term": "big gap",
+          "heading": false
+        },
+        {
+          "term": "cusped unique",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        },
+        {
+          "term": "orientable cusped",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "We now study the 1-cusped hyperbolic 3-manifolds obtained by Dehn filling on the Whitehead link complement and its sister, the complement of the $(-2,3,8)$-pretzel link, denoted $m129$ and $m125$ respectively in SnapPea notation. Note that each of these manifolds has a symmetry interchanging the cusps, so it suffices to consider Dehn fillings on cusp 0. See also [@HMW; @NR] and [@AD] for detailed discussions of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp",
+      "number": "5",
+      "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1077,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic formula",
+          "heading": true
+        },
+        {
+          "term": "dehn fillings",
+          "heading": false
+        },
+        {
+          "term": "cusped hyp",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "sqrt left",
+          "heading": false
+        },
+        {
+          "term": "delta text",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#degree4_NZ label=\"degree4_NZ\"} Let $M$ be a cusped hyperbolic 3-manifold with horospherical torus cross section $T$, and chose meridian and longitude generators for $H_1(T)=\\mathbb{Z}^2$ as in section [\\[cusped_hyp\\]](#cusped_hyp){reference-type=\"ref\" reference=\"cusped_hyp\"}. Let $u,v$ denote the logarithms of the holonomies of the meridian and longitude respectively, chosen so that $u=v=0$ at the complete",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-hyperbolic-graphs-with-parabolic-meridians",
+      "number": "6",
+      "title": "Hyperbolic graphs with parabolic meridians",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thrice punctured",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic graphs",
+          "heading": true
+        },
+        {
+          "term": "white faces",
+          "heading": false
+        },
+        {
+          "term": "punctured spheres",
+          "heading": false
+        },
+        {
+          "term": "augmented link",
+          "heading": false
+        },
+        {
+          "term": "punctured disk",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "crossing circle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.Vol label=\"sec.Vol\"} In this section, we recall some results on hyperbolic graphs in $S^3$ with parabolic meridians; for details see [@HHMP] and [@Mas]. In this paper, spatial graphs may contain link components, and we regard every link as a spatial graph without vertices. We use the word *link* to emphasize that the graph does not have any vertices. Let $G$ be a spatial trivalent graph in $S^3$ and let $N$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-associated-circle-packings-and-cusp-moduli",
+      "number": "7",
+      "title": "Associated circle packings and cusp moduli",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circle cusp",
+          "heading": true
+        },
+        {
+          "term": "pack fig",
+          "heading": false
+        },
+        {
+          "term": "cusp param",
+          "heading": false
+        },
+        {
+          "term": "circle packing",
+          "heading": false
+        },
+        {
+          "term": "annulus cusp",
+          "heading": false
+        },
+        {
+          "term": "torus cusp",
+          "heading": false
+        },
+        {
+          "term": "graphw",
+          "heading": false
+        },
+        {
+          "term": "crossing circle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#pack label=\"pack\"} In this section we study the circle packing corresponding to the hyperbolic graph $W_n$ shown in Figure [1](#fig.graphW){reference-type=\"ref\" reference=\"fig.graphW\"}. ![Graph $W_n$ with $2n+2$ vertices](graphW2.eps){#fig.graphW} The two isometric polyhedra in the decomposition of the complement of $W_n$ described in section [\\[sec.Vol\\]](#sec.Vol){reference-type=\"ref\" reference=\"sec.Vol\"} are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-construction-of-different-manifolds-sharing-th",
+      "number": "8",
+      "title": "Construction of different manifolds sharing the same volume",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horo packing",
+          "heading": false
+        },
+        {
+          "term": "horoball packing",
+          "heading": false
+        },
+        {
+          "term": "packing mathcal",
+          "heading": false
+        },
+        {
+          "term": "horoball neighbourhoods",
+          "heading": false
+        },
+        {
+          "term": "change mfd",
+          "heading": false
+        },
+        {
+          "term": "packing invariant",
+          "heading": false
+        },
+        {
+          "term": "polyhedral decomp",
+          "heading": false
+        },
+        {
+          "term": "modulus sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#const label=\"const\"} We start with the graph with $2n$ vertices shown in Figure [1](#fig.source){reference-type=\"ref\" reference=\"fig.source\"}. This graph is obtained by applying the gluing move in Lemma [\\[Vol\\]](#Vol){reference-type=\"ref\" reference=\"Vol\"} $n+1$ times to $W_{2n}$. ![Starting point: graph with $2n$ vertices (represented by circles)](source1_1.eps){#fig.source} First, we label every remaining pair",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-some-open-questions",
+      "number": "9",
+      "title": "Some Open Questions",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn fillings",
+          "heading": false
+        },
+        {
+          "term": "amongst dehn",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "gaps",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "equalities",
+          "heading": false
+        }
+      ],
+      "extract": "1. Find additional exact values of $N(v)$ or upper bounds on $N(v)$. 2. (Gromov [@Gr], 1979) Is $N(v)$ locally bounded? This reduces to the question of whether the number of manifolds with a given volume $v$ is uniformly bounded amongst all hyperbolic Dehn fillings on any given cusped hyperbolic 3-manifold. 3. What is the largest volume $< v_\\omega= 2.029883\\ldots$ of a closed hyperbolic 3-manifold that does not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1018,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic three-manifolds",
+          "heading": false
+        },
+        {
+          "term": "berlin-new york",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "minimum volume",
+          "heading": false
+        },
+        {
+          "term": "princeton university",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J. W. Aaber and N. M. Dunﬁeld, Closed surface bundles of least volume, Algebr. Geom. Topol. 10 (2010), 2315–2342. [2] C. Adams, Thrice-punctured spheres in hyperbolic 3-manifolds, Trans. Amer. Math. Soc. 287 (1985), no. 2, 645-656. [3] I. Agol, Bounds on exceptional Dehn ﬁlling. Geom. Topol. 4 (2000), 431–449. [4] I. Agol, The minimal volume orientable hyperbolic 2-cusped 3-manifolds. Proc. Amer. Math. Soc. 138",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic dehn",
+      "heading": true
+    },
+    {
+      "term": "cusped hyperbolic",
+      "heading": true
+    },
+    {
+      "term": "dehn fillings",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic manifolds",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic link",
+      "heading": false
+    },
+    {
+      "term": "horospherical cusp",
+      "heading": false
+    },
+    {
+      "term": "orientable hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "cusp torus",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic graph",
+      "heading": true
+    },
+    {
+      "term": "cusp shape",
+      "heading": true
+    },
+    {
+      "term": "amongst dehn",
+      "heading": false
+    },
+    {
+      "term": "closed hyperbolic",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The ﬁgure eight knot and its sister, with complements denoted m004 and m003 respectively in SnapPea notation",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The Whitehead link and the (−2, 3, 8)-pretzel link,",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Frequencies of volumes of hyperbolic 3-manifolds in the closed and cusped censuses",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Frequencies of volumes of hyperbolic 3-manifolds in the cusped census",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Volume preserving moves on hyperbolic graphs",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Gluing by a homeomorphism This is illustrated in Figure 6. Here we regard S3 as B3 ∪B3 where one ball",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Polyhedral decomposition of a graph complement We shade the faces coming from the thrice punctured sphere boundaries of NP and leave the faces on Π white as in [20], [39]. Note that every shaded face is an ideal triangle, and since reﬂection φ about Π leaves each thrice punctured sphere boundary inv",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Graph Wn with 2n + 2 vertices The two isometric polyhedra in the decomposition of the complement of Wn described in section 6 are obtained by gluing together n regular ideal octahedra (see Figure 9 (right))",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A circle packing obtained from the graph Wn (left) and a (topological) polyhedral decomposition (right) Recall from Remark 2.1 that each torus cusp of a hyperbolic 3-manifold has a",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Cusp modulus for ideal vertices of type 1",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Cusp modulus for ideal vertices of type 2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Cusp modulus for ideal vertices of type 3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A graph Gn,k obtained from Wn (top) and vertices corresponding to the knot component cusp (bottom) In Figure 14, we depict the shapes of the torus cusps. The left diagram shows the shape of a crossing circle cusp without a half twist below, the middle shows the shape of a crossing circle cusp with a",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Shapes of the torus cusps for the graph Gn,k in Figure 13 The shape of the torus cusp of the knot component in Figure 13 is obtained by arranging 2 × 2(k + 1) copies of the 1 × 2 rectangle in Figure 11 to form a",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Starting point: graph with 2n vertices (represented by circles) First, we label every remaining pair of thrice punctured spheres by an element of {0, 1}. For each such pair we apply Lemma 6.1 as follows. We glue the pair of",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "15 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1203.6551v1"
+  }
+}
